@@ -51,6 +51,7 @@ export const AKTION_SCHLUESSEL = {
   'ticket.angelegt': 'ticketAngelegt',
   'ticket.geaendert': 'ticketGeaendert',
   'ticket.kommentiert': 'ticketKommentiert',
+  'ticket.gelesen': 'ticketGelesen',
   'postfach.gesendet': 'postfachGesendet',
 } as const satisfies Record<AuditAktion, string>;
 

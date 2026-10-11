@@ -37,6 +37,7 @@ export type AuditAktion =
   | 'ticket.angelegt'
   | 'ticket.geaendert'
   | 'ticket.kommentiert'
+  | 'ticket.gelesen'
   | 'postfach.gesendet';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
