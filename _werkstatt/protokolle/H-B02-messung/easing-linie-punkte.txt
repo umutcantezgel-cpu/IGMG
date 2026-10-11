@@ -1,0 +1,13 @@
+a    line_passes_ms  fill_starts_ms  margin_ms(fill-line)  fill_done_ms  done_minus_pass
+0.1               9              1                   -8          321            312
+0.2              19             10                  -10          330            310
+0.3              32             32                    0          352            320
+0.4              49             77                   27          397            347
+0.5              74            150                   76          470            396
+0.6             110            259                  149          579            469
+0.7             166            412                  246          732            566
+0.8             258            614                  356          934            676
+0.9             431            875                  443         1195            763
+1.0            1200           1200                    0         1520            320
+min margin (fill start - line pass), must be >= 0: -10 ms
+max (fill done - line pass), spec <= 600 ms: 763 ms
