@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { z } from 'zod';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Text } from '@/components/website/Text';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
@@ -52,6 +53,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
   const t = await getTranslations('organisation');
   const tk = await getTranslations('karten');
   const ta = await getTranslations('allgemein');
+  const tStart = await getTranslations('start');
   const s = STIL[org];
   const kennung = KENNUNG[org];
   const name = t(`${kennung}.title`);
@@ -74,19 +76,23 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
         kennungFarbe={s.ink}
         zierde={<FamilieDerVier org={org} />}
       />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 pt-8 pb-12 md:gap-16 md:px-8 md:pt-16 md:pb-24">
-        <section aria-labelledby={`${org}-ueber`} className="flex flex-wrap items-stretch gap-6">
-          <div className="flex min-w-0 flex-[3_1_520px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10">
-            <h2 id={`${org}-ueber`} className="flex items-center gap-2.5 text-30 md:text-36">
+      {/* Komposition nach der Referenz (O-12): Abschnitte im Wechsel Papier/Sand, Kopfzeilen mit text-display-2 */}
+      <div className="bg-papier">
+        <section
+          aria-labelledby={`${org}-ueber`}
+          className="mx-auto grid max-w-(--container-inhalt) items-stretch gap-6 px-4 py-abschnitt md:px-8 lg:grid-cols-12"
+        >
+          <div className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10 lg:col-span-7">
+            <h2 id={`${org}-ueber`} className="flex items-center gap-2.5 text-display-2">
               <span className={cn('flex', s.ink)}>
                 <Target aria-hidden className="size-7" />
               </span>
               {t(`${kennung}.aboutTitle`)}
             </h2>
-            <Text feld={inhalt.beschreibung} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" />
+            <Text feld={inhalt.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
             {hinweis([inhalt.beschreibung, inhalt.mission, inhalt.vision])}
           </div>
-          <div className="flex min-w-0 flex-[2_1_360px] flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
             <div className={cn('flex shrink-0 flex-col overflow-hidden rounded-lg', s.tint)}>
               <div aria-hidden className={cn('h-1.5 shrink-0', s.band)} />
               <div className="flex flex-col gap-2 p-6">
@@ -110,13 +116,18 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             </div>
           </div>
         </section>
+      </div>
 
-        {inhalt.aktivitaeten.length ? (
-          <section aria-labelledby={`${org}-aktiv`} className="flex flex-col gap-5">
-            <h2 id={`${org}-aktiv`} className="text-30 md:text-36">
+      {inhalt.aktivitaeten.length ? (
+        <div className="border-y border-linie bg-sand">
+          <section
+            aria-labelledby={`${org}-aktiv`}
+            className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
+          >
+            <h2 id={`${org}-aktiv`} className="text-display-2">
               {t('activities.title')}
             </h2>
-            <ul className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4">
+            <ul className="grid raster-kacheln gap-4">
               {inhalt.aktivitaeten.map((a, i) => {
                 const Icon = SYMBOL[a.symbol];
                 return (
@@ -132,12 +143,14 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             </ul>
             {hinweis(inhalt.aktivitaeten.flatMap((a) => [a.titel, a.text]))}
           </section>
-        ) : null}
+        </div>
+      ) : null}
 
-        <div className="flex flex-wrap items-start gap-6">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt-klein px-4 py-abschnitt md:px-8">
+        <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
           <section
             aria-labelledby={`${org}-termine`}
-            className="flex min-w-0 flex-[1_1_440px] flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+            className="flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
             <h2 id={`${org}-termine`} className="flex items-center gap-2.5 text-30">
               <span className={cn('flex', s.ink)}>
@@ -158,7 +171,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
 
           <section
             aria-labelledby={`${org}-news`}
-            className="flex min-w-0 flex-[1_1_440px] flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+            className="flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
             <h2 id={`${org}-news`} className="flex items-center gap-2.5 text-30">
               <span className={cn('flex', s.ink)}>
@@ -166,7 +179,18 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               </span>
               {t('news.title')}
             </h2>
-            {meldungen.length ? <OrgMeldungen meldungen={meldungen} sprache={sprache} /> : <p className="text-tinte-2">{t('news.leer')}</p>}
+            {meldungen.length ? (
+              <OrgMeldungen meldungen={meldungen} sprache={sprache} />
+            ) : (
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 py-8 text-center">
+                <Zustandsgrafik art="leer" groesse={72} />
+                <p className="max-w-text text-tinte-2">{t('news.leer')}</p>
+              </div>
+            )}
+            <Link href="/nachrichten" className={MEHR_LINK}>
+              {tStart('alleNeuigkeiten')}
+              <ArrowRight aria-hidden className="size-5" />
+            </Link>
           </section>
         </div>
 
@@ -179,7 +203,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               </span>
               {t('contact.title')}
             </h2>
-            <dl className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-4">
+            <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex min-w-0 flex-col gap-1">
                 <dt className={cn('font-bold', s.ink)}>{t('contact.address')}</dt>
                 <dd>
@@ -194,9 +218,9 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               </div>
               <div className="flex min-w-0 flex-col gap-1">
                 <dt className={cn('font-bold', s.ink)}>{t('contact.email')}</dt>
-                <dd className="[overflow-wrap:anywhere]">
+                <dd className="wrap-anywhere">
                   {mail ? (
-                    <a href={`mailto:${mail}`} className="text-tinte underline underline-offset-[3px]">
+                    <a href={`mailto:${mail}`} className="text-tinte underline underline-offset-3">
                       {mail}
                     </a>
                   ) : (
@@ -222,12 +246,17 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             ) : null}
           </div>
         </section>
+      </div>
 
-        <section aria-labelledby={`${org}-orgs`} className="flex flex-col gap-5">
-          <h2 id={`${org}-orgs`} className="text-30 md:text-36">
+      <div className="border-t border-linie bg-sand">
+        <section
+          aria-labelledby={`${org}-orgs`}
+          className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
+        >
+          <h2 id={`${org}-orgs`} className="text-display-2">
             {t('orgs.title')}
           </h2>
-          <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-4">
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {KUERZEL_ALLE.filter((k) => k !== org).map((k) => (
               <li key={k}>
                 <OrgKarte kuerzel={k} name={t(`${KENNUNG[k]}.title`)} kurz={tk(`org_${k}`)} beschreibung={t('orgs.beschreibung')} />
