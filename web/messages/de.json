@@ -250,5 +250,78 @@
     "sprache": "Deutsch",
     "titel": "IGMG Wetzlar",
     "beschreibung": "[Beschreibung der Website – von der Gemeinde]"
+  },
+  "verwaltung": {
+    "titel": "Verwaltung",
+    "anmelden": {
+      "titel": "Anmelden",
+      "untertitel": "Melden Sie sich in Ihrem Konto an",
+      "email": "E-Mail",
+      "passwort": "Passwort",
+      "absenden": "Anmelden",
+      "passwortAnzeigen": "Passwort anzeigen",
+      "passwortVerbergen": "Passwort verbergen",
+      "passwortVergessen": "Passwort vergessen?",
+      "fehler": "E-Mail-Adresse oder Passwort ist nicht korrekt.",
+      "zuViele": "Zu viele Versuche. Bitte warten Sie eine Minute und versuchen Sie es erneut.",
+      "eingeladen": "Ihr Konto ist angelegt. Bitte melden Sie sich jetzt an.",
+      "keineRolle": "Ihrem Konto ist noch keine Aufgabe zugewiesen. Bitte wenden Sie sich an die Administration.",
+      "abgemeldet": "Sie sind abgemeldet."
+    },
+    "zweiFaktor": {
+      "titel": "Zwei-Faktor-Bestätigung",
+      "hinweis": "Geben Sie den sechsstelligen Code aus Ihrer Authentifizierungs-App ein.",
+      "code": "Code aus Ihrer Authentifizierungs-App",
+      "absenden": "Bestätigen",
+      "fehler": "Der Code ist nicht gültig. Bitte prüfen Sie ihn und versuchen Sie es erneut.",
+      "ersatzcode": "Stattdessen einen Wiederherstellungscode verwenden",
+      "ersatzcodeFeld": "Wiederherstellungscode",
+      "zurueck": "Zurück zur Anmeldung"
+    },
+    "zweiFaktorEinrichten": {
+      "titel": "Zwei-Faktor-Anmeldung einrichten",
+      "einleitung": "Für die Verwaltung ist ein zweiter Faktor Pflicht. Sie brauchen dafür eine Authentifizierungs-App auf Ihrem Telefon.",
+      "schritt1": "Schritt 1: Passwort bestätigen",
+      "weiter": "Weiter",
+      "schritt2": "Schritt 2: Code in der App einrichten",
+      "scannen": "Scannen Sie diesen QR-Code mit Ihrer Authentifizierungs-App.",
+      "manuell": "Falls das Scannen nicht klappt, geben Sie diesen Schlüssel in der App ein:",
+      "qrAlt": "QR-Code zum Einrichten der Zwei-Faktor-Anmeldung",
+      "schritt3": "Schritt 3: Code eingeben",
+      "bestaetigen": "Einrichtung abschließen",
+      "ersatzcodesTitel": "Wiederherstellungscodes",
+      "ersatzcodesHinweis": "Bewahren Sie diese Codes sicher auf. Jeder Code funktioniert genau einmal, falls Sie keinen Zugriff auf Ihre App haben.",
+      "fehlerPasswort": "Das Passwort ist nicht korrekt.",
+      "fehlerCode": "Der Code ist nicht gültig. Bitte prüfen Sie die Uhrzeit Ihres Telefons und versuchen Sie es erneut."
+    },
+    "einladung": {
+      "titel": "Einladung annehmen",
+      "einleitung": "Legen Sie ein Passwort für Ihr Konto fest. Danach richten Sie die Zwei-Faktor-Anmeldung ein.",
+      "name": "Name",
+      "email": "E-Mail",
+      "passwort": "Neues Passwort",
+      "passwortHinweis": "Mindestens 12 Zeichen.",
+      "passwortWiederholen": "Passwort wiederholen",
+      "absenden": "Konto anlegen",
+      "ungueltig": "Diese Einladung ist ungültig oder abgelaufen. Bitte bitten Sie die Administration um eine neue Einladung.",
+      "fehlerPasswortKurz": "Das Passwort muss mindestens 12 Zeichen haben.",
+      "fehlerPasswortGleich": "Die Passwörter stimmen nicht überein.",
+      "fehlerAllgemein": "Das Konto konnte nicht angelegt werden. Bitte versuchen Sie es erneut."
+    },
+    "konto": {
+      "abmelden": "Abmelden",
+      "angemeldetAls": "Angemeldet als {name}"
+    },
+    "keinZugriff": {
+      "titel": "Kein Zugriff",
+      "text": "Für diesen Bereich fehlt Ihnen die Berechtigung.",
+      "zurueck": "Zur Übersicht"
+    },
+    "uebersicht": {
+      "titel": "Übersicht",
+      "willkommen": "Willkommen, {name}."
+    },
+    "pflichtfeld": "(Pflichtfeld)",
+    "fehlerZusammenfassung": "Bitte prüfen Sie die markierten Felder."
   }
 }

@@ -49,3 +49,6 @@ Mehrsprachige Inhalte als JSONB (0002), eigene Rollentabelle statt Better-Auth-O
 
 **E-014 · 2026-10-11 · ADR 0008 (Gebetszeiten) und 0009 (Quran) angenommen**
 Gebetszeiten: Import verbindlich, bis dahin adhan „Turkey“, Shafi, SeventhOfTheNight, Imsak = Fajr, sichtbar „berechnet“, Qibla ≈ 128,3°. Quran: Tanzil-Text nur nach menschlicher Zustimmung zu den Nutzungsbedingungen (M-036) per Import-Skript; bis dahin Platzhalter. Der Al-Fatiha-Text aus dem Bestand wird nicht verwendet (keine Quellenangabe, G-06).
+
+**E-015 · 2026-10-11 · Standalone-Server mit HOSTNAME=0.0.0.0**
+Befund im Fundament: Mit `HOSTNAME=127.0.0.1` bzw. `localhost` behandelt der standalone-Server von Next.js 16.4 die Rewrites von next-intl (Standardsprache ohne Präfix) bei abweichendem Host als externe Ziele → Weiterleitungsschleife (307 auf sich selbst). Mit `HOSTNAME=0.0.0.0` (wie im Docker-Image) bleiben die Rewrites intern; geprüft mit Host `localhost`, `127.0.0.1` und einem fremden Host-Header. Festlegung: Start-Skript und Dockerfile setzen `HOSTNAME=0.0.0.0`; BETRIEB.md nennt das als Pflicht.
