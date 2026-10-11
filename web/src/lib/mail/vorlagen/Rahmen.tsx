@@ -16,9 +16,9 @@ export type MailStil = CSSProperties & { msoHide?: string; msoLineHeightRule?: s
 export const SCHRIFT_TEXT = 'Arial, Helvetica, sans-serif';
 export const SCHRIFT_TITEL = "Georgia, 'Times New Roman', serif";
 
-/** Hintergrund für Zellen: `bgcolor` als Rückfall für Outlook neben `background`. React-Typen kennen es nur für Tabellen. */
-export function hintergrund(farbe: string) {
-  return { bgcolor: farbe } as Record<string, string>;
+/** Hintergrund für Zellen: `bgcolor` als Rückfall für Outlook neben `background`. React-Typen kennen es nur für Tabellen, daher als Spread. */
+export function hintergrund(farbe: string): { bgcolor: string } {
+  return { bgcolor: farbe };
 }
 
 const MOBIL_CSS = `

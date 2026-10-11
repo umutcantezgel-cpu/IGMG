@@ -18,25 +18,28 @@ function vorschau(text: string): string {
   return satz.slice(0, 140).replace(/\s\S*$/, '');
 }
 
-/** Stil des Knopfs: der Link trägt den Innenabstand (Outlook über mso-padding-alt); Höhe 14 + 20 + 14 px = 48 px. */
+/**
+ * Stil des Link-Textes im Knopf. Der Innenabstand (14 × 24 px) liegt auf der Tabellenzelle, die Outlook zuverlässig
+ * polstert. Der Link füllt die Zelle über negativen Außenabstand wieder aus, damit die ganze Fläche antippbar bleibt.
+ * Höhe: 14 + 20 + 14 px = 48 px (Mindesthöhe).
+ */
 const KNOPF: MailStil = {
-  display: 'inline-block',
+  display: 'block',
   boxSizing: 'border-box',
-  minHeight: '48px',
+  margin: '-14px -24px',
   padding: '14px 24px',
-  borderRadius: '8px',
-  background: F.gruen,
+  minHeight: '48px',
   color: F.weiss,
   fontFamily: SCHRIFT_TEXT,
   fontSize: '16px',
   fontWeight: 700,
   lineHeight: '20px',
   textDecoration: 'none',
-  msoPaddingAlt: '14px 24px',
 };
 
 /**
- * Knopf „kugelsicher“: eine Tabellenzelle mit Hintergrund. Darunter steht der Link als Text; die Textfassung nennt ihn nur über den Knopf.
+ * Knopf „kugelsicher“: eine Tabellenzelle mit Hintergrund und Innenabstand. Darunter steht der Link als Text;
+ * die Textfassung nennt ihn nur über den Knopf.
  */
 function KnopfMitLink({ link, text }: { link: string; text: string }) {
   return (
@@ -45,7 +48,7 @@ function KnopfMitLink({ link, text }: { link: string; text: string }) {
         <table role="presentation" cellPadding={0} cellSpacing={0} border={0}>
           <tbody>
             <tr>
-              <td style={{ background: F.gruen, borderRadius: '8px' }} {...hintergrund(F.gruen)}>
+              <td style={{ background: F.gruen, borderRadius: '8px', padding: '14px 24px' }} {...hintergrund(F.gruen)}>
                 <a href={link} style={KNOPF}>
                   {text}
                 </a>

@@ -1,0 +1,124 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-27",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/igmg/page.tsx",
+    "web/src/components/website/igmg/Bedeutung.tsx",
+    "web/src/components/website/igmg/Geschichte.tsx",
+    "web/src/components/website/igmg/IGMGTabs.tsx",
+    "web/src/components/website/igmg/Kontakt.tsx",
+    "web/src/components/website/igmg/Struktur.tsx",
+    "web/src/components/website/igmg/Ueberblick.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 15
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/website/igmg/Geschichte.tsx",
+      "zeile": 19,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[200px]",
+      "zeileText": "<Text feld={eintrag.label} sprache={sprache} als=\"strong\" className=\"w-[200px] max-w-full shrink-0 font-bold text-gruen-800\" />"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Geschichte.tsx",
+      "zeile": 24,
+      "art": "Tailwind-Klammerwert",
+      "fund": "basis-[420px]",
+      "zeileText": "className=\"max-w-(--container-text) min-w-0 flex-1 basis-[420px] text-pretty\""
+    },
+    {
+      "datei": "web/src/components/website/igmg/IGMGTabs.tsx",
+      "zeile": 70,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "'relative inline-flex min-h-12 items-center rounded-md px-[18px] text-18 font-bold transition-colors duration-150 motion-reduce:transition-none',"
+    },
+    {
+      "datei": "web/src/components/website/igmg/IGMGTabs.tsx",
+      "zeile": 75,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[3px]",
+      "zeileText": "{ist ? <span aria-hidden className=\"absolute inset-x-3.5 bottom-1 h-[3px] rounded-[2px] bg-gruen-700\" /> : null}"
+    },
+    {
+      "datei": "web/src/components/website/igmg/IGMGTabs.tsx",
+      "zeile": 75,
+      "art": "Tailwind-Klammerwert",
+      "fund": "rounded-[2px]",
+      "zeileText": "{ist ? <span aria-hidden className=\"absolute inset-x-3.5 bottom-1 h-[3px] rounded-[2px] bg-gruen-700\" /> : null}"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Kontakt.tsx",
+      "zeile": 26,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "className=\"[overflow-wrap:anywhere] underline underline-offset-[3px]\""
+    },
+    {
+      "datei": "web/src/components/website/igmg/Kontakt.tsx",
+      "zeile": 26,
+      "art": "Tailwind-Klammerwert",
+      "fund": "underline-offset-[3px]",
+      "zeileText": "className=\"[overflow-wrap:anywhere] underline underline-offset-[3px]\""
+    },
+    {
+      "datei": "web/src/components/website/igmg/Kontakt.tsx",
+      "zeile": 37,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "className=\"flex max-w-[880px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10\""
+    },
+    {
+      "datei": "web/src/components/website/igmg/Kontakt.tsx",
+      "zeile": 43,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))]",
+      "zeileText": "<dl className=\"grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Kontakt.tsx",
+      "zeile": 50,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "<dd className=\"m-0 [overflow-wrap:anywhere]\">{wert}</dd>"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Struktur.tsx",
+      "zeile": 25,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))]",
+      "zeileText": "<div className=\"grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] gap-6\">"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Struktur.tsx",
+      "zeile": 40,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))]",
+      "zeileText": "<ol className=\"grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Struktur.tsx",
+      "zeile": 58,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))]",
+      "zeileText": "<div className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/igmg/Ueberblick.tsx",
+      "zeile": 19,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[2_1_520px]",
+      "zeileText": "className=\"flex min-w-0 flex-[2_1_520px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10\""
+    },
+    {
+      "datei": "web/src/components/website/igmg/Ueberblick.tsx",
+      "zeile": 35,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_300px]",
+      "zeileText": "className=\"flex min-w-0 flex-[1_1_300px] flex-col gap-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8\""
+    }
+  ]
+}
