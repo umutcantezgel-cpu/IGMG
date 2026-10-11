@@ -1,0 +1,108 @@
+{
+  "werkzeug": "leiste3",
+  "modus": "wechsel",
+  "breite": 390,
+  "hoehe": 844,
+  "zeitAnfang": "2026-10-11T14:09:30Z",
+  "rate": 0.1,
+  "basis": "http://127.0.0.1:3500",
+  "rahmen": [
+    {
+      "nr": 1,
+      "msNachErkennung": 162,
+      "naechstes": "Maghrib",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 2,
+          "dauerMs": 320,
+          "ziel": "flex flex-col gap-0.5 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-390/leiste-390-1.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachErkennung": 1095,
+      "naechstes": "Maghrib",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 100,
+          "dauerMs": 320,
+          "ziel": "flex flex-col gap-0.5 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-390/leiste-390-2.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachErkennung": 1995,
+      "naechstes": "Maghrib",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 192,
+          "dauerMs": 320,
+          "ziel": "flex flex-col gap-0.5 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-390/leiste-390-3.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachErkennung": 2911,
+      "naechstes": "Maghrib",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 282,
+          "dauerMs": 320,
+          "ziel": "flex flex-col gap-0.5 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-390/leiste-390-4.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachErkennung": 3829,
+      "naechstes": "Maghrib",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 320,
+          "dauerMs": 320,
+          "ziel": "flex flex-col gap-0.5 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-390/leiste-390-5.jpg"
+    }
+  ],
+  "vorher": {
+    "naechstes": "Asr",
+    "zeilen": []
+  },
+  "animationenVorWechsel": [],
+  "gewechselt": true,
+  "nachAnimation": {
+    "naechstes": "Maghrib",
+    "zeilen": []
+  },
+  "nachAnimationLaufend": 0,
+  "pageerrors": []
+}

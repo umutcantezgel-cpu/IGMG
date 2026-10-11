@@ -1,0 +1,82 @@
+E3-TOR · Auswertung Prüfer 02 (Freie Werte, SVG, Bau, check, Sprachen, Geheimnisse, Integration)
+Prüfling: 93a0b3d (Protokolle E3-TOR-*, Schritte 7–8 im Laufprotokoll E3-TOR-lauf.log)
+Stand HEAD bei Auswertung: b887cc7 (44 Commits hinter dem Prüfling; 97 geänderte Dateien unter web/src seit 93a0b3d)
+Auswertung nur belegend, keine Deutung. Berechnungen aus Protokoll-JSON, git diff und git grep.
+
+== 1. Freie Werte (Z-03) ==
+Quelle: E3-TOR-freie-werte.log, E3-TOR-freie-werte.json, E3-TOR-geaenderte-dateien.txt
+Befehl Prüfling: freie-werte.mjs --seit 9ebb4bc (im Worktree 93a0b3d)
+Geänderte Dateien 9ebb4bc..93a0b3d unter web/src (.ts/.tsx/.css): 117 = 96 M (geändert) + 21 A (neu)
+  Befehl: git diff --name-status 9ebb4bc 93a0b3d -- web/src/*.ts web/src/*.tsx web/src/*.css
+Geprüft: 117 · Funde: 87 (Hex-Farbe 46, Tailwind-Klammerwert 32, px-Literal in Style 6, Farbfunktion 3)
+Dateien mit mindestens einem Fund: 9 (alle 9 sind M-Dateien). Dateien ohne Fund: 108. Neue Dateien (A) ohne Fund: 21 von 21.
+Funde je Datei (E3 | E0 gleiche Datei | Status):
+  50 | 50 | M | web/src/components/verwaltung/styleguide/tokens.ts
+  20 | 12 | M | web/src/app/globals.css
+   6 |  6 | M | web/src/components/verwaltung/shell/Seitenleiste.tsx
+   4 | 12 | M | web/src/components/website/NewsCard.tsx
+   2 |  2 | M | web/src/components/website/KonzeptHinweis.tsx
+   2 |  3 | M | web/src/components/website/OrgCard.tsx
+   1 |  2 | M | web/src/app/[locale]/(website)/gebetszeiten/page.tsx
+   1 |  1 | M | web/src/app/[locale]/layout.tsx
+   1 |  1 | M | web/src/app/[locale]/verwaltung/(geschuetzt)/medien/page.tsx
+E0 Gesamt (E0-PRUEFER-02-freie-werte.log, Zeile 1): 617 Funde in 452 Dateien.
+E0 in denselben 96 gemeinsamen Dateien: 244 Funde in 61 Dateien (Berechnung aus E0-PRUEFER-02-freie-werte.json, gefiltert auf die 96 M-Dateien).
+Kategorien E0 in denselben Dateien: Tailwind-Klammerwert 189, px-Literal 7, Hex-Farbe 45, Farbfunktion 3.
+globals.css gegenüber E0: 8 zusätzliche Funde, Multimengen-Vergleich (art, fund):
+  Tailwind leading-[1.55], md:py-[72px], md:py-[88px], max-w-[760px], max-w-[880px], grid-cols-[repeat(…)], z-50/z-60/z-[100]; Hex #0e3929. Kein E0-Fund entfallen.
+Ausnahme-Regel des Werkzeugs (freie-werte.mjs, Kopfkommentar und TOKEN_ZEILE): nur Zeilen der Form "--name: Wert" und href/id-Hash-Links sind ausgenommen.
+tokens.ts: Kopfkommentar (Zeilen 1–5) nennt die Datei als Quelle der Styleguide-Seite und verweist auf tests/unit/styleguide-tokens.test.ts. Die 50 Funde (43 Hex, 4 px, 3 Farbfunktion) sind dort als Datenzeilen geführt, keine "--name:"-Zeilen. Im Protokoll gibt es keine begründete Ausnahme.
+Stichprobe nach Z-03 (zusätzlich zu den geänderten Dateien): nicht im Protokoll enthalten.
+HEAD: nicht gemessen (97 geänderte web/src-Dateien seit 93a0b3d).
+
+== 2. SVG (Z-06) ==
+Quelle: E3-TOR-svg.log, E3-TOR-svg.json, E3-TOR-svg.md; E0-PRUEFER-02-svg.log
+E3 (93a0b3d): 5 .svg-Dateien, 8 inline <svg> in web/src · Fehler 0 · Befund 11 · OK 2
+  Befunde Dateien: _lauf/lichtung/a/public/{file,globe,next,vercel,window}.svg (je Zeile 1)
+  Befunde inline: web/src/components/website/Icons.tsx:11, :35; Zustandsgrafik.tsx:48, :85, :99; organisation/FamilieDerVier.tsx:28
+  OK inline: verwaltung/anmeldung/QrCode.tsx:8; website/start/TagesbogenLive.tsx:80
+E0 (9ebb4bc): 5 .svg-Dateien, 3 inline · Fehler 0 · Befund 7 · OK 1
+  Befunde inline: Icons.tsx:11; fehler/FehlerAnsicht.tsx:34
+Vergleich FehlerAnsicht.tsx: bei 9ebb4bc enthält Zeile 34 ein <svg>; bei 93a0b3d enthält die Datei kein <svg> mehr (git grep "<svg" 93a0b3d -- web/src/components/website/fehler/FehlerAnsicht.tsx ohne Treffer). Der E0-Befund entfällt damit.
+Doppelte IDs: Werkzeug meldet 0 Fehler (Prüfung im Werkzeug svg-pruefung.mjs, doppelte id= je Datei).
+Die fünf Starter-SVG liegen in _lauf/lichtung/a/public/ (git ls-tree 93a0b3d). Eine Referenz aus web/ fehlt (git grep "(file|globe|next|vercel|window)\.svg" 93a0b3d -- web/ ohne Treffer).
+Nicht vom Werkzeug geprüft: Optimierung (SVGO o. ä.), eine Icon-Familie.
+
+== 3. Bau (Stufe B, E3-TOR-build.log) ==
+E3 (93a0b3d): BAU rc=0 (Zeile 428). Compiled successfully in 34.6s · Finished TypeScript in 28.1s · Generating static pages 466/466 in 23.8s.
+  Zeile 4: "[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017)."
+E0 (E0-PRUEFER-01-build.log, 9ebb4bc): BUILD rc=0 · Compiled in 49s · TypeScript 38.5s · Static pages 461/461 in 19.8s. Keine WARNUNG-Zeile (grep 0 Treffer).
+Hinweis: lokaler Bau mit PGlite-Datenbank, nicht der Vercel-Build nach V-02.
+Zeitwerte: keine Lastangabe im Protokoll; Dauern nur indikativ.
+
+== 4. Pnpm check (Z-02, E3-TOR-check.log, Schritt 8a rc=0) ==
+Typen: "Types generated successfully", tsc --noEmit ohne Fehlerausgabe.
+Lint: eslint . ohne Ausgabe.
+Unit: Test Files 39 passed (39) · Tests 744 passed | 3 expected fail (747) · 0 failed · Dauer 11.51 s.
+Die 3 expected fail sind it.fails in web/tests/unit/gebetszeiten/hohe-breite-imsak-yatsi.test.ts:120, :125, :130 (Kommentar FIXME A22-1).
+E0 (ABNAHME.md Z-02): "unit: 4 rot unter UTC (iCal, behoben), sonst grün". Ob die 3 expected fail im E0 mitgezählt waren, steht nicht im Protokoll (OFFENE FRAGE).
+
+== 5. Integration (Z-02, E3-TOR-integration.log, Schritt 8d rc=0) ==
+Test Files 34 passed | 1 skipped (35) · Tests 1407 passed | 2 expected fail | 4 skipped (1413) · 0 failed · Start 20:39:46 · Dauer 1071.78 s.
+Die übersprungene Datei ist im Protokoll nicht genannt. Passend: web/tests/integration/wartung-sperre-postgres.test.ts, describe.skipIf(!url) mit url = process.env.TEST_PG_URL (Zeile 18 und 26), 4 Tests (VERMUTUNG, Zuordnung nicht belegt).
+2 expected fail: it.fails in web/tests/integration/verwaltung/rechte-matrix.test.ts:1055 (BEFUND-Einträge).
+E0-Wert: keiner im Protokollbestand.
+
+== 6. Sprachen (Z-02/Z-09, E3-TOR-sprachen.log, Schritt 8b rc=0) ==
+"Sprachdateien vollständig: 1170 Schlüssel in de, tr, en; dazu 1914 Schlüssel der Verwaltung (nur de, ADR 0016)."
+Prüfregeln laut scripts/sprachen-pruefen.mjs Kopf (Zeilen 1–2): Schlüssel in tr und en vorhanden, Platzhalter gleich, keine leeren Werte, Namensräume ohne Überschneidung. Zweite Hauptansichten in en werden von diesem Werkzeug nicht geprüft.
+E0-Wert: keiner im Protokollbestand.
+
+== 7. Geheimnisse (Z-02, Z-12) ==
+Prüfling 93a0b3d (E3-TOR-geheimnisse.log, Schritt 8c rc=1): 7 Befunde, Vorgang abgebrochen.
+  web/docs/GO-LIVE.md:80 (deine-domain.de)
+  web/docs/deploy/VERCEL.md:161 (deine-domain.de), :161 (deine-domain.de), :257 (deine-domain.de)
+  web/tests/integration/startklar.test.ts:42 (db.test), :51 (fixture-mail.de), :95 (fixture-mail.de)
+Heute, HEAD b887cc7 (E3-TOR-geheimnisse-heute.log): "Geheimnis-/Datenschutz-Prüfung (--alles): ohne Befund." RC=0.
+Behebung: Commit 8d79ddc (nach 93a0b3d). E0-Wert: keiner im Protokollbestand.
+
+== Offen, nicht geprüft in diesem Bereich ==
+- Freie Werte, SVG, check, Sprachen, Geheimnisse für HEAD b887cc7 (nur 93a0b3d gemessen; 44 Commits Abstand, darunter 5fba6c6 "pnpm check auf HEAD war rot").
+- Sprachen: Probelauf zweier en-Hauptansichten (Bildsatz-Bereich, nicht in diesem Werkzeug).
+- Vercel-Build nach V-02 (nicht im Bereich).

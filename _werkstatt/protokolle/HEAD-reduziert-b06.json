@@ -1,0 +1,36 @@
+{
+  "werkzeug": "momente3",
+  "ziel": "b06",
+  "register": "B-06 Tagesbogen",
+  "pfad": "/",
+  "modus": "reduziert",
+  "basis": "http://127.0.0.1:3500",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "zeit": "2026-10-11T21:21:25.236Z",
+  "laeufe": [
+    {
+      "http": 200,
+      "dataSicht": null,
+      "laufendNach2s": 0,
+      "endzustand": {
+        "gezaehlt": 1,
+        "opazitaetKleiner1": 0,
+        "nichtStandardSkalierung": 0,
+        "laufendLayout": [],
+        "beispiele": [
+          {
+            "sel": ".bogen-enthuellt",
+            "inMaske": false,
+            "opazitaet": 1,
+            "skalierung": "none",
+            "transform": "none"
+          }
+        ]
+      },
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/momente/b06-reduziert.jpg"
+    }
+  ]
+}

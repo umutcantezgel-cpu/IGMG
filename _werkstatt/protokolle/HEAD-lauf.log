@@ -1,1 +1,56 @@
 == 21:16:47 4a Bildsatz normal (13 Routen, 390/768/1440)
+   rc=0
+== 21:18:50 4b Bildsatz reduziert
+   rc=0
+== 21:21:12 4c Momente b06 Bilder (1 Lauf)
+   rc=0 (b06 bilder) dauer=2s
+== 21:21:18 4c Momente b07 Bilder (1 Lauf)
+   rc=0 (b07 bilder)
+== 21:21:20 4c Momente b08 Bilder (1 Lauf)
+   rc=0 (b08 bilder)
+== 21:21:22 4c Momente b09 Bilder (1 Lauf)
+   rc=0 (b09 bilder)
+== 21:21:24 4c Momente b06 reduziert (Endzustand)
+   rc=0 (b06 reduziert)
+== 21:21:29 4c Momente b07 reduziert (Endzustand)
+   rc=0 (b07 reduziert)
+== 21:21:34 4c Momente b08 reduziert (Endzustand)
+   rc=0 (b08 reduziert)
+== 21:21:38 4c Momente b09 reduziert (Endzustand)
+   rc=0 (b09 reduziert)
+== 21:21:51 4d Seitenwechsel-Zeitlupe Nachricht -> Detail
+   rc=0
+== 21:22:02 4d Seitenwechsel-Zeitlupe Veranstaltung -> Detail
+   rc=1
+== 21:22:22 4d Seitenwechsel-Zeitlupe Veranstaltung -> Detail (erste sichtbare Karte, Abweichung)
+   rc=0
+== 21:22:37 4e Leiste Wechsel 390
+   rc=0
+== 21:22:46 4e Leiste Wechsel 1440
+   rc=0
+== 21:23:44 5 Verwaltung: 3500 stoppen (nur PID 7453), einladen, 3500 starten
+einladen rc=0
+Einladung angelegt für pruefer@example.test (gültig 72 h). Datei: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/head/verwaltung-werkzeug/verwaltung-einladung.json (nur Testdaten, Token außerhalb des Repos).
+== 21:23:48 5 Server 3500 wieder starten
+3500 health: 200
+== 21:24:14 5 Anmeldung Versuch 1
+anmelden rc=0
+Angemeldet als pruefer@example.test (Testkonto). Anmeldezustand: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/head/verwaltung-werkzeug/verwaltung-state.json
+Bild nach Anmeldung: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/head/verwaltung-werkzeug/bilder/verwaltung-390x844-nach-anmeldung.jpg
+Einzelbild von /verwaltung mit Anmeldung: node einzelbild.mjs /verwaltung --zustand /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/head/verwaltung-werkzeug/verwaltung-state.json --breite 1440
+== 21:24:26 5 Verwaltungsbilder (4 Seiten x 390/1440)
+  rc=0 verwaltung 390: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/verwaltung-390.jpg
+  rc=0 verwaltung 1440: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/verwaltung-1440.jpg
+  rc=1 postfach 390: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/postfach-390.jpg
+  rc=1 postfach 1440: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/postfach-1440.jpg
+  rc=1 startklar 390: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/startklar-390.jpg
+  rc=1 startklar 1440: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/startklar-1440.jpg
+  rc=0 veranstaltungen 390: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/veranstaltungen-390.jpg
+  rc=0 veranstaltungen 1440: Bild: /home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung/veranstaltungen-1440.jpg
+== 21:24:58 5 Verwaltungsbilder korrigiert (Pfade /de/verwaltung/...)
+  rc=0 postfach 390: Seite: http://127.0.0.1:3500/de/verwaltung/postfach · HTTP 200 · Fenster 390×844 · erster Bildschirm · jpeg · 29 k 0 Warnungen
+  rc=0 postfach 1440: Seite: http://127.0.0.1:3500/de/verwaltung/postfach · HTTP 200 · Fenster 1440×900 · erster Bildschirm · jpeg · 64  0 Warnungen
+  rc=0 startklar 390: Seite: http://127.0.0.1:3500/de/verwaltung/startklar · HTTP 200 · Fenster 390×844 · erster Bildschirm · jpeg · 36  0 Warnungen
+  rc=0 startklar 1440: Seite: http://127.0.0.1:3500/de/verwaltung/startklar · HTTP 200 · Fenster 1440×900 · erster Bildschirm · jpeg · 99 0 Warnungen
+  rc=0 veranstaltungen 390: Seite: http://127.0.0.1:3500/de/verwaltung/veranstaltungen · HTTP 200 · Fenster 390×844 · erster Bildschirm · jpeg  0 Warnungen
+  rc=0 veranstaltungen 1440: Seite: http://127.0.0.1:3500/de/verwaltung/veranstaltungen · HTTP 200 · Fenster 1440×900 · erster Bildschirm · jpeg 0 Warnungen

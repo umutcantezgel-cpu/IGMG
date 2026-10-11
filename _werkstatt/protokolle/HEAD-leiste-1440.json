@@ -1,0 +1,773 @@
+{
+  "werkzeug": "leiste3",
+  "modus": "wechsel",
+  "breite": 1440,
+  "hoehe": 900,
+  "zeitAnfang": "2026-10-11T14:09:30Z",
+  "rate": 0.1,
+  "basis": "http://127.0.0.1:3500",
+  "rahmen": [
+    {
+      "nr": 1,
+      "msNachErkennung": 164,
+      "naechstes": null,
+      "zeilen": [
+        {
+          "text": "Imsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Aufgang07:35",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Dhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Asr16:10",
+          "aktuell": null,
+          "hintergrund": "rgb(250, 251, 251)"
+        },
+        {
+          "text": "Maghrib18:50",
+          "aktuell": "time",
+          "hintergrund": "rgb(19, 61, 45)"
+        },
+        {
+          "text": "Isha20:25",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 13,
+          "dauerMs": 320,
+          "ziel": "flex flex-col text-16 tabular-nums blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-1440/leiste-1440-1.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachErkennung": 1083,
+      "naechstes": null,
+      "zeilen": [
+        {
+          "text": "Imsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Aufgang07:35",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Dhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Asr16:10",
+          "aktuell": null,
+          "hintergrund": "rgb(76, 108, 96)"
+        },
+        {
+          "text": "Maghrib18:50",
+          "aktuell": "time",
+          "hintergrund": "rgb(193, 204, 200)"
+        },
+        {
+          "text": "Isha20:25",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 110,
+          "dauerMs": 320,
+          "ziel": "flex flex-col text-16 tabular-nums blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-1440/leiste-1440-2.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachErkennung": 1996,
+      "naechstes": null,
+      "zeilen": [
+        {
+          "text": "Imsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Aufgang07:35",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Dhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Asr16:10",
+          "aktuell": null,
+          "hintergrund": "rgb(28, 69, 54)"
+        },
+        {
+          "text": "Maghrib18:50",
+          "aktuell": "time",
+          "hintergrund": "rgb(241, 243, 242)"
+        },
+        {
+          "text": "Isha20:25",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 202,
+          "dauerMs": 320,
+          "ziel": "flex flex-col text-16 tabular-nums blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-1440/leiste-1440-3.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachErkennung": 2910,
+      "naechstes": null,
+      "zeilen": [
+        {
+          "text": "Imsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Aufgang07:35",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Dhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Asr16:10",
+          "aktuell": null,
+          "hintergrund": "rgb(15, 57, 42)"
+        },
+        {
+          "text": "Maghrib18:50",
+          "aktuell": "time",
+          "hintergrund": "rgb(254, 255, 254)"
+        },
+        {
+          "text": "Isha20:25",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border rounded-"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 293,
+          "dauerMs": 320,
+          "ziel": "flex flex-col text-16 tabular-nums blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-1440/leiste-1440-4.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachErkennung": 3811,
+      "naechstes": null,
+      "zeilen": [
+        {
+          "text": "Imsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Aufgang07:35",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Dhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Asr16:10",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Maghrib18:50",
+          "aktuell": "time",
+          "hintergrund": "rgb(255, 255, 255)"
+        },
+        {
+          "text": "Isha20:25",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 320,
+          "dauerMs": 320,
+          "ziel": "flex flex-col text-16 tabular-nums blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/head/leiste/wechsel-1440/leiste-1440-5.jpg"
+    }
+  ],
+  "vorher": {
+    "naechstes": null,
+    "zeilen": [
+      {
+        "text": "Imsak05:53",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Aufgang07:35",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Dhuhr13:18",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Asr16:10",
+        "aktuell": "time",
+        "hintergrund": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Maghrib18:50",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Isha20:25",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      }
+    ]
+  },
+  "animationenVorWechsel": [],
+  "gewechselt": false,
+  "nachAnimation": {
+    "naechstes": null,
+    "zeilen": [
+      {
+        "text": "Imsak05:53",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Aufgang07:35",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Dhuhr13:18",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Asr16:10",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Maghrib18:50",
+        "aktuell": "time",
+        "hintergrund": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Isha20:25",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      }
+    ]
+  },
+  "nachAnimationLaufend": 0,
+  "pageerrors": []
+}
