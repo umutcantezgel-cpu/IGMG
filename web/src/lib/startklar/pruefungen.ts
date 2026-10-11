@@ -1,0 +1,334 @@
+import { resolveTxt } from 'node:dns/promises';
+import { count, eq, sql } from 'drizzle-orm';
+import journal from '../../../drizzle/migrations/meta/_journal.json';
+import type { Datenbank } from '@/lib/db';
+import * as schema from '@/lib/db/schema';
+import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
+
+/**
+ * Startklar-Prüfungen (Kern 2.0, AUFTRAG V-11, Z-12): eine Quelle für das Cockpit `/verwaltung/startklar` und
+ * `pnpm startklar`. Jede Prüfung sagt, was fehlt, wo es zu beheben ist und wie lange das dauert. Prüfungen dürfen
+ * erweitert, nie abgeschwächt werden (UNANTASTBAR). Werte von Geheimnissen erscheinen nie in einer Meldung.
+ */
+export type Status = 'ok' | 'hinweis' | 'warnung' | 'fehler' | 'manuell';
+export type Bereich = 'umgebung' | 'auslieferung' | 'datenbank' | 'inhalte' | 'recht' | 'mail';
+
+export type Pruefung = {
+  id: string;
+  bereich: Bereich;
+  titel: string;
+  status: Status;
+  meldung: string;
+  /** Wo es zu beheben ist (Dashboard-Seite, Verwaltungsmodul, Datei). */
+  ort?: string;
+  /** Geschätzter Aufwand für einen Menschen. */
+  aufwand?: string;
+};
+
+export type StartklarErgebnis = {
+  betriebsart: Betriebsart;
+  zeitpunkt: string;
+  pruefungen: Pruefung[];
+  zaehler: Record<Status, number>;
+  /** Startklar heißt: kein Fehler. Warnungen und manuelle Punkte stehen im Bericht. */
+  startklar: boolean;
+};
+
+export type StartklarKontext = {
+  env: Readonly<Record<string, string | undefined>>;
+  /** Ohne Datenbank (z. B. CLI ohne DATABASE_URL) entfallen die Datenbank- und Inhaltsprüfungen mit Hinweis. */
+  db: Datenbank | null;
+  /** DNS-Abfragen für Mail-Einträge (SPF/DMARC); in Tests abschaltbar. */
+  dnsPruefen?: boolean;
+  jetzt?: Date;
+};
+
+const VERCEL_DOMAIN = /\.vercel\.app$/i;
+
+export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<StartklarErgebnis> {
+  const { env, db } = kontext;
+  const umgebung = pruefeUmgebung(env);
+  const betriebsart = umgebung.betriebsart;
+  const produktion = betriebsart === 'produktion';
+  const pruefungen: Pruefung[] = [];
+  const neu = (p: Pruefung) => pruefungen.push(p);
+
+  // 1. Umgebung: jede Meldung der gemeinsamen Umgebungsprüfung (lib/umgebung.ts) wird eine Zeile
+  for (const befund of umgebung.befunde) {
+    neu({
+      id: `umgebung.${befund.variable}`,
+      bereich: 'umgebung',
+      titel: befund.variable,
+      status: befund.schwere,
+      meldung: befund.meldung,
+      ort: 'Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)',
+      aufwand: '5 min',
+    });
+  }
+  if (!umgebung.befunde.some((b) => b.schwere === 'fehler')) {
+    neu({
+      id: 'umgebung.pflicht',
+      bereich: 'umgebung',
+      titel: 'Pflichtvariablen',
+      status: 'ok',
+      meldung: `Alle Pflichtvariablen für „${betriebsart}“ sind gesetzt.`,
+    });
+  }
+
+  // 2. Auslieferung: Region, Adresse mit HTTPS und eigener Domain, Cron
+  const region = env.VERCEL_REGION;
+  neu(
+    region
+      ? {
+          id: 'auslieferung.region',
+          bereich: 'auslieferung',
+          titel: 'Region der Funktionen',
+          status: region === 'fra1' ? 'ok' : 'warnung',
+          meldung:
+            region === 'fra1' ? 'Funktionen laufen in Frankfurt (fra1).' : `Funktionen laufen in ${region}, nicht in Frankfurt (fra1).`,
+          ort: 'vercel.json › regions',
+          aufwand: '5 min',
+        }
+      : {
+          id: 'auslieferung.region',
+          bereich: 'auslieferung',
+          titel: 'Region der Funktionen',
+          status: 'manuell',
+          meldung: 'Außerhalb von Vercel nicht feststellbar. Auf Vercel muss fra1 (Frankfurt) eingestellt sein.',
+          ort: 'vercel.json › regions; Vercel › Projekt › Settings › Functions',
+          aufwand: '2 min',
+        },
+  );
+  const adresse = oeffentlicheAdresse(env);
+  const host = hostVon(adresse);
+  neu({
+    id: 'auslieferung.https',
+    bereich: 'auslieferung',
+    titel: 'Öffentliche Adresse mit HTTPS',
+    status: adresse.startsWith('https://') ? 'ok' : produktion ? 'fehler' : 'hinweis',
+    meldung: adresse.startsWith('https://') ? `Adresse: ${adresse}` : `Die Adresse ${adresse} ist nicht https.`,
+    ort: 'APP_URL (Vercel › Environment Variables)',
+    aufwand: '5 min',
+  });
+  if (produktion) {
+    neu({
+      id: 'auslieferung.domain',
+      bereich: 'auslieferung',
+      titel: 'Eigene Domain',
+      status: host && !VERCEL_DOMAIN.test(host) ? 'ok' : 'warnung',
+      meldung:
+        host && !VERCEL_DOMAIN.test(host) ? `Domain ${host} ist eingetragen.` : 'Die Produktion läuft noch unter einer vercel.app-Adresse.',
+      ort: 'Vercel › Projekt › Settings › Domains (docs/deploy/VERCEL.md, Schritt Domain)',
+      aufwand: '15 min + DNS-Wartezeit',
+    });
+  }
+  neu({
+    id: 'auslieferung.schutz',
+    bereich: 'auslieferung',
+    titel: 'Vorschauen geschützt',
+    status: 'manuell',
+    meldung: 'Vercel Authentication für Vorschauen einschalten und den teilbaren Link für den Vorstand anlegen.',
+    ort: 'Vercel › Projekt › Settings › Deployment Protection',
+    aufwand: '5 min',
+  });
+  if (betriebsart === 'vorschau') {
+    neu({
+      id: 'auslieferung.vorschau-datenbank',
+      bereich: 'auslieferung',
+      titel: 'Vorschau mit eigener Datenbank',
+      status: 'manuell',
+      meldung:
+        'Vorschauen dürfen nie die Produktionsdatenbank nutzen: DATABASE_URL im Bereich „Preview“ muss auf einen Neon-Branch zeigen.',
+      ort: 'Vercel › Projekt › Storage (Neon-Integration) und Environment Variables › Preview',
+      aufwand: '10 min',
+    });
+  }
+
+  // 3. Datenbank: Verbindung und Migrationsstand
+  if (!db) {
+    neu({
+      id: 'datenbank.verbindung',
+      bereich: 'datenbank',
+      titel: 'Datenbank',
+      status: produktion ? 'fehler' : 'hinweis',
+      meldung: 'Keine Datenbank verbunden (DATABASE_URL fehlt) – Datenbank- und Inhaltsprüfungen entfallen.',
+      ort: 'Vercel › Storage › Neon (Frankfurt), docs/deploy/VERCEL.md',
+      aufwand: '15 min',
+    });
+  } else {
+    await datenbankPruefen(db, neu, produktion);
+  }
+
+  // 4. Mail-DNS (SPF, DMARC) der Absender-Domain
+  const absenderDomain = /@([^>\s]+)>?\s*$/.exec(env.MAIL_ABSENDER ?? '')?.[1];
+  if (produktion && absenderDomain && kontext.dnsPruefen !== false) {
+    neu(await mailDnsPruefen(absenderDomain));
+  } else if (produktion) {
+    neu({
+      id: 'mail.dns',
+      bereich: 'mail',
+      titel: 'SPF, DKIM und DMARC',
+      status: 'manuell',
+      meldung: 'Für die Absender-Domain SPF-, DKIM- und DMARC-Einträge setzen (Werte vom Mailanbieter).',
+      ort: 'DNS-Verwaltung der Domain (docs/deploy/VERCEL.md, Schritt E-Mail)',
+      aufwand: '20 min',
+    });
+  }
+
+  const zaehler: Record<Status, number> = { ok: 0, hinweis: 0, warnung: 0, fehler: 0, manuell: 0 };
+  for (const p of pruefungen) zaehler[p.status]++;
+  return { betriebsart, zeitpunkt: (kontext.jetzt ?? new Date()).toISOString(), pruefungen, zaehler, startklar: zaehler.fehler === 0 };
+}
+
+async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produktion: boolean) {
+  try {
+    await db.execute(sql`select 1`);
+    neu({ id: 'datenbank.verbindung', bereich: 'datenbank', titel: 'Datenbank', status: 'ok', meldung: 'Die Datenbank antwortet.' });
+  } catch {
+    neu({
+      id: 'datenbank.verbindung',
+      bereich: 'datenbank',
+      titel: 'Datenbank',
+      status: 'fehler',
+      meldung: 'Die Datenbank antwortet nicht. DATABASE_URL, Region und Freigaben prüfen.',
+      ort: 'Vercel › Storage › Neon',
+      aufwand: '15 min',
+    });
+    return;
+  }
+
+  const erwartet = journal.entries.length;
+  let angewendet = 0;
+  try {
+    const ergebnis = await db.execute(sql`select count(*)::int as anzahl from drizzle.__drizzle_migrations`);
+    angewendet = Number((ergebnis as unknown as { rows: { anzahl: number }[] }).rows?.[0]?.anzahl ?? 0);
+  } catch {
+    angewendet = 0;
+  }
+  neu({
+    id: 'datenbank.migrationen',
+    bereich: 'datenbank',
+    titel: 'Migrationen',
+    status: angewendet >= erwartet ? 'ok' : 'fehler',
+    meldung:
+      angewendet >= erwartet
+        ? `Alle ${erwartet} Migrationen sind angewendet.`
+        : `${angewendet} von ${erwartet} Migrationen angewendet. Ein neuer Bau auf Vercel migriert automatisch (ADR 0019).`,
+    ort: 'Vercel › Deployments › Redeploy',
+    aufwand: '5 min',
+  });
+
+  const allgemein = await einstellung(db, 'allgemein');
+  const konzepthinweis = (allgemein as { konzepthinweis?: boolean } | null)?.konzepthinweis ?? true;
+  neu({
+    id: 'inhalte.konzepthinweis',
+    bereich: 'inhalte',
+    titel: 'Hinweis „Konzept-Website“',
+    status: konzepthinweis ? (produktion ? 'fehler' : 'warnung') : 'ok',
+    meldung: konzepthinweis
+      ? 'Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher.'
+      : 'Der Konzept-Hinweis ist ausgeschaltet.',
+    ort: 'Einstellung „allgemein.konzepthinweis“ (MENSCHEN ML-03)',
+    aufwand: '5 min',
+  });
+
+  const gebetszeiten = await einstellung(db, 'gebetszeiten');
+  const bestaetigt = (gebetszeiten as { bestaetigt?: boolean } | null)?.bestaetigt ?? false;
+  neu({
+    id: 'inhalte.gebetszeiten',
+    bereich: 'inhalte',
+    titel: 'Gebetszeiten bestätigt',
+    status: bestaetigt ? 'ok' : 'warnung',
+    meldung: bestaetigt
+      ? 'Die Gebetszeiten sind bestätigt.'
+      : 'Die Gebetszeiten sind berechnet und noch nicht bestätigt (Hinweis „berechnet“ auf jeder Seite).',
+    ort: 'Verwaltung › Gebetszeiten',
+    aufwand: '15 min',
+  });
+
+  const beispiele = await beispielInhalte(db);
+  neu({
+    id: 'inhalte.beispiele',
+    bereich: 'inhalte',
+    titel: 'Beispielinhalte',
+    status: beispiele === 0 ? 'ok' : produktion ? 'warnung' : 'hinweis',
+    meldung:
+      beispiele === 0
+        ? 'Keine Beispielinhalte mehr veröffentlicht.'
+        : `${beispiele} Beispielinhalte (Veranstaltungen, Nachrichten, Seiten) sind noch vorhanden.`,
+    ort: 'Verwaltung › Veranstaltungen, Neuigkeiten, Seiteninhalte',
+    aufwand: '1–3 h',
+  });
+
+  for (const bereich of ['impressum', 'datenschutz'] as const) {
+    const [zeile] = await db
+      .select({ inhalt: schema.seiteninhalt.inhalt })
+      .from(schema.seiteninhalt)
+      .where(eq(schema.seiteninhalt.bereich, bereich))
+      .limit(1);
+    const text = JSON.stringify(zeile?.inhalt ?? '');
+    const platzhalter = !zeile || /\[[^\]]{2,}\]/.test(text);
+    neu({
+      id: `recht.${bereich}`,
+      bereich: 'recht',
+      titel: bereich === 'impressum' ? 'Impressum' : 'Datenschutzerklärung',
+      status: platzhalter ? (produktion ? 'fehler' : 'warnung') : 'ok',
+      meldung: platzhalter ? 'Enthält noch Platzhalter in eckigen Klammern oder fehlt.' : 'Ohne Platzhalter.',
+      ort: `Verwaltung › Seiteninhalte › ${bereich === 'impressum' ? 'Impressum' : 'Datenschutz'} (fachliche Prüfung: MENSCHEN.md)`,
+      aufwand: '30 min',
+    });
+  }
+}
+
+async function einstellung(db: Datenbank, schluessel: string): Promise<unknown> {
+  const [zeile] = await db
+    .select({ wert: schema.einstellung.wert })
+    .from(schema.einstellung)
+    .where(eq(schema.einstellung.schluessel, schluessel))
+    .limit(1);
+  return zeile?.wert ?? null;
+}
+
+async function beispielInhalte(db: Datenbank): Promise<number> {
+  const zaehle = async (tabelle: typeof schema.veranstaltung | typeof schema.nachricht | typeof schema.seiteninhalt) => {
+    const [z] = await db.select({ anzahl: count() }).from(tabelle).where(eq(tabelle.istBeispiel, true));
+    return Number(z?.anzahl ?? 0);
+  };
+  const [a, b, c] = await Promise.all([zaehle(schema.veranstaltung), zaehle(schema.nachricht), zaehle(schema.seiteninhalt)]);
+  return a + b + c;
+}
+
+async function mailDnsPruefen(domain: string): Promise<Pruefung> {
+  const txt = async (name: string) => {
+    try {
+      return (await Promise.race([resolveTxt(name), new Promise<never>((_, nein) => setTimeout(() => nein(new Error('Zeit')), 3000))])).map(
+        (t) => t.join(''),
+      );
+    } catch {
+      return [];
+    }
+  };
+  const [spf, dmarc] = await Promise.all([txt(domain), txt(`_dmarc.${domain}`)]);
+  const hatSpf = spf.some((t) => t.startsWith('v=spf1'));
+  const hatDmarc = dmarc.some((t) => t.startsWith('v=DMARC1'));
+  const fehlt = [!hatSpf && 'SPF', !hatDmarc && 'DMARC'].filter(Boolean).join(' und ');
+  return {
+    id: 'mail.dns',
+    bereich: 'mail',
+    titel: 'SPF, DKIM und DMARC',
+    status: fehlt ? 'warnung' : 'ok',
+    meldung: fehlt
+      ? `Für ${domain} fehlt ${fehlt}. DKIM bitte beim Mailanbieter prüfen.`
+      : `SPF und DMARC für ${domain} gefunden; DKIM beim Mailanbieter prüfen.`,
+    ort: 'DNS-Verwaltung der Domain (docs/deploy/VERCEL.md, Schritt E-Mail)',
+    aufwand: '20 min',
+  };
+}
+
+function hostVon(adresse: string): string | null {
+  try {
+    return new URL(adresse).hostname;
+  } catch {
+    return null;
+  }
+}
