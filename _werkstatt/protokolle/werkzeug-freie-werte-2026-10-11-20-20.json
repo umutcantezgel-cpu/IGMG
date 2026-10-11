@@ -1,0 +1,56 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-20",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/vorstand/page.tsx",
+    "web/src/components/website/PersonCard.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 6
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/(website)/vorstand/page.tsx",
+      "zeile": 44,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[62ch]",
+      "zeileText": "<p className=\"max-w-[62ch] text-20 text-tinte-2\">{t('aktuellText')}</p>"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/vorstand/page.tsx",
+      "zeile": 47,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/vorstand/page.tsx",
+      "zeile": 82,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))]",
+      "zeileText": "<ol className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] items-start gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/PersonCard.tsx",
+      "zeile": 105,
+      "art": "Tailwind-Klammerwert",
+      "fund": "list-[circle]",
+      "zeileText": "<ul className={cn('flex flex-col gap-1 pl-5 text-16 leading-normal', variante === 'leader' ? 'list-[circle]' : 'list-disc')}>"
+    },
+    {
+      "datei": "web/src/components/website/PersonCard.tsx",
+      "zeile": 120,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "className=\"flex min-h-12 items-center gap-2 [overflow-wrap:anywhere] text-gruen-700 underline underline-offset-[3px]\""
+    },
+    {
+      "datei": "web/src/components/website/PersonCard.tsx",
+      "zeile": 120,
+      "art": "Tailwind-Klammerwert",
+      "fund": "underline-offset-[3px]",
+      "zeileText": "className=\"flex min-h-12 items-center gap-2 [overflow-wrap:anywhere] text-gruen-700 underline underline-offset-[3px]\""
+    }
+  ]
+}

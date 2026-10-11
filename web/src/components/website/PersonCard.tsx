@@ -1,4 +1,4 @@
-import { Award, Building2, Calendar, Mail, Phone, UserRound } from 'lucide-react';
+import { Award, Building2, Mail, Phone, UserRound } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import type { Sprache } from '@/lib/i18n/inhalt';
@@ -38,9 +38,31 @@ function initialen(name: string): string | null {
 }
 
 /**
+ * Jahresmarke der Chronik (Formsystem K-008): 2-px-Strich mit Punkt, Farbe `currentColor`, dekorativ.
+ * Kennzeichnet je Karte den Zeitraum als Schritt einer Folge; keine Bewegung (Register K-007 sieht keine vor).
+ */
+function Jahresmarke() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className="size-6 shrink-0"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 12h13" />
+      <circle cx="19" cy="12" r="3" fill="currentColor" />
+    </svg>
+  );
+}
+
+/**
  * Karte einer Person (design/PersonCard.dc.html, Blatt C10). Varianten: board (Aufgabenbereiche) und leader
  * (Errungenschaften in der Chronik). Kein Foto: Initialen oder Personensymbol als Ersatz (K-11: Icons aria-hidden).
- * Server-Komponente ohne Interaktion außer dem Mail-Link.
+ * Server-Komponente ohne Interaktion außer dem Mail-Link; die Karte selbst ist nicht verlinkt und hat darum keinen Hover.
  */
 export async function PersonCard({ person, variante, sprache }: { person: PersonKarte; variante: 'board' | 'leader'; sprache: Sprache }) {
   const t = await getTranslations('personCard');
@@ -68,22 +90,22 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
         </span>
         <div className="flex min-w-0 flex-col gap-1">
           <h3 className="text-24 leading-tight font-semibold break-words">{person.name}</h3>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {person.aktuell ? (
-              <span className="inline-flex rounded-pill bg-gruen-700 px-2.5 text-16 leading-normal font-bold text-weiss">
+              <span className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
                 {t('aktuell')}
               </span>
             ) : null}
             {rolle ? (
               <span
                 lang={rollenSprache}
-                className="inline-flex rounded-pill bg-gruen-50 px-2.5 text-16 leading-normal font-bold text-gruen-800"
+                className="inline-flex rounded-pill bg-gruen-50 px-3 py-0.5 text-16 leading-normal font-bold text-gruen-800"
               >
                 {rolle}
               </span>
             ) : null}
             {person.seit ? (
-              <span className="inline-flex rounded-pill border border-linie bg-sand px-2.5 text-16 leading-normal font-bold text-tinte-2">
+              <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 leading-normal font-bold text-tinte-2">
                 {t('seit', { jahr: person.seit })}
               </span>
             ) : null}
@@ -91,8 +113,8 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
         </div>
       </div>
       {person.zeitraum ? (
-        <div className="flex items-center gap-2 font-bold text-gruen-800">
-          <Calendar aria-hidden className="size-5 shrink-0" />
+        <div className="flex items-center gap-3 text-20 font-bold text-gruen-800">
+          <Jahresmarke />
           <span>{person.zeitraum}</span>
         </div>
       ) : null}
@@ -102,7 +124,7 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
             <ListenIcon aria-hidden className="size-4 shrink-0" />
             {variante === 'leader' ? t('errungenschaften') : t('aufgaben')}
           </h4>
-          <ul className={cn('flex flex-col gap-1 pl-5 text-16 leading-normal', variante === 'leader' ? 'list-[circle]' : 'list-disc')}>
+          <ul className="flex list-disc flex-col gap-1 pl-5 text-16 leading-normal">
             {eintraege.map((e, i) => (
               <li key={i} lang={e.lang}>
                 {e.text}
@@ -117,7 +139,7 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
           <a
             href={`mailto:${person.email}`}
             aria-label={`${person.email}: ${person.name}`}
-            className="flex min-h-12 items-center gap-2 [overflow-wrap:anywhere] text-gruen-700 underline underline-offset-[3px]"
+            className="flex min-h-12 items-center gap-2 wrap-anywhere text-gruen-700 underline underline-offset-3"
           >
             <Mail aria-hidden className="size-4 shrink-0" />
             {person.email}

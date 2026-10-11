@@ -33,6 +33,8 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 | F-23 | iCal-Abo je Organisation: gültiger Kalender, Zeiten | /api/ical/… | nicht erfüllt | nicht erfüllt |
 | F-24 | Konzept-Hinweis: erster Besuch, schließen, nicht wieder | frischer Kontext; schließen; neu laden | erfüllt | erfüllt |
 
+> **Nicht maßgeblich in diesen Punkten (Befund des Prüfers):** Der gemeinsame Routen-Cache des eingefrorenen Ordners `basis-standalone` wurde ab 19:46 durch Testinstanzen verändert (Liste: `E0-PRUEFER-03-routen-cache-verfaelscht.txt`). Dadurch zeigt dieser Lauf gegen 3100 bei **F-06** das Formular mit dem verschobenen Termin (Status „erfüllt“ ist verfälscht; sauber: „nicht prüfbar“, siehe Ersatzmessung auf bereinigter Kopie, Protokoll `…-sauber-3700`), bei **F-01** und **F-05** Zählwerte von 6 statt 5 (Status unverändert), bei **F-23** die Uhrzeit der Seite 16:30 statt 13:30 (Status „nicht erfüllt“ bleibt, Vergleich mit der sauberen Messung).
+
 ## Einzelbefunde
 
 ### F-01 · Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten

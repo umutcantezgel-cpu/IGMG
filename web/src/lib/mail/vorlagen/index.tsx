@@ -1,6 +1,6 @@
 import { render } from '@react-email/render';
 import { MAILFARBE as F } from './farben';
-import { hintergrund, MailRahmen, SCHRIFT_TEXT } from './Rahmen';
+import { hintergrund, MailRahmen, type MailStil, SCHRIFT_TEXT } from './Rahmen';
 
 /**
  * Mailvorlagen (ADR 0005, ADR 0011). Texte kommen fertig übersetzt herein (createTranslator im Ausgang).
@@ -18,9 +18,25 @@ function vorschau(text: string): string {
   return satz.slice(0, 140).replace(/\s\S*$/, '');
 }
 
+/** Stil des Knopfs: der Link trägt den Innenabstand (Outlook über mso-padding-alt); Höhe 14 + 20 + 14 px = 48 px. */
+const KNOPF: MailStil = {
+  display: 'inline-block',
+  boxSizing: 'border-box',
+  minHeight: '48px',
+  padding: '14px 24px',
+  borderRadius: '8px',
+  background: F.gruen,
+  color: F.weiss,
+  fontFamily: SCHRIFT_TEXT,
+  fontSize: '16px',
+  fontWeight: 700,
+  lineHeight: '20px',
+  textDecoration: 'none',
+  msoPaddingAlt: '14px 24px',
+};
+
 /**
- * Knopf „kugelsicher“: eine Tabellenzelle mit Hintergrund; der Link trägt den Innenabstand (Outlook über mso-padding-alt).
- * Höhe: 14 + 20 + 14 px = 48 px (Mindesthöhe). Darunter steht der Link als Text; die Textfassung nennt ihn nur über den Knopf.
+ * Knopf „kugelsicher“: eine Tabellenzelle mit Hintergrund. Darunter steht der Link als Text; die Textfassung nennt ihn nur über den Knopf.
  */
 function KnopfMitLink({ link, text }: { link: string; text: string }) {
   return (
@@ -30,24 +46,7 @@ function KnopfMitLink({ link, text }: { link: string; text: string }) {
           <tbody>
             <tr>
               <td style={{ background: F.gruen, borderRadius: '8px' }} {...hintergrund(F.gruen)}>
-                <a
-                  href={link}
-                  style={{
-                    display: 'inline-block',
-                    boxSizing: 'border-box',
-                    minHeight: '48px',
-                    padding: '14px 24px',
-                    borderRadius: '8px',
-                    background: F.gruen,
-                    color: F.weiss,
-                    fontFamily: SCHRIFT_TEXT,
-                    fontSize: '16px',
-                    fontWeight: 700,
-                    lineHeight: '20px',
-                    textDecoration: 'none',
-                    msoPaddingAlt: '14px 24px',
-                  }}
-                >
+                <a href={link} style={KNOPF}>
                   {text}
                 </a>
               </td>
