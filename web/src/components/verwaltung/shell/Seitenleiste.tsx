@@ -2,6 +2,7 @@
 
 import {
   CalendarDays,
+  ClipboardCheck,
   Clock,
   FileText,
   GraduationCap,
@@ -40,6 +41,7 @@ const ICONS: Record<ModulIcon, typeof Menu> = {
   benutzer: Users,
   audit: ScrollText,
   styleguide: Palette,
+  startklar: ClipboardCheck,
   einstellungen: Settings,
 };
 

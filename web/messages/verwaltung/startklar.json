@@ -1,0 +1,61 @@
+{
+  "startklar": {
+    "titel": "Startklar-Cockpit",
+    "einleitung": "Hier sehen Sie, was vor dem Livegang noch fehlt. Jede Zeile nennt, wo Sie es beheben, und wie viel Zeit es ungefähr braucht. Punkte, die das System nicht selbst prüfen kann, stehen als „Von Hand prüfen“.",
+    "gesamt": {
+      "startklar": "Startklar",
+      "nochNicht": "Noch nicht startklar",
+      "fehlerText": "{anzahl, plural, one {Ein Punkt hat einen Fehler. Er muss vor dem Livegang behoben werden.} other {# Punkte haben einen Fehler. Sie müssen vor dem Livegang behoben werden.}}",
+      "startklarText": "Es gibt keinen Fehler mehr. {anzahl, plural, =0 {Es bleibt nichts offen.} one {Ein Punkt bleibt offen: eine Warnung oder eine Prüfung von Hand.} other {# Punkte bleiben offen: Warnungen oder Prüfungen von Hand.}}"
+    },
+    "status": {
+      "fehler": "Fehler",
+      "warnung": "Warnung",
+      "manuell": "Von Hand prüfen",
+      "hinweis": "Hinweis",
+      "ok": "Erledigt"
+    },
+    "betriebsart": {
+      "titel": "Betriebsart",
+      "entwicklung": "Entwicklung",
+      "vorschau": "Vorschau",
+      "produktion": "Produktion (Live)"
+    },
+    "zeile": "Betriebsart: {art}. Stand: {zeit}.",
+    "erneutPruefen": "Erneut prüfen",
+    "erneutLaeuft": "Wird geprüft …",
+    "bereiche": {
+      "umgebung": "Umgebung",
+      "auslieferung": "Auslieferung",
+      "datenbank": "Datenbank",
+      "inhalte": "Inhalte",
+      "recht": "Recht",
+      "mail": "E-Mail"
+    },
+    "bereichTexte": {
+      "umgebung": "Einstellungen des Servers, zum Beispiel Schlüssel und Adressen.",
+      "auslieferung": "Wo und wie die Website im Netz erreichbar ist.",
+      "datenbank": "Wo die Inhalte und Konten gespeichert werden.",
+      "inhalte": "Was Besucherinnen und Besucher auf der Website sehen.",
+      "recht": "Impressum und Datenschutzerklärung.",
+      "mail": "Der Versand von E-Mails an Besucherinnen und Besucher sowie an die Verwaltung."
+    },
+    "offenLeer": "In diesem Bereich ist nichts mehr offen.",
+    "erledigt": "Erledigt ({anzahl})",
+    "wo": "Wo:",
+    "aufwand": "Aufwand:",
+    "konzept": {
+      "einschalten": "Hinweis einschalten",
+      "ausschalten": "Hinweis ausschalten",
+      "laeuft": "Wird gespeichert …",
+      "eingeschaltet": "Der Konzept-Hinweis ist wieder eingeschaltet.",
+      "ausgeschaltet": "Der Konzept-Hinweis ist ausgeschaltet und erscheint nicht mehr.",
+      "fehler": "Der Hinweis konnte nicht geändert werden. Bitte versuchen Sie es noch einmal.",
+      "keinRecht": "Für diese Änderung fehlt Ihnen das Recht „Einstellungen bearbeiten“."
+    },
+    "fussnote": {
+      "kommandozeile": "Diese Prüfungen laufen auch auf der Kommandozeile: pnpm startklar",
+      "anleitung": "Die Schritte, die Menschen erledigen, stehen in docs/deploy/VERCEL.md und in docs/GO-LIVE.md."
+    }
+  }
+}

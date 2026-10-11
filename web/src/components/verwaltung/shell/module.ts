@@ -20,6 +20,7 @@ export type ModulSchluessel =
   | 'benutzer'
   | 'audit'
   | 'styleguide'
+  | 'startklar'
   | 'einstellungen';
 export type ModulIcon = ModulSchluessel;
 
@@ -64,6 +65,7 @@ export const MODULE: readonly Modul[] = [
   { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true },
   { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true },
   { schluessel: 'styleguide', pfad: '/verwaltung/styleguide', recht: 'styleguide.lesen', icon: 'styleguide', gebaut: true },
+  { schluessel: 'startklar', pfad: '/verwaltung/startklar', recht: 'einstellung.bearbeiten', icon: 'startklar', gebaut: true },
   { schluessel: 'einstellungen', pfad: '/verwaltung/einstellungen', recht: 'einstellung.bearbeiten', icon: 'einstellungen', gebaut: true },
 ];
 

@@ -823,15 +823,7 @@ function pruefeZusammenhaenge(env: UmgebungsWerte, ba: Betriebsart, melde: Melde
     melde(
       'SPEICHER',
       'fehler',
-      'SPEICHER steht auf dateisystem. Auf Vercel ist das Dateisystem schreibgeschützt, Uploads würden scheitern. SPEICHER=s3 setzen und die S3_*-Werte eintragen (BETRIEB.md 9).',
-    );
-  }
-  if (speicher === 'blob') {
-    // Entfällt, sobald src/lib/storage/index.ts den Blob-Speicher kennt (H-V05)
-    melde(
-      'SPEICHER',
-      vercelBetrieb ? 'fehler' : 'warnung',
-      'SPEICHER=blob ist in der App noch nicht angebunden (src/lib/storage/index.ts kennt nur dateisystem und s3). Bis dahin SPEICHER=s3 setzen.',
+      'SPEICHER steht auf dateisystem. Auf Vercel ist das Dateisystem schreibgeschützt, Uploads würden scheitern. SPEICHER=blob setzen und Vercel Blob (Frankfurt) verbinden (ADR 0020, docs/deploy/VERCEL.md).',
     );
   }
 

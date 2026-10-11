@@ -19,6 +19,7 @@ import benutzer from './benutzer.json';
 import audit from './audit.json';
 import styleguide from './styleguide.json';
 import editor from './editor.json';
+import startklar from './startklar.json';
 import einstellungen from './einstellungen.json';
 import medienwahl from './medienwahl.json';
 
@@ -40,6 +41,7 @@ export const VERWALTUNG: Record<string, Teil> = {
   audit,
   styleguide,
   editor,
+  startklar,
   einstellungen,
   medienwahl,
 };

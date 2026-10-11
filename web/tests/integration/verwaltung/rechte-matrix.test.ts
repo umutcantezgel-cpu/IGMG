@@ -776,6 +776,29 @@ function gebetszeitenFaelle(): Fall[] {
   ];
 }
 
+/** Startklar-Cockpit (V-11, ML-03): Konzept-Hinweis schalten nur mit `einstellung.bearbeiten`. */
+function startklarFaelle(): Fall[] {
+  return [
+    {
+      aktion: 'setzeKonzepthinweis',
+      datei: 'startklar',
+      ziele: OHNE_ZIEL,
+      pruefungen: () => [{ aktion: 'einstellung.bearbeiten' }],
+      abweisung: () => KEIN_RECHT_RUECKGABE,
+      aufbau: async (p) => {
+        await anmelden(p);
+        return {
+          aufruf: async () => (await ladeAktionen()).startklar.setzeKonzepthinweis({}, formular({ konzepthinweis: 'false' })),
+          zustand: () => momentaufnahme(db, [schema.einstellung]),
+          wirkung: async (a) => {
+            expect(rueckgabe(a)).not.toMatchObject({ fehler: 'keinRecht' });
+          },
+        };
+      },
+    },
+  ];
+}
+
 function einstellungenFaelle(): Fall[] {
   return [
     {
@@ -1006,6 +1029,7 @@ const FAELLE: Fall[] = [
   ...seiteninhaltFaelle(),
   ...gebetszeitenFaelle(),
   ...einstellungenFaelle(),
+  ...startklarFaelle(),
   ...benutzerFaelle(),
 ];
 
@@ -1085,6 +1109,7 @@ describe('Vollständigkeit: jede exportierte Server Action ist erfasst', () => {
       ...funktionen('seiteninhalte-organisationen', a.seiteninhalteOrganisationen),
       ...funktionen('gebetszeiten', a.gebetszeiten),
       ...funktionen('einstellungen', a.einstellungen),
+      ...funktionen('startklar', a.startklar),
       ...funktionen('benutzer', a.benutzer),
       ...funktionen('anmeldung', a.anmeldung),
     ].sort();

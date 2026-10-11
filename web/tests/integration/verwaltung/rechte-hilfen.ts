@@ -243,6 +243,7 @@ async function ladeAktionenNeu() {
     seiteninhalteOrganisationen: await import('@/server/actions/seiteninhalte-organisationen'),
     gebetszeiten: await import('@/server/actions/gebetszeiten'),
     einstellungen: await import('@/server/actions/einstellungen'),
+    startklar: await import('@/server/actions/startklar'),
     benutzer: await import('@/server/actions/benutzer'),
     anmeldung: await import('@/server/actions/anmeldung'),
   };

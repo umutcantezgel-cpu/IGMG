@@ -236,9 +236,12 @@ describe('Abhängigkeiten', () => {
     expect(befundeZu({ ...PRODUKTION, BLOB_READ_WRITE_TOKEN: 'token-wert' }, 'BLOB_READ_WRITE_TOKEN', 'hinweis')).toHaveLength(1);
   });
 
-  it('SPEICHER=blob ist in der App noch nicht angebunden', () => {
-    expect(fehlerNamen({ ...PRODUKTION, SPEICHER: 'blob' })).toContain('SPEICHER');
-    expect(befundeZu({ NODE_ENV: 'development', SPEICHER: 'blob' }, 'SPEICHER', 'warnung')).toHaveLength(1);
+  it('SPEICHER=blob ist angebunden (ADR 0020) und braucht nur BLOB_READ_WRITE_TOKEN', () => {
+    expect(
+      fehlerNamen({ ...PRODUKTION, SPEICHER: 'blob', BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_beispiel_beispiel_beispiel' }),
+    ).not.toContain('SPEICHER');
+    expect(fehlerNamen({ ...PRODUKTION, SPEICHER: 'blob', BLOB_READ_WRITE_TOKEN: undefined })).toContain('BLOB_READ_WRITE_TOKEN');
+    expect(befundeZu({ NODE_ENV: 'development', SPEICHER: 'blob' }, 'SPEICHER', 'warnung')).toHaveLength(0);
   });
 });
 
