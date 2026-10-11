@@ -20,30 +20,30 @@ Diese Variablen trägst du selbst ein. Die Werte stehen in Vercel je Bereich (Pr
 
 | Name | Zweck | Pflicht entwicklung | Pflicht vorschau | Pflicht produktion | Bereich auf Vercel | gilt nur wenn | Beispiel | Herkunft | geheim |
 |---|---|---|---|---|---|---|---|---|---|
-| `APP_URL` | Öffentliche Adresse der Website; Grundlage für Links in Mails, Metadaten und Sicherheitsheader | nein | nein | ja | Production, Preview | – | `https://<domain der Gemeinde>` | Von Menschen (Domain, `web/docs/BETRIEB.md` § 2). In der Vorschau leer lassen: Die App nimmt dann die Branch-Adresse aus `VERCEL_BRANCH_URL`. Fehlen beide, ist das ein Fehler (`web/src/lib/umgebung.ts` Zeile 784–794). Muss `https://` sein. | nein |
-| `BETTER_AUTH_URL` | Adresse der Anmeldung (Better Auth); fehlt sie, gilt `APP_URL` | nein | nein | nein | Production, Preview | – | `https://<domain der Gemeinde>` | Von Menschen. Gleich `APP_URL` halten; abweichend ist es eine Warnung (`umgebung.ts` Zeile 804–806). | nein |
+| `APP_URL` | Öffentliche Adresse der Website; Grundlage für Links in Mails, Metadaten und Sicherheitsheader | nein | nein | ja | Production, Preview | – | `https://<domain der Gemeinde>` | Von Menschen (Domain, `web/docs/BETRIEB.md` § 2). In der Vorschau weglassen: Die App nimmt dann die Adresse aus `VERCEL_BRANCH_URL` (`web/src/lib/umgebung.ts`, Funktion `oeffentlicheAdresse`). Fehlt sie in der Produktion, bricht der Start ab (`web/src/instrumentation.ts`, Zeilen 19–20). Fehlen in der Vorschau auch `VERCEL_BRANCH_URL` und `VERCEL_URL`, meldet die Startprüfung einen Fehler (`umgebung.ts`, Funktion `pruefeZusammenhaenge`). Muss `https://` sein. | nein |
+| `BETTER_AUTH_URL` | Adresse der Anmeldung (Better Auth); fehlt sie, gilt die öffentliche Adresse (`APP_URL`, in der Vorschau die Vorschau-Adresse) | nein | nein | nein | Production, Preview | – | `https://<domain der Gemeinde>` | Von Menschen. Gleich `APP_URL` halten; abweichend ist es eine Warnung (`umgebung.ts`, Funktion `pruefeZusammenhaenge`). **Nicht leer anlegen:** `web/src/lib/auth/optionen.ts` (Zeile 12) übernimmt den Wert mit `??`, ein leerer Wert gilt dort als gesetzt (Fund für die Technik). | nein |
 | `SITE_MODE` | Betriebsart: `entwicklung`, `vorschau` oder `produktion`; leer heißt: aus `VERCEL_ENV` bzw. `NODE_ENV` | nein | nein | nein | Production, Preview, Development | – | `vorschau` | Von Menschen je Vercel-Bereich: Vorschau = `vorschau`, Produktion = `produktion` (ADR 0022; AUFTRAG V-03). Fehlt die Variable, meldet die Startprüfung einen Hinweis. | nein |
-| `PROXY_VERTRAUEN` | Vertraut dem vorgeschalteten Proxy, damit Ratenbegrenzungen die echte Besucheradresse sehen (E-041) | nein | ja (Wert `1`) | ja (Wert `1`) | Production, Preview | – | `1` | Von Menschen. Auf Vercel `1`, weil Vercel `X-Forwarded-For` selbst setzt (`web/docs/BETRIEB.md` § 9; `web/.env.example`). | nein |
-| `MAIL_TRANSPORT` | Mailweg: `smtp` (echter Dienst) oder `datei` (nur lokal) | nein | ja | ja | Production, Preview | – | `smtp` | Von Menschen. Im Betrieb immer `smtp`. In der Produktion ohne `SMTP_HOST` bricht der Versand mit einem Fehler ab (`web/src/lib/mail/transport.ts` Zeile 12–20). | nein |
-| `MAIL_ABSENDER` | Absenderadresse der Mails, optional mit Anzeigename | nein | nein | ja | Production, Preview | – | `IGMG Wetzlar <noreply@<domain der Gemeinde>>` | Von Menschen. Die Domain braucht SPF, DKIM und DMARC (ML-10 in `_werkstatt/MENSCHEN.md`). Ohne Angabe nutzt der Code `noreply@example.test` (`web/src/lib/mail/transport.ts` Zeile 35). Eine Platzhalterdomain ist in der Produktion ein Fehler (`umgebung.ts` Zeile 813–819). | nein |
+| `PROXY_VERTRAUEN` | Vertraut dem vorgeschalteten Proxy, damit Ratenbegrenzungen die echte Besucheradresse sehen (E-041) | nein | ja (Wert `1`) | ja (Wert `1`) | Production, Preview | – | `1` | Von Menschen. Auf Vercel `1` (`web/docs/BETRIEB.md` § 9; `web/.env.example`, Zeile 67). Offen: Ob Vercel einen mitgeschickten `X-Real-IP` überschreibt, ist nicht belegt. `web/src/lib/sicherheit/ip.ts` (Funktion `clientAdresse`) nimmt diesen Header zuerst **[prüfen: H-V07, Frage 3]**. | nein |
+| `MAIL_TRANSPORT` | Mailweg: `smtp` (echter Dienst) oder `datei` (nur lokal) | nein | ja | ja | Production, Preview | – | `smtp` | Von Menschen. Im Betrieb immer `smtp`. In der Produktion ohne `SMTP_HOST` bricht der Versand mit einem Fehler ab (`web/src/lib/mail/transport.ts`, Funktion `dateiTransport`). | nein |
+| `MAIL_ABSENDER` | Absenderadresse der Mails, optional mit Anzeigename | nein | nein | ja | Production, Preview | – | `IGMG Wetzlar <noreply@<domain der Gemeinde>>` | Von Menschen. Die Domain braucht SPF, DKIM und DMARC (ML-10 in `_werkstatt/MENSCHEN.md`). Ohne Angabe nutzt der Code `noreply@example.test` (`web/src/lib/mail/transport.ts` Zeile 35). Eine Platzhalterdomain ist in der Produktion ein Fehler (`umgebung.ts`, Funktion `pruefeZusammenhaenge`). | nein |
 | `SMTP_HOST` | Mailserver (SMTP) | nein | ja | ja | Production, Preview | nur bei `MAIL_TRANSPORT=smtp` (im Betrieb immer) | `<smtp-host des Mailanbieters>` | Mailanbieter (ML-10, noch offen). Lokal Mailpit auf `localhost`. | nein |
 | `SMTP_PORT` | Port des Mailservers | nein | nein | nein | Production, Preview | nur bei SMTP | `587` | Mailanbieter: 587 mit STARTTLS, 465 mit TLS. Standard 587. | nein |
 | `SMTP_SECURE` | TLS direkt beim Verbindungsaufbau; `true` nur bei Port 465 | nein | nein | nein | Production, Preview | nur bei SMTP | `false` | Mailanbieter. Wert `true` oder `false`. | nein |
-| `SMTP_USER` | Benutzername für den Mailversand | nein | nein | nein | Production, Preview | nur bei SMTP | `<Benutzername des Postfachs>` | Mailanbieter. Der Code führt diesen Wert nicht als Geheimnis (`umgebung.ts` Zeile 422–435); behandle ihn trotzdem wie ein Zugangsdatum. | nein |
+| `SMTP_USER` | Benutzername für den Mailversand | nein | nein | nein | Production, Preview | nur bei SMTP | `<Benutzername des Postfachs>` | Mailanbieter. Der Code führt diesen Wert nicht als Geheimnis (`umgebung.ts`, Eintrag `SMTP_USER`); behandle ihn trotzdem wie ein Zugangsdatum. | nein |
 | `SMTP_PASS` | Passwort für den Mailversand (mit `SMTP_USER`) | nein | ja | ja | Production, Preview | nur bei SMTP und gesetztem `SMTP_USER` | `<Passwort des Postfachs>` | Mailanbieter; vom Anbieter vergeben, nicht erzeugbar. | ja |
-| `DATABASE_URL` | PostgreSQL-Verbindung für Inhalte, Konten, Eingänge und Audit | nein | ja | ja | Production, Preview | – | `postgres://<nutzer>:<…>@<host>:5432/<datenbank>` | Vercel Marketplace (Neon, Frankfurt, ADR 0018). Die Vorschau nutzt einen eigenen Neon-Zweig und nie die Produktionsdatenbank (AUFTRAG V-04). Zum Bau siehe Abschnitt „Was der Bau braucht“. Verbindung mit Pooler-Adresse und `sslmode=require` (ADR 0018). | ja |
-| `DATABASE_URL_UNPOOLED` | Direkte PostgreSQL-Verbindung ohne Pooler, nur für die Migration im Bau | nein | ja | nein | Production, Preview | nur mit `DATABASE_URL` | `postgres://<nutzer>:<…>@<host ohne -pooler>/<datenbank>` | Vercel Marketplace (Neon) setzt sie zusammen mit `DATABASE_URL`. Die Migrationssperre ist eine Sitzungssperre und braucht eine direkte Verbindung; `web/scripts/migriere-mit-sperre.mjs` nimmt diese Adresse vor `DATABASE_URL` und warnt, wenn nur eine Pooler-Adresse da ist (H-V07/V10). | ja |
-| `SPEICHER` | Ablage der Medien: `dateisystem`, `s3` oder `blob` | nein | nein | nein | Production, Preview | – | `s3` | Von Menschen. Auf Vercel ist das Dateisystem schreibgeschützt; `dateisystem` ist dort ein Fehler der Startprüfung (ADR 0020). **Offene Frage:** Der Code hat einen Blob-Adapter (`web/src/lib/storage/index.ts` Zeile 96 und 124–125). Die Startprüfung meldet `blob` aber als „noch nicht angebunden“ (`umgebung.ts` Zeile 829–835). Die Technik klärt, welcher Stand gilt. | nein |
+| `DATABASE_URL` | PostgreSQL-Verbindung für Inhalte, Konten, Eingänge und Audit | nein | ja | ja | Production, Preview | – | `postgres://<nutzer>:<…>@<pooler-host mit -pooler>/<datenbank>?sslmode=require` | Vercel Marketplace (Neon, Frankfurt, ADR 0018). Die Vorschau nutzt einen eigenen Neon-Zweig und nie die Produktionsdatenbank (AUFTRAG V-04). Pooler-Adresse mit `-pooler` und `sslmode=require` (ADR 0018). Für die Migration zusätzlich `DATABASE_URL_UNPOOLED` (ADR 0019, Nachtrag). Zum Bau siehe Abschnitt „Was der Bau braucht“. | ja |
+| `DATABASE_URL_UNPOOLED` | Direkte PostgreSQL-Verbindung ohne Pooler, nur für die Migration im Bau | nein | nein | nein | Production, Preview | nur mit `DATABASE_URL` (nie Pflicht) | `postgres://<nutzer>:<…>@<host ohne -pooler>/<datenbank>` | Vercel Marketplace (Neon) setzt sie nach ADR 0019 (Nachtrag) zusammen mit `DATABASE_URL` **[prüfen: ob die Integration das tut]**. Die Migrationssperre ist eine Sitzungssperre und braucht eine direkte Verbindung; `web/scripts/migriere-mit-sperre.mjs` nimmt diese Adresse vor `DATABASE_URL` und warnt, wenn nur eine Pooler-Adresse da ist. | ja |
+| `SPEICHER` | Ablage der Medien: `dateisystem`, `s3` oder `blob` | nein | nein | nein | Production, Preview | – | `blob` | Von Menschen. Auf Vercel `blob` (ADR 0020; `web/docs/BETRIEB.md` § 9). Das Dateisystem ist dort schreibgeschützt; `dateisystem` ist auf Vercel ein Fehler der Startprüfung (`umgebung.ts`, Funktion `pruefeZusammenhaenge`). Der Blob-Adapter ist angebunden (`web/src/lib/storage/index.ts`, Klasse `BlobSpeicher`, Auswahl über `SPEICHER=blob`). `s3` bleibt eine Alternative (ADR 0020, Umkehrprobe). | nein |
 | `S3_ENDPUNKT` | Adresse eines S3-kompatiblen Speichers (außer AWS) | nein | nein | nein | Production, Preview | nur bei `SPEICHER=s3` | `https://<endpunkt des Speicheranbieters>` | Speicheranbieter. Bei AWS leer lassen. | nein |
 | `S3_REGION` | Region des Speichers; Standard `eu-central-1` (Frankfurt) | nein | nein | nein | Production, Preview | nur bei `SPEICHER=s3` | `eu-central-1` | Speicheranbieter. | nein |
 | `S3_BUCKET` | Name des Speicher-Buckets für die Medien | nein | ja | ja | Production, Preview | nur bei `SPEICHER=s3` | `<bucket-name>` | Speicheranbieter; Bucket in der EU. | nein |
 | `S3_ZUGANG` | Zugangsschlüssel (Kennung) für den Speicher | nein | ja | ja | Production, Preview | nur bei `SPEICHER=s3` | `<Zugangsschlüssel-Kennung>` | Speicheranbieter; vom Anbieter vergeben, nicht erzeugbar. | ja |
 | `S3_GEHEIMNIS` | Geheimer Zugangsschlüssel für den Speicher | nein | ja | ja | Production, Preview | nur bei `SPEICHER=s3` | `<geheimer Zugangsschlüssel>` | Speicheranbieter; vom Anbieter vergeben, nicht erzeugbar. | ja |
-| `BLOB_READ_WRITE_TOKEN` | Zugang zu Vercel Blob (`SPEICHER=blob`) | nein | ja | ja | Production, Preview | nur bei `SPEICHER=blob` | `<von Vercel gesetzt>` | Vercel setzt ihn, sobald der Blob-Speicher mit dem Projekt verbunden ist (AUFTRAG V-05; ADR 0020). `vercel blob create-store` verbindet mit `--yes` das Projekt (https://vercel.com/docs/cli/blob). Den Namen des Tokens belegt die Vercel-Doku nicht [prüfen]. Die Region Frankfurt für Blob ist nicht belegt [prüfen]; die CLI nennt als Standard `iad1`. | ja |
+| `BLOB_READ_WRITE_TOKEN` | Zugang zu Vercel Blob (`SPEICHER=blob`) | nein | ja | ja | Production, Preview | nur bei `SPEICHER=blob` | `<von Vercel gesetzt>` | Vercel setzt ihn, sobald der Blob-Speicher mit dem Projekt verbunden ist (AUFTRAG V-05; ADR 0020). Der Name ist der, den das Paket `@vercel/blob` (Version 2.8.0, `web/package.json`) liest. `vercel blob create-store` verbindet mit `--yes` das Projekt (https://vercel.com/docs/cli/blob). Die Vercel-Doku bestätigt den Namen nicht [prüfen]. Die Region Frankfurt für Blob ist nicht belegt [prüfen]; die CLI nennt als Standard `iad1`. | ja |
 
 ## 2. Auf Vercel nicht setzen
 
-Diese Variablen setzt der Docker-Betrieb oder das Bauskript. Auf Vercel würden sie bei jedem Kaltstart einer Instanz etwas tun (`web/docs/BETRIEB.md` § 9). Trage sie nicht ein. Die Startprüfung meldet `1` als Warnung.
+Diese Variablen setzt der Docker-Betrieb oder das Bauskript. Auf Vercel würden sie bei jedem Kaltstart einer Instanz etwas tun (`web/docs/BETRIEB.md` § 9). Trage sie nicht ein. Auf Vercel warnt die Startprüfung, wenn `MIGRATION_BEIM_START` oder `CACHE_ERNEUERN_BEIM_START` den Wert `1` haben (`web/src/lib/umgebung.ts`, Funktion `pruefeZusammenhaenge`).
 
 | Name | Zweck | Pflicht entwicklung | Pflicht vorschau | Pflicht produktion | Bereich auf Vercel | gilt nur wenn | Beispiel | Herkunft | geheim |
 |---|---|---|---|---|---|---|---|---|---|
@@ -58,7 +58,7 @@ Diese Variablen setzt Vercel selbst. Trage sie nie von Hand ein (`web/.env.examp
 
 | Name | Zweck | Pflicht entwicklung | Pflicht vorschau | Pflicht produktion | Bereich auf Vercel | gilt nur wenn | Beispiel | Herkunft | geheim |
 |---|---|---|---|---|---|---|---|---|---|
-| `VERCEL` | Kennzeichen, dass die App auf Vercel läuft | nein | nein | nein | Production, Preview, Development | – | `1` | Vercel setzt sie automatisch. Die App prüft `VERCEL=1` für `CRON_SECRET` und Datenbank-Pool (`web/src/lib/db/index.ts` Zeile 42). | nein |
+| `VERCEL` | Kennzeichen, dass die App auf Vercel läuft | nein | nein | nein | Production, Preview, Development | – | `1` | Vercel setzt sie automatisch. Die App prüft `VERCEL=1` für den Datenbank-Pool (`web/src/lib/db/index.ts`, Funktion `neuerPool`) und für `CRON_SECRET` (`umgebung.ts`). | nein |
 | `VERCEL_ENV` | Vercel-Bereich des Deployments; Grundlage der Betriebsart | nein | nein | nein | Production, Preview, Development | – | `production` | Vercel setzt `production`, `preview` oder `development`. Die Betriebsart folgt daraus, wenn `SITE_MODE` leer ist (ADR 0022). | nein |
 | `VERCEL_URL` | Adresse dieses Deployments, ohne `https://` | nein | nein | nein | Production, Preview, Development | – | `<deployment>.vercel.app` | Vercel setzt sie automatisch. Ohne Protokoll: Die Vercel-Doku beschreibt das für die verwandte Variable `REACT_APP_VERCEL_URL` (https://vercel.com/docs/llms-full.txt). | nein |
 | `VERCEL_BRANCH_URL` | Adresse des Branch-Deployments, ohne `https://`; Grundlage der Vorschau-Adresse | nein | nein | nein | Production, Preview, Development | – | `<branch>-<projekt>.vercel.app` | Vercel setzt sie automatisch. Die App nutzt sie in der Vorschau, wenn `APP_URL` fehlt (ADR 0022). | nein |
@@ -66,7 +66,7 @@ Diese Variablen setzt Vercel selbst. Trage sie nie von Hand ein (`web/.env.examp
 
 **Zusätzlich, nicht in der Liste `VARIABLEN`:**
 
-- `VERCEL_REGION` setzt Vercel für laufende Funktionen. Die App liest sie nicht. Vercel nennt sie als Systemvariable (https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package, `getEnv()`).
+- `VERCEL_REGION` setzt Vercel für laufende Funktionen. Die Startklar-Prüfung liest sie, um die Region der Funktionen zu melden (`web/src/lib/startklar/pruefungen.ts`, Abschnitt „Auslieferung“). Vercel nennt sie als Systemvariable (https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package, `getEnv()`).
 - `VERCEL_GIT_COMMIT_MESSAGE` liest `web/scripts/vercel-ignore.mjs`, damit Zwischenstände ohne Vorschau-Bau bleiben (`web/docs/BETRIEB.md` § 9). Die Liste `VARIABLEN` nennt sie nicht. **Hinweis an die Technik:** Entscheide, ob die Liste sie aufnehmen soll.
 
 ## 4. Nur Docker oder lokal
@@ -115,32 +115,33 @@ Das Skript `web/scripts/geheimnisse-erzeugen.mjs` erzeugt die Werte aus einer si
 
 **Prüfpunkt:** Alle Namen aus diesem Dokument stehen in Vercel. Die Werte sind verdeckt.
 
-**Hinweis:** `pnpm geheimnisse:pruefen` gibt es laut `web/package.json`. Was es genau prüft, ist hier nicht belegt [prüfen].
+**Hinweis:** `pnpm geheimnisse:pruefen` prüft alle Dateien im Git-Index auf Geheimnis- und Datenschutzmuster und auf E-Mail-Domains. Bei einem Treffer bricht es mit Fehlercode 1 ab. Es nennt Datei, Zeile und Musterart, nicht den Treffer selbst (`web/scripts/geheimnis-pruefung.mjs`, Modus `--alles`).
 
 ## 7. Was der Bau braucht
 
 Vercel führt bei jedem Deployment das Skript `vercel-build` aus. Die Datei `web/package.json` (Zeile 8) zeigt auf `node scripts/vercel-bau.mjs` (ADR 0019).
 
-- **Mit `DATABASE_URL` der Umgebung:** Das Skript führt zuerst die Migration unter einer Sperre aus (`web/scripts/migriere-mit-sperre.mjs`, `pg_advisory_lock`). Danach baut es die App gegen diese Datenbank. Die vorgerenderten Seiten zeigen dann sofort die echten Inhalte dieser Umgebung.
+- **Mit `DATABASE_URL` der Umgebung:** Das Skript führt zuerst die Migration unter einer Sperre aus (`web/scripts/migriere-mit-sperre.mjs`, `pg_advisory_lock`). Die Migration nimmt `DATABASE_URL_UNPOOLED`, falls gesetzt, sonst `DATABASE_URL`. Die Sperre ist eine Sitzungssperre und braucht die direkte Verbindung (ADR 0019, Nachtrag). Danach baut es die App gegen diese Datenbank. Die vorgerenderten Seiten zeigen dann sofort die echten Inhalte dieser Umgebung.
 - **Ohne `DATABASE_URL`:** Das Skript warnt im Bauprotokoll und baut mit Beispielinhalten aus einer Bau-Datenbank (ADR 0017). Setzt das Skript `BAU_PGLITE` selbst; du trägst nichts ein.
-- **Was du trägst:** `DATABASE_URL` im Bereich **Preview** (der Neon-Zweig der Vorschau) und im Bereich **Production** (der Produktionszweig). Ohne sie ist die Vorschau mit Beispielinhalten gebaut. Das siehst du im Bauprotokoll.
+- **Was du trägst:** `DATABASE_URL` im Bereich **Preview** (der Neon-Zweig der Vorschau) und im Bereich **Production** (der Produktionszweig). Dazu `DATABASE_URL_UNPOOLED` in beiden Bereichen, wenn die Neon-Integration sie setzt **[prüfen]** (Runbook `web/docs/deploy/VERCEL.md`, Abschnitt 2.4). Ohne `DATABASE_URL` ist die Vorschau mit Beispielinhalten gebaut. Das siehst du im Bauprotokoll.
 - **Gute Zeile:** `[bau] Datenbank vorhanden (…)`. **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt`.
 - **Migrationen sind additiv:** erweitern, dann umstellen, dann aufräumen, in getrennten Auslieferungen (ADR 0019).
-- **Abweichung:** `web/docs/deploy/VERCEL.md` (Stand-Tabelle, Abschnitt 5.2 und 8) beschreibt noch den alten Stand von `vercel-build`. Die Datei `web/package.json` zeigt heute auf `scripts/vercel-bau.mjs`. Die Technik gleicht VERCEL.md an.
+- **Stand:** Das Runbook (`web/docs/deploy/VERCEL.md`, Abschnitte 5.2 und 8) nennt denselben Bau. `web/package.json` (Zeile 8) zeigt auf `scripts/vercel-bau.mjs`.
 
 ## 8. Offene Punkte
 
-- **Blob-Adapter:** Der Code hat `BlobSpeicher` (`web/src/lib/storage/index.ts`), die Startprüfung meldet `blob` als nicht angebunden (`web/src/lib/umgebung.ts`). Die Technik entscheidet, welcher Stand gilt [prüfen].
+- **Medien sichern:** Der Blob-Adapter ist angebunden (`web/src/lib/storage/index.ts`). Offen ist die Sicherung der Medien (ML-14 in `_werkstatt/MENSCHEN.md`).
 - **Region Blob:** Frankfurt (`fra1`) für Vercel Blob ist nicht belegt; die CLI nennt `iad1` als Standard (https://vercel.com/docs/cli/blob) [prüfen].
 - **Region Datenbank:** `aws-eu-central-1` laut ADR 0018 ist in der Vercel-Doku nicht belegt. Prüfe die Region im Neon-Dashboard [prüfen].
-- **Cron auf Hobby:** Ob ein täglicher Lauf mit stündlicher Genauigkeit auf dem Hobby-Tarif gilt, ist nicht belegt [prüfen] (AUFTRAG V-06).
+- **Cron auf Hobby:** Ob ein täglicher Lauf mit stündlicher Genauigkeit auf dem Hobby-Tarif gilt, ist nicht belegt [prüfen] (AUFTRAG V-06; Tarif siehe ML-09).
+- **Protokolle und Aufbewahrung:** offen, siehe Runbook Abschnitt 16 und ML-16.
 - **Liste:** `VERCEL_GIT_COMMIT_MESSAGE` fehlt in `VARIABLEN` (siehe Abschnitt 3).
 
 ## Belege
 
 - `web/src/lib/umgebung.ts`: Liste `VARIABLEN`, Prüfregeln, Betriebsart.
 - `web/.env.example`: Vorlage mit Kommentaren zu Vercel-Variablen.
-- `web/docs/adr/0018` bis `0022`: Datenbank, Bau, Medien, Cron, Umgebung.
+- `web/docs/adr/0018` bis `0024`: Datenbank, Bau, Medien, Cron, Umgebung, Auslieferung, Cache.
 - `web/docs/BETRIEB.md` § 2, § 3, § 9.
-- `web/scripts/vercel-bau.mjs`, `web/scripts/geheimnisse-erzeugen.mjs`, `web/scripts/vercel-ignore.mjs`.
+- `web/scripts/vercel-bau.mjs`, `web/scripts/migriere-mit-sperre.mjs`, `web/scripts/geheimnisse-erzeugen.mjs`, `web/scripts/geheimnis-pruefung.mjs`, `web/scripts/vercel-ignore.mjs`.
 - Vercel-Doku (nur gelesen): https://vercel.com/docs/cli/env, https://vercel.com/docs/cli/blob, https://vercel.com/docs/cli/install, https://vercel.com/docs/environment-variables/sensitive-environment-variables, https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package, https://vercel.com/docs/llms-full.txt.

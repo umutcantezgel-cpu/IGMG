@@ -46,11 +46,13 @@ Alle Code-Bausteine für den Livegang sind vorhanden (Stand 2026-10-11, Branch `
 
 | Baustein | Stand | Beleg |
 |---|---|---|
-| `vercel.json` mit Dienst `web`, `regions` (fra1), `crons`, `ignoreCommand` im Dienst | vorhanden, geprüft mit der Konfigurationsprüfung der Vercel CLI | `vercel.json`; ADR 0021 |
+| `vercel.json` (Repository-Wurzel) mit Dienst `web`, `regions` (fra1), `crons`, `ignoreCommand` im Dienst | vorhanden, geprüft mit der Konfigurationsprüfung der Vercel CLI | `/vercel.json`; ADR 0021 |
 | Bau nach ADR 0019 (`vercel-build` → `scripts/vercel-bau.mjs`, Migration unter Sperre) | vorhanden; Vorschau-Bau grün (ohne Datenbank: Warnung im Protokoll) | `web/package.json`; ADR 0019 |
 | Vercel Blob (`SPEICHER=blob`), Bildvarianten, Verkleinern im Browser | vorhanden | `web/src/lib/storage/index.ts`; ADR 0020 |
 | Betriebsart `SITE_MODE`, Umgebungsprüfung beim Start | vorhanden | `web/src/lib/umgebung.ts`, `web/src/instrumentation.ts`; ADR 0022 |
-| `pnpm geheimnisse:erzeugen` | vorhanden | `web/package.json` |
+| `pnpm geheimnisse:erzeugen` | vorhanden | `web/package.json`, Zeile 26 |
+| Crons: Löschfristen 01:00 UTC, Mail-Ausgang 02:00 UTC | vorhanden | `/vercel.json`, Abschnitt `crons`; ADR 0021 |
+| Inhalte im geteilten Cache (`'use cache: remote'`) | vorhanden; Kosten im Tarif **[prüfen]** | `web/src/server/queries/`; ADR 0024 |
 | `noindex` für Vorschauen (robots.txt, `X-Robots-Tag`) | vorhanden | `web/src/app/robots.ts`, `web/src/lib/sicherheit/header.ts` |
 | Startklar-Cockpit (`/verwaltung/startklar`) und `pnpm startklar` | vorhanden | `web/src/lib/startklar/pruefungen.ts` |
 | `docs/deploy/VERCEL-ENV.md` | vorhanden | ADR 0022 |
@@ -69,13 +71,13 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 - **Ort:** Team › Projekt `igmg` › Settings › Functions **[prüfen]**, Bereich „Function Region“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Die Funktionen sollen in `fra1` (Frankfurt) laufen (AUFTRAG V-01). Ohne Angabe nutzt Vercel die Standardregion `iad1` (Washington; AUFTRAG V-01; https://vercel.com/docs/llms-full.txt). Die Konfiguration beschreibt https://vercel.com/docs/functions/configuring-functions/region. Auf dem Hobby-Tarif ist jede einzelne Region erlaubt (https://vercel.com/docs/project-configuration/vercel-ts), also auch `fra1`.
-- **Offen:** Ob die Region im Services-Modus auch über `vercel.json` gilt, ist nicht geklärt **[prüfen]** (`_werkstatt/berichte/E0-KUNDSCHAFTER-06.md`, offene Frage 2). Die Technik trägt `regions` in `vercel.json` nach (V-01).
+- **Offen:** Ob die Region im Services-Modus auch über `vercel.json` gilt, ist nicht geklärt **[prüfen]** (`_werkstatt/berichte/E0-KUNDSCHAFTER-06.md`, offene Frage 2). Im Repository steht `"regions": ["fra1"]` bereits in `/vercel.json` (Zeile 3).
 - **Das siehst du, wenn es geklappt hat:** „fra1“ bzw. Frankfurt steht als Funktionsregion.
 
 **1.3 Node-Version festlegen**
 - **Ort:** Team › Projekt `igmg` › Settings › General **[prüfen]**, Feld „Node.js Version“.
 - **Aufwand:** 1 Minute.
-- **Regel:** Vercel unterstützt eine feste Version wie `24.x` (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). Das Projekt sagt heute `>=24` (`web/package.json` Zeilen 108–109). Die Technik legt die Version nach V-01 fest.
+- **Regel:** Vercel unterstützt eine feste Version wie `24.x` (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). `web/package.json` legt `24.x` bereits fest (Zeile 114, Feld `engines`). Prüfe nur, dass das Feld in Vercel dazu passt.
 - **Das siehst du, wenn es geklappt hat:** `24.x`.
 
 **1.4 Produktionsbranch ist `main`**
@@ -106,6 +108,11 @@ Die Datenbank ist PostgreSQL. Wir nutzen Neon über den Vercel Marketplace. Der 
 - **Wo:** Die Adresse trägst du in Abschnitt 4 als Variable ein, getrennt für Produktion und Vorschau.
 - **Prüfung ohne Geheimnis:** Vergleiche nur den Namen des Zweigs und den Servernamen, nie das Passwort. Der Servername der Produktion und der Vorschau dürfen sich nicht gleichen.
 
+**2.4 Direkte Verbindung für die Migration**
+- **Regel:** Zusätzlich `DATABASE_URL_UNPOOLED`: dieselbe Datenbank, aber ohne `-pooler` im Servernamen. Der Bau nimmt diese Adresse für die Migrationssperre (`web/scripts/migriere-mit-sperre.mjs`). Die Sperre ist eine Sitzungssperre und braucht eine direkte Verbindung (ADR 0019, Nachtrag). Die App selbst bleibt beim Pooler (ADR 0018).
+- **Wo:** Die Neon-Integration setzt sie nach ADR 0019 zusammen mit `DATABASE_URL` **[prüfen: ob die Integration das tut]**. Fehlt sie in Abschnitt 4, trägst du sie wie `DATABASE_URL` ein.
+- **Prüfpunkt:** Das Bauprotokoll zeigt `[migration] Verbindung: direkt (DATABASE_URL_UNPOOLED)`. Die Warnung „Nur eine Pooler-Adresse vorhanden“ darf nicht erscheinen.
+
 ## 3. Dateispeicher in Frankfurt (3 Minuten)
 
 Hochgeladene Bilder brauchen einen Speicher, der nicht auf der Festplatte des Servers liegt. Auf Vercel ist das Dateisystem schreibgeschützt (ADR 0020, Ziel). Der Zielspeicher ist Vercel Blob (ADR 0020, Weg 1).
@@ -121,14 +128,15 @@ Hochgeladene Bilder brauchen einen Speicher, der nicht auf der Festplatte des Se
 - **Regel:** Vercel setzt `BLOB_READ_WRITE_TOKEN` selbst, sobald der Speicher verbunden ist (`web/.env.example` Zeilen 40–41). Du musst den Token nicht eintragen.
 - **Prüfpunkt:** `BLOB_READ_WRITE_TOKEN` steht in den Umgebungsvariablen für Production und Preview.
 
-**3.3 Speicher-Schalter setzen (Vorsicht)**
-- **Ziel:** `SPEICHER=blob` in Production und Preview (ADR 0020, Festlegungen).
-- **Achtung:** `blob` gibt es im Code noch nicht (`web/.env.example` Zeile 56: „noch nicht in der App angebunden“). Auf Vercel gilt `dateisystem` als Fehler der Startprüfung (ADR 0020). **Der Medienupload ist deshalb vor dem Livegang nur betriebsbereit, wenn die Technik den Blob-Adapter eingebaut hat.** Das steht als Blocker in `web/docs/GO-LIVE.md`.
-- **Abweichung:** `web/docs/BETRIEB.md` § 9 nennt noch `SPEICHER=s3`. ADR 0020 nennt `blob`. Die Technik entscheidet, welcher Wert gilt **[prüfen]**.
+**3.3 Speicher-Schalter setzen**
+- **Ziel:** `SPEICHER=blob` in Production und Preview (ADR 0020, Festlegungen; `web/docs/BETRIEB.md` § 9).
+- **Stand:** Der Blob-Adapter ist eingebaut (`web/src/lib/storage/index.ts`, Klasse `BlobSpeicher`, Auswahl über `SPEICHER=blob`). Die Startprüfung meldet auf Vercel nur `dateisystem` als Fehler (`web/src/lib/umgebung.ts`, Funktion `pruefeZusammenhaenge`).
+- **Prüfpunkt:** In der Vorschau lässt sich ein Testbild über die Verwaltung hochladen und erscheint danach auf der Seite (`web/docs/GO-LIVE.md`, B2).
 
 **3.4 Größe der Uploads**
-- **Regel:** Die App nimmt Bilder bis 10 MB an (`web/src/lib/medien/verarbeiten.ts` Zeile 10). Der direkte Upload in den Speicher (ohne Umweg über die Funktion) ist das Ziel (ADR 0020, Weg 1).
-- **Warnung:** `web/docs/BETRIEB.md` § 9 nennt eine Grenze von 4,5 MB pro Anfrage an Vercel-Funktionen. Ich habe dazu **keine Fundstelle in der Vercel-Doku gefunden [prüfen]**. Bis das geklärt ist, gilt: Sehr große Bilder können scheitern. Teste das mit einer Datei von etwa 6 MB in der Vorschau.
+- **Regel:** Auf Vercel nimmt die App Anfragen bis 4,2 MB an (`web/src/app/[locale]/verwaltung/(geschuetzt)/medien/page.tsx`, Konstante `GRENZE_VERCEL`). Größere Bilder verkleinert der Browser auf höchstens 2560 px als WebP (`web/src/components/verwaltung/medien/MedienFormulare.tsx`). Größere PDF-Dateien lehnt die Verwaltung mit einer Meldung ab. Außerhalb von Vercel gilt die Grenze von 10 MB (`web/src/lib/medien/verarbeiten.ts`, `MAX_BYTES`).
+- **Grund:** `web/docs/BETRIEB.md` § 9 nennt für Vercel-Funktionen eine Grenze von 4,5 MB pro Anfrage. Die Vercel-Doku dazu habe ich **nicht gegengeprüft [prüfen]**. Der direkte Upload in den Speicher ist die nächste Stufe, falls große PDF-Aushänge nötig werden (ADR 0020, Umkehrprobe).
+- **Prüfpunkt:** Ein Foto von etwa 6 MB lässt sich hochladen, der Browser verkleinert es vorher. Ein PDF von etwa 6 MB wird mit einer Meldung zur Größe abgelehnt.
 
 ## 4. Umgebungsvariablen und Geheimnisse (6 Minuten)
 
@@ -141,20 +149,21 @@ Umgebungsvariablen sind Einstellungen, die Vercel dem Programm mitgibt, zum Beis
 
 **4.2 Die wichtigsten Variablen**
 
-Die vollständige Liste mit Zweck, Pflicht, Bereich und Beispiel steht in `web/docs/deploy/VERCEL-ENV.md`. Das Dokument entsteht parallel. Die wichtigsten Werte stehen hier:
+Die vollständige Liste mit Zweck, Pflicht, Bereich und Beispiel steht in `web/docs/deploy/VERCEL-ENV.md`. Die wichtigsten Werte stehen hier:
 
 | Variable | Wozu | Production | Preview |
 |---|---|---|---|
 | `SITE_MODE` | Betriebsart | `produktion` | `vorschau` (ADR 0022; AUFTRAG V-03) |
-| `APP_URL` | öffentliche Adresse, mit `https` | `https://[deine-domain.de]` | leer lassen; die App nimmt dann die Vorschau-Adresse (ADR 0022) |
-| `BETTER_AUTH_URL` | Anmelde-Adresse, gleich wie `APP_URL` | `https://[deine-domain.de]` | `https://[Vorschau-Adresse]` **[prüfen]** |
-| `DATABASE_URL` | Datenbank | Zweig Produktion | Zweig Vorschau (ADR 0018) |
+| `APP_URL` | öffentliche Adresse, mit `https` | `https://[deine-domain.de]` | weglassen; die App nimmt dann die Vorschau-Adresse (ADR 0022) |
+| `BETTER_AUTH_URL` | Anmelde-Adresse, gleich wie `APP_URL` | `https://[deine-domain.de]` | weglassen; die App nimmt dann die Vorschau-Adresse (`web/src/lib/auth/optionen.ts`, Zeile 12). Nicht leer anlegen. |
+| `DATABASE_URL` | Datenbank (Pooler-Adresse mit `-pooler`) | Zweig Produktion | Zweig Vorschau (ADR 0018) |
+| `DATABASE_URL_UNPOOLED` | Direkte Verbindung für die Migration (Abschnitt 2.4) | Zweig Produktion, ohne `-pooler` | Zweig Vorschau, ohne `-pooler` |
 | `BETTER_AUTH_SECRET` | Anmeldung | Geheimnis | eigenes Geheimnis |
 | `EINGANG_SCHLUESSEL`, `EINGANG_SCHLUESSEL_ID` | Verschlüsselung der Formulareingänge | Geheimnis | eigenes Geheimnis |
 | `RATE_GEHEIMNIS`, `ALTCHA_GEHEIMNIS` | Spam-Schutz | Geheimnis | eigenes Geheimnis |
 | `WARTUNG_TOKEN` | Wartungsaufrufe, mind. 32 Zeichen | Geheimnis | eigenes Geheimnis |
 | `CRON_SECRET` | Schutz der Crons, mind. 32 Zeichen | Geheimnis | nicht nötig (Crons laufen nur in Produktion, Abschnitt 9) |
-| `SPEICHER` | Ort der Medien | `blob` (Blocker, siehe 3.3) | `blob` |
+| `SPEICHER` | Ort der Medien | `blob` | `blob` |
 | `BLOB_READ_WRITE_TOKEN` | Zugang zum Blob-Speicher | Vercel setzt ihn | Vercel setzt ihn |
 | `MAIL_TRANSPORT` | Mailversand | `smtp` | `smtp` |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` | Zugang zum Mailanbieter | Anbieterwerte | Anbieterwerte oder leer **[prüfen]** |
@@ -173,8 +182,8 @@ Die Quellen: `web/docs/BETRIEB.md` §§ 2, 3, 9; `web/.env.example`; `web/src/li
 Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VERCEL_PROJECT_PRODUCTION_URL` setzt Vercel selbst. Trage sie nie von Hand ein (`web/.env.example` Zeilen 4–5).
 
 **4.3 Geheimnisse erzeugen**
-- **Befehl (vorgesehen):** `pnpm geheimnisse:erzeugen`. **Stand: Der Eintrag fehlt noch in `web/package.json` [prüfen]**.
-- **Bis dahin:** Erzeuge jedes Geheimnis einzeln mit `openssl rand -base64 32`. Für `WARTUNG_TOKEN` nimm `openssl rand -base64 48` (`web/docs/BETRIEB.md` § 2, Schritt 1). `CRON_SECRET` braucht mindestens 32 Zeichen (`web/src/lib/wartung/zugang.ts` Zeilen 9–10, 20–21).
+- **Befehl:** `pnpm geheimnisse:erzeugen --datei <pfad außerhalb des Repositorys>` (Eintrag in `web/package.json`, Zeile 26). Ohne `--datei` erscheinen die Werte auf dem Bildschirm. Nutze deshalb `--datei`.
+- **Ohne Skript:** Erzeuge jedes Geheimnis einzeln mit `openssl rand -base64 32`. Für `WARTUNG_TOKEN` nimm `openssl rand -base64 48` (`web/docs/BETRIEB.md` § 2, Schritt 1). `CRON_SECRET` und `WARTUNG_TOKEN` brauchen mindestens 32 Zeichen (`web/src/lib/wartung/zugang.ts`, Funktionen `wartungErlaubt` und `cronErlaubt`).
 - **Regeln:**
   - Kopiere die Werte direkt aus der Konsole in das Feld in Vercel.
   - Lege sie im Passwortmanager ab.
@@ -194,8 +203,8 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 **5.2 Build-Protokoll lesen**
 - **Ort:** Deployments › Eintrag anklicken › Build Logs **[prüfen]**.
-- **Gute Zeile:** `[bau] Datenbank vorhanden` (ADR 0019, `web/scripts/vercel-bau.mjs`). **Diese Zeile erscheint erst, wenn `vercel-build` auf das neue Skript zeigt (siehe Abschnitt „Stand“). Heute zeigt `vercel-build` noch die alte Zeile, die diese Meldung nicht ausgibt.**
-- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview. Die Seite wird dann mit Beispielinhalten gebaut.
+- **Gute Zeile:** `[bau] Datenbank vorhanden (production)` bzw. `(preview)`, danach `[migration] Migrationen angewendet.` (ADR 0019, `web/scripts/vercel-bau.mjs`, `web/scripts/migriere-mit-sperre.mjs`). `vercel-build` zeigt auf dieses Skript (`web/package.json`, Zeile 8).
+- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview oder Production. Der Bau bleibt dann grün, und die Seite wird mit Beispielinhalten gebaut.
 
 **5.3 Vercel-Schutz für die Vorschau**
 - **Was es ist:** Vercel Authentication schützt die Vorschau. Wer die Adresse öffnet, muss sich bei Vercel anmelden (https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication).
@@ -210,10 +219,10 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 - **Empfehlung:** Wähle eine Frist, etwa 30 Tage. Die Empfehlung ist keine Vorgabe der Dokumentation.
 - **Prüfpunkt:** Den Link im privaten Fenster öffnen. Die Seite erscheint, ohne dass du dich anmelden musst **[prüfen: Konto-Anforderung]**.
 
-**5.5 Suchmaschinen aussperren (noch offen)**
-- **Regel:** Vorschauen sollen nicht in Suchmaschinen auftauchen. Dafür sorgen `robots.txt` mit `Disallow: /` und die Kopfzeile `X-Robots-Tag: noindex` (ADR 0022).
-- **Stand:** Noch nicht umgesetzt (`web/src/app/robots.ts` Zeilen 5–16; AUFTRAG V-09).
-- **Prüfpunkt, sobald umgesetzt:** Die Adresse `/robots.txt` der Vorschau zeigt `Disallow: /`.
+**5.5 Suchmaschinen aussperren**
+- **Regel:** Vorschauen sollen nicht in Suchmaschinen auftauchen. Dafür sorgen `robots.txt` mit `Disallow: /` und die Kopfzeile `X-Robots-Tag: noindex, nofollow` (ADR 0022).
+- **Stand:** Umgesetzt. `web/src/app/robots.ts` (Zeile 10) sperrt in der Betriebsart `vorschau` alles. `web/src/lib/sicherheit/header.ts` (Funktion `noindexHeader`) setzt die Kopfzeile nur dort (AUFTRAG V-09).
+- **Prüfpunkt:** Die Adresse `/robots.txt` der Vorschau zeigt `Disallow: /`.
 
 ## 6. Domain verbinden (3 Minuten + Wartezeit)
 
@@ -233,7 +242,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 **6.4 HTTPS**
 - **Regel:** Nach dem Eintrag stellt Vercel ein Zertifikat für die Domain automatisch aus (https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains). Der Ablauf ist **im Dashboard nicht geprüft [prüfen]**.
-- **Wichtig:** `APP_URL` und `BETTER_AUTH_URL` zeigen erst dann auf `https://[deine-domain.de]`, wenn die Adresse mit HTTPS läuft. Erst dann schaltet die App HSTS und `upgrade-insecure-requests` ein (`web/docs/BETRIEB.md` § 2, Schritt 2, und § 5b).
+- **Wichtig:** `APP_URL` und `BETTER_AUTH_URL` zeigen erst dann auf `https://[deine-domain.de]`, wenn die Adresse mit HTTPS läuft. Die App schaltet HSTS und `upgrade-insecure-requests` erst ein, wenn die öffentliche Adresse mit `https://` beginnt (`web/src/lib/sicherheit/header.ts`, Zeilen 9, 29 und 62; `web/docs/BETRIEB.md` § 2, Schritt 2).
 - **Prüfpunkt:** `https://[deine-domain.de]` öffnet mit Schloss-Symbol. In Vercel steht die Domain als gültig **[prüfen: Statustext]**.
 
 ## 7. E-Mail-DNS: SPF, DKIM und DMARC (3 Minuten + Wartezeit)
@@ -260,9 +269,17 @@ Was sie bedeuten:
 ## 8. Migrationen: Datenbank-Änderungen nur additiv
 
 - **Regel:** Jede Datenbank-Änderung ist zuerst additiv: erst erweitern, dann umstellen, dann aufräumen, in getrennten Auslieferungen. Die alte Version läuft während des Baus weiter und braucht das alte Schema (ADR 0019, Festlegungen und Umkehrprobe).
-- **Heutiger Weg (bis zur Umstellung):** Migration vor dem Zusammenführen von einem Arbeitsrechner aus: `DATABASE_URL=<Produktion> pnpm db:migrate` (`web/docs/BETRIEB.md` § 9, Zeile 111). Das macht die Technik.
-- **Ziel laut ADR 0019:** Der Bau führt die Migration unter einer Sperre aus. Dafür gibt es `web/scripts/vercel-bau.mjs` und `web/scripts/migriere-mit-sperre.mjs`. Die Umstellung von `package.json` (`vercel-build`, Zeile 8) auf das neue Skript ist **offen** und Sache der Technik.
+- **Heutiger Weg:** Der Bau führt die Migration selbst aus, unter einer Sperre und vor dem Bau der Seiten (`web/scripts/vercel-bau.mjs`, `web/scripts/migriere-mit-sperre.mjs`; ADR 0019). Dafür ist kein Handgriff nötig.
+- **Notweg (nur Technik):** `pnpm db:migrate` liest nur `DATABASE_URL` (`web/drizzle.config.ts`, Zeile 4) und setzt keine Sperre. Nutze ihn nur, wenn der Bau ausfällt, und stimme es vorher mit der Technik ab.
 - **Vorschau:** Der Bau der Vorschau migriert nur den Datenbank-Zweig der Vorschau (ADR 0019, Folgen).
+
+## 8a. Inhalte im Cache (ADR 0024)
+
+- **Was:** Die öffentlichen Inhalte (Gebetszeiten, Veranstaltungen, Nachrichten, Kurse, Seiteninhalte und weitere) liegen im Cache. Die Abfragen in `web/src/server/queries/` nutzen `'use cache: remote'` (20 Stellen). Die Suche (`web/src/server/queries/suche.ts`) und die Heute-Anzeige (`web/src/lib/zeit/heute.ts`) bleiben bei `'use cache'`. Laut ADR 0024 legt Vercel die Einträge im Runtime Cache ab; die Vercel-Doku dazu habe ich **nicht gegengeprüft [prüfen]**.
+- **Warum:** Mit `'use cache'` hält jede Instanz einen eigenen Speicher. Eine Änderung in der Verwaltung wäre dann nicht sofort auf allen Instanzen sichtbar (ADR 0024, Kontext).
+- **Ungültig machen:** Die Verwaltung ruft `updateTag` bzw. `revalidateTag` auf (`web/src/lib/cache/aktualisieren.ts`). Die Tags stehen in `web/src/lib/cache/tags.ts`.
+- **Kosten und Grenzen:** Ob der Runtime Cache im gewählten Tarif Kosten oder Grenzen hat, ist **nicht geprüft [prüfen]**. Die Tarif-Entscheidung steht in ML-09 (`_werkstatt/MENSCHEN.md`). Werden die Grenzen zu eng, geht es zurück auf `'use cache'` mit kurzer Laufzeit (ADR 0024, Umkehrprobe).
+- **Prüfpunkt:** Ein Termin wird in der Verwaltung geändert und erscheint danach auf der öffentlichen Seite. Den Nachweis über mehrere Instanzen gibt es nur mit Datenbank in der Vorschau (ADR 0024, Folgen).
 
 ## 9. Wiederkehrende Aufgaben (Crons)
 

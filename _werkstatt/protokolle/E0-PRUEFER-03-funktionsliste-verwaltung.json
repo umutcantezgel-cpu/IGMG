@@ -1,0 +1,91 @@
+{
+  "lauf": {
+    "werkzeug": "funktionsliste.mjs",
+    "basis": "http://127.0.0.1:3500",
+    "zeit": "2026-10-11T19:46:16.627Z",
+    "browser": "141.0.7390.37",
+    "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste",
+    "zustand": "ja"
+  },
+  "ergebnisse": [
+    {
+      "390": {
+        "status": "–",
+        "grund": "nicht vorgesehen (Erwartung: 1440 px)"
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Dashboard mit Anmeldezustand (nicht Anmeldeseite)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "pfad": "/verwaltung"
+            }
+          },
+          {
+            "pruefung": "Dashboard-Überschrift sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": "Übersicht"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-20-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-20-1440-ende.jpg"
+        ]
+      },
+      "id": "F-20",
+      "titel": "Verwaltung: Einladung, Passwort, TOTP, Anmeldung, Dashboard",
+      "ablauf": "Anmeldezustand (anmeldung.mjs)"
+    },
+    {
+      "390": {
+        "status": "–",
+        "grund": "nicht vorgesehen (Erwartung: 1440 px)"
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Veranstaltungsliste: HTTP",
+            "ergebnis": "Messwert",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Formular „neu“ (lesend): HTTP / Felder",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "status": 200,
+              "felder": 44
+            }
+          },
+          {
+            "pruefung": "Medien (lesend): HTTP / Dateifelder",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "status": 200,
+              "dateifelder": 1
+            }
+          },
+          {
+            "pruefung": "Veranstaltung speichern, Medien hochladen (< 4 MB)",
+            "ergebnis": "nicht prüfbar",
+            "grund": "nur lesend erlaubt: Speichern und Hochladen nicht ausgeführt; gemessen wurden nur die Lesepfade (Messwerte oben)"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-21-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-21-1440-ende.jpg"
+        ]
+      },
+      "id": "F-21",
+      "titel": "Verwaltung: Veranstaltung anlegen/bearbeiten, Medien hochladen",
+      "ablauf": "nur lesend (Speichern verboten)"
+    }
+  ]
+}

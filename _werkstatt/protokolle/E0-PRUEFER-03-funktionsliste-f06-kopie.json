@@ -1,0 +1,117 @@
+{
+  "lauf": {
+    "werkzeug": "funktionsliste.mjs",
+    "basis": "http://127.0.0.1:3600",
+    "zeit": "2026-10-11T19:47:15.206Z",
+    "browser": "141.0.7390.37",
+    "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste",
+    "zustand": "nein"
+  },
+  "ergebnisse": [
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Formularfelder",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "name",
+              "email",
+              "telefon",
+              "personen",
+              "einwilligung",
+              "website"
+            ]
+          },
+          {
+            "pruefung": "Anmeldung: Fehlerzusammenfassung nach leerem Absenden („Verbindlich anmelden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte geben Sie eine gültige E-Mail-Adresse ein. Datenschutzerkl",
+              "feldLinks": 3,
+              "altcha": "geprüft nach 13 s"
+            }
+          },
+          {
+            "pruefung": "Anmeldung: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 1,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Formularfelder",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "name",
+              "email",
+              "telefon",
+              "personen",
+              "einwilligung",
+              "website"
+            ]
+          },
+          {
+            "pruefung": "Anmeldung: Fehlerzusammenfassung nach leerem Absenden („Verbindlich anmelden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte geben Sie eine gültige E-Mail-Adresse ein. Datenschutzerkl",
+              "feldLinks": 3,
+              "altcha": "geprüft nach 17.8 s"
+            }
+          },
+          {
+            "pruefung": "Anmeldung: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 1,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440-ende.jpg"
+        ]
+      },
+      "id": "F-06",
+      "titel": "Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal",
+      "ablauf": "Detail mit anmeldungAktiv; leer absenden; .ics"
+    }
+  ]
+}
