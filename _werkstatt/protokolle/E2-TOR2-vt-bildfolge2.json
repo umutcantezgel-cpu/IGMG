@@ -1,0 +1,81 @@
+{
+  "werkzeug": "vt-bildfolge2",
+  "basis": "http://127.0.0.1:3400",
+  "von": "/",
+  "ziel": "/veranstaltungen",
+  "viewport": "1440x900",
+  "methode": "CDP Page.startScreencast + rAF-Abtastung",
+  "klickEpochMs": 1791747175174,
+  "bilder": [
+    {
+      "nr": 1,
+      "sollMs": 80,
+      "istMsNachKlick": 308,
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor2/seitenwechsel2/wechsel-1.jpg"
+    },
+    {
+      "nr": 2,
+      "sollMs": 160,
+      "istMsNachKlick": 308,
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor2/seitenwechsel2/wechsel-2.jpg"
+    },
+    {
+      "nr": 3,
+      "sollMs": 240,
+      "istMsNachKlick": 308,
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor2/seitenwechsel2/wechsel-3.jpg"
+    },
+    {
+      "nr": 4,
+      "sollMs": 320,
+      "istMsNachKlick": 4157,
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor2/seitenwechsel2/wechsel-4.jpg"
+    },
+    {
+      "nr": 5,
+      "sollMs": 400,
+      "istMsNachKlick": 4157,
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor2/seitenwechsel2/wechsel-5.jpg"
+    }
+  ],
+  "abtastung": [
+    {
+      "tMs": -14,
+      "adresse": "/",
+      "vt": 0,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": []
+    },
+    {
+      "tMs": 2,
+      "adresse": "/",
+      "vt": 0,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": []
+    },
+    {
+      "tMs": 19,
+      "adresse": "/",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": []
+    },
+    {
+      "tMs": 4069,
+      "adresse": "/veranstaltungen",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": []
+    }
+  ],
+  "kopfVorKlickTop": 0,
+  "screencastBilderGesamt": 3,
+  "nachAbschluss": {
+    "adresse": "/veranstaltungen",
+    "vt": 1
+  }
+}

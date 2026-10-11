@@ -1,0 +1,7 @@
+E2-TOR2 · Aufbau des Prüfservers (Schritt 1)
+Build: Worktree /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-sauber (detached, 23487df), Befehl pnpm install --frozen-lockfile --offline und node scripts/vercel-bau.mjs (ohne DATABASE_URL, PGlite-Weg). Protokoll E2-TOR2-build.log, rc der Einzelschritte: Datenbank-Bau 0, next build 466/466 Seiten, TypeScript fertig ohne Fehler.
+BUILD_ID: AcIWeSXrIc5S20Fl1JfCI
+Server: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2c/standalone, PORT 3400, Protokoll /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2c/server.log (Scratchpad, nicht im Repo).
+Abweichung 1: Nach dem vorgegebenen Aufbau fehlte public/ im Standalone-Ordner (Next kopiert nur public/symbole/symbol-512.png). Der Server meldete 404 für /bilder/logos/*.png. Behoben durch cp -a aus demselben Worktree (23487df) nach /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2c/standalone/public/. Der Build selbst ist unverändert (BUILD_ID gleich). Danach: /bilder/logos/logo-igmg-wetzlar.png 200, /altcha/pbkdf2.js 200, /sw.js 200.
+Beleg Stylesheet (Startseite /): /_next/static/chunks/3c3ts7y41xdyv.css, 93891 Byte. bogen-enthuellt 1 · @keyframes auftritt 1 · view-transition-new(.seite) 1 (je mindestens 1 erwartet).
+Abweichung 2: Der Messlauf wurde einmal nach dem Start der Bildsatz-Messung abgebrochen (Ursache: Abweichung 1). Die Protokolle dieses Versuchs sind durch den Neulauf ersetzt.

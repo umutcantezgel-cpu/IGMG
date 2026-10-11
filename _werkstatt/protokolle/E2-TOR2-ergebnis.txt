@@ -1,0 +1,39 @@
+E2-TOR2-PRUEFER · Prüfstufe B · Referenzansicht / und /ueber-uns · Wiederholung nach L-E09 und L-E10
+Build: Commit 23487df (Worktree scratchpad/bau-sauber, detached), BUILD_ID AcIWeSXrIc5S20Fl1JfCI, PGlite-Weg, next build 466 von 466 Seiten, TypeScript fehlerfrei. Server 127.0.0.1:3400 läuft.
+Stylesheet der Startseite (Beleg): bogen-enthuellt 1 · @keyframes auftritt 1 · view-transition-new(.seite) 1 (E2-TOR2-beleg-stylesheet.json).
+Aufbau-Abweichung (E2-TOR2-aufbau.txt): public/ fehlte im ersten Standalone-Ordner, nachgetragen aus demselben Commit. Build unverändert.
+Lauf: E2-TOR2-lauf.log (Stand 19:30, LAUF-RC 0). Schritt Momente rc 1 (Fehler im Prüfskript, behoben), Neulauf E2-TOR2-momente.log / E2-TOR2-momente-b06b.log.
+
+=== Tabelle gegen E0 und den ersten Torlauf ===
+Messung                                   | E0 (9ebb4bc, 3100)          | E2-TOR 1. Lauf (e6d900f, veraltet) | E2-TOR2 (23487df, sauber)
+Lighthouse mobil Leistung / (Median, Spanne) | 89 (81–90)               | 90 (83–91)                          | 82 (77–85)
+Lighthouse mobil Leistung /ueber-uns      | 87 (80–89)                  | 91 (85–93)                          | 86 (82–91)
+Barrierefreiheit / BP / SEO (beide Routen) | 100 / 100 / 100            | 100 / 100 / 100                     | 100 / 100 / 100
+LCP ms / (ueber-uns)                      | 1937 (1823)                 | 1994 (1861)                         | 1996 (1890)
+CLS / (ueber-uns)                         | 0,001 (0,001)               | 0,004 (0,002)                       | 0,002 (0,002)
+TBT ms / (ueber-uns)                      | 375 (458)                   | 364 (331)                           | 656 (483)
+JS gz kB / (ueber-uns)                    | 168 (168)                   | 172,9 (169,8)                       | 173,7 (170,7)
+axe Verstöße 390 / 1440                   | 0 / 0                       | 0 / 0                               | 0 / 0 (beide Routen)
+axe unklar 390 / 1440                     | / 1/1 (IDs nicht erfasst) · ueber-uns 1/1 | / 0/0 · ueber-uns 1/1 color-contrast | / 1/1 color-contrast (4 Knoten) · ueber-uns 1/1 color-contrast (6 Knoten)
+Bildsatz 390/768/1440 (Befunde, waagerecht) | 0, nein                   | 0, nein                             | 0, nein (beide Routen, beide Modi)
+Ausschnitte je Breite                     | 9 / 6 / 5                   | 9 / 6 / 5                           | 9 / 6 / 5
+Konsole 390 (/, /ueber-uns, /veranstaltungen) | nicht gemessen          | 0 Fehler, 0 Warnungen               | 0 Fehler, 0 Warnungen, 0 Seitenfehler, 0 fehlgeschlagene Anfragen
+Laufende Animationen beim ersten Bild     | 0                           | 0 (Stylesheet ohne Keyframes)       | 31 (Farbe und Skalierung der Tagesbogen-Punkte u. a.)
+B-06 Tagesbogen enthuellen                | nicht vorhanden             | nicht vorhanden                     | läuft 0–1200 ms ab Auslösung (rAF: ab ca. 5 ms bis 1187 ms)
+B-07 Weg der Gemeinde wachsen/hervortreten | nicht vorhanden            | nicht vorhanden                     | läuft 0–1508 ms ab Auslösung (data-sicht bereit → laeuft nach Scroll)
+Reduzierte Bewegung (Werkzeug)            | 0 Animationen, 0 px         | 0 Animationen, 0 px                 | 0 Animationen, 0 px, 0 unsichtbar nach 2 s
+Bildrate CPU 4× verworfen (Median aus 3)  | / 0 % (122 Bilder)          | / 0 % · ueber-uns 8,2 % (Scrollen)  | / 0 % (0,8 / 0 / 0) · ueber-uns mit Scrollen 0 % (0 / 3,3 / 0)
+Seitenwechsel B-05 (vt-Zähler je Klick)   | nicht vorhanden             | 0 (Methode unsicher)                | vt 1 je Klick (3 von 3), Ziel erreicht; reduziert vt 0, Ziel erreicht 3 von 3
+Übergang sichtbar (Bildfolge)             | nicht vorhanden             | nicht vorhanden                     | nicht belegt: Übergang bricht nach ca. 4,1 s ab („timeout in DOM update“)
+Freie Werte                               | 617 Funde (452 Dateien)     | 91 Funde in 9 Dateien (30 Dateien)  | 103 Funde in 12 Dateien (103 Dateien): tokens.ts 50, globals.css 20, übrige 33
+SVG Befunde (ganzer Baum)                 | Fehler 0 · Befund 7 · OK 1  | Fehler 0 · Befund 11 · OK 2         | Fehler 0 · Befund 12 · OK 2 (in geänderten Dateien Befund 6 · OK 1)
+pnpm check                                | nicht gemessen              | rc 0; 599 bestanden, 3 erwartet rot| rc 0; 39 Dateien, 744 bestanden, 3 erwartet fehlgeschlagen
+sprachen:pruefen                          | nicht gemessen              | rc 0                                | rc 0 (1170 Schlüssel de/tr/en, 1914 Verwaltung nur de)
+
+=== Auffälligkeiten (nicht bewertet, für die Sichtabnahme) ===
+1. Seitenwechsel: Die Navigation auf der lokalen Messung braucht ca. 4,1 s. Chromium bricht die Überblendung mit „Transition was aborted because of timeout in DOM update“ ab (E2-TOR2-vt-lebenszyklus.json: ready-Fehler bei 4131 ms, finished bei 4186 ms). SeitenUebergang.tsx wartet höchstens HOECHSTENS_MS = 4000 ms, dieselbe Grenze. Ursache der Dauer ungeprüft.
+2. Tagesbogen auf dem Telefon (390 × 844): Die Karte „Der Tag in Wetzlar“ beginnt unterhalb des ersten Bildschirms; die Enthüllung spielt sich dort ab (E2-TOR2-momente-b06 l1-3, 483 ms). Auf 1440 × 900 steht der Bogen im ersten Bildschirm (bildsatz/start/1440x900/schirm-01.jpg).
+3. Lighthouse Leistung der Startseite 82 (unter der Schwelle 90, verfehlt auch TBT). Gemessen unter Fremdlast (Last 2,4 bis 4,2). Maßgeblich ist die Paarmessung in Stufe C.
+4. Bildfolge des Übergangs: Auf den Bildern des Übergangs ist kein Zwischenzustand erkennbar (E2-TOR2-vt-zeitlupe, vt-bildfolge2). Der Kopf stand bei jeder Aufnahme an Position 0.
+5. Server-Protokoll: Die Startprüfung meldet fehlende Produktionswerte (SMTP_HOST, MAIL_TRANSPORT, MAIL_ABSENDER, DATABASE_URL, APP_URL für localhost). Erwartet im lokalen Prüfaufbau.
+6. Build-Protokoll: Die Zeile „⨯ turbopackFileSystemCacheForBuild“ zeigt laut Next (server/lib/app-info-log.js) den Wert false an. Der Schalter aus L-E09 ist aktiv.

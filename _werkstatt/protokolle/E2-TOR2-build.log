@@ -1,0 +1,427 @@
+✓ Lockfile passes supply-chain policies (verified 54m ago)
+Lockfile is up to date, resolution step is skipped
+Done in 119ms using pnpm v12.11.2
+[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017).
+[bau] Ohne Datenbank laufen Formulare, Verwaltung und Anmeldung nicht. Runbook: docs/deploy/VERCEL.md.
+$ node scripts/bau-datenbank.mjs
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-sauber/web/drizzle.config.ts'
+[⣷] applying migrations...[2K[1G[✓] migrations applied successfully!Seed einstellungen: 2 neu
+Seed seiteninhalte: 1 neu
+Seed veranstaltungen: 13 neu
+Seed nachrichten: 10 neu
+Seed nachrichten (Welle A): 0 neu
+Seed ueber-uns: 1 neu
+Seed vorstand: 1 neu
+Seed projekte: 1 neu
+Seed igmg: 1 neu
+Seed organisationen: 4 neu
+Seed korankurse: 3 neu
+Seed wissen: 13 neu
+Seed rechtliches: 2 neu
+Seeds fertig.
+Bau-Datenbank bereit: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-sauber/web/.pglite-bau
+▲ Next.js 16.4.0 (Turbopack)
+✓ Running next.config.ts took 423ms
+- Cache Components enabled
+- Partial Prefetching enabled
+- Experiments (use with caution):
+  · proxyClientMaxBodySize: "11mb"
+  · serverActions
+  ⨯ turbopackFileSystemCacheForBuild
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 69s
+  Running TypeScript ...
+  Finished TypeScript in 54s ...
+  Collecting page data using 3 workers ...
+  Generating static pages using 3 workers (0/466) ...
+  Generating static pages using 3 workers (116/466) 
+  Generating static pages using 3 workers (232/466) 
+  Generating static pages using 3 workers (349/466) 
+✓ Generating static pages using 3 workers (466/466) in 24.2s
+  Finalizing page optimization ...
+
+Route (app)                                                                    Revalidate  Expire
+┌ ○ /_not-found
+├   /[locale]
+│ ├ ◐ /[locale]
+│ ├ ○ /de                                                                              1h      1d
+│ ├ ○ /tr                                                                              1h      1d
+│ └ ○ /en                                                                              1h      1d
+├   /[locale]/[...rest]
+│ ├ ◐ /[locale]/[...rest]
+│ ├ ○ /de/_                                                                            1h      1d
+│ ├ ○ /tr/_                                                                            1h      1d
+│ └ ○ /en/_                                                                            1h      1d
+├   /[locale]/bildung/korankurse
+│ ├ ◐ /[locale]/bildung/korankurse
+│ ├ ○ /de/bildung/korankurse                                                           1h      1d
+│ ├ ○ /tr/bildung/korankurse                                                           1h      1d
+│ └ ○ /en/bildung/korankurse                                                           1h      1d
+├   /[locale]/bildung/voranmeldung
+│ ├ ◐ /[locale]/bildung/voranmeldung
+│ ├ ○ /de/bildung/voranmeldung                                                         1h      1d
+│ ├ ○ /tr/bildung/voranmeldung                                                         1h      1d
+│ └ ○ /en/bildung/voranmeldung                                                         1h      1d
+├   /[locale]/datenschutz
+│ ├ ◐ /[locale]/datenschutz
+│ ├ ○ /de/datenschutz                                                                  1h      1d
+│ ├ ○ /tr/datenschutz                                                                  1h      1d
+│ └ ○ /en/datenschutz                                                                  1h      1d
+├   /[locale]/gebetszeiten
+│ ├ ◐ /[locale]/gebetszeiten
+│ ├ ○ /de/gebetszeiten                                                                 1h      1d
+│ ├ ○ /tr/gebetszeiten                                                                 1h      1d
+│ └ ○ /en/gebetszeiten                                                                 1h      1d
+├   /[locale]/gebetszeiten/anzeige
+│ ├ ◐ /[locale]/gebetszeiten/anzeige
+│ ├ ○ /de/gebetszeiten/anzeige                                                         1h      1d
+│ ├ ○ /tr/gebetszeiten/anzeige                                                         1h      1d
+│ └ ○ /en/gebetszeiten/anzeige                                                         1h      1d
+├   /[locale]/igmg
+│ ├ ◐ /[locale]/igmg
+│ ├ ○ /de/igmg                                                                         1h      1d
+│ ├ ○ /tr/igmg                                                                         1h      1d
+│ └ ○ /en/igmg                                                                         1h      1d
+├   /[locale]/impressum
+│ ├ ◐ /[locale]/impressum
+│ ├ ○ /de/impressum                                                                    1h      1d
+│ ├ ○ /tr/impressum                                                                    1h      1d
+│ └ ○ /en/impressum                                                                    1h      1d
+├   /[locale]/islamisches-wissen
+│ ├ ◐ /[locale]/islamisches-wissen
+│ ├ ○ /de/islamisches-wissen                                                           1h      1d
+│ ├ ○ /tr/islamisches-wissen                                                           1h      1d
+│ └ ○ /en/islamisches-wissen                                                           1h      1d
+├   /[locale]/islamisches-wissen/[thema]
+│ ├ ◐ /[locale]/islamisches-wissen/[thema]
+│ ├ ○ /de/islamisches-wissen/allah                                                     1h      1d
+│ ├ ○ /de/islamisches-wissen/fivestoesarz                                              1h      1d
+│ └ ◐ [+34 more paths]
+├   /[locale]/kontakt
+│ ├ ◐ /[locale]/kontakt
+│ ├ ○ /de/kontakt                                                                      1h      1d
+│ ├ ○ /tr/kontakt                                                                      1h      1d
+│ └ ○ /en/kontakt                                                                      1h      1d
+├   /[locale]/meldung
+│ ├ ◐ /[locale]/meldung
+│ ├ ○ /de/meldung                                                                      1h      1d
+│ ├ ○ /tr/meldung                                                                      1h      1d
+│ └ ○ /en/meldung                                                                      1h      1d
+├   /[locale]/mitglied-werden
+│ ├ ◐ /[locale]/mitglied-werden
+│ ├ ○ /de/mitglied-werden                                                              1h      1d
+│ ├ ○ /tr/mitglied-werden                                                              1h      1d
+│ └ ○ /en/mitglied-werden                                                              1h      1d
+├   /[locale]/nachrichten
+│ ├ ◐ /[locale]/nachrichten
+│ ├ ○ /de/nachrichten                                                                  1h      1d
+│ ├ ○ /tr/nachrichten                                                                  1h      1d
+│ └ ○ /en/nachrichten                                                                  1h      1d
+├   /[locale]/nachrichten/[slug]
+│ ├ ◐ /[locale]/nachrichten/[slug]
+│ ├ ○ /de/nachrichten/neue-gebetszeiten-fuer-den-winter                                1h      1d
+│ ├ ○ /de/nachrichten/ramadan-vorbereitung-2025                                        1h      1d
+│ └ ◐ [+28 more paths]
+├ ● /[locale]/nachrichten/[slug]/opengraph-image-vegep3/[__metadata_id__]
+├   /[locale]/offline
+│ ├ ◐ /[locale]/offline
+│ ├ ○ /de/offline                                                                      1h      1d
+│ ├ ○ /tr/offline                                                                      1h      1d
+│ └ ○ /en/offline                                                                      1h      1d
+├ ● /[locale]/opengraph-image/[__metadata_id__]
+├   /[locale]/organisationen/[organisation]
+│ ├ ◐ /[locale]/organisationen/[organisation]
+│ ├ ○ /de/organisationen/ana-teskilati                                                 1h      1d
+│ ├ ○ /de/organisationen/kadin-teskilati                                               1h      1d
+│ └ ◐ [+10 more paths]
+├   /[locale]/projekte
+│ ├ ◐ /[locale]/projekte
+│ ├ ○ /de/projekte                                                                     1h      1d
+│ ├ ○ /tr/projekte                                                                     1h      1d
+│ └ ○ /en/projekte                                                                     1h      1d
+├   /[locale]/quran
+│ ├ ◐ /[locale]/quran
+│ ├ ○ /de/quran                                                                        1h      1d
+│ ├ ○ /tr/quran                                                                        1h      1d
+│ └ ○ /en/quran                                                                        1h      1d
+├   /[locale]/quran/[sure]
+│ ├ ◐ /[locale]/quran/[sure]
+│ ├ ○ /de/quran/1                                                                      1h      1d
+│ ├ ○ /de/quran/2                                                                      1h      1d
+│ └ ◐ [+13 more paths]
+├   /[locale]/suche
+│ ├ ƒ /[locale]/suche
+│ ├ ƒ /de/suche                                                                        1h      1d
+│ ├ ƒ /tr/suche                                                                        1h      1d
+│ └ ƒ /en/suche                                                                        1h      1d
+├   /[locale]/ueber-uns
+│ ├ ◐ /[locale]/ueber-uns
+│ ├ ○ /de/ueber-uns                                                                    1h      1d
+│ ├ ○ /tr/ueber-uns                                                                    1h      1d
+│ └ ○ /en/ueber-uns                                                                    1h      1d
+├   /[locale]/veranstaltungen
+│ ├ ◐ /[locale]/veranstaltungen
+│ ├ ○ /de/veranstaltungen                                                              1h      1d
+│ ├ ○ /tr/veranstaltungen                                                              1h      1d
+│ └ ○ /en/veranstaltungen                                                              1h      1d
+├   /[locale]/veranstaltungen/[slug]
+│ ├ ◐ /[locale]/veranstaltungen/[slug]
+│ ├ ○ /de/veranstaltungen/woechentlicher-qur-an-kurs                                   1h      1d
+│ ├ ○ /de/veranstaltungen/frauenkreis-islamische-erziehung                             1h      1d
+│ └ ◐ [+37 more paths]
+├ ● /[locale]/veranstaltungen/[slug]/opengraph-image-f0swox/[__metadata_id__]
+├   /[locale]/verwaltung
+│ ├ ƒ /[locale]/verwaltung
+│ ├ ƒ /de/verwaltung                                                                   1h      1d
+│ ├ ƒ /tr/verwaltung                                                                   1h      1d
+│ └ ƒ /en/verwaltung                                                                   1h      1d
+├   /[locale]/verwaltung/ankuendigungen
+│ ├ ƒ /[locale]/verwaltung/ankuendigungen
+│ ├ ƒ /de/verwaltung/ankuendigungen                                                    1h      1d
+│ ├ ƒ /tr/verwaltung/ankuendigungen                                                    1h      1d
+│ └ ƒ /en/verwaltung/ankuendigungen                                                    1h      1d
+├   /[locale]/verwaltung/ankuendigungen/[id]
+│ ├ ◐ /[locale]/verwaltung/ankuendigungen/[id]
+│ ├ ◐ /de/verwaltung/ankuendigungen/[id]                                               1h      1d
+│ ├ ◐ /tr/verwaltung/ankuendigungen/[id]                                               1h      1d
+│ └ ◐ /en/verwaltung/ankuendigungen/[id]                                               1h      1d
+├   /[locale]/verwaltung/ankuendigungen/neu
+│ ├ ƒ /[locale]/verwaltung/ankuendigungen/neu
+│ ├ ƒ /de/verwaltung/ankuendigungen/neu                                                1h      1d
+│ ├ ƒ /tr/verwaltung/ankuendigungen/neu                                                1h      1d
+│ └ ƒ /en/verwaltung/ankuendigungen/neu                                                1h      1d
+├   /[locale]/verwaltung/anmelden
+│ ├ ƒ /[locale]/verwaltung/anmelden
+│ ├ ƒ /de/verwaltung/anmelden                                                          1h      1d
+│ ├ ƒ /tr/verwaltung/anmelden                                                          1h      1d
+│ └ ƒ /en/verwaltung/anmelden                                                          1h      1d
+├   /[locale]/verwaltung/anmelden/zwei-faktor
+│ ├ ƒ /[locale]/verwaltung/anmelden/zwei-faktor
+│ ├ ƒ /de/verwaltung/anmelden/zwei-faktor                                              1h      1d
+│ ├ ƒ /tr/verwaltung/anmelden/zwei-faktor                                              1h      1d
+│ └ ƒ /en/verwaltung/anmelden/zwei-faktor                                              1h      1d
+├   /[locale]/verwaltung/audit
+│ ├ ƒ /[locale]/verwaltung/audit
+│ ├ ƒ /de/verwaltung/audit                                                             1h      1d
+│ ├ ƒ /tr/verwaltung/audit                                                             1h      1d
+│ └ ƒ /en/verwaltung/audit                                                             1h      1d
+├   /[locale]/verwaltung/benutzer
+│ ├ ƒ /[locale]/verwaltung/benutzer
+│ ├ ƒ /de/verwaltung/benutzer                                                          1h      1d
+│ ├ ƒ /tr/verwaltung/benutzer                                                          1h      1d
+│ └ ƒ /en/verwaltung/benutzer                                                          1h      1d
+├   /[locale]/verwaltung/benutzer/[id]
+│ ├ ◐ /[locale]/verwaltung/benutzer/[id]
+│ ├ ◐ /de/verwaltung/benutzer/[id]                                                     1h      1d
+│ ├ ◐ /tr/verwaltung/benutzer/[id]                                                     1h      1d
+│ └ ◐ /en/verwaltung/benutzer/[id]                                                     1h      1d
+├   /[locale]/verwaltung/benutzer/einladen
+│ ├ ƒ /[locale]/verwaltung/benutzer/einladen
+│ ├ ƒ /de/verwaltung/benutzer/einladen                                                 1h      1d
+│ ├ ƒ /tr/verwaltung/benutzer/einladen                                                 1h      1d
+│ └ ƒ /en/verwaltung/benutzer/einladen                                                 1h      1d
+├   /[locale]/verwaltung/eingaenge
+│ ├ ƒ /[locale]/verwaltung/eingaenge
+│ ├ ƒ /de/verwaltung/eingaenge                                                         1h      1d
+│ ├ ƒ /tr/verwaltung/eingaenge                                                         1h      1d
+│ └ ƒ /en/verwaltung/eingaenge                                                         1h      1d
+├   /[locale]/verwaltung/eingaenge/[id]
+│ ├ ◐ /[locale]/verwaltung/eingaenge/[id]
+│ ├ ◐ /de/verwaltung/eingaenge/[id]                                                    1h      1d
+│ ├ ◐ /tr/verwaltung/eingaenge/[id]                                                    1h      1d
+│ └ ◐ /en/verwaltung/eingaenge/[id]                                                    1h      1d
+├ ƒ /[locale]/verwaltung/eingaenge/export
+├   /[locale]/verwaltung/einladung/[token]
+│ ├ ◐ /[locale]/verwaltung/einladung/[token]
+│ ├ ◐ /de/verwaltung/einladung/[token]                                                 1h      1d
+│ ├ ◐ /tr/verwaltung/einladung/[token]                                                 1h      1d
+│ └ ◐ /en/verwaltung/einladung/[token]                                                 1h      1d
+├   /[locale]/verwaltung/einstellungen
+│ ├ ƒ /[locale]/verwaltung/einstellungen
+│ ├ ƒ /de/verwaltung/einstellungen                                                     1h      1d
+│ ├ ƒ /tr/verwaltung/einstellungen                                                     1h      1d
+│ └ ƒ /en/verwaltung/einstellungen                                                     1h      1d
+├   /[locale]/verwaltung/gebetszeiten
+│ ├ ƒ /[locale]/verwaltung/gebetszeiten
+│ ├ ƒ /de/verwaltung/gebetszeiten                                                      1h      1d
+│ ├ ƒ /tr/verwaltung/gebetszeiten                                                      1h      1d
+│ └ ƒ /en/verwaltung/gebetszeiten                                                      1h      1d
+├   /[locale]/verwaltung/kein-zugriff
+│ ├ ƒ /[locale]/verwaltung/kein-zugriff
+│ ├ ƒ /de/verwaltung/kein-zugriff                                                      1h      1d
+│ ├ ƒ /tr/verwaltung/kein-zugriff                                                      1h      1d
+│ └ ƒ /en/verwaltung/kein-zugriff                                                      1h      1d
+├   /[locale]/verwaltung/konto
+│ ├ ƒ /[locale]/verwaltung/konto
+│ ├ ƒ /de/verwaltung/konto                                                             1h      1d
+│ ├ ƒ /tr/verwaltung/konto                                                             1h      1d
+│ └ ƒ /en/verwaltung/konto                                                             1h      1d
+├   /[locale]/verwaltung/kurse
+│ ├ ƒ /[locale]/verwaltung/kurse
+│ ├ ƒ /de/verwaltung/kurse                                                             1h      1d
+│ ├ ƒ /tr/verwaltung/kurse                                                             1h      1d
+│ └ ƒ /en/verwaltung/kurse                                                             1h      1d
+├   /[locale]/verwaltung/kurse/[id]
+│ ├ ◐ /[locale]/verwaltung/kurse/[id]
+│ ├ ◐ /de/verwaltung/kurse/[id]                                                        1h      1d
+│ ├ ◐ /tr/verwaltung/kurse/[id]                                                        1h      1d
+│ └ ◐ /en/verwaltung/kurse/[id]                                                        1h      1d
+├   /[locale]/verwaltung/kurse/neu
+│ ├ ƒ /[locale]/verwaltung/kurse/neu
+│ ├ ƒ /de/verwaltung/kurse/neu                                                         1h      1d
+│ ├ ƒ /tr/verwaltung/kurse/neu                                                         1h      1d
+│ └ ƒ /en/verwaltung/kurse/neu                                                         1h      1d
+├   /[locale]/verwaltung/medien
+│ ├ ƒ /[locale]/verwaltung/medien
+│ ├ ƒ /de/verwaltung/medien                                                            1h      1d
+│ ├ ƒ /tr/verwaltung/medien                                                            1h      1d
+│ └ ƒ /en/verwaltung/medien                                                            1h      1d
+├   /[locale]/verwaltung/medien/[id]
+│ ├ ◐ /[locale]/verwaltung/medien/[id]
+│ ├ ◐ /de/verwaltung/medien/[id]                                                       1h      1d
+│ ├ ◐ /tr/verwaltung/medien/[id]                                                       1h      1d
+│ └ ◐ /en/verwaltung/medien/[id]                                                       1h      1d
+├   /[locale]/verwaltung/neuigkeiten
+│ ├ ƒ /[locale]/verwaltung/neuigkeiten
+│ ├ ƒ /de/verwaltung/neuigkeiten                                                       1h      1d
+│ ├ ƒ /tr/verwaltung/neuigkeiten                                                       1h      1d
+│ └ ƒ /en/verwaltung/neuigkeiten                                                       1h      1d
+├   /[locale]/verwaltung/neuigkeiten/[id]
+│ ├ ◐ /[locale]/verwaltung/neuigkeiten/[id]
+│ ├ ◐ /de/verwaltung/neuigkeiten/[id]                                                  1h      1d
+│ ├ ◐ /tr/verwaltung/neuigkeiten/[id]                                                  1h      1d
+│ └ ◐ /en/verwaltung/neuigkeiten/[id]                                                  1h      1d
+├   /[locale]/verwaltung/neuigkeiten/neu
+│ ├ ƒ /[locale]/verwaltung/neuigkeiten/neu
+│ ├ ƒ /de/verwaltung/neuigkeiten/neu                                                   1h      1d
+│ ├ ƒ /tr/verwaltung/neuigkeiten/neu                                                   1h      1d
+│ └ ƒ /en/verwaltung/neuigkeiten/neu                                                   1h      1d
+├   /[locale]/verwaltung/passwort-neu
+│ ├ ƒ /[locale]/verwaltung/passwort-neu
+│ ├ ƒ /de/verwaltung/passwort-neu                                                      1h      1d
+│ ├ ƒ /tr/verwaltung/passwort-neu                                                      1h      1d
+│ └ ƒ /en/verwaltung/passwort-neu                                                      1h      1d
+├   /[locale]/verwaltung/passwort-vergessen
+│ ├ ƒ /[locale]/verwaltung/passwort-vergessen
+│ ├ ƒ /de/verwaltung/passwort-vergessen                                                1h      1d
+│ ├ ƒ /tr/verwaltung/passwort-vergessen                                                1h      1d
+│ └ ƒ /en/verwaltung/passwort-vergessen                                                1h      1d
+├   /[locale]/verwaltung/postfach
+│ ├ ƒ /[locale]/verwaltung/postfach
+│ ├ ƒ /de/verwaltung/postfach                                                          1h      1d
+│ ├ ƒ /tr/verwaltung/postfach                                                          1h      1d
+│ └ ƒ /en/verwaltung/postfach                                                          1h      1d
+├   /[locale]/verwaltung/postfach/[id]
+│ ├ ◐ /[locale]/verwaltung/postfach/[id]
+│ ├ ◐ /de/verwaltung/postfach/[id]                                                     1h      1d
+│ ├ ◐ /tr/verwaltung/postfach/[id]                                                     1h      1d
+│ └ ◐ /en/verwaltung/postfach/[id]                                                     1h      1d
+├   /[locale]/verwaltung/postfach/neu
+│ ├ ƒ /[locale]/verwaltung/postfach/neu
+│ ├ ƒ /de/verwaltung/postfach/neu                                                      1h      1d
+│ ├ ƒ /tr/verwaltung/postfach/neu                                                      1h      1d
+│ └ ƒ /en/verwaltung/postfach/neu                                                      1h      1d
+├   /[locale]/verwaltung/seiteninhalte
+│ ├ ƒ /[locale]/verwaltung/seiteninhalte
+│ ├ ƒ /de/verwaltung/seiteninhalte                                                     1h      1d
+│ ├ ƒ /tr/verwaltung/seiteninhalte                                                     1h      1d
+│ └ ƒ /en/verwaltung/seiteninhalte                                                     1h      1d
+├   /[locale]/verwaltung/seiteninhalte/[bereich]
+│ ├ ◐ /[locale]/verwaltung/seiteninhalte/[bereich]
+│ ├ ◐ /de/verwaltung/seiteninhalte/[bereich]                                           1h      1d
+│ ├ ◐ /tr/verwaltung/seiteninhalte/[bereich]                                           1h      1d
+│ └ ◐ /en/verwaltung/seiteninhalte/[bereich]                                           1h      1d
+├   /[locale]/verwaltung/seiteninhalte/kontakt
+│ ├ ƒ /[locale]/verwaltung/seiteninhalte/kontakt
+│ ├ ƒ /de/verwaltung/seiteninhalte/kontakt                                             1h      1d
+│ ├ ƒ /tr/verwaltung/seiteninhalte/kontakt                                             1h      1d
+│ └ ƒ /en/verwaltung/seiteninhalte/kontakt                                             1h      1d
+├   /[locale]/verwaltung/seiteninhalte/organisationen
+│ ├ ƒ /[locale]/verwaltung/seiteninhalte/organisationen
+│ ├ ƒ /de/verwaltung/seiteninhalte/organisationen                                      1h      1d
+│ ├ ƒ /tr/verwaltung/seiteninhalte/organisationen                                      1h      1d
+│ └ ƒ /en/verwaltung/seiteninhalte/organisationen                                      1h      1d
+├   /[locale]/verwaltung/seiteninhalte/organisationen/[org]
+│ ├ ◐ /[locale]/verwaltung/seiteninhalte/organisationen/[org]
+│ ├ ◐ /de/verwaltung/seiteninhalte/organisationen/[org]                                1h      1d
+│ ├ ◐ /tr/verwaltung/seiteninhalte/organisationen/[org]                                1h      1d
+│ └ ◐ /en/verwaltung/seiteninhalte/organisationen/[org]                                1h      1d
+├   /[locale]/verwaltung/startklar
+│ ├ ƒ /[locale]/verwaltung/startklar
+│ ├ ƒ /de/verwaltung/startklar                                                         1h      1d
+│ ├ ƒ /tr/verwaltung/startklar                                                         1h      1d
+│ └ ƒ /en/verwaltung/startklar                                                         1h      1d
+├   /[locale]/verwaltung/styleguide
+│ ├ ƒ /[locale]/verwaltung/styleguide
+│ ├ ƒ /de/verwaltung/styleguide                                                        1h      1d
+│ ├ ƒ /tr/verwaltung/styleguide                                                        1h      1d
+│ └ ƒ /en/verwaltung/styleguide                                                        1h      1d
+├   /[locale]/verwaltung/tickets
+│ ├ ƒ /[locale]/verwaltung/tickets
+│ ├ ƒ /de/verwaltung/tickets                                                           1h      1d
+│ ├ ƒ /tr/verwaltung/tickets                                                           1h      1d
+│ └ ƒ /en/verwaltung/tickets                                                           1h      1d
+├   /[locale]/verwaltung/tickets/[id]
+│ ├ ◐ /[locale]/verwaltung/tickets/[id]
+│ ├ ◐ /de/verwaltung/tickets/[id]                                                      1h      1d
+│ ├ ◐ /tr/verwaltung/tickets/[id]                                                      1h      1d
+│ └ ◐ /en/verwaltung/tickets/[id]                                                      1h      1d
+├   /[locale]/verwaltung/tickets/neu
+│ ├ ƒ /[locale]/verwaltung/tickets/neu
+│ ├ ƒ /de/verwaltung/tickets/neu                                                       1h      1d
+│ ├ ƒ /tr/verwaltung/tickets/neu                                                       1h      1d
+│ └ ƒ /en/verwaltung/tickets/neu                                                       1h      1d
+├   /[locale]/verwaltung/veranstaltungen
+│ ├ ƒ /[locale]/verwaltung/veranstaltungen
+│ ├ ƒ /de/verwaltung/veranstaltungen                                                   1h      1d
+│ ├ ƒ /tr/verwaltung/veranstaltungen                                                   1h      1d
+│ └ ƒ /en/verwaltung/veranstaltungen                                                   1h      1d
+├   /[locale]/verwaltung/veranstaltungen/[id]
+│ ├ ◐ /[locale]/verwaltung/veranstaltungen/[id]
+│ ├ ◐ /de/verwaltung/veranstaltungen/[id]                                              1h      1d
+│ ├ ◐ /tr/verwaltung/veranstaltungen/[id]                                              1h      1d
+│ └ ◐ /en/verwaltung/veranstaltungen/[id]                                              1h      1d
+├   /[locale]/verwaltung/veranstaltungen/neu
+│ ├ ƒ /[locale]/verwaltung/veranstaltungen/neu
+│ ├ ƒ /de/verwaltung/veranstaltungen/neu                                               1h      1d
+│ ├ ƒ /tr/verwaltung/veranstaltungen/neu                                               1h      1d
+│ └ ƒ /en/verwaltung/veranstaltungen/neu                                               1h      1d
+├   /[locale]/verwaltung/zwei-faktor
+│ ├ ƒ /[locale]/verwaltung/zwei-faktor
+│ ├ ƒ /de/verwaltung/zwei-faktor                                                       1h      1d
+│ ├ ƒ /tr/verwaltung/zwei-faktor                                                       1h      1d
+│ └ ƒ /en/verwaltung/zwei-faktor                                                       1h      1d
+├   /[locale]/vorstand
+│ ├ ◐ /[locale]/vorstand
+│ ├ ○ /de/vorstand                                                                     1h      1d
+│ ├ ○ /tr/vorstand                                                                     1h      1d
+│ └ ○ /en/vorstand                                                                     1h      1d
+├   /[locale]/webseite-fuer-moscheen
+│ ├ ◐ /[locale]/webseite-fuer-moscheen
+│ ├ ○ /de/webseite-fuer-moscheen                                                       1h      1d
+│ ├ ○ /tr/webseite-fuer-moscheen                                                       1h      1d
+│ └ ○ /en/webseite-fuer-moscheen                                                       1h      1d
+├ ƒ /api/altcha
+├ ƒ /api/auth/[...all]
+├ ƒ /api/health
+├ ƒ /api/ical/[sprache]/organisation/[organisation]
+├ ƒ /api/ical/[sprache]/veranstaltung/[slug]
+├ ƒ /api/ical/[sprache]/veranstaltungen
+├ ƒ /api/wartung/cache-erneuern
+├ ƒ /api/wartung/loeschfristen
+├ ƒ /api/wartung/mail-ausgang
+├ ○ /manifest.webmanifest
+├ ƒ /medien/[...schluessel]
+├ ○ /robots.txt
+└ ○ /sitemap.xml                                                                       1h      1d
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)             prerendered as static content
+●  (SSG)                prerendered as static HTML (uses generateStaticParams)
+◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
+ƒ  (Dynamic)            server-rendered on demand
+

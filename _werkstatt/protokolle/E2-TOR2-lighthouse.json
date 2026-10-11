@@ -1,0 +1,160 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-11-19-26",
+  "basis": "http://127.0.0.1:3400",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Startseite",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1996,
+          "cls": 0.002,
+          "tbtMs": 493,
+          "jsKb": 173.7,
+          "simuliert": {
+            "performance": 63,
+            "lcpMs": 3726
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2032,
+          "cls": 0.002,
+          "tbtMs": 895,
+          "jsKb": 173.7,
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2496
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1864,
+          "cls": 0.002,
+          "tbtMs": 656,
+          "jsKb": 173.7,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3308
+          }
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1996,
+        "cls": 0.002,
+        "tbtMs": 656,
+        "jsKb": 173.7,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 3308
+      },
+      "spanneLeistung": [
+        77,
+        85
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2025,
+          "cls": 0.002,
+          "tbtMs": 637,
+          "jsKb": 170.7,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3511
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1890,
+          "cls": 0.002,
+          "tbtMs": 483,
+          "jsKb": 170.7,
+          "simuliert": {
+            "performance": 82,
+            "lcpMs": 3297
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1867,
+          "cls": 0.002,
+          "tbtMs": 322,
+          "jsKb": 170.7,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 2876
+          }
+        }
+      ],
+      "median": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1890,
+        "cls": 0.002,
+        "tbtMs": 483,
+        "jsKb": 170.7,
+        "simuliertPerformance": 88,
+        "simuliertLcpMs": 3297
+      },
+      "spanneLeistung": [
+        82,
+        91
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}
