@@ -35,7 +35,9 @@ export type AuditAktion =
   | 'gebetszeiten.einstellung'
   | 'einstellung.geaendert'
   | 'ticket.angelegt'
-  | 'ticket.geaendert';
+  | 'ticket.geaendert'
+  | 'ticket.kommentiert'
+  | 'postfach.gesendet';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

@@ -1,22 +1,24 @@
 # STATUS
 
-**Statuszeile:** Phase P4 · Tor A bestanden (Reparaturen R1/R2 + O), Welle B: B01/B02/B04/B05 fertig, B03/B06/B07 laufen (Workflow woruff1a5) · Z 0/12 · nächster Schritt: Formularpakete abnehmen, B08/B09 Mails, A23b E2E-Bedienabläufe, Tor B
+**Statuszeile:** Phase P4 · Tor A bestanden · Welle B: alle fünf Formulare fertig (B01–B07) · Welle C: C08, C13, C14, C15, C16 fertig · Z 0/12 · nächster Schritt: Bündel 2 (C01, C02, C03, C06, C09, C10), parallel C12 Benutzer (Orchestrator); danach C04/C05/C10b Meldung, C07, C11, B08/B09 prüfen, Tor B
 
-## Prüfpunkt (2026-10-11, ~06:05)
+## Prüfpunkt (2026-10-11, ~08:25)
 - **Erledigt seit letztem Prüfpunkt:**
-  - Tor P3 bestanden (0246a4a), Welle-A-Vorarbeiten (32148dd)
-  - B02 Formular-Infrastruktur + B04 Veranstaltungsanmeldung (dieser Commit): `verarbeiteFormular` (Rate → Honigtopf → ALTCHA → Zod → Prüfung → Transaktion eingang/einwilligung/mail_ausgang → Versand per `after`), Mail-Ausgang mit Wiederholung, Vorlagen Bestätigung/Benachrichtigung (React Email), Formular-Insel nach E-028 (JS Detail 178,7 kB), ALTCHA CSP-fest (`altcha/external`, Worker unter `/altcha/`)
-  - Belege: Integration 59/59 (davon 8 Anmeldung), Unit 193, E2E Anmeldung bis Mailpit + Veranstaltungen 65/65, axe auf dem Formular im Fehlerzustand, Lighthouse Detail P 98 / LCP 1,9 s / JS 178,7 kB (`_lauf/belege/lighthouse/2026-10-11-03-57/`)
-  - B01 FormWizard (E-029, Schritte vom Server, kein Client-JS) + B05 Schüler-Voranmeldung (4 Schritte, Kinderdaten verschlüsselt, zwei Einwilligungen): Unit 200, Integration 66/66, E2E Wizard + Anmeldung grün, axe Voranmeldung 3 Sprachen × 390/1440, Lighthouse P 99 / LCP 1,6 s
-  - **Offen aus Messung:** Voranmeldung 205,8 kB JS – Ursache A18 (`[locale]/error.tsx` zieht `tailwind-merge` in alle Routen, FEHLERSTATISTIK); bei Abnahme A18 beheben und alle Routen neu messen
-  - Tor A: DP-Befunde hoch behoben (Sans-Titel, Missionskarte, Terminliste, Kurshinweis/-status, Kategoriefarbe, Schlagwörter) oder bewusst dokumentiert; SP-A: 9 behoben, Freigabe-Blocker Löschfristen (C08) und Rechtstexte (M-079); echte 404; Übersetzungsprüfung A19–A21 eingespielt; A22 Unit-Tests Gebetszeiten (Befund A22-1 → M-082). Belege: E2E 326/326, Unit 339 (+3 erwartete Fehlschläge), Integration 66, Messrouten 166–173 kB
-- **Laufende Pakete:** Workflow `wkol57rrk` (Run `wf_6899392c-b4b`, Welle A: A01→A02 · A03→A05→A06 · A04→A07→A17 · A08→A09→A18 · A10→A11→A12 · A15→A14)
-- **Nächster Schritt:** Rückgaben Welle A nach L1 abnehmen, Integration (Routentabellen barrierefreiheit/datenschutz, neu-uebersetzt, MENSCHEN, ABWEICHUNGEN), Bau + E2E + messen, Tor A (DP/SP), Commit; Morgenbericht ab 07:00
-- **Hinweis Budget:** Detailseite hat nach B04 nur 1,3 kB Luft (178,7/180) – neue Client-Komponenten auf Veranstaltungsseiten vermeiden; Formulare nur nach MUSTER 6a
-- **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit 127.0.0.1:8025)
+  - B03 Kontaktformular, B06 Mitglied werden, B07 Webseite für Moscheen (Haiku, L1 9–10/10)
+  - C08 Eingänge + C16 Löschfristen (Orchestrator): Liste ohne Personendaten, Detail mit Audit des Abrufs, Status startet Frist, verschlüsselte Notizen, Export CSV/JSON mit Audit, endgültiges Löschen, Löschlauf `POST /api/wartung/loeschfristen`, Einstellungen › Löschfristen
+  - C13 Audit-Log, C14 Styleguide, C15 Rich-Text-Editor (Haiku, je 10/10); Module audit, styleguide, einstellungen, eingaenge freigeschaltet
+  - Befunde O behoben: Absenden ohne JavaScript → 500 (E-032, `zurueckOhneSkript`), ALTCHA-Rennen beim schnellen Absenden (`AltchaFeld` stößt `verify()` an), fehlender Audit-Eintrag bei der ersten Anmeldung, Betreff „Mitgliedsanfrage“ vereinheitlicht; E2E: eigene Absenderadresse je Test (Anmeldegrenze)
+  - Entscheidungen E-032 (ohne JS), E-033 (Ankündigungen oben auf „Nachrichten“), E-034 (Meldung als eigene Seite); MENSCHEN M-083–M-087
+  - Belege: `_lauf/belege/welle-b/abnahme-b03-b06-b07-c08-c13-c16.md` – Unit 450 (+3 erwartete Fehlschläge), Integration 131/131, Build grün, E2E 360 + Nachlauf 6/6, Lighthouse 9 Routen P 98–99 / A·BP·SEO 100 / JS 168,9–172,5 kB
+- **Laufende Pakete:** keine
+- **Nächster Schritt:** Bündel 2 starten (Workflow, 6 Haiku), währenddessen C12 Benutzer und Rollen (Orchestrator, Stufe 3)
+- **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit 127.0.0.1:8025); Dev-Server 127.0.0.1:3000 (Hintergrund)
 - **Umgebung je Befehl:** `source _lauf/werkzeuge/umgebung.sh` (pnpm, Docker ohne Keychain-Helper, Telemetrie aus)
 
 ## Offene Punkte für spätere Pakete
+- Medienwahl im Rich-Text-Editor (`bildAuswahl`) → C11; Neuigkeiten-Bild (`bildId`) → C11
+- Zähler Postfach/Tickets in der Seitenleiste → Orchestrator nach C09/C10 (Layout)
+- SP-A-03 Proxy-Vertrauen für `x-forwarded-for` (Ratenbegrenzung, Better Auth) → P5
 - Passkey-Registrierung und -Anmeldung (Client-Plugin) → C12 Benutzer/Konto
 - Passwort vergessen (sendResetPassword) → C12
 - TOTP-Wiederverwendung im selben Zeitfenster (Lichtung b) → Sicherheitsprüfer Tor P3/P5

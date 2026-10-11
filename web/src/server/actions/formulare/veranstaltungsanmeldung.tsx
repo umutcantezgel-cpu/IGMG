@@ -9,6 +9,7 @@ import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import type { FormularAntwort } from '@/lib/formulare/ergebnis';
+import { zurueckOhneSkript } from '@/lib/formulare/ohne-skript';
 import { verarbeiteFormular, type GeplanteMail } from '@/lib/formulare/verarbeiten';
 import { datumLang, datumOhneWochentag, zeitspanne } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
@@ -35,6 +36,7 @@ async function ladeNachId(id: unknown) {
  * Danach Platzzahl sofort aktualisieren (Tag anmeldungen:<id>). Antwort mit auf dem Server gerenderter Ansicht (E-028).
  */
 export async function meldeAn(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
+  await zurueckOhneSkript();
   const sprache = (['de', 'tr', 'en'].includes(String(fd.get('sprache'))) ? fd.get('sprache') : 'de') as Sprache;
   const t = await getTranslations({ locale: sprache, namespace: 'veranstaltung.formular' });
   let veranstaltung: { id: string; titel: string; termin: string; organisation: string | null; loeschenAb: Date | null } | null = null;

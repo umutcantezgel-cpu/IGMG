@@ -18,6 +18,16 @@ const lade = (s) => {
       basis[ns] = wert;
     }
   }
+  // Verwaltungsmodule (E-031): messages/verwaltung/<modul>.json, nur Deutsch, unter dem Namensraum `verwaltung`
+  if (s === 'de') {
+    basis.verwaltung ??= {};
+    for (const d of readdirSync(join(ordner, 'verwaltung')).filter((n) => n.endsWith('.json'))) {
+      for (const [ns, wert] of Object.entries(lies(join(ordner, 'verwaltung', d)))) {
+        if (ns in basis.verwaltung) ueberschneidungen.push(`de: verwaltung.${ns} aus verwaltung/${d} existiert bereits`);
+        basis.verwaltung[ns] = wert;
+      }
+    }
+  }
   return basis;
 };
 const flach = (o, p = '', a = {}) => {

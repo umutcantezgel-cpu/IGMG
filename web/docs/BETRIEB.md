@@ -39,7 +39,8 @@ Alle Platzhalter in eckigen Klammern sind von der Gemeinde zu füllen (`_lauf/ME
 Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten sie mit 401.
 
 - `POST /api/wartung/cache-erneuern` – alle Inhalts-Caches verfallen lassen (läuft automatisch beim Start). Manuell nötig nur, wenn Inhalte direkt in der Datenbank geändert wurden.
-- `POST /api/wartung/loeschfristen` – löscht Eingänge nach Ablauf der Fristen (folgt in Welle C; täglich per Cron aufrufen).
+- `POST /api/wartung/loeschfristen` – Löschlauf (C16, G-07): löscht Eingänge, deren Frist abgelaufen ist (samt Einwilligungen, Notizen und Mail-Ausgang; Audit-Eintrag `eingang.frist_geloescht` ohne Personendaten), versendete Mails nach 30 Tagen, verbrauchte ALTCHA-Aufgaben und alte Zähler der Ratenbegrenzung. Antwort: Anzahl gelöschter Einträge. **Täglich per Cron aufrufen**, z. B. `15 3 * * * curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://<domain>/api/wartung/loeschfristen`.
+- Fristen je Eingangsart: Verwaltung › Einstellungen (Vorgabe 180 Tage nach Abschluss, Veranstaltungsanmeldungen 30 Tage nach dem Termin; M-050). Die Frist beginnt, wenn ein Eingang „Erledigt“ oder „Abgelehnt“ wird; Wiederöffnen hebt sie auf.
 
 ## 5 Caching – was Betreuende wissen müssen
 

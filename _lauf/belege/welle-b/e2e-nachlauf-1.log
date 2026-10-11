@@ -1,0 +1,207 @@
+
+Running 16 tests using 2 workers
+
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.3b23e2f0@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✘   1 [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Kontakt (tr): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler (378ms)
+  ✘   3 [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Mitglied werden (FormWizard): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler (233ms)
+  ✓   4 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:24:5 › Öffentliche Registrierung über HTTP ist gesperrt (55ms)
+  ✓   5 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:32:5 › Anmeldung, Zwei-Faktor und Passkey sind über HTTP gesperrt (nur über die Anmeldeseite, SP-P3 H1/H2) (20ms)
+  ✓   6 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:45:5 › Ohne Anmeldung führt die Verwaltung zur Anmeldeseite (250ms)
+  ✓   7 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:51:5 › Ungültige Einladung zeigt eine Fehlermeldung (137ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.aa0421d8@example.test --name 'Testperson Eins' --rolle administration --nur_token
+[WebServer] 2026-10-11T06:04:03.487Z WARN [Better Auth]: Invalid password
+  ✓   8 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:56:5 › Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden (1.9s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.a334c6cf@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✘   9 [desktop] › tests/e2e/verwaltung-audit.spec.ts:18:5 › Administration liest das Audit-Log, filtert nach Aktion und sieht keine Personendaten in Details (6.0s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.998823bf@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+  ✓  10 [desktop] › tests/e2e/verwaltung-audit.spec.ts:54:5 › Redaktion ohne Recht audit.lesen wird auf „Kein Zugriff“ umgeleitet (956ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.98ec55d4@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✘  11 [desktop] › tests/e2e/verwaltung-eingaenge.spec.ts:25:5 › Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgültig löschen (5.0s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.119f27ef@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  12 [desktop] › tests/e2e/verwaltung-styleguide.spec.ts:17:5 › Styleguide: Aufruf, Abschnitte, Tokens, Felder und Barrierefreiheit (1.6s)
+  ✓  13 [desktop] › tests/e2e/verwaltung-styleguide.spec.ts:60:5 › Ohne Anmeldung leitet die Seite zur Anmeldung (185ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.5bd908b7@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  14 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:28:5 › Veranstaltung anlegen, öffentlich sehen, Papierkorb und endgültig löschen (3.4s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.d6f68506@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  15 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:110:5 › Organisationsredaktion: nur eigene Organisation wählbar und sichtbar (1.0s)
+  ✓  16 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:128:5 › Ohne Anmeldung: Verwaltungsseiten leiten zur Anmeldung (240ms)
+  ✘   2 [desktop] › tests/e2e/formular-mitgliedsantrag.spec.ts:33:5 › Mitgliedsantrag in drei Schritten bis zur Bestätigung (22.6s)
+
+
+  1) [desktop] › tests/e2e/formular-mitgliedsantrag.spec.ts:33:5 › Mitgliedsantrag in drei Schritten bis zur Bestätigung 
+
+    Error: expect(locator).not.toHaveValue(expected) failed
+
+    Locator:  locator('main form').locator('input[name="altcha"]')
+    Expected: not ""
+    Received: ""
+    Timeout:  20000ms
+
+    Call log:
+      - Expect "not toHaveValue" locator('main form').locator('input[name="altcha"]') with timeout 20000ms
+      - waiting for locator('main form').locator('input[name="altcha"]')
+        43 × locator resolved to <input type="hidden" name="altcha"/>
+           - unexpected value ""
+
+
+      94 |   await form.getByLabel(feld(m.motivation.label)).fill('Testmotivation');
+      95 |   await form.getByRole('checkbox', { name: feld(m.einwilligung.datenschutz) }).check();
+    > 96 |   await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+         |                                                          ^
+      97 |   await form.getByRole('button', { name: m.absenden }).click();
+      98 |
+      99 |   const erfolg = page.getByRole('status').filter({ hasText: m.erfolg.titel });
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/formular-mitgliedsantrag.spec.ts:96:58
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/formular-mitgliedsantrag-M-d9c5c-hritten-bis-zur-Bestätigung-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/formular-mitgliedsantrag-M-d9c5c-hritten-bis-zur-Bestätigung-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/formular-mitgliedsantrag-M-d9c5c-hritten-bis-zur-Bestätigung-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/formular-mitgliedsantrag-M-d9c5c-hritten-bis-zur-Bestätigung-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Kontakt (tr): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "id=\"ohne-skript\""
+    Received string:    "Bu form JavaScript gerektirir: Otomatik gönderimlere karşı koruma tarayıcınızda çalışır. Formu göndermek için lütfen JavaScript’i etkinleştirin."
+
+      22 |     const hinweis = async () => (await page.locator('noscript').allTextContents()).join(' ');
+      23 |     await page.goto(s.pfad);
+    > 24 |     expect(await hinweis()).toContain('id="ohne-skript"');
+         |                             ^
+      25 |     expect(await hinweis()).toContain(formulare[s.sprache].formulare.ohneSkript);
+      26 |     await page.getByRole('button', { name: s.knopf, exact: true }).click();
+      27 |     await page.waitForURL((u) => u.pathname === s.pfad && u.hash === '#ohne-skript');
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/formulare-ohne-skript.spec.ts:24:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/formulare-ohne-skript-Kont-05127-urück-statt-zu-einem-Fehler-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/formulare-ohne-skript-Kont-05127-urück-statt-zu-einem-Fehler-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/formulare-ohne-skript-Kont-05127-urück-statt-zu-einem-Fehler-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/formulare-ohne-skript-Kont-05127-urück-statt-zu-einem-Fehler-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Mitglied werden (FormWizard): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "id=\"ohne-skript\""
+    Received string:    "Dieses Formular braucht JavaScript: Der Schutz vor automatischen Einsendungen läuft in Ihrem Browser. Bitte aktivieren Sie JavaScript, um das Formular zu senden."
+
+      22 |     const hinweis = async () => (await page.locator('noscript').allTextContents()).join(' ');
+      23 |     await page.goto(s.pfad);
+    > 24 |     expect(await hinweis()).toContain('id="ohne-skript"');
+         |                             ^
+      25 |     expect(await hinweis()).toContain(formulare[s.sprache].formulare.ohneSkript);
+      26 |     await page.getByRole('button', { name: s.knopf, exact: true }).click();
+      27 |     await page.waitForURL((u) => u.pathname === s.pfad && u.hash === '#ohne-skript');
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/formulare-ohne-skript.spec.ts:24:29
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/formulare-ohne-skript-Mitg-90797-urück-statt-zu-einem-Fehler-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/formulare-ohne-skript-Mitg-90797-urück-statt-zu-einem-Fehler-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/formulare-ohne-skript-Mitg-90797-urück-statt-zu-einem-Fehler-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/formulare-ohne-skript-Mitg-90797-urück-statt-zu-einem-Fehler-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [desktop] › tests/e2e/verwaltung-audit.spec.ts:18:5 › Administration liest das Audit-Log, filtert nach Aktion und sieht keine Personendaten in Details 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('table', { name: 'Protokoll der Verwaltung, neueste Einträge zuerst' }).getByRole('cell', { name: 'Anmeldung erfolgreich' }).first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('table', { name: 'Protokoll der Verwaltung, neueste Einträge zuerst' }).getByRole('cell', { name: 'Anmeldung erfolgreich' }).first() with timeout 5000ms
+      - waiting for getByRole('table', { name: 'Protokoll der Verwaltung, neueste Einträge zuerst' }).getByRole('cell', { name: 'Anmeldung erfolgreich' }).first()
+
+
+      25 |   await expect(tabelle).toBeVisible();
+      26 |   // Die eigene Anmeldung ist protokolliert (neueste zuerst, Konto mit Name)
+    > 27 |   await expect(tabelle.getByRole('cell', { name: 'Anmeldung erfolgreich' }).first()).toBeVisible();
+         |                                                                                      ^
+      28 |   await expect(tabelle.getByRole('rowheader').first()).toBeVisible();
+      29 |   // Nur lesen: keine Schaltflächen in der Tabelle
+      30 |   await expect(tabelle.getByRole('button')).toHaveCount(0);
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-audit.spec.ts:27:86
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-audit-Administr-c4978-ne-Personendaten-in-Details-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-audit-Administr-c4978-ne-Personendaten-in-Details-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-audit-Administr-c4978-ne-Personendaten-in-Details-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-audit-Administr-c4978-ne-Personendaten-in-Details-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [desktop] › tests/e2e/verwaltung-eingaenge.spec.ts:25:5 › Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgültig löschen 
+
+    Error: locator.selectOption: Error: strict mode violation: getByLabel('Status') resolved to 3 elements:
+        1) <section aria-labelledby="eingang-status" class="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6">…</section> aka getByRole('region', { name: 'Status ändern' })
+        2) <select name="status" class="min-h-11 rounded-md border border-rand bg-weiss px-3 text-18">…</select> aka getByLabel('StatusNeuIn')
+        3) <select name="status" class="min-h-11 rounded-md border border-rand bg-weiss px-3 text-18">…</select> aka getByLabel('StatusAlle StatusOffen (neu')
+
+    Call log:
+      - waiting for getByLabel('Status')
+
+
+      57 |
+      58 |   // Abschließen startet die Löschfrist
+    > 59 |   await page.getByLabel(t.spalte.status).selectOption('erledigt');
+         |                                          ^
+      60 |   await page.getByRole('button', { name: t.detail.statusSpeichern }).click();
+      61 |   await expect(page.getByText(/^Wird automatisch gelöscht ab /)).toBeVisible();
+      62 |
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-eingaenge.spec.ts:59:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-eingaenge-Eingä-74dd0-xport-und-endgültig-löschen-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-eingaenge-Eingä-74dd0-xport-und-endgültig-löschen-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-eingaenge-Eingä-74dd0-xport-und-endgültig-löschen-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-eingaenge-Eingä-74dd0-xport-und-endgültig-löschen-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [desktop] › tests/e2e/formular-mitgliedsantrag.spec.ts:33:5 › Mitgliedsantrag in drei Schritten bis zur Bestätigung 
+    [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Kontakt (tr): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler 
+    [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Mitglied werden (FormWizard): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler 
+    [desktop] › tests/e2e/verwaltung-audit.spec.ts:18:5 › Administration liest das Audit-Log, filtert nach Aktion und sieht keine Personendaten in Details 
+    [desktop] › tests/e2e/verwaltung-eingaenge.spec.ts:25:5 › Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgültig löschen 
+  11 passed (25.1s)

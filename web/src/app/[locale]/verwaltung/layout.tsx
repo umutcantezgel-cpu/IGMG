@@ -21,7 +21,7 @@ export default async function VerwaltungLayout({ children }: LayoutProps<'/[loca
   if ((await locale()) !== 'de') redirect('/verwaltung');
   const nachrichten = await getMessages();
   return (
-    <NextIntlClientProvider messages={{ verwaltung: nachrichten.verwaltung }}>
+    <NextIntlClientProvider timeZone="Europe/Berlin" messages={{ verwaltung: nachrichten.verwaltung }}>
       <div className="min-h-dvh bg-papier">{children}</div>
     </NextIntlClientProvider>
   );

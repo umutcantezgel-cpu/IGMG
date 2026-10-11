@@ -38,6 +38,17 @@ export function AltchaFeld({ sprache, texte }: { sprache: 'de' | 'tr' | 'en'; te
       formular.removeEventListener('pointerdown', laden);
     };
   }, [sprache, geladen]);
+  // Rückfall: Wurde das vorige Widget mitten in seiner Prüfung entfernt (Absenden, bevor „Geprüft“ erschien), startet
+  // „auto: onload“ im neuen Widget nicht (ALTCHA 3.3) – dann die Prüfung selbst anstoßen.
+  useEffect(() => {
+    if (!geladen) return;
+    const zeit = setTimeout(() => {
+      const widget = ref.current?.querySelector('altcha-widget') as
+        (HTMLElement & { getState?: () => string; verify?: () => Promise<unknown> }) | null;
+      if (widget?.getState?.() === 'unverified') void widget.verify?.();
+    }, 500);
+    return () => clearTimeout(zeit);
+  }, [geladen]);
   return (
     <div ref={ref} className="flex min-h-[72px] flex-col gap-1.5" role="group" aria-label={texte.label}>
       {geladen

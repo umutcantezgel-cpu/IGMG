@@ -58,6 +58,14 @@ const ROUTEN = [
     tr: '/tr/egitim/on-kayit',
     en: '/en/education/pre-registration',
   },
+  { id: 'mitglied', seite: 'Mitglied werden', de: '/mitglied-werden', tr: '/tr/uye-ol', en: '/en/become-a-member' },
+  {
+    id: 'moschee',
+    seite: 'Webseite für Moscheen',
+    de: '/webseite-fuer-moscheen',
+    tr: '/tr/camiler-icin-web-sitesi',
+    en: '/en/website-for-mosques',
+  },
 ] as const;
 
 type Sprache = 'de' | 'tr' | 'en';

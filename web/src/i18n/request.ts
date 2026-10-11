@@ -3,6 +3,7 @@ import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import * as rootParams from 'next/root-params';
 import { BEREICHE } from '../../messages/bereiche';
+import { VERWALTUNG } from '../../messages/verwaltung';
 import { routing } from './routing';
 
 type Nachrichten = Record<string, unknown>;
@@ -27,6 +28,8 @@ function mitRueckfall(basis: Nachrichten, sprache: Nachrichten): Nachrichten {
 function mitBereichen(basis: Nachrichten, sprache: 'de' | 'tr' | 'en'): Nachrichten {
   const aus: Nachrichten = { ...basis };
   for (const datei of Object.values(BEREICHE)) Object.assign(aus, datei[sprache]);
+  // Verwaltungsmodule (E-031): nur Deutsch, unter dem Namensraum `verwaltung`
+  if (sprache === 'de') aus.verwaltung = Object.assign({}, basis.verwaltung as Nachrichten, ...Object.values(VERWALTUNG));
   return aus;
 }
 

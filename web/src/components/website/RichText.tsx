@@ -1,16 +1,10 @@
 import type { JSONContent } from '@tiptap/core';
 import { renderJSONContentToReactElement } from '@tiptap/static-renderer/json/react';
 import type { ReactNode } from 'react';
+import { istErlaubterLink } from '@/lib/inhalt/links';
 
-/**
- * Erlaubte Linkziele (ADR 0006): https, mailto, tel und relative Pfade. Relativ heißt: ein Schrägstrich, danach weder
- * „/“ noch „\\“ – Browser lesen „/\\host“ wie „//host“ (fremder Host, Tor A SP-A-16).
- */
-export function istErlaubterLink(href: unknown): href is string {
-  return (
-    typeof href === 'string' && (/^https:\/\//.test(href) || /^mailto:/.test(href) || /^tel:/.test(href) || /^\/(?![\/\\])/.test(href))
-  );
-}
+/** Linkregel (ADR 0006) – Quelle ist `@/lib/inhalt/links`, hier für bestehende Aufrufer weitergereicht. */
+export { istErlaubterLink };
 
 type Kinder = ReactNode | ReactNode[];
 type KnotenProps = { node: JSONContent; children?: Kinder };

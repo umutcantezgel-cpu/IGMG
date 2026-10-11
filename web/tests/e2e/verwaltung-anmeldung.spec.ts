@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import * as OTPAuth from 'otpauth';
 import { erzeugeEinladung, TESTPASSWORT } from './hilfen/einladung';
+import { eigeneAbsenderAdresse } from './hilfen/konto';
 
 /**
  * Tor P2: „Anmelden mit Zwei-Faktor“ (K-06, Z-06). Ablauf: Einladung annehmen → anmelden →
@@ -53,6 +54,7 @@ test('Ungültige Einladung zeigt eine Fehlermeldung', async ({ page }) => {
 });
 
 test('Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden', async ({ page }) => {
+  await eigeneAbsenderAdresse(page);
   const konsole = sammleKonsolenfehler(page);
   const { email, token } = erzeugeEinladung();
 

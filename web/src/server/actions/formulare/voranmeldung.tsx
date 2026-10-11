@@ -4,6 +4,7 @@ import { randomUUID } from 'node:crypto';
 import { getTranslations } from 'next-intl/server';
 import { VoranmeldungErfolg, VoranmeldungFormular } from '@/components/website/formulare/VoranmeldungFormular';
 import type { FormularAntwort } from '@/lib/formulare/ergebnis';
+import { zurueckOhneSkript } from '@/lib/formulare/ohne-skript';
 import { verarbeiteFormular, type GeplanteMail } from '@/lib/formulare/verarbeiten';
 import { schrittMitFehler, wizardSchritt } from '@/lib/formulare/wizard';
 import { datumOhneWochentag } from '@/lib/i18n/format';
@@ -17,6 +18,7 @@ type Sprache = 'de' | 'tr' | 'en';
  * Einwilligungen; Bestätigung an Elternteil 1, Benachrichtigung an die zuständigen Rollen (ohne Formulardaten).
  */
 export async function sendeVoranmeldung(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
+  await zurueckOhneSkript();
   const sprache = (['de', 'tr', 'en'].includes(String(fd.get('sprache'))) ? fd.get('sprache') : 'de') as Sprache;
   const stand = wizardSchritt(fd, voranmeldungSchema, VORANMELDUNG_SCHRITTE);
   if (stand.art === 'schritt') {

@@ -1,13 +1,47 @@
 'use client';
 
-import { CalendarDays, LayoutDashboard, Menu, X } from 'lucide-react';
+import {
+  CalendarDays,
+  Clock,
+  FileText,
+  GraduationCap,
+  Image as Bild,
+  Inbox,
+  LayoutDashboard,
+  Mail,
+  Megaphone,
+  Menu,
+  Newspaper,
+  Palette,
+  ScrollText,
+  Settings,
+  Ticket,
+  Users,
+  X,
+} from 'lucide-react';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import type { ModulIcon } from './module';
 
-const ICONS: Record<ModulIcon, typeof Menu> = { uebersicht: LayoutDashboard, veranstaltungen: CalendarDays };
+const ICONS: Record<ModulIcon, typeof Menu> = {
+  uebersicht: LayoutDashboard,
+  neuigkeiten: Newspaper,
+  veranstaltungen: CalendarDays,
+  ankuendigungen: Megaphone,
+  seiteninhalte: FileText,
+  kurse: GraduationCap,
+  gebetszeiten: Clock,
+  eingaenge: Inbox,
+  postfach: Mail,
+  tickets: Ticket,
+  medien: Bild,
+  benutzer: Users,
+  audit: ScrollText,
+  styleguide: Palette,
+  einstellungen: Settings,
+};
 
 export type SeitenleistenEintrag = {
   schluessel: string;

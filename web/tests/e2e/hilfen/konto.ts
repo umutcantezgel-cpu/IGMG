@@ -3,10 +3,21 @@ import * as OTPAuth from 'otpauth';
 import { erzeugeEinladung, TESTPASSWORT } from './einladung';
 
 /**
+ * Eigene Absender-Adresse je Test (`x-forwarded-for`, Testnetz 198.18.0.0/15): Die Anmeldegrenzen (5 je Minute und IP,
+ * `src/lib/auth/optionen.ts`) und die Formular-Ratenbegrenzung gelten dann je Test – nicht für den ganzen Lauf mit
+ * zwei parallelen Workern. Die Regeln selbst bleiben unverändert.
+ */
+export async function eigeneAbsenderAdresse(page: Page) {
+  const b = () => Math.floor(Math.random() * 254) + 1;
+  await page.context().setExtraHTTPHeaders({ 'x-forwarded-for': `198.${18 + (b() % 2)}.${b()}.${b()}` });
+}
+
+/**
  * Legt per Einladung ein Testkonto an, richtet TOTP ein und meldet es an (G-04: nur Testdaten).
  * Ergebnis: angemeldete Seite auf /verwaltung.
  */
 export async function angemeldetesKonto(page: Page, rolle = 'administration', organisation?: string) {
+  await eigeneAbsenderAdresse(page);
   const { email, token } = erzeugeEinladung(rolle, organisation);
   await page.goto(`/verwaltung/einladung/${token}`);
   await page.getByLabel('Neues Passwort').filter({ visible: true }).fill(TESTPASSWORT);

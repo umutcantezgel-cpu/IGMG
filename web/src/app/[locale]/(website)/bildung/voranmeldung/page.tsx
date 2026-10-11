@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 /** Schüler-Voranmeldung (design/StudentRegistration.dc.html, Blatt S20, B05): FormWizard in vier Schritten, Warteliste. */
 export default async function VoranmeldungSeite() {
   const sprache = (await getLocale()) as Locale;
-  const [t, tp] = await Promise.all([getTranslations('voranmeldung'), getTranslations('kopf')]);
+  const [t, tp, tf] = await Promise.all([getTranslations('voranmeldung'), getTranslations('kopf'), getTranslations('formulare')]);
   return (
     <Seitenrahmen
       bereich="bildung"
@@ -28,7 +28,7 @@ export default async function VoranmeldungSeite() {
     >
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto max-w-5xl px-4 py-10 md:px-8 md:py-14">
-        <FormularInsel aktion={sendeVoranmeldung}>
+        <FormularInsel aktion={sendeVoranmeldung} ohneSkript={tf('ohneSkript')}>
           <VoranmeldungFormular sprache={sprache} />
         </FormularInsel>
       </div>

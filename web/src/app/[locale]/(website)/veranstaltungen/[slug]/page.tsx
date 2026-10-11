@@ -114,10 +114,11 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
   const sprache = locale as Locale;
   const v = await ladeVeranstaltung(slug);
   if (!v) notFound();
-  const [t, tk, tp, kontaktSeite, angemeldet] = await Promise.all([
+  const [t, tk, tp, tf, kontaktSeite, angemeldet] = await Promise.all([
     getTranslations('veranstaltung'),
     getTranslations('karten'),
     getTranslations('kopf'),
+    getTranslations('formulare'),
     ladeSeiteninhalt('kontakt'),
     v.anmeldungAktiv ? ladeAnmeldezahl(v.id) : Promise.resolve(0),
   ]);
@@ -363,7 +364,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                   {status === 'ausgebucht' ? <p className="font-bold text-fehler">{t('ausgebucht')}</p> : null}
                   {/* Immer an derselben Stelle (E-028): Nimmt die Anmeldung den letzten Platz, rendert die Action die Seite
                       als „ausgebucht“ neu – die Insel bleibt erhalten und zeigt weiter die Erfolgsmeldung. */}
-                  <FormularInsel aktion={meldeAn}>
+                  <FormularInsel aktion={meldeAn} ohneSkript={tf('ohneSkript')}>
                     {anmeldbar ? <AnmeldeFormular veranstaltungId={v.id} sprache={sprache} verfuegbar={verfuegbar} /> : null}
                   </FormularInsel>
                 </>

@@ -3,10 +3,11 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { KontoMenue } from '@/components/verwaltung/shell/KontoMenue';
-import { MODULE } from '@/components/verwaltung/shell/module';
+import { MODULE, rechtListe } from '@/components/verwaltung/shell/module';
 import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung/shell/Seitenleiste';
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
+import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
 import { zaehleVeranstaltungen } from '@/server/queries/verwaltung/veranstaltungen';
 
 /**
@@ -16,9 +17,11 @@ import { zaehleVeranstaltungen } from '@/server/queries/verwaltung/veranstaltung
 export default async function GeschuetzterBereich({ children }: LayoutProps<'/[locale]/verwaltung'>) {
   const a = await verlangeSitzung();
   const t = await getTranslations('verwaltung');
-  const sichtbar = MODULE.filter((m) => darf(a.rollen, m.recht));
+  const sichtbar = MODULE.filter((m) => m.gebaut && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
     veranstaltungen: sichtbar.some((m) => m.schluessel === 'veranstaltungen') ? await zaehleVeranstaltungen() : undefined,
+    // Neue (unbearbeitete) Eingänge, die die Person sehen darf
+    eingaenge: sichtbar.some((m) => m.schluessel === 'eingaenge') ? await zaehleNeueEingaenge(a) : undefined,
   };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => ({
     schluessel: m.schluessel,

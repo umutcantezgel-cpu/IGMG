@@ -32,6 +32,11 @@ const ROUTEN: Route[] = [
     slugAus: 'Veranstaltungen',
   },
   { name: 'Schüler-Voranmeldung', pfad: { de: '/bildung/voranmeldung', tr: '/tr/egitim/on-kayit', en: '/en/education/pre-registration' } },
+  { name: 'Mitglied werden', pfad: { de: '/mitglied-werden', tr: '/tr/uye-ol', en: '/en/become-a-member' } },
+  {
+    name: 'Webseite für Moscheen',
+    pfad: { de: '/webseite-fuer-moscheen', tr: '/tr/camiler-icin-web-sitesi', en: '/en/website-for-mosques' },
+  },
   { name: 'Nachrichten', pfad: { de: '/nachrichten', tr: '/tr/haberler', en: '/en/news' } },
   {
     name: 'Nachricht-Detail',

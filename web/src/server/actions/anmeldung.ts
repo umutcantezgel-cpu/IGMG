@@ -75,8 +75,10 @@ export async function anmelden(_vorher: FormularZustand, daten: FormData): Promi
   if (ergebnis && typeof ergebnis === 'object' && 'twoFactorRedirect' in ergebnis && ergebnis.twoFactorRedirect) {
     redirect('/verwaltung/anmelden/zwei-faktor');
   }
-  const angemeldet = await ladeAngemeldet();
-  if (angemeldet) await protokolliere({ benutzerId: angemeldet.benutzerId, aktion: 'anmeldung.erfolg', details: { zweiFaktor: false } });
+  // Passwort richtig, zweiter Faktor noch nicht eingerichtet: Sitzung ohne 2FA (`ladeAngemeldet()` wäre null) –
+  // trotzdem protokollieren, mit der Konto-ID aus der Antwort (G-07: jede erfolgreiche Anmeldung steht im Audit-Log)
+  const benutzerId = ergebnis && typeof ergebnis === 'object' && 'user' in ergebnis ? (ergebnis.user as { id?: unknown }).id : undefined;
+  if (typeof benutzerId === 'string') await protokolliere({ benutzerId, aktion: 'anmeldung.erfolg', details: { zweiFaktor: false } });
   // Kein zweiter Faktor eingerichtet → Einrichtung ist Pflicht (K-06)
   redirect('/verwaltung/zwei-faktor');
 }

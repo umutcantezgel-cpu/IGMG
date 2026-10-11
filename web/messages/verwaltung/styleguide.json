@@ -1,0 +1,241 @@
+{
+  "styleguide": {
+    "eyebrow": "IGMG Wetzlar Design System",
+    "titel": "Styleguide & Design System",
+    "einleitung": "Die Werte dieser Seite sind die Designwerte der Website: Farben, Schrift, Abstände, Radien, Schatten und die Grundbausteine. Gestalten Sie immer mit dem Token-Namen, nicht mit einem Zahlenwert.",
+    "navName": "Abschnitte dieser Seite",
+    "nav": {
+      "farben": "Farben",
+      "typografie": "Typografie",
+      "abstaende": "Abstände",
+      "radien": "Radien",
+      "schatten": "Schatten",
+      "knoepfe": "Knöpfe",
+      "felder": "Felder",
+      "pillen": "Pillen",
+      "karten": "Karten",
+      "meldungen": "Meldungen",
+      "barrierefreiheit": "Barrierefreiheit"
+    },
+    "token": "Token",
+    "wert": "Wert",
+    "verwendung": "Verwendung",
+    "kontrast": "Kontrast",
+    "farben": {
+      "titel": "Farben",
+      "einleitung": "Jede Farbe ist ein Token im Theme der Website. Die Klasse bg-, text- oder border- mit demselben Namen verwendet denselben Wert. Eine Kontrastangabe steht nur dort, wo die Designdatei sie nennt.",
+      "gruppen": {
+        "marke": "Marke",
+        "neutral": "Neutrale Töne",
+        "status": "Status",
+        "organisationen": "Organisationen (Akzent, Text, Tönung)",
+        "tags": "Kategorie-Tags (Text und Hintergrund)"
+      },
+      "verwendungen": {
+        "gruen950": "Gebetszeitenleiste, Fußzeile und Fokusrahmen",
+        "gruen800": "Hover-Zustand und Text auf Grün-Tönung",
+        "gruen700": "Marke: Primär-Knopf, Links und Icons",
+        "gruen100": "Ausgewählte Auswahl und Sekundärtext auf Tiefgrün",
+        "gruen50": "Hover-Fläche und Erfolgsmeldung",
+        "tinte": "Fließtext",
+        "tinte2": "Sekundärtext und Angaben",
+        "tinte3": "Platzhaltertext in Feldern",
+        "rand": "Ränder von Bedienelementen",
+        "linie": "Trennlinien und Kartenränder (nur dekorativ)",
+        "sand": "Flächen und Tabellenköpfe",
+        "papier": "Seitengrund",
+        "weiss": "Karten, Felder und Text auf Grün",
+        "fehler": "Fehler und Löschen",
+        "fehlerToenung": "Hintergrund von Fehlermeldungen",
+        "warnung": "Hinweise: Text",
+        "warnungToenung": "Hintergrund von Hinweisen",
+        "info": "Informationen: Text",
+        "infoToenung": "Hintergrund von Informationen",
+        "orgAt": "Ana Teşkilatı (AT): Akzent",
+        "orgAtText": "Ana Teşkilatı (AT): Text",
+        "orgAtToenung": "Ana Teşkilatı (AT): Tönung",
+        "orgKt": "Kadın Teşkilatı (KT): Akzent",
+        "orgKtText": "Kadın Teşkilatı (KT): Text",
+        "orgKtToenung": "Kadın Teşkilatı (KT): Tönung",
+        "orgKgt": "Kadın Gençlik Teşkilatı (KGT): Akzent",
+        "orgKgtText": "Kadın Gençlik Teşkilatı (KGT): Text",
+        "orgKgtToenung": "Kadın Gençlik Teşkilatı (KGT): Tönung",
+        "orgGt": "Gençlik Teşkilatı (GT): nur Fläche und Band, kein Text",
+        "orgGtText": "Gençlik Teşkilatı (GT): Text",
+        "orgGtToenung": "Gençlik Teşkilatı (GT): Tönung",
+        "tagBildung": "Kategorie Bildung: Text",
+        "tagBildungBg": "Kategorie Bildung: Hintergrund",
+        "tagVeranstaltung": "Kategorie Veranstaltung: Text",
+        "tagVeranstaltungBg": "Kategorie Veranstaltung: Hintergrund",
+        "tagJugend": "Kategorie Jugend: Text",
+        "tagJugendBg": "Kategorie Jugend: Hintergrund",
+        "tagWichtig": "Kategorie Wichtig: Text",
+        "tagWichtigBg": "Kategorie Wichtig: Hintergrund",
+        "tagNeuigkeiten": "Kategorie Neuigkeiten: Text",
+        "tagNeuigkeitenBg": "Kategorie Neuigkeiten: Hintergrund",
+        "tagGemeinde": "Kategorie Gemeinde: Text",
+        "tagGemeindeBg": "Kategorie Gemeinde: Hintergrund"
+      }
+    },
+    "typografie": {
+      "titel": "Typografie",
+      "einleitung": "Die Schriftgrößen reichen von text-16 bis text-48. Jede Stufe hat eine feste Zeilenhöhe. Auf dem Telefon ist eine Überschrift eine Stufe kleiner als auf dem Computer.",
+      "rollen": {
+        "t48": "Überschrift 1 (Seitentitel)",
+        "t36": "Überschrift 2",
+        "t30": "Überschrift 3",
+        "t24": "Überschrift 4",
+        "t20": "Einleitung",
+        "t18": "Fließtext",
+        "t16": "Meta und Beschriftung"
+      },
+      "muster": {
+        "t48": "Seitenüberschrift",
+        "t36": "Überschrift zweiter Ebene",
+        "t30": "Abschnittsüberschrift",
+        "t24": "Unterüberschrift",
+        "t20": "Einleitung in einem Satz.",
+        "t18": "Fließtext in Standardgröße, zum Lesen von Absätzen.",
+        "t16": "Beschriftung · Datum · Uhrzeit"
+      },
+      "zeile": "Schriftgröße {wert}, Zeilenhöhe {zeile}",
+      "schriften": "Schriften",
+      "schriftenEinleitung": "Die Schriften liegen auf dem eigenen Server, nicht bei einem Drittanbieter.",
+      "schriftVerwendung": {
+        "text": "Textschrift: Atkinson Hyperlegible Next, Gewichte 400 und 700",
+        "display": "Titelschrift „IGMG Wetzlar Titel“, abgeleitet von Source Serif 4 (Gewicht 600)",
+        "arabisch": "Arabische Schrift: Amiri, Gewichte 400 und 700"
+      },
+      "schriftMuster": {
+        "text": "Textschrift: Beispieltext in Standardgröße.",
+        "display": "Titelschrift: Beispieltitel",
+        "arabisch": "أبجد هوز"
+      },
+      "laufweite": "Laufweite für Überschriften",
+      "laufweiteMuster": "Überschrift mit Laufweite"
+    },
+    "abstaende": {
+      "titel": "Abstände",
+      "einleitung": "Alle Abstände sind Vielfache einer Basis. Klassen wie p-4, gap-4 oder w-4 verwenden dieselben Schritte.",
+      "basis": "Basis {name}: {wert}",
+      "schritt": "Schritt {schritt}",
+      "pixel": "{wert} px"
+    },
+    "radien": {
+      "titel": "Radien",
+      "einleitung": "Die Eckenradien richten sich nach dem Bauteil.",
+      "verwendungen": {
+        "sm": "Tags",
+        "md": "Felder und Knöpfe",
+        "lg": "Karten",
+        "pill": "Pillen und Reiter"
+      }
+    },
+    "schatten": {
+      "titel": "Schatten",
+      "einleitung": "Schatten zeigen Ebenen, sie dienen nicht der Verzierung. Sie sind in der Textfarbe Tinte gehalten.",
+      "verwendungen": {
+        "s1": "Karten im Ruhezustand",
+        "s2": "Karten beim Darüberfahren und Menüs",
+        "s3": "Dialoge und das mobile Seitenmenü"
+      }
+    },
+    "knoepfe": {
+      "titel": "Knöpfe",
+      "einleitung": "Primär für die Hauptaktion, Sekundär und Tertiär für Alternativen. Löschen nur für das endgültige Entfernen. Knöpfe sind groß genug zum sicheren Antippen.",
+      "primaer": "Primär",
+      "sekundaer": "Sekundär",
+      "umriss": "Umriss",
+      "tertiaer": "Tertiär",
+      "loeschen": "Löschen",
+      "link": "Link",
+      "deaktiviert": "Deaktiviert"
+    },
+    "felder": {
+      "titel": "Felder",
+      "einleitung": "Die Beschriftung steht über dem Feld, der Hinweis darunter. Fehler erscheinen am Feld und mit Text, nicht nur mit Farbe.",
+      "pflicht": "(Pflichtfeld)",
+      "name": "Name",
+      "nameHinweis": "Vor- und Nachname",
+      "email": "E-Mail-Adresse",
+      "emailFehler": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "nachricht": "Nachricht",
+      "nachrichtHinweis": "Ein bis zwei Sätze genügen.",
+      "auswahl": "Auswahl",
+      "auswahlLeer": "Bitte wählen",
+      "optionen": "Auswahl als Karten",
+      "optionErste": "Erste Option",
+      "optionErsteText": "Kurze Erläuterung zur ersten Option.",
+      "optionZweite": "Zweite Option",
+      "optionZweiteText": "Kurze Erläuterung zur zweiten Option.",
+      "haken": "Häkchen als Karte",
+      "hakenText": "Zusätzliche Erläuterung zum Häkchen.",
+      "einwilligung": "Beispieltext für eine Einwilligung mit Pflichthäkchen."
+    },
+    "pillen": {
+      "titel": "Pillen",
+      "einleitung": "Pillen zeigen Status und Kategorie. Text und Hintergrund kommen aus denselben Tokens wie die Farben.",
+      "statusTitel": "Status",
+      "status": {
+        "veroeffentlicht": "Veröffentlicht",
+        "entwurf": "Entwurf",
+        "kommend": "Kommend",
+        "vergangen": "Vergangen",
+        "beispiel": "Beispiel"
+      },
+      "kategorieTitel": "Kategorie",
+      "kategorie": {
+        "bildung": "Bildung",
+        "veranstaltung": "Veranstaltung",
+        "jugend": "Jugend",
+        "wichtig": "Wichtig",
+        "neuigkeiten": "Neuigkeiten",
+        "gemeinde": "Gemeinde"
+      }
+    },
+    "karten": {
+      "titel": "Karten",
+      "einleitung": "Karten liegen auf Weiß, mit feinem Rand und leichtem Schatten. Beim Darüberfahren wird der Schatten stärker.",
+      "beispielTitel": "Beispieleintrag",
+      "beispielText": "Eine Karte fasst einen Eintrag zusammen: Titel, kurzer Text und eine Angabe.",
+      "beispielAngabe": "Beispielangabe",
+      "beispielLink": "Weiterlesen",
+      "toenungTitel": "Karte mit Tönung",
+      "toenungText": "Dieselbe Form mit Grün-Tönung, zum Hervorheben eines Eintrags."
+    },
+    "meldungen": {
+      "titel": "Meldungen",
+      "einleitung": "Eine Meldung sagt, was passiert ist und was als Nächstes zu tun ist. Sie zeigt Symbol und Text, nie nur eine Farbe.",
+      "info": "Die Änderung wird nach der Prüfung veröffentlicht.",
+      "erfolg": "Der Eintrag wurde gespeichert.",
+      "fehler": "Der Eintrag konnte nicht gespeichert werden. Bitte prüfen Sie die markierten Felder."
+    },
+    "barrierefreiheit": {
+      "titel": "Barrierefreiheit",
+      "einleitung": "Diese Regeln gelten für jede Seite und jeden Baustein. Maßstab ist WCAG 2.2, Stufe AA.",
+      "pruefliste": "Prüfliste",
+      "regeln": {
+        "kontrast": "Farbkontrast mindestens 4,5:1 bei Text",
+        "ziele": "Klickziele mindestens 44 × 44 px; im Bau gilt das größere Maß von 48 px",
+        "schrift": "Basis-Schriftgröße 16 px",
+        "fokus": "Sichtbare Fokusrahmen bei Tastaturbedienung",
+        "semantik": "Semantisches HTML mit Überschriften, Listen und Formularen",
+        "aria": "ARIA-Beschriftungen, wo der sichtbare Text nicht reicht",
+        "tastatur": "Alle Funktionen sind mit der Tastatur bedienbar",
+        "alttext": "Alt-Texte für Bilder",
+        "bewegung": "Reduzierte Bewegung respektieren",
+        "fehler": "Klare Fehlermeldungen am betroffenen Feld"
+      },
+      "kontrastTitel": "Kontrastbeispiele aus dem Design",
+      "kontrastAngabe": "Kontrast {verhaeltnis}, WCAG {stufe}",
+      "kontrastBeispiele": {
+        "weissAufGruen700": "Weißer Text auf Grün-700",
+        "gruen800AufToenung": "Grün-800-Text auf Grün-Tönung"
+      },
+      "fokusTitel": "Fokus prüfen",
+      "fokusText": "Mit der Tabulatortaste springen Sie durch die Knöpfe und Links dieser Seite. Der Fokusrahmen muss überall sichtbar sein.",
+      "fokusKnopf": "Fokussierbarer Knopf",
+      "fokusLink": "Fokussierbarer Link"
+    }
+  }
+}

@@ -31,7 +31,11 @@ vi.mock('next/server', () => ({
   after: (f: () => unknown) => aufrufe.nachher.push(f),
   connection: async () => undefined,
 }));
-vi.mock('next/headers', () => ({ headers: async () => new Headers(), cookies: async () => ({ get: () => undefined }) }));
+// Formular-Actions prüfen den Next-Action-Header (Absenden mit JavaScript, zurueckOhneSkript)
+vi.mock('next/headers', () => ({
+  headers: async () => new Headers({ 'next-action': 'test' }),
+  cookies: async () => ({ get: () => undefined }),
+}));
 vi.mock('next/navigation', () => ({
   redirect: (ziel: string) => {
     throw Object.assign(new Error(`NEXT_REDIRECT:${ziel}`), { ziel });
