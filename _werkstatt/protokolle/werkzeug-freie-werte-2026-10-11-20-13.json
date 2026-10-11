@@ -1,0 +1,48 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-13",
+  "seit": null,
+  "geprueft": [
+    "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+    "web/src/components/verwaltung/shell/KontoMenue.tsx",
+    "web/src/components/verwaltung/uebersicht/Kennzahlen.tsx",
+    "web/src/components/verwaltung/uebersicht/Listen.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/layout.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/page.tsx",
+    "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+    "web/src/components/verwaltung/postfach/Verlauf.tsx",
+    "web/src/components/verwaltung/anmeldung/AnmeldeRahmen.tsx",
+    "web/src/components/verwaltung/anmeldung/QrCode.tsx",
+    "web/src/components/verwaltung/anmeldung/ZweiFaktorEinrichten.tsx",
+    "web/src/components/verwaltung/anmeldung/ZweiFaktorFormular.tsx",
+    "web/src/components/verwaltung/audit/AuditTabelle.tsx",
+    "web/src/components/verwaltung/gebetszeiten/GebetszeitenFormulare.tsx",
+    "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 3
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100dvh-2rem)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[calc(100%-2rem)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 96,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100dvh-2rem)]",
+      "zeileText": "<div className=\"flex max-h-[calc(100dvh-2rem)] flex-col gap-4 p-5 md:p-6\">"
+    }
+  ]
+}

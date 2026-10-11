@@ -1,0 +1,660 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-03",
+  "seit": null,
+  "geprueft": [
+    "web/src/components/verwaltung/Feld.tsx",
+    "web/src/components/verwaltung/Meldung.tsx",
+    "web/src/components/verwaltung/RichTextEditor.tsx",
+    "web/src/components/verwaltung/TabellenRahmen.tsx",
+    "web/src/components/verwaltung/ankuendigungen/AnkuendigungsFormular.tsx",
+    "web/src/components/verwaltung/ankuendigungen/werte.ts",
+    "web/src/components/verwaltung/anmeldung/AnmeldeFormular.tsx",
+    "web/src/components/verwaltung/anmeldung/AnmeldeRahmen.tsx",
+    "web/src/components/verwaltung/anmeldung/EinladungsFormular.tsx",
+    "web/src/components/verwaltung/anmeldung/PasswortFormulare.tsx",
+    "web/src/components/verwaltung/anmeldung/QrCode.tsx",
+    "web/src/components/verwaltung/anmeldung/ZweiFaktorEinrichten.tsx",
+    "web/src/components/verwaltung/anmeldung/ZweiFaktorFormular.tsx",
+    "web/src/components/verwaltung/audit/AuditFilter.tsx",
+    "web/src/components/verwaltung/audit/AuditSeiten.tsx",
+    "web/src/components/verwaltung/audit/AuditTabelle.tsx",
+    "web/src/components/verwaltung/audit/anzeige.ts",
+    "web/src/components/verwaltung/benutzer/EinladungFormular.tsx",
+    "web/src/components/verwaltung/benutzer/KontoFormulare.tsx",
+    "web/src/components/verwaltung/benutzer/RollenFelder.tsx",
+    "web/src/components/verwaltung/benutzer/RollenFormular.tsx",
+    "web/src/components/verwaltung/benutzer/texte.ts",
+    "web/src/components/verwaltung/einstellungen/FristenFormular.tsx",
+    "web/src/components/verwaltung/gebetszeiten/GebetszeitenFormulare.tsx",
+    "web/src/components/verwaltung/kurse/KursFormular.tsx",
+    "web/src/components/verwaltung/medien/MedienFormulare.tsx",
+    "web/src/components/verwaltung/medienwahl/BildFeld.tsx",
+    "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+    "web/src/components/verwaltung/neuigkeiten/NeuigkeitsFormular.tsx",
+    "web/src/components/verwaltung/neuigkeiten/formularwerte.ts",
+    "web/src/components/verwaltung/postfach/AntwortFormular.tsx",
+    "web/src/components/verwaltung/postfach/Felder.tsx",
+    "web/src/components/verwaltung/postfach/GelesenMarkierer.tsx",
+    "web/src/components/verwaltung/postfach/NeueUnterhaltungFormular.tsx",
+    "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+    "web/src/components/verwaltung/postfach/Verlauf.tsx",
+    "web/src/components/verwaltung/richtext/LinkFeld.tsx",
+    "web/src/components/verwaltung/richtext/RichTextEditorKern.tsx",
+    "web/src/components/verwaltung/richtext/Werkzeugleiste.tsx",
+    "web/src/components/verwaltung/richtext/erweiterungen.ts",
+    "web/src/components/verwaltung/richtext/typen.ts",
+    "web/src/components/verwaltung/seiteninhalte/Felder.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Formular.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Igmg.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Projekte.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Rahmen.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Rechtstexte.tsx",
+    "web/src/components/verwaltung/seiteninhalte/UeberUns.tsx",
+    "web/src/components/verwaltung/seiteninhalte/Vorstand.tsx",
+    "web/src/components/verwaltung/seiteninhalte/bereiche.ts",
+    "web/src/components/verwaltung/seiteninhalte/hilfen.ts",
+    "web/src/components/verwaltung/seiteninhalte/sicht.ts",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/KontaktFormular.tsx",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/OrganisationFormular.tsx",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/bausteine.tsx",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/bereiche.ts",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/formwerte.ts",
+    "web/src/components/verwaltung/seiteninhalte-organisationen/liste.ts",
+    "web/src/components/verwaltung/shell/KontoMenue.tsx",
+    "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+    "web/src/components/verwaltung/shell/module.ts",
+    "web/src/components/verwaltung/startklar/ErneutPruefen.tsx",
+    "web/src/components/verwaltung/startklar/PruefListe.tsx",
+    "web/src/components/verwaltung/styleguide/Abschnitt.tsx",
+    "web/src/components/verwaltung/styleguide/Abstaende.tsx",
+    "web/src/components/verwaltung/styleguide/Barrierefreiheit.tsx",
+    "web/src/components/verwaltung/styleguide/Bewegung.tsx",
+    "web/src/components/verwaltung/styleguide/BewegungsVorschau.tsx",
+    "web/src/components/verwaltung/styleguide/Ebenen.tsx",
+    "web/src/components/verwaltung/styleguide/Farben.tsx",
+    "web/src/components/verwaltung/styleguide/Felder.tsx",
+    "web/src/components/verwaltung/styleguide/Karten.tsx",
+    "web/src/components/verwaltung/styleguide/Knoepfe.tsx",
+    "web/src/components/verwaltung/styleguide/Meldungen.tsx",
+    "web/src/components/verwaltung/styleguide/Pillen.tsx",
+    "web/src/components/verwaltung/styleguide/Radien.tsx",
+    "web/src/components/verwaltung/styleguide/Raster.tsx",
+    "web/src/components/verwaltung/styleguide/Schatten.tsx",
+    "web/src/components/verwaltung/styleguide/Sprungnavigation.tsx",
+    "web/src/components/verwaltung/styleguide/Tokenkarte.tsx",
+    "web/src/components/verwaltung/styleguide/Typografie.tsx",
+    "web/src/components/verwaltung/styleguide/tokens.ts",
+    "web/src/components/verwaltung/tickets/Felder.tsx",
+    "web/src/components/verwaltung/tickets/KommentarFormular.tsx",
+    "web/src/components/verwaltung/tickets/NeuesTicketFormular.tsx",
+    "web/src/components/verwaltung/tickets/StatusFormular.tsx",
+    "web/src/components/verwaltung/tickets/anzeige.ts",
+    "web/src/components/verwaltung/uebersicht/Kennzahlen.tsx",
+    "web/src/components/verwaltung/uebersicht/Listen.tsx",
+    "web/src/components/verwaltung/uebersicht/sichtbarkeit.ts",
+    "web/src/components/verwaltung/veranstaltungen/LoeschenBestaetigen.tsx",
+    "web/src/components/verwaltung/veranstaltungen/VeranstaltungsFormular.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 26,
+    "Hex-Farbe": 46,
+    "px-Literal in Style": 4,
+    "Farbfunktion": 3
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/AnmeldeRahmen.tsx",
+      "zeile": 7,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[440px]",
+      "zeileText": "<main id=\"inhalt\" className=\"mx-auto flex min-h-dvh w-full max-w-[440px] flex-col justify-center px-4 py-12\">"
+    },
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/QrCode.tsx",
+      "zeile": 18,
+      "art": "Hex-Farbe",
+      "fund": "#FFFFFF",
+      "zeileText": "<rect width={size} height={size} fill=\"#FFFFFF\" />"
+    },
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/QrCode.tsx",
+      "zeile": 19,
+      "art": "Hex-Farbe",
+      "fund": "#1D1A17",
+      "zeileText": "<path d={pfad} fill=\"#1D1A17\" />"
+    },
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/ZweiFaktorEinrichten.tsx",
+      "zeile": 80,
+      "art": "Tailwind-Klammerwert",
+      "fund": "tracking-[0.3em]",
+      "zeileText": "className=\"font-mono tracking-[0.3em]\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/ZweiFaktorFormular.tsx",
+      "zeile": 47,
+      "art": "Tailwind-Klammerwert",
+      "fund": "tracking-[0.3em]",
+      "zeileText": "className=\"font-mono tracking-[0.3em]\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/audit/AuditFilter.tsx",
+      "zeile": 6,
+      "art": "Hex-Farbe",
+      "fund": "#8C857C",
+      "zeileText": "/** Auswahlfeld wie im Veranstaltungsformular (48 px, Rand #8C857C über Tokens). */"
+    },
+    {
+      "datei": "web/src/components/verwaltung/audit/AuditTabelle.tsx",
+      "zeile": 27,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-w-[48rem]",
+      "zeileText": "<table className=\"w-full min-w-[48rem] border-collapse text-left\">"
+    },
+    {
+      "datei": "web/src/components/verwaltung/gebetszeiten/GebetszeitenFormulare.tsx",
+      "zeile": 213,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-w-[40rem]",
+      "zeileText": "<table className=\"w-full min-w-[40rem] border-collapse text-left tabular-nums\">"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100dvh-2rem)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[calc(100%-2rem)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 96,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100dvh-2rem)]",
+      "zeileText": "<div className=\"flex max-h-[calc(100dvh-2rem)] flex-col gap-4 p-5 md:p-6\">"
+    },
+    {
+      "datei": "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+      "zeile": 140,
+      "art": "Tailwind-Klammerwert",
+      "fund": "aspect-[4/3]",
+      "zeileText": "className=\"aspect-[4/3] w-full bg-sand object-cover\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 25,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<div className=\"flex min-h-130 flex-col overflow-hidden rounded-lg border border-linie bg-weiss min-[900px]:flex-row\">"
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 28,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "className=\"flex min-w-0 flex-col min-[900px]:flex-[1_1_300px] min-[900px]:border-r min-[900px]:border-linie\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 28,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_300px]",
+      "zeileText": "className=\"flex min-w-0 flex-col min-[900px]:flex-[1_1_300px] min-[900px]:border-r min-[900px]:border-linie\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 28,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "className=\"flex min-w-0 flex-col min-[900px]:flex-[1_1_300px] min-[900px]:border-r min-[900px]:border-linie\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 28,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "className=\"flex min-w-0 flex-col min-[900px]:flex-[1_1_300px] min-[900px]:border-r min-[900px]:border-linie\""
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 79,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-1 flex-col bg-papier min-[900px]:flex-[2_1_360px]\">{children}</div>"
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+      "zeile": 79,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[2_1_360px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-1 flex-col bg-papier min-[900px]:flex-[2_1_360px]\">{children}</div>"
+    },
+    {
+      "datei": "web/src/components/verwaltung/postfach/Verlauf.tsx",
+      "zeile": 36,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[85%]",
+      "zeileText": "<li key={m.id} className={cn('flex max-w-[85%] flex-col gap-1', m.eigene ? 'items-end self-end' : 'items-start self-start')}>"
+    },
+    {
+      "datei": "web/src/components/verwaltung/richtext/erweiterungen.ts",
+      "zeile": 45,
+      "art": "Tailwind-Klammerwert",
+      "fund": "data-[ausgewaehlt]",
+      "zeileText": "'my-2 flex min-h-24 items-center justify-center rounded-md border border-dashed border-rand bg-sand px-4 text-16 text-tinte-2 data-[ausgewaehlt]:border-2 data-["
+    },
+    {
+      "datei": "web/src/components/verwaltung/richtext/erweiterungen.ts",
+      "zeile": 45,
+      "art": "Tailwind-Klammerwert",
+      "fund": "data-[ausgewaehlt]",
+      "zeileText": "'my-2 flex min-h-24 items-center justify-center rounded-md border border-dashed border-rand bg-sand px-4 text-16 text-tinte-2 data-[ausgewaehlt]:border-2 data-["
+    },
+    {
+      "datei": "web/src/components/verwaltung/richtext/erweiterungen.ts",
+      "zeile": 45,
+      "art": "Tailwind-Klammerwert",
+      "fund": "data-[ausgewaehlt]",
+      "zeileText": "'my-2 flex min-h-24 items-center justify-center rounded-md border border-dashed border-rand bg-sand px-4 text-16 text-tinte-2 data-[ausgewaehlt]:border-2 data-["
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 83,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "className=\"inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-5"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 89,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-[899px]",
+      "zeileText": "<nav id=\"verwaltung-navigation\" aria-label={texte.navName} className={cn(!offen && 'max-[899px]:hidden')}>"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 33,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "{ name: '--color-gruen-950', wert: '#0e3929', gruppe: 'marke', schluessel: 'gruen950', klasse: 'bg-gruen-950' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 34,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-gruen-800', wert: '#065f46', gruppe: 'marke', schluessel: 'gruen800', klasse: 'bg-gruen-800' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 35,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "{ name: '--color-gruen-700', wert: '#047857', gruppe: 'marke', schluessel: 'gruen700', klasse: 'bg-gruen-700' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 36,
+      "art": "Hex-Farbe",
+      "fund": "#d3f0e2",
+      "zeileText": "{ name: '--color-gruen-100', wert: '#d3f0e2', gruppe: 'marke', schluessel: 'gruen100', klasse: 'bg-gruen-100' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 37,
+      "art": "Hex-Farbe",
+      "fund": "#ebf9f2",
+      "zeileText": "{ name: '--color-gruen-50', wert: '#ebf9f2', gruppe: 'marke', schluessel: 'gruen50', klasse: 'bg-gruen-50' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 38,
+      "art": "Hex-Farbe",
+      "fund": "#1d1a17",
+      "zeileText": "{ name: '--color-tinte', wert: '#1d1a17', gruppe: 'neutral', schluessel: 'tinte', klasse: 'bg-tinte' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 39,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "{ name: '--color-tinte-2', wert: '#514c46', gruppe: 'neutral', schluessel: 'tinte2', klasse: 'bg-tinte-2' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 40,
+      "art": "Hex-Farbe",
+      "fund": "#68625b",
+      "zeileText": "{ name: '--color-tinte-3', wert: '#68625b', gruppe: 'neutral', schluessel: 'tinte3', klasse: 'bg-tinte-3' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 41,
+      "art": "Hex-Farbe",
+      "fund": "#8c857c",
+      "zeileText": "{ name: '--color-rand', wert: '#8c857c', gruppe: 'neutral', schluessel: 'rand', klasse: 'bg-rand', kontrast: '≥ 3:1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 42,
+      "art": "Hex-Farbe",
+      "fund": "#dfdad2",
+      "zeileText": "{ name: '--color-linie', wert: '#dfdad2', gruppe: 'neutral', schluessel: 'linie', klasse: 'bg-linie' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 43,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "{ name: '--color-sand', wert: '#f3f0e9', gruppe: 'neutral', schluessel: 'sand', klasse: 'bg-sand' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 44,
+      "art": "Hex-Farbe",
+      "fund": "#fcfaf6",
+      "zeileText": "{ name: '--color-papier', wert: '#fcfaf6', gruppe: 'neutral', schluessel: 'papier', klasse: 'bg-papier' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 45,
+      "art": "Hex-Farbe",
+      "fund": "#ffffff",
+      "zeileText": "{ name: '--color-weiss', wert: '#ffffff', gruppe: 'neutral', schluessel: 'weiss', klasse: 'bg-weiss' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 46,
+      "art": "Hex-Farbe",
+      "fund": "#af2b25",
+      "zeileText": "{ name: '--color-fehler', wert: '#af2b25', gruppe: 'status', schluessel: 'fehler', klasse: 'bg-fehler' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 47,
+      "art": "Hex-Farbe",
+      "fund": "#ffedea",
+      "zeileText": "{ name: '--color-fehler-toenung', wert: '#ffedea', gruppe: 'status', schluessel: 'fehlerToenung', klasse: 'bg-fehler-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 48,
+      "art": "Hex-Farbe",
+      "fund": "#81520a",
+      "zeileText": "{ name: '--color-warnung', wert: '#81520a', gruppe: 'status', schluessel: 'warnung', klasse: 'bg-warnung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 49,
+      "art": "Hex-Farbe",
+      "fund": "#fef2d9",
+      "zeileText": "{ name: '--color-warnung-toenung', wert: '#fef2d9', gruppe: 'status', schluessel: 'warnungToenung', klasse: 'bg-warnung-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 50,
+      "art": "Hex-Farbe",
+      "fund": "#225899",
+      "zeileText": "{ name: '--color-info', wert: '#225899', gruppe: 'status', schluessel: 'info', klasse: 'bg-info' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 51,
+      "art": "Hex-Farbe",
+      "fund": "#e9f3ff",
+      "zeileText": "{ name: '--color-info-toenung', wert: '#e9f3ff', gruppe: 'status', schluessel: 'infoToenung', klasse: 'bg-info-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 52,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "{ name: '--color-org-at', wert: '#047857', gruppe: 'organisationen', schluessel: 'orgAt', klasse: 'bg-org-at' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 53,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-org-at-text', wert: '#065f46', gruppe: 'organisationen', schluessel: 'orgAtText', klasse: 'bg-org-at-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 54,
+      "art": "Hex-Farbe",
+      "fund": "#e7f8f0",
+      "zeileText": "{ name: '--color-org-at-toenung', wert: '#e7f8f0', gruppe: 'organisationen', schluessel: 'orgAtToenung', klasse: 'bg-org-at-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 55,
+      "art": "Hex-Farbe",
+      "fund": "#592e81",
+      "zeileText": "{ name: '--color-org-kt', wert: '#592e81', gruppe: 'organisationen', schluessel: 'orgKt', klasse: 'bg-org-kt' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 56,
+      "art": "Hex-Farbe",
+      "fund": "#592e81",
+      "zeileText": "{ name: '--color-org-kt-text', wert: '#592e81', gruppe: 'organisationen', schluessel: 'orgKtText', klasse: 'bg-org-kt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 57,
+      "art": "Hex-Farbe",
+      "fund": "#f7f0ff",
+      "zeileText": "{ name: '--color-org-kt-toenung', wert: '#f7f0ff', gruppe: 'organisationen', schluessel: 'orgKtToenung', klasse: 'bg-org-kt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 58,
+      "art": "Hex-Farbe",
+      "fund": "#9b255a",
+      "zeileText": "{ name: '--color-org-kgt', wert: '#9b255a', gruppe: 'organisationen', schluessel: 'orgKgt', klasse: 'bg-org-kgt' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 59,
+      "art": "Hex-Farbe",
+      "fund": "#9b255a",
+      "zeileText": "{ name: '--color-org-kgt-text', wert: '#9b255a', gruppe: 'organisationen', schluessel: 'orgKgtText', klasse: 'bg-org-kgt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 60,
+      "art": "Hex-Farbe",
+      "fund": "#ffeef3",
+      "zeileText": "{ name: '--color-org-kgt-toenung', wert: '#ffeef3', gruppe: 'organisationen', schluessel: 'orgKgtToenung', klasse: 'bg-org-kgt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 61,
+      "art": "Hex-Farbe",
+      "fund": "#008c98",
+      "zeileText": "{ name: '--color-org-gt', wert: '#008c98', gruppe: 'organisationen', schluessel: 'orgGt', klasse: 'bg-org-gt', kontrast: '4,03:1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 62,
+      "art": "Hex-Farbe",
+      "fund": "#006177",
+      "zeileText": "{ name: '--color-org-gt-text', wert: '#006177', gruppe: 'organisationen', schluessel: 'orgGtText', klasse: 'bg-org-gt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 63,
+      "art": "Hex-Farbe",
+      "fund": "#e6f7fd",
+      "zeileText": "{ name: '--color-org-gt-toenung', wert: '#e6f7fd', gruppe: 'organisationen', schluessel: 'orgGtToenung', klasse: 'bg-org-gt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 64,
+      "art": "Hex-Farbe",
+      "fund": "#225899",
+      "zeileText": "{ name: '--color-tag-bildung', wert: '#225899', gruppe: 'tags', schluessel: 'tagBildung', klasse: 'bg-tag-bildung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 65,
+      "art": "Hex-Farbe",
+      "fund": "#e9f3ff",
+      "zeileText": "{ name: '--color-tag-bildung-bg', wert: '#e9f3ff', gruppe: 'tags', schluessel: 'tagBildungBg', klasse: 'bg-tag-bildung-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 66,
+      "art": "Hex-Farbe",
+      "fund": "#81520a",
+      "zeileText": "{ name: '--color-tag-veranstaltung', wert: '#81520a', gruppe: 'tags', schluessel: 'tagVeranstaltung', klasse: 'bg-tag-veranstaltung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 69,
+      "art": "Hex-Farbe",
+      "fund": "#fef2d9",
+      "zeileText": "wert: '#fef2d9',"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 74,
+      "art": "Hex-Farbe",
+      "fund": "#006177",
+      "zeileText": "{ name: '--color-tag-jugend', wert: '#006177', gruppe: 'tags', schluessel: 'tagJugend', klasse: 'bg-tag-jugend' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 75,
+      "art": "Hex-Farbe",
+      "fund": "#e6f7fd",
+      "zeileText": "{ name: '--color-tag-jugend-bg', wert: '#e6f7fd', gruppe: 'tags', schluessel: 'tagJugendBg', klasse: 'bg-tag-jugend-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 76,
+      "art": "Hex-Farbe",
+      "fund": "#af2b25",
+      "zeileText": "{ name: '--color-tag-wichtig', wert: '#af2b25', gruppe: 'tags', schluessel: 'tagWichtig', klasse: 'bg-tag-wichtig' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 77,
+      "art": "Hex-Farbe",
+      "fund": "#ffedea",
+      "zeileText": "{ name: '--color-tag-wichtig-bg', wert: '#ffedea', gruppe: 'tags', schluessel: 'tagWichtigBg', klasse: 'bg-tag-wichtig-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 78,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-tag-neuigkeiten', wert: '#065f46', gruppe: 'tags', schluessel: 'tagNeuigkeiten', klasse: 'bg-tag-neuigkeiten' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 79,
+      "art": "Hex-Farbe",
+      "fund": "#ebf9f2",
+      "zeileText": "{ name: '--color-tag-neuigkeiten-bg', wert: '#ebf9f2', gruppe: 'tags', schluessel: 'tagNeuigkeitenBg', klasse: 'bg-tag-neuigkeiten-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 80,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "{ name: '--color-tag-gemeinde', wert: '#514c46', gruppe: 'tags', schluessel: 'tagGemeinde', klasse: 'bg-tag-gemeinde' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 81,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "{ name: '--color-tag-gemeinde-bg', wert: '#f3f0e9', gruppe: 'tags', schluessel: 'tagGemeindeBg', klasse: 'bg-tag-gemeinde-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 144,
+      "art": "px-Literal in Style",
+      "fund": "'4px'",
+      "zeileText": "{ name: '--radius-sm', wert: '4px', klasse: 'rounded-sm', schluessel: 'sm' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 145,
+      "art": "px-Literal in Style",
+      "fund": "'8px'",
+      "zeileText": "{ name: '--radius-md', wert: '8px', klasse: 'rounded-md', schluessel: 'md' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 146,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "{ name: '--radius-lg', wert: '12px', klasse: 'rounded-lg', schluessel: 'lg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 147,
+      "art": "px-Literal in Style",
+      "fund": "'999px'",
+      "zeileText": "{ name: '--radius-pill', wert: '999px', klasse: 'rounded-pill', schluessel: 'pill' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 153,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s1', wert: '0 1px 2px rgba(29, 26, 23, 0.06)', klasse: 'shadow-s1', schluessel: 's1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 154,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s2', wert: '0 6px 20px rgba(29, 26, 23, 0.1)', klasse: 'shadow-s2', schluessel: 's2' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 155,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s3', wert: '0 24px 64px rgba(29, 26, 23, 0.22)', klasse: 'shadow-s3', schluessel: 's3' },"
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "lauf": {
+    "werkzeug": "funktionsliste.mjs",
+    "basis": "http://127.0.0.1:3700",
+    "zeit": "2026-10-11T20:10:51.603Z",
+    "browser": "141.0.7390.37",
+    "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste",
+    "zustand": "nein"
+  },
+  "ergebnisse": [
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Anmeldeformular: Pflichtfehler und Fokus",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Anmeldeformular: Pflichtfehler und Fokus",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440-ende.jpg"
+        ]
+      },
+      "id": "F-06",
+      "titel": "Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal",
+      "ablauf": "Detail mit anmeldungAktiv; leer absenden; .ics"
+    },
+    {
+      "390": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Kalender /api/ical/de/veranstaltungen: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 13
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/ana-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 4
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin)",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "seite": "13:30",
+              "kalender": "12:30",
+              "zeile": "DTSTART;TZID=Europe/Berlin:20240126T1230"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Kalender /api/ical/de/veranstaltungen: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 13
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/ana-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 4
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin)",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "seite": "13:30",
+              "kalender": "12:30",
+              "zeile": "DTSTART;TZID=Europe/Berlin:20240126T1230"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440-ende.jpg"
+        ]
+      },
+      "id": "F-23",
+      "titel": "iCal-Abo je Organisation: gültiger Kalender, Zeiten",
+      "ablauf": "/api/ical/…"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "werkzeug": "konsole3",
+  "basis": "http://127.0.0.1:3400",
+  "breite": 390,
+  "zeit": "2026-10-11T20:01:18.183Z",
+  "ergebnis": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "404 (nicht gefunden)",
+      "pfad": "/gibt-es-nicht",
+      "http": 404,
+      "anzahl": 2,
+      "meldungen": [
+        {
+          "art": "http-404",
+          "text": "GET",
+          "ort": "http://127.0.0.1:3400/gibt-es-nicht"
+        },
+        {
+          "art": "konsole-error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "ort": "http://127.0.0.1:3400/gibt-es-nicht"
+        }
+      ]
+    }
+  ]
+}

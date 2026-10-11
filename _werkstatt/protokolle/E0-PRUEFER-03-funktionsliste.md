@@ -1,8 +1,8 @@
-# E0-PRUEFER-03 · Funktionsliste F-01 … F-24 · Stand http://127.0.0.1:3500
+# E0-PRUEFER-03 · Funktionsliste F-01 … F-24 · Stand http://127.0.0.1:3100
 
-> Ersatz für 3100: Der Prüfserver auf 3100 (PID 11372) ist nicht mehr erreichbar; gemessen wird eine zweite Instanz mit denselben eingefrorenen Dateien (basis-standalone, unverändert seit 17:24) und einer Kopie der Datenbank auf Port 3500. Nicht maßgeblich für 3100, bis 3100 wieder läuft und nachgemessen ist.
+> Ausgangsstand 3100: Messung gegen den Produktionsserver auf Port 3100 (PID 17807 nach Neustart um 19:53:13, Build p9aOOUCOQc2f_RtWZGTZQ aus basis-standalone). Der Server war zwischen etwa 19:27 und 19:53 nicht erreichbar (PID 11372 beendet, Ursache laut Koordinator fremder Aufruf von server-starten.sh). Alle früheren Messwerte gegen den Ersatz auf Port 3500 stehen in …-ersatz-3500.
 
-Zeitpunkt: 2026-10-11T19:42:40.286Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste` · Verwaltungszustand: nein.
+Zeitpunkt: 2026-10-11T20:03:58.602Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste` · Verwaltungszustand: nein.
 
 Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Einzelprüfungen stehen unter „Einzelbefunde“. Messwerte zählen nicht zum Ergebnis. Formular-POSTs sind aus dem Netzwerk gezählt.
 
@@ -13,7 +13,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 | F-03 | /gebetszeiten: Tabs, Tastatur, Monatstabelle, Qibla | Tabs per Tastatur; Monat; Kompass | nicht prüfbar | nicht prüfbar |
 | F-04 | Gebetszeiten-Anzeige: Vollbild, Schließen, Sprachwechsel | /gebetszeiten/anzeige; X und Esc; 11 s warten | erfüllt | erfüllt |
 | F-05 | Veranstaltungen: Kategoriefilter | Kategorie wählen; „Alle“ | erfüllt | erfüllt |
-| F-06 | Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal | Detail mit anmeldungAktiv; leer absenden; .ics | nicht prüfbar | nicht prüfbar |
+| F-06 | Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal | Detail mit anmeldungAktiv; leer absenden; .ics | erfüllt | erfüllt |
 | F-07 | Nachrichten: Filter, Ankündigungen, Detail mit ähnlichen Artikeln | Filter; Detail | nicht prüfbar | nicht prüfbar |
 | F-08 | Über uns, Projekte, Vorstand, IGMG (Tabs) | vier Seiten; Tabs | erfüllt | erfüllt |
 | F-09 | Organisationen (vier): Name, Akzentfarbe, Termine | vier Seiten | erfüllt | erfüllt |
@@ -37,25 +37,25 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 
 ### F-01 · Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten
 - 390 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 21:42:40) · "2026-10-11T10:00:00.000Z"
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 22:03:58) · "2026-10-11T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
   - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland · So., 11. Okt. berechnet Nächstes Gebet Dhuhr · 13:18 Uhr verbleibt: 1 Std. 18 Min. Zeiten ausblenden Imsak 05:53 Aufgang 07:35 Dhuhr 13:18 Asr 16:10 Maghrib "
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
   - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
-  - erfüllt · bis zu 6 kommende Veranstaltungen · 5
+  - erfüllt · bis zu 6 kommende Veranstaltungen · 6
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 21:42:42) · "2026-10-11T10:00:00.000Z"
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 22:04:01) · "2026-10-11T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
   - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland So., 11. Okt. · 12:00 Uhr berechnet Imsak 05:53 Aufgang 07:35 Nächstes Gebet Dhuhr 13:18 verbleibt: 1 Std. 18 Min. Asr 16:10 Maghrib 18:50 Isha 20:25 Alle Gebe"
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
   - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
-  - erfüllt · bis zu 6 kommende Veranstaltungen · 5
+  - erfüllt · bis zu 6 kommende Veranstaltungen · 6
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-1440-ende.jpg`
 
@@ -148,26 +148,30 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 ### F-05 · Veranstaltungen: Kategoriefilter
 - 390 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
-  - Messwert · Karten gesamt · 5
-  - erfüllt · Kategoriefilter blendet andere Karten aus · {"chip":"Bildung","anzahl":3,"kategorien":["bildung"]}
-  - erfüllt · „Alle“ zeigt wieder alle Karten · {"gesamt":5,"nachAlle":5}
+  - Messwert · Karten gesamt · 6
+  - erfüllt · Kategoriefilter blendet andere Karten aus · {"chip":"Gebete","anzahl":1,"kategorien":["gebet"]}
+  - erfüllt · „Alle“ zeigt wieder alle Karten · {"gesamt":6,"nachAlle":6}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-filter-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
-  - Messwert · Karten gesamt · 5
-  - erfüllt · Kategoriefilter blendet andere Karten aus · {"chip":"Bildung","anzahl":3,"kategorien":["bildung"]}
-  - erfüllt · „Alle“ zeigt wieder alle Karten · {"gesamt":5,"nachAlle":5}
+  - Messwert · Karten gesamt · 6
+  - erfüllt · Kategoriefilter blendet andere Karten aus · {"chip":"Gebete","anzahl":1,"kategorien":["gebet"]}
+  - erfüllt · „Alle“ zeigt wieder alle Karten · {"gesamt":6,"nachAlle":6}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-filter-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-1440-ende.jpg`
 
 ### F-06 · Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal
-- 390 px: **nicht prüfbar** · Formular-POSTs: 0 · HTTP ≥ 400: keine
+- 390 px: **erfüllt** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · Detailseite HTTP 200 · 200
-  - nicht prüfbar · Anmeldeformular: Pflichtfehler und Fokus · kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)
+  - Messwert · Formularfelder · ["name","email","telefon","personen","einwilligung","website"]
+  - erfüllt · Anmeldung: Fehlerzusammenfassung nach leerem Absenden („Verbindlich anmelden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte geben Sie eine gültige E-Mail-Adresse ein. Datenschutzerkl","feldLinks":3,"altcha":"geprüft nach 21 s"}
+  - erfüllt · Anmeldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · iCal-Download: text/calendar mit TZID Europe/Berlin · {"status":200,"typ":"text/calendar; charset=utf-8"}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390-ende.jpg`
-- 1440 px: **nicht prüfbar** · Formular-POSTs: 0 · HTTP ≥ 400: keine
+- 1440 px: **erfüllt** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · Detailseite HTTP 200 · 200
-  - nicht prüfbar · Anmeldeformular: Pflichtfehler und Fokus · kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)
+  - Messwert · Formularfelder · ["name","email","telefon","personen","einwilligung","website"]
+  - erfüllt · Anmeldung: Fehlerzusammenfassung nach leerem Absenden („Verbindlich anmelden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte geben Sie eine gültige E-Mail-Adresse ein. Datenschutzerkl","feldLinks":3,"altcha":"geprüft nach 6.8 s"}
+  - erfüllt · Anmeldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · iCal-Download: text/calendar mit TZID Europe/Berlin · {"status":200,"typ":"text/calendar; charset=utf-8"}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440-ende.jpg`
 
@@ -259,7 +263,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 390 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 1.5 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 1.3 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -267,7 +271,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 1440 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 10.5 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 21.8 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -284,7 +288,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 10.5 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 0.8 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 3 · HTTP ≥ 400: keine
@@ -297,7 +301,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 12 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 8.3 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-1440-ende.jpg`
 
@@ -382,7 +386,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 ### F-20 · Verwaltung: Einladung, Passwort, TOTP, Anmeldung, Dashboard
 - 390 px: nicht vorgesehen (Erwartung: 1440 px)
 - 1440 px: **nicht prüfbar** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - nicht prüfbar · Einladung, Passwort, TOTP, Anmeldung, Dashboard · Der Prüfserver http://127.0.0.1:3500 darf nicht gestoppt werden; die Einladung braucht aber den gestoppten Server (anmeldung.mjs einladen). Ersatz: Prüfkopie auf eigenem Port, siehe Protokoll „…-kopie“.
+  - nicht prüfbar · Einladung, Passwort, TOTP, Anmeldung, Dashboard · Der Prüfserver http://127.0.0.1:3100 darf nicht gestoppt werden; die Einladung braucht aber den gestoppten Server (anmeldung.mjs einladen). Ersatz: Prüfkopie auf eigenem Port, siehe Protokoll „…-kopie“.
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-20-1440-ende.jpg`
 
 ### F-21 · Verwaltung: Veranstaltung anlegen/bearbeiten, Medien hochladen
@@ -406,7 +410,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Kalender /api/ical/de/organisation/kadin-teskilati: gültig · {"status":200,"ereignisse":1}
   - erfüllt · Kalender /api/ical/de/organisation/genclik-teskilati: gültig · {"status":200,"ereignisse":1}
   - erfüllt · Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig · {"status":200,"ereignisse":1}
-  - nicht erfüllt · Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin) · {"seite":"13:30","kalender":"12:30","zeile":"DTSTART;TZID=Europe/Berlin:20240126T1230"}
+  - nicht erfüllt · Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin) · {"seite":"16:30","kalender":"12:30","zeile":"DTSTART;TZID=Europe/Berlin:20240126T1230"}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390-ende.jpg`
 - 1440 px: **nicht erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
   - erfüllt · Kalender /api/ical/de/veranstaltungen: gültig · {"status":200,"ereignisse":13}
@@ -414,7 +418,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Kalender /api/ical/de/organisation/kadin-teskilati: gültig · {"status":200,"ereignisse":1}
   - erfüllt · Kalender /api/ical/de/organisation/genclik-teskilati: gültig · {"status":200,"ereignisse":1}
   - erfüllt · Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig · {"status":200,"ereignisse":1}
-  - nicht erfüllt · Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin) · {"seite":"13:30","kalender":"12:30","zeile":"DTSTART;TZID=Europe/Berlin:20240126T1230"}
+  - nicht erfüllt · Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin) · {"seite":"16:30","kalender":"12:30","zeile":"DTSTART;TZID=Europe/Berlin:20240126T1230"}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440-ende.jpg`
 
 ### F-24 · Konzept-Hinweis: erster Besuch, schließen, nicht wieder

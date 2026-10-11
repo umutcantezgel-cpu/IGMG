@@ -1,0 +1,2565 @@
+{
+  "lauf": {
+    "werkzeug": "funktionsliste.mjs",
+    "basis": "http://127.0.0.1:3500",
+    "zeit": "2026-10-11T19:42:40.286Z",
+    "browser": "141.0.7390.37",
+    "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste",
+    "zustand": "nein"
+  },
+  "ergebnisse": [
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 21:42:40)",
+            "ergebnis": "Messwert",
+            "gemessen": "2026-10-11T10:00:00.000Z"
+          },
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Leiste: sechs Gebetszeiten sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 6
+          },
+          {
+            "pruefung": "Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Wetzlar, Deutschland · So., 11. Okt. berechnet Nächstes Gebet Dhuhr · 13:18 Uhr verbleibt: 1 Std. 18 Min. Zeiten ausblenden Imsak 05:53 Aufgang 07:35 Dhuhr 13:18 Asr 16:10 Maghrib "
+          },
+          {
+            "pruefung": "H1 „IGMG Wetzlar“",
+            "ergebnis": "erfüllt",
+            "gemessen": "IGMG Wetzlar"
+          },
+          {
+            "pruefung": "„Gemeinde beitreten“ → /mitglied-werden",
+            "ergebnis": "erfüllt",
+            "gemessen": "/mitglied-werden"
+          },
+          {
+            "pruefung": "„Mehr erfahren“ (Hero) → /ueber-uns",
+            "ergebnis": "erfüllt",
+            "gemessen": "/ueber-uns"
+          },
+          {
+            "pruefung": "bis zu 6 kommende Veranstaltungen",
+            "ergebnis": "erfüllt",
+            "gemessen": 5
+          },
+          {
+            "pruefung": "Aufmacher + 3 Neuigkeiten (4 Artikel)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "artikel": 4
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 21:42:42)",
+            "ergebnis": "Messwert",
+            "gemessen": "2026-10-11T10:00:00.000Z"
+          },
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Leiste: sechs Gebetszeiten sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 6
+          },
+          {
+            "pruefung": "Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Wetzlar, Deutschland So., 11. Okt. · 12:00 Uhr berechnet Imsak 05:53 Aufgang 07:35 Nächstes Gebet Dhuhr 13:18 verbleibt: 1 Std. 18 Min. Asr 16:10 Maghrib 18:50 Isha 20:25 Alle Gebe"
+          },
+          {
+            "pruefung": "H1 „IGMG Wetzlar“",
+            "ergebnis": "erfüllt",
+            "gemessen": "IGMG Wetzlar"
+          },
+          {
+            "pruefung": "„Gemeinde beitreten“ → /mitglied-werden",
+            "ergebnis": "erfüllt",
+            "gemessen": "/mitglied-werden"
+          },
+          {
+            "pruefung": "„Mehr erfahren“ (Hero) → /ueber-uns",
+            "ergebnis": "erfüllt",
+            "gemessen": "/ueber-uns"
+          },
+          {
+            "pruefung": "bis zu 6 kommende Veranstaltungen",
+            "ergebnis": "erfüllt",
+            "gemessen": 5
+          },
+          {
+            "pruefung": "Aufmacher + 3 Neuigkeiten (4 Artikel)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "artikel": 4
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-01-1440-ende.jpg"
+        ]
+      },
+      "id": "F-01",
+      "titel": "Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten",
+      "ablauf": "`/` öffnen"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Leiste auf /",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /veranstaltungen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /nachrichten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /ueber-uns",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /projekte",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /vorstand",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /igmg",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /organisationen/ana-teskilati",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /bildung/korankurse",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /bildung/voranmeldung",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /kontakt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /mitglied-werden",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /webseite-fuer-moscheen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /meldung",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /suche?q=Gebet",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /nachrichten/neue-gebetszeiten-fuer-den-winter",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /islamisches-wissen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /quran",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "vorher": "false",
+              "nachher": "true",
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-02-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-02-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Leiste auf /",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /veranstaltungen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /nachrichten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /ueber-uns",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /projekte",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /vorstand",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /igmg",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /organisationen/ana-teskilati",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /bildung/korankurse",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /bildung/voranmeldung",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /kontakt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /mitglied-werden",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /webseite-fuer-moscheen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /meldung",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /suche?q=Gebet",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /nachrichten/neue-gebetszeiten-fuer-den-winter",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /islamisches-wissen",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "Leiste auf /quran",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "leisten": 1,
+              "href": "/gebetszeiten"
+            }
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-02-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-02-1440-ende.jpg"
+        ]
+      },
+      "id": "F-02",
+      "titel": "Leiste auf jeder Seite außer Gebetszeiten",
+      "ablauf": "Leiste auf 19 Seiten; Telefon: aufklappen"
+    },
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "aside-Zahl 0"
+          },
+          {
+            "pruefung": "vier Tabs",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              "Heute",
+              "Monatlich",
+              "Qibla",
+              "Einstellungen"
+            ]
+          },
+          {
+            "pruefung": "Tabs per Tastatur (Pfeil rechts, Ende, Pos1)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "nachPfeil": [
+                "Monatlich"
+              ],
+              "nachEnde": [
+                "Einstellungen"
+              ],
+              "nachPos1": [
+                "Heute"
+              ]
+            }
+          },
+          {
+            "pruefung": "Monatlich: sichtbare Tabellenüberschriften",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "Oktober 2026 – Gebetszeiten",
+              "November 2026 – Gebetszeiten"
+            ]
+          },
+          {
+            "pruefung": "Monatstabelle mit Überschrift „Gebetszeiten“",
+            "ergebnis": "erfüllt",
+            "gemessen": "Oktober 2026 – Gebetszeiten"
+          },
+          {
+            "pruefung": "Monat wechselt",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Im Bestand gibt es kein Bedienelement für einen Monatswechsel; die Tabelle zeigt den laufenden Monat (Messwert oben). OFFENE FRAGE: Was „Monat wechselt“ genau prüfen soll."
+          },
+          {
+            "pruefung": "Qibla-Kompass sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-monat-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-qibla-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "aside-Zahl 0"
+          },
+          {
+            "pruefung": "vier Tabs",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              "Heute",
+              "Monatlich",
+              "Qibla",
+              "Einstellungen"
+            ]
+          },
+          {
+            "pruefung": "Tabs per Tastatur (Pfeil rechts, Ende, Pos1)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "nachPfeil": [
+                "Monatlich"
+              ],
+              "nachEnde": [
+                "Einstellungen"
+              ],
+              "nachPos1": [
+                "Heute"
+              ]
+            }
+          },
+          {
+            "pruefung": "Monatlich: sichtbare Tabellenüberschriften",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "Oktober 2026 – Gebetszeiten",
+              "November 2026 – Gebetszeiten"
+            ]
+          },
+          {
+            "pruefung": "Monatstabelle mit Überschrift „Gebetszeiten“",
+            "ergebnis": "erfüllt",
+            "gemessen": "Oktober 2026 – Gebetszeiten"
+          },
+          {
+            "pruefung": "Monat wechselt",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Im Bestand gibt es kein Bedienelement für einen Monatswechsel; die Tabelle zeigt den laufenden Monat (Messwert oben). OFFENE FRAGE: Was „Monat wechselt“ genau prüfen soll."
+          },
+          {
+            "pruefung": "Qibla-Kompass sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-monat-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-qibla-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-03-1440-ende.jpg"
+        ]
+      },
+      "id": "F-03",
+      "titel": "/gebetszeiten: Tabs, Tastatur, Monatstabelle, Qibla",
+      "ablauf": "Tabs per Tastatur; Monat; Kompass"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Vollbild mit Überschrift",
+            "ergebnis": "erfüllt",
+            "gemessen": "Heutige Gebetszeiten"
+          },
+          {
+            "pruefung": "Knopf „Vollbild schließen“",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          },
+          {
+            "pruefung": "Sprache wechselt nach ~10 s",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": "Heutige Gebetszeiten",
+              "nachher": "Bugünkü Namaz Vakitleri"
+            }
+          },
+          {
+            "pruefung": "X schließt → /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "/gebetszeiten"
+          },
+          {
+            "pruefung": "Esc schließt → /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "/gebetszeiten"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-04-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-04-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Vollbild mit Überschrift",
+            "ergebnis": "erfüllt",
+            "gemessen": "Heutige Gebetszeiten"
+          },
+          {
+            "pruefung": "Knopf „Vollbild schließen“",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          },
+          {
+            "pruefung": "Sprache wechselt nach ~10 s",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": "Heutige Gebetszeiten",
+              "nachher": "Bugünkü Namaz Vakitleri"
+            }
+          },
+          {
+            "pruefung": "X schließt → /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "/gebetszeiten"
+          },
+          {
+            "pruefung": "Esc schließt → /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "/gebetszeiten"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-04-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-04-1440-ende.jpg"
+        ]
+      },
+      "id": "F-04",
+      "titel": "Gebetszeiten-Anzeige: Vollbild, Schließen, Sprachwechsel",
+      "ablauf": "/gebetszeiten/anzeige; X und Esc; 11 s warten"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Karten gesamt",
+            "ergebnis": "Messwert",
+            "gemessen": 5
+          },
+          {
+            "pruefung": "Kategoriefilter blendet andere Karten aus",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "chip": "Bildung",
+              "anzahl": 3,
+              "kategorien": [
+                "bildung"
+              ]
+            }
+          },
+          {
+            "pruefung": "„Alle“ zeigt wieder alle Karten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "gesamt": 5,
+              "nachAlle": 5
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-filter-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Karten gesamt",
+            "ergebnis": "Messwert",
+            "gemessen": 5
+          },
+          {
+            "pruefung": "Kategoriefilter blendet andere Karten aus",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "chip": "Bildung",
+              "anzahl": 3,
+              "kategorien": [
+                "bildung"
+              ]
+            }
+          },
+          {
+            "pruefung": "„Alle“ zeigt wieder alle Karten",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "gesamt": 5,
+              "nachAlle": 5
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-filter-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-05-1440-ende.jpg"
+        ]
+      },
+      "id": "F-05",
+      "titel": "Veranstaltungen: Kategoriefilter",
+      "ablauf": "Kategorie wählen; „Alle“"
+    },
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Anmeldeformular: Pflichtfehler und Fokus",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Detailseite HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Anmeldeformular: Pflichtfehler und Fokus",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Formular gerendert (Anzeige „Anmeldung geschlossen“: ja); der einzige Termin mit anmeldungAktiv ist vergangen (beginn 2024-01-26)"
+          },
+          {
+            "pruefung": "iCal-Download: text/calendar mit TZID Europe/Berlin",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "typ": "text/calendar; charset=utf-8"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-06-1440-ende.jpg"
+        ]
+      },
+      "id": "F-06",
+      "titel": "Veranstaltungsdetail: Anmeldung, Pflichtfehler, iCal",
+      "ablauf": "Detail mit anmeldungAktiv; leer absenden; .ics"
+    },
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Artikel gesamt",
+            "ergebnis": "Messwert",
+            "gemessen": 10
+          },
+          {
+            "pruefung": "Kategoriefilter wirkt (Liste ändert sich)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "chip": "Ankündigungen 2 Nachrichten",
+              "anzahl": 2,
+              "gedrückt": "true"
+            }
+          },
+          {
+            "pruefung": "„Alle“ stellt die Liste wieder her",
+            "ergebnis": "erfüllt",
+            "gemessen": 10
+          },
+          {
+            "pruefung": "Ankündigungen",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Abschnitt „Ankündigungen“: im Bestand ist keine Ankündigung veröffentlicht; der Abschnitt wird dann nicht gerendert"
+          },
+          {
+            "pruefung": "Detail HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Detail mit ähnlichen Artikeln",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-liste-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-detail-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Artikel gesamt",
+            "ergebnis": "Messwert",
+            "gemessen": 10
+          },
+          {
+            "pruefung": "Kategoriefilter wirkt (Liste ändert sich)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "chip": "Ankündigungen 2 Nachrichten",
+              "anzahl": 2,
+              "gedrückt": "true"
+            }
+          },
+          {
+            "pruefung": "„Alle“ stellt die Liste wieder her",
+            "ergebnis": "erfüllt",
+            "gemessen": 10
+          },
+          {
+            "pruefung": "Ankündigungen",
+            "ergebnis": "nicht prüfbar",
+            "grund": "kein Abschnitt „Ankündigungen“: im Bestand ist keine Ankündigung veröffentlicht; der Abschnitt wird dann nicht gerendert"
+          },
+          {
+            "pruefung": "Detail HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Detail mit ähnlichen Artikeln",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-liste-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-detail-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-07-1440-ende.jpg"
+        ]
+      },
+      "id": "F-07",
+      "titel": "Nachrichten: Filter, Ankündigungen, Detail mit ähnlichen Artikeln",
+      "ablauf": "Filter; Detail"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/ueber-uns: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Über uns",
+              "zeichen": 3328
+            }
+          },
+          {
+            "pruefung": "/projekte: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Gemeinsam Glauben, Gemeinsam Wachsen",
+              "zeichen": 2517
+            }
+          },
+          {
+            "pruefung": "/vorstand: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Unser Vorstand",
+              "zeichen": 3745
+            }
+          },
+          {
+            "pruefung": "/igmg: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "IGMG - Islamische Gemeinschaft Millî Görüş",
+              "zeichen": 829
+            }
+          },
+          {
+            "pruefung": "/igmg: Tabs zeigen Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "tabs": 5,
+              "zeichen": [
+                699,
+                1045,
+                1716,
+                1175,
+                98
+              ]
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-08-igmg-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-08-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/ueber-uns: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Über uns",
+              "zeichen": 3328
+            }
+          },
+          {
+            "pruefung": "/projekte: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Gemeinsam Glauben, Gemeinsam Wachsen",
+              "zeichen": 2517
+            }
+          },
+          {
+            "pruefung": "/vorstand: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Unser Vorstand",
+              "zeichen": 3745
+            }
+          },
+          {
+            "pruefung": "/igmg: 200, H1, Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "IGMG - Islamische Gemeinschaft Millî Görüş",
+              "zeichen": 829
+            }
+          },
+          {
+            "pruefung": "/igmg: Tabs zeigen Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "tabs": 5,
+              "zeichen": [
+                699,
+                1045,
+                1716,
+                1175,
+                98
+              ]
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-08-igmg-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-08-1440-ende.jpg"
+        ]
+      },
+      "id": "F-08",
+      "titel": "Über uns, Projekte, Vorstand, IGMG (Tabs)",
+      "ablauf": "vier Seiten; Tabs"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "ana-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Ana Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(4, 120, 87)",
+                "gefunden": true,
+                "klasse": "border-org-at",
+                "wert": "rgb(4, 120, 87)"
+              },
+              "termine": 2
+            }
+          },
+          {
+            "pruefung": "kadin-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Kadın Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(89, 46, 129)",
+                "gefunden": true,
+                "klasse": "border-org-kt",
+                "wert": "rgb(89, 46, 129)"
+              },
+              "termine": 1
+            }
+          },
+          {
+            "pruefung": "genclik-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Gençlik Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(0, 140, 152)",
+                "gefunden": true,
+                "klasse": "border-org-gt",
+                "wert": "rgb(0, 140, 152)"
+              },
+              "termine": 1
+            }
+          },
+          {
+            "pruefung": "kadin-genclik-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Kadın Gençlik Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(155, 37, 90)",
+                "gefunden": true,
+                "klasse": "border-org-kgt",
+                "wert": "rgb(155, 37, 90)"
+              },
+              "termine": 1
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-09-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-09-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "ana-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Ana Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(4, 120, 87)",
+                "gefunden": true,
+                "klasse": "border-org-at",
+                "wert": "rgb(4, 120, 87)"
+              },
+              "termine": 2
+            }
+          },
+          {
+            "pruefung": "kadin-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Kadın Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(89, 46, 129)",
+                "gefunden": true,
+                "klasse": "border-org-kt",
+                "wert": "rgb(89, 46, 129)"
+              },
+              "termine": 1
+            }
+          },
+          {
+            "pruefung": "genclik-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Gençlik Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(0, 140, 152)",
+                "gefunden": true,
+                "klasse": "border-org-gt",
+                "wert": "rgb(0, 140, 152)"
+              },
+              "termine": 1
+            }
+          },
+          {
+            "pruefung": "kadin-genclik-teskilati: 200, Name, Akzentfarbe, Termine",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "h1": "Kadın Gençlik Teşkilatı",
+              "akzent": {
+                "erwartet": "rgb(155, 37, 90)",
+                "gefunden": true,
+                "klasse": "border-org-kgt",
+                "wert": "rgb(155, 37, 90)"
+              },
+              "termine": 1
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-09-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-09-1440-ende.jpg"
+        ]
+      },
+      "id": "F-09",
+      "titel": "Organisationen (vier): Name, Akzentfarbe, Termine",
+      "ablauf": "vier Seiten"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "„register“ → Voranmeldung",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              {
+                "text": "Zur Voranmeldung",
+                "href": "/bildung/voranmeldung"
+              }
+            ]
+          },
+          {
+            "pruefung": "„join“ → /kontakt#karte",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              {
+                "text": "Einfach teilnehmen",
+                "href": "/kontakt#karte"
+              }
+            ]
+          },
+          {
+            "pruefung": "„closed“ ohne Aktion",
+            "ergebnis": "erfüllt",
+            "gemessen": []
+          },
+          {
+            "pruefung": "Kurskarten",
+            "ergebnis": "Messwert",
+            "gemessen": 3
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-10-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-10-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "„register“ → Voranmeldung",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              {
+                "text": "Zur Voranmeldung",
+                "href": "/bildung/voranmeldung"
+              }
+            ]
+          },
+          {
+            "pruefung": "„join“ → /kontakt#karte",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              {
+                "text": "Einfach teilnehmen",
+                "href": "/kontakt#karte"
+              }
+            ]
+          },
+          {
+            "pruefung": "„closed“ ohne Aktion",
+            "ergebnis": "erfüllt",
+            "gemessen": []
+          },
+          {
+            "pruefung": "Kurskarten",
+            "ergebnis": "Messwert",
+            "gemessen": 3
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-10-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-10-1440-ende.jpg"
+        ]
+      },
+      "id": "F-10",
+      "titel": "Korankurse: Kurskarten und Aktionen",
+      "ablauf": "Karten; register / join / closed"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "ohne JavaScript: Formular mit POST und Weiter-Knopf (nicht ausgelöst)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "formular": true,
+              "aktion": "",
+              "methode": "POST",
+              "knopf": true
+            }
+          },
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "vier Schritte, Schritt 1 aktiv",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0
+            }
+          },
+          {
+            "pruefung": "Weiter ohne Eingaben: Pflichtprüfung, Schritt bleibt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0,
+              "alarm": 1
+            }
+          },
+          {
+            "pruefung": "Weiter mit Testwerten: Schritt 2",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 1,
+              "pflichtfelder": 3
+            }
+          },
+          {
+            "pruefung": "Zurück: Schritt 1",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0
+            }
+          }
+        ],
+        "posts": 3,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-11-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-11-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "ohne JavaScript: Formular mit POST und Weiter-Knopf (nicht ausgelöst)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "formular": true,
+              "aktion": "",
+              "methode": "POST",
+              "knopf": true
+            }
+          },
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "vier Schritte, Schritt 1 aktiv",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0
+            }
+          },
+          {
+            "pruefung": "Weiter ohne Eingaben: Pflichtprüfung, Schritt bleibt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0,
+              "alarm": 1
+            }
+          },
+          {
+            "pruefung": "Weiter mit Testwerten: Schritt 2",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 1,
+              "pflichtfelder": 3
+            }
+          },
+          {
+            "pruefung": "Zurück: Schritt 1",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "anzahl": 4,
+              "aktiv": 0
+            }
+          }
+        ],
+        "posts": 3,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-11-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-11-1440-ende.jpg"
+        ]
+      },
+      "id": "F-11",
+      "titel": "Voranmeldung: vier Schritte, Weiter/Zurück, ohne JS sendbar",
+      "ablauf": "Schritte; leer Weiter; Testwerte; Zurück"
+    },
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Formularfelder (Pflicht mit *)",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "name*",
+              "email*",
+              "telefon",
+              "betreff",
+              "nachricht*",
+              "einwilligung*"
+            ]
+          },
+          {
+            "pruefung": "Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen",
+              "feldLinks": 4,
+              "altcha": "geprüft nach 1.5 s"
+            }
+          },
+          {
+            "pruefung": "Kontakt: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Karte vor Klick",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "iframes": 0,
+              "osmAnfragen": 0,
+              "kartenKnopf": 0
+            }
+          },
+          {
+            "pruefung": "Karte lädt erst nach Klick (OpenStreetMap)",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen."
+          }
+        ],
+        "posts": 1,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-12-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-12-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Formularfelder (Pflicht mit *)",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "name*",
+              "email*",
+              "telefon",
+              "betreff",
+              "nachricht*",
+              "einwilligung*"
+            ]
+          },
+          {
+            "pruefung": "Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen",
+              "feldLinks": 4,
+              "altcha": "geprüft nach 10.5 s"
+            }
+          },
+          {
+            "pruefung": "Kontakt: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Karte vor Klick",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "iframes": 0,
+              "osmAnfragen": 0,
+              "kartenKnopf": 0
+            }
+          },
+          {
+            "pruefung": "Karte lädt erst nach Klick (OpenStreetMap)",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen."
+          }
+        ],
+        "posts": 1,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-12-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-12-1440-ende.jpg"
+        ]
+      },
+      "id": "F-12",
+      "titel": "Kontakt: Pflichtprüfung, Karte nach Klick",
+      "ablauf": "leer absenden; Karte"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Mitgliedsantrag: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Fehlerzusammenfassung nach leerem Absenden („Weiter“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Vorname: Bitte füllen Sie dieses Feld aus. Nachname: Bitte füllen Sie dieses Feld aus. E-Mail Adresse: Bitte füllen Sie ",
+              "feldLinks": 3,
+              "altcha": "kein ALTCHA-Widget"
+            }
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Schritt bleibt nach leerem „Weiter“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": {
+                "anzahl": 3,
+                "aktiv": 0
+              },
+              "nachher": {
+                "anzahl": 3,
+                "aktiv": 0
+              }
+            }
+          },
+          {
+            "pruefung": "Moschee-Anfrage: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Fehlerzusammenfassung nach leerem Absenden („Weiter“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Moschee-Name: Bitte füllen Sie dieses Feld aus. Ansprechpartner: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte",
+              "feldLinks": 7,
+              "altcha": "kein ALTCHA-Widget"
+            }
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": {
+                "anzahl": 3,
+                "aktiv": 0
+              },
+              "nachher": {
+                "anzahl": 3,
+                "aktiv": 0
+              }
+            }
+          },
+          {
+            "pruefung": "Meldung: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam",
+              "feldLinks": 7,
+              "altcha": "geprüft nach 10.5 s"
+            }
+          },
+          {
+            "pruefung": "Meldung: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          }
+        ],
+        "posts": 3,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Mitgliedsantrag: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Fehlerzusammenfassung nach leerem Absenden („Weiter“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Vorname: Bitte füllen Sie dieses Feld aus. Nachname: Bitte füllen Sie dieses Feld aus. E-Mail Adresse: Bitte füllen Sie ",
+              "feldLinks": 3,
+              "altcha": "kein ALTCHA-Widget"
+            }
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Mitgliedsantrag: Schritt bleibt nach leerem „Weiter“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": {
+                "anzahl": 3,
+                "aktiv": 0
+              },
+              "nachher": {
+                "anzahl": 3,
+                "aktiv": 0
+              }
+            }
+          },
+          {
+            "pruefung": "Moschee-Anfrage: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Fehlerzusammenfassung nach leerem Absenden („Weiter“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Moschee-Name: Bitte füllen Sie dieses Feld aus. Ansprechpartner: Bitte füllen Sie dieses Feld aus. E-Mail-Adresse: Bitte",
+              "feldLinks": 7,
+              "altcha": "kein ALTCHA-Widget"
+            }
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "vorher": {
+                "anzahl": 3,
+                "aktiv": 0
+              },
+              "nachher": {
+                "anzahl": 3,
+                "aktiv": 0
+              }
+            }
+          },
+          {
+            "pruefung": "Meldung: HTTP 200 mit Formular",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam",
+              "feldLinks": 7,
+              "altcha": "geprüft nach 12 s"
+            }
+          },
+          {
+            "pruefung": "Meldung: Fokus in der Fehlerzusammenfassung",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          }
+        ],
+        "posts": 3,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-13-1440-ende.jpg"
+        ]
+      },
+      "id": "F-13",
+      "titel": "Mitglied werden, Moschee-Anfrage, Meldung: Pflichtprüfung",
+      "ablauf": "leer Weiter bzw. Senden"
+    },
+    {
+      "390": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "noindex",
+            "ergebnis": "erfüllt",
+            "gemessen": "noindex, follow"
+          },
+          {
+            "pruefung": "Ergebnisse zu „Gebet“",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "treffer": 0,
+              "hinweis": "Keine Treffer für „Gebet“. Versuchen Sie ein anderes oder kürzeres Wort."
+            }
+          },
+          {
+            "pruefung": "Gegenprobe „Freitagsgebet“: Trefferlinks",
+            "ergebnis": "Messwert",
+            "gemessen": 2
+          },
+          {
+            "pruefung": "Gegenprobe „Ramadan“: Trefferlinks",
+            "ergebnis": "Messwert",
+            "gemessen": 2
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-14-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-14-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "noindex",
+            "ergebnis": "erfüllt",
+            "gemessen": "noindex, follow"
+          },
+          {
+            "pruefung": "Ergebnisse zu „Gebet“",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "treffer": 0,
+              "hinweis": "Keine Treffer für „Gebet“. Versuchen Sie ein anderes oder kürzeres Wort."
+            }
+          },
+          {
+            "pruefung": "Gegenprobe „Freitagsgebet“: Trefferlinks",
+            "ergebnis": "Messwert",
+            "gemessen": 2
+          },
+          {
+            "pruefung": "Gegenprobe „Ramadan“: Trefferlinks",
+            "ergebnis": "Messwert",
+            "gemessen": 2
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-14-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-14-1440-ende.jpg"
+        ]
+      },
+      "id": "F-14",
+      "titel": "Suche: Ergebnisse, noindex",
+      "ablauf": "/suche?q=Gebet"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Deutsch → Türkisch: gleiche Seite, lokaler Pfad",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "pfad": "/tr/hakkimizda",
+              "lang": "tr",
+              "h1De": "Über uns",
+              "h1Tr": "Hakkımızda"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-15-tr-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-15-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Deutsch → Türkisch: gleiche Seite, lokaler Pfad",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "pfad": "/tr/hakkimizda",
+              "lang": "tr",
+              "h1De": "Über uns",
+              "h1Tr": "Hakkımızda"
+            }
+          },
+          {
+            "pruefung": "Türkisch → Englisch: lokaler Pfad",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "pfad": "/en/about-us",
+              "lang": "en"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-15-tr-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-15-1440-ende.jpg"
+        ]
+      },
+      "id": "F-15",
+      "titel": "Sprachwahl de → tr → en, lokalisierter Pfad",
+      "ablauf": "Sprachwahl bzw. Menü"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 404",
+            "ergebnis": "erfüllt",
+            "gemessen": 404
+          },
+          {
+            "pruefung": "Seite „nicht gefunden“ mit H1",
+            "ergebnis": "erfüllt",
+            "gemessen": "Seite nicht gefunden"
+          },
+          {
+            "pruefung": "noindex",
+            "ergebnis": "erfüllt",
+            "gemessen": "noindex"
+          },
+          {
+            "pruefung": "Weg zurück: „Zur Startseite“ → /",
+            "ergebnis": "erfüllt",
+            "gemessen": "/"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [
+          "404 /nicht-vorhanden-xyz"
+        ],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-16-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-16-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 404",
+            "ergebnis": "erfüllt",
+            "gemessen": 404
+          },
+          {
+            "pruefung": "Seite „nicht gefunden“ mit H1",
+            "ergebnis": "erfüllt",
+            "gemessen": "Seite nicht gefunden"
+          },
+          {
+            "pruefung": "noindex",
+            "ergebnis": "erfüllt",
+            "gemessen": "noindex"
+          },
+          {
+            "pruefung": "Weg zurück: „Zur Startseite“ → /",
+            "ergebnis": "erfüllt",
+            "gemessen": "/"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [
+          "404 /nicht-vorhanden-xyz"
+        ],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-16-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-16-1440-ende.jpg"
+        ]
+      },
+      "id": "F-16",
+      "titel": "Unbekannte Adresse: 404 mit Weg zurück",
+      "ablauf": "/nicht-vorhanden-xyz"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/offline HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "sw.js hält Gebetszeiten und Startseite vor (Quelltext)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "zeichen": 2760
+            }
+          },
+          {
+            "pruefung": "Dienst bereit / steuert Seite",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "bereit": true,
+              "gesteuert": true
+            }
+          },
+          {
+            "pruefung": "offline: Gebetszeiten aus dem Vorrat",
+            "ergebnis": "erfüllt",
+            "gemessen": "Gebetszeiten"
+          },
+          {
+            "pruefung": "offline: Startseite aus dem Vorrat",
+            "ergebnis": "erfüllt",
+            "gemessen": "IGMG Wetzlar"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-17-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-17-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/offline HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "sw.js hält Gebetszeiten und Startseite vor (Quelltext)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "zeichen": 2760
+            }
+          },
+          {
+            "pruefung": "Dienst bereit / steuert Seite",
+            "ergebnis": "Messwert",
+            "gemessen": {
+              "bereit": true,
+              "gesteuert": true
+            }
+          },
+          {
+            "pruefung": "offline: Gebetszeiten aus dem Vorrat",
+            "ergebnis": "erfüllt",
+            "gemessen": "Gebetszeiten"
+          },
+          {
+            "pruefung": "offline: Startseite aus dem Vorrat",
+            "ergebnis": "erfüllt",
+            "gemessen": "IGMG Wetzlar"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-17-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-17-1440-ende.jpg"
+        ]
+      },
+      "id": "F-17",
+      "titel": "Offline-Seite und Service Worker",
+      "ablauf": "/offline; sw.js; offline laden"
+    },
+    {
+      "390": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "Mobilmenü öffnet",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          },
+          {
+            "pruefung": "Fokus im Menü nach Öffnen",
+            "ergebnis": "erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Fokus bleibt nach 12 Tab-Drücken im Menü",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": "Fokus"
+          },
+          {
+            "pruefung": "Esc schließt das Menü",
+            "ergebnis": "erfüllt",
+            "gemessen": 0
+          },
+          {
+            "pruefung": "Fokus zurück auf den Menüknopf",
+            "ergebnis": "erfüllt",
+            "gemessen": "Menü öffnen"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-18-offen-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-18-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "–",
+        "grund": "nicht vorgesehen (Erwartung: 390 px)"
+      },
+      "id": "F-18",
+      "titel": "Mobilmenü (390): öffnen, Fokus, Esc",
+      "ablauf": "Menü öffnen; Tab; Esc"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "erster Tab-Halt: „Zum Inhalt springen“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Zum Inhalt springen",
+              "href": "#inhalt"
+            }
+          },
+          {
+            "pruefung": "Enter springt zu #inhalt, Fokus im Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "hash": "#inhalt",
+              "fokusImInhalt": true
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-19-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-19-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "erster Tab-Halt: „Zum Inhalt springen“",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "text": "Zum Inhalt springen",
+              "href": "#inhalt"
+            }
+          },
+          {
+            "pruefung": "Enter springt zu #inhalt, Fokus im Inhalt",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "hash": "#inhalt",
+              "fokusImInhalt": true
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-19-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-19-1440-ende.jpg"
+        ]
+      },
+      "id": "F-19",
+      "titel": "Sprunglink „Zum Inhalt“",
+      "ablauf": "erster Tab-Halt; Enter"
+    },
+    {
+      "390": {
+        "status": "–",
+        "grund": "nicht vorgesehen (Erwartung: 1440 px)"
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Einladung, Passwort, TOTP, Anmeldung, Dashboard",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Der Prüfserver http://127.0.0.1:3500 darf nicht gestoppt werden; die Einladung braucht aber den gestoppten Server (anmeldung.mjs einladen). Ersatz: Prüfkopie auf eigenem Port, siehe Protokoll „…-kopie“."
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-20-1440-ende.jpg"
+        ]
+      },
+      "id": "F-20",
+      "titel": "Verwaltung: Einladung, Passwort, TOTP, Anmeldung, Dashboard",
+      "ablauf": "Anmeldezustand (anmeldung.mjs)"
+    },
+    {
+      "390": {
+        "status": "–",
+        "grund": "nicht vorgesehen (Erwartung: 1440 px)"
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "Veranstaltung anlegen/bearbeiten, Medien hochladen",
+            "ergebnis": "nicht prüfbar",
+            "grund": "nur lesend erlaubt: ohne Anmeldezustand kein Lesepfad; Speichern und Hochladen nicht ausgeführt"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-21-1440-ende.jpg"
+        ]
+      },
+      "id": "F-21",
+      "titel": "Verwaltung: Veranstaltung anlegen/bearbeiten, Medien hochladen",
+      "ablauf": "nur lesend (Speichern verboten)"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/api/health HTTP 200 und Status ok",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "antwort": {
+                "status": "ok"
+              }
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-22-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "/api/health HTTP 200 und Status ok",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "antwort": {
+                "status": "ok"
+              }
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-22-1440-ende.jpg"
+        ]
+      },
+      "id": "F-22",
+      "titel": "/api/health",
+      "ablauf": "GET /api/health"
+    },
+    {
+      "390": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Kalender /api/ical/de/veranstaltungen: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 13
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/ana-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 4
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin)",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "seite": "13:30",
+              "kalender": "12:30",
+              "zeile": "DTSTART;TZID=Europe/Berlin:20240126T1230"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht erfüllt",
+        "befunde": [
+          {
+            "pruefung": "Kalender /api/ical/de/veranstaltungen: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 13
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/ana-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 4
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Kalender /api/ical/de/organisation/kadin-genclik-teskilati: gültig",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "status": 200,
+              "ereignisse": 1
+            }
+          },
+          {
+            "pruefung": "Startzeit im Kalender = Startzeit auf der Seite (Europe/Berlin)",
+            "ergebnis": "nicht erfüllt",
+            "gemessen": {
+              "seite": "13:30",
+              "kalender": "12:30",
+              "zeile": "DTSTART;TZID=Europe/Berlin:20240126T1230"
+            }
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-23-1440-ende.jpg"
+        ]
+      },
+      "id": "F-23",
+      "titel": "iCal-Abo je Organisation: gültiger Kalender, Zeiten",
+      "ablauf": "/api/ical/…"
+    },
+    {
+      "390": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "erster Besuch: Hinweis offen",
+            "ergebnis": "erfüllt",
+            "gemessen": true
+          },
+          {
+            "pruefung": "Schließen über „Verstanden“ und Merker im Gerät",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "zu": true,
+              "merker": "1"
+            }
+          },
+          {
+            "pruefung": "nach Neuladen nicht wieder offen",
+            "ergebnis": "erfüllt",
+            "gemessen": false
+          },
+          {
+            "pruefung": "Esc schließt den Hinweis",
+            "ergebnis": "erfüllt",
+            "gemessen": "open"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-24-offen-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-24-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "erfüllt",
+        "befunde": [
+          {
+            "pruefung": "erster Besuch: Hinweis offen",
+            "ergebnis": "erfüllt",
+            "gemessen": true
+          },
+          {
+            "pruefung": "Schließen über „Verstanden“ und Merker im Gerät",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "zu": true,
+              "merker": "1"
+            }
+          },
+          {
+            "pruefung": "nach Neuladen nicht wieder offen",
+            "ergebnis": "erfüllt",
+            "gemessen": false
+          },
+          {
+            "pruefung": "Esc schließt den Hinweis",
+            "ergebnis": "erfüllt",
+            "gemessen": "open"
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-24-offen-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e0-funktionsliste/F-24-1440-ende.jpg"
+        ]
+      },
+      "id": "F-24",
+      "titel": "Konzept-Hinweis: erster Besuch, schließen, nicht wieder",
+      "ablauf": "frischer Kontext; schließen; neu laden"
+    }
+  ]
+}
