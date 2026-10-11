@@ -6,6 +6,7 @@ import { ZEITZONE, lokalesDatum, type TerminRegel } from './index';
  * iCal-Ausgabe (K-09): je Termin eine .ics-Datei und je Organisation ein Abo-Feed.
  * Zeiten mit TZID=Europe/Berlin und fester VTIMEZONE (MEZ/MESZ seit 1996 unverändert), damit
  * wiederkehrende Termine über den Sommerzeitwechsel ihre Uhrzeit behalten.
+ * Die Ausgabe hängt nicht von der Zeitzone des Prozesses ab (Vercel und docker-compose laufen in UTC).
  */
 const VTIMEZONE_BERLIN = [
   'BEGIN:VTIMEZONE',
@@ -28,6 +29,9 @@ const VTIMEZONE_BERLIN = [
   'END:VTIMEZONE',
 ].join('\r\n');
 
+/** Kalenderzeitzone als Kopfzeilen; `mitZeitzone` setzt sie vor die Ereignisse. */
+const ZEITZONE_KOPF = `${VTIMEZONE_BERLIN}\r\nTIMEZONE-ID:${ZEITZONE}\r\nX-WR-TIMEZONE:${ZEITZONE}\r\n`;
+
 export type IcalTermin = TerminRegel & {
   uid: string;
   titel: string;
@@ -38,18 +42,28 @@ export type IcalTermin = TerminRegel & {
   aktualisiertAm?: Date;
 };
 
+/**
+ * Zeitpunkt als TZDate in Europe/Berlin. ical-generator liest ein normales Date mit den Gettern des Prozesses
+ * (in UTC andere Uhrzeit als in Berlin); ein TZDate liefert immer die Berliner Uhrzeit.
+ */
+function berlin(zeitpunkt: Date): TZDate {
+  return new TZDate(zeitpunkt.getTime(), ZEITZONE);
+}
+
 export function erzeugeKalender(name: string, termine: readonly IcalTermin[], domain: string): string {
+  // Ohne Kalenderzeitzone: Mit ihr schreibt ical-generator DTSTAMP, CREATED und LAST-MODIFIED in Ortszeit ohne „Z“,
+  // RFC 5545 verlangt aber UTC. So bleiben die Stempel reine Zeitpunkte (Date) und werden in UTC ausgegeben.
+  // Die VTIMEZONE mit TIMEZONE-ID setzt `mitZeitzone` danach ein.
   const kalender = ical({
     name,
     prodId: { company: 'IGMG Wetzlar', product: 'Webseite', language: 'DE' },
     method: ICalCalendarMethod.PUBLISH,
-    timezone: { name: ZEITZONE, generator: () => VTIMEZONE_BERLIN },
   });
   for (const t of termine) {
     const ereignis = kalender.createEvent({
       id: `${t.uid}@${domain}`,
-      start: t.beginn,
-      end: t.ende ?? undefined,
+      start: berlin(t.beginn),
+      end: t.ende ? berlin(t.ende) : undefined,
       allDay: t.ganztaegig ?? false,
       timezone: ZEITZONE,
       summary: t.titel,
@@ -64,24 +78,17 @@ export function erzeugeKalender(name: string, termine: readonly IcalTermin[], do
       ereignis.repeating([`RRULE:${untilInUtc(t.wiederholung.replace(/^RRULE:/, ''))}`, ...ausnahmen].join('\r\n'));
     }
   }
-  return stempelInUtc(kalender.toString());
+  return mitZeitzone(kalender.toString());
 }
 
 /**
- * RFC 5545 (3.8.7.2, 3.8.7.3): DTSTAMP und LAST-MODIFIED müssen in UTC stehen. ical-generator schreibt sie
- * in der Kalenderzeitzone (Wanduhrzeit Europe/Berlin) – hier zurück nach UTC mit „Z“.
+ * VTIMEZONE, TIMEZONE-ID und X-WR-TIMEZONE vor das erste Ereignis setzen. Die Stelle ist eine ganze Zeile,
+ * damit ein Text mit „BEGIN:VEVENT“ nicht getroffen wird; ohne Ereignis steht die Zeitzone vor END:VCALENDAR.
  */
-function stempelInUtc(ics: string): string {
-  return ics.replace(
-    /^(DTSTAMP|LAST-MODIFIED|CREATED):(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(\r?)$/gm,
-    (_t, feld: string, j: string, mo: string, d: string, h: string, mi: string, se: string, cr: string) => {
-      const utc = new Date(new TZDate(+j, +mo - 1, +d, +h, +mi, +se, ZEITZONE).getTime());
-      return `${feld}:${utc
-        .toISOString()
-        .replace(/[-:]/g, '')
-        .replace(/\.\d{3}/, '')}${cr}`;
-    },
-  );
+function mitZeitzone(ics: string): string {
+  const erstesEreignis = ics.search(/^BEGIN:VEVENT\r?$/m);
+  const stelle = erstesEreignis === -1 ? ics.lastIndexOf('END:VCALENDAR') : erstesEreignis;
+  return ics.slice(0, stelle) + ZEITZONE_KOPF + ics.slice(stelle);
 }
 
 /**

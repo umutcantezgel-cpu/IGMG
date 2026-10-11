@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { istGueltigeRegel, lokaleTeile, lokalesDatum, naechstesVorkommen, regelEnde, vorkommen, wiederholungsart } from '@/lib/termine';
-import { erzeugeKalender } from '@/lib/termine/ical';
+import { erzeugeKalender, type IcalTermin } from '@/lib/termine/ical';
 
 // Hilfsfunktion: Zeitpunkt aus Berliner Wanduhrzeit (Test-Orakel über Intl, unabhängig von der Implementierung)
 function berlin(iso: string): Date {
@@ -127,5 +127,105 @@ describe('iCal (K-09)', () => {
     expect(ics).toMatch(/\r\nDTSTAMP:20260701T083015Z\r\n/);
     expect(ics).toMatch(/\r\nLAST-MODIFIED:20260701T083015Z\r\n/);
     expect(ics).toContain('DTSTART;TZID=Europe/Berlin:20260701T100000');
+  });
+});
+
+/**
+ * Erzeugt den Kalender unter einer anderen Prozesszeitzone (Node übernimmt `process.env.TZ` zur Laufzeit) und
+ * stellt die ursprüngliche danach wieder her. Die lokale Stunde zeigt, dass die Zeitzone wirklich gewechselt hat.
+ */
+function kalenderUnterZeitzone(zone: string, termine: readonly IcalTermin[]): { ics: string; lokaleStunde: number } {
+  const urspruenglich = process.env.TZ;
+  process.env.TZ = zone;
+  try {
+    return {
+      ics: erzeugeKalender('Zeitzone', termine, 'example.test'),
+      lokaleStunde: new Date('2026-07-04T17:00:00Z').getHours(),
+    };
+  } finally {
+    if (urspruenglich === undefined) delete process.env.TZ;
+    else process.env.TZ = urspruenglich;
+  }
+}
+
+describe('iCal: Ausgabe unabhängig von der Zeitzone des Prozesses (Vercel und docker-compose laufen in UTC)', () => {
+  const termine: IcalTermin[] = [
+    {
+      uid: 'sommer',
+      titel: 'Sommertermin',
+      beginn: berlin('2026-07-04T19:00'),
+      ende: berlin('2026-07-04T21:00'),
+      wiederholung: 'FREQ=WEEKLY;BYDAY=SA',
+      ausnahmen: ['2026-07-11'],
+      aktualisiertAm: new Date('2026-07-01T08:30:15Z'),
+    },
+    { uid: 'winter', titel: 'Wintertermin', beginn: berlin('2026-11-07T19:00'), ende: berlin('2026-11-07T21:00') },
+    { uid: 'fruehling', titel: 'Umstellung im Frühjahr', beginn: berlin('2026-03-29T03:30') },
+    {
+      uid: 'serie',
+      titel: 'Sonntags über beide Umstellungen',
+      beginn: berlin('2026-03-22T10:00'),
+      wiederholung: 'FREQ=WEEKLY;BYDAY=SU;UNTIL=20261101T235959',
+    },
+    {
+      uid: 'stempel-frueh',
+      titel: 'Stempel in der doppelten Stunde (erste)',
+      beginn: berlin('2026-10-25T10:00'),
+      aktualisiertAm: new Date('2026-10-25T00:30:00Z'),
+    },
+    {
+      uid: 'stempel-spaet',
+      titel: 'Stempel in der doppelten Stunde (zweite)',
+      beginn: berlin('2026-10-25T10:00'),
+      aktualisiertAm: new Date('2026-10-25T01:30:00Z'),
+    },
+  ];
+
+  it('ergibt in jeder Zeitzone dieselbe Datei mit den festen Berliner Uhrzeiten und UTC-Stempeln', () => {
+    const zonen = ['UTC', 'Europe/Berlin', 'America/New_York', 'Asia/Tokyo'];
+    const ergebnisse = zonen.map((zone) => kalenderUnterZeitzone(zone, termine));
+    expect(new Set(ergebnisse.map((e) => e.lokaleStunde)).size).toBe(zonen.length);
+
+    const [erste, ...weitere] = ergebnisse;
+    for (const e of weitere) expect(e.ics).toBe(erste.ics);
+
+    const ics = erste.ics;
+    // Sommer: 19:00 MESZ, Ausnahme am 11.07. mit gleicher Uhrzeit, Stempel aus der Aktualisierung
+    expect(ics).toMatch(/^DTSTART;TZID=Europe\/Berlin:20260704T190000\r?$/m);
+    expect(ics).toMatch(/^DTEND;TZID=Europe\/Berlin:20260704T210000\r?$/m);
+    expect(ics).toMatch(/^EXDATE;TZID=Europe\/Berlin:20260711T190000\r?$/m);
+    expect(ics).toMatch(/^DTSTAMP:20260701T083015Z\r?$/m);
+    expect(ics).toMatch(/^LAST-MODIFIED:20260701T083015Z\r?$/m);
+    // Winter: 19:00 MEZ = 18:00 UTC, ohne Aktualisierung gilt der Beginn als Stempel
+    expect(ics).toMatch(/^DTSTART;TZID=Europe\/Berlin:20261107T190000\r?$/m);
+    expect(ics).toMatch(/^DTSTAMP:20261107T180000Z\r?$/m);
+    // Umstellungstag 29.03.2026 (Sommerzeit ab 02:00 MEZ): 03:30 MESZ = 01:30 UTC
+    expect(ics).toMatch(/^DTSTART;TZID=Europe\/Berlin:20260329T033000\r?$/m);
+    expect(ics).toMatch(/^DTSTAMP:20260329T013000Z\r?$/m);
+    // Serie über beide Umstellungen behält 10:00, UNTIL 01.11. 23:59:59 MEZ = 22:59:59 UTC
+    expect(ics).toMatch(/^DTSTART;TZID=Europe\/Berlin:20260322T100000\r?$/m);
+    expect(ics).toMatch(/^RRULE:FREQ=WEEKLY;BYDAY=SU;UNTIL=20261101T225959Z\r?$/m);
+    // 25.10.: Ortszeit 02:30 kommt zweimal vor (00:30 UTC = MESZ, 01:30 UTC = MEZ). Stempel dürfen nicht
+    // über die Ortszeit umgerechnet werden, sonst springt der erste um eine Stunde.
+    expect(ics).toMatch(/^DTSTAMP:20261025T003000Z\r?$/m);
+    expect(ics).toMatch(/^LAST-MODIFIED:20261025T003000Z\r?$/m);
+    expect(ics).toMatch(/^DTSTAMP:20261025T013000Z\r?$/m);
+    expect(ics).toMatch(/^LAST-MODIFIED:20261025T013000Z\r?$/m);
+    // VTIMEZONE steht genau einmal vor dem ersten Ereignis
+    expect(ics.match(/^BEGIN:VTIMEZONE\r?$/gm)).toHaveLength(1);
+    expect(ics.indexOf('BEGIN:VTIMEZONE')).toBeLessThan(ics.indexOf('BEGIN:VEVENT'));
+  });
+
+  it('ein Feed ohne Termine bleibt gültig und trägt die Zeitzone vor END:VCALENDAR', () => {
+    const ics = erzeugeKalender('Leer', [], 'example.test');
+    expect(ics).toMatch(/^TIMEZONE-ID:Europe\/Berlin\r?$/m);
+    expect(ics.indexOf('BEGIN:VTIMEZONE')).toBeLessThan(ics.indexOf('END:VCALENDAR'));
+    expect(ics.endsWith('END:VCALENDAR')).toBe(true);
+  });
+
+  it('stellt die Prozesszeitzone nach dem Test wieder her', () => {
+    const vorher = process.env.TZ;
+    kalenderUnterZeitzone('Asia/Tokyo', termine);
+    expect(process.env.TZ).toBe(vorher);
   });
 });
