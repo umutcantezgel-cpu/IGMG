@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { cspOeffentlich, grundHeader } from './src/lib/sicherheit/header';
+import { cspOeffentlich, grundHeader, noindexHeader } from './src/lib/sicherheit/header';
 
 /**
  * Next.js-Konfiguration (K-01, K-13, K-14, K-17, K-19).
@@ -44,8 +44,10 @@ const nextConfig: NextConfig = {
     },
   },
   async headers() {
+    const noindex = noindexHeader();
     return [
       { source: '/:pfad*', headers: grundHeader() },
+      ...(noindex.length ? [{ source: '/:pfad*', headers: noindex }] : []),
       {
         // Öffentliche Seiten: statische CSP. Die Verwaltung bekommt ihre Nonce-CSP im Proxy.
         source: '/:pfad((?!verwaltung|de/verwaltung|tr/verwaltung|en/verwaltung).*)',

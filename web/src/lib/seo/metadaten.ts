@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
 import { getPathname } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
+import { oeffentlicheAdresse } from '@/lib/umgebung';
 
 type Ziel = Parameters<typeof getPathname>[0]['href'];
 
-/** Basis-URL der Website (für kanonische Adressen, hreflang, OG). */
+/** Basis-URL der Website (für kanonische Adressen, hreflang, OG); in Vorschauen ohne APP_URL die Branch-Adresse (ADR 0022). */
 export function basisUrl(): string {
-  return (process.env.APP_URL ?? 'http://localhost:3000').replace(/\/$/, '');
+  return oeffentlicheAdresse(process.env);
 }
 
 /** Lokalisierte absolute Adresse einer Seite. */

@@ -2,12 +2,14 @@ import { passkey } from '@better-auth/passkey';
 import type { BetterAuthOptions } from 'better-auth';
 import { APIError, createAuthMiddleware } from 'better-auth/api';
 import { twoFactor } from 'better-auth/plugins/two-factor';
+import { oeffentlicheAdresse } from '../umgebung';
 
 /**
  * Gemeinsame Better-Auth-Optionen (ohne Datenbank), damit Laufzeit-Konfiguration und
  * Schema-Erzeugung (`pnpm auth:schema`) dieselben Plugins nutzen. ADR 0003, Lichtung (b).
  */
-const appUrl = process.env.BETTER_AUTH_URL ?? process.env.APP_URL ?? 'http://localhost:3000';
+// Vorschauen ohne APP_URL melden sich unter ihrer Branch-Adresse an (ADR 0022); Passkey-rpID folgt dieser Adresse
+const appUrl = process.env.BETTER_AUTH_URL ?? oeffentlicheAdresse(process.env);
 const istHttps = appUrl.startsWith('https://');
 
 export const authOptionen = {

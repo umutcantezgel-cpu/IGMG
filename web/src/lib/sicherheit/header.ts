@@ -2,10 +2,11 @@
  * Sicherheits-Header (K-13, ADR 0012). Reine Funktionen ohne Laufzeitabhängigkeiten,
  * damit next.config.ts (Buildzeit) und proxy.ts (Laufzeit) dieselben Regeln nutzen.
  */
+import { betriebsart, oeffentlicheAdresse } from '../umgebung';
 
 const istEntwicklung = process.env.NODE_ENV !== 'production';
-/** HTTPS-Betrieb: erst dann HSTS und upgrade-insecure-requests (lokal läuft http://localhost). */
-const istHttps = (process.env.APP_URL ?? '').startsWith('https://');
+/** HTTPS-Betrieb: erst dann HSTS und upgrade-insecure-requests (lokal läuft http://localhost; Vorschau über VERCEL_BRANCH_URL). */
+const istHttps = oeffentlicheAdresse(process.env).startsWith('https://');
 
 function richtlinie(teile: Record<string, string[]>): string {
   return Object.entries(teile)
@@ -60,4 +61,9 @@ export function grundHeader(): { key: string; value: string }[] {
     },
     ...(istHttps ? [{ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' }] : []),
   ];
+}
+
+/** Vorschauen werden nicht indexiert (ADR 0022, V-09): `X-Robots-Tag` für alle Antworten, nur in der Betriebsart „vorschau“. */
+export function noindexHeader(): { key: string; value: string }[] {
+  return betriebsart(process.env) === 'vorschau' ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] : [];
 }

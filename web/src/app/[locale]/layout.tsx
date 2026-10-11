@@ -3,6 +3,7 @@ import { ServiceWorkerAnmeldung } from '@/components/website/ServiceWorkerAnmeld
 import { getTranslations } from 'next-intl/server';
 import { locale } from 'next/root-params';
 import { routing } from '@/i18n/routing';
+import { oeffentlicheAdresse } from '@/lib/umgebung';
 import { schriftKlassen } from '../schriften';
 import '../globals.css';
 
@@ -13,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('meta');
   return {
-    metadataBase: new URL(process.env.APP_URL ?? 'http://localhost:3000'),
+    metadataBase: new URL(oeffentlicheAdresse(process.env)),
     title: { default: t('titel'), template: `%s · ${t('titel')}` },
     description: t('beschreibung'),
     applicationName: t('titel'),
