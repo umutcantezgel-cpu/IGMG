@@ -47,7 +47,7 @@ export async function sichtbareAnkuendigungen(jetzt: Date): Promise<Ankuendigung
  * Verwaltung verfällt den Cache sofort über `inhaltGeaendert`; das Ende einer Laufzeit wirkt spätestens nach einer Stunde.
  */
 export async function ladeAnkuendigungen(): Promise<AnkuendigungDaten[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.ankuendigungen);
   return sichtbareAnkuendigungen(new Date());

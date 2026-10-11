@@ -79,7 +79,7 @@ function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date, bilde
  * (neueste zuerst). Stündlich neu (Datumsbezug), sofort nach Änderungen (Tag veranstaltungen). ADR 0004.
  */
 export async function ladeVeranstaltungen(): Promise<VeranstaltungsDaten[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen, TAG.medien);
   const jetzt = new Date();
@@ -102,7 +102,7 @@ export type VeranstaltungsDetail = VeranstaltungsDaten & {
 
 /** Eine Veranstaltung über ihren Slug (gecacht je Slug, Tag veranstaltung:<id> und veranstaltungen). */
 export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDetail | null> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen, TAG.medien);
   const [z] = await db
@@ -127,7 +127,7 @@ export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDet
  * (ohne Entschlüsseln, Spalte `anzahl`). Die Anmelde-Action ruft `updateTag(TAG.anmeldungenVon(id))`.
  */
 export async function ladeAnmeldezahl(veranstaltungId: string): Promise<number> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.anmeldungen, TAG.anmeldungenVon(veranstaltungId));
   return zaehleBelegtePlaetze(veranstaltungId);
@@ -150,7 +150,7 @@ export async function zaehleBelegtePlaetze(veranstaltungId: string, ausfuehrer: 
 
 /** Slugs für generateStaticParams. */
 export async function ladeVeranstaltungsSlugs(): Promise<string[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen);
   const zeilen = await db.select({ slug: schema.veranstaltung.slug }).from(schema.veranstaltung).where(sichtbar);

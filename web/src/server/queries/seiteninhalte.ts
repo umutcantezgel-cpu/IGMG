@@ -10,7 +10,7 @@ export type SeitenInhalt<B extends SeitenBereich> = z.infer<(typeof SEITENINHALT
 
 /** Lädt einen Seiteninhalt (gecacht, Tag seiteninhalt:<bereich>); fehlt er, Standardwerte mit Platzhaltern. */
 export async function ladeSeiteninhalt<B extends SeitenBereich>(bereich: B): Promise<SeitenInhalt<B>> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.seiteninhalt(bereich), 'seiteninhalt');
   const [zeile] = await db.select().from(schema.seiteninhalt).where(eq(schema.seiteninhalt.bereich, bereich)).limit(1);

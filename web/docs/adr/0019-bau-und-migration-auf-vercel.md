@@ -33,3 +33,7 @@ Falsch, wenn ein Bau mit Migration fehlschlägt, nachdem die Migration angewende
 
 - Vorschau-Baus migrieren ihren Neon-Branch; ein Branch ohne Integration (gleiche `DATABASE_URL` wie Produktion) wäre gefährlich → Startklar-Prüfung „Vorschau nutzt nicht die Produktionsdatenbank“ (Cockpit, `pnpm startklar`).
 - Der Bau braucht Netz zur Datenbank (Vercel-Bauumgebung hat es).
+
+## Nachtrag 2026-10-11 (Prüfung H-V07/V10)
+
+- Die Migrationssperre ist eine Sitzungssperre (`pg_advisory_lock`). Hinter einem Pooler im Transaktionsmodus (Neon-Adresse mit `-pooler`) kann jede Anweisung auf einer anderen Serververbindung laufen; Sperren und Entsperren träfen dann womöglich verschiedene Sitzungen. `scripts/migriere-mit-sperre.mjs` nimmt deshalb `DATABASE_URL_UNPOOLED` (setzt die Neon-Integration zusammen mit `DATABASE_URL`) vor `DATABASE_URL` und warnt im Bauprotokoll, wenn nur eine Pooler-Adresse vorhanden ist. Die App selbst bleibt beim Pooler (ADR 0018).

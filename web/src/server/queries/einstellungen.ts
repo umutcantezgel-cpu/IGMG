@@ -10,7 +10,7 @@ type Art = keyof typeof EINSTELLUNG;
 
 /** Liest eine Einstellung; ungültige oder fehlende Werte → Standardwerte des Schemas. Gecacht (ADR 0004). */
 export async function ladeEinstellung<A extends Art>(art: A): Promise<z.infer<(typeof EINSTELLUNG)[A]['schema']>> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.einstellungen);
   const { schluessel, schema: zod } = EINSTELLUNG[art];

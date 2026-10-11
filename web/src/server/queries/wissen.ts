@@ -36,7 +36,7 @@ function zuThema(z: typeof schema.wissenThema.$inferSelect): WissensThema {
 
 /** Sichtbare Themen in Sortierreihenfolge (Tabelle wissen_thema, Tag wissen, ADR 0004). */
 export async function ladeWissensThemen(): Promise<WissensThema[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.wissen);
   const zeilen = await db
@@ -49,7 +49,7 @@ export async function ladeWissensThemen(): Promise<WissensThema[]> {
 
 /** Ein sichtbares Thema per Schlüssel (für die Themenseite /islamisches-wissen/[thema]). */
 export async function ladeWissensThema(slug: string): Promise<WissensThema | null> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.wissen);
   const [z] = await db
@@ -62,7 +62,7 @@ export async function ladeWissensThema(slug: string): Promise<WissensThema | nul
 
 /** Schlüssel aller sichtbaren Themen (generateStaticParams der Themenseite, dieselbe Auswahl wie ladeWissensThema). */
 export async function ladeWissensSlugs(): Promise<string[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.wissen);
   const zeilen = await db.select({ slug: schema.wissenThema.slug }).from(schema.wissenThema).where(sichtbar);
@@ -75,7 +75,7 @@ export async function ladeWissensSlugs(): Promise<string[]> {
  * Tag seiteninhalt:wissen, Lebensdauer wie andere Seiteninhalte (ADR 0004).
  */
 export async function ladeWissensInhalt(): Promise<WissenInhalt> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.seiteninhalt('wissen'), 'seiteninhalt');
   const [zeile] = await db.select().from(schema.seiteninhalt).where(eq(schema.seiteninhalt.bereich, 'wissen')).limit(1);

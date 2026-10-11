@@ -27,7 +27,7 @@ function tagPlus(datum: string, n: number): string {
  * Täglich neu (cacheLife 'days'), sofort nach Import/Einstellung (Tag gebetszeiten).
  */
 export async function ladeGebetszeitenFenster(): Promise<GebetszeitenFenster> {
-  'use cache';
+  'use cache: remote';
   cacheLife('days');
   cacheTag(TAG.gebetszeiten);
   const einstellung = await ladeEinstellung('gebetszeiten');
@@ -78,7 +78,7 @@ export type GebetszeitenMonat = {
  * (Hidschri-Kalender berechnet, `src/lib/gebetszeiten/hijri.ts`). Gecacht je Monat, Tag gebetszeiten.
  */
 export async function ladeGebetszeitenMonat(monat: string): Promise<GebetszeitenMonat> {
-  'use cache';
+  'use cache: remote';
   cacheLife('days');
   cacheTag(TAG.gebetszeiten, TAG.gebetszeitenMonat(monat));
   if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(monat)) throw new Error('Ungültiger Monat');

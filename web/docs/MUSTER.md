@@ -19,7 +19,7 @@ Beispiel: `src/app/[locale]/(website)/veranstaltungen/page.tsx`, Detail: `…/ve
 
 Beispiel: `src/server/queries/veranstaltungen.ts`
 
-- Öffentlich: Funktion mit `'use cache'`, `cacheLife(...)` und **nur** Tags aus `src/lib/cache/tags.ts` (`TAG.…`). Rückgabe serialisierbar (Zeiten als ISO-Text).
+- Öffentlich: Funktion mit `'use cache: remote'` (ADR 0024; Suche und reine Zeitfunktionen `'use cache'`), `cacheLife(...)` und **nur** Tags aus `src/lib/cache/tags.ts` (`TAG.…`). Rückgabe serialisierbar (Zeiten als ISO-Text).
 - Nur sichtbare Inhalte: `status = 'veroeffentlicht'` und `imPapierkorbSeit IS NULL`.
 - Verwaltung: eigene Datei unter `src/server/queries/verwaltung/<modul>.ts`, **ohne** Cache (Seiten sind dynamisch); Aufrufer prüfen vorher das Recht.
 

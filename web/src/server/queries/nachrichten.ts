@@ -66,7 +66,7 @@ function sichtbarInListen() {
 
 /** Veröffentlichte Nachrichten, neueste zuerst. Geplante Beiträge (Datum in der Zukunft) erscheinen erst ab ihrem Datum. */
 export async function ladeNachrichten(): Promise<NachrichtDaten[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.medien);
   const zeilen = await db.select().from(schema.nachricht).where(sichtbarInListen()).orderBy(desc(schema.nachricht.veroeffentlichtAm));
@@ -74,7 +74,7 @@ export async function ladeNachrichten(): Promise<NachrichtDaten[]> {
 }
 
 export async function ladeNachricht(slug: string): Promise<NachrichtDetail | null> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.medien);
   const [z] = await db
@@ -90,7 +90,7 @@ export async function ladeNachricht(slug: string): Promise<NachrichtDetail | nul
 
 /** Slugs für generateStaticParams: dieselbe Auswahl wie ladeNachricht. */
 export async function ladeNachrichtenSlugs(): Promise<string[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten);
   const zeilen = await db.select({ slug: schema.nachricht.slug }).from(schema.nachricht).where(sichtbarInListen());
@@ -103,7 +103,7 @@ export async function ladeAehnlicheNachrichten(
   ohneId: string,
   anzahl = 3,
 ): Promise<NachrichtDaten[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.medien);
   const zeilen = await db

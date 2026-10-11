@@ -31,7 +31,7 @@ export function anmeldewegVon(kurs: { verfuegbarkeit: 'voranmeldung' | 'ohne_anm
 
 /** Veröffentlichte Kurse in Sortierreihenfolge; Entwürfe und Papierkorb (K-05) bleiben aus. Tag kurse (ADR 0004). */
 export async function ladeKurse(): Promise<KursDaten[]> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.kurse, TAG.medien);
   const zeilen = await db

@@ -24,7 +24,7 @@ export type SureDaten = SureKurz & { verse: Vers[] };
 export const SUREN_OHNE_QUELLE = 5;
 
 export async function ladeQuranStand(): Promise<{ quelle: QuranQuelle | null; suren: SureKurz[] }> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
   const [quelle] = await db
@@ -41,7 +41,7 @@ export async function ladeQuranStand(): Promise<{ quelle: QuranQuelle | null; su
 
 /** Eine Sure mit Versen; null ohne Import oder bei unbekannter Nummer. */
 export async function ladeSure(nr: number): Promise<SureDaten | null> {
-  'use cache';
+  'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
   if (!Number.isInteger(nr) || nr < 1 || nr > 114) return null;
