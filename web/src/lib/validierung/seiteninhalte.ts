@@ -1,10 +1,15 @@
 import { z } from 'zod';
+import { schema as datenschutz } from './seiteninhalte/datenschutz';
+import { schema as igmg } from './seiteninhalte/igmg';
+import { schema as impressum } from './seiteninhalte/impressum';
+import { schema as organisation } from './seiteninhalte/organisation';
+import { schema as projekte } from './seiteninhalte/projekte';
+import { schema as ueberUns } from './seiteninhalte/ueber-uns';
+import { schema as vorstand } from './seiteninhalte/vorstand';
 
-/** Mehrsprachiger Text: Deutsch Pflicht (ADR 0002). */
-export const mehrsprachig = (max = 500) =>
-  z.object({ de: z.string().trim().min(1).max(max), tr: z.string().trim().max(max).optional(), en: z.string().trim().max(max).optional() });
-export const mehrsprachigOptional = (max = 500) =>
-  z.object({ de: z.string().trim().max(max), tr: z.string().trim().max(max).optional(), en: z.string().trim().max(max).optional() });
+import { mehrsprachig } from './mehrsprachig';
+
+export { mehrsprachig, mehrsprachigOptional } from './mehrsprachig';
 
 /** Kontaktdaten (Seiteninhalte › Kontaktdaten): Footer, Kontaktseite, JSON-LD. Platzhalter nach G-05. */
 export const kontaktInhalt = z.object({
@@ -30,7 +35,21 @@ export const kontaktInhalt = z.object({
 });
 export type KontaktInhalt = z.infer<typeof kontaktInhalt>;
 
+/**
+ * Seiteninhalte je Bereich (Tabelle `seiteninhalt`, Schlüssel `bereich`). Je Bereich eine Schemadatei unter
+ * `./seiteninhalte/` (E-027), damit Pakete parallel arbeiten. Die vier Organisationen teilen ein Schema.
+ */
 export const SEITENINHALT = {
   kontakt: kontaktInhalt,
+  'ueber-uns': ueberUns,
+  vorstand,
+  projekte,
+  igmg,
+  'organisation-ana-teskilati': organisation,
+  'organisation-kadin-teskilati': organisation,
+  'organisation-genclik-teskilati': organisation,
+  'organisation-kadin-genclik-teskilati': organisation,
+  impressum,
+  datenschutz,
 } as const;
 export type SeitenBereich = keyof typeof SEITENINHALT;

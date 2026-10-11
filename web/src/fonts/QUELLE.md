@@ -6,7 +6,6 @@ Kopiert aus den npm-Paketen @fontsource/atkinson-hyperlegible-next, @fontsource/
 - atkinson-hyperlegible-next-latin-700-normal.woff2
 - atkinson-hyperlegible-next-latin-ext-400-normal.woff2
 - atkinson-hyperlegible-next-latin-ext-700-normal.woff2
-- source-serif-4-latin-600-normal.woff2
-- source-serif-4-latin-ext-600-normal.woff2
 - amiri-arabic-400-normal.woff2
 - amiri-arabic-700-normal.woff2
+- igmg-wetzlar-titel-latin-600-opsz.woff2, igmg-wetzlar-titel-latin-ext-600-opsz.woff2 – abgeleitet aus @fontsource-variable/source-serif-4 5.3.0 (`source-serif-4-{latin,latin-ext}-opsz-normal.woff2`): Gewicht 600 festgesetzt, Achse opsz erhalten, interner Name „IGMG Wetzlar Titel“ (OFL 1.1 Bedingung 3, reservierter Name „Source“). Erzeugt mit `python3 scripts/schrift-titel.py`. Lizenz: source-serif-4-OFL.txt.

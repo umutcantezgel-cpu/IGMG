@@ -1,0 +1,79 @@
+[
+  {
+    "pfad": "/",
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcpMs": 1668,
+    "cls": 0.002,
+    "tbtMs": 21,
+    "jsKb": 172.9,
+    "fehler": [],
+    "offen": [
+      "errors-in-console"
+    ],
+    "sim": {
+      "performance": 92,
+      "lcpMs": 3277
+    }
+  },
+  {
+    "pfad": "/veranstaltungen",
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1589,
+    "cls": 0.002,
+    "tbtMs": 10,
+    "jsKb": 175.5,
+    "fehler": [],
+    "offen": [],
+    "sim": {
+      "performance": 93,
+      "lcpMs": 3228
+    }
+  },
+  {
+    "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+    "performance": 98,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1866,
+    "cls": 0.002,
+    "tbtMs": 7,
+    "jsKb": 177.5,
+    "fehler": [],
+    "offen": [
+      "first-contentful-paint"
+    ],
+    "sim": {
+      "performance": 92,
+      "lcpMs": 3314
+    }
+  },
+  {
+    "pfad": "/gebetszeiten/anzeige",
+    "performance": 96,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcpMs": 1555,
+    "cls": 0.102,
+    "tbtMs": 7,
+    "jsKb": 166.1,
+    "fehler": [
+      "CLS"
+    ],
+    "offen": [
+      "cumulative-layout-shift",
+      "errors-in-console"
+    ],
+    "sim": {
+      "performance": 95,
+      "lcpMs": 2854
+    }
+  }
+]

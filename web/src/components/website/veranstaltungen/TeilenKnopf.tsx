@@ -36,7 +36,7 @@ export function TeilenKnopf({ titel, texte }: { titel: string; texte: { teilen: 
         <Share2 aria-hidden className="size-5" />
         {texte.teilen}
       </button>
-      <span role="status" className="text-16 text-gruen-800">
+      <span role="status" className="text-16 text-gruen-800 empty:hidden">
         {meldung}
       </span>
     </>

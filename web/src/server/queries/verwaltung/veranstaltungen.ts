@@ -1,5 +1,6 @@
 import 'server-only';
-import { and, asc, desc, eq, isNotNull, isNull, ne, sql } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, isNotNull, isNull, ne, sql } from 'drizzle-orm';
+import { z as zod } from 'zod';
 import { db, schema } from '@/lib/db';
 import { naechstesVorkommen } from '@/lib/termine';
 
@@ -35,8 +36,15 @@ export type VerwaltungsZeile = {
   istBeispiel: boolean;
 };
 
-/** Liste: aktive (ohne Papierkorb) oder Papierkorb; kommende zuerst chronologisch, dann vergangene. */
-export async function ladeVerwaltungsListe(papierkorb: boolean, jetzt = new Date()): Promise<VerwaltungsZeile[]> {
+/**
+ * Liste: aktive (ohne Papierkorb) oder Papierkorb; kommende zuerst chronologisch, dann vergangene.
+ * `organisationen` (Organisationsredaktion, K-06): nur Veranstaltungen dieser Organisationen; null = alle.
+ */
+export async function ladeVerwaltungsListe(
+  papierkorb: boolean,
+  organisationen: readonly ('at' | 'kt' | 'gt' | 'kgt')[] | null = null,
+  jetzt = new Date(),
+): Promise<VerwaltungsZeile[]> {
   const zeilen = await db
     .select({
       id: v.id,
@@ -57,7 +65,12 @@ export async function ladeVerwaltungsListe(papierkorb: boolean, jetzt = new Date
     })
     .from(v)
     .leftJoin(belegt, eq(belegt.bezugId, v.id))
-    .where(papierkorb ? isNotNull(v.imPapierkorbSeit) : isNull(v.imPapierkorbSeit))
+    .where(
+      and(
+        papierkorb ? isNotNull(v.imPapierkorbSeit) : isNull(v.imPapierkorbSeit),
+        organisationen ? (organisationen.length ? inArray(v.organisation, [...organisationen]) : sql`false`) : undefined,
+      ),
+    )
     .orderBy(papierkorb ? desc(v.imPapierkorbSeit) : asc(v.beginn));
   const liste = zeilen.map((z) => {
     const n = naechstesVorkommen({ beginn: z.beginn, ende: z.ende, wiederholung: z.wiederholung, ausnahmen: z.ausnahmen }, jetzt);
@@ -87,7 +100,7 @@ export async function ladeVerwaltungsListe(papierkorb: boolean, jetzt = new Date
 
 /** Ein Datensatz zum Bearbeiten (auch im Papierkorb), sonst null. */
 export async function ladeVeranstaltungFuerVerwaltung(id: string) {
-  if (!/^[0-9a-f-]{36}$/i.test(id)) return null;
+  if (!zod.uuid().safeParse(id).success) return null;
   const [z] = await db.select().from(v).where(eq(v.id, id)).limit(1);
   return z ?? null;
 }

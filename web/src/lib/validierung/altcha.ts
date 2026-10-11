@@ -14,7 +14,7 @@ const KOSTEN = 5_000;
 
 function geheimnisse(): { signatur: string; schluessel: string } {
   const g = process.env.ALTCHA_GEHEIMNIS;
-  if (!g) throw new Error('ALTCHA_GEHEIMNIS fehlt.');
+  if (!g || g.length < 32) throw new Error('ALTCHA_GEHEIMNIS fehlt oder ist kürzer als 32 Zeichen.');
   return { signatur: sha256(`signatur|${g}`), schluessel: sha256(`schluessel|${g}`) };
 }
 

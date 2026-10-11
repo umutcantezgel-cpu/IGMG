@@ -1,10 +1,25 @@
 // Schlüsselabgleich der Sprachdateien (Z-03): jeder Schlüssel in de existiert in tr und en (außer Namensraum
 // `verwaltung`, ADR 0016), Platzhalter {…} stimmen überein, keine leeren Werte. Exit 1 bei Befund.
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ordner = join(import.meta.dirname, '..', 'messages');
-const lade = (s) => JSON.parse(readFileSync(join(ordner, `${s}.json`), 'utf8'));
+const lies = (datei) => JSON.parse(readFileSync(datei, 'utf8'));
+// Bereichsdateien (E-027): messages/bereiche/<bereich>.json mit { de, tr, en } – Namensräume dürfen sich nicht überschneiden
+const bereiche = readdirSync(join(ordner, 'bereiche'))
+  .filter((d) => d.endsWith('.json'))
+  .map((d) => ({ name: d, inhalt: lies(join(ordner, 'bereiche', d)) }));
+const ueberschneidungen = [];
+const lade = (s) => {
+  const basis = lies(join(ordner, `${s}.json`));
+  for (const b of bereiche) {
+    for (const [ns, wert] of Object.entries(b.inhalt[s] ?? {})) {
+      if (ns in basis) ueberschneidungen.push(`${s}: Namensraum „${ns}“ aus bereiche/${b.name} existiert bereits`);
+      basis[ns] = wert;
+    }
+  }
+  return basis;
+};
 const flach = (o, p = '', a = {}) => {
   for (const [k, v] of Object.entries(o)) {
     const s = p ? `${p}.${k}` : k;
@@ -71,6 +86,7 @@ for (const sprache of ['tr', 'en']) {
   for (const k of Object.keys(s)) if (!(k in de)) befunde.push(`${sprache}: überzählig ${k}`);
 }
 for (const [k, v] of Object.entries(de)) if (String(v).trim() === '') befunde.push(`de: leer ${k}`);
+befunde.push(...new Set(ueberschneidungen));
 const anzahl = Object.keys(de).filter((k) => !k.startsWith('verwaltung.')).length;
 const nurDe = Object.keys(de).length - anzahl;
 if (befunde.length) {

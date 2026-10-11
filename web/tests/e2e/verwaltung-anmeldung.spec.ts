@@ -28,6 +28,19 @@ test('Öffentliche Registrierung über HTTP ist gesperrt', async ({ request }) =
   expect(antwort.status()).toBe(403);
 });
 
+test('Anmeldung, Zwei-Faktor und Passkey sind über HTTP gesperrt (nur über die Anmeldeseite, SP-P3 H1/H2)', async ({ request }) => {
+  const kopf = { origin: 'http://localhost:3100' };
+  const anmelden = await request.post('/api/auth/sign-in/email', {
+    data: { email: 'fremd@example.test', password: TESTPASSWORT },
+    headers: kopf,
+  });
+  expect(anmelden.status()).toBe(403);
+  const totp = await request.post('/api/auth/two-factor/verify-totp', { data: { code: '000000' }, headers: kopf });
+  expect(totp.status()).toBe(403);
+  const passkey = await request.get('/api/auth/passkey/generate-register-options', { headers: kopf });
+  expect(passkey.status()).toBe(403);
+});
+
 test('Ohne Anmeldung führt die Verwaltung zur Anmeldeseite', async ({ page }) => {
   await page.goto('/verwaltung');
   await expect(page).toHaveURL(/\/verwaltung\/anmelden$/);

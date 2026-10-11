@@ -4,6 +4,7 @@
 import { TZDate } from '@date-fns/tz';
 import { holeDb, schema } from '../../src/lib/db';
 import { dokumentAusAbsaetzen, klartext } from '../../src/lib/inhalt/tiptap';
+import { BEREICHS_SEEDS } from './bereiche';
 import { BEISPIEL_NACHRICHTEN } from './daten/nachrichten';
 import { BEISPIEL_VERANSTALTUNG_DETAIL } from './daten/veranstaltung-detail';
 import { BEISPIEL_VERANSTALTUNGEN } from './daten/veranstaltungen';
@@ -163,6 +164,7 @@ const SEEDS: { name: string; lauf: (db: Db) => Promise<number> }[] = [
   { name: 'seiteninhalte', lauf: seiteninhalte },
   { name: 'veranstaltungen', lauf: veranstaltungen },
   { name: 'nachrichten', lauf: nachrichten },
+  ...BEREICHS_SEEDS,
 ];
 
 async function main() {

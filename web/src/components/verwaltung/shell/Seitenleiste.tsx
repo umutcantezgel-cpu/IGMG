@@ -44,10 +44,10 @@ export function Seitenleiste({
           aria-expanded={offen}
           aria-controls="verwaltung-navigation"
           onClick={() => setOffen((o) => !o)}
-          className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss hover:bg-gruen-50 min-[900px]:hidden"
+          className="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-50 min-[900px]:hidden"
         >
           {offen ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
-          <span className="sr-only">{offen ? texte.schliessen : texte.oeffnen}</span>
+          <span>{offen ? texte.schliessen : texte.oeffnen}</span>
         </button>
       </div>
       <nav id="verwaltung-navigation" aria-label={texte.navName} className={cn(!offen && 'max-[899px]:hidden')}>

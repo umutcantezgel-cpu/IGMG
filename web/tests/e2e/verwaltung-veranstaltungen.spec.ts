@@ -107,20 +107,22 @@ test('Veranstaltung anlegen, öffentlich sehen, Papierkorb und endgültig lösch
   expect(konsole.filter((f) => /Content Security Policy|Refused to/.test(f))).toEqual([]);
 });
 
-test('Organisationsredaktion: nur eigene Organisation, fremde Termine nur lesen', async ({ page }) => {
+test('Organisationsredaktion: nur eigene Organisation wählbar und sichtbar', async ({ page }) => {
   await angemeldetesKonto(page, 'organisationsredaktion', 'gt');
   await page.goto('/verwaltung/veranstaltungen/neu');
   const optionen = await page.getByLabel('Organisation', { exact: true }).locator('option').allInnerTexts();
   expect(optionen).toEqual(['Gençlik Teşkilatı (GT)']);
-  // Fremde Organisation (KT): Formular nur lesen, keine Speichern-Schaltfläche
+  // Liste: nur GT-Termine, keine anderer Organisationen oder allgemeine (K-06, SP-P3 M1)
   await page.goto('/verwaltung/veranstaltungen');
-  const zeileKt = page
+  const zeilen = page
+    .getByRole('table')
     .getByRole('row')
-    .filter({ has: page.getByRole('cell', { name: /^KT / }) })
-    .first();
-  await zeileKt.getByRole('link', { name: /^Bearbeiten:/ }).click();
-  await expect(page.getByRole('button', { name: 'Speichern' })).toHaveCount(0);
-  await expect(page.getByLabel('Titel (Pflichtfeld)', { exact: true })).toBeDisabled();
+    .filter({ has: page.getByRole('cell') });
+  await expect(zeilen.first()).toBeVisible();
+  for (const kuerzel of ['AT', 'KT', 'KGT', 'Allgemein']) {
+    await expect(zeilen.filter({ has: page.getByRole('cell', { name: new RegExp(`^${kuerzel} `) }) })).toHaveCount(0);
+  }
+  await expect(zeilen.filter({ has: page.getByRole('cell', { name: /^GT / }) }).first()).toBeVisible();
 });
 
 test('Ohne Anmeldung: Verwaltungsseiten leiten zur Anmeldung', async ({ page }) => {

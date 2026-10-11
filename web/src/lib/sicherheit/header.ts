@@ -55,7 +55,8 @@ export function grundHeader(): { key: string; value: string }[] {
     { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
     {
       key: 'Permissions-Policy',
-      value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)',
+      value:
+        'camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)',
     },
     ...(istHttps ? [{ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' }] : []),
   ];

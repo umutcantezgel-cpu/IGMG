@@ -41,7 +41,7 @@ export const authOptionen = {
   advanced: {
     cookiePrefix: 'igmg',
     useSecureCookies: istHttps,
-    ipAddress: { ipAddressHeaders: ['x-forwarded-for', 'x-real-ip'] },
+    ipAddress: { ipAddressHeaders: ['x-real-ip', 'x-forwarded-for'] },
   },
   user: { deleteUser: { enabled: false } },
   plugins: [
@@ -49,11 +49,16 @@ export const authOptionen = {
     passkey({ rpID: new URL(appUrl).hostname, rpName: 'IGMG Wetzlar Verwaltung', origin: new URL(appUrl).origin }),
   ],
   hooks: {
-    // Konten nur per Einladung (K-06): Registrierung über HTTP gesperrt; die Server Action
-    // „Einladung annehmen“ ruft auth.api.signUpEmail serverseitig (ohne Request) auf.
+    // Über HTTP gesperrt (ctx.request vorhanden); die Server Actions rufen auth.api serverseitig ohne Request auf:
+    // - Registrierung: Konten nur per Einladung (K-06)
+    // - Anmeldung und Zwei-Faktor: nur über die Server Actions mit eigener Ratenbegrenzung je IP und Konto
+    //   (Befund SP-P3 H2: auth.api umgeht die Begrenzung von Better Auth; ein offener HTTP-Weg wäre die Lücke)
+    // - Passkeys: bis zur gesicherten Einführung in C12 gesperrt (Befund SP-P3 H1)
     before: createAuthMiddleware(async (ctx) => {
-      if (ctx.path === '/sign-up/email' && ctx.request) {
-        throw new APIError('FORBIDDEN', { message: 'Registrierung nur per Einladung.' });
+      if (!ctx.request) return;
+      if (ctx.path === '/sign-up/email') throw new APIError('FORBIDDEN', { message: 'Registrierung nur per Einladung.' });
+      if (ctx.path === '/sign-in/email' || ctx.path.startsWith('/two-factor/') || ctx.path.startsWith('/passkey/')) {
+        throw new APIError('FORBIDDEN', { message: 'Nur über die Anmeldeseite.' });
       }
     }),
   },

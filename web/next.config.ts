@@ -17,7 +17,10 @@ const nextConfig: NextConfig = {
   },
   images: {
     // Medien kommen ausschließlich aus der eigenen Herkunft (ADR 0007).
-    localPatterns: [{ pathname: '/medien/**', search: '' }, { pathname: '/bilder/**', search: '' }],
+    localPatterns: [
+      { pathname: '/medien/**', search: '' },
+      { pathname: '/bilder/**', search: '' },
+    ],
     remotePatterns: [],
     formats: ['image/avif', 'image/webp'],
   },
@@ -34,7 +37,7 @@ const nextConfig: NextConfig = {
       { source: '/:pfad*', headers: grundHeader() },
       {
         // Öffentliche Seiten: statische CSP. Die Verwaltung bekommt ihre Nonce-CSP im Proxy.
-        source: '/:pfad((?!verwaltung|tr/verwaltung|en/verwaltung).*)',
+        source: '/:pfad((?!verwaltung|de/verwaltung|tr/verwaltung|en/verwaltung).*)',
         headers: [{ key: 'Content-Security-Policy', value: cspOeffentlich() }],
       },
     ];

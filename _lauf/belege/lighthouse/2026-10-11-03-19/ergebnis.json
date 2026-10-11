@@ -1,0 +1,43 @@
+[
+  {
+    "pfad": "/",
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcpMs": 1657,
+    "cls": 0.002,
+    "tbtMs": 22,
+    "jsKb": 172.9,
+    "fehler": [],
+    "offen": [
+      "errors-in-console"
+    ],
+    "sim": {
+      "performance": 92,
+      "lcpMs": 3352
+    }
+  },
+  {
+    "pfad": "/gebetszeiten/anzeige",
+    "performance": 96,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcpMs": 1557,
+    "cls": 0.102,
+    "tbtMs": 9,
+    "jsKb": 166.1,
+    "fehler": [
+      "CLS"
+    ],
+    "offen": [
+      "cumulative-layout-shift",
+      "errors-in-console"
+    ],
+    "sim": {
+      "performance": 95,
+      "lcpMs": 2854
+    }
+  }
+]

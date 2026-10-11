@@ -88,7 +88,7 @@ export async function NewsCard({
   if (variante === 'gross') {
     return (
       <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1">
-        <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[clamp(200px,24vw,300px)] border-b border-linie" />
+        <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[300px] border-b border-linie" />
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
             {kategorie}

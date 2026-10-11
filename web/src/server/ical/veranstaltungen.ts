@@ -55,7 +55,7 @@ export async function kalenderAntwort(
       'Content-Type': 'text/calendar; charset=utf-8',
       'Content-Disposition': `${herunterladen ? 'attachment' : 'inline'}; filename="${dateiname}.ics"`,
       'X-Content-Type-Options': 'nosniff',
-      'Cache-Control': 'public, max-age=900',
+      'Cache-Control': 'public, max-age=300',
     },
   });
 }

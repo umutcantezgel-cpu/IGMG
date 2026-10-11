@@ -31,20 +31,16 @@ async function ladeRollen(benutzerId: string): Promise<RollenZuweisung[]> {
   return zeilen;
 }
 
-async function hatPasskey(benutzerId: string): Promise<boolean> {
-  const zeile = await db.select({ id: schema.passkey.id }).from(schema.passkey).where(eq(schema.passkey.userId, benutzerId)).limit(1);
-  return zeile.length > 0;
-}
-
 /** Aktuelle Sitzung (je Anfrage einmal geladen). null = nicht angemeldet. */
 export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
   const sitzung = await auth.api.getSession({ headers: await headers() });
   if (!sitzung) return null;
   const benutzerId = sitzung.user.id;
-  const [rollen, passkeyVorhanden] = await Promise.all([ladeRollen(benutzerId), hatPasskey(benutzerId)]);
-  // 2FA-Pflicht (K-06): TOTP aktiviert oder Passkey vorhanden. Better Auth lässt eine Sitzung mit
-  // aktiviertem TOTP erst nach dem zweiten Faktor entstehen (Lichtung b).
-  const zweiFaktorErfuellt = Boolean(sitzung.user.twoFactorEnabled) || passkeyVorhanden;
+  const rollen = await ladeRollen(benutzerId);
+  // 2FA-Pflicht (K-06): Mit aktiviertem TOTP entsteht eine Sitzung erst nach dem zweiten Faktor (Lichtung b).
+  // Ein vorhandener Passkey zählt NICHT (Befund SP-P3 H1: sonst könnte jemand mit bekanntem Passwort einen eigenen
+  // Passkey registrieren). Passkey-Anmeldung folgt in C12 mit Sitzungskennzeichen.
+  const zweiFaktorErfuellt = Boolean(sitzung.user.twoFactorEnabled);
   return { benutzerId, name: sitzung.user.name, email: sitzung.user.email, rollen, zweiFaktorErfuellt };
 });
 

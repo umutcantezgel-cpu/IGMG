@@ -1,24 +1,27 @@
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import NextLink from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { VeranstaltungsFormular } from '@/components/verwaltung/veranstaltungen/VeranstaltungsFormular';
-import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
+import { darf, organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { formularWerte } from '@/lib/veranstaltung/formularwerte';
 import { speichereVeranstaltung } from '@/server/actions/veranstaltungen';
 import { ladeVeranstaltungFuerVerwaltung } from '@/server/queries/verwaltung/veranstaltungen';
 import { formularOptionen } from '../formular-optionen';
 
-/** Verwaltung › Veranstaltung bearbeiten (V02). Ohne Bearbeitungsrecht (fremde Organisation): nur lesen. */
+/** Verwaltung › Veranstaltung bearbeiten (V02). Im Papierkorb: nur lesen. Fremde Organisation: kein Zugriff. */
 export default async function VeranstaltungBearbeiten({ params, searchParams }: PageProps<'/[locale]/verwaltung/veranstaltungen/[id]'>) {
   const a = await verlangeSeitenRecht('veranstaltung.lesen');
   const [{ id }, sp] = await Promise.all([params, searchParams]);
   const z = await ladeVeranstaltungFuerVerwaltung(id);
   if (!z) notFound();
+  // Organisationsredaktion: fremde Organisationen weder bearbeiten noch lesen (K-06, Befund SP-P3 M1)
+  const filter = organisationsFilter(a.rollen, 'veranstaltung.bearbeiten');
+  if (filter !== null && !(z.organisation && filter.includes(z.organisation))) redirect('/verwaltung/kein-zugriff');
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.veranstaltungen'), formularOptionen(a)]);
   const nurLesen = !darf(a.rollen, 'veranstaltung.bearbeiten', { organisation: z.organisation }) || z.imPapierkorbSeit !== null;
-  // Fremde Organisation im Lesemodus trotzdem anzeigen
+  // Organisation des Datensatzes immer in der Auswahl (Lesemodus im Papierkorb)
   const organisationen = optionen.organisationen.some((o) => o.wert === (z.organisation ?? ''))
     ? optionen.organisationen
     : [...optionen.organisationen, { wert: z.organisation ?? '', label: z.organisation ? z.organisation.toUpperCase() : t('allgemein') }];

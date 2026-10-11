@@ -1,4 +1,5 @@
 import 'server-only';
+import { randomBytes } from 'node:crypto';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
@@ -13,8 +14,8 @@ if (!process.env.BETTER_AUTH_SECRET && process.env.NODE_ENV === 'production' && 
 /** Better Auth (Anmeldung, Sitzung, Zwei-Faktor, Passkey). Rechte: src/lib/rechte (ADR 0003). */
 export const auth = betterAuth({
   ...authOptionen,
-  // Ohne Geheimnis nur in Entwicklung und beim Bau (beim Bau werden keine Anfragen bedient).
-  secret: process.env.BETTER_AUTH_SECRET ?? 'nur-entwicklung-unsicheres-geheimnis-0123456789',
+  // Ohne Geheimnis nur in Entwicklung und beim Bau: zufällig je Prozess (kein Geheimnis im Quelltext, G-03)
+  secret: process.env.BETTER_AUTH_SECRET ?? randomBytes(32).toString('base64'),
   database: drizzleAdapter(db, { provider: 'pg', schema }),
   plugins: [...authOptionen.plugins, nextCookies()],
 });

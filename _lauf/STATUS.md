@@ -1,15 +1,16 @@
 # STATUS
 
-**Statuszeile:** Phase P3 (Durchstich) · D01–D04 fertig, D05 in Arbeit · Pakete P0: 54/56 Blätter · Z 0/12 · Tore P2 grün · Puffer 0 % · nächster Schritt: D05 Verwaltungs-Shell + Modul Veranstaltungen; parallel D06/D07/D09a (Haiku)
+**Statuszeile:** Phase P3 · Tor P3 läuft (D08, DP, SP, danach TL) · Pakete P0: 56/56 Blätter · Z 0/12 · Tore P2 grün · nächster Schritt: Tor-Befunde abarbeiten, Welle A starten (Vorarbeiten fertig)
 
-## Prüfpunkt (2026-10-11, ~03:40)
-- **Erledigt:**
-  - P0/P1 wie zuvor (Laufdateien, ADR 0001–0016, Lichtungen a/b/c, Bildreferenzen, PLAN v2 nach Gegenprüfung)
-  - P2: F01–F10, **Tor P2 grün** (Testläufer wf_42b18d83: check, integration, build, E2E 4/4, `/` `/tr` `/en` 200, Header ohne Set-Cookie)
-  - P3 D01 Hülle, D02 Karten/RichText, D03 Termine + iCal, D04 Startseite + Veranstaltungen Liste/Detail (Commit 9605ecc)
-  - ADR 0017 im Durchstich bestätigt (`_lauf/belege/adr-0017/pruefung-d04.md`, Skript `_lauf/werkzeuge/pruefe-adr-0017.sh`)
-- **Laufende Pakete:** Kundschafter-Workflow `wf_333df54b-23b` (54/56, C15 offen); Dev-Server `next dev` Port 3000 (Hintergrund)
-- **Nächster Schritt:** D05 → D08/D09b → Tor P3 (TL, DP, SP, Lighthouse, T5, T8) → `docs/MUSTER.md` → Welle A
+## Prüfpunkt (2026-10-11, ~04:50)
+- **Erledigt seit letztem Prüfpunkt:**
+  - D05 Verwaltungs-Hülle + Modul Veranstaltungen (e3020c7), D06/D07/D09a/T5/T8 abgenommen
+  - E-019 E2E-Datenbank `igmg_e2e` (1bb5ddd), Entwicklungs-DB von Testkonten bereinigt
+  - K-12 Leistung (f39e6a7): CLS 0, JS 172–177 kB, Lighthouse mobil (devtools) Perf. 99 / A 100 / BP ≥ 96 / SEO 100 / LCP 1,6 s; `pnpm messen` (E-026)
+  - `web/docs/MUSTER.md` geschrieben (vorläufig, nach Tor P3 festschreiben)
+  - Welle-A-Vorarbeiten (E-027): `messages/bereiche/<bereich>.json`, `src/lib/validierung/seiteninhalte/<bereich>.ts`, `drizzle/seeds/bereiche/<bereich>.ts` als Platzhalter; `ladeGebetszeitenMonat`, `src/lib/gebetszeiten/hijri.ts`; Testhilfe `tests/integration/hilfen/verwaltung.ts`
+- **Laufende Pakete:** Workflow `wf_d3f34fc4-181` (Tor P3)
+- **Nächster Schritt:** Tor-Befunde → Commit → Welle A in 6 Ketten (A01→A02 · A03→A05→A06 · A04→A07→A17 · A08→A09→A18 · A10→A11→A12 · A15→A14), A16 selbst (O)
 - **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit 127.0.0.1:8025)
 - **Umgebung je Befehl:** `source _lauf/werkzeuge/umgebung.sh` (pnpm, Docker ohne Keychain-Helper, Telemetrie aus)
 
@@ -17,7 +18,6 @@
 - Passkey-Registrierung und -Anmeldung (Client-Plugin) → C12 Benutzer/Konto
 - Passwort vergessen (sendResetPassword) → C12
 - TOTP-Wiederverwendung im selben Zeitfenster (Lichtung b) → Sicherheitsprüfer Tor P3/P5
-- E2E legt Einladungen in der Entwicklungs-DB an → eigene DB `igmg_e2e` (E-019) vor Tor P3
 - Anmeldung zu Veranstaltungen (Formular, Platzzählung via `TAG.anmeldungenVon`) → B04
 - Redirect in Verwaltungsseiten liefert HTTP 200 + Client-Umleitung (gestreamt) – prüfen, ob 307 möglich (D05)
 

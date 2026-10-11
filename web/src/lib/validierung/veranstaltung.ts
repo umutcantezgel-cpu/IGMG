@@ -16,7 +16,7 @@ export const SPRACHFELDER = ['De', 'Tr', 'En'] as const;
 const ZEIT = /^([01]\d|2[0-3]):[0-5]\d$/;
 const DATUM = /^\d{4}-\d{2}-\d{2}$/;
 
-const pflichtText = (max: number) => z.string().trim().min(1, 'pflicht').max(max, 'zuLang');
+const pflichtText = (max: number) => z.string('pflicht').trim().min(1, 'pflicht').max(max, 'zuLang');
 const text = (max: number) => z.string().trim().max(max, 'zuLang').default('');
 const schalter = z.preprocess((v) => v === 'on' || v === 'true' || v === true, z.boolean());
 const zahlOptional = (min: number, max: number) =>
@@ -54,7 +54,7 @@ export const veranstaltungSchema = z
     ortDe: text(160),
     ortTr: text(160),
     ortEn: text(160),
-    datum: z.string().regex(DATUM, 'datum'),
+    datum: z.string('datum').regex(DATUM, 'datum'),
     ganztaegig: schalter,
     beginnZeit: z.string().trim().default(''),
     endeZeit: z.string().trim().default(''),

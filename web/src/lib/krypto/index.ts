@@ -53,7 +53,7 @@ export function sha256(text: string): string {
 /** HMAC-SHA-256 als Hex mit einem Geheimnis aus der Umgebung (Ratenbegrenzung: IP nie im Klartext). */
 export function hmac(text: string, geheimnisVariable: 'RATE_GEHEIMNIS' | 'ALTCHA_GEHEIMNIS'): string {
   const geheimnis = process.env[geheimnisVariable];
-  if (!geheimnis) throw new Error(`${geheimnisVariable} fehlt.`);
+  if (!geheimnis || geheimnis.length < 32) throw new Error(`${geheimnisVariable} fehlt oder ist kürzer als 32 Zeichen.`);
   return createHmac('sha256', geheimnis).update(text, 'utf8').digest('hex');
 }
 
@@ -62,9 +62,9 @@ export function zufallsToken(bytes = 32): string {
   return randomBytes(bytes).toString('base64url');
 }
 
-/** Zeitkonstanter Vergleich zweier Zeichenketten. */
+/** Zeitkonstanter Vergleich zweier Zeichenketten – auch die Länge verrät nichts (beide Seiten erst gehasht). */
 export function gleich(a: string, b: string): boolean {
-  const pa = Buffer.from(a);
-  const pb = Buffer.from(b);
-  return pa.length === pb.length && timingSafeEqual(pa, pb);
+  const pa = createHash('sha256').update(a, 'utf8').digest();
+  const pb = createHash('sha256').update(b, 'utf8').digest();
+  return timingSafeEqual(pa, pb);
 }

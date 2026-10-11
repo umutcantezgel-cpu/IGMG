@@ -139,8 +139,13 @@ export async function inPapierkorb(fd: FormData): Promise<void> {
 export async function wiederherstellen(fd: FormData): Promise<void> {
   const { a, z } = await mitDatensatz(fd, 'veranstaltung.bearbeiten');
   await db.transaction(async (tx) => {
-    await tx.update(v).set({ imPapierkorbSeit: null, aktualisiertVon: a.benutzerId }).where(eq(v.id, z.id));
-    await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.wiederhergestellt', zielTyp: 'veranstaltung', zielId: z.id }, tx);
+    const geaendert = await tx
+      .update(v)
+      .set({ imPapierkorbSeit: null, aktualisiertVon: a.benutzerId })
+      .where(and(eq(v.id, z.id), isNotNull(v.imPapierkorbSeit)))
+      .returning({ id: v.id });
+    if (geaendert.length)
+      await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.wiederhergestellt', zielTyp: 'veranstaltung', zielId: z.id }, tx);
   });
   aktualisiereCaches(z.id);
   refresh();

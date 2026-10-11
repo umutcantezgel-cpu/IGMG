@@ -4,7 +4,8 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
-import { datumLang, zeitspanne } from '@/lib/i18n/format';
+import { datumKurz, datumLang, zeitspanne } from '@/lib/i18n/format';
+import { lokaleTeile } from '@/lib/termine';
 import { darf, organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
 import { endgueltigLoeschen, inPapierkorb, wiederherstellen } from '@/server/actions/veranstaltungen';
@@ -16,12 +17,13 @@ const pille = 'inline-flex items-center rounded-pill px-3 py-0.5 text-16 font-bo
 export default async function VeranstaltungenVerwalten({ searchParams }: PageProps<'/[locale]/verwaltung/veranstaltungen'>) {
   const a = await verlangeSeitenRecht('veranstaltung.lesen');
   const papierkorb = (await searchParams).ansicht === 'papierkorb';
+  // Organisationsredaktion sieht nur die eigene Organisation (K-06, Befund SP-P3 M1)
+  const filter = organisationsFilter(a.rollen, 'veranstaltung.bearbeiten');
   const [t, tk, liste] = await Promise.all([
     getTranslations('verwaltung.veranstaltungen'),
     getTranslations('karten'),
-    ladeVerwaltungsListe(papierkorb),
+    ladeVerwaltungsListe(papierkorb, filter),
   ]);
-  const filter = organisationsFilter(a.rollen, 'veranstaltung.bearbeiten');
   const darfAnlegen = filter === null || filter.length > 0;
   const ansichten = [
     { schluessel: 'aktiv', label: t('ansichtAktiv'), href: '/verwaltung/veranstaltungen', aktiv: !papierkorb },
@@ -64,7 +66,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
       {liste.length === 0 ? (
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-linie bg-weiss">
+        <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
           <table className="w-full min-w-[56rem] border-collapse text-left">
             <thead className="bg-sand">
               <tr>
@@ -92,7 +94,10 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
                         datumLang(z.imPapierkorbSeit, 'de')
                       ) : (
                         <>
-                          {datumLang(z.beginn, 'de')}, {zeitspanne(z.beginn, z.ende, 'de')}
+                          <span className="whitespace-nowrap">
+                            {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr},
+                          </span>{' '}
+                          <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
                           {z.wiederkehrend ? <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span> : null}
                         </>
                       )}
