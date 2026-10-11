@@ -81,15 +81,16 @@ Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich d
 | H-Z02 | Grafiker/Baumeister | Haiku | Offline-Seite, Lade-Zustände (B-12) | `(website)/offline/**`, `loading.tsx` | K-008 | Z-04–Z-06 | ✓ Offline-Grafik a8a377f; Lade-Achtstern in allen Absendeknöpfen (966db8c); Detailseiten mit Suspense ohne Platzhalter, Seitenwechsel wartet auf neuen Inhalt (5bca4db) |
 | H-W01 | Baumeister | Haiku | E-Mail-Vorlagen | `lib/mail/vorlagen/**` | REFERENZ (Farben, Schrift) | Z-04 | offen |
 | H-W02 | Baumeister | Haiku | Bildschirm-Anzeige: nur Zustandswechsel | `(website)/gebetszeiten/anzeige/**`, `website/anzeige/**` | K-007 B-10 | Z-05 | offen |
-| H-W03 | Baumeister | Haiku | Verwaltungs-Hülle (Feinschliff, `verwaltung:`-Breakpoint, Übersicht) | `components/verwaltung/huelle/**` | REFERENZ | Z-03 | offen |
+| H-W03 | Baumeister | Haiku | Verwaltungs-Hülle (Feinschliff, `verwaltung:`-Breakpoint, Übersicht) | `components/verwaltung/shell/**`, `uebersicht/**`, Postfach-Rahmen | REFERENZ | Z-03 | in Arbeit |
 | H-D01 | Dokumentar | Haiku | `docs/deploy/VERCEL.md` (30-Minuten-Runbook) | Datei | AUFTRAG V-13 | V-13 | ✓ `berichte/H-D01.md`, 290aaeb |
 | H-D02 | Dokumentar | Haiku | `VERCEL-ENV.md`, Verarbeitungsverzeichnis, Hosting-Baustein v2, ML-09–ML-12 | Dateien | AUFTRAG V-03, V-11, V-12 | V-03, V-11, V-12 | ✓ 0cd8173 |
 | H-D03 | Dokumentar | Haiku | `docs/GO-LIVE.md` | Datei | Kern 2.0 | Z-12 | ✓ 290aaeb (Opus) |
+| H-D05 | Dokumentar | Haiku | Runbook und Umgebungsdoku gegen den Code (Datensicherung, Protokolle, Cache, direkte Migrationsverbindung) | `docs/deploy/*`, `GO-LIVE.md`, MENSCHEN ML-14–16 | AUFTRAG V-10, V-13 | V-10, V-13 | ✓ `berichte/H-D05.md`, f08432e |
 | H-D04 | Dokumentar | Haiku | MENSCHEN-Abschluss (jede Aufgabe mit Ort und Aufwand) | `MENSCHEN.md` | AUFTRAG §12 | Z-10, Z-12 | offen |
 | H-V07 | Prüfer | Haiku | Beleg gemeinsamer Zustand: Sitzungen, Raten, ALTCHA, Sperren in der DB; nichts im Prozessspeicher, das Instanzen teilen müssten | – (Bericht) | AUFTRAG V-07 | V-07 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md` |
 | H-V08 | Prüfer + Baumeister | Haiku | Caching wie lokal: `revalidateTag` nach Verwaltungsänderung lokal im Produktions-Build sofort sichtbar; Cache-Header statischer Dateien (ADR 0023 ✓ abd187e) belegen | Bericht, ggf. Tests | ADR 0023, AUFTRAG V-08 | V-08 | teilweise: ADR 0024 umgesetzt d26e8bc; Nachweis „sofort sichtbar“ offen |
-| H-V10 | Prüfer | Haiku | Protokolle ohne Personendaten (alle `console.*`/Logger-Aufrufe), Health-Route, Backups/PITR und Rollback im Runbook | – (Bericht) | AUFTRAG V-10 | V-10 | teilweise: Bericht da; Doku-Nachträge in H-D05 |
-| H-R01 | Prüfer | Haiku | Wortlaut-Snapshot der Rechts- und Einwilligungstexte: Hash je Text E0 (9ebb4bc) gegen jetzt | `protokolle/` | G6 | Z-12 | offen |
+| H-V10 | Prüfer | Haiku | Protokolle ohne Personendaten (alle `console.*`/Logger-Aufrufe), Health-Route, Backups/PITR und Rollback im Runbook | – (Bericht) | AUFTRAG V-10 | V-10 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md`; Datenbankfehler gekürzt (`lib/db/fehler.ts`), Health mit Zeitlimit 352d1bb; Runbook § 13/16 (H-D05) |
+| H-R01 | Prüfer | Haiku | Wortlaut-Snapshot der Rechts- und Einwilligungstexte: Hash je Text E0 (9ebb4bc) gegen jetzt | `protokolle/` | G6 | Z-12 | ✓ `berichte/H-R01.md`, 024f67d (alle Rechtstexte unverändert) |
 | H-L01 | Prüfer + Baumeister | Haiku | Leistung: Paarmessung Ausgangsstand/Nachher unter ruhigen Bedingungen, Budgets (JS ≤ 180 KB gz, TBT), Ursachen beheben | Bericht, Befundpakete | ABNAHME Z-08 (E0-Spanne 80–94) | Z-08 | offen |
 | H-BILD | Dokumentar | Opus | E0-Bilder ins Repo (`bilder/e0/`, `bilder/e0-reduziert/`) | `_werkstatt/bilder/**` | AUFTRAG §8 | Z-04, Z-10 | ✓ (dieser Stand) |
 | H-B… | Baumeister | Haiku | Befundpakete aus den Sichtabnahmen (≤ 2 je Ansicht und Kategorie), ≈ 12 | je Befund | REFERENZ | Z-04 | offen |
@@ -117,10 +118,10 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
 ## Statusnachweis (Stand 2026-10-11 19:50 UTC)
-Pflicht erledigt 42 von ≈ 69:
+Pflicht erledigt 46 von ≈ 70:
 - E0: 6
 - E2: 10 (O-02 zählt erst mit dem B-05-Nachweis am Produktions-Build)
 - E3: 16 (O-05–O-08, O-10–O-13, H-A01/02/04–07, H-S01/02)
-- E4: 10 (H-G01–G04, H-Z01, H-D01–D03, H-BILD, H-V07)
+- E4: 14 (H-G01–G04, H-Z01, H-Z02, H-D01–D03, H-D05, H-BILD, H-V07, H-V10, H-R01)
 
-In Arbeit: E3-TOR, E0-PRUEFER-03, H-R01, H-D05. Neu entschieden: L-E09 (Build ohne Turbopack-Zwischenspeicher), L-E10 (eigener Seitenwechsel), ADR 0024 (geteilter Cache). Kür 0 von 20.
+In Arbeit: E3-TOR, E0-PRUEFER-03, H-W02, H-W03. Neu entschieden: L-E09 (Build ohne Turbopack-Zwischenspeicher), L-E10 (eigener Seitenwechsel), ADR 0024 (geteilter Cache). Kür 0 von 20.
