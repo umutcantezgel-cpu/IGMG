@@ -1,0 +1,318 @@
+$ next build
+▲ Next.js 16.4.0 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 30ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 4.2s
+  Running TypeScript ...
+  Finished TypeScript in 5.9s ...
+  Collecting page data using 13 workers ...
+  Generating static pages using 13 workers (0/390) ...
+  Generating static pages using 13 workers (97/390) 
+  Generating static pages using 13 workers (194/390) 
+  Generating static pages using 13 workers (292/390) 
+✓ Generating static pages using 13 workers (390/390) in 2.9s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /_not-found
+├   /[locale]
+│ ├ ◐ /[locale]
+│ ├ ○ /de
+│ ├ ○ /tr
+│ └ ○ /en
+├   /[locale]/[...rest]
+│ ├ ◐ /[locale]/[...rest]
+│ ├ ○ /de/_
+│ ├ ○ /tr/_
+│ └ ○ /en/_
+├   /[locale]/bildung/korankurse
+│ ├ ◐ /[locale]/bildung/korankurse
+│ ├ ○ /de/bildung/korankurse
+│ ├ ○ /tr/bildung/korankurse
+│ └ ○ /en/bildung/korankurse
+├   /[locale]/bildung/voranmeldung
+│ ├ ◐ /[locale]/bildung/voranmeldung
+│ ├ ○ /de/bildung/voranmeldung
+│ ├ ○ /tr/bildung/voranmeldung
+│ └ ○ /en/bildung/voranmeldung
+├   /[locale]/datenschutz
+│ ├ ◐ /[locale]/datenschutz
+│ ├ ○ /de/datenschutz
+│ ├ ○ /tr/datenschutz
+│ └ ○ /en/datenschutz
+├   /[locale]/gebetszeiten
+│ ├ ◐ /[locale]/gebetszeiten
+│ ├ ○ /de/gebetszeiten
+│ ├ ○ /tr/gebetszeiten
+│ └ ○ /en/gebetszeiten
+├   /[locale]/gebetszeiten/anzeige
+│ ├ ◐ /[locale]/gebetszeiten/anzeige
+│ ├ ○ /de/gebetszeiten/anzeige
+│ ├ ○ /tr/gebetszeiten/anzeige
+│ └ ○ /en/gebetszeiten/anzeige
+├   /[locale]/igmg
+│ ├ ◐ /[locale]/igmg
+│ ├ ○ /de/igmg
+│ ├ ○ /tr/igmg
+│ └ ○ /en/igmg
+├   /[locale]/impressum
+│ ├ ◐ /[locale]/impressum
+│ ├ ○ /de/impressum
+│ ├ ○ /tr/impressum
+│ └ ○ /en/impressum
+├   /[locale]/islamisches-wissen
+│ ├ ◐ /[locale]/islamisches-wissen
+│ ├ ○ /de/islamisches-wissen
+│ ├ ○ /tr/islamisches-wissen
+│ └ ○ /en/islamisches-wissen
+├   /[locale]/islamisches-wissen/[thema]
+│ ├ ◐ /[locale]/islamisches-wissen/[thema]
+│ ├ ○ /de/islamisches-wissen/allah
+│ ├ ○ /de/islamisches-wissen/fivestoesarz
+│ └ ◐ [+34 more paths]
+├   /[locale]/kontakt
+│ ├ ◐ /[locale]/kontakt
+│ ├ ○ /de/kontakt
+│ ├ ○ /tr/kontakt
+│ └ ○ /en/kontakt
+├   /[locale]/mitglied-werden
+│ ├ ◐ /[locale]/mitglied-werden
+│ ├ ○ /de/mitglied-werden
+│ ├ ○ /tr/mitglied-werden
+│ └ ○ /en/mitglied-werden
+├   /[locale]/nachrichten
+│ ├ ◐ /[locale]/nachrichten
+│ ├ ○ /de/nachrichten
+│ ├ ○ /tr/nachrichten
+│ └ ○ /en/nachrichten
+├   /[locale]/nachrichten/[slug]
+│ ├ ◐ /[locale]/nachrichten/[slug]
+│ ├ ○ /de/nachrichten/neue-gebetszeiten-fuer-den-winter
+│ ├ ○ /de/nachrichten/ramadan-vorbereitung-2025
+│ └ ◐ [+28 more paths]
+├   /[locale]/offline
+│ ├ ◐ /[locale]/offline
+│ ├ ○ /de/offline
+│ ├ ○ /tr/offline
+│ └ ○ /en/offline
+├   /[locale]/organisationen/[organisation]
+│ ├ ◐ /[locale]/organisationen/[organisation]
+│ ├ ○ /de/organisationen/ana-teskilati
+│ ├ ○ /de/organisationen/kadin-teskilati
+│ └ ◐ [+10 more paths]
+├   /[locale]/projekte
+│ ├ ◐ /[locale]/projekte
+│ ├ ○ /de/projekte
+│ ├ ○ /tr/projekte
+│ └ ○ /en/projekte
+├   /[locale]/ueber-uns
+│ ├ ◐ /[locale]/ueber-uns
+│ ├ ○ /de/ueber-uns
+│ ├ ○ /tr/ueber-uns
+│ └ ○ /en/ueber-uns
+├   /[locale]/veranstaltungen
+│ ├ ◐ /[locale]/veranstaltungen
+│ ├ ○ /de/veranstaltungen
+│ ├ ○ /tr/veranstaltungen
+│ └ ○ /en/veranstaltungen
+├   /[locale]/veranstaltungen/[slug]
+│ ├ ◐ /[locale]/veranstaltungen/[slug]
+│ ├ ○ /de/veranstaltungen/woechentlicher-qur-an-kurs
+│ ├ ○ /de/veranstaltungen/frauenkreis-islamische-erziehung
+│ └ ◐ [+37 more paths]
+├   /[locale]/verwaltung
+│ ├ ƒ /[locale]/verwaltung
+│ ├ ƒ /de/verwaltung
+│ ├ ƒ /tr/verwaltung
+│ └ ƒ /en/verwaltung
+├   /[locale]/verwaltung/ankuendigungen
+│ ├ ƒ /[locale]/verwaltung/ankuendigungen
+│ ├ ƒ /de/verwaltung/ankuendigungen
+│ ├ ƒ /tr/verwaltung/ankuendigungen
+│ └ ƒ /en/verwaltung/ankuendigungen
+├   /[locale]/verwaltung/ankuendigungen/[id]
+│ ├ ◐ /[locale]/verwaltung/ankuendigungen/[id]
+│ ├ ◐ /de/verwaltung/ankuendigungen/[id]
+│ ├ ◐ /tr/verwaltung/ankuendigungen/[id]
+│ └ ◐ /en/verwaltung/ankuendigungen/[id]
+├   /[locale]/verwaltung/ankuendigungen/neu
+│ ├ ƒ /[locale]/verwaltung/ankuendigungen/neu
+│ ├ ƒ /de/verwaltung/ankuendigungen/neu
+│ ├ ƒ /tr/verwaltung/ankuendigungen/neu
+│ └ ƒ /en/verwaltung/ankuendigungen/neu
+├   /[locale]/verwaltung/anmelden
+│ ├ ƒ /[locale]/verwaltung/anmelden
+│ ├ ƒ /de/verwaltung/anmelden
+│ ├ ƒ /tr/verwaltung/anmelden
+│ └ ƒ /en/verwaltung/anmelden
+├   /[locale]/verwaltung/anmelden/zwei-faktor
+│ ├ ƒ /[locale]/verwaltung/anmelden/zwei-faktor
+│ ├ ƒ /de/verwaltung/anmelden/zwei-faktor
+│ ├ ƒ /tr/verwaltung/anmelden/zwei-faktor
+│ └ ƒ /en/verwaltung/anmelden/zwei-faktor
+├   /[locale]/verwaltung/audit
+│ ├ ƒ /[locale]/verwaltung/audit
+│ ├ ƒ /de/verwaltung/audit
+│ ├ ƒ /tr/verwaltung/audit
+│ └ ƒ /en/verwaltung/audit
+├   /[locale]/verwaltung/benutzer
+│ ├ ƒ /[locale]/verwaltung/benutzer
+│ ├ ƒ /de/verwaltung/benutzer
+│ ├ ƒ /tr/verwaltung/benutzer
+│ └ ƒ /en/verwaltung/benutzer
+├   /[locale]/verwaltung/benutzer/[id]
+│ ├ ◐ /[locale]/verwaltung/benutzer/[id]
+│ ├ ◐ /de/verwaltung/benutzer/[id]
+│ ├ ◐ /tr/verwaltung/benutzer/[id]
+│ └ ◐ /en/verwaltung/benutzer/[id]
+├   /[locale]/verwaltung/benutzer/einladen
+│ ├ ƒ /[locale]/verwaltung/benutzer/einladen
+│ ├ ƒ /de/verwaltung/benutzer/einladen
+│ ├ ƒ /tr/verwaltung/benutzer/einladen
+│ └ ƒ /en/verwaltung/benutzer/einladen
+├   /[locale]/verwaltung/eingaenge
+│ ├ ƒ /[locale]/verwaltung/eingaenge
+│ ├ ƒ /de/verwaltung/eingaenge
+│ ├ ƒ /tr/verwaltung/eingaenge
+│ └ ƒ /en/verwaltung/eingaenge
+├   /[locale]/verwaltung/eingaenge/[id]
+│ ├ ◐ /[locale]/verwaltung/eingaenge/[id]
+│ ├ ◐ /de/verwaltung/eingaenge/[id]
+│ ├ ◐ /tr/verwaltung/eingaenge/[id]
+│ └ ◐ /en/verwaltung/eingaenge/[id]
+├ ƒ /[locale]/verwaltung/eingaenge/export
+├   /[locale]/verwaltung/einladung/[token]
+│ ├ ◐ /[locale]/verwaltung/einladung/[token]
+│ ├ ◐ /de/verwaltung/einladung/[token]
+│ ├ ◐ /tr/verwaltung/einladung/[token]
+│ └ ◐ /en/verwaltung/einladung/[token]
+├   /[locale]/verwaltung/einstellungen
+│ ├ ƒ /[locale]/verwaltung/einstellungen
+│ ├ ƒ /de/verwaltung/einstellungen
+│ ├ ƒ /tr/verwaltung/einstellungen
+│ └ ƒ /en/verwaltung/einstellungen
+├   /[locale]/verwaltung/kein-zugriff
+│ ├ ƒ /[locale]/verwaltung/kein-zugriff
+│ ├ ƒ /de/verwaltung/kein-zugriff
+│ ├ ƒ /tr/verwaltung/kein-zugriff
+│ └ ƒ /en/verwaltung/kein-zugriff
+├   /[locale]/verwaltung/konto
+│ ├ ƒ /[locale]/verwaltung/konto
+│ ├ ƒ /de/verwaltung/konto
+│ ├ ƒ /tr/verwaltung/konto
+│ └ ƒ /en/verwaltung/konto
+├   /[locale]/verwaltung/kurse
+│ ├ ƒ /[locale]/verwaltung/kurse
+│ ├ ƒ /de/verwaltung/kurse
+│ ├ ƒ /tr/verwaltung/kurse
+│ └ ƒ /en/verwaltung/kurse
+├   /[locale]/verwaltung/kurse/[id]
+│ ├ ◐ /[locale]/verwaltung/kurse/[id]
+│ ├ ◐ /de/verwaltung/kurse/[id]
+│ ├ ◐ /tr/verwaltung/kurse/[id]
+│ └ ◐ /en/verwaltung/kurse/[id]
+├   /[locale]/verwaltung/kurse/neu
+│ ├ ƒ /[locale]/verwaltung/kurse/neu
+│ ├ ƒ /de/verwaltung/kurse/neu
+│ ├ ƒ /tr/verwaltung/kurse/neu
+│ └ ƒ /en/verwaltung/kurse/neu
+├   /[locale]/verwaltung/neuigkeiten
+│ ├ ƒ /[locale]/verwaltung/neuigkeiten
+│ ├ ƒ /de/verwaltung/neuigkeiten
+│ ├ ƒ /tr/verwaltung/neuigkeiten
+│ └ ƒ /en/verwaltung/neuigkeiten
+├   /[locale]/verwaltung/neuigkeiten/[id]
+│ ├ ◐ /[locale]/verwaltung/neuigkeiten/[id]
+│ ├ ◐ /de/verwaltung/neuigkeiten/[id]
+│ ├ ◐ /tr/verwaltung/neuigkeiten/[id]
+│ └ ◐ /en/verwaltung/neuigkeiten/[id]
+├   /[locale]/verwaltung/neuigkeiten/neu
+│ ├ ƒ /[locale]/verwaltung/neuigkeiten/neu
+│ ├ ƒ /de/verwaltung/neuigkeiten/neu
+│ ├ ƒ /tr/verwaltung/neuigkeiten/neu
+│ └ ƒ /en/verwaltung/neuigkeiten/neu
+├   /[locale]/verwaltung/postfach
+│ ├ ƒ /[locale]/verwaltung/postfach
+│ ├ ƒ /de/verwaltung/postfach
+│ ├ ƒ /tr/verwaltung/postfach
+│ └ ƒ /en/verwaltung/postfach
+├   /[locale]/verwaltung/postfach/[id]
+│ ├ ◐ /[locale]/verwaltung/postfach/[id]
+│ ├ ◐ /de/verwaltung/postfach/[id]
+│ ├ ◐ /tr/verwaltung/postfach/[id]
+│ └ ◐ /en/verwaltung/postfach/[id]
+├   /[locale]/verwaltung/postfach/neu
+│ ├ ƒ /[locale]/verwaltung/postfach/neu
+│ ├ ƒ /de/verwaltung/postfach/neu
+│ ├ ƒ /tr/verwaltung/postfach/neu
+│ └ ƒ /en/verwaltung/postfach/neu
+├   /[locale]/verwaltung/styleguide
+│ ├ ƒ /[locale]/verwaltung/styleguide
+│ ├ ƒ /de/verwaltung/styleguide
+│ ├ ƒ /tr/verwaltung/styleguide
+│ └ ƒ /en/verwaltung/styleguide
+├   /[locale]/verwaltung/tickets
+│ ├ ƒ /[locale]/verwaltung/tickets
+│ ├ ƒ /de/verwaltung/tickets
+│ ├ ƒ /tr/verwaltung/tickets
+│ └ ƒ /en/verwaltung/tickets
+├   /[locale]/verwaltung/tickets/[id]
+│ ├ ◐ /[locale]/verwaltung/tickets/[id]
+│ ├ ◐ /de/verwaltung/tickets/[id]
+│ ├ ◐ /tr/verwaltung/tickets/[id]
+│ └ ◐ /en/verwaltung/tickets/[id]
+├   /[locale]/verwaltung/tickets/neu
+│ ├ ƒ /[locale]/verwaltung/tickets/neu
+│ ├ ƒ /de/verwaltung/tickets/neu
+│ ├ ƒ /tr/verwaltung/tickets/neu
+│ └ ƒ /en/verwaltung/tickets/neu
+├   /[locale]/verwaltung/veranstaltungen
+│ ├ ƒ /[locale]/verwaltung/veranstaltungen
+│ ├ ƒ /de/verwaltung/veranstaltungen
+│ ├ ƒ /tr/verwaltung/veranstaltungen
+│ └ ƒ /en/verwaltung/veranstaltungen
+├   /[locale]/verwaltung/veranstaltungen/[id]
+│ ├ ◐ /[locale]/verwaltung/veranstaltungen/[id]
+│ ├ ◐ /de/verwaltung/veranstaltungen/[id]
+│ ├ ◐ /tr/verwaltung/veranstaltungen/[id]
+│ └ ◐ /en/verwaltung/veranstaltungen/[id]
+├   /[locale]/verwaltung/veranstaltungen/neu
+│ ├ ƒ /[locale]/verwaltung/veranstaltungen/neu
+│ ├ ƒ /de/verwaltung/veranstaltungen/neu
+│ ├ ƒ /tr/verwaltung/veranstaltungen/neu
+│ └ ƒ /en/verwaltung/veranstaltungen/neu
+├   /[locale]/verwaltung/zwei-faktor
+│ ├ ƒ /[locale]/verwaltung/zwei-faktor
+│ ├ ƒ /de/verwaltung/zwei-faktor
+│ ├ ƒ /tr/verwaltung/zwei-faktor
+│ └ ƒ /en/verwaltung/zwei-faktor
+├   /[locale]/vorstand
+│ ├ ◐ /[locale]/vorstand
+│ ├ ○ /de/vorstand
+│ ├ ○ /tr/vorstand
+│ └ ○ /en/vorstand
+├   /[locale]/webseite-fuer-moscheen
+│ ├ ◐ /[locale]/webseite-fuer-moscheen
+│ ├ ○ /de/webseite-fuer-moscheen
+│ ├ ○ /tr/webseite-fuer-moscheen
+│ └ ○ /en/webseite-fuer-moscheen
+├ ƒ /api/altcha
+├ ƒ /api/auth/[...all]
+├ ƒ /api/health
+├ ƒ /api/ical/[sprache]/organisation/[organisation]
+├ ƒ /api/ical/[sprache]/veranstaltung/[slug]
+├ ƒ /api/ical/[sprache]/veranstaltungen
+├ ƒ /api/wartung/cache-erneuern
+└ ƒ /api/wartung/loeschfristen
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)             prerendered as static content
+◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
+ƒ  (Dynamic)            server-rendered on demand
+

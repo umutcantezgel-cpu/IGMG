@@ -212,6 +212,57 @@ describe('Löschlauf (C16)', () => {
     expect(a).toMatchObject({ benutzerId: null, details: { art: 'kontakt' } });
   });
 
+  it('Papierkorb nach 30 Tagen: endgültig gelöscht mit Audit (System); jüngere Einträge bleiben', async () => {
+    const alt = new Date(Date.now() - 31 * 86_400_000);
+    const jung = new Date(Date.now() - 29 * 86_400_000);
+    const [n1, n2] = await db
+      .insert(schema.nachricht)
+      .values([
+        { slug: 'papierkorb-alt', titel: { de: 'Alt' }, imPapierkorbSeit: alt },
+        { slug: 'papierkorb-jung', titel: { de: 'Jung' }, imPapierkorbSeit: jung },
+      ])
+      .returning({ id: schema.nachricht.id });
+    const [k1] = await db
+      .insert(schema.kurs)
+      .values({ slug: 'kurs-papierkorb-alt', titel: { de: 'Kurs alt' }, imPapierkorbSeit: alt })
+      .returning({ id: schema.kurs.id });
+    const r = await loescheAbgelaufene();
+    expect(r.papierkorb).toBeGreaterThanOrEqual(2);
+    expect(await db.select().from(schema.nachricht).where(eq(schema.nachricht.id, n1.id))).toHaveLength(0);
+    expect(await db.select().from(schema.nachricht).where(eq(schema.nachricht.id, n2.id))).toHaveLength(1);
+    expect(await db.select().from(schema.kurs).where(eq(schema.kurs.id, k1.id))).toHaveLength(0);
+    const [a] = await db
+      .select()
+      .from(schema.auditEintrag)
+      .where(and(eq(schema.auditEintrag.zielId, n1.id), eq(schema.auditEintrag.aktion, 'inhalt.geloescht')));
+    expect(a).toMatchObject({ benutzerId: null, zielTyp: 'nachricht', details: { papierkorb: true } });
+  });
+
+  it('Melderdaten geschlossener Tickets nach 180 Tagen entfernt (Ticket bleibt); offene unberührt', async () => {
+    const m = verschluessele({ vorname: 'Testperson', nachname: 'Elf' });
+    const [alt, offen] = await db
+      .insert(schema.ticket)
+      .values([
+        {
+          titel: 'Alt',
+          beschreibung: 'x',
+          typ: 'beschwerde',
+          status: 'geschlossen',
+          geschlossenAm: new Date(Date.now() - 181 * 86_400_000),
+          melderVerschluesselt: m.daten,
+          schluesselId: m.schluesselId,
+        },
+        { titel: 'Offen', beschreibung: 'x', typ: 'wunsch', status: 'offen', melderVerschluesselt: m.daten, schluesselId: m.schluesselId },
+      ])
+      .returning({ id: schema.ticket.id });
+    const r = await loescheAbgelaufene();
+    expect(r.melder).toBe(1);
+    const [a1] = await db.select().from(schema.ticket).where(eq(schema.ticket.id, alt.id));
+    expect(a1).toMatchObject({ titel: 'Alt', melderVerschluesselt: null, schluesselId: null });
+    const [o1] = await db.select().from(schema.ticket).where(eq(schema.ticket.id, offen.id));
+    expect(o1.melderVerschluesselt).not.toBeNull();
+  });
+
   it('Wartungsroute: ohne Token 401', async () => {
     const { POST } = await import('@/app/api/wartung/loeschfristen/route');
     expect((await POST(new Request('http://localhost/api/wartung/loeschfristen', { method: 'POST' }))).status).toBe(401);

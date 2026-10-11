@@ -3,6 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { NewsCard } from '@/components/website/NewsCard';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { Ankuendigungen } from '@/components/website/nachrichten/Ankuendigungen';
 import { NachrichtenFilter } from '@/components/website/nachrichten/NachrichtenFilter';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -36,6 +37,7 @@ export default async function NachrichtenSeite() {
     <Seitenrahmen bereich="moschee" seite="nachrichten" sprachZiel="/nachrichten" pfad={[{ label: tp('neuigkeiten') }]}>
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
+        <Ankuendigungen sprache={sprache} />
         <NachrichtenFilter
           kategorien={chips}
           texte={{

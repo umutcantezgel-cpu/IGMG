@@ -43,7 +43,11 @@ export const authOptionen = {
     useSecureCookies: istHttps,
     ipAddress: { ipAddressHeaders: ['x-real-ip', 'x-forwarded-for'] },
   },
-  user: { deleteUser: { enabled: false } },
+  user: {
+    deleteUser: { enabled: false },
+    // Gesperrte Konten (C12): Zeitpunkt der Sperre, nur serverseitig gesetzt; Anmeldung und Sitzung werden verweigert
+    additionalFields: { gesperrtAm: { type: 'date', required: false, input: false } },
+  },
   plugins: [
     twoFactor({ issuer: 'IGMG Wetzlar', backupCodeOptions: { amount: 10, length: 10 } }),
     passkey({ rpID: new URL(appUrl).hostname, rpName: 'IGMG Wetzlar Verwaltung', origin: new URL(appUrl).origin }),

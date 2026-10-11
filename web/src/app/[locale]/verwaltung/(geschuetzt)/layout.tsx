@@ -8,6 +8,8 @@ import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
+import { zaehleUngelesene } from '@/server/queries/verwaltung/postfach';
+import { zaehleOffeneTickets } from '@/server/queries/verwaltung/tickets';
 import { zaehleVeranstaltungen } from '@/server/queries/verwaltung/veranstaltungen';
 
 /**
@@ -18,11 +20,16 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   const a = await verlangeSitzung();
   const t = await getTranslations('verwaltung');
   const sichtbar = MODULE.filter((m) => m.gebaut && rechtListe(m).some((r) => darf(a.rollen, r)));
-  const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
-    veranstaltungen: sichtbar.some((m) => m.schluessel === 'veranstaltungen') ? await zaehleVeranstaltungen() : undefined,
+  const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
+  const [veranstaltungen, eingaenge, postfach, tickets] = await Promise.all([
+    zeigt('veranstaltungen') ? zaehleVeranstaltungen() : undefined,
     // Neue (unbearbeitete) Eingänge, die die Person sehen darf
-    eingaenge: sichtbar.some((m) => m.schluessel === 'eingaenge') ? await zaehleNeueEingaenge(a) : undefined,
-  };
+    zeigt('eingaenge') ? zaehleNeueEingaenge(a) : undefined,
+    // Ungelesene Nachrichten an die Person, offene Tickets im eigenen Sichtbereich
+    zeigt('postfach') ? zaehleUngelesene(a) : undefined,
+    zeigt('tickets') ? zaehleOffeneTickets(a) : undefined,
+  ]);
+  const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = { veranstaltungen, eingaenge, postfach, tickets };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => ({
     schluessel: m.schluessel,
     label: t(`module.${m.schluessel}`),
@@ -66,7 +73,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
               name={a.name}
               rollen={rollen}
               abmelden={abmelden}
-              texte={{ kontoMenue: t('shell.kontoMenue'), abmelden: t('konto.abmelden') }}
+              texte={{ kontoMenue: t('shell.kontoMenue'), meinKonto: t('shell.meinKonto'), abmelden: t('konto.abmelden') }}
             />
           </div>
         </div>

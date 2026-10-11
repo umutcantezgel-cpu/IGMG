@@ -41,7 +41,8 @@ test('Styleguide: Aufruf, Abschnitte, Tokens, Felder und Barrierefreiheit', asyn
 
   // Knöpfe und Pillen sind sichtbar
   await expect(page.getByRole('button', { name: 'Primär', exact: true })).toBeVisible();
-  await expect(page.getByText('Veröffentlicht', { exact: true })).toBeVisible();
+  // im Abschnitt suchen: Next.js hält die zuvor besuchte Übersicht (mit Status-Pillen) versteckt im DOM
+  await expect(page.locator('#pillen').getByText('Veröffentlicht', { exact: true })).toBeVisible();
 
   // Barrierefreiheit: axe mit den WCAG-Regelsätzen aus tests/e2e/barrierefreiheit.spec.ts
   const ergebnis = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();

@@ -1,5 +1,6 @@
 import 'server-only';
 import { randomBytes } from 'node:crypto';
+import { eq } from 'drizzle-orm';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
@@ -18,6 +19,21 @@ export const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET ?? randomBytes(32).toString('base64'),
   database: drizzleAdapter(db, { provider: 'pg', schema }),
   plugins: [...authOptionen.plugins, nextCookies()],
+  databaseHooks: {
+    session: {
+      create: {
+        // Gesperrte Konten (C12): keine neue Sitzung – die Anmeldung scheitert mit der allgemeinen Fehlermeldung
+        before: async (sitzung) => {
+          const [u] = await db
+            .select({ gesperrtAm: schema.user.gesperrtAm })
+            .from(schema.user)
+            .where(eq(schema.user.id, sitzung.userId))
+            .limit(1);
+          return u?.gesperrtAm ? false : undefined;
+        },
+      },
+    },
+  },
 });
 
 export type Sitzung = typeof auth.$Infer.Session;

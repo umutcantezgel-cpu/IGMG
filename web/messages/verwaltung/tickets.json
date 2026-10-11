@@ -1,3 +1,140 @@
 {
-  "tickets": {}
+  "tickets": {
+    "titel": "Tickets verwalten",
+    "einleitung": "Meldungen und Anliegen aus der Gemeinde. Interne Kommentare sehen nur Mitarbeitende der Verwaltung.",
+    "neu": "Neues Ticket",
+    "neuEinleitung": "Erstellen Sie hier ein neues Ticket für Ihr Anliegen.",
+    "zurueck": "Zurück zur Liste",
+    "filter": {
+      "titel": "Filter",
+      "status": "Status",
+      "prioritaet": "Priorität",
+      "typ": "Typ",
+      "alle": "Alle",
+      "absenden": "Filtern",
+      "zuruecksetzen": "Filter zurücksetzen"
+    },
+    "anzahl": "{anzahl, plural, =0 {Keine Tickets} one {# Ticket} other {# Tickets}}",
+    "leer": "Noch keine Tickets vorhanden.",
+    "leerMitFilter": "Keine Tickets zu diesen Filtern gefunden.",
+    "tabelle": "Tickets, neueste zuerst",
+    "spalte": {
+      "titel": "Titel",
+      "typ": "Typ",
+      "prioritaet": "Priorität",
+      "status": "Status",
+      "organisation": "Organisation",
+      "erstellt": "Erstellt",
+      "aktion": "Aktion"
+    },
+    "aktionAnsehen": "Ansehen: {titel}",
+    "status": {
+      "offen": "Offen",
+      "in_bearbeitung": "In Bearbeitung",
+      "geloest": "Gelöst",
+      "geschlossen": "Geschlossen"
+    },
+    "prioritaet": {
+      "niedrig": "Niedrig",
+      "mittel": "Mittel",
+      "hoch": "Hoch",
+      "dringend": "Dringend"
+    },
+    "typ": {
+      "beschwerde": "Beschwerde",
+      "wunsch": "Wunsch",
+      "vorschlag": "Vorschlag",
+      "information": "Information",
+      "intern": "Intern"
+    },
+    "allgemein": "Allgemein (ohne Organisation)",
+    "allgemeinKurz": "Allgemein",
+    "keinWert": "–",
+    "nichtZugewiesen": "Nicht zugewiesen",
+    "unbekannt": "Unbekannt",
+    "angelegt": "Das Ticket wurde angelegt.",
+    "gespeichert": "Die Änderungen wurden gespeichert.",
+    "kommentiert": "Der Kommentar wurde gespeichert.",
+    "nurAdministration": "Status und Priorität ändert nur die Administration.",
+    "detail": {
+      "beschreibung": "Beschreibung",
+      "angaben": "Angaben",
+      "nummer": "Nummer",
+      "typ": "Typ",
+      "organisation": "Organisation",
+      "kategorie": "Kategorie",
+      "keineKategorie": "Keine Kategorie",
+      "ersteller": "Ersteller",
+      "zugewiesen": "Zugewiesen",
+      "erstellt": "Erstellt",
+      "aktualisiert": "Zuletzt geändert",
+      "geschlossen": "Geschlossen am"
+    },
+    "melder": {
+      "titel": "Kontaktangaben der meldenden Person",
+      "keiner": "Zu diesem Ticket sind keine Kontaktangaben hinterlegt.",
+      "verborgen": "Zu diesem Ticket sind Kontaktangaben hinterlegt. Sie sind nur für die Administration einsehbar.",
+      "unlesbar": "Die Kontaktangaben können nicht gelesen werden. Bitte informieren Sie die Administration.",
+      "protokoll": "Jeder Abruf dieser Angaben wird im Audit-Log protokolliert.",
+      "vorname": "Vorname",
+      "nachname": "Nachname",
+      "telefon": "Telefon",
+      "email": "E-Mail",
+      "rueckmeldung": "Rückmeldung gewünscht",
+      "rueckmeldungJa": "Ja",
+      "rueckmeldungNein": "Nein",
+      "rueckmeldeArt": "Art der Rückmeldung",
+      "artWerte": {
+        "telefon": "Telefon",
+        "email": "E-Mail",
+        "persoenlich": "Persönlich"
+      }
+    },
+    "verlauf": {
+      "titel": "Verlauf",
+      "leer": "Noch keine Kommentare.",
+      "intern": "Intern",
+      "nichtIntern": "Nicht intern",
+      "unbekannt": "Unbekannt"
+    },
+    "kommentar": {
+      "titel": "Kommentar hinzufügen",
+      "text": "Kommentar",
+      "intern": "Intern (nur für die Verwaltung)",
+      "internHinweis": "Ein Häkchen macht den Kommentar intern. Interne Kommentare sehen nur Mitarbeitende der Verwaltung.",
+      "speichern": "Kommentar speichern",
+      "speichert": "Wird gespeichert …"
+    },
+    "aenderung": {
+      "titel": "Status und Priorität",
+      "status": "Status",
+      "prioritaet": "Priorität",
+      "speichern": "Änderungen speichern",
+      "speichert": "Wird gespeichert …"
+    },
+    "formular": {
+      "titel": "Titel",
+      "titelPlatzhalter": "Ticket-Titel eingeben …",
+      "beschreibung": "Beschreibung",
+      "beschreibungPlatzhalter": "Detaillierte Beschreibung des Problems …",
+      "kategorie": "Kategorie",
+      "kategoriePlatzhalter": "z. B. Technik, Gebäude …",
+      "organisation": "Organisation",
+      "prioritaet": "Priorität",
+      "pflichtfeld": "(Pflichtfeld)",
+      "erstellen": "Ticket erstellen",
+      "speichert": "Wird angelegt …",
+      "abbrechen": "Abbrechen",
+      "zusammenfassung": "Bitte prüfen Sie die markierten Felder."
+    },
+    "fehler": {
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "ungueltig": "Bitte wählen Sie eine gültige Option.",
+      "organisation": "Diese Organisation dürfen Sie nicht auswählen.",
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen die Berechtigung.",
+      "nichtGefunden": "Das Ticket wurde nicht gefunden."
+    }
+  }
 }

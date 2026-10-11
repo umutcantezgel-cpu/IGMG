@@ -1,0 +1,55 @@
+import { getTranslations } from 'next-intl/server';
+import { ErsatzcodesFormular, PasswortFormular } from '@/components/verwaltung/benutzer/KontoFormulare';
+import { Meldung } from '@/components/verwaltung/Meldung';
+import { verlangeSitzung } from '@/lib/rechte/pruefe';
+
+const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
+
+/** Verwaltung › Mein Konto (C12, Blatt V12): eigene Angaben, Rollen, Passwort, Ersatzcodes. */
+export default async function MeinKonto({ searchParams }: PageProps<'/[locale]/verwaltung/konto'>) {
+  const a = await verlangeSitzung();
+  const [t, tr, sp] = await Promise.all([getTranslations('verwaltung.benutzer'), getTranslations('verwaltung.rollen'), searchParams]);
+  return (
+    <>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-30 md:text-36">{t('konto.titel')}</h1>
+        <p className="max-w-[70ch] text-tinte-2">{t('konto.untertitel')}</p>
+      </div>
+      {sp.passwort === 'geaendert' ? <Meldung art="erfolg">{t('konto.passwortGeaendert')}</Meldung> : null}
+      <div className="grid max-w-5xl gap-6 lg:grid-cols-2">
+        <section aria-labelledby="konto-angaben" className={karte}>
+          <h2 id="konto-angaben" className="text-24">
+            {t('konto.angaben')}
+          </h2>
+          <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
+            <dt className="font-bold">{t('formular.name')}</dt>
+            <dd>{a.name}</dd>
+            <dt className="font-bold">{t('formular.email')}</dt>
+            <dd className="break-all">{a.email}</dd>
+            <dt className="font-bold">{t('konto.rollen')}</dt>
+            <dd>
+              {a.rollen.map((r) => (r.organisation ? `${tr(r.rolle)} (${t(`organisationen.${r.organisation}`)})` : tr(r.rolle))).join(', ')}
+            </dd>
+            <dt className="font-bold">{t('konto.zweiFaktor')}</dt>
+            <dd>{t('konto.zweiFaktorAktiv')}</dd>
+          </dl>
+          <p className="text-16 text-tinte-2">{t('konto.aenderungHinweis')}</p>
+        </section>
+        <section aria-labelledby="konto-passwort" className={karte}>
+          <h2 id="konto-passwort" className="text-24">
+            {t('konto.passwortTitel')}
+          </h2>
+          <p className="text-tinte-2">{t('konto.passwortText')}</p>
+          <PasswortFormular />
+        </section>
+        <section aria-labelledby="konto-ersatz" className={karte}>
+          <h2 id="konto-ersatz" className="text-24">
+            {t('konto.ersatzTitel')}
+          </h2>
+          <p className="text-tinte-2">{t('konto.ersatzText')}</p>
+          <ErsatzcodesFormular />
+        </section>
+      </div>
+    </>
+  );
+}

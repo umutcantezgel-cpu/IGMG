@@ -40,6 +40,7 @@ export const routing = defineRouting({
     '/bildung/voranmeldung': { de: '/bildung/voranmeldung', tr: '/egitim/on-kayit', en: '/education/pre-registration' },
     '/mitglied-werden': { de: '/mitglied-werden', tr: '/uye-ol', en: '/become-a-member' },
     '/webseite-fuer-moscheen': { de: '/webseite-fuer-moscheen', tr: '/camiler-icin-web-sitesi', en: '/website-for-mosques' },
+    '/meldung': { de: '/meldung', tr: '/bildirim', en: '/report' },
     '/impressum': { de: '/impressum', tr: '/kunye', en: '/imprint' },
     '/datenschutz': { de: '/datenschutz', tr: '/gizlilik', en: '/privacy' },
     '/suche': { de: '/suche', tr: '/arama', en: '/search' },

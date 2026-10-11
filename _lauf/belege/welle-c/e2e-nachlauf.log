@@ -1,0 +1,54 @@
+
+Running 7 tests using 2 workers
+
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.f6e8a906@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.e064add9@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.9332a8d7@example.test --name 'Testperson Eins' --rolle mitgliederverwaltung --nur_token
+  ✓  1 [desktop] › tests/e2e/verwaltung-postfach.spec.ts:22:5 › Zwei Konten: senden, ungelesen sehen, öffnen und antworten (4.1s)
+  ✓  3 [desktop] › tests/e2e/verwaltung-postfach.spec.ts:84:5 › Ohne Anmeldung: Nachrichten leiten zur Anmeldung (256ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.0c5288cd@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  2 [desktop] › tests/e2e/verwaltung-benutzer.spec.ts:26:5 › Einladen → annehmen → Rollen ändern → Zwei-Faktor zurücksetzen → Konto löschen (5.7s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.82a72432@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+  ✓  5 [desktop] › tests/e2e/verwaltung-benutzer.spec.ts:100:5 › Ohne Recht benutzer.lesen: „Kein Zugriff“; Mein Konto ist für alle erreichbar (2.4s)
+  ✘  4 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:17:5 › Ticket anlegen, kommentieren, Status ändern und in der Liste filtern (2.0m)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.a15ed123@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.4f28b2c9@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  6 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:87:5 › Organisationsredaktion: nur eigene und allgemeine Tickets, Status nicht änderbar (2.7s)
+  ✓  7 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:146:5 › Ohne Anmeldung: Ticketseiten leiten zur Anmeldung (216ms)
+
+
+  1) [desktop] › tests/e2e/verwaltung-tickets.spec.ts:17:5 › Ticket anlegen, kommentieren, Status ändern und in der Liste filtern 
+
+    Test timeout of 120000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Status', { exact: true }).visible()
+
+
+      73 |   // erst die Listenseite abwarten, sonst greift die Auswahl noch auf der alten Seite
+      74 |   await expect(page).toHaveURL(/\/verwaltung\/tickets$/);
+    > 75 |   await page.getByLabel('Status', { exact: true }).filter({ visible: true }).selectOption('in_bearbeitung');
+         |                                                                              ^
+      76 |   await page.getByLabel('Priorität', { exact: true }).filter({ visible: true }).selectOption('dringend');
+      77 |   await page.getByRole('button', { name: 'Filtern' }).click();
+      78 |   await expect(page).toHaveURL(/status=in_bearbeitung/);
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-tickets.spec.ts:75:78
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-tickets-Ticket--54a89-rn-und-in-der-Liste-filtern-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-tickets-Ticket--54a89-rn-und-in-der-Liste-filtern-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-tickets-Ticket--54a89-rn-und-in-der-Liste-filtern-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-tickets-Ticket--54a89-rn-und-in-der-Liste-filtern-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [desktop] › tests/e2e/verwaltung-tickets.spec.ts:17:5 › Ticket anlegen, kommentieren, Status ändern und in der Liste filtern 
+  6 passed (2.2m)

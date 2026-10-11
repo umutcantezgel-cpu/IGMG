@@ -1,6 +1,7 @@
 'use client';
 
-import { ChevronDown, LogOut, UserRound } from 'lucide-react';
+import { ChevronDown, LogOut, UserRound, UserRoundCog } from 'lucide-react';
+import NextLink from 'next/link';
 import { useRef } from 'react';
 import {
   DropdownMenu,
@@ -25,7 +26,7 @@ export function KontoMenue({
   name: string;
   rollen: string;
   abmelden: () => Promise<void>;
-  texte: { kontoMenue: string; abmelden: string };
+  texte: { kontoMenue: string; meinKonto: string; abmelden: string };
 }) {
   const formular = useRef<HTMLFormElement>(null);
   return (
@@ -44,6 +45,12 @@ export function KontoMenue({
             <span className="text-16 font-normal text-tinte-2">{rollen}</span>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
+          <DropdownMenuItem asChild className="min-h-11 cursor-pointer">
+            <NextLink href="/verwaltung/konto">
+              <UserRoundCog aria-hidden className="size-5" />
+              {texte.meinKonto}
+            </NextLink>
+          </DropdownMenuItem>
           <DropdownMenuItem className="min-h-11 cursor-pointer" onSelect={() => formular.current?.requestSubmit()}>
             <LogOut aria-hidden className="size-5" />
             {texte.abmelden}

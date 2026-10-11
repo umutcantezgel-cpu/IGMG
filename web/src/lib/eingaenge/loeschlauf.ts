@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, inArray, isNotNull, lt, lte, sql } from 'drizzle-orm';
+import { and, eq, inArray, isNotNull, lt, lte, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { raeumeAltchaAuf } from '@/lib/validierung/altcha';
@@ -9,11 +9,60 @@ import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
  * Löschlauf (C16, G-07, ADR 0005): löscht Eingänge, deren Frist (`loeschen_ab`) erreicht ist – echt, mit
  * Einwilligungen und Notizen (Kaskade) und Mail-Ausgang; je Eingang ein Audit-Eintrag `eingang.frist_geloescht`
  * (nur Art, keine Personendaten). Räumt außerdem versendete Mails nach 30 Tagen, verbrauchte ALTCHA-Lösungen und alte
- * Ratenfenster auf. Aufruf täglich per Cron über `POST /api/wartung/loeschfristen` (BETRIEB.md 4).
+ * Ratenfenster auf, leert den Papierkorb der Inhalte nach 30 Tagen (K-05) und entfernt Melderdaten geschlossener
+ * Tickets nach 180 Tagen (E-037). Aufruf täglich per Cron über
+ * `POST /api/wartung/loeschfristen` (BETRIEB.md 4).
  */
 export const MAIL_AUFBEWAHRUNG_TAGE = 30;
+export const PAPIERKORB_TAGE = 30;
 
-export async function loescheAbgelaufene(jetzt = new Date()): Promise<{ eingaenge: number; mails: number; betroffeneTermine: string[] }> {
+export const MELDER_FRIST_TAGE = 180;
+
+/** Meldungen (E-037): Kontaktangaben der meldenden Person 180 Tage nach dem Schließen entfernen; das Ticket bleibt. */
+async function entferneMelderdaten(jetzt: Date): Promise<number> {
+  const grenze = new Date(jetzt.getTime() - MELDER_FRIST_TAGE * 86_400_000);
+  const t = schema.ticket;
+  return db.transaction(async (tx) => {
+    const geaendert = await tx
+      .update(t)
+      .set({ melderVerschluesselt: null, schluesselId: null })
+      .where(and(eq(t.status, 'geschlossen'), isNotNull(t.melderVerschluesselt), lt(t.geschlossenAm, grenze)))
+      .returning({ id: t.id });
+    for (const z of geaendert)
+      await protokolliere(
+        { benutzerId: null, aktion: 'ticket.geaendert', zielTyp: 'ticket', zielId: z.id, details: { melderGeloescht: true } },
+        tx,
+      );
+    return geaendert.length;
+  });
+}
+
+/** Papierkorb (K-05): Inhalte, die seit mehr als 30 Tagen darin liegen, endgültig löschen – je Eintrag Audit „System“. */
+async function leerePapierkorb(jetzt: Date): Promise<number> {
+  const grenze = new Date(jetzt.getTime() - PAPIERKORB_TAGE * 86_400_000);
+  const v = schema.veranstaltung;
+  const n = schema.nachricht;
+  const a = schema.ankuendigung;
+  const k = schema.kurs;
+  return db.transaction(async (tx) => {
+    const geloescht = [
+      ...(await tx.delete(v).where(lt(v.imPapierkorbSeit, grenze)).returning({ id: v.id })).map((z) => ({ ...z, typ: 'veranstaltung' })),
+      ...(await tx.delete(n).where(lt(n.imPapierkorbSeit, grenze)).returning({ id: n.id })).map((z) => ({ ...z, typ: 'nachricht' })),
+      ...(await tx.delete(a).where(lt(a.imPapierkorbSeit, grenze)).returning({ id: a.id })).map((z) => ({ ...z, typ: 'ankuendigung' })),
+      ...(await tx.delete(k).where(lt(k.imPapierkorbSeit, grenze)).returning({ id: k.id })).map((z) => ({ ...z, typ: 'kurs' })),
+    ];
+    for (const z of geloescht)
+      await protokolliere(
+        { benutzerId: null, aktion: 'inhalt.geloescht', zielTyp: z.typ, zielId: z.id, details: { papierkorb: true } },
+        tx,
+      );
+    return geloescht.length;
+  });
+}
+
+export async function loescheAbgelaufene(
+  jetzt = new Date(),
+): Promise<{ eingaenge: number; mails: number; papierkorb: number; melder: number; betroffeneTermine: string[] }> {
   const faellig = await db
     .select({ id: schema.eingang.id, art: schema.eingang.art, bezugId: schema.eingang.bezugId })
     .from(schema.eingang)
@@ -36,10 +85,12 @@ export async function loescheAbgelaufene(jetzt = new Date()): Promise<{ eingaeng
     .where(and(isNotNull(schema.mailAusgang.gesendetAm), lt(schema.mailAusgang.gesendetAm, grenze)))
     .returning({ id: schema.mailAusgang.id });
   await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf()]);
+  const papierkorb = await leerePapierkorb(jetzt);
+  const melder = await entferneMelderdaten(jetzt);
   const betroffeneTermine = [
     ...new Set(faellig.filter((f) => f.art === 'veranstaltungsanmeldung' && f.bezugId).map((f) => f.bezugId as string)),
   ];
-  return { eingaenge: faellig.length, mails: mails.length, betroffeneTermine };
+  return { eingaenge: faellig.length, mails: mails.length, papierkorb, melder, betroffeneTermine };
 }
 
 /** Anzahl fälliger Eingänge (Übersicht/Einstellungen), ohne zu löschen. */

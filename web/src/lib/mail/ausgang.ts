@@ -3,7 +3,7 @@ import { and, eq, inArray, isNull, lt, lte, sql } from 'drizzle-orm';
 import { createTranslator } from 'next-intl';
 import { db, schema } from '@/lib/db';
 import { entschluessele } from '@/lib/krypto';
-import { EINGANG_AKTION, MATRIX, ROLLEN, type OrganisationKuerzel } from '@/lib/rechte/matrix';
+import { AKTIONEN, EINGANG_AKTION, MATRIX, ROLLEN, type Aktion, type OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { BEREICHE } from '../../../messages/bereiche';
 import de from '../../../messages/de.json';
@@ -19,18 +19,26 @@ type Inhalt = { an: string; daten: Record<string, string> };
 type EingangArt = keyof typeof EINGANG_AKTION;
 const MAX_VERSUCHE = 6;
 
-/** Empfänger „rolle:<art>[:<organisation>]“ → E-Mail-Adressen aller zuständigen Konten. */
+/**
+ * Empfänger „rolle:<art>[:<organisation>]“ (Leserecht der Eingangsart) oder „recht:<aktion>[:<organisation>]“
+ * (z. B. `recht:ticket.bearbeiten` für Meldungen, E-037) → E-Mail-Adressen aller zuständigen, nicht gesperrten Konten.
+ */
 async function empfaenger(an: string): Promise<string[]> {
-  if (!an.startsWith('rolle:')) return [an];
-  const [, art, organisation] = an.split(':') as [string, EingangArt, OrganisationKuerzel | undefined];
-  const aktion = EINGANG_AKTION[art]?.lesen;
+  if (!an.startsWith('rolle:') && !an.startsWith('recht:')) return [an];
+  const [art, schluessel, organisation] = an.split(':') as ['rolle' | 'recht', string, OrganisationKuerzel | undefined];
+  const aktion: Aktion | undefined =
+    art === 'rolle'
+      ? EINGANG_AKTION[schluessel as EingangArt]?.lesen
+      : (AKTIONEN as readonly string[]).includes(schluessel)
+        ? (schluessel as Aktion)
+        : undefined;
   if (!aktion) return [];
   const rollen = ROLLEN.filter((r) => MATRIX[r].has(aktion));
   const zeilen = await db
     .select({ email: schema.user.email, rolle: schema.rolleZuweisung.rolle, organisation: schema.rolleZuweisung.organisation })
     .from(schema.rolleZuweisung)
     .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
-    .where(inArray(schema.rolleZuweisung.rolle, rollen));
+    .where(and(inArray(schema.rolleZuweisung.rolle, rollen), isNull(schema.user.gesperrtAm)));
   // Organisationsredaktion nur für Eingänge der eigenen Organisation
   const passend = zeilen.filter((z) => z.rolle !== 'organisationsredaktion' || (organisation && z.organisation === organisation));
   return [...new Set(passend.map((z) => z.email))];
@@ -58,6 +66,17 @@ async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
 }
 
 async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt, eingangId: string | null) {
+  if (vorlage === 'einladung') {
+    // Einladung in die Verwaltung (C12): Layout der Benachrichtigung mit Knopf; der Link kommt aus der Action
+    const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
+    return benachrichtigungMail({
+      betreff: t('einladung.betreff'),
+      text: t('einladung.text', { name: inhalt.daten.name ?? '', gueltigBis: inhalt.daten.gueltigBis ?? '' }),
+      knopf: t('einladung.knopf'),
+      hinweis: t('einladung.hinweis'),
+      link: inhalt.daten.link ?? `${basisUrl()}/verwaltung/anmelden`,
+    });
+  }
   if (vorlage === 'benachrichtigung') {
     const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
     const art = t(`art.${inhalt.daten.art}`);
@@ -66,7 +85,8 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       text: t('benachrichtigung.text', { art }),
       knopf: t('benachrichtigung.knopf'),
       hinweis: t('benachrichtigung.hinweis'),
-      link: `${basisUrl()}/verwaltung/eingaenge${eingangId ? `/${eingangId}` : ''}`,
+      // Ziel in der Verwaltung: eigener Pfad (z. B. Ticket) oder der Eingang
+      link: `${basisUrl()}${inhalt.daten.pfad?.startsWith('/verwaltung/') ? inhalt.daten.pfad : `/verwaltung/eingaenge${eingangId ? `/${eingangId}` : ''}`}`,
     });
   }
   const t = uebersetzer(sprache, nachrichten(sprache), 'mails');

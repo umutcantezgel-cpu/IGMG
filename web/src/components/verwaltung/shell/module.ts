@@ -27,7 +27,7 @@ export type Modul = { schluessel: ModulSchluessel; pfad: string; recht: Aktion |
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
-  { schluessel: 'neuigkeiten', pfad: '/verwaltung/neuigkeiten', recht: 'nachricht.lesen', icon: 'neuigkeiten', gebaut: false },
+  { schluessel: 'neuigkeiten', pfad: '/verwaltung/neuigkeiten', recht: 'nachricht.lesen', icon: 'neuigkeiten', gebaut: true },
   {
     schluessel: 'veranstaltungen',
     pfad: '/verwaltung/veranstaltungen',
@@ -35,7 +35,7 @@ export const MODULE: readonly Modul[] = [
     icon: 'veranstaltungen',
     gebaut: true,
   },
-  { schluessel: 'ankuendigungen', pfad: '/verwaltung/ankuendigungen', recht: 'ankuendigung.lesen', icon: 'ankuendigungen', gebaut: false },
+  { schluessel: 'ankuendigungen', pfad: '/verwaltung/ankuendigungen', recht: 'ankuendigung.lesen', icon: 'ankuendigungen', gebaut: true },
   {
     schluessel: 'seiteninhalte',
     pfad: '/verwaltung/seiteninhalte',
@@ -43,7 +43,7 @@ export const MODULE: readonly Modul[] = [
     icon: 'seiteninhalte',
     gebaut: false,
   },
-  { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: false },
+  { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true },
   { schluessel: 'gebetszeiten', pfad: '/verwaltung/gebetszeiten', recht: 'gebetszeiten.lesen', icon: 'gebetszeiten', gebaut: false },
   {
     schluessel: 'eingaenge',
@@ -58,10 +58,10 @@ export const MODULE: readonly Modul[] = [
     icon: 'eingaenge',
     gebaut: true,
   },
-  { schluessel: 'postfach', pfad: '/verwaltung/postfach', recht: 'postfach.nutzen', icon: 'postfach', gebaut: false },
-  { schluessel: 'tickets', pfad: '/verwaltung/tickets', recht: ['ticket.lesen', 'ticket.anlegen'], icon: 'tickets', gebaut: false },
+  { schluessel: 'postfach', pfad: '/verwaltung/postfach', recht: 'postfach.nutzen', icon: 'postfach', gebaut: true },
+  { schluessel: 'tickets', pfad: '/verwaltung/tickets', recht: ['ticket.lesen', 'ticket.anlegen'], icon: 'tickets', gebaut: true },
   { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: false },
-  { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: false },
+  { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true },
   { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true },
   { schluessel: 'styleguide', pfad: '/verwaltung/styleguide', recht: 'styleguide.lesen', icon: 'styleguide', gebaut: true },
   { schluessel: 'einstellungen', pfad: '/verwaltung/einstellungen', recht: 'einstellung.bearbeiten', icon: 'einstellungen', gebaut: true },

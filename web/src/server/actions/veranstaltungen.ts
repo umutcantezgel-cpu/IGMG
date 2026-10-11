@@ -68,10 +68,16 @@ export async function speichereVeranstaltung(_vorher: SpeicherZustand, fd: FormD
   if (rf) return { fehler: 'pruefen', feldFehler: { whRoh: rf, whArt: rf }, werte: roh };
   const daten = zuDatensatz(e);
 
-  let alt: { id: string; organisation: Org; status: 'entwurf' | 'veroeffentlicht' } | undefined;
+  let alt: { id: string; organisation: Org; status: 'entwurf' | 'veroeffentlicht'; imPapierkorbSeit: Date | null } | undefined;
   if (e.id) {
-    [alt] = await db.select({ id: v.id, organisation: v.organisation, status: v.status }).from(v).where(eq(v.id, e.id)).limit(1);
+    [alt] = await db
+      .select({ id: v.id, organisation: v.organisation, status: v.status, imPapierkorbSeit: v.imPapierkorbSeit })
+      .from(v)
+      .where(eq(v.id, e.id))
+      .limit(1);
     if (!alt) return { fehler: 'nichtGefunden', werte: roh };
+    // Im Papierkorb nur wiederherstellen oder löschen – nicht bearbeiten (Befund C03/C06: vorher nur die Oberfläche gesperrt)
+    if (alt.imPapierkorbSeit) return { fehler: 'imPapierkorb', werte: roh };
     if (!darfBearbeiten(a, alt.organisation)) return { fehler: 'keinRecht', werte: roh };
   }
   if (!darfBearbeiten(a, daten.organisation)) return { fehler: 'pruefen', feldFehler: { organisation: 'organisation' }, werte: roh };

@@ -5,8 +5,8 @@ import { loescheAbgelaufene } from '@/lib/eingaenge/loeschlauf';
 import { wartungErlaubt } from '@/lib/wartung/zugang';
 
 /**
- * Löschfristen (C16, G-07): löscht Eingänge nach Ablauf ihrer Frist und räumt Mail-Ausgang, ALTCHA und Ratenfenster
- * auf. Nur mit `Authorization: Bearer <WARTUNG_TOKEN>`; täglich per Cron aufrufen (BETRIEB.md 4).
+ * Löschfristen (C16, G-07): löscht Eingänge nach Ablauf ihrer Frist, leert den Papierkorb nach 30 Tagen (K-05) und
+ * räumt Mail-Ausgang, ALTCHA und Ratenfenster auf. Nur mit `Authorization: Bearer <WARTUNG_TOKEN>`; täglich per Cron aufrufen (BETRIEB.md 4).
  */
 export async function POST(anfrage: Request) {
   await connection();
@@ -16,7 +16,12 @@ export async function POST(anfrage: Request) {
   for (const id of ergebnis.betroffeneTermine) revalidateTag(TAG.anmeldungenVon(id), { expire: 0 });
   if (ergebnis.betroffeneTermine.length) revalidateTag(TAG.anmeldungen, { expire: 0 });
   return Response.json(
-    { geloeschteEingaenge: ergebnis.eingaenge, geloeschteMails: ergebnis.mails },
+    {
+      geloeschteEingaenge: ergebnis.eingaenge,
+      geloeschteMails: ergebnis.mails,
+      geloeschtAusPapierkorb: ergebnis.papierkorb,
+      entfernteMelderdaten: ergebnis.melder,
+    },
     { headers: { 'Cache-Control': 'no-store' } },
   );
 }

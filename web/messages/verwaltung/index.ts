@@ -8,6 +8,7 @@ import uebersicht from './uebersicht.json';
 import neuigkeiten from './neuigkeiten.json';
 import ankuendigungen from './ankuendigungen.json';
 import seiteninhalte from './seiteninhalte.json';
+import seiteninhalteOrganisationen from './seiteninhalte-organisationen.json';
 import kurse from './kurse.json';
 import gebetszeiten from './gebetszeiten.json';
 import eingaenge from './eingaenge.json';
@@ -27,6 +28,7 @@ export const VERWALTUNG: Record<string, Teil> = {
   neuigkeiten,
   ankuendigungen,
   seiteninhalte,
+  seiteninhalteOrganisationen,
   kurse,
   gebetszeiten,
   eingaenge,

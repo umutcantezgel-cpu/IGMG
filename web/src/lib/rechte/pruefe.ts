@@ -34,7 +34,8 @@ async function ladeRollen(benutzerId: string): Promise<RollenZuweisung[]> {
 /** Aktuelle Sitzung (je Anfrage einmal geladen). null = nicht angemeldet. */
 export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
   const sitzung = await auth.api.getSession({ headers: await headers() });
-  if (!sitzung) return null;
+  // Gesperrt (C12): bestehende Sitzungen werden beim Sperren gelöscht; das hier ist die zweite Sicherung
+  if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;
   const rollen = await ladeRollen(benutzerId);
   // 2FA-Pflicht (K-06): Mit aktiviertem TOTP entsteht eine Sitzung erst nach dem zweiten Faktor (Lichtung b).

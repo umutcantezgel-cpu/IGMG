@@ -1,0 +1,1 @@
+ALTER TABLE "user" ADD COLUMN "gesperrt_am" timestamp with time zone;

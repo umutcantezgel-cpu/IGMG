@@ -13,6 +13,7 @@ import kontakt from './kontakt.json';
 import kontaktformular from './kontaktformular.json';
 import korankurse from './korankurse.json';
 import mails from './mails.json';
+import meldung from './meldung.json';
 import mitglied from './mitglied.json';
 import moscheeAnfrage from './moschee-anfrage.json';
 import nachrichten from './nachrichten.json';
@@ -38,6 +39,7 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   kontaktformular,
   korankurse,
   mails,
+  meldung,
   mitglied,
   moscheeAnfrage,
   nachrichten,

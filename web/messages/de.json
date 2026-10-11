@@ -330,7 +330,8 @@
       "kontoMenue": "Kontomenü öffnen",
       "rollen": "Aufgaben: {rollen}",
       "zumInhalt": "Zum Inhalt springen",
-      "anzahl": "{anzahl, plural, one {# Eintrag} other {# Einträge}}"
+      "anzahl": "{anzahl, plural, one {# Eintrag} other {# Einträge}}",
+      "meinKonto": "Mein Konto"
     },
     "module": {
       "uebersicht": "Dashboard",
@@ -526,7 +527,8 @@
         "programm": "Jede Zeile beginnt mit einer Uhrzeit HH:MM, danach folgt der Text.",
         "uebersetzungZeilen": "Die Übersetzung braucht genauso viele Einträge wie der deutsche Text.",
         "organisation": "Für diese Organisation dürfen Sie keine Veranstaltungen bearbeiten.",
-        "ausnahmeVorBeginn": "Ausfälle müssen nach dem ersten Termin liegen."
+        "ausnahmeVorBeginn": "Ausfälle müssen nach dem ersten Termin liegen.",
+        "imPapierkorb": "Die Veranstaltung liegt im Papierkorb. Stellen Sie sie zuerst wieder her."
       }
     },
     "mails": {
@@ -541,7 +543,14 @@
         "veranstaltungsanmeldung": "Anmeldung",
         "voranmeldung": "Voranmeldung",
         "mitgliedsantrag": "Mitgliedsanfrage",
-        "moschee_anfrage": "Anfrage zur Moschee-Webseite"
+        "moschee_anfrage": "Anfrage zur Moschee-Webseite",
+        "meldung": "Meldung"
+      },
+      "einladung": {
+        "betreff": "Einladung zur Verwaltung der IGMG Wetzlar",
+        "text": "Guten Tag {name}, Sie wurden eingeladen, die Website der IGMG Wetzlar mitzupflegen. Über den Knopf legen Sie Ihr Passwort fest; danach richten Sie die Zwei-Faktor-Anmeldung mit einer Authenticator-App ein. Der Link gilt bis {gueltigBis}.",
+        "knopf": "Einladung annehmen",
+        "hinweis": "Der Link ist persönlich – bitte nicht weitergeben. Wenn Sie diese Einladung nicht erwartet haben, ignorieren Sie diese E-Mail; ohne Annahme entsteht kein Konto."
       }
     }
   },

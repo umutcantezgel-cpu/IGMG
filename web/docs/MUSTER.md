@@ -113,6 +113,8 @@ Beispiele: `src/app/api/ical/[sprache]/veranstaltungen/route.ts` (statisch mit `
 - Barrierefreiheit und Datenschutz: neue Routen in die Routentabellen von `tests/e2e/barrierefreiheit.spec.ts` und `tests/e2e/datenschutz.spec.ts` eintragen.
 - Leistung: neue Messrouten laufen automatisch über `pnpm messen` (PLAN L8).
 
+- **Verwaltung/Navigation (Next.js 16):** Zuvor besuchte Seiten bleiben versteckt im DOM. Locators deshalb auf den Abschnitt eingrenzen (`getByRole('region', { name })`, `#id`) oder `.filter({ visible: true })` nutzen; Zählungen (`toHaveCount(0)`) nur über Sichtbares.
+
 ## 10 Vor dem Abschluss eines Pakets
 
 `pnpm check` · `pnpm test:integration` · `pnpm sprachen:pruefen` · betroffene E2E-Specs · bei Seiten: Bildschirmfotos 390/1440 (`_lauf/werkzeuge/app-bilder.mjs`) gegen `_lauf/belege/referenz/`.

@@ -1,3 +1,42 @@
 {
-  "postfach": {}
+  "postfach": {
+    "titel": "Nachrichten",
+    "untertitel": "Internes Postfach der Verwaltung. Nur Beteiligte einer Unterhaltung sehen deren Nachrichten. Es werden keine E-Mails versendet.",
+    "unterhaltungen": "Unterhaltungen",
+    "neu": "Neue Unterhaltung",
+    "leerListe": "Noch keine Unterhaltungen.",
+    "leerVerlaufTitel": "Wählen Sie eine Unterhaltung",
+    "leerVerlaufText": "Beginnen Sie eine Unterhaltung aus der Liste links oder legen Sie eine neue an.",
+    "mit": "Mit: {namen}",
+    "ohneTeilnehmende": "Keine weiteren Teilnehmenden",
+    "ungelesen": "{anzahl} ungelesen",
+    "ichAbsender": "Sie",
+    "absenderUnbekannt": "Ehemaliges Konto",
+    "nachrichtenLabel": "Nachrichten dieser Unterhaltung",
+    "gesendet": "Die Nachricht wurde gesendet.",
+    "antwortTitel": "Antworten",
+    "nachricht": "Nachricht",
+    "nachrichtHinweis": "Nur Klartext, höchstens 5000 Zeichen. Zeilenumbrüche bleiben erhalten.",
+    "senden": "Senden",
+    "sendet": "Wird gesendet …",
+    "neuTitel": "Neue Unterhaltung",
+    "neuEinleitung": "Die Nachricht erscheint im Postfach aller ausgewählten Konten. Es werden keine E-Mails versendet.",
+    "betreff": "Betreff",
+    "betreffHinweis": "Höchstens 150 Zeichen.",
+    "empfaenger": "Empfänger",
+    "empfaengerHinweis": "Ein oder mehrere Konten mit Verwaltungszugang auswählen. Ihr eigenes Konto steht nicht zur Auswahl.",
+    "keineEmpfaenger": "Es gibt noch kein anderes Konto mit Verwaltungszugang und eingerichtetem zweiten Faktor.",
+    "pflicht": "(Pflichtfeld)",
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen die Berechtigung.",
+      "nichtGefunden": "Die Unterhaltung wurde nicht gefunden.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "ungueltig": "Dieser Wert ist nicht gültig.",
+      "steuerzeichen": "Der Text enthält Zeichen, die im Klartext nicht erlaubt sind.",
+      "empfaengerFehlt": "Wählen Sie mindestens ein Konto aus.",
+      "empfaengerUngueltig": "Eines der ausgewählten Konten kann keine Nachrichten empfangen. Bitte prüfen Sie die Auswahl."
+    }
+  }
 }

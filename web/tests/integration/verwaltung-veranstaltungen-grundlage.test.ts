@@ -31,6 +31,24 @@ describe('Verwaltung › Veranstaltungen (Grundlage)', () => {
     expect(audit.map((a) => a.aktion).sort()).toEqual(['inhalt.angelegt', 'inhalt.veroeffentlicht']);
   });
 
+  it('im Papierkorb: Speichern wird serverseitig abgelehnt (nur wiederherstellen oder löschen)', async () => {
+    await angemeldetAls([{ rolle: 'administration' }]);
+    const [z] = await db
+      .select({ id: schema.veranstaltung.id })
+      .from(schema.veranstaltung)
+      .where(eq(schema.veranstaltung.slug, 'testtermin-grundlage'));
+    await db.update(schema.veranstaltung).set({ imPapierkorbSeit: new Date() }).where(eq(schema.veranstaltung.id, z.id));
+    expect(await speichereVeranstaltung({}, formular({ ...gueltig, id: z.id, titelDe: 'Geändert' }))).toMatchObject({
+      fehler: 'imPapierkorb',
+    });
+    const [nachher] = await db
+      .select({ titel: schema.veranstaltung.titel })
+      .from(schema.veranstaltung)
+      .where(eq(schema.veranstaltung.id, z.id));
+    expect(nachher.titel.de).toBe('Testtermin Grundlage');
+    await db.update(schema.veranstaltung).set({ imPapierkorbSeit: null }).where(eq(schema.veranstaltung.id, z.id));
+  });
+
   it('ohne Anmeldung: Speichern liefert keinRecht, Papierkorb wirft', async () => {
     await angemeldetAls(null);
     expect(await speichereVeranstaltung({}, formular(gueltig))).toEqual({ fehler: 'keinRecht' });
