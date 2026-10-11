@@ -1,0 +1,948 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-11-20-01",
+  "basis": "http://127.0.0.1:3400",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2162,
+          "cls": 0,
+          "tbtMs": 829,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 2869
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2089,
+          "cls": 0,
+          "tbtMs": 479,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 77,
+            "lcpMs": 2967
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2322,
+          "cls": 0,
+          "tbtMs": 764,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 2953
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2162,
+        "cls": 0,
+        "tbtMs": 764,
+        "jsKb": 176.7,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 2953
+      },
+      "spanneLeistung": [
+        77,
+        85
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 69,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3743,
+          "cls": 0,
+          "tbtMs": 775,
+          "jsKb": 179.1,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3511
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3294,
+          "cls": 0,
+          "tbtMs": 528,
+          "jsKb": 179.1,
+          "simuliert": {
+            "performance": 73,
+            "lcpMs": 3126
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 84,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3079,
+          "cls": 0,
+          "tbtMs": 368,
+          "jsKb": 179.1,
+          "simuliert": {
+            "performance": 93,
+            "lcpMs": 1737
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 3294,
+        "cls": 0,
+        "tbtMs": 528,
+        "jsKb": 179.1,
+        "simuliertPerformance": 88,
+        "simuliertLcpMs": 3126
+      },
+      "spanneLeistung": [
+        69,
+        84
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 76,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3334,
+          "cls": 0,
+          "tbtMs": 598,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3388
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 73,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3386,
+          "cls": 0,
+          "tbtMs": 688,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 75,
+            "lcpMs": 2976
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 78,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3252,
+          "cls": 0,
+          "tbtMs": 521,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 75,
+            "lcpMs": 3829
+          }
+        }
+      ],
+      "median": {
+        "performance": 76,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 3334,
+        "cls": 0,
+        "tbtMs": 598,
+        "jsKb": 175.8,
+        "simuliertPerformance": 75,
+        "simuliertLcpMs": 3388
+      },
+      "spanneLeistung": [
+        73,
+        78
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2286,
+          "cls": 0,
+          "tbtMs": 342,
+          "jsKb": 176.4,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3558
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2375,
+          "cls": 0,
+          "tbtMs": 532,
+          "jsKb": 176.4,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 79,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2634,
+          "cls": 0,
+          "tbtMs": 548,
+          "jsKb": 176.4,
+          "simuliert": {
+            "performance": 77,
+            "lcpMs": 3924
+          }
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2375,
+        "cls": 0,
+        "tbtMs": 532,
+        "jsKb": 176.4,
+        "simuliertPerformance": 77,
+        "simuliertLcpMs": 3741
+      },
+      "spanneLeistung": [
+        79,
+        88
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 76,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3539,
+          "cls": 0,
+          "tbtMs": 523,
+          "jsKb": 175.5,
+          "simuliert": {
+            "performance": 77,
+            "lcpMs": 3696
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 71,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3419,
+          "cls": 0,
+          "tbtMs": 683,
+          "jsKb": 175.5,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 2869
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 72,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3390,
+          "cls": 0,
+          "tbtMs": 737,
+          "jsKb": 175.5,
+          "simuliert": {
+            "performance": 80,
+            "lcpMs": 3341
+          }
+        }
+      ],
+      "median": {
+        "performance": 72,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 3419,
+        "cls": 0,
+        "tbtMs": 683,
+        "jsKb": 175.5,
+        "simuliertPerformance": 80,
+        "simuliertLcpMs": 3341
+      },
+      "spanneLeistung": [
+        71,
+        76
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 75,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2355,
+          "cls": 0,
+          "tbtMs": 893,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2311,
+          "cls": 0,
+          "tbtMs": 546,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 74,
+            "lcpMs": 3845
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 0,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 76,
+            "lcpMs": 3369
+          }
+        }
+      ],
+      "median": {
+        "performance": 75,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2333,
+        "cls": 0,
+        "tbtMs": 719.5,
+        "jsKb": 174.2,
+        "simuliertPerformance": 74,
+        "simuliertLcpMs": 3607
+      },
+      "spanneLeistung": [
+        0,
+        82
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 83,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2515,
+          "cls": 0,
+          "tbtMs": 439,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 81,
+            "lcpMs": 3548
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2336,
+          "cls": 0,
+          "tbtMs": 568,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 2417
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 72,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3465,
+          "cls": 0,
+          "tbtMs": 686,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 82,
+            "lcpMs": 2955
+          }
+        }
+      ],
+      "median": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2515,
+        "cls": 0,
+        "tbtMs": 568,
+        "jsKb": 173.6,
+        "simuliertPerformance": 82,
+        "simuliertLcpMs": 2955
+      },
+      "spanneLeistung": [
+        72,
+        83
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 80,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2049,
+          "cls": 0,
+          "tbtMs": 684,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 87,
+            "lcpMs": 2826
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 0,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 68,
+            "lcpMs": 2748
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1968,
+          "cls": 0,
+          "tbtMs": 899,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 85,
+            "lcpMs": 2956
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2008.5,
+        "cls": 0,
+        "tbtMs": 791.5,
+        "jsKb": 173.6,
+        "simuliertPerformance": 85,
+        "simuliertLcpMs": 2826
+      },
+      "spanneLeistung": [
+        0,
+        80
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2349,
+          "cls": 0,
+          "tbtMs": 391,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 83,
+            "lcpMs": 3806
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2415,
+          "cls": 0,
+          "tbtMs": 731,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 83,
+            "lcpMs": 3487
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2573,
+          "cls": 0,
+          "tbtMs": 658,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 76,
+            "lcpMs": 3908
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2415,
+        "cls": 0,
+        "tbtMs": 658,
+        "jsKb": 171.8,
+        "simuliertPerformance": 83,
+        "simuliertLcpMs": 3806
+      },
+      "spanneLeistung": [
+        77,
+        86
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2159,
+          "cls": 0,
+          "tbtMs": 608,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 2714
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1960,
+          "cls": 0,
+          "tbtMs": 513,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 95,
+            "lcpMs": 2408
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 84,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1898,
+          "cls": 0,
+          "tbtMs": 553,
+          "jsKb": 171.8,
+          "simuliert": {
+            "performance": 71,
+            "lcpMs": 2574
+          }
+        }
+      ],
+      "median": {
+        "performance": 84,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1960,
+        "cls": 0,
+        "tbtMs": 553,
+        "jsKb": 171.8,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 2574
+      },
+      "spanneLeistung": [
+        81,
+        85
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2109,
+          "cls": 0,
+          "tbtMs": 334,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 81,
+            "lcpMs": 3792
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1894,
+          "cls": 0,
+          "tbtMs": 508,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 54,
+            "lcpMs": 5042
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 76,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1959,
+          "cls": 0,
+          "tbtMs": 955,
+          "jsKb": 175.8,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        }
+      ],
+      "median": {
+        "performance": 85,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1959,
+        "cls": 0,
+        "tbtMs": 508,
+        "jsKb": 175.8,
+        "simuliertPerformance": 54,
+        "simuliertLcpMs": 4417
+      },
+      "spanneLeistung": [
+        76,
+        90
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 0,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 72,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3574,
+          "cls": 0,
+          "tbtMs": 681,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 81,
+            "lcpMs": 3562
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3204,
+          "cls": 0,
+          "tbtMs": 575,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 85,
+            "lcpMs": 3572
+          }
+        }
+      ],
+      "median": {
+        "performance": 72,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 3389,
+        "cls": 0,
+        "tbtMs": 628,
+        "jsKb": 176.7,
+        "simuliertPerformance": 81,
+        "simuliertLcpMs": 3567
+      },
+      "spanneLeistung": [
+        0,
+        77
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "404 (nicht gefunden)",
+      "pfad": "/gibt-es-nicht",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 0,
+          "accessibility": 0,
+          "best-practices": 0,
+          "seo": 0,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 0,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 0,
+          "accessibility": 0,
+          "best-practices": 0,
+          "seo": 0,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 0,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 0,
+          "accessibility": 0,
+          "best-practices": 0,
+          "seo": 0,
+          "lcpMs": null,
+          "cls": null,
+          "tbtMs": null,
+          "jsKb": 0,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        }
+      ],
+      "median": {
+        "performance": 0,
+        "accessibility": 0,
+        "best-practices": 0,
+        "seo": 0,
+        "lcpMs": null,
+        "cls": null,
+        "tbtMs": null,
+        "jsKb": 0,
+        "simuliertPerformance": 0,
+        "simuliertLcpMs": null
+      },
+      "spanneLeistung": [
+        0,
+        0
+      ],
+      "verfehlt": [
+        "Performance",
+        "Barrierefreiheit",
+        "Best Practices",
+        "SEO"
+      ]
+    }
+  ]
+}

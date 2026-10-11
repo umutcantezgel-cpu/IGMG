@@ -81,6 +81,7 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
         person.aktuell ? 'border-2 border-gruen-700' : 'border border-linie',
       )}
     >
+      {/* Kopf: Avatar und Name; Etiketten in eigener Zeile über die volle Kartenbreite (bricht in schmalen Karten nicht im Etikett um) */}
       <div className="flex items-center gap-4">
         <span
           aria-hidden
@@ -88,30 +89,30 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
         >
           {ini ?? <UserRound aria-hidden className="size-6" />}
         </span>
-        <div className="flex min-w-0 flex-col gap-1">
-          <h3 className="text-24 leading-tight font-semibold break-words">{person.name}</h3>
-          <div className="flex flex-wrap gap-2">
-            {person.aktuell ? (
-              <span className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
-                {t('aktuell')}
-              </span>
-            ) : null}
-            {rolle ? (
-              <span
-                lang={rollenSprache}
-                className="inline-flex rounded-pill bg-gruen-50 px-3 py-0.5 text-16 leading-normal font-bold text-gruen-800"
-              >
-                {rolle}
-              </span>
-            ) : null}
-            {person.seit ? (
-              <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 leading-normal font-bold text-tinte-2">
-                {t('seit', { jahr: person.seit })}
-              </span>
-            ) : null}
-          </div>
-        </div>
+        <h3 className="min-w-0 text-24 leading-tight font-semibold break-words">{person.name}</h3>
       </div>
+      {person.aktuell || rolle || person.seit ? (
+        <div className="flex flex-wrap gap-2">
+          {person.aktuell ? (
+            <span className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
+              {t('aktuell')}
+            </span>
+          ) : null}
+          {rolle ? (
+            <span
+              lang={rollenSprache}
+              className="inline-flex rounded-pill bg-gruen-50 px-3 py-0.5 text-16 leading-normal font-bold text-gruen-800"
+            >
+              {rolle}
+            </span>
+          ) : null}
+          {person.seit ? (
+            <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 leading-normal font-bold text-tinte-2">
+              {t('seit', { jahr: person.seit })}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
       {person.zeitraum ? (
         <div className="flex items-center gap-3 text-20 font-bold text-gruen-800">
           <Jahresmarke />

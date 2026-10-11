@@ -102,7 +102,7 @@ export default async function VorstandSeite() {
 
       <section
         aria-labelledby="vorstand-vorsitz"
-        className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
+        className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pb-abschnitt md:px-8"
       >
         <div className="flex flex-col gap-3">
           <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
