@@ -1,0 +1,81 @@
+{
+  "werkzeug": "momente3",
+  "ziel": "b06",
+  "register": "B-06 Tagesbogen",
+  "pfad": "/",
+  "modus": "bildrate",
+  "basis": "http://127.0.0.1:3400",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "zeit": "2026-10-11T20:26:44.672Z",
+  "laeufe": [
+    {
+      "lauf": 1,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 116,
+      "verworfen": 1,
+      "anteilVerworfenProzent": 0.9,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 1,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 99,
+      "verworfen": 5,
+      "anteilVerworfenProzent": 4.8,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 2,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 118,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 2,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 101,
+      "verworfen": 4,
+      "anteilVerworfenProzent": 3.8,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 3,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 119,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 3,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 31,
+      "bilder": 96,
+      "verworfen": 9,
+      "anteilVerworfenProzent": 8.6,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    }
+  ]
+}

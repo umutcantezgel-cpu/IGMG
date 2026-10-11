@@ -1,0 +1,81 @@
+{
+  "werkzeug": "momente3",
+  "ziel": "b08",
+  "register": "B-08 Meilensteinlinie",
+  "pfad": "/projekte",
+  "modus": "bildrate",
+  "basis": "http://127.0.0.1:3400",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "zeit": "2026-10-11T20:27:21.845Z",
+  "laeufe": [
+    {
+      "lauf": 1,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 119,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 1,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 104,
+      "verworfen": 15,
+      "anteilVerworfenProzent": 12.6,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 33.3
+    },
+    {
+      "lauf": 2,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 119,
+      "verworfen": 1,
+      "anteilVerworfenProzent": 0.8,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 2,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 115,
+      "verworfen": 4,
+      "anteilVerworfenProzent": 3.4,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 3,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 120,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 3,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 3,
+      "bilder": 118,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    }
+  ]
+}

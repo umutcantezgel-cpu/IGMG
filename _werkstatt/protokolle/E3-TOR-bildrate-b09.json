@@ -1,0 +1,81 @@
+{
+  "werkzeug": "momente3",
+  "ziel": "b09",
+  "register": "B-09 Familie der vier",
+  "pfad": "/organisationen/ana-teskilati",
+  "modus": "bildrate",
+  "basis": "http://127.0.0.1:3400",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "zeit": "2026-10-11T20:27:43.939Z",
+  "laeufe": [
+    {
+      "lauf": 1,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 113,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 1,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 77,
+      "verworfen": 15,
+      "anteilVerworfenProzent": 16.3,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 33.3
+    },
+    {
+      "lauf": 2,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 98,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.8
+    },
+    {
+      "lauf": 2,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 89,
+      "verworfen": 11,
+      "anteilVerworfenProzent": 11,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 33.3
+    },
+    {
+      "lauf": 3,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 116,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 3,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 87,
+      "verworfen": 14,
+      "anteilVerworfenProzent": 13.9,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 33.4
+    }
+  ]
+}

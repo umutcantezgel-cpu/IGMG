@@ -1,0 +1,226 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-26",
+  "seit": null,
+  "geprueft": [
+    "web/src/lib/mail/vorlagen/Rahmen.tsx",
+    "web/src/lib/mail/vorlagen/farben.ts",
+    "web/src/lib/mail/vorlagen/index.tsx"
+  ],
+  "zaehl": {
+    "px-Literal in Style": 22,
+    "Hex-Farbe": 8
+  },
+  "funde": [
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 39,
+      "art": "px-Literal in Style",
+      "fund": "margin: 0",
+      "zeileText": "margin: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 40,
+      "art": "px-Literal in Style",
+      "fund": "padding: 0",
+      "zeileText": "padding: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 44,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "fontSize: '16px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 52,
+      "art": "px-Literal in Style",
+      "fund": "'0px'",
+      "zeileText": "maxHeight: '0px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 53,
+      "art": "px-Literal in Style",
+      "fund": "'0px'",
+      "zeileText": "maxWidth: '0px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 56,
+      "art": "px-Literal in Style",
+      "fund": "'1px'",
+      "zeileText": "fontSize: '1px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 57,
+      "art": "px-Literal in Style",
+      "fund": "'1px'",
+      "zeileText": "lineHeight: '1px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 68,
+      "art": "px-Literal in Style",
+      "fund": "'24px'",
+      "zeileText": "fontSize: '24px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 75,
+      "art": "px-Literal in Style",
+      "fund": "'2px'",
+      "zeileText": "height: '2px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 76,
+      "art": "px-Literal in Style",
+      "fund": "'0px'",
+      "zeileText": "fontSize: '0px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 77,
+      "art": "px-Literal in Style",
+      "fund": "'2px'",
+      "zeileText": "lineHeight: '2px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 80,
+      "art": "px-Literal in Style",
+      "fund": "padding: 0",
+      "zeileText": "padding: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 84,
+      "art": "px-Literal in Style",
+      "fund": "'32px'",
+      "zeileText": "padding: '32px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 88,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "fontSize: '16px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 97,
+      "art": "px-Literal in Style",
+      "fund": "'14px'",
+      "zeileText": "fontSize: '14px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 149,
+      "art": "px-Literal in Style",
+      "fund": "'600px', '12px'",
+      "zeileText": "style={{ maxWidth: '600px', background: F.weiss, border: `1px solid ${F.linie}`, borderRadius: '12px' }}"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 6,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "tiefgruen: '#0e3929',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 7,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "gruen: '#047857',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 8,
+      "art": "Hex-Farbe",
+      "fund": "#1d1a17",
+      "zeileText": "tinte: '#1d1a17',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 9,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "tinte2: '#514c46',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 10,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "sand: '#f3f0e9',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 11,
+      "art": "Hex-Farbe",
+      "fund": "#fcfaf6",
+      "zeileText": "papier: '#fcfaf6',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 12,
+      "art": "Hex-Farbe",
+      "fund": "#dfdad2",
+      "zeileText": "linie: '#dfdad2',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 13,
+      "art": "Hex-Farbe",
+      "fund": "#ffffff",
+      "zeileText": "weiss: '#ffffff',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 31,
+      "art": "px-Literal in Style",
+      "fund": "'48px'",
+      "zeileText": "minHeight: '48px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 34,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "fontSize: '16px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 36,
+      "art": "px-Literal in Style",
+      "fund": "'20px'",
+      "zeileText": "lineHeight: '20px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 51,
+      "art": "px-Literal in Style",
+      "fund": "'8px'",
+      "zeileText": "<td style={{ background: F.gruen, borderRadius: '8px', padding: '14px 24px' }} {...hintergrund(F.gruen)}>"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 60,
+      "art": "px-Literal in Style",
+      "fund": "'14px', margin: 0",
+      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: '14px', lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 80,
+      "art": "px-Literal in Style",
+      "fund": "'14px', margin: 0",
+      "zeileText": "<p style={{ margin: 0, fontSize: '14px', color: F.tinte2 }}>{t.kontakt}</p>"
+    }
+  ]
+}

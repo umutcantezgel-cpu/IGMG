@@ -1,0 +1,8 @@
+file:///tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e3/skripte/vt-zeitlupe3.mjs:56
+  if (!geklickt) throw new Error(`Kein sichtbarer Link für ${SELEKTOR}`);
+                       ^
+
+Error: Kein sichtbarer Link für a[href*="freitagsgebet-mit-anschliessendem-vortrag"]
+    at file:///tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e3/skripte/vt-zeitlupe3.mjs:56:24
+
+Node.js v24.21.0
