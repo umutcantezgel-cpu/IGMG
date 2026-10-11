@@ -16,6 +16,7 @@ export function PageHeader({
   akzent,
   flaeche = 'bg-sand',
   kennungFarbe = 'text-gruen-800',
+  zierde,
   kinder,
 }: {
   titel: string;
@@ -26,6 +27,8 @@ export function PageHeader({
   akzent?: string;
   flaeche?: string;
   kennungFarbe?: string;
+  /** Grafik rechts neben dem Text (dekorativ) */
+  zierde?: ReactNode;
   kinder?: ReactNode;
 }) {
   return (
@@ -36,6 +39,7 @@ export function PageHeader({
       kennungFarbe={kennungFarbe}
       flaeche={flaeche}
       kinder={kinder}
+      zierde={zierde}
       vorn={
         logo ? (
           <span className={`flex shrink-0 rounded-lg border-2 bg-weiss p-2 ${akzent ?? ''}`}>

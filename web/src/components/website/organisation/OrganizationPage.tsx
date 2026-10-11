@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import type { OrganisationInhalt } from '@/lib/validierung/seiteninhalte/organisation';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
 import type { VeranstaltungsDaten } from '@/server/queries/veranstaltungen';
+import { FamilieDerVier } from './FamilieDerVier';
 import { OrgKarte } from './OrgKarte';
 import { OrgMeldungen } from './OrgMeldungen';
 import { OrgTermine } from './OrgTermine';
@@ -71,6 +72,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
         akzent={s.akzent}
         flaeche={s.tint}
         kennungFarbe={s.ink}
+        zierde={<FamilieDerVier org={org} />}
       />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 pt-8 pb-12 md:gap-16 md:px-8 md:pt-16 md:pb-24">
         <section aria-labelledby={`${org}-ueber`} className="flex flex-wrap items-stretch gap-6">

@@ -302,6 +302,12 @@
     scale: 1 0;
   }
 }
+/* B-09: Maske zieht vom Mittelpunkt auf */
+@keyframes aufziehen {
+  from {
+    scale: 0;
+  }
+}
 /* B-06: Marke tritt hervor */
 @keyframes hervortreten {
   from {
@@ -381,6 +387,12 @@
   [data-sicht='laeuft'] .meilenstein-erreicht {
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) calc(var(--anteil) * var(--dauer-moment)) both;
   }
+  /* B-09 Familie der vier: das eigene Segment enthüllt sich einmal per Maske (900 ms, ab dem ersten Bild) */
+  .maske-oeffnet {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: aufziehen 900ms var(--ease-eintritt) 200ms both;
+  }
   /* B-12: Lade-Achtstern zeichnet sich höchstens viermal, dann steht er */
   .lade-stern {
     stroke-dasharray: 1;
@@ -401,6 +413,7 @@
   .linie-zeichnet,
   .bogen-enthuellt,
   .marke-tritt-hervor,
+  .maske-oeffnet,
   .lade-stern {
     animation: none;
   }
