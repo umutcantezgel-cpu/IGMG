@@ -244,7 +244,12 @@
     padding-left: 1rem;
     color: var(--color-tinte-2);
   }
-  /* Veranstaltungsfilter (VeranstaltungsFilter): Karten anderer Kategorien ausblenden */
+  /* Kategoriefilter (VeranstaltungsFilter, auch für Neuigkeiten): Karten anderer Kategorien ausblenden */
+  [data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),
+  [data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),
+  [data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),
+  [data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),
+  [data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),
   [data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),
   [data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),
   [data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),

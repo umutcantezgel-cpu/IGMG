@@ -169,9 +169,18 @@ const SEEDS: { name: string; lauf: (db: Db) => Promise<number> }[] = [
 
 async function main() {
   const db = holeDb();
-  for (const s of SEEDS) console.log(`Seed ${s.name}: ${await s.lauf(db)} neu`);
-  console.log('Seeds fertig.');
-  process.exit(0);
+  const fehler: string[] = [];
+  // Ein fehlerhafter Bereichs-Seed bricht die übrigen nicht ab (parallele Pakete, E-027); Exit 1 am Ende
+  for (const s of SEEDS) {
+    try {
+      console.log(`Seed ${s.name}: ${await s.lauf(db)} neu`);
+    } catch (e) {
+      fehler.push(s.name);
+      console.error(`Seed ${s.name} FEHLER: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+  console.log(fehler.length ? `Seeds mit Fehlern: ${fehler.join(', ')}` : 'Seeds fertig.');
+  process.exit(fehler.length ? 1 : 0);
 }
 
 main().catch((e) => {
