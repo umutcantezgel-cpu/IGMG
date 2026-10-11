@@ -44,6 +44,17 @@ export type StartklarKontext = {
 };
 
 const VERCEL_DOMAIN = /\.vercel\.app$/i;
+const LOKAL = /^(localhost|127\.0\.0\.1|\[::1\])$/i;
+/** Platzhalter in eckigen Klammern, z. B. „[Adresse]“ (Seeds, MENSCHEN.md). */
+const PLATZHALTER = /\[[^\]]{2,}\]/;
+
+/** Sucht Platzhalter nur in Texten, nicht in der JSON-Struktur (Listen in Rechtstexten sind keine Platzhalter). */
+function hatPlatzhalter(wert: unknown): boolean {
+  if (typeof wert === 'string') return PLATZHALTER.test(wert);
+  if (Array.isArray(wert)) return wert.some(hatPlatzhalter);
+  if (wert && typeof wert === 'object') return Object.values(wert).some(hatPlatzhalter);
+  return false;
+}
 
 export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<StartklarErgebnis> {
   const { env, db } = kontext;
@@ -111,13 +122,17 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
     aufwand: '5 min',
   });
   if (produktion) {
+    const eigene = Boolean(host) && !VERCEL_DOMAIN.test(host!) && !LOKAL.test(host!);
     neu({
       id: 'auslieferung.domain',
       bereich: 'auslieferung',
       titel: 'Eigene Domain',
-      status: host && !VERCEL_DOMAIN.test(host) ? 'ok' : 'warnung',
-      meldung:
-        host && !VERCEL_DOMAIN.test(host) ? `Domain ${host} ist eingetragen.` : 'Die Produktion läuft noch unter einer vercel.app-Adresse.',
+      status: eigene ? 'ok' : 'warnung',
+      meldung: eigene
+        ? `Domain ${host} ist eingetragen.`
+        : host && LOKAL.test(host)
+          ? 'Die öffentliche Adresse zeigt auf diesen Rechner (localhost) – APP_URL mit der eigenen Domain setzen.'
+          : 'Die Produktion läuft noch unter einer vercel.app-Adresse.',
       ort: 'Vercel › Projekt › Settings › Domains (docs/deploy/VERCEL.md, Schritt Domain)',
       aufwand: '15 min + DNS-Wartezeit',
     });
@@ -156,7 +171,20 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
       aufwand: '15 min',
     });
   } else {
-    await datenbankPruefen(db, neu, produktion);
+    try {
+      await datenbankPruefen(db, neu, produktion);
+    } catch {
+      // Laufzeitfehler (Tabellen fehlen, obwohl die Verbindung steht): als Fehler melden statt die ganze Prüfung abzubrechen.
+      neu({
+        id: 'inhalte.lesbar',
+        bereich: 'inhalte',
+        titel: 'Inhalte lesbar',
+        status: 'fehler',
+        meldung: 'Die Inhalte lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig (siehe Migrationen).',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
   }
 
   // 4. Mail-DNS (SPF, DMARC) der Absender-Domain
@@ -266,8 +294,7 @@ async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produ
       .from(schema.seiteninhalt)
       .where(eq(schema.seiteninhalt.bereich, bereich))
       .limit(1);
-    const text = JSON.stringify(zeile?.inhalt ?? '');
-    const platzhalter = !zeile || /\[[^\]]{2,}\]/.test(text);
+    const platzhalter = !zeile || hatPlatzhalter(zeile.inhalt);
     neu({
       id: `recht.${bereich}`,
       bereich: 'recht',
@@ -300,12 +327,16 @@ async function beispielInhalte(db: Datenbank): Promise<number> {
 
 async function mailDnsPruefen(domain: string): Promise<Pruefung> {
   const txt = async (name: string) => {
+    let wecker: ReturnType<typeof setTimeout> | undefined;
     try {
-      return (await Promise.race([resolveTxt(name), new Promise<never>((_, nein) => setTimeout(() => nein(new Error('Zeit')), 3000))])).map(
-        (t) => t.join(''),
-      );
+      const frist = new Promise<never>((_, nein) => {
+        wecker = setTimeout(() => nein(new Error('Zeit')), 3000);
+      });
+      return (await Promise.race([resolveTxt(name), frist])).map((t) => t.join(''));
     } catch {
       return [];
+    } finally {
+      clearTimeout(wecker);
     }
   };
   const [spf, dmarc] = await Promise.all([txt(domain), txt(`_dmarc.${domain}`)]);
