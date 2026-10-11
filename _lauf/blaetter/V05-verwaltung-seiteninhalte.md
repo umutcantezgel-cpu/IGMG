@@ -12,11 +12,11 @@ Verwaltung: Seiteninhalte (Über uns, Vorstand, Projekte, Organisationen, Kontak
 
 ## QUELLEN
 
-Design (nur gelesen): AboutUs, BoardMembers, Projects, OrganizationPage, Contact, Footer, Dashboard (Muster), alle .dc.html; readme.md; 00 Laufbuch.dc.html. Bestand (nur gelesen): AboutUs.tsx, BoardMembers.tsx, Projects.tsx, AnatolianOrganization.tsx, Contact.tsx, Footer.tsx. Nur für Übersetzungen: LanguageContext.tsx sowie die Kopfzeilen von WomensOrganization.tsx, YouthOrganization.tsx, WomensYouthOrganization.tsx. Fundstellen: Datei:Zeile.
+Design (nur gelesen): AboutUs, BoardMembers, Projects, OrganizationPage, Contact, Footer, Dashboard (Muster); readme.md; 00 Laufbuch.dc.html. Bestand (nur gelesen): AboutUs.tsx, BoardMembers.tsx, Projects.tsx, AnatolianOrganization.tsx, Contact.tsx, Footer.tsx. Nur für Übersetzungen: LanguageContext.tsx sowie die Kopfzeilen von WomensOrganization.tsx, YouthOrganization.tsx, WomensYouthOrganization.tsx. Fundstellen: Datei:Zeile.
 
 ## ZWECK
 
-Verwaltung pflegt Über uns, Vorstand, Projekte mit Spendenangaben, Organisationen (AT, KT, GT, KGT) und Kontaktdaten mit Footer. Deutsch ist Pflicht; Türkisch und Englisch sind optional mit Rückfall auf Deutsch (K-02). Inhalte: Entwurf, Veröffentlicht, Papierkorb 30 Tage; Personendaten werden echt gelöscht (K-05).
+Verwaltung pflegt Über uns, Vorstand, Projekte mit Spendenangaben, Organisationen (AT, KT, GT, KGT) und Kontaktdaten mit Footer. Deutsch ist Pflicht; Türkisch und Englisch sind optional mit Rückfall auf Deutsch (K-02). Inhalte: Entwurf, Veröffentlicht, Papierkorb (30 Tage); Personendaten echt löschen (K-05).
 
 ## ABSCHNITTE
 
@@ -28,7 +28,9 @@ Aufbau in Designreihenfolge:
 - Organisationen (OrganizationPage.dc.html:15-89): Vorlage für vier Seiten mit org-Schlüssel: Kopf mit Logo, Über, Mission, Vision, Aktivitäten (4), Veranstaltungen, Nachrichten, Kontakt.
 - Kontaktdaten (Contact.dc.html:15-70; Footer.dc.html:15-66): Seitenkopf, Adresse, Kontaktdaten, Öffnungszeiten, Notfall, Anfahrt (3), Kartenplatzhalter, Angebote (8), Besucher; Footer mit Beschreibung, Social, Kontakt, Öffnungszeiten, Schnellzugriff (6).
 
-Tabelle: Auswahl kurzer sichtbarer Texte mit mindestens einer Übersetzung (A2; Lücken siehe AUFFAELLIGKEITEN).
+Komponenten (dc-import, nur genannt; AboutUs.dc.html:16-20,84; BoardMembers.dc.html:25,35; OrganizationPage.dc.html:85): Header (active=moschee), PrayerTimesBar, Breadcrumbs (label), PageHeader (eyebrow, title, subtitle), PersonCard (variant=board, leader), OrgCard (org), Footer, Icon.
+
+Tabelle: Auswahl kurzer Texte mit Übersetzung (A2; Lücken: AUFFAELLIGKEITEN).
 
 | Schlüssel | de | tr | en | Fundstelle |
 | --- | --- | --- | --- | --- |
@@ -66,44 +68,44 @@ Tabelle: Auswahl kurzer sichtbarer Texte mit mindestens einer Übersetzung (A2; 
 | footer.webseite | Webseite für Ihre Moschee | Caminiz için Web Sitesi | Website for Your Mosque | Footer.dc.html:51;Footer.tsx:22/26/30 |
 | footer.anfragen | Jetzt anfragen | Şimdi başvur | Request now | Footer.dc.html:53;Footer.tsx:198-200 |
 
-Nur deutsch in Quelle (tr und en: – (nur DE in Quelle)): Unser Vorstand (BoardMembers.tsx:283); Unsere Reise (AboutUs.tsx:145); Werden Sie Teil unserer Geschichte (AboutUs.tsx:265); Projektbeschreibung (Projects.tsx:312); Gesammelt (Projects.tsx:387); 56% des Ziels erreicht (Projects.tsx:394); Projektmeilensteine (Projects.tsx:441); Kontakt, Öffnungszeiten, Schnellzugriff im Footer (Footer.tsx:91,121,159); Geöffnet (Footer.tsx:148); Alle Veranstaltungen anzeigen (OrganizationPage.dc.html:54).
+Nur deutsch in Quelle (tr und en: – (nur DE in Quelle)): Unser Vorstand (BoardMembers.tsx:283); Unsere Reise (AboutUs.tsx:145); Werden Sie Teil unserer Geschichte (AboutUs.tsx:265); Projektbeschreibung (Projects.tsx:312); Gesammelt (Projects.tsx:387); 56% des Ziels erreicht (Projects.tsx:394); Projektmeilensteine (Projects.tsx:441); Kontakt, Öffnungszeiten, Schnellzugriff im Footer (Footer.tsx:91,121,159); Alle Veranstaltungen anzeigen (OrganizationPage.dc.html:54).
 
 Fließtexte (nur Fundstelle, Volltext dort):
 
 - Über uns: Geschichte AboutUs.dc.html:26-29 (LanguageContext.tsx:214-217/472-475/730-733); Gemeinschaft AboutUs.dc.html:56-58 (LanguageContext.tsx:221-223/479-481/737-739); Werte AboutUs.dc.html:99-102.
-- Vorstand: Dank BoardMembers.dc.html:40 (LanguageContext.tsx:256/514/772); Vorsitz-Errungenschaften nur DE (BoardMembers.dc.html:62-75).
+- Vorstand: Dank BoardMembers.dc.html:40 (LanguageContext.tsx:256/514/772); Vorsitz-Errungenschaften nur DE (BoardMembers.dc.html:62-75; BoardMembers.tsx:33-163).
 - Projekte: Projects.dc.html:32,43,67-68,99-104 (Projects.tsx:32/113/194; 40/121/202; 47-48/128-129/209-210; 50-87/131-168/212-249).
 - AT: OrganizationPage.dc.html:96-103 (Daten); AnatolianOrganization.tsx:34-38/132-136/229-234, 43-58/141-156/239-254, 63-80/161-178/259-276, 85-99/183-197/281-295. KT, GT, KGT: Körpertexte nicht geprüft.
 - Kontakt: Contact.dc.html:65,79-81 (Contact.tsx:76/132/188; 63-67/119-123/175-179). Footer: Footer.dc.html:19,82-86 (Footer.tsx:55-58, 163-168, nur DE).
 
 ## DATEN
 
-Vorschlag, ABGELEITET (spätere Datenbank; Zeitstempel UTC, Anzeige Europe/Berlin). Je Feld: Typ, Pflicht, mehrsprachig.
+Vorschlag, ABGELEITET (spätere Datenbank; Zeitstempel UTC, Anzeige Europe/Berlin). Legende: P = Pflicht; M = mehrsprachig (de Pflicht; tr und en optional mit Rückfall auf Deutsch).
 
-- Über uns: Titel und Texte (Text, Pflicht, ja); Geschichte (4 Absätze) und Gemeinschaft (3 Absätze), lang, de Pflicht, ja; Zeitleiste (5: Jahr und Ort Text, nein; Titel ja; Bild, Bildalt); Werte (4: Titel und Text ja; Icon Auswahl, nein).
-- Vorstand: mitglied (Name Text, Pflicht, nein; Funktion Text, Pflicht, ja; Jahr seit; Aufgaben Liste ja; E-Mail und Telefon optional, nein). vorsitz (Name, Zeitraum Text; Errungenschaften Liste ja; aktuell Ja/Nein). Personendaten werden echt gelöscht.
-- Projekte: projekt (Name, Ort, Beschreibung ja; Status Auswahl ja; Beginn, Fertigstellung Jahr, nein); spende (gesammelt und ziel als Ganzzahl in Euro, nein; konto Text, nein, ohne Wert im Seed; Spendentext ja); spezifikation (Kapazität, Fläche, Einrichtungen Liste ja); meilenstein (Titel, Beschreibung ja; Monat-Jahr Datum; erledigt Ja/Nein).
-- Organisation (Datensätze at, kt, gt, kgt): name, untertitel, über, mission, vision ja; akzentfarbe Auswahl (4) nein; logo Bild; aktivitäten (4 × Titel und Text ja); öffnungszeiten Liste ja; E-Mail Text nein. Termine und Nachrichten nur als Verweis.
-- Kontakt und Anfahrt: adresse (mehrzeilig, Pflicht, nein, Platzhalter), telefon, notfall, E-Mail, website (nein); zeiten (Bezeichnung und Text, ja); anfahrt (3 × Titel und Text, ja); angebote (Liste 8, ja); besucher_text ja.
-- Footer: beschreibung ja; social (URL, optional, nein); oeffnung_mo_fr und oeffnung_sa_so (Text, ja). Kontakt nicht doppelt pflegen.
-- Bild: Datei; Alt-Text Pflicht de, mehrsprachig ja. Zugriffe auf Personendaten im Audit-Log (G-07).
+- Über uns: Titel und Texte (Text; P, M); Absätze Geschichte (4) und Gemeinschaft (3) (lang; P, M); Zeitleiste (5 Einträge: Jahr, Ort, Titel, Bild, Bildalt; Titel P, M); Werte (4 Einträge: Titel und Text M; Icon Auswahl).
+- Vorstand: mitglied (Name Text, P; Funktion Text, P, M; Jahr seit; Aufgaben Liste, M; E-Mail und Telefon optional); vorsitz (Name und Zeitraum Text, P; Errungenschaften Liste, M; aktuell Ja/Nein). Personendaten werden echt gelöscht.
+- Projekte: projekt (Name und Ort Text, P; Beschreibung P, M; Status Auswahl, P; Beginn und Fertigstellung Jahr); spende (gesammelt und ziel Ganzzahl in Euro; konto Text ohne Wert im Seed; Spendentext P, M); spezifikation (Kapazität, Fläche, Einrichtungen Liste, M); meilenstein (Titel P, M; Beschreibung P, M; Monat-Jahr Datum; erledigt Ja/Nein).
+- Organisation (at, kt, gt, kgt): name und untertitel P, M; über, mission, vision P, M; akzentfarbe Auswahl (4 Werte); logo Bild; aktivitäten (4 × Titel und Text, M); öffnungszeiten Liste, M; E-Mail Text. Termine und Nachrichten nur als Verweis.
+- Kontakt und Anfahrt: adresse (mehrzeilig, P; Platzhalter); telefon, notfall, E-Mail, website Text; zeiten (Bezeichnung und Text, M); anfahrt (3 × Titel und Text, M); angebote (Liste 8, M); besucher_text M.
+- Footer: beschreibung P, M; social (URL, optional); oeffnung_mo_fr und oeffnung_sa_so (Text, M). Kontakt nicht doppelt pflegen.
+- Bild: Datei; Alt-Text P, M. Zugriffe auf Personendaten im Audit-Log (G-07).
 
 ## FORMULARFELDER
 
-Dialog nach dem Muster Dashboard.dc.html:118-119; ein Zod-Schema für Client und Server; Fehlertext am Feld (K-07).
+Dialog nach dem Muster Dashboard.dc.html:118-119, Legende wie bei DATEN; ein Zod-Schema für Client und Server; Fehlertext am Feld (K-07).
 
-- Titel (Text, Pflicht, ja); Inhalt (Textarea, Pflicht de, ja); Status (Entwurf oder Veröffentlicht, Pflicht, nein): Dashboard.dc.html:118.
-- Datum, Startzeit, Endzeit (nein); Ort (Text, ja): Dashboard.dc.html:119.
-- Kategorie (Allgemein, Ana Teşkilatı, Kadın Teşkilatı, Gençlik Teşkilatı, Kadın Gençlik Teşkilatı; Pflicht ja, ABGELEITET aus K-06): Dashboard.dc.html:115,119.
-- Name (Pflicht, nein), Funktion (Pflicht, ja), E-Mail und Telefon (optional, nein): ABGELEITET aus BoardMembers.dc.html:55-60.
-- Bild mit Alt-Text (Pflicht, ja). "(Pflichtfeld)" und der Hinweis zu den Pflichtfeldern sind neu (00 Laufbuch.dc.html:299).
+- Titel (Text; P, M); Inhalt (Textarea; P, M); Status (Entwurf oder Veröffentlicht; P): Dashboard.dc.html:118.
+- Datum, Startzeit, Endzeit (Datum und Uhrzeiten, optional); Ort (Text; M): Dashboard.dc.html:119.
+- Kategorie (Auswahl Allgemein, Ana Teşkilatı, Kadın Teşkilatı, Gençlik Teşkilatı, Kadın Gençlik Teşkilatı; P; ABGELEITET aus K-06): Dashboard.dc.html:115,119.
+- Name (Text; P), Funktion (Text; P, M), E-Mail und Telefon (optional): ABGELEITET aus BoardMembers.dc.html:55-60.
+- Bild mit Alt-Text (P, M). "(Pflichtfeld)" und der Hinweis zu den Pflichtfeldern sind neu (00 Laufbuch.dc.html:299).
 
 ## INTERAKTIONEN
 
-- Bereich wählen: Über uns, Vorstand, Projekte, Organisationen (AT, KT, GT, KGT), Kontaktdaten mit Footer.
+- Bereich wählen (ABGELEITET): Über uns, Vorstand, Projekte, Organisationen (AT, KT, GT, KGT), Kontaktdaten mit Footer.
 - Bearbeiten öffnet einen Dialog (Dashboard.dc.html:117-122); Schließen, Abbrechen, Escape und Hintergrundklick schließen ihn. Schaltflächen "Bearbeiten: {Titel}" und "Löschen: {Titel}" (Dashboard.dc.html:143).
 - Sprache wählen; fehlt eine Fassung, Rückfall auf Deutsch (K-02).
-- Entwurf speichern oder veröffentlichen.
+- Entwurf speichern oder veröffentlichen (K-05).
 - Löschen: Inhalte in den Papierkorb; Personendaten nach Bestätigung endgültig (K-05).
 - Reihenfolge ändern und Vorschau: ABGELEITET.
 - Export und Löschung für Personendaten (G-07). Organisationsredaktion ändert nur die eigene Organisation (K-06).
@@ -113,11 +115,11 @@ Dialog nach dem Muster Dashboard.dc.html:118-119; ein Zod-Schema für Client und
 Eigenschaften aus data-props:
 
 - OrganizationPage.dc.html:91: org = at | kt | gt | kgt; Default at; unbekannter Wert fällt auf at zurück (Zeile 131); $preview 1440×1800.
-- Footer.dc.html:68: lang = de | tr | en; Default de; unbekannter Wert fällt auf de zurück (Zeile 76); $preview 1440×460.
+- Footer.dc.html:68: lang = de | tr | en; Default de; unbekannter Wert: Texte fallen auf de zurück (Zeile 80); $preview 1440×460.
 - Dashboard.dc.html:110: section = dashboard | news | events | announcements | messages | tickets; Default dashboard. dialog = none | neuigkeit | veranstaltung | ankuendigung | ticket; Default none.
 - AboutUs (Zeile 87), BoardMembers (48), Projects (92), Contact (74): keine Eigenschaften (entfällt).
 
-Bestandszustände: Meilenstein erledigt oder geplant (Projects.tsx:446-478); Vorsitz aktuell oder ehemalig (BoardMembers.tsx:159; LanguageContext.tsx:259-260/517-518/775-776); Footer fest "Geöffnet" (Footer.tsx:148); Sprache de, tr, en. Lade-, Leer- und Fehlerzustände fehlen im Bestand.
+Bestandszustände: Meilenstein erledigt oder geplant (Projects.tsx:446-478); Vorsitz aktuell oder ehemalig (BoardMembers.tsx:159; LanguageContext.tsx:259-260/517-518/775-776); Footer fest "Geöffnet" (Footer.tsx:148). Lade-, Leer- und Fehlerzustände fehlen im Bestand.
 
 Neu, ABGELEITET: Entwurf, Veröffentlicht, Papierkorb; leer; Fehler am Feld; gespeichert; keine Berechtigung; Dialog offen.
 
@@ -129,7 +131,7 @@ Neu, ABGELEITET: Entwurf, Veröffentlicht, Papierkorb; leer; Fehler am Feld; ges
 
 ## AUFFAELLIGKEITEN
 
-- Die Tabelle ist eine Auswahl. Fließtexte stehen nur per Fundstelle, weil A2 und die Wortgrenze A8 sich widersprechen.
+- Tabelle ist Auswahl; Fließtexte nur per Fundstelle, da A2 und A8 sich widersprechen.
 - Gründungsjahr: 1976 (AboutUs.dc.html:26; LanguageContext.tsx:214) gegenüber "Führung seit 1975" (BoardMembers.dc.html:30).
 - Spendenstand: Design "450.000 € / 800.000 €" (Projects.dc.html:45) gegenüber Bestand "€450,000 / €800,000" (Projects.tsx:389). Bestand-Feld progress 35 (Projects.tsx:37) bleibt ungenutzt; berechnet werden 56 % (Projects.tsx:276).
 - Tippfehler "Ofizielle" im Bestand (Projects.tsx:65); das Design "Offizielle" (Projects.dc.html:101) gilt.
@@ -140,7 +142,7 @@ Neu, ABGELEITET: Entwurf, Veröffentlicht, Papierkorb; leer; Fehler am Feld; ges
 
 ## OFFENE FRAGEN
 
-- Sollen Fließtexte als Volltext in dieses Blatt, als Textliste mit de, tr, en oder per Übernahme aus dem Bestand?
+- Fließtexte als Volltext in dieses Blatt oder als eigene Textliste mit de, tr, en (A2 gegen A8)?
 - Gilt das Gründungsjahr 1975 oder 1976?
 - Wird die Bankverbindung als Formularfeld gepflegt, ohne Wert im Seed?
 - Dürfen Vorstand-E-Mail und Telefon öffentlich erscheinen (G-07)?
@@ -148,9 +150,8 @@ Neu, ABGELEITET: Entwurf, Veröffentlicht, Papierkorb; leer; Fehler am Feld; ges
 - Welcher Organisationsredaktion ist welche Organisation zugeordnet (K-06)?
 - Kommen Öffnungszeiten im Footer und auf der Kontaktseite aus einer Quelle?
 - Welche Pfade gelten je Sprache (K-02)?
-- Wer liefert Logos in höherer Auflösung?
 - Sind Termine und Nachrichten der Organisationen Verweise auf Veranstaltungen und Neuigkeiten?
 - KT, GT und KGT: Körpertexte und Übersetzungen aus den drei Bestandsdateien sind nicht geprüft.
-- Das Dashboard-Muster hat keinen Punkt "Seiteninhalte" (Dashboard.dc.html:111); Einordnung offen.
+- Dashboard-Muster ohne Punkt "Seiteninhalte" (Dashboard.dc.html:111): Einordnung?
 
 === ENDE V05 · BEREIT ZUR RÜCKGABE ===

@@ -13,7 +13,9 @@ RUN pnpm install --frozen-lockfile
 FROM basis AS bau
 COPY --from=abhaengigkeiten /app/node_modules ./node_modules
 COPY . .
-ENV NODE_ENV=production
+# ADR 0017: Bau gegen eine PGlite-Bau-Datenbank (Migrationen + Seeds), nicht gegen die Produktion
+RUN pnpm db:bau-vorbereiten
+ENV NODE_ENV=production BAU_PGLITE=1 PGLITE_VERZEICHNIS=/app/.pglite-bau DATABASE_URL=
 RUN pnpm build
 
 FROM node:24-alpine AS laufzeit

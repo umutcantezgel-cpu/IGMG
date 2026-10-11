@@ -52,3 +52,13 @@ Gebetszeiten: Import verbindlich, bis dahin adhan „Turkey“, Shafi, SeventhOf
 
 **E-015 · 2026-10-11 · Standalone-Server mit HOSTNAME=0.0.0.0**
 Befund im Fundament: Mit `HOSTNAME=127.0.0.1` bzw. `localhost` behandelt der standalone-Server von Next.js 16.4 die Rewrites von next-intl (Standardsprache ohne Präfix) bei abweichendem Host als externe Ziele → Weiterleitungsschleife (307 auf sich selbst). Mit `HOSTNAME=0.0.0.0` (wie im Docker-Image) bleiben die Rewrites intern; geprüft mit Host `localhost`, `127.0.0.1` und einem fremden Host-Header. Festlegung: Start-Skript und Dockerfile setzen `HOSTNAME=0.0.0.0`; BETRIEB.md nennt das als Pflicht.
+
+**E-016 · 2026-10-11 · Stichprobe der Kundschafter-Blätter (P0.4) bestanden**
+Drei Blätter, je drei Angaben gegen die Quelle geprüft:
+- S04 (Veranstaltungen): `event.2.desc` = Events.tsx:178 ✓ · „Kommende Events“ = Events.dc.html:28 ✓ · sieben Kategorie-Schalter (:23–25, :51) ✓
+- S11 (Kontakt): `contact.subtitle` de/tr/en = Contact.tsx:25/81/137 ✓ · `[Adresse]` als Designplatzhalter, Bestand als Beispielwert ✓ · Kartenknopf „Google Maps“ sprachunabhängig (Contact.tsx:257) ✓
+- S20 (Voranmeldung): „Bitte füllen Sie die markierten Pflichtfelder aus.“ in FormWizard.dc.html ✓ · vier Schritte ✓ · Einwilligung ohne Link auf eine Erklärung (StudentRegistration.tsx:600 ff.) ✓
+Kein Fehler → kein Blatt muss neu erstellt werden. Qualität der Blätter: Texte wörtlich mit Fundstelle, Personennamen als Platzhalter (A5) eingehalten.
+
+**E-017 · 2026-10-11 · ADR 0017: Image-Bau gegen PGlite-Bau-Datenbank, frische Inhalte beim Start**
+Der Docker-Bau scheiterte zunächst, weil `src/lib/db` beim Import verband. Jetzt: Verbindung erst beim ersten Zugriff; Bau mit `BAU_PGLITE=1` gegen eine PGlite-Datenbank aus Migrationen + Seeds; beim Start verfallen alle Inhalts-Tags (Prüfauftrag D04). Der Namensraum `verwaltung` wird immer aus `de.json` geladen (verhindert Prerender-Fehler der tr/en-Varianten der Verwaltungsseiten).

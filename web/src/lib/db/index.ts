@@ -4,8 +4,9 @@ import { Pool } from 'pg';
 import * as schema from './schema';
 
 /**
- * Datenbankzugang (K-05, ADR 0001): PostgreSQL über `pg` (Betrieb, docker compose).
- * Nur für Entwicklung ohne Docker: PGlite, wenn DATABASE_URL leer ist (eine Verbindung, kein Betrieb).
+ * Datenbankzugang (K-05, ADR 0001, ADR 0017): PostgreSQL über `pg` (Betrieb, docker compose).
+ * PGlite nur in Entwicklung/Tests ohne DATABASE_URL und beim Image-Bau (BAU_PGLITE=1, ADR 0017).
+ * Die Verbindung entsteht erst beim ersten Zugriff (Import allein verbindet nicht – wichtig für `next build`).
  * Alle Zugriffe laufen über Drizzle mit Parametern (K-13, S8).
  */
 export type Datenbank = NodePgDatabase<typeof schema>;
@@ -19,10 +20,9 @@ function erzeuge(): Datenbank {
     globalFuerDb.__igmgPool = pool;
     return drizzlePg(pool, { schema, casing: 'snake_case' });
   }
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production' && process.env.BAU_PGLITE !== '1') {
     throw new Error('DATABASE_URL fehlt (Betrieb braucht PostgreSQL).');
   }
-  // Entwicklungs-Rückfall: PGlite im Prozess (Typen sind kompatibel genug für die App-Schicht).
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { PGlite } = require('@electric-sql/pglite') as typeof import('@electric-sql/pglite');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -31,5 +31,17 @@ function erzeuge(): Datenbank {
   return drizzleLite(client, { schema, casing: 'snake_case' }) as unknown as Datenbank;
 }
 
-export const db: Datenbank = globalFuerDb.__igmgDb ?? (globalFuerDb.__igmgDb = erzeuge());
+export function holeDb(): Datenbank {
+  return (globalFuerDb.__igmgDb ??= erzeuge());
+}
+
+/** Datenbank-Objekt; verbindet beim ersten Zugriff. */
+export const db: Datenbank = new Proxy({} as Datenbank, {
+  get(_ziel, eigenschaft) {
+    const echt = holeDb();
+    const wert = Reflect.get(echt, eigenschaft, echt) as unknown;
+    return typeof wert === 'function' ? (wert as (...a: unknown[]) => unknown).bind(echt) : wert;
+  },
+});
+
 export { schema };

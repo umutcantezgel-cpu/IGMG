@@ -26,7 +26,7 @@ const eslintConfig = defineConfig([
     },
   },
   {
-    files: ['scripts/**', 'tests/**'],
+    files: ['scripts/**', 'tests/**', 'drizzle/seeds/**'],
     rules: { 'no-console': 'off' },
   },
   globalIgnores([

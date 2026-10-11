@@ -15,13 +15,14 @@
     "check": "pnpm typen && pnpm lint && pnpm test:unit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:seed": "tsx --env-file-if-exists=.env drizzle/seeds/index.ts",
+    "db:seed": "tsx --conditions=react-server --env-file-if-exists=.env drizzle/seeds/index.ts",
     "auth:schema": "node scripts/auth-schema.mjs",
     "schriften:kopieren": "node scripts/schriften-kopieren.mjs",
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "format": "prettier --write",
-    "start:standalone": "node scripts/start-standalone.mjs"
+    "start:standalone": "node scripts/start-standalone.mjs",
+    "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1149.0",
