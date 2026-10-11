@@ -62,3 +62,6 @@ Kein Fehler → kein Blatt muss neu erstellt werden. Qualität der Blätter: Tex
 
 **E-017 · 2026-10-11 · ADR 0017: Image-Bau gegen PGlite-Bau-Datenbank, frische Inhalte beim Start**
 Der Docker-Bau scheiterte zunächst, weil `src/lib/db` beim Import verband. Jetzt: Verbindung erst beim ersten Zugriff; Bau mit `BAU_PGLITE=1` gegen eine PGlite-Datenbank aus Migrationen + Seeds; beim Start verfallen alle Inhalts-Tags (Prüfauftrag D04). Der Namensraum `verwaltung` wird immer aus `de.json` geladen (verhindert Prerender-Fehler der tr/en-Varianten der Verwaltungsseiten).
+
+**E-018 · 2026-10-11 · Uhrzeiten in allen Sprachen im 24-Stunden-Format**
+Deutsch „18:30 Uhr“ (Design D-10); Türkisch und Englisch „18:30“ ohne Zusatz (Bestand und Design liefern keine Fassung; 24-Stunden-Format ist in der Türkei üblich und für eine Gemeinde in Deutschland eindeutig). Umsetzung `src/lib/i18n/format.ts`, Prüfung in `tests/unit/i18n.test.ts`.

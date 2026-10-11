@@ -8,7 +8,7 @@ Verwaltung: Nachrichten (internes Postfach), Abschnitt `messages` des Admin-Dash
 
 ## ROUTE
 
-Ziel-Route `/verwaltung/nachrichten` (Vorgabe des Orchestrators; im Laufbuch nicht belegt). Der Bestand hat keinen Pfad: App.tsx:53–56 wählt Seiten über IDs (Fall `dashboard`); der Abschnitt `messages` ist nur `activeSection` (Dashboard.tsx:154, 1185–1186). Entwurf: Sidebar-Eintrag (Dashboard.dc.html:24). Laufbuch-Linkliste: Konto führt nur zu Dashboard (00 Laufbuch.dc.html:309).
+Ziel-Route `/verwaltung/nachrichten` (Vorgabe des Orchestrators; im Laufbuch nicht belegt). Der Bestand hat keinen Pfad: App.tsx:53–56 wählt Seiten über IDs (Fall `dashboard`); der Abschnitt `messages` ist nur `activeSection` (Dashboard.tsx:154, 1185–1186). Entwurf: Sidebar-Eintrag (Dashboard.dc.html:24). Laufbuch-Linkliste: Konto führt auf Dashboard, nicht auf Nachrichten (00 Laufbuch.dc.html:309).
 
 ## QUELLEN
 
@@ -58,7 +58,7 @@ Texte (A2):
 
 ## DATEN
 
-Vorschlag für PostgreSQL mit Drizzle (Kern K-05). Alle Felder einsprachig, da der Entwurf nur Deutsch zeigt. Zeitstempel in UTC, Anzeige Europe/Berlin.
+Vorschlag für PostgreSQL mit Drizzle (Kern K-05); Felder ohne Fundstelle sind abgeleitete Vorschläge. Alle Felder einsprachig, da der Entwurf nur Deutsch zeigt. Zeitstempel in UTC, Anzeige Europe/Berlin.
 
 - Unterhaltung: id (uuid); Teilnehmende (Verknüpfung zu Konten, uuid); Name und Funktion der Gegenseite aus dem Konto (text; Dashboard.tsx:128–129); letzte Vorschau und letzte Zeit (abgeleitet aus letzter Nachricht; Dashboard.tsx:130–131).
 - Teilnahme: user_id (uuid), last_read_at (timestamptz); Ungelesen-Zähler abgeleitet (Dashboard.tsx:132; Dashboard.dc.html:63).
