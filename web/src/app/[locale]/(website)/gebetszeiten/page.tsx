@@ -24,10 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadatenFuer({ pfad: '/gebetszeiten', titel: t('titel'), beschreibung: t('metaBeschreibung') });
 }
 
-/** Druckansicht des Tabs Monatlich: auf Papier erscheinen nur die Monatstabellen, Kopf, Leiste und Fuß entfallen. */
-const DRUCK_CSS =
-  '@media print { body * { visibility: hidden !important; } #gebetszeiten-monat, #gebetszeiten-monat * { visibility: visible !important; } #gebetszeiten-monat { position: absolute; top: 0; left: 0; width: 100%; } }';
-
 /**
  * Gebetszeiten (design/PrayerTimes.dc.html, Blatt S02): Kopf mit Datum, Vollbild-Link und Standort, Nächstes Gebet,
  * Tabs Heute, Monatlich, Qibla, Einstellungen. Zeiten aus den Abfragen (K-08); der Standort ist fest Wetzlar.
@@ -104,7 +100,6 @@ export default async function GebetszeitenSeitePage() {
 
   return (
     <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" ohneLeiste pfad={[{ label: tk('gebetszeiten') }]}>
-      <style>{DRUCK_CSS}</style>
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
         <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
           <div className="flex min-w-0 flex-col gap-2">
