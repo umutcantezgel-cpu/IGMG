@@ -53,7 +53,7 @@ export function Zustandsgrafik({ art, groesse = 96, className }: { art: Zustand;
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden
+      aria-hidden="true"
       className={klassen('shrink-0', farbe.zeichen, className)}
     >
       <path d={ACHTSTERN_96} className={klassen(farbe.flaeche, farbe.linie)} strokeWidth="2" />
@@ -82,7 +82,7 @@ export function Trenner({ className }: { className?: string }) {
   return (
     <div aria-hidden className={klassen('flex items-center gap-3 text-rand', className)}>
       <span className="h-px flex-1 bg-linie" />
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z" />
       </svg>
       <span className="h-px flex-1 bg-linie" />
@@ -106,7 +106,7 @@ export function LadeStern({ groesse = 20, className }: { groesse?: number; class
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      aria-hidden
+      aria-hidden="true"
       className={klassen('shrink-0', className)}
     >
       <path

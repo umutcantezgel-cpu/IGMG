@@ -3,8 +3,11 @@ import { KUERZEL_ALLE, type Kuerzel } from './stil';
 
 /**
  * Familie der vier (großer Moment B-09): ein Achtstern aus vier Segmenten – je Organisation eines, im Uhrzeigersinn
- * AT, KT, GT, KGT. Das eigene Segment steht in der vollen Organisationsfarbe und enthüllt sich einmal per Maske (900 ms,
+ * AT, KT, GT, KGT. Das eigene Segment steht in der vollen Organisationsfarbe und wächst einmal aus der Mitte (900 ms,
  * reines CSS ab dem ersten Bild); die übrigen bleiben als Tönung sichtbar. Dekorativ: Name und Zugehörigkeit stehen im Text.
+ * Das eigene Segment liegt als zweites SVG über den Tönungen und wird als Ganzes skaliert: Alle Segmente beginnen im
+ * Mittelpunkt, Skalieren um die Mitte wirkt wie Enthüllen – und läuft nur im Compositor (E3-Tor: die frühere Maske
+ * erzwang Neuzeichnen je Bild, 13,9 % verworfene Bilder bei 4-facher Drosselung).
  * Geometrie: Quadrat 30–90 und dasselbe Quadrat um 45° gedreht (Spitzen bei 17,57 und 102,43), geteilt an den Diagonalen.
  */
 const SEGMENT: Record<Kuerzel, string> = {
@@ -23,24 +26,16 @@ const FLAECHE: Record<Kuerzel, { voll: string; leise: string }> = {
 };
 
 export function FamilieDerVier({ org, className }: { org: Kuerzel; className?: string }) {
-  const maske = `familie-${org}-maske`;
   return (
-    <svg viewBox="0 0 120 120" aria-hidden className={cn('size-16 shrink-0 md:size-48', className)}>
-      <defs>
-        <mask id={maske}>
-          <circle cx="60" cy="60" r="60" fill="white" className="maske-oeffnet" />
-        </mask>
-      </defs>
-      {KUERZEL_ALLE.map((k) => (
-        <path key={k} d={SEGMENT[k]} className={cn(FLAECHE[k].leise, 'stroke-weiss')} strokeWidth="2" strokeLinejoin="round" />
-      ))}
-      <path
-        d={SEGMENT[org]}
-        mask={`url(#${maske})`}
-        className={cn(FLAECHE[org].voll, 'stroke-weiss')}
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <span aria-hidden="true" className={cn('relative block size-16 shrink-0 md:size-48', className)}>
+      <svg viewBox="0 0 120 120" aria-hidden="true" className="size-full">
+        {KUERZEL_ALLE.map((k) => (
+          <path key={k} d={SEGMENT[k]} className={cn(FLAECHE[k].leise, 'stroke-weiss')} strokeWidth="2" strokeLinejoin="round" />
+        ))}
+      </svg>
+      <svg viewBox="0 0 120 120" aria-hidden="true" className="familie-eigen absolute inset-0 size-full">
+        <path d={SEGMENT[org]} className={cn(FLAECHE[org].voll, 'stroke-weiss')} strokeWidth="2" strokeLinejoin="round" />
+      </svg>
+    </span>
   );
 }

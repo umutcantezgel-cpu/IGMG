@@ -73,6 +73,8 @@ Technik: nur CSS (Transitions, Keyframes, `stroke-dashoffset`, Masken) und React
 
 Staffeln ≤ 8 Elemente; je Bildschirmhöhe höchstens ein Auftritt mit Gewicht; Arbeitsansichten nur B-01–B-05, B-10–B-12.
 
+Auslegung (E3-Tor, 11.10.): Eine Staffel zählt die nacheinander auftretenden Elemente. Bei B-07 sind das die Stationen (Punkte); die Verbindungslinie ist eine durchgehende Zeichnung, nur technisch in Abschnitte je Station geteilt (variable Kartenhöhen) – sie zählt nicht als Staffel-Element. Heute 5 Stationen; ab 9 Stationen in der Verwaltung wäre die Regel verletzt (Hinweis für die Pflege).
+
 ## K-008 SVG-Formsystem
 - Grundgeometrie: Quadrat und dasselbe Quadrat um 45° gedreht = Achtstern (Bestand `Stern8` in `web/src/components/website/Icons.tsx`).
 - Raster 24 px, Strich 2 px (`stroke-width="2"`, `vector-effect` nicht nötig bei Skalierung im Raster), runde Enden und Ecken (`stroke-linecap/linejoin="round"`), Farbe `currentColor` oder Token.

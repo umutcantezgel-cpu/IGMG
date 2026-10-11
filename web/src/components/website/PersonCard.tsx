@@ -44,7 +44,7 @@ function initialen(name: string): string | null {
 function Jahresmarke() {
   return (
     <svg
-      aria-hidden
+      aria-hidden="true"
       viewBox="0 0 24 24"
       className="size-6 shrink-0"
       fill="none"
