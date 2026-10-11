@@ -8,8 +8,9 @@ import { oeffentlicheAdresse } from '../umgebung';
  * Gemeinsame Better-Auth-Optionen (ohne Datenbank), damit Laufzeit-Konfiguration und
  * Schema-Erzeugung (`pnpm auth:schema`) dieselben Plugins nutzen. ADR 0003, Lichtung (b).
  */
-// Vorschauen ohne APP_URL melden sich unter ihrer Branch-Adresse an (ADR 0022); Passkey-rpID folgt dieser Adresse
-const appUrl = process.env.BETTER_AUTH_URL ?? oeffentlicheAdresse(process.env);
+// Vorschauen ohne APP_URL melden sich unter ihrer Branch-Adresse an (ADR 0022); Passkey-rpID folgt dieser Adresse.
+// Ein leer angelegtes BETTER_AUTH_URL gilt als nicht gesetzt (sonst wäre die baseURL leer).
+const appUrl = process.env.BETTER_AUTH_URL || oeffentlicheAdresse(process.env);
 const istHttps = appUrl.startsWith('https://');
 
 export const authOptionen = {

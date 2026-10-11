@@ -185,7 +185,7 @@ Die vollständige Liste mit Zweck, Pflicht, Bereich und Beispiel steht in `web/d
 
 Die Quellen: `web/docs/BETRIEB.md` §§ 2, 3, 9; `web/.env.example`; `web/src/lib/umgebung.ts`; ADR 0018 bis 0022.
 
-**Nicht setzen**, weil Vercel bei jedem Kaltstart einer Instanz etwas tun würde (`web/docs/BETRIEB.md` § 9, Zeile 110):
+**Nicht setzen**, weil Vercel bei jedem Kaltstart einer Instanz etwas tun würde (`web/docs/BETRIEB.md` § 9, Zeile 113):
 
 - `MIGRATION_BEIM_START`
 - `CACHE_ERNEUERN_BEIM_START`
