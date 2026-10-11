@@ -1,0 +1,59 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-11-17-21",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 1,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 84,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1885,
+          "cls": 0.001,
+          "tbtMs": 549,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3519
+          }
+        }
+      ],
+      "median": {
+        "performance": 84,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1885,
+        "cls": 0.001,
+        "tbtMs": 549,
+        "jsKb": 168,
+        "simuliertPerformance": 90,
+        "simuliertLcpMs": 3519
+      },
+      "spanneLeistung": [
+        84,
+        84
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# Zugänglichkeitsprüfung (axe, WCAG 2.2 AA) · 2026-10-11-17-31 · http://127.0.0.1:3100 · 390×844
+
+Prüfumfang: wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa. Zahlen = Anzahl verletzter Regeln je Schwere (nicht Anzahl der Stellen). „unklar“ = von axe nicht eindeutig entschieden.
+
+| Route | HTTP | kritisch | ernst | mittel | gering | unklar |
+|---|---|---|---|---|---|---|
+| / | 200 | 0 | 0 | 0 | 0 | 1 |
+| /gebetszeiten | 200 | 0 | 0 | 0 | 0 | 0 |
+| /veranstaltungen | 200 | 0 | 0 | 0 | 0 | 1 |
+| /veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag | 200 | 0 | 0 | 0 | 0 | 0 |
+| /nachrichten | 200 | 0 | 0 | 0 | 0 | 1 |
+| /ueber-uns | 200 | 0 | 0 | 0 | 0 | 1 |
+| /projekte | 200 | 0 | 0 | 0 | 0 | 1 |
+| /organisationen/ana-teskilati | 200 | 0 | 0 | 0 | 0 | 0 |
+| /bildung/korankurse | 200 | 0 | 0 | 0 | 0 | 1 |
+| /bildung/voranmeldung | 200 | 0 | 0 | 0 | 0 | 1 |
+| /kontakt | 200 | 0 | 0 | 0 | 0 | 1 |
+
+## /
+
+Keine Verletzungen.
+
+## /gebetszeiten
+
+Keine Verletzungen.
+
+## /veranstaltungen
+
+Keine Verletzungen.
+
+## /veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag
+
+Keine Verletzungen.
+
+## /nachrichten
+
+Keine Verletzungen.
+
+## /ueber-uns
+
+Keine Verletzungen.
+
+## /projekte
+
+Keine Verletzungen.
+
+## /organisationen/ana-teskilati
+
+Keine Verletzungen.
+
+## /bildung/korankurse
+
+Keine Verletzungen.
+
+## /bildung/voranmeldung
+
+Keine Verletzungen.
+
+## /kontakt
+
+Keine Verletzungen.

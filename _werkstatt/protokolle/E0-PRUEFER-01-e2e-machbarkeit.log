@@ -1,0 +1,4 @@
+# E2E-Machbarkeit (Schritt 8)
+PostgreSQL: apt-get update 5 s; apt-get install -y postgresql 4 s (Metapaket; Cluster 16 main vorhanden, gestoppt)
+psql 16.15, Cluster 16 main: down (nicht gestartet)
+Mailpit: https://github.com/axllent/mailpit/releases/download/v1.27.0/mailpit-linux-amd64.tar.gz 200, 9.9 MB; 'mailpit version' = v1.27.0; Tag v1.27 existiert nicht (404); Prüfsumme nicht verfügbar (mailpit_checksums.txt 404); nicht installiert, nicht gestartet

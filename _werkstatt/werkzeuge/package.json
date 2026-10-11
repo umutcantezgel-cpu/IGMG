@@ -1,0 +1,12 @@
+{
+  "name": "igmg-pruefwerkzeuge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prüfwerkzeuge für den Lauf Gestaltung und Vercel-Startklar. node_modules liegt außerhalb des Repos und wird per Symlink eingebunden.",
+  "dependencies": {
+    "playwright": "1.64.0",
+    "@axe-core/playwright": "4.13.0",
+    "lighthouse": "13.5.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "werkzeug": "a11y",
+  "zeit": "2026-10-11-17-21",
+  "basis": "http://127.0.0.1:3100",
+  "breite": 390,
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    }
+  ]
+}

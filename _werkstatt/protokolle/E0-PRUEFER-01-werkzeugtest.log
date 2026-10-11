@@ -1,0 +1,11 @@
+# Werkzeugtest gegen bekannte Fehler (Testseiten im Scratchpad, nicht im Projekt)
+## bildsatz (Überlauf 2000 px, abgeschnittener Text, sr-only ausgenommen)
+Ergebnis: horizontal JA; Befunde: abgeschnittener Text, Element ausserhalb (Protokoll: test-bildsatz.md)
+## a11y (Button ohne Name, Bild ohne alt, Feld ohne Beschriftung, Kontrast)
+http://127.0.0.1:3211/a11y.html: HTTP 200 · kritisch 3 · ernst 1 · mittel 0 · gering 0 · Regeln 4 · unklar 0
+Protokoll: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/test-a11y.json, /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/test-a11y.md
+## bewegung (Transform-Animation, Deckkraft 0, Hauptthread-Blockade 90 ms alle 250 ms)
+(1) reduziert: HTTP 200 · laufende Animationen 1 · mit Lage/Größe-Keyframes 1 · größte Lageänderung 44 px · Opacity 0 nach 2 s 1 (nach Scrollen 1)
+(2) Einzelbilder: 1: 0 ms, 1 laufend · 2: 501 ms, 1 laufend · 3: 1001 ms, 1 laufend · 4: 1504 ms, 1 laufend · 5: 2001 ms, 1 laufend → /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/bewegung-bewegung.html
+(3) Bildrate: ohne Drosselung 26.4 % verworfen (89 Bilder) · CPU 4× 23.1 % verworfen (93 Bilder, Median-Abstand 16.7 ms)
+Protokoll: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/test-bewegung.json, /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/test-bewegung.md
