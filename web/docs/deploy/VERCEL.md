@@ -180,7 +180,7 @@ Die vollständige Liste mit Zweck, Pflicht, Bereich und Beispiel steht in `web/d
 | `BLOB_READ_WRITE_TOKEN`                                           | Zugang zum Blob-Speicher                             | Vercel setzt ihn                 | Vercel setzt ihn                                                                                                   |
 | `MAIL_TRANSPORT`                                                  | Mailversand                                          | `smtp`                           | `smtp`                                                                                                             |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` | Zugang zum Mailanbieter                              | Anbieterwerte                    | Anbieterwerte oder leer **[prüfen]**                                                                               |
-| `MAIL_ABSENDER`                                                   | Absenderadresse                                      | `[noreply@deine-domain.de]`      | `[noreply@deine-domain.de]`                                                                                        |
+| `MAIL_ABSENDER`                                                   | Absenderadresse                                      | `[noreply@beispiel.de]`          | `[noreply@beispiel.de]`                                                                                            |
 | `PROXY_VERTRAUEN`                                                 | Vertrauen in den Vercel-Proxy                        | `1`                              | `1`                                                                                                                |
 
 Die Quellen: `web/docs/BETRIEB.md` §§ 2, 3, 9; `web/.env.example`; `web/src/lib/umgebung.ts`; ADR 0018 bis 0022.
@@ -289,7 +289,7 @@ Was sie bedeuten:
 | TXT | `[_dmarc]`               | `[v=DMARC1; p=none; rua=mailto:<Adresse>]`     |
 
 - Beginne DMARC mit `p=none`. So siehst du zuerst nur die Berichte, ohne dass Mails abgewiesen werden. Die Verschärfung ist eine spätere Entscheidung **[Empfehlung]**.
-- **Prüfpunkt:** Der Mailanbieter zeigt die Domain als verifiziert **[prüfen: Anzeige beim Anbieter]**. Eine Testmail aus der Produktion kommt mit dem Absender `[noreply@deine-domain.de]` an.
+- **Prüfpunkt:** Der Mailanbieter zeigt die Domain als verifiziert **[prüfen: Anzeige beim Anbieter]**. Eine Testmail aus der Produktion kommt mit dem Absender `[noreply@beispiel.de]` an.
 - **Abstimmung:** `MAIL_ABSENDER` (Abschnitt 4) muss zur Domain passen.
 
 ## 8. Migrationen: Datenbank-Änderungen nur additiv

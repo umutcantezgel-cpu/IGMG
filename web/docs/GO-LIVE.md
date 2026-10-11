@@ -77,7 +77,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Aufwand:** 20 Minuten.
   - **Wer:** Technik.
   - **Hinweis:** `MAIL_ABSENDER` darf nicht auf der Platzhalteradresse `noreply@example.test` bleiben (`web/src/lib/mail/transport.ts` Zeile 35).
-  - **Das siehst du, wenn es geklappt hat:** Ein Formular in der Vorschau schickt eine Bestätigungsmail, und die Absenderadresse ist `[noreply@deine-domain.de]`. Formulardaten bitte nur mit einer Testeingabe senden.
+  - **Das siehst du, wenn es geklappt hat:** Ein Formular in der Vorschau schickt eine Bestätigungsmail, und die Absenderadresse ist `[noreply@beispiel.de]`. Formulardaten bitte nur mit einer Testeingabe senden.
 
 - [ ] **B6 · Wiederkehrende Aufgaben (Crons)**
   - **Ort:** `vercel.json` (Abschnitt `crons`) und Vercel › Projekt › Cron Jobs **[prüfen]**.

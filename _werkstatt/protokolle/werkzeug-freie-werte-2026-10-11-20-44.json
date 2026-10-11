@@ -1,0 +1,43 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-44",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/impressum/page.tsx",
+    "web/src/app/[locale]/(website)/datenschutz/page.tsx",
+    "web/src/components/website/rechtliches/Rechtstext.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 4
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/(website)/impressum/page.tsx",
+      "zeile": 34,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "<div className=\"mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/datenschutz/page.tsx",
+      "zeile": 36,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "<div className=\"mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24\">"
+    },
+    {
+      "datei": "web/src/components/website/rechtliches/Rechtstext.tsx",
+      "zeile": 78,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:grid-cols-[220px_1fr]",
+      "zeileText": "className=\"grid gap-1 border-t border-linie py-3 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-4\""
+    },
+    {
+      "datei": "web/src/components/website/rechtliches/Rechtstext.tsx",
+      "zeile": 81,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "<dd lang={deutsch ? 'de' : undefined} className=\"[overflow-wrap:anywhere]\">"
+    }
+  ]
+}
