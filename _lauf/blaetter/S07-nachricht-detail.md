@@ -4,36 +4,38 @@ S07 · Rolle: Kundschafter · Modell: Haiku 5.5 · Phase P0 · Kern-Version 1.0 
 
 ## SEITE
 
-Nachrichtendetails, Artboard 03.6 (data-screen-label „03.6 Nachrichtendetails“, NewsDetails.dc.html:15). Plan-Eintrag LB:159. Bestand: NewsDetails.tsx.
+Nachrichtendetails, Artboard 03.6 (NewsDetails.dc.html:15). Plan-Eintrag LB:159. Bestand: NewsDetails.tsx.
 
 ## ROUTE
 
-/nachrichten/[slug] (Vorgabe, K-03). Deutsch ohne Präfix; tr und en mit Präfix, die Pfadsegmente stehen in den Quellen nicht (offen). hreflang und x-default sind im Design nicht enthalten. Design-Links zeigen auf Prototyp-Dateien; der Bestand navigiert über die Routen „home“ und „news-details“ mit ID (NewsDetails.tsx:96, 268).
+/nachrichten/[slug] (K-03). Deutsch ohne Präfix, tr und en mit Präfix; die Pfadsegmente stehen in den Quellen nicht (offen). hreflang und x-default fehlen im Design. Design-Links zeigen auf Prototyp-Dateien, der Bestand navigiert über Routen-Namen mit ID (NewsDetails.tsx:96, 268).
 
 ## QUELLEN
 
-- Design (nur lesen): NewsDetails.dc.html, Template Zeilen 9–78, Script Zeilen 79–105.
+Ohne Dateinamen gilt NewsDetails.dc.html, LB steht für 00 Laufbuch.dc.html.
+
+- Design (nur lesen): Template Zeilen 9–78, Script Zeilen 79–105.
 - Bestand (nur lesen): uploads/igmg-wetzlar-website/src/app/components/NewsDetails.tsx (299 Zeilen).
-- Hilfen (nur lesen): readme.md, 00 Laufbuch.dc.html (Kürzel LB).
-- Zusatz (nur Suche, nur lesen): LanguageContext.tsx für Neuigkeiten und Veranstaltungs-Kategorien (readme.md:7 nennt die Datei als Textquelle).
-- Ausgabe: _lauf/blaetter/S07-nachricht-detail.md. Keine Adressen, Telefonnummern oder E-Mail-Adressen auf dieser Seite, keine religiösen Texte (A5, A6).
+- Hilfen (nur lesen): readme.md, LB.
+- Zusatz (nur Suche): LanguageContext.tsx für Neuigkeiten und Veranstaltungs-Kategorien (readme.md:7).
+- Keine Adressen, Telefonnummern, E-Mail-Adressen oder religiösen Texte auf dieser Seite (A5, A6).
 
 ## ZWECK
 
-Detailseite eines Gemeindeberichts: lesen, teilen, speichern, Schlagwörter und Autor sehen, Ähnliche Artikel öffnen, Newsletter abonnieren. Das Zitat in Absatz 3 ist Fließtext, kein eigener Zitatblock (NewsDetails.dc.html:88).
+Detailseite eines Gemeindeberichts: lesen, teilen, speichern, Autor und Schlagwörter sehen, Ähnliche Artikel öffnen, Newsletter abonnieren. Das Zitat in Absatz 3 ist Fließtext, kein eigener Zitatblock (:88).
 
 ## ABSCHNITTE (Aufbau, Komponenten, Texte de/tr/en mit Fundstelle)
 
 ### Aufbau
 
-Wurzel mit lang="de", Hintergrund #FCFAF6, Text #1D1A17, 18 px, Zeilenhöhe 1,6 (NewsDetails.dc.html:15). Kopf: Header, PrayerTimesBar, Breadcrumbs (:16–18). Hauptbereich mit Container-Größen (:19), Rückweg-Link (:21). Zwei Spalten (:22): Artikel (Kopf, Hero, sieben Absätze, Schlagwörter, Reaktionszeile) und Seitenleiste (Autorkarte, Ähnliche Artikel, Newsletter-Karte #0E3929). Footer (:76).
+Wurzel lang="de", Hintergrund #FCFAF6, 18 px, Zeilenhöhe 1,6 (:15). Kopf: Header, PrayerTimesBar, Breadcrumbs (:16–18), Rückweg-Link (:21). Zwei Spalten (:22): Artikel mit Kopf, Hero, sieben Absätzen, Schlagwörtern, Reaktionen; Seitenleiste mit Autorkarte, Ähnlichen Artikeln, Newsletter (#0E3929). Footer (:76).
 
 ### Komponenten
 
 - Header (active="moschee", current="news", :16), PrayerTimesBar (:17), Footer (:76): eigene Blätter.
-- Breadcrumbs (:18): eigenes Blatt, parent-label="Neuigkeiten", parent-href="News.dc.html", label="Nachrichtendetails".
-- Icon (eigenes Blatt): arrow-left 20, calendar 16, clock 16, eye 16, share-2 20, bookmark 20, heart 20, message-square 20, external-link 20, user 20, mail 20.
-- Buttons und Karten: Inline-Stile nach Stilrezepten (LB:152). NewsCard nicht verwendet.
+- Breadcrumbs (:18), eigenes Blatt: parent-label="Neuigkeiten", parent-href="News.dc.html", label="Nachrichtendetails".
+- Icon, eigenes Blatt: arrow-left, calendar, clock, eye, share-2, bookmark, heart, message-square, external-link, user, mail.
+- Buttons und Karten: Inline-Stile (LB:152). NewsCard nicht verwendet.
 
 ### Texte de/tr/en
 
@@ -67,80 +69,76 @@ Wurzel mit lang="de", Hintergrund #FCFAF6, Text #1D1A17, 18 px, Zeilenhöhe 1,6 
 | nd.brot-eltern | Neuigkeiten | Haberler | News | NewsDetails.dc.html:18; LanguageContext.tsx:285, 372, 543, 630 |
 | nd.brot-aktuell | Nachrichtendetails | – (nur DE in Quelle) | – (nur DE in Quelle) | NewsDetails.dc.html:18 |
 
-Hinweise zur Tabelle: Absätze 1–7 sind wortgleich mit NewsDetails.tsx:33–45 (geprüft; der Bestand nutzt gerade Anführungszeichen). Namen nach A5 ersetzt: Rezitator und Imam (NewsDetails.dc.html:87), Gemeindeleiter (:88), Pressereferent (:34, :55). Schlagwort „Veranstaltung“: tr Etkinlik, en Event (abgeleitet, LanguageContext.tsx:366, 624). Teilbegriff „Startseite“: tr Ana Sayfa (:273), en Home (:531). Der Trenner „·“ ist Darstellung, kein Designtext.
+Hinweise: Absätze 1–7 wortgleich mit NewsDetails.tsx:33–45 (geprüft; nur die Anführungszeichen unterscheiden sich). Namen nach A5 ersetzt: Rezitator und Imam (:87), Gemeindeleiter (:88), Pressereferent (:34, :55). Schlagwort „Veranstaltung“: tr Etkinlik, en Event (abgeleitet, LanguageContext.tsx:366, 624). Teilbegriff „Startseite“: tr Ana Sayfa (LanguageContext.tsx:273), en Home (:531).
 
 ## DATEN (was aus der Datenbank kommt)
 
 Vorschlag (A7), Feld, Typ, mehrsprachig:
-- slug, Text, eindeutig, nein (Route).
-- titel, Text, ja (Deutsch Pflicht, sonst Rückfall auf Deutsch).
-- untertitel, Text, ja.
+
+- slug, Text, nein (Route).
+- titel, untertitel, Text, ja (Deutsch Pflicht, sonst Rückfall auf Deutsch).
 - kategorie, Auswahl (Gemeinde, Jugend, Dialog, Soziales), ja.
-- veroeffentlicht, Datum und Uhrzeit, nein; Anzeigeformat im Layout.
-- lesezeit, Zahl in Minuten, nein.
-- aufrufe, kommentare, likes, Zahl, nein; Quelle offen.
-- autor, Verweis auf Person, Funktion ja, Name nein.
-- bild, Bildverweis mit Alternativtext, ja.
-- absaetze, Absatzliste, ja.
-- schlagwoerter, Textliste, ja.
+- veroeffentlicht, Datum und Uhrzeit, nein.
+- lesezeit, aufrufe, kommentare, likes, Zahlen, nein; Quelle offen.
+- autor, Verweis auf Person: Funktion ja, Name nein.
+- bild, Verweis mit Alternativtext, ja.
+- absaetze, Absatzliste, ja; schlagwoerter, Textliste, ja.
 - aehnliche, Verweisliste (drei Einträge), nein.
 
 ## FORMULARFELDER
 
-– (entfaellt, keine Eingabefelder; der Newsletter-Button hat kein Feld, NewsDetails.dc.html:70)
+– (entfaellt, keine Eingabefelder; der Newsletter-Button hat kein Feld, :70)
 
 ## INTERAKTIONEN
 
 - Zurück zur Startseite: Link auf Home.dc.html (:21); Bestand navigateTo('home') (NewsDetails.tsx:96).
-- Neuigkeiten (Breadcrumb): Link auf News.dc.html (:18).
-- Speichern: Schalter, aria-pressed, Hintergrund #EBF9F2 bei aktiv (:35, :100). Bestand ohne Handler (NewsDetails.tsx:167).
-- Gefällt mir: Schalter, Zähler 23 zu 24 (:47, :101). Bestand ohne Handler (NewsDetails.tsx:211).
+- Breadcrumb Neuigkeiten: Link auf News.dc.html (:18).
+- Speichern, Gefällt mir: Schalter mit aria-pressed, Zustand nur lokal (:35, :47, :81); Bestand ohne Handler (NewsDetails.tsx:167, 211).
 - Link ohne Ziel: Teilen (:35), 7 Kommentare (:48), Vollständigen Artikel teilen (:49), Profil ansehen (:57), Newsletter abonnieren (:70).
-- Ähnliche Artikel: Link auf NewsDetails.dc.html (:63). Bestand: div mit onClick, nicht per Tastatur erreichbar (NewsDetails.tsx:264–268).
-- Fokus: 2 px #0E3929 mit 2 px Abstand (:13).
+- Ähnliche Artikel: Link auf NewsDetails.dc.html (:63); Bestand: div mit onClick, nicht per Tastatur erreichbar (NewsDetails.tsx:264–268).
+- Fokus: 2 px #0E3929, 2 px Abstand (:13).
 
 ## ZUSTAENDE
 
 - Eigenschaften aus data-props: – (entfaellt, kein data-props am Script-Tag, :79).
 - saved: false (Standard) oder true (Hintergrund #EBF9F2) (:81, :100).
 - liked: false (Standard, Zähler 23) oder true (Zähler 24, Hintergrund #EBF9F2) (:81, :101).
-- leer: – (nicht definiert; betrifft Absätze, Schlagwörter, Ähnliche Artikel).
-- Fehler, nicht gefunden, Ladezustand: – (nicht definiert). Bestand rendert immer den Mock-Artikel mit Standard-ID 1 (NewsDetails.tsx:27–29).
+- leer, Fehler, nicht gefunden, Ladezustand: – (nicht definiert). Bestand zeigt unabhängig von der ID immer denselben Mock-Artikel (NewsDetails.tsx:27–29).
 - Erfolg, Schritt, angemeldet: – (nicht definiert bzw. entfaellt).
 - Sprache: de (:15). tr und en fehlen; Bestand ruft useLanguage() ohne Nutzung auf (NewsDetails.tsx:24).
 
 ## BILDER
 
-- Hero: Platzhalterfläche, role="img", aria-label „Foto: Ramadan-Veranstaltung“, Höhe clamp(220px,30cqi,400px), Rahmen #DFDAD2 (:38). Bestand: externes Bild (NewsDetails.tsx:57), laut LB:34 nicht verwendet.
-- Autor: Initialenkreis 48 px (:34) und 56 px (:55); Bestand lädt /avatars/author.png (NewsDetails.tsx:152).
+- Hero: Platzhalter, role="img", aria-label „Foto: Ramadan-Veranstaltung“, Höhe clamp(220px,30cqi,400px), Rahmen #DFDAD2 (:38). Bestand: externes Bild (NewsDetails.tsx:57), laut LB:34 nicht verwendet.
+- Autor: Initialenkreis 48 px (:34) und 56 px (:55). Bestand: /avatars/author.png (NewsDetails.tsx:152).
 - Echte Fotos mit Bildrechten fehlen (LB:233).
 
 ## AUFFAELLIGKEITEN
 
-1. Beispielinhalte: Namen und Zitate sind laut LB:238 und LB:248 Beispielinhalte (MENSCHEN.md M-030). „Seit 2018 aktiv“ (:56) steht gleich im Bestand (NewsDetails.tsx:249), ohne Beleg (G-05).
-2. Datum: Design „Sa., 20. Jan. 2024, 14:30 Uhr“ (:27); Bestand roh „2024-01-20“ ohne Uhrzeit (NewsDetails.tsx:50, :127). D-10 nennt „Mo., 28. Juli 2025“ (LB:193), readme.md:12 nennt „Sa., 2. Aug.“.
-3. Feste Werte im Design: 847 Aufrufe (:29), 7 Kommentare (:48), 23 oder 24 Likes (:101); Bestand aus Datenfeldern (NewsDetails.tsx:52–54).
-4. Icons: Schlagwörter bookmark (:43) statt Tag (NewsDetails.tsx:191); Gefällt mir heart (:47) statt ThumbsUp (NewsDetails.tsx:212).
-5. Stil: Kategorie-Farben Hex (:26, :96–98) statt Tailwind (NewsDetails.tsx:82–85); Titel Source Serif 4 (:31) statt font-bold (NewsDetails.tsx:141). Das Design gilt für Gestalt und Text.
-6. Ähnliche Artikel: Design-Ziel NewsDetails.dc.html (:63), Bestand numerische ID (NewsDetails.tsx:268). NewsCard ist laut LB:159 vorgesehen, aber nicht verwendet.
-7. Hero: Bestand extern (NewsDetails.tsx:57), Design Platzhalter (:38). readme.md:22 verbietet Muster hinter Text, das Streifenmuster liegt hinter der Beschriftung. Auslegung klären.
-8. Bestand ohne Header, PrayerTimesBar, Breadcrumbs und Footer; Layout-Einbindung ungeprüft. Sprache: nur Teilbegriffe in LanguageContext.tsx (Neuigkeiten :285, 372, 543, 630; Jugend :109, 367, 625).
+1. Beispielinhalte: Namen und Zitate (LB:238, LB:248; MENSCHEN.md M-030). „Seit 2018 aktiv“ (:56) ohne Beleg, steht auch im Bestand (NewsDetails.tsx:249) (G-05).
+2. Datum: Design „Sa., 20. Jan. 2024, 14:30 Uhr“ (:27); Bestand roh „2024-01-20“ (NewsDetails.tsx:127); D-10 nennt „Mo., 28. Juli 2025“ (LB:193).
+3. Feste Werte im Design: Aufrufe, Kommentare, Likes (:29, :48, :101); Bestand aus Daten (NewsDetails.tsx:52–54).
+4. Icons: bookmark statt Tag (:43; NewsDetails.tsx:191), heart statt ThumbsUp (:47; NewsDetails.tsx:212).
+5. Stil: Hex-Farben (:26, :96–98) statt Tailwind (NewsDetails.tsx:82–85); Source Serif 4 (:31) statt font-bold (NewsDetails.tsx:141). Das Design gilt.
+6. Ähnliche Artikel: Design-Ziel NewsDetails.dc.html (:63), Bestand numerische ID (NewsDetails.tsx:268). NewsCard laut LB:159 vorgesehen, nicht verwendet.
+7. Hero: Bestand extern (NewsDetails.tsx:57), Design Platzhalter (:38). readme.md:22 verbietet Muster hinter Text; das Streifenmuster liegt hinter der Beschriftung.
+8. Bestand ohne Header, PrayerTimesBar, Breadcrumbs, Footer; Layout-Einbindung ungeprüft.
 
 ## OFFENE FRAGEN
 
 1. Wie lauten die Slugs für Artikel und Ähnliche Artikel, da der Bestand numerische IDs nutzt?
 2. Ist der Artikeltext eine Absatzliste, HTML (NewsDetails.tsx:182) oder Rich Text?
 3. Welche Ansicht zeigt ein unbekannter Slug (Leer- oder 404-Zustand)?
-4. Sollen Speichern und Gefällt mir nur lokal wirken oder dauerhaft pro Nutzer?
-5. Woher kommen Aufrufe und Kommentarzahl, und ist eine Kommentarfunktion gewünscht?
+4. Speichern und Gefällt mir: nur lokal oder dauerhaft pro Nutzer?
+5. Herkunft der Aufrufe und Kommentarzahl; ist eine Kommentarfunktion gewünscht?
 6. Was tut Teilen: Link kopieren, Web-Share oder ein Ziel?
-7. Newsletter: Eingabefeld, Einwilligungstext und Anbieter fehlen; rechtliche Prüfung nach G-08 (LB:284).
-8. Welches Ziel hat Profil ansehen? K-03 enthält keine Autorenseite, nächstliegend wäre /vorstand.
-9. Welches Datumsformat gilt (D-10, readme.md:12 oder Design)?
-10. Bestätigt die Gemeinde Aussagen und Namen im Text und in der Autorkarte (G-05)?
+7. Newsletter: Eingabefeld, Einwilligungstext und Anbieter fehlen (G-08, LB:284).
+8. Ziel für Profil ansehen: K-03 enthält keine Autorenseite.
+9. Gültiges Datumsformat: D-10, readme.md:12 oder Design?
+10. Bestätigt die Gemeinde Aussagen und Namen (G-05)?
 11. Autorenbild: Initialen oder Bild (NewsDetails.tsx:152)?
-12. Welche Auswahlregel gilt für Ähnliche Artikel?
-13. Welche Texte dieser Seite bekommen tr- und en-Fassungen? Neue Fassungen sind in MENSCHEN.md zu markieren.
-14. Für MENSCHEN.md vorzumerken (durch den Orchestrator): [Name – Pressereferent], [Name – Rezitator], [Name – Imam], [Name – Gemeindeleiter], [Initialen Autor], [Foto: Ramadan-Veranstaltung].
+12. Auswahlregel für Ähnliche Artikel?
+13. Welche Texte bekommen tr- und en-Fassungen?
+14. Für MENSCHEN.md vorzumerken (Orchestrator): [Name – Pressereferent], [Name – Rezitator], [Name – Imam], [Name – Gemeindeleiter], [Initialen Autor], [Foto: Ramadan-Veranstaltung].
 
 === ENDE S07 · BEREIT ZUR RÜCKGABE ===
