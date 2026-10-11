@@ -196,7 +196,7 @@ export function FeldOptionen({
   hinweis,
   fehler,
   pflicht,
-  spaltenMin = 'sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]',
+  spaltenMin = 'sm:raster-kacheln',
   kompakt = false,
 }: {
   name: string;
@@ -246,7 +246,7 @@ export function FeldOptionen({
               name={name}
               value={o.wert}
               defaultChecked={gewaehlt.has(o.wert)}
-              className="mt-0.5 size-[22px] shrink-0 accent-gruen-700"
+              className="mt-0.5 size-5.5 shrink-0 accent-gruen-700"
             />
             <span className="flex flex-col leading-snug">
               <strong>{o.label}</strong>
@@ -295,7 +295,7 @@ export function FeldHaken({
           required={Boolean(pflicht)}
           aria-invalid={fehler ? true : undefined}
           aria-describedby={fehler ? `${id}-fehler` : undefined}
-          className="mt-0.5 size-[22px] shrink-0 accent-gruen-700"
+          className="mt-0.5 size-5.5 shrink-0 accent-gruen-700"
         />
         <span className="flex flex-col leading-normal">
           <span>
@@ -313,7 +313,7 @@ export function FeldHaken({
 /** Honigtopf gegen Bots (ADR 0005): außerhalb des Sichtbereichs, nicht fokussierbar, ohne Autovervollständigung. */
 export function Honigtopf({ label }: { label: string }) {
   return (
-    <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+    <div aria-hidden="true" className="absolute -left-full h-px w-px overflow-hidden">
       <label>
         {label}
         <input type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />

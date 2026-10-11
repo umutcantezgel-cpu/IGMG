@@ -50,7 +50,7 @@ export function AltchaFeld({ sprache, texte }: { sprache: 'de' | 'tr' | 'en'; te
     return () => clearTimeout(zeit);
   }, [geladen]);
   return (
-    <div ref={ref} className="flex min-h-[72px] flex-col gap-1.5" role="group" aria-label={texte.label}>
+    <div ref={ref} className="flex min-h-18 flex-col gap-1.5" role="group" aria-label={texte.label}>
       {geladen
         ? createElement('altcha-widget', {
             challenge: '/api/altcha',

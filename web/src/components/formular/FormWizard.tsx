@@ -1,13 +1,20 @@
 import { ArrowLeft } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { Fehlerstand } from '@/lib/formulare/wizard';
 import { cn } from '@/lib/utils';
 import { Honigtopf } from './Felder';
 import { FehlerZusammenfassung } from './Rueckmeldung';
 import { SendenKnopf } from './SendenKnopf';
 
-const SPALTEN: Record<number, string> = { 2: 'grid-cols-2', 3: 'grid-cols-3', 4: 'grid-cols-4', 5: 'grid-cols-5' };
+/**
+ * Schritt-Anzeiger (K-005): eine Spalte auf dem Telefon, zwei ab 640 px, je Schritt eine Spalte ab 1024 px.
+ * Erst ab 1024 px stehen Kreis und Titel untereinander; so passt der längste Titel („Einverständniserklärungen“,
+ * 200 px fett) ohne Umbruch in jede Spalte.
+ */
+const SPALTEN_LG: Record<number, string> = { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' };
+/** Blendet den neuen Schritt in der Überblendung `dauer-wechsel` ein (B-04). */
+const BLENDET_EIN: CSSProperties = { '--dauer': 'var(--dauer-wechsel)' } as CSSProperties;
 
 export type WizardGruppe = { titel: string; hinweis?: string; inhalt: ReactNode };
 export type WizardSchritt = { titel: string; gruppen: WizardGruppe[] };
@@ -28,6 +35,7 @@ export async function FormWizard({
   fehlerTexte = {},
   sendenText,
   altcha,
+  gewechselt = false,
 }: {
   sprache: 'de' | 'tr' | 'en';
   schritte: WizardSchritt[];
@@ -42,6 +50,8 @@ export async function FormWizard({
   sendenText: string;
   /** `<AltchaFeld key=… />` – wird nur im letzten Schritt gerendert */
   altcha: ReactNode;
+  /** true nach einem Schrittwechsel ohne Fehler: der sichtbare Schritt blendet ein (B-04); beim ersten Laden nicht */
+  gewechselt?: boolean;
 }) {
   const t = await getTranslations({ locale: sprache, namespace: 'formulare' });
   const letzter = schritte.length - 1;
@@ -54,13 +64,14 @@ export async function FormWizard({
         <p data-fokus={ergebnis ? undefined : true} tabIndex={-1} className="font-bold text-gruen-800 outline-none">
           {t('wizard.schrittZeile', { nr: schritt + 1, anzahl: schritte.length, titel: schritte[schritt].titel })}
         </p>
-        <ol className={cn('m-0 grid list-none gap-2 p-0', SPALTEN[schritte.length])}>
+        <ol className={cn('m-0 grid list-none gap-2 p-0 sm:grid-cols-2', SPALTEN_LG[schritte.length])}>
           {schritte.map((s, i) => (
             <li key={s.titel} aria-current={i === schritt ? 'step' : undefined} className="flex min-w-0 flex-col gap-1.5">
-              <span aria-hidden className={cn('h-1.5 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
+              {/* Fortschrittsbalken ab 640 px; auf dem Telefon zeigen Kreis und Häkchen den Stand (Liste statt Balken) */}
+              <span aria-hidden className={cn('hidden h-1.5 rounded-pill sm:block', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
               <span
                 className={cn(
-                  'flex flex-col items-start gap-1.5 text-16 leading-tight font-bold [overflow-wrap:anywhere] sm:flex-row sm:items-center',
+                  'flex min-w-0 flex-row items-center gap-1.5 text-16 leading-tight font-bold lg:flex-col lg:items-start',
                   i === schritt ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >
@@ -77,7 +88,7 @@ export async function FormWizard({
                 >
                   {i < schritt ? '✓' : i + 1}
                 </span>
-                <span>{s.titel}</span>
+                <span className="min-w-0">{s.titel}</span>
                 {i < schritt ? <span className="sr-only">{t('wizard.erledigt')}</span> : null}
               </span>
             </li>
@@ -96,12 +107,17 @@ export async function FormWizard({
       <input type="hidden" name="schritt" value={schritt} />
       <input type="hidden" name="sprache" value={sprache} />
       {schritte.map((s, i) => (
-        <div key={s.titel} hidden={i !== schritt} className="flex flex-col gap-6">
+        <div
+          key={s.titel}
+          hidden={i !== schritt}
+          className={cn('flex flex-col gap-6', gewechselt && i === schritt && 'blendet-ein')}
+          style={gewechselt && i === schritt ? BLENDET_EIN : undefined}
+        >
           {s.gruppen.map((g) => (
             <fieldset key={g.titel} className="m-0 flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
               <legend className="-ml-2 px-2 font-display text-24 font-semibold">{g.titel}</legend>
               {g.hinweis ? <p className="text-16 text-tinte-2">{g.hinweis}</p> : null}
-              <div className="grid gap-x-6 gap-y-4 sm:grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">{g.inhalt}</div>
+              <div className="grid gap-x-6 gap-y-4 sm:raster-kacheln">{g.inhalt}</div>
             </fieldset>
           ))}
         </div>
@@ -114,7 +130,7 @@ export async function FormWizard({
             type="submit"
             name="richtung"
             value="zurueck"
-            className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 hover:bg-gruen-50"
+            className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
           >
             <ArrowLeft aria-hidden className="size-5" />
             {t('wizard.zurueck')}

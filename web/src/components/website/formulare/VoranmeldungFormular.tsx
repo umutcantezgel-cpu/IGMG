@@ -104,6 +104,7 @@ export async function VoranmeldungFormular({
       sprache={sprache}
       aktuell={schritt}
       ergebnis={ergebnis}
+      gewechselt={!ergebnis && Object.keys(werte).length > 0}
       sendenText={t('absenden')}
       felder={{
         klasse: t('feld.klasse'),
@@ -141,7 +142,7 @@ export async function VoranmeldungFormular({
                     pflicht={p}
                     wert={w('klasse')}
                     fehler={f('klasse')}
-                    spaltenMin="sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]"
+                    spaltenMin="sm:raster-kacheln"
                     optionen={KLASSEN.map((k) => ({ wert: k, label: t(`klasse.${k}`), beschreibung: t(`klasse.${k}Text`) }))}
                   />
                 </div>
@@ -159,7 +160,7 @@ export async function VoranmeldungFormular({
                       pflicht={p}
                       wert={w('geschlecht')}
                       fehler={f('geschlecht')}
-                      spaltenMin="sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))]"
+                      spaltenMin="sm:grid-cols-2"
                       optionen={GESCHLECHTER.map((g) => ({ wert: g, label: t(`feld.${g}`) }))}
                     />
                   </div>

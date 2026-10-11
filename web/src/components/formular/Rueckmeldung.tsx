@@ -1,4 +1,5 @@
 import { CircleAlert, CircleCheck } from 'lucide-react';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { feldId } from './Felder';
 
 /**
@@ -26,7 +27,7 @@ export function FehlerZusammenfassung({
       className="flex items-start gap-3 rounded-lg border-2 border-fehler bg-fehler-toenung px-5 py-4 outline-none"
     >
       <CircleAlert aria-hidden className="mt-0.5 size-6 shrink-0 text-fehler" />
-      <div className="flex flex-col gap-1">
+      <div className="flex min-w-0 flex-col gap-1">
         <p className="font-bold text-fehler">{texte.fehler[fehler] ?? texte.zusammenfassung}</p>
         {liste.length ? (
           <ul className="list-disc pl-5 text-16">
@@ -63,8 +64,9 @@ export function Erfolg({ text }: { text: string }) {
 }
 
 /**
- * Erfolgsansicht mehrstufiger Formulare (FormWizard.dc.html:16–24): Rahmen grün, Symbol, Überschrift, Text,
- * optional „So geht es weiter“ und Verweise (erster gefüllt, weitere umrandet).
+ * Erfolgsansicht mehrstufiger Formulare (FormWizard.dc.html:16–24): Rahmen grün, Zustandsgrafik „erfolg“ (B-11,
+ * tritt mit `tritt-auf` auf), Überschrift, Text, optional „So geht es weiter“ und Verweise (erster gefüllt, weitere
+ * umrandet). Die Fehlerzusammenfassung dagegen bewegt sich nicht.
  */
 export function ErfolgsAnsicht({
   titel,
@@ -83,17 +85,15 @@ export function ErfolgsAnsicht({
       tabIndex={-1}
       role="status"
       aria-labelledby="formular-erfolg"
-      className="flex flex-col items-start gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6 outline-none md:p-12"
+      className="tritt-auf flex flex-col items-start gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6 outline-none md:p-12"
     >
-      <span className="flex size-16 items-center justify-center rounded-pill bg-gruen-50 text-gruen-700">
-        <CircleCheck aria-hidden className="size-9" />
-      </span>
+      <Zustandsgrafik art="erfolg" />
       <h2 id="formular-erfolg" className="text-30 text-gruen-800 md:text-36">
         {titel}
       </h2>
-      <p className="max-w-[62ch] text-20">{text}</p>
+      <p className="max-w-text text-20">{text}</p>
       {weiter ? (
-        <div className="max-w-[62ch] rounded-md bg-sand px-5 py-4">
+        <div className="max-w-text rounded-md bg-sand px-5 py-4">
           <h3 className="mb-2 font-text text-18 font-bold tracking-normal">{weiter.titel}</h3>
           <ol className="flex list-decimal flex-col gap-1 pl-6">
             {weiter.schritte.map((s) => (
@@ -110,8 +110,8 @@ export function ErfolgsAnsicht({
               href={v.href}
               className={
                 i === 0
-                  ? 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-gruen-700 px-5 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss'
-                  : 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800'
+                  ? 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98'
+                  : 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98'
               }
             >
               {v.label}
