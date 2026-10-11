@@ -61,3 +61,8 @@ Jede Entscheidung mit Datum. Folgenreiche Entscheidungen stehen zusätzlich als 
   - der öffentliche Link auf das Figma-Projekt im README;
   - die vier Logos, als dieselben 40×40-Bilder, nur stärker komprimiert. M-016 (größere Logo-Dateien) bleibt offen.
 - **Repo:** Der Ordner kommt nicht ins Repo, weil nur `web/` und `_lauf/` versioniert werden.
+
+**R-E13 · 2026-10-11 · Messwerkzeuge schreiben nur nach `_lauf/release/` (G-01)**
+- `web/scripts/messen.mjs` legt Lighthouse-Ergebnisse jetzt unter `_lauf/release/belege/lighthouse/<zeit>/` ab statt unter `_lauf/belege/`. Die vollen Berichte bleiben lokal (`_lauf/release/.gitignore`).
+- Neu: `web/scripts/inventar.mjs` (I00) besucht alle öffentlichen Routen in drei Sprachen ohne Klick und hält Endgerätezugriffe, Anfragen, Metadaten, Kopfzeilen, axe und Links fest. Ausgabe: `_lauf/release/eingang/I00-inventar.{md,json}`. Das Skript dient später als Gegenprobe für T10/T11 (Speicher-Tabelle gegen beobachtete Speicher).
+- Probe gegen den Dev-Server: Auf jeder Seite meldet React eine Hydration-Abweichung beim Attribut `open`. Vermutete Ursache ist das Vorab-Skript des Konzept-Hinweises. Das geht als Hinweis an R1a/R4.

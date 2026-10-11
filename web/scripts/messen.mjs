@@ -3,7 +3,7 @@
 // Zwei Läufe je Route (E-026): „devtools“ (angewandte Drosselung: 150 ms RTT, 1,6 Mbit/s, CPU ×4 – maßgeblich gegen
 // localhost) und „simulate“ (Lighthouse-Standard; gegen localhost systematisch zu pessimistisch, weil im
 // ungedrosselten Trace alle Anfragen vor dem ersten Zeichnen starten). Bewertet wird devtools, berichtet beides.
-// Ergebnis: _lauf/belege/lighthouse/<zeitstempel>/ergebnis.md (+ volle Berichte lokal). Exit 1, wenn eine Schwelle verfehlt ist.
+// Ergebnis: _lauf/release/belege/lighthouse/<zeitstempel>/ergebnis.md (G-01: nur _lauf/release/ beschreibbar) (+ volle Berichte lokal). Exit 1, wenn eine Schwelle verfehlt ist.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from '@playwright/test';
@@ -28,7 +28,7 @@ async function standardPfade() {
 
 const pfade = pfadeArg.length ? pfadeArg : await standardPfade();
 const zeit = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-const ziel = join(import.meta.dirname, '..', '..', '_lauf', 'belege', 'lighthouse', zeit);
+const ziel = join(import.meta.dirname, '..', '..', '_lauf', 'release', 'belege', 'lighthouse', zeit);
 mkdirSync(ziel, { recursive: true });
 
 const port = 9300 + Math.floor(Math.random() * 400);
