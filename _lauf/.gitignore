@@ -5,3 +5,9 @@ lichtung/**/.pglite/
 lichtung/**/.env*
 !lichtung/**/.env.example
 werkzeuge/**/node_modules/
+# E-010: Bilder (Referenzen, App-Fotos) bleiben lokal – Groesse und Beispielnamen im Bild
+belege/**/*.png
+belege/**/*.jpg
+belege/**/*.webp
+werkzeuge/referenz/cache/
+werkzeuge/**/*.log

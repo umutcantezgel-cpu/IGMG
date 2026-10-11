@@ -34,3 +34,9 @@ Unteragenten laufen als Workflow mit `model: 'haiku'`, `effort: 'max'`, Pool mit
 
 **E-009 · 2026-10-11 · Orchestrator (nach Blockade durch die Sicherheitsprüfung „PII“) · Nur web/ und _lauf/ im Repository**
 Das Einchecken des ganzen Workspace in das öffentliche Repo wurde von der automatischen Sicherheitsprüfung wegen Personendaten blockiert (Bestand und Design enthalten Namen aus Figma Make, teils möglicherweise echte Vorstandsnamen). Sicherere Form von E-004: Das Repository in der Wurzel versioniert über `.git/info/exclude` nur `web/` und `_lauf/`; Bestand und Design bleiben lokal und werden nur gelesen. MENSCHEN.md nennt keine Personennamen, sondern Fundstellen. Ob Bestand und Design doch ins Repo sollen, steht als M-003 in MENSCHEN.md.
+
+**E-010 · 2026-10-11 · Bildbelege bleiben lokal**
+Bildreferenzen und App-Bildschirmfotos (`_lauf/belege/**/*.png`) werden nicht versioniert: Sie sind groß (Hunderte Bilder) und zeigen Beispielnamen aus dem Design – im öffentlichen Repo unerwünscht (E-005/E-009). Versioniert werden die Berichte (`index.json`, Prüfberichte) mit Dateinamen; die Bilder lassen sich mit `_lauf/werkzeuge/referenz/render.mjs` jederzeit neu erzeugen.
+
+**E-011 · 2026-10-11 · Lichtung (c) gelungen – Bildreferenzen per Hülle**
+Die Artboards sind 1280 px breit gebaut; eine direkte 390-px-Ansicht zeigt das Desktop-Layout. Das Werkzeug `_lauf/werkzeuge/referenz/render.mjs` bindet jedes Artboard wie 08/09 per `dc-import` in einen Rahmen fester Breite (390 bzw. 1440 px) ein und setzt Eigenschaften als Attribute (kebab-case). React 18.3.1 von unpkg wird lokal zwischengespeichert (gleiche Bytes, SRI gültig); Google Fonts werden beim Rendern geladen. Probe: Events bei 390/1440 und state=leer ohne Fehler.

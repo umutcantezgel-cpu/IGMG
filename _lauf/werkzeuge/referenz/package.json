@@ -1,0 +1,12 @@
+{
+  "name": "igmg-referenz-renderer",
+  "private": true,
+  "type": "module",
+  "description": "Rendert die Claude-Design-Artboards (*.dc.html) als Bildreferenzen (Lichtung c). Nur Entwicklungswerkzeug.",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.64.0"
+  }
+}

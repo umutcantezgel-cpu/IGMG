@@ -1,0 +1,743 @@
+{
+  "de": {
+    "header": {
+      "home": "Startseite",
+      "prayerTimes": "Gebetszeiten",
+      "login": "Anmelden",
+      "dashboard": "Dashboard",
+      "ticketButton": "Meldung",
+      "mobileMenuDescription": "Navigation für IGMG Wetzlar",
+      "mosque": {
+        "title": "Moschee",
+        "about": "Über uns",
+        "board": "Vorstand",
+        "project": "Projekt",
+        "events": "Veranstaltungen",
+        "news": "Neuigkeiten",
+        "contact": "Kontakt",
+        "igmg": "IGMG"
+      },
+      "islam": {
+        "title": "Islam",
+        "prayerTimes": "Gebetszeiten",
+        "quran": "Quran",
+        "knowledge": "Wissen"
+      },
+      "organizations": {
+        "title": "Organisationen",
+        "at": {
+          "title": "AT (Erwachsene)",
+          "events": "Veranstaltungen",
+          "news": "Neuigkeiten"
+        },
+        "kt": {
+          "title": "KT (Frauen)",
+          "events": "Veranstaltungen",
+          "news": "Neuigkeiten"
+        },
+        "gt": {
+          "title": "GT (Jugend)",
+          "events": "Veranstaltungen",
+          "news": "Neuigkeiten"
+        },
+        "kgt": {
+          "title": "KGT (Frauenjugend)",
+          "events": "Veranstaltungen",
+          "news": "Neuigkeiten"
+        }
+      },
+      "loginForm": {
+        "title": "Anmelden",
+        "subtitle": "Melden Sie sich in Ihrem Konto an",
+        "emailLabel": "E-Mail",
+        "emailPlaceholder": "ihre.email@beispiel.de",
+        "emailRequired": "E-Mail ist erforderlich",
+        "emailInvalid": "Ungültige E-Mail-Adresse",
+        "passwordLabel": "Passwort",
+        "passwordPlaceholder": "Ihr Passwort",
+        "passwordRequired": "Passwort ist erforderlich",
+        "passwordMinLength": "Passwort muss mindestens 6 Zeichen haben",
+        "loginButton": "Anmelden"
+      },
+      "loginDropdown": {
+        "myAccount": "Mein Konto",
+        "settings": "Einstellungen",
+        "logout": "Abmelden",
+        "forgotPassword": "Passwort vergessen?"
+      }
+    },
+    "prayerTimesBar": {
+      "location": "Wetzlar, Deutschland",
+      "currentTime": "Aktuelle Zeit",
+      "prayers": {
+        "imsak": "Imsak",
+        "sunrise": "Aufgang",
+        "dhuhr": "Dhuhr",
+        "asr": "Asr",
+        "maghrib": "Maghrib",
+        "isha": "Isha"
+      }
+    },
+    "hero": {
+      "welcome": "Willkommen in unserer Gemeinde",
+      "subtitle": "Eine lebendige muslimische Gemeinde im Herzen von Wetzlar. Entdecken Sie unsere Aktivitäten, Gebetszeiten und Gemeinschaftsveranstaltungen.",
+      "joinUs": "Gemeinde beitreten",
+      "learnMore": "Mehr erfahren"
+    },
+    "events": {
+      "title": "Unsere Veranstaltungen",
+      "subtitle": "Entdecken Sie die vielfältigen Aktivitäten und Programme unserer Gemeinde für alle Altersgruppen.",
+      "upcomingEvents": "Kommende Veranstaltungen",
+      "recommended": "Empfohlen",
+      "categories": {
+        "education": "Bildung",
+        "event": "Veranstaltung",
+        "youth": "Jugend"
+      }
+    },
+    "news": {
+      "title": "Neuigkeiten",
+      "subtitle": "Bleiben Sie über die neuesten Entwicklungen in unserer Gemeinde informiert."
+    },
+    "organizations": {
+      "main": "IGMG Wetzlar",
+      "at": "AT (Erwachsene)",
+      "kt": "KT (Frauen)",
+      "gt": "GT (Jugend)",
+      "kgt": "KGT (Frauenjugend)"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Willkommen zurück!",
+      "overview": "Übersicht",
+      "tickets": "Meldungen",
+      "events": "Veranstaltungen",
+      "profile": "Profil",
+      "stats": {
+        "totalTickets": "Gesamt Meldungen",
+        "openTickets": "Offene Meldungen",
+        "upcomingEvents": "Kommende Events",
+        "communityMembers": "Gemeinde Mitglieder"
+      }
+    },
+    "prayerTimes": {
+      "title": "Gebetszeiten",
+      "today": "Heute",
+      "monthly": "Monatlich",
+      "qibla": "Qibla",
+      "settings": "Einstellungen"
+    },
+    "ticket": {
+      "title": "Neue Meldung erstellen",
+      "subtitle": "Teilen Sie uns Ihr Anliegen mit - wir kümmern uns darum.",
+      "success": "Meldung erfolgreich gesendet!",
+      "form": {
+        "name": "Vorname",
+        "namePlaceholder": "Ihr Vorname",
+        "lastname": "Nachname",
+        "lastnamePlaceholder": "Ihr Nachname",
+        "phone": "Telefon",
+        "phonePlaceholder": "+49 123 456789",
+        "email": "E-Mail",
+        "emailPlaceholder": "ihre.email@beispiel.de",
+        "organization": "Organisation",
+        "organizationPlaceholder": "Wählen Sie Ihre Organisation",
+        "feedbackWanted": "Rückmeldung gewünscht?",
+        "feedbackType": "Art der Rückmeldung",
+        "messageType": "Meldungstyp",
+        "messageTypePlaceholder": "Wählen Sie den Meldungstyp",
+        "text": "Nachricht",
+        "textPlaceholder": "Beschreiben Sie Ihr Anliegen...",
+        "yes": "Ja",
+        "no": "Nein",
+        "submit": "Meldung senden",
+        "cancel": "Abbrechen",
+        "organizations": {
+          "at": "AT (Erwachsene)",
+          "kt": "KT (Frauen)",
+          "gt": "GT (Jugend)",
+          "kgt": "KGT (Frauenjugend)"
+        },
+        "feedbackTypes": {
+          "phone": "Telefon",
+          "email": "E-Mail",
+          "personal": "Persönlich"
+        },
+        "messageTypes": {
+          "complaint": "Beschwerde",
+          "wish": "Wunsch",
+          "suggestion": "Vorschlag",
+          "information": "Information"
+        }
+      },
+      "validation": {
+        "nameRequired": "Vorname ist erforderlich",
+        "lastnameRequired": "Nachname ist erforderlich",
+        "phoneRequired": "Telefonnummer ist erforderlich",
+        "organizationRequired": "Organisation ist erforderlich",
+        "feedbackWantedRequired": "Bitte wählen Sie eine Option",
+        "feedbackTypeRequired": "Art der Rückmeldung ist erforderlich",
+        "messageTypeRequired": "Meldungstyp ist erforderlich",
+        "textRequired": "Nachricht ist erforderlich"
+      }
+    },
+    "joinUs": {
+      "title": "Werden Sie Teil unserer Gemeinde",
+      "subtitle": "Registrieren Sie sich als Mitglied der IGMG Wetzlar Gemeinde und profitieren Sie von exklusiven Veranstaltungen und Services."
+    },
+    "aboutUs": {
+      "title": "Über uns",
+      "subtitle": "Die Geschichte der IGMG Fatih Camii Wetzlar",
+      "history": {
+        "title": "Fatih Camii - Von der Vergangenheit bis heute",
+        "content1": "Die IGMG Fatih Camii wurde erstmals 1976 in der Formerstraße gegründet. Mit der wachsenden Gemeinde und den sich entwickelnden Bedürfnissen zogen wir von unserem ersten Standort in die Garbenheimerstraße um. Dort hatten wir die Gelegenheit, eine größere Moschee und ein Gemeindezentrum zu schaffen.",
+        "content2": "Da unsere stetig wachsende Gemeinde jedoch mehr Platz benötigte, entschieden wir uns für einen Umzug zum Niedergirmeser Weg. Hier fanden wir einen größeren und geeigneteren Ort für unsere Gemeinde.",
+        "content3": "Im Jahr 2019 fand der letzte und größte Umzug unserer Moschee statt. Unser weitläufiges Gelände in der Philipsstraße wurde zum idealen Ort, um die Bedürfnisse unserer wachsenden Gemeinschaft zu erfüllen.",
+        "content4": "Von der Vergangenheit bis heute ist die Geschichte unserer Moschee eine Geschichte des kontinuierlichen Wachstums und des Strebens, unserer Gemeinde besser zu dienen. Wie heute werden wir auch morgen unserer Gemeinde weiterhin dienen. Wir danken Ihnen, dass Sie uns auf dieser Reise begleiten."
+      },
+      "community": {
+        "title": "Gebet, Gemeinschaft, Einheit",
+        "content1": "Die Geschichte der IGMG Fatih Camii begann im Keller eines Hauses. Als wir 1976 gegründet wurden, beschwerten sich einige Anwohner über den Lärm. Aber wir gaben nicht auf. Mit Glauben und Entschlossenheit setzten wir diese Reise fort, die wir mit unserer kleinen Gemeinschaft begonnen hatten.",
+        "content2": "Im Laufe der Zeit begann unsere kleine Gemeinde zu wachsen und schließlich, nach jahrelangen Anstrengungen, fanden wir die Gelegenheit, unser eigenes Eigentum zu erwerben.",
+        "content3": "Die Geschichte der IGMG Fatih Camii ist eine Geschichte von Glaube, Vertrauen, Ausdauer und Gemeinschaftsgeist. Und diese Geschichte wird, wie heute, auch morgen weitergehen. Wir danken Ihnen, dass Sie diesen Weg mit uns gegangen sind."
+      },
+      "timeline": {
+        "year1976": "1976 - Gründung in der Formerstraße",
+        "yearEarly": "Frühe Jahre - Umzug zur Garbenheimerstraße",
+        "yearMid": "Wachstumsphase - Umzug zum Niedergirmeser Weg",
+        "year2019": "2019 - Umzug zur Philipsstraße (aktueller Standort)",
+        "yearFuture": "Zukunft - Weiterhin im Dienste unserer Gemeinde"
+      },
+      "values": {
+        "title": "Unsere Werte",
+        "faith": {
+          "title": "Glaube",
+          "description": "Unser Glaube ist das Fundament unserer Gemeinschaft und leitet uns in allem, was wir tun."
+        },
+        "community": {
+          "title": "Gemeinschaft",
+          "description": "Wir schaffen einen Ort der Zusammengehörigkeit für alle Mitglieder unserer vielfältigen Gemeinde."
+        },
+        "service": {
+          "title": "Dienst",
+          "description": "Wir sind der Gemeinde und der Gesellschaft durch Bildung, soziale Dienste und spirituelle Führung verpflichtet."
+        },
+        "growth": {
+          "title": "Wachstum",
+          "description": "Wir wachsen kontinuierlich, um den sich wandelnden Bedürfnissen unserer Gemeinde gerecht zu werden."
+        }
+      },
+      "leadership": {
+        "title": "Unsere Vorsitzenden",
+        "subtitle": "Führung durch die Jahre",
+        "thankYou": {
+          "title": "Dankbarkeit und Anerkennung",
+          "content": "Wir möchten allen ehemaligen und aktuellen Vorsitzenden unseren tiefen Dank aussprechen. Durch ihre Führung, ihr Engagement und ihre Hingabe haben sie unsere Gemeinde geprägt und zu dem gemacht, was sie heute ist. Ihre unermüdliche Arbeit und ihr Einsatz für das Wohl der Gemeinde werden für immer in unseren Herzen bleiben."
+        },
+        "positions": {
+          "current": "Aktueller Vorsitzender",
+          "former": "Ehemaliger Vorsitzender"
+        }
+      },
+      "currentBoard": {
+        "title": "Aktueller Vorstand",
+        "subtitle": "Unser engagiertes Team",
+        "description": "Lernen Sie die Menschen kennen, die unsere Gemeinde heute führen und gestalten."
+      }
+    }
+  },
+  "tr": {
+    "header": {
+      "home": "Ana Sayfa",
+      "prayerTimes": "Namaz Vakitleri",
+      "login": "Giriş Yap",
+      "dashboard": "Panel",
+      "ticketButton": "Bildirim",
+      "mobileMenuDescription": "IGMG Wetzlar navigasyon",
+      "mosque": {
+        "title": "Cami",
+        "about": "Hakkımızda",
+        "board": "Yönetim",
+        "project": "Proje",
+        "events": "Etkinlikler",
+        "news": "Haberler",
+        "contact": "İletişim",
+        "igmg": "IGMG"
+      },
+      "islam": {
+        "title": "İslam",
+        "prayerTimes": "Namaz Vakitleri",
+        "quran": "Kuran",
+        "knowledge": "Bilgi"
+      },
+      "organizations": {
+        "title": "Organizasyonlar",
+        "at": {
+          "title": "AT (Yetişkinler)",
+          "events": "Etkinlikler",
+          "news": "Haberler"
+        },
+        "kt": {
+          "title": "KT (Kadınlar)",
+          "events": "Etkinlikler",
+          "news": "Haberler"
+        },
+        "gt": {
+          "title": "GT (Gençlik)",
+          "events": "Etkinlikler",
+          "news": "Haberler"
+        },
+        "kgt": {
+          "title": "KGT (Kadın Gençlik)",
+          "events": "Etkinlikler",
+          "news": "Haberler"
+        }
+      },
+      "loginForm": {
+        "title": "Giriş Yap",
+        "subtitle": "Hesabınıza giriş yapın",
+        "emailLabel": "E-posta",
+        "emailPlaceholder": "email@ornek.com",
+        "emailRequired": "E-posta gerekli",
+        "emailInvalid": "Geçersiz e-posta adresi",
+        "passwordLabel": "Şifre",
+        "passwordPlaceholder": "Şifreniz",
+        "passwordRequired": "Şifre gerekli",
+        "passwordMinLength": "Şifre en az 6 karakter olmalı",
+        "loginButton": "Giriş Yap"
+      },
+      "loginDropdown": {
+        "myAccount": "Hesabım",
+        "settings": "Ayarlar",
+        "logout": "Çıkış Yap",
+        "forgotPassword": "Şifrenizi mi unuttunuz?"
+      }
+    },
+    "prayerTimesBar": {
+      "location": "Wetzlar, Almanya",
+      "currentTime": "Şu anki saat",
+      "prayers": {
+        "imsak": "İmsak",
+        "sunrise": "Güneş Doğuşu",
+        "dhuhr": "Öğle",
+        "asr": "İkindi",
+        "maghrib": "Akşam",
+        "isha": "Yatsı"
+      }
+    },
+    "hero": {
+      "welcome": "Cemaatimize hoş geldiniz",
+      "subtitle": "Wetzlar'ın kalbinde canlı bir Müslüman cemaat. Etkinliklerimizi, namaz vakitlerini ve topluluk etkinliklerini keşfedin.",
+      "joinUs": "Cemaate katıl",
+      "learnMore": "Daha fazla öğren"
+    },
+    "events": {
+      "title": "Etkinliklerimiz",
+      "subtitle": "Tüm yaş grupları için cemaatimizin çeşitli aktivite ve programlarını keşfedin.",
+      "upcomingEvents": "Yaklaşan Etkinlikler",
+      "recommended": "Önerilen",
+      "categories": {
+        "education": "Eğitim",
+        "event": "Etkinlik",
+        "youth": "Gençlik"
+      }
+    },
+    "news": {
+      "title": "Haberler",
+      "subtitle": "Cemaatimizin en son gelişmelerinden haberdar olun."
+    },
+    "organizations": {
+      "main": "IGMG Wetzlar",
+      "at": "AT (Yetişkinler)",
+      "kt": "KT (Kadınlar)",
+      "gt": "GT (Gençlik)",
+      "kgt": "KGT (Kadın Gençlik)"
+    },
+    "dashboard": {
+      "title": "Panel",
+      "welcome": "Tekrar hoş geldiniz!",
+      "overview": "Genel Bakış",
+      "tickets": "Bildirimler",
+      "events": "Etkinlikler",
+      "profile": "Profil",
+      "stats": {
+        "totalTickets": "Toplam Bildirim",
+        "openTickets": "Açık Bildirimler",
+        "upcomingEvents": "Yaklaşan Etkinlikler",
+        "communityMembers": "Cemaat Üyeleri"
+      }
+    },
+    "prayerTimes": {
+      "title": "Namaz Vakitleri",
+      "today": "Bugün",
+      "monthly": "Aylık",
+      "qibla": "Kıble",
+      "settings": "Ayarlar"
+    },
+    "ticket": {
+      "title": "Yeni Bildirim Oluştur",
+      "subtitle": "Sorununuzu bizimle paylaşın - ilgileneceğiz.",
+      "success": "Bildirim başarıyla gönderildi!",
+      "form": {
+        "name": "Ad",
+        "namePlaceholder": "Adınız",
+        "lastname": "Soyad",
+        "lastnamePlaceholder": "Soyadınız",
+        "phone": "Telefon",
+        "phonePlaceholder": "+49 123 456789",
+        "email": "E-posta",
+        "emailPlaceholder": "email@ornek.com",
+        "organization": "Organizasyon",
+        "organizationPlaceholder": "Organizasyonunuzu seçin",
+        "feedbackWanted": "Geri bildirim isteniyor mu?",
+        "feedbackType": "Geri bildirim türü",
+        "messageType": "Mesaj türü",
+        "messageTypePlaceholder": "Mesaj türünü seçin",
+        "text": "Mesaj",
+        "textPlaceholder": "Sorununuzu açıklayın...",
+        "yes": "Evet",
+        "no": "Hayır",
+        "submit": "Bildirimi Gönder",
+        "cancel": "İptal",
+        "organizations": {
+          "at": "AT (Yetişkinler)",
+          "kt": "KT (Kadınlar)",
+          "gt": "GT (Gençlik)",
+          "kgt": "KGT (Kadın Gençlik)"
+        },
+        "feedbackTypes": {
+          "phone": "Telefon",
+          "email": "E-posta",
+          "personal": "Şahsen"
+        },
+        "messageTypes": {
+          "complaint": "Şikayet",
+          "wish": "Dilek",
+          "suggestion": "Öneri",
+          "information": "Bilgi"
+        }
+      },
+      "validation": {
+        "nameRequired": "Ad gerekli",
+        "lastnameRequired": "Soyad gerekli",
+        "phoneRequired": "Telefon numarası gerekli",
+        "organizationRequired": "Organizasyon gerekli",
+        "feedbackWantedRequired": "Lütfen bir seçenek seçin",
+        "feedbackTypeRequired": "Geri bildirim türü gerekli",
+        "messageTypeRequired": "Mesaj türü gerekli",
+        "textRequired": "Mesaj gerekli"
+      }
+    },
+    "joinUs": {
+      "title": "Cemaatimizin bir parçası olun",
+      "subtitle": "IGMG Wetzlar cemaatinin üyesi olarak kaydolun ve özel etkinlikler ve hizmetlerden yararlanın."
+    },
+    "aboutUs": {
+      "title": "Hakkımızda",
+      "subtitle": "IGMG Fatih Camii Wetzlar'ın Hikayesi",
+      "history": {
+        "title": "Fatih Camii - Geçmişten bugüne",
+        "content1": "IGMG Fatih Camii, ilk olarak 1976 yılında Formerstraße'de kuruldu. Zamanla büyüyen cemaatimiz ve gelişen ihtiyaçlarımız doğrultusunda, ilk yerimizden Garbenheimerstraße'ye taşındık. Burada daha büyük bir cami ve toplum merkezi oluşturma fırsatı bulduk.",
+        "content2": "Ancak, sürekli büyüyen cemaatimiz için daha fazla alan gerekti. Bu nedenle Niedergirmeser Weg'e taşınma kararı aldık. Burada cemaatimiz için daha büyük ve daha uygun bir yer bulduk.",
+        "content3": "2019 yılında ise camiimizin son ve en büyük taşınması gerçekleşti. Philipsstraße'deki geniş alanımız, büyüyen topluluğumuzun ihtiyaçlarını karşılamak için ideal bir yer oldu.",
+        "content4": "Geçmişten bugüne, camiimizin öyküsü, sürekli büyüme ve cemaatimize daha iyi hizmet etme çabasının bir hikayesidir. Bugün olduğu gibi, yarın da cemaatimize hizmet etmeye devam edeceğiz. Bizimle bu yolculukta olduğunuz için teşekkür ederiz."
+      },
+      "community": {
+        "title": "Dua, Topluluk, Birlik",
+        "content1": "IGMG Fatih Camii'nin hikayesi, bir evin bodrum katında başladı. 1976'da kurulduğumuzda, çevredeki bazı sakinler gürültü nedeniyle şikayette bulundular. Ama biz pes etmedik. İnanç ve kararlılıkla, küçük topluluğumuzla başladığımız bu yolculuğu sürdürdük.",
+        "content2": "Zaman geçtikçe, küçük cemaatimiz büyümeye başladı ve sonunda, yıllar süren çaba sonucunda, kendimize ait bir mülk edinme fırsatı bulduk.",
+        "content3": "IGMG Fatih Camii'nin hikayesi, iman, inanç, azim ve topluluk ruhunun bir hikayesidir. Ve bu hikaye, bugün olduğu gibi, yarın da devam edecektir. Bu yolu birlikte yürüdüğünüz için teşekkür ederiz."
+      },
+      "timeline": {
+        "year1976": "1976 - Formerstraße'de kuruluş",
+        "yearEarly": "İlk yıllar - Garbenheimerstraße'ye ta��ınma",
+        "yearMid": "Büyüme dönemi - Niedergirmeser Weg'e taşınma",
+        "year2019": "2019 - Philipsstraße'ye taşınma (mevcut konum)",
+        "yearFuture": "Gelecek - Cemaatimize hizmet etmeye devam"
+      },
+      "values": {
+        "title": "Değerlerimiz",
+        "faith": {
+          "title": "İman",
+          "description": "İmanımız cemaatimizin temelidir ve yaptığımız her şeyde bize rehberlik eder."
+        },
+        "community": {
+          "title": "Topluluk",
+          "description": "Çeşitli cemaatimizin tüm üyeleri için aidiyet duygusu yaratan bir yer oluştururuz."
+        },
+        "service": {
+          "title": "Hizmet",
+          "description": "Eğitim, sosyal hizmetler ve manevi rehberlik yoluyla cemaat ve topluma hizmet etmeyi taahhüt ediyoruz."
+        },
+        "growth": {
+          "title": "Büyüme",
+          "description": "Cemaatimizin değişen ihtiyaçlarını karşılamak için sürekli olarak büyürüz."
+        }
+      },
+      "leadership": {
+        "title": "Başkanlarımız",
+        "subtitle": "Yıllar boyunca liderlik",
+        "thankYou": {
+          "title": "Şükran ve Takdir",
+          "content": "Tüm eski ve mevcut başkanlarımıza derin minnettarlığımızı ifade etmek istiyoruz. Liderlikleri, bağlılıkları ve fedakarlıkları ile cemaatimizi şekillendirdiler ve bugün olduğu hale getirdiler. Cemaat refahı için gösterdikleri yorulmaz çalışma ve gayretleri kalplerimizde sonsuza dek yaşayacaktır."
+        },
+        "positions": {
+          "current": "Mevcut Başkan",
+          "former": "Eski Başkan"
+        }
+      },
+      "currentBoard": {
+        "title": "Mevcut Yönetim",
+        "subtitle": "Özverili ekibimiz",
+        "description": "Bugün cemaatimizi yöneten ve şekillendiren insanları tanıyın."
+      }
+    }
+  },
+  "en": {
+    "header": {
+      "home": "Home",
+      "prayerTimes": "Prayer Times",
+      "login": "Login",
+      "dashboard": "Dashboard",
+      "ticketButton": "Report",
+      "mobileMenuDescription": "IGMG Wetzlar navigation",
+      "mosque": {
+        "title": "Mosque",
+        "about": "About Us",
+        "board": "Board",
+        "project": "Project",
+        "events": "Events",
+        "news": "News",
+        "contact": "Contact",
+        "igmg": "IGMG"
+      },
+      "islam": {
+        "title": "Islam",
+        "prayerTimes": "Prayer Times",
+        "quran": "Quran",
+        "knowledge": "Knowledge"
+      },
+      "organizations": {
+        "title": "Organizations",
+        "at": {
+          "title": "AT (Adults)",
+          "events": "Events",
+          "news": "News"
+        },
+        "kt": {
+          "title": "KT (Women)",
+          "events": "Events",
+          "news": "News"
+        },
+        "gt": {
+          "title": "GT (Youth)",
+          "events": "Events",
+          "news": "News"
+        },
+        "kgt": {
+          "title": "KGT (Women's Youth)",
+          "events": "Events",
+          "news": "News"
+        }
+      },
+      "loginForm": {
+        "title": "Login",
+        "subtitle": "Sign in to your account",
+        "emailLabel": "Email",
+        "emailPlaceholder": "your.email@example.com",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "passwordLabel": "Password",
+        "passwordPlaceholder": "Your password",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 6 characters",
+        "loginButton": "Sign In"
+      },
+      "loginDropdown": {
+        "myAccount": "My Account",
+        "settings": "Settings",
+        "logout": "Sign Out",
+        "forgotPassword": "Forgot password?"
+      }
+    },
+    "prayerTimesBar": {
+      "location": "Wetzlar, Germany",
+      "currentTime": "Current Time",
+      "prayers": {
+        "imsak": "Imsak",
+        "sunrise": "Sunrise",
+        "dhuhr": "Dhuhr",
+        "asr": "Asr",
+        "maghrib": "Maghrib",
+        "isha": "Isha"
+      }
+    },
+    "hero": {
+      "welcome": "Welcome to our community",
+      "subtitle": "A vibrant Muslim community in the heart of Wetzlar. Discover our activities, prayer times, and community events.",
+      "joinUs": "Join Community",
+      "learnMore": "Learn More"
+    },
+    "events": {
+      "title": "Our Events",
+      "subtitle": "Discover the diverse activities and programs of our community for all age groups.",
+      "upcomingEvents": "Upcoming Events",
+      "recommended": "Recommended",
+      "categories": {
+        "education": "Education",
+        "event": "Event",
+        "youth": "Youth"
+      }
+    },
+    "news": {
+      "title": "News",
+      "subtitle": "Stay informed about the latest developments in our community."
+    },
+    "organizations": {
+      "main": "IGMG Wetzlar",
+      "at": "AT (Adults)",
+      "kt": "KT (Women)",
+      "gt": "GT (Youth)",
+      "kgt": "KGT (Women's Youth)"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome back!",
+      "overview": "Overview",
+      "tickets": "Reports",
+      "events": "Events",
+      "profile": "Profile",
+      "stats": {
+        "totalTickets": "Total Reports",
+        "openTickets": "Open Reports",
+        "upcomingEvents": "Upcoming Events",
+        "communityMembers": "Community Members"
+      }
+    },
+    "prayerTimes": {
+      "title": "Prayer Times",
+      "today": "Today",
+      "monthly": "Monthly",
+      "qibla": "Qibla",
+      "settings": "Settings"
+    },
+    "ticket": {
+      "title": "Create New Report",
+      "subtitle": "Share your concern with us - we'll take care of it.",
+      "success": "Report sent successfully!",
+      "form": {
+        "name": "First Name",
+        "namePlaceholder": "Your first name",
+        "lastname": "Last Name",
+        "lastnamePlaceholder": "Your last name",
+        "phone": "Phone",
+        "phonePlaceholder": "+49 123 456789",
+        "email": "Email",
+        "emailPlaceholder": "your.email@example.com",
+        "organization": "Organization",
+        "organizationPlaceholder": "Select your organization",
+        "feedbackWanted": "Feedback requested?",
+        "feedbackType": "Feedback type",
+        "messageType": "Message type",
+        "messageTypePlaceholder": "Select message type",
+        "text": "Message",
+        "textPlaceholder": "Describe your concern...",
+        "yes": "Yes",
+        "no": "No",
+        "submit": "Send Report",
+        "cancel": "Cancel",
+        "organizations": {
+          "at": "AT (Adults)",
+          "kt": "KT (Women)",
+          "gt": "GT (Youth)",
+          "kgt": "KGT (Women's Youth)"
+        },
+        "feedbackTypes": {
+          "phone": "Phone",
+          "email": "Email",
+          "personal": "In Person"
+        },
+        "messageTypes": {
+          "complaint": "Complaint",
+          "wish": "Wish",
+          "suggestion": "Suggestion",
+          "information": "Information"
+        }
+      },
+      "validation": {
+        "nameRequired": "First name is required",
+        "lastnameRequired": "Last name is required",
+        "phoneRequired": "Phone number is required",
+        "organizationRequired": "Organization is required",
+        "feedbackWantedRequired": "Please select an option",
+        "feedbackTypeRequired": "Feedback type is required",
+        "messageTypeRequired": "Message type is required",
+        "textRequired": "Message is required"
+      }
+    },
+    "joinUs": {
+      "title": "Become part of our community",
+      "subtitle": "Register as a member of the IGMG Wetzlar community and benefit from exclusive events and services."
+    },
+    "aboutUs": {
+      "title": "About Us",
+      "subtitle": "The Story of IGMG Fatih Camii Wetzlar",
+      "history": {
+        "title": "Fatih Camii - From Past to Present",
+        "content1": "IGMG Fatih Camii was first established in 1976 on Formerstraße. As our community grew and our needs developed, we moved from our first location to Garbenheimerstraße. There we had the opportunity to create a larger mosque and community center.",
+        "content2": "However, as our continuously growing community needed more space, we decided to move to Niedergirmeser Weg. Here we found a larger and more suitable place for our community.",
+        "content3": "In 2019, the last and largest move of our mosque took place. Our spacious grounds on Philipsstraße became the ideal place to meet the needs of our growing community.",
+        "content4": "From past to present, the story of our mosque is one of continuous growth and striving to better serve our community. As today, we will continue to serve our community tomorrow. We thank you for being with us on this journey."
+      },
+      "community": {
+        "title": "Prayer, Community, Unity",
+        "content1": "The story of IGMG Fatih Camii began in the basement of a house. When we were founded in 1976, some residents complained about the noise. But we didn't give up. With faith and determination, we continued this journey that we started with our small community.",
+        "content2": "Over time, our small congregation began to grow and finally, after years of effort, we found the opportunity to acquire our own property.",
+        "content3": "The story of IGMG Fatih Camii is a story of faith, belief, perseverance and community spirit. And this story will continue tomorrow, just as it does today. Thank you for walking this path with us."
+      },
+      "timeline": {
+        "year1976": "1976 - Founded on Formerstraße",
+        "yearEarly": "Early years - Move to Garbenheimerstraße",
+        "yearMid": "Growth period - Move to Niedergirmeser Weg",
+        "year2019": "2019 - Move to Philipsstraße (current location)",
+        "yearFuture": "Future - Continuing to serve our community"
+      },
+      "values": {
+        "title": "Our Values",
+        "faith": {
+          "title": "Faith",
+          "description": "Our faith is the foundation of our community and guides us in everything we do."
+        },
+        "community": {
+          "title": "Community",
+          "description": "We create a place of belonging for all members of our diverse congregation."
+        },
+        "service": {
+          "title": "Service",
+          "description": "We are committed to serving the community and society through education, social services and spiritual guidance."
+        },
+        "growth": {
+          "title": "Growth",
+          "description": "We continuously grow to meet the changing needs of our community."
+        }
+      },
+      "leadership": {
+        "title": "Our Leaders",
+        "subtitle": "Leadership Through the Years",
+        "thankYou": {
+          "title": "Gratitude and Recognition",
+          "content": "We would like to express our deep gratitude to all former and current chairpersons. Through their leadership, commitment and dedication, they have shaped our community and made it what it is today. Their tireless work and dedication to the welfare of the community will remain in our hearts forever."
+        },
+        "positions": {
+          "current": "Current Chairman",
+          "former": "Former Chairman"
+        }
+      },
+      "currentBoard": {
+        "title": "Current Board",
+        "subtitle": "Our dedicated team",
+        "description": "Meet the people who lead and shape our community today."
+      }
+    }
+  }
+}

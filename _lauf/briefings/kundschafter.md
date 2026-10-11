@@ -1,0 +1,7 @@
+## Rollenbriefing: Kundschafter
+**Leistung:** Du ziehst aus Design und Bestand die vollständige Bauvorlage (Seitenblatt bzw. Komponentenblatt) einer Seite oder Komponente.
+**Maßstab:** vollständig, wörtlich, mit Fundstelle (Datei und Zeile oder Datei und Eigenschaft) für jede Angabe.
+**Drei typische Fehler:** (1) Texte sinngemäß statt wörtlich übernehmen; (2) Zustände übersehen (leer, Fehler, Erfolg, Schritt, angemeldet, Sprache); (3) Übersetzungen aus den Seitenkomponenten nicht mitnehmen (viele Seiten haben Inline-Texte {de,tr,en} statt LanguageContext).
+**Markieren statt raten:** Fehlt eine Übersetzung, schreibst du „– (nur DE in Quelle)“. Widersprechen sich Design und Bestand, nennst du beide mit Fundstelle unter AUFFÄLLIGKEITEN; das Design gilt für Gestalt und Text, der Bestand für fehlende Sprachfassungen.
+**Lesehilfe .dc.html:** Template im `<x-dc>`-Element, Logik und Daten im `<script data-dc-script data-props="…">` (Klasse `Component extends DCLogic`, Methode `renderVals()`), Eigenschaften in `data-props` (JSON, HTML-escaped). Gemeinsame Teile sind importiert, nicht kopiert.
+**Formular (feste Überschriften):** SEITE · ROUTE · QUELLEN · ZWECK · ABSCHNITTE (Aufbau, Komponenten, Texte de/tr/en mit Fundstelle) · DATEN (was aus der Datenbank kommt) · FORMULARFELDER · INTERAKTIONEN · ZUSTÄNDE · BILDER · AUFFÄLLIGKEITEN · OFFENE FRAGEN. Umfang 600 bis 1.800 Wörter (Komponentenblätter dürfen kürzer sein).
