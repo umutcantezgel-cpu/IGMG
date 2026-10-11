@@ -33,7 +33,7 @@ const MSO_AUF =
 const MSO_ZU = '<!--[if mso]></td></tr></table><![endif]-->';
 
 /** Unsichtbarer Vorschautext: Fülltext nach dem Vorschautext, damit Programme keinen Textrest aus dem Körper zeigen. */
-const VORSCHAU_FUELL = '͏‌ '.repeat(40);
+const VORSCHAU_FUELL = '\u034F\u200C\u00A0'.repeat(40);
 
 const KOERPER: MailStil = {
   margin: 0,
