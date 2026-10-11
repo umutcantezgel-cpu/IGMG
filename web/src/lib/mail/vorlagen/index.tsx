@@ -2,7 +2,6 @@ import { render } from '@react-email/render';
 import { MAILFARBE as F } from './farben';
 import { hintergrund, MailRahmen, type MailStil, SCHRIFT_TEXT } from './Rahmen';
 
-
 /**
  * Mailvorlagen (ADR 0005, ADR 0011). Texte kommen fertig übersetzt herein (createTranslator im Ausgang).
  * Bestätigung: an die absendende Person in ihrer Sprache, ohne Wiederholung der Formulardaten (Datensparsamkeit).

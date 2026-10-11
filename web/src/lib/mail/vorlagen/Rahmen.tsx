@@ -28,11 +28,12 @@ const MOBIL_CSS = `
 }`;
 
 /** Outlook (Word-Darstellung) bekommt eine feste Breite von 600 px; andere Programme sehen nur Kommentare. */
-const MSO_AUF = '<!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->';
+const MSO_AUF =
+  '<!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->';
 const MSO_ZU = '<!--[if mso]></td></tr></table><![endif]-->';
 
 /** Unsichtbarer Vorschautext: Fülltext nach dem Vorschautext, damit Programme keinen Textrest aus dem Körper zeigen. */
-const VORSCHAU_FUELL ='͏‌ '.repeat(40);
+const VORSCHAU_FUELL = '͏‌ '.repeat(40);
 
 const KOERPER: MailStil = {
   margin: 0,
@@ -70,7 +71,14 @@ const KOPF: MailStil = {
 };
 
 /** Feine Akzentlinie unter dem Kopf: 2 px hoch, ohne Text und ohne Innenabstand. */
-const AKZENT: MailStil = { height: '2px', fontSize: '0px', lineHeight: '2px', msoLineHeightRule: 'exactly', background: F.gruen, padding: 0 };
+const AKZENT: MailStil = {
+  height: '2px',
+  fontSize: '0px',
+  lineHeight: '2px',
+  msoLineHeightRule: 'exactly',
+  background: F.gruen,
+  padding: 0,
+};
 
 const INNEN: MailStil = {
   padding: '32px',
@@ -119,7 +127,15 @@ export function MailRahmen({
           {vorschau}
           {VORSCHAU_FUELL}
         </div>
-        <table role="presentation" width="100%" cellPadding={0} cellSpacing={0} border={0} style={{ background: F.papier }} {...hintergrund(F.papier)}>
+        <table
+          role="presentation"
+          width="100%"
+          cellPadding={0}
+          cellSpacing={0}
+          border={0}
+          style={{ background: F.papier }}
+          {...hintergrund(F.papier)}
+        >
           <tbody>
             <tr>
               <td align="center" style={{ padding: '24px 12px' }} {...hintergrund(F.papier)}>
