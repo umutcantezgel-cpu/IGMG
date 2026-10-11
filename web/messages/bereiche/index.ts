@@ -5,10 +5,12 @@
  */
 import anzeige from './anzeige.json';
 import fehlerseiten from './fehlerseiten.json';
+import formulare from './formulare.json';
 import gebetszeiten from './gebetszeiten.json';
 import igmg from './igmg.json';
 import kontakt from './kontakt.json';
 import korankurse from './korankurse.json';
+import mails from './mails.json';
 import nachrichten from './nachrichten.json';
 import organisationen from './organisationen.json';
 import projekte from './projekte.json';
@@ -23,10 +25,12 @@ export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 export const BEREICHE: Record<string, BereichsDatei> = {
   anzeige,
   fehlerseiten,
+  formulare,
   gebetszeiten,
   igmg,
   kontakt,
   korankurse,
+  mails,
   nachrichten,
   organisationen,
   projekte,

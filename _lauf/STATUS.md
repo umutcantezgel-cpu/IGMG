@@ -1,16 +1,15 @@
 # STATUS
 
-**Statuszeile:** Phase P3 · Tor P3 läuft (D08, DP, SP, danach TL) · Pakete P0: 56/56 Blätter · Z 0/12 · Tore P2 grün · nächster Schritt: Tor-Befunde abarbeiten, Welle A starten (Vorarbeiten fertig)
+**Statuszeile:** Phase P4 · Welle A läuft (Workflow wkol57rrk), B02/B04 parallel fertig · Z 0/12 · Tore P2, P3 grün · nächster Schritt: Welle-A-Rückgaben abnehmen, Tor A; danach B01/B03/B05–B07
 
-## Prüfpunkt (2026-10-11, ~04:50)
+## Prüfpunkt (2026-10-11, ~06:05)
 - **Erledigt seit letztem Prüfpunkt:**
-  - D05 Verwaltungs-Hülle + Modul Veranstaltungen (e3020c7), D06/D07/D09a/T5/T8 abgenommen
-  - E-019 E2E-Datenbank `igmg_e2e` (1bb5ddd), Entwicklungs-DB von Testkonten bereinigt
-  - K-12 Leistung (f39e6a7): CLS 0, JS 172–177 kB, Lighthouse mobil (devtools) Perf. 99 / A 100 / BP ≥ 96 / SEO 100 / LCP 1,6 s; `pnpm messen` (E-026)
-  - `web/docs/MUSTER.md` geschrieben (vorläufig, nach Tor P3 festschreiben)
-  - Welle-A-Vorarbeiten (E-027): `messages/bereiche/<bereich>.json`, `src/lib/validierung/seiteninhalte/<bereich>.ts`, `drizzle/seeds/bereiche/<bereich>.ts` als Platzhalter; `ladeGebetszeitenMonat`, `src/lib/gebetszeiten/hijri.ts`; Testhilfe `tests/integration/hilfen/verwaltung.ts`
-- **Laufende Pakete:** Workflow `wf_d3f34fc4-181` (Tor P3)
-- **Nächster Schritt:** Tor-Befunde → Commit → Welle A in 6 Ketten (A01→A02 · A03→A05→A06 · A04→A07→A17 · A08→A09→A18 · A10→A11→A12 · A15→A14), A16 selbst (O)
+  - Tor P3 bestanden (0246a4a), Welle-A-Vorarbeiten (32148dd)
+  - B02 Formular-Infrastruktur + B04 Veranstaltungsanmeldung (dieser Commit): `verarbeiteFormular` (Rate → Honigtopf → ALTCHA → Zod → Prüfung → Transaktion eingang/einwilligung/mail_ausgang → Versand per `after`), Mail-Ausgang mit Wiederholung, Vorlagen Bestätigung/Benachrichtigung (React Email), Formular-Insel nach E-028 (JS Detail 178,7 kB), ALTCHA CSP-fest (`altcha/external`, Worker unter `/altcha/`)
+  - Belege: Integration 59/59 (davon 8 Anmeldung), Unit 193, E2E Anmeldung bis Mailpit + Veranstaltungen 65/65, axe auf dem Formular im Fehlerzustand, Lighthouse Detail P 98 / LCP 1,9 s / JS 178,7 kB (`_lauf/belege/lighthouse/2026-10-11-03-57/`)
+- **Laufende Pakete:** Workflow `wkol57rrk` (Run `wf_6899392c-b4b`, Welle A: A01→A02 · A03→A05→A06 · A04→A07→A17 · A08→A09→A18 · A10→A11→A12 · A15→A14)
+- **Nächster Schritt:** Rückgaben Welle A nach L1 abnehmen, Integration (Routentabellen barrierefreiheit/datenschutz, neu-uebersetzt, MENSCHEN, ABWEICHUNGEN), Bau + E2E + messen, Tor A (DP/SP), Commit; Morgenbericht ab 07:00
+- **Hinweis Budget:** Detailseite hat nach B04 nur 1,3 kB Luft (178,7/180) – neue Client-Komponenten auf Veranstaltungsseiten vermeiden; Formulare nur nach MUSTER 6a
 - **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit 127.0.0.1:8025)
 - **Umgebung je Befehl:** `source _lauf/werkzeuge/umgebung.sh` (pnpm, Docker ohne Keychain-Helper, Telemetrie aus)
 
@@ -18,8 +17,7 @@
 - Passkey-Registrierung und -Anmeldung (Client-Plugin) → C12 Benutzer/Konto
 - Passwort vergessen (sendResetPassword) → C12
 - TOTP-Wiederverwendung im selben Zeitfenster (Lichtung b) → Sicherheitsprüfer Tor P3/P5
-- Anmeldung zu Veranstaltungen (Formular, Platzzählung via `TAG.anmeldungenVon`) → B04
 - Redirect in Verwaltungsseiten liefert HTTP 200 + Client-Umleitung (gestreamt) – prüfen, ob 307 möglich (D05)
 
 ## Fortsetzung in neuer Sitzung
-Zuerst lesen: `_lauf/STATUS.md`, `_lauf/KERN.md`, `_lauf/PLAN.md`, `web/docs/MUSTER.md` (sobald vorhanden), `_lauf/ENTSCHEIDUNGEN.md`. Plan: `/Users/umurey/.claude/plans/auftrag-f-r-claude-code-linear-snowglobe.md`.
+Zuerst lesen: `_lauf/STATUS.md`, `_lauf/KERN.md`, `_lauf/PLAN.md`, `web/docs/MUSTER.md`, `_lauf/ENTSCHEIDUNGEN.md`. Plan: `/Users/umurey/.claude/plans/auftrag-f-r-claude-code-linear-snowglobe.md`.

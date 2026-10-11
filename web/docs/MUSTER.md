@@ -65,7 +65,19 @@ Beispiel Verwaltung: `src/components/verwaltung/veranstaltungen/VeranstaltungsFo
 - Fehler am Feld (`aria-invalid`, `aria-describedby`), Zusammenfassung oben mit Sprungverweisen, Fokus auf die Rückmeldung (`ref.focus()` nach Zustandswechsel).
 - Mehrsprachige Felder: Deutsch Pflicht, Türkisch/Englisch im Abschnitt „Übersetzungen“; Listen (Zeilen/Kommas) brauchen in tr/en dieselbe Anzahl.
 - Öffentlich erreichbare Actions begrenzen **selbst** (`pruefeRate`, IP über `clientAdresse()` aus `src/lib/sicherheit/ip.ts`): Aufrufe über `auth.api` umgehen die Begrenzung von Better Auth (Tor P3, H2).
-- Öffentliche Formulare (Welle B) zusätzlich: Ratenbegrenzung → Honigtopf → ALTCHA → Zod → Speichern (`eingang` + `einwilligung`) → Mail-Ausgang (ADR 0005).
+- Öffentliche Formulare (Welle B) zusätzlich: Ratenbegrenzung → Honigtopf → ALTCHA → Zod → Speichern (`eingang` + `einwilligung`) → Mail-Ausgang (ADR 0005), Bauweise siehe 6a.
+
+## 6a Öffentliches Formular (Welle B)
+
+Beispiel: Veranstaltungsanmeldung – Felder `src/components/website/veranstaltungen/AnmeldeFormular.tsx`, Action `src/server/actions/formulare/veranstaltungsanmeldung.tsx`, Schema `src/lib/validierung/formulare/veranstaltungsanmeldung.ts`, Einbau in `…/veranstaltungen/[slug]/page.tsx`, Tests `tests/integration/formular-veranstaltungsanmeldung.test.ts`, `tests/e2e/formular-veranstaltungsanmeldung.spec.ts`.
+
+- **Ansicht vom Server (E-028):** Das Formular ist eine (async) Server-Komponente aus `src/components/formular/Felder.tsx` (`FeldText`, `FeldBereich`, `FeldAuswahl`, `FeldEinwilligung`, `Honigtopf`), `Rueckmeldung.tsx` (`FehlerZusammenfassung`, `Erfolg`), `SendenKnopf` und `AltchaFeld`. Texte lädt sie selbst mit `getTranslations({ locale: sprache, namespace })` – sie läuft in der Seite **und** in der Action.
+- Einbau: `<FormularInsel aktion={…}>{offen ? <MeinFormular sprache=… /> : null}</FormularInsel>` – die Insel steht immer an derselben Stelle, damit eine Erfolgsmeldung ein Neurendern der Seite übersteht.
+- Action (`'use server'`, Datei `.tsx`): `verarbeiteFormular({ art, fd, schema, sprache, einwilligungen, pruefen?, mails, … })` aus `src/lib/formulare/verarbeiten.ts`, dann Rückgabe `FormularAntwort`: Erfolg → `{ status: 'erfolg', ansicht: <…Erfolg /> }`; Fehler → `{ status: 'fehler', fehler, feldFehler, ansicht: <MeinFormular ergebnis={…} altchaSchluessel={randomUUID()} /> }` (neuer Schlüssel = neue ALTCHA-Aufgabe, Lösungen sind einmalig).
+- Kein Zod, kein next-intl, keine Feldlogik im Browser (K-12): Die Insel kostet ≈ 1,2 kB. Felder ungesteuert mit `defaultValue` aus `ergebnis.werte`; feste IDs `feldId(name)` für die Sprungverweise.
+- Mails: `GeplanteMail` je Empfänger – Bestätigung an die Person (ihre Sprache), Benachrichtigung an `rolle:<art>[:<organisation>]` (Deutsch, ohne Formulardaten). Texte in `messages/bereiche/mails.json` bzw. `verwaltung.mails`.
+- Einwilligungstext wörtlich aus `messages` (die Textversion ist sein SHA-256); Link zur Datenschutzerklärung.
+- Tests: Integration mit echter ALTCHA-Lösung (`solveChallenge` + `deriveKey` aus `altcha-lib`), Zähler der Ratenbegrenzung je Test leeren (`beforeEach`), Fälle Erfolg/Honigtopf/ALTCHA fehlt/wiederverwendet/Zod/Rate/Versand; E2E im Browser unter Produktions-CSP mit Fehler → zweitem Versuch **ohne** Neuladen, Mails in Mailpit (`/api/v1/search?query=to:"…"`), axe auf dem Formular im Fehlerzustand.
 
 ## 7 Verwaltungsmodul
 

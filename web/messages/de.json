@@ -519,6 +519,21 @@
         "organisation": "Für diese Organisation dürfen Sie keine Veranstaltungen bearbeiten.",
         "ausnahmeVorBeginn": "Ausfälle müssen nach dem ersten Termin liegen."
       }
+    },
+    "mails": {
+      "benachrichtigung": {
+        "betreff": "Neuer Eingang: {art}",
+        "text": "In der Verwaltung ist ein neuer Eingang ({art}) eingegangen. Aus Datenschutzgründen enthält diese E-Mail keine Formulardaten.",
+        "knopf": "In der Verwaltung ansehen",
+        "hinweis": "Sie erhalten diese Nachricht, weil Ihre Aufgabe in der Verwaltung diese Eingänge umfasst."
+      },
+      "art": {
+        "kontakt": "Nachricht",
+        "veranstaltungsanmeldung": "Anmeldung",
+        "voranmeldung": "Voranmeldung",
+        "mitgliedsantrag": "Mitgliedsantrag",
+        "moschee_anfrage": "Anfrage zur Moschee-Webseite"
+      }
     }
   },
   "kopf": {
@@ -777,6 +792,21 @@
     "unbegrenzt": "unbegrenzt",
     "plaetze": "Plätze:",
     "teilenFehler": "Link konnte nicht kopiert werden",
-    "nichtGefunden": "Veranstaltung nicht gefunden"
+    "nichtGefunden": "Veranstaltung nicht gefunden",
+    "formular": {
+      "titel": "Jetzt anmelden",
+      "name": "Name",
+      "email": "E-Mail-Adresse",
+      "telefon": "Telefon",
+      "telefonHinweis": "Für Rückfragen zur Veranstaltung.",
+      "personen": "Anzahl Personen",
+      "personenHinweis": "{verfuegbar, plural, one {Noch # Platz frei.} other {Noch # Plätze frei.}}",
+      "einwilligung": "Ich willige ein, dass die IGMG Wetzlar meine Angaben zur Organisation dieser Veranstaltung verarbeitet und mich dazu per E-Mail kontaktiert. Die Daten werden nach der Veranstaltung gelöscht.",
+      "datenschutz": "Datenschutzerklärung",
+      "senden": "Verbindlich anmelden",
+      "erfolg": "Vielen Dank! Ihre Anmeldung ist eingegangen. Sie erhalten eine Bestätigung per E-Mail.",
+      "ausgebucht": "Leider sind nicht mehr genug Plätze frei.",
+      "geschlossen": "Für diese Veranstaltung ist keine Anmeldung möglich."
+    }
   }
 }

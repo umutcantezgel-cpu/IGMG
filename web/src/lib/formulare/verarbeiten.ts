@@ -1,0 +1,112 @@
+import 'server-only';
+import { headers } from 'next/headers';
+import { after } from 'next/server';
+import type { z } from 'zod';
+import { db, schema } from '@/lib/db';
+import { sha256, verschluessele } from '@/lib/krypto';
+import { versendeOffeneMails } from '@/lib/mail/ausgang';
+import { clientAdresse } from '@/lib/sicherheit/ip';
+import { pruefeAltcha } from '@/lib/validierung/altcha';
+import { pruefeRate, STANDARD_GRENZE, type Grenze } from '@/lib/validierung/ratenbegrenzung';
+import { FELD_ALTCHA, FELD_HONIGTOPF, type FormularErgebnis } from './ergebnis';
+import { feldFehler, rohwerte } from './rohwerte';
+
+type EingangArt = (typeof schema.eingangArtEnum.enumValues)[number];
+
+export type GeplanteMail = {
+  /** Empfänger: Adresse (Bestätigung an Absender) oder „rolle:<art>“ (Benachrichtigung der zuständigen Rollen). */
+  an: string;
+  vorlage: 'bestaetigung' | 'benachrichtigung';
+  sprache: 'de' | 'tr' | 'en';
+  /** Nur Anzeigewerte für die Vorlage – bei Benachrichtigungen KEINE Formulardaten (ADR 0005). */
+  daten: Record<string, string>;
+};
+
+export type Einwilligung = { schluessel: string; text: string };
+
+/**
+ * Öffentliches Formular verarbeiten (K-07, ADR 0005) – feste Reihenfolge:
+ * 1 Ratenbegrenzung → 2 Honigtopf → 3 ALTCHA (verbraucht) → 4 Zod → 5 Speichern in einer Transaktion
+ * (eingang verschlüsselt + einwilligung mit Textversion + mail_ausgang verschlüsselt) → 6 Versand nach der Antwort
+ * → 7 `{ status: 'erfolg' }` ohne Personendaten.
+ * Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert (Bots erfahren nichts).
+ */
+export async function verarbeiteFormular<S extends z.ZodType>(o: {
+  art: EingangArt;
+  fd: FormData;
+  schema: S;
+  sprache: 'de' | 'tr' | 'en';
+  mehrfach?: readonly string[];
+  grenze?: Grenze;
+  /** Pflicht-Einwilligungen: Schlüssel des angezeigten Texts und genau dieser Text (für die Textversion). */
+  einwilligungen: (daten: z.infer<S>) => Einwilligung[];
+  bezugId?: (daten: z.infer<S>) => string | null;
+  anzahl?: (daten: z.infer<S>) => number;
+  /** Zusätzliche Prüfung nach Zod (z. B. Platzzahl); Rückgabe = Fehler oder null. */
+  pruefen?: (daten: z.infer<S>) => Promise<FormularErgebnis | null>;
+  mails: (daten: z.infer<S>, eingangId: string) => GeplanteMail[];
+}): Promise<FormularErgebnis> {
+  const roh = rohwerte(o.fd, o.mehrfach);
+  // 1 Ratenbegrenzung je IP und Formular (IP nur als HMAC)
+  const ip = clientAdresse(await headers());
+  const rate = await pruefeRate(`formular-${o.art}`, ip, o.grenze ?? STANDARD_GRENZE);
+  if (!rate.erlaubt) return { status: 'fehler', fehler: 'zuViele', werte: roh };
+  // 2 Honigtopf
+  const topf = o.fd.get(FELD_HONIGTOPF);
+  if (typeof topf === 'string' && topf.trim() !== '') return { status: 'erfolg' };
+  // 3 ALTCHA (einmal verwendbar)
+  if (!(await pruefeAltcha(o.fd.get(FELD_ALTCHA)))) return { status: 'fehler', fehler: 'altcha', werte: roh };
+  // 4 Zod
+  const geprueft = o.schema.safeParse(roh);
+  if (!geprueft.success) return { status: 'fehler', fehler: 'pruefen', feldFehler: feldFehler(geprueft.error.issues), werte: roh };
+  const daten = geprueft.data as z.infer<S>;
+  if (o.pruefen) {
+    const zusatz = await o.pruefen(daten);
+    if (zusatz) return zusatz.status === 'fehler' ? { ...zusatz, werte: roh } : zusatz;
+  }
+  // 5 Speichern (Transaktion)
+  const paket = verschluessele(daten);
+  await db.transaction(async (tx) => {
+    const [eingang] = await tx
+      .insert(schema.eingang)
+      .values({
+        art: o.art,
+        sprache: o.sprache,
+        bezugId: o.bezugId?.(daten) ?? null,
+        anzahl: o.anzahl?.(daten) ?? 1,
+        datenVerschluesselt: paket.daten,
+        schluesselId: paket.schluesselId,
+      })
+      .returning({ id: schema.eingang.id });
+    const einwilligungen = o.einwilligungen(daten);
+    if (einwilligungen.length)
+      await tx
+        .insert(schema.einwilligung)
+        .values(
+          einwilligungen.map((e) => ({
+            eingangId: eingang.id,
+            textSchluessel: e.schluessel,
+            textVersion: sha256(e.text),
+            sprache: o.sprache,
+          })),
+        );
+    const mails = o.mails(daten, eingang.id);
+    if (mails.length)
+      await tx.insert(schema.mailAusgang).values(
+        mails.map((m) => {
+          const v = verschluessele({ an: m.an, daten: m.daten });
+          return {
+            vorlage: m.vorlage,
+            sprache: m.sprache,
+            datenVerschluesselt: v.daten,
+            schluesselId: v.schluesselId,
+            bezugEingangId: eingang.id,
+          };
+        }),
+      );
+  });
+  // 6 Versand nach der Antwort (Fehler bleiben im Ausgang und werden erneut versucht)
+  after(() => versendeOffeneMails().catch(() => undefined));
+  // 7
+  return { status: 'erfolg' };
+}

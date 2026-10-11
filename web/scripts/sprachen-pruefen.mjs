@@ -34,8 +34,9 @@ function argumente(text) {
   const lies = (t, i, ende) => {
     while (i < t.length) {
       const c = t[i];
-      if (c === "'") {
-        i = t.indexOf("'", i + 1) + 1 || t.length;
+      // ICU „DOUBLE_OPTIONAL“ (wie intl-messageformat): ein Apostroph quotiert nur vor { } # | oder '
+      if (c === "'" && /[{}#|']/.test(t[i + 1] ?? '')) {
+        i = t[i + 1] === "'" ? i + 2 : t.indexOf("'", i + 1) + 1 || t.length;
         continue;
       }
       if (c === ende) return i + 1;

@@ -61,6 +61,7 @@ Die App erwartet einen Reverse-Proxy (z. B. Caddy oder nginx) für HTTPS. Er mus
 
 - Next.js-Sicherheitsupdates zeitnah einspielen (`pnpm view next version`, Paket-Update, `pnpm build`, Tests, neues Image).
 - `pnpm audit --prod` vor jeder Aktualisierung des Images.
+- Nach einem Update von `altcha`: `pnpm altcha:kopieren` (Worker unter `public/altcha/`, sonst schlägt `pnpm check` fehl).
 
 ## 8 Entwicklung und Tests (für Entwickelnde)
 

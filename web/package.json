@@ -18,6 +18,7 @@
     "db:seed": "tsx --conditions=react-server --env-file-if-exists=.env drizzle/seeds/index.ts",
     "auth:schema": "node scripts/auth-schema.mjs",
     "schriften:kopieren": "node scripts/schriften-kopieren.mjs",
+    "altcha:kopieren": "node scripts/altcha-kopieren.mjs",
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "format": "prettier --write",

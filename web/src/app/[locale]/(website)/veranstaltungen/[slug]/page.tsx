@@ -25,6 +25,8 @@ import { LOGOS } from '@/components/website/navigation';
 import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Text, textMitSprache } from '@/components/website/Text';
+import { FormularInsel } from '@/components/formular/FormularInsel';
+import { AnmeldeFormular } from '@/components/website/veranstaltungen/AnmeldeFormular';
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -32,6 +34,7 @@ import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
+import { meldeAn } from '@/server/actions/formulare/veranstaltungsanmeldung';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeAnmeldezahl, ladeVeranstaltung, ladeVeranstaltungsSlugs, type VeranstaltungsDetail } from '@/server/queries/veranstaltungen';
 
@@ -358,6 +361,11 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                   </dl>
                   {status === 'vergangen' ? <p className="font-bold text-tinte-2">{t('geschlossen')}</p> : null}
                   {status === 'ausgebucht' ? <p className="font-bold text-fehler">{t('ausgebucht')}</p> : null}
+                  {/* Immer an derselben Stelle (E-028): Nimmt die Anmeldung den letzten Platz, rendert die Action die Seite
+                      als „ausgebucht“ neu – die Insel bleibt erhalten und zeigt weiter die Erfolgsmeldung. */}
+                  <FormularInsel aktion={meldeAn}>
+                    {anmeldbar ? <AnmeldeFormular veranstaltungId={v.id} sprache={sprache} verfuegbar={verfuegbar} /> : null}
+                  </FormularInsel>
                 </>
               )}
               <Link href="/kontakt" className={knopfRahmen}>
