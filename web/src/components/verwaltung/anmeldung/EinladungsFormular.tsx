@@ -4,9 +4,11 @@ import { useActionState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { einladungAnnehmen, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
 import { Meldung } from '../Meldung';
+import { ANMELDE_KNOPF } from './knopf';
 
 export function EinladungsFormular({ token, name, email }: { token: string; name: string; email: string }) {
   const t = useTranslations('verwaltung');
@@ -46,8 +48,8 @@ export function EinladungsFormular({ token, name, email }: { token: string; name
         pflicht={t('pflichtfeld')}
         fehler={zustand.feldFehler?.wiederholung ? t(zustand.feldFehler.wiederholung) : undefined}
       />
-      <Button type="submit" disabled={laeuft}>
-        <UserPlus aria-hidden />
+      <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
+        {laeuft ? <LadeStern /> : <UserPlus aria-hidden />}
         {t('einladung.absenden')}
       </Button>
     </form>

@@ -22,10 +22,10 @@ export type ThemaNavigationProps = {
 export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen, aktuell }: ThemaNavigationProps) {
   return (
     <section aria-labelledby="thema-themen" className="flex flex-col gap-4">
-      <h2 id="thema-themen" className="text-30 md:text-36">
+      <h2 id="thema-themen" className="text-display-2">
         {titel}
       </h2>
-      <ul aria-labelledby="thema-themen" className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))] gap-3">
+      <ul aria-labelledby="thema-themen" className="grid raster-kacheln gap-3">
         {themen.map((th) => {
           const ist = th.schluessel === aktuell.schluessel;
           return (
@@ -34,7 +34,7 @@ export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen,
                 href={{ pathname: '/islamisches-wissen/[thema]', params: { thema: th.schluessel } }}
                 aria-current={ist ? 'page' : undefined}
                 className={cn(
-                  'flex min-h-16 items-center justify-between gap-2 rounded-lg px-4 py-3 text-18 font-bold text-tinte no-underline hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte',
+                  'flex min-h-16 items-center justify-between gap-2 rounded-lg px-4 py-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 active:scale-98',
                   ist ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
@@ -52,7 +52,7 @@ export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen,
         <Link
           href="/islamisches-wissen"
           aria-label={`${filterEntfernen}: ${aktuell.label.text}`}
-          className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte no-underline hover:bg-gruen-50 hover:text-tinte"
+          className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98"
         >
           <X aria-hidden className="size-4" />
           {filterEntfernen}

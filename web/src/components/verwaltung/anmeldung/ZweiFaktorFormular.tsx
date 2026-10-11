@@ -4,9 +4,11 @@ import { useActionState, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { zweiFaktorPruefen, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
 import { Meldung } from '../Meldung';
+import { ANMELDE_KNOPF } from './knopf';
 
 export function ZweiFaktorFormular() {
   const t = useTranslations('verwaltung');
@@ -44,14 +46,19 @@ export function ZweiFaktorFormular() {
           label={t('zweiFaktor.code')}
           hinweis={t('zweiFaktor.hinweis')}
           fehler={zustand.feldFehler?.code ? t(zustand.feldFehler.code) : undefined}
-          className="font-mono tracking-code"
+          className="tracking-code tabular-nums"
         />
       )}
-      <Button type="submit" disabled={laeuft} className="w-full">
-        <ShieldCheck aria-hidden />
+      <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
+        {laeuft ? <LadeStern /> : <ShieldCheck aria-hidden />}
         {t('zweiFaktor.absenden')}
       </Button>
-      <Button type="button" variant="link" onClick={() => setErsatz((e) => !e)}>
+      <Button
+        type="button"
+        variant="link"
+        onClick={() => setErsatz((e) => !e)}
+        className="min-h-12 max-w-full self-start text-left whitespace-normal"
+      >
         {ersatz ? t('zweiFaktor.code') : t('zweiFaktor.ersatzcode')}
       </Button>
     </form>

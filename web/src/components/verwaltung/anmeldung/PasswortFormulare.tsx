@@ -4,9 +4,11 @@ import NextLink from 'next/link';
 import { useActionState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { passwortNeuSetzen, passwortVergessen, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
 import { Meldung } from '../Meldung';
+import { ANMELDE_KNOPF } from './knopf';
 
 function useFokus(z: FormularZustand) {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,11 +25,11 @@ export function PasswortVergessenFormular() {
   const ref = useFokus(z);
   if (z.ok) {
     return (
-      <div ref={ref} className="flex flex-col gap-4">
+      <div ref={ref} className="flex flex-col gap-5">
         <Meldung art="erfolg" fokus>
           {t('passwortVergessen.gesendet')}
         </Meldung>
-        <NextLink href="/verwaltung/anmelden" className="inline-flex min-h-11 items-center font-bold">
+        <NextLink href="/verwaltung/anmelden" className="inline-flex min-h-12 items-center font-bold">
           {t('passwortVergessen.zurueck')}
         </NextLink>
       </div>
@@ -52,10 +54,11 @@ export function PasswortVergessenFormular() {
         pflicht={t('pflichtfeld')}
         fehler={z.feldFehler?.email ? t(z.feldFehler.email) : undefined}
       />
-      <Button type="submit" disabled={laeuft} className="w-full">
+      <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
+        {laeuft ? <LadeStern /> : null}
         {laeuft ? t('passwortVergessen.sendet') : t('passwortVergessen.absenden')}
       </Button>
-      <NextLink href="/verwaltung/anmelden" className="inline-flex min-h-11 items-center self-start font-bold">
+      <NextLink href="/verwaltung/anmelden" className="inline-flex min-h-12 items-center self-start font-bold">
         {t('passwortVergessen.zurueck')}
       </NextLink>
     </form>
@@ -75,7 +78,7 @@ export function PasswortNeuFormular({ token }: { token: string }) {
             <span className="flex flex-col gap-1">
               {t(z.fehler)}
               {z.fehler === 'passwortNeu.ungueltig' ? (
-                <NextLink href="/verwaltung/passwort-vergessen" className="font-bold">
+                <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-12 items-center font-bold">
                   {t('passwortNeu.neuAnfordern')}
                 </NextLink>
               ) : null}
@@ -106,7 +109,8 @@ export function PasswortNeuFormular({ token }: { token: string }) {
         pflicht={t('pflichtfeld')}
         fehler={z.feldFehler?.wiederholung ? t(z.feldFehler.wiederholung) : undefined}
       />
-      <Button type="submit" disabled={laeuft} className="w-full">
+      <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
+        {laeuft ? <LadeStern /> : null}
         {t('passwortNeu.absenden')}
       </Button>
     </form>

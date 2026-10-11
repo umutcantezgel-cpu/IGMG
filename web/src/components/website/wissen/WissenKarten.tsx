@@ -63,7 +63,7 @@ export function VideoKarte({
   onOeffnen: (ausloesend: HTMLElement) => void;
 }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss">
+    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
       <div role="img" aria-label={v.vorschau} className={cn('flex h-40 items-center justify-center border-b border-linie', STREIFEN)}>
         <span aria-hidden className="flex size-14 items-center justify-center rounded-pill border border-rand bg-weiss text-gruen-700">
           <Play className="size-6" />

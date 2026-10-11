@@ -4,6 +4,7 @@ import { Check, FileText, Info, Play, Search, Users, X } from 'lucide-react';
 import { type KeyboardEvent, type MouseEvent, useEffect, useId, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 import { ArtikelInhalt, ExpertenInhalt, VideoInhalt } from './WissenDialogInhalt';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { ArtikelKarte, ExpertenKarte, VideoKarte } from './WissenKarten';
 import {
   type Anzeige,
@@ -149,10 +150,10 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
       </div>
 
       <section aria-labelledby={`${id}-themen`} className="flex flex-col gap-4">
-        <h2 id={`${id}-themen`} className="text-30 md:text-36">
+        <h2 id={`${id}-themen`} className="text-display-2">
           {texte.themenTitel}
         </h2>
-        <div role="group" aria-labelledby={`${id}-themen`} className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))] gap-3">
+        <div role="group" aria-labelledby={`${id}-themen`} className="grid raster-kacheln gap-3">
           {themen.map((th) => {
             const an = thema === th.schluessel;
             return (
@@ -162,7 +163,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                 aria-pressed={an}
                 onClick={() => setThema(an ? null : th.schluessel)}
                 className={klassen(
-                  'flex min-h-16 cursor-pointer items-center justify-between gap-2 rounded-lg px-4 py-3 text-left text-18 font-bold text-tinte transition-colors hover:border-gruen-700 hover:bg-gruen-50',
+                  'flex min-h-16 cursor-pointer items-center justify-between gap-2 rounded-lg px-4 py-3 text-left text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:shadow-s2 active:scale-98',
                   an ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
@@ -180,7 +181,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
             <button
               type="button"
               onClick={() => setThema(null)}
-              className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte hover:bg-gruen-50"
+              className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
             >
               <X aria-hidden className="size-4" />
               {texte.filterEntfernen}
@@ -213,13 +214,13 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                 onClick={() => setReiter(r)}
                 onKeyDown={(e) => reiterTaste(e, i)}
                 className={klassen(
-                  'relative inline-flex min-h-12 items-center gap-2 rounded-md px-4.5 text-18 font-bold transition-colors motion-reduce:transition-none',
+                  'relative inline-flex min-h-12 items-center gap-2 rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
                   ist ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
                 )}
               >
                 <Icon aria-hidden className="size-5" />
                 {reiterText[r]}
-                {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-[3px] rounded-xs bg-gruen-700" /> : null}
+                {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-0.75 rounded-xs bg-gruen-700" /> : null}
               </button>
             );
           })}
@@ -230,10 +231,13 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
             <h3 className="text-24">{texte.artikelTitel}</h3>
             <div role="status">
               {gefArtikel.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-rand bg-weiss p-6">{texte.artikelLeer}</p>
+                <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+                  <Zustandsgrafik art="leer" />
+                  <p className="max-w-text text-20 text-tinte-2">{texte.artikelLeer}</p>
+                </div>
               ) : null}
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-4">
+            <ul className="grid raster-karten gap-4">
               {gefArtikel.map((a) => (
                 <li key={a.schluessel}>
                   <ArtikelKarte
@@ -252,10 +256,13 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
           <div className="flex flex-col gap-4">
             <div role="status">
               {gefVideos.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-rand bg-weiss p-6">{texte.videosLeer}</p>
+                <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+                  <Zustandsgrafik art="leer" />
+                  <p className="max-w-text text-20 text-tinte-2">{texte.videosLeer}</p>
+                </div>
               ) : null}
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-4">
+            <ul className="grid raster-karten gap-4">
               {gefVideos.map((v) => (
                 <li key={v.schluessel}>
                   <VideoKarte
@@ -278,7 +285,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                 {texte.expertenBadge}
               </span>
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))] gap-4">
+            <ul className="grid raster-kacheln gap-4">
               {experten.map((e) => (
                 <li key={e.schluessel}>
                   <ExpertenKarte
@@ -298,15 +305,15 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
         aria-labelledby={titelId}
         onClose={nachSchliessen}
         onClick={hintergrundKlick}
-        className="m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
+        className="m-auto max-h-full w-full max-w-188 overflow-y-auto bg-transparent p-4 text-tinte backdrop:bg-tinte/55"
       >
         {dialog ? (
-          <div className="relative flex flex-col gap-4 p-5 md:p-8">
+          <div className="relative flex flex-col gap-4 rounded-lg bg-weiss p-5 md:p-8">
             <button
               type="button"
               aria-label={texte.schliessen}
               onClick={schliesse}
-              className="absolute top-3 right-3 inline-flex size-12 items-center justify-center rounded-md border border-rand bg-weiss hover:bg-gruen-50"
+              className="absolute top-3 right-3 inline-flex size-12 items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
             >
               <X aria-hidden className="size-6" />
             </button>

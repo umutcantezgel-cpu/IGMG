@@ -4,6 +4,7 @@ import { FileText, Info, Play, Search, Users, X } from 'lucide-react';
 import { type KeyboardEvent, type MouseEvent, type ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 import { ArtikelInhalt, ExpertenInhalt, VideoInhalt } from './WissenDialogInhalt';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { ArtikelKarte, ExpertenKarte, VideoKarte } from './WissenKarten';
 import { type Anzeige, type ArtikelAnzeige, type ExpertenAnzeige, REITER, type Reiter, type VideoAnzeige, type WissenTexte } from './typen';
 
@@ -167,13 +168,13 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
                 onClick={() => setReiter(r)}
                 onKeyDown={(e) => reiterTaste(e, i)}
                 className={klassen(
-                  'relative inline-flex min-h-12 items-center gap-2 rounded-md px-4.5 text-18 font-bold transition-colors motion-reduce:transition-none',
+                  'relative inline-flex min-h-12 items-center gap-2 rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
                   ist ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
                 )}
               >
                 <Icon aria-hidden className="size-5" />
                 {reiterText[r]}
-                {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-[3px] rounded-xs bg-gruen-700" /> : null}
+                {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-0.75 rounded-xs bg-gruen-700" /> : null}
               </button>
             );
           })}
@@ -184,10 +185,13 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
             <h3 className="text-24">{texte.artikelTitel}</h3>
             <div role="status">
               {gefArtikel.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-rand bg-weiss p-6">{texte.artikelLeer}</p>
+                <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+                  <Zustandsgrafik art="leer" />
+                  <p className="max-w-text text-20 text-tinte-2">{texte.artikelLeer}</p>
+                </div>
               ) : null}
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-4">
+            <ul className="grid raster-karten gap-4">
               {gefArtikel.map((a) => (
                 <li key={a.schluessel}>
                   <ArtikelKarte
@@ -206,10 +210,13 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
           <div className="flex flex-col gap-4">
             <div role="status">
               {gefVideos.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-rand bg-weiss p-6">{texte.videosLeer}</p>
+                <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+                  <Zustandsgrafik art="leer" />
+                  <p className="max-w-text text-20 text-tinte-2">{texte.videosLeer}</p>
+                </div>
               ) : null}
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-4">
+            <ul className="grid raster-karten gap-4">
               {gefVideos.map((v) => (
                 <li key={v.schluessel}>
                   <VideoKarte
@@ -232,7 +239,7 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
                 {texte.expertenBadge}
               </span>
             </div>
-            <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))] gap-4">
+            <ul className="grid raster-kacheln gap-4">
               {experten.map((e) => (
                 <li key={e.schluessel}>
                   <ExpertenKarte
@@ -252,15 +259,15 @@ export function ThemaInsel({ sprache, texte, thema, artikel, videos, experten, t
         aria-labelledby={titelId}
         onClose={nachSchliessen}
         onClick={hintergrundKlick}
-        className="m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
+        className="m-auto max-h-full w-full max-w-188 overflow-y-auto bg-transparent p-4 text-tinte backdrop:bg-tinte/55"
       >
         {dialog ? (
-          <div className="relative flex flex-col gap-4 p-5 md:p-8">
+          <div className="relative flex flex-col gap-4 rounded-lg bg-weiss p-5 md:p-8">
             <button
               type="button"
               aria-label={texte.schliessen}
               onClick={schliesse}
-              className="absolute top-3 right-3 inline-flex size-12 items-center justify-center rounded-md border border-rand bg-weiss hover:bg-gruen-50"
+              className="absolute top-3 right-3 inline-flex size-12 items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
             >
               <X aria-hidden className="size-6" />
             </button>

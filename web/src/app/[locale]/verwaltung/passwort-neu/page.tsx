@@ -15,7 +15,7 @@ export default async function PasswortNeuSeite({ searchParams }: PageProps<'/[lo
       ) : (
         <div className="flex flex-col gap-4">
           <Meldung art="fehler">{t('ungueltig')}</Meldung>
-          <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-11 items-center font-bold">
+          <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-12 items-center font-bold">
             {t('neuAnfordern')}
           </NextLink>
         </div>

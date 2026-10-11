@@ -9,6 +9,7 @@ import { datumAnzeige, SPRACH_KENNUNG } from '@/components/website/wissen/datum'
 import { ThemaInsel } from '@/components/website/wissen/ThemaInsel';
 import { ThemaKopf } from '@/components/website/wissen/ThemaKopf';
 import { ThemaNavigation } from '@/components/website/wissen/ThemaNavigation';
+import { ThemaWeiter } from '@/components/website/wissen/ThemaWeiter';
 import type { WissenTexte } from '@/components/website/wissen/typen';
 import type { Locale } from '@/i18n/routing';
 import { text } from '@/lib/i18n/inhalt';
@@ -68,6 +69,10 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
   const untertitel = thema.kurztext ? textMitSprache(thema.kurztext, sprache) : null;
   const aktuell = { schluessel: thema.slug, label: titel };
   const themenAnzeige = themen.map((th) => ({ schluessel: th.slug, label: textMitSprache(th.titel, sprache) }));
+  // Vorheriges und nächstes Thema in derselben Reihenfolge wie die Übersicht; am Anfang und Ende fehlt eine Seite.
+  const reihe = themenAnzeige.findIndex((th) => th.schluessel === thema.slug);
+  const vorher = reihe > 0 ? themenAnzeige[reihe - 1] : null;
+  const naechster = reihe >= 0 && reihe < themenAnzeige.length - 1 ? themenAnzeige[reihe + 1] : null;
 
   const artikel = inhalt.artikel
     .filter((a) => a.thema === thema.slug)
@@ -146,8 +151,8 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
       <ThemaKopf kennung={t('eyebrow')} titel={titel} untertitel={untertitel} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
         {einfuehrung ? (
-          <section aria-labelledby="thema-einfuehrung" className="flex max-w-(--container-text) flex-col gap-4">
-            <h2 id="thema-einfuehrung" className="text-30">
+          <section aria-labelledby="thema-einfuehrung" className="flex max-w-text flex-col gap-4">
+            <h2 id="thema-einfuehrung" className="text-display-2">
               {tw('einfuehrung')}
             </h2>
             <RichText doc={einfuehrung} lang={einfuehrungSprache !== sprache ? 'de' : undefined} className="text-pretty" />
@@ -170,6 +175,7 @@ async function Thema({ params }: { params: Promise<{ locale: string; thema: stri
             />
           }
         />
+        <ThemaWeiter vorher={vorher} naechster={naechster} />
       </div>
     </Seitenrahmen>
   );

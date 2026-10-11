@@ -4,9 +4,11 @@ import { useActionState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { zweiFaktorBestaetigen, zweiFaktorStarten, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
 import { Meldung } from '../Meldung';
+import { ANMELDE_KNOPF } from './knopf';
 import { QrCode } from './QrCode';
 
 /** Einrichtung TOTP: Passwort bestätigen → QR + Schlüssel + Ersatzcodes → Code bestätigen. */
@@ -32,35 +34,37 @@ export function ZweiFaktorEinrichten() {
           label={t('schritt1')}
           fehler={start.feldFehler?.passwort ? t('fehlerPasswort') : undefined}
         />
-        <Button type="submit" disabled={startLaeuft}>
+        <Button type="submit" disabled={startLaeuft} className={ANMELDE_KNOPF}>
           {t('weiter')}
-          <ArrowRight aria-hidden />
+          {startLaeuft ? <LadeStern /> : <ArrowRight aria-hidden />}
         </Button>
       </form>
     );
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-8">
       <section aria-labelledby="zwei-faktor-schritt2" className="flex flex-col gap-3">
         <h2 id="zwei-faktor-schritt2" tabIndex={-1} className="text-24">
           {t('schritt2')}
         </h2>
         <p>{t('scannen')}</p>
-        <QrCode text={totp.uri} titel={t('qrAlt')} />
+        <div className="self-start rounded-lg border border-linie bg-weiss p-4 shadow-s1">
+          <QrCode text={totp.uri} titel={t('qrAlt')} />
+        </div>
         <p>{t('manuell')}</p>
-        <code data-testid="totp-geheimnis" className="block rounded-md bg-sand px-3 py-2 font-mono text-18 break-all">
+        <code data-testid="totp-geheimnis" className="block rounded-md bg-sand px-3.5 py-2.5 font-mono text-18 break-all">
           {totp.geheimnis}
         </code>
       </section>
-      <section aria-labelledby="zwei-faktor-ersatz" className="flex flex-col gap-2">
+      <section aria-labelledby="zwei-faktor-ersatz" className="flex flex-col gap-3">
         <h3 id="zwei-faktor-ersatz" className="text-20">
           {t('ersatzcodesTitel')}
         </h3>
         <Meldung art="info">{t('ersatzcodesHinweis')}</Meldung>
-        <ul className="grid grid-cols-2 gap-2 font-mono text-16">
+        <ul className="grid grid-cols-2 gap-2 font-mono text-18">
           {totp.ersatzcodes.map((c) => (
-            <li key={c} className="rounded-sm bg-sand px-2 py-1">
+            <li key={c} className="rounded-md bg-sand px-3 py-2.5 tracking-wide">
               {c}
             </li>
           ))}
@@ -77,10 +81,10 @@ export function ZweiFaktorEinrichten() {
           required
           label={t('schritt3')}
           fehler={ende.feldFehler?.code ? t('fehlerCode') : undefined}
-          className="font-mono tracking-code"
+          className="tracking-code tabular-nums"
         />
-        <Button type="submit" disabled={endeLaeuft}>
-          <ShieldCheck aria-hidden />
+        <Button type="submit" disabled={endeLaeuft} className={ANMELDE_KNOPF}>
+          {endeLaeuft ? <LadeStern /> : <ShieldCheck aria-hidden />}
           {t('bestaetigen')}
         </Button>
       </form>

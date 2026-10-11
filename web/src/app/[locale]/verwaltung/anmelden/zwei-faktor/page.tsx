@@ -8,9 +8,11 @@ export default async function ZweiFaktorSeite() {
   return (
     <AnmeldeRahmen titel={t('titel')}>
       <ZweiFaktorFormular />
-      <p className="mt-6">
-        <Link href="/verwaltung/anmelden">{t('zurueck')}</Link>
-      </p>
+      <div className="mt-6">
+        <Link href="/verwaltung/anmelden" className="inline-flex min-h-12 items-center font-bold">
+          {t('zurueck')}
+        </Link>
+      </div>
     </AnmeldeRahmen>
   );
 }

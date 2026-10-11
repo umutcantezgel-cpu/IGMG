@@ -1,6 +1,6 @@
 import { Clock, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { STREIFEN, THEMA_TAG } from './stil';
+import { STREIFEN, THEMA_TAG, VOLL } from './stil';
 import type { Anzeige, ArtikelAnzeige, ExpertenAnzeige, VideoAnzeige, WissenTexte } from './typen';
 
 /**
@@ -37,7 +37,7 @@ export function ArtikelInhalt({
       <p className="text-16 text-tinte-2">
         <span lang={x.autor.lang}>{x.autor.text}</span> · {x.datum}
       </p>
-      <p lang={x.text?.lang} className="max-w-(--container-text)">
+      <p lang={x.text?.lang} className="max-w-text text-pretty">
         {x.text ? x.text.text : texte.artikelBeispiel}
       </p>
       <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogAehnlich}</h3>
@@ -49,7 +49,7 @@ export function ArtikelInhalt({
                 type="button"
                 aria-label={`${texte.weiterlesen}: ${s.titel.text}`}
                 onClick={() => onWechsel(s.schluessel)}
-                className="flex w-full flex-col gap-1 rounded-lg border border-linie p-3 text-left hover:bg-gruen-50"
+                className="flex w-full flex-col gap-1 rounded-lg border border-linie p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
               >
                 <span lang={s.titel.lang} className="font-bold">
                   {s.titel.text}
@@ -89,7 +89,9 @@ export function VideoInhalt({ video: v, titelId, texte }: { video: VideoAnzeige;
         <span className="text-16 text-tinte-2">{texte.videoPlatzhalter}</span>
       </div>
       <h3 className="font-text text-18 font-bold">{texte.dialogBeschreibung}</h3>
-      <p lang={v.beschreibung.lang}>{v.beschreibung.text}</p>
+      <p lang={v.beschreibung.lang} className="max-w-text text-pretty">
+        {v.beschreibung.text}
+      </p>
     </>
   );
 }
@@ -117,7 +119,7 @@ export function ExpertenInhalt({
         {e.institution.text}
       </p>
       <h3 className="mt-2 font-text text-18 font-bold">{texte.dialogUeber}</h3>
-      <p lang={e.bio.lang} className="max-w-(--container-text)">
+      <p lang={e.bio.lang} className="max-w-text text-pretty">
         {e.bio.text}
       </p>
       <div className="flex items-baseline gap-2">
@@ -126,11 +128,7 @@ export function ExpertenInhalt({
         </strong>
         <span className="text-tinte-2">{texte.zahlArtikel}</span>
       </div>
-      <button
-        type="button"
-        onClick={onAlleArtikel}
-        className="inline-flex min-h-12 items-center self-start rounded-md bg-gruen-700 px-5.5 font-bold text-weiss hover:bg-gruen-800"
-      >
+      <button type="button" onClick={onAlleArtikel} className={VOLL}>
         {texte.dialogArtikelAnzeigen}
       </button>
     </>

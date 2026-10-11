@@ -5,9 +5,11 @@ import { useTranslations } from 'next-intl';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
 import NextLink from 'next/link';
 import { Button } from '@/components/ui/button';
+import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { anmelden, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
 import { Meldung } from '../Meldung';
+import { ANMELDE_KNOPF } from './knopf';
 
 export function AnmeldeFormular() {
   const t = useTranslations('verwaltung');
@@ -50,16 +52,16 @@ export function AnmeldeFormular() {
           onClick={() => setSichtbar((s) => !s)}
           aria-label={sichtbar ? t('anmelden.passwortVerbergen') : t('anmelden.passwortAnzeigen')}
           aria-pressed={sichtbar}
-          className="absolute right-0 bottom-0 flex size-12 items-center justify-center rounded-md text-tinte-2 hover:text-tinte"
+          className="absolute right-0 bottom-0 flex size-12 cursor-pointer items-center justify-center rounded-md text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:text-tinte active:scale-98"
         >
           {sichtbar ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
         </button>
       </div>
-      <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-11 items-center self-start font-bold">
+      <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-12 items-center self-start font-bold">
         {t('anmelden.passwortVergessen')}
       </NextLink>
-      <Button type="submit" disabled={laeuft} className="w-full">
-        <LogIn aria-hidden />
+      <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
+        {laeuft ? <LadeStern /> : <LogIn aria-hidden />}
         {t('anmelden.absenden')}
       </Button>
     </form>
