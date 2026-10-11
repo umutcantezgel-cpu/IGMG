@@ -1,0 +1,98 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-18-42",
+  "seit": null,
+  "geprueft": [
+    "web/src/components/formular/AltchaFeld.tsx",
+    "web/src/components/formular/Felder.tsx",
+    "web/src/components/formular/FormWizard.tsx",
+    "web/src/components/formular/FormularInsel.tsx",
+    "web/src/components/formular/Rueckmeldung.tsx",
+    "web/src/components/formular/SendenKnopf.tsx",
+    "web/src/components/formular/altcha-laden.ts",
+    "web/src/app/[locale]/(website)/bildung/voranmeldung/page.tsx",
+    "web/src/components/website/formulare/VoranmeldungFormular.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 11
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/formular/AltchaFeld.tsx",
+      "zeile": 53,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-h-[72px]",
+      "zeileText": "<div ref={ref} className=\"flex min-h-[72px] flex-col gap-1.5\" role=\"group\" aria-label={texte.label}>"
+    },
+    {
+      "datei": "web/src/components/formular/Felder.tsx",
+      "zeile": 199,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]",
+      "zeileText": "spaltenMin = 'sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]',"
+    },
+    {
+      "datei": "web/src/components/formular/Felder.tsx",
+      "zeile": 249,
+      "art": "Tailwind-Klammerwert",
+      "fund": "size-[22px]",
+      "zeileText": "className=\"mt-0.5 size-[22px] shrink-0 accent-gruen-700\""
+    },
+    {
+      "datei": "web/src/components/formular/Felder.tsx",
+      "zeile": 298,
+      "art": "Tailwind-Klammerwert",
+      "fund": "size-[22px]",
+      "zeileText": "className=\"mt-0.5 size-[22px] shrink-0 accent-gruen-700\""
+    },
+    {
+      "datei": "web/src/components/formular/Felder.tsx",
+      "zeile": 316,
+      "art": "Tailwind-Klammerwert",
+      "fund": "-left-[9999px]",
+      "zeileText": "<div aria-hidden=\"true\" className=\"absolute -left-[9999px] h-px w-px overflow-hidden\">"
+    },
+    {
+      "datei": "web/src/components/formular/FormWizard.tsx",
+      "zeile": 63,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "'flex flex-col items-start gap-1.5 text-16 leading-tight font-bold [overflow-wrap:anywhere] sm:flex-row sm:items-center',"
+    },
+    {
+      "datei": "web/src/components/formular/FormWizard.tsx",
+      "zeile": 104,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[repeat(auto-fit,minmax(260px,1fr))]",
+      "zeileText": "<div className=\"grid gap-x-6 gap-y-4 sm:grid-cols-[repeat(auto-fit,minmax(260px,1fr))]\">{g.inhalt}</div>"
+    },
+    {
+      "datei": "web/src/components/formular/Rueckmeldung.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[62ch]",
+      "zeileText": "<p className=\"max-w-[62ch] text-20\">{text}</p>"
+    },
+    {
+      "datei": "web/src/components/formular/Rueckmeldung.tsx",
+      "zeile": 96,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[62ch]",
+      "zeileText": "<div className=\"max-w-[62ch] rounded-md bg-sand px-5 py-4\">"
+    },
+    {
+      "datei": "web/src/components/website/formulare/VoranmeldungFormular.tsx",
+      "zeile": 144,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]",
+      "zeileText": "spaltenMin=\"sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))]\""
+    },
+    {
+      "datei": "web/src/components/website/formulare/VoranmeldungFormular.tsx",
+      "zeile": 162,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))]",
+      "zeileText": "spaltenMin=\"sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))]\""
+    }
+  ]
+}

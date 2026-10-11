@@ -1,0 +1,151 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-18-49",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/veranstaltungen/page.tsx",
+    "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+    "web/src/components/website/veranstaltungen/Leerzustand.tsx",
+    "web/src/components/website/veranstaltungen/TeilenKnopf.tsx",
+    "web/src/components/website/veranstaltungen/VeranstaltungsFilter.tsx",
+    "web/src/components/website/EventCard.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 19
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/page.tsx",
+      "zeile": 39,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 101,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[22px]",
+      "zeileText": "'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[22px] font-bold text-gruen-800 no-underline hover:bg-g"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 147,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.35]",
+      "zeileText": "<dd className=\"flex flex-1 flex-col leading-[1.35]\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 214,
+      "art": "Tailwind-Klammerwert",
+      "fund": "text-[clamp(2.25rem,1.5rem+1.7vw,3rem)]",
+      "zeileText": "<h1 id=\"ev-titel\" lang={titel.lang} className=\"text-[clamp(2.25rem,1.5rem+1.7vw,3rem)] leading-[1.15] break-words\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 214,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.15]",
+      "zeileText": "<h1 id=\"ev-titel\" lang={titel.lang} className=\"text-[clamp(2.25rem,1.5rem+1.7vw,3rem)] leading-[1.15] break-words\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 219,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))]",
+      "zeileText": "<dl className=\"grid grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-3\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 274,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-[18px] font-bold text-tinte no-underline hover:border-gruen-700 hov"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 285,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[2_1_560px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-[2_1_560px] flex-col gap-6\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 342,
+      "art": "Tailwind-Klammerwert",
+      "fund": "mt-[3px]",
+      "zeileText": "<CircleAlert aria-hidden className=\"mt-[3px] size-5 shrink-0 text-warnung\" />"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 351,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_320px]",
+      "zeileText": "<aside className=\"flex min-w-0 flex-[1_1_320px] flex-col gap-6\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 375,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[1fr_auto]",
+      "zeileText": "<dl className=\"grid grid-cols-[1fr_auto] gap-x-3 gap-y-1\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 409,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.35]",
+      "zeileText": "<span className=\"flex flex-col leading-[1.35]\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 436,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "className=\"flex min-h-11 items-center gap-2.5 [overflow-wrap:anywhere] underline underline-offset-[3px]\""
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/veranstaltungen/[slug]/page.tsx",
+      "zeile": 436,
+      "art": "Tailwind-Klammerwert",
+      "fund": "underline-offset-[3px]",
+      "zeileText": "className=\"flex min-h-11 items-center gap-2.5 [overflow-wrap:anywhere] underline underline-offset-[3px]\""
+    },
+    {
+      "datei": "web/src/components/website/veranstaltungen/Leerzustand.tsx",
+      "zeile": 12,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[56ch]",
+      "zeileText": "<p className=\"max-w-[56ch] text-tinte-2\">{text}</p>"
+    },
+    {
+      "datei": "web/src/components/website/veranstaltungen/TeilenKnopf.tsx",
+      "zeile": 34,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-[18px] font-bold text-tinte hover:border-gruen-700 h"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 67,
+      "art": "Tailwind-Klammerwert",
+      "fund": "pt-[3px]",
+      "zeileText": "<dt className=\"flex pt-[3px] text-gruen-700\">"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 129,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 flex-auto items-center justify-center gap-2 rounded-md bg-gruen-700 px-[18px] font-bold text-weiss no-underline hover:bg-gruen-8"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 138,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[18px] font-bold text-gruen-800 no-underline "
+    }
+  ]
+}

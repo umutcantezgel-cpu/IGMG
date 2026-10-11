@@ -1,0 +1,60 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-18-23",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx",
+    "web/src/components/verwaltung/startklar/PruefListe.tsx",
+    "web/src/components/verwaltung/startklar/ErneutPruefen.tsx",
+    "web/src/server/actions/startklar.ts",
+    "web/src/components/verwaltung/shell/module.ts",
+    "web/src/components/verwaltung/shell/Seitenleiste.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 6
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 72,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "<aside className=\"flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[9"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 83,
+      "art": "Tailwind-Klammerwert",
+      "fund": "min-[900px]",
+      "zeileText": "className=\"inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-5"
+    },
+    {
+      "datei": "web/src/components/verwaltung/shell/Seitenleiste.tsx",
+      "zeile": 89,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-[899px]",
+      "zeileText": "<nav id=\"verwaltung-navigation\" aria-label={texte.navName} className={cn(!offen && 'max-[899px]:hidden')}>"
+    }
+  ]
+}
