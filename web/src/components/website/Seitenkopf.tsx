@@ -44,7 +44,7 @@ export function Seitenkopf({
         </div>
       </div>
       {/* Ohne eigenes Akzentband: schmales Achtstern-Band an der Abschnittskante (K-008, dekorativ, nie hinter Text) */}
-      {hinten ?? <div aria-hidden className="achtstern-band h-3" />}
+      {hinten ?? <div aria-hidden className="achtstern-band h-5" />}
     </section>
   );
 }

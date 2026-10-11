@@ -26,17 +26,8 @@ function Basis({ size = 20, children, ...rest }: IconProps & { children: React.R
   );
 }
 
-/** Achtzackiger Stern – nur als kleines Zeichen vor Abschnittskennungen (readme, Ikonografie). */
-export function Stern8(props: IconProps) {
-  return (
-    <Basis size={14} {...props}>
-      <path d="M6 6h12v12H6zM12 3.5l8.5 8.5-8.5 8.5L3.5 12z" />
-    </Basis>
-  );
-}
-
 /**
- * Achtstern als Fläche (Kern K-008): dieselbe Geometrie wie `Stern8` (Quadrat 6–18 und dasselbe Quadrat um 45° gedreht),
+ * Achtstern als Fläche (Kern K-008): Quadrat 6–18 und dasselbe Quadrat um 45° gedreht (Spitzen bei 3,5 und 20,5),
  * als Umriss der Vereinigung. Für Marken, die auch klein als Stern lesbar sein müssen (Tagesbogen: nächstes Gebet).
  */
 export function Achtstern({ size = 20, ...rest }: IconProps) {
@@ -45,6 +36,14 @@ export function Achtstern({ size = 20, ...rest }: IconProps) {
       <path d="M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z" />
     </svg>
   );
+}
+
+/**
+ * Achtzackiger Stern – nur als kleines Zeichen vor Abschnittskennungen (readme, Ikonografie). Als Fläche gezeichnet:
+ * Der frühere 2-px-Umriss las sich in 14 px wie ein Zahnrad (Sichtprüfung E2).
+ */
+export function Stern8({ size = 14, ...rest }: IconProps) {
+  return <Achtstern size={size} {...rest} />;
 }
 
 export function Facebook(props: IconProps) {
