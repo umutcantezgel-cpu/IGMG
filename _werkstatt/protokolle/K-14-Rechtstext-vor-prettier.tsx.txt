@@ -1,0 +1,167 @@
+import { CircleAlert } from 'lucide-react';
+import type { ReactNode } from 'react';
+import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import { type Sprache, waehle } from '@/lib/i18n/inhalt';
+import type { Baustein } from '@/lib/validierung/seiteninhalte/impressum';
+import { Inhaltsverzeichnis, type InhaltsPunkt } from './Inhaltsverzeichnis';
+
+/**
+ * Bausteine der Rechtstexte (Entwurf nach G-08): Absätze, Listen und Angaben zur verantwortlichen Stelle.
+ * Texte aus dem Seiteninhalt mit sichtbarem Rückfall auf Deutsch (K-02): fehlt die Sprache, steht der deutsche Text
+ * mit lang="de" und dem Hinweis „Nur auf Deutsch verfügbar“. Platzhalter in eckigen Klammern (G-05) sind gestrichelt.
+ */
+
+/** Platzhalter „[…]“ gestrichelt hervorheben, damit sie beim Prüfen auffallen (Design: gestrichelte Fläche). */
+function MitPlatzhaltern({ text }: { text: string }) {
+  return text.split(/(\[[^\]]*\])/).map((teil, i) =>
+    teil.startsWith('[') && teil.endsWith(']') ? (
+      <span key={i} className="rounded-sm border border-dashed border-rand px-1">
+        {teil}
+      </span>
+    ) : (
+      teil
+    ),
+  );
+}
+
+/** Sichtbarer Hinweis, dass ein Inhalt nur auf Deutsch vorliegt (Bestandstext „allgemein.nurDeutsch“). */
+function NurDeutsch({ text }: { text: string }) {
+  return <p className="self-start rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2">{text}</p>;
+}
+
+/** Entwurfskennzeichnung oben auf jeder Rechtsseite (G-08, role="note"). */
+export function Entwurfshinweis({ titel, text }: { titel: string; text: string }) {
+  return (
+    <div role="note" className="flex gap-3 rounded-lg border border-warnung bg-warnung-toenung p-5 text-tinte">
+      <CircleAlert aria-hidden className="mt-0.5 size-6 shrink-0 text-warnung" />
+      <div className="flex flex-col gap-1">
+        <p className="font-bold text-warnung">{titel}</p>
+        <p>{text}</p>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Gliederung einer Rechtsseite: Entwurfshinweis oben, danach Inhaltsverzeichnis und Abschnitte. Mobil untereinander
+ * (Verzeichnis oben); ab md steht das Verzeichnis als Seitenleiste neben der Textspalte (Textbreite ≤ max-w-seitenkopf).
+ */
+export function Rechtsgliederung({
+  punkte,
+  titel,
+  entwurf,
+  children,
+}: {
+  punkte: InhaltsPunkt[];
+  titel?: string;
+  entwurf: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="max-w-seitenkopf">{entwurf}</div>
+      <div className="flex flex-col gap-8 md:grid md:grid-cols-4 md:items-start md:gap-8">
+        <Inhaltsverzeichnis punkte={punkte} titel={titel} className="md:sticky md:top-8 md:col-span-1" />
+        <div className="flex max-w-seitenkopf min-w-0 flex-col gap-6 md:col-span-3">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+/** Abschnitt als Karte mit Überschrift (Design Rechtliches.dc.html: section mit h2, Rahmen, Radius 12 px). */
+export function Abschnitt({ id, titel, children }: { id: string; titel: string; children: ReactNode }) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={`${id}-titel`}
+      className="flex scroll-mt-24 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+    >
+      <h2 id={`${id}-titel`} className="text-display-2 text-balance">
+        {titel}
+      </h2>
+      {children}
+    </section>
+  );
+}
+
+/** Angaben zur verantwortlichen Stelle als Begriffsliste; die Werte sind bis zur Lieferung Platzhalter (G-05). */
+export function Angaben({
+  eintraege,
+  sprache,
+  nurDeutsch,
+}: {
+  eintraege: { label: string; wert: string }[];
+  sprache: Sprache;
+  nurDeutsch: string;
+}) {
+  const deutsch = sprache !== 'de';
+  return (
+    <div className="flex flex-col gap-3">
+      {deutsch ? <NurDeutsch text={nurDeutsch} /> : null}
+      <dl className="flex flex-col">
+        {eintraege.map((e) => (
+          <div
+            key={e.label}
+            className="grid gap-1 border-t border-linie py-3 first:border-t-0 first:pt-0 lg:grid-cols-3 lg:gap-4"
+          >
+            <dt className="font-bold text-tinte-2 lg:col-span-1">{e.label}</dt>
+            <dd lang={deutsch ? 'de' : undefined} className="wrap-anywhere lg:col-span-2">
+              <MitPlatzhaltern text={e.wert} />
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
+function Absatz({ feld, sprache }: { feld: Mehrsprachig; sprache: Sprache }) {
+  const w = waehle(feld, sprache);
+  return (
+    <p lang={w.rueckfall ? 'de' : undefined} className="max-w-(--container-text) text-pretty">
+      <MitPlatzhaltern text={w.text} />
+    </p>
+  );
+}
+
+function Liste({ baustein, sprache }: { baustein: Extract<Baustein, { art: 'liste' }>; sprache: Sprache }) {
+  const titel = baustein.titel ? waehle(baustein.titel, sprache) : null;
+  return (
+    <div className="flex flex-col gap-2">
+      {titel?.text ? (
+        <h3 lang={titel.rueckfall ? 'de' : undefined} className="font-text text-18 font-bold tracking-normal">
+          {titel.text}
+        </h3>
+      ) : null}
+      <ul className="flex list-disc flex-col gap-1.5 ps-6">
+        {baustein.punkte.map((punkt, i) => {
+          const w = waehle(punkt, sprache);
+          return (
+            <li key={i} lang={w.rueckfall ? 'de' : undefined} className="max-w-(--container-text) text-pretty">
+              <MitPlatzhaltern text={w.text} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+/** Ob ein Baustein nur deutsch vorliegt; dann zeigt der Abschnitt den Hinweis „Nur auf Deutsch verfügbar“. */
+function istNurDeutsch(baustein: Baustein, sprache: Sprache): boolean {
+  if (baustein.art === 'absatz') return waehle(baustein.text, sprache).rueckfall;
+  const felder: Mehrsprachig[] = baustein.titel ? [baustein.titel, ...baustein.punkte] : baustein.punkte;
+  return felder.some((feld) => waehle(feld, sprache).rueckfall);
+}
+
+/** Absätze und Listen eines Abschnitts aus dem Seiteninhalt. */
+export function Bausteine({ bloecke, sprache, nurDeutsch }: { bloecke: Baustein[]; sprache: Sprache; nurDeutsch: string }) {
+  return (
+    <div className="flex flex-col gap-4">
+      {bloecke.some((b) => istNurDeutsch(b, sprache)) ? <NurDeutsch text={nurDeutsch} /> : null}
+      {bloecke.map((b, i) =>
+        b.art === 'absatz' ? <Absatz key={i} feld={b.text} sprache={sprache} /> : <Liste key={i} baustein={b} sprache={sprache} />,
+      )}
+    </div>
+  );
+}

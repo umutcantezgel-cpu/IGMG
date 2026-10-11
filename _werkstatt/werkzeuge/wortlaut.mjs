@@ -181,6 +181,8 @@ function istSchluesselName(k) {
   if (ts.isPropertyAssignment(p) && p.name === k) return true;
   if (ts.isImportDeclaration(p) || ts.isExportDeclaration(p) || ts.isExternalModuleReference(p)) return true;
   if (ts.isLiteralTypeNode(p)) return true;
+  // Direktiven ('use client', 'use server', 'use cache') sind Anweisungen an den Bau, kein Text (Fehlalarm K-14)
+  if (ts.isExpressionStatement(p) && /^use [a-z: ]+$/.test(k.text)) return true;
   return false;
 }
 
@@ -518,6 +520,8 @@ const AUSNAHMEN = [
     grund: 'Neue Cockpit-Prüftexte und Cockpit-Oberfläche (Verwaltung, V-13/Z-12). Sie beschreiben die Prüfungen, sind aber keine Texte für Besucherinnen und Besucher.',
     passt: (e) => e.status === 'neu' && e.gruppe === 'G' && e.datei.includes('startklar'),
   },
+  { id: 'A-04', grund: 'Neue Abschnittsüberschriften „meldung.gruppe.*“ (Legenden der Fieldsets im Meldeformular, K-12, z. B. „Einwilligung“). Der Einwilligungstext selbst ist unverändert. Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).', passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /(^|\.)meldung\.gruppe\.(person|anliegen|rueckmeldung|einwilligung)$/.test(e.schluessel) },
+  { id: 'A-05', grund: 'Neuer Schlüssel „rechtliches.inhaltsverzeichnis“ („Inhalt“, Name der Navigation im Inhaltsverzeichnis der Rechtsseiten, K-14). Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).', passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /(^|\.)rechtliches\.inhaltsverzeichnis$/.test(e.schluessel) },
 ];
 
 /** Bekannte erlaubte Schlüssel ohne Rechtsbezug (Vorgabe der Koordination): kennzeichnen, ohne Befund. */
