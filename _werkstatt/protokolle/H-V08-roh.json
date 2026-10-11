@@ -1,0 +1,1247 @@
+{
+  "gestartet": "2026-10-11T23:34:28.209Z",
+  "laeufe": [
+    {
+      "lauf": 1,
+      "nachricht": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:34:45.216Z",
+          "T0Iso": "2026-10-11T23:34:46.459Z",
+          "vorher": "Gemeinschaftsküche erweitert",
+          "nachher": "Gemeinschaftsküche erweitert (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1782,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:46.772Z",
+                "startMs": 313,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"65peuit0wv3cty\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1782,
+                "h1": "Gemeinschaftsküche erweitert (V08-Test)",
+                "titelTag": "Gemeinschaftsküche erweitert (V08-Test) · IGMG Wetzlar",
+                "endeMs": 1782,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 2541,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:46.773Z",
+                "startMs": 314,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"my2hcvpeyx4ece\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2541,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 2541,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 2512,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:46.773Z",
+                "startMs": 314,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"10zmze9i8ii46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2512,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 2512,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:02.252Z",
+          "T0Iso": "2026-10-11T23:35:02.745Z",
+          "nachher": "Gemeinschaftsküche erweitert"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1649,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:02.988Z",
+                "startMs": 243,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14o4qirsn003co7\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1649,
+                "h1": "Gemeinschaftsküche erweitert",
+                "titelTag": "Gemeinschaftsküche erweitert · IGMG Wetzlar",
+                "endeMs": 1649,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 2275,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:02.988Z",
+                "startMs": 243,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14iazgctiy4eb6\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2275,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 2275,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 2301,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:02.988Z",
+                "startMs": 243,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"7gllyo4jeb46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2301,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 2301,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      },
+      "veranstaltung": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:34:54.539Z",
+          "T0Iso": "2026-10-11T23:34:55.031Z",
+          "vorher": "Arabisch Sprachkurs",
+          "nachher": "Arabisch Sprachkurs (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 2422,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:55.290Z",
+                "startMs": 259,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"grorkymf513cks\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2422,
+                "h1": "Arabisch Sprachkurs (V08-Test)",
+                "titelTag": "Arabisch Sprachkurs (V08-Test) · IGMG Wetzlar",
+                "endeMs": 2422,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 2126,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:55.290Z",
+                "startMs": 259,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"qy9ijtu65447hg\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2126,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 2126,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 2196,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:34:55.290Z",
+                "startMs": 259,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"b49qq3ndzc46hs\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2196,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 2196,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:10.126Z",
+          "T0Iso": "2026-10-11T23:35:11.066Z",
+          "nachher": "Arabisch Sprachkurs"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 1401,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:11.218Z",
+                "startMs": 152,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"gbymjss6fh3cgk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1401,
+                "h1": "Arabisch Sprachkurs",
+                "titelTag": "Arabisch Sprachkurs · IGMG Wetzlar",
+                "endeMs": 1401,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 1406,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:11.218Z",
+                "startMs": 152,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"2fcqyfjwkb47f0\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1406,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 1406,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1671,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:11.218Z",
+                "startMs": 152,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"8010lrhm0t46fc\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1671,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1671,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "lauf": 2,
+      "nachricht": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:35:18.418Z",
+          "T0Iso": "2026-10-11T23:35:19.069Z",
+          "vorher": "Gemeinschaftsküche erweitert",
+          "nachher": "Gemeinschaftsküche erweitert (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1702,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:19.153Z",
+                "startMs": 84,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"65peuit0wv3cty\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1702,
+                "h1": "Gemeinschaftsküche erweitert (V08-Test)",
+                "titelTag": "Gemeinschaftsküche erweitert (V08-Test) · IGMG Wetzlar",
+                "endeMs": 1702,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 1599,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:19.153Z",
+                "startMs": 84,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"my2hcvpeyx4ece\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1599,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 1599,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1550,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:19.153Z",
+                "startMs": 84,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"10zmze9i8ii46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1550,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1550,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:25.310Z",
+          "T0Iso": "2026-10-11T23:35:25.796Z",
+          "nachher": "Gemeinschaftsküche erweitert"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1343,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:25.848Z",
+                "startMs": 52,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14o4qirsn003co7\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1343,
+                "h1": "Gemeinschaftsküche erweitert",
+                "titelTag": "Gemeinschaftsküche erweitert · IGMG Wetzlar",
+                "endeMs": 1343,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 1238,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:25.848Z",
+                "startMs": 52,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14iazgctiy4eb6\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1238,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 1238,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1369,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:25.848Z",
+                "startMs": 52,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"7gllyo4jeb46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1369,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1369,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      },
+      "veranstaltung": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:35:21.823Z",
+          "T0Iso": "2026-10-11T23:35:22.154Z",
+          "vorher": "Arabisch Sprachkurs",
+          "nachher": "Arabisch Sprachkurs (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 1823,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:22.187Z",
+                "startMs": 33,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"grorkymf513cks\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1823,
+                "h1": "Arabisch Sprachkurs (V08-Test)",
+                "titelTag": "Arabisch Sprachkurs (V08-Test) · IGMG Wetzlar",
+                "endeMs": 1823,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 1794,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:22.187Z",
+                "startMs": 33,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"qy9ijtu65447hg\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1794,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 1794,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 2117,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:22.187Z",
+                "startMs": 33,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"b49qq3ndzc46hs\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 2117,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 2117,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:28.001Z",
+          "T0Iso": "2026-10-11T23:35:28.339Z",
+          "nachher": "Arabisch Sprachkurs"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 997,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:28.369Z",
+                "startMs": 30,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"gbymjss6fh3cgk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 997,
+                "h1": "Arabisch Sprachkurs",
+                "titelTag": "Arabisch Sprachkurs · IGMG Wetzlar",
+                "endeMs": 997,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 1355,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:28.369Z",
+                "startMs": 30,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"2fcqyfjwkb47f0\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1355,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 1355,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1178,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:28.369Z",
+                "startMs": 30,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"8010lrhm0t46fc\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1178,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1178,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "lauf": 3,
+      "nachricht": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:35:30.901Z",
+          "T0Iso": "2026-10-11T23:35:31.566Z",
+          "vorher": "Gemeinschaftsküche erweitert",
+          "nachher": "Gemeinschaftsküche erweitert (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1396,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:31.622Z",
+                "startMs": 56,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"65peuit0wv3cty\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1396,
+                "h1": "Gemeinschaftsküche erweitert (V08-Test)",
+                "titelTag": "Gemeinschaftsküche erweitert (V08-Test) · IGMG Wetzlar",
+                "endeMs": 1396,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 1405,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:31.622Z",
+                "startMs": 56,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"my2hcvpeyx4ece\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1405,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 1405,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1197,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:31.622Z",
+                "startMs": 56,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"10zmze9i8ii46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1197,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1197,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:36.519Z",
+          "T0Iso": "2026-10-11T23:35:36.860Z",
+          "nachher": "Gemeinschaftsküche erweitert"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/nachrichten/gemeinschaftskueche-erweitert",
+            "sichtbarAbMs": 1050,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:36.889Z",
+                "startMs": 29,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14o4qirsn003co7\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1050,
+                "h1": "Gemeinschaftsküche erweitert",
+                "titelTag": "Gemeinschaftsküche erweitert · IGMG Wetzlar",
+                "endeMs": 1050,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /nachrichten",
+            "url": "/nachrichten",
+            "sichtbarAbMs": 877,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:36.889Z",
+                "startMs": 29,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"14iazgctiy4eb6\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 877,
+                "h1": "Nachrichten",
+                "titelTag": "Nachrichten · IGMG Wetzlar",
+                "endeMs": 877,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Neuigkeiten-Block)",
+            "url": "/",
+            "sichtbarAbMs": 945,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:36.889Z",
+                "startMs": 29,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"7gllyo4jeb46gk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 945,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 945,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      },
+      "veranstaltung": {
+        "speichern": {
+          "klickIso": "2026-10-11T23:35:33.961Z",
+          "T0Iso": "2026-10-11T23:35:34.280Z",
+          "vorher": "Arabisch Sprachkurs",
+          "nachher": "Arabisch Sprachkurs (V08-Test)"
+        },
+        "sichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 1193,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:34.328Z",
+                "startMs": 48,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"grorkymf513cks\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1193,
+                "h1": "Arabisch Sprachkurs (V08-Test)",
+                "titelTag": "Arabisch Sprachkurs (V08-Test) · IGMG Wetzlar",
+                "endeMs": 1193,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 1257,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:34.328Z",
+                "startMs": 48,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"qy9ijtu65447hg\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1257,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 1257,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1219,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:34.328Z",
+                "startMs": 48,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"b49qq3ndzc46hs\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1219,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1219,
+                "fehler": null
+              }
+            ]
+          }
+        ],
+        "rueckbau": {
+          "klickIso": "2026-10-11T23:35:38.744Z",
+          "T0Iso": "2026-10-11T23:35:39.143Z",
+          "nachher": "Arabisch Sprachkurs"
+        },
+        "rueckSichtbar": [
+          {
+            "name": "Detailseite",
+            "url": "/veranstaltungen/arabisch-sprachkurs",
+            "sichtbarAbMs": 857,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:39.170Z",
+                "startMs": 27,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"gbymjss6fh3cgk\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 857,
+                "h1": "Arabisch Sprachkurs",
+                "titelTag": "Arabisch Sprachkurs · IGMG Wetzlar",
+                "endeMs": 857,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Liste /veranstaltungen",
+            "url": "/veranstaltungen",
+            "sichtbarAbMs": 1457,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:39.170Z",
+                "startMs": 27,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"2fcqyfjwkb47f0\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1457,
+                "h1": "Veranstaltungen",
+                "titelTag": "Veranstaltungen · IGMG Wetzlar",
+                "endeMs": 1457,
+                "fehler": null
+              }
+            ]
+          },
+          {
+            "name": "Startseite (Veranstaltungs-Block)",
+            "url": "/",
+            "sichtbarAbMs": 1455,
+            "versuche": [
+              {
+                "startIso": "2026-10-11T23:35:39.170Z",
+                "startMs": 27,
+                "status": 200,
+                "kopf": {
+                  "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+                  "x-nextjs-cache": "MISS",
+                  "content-type": "text/html; charset=utf-8",
+                  "etag": "\"8010lrhm0t46fc\""
+                },
+                "sichtbar": true,
+                "sichtbarMs": 1455,
+                "h1": "IGMG Wetzlar",
+                "titelTag": "IGMG Wetzlar",
+                "endeMs": 1455,
+                "fehler": null
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "schritte": {
+    "ausgang_zeit": "2026-10-11T23:34:31.311Z",
+    "ausgang": [
+      {
+        "ziel": "nachricht",
+        "name": "Detailseite",
+        "url": "/nachrichten/gemeinschaftskueche-erweitert",
+        "startIso": "2026-10-11T23:34:31.312Z",
+        "startMs": 1,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"14o4qirsn003co7\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 369,
+        "h1": "Gemeinschaftsküche erweitert",
+        "titelTag": "Gemeinschaftsküche erweitert · IGMG Wetzlar",
+        "endeMs": 369,
+        "fehler": null
+      },
+      {
+        "ziel": "nachricht",
+        "name": "Liste /nachrichten",
+        "url": "/nachrichten",
+        "startIso": "2026-10-11T23:34:31.710Z",
+        "startMs": 0,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"aal0kodwls4ebs\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 466,
+        "h1": "Nachrichten",
+        "titelTag": "Nachrichten · IGMG Wetzlar",
+        "endeMs": 466,
+        "fehler": null
+      },
+      {
+        "ziel": "nachricht",
+        "name": "Startseite (Neuigkeiten-Block)",
+        "url": "/",
+        "startIso": "2026-10-11T23:34:32.210Z",
+        "startMs": 0,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"uvjabiz3bs46fy\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 538,
+        "h1": "IGMG Wetzlar",
+        "titelTag": "IGMG Wetzlar",
+        "endeMs": 538,
+        "fehler": null
+      },
+      {
+        "ziel": "veranstaltung",
+        "name": "Detailseite",
+        "url": "/veranstaltungen/arabisch-sprachkurs",
+        "startIso": "2026-10-11T23:34:32.787Z",
+        "startMs": 0,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"tu3f8jbf3s3ch6\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 914,
+        "h1": "Arabisch Sprachkurs",
+        "titelTag": "Arabisch Sprachkurs · IGMG Wetzlar",
+        "endeMs": 914,
+        "fehler": null
+      },
+      {
+        "ziel": "veranstaltung",
+        "name": "Liste /veranstaltungen",
+        "url": "/veranstaltungen",
+        "startIso": "2026-10-11T23:34:33.732Z",
+        "startMs": 0,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"2fcqyfjwkb47f0\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 596,
+        "h1": "Veranstaltungen",
+        "titelTag": "Veranstaltungen · IGMG Wetzlar",
+        "endeMs": 596,
+        "fehler": null
+      },
+      {
+        "ziel": "veranstaltung",
+        "name": "Startseite (Veranstaltungs-Block)",
+        "url": "/",
+        "startIso": "2026-10-11T23:34:34.421Z",
+        "startMs": 0,
+        "status": 200,
+        "kopf": {
+          "cache-control": "s-maxage=3600, stale-while-revalidate=82800",
+          "x-nextjs-cache": "HIT",
+          "content-type": "text/html; charset=utf-8",
+          "etag": "\"uvjabiz3bs46fy\""
+        },
+        "sichtbar": true,
+        "sichtbarMs": 810,
+        "h1": "IGMG Wetzlar",
+        "titelTag": "IGMG Wetzlar",
+        "endeMs": 810,
+        "fehler": null
+      }
+    ],
+    "gebetszeit": "nicht durchgeführt (Auftrag: Gebetszeiten-Logik unantastbar)",
+    "endpruefung": {
+      "nachricht": {
+        "titel": "Gemeinschaftsküche erweitert",
+        "gleich": true
+      },
+      "veranstaltung": {
+        "titel": "Arabisch Sprachkurs",
+        "gleich": true
+      }
+    },
+    "kopf": [
+      {
+        "pfad": "/bilder/logos/logo-igmg-wetzlar.png",
+        "status": "HTTP/1.1 200 OK",
+        "cache": "public, max-age=86400, stale-while-revalidate=604800",
+        "pruefung": "entspricht ADR 0023 (1 Tag + SWR, kein immutable)",
+        "zeilen": [
+          "HTTP/1.1 200 OK",
+          "Referrer-Policy: strict-origin-when-cross-origin",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Cross-Origin-Opener-Policy: same-origin",
+          "Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)",
+          "Cache-Control: public, max-age=86400, stale-while-revalidate=604800",
+          "Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+          "Accept-Ranges: bytes",
+          "Last-Modified: Sun, 11 Oct 2026 20:33:19 GMT",
+          "ETag: W/\"1ddc-1a12cab7f9f\"",
+          "Content-Type: image/png",
+          "Content-Length: 7644",
+          "Date: Sun, 11 Oct 2026 23:35:42 GMT",
+          "Connection: keep-alive",
+          "Keep-Alive: timeout=5"
+        ]
+      },
+      {
+        "pfad": "/symbole/symbol-192.png",
+        "status": "HTTP/1.1 200 OK",
+        "cache": "public, max-age=86400, stale-while-revalidate=604800",
+        "pruefung": "entspricht ADR 0023 (1 Tag + SWR, kein immutable)",
+        "zeilen": [
+          "HTTP/1.1 200 OK",
+          "Referrer-Policy: strict-origin-when-cross-origin",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Cross-Origin-Opener-Policy: same-origin",
+          "Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)",
+          "Cache-Control: public, max-age=86400, stale-while-revalidate=604800",
+          "Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+          "Accept-Ranges: bytes",
+          "Last-Modified: Sun, 11 Oct 2026 20:33:19 GMT",
+          "ETag: W/\"d68-1a12cab7f9f\"",
+          "Content-Type: image/png",
+          "Content-Length: 3432",
+          "Date: Sun, 11 Oct 2026 23:35:42 GMT",
+          "Connection: keep-alive",
+          "Keep-Alive: timeout=5"
+        ]
+      },
+      {
+        "pfad": "/_next/static/chunks/1zefyuwh5o6dn.css",
+        "status": "HTTP/1.1 200 OK",
+        "cache": "public, max-age=31536000, immutable",
+        "pruefung": "versioniert, immutable",
+        "zeilen": [
+          "HTTP/1.1 200 OK",
+          "Referrer-Policy: strict-origin-when-cross-origin",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Cross-Origin-Opener-Policy: same-origin",
+          "Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)",
+          "Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+          "Cache-Control: public, max-age=31536000, immutable",
+          "Accept-Ranges: bytes",
+          "Last-Modified: Sun, 11 Oct 2026 20:34:41 GMT",
+          "ETag: W/\"16e2a-1a12cacc248\"",
+          "Content-Type: text/css; charset=UTF-8",
+          "Content-Length: 93738",
+          "Vary: Accept-Encoding",
+          "Date: Sun, 11 Oct 2026 23:35:42 GMT",
+          "Connection: keep-alive",
+          "Keep-Alive: timeout=5"
+        ]
+      },
+      {
+        "pfad": "/de",
+        "status": "HTTP/1.1 307 Temporary Redirect",
+        "cache": "–",
+        "pruefung": "Weiterleitung (307), kein eigener Cache-Header",
+        "zeilen": [
+          "HTTP/1.1 307 Temporary Redirect",
+          "Referrer-Policy: strict-origin-when-cross-origin",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Cross-Origin-Opener-Policy: same-origin",
+          "Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)",
+          "Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+          "location: /",
+          "Date: Sun, 11 Oct 2026 23:35:42 GMT",
+          "Connection: keep-alive",
+          "Keep-Alive: timeout=5"
+        ]
+      },
+      {
+        "pfad": "/",
+        "status": "HTTP/1.1 200 OK",
+        "cache": "s-maxage=3600, stale-while-revalidate=82800",
+        "pruefung": "–",
+        "zeilen": [
+          "HTTP/1.1 200 OK",
+          "Referrer-Policy: strict-origin-when-cross-origin",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Cross-Origin-Opener-Policy: same-origin",
+          "Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)",
+          "Content-Security-Policy: default-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; worker-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+          "x-middleware-rewrite: /de",
+          "Vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+          "x-nextjs-cache: HIT",
+          "x-nextjs-prerender: 1",
+          "link: </_next/static/media/atkinson_hyperlegible_next_latin_400_normal-s.p.2f5b3iexnrrmc.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/atkinson_hyperlegible_next_latin_700_normal-s.p.19r-lfq-yh-yi.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/igmg_wetzlar_titel_latin_600_opsz-s.p.3pmrmf79ke7rh.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+          "x-nextjs-stale-time: 300",
+          "Cache-Control: s-maxage=3600, stale-while-revalidate=82800",
+          "ETag: \"8010lrhm0t46fc\"",
+          "Content-Type: text/html; charset=utf-8",
+          "Content-Length: 195275",
+          "Date: Sun, 11 Oct 2026 23:35:42 GMT",
+          "Connection: keep-alive",
+          "Keep-Alive: timeout=5"
+        ]
+      }
+    ]
+  },
+  "hinweise": [
+    "Vorlauf (Rohdaten H-V08-vorlauf-roh.json): Ein erster Lauf hat die Prüfung einmal direkt nach dem Ladeereignis gemacht. Dabei war der Text der Detailseite beim Ausgangstitel kurz leer und wurde als „nicht sichtbar“ gewertet. Der Vorlauf hat die Titel gesetzt und wieder zurückgesetzt. Seine Werte gehen nicht in die Ergebnisse ein; die Messung ist danach auf Abfrage innerhalb von 3 s nach dem Ladeereignis umgestellt."
+  ],
+  "server": {
+    "pid": "24497",
+    "start": "Sun Oct 11 21:23:47 2026",
+    "gesund": 200
+  },
+  "beendet": "2026-10-11T23:35:42.566Z"
+}
