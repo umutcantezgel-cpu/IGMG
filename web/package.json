@@ -1,12 +1,26 @@
 {
-  "name": "web",
+  "name": "igmg-wetzlar-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "typen": "next typegen && tsc --noEmit",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:abdeckung": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "check": "pnpm typen && pnpm lint && pnpm test:unit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx --env-file-if-exists=.env drizzle/seeds/index.ts",
+    "auth:schema": "node scripts/auth-schema.mjs",
+    "schriften:kopieren": "node scripts/schriften-kopieren.mjs",
+    "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
+    "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
+    "format": "prettier --write"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1149.0",
@@ -42,11 +56,13 @@
     "rrule": "2.8.1",
     "server-only": "0.0.1",
     "sharp": "^0.35.5",
+    "sonner": "^2.0.8",
     "tailwind-merge": "^3.7.0",
     "zod": "^4.6.5"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
+    "@better-auth/cli": "1.4.21",
     "@electric-sql/pglite": "0.5.8",
     "@fontsource/amiri": "5.3.0",
     "@fontsource/atkinson-hyperlegible-next": "5.3.0",
@@ -78,5 +94,21 @@
     "vite": "^8.3.4",
     "vitest": "5.0.3"
   },
-  "packageManager": "pnpm@12.11.2"
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "export PATH=\"$HOME/.local/bin:$PATH\" && cd web && pnpm exec lint-staged && node scripts/geheimnis-pruefung.mjs --staged",
+    "pre-push": "cd web && node scripts/geheimnis-pruefung.mjs --push"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,mjs,mts}": [
+      "prettier --write",
+      "eslint --max-warnings 0 --no-warn-ignored"
+    ],
+    "*.{css,json,md}": [
+      "prettier --write"
+    ]
+  }
 }

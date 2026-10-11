@@ -1,0 +1,66 @@
+# Betrieb und Entwicklung (K-19, ADR 0011). Start: `docker compose up -d` (App + DB),
+# Entwicklung ohne App: `docker compose --profile entwicklung up -d db mailpit`.
+name: igmg-wetzlar
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: igmg
+      POSTGRES_USER: igmg
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-igmg-lokal}
+      TZ: UTC
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - db-daten:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U igmg -d igmg']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    profiles: ['entwicklung', 'test']
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:1025:1025'
+      - '127.0.0.1:8025:8025'
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles: ['betrieb', 'test']
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgres://igmg:${POSTGRES_PASSWORD:-igmg-lokal}@db:5432/igmg
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: 1
+      TZ: UTC
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+    ports:
+      - '127.0.0.1:3000:3000'
+    volumes:
+      - medien:/app/.medien
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -qO- http://127.0.0.1:3000/api/health || exit 1']
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  db-daten:
+  medien:

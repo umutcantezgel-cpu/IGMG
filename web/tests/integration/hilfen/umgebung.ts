@@ -1,0 +1,11 @@
+import { randomBytes } from 'node:crypto';
+
+// Testumgebung für Integrationstests: Geheimnisse werden je Lauf zufällig erzeugt (keine festen Werte im Repo, G-03).
+const zufall = () => randomBytes(32).toString('base64');
+process.env.EINGANG_SCHLUESSEL = zufall();
+process.env.EINGANG_SCHLUESSEL_ID = '1';
+process.env.RATE_GEHEIMNIS = zufall();
+process.env.ALTCHA_GEHEIMNIS = zufall();
+process.env.BETTER_AUTH_SECRET = zufall();
+process.env.MAIL_TRANSPORT = 'datei';
+delete process.env.DATABASE_URL;

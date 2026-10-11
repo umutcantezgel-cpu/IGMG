@@ -1,0 +1,58 @@
+import 'server-only';
+import { db, schema } from '@/lib/db';
+
+/**
+ * Audit-Log (G-07, S5). Jeder Zugriff auf Personendaten und jede Änderung in der Verwaltung
+ * schreibt einen Eintrag. `details` darf KEINE Personendaten enthalten (nur IDs, Zähler, Feldnamen).
+ */
+export type AuditAktion =
+  | 'anmeldung.erfolg'
+  | 'anmeldung.fehlgeschlagen'
+  | 'abmeldung'
+  | 'zwei_faktor.eingerichtet'
+  | 'einladung.erstellt'
+  | 'einladung.angenommen'
+  | 'einladung.widerrufen'
+  | 'benutzer.rollen_geaendert'
+  | 'benutzer.gesperrt'
+  | 'benutzer.entsperrt'
+  | 'inhalt.angelegt'
+  | 'inhalt.geaendert'
+  | 'inhalt.veroeffentlicht'
+  | 'inhalt.papierkorb'
+  | 'inhalt.wiederhergestellt'
+  | 'inhalt.geloescht'
+  | 'eingang.gelesen'
+  | 'eingang.status'
+  | 'eingang.notiz'
+  | 'eingang.exportiert'
+  | 'eingang.geloescht'
+  | 'eingang.frist_geloescht'
+  | 'medium.hochgeladen'
+  | 'medium.geloescht'
+  | 'gebetszeiten.importiert'
+  | 'gebetszeiten.einstellung'
+  | 'einstellung.geaendert'
+  | 'ticket.angelegt'
+  | 'ticket.geaendert';
+
+export type AuditDetails = Record<string, string | number | boolean | null>;
+
+export type AuditEintrag = {
+  benutzerId: string | null;
+  aktion: AuditAktion;
+  zielTyp?: string;
+  zielId?: string;
+  details?: AuditDetails;
+};
+
+/** Schreibt einen Audit-Eintrag. Fehler beim Schreiben brechen die Aktion ab (lieber kein Zugriff als ein unprotokollierter). */
+export async function protokolliere(eintrag: AuditEintrag, tx: Pick<typeof db, 'insert'> = db): Promise<void> {
+  await tx.insert(schema.auditEintrag).values({
+    benutzerId: eintrag.benutzerId,
+    aktion: eintrag.aktion,
+    zielTyp: eintrag.zielTyp ?? null,
+    zielId: eintrag.zielId ?? null,
+    details: eintrag.details ?? null,
+  });
+}

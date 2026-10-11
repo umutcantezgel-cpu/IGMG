@@ -1,0 +1,9 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "printWidth": 140,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/app/globals.css",
+  "tailwindFunctions": ["cn", "cva"]
+}
