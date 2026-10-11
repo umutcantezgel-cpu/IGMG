@@ -1,0 +1,106 @@
+{
+  "werkzeug": "svg-pruefung",
+  "zeitpunkt": "2026-10-11-17-52",
+  "svgDateien": [
+    "_lauf/lichtung/a/public/file.svg",
+    "_lauf/lichtung/a/public/globe.svg",
+    "_lauf/lichtung/a/public/next.svg",
+    "_lauf/lichtung/a/public/vercel.svg",
+    "_lauf/lichtung/a/public/window.svg"
+  ],
+  "zaehl": {
+    "Fehler": 0,
+    "Befund": 7,
+    "OK": 1
+  },
+  "ergebnisse": [
+    {
+      "datei": "_lauf/lichtung/a/public/file.svg",
+      "zeile": 1,
+      "art": "Datei",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
+      "datei": "_lauf/lichtung/a/public/globe.svg",
+      "zeile": 1,
+      "art": "Datei",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
+      "datei": "_lauf/lichtung/a/public/next.svg",
+      "zeile": 1,
+      "art": "Datei",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
+      "datei": "_lauf/lichtung/a/public/vercel.svg",
+      "zeile": 1,
+      "art": "Datei",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
+      "datei": "_lauf/lichtung/a/public/window.svg",
+      "zeile": 1,
+      "art": "Datei",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
+      "datei": "web/src/components/verwaltung/anmeldung/QrCode.tsx",
+      "zeile": 8,
+      "art": "inline",
+      "status": "OK",
+      "rolle": "bedeutungstragend, benannt",
+      "befunde": [],
+      "hinweise": []
+    },
+    {
+      "datei": "web/src/components/website/Icons.tsx",
+      "zeile": 11,
+      "art": "inline",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": [
+        "Attribute per {...props} übergeben: manuell prüfen"
+      ]
+    },
+    {
+      "datei": "web/src/components/website/fehler/FehlerAnsicht.tsx",
+      "zeile": 34,
+      "art": "inline",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    }
+  ]
+}

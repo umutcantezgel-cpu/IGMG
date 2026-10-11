@@ -4,8 +4,10 @@ import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { UeberUnsInhalt } from '@/lib/validierung/seiteninhalte/ueber-uns';
 import { cn } from '@/lib/utils';
+import type { CSSProperties } from 'react';
 import { Bildflaeche } from './Bildflaeche';
 import { SYMBOL } from './symbole';
+import { WegBeobachter } from './WegBeobachter';
 
 type Eintrag = UeberUnsInhalt['zeitleiste'][number];
 
@@ -17,21 +19,27 @@ function punktFarbe(i: number, anzahl: number): string {
 
 /**
  * Zeitleiste „Unsere Reise“ (design/AboutUs.dc.html D:37–50): Punkt mit Symbol, Jahresmarke, Ort, Titel und Bildfläche.
- * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN).
+ * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN). Als „Weg der Gemeinde“ (B-07) zieht sich die
+ * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`WegBeobachter`).
  */
 export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprache: Sprache }) {
   return (
-    <ol className="flex flex-col">
+    <WegBeobachter className="flex flex-col">
       {eintraege.map((e, i) => {
         const Icon = SYMBOL[e.symbol];
         const bild = textMitSprache(e.bildbeschreibung, sprache);
         return (
-          <li key={i} className="flex gap-5">
+          <li key={i} className="flex gap-5" style={{ '--i': i, '--n': eintraege.length } as CSSProperties}>
             <div aria-hidden className="flex shrink-0 flex-col items-center">
-              <span className={cn('flex size-12 items-center justify-center rounded-pill text-weiss', punktFarbe(i, eintraege.length))}>
+              <span
+                className={cn(
+                  'weg-punkt flex size-12 items-center justify-center rounded-pill text-weiss',
+                  punktFarbe(i, eintraege.length),
+                )}
+              >
                 <Icon aria-hidden className="size-5" />
               </span>
-              <span className="min-h-6 w-0.5 flex-1 bg-linie" />
+              {i < eintraege.length - 1 ? <span className="weg-linie min-h-6 w-0.5 flex-1 bg-gruen-700/40" /> : null}
             </div>
             <div className="flex min-w-0 flex-1 flex-wrap gap-x-6 gap-y-4 pb-8">
               <div className="flex min-w-0 flex-[1_1_320px] flex-col gap-2">
@@ -61,6 +69,6 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
           </li>
         );
       })}
-    </ol>
+    </WegBeobachter>
   );
 }

@@ -17,6 +17,11 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 | Z-11 | Vercel | V-Prüfliste V-01…V-13, Build nach V-02 (preview + production), Vorschau per Vercel-MCP | V-01 teilweise (vercel.json ohne regions/crons/ignoreCommand), Rest offen | alle erfüllt; Vorschau ohne Build-/Laufzeitfehler auf Hauptansichten | offen | Prüfprotokoll, Dateien |
 | Z-12 | Recht und Startklar | Prüfsuiten früherer Läufe (soweit vorhanden, L-E03), Wortlaut-Vergleich Rechtstexte, Cockpit, GO-LIVE.md, MENSCHEN.md | Cockpit/startklar/release:check fehlen (L-E02/L-E03) | grün; Wortlaut unverändert bis auf Hosting-Baustein v2; Cockpit mit allen Vercel-Punkten; jede Menschen-Aufgabe mit Ort und Aufwand | offen | Prüfprotokoll, Dateien |
 
+## Ausgangswerte E0 (Kurzfassung, `protokolle/E0-PRUEFER-02-ausgangswerte.txt`)
+- 11 Hauptansichten, Port 3100 (9ebb4bc), Lighthouse mobil Median ×3: Performance 85–92 (Spanne je Route 80–94), A11y/BP/SEO 100, LCP 1816–2263 ms, CLS ≤ 0,001, TBT 285–458 ms, JS 168–174,1 kB gz.
+- axe WCAG 2.2 AA: 0 Verstöße (390/1440), je 1 „unklar“ auf 8 Routen. Bildsatz: kein Querscrollen; `/nachrichten` 9 (390) bzw. 4 (768) Textelemente ragen über den rechten Rand (ohne Querscrollen).
+- **Messbedingung:** gemessen unter Last (Load 2,2–4,5 auf 4 Kernen, Entwicklungsserver parallel). Der frühere Lauf (09:07, ruhig) hatte Performance 98–99. Für Z-08 werden Ausgangsstand (Port 3100) und Nachher in Stufe C **unmittelbar nacheinander unter gleichen, ruhigen Bedingungen** gemessen; maßgeblich ist dieser Paarvergleich, die BUDGETS gelten absolut.
+
 ## UMGEBUNGSAUSNAHMEN (mit Ersatz)
 - **UA-01 Echte Geräte:** keine Telefone/Tablets in der Cloud → Ersatz: Chromium-Emulation 390/768/1440, Drosselung 4× für Bildraten.
 - **UA-02 Docker-E2E:** kein Docker → Ersatz: Postgres 16 per apt (machbar, E0-PRUEFER-01) + Mailpit-Binärdatei; sonst Integrationssuite auf PGlite + Playwright-Rauchtest gegen Standalone-Server mit PGlite.

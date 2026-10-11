@@ -296,6 +296,12 @@
     scale: 0 1;
   }
 }
+/* B-07: Linie wächst von oben */
+@keyframes wachsen {
+  from {
+    scale: 1 0;
+  }
+}
 /* B-06: Marke tritt hervor */
 @keyframes hervortreten {
   from {
@@ -343,6 +349,23 @@
     transform-box: fill-box;
     transform-origin: center;
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
+  }
+  /* B-07 Weg der Gemeinde: 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
+  [data-weg] {
+    --dauer-weg: 1400ms;
+  }
+  [data-weg='bereit'] .weg-linie {
+    scale: 1 0;
+  }
+  [data-weg='bereit'] .weg-punkt {
+    opacity: 0;
+  }
+  [data-weg='laeuft'] .weg-linie {
+    transform-origin: top;
+    animation: wachsen calc(var(--dauer-weg) / var(--n)) linear calc((var(--i) + 0.5) * var(--dauer-weg) / var(--n)) both;
+  }
+  [data-weg='laeuft'] .weg-punkt {
+    animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * var(--dauer-weg) / var(--n)) both;
   }
   /* B-12: Lade-Achtstern zeichnet sich höchstens viermal, dann steht er */
   .lade-stern {
