@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
     // enger (BETRIEB.md 5b).
     serverActions: { bodySizeLimit: '11mb' },
     proxyClientMaxBodySize: '11mb',
+    // Produktions-Builds ohne persistenten Turbopack-Zwischenspeicher (L-E09): Ein Build übernahm das alte
+    // globals.css aus dem Zwischenspeicher, während die Klassen frisch eingelesen wurden (Tokens und Keyframes fehlten).
+    // Vercel stellt `.next/cache` zwischen Deployments wieder her; deterministische Builds gehen vor Bauzeit.
+    turbopackFileSystemCacheForBuild: false,
   },
   images: {
     // Medien kommen ausschließlich aus der eigenen Herkunft (ADR 0007).

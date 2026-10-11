@@ -42,3 +42,10 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 ## L-E08 · 2026-10-11 · Opus · Rubrik und Sichtabnahme (Antwort auf L0-Fragen)
 - Sechs Kategorien der Rubrik (AUFTRAG §10 „Mittel der sechs Kategorien“): Typografie · Komposition · Farbe und Bild · Bewegung · Grafik · Details („Grafik und Details“ sind zwei Kategorien).
 - Sichtabnahme: am E2-Tor durch einen frischen Opus-Unteragenten (AUFTRAG §9 als besondere Regel), an späteren Toren durch Opus selbst (§10). Die Endprüfung (Z-04) macht wieder ein frischer Opus-Unteragent mit Blindvergleich.
+
+## L-E09 · 2026-10-11 · Opus · Produktions-Builds ohne persistenten Turbopack-Zwischenspeicher
+- Befund (E2-TOR): Das ausgelieferte Stylesheet enthielt weder die neuen `@theme`-Tokens (`text-display-*`, `spacing-abschnitt`, Kurven) noch Keyframes, Bewegungsklassen und View-Transition-Regeln, wohl aber Klassen wie `duration-(--dauer-wechsel)` aus den TSX-Dateien. Der Server lief mit dem Build des Haupt-Repos von 18:00 (BUILD_ID `sxuaHSy3x-lABnPNPztj3`), gebaut mit dem Zwischenspeicher `.next/cache/turbopack` des Ausgangsbuilds von 17:15: altes `globals.css`, frisch eingelesene Klassen.
+- Gegenprobe: Ein sauberer Build von 1fdc6a3 in einem frischen Worktree enthält alles (Keyframes, `text-display-1`, `.bogen-enthuellt`, `::view-transition-new(.seite)`, `.tritt-auf`). Eine kleine Änderung an `globals.css` mit warmem Zwischenspeicher kam an; die Veraltung ließ sich so nicht nachstellen, der Befund bleibt.
+- Next 16.4 setzt `turbopackFileSystemCacheForBuild` standardmäßig auf `true`, und Vercel stellt `.next/cache` zwischen Deployments wieder her („Restored build cache from previous deployment“ im Protokoll von dpl_Bd4TrKhRFssmDf5hNvy5JPy5tcfS).
+- Entscheidung: `experimental.turbopackFileSystemCacheForBuild: false` in `next.config.ts`. Dev behält seinen Zwischenspeicher. Preis: längere Bauzeit (sauberer Vorschau-Build lokal ≈ 166 s). Prüfer bauen für Tore immer in einem frischen Worktree und starten den Server aus genau diesem Build (BUILD_ID im Protokoll).
+- Umkehrprobe: Ist der Fehler upstream behoben und belegt, kann der Schalter entfallen; eine Zeile.
