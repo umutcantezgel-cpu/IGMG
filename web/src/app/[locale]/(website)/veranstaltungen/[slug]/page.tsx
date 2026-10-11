@@ -24,6 +24,7 @@ import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
 import { LOGOS } from '@/components/website/navigation';
 import { RichText } from '@/components/website/RichText';
 import { JsonLd } from '@/components/website/JsonLd';
+import { morphStil } from '@/components/website/morph';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Text, textMitSprache } from '@/components/website/Text';
 import { FormularInsel } from '@/components/formular/FormularInsel';
@@ -213,7 +214,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               ) : null}
             </div>
             <div className="flex flex-col gap-2">
-              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words">
+              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words" style={morphStil(`v-${v.slug}-titel`)}>
                 {titel.text}
               </h1>
               <p className="text-20 text-tinte-2">{tk(`kat_${v.kategorie}`)}</p>

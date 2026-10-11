@@ -82,7 +82,10 @@ export async function EventCard({
     </div>
   );
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
+    <article
+      data-morph-karte={`v-${v.slug}`}
+      className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
+    >
       {variante === 'liste' ? (
         bild ? (
           <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-40 border-b border-linie" />
@@ -110,7 +113,7 @@ export async function EventCard({
           ) : null}
         </div>
         <div className="flex flex-col gap-2">
-          <h3 lang={titel.lang} className="text-24 leading-tight text-balance break-words">
+          <h3 lang={titel.lang} data-morph="titel" className="text-24 leading-tight text-balance break-words">
             {titel.text}
           </h3>
           {org ? (

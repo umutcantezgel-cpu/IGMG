@@ -52,11 +52,15 @@ export async function NewsCard({
 
   if (variante === 'kompakt') {
     return (
-      <article className="relative flex h-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
+      <article
+        data-morph-karte={`n-${n.slug}`}
+        className="relative flex h-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
+      >
         {bild ? (
-          <MedienBild bild={bild} sprache={sprache} sizes="88px" className="size-22 shrink-0 rounded-md border border-linie" />
+          <MedienBild bild={bild} sprache={sprache} morph="bild" sizes="88px" className="size-22 shrink-0 rounded-md border border-linie" />
         ) : (
           <Bildplatzhalter
+            morph="bild"
             beschriftung={t('fotoBeitrag')}
             kurz={t('foto')}
             className="size-22 shrink-0 rounded-md border border-linie px-1"
@@ -71,7 +75,7 @@ export async function NewsCard({
           >
             {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
           </span>
-          <h3 lang={titel.lang} className="font-text text-20 leading-snug font-bold tracking-normal">
+          <h3 lang={titel.lang} data-morph="titel" className="font-text text-20 leading-snug font-bold tracking-normal">
             <Link
               href={ziel}
               aria-label={`${t('artikelLesen')}: ${titel.text}`}
@@ -96,11 +100,14 @@ export async function NewsCard({
 
   if (variante === 'gross') {
     return (
-      <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1">
+      <article
+        data-morph-karte={`n-${n.slug}`}
+        className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1"
+      >
         {bild ? (
-          <MedienBild bild={bild} sprache={sprache} sizes={SIZES_AUFMACHER} className="h-75 border-b border-linie" />
+          <MedienBild bild={bild} sprache={sprache} morph="bild" sizes={SIZES_AUFMACHER} className="h-75 border-b border-linie" />
         ) : (
-          <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-75 border-b border-linie" />
+          <Bildplatzhalter morph="bild" beschriftung={t('fotoBeitrag')} className="h-75 border-b border-linie" />
         )}
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
@@ -109,7 +116,7 @@ export async function NewsCard({
               {t('aktuell')}
             </span>
           </div>
-          <h3 lang={titel.lang} className="text-30 leading-tight text-balance">
+          <h3 lang={titel.lang} data-morph="titel" className="text-30 leading-tight text-balance">
             {titel.text}
           </h3>
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-16 text-tinte-2">
@@ -138,11 +145,14 @@ export async function NewsCard({
   }
 
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
+    <article
+      data-morph-karte={`n-${n.slug}`}
+      className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
+    >
       {bild ? (
-        <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[180px] border-b border-linie" />
+        <MedienBild bild={bild} sprache={sprache} morph="bild" sizes={SIZES_RASTER} className="h-[180px] border-b border-linie" />
       ) : (
-        <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[180px] border-b border-linie" />
+        <Bildplatzhalter morph="bild" beschriftung={t('fotoBeitrag')} className="h-[180px] border-b border-linie" />
       )}
       <div className="flex flex-1 flex-col gap-3 px-6 pt-5 pb-6">
         <div className="flex flex-wrap gap-2">
@@ -154,7 +164,7 @@ export async function NewsCard({
             </span>
           ) : null}
         </div>
-        <h3 lang={titel.lang} className="text-24 leading-tight text-balance">
+        <h3 lang={titel.lang} data-morph="titel" className="text-24 leading-tight text-balance">
           {titel.text}
         </h3>
         <Text feld={n.kurztext} sprache={sprache} als="p" className="text-pretty text-tinte-2" />

@@ -8,6 +8,7 @@ import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { MedienBild, SIZES_HAUPTSPALTE } from '@/components/website/MedienBild';
 import { JsonLd } from '@/components/website/JsonLd';
 import { RichText } from '@/components/website/RichText';
+import { morphStil } from '@/components/website/morph';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { textMitSprache } from '@/components/website/Text';
 import { AehnlicheArtikel } from '@/components/website/nachrichten/AehnlicheArtikel';
@@ -135,7 +136,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                   </span>
                 ) : null}
               </div>
-              <h1 lang={titel.lang} className="text-display-1 text-pretty">
+              <h1 lang={titel.lang} className="text-display-1 text-pretty" style={morphStil(`n-${n.slug}-titel`)}>
                 {titel.text}
               </h1>
               {kurz.text ? (
@@ -151,17 +152,20 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                 </div>
               </div>
             </header>
-            {n.bild ? (
-              <MedienBild
-                bild={n.bild}
-                sprache={sprache}
-                vorladen
-                sizes={SIZES_HAUPTSPALTE}
-                className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
-              />
-            ) : (
-              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
-            )}
+            {/* Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher */}
+            <div style={morphStil(`n-${n.slug}-bild`)}>
+              {n.bild ? (
+                <MedienBild
+                  bild={n.bild}
+                  sprache={sprache}
+                  vorladen
+                  sizes={SIZES_HAUPTSPALTE}
+                  className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
+                />
+              ) : (
+                <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
+              )}
+            </div>
             {inhalt ? (
               <RichText
                 doc={inhalt.doc}

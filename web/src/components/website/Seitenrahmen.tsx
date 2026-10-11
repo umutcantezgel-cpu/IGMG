@@ -69,7 +69,9 @@ export async function Seitenrahmen({
       <main id="inhalt" tabIndex={-1} className="outline-none">
         {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css). Den
             Übergang startet SeitenUebergang; versteckte Seiten (Activity) sind nicht gerendert und nehmen nicht teil. */}
-        <div style={SEITE}>{children}</div>
+        <div data-seite style={SEITE}>
+          {children}
+        </div>
       </main>
       <Footer />
       <SeitenUebergang />

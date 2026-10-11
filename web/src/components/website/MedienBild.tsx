@@ -38,6 +38,7 @@ export function MedienBild({
   sizes,
   className,
   vorladen = false,
+  morph,
 }: {
   bild: BildDaten;
   sprache: Sprache;
@@ -45,6 +46,8 @@ export function MedienBild({
   sizes: string;
   className?: string;
   vorladen?: boolean;
+  /** Markierung für den Seitenwechsel (O-13): SeitenUebergang vergibt beim Klick den Übergangsnamen */
+  morph?: string;
 }) {
   const alt = waehle(bild.alt, sprache);
   const { props } = getImageProps({
@@ -64,5 +67,5 @@ export function MedienBild({
   if (vorladen) preload(props.src, { as: 'image', imageSrcSet: props.srcSet, imageSizes: props.sizes, fetchPriority: 'high' });
   // Die Image-Komponente ist Client-Code (K-12); getImageProps liefert hier nur die Attribute, das Element bleibt ein img.
   // eslint-disable-next-line @next/next/no-img-element -- kein next/image-Element, daher kein Client-JavaScript
-  return <img {...props} alt={alt.text} lang={alt.rueckfall ? 'de' : undefined} />;
+  return <img {...props} alt={alt.text} lang={alt.rueckfall ? 'de' : undefined} data-morph={morph} />;
 }
