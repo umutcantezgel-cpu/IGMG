@@ -14,6 +14,8 @@ export type LeisteTexte = {
   namen: Record<Gebet, string>;
   naechstes: string;
   verbleibt: string;
+  /** Restzeit, wenn das nächste Gebet erst morgen ist („morgen · verbleibt: …“) */
+  verbleibtMorgen: string;
   hinweis: string | null;
   alle: string;
   anzeigen: string;
@@ -77,8 +79,11 @@ export function LeisteLive({
     : '';
   const naechstesName = naechstes ? texte.namen[naechstes.gebet] : '–';
   const naechstesZeit = naechstes ? zeit((naechstes.morgen ? morgen : heute)?.[naechstes.gebet] ?? '') : '';
-  // Platzhalter in der längsten Form (zweistellige Stunden und Minuten): Die Zeile umbricht dann nie weniger als die echte Restzeit
-  const platzRestzeit = texte.verbleibt.replace('{zeit}', `88${texte.dauer.std} 88${texte.dauer.min}`);
+  const restZeile = (naechstes?.morgen ? texte.verbleibtMorgen : texte.verbleibt).replace('{zeit}', restText);
+  // Unsichtbare Platzhalter aller Formen (jedes Gebet, längste Uhrzeit, Restzeit heute/morgen): Der linke Block hat
+  // vom Server an seine endgültige Breite – kein Verschieben der Karten nach dem Einhängen oder beim Gebetswechsel
+  const platzNaechstes = GEBETE.map((g) => `${texte.naechstes}: ${texte.namen[g]} · ${zeit('88:88')}`);
+  const platzRest = [texte.verbleibt, texte.verbleibtMorgen].map((v) => v.replace('{zeit}', `88${texte.dauer.std} 88${texte.dauer.min}`));
 
   // B-10: Gewechselt wird erst, wenn ein bekanntes Gebet auf ein anderes folgt. Der Sprung von „noch keine Uhrzeit“
   // (Server) auf das erste Gebet nach dem Einhängen ist kein Wechsel und bleibt ohne Bewegung.
@@ -161,15 +166,24 @@ export function LeisteLive({
             style={DAUER_WECHSEL}
             className={klassen('flex flex-col text-16 tabular-nums', !naechstes && 'invisible', gewechselt && 'blendet-ein')}
           >
-            <span className="font-bold text-weiss">
-              {texte.naechstes}: {naechstesName}
-              {naechstesZeit ? ` · ${naechstesZeit}` : ''}
+            <span className="grid font-bold text-weiss">
+              {platzNaechstes.map((p) => (
+                <span key={p} aria-hidden className="invisible col-start-1 row-start-1">
+                  {p}
+                </span>
+              ))}
+              <span className="col-start-1 row-start-1">
+                {texte.naechstes}: {naechstesName}
+                {naechstesZeit ? ` · ${naechstesZeit}` : ''}
+              </span>
             </span>
             <span className="grid text-gruen-100">
-              <span aria-hidden className="invisible col-start-1 row-start-1">
-                {platzRestzeit}
-              </span>
-              <span className="col-start-1 row-start-1">{texte.verbleibt.replace('{zeit}', restText)}</span>
+              {platzRest.map((p) => (
+                <span key={p} aria-hidden className="invisible col-start-1 row-start-1">
+                  {p}
+                </span>
+              ))}
+              <span className="col-start-1 row-start-1">{restZeile}</span>
             </span>
           </div>
           {hinweis}
@@ -205,7 +219,7 @@ export function LeisteLive({
             <span className="text-24 leading-tight font-bold">
               {naechstesName} · <span className="tabular-nums">{naechstesZeit}</span>
             </span>
-            <span className="text-16 font-bold text-tinte-2 tabular-nums">{texte.verbleibt.replace('{zeit}', restText)}</span>
+            <span className="text-16 font-bold text-tinte-2 tabular-nums">{restZeile}</span>
           </div>
         </div>
         <button

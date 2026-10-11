@@ -3,7 +3,7 @@
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { type CSSProperties, useEffect, useState } from 'react';
 import { berlinerDatum, naechstesGebet, restzeit, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
@@ -29,10 +29,18 @@ export type AnzeigeTexte = {
 type Sprache = 'de' | 'tr' | 'en';
 const LOCALE: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 
+/** B-10 Gebetszeit-Wechsel: Die Hervorhebung wandert per Überblendung (`dauer-wechsel`, Kurve `ease-standard`). */
+const WECHSEL = 'transition-colors duration-(--dauer-wechsel) ease-standard';
+/** Dauer des Einblendens für den neuen Namens- und Zeitbereich (`blendet-ein` liest `--dauer`). */
+const DAUER_WECHSEL = { '--dauer': 'var(--dauer-wechsel)' } as CSSProperties;
+
 /**
  * Moschee-Bildschirm (design/FullscreenPrayerTimes.dc.html, Blatt S03, K-08): Uhr und Tageswechsel in
  * Europe/Berlin, Sprache wechselt alle 10 s (de/tr), Restzeit bis zum nächsten Gebet. Die Daten reichen 45 Tage –
  * ohne Netz läuft die Anzeige weiter; mit Netz lädt sie nach Mitternacht neu (frische Zeiten).
+ * Größen wachsen in Stufen mit der Breite des Bildschirms (Container-Varianten `@3xl` … `@7xl` am Wurzelelement);
+ * die Zeiten sind so groß, wie sechs Karten in einer Reihe bei 1920 px noch ohne Überlauf passen (`text-anzeige-64`).
+ * Bewegung nur bei einem Gebetswechsel (B-10); beim ersten Laden steht alles sofort da, der Countdown tickt ohne Bewegung.
  */
 export function AnzeigeLive({
   tage,
@@ -108,23 +116,34 @@ export function AnzeigeLive({
       : '';
   const zeiten = heute ?? tage[1] ?? tage[0];
 
+  // B-10: Gewechselt wird erst, wenn ein bekanntes Gebet auf ein anderes folgt. Der Sprung von „noch keine Zeit“
+  // (vor dem Einhängen) auf das erste Gebet ist kein Wechsel und bleibt ohne Bewegung.
+  const kennung = naechstes ? `${naechstes.morgen ? 'morgen' : 'heute'}-${naechstes.gebet}` : null;
+  const [merke, setMerke] = useState<{ kennung: string | null; gewechselt: boolean }>({ kennung: null, gewechselt: false });
+  if (kennung !== merke.kennung) {
+    setMerke({ kennung, gewechselt: merke.gewechselt || (merke.kennung !== null && kennung !== null) });
+  }
+  const gewechselt = merke.gewechselt;
+  const wechsel = gewechselt ? WECHSEL : undefined;
+
   return (
-    <div lang={sprache} className="@container flex min-h-dvh flex-col bg-gruen-950 text-weiss [&_:focus-visible]:outline-weiss">
-      <header className="flex items-center justify-between gap-4 border-b border-gruen-800 px-[clamp(16px,3cqi,48px)] py-[clamp(16px,2cqi,32px)]">
+    <div lang={sprache} className="@container flex min-h-dvh flex-col bg-gruen-950 text-weiss">
+      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-gruen-800 px-4 py-4 @3xl:px-8 @5xl:py-6 @7xl:px-12">
         {/* Telefon: Name und Ort fest zweizeilig – ein schriftbreitenabhängiger Umbruch würde beim Schrifttausch springen (CLS) */}
         <div className="flex items-center gap-4">
           <span className="flex shrink-0 rounded-md bg-weiss p-1">
             <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" priority />
           </span>
           <div className="flex flex-col md:flex-row md:items-center md:gap-4">
-            <h1 className="text-[clamp(24px,2.4cqi,36px)] leading-tight whitespace-nowrap">IGMG Wetzlar</h1>
+            <h1 className="text-24 leading-tight whitespace-nowrap @5xl:text-30 @7xl:text-36">IGMG Wetzlar</h1>
             <span aria-hidden className="hidden text-gruen-100 md:inline">
               •
             </span>
-            <span className="text-[clamp(20px,1.8cqi,30px)] leading-snug text-gruen-100">{t.ort}</span>
+            <span className="text-20 leading-snug text-gruen-100 @5xl:text-24 @7xl:text-30">{t.ort}</span>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        {/* Telefon mit langen Wörtern (tr „hesaplanmış“): die Gruppe bricht in eine eigene Zeile, bleibt rechtsbündig */}
+        <div className="ml-auto flex shrink-0 items-center gap-3">
           {berechnet ? (
             <span className="rounded-pill bg-warnung-toenung px-3 py-0.5 text-18 font-bold text-warnung">{t.berechnet}</span>
           ) : null}
@@ -132,37 +151,40 @@ export function AnzeigeLive({
           <Link
             href={zurueckHref}
             aria-label={t.schliessen}
-            className="flex size-14 items-center justify-center rounded-lg border border-gruen-100 text-weiss hover:bg-gruen-800 hover:text-weiss"
+            className="flex size-14 items-center justify-center rounded-lg border border-gruen-100 text-weiss hover:bg-gruen-800 hover:text-weiss focus-visible:outline-weiss"
           >
             <X aria-hidden className="size-7" />
           </Link>
         </div>
       </header>
 
-      <section className="flex flex-wrap items-center justify-between gap-x-12 gap-y-6 px-[clamp(16px,3cqi,48px)] py-[clamp(20px,3cqi,40px)]">
+      <section className="flex flex-wrap items-center justify-between gap-x-12 gap-y-6 px-4 py-5 @3xl:px-8 @5xl:py-8 @7xl:px-12">
         <div className="flex flex-col gap-1">
-          <span className="min-h-[1em] text-[clamp(64px,7cqi,144px)] leading-none font-bold tabular-nums">{uhr}</span>
-          <span className="min-h-[1.5em] text-[clamp(20px,2cqi,30px)] text-gruen-100">{datum || '\u00a0'}</span>
+          <span className="text-anzeige-64 leading-none font-bold tabular-nums @5xl:text-anzeige-96 @7xl:text-anzeige-144">{uhr}</span>
+          <span className="text-20 text-gruen-100 tabular-nums @5xl:text-24 @7xl:text-30">{datum || '\u00a0'}</span>
         </div>
-        <div className="flex min-w-[min(100%,300px)] flex-col rounded-lg border-2 border-gruen-100 bg-gruen-800 px-6 py-4 leading-tight">
-          <span className="text-18 font-bold text-gruen-100">{t.naechstes}</span>
-          <strong className="text-36 tabular-nums">{naechstesZeit ?? '––:––'}</strong>
-          <span className="min-h-[1.55em] text-20">
-            {naechstes ? (
-              <>
-                {t.namen[naechstes.gebet]}
-                {naechstes.morgen ? ` (${t.morgen})` : ''} · {t.restzeit.replace('{zeit}', restText)}
-              </>
-            ) : (
-              '\u00a0'
-            )}
-          </span>
+        <div className="flex min-w-full flex-col rounded-lg border-2 border-gruen-100 bg-gruen-800 px-6 py-4 leading-tight @3xl:min-w-75">
+          <span className="text-18 font-bold text-weiss">{t.naechstes}</span>
+          {/* Name, Zeit und Restzeit: blenden bei jedem Gebetswechsel neu ein (B-10); der Countdown tickt ohne Bewegung */}
+          <div key={kennung ?? 'ohne'} style={DAUER_WECHSEL} className={klassen('flex flex-col', gewechselt && 'blendet-ein')}>
+            <strong className="text-36 tabular-nums">{naechstesZeit ?? '––:––'}</strong>
+            <span className="text-20 tabular-nums">
+              {naechstes ? (
+                <>
+                  {t.namen[naechstes.gebet]}
+                  {naechstes.morgen ? ` (${t.morgen})` : ''} · {t.restzeit.replace('{zeit}', restText)}
+                </>
+              ) : (
+                '\u00a0'
+              )}
+            </span>
+          </div>
         </div>
       </section>
 
-      <main className="flex flex-1 flex-col gap-[clamp(16px,2cqi,32px)] px-[clamp(16px,3cqi,48px)] pb-[clamp(16px,2cqi,32px)]">
-        <h2 className="text-[clamp(30px,3cqi,48px)]">{t.ueberschrift}</h2>
-        <ul className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] gap-[clamp(12px,1.5cqi,24px)]">
+      <main className="flex flex-1 flex-col gap-4 px-4 pb-4 @3xl:px-8 @5xl:gap-8 @5xl:pb-8 @7xl:px-12">
+        <h2 className="text-30 @3xl:text-36 @7xl:text-48">{t.ueberschrift}</h2>
+        <ul className="grid raster-kacheln gap-4">
           {GEBETE.map((g) => {
             const istAktuell = aktuell === g;
             const istNaechstes = !istAktuell && naechstes?.gebet === g && !naechstes.morgen;
@@ -171,35 +193,41 @@ export function AnzeigeLive({
                 key={g}
                 aria-current={istAktuell ? 'time' : undefined}
                 className={klassen(
-                  'flex flex-col gap-2 rounded-2xl border-2 p-[clamp(16px,2cqi,32px)]',
+                  'flex flex-col gap-2 rounded-2xl border-2 p-4',
                   istAktuell
                     ? 'border-weiss bg-weiss text-gruen-950'
                     : istNaechstes
                       ? 'border-gruen-100 bg-gruen-800'
                       : 'border-gruen-800 bg-gruen-950',
+                  wechsel,
                 )}
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[clamp(24px,2.4cqi,36px)] font-bold">{t.namen[g]}</span>
+                  <span className="text-24 font-bold wrap-anywhere @3xl:text-30">{t.namen[g]}</span>
+                  {/* Das Schild wechselt mit der Rolle der Karte (Aktuell ↔ Nächstes) und blendet dabei ein (B-10) */}
                   {istAktuell || istNaechstes ? (
                     <span
+                      key={istAktuell ? 'aktuell' : 'naechstes'}
+                      style={DAUER_WECHSEL}
                       className={klassen(
                         'rounded-pill px-3 py-0.5 text-18 font-bold',
-                        istAktuell ? 'bg-gruen-700 text-weiss' : 'bg-weiss text-gruen-950',
+                        istAktuell ? 'bg-gruen-800 text-weiss' : 'bg-weiss text-gruen-950',
+                        gewechselt && 'blendet-ein',
                       )}
                     >
                       {istAktuell ? t.aktuell : t.naechstes}
                     </span>
                   ) : null}
                 </div>
-                <span className="text-[clamp(48px,6cqi,96px)] leading-none font-bold tabular-nums">{zeiten?.[g]}</span>
+                <span className="text-48 leading-none font-bold tabular-nums @3xl:text-anzeige-64">{zeiten?.[g]}</span>
                 <span
                   dir="rtl"
                   lang="ar"
                   className={klassen(
-                    // feste Höhe: der spätere Tausch auf Amiri verschiebt nichts (CLS)
-                    'block h-[1.6em] overflow-visible text-right font-arabic text-[clamp(28px,2.6cqi,40px)] leading-[1.6]',
-                    istAktuell ? 'text-gruen-800' : 'text-gruen-100',
+                    // feste Höhe (eine Zeile): der spätere Tausch auf Amiri verschiebt nichts (CLS)
+                    'block h-lh overflow-visible text-right font-arabic text-30 leading-relaxed @3xl:text-36',
+                    istAktuell ? 'text-gruen-800' : istNaechstes ? 'text-weiss' : 'text-gruen-100',
+                    wechsel,
                   )}
                 >
                   {t.arabisch[g]}
@@ -210,12 +238,12 @@ export function AnzeigeLive({
         </ul>
         <p
           role="status"
-          className="min-h-[2.5em] rounded-lg border border-gruen-800 px-6 py-4 text-center text-[clamp(20px,2cqi,30px)] font-bold"
+          className="min-h-lh rounded-lg border border-gruen-800 px-6 py-4 text-center text-20 font-bold tabular-nums @5xl:text-24 @7xl:text-30"
         >
           {status}
         </p>
       </main>
-      <footer className="px-[clamp(16px,3cqi,48px)] pt-4 pb-6 text-center text-18 text-gruen-100">{t.hinweis}</footer>
+      <footer className="px-4 pt-4 pb-6 text-center text-18 text-gruen-100 @3xl:px-8 @7xl:px-12">{t.hinweis}</footer>
     </div>
   );
 }

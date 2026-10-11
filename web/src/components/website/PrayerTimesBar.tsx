@@ -24,6 +24,7 @@ export async function PrayerTimesBar() {
         namen,
         naechstes: t('naechstes'),
         verbleibt: t('verbleibt', { zeit: '{zeit}' }),
+        verbleibtMorgen: t('verbleibtMorgen', { zeit: '{zeit}' }),
         hinweis: fenster.quelle === 'berechnet' && !fenster.bestaetigt ? t('berechnet') : null,
         alle: t('alle'),
         anzeigen: t('anzeigen'),

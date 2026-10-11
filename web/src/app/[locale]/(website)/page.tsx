@@ -29,12 +29,14 @@ const sekundaer =
 
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter),
- * kommende Veranstaltungen (6), Neuigkeiten (1 + 3).
+ * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3).
  */
 export default async function Startseite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('start');
-  const veranstaltungen = (await ladeVeranstaltungen()).filter((v) => !v.vergangen).slice(0, 6);
+  const kommende = (await ladeVeranstaltungen()).filter((v) => !v.vergangen);
+  // Volle Reihen im Dreierraster: sechs, sonst drei (bei fünf Terminen bliebe am Desktop eine Lücke)
+  const veranstaltungen = kommende.slice(0, kommende.length >= 6 ? 6 : 3);
   const nachrichten = await ladeNachrichten();
   const aufmacher = nachrichten.find((n) => n.empfohlen) ?? nachrichten[0];
   const weitere = nachrichten.filter((n) => n !== aufmacher).slice(0, 3);

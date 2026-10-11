@@ -126,7 +126,8 @@ export async function Footer() {
         </div>
         <nav aria-label={t('schnellzugriff')} className="flex flex-col gap-3">
           {ueberschrift(t('schnellzugriff'))}
-          <ul className="flex flex-col">
+          {/* Zwei Spalten: sechs Ziele in drei Zeilen statt einer langen Liste (Höhe wie die Nachbarspalten) */}
+          <ul className="grid grid-cols-2 gap-x-6">
             {schnell.map((s) => (
               <li key={s.label}>
                 <Link href={s.ziel} className={TEXTLINK}>
