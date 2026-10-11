@@ -143,6 +143,14 @@ export function TagesbogenLive({
           ) : null}
         </svg>
 
+        {/* „Jetzt“ zuerst, damit der Achtstern des nächsten Gebets bei Nähe obenauf liegt */}
+        {sonne ? (
+          <span
+            aria-hidden
+            className="marke-tritt-hervor absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-700 ring-6 ring-gruen-700/15"
+            style={{ left: links(sonne.x), top: oben(sonne.y), '--verzoegerung': 'var(--dauer-moment)' } as CSSProperties}
+          />
+        ) : null}
         {/* Marken als HTML über der Zeichnung: gleiche Größe auf jedem Gerät, Achtstern aus dem Formsystem */}
         {bogen.punkte.map((p) => {
           const erreicht = minuten !== null && minuten >= p.minuten;
@@ -168,22 +176,15 @@ export function TagesbogenLive({
             />
           );
         })}
-        {sonne ? (
-          <span
-            aria-hidden
-            className="marke-tritt-hervor absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-700 ring-6 ring-gruen-700/15"
-            style={{ left: links(sonne.x), top: oben(sonne.y), '--verzoegerung': 'var(--dauer-moment)' } as CSSProperties}
-          />
-        ) : null}
       </div>
 
       <ol aria-label={texte.listeHeute} className="grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-16">
         {bogen.punkte.map((p) => {
-          const ist = naechstes?.gebet === p.gebet;
+          const ist = naechstes?.gebet === p.gebet && !naechstes.morgen;
           return (
             <li
               key={p.gebet}
-              aria-current={ist && !naechstes?.morgen ? 'time' : undefined}
+              aria-current={ist ? 'time' : undefined}
               className="flex min-w-0 flex-col @xl:absolute @xl:top-0 @xl:left-(--links) @xl:max-w-24 @xl:-translate-x-1/2 @xl:items-center @xl:text-center"
               style={{ '--links': links(p.x) } as CSSProperties}
             >
