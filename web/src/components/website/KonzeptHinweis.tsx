@@ -57,7 +57,7 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
   );
   return (
     <>
-      {/* Das Skript SOFORT öffnet den Dialog vor der Hydrierung (Attribut `open`) – der Unterschied ist gewollt */}
+      {/* Das Skript SOFORT öffnet den Dialog vor der Hydrierung (Attribut `open`) – der Unterschied ist gewollt. Ohne Auftritt (B-03), weil er beim Laden erscheint (LCP) */}
       <dialog
         id="konzepthinweis"
         suppressHydrationWarning
@@ -66,7 +66,7 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
         aria-labelledby="hinweis-titel"
         aria-describedby="hinweis-text"
         onCancel={schliessen}
-        className="m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
+        className="ohne-auftritt m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
       >
         <div className="bg-warnung-toenung px-6 pt-6 pb-4">
           <h2 id="hinweis-titel" className="flex items-start gap-3 text-24 leading-tight">

@@ -266,6 +266,12 @@
   dialog[open]::backdrop {
     animation: einblenden var(--dauer-wechsel) var(--ease-standard) both;
   }
+  /* Beim Laden geöffnete Dialoge (Konzept-Hinweis) ohne Auftritt: keine Bewegung beim ersten Laden über dem Falz.
+     Ein Dialog, der bei Deckkraft 0 beginnt, verschiebt das LCP bis zum ersten Neuzeichnen nach der Hydrierung (E3-Tor: +1,4 s) */
+  dialog.ohne-auftritt[open],
+  dialog.ohne-auftritt[open]::backdrop {
+    animation: none;
+  }
   [lang='ar'],
   [dir='rtl'] {
     font-family: var(--font-arabic);
