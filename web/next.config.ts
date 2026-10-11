@@ -48,6 +48,12 @@ const nextConfig: NextConfig = {
     return [
       { source: '/:pfad*', headers: grundHeader() },
       ...(noindex.length ? [{ source: '/:pfad*', headers: noindex }] : []),
+      // Logos und Symbole (ADR 0023): Dateinamen ohne Versionsanteil → kein „immutable“, aber ein Tag Cache und eine
+      // Woche „stale-while-revalidate“; ein neues Logo bekommt einen neuen Dateinamen (BETRIEB.md)
+      {
+        source: '/:ordner(bilder|symbole)/:pfad*',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }],
+      },
       {
         // Öffentliche Seiten: statische CSP. Die Verwaltung bekommt ihre Nonce-CSP im Proxy.
         source: '/:pfad((?!verwaltung|de/verwaltung|tr/verwaltung|en/verwaltung).*)',

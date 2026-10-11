@@ -1,10 +1,10 @@
 # ADR 0023 – Auslieferung statischer Dateien und OG-Bilder auf Vercel
 
-- Status: angenommen · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-08) · Bezug: ADR 0012
+- Status: angenommen, umgesetzt · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-08) · Bezug: ADR 0012
 
 ## Ziel
 
-Statische Dateien (Logos, Symbole, Schriften) sollen lange im Cache liegen; Open-Graph-Bilder dürfen zur Laufzeit nicht von der Platte lesen (auf Vercel liegt `public/` nicht im Funktions-Dateisystem).
+Statische Dateien (Logos, Symbole, Schriften) sollen lange im Cache liegen; Open-Graph-Bilder müssen auch auf Vercel ihr Symbol finden.
 
 ## Wege
 
@@ -19,7 +19,7 @@ Statische Dateien (Logos, Symbole, Schriften) sollen lange im Cache liegen; Open
 ## Festlegungen
 
 - Header-Regeln in `next.config.ts` (`headers()`), getrennt nach versionierten (`/_next/static`, Schriften mit Hash) und unversionierten Pfaden.
-- `src/lib/seo/og-bild.tsx`: Symbol und Schrift per Modul-Import statt `readFile(process.cwd()/public/…)`.
+- `src/lib/seo/og-bild.tsx` bleibt bei `readFile(join(process.cwd(), 'public', …))`: genau dieser Weg steht in der Next-Doku (`opengraph-image.md`), und Next verfolgt ihn beim Bau mit (Output File Tracing). Die OG-Bilder werden zudem beim Bau vorgerendert. Ein Modul-Import ist nicht nötig.
 
 ## Umkehrprobe
 
