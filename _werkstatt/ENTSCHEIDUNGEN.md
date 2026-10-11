@@ -56,3 +56,8 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Gewählt (C), `components/website/SeitenUebergang.tsx` (≈ 60 Zeilen, keine Abhängigkeit). Rückfall auf den normalen Klick bei fehlender Unterstützung, reduzierter Bewegung, Zusatztasten, `target`, `download`, fremder Herkunft und Sprung auf derselben Seite. Höchstens 4 s Wartezeit, dann endet der Übergang ohne Bild-Einfrieren. Versteckte Seiten (Activity, `display: none`) sind nicht gerendert und nehmen nicht teil, daher keine doppelten Namen. Die Gruppe `.seite` morpht nicht (Höhen wechseln).
 - Gemessen (Entwicklungsserver): je Klick genau 1 Aufruf, Ziel erreicht. Nachweis im Produktions-Build und Bilder: E2-Tor-Wiederholung.
 - Umkehrprobe: Sobald React/Next Activity-Wechsel als Ein-/Austritt melden, ersetzt eine `<ViewTransition>` im Seitenrahmen den Baustein (Register B-05 anpassen).
+
+## L-E11 · 2026-10-11 · Opus · Wortlaut-Prüfung H-R01: Ausnahmen
+- Ergebnis H-R01 (9ebb4bc gegen ff27650, Werkzeug `werkzeuge/wortlaut.mjs`): 717 Rechts- und Einwilligungseinträge, 0 geändert, 0 entfernt; Einwilligungs-Textversionen (SHA-256) damit unverändert.
+- Entscheidung zu den neuen Einträgen: A-01 Hosting-Baustein v2 (erlaubte Ausnahme, Entwurf, nicht eingespielt) · A-02/A-03 Cockpit-Texte (nur Verwaltung, keine Besuchertexte) · **A-04 `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md`**: internes Dokument nach V-11, nicht veröffentlicht, kein Rechtstext für Besucher → Ausnahme, kein Befund.
+- Mikrotext-Änderungen nach dem Prüfstand (a94d0dd: Leerzustände Korankurse, Leertext der Filter) betreffen keine Rechtsquelle; Stufe C wiederholt die Prüfung am Endstand.
