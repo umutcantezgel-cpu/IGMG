@@ -33,7 +33,7 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 ## 2. Bausteine
 - Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen.
 - Abschnitt: `<section aria-labelledby=…>` → innen `mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8`, Kopf mit Kennung (`text-16 font-bold text-gruen-800` + Icon/Achtstern), `h2.text-display-2`, Einleitung `text-20 leading-einleitung text-pretty text-tinte-2 max-w-einleitung`, Aktion rechts (sekundärer Knopf).
-- Knöpfe: primär `bg-gruen-700 … hover:bg-gruen-800 active:scale-98 transition-colors duration-(--dauer-rueckmeldung)`, sekundär `border-2 border-gruen-700 bg-weiss px-5.5 … hover:bg-gruen-50 active:scale-98`. Mindesthöhe `min-h-12` (48 px).
+- Knöpfe: primär `bg-gruen-700 … hover:bg-gruen-800 active:scale-98 transition duration-(--dauer-rueckmeldung)` (`transition`, nicht `transition-colors`: nur so läuft auch die Skalierung weich), sekundär `border-2 border-gruen-700 bg-weiss px-5.5 … hover:bg-gruen-50 active:scale-98`. Mindesthöhe `min-h-12` (48 px).
 - Karten: `EventCard`, `NewsCard`, `CourseCard`, `OrgCard`, `PersonCard` – vorhandene nutzen. Hover: Rand `gruen-700` + `shadow-s2`; ganze Karte klickbar über `after:absolute after:inset-0` am Titel-Link.
 - Zustände: `Zustandsgrafik` (`leer`, `fehler`, `erfolg`, `offline`, `nichtGefunden`) aus `web/src/components/website/Zustandsgrafik.tsx`. Leerzustand = Grafik + ein Satz + nächster Schritt (Link/Knopf), Karte `rounded-lg border border-linie bg-weiss px-6 py-12 text-center`.
 - Trenner zwischen inhaltlich getrennten Blöcken: `Trenner` (Linie – Achtstern – Linie). Sparsam, höchstens einer je Bildschirmhöhe.

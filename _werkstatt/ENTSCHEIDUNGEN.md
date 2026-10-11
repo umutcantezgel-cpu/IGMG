@@ -33,3 +33,12 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 ## L-E06 · 2026-10-11 · Opus · Bewegung nur CSS + React `<ViewTransition>`
 - Keine Bewegungsbibliothek (0 KB JS). Seitenwechsel über `<ViewTransition enter/exit="seite">` im Seitenrahmen, Kopf als eigene Gruppe `kopf` (steht still). Große Momente als CSS-Animationen auf Elementen, die erst nach der Hydrierung entstehen – so ist der Server-Zustand immer vollständig sichtbar (kein Aufblitzen, keine verdeckten Inhalte, LCP unberührt).
 - Offen: Im Entwicklungsserver löste die Seitenwechsel-Überblendung noch nicht aus; Prüfung im Produktions-Build (E2-Tor). Ohne Unterstützung bleibt der Wechsel wie bisher (schrittweise Verbesserung).
+
+## L-E07 · 2026-10-11 · Opus · Formular-Integrationstests: Zeitgrenze statt Abschwächung
+- Befund (E2-TOR, Wiederholung): In formular-kontakt/-meldung laufen 3 bzw. 4 Tests in die Grenze von 30 s; ein Folgefehler („expected 2 to be 1“) stammt aus dem abgebrochenen Vorgänger, der nach der Grenze noch schreibt.
+- Ursache gemessen: Die Tests lösen echte ALTCHA-Aufgaben (PBKDF2, 5 000 Runden, Zähler gleichverteilt bis 10 000). Bei Last 4,6 dauert eine Lösung 7,8 s (Zähler 2 000), 18,1 s (5 000) bzw. 38,8 s (10 000). ALTCHA-Code und Formularlogik sind seit dem Ausgangsstand 9ebb4bc unverändert (`git log 9ebb4bc.. -- src/lib/validierung src/server/actions/formulare`: keine Commits). Es ist keine Regression, sondern Rechenzeit unter Last.
+- Entscheidung: `testTimeout` des Integrationsprojekts 30 s → 240 s (bis vier Lösungen je Test), der 13-Lösungen-Test 120 s → 600 s. Keine Prüfung entfällt, keine Kosten im Produktionscode sinken (UNANTASTBAR Formularlogik).
+
+## L-E08 · 2026-10-11 · Opus · Rubrik und Sichtabnahme (Antwort auf L0-Fragen)
+- Sechs Kategorien der Rubrik (AUFTRAG §10 „Mittel der sechs Kategorien“): Typografie · Komposition · Farbe und Bild · Bewegung · Grafik · Details („Grafik und Details“ sind zwei Kategorien).
+- Sichtabnahme: am E2-Tor durch einen frischen Opus-Unteragenten (AUFTRAG §9 als besondere Regel), an späteren Toren durch Opus selbst (§10). Die Endprüfung (Z-04) macht wieder ein frischer Opus-Unteragent mit Blindvergleich.

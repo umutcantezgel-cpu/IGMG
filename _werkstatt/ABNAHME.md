@@ -1,21 +1,23 @@
-# ABNAHME – Kriterien Z-01 bis Z-12 (Version 1.0, 2026-10-11)
+# ABNAHME – Kriterien Z-01 bis Z-12 (Version 1.1, 2026-10-11)
+
+Änderungen gegenüber 1.0 (L0-Planprüfung): Z-03 nach REFERENZ §5, Z-04 mit den sechs Kategorien, Z-12 nach L-E02, Belegpfade `.txt`, V-Prüfliste mit Stand.
 
 Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erledigt“ ist nur, was geprüft ist; Kriterien sinken nie still.
 
 | Z | Thema | Messweg | Ausgangswert E0 | Ziel | Stand | Beleg |
 |---|---|---|---|---|---|---|
-| Z-01 | Plan | Abgleich PLAN.md | 0 von ≈ 45 Pflicht | 100 % Pflicht, Kür bis leer oder Laufzeitende | offen | PLAN.md mit Commit-Kennungen |
+| Z-01 | Plan | Abgleich PLAN.md | 0 von ≈ 69 Pflicht (PLAN 1.1) | 100 % Pflicht, Kür bis leer oder Laufzeitende | offen | PLAN.md mit Commit-Kennungen |
 | Z-02 | Bestand | Stufe C: Build, Typen, Lint, unit/integration, `sprachen:pruefen`, `geheimnisse:pruefen`, Funktionsliste F-01…F-24 | unit: 4 rot unter UTC (iCal, behoben), sonst grün; Funktionsliste: E0-PRUEFER-03 | mindestens so grün wie E0, keine Funktion schlechter, null neue Konsolenfehler | offen | `protokolle/` |
-| Z-03 | Designsystem | `freie-werte.mjs` auf geänderten Dateien + Stichprobe | 617 Funde in 452 Dateien (Bestand) | 0 in geänderten Dateien (ohne UNANTASTBAR/Bildinhalte); jede neue Komponente nutzt das System | offen | Prüfliste |
-| Z-04 | Gestaltung | Endprüfer bewertet Nachher-Bilder (Rubrik §10), Blindvergleich mit getrenntem Schlüssel | E0-Bildsatz `$SCRATCHPAD/bilder/e0-basis/` | jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen | offen | Bildsätze, Bewertung |
+| Z-03 | Designsystem | `freie-werte.mjs` auf geänderten Dateien + Stichprobe | 617 Funde in 452 Dateien (Bestand) | 0 Funde in jeder geänderten Datei (nicht nur „0 neue“; ohne UNANTASTBAR/Bildinhalte, Fehlalarme begründet), Stufe A je Paket; jede neue Komponente nutzt das System | offen | Prüfliste |
+| Z-04 | Gestaltung | Endprüfer bewertet Nachher-Bilder (Rubrik §10: Typografie, Komposition, Farbe und Bild, Bewegung, Grafik, Details; Ansichtswert = Mittel der sechs), Blindvergleich mit getrenntem Schlüssel | E0-Bildsatz `bilder/e0/` (reduziert: `bilder/e0-reduziert/`) | jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen | offen | Bildsätze, Bewertung |
 | Z-05 | Bewegung | Register-Abgleich, `bewegung.mjs` (reduziert, 5 Bilder, 4× Drosselung) | keine Animationen | jede Animation im Register; reduziert ohne Lage/Größe, alles sichtbar; Momente ≤ 5 % verworfene Bilder | offen | Messprotokoll |
 | Z-06 | Grafik | `svg-pruefung.mjs` | 3 Inline-SVG, 2 Befunde (Icons.tsx, FehlerAnsicht.tsx) | eine Icon-Familie, alle SVG optimiert und zugänglich, keine doppelten IDs | offen | Prüfliste |
-| Z-07 | Zugänglichkeit | axe WCAG 2.2 AA (390/1440), Tastaturdurchlauf Hauptaufgaben | siehe `protokolle/E0-PRUEFER-02-ausgangswerte.md` | 0 ernste/kritische Befunde; Tastatur mit sichtbarem Fokus; Kontraste | offen | Bericht |
-| Z-08 | Leistung | Lighthouse mobil Median ×3, 11 (+ Cockpit) Hauptansichten | siehe `protokolle/E0-PRUEFER-02-ausgangswerte.md` | BUDGETS (Perf ≥ 90, A11y 100, BP/SEO ≥ 95, LCP ≤ 2,5 s, CLS ≤ 0,1, INP/TBT ≤ 200 ms, JS ≤ 180 KB gz, Bewegung ≤ 60 KB); keine Ansicht schlechter als E0 − Spanne | offen | Messprotokoll |
+| Z-07 | Zugänglichkeit | axe WCAG 2.2 AA (390/1440), Tastaturdurchlauf Hauptaufgaben | siehe `protokolle/E0-PRUEFER-02-ausgangswerte.txt` | 0 ernste/kritische Befunde; Tastatur mit sichtbarem Fokus; Kontraste | offen | Bericht |
+| Z-08 | Leistung | Lighthouse mobil Median ×3, 11 (+ Cockpit) Hauptansichten | siehe `protokolle/E0-PRUEFER-02-ausgangswerte.txt` | BUDGETS (Perf ≥ 90, A11y 100, BP/SEO ≥ 95, LCP ≤ 2,5 s, CLS ≤ 0,1, INP/TBT ≤ 200 ms, JS ≤ 180 KB gz, Bewegung ≤ 60 KB); keine Ansicht schlechter als E0 − Spanne | offen | Messprotokoll |
 | Z-09 | Darstellung | Bildsatz 390/768/1440, Sprachen nach Stufe C (de, tr vollständig; en zwei Ansichten) | E0: kein Querscrollen (siehe Protokoll) | ohne Überlauf, abgeschnittenen oder überlappenden Text | offen | Bildsatz |
 | Z-10 | Übergabe | Endprüfung | – | BERICHT, KERN, MENSCHEN, Anleitung Zusammenführen/Zurückrollen vollständig | offen | Dateien |
 | Z-11 | Vercel | V-Prüfliste V-01…V-13, Build nach V-02 (preview + production), Vorschau per Vercel-MCP | V-01 teilweise (vercel.json ohne regions/crons/ignoreCommand), Rest offen | alle erfüllt; Vorschau ohne Build-/Laufzeitfehler auf Hauptansichten | offen | Prüfprotokoll, Dateien |
-| Z-12 | Recht und Startklar | Prüfsuiten früherer Läufe (soweit vorhanden, L-E03), Wortlaut-Vergleich Rechtstexte, Cockpit, GO-LIVE.md, MENSCHEN.md | Cockpit/startklar/release:check fehlen (L-E02/L-E03) | grün; Wortlaut unverändert bis auf Hosting-Baustein v2; Cockpit mit allen Vercel-Punkten; jede Menschen-Aufgabe mit Ort und Aufwand | offen | Prüfprotokoll, Dateien |
+| Z-12 | Recht und Startklar | Vorhandene Prüfsuiten (L-E03) plus `pnpm startklar`/`pnpm release:check`, Wortlaut-Snapshot Rechts- und Einwilligungstexte (H-R01), Cockpit, GO-LIVE.md, MENSCHEN.md. Prüfungen eines Einwilligungs-Managers entfallen: Es gibt keinen (L-E02, ML-01) | Cockpit/startklar/release:check fehlen (L-E02/L-E03) | grün; Wortlaut unverändert bis auf Hosting-Baustein v2 (als Entwurf, nicht eingespielt); Cockpit mit allen Vercel-Punkten; jede Menschen-Aufgabe mit Ort und Aufwand | offen | Prüfprotokoll, Dateien |
 
 ## Ausgangswerte E0 (Kurzfassung, `protokolle/E0-PRUEFER-02-ausgangswerte.txt`)
 - 11 Hauptansichten, Port 3100 (9ebb4bc), Lighthouse mobil Median ×3: Performance 85–92 (Spanne je Route 80–94), A11y/BP/SEO 100, LCP 1816–2263 ms, CLS ≤ 0,001, TBT 285–458 ms, JS 168–174,1 kB gz.
@@ -28,19 +30,19 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 - **UA-03 Verwaltungsflüsse auf der Vorschau:** Produktion/Vorschau ohne Datenbank und ohne Konten (G3/G5) → Ersatz: Verwaltungsflüsse lokal gegen PGlite (`anmeldung.mjs`), Vorschau nur öffentliche Ansichten.
 - **UA-04 Chromium-Version:** Playwright 1.64 erwartet Chromium 156, vorinstalliert ist 141 (Installation nicht erlaubt) → Ersatz: Chromium 141 für alle Läufe, vorher und nachher gleich.
 
-## V-Prüfliste (Stand)
+## V-Prüfliste (Stand 2026-10-11 19:00 UTC)
 | V | Kurz | Stand |
 |---|---|---|
-| V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | teilweise |
-| V-02 | Build wie auf Vercel (preview, production) | offen |
-| V-03 | VERCEL-ENV.md, SITE_MODE, Startprüfung, Geheimnisse per Skript | offen |
-| V-04 | Postgres Frankfurt, attachDatabasePool, Migration vor Code, keine Prod-DB in Vorschau | offen |
-| V-05 | Blob Frankfurt, Direkt-Upload > 4,5 MB, Metadaten-Bereinigung, Varianten | offen |
-| V-06 | Cron täglich, CRON_SECRET, idempotent mit Sperre | offen |
-| V-07 | gemeinsamer Speicher für Sitzungen, Raten, Sperren | Bestand (DB) – zu belegen |
-| V-08 | Caching wie lokal, sofort sichtbar, lange Lebensdauer statischer Dateien | offen |
-| V-09 | Vorschau geschützt, teilbarer Link, noindex, Toolbar in Tests ausgenommen | teilweise (Vercel Authentication aktiv) |
-| V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | teilweise (Health vorhanden) |
-| V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | offen |
-| V-12 | Tarif-Empfehlung in MENSCHEN | offen |
-| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | offen |
+| V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | erfüllt (0c224da; per `validateConfig` der CLI geprüft) – Bestätigung im E2-TOR |
+| V-02 | Build wie auf Vercel (preview, production) | E2-TOR läuft |
+| V-03 | VERCEL-ENV.md, SITE_MODE, Startprüfung, Geheimnisse per Skript | erfüllt (c596742, 263cd1d, 0cd8173) – Beleg Stufe C |
+| V-04 | Postgres Frankfurt, attachDatabasePool, Migration vor Code, keine Prod-DB in Vorschau | Code erfüllt (0c224da, Sperre lokal 8/8); Konto: Menschen (ML) |
+| V-05 | Blob Frankfurt, große Uploads, Metadaten-Bereinigung, Varianten | Code erfüllt (47ed617; Verkleinern im Browser statt Direkt-Upload, ADR 0020 rev.) |
+| V-06 | Cron täglich, CRON_SECRET, idempotent mit Sperre | erfüllt (c596742, 0c224da) |
+| V-07 | gemeinsamer Speicher für Sitzungen, Raten, Sperren | Bestand (DB) – Beleg H-V07 offen |
+| V-08 | Caching wie lokal, sofort sichtbar, lange Lebensdauer statischer Dateien | teilweise (Cache-Header abd187e) – H-V08 offen |
+| V-09 | Vorschau geschützt, teilbarer Link, noindex, Toolbar in Tests ausgenommen | teilweise (noindex 263cd1d, Vercel Authentication aktiv) – Beleg im Tor |
+| V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | teilweise (Health, Runbook) – H-V10 offen |
+| V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | erfüllt als Entwurf (0cd8173, 8df9556); Freigabe: Menschen (ML-11, ML-12) |
+| V-12 | Tarif-Empfehlung in MENSCHEN | erfüllt (ML-09) |
+| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb); Vorschauprüfung je Tor läuft |
