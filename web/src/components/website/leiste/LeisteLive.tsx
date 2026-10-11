@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowRight, ChevronDown, ChevronUp, Clock, Info, MapPin, Moon, Sun, Sunrise, Sunset } from 'lucide-react';
-import { useState } from 'react';
+import { type CSSProperties, useState } from 'react';
 import Link from 'next/link';
 import { berlinerDatum, naechstesGebet, restzeit } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
@@ -26,10 +26,16 @@ export type LeisteTexte = {
 
 const ICON: Record<Gebet, typeof Sun> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
 
+/** B-10 Gebetszeit-Wechsel: Hervorhebung wandert per Überblendung (Dauer `--dauer-wechsel`, Kurve `ease-standard`). */
+const WECHSEL = 'transition-colors duration-(--dauer-wechsel) ease-standard';
+/** Dauer des Einblendens für den neuen Namensbereich (`blendet-ein` liest `--dauer`). */
+const DAUER_WECHSEL = { '--dauer': 'var(--dauer-wechsel)' } as CSSProperties;
+
 /**
  * PrayerTimesBar (design/PrayerTimesBar.dc.html): Tageszeiten, nächstes Gebet und Restzeit rechnet der
  * Browser aus den zwischengespeicherten Zeiten (K-08). Restzeit ohne Live-Region (K-11: keine Daueransage).
  * Vor dem Einhängen zeigt die Leiste den Referenztag des Servers ohne Hervorhebung (keine Uhrzeit beim Prerender).
+ * Bewegung nur bei einem Wechsel zwischen zwei Gebeten (B-10); beim ersten Laden steht alles sofort da.
  */
 export function LeisteLive({
   tage,
@@ -71,38 +77,76 @@ export function LeisteLive({
     : '';
   const naechstesName = naechstes ? texte.namen[naechstes.gebet] : '–';
   const naechstesZeit = naechstes ? zeit((naechstes.morgen ? morgen : heute)?.[naechstes.gebet] ?? '') : '';
+  // Platzhalter in der längsten Form (zweistellige Stunden und Minuten): Die Zeile umbricht dann nie weniger als die echte Restzeit
+  const platzRestzeit = texte.verbleibt.replace('{zeit}', `88${texte.dauer.std} 88${texte.dauer.min}`);
+
+  // B-10: Gewechselt wird erst, wenn ein bekanntes Gebet auf ein anderes folgt. Der Sprung von „noch keine Uhrzeit“
+  // (Server) auf das erste Gebet nach dem Einhängen ist kein Wechsel und bleibt ohne Bewegung.
+  const gebet = naechstes?.gebet ?? null;
+  const [merke, setMerke] = useState<{ gebet: Gebet | null; gewechselt: boolean }>({ gebet: null, gewechselt: false });
+  if (gebet !== merke.gebet) {
+    setMerke({ gebet, gewechselt: merke.gewechselt || (merke.gebet !== null && gebet !== null) });
+  }
+  const gewechselt = merke.gewechselt;
 
   if (!heute) return null;
 
+  /*
+   * Die Karte reserviert Zeilen für „Nächstes Gebet“ und die Restzeit auch dort, wo sie nicht hervorgehoben ist
+   * (unsichtbar). So bleibt die Höhe der Leiste bei jedem Wechsel gleich (kein Sprung nach dem Einhängen, K-12)
+   * und Namen und Zeiten stehen auf derselben Stelle.
+   */
   const karte = (g: Gebet, klein: boolean) => {
     const ist = naechstes?.gebet === g && !naechstes.morgen;
     const Icon = ICON[g];
+    const wechsel = gewechselt ? WECHSEL : undefined;
     return (
       <li
         key={g}
         aria-current={ist ? 'time' : undefined}
+        style={DAUER_WECHSEL}
         className={klassen(
           'flex min-w-0 flex-col justify-center gap-0.5 border',
-          klein ? 'rounded-md px-2.5 py-2' : 'min-h-[118px] rounded-lg px-3 py-2.5',
+          klein ? 'rounded-md px-2.5 py-2' : 'min-h-30 rounded-lg px-3 py-2.5',
           ist ? 'border-weiss bg-weiss' : 'border-gruen-800 bg-gruen-950',
+          wechsel,
         )}
       >
-        {ist && !klein ? <span className="text-16 font-bold text-gruen-800">{texte.naechstes}</span> : null}
+        {klein ? null : (
+          <span className={klassen('text-16 font-bold text-gruen-800', ist ? gewechselt && 'blendet-ein' : 'invisible')}>
+            {texte.naechstes}
+          </span>
+        )}
         <span
           className={klassen(
-            'flex items-center gap-1.5 text-16 leading-snug font-bold [overflow-wrap:anywhere]',
+            'flex items-center gap-1.5 text-16 leading-snug font-bold wrap-anywhere',
             ist ? 'text-gruen-800' : 'text-gruen-50',
+            wechsel,
           )}
         >
           {klein ? null : <Icon aria-hidden className="size-4 shrink-0" />}
           <span>{texte.namen[g]}</span>
         </span>
         <span
-          className={klassen('font-bold tabular-nums', klein ? 'text-20' : 'text-24 leading-tight', ist ? 'text-gruen-950' : 'text-weiss')}
+          className={klassen(
+            'font-bold tabular-nums',
+            klein ? 'text-20' : 'text-24 leading-tight',
+            ist ? 'text-gruen-950' : 'text-weiss',
+            wechsel,
+          )}
         >
           {heute[g]}
         </span>
-        {ist && !klein ? <span className="text-16 font-bold text-tinte-2">{texte.verbleibt.replace('{zeit}', restText)}</span> : null}
+        {klein ? null : (
+          <span className="grid text-16 font-bold text-tinte-2 tabular-nums">
+            <span aria-hidden className="invisible col-start-1 row-start-1">
+              {platzRestzeit}
+            </span>
+            <span className={klassen('col-start-1 row-start-1', ist ? gewechselt && 'blendet-ein' : 'invisible')}>
+              {texte.verbleibt.replace('{zeit}', restText)}
+            </span>
+          </span>
+        )}
       </li>
     );
   };
@@ -118,14 +162,14 @@ export function LeisteLive({
     <aside aria-label={texte.label} className="bg-gruen-950 text-weiss">
       {/* Breit (ab 768 px): Ort, sechs Karten, Link */}
       <div className="mx-auto hidden max-w-(--container-inhalt) flex-wrap items-center gap-x-6 gap-y-4 px-6 py-4 md:flex lg:px-8">
-        <div className="order-1 flex min-w-[220px] flex-none flex-col gap-1">
+        <div className="order-1 flex min-w-55 flex-none flex-col gap-1">
           <div className="flex items-center gap-2 font-bold">
             <MapPin aria-hidden className="size-5 text-gruen-100" />
             <span>{texte.ort}</span>
           </div>
           <div className="flex min-h-6 items-center gap-2 text-16 text-gruen-100">
             <Clock aria-hidden className="size-5" />
-            <span>{jetzt ? `${datumText} · ${uhrText}` : ''}</span>
+            <span className="tabular-nums">{jetzt ? `${datumText} · ${uhrText}` : ''}</span>
           </div>
           {hinweis}
         </div>
@@ -134,7 +178,7 @@ export function LeisteLive({
         </ul>
         <Link
           href={alleHref}
-          className="order-2 ml-auto inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border border-gruen-100 px-4 font-bold text-weiss no-underline transition-colors hover:bg-gruen-800 hover:text-weiss menu:order-3"
+          className="order-2 ml-auto inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border border-gruen-100 px-4 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 menu:order-3"
         >
           <span>{texte.alle}</span>
           <ArrowRight aria-hidden className="size-5" />
@@ -153,19 +197,22 @@ export function LeisteLive({
           </span>
           {hinweis}
         </div>
-        <div className="flex flex-col gap-0.5 rounded-lg bg-weiss px-4 py-3 text-gruen-950">
-          <span className="text-16 font-bold text-gruen-800">{texte.naechstes}</span>
-          <span className="text-24 leading-tight font-bold">
-            {naechstesName} · <span className="tabular-nums">{naechstesZeit}</span>
-          </span>
-          <span className="text-16 font-bold text-tinte-2">{texte.verbleibt.replace('{zeit}', restText)}</span>
+        <div className="rounded-lg bg-weiss px-4 py-3 text-gruen-950">
+          {/* Namensbereich: blendet bei jedem Gebetswechsel neu ein (B-10); der Countdown tickt ohne Bewegung */}
+          <div key={gebet ?? 'ohne'} style={DAUER_WECHSEL} className={klassen('flex flex-col gap-0.5', gewechselt && 'blendet-ein')}>
+            <span className="text-16 font-bold text-gruen-800">{texte.naechstes}</span>
+            <span className="text-24 leading-tight font-bold">
+              {naechstesName} · <span className="tabular-nums">{naechstesZeit}</span>
+            </span>
+            <span className="text-16 font-bold text-tinte-2 tabular-nums">{texte.verbleibt.replace('{zeit}', restText)}</span>
+          </div>
         </div>
         <button
           type="button"
           aria-expanded={aufgeklappt}
           aria-controls="leiste-alle"
           onClick={() => setAufgeklappt((a) => !a)}
-          className="flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border border-gruen-100 bg-transparent text-18 font-bold text-weiss"
+          className="flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border border-gruen-100 bg-transparent text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) active:scale-98"
         >
           <span>{aufgeklappt ? texte.ausblenden : texte.anzeigen}</span>
           {aufgeklappt ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
@@ -176,7 +223,7 @@ export function LeisteLive({
           </ul>
           <Link
             href={alleHref}
-            className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-weiss font-bold text-gruen-950 no-underline hover:text-gruen-950"
+            className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-weiss font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:text-gruen-950 active:scale-98"
           >
             <span>{texte.alle}</span>
             <ArrowRight aria-hidden className="size-5" />
