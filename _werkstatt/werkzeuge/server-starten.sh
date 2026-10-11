@@ -9,7 +9,8 @@
 # Hinweis: Der Server läuft mit BAU_PGLITE=1 gegen die Kopie .pglite-bau im SERVERORDNER (keine Postgres-Datenbank).
 set -euo pipefail
 
-SCRATCHPAD="${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad}"
+SCRATCHPAD_STANDARD=/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad
+SCRATCHPAD="${SCRATCHPAD:-$SCRATCHPAD_STANDARD}"
 ORDNER="${SERVERORDNER:-$SCRATCHPAD/basis-standalone}"
 ENV_DATEI="${LOKAL_ENV:-$SCRATCHPAD/lokal.env}"
 PID_DATEI="$SCRATCHPAD/server.pid"
@@ -60,6 +61,12 @@ start() {
 }
 
 stop() {
+  # Schutz des eingefrorenen Ausgangsstands (Port 3100): ohne eigenen SCRATCHPAD/SERVERORDNER nur mit ausdrücklicher Freigabe
+  if [ "$ORDNER" = "$SCRATCHPAD_STANDARD/basis-standalone" ] && [ "${AUSGANGSSTAND_STOPPEN:-0}" != "1" ]; then
+    echo "Verweigert: Das würde den eingefrorenen Ausgangsstand (3100) beenden. Eigenen SCRATCHPAD und SERVERORDNER setzen" >&2
+    echo "oder bewusst AUSGANGSSTAND_STOPPEN=1 angeben." >&2
+    return 1
+  fi
   if laeuft; then
     local pid
     pid="$(cat "$PID_DATEI")"
