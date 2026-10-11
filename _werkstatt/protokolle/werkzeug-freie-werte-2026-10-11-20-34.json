@@ -1,0 +1,161 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-20-34",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/islamisches-wissen/page.tsx",
+    "web/src/app/[locale]/(website)/islamisches-wissen/[thema]/page.tsx",
+    "web/src/components/website/wissen/ThemaInsel.tsx",
+    "web/src/components/website/wissen/ThemaKopf.tsx",
+    "web/src/components/website/wissen/ThemaNavigation.tsx",
+    "web/src/components/website/wissen/WissenDialogInhalt.tsx",
+    "web/src/components/website/wissen/WissenInsel.tsx",
+    "web/src/components/website/wissen/WissenKarten.tsx",
+    "web/src/components/website/wissen/stil.ts"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 20
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 176,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[3px]",
+      "zeileText": "{ist ? <span aria-hidden className=\"absolute inset-x-3.5 bottom-1 h-[3px] rounded-xs bg-gruen-700\" /> : null}"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 190,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 212,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 235,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 255,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100vh-32px)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaInsel.tsx",
+      "zeile": 255,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[calc(100%-32px)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaKopf.tsx",
+      "zeile": 13,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "<div className=\"flex max-w-[880px] min-w-0 flex-[1_1_480px] flex-col gap-3\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaKopf.tsx",
+      "zeile": 13,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_480px]",
+      "zeileText": "<div className=\"flex max-w-[880px] min-w-0 flex-[1_1_480px] flex-col gap-3\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaKopf.tsx",
+      "zeile": 18,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.15]",
+      "zeileText": "<h1 lang={titel.lang} className=\"text-36 leading-[1.15] text-pretty md:text-48\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaKopf.tsx",
+      "zeile": 22,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[62ch]",
+      "zeileText": "<p lang={untertitel.lang} className=\"max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaKopf.tsx",
+      "zeile": 22,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.55]",
+      "zeileText": "<p lang={untertitel.lang} className=\"max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/ThemaNavigation.tsx",
+      "zeile": 28,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))]",
+      "zeileText": "<ul aria-labelledby=\"thema-themen\" className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))] gap-3\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 155,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))]",
+      "zeileText": "<div role=\"group\" aria-labelledby={`${id}-themen`} className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,200px),1fr))] gap-3\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 222,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[3px]",
+      "zeileText": "{ist ? <span aria-hidden className=\"absolute inset-x-3.5 bottom-1 h-[3px] rounded-xs bg-gruen-700\" /> : null}"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 236,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 258,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,320px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 281,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))]",
+      "zeileText": "<ul className=\"grid grid-cols-[repeat(auto-fill,minmax(min(100%,280px),1fr))] gap-4\">"
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 301,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-h-[calc(100vh-32px)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/wissen/WissenInsel.tsx",
+      "zeile": 301,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[calc(100%-32px)]",
+      "zeileText": "className=\"m-auto max-h-[calc(100vh-32px)] w-[calc(100%-32px)] max-w-180 overflow-y-auto rounded-lg bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/wissen/stil.ts",
+      "zeile": 4,
+      "art": "Tailwind-Klammerwert",
+      "fund": "bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)]",
+      "zeileText": "export const STREIFEN = 'bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)]';"
+    }
+  ]
+}
