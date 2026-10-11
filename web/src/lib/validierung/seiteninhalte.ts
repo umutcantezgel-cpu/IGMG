@@ -32,6 +32,47 @@ export const kontaktInhalt = z.object({
   social: z.object({ facebook: z.url().optional(), instagram: z.url().optional(), youtube: z.url().optional() }).default({}),
   /** Koordinaten der Moschee (für Qibla/Gebetszeiten und Karte nach Klick); leer bis zur Bestätigung (M-010). */
   koordinaten: z.object({ breite: z.number(), laenge: z.number() }).optional(),
+  /** Webadresse wie im Design (Contact.dc.html:32); nur Text, kein Link. */
+  website: z.string().trim().max(200).default('www.igmg-wetzlar.de'),
+  /** Anfahrtstexte je Verkehrsmittel (Contact.dc.html:79–81); die Überschriften stehen in messages/bereiche/kontakt.json. */
+  anfahrtOeffentlich: mehrsprachig(300).default({
+    de: 'Bushaltestelle [Haltestelle] (Linien [Linien])',
+    tr: 'Otobüs durağı [Durak] ([Hatlar])',
+    en: 'Bus stop [Stop] (lines [Lines])',
+  }),
+  anfahrtAuto: mehrsprachig(300).default({
+    de: 'Kostenlose Parkplätze vorhanden',
+    tr: 'Ücretsiz park yeri mevcuttur',
+    en: 'Free parking available',
+  }),
+  anfahrtFuss: mehrsprachig(300).default({
+    de: '5 Minuten vom Wetzlarer Hauptbahnhof',
+    tr: 'Wetzlar ana istasyonundan 5 dakika',
+    en: '5 minutes from Wetzlar main station',
+  }),
+  /** Angebote der Moschee (Contact.dc.html:83), acht Einträge in Designreihenfolge. */
+  angebote: z.array(mehrsprachig(200)).default([
+    { de: 'Fünf tägliche Gebete', tr: 'Beş vakit namaz', en: 'Five daily prayers' },
+    { de: 'Freitagsgebet mit Khutba', tr: 'Hutbeli Cuma namazı', en: 'Friday prayer with Khutbah' },
+    { de: 'Korankurse für alle Altersgruppen', tr: 'Her yaş için Kuran kursları', en: 'Quran courses for all ages' },
+    { de: 'Islamunterricht', tr: 'Din dersleri', en: 'Islamic education' },
+    { de: 'Hochzeiten und religiöse Zeremonien', tr: 'Nikah ve dini törenler', en: 'Weddings and religious ceremonies' },
+    { de: 'Beratung und Seelsorge', tr: 'Danışmanlık ve manevi rehberlik', en: 'Counseling and spiritual guidance' },
+    { de: 'Jugend- und Frauenorganisationen', tr: 'Gençlik ve kadın teşkilatları', en: 'Youth and women organizations' },
+    { de: 'Kulturelle Veranstaltungen', tr: 'Kültürel etkinlikler', en: 'Cultural events' },
+  ]),
+  /** Besuchstext (Contact.dc.html:65; tr/en Bestand Contact.tsx:132, 188). */
+  besuchstext: mehrsprachig(500).default({
+    de: 'Alle Menschen sind herzlich eingeladen, unsere Moschee zu besuchen. Führungen sind nach Vereinbarung möglich.',
+    tr: 'Tüm insanlar camiamizi ziyaret etmeye davetlidir. Rehberli turlar randevu ile mümkündür.',
+    en: 'All people are cordially invited to visit our mosque. Guided tours are available by appointment.',
+  }),
+  /** Einleitung des Notfallkontakts (Contact.dc.html:45; tr/en Bestand Contact.tsx:127, 183). */
+  notfalltext: mehrsprachig(300).default({
+    de: 'Bei dringenden Angelegenheiten außerhalb der Bürozeiten:',
+    tr: 'Ofis saatleri dışında acil durumlar için:',
+    en: 'For urgent matters outside office hours:',
+  }),
 });
 export type KontaktInhalt = z.infer<typeof kontaktInhalt>;
 

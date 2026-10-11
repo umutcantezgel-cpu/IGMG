@@ -1,0 +1,57 @@
+[
+  {
+    "pfad": "/",
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1684,
+    "cls": 0.002,
+    "tbtMs": 26,
+    "jsKb": 175.9,
+    "fehler": [],
+    "offen": [],
+    "sim": {
+      "performance": 91,
+      "lcpMs": 3380
+    }
+  },
+  {
+    "pfad": "/veranstaltungen/arabisch-sprachkurs",
+    "performance": 98,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1899,
+    "cls": 0.002,
+    "tbtMs": 11,
+    "jsKb": 181.9,
+    "fehler": [
+      "JS"
+    ],
+    "offen": [
+      "first-contentful-paint"
+    ],
+    "sim": {
+      "performance": 91,
+      "lcpMs": 3391
+    }
+  },
+  {
+    "pfad": "/bildung/voranmeldung",
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1605,
+    "cls": 0.002,
+    "tbtMs": 17,
+    "jsKb": 178.6,
+    "fehler": [],
+    "offen": [],
+    "sim": {
+      "performance": 92,
+      "lcpMs": 3304
+    }
+  }
+]

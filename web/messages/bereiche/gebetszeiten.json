@@ -1,5 +1,353 @@
 {
-  "de": {},
-  "tr": {},
-  "en": {}
+  "de": {
+    "gebetszeiten": {
+      "titel": "Gebetszeiten",
+      "metaBeschreibung": "Gebetszeiten in Wetzlar: heute, Monatsübersicht, Qibla und Berechnungsgrundlage.",
+      "vollbild": "Vollbild",
+      "vollbildAria": "Vollbild: Gebetszeiten",
+      "standort": "Standort",
+      "ansichtAria": "Ansicht",
+      "tabHeute": "Heute",
+      "tabMonat": "Monatlich",
+      "tabQibla": "Qibla",
+      "tabEinstellungen": "Einstellungen",
+      "naechstesTitel": "Nächstes Gebet: {name}",
+      "restStunden": "{stunden} Std. {minuten} Min.",
+      "restMinuten": "{minuten} Min.",
+      "qibla": "Qibla: {winkel}°",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtungNord": "N",
+      "richtungSued": "S",
+      "richtungOst": "E",
+      "richtungWest": "W",
+      "badgeGebet": "Gebet",
+      "badgeInfo": "Info",
+      "beschreibungen": {
+        "imsak": "Morgendämmerung",
+        "gunes": "Sonnenaufgang",
+        "ogle": "Mittagsgebet",
+        "ikindi": "Nachmittagsgebet",
+        "aksam": "Abendgebet",
+        "yatsi": "Nachtgebet"
+      },
+      "monatTitel": "{monat} – Gebetszeiten",
+      "monatUntertitel": "Vollständige Übersicht des Monats",
+      "tabelleDatum": "Datum",
+      "ramadan": "Ramadan",
+      "drucken": "Drucken",
+      "methodeUnbekannt": "Die eingestellte Berechnungsmethode ist hier nicht einzeln aufgeführt."
+    },
+    "gebetszeitenQibla": {
+      "panel": "Qibla",
+      "titel": "Qibla Richtung",
+      "untertitel": "Richtung zur Kaaba in Mekka",
+      "dial_nord": "N",
+      "dial_aria": "Kompass: Qibla {winkel}° von Norden",
+      "winkel_kurz": "{winkel}°",
+      "winkel_norden": "{winkel}° von Norden",
+      "ort_vor": "Die Qibla-Richtung von",
+      "ort_nach": "zur Kaaba in Mekka",
+      "kompass_aktivieren": "Kompass aktivieren",
+      "kompass_beenden": "Kompass beenden",
+      "kompass_hinweis": "Der Kompass startet erst, wenn Sie auf „Kompass aktivieren“ drücken. Er nutzt die Lage- und Bewegungssensoren Ihres Geräts.",
+      "kompass_startet": "Kompass wird gestartet …",
+      "kompass_aktiv": "Kompass aktiv: Der Kreis richtet sich nach Norden aus.",
+      "kompass_verweigert": "Der Zugriff auf den Kompass wurde nicht erlaubt. Die berechnete Richtung oben gilt trotzdem.",
+      "kompass_fehlt": "Auf diesem Gerät ist kein Kompass verfügbar. Die berechnete Richtung oben gilt trotzdem.",
+      "information_titel": "Qibla Information",
+      "information_untertitel": "Details zur Gebetsrichtung",
+      "genauer_winkel": "Genauer Winkel",
+      "genauer_winkel_wert": "{winkel}° Ost von Nord",
+      "entfernung": "Entfernung zur Kaaba",
+      "entfernung_wert": "[Text fehlt: gebetszeitenQibla.entfernung_wert]",
+      "kaaba_koordinaten": "Kaaba Koordinaten",
+      "kaaba_koordinaten_wert": "21.4225° N, 39.8262° E",
+      "berechnungsmethode": "Berechnungsmethode",
+      "berechnungsmethode_wert": "Großkreis (orthodrome) Navigation",
+      "tipps_titel": "Tipps zur Qibla-Bestimmung:",
+      "tipp_kompass": "Verwenden Sie einen Kompass für genaue Richtung",
+      "tipp_deklination": "Berücksichtigen Sie magnetische Deklination",
+      "tipp_imam": "Bei Unsicherheit fragen Sie den Imam",
+      "tipp_apps": "Smartphone-Apps können hilfreich sein"
+    },
+    "gebetszeitenEinstellungen": {
+      "panel": "Einstellungen",
+      "titel": "Gebetszeiten Einstellungen",
+      "untertitel": "Hier sehen Sie, wie die angezeigten Zeiten entstehen. Ändern lassen sie sich hier nicht.",
+      "methode_titel": "Berechnungsmethode",
+      "methode_verwendet": "Verwendet",
+      "methoden": {
+        "turkey": {
+          "name": "Türkei (Diyanet)",
+          "desc": "Fajr: 18°, Isha: 17°"
+        },
+        "mwl": {
+          "name": "Muslim World League",
+          "desc": "Fajr: 18°, Isha: 17°"
+        },
+        "isna": {
+          "name": "Islamic Society of North America",
+          "desc": "Fajr: 15°, Isha: 15°"
+        },
+        "egypt": {
+          "name": "Egyptian General Authority",
+          "desc": "Fajr: 19,5°, Isha: 17,5°"
+        },
+        "makkah": {
+          "name": "Umm Al-Qura University",
+          "desc": "Fajr: 18,5°, Isha: 90 min"
+        }
+      },
+      "quelle_label": "Quelle der Zeiten",
+      "quelle_import": "importiert",
+      "quelle_berechnet": "berechnet",
+      "madhab_label": "Madhab (Asr-Berechnung)",
+      "madhab_hanafi": "Hanafi",
+      "madhab_shafi": "Schafi’i",
+      "standort_titel": "Standort",
+      "standort_aendern": "Standort ändern",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtung_nord": "N",
+      "richtung_sued": "S",
+      "richtung_ost": "E",
+      "richtung_west": "W",
+      "anpassungen_titel": "Manuelle Anpassungen",
+      "imsak": "Imsak Anpassung (Min.)",
+      "isha": "Isha Anpassung (Min.)"
+    }
+  },
+  "tr": {
+    "gebetszeiten": {
+      "titel": "Namaz Vakitleri",
+      "metaBeschreibung": "Wetzlar’da namaz vakitleri: bugün, aylık çizelge, Kıble ve hesaplama ayarları.",
+      "vollbild": "Tam ekran",
+      "vollbildAria": "Tam ekran: Namaz Vakitleri",
+      "standort": "Konum",
+      "ansichtAria": "Görünüm",
+      "tabHeute": "Bugün",
+      "tabMonat": "Aylık",
+      "tabQibla": "Kıble",
+      "tabEinstellungen": "Ayarlar",
+      "naechstesTitel": "Sıradaki namaz vakti: {name}",
+      "restStunden": "{stunden} sa. {minuten} dk.",
+      "restMinuten": "{minuten} dk.",
+      "qibla": "Kıble: {winkel}°",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtungNord": "K",
+      "richtungSued": "G",
+      "richtungOst": "D",
+      "richtungWest": "B",
+      "badgeGebet": "Namaz",
+      "badgeInfo": "Bilgi",
+      "beschreibungen": {
+        "imsak": "Şafak",
+        "gunes": "Güneşin doğuşu",
+        "ogle": "Öğle namazı",
+        "ikindi": "İkindi namazı",
+        "aksam": "Akşam namazı",
+        "yatsi": "Yatsı namazı"
+      },
+      "monatTitel": "{monat} – Namaz Vakitleri",
+      "monatUntertitel": "Ayın tam çizelgesi",
+      "tabelleDatum": "Tarih",
+      "ramadan": "Ramazan",
+      "drucken": "Yazdır",
+      "methodeUnbekannt": "Ayarlanan hesaplama yöntemi burada ayrıca gösterilmiyor."
+    },
+    "gebetszeitenQibla": {
+      "panel": "Kıble",
+      "titel": "Kıble yönü",
+      "untertitel": "Mekke’deki Kabe’nin yönü",
+      "dial_nord": "K",
+      "dial_aria": "Pusula: Kıble kuzeyden {winkel}°",
+      "winkel_kurz": "{winkel}°",
+      "winkel_norden": "Kuzeyden {winkel}°",
+      "ort_vor": "Konum:",
+      "ort_nach": "– Mekke’deki Kabe’ye kıble yönü",
+      "kompass_aktivieren": "Pusulayı etkinleştir",
+      "kompass_beenden": "Pusulayı kapat",
+      "kompass_hinweis": "Pusula, yalnızca „Pusulayı etkinleştir“ düğmesine bastığınızda başlar. Cihazınızın yön ve hareket sensörlerini kullanır.",
+      "kompass_startet": "Pusula başlatılıyor …",
+      "kompass_aktiv": "Pusula etkin: Daire kuzeye göre hizalanır.",
+      "kompass_verweigert": "Pusulaya erişime izin verilmedi. Yukarıdaki hesaplanmış yön yine de geçerlidir.",
+      "kompass_fehlt": "Bu cihazda pusula kullanılamıyor. Yukarıdaki hesaplanmış yön yine de geçerlidir.",
+      "information_titel": "Kıble bilgisi",
+      "information_untertitel": "Kıble yönüne ilişkin ayrıntılar",
+      "genauer_winkel": "Kesin açı",
+      "genauer_winkel_wert": "Kuzeyden doğuya {winkel}°",
+      "entfernung": "Kabe’ye uzaklık",
+      "entfernung_wert": "[Text fehlt: gebetszeitenQibla.entfernung_wert]",
+      "kaaba_koordinaten": "Kabe koordinatları",
+      "kaaba_koordinaten_wert": "21.4225° K, 39.8262° D",
+      "berechnungsmethode": "Hesaplama yöntemi",
+      "berechnungsmethode_wert": "Büyük daire (ortodrom) navigasyonu",
+      "tipps_titel": "Kıble tespiti için ipuçları:",
+      "tipp_kompass": "Doğru yön için bir pusula kullanın",
+      "tipp_deklination": "Manyetik sapmayı (deklinasyon) dikkate alın",
+      "tipp_imam": "Emin değilseniz imama danışın",
+      "tipp_apps": "Akıllı telefon uygulamaları yardımcı olabilir"
+    },
+    "gebetszeitenEinstellungen": {
+      "panel": "Ayarlar",
+      "titel": "Namaz vakitleri ayarları",
+      "untertitel": "Gösterilen vakitlerin nasıl oluştuğunu burada görebilirsiniz. Bu vakitler burada değiştirilemez.",
+      "methode_titel": "Hesaplama yöntemi",
+      "methode_verwendet": "Kullanılıyor",
+      "methoden": {
+        "turkey": {
+          "name": "Türkiye (Diyanet)",
+          "desc": "Fecr: 18°, Yatsı: 17°"
+        },
+        "mwl": {
+          "name": "Muslim World League",
+          "desc": "Fecr: 18°, Yatsı: 17°"
+        },
+        "isna": {
+          "name": "Islamic Society of North America",
+          "desc": "Fecr: 15°, Yatsı: 15°"
+        },
+        "egypt": {
+          "name": "Egyptian General Authority",
+          "desc": "Fecr: 19,5°, Yatsı: 17,5°"
+        },
+        "makkah": {
+          "name": "Umm Al-Qura University",
+          "desc": "Fecr: 18,5°, Yatsı: 90 dk."
+        }
+      },
+      "quelle_label": "Vakitlerin kaynağı",
+      "quelle_import": "içe aktarıldı",
+      "quelle_berechnet": "hesaplandı",
+      "madhab_label": "Mezhep (İkindi hesabı)",
+      "madhab_hanafi": "Hanefi",
+      "madhab_shafi": "Şafii",
+      "standort_titel": "Konum",
+      "standort_aendern": "Konumu değiştir",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtung_nord": "K",
+      "richtung_sued": "G",
+      "richtung_ost": "D",
+      "richtung_west": "B",
+      "anpassungen_titel": "Manuel düzeltmeler",
+      "imsak": "İmsak düzeltmesi (Dk.)",
+      "isha": "Yatsı düzeltmesi (Dk.)"
+    }
+  },
+  "en": {
+    "gebetszeiten": {
+      "titel": "Prayer Times",
+      "metaBeschreibung": "Prayer times in Wetzlar: today, monthly overview, Qibla and calculation settings.",
+      "vollbild": "Full screen",
+      "vollbildAria": "Full screen: Prayer Times",
+      "standort": "Location",
+      "ansichtAria": "View",
+      "tabHeute": "Today",
+      "tabMonat": "Monthly",
+      "tabQibla": "Qibla",
+      "tabEinstellungen": "Settings",
+      "naechstesTitel": "Next prayer: {name}",
+      "restStunden": "{stunden} h {minuten} min",
+      "restMinuten": "{minuten} min",
+      "qibla": "Qibla: {winkel}°",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtungNord": "N",
+      "richtungSued": "S",
+      "richtungOst": "E",
+      "richtungWest": "W",
+      "badgeGebet": "Prayer",
+      "badgeInfo": "Info",
+      "beschreibungen": {
+        "imsak": "Dawn",
+        "gunes": "Sunrise",
+        "ogle": "Midday prayer",
+        "ikindi": "Afternoon prayer",
+        "aksam": "Evening prayer",
+        "yatsi": "Night prayer"
+      },
+      "monatTitel": "{monat} – Prayer Times",
+      "monatUntertitel": "Full overview of the month",
+      "tabelleDatum": "Date",
+      "ramadan": "Ramadan",
+      "drucken": "Print",
+      "methodeUnbekannt": "The configured calculation method is not listed individually here."
+    },
+    "gebetszeitenQibla": {
+      "panel": "Qibla",
+      "titel": "Qibla direction",
+      "untertitel": "Direction to the Kaaba in Mecca",
+      "dial_nord": "N",
+      "dial_aria": "Compass: Qibla {winkel}° from north",
+      "winkel_kurz": "{winkel}°",
+      "winkel_norden": "{winkel}° from north",
+      "ort_vor": "The Qibla direction from",
+      "ort_nach": "to the Kaaba in Mecca",
+      "kompass_aktivieren": "Activate compass",
+      "kompass_beenden": "Stop compass",
+      "kompass_hinweis": "The compass starts only when you press “Activate compass”. It uses your device’s orientation and motion sensors.",
+      "kompass_startet": "Starting compass …",
+      "kompass_aktiv": "Compass active: the dial aligns with north.",
+      "kompass_verweigert": "Access to the compass was not allowed. The calculated direction above still applies.",
+      "kompass_fehlt": "No compass is available on this device. The calculated direction above still applies.",
+      "information_titel": "Qibla Information",
+      "information_untertitel": "Details about the prayer direction",
+      "genauer_winkel": "Exact angle",
+      "genauer_winkel_wert": "{winkel}° east of north",
+      "entfernung": "Distance to the Kaaba",
+      "entfernung_wert": "[Text fehlt: gebetszeitenQibla.entfernung_wert]",
+      "kaaba_koordinaten": "Kaaba coordinates",
+      "kaaba_koordinaten_wert": "21.4225° N, 39.8262° E",
+      "berechnungsmethode": "Calculation method",
+      "berechnungsmethode_wert": "Great-circle (orthodrome) navigation",
+      "tipps_titel": "Tips for finding the Qibla:",
+      "tipp_kompass": "Use a compass for an exact direction",
+      "tipp_deklination": "Take magnetic declination into account",
+      "tipp_imam": "If you are unsure, ask the imam",
+      "tipp_apps": "Smartphone apps can be helpful"
+    },
+    "gebetszeitenEinstellungen": {
+      "panel": "Settings",
+      "titel": "Prayer times settings",
+      "untertitel": "Here you can see how the displayed times are determined. They cannot be changed here.",
+      "methode_titel": "Calculation method",
+      "methode_verwendet": "In use",
+      "methoden": {
+        "turkey": {
+          "name": "Turkey (Diyanet)",
+          "desc": "Fajr: 18°, Isha: 17°"
+        },
+        "mwl": {
+          "name": "Muslim World League",
+          "desc": "Fajr: 18°, Isha: 17°"
+        },
+        "isna": {
+          "name": "Islamic Society of North America",
+          "desc": "Fajr: 15°, Isha: 15°"
+        },
+        "egypt": {
+          "name": "Egyptian General Authority",
+          "desc": "Fajr: 19.5°, Isha: 17.5°"
+        },
+        "makkah": {
+          "name": "Umm Al-Qura University",
+          "desc": "Fajr: 18.5°, Isha: 90 min"
+        }
+      },
+      "quelle_label": "Source of the times",
+      "quelle_import": "imported",
+      "quelle_berechnet": "calculated",
+      "madhab_label": "Madhab (Asr calculation)",
+      "madhab_hanafi": "Hanafi",
+      "madhab_shafi": "Shafi’i",
+      "standort_titel": "Location",
+      "standort_aendern": "Change location",
+      "koordinaten": "{breite}° {breitenRichtung}, {laenge}° {laengenRichtung}",
+      "richtung_nord": "N",
+      "richtung_sued": "S",
+      "richtung_ost": "E",
+      "richtung_west": "W",
+      "anpassungen_titel": "Manual adjustments",
+      "imsak": "Imsak adjustment (min.)",
+      "isha": "Isha adjustment (min.)"
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, desc, eq, isNull, lte } from 'drizzle-orm';
+import { and, desc, eq, isNull, lte, ne } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
@@ -68,4 +68,43 @@ export async function ladeNachricht(slug: string): Promise<NachrichtDaten | null
   if (!z) return null;
   cacheTag(TAG.nachricht(z.id));
   return zuDaten(z);
+}
+
+/** Sichtbar in Listen und Teasern: veröffentlicht, nicht im Papierkorb, Veröffentlichungsdatum erreicht. */
+function sichtbarInListen() {
+  return and(
+    eq(schema.nachricht.status, 'veroeffentlicht'),
+    isNull(schema.nachricht.imPapierkorbSeit),
+    lte(schema.nachricht.veroeffentlichtAm, new Date()),
+  );
+}
+
+/** Slugs für generateStaticParams: dieselbe Auswahl wie ladeNachricht (veröffentlicht, nicht im Papierkorb). */
+export async function ladeNachrichtenSlugs(): Promise<string[]> {
+  'use cache';
+  cacheLife('hours');
+  cacheTag(TAG.nachrichten);
+  const zeilen = await db
+    .select({ slug: schema.nachricht.slug })
+    .from(schema.nachricht)
+    .where(and(eq(schema.nachricht.status, 'veroeffentlicht'), isNull(schema.nachricht.imPapierkorbSeit)));
+  return zeilen.map((z) => z.slug);
+}
+
+/** Weitere sichtbare Beiträge derselben Kategorie, neueste zuerst, ohne den angegebenen Beitrag (Detailseite). */
+export async function ladeAehnlicheNachrichten(
+  kategorie: NachrichtDaten['kategorie'],
+  ohneId: string,
+  anzahl = 3,
+): Promise<NachrichtDaten[]> {
+  'use cache';
+  cacheLife('hours');
+  cacheTag(TAG.nachrichten);
+  const zeilen = await db
+    .select()
+    .from(schema.nachricht)
+    .where(and(sichtbarInListen(), eq(schema.nachricht.kategorie, kategorie), ne(schema.nachricht.id, ohneId)))
+    .orderBy(desc(schema.nachricht.veroeffentlichtAm))
+    .limit(anzahl);
+  return zeilen.map(zuDaten);
 }

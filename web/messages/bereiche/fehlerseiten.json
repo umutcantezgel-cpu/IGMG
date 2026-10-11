@@ -1,5 +1,56 @@
 {
-  "de": {},
-  "tr": {},
-  "en": {}
+  "de": {
+    "fehlerseiten": {
+      "nichtGefunden": {
+        "titel": "Seite nicht gefunden",
+        "h2": "Diese Seite gibt es nicht.",
+        "text": "Die Adresse ist möglicherweise falsch geschrieben oder die Seite wurde verschoben. Nutzen Sie die Navigation oben oder gehen Sie zur Startseite."
+      },
+      "offline": {
+        "titel": "Sie sind offline",
+        "h2": "Die Verbindung zum Internet fehlt.",
+        "text": "Die Gebetszeiten des laufenden Monats sind auch ohne Verbindung verfügbar."
+      },
+      "aktion": {
+        "startseite": "Zur Startseite",
+        "erneut": "Erneut versuchen"
+      }
+    }
+  },
+  "tr": {
+    "fehlerseiten": {
+      "nichtGefunden": {
+        "titel": "Sayfa bulunamadı",
+        "h2": "Bu sayfa mevcut değil.",
+        "text": "Adres yanlış yazılmış ya da sayfa taşınmış olabilir. Üstteki gezinme menüsünü kullanın veya ana sayfaya gidin."
+      },
+      "offline": {
+        "titel": "Çevrimdışısınız",
+        "h2": "İnternet bağlantısı yok.",
+        "text": "Bu ayın namaz vakitleri bağlantı olmadan da kullanılabilir."
+      },
+      "aktion": {
+        "startseite": "Ana sayfaya git",
+        "erneut": "Tekrar dene"
+      }
+    }
+  },
+  "en": {
+    "fehlerseiten": {
+      "nichtGefunden": {
+        "titel": "Page not found",
+        "h2": "This page does not exist.",
+        "text": "The address may be misspelled or the page may have been moved. Use the navigation above or go to the home page."
+      },
+      "offline": {
+        "titel": "You are offline",
+        "h2": "There is no internet connection.",
+        "text": "The prayer times for the current month are also available without a connection."
+      },
+      "aktion": {
+        "startseite": "Go to home page",
+        "erneut": "Try again"
+      }
+    }
+  }
 }

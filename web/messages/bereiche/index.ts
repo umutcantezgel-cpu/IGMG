@@ -4,6 +4,7 @@
  * `pnpm sprachen:pruefen` prüft Vollständigkeit und meldet Überschneidungen. Neue Bereiche nur hier eintragen.
  */
 import anzeige from './anzeige.json';
+import fehlergrenze from './fehlergrenze.json';
 import fehlerseiten from './fehlerseiten.json';
 import formulare from './formulare.json';
 import gebetszeiten from './gebetszeiten.json';
@@ -25,6 +26,7 @@ export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
 export const BEREICHE: Record<string, BereichsDatei> = {
   anzeige,
+  fehlergrenze,
   fehlerseiten,
   formulare,
   gebetszeiten,

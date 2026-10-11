@@ -2,7 +2,7 @@
 
 import { Check, Funnel } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
-import { cn } from '@/lib/utils';
+import { klassen } from '@/lib/klassen';
 import { Leerzustand } from './Leerzustand';
 
 /**
@@ -30,7 +30,7 @@ export function VeranstaltungsFilter({
         type="button"
         aria-pressed={an}
         onClick={() => setFilter(schluessel)}
-        className={cn(
+        className={klassen(
           'inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-pill px-4 text-18 font-bold transition-colors',
           an ? 'border-2 border-gruen-700 bg-gruen-700 text-weiss' : 'border border-rand bg-weiss text-tinte hover:bg-gruen-50',
         )}

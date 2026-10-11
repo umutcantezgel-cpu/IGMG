@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { berlinerDatum, naechstesGebet, restzeit, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
-import { cn } from '@/lib/utils';
+import { klassen } from '@/lib/klassen';
 
 export type AnzeigeTexte = {
   ort: string;
@@ -170,7 +170,7 @@ export function AnzeigeLive({
               <li
                 key={g}
                 aria-current={istAktuell ? 'time' : undefined}
-                className={cn(
+                className={klassen(
                   'flex flex-col gap-2 rounded-2xl border-2 p-[clamp(16px,2cqi,32px)]',
                   istAktuell
                     ? 'border-weiss bg-weiss text-gruen-950'
@@ -183,7 +183,7 @@ export function AnzeigeLive({
                   <span className="text-[clamp(24px,2.4cqi,36px)] font-bold">{t.namen[g]}</span>
                   {istAktuell || istNaechstes ? (
                     <span
-                      className={cn(
+                      className={klassen(
                         'rounded-pill px-3 py-0.5 text-18 font-bold',
                         istAktuell ? 'bg-gruen-700 text-weiss' : 'bg-weiss text-gruen-950',
                       )}
@@ -196,7 +196,7 @@ export function AnzeigeLive({
                 <span
                   dir="rtl"
                   lang="ar"
-                  className={cn(
+                  className={klassen(
                     // feste Höhe: der spätere Tausch auf Amiri verschiebt nichts (CLS)
                     'block h-[1.6em] overflow-visible text-right font-arabic text-[clamp(28px,2.6cqi,40px)] leading-[1.6]',
                     istAktuell ? 'text-gruen-800' : 'text-gruen-100',

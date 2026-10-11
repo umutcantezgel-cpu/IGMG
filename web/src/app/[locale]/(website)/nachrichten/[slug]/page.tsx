@@ -1,0 +1,154 @@
+import type { JSONContent } from '@tiptap/core';
+import { ArrowLeft, Calendar, Clock, Languages } from 'lucide-react';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
+import { Suspense } from 'react';
+import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
+import { RichText } from '@/components/website/RichText';
+import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { textMitSprache } from '@/components/website/Text';
+import { AehnlicheArtikel } from '@/components/website/nachrichten/AehnlicheArtikel';
+import { AutorKarte, AutorZeile } from '@/components/website/nachrichten/Autor';
+import { MerkKnopf } from '@/components/website/nachrichten/MerkKnopf';
+import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
+import { Link } from '@/i18n/link';
+import type { Locale } from '@/i18n/routing';
+import { datumLang, uhrzeit } from '@/lib/i18n/format';
+import { text } from '@/lib/i18n/inhalt';
+import { metadatenFuer } from '@/lib/seo/metadaten';
+import { ladeAehnlicheNachrichten, ladeNachricht, ladeNachrichtenSlugs, type NachrichtDaten } from '@/server/queries/nachrichten';
+
+export const ensureStatic = 'navigation';
+
+/** Beim Bau alle veröffentlichten Slugs; neue entstehen bei der ersten Anfrage (ensureStatic verlangt ≥ 1 Wert). */
+export async function generateStaticParams() {
+  const slugs = await ladeNachrichtenSlugs();
+  return (slugs.length ? slugs : ['_']).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps<'/[locale]/nachrichten/[slug]'>): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const n = await ladeNachricht(slug);
+  if (!n) return {};
+  const sprache = locale as Locale;
+  return metadatenFuer({
+    pfad: { pathname: '/nachrichten/[slug]', params: { slug } },
+    titel: text(n.titel, sprache),
+    beschreibung: text(n.kurztext, sprache) || undefined,
+  });
+}
+
+/** Rich-Text in der gewählten Sprache; fehlt sie, zeigt die Seite den deutschen Text mit Kennzeichnung (K-02). */
+function inhaltFuer(inhalt: NachrichtDaten['inhalt'], sprache: Locale): { doc: JSONContent; rueckfall: boolean } | null {
+  if (!inhalt) return null;
+  const eigene = sprache === 'de' ? undefined : inhalt[sprache];
+  return eigene ? { doc: eigene, rueckfall: false } : { doc: inhalt.de, rueckfall: sprache !== 'de' };
+}
+
+/** Nachrichtendetail (design/NewsDetails.dc.html, Blatt S07). URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). */
+export default function NachrichtSeite({ params }: PageProps<'/[locale]/nachrichten/[slug]'>) {
+  return (
+    <Suspense fallback={null}>
+      <Nachricht params={params} />
+    </Suspense>
+  );
+}
+
+async function Nachricht({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+  const { locale, slug } = await params;
+  const sprache = locale as Locale;
+  const n = await ladeNachricht(slug);
+  if (!n) notFound();
+  const [t, tk, tp, ta] = await Promise.all([
+    getTranslations('nachricht'),
+    getTranslations('karten'),
+    getTranslations('kopf'),
+    getTranslations('allgemein'),
+  ]);
+  const titel = textMitSprache(n.titel, sprache);
+  const kurz = textMitSprache(n.kurztext, sprache);
+  const inhalt = inhaltFuer(n.inhalt, sprache);
+  // Sichtbare Kennzeichnung, sobald ein Teil der Seite nur auf Deutsch vorliegt (K-02)
+  const rueckfall = sprache !== 'de' && (titel.lang === 'de' || (kurz.text !== '' && kurz.lang === 'de') || inhalt?.rueckfall === true);
+  const veroeffentlicht = new Date(n.veroeffentlichtAm);
+  const aehnliche = await ladeAehnlicheNachrichten(n.kategorie, n.id);
+  const autorName = t('autorName');
+  const autorFunktion = t('autorFunktion');
+
+  return (
+    <Seitenrahmen
+      bereich="moschee"
+      seite="nachrichten"
+      sprachZiel={{ pathname: '/nachrichten/[slug]', params: { slug } }}
+      pfad={[{ label: tp('neuigkeiten'), ziel: '/nachrichten' }, { label: titel.text }]}
+    >
+      <div className="@container mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-4 pb-12 md:px-8 md:pt-8 md:pb-24">
+        <Link href="/" className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4">
+          <ArrowLeft aria-hidden className="size-5" />
+          {t('zurueck')}
+        </Link>
+        <div className="flex flex-wrap items-start gap-8">
+          <article className="flex min-w-0 flex-[2_1_600px] flex-col gap-6">
+            <header className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-16 text-tinte-2">
+                <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 font-bold text-tinte-2">
+                  {tk(`nkat_${n.kategorie}`)}
+                </span>
+                {n.wichtig ? (
+                  <span className="inline-flex rounded-pill bg-tag-wichtig-bg px-3 py-0.5 font-bold text-tag-wichtig">
+                    {tk('nkat_wichtig')}
+                  </span>
+                ) : null}
+                <span className="inline-flex items-center gap-1.5">
+                  <Calendar aria-hidden className="size-4" />
+                  <time dateTime={n.veroeffentlichtAm}>
+                    {t('datumZeit', { datum: datumLang(veroeffentlicht, sprache), zeit: uhrzeit(veroeffentlicht, sprache) })}
+                  </time>
+                </span>
+                {n.lesezeit ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock aria-hidden className="size-4" />
+                    {t('lesezeit', { minuten: n.lesezeit })}
+                  </span>
+                ) : null}
+                {rueckfall ? (
+                  <span className="inline-flex items-center gap-1.5 rounded-pill bg-info-toenung px-3 py-0.5 font-bold text-info">
+                    <Languages aria-hidden className="size-4" />
+                    {ta('nurDeutsch')}
+                  </span>
+                ) : null}
+              </div>
+              <h1 lang={titel.lang} className="text-36 leading-[1.15] text-pretty md:text-48">
+                {titel.text}
+              </h1>
+              {kurz.text ? (
+                <p lang={kurz.lang} className="max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2">
+                  {kurz.text}
+                </p>
+              ) : null}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-y border-linie py-4">
+                <AutorZeile name={autorName} funktion={autorFunktion} />
+                <div className="flex flex-wrap gap-2">
+                  <TeilenKnopf titel={titel.text} texte={{ teilen: t('teilen'), kopiert: t('teilenKopiert'), fehler: t('teilenFehler') }} />
+                  <MerkKnopf art="speichern" texte={t('speichern')} />
+                </div>
+              </div>
+            </header>
+            <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie" />
+            {inhalt ? (
+              <RichText doc={inhalt.doc} lang={inhalt.rueckfall ? 'de' : undefined} className="gap-5 leading-[1.7] text-pretty" />
+            ) : null}
+            <div className="flex flex-wrap gap-2">
+              <MerkKnopf art="gefallt" texte={t('gefaellt')} />
+            </div>
+          </article>
+          <aside className="flex min-w-0 flex-[1_1_300px] flex-col gap-6">
+            <AutorKarte ueberschrift={t('autorUeber')} name={autorName} funktion={autorFunktion} text={t('autorText')} />
+            {aehnliche.length ? <AehnlicheArtikel titel={t('aehnlich')} artikel={aehnliche} sprache={sprache} /> : null}
+          </aside>
+        </div>
+      </div>
+    </Seitenrahmen>
+  );
+}

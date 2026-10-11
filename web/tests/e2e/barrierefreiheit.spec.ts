@@ -32,6 +32,34 @@ const ROUTEN: Route[] = [
     slugAus: 'Veranstaltungen',
   },
   { name: 'Schüler-Voranmeldung', pfad: { de: '/bildung/voranmeldung', tr: '/tr/egitim/on-kayit', en: '/en/education/pre-registration' } },
+  { name: 'Nachrichten', pfad: { de: '/nachrichten', tr: '/tr/haberler', en: '/en/news' } },
+  {
+    name: 'Nachricht-Detail',
+    pfad: {
+      de: '/nachrichten/neue-gebetszeiten-fuer-den-winter',
+      tr: '/tr/haberler/neue-gebetszeiten-fuer-den-winter',
+      en: '/en/news/neue-gebetszeiten-fuer-den-winter',
+    },
+  },
+  { name: 'Über uns', pfad: { de: '/ueber-uns', tr: '/tr/hakkimizda', en: '/en/about-us' } },
+  { name: 'Vorstand', pfad: { de: '/vorstand', tr: '/tr/yonetim', en: '/en/board' } },
+  { name: 'Projekte', pfad: { de: '/projekte', tr: '/tr/projeler', en: '/en/projects' } },
+  { name: 'Kontakt', pfad: { de: '/kontakt', tr: '/tr/iletisim', en: '/en/contact' } },
+  { name: 'IGMG', pfad: { de: '/igmg', tr: '/tr/igmg', en: '/en/igmg' } },
+  {
+    name: 'Organisation (Ana Teşkilatı)',
+    pfad: { de: '/organisationen/ana-teskilati', tr: '/tr/organizasyonlar/ana-teskilati', en: '/en/organizations/ana-teskilati' },
+  },
+  { name: 'Korankurse', pfad: { de: '/bildung/korankurse', tr: '/tr/egitim/kuran-kurslari', en: '/en/education/quran-courses' } },
+  { name: 'Gebetszeiten', pfad: { de: '/gebetszeiten', tr: '/tr/namaz-vakitleri', en: '/en/prayer-times' } },
+  { name: 'Islamisches Wissen', pfad: { de: '/islamisches-wissen', tr: '/tr/islami-bilgiler', en: '/en/islamic-knowledge' } },
+  {
+    name: 'Islamisches Wissen, Thema',
+    pfad: { de: '/islamisches-wissen/mosque', tr: '/tr/islami-bilgiler/mosque', en: '/en/islamic-knowledge/mosque' },
+  },
+  { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
+  { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
+  { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

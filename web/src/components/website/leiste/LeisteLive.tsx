@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { berlinerDatum, naechstesGebet, restzeit } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
-import { cn } from '@/lib/utils';
+import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 
 export type LeisteTexte = {
@@ -81,7 +81,7 @@ export function LeisteLive({
       <li
         key={g}
         aria-current={ist ? 'time' : undefined}
-        className={cn(
+        className={klassen(
           'flex min-w-0 flex-col justify-center gap-0.5 border',
           klein ? 'rounded-md px-2.5 py-2' : 'min-h-[118px] rounded-lg px-3 py-2.5',
           ist ? 'border-weiss bg-weiss' : 'border-gruen-800 bg-gruen-950',
@@ -89,7 +89,7 @@ export function LeisteLive({
       >
         {ist && !klein ? <span className="text-16 font-bold text-gruen-800">{texte.naechstes}</span> : null}
         <span
-          className={cn(
+          className={klassen(
             'flex items-center gap-1.5 text-16 leading-snug font-bold [overflow-wrap:anywhere]',
             ist ? 'text-gruen-800' : 'text-gruen-50',
           )}
@@ -97,7 +97,9 @@ export function LeisteLive({
           {klein ? null : <Icon aria-hidden className="size-4 shrink-0" />}
           <span>{texte.namen[g]}</span>
         </span>
-        <span className={cn('font-bold tabular-nums', klein ? 'text-20' : 'text-24 leading-tight', ist ? 'text-gruen-950' : 'text-weiss')}>
+        <span
+          className={klassen('font-bold tabular-nums', klein ? 'text-20' : 'text-24 leading-tight', ist ? 'text-gruen-950' : 'text-weiss')}
+        >
           {heute[g]}
         </span>
         {ist && !klein ? <span className="text-16 font-bold text-tinte-2">{texte.verbleibt.replace('{zeit}', restText)}</span> : null}

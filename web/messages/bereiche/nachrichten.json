@@ -1,5 +1,110 @@
 {
-  "de": {},
-  "tr": {},
-  "en": {}
+  "de": {
+    "nachrichten": {
+      "titel": "Nachrichten",
+      "untertitel": "Aktuelle Nachrichten und Ankündigungen der IGMG Wetzlar Moschee",
+      "gruppe": "Kategorie",
+      "neueste": "Neueste",
+      "alle": "Alle",
+      "kategorien": {
+        "ankuendigung": "Ankündigungen",
+        "gemeinde": "Gemeinde",
+        "veranstaltung": "Veranstaltungen",
+        "bildung": "Bildung",
+        "religioes": "Religiös",
+        "soziales": "Soziales"
+      },
+      "anzahl": "{anzahl, plural, =0 {Keine Nachrichten} one {# Nachricht} other {# Nachrichten}}",
+      "leerTitel": "Keine Nachrichten gefunden",
+      "leerText": "Versuchen Sie es mit anderen Suchkriterien oder schauen Sie später wieder vorbei."
+    },
+    "nachricht": {
+      "zurueck": "Zurück zur Startseite",
+      "datumZeit": "{datum}, {zeit}",
+      "lesezeit": "{minuten} Min. Lesezeit",
+      "bildPlatz": "Foto: [Text fehlt: Bild zum Beitrag]",
+      "autorUeber": "Über den Autor",
+      "autorName": "[Name – Pressereferent]",
+      "autorFunktion": "Pressereferent IGMG Wetzlar",
+      "autorText": "Verantwortlich für Öffentlichkeitsarbeit und Kommunikation der IGMG Wetzlar.",
+      "aehnlich": "Ähnliche Artikel",
+      "speichern": "Speichern",
+      "gefaellt": "Gefällt mir",
+      "teilen": "Teilen",
+      "teilenKopiert": "Link kopiert",
+      "teilenFehler": "Link konnte nicht kopiert werden"
+    }
+  },
+  "tr": {
+    "nachrichten": {
+      "titel": "Haberler",
+      "untertitel": "IGMG Wetzlar Camii'nin güncel haberleri ve duyuruları",
+      "gruppe": "Kategori",
+      "neueste": "En son",
+      "alle": "Tümü",
+      "kategorien": {
+        "ankuendigung": "Duyurular",
+        "gemeinde": "Cemaat",
+        "veranstaltung": "Etkinlikler",
+        "bildung": "Eğitim",
+        "religioes": "Dini",
+        "soziales": "Sosyal"
+      },
+      "anzahl": "{anzahl, plural, =0 {Haber yok} other {# haber}}",
+      "leerTitel": "Haber bulunamadı",
+      "leerText": "Farklı arama kriterlerini deneyin veya daha sonra tekrar bakın."
+    },
+    "nachricht": {
+      "zurueck": "Ana sayfaya dön",
+      "datumZeit": "{datum}, {zeit}",
+      "lesezeit": "{minuten} dk okuma",
+      "bildPlatz": "Fotoğraf: [Text fehlt: Bild zum Beitrag]",
+      "autorUeber": "Yazar hakkında",
+      "autorName": "[Ad – Basın sorumlusu]",
+      "autorFunktion": "IGMG Wetzlar Basın Sorumlusu",
+      "autorText": "IGMG Wetzlar'ın halkla ilişkiler ve iletişim çalışmalarından sorumludur.",
+      "aehnlich": "Benzer haberler",
+      "speichern": "Kaydet",
+      "gefaellt": "Beğen",
+      "teilen": "Paylaş",
+      "teilenKopiert": "Bağlantı kopyalandı",
+      "teilenFehler": "Bağlantı kopyalanamadı"
+    }
+  },
+  "en": {
+    "nachrichten": {
+      "titel": "News",
+      "untertitel": "Latest news and announcements from IGMG Wetzlar Mosque",
+      "gruppe": "Category",
+      "neueste": "Latest",
+      "alle": "All",
+      "kategorien": {
+        "ankuendigung": "Announcements",
+        "gemeinde": "Community",
+        "veranstaltung": "Events",
+        "bildung": "Education",
+        "religioes": "Religious",
+        "soziales": "Social"
+      },
+      "anzahl": "{anzahl, plural, =0 {No news} one {# news item} other {# news items}}",
+      "leerTitel": "No news found",
+      "leerText": "Try different search criteria or check back later."
+    },
+    "nachricht": {
+      "zurueck": "Back to home page",
+      "datumZeit": "{datum}, {zeit}",
+      "lesezeit": "{minuten} min read",
+      "bildPlatz": "Photo: [Text fehlt: Bild zum Beitrag]",
+      "autorUeber": "About the author",
+      "autorName": "[Name – Press officer]",
+      "autorFunktion": "Press officer, IGMG Wetzlar",
+      "autorText": "Responsible for public relations and communications at IGMG Wetzlar.",
+      "aehnlich": "Related articles",
+      "speichern": "Save",
+      "gefaellt": "Like",
+      "teilen": "Share",
+      "teilenKopiert": "Link copied",
+      "teilenFehler": "Link could not be copied"
+    }
+  }
 }

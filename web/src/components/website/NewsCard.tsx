@@ -153,12 +153,17 @@ export async function NewsCard({
             </li>
           ) : null}
         </ul>
+        {/* Linktext mit unsichtbarem Titel statt aria-label: „Weiterlesen“ allein ist nichtssagend (Lighthouse link-text) */}
         <Link
           href={ziel}
-          aria-label={`${t('weiterlesen')}: ${titel.text}`}
           className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
         >
-          <span>{t('weiterlesen')}</span>
+          <span>
+            {t('weiterlesen')}
+            <span className="sr-only" lang={titel.lang}>
+              : {titel.text}
+            </span>
+          </span>
           <ArrowRight aria-hidden className="size-5" />
         </Link>
       </div>
