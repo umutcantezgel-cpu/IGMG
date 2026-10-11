@@ -35,12 +35,12 @@ export async function AnmeldeKarte({
   const telefonLinkMoeglich = !kontakt.telefon.startsWith('[');
 
   return (
-    <section aria-labelledby="reg" className="flex flex-[1_1_420px] flex-col gap-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8">
-      <h2 id="reg" className="flex items-center gap-2.5 text-30">
+    <section aria-labelledby="reg" className="flex grow basis-105 flex-col gap-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8">
+      <h2 id="reg" className="flex items-center gap-2.5 text-display-2">
         <Heart aria-hidden className="size-7 text-gruen-100" />
         {t('anmeldungUeberschrift')}
       </h2>
-      <p className="text-gruen-50">{t('anmeldungText')}</p>
+      <p className="max-w-text leading-einleitung text-pretty text-gruen-50">{t('anmeldungText')}</p>
       <h3 className="font-text text-18 font-bold">{t('verfuegbar')}</h3>
       {offen.length ? (
         <ul className="flex flex-col gap-2">
@@ -50,9 +50,9 @@ export async function AnmeldeKarte({
               <li key={kurs.id}>
                 <Link
                   href={ziel}
-                  className="flex min-h-14 items-center justify-between gap-3 rounded-md bg-weiss px-4 py-2 text-gruen-950 no-underline hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-weiss"
+                  className="flex min-h-14 items-center justify-between gap-3 rounded-md bg-weiss px-4 py-2 text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-weiss active:scale-98"
                 >
-                  <span className="flex flex-col leading-[1.3]">
+                  <span className="flex flex-col leading-tight">
                     <Text feld={kurs.titel} sprache={sprache} als="strong" />
                     <span className="text-16 text-tinte-2">
                       {kurs.anmeldeweg === 'join' ? t('keineAnmeldungNoetig') : tk('statusVoranmeldung')}
@@ -68,11 +68,11 @@ export async function AnmeldeKarte({
         <p>{t('keineVerfuegbar')}</p>
       )}
       <h3 className="mt-2 font-text text-18 font-bold">{t('kontaktUeberschrift')}</h3>
-      <p className="text-gruen-100">{t('kontaktText')}</p>
+      <p className="max-w-text leading-einleitung text-pretty text-gruen-100">{t('kontaktText')}</p>
       {telefonLinkMoeglich ? (
         <a
           href={`tel:${kontakt.telefon.replace(/[^\d+]/g, '')}`}
-          className="flex min-h-12 items-center gap-2.5 text-weiss underline underline-offset-[3px] focus-visible:outline-weiss"
+          className="flex min-h-12 items-center gap-2.5 text-weiss underline underline-offset-3 focus-visible:outline-weiss"
         >
           {telefonZeile}
         </a>
@@ -81,14 +81,14 @@ export async function AnmeldeKarte({
       )}
       <a
         href={`mailto:${kontakt.email}`}
-        className="flex min-h-12 items-center gap-2.5 [overflow-wrap:anywhere] text-weiss underline underline-offset-[3px] focus-visible:outline-weiss"
+        className="flex min-h-12 items-center gap-2.5 wrap-anywhere text-weiss underline underline-offset-3 focus-visible:outline-weiss"
       >
         <Mail aria-hidden className="size-5 shrink-0" />
         {t('email')} {kontakt.email}
       </a>
       <Link
         href="/kontakt"
-        className="inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5.5 font-bold text-gruen-950 no-underline hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-weiss"
+        className="inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5.5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-weiss active:scale-98"
       >
         <GraduationCap aria-hidden className="size-5" />
         {t('kontaktKnopf')}

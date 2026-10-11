@@ -8,12 +8,16 @@ import { getTranslations } from 'next-intl/server';
 export async function AllgemeineInformationen() {
   const t = await getTranslations('korankurse');
   return (
-    <section aria-labelledby="info" className="flex flex-[1_1_420px] flex-col gap-5 rounded-lg border border-linie bg-weiss p-5 md:p-8">
-      <h2 id="info" className="flex items-center gap-2.5 text-30">
+    <section
+      aria-labelledby="info"
+      className="@container flex grow basis-105 flex-col gap-5 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+    >
+      <h2 id="info" className="flex items-center gap-2.5 text-display-2">
         <Info aria-hidden className="size-7 text-gruen-700" />
         {t('infoUeberschrift')}
       </h2>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-6">
+      {/* Zwei Listen nebeneinander ab 448 px Breite des Abschnitts (Containerabfrage), sonst untereinander */}
+      <div className="grid gap-6 @md:grid-cols-2">
         <Liste ueberschrift={t('voraussetzungen')} eintraege={[t('vor1'), t('vor2'), t('vor3'), t('vor4')]} Icon={CircleCheck} />
         <Liste ueberschrift={t('mitbringen')} eintraege={[t('mit1'), t('mit2'), t('mit3'), t('mit4')]} Icon={Check} />
       </div>
@@ -28,7 +32,7 @@ function Liste({ ueberschrift, eintraege, Icon }: { ueberschrift: string; eintra
       <ul className="flex flex-col gap-1.5">
         {eintraege.map((eintrag) => (
           <li key={eintrag} className="flex items-start gap-2.5">
-            <span className="flex pt-[3px] text-gruen-700">
+            <span className="flex pt-0.75 text-gruen-700">
               <Icon aria-hidden className="size-5" />
             </span>
             {eintrag}

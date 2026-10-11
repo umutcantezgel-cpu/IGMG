@@ -52,11 +52,17 @@ export async function CourseCard({
   const StatusIcon = status.Icon;
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
+    <article
+      className={cn(
+        'relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 shadow-s1',
+        // Hover nur bei klickbarer Karte (K-007, EventCard): die ganze Karte führt zur Aktion
+        ziel && 'transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2',
+      )}
+    >
       {bild ? (
-        <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[150px] border-b border-linie" />
+        <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-40 border-b border-linie" />
       ) : (
-        <Bildplatzhalter beschriftung={t('foto', { titel })} className="h-[150px] border-b border-linie" />
+        <Bildplatzhalter beschriftung={t('foto', { titel })} className="h-40 border-b border-linie" />
       )}
       <div className="flex flex-1 flex-col gap-3.5 p-6">
         <span className={cn('inline-flex items-center gap-1.5 self-start rounded-pill px-3 py-0.5 text-16 font-bold', status.klasse)}>
@@ -65,10 +71,10 @@ export async function CourseCard({
         </span>
         <Text feld={kurs.titel} sprache={sprache} als="h3" className="text-24" />
         {kurs.beschreibung ? <Text feld={kurs.beschreibung} sprache={sprache} als="p" className="text-pretty text-tinte-2" /> : null}
-        <dl className="flex flex-col gap-2">
+        <dl className="flex flex-col gap-2 border-t border-linie pt-4">
           {kurs.zielgruppe ? (
             <div className="flex items-start gap-3">
-              <dt className="flex pt-[3px] text-gruen-700">
+              <dt className="flex pt-0.75 text-gruen-700">
                 <User aria-hidden className="size-5" />
                 <span className="sr-only">{t('zielgruppe')}</span>
               </dt>
@@ -79,7 +85,7 @@ export async function CourseCard({
           ) : null}
           {kurs.zeiten ? (
             <div className="flex items-start gap-3">
-              <dt className="flex pt-[3px] text-gruen-700">
+              <dt className="flex pt-0.75 text-gruen-700">
                 <Clock aria-hidden className="size-5" />
                 <span className="sr-only">{t('zeiten')}</span>
               </dt>
@@ -91,7 +97,7 @@ export async function CourseCard({
         </dl>
         {kurs.hinweis ? (
           <p className="flex items-start gap-2.5 rounded-md bg-tag-bildung-bg px-3.5 py-2.5 text-16 text-tinte">
-            <Info aria-hidden className="mt-0.5 size-[18px] shrink-0 text-tag-bildung" />
+            <Info aria-hidden className="mt-0.5 size-4.5 shrink-0 text-tag-bildung" />
             <Text feld={kurs.hinweis} sprache={sprache} />
           </p>
         ) : null}
@@ -113,7 +119,8 @@ export async function CourseCard({
               href={ziel}
               aria-label={t('linkName', { aktion: aktionText, titel })}
               className={cn(
-                'flex min-h-12 items-center justify-center gap-2 rounded-md px-5 font-bold no-underline',
+                // Ganze Karte klickbar über den Pseudo-Bereich (wie EventCard); Rückmeldung B-01
+                'flex min-h-12 items-center justify-center gap-2 rounded-md px-5 font-bold no-underline transition duration-(--dauer-rueckmeldung) after:absolute after:inset-0 after:content-[""] active:scale-98',
                 zustand === 'register'
                   ? 'bg-gruen-700 text-weiss hover:bg-gruen-800 hover:text-weiss'
                   : 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50 hover:text-gruen-800',
