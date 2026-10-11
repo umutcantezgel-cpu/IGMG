@@ -5,7 +5,7 @@ import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { EventCard } from '@/components/website/EventCard';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeNachrichten } from '@/server/queries/nachrichten';

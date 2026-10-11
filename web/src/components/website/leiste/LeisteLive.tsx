@@ -2,7 +2,7 @@
 
 import { ArrowRight, ChevronDown, ChevronUp, Clock, Info, MapPin, Moon, Sun, Sunrise, Sunset } from 'lucide-react';
 import { useState } from 'react';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import { berlinerDatum, naechstesGebet, restzeit } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { cn } from '@/lib/utils';
@@ -31,7 +31,17 @@ const ICON: Record<Gebet, typeof Sun> = { imsak: Moon, gunes: Sunrise, ogle: Sun
  * Browser aus den zwischengespeicherten Zeiten (K-08). Restzeit ohne Live-Region (K-11: keine Daueransage).
  * Vor dem Einhängen zeigt die Leiste den Referenztag des Servers ohne Hervorhebung (keine Uhrzeit beim Prerender).
  */
-export function LeisteLive({ tage, referenz, texte }: { tage: GebetszeitTag[]; referenz: string; texte: LeisteTexte }) {
+export function LeisteLive({
+  tage,
+  referenz,
+  alleHref,
+  texte,
+}: {
+  tage: GebetszeitTag[];
+  referenz: string;
+  alleHref: string;
+  texte: LeisteTexte;
+}) {
   const jetzt = useJetzt();
   const [aufgeklappt, setAufgeklappt] = useState(false);
 
@@ -121,7 +131,7 @@ export function LeisteLive({ tage, referenz, texte }: { tage: GebetszeitTag[]; r
           {GEBETE.map((g) => karte(g, false))}
         </ul>
         <Link
-          href="/gebetszeiten"
+          href={alleHref}
           className="order-2 ml-auto inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border border-gruen-100 px-4 font-bold text-weiss no-underline transition-colors hover:bg-gruen-800 hover:text-weiss menu:order-3"
         >
           <span>{texte.alle}</span>
@@ -130,7 +140,8 @@ export function LeisteLive({ tage, referenz, texte }: { tage: GebetszeitTag[]; r
       </div>
       {/* Telefon: nächstes Gebet + aufklappbare Liste */}
       <div className="flex flex-col gap-3 px-4 pt-3 pb-4 md:hidden">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-16">
+        {/* Hinweis in eigener Zeile: Das Datum erscheint erst nach der Hydrierung und darf nichts umbrechen (CLS, K-12) */}
+        <div className="flex flex-col items-start gap-2 text-16">
           <span className="flex items-center gap-1.5 text-gruen-100">
             <MapPin aria-hidden className="size-4" />
             <span>
@@ -162,7 +173,7 @@ export function LeisteLive({ tage, referenz, texte }: { tage: GebetszeitTag[]; r
             {GEBETE.map((g) => karte(g, true))}
           </ul>
           <Link
-            href="/gebetszeiten"
+            href={alleHref}
             className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-weiss font-bold text-gruen-950 no-underline hover:text-gruen-950"
           >
             <span>{texte.alle}</span>

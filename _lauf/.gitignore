@@ -12,3 +12,5 @@ belege/**/*.webp
 werkzeuge/referenz/cache/
 werkzeuge/**/*.log
 lichtung/**/drizzle/meta/
+# T7: volle Lighthouse-Berichte bleiben lokal (groß), Zusammenfassung wird versioniert
+belege/lighthouse/**/*.report.json

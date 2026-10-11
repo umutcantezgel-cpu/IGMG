@@ -2,7 +2,8 @@ import { User } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { getPathname, Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
+import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
@@ -18,12 +19,15 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
-  const menues = baueMenues((k) => t(k));
+  const menues = baueMenues(
+    (k) => t(k),
+    (ziel) => pfadFuer(ziel, sprache),
+  );
   const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({
     code,
     kurz: code.toUpperCase(),
     name: ts(code),
-    href: getPathname({ href: sprachZiel as Parameters<typeof getPathname>[0]['href'], locale: code }),
+    href: pfadFuer(sprachZiel, code),
   }));
   return (
     <header className="relative z-50 border-b border-linie bg-weiss">
@@ -38,6 +42,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
         </Link>
         <KopfMenues
           menues={menues}
+          startHref={pfadFuer('/', sprache)}
           startseite={t('startseite')}
           aktiv={aktiv}
           aktuell={aktuell}
@@ -62,6 +67,8 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           </NextLink>
           <MobilMenue
             menues={menues}
+            startHref={pfadFuer('/', sprache)}
+            gebetszeitenHref={pfadFuer('/gebetszeiten', sprache)}
             aktiv={aktiv}
             aktuell={aktuell}
             sprache={sprache}

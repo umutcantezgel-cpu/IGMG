@@ -1,4 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
+import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
@@ -16,6 +17,7 @@ export async function PrayerTimesBar() {
     <LeisteLive
       tage={fenster.tage}
       referenz={fenster.referenz}
+      alleHref={pfadFuer('/gebetszeiten', sprache)}
       texte={{
         label: t('label'),
         ort: t('ort'),

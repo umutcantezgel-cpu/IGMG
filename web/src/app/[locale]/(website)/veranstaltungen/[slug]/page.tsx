@@ -26,7 +26,7 @@ import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Text, textMitSprache } from '@/components/website/Text';
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';

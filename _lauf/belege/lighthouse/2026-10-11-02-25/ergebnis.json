@@ -1,0 +1,66 @@
+[
+  {
+    "pfad": "/",
+    "performance": 81,
+    "accessibility": 100,
+    "best-practices": 96,
+    "seo": 100,
+    "lcpMs": 2901,
+    "cls": 0.269,
+    "tbtMs": 19,
+    "jsKb": 190.3,
+    "fehler": [
+      "Performance",
+      "LCP",
+      "CLS",
+      "JS"
+    ],
+    "offen": [
+      "largest-contentful-paint",
+      "cumulative-layout-shift",
+      "errors-in-console"
+    ]
+  },
+  {
+    "pfad": "/veranstaltungen",
+    "performance": 79,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 3204,
+    "cls": 0.269,
+    "tbtMs": 0,
+    "jsKb": 193,
+    "fehler": [
+      "Performance",
+      "LCP",
+      "CLS",
+      "JS"
+    ],
+    "offen": [
+      "largest-contentful-paint",
+      "cumulative-layout-shift"
+    ]
+  },
+  {
+    "pfad": "/veranstaltungen/frauenkreis-islamische-erziehung",
+    "performance": 81,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 3002,
+    "cls": 0.269,
+    "tbtMs": 3,
+    "jsKb": 194.9,
+    "fehler": [
+      "Performance",
+      "LCP",
+      "CLS",
+      "JS"
+    ],
+    "offen": [
+      "largest-contentful-paint",
+      "cumulative-layout-shift"
+    ]
+  }
+]

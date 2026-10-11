@@ -1,14 +1,13 @@
-import type { ComponentProps } from 'react';
-import type { Link } from '@/i18n/navigation';
+import type { Ziel } from '@/i18n/navigation';
 
 /**
  * Navigationsstruktur (Header, Telefonmenü) nach design/Header.dc.html und Laufbuch D-04/D-07.
  * Texte als Schlüssel im Namensraum `kopf`; Ziele als lokalisierte Pfade (K-03).
  */
-/** Lokalisiertes Linkziel wie es `Link` von next-intl erwartet (Pfad oder Pfad mit Parametern). */
-export type Ziel = ComponentProps<typeof Link>['href'];
+export type { Ziel };
 
-export type MenuePunkt = { schluessel: string; label: string; beschreibung: string; ziel: Ziel; logo?: string };
+/** Menüpunkt; `href` ist die fertige lokalisierte Adresse (für Client-Komponenten). */
+export type MenuePunkt = { schluessel: string; label: string; beschreibung: string; href: string; logo?: string };
 export type Menue = { schluessel: Bereich; label: string; punkte: MenuePunkt[] };
 export type Bereich = 'startseite' | 'moschee' | 'islam' | 'organisationen' | 'bildung' | 'keiner';
 
@@ -23,12 +22,12 @@ type Uebersetzer = (schluessel: string) => string;
 
 const org = (slug: string): Ziel => ({ pathname: '/organisationen/[organisation]', params: { organisation: slug } });
 
-export function baueMenues(t: Uebersetzer): Menue[] {
+export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Menue[] {
   const p = (schluessel: string, label: string, beschreibung: string, ziel: Ziel, logo?: string): MenuePunkt => ({
     schluessel,
     label: t(label),
     beschreibung: t(beschreibung),
-    ziel,
+    href: adresse(ziel),
     logo,
   });
   return [

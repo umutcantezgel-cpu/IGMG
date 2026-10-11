@@ -4,7 +4,6 @@ import { Check, ChevronDown, ChevronUp, LogIn, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRef, useState } from 'react';
-import { Link } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import type { Bereich, Menue } from '../navigation';
 import type { SprachEintrag } from './Sprachwahl';
@@ -29,6 +28,8 @@ type Texte = {
  */
 export function MobilMenue({
   menues,
+  startHref,
+  gebetszeitenHref,
   aktiv,
   aktuell,
   sprache,
@@ -36,6 +37,8 @@ export function MobilMenue({
   texte,
 }: {
   menues: Menue[];
+  startHref: string;
+  gebetszeitenHref: string;
   aktiv: Bereich;
   aktuell: string;
   sprache: Locale;
@@ -118,26 +121,26 @@ export function MobilMenue({
             <nav aria-label={texte.mobilNavigation}>
               <ul className="flex flex-col border-t border-linie">
                 <li className="border-b border-linie">
-                  <Link
-                    href="/"
+                  <NextLink
+                    href={startHref}
                     onClick={schliessen}
                     aria-current={aktuell === 'startseite' ? 'page' : undefined}
                     className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
                   >
                     {texte.startseite}
                     {haken(aktuell === 'startseite')}
-                  </Link>
+                  </NextLink>
                 </li>
                 <li className="border-b border-linie">
-                  <Link
-                    href="/gebetszeiten"
+                  <NextLink
+                    href={gebetszeitenHref}
                     onClick={schliessen}
                     aria-current={aktuell === 'gebetszeiten' ? 'page' : undefined}
                     className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
                   >
                     {texte.gebetszeiten}
                     {haken(aktuell === 'gebetszeiten')}
-                  </Link>
+                  </NextLink>
                 </li>
                 {menues.map((m) => {
                   const auf = Boolean(offen[m.schluessel]);
@@ -156,8 +159,8 @@ export function MobilMenue({
                       <ul id={`mobil-${m.schluessel}`} hidden={!auf} className="flex flex-col gap-0.5 pb-3 pl-2">
                         {m.punkte.map((p) => (
                           <li key={p.schluessel}>
-                            <Link
-                              href={p.ziel}
+                            <NextLink
+                              href={p.href}
                               onClick={schliessen}
                               aria-current={aktuell === p.schluessel ? 'page' : undefined}
                               className="flex min-h-12 items-center gap-3 rounded-md px-3 py-2 text-18 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte"
@@ -173,7 +176,7 @@ export function MobilMenue({
                               ) : null}
                               <span className="flex-1">{p.label}</span>
                               {haken(aktuell === p.schluessel)}
-                            </Link>
+                            </NextLink>
                           </li>
                         ))}
                       </ul>

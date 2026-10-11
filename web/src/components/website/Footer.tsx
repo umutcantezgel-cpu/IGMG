@@ -1,7 +1,7 @@
 import { Building2, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { text } from '@/lib/i18n/inhalt';
 import { heuteBerlin } from '@/lib/zeit/heute';

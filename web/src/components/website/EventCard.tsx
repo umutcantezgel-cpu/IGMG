@@ -1,7 +1,7 @@
 import { ArrowRight, Calendar, Clock, MapPin, Star, Users } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';

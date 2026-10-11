@@ -127,3 +127,23 @@ describe('Tabellen-Import (K-08)', () => {
     expect(r.ok).toBe(true);
   });
 });
+
+describe('zeitpunkt ohne Zeitzonen-Paket (Intl, K-12)', () => {
+  it.each([
+    ['2026-07-01', '12:00', '2026-07-01T10:00:00.000Z'],
+    ['2026-12-01', '12:00', '2026-12-01T11:00:00.000Z'],
+    ['2026-03-29', '01:30', '2026-03-29T00:30:00.000Z'],
+    ['2026-03-29', '03:30', '2026-03-29T01:30:00.000Z'],
+    ['2026-10-25', '03:30', '2026-10-25T02:30:00.000Z'],
+    ['2026-10-24', '23:59', '2026-10-24T21:59:00.000Z'],
+  ])('%s %s Ortszeit → %s', (datum, zeit, utc) => {
+    expect(zeitpunkt(datum, zeit).toISOString()).toBe(utc);
+  });
+
+  it('berlinerDatum am Tageswechsel in Sommer- und Winterzeit', () => {
+    expect(berlinerDatum(new Date('2026-07-01T21:59:00Z'))).toBe('2026-07-01');
+    expect(berlinerDatum(new Date('2026-07-01T22:00:00Z'))).toBe('2026-07-02');
+    expect(berlinerDatum(new Date('2026-12-01T22:59:00Z'))).toBe('2026-12-01');
+    expect(berlinerDatum(new Date('2026-12-01T23:00:00Z'))).toBe('2026-12-02');
+  });
+});

@@ -3,7 +3,7 @@
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 import { useCallback, useRef, useState } from 'react';
-import { Link } from '@/i18n/navigation';
+import Link from 'next/link';
 import type { Bereich, Menue } from '../navigation';
 import { useAussenKlick } from './useAussenKlick';
 
@@ -13,6 +13,7 @@ import { useAussenKlick } from './useAussenKlick';
  */
 export function KopfMenues({
   menues,
+  startHref,
   startseite,
   aktiv,
   aktuell,
@@ -20,6 +21,7 @@ export function KopfMenues({
   aktuelleSeiteText,
 }: {
   menues: Menue[];
+  startHref: string;
   startseite: string;
   aktiv: Bereich;
   aktuell: string;
@@ -42,7 +44,7 @@ export function KopfMenues({
       <ul className="flex items-center gap-1">
         <li className="relative">
           <Link
-            href="/"
+            href={startHref}
             aria-current={aktuell === 'startseite' ? 'page' : undefined}
             className="relative inline-flex min-h-12 items-center rounded-md px-3 text-18 font-bold whitespace-nowrap text-tinte no-underline transition-colors hover:bg-gruen-50 hover:text-gruen-800"
           >
@@ -81,7 +83,7 @@ export function KopfMenues({
                     return (
                       <li key={p.schluessel}>
                         <Link
-                          href={p.ziel}
+                          href={p.href}
                           aria-current={istAktuell ? 'page' : undefined}
                           onClick={() => setOffen(null)}
                           className="flex min-h-14 items-center gap-3 rounded-md px-3 py-2.5 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte"

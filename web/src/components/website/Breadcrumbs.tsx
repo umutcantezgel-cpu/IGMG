@@ -1,6 +1,6 @@
 import { ChevronRight, House } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { Link } from '@/i18n/link';
 import type { Ziel } from './navigation';
 
 export type PfadEintrag = { label: string; ziel?: Ziel };

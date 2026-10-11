@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { locale } from 'next/root-params';
 import { routing } from '@/i18n/routing';
@@ -28,16 +27,15 @@ export const viewport: Viewport = {
 
 /**
  * Wurzel-Layout aller Seiten. Die Sprache kommt aus dem Root-Parameter (statisch).
- * NextIntlClientProvider ist Pflicht für den lokalisierten Link (Lichtung a); Nachrichten für
- * Client-Komponenten werden gezielt in den Seiten übergeben (K-12, JS-Budget).
+ * Öffentliche Seiten laden kein next-intl im Browser (K-12, JS-Budget): Links rechnet `src/i18n/link.tsx` auf
+ * dem Server aus, Client-Komponenten bekommen Texte und Adressen als Props. Nur die Verwaltung hat einen
+ * NextIntlClientProvider (eigenes Layout).
  */
 export default async function WurzelLayout({ children }: LayoutProps<'/[locale]'>) {
   const sprache = await locale();
   return (
     <html lang={sprache} className={schriftKlassen}>
-      <body>
-        <NextIntlClientProvider messages={null}>{children}</NextIntlClientProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

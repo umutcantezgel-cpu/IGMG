@@ -87,3 +87,7 @@ Die Verwaltung bekommt eine eigene Kopfzeile mit Kontomenü und die Seitenleiste
 **E-025 · 2026-10-11 · Cache-Invalidierung zweistufig (F-002)**
 Alle Verwaltungs-Actions rufen `inhaltGeaendert(...tags)`: `updateTag` sofort, zweite Invalidierung nach 5 s per `after()`. Grund: Rennen mit gleichzeitigen öffentlichen Seitenaufbauten. „Sofort öffentlich“ gilt damit im Normalfall sofort, im Rennfall nach höchstens rund 5 s.
 
+**E-026 · 2026-10-11 · Leistungsmessung (T7): Drosselung „devtools“ maßgeblich, „simulate“ wird mitberichtet**
+`pnpm messen` misst jede Route zweimal mit Lighthouse 13.5 mobil. Gegen localhost liefert der Standard „simulate“ ein systematisch zu hohes LCP (~3,0 s), obwohl das beobachtete LCP dem FCP entspricht (0,07–0,8 s): Im ungedrosselten Trace starten alle Anfragen vor dem ersten Zeichnen, daher rechnet die Simulation das gesamte JavaScript in die LCP-Kette. Mit angewandter Drosselung (150 ms RTT, 1,6 Mbit/s, CPU ×4) liegt das LCP bei ~1,6 s. Bewertet wird K-12 mit „devtools“; der simulierte Wert steht in jedem Bericht. Nach der Bereitstellung prüft eine Person mit PageSpeed Insights gegen die echte Adresse (M-065).
+Umgesetzte Leistungsmaßnahmen in diesem Schritt: Telefon-Gebetszeitenleiste ohne Umbruch nach der Hydrierung (CLS 0,27 → 0), kein next-intl im Browser (eigene Pfadberechnung, serverseitiger `Link`, −12 kB), Zeitzonenrechnung über Intl statt `@date-fns/tz` im Browser, Konzept-Hinweis schon beim ersten Zeichnen (kein spätes LCP-Element). JS beim ersten Laden 172–177 kB gzip (Budget 180).
+

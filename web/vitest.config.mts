@@ -16,7 +16,13 @@ export default defineConfig({
     projects: [
       {
         extends: true,
-        test: { name: 'unit', include: ['tests/unit/**/*.test.ts', 'tests/unit/**/*.test.tsx'], environment: 'node' },
+        test: {
+          name: 'unit',
+          include: ['tests/unit/**/*.test.ts', 'tests/unit/**/*.test.tsx'],
+          environment: 'node',
+          // next-intl (nur Referenz in tests/unit/navigation.test.ts) importiert „next/navigation“ ohne Endung
+          server: { deps: { inline: ['next-intl'] } },
+        },
       },
       {
         extends: true,
