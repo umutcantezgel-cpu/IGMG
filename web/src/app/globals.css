@@ -110,6 +110,8 @@
   --spacing-abschnitt-klein: clamp(2.5rem, 1.757rem + 3.048vw, 4.5rem);
   /* Lesebreite für Einleitungen (statt max-w-[760px]) */
   --container-einleitung: 47.5rem;
+  /* Textspalte im Seitenkopf (statt max-w-[880px]) */
+  --container-seitenkopf: 55rem;
 
   /* Bewegung (Kern K-007): drei Kurven. Dauern und Ebenen stehen in :root (Tailwind kennt dafür keinen Namensraum). */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* Zustandswechsel an Ort und Stelle */
@@ -130,6 +132,17 @@
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
 @utility streifen-platzhalter {
   background: repeating-linear-gradient(135deg, var(--color-sand) 0 10px, var(--color-papier) 10px 20px);
+}
+
+/*
+ * Achtstern-Band (Kern K-008): Reihe kleiner Achtsterne als schmales Band an Abschnittskanten, 8 % Deckkraft in Tiefgrün
+ * (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Nie hinter Text.
+ */
+@utility achtstern-band {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath fill='%230e3929' fill-opacity='.08' d='M12 1.5 13.3 2.8H15.2V4.7L16.5 6 15.2 7.3V9.2H13.3L12 10.5 10.7 9.2H8.8V7.3L7.5 6 8.8 4.7V2.8H10.7Z'/%3E%3C/svg%3E");
+  background-size: 24px 12px;
+  background-repeat: repeat-x;
+  background-position: center;
 }
 
 /* Nur das helle Thema existiert (Kern K-005, MENSCHEN ML-02): dark:-Klassen aus shadcn/ui greifen erst mit .dunkel */
@@ -162,7 +175,7 @@
   --dauer-wechsel: 320ms; /* Öffnen, Tabs, Inhaltswechsel, Seitenwechsel */
   --dauer-auftritt: 640ms; /* Abschnitte erscheinen */
   --dauer-moment: 1200ms; /* die großen Momente (Tagesbogen, Weg, Meilensteine, Familie) */
-  --staffel: 60ms; /* Versatz je Element bei gestaffeltem Auftritt */
+  --staffel: 80ms; /* Versatz je Element bei gestaffeltem Auftritt (Register B-06: ≤ 6 × 80 ms) */
   /* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */
   --ebene-kopf: 40;
   --ebene-overlay: 50;

@@ -1,7 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { cn } from '@/lib/utils';
 import { Abschnitt } from './Abschnitt';
-import { ABSTAENDE, ABSTAND_BASIS, remZuPx } from './tokens';
+import { Tokenkarte } from './Tokenkarte';
+import { ABSCHNITTSABSTAENDE, ABSTAENDE, ABSTAND_BASIS, remZuPx } from './tokens';
 
 /** Abstände (V14): Vielfache der Basis; die Balken nutzen die Klassen w-N derselben Schritte. */
 export async function Abstaende() {
@@ -19,6 +20,27 @@ export async function Abstaende() {
           </li>
         ))}
       </ul>
+
+      <div className="flex flex-col gap-4">
+        <h3 className="text-24">{t('abstaende.abschnittTitel')}</h3>
+        <p className="max-w-text text-tinte-2">{t('abstaende.abschnittEinleitung')}</p>
+        <ul className="grid gap-4 md:grid-cols-2">
+          {ABSCHNITTSABSTAENDE.map((a) => (
+            <li key={a.name} className="min-w-0">
+              <Tokenkarte
+                name={a.name}
+                wert={a.wert}
+                verwendung={t(`abstaende.abschnittRollen.${a.schluessel}`)}
+                vorschau={
+                  <div className={cn('bg-papier px-4', a.klasse)}>
+                    <span className="block h-6 bg-gruen-100" />
+                  </div>
+                }
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </Abschnitt>
   );
 }

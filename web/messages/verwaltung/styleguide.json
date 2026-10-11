@@ -8,6 +8,7 @@
       "farben": "Farben",
       "typografie": "Typografie",
       "abstaende": "Abstände",
+      "raster": "Raster und Breiten",
       "radien": "Radien",
       "schatten": "Schatten",
       "knoepfe": "Knöpfe",
@@ -15,6 +16,8 @@
       "pillen": "Pillen",
       "karten": "Karten",
       "meldungen": "Meldungen",
+      "bewegung": "Bewegung",
+      "ebenen": "Ebenen",
       "barrierefreiheit": "Barrierefreiheit"
     },
     "token": "Token",
@@ -112,13 +115,55 @@
         "arabisch": "أبجد هوز"
       },
       "laufweite": "Laufweite für Überschriften",
-      "laufweiteMuster": "Überschrift mit Laufweite"
+      "laufweiteMuster": "Überschrift mit Laufweite",
+      "anzeigeTitel": "Anzeigestufen",
+      "anzeigeEinleitung": "Die Anzeigestufen wachsen stufenlos zwischen Telefon und Computer. Sie sind für Seitentitel und große Abschnittstitel gedacht, nicht für Fließtext.",
+      "anzeigeRollen": {
+        "display1": "Seitentitel der Erzählansichten",
+        "display2": "Abschnittstitel"
+      },
+      "anzeigeMuster": {
+        "display1": "Gemeindeleben",
+        "display2": "Veranstaltungen im Überblick"
+      },
+      "fliessend": "Schriftgröße {min} bis {max}, dazwischen fließend. Zeilenhöhe {zeile}",
+      "zeilenTitel": "Zeilenhöhen",
+      "zeilenEinleitung": "Überschriften in Karten und Abschnitten übernehmen die Zeilenhöhe des Fließtexts. Einleitungen in 20 px haben eine eigene Zeilenhöhe.",
+      "zeilenRollen": {
+        "ueberschrift": "Überschriften in Karten und Abschnitten",
+        "einleitung": "Einleitung in 20 px"
+      },
+      "zeilenMuster": "Dieser Beispieltext ist absichtlich etwas länger, damit er über mehrere Zeilen läuft und der Zeilenabstand sichtbar wird."
     },
     "abstaende": {
       "titel": "Abstände",
       "einleitung": "Alle Abstände sind Vielfache einer Basis. Klassen wie p-4, gap-4 oder w-4 verwenden dieselben Schritte.",
       "basis": "Basis {name}: {wert}",
       "schritt": "Schritt {schritt}",
+      "pixel": "{wert} px",
+      "abschnittTitel": "Abschnittsabstände",
+      "abschnittEinleitung": "Abschnitte bekommen oben und unten einen Abstand, der mit der Bildschirmbreite wächst. Die Klassen py-abschnitt und py-abschnitt-klein nutzen diese Werte.",
+      "abschnittRollen": {
+        "gross": "Großer Abstand zwischen Abschnitten",
+        "klein": "Kleiner Abstand zwischen Abschnitten"
+      }
+    },
+    "raster": {
+      "titel": "Raster und Breiten",
+      "einleitung": "Breiten begrenzen Inhalt und Text, Haltepunkte schalten das Layout um. Verwenden Sie den Namen der Stufe, zum Beispiel max-w-text oder verwaltung:, nicht einen Zahlenwert.",
+      "breitenTitel": "Breiten",
+      "breiten": {
+        "inhalt": "Breite der Seiteninhalte",
+        "text": "Lesebreite für Fließtext",
+        "einleitung": "Lesebreite für Einleitungen",
+        "seitenkopf": "Textspalte im Seitenkopf"
+      },
+      "haltepunktTitel": "Haltepunkte",
+      "haltepunkte": {
+        "md": "Telefon und Tablet: ab hier das breitere Layout",
+        "verwaltung": "Verwaltung: ab hier die Seitenleiste statt des Kopfmenüs",
+        "menu": "Website: darunter erscheint der Menü-Knopf"
+      },
       "pixel": "{wert} px"
     },
     "radien": {
@@ -209,6 +254,41 @@
       "info": "Die Änderung wird nach der Prüfung veröffentlicht.",
       "erfolg": "Der Eintrag wurde gespeichert.",
       "fehler": "Der Eintrag konnte nicht gespeichert werden. Bitte prüfen Sie die markierten Felder."
+    },
+    "bewegung": {
+      "titel": "Bewegung",
+      "einleitung": "Bewegung zeigt, was passiert, und gibt Orientierung. Animiert werden nur Position, Größe und Deckkraft. Mit reduzierter Bewegung erscheinen Änderungen sofort.",
+      "dauerTitel": "Dauern",
+      "dauerEinleitung": "Vier Stufen, mit denen alle Bewegungen laufen. Der Ausgang einer Bewegung nutzt die nächstkleinere Stufe.",
+      "dauer": {
+        "rueckmeldung": "Rückmeldung bei Hover und Druck (B-01) und Ausgang von Öffnen und Schließen (B-03)",
+        "wechsel": "Öffnen und Schließen (B-03), Inhaltswechsel (B-04), Seitenwechsel (B-05) und Rückmeldung nach dem Absenden (B-11)",
+        "auftritt": "Die nächste Gebetszeit tritt im Tagesbogen hervor (B-06)",
+        "moment": "Die großen Momente: Tagesbogen, Weg der Gemeinde und Meilensteinlinie (B-06 bis B-08) sowie das Ladezeichen (B-12)"
+      },
+      "kurvenTitel": "Kurven",
+      "kurvenEinleitung": "Drei Kurven bestimmen, wie eine Bewegung anläuft und zur Ruhe kommt.",
+      "kurve": {
+        "standard": "Wechsel an Ort und Stelle: Überblendung von Inhalten (B-04, B-10) und Bewegung gemeinsamer Elemente (B-05)",
+        "eintritt": "Erscheinen: schnell da, weich zur Ruhe. Öffnen (B-03), Tagesbogen (B-06) und Rückmeldung nach dem Absenden (B-11)",
+        "austritt": "Verschwinden: ruhig los, zügig weg. Schließen (B-03) und das alte Seitenbild beim Seitenwechsel (B-05)"
+      },
+      "vorschau": {
+        "abspielen": "Abspielen",
+        "zuruecksetzen": "Zurücksetzen",
+        "reduziert": "Die Vorschau bewegt sich nur auf Knopfdruck, nie von selbst. Bei reduzierter Bewegung springt sie sofort an ihr Ziel."
+      }
+    },
+    "ebenen": {
+      "titel": "Ebenen",
+      "einleitung": "Ebenen legen fest, was über was liegt. Verwenden Sie den Namen der Ebene, zum Beispiel z-(--ebene-overlay), nicht eine Zahl wie z-50.",
+      "ebene": {
+        "kopf": "Kopfzeile der Website",
+        "overlay": "Schleier hinter Dialogen sowie Auswahllisten und Tooltips (bisher z-50)",
+        "dialog": "Dialoge und Menüs im Kopf, zum Beispiel die Sprachwahl (bisher z-60)",
+        "toast": "Kurze Rückmeldungen über Dialogen",
+        "sprung": "Sprunglink „Zum Inhalt“ über allem (bisher z-[100])"
+      }
     },
     "barrierefreiheit": {
       "titel": "Barrierefreiheit",

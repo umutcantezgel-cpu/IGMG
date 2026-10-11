@@ -185,11 +185,122 @@ export const KONTRASTBEISPIELE: readonly {
   },
 ];
 
+/** Fluide Werte (Kern K-005): wachsen zwischen Telefon und Computer; Untergrenze und Obergrenze stehen im clamp(). */
+export type FliessendToken = {
+  /** CSS-Variable, z. B. `--text-display-1` oder `--spacing-abschnitt` */
+  name: string;
+  /** Wert wie in globals.css: clamp(Untergrenze, Mitte, Obergrenze) */
+  wert: string;
+  /** Untergrenze, wie sie im clamp() steht */
+  min: string;
+  /** Obergrenze, wie sie im clamp() steht */
+  max: string;
+  /** Schlüssel für Rolle und Muster unter `styleguide.<bereich>` */
+  schluessel: string;
+};
+
+/** Anzeigestufen: Muster `text-display-1` und `text-display-2`; die Zeilenhöhe steht in `${name}--line-height`. */
+export type AnzeigeToken = FliessendToken & {
+  zeile: string;
+  /** Klassen des Musters: Schriftfamilie, Größe, Gewicht */
+  muster: string;
+};
+
+export const ANZEIGESTUFEN: readonly AnzeigeToken[] = [
+  {
+    name: '--text-display-1',
+    wert: 'clamp(2.25rem, 1.786rem + 1.905vw, 3.5rem)',
+    min: '2.25rem',
+    max: '3.5rem',
+    zeile: '1.1',
+    schluessel: 'display1',
+    muster: 'font-display text-display-1 font-semibold',
+  },
+  {
+    name: '--text-display-2',
+    wert: 'clamp(1.875rem, 1.643rem + 0.952vw, 2.5rem)',
+    min: '1.875rem',
+    max: '2.5rem',
+    zeile: '1.2',
+    schluessel: 'display2',
+    muster: 'font-display text-display-2 font-semibold',
+  },
+];
+
+/** Abschnittsabstände: Klasse `py-abschnitt` und `py-abschnitt-klein`. */
+export const ABSCHNITTSABSTAENDE: readonly (FliessendToken & { klasse: string })[] = [
+  {
+    name: '--spacing-abschnitt',
+    wert: 'clamp(3rem, 2.071rem + 3.81vw, 5.5rem)',
+    min: '3rem',
+    max: '5.5rem',
+    klasse: 'py-abschnitt',
+    schluessel: 'gross',
+  },
+  {
+    name: '--spacing-abschnitt-klein',
+    wert: 'clamp(2.5rem, 1.757rem + 3.048vw, 4.5rem)',
+    min: '2.5rem',
+    max: '4.5rem',
+    klasse: 'py-abschnitt-klein',
+    schluessel: 'klein',
+  },
+];
+
+/** Ein Token mit Wert, Tailwind-Klasse und Schlüssel für die Texte. */
+export type WertToken = { name: string; wert: string; klasse: string; schluessel: string };
+
+/** Zeilenhöhen: Überschriften in Karten und Abschnitten, Einleitungen in 20 px (Kern K-005, K-006). */
+export const ZEILENHOEHEN: readonly WertToken[] = [
+  { name: '--leading-ueberschrift', wert: '1.6', klasse: 'leading-ueberschrift', schluessel: 'ueberschrift' },
+  { name: '--leading-einleitung', wert: '1.55', klasse: 'leading-einleitung', schluessel: 'einleitung' },
+];
+
+/** Breiten: Seiteninhalt, Fließtext und Einleitung. */
+export const BREITEN: readonly WertToken[] = [
+  { name: '--container-inhalt', wert: '84rem', klasse: 'max-w-inhalt', schluessel: 'inhalt' },
+  { name: '--container-text', wert: '68ch', klasse: 'max-w-text', schluessel: 'text' },
+  { name: '--container-einleitung', wert: '47.5rem', klasse: 'max-w-einleitung', schluessel: 'einleitung' },
+  { name: '--container-seitenkopf', wert: '55rem', klasse: 'max-w-seitenkopf', schluessel: 'seitenkopf' },
+];
+
+/** Haltepunkte; die Klasse nennt die Variante, z. B. `verwaltung:`. */
+export const HALTEPUNKTE: readonly WertToken[] = [
+  { name: '--breakpoint-md', wert: '48rem', klasse: 'md:', schluessel: 'md' },
+  { name: '--breakpoint-verwaltung', wert: '56.25rem', klasse: 'verwaltung:', schluessel: 'verwaltung' },
+  { name: '--breakpoint-menu', wert: '77.5rem', klasse: 'menu:', schluessel: 'menu' },
+];
+
+/** Kurven (Kern K-005, K-007): `ease-standard`, `ease-eintritt`, `ease-austritt`. */
+export const KURVEN: readonly WertToken[] = [
+  { name: '--ease-standard', wert: 'cubic-bezier(0.2, 0, 0, 1)', klasse: 'ease-standard', schluessel: 'standard' },
+  { name: '--ease-eintritt', wert: 'cubic-bezier(0.05, 0.7, 0.1, 1)', klasse: 'ease-eintritt', schluessel: 'eintritt' },
+  { name: '--ease-austritt', wert: 'cubic-bezier(0.3, 0, 0.8, 0.15)', klasse: 'ease-austritt', schluessel: 'austritt' },
+];
+
+/** Dauern (Kern K-007): stehen in `:root`, nicht in `@theme`; die Klasse ist `duration-(…)`. */
+export const DAUERN: readonly WertToken[] = [
+  { name: '--dauer-rueckmeldung', wert: '150ms', klasse: 'duration-(--dauer-rueckmeldung)', schluessel: 'rueckmeldung' },
+  { name: '--dauer-wechsel', wert: '320ms', klasse: 'duration-(--dauer-wechsel)', schluessel: 'wechsel' },
+  { name: '--dauer-auftritt', wert: '640ms', klasse: 'duration-(--dauer-auftritt)', schluessel: 'auftritt' },
+  { name: '--dauer-moment', wert: '1200ms', klasse: 'duration-(--dauer-moment)', schluessel: 'moment' },
+];
+
+/** Ebenen (Kern K-005): stehen in `:root`; die Klasse ist `z-(…)`, aufsteigend nach Rang. */
+export const EBENEN: readonly WertToken[] = [
+  { name: '--ebene-kopf', wert: '40', klasse: 'z-(--ebene-kopf)', schluessel: 'kopf' },
+  { name: '--ebene-overlay', wert: '50', klasse: 'z-(--ebene-overlay)', schluessel: 'overlay' },
+  { name: '--ebene-dialog', wert: '60', klasse: 'z-(--ebene-dialog)', schluessel: 'dialog' },
+  { name: '--ebene-toast', wert: '70', klasse: 'z-(--ebene-toast)', schluessel: 'toast' },
+  { name: '--ebene-sprung', wert: '100', klasse: 'z-(--ebene-sprung)', schluessel: 'sprung' },
+];
+
 /** Abschnitte der Seite in Reihenfolge; Schlüssel für Sprungnavigation und Überschriften. */
 export const ABSCHNITTE = [
   'farben',
   'typografie',
   'abstaende',
+  'raster',
   'radien',
   'schatten',
   'knoepfe',
@@ -197,6 +308,8 @@ export const ABSCHNITTE = [
   'pillen',
   'karten',
   'meldungen',
+  'bewegung',
+  'ebenen',
   'barrierefreiheit',
 ] as const;
 

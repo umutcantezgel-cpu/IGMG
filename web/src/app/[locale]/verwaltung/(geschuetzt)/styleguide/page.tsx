@@ -1,12 +1,15 @@
 import { getTranslations } from 'next-intl/server';
 import { Abstaende } from '@/components/verwaltung/styleguide/Abstaende';
+import { Bewegung } from '@/components/verwaltung/styleguide/Bewegung';
 import { Barrierefreiheit } from '@/components/verwaltung/styleguide/Barrierefreiheit';
 import { Farben } from '@/components/verwaltung/styleguide/Farben';
+import { Ebenen } from '@/components/verwaltung/styleguide/Ebenen';
 import { Felder } from '@/components/verwaltung/styleguide/Felder';
 import { Karten } from '@/components/verwaltung/styleguide/Karten';
 import { Knoepfe } from '@/components/verwaltung/styleguide/Knoepfe';
 import { Meldungen } from '@/components/verwaltung/styleguide/Meldungen';
 import { Pillen } from '@/components/verwaltung/styleguide/Pillen';
+import { Raster } from '@/components/verwaltung/styleguide/Raster';
 import { Radien } from '@/components/verwaltung/styleguide/Radien';
 import { Schatten } from '@/components/verwaltung/styleguide/Schatten';
 import { Sprungnavigation } from '@/components/verwaltung/styleguide/Sprungnavigation';
@@ -31,6 +34,7 @@ export default async function Styleguide() {
       <Farben />
       <Typografie />
       <Abstaende />
+      <Raster />
       <Radien />
       <Schatten />
       <Knoepfe />
@@ -38,6 +42,8 @@ export default async function Styleguide() {
       <Pillen />
       <Karten />
       <Meldungen />
+      <Bewegung />
+      <Ebenen />
       <Barrierefreiheit />
     </div>
   );

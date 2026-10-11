@@ -31,19 +31,20 @@ export function Seitenkopf({
     <section className={`border-b border-linie ${flaeche}`}>
       <div className="mx-auto flex max-w-(--container-inhalt) flex-wrap items-start gap-6 px-4 pt-8 pb-8 md:px-8 md:pt-16 md:pb-14">
         {vorn}
-        <div className="flex max-w-[880px] min-w-0 flex-[1_1_480px] flex-col gap-3">
+        <div className="flex max-w-seitenkopf min-w-0 flex-1 basis-120 flex-col gap-3">
           {kennung ? (
             <span className={`inline-flex items-center gap-2 text-16 font-bold ${kennungFarbe}`}>
               <Stern8 />
               <span>{kennung}</span>
             </span>
           ) : null}
-          <h1 className="text-36 leading-[1.15] text-balance md:text-48">{titel}</h1>
-          {untertitel ? <p className="max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2">{untertitel}</p> : null}
+          <h1 className="text-display-1 text-balance">{titel}</h1>
+          {untertitel ? <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{untertitel}</p> : null}
           {kinder}
         </div>
       </div>
-      {hinten}
+      {/* Ohne eigenes Akzentband: schmales Achtstern-Band an der Abschnittskante (K-008, dekorativ, nie hinter Text) */}
+      {hinten ?? <div aria-hidden className="achtstern-band h-3" />}
     </section>
   );
 }

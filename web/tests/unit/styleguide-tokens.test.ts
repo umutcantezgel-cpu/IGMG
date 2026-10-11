@@ -4,22 +4,30 @@ import { describe, expect, it } from 'vitest';
 import styleguide from '../../messages/verwaltung/styleguide.json';
 import {
   ABSCHNITTE,
+  ABSCHNITTSABSTAENDE,
   ABSTAENDE,
   ABSTAND_BASIS,
+  ANZEIGESTUFEN,
+  BREITEN,
+  DAUERN,
+  EBENEN,
   FARBEN,
+  HALTEPUNKTE,
   KONTRASTBEISPIELE,
+  KURVEN,
   LAUFWEITE,
   RADIEN,
   SCHATTEN,
   SCHRIFTEN,
   SCHRIFTGROESSEN,
+  ZEILENHOEHEN,
   remZuPx,
 } from '@/components/verwaltung/styleguide/tokens';
 
 /**
  * V14 Styleguide: Die Nachschlageseite zeigt nur Werte, die `src/app/globals.css` (@theme) tatsächlich setzt.
- * Geprüft wird: Jeder Eintrag der Liste in `tokens.ts` stimmt mit globals.css überein, keine Variable fehlt, die
- * Klassen nutzen genau ihren Token, Kontrastangaben stehen im Token-Kommentar, die Beispielpaare ergeben die genannten
+ * Geprüft wird: Jeder Eintrag der Liste in `tokens.ts` stimmt mit globals.css überein (@theme und :root), keine Variable
+ * fehlt, die Klassen nutzen genau ihren Token, Kontrastangaben stehen im Token-Kommentar, die Beispielpaare ergeben die genannten
  * Verhältnisse, und jeder Schlüssel hat einen Text in `messages/verwaltung/styleguide.json`.
  */
 
@@ -40,6 +48,27 @@ function wert(name: string): string {
   const e = theme.get(name);
   if (!e) throw new Error(`${name} fehlt in globals.css (@theme)`);
   return e.wert;
+}
+
+/** Deklarationen des :root-Blocks (Dauern, Ebenen): Name → Wert, zeilenweise gelesen. */
+const WURZEL = /:root \{([\s\S]*?)\n\}/.exec(CSS)?.[1] ?? '';
+const wurzel = new Map<string, string>();
+for (const zeile of WURZEL.split('\n')) {
+  const m = /^\s*(--[\w-]+):\s*(.+?);\s*(?:\/\*.*?\*\/)?\s*$/.exec(zeile);
+  if (m) wurzel.set(m[1], m[2].trim());
+}
+
+const wurzelNamen = (praefix: string) => [...wurzel.keys()].filter((n) => n.startsWith(praefix)).sort();
+
+function wurzelWert(name: string): string {
+  const w = wurzel.get(name);
+  if (w === undefined) throw new Error(`${name} fehlt in globals.css (:root)`);
+  return w;
+}
+
+/** Ein clamp()-Wert nennt genau die Grenzen, die das Token angibt. */
+function klammert(wertText: string, min: string, max: string): boolean {
+  return wertText.startsWith(`clamp(${min}, `) && wertText.endsWith(`, ${max})`);
 }
 
 /** Relative Leuchtdichte nach WCAG 2.x aus einem Hex-Wert wie `#047857`. */
@@ -83,6 +112,34 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
     expect(wert(name)).toBe(erwartet);
   });
 
+  it.each(ANZEIGESTUFEN.map((s) => [s.name, s.wert, s.zeile, s.min, s.max]))(
+    '%s: fließende Größe, Grenzen und Zeilenhöhe stimmen',
+    (name, erwartet, zeile, min, max) => {
+      expect(wert(name)).toBe(erwartet);
+      expect(klammert(wert(name), min, max)).toBe(true);
+      expect(wert(`${name}--line-height`)).toBe(zeile);
+    },
+  );
+
+  it.each(ABSCHNITTSABSTAENDE.map((a) => [a.name, a.wert, a.min, a.max]))(
+    '%s: fließender Abschnittsabstand und Grenzen stimmen',
+    (name, erwartet, min, max) => {
+      expect(wert(name)).toBe(erwartet);
+      expect(klammert(wert(name), min, max)).toBe(true);
+    },
+  );
+
+  it.each([...ZEILENHOEHEN, ...BREITEN, ...HALTEPUNKTE, ...KURVEN].map((e) => [e.name, e.wert]))(
+    '%s hat den Wert aus der Liste',
+    (name, erwartet) => {
+      expect(wert(name)).toBe(erwartet);
+    },
+  );
+
+  it.each([...DAUERN, ...EBENEN].map((e) => [e.name, e.wert]))('%s hat den Wert aus der Liste (:root)', (name, erwartet) => {
+    expect(wurzelWert(name)).toBe(erwartet);
+  });
+
   it.each([
     [LAUFWEITE.name, LAUFWEITE.wert],
     [ABSTAND_BASIS.name, ABSTAND_BASIS.wert],
@@ -96,21 +153,40 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
     expect(namen('--color-')).toEqual(FARBEN.map((f) => f.name).sort());
   });
 
-  it('die Skala text-16 bis text-48 ist vollständig; Sonderstufen der Moschee-Anzeige stehen bewusst nicht auf der Seite', () => {
-    expect(namen('--text-').filter((n) => !n.startsWith('--text-anzeige-'))).toEqual(SCHRIFTGROESSEN.map((s) => s.name).sort());
+  it('die Skala text-16 bis text-48 und die Anzeigestufen sind vollständig; Sonderstufen der Moschee-Anzeige stehen bewusst nicht auf der Seite', () => {
+    expect(namen('--text-').filter((n) => !n.startsWith('--text-anzeige-'))).toEqual(
+      [...SCHRIFTGROESSEN, ...ANZEIGESTUFEN].map((s) => s.name).sort(),
+    );
   });
 
-  it('Schriften, Laufweite, Abstandsbasis, Radien und Schatten sind vollständig', () => {
+  it('Schriften, Laufweite, Abstände, Zeilenhöhen, Breiten, Haltepunkte, Kurven, Radien und Schatten sind vollständig', () => {
     expect(namen('--font-')).toEqual(SCHRIFTEN.map((s) => s.name).sort());
     expect(namen('--tracking-')).toEqual([LAUFWEITE.name]);
-    expect(namen('--spacing')).toEqual([ABSTAND_BASIS.name]);
+    expect(namen('--spacing')).toEqual([ABSTAND_BASIS.name, ...ABSCHNITTSABSTAENDE.map((a) => a.name)].sort());
+    expect(namen('--leading-')).toEqual(ZEILENHOEHEN.map((z) => z.name).sort());
+    expect(namen('--container-')).toEqual(BREITEN.map((b) => b.name).sort());
+    expect(namen('--breakpoint-')).toEqual(HALTEPUNKTE.map((h) => h.name).sort());
+    expect(namen('--ease-')).toEqual(KURVEN.map((k) => k.name).sort());
     expect(namen('--radius-')).toEqual(RADIEN.map((r) => r.name).sort());
     expect(namen('--shadow-')).toEqual(SCHATTEN.map((s) => s.name).sort());
+  });
+
+  it('Dauern und Ebenen stehen vollständig in :root', () => {
+    expect(wurzelNamen('--dauer-')).toEqual(DAUERN.map((d) => d.name).sort());
+    expect(wurzelNamen('--ebene-')).toEqual(EBENEN.map((e) => e.name).sort());
   });
 
   it('die Klasse jedes Eintrags nutzt genau diesen Token', () => {
     for (const f of FARBEN) expect(f.klasse).toBe(`bg-${f.name.slice('--color-'.length)}`);
     for (const s of SCHRIFTGROESSEN) expect(s.muster.split(' ')).toContain(`text-${s.name.slice('--text-'.length)}`);
+    for (const s of ANZEIGESTUFEN) expect(s.muster.split(' ')).toContain(`text-${s.name.slice('--text-'.length)}`);
+    for (const a of ABSCHNITTSABSTAENDE) expect(a.klasse).toBe(`py-${a.name.slice('--spacing-'.length)}`);
+    for (const z of ZEILENHOEHEN) expect(z.klasse).toBe(`leading-${z.name.slice('--leading-'.length)}`);
+    for (const b of BREITEN) expect(b.klasse).toBe(`max-w-${b.name.slice('--container-'.length)}`);
+    for (const h of HALTEPUNKTE) expect(h.klasse).toBe(`${h.name.slice('--breakpoint-'.length)}:`);
+    for (const k of KURVEN) expect(k.klasse).toBe(`ease-${k.name.slice('--ease-'.length)}`);
+    for (const d of DAUERN) expect(d.klasse).toBe(`duration-(${d.name})`);
+    for (const e of EBENEN) expect(e.klasse).toBe(`z-(${e.name})`);
     for (const s of SCHRIFTEN) expect(s.klasse).toBe(`font-${s.name.slice('--font-'.length)}`);
     expect(LAUFWEITE.klasse).toBe(`tracking-${LAUFWEITE.name.slice('--tracking-'.length)}`);
     for (const a of ABSTAENDE) expect(a.klasse).toBe(`w-${a.schritt}`);
@@ -146,7 +222,21 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
   });
 
   it('Namen und Farbschlüssel sind eindeutig', () => {
-    const alle = [...FARBEN, ...SCHRIFTGROESSEN, ...SCHRIFTEN, ...RADIEN, ...SCHATTEN].map((e) => e.name);
+    const alle = [
+      ...FARBEN,
+      ...SCHRIFTGROESSEN,
+      ...ANZEIGESTUFEN,
+      ...SCHRIFTEN,
+      ...RADIEN,
+      ...SCHATTEN,
+      ...ABSCHNITTSABSTAENDE,
+      ...ZEILENHOEHEN,
+      ...BREITEN,
+      ...HALTEPUNKTE,
+      ...KURVEN,
+      ...DAUERN,
+      ...EBENEN,
+    ].map((e) => e.name);
     expect(new Set(alle).size).toBe(alle.length);
     const schluessel = FARBEN.map((f) => f.schluessel);
     expect(new Set(schluessel).size).toBe(schluessel.length);
@@ -165,6 +255,21 @@ describe('Styleguide (V14): Texte in messages/verwaltung/styleguide.json', () =>
         ...(text('typografie', 'schriftVerwendung', s.schluessel) ? [] : [`typografie.schriftVerwendung.${s.schluessel}`]),
         ...(text('typografie', 'schriftMuster', s.schluessel) ? [] : [`typografie.schriftMuster.${s.schluessel}`]),
       ]),
+      ...ANZEIGESTUFEN.flatMap((s) => [
+        ...(text('typografie', 'anzeigeRollen', s.schluessel) ? [] : [`typografie.anzeigeRollen.${s.schluessel}`]),
+        ...(text('typografie', 'anzeigeMuster', s.schluessel) ? [] : [`typografie.anzeigeMuster.${s.schluessel}`]),
+      ]),
+      ...ZEILENHOEHEN.filter((z) => !text('typografie', 'zeilenRollen', z.schluessel)).map(
+        (z) => `typografie.zeilenRollen.${z.schluessel}`,
+      ),
+      ...ABSCHNITTSABSTAENDE.filter((a) => !text('abstaende', 'abschnittRollen', a.schluessel)).map(
+        (a) => `abstaende.abschnittRollen.${a.schluessel}`,
+      ),
+      ...BREITEN.filter((b) => !text('raster', 'breiten', b.schluessel)).map((b) => `raster.breiten.${b.schluessel}`),
+      ...HALTEPUNKTE.filter((h) => !text('raster', 'haltepunkte', h.schluessel)).map((h) => `raster.haltepunkte.${h.schluessel}`),
+      ...KURVEN.filter((k) => !text('bewegung', 'kurve', k.schluessel)).map((k) => `bewegung.kurve.${k.schluessel}`),
+      ...DAUERN.filter((d) => !text('bewegung', 'dauer', d.schluessel)).map((d) => `bewegung.dauer.${d.schluessel}`),
+      ...EBENEN.filter((e) => !text('ebenen', 'ebene', e.schluessel)).map((e) => `ebenen.ebene.${e.schluessel}`),
       ...RADIEN.filter((r) => !text('radien', 'verwendungen', r.schluessel)).map((r) => `radien.verwendungen.${r.schluessel}`),
       ...SCHATTEN.filter((s) => !text('schatten', 'verwendungen', s.schluessel)).map((s) => `schatten.verwendungen.${s.schluessel}`),
       ...KONTRASTBEISPIELE.filter((k) => !text('barrierefreiheit', 'kontrastBeispiele', k.schluessel)).map(
@@ -272,6 +377,27 @@ describe('Styleguide (V14): Texte in messages/verwaltung/styleguide.json', () =>
       'barrierefreiheit.regeln.alttext',
       'barrierefreiheit.regeln.bewegung',
       'barrierefreiheit.regeln.fehler',
+      'typografie.anzeigeTitel',
+      'typografie.anzeigeEinleitung',
+      'typografie.fliessend',
+      'typografie.zeilenTitel',
+      'typografie.zeilenEinleitung',
+      'typografie.zeilenMuster',
+      'abstaende.abschnittTitel',
+      'abstaende.abschnittEinleitung',
+      'raster.einleitung',
+      'raster.breitenTitel',
+      'raster.haltepunktTitel',
+      'raster.pixel',
+      'bewegung.einleitung',
+      'bewegung.dauerTitel',
+      'bewegung.dauerEinleitung',
+      'bewegung.kurvenTitel',
+      'bewegung.kurvenEinleitung',
+      'bewegung.vorschau.abspielen',
+      'bewegung.vorschau.zuruecksetzen',
+      'bewegung.vorschau.reduziert',
+      'ebenen.einleitung',
     ];
     expect(fest.filter((pfad) => !text(...pfad.split('.')))).toEqual([]);
   });
