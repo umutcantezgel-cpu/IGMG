@@ -20,7 +20,7 @@ Gebetszeiten eines Ortes: nächstes Gebet mit Restzeit, Tageszeiten, Monat, Qibl
 
 ## ABSCHNITTE
 
-Reihenfolge: Kopf mit Standort-Auswahl (DC:19–53), Nächstes Gebet (DC:55–65), Tab-Leiste (DC:68–72), Panel Heute (DC:74–86), Panel Monatlich (DC:88–115), Panel Qibla (DC:117–141), Panel Einstellungen (DC:143–168). Header (DC:16), Breadcrumbs (DC:17) und Footer (DC:172) sind eigene Blätter. Nur ein Panel ist sichtbar.
+Reihenfolge: Kopf mit Standort-Auswahl (DC:19–53), Nächstes Gebet (DC:55–65), Tab-Leiste (DC:68–72), Panel Heute (DC:74–86), Monatlich (DC:88–115), Qibla (DC:117–141), Einstellungen (DC:143–168). Header, Breadcrumbs und Footer sind eigene Blätter (DC:16, 17, 172). Nur ein Panel ist sichtbar.
 
 Texte (A2): Gruppen durch „·“ getrennt, Sprachspalten gelten je Text. Fehlt eine Sprache: „– (nur DE in Quelle)“. Zahlen: „(Zahlen)“.
 
@@ -29,7 +29,7 @@ Texte (A2): Gruppen durch „·“ getrennt, Sprachspalten gelten je Text. Fehlt
 | titel | Gebetszeiten | Namaz Vakitleri | Prayer Times | DC:22; LC:142, 400, 658 |
 | kopf_text | Beispielzeiten · Vollbild · Di., 23. Jan. 2024 | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:23, 26; LB:299 (neu); TSX:255 |
 | standort | Standort · Standort ändern · Standort auswählen · Wählen Sie Ihr Land und Ihre Stadt · Aktuellen Standort verwenden · Standort wird ermittelt... · GPS-basierte Standortbestimmung · Oder wählen Sie ein Land: · Ausgewählt | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:28, 33–35, 45, 153–154, 219; TSX:270, 288–289, 307–309, 318, 409, 709 |
-| ort_wert | Wetzlar, Deutschland | Wetzlar, Almanya | Wetzlar, Germany | DC:192; LC:82, 340, 598 |
+| ort_wert | Wetzlar, Deutschland | Wetzlar, Almanya | Wetzlar, Germany | DC:192; LC:82, 340, 598; TSX:38 |
 | laender_orte | Deutschland · Türkei · Niederlande · Belgien (DE · TR · NL · BE) · Auswählen · Zurück zur Länderauswahl · Städte in {Land} · {n} Städte verfügbar (n = 8, 5, 4, 3; abgeleitet) · Wetzlar · Frankfurt · Gießen · Marburg · Dillenburg · Limburg · Kassel · Darmstadt · Istanbul · Ankara · Izmir · Bursa · Antalya · Amsterdam · Rotterdam · Den Haag · Utrecht · Brüssel · Antwerpen · Gent | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:37, 43, 185–188 (Koordinaten dort); TSX:47–73, 338, 344, 373, 375 |
 | naechstes | Nächstes Gebet: {Name} · {Zeit} Uhr · verbleibt: {Restzeit} · Qibla: 136° · 50.5558° N, 8.5089° E | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:57–63, 82; TSX:430–446 |
 | tabs | Heute · Monatlich · Qibla · Einstellungen | Bugün · Aylık · Kıble · Ayarlar | Today · Monthly · Qibla · Settings | DC:70, 204; LC:143–146, 401–404, 659–662 |
@@ -41,9 +41,9 @@ Texte (A2): Gruppen durch „·“ getrennt, Sprachspalten gelten je Text. Fehlt
 | aria | Ansicht · Nächstes Gebet · Vorheriger Monat · Nächster Monat · {n}. Januar 2024 · Kompass: Qibla 136° von Norden (nicht sichtbar) | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:55, 68, 92, 96, 121 |
 | qibla | Qibla Richtung · Richtung zur Kaaba in Mekka · 136° · 136° von Norden · N · Die Qibla-Richtung von {Standort} zur Kaaba in Mekka | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:120–128; TSX:580–620 |
 | qibla_info | Qibla Information · Details zur Gebetsrichtung · Genauer Winkel · 136.2° Ost von Nord · Entfernung zur Kaaba · 3.847 km · Kaaba Koordinaten · 21.4225° N, 39.8262° E · Berechnungsmethode · Großkreis (orthodrome) Navigation · Tipps zur Qibla-Bestimmung: · Verwenden Sie einen Kompass für genaue Richtung · Berücksichtigen Sie magnetische Deklination · Bei Unsicherheit fragen Sie den Imam · Smartphone-Apps können hilfreich sein | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:131–138; TSX:630–660 |
-| einst_methoden | Gebetszeiten Einstellungen · Passen Sie die Berechnung an Ihre Bedürfnisse an · Berechnungsmethode · Manuelle Anpassungen · Imsak Anpassung (Min.) · Isha Anpassung (Min.) · Einstellungen speichern · Zurücksetzen · Methoden: Türkei (Diyanet) · Muslim World League · Islamic Society of North America · Egyptian General Authority · Umm Al-Qura University; Parameter in gleicher Reihenfolge: Fajr: 18°, Isha: 17° · Fajr: 18°, Isha: 17° · Fajr: 15°, Isha: 15° · Fajr: 19.5°, Isha: 17.5° · Fajr: 18.5°, Isha: 90 min | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:145–165, 190; TSX:119–123 (Eigennamen), 674–744 |
+| einst_methoden | Gebetszeiten Einstellungen · Passen Sie die Berechnung an Ihre Bedürfnisse an · Berechnungsmethode · Manuelle Anpassungen · Imsak Anpassung (Min.) · Isha Anpassung (Min.) · Einstellungen speichern · Zurücksetzen · Methoden: Türkei (Diyanet) · Muslim World League · Islamic Society of North America · Egyptian General Authority · Umm Al-Qura University; Parameter: Fajr: 18°, Isha: 17° · Fajr: 18°, Isha: 17° · Fajr: 15°, Isha: 15° · Fajr: 19.5°, Isha: 17.5° · Fajr: 18.5°, Isha: 90 min | – (nur DE in Quelle) | – (nur DE in Quelle) | DC:145–165, 190; TSX:119–123 (Eigennamen), 674–744 |
 
-Monatszeilen (DC:178–182; Datum, Imsak, Aufgang, Dhuhr, Asr, Maghrib, Isha; Zahlen):
+Monatszeilen (DC:178–182, Zahlen):
 
 - 01.01 06:15 08:07 12:30 14:43 17:15 18:45
 - 02.01 06:14 08:06 12:30 14:44 17:16 18:46
@@ -53,11 +53,13 @@ Monatszeilen (DC:178–182; Datum, Imsak, Aufgang, Dhuhr, Asr, Maghrib, Isha; Za
 
 ## DATEN
 
+Vorschlag, Felder mit Typ:
+
 - zeiten: datum DATE, ort_id, imsak, sonnenaufgang, dhuhr, asr, maghrib, isha je TIME (HH:MM, Europe/Berlin, K-08), quelle ENUM(import | berechnet); nicht mehrsprachig (Mock: TSX:87).
 - ort: name TEXT (de Pflicht, tr und en optional mit Rückfall auf de), land_code CHAR(2), breite und laenge NUMERIC; mehrsprachig ja.
 - berechnung: methode ENUM(turkey | mwl | isna | egypt | makkah), anpassung_imsak_min und anpassung_isha_min INT; nicht mehrsprachig.
 - Monatsübersicht: Abfrage aus zeiten. Nicht aus der Datenbank: Kaaba-Koordinaten (DC:135) und Qibla-Winkel, fest berechnet (K-08).
-- Quelle: Tabellenimport verbindlich, adhan nur vorläufig (K-08); amtlich erst nach Bestätigung der Gemeinde (G-06).
+- Quelle: Tabellenimport verbindlich, adhan vorläufig (K-08); amtlich erst nach Bestätigung (G-06).
 
 ## FORMULARFELDER
 
@@ -68,9 +70,9 @@ Monatszeilen (DC:178–182; Datum, Imsak, Aufgang, Dhuhr, Asr, Maghrib, Isha; Za
 ## INTERAKTIONEN
 
 1. Tab wechselt das Panel (DC:70, 204–205).
-2. Standort-Schalter öffnet oder schließt die Auswahl und setzt die Ansicht auf Länder (DC:28, 216); Bestand: 150 ms Verzögerung (TSX:152–155).
+2. Standort-Schalter öffnet oder schließt die Auswahl, Ansicht springt auf Länder (DC:28, 216); Bestand: 150 ms (TSX:152–155).
 3. Land zeigt Städte, Zurück zeigt Länder (DC:37, 43, 208, 218).
-4. Stadt setzt Standort; die Zeiten bleiben gleich (DC:45, 209).
+4. Stadt setzt Standort, Zeiten bleiben gleich (DC:45, 209).
 5. Aktueller Standort: gps für 1,5 Sekunden (DC:34, 219–220). Bestand: Geolokalisierung (TSX:159–177).
 6. Kalendertag setzt day ohne Wirkung (DC:96, 207). Monatspfeile und „Vollständigen Monat laden“ ohne Handler (DC:92, 112).
 7. Methode setzt method ohne Wirkung auf Zeiten (DC:149, 210). Anpassungsfelder und Knöpfe ohne Bindung (DC:159–165).
@@ -84,19 +86,19 @@ Monatszeilen (DC:178–182; Datum, Imsak, Aufgang, Dhuhr, Asr, Maghrib, Isha; Za
 - Intern (DC:192): view countries (Vorgabe) | cities; country leer | 4 Länder; location Wetzlar, Deutschland (Vorgabe) | 20 Orte; method turkey (Vorgabe) | mwl | isna | egypt | makkah; day 23 (Vorgabe) bis 31; gps false (Vorgabe) | true 1,5 s; now alle 30 s.
 - Abgeleitet (DC:197–203): nächstes Gebet ohne Sonnenaufgang (DC:199), nach Isha der Imsak des Folgetages (DC:201); Restzeit „{h} Std. {m} Min.“ oder „{m} Min.“ (DC:202); Karte mit Tag „Nächstes Gebet“ (DC:203).
 - Bestand: isLoadingLocation (TSX:39, 296, 307); Fehler nur als Konsolenmeldung (TSX:179–187); Dhuhr immer hervorgehoben (TSX:469); Restzeit fest „2h 15m“ (TSX:105).
-- Nicht gestaltet: leer – (entfaellt, keine leere Liste) · Fehler (im Design nicht dargestellt) · Erfolg – (entfaellt, kein Speicher-Feedback, DC:164) · angemeldet – (entfaellt, öffentliche Seite) · Schritt – (entfaellt, kein Assistent) · Sprache nur de (DC:15); tr und en in LC, ungenutzt (TSX:35).
+- Nicht gestaltet: leer – (entfaellt, keine leere Liste) · Fehler (im Design nicht dargestellt) · Erfolg – (entfaellt, kein Speicher-Feedback) · angemeldet – (entfaellt, öffentliche Seite) · Schritt – (entfaellt, kein Assistent) · Sprache: de (DC:15), tr/en ungenutzt (TSX:35).
 
 ## BILDER
 
-Keine Fotos. Kompass als gezeichnete Fläche (DC:121–126). Icons (RM:28): calendar, info, maximize, map-pin, chevron-down, globe, target, search, chevron-left, check, compass, sun, moon, sunrise, sunset, clock, settings, download, chevron-right, refresh-cw (DC:23–165). Bestand-Flaggen (TSX:81–84) durch Kürzel ersetzt (LB:273).
+Keine Fotos. Kompass als gezeichnete Fläche (DC:121–126). Icons (Lucide, RM:28) mit den Namen in DC:23–165. Bestand-Flaggen (TSX:81–84) durch Kürzel ersetzt (LB:273).
 
 ## AUFFAELLIGKEITEN
 
-1. Qibla 136° (DC:62, 125; TSX:91) gegen Überschlag ca. 128° (abgeleitet, Großkreis Wetzlar–Kaaba, nicht amtlich geprüft).
+1. Qibla 136° (DC:62, 125; TSX:91) gegen Überschlag ca. 128° (abgeleitet, eigene Großkreis-Rechnung Wetzlar–Kaaba, nicht gegengeprüft).
 2. Entfernung 3.847 km (DC:134; TSX:641) gegen Überschlag ca. 4.230 km (abgeleitet).
 3. Monatstabelle: Titel „Vollständige Übersicht des Monats“, nur fünf Zeilen (DC:101, 178–182).
 4. Heute (DC:176) gegen 04.01 (DC:181): Asr 14:42 gegen 14:46, Maghrib 17:14 gegen 17:18, Isha 18:44 gegen 18:48.
-5. Namensraum ungenutzt: TSX:35 bindet `t` ein, nutzt es nicht; alle Texte stehen hart auf Deutsch (TSX:238–744).
+5. Namensraum ungenutzt: TSX:35 bindet `t` ein, nutzt es nicht; Texte hart auf Deutsch (TSX:238–744).
 6. Vollbild: Link (DC:26) gegen Überlagerung (TSX:248); K-03 verlangt /gebetszeiten/anzeige.
 7. Sonnenaufgang (DC:176; TSX:210) gegen Aufgang (DC:104; TSX:536; LC:86).
 8. Methode: Radioliste (DC:149) gegen Auswahlliste (TSX:683–697).
@@ -105,14 +107,14 @@ Keine Fotos. Kompass als gezeichnete Fläche (DC:121–126). Icons (RM:28): cale
 ## OFFENE FRAGEN
 
 1. Wie lauten die Pfade für /tr und /en zu /gebetszeiten und /gebetszeiten/anzeige?
-2. Welche Quelle gilt bis zur Klärung, Tabellenimport oder adhan, und wer bestätigt die Zeiten (K-08, G-06)?
-3. Ist die Methode Turkey nur Annahme (K-08)? Der Vermerk steht in MENSCHEN.md, das für dieses Blatt nicht gelesen wurde.
-4. Welche Übersetzungen fehlen für Beispielzeiten, Vollbild, Standort, Nächstes Gebet, Gebetsbeschreibungen, Monatstexte und Qibla-Titel, und sind sie in MENSCHEN.md zu markieren (K-02)?
-5. Soll „Izmir“ oder „İzmir“ stehen? Im Design ohne İ (DC:186; TSX:60).
+2. Welche Quelle gilt bis zur Klärung (Tabelle oder adhan), und wer bestätigt die Zeiten (K-08, G-06)?
+3. Ist die Methode Turkey nur Annahme (K-08)? Vermerk in MENSCHEN.md, dort nicht gelesen.
+4. Welche Übersetzungen fehlen für Beispielzeiten, Vollbild, Standort, Nächstes Gebet, Gebetsbeschreibungen, Monatstexte und Qibla-Titel (K-02)?
+5. Soll „Izmir“ oder „İzmir“ stehen? Design und Bestand: ohne İ (DC:186; TSX:60).
 6. Wird der GPS-Standort nur im Browser gehalten oder gespeichert? Koordinaten gelten als personenbezogen (G-04; TSX:172).
-7. Wie wird der Kompass nach ausdrücklichem Klick aktiviert? Das Design hat keinen Schalter (K-08).
+7. Wie wird der Kompass nach ausdrücklichem Klick aktiviert (K-08)? Das Design hat keinen Schalter.
 8. Wie sehen Hinweis „berechnet“, Ramadan-Hervorhebung, Iftar-Begriff und Druckansicht aus (K-08)?
-9. Wie lauten die Monatsdaten für alle Tage? Das Design zeigt fünf Zeilen.
+9. Monatsdaten für alle Tage? Das Design zeigt fünf Zeilen.
 10. Welche geprüfte Berechnung gilt für Qibla und Entfernung (Auffälligkeiten 1 und 2)?
 
 === ENDE S02 · BEREIT ZUR RÜCKGABE ===

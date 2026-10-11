@@ -1,12 +1,14 @@
-# KERN – Version 1.0
+# KERN – Version 1.1
 
 Kopie von Abschnitt 8 des Auftrags. Änderungen nur über `_lauf/ENTSCHEIDUNGEN.md` mit neuer Versionsnummer.
+
+Änderungen: 1.1 (E-012) – K-03 um `/suche` und `/offline` ergänzt.
 
 K-01 Rendering: Cache Components mit cacheComponents und partialPrefetching. Öffentliche Inhalte werden mit 'use cache', cacheLife und cacheTag zwischengespeichert; Änderungen in der Verwaltung lösen updateTag in der Server Action aus, sonst revalidateTag(tag, 'max'). Reine Inhaltsseiten sichern das mit ensureStatic ab. Öffentliche Seiten lesen keine Cookies; Anmeldung und alles Persönliche liegt im Bereich Verwaltung.
 
 K-02 Mehrsprachigkeit: next-intl mit [locale]-Segment ganz oben; Deutsch ohne Präfix, /tr und /en mit Präfix; lokalisierte Pfade; hreflang und x-default. Alle UI-Texte stehen in messages/{de,tr,en}.json, keiner im Code. Bestandsübersetzungen gehen vor; neue Übersetzungen sind markiert und stehen in MENSCHEN.md. Datenbankinhalte: Deutsch Pflicht, Türkisch und Englisch optional mit sichtbarem Rückfall auf Deutsch.
 
-K-03 Adressen auf Deutsch, für tr und en entsprechend lokalisiert: / · /gebetszeiten · /gebetszeiten/anzeige · /veranstaltungen · /veranstaltungen/[slug] · /nachrichten · /nachrichten/[slug] · /ueber-uns · /vorstand · /projekte · /kontakt · /igmg · /quran · /quran/[sure] · /islamisches-wissen · /islamisches-wissen/[thema] · /organisationen/[organisation] · /bildung/korankurse · /bildung/voranmeldung · /mitglied-werden · /webseite-fuer-moscheen · /impressum · /datenschutz · /verwaltung/…
+K-03 Adressen auf Deutsch, für tr und en entsprechend lokalisiert: / · /gebetszeiten · /gebetszeiten/anzeige · /veranstaltungen · /veranstaltungen/[slug] · /nachrichten · /nachrichten/[slug] · /ueber-uns · /vorstand · /projekte · /kontakt · /igmg · /quran · /quran/[sure] · /islamisches-wissen · /islamisches-wissen/[thema] · /organisationen/[organisation] · /bildung/korankurse · /bildung/voranmeldung · /mitglied-werden · /webseite-fuer-moscheen · /impressum · /datenschutz · /suche · /offline · /verwaltung/… *(1.1: /suche und /offline ergänzt, E-012)*
 
 K-04 Gestaltung: Design-Tokens aus der Übergabe als Tailwind-Theme (@theme); shadcn/ui-Bausteine nach diesen Tokens gestaltet; Komponentennamen wie in Design und Bestand (Header, PrayerTimesBar, Breadcrumbs, Footer …); Schriften selbst gehostet über next/font; Seitenübergänge mit React View Transitions, abgeschaltet bei reduzierter Bewegung.
 

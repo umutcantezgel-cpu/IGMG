@@ -40,3 +40,9 @@ Bildreferenzen und App-Bildschirmfotos (`_lauf/belege/**/*.png`) werden nicht ve
 
 **E-011 · 2026-10-11 · Lichtung (c) gelungen – Bildreferenzen per Hülle**
 Die Artboards sind 1280 px breit gebaut; eine direkte 390-px-Ansicht zeigt das Desktop-Layout. Das Werkzeug `_lauf/werkzeuge/referenz/render.mjs` bindet jedes Artboard wie 08/09 per `dc-import` in einen Rahmen fester Breite (390 bzw. 1440 px) ein und setzt Eigenschaften als Attribute (kebab-case). React 18.3.1 von unpkg wird lokal zwischengespeichert (gleiche Bytes, SRI gültig); Google Fonts werden beim Rendern geladen. Probe: Events bei 390/1440 und state=leer ohne Fehler.
+
+**E-012 · 2026-10-11 · KERN 1.1 – K-03 um `/suche` und `/offline` ergänzt**
+Welle D verlangt eine Suche (ADR 0013), K-15 eine Offline-Seite; beide Adressen fehlten in K-03. Lokalisiert: `/suche` → tr `/arama`, en `/search`; `/offline` in allen Sprachen gleich. Keine weitere Änderung am Kern.
+
+**E-013 · 2026-10-11 · ADRs 0002–0007, 0010–0016 angenommen (P1)**
+Mehrsprachige Inhalte als JSONB (0002), eigene Rollentabelle statt Better-Auth-Organisationen (0003), Caching-Grenzen (0004), ein verschlüsseltes Eingangsmodul (0005), Tiptap-JSON (0006), Speicher-Adapter (0007), Push-Schutz (0010), Mailpit/Datei-Transport (0011), getrennte CSP öffentlich/Verwaltung (0012), PostgreSQL-Volltext (0013), lokale Schriftdateien (0014), Seeds mit Kennzeichnung (0015), Verwaltung nur Deutsch (0016). 0008 und 0009 folgen nach der Quellenrecherche.

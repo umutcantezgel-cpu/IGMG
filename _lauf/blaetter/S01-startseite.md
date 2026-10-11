@@ -33,7 +33,7 @@ Sieben Bausteine (Home.dc.html:16-76):
 6. Footer, dc-import (:75): Texte im Footer-Blatt.
 7. DisclaimerDialog (:76): nur bei showDisc. Erstbesuch öffnet ihn (:101), Schließen setzt den Schlüssel (:107). Bestand: App-weit (App.tsx:193-196). Dialogtext nicht hier, Prüfung offen (00 Laufbuch.dc.html:284).
 
-Karten-Texte (EventCard, NewsCard) stehen im Komponentenblatt: Empfohlen, Bildung, Veranstaltung, Jugend, Mehr erfahren (tr und en: LanguageContext.tsx:98, 105, 107-109, 356, 363, 365-367, 614, 621, 623-625); organisiert von, Aktuell, Vollständigen Artikel lesen nur DE (EventsSection.tsx:192, 223; NewsSection.tsx:96, 118).
+Karten-Texte (EventCard, NewsCard) stehen im Komponentenblatt: Empfohlen, Bildung, Veranstaltung, Jugend, Mehr erfahren (tr und en: LanguageContext.tsx:98, 105, 107-109, 356, 363, 365-367, 614, 621, 623-625; de hart in EventsSection.tsx:223); organisiert von, Aktuell, Vollständigen Artikel lesen nur DE (EventsSection.tsx:192; NewsSection.tsx:96, 118).
 
 Texte (Schluessel-Vorschlag, de, tr, en, Fundstelle). Fehlt eine Sprache in allen Quellen, steht „– (nur DE in Quelle)“.
 
