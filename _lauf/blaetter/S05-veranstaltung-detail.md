@@ -23,7 +23,6 @@ Stand 11.10.2026. Nur gelesen: Design und Bestand. Fundstellen als Datei:Zeile, 
 - T = uploads/igmg-wetzlar-website/src/app/components/EventDetails.tsx, 366 Zeilen.
 - F = uploads/igmg-wetzlar-website/src/app/components/EnhancedEventForm.tsx, 390 Zeilen. Verwaltungsformular, nicht die Teilnehmer-Anmeldung.
 - R = readme.md, 43 Zeilen. L = 00 Laufbuch.dc.html, 324 Zeilen (Script ab L:141).
-- Eigene Blätter, hier nur genannt: Header, PrayerTimesBar, Breadcrumbs, Icon, Footer.
 
 ## ZWECK
 
@@ -47,7 +46,7 @@ Texte (A2):
 | Schlüssel-Vorschlag | de | tr | en | Fundstelle |
 | --- | --- | --- | --- | --- |
 | ev.back | Zurück zur Startseite | – (nur DE in Quelle) | – (nur DE in Quelle) | D:21; T:120 |
-| ev.org | Ana Teşkilatı; Alt: Ana Teşkilatı Logo | – (nur DE in Quelle) | – (nur DE in Quelle) | D:26–27, D:82 (Eigenname) |
+| ev.org | Ana Teşkilatı | – (nur DE in Quelle) | – (nur DE in Quelle) | D:26–27, D:82 (Eigenname) |
 | ev.status.open | Offen | – (nur DE in Quelle) | – (nur DE in Quelle) | D:28; T:47 |
 | ev.title | Freitagsgebet mit anschließendem Vortrag | – (nur DE in Quelle) | – (nur DE in Quelle) | D:31; T:36 |
 | ev.category | Religiös | – (nur DE in Quelle) | – (nur DE in Quelle) | D:32; T:46 |
@@ -65,8 +64,7 @@ Texte (A2):
 | ev.contact | Kontakt · [Name – Kontakt Veranstaltung] · [Telefonnummer] · [E-Mail-Adresse Veranstaltungen] · Nachricht senden | – (nur DE in Quelle) | – (nur DE in Quelle) | D:84–89; T:63–65, T:343, T:358 |
 | ev.crumb | Veranstaltungen · Veranstaltungsdetails | – (nur DE in Quelle) | – (nur DE in Quelle) | D:18; T:166 |
 
-Nicht sichtbar: aria-Labels „Schlagwörter“ (D:52) und „Auslastung“ (D:38), Screen-Label „03.4 Veranstaltungsdetails“ (D:15). Nur im Bestand, nur Deutsch: „Ausgebucht“, „Abgesagt“, „Aktive Teilnehmer“ (T:85, T:102–103, T:313).
-
+Nicht sichtbar: aria-Labels „Schlagwörter“ (D:52) und „Auslastung“ (D:38), Screen-Label „03.4 Veranstaltungsdetails“ (D:15).
 ## DATEN
 
 Vorschlag für die Datenbank (A7). Feld, Typ, mehrsprachig:

@@ -78,3 +78,9 @@ Herkunft: L = Laufbuch des Designs (`00 Laufbuch.dc.html`), O = Orchestrator.
 | M-050 | A | Löschfristen je Eingangsart (Kontakt, Voranmeldung, Mitgliedsantrag, Moschee-Anfrage, Veranstaltungsanmeldung). | In der Verwaltung einstellbar; Vorgabe 180 Tage nach Abschluss, Veranstaltungsanmeldungen 30 Tage nach Termin – bitte fachlich prüfen. | |
 | M-051 | A | Wer erhält welche Benachrichtigungen (zuständige Rolle je Formular)? | Kontakt → Administration; Voranmeldung → Bildung; Mitgliedsantrag → Mitgliederverwaltung; Moschee-Anfrage → Administration; Veranstaltungsanmeldung → Redaktion der Organisation. | |
 | M-052 | A | Erstes Administrationskonto: Wer bekommt die erste Einladung? | Einladung per Kommandozeilen-Skript beim Einrichten (BETRIEB.md). | |
+
+## 5 Lizenzen (O)
+
+| Nr. | Dr. | Frage | Standardannahme | Antwort |
+|---|---|---|---|---|
+| M-060 | B | Lizenz-Ausnahmen gegenüber G-09 (nur MIT, Apache-2.0, BSD, ISC, MPL-2.0): nodemailer (MIT-0), sharp/libvips-Binärpakete (LGPL-3.0, optional über Next.js für Bildoptimierung), Schriften (SIL OFL 1.1). Einverstanden? | Ja, mit Begründung in ADR 0001 und LIZENZEN.md; Alternative für sharp: Bildoptimierung abschalten. | |
