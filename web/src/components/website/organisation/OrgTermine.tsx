@@ -1,9 +1,8 @@
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { terminDatum } from '@/components/website/EventCard';
+import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
 import { Text, textMitSprache } from '@/components/website/Text';
 import { Link } from '@/i18n/link';
-import { zeitspanne } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 import type { VeranstaltungsDaten } from '@/server/queries/veranstaltungen';
@@ -33,9 +32,10 @@ export async function OrgTermine({ termine, sprache, org }: { termine: Veranstal
                 <Calendar aria-hidden className="size-4" />
                 {datum}
               </span>
+              {/* Ganztägige Termine zeigen den Hinweis statt „00:00 Uhr“ (Befund H-FIX3, wie EventCard) */}
               <span className="inline-flex items-center gap-1.5 text-tinte-2">
                 <Clock aria-hidden className="size-4" />
-                {zeitspanne(new Date(v.beginn), v.ende ? new Date(v.ende) : null, sprache)}
+                {uhrzeitText(v, sprache, t('ganztaegig'))}
               </span>
             </div>
             <Text feld={v.kurztext} sprache={sprache} als="p" className="text-16 text-tinte-2" />

@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { type ReactNode, ViewTransition } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { Locale } from '@/i18n/routing';
 import { brotkrumen } from '@/lib/seo/jsonld';
 import { adresse } from '@/lib/seo/metadaten';
@@ -11,6 +11,7 @@ import { JsonLd } from './JsonLd';
 import { KonzeptHinweis } from './KonzeptHinweis';
 import type { Bereich, Ziel } from './navigation';
 import { PrayerTimesBar } from './PrayerTimesBar';
+import { SeitenUebergang } from './SeitenUebergang';
 
 /**
  * Einträge der BreadcrumbList mit den Namen der sichtbaren Brotkrumen (K-16). Eine Zwischenstufe ohne Adresse
@@ -24,6 +25,9 @@ function brotkrumenEintraege(pfad: PfadEintrag[], sprache: Locale, startseite: s
   });
   return eintraege;
 }
+
+/** Name und Klasse des Inhalts im Seitenwechsel (B-05, L-E10). */
+const SEITE = { viewTransitionName: 'seite', viewTransitionClass: 'seite' } as CSSProperties;
 
 /**
  * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
@@ -63,12 +67,12 @@ export async function Seitenrahmen({
       {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
       {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
       <main id="inhalt" tabIndex={-1} className="outline-none">
-        {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css) */}
-        <ViewTransition enter="seite" exit="seite" default="none">
-          <div>{children}</div>
-        </ViewTransition>
+        {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css). Den
+            Übergang startet SeitenUebergang; versteckte Seiten (Activity) sind nicht gerendert und nehmen nicht teil. */}
+        <div style={SEITE}>{children}</div>
       </main>
       <Footer />
+      <SeitenUebergang />
       {konzepthinweis ? (
         <KonzeptHinweis
           texte={{

@@ -332,6 +332,10 @@
 ::view-transition-group(kopf) {
   animation: none;
 }
+/* Der Inhalt wechselt die Höhe von Seite zu Seite: kein Größen-Morph der Gruppe, nur Überblendung (B-05). */
+::view-transition-group(.seite) {
+  animation: none;
+}
 ::view-transition-old(.seite) {
   animation: var(--dauer-rueckmeldung) var(--ease-austritt) both ausblenden;
 }
