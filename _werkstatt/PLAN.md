@@ -79,9 +79,9 @@ Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich d
 | H-G04 | Baumeister | Haiku | Seitenkopf/PageHeader/Breadcrumbs vereinheitlichen | `Seitenkopf.tsx`, `PageHeader.tsx`, `Breadcrumbs.tsx` | REFERENZ | Z-03, Z-04 | ✓ 58f9840 (Rest nach O-03) |
 | H-Z01 | Grafiker/Baumeister | Haiku | Fehlerseiten mit Charakter (Pflicht nach AUFTRAG §6): 404, `error`, `global-error` mit Zustandsgrafik | `app/**/not-found.tsx`, `error.tsx`, `global-error.tsx`, `website/fehler/**` | K-008 | Z-04, Z-06 | ✓ a8a377f (+ Offline-Grafik) |
 | H-Z02 | Grafiker/Baumeister | Haiku | Offline-Seite, Lade-Zustände (B-12) | `(website)/offline/**`, `loading.tsx` | K-008 | Z-04–Z-06 | ✓ Offline-Grafik a8a377f; Lade-Achtstern in allen Absendeknöpfen (966db8c); Detailseiten mit Suspense ohne Platzhalter, Seitenwechsel wartet auf neuen Inhalt (5bca4db) |
-| H-W01 | Baumeister | Haiku | E-Mail-Vorlagen | `lib/mail/vorlagen/**` | REFERENZ (Farben, Schrift) | Z-04 | offen |
-| H-W02 | Baumeister | Haiku | Bildschirm-Anzeige: nur Zustandswechsel | `(website)/gebetszeiten/anzeige/**`, `website/anzeige/**` | K-007 B-10 | Z-05 | offen |
-| H-W03 | Baumeister | Haiku | Verwaltungs-Hülle (Feinschliff, `verwaltung:`-Breakpoint, Übersicht) | `components/verwaltung/shell/**`, `uebersicht/**`, Postfach-Rahmen | REFERENZ | Z-03 | in Arbeit |
+| H-W01 | Baumeister | Haiku | E-Mail-Vorlagen | `lib/mail/vorlagen/**` | REFERENZ (Farben, Schrift) | Z-04 | ✓ `berichte/H-W01.md`, be3025e (ML-17 Postfachprüfung) |
+| H-W02 | Baumeister | Haiku | Bildschirm-Anzeige: nur Zustandswechsel | `(website)/gebetszeiten/anzeige/**`, `website/anzeige/**` | K-007 B-10 | Z-05 | ✓ `berichte/H-W02.md`, f10b55c |
+| H-W03 | Baumeister | Haiku | Verwaltungs-Hülle (Feinschliff, `verwaltung:`-Breakpoint, Übersicht) | `components/verwaltung/shell/**`, `uebersicht/**`, Postfach-Rahmen | REFERENZ | Z-03 | ✓ `berichte/H-W03.md`, e3c9b8e; Seitenköpfe 4bf9571 |
 | H-D01 | Dokumentar | Haiku | `docs/deploy/VERCEL.md` (30-Minuten-Runbook) | Datei | AUFTRAG V-13 | V-13 | ✓ `berichte/H-D01.md`, 290aaeb |
 | H-D02 | Dokumentar | Haiku | `VERCEL-ENV.md`, Verarbeitungsverzeichnis, Hosting-Baustein v2, ML-09–ML-12 | Dateien | AUFTRAG V-03, V-11, V-12 | V-03, V-11, V-12 | ✓ 0cd8173 |
 | H-D03 | Dokumentar | Haiku | `docs/GO-LIVE.md` | Datei | Kern 2.0 | Z-12 | ✓ 290aaeb (Opus) |
@@ -118,10 +118,10 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
 ## Statusnachweis (Stand 2026-10-11 19:50 UTC)
-Pflicht erledigt 46 von ≈ 70:
+Pflicht erledigt 50 von ≈ 70:
 - E0: 6
 - E2: 10 (O-02 zählt erst mit dem B-05-Nachweis am Produktions-Build)
 - E3: 16 (O-05–O-08, O-10–O-13, H-A01/02/04–07, H-S01/02)
-- E4: 14 (H-G01–G04, H-Z01, H-Z02, H-D01–D03, H-D05, H-BILD, H-V07, H-V10, H-R01)
+- E4: 18 (H-G01–G04, H-Z01, H-Z02, H-D01–D03, H-D05, H-BILD, H-V07, H-V10, H-R01, H-W01–W03, E0-PRUEFER-03)
 
-In Arbeit: E3-TOR, E0-PRUEFER-03, H-W02, H-W03. Neu entschieden: L-E09 (Build ohne Turbopack-Zwischenspeicher), L-E10 (eigener Seitenwechsel), ADR 0024 (geteilter Cache). Kür 0 von 20.
+In Arbeit: E3-TOR, H-BILD-HEAD (Build und Bilder von bc4b5b7 für die Sichtabnahmen), Kür K-08, K-15. Kür fertig: K-01 Vorstand (daf29ba), K-02 IGMG (bc4b5b7), K-03 Webseite für Moscheen (0954781). Zusätzlich aus Befunden: Suche findet Wortteile (F-14, e7bd4a9), Beispielmodus ohne Datenbank (4fdf313, ADR 0019 Nachtrag), Leiste ohne Verschieben (f10b55c). Neu entschieden: L-E09 (Build ohne Turbopack-Zwischenspeicher), L-E10 (eigener Seitenwechsel), ADR 0024 (geteilter Cache). Kür 3 von 20.
