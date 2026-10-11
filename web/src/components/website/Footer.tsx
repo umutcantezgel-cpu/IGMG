@@ -98,7 +98,7 @@ export async function Footer() {
         </div>
         <div className="flex flex-col gap-3">
           {ueberschrift(t('oeffnungszeiten'))}
-          <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-16">
+          <dl className="grid raster-symbol gap-x-3 gap-y-1.5 text-16">
             {kontakt.oeffnungszeiten.map((z) => (
               <div key={z.zeiten + z.tage.de} className="contents">
                 <dt className="text-gruen-100">{text(z.tage, sprache)}</dt>

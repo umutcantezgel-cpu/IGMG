@@ -35,7 +35,7 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
         <Linie liste={liste} stand={t('meilenstein.stand', { erledigt: liste.filter((m) => m.erledigt).length, gesamt: liste.length })} />
       ) : null}
       {liste.length > 0 ? (
-        <ol className="grid raster-kacheln gap-4">
+        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {liste.map((m, i) => (
             <Karte key={i} m={m} sprache={sprache} bezeichnung={bezeichnung} />
           ))}

@@ -25,8 +25,8 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
   const { Icon: StatusIcon, klasse } = STATUS_STIL[p.status];
   const rueckfall = brauchtRueckfall(sprache, [p.name, p.ort, p.beschreibung]);
   return (
-    <section aria-labelledby="projekt-beschreibung" className="flex flex-wrap items-stretch gap-8">
-      <div className="relative min-h-70 min-w-0 flex-[3_1_520px] md:min-h-115">
+    <section aria-labelledby="projekt-beschreibung" className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
+      <div className="relative min-h-70 min-w-0 md:min-h-115 lg:col-span-7">
         <Bildplatzhalter beschriftung={t('3d.text', { name })} className="absolute inset-0 rounded-lg border border-linie pb-32 md:pb-0" />
         <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">
           <span className="flex flex-col rounded-lg border border-linie bg-weiss px-3.5 py-2 leading-snug">
@@ -39,11 +39,11 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
           </span>
         </div>
       </div>
-      <div className="flex min-w-0 flex-[2_1_360px] flex-col gap-4">
-        <h2 id="projekt-beschreibung" className="text-30">
+      <div className="flex min-w-0 flex-col justify-center gap-4 lg:col-span-5">
+        <h2 id="projekt-beschreibung" className="text-display-2">
           {t('bezeichnungen.beschreibung')}
         </h2>
-        <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" />
+        <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
         {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
         <dl className="grid grid-cols-2 gap-3">
           <Fakt Icon={Calendar} label={t('bezeichnungen.beginn')} wert={p.beginn === null ? t('platzhalter.gemeinde') : String(p.beginn)} />
@@ -61,7 +61,7 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
 /** Kennzahl mit Symbol (Beginn, Fertigstellung): Symbol links, Bezeichnung und Wert rechts. */
 function Fakt({ Icon, label, wert }: { Icon: LucideIcon; label: string; wert: string }) {
   return (
-    <div className="grid grid-cols-[auto_1fr] items-start gap-x-3 rounded-lg bg-sand p-4">
+    <div className="grid raster-symbol items-start gap-x-3 rounded-lg bg-sand p-4">
       <Icon aria-hidden className="row-span-2 mt-0.5 size-6 shrink-0 text-gruen-700" />
       <dt className="text-16 leading-snug text-tinte-2">{label}</dt>
       <dd className="text-24 font-bold hyphens-none">{wert}</dd>

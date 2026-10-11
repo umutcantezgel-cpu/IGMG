@@ -130,6 +130,10 @@
 }
 
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
+/* Symbol links, Text rechts (Kennzahlen mit Symbol): Spalte so breit wie das Symbol, Rest für den Text. */
+@utility raster-symbol {
+  grid-template-columns: auto minmax(0, 1fr);
+}
 @utility streifen-platzhalter {
   background: repeating-linear-gradient(135deg, var(--color-sand) 0 10px, var(--color-papier) 10px 20px);
 }

@@ -19,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit 3D-Platzhalter, Spenden und Spezifikationen,
- * Unterstützen und Meilensteine. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
+ * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit 3D-Platzhalter, Meilensteine, Spenden und
+ * Spezifikationen, Unterstützen. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
  * und Schaltflächen aus messages/bereiche/projekte.json. Keine Formulare, keine Anfragen an Dritte (K-14).
  */
 export default async function ProjekteSeite() {
@@ -30,14 +30,25 @@ export default async function ProjekteSeite() {
   return (
     <Seitenrahmen bereich="moschee" seite="projekte" sprachZiel="/projekte" pfad={[{ label: t('kopf.eyebrow') }]}>
       <PageHeader kennung={t('kopf.eyebrow')} titel={t('kopf.titel')} untertitel={t('kopf.untertitel')} />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:gap-16 md:px-8 md:pt-16 md:pb-24">
-        <Bauprojekt inhalt={inhalt} sprache={sprache} />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-start gap-6">
-          <Spenden inhalt={inhalt} sprache={sprache} />
-          <Spezifikationen inhalt={inhalt} sprache={sprache} />
+      {/* Erzählfolge (O-11): das Vorhaben → der Stand (Meilensteinlinie, B-08) → was es braucht → Aufruf */}
+      <section aria-label={t('kopf.titel')} className="bg-papier">
+        <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
+          <Bauprojekt inhalt={inhalt} sprache={sprache} />
         </div>
-        <Unterstuetzen inhalt={inhalt} sprache={sprache} />
-        <Meilensteine inhalt={inhalt} sprache={sprache} />
+      </section>
+      <div className="border-y border-linie bg-sand">
+        <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
+          <Meilensteine inhalt={inhalt} sprache={sprache} />
+        </div>
+      </div>
+      <div className="bg-papier">
+        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt-klein px-4 py-abschnitt md:px-8">
+          <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
+            <Spenden inhalt={inhalt} sprache={sprache} />
+            <Spezifikationen inhalt={inhalt} sprache={sprache} />
+          </div>
+          <Unterstuetzen inhalt={inhalt} sprache={sprache} />
+        </div>
       </div>
     </Seitenrahmen>
   );
