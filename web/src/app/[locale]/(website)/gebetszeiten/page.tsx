@@ -147,6 +147,7 @@ export default async function GebetszeitenSeitePage() {
           referenz={fenster.referenz}
           texte={{
             naechstesTitel: t.raw('naechstesTitel'),
+            naechstesMorgen: t.raw('naechstesMorgen'),
             uhr: tl.raw('uhr'),
             verbleibt: tl.raw('verbleibt'),
             restStunden: t.raw('restStunden'),

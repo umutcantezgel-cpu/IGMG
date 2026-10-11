@@ -12,6 +12,8 @@ import { fuelle, restzeitText } from './zeiten';
 /** Fertig übersetzte Texte aus messages; Platzhalter wie {name} füllt die Komponente (K-12). */
 export type GebetszeitenSeiteTexte = {
   naechstesTitel: string;
+  /** „{name} (morgen)“: Das nächste Gebet liegt am Folgetag (nach Isha), damit die Zeit nicht mit der heutigen Karte verwechselt wird. */
+  naechstesMorgen: string;
   uhr: string;
   verbleibt: string;
   restStunden: string;
@@ -62,7 +64,11 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
     ? naechstesGebet({ datum: heute.datum, zeiten: heute }, morgen ? { datum: morgen.datum, zeiten: morgen } : null, jetzt, true)
     : null;
   const zeitTag = naechstes ? (naechstes.morgen ? morgen : heute) : undefined;
-  const naechstesName = naechstes ? texte.namen[naechstes.gebet] : '–';
+  const naechstesName = naechstes
+    ? naechstes.morgen
+      ? fuelle(texte.naechstesMorgen, { name: texte.namen[naechstes.gebet] })
+      : texte.namen[naechstes.gebet]
+    : '–';
   const naechsteZeit = naechstes && zeitTag ? fuelle(texte.uhr, { zeit: zeitTag[naechstes.gebet] }) : '–';
   const verbleibt = naechstes ? restzeitText(naechstes.restMs, { stunden: texte.restStunden, minuten: texte.restMinuten }) : '–';
 
@@ -114,8 +120,9 @@ function HeuteKarten({
   naechstes: NaechstesGebet | null;
   texte: GebetszeitenSeiteTexte;
 }) {
+  // Sechs Karten: eine Reihe ab 1280 px, sonst 3 × 2 bzw. 2 × 3 – nie 4 + 2 (O-Feinschliff nach H-A01)
   return (
-    <ul className="grid raster-kacheln gap-4">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       {GEBETE.map((g) => {
         const ist = naechstes !== null && !naechstes.morgen && naechstes.gebet === g;
         const Icon = SYMBOL[g];
