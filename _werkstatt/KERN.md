@@ -60,7 +60,7 @@ Technik: nur CSS (Transitions, Keyframes, `stroke-dashoffset`, Masken) und React
 |---|---|---|---|---|---|
 | B-01 | Rückmeldung | Rückmeldung | Hover/Druck auf Bedienelemente | Farbe `dauer-rueckmeldung`; Druck `scale(.98)` | nur Farbe |
 | B-02 | Fokus | Orientierung | Tastaturfokus | Sofortzustand | gleich |
-| B-03 | Öffnen | Zusammenhang | Menü, Dialog, Aufklapper öffnen/schließen | ein `opacity`+`translate-y 8px` `dauer-wechsel`/`ease-eintritt`; aus `dauer-rueckmeldung`/`ease-austritt` | nur `opacity` |
+| B-03 | Öffnen | Zusammenhang | Menü, Dialog, Aufklapper öffnen/schließen | ein `opacity`+`translate-y 8px` `dauer-wechsel`/`ease-eintritt`; aus `dauer-rueckmeldung`/`ease-austritt`. Schublade (Telefonmenü, K-07): `opacity`+`translate-x 24px` von ihrer Kante, danach 4 Gruppen gestaffelt (`auftritt`, Verzögerung `dauer-rueckmeldung` + i × `staffel`) | nur `opacity` |
 | B-04 | Inhaltswechsel | Zusammenhang | Tabs, Monatswechsel, Sprachwechsel der Anzeige | Überblendung `dauer-wechsel` | sofort |
 | B-05 | Seitenwechsel | Orientierung | Navigation über interne Links | `document.startViewTransition` aus `SeitenUebergang` (L-E10): Kopf fest (`kopf`), Inhalt (`seite`) Überblendung `dauer-wechsel`; gemeinsame Elemente (Karte → Detail: Veranstaltung, Nachricht, Organisation) Morph 400 ms über eigene `view-transition-name` | 0 s (kein Übergang) |
 | B-06 | Tagesbogen | Charakter + Orientierung | Startseite, nach Hydrierung, einmal | Linie und Fläche des vergangenen Tages enthüllen sich bis „jetzt“ (Schnittmaske `scale-x`, `dauer-moment`/`ease-eintritt`); danach treten Sonne („jetzt“) und Achtstern (nächstes Gebet) hervor (`dauer-auftritt`, +0/+160 ms). Erreichte Punkte wechseln die Farbe (`dauer-wechsel`) | Endzustand sofort |

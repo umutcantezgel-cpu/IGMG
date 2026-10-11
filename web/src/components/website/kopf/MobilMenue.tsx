@@ -3,7 +3,7 @@
 import { Check, ChevronDown, ChevronUp, LogIn, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { useRef, useState } from 'react';
+import { type CSSProperties, type KeyboardEvent, useRef, useState } from 'react';
 import type { Locale } from '@/i18n/routing';
 import type { Bereich, Menue } from '../navigation';
 import type { SprachEintrag } from './Sprachwahl';
@@ -25,9 +25,10 @@ type Texte = {
 
 /**
  * Telefonmenü (unter 1240 px) nach design/Header.dc.html: Schublade von rechts als natives <dialog>.
- * Fokusfalle und Escape kommen vom Browser (modaler Dialog); Schließen gibt den Fokus an den Menü-Knopf zurück.
- * Öffnen: die Fläche nutzt die globale Regel für `dialog[open]` (B-03, 8 px, `dauer-wechsel`, `ease-eintritt`);
- * Aufklapper mit `tritt-auf`; Schließen ohne Animation. Bereiche sind Überschriften (h3) mit Aufklapp-Knopf.
+ * Escape und inerter Seitenkörper kommen vom Browser (modaler Dialog); Tab und Umschalt+Tab laufen im Menü im Kreis
+ * (F-18: ohne das verlässt der Fokus nach dem letzten Ziel das Dokument); Schließen gibt den Fokus an den Menü-Knopf
+ * zurück. Öffnen (B-03 Schublade, K-07): die Fläche kommt 24 px von rechts, danach treten die vier Gruppen gestaffelt
+ * auf; Aufklapper mit `tritt-auf`; Schließen ohne Animation. Bereiche sind Überschriften (h3) mit Aufklapp-Knopf.
  */
 export function MobilMenue({
   menues,
@@ -54,6 +55,24 @@ export function MobilMenue({
   const dialog = useRef<HTMLDialogElement>(null);
   const [offen, setOffen] = useState<Record<string, boolean>>({ [aktiv]: true });
   const schliessen = () => dialog.current?.close();
+  /** F-18: Fokus bleibt im Menü – vom letzten sichtbaren Ziel zurück zum ersten und umgekehrt. */
+  const fokusImKreis = (e: KeyboardEvent<HTMLDialogElement>) => {
+    if (e.key !== 'Tab' || !dialog.current) return;
+    const ziele = [...dialog.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')].filter(
+      (el) => el.getClientRects().length > 0,
+    );
+    const erstes = ziele[0];
+    const letztes = ziele.at(-1);
+    if (!erstes || !letztes) return;
+    if (e.shiftKey && document.activeElement === erstes) {
+      e.preventDefault();
+      letztes.focus();
+    } else if (!e.shiftKey && document.activeElement === letztes) {
+      e.preventDefault();
+      erstes.focus();
+    }
+  };
+  const gruppe = (i: number) => ({ '--i': i }) as CSSProperties;
   const haken = (an: boolean) =>
     an ? (
       <span className="flex text-gruen-700">
@@ -79,10 +98,11 @@ export function MobilMenue({
       <dialog
         ref={dialog}
         aria-labelledby="mobil-menue-titel"
+        onKeyDown={fokusImKreis}
         onClick={(e) => {
           if (e.target === dialog.current) schliessen();
         }}
-        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-110 bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/45"
+        className="schublade m-0 ml-auto h-dvh max-h-dvh w-full max-w-110 bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/45"
       >
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between gap-4 border-b border-linie px-6 py-3">
@@ -102,7 +122,7 @@ export function MobilMenue({
             </button>
           </div>
           <div className="flex flex-1 flex-col gap-6 overflow-y-auto px-6 pt-4 pb-8">
-            <div role="group" aria-labelledby="mobil-sprache" className="flex flex-col gap-2">
+            <div role="group" aria-labelledby="mobil-sprache" className="schublade-gruppe flex flex-col gap-2" style={gruppe(0)}>
               <span id="mobil-sprache" className="text-16 font-bold text-gruen-800">
                 {texte.spracheGruppe}
               </span>
@@ -127,7 +147,7 @@ export function MobilMenue({
               </div>
             </div>
             <nav aria-label={texte.mobilNavigation} className="flex flex-col gap-4">
-              <ul className="flex flex-col gap-1">
+              <ul className="schublade-gruppe flex flex-col gap-1" style={gruppe(1)}>
                 <li>
                   <NextLink
                     href={startHref}
@@ -163,7 +183,7 @@ export function MobilMenue({
                   </NextLink>
                 </li>
               </ul>
-              <ul className="flex flex-col gap-1 border-t border-linie pt-4">
+              <ul className="schublade-gruppe flex flex-col gap-1 border-t border-linie pt-4" style={gruppe(2)}>
                 {menues.map((m) => {
                   const auf = Boolean(offen[m.schluessel]);
                   const hier = aktiv === m.schluessel;
@@ -220,7 +240,8 @@ export function MobilMenue({
             <NextLink
               href="/verwaltung/anmelden"
               prefetch={false}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
+              style={gruppe(3)}
+              className="schublade-gruppe inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
             >
               <LogIn aria-hidden className="size-5" />
               {texte.anmelden}

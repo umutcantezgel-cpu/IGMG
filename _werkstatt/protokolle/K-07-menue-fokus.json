@@ -1,0 +1,47 @@
+{
+  "pfad": "/",
+  "schritte": [
+    {
+      "name": "Dialog offen",
+      "ok": true,
+      "wert": "button:Menü schließen"
+    },
+    {
+      "name": "Tab-Runde (12 Ziele, 14 Schritte): Fokus nie außerhalb",
+      "ok": true,
+      "wert": "0 außerhalb"
+    },
+    {
+      "name": "nach dem letzten Ziel wieder das erste (Folge wiederholt sich)",
+      "ok": true,
+      "wert": "button:Menü schließen → a:DEDeutsch"
+    },
+    {
+      "name": "Umschalt+Tab vom ersten auf das letzte Ziel",
+      "ok": true,
+      "wert": "a:Anmelden"
+    },
+    {
+      "name": "Escape schließt, Fokus auf dem Menü-Knopf",
+      "ok": true,
+      "wert": "button:Menü öffnen"
+    }
+  ],
+  "folge": [
+    "a:DEDeutsch",
+    "a:TRTürkçe",
+    "a:ENEnglish",
+    "a:Startseiteaktuelle Seite",
+    "a:Gebetszeiten",
+    "a:Suche",
+    "button:Moschee",
+    "button:Islam",
+    "button:Organisationen",
+    "button:Bildung",
+    "a:Anmelden",
+    "button:Menü schließen",
+    "a:DEDeutsch",
+    "a:TRTürkçe"
+  ],
+  "bestanden": true
+}

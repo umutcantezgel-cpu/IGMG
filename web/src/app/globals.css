@@ -272,6 +272,14 @@
   dialog.ohne-auftritt[open]::backdrop {
     animation: none;
   }
+  /* B-03 Schublade (K-07): die Fläche kommt von rechts, ihrer Kante; danach treten die Gruppen gestaffelt auf
+     (Sprache → Navigation → Bereiche → Anmeldung, --i × staffel nach dem Anfang der Fläche) */
+  dialog.schublade[open] {
+    animation: schublade var(--dauer-wechsel) var(--ease-eintritt) both;
+  }
+  dialog.schublade[open] .schublade-gruppe {
+    animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) calc(var(--dauer-rueckmeldung) + var(--i, 0) * var(--staffel)) both;
+  }
   [lang='ar'],
   [dir='rtl'] {
     font-family: var(--font-arabic);
@@ -332,6 +340,13 @@
   from {
     opacity: 0;
     scale: 0.4;
+  }
+}
+/* B-03 Schublade (Telefonmenü): erscheint von ihrer Kante, 24 px Weg */
+@keyframes schublade {
+  from {
+    opacity: 0;
+    translate: 1.5rem 0;
   }
 }
 
@@ -439,7 +454,9 @@
   .lade-stern {
     animation: none;
   }
-  .tritt-auf {
+  .tritt-auf,
+  dialog.schublade[open],
+  dialog.schublade[open] .schublade-gruppe {
     animation-name: einblenden;
   }
   *,
