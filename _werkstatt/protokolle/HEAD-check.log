@@ -2,3 +2,44 @@ $ pnpm typen && pnpm lint && pnpm test:unit
 $ next typegen && tsc --noEmit
 Generating route types...
 ✓ Types generated successfully
+$ eslint .
+$ vitest run --project unit
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web
+
+ ❯ |unit| tests/unit/styleguide-tokens.test.ts (100 tests | 1 failed) 93ms
+   ❯ Styleguide (V14): Werte und Namen gegen globals.css (98)
+     × Schriften, Laufweite, Abstände, Zeilenhöhen, Breiten, Haltepunkte, Kurven, Radien und Schatten sind vollständig 28ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| tests/unit/styleguide-tokens.test.ts > Styleguide (V14): Werte und Namen gegen globals.css > Schriften, Laufweite, Abstände, Zeilenhöhen, Breiten, Haltepunkte, Kurven, Radien und Schatten sind vollständig
+AssertionError: expected [ '--tracking-code', …(1) ] to deeply equal [ '--tracking-titel' ]
+
+- Expected
++ Received
+
+  [
++   "--tracking-code",
+    "--tracking-titel",
+  ]
+
+ ❯ tests/unit/styleguide-tokens.test.ts:164:34
+    162|   it('Schriften, Laufweite, Abstände, Zeilenhöhen, Breiten, Haltepunkt…
+    163|     expect(namen('--font-')).toEqual(SCHRIFTEN.map((s) => s.name).sort…
+    164|     expect(namen('--tracking-')).toEqual([LAUFWEITE.name]);
+       |                                  ^
+    165|     expect(namen('--spacing')).toEqual([ABSTAND_BASIS.name, ...ABSCHNI…
+    166|     expect(namen('--leading-')).toEqual(ZEILENHOEHEN.map((z) => z.name…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 39 passed (40)
+      Tests  1 failed | 753 passed | 3 expected fail (757)
+   Start at  20:39:38
+   Duration  8.68s (import 39%, transform 36%, tests 22%, worker 3%)
+
+[ELIFECYCLE] Command failed with exit code 1.
+[ELIFECYCLE] Command failed with exit code 1.
+CHECK_RC=1

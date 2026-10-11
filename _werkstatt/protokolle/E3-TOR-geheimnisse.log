@@ -1,0 +1,10 @@
+$ node scripts/geheimnis-pruefung.mjs --alles
+Geheimnis-/Datenschutz-Prüfung: 7 Befund(e) – Vorgang abgebrochen.
+  web/docs/GO-LIVE.md:80: E-Mail-Adresse mit nicht erlaubter Domain (deine-domain.de)
+  web/docs/deploy/VERCEL.md:161: E-Mail-Adresse mit nicht erlaubter Domain (deine-domain.de)
+  web/docs/deploy/VERCEL.md:161: E-Mail-Adresse mit nicht erlaubter Domain (deine-domain.de)
+  web/docs/deploy/VERCEL.md:257: E-Mail-Adresse mit nicht erlaubter Domain (deine-domain.de)
+  web/tests/integration/startklar.test.ts:42: E-Mail-Adresse mit nicht erlaubter Domain (db.test)
+  web/tests/integration/startklar.test.ts:51: E-Mail-Adresse mit nicht erlaubter Domain (fixture-mail.de)
+  web/tests/integration/startklar.test.ts:95: E-Mail-Adresse mit nicht erlaubter Domain (fixture-mail.de)
+[ELIFECYCLE] Command failed with exit code 1.

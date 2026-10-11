@@ -2,3 +2,14 @@ $ pnpm typen && pnpm lint && pnpm test:unit
 $ next typegen && tsc --noEmit
 Generating route types...
 ✓ Types generated successfully
+$ eslint .
+$ vitest run --project unit
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-sauber/web
+
+
+ Test Files  39 passed (39)
+      Tests  744 passed | 3 expected fail (747)
+   Start at  20:39:31
+   Duration  11.51s (import 42%, transform 33%, tests 21%, worker 4%)
+

@@ -76,3 +76,9 @@ START 19:53:46 Schritte 1-7 (ENDE=7)
 == 20:37:56 NACHLAUF FERTIG
 == 20:38:18 START Schritt 8 (Worktree-Prüfungen)
 == 20:38:18 8a pnpm check (Worktree)
+   rc=0
+== 20:39:42 8b pnpm sprachen:pruefen
+   rc=0
+== 20:39:43 8c pnpm geheimnisse:pruefen
+   rc=1
+== 20:39:44 8d pnpm test:integration (gesamt, lang)
