@@ -1,11 +1,191 @@
 {
   "de": {
-    "meldung": {}
+    "meldung": {
+      "titel": "Meldung",
+      "untertitel": "Teilen Sie uns Ihr Anliegen mit - wir kümmern uns darum.",
+      "titelFormular": "Neue Meldung erstellen",
+      "vorname": "Vorname",
+      "vornamePlatzhalter": "Ihr Vorname",
+      "nachname": "Nachname",
+      "nachnamePlatzhalter": "Ihr Nachname",
+      "telefon": "Telefon",
+      "telefonPlatzhalter": "+49 123 456789",
+      "email": "E-Mail",
+      "emailPlatzhalter": "ihre.email@beispiel.de",
+      "organisation": "Organisation",
+      "organisationAllgemein": "Allgemein (ohne Organisation)",
+      "organisationen": {
+        "at": "AT (Erwachsene)",
+        "kt": "KT (Frauen)",
+        "gt": "GT (Jugend)",
+        "kgt": "KGT (Frauenjugend)"
+      },
+      "typ": "Meldungstyp",
+      "typPlatzhalter": "Wählen Sie den Meldungstyp",
+      "typen": {
+        "beschwerde": "Beschwerde",
+        "wunsch": "Wunsch",
+        "vorschlag": "Vorschlag",
+        "information": "Information"
+      },
+      "betreff": "Betreff",
+      "beschreibung": "Nachricht",
+      "rueckmeldung": "Rückmeldung gewünscht?",
+      "ja": "Ja",
+      "nein": "Nein",
+      "rueckmeldeArt": "Art der Rückmeldung",
+      "rueckmeldeArtHinweis": "Nur, wenn Sie „Ja“ gewählt haben.",
+      "arten": {
+        "telefon": "Telefon",
+        "email": "E-Mail",
+        "persoenlich": "Persönlich"
+      },
+      "einwilligung": "Ich willige ein, dass die IGMG Wetzlar meine Angaben zur Bearbeitung meiner Meldung verarbeitet und mich dazu bei Rückfragen kontaktiert. Die Kontaktangaben werden 180 Tage nach Abschluss der Meldung gelöscht.",
+      "senden": "Meldung senden",
+      "datenschutz": "Datenschutzerklärung",
+      "erfolg": {
+        "titel": "Meldung erfolgreich gesendet!",
+        "text": "Vielen Dank! Ihre Meldung ist bei uns angekommen. Wir kümmern uns darum.",
+        "mitBestaetigung": "Vielen Dank! Ihre Meldung ist bei uns angekommen. Wir kümmern uns darum. Eine Bestätigung senden wir an Ihre E-Mail-Adresse.",
+        "startseite": "Zur Startseite"
+      },
+      "fehler": {
+        "vornamePflicht": "Vorname ist erforderlich",
+        "nachnamePflicht": "Nachname ist erforderlich",
+        "telefonPflicht": "Telefonnummer ist erforderlich",
+        "emailPflicht": "E-Mail-Adresse ist erforderlich",
+        "betreffPflicht": "Betreff ist erforderlich",
+        "typPflicht": "Meldungstyp ist erforderlich",
+        "nachrichtPflicht": "Nachricht ist erforderlich",
+        "wahlPflicht": "Bitte wählen Sie eine Option",
+        "artPflicht": "Art der Rückmeldung ist erforderlich"
+      }
+    }
   },
   "tr": {
-    "meldung": {}
+    "meldung": {
+      "titel": "Bildirim",
+      "untertitel": "Sorununuzu bizimle paylaşın - ilgileneceğiz.",
+      "titelFormular": "Yeni Bildirim Oluştur",
+      "vorname": "Ad",
+      "vornamePlatzhalter": "Adınız",
+      "nachname": "Soyad",
+      "nachnamePlatzhalter": "Soyadınız",
+      "telefon": "Telefon",
+      "telefonPlatzhalter": "+49 123 456789",
+      "email": "E-posta",
+      "emailPlatzhalter": "email@ornek.com",
+      "organisation": "Organizasyon",
+      "organisationAllgemein": "Genel (organizasyon belirtilmeden)",
+      "organisationen": {
+        "at": "AT (Yetişkinler)",
+        "kt": "KT (Kadınlar)",
+        "gt": "GT (Gençlik)",
+        "kgt": "KGT (Kadın Gençlik)"
+      },
+      "typ": "Mesaj türü",
+      "typPlatzhalter": "Mesaj türünü seçin",
+      "typen": {
+        "beschwerde": "Şikayet",
+        "wunsch": "Dilek",
+        "vorschlag": "Öneri",
+        "information": "Bilgi"
+      },
+      "betreff": "Konu",
+      "beschreibung": "Mesaj",
+      "rueckmeldung": "Geri bildirim isteniyor mu?",
+      "ja": "Evet",
+      "nein": "Hayır",
+      "rueckmeldeArt": "Geri bildirim türü",
+      "rueckmeldeArtHinweis": "Yalnızca „Evet“ seçtiyseniz.",
+      "arten": {
+        "telefon": "Telefon",
+        "email": "E-posta",
+        "persoenlich": "Şahsen"
+      },
+      "einwilligung": "IGMG Wetzlar'ın bildirimimi değerlendirmek için bilgilerimi işlemesine ve gerektiğinde bu konuda benimle iletişime geçmesine izin veriyorum. İletişim bilgileri bildirimin tamamlanmasından 180 gün sonra silinir.",
+      "senden": "Bildirimi Gönder",
+      "datenschutz": "Gizlilik bildirimi",
+      "erfolg": {
+        "titel": "Bildirim başarıyla gönderildi!",
+        "text": "Teşekkür ederiz! Bildiriminiz bize ulaştı. İlgileneceğiz.",
+        "mitBestaetigung": "Teşekkür ederiz! Bildiriminiz bize ulaştı. İlgileneceğiz. Onay mesajını e-posta adresinize göndereceğiz.",
+        "startseite": "Ana sayfaya dön"
+      },
+      "fehler": {
+        "vornamePflicht": "Ad gerekli",
+        "nachnamePflicht": "Soyad gerekli",
+        "telefonPflicht": "Telefon numarası gerekli",
+        "emailPflicht": "E-posta adresi gerekli",
+        "betreffPflicht": "Konu gerekli",
+        "typPflicht": "Mesaj türü gerekli",
+        "nachrichtPflicht": "Mesaj gerekli",
+        "wahlPflicht": "Lütfen bir seçenek seçin",
+        "artPflicht": "Geri bildirim türü gerekli"
+      }
+    }
   },
   "en": {
-    "meldung": {}
+    "meldung": {
+      "titel": "Report",
+      "untertitel": "Share your concern with us - we'll take care of it.",
+      "titelFormular": "Create New Report",
+      "vorname": "First Name",
+      "vornamePlatzhalter": "Your first name",
+      "nachname": "Last Name",
+      "nachnamePlatzhalter": "Your last name",
+      "telefon": "Phone",
+      "telefonPlatzhalter": "+49 123 456789",
+      "email": "Email",
+      "emailPlatzhalter": "your.email@example.com",
+      "organisation": "Organization",
+      "organisationAllgemein": "General (no organization)",
+      "organisationen": {
+        "at": "AT (Adults)",
+        "kt": "KT (Women)",
+        "gt": "GT (Youth)",
+        "kgt": "KGT (Women's Youth)"
+      },
+      "typ": "Message type",
+      "typPlatzhalter": "Select message type",
+      "typen": {
+        "beschwerde": "Complaint",
+        "wunsch": "Wish",
+        "vorschlag": "Suggestion",
+        "information": "Information"
+      },
+      "betreff": "Subject",
+      "beschreibung": "Message",
+      "rueckmeldung": "Feedback requested?",
+      "ja": "Yes",
+      "nein": "No",
+      "rueckmeldeArt": "Feedback type",
+      "rueckmeldeArtHinweis": "Only if you selected “Yes”.",
+      "arten": {
+        "telefon": "Phone",
+        "email": "Email",
+        "persoenlich": "In Person"
+      },
+      "einwilligung": "I agree that IGMG Wetzlar may process my details to handle my report and contact me about it if needed. The contact details will be deleted 180 days after the report has been completed.",
+      "senden": "Send Report",
+      "datenschutz": "Privacy policy",
+      "erfolg": {
+        "titel": "Report sent successfully!",
+        "text": "Thank you! Your report has reached us. We will take care of it.",
+        "mitBestaetigung": "Thank you! Your report has reached us. We will take care of it. We will send a confirmation to your email address.",
+        "startseite": "Go to the home page"
+      },
+      "fehler": {
+        "vornamePflicht": "First name is required",
+        "nachnamePflicht": "Last name is required",
+        "telefonPflicht": "Phone number is required",
+        "emailPflicht": "Email address is required",
+        "betreffPflicht": "Subject is required",
+        "typPflicht": "Message type is required",
+        "nachrichtPflicht": "Message is required",
+        "wahlPflicht": "Please select an option",
+        "artPflicht": "Feedback type is required"
+      }
+    }
   }
 }

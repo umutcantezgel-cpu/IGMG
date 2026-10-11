@@ -66,20 +66,34 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
           <Clock aria-hidden className="size-6 shrink-0 text-gruen-700" />
           {t('oeffnungszeiten.titel')}
         </h2>
-        <dl className="flex flex-col">
-          <div className="border-b border-linie py-2">
-            <dt className="font-bold">{t('oeffnungszeiten.taeglich')}</dt>
-            <dd className="text-tinte-2">{t('oeffnungszeiten.taeglichZeit')}</dd>
-          </div>
-          <div className="border-b border-linie py-2">
-            <dt className="font-bold">{t('oeffnungszeiten.freitag')}</dt>
-            <dd className="text-tinte-2">{t('oeffnungszeiten.freitagZeit')}</dd>
-          </div>
-          <div className="py-2">
-            <dt className="font-bold">{t('oeffnungszeiten.buero')}</dt>
-            <dd className="text-tinte-2">{t('oeffnungszeiten.bueroZeit')}</dd>
-          </div>
-        </dl>
+        {/* Gepflegte Öffnungszeiten (Verwaltung › Seiteninhalte › Kontakt, dieselbe Quelle wie die Fußzeile); sonst Design-Texte */}
+        {kontakt.oeffnungszeiten.length ? (
+          <dl className="flex flex-col">
+            {kontakt.oeffnungszeiten.map((z, i) => (
+              <div key={i} className="border-b border-linie py-2 last:border-0">
+                <dt className="font-bold">
+                  <Text feld={z.tage} sprache={sprache} />
+                </dt>
+                <dd className="text-tinte-2">{z.zeiten}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : (
+          <dl className="flex flex-col">
+            <div className="border-b border-linie py-2">
+              <dt className="font-bold">{t('oeffnungszeiten.taeglich')}</dt>
+              <dd className="text-tinte-2">{t('oeffnungszeiten.taeglichZeit')}</dd>
+            </div>
+            <div className="border-b border-linie py-2">
+              <dt className="font-bold">{t('oeffnungszeiten.freitag')}</dt>
+              <dd className="text-tinte-2">{t('oeffnungszeiten.freitagZeit')}</dd>
+            </div>
+            <div className="py-2">
+              <dt className="font-bold">{t('oeffnungszeiten.buero')}</dt>
+              <dd className="text-tinte-2">{t('oeffnungszeiten.bueroZeit')}</dd>
+            </div>
+          </dl>
+        )}
         <Link
           href="/gebetszeiten"
           aria-label={t('oeffnungszeiten.gebetszeitenLabel', { sichtbar: tp('gebetszeiten') })}

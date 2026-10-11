@@ -59,6 +59,7 @@ const ROUTEN = [
     en: '/en/education/pre-registration',
   },
   { id: 'mitglied', seite: 'Mitglied werden', de: '/mitglied-werden', tr: '/tr/uye-ol', en: '/en/become-a-member' },
+  { id: 'meldung', seite: 'Meldung', de: '/meldung', tr: '/tr/bildirim', en: '/en/report' },
   {
     id: 'moschee',
     seite: 'Webseite für Moscheen',

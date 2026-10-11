@@ -1,0 +1,27 @@
+{
+  "korrekturen": {
+    "tr": {
+      "mitglied.erfahrung.label": "Cemaatteki önceki deneyimleriniz",
+      "mitglied.fragen.nachricht": "Mesaj gönder",
+      "kontaktformular.datenschutz": "Gizlilik bildirimi",
+      "mails.art.meldung": "bildiriminiz",
+      "nachrichten.ankuendigungen.mehrErfahren": "Daha fazla öğren"
+    },
+    "en": {
+      "mitglied.zurueck": "Back to Home",
+      "mails.art.meldung": "report",
+      "nachrichten.ankuendigungen.mehrErfahren": "Learn More"
+    }
+  },
+  "begruendung": {
+    "tr.mitglied.erfahrung.label": "„mevcut“ heißt aktuell/vorhanden; gemeint ist „bisherige“ = önceki. Passt zum Hinweistext („önceki deneyimlerinizi“).",
+    "tr.mitglied.fragen.nachricht": "Link: kurzer Imperativ (E-023). Gleiches Muster wie veranstaltung.nachrichtSenden („Mesaj gönder“ in tr.json).",
+    "tr.kontaktformular.datenschutz": "Projektbegriff für Datenschutzerklärung ist „Gizlilik bildirimi“ (rechtliches.json, voranmeldung, mitglied).",
+    "tr.mails.art.meldung": "Possessivform wie die übrigen Werte; „… için teşekkür ederiz“ verlangt sie. Bestandswort „Bildirim“ (header.ticketButton) bleibt erhalten.",
+    "tr.nachrichten.ankuendigungen.mehrErfahren": "Gleiche deutsche Vorlage „Mehr erfahren“ wie Bestand (hero.learnMore; IslamicKnowledge: „Daha fazla öğren“). „Devamını oku“ ist Bestand für „Read more“.",
+    "en.mitglied.zurueck": "Gleicher deutscher Text „Zurück zur Startseite“ wie Bestand (MosqueRequest.tsx: „Back to Home“).",
+    "en.mails.art.meldung": "Kleinschreibung wie die übrigen Werte; in „Your {art} to IGMG Wetzlar“ sonst „Your Report“.",
+    "en.nachrichten.ankuendigungen.mehrErfahren": "Gleiche deutsche Vorlage „Mehr erfahren“ wie Bestand (hero.learnMore: „Learn More“, LanguageContext.tsx)."
+  },
+  "geprueft_ok": 363
+}

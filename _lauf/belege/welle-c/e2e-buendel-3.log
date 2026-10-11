@@ -1,0 +1,746 @@
+Hinweis: Element-IDs der Seiteninhalte-Formulare (Präfix „sk-“, inzwischen „si-“) für die Geheimnisprüfung zu „sk_“ umgeschrieben.
+$ playwright test
+
+Running 534 tests using 2 workers
+
+  ✓    2 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (de) ist barrierefrei (2.0s)
+  ✓    1 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (2.0s)
+  ✓    3 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (tr) ist barrierefrei (896ms)
+  ✓    4 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (900ms)
+  ✓    5 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (en) ist barrierefrei (876ms)
+  ✓    6 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (875ms)
+  ✓    8 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (818ms)
+  ✓    7 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (de) ist barrierefrei (869ms)
+  ✓    9 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (840ms)
+  ✓   10 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (tr) ist barrierefrei (837ms)
+  ✓   11 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓   12 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (en) ist barrierefrei (835ms)
+  ✓   14 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (de) ist barrierefrei (916ms)
+  ✓   13 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.4s)
+  ✓   15 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (tr) ist barrierefrei (903ms)
+  ✓   16 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.4s)
+  ✓   17 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (en) ist barrierefrei (887ms)
+  ✓   19 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (de) ist barrierefrei (809ms)
+  ✓   18 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.4s)
+  ✓   20 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (tr) ist barrierefrei (822ms)
+  ✓   21 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   22 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (en) ist barrierefrei (803ms)
+  ✓   23 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (834ms)
+  ✓   24 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (de) ist barrierefrei (817ms)
+  ✓   25 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (814ms)
+  ✓   26 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (tr) ist barrierefrei (818ms)
+  ✓   28 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (en) ist barrierefrei (784ms)
+  ✓   27 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   29 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (de) ist barrierefrei (792ms)
+  ✓   30 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   31 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (tr) ist barrierefrei (803ms)
+  ✓   32 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   33 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (en) ist barrierefrei (802ms)
+  ✓   34 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (818ms)
+  ✓   35 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (de) ist barrierefrei (753ms)
+  ✓   36 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (816ms)
+  ✓   37 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (tr) ist barrierefrei (771ms)
+  ✓   39 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (en) ist barrierefrei (754ms)
+  ✓   38 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   41 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (822ms)
+  ✓   40 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (de) ist barrierefrei (854ms)
+  ✓   43 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   42 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (tr) ist barrierefrei (887ms)
+  ✓   44 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (834ms)
+  ✓   45 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (en) ist barrierefrei (855ms)
+  ✓   46 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   47 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (de) ist barrierefrei (1.1s)
+  ✓   48 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (821ms)
+  ✓   49 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (tr) ist barrierefrei (1.1s)
+  ✓   50 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (815ms)
+  ✓   52 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓   51 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (en) ist barrierefrei (1.1s)
+  ✓   53 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓   54 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (de) ist barrierefrei (786ms)
+  ✓   55 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (816ms)
+  ✓   56 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (tr) ist barrierefrei (776ms)
+  ✓   58 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (en) ist barrierefrei (787ms)
+  ✓   57 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (821ms)
+  ✓   60 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   59 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (de) ist barrierefrei (904ms)
+  ✓   61 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (802ms)
+  ✓   62 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (tr) ist barrierefrei (937ms)
+  ✓   63 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   64 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (en) ist barrierefrei (935ms)
+  ✓   66 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (de) ist barrierefrei (808ms)
+  ✓   65 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   67 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (tr) ist barrierefrei (798ms)
+  ✓   68 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.1s)
+  ✓   69 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (en) ist barrierefrei (767ms)
+  ✓   70 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (819ms)
+  ✓   71 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (de) ist barrierefrei (816ms)
+  ✓   72 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (801ms)
+  ✓   73 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (tr) ist barrierefrei (799ms)
+  ✓   74 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (801ms)
+  ✓   75 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (en) ist barrierefrei (813ms)
+  ✓   76 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (816ms)
+  ✓   77 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (de) ist barrierefrei (767ms)
+  ✓   78 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓   79 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (tr) ist barrierefrei (768ms)
+  ✓   80 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (815ms)
+  ✓   81 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (en) ist barrierefrei (768ms)
+  ✓   82 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (834ms)
+  ✓   83 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (de) ist barrierefrei (1.2s)
+  ✓   84 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (833ms)
+  ✓   85 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (tr) ist barrierefrei (1.1s)
+  ✓   86 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (833ms)
+  ✓   87 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (en) ist barrierefrei (1.1s)
+  ✓   88 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.2s)
+  ✓   89 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (de) ist barrierefrei (836ms)
+  ✓   90 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.2s)
+  ✓   91 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (tr) ist barrierefrei (817ms)
+  ✓   93 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (en) ist barrierefrei (803ms)
+  ✓   92 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.2s)
+  ✓   95 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (799ms)
+  ✓   94 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (de) ist barrierefrei (837ms)
+  ✓   96 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (798ms)
+  ✓   97 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (tr) ist barrierefrei (832ms)
+  ✓   98 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (815ms)
+  ✓   99 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (en) ist barrierefrei (804ms)
+  ✓  100 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓  101 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (de) ist barrierefrei (888ms)
+  ✓  102 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (799ms)
+  ✓  103 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (tr) ist barrierefrei (885ms)
+  ✓  104 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (798ms)
+  ✓  105 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (en) ist barrierefrei (883ms)
+  ✓  106 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (832ms)
+  ✓  107 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (de) ist barrierefrei (1.2s)
+  ✓  108 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (815ms)
+  ✓  110 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (812ms)
+  ✓  109 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (tr) ist barrierefrei (1.1s)
+  ✓  111 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (820ms)
+  ✓  112 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (en) ist barrierefrei (1.1s)
+  ✓  113 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓  114 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (de) ist barrierefrei (734ms)
+  ✓  115 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (799ms)
+  ✓  116 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (tr) ist barrierefrei (717ms)
+  ✓  117 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓  118 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (en) ist barrierefrei (715ms)
+  ✓  119 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (814ms)
+  ✓  120 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (de) ist barrierefrei (785ms)
+  ✓  121 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (816ms)
+  ✓  122 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (tr) ist barrierefrei (785ms)
+  ✓  123 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (814ms)
+  ✓  124 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (en) ist barrierefrei (786ms)
+  ✓  125 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (798ms)
+  ✓  126 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (de) ist barrierefrei (718ms)
+  ✓  128 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (tr) ist barrierefrei (719ms)
+  ✓  127 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (797ms)
+  ✓  129 [telefon] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (en) ist barrierefrei (699ms)
+  -  131 [telefon] › tests/e2e/formular-kontakt.spec.ts:33:5 › Kontaktformular: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Bestätigung und Benachrichtigung in Mailpit
+  -  132 [telefon] › tests/e2e/formular-meldung.spec.ts:47:5 › Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket in der Verwaltung und Mails in Mailpit
+  ✓  130 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  -  133 [telefon] › tests/e2e/formular-mitgliedsantrag.spec.ts:33:5 › Mitgliedsantrag in drei Schritten bis zur Bestätigung
+  -  135 [telefon] › tests/e2e/formular-moschee-anfrage.spec.ts:33:5 › Webseite-Anfrage in drei Schritten bis zur Bestätigung
+  ✓  136 [telefon] › tests/e2e/formular-moschee-anfrage.spec.ts:103:5 › Schrittleiste ohne Querscrollen im 390-px-Rahmen (202ms)
+  -  137 [telefon] › tests/e2e/formular-veranstaltungsanmeldung.spec.ts:43:5 › Anmeldung mit ALTCHA: Bestätigung und Benachrichtigung in Mailpit, Plätze zählen, dann ausgebucht
+  -  138 [telefon] › tests/e2e/formular-voranmeldung.spec.ts:30:5 › Voranmeldung in vier Schritten bis zur Bestätigung
+  -  139 [telefon] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Kontakt (tr): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler
+  -  140 [telefon] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Mitglied werden (FormWizard): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler
+  ✓  134 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (797ms)
+  ✓  141 [telefon] › tests/e2e/startseite.spec.ts:48:7 › de: / antwortet mit 200, html lang="de", genau eine sichtbare h1 (218ms)
+  ✓  143 [telefon] › tests/e2e/startseite.spec.ts:57:7 › de: erster Tab-Schritt erreicht „Zum Inhalt springen“, Enter springt zum Hauptinhalt (217ms)
+  ✓  144 [telefon] › tests/e2e/startseite.spec.ts:66:7 › de: Laden der Startseite meldet keine Konsolenfehler (200ms)
+  ✓  145 [telefon] › tests/e2e/startseite.spec.ts:48:7 › tr: /tr antwortet mit 200, html lang="tr", genau eine sichtbare h1 (201ms)
+  ✓  142 [telefon] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (797ms)
+  ✓  146 [telefon] › tests/e2e/startseite.spec.ts:57:7 › tr: erster Tab-Schritt erreicht „İçeriğe geç“, Enter springt zum Hauptinhalt (217ms)
+  ✓  148 [telefon] › tests/e2e/startseite.spec.ts:66:7 › tr: Laden der Startseite meldet keine Konsolenfehler (199ms)
+  ✓  149 [telefon] › tests/e2e/startseite.spec.ts:48:7 › en: /en antwortet mit 200, html lang="en", genau eine sichtbare h1 (198ms)
+  ✓  150 [telefon] › tests/e2e/startseite.spec.ts:57:7 › en: erster Tab-Schritt erreicht „Skip to content“, Enter springt zum Hauptinhalt (215ms)
+  ✓  151 [telefon] › tests/e2e/startseite.spec.ts:66:7 › en: Laden der Startseite meldet keine Konsolenfehler (200ms)
+  ✓  152 [telefon] › tests/e2e/veranstaltungen.spec.ts:76:7 › de: h1 „Veranstaltungen“ und mindestens eine Karte sichtbar (202ms)
+  ✓  153 [telefon] › tests/e2e/veranstaltungen.spec.ts:82:7 › de: Schaltfläche „Alle“ ist beim Öffnen aktiv (200ms)
+  ✓  154 [telefon] › tests/e2e/veranstaltungen.spec.ts:87:7 › de: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (301ms)
+  ✓  155 [telefon] › tests/e2e/veranstaltungen.spec.ts:121:7 › de: Kategorie ohne Termine zeigt Leerzustand, „Alle“ zeigt wieder alle Karten (284ms)
+  ✓  156 [telefon] › tests/e2e/veranstaltungen.spec.ts:152:7 › de: „Kalender abonnieren (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (217ms)
+  ✓  157 [telefon] › tests/e2e/veranstaltungen.spec.ts:168:7 › de: „Details ansehen“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (621ms)
+  ✓  158 [telefon] › tests/e2e/veranstaltungen.spec.ts:173:7 › de: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (625ms)
+  ✓  159 [telefon] › tests/e2e/veranstaltungen.spec.ts:179:7 › de: „Merken“ ist ein Link auf die Kalenderdatei des Termins (656ms)
+  ✓  160 [telefon] › tests/e2e/veranstaltungen.spec.ts:194:7 › de: unbekannter Slug antwortet mit HTTP 404 (211ms)
+  ✓  161 [telefon] › tests/e2e/veranstaltungen.spec.ts:199:7 › de: Abschnitt #anmeldung hat die Überschrift „Anmeldung“ (621ms)
+  ✓  162 [telefon] › tests/e2e/veranstaltungen.spec.ts:76:7 › tr: h1 „Etkinlikler“ und mindestens eine Karte sichtbar (200ms)
+  ✓  163 [telefon] › tests/e2e/veranstaltungen.spec.ts:82:7 › tr: Schaltfläche „Tümü“ ist beim Öffnen aktiv (202ms)
+  ✓  164 [telefon] › tests/e2e/veranstaltungen.spec.ts:87:7 › tr: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (301ms)
+  ✓  165 [telefon] › tests/e2e/veranstaltungen.spec.ts:121:7 › tr: Kategorie ohne Termine zeigt Leerzustand, „Tümü“ zeigt wieder alle Karten (282ms)
+  ✓  166 [telefon] › tests/e2e/veranstaltungen.spec.ts:152:7 › tr: „Takvime abone ol (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (201ms)
+  ✓  167 [telefon] › tests/e2e/veranstaltungen.spec.ts:168:7 › tr: „Detayları gör“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (622ms)
+  ✓  168 [telefon] › tests/e2e/veranstaltungen.spec.ts:173:7 › tr: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (619ms)
+  ✓  169 [telefon] › tests/e2e/veranstaltungen.spec.ts:179:7 › tr: „Kaydet“ ist ein Link auf die Kalenderdatei des Termins (655ms)
+  ✓  170 [telefon] › tests/e2e/veranstaltungen.spec.ts:194:7 › tr: unbekannter Slug antwortet mit HTTP 404 (198ms)
+  ✓  171 [telefon] › tests/e2e/veranstaltungen.spec.ts:199:7 › tr: Abschnitt #anmeldung hat die Überschrift „Kayıt“ (620ms)
+  ✓  172 [telefon] › tests/e2e/veranstaltungen.spec.ts:76:7 › en: h1 „Events“ und mindestens eine Karte sichtbar (200ms)
+  ✓  173 [telefon] › tests/e2e/veranstaltungen.spec.ts:82:7 › en: Schaltfläche „All“ ist beim Öffnen aktiv (198ms)
+  ✓  174 [telefon] › tests/e2e/veranstaltungen.spec.ts:87:7 › en: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (300ms)
+  ✓  175 [telefon] › tests/e2e/veranstaltungen.spec.ts:121:7 › en: Kategorie ohne Termine zeigt Leerzustand, „All“ zeigt wieder alle Karten (281ms)
+  ✓  176 [telefon] › tests/e2e/veranstaltungen.spec.ts:152:7 › en: „Subscribe to calendar (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (198ms)
+  ✓  177 [telefon] › tests/e2e/veranstaltungen.spec.ts:168:7 › en: „View details“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (624ms)
+  ✓  178 [telefon] › tests/e2e/veranstaltungen.spec.ts:173:7 › en: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (622ms)
+  ✓  179 [telefon] › tests/e2e/veranstaltungen.spec.ts:179:7 › en: „Save“ ist ein Link auf die Kalenderdatei des Termins (652ms)
+  ✓  180 [telefon] › tests/e2e/veranstaltungen.spec.ts:194:7 › en: unbekannter Slug antwortet mit HTTP 404 (196ms)
+  ✓  181 [telefon] › tests/e2e/veranstaltungen.spec.ts:199:7 › en: Abschnitt #anmeldung hat die Überschrift „Registration“ (620ms)
+  ✓  182 [telefon] › tests/e2e/veranstaltungen.spec.ts:206:5 › de: Sprachwahl im Kopf wechselt von der Liste auf /tr/etkinlikler (318ms)
+  ✓  183 [telefon] › tests/e2e/veranstaltungen.spec.ts:221:5 › en: Detailseite /en/events/<slug> hat lang="en"; deutsche h1 ohne Übersetzung trägt lang="de" (385ms)
+  -  184 [telefon] › tests/e2e/verwaltung-ankuendigungen.spec.ts:27:5 › Ankündigung anlegen, öffentlich oberhalb der Nachrichten sehen, Papierkorb und endgültig löschen
+  -  185 [telefon] › tests/e2e/verwaltung-ankuendigungen.spec.ts:78:5 › Organisationsredaktion: nur die eigene Organisation wählbar und in der Liste sichtbar
+  -  186 [telefon] › tests/e2e/verwaltung-ankuendigungen.spec.ts:94:5 › Ohne Anmeldung: Verwaltungsseiten der Ankündigungen leiten zur Anmeldung
+  -  187 [telefon] › tests/e2e/verwaltung-anmeldung.spec.ts:24:5 › Öffentliche Registrierung über HTTP ist gesperrt
+  -  188 [telefon] › tests/e2e/verwaltung-anmeldung.spec.ts:32:5 › Anmeldung, Zwei-Faktor und Passkey sind über HTTP gesperrt (nur über die Anmeldeseite, SP-P3 H1/H2)
+  -  189 [telefon] › tests/e2e/verwaltung-anmeldung.spec.ts:45:5 › Ohne Anmeldung führt die Verwaltung zur Anmeldeseite
+  -  190 [telefon] › tests/e2e/verwaltung-anmeldung.spec.ts:51:5 › Ungültige Einladung zeigt eine Fehlermeldung
+  -  191 [telefon] › tests/e2e/verwaltung-anmeldung.spec.ts:56:5 › Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden
+  -  192 [telefon] › tests/e2e/verwaltung-audit.spec.ts:18:5 › Administration liest das Audit-Log, filtert nach Aktion und sieht keine Personendaten in Details
+  -  193 [telefon] › tests/e2e/verwaltung-audit.spec.ts:54:5 › Redaktion ohne Recht audit.lesen wird auf „Kein Zugriff“ umgeleitet
+  -  194 [telefon] › tests/e2e/verwaltung-benutzer.spec.ts:26:5 › Einladen → annehmen → Rollen ändern → Zwei-Faktor zurücksetzen → Konto löschen
+  -  195 [telefon] › tests/e2e/verwaltung-benutzer.spec.ts:100:5 › Ohne Recht benutzer.lesen: „Kein Zugriff“; Mein Konto ist für alle erreichbar
+  -  196 [telefon] › tests/e2e/verwaltung-eingaenge.spec.ts:25:5 › Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgültig löschen
+  -  197 [telefon] › tests/e2e/verwaltung-gebetszeiten.spec.ts:25:5 › Gebetszeiten: Import prüfen, übernehmen, öffentlich sehen, wieder entfernen
+  -  198 [telefon] › tests/e2e/verwaltung-kurse.spec.ts:26:5 › Kurs anlegen, auf den Korankursen sehen, ändern, Papierkorb und endgültig löschen
+  -  199 [telefon] › tests/e2e/verwaltung-kurse.spec.ts:91:5 › Redaktion ohne Kursrecht: die Kursverwaltung leitet zu „kein Zugriff“
+  -  200 [telefon] › tests/e2e/verwaltung-kurse.spec.ts:97:5 › Ohne Anmeldung: Kursverwaltung leitet zur Anmeldung
+  -  201 [telefon] › tests/e2e/verwaltung-medien.spec.ts:15:5 › Medien: hochladen mit Alt-Text, ausliefern, Papierkorb, endgültig löschen
+  -  202 [telefon] › tests/e2e/verwaltung-neuigkeiten.spec.ts:27:5 › Nachricht anlegen, veröffentlichen, öffentlich sehen, in den Papierkorb legen und danach 404
+  -  203 [telefon] › tests/e2e/verwaltung-neuigkeiten.spec.ts:76:5 › Ohne Anmeldung: die Neuigkeiten-Seiten leiten zur Anmeldung
+  -  204 [telefon] › tests/e2e/verwaltung-passwort.spec.ts:30:5 › Passwort vergessen → Link → neues Passwort → Anmeldung mit TOTP
+  -  205 [telefon] › tests/e2e/verwaltung-postfach.spec.ts:22:5 › Zwei Konten: senden, ungelesen sehen, öffnen und antworten
+  -  206 [telefon] › tests/e2e/verwaltung-postfach.spec.ts:84:5 › Ohne Anmeldung: Nachrichten leiten zur Anmeldung
+  -  207 [telefon] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:27:5 › Organisationsredaktion GT sieht nur die eigene Organisation; fremde Seite ist kein Zugriff
+  -  208 [telefon] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:38:5 › Organisationsredaktion GT speichert die eigene Organisation; die öffentliche Seite zeigt sie sofort
+  -  209 [telefon] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:50:5 › Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben
+  -  210 [telefon] › tests/e2e/verwaltung-seiteninhalte.spec.ts:26:5 › Über uns ändern: die öffentliche Seite zeigt den neuen Text
+  -  211 [telefon] › tests/e2e/verwaltung-seiteninhalte.spec.ts:47:5 › Pflichtfeld leer: Fehler am Feld und Zusammenfassung mit Fokus
+  -  212 [telefon] › tests/e2e/verwaltung-seiteninhalte.spec.ts:63:5 › Organisationsredaktion sieht nur die Karte der eigenen Organisation
+  -  213 [telefon] › tests/e2e/verwaltung-styleguide.spec.ts:17:5 › Styleguide: Aufruf, Abschnitte, Tokens, Felder und Barrierefreiheit
+  -  214 [telefon] › tests/e2e/verwaltung-styleguide.spec.ts:61:5 › Ohne Anmeldung leitet die Seite zur Anmeldung
+  -  215 [telefon] › tests/e2e/verwaltung-tickets.spec.ts:17:5 › Ticket anlegen, kommentieren, Status ändern und in der Liste filtern
+  -  216 [telefon] › tests/e2e/verwaltung-tickets.spec.ts:87:5 › Organisationsredaktion: nur eigene und allgemeine Tickets, Status nicht änderbar
+  -  217 [telefon] › tests/e2e/verwaltung-tickets.spec.ts:146:5 › Ohne Anmeldung: Ticketseiten leiten zur Anmeldung
+  -  218 [telefon] › tests/e2e/verwaltung-uebersicht.spec.ts:15:5 › Administration: Begrüßung, Kacheln gebauter Module und beide Kurzlisten
+  -  219 [telefon] › tests/e2e/verwaltung-uebersicht.spec.ts:30:5 › Bildung: nur die Kachel Eingänge, keine Kurzlisten
+  -  220 [telefon] › tests/e2e/verwaltung-uebersicht.spec.ts:41:5 › Organisationsredaktion GT: Kachel Veranstaltungen und Kurzliste sichtbar
+  -  221 [telefon] › tests/e2e/verwaltung-uebersicht.spec.ts:49:5 › Telefon (390 px): kein waagerechter Seitenrand auf der Übersicht
+  -  222 [telefon] › tests/e2e/verwaltung-uebersicht.spec.ts:56:5 › Ohne Anmeldung: die Übersicht leitet zur Anmeldung
+  -  223 [telefon] › tests/e2e/verwaltung-veranstaltungen.spec.ts:28:5 › Veranstaltung anlegen, öffentlich sehen, Papierkorb und endgültig löschen
+  -  224 [telefon] › tests/e2e/verwaltung-veranstaltungen.spec.ts:110:5 › Organisationsredaktion: nur eigene Organisation wählbar und sichtbar
+  -  225 [telefon] › tests/e2e/verwaltung-veranstaltungen.spec.ts:128:5 › Ohne Anmeldung: Verwaltungsseiten leiten zur Anmeldung
+  ✓  226 [telefon] › tests/e2e/welle-a/fehlerseiten.spec.ts:23:7 › /gibt-es-nicht: HTTP 404, danach „Seite nicht gefunden“ mit Link zur Startseite (297ms)
+  ✓  227 [telefon] › tests/e2e/welle-a/fehlerseiten.spec.ts:23:7 › /veranstaltungen/gibt-es-nicht: HTTP 404, danach „Seite nicht gefunden“ mit Link zur Startseite (307ms)
+  ✓  228 [telefon] › tests/e2e/welle-a/gebetszeiten.spec.ts:25:5 › Reiter Heute, Monatlich, Qibla und Einstellungen: Pfeiltasten, Pos1 und Ende; aria-selected und Panel stimmen (466ms)
+  ✓  229 [telefon] › tests/e2e/welle-a/gebetszeiten.spec.ts:59:5 › Qibla: ohne Klick auf „Kompass aktivieren“ kein Lagesensor; nach dem Klick zeigt der Kompass einen Hinweis (333ms)
+  ✓  230 [telefon] › tests/e2e/welle-a/gebetszeiten.spec.ts:104:5 › Link „Vollbild“ führt zur Anzeige (300ms)
+  ✓  231 [telefon] › tests/e2e/welle-a/igmg-reiter.spec.ts:24:5 › Reiter wechseln mit Pfeil rechts/links, Pos1 und Ende; aria-selected und sichtbares Panel stimmen (385ms)
+  ✓  232 [telefon] › tests/e2e/welle-a/igmg-reiter.spec.ts:62:5 › Klick auf einen Reiter wählt ihn aus; das Panel des vorherigen Reiters ist danach verborgen (250ms)
+  ✓  233 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /vorstand: genau eine h1, Platzhalter in eckigen Klammern sichtbar (200ms)
+  ✓  234 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /vorstand: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (200ms)
+  ✓  235 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /ueber-uns: genau eine h1, Platzhalter in eckigen Klammern sichtbar (202ms)
+  ✓  236 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /ueber-uns: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (202ms)
+  ✓  237 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /projekte: genau eine h1, Platzhalter in eckigen Klammern sichtbar (200ms)
+  ✓  238 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /projekte: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (217ms)
+  ✓  239 [telefon] › tests/e2e/welle-a/inhaltsseiten.spec.ts:58:5 › /vorstand: die Namen im aktuellen Vorstand und bei den Vorsitzenden sind Platzhalter, keine erfundenen Namen (200ms)
+  ✓  240 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › de: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (252ms)
+  ✓  241 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › de: Themen-Schalter filtert die Artikel; „Filter entfernen“ hebt den Filter auf (313ms)
+  ✓  242 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › de: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (264ms)
+  ✓  243 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › de: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (483ms)
+  ✓  244 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › tr: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (250ms)
+  ✓  245 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › tr: Themen-Schalter filtert die Artikel; „Filtreyi kaldır“ hebt den Filter auf (329ms)
+  ✓  246 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › tr: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (264ms)
+  ✓  247 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › tr: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (196ms)
+  ✓  248 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › en: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (234ms)
+  ✓  249 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › en: Themen-Schalter filtert die Artikel; „Remove filter“ hebt den Filter auf (315ms)
+  ✓  250 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › en: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (264ms)
+  ✓  251 [telefon] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › en: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (482ms)
+  -  252 [telefon] › tests/e2e/welle-a/kontakt.spec.ts:23:5 › Kartenfläche der Anfahrt zeigt den Hinweis zur Datenübertragung
+  ✓  253 [telefon] › tests/e2e/welle-a/kontakt.spec.ts:32:5 › ohne bestätigte Koordinaten lädt die Kartenfläche keine Karte und bietet keinen Ladeknopf (197ms)
+  ✓  254 [telefon] › tests/e2e/welle-a/kontakt.spec.ts:41:5 › beim Laden der Kontaktseite keine Anfrage an fremde Hosts (725ms)
+  ✓  255 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › de: Kategorie-Schalter filtert die sichtbaren Karten, „Alle“ zeigt wieder alle (337ms)
+  ✓  256 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › de: Kartenlink trägt den Namen „Weiterlesen: <Titel>“ (201ms)
+  ✓  257 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › de: Kartenlink „Weiterlesen: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (625ms)
+  ✓  258 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › tr: Kategorie-Schalter filtert die sichtbaren Karten, „Tümü“ zeigt wieder alle (320ms)
+  ✓  259 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › tr: Kartenlink trägt den Namen „Devamını oku: <Titel>“ (200ms)
+  ✓  260 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › tr: Kartenlink „Devamını oku: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (627ms)
+  ✓  261 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › en: Kategorie-Schalter filtert die sichtbaren Karten, „All“ zeigt wieder alle (335ms)
+  ✓  262 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › en: Kartenlink trägt den Namen „Read more: <Titel>“ (199ms)
+  ✓  263 [telefon] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › en: Kartenlink „Read more: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (622ms)
+  ✓  264 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (de) ist barrierefrei (905ms)
+  ✓  265 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (tr) ist barrierefrei (843ms)
+  ✓  266 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Startseite (en) ist barrierefrei (871ms)
+  ✓  267 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (de) ist barrierefrei (841ms)
+  ✓  268 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (tr) ist barrierefrei (841ms)
+  ✓  269 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungen (en) ist barrierefrei (856ms)
+  ✓  270 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (de) ist barrierefrei (901ms)
+  ✓  271 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (tr) ist barrierefrei (888ms)
+  ✓  272 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Veranstaltungsdetail (en) ist barrierefrei (887ms)
+  ✓  273 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (de) ist barrierefrei (762ms)
+  ✓  274 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (tr) ist barrierefrei (767ms)
+  ✓  275 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Schüler-Voranmeldung (en) ist barrierefrei (745ms)
+  ✓  276 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (de) ist barrierefrei (777ms)
+  ✓  277 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (tr) ist barrierefrei (776ms)
+  ✓  278 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Mitglied werden (en) ist barrierefrei (784ms)
+  ✓  279 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (de) ist barrierefrei (744ms)
+  ✓  280 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (tr) ist barrierefrei (790ms)
+  ✓  281 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Meldung (en) ist barrierefrei (740ms)
+  ✓  282 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (de) ist barrierefrei (758ms)
+  ✓  283 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (tr) ist barrierefrei (737ms)
+  ✓  284 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Webseite für Moscheen (en) ist barrierefrei (756ms)
+  ✓  285 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (de) ist barrierefrei (874ms)
+  ✓  286 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (tr) ist barrierefrei (860ms)
+  ✓  287 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachrichten (en) ist barrierefrei (856ms)
+  ✓  288 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (de) ist barrierefrei (843ms)
+  ✓  289 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (tr) ist barrierefrei (814ms)
+  ✓  290 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Nachricht-Detail (en) ist barrierefrei (822ms)
+  ✓  291 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (de) ist barrierefrei (794ms)
+  ✓  292 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (tr) ist barrierefrei (773ms)
+  ✓  293 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Über uns (en) ist barrierefrei (768ms)
+  ✓  294 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (de) ist barrierefrei (908ms)
+  ✓  295 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (tr) ist barrierefrei (926ms)
+  ✓  296 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Vorstand (en) ist barrierefrei (909ms)
+  ✓  297 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (de) ist barrierefrei (792ms)
+  ✓  298 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (tr) ist barrierefrei (791ms)
+  ✓  299 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Projekte (en) ist barrierefrei (794ms)
+  ✓  300 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (de) ist barrierefrei (781ms)
+  ✓  301 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (tr) ist barrierefrei (780ms)
+  ✓  302 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Kontakt (en) ist barrierefrei (782ms)
+  ✓  303 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (de) ist barrierefrei (729ms)
+  ✓  304 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (tr) ist barrierefrei (730ms)
+  ✓  305 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › IGMG (en) ist barrierefrei (734ms)
+  ✓  306 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (de) ist barrierefrei (1.2s)
+  ✓  307 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (tr) ist barrierefrei (888ms)
+  ✓  308 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Organisation (Ana Teşkilatı) (en) ist barrierefrei (879ms)
+  ✓  309 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (de) ist barrierefrei (804ms)
+  ✓  310 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (tr) ist barrierefrei (806ms)
+  ✓  311 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Korankurse (en) ist barrierefrei (790ms)
+  ✓  312 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (de) ist barrierefrei (794ms)
+  ✓  313 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (tr) ist barrierefrei (789ms)
+  ✓  314 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Gebetszeiten (en) ist barrierefrei (792ms)
+  ✓  315 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (de) ist barrierefrei (857ms)
+  ✓  316 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (tr) ist barrierefrei (872ms)
+  ✓  317 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen (en) ist barrierefrei (861ms)
+  ✓  318 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (de) ist barrierefrei (894ms)
+  ✓  319 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (tr) ist barrierefrei (888ms)
+  ✓  320 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Islamisches Wissen, Thema (en) ist barrierefrei (880ms)
+  ✓  321 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (de) ist barrierefrei (705ms)
+  ✓  322 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (tr) ist barrierefrei (722ms)
+  ✓  323 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Impressum (en) ist barrierefrei (707ms)
+  ✓  324 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (de) ist barrierefrei (774ms)
+Gefundene Speicherschlüssel: localStorage [igmg-konzepthinweis-gesehen], sessionStorage []
+  ✓  147 [telefon] › tests/e2e/datenschutz.spec.ts:297:5 › Nach dem Besuch aller Routen: keine Cookies, nur igmg-Speicherschlüssel (1.3m)
+  -  326 [telefon] › tests/e2e/datenschutz.spec.ts:346:7 › Gegenprobe der Prüfregeln › Verstöße werden mit Namen gemeldet, Erlaubtes bleibt frei
+  -  327 [telefon] › tests/e2e/datenschutz.spec.ts:366:7 › Gegenprobe der Prüfregeln › Speicherschlüssel ohne Präfix igmg- werden gemeldet
+  -  328 [telefon] › tests/e2e/datenschutz.spec.ts:372:7 › Gegenprobe der Prüfregeln › Set-Cookie-Kopfzeilen werden erkannt
+  -  329 [telefon] › tests/e2e/datenschutz.spec.ts:381:7 › Gegenprobe der Prüfregeln › CSP-Prüfung meldet Drittanbieter-Hosts und fehlendes default-src
+  ✓  325 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (tr) ist barrierefrei (790ms)
+  ✓  331 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Datenschutz (en) ist barrierefrei (809ms)
+  ✓  330 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (850ms)
+  ✓  332 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (de) ist barrierefrei (705ms)
+  ✓  333 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (813ms)
+  ✓  334 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (tr) ist barrierefrei (706ms)
+  ✓  335 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Startseite (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (812ms)
+  ✓  336 [desktop] › tests/e2e/barrierefreiheit.spec.ts:138:9 › Seite nicht gefunden (en) ist barrierefrei (690ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.4b8fb75c@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  337 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (795ms)
+  ✓  339 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (817ms)
+  ✓  340 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltungen-Liste (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (793ms)
+  ✓  341 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.6s)
+  ✓  342 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (2.7s)
+  ✓  343 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Veranstaltung-Detail (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (2.7s)
+  ✓  344 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  345 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  346 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachrichten (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  347 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  348 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  349 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Nachricht-Detail (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  350 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  351 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  352 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Über uns (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  353 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  354 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  338 [desktop] › tests/e2e/formular-kontakt.spec.ts:33:5 › Kontaktformular: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Bestätigung und Benachrichtigung in Mailpit (30.6s)
+  ✓  355 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Vorstand (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.05244e71@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  357 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  358 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  359 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Projekte (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (2.1s)
+  ✓  360 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  361 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  362 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Kontakt (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  363 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  364 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  365 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › IGMG (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  366 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  367 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  368 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Organisation (Ana Teşkilatı) (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  369 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  370 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  371 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Korankurse (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  372 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  373 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  374 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Gebetszeiten (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  375 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  376 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  377 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  378 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  379 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  380 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Islamisches Wissen, Thema (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  381 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  356 [desktop] › tests/e2e/formular-meldung.spec.ts:47:5 › Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket in der Verwaltung und Mails in Mailpit (48.8s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.dc50af6e@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  382 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  384 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Impressum (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  385 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  386 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (2.0s)
+  ✓  387 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Datenschutz (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  388 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  389 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.7s)
+  ✓  390 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Seite nicht gefunden (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.7s)
+  ✓  391 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  392 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  393 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Schüler-Voranmeldung (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  394 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  395 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  396 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Mitglied werden (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.9s)
+  ✓  397 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.8s)
+  ✓  398 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (1.6s)
+  ✓  383 [desktop] › tests/e2e/formular-mitgliedsantrag.spec.ts:33:5 › Mitgliedsantrag in drei Schritten bis zur Bestätigung (29.5s)
+  ✓  399 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Meldung (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (775ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.c0f8ea19@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  401 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (de): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (793ms)
+  ✓  402 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (tr): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (792ms)
+  ✓  403 [desktop] › tests/e2e/datenschutz.spec.ts:275:9 › Webseite für Moscheen (en): Anfragen nur an die eigene Herkunft, keine Set-Cookie-Header (776ms)
+  ✓  400 [desktop] › tests/e2e/formular-moschee-anfrage.spec.ts:33:5 › Webseite-Anfrage in drei Schritten bis zur Bestätigung (9.3s)
+  -  405 [desktop] › tests/e2e/formular-moschee-anfrage.spec.ts:103:5 › Schrittleiste ohne Querscrollen im 390-px-Rahmen
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.e7985c6c@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  406 [desktop] › tests/e2e/formular-veranstaltungsanmeldung.spec.ts:43:5 › Anmeldung mit ALTCHA: Bestätigung und Benachrichtigung in Mailpit, Plätze zählen, dann ausgebucht (17.7s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.e371a615@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  407 [desktop] › tests/e2e/formular-voranmeldung.spec.ts:30:5 › Voranmeldung in vier Schritten bis zur Bestätigung (14.2s)
+  ✓  408 [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Kontakt (tr): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler (224ms)
+  ✓  409 [desktop] › tests/e2e/formulare-ohne-skript.spec.ts:16:7 › Mitglied werden (FormWizard): Hinweis ohne JavaScript, Absenden führt zurück statt zu einem Fehler (242ms)
+  ✓  410 [desktop] › tests/e2e/startseite.spec.ts:48:7 › de: / antwortet mit 200, html lang="de", genau eine sichtbare h1 (206ms)
+  ✓  411 [desktop] › tests/e2e/startseite.spec.ts:57:7 › de: erster Tab-Schritt erreicht „Zum Inhalt springen“, Enter springt zum Hauptinhalt (206ms)
+  ✓  412 [desktop] › tests/e2e/startseite.spec.ts:66:7 › de: Laden der Startseite meldet keine Konsolenfehler (175ms)
+  ✓  413 [desktop] › tests/e2e/startseite.spec.ts:48:7 › tr: /tr antwortet mit 200, html lang="tr", genau eine sichtbare h1 (201ms)
+  ✓  414 [desktop] › tests/e2e/startseite.spec.ts:57:7 › tr: erster Tab-Schritt erreicht „İçeriğe geç“, Enter springt zum Hauptinhalt (208ms)
+  ✓  415 [desktop] › tests/e2e/startseite.spec.ts:66:7 › tr: Laden der Startseite meldet keine Konsolenfehler (187ms)
+  ✓  416 [desktop] › tests/e2e/startseite.spec.ts:48:7 › en: /en antwortet mit 200, html lang="en", genau eine sichtbare h1 (224ms)
+  ✓  417 [desktop] › tests/e2e/startseite.spec.ts:57:7 › en: erster Tab-Schritt erreicht „Skip to content“, Enter springt zum Hauptinhalt (215ms)
+  ✓  418 [desktop] › tests/e2e/startseite.spec.ts:66:7 › en: Laden der Startseite meldet keine Konsolenfehler (201ms)
+  ✓  419 [desktop] › tests/e2e/veranstaltungen.spec.ts:76:7 › de: h1 „Veranstaltungen“ und mindestens eine Karte sichtbar (201ms)
+  ✓  420 [desktop] › tests/e2e/veranstaltungen.spec.ts:82:7 › de: Schaltfläche „Alle“ ist beim Öffnen aktiv (204ms)
+  ✓  421 [desktop] › tests/e2e/veranstaltungen.spec.ts:87:7 › de: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (357ms)
+  ✓  422 [desktop] › tests/e2e/veranstaltungen.spec.ts:121:7 › de: Kategorie ohne Termine zeigt Leerzustand, „Alle“ zeigt wieder alle Karten (376ms)
+  ✓  423 [desktop] › tests/e2e/veranstaltungen.spec.ts:152:7 › de: „Kalender abonnieren (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (264ms)
+  ✓  424 [desktop] › tests/e2e/veranstaltungen.spec.ts:168:7 › de: „Details ansehen“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (667ms)
+  ✓  425 [desktop] › tests/e2e/veranstaltungen.spec.ts:173:7 › de: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (683ms)
+  ✓  426 [desktop] › tests/e2e/veranstaltungen.spec.ts:179:7 › de: „Merken“ ist ein Link auf die Kalenderdatei des Termins (660ms)
+  ✓  427 [desktop] › tests/e2e/veranstaltungen.spec.ts:194:7 › de: unbekannter Slug antwortet mit HTTP 404 (223ms)
+  ✓  428 [desktop] › tests/e2e/veranstaltungen.spec.ts:199:7 › de: Abschnitt #anmeldung hat die Überschrift „Anmeldung“ (670ms)
+  ✓  429 [desktop] › tests/e2e/veranstaltungen.spec.ts:76:7 › tr: h1 „Etkinlikler“ und mindestens eine Karte sichtbar (198ms)
+  ✓  430 [desktop] › tests/e2e/veranstaltungen.spec.ts:82:7 › tr: Schaltfläche „Tümü“ ist beim Öffnen aktiv (186ms)
+  ✓  431 [desktop] › tests/e2e/veranstaltungen.spec.ts:87:7 › tr: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (312ms)
+  ✓  432 [desktop] › tests/e2e/veranstaltungen.spec.ts:121:7 › tr: Kategorie ohne Termine zeigt Leerzustand, „Tümü“ zeigt wieder alle Karten (329ms)
+  ✓  433 [desktop] › tests/e2e/veranstaltungen.spec.ts:152:7 › tr: „Takvime abone ol (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (194ms)
+  ✓  434 [desktop] › tests/e2e/veranstaltungen.spec.ts:168:7 › tr: „Detayları gör“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (629ms)
+  ✓  435 [desktop] › tests/e2e/veranstaltungen.spec.ts:173:7 › tr: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (595ms)
+  ✓  436 [desktop] › tests/e2e/veranstaltungen.spec.ts:179:7 › tr: „Kaydet“ ist ein Link auf die Kalenderdatei des Termins (628ms)
+  ✓  437 [desktop] › tests/e2e/veranstaltungen.spec.ts:194:7 › tr: unbekannter Slug antwortet mit HTTP 404 (168ms)
+  ✓  438 [desktop] › tests/e2e/veranstaltungen.spec.ts:199:7 › tr: Abschnitt #anmeldung hat die Überschrift „Kayıt“ (591ms)
+  ✓  439 [desktop] › tests/e2e/veranstaltungen.spec.ts:76:7 › en: h1 „Events“ und mindestens eine Karte sichtbar (175ms)
+  ✓  440 [desktop] › tests/e2e/veranstaltungen.spec.ts:82:7 › en: Schaltfläche „All“ ist beim Öffnen aktiv (174ms)
+  ✓  441 [desktop] › tests/e2e/veranstaltungen.spec.ts:87:7 › en: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett (288ms)
+  ✓  442 [desktop] › tests/e2e/veranstaltungen.spec.ts:121:7 › en: Kategorie ohne Termine zeigt Leerzustand, „All“ zeigt wieder alle Karten (276ms)
+  ✓  443 [desktop] › tests/e2e/veranstaltungen.spec.ts:152:7 › en: „Subscribe to calendar (iCal)“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender (170ms)
+  ✓  444 [desktop] › tests/e2e/veranstaltungen.spec.ts:168:7 › en: „View details“ der ersten Karte öffnet die Detailseite mit dem Kartentitel als h1 (591ms)
+  ✓  445 [desktop] › tests/e2e/veranstaltungen.spec.ts:173:7 › en: Breadcrumb der Detailseite enthält einen Link zu den Veranstaltungen (593ms)
+  ✓  446 [desktop] › tests/e2e/veranstaltungen.spec.ts:179:7 › en: „Save“ ist ein Link auf die Kalenderdatei des Termins (627ms)
+  ✓  447 [desktop] › tests/e2e/veranstaltungen.spec.ts:194:7 › en: unbekannter Slug antwortet mit HTTP 404 (182ms)
+  ✓  448 [desktop] › tests/e2e/veranstaltungen.spec.ts:199:7 › en: Abschnitt #anmeldung hat die Überschrift „Registration“ (590ms)
+  ✓  449 [desktop] › tests/e2e/veranstaltungen.spec.ts:206:5 › de: Sprachwahl im Kopf wechselt von der Liste auf /tr/etkinlikler (289ms)
+  ✓  450 [desktop] › tests/e2e/veranstaltungen.spec.ts:221:5 › en: Detailseite /en/events/<slug> hat lang="en"; deutsche h1 ohne Übersetzung trägt lang="de" (359ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.e2053c91@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  451 [desktop] › tests/e2e/verwaltung-ankuendigungen.spec.ts:27:5 › Ankündigung anlegen, öffentlich oberhalb der Nachrichten sehen, Papierkorb und endgültig löschen (1.8s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.df5d348d@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  452 [desktop] › tests/e2e/verwaltung-ankuendigungen.spec.ts:78:5 › Organisationsredaktion: nur die eigene Organisation wählbar und in der Liste sichtbar (1.4s)
+  ✓  453 [desktop] › tests/e2e/verwaltung-ankuendigungen.spec.ts:94:5 › Ohne Anmeldung: Verwaltungsseiten der Ankündigungen leiten zur Anmeldung (289ms)
+  ✓  454 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:24:5 › Öffentliche Registrierung über HTTP ist gesperrt (59ms)
+  ✓  455 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:32:5 › Anmeldung, Zwei-Faktor und Passkey sind über HTTP gesperrt (nur über die Anmeldeseite, SP-P3 H1/H2) (18ms)
+  ✓  456 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:45:5 › Ohne Anmeldung führt die Verwaltung zur Anmeldeseite (197ms)
+  ✓  457 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:51:5 › Ungültige Einladung zeigt eine Fehlermeldung (216ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.99db811c@example.test --name 'Testperson Eins' --rolle administration --nur_token
+[WebServer] 2026-10-11T07:44:51.902Z WARN [Better Auth]: Invalid password
+  ✓  458 [desktop] › tests/e2e/verwaltung-anmeldung.spec.ts:56:5 › Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden (2.6s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.271ebc4f@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  459 [desktop] › tests/e2e/verwaltung-audit.spec.ts:18:5 › Administration liest das Audit-Log, filtert nach Aktion und sieht keine Personendaten in Details (2.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.ebab7881@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+  ✓  460 [desktop] › tests/e2e/verwaltung-audit.spec.ts:54:5 › Redaktion ohne Recht audit.lesen wird auf „Kein Zugriff“ umgeleitet (1.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.4239f47f@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  461 [desktop] › tests/e2e/verwaltung-benutzer.spec.ts:26:5 › Einladen → annehmen → Rollen ändern → Zwei-Faktor zurücksetzen → Konto löschen (4.7s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.da6049dc@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+  ✓  462 [desktop] › tests/e2e/verwaltung-benutzer.spec.ts:100:5 › Ohne Recht benutzer.lesen: „Kein Zugriff“; Mein Konto ist für alle erreichbar (1.8s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.8519a4b0@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  463 [desktop] › tests/e2e/verwaltung-eingaenge.spec.ts:25:5 › Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgültig löschen (4.8s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.6c0e1dcd@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  464 [desktop] › tests/e2e/verwaltung-gebetszeiten.spec.ts:25:5 › Gebetszeiten: Import prüfen, übernehmen, öffentlich sehen, wieder entfernen (1.9s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.638b7652@example.test --name 'Testperson Eins' --rolle bildung --nur_token
+  ✓  465 [desktop] › tests/e2e/verwaltung-kurse.spec.ts:26:5 › Kurs anlegen, auf den Korankursen sehen, ändern, Papierkorb und endgültig löschen (2.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.773238f0@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+  ✓  466 [desktop] › tests/e2e/verwaltung-kurse.spec.ts:91:5 › Redaktion ohne Kursrecht: die Kursverwaltung leitet zu „kein Zugriff“ (1.2s)
+  ✓  467 [desktop] › tests/e2e/verwaltung-kurse.spec.ts:97:5 › Ohne Anmeldung: Kursverwaltung leitet zur Anmeldung (253ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.c17550d4@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✘  468 [desktop] › tests/e2e/verwaltung-medien.spec.ts:15:5 › Medien: hochladen mit Alt-Text, ausliefern, Papierkorb, endgültig löschen (7.0s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.ed070f19@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  469 [desktop] › tests/e2e/verwaltung-neuigkeiten.spec.ts:27:5 › Nachricht anlegen, veröffentlichen, öffentlich sehen, in den Papierkorb legen und danach 404 (2.0s)
+  ✓  470 [desktop] › tests/e2e/verwaltung-neuigkeiten.spec.ts:76:5 › Ohne Anmeldung: die Neuigkeiten-Seiten leiten zur Anmeldung (240ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.6f00a50b@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+[WebServer] 2026-10-11T07:45:24.688Z WARN [Better Auth]: Reset Password: User not found
+  ✓  471 [desktop] › tests/e2e/verwaltung-passwort.spec.ts:30:5 › Passwort vergessen → Link → neues Passwort → Anmeldung mit TOTP (3.4s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.712f19fe@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.6a6f2c4e@example.test --name 'Testperson Eins' --rolle mitgliederverwaltung --nur_token
+Gefundene Speicherschlüssel: localStorage [igmg-konzepthinweis-gesehen], sessionStorage []
+  ✓  404 [desktop] › tests/e2e/datenschutz.spec.ts:297:5 › Nach dem Besuch aller Routen: keine Cookies, nur igmg-Speicherschlüssel (1.6m)
+  ✓  473 [desktop] › tests/e2e/datenschutz.spec.ts:346:7 › Gegenprobe der Prüfregeln › Verstöße werden mit Namen gemeldet, Erlaubtes bleibt frei (0ms)
+  ✓  474 [desktop] › tests/e2e/datenschutz.spec.ts:366:7 › Gegenprobe der Prüfregeln › Speicherschlüssel ohne Präfix igmg- werden gemeldet (0ms)
+  ✓  475 [desktop] › tests/e2e/datenschutz.spec.ts:372:7 › Gegenprobe der Prüfregeln › Set-Cookie-Kopfzeilen werden erkannt (0ms)
+  ✓  476 [desktop] › tests/e2e/datenschutz.spec.ts:381:7 › Gegenprobe der Prüfregeln › CSP-Prüfung meldet Drittanbieter-Hosts und fehlendes default-src (0ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.9e4261c2@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  472 [desktop] › tests/e2e/verwaltung-postfach.spec.ts:22:5 › Zwei Konten: senden, ungelesen sehen, öffnen und antworten (2.7s)
+  ✓  478 [desktop] › tests/e2e/verwaltung-postfach.spec.ts:84:5 › Ohne Anmeldung: Nachrichten leiten zur Anmeldung (273ms)
+  ✓  477 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:27:5 › Organisationsredaktion GT sieht nur die eigene Organisation; fremde Seite ist kein Zugriff (1.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.485535cd@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.f7e00b98@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✘  479 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:26:5 › Über uns ändern: die öffentliche Seite zeigt den neuen Text (1.9s)
+  ✓  480 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:38:5 › Organisationsredaktion GT speichert die eigene Organisation; die öffentliche Seite zeigt sie sofort (1.9s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.230a3e99@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.43f6607c@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✘  482 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:47:5 › Pflichtfeld leer: Fehler am Feld und Zusammenfassung mit Fokus (2.4s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.58f731ba@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  483 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:63:5 › Organisationsredaktion sieht nur die Karte der eigenen Organisation (1.5s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.68bd4bb2@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  484 [desktop] › tests/e2e/verwaltung-styleguide.spec.ts:17:5 › Styleguide: Aufruf, Abschnitte, Tokens, Felder und Barrierefreiheit (1.9s)
+  ✓  485 [desktop] › tests/e2e/verwaltung-styleguide.spec.ts:61:5 › Ohne Anmeldung leitet die Seite zur Anmeldung (170ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.60fed2fc@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  486 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:17:5 › Ticket anlegen, kommentieren, Status ändern und in der Liste filtern (1.8s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.8d5647b6@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.d0559ab9@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  487 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:87:5 › Organisationsredaktion: nur eigene und allgemeine Tickets, Status nicht änderbar (3.0s)
+  ✓  488 [desktop] › tests/e2e/verwaltung-tickets.spec.ts:146:5 › Ohne Anmeldung: Ticketseiten leiten zur Anmeldung (253ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.d65d4063@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  489 [desktop] › tests/e2e/verwaltung-uebersicht.spec.ts:15:5 › Administration: Begrüßung, Kacheln gebauter Module und beide Kurzlisten (1.0s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.fd854fe4@example.test --name 'Testperson Eins' --rolle bildung --nur_token
+  ✘  481 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:50:5 › Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben (13.5s)
+  ✓  490 [desktop] › tests/e2e/verwaltung-uebersicht.spec.ts:30:5 › Bildung: nur die Kachel Eingänge, keine Kurzlisten (1.1s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.761197ae@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.c0c628c5@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  492 [desktop] › tests/e2e/verwaltung-uebersicht.spec.ts:41:5 › Organisationsredaktion GT: Kachel Veranstaltungen und Kurzliste sichtbar (1.3s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.648ffef7@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓  493 [desktop] › tests/e2e/verwaltung-uebersicht.spec.ts:49:5 › Telefon (390 px): kein waagerechter Seitenrand auf der Übersicht (1.5s)
+  ✓  494 [desktop] › tests/e2e/verwaltung-uebersicht.spec.ts:56:5 › Ohne Anmeldung: die Übersicht leitet zur Anmeldung (263ms)
+  ✓  495 [desktop] › tests/e2e/welle-a/fehlerseiten.spec.ts:23:7 › /gibt-es-nicht: HTTP 404, danach „Seite nicht gefunden“ mit Link zur Startseite (469ms)
+  ✓  496 [desktop] › tests/e2e/welle-a/fehlerseiten.spec.ts:23:7 › /veranstaltungen/gibt-es-nicht: HTTP 404, danach „Seite nicht gefunden“ mit Link zur Startseite (453ms)
+  ✓  491 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:28:5 › Veranstaltung anlegen, öffentlich sehen, Papierkorb und endgültig löschen (4.9s)
+  ✓  497 [desktop] › tests/e2e/welle-a/gebetszeiten.spec.ts:25:5 › Reiter Heute, Monatlich, Qibla und Einstellungen: Pfeiltasten, Pos1 und Ende; aria-selected und Panel stimmen (790ms)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.1ab3c778@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  499 [desktop] › tests/e2e/welle-a/gebetszeiten.spec.ts:59:5 › Qibla: ohne Klick auf „Kompass aktivieren“ kein Lagesensor; nach dem Klick zeigt der Kompass einen Hinweis (444ms)
+  ✓  500 [desktop] › tests/e2e/welle-a/gebetszeiten.spec.ts:104:5 › Link „Vollbild“ führt zur Anzeige (460ms)
+  ✓  501 [desktop] › tests/e2e/welle-a/igmg-reiter.spec.ts:24:5 › Reiter wechseln mit Pfeil rechts/links, Pos1 und Ende; aria-selected und sichtbares Panel stimmen (693ms)
+  ✓  498 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:110:5 › Organisationsredaktion: nur eigene Organisation wählbar und sichtbar (1.9s)
+  ✓  502 [desktop] › tests/e2e/welle-a/igmg-reiter.spec.ts:62:5 › Klick auf einen Reiter wählt ihn aus; das Panel des vorherigen Reiters ist danach verborgen (397ms)
+  ✓  503 [desktop] › tests/e2e/verwaltung-veranstaltungen.spec.ts:128:5 › Ohne Anmeldung: Verwaltungsseiten leiten zur Anmeldung (409ms)
+  ✓  504 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /vorstand: genau eine h1, Platzhalter in eckigen Klammern sichtbar (356ms)
+  ✓  505 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › de: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (439ms)
+  ✓  506 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /vorstand: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (299ms)
+  ✓  508 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /ueber-uns: genau eine h1, Platzhalter in eckigen Klammern sichtbar (310ms)
+  ✓  507 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › de: Themen-Schalter filtert die Artikel; „Filter entfernen“ hebt den Filter auf (523ms)
+  ✓  509 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /ueber-uns: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (329ms)
+  ✓  510 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › de: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (412ms)
+  ✓  511 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:30:7 › /projekte: genau eine h1, Platzhalter in eckigen Klammern sichtbar (300ms)
+  ✓  512 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › de: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (335ms)
+  ✓  513 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:42:7 › /projekte: Link „Kontakt aufnehmen“ (falls vorhanden) führt auf /kontakt mit HTTP 200 (330ms)
+  ✓  515 [desktop] › tests/e2e/welle-a/inhaltsseiten.spec.ts:58:5 › /vorstand: die Namen im aktuellen Vorstand und bei den Vorsitzenden sind Platzhalter, keine erfundenen Namen (312ms)
+  ✓  514 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › tr: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (448ms)
+  -  516 [desktop] › tests/e2e/welle-a/kontakt.spec.ts:23:5 › Kartenfläche der Anfahrt zeigt den Hinweis zur Datenübertragung
+  ✓  518 [desktop] › tests/e2e/welle-a/kontakt.spec.ts:32:5 › ohne bestätigte Koordinaten lädt die Kartenfläche keine Karte und bietet keinen Ladeknopf (306ms)
+  ✓  517 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › tr: Themen-Schalter filtert die Artikel; „Filtreyi kaldır“ hebt den Filter auf (522ms)
+  ✓  520 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › tr: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (439ms)
+  ✓  519 [desktop] › tests/e2e/welle-a/kontakt.spec.ts:41:5 › beim Laden der Kontaktseite keine Anfrage an fremde Hosts (839ms)
+  ✓  521 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › tr: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (554ms)
+  ✓  522 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › de: Kategorie-Schalter filtert die sichtbaren Karten, „Alle“ zeigt wieder alle (496ms)
+  ✓  523 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:61:7 › en: Suche filtert die Artikel; ohne Treffer erscheint der Leerzustand; eine leere Suche zeigt alle (373ms)
+  ✓  524 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › de: Kartenlink trägt den Namen „Weiterlesen: <Titel>“ (296ms)
+  ✓  525 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:86:7 › en: Themen-Schalter filtert die Artikel; „Remove filter“ hebt den Filter auf (510ms)
+  ✓  526 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › de: Kartenlink „Weiterlesen: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (687ms)
+  ✓  527 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:132:7 › en: Artikel-Dialog öffnet sich, Escape schließt ihn, der Fokus kehrt zum Auslöser zurück (367ms)
+  ✓  528 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › tr: Kategorie-Schalter filtert die sichtbaren Karten, „Tümü“ zeigt wieder alle (494ms)
+  ✓  529 [desktop] › tests/e2e/welle-a/islamisches-wissen.spec.ts:148:7 › en: Themenseite: h1 ist der Themenname, der aktuelle Thema-Link trägt aria-current (536ms)
+  ✓  530 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › tr: Kartenlink trägt den Namen „Devamını oku: <Titel>“ (267ms)
+  ✓  531 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › tr: Kartenlink „Devamını oku: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (691ms)
+  ✓  532 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:48:7 › en: Kategorie-Schalter filtert die sichtbaren Karten, „All“ zeigt wieder alle (413ms)
+  ✓  533 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:91:7 › en: Kartenlink trägt den Namen „Read more: <Titel>“ (200ms)
+  ✓  534 [desktop] › tests/e2e/welle-a/nachrichten.spec.ts:99:7 › en: Kartenlink „Read more: <Titel>“ öffnet die Detailseite mit dem Titel als h1 (641ms)
+
+
+  1) [desktop] › tests/e2e/verwaltung-medien.spec.ts:15:5 › Medien: hochladen mit Alt-Text, ausliefern, Papierkorb, endgültig löschen 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /meldung=papierkorb/
+    Received string:  "http://localhost:3100/verwaltung/medien/e4f97ef2-0848-477e-81e0-ca1a0db708fe?meldung=hochgeladen"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="de" class="_3gE6va_variable eo5Jda_className c8rCqq_variable ACPmQa_className NsIl9a_variable">…</html>
+           - unexpected value "http://localhost:3100/verwaltung/medien/e4f97ef2-0848-477e-81e0-ca1a0db708fe?meldung=hochgeladen"
+
+
+      57 |   // Papierkorb → nicht mehr ausgeliefert → endgültig löschen
+      58 |   await page.getByRole('button', { name: t.detail.inPapierkorb }).click();
+    > 59 |   await expect(page).toHaveURL(/meldung=papierkorb/);
+         |                      ^
+      60 |   expect((await page.request.get(adresse)).status()).toBe(404);
+      61 |   await page.goto('/verwaltung/medien?ansicht=papierkorb');
+      62 |   await page
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-medien.spec.ts:59:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-medien-Medien-h-d3105-apierkorb-endgültig-löschen-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-medien-Medien-h-d3105-apierkorb-endgültig-löschen-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-medien-Medien-h-d3105-apierkorb-endgültig-löschen-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-medien-Medien-h-d3105-apierkorb-endgültig-löschen-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:50:5 › Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Testadresse 6b5c, 00000 Testort')
+    Expected: visible
+    Error: strict mode violation: getByText('Testadresse 6b5c, 00000 Testort') resolved to 3 elements:
+        1) <span>Testadresse 6b5c, 00000 Testort</span> aka locator('#inhalt').getByText('Testadresse 6b5c, 00000 Testort', { exact: true })
+        2) <p class="font-mono text-16 text-tinte-2">Karte: Anfahrt Testadresse 6b5c, 00000 Testort</p> aka getByText('Karte: Anfahrt Testadresse')
+        3) <span>Testadresse 6b5c, 00000 Testort</span> aka getByRole('contentinfo').getByText('Testadresse 6b5c, 00000')
+
+    Call log:
+      - Expect "toBeVisible" getByText('Testadresse 6b5c, 00000 Testort') with timeout 1000ms
+      - waiting for getByText('Testadresse 6b5c, 00000 Testort')
+
+
+    Call Log:
+    - Timeout 12000ms exceeded while waiting on the predicate
+
+      12 |     await page.goto(pfad);
+      13 |     await pruefe();
+    > 14 |   }).toPass({ timeout: 12_000, intervals: [500, 1000, 2000] });
+         |      ^
+      15 | }
+      16 |
+      17 | /**
+        at oeffentlichBis (/Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:14:6)
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:72:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-o-5a992-taktseite-zeigt-die-Angaben-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-seiteninhalte-o-5a992-taktseite-zeigt-die-Angaben-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-o-5a992-taktseite-zeigt-die-Angaben-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-seiteninhalte-o-5a992-taktseite-zeigt-die-Angaben-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:26:5 › Über uns ändern: die öffentliche Seite zeigt den neuen Text 
+
+    Error: locator.fill: Error: strict mode violation: getByRole('region', { name: 'Geschichte' }).getByLabel('Absatz (Pflichtfeld)', { exact: true }) resolved to 5 elements:
+        1) <textarea rows="5" aria-required="true" id="sk_geschichte-absaetze-0-absatz-de" aria-describedby="sk_geschichte-absaetze-0-absatz-de-platz" class="min-h-12 w-full rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte placeholder:text-tinte-3 aria-invalid:border-2 aria-invalid:border-fehler disabled:bg-sand py-2.5">Die IGMG Fatih Camii wurde erstmals im Jahr [Grün…</textarea> aka getByText('Die IGMG Fatih Camii wurde')
+        2) <textarea rows="5" aria-required="true" id="sk_geschichte-absaetze-1-absatz-de" class="min-h-12 w-full rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte placeholder:text-tinte-3 aria-invalid:border-2 aria-invalid:border-fehler disabled:bg-sand py-2.5">Da unsere stetig wachsende Gemeinde jedoch mehr P…</textarea> aka getByText('Da unsere stetig wachsende')
+        3) <textarea rows="5" aria-required="true" id="sk_geschichte-absaetze-2-absatz-de" class="min-h-12 w-full rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte placeholder:text-tinte-3 aria-invalid:border-2 aria-invalid:border-fehler disabled:bg-sand py-2.5">Im Jahr 2019 fand der letzte und größte Umzug uns…</textarea> aka getByText('Im Jahr 2019 fand der letzte')
+        4) <textarea rows="5" aria-required="true" id="sk_geschichte-absaetze-3-absatz-de" class="min-h-12 w-full rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte placeholder:text-tinte-3 aria-invalid:border-2 aria-invalid:border-fehler disabled:bg-sand py-2.5">Von der Vergangenheit bis heute ist die Geschicht…</textarea> aka getByText('Von der Vergangenheit bis')
+        5) <textarea rows="5" aria-required="true" id="sk_geschichte-absaetze-4-absatz-de" class="min-h-12 w-full rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte placeholder:text-tinte-3 aria-invalid:border-2 aria-invalid:border-fehler disabled:bg-sand py-2.5"></textarea> aka locator('#sk_geschichte-absaetze-4-absatz-de')
+
+    Call log:
+      - waiting for getByRole('region', { name: 'Geschichte' }).getByLabel('Absatz (Pflichtfeld)', { exact: true })
+
+
+      37 |   const geschichte = page.getByRole('region', { name: 'Geschichte' });
+      38 |   await geschichte.getByRole('group', { name: 'Absätze' }).getByRole('button', { name: 'Eintrag hinzufügen' }).click();
+    > 39 |   await geschichte.getByLabel('Absatz (Pflichtfeld)', { exact: true }).fill(text);
+         |                                                                        ^
+      40 |
+      41 |   // Speichern mit Pflichtfeld gefüllt: Rückmeldung als Status, Änderung ist sofort öffentlich
+      42 |   await page.getByRole('button', { name: 'Speichern', exact: true }).click();
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-seiteninhalte.spec.ts:39:72
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-Ü-5ff77--Seite-zeigt-den-neuen-Text-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-seiteninhalte-Ü-5ff77--Seite-zeigt-den-neuen-Text-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-Ü-5ff77--Seite-zeigt-den-neuen-Text-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-seiteninhalte-Ü-5ff77--Seite-zeigt-den-neuen-Text-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:47:5 › Pflichtfeld leer: Fehler am Feld und Zusammenfassung mit Fokus 
+
+    Error: locator.click: Error: strict mode violation: getByRole('group', { name: 'Aktueller Vorstand' }).getByRole('button', { name: 'Eintrag hinzufügen' }) resolved to 7 elements:
+        1) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-0-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        2) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-1-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        3) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-2-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        4) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-3-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        5) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-4-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        6) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand-5-aufgaben').getByRole('button', { name: 'Eintrag hinzufügen' })
+        7) <button type="button" data-slot="button" data-size="default" data-variant="outline" class="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-18 leading-tight font-bold whitespace-nowrap no-underline transition-colors disabled:cursor-not-allowed disabled:border disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=size-])]:size-5 border border-rand bg-weiss px-4 text…>…</button> aka locator('#sk_vorstand > div > .inline-flex')
+
+    Call log:
+      - waiting for getByRole('group', { name: 'Aktueller Vorstand' }).getByRole('button', { name: 'Eintrag hinzufügen' })
+
+
+      53 |   // Ein neues Mitglied, Name geleert (der Vorschlag ist ein Platzhalter): die Zusammenfassung nennt das Feld
+      54 |   const vorstand = page.getByRole('group', { name: 'Aktueller Vorstand' });
+    > 55 |   await vorstand.getByRole('button', { name: 'Eintrag hinzufügen' }).click();
+         |                                                                      ^
+      56 |   await vorstand.getByLabel('Name (Pflichtfeld)', { exact: true }).first().fill('');
+      57 |   await page.getByRole('button', { name: 'Speichern', exact: true }).click();
+      58 |   await expect(page.getByRole('alert').filter({ hasText: 'Bitte prüfen Sie die markierten Felder.' })).toBeVisible();
+        at /Users/umurey/Downloads/IGMG Wetzlar Website Design/web/tests/e2e/verwaltung-seiteninhalte.spec.ts:55:70
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-P-07ab3-d-Zusammenfassung-mit-Fokus-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verwaltung-seiteninhalte-P-07ab3-d-Zusammenfassung-mit-Fokus-desktop/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verwaltung-seiteninhalte-P-07ab3-d-Zusammenfassung-mit-Fokus-desktop/trace.zip
+    Usage:
+
+        pnpm exec playwright show-trace test-results/verwaltung-seiteninhalte-P-07ab3-d-Zusammenfassung-mit-Fokus-desktop/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [desktop] › tests/e2e/verwaltung-medien.spec.ts:15:5 › Medien: hochladen mit Alt-Text, ausliefern, Papierkorb, endgültig löschen 
+    [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:50:5 › Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben 
+    [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:26:5 › Über uns ändern: die öffentliche Seite zeigt den neuen Text 
+    [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:47:5 › Pflichtfeld leer: Fehler am Feld und Zusammenfassung mit Fokus 
+  57 skipped
+  473 passed (6.4m)
+[ELIFECYCLE] Command failed with exit code 1.
+E2E_EXIT=1

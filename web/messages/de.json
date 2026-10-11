@@ -266,7 +266,8 @@
       "zuViele": "Zu viele Versuche. Bitte warten Sie eine Minute und versuchen Sie es erneut.",
       "eingeladen": "Ihr Konto ist angelegt. Bitte melden Sie sich jetzt an.",
       "keineRolle": "Ihrem Konto ist noch keine Aufgabe zugewiesen. Bitte wenden Sie sich an die Administration.",
-      "abgemeldet": "Sie sind abgemeldet."
+      "abgemeldet": "Sie sind abgemeldet.",
+      "passwortNeu": "Ihr Passwort ist neu gesetzt. Bitte melden Sie sich an."
     },
     "zweiFaktor": {
       "titel": "Zwei-Faktor-Bestätigung",
@@ -551,7 +552,35 @@
         "text": "Guten Tag {name}, Sie wurden eingeladen, die Website der IGMG Wetzlar mitzupflegen. Über den Knopf legen Sie Ihr Passwort fest; danach richten Sie die Zwei-Faktor-Anmeldung mit einer Authenticator-App ein. Der Link gilt bis {gueltigBis}.",
         "knopf": "Einladung annehmen",
         "hinweis": "Der Link ist persönlich – bitte nicht weitergeben. Wenn Sie diese Einladung nicht erwartet haben, ignorieren Sie diese E-Mail; ohne Annahme entsteht kein Konto."
+      },
+      "passwort": {
+        "betreff": "Neues Passwort für die Verwaltung der IGMG Wetzlar",
+        "text": "Guten Tag {name}, für Ihr Konto wurde ein neues Passwort angefordert. Über den Knopf legen Sie es fest; der Link gilt 60 Minuten. Danach melden Sie sich wie gewohnt mit Ihrer Authenticator-App an.",
+        "knopf": "Neues Passwort festlegen",
+        "hinweis": "Wenn Sie kein neues Passwort angefordert haben, ignorieren Sie diese E-Mail – Ihr Passwort bleibt unverändert."
       }
+    },
+    "passwortVergessen": {
+      "titel": "Passwort vergessen",
+      "untertitel": "Wir senden Ihnen einen Link, mit dem Sie ein neues Passwort festlegen.",
+      "email": "E-Mail-Adresse",
+      "absenden": "Link senden",
+      "sendet": "Wird gesendet …",
+      "gesendet": "Wenn es zu dieser Adresse ein Konto gibt, ist eine E-Mail unterwegs. Der Link gilt 60 Minuten.",
+      "fehlerEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "zurueck": "Zur Anmeldung"
+    },
+    "passwortNeu": {
+      "titel": "Neues Passwort festlegen",
+      "untertitel": "Danach melden Sie sich mit dem neuen Passwort und Ihrer Authenticator-App an.",
+      "passwort": "Neues Passwort",
+      "passwortHinweis": "Mindestens 12 Zeichen. Ein Satz aus mehreren Wörtern ist sicher und gut zu merken.",
+      "wiederholung": "Neues Passwort wiederholen",
+      "absenden": "Passwort speichern",
+      "fehlerKurz": "Das Passwort braucht mindestens 12 Zeichen.",
+      "fehlerGleich": "Die Passwörter stimmen nicht überein.",
+      "ungueltig": "Der Link ist ungültig oder abgelaufen. Bitte fordern Sie einen neuen an.",
+      "neuAnfordern": "Neuen Link anfordern"
     }
   },
   "kopf": {

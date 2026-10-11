@@ -66,6 +66,17 @@ async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
 }
 
 async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt, eingangId: string | null) {
+  if (vorlage === 'passwort') {
+    // Passwort vergessen (C12): Link von Better Auth, 60 Minuten gültig
+    const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
+    return benachrichtigungMail({
+      betreff: t('passwort.betreff'),
+      text: t('passwort.text', { name: inhalt.daten.name ?? '' }),
+      knopf: t('passwort.knopf'),
+      hinweis: t('passwort.hinweis'),
+      link: inhalt.daten.link ?? `${basisUrl()}/verwaltung/anmelden`,
+    });
+  }
   if (vorlage === 'einladung') {
     // Einladung in die Verwaltung (C12): Layout der Benachrichtigung mit Knopf; der Link kommt aus der Action
     const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');

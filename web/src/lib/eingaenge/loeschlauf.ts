@@ -2,8 +2,10 @@ import 'server-only';
 import { and, eq, inArray, isNotNull, lt, lte, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
+import { speicher } from '@/lib/storage';
 import { raeumeAltchaAuf } from '@/lib/validierung/altcha';
 import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
+import { verwendungVon } from '@/server/queries/verwaltung/medien';
 
 /**
  * Löschlauf (C16, G-07, ADR 0005): löscht Eingänge, deren Frist (`loeschen_ab`) erreicht ist – echt, mit
@@ -15,6 +17,27 @@ import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
  */
 export const MAIL_AUFBEWAHRUNG_TAGE = 30;
 export const PAPIERKORB_TAGE = 30;
+
+/** Medien im Papierkorb nach 30 Tagen: Datei und Eintrag löschen – nur, wenn nirgends mehr verwendet (ADR 0007). */
+async function leereMedienPapierkorb(jetzt: Date): Promise<number> {
+  const grenze = new Date(jetzt.getTime() - PAPIERKORB_TAGE * 86_400_000);
+  const m = schema.medium;
+  const faellig = await db.select({ id: m.id, schluessel: m.schluessel, typ: m.typ }).from(m).where(lt(m.imPapierkorbSeit, grenze));
+  let n = 0;
+  for (const z of faellig) {
+    if ((await verwendungVon(z.id)).length) continue;
+    await db.transaction(async (tx) => {
+      await tx.delete(m).where(eq(m.id, z.id));
+      await protokolliere(
+        { benutzerId: null, aktion: 'medium.geloescht', zielTyp: 'medium', zielId: z.id, details: { typ: z.typ, papierkorb: true } },
+        tx,
+      );
+    });
+    await speicher().loesche(z.schluessel);
+    n++;
+  }
+  return n;
+}
 
 export const MELDER_FRIST_TAGE = 180;
 
@@ -85,7 +108,7 @@ export async function loescheAbgelaufene(
     .where(and(isNotNull(schema.mailAusgang.gesendetAm), lt(schema.mailAusgang.gesendetAm, grenze)))
     .returning({ id: schema.mailAusgang.id });
   await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf()]);
-  const papierkorb = await leerePapierkorb(jetzt);
+  const papierkorb = (await leerePapierkorb(jetzt)) + (await leereMedienPapierkorb(jetzt));
   const melder = await entferneMelderdaten(jetzt);
   const betroffeneTermine = [
     ...new Set(faellig.filter((f) => f.art === 'veranstaltungsanmeldung' && f.bezugId).map((f) => f.bezugId as string)),

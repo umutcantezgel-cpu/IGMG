@@ -1,0 +1,26 @@
+
+Running 10 tests using 2 workers
+
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.72023449@example.test --name 'Testperson Eins' --rolle administration --nur_token
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.af6181c2@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓   2 [desktop] › tests/e2e/verwaltung-gebetszeiten.spec.ts:25:5 › Gebetszeiten: Import prüfen, übernehmen, öffentlich sehen, wieder entfernen (3.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.31f0446c@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓   3 [desktop] › tests/e2e/verwaltung-medien.spec.ts:15:5 › Medien: hochladen mit Alt-Text, ausliefern, Papierkorb, endgültig löschen (1.9s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.cd314ac9@example.test --name 'Testperson Eins' --rolle redaktion --nur_token
+[WebServer] 2026-10-11T07:49:03.135Z WARN [Better Auth]: Reset Password: User not found
+  ✓   4 [desktop] › tests/e2e/verwaltung-passwort.spec.ts:30:5 › Passwort vergessen → Link → neues Passwort → Anmeldung mit TOTP (3.7s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.b159ea00@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓   5 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:27:5 › Organisationsredaktion GT sieht nur die eigene Organisation; fremde Seite ist kein Zugriff (1.1s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.d766ad16@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓   6 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:38:5 › Organisationsredaktion GT speichert die eigene Organisation; die öffentliche Seite zeigt sie sofort (1.1s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.8a033841@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓   7 [desktop] › tests/e2e/verwaltung-seiteninhalte-organisationen.spec.ts:50:5 › Kontaktdaten: Fehler am Feld mit Sprungverweis, dann speichern; die Kontaktseite zeigt die Angaben (1.7s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.753c5c5f@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓   1 [desktop] › tests/e2e/formular-meldung.spec.ts:47:5 › Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket in der Verwaltung und Mails in Mailpit (13.6s)
+  ✓   8 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:26:5 › Über uns ändern: die öffentliche Seite zeigt den neuen Text (1.3s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.9b782161@example.test --name 'Testperson Eins' --rolle administration --nur_token
+  ✓   9 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:48:5 › Pflichtfeld leer: Fehler am Feld und Zusammenfassung mit Fokus (1.2s)
+$ tsx --env-file-if-exists=.env scripts/einladen.ts --email testperson.64a3d37d@example.test --name 'Testperson Eins' --rolle organisationsredaktion --nur_token --organisation gt
+  ✓  10 [desktop] › tests/e2e/verwaltung-seiteninhalte.spec.ts:65:5 › Organisationsredaktion sieht nur die Karte der eigenen Organisation (893ms)
+
+  10 passed (18.7s)

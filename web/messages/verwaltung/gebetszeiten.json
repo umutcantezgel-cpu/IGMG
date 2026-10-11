@@ -1,3 +1,106 @@
 {
-  "gebetszeiten": {}
+  "gebetszeiten": {
+    "titel": "Gebetszeiten",
+    "untertitel": "Woher die Zeiten auf der Website und der Moschee-Anzeige stammen: verbindliche Tabelle der Gemeinde oder vorläufige Berechnung.",
+    "oeffentlich": "Öffentliche Seite ansehen",
+    "vollbild": "Moschee-Anzeige ansehen",
+    "nurLesen": "Sie können die Einstellungen nur ansehen.",
+    "gebet": {
+      "imsak": "Imsak",
+      "gunes": "Aufgang",
+      "ogle": "Dhuhr",
+      "ikindi": "Asr",
+      "aksam": "Maghrib",
+      "yatsi": "Isha"
+    },
+    "stand": {
+      "titel": "Aktueller Stand",
+      "quelleImport": "Aktive Quelle: Tabellen-Import",
+      "quelleBerechnung": "Aktive Quelle: Berechnung",
+      "bestaetigt": "Von der Gemeinde bestätigt – der Hinweis „berechnet“ entfällt.",
+      "unbestaetigt": "Nicht bestätigt – öffentlich steht der Hinweis „berechnet“.",
+      "abdeckung": "Importierte Zeiten liegen bis {datum} vor.",
+      "keineImporte": "Es liegen keine importierten Zeiten ab heute vor.",
+      "luecke": "Achtung: Für die nächsten 30 Tage fehlen importierte Zeiten. Fehlende Tage werden berechnet angezeigt."
+    },
+    "quelle": {
+      "titel": "Quelle",
+      "legende": "Welche Zeiten gelten?",
+      "import": "Tabellen-Import",
+      "importText": "Verbindliche Zeiten aus einer Tabelle der Gemeinde (CSV oder JSON).",
+      "berechnung": "Berechnung",
+      "berechnungText": "Vorläufig berechnet nach den Einstellungen unten. Öffentlich als „berechnet“ gekennzeichnet, solange nicht bestätigt.",
+      "bestaetigt": "Die Gemeinde hat diese Quelle bestätigt",
+      "bestaetigtHinweis": "Nur setzen, wenn die Verantwortlichen der Gemeinde die Zeiten geprüft und freigegeben haben (G-06).",
+      "speichern": "Quelle speichern",
+      "gespeichert": "Die Quelle wurde gespeichert. Die öffentlichen Seiten zeigen sie sofort."
+    },
+    "berechnung": {
+      "titel": "Berechnung",
+      "text": "Gilt, wenn die Berechnung aktiv ist, und für Tage ohne importierte Zeiten. Alle Werte bitte mit der Gemeinde abstimmen (M-017).",
+      "methode": "Berechnungsmethode",
+      "madhab": "Asr-Berechnung",
+      "madhabShafi": "Shafi (erste Schattenlänge)",
+      "madhabHanafi": "Hanafi (doppelte Schattenlänge)",
+      "hoheBreite": "Regel für hohe Breiten",
+      "hoheBreiteSiebtel": "Siebtel der Nacht",
+      "hoheBreiteMitte": "Mitte der Nacht",
+      "hoheBreiteWinkel": "Winkel der Dämmerung",
+      "anpassungen": "Anpassung in Minuten",
+      "anpassungenHinweis": "Zusätzlich zu den Anpassungen der Methode, je Gebet −30 bis +30 Minuten.",
+      "breite": "Breitengrad",
+      "laenge": "Längengrad",
+      "ortHinweis": "Voreingestellt ist der Stadtpunkt Wetzlar.",
+      "vorschau": "Vorschau",
+      "speichern": "Berechnung speichern",
+      "gespeichert": "Die Einstellungen wurden gespeichert.",
+      "vorschauTitel": "Vorschau der nächsten 7 Tage (nicht gespeichert)",
+      "datum": "Datum"
+    },
+    "import": {
+      "titel": "Tabellen-Import",
+      "text": "Spalten: datum, imsak, gunes, ogle, ikindi, aksam, yatsi (Datum JJJJ-MM-TT oder TT.MM.JJJJ, Zeiten HH:MM). Tage lückenlos, höchstens 800 Zeilen, Datei bis 200 kB.",
+      "datei": "Datei (CSV oder JSON)",
+      "pruefen": "Datei prüfen",
+      "fehlerTitel": "Die Datei enthält Fehler. Es wurde nichts übernommen.",
+      "fehlerZeile": "Zeile {zeile}: {fehler}",
+      "fehlerDatei": "Bitte wählen Sie eine CSV- oder JSON-Datei bis 200 kB.",
+      "fehlerArt": {
+        "format": "Format oder Spalten stimmen nicht",
+        "reihenfolge": "Datum nicht aufsteigend",
+        "doppelt": "Datum doppelt",
+        "luecke": "Ein Tag fehlt",
+        "leer": "Keine Zeilen gefunden",
+        "zuViele": "Mehr als 800 Zeilen",
+        "datum": "Ungültiges Datum"
+      },
+      "pruefungOk": "Die Datei ist gültig: {anzahl} Tage vom {von} bis {bis}. Bitte die ersten Tage prüfen.",
+      "alsQuelle": "Danach den Tabellen-Import als aktive Quelle verwenden",
+      "uebernehmen": "Import übernehmen",
+      "abbrechen": "Andere Datei wählen",
+      "uebernommen": "{anzahl} Tage wurden übernommen. Vorhandene Tage im Zeitraum wurden ersetzt."
+    },
+    "importe": {
+      "titel": "Bisherige Importe",
+      "leer": "Noch keine Importe.",
+      "zeitraum": "Zeitraum",
+      "tage": "Tage",
+      "datei": "Datei",
+      "am": "Importiert am",
+      "von": "Von",
+      "aktion": "Aktion",
+      "unbekannt": "Unbekannt",
+      "entfernen": "Tage entfernen",
+      "entfernenTitel": "Importierte Tage entfernen?",
+      "entfernenText": "Die Tage dieses Imports werden gelöscht; für sie gilt danach die Berechnung.",
+      "entfernenBestaetigen": "Entfernen",
+      "abbrechen": "Abbrechen",
+      "entfernt": "Die Tage des Imports wurden entfernt."
+    },
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "ungueltig": "Dieser Wert ist nicht gültig.",
+      "keinRecht": "Dafür fehlt Ihnen die Berechtigung."
+    }
+  }
 }

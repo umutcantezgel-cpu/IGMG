@@ -1,3 +1,78 @@
 {
-  "medien": {}
+  "medien": {
+    "titel": "Medien",
+    "untertitel": "Bilder und PDF-Aushänge für die Website. Jedes Bild braucht einen Alt-Text, der beschreibt, was zu sehen ist.",
+    "ansichten": "Ansicht",
+    "ansichtAktiv": "Medien",
+    "ansichtPapierkorb": "Papierkorb",
+    "papierkorbHinweis": "Medien im Papierkorb sind nicht öffentlich und werden nach 30 Tagen endgültig gelöscht.",
+    "art": "Art",
+    "alleArten": "Alle",
+    "bilder": "Bilder",
+    "pdf": "PDF",
+    "filtern": "Anzeigen",
+    "leer": "Noch keine Medien.",
+    "leerPapierkorb": "Der Papierkorb ist leer.",
+    "anzahl": "{anzahl, plural, one {# Medium} other {# Medien}}",
+    "bearbeiten": "Bearbeiten: {name}",
+    "meldung": {
+      "papierkorb": "Das Medium liegt im Papierkorb.",
+      "wiederhergestellt": "Das Medium ist wiederhergestellt.",
+      "geloescht": "Das Medium wurde endgültig gelöscht.",
+      "hochgeladen": "Das Medium wurde hochgeladen."
+    },
+    "hochladen": {
+      "titel": "Hochladen",
+      "datei": "Datei",
+      "dateiHinweis": "JPEG, PNG, WebP, AVIF oder PDF bis 10 MB. Bilder werden verkleinert (längste Kante 2560 px) und ohne Standort- und Kameradaten gespeichert.",
+      "altDe": "Alt-Text (Deutsch)",
+      "altHinweis": "Beschreiben Sie kurz, was zu sehen ist – für Menschen, die das Bild nicht sehen. Bei PDF: worum es im Aushang geht.",
+      "altTr": "Alt-Text (Türkisch)",
+      "altEn": "Alt-Text (Englisch)",
+      "uebersetzungen": "Übersetzungen (optional)",
+      "bildrechte": "Bildrechte",
+      "bildrechteHinweis": "Wer hat das Foto gemacht, und darf die Gemeinde es zeigen? Zum Beispiel „Foto: [Name], mit Erlaubnis“.",
+      "senden": "Hochladen",
+      "sendet": "Wird hochgeladen …"
+    },
+    "detail": {
+      "zurueck": "Zur Übersicht",
+      "angaben": "Angaben",
+      "typ": "Typ",
+      "groesse": "Größe",
+      "masse": "Maße",
+      "hochgeladen": "Hochgeladen",
+      "adresse": "Adresse",
+      "oeffnen": "Datei öffnen",
+      "speichern": "Speichern",
+      "gespeichert": "Gespeichert. Seiten, die das Medium zeigen, werden sofort aktualisiert.",
+      "verwendung": "Verwendet in",
+      "keineVerwendung": "Dieses Medium wird nirgends verwendet.",
+      "verwendetHinweis": "Ein verwendetes Medium kann nicht in den Papierkorb gelegt werden. Entfernen Sie es zuerst aus den genannten Inhalten.",
+      "art": {
+        "veranstaltung": "Veranstaltung",
+        "nachricht": "Neuigkeit",
+        "kurs": "Kurs"
+      },
+      "inPapierkorb": "In den Papierkorb",
+      "wiederherstellen": "Wiederherstellen",
+      "loeschen": "Endgültig löschen",
+      "loeschenTitel": "Medium endgültig löschen?",
+      "loeschenText": "Die Datei wird unwiderruflich gelöscht.",
+      "loeschenBestaetigen": "Endgültig löschen",
+      "abbrechen": "Abbrechen"
+    },
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "altKurz": "Bitte beschreiben Sie das Bild mit mindestens drei Zeichen.",
+      "zuLang": "Der Text ist zu lang.",
+      "dateiFehlt": "Bitte wählen Sie eine Datei.",
+      "datei_leer": "Die Datei ist leer.",
+      "datei_zuGross": "Die Datei ist größer als 10 MB.",
+      "datei_typ": "Dieser Dateityp ist nicht erlaubt. Erlaubt sind JPEG, PNG, WebP, AVIF und PDF (SVG nicht).",
+      "datei_defekt": "Die Datei ließ sich nicht lesen. Ist sie beschädigt?",
+      "verwendet": "Das Medium wird noch verwendet und kann nicht entfernt werden."
+    }
+  }
 }

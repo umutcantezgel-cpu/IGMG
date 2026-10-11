@@ -4,11 +4,14 @@ import { eq } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
+import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeAngemeldet } from '@/lib/rechte/pruefe';
+import { basisUrl } from '@/lib/seo/metadaten';
 import { clientAdresse } from '@/lib/sicherheit/ip';
 import { pruefeRate, type Grenze } from '@/lib/validierung/ratenbegrenzung';
 import { ladeGueltigeEinladung } from '@/server/queries/einladung';
@@ -194,4 +197,53 @@ export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormDat
     return { fehler: 'einladung.fehlerAllgemein' };
   }
   redirect('/verwaltung/anmelden?eingeladen=1');
+}
+
+const vergessenSchema = z.object({ email: z.string().trim().toLowerCase().max(254).pipe(z.email()) });
+
+/**
+ * Passwort vergessen (C12, M-092): immer dieselbe Antwort, ob es das Konto gibt oder nicht (keine Kontenaufzählung).
+ * Better Auth legt den Link an und ruft `sendResetPassword` (Mail-Ausgang, gesperrte Konten ausgenommen).
+ */
+export async function passwortVergessen(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
+  const eingabe = vergessenSchema.safeParse({ email: daten.get('email') });
+  if (!eingabe.success) return { feldFehler: { email: 'passwortVergessen.fehlerEmail' } };
+  if (await begrenzt('passwort-vergessen', eingabe.data.email)) return { fehler: 'anmelden.zuViele' };
+  try {
+    await auth.api.requestPasswordReset({ body: { email: eingabe.data.email, redirectTo: `${basisUrl()}/verwaltung/passwort-neu` } });
+  } catch {
+    // Antwort bleibt gleich – Fehler werden nicht nach außen gegeben
+  }
+  after(() => versendeOffeneMails().catch(() => undefined));
+  return { ok: true };
+}
+
+const neuSchema = z
+  .object({ token: z.string().min(10).max(100), passwort: z.string().min(12).max(128), wiederholung: z.string() })
+  .refine((d) => d.passwort === d.wiederholung, { path: ['wiederholung'], message: 'passwortNeu.fehlerGleich' });
+
+/** Neues Passwort mit dem Link aus der Mail; alle Sitzungen enden (revokeSessionsOnPasswordReset), 2FA bleibt Pflicht. */
+export async function passwortNeuSetzen(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
+  const eingabe = neuSchema.safeParse({
+    token: daten.get('token'),
+    passwort: daten.get('passwort'),
+    wiederholung: daten.get('wiederholung'),
+  });
+  if (!eingabe.success) {
+    const feldFehler: Record<string, string> = {};
+    for (const f of eingabe.error.issues) {
+      const feld = String(f.path[0] ?? '');
+      if (feld === 'token') return { fehler: 'passwortNeu.ungueltig' };
+      if (feld === 'passwort') feldFehler.passwort = 'passwortNeu.fehlerKurz';
+      if (feld === 'wiederholung') feldFehler.wiederholung = 'passwortNeu.fehlerGleich';
+    }
+    return { feldFehler };
+  }
+  if (await begrenzt('passwort-neu')) return { fehler: 'anmelden.zuViele' };
+  try {
+    await auth.api.resetPassword({ body: { newPassword: eingabe.data.passwort, token: eingabe.data.token } });
+  } catch {
+    return { fehler: 'passwortNeu.ungueltig' };
+  }
+  redirect('/verwaltung/anmelden?passwort=neu');
 }

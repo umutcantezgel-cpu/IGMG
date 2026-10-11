@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
+import NextLink from 'next/link';
 import { Button } from '@/components/ui/button';
 import { anmelden, type FormularZustand } from '@/server/actions/anmeldung';
 import { Feld } from '../Feld';
@@ -54,6 +55,9 @@ export function AnmeldeFormular() {
           {sichtbar ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
         </button>
       </div>
+      <NextLink href="/verwaltung/passwort-vergessen" className="inline-flex min-h-11 items-center self-start font-bold">
+        {t('anmelden.passwortVergessen')}
+      </NextLink>
       <Button type="submit" disabled={laeuft} className="w-full">
         <LogIn aria-hidden />
         {t('anmelden.absenden')}

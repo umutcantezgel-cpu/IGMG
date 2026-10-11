@@ -15,6 +15,7 @@ export default async function AnmeldenSeite({ searchParams }: PageProps<'/[local
       <div className="flex flex-col gap-5">
         {s.eingeladen ? <Meldung art="erfolg">{t('eingeladen')}</Meldung> : null}
         {s.abgemeldet ? <Meldung art="info">{t('abgemeldet')}</Meldung> : null}
+        {s.passwort === 'neu' ? <Meldung art="erfolg">{t('passwortNeu')}</Meldung> : null}
         {s['keine-rolle'] ? <Meldung art="fehler">{t('keineRolle')}</Meldung> : null}
         <AnmeldeFormular />
       </div>

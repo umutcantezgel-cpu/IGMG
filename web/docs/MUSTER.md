@@ -113,6 +113,7 @@ Beispiele: `src/app/api/ical/[sprache]/veranstaltungen/route.ts` (statisch mit `
 - Barrierefreiheit und Datenschutz: neue Routen in die Routentabellen von `tests/e2e/barrierefreiheit.spec.ts` und `tests/e2e/datenschutz.spec.ts` eintragen.
 - Leistung: neue Messrouten laufen automatisch über `pnpm messen` (PLAN L8).
 
+- **Keine Navigation aus Effekten:** `router.push` in `useEffect` läuft erneut, wenn Next.js eine versteckt gehaltene Seite wieder einblendet – nach dem Speichern aus der Action weiterleiten (`redirect`).
 - **Verwaltung/Navigation (Next.js 16):** Zuvor besuchte Seiten bleiben versteckt im DOM. Locators deshalb auf den Abschnitt eingrenzen (`getByRole('region', { name })`, `#id`) oder `.filter({ visible: true })` nutzen; Zählungen (`toHaveCount(0)`) nur über Sichtbares.
 
 ## 10 Vor dem Abschluss eines Pakets

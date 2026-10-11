@@ -42,6 +42,12 @@ Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten
 - `POST /api/wartung/loeschfristen` – Löschlauf (C16, G-07): löscht Eingänge, deren Frist abgelaufen ist (samt Einwilligungen, Notizen und Mail-Ausgang; Audit-Eintrag `eingang.frist_geloescht` ohne Personendaten), versendete Mails nach 30 Tagen, verbrauchte ALTCHA-Aufgaben und alte Zähler der Ratenbegrenzung. Antwort: Anzahl gelöschter Einträge. **Täglich per Cron aufrufen**, z. B. `15 3 * * * curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://<domain>/api/wartung/loeschfristen`.
 - Fristen je Eingangsart: Verwaltung › Einstellungen (Vorgabe 180 Tage nach Abschluss, Veranstaltungsanmeldungen 30 Tage nach dem Termin; M-050). Die Frist beginnt, wenn ein Eingang „Erledigt“ oder „Abgelehnt“ wird; Wiederöffnen hebt sie auf.
 
+## 4a Konten (Kurzfassung)
+
+- Konten entstehen nur per Einladung (Verwaltung › Benutzer und Rollen, oder `pnpm verwaltung:einladen` für das erste Administrationskonto).
+- „Passwort vergessen“ verschickt einen Link (60 Minuten gültig) über den Mail-Ausgang – dafür muss SMTP eingerichtet sein. Ohne Mail: Administration setzt „Zwei-Faktor zurücksetzen“ bzw. lädt neu ein.
+- Gesperrte Konten können sich nicht anmelden, erhalten keine Benachrichtigungen und keine Links.
+
 ## 5 Caching – was Betreuende wissen müssen
 
 - Öffentliche Seiten sind statisch vorgerendert und werden nach Änderungen in der Verwaltung sofort neu erzeugt (zweistufig: sofort und nach 5 s, E-025).

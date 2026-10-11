@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Mail } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { Link } from '@/i18n/link';
 import { FormularInsel } from '@/components/formular/FormularInsel';
 import { KontaktFormular } from '@/components/website/formulare/KontaktFormular';
 import { Anfahrt } from '@/components/website/kontakt/Anfahrt';
@@ -48,6 +49,13 @@ export default async function KontaktSeite() {
           <FormularInsel aktion={sendeKontakt} ohneSkript={tf('ohneSkript')}>
             <KontaktFormular sprache={sprache} />
           </FormularInsel>
+          {/* Öffentliche Meldung (E-034): eigene Seite statt Dialog im Kopf */}
+          <p className="flex flex-wrap items-center gap-x-2 border-t border-linie pt-4">
+            {tk('meldungHinweis')}
+            <Link href="/meldung" className="inline-flex min-h-12 items-center font-bold text-gruen-700 underline underline-offset-4">
+              {tk('meldungLink')}
+            </Link>
+          </p>
         </section>
       </div>
     </Seitenrahmen>

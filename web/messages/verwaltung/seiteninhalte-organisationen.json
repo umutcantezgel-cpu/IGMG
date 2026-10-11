@@ -1,3 +1,165 @@
 {
-  "seiteninhalteOrganisationen": {}
+  "seiteninhalteOrganisationen": {
+    "zurueckSeiteninhalte": "Zurück zu Seiteninhalte",
+    "zurueckOrganisationen": "Zurück zu Organisationen",
+    "speichern": "Speichern",
+    "speichert": "Speichert …",
+    "gespeichert": "Die Änderungen wurden gespeichert. Sie sind sofort öffentlich sichtbar.",
+    "pflichtfeld": "(Pflichtfeld)",
+    "beispiel": {
+      "titel": "Vorlage",
+      "text": "Angezeigt werden Vorlagewerte mit Platzhaltern. Mit dem Speichern ersetzen Sie sie durch Ihre Angaben."
+    },
+    "unlesbar": "Der gespeicherte Inhalt lässt sich nicht lesen. Angezeigt werden die Vorlagewerte. Mit dem Speichern ersetzen Sie den gespeicherten Inhalt.",
+    "platzhalter": {
+      "titel": "Platzhalter ersetzen",
+      "text": "Mindestens ein Feld enthält noch einen Platzhalter in eckigen Klammern, zum Beispiel „[Telefonnummer]“. Ersetzen Sie ihn durch die echte Angabe. Platzhalter werden sonst öffentlich angezeigt."
+    },
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Für diesen Bereich haben Sie kein Recht zum Speichern.",
+      "unlesbar": "Die Eingabe konnte nicht gelesen werden. Laden Sie die Seite neu und versuchen Sie es erneut.",
+      "pflicht": "Dieses Feld ist ein Pflichtfeld.",
+      "zahl": "Bitte eine Zahl eingeben, zum Beispiel 50,5.",
+      "url": "Bitte eine Adresse eingeben, die mit https:// beginnt.",
+      "zuLang": "Der Text ist zu lang.",
+      "zuViele": "Es sind zu viele Einträge.",
+      "ungueltig": "Bitte prüfen Sie diese Angabe."
+    },
+    "uebersetzungen": {
+      "aufklappen": "Übersetzungen",
+      "aufklappenVon": "Übersetzungen zu {feld}",
+      "hinweis": "Optional. Fehlt eine Übersetzung, zeigt die Website den deutschen Text mit dem Hinweis „Nur auf Deutsch verfügbar“.",
+      "tr": "{feld}, Türkisch",
+      "en": "{feld}, Englisch"
+    },
+    "reihe": {
+      "nachOben": "Nach oben: {name}",
+      "nachUnten": "Nach unten: {name}",
+      "entfernen": "Entfernen: {name}",
+      "hoechstens": "Mehr als {anzahl} Einträge sind nicht vorgesehen.",
+      "leer": "Noch kein Eintrag vorhanden."
+    },
+    "uebersicht": {
+      "titel": "Organisationen",
+      "einleitung": "Pflegen Sie Beschreibung, Mission, Vision, Aktivitäten, Öffnungszeiten und Kontakt je Organisation. Sie sehen nur die Organisationen, für die Sie zuständig sind.",
+      "bearbeiten": "Bearbeiten"
+    },
+    "kontakt": {
+      "titel": "Kontaktdaten",
+      "einleitung": "Adresse, Telefon, Öffnungszeiten, Anfahrt und Angebote der Moschee. Die Angaben werden nur hier gepflegt.",
+      "wirkung": "Diese Angaben erscheinen auf der Kontaktseite, in der Fußzeile und in den Bestätigungsmails.",
+      "abschnitt": {
+        "adresse": "Adresse und Telefon",
+        "zeiten": "Öffnungszeiten",
+        "notfall": "Notfallkontakt",
+        "anfahrt": "Anfahrt",
+        "besuch": "Besuch und Angebote",
+        "social": "Soziale Netzwerke",
+        "koordinaten": "Koordinaten für die Karte"
+      },
+      "hinweis": {
+        "adresse": "Mehrere Zeilen möglich, zum Beispiel Straße, PLZ und Ort.",
+        "website": "Wird als Text angezeigt, nicht als Link.",
+        "tage": "Zum Beispiel Mo.–Fr.",
+        "zeiten": "So wie es auf der Website erscheint, zum Beispiel 09:00–22:00 Uhr.",
+        "ampel": "Für „Jetzt geöffnet“ in der Fußzeile braucht ein Eintrag Wochentage, Beginn und Ende.",
+        "social": "Nur Adressen, die mit https:// beginnen. Leer lassen, wenn es kein Profil gibt.",
+        "koordinaten": "Beide Werte angeben oder beide leer lassen. Dezimalzahl mit Punkt oder Komma, zum Beispiel 50,5. Ohne Koordinaten gibt es keine Kartenansicht auf der Kontaktseite."
+      },
+      "wochentage": "Wochentage für „Jetzt geöffnet“",
+      "hinzufuegen": {
+        "oeffnungszeit": "Öffnungszeit hinzufügen",
+        "angebot": "Angebot hinzufügen"
+      }
+    },
+    "organisation": {
+      "einleitung": "Diese Angaben erscheinen auf der Organisationsseite. Name und Untertitel sind festgelegt.",
+      "abschnitt": {
+        "ueber": "Über die Organisation",
+        "mission": "Mission und Vision",
+        "aktivitaeten": "Aktivitäten",
+        "oeffnungszeiten": "Öffnungszeiten",
+        "kontakt": "Kontakt"
+      },
+      "hinweis": {
+        "aktivitaeten": "Höchstens acht Aktivitäten. Jede hat ein Symbol, einen Titel und einen Text.",
+        "oeffnungszeiten": "Eine Zeile je Zeitraum, zum Beispiel „Montag bis Freitag 9:00–17:00 Uhr“. Höchstens zehn Zeilen.",
+        "kontakt": "Platzhalter gelten, bis die Gemeinde diese Angaben bestätigt hat."
+      },
+      "hinzufuegen": {
+        "aktivitaet": "Aktivität hinzufügen",
+        "oeffnungszeit": "Öffnungszeit hinzufügen"
+      }
+    },
+    "feld": {
+      "adresse": "Adresse",
+      "telefon": "Telefon",
+      "notfallTelefon": "Telefon Notfall",
+      "email": "E-Mail",
+      "website": "Webadresse",
+      "oeffnungszeiten": "Öffnungszeiten",
+      "tage": "Tage",
+      "zeiten": "Zeiten",
+      "von": "Wochentage",
+      "start": "Beginn",
+      "ende": "Ende",
+      "notfalltext": "Einleitung Notfallkontakt",
+      "anfahrtOeffentlich": "Öffentliche Verkehrsmittel",
+      "anfahrtAuto": "Mit dem Auto",
+      "anfahrtFuss": "Zu Fuß",
+      "angebote": "Angebote",
+      "besuchstext": "Besuchstext",
+      "social": "Soziale Netzwerke",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "koordinaten": "Koordinaten",
+      "breite": "Breitengrad",
+      "laenge": "Längengrad",
+      "beschreibung": "Beschreibung",
+      "mission": "Mission",
+      "vision": "Vision",
+      "aktivitaeten": "Aktivitäten",
+      "symbol": "Symbol",
+      "titel": "Titel",
+      "text": "Text",
+      "kontakt": "Kontakt"
+    },
+    "gruppe": {
+      "oeffnungszeiten": "Öffnungszeit",
+      "angebote": "Angebot",
+      "aktivitaeten": "Aktivität"
+    },
+    "sprache": {
+      "de": "Deutsch",
+      "tr": "Türkisch",
+      "en": "Englisch"
+    },
+    "wochentage": {
+      "mo": "Montag",
+      "di": "Dienstag",
+      "mi": "Mittwoch",
+      "do": "Donnerstag",
+      "fr": "Freitag",
+      "sa": "Samstag",
+      "so": "Sonntag"
+    },
+    "symbol": {
+      "heart": "Herz",
+      "book-open": "Buch",
+      "users": "Gemeinschaft",
+      "graduation-cap": "Bildung",
+      "pencil": "Schreiben",
+      "target": "Ziel",
+      "monitor": "Digital",
+      "star": "Stern"
+    },
+    "orgName": {
+      "at": "Ana Teşkilatı",
+      "kt": "Kadın Teşkilatı",
+      "gt": "Gençlik Teşkilatı",
+      "kgt": "Kadın Gençlik Teşkilatı"
+    }
+  }
 }

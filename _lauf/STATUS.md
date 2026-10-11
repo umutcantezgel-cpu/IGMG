@@ -1,24 +1,21 @@
 # STATUS
 
-**Statuszeile:** Phase P4 · Welle B fertig (B01–B07) · Welle C: C01, C02, C03, C06, C08–C10, C12–C16 fertig · Z 0/12 · nächster Schritt: Bündel 3 (C04, C05 Seiteninhalte, C10b Meldung, A23b Bedienabläufe, B10 Übersetzungsprüfung), parallel C07 Gebetszeiten und C11 Medien (Orchestrator), danach C17–C19, Tor B/C
+**Statuszeile:** Phase P4 · Welle B fertig (B01–B07, B10) · Welle C: alle 14 Module fertig (C01–C16, C10b) · Z 0/12 · nächster Schritt: Tor B/C (Darstellung öffentlich + Verwaltung, Sicherheit), dann C11b Bilder an Inhalten, C17 Rollen-Matrix-Tests, C19 Probeläufer, Welle D
 
-## Prüfpunkt (2026-10-11, ~09:15)
+## Prüfpunkt (2026-10-11, ~09:55)
 - **Erledigt seit letztem Prüfpunkt:**
-  - Bündel 2 (Haiku, L1 9–10/10): C01 Übersicht, C02 Neuigkeiten, C03 Ankündigungen (+ Block auf „Nachrichten“, E-033), C06 Kurse, C09 Postfach, C10 Tickets; Module freigeschaltet, Zähler Postfach/Tickets in der Seitenleiste
-  - C12 Benutzer und Rollen (Orchestrator): Einladen (Mail + Link einmalig), Rollen, Sperren (Migration 0005 `user.gesperrt_am`, Better-Auth-Hook), Zwei-Faktor zurücksetzen, endgültig löschen, „Mein Konto“ (Passwort, Ersatzcodes)
-  - Löschlauf: Papierkorb nach 30 Tagen (E-036), Melderdaten geschlossener Tickets nach 180 Tagen (E-037); Papierkorb-Sperre beim Speichern von Veranstaltungen
-  - Vorbereitung Bündel 3: Route `/meldung` (tr `/bildirim`, en `/report`), Stubs `messages/bereiche/meldung.json`, `messages/verwaltung/seiteninhalte-organisationen.json`, `pruefeEinsendung()`
-  - Belege: `_lauf/belege/welle-c/abnahme-buendel-2-c12.md`
+  - Bündel 3 (Haiku): C04/C05 Seiteninhalte (Übersicht, sechs Bereiche, Kontakt, vier Organisationen), C10b öffentliche Meldung `/meldung` (Ticket, E-037), A23b E2E Bedienabläufe Welle A (34/34 je Projekt), B10 Übersetzungsprüfung (8 Korrekturen)
+  - Orchestrator: C07 Gebetszeiten-Verwaltung (E-039), C11 Medien (E-038), „Passwort vergessen“, Öffnungszeiten aus einer Quelle (A-S11c), Linkname der Nachrichtenkarten, Medien-Weiterleitung aus der Action
+  - Belege: `_lauf/belege/welle-c/abnahme-buendel-3-c07-c11.md` – Unit 453, Integration 414/414, Build grün, E2E 473 + Nachlauf 10/10, Lighthouse P 99 / JS ≤ 169,7 kB
 - **Laufende Pakete:** keine
-- **Nächster Schritt:** Commit/Push, Dev-Server neu starten, Bündel 3 starten
-- **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit 127.0.0.1:8025); Dev-Server 127.0.0.1:3000 (Hintergrund)
-- **Umgebung je Befehl:** `source _lauf/werkzeuge/umgebung.sh` (pnpm, Docker ohne Keychain-Helper, Telemetrie aus)
+- **Nächster Schritt:** Commit/Push, Tor B/C starten (Server auf 3200 mit Beispielinhalten, `_lauf/werkzeuge/verwaltung-bilder.mjs` für die Verwaltung)
+- **Dienste lokal:** `docker compose --profile entwicklung up -d db mailpit`; Dev-Server 127.0.0.1:3000 (Hintergrund)
+- **Umgebung je Befehl:** `source _lauf/werkzeuge/umgebung.sh`
 
 ## Offene Punkte für spätere Pakete
 - Medienwahl im Rich-Text-Editor (`bildAuswahl`) → C11; Neuigkeiten-Bild (`bildId`) → C11
 - SP-A-03 Proxy-Vertrauen für `x-forwarded-for` (Ratenbegrenzung, Better Auth) → P5
 - Passkey-Registrierung und -Anmeldung (Client-Plugin) → offen (M-092), Anmeldung bisher nur mit Authenticator-App
-- Passwort vergessen (Selbstbedienung) → offen (M-092); bis dahin Administration: Zwei-Faktor zurücksetzen bzw. neu einladen
 - TOTP-Wiederverwendung im selben Zeitfenster (Lichtung b) → Sicherheitsprüfer Tor P3/P5
 - Redirect in Verwaltungsseiten liefert HTTP 200 + Client-Umleitung (gestreamt) – prüfen, ob 307 möglich (D05)
 
