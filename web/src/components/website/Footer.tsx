@@ -42,6 +42,8 @@ export async function Footer() {
   const { jahr } = await heuteBerlin();
   return (
     <footer className="bg-gruen-950 text-weiss">
+      {/* Achtstern-Band an der oberen Kante (K-008), hell auf Tiefgrün, dekorativ */}
+      <div aria-hidden className="achtstern-band-hell h-5" />
       <div className="mx-auto grid max-w-(--container-inhalt) grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-x-8 gap-y-10 px-4 pt-12 pb-8 md:px-8 md:pt-20 md:pb-12">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
