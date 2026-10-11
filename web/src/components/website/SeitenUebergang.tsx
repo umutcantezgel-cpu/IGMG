@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { morphKlasse } from './morph';
 
 /**
  * Längste Wartezeit auf die neue Seite. Unter der Grenze des Browsers (4 s, danach bricht er den Übergang ab); danach
@@ -45,7 +46,7 @@ function benenneKarte(link: Element): HTMLElement[] {
   const markiert = [...karte.querySelectorAll<HTMLElement>('[data-morph]')];
   for (const el of markiert) {
     el.style.setProperty('view-transition-name', `${karte.dataset.morphKarte}-${el.dataset.morph}`);
-    el.style.setProperty('view-transition-class', 'morph');
+    el.style.setProperty('view-transition-class', morphKlasse(el.dataset.morph));
   }
   return markiert;
 }

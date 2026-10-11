@@ -215,7 +215,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               ) : null}
             </div>
             <div className="flex flex-col gap-2">
-              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words" style={morphStil(`v-${v.slug}-titel`)}>
+              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words" style={morphStil(`v-${v.slug}-titel`, 'text')}>
                 {titel.text}
               </h1>
               <p className="text-20 text-tinte-2">{tk(`kat_${v.kategorie}`)}</p>

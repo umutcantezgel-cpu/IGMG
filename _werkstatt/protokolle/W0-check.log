@@ -1,0 +1,15 @@
+$ pnpm typen && pnpm lint && pnpm test:unit
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully
+$ eslint .
+$ vitest run --project unit
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+
+ Test Files  41 passed (41)
+      Tests  759 passed | 3 expected fail (762)
+   Start at  22:55:27
+   Duration  4.98s (import 41%, transform 31%, tests 26%, worker 3%)
+

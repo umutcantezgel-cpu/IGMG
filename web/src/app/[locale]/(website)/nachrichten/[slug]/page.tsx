@@ -137,7 +137,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                   </span>
                 ) : null}
               </div>
-              <h1 lang={titel.lang} className="text-display-1 text-pretty" style={morphStil(`n-${n.slug}-titel`)}>
+              <h1 lang={titel.lang} className="text-display-1 text-pretty" style={morphStil(`n-${n.slug}-titel`, 'text')}>
                 {titel.text}
               </h1>
               {kurz.text ? (

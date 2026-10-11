@@ -262,7 +262,7 @@ export const ZEILENHOEHEN: readonly WertToken[] = [
 /** Breiten: Seiteninhalt, Fließtext und Einleitung. */
 export const BREITEN: readonly WertToken[] = [
   { name: '--container-inhalt', wert: '84rem', klasse: 'max-w-inhalt', schluessel: 'inhalt' },
-  { name: '--container-text', wert: '68ch', klasse: 'max-w-text', schluessel: 'text' },
+  { name: '--container-text', wert: '52ch', klasse: 'max-w-text', schluessel: 'text' },
   { name: '--container-einleitung', wert: '47.5rem', klasse: 'max-w-einleitung', schluessel: 'einleitung' },
   { name: '--container-seitenkopf', wert: '55rem', klasse: 'max-w-seitenkopf', schluessel: 'seitenkopf' },
 ];

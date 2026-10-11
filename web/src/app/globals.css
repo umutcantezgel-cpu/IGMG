@@ -94,7 +94,7 @@
   --shadow-s3: 0 24px 64px rgba(29, 26, 23, 0.22);
   /* Raster */
   --container-inhalt: 84rem; /* 1344 px außen = 1280 px Inhalt + 2 × 32 px Rand (Artboards) */
-  --container-text: 68ch;
+  --container-text: 52ch; /* ≈ 70 Zeichen je Zeile in der Textschrift (gemessen: 68ch ergab 93, Sichtabnahme E3) */
   --breakpoint-md: 48rem; /* 768 px Telefon/Tablet */
   --breakpoint-verwaltung: 56.25rem; /* 900 px Verwaltung: Seitenleiste statt Kopfmenü (statt min-[900px]) */
   --breakpoint-menu: 77.5rem; /* 1240 px Menü-Button darunter (Laufbuch D-04) */
@@ -374,6 +374,19 @@
 ::view-transition-group(.morph) {
   animation-duration: 400ms;
   animation-timing-function: var(--ease-standard);
+}
+/* Titel brechen auf Karte und Detailseite verschieden um: Schnappschüsse in natürlicher Größe oben links statt auf die
+   Gruppenbreite gestreckt, und nacheinander statt gleichzeitig (der alte geht, dann kommt der neue) – kein Geisterbild */
+::view-transition-old(.text),
+::view-transition-new(.text) {
+  inline-size: auto;
+  block-size: auto;
+}
+::view-transition-old(.text) {
+  animation: var(--dauer-rueckmeldung) var(--ease-austritt) both ausblenden;
+}
+::view-transition-new(.text) {
+  animation: var(--dauer-rueckmeldung) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden;
 }
 
 @layer components {
