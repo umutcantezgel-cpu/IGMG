@@ -1,0 +1,232 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-11-20-32",
+  "basis": "http://127.0.0.1:3400",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3163,
+          "cls": 0,
+          "tbtMs": 408,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3473
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 74,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3327,
+          "cls": 0,
+          "tbtMs": 692,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3312
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 3297,
+          "cls": 0,
+          "tbtMs": 529,
+          "jsKb": 176.7,
+          "simuliert": {
+            "performance": 74,
+            "lcpMs": 2971
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 3297,
+        "cls": 0,
+        "tbtMs": 529,
+        "jsKb": 176.7,
+        "simuliertPerformance": 86,
+        "simuliertLcpMs": 3312
+      },
+      "spanneLeistung": [
+        74,
+        82
+      ],
+      "verfehlt": [
+        "Performance",
+        "LCP",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2358,
+          "cls": 0,
+          "tbtMs": 387,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 76,
+            "lcpMs": 4056
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2315,
+          "cls": 0,
+          "tbtMs": 376,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 78,
+            "lcpMs": 2005
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 78,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2653,
+          "cls": 0,
+          "tbtMs": 557,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3399
+          }
+        }
+      ],
+      "median": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2358,
+        "cls": 0,
+        "tbtMs": 387,
+        "jsKb": 174.2,
+        "simuliertPerformance": 78,
+        "simuliertLcpMs": 3399
+      },
+      "spanneLeistung": [
+        78,
+        87
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1925,
+          "cls": 0,
+          "tbtMs": 702,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 2870
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 76,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2138,
+          "cls": 0.001,
+          "tbtMs": 932,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 81,
+            "lcpMs": 3657
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1843,
+          "cls": 0,
+          "tbtMs": 328,
+          "jsKb": 173.6,
+          "simuliert": {
+            "performance": 84,
+            "lcpMs": 3536
+          }
+        }
+      ],
+      "median": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1925,
+        "cls": 0,
+        "tbtMs": 702,
+        "jsKb": 173.6,
+        "simuliertPerformance": 84,
+        "simuliertLcpMs": 3536
+      },
+      "spanneLeistung": [
+        76,
+        91
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}
