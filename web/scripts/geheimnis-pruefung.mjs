@@ -65,18 +65,32 @@ const ERLAUBTE_DOMAINS = new Set([
 const OHNE_INHALTSPRUEFUNG = /(^|\/)(pnpm-lock\.yaml|.*\.(png|jpe?g|webp|avif|gif|ico|woff2?|ttf|pdf|zip))$/i;
 const AUSNAHME_DATEI = /(^|\/)scripts\/geheimnis-pruefung\.mjs$/;
 
+/**
+ * Geprüft wird, was tatsächlich in den Commit bzw. Push geht – nicht die Arbeitskopie (parallel arbeitende Pakete
+ * können dort Zwischenstände haben): --staged liest den Index (`:pfad`), --push den Stand von HEAD, --alles die Arbeitskopie.
+ */
+function inhaltVon(datei) {
+  try {
+    if (modus === '--alles') {
+      const pfad = join(wurzel, datei);
+      if (statSync(pfad).size > 2_000_000) return null;
+      return readFileSync(pfad, 'utf8');
+    }
+    const objekt = modus === '--push' ? `HEAD:${datei}` : `:${datei}`;
+    const groesse = Number(execFileSync('git', ['cat-file', '-s', objekt], { cwd: wurzel, encoding: 'utf8' }).trim());
+    if (groesse > 2_000_000) return null;
+    return execFileSync('git', ['show', objekt], { cwd: wurzel, encoding: 'utf8', maxBuffer: 4_000_000 });
+  } catch {
+    return null;
+  }
+}
+
 const befunde = [];
 for (const datei of dateien()) {
   for (const re of VERBOTENE_PFADE) if (re.test(datei)) befunde.push(`${datei}: verbotener Pfad`);
   if (OHNE_INHALTSPRUEFUNG.test(datei) || AUSNAHME_DATEI.test(datei)) continue;
-  const pfad = join(wurzel, datei);
-  let inhalt;
-  try {
-    if (statSync(pfad).size > 2_000_000) continue;
-    inhalt = readFileSync(pfad, 'utf8');
-  } catch {
-    continue;
-  }
+  const inhalt = inhaltVon(datei);
+  if (inhalt === null) continue;
   const zeilen = inhalt.split('\n');
   zeilen.forEach((zeile, i) => {
     for (const m of MUSTER) if (m.re.test(zeile)) befunde.push(`${datei}:${i + 1}: ${m.name}`);
