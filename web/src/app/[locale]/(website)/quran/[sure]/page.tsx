@@ -39,5 +39,5 @@ async function QuranSure({ params }: { params: Promise<{ locale: string; sure: s
   const { sure } = await params;
   const stand = await ladeSeitenStand(sure);
   if (!stand) notFound();
-  return <QuranAnsicht stand={stand} uebersicht={false} />;
+  return <QuranAnsicht stand={stand} />;
 }

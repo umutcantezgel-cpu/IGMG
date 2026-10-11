@@ -13,6 +13,7 @@ type Fehlerstand = Extract<FormularErgebnis, { status: 'fehler' }>;
  * Meldung an die Verwaltung (C10b, E-034, E-037): Felder nach TicketDialog.dc.html, Betreff zusätzlich. Server-Komponente
  * ohne eigenes `<form>` – das umgibt `FormularInsel`. `sendeMeldung` rendert sie nach einem Fehler mit Werten,
  * Feldfehlern und neuem ALTCHA-Schlüssel (Lösungen sind einmalig). Die Seite rendert sie leer.
+ * Abschnitte (Fieldset mit Legende) gliedern nur die Anzeige; Feldnamen und Reihenfolge bleiben wie bisher.
  */
 export async function MeldungFormular({
   sprache,
@@ -61,145 +62,166 @@ export async function MeldungFormular({
         />
       ) : null}
       <input type="hidden" name="sprache" value={sprache} />
-      <div className="grid gap-4 sm:grid-cols-2">
-        <FeldText
-          name="vorname"
-          label={t('vorname')}
-          pflicht={pflicht}
-          platzhalter={t('vornamePlatzhalter')}
-          wert={wert('vorname')}
-          autoComplete="given-name"
-          maxLaenge={100}
-          fehler={f('vorname')}
-        />
-        <FeldText
-          name="nachname"
-          label={t('nachname')}
-          pflicht={pflicht}
-          platzhalter={t('nachnamePlatzhalter')}
-          wert={wert('nachname')}
-          autoComplete="family-name"
-          maxLaenge={100}
-          fehler={f('nachname')}
-        />
-        <FeldText
-          name="telefon"
-          typ="tel"
-          label={
-            <>
-              {t('telefon')} {optional}
-            </>
-          }
-          platzhalter={t('telefonPlatzhalter')}
-          wert={wert('telefon')}
-          autoComplete="tel"
-          maxLaenge={30}
-          fehler={f('telefon')}
-        />
-        <FeldText
-          name="email"
-          typ="email"
-          label={
-            <>
-              {t('email')} {optional}
-            </>
-          }
-          platzhalter={t('emailPlatzhalter')}
-          wert={wert('email')}
-          autoComplete="email"
-          maxLaenge={254}
-          fehler={f('email')}
-        />
-        <FeldAuswahl
-          name="organisation"
-          label={
-            <>
-              {t('organisation')} {optional}
-            </>
-          }
-          leer={t('organisationAllgemein')}
-          optionen={[
-            { wert: 'at', label: t('organisationen.at') },
-            { wert: 'kt', label: t('organisationen.kt') },
-            { wert: 'gt', label: t('organisationen.gt') },
-            { wert: 'kgt', label: t('organisationen.kgt') },
-          ]}
-          wert={wert('organisation')}
-          fehler={f('organisation')}
-        />
-        <FeldAuswahl
-          name="typ"
-          label={t('typ')}
-          pflicht={pflicht}
-          leer={t('typPlatzhalter')}
-          optionen={[
-            { wert: 'beschwerde', label: t('typen.beschwerde') },
-            { wert: 'wunsch', label: t('typen.wunsch') },
-            { wert: 'vorschlag', label: t('typen.vorschlag') },
-            { wert: 'information', label: t('typen.information') },
-          ]}
-          wert={wert('typ')}
-          fehler={f('typ')}
-        />
-        <FeldText
-          name="betreff"
-          label={t('betreff')}
-          pflicht={pflicht}
-          wert={wert('betreff')}
-          maxLaenge={160}
-          fehler={f('betreff')}
-          className="sm:col-span-2"
-        />
-        <FeldBereich
-          name="beschreibung"
-          label={t('beschreibung')}
-          pflicht={pflicht}
-          wert={wert('beschreibung')}
-          zeilen={4}
-          platzhalter={t('beschreibungPlatzhalter')}
-          maxLaenge={2000}
-          fehler={f('beschreibung')}
-          className="sm:col-span-2"
-        />
-        <div className="sm:col-span-2">
-          <FeldOptionen
-            name="rueckmeldung"
-            label={t('rueckmeldung')}
-            pflicht={pflicht}
-            typ="radio"
-            optionen={[
-              { wert: 'ja', label: t('ja') },
-              { wert: 'nein', label: t('nein') },
-            ]}
-            wert={wert('rueckmeldung')}
-            fehler={f('rueckmeldung')}
-            kompakt
+      <div className="flex flex-col gap-8">
+        <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
+          <legend className="mb-4 p-0 font-display text-24 font-semibold">{t('gruppe.person')}</legend>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <FeldText
+              name="vorname"
+              label={t('vorname')}
+              pflicht={pflicht}
+              platzhalter={t('vornamePlatzhalter')}
+              wert={wert('vorname')}
+              autoComplete="given-name"
+              maxLaenge={100}
+              fehler={f('vorname')}
+            />
+            <FeldText
+              name="nachname"
+              label={t('nachname')}
+              pflicht={pflicht}
+              platzhalter={t('nachnamePlatzhalter')}
+              wert={wert('nachname')}
+              autoComplete="family-name"
+              maxLaenge={100}
+              fehler={f('nachname')}
+            />
+            <FeldText
+              name="telefon"
+              typ="tel"
+              label={
+                <>
+                  {t('telefon')} {optional}
+                </>
+              }
+              platzhalter={t('telefonPlatzhalter')}
+              wert={wert('telefon')}
+              autoComplete="tel"
+              maxLaenge={30}
+              fehler={f('telefon')}
+            />
+            <FeldText
+              name="email"
+              typ="email"
+              label={
+                <>
+                  {t('email')} {optional}
+                </>
+              }
+              platzhalter={t('emailPlatzhalter')}
+              wert={wert('email')}
+              autoComplete="email"
+              maxLaenge={254}
+              fehler={f('email')}
+            />
+          </div>
+        </fieldset>
+        <hr aria-hidden="true" className="m-0 border-0 border-t border-linie" />
+        <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
+          <legend className="mb-4 p-0 font-display text-24 font-semibold">{t('gruppe.anliegen')}</legend>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <FeldAuswahl
+              name="organisation"
+              label={
+                <>
+                  {t('organisation')} {optional}
+                </>
+              }
+              leer={t('organisationAllgemein')}
+              optionen={[
+                { wert: 'at', label: t('organisationen.at') },
+                { wert: 'kt', label: t('organisationen.kt') },
+                { wert: 'gt', label: t('organisationen.gt') },
+                { wert: 'kgt', label: t('organisationen.kgt') },
+              ]}
+              wert={wert('organisation')}
+              fehler={f('organisation')}
+            />
+            <FeldAuswahl
+              name="typ"
+              label={t('typ')}
+              pflicht={pflicht}
+              leer={t('typPlatzhalter')}
+              optionen={[
+                { wert: 'beschwerde', label: t('typen.beschwerde') },
+                { wert: 'wunsch', label: t('typen.wunsch') },
+                { wert: 'vorschlag', label: t('typen.vorschlag') },
+                { wert: 'information', label: t('typen.information') },
+              ]}
+              wert={wert('typ')}
+              fehler={f('typ')}
+            />
+            <FeldText
+              name="betreff"
+              label={t('betreff')}
+              pflicht={pflicht}
+              wert={wert('betreff')}
+              maxLaenge={160}
+              fehler={f('betreff')}
+              className="sm:col-span-2"
+            />
+            <FeldBereich
+              name="beschreibung"
+              label={t('beschreibung')}
+              pflicht={pflicht}
+              wert={wert('beschreibung')}
+              zeilen={4}
+              platzhalter={t('beschreibungPlatzhalter')}
+              maxLaenge={2000}
+              fehler={f('beschreibung')}
+              className="sm:col-span-2"
+            />
+          </div>
+        </fieldset>
+        <hr aria-hidden="true" className="m-0 border-0 border-t border-linie" />
+        <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
+          <legend className="mb-4 p-0 font-display text-24 font-semibold">{t('gruppe.rueckmeldung')}</legend>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <FeldOptionen
+                name="rueckmeldung"
+                label={t('rueckmeldung')}
+                pflicht={pflicht}
+                typ="radio"
+                optionen={[
+                  { wert: 'ja', label: t('ja') },
+                  { wert: 'nein', label: t('nein') },
+                ]}
+                wert={wert('rueckmeldung')}
+                fehler={f('rueckmeldung')}
+                kompakt
+              />
+            </div>
+            <div className="sm:col-span-2">
+              <FeldOptionen
+                name="rueckmeldeArt"
+                label={t('rueckmeldeArt')}
+                hinweis={t('rueckmeldeArtHinweis')}
+                typ="radio"
+                optionen={[
+                  { wert: 'telefon', label: t('arten.telefon') },
+                  { wert: 'email', label: t('arten.email') },
+                  { wert: 'persoenlich', label: t('arten.persoenlich') },
+                ]}
+                wert={wert('rueckmeldeArt')}
+                fehler={f('rueckmeldeArt')}
+                spaltenMin="sm:grid-cols-3"
+              />
+            </div>
+          </div>
+        </fieldset>
+        <hr aria-hidden="true" className="m-0 border-0 border-t border-linie" />
+        <fieldset className="m-0 flex min-w-0 flex-col gap-4 border-0 p-0">
+          <legend className="mb-4 p-0 font-display text-24 font-semibold">{t('gruppe.einwilligung')}</legend>
+          <FeldEinwilligung
+            name="einwilligung"
+            text={t('einwilligung')}
+            link={datenschutz}
+            wert={wert('einwilligung') === 'ja'}
+            fehler={f('einwilligung')}
           />
-        </div>
-        <div className="sm:col-span-2">
-          <FeldOptionen
-            name="rueckmeldeArt"
-            label={t('rueckmeldeArt')}
-            hinweis={t('rueckmeldeArtHinweis')}
-            typ="radio"
-            optionen={[
-              { wert: 'telefon', label: t('arten.telefon') },
-              { wert: 'email', label: t('arten.email') },
-              { wert: 'persoenlich', label: t('arten.persoenlich') },
-            ]}
-            wert={wert('rueckmeldeArt')}
-            fehler={f('rueckmeldeArt')}
-            spaltenMin="sm:grid-cols-3"
-          />
-        </div>
+        </fieldset>
       </div>
-      <FeldEinwilligung
-        name="einwilligung"
-        text={t('einwilligung')}
-        link={datenschutz}
-        wert={wert('einwilligung') === 'ja'}
-        fehler={f('einwilligung')}
-      />
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
       <div className="self-start">

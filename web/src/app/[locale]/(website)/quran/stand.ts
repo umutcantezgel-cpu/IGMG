@@ -11,7 +11,8 @@ import { ladeQuranStand, ladeSure, SUREN_OHNE_QUELLE, type QuranQuelle, type Sur
 /** Anzahl der Suren mit Namen in den Sprachdateien (Bestand: fünf Surennamen). */
 const NAMEN_IM_BESTAND = SUREN_OHNE_QUELLE;
 
-export type SurenEintrag = { nr: number; name: string; arabisch: boolean };
+/** `verseAnzahl` nur mit importierter Quelle; ohne Import bleibt sie null und wird nicht angezeigt. */
+export type SurenEintrag = { nr: number; name: string; arabisch: boolean; verseAnzahl: number | null };
 
 export type SeitenStand = {
   nr: number;
@@ -27,13 +28,20 @@ export type SeitenStand = {
 async function baueListe(): Promise<{ liste: SurenEintrag[]; quelle: QuranQuelle | null }> {
   const t = await getTranslations('quranSeite');
   const stand = await ladeQuranStand();
-  const zeilen: { nr: number; nameAr?: string }[] = stand.quelle
-    ? stand.suren.map((s) => ({ nr: s.nr, nameAr: s.nameAr }))
-    : Array.from({ length: SUREN_OHNE_QUELLE }, (_, i) => ({ nr: i + 1 }));
-  const liste = zeilen.map(({ nr, nameAr }): SurenEintrag =>
-    nr <= NAMEN_IM_BESTAND ? { nr, name: t(`sura.${nr}`), arabisch: false } : { nr, name: nameAr ?? '', arabisch: true },
+  const zeilen: { nr: number; nameAr?: string; verseAnzahl: number | null }[] = stand.quelle
+    ? stand.suren.map((s) => ({ nr: s.nr, nameAr: s.nameAr, verseAnzahl: s.verseAnzahl }))
+    : Array.from({ length: SUREN_OHNE_QUELLE }, (_, i) => ({ nr: i + 1, verseAnzahl: null }));
+  const liste = zeilen.map(({ nr, nameAr, verseAnzahl }): SurenEintrag =>
+    nr <= NAMEN_IM_BESTAND
+      ? { nr, name: t(`sura.${nr}`), arabisch: false, verseAnzahl }
+      : { nr, name: nameAr ?? '', arabisch: true, verseAnzahl },
   );
   return { liste, quelle: stand.quelle };
+}
+
+/** Übersicht /quran: alle Suren (ohne Verstext) und die Quelle für den Stand-Hinweis. */
+export async function ladeUebersicht(): Promise<{ liste: SurenEintrag[]; quelle: QuranQuelle | null }> {
+  return baueListe();
 }
 
 /** Nummern aller Suren für `generateStaticParams`. */

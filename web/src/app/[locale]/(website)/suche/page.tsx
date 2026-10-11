@@ -1,12 +1,15 @@
-import { Search } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { SucheFormular } from '@/components/website/suche/SucheFormular';
+import { SucheLeer } from '@/components/website/suche/SucheLeer';
+import { Trefferliste } from '@/components/website/suche/Trefferliste';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
-import { bereinigeSuche, MARKE_AN, MARKE_AUS, suche, type SuchTreffer } from '@/server/queries/suche';
+import { bereinigeSuche, suche } from '@/server/queries/suche';
 
 // Die Suche rendert je Anfrage und blockierend, ohne Suspense: Gestreamte Treffer setzt React erst per Skript an ihren
 // Platz – ohne JavaScript bliebe der Platzhalter stehen. Das GET-Formular lädt die Seite ohnehin neu; die Treffer selbst
@@ -22,63 +25,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const ZIEL = {
-  nachricht: (slug: string) => ({ pathname: '/nachrichten/[slug]' as const, params: { slug } }),
-  veranstaltung: (slug: string) => ({ pathname: '/veranstaltungen/[slug]' as const, params: { slug } }),
-  wissen: (slug: string) => ({ pathname: '/islamisches-wissen/[thema]' as const, params: { thema: slug } }),
-};
+/** Sekundärer Knopf (wie auf der Startseite): Rand 2 px, Farbe und Druck. Mobil volle Breite, Text mittig. */
+const sekundaer =
+  'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-4 text-center font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 sm:w-auto sm:px-5.5';
 
-/** Ausschnitt mit Trefferwörtern: Marken aus ts_headline → <mark>, sonst reiner Text (kein HTML aus der Datenbank). */
-function Ausschnitt({ text }: { text: string }) {
-  const teile = text.split(new RegExp(`(${MARKE_AN}[^${MARKE_AUS}]*${MARKE_AUS})`));
-  return (
-    <p className="text-tinte-2">
-      {teile.map((t, i) =>
-        t.startsWith(MARKE_AN) ? (
-          <mark key={i} className="rounded-sm bg-warnung-toenung px-0.5 text-tinte">
-            {t.slice(1, -1)}
-          </mark>
-        ) : (
-          t
-        ),
-      )}
-    </p>
-  );
-}
-
-async function SuchFormular({ begriff }: { begriff: string }) {
-  const t = await getTranslations('suche');
-  return (
-    <form method="get" role="search" className="flex flex-col gap-2">
-      <label htmlFor="suche-feld" className="font-bold">
-        {t('feld')}
-      </label>
-      <p id="suche-hinweis" className="text-16 text-tinte-2">
-        {t('hinweis')}
-      </p>
-      <div className="flex flex-wrap gap-3">
-        <input
-          id="suche-feld"
-          type="search"
-          name="q"
-          defaultValue={begriff}
-          minLength={2}
-          maxLength={100}
-          aria-describedby="suche-hinweis"
-          className="min-h-12 min-w-0 flex-1 rounded-md border border-rand bg-weiss px-3.5 text-18"
-        />
-        <button
-          type="submit"
-          className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss hover:bg-gruen-800"
-        >
-          <Search aria-hidden className="size-5" />
-          {t('absenden')}
-        </button>
-      </div>
-    </form>
-  );
-}
-
+/** Formular, dann Treffer je Bereich oder ein Leerzustand (kein Begriff / keine Treffer). */
 async function Ergebnisse({
   searchParams,
   sprache,
@@ -86,30 +37,39 @@ async function Ergebnisse({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
   sprache: Locale;
 }) {
-  const [sp, t] = await Promise.all([searchParams, getTranslations('suche')]);
+  const [sp, t, ts] = await Promise.all([searchParams, getTranslations('suche'), getTranslations('start')]);
   const begriff = bereinigeSuche(Array.isArray(sp.q) ? sp.q[0] : sp.q);
-  const treffer: SuchTreffer[] = begriff.length >= 2 ? await suche(begriff, sprache) : [];
+  const treffer = begriff.length >= 2 ? await suche(begriff, sprache) : [];
   return (
     <>
-      <SuchFormular begriff={begriff} />
-      <section aria-labelledby="suche-ergebnisse" className="flex flex-col gap-4">
-        <h2 id="suche-ergebnisse" className="text-24" aria-live="polite">
-          {begriff.length < 2 ? t('leer') : treffer.length ? t('ergebnisse', { anzahl: treffer.length, begriff }) : t('keine', { begriff })}
-        </h2>
-        {treffer.length ? (
-          <ol className="flex flex-col gap-4">
-            {treffer.map((z) => (
-              <li key={`${z.art}-${z.slug}`} className="flex flex-col gap-1 rounded-lg border border-linie bg-weiss p-5">
-                <span className="text-16 font-bold text-gruen-700">{t(`art.${z.art}`)}</span>
-                <Link href={ZIEL[z.art](z.slug)} className="text-20 font-bold text-tinte underline underline-offset-4">
-                  {z.titel}
-                </Link>
-                {z.ausschnitt ? <Ausschnitt text={z.ausschnitt} /> : null}
-              </li>
-            ))}
-          </ol>
-        ) : null}
-      </section>
+      <SucheFormular begriff={begriff} />
+      {begriff.length < 2 ? (
+        <SucheLeer text={t('leer')} />
+      ) : treffer.length ? (
+        <section aria-labelledby="suche-ergebnisse" className="flex flex-col gap-10">
+          <h2 id="suche-ergebnisse" aria-live="polite" className="text-display-2 text-balance">
+            {t('ergebnisse', { anzahl: treffer.length, begriff })}
+          </h2>
+          <Trefferliste treffer={treffer} />
+        </section>
+      ) : (
+        <SucheLeer
+          status
+          text={t('keine', { begriff })}
+          kinder={
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
+              <Link href="/veranstaltungen" className={sekundaer}>
+                <span className="text-balance">{ts('alleVeranstaltungen')}</span>
+                <ArrowRight aria-hidden="true" className="size-5 shrink-0" />
+              </Link>
+              <Link href="/nachrichten" className={sekundaer}>
+                <span className="text-balance">{ts('alleNeuigkeiten')}</span>
+                <ArrowRight aria-hidden="true" className="size-5" />
+              </Link>
+            </div>
+          }
+        />
+      )}
     </>
   );
 }
@@ -121,7 +81,7 @@ export default async function SucheSeite({ searchParams }: PageProps<'/[locale]/
   return (
     <Seitenrahmen bereich="keiner" seite="suche" sprachZiel="/suche" pfad={[{ label: t('titel') }]}>
       <PageHeader titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex w-full max-w-(--container-text) flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt-klein md:px-8">
         <Ergebnisse searchParams={searchParams} sprache={sprache} />
       </div>
     </Seitenrahmen>

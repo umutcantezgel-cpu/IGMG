@@ -4,12 +4,20 @@ import { describe, expect, it } from 'vitest';
 import { bildTitel, ohneEmoji, terminZeile, titelSchriftgroesse } from '@/lib/seo/og-bild';
 
 describe('Open-Graph-Bilder: Titel (K-14, K-16)', () => {
-  it('wählt die Schriftgröße nach Länge', () => {
-    expect(titelSchriftgroesse('Ramadan 2025')).toBe(80);
-    expect(titelSchriftgroesse('x'.repeat(36))).toBe(80);
-    expect(titelSchriftgroesse('x'.repeat(37))).toBe(68);
-    expect(titelSchriftgroesse('x'.repeat(100))).toBe(58);
-    expect(titelSchriftgroesse('x'.repeat(101))).toBe(50);
+  it('wählt die Schriftgröße nach Gesamtlänge (höchstens drei Zeilen)', () => {
+    expect(titelSchriftgroesse('Ramadan 2025')).toBe(96);
+    expect(titelSchriftgroesse('Gemeinschaft Wetzlar')).toBe(96); // 20 Zeichen
+    expect(titelSchriftgroesse('Gemeinschaft Wetzlar!')).toBe(64); // 21 Zeichen
+    expect(titelSchriftgroesse('ab '.repeat(20).trim())).toBe(64); // 59
+    expect(titelSchriftgroesse('ab '.repeat(25).trim())).toBe(48); // 74
+    expect(titelSchriftgroesse('ab '.repeat(35).trim())).toBe(40); // 104
+  });
+
+  it('verkleinert nach dem längsten Wort, damit kein Kompositum über den Rand läuft', () => {
+    expect(titelSchriftgroesse('Gemeinschaftsküche')).toBe(96); // 18 Zeichen in einem Wort
+    expect(titelSchriftgroesse('Gemeinschaftsveranstaltung')).toBe(64); // 26
+    expect(titelSchriftgroesse('Gemeinschaftsverantwortungsübernahme')).toBe(48); // 36
+    expect(titelSchriftgroesse('Gemeinschaftsverantwortungsübernahmeveranstaltung')).toBe(40); // 49
   });
 
   it('entfernt Emoji und lässt ©, ® , ™ und türkische Buchstaben stehen', () => {

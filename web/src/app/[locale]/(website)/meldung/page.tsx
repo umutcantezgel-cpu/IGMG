@@ -25,18 +25,15 @@ export default async function MeldungSeite() {
   const [t, tf] = await Promise.all([getTranslations('meldung'), getTranslations('formulare')]);
   return (
     <Seitenrahmen bereich="keiner" seite="meldung" sprachZiel="/meldung" pfad={[{ label: t('titel') }]}>
-      <PageHeader titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex w-full max-w-(--container-text) flex-col gap-4 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
+      <div className="mx-auto flex w-full max-w-(--container-text) flex-col gap-4 px-4 pt-8 pb-abschnitt md:px-8 md:pt-12">
         <section
           id="meldung"
           aria-labelledby="meldung-titel"
-          className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 md:p-8"
+          className="flex flex-col gap-8 rounded-lg border border-linie bg-weiss p-6 md:p-8"
         >
-          <h2
-            id="meldung-titel"
-            className="flex items-center gap-2.5 font-display text-30 leading-ueberschrift font-semibold text-gruen-800"
-          >
-            <MessageSquare aria-hidden className="size-7 shrink-0 text-gruen-700" />
+          <h2 id="meldung-titel" className="flex items-center gap-2.5 text-display-2 text-gruen-800">
+            <MessageSquare aria-hidden="true" className="size-7 shrink-0 text-gruen-700" />
             {t('titelFormular')}
           </h2>
           <FormularInsel aktion={sendeMeldung} ohneSkript={tf('ohneSkript')}>

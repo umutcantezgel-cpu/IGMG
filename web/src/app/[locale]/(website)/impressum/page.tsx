@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
-import { Abschnitt, Angaben, Bausteine, Entwurfshinweis } from '@/components/website/rechtliches/Rechtstext';
+import { Abschnitt, Angaben, Bausteine, Entwurfshinweis, Rechtsgliederung } from '@/components/website/rechtliches/Rechtstext';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -31,8 +31,14 @@ export default async function ImpressumSeite() {
   return (
     <Seitenrahmen bereich="keiner" seite="impressum" sprachZiel="/impressum" pfad={[{ label: tf('impressum') }]}>
       <PageHeader kennung={t('kennung')} titel={tf('impressum')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
-        <Entwurfshinweis titel={t('entwurf')} text={t('entwurfText')} />
+      <Rechtsgliederung
+        titel={t('inhaltsverzeichnis')}
+        punkte={[
+          { id: 'verantwortlich', titel: t('verantwortlich') },
+          { id: 'weitere', titel: t('weitere') },
+        ]}
+        entwurf={<Entwurfshinweis titel={t('entwurf')} text={t('entwurfText')} />}
+      >
         <Abschnitt id="verantwortlich" titel={t('verantwortlich')}>
           <Angaben
             sprache={sprache}
@@ -50,7 +56,7 @@ export default async function ImpressumSeite() {
         <Abschnitt id="weitere" titel={t('weitere')}>
           <Bausteine bloecke={inhalt.weitere} sprache={sprache} nurDeutsch={nurDeutsch} />
         </Abschnitt>
-      </div>
+      </Rechtsgliederung>
     </Seitenrahmen>
   );
 }

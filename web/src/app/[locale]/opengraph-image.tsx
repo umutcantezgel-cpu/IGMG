@@ -1,9 +1,9 @@
 import { ImageResponse } from 'next/og';
-import { OG_GROESSE, ladeOgSymbol, ogGestaltung, ogTexte, spracheAus } from '@/lib/seo/og-bild';
+import { OG_GROESSE, ladeOgSymbol, ogGestaltung, ogOptionen, ogTexte, spracheAus } from '@/lib/seo/og-bild';
 
 /**
- * Standard-Open-Graph-Bild je Sprache (K-16, D-O4): Monogramm, Schriftzug „IGMG Wetzlar“ und Untertitel der Startseite.
- * Es gilt für alle Seiten ohne eigenes Bild. Texte aus den Sprachdateien; keine Laufzeitdaten.
+ * Standard-Open-Graph-Bild je Sprache (K-16, D-O4): Monogramm, der Name „IGMG Wetzlar“ groß als Titel und der
+ * Untertitel der Startseite darunter. Es gilt für alle Seiten ohne eigenes Bild. Texte aus den Sprachdateien; keine Laufzeitdaten.
  */
 type Werte = { locale?: string };
 type Parameter = Promise<Werte>;
@@ -16,7 +16,14 @@ export async function generateImageMetadata({ params }: { params?: Parameter }) 
 
 export default async function StandardBild({ params }: { params: Parameter }) {
   const texte = ogTexte(spracheAus((await params).locale));
-  return new ImageResponse(ogGestaltung({ wortmarke: texte.wortmarke, symbol: await ladeOgSymbol(), titel: texte.untertitel }), {
-    ...OG_GROESSE,
-  });
+  return new ImageResponse(
+    ogGestaltung({
+      wortmarke: texte.wortmarke,
+      symbol: await ladeOgSymbol(),
+      titel: texte.wortmarke,
+      zeile: texte.untertitel,
+      ohneWortmarke: true,
+    }),
+    await ogOptionen(),
+  );
 }

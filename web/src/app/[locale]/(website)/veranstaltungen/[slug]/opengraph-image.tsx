@@ -1,11 +1,22 @@
 import { ImageResponse } from 'next/og';
 import { text, type Sprache } from '@/lib/i18n/inhalt';
-import { OG_GROESSE, fuelle, ladeOgSymbol, ogGestaltung, ogTexte, spracheAus, terminZeile } from '@/lib/seo/og-bild';
+import {
+  OG_GROESSE,
+  fuelle,
+  kennungMitDatum,
+  ladeOgSymbol,
+  ogGestaltung,
+  ogOptionen,
+  ogTexte,
+  spracheAus,
+  terminUhrzeit,
+  terminZeile,
+} from '@/lib/seo/og-bild';
 import { ladeVeranstaltung, ladeVeranstaltungsSlugs } from '@/server/queries/veranstaltungen';
 
 /**
- * Open-Graph-Bild einer Veranstaltung (K-16, D-O4): Name und Termin auf der Standardgestaltung.
- * Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs bekommen das Standardbild.
+ * Open-Graph-Bild einer Veranstaltung (K-16, D-O4): Bereich und Datum als Kennung, Name in der Displayschrift,
+ * Uhrzeit darunter. Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs bekommen das Standardbild.
  */
 export async function generateStaticParams() {
   const slugs = await ladeVeranstaltungsSlugs();
@@ -42,16 +53,27 @@ export default async function TerminBild({ params }: { params: Parameter }) {
   const veranstaltung = slug ? await ladeVeranstaltung(slug) : null;
   const symbol = await ladeOgSymbol();
   if (!veranstaltung) {
-    return new ImageResponse(ogGestaltung({ wortmarke: texte.wortmarke, symbol, titel: texte.untertitel }), { ...OG_GROESSE });
+    return new ImageResponse(
+      ogGestaltung({
+        wortmarke: texte.wortmarke,
+        symbol,
+        titel: texte.wortmarke,
+        zeile: texte.untertitel,
+        ohneWortmarke: true,
+      }),
+      await ogOptionen(),
+    );
   }
+  const beginn = new Date(veranstaltung.beginn);
+  const ende = veranstaltung.ende ? new Date(veranstaltung.ende) : null;
   return new ImageResponse(
     ogGestaltung({
       wortmarke: texte.wortmarke,
       symbol,
-      art: texte.art.veranstaltung,
+      kennung: kennungMitDatum(texte.art.veranstaltung, beginn, sprache),
       titel: text(veranstaltung.titel, sprache),
-      zeile: zeileFuer(veranstaltung.beginn, veranstaltung.ende, sprache),
+      zeile: terminUhrzeit(beginn, ende, sprache),
     }),
-    { ...OG_GROESSE },
+    await ogOptionen(),
   );
 }

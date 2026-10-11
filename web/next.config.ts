@@ -28,6 +28,19 @@ const nextConfig: NextConfig = {
   // PGlite (Bau-Datenbank, ADR 0017) nicht bündeln: Gebündelt sucht es pglite.data unter dem Turbopack-Platzhalter
   // /ROOT/node_modules/… statt im echten node_modules, und der Bau mit BAU_PGLITE=1 bricht beim Vorrendern ab.
   serverExternalPackages: ['@electric-sql/pglite'],
+  // OG-Bilder (lib/seo/og-bild.tsx) lesen Monogramm und WOFF-Schriften zur Laufzeit von der Platte: in den Funktionsbau
+  // (standalone, Vercel) mitnehmen, auch für erst zur Laufzeit erzeugte Bilder (K-05). Ohne Schriften nimmt next/og
+  // seine eingebaute Schrift, ohne Monogramm schlüge das Bild fehl.
+  outputFileTracingIncludes: Object.fromEntries(
+    ['/**/opengraph-image*', '/**/opengraph-image*/**'].map((route) => [
+      route,
+      [
+        'public/symbole/symbol-512.png',
+        'node_modules/@fontsource/source-serif-4/files/source-serif-4-latin{,-ext}-600-normal.woff',
+        'node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin{,-ext}-{400,700}-normal.woff',
+      ],
+    ]),
+  ),
   experimental: {
     agentFeedback: false,
     // Medien bis 10 MB (ADR 0007) plus Formular-Overhead. Standard wäre 1 MB für Actions und 10 MB gepufferter Body im

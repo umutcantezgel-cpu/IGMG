@@ -1,11 +1,11 @@
 import { ImageResponse } from 'next/og';
 import { text } from '@/lib/i18n/inhalt';
-import { OG_GROESSE, fuelle, ladeOgSymbol, ogGestaltung, ogTexte, spracheAus } from '@/lib/seo/og-bild';
+import { OG_GROESSE, fuelle, kennungMitDatum, ladeOgSymbol, ogGestaltung, ogOptionen, ogTexte, spracheAus } from '@/lib/seo/og-bild';
 import { ladeNachricht, ladeNachrichtenSlugs } from '@/server/queries/nachrichten';
 
 /**
- * Open-Graph-Bild eines Beitrags (K-16, D-O4): der Titel auf der Standardgestaltung.
- * Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs bekommen das Standardbild.
+ * Open-Graph-Bild eines Beitrags (K-16, D-O4): Bereich und Veröffentlichungsdatum als Kennung, der Titel in der
+ * Displayschrift. Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs bekommen das Standardbild.
  */
 export async function generateStaticParams() {
   const slugs = await ladeNachrichtenSlugs();
@@ -32,10 +32,24 @@ export default async function BeitragBild({ params }: { params: Parameter }) {
   const beitrag = slug ? await ladeNachricht(slug) : null;
   const symbol = await ladeOgSymbol();
   if (!beitrag) {
-    return new ImageResponse(ogGestaltung({ wortmarke: texte.wortmarke, symbol, titel: texte.untertitel }), { ...OG_GROESSE });
+    return new ImageResponse(
+      ogGestaltung({
+        wortmarke: texte.wortmarke,
+        symbol,
+        titel: texte.wortmarke,
+        zeile: texte.untertitel,
+        ohneWortmarke: true,
+      }),
+      await ogOptionen(),
+    );
   }
   return new ImageResponse(
-    ogGestaltung({ wortmarke: texte.wortmarke, symbol, art: texte.art.nachricht, titel: text(beitrag.titel, sprache) }),
-    { ...OG_GROESSE },
+    ogGestaltung({
+      wortmarke: texte.wortmarke,
+      symbol,
+      kennung: kennungMitDatum(texte.art.nachricht, new Date(beitrag.veroeffentlichtAm), sprache),
+      titel: text(beitrag.titel, sprache),
+    }),
+    await ogOptionen(),
   );
 }

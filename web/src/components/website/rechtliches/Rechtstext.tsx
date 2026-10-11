@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { type Sprache, waehle } from '@/lib/i18n/inhalt';
 import type { Baustein } from '@/lib/validierung/seiteninhalte/impressum';
+import { Inhaltsverzeichnis, type InhaltsPunkt } from './Inhaltsverzeichnis';
 
 /**
  * Bausteine der Rechtstexte (Entwurf nach G-08): Absätze, Listen und Angaben zur verantwortlichen Stelle.
@@ -41,6 +42,33 @@ export function Entwurfshinweis({ titel, text }: { titel: string; text: string }
   );
 }
 
+/**
+ * Gliederung einer Rechtsseite: Entwurfshinweis oben, danach Inhaltsverzeichnis und Abschnitte. Mobil untereinander
+ * (Verzeichnis oben). Ab lg ein einziges Raster: Hinweis und Textspalte teilen dieselbe Spalte (gleiche Kanten), das
+ * Verzeichnis steht als Seitenleiste links daneben (Textbreite ≤ max-w-seitenkopf).
+ */
+export function Rechtsgliederung({
+  punkte,
+  titel,
+  entwurf,
+  children,
+}: {
+  punkte: InhaltsPunkt[];
+  titel?: string;
+  entwurf: ReactNode;
+  children: ReactNode;
+}) {
+  return (
+    <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="grid gap-8 lg:grid-cols-4 lg:items-start">
+        <div className="max-w-seitenkopf lg:col-span-3 lg:col-start-2">{entwurf}</div>
+        <Inhaltsverzeichnis punkte={punkte} titel={titel} className="lg:sticky lg:top-8 lg:col-start-1 lg:row-span-2 lg:row-start-1" />
+        <div className="flex max-w-seitenkopf min-w-0 flex-col gap-6 lg:col-span-3 lg:col-start-2">{children}</div>
+      </div>
+    </div>
+  );
+}
+
 /** Abschnitt als Karte mit Überschrift (Design Rechtliches.dc.html: section mit h2, Rahmen, Radius 12 px). */
 export function Abschnitt({ id, titel, children }: { id: string; titel: string; children: ReactNode }) {
   return (
@@ -49,7 +77,7 @@ export function Abschnitt({ id, titel, children }: { id: string; titel: string; 
       aria-labelledby={`${id}-titel`}
       className="flex scroll-mt-24 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8"
     >
-      <h2 id={`${id}-titel`} className="text-30">
+      <h2 id={`${id}-titel`} className="text-display-2 text-balance">
         {titel}
       </h2>
       {children}
@@ -73,12 +101,9 @@ export function Angaben({
       {deutsch ? <NurDeutsch text={nurDeutsch} /> : null}
       <dl className="flex flex-col">
         {eintraege.map((e) => (
-          <div
-            key={e.label}
-            className="grid gap-1 border-t border-linie py-3 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-4"
-          >
-            <dt className="font-bold text-tinte-2">{e.label}</dt>
-            <dd lang={deutsch ? 'de' : undefined} className="[overflow-wrap:anywhere]">
+          <div key={e.label} className="grid gap-1 border-t border-linie py-3 first:border-t-0 first:pt-0 lg:grid-cols-3 lg:gap-4">
+            <dt className="font-bold text-tinte-2 lg:col-span-1">{e.label}</dt>
+            <dd lang={deutsch ? 'de' : undefined} className="wrap-anywhere lg:col-span-2">
               <MitPlatzhaltern text={e.wert} />
             </dd>
           </div>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
-import { Abschnitt, Angaben, Bausteine, Entwurfshinweis } from '@/components/website/rechtliches/Rechtstext';
+import { Abschnitt, Angaben, Bausteine, Entwurfshinweis, Rechtsgliederung } from '@/components/website/rechtliches/Rechtstext';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -33,8 +33,20 @@ export default async function DatenschutzSeite() {
   return (
     <Seitenrahmen bereich="keiner" seite="datenschutz" sprachZiel="/datenschutz" pfad={[{ label: tf('datenschutz') }]}>
       <PageHeader kennung={t('kennung')} titel={tf('datenschutz')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
-        <Entwurfshinweis titel={t('entwurf')} text={t('entwurfText')} />
+      <Rechtsgliederung
+        titel={t('inhaltsverzeichnis')}
+        punkte={[
+          { id: 'verantwortlich', titel: t('verantwortlich') },
+          { id: 'daten', titel: t('daten') },
+          { id: 'zweck', titel: t('zweck') },
+          { id: 'speicherung', titel: t('speicherung') },
+          { id: 'sicherheit', titel: t('sicherheit') },
+          { id: 'empfaenger', titel: t('empfaenger') },
+          { id: 'browser', titel: t('browser') },
+          { id: 'rechte', titel: t('rechte') },
+        ]}
+        entwurf={<Entwurfshinweis titel={t('entwurf')} text={t('entwurfText')} />}
+      >
         <Abschnitt id="verantwortlich" titel={t('verantwortlich')}>
           <Angaben
             sprache={sprache}
@@ -69,7 +81,7 @@ export default async function DatenschutzSeite() {
         <Abschnitt id="rechte" titel={t('rechte')}>
           <Bausteine bloecke={inhalt.rechte} sprache={sprache} nurDeutsch={nurDeutsch} />
         </Abschnitt>
-      </div>
+      </Rechtsgliederung>
     </Seitenrahmen>
   );
 }
