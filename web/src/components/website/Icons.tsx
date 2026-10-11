@@ -35,6 +35,18 @@ export function Stern8(props: IconProps) {
   );
 }
 
+/**
+ * Achtstern als Fläche (Kern K-008): dieselbe Geometrie wie `Stern8` (Quadrat 6–18 und dasselbe Quadrat um 45° gedreht),
+ * als Umriss der Vereinigung. Für Marken, die auch klein als Stern lesbar sein müssen (Tagesbogen: nächstes Gebet).
+ */
+export function Achtstern({ size = 20, ...rest }: IconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden {...rest}>
+      <path d="M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z" />
+    </svg>
+  );
+}
+
 export function Facebook(props: IconProps) {
   return (
     <Basis {...props}>

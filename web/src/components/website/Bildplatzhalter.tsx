@@ -7,11 +7,13 @@ export function Bildplatzhalter({ beschriftung, className, kurz }: { beschriftun
       role="img"
       aria-label={beschriftung}
       className={cn(
-        'flex items-center justify-center bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)] px-4 text-center font-mono text-[15px] text-tinte-2',
+        'streifen-platzhalter flex items-center justify-center px-4 text-center text-16 text-tinte-2',
         className,
       )}
     >
-      <span aria-hidden>{kurz ?? beschriftung}</span>
+      <span aria-hidden className="rounded-pill bg-weiss/85 px-3 py-0.5 shadow-s1">
+        {kurz ?? beschriftung}
+      </span>
     </div>
   );
 }

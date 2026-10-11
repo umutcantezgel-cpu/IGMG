@@ -95,11 +95,45 @@
   --container-inhalt: 84rem; /* 1344 px außen = 1280 px Inhalt + 2 × 32 px Rand (Artboards) */
   --container-text: 68ch;
   --breakpoint-md: 48rem; /* 768 px Telefon/Tablet */
+  --breakpoint-verwaltung: 56.25rem; /* 900 px Verwaltung: Seitenleiste statt Kopfmenü (statt min-[900px]) */
   --breakpoint-menu: 77.5rem; /* 1240 px Menü-Button darunter (Laufbuch D-04) */
-  /* Bewegung */
+
+  /* Fluide Anzeigestufen (Kern K-005): wachsen zwischen 390 und 1440 px stufenlos, Grenzen liegen auf der Skala */
+  --text-display-1: clamp(2.25rem, 1.786rem + 1.905vw, 3.5rem); /* 36 → 56 px: Seitentitel der Erzählansichten */
+  --text-display-1--line-height: 1.1;
+  --text-display-2: clamp(1.875rem, 1.643rem + 0.952vw, 2.5rem); /* 30 → 40 px: Abschnittstitel */
+  --text-display-2--line-height: 1.2;
+  /* Zeilenhöhe für Einleitungen in 20 px (statt leading-[1.55]) */
+  --leading-einleitung: 1.55;
+  /* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */
+  --spacing-abschnitt: clamp(3rem, 2.071rem + 3.81vw, 5.5rem);
+  --spacing-abschnitt-klein: clamp(2.5rem, 1.757rem + 3.048vw, 4.5rem);
+  /* Lesebreite für Einleitungen (statt max-w-[760px]) */
+  --container-einleitung: 47.5rem;
+
+  /* Bewegung (Kern K-007): drei Kurven. Dauern und Ebenen stehen in :root (Tailwind kennt dafür keinen Namensraum). */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* Zustandswechsel an Ort und Stelle */
+  --ease-eintritt: cubic-bezier(0.05, 0.7, 0.1, 1); /* Erscheinen: schnell da, weich zur Ruhe */
+  --ease-austritt: cubic-bezier(0.3, 0, 0.8, 0.15); /* Verschwinden: ruhig los, zügig weg */
   --default-transition-duration: 150ms;
-  --default-transition-timing-function: ease;
+  --default-transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
+
+/* Raster (Kern K-005, statt grid-cols-[repeat(…)]): Karten ab 340 px, Kacheln ab 260 px, je so viele Spalten wie passen */
+@utility raster-karten {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21.25rem), 1fr));
+}
+@utility raster-kacheln {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.25rem), 1fr));
+}
+
+/* Beschriftete Streifen-Fläche statt Foto (M-018) */
+@utility streifen-platzhalter {
+  background: repeating-linear-gradient(135deg, var(--color-sand) 0 10px, var(--color-papier) 10px 20px);
+}
+
+/* Nur das helle Thema existiert (Kern K-005, MENSCHEN ML-02): dark:-Klassen aus shadcn/ui greifen erst mit .dunkel */
+@custom-variant dark (&:where(.dunkel, .dunkel *));
 
 /* Semantische Aliase (design/tokens/colors.css) und shadcn/ui-Variablen auf Tokens abgebildet */
 :root {
@@ -122,6 +156,19 @@
   --input: var(--color-rand);
   --ring: var(--color-gruen-950);
   --radius: var(--radius-md);
+
+  /* Bewegung (Kern K-007, Register B-01 … B-12): vier Dauern, als duration-(--dauer-wechsel) usw. */
+  --dauer-rueckmeldung: 150ms; /* Hover, Druck, Häkchen */
+  --dauer-wechsel: 320ms; /* Öffnen, Tabs, Inhaltswechsel, Seitenwechsel */
+  --dauer-auftritt: 640ms; /* Abschnitte erscheinen */
+  --dauer-moment: 1200ms; /* die großen Momente (Tagesbogen, Weg, Meilensteine, Familie) */
+  --staffel: 60ms; /* Versatz je Element bei gestaffeltem Auftritt */
+  /* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */
+  --ebene-kopf: 40;
+  --ebene-overlay: 50;
+  --ebene-dialog: 60;
+  --ebene-toast: 70;
+  --ebene-sprung: 100;
 }
 
 @theme inline {
@@ -193,7 +240,110 @@
   }
 }
 
+/*
+ * Bewegungssystem (Kern K-007). Nur transform/translate/scale, opacity und stroke-dashoffset; der Ausgangszustand
+ * ohne JavaScript ist immer der sichtbare Endzustand. Jede Animation steht im Register (B-01 … B-12).
+ */
+@keyframes einblenden {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes ausblenden {
+  to {
+    opacity: 0;
+  }
+}
+/* B-03/B-11: erscheinen mit 8 px Weg nach oben */
+@keyframes auftritt {
+  from {
+    opacity: 0;
+    translate: 0 0.5rem;
+  }
+}
+/* B-06/B-07/B-08/B-12: Linie zeichnet sich (pathLength="1", stroke-dasharray 1) */
+@keyframes zeichnen {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* B-06: Linie enthüllt sich von links bis „jetzt“ (Schnittmaske wächst; waagerecht verläuft die Zeit linear) */
+@keyframes enthuellen {
+  from {
+    scale: 0 1;
+  }
+}
+/* B-06: Marke tritt hervor */
+@keyframes hervortreten {
+  from {
+    opacity: 0;
+    scale: 0.4;
+  }
+}
+
+/* B-05 Seitenwechsel (<ViewTransition> im Seitenrahmen): Kopf steht, Inhalt blendet über, alter Inhalt geht zuerst */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+::view-transition-group(kopf) {
+  animation: none;
+}
+::view-transition-old(.seite) {
+  animation: var(--dauer-rueckmeldung) var(--ease-austritt) both ausblenden;
+}
+::view-transition-new(.seite) {
+  animation:
+    var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden,
+    var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both auftritt;
+}
+/* B-05 gemeinsame Elemente (Karte → Detail): Morph 400 ms */
+::view-transition-group(.morph) {
+  animation-duration: 400ms;
+  animation-timing-function: var(--ease-standard);
+}
+
+@layer components {
+  /* B-06/B-07/B-08: zu zeichnende Linie; Dauer und Verzögerung über --dauer/--verzoegerung am Element */
+  .linie-zeichnet {
+    stroke-dasharray: 1;
+    animation: zeichnen var(--dauer, var(--dauer-moment)) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
+  }
+  /* B-06: Schnittmaske des Tagesbogens */
+  .bogen-enthuellt {
+    transform-box: fill-box;
+    transform-origin: left center;
+    animation: enthuellen var(--dauer-moment) var(--ease-eintritt) both;
+  }
+  /* B-06: Marke nach der Linie (Verzögerung über --verzoegerung) */
+  .marke-tritt-hervor {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
+  }
+  /* B-03/B-11: Auftritt mit 8 px Weg */
+  .tritt-auf {
+    animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
+  }
+  /* B-04/B-10: Überblendung */
+  .blendet-ein {
+    animation: einblenden var(--dauer, 400ms) var(--ease-standard) var(--verzoegerung, 0ms) both;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  /* Reduzierte Bewegung: Linien und Marken stehen sofort im Endzustand, Auftritte werden zur Überblendung */
+  .linie-zeichnet,
+  .bogen-enthuellt,
+  .marke-tritt-hervor {
+    animation: none;
+  }
+  .tritt-auf {
+    animation-name: einblenden;
+  }
   *,
   *::before,
   *::after {
