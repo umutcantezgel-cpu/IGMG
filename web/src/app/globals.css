@@ -246,6 +246,13 @@
     outline: 2px solid var(--color-gruen-950);
     outline-offset: 2px;
   }
+  /* B-03 Öffnen: modale Dialoge treten mit 8 px Weg auf, der Hintergrund blendet ein */
+  dialog[open] {
+    animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) both;
+  }
+  dialog[open]::backdrop {
+    animation: einblenden var(--dauer-wechsel) var(--ease-standard) both;
+  }
   [lang='ar'],
   [dir='rtl'] {
     font-family: var(--font-arabic);

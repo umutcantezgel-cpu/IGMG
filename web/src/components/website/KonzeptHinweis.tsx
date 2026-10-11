@@ -57,8 +57,10 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
   );
   return (
     <>
+      {/* Das Skript SOFORT öffnet den Dialog vor der Hydrierung (Attribut `open`) – der Unterschied ist gewollt */}
       <dialog
         id="konzepthinweis"
+        suppressHydrationWarning
         ref={dialog}
         role="alertdialog"
         aria-labelledby="hinweis-titel"

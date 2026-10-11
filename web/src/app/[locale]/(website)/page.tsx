@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/website/JsonLd';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Tagesbogen } from '@/components/website/start/Tagesbogen';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { moschee } from '@/lib/seo/jsonld';
@@ -97,7 +98,10 @@ export default async function Startseite() {
               ))}
             </ul>
           ) : (
-            <p className="text-20 text-tinte-2">{t('keineVeranstaltungen')}</p>
+            <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+              <Zustandsgrafik art="leer" />
+              <p className="max-w-text text-20 text-tinte-2">{t('keineVeranstaltungen')}</p>
+            </div>
           )}
         </div>
       </section>
