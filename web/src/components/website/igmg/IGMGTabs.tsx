@@ -1,6 +1,6 @@
 'use client';
 
-import { type KeyboardEvent, type ReactNode, useId, useRef, useState } from 'react';
+import { type CSSProperties, type KeyboardEvent, type ReactNode, useId, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 
 /** Reiter mit fertig gerendertem Inhalt (serverseitig, damit alle Felder schon im HTML stehen). */
@@ -11,11 +11,20 @@ export type Reiter = { schluessel: string; label: string; inhalt: ReactNode };
  * tab und tabpanel, aria-selected und aria-controls; Pfeiltasten sowie Pos1 und Ende verschieben den Fokus und
  * wählen den Reiter aus (automatische Aktivierung). Inaktive Felder tragen nur das hidden-Attribut.
  * Keine URL-Änderung (Blatt INTERAKTIONEN 1). Die Client-Insel bekommt nur Texte und Inhalte als Props (K-12).
+ * Darstellung wie die Tab-Leiste der Gebetszeiten; der neue Inhalt blendet nach einem Wechsel ein (B-04).
  */
 export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[]; standard: string; beschriftung: string }) {
   const [aktiv, setAktiv] = useState(standard);
+  /** Der neue Inhalt blendet erst nach einem Wechsel ein (B-04); beim ersten Laden steht er sofort da. */
+  const [gewechselt, setGewechselt] = useState(false);
   const id = useId();
   const knoepfe = useRef<(HTMLButtonElement | null)[]>([]);
+
+  function zeige(ziel: string) {
+    if (ziel === aktiv) return;
+    setGewechselt(true);
+    setAktiv(ziel);
+  }
 
   function tastenDruck(e: KeyboardEvent<HTMLButtonElement>, index: number) {
     const letzte = reiter.length - 1;
@@ -39,7 +48,7 @@ export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[];
     e.preventDefault();
     const neu = reiter[ziel];
     if (!neu) return;
-    setAktiv(neu.schluessel);
+    zeige(neu.schluessel);
     knoepfe.current[ziel]?.focus();
   }
 
@@ -64,15 +73,15 @@ export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[];
               aria-selected={ist}
               aria-controls={`${id}-feld-${r.schluessel}`}
               tabIndex={ist ? 0 : -1}
-              onClick={() => setAktiv(r.schluessel)}
+              onClick={() => zeige(r.schluessel)}
               onKeyDown={(e) => tastenDruck(e, i)}
               className={klassen(
-                'relative inline-flex min-h-12 items-center rounded-md px-[18px] text-18 font-bold transition-colors duration-150 motion-reduce:transition-none',
+                'relative inline-flex min-h-12 cursor-pointer items-center rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
                 ist ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
               )}
             >
               {r.label}
-              {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-[3px] rounded-[2px] bg-gruen-700" /> : null}
+              {ist ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-0.75 rounded-sm bg-gruen-700" /> : null}
             </button>
           );
         })}
@@ -84,6 +93,8 @@ export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[];
           role="tabpanel"
           aria-labelledby={`${id}-reiter-${r.schluessel}`}
           hidden={r.schluessel !== aktiv}
+          className={r.schluessel === aktiv && gewechselt ? 'blendet-ein' : undefined}
+          style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
         >
           {r.inhalt}
         </div>

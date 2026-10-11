@@ -29,7 +29,7 @@ export default async function IGMGSeite() {
   return (
     <Seitenrahmen bereich="moschee" seite="igmg" sprachZiel="/igmg" pfad={[{ label: tp('igmg') }]}>
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 py-abschnitt-klein md:px-8">
         <IGMGTabs
           beschriftung={t('themen')}
           standard="ueberblick"

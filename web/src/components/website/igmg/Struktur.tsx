@@ -19,31 +19,31 @@ export async function Struktur({ inhalt, sprache }: { inhalt: IgmgInhalt; sprach
   return (
     <div className="flex flex-col gap-6">
       <section aria-labelledby="igmg-zentralverband" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10">
-        <h2 id="igmg-zentralverband" className="text-30">
+        <h2 id="igmg-zentralverband" className="text-display-2">
           {t('strukturTitel')}
         </h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] gap-6">
-          <div className="flex flex-col gap-2">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="flex min-w-0 flex-col gap-2">
             <h3 className="text-20 font-bold">{t('praesidium')}</h3>
             <Text feld={inhalt.struktur.praesidium} sprache={sprache} als="p" />
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex min-w-0 flex-col gap-2">
             <h3 className="text-20 font-bold">{t('ausschuss')}</h3>
             <Text feld={inhalt.struktur.ausschuss} sprache={sprache} als="p" />
           </div>
         </div>
       </section>
       <section aria-labelledby="igmg-orgstruktur" className="flex flex-col gap-4">
-        <h2 id="igmg-orgstruktur" className="text-30">
+        <h2 id="igmg-orgstruktur" className="text-display-2">
           {t('organisationsstrukturTitel')}
         </h2>
-        <ol className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4">
+        <ol className="grid raster-kacheln gap-4">
           {stufen.map(({ Icon, titel, text }) => (
             <li key={titel} className="flex items-start gap-3.5 rounded-lg border border-linie bg-weiss p-5">
               <span className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-gruen-50 text-gruen-800">
                 <Icon aria-hidden className="size-6" />
               </span>
-              <div className="flex flex-col gap-1">
+              <div className="flex min-w-0 flex-col gap-1">
                 <h3 className="text-20 font-bold">{titel}</h3>
                 <p className="text-16 text-tinte-2">{text}</p>
               </div>
@@ -52,10 +52,10 @@ export async function Struktur({ inhalt, sprache }: { inhalt: IgmgInhalt; sprach
         </ol>
       </section>
       <section aria-labelledby="igmg-organisationen" className="flex flex-col gap-4">
-        <h2 id="igmg-organisationen" className="text-30">
+        <h2 id="igmg-organisationen" className="text-display-2">
           {t('organisationenTitel')}
         </h2>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-4">
+        <div className="grid raster-kacheln gap-4">
           <OrgCard org="at" />
           <OrgCard org="kt" />
           <OrgCard org="gt" />

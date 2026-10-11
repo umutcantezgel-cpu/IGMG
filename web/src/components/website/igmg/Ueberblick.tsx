@@ -13,28 +13,25 @@ export async function Ueberblick({ inhalt, sprache }: { inhalt: IgmgInhalt; spra
     { label: t('menschenErreicht'), wert: inhalt.zahlen.menschenErreicht },
   ];
   return (
-    <div className="flex flex-wrap items-start gap-6">
+    <div className="grid gap-6 lg:grid-cols-3">
       <section
         aria-labelledby="igmg-ueberblick"
-        className="flex min-w-0 flex-[2_1_520px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10"
+        className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10 lg:col-span-2"
       >
-        <h2 id="igmg-ueberblick" className="flex items-center gap-2.5 text-30">
+        <h2 id="igmg-ueberblick" className="flex items-center gap-2.5 text-display-2">
           <User aria-hidden className="size-7 shrink-0 text-gruen-700" />
           {t('ueberblickTitel')}
         </h2>
-        <Text feld={inhalt.ueberblick.text} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" />
+        <Text feld={inhalt.ueberblick.text} sprache={sprache} als="p" className="max-w-einleitung text-20 leading-einleitung text-pretty" />
         <Text
           feld={inhalt.ueberblick.auftrag}
           sprache={sprache}
           als="p"
-          className="max-w-(--container-text) rounded-md bg-gruen-50 px-5 py-4 text-pretty"
+          className="max-w-text rounded-md bg-gruen-50 px-5 py-4 text-pretty"
         />
       </section>
-      <section
-        aria-labelledby="igmg-zahlen"
-        className="flex min-w-0 flex-[1_1_300px] flex-col gap-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8"
-      >
-        <h2 id="igmg-zahlen" className="text-30">
+      <section aria-labelledby="igmg-zahlen" className="flex min-w-0 flex-col gap-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8">
+        <h2 id="igmg-zahlen" className="text-display-2">
           {t('zahlenTitel')}
         </h2>
         <dl className="flex flex-col gap-3">

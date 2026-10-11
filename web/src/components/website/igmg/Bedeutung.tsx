@@ -9,11 +9,11 @@ export async function Bedeutung({ inhalt, sprache }: { inhalt: IgmgInhalt; sprac
   const t = await getTranslations('igmg');
   return (
     <section aria-labelledby="igmg-bedeutung" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10">
-      <h2 id="igmg-bedeutung" className="flex items-center gap-2.5 text-30">
+      <h2 id="igmg-bedeutung" className="flex items-center gap-2.5 text-display-2">
         <Compass aria-hidden className="size-7 shrink-0 text-gruen-700" />
         {t('bedeutungTitel')}
       </h2>
-      <div className="flex max-w-(--container-text) flex-col gap-4 text-pretty">
+      <div className="flex max-w-text flex-col gap-4 text-pretty">
         {inhalt.bedeutung.absaetze.map((absatz, i) => (
           <Text key={i} feld={absatz} sprache={sprache} als="p" />
         ))}
