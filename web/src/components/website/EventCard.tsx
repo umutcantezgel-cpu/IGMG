@@ -41,6 +41,15 @@ export async function terminDatum(v: VeranstaltungsDaten, sprache: Sprache): Pro
 }
 
 /**
+ * Uhrzeit-Zeile (Befund H-FIX3): Ganztägige Termine zeigen den Hinweis statt „00:00 Uhr“. Fehlt der Hinweistext
+ * (Schlüssel `karten.ganztaegig`), entfällt die Zeile, statt eine falsche Uhrzeit zu zeigen. Zeitlogik unverändert.
+ */
+export function uhrzeitText(v: VeranstaltungsDaten, sprache: Sprache, ganztaegigText: string | null): string | null {
+  if (v.ganztaegig) return ganztaegigText;
+  return zeitspanne(new Date(v.beginn), v.ende ? new Date(v.ende) : null, sprache);
+}
+
+/**
  * EventCard (design/EventCard.dc.html): Variante „start“ (Akzentband, „Mehr erfahren“, ganze Karte klickbar)
  * und „liste“ (Bildfläche, „Details ansehen“ + „Anmelden“). Ganze Karte als Link über ::after (wie Design).
  */
@@ -61,10 +70,11 @@ export async function EventCard({
   const titel = textMitSprache(v.titel, sprache);
   const ziel = { pathname: '/veranstaltungen/[slug]' as const, params: { slug: v.slug } };
   const datum = await terminDatum(v, sprache);
-  const zeit = zeitspanne(new Date(v.beginn), v.ende ? new Date(v.ende) : null, sprache);
+  // Hinweis „ganztägig“, sobald der Schlüssel in den Sprachdateien steht (Bedarf: karten.ganztaegig)
+  const zeit = uhrzeitText(v, sprache, t.has('ganztaegig') ? t('ganztaegig') : null);
   const zeile = (Icon: typeof Calendar, label: string, inhalt: React.ReactNode, fett = false) => (
     <div className="flex items-start gap-3">
-      <dt className="flex pt-[3px] text-gruen-700">
+      <dt className="flex pt-0.75 text-gruen-700">
         <Icon aria-hidden className="size-5" />
         <span className="sr-only">{label}</span>
       </dt>
@@ -115,7 +125,7 @@ export async function EventCard({
         <Text feld={v.kurztext} sprache={sprache} als="p" className="text-pretty text-tinte-2" />
         <dl className="mt-auto flex flex-col gap-2 border-t border-linie pt-4">
           {zeile(Calendar, t('datum'), datum, true)}
-          {zeile(Clock, t('uhrzeit'), zeit)}
+          {zeit ? zeile(Clock, t('uhrzeit'), zeit) : null}
           {v.ort ? zeile(MapPin, t('ort'), <Text feld={v.ort} sprache={sprache} />) : null}
           {v.zielgruppe || v.teilnehmerHinweis
             ? zeile(Users, t('zielgruppe'), <Text feld={v.zielgruppe ?? v.teilnehmerHinweis} sprache={sprache} />)
@@ -126,7 +136,7 @@ export async function EventCard({
             <Link
               href={ziel}
               aria-label={`${t('details')}: ${titel.text}`}
-              className="inline-flex min-h-12 flex-auto items-center justify-center gap-2 rounded-md bg-gruen-700 px-[18px] font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss"
+              className="inline-flex min-h-12 flex-auto items-center justify-center gap-2 rounded-md bg-gruen-700 px-4.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
             >
               <span>{t('details')}</span>
               <ArrowRight aria-hidden className="size-5" />
@@ -135,7 +145,7 @@ export async function EventCard({
               <Link
                 href={{ ...ziel, hash: 'anmeldung' }}
                 aria-label={`${t('anmelden')}: ${titel.text}`}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[18px] font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-4.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
               >
                 <span>{t('anmelden')}</span>
               </Link>

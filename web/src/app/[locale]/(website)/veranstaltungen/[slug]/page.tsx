@@ -20,7 +20,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
-import { terminDatum } from '@/components/website/EventCard';
+import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
 import { LOGOS } from '@/components/website/navigation';
 import { RichText } from '@/components/website/RichText';
 import { JsonLd } from '@/components/website/JsonLd';
@@ -31,7 +31,7 @@ import { AnmeldeFormular } from '@/components/website/veranstaltungen/AnmeldeFor
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { datumLang, zeitspanne } from '@/lib/i18n/format';
+import { datumLang } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
 import { ORGANISATION, veranstaltung } from '@/lib/seo/jsonld';
 import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
@@ -96,9 +96,9 @@ function initialen(name: string): string | null {
 }
 
 const knopfPrimaer =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
 const knopfRahmen =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[22px] font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
 const karte = 'rounded-lg border border-linie bg-weiss';
 
 /**
@@ -130,6 +130,8 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
   const status = statusVon(v, angemeldet);
   const beginn = new Date(v.beginn);
   const datum = await terminDatum(v, sprache);
+  // Hinweis „ganztägig“, sobald der Schlüssel in den Sprachdateien steht (Bedarf: karten.ganztaegig)
+  const zeit = uhrzeitText(v, sprache, tk.has('ganztaegig') ? tk('ganztaegig') : null);
   const wiederkehrend = v.wiederholung.art !== 'einmalig';
   const quote = v.plaetze ? Math.min(100, Math.round((angemeldet / v.plaetze) * 100)) : null;
   const verfuegbar = v.plaetze !== null ? Math.max(0, v.plaetze - angemeldet) : null;
@@ -144,7 +146,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
         <Icon aria-hidden className="size-6" />
         <span className="sr-only">{label}</span>
       </dt>
-      <dd className="flex flex-1 flex-col leading-[1.35]">
+      <dd className="flex flex-1 flex-col leading-snug">
         <span aria-hidden className="text-16 text-tinte-2">
           {label}
         </span>
@@ -211,12 +213,12 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               ) : null}
             </div>
             <div className="flex flex-col gap-2">
-              <h1 id="ev-titel" lang={titel.lang} className="text-[clamp(2.25rem,1.5rem+1.7vw,3rem)] leading-[1.15] break-words">
+              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words">
                 {titel.text}
               </h1>
               <p className="text-20 text-tinte-2">{tk(`kat_${v.kategorie}`)}</p>
             </div>
-            <dl className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-3">
+            <dl className="grid raster-kacheln gap-3">
               {infokarte(
                 Calendar,
                 t('datum'),
@@ -227,7 +229,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                   ) : null}
                 </>,
               )}
-              {infokarte(Clock, t('uhrzeit'), <strong>{zeitspanne(beginn, v.ende ? new Date(v.ende) : null, sprache)}</strong>)}
+              {zeit ? infokarte(Clock, t('uhrzeit'), <strong>{zeit}</strong>) : null}
               {infokarte(
                 MapPin,
                 t('ort'),
@@ -271,7 +273,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               <a
                 href={`/api/ical/${sprache}/veranstaltung/${v.slug}`}
                 download={`${v.slug}.ics`}
-                className="inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-[18px] font-bold text-tinte no-underline hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte"
+                className="inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-4.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98"
               >
                 <Bookmark aria-hidden className="size-5" />
                 {t('merken')}
@@ -281,21 +283,21 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
           </div>
         </section>
 
-        <div className="flex flex-wrap items-start gap-6">
-          <div className="flex min-w-0 flex-[2_1_560px] flex-col gap-6">
+        <div className="grid items-start gap-6 lg:grid-cols-3">
+          <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
             {v.beschreibung || v.schlagwoerter.length ? (
               <section aria-labelledby="ev-beschreibung" className={cn(karte, 'flex flex-col gap-4 p-5 md:p-8')}>
-                <h2 id="ev-beschreibung" className="text-30">
+                <h2 id="ev-beschreibung" className="text-display-2">
                   {t('beschreibung')}
                 </h2>
                 {v.beschreibung && beschreibungSprache ? (
                   <RichText
                     doc={v.beschreibung[beschreibungSprache] as JSONContent}
                     lang={beschreibungSprache !== sprache ? 'de' : undefined}
-                    className="text-pretty"
+                    className="max-w-text text-pretty"
                   />
                 ) : (
-                  <Text feld={v.kurztext} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" />
+                  <Text feld={v.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty" />
                 )}
                 {v.schlagwoerter.length ? (
                   <ul aria-label={t('schlagwoerter')} className="flex flex-wrap gap-2">
@@ -314,7 +316,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
 
             {v.programm.length ? (
               <section aria-labelledby="ev-programm" className={cn(karte, 'flex flex-col gap-4 p-5 md:p-8')}>
-                <h2 id="ev-programm" className="text-30">
+                <h2 id="ev-programm" className="text-display-2">
                   {t('programm')}
                 </h2>
                 <ol className="flex flex-col">
@@ -332,14 +334,14 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
 
             {v.hinweise.length ? (
               <section aria-labelledby="ev-hinweise" className="flex flex-col gap-3 rounded-lg bg-warnung-toenung p-5 md:p-8">
-                <h2 id="ev-hinweise" className="flex items-center gap-2.5 text-30">
+                <h2 id="ev-hinweise" className="flex items-center gap-2.5 text-display-2">
                   <CircleCheck aria-hidden className="size-6 text-warnung" />
                   {t('hinweise')}
                 </h2>
                 <ul className="flex flex-col gap-2">
                   {v.hinweise.map((h, i) => (
                     <li key={i} className="flex items-start gap-2.5">
-                      <CircleAlert aria-hidden className="mt-[3px] size-5 shrink-0 text-warnung" />
+                      <CircleAlert aria-hidden className="mt-0.75 size-5 shrink-0 text-warnung" />
                       <Text feld={h} sprache={sprache} />
                     </li>
                   ))}
@@ -348,7 +350,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             ) : null}
           </div>
 
-          <aside className="flex min-w-0 flex-[1_1_320px] flex-col gap-6">
+          <aside className="flex min-w-0 flex-col gap-6">
             <section
               id="anmeldung"
               aria-labelledby="ev-anmeldung"
@@ -372,11 +374,15 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                       </span>
                     </>
                   ) : null}
-                  <dl className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-                    <dt className="text-tinte-2">{t('angemeldet')}</dt>
-                    <dd className="font-bold tabular-nums">{angemeldet}</dd>
-                    <dt className="text-tinte-2">{verfuegbar !== null ? t('verfuegbar') : t('plaetze')}</dt>
-                    <dd className="font-bold tabular-nums">{verfuegbar !== null ? verfuegbar : t('unbegrenzt')}</dd>
+                  <dl className="flex flex-col gap-1">
+                    <div className="flex justify-between gap-3">
+                      <dt className="text-tinte-2">{t('angemeldet')}</dt>
+                      <dd className="font-bold tabular-nums">{angemeldet}</dd>
+                    </div>
+                    <div className="flex justify-between gap-3">
+                      <dt className="text-tinte-2">{verfuegbar !== null ? t('verfuegbar') : t('plaetze')}</dt>
+                      <dd className="font-bold tabular-nums">{verfuegbar !== null ? verfuegbar : t('unbegrenzt')}</dd>
+                    </div>
                   </dl>
                   {status === 'vergangen' ? <p className="font-bold text-tinte-2">{t('geschlossen')}</p> : null}
                   {status === 'ausgebucht' ? <p className="font-bold text-fehler">{t('ausgebucht')}</p> : null}
@@ -406,7 +412,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                     >
                       {initialen(v.veranstalter.name) ?? <UserRound className="size-6" />}
                     </span>
-                    <span className="flex flex-col leading-[1.35]">
+                    <span className="flex flex-col leading-snug">
                       <strong>{v.veranstalter.name}</strong>
                       {v.veranstalter.funktion || orgName ? (
                         <span className="text-16 text-tinte-2">
@@ -433,7 +439,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                     {v.kontakt.email ? (
                       <a
                         href={`mailto:${v.kontakt.email}`}
-                        className="flex min-h-11 items-center gap-2.5 [overflow-wrap:anywhere] underline underline-offset-[3px]"
+                        className="flex min-h-12 items-center gap-2.5 wrap-anywhere underline underline-offset-3"
                       >
                         <Mail aria-hidden className="size-5 shrink-0" />
                         {v.kontakt.email}

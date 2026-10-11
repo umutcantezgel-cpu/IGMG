@@ -31,7 +31,7 @@ export function TeilenKnopf({ titel, texte }: { titel: string; texte: { teilen: 
       <button
         type="button"
         onClick={teilen}
-        className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-[18px] font-bold text-tinte hover:border-gruen-700 hover:bg-gruen-50"
+        className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4.5 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
       >
         <Share2 aria-hidden className="size-5" />
         {texte.teilen}
