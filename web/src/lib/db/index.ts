@@ -2,6 +2,7 @@ import 'server-only';
 import { attachDatabasePool } from '@vercel/functions';
 import { drizzle as drizzlePg, type NodePgDatabase } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
+import { installiereFehlerKuerzung } from './fehler';
 import * as schema from './schema';
 
 /**
@@ -17,6 +18,8 @@ export type Transaktion = Parameters<Parameters<Datenbank['transaction']>[0]>[0]
 const globalFuerDb = globalThis as unknown as { __igmgDb?: Datenbank; __igmgPool?: Pool };
 
 function erzeuge(): Datenbank {
+  // Fehlermeldungen ohne Parameter und Zeilenwerte ins Protokoll (V-10, fehler.ts)
+  installiereFehlerKuerzung();
   const url = process.env.DATABASE_URL;
   if (url) {
     const pool = globalFuerDb.__igmgPool ?? neuerPool(url);
