@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { defineConfig, devices } from '@playwright/test';
 
 /**
@@ -7,6 +8,21 @@ import { defineConfig, devices } from '@playwright/test';
 const PORT = Number(process.env.E2E_PORT ?? 3100);
 const BASIS = `http://localhost:${PORT}`;
 
+// Eigene Datenbank igmg_e2e (E-019): gilt für den Server und für Hilfsskripte der Tests (Einladungen),
+// weil `tsx --env-file` bereits gesetzte Variablen nicht überschreibt.
+if (existsSync('.env')) process.loadEnvFile('.env');
+if (!process.env.E2E_DATENBANK_GESETZT) {
+  const basis = process.env.E2E_DATABASE_URL ?? process.env.DATABASE_URL;
+  if (basis && !process.env.E2E_DATABASE_URL) {
+    const url = new URL(basis);
+    url.pathname = '/igmg_e2e';
+    process.env.E2E_DATABASE_URL = url.toString();
+  }
+  process.env.ENTWICKLUNG_DATABASE_URL = process.env.DATABASE_URL;
+  if (process.env.E2E_DATABASE_URL) process.env.DATABASE_URL = process.env.E2E_DATABASE_URL;
+  process.env.E2E_DATENBANK_GESETZT = '1';
+}
+
 export default defineConfig({
   testDir: './tests/e2e',
   fullyParallel: false,
@@ -14,6 +30,7 @@ export default defineConfig({
   retries: 0,
   forbidOnly: true,
   reporter: [['list'], ['json', { outputFile: 'test-results/ergebnis.json' }]],
+  globalSetup: './tests/e2e/hilfen/global-setup.ts',
   use: {
     baseURL: BASIS,
     locale: 'de-DE',
@@ -26,10 +43,18 @@ export default defineConfig({
     { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
   ],
   webServer: {
-    command: 'node scripts/start-standalone.mjs',
+    command: 'node scripts/e2e-datenbank.mjs && node scripts/start-standalone.mjs',
     url: `${BASIS}/api/health`,
     reuseExistingServer: false,
     timeout: 120_000,
-    env: { PORT: String(PORT), APP_URL: BASIS, BETTER_AUTH_URL: BASIS, NEXT_TELEMETRY_DISABLED: '1' },
+    env: {
+      PORT: String(PORT),
+      APP_URL: BASIS,
+      BETTER_AUTH_URL: BASIS,
+      NEXT_TELEMETRY_DISABLED: '1',
+      DATABASE_URL: process.env.DATABASE_URL ?? '',
+      // Vorgerenderte Seiten stammen aus der Entwicklungsdatenbank → beim Start verfallen lassen (ADR 0017)
+      CACHE_ERNEUERN_BEIM_START: '1',
+    },
   },
 });
