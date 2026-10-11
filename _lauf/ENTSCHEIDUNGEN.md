@@ -1,6 +1,6 @@
 # Entscheidungen
 
-Routine-Entscheidungen stehen hier kurz; folgenreiche zusätzlich als ADR (`_lauf/adr/` bis P2, danach `web/docs/adr/`).
+Routine-Entscheidungen stehen hier kurz; folgenreiche zusätzlich als ADR (`web/docs/adr/` (bis P2 in `_lauf/adr/`)).
 Format: Kennung · Datum · Quelle · Entscheidung · Grund.
 
 ## Nutzer-Festlegungen (überschreiben den Auftrag)

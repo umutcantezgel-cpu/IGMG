@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+
+/*
+ * Design-Tokens IGMG Wetzlar als Tailwind-4-Theme (K-04).
+ * Quelle: design/tokens/{colors,typography,spacing}.css (Claude-Design-Übergabe), 1:1 übernommen.
+ * Kontrastwerte: design/01 Grundlagen.dc.html (#kontrast). Farben nur über diese Tokens verwenden.
+ */
+@theme {
+  /* Marke */
+  --color-gruen-950: #0e3929; /* Tiefgrün: PrayerTimesBar, Footer, Fokusring */
+  --color-gruen-800: #065f46; /* Hover, Text auf Grün-Tönung */
+  --color-gruen-700: #047857; /* Marke: Primär-Button, Link, Icon */
+  --color-gruen-100: #d3f0e2; /* Ausgewählt, Sekundärtext auf Tiefgrün */
+  --color-gruen-50: #ebf9f2; /* Hover-Fläche, Erfolg */
+  /* Neutral warm */
+  --color-tinte: #1d1a17;
+  --color-tinte-2: #514c46;
+  --color-tinte-3: #68625b;
+  --color-rand: #8c857c; /* Bedienelement-Ränder ≥ 3:1 */
+  --color-linie: #dfdad2; /* nur dekorativ */
+  --color-sand: #f3f0e9;
+  --color-papier: #fcfaf6;
+  --color-weiss: #ffffff;
+  /* Status */
+  --color-fehler: #af2b25;
+  --color-fehler-toenung: #ffedea;
+  --color-warnung: #81520a;
+  --color-warnung-toenung: #fef2d9;
+  --color-info: #225899;
+  --color-info-toenung: #e9f3ff;
+  /* Organisationen (Akzent · Text · Tönung) */
+  --color-org-at: #047857;
+  --color-org-at-text: #065f46;
+  --color-org-at-toenung: #e7f8f0;
+  --color-org-kt: #592e81;
+  --color-org-kt-text: #592e81;
+  --color-org-kt-toenung: #f7f0ff;
+  --color-org-kgt: #9b255a;
+  --color-org-kgt-text: #9b255a;
+  --color-org-kgt-toenung: #ffeef3;
+  --color-org-gt: #008c98; /* nur Fläche/Band (4,03:1) */
+  --color-org-gt-text: #006177;
+  --color-org-gt-toenung: #e6f7fd;
+  /* Kategorie-Tags (Text auf Tönung) */
+  --color-tag-bildung: #225899;
+  --color-tag-bildung-bg: #e9f3ff;
+  --color-tag-veranstaltung: #81520a;
+  --color-tag-veranstaltung-bg: #fef2d9;
+  --color-tag-jugend: #006177;
+  --color-tag-jugend-bg: #e6f7fd;
+  --color-tag-wichtig: #af2b25;
+  --color-tag-wichtig-bg: #ffedea;
+  --color-tag-neuigkeiten: #065f46;
+  --color-tag-neuigkeiten-bg: #ebf9f2;
+  --color-tag-gemeinde: #514c46;
+  --color-tag-gemeinde-bg: #f3f0e9;
+
+  /* Schrift (Skala 16/18/20/24/30/36/48) */
+  --font-text: var(--schrift-text), 'Source Sans 3', system-ui, sans-serif;
+  --font-display: var(--schrift-titel), Georgia, serif;
+  --font-arabic: var(--schrift-arabisch), serif;
+  --text-16: 1rem;
+  --text-16--line-height: 1.5;
+  --text-18: 1.125rem;
+  --text-18--line-height: 1.6;
+  --text-20: 1.25rem;
+  --text-20--line-height: 1.55;
+  --text-24: 1.5rem;
+  --text-24--line-height: 1.25;
+  --text-30: 1.875rem;
+  --text-30--line-height: 1.25;
+  --text-36: 2.25rem;
+  --text-36--line-height: 1.2;
+  --text-48: 3rem;
+  --text-48--line-height: 1.15;
+  /* Sonderstufen nur für die Moschee-Anzeige (Laufbuch D-12) */
+  --text-anzeige-64: 4rem;
+  --text-anzeige-96: 6rem;
+  --text-anzeige-144: 9rem;
+  --tracking-titel: -0.01em;
+
+  /* Abstände: 4-px-Raster = Tailwind-Standard (1 = 4 px) */
+  --spacing: 0.25rem;
+  /* Radien, Schatten */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+  --shadow-s1: 0 1px 2px rgba(29, 26, 23, 0.06);
+  --shadow-s2: 0 6px 20px rgba(29, 26, 23, 0.1);
+  --shadow-s3: 0 24px 64px rgba(29, 26, 23, 0.22);
+  /* Raster */
+  --container-inhalt: 80rem; /* 1280 px */
+  --container-text: 68ch;
+  --breakpoint-md: 48rem; /* 768 px Telefon/Tablet */
+  --breakpoint-menu: 77.5rem; /* 1240 px Menü-Button darunter (Laufbuch D-04) */
+  /* Bewegung */
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: ease;
+}
+
+/* Semantische Aliase (design/tokens/colors.css) und shadcn/ui-Variablen auf Tokens abgebildet */
+:root {
+  --background: var(--color-papier);
+  --foreground: var(--color-tinte);
+  --card: var(--color-weiss);
+  --card-foreground: var(--color-tinte);
+  --popover: var(--color-weiss);
+  --popover-foreground: var(--color-tinte);
+  --primary: var(--color-gruen-700);
+  --primary-foreground: var(--color-weiss);
+  --secondary: var(--color-sand);
+  --secondary-foreground: var(--color-tinte);
+  --muted: var(--color-sand);
+  --muted-foreground: var(--color-tinte-2);
+  --accent: var(--color-gruen-50);
+  --accent-foreground: var(--color-gruen-800);
+  --destructive: var(--color-fehler);
+  --border: var(--color-linie);
+  --input: var(--color-rand);
+  --ring: var(--color-gruen-950);
+  --radius: var(--radius-md);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-linie);
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-papier);
+    color: var(--color-tinte);
+    font-family: var(--font-text);
+    font-size: var(--text-18);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: var(--tracking-titel);
+    text-wrap: balance;
+  }
+  a {
+    color: var(--color-gruen-700);
+    text-underline-offset: 0.15em;
+  }
+  a:hover {
+    color: var(--color-gruen-800);
+  }
+  /* Fokus 2 px Tiefgrün mit 2 px Abstand (design/tokens/spacing.css) */
+  :focus-visible {
+    outline: 2px solid var(--color-gruen-950);
+    outline-offset: 2px;
+  }
+  [lang='ar'],
+  [dir='rtl'] {
+    font-family: var(--font-arabic);
+    line-height: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+}
