@@ -1,4 +1,4 @@
-STATUS · Branch claude/blissful-edison-x3j16w · Etappe 0/5 · Welle 0 · Pflicht 0/– · Kür 0/– · Kriterien 0/12 · Ausnahmen 0 · Bestand grün · Vercel grün (Produktion ohne DB) · Nächster Schritt: E0 Einrichtung und Erkundung
+STATUS · Branch claude/blissful-edison-x3j16w · Etappe 0→2 (E0-Abschluss parallel zur Referenz) · Welle 1 · Pflicht 2/≈45 · Kür 0/≈20 · Kriterien 0/12 · Ausnahmen 0 · Bestand grün (bis auf Styleguide-Spiegel, H-STYLE läuft) · Vercel grün (Produktion ohne DB) · Nächster Schritt: Ausgangswerte (E0-PRUEFER-02) abwarten, LAGEBILD, PLAN, ABNAHME
 
 # STATUS – Letzter Lauf (Gestaltung + Vercel-startklar)
 
@@ -24,3 +24,4 @@ STATUS · Branch claude/blissful-edison-x3j16w · Etappe 0/5 · Welle 0 · Pflic
 
 ## Verlauf (eine Zeile je Stunde)
 - 2026-10-11 17:05 UTC · E0 begonnen: _werkstatt angelegt, Auftrag gespeichert.
+- 2026-10-11 18:00 UTC · E0: Werkzeuge und Ausgangsstand eingefroren (9ebb4bc, Port 3100); Kundschafter 02/03/05 abgelegt; E2 vorgezogen: Designsystem-Skalen, Bewegungssystem, Tagesbogen (6b15832); H-FIX1 iCal-Zeitzone (65bcb4b).

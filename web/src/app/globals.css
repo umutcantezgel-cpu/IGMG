@@ -324,6 +324,11 @@
     transform-origin: center;
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
   }
+  /* B-12: Lade-Achtstern zeichnet sich höchstens viermal, dann steht er */
+  .lade-stern {
+    stroke-dasharray: 1;
+    animation: zeichnen var(--dauer-moment) var(--ease-standard) 4 alternate both;
+  }
   /* B-03/B-11: Auftritt mit 8 px Weg */
   .tritt-auf {
     animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
@@ -338,7 +343,8 @@
   /* Reduzierte Bewegung: Linien und Marken stehen sofort im Endzustand, Auftritte werden zur Überblendung */
   .linie-zeichnet,
   .bogen-enthuellt,
-  .marke-tritt-hervor {
+  .marke-tritt-hervor,
+  .lade-stern {
     animation: none;
   }
   .tritt-auf {

@@ -1,5 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import type { ReactNode } from 'react';
+import { type ReactNode, ViewTransition } from 'react';
 import type { Locale } from '@/i18n/routing';
 import { brotkrumen } from '@/lib/seo/jsonld';
 import { adresse } from '@/lib/seo/metadaten';
@@ -54,7 +54,7 @@ export async function Seitenrahmen({
     <>
       <a
         href="#inhalt"
-        className="sr-only z-[100] rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
+        className="sr-only z-(--ebene-sprung) rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
       >
         {t('zumInhalt')}
       </a>
@@ -63,7 +63,10 @@ export async function Seitenrahmen({
       {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
       {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
       <main id="inhalt" tabIndex={-1} className="outline-none">
-        {children}
+        {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css) */}
+        <ViewTransition enter="seite" exit="seite" default="none">
+          <div>{children}</div>
+        </ViewTransition>
       </main>
       <Footer />
       {konzepthinweis ? (

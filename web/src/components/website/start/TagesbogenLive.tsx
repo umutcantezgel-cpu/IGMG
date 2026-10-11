@@ -77,7 +77,12 @@ export function TagesbogenLive({
       </figcaption>
 
       <div className="relative aspect-16/7">
-        <svg viewBox={`0 0 ${BOGEN.breite} ${BOGEN.hoehe}`} role="img" aria-label={zusammenfassung} className="absolute inset-0 size-full overflow-visible">
+        <svg
+          viewBox={`0 0 ${BOGEN.breite} ${BOGEN.hoehe}`}
+          role="img"
+          aria-label={zusammenfassung}
+          className="absolute inset-0 size-full overflow-visible"
+        >
           <defs>
             <clipPath id={`${kennung}-bis`}>
               {bisX > 0 ? <rect x="0" y="0" width={bisX} height={BOGEN.hoehe} className="bogen-enthuellt" /> : null}
@@ -106,7 +111,15 @@ export function TagesbogenLive({
               />
             </g>
           ) : null}
-          <line x1="0" x2={BOGEN.breite} y1={BOGEN.horizont} y2={BOGEN.horizont} vectorEffect="non-scaling-stroke" className="stroke-linie" strokeWidth="2" />
+          <line
+            x1="0"
+            x2={BOGEN.breite}
+            y1={BOGEN.horizont}
+            y2={BOGEN.horizont}
+            vectorEffect="non-scaling-stroke"
+            className="stroke-linie"
+            strokeWidth="2"
+          />
           <path
             d={bogen.pfad}
             fill="none"

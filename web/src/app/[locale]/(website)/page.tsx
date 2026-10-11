@@ -89,7 +89,7 @@ export default async function Startseite() {
             </Link>
           </div>
           {veranstaltungen.length > 0 ? (
-            <ul className="raster-karten grid gap-6">
+            <ul className="grid raster-karten gap-6">
               {veranstaltungen.map((v) => (
                 <li key={v.id}>
                   <EventCard v={v} sprache={sprache} />
