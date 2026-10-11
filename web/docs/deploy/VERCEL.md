@@ -287,9 +287,9 @@ Was sie bedeuten:
 - **Routen:** `/api/wartung/loeschfristen` und `/api/wartung/mail-ausgang` (`web/src/app/api/wartung/`).
 - **Wann:** Vercel ruft die Crons nur in der Produktion auf (https://vercel.com/docs/cron-jobs/quickstart). Die Vorschau hat keine Crons (ADR 0021, Folgen).
 - **Absicherung:** Vercel sendet `Authorization: Bearer <CRON_SECRET>`. Die App prüft diesen Wert (https://vercel.com/docs/cron-jobs/manage-cron-jobs; `web/src/lib/wartung/zugang.ts` Zeilen 19–23).
-- **Zeitplan:** In `vercel.json` unter `crons`, in UTC (ADR 0021). Ein Vorschlag: `15 3 * * *` (nach `web/docs/BETRIEB.md` § 4).
-- **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].**
-- **Stand:** Noch nicht in `vercel.json` eingetragen (Arbeit in Gang, V-06).
+- **Zeitplan:** In `/vercel.json` (Repository-Wurzel) unter `crons`, in UTC: Löschfristen um 01:00 UTC (`0 1 * * *`), Mail-Ausgang um 02:00 UTC (`0 2 * * *`) (ADR 0021; `web/docs/BETRIEB.md` § 9).
+- **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].** Der Tarif gehört zu ML-09 in `_werkstatt/MENSCHEN.md`.
+- **Stand:** Eingetragen (`/vercel.json`, Zeilen 12–15).
 - **Prüfen:** Team › Projekt `igmg` › Cron Jobs **[prüfen]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
 
 ## 10. Zusammenführen auf `main`
@@ -304,7 +304,7 @@ Was sie bedeuten:
 3. Der Stand auf `main` startet ein Produktions-Deployment **(L-E01)**.
 
 - **Prüfpunkt:** Team › Projekt `igmg` › Deployments: Der neueste Eintrag steht unter „Production“ und ist „Ready“ **[prüfen: Statusbezeichnung]**.
-- **Cache erneuern** (solange der Bau gegen die Beispieldaten läuft): `curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://[deine-domain.de]/api/wartung/cache-erneuern` (`web/docs/BETRIEB.md` § 9, Zeile 109). Der Schritt entfällt, wenn der Bau gegen die echte Datenbank läuft (ADR 0019, Ziel). **Die Technik entscheidet das [prüfen]**.
+- **Cache erneuern** (nur, wenn das Bauprotokoll `[bau] WARNUNG: DATABASE_URL fehlt` zeigt, der Bau also mit Beispielinhalten lief): `curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://[deine-domain.de]/api/wartung/cache-erneuern` (`web/src/app/api/wartung/cache-erneuern/route.ts`). Läuft der Bau gegen die echte Datenbank, entfällt der Schritt (ADR 0019, Ziel). **Die Technik entscheidet im Einzelfall.**
 
 ## 11. Schnellprüfung der Hauptseiten (5 Minuten, Vorstand)
 
@@ -325,7 +325,7 @@ Die zwölf Hauptansichten (`_werkstatt/KERN.md` Zeile 87). Öffne sie auf dem Ha
 | Korankurse | `/bildung/korankurse` | Kursinformationen |
 | Schüler-Voranmeldung | `/bildung/voranmeldung` | Formular lässt sich öffnen (senden nicht testen) |
 | Kontakt | `/kontakt` | Adresse und Karte, die Karte lädt erst nach einem Klick |
-| Startklar-Cockpit | `/verwaltung/startklar` | Alle Punkte grün (entsteht im Lauf) |
+| Startklar-Cockpit | `/verwaltung/startklar` | Alle Punkte grün, oder ein Punkt nennt Grund und Ort |
 
 Zusätzlich prüfen:
 - `/impressum` und `/datenschutz`: Keine eckigen Klammern mehr sichtbar (Platzhalter gefüllt).
@@ -351,24 +351,40 @@ Zusätzlich prüfen:
 
 ## 13. Datensicherung und Wiederherstellung
 
-- **Datenbank:** Die Sicherung und die Wiederherstellung auf einen früheren Zeitpunkt (Point-in-Time Recovery, PITR) liegen beim Anbieter Neon (ADR 0018, Festlegungen). **Die Aufbewahrungsdauer im Tarif ist nicht belegt [prüfen].** Vercel-Doku dazu fand ich keine. Schau im Neon-Dashboard nach (Projekt › Backup oder Restore **[prüfen]**).
-- **Wiederherstellung testen:** mindestens einmal im Quartal (`web/docs/BETRIEB.md` § 6, Zeile 89). Teste nur auf einem Zweig, nie auf der Produktion. Prüfpunkt: Der Zweig mit dem Stand von gestern lässt sich lesen.
-- **Eingangsschlüssel:** `EINGANG_SCHLUESSEL` getrennt sichern (`web/docs/BETRIEB.md` §§ 3 und 6).
-- **Medien:** Die Löschfristen gelten auch für Blob-Dateien (ADR 0020, Folgen). Eine Sicherung des Blob-Speichers ist **nicht geregelt [prüfen]**.
+**Was gesichert ist:**
+- **Datenbank (Neon):** Die Sicherung und die Wiederherstellung auf einen früheren Zeitpunkt (Point-in-Time Recovery) liegen beim Anbieter (ADR 0018, Festlegungen). Die Aufbewahrungsdauer im Tarif ist **nicht belegt [prüfen]** (ML-15).
+- **Eingangsschlüssel:** `EINGANG_SCHLUESSEL` getrennt sichern (`web/docs/BETRIEB.md` §§ 3 und 6). Ohne ihn sind die Formulareingänge nach einer Wiederherstellung nicht lesbar.
+- **Medien (Vercel Blob):** Im Code gibt es keine Kopie der Dateien. Die Löschfristen gelten auch für Blob-Dateien (ADR 0020, Folgen). Eine regelmäßige Kopie ist eine Menschen-Aufgabe (ML-14).
+
+**Datenbank auf einen früheren Stand bringen** (nur die Technik; die Schritte vorher am Bildschirm durchgehen):
+1. Neon-Konsole öffnen und das Projekt der Produktion wählen. Den Zeitpunkt für die Wiederherstellung suchen **[prüfen: Menüname, z. B. „Restore“ oder „Backup“]**.
+2. Aus diesem Zeitpunkt einen **neuen Zweig** erzeugen. Den Produktionszweig nicht überschreiben **[prüfen: Menüname]**.
+3. Den neuen Zweig prüfen (Prüfpunkt unten).
+4. Die Produktion auf den neuen Zweig zeigen lassen: `DATABASE_URL` und `DATABASE_URL_UNPOOLED` im Bereich Production (Abschnitt 4) umstellen. Danach ein neues Produktions-Deployment starten **[prüfen: ob Vercel dafür ein neues Deployment verlangt]**.
+5. `/api/health` prüfen (`{"status":"ok"}`). Dann den Cache erneuern (Abschnitt 10, `cache-erneuern`). Ob die Erneuerung auf allen Instanzen wirkt, ist nach ADR 0024 vorgesehen, aber nicht getestet **[prüfen]**.
+
+**Was nach dem Zurückstellen fehlt oder doppelt auftritt:**
+- Alles nach dem gewählten Zeitpunkt fehlt: Anmeldungen, Eingänge, Änderungen und Konten.
+- Mails, die nach dem Zeitpunkt versendet wurden, können im Mail-Ausgang wieder offen stehen und ein zweites Mal rausgehen **[VERMUTUNG, prüfen]** (Tabelle `mail_ausgang`, `web/src/lib/db/schema/system.ts`, Zeile 49).
+- Die Zweige der Vorschau bleiben unberührt.
+
+**Export außerhalb des Anbieters:** Im Repository gibt es einen `pg_dump`-Befehl nur für den Docker-Betrieb (`web/docs/BETRIEB.md` § 6). Für Neon gibt es keinen Befehl. Ob ein Export nötig ist, ist offen (ML-15).
+
+**Wiederherstellung testen:** Für den Docker-Betrieb nennt `web/docs/BETRIEB.md` § 6 einmal je Quartal. Für Vercel ist kein Rhythmus festgelegt (ML-15). Einmal vor dem Livegang: GO-LIVE E4. Teste nur auf einem Zweig, nie auf der Produktion. Prüfpunkt: Der Zweig mit dem Stand von gestern lässt sich lesen.
 
 ## 14. Tarif und Konten
 
 - Die Frage nach dem Tarif (Hobby oder kostenpflichtig) und den Konten entscheidet der Vorstand. Die Empfehlung dazu soll in **MENSCHEN.md** stehen (AUFTRAG V-12).
-- **Stand:** In MENSCHEN.md gibt es dazu noch **keinen Eintrag**. Das ist offen **[prüfen]**.
+- **Stand:** In MENSCHEN.md steht die Empfehlung als **ML-09** (Pro, mit Begründung). Die Entscheidung liegt beim Vorstand.
 
 ## 15. Wenn etwas nicht klappt
 
 | Was du siehst | Wahrscheinliche Ursache | Was du tust |
 |---|---|---|
-| Build rot, Zeile „DATABASE_URL fehlt“ | Die Datenbank-Variable fehlt im Bereich Preview oder Production | Abschnitt 4 prüfen, Technik informieren |
+| Bauprotokoll zeigt „[bau] WARNUNG: DATABASE_URL fehlt“ (der Bau bleibt grün) | Die Datenbank-Variable fehlt im Bereich Preview oder Production | Die Seite zeigt Beispielinhalte. Abschnitt 4 prüfen, Technik informieren |
 | Build rot, Meldung zu einem unbekannten Schlüssel (z. B. „services“) | Der Schlüssel in `vercel.json` passt nicht zur Vercel-Doku **[prüfen]** | Technik informieren. Offene Frage laut `_werkstatt/berichte/E0-KUNDSCHAFTER-06.md` (Frage 2) |
-| Seite zeigt Fehlermeldung nach dem Start | Eine Variable fehlt oder ist falsch | Technik informieren. Die Startprüfung nennt den Namen, sobald ADR 0022 umgesetzt ist |
-| Bestätigungsmail kommt nicht | `SMTP_HOST` fehlt | Die Mail bleibt im Ausgang und wird wiederholt (`web/docs/BETRIEB.md` § 5b). Technik informieren |
+| Seite zeigt Fehlermeldung nach dem Start | Eine Variable fehlt oder ist falsch | Technik informieren. Die Startprüfung schreibt den Namen ins Funktionsprotokoll (`[start] NAME: …`, `web/src/instrumentation.ts`) |
+| Bestätigungsmail kommt nicht | `SMTP_HOST` fehlt oder der Anbieter lehnt ab | Die Mail bleibt im Mail-Ausgang. Sie wird bei der nächsten Anfrage mit Versand oder im täglichen Lauf erneut versucht, höchstens sechsmal (`web/src/lib/mail/ausgang.ts`). Technik informieren |
 | `/api/health` antwortet mit Fehler 503 | Datenbank nicht erreichbar | Neon-Status prüfen, Technik informieren (`web/src/app/api/health/route.ts`) |
 | Vorschau zeigt echte Produktionsdaten | Die Vorschau hängt an der Produktionsdatenbank | Sofort stoppen. Vorschau-Adresse nicht weitergeben. Technik informieren |
 | Bild über etwa 4,5 MB lässt sich nicht hochladen | Grenze der Funktionen **[prüfen]** | Kleiner speichern, Technik informieren |
