@@ -5,12 +5,13 @@ import { KursFormular } from '@/components/verwaltung/kurse/KursFormular';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { NEUER_KURS } from '@/lib/validierung/kurs';
 import { speichereKurs } from '@/server/actions/kurse';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { formularOptionen } from '../formular-optionen';
 
 /** Verwaltung › Neuer Kurs (V06). Eigene Seite statt Dialog wie bei Veranstaltungen (ABWEICHUNGEN A-V02). */
 export default async function NeuerKurs() {
   await verlangeSeitenRecht('kurs.bearbeiten');
-  const [t, optionen] = await Promise.all([getTranslations('verwaltung.kurse'), formularOptionen()]);
+  const [t, optionen, bilder] = await Promise.all([getTranslations('verwaltung.kurse'), formularOptionen(), ladeBildAuswahl()]);
   return (
     <>
       <NextLink
@@ -24,7 +25,7 @@ export default async function NeuerKurs() {
         <h1 className="text-30 md:text-36">{t('neu')}</h1>
         <p className="text-tinte-2">{t('neuEinleitung')}</p>
       </div>
-      <KursFormular aktion={speichereKurs} startwerte={NEUER_KURS} modus="neu" verfuegbarkeit={optionen.verfuegbarkeit} />
+      <KursFormular aktion={speichereKurs} startwerte={NEUER_KURS} modus="neu" verfuegbarkeit={optionen.verfuegbarkeit} bilder={bilder} />
     </>
   );
 }

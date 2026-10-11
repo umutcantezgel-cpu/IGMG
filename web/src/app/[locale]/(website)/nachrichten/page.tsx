@@ -51,7 +51,7 @@ export default async function NachrichtenSeite() {
             <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6">
               {liste.map((n) => (
                 <li key={n.id} data-kategorie={n.kategorie}>
-                  <NewsCard n={n} sprache={sprache} variante="standard" />
+                  <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
                 </li>
               ))}
             </ul>

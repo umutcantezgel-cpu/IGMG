@@ -10,7 +10,8 @@ export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('anzeige');
-  return metadatenFuer({ pfad: '/gebetszeiten/anzeige', titel: t('titel') });
+  // Ohne Beschreibung erbte die Seite die Platzhalter-Beschreibung des Layouts; die Überschrift beschreibt den Inhalt
+  return metadatenFuer({ pfad: '/gebetszeiten/anzeige', titel: t('titel'), beschreibung: t('ueberschrift') });
 }
 
 async function texte(locale: Locale): Promise<AnzeigeTexte> {

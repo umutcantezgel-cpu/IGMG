@@ -19,6 +19,7 @@ import moscheeAnfrage from './moschee-anfrage.json';
 import nachrichten from './nachrichten.json';
 import organisationen from './organisationen.json';
 import projekte from './projekte.json';
+import quran from './quran.json';
 import rechtliches from './rechtliches.json';
 import suche from './suche.json';
 import ueberUns from './ueber-uns.json';
@@ -46,6 +47,7 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   nachrichten,
   organisationen,
   projekte,
+  quran,
   rechtliches,
   suche,
   'ueber-uns': ueberUns,

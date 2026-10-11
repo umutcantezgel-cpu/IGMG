@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
+import { MedienBild, SIZES_HAUPTSPALTE } from '@/components/website/MedienBild';
+import { JsonLd } from '@/components/website/JsonLd';
 import { RichText } from '@/components/website/RichText';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { textMitSprache } from '@/components/website/Text';
@@ -16,7 +18,8 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
-import { metadatenFuer } from '@/lib/seo/metadaten';
+import { nachricht } from '@/lib/seo/jsonld';
+import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeAehnlicheNachrichten, ladeNachricht, ladeNachrichtenSlugs, type NachrichtDaten } from '@/server/queries/nachrichten';
 
 export const ensureStatic = 'navigation';
@@ -32,10 +35,12 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/nachrich
   const n = await ladeNachricht(slug);
   if (!n) return {};
   const sprache = locale as Locale;
+  const t = await getTranslations('nachrichten');
   return metadatenFuer({
     pfad: { pathname: '/nachrichten/[slug]', params: { slug } },
     titel: text(n.titel, sprache),
-    beschreibung: text(n.kurztext, sprache) || undefined,
+    // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
+    beschreibung: text(n.kurztext, sprache) || t('untertitel'),
   });
 }
 
@@ -83,6 +88,17 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
       sprachZiel={{ pathname: '/nachrichten/[slug]', params: { slug } }}
       pfad={[{ label: tp('neuigkeiten'), ziel: '/nachrichten' }, { label: titel.text }]}
     >
+      <JsonLd
+        daten={nachricht({
+          url: adresse({ pathname: '/nachrichten/[slug]', params: { slug } }, sprache),
+          headline: titel.text,
+          beschreibung: kurz.text,
+          datePublished: n.veroeffentlichtAm,
+          bild: n.bild ? `${basisUrl()}${n.bild.url}` : null,
+          logo: `${basisUrl()}/bilder/logos/logo-igmg-wetzlar.png`,
+          sprache: titel.lang ?? sprache,
+        })}
+      />
       <div className="@container mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-4 pb-12 md:px-8 md:pt-8 md:pb-24">
         <Link href="/" className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4">
           <ArrowLeft aria-hidden className="size-5" />
@@ -135,9 +151,25 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                 </div>
               </div>
             </header>
-            <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie" />
+            {n.bild ? (
+              <MedienBild
+                bild={n.bild}
+                sprache={sprache}
+                vorladen
+                sizes={SIZES_HAUPTSPALTE}
+                className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie"
+              />
+            ) : (
+              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie" />
+            )}
             {inhalt ? (
-              <RichText doc={inhalt.doc} lang={inhalt.rueckfall ? 'de' : undefined} className="gap-5 leading-[1.7] text-pretty" />
+              <RichText
+                doc={inhalt.doc}
+                lang={inhalt.rueckfall ? 'de' : undefined}
+                className="gap-5 leading-[1.7] text-pretty"
+                bilder={n.textBilder}
+                sprache={sprache}
+              />
             ) : null}
             {n.schlagwoerter.length ? (
               <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">

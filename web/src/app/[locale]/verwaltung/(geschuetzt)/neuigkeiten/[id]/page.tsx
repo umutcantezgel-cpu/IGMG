@@ -7,6 +7,7 @@ import { formularWerte } from '@/components/verwaltung/neuigkeiten/formularwerte
 import { NeuigkeitsFormular } from '@/components/verwaltung/neuigkeiten/NeuigkeitsFormular';
 import { darf, organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { speichereNeuigkeit } from '@/server/actions/neuigkeiten';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { ladeNachrichtFuerVerwaltung } from '@/server/queries/verwaltung/neuigkeiten';
 import { formularOptionen } from '../formular-optionen';
 
@@ -22,6 +23,7 @@ export default async function NachrichtBearbeiten({ params, searchParams }: Page
   if (!z) notFound();
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.neuigkeiten'), formularOptionen(a)]);
   const nurLesen = !darf(a.rollen, 'nachricht.bearbeiten', { organisation: z.organisation }) || z.imPapierkorbSeit !== null;
+  const bilder = nurLesen ? [] : await ladeBildAuswahl();
   // Organisation des Beitrags immer in der Auswahl (Lesemodus im Papierkorb)
   const organisationen = optionen.organisationen.some((o) => o.wert === (z.organisation ?? ''))
     ? optionen.organisationen
@@ -60,6 +62,7 @@ export default async function NachrichtBearbeiten({ params, searchParams }: Page
         modus="bearbeiten"
         kategorien={optionen.kategorien}
         organisationen={organisationen}
+        bilder={bilder}
         nurLesen={nurLesen}
       />
     </>

@@ -3,9 +3,11 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { MedienBild, SIZES_AUFMACHER, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
 
 const TOENUNG: Record<NachrichtDaten['kategorie'] | 'wichtig', string> = {
@@ -27,10 +29,13 @@ export async function NewsCard({
   n,
   sprache,
   variante = 'standard',
+  bild,
 }: {
   n: NachrichtDaten;
   sprache: Sprache;
   variante?: 'gross' | 'kompakt' | 'standard';
+  /** Titelbild aus der Mediathek; null oder fehlend = Bildplatzhalter wie bisher */
+  bild?: BildDaten | null;
 }) {
   const t = await getTranslations('karten');
   const titel = textMitSprache(n.titel, sprache);
@@ -48,11 +53,15 @@ export async function NewsCard({
   if (variante === 'kompakt') {
     return (
       <article className="relative flex items-start gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
-        <Bildplatzhalter
-          beschriftung={t('fotoBeitrag')}
-          kurz={t('foto')}
-          className="size-[88px] shrink-0 rounded-md border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_8px,var(--color-papier)_8px_16px)] px-1 text-[13px]"
-        />
+        {bild ? (
+          <MedienBild bild={bild} sprache={sprache} sizes="88px" className="size-[88px] shrink-0 rounded-md border border-linie" />
+        ) : (
+          <Bildplatzhalter
+            beschriftung={t('fotoBeitrag')}
+            kurz={t('foto')}
+            className="size-[88px] shrink-0 rounded-md border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_8px,var(--color-papier)_8px_16px)] px-1 text-[13px]"
+          />
+        )}
         <div className="flex min-w-0 flex-col gap-1.5">
           <span
             className={cn(
@@ -88,7 +97,11 @@ export async function NewsCard({
   if (variante === 'gross') {
     return (
       <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1">
-        <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[300px] border-b border-linie" />
+        {bild ? (
+          <MedienBild bild={bild} sprache={sprache} sizes={SIZES_AUFMACHER} className="h-[300px] border-b border-linie" />
+        ) : (
+          <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[300px] border-b border-linie" />
+        )}
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
             {kategorie}
@@ -126,7 +139,11 @@ export async function NewsCard({
 
   return (
     <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
-      <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[180px] border-b border-linie" />
+      {bild ? (
+        <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[180px] border-b border-linie" />
+      ) : (
+        <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[180px] border-b border-linie" />
+      )}
       <div className="flex flex-1 flex-col gap-3 px-6 pt-5 pb-6">
         <div className="flex flex-wrap gap-2">
           {kategorie}

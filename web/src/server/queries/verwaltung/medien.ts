@@ -74,3 +74,28 @@ export async function verwendungVon(id: string): Promise<Verwendung[]> {
     ...ku.map((z0) => ({ art: 'kurs' as const, id: z0.id, titel: z0.titel.de })),
   ];
 }
+
+/** Eintrag der Bildauswahl (C11b): nur Bilder außerhalb des Papierkorbs, neueste zuerst. */
+export type BildWahl = { id: string; url: string; alt: string; breite: number; hoehe: number; dateiname: string | null };
+
+/**
+ * Bilder für die Auswahl in Formularen (Titelbild, Bild im Text). Die Formularseite lädt die Liste und gibt sie dem
+ * Formular mit – keine eigene Schnittstelle. Höchstens 300 Einträge (älteste fallen weg; Hinweis im Dialog).
+ */
+export const BILDWAHL_GRENZE = 300;
+export async function ladeBildAuswahl(): Promise<BildWahl[]> {
+  const zeilen = await db
+    .select({ id: m.id, schluessel: m.schluessel, alt: m.alt, breite: m.breite, hoehe: m.hoehe, dateiname: m.dateiname })
+    .from(m)
+    .where(and(isNull(m.imPapierkorbSeit), like(m.typ, 'image/%'), isNotNull(m.breite), isNotNull(m.hoehe)))
+    .orderBy(desc(m.erstelltAm))
+    .limit(BILDWAHL_GRENZE);
+  return zeilen.map((z) => ({
+    id: z.id,
+    url: `/medien/${z.schluessel}`,
+    alt: z.alt.de,
+    breite: z.breite!,
+    hoehe: z.hoehe!,
+    dateiname: z.dateiname,
+  }));
+}

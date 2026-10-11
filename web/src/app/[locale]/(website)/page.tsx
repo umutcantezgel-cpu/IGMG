@@ -3,19 +3,24 @@ import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { EventCard } from '@/components/website/EventCard';
+import { JsonLd } from '@/components/website/JsonLd';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { metadatenFuer } from '@/lib/seo/metadaten';
+import { moschee } from '@/lib/seo/jsonld';
+import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeNachrichten } from '@/server/queries/nachrichten';
+import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
 export const ensureStatic = 'navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('start');
-  return metadatenFuer({ pfad: '/', titel: null, beschreibung: t('metaBeschreibung') });
+  const [t, tm] = await Promise.all([getTranslations('start'), getTranslations('meta')]);
+  const meta = await metadatenFuer({ pfad: '/', titel: null, beschreibung: t('metaBeschreibung') });
+  // Ohne eigenen Titel setzt die Startseite den Namen selbst: openGraph ersetzt das Layout-Objekt vollständig (Next.js)
+  return { ...meta, openGraph: { ...meta.openGraph, title: tm('titel') } };
 }
 
 const sekundaer =
@@ -29,8 +34,10 @@ export default async function Startseite() {
   const nachrichten = await ladeNachrichten();
   const aufmacher = nachrichten.find((n) => n.empfohlen) ?? nachrichten[0];
   const weitere = nachrichten.filter((n) => n !== aufmacher).slice(0, 3);
+  const kontakt = await ladeSeiteninhalt('kontakt');
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
+      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
         <div className="mx-auto grid max-w-(--container-inhalt) grid-cols-[repeat(auto-fit,minmax(min(100%,440px),1fr))] items-center gap-8 px-4 py-10 md:gap-16 md:px-8 md:py-[72px]">
           <div className="flex flex-col gap-5">
@@ -113,12 +120,12 @@ export default async function Startseite() {
           {aufmacher ? (
             <div className="flex flex-wrap items-stretch gap-6">
               <div className="min-w-0 flex-[2_1_560px]">
-                <NewsCard n={aufmacher} sprache={sprache} variante="gross" />
+                <NewsCard n={aufmacher} sprache={sprache} variante="gross" bild={aufmacher.bild} />
               </div>
               <ul className="flex min-w-0 flex-[1_1_320px] flex-col gap-4">
                 {weitere.map((n) => (
                   <li key={n.id}>
-                    <NewsCard n={n} sprache={sprache} variante="kompakt" />
+                    <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
                   </li>
                 ))}
               </ul>

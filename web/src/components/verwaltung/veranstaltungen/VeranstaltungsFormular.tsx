@@ -4,6 +4,7 @@ import { CircleAlert, Plus, Save, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
+import { BildFeld } from '@/components/verwaltung/medienwahl/BildFeld';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import { vorkommen } from '@/lib/termine';
@@ -13,6 +14,7 @@ import { zeitpunkt } from '@/lib/validierung/veranstaltung';
 import type { FormularWerte } from '@/lib/veranstaltung/formularwerte';
 import { cn } from '@/lib/utils';
 import type { SpeicherZustand } from '@/server/actions/veranstaltungen';
+import type { BildWahl } from '@/server/queries/verwaltung/medien';
 
 type Aktion = (vorher: SpeicherZustand, fd: FormData) => Promise<SpeicherZustand>;
 type Fehler = Record<string, string> | undefined;
@@ -119,6 +121,7 @@ export function VeranstaltungsFormular({
   modus,
   kategorien,
   organisationen,
+  bilder,
   nurLesen = false,
 }: {
   aktion: Aktion;
@@ -126,10 +129,12 @@ export function VeranstaltungsFormular({
   modus: 'neu' | 'bearbeiten';
   kategorien: { wert: string; label: string }[];
   organisationen: { wert: string; label: string }[];
+  bilder: BildWahl[];
   nurLesen?: boolean;
 }) {
   const t = useTranslations('verwaltung.veranstaltungen');
   const tv = useTranslations('verwaltung');
+  const tm = useTranslations('verwaltung.medienwahl');
   const [zustand, absenden, laeuft] = useActionState(aktion, {});
   const w: FormularWerte = (zustand.werte as FormularWerte | undefined) ?? startwerte;
   const fehler: Fehler = zustand.feldFehler;
@@ -280,7 +285,11 @@ export function VeranstaltungsFormular({
                 {fehlerListe.map((k) => (
                   <li key={k}>
                     <a href={`#${id(k)}`} className="text-fehler underline">
-                      {FELD_LABEL[k.replace(/(De|Tr|En)$/, '')] ? t(`formular.${FELD_LABEL[k.replace(/(De|Tr|En)$/, '')]}`) : k}
+                      {k === 'bildId'
+                        ? tm('feldTitel')
+                        : FELD_LABEL[k.replace(/(De|Tr|En)$/, '')]
+                          ? t(`formular.${FELD_LABEL[k.replace(/(De|Tr|En)$/, '')]}`)
+                          : k}
                       {/(Tr|En)$/.test(k) ? ` (${sprache(k.slice(-2) as 'Tr' | 'En')})` : ''}: {t(`fehler.${fehler?.[k]}`)}
                     </a>
                   </li>
@@ -303,6 +312,11 @@ export function VeranstaltungsFormular({
                 {text('titelDe', t('formular.titel'), { pflicht: true, platzhalter: t('formular.titelPlatzhalter'), max: 160 })}
               </div>
               {bereich('kurztextDe', t('formular.kurztext'), { hinweis: t('formular.kurztextHinweis'), zeilen: 2 })}
+              {nurLesen ? null : (
+                <div className="md:col-span-2">
+                  <BildFeld id={id('bildId')} bilder={bilder} startwert={alsText(w, 'bildId')} fehler={f('bildId')} />
+                </div>
+              )}
               {bereich('beschreibungDe', t('formular.beschreibung'), {
                 hinweis: t('formular.beschreibungHinweis'),
                 zeilen: 6,

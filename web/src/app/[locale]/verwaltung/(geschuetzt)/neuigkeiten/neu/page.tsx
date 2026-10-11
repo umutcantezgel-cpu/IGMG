@@ -6,6 +6,7 @@ import { NeuigkeitsFormular } from '@/components/verwaltung/neuigkeiten/Neuigkei
 import { NEUE_NACHRICHT } from '@/components/verwaltung/neuigkeiten/formularwerte';
 import { organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { speichereNeuigkeit } from '@/server/actions/neuigkeiten';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { formularOptionen } from '../formular-optionen';
 
 /** Verwaltung › Neue Nachricht (V03 – als eigene Seite statt Dialog, wie bei den Veranstaltungen). */
@@ -13,7 +14,7 @@ export default async function NeueNachricht() {
   const a = await verlangeSeitenRecht('nachricht.lesen');
   const filter = organisationsFilter(a.rollen, 'nachricht.bearbeiten');
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
-  const [t, optionen] = await Promise.all([getTranslations('verwaltung.neuigkeiten'), formularOptionen(a)]);
+  const [t, optionen, bilder] = await Promise.all([getTranslations('verwaltung.neuigkeiten'), formularOptionen(a), ladeBildAuswahl()]);
   const startwerte = { ...NEUE_NACHRICHT, organisation: optionen.organisationen[0]?.wert ?? '' };
   return (
     <>
@@ -35,6 +36,7 @@ export default async function NeueNachricht() {
         modus="neu"
         kategorien={optionen.kategorien}
         organisationen={optionen.organisationen}
+        bilder={bilder}
       />
     </>
   );

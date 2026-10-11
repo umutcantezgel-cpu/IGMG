@@ -1,12 +1,29 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
+import type { Locale } from '@/i18n/routing';
+import { brotkrumen } from '@/lib/seo/jsonld';
+import { adresse } from '@/lib/seo/metadaten';
 import { ladeEinstellung } from '@/server/queries/einstellungen';
 import { Breadcrumbs, type PfadEintrag } from './Breadcrumbs';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { JsonLd } from './JsonLd';
 import { KonzeptHinweis } from './KonzeptHinweis';
 import type { Bereich, Ziel } from './navigation';
 import { PrayerTimesBar } from './PrayerTimesBar';
+
+/**
+ * Einträge der BreadcrumbList mit den Namen der sichtbaren Brotkrumen (K-16). Eine Zwischenstufe ohne Adresse
+ * (z. B. „Bildung“ ohne eigene Seite) entfällt; die aktuelle Seite als letzter Eintrag braucht keine Adresse.
+ */
+function brotkrumenEintraege(pfad: PfadEintrag[], sprache: Locale, startseite: string) {
+  const eintraege: { name: string; url?: string }[] = [{ name: startseite, url: adresse('/', sprache) }];
+  pfad.forEach((e, i) => {
+    if (e.ziel !== undefined) eintraege.push({ name: e.label, url: adresse(e.ziel, sprache) });
+    else if (i === pfad.length - 1) eintraege.push({ name: e.label });
+  });
+  return eintraege;
+}
 
 /**
  * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
@@ -28,8 +45,10 @@ export async function Seitenrahmen({
   ohneLeiste?: boolean;
   children: ReactNode;
 }) {
+  const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kopf');
   const th = await getTranslations('hinweis');
+  const tp = await getTranslations('pfad');
   const { konzepthinweis } = await ladeEinstellung('allgemein');
   return (
     <>
@@ -42,6 +61,7 @@ export async function Seitenrahmen({
       <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
       {ohneLeiste ? null : <PrayerTimesBar />}
       {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
+      {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
       <main id="inhalt" tabIndex={-1} className="outline-none">
         {children}
       </main>

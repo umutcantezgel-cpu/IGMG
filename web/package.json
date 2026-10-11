@@ -20,6 +20,7 @@
     "schriften:kopieren": "node scripts/schriften-kopieren.mjs",
     "altcha:kopieren": "node scripts/altcha-kopieren.mjs",
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
+    "quran:import": "tsx --env-file-if-exists=.env scripts/quran-import.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "format": "prettier --write",
     "start:standalone": "node scripts/start-standalone.mjs",

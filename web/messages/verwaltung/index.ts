@@ -20,6 +20,7 @@ import audit from './audit.json';
 import styleguide from './styleguide.json';
 import editor from './editor.json';
 import einstellungen from './einstellungen.json';
+import medienwahl from './medienwahl.json';
 
 type Teil = Record<string, unknown>;
 
@@ -40,4 +41,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   styleguide,
   editor,
   einstellungen,
+  medienwahl,
 };

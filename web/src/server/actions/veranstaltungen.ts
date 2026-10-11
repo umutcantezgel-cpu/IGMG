@@ -10,6 +10,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { ausFormular, regelFehler, slugAus, veranstaltungSchema, zuDatensatz } from '@/lib/validierung/veranstaltung';
+import { bildFehlerFuer } from '@/lib/medien/bild';
 
 /**
  * Verwaltung „Veranstaltungen“ (D05, V02, ADR 0003/0005). Reihenfolge je Action: Recht (Sitzung, 2FA) →
@@ -66,6 +67,9 @@ export async function speichereVeranstaltung(_vorher: SpeicherZustand, fd: FormD
   const e = geprueft.data;
   const rf = regelFehler(e);
   if (rf) return { fehler: 'pruefen', feldFehler: { whRoh: rf, whArt: rf }, werte: roh };
+  // Bild: nur vorhandene Bilder außerhalb des Papierkorbs (C11b)
+  const bildFehler = await bildFehlerFuer({ bildId: e.bildId });
+  if (bildFehler) return { fehler: 'pruefen', feldFehler: bildFehler, werte: roh };
   const daten = zuDatensatz(e);
 
   let alt: { id: string; organisation: Org; status: 'entwurf' | 'veroeffentlicht'; imPapierkorbSeit: Date | null } | undefined;

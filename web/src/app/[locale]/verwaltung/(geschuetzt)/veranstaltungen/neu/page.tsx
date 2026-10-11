@@ -6,6 +6,7 @@ import { VeranstaltungsFormular } from '@/components/verwaltung/veranstaltungen/
 import { organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { NEUE_VERANSTALTUNG } from '@/lib/veranstaltung/formularwerte';
 import { speichereVeranstaltung } from '@/server/actions/veranstaltungen';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { formularOptionen } from '../formular-optionen';
 
 /** Verwaltung › Neue Veranstaltung (V02 „Neue Veranstaltung“ – als eigene Seite statt Dialog, ABWEICHUNGEN A-V02). */
@@ -13,7 +14,7 @@ export default async function NeueVeranstaltung() {
   const a = await verlangeSeitenRecht('veranstaltung.lesen');
   const filter = organisationsFilter(a.rollen, 'veranstaltung.bearbeiten');
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
-  const [t, optionen] = await Promise.all([getTranslations('verwaltung.veranstaltungen'), formularOptionen(a)]);
+  const [t, optionen, bilder] = await Promise.all([getTranslations('verwaltung.veranstaltungen'), formularOptionen(a), ladeBildAuswahl()]);
   const startwerte = { ...NEUE_VERANSTALTUNG, organisation: optionen.organisationen[0]?.wert ?? '' };
   return (
     <>
@@ -28,7 +29,7 @@ export default async function NeueVeranstaltung() {
         <h1 className="text-30 md:text-36">{t('neu')}</h1>
         <p className="text-tinte-2">{t('neuEinleitung')}</p>
       </div>
-      <VeranstaltungsFormular aktion={speichereVeranstaltung} startwerte={startwerte} modus="neu" {...optionen} />
+      <VeranstaltungsFormular aktion={speichereVeranstaltung} startwerte={startwerte} modus="neu" {...optionen} bilder={bilder} />
     </>
   );
 }

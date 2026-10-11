@@ -3,13 +3,16 @@
 import type { JSONContent } from '@tiptap/core';
 import { CircleAlert, Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useActionState, useEffect, useId, useRef, type ReactNode } from 'react';
+import { useActionState, useCallback, useEffect, useId, useRef, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { BildFeld } from '@/components/verwaltung/medienwahl/BildFeld';
+import { MedienWahlDialog, type MedienWahlHandle } from '@/components/verwaltung/medienwahl/MedienWahlDialog';
 import { RichTextEditor } from '@/components/verwaltung/RichTextEditor';
 import { RichText } from '@/components/website/RichText';
 import { cn } from '@/lib/utils';
 import type { SpeicherZustand } from '@/server/actions/neuigkeiten';
+import type { BildWahl } from '@/server/queries/verwaltung/medien';
 import type { FormularWerte } from './formularwerte';
 
 type Aktion = (vorher: SpeicherZustand, fd: FormData) => Promise<SpeicherZustand>;
@@ -97,6 +100,7 @@ export function NeuigkeitsFormular({
   modus,
   kategorien,
   organisationen,
+  bilder,
   nurLesen = false,
 }: {
   aktion: Aktion;
@@ -105,10 +109,12 @@ export function NeuigkeitsFormular({
   modus: 'neu' | 'bearbeiten';
   kategorien: { wert: string; label: string }[];
   organisationen: { wert: string; label: string }[];
+  bilder: BildWahl[];
   nurLesen?: boolean;
 }) {
   const t = useTranslations('verwaltung.neuigkeiten');
   const tv = useTranslations('verwaltung');
+  const tm = useTranslations('verwaltung.medienwahl');
   const [zustand, absenden, laeuft] = useActionState(aktion, {});
   const w: FormularWerte = (zustand.werte as FormularWerte | undefined) ?? startwerte;
   const fehler: Fehler = zustand.feldFehler;
@@ -116,6 +122,9 @@ export function NeuigkeitsFormular({
   const meldungRef = useRef<HTMLDivElement>(null);
   const basisId = useId();
   const id = (feld: string) => `${basisId}-${feld}`;
+  // Eine Mediathek-Auswahl für „Bild einfügen“ in allen drei Texteditoren
+  const medienWahl = useRef<MedienWahlHandle>(null);
+  const bildAuswahl = useCallback(() => medienWahl.current?.waehle() ?? Promise.resolve(null), []);
 
   useEffect(() => {
     if (zustand.fehler || zustand.gespeichert) meldungRef.current?.focus();
@@ -204,7 +213,7 @@ export function NeuigkeitsFormular({
           </div>
         </>
       ) : (
-        <RichTextEditor name={feld} startwert={startwert} label={label} hinweis={hinweis} fehler={f(feld)} />
+        <RichTextEditor name={feld} startwert={startwert} label={label} hinweis={hinweis} fehler={f(feld)} bildAuswahl={bildAuswahl} />
       )}
     </div>
   );
@@ -213,7 +222,7 @@ export function NeuigkeitsFormular({
   const zusammenfassung = (k: string) => {
     const basis = k.replace(/(De|Tr|En)$/, '');
     const sprache = k.slice(basis.length) as Sprache | '';
-    const name = FELD_LABEL[basis] ? t(`formular.${FELD_LABEL[basis]}`) : k;
+    const name = basis === 'bildId' ? tm('feldTitel') : FELD_LABEL[basis] ? t(`formular.${FELD_LABEL[basis]}`) : k;
     return sprache && sprache !== 'De' ? `${name} (${t(`formular.sprache.${sprache}`)})` : name;
   };
   const fehlerListe = Object.keys(fehler ?? {});
@@ -251,6 +260,11 @@ export function NeuigkeitsFormular({
                 {text('titelDe', t('formular.titel'), { pflicht: true, platzhalter: t('formular.titelPlatzhalter'), max: 160 })}
               </div>
               {bereich('kurztextDe', t('formular.kurztext'), { hinweis: t('formular.kurztextHinweis'), zeilen: 2, max: 400 })}
+              {nurLesen ? null : (
+                <div className="md:col-span-2">
+                  <BildFeld id={id('bildId')} bilder={bilder} startwert={alsText(w, 'bildId')} fehler={f('bildId')} />
+                </div>
+              )}
               {editor('inhaltDe', t('formular.inhalt'), texte.de, t('formular.inhaltHinweis'))}
             </>
           }
@@ -353,6 +367,7 @@ export function NeuigkeitsFormular({
         </details>
       </fieldset>
 
+      {!nurLesen ? <MedienWahlDialog ref={medienWahl} bilder={bilder} /> : null}
       {!nurLesen ? (
         <div className="flex flex-wrap gap-3">
           <Button type="submit" disabled={laeuft}>

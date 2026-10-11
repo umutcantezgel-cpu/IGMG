@@ -307,20 +307,7 @@ describe('Verwaltung › Neuigkeiten (V03)', () => {
       expect(JSON.stringify(gespeichert)).toContain('/kontakt');
     });
 
-    it('Bildknoten werden abgelehnt, solange Bilder mit den Medien (C11) fehlen', async () => {
-      await alsRedaktion();
-      const mitBild = JSON.stringify({
-        type: 'doc',
-        content: [
-          { type: 'paragraph', content: [{ type: 'text', text: 'Vor dem Bild' }] },
-          { type: 'image', attrs: { mediumId: '00000000-0000-4000-8000-000000000001' } },
-        ],
-      });
-      expect(await speichereNeuigkeit({}, formular(eingabe('V03 Bild abgelehnt', { inhaltDe: mitBild })))).toMatchObject({
-        fehler: 'pruefen',
-        feldFehler: { inhaltDe: 'bild' },
-      });
-    });
+    // Bildknoten und Titelbild: tests/integration/bilder-an-inhalten.test.ts (C11b)
 
     it('kein gültiges JSON im Textfeld: Fehler richtext', async () => {
       await alsRedaktion();

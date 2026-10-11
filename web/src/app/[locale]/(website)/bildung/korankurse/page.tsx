@@ -43,7 +43,7 @@ export default async function KorankurseSeite() {
             <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6">
               {kurse.map((kurs) => (
                 <li key={kurs.id}>
-                  <CourseCard kurs={kurs} sprache={sprache} />
+                  <CourseCard kurs={kurs} sprache={sprache} bild={kurs.bild} />
                 </li>
               ))}
             </ul>

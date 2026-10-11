@@ -4,6 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig, MehrsprachigRich } from '@/lib/db/schema/typen';
+import { bildIdsAus, ladeBilder, type BildDaten, type BildKarte } from '@/lib/medien/bild';
 
 export type NachrichtDaten = {
   id: string;
@@ -19,9 +20,14 @@ export type NachrichtDaten = {
   istBeispiel: boolean;
   organisation: 'at' | 'kt' | 'gt' | 'kgt' | null;
   schlagwoerter: Mehrsprachig[];
+  /** Titelbild aus der Mediathek (C11b); null = Platzhalter */
+  bild: BildDaten | null;
 };
 
-function zuDaten(n: typeof schema.nachricht.$inferSelect): NachrichtDaten {
+/** Detailseite: zusätzlich die Bilder der Bildknoten im Text (alle Sprachen), nach Medien-ID. */
+export type NachrichtDetail = NachrichtDaten & { textBilder: BildKarte };
+
+function zuDaten(n: typeof schema.nachricht.$inferSelect, bilder: BildKarte): NachrichtDaten {
   return {
     id: n.id,
     slug: n.slug,
@@ -36,7 +42,14 @@ function zuDaten(n: typeof schema.nachricht.$inferSelect): NachrichtDaten {
     istBeispiel: n.istBeispiel,
     organisation: n.organisation,
     schlagwoerter: n.schlagwoerter,
+    bild: (n.bildId && bilder[n.bildId]) || null,
   };
+}
+
+/** Zeilen → Daten mit Titelbildern (eine Abfrage für alle). Aufrufer setzen `cacheTag(TAG.medien)`. */
+async function mitBildern(zeilen: (typeof schema.nachricht.$inferSelect)[]): Promise<NachrichtDaten[]> {
+  const bilder = await ladeBilder(zeilen.map((z) => z.bildId));
+  return zeilen.map((z) => zuDaten(z, bilder));
 }
 
 /**
@@ -55,15 +68,15 @@ function sichtbarInListen() {
 export async function ladeNachrichten(): Promise<NachrichtDaten[]> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.nachrichten);
+  cacheTag(TAG.nachrichten, TAG.medien);
   const zeilen = await db.select().from(schema.nachricht).where(sichtbarInListen()).orderBy(desc(schema.nachricht.veroeffentlichtAm));
-  return zeilen.map(zuDaten);
+  return mitBildern(zeilen);
 }
 
-export async function ladeNachricht(slug: string): Promise<NachrichtDaten | null> {
+export async function ladeNachricht(slug: string): Promise<NachrichtDetail | null> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.nachrichten);
+  cacheTag(TAG.nachrichten, TAG.medien);
   const [z] = await db
     .select()
     .from(schema.nachricht)
@@ -71,7 +84,8 @@ export async function ladeNachricht(slug: string): Promise<NachrichtDaten | null
     .limit(1);
   if (!z) return null;
   cacheTag(TAG.nachricht(z.id));
-  return zuDaten(z);
+  const bilder = await ladeBilder([z.bildId, ...bildIdsAus(z.inhalt)]);
+  return { ...zuDaten(z, bilder), textBilder: bilder };
 }
 
 /** Slugs für generateStaticParams: dieselbe Auswahl wie ladeNachricht. */
@@ -91,12 +105,12 @@ export async function ladeAehnlicheNachrichten(
 ): Promise<NachrichtDaten[]> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.nachrichten);
+  cacheTag(TAG.nachrichten, TAG.medien);
   const zeilen = await db
     .select()
     .from(schema.nachricht)
     .where(and(sichtbarInListen(), eq(schema.nachricht.kategorie, kategorie), ne(schema.nachricht.id, ohneId)))
     .orderBy(desc(schema.nachricht.veroeffentlichtAm))
     .limit(anzahl);
-  return zeilen.map(zuDaten);
+  return mitBildern(zeilen);
 }

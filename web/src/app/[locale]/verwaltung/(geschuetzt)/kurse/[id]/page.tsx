@@ -7,6 +7,7 @@ import { Meldung } from '@/components/verwaltung/Meldung';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { kursFormularWerte } from '@/lib/validierung/kurs';
 import { speichereKurs } from '@/server/actions/kurse';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { ladeKursFuerVerwaltung } from '@/server/queries/verwaltung/kurse';
 import { formularOptionen } from '../formular-optionen';
 
@@ -18,6 +19,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
   if (!k) notFound();
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.kurse'), formularOptionen()]);
   const nurLesen = !darf(a.rollen, 'kurs.bearbeiten') || k.imPapierkorbSeit !== null;
+  const bilder = nurLesen ? [] : await ladeBildAuswahl();
   return (
     <>
       <NextLink
@@ -50,6 +52,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
         startwerte={kursFormularWerte(k)}
         modus="bearbeiten"
         verfuegbarkeit={optionen.verfuegbarkeit}
+        bilder={bilder}
         nurLesen={nurLesen}
       />
     </>

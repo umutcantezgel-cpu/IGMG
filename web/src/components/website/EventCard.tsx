@@ -4,9 +4,11 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { VeranstaltungsDaten } from '@/server/queries/veranstaltungen';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { MedienBild, SIZES_RASTER } from './MedienBild';
 import { LOGOS } from './navigation';
 import { Text, textMitSprache } from './Text';
 
@@ -46,10 +48,13 @@ export async function EventCard({
   v,
   sprache,
   variante = 'start',
+  bild,
 }: {
   v: VeranstaltungsDaten;
   sprache: Sprache;
   variante?: 'start' | 'liste';
+  /** Bild aus der Mediathek (nur Variante „liste“); null oder fehlend = Bildplatzhalter */
+  bild?: BildDaten | null;
 }) {
   const t = await getTranslations('karten');
   const org = v.organisation ? ORG[v.organisation] : null;
@@ -69,7 +74,11 @@ export async function EventCard({
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
       {variante === 'liste' ? (
-        <Bildplatzhalter beschriftung={`${t('foto')}: ${titel.text}`} className="h-40 border-b border-linie" />
+        bild ? (
+          <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-40 border-b border-linie" />
+        ) : (
+          <Bildplatzhalter beschriftung={`${t('foto')}: ${titel.text}`} className="h-40 border-b border-linie" />
+        )
       ) : (
         <div aria-hidden className={cn('h-1', org ? org.band : 'bg-gruen-700')} />
       )}

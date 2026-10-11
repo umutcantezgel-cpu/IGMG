@@ -11,6 +11,7 @@ import { db, schema } from '@/lib/db';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { ausFormular, neuigkeitSchema, slugAus, zuDatensatz } from '@/lib/validierung/neuigkeit';
+import { bildFehlerFuer } from '@/lib/medien/bild';
 
 /**
  * Verwaltung „Neuigkeiten“ (V03, ADR 0003/0005/0006). Reihenfolge je Action: Recht (Sitzung, 2FA) → Eingabe prüfen →
@@ -95,6 +96,10 @@ export async function speichereNeuigkeit(_vorher: SpeicherZustand, fd: FormData)
     if (alt.imPapierkorbSeit) return { fehler: 'imPapierkorb', werte: roh };
   }
 
+  // Titelbild und Bildknoten: nur vorhandene Bilder außerhalb des Papierkorbs (C11b)
+  const bildFehler = await bildFehlerFuer({ bildId: e.bildId }, { inhaltDe: e.inhaltDe, inhaltTr: e.inhaltTr, inhaltEn: e.inhaltEn });
+  if (bildFehler) return { fehler: 'pruefen', feldFehler: bildFehler, werte: roh };
+
   const daten = zuDatensatz(e, { veroeffentlichtBisher: alt?.veroeffentlichtAm ?? null, jetzt: new Date() });
   if (!darfBearbeiten(a, daten.organisation)) return { fehler: 'pruefen', feldFehler: { organisation: 'organisation' }, werte: roh };
 
@@ -107,7 +112,8 @@ export async function speichereNeuigkeit(_vorher: SpeicherZustand, fd: FormData)
       await tx
         .update(n)
         .set({ ...daten, slug, aktualisiertVon: a.benutzerId })
-        .where(eq(n.id, id));
+        // Nur außerhalb des Papierkorbs – auch wenn er gleichzeitig dorthin verschoben wird (SP-C2 H5)
+        .where(and(eq(n.id, id), isNull(n.imPapierkorbSeit)));
       await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'nachricht', zielId: id }, tx);
       if (bisherStatus !== 'veroeffentlicht' && daten.status === 'veroeffentlicht')
         await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.veroeffentlicht', zielTyp: 'nachricht', zielId: id }, tx);

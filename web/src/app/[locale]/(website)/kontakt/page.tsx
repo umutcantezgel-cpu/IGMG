@@ -9,9 +9,11 @@ import { AngeboteBesuch } from '@/components/website/kontakt/AngeboteBesuch';
 import { KontaktKarten } from '@/components/website/kontakt/KontaktKarten';
 import { KARTE, UEBERSCHRIFT_GROSS } from '@/components/website/kontakt/stil';
 import { PageHeader } from '@/components/website/PageHeader';
+import { JsonLd } from '@/components/website/JsonLd';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import type { Locale } from '@/i18n/routing';
-import { metadatenFuer } from '@/lib/seo/metadaten';
+import { moschee } from '@/lib/seo/jsonld';
+import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { sendeKontakt } from '@/server/actions/formulare/kontakt';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -35,6 +37,7 @@ export default async function KontaktSeite() {
   ]);
   return (
     <Seitenrahmen bereich="moschee" seite="kontakt" sprachZiel="/kontakt" pfad={[{ label: tp('kontakt') }]}>
+      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-16 md:pb-24">
         <KontaktKarten kontakt={kontakt} />

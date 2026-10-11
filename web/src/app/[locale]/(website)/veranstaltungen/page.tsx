@@ -39,7 +39,7 @@ export default async function VeranstaltungenSeite() {
             <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6">
               {liste.map((v) => (
                 <li key={v.id} data-kategorie={v.kategorie}>
-                  <EventCard v={v} sprache={sprache} variante="liste" />
+                  <EventCard v={v} sprache={sprache} variante="liste" bild={v.bild} />
                 </li>
               ))}
             </ul>

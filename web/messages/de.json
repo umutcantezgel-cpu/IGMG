@@ -530,6 +530,7 @@
         "uebersetzungZeilen": "Die Übersetzung braucht genauso viele Einträge wie der deutsche Text.",
         "organisation": "Für diese Organisation dürfen Sie keine Veranstaltungen bearbeiten.",
         "ausnahmeVorBeginn": "Ausfälle müssen nach dem ersten Termin liegen.",
+        "bildUngueltig": "Das Bild ist nicht mehr verfügbar (gelöscht, im Papierkorb oder kein Bild). Bitte ein anderes Bild wählen.",
         "imPapierkorb": "Die Veranstaltung liegt im Papierkorb. Stellen Sie sie zuerst wieder her."
       }
     },
@@ -855,6 +856,17 @@
       "erfolg": "Vielen Dank! Ihre Anmeldung ist eingegangen. Sie erhalten eine Bestätigung per E-Mail.",
       "ausgebucht": "Leider sind nicht mehr genug Plätze frei.",
       "geschlossen": "Für diese Veranstaltung ist keine Anmeldung möglich."
+    }
+  },
+  "ogBild": {
+    "art": {
+      "nachricht": "Neuigkeit",
+      "veranstaltung": "Veranstaltung"
+    },
+    "alt": {
+      "standard": "IGMG Wetzlar: Vorschaubild der Website",
+      "nachricht": "Neuigkeit: {titel}",
+      "veranstaltung": "Veranstaltung: {titel}, {zeit}"
     }
   }
 }

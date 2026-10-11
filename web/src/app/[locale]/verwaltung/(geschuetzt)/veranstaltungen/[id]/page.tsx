@@ -7,6 +7,7 @@ import { VeranstaltungsFormular } from '@/components/verwaltung/veranstaltungen/
 import { darf, organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { formularWerte } from '@/lib/veranstaltung/formularwerte';
 import { speichereVeranstaltung } from '@/server/actions/veranstaltungen';
+import { ladeBildAuswahl } from '@/server/queries/verwaltung/medien';
 import { ladeVeranstaltungFuerVerwaltung } from '@/server/queries/verwaltung/veranstaltungen';
 import { formularOptionen } from '../formular-optionen';
 
@@ -21,6 +22,7 @@ export default async function VeranstaltungBearbeiten({ params, searchParams }: 
   if (filter !== null && !(z.organisation && filter.includes(z.organisation))) redirect('/verwaltung/kein-zugriff');
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.veranstaltungen'), formularOptionen(a)]);
   const nurLesen = !darf(a.rollen, 'veranstaltung.bearbeiten', { organisation: z.organisation }) || z.imPapierkorbSeit !== null;
+  const bilder = nurLesen ? [] : await ladeBildAuswahl();
   // Organisation des Datensatzes immer in der Auswahl (Lesemodus im Papierkorb)
   const organisationen = optionen.organisationen.some((o) => o.wert === (z.organisation ?? ''))
     ? optionen.organisationen
@@ -58,6 +60,7 @@ export default async function VeranstaltungBearbeiten({ params, searchParams }: 
         modus="bearbeiten"
         kategorien={optionen.kategorien}
         organisationen={organisationen}
+        bilder={bilder}
         nurLesen={nurLesen}
       />
     </>

@@ -19,6 +19,7 @@ export function formularWerte(z: Zeile): FormularWerte {
     liste.some((x) => x[s]) ? liste.map((x) => x[s] ?? '').join(', ') : '';
   return {
     id: z.id,
+    bildId: z.bildId ?? '',
     ...sprachen(z.titel, 'titel'),
     ...sprachen(z.kurztext, 'kurztext'),
     slug: z.slug,

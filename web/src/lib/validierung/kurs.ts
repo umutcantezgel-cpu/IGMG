@@ -92,6 +92,8 @@ export const kursSchema = z
       .regex(/^([a-z0-9]+(-[a-z0-9]+)*)?$/, 'slug')
       .default(''),
     status: z.enum(KURS_STATUS, 'ungueltig').default('entwurf'),
+    /** Bild aus der Mediathek (C11b); leer = kein Bild */
+    bildId: z.union([z.literal(''), z.uuid('ungueltig')]).default(''),
   })
   .superRefine((e, ctx) => {
     const feld = (pfad: string, message: string) => ctx.addIssue({ code: 'custom', path: [pfad], message });
@@ -131,7 +133,7 @@ function mehrOderNull(de: string, tr: string, en: string): Mehrsprachig | null {
   return de || tr || en ? mehr(de, tr, en) : null;
 }
 
-/** Datensatz für die Tabelle `kurs` aus der geprüften Eingabe. Bild, Slug und Herkunft setzt die Action. */
+/** Datensatz für die Tabelle `kurs` aus der geprüften Eingabe. Slug und Herkunft setzt die Action. */
 export function zuDatensatz(e: KursEingabe) {
   const trZeilen = zeilenVon(e.inhalteTr);
   const enZeilen = zeilenVon(e.inhalteEn);
@@ -152,6 +154,7 @@ export function zuDatensatz(e: KursEingabe) {
     empfohlen: e.empfohlen,
     sortierung: e.sortierung,
     status: e.status,
+    bildId: e.bildId || null,
   };
 }
 
@@ -164,6 +167,7 @@ export function kursFormularWerte(k: KursZeile): FormularWerte {
   });
   return {
     id: k.id,
+    bildId: k.bildId ?? '',
     ...sprachen(k.titel, 'titel'),
     ...sprachen(k.beschreibung, 'beschreibung'),
     ...sprachen(k.zielgruppe, 'zielgruppe'),

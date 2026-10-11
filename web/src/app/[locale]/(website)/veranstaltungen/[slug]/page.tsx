@@ -23,6 +23,7 @@ import { getTranslations } from 'next-intl/server';
 import { terminDatum } from '@/components/website/EventCard';
 import { LOGOS } from '@/components/website/navigation';
 import { RichText } from '@/components/website/RichText';
+import { JsonLd } from '@/components/website/JsonLd';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Text, textMitSprache } from '@/components/website/Text';
 import { FormularInsel } from '@/components/formular/FormularInsel';
@@ -32,7 +33,8 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
-import { metadatenFuer } from '@/lib/seo/metadaten';
+import { ORGANISATION, veranstaltung } from '@/lib/seo/jsonld';
+import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { meldeAn } from '@/server/actions/formulare/veranstaltungsanmeldung';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
@@ -51,10 +53,12 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/veransta
   const v = await ladeVeranstaltung(slug);
   if (!v) return {};
   const sprache = locale as Locale;
+  const t = await getTranslations('veranstaltungen');
   return metadatenFuer({
     pfad: { pathname: '/veranstaltungen/[slug]', params: { slug } },
     titel: text(v.titel, sprache),
-    beschreibung: text(v.kurztext, sprache) || undefined,
+    // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
+    beschreibung: text(v.kurztext, sprache) || t('untertitel'),
   });
 }
 
@@ -156,6 +160,20 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
       sprachZiel={{ pathname: '/veranstaltungen/[slug]', params: { slug } }}
       pfad={[{ label: tp('veranstaltungen'), ziel: '/veranstaltungen' }, { label: t('seite') }]}
     >
+      <JsonLd
+        daten={veranstaltung({
+          url: adresse({ pathname: '/veranstaltungen/[slug]', params: { slug } }, sprache),
+          name: titel.text,
+          beschreibung: text(v.kurztext, sprache),
+          bild: v.bild ? `${basisUrl()}${v.bild.url}` : null,
+          beginn: v.beginn,
+          ende: v.ende,
+          ort: text(v.ort, sprache),
+          adresse: kontaktSeite.adresse,
+          vergangen: v.vergangen,
+          veranstalter: v.organisation && orgName ? orgName : ORGANISATION,
+        })}
+      />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-4 pb-12 md:px-8 md:pt-8 md:pb-24">
         <Link href="/" className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4">
           <ArrowLeft aria-hidden className="size-5" />

@@ -71,7 +71,8 @@ export async function speichereAnkuendigung(_vorher: SpeicherZustand, fd: FormDa
       await tx
         .update(v)
         .set({ ...daten, aktualisiertVon: a.benutzerId })
-        .where(eq(v.id, vorher.id));
+        // Nur außerhalb des Papierkorbs – auch wenn er gleichzeitig dorthin verschoben wird (SP-C2 H5)
+        .where(and(eq(v.id, vorher.id), isNull(v.imPapierkorbSeit)));
       await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'ankuendigung', zielId: vorher.id }, tx);
       if (vorher.status !== 'veroeffentlicht' && daten.status === 'veroeffentlicht')
         await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.veroeffentlicht', zielTyp: 'ankuendigung', zielId: vorher.id }, tx);

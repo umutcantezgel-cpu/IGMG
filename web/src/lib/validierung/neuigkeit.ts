@@ -8,7 +8,8 @@ import { richtextFeld } from '@/lib/validierung/richtext';
 /**
  * Formular „Neuigkeit“ der Verwaltung (V03, ADR 0002, ADR 0005, ADR 0006): ein Zod-Schema für Formular und Server
  * Action. Fehlermeldungen sind Schlüssel unter `verwaltung.neuigkeiten.fehler`; Feldnamen = Schlüssel des Schemas.
- * Ein Bild (bildId) gibt es noch nicht – es folgt mit den Medien (C11).
+ * Bild (`bildId`) und Bildknoten im Text verweisen auf die Mediathek (C11b); ob die Medien nutzbare Bilder sind, prüft
+ * die Action (Datenbank), das Schema nur das Format.
  */
 export const NACHRICHT_KATEGORIEN = [
   'ankuendigung',
@@ -66,14 +67,14 @@ export const neuigkeitSchema = z
     schlagwoerterDe: text(400),
     schlagwoerterTr: text(400),
     schlagwoerterEn: text(400),
+    /** Titelbild aus der Mediathek (C11b); leer = kein Bild */
+    bildId: z.union([z.literal(''), z.uuid('ungueltig')]).default(''),
   })
   .superRefine((e, ctx) => {
     const fehler = (pfad: string, message: string) => ctx.addIssue({ code: 'custom', path: [pfad], message });
     // Übersetzungen brauchen die deutsche Fassung, sonst gibt es keine Rückfallsprache (ADR 0002)
     if ((e.kurztextTr || e.kurztextEn) && !e.kurztextDe) fehler('kurztextDe', 'pflicht');
     if ((e.inhaltTr || e.inhaltEn) && !e.inhaltDe) fehler('inhaltDe', 'pflicht');
-    // Bilder folgen mit den Medien (C11): bis dahin nimmt die Neuigkeit keine Bildknoten an, auch nicht über die Schnittstelle
-    for (const feld of ['inhaltDe', 'inhaltTr', 'inhaltEn'] as const) if (hatBild(e[feld])) fehler(feld, 'bild');
     if (e.veroeffentlichtAm && !veroeffentlichungGueltig(e.veroeffentlichtAm)) fehler('veroeffentlichtAm', 'datum');
     // Schlagwörter: je Sprache eine Kommaliste; Übersetzungen mit genauso vielen Einträgen wie das Deutsche
     const deAnzahl = kommaliste(e.schlagwoerterDe).length;
@@ -93,14 +94,6 @@ export function ausFormular(fd: FormData): Record<string, unknown> {
   const roh: Record<string, unknown> = {};
   for (const [k, v] of fd.entries()) if (typeof v === 'string' && !k.startsWith('$ACTION')) roh[k] = v;
   return roh;
-}
-
-/** Enthält ein Tiptap-Dokument einen Bildknoten (auf allen Ebenen)? */
-function hatBild(knoten: unknown): boolean {
-  if (!knoten || typeof knoten !== 'object') return false;
-  const k = knoten as { type?: unknown; content?: unknown };
-  if (k.type === 'image') return true;
-  return Array.isArray(k.content) && k.content.some(hatBild);
 }
 
 /** Kommaliste (Schlagwörter); leere Einträge fallen weg. */
@@ -192,6 +185,7 @@ export function zuDatensatz(e: NeuigkeitEingabe, zusatz: DatensatzZusatz) {
     empfohlen: e.empfohlen,
     wichtig: e.wichtig,
     lesezeit: e.lesezeit ?? (klartextDe ? lesezeitAusText(klartextDe) : null),
+    bildId: e.bildId || null,
     schlagwoerter: schlagwoerterDe.map((s, i) => mehr(s, schlagwoerterTr[i] ?? '', schlagwoerterEn[i] ?? '')),
     klartext: {
       de: [e.titelDe, e.kurztextDe, klartextDe, e.schlagwoerterDe].filter(Boolean).join('\n'),

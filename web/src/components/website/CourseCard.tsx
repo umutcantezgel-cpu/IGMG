@@ -3,9 +3,11 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
 import type { Sprache } from '@/lib/i18n/inhalt';
+import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { Anmeldeweg, KursDaten } from '@/server/queries/kurse';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { MedienBild, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
 
 /**
@@ -23,7 +25,16 @@ export function zielFuer(anmeldeweg: Anmeldeweg): Ziel | null {
  * Zeiten, Kursinhalte und Aktion. Oberflächentexte aus messages/bereiche/korankurse.json (Namensraum kurskarte),
  * Kursdaten aus der Tabelle kurs. Serverkomponente, ohne Interaktion im Browser (K-12).
  */
-export async function CourseCard({ kurs, sprache }: { kurs: KursDaten; sprache: Sprache }) {
+export async function CourseCard({
+  kurs,
+  sprache,
+  bild,
+}: {
+  kurs: KursDaten;
+  sprache: Sprache;
+  /** Bild aus der Mediathek; null oder fehlend = Bildplatzhalter wie bisher */
+  bild?: BildDaten | null;
+}) {
   const t = await getTranslations('kurskarte');
   const titel = textMitSprache(kurs.titel, sprache).text;
   const zustand = kurs.anmeldeweg;
@@ -42,7 +53,11 @@ export async function CourseCard({ kurs, sprache }: { kurs: KursDaten; sprache: 
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
-      <Bildplatzhalter beschriftung={t('foto', { titel })} className="h-[150px] border-b border-linie" />
+      {bild ? (
+        <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[150px] border-b border-linie" />
+      ) : (
+        <Bildplatzhalter beschriftung={t('foto', { titel })} className="h-[150px] border-b border-linie" />
+      )}
       <div className="flex flex-1 flex-col gap-3.5 p-6">
         <span className={cn('inline-flex items-center gap-1.5 self-start rounded-pill px-3 py-0.5 text-16 font-bold', status.klasse)}>
           <StatusIcon aria-hidden className="size-4" />

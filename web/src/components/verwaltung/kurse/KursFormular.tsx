@@ -4,10 +4,12 @@ import { CircleAlert, Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useRef, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
+import { BildFeld } from '@/components/verwaltung/medienwahl/BildFeld';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { cn } from '@/lib/utils';
 import type { FormularWerte } from '@/lib/validierung/kurs';
 import type { SpeicherZustand } from '@/server/actions/kurse';
+import type { BildWahl } from '@/server/queries/verwaltung/medien';
 
 type Aktion = (vorher: SpeicherZustand, fd: FormData) => Promise<SpeicherZustand>;
 type Optionen = { hinweis?: string; pflicht?: boolean; platzhalter?: string; typ?: string; max?: number; min?: number; maxWert?: number };
@@ -92,16 +94,19 @@ export function KursFormular({
   startwerte,
   modus,
   verfuegbarkeit,
+  bilder,
   nurLesen = false,
 }: {
   aktion: Aktion;
   startwerte: FormularWerte;
   modus: 'neu' | 'bearbeiten';
   verfuegbarkeit: { wert: string; label: string }[];
+  bilder: BildWahl[];
   nurLesen?: boolean;
 }) {
   const t = useTranslations('verwaltung.kurse');
   const tv = useTranslations('verwaltung');
+  const tm = useTranslations('verwaltung.medienwahl');
   const [zustand, absenden, laeuft] = useActionState(aktion, {});
   const w: FormularWerte = (zustand.werte as FormularWerte | undefined) ?? startwerte;
   const fehler = zustand.feldFehler;
@@ -126,6 +131,7 @@ export function KursFormular({
   const mitSprache = (feld: string, s: 'Tr' | 'En') => t('formular.feldSprache', { feld: t(`formular.${feld}`), sprache: sprache(s) });
   /** Beschriftung eines Fehlerfelds, z. B. „Beschreibung (Türkisch)“; null für Felder ohne Beschriftung. */
   const beschriftungVon = (schluessel: string): string | null => {
+    if (schluessel === 'bildId') return tm('feldTitel');
     const basis = schluessel.replace(/(De|Tr|En)$/, '');
     if (!BESCHRIFTET.includes(basis)) return null;
     const zusatz = /(Tr|En)$/.test(schluessel) ? ` (${sprache(schluessel.slice(-2) as 'Tr' | 'En')})` : '';
@@ -232,6 +238,11 @@ export function KursFormular({
               <div className="md:col-span-2">
                 {text('titelDe', t('formular.titel'), { pflicht: true, platzhalter: t('formular.titelPlatzhalter'), max: 160 })}
               </div>
+              {nurLesen ? null : (
+                <div className="md:col-span-2">
+                  <BildFeld id={id('bildId')} bilder={bilder} startwert={alsText('bildId')} fehler={f('bildId')} />
+                </div>
+              )}
               {bereich('beschreibungDe', t('formular.beschreibung'), {
                 hinweis: t('formular.beschreibungHinweis'),
                 platzhalter: t('formular.beschreibungPlatzhalter'),

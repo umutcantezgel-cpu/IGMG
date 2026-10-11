@@ -4,6 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import { ladeBilder, type BildDaten } from '@/lib/medien/bild';
 
 /** Anmeldeweg eines Kurses wie im Design (CourseCard: register, join, closed). */
 export type Anmeldeweg = 'register' | 'join' | 'closed';
@@ -19,6 +20,8 @@ export type KursDaten = {
   inhalte: Mehrsprachig[];
   hinweis: Mehrsprachig | null;
   anmeldeweg: Anmeldeweg;
+  /** Bild aus der Mediathek (C11b); null = Platzhalter */
+  bild: BildDaten | null;
 };
 
 /** Anmeldeweg der Karte aus der Verfügbarkeit des Kurses (V06): Voranmeldung, ohne Anmeldung, geschlossen. */
@@ -30,12 +33,13 @@ export function anmeldewegVon(kurs: { verfuegbarkeit: 'voranmeldung' | 'ohne_anm
 export async function ladeKurse(): Promise<KursDaten[]> {
   'use cache';
   cacheLife('max');
-  cacheTag(TAG.kurse);
+  cacheTag(TAG.kurse, TAG.medien);
   const zeilen = await db
     .select()
     .from(schema.kurs)
     .where(and(eq(schema.kurs.status, 'veroeffentlicht'), isNull(schema.kurs.imPapierkorbSeit)))
     .orderBy(asc(schema.kurs.sortierung), asc(schema.kurs.slug));
+  const bilder = await ladeBilder(zeilen.map((z) => z.bildId));
   return zeilen.map((z) => ({
     id: z.id,
     slug: z.slug,
@@ -46,5 +50,6 @@ export async function ladeKurse(): Promise<KursDaten[]> {
     inhalte: z.inhalte,
     hinweis: z.hinweis,
     anmeldeweg: anmeldewegVon(z),
+    bild: (z.bildId && bilder[z.bildId]) || null,
   }));
 }

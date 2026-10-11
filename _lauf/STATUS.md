@@ -1,6 +1,16 @@
 # STATUS
 
-**Statuszeile:** Phase P4 · Welle B und C fertig · Tor B/C bestanden (Befunde behoben, Beleg `_lauf/belege/tore/tor-bc.md`) · Welle D begonnen (Suche, PWA, sitemap/robots) · Z 0/12 · nächster Schritt: C11b Bilder an Inhalten, C17 Rollen-Matrix-Tests, C19 Probeläufer, Rest Welle D
+**Statuszeile:** ABGESCHLOSSEN (Übergang an den Release-Lauf, R-E02, 2026-10-11) · Wellen A–C fertig · Welle D: Suche, PWA, sitemap/robots, Quran-Import und -Seiten, JSON-LD, OG-Bilder · C11b, C17 fertig · offene Punkte → Startklar-Audit (`_lauf/release/`)
+
+## Endstand des Aufbau-Laufs (2026-10-11, 13:15)
+- **Übergeben an:** den Release-Lauf „Startklar machen“ (`_lauf/release/STATUS.md`, Plan `/Users/umurey/.claude/plans/auftrag-f-r-claude-code-linear-snowglobe.md`).
+- **Letzte Pakete:** C11b, D-Q1, D-Q23, D-O13, D-O4, C17. Belege: `belege/welle-c/abnahme-c11b.md`, `belege/welle-d/abnahme-welle-d-c17.md`.
+- **Prüfläufe:**
+  - Unit 549 (+3 erwartet fehlschlagend).
+  - Integration 1338 (+2 erwartet fehlschlagend: C17-Befunde).
+  - Build grün.
+  - E2E voll: 550 bestanden, 7 unter Last abgebrochen (ALTCHA 20 s, Weiterleitung 5 s). Alle 7 sind bei 1 Worker grün (Flake-Befund für den Release-Lauf).
+- **Offen und als Befunde übergeben:** Z-Belege (0/12), Tor D, D-Ü, D-T1, C19, H01–H07, C17-1/2, D-O4-1, Passkey (M-092).
 
 ## Prüfpunkt (2026-10-11, ~10:45)
 - **Erledigt seit letztem Prüfpunkt:**

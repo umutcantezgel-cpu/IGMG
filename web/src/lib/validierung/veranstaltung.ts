@@ -91,6 +91,8 @@ export const veranstaltungSchema = z
     kontaktTelefon: text(60),
     kontaktEmail: z.union([z.literal(''), z.email('email').max(254, 'zuLang')]).default(''),
     status: z.enum(['entwurf', 'veroeffentlicht'], 'ungueltig').default('entwurf'),
+    /** Bild aus der Mediathek (C11b); leer = kein Bild */
+    bildId: z.union([z.literal(''), z.uuid('ungueltig')]).default(''),
   })
   .superRefine((e, ctx) => {
     const fehler = (pfad: string, message: string) => ctx.addIssue({ code: 'custom', path: [pfad], message });
@@ -218,6 +220,7 @@ export function zuDatensatz(e: VeranstaltungEingabe) {
     anmeldungAktiv: e.anmeldungAktiv,
     plaetze: e.anmeldungAktiv ? (e.plaetze ?? null) : null,
     kosten: e.kosten,
+    bildId: e.bildId || null,
     empfohlen: e.empfohlen,
     programm: pDe.map((p, i) => ({ zeit: p.zeit, text: mehr(p.text, pTr[i]?.text ?? '', pEn[i]?.text ?? '') })),
     hinweise: zeilenweise(liste(e.hinweiseDe, '\n'), liste(e.hinweiseTr, '\n'), liste(e.hinweiseEn, '\n')),

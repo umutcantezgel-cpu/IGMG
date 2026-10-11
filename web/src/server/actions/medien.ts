@@ -64,39 +64,49 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
   }
   // Gleicher Inhalt schon vorhanden (auch unter anderem Namen) → vorhandenen Eintrag nutzen (Hash vorn im Schlüssel)
   const [vorhanden] = await db
-    .select({ id: m.id })
+    .select({ id: m.id, imPapierkorbSeit: m.imPapierkorbSeit })
     .from(m)
     .where(like(m.schluessel, `${v.hash}/%`))
     .limit(1);
+  // Dublette im Papierkorb: nicht still dorthin leiten, sondern sagen, wo sie liegt (Tor B/C SP-C2 H2)
+  if (vorhanden?.imPapierkorbSeit) return { fehler: 'pruefen', feldFehler: { datei: 'datei_imPapierkorb' }, werte };
   if (vorhanden) redirect(`/verwaltung/medien/${vorhanden.id}?meldung=hochgeladen`);
   await speicher().schreibe(v.schluessel, v.daten, v.typ);
-  const [neu] = await db.transaction(async (tx) => {
-    const zeilen = await tx
-      .insert(m)
-      .values({
-        schluessel: v.schluessel,
-        typ: v.typ,
-        groesse: v.daten.length,
-        breite: v.breite,
-        hoehe: v.hoehe,
-        alt: alt(p.data),
-        bildrechte: p.data.bildrechte || null,
-        dateiname: datei.name.slice(0, 200),
-        erstelltVon: a.benutzerId,
-      })
-      .returning({ id: m.id });
-    await protokolliere(
-      {
-        benutzerId: a.benutzerId,
-        aktion: 'medium.hochgeladen',
-        zielTyp: 'medium',
-        zielId: zeilen[0].id,
-        details: { typ: v.typ, groesse: v.daten.length },
-      },
-      tx,
-    );
-    return zeilen;
-  });
+  // Scheitert der Eintrag, die eben geschriebene Datei wieder entfernen – keine verwaiste Datei (SP-C2 H4)
+  const [neu] = await db
+    .transaction(async (tx) => {
+      const zeilen = await tx
+        .insert(m)
+        .values({
+          schluessel: v.schluessel,
+          typ: v.typ,
+          groesse: v.daten.length,
+          breite: v.breite,
+          hoehe: v.hoehe,
+          alt: alt(p.data),
+          bildrechte: p.data.bildrechte || null,
+          dateiname: datei.name.slice(0, 200),
+          erstelltVon: a.benutzerId,
+        })
+        .returning({ id: m.id });
+      await protokolliere(
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'medium.hochgeladen',
+          zielTyp: 'medium',
+          zielId: zeilen[0].id,
+          details: { typ: v.typ, groesse: v.daten.length },
+        },
+        tx,
+      );
+      return zeilen;
+    })
+    .catch(async (e: unknown) => {
+      await speicher()
+        .loesche(v.schluessel)
+        .catch(() => undefined);
+      throw e;
+    });
   inhaltGeaendert(TAG.medien);
   // Weiterleitung aus der Action, nicht aus einem Effekt: Next.js hält die Liste versteckt im DOM, ein Effekt mit
   // router.push liefe beim Zurückkehren erneut (Befund E2E C11)
@@ -108,6 +118,8 @@ export async function aendern(_vorher: MedienZustand, fd: FormData): Promise<Med
   const medium = await ladeMedium(String(fd.get('id') ?? ''));
   if (!medium) throw new KeinRecht();
   const werte = texte(fd);
+  // Im Papierkorb nur wiederherstellen oder löschen, nicht ändern – wie bei Inhalten (SP-C2 H3)
+  if (medium.imPapierkorbSeit) return { fehler: 'imPapierkorb', werte };
   const p = textFelder.safeParse(werte);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
   await db.transaction(async (tx) => {

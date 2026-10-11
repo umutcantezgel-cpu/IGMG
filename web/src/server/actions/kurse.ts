@@ -10,6 +10,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { ausFormular, kursSchema, kursSlugAus, zuDatensatz } from '@/lib/validierung/kurs';
+import { bildFehlerFuer } from '@/lib/medien/bild';
 
 /**
  * Verwaltung „Kurse“ (V06, ADR 0003/0005). Reihenfolge je Action: Recht (Sitzung, zweiter Faktor, Rolle) → Eingabe prüfen →
@@ -64,6 +65,9 @@ export async function speichereKurs(_vorher: SpeicherZustand, fd: FormData): Pro
     return { fehler: 'pruefen', feldFehler, werte: roh };
   }
   const e = geprueft.data;
+  // Bild: nur vorhandene Bilder außerhalb des Papierkorbs (C11b)
+  const bildFehler = await bildFehlerFuer({ bildId: e.bildId });
+  if (bildFehler) return { fehler: 'pruefen', feldFehler: bildFehler, werte: roh };
   const daten = zuDatensatz(e);
 
   let alt: { id: string; slug: string; status: 'entwurf' | 'veroeffentlicht'; imPapierkorbSeit: Date | null } | undefined;

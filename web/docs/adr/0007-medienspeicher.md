@@ -37,5 +37,13 @@ Falsch, wenn sehr viele große Videos gespeichert werden sollen (Bandbreite). Vi
 
 - **Größe:** Next.js begrenzt Action-Anfragen standardmäßig auf 1 MB, und der Proxy puffert nur 10 MB. Bilder bis zur App-Grenze von 10 MB kamen deshalb nicht oder gekürzt an (B9). `experimental.serverActions.bodySizeLimit` und `experimental.proxyClientMaxBodySize` stehen jetzt auf 11 MB. Der Reverse-Proxy begrenzt öffentliche Pfade enger (BETRIEB.md 5b).
 - **Verwendung:** `verwendungVon` sucht Bildknoten strukturell mit `jsonb_path_exists` (`$.** ? (@.type == "image" && @.attrs.mediumId == $id)`), in Neuigkeiten (`inhalt`) und Veranstaltungen (`beschreibung`), in allen Sprachen und jeder Tiefe. Die frühere Textsuche (LIKE) fand wegen des Leerzeichens in `jsonb::text` nie einen Treffer (B1).
-- **Browser-Cache:** `public, max-age=604800` statt einem Jahr `immutable`. Nach Papierkorb oder Löschung verfallen Kopien in Browsern binnen einer Woche (K-05, B7).
-- **Offen:** PDF-Metadaten (Autor, Ersteller, XMP) bleiben erhalten, nur Bilder werden neu kodiert (B8). Ein Hinweis im Upload-Formular folgt mit C11b, MENSCHEN.md.
+- **Browser-Cache:** `public, max-age=86400` statt einem Jahr `immutable` (C11b: zunächst 7 Tage). Die Bildoptimierung von Next.js übernimmt dieses Höchstalter für ihre Kopien und lässt sich nicht invalidieren; nach Papierkorb oder Löschung verfallen alle Kopien damit binnen eines Tages (K-05, B7).
+- **PDF-Metadaten** (Autor, Ersteller, XMP) bleiben erhalten, nur Bilder werden neu kodiert (B8). Das Upload-Formular weist darauf hin; ob die App sie entfernen soll, fragt M-097.
+- **Papierkorb (H2–H4):** Dieselbe Datei noch einmal hochzuladen meldet, dass sie im Papierkorb liegt, statt dorthin weiterzuleiten. Alt-Text und Bildrechte lassen sich im Papierkorb nicht ändern. Scheitert der Datenbankeintrag nach dem Schreiben der Datei, wird die Datei wieder entfernt.
+
+## Nachtrag 2026-10-11 (C11b, Bilder an Inhalten)
+
+- **Bilder an Inhalten:** Neuigkeiten, Veranstaltungen und Kurse verweisen über `bildId` auf ein Bild; Neuigkeiten können zusätzlich Bildknoten im Text haben. Gespeichert wird nur ein vorhandenes Bild außerhalb des Papierkorbs, kein PDF (`bildFehlerFuer`, Fehler `bildUngueltig`).
+- **Öffentliche Abfragen** liefern Adresse, Maße und Alt-Text je Sprache (`ladeBilder`, Tag `medien`). Ein Bild im Papierkorb fällt weg, dann erscheint der Platzhalter.
+- **Darstellung** über `getImageProps` (ohne Client-JavaScript, E-030) und die Bildoptimierung (`localPatterns` `/medien/**`).
+- **Auswahl** in der Verwaltung: Die Formularseite lädt `ladeBildAuswahl()` (höchstens 300 Bilder) und gibt die Liste an den Dialog weiter; eine eigene Schnittstelle gibt es nicht.

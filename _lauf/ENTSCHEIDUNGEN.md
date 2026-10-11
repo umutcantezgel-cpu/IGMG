@@ -164,3 +164,18 @@ Diese Texte bleiben im Klartext, damit Liste, Suche und Zähler funktionieren. D
 - Melder-E-Mail im Leseschema ohne Formatprüfung (N4): Das öffentliche Schema prüft beim Schreiben.
 - Organisationsbindung erst im Aufrufer statt in der Abfrage (SP-C2 B3/B4): Seiten prüfen vor dem Rendern.
 - PDF-Metadaten (SP-C2 B8): Hinweis im Upload-Formular mit C11b.
+
+**E-043 · 2026-10-11 · Bilder an Inhalten (C11b)**
+- **Verweis:** Neuigkeiten, Veranstaltungen und Kurse verweisen per `bildId` auf die Mediathek, Neuigkeiten zusätzlich per Bildknoten im Rich-Text. Gespeichert wird nur ein vorhandenes Bild außerhalb des Papierkorbs, kein PDF; die Prüfung macht der Server, `bildUngueltig` steht am Feld.
+- **Alt-Text** kommt immer aus der Mediathek, je Sprache mit Rückfall Deutsch und `lang="de"`. Er wird nicht je Inhalt gepflegt, damit dasselbe Bild überall gleich beschrieben ist.
+- **Öffentliche Darstellung:**
+  - über `getImageProps` als Server-Element, ohne Client-JavaScript (E-030);
+  - Bilder im Papierkorb fallen weg, dann erscheint der Platzhalter;
+  - die Veranstaltungsdetailseite bleibt ohne Bild, weil das Design dort keines vorsieht;
+  - die Karten der Startseiten-Veranstaltungen bleiben ohne Bild (Design).
+- **Auswahl:** Die Formularseite lädt höchstens 300 Bilder und gibt sie an einen nativen Dialog. Eine eigene Schnittstelle gibt es nicht.
+- **Löschfristen:** `/medien` wird 1 Tag gecacht, die Bildoptimierung übernimmt dieses Höchstalter. Spätestens nach einem Tag ist ein gelöschtes Bild auch aus den optimierten Kopien verschwunden (K-05).
+- **Verworfen:**
+  - Bild-URL im Inhalt speichern: verwaist beim Löschen, kein Alt-Text.
+  - `next/image` als Client-Komponente: zusätzliches JavaScript.
+  - Eine Such-Schnittstelle für Medien: mehr Angriffsfläche ohne Bedarf.

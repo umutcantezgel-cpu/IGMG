@@ -31,6 +31,7 @@ export function formularWerte(z: Zeile): FormularWerte {
   const hinweise = (s: 'de' | 'tr' | 'en') => (z.hinweise.some((h) => h[s]) ? zeilen(z.hinweise, (h) => h[s]) : '');
   return {
     id: z.id,
+    bildId: z.bildId ?? '',
     ...sprachen(z.titel, 'titel'),
     ...sprachen(z.kurztext, 'kurztext'),
     beschreibungDe: absaetze(z.beschreibung?.de),

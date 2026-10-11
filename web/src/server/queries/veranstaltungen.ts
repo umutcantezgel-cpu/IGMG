@@ -4,6 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import { ladeBilder, type BildDaten, type BildKarte } from '@/lib/medien/bild';
 import { naechstesVorkommen, wiederholungsart, type Wiederholungsart } from '@/lib/termine';
 
 /** Daten einer Veranstaltung für Karten und Detailseite (serialisierbar für den Cache, Zeiten als ISO). */
@@ -32,11 +33,13 @@ export type VeranstaltungsDaten = {
   istBeispiel: boolean;
   vergangen: boolean;
   aktualisiertAm: string;
+  /** Bild aus der Mediathek (C11b); null = Platzhalter */
+  bild: BildDaten | null;
 };
 
 const sichtbar = and(eq(schema.veranstaltung.status, 'veroeffentlicht'), isNull(schema.veranstaltung.imPapierkorbSeit));
 
-function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date): VeranstaltungsDaten {
+function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date, bilder: BildKarte): VeranstaltungsDaten {
   const regel = { beginn: v.beginn, ende: v.ende, wiederholung: v.wiederholung, ausnahmen: v.ausnahmen };
   const naechstes = naechstesVorkommen(regel, jetzt);
   const vorkommen = naechstes ?? { beginn: v.beginn, ende: v.ende };
@@ -64,6 +67,7 @@ function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date): Vera
     istBeispiel: v.istBeispiel,
     vergangen: naechstes === null,
     aktualisiertAm: v.aktualisiertAm.toISOString(),
+    bild: (v.bildId && bilder[v.bildId]) || null,
   };
 }
 
@@ -74,10 +78,11 @@ function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date): Vera
 export async function ladeVeranstaltungen(): Promise<VeranstaltungsDaten[]> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.veranstaltungen);
+  cacheTag(TAG.veranstaltungen, TAG.medien);
   const jetzt = new Date();
   const zeilen = await db.select().from(schema.veranstaltung).where(sichtbar);
-  const daten = zeilen.map((z) => zuDaten(z, jetzt));
+  const bilder = await ladeBilder(zeilen.map((z) => z.bildId));
+  const daten = zeilen.map((z) => zuDaten(z, jetzt, bilder));
   const kommend = daten.filter((d) => !d.vergangen).sort((a, b) => a.beginn.localeCompare(b.beginn));
   const vergangen = daten.filter((d) => d.vergangen).sort((a, b) => b.beginn.localeCompare(a.beginn));
   return [...kommend, ...vergangen];
@@ -96,7 +101,7 @@ export type VeranstaltungsDetail = VeranstaltungsDaten & {
 export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDetail | null> {
   'use cache';
   cacheLife('hours');
-  cacheTag(TAG.veranstaltungen);
+  cacheTag(TAG.veranstaltungen, TAG.medien);
   const [z] = await db
     .select()
     .from(schema.veranstaltung)
@@ -105,7 +110,7 @@ export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDet
   if (!z) return null;
   cacheTag(TAG.veranstaltung(z.id));
   return {
-    ...zuDaten(z, new Date()),
+    ...zuDaten(z, new Date(), await ladeBilder([z.bildId])),
     programm: z.programm,
     hinweise: z.hinweise,
     schlagwoerter: z.schlagwoerter,

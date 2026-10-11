@@ -24,7 +24,7 @@
     "hochladen": {
       "titel": "Hochladen",
       "datei": "Datei",
-      "dateiHinweis": "JPEG, PNG, WebP, AVIF oder PDF bis 10 MB. Bilder werden verkleinert (längste Kante 2560 px) und ohne Standort- und Kameradaten gespeichert.",
+      "dateiHinweis": "JPEG, PNG, WebP, AVIF oder PDF bis 10 MB. Bilder werden verkleinert (längste Kante 2560 px) und ohne Standort- und Kameradaten gespeichert. PDF-Dateien bleiben unverändert – entfernen Sie Angaben wie Autor oder Ersteller vorher im PDF-Programm.",
       "altDe": "Alt-Text (Deutsch)",
       "altHinweis": "Beschreiben Sie kurz, was zu sehen ist – für Menschen, die das Bild nicht sehen. Bei PDF: worum es im Aushang geht.",
       "altTr": "Alt-Text (Türkisch)",
@@ -72,7 +72,9 @@
       "datei_zuGross": "Die Datei ist größer als 10 MB.",
       "datei_typ": "Dieser Dateityp ist nicht erlaubt. Erlaubt sind JPEG, PNG, WebP, AVIF und PDF (SVG nicht).",
       "datei_defekt": "Die Datei ließ sich nicht lesen. Ist sie beschädigt?",
-      "verwendet": "Das Medium wird noch verwendet und kann nicht entfernt werden."
+      "verwendet": "Das Medium wird noch verwendet und kann nicht entfernt werden.",
+      "datei_imPapierkorb": "Diese Datei liegt bereits im Papierkorb der Mediathek. Stellen Sie sie dort wieder her, statt sie erneut hochzuladen.",
+      "imPapierkorb": "Das Medium liegt im Papierkorb. Stellen Sie es zuerst wieder her, um Alt-Text oder Bildrechte zu ändern."
     }
   }
 }

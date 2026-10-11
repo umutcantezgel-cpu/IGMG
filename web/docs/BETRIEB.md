@@ -48,6 +48,15 @@ Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten
 - „Passwort vergessen“ verschickt einen Link (60 Minuten gültig) über den Mail-Ausgang – dafür muss SMTP eingerichtet sein. Ohne Mail: Administration setzt „Zwei-Faktor zurücksetzen“ bzw. lädt neu ein.
 - Gesperrte Konten können sich nicht anmelden, erhalten keine Benachrichtigungen und keine Links.
 
+## 4b Quran-Text (ADR 0009)
+
+- Ohne Import zeigen `/quran` und die Surenseiten Platzhalter. So bleibt es, bis die Gemeinde die Tanzil-Nutzungsbedingungen angenommen und die Datei heruntergeladen hat (M-036).
+- **Import:** Datei nach `web/daten/quran/` legen; sie ist nicht im Repository. Ihren SHA-256-Wert in MENSCHEN.md eintragen, dann:
+  `pnpm quran:import daten/quran/<datei>.xml --sha256 <wert> --version "<Tanzil-Version>" --abruf <JJJJ-MM-TT>`.
+  Das Skript bricht ab, wenn der Wert nicht passt, und übernimmt die Texte unverändert.
+- **Danach** den Cache erneuern (`POST /api/wartung/cache-erneuern`) oder die App neu starten.
+- **Übersetzungen** nur mit geklärter Lizenz (M-036b); bis dahin Platzhalter.
+
 ## 5 Caching – was Betreuende wissen müssen
 
 - Öffentliche Seiten sind statisch vorgerendert und werden nach Änderungen in der Verwaltung sofort neu erzeugt (zweistufig: sofort und nach 5 s, E-025).

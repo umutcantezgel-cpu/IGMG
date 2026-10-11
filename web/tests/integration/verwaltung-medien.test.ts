@@ -122,11 +122,11 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     id = m.id;
   });
 
-  it('Auslieferung: Typ aus der Datenbank, 7 Tage gecacht (nicht immutable, K-05), nosniff; Pfadausbruch und Unbekanntes 404', async () => {
+  it('Auslieferung: Typ aus der Datenbank, 1 Tag gecacht (nicht immutable, K-05), nosniff; Pfadausbruch und Unbekanntes 404', async () => {
     const r = await holen(schluessel);
     expect(r.status).toBe(200);
     expect(r.headers.get('content-type')).toBe('image/jpeg');
-    expect(r.headers.get('cache-control')).toBe('public, max-age=604800');
+    expect(r.headers.get('cache-control')).toBe('public, max-age=86400');
     expect(r.headers.get('x-content-type-options')).toBe('nosniff');
     expect(Buffer.from(await r.arrayBuffer()).subarray(0, 3)).toEqual(Buffer.from([0xff, 0xd8, 0xff]));
     expect((await holen('../../etc/passwd')).status).toBe(404);
@@ -205,6 +205,19 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     expect((await verwendungVon(anderes)).map((x) => [x.art, x.id])).toEqual([['veranstaltung', v.id]]);
     await db.delete(schema.veranstaltung).where(eq(schema.veranstaltung.id, v.id));
     await db.delete(schema.nachricht).where(eq(schema.nachricht.id, n.id));
+  });
+
+  it('Papierkorb: gleiche Datei erneut hochladen meldet den Papierkorb, Ändern dort gesperrt (SP-C2 H2/H3)', async () => {
+    await angemeldetAls([{ rolle: 'administration' }]);
+    const datei = await jpegMitExif(18, 18);
+    const id = await hochladenId(upload(datei, 'korb.jpg'));
+    await expect(actions.inPapierkorb(formular({ id }))).rejects.toMatchObject({ ziel: '/verwaltung/medien?meldung=papierkorb' });
+    expect((await actions.hochladen({}, upload(datei, 'korb-nochmal.jpg'))).feldFehler).toEqual({ datei: 'datei_imPapierkorb' });
+    expect(await actions.aendern({}, formular({ id, altDe: 'Neuer Alt-Text im Papierkorb', bildrechte: '' }))).toMatchObject({
+      fehler: 'imPapierkorb',
+    });
+    const [m] = await db.select().from(schema.medium).where(eq(schema.medium.id, id));
+    expect(m.alt).toEqual({ de: 'Testbild mit grüner Fläche' });
   });
 
   it('Löschlauf: Medien-Papierkorb nach 30 Tagen, genutzte bleiben', async () => {
