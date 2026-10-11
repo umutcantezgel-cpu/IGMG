@@ -1,8 +1,6 @@
 import { ArrowRight, Award, Calendar, Mail, Newspaper, Phone, Star, Target } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { z } from 'zod';
-import { EventCard } from '@/components/website/EventCard';
-import { NewsCard } from '@/components/website/NewsCard';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Text } from '@/components/website/Text';
 import { Link } from '@/i18n/link';
@@ -14,14 +12,15 @@ import type { OrganisationInhalt } from '@/lib/validierung/seiteninhalte/organis
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
 import type { VeranstaltungsDaten } from '@/server/queries/veranstaltungen';
 import { OrgKarte } from './OrgKarte';
-import { KENNUNG, KUERZEL_ALLE, type Kuerzel, STIL, SYMBOL } from './stil';
+import { OrgMeldungen } from './OrgMeldungen';
+import { OrgTermine } from './OrgTermine';
+import { KENNUNG, KUERZEL_ALLE, type Kuerzel, MEHR_LINK, STIL, SYMBOL } from './stil';
 
 /** Termine und Meldungen je Organisation (Blatt C11: je drei Einträge). */
 const ANZAHL = 3;
 
 const KNOPF =
   'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss';
-const MEHR = 'inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4';
 
 export type OrganizationPageProps = {
   /** Organisation (Enum at | kt | gt | kgt, D-06). Unbekannte Adressen prüft die Seite vorher (notFound). */
@@ -86,9 +85,9 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             {hinweis([inhalt.beschreibung, inhalt.mission, inhalt.vision])}
           </div>
           <div className="flex min-w-0 flex-[2_1_360px] flex-col gap-4">
-            <div className={cn('flex flex-1 flex-col overflow-hidden rounded-lg', s.tint)}>
-              <div aria-hidden className={cn('h-1.5', s.band)} />
-              <div className="flex flex-1 flex-col gap-2 p-6">
+            <div className={cn('flex shrink-0 flex-col overflow-hidden rounded-lg', s.tint)}>
+              <div aria-hidden className={cn('h-1.5 shrink-0', s.band)} />
+              <div className="flex flex-col gap-2 p-6">
                 <h3 className="flex items-center gap-2 text-24">
                   <span className={cn('flex', s.ink)}>
                     <Award aria-hidden className="size-6" />
@@ -123,7 +122,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
                     <span className={cn('flex size-12 items-center justify-center rounded-lg', s.tint, s.ink)}>
                       <Icon aria-hidden className="size-6" />
                     </span>
-                    <Text feld={a.titel} sprache={sprache} als="h3" className="text-20 leading-snug font-bold" />
+                    <Text feld={a.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold tracking-normal" />
                     <Text feld={a.text} sprache={sprache} als="p" className="text-16 text-tinte-2" />
                   </li>
                 );
@@ -136,7 +135,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
         <div className="flex flex-wrap items-start gap-6">
           <section
             aria-labelledby={`${org}-termine`}
-            className="flex min-w-0 flex-[1_1_440px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+            className="flex min-w-0 flex-[1_1_440px] flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
             <h2 id={`${org}-termine`} className="flex items-center gap-2.5 text-30">
               <span className={cn('flex', s.ink)}>
@@ -145,17 +144,11 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               {t('events.title')}
             </h2>
             {termine.length ? (
-              <ul className="flex flex-col gap-4">
-                {termine.map((v) => (
-                  <li key={v.id}>
-                    <EventCard v={v} sprache={sprache} />
-                  </li>
-                ))}
-              </ul>
+              <OrgTermine termine={termine} sprache={sprache} org={org} />
             ) : (
               <p className="text-tinte-2">{t('events.leer')}</p>
             )}
-            <Link href="/veranstaltungen" className={MEHR}>
+            <Link href="/veranstaltungen" className={MEHR_LINK}>
               {t('events.all')}
               <ArrowRight aria-hidden className="size-5" />
             </Link>
@@ -163,7 +156,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
 
           <section
             aria-labelledby={`${org}-news`}
-            className="flex min-w-0 flex-[1_1_440px] flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8"
+            className="flex min-w-0 flex-[1_1_440px] flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
             <h2 id={`${org}-news`} className="flex items-center gap-2.5 text-30">
               <span className={cn('flex', s.ink)}>
@@ -171,17 +164,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
               </span>
               {t('news.title')}
             </h2>
-            {meldungen.length ? (
-              <ul className="flex flex-col gap-4">
-                {meldungen.map((n) => (
-                  <li key={n.id}>
-                    <NewsCard n={n} sprache={sprache} variante="standard" />
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-tinte-2">{t('news.leer')}</p>
-            )}
+            {meldungen.length ? <OrgMeldungen meldungen={meldungen} sprache={sprache} /> : <p className="text-tinte-2">{t('news.leer')}</p>}
           </section>
         </div>
 

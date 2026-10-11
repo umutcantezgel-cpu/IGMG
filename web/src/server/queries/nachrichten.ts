@@ -18,6 +18,7 @@ export type NachrichtDaten = {
   veroeffentlichtAm: string;
   istBeispiel: boolean;
   organisation: 'at' | 'kt' | 'gt' | 'kgt' | null;
+  schlagwoerter: Mehrsprachig[];
 };
 
 function zuDaten(n: typeof schema.nachricht.$inferSelect): NachrichtDaten {
@@ -34,7 +35,20 @@ function zuDaten(n: typeof schema.nachricht.$inferSelect): NachrichtDaten {
     veroeffentlichtAm: (n.veroeffentlichtAm ?? n.erstelltAm).toISOString(),
     istBeispiel: n.istBeispiel,
     organisation: n.organisation,
+    schlagwoerter: n.schlagwoerter,
   };
+}
+
+/**
+ * Öffentlich sichtbar: veröffentlicht, nicht im Papierkorb, Veröffentlichungsdatum erreicht – für Listen, Teaser,
+ * Detailseite und Slugs gleich (Tor A SP-A-08: geplante Beiträge nicht vorab per Adresse abrufbar).
+ */
+function sichtbarInListen() {
+  return and(
+    eq(schema.nachricht.status, 'veroeffentlicht'),
+    isNull(schema.nachricht.imPapierkorbSeit),
+    lte(schema.nachricht.veroeffentlichtAm, new Date()),
+  );
 }
 
 /** Veröffentlichte Nachrichten, neueste zuerst. Geplante Beiträge (Datum in der Zukunft) erscheinen erst ab ihrem Datum. */
@@ -42,17 +56,7 @@ export async function ladeNachrichten(): Promise<NachrichtDaten[]> {
   'use cache';
   cacheLife('hours');
   cacheTag(TAG.nachrichten);
-  const zeilen = await db
-    .select()
-    .from(schema.nachricht)
-    .where(
-      and(
-        eq(schema.nachricht.status, 'veroeffentlicht'),
-        isNull(schema.nachricht.imPapierkorbSeit),
-        lte(schema.nachricht.veroeffentlichtAm, new Date()),
-      ),
-    )
-    .orderBy(desc(schema.nachricht.veroeffentlichtAm));
+  const zeilen = await db.select().from(schema.nachricht).where(sichtbarInListen()).orderBy(desc(schema.nachricht.veroeffentlichtAm));
   return zeilen.map(zuDaten);
 }
 
@@ -63,31 +67,19 @@ export async function ladeNachricht(slug: string): Promise<NachrichtDaten | null
   const [z] = await db
     .select()
     .from(schema.nachricht)
-    .where(and(eq(schema.nachricht.status, 'veroeffentlicht'), isNull(schema.nachricht.imPapierkorbSeit), eq(schema.nachricht.slug, slug)))
+    .where(and(sichtbarInListen(), eq(schema.nachricht.slug, slug)))
     .limit(1);
   if (!z) return null;
   cacheTag(TAG.nachricht(z.id));
   return zuDaten(z);
 }
 
-/** Sichtbar in Listen und Teasern: veröffentlicht, nicht im Papierkorb, Veröffentlichungsdatum erreicht. */
-function sichtbarInListen() {
-  return and(
-    eq(schema.nachricht.status, 'veroeffentlicht'),
-    isNull(schema.nachricht.imPapierkorbSeit),
-    lte(schema.nachricht.veroeffentlichtAm, new Date()),
-  );
-}
-
-/** Slugs für generateStaticParams: dieselbe Auswahl wie ladeNachricht (veröffentlicht, nicht im Papierkorb). */
+/** Slugs für generateStaticParams: dieselbe Auswahl wie ladeNachricht. */
 export async function ladeNachrichtenSlugs(): Promise<string[]> {
   'use cache';
   cacheLife('hours');
   cacheTag(TAG.nachrichten);
-  const zeilen = await db
-    .select({ slug: schema.nachricht.slug })
-    .from(schema.nachricht)
-    .where(and(eq(schema.nachricht.status, 'veroeffentlicht'), isNull(schema.nachricht.imPapierkorbSeit)));
+  const zeilen = await db.select({ slug: schema.nachricht.slug }).from(schema.nachricht).where(sichtbarInListen());
   return zeilen.map((z) => z.slug);
 }
 

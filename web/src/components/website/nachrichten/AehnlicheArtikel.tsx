@@ -8,7 +8,7 @@ import { textMitSprache } from '../Text';
 
 /** Kategoriefarben wie in NewsCard (Tokens aus globals.css). */
 const TOENUNG: Record<NachrichtDaten['kategorie'], string> = {
-  ankuendigung: 'bg-tag-bildung-bg text-tag-bildung',
+  ankuendigung: 'bg-tag-wichtig-bg text-tag-wichtig',
   gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
   veranstaltung: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
   bildung: 'bg-tag-bildung-bg text-tag-bildung',

@@ -3,21 +3,26 @@
 - Status: angenommen · 2026-10-11 · P1 · Bezug: K-08, G-06, K-15, Z-01, Z-04 · Grundlage: Quellenbericht (igmg.org, Diyanet, adhan-js 4.4.6 Quelltext)
 
 ## Ziel
+
 Gebetszeiten für Wetzlar, die (a) aus einer von der Gemeinde bestätigten Tabelle kommen können, (b) bis dahin ehrlich als „berechnet“ erscheinen, (c) Sommerzeit korrekt behandeln, (d) offline und auf dem Moschee-Bildschirm weiterlaufen.
 
 ## Befund
+
 - IGMG führt Wetzlar im Gebetskalender (igmg.org/gebetskalender), aber ohne veröffentlichte Methode, Lizenz, Export oder API. Diyanet bietet keine Nutzungsbedingungen/API. → Kein automatischer Abruf (auch K-14: keine Drittanfragen).
 - adhan-js 4.4.6 (MIT): Methode `Turkey` = Fajr 18°, Isha 17°, Anpassungen Sonnenaufgang −7, Dhuhr +5, Asr +4, Maghrib +7 Minuten; laut eigener Doku „Annäherung an Diyanet, außerhalb der Türkei ungenauer“. Für Breiten > 48° empfiehlt die Bibliothek `SeventhOfTheNight`; Ende Mai bis Mitte Juli erreicht die Sonne in Wetzlar −18°/−17° nicht.
 
 ## Wege
+
 1. **Tabellen-Import** (CSV/JSON) als verbindliche Quelle, gepflegt in der Verwaltung.
 2. **Berechnung** mit adhan als vorläufiger Ersatz.
 3. **Abruf** von einem Dienst (IGMG, Diyanet, AlAdhan).
 
 ## Bewertung
+
 Weg 3 scheidet aus (keine Lizenz/API, Drittanfrage). **Weg 1 + 2 umschaltbar** (Kern K-08): Import ist verbindlich, sobald vorhanden; sonst Berechnung mit Hinweis.
 
 ## Festlegungen
+
 - Tabelle `gebetszeit_tag(datum date pk, imsak, gunes, ogle, ikindi, aksam, yatsi time, quelle enum('import','berechnet'), import_id null)` – Zeiten als Ortszeit Europe/Berlin (Wanduhr), da Tabellen so geliefert werden; Umrechnung für „nächstes Gebet“ über `@date-fns/tz` im Browser.
 - `einstellung gebetszeiten`: `aktive_quelle ('import'|'berechnung')`, `methode` (Standard `Turkey`), `madhab` (Standard `Shafi` = asr-ı evvel, Diyanet-Praxis), `hohe_breite` (Standard `SeventhOfTheNight`), `anpassungen` (Minuten je Gebet, Standard 0 zusätzlich zur Methode), `koordinaten` (Standard 50.567 N, 8.500 E – Stadtpunkt Wetzlar; ersetzt durch die Moschee-Koordinaten nach M-010).
 - **Imsak = Fajr der Berechnung** (18°, Diyanet-Angabe, ohne Temkin) – bis zur Bestätigung (M-017a).
@@ -28,8 +33,16 @@ Weg 3 scheidet aus (keine Lizenz/API, Drittanfrage). **Weg 1 + 2 umschaltbar** (
 - Moschee-Bildschirm und PWA: Monatsdaten als statisches JSON (`/gebetszeiten/monat/<jjjj-mm>.json`, gecacht), Service Worker hält den laufenden und nächsten Monat vor.
 
 ## Umkehrprobe
+
 Falsch, wenn die IGMG eine eigene, deutlich abweichende Berechnung nutzt (Hinweise auf ~20 Minuten Unterschied beim İmsak). Genau deshalb ist die Quelle umschaltbar und die Berechnung sichtbar markiert; die Gemeinde importiert ihre Tabelle.
 
 ## Folgen zweiter Ordnung
+
 - Unit-Tests: Sommerzeitwechsel (letzter Sonntag im März/Oktober), Hochsommer ohne 18°-Dämmerung, Import-Fehlerfälle, nächstes Gebet über Mitternacht.
 - MENSCHEN: M-017 (Quelle/Methode), M-017a (Imsak-Definition, Temkin), M-017b (Herkunft der Turkey-Anpassungen bestätigen oder streichen), M-010 (Koordinaten).
+
+## Nachtrag 2026-10-11 (A22, Befund A22-1)
+
+- adhan wendet die Hochbreiten-Regel (`SeventhOfTheNight`) nicht nur in der Hochsommer-Lücke an, sondern immer als Grenze: Imsak = max(Winkel, Sonnenaufgang − Nacht/7), Yatsı = min(Winkel, Sonnenuntergang + Nacht/7). In Wetzlar weicht die Berechnung deshalb in Frühjahr und Herbst bis zu 36 Min. (Imsak, später) bzw. 26 Min. (Yatsı, früher) vom Winkel 18°/17° ab – beides nicht zur vorsichtigen Seite.
+- Entscheidung offen bei der Gemeinde (M-082, G-06). Bis dahin bleibt die Berechnung unverändert, die Zeiten sind als „berechnet“ gekennzeichnet; der vorgesehene Normalfall ist der Import der offiziellen Zeiten (Verwaltung Gebetszeiten, C07).
+- `tests/unit/gebetszeiten/hohe-breite-imsak-yatsi.test.ts` prüft den Winkel als erwarteten Fehlschlag (`it.fails`) und wird rot, sobald eine Festlegung umgesetzt ist.

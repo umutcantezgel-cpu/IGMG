@@ -5,9 +5,8 @@ import type { BereichsSeed } from './typ';
  * Seed „korankurse“ (Welle A, Paket A10, ADR 0015): die drei Korankurse aus design/QuranCourses.dc.html (Z61–63)
  * mit den Sprachfassungen aus bestand/src/app/components/QuranCourses.tsx. Beispielinhalte (istBeispiel), je Zeile
  * mit Quelle. Lehrkräfte sind Platzhalter (G-04). Englische Zeiten im 24-Stunden-Format (E-018).
- * – Hafiz-Vorbereitungskurs als Entwurf: die Tabelle kurs kennt den Zustand „geschlossen“ nicht (offene Frage A10);
- *   als veröffentlichter Kurs stünde „Einfach teilnehmen“ bei einem geschlossenen Kurs.
- * – Hinweise (Bestand QuranCourses.tsx:50, 66, 82) haben kein Feld in kurs und werden nicht gespeichert (offene Frage A10).
+ * Verfügbarkeit und Hinweise aus dem Bestand (QuranCourses.tsx:50, 66, 82 und Sprachfassungen) seit Tor A in eigenen
+ * Feldern; der Hafiz-Kurs ist „geschlossen“ (Bestand: „Kurs bereits gestartet“), Status bitte bestätigen (M-076).
  */
 const KURSE: (typeof schema.kurs.$inferInsert)[] = [
   {
@@ -39,7 +38,12 @@ const KURSE: (typeof schema.kurs.$inferInsert)[] = [
         en: 'Small group sizes (max. 12 children)',
       },
     ],
-    voranmeldungMoeglich: true,
+    verfuegbarkeit: 'voranmeldung',
+    hinweis: {
+      de: 'Außerhalb der Schulferien - Voranmeldung über Schüler-Voranmeldung',
+      tr: 'Okul tatilleri dışında - Öğrenci ön kayıt üzerinden kayıt',
+      en: 'Outside school holidays - Registration via Student Pre-Registration',
+    },
     sortierung: 1,
   },
   {
@@ -66,12 +70,17 @@ const KURSE: (typeof schema.kurs.$inferInsert)[] = [
       { de: 'Memorisierungstechniken', tr: 'Ezber teknikleri', en: 'Memorization techniques' },
       { de: 'Diskussion und Austausch', tr: 'Tartışma ve paylaşım', en: 'Discussion and exchange' },
     ],
-    voranmeldungMoeglich: false,
+    verfuegbarkeit: 'ohne_anmeldung',
+    hinweis: {
+      de: 'Einfach zur angegebenen Zeit erscheinen - für alle Kenntnisstufen',
+      tr: 'Belirtilen saatte gelmek yeterli - tüm seviyeler için uygun',
+      en: 'Simply attend at the specified time - suitable for all levels',
+    },
     sortierung: 2,
   },
   {
     slug: 'hafiz-vorbereitungskurs',
-    status: 'entwurf',
+    status: 'veroeffentlicht',
     istBeispiel: true,
     quelle: 'design/QuranCourses.dc.html:63; bestand/src/app/components/QuranCourses.tsx:70–82 (de), 160–172 (tr), 250–262 (en)',
     titel: { de: 'Hafiz Vorbereitungskurs', tr: 'Hafızlık Hazırlık Kursu', en: 'Hafiz Preparation Course' },
@@ -89,7 +98,12 @@ const KURSE: (typeof schema.kurs.$inferInsert)[] = [
       { de: 'Prüfungsvorbereitung', tr: 'Sınav hazırlığı', en: 'Examination preparation' },
       { de: 'Zertifizierung', tr: 'Sertifikasyon', en: 'Certification' },
     ],
-    voranmeldungMoeglich: false,
+    verfuegbarkeit: 'geschlossen',
+    hinweis: {
+      de: 'Kurs bereits gestartet - keine neuen Anmeldungen möglich',
+      tr: 'Kurs zaten başlamış - yeni kayıtlar mümkün değil',
+      en: 'Course already started - no new registrations possible',
+    },
     sortierung: 3,
   },
 ];

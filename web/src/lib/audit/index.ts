@@ -22,6 +22,7 @@ export type AuditAktion =
   | 'inhalt.papierkorb'
   | 'inhalt.wiederhergestellt'
   | 'inhalt.geloescht'
+  | 'eingang.angelegt'
   | 'eingang.gelesen'
   | 'eingang.status'
   | 'eingang.notiz'

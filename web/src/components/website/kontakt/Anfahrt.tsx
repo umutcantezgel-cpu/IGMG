@@ -35,7 +35,7 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
               <Icon aria-hidden className="size-5" />
             </span>
             <div className="flex min-w-0 flex-col">
-              <h3 className="text-18 font-bold">{t(`anfahrt.${schluessel}`)}</h3>
+              <h3 className="font-text text-18 font-bold tracking-normal">{t(`anfahrt.${schluessel}`)}</h3>
               <Text feld={feld} sprache={sprache} als="p" className="text-tinte-2" />
             </div>
           </div>

@@ -2,9 +2,14 @@ import type { JSONContent } from '@tiptap/core';
 import { renderJSONContentToReactElement } from '@tiptap/static-renderer/json/react';
 import type { ReactNode } from 'react';
 
-/** Erlaubte Linkziele (ADR 0006): https, mailto, tel und relative Pfade. */
+/**
+ * Erlaubte Linkziele (ADR 0006): https, mailto, tel und relative Pfade. Relativ heißt: ein Schrägstrich, danach weder
+ * „/“ noch „\\“ – Browser lesen „/\\host“ wie „//host“ (fremder Host, Tor A SP-A-16).
+ */
 export function istErlaubterLink(href: unknown): href is string {
-  return typeof href === 'string' && (/^https:\/\//.test(href) || /^mailto:/.test(href) || /^tel:/.test(href) || /^\/(?!\/)/.test(href));
+  return (
+    typeof href === 'string' && (/^https:\/\//.test(href) || /^mailto:/.test(href) || /^tel:/.test(href) || /^\/(?![\/\\])/.test(href))
+  );
 }
 
 type Kinder = ReactNode | ReactNode[];

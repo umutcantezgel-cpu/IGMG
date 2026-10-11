@@ -17,16 +17,13 @@ export type KursDaten = {
   zielgruppe: Mehrsprachig | null;
   zeiten: Mehrsprachig | null;
   inhalte: Mehrsprachig[];
+  hinweis: Mehrsprachig | null;
   anmeldeweg: Anmeldeweg;
 };
 
-/**
- * Anmeldeweg aus der Tabelle kurs. Die Tabelle kennt nur `voranmeldungMoeglich`: ja → Voranmeldung (register),
- * nein → keine Anmeldung nötig (join). Der Zustand „geschlossen“ und ein Feld für den Hinweis fehlen im Schema
- * (offene Frage im Bericht A10); bis dahin wird der Hafiz-Kurs als Entwurf gespeichert.
- */
-export function anmeldewegVon(kurs: { voranmeldungMoeglich: boolean }): Anmeldeweg {
-  return kurs.voranmeldungMoeglich ? 'register' : 'join';
+/** Anmeldeweg der Karte aus der Verfügbarkeit des Kurses (V06): Voranmeldung, ohne Anmeldung, geschlossen. */
+export function anmeldewegVon(kurs: { verfuegbarkeit: 'voranmeldung' | 'ohne_anmeldung' | 'geschlossen' }): Anmeldeweg {
+  return kurs.verfuegbarkeit === 'voranmeldung' ? 'register' : kurs.verfuegbarkeit === 'ohne_anmeldung' ? 'join' : 'closed';
 }
 
 /** Veröffentlichte Kurse in Sortierreihenfolge; Entwürfe und Papierkorb (K-05) bleiben aus. Tag kurse (ADR 0004). */
@@ -47,6 +44,7 @@ export async function ladeKurse(): Promise<KursDaten[]> {
     zielgruppe: z.zielgruppe,
     zeiten: z.zeiten,
     inhalte: z.inhalte,
+    hinweis: z.hinweis,
     anmeldeweg: anmeldewegVon(z),
   }));
 }

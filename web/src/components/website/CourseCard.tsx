@@ -1,4 +1,4 @@
-import { ArrowRight, CircleCheck, CircleX, Clock, LogIn, User } from 'lucide-react';
+import { ArrowRight, CircleCheck, CircleX, Clock, Info, LogIn, User } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
@@ -74,6 +74,12 @@ export async function CourseCard({ kurs, sprache }: { kurs: KursDaten; sprache: 
             </div>
           ) : null}
         </dl>
+        {kurs.hinweis ? (
+          <p className="flex items-start gap-2.5 rounded-md bg-tag-bildung-bg px-3.5 py-2.5 text-16 text-tinte">
+            <Info aria-hidden className="mt-0.5 size-[18px] shrink-0 text-tag-bildung" />
+            <Text feld={kurs.hinweis} sprache={sprache} />
+          </p>
+        ) : null}
         {kurs.inhalte.length ? (
           <div className="flex flex-col gap-1.5">
             <h4 className="font-text text-16 font-bold text-tinte-2">{t('kursinhalte')}</h4>

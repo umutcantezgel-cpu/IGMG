@@ -50,6 +50,14 @@ Alle mit `Authorization: Bearer <WARTUNG_TOKEN>`; ohne gültiges Token antworten
 
 Die App erwartet einen Reverse-Proxy (z. B. Caddy oder nginx) für HTTPS. Er muss die Adresse der Besucherin bzw. des Besuchers **anhängen** (`X-Forwarded-For`, z. B. nginx `$proxy_add_x_forwarded_for`): Die Ratenbegrenzungen nutzen den letzten Eintrag (`src/lib/sicherheit/ip.ts`). Ohne Proxy-Header zählen alle Anfragen gemeinsam – das bremst eher zu viel als zu wenig.
 
+## 5b Am Proxy begrenzen (Tor A, Sicherheitsprüfung)
+
+- **Ratenbegrenzung am Proxy** zusätzlich zur App: `GET /api/altcha`, Formular-Schritte (POST auf öffentliche Seiten mit `Next-Action`-Header) und Anfragen an unbekannte Adressen (die App rendert und speichert je unbekannter Adresse eine 404-Antwort im Cache). Richtwert: 60 Anfragen je Minute und IP.
+- **X-Forwarded-For:** Der Proxy muss die Besucheradresse **anhängen** und darf vom Client gesendete Werte nicht ungeprüft durchreichen; ohne Proxy kann ein Client die Adresse frei setzen und die Formular-Ratenbegrenzung umgehen (siehe 5a).
+- **SMTP ist Pflicht:** Im Betrieb (`NODE_ENV=production`) gibt es keinen Datei-Transport; fehlt `SMTP_HOST`, bleiben Mails im Ausgang und werden wiederholt (Log: „SMTP_HOST fehlt“).
+- **https:** Ohne `APP_URL=https://…` warnt die App beim Start, und HSTS sowie `upgrade-insecure-requests` sind aus.
+- **Karte nach Klick (Kontakt):** Erst wenn die Koordinaten bestätigt sind (M-010), in `src/lib/sicherheit/header.ts` für die öffentliche CSP `frame-src https://www.openstreetmap.org` ergänzen und die Gegenprobe in `tests/e2e/datenschutz.spec.ts` (Startseiten-CSP ohne Drittanbieter) für diese eine Ausnahme anpassen.
+
 ## 6 Datensicherung
 
 - Täglich: `docker compose exec db pg_dump -U igmg -Fc igmg > sicherung-$(date +%F).dump`

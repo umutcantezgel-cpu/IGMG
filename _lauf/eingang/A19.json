@@ -1,0 +1,23 @@
+{
+  "korrekturen": {
+    "tr": {
+      "nachricht.lesezeit": "{minuten} dk okuma süresi",
+      "ueberUns.aufrufKontakt": "İletişime Geç",
+      "kontakt.kontaktdaten.emailLabel": "{email}: E-posta gönder"
+    },
+    "en": {
+      "kontakt.karte.platzhalter": "Map: Directions to {adresse}",
+      "kontakt.karte.iframeTitel": "Map: Directions to {adresse}",
+      "ueberUns.aufrufKontakt": "Get in Touch"
+    }
+  },
+  "begruendung": {
+    "tr.nachricht.lesezeit": "Bestand News.tsx (articleDetails.readTime, tr) lautet „dk okuma süresi“; wörtlich übernommen, {minuten} unverändert.",
+    "tr.ueberUns.aufrufKontakt": "Schaltfläche, daher kurzer Imperativ (E-023). Bestand Projects.tsx (buttons.contact, tr) für „Kontakt aufnehmen“ lautet „İletişime Geç“.",
+    "tr.kontakt.kontaktdaten.emailLabel": "Link (mailto), daher kurzer Imperativ (E-023). Nur die Verbform „gönderin“ wird zu „gönder“; Wortwahl unverändert.",
+    "en.kontakt.karte.platzhalter": "„Map: Getting Here {adresse}“ ist kein idiomatisches Englisch. „Getting Here“ bleibt Bestand-Überschrift für Anfahrt (Contact.tsx, directions.title). Wortlaut wie kontakt.adresse.karteLabel („Directions to“).",
+    "en.kontakt.karte.iframeTitel": "Gleicher Befund wie kontakt.karte.platzhalter (Titel des Kartenrahmens), gleicher Wortlaut.",
+    "en.ueberUns.aufrufKontakt": "Schaltfläche in der Schreibweise des Bestands: Projects.tsx (buttons.contact, en) lautet „Get in Touch“, wie projekte.unterstuetzen.knopf; vorher „Get in touch“."
+  },
+  "geprueft_ok": 225
+}

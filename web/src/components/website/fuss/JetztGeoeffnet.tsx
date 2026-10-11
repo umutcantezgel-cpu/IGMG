@@ -1,6 +1,6 @@
 'use client';
 
-import { CircleCheck, CircleX } from 'lucide-react';
+import { Ban, CircleCheck } from 'lucide-react';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 
 type Zeitraum = { tage: number[]; start: string; ende: string };
@@ -22,7 +22,7 @@ export function JetztGeoeffnet({ zeitraeume, geoeffnet, geschlossen }: { zeitrae
   const tag = WOCHENTAGE.indexOf(teile.find((p) => p.type === 'weekday')?.value ?? '');
   const hm = `${teile.find((p) => p.type === 'hour')?.value}:${teile.find((p) => p.type === 'minute')?.value}`;
   const offen = zeitraeume.some((z) => z.tage.includes(tag) && z.start <= hm && hm < z.ende);
-  const Icon = offen ? CircleCheck : CircleX;
+  const Icon = offen ? CircleCheck : Ban;
   return (
     <span className="flex items-center gap-1.5">
       <Icon aria-hidden className="size-4" />

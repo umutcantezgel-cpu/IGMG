@@ -98,11 +98,11 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
       ) : null}
       {eintraege.length > 0 ? (
         <div className="flex flex-col gap-2">
-          <h4 className="flex items-center gap-2 text-16 font-bold text-tinte-2">
+          <h4 className="flex items-center gap-2 font-text text-16 font-bold tracking-normal text-tinte-2">
             <ListenIcon aria-hidden className="size-4 shrink-0" />
             {variante === 'leader' ? t('errungenschaften') : t('aufgaben')}
           </h4>
-          <ul className="flex list-disc flex-col gap-1 pl-5 text-16 leading-normal">
+          <ul className={cn('flex flex-col gap-1 pl-5 text-16 leading-normal', variante === 'leader' ? 'list-[circle]' : 'list-disc')}>
             {eintraege.map((e, i) => (
               <li key={i} lang={e.lang}>
                 {e.text}
@@ -113,7 +113,7 @@ export async function PersonCard({ person, variante, sprache }: { person: Person
       ) : null}
       {person.email ? (
         <div className="mt-auto flex flex-col gap-1 border-t border-linie pt-3 text-16">
-          <h4 className="mb-1 font-bold text-tinte-2">{t('kontakt')}</h4>
+          <h4 className="mb-1 font-text font-bold tracking-normal text-tinte-2">{t('kontakt')}</h4>
           <a
             href={`mailto:${person.email}`}
             aria-label={`${person.email}: ${person.name}`}

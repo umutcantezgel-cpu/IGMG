@@ -1,0 +1,19 @@
+{
+  "korrekturen": {
+    "tr": {
+      "igmg.email": "E-posta",
+      "fehlergrenze.text": "Lütfen birkaç dakika sonra tekrar deneyin. Hata devam ederse cemaate [telefon numarası] üzerinden ulaşabilirsiniz."
+    },
+    "en": {
+      "igmg.email": "Email",
+      "rechtliches.untertitel": "[Legal texts – to be provided by the community and legally reviewed]"
+    }
+  },
+  "begruendung": {
+    "tr.igmg.email": "E-Mail ist kein türkisches Wort. LanguageContext (tr emailLabel) und alle übrigen tr-Dateien nutzen E-posta. IGMGInfo.tsx:457 schreibt E-Mail sprachunabhängig fest (Bestandsdefekt, nicht geändert).",
+    "en.igmg.email": "E-Mail ist die deutsche Schreibweise. LanguageContext (en emailLabel) und alle übrigen en-Dateien nutzen Email.",
+    "tr.fehlergrenze.text": "Gemeinde wird im Projekt als cemaat übersetzt (LanguageContext: Gemeinde beitreten wird zu Cemaate katıl; Events.tsx:191; rechtliches.json tr). Platzhalter und Siz-Form bleiben unverändert.",
+    "en.rechtliches.untertitel": "Der Zusatz by a lawyer nennt einen Akteur, den das Deutsche nicht nennt (rechtlich zu prüfen). legally reviewed gibt den Sinn ohne Zusatz wieder."
+  },
+  "geprueft_ok": 177
+}

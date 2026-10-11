@@ -60,6 +60,16 @@ describe('Veranstaltungsanmeldung', () => {
     expect(await meldeAn(null, formular({ ...werte(), altcha: await altcha() }))).toMatchObject({ status: 'erfolg' });
     const [eingang] = await db.select().from(schema.eingang).where(eq(schema.eingang.bezugId, termin.id));
     expect(eingang).toMatchObject({ art: 'veranstaltungsanmeldung', sprache: 'tr', anzahl: 1 });
+    // Löschfrist 30 Tage nach dem (einmaligen) Termin (M-050), Audit ohne Personendaten (Tor A SP-A-01/-07)
+    const [t0] = await db
+      .select({ beginn: schema.veranstaltung.beginn })
+      .from(schema.veranstaltung)
+      .where(eq(schema.veranstaltung.id, termin.id));
+    expect(eingang.loeschenAb?.getTime()).toBe(t0.beginn.getTime() + 30 * 86_400_000);
+    const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielId, eingang.id));
+    expect(audit).toHaveLength(1);
+    expect(audit[0]).toMatchObject({ aktion: 'eingang.angelegt', benutzerId: null, details: { art: 'veranstaltungsanmeldung' } });
+    expect(JSON.stringify(audit[0])).not.toContain('Testperson');
     expect(entschluessele<{ name: string; email: string }>(eingang.datenVerschluesselt, eingang.schluesselId)).toMatchObject({
       name: 'Testperson Zwei',
       email: 'testperson.zwei@example.test',

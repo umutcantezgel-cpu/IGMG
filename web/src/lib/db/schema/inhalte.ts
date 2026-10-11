@@ -91,6 +91,8 @@ export const nachricht = pgTable(
     wichtig: boolean().notNull().default(false),
     /** Lesezeit in Minuten (aus dem Text berechnet oder gepflegt) */
     lesezeit: integer(),
+    /** Schlagwörter (NewsDetails.dc.html, Block „Schlagwörter“); leer = Block entfällt. */
+    schlagwoerter: jsonb().$type<Mehrsprachig[]>().notNull().default([]),
     bildId: uuid().references(() => medium.id, { onDelete: 'set null' }),
     ...suchSpalten(),
   },
@@ -134,6 +136,8 @@ export const seiteninhalt = pgTable('seiteninhalt', {
 });
 
 /** Kurse (Korankurse und weitere Bildungsangebote). */
+export const kursVerfuegbarkeitEnum = pgEnum('kurs_verfuegbarkeit', ['voranmeldung', 'ohne_anmeldung', 'geschlossen']);
+
 export const kurs = pgTable('kurs', {
   ...inhaltSpalten(),
   slug: text().notNull().unique(),
@@ -149,7 +153,10 @@ export const kurs = pgTable('kurs', {
   plaetze: integer(),
   inhalte: jsonb().$type<Mehrsprachig[]>().notNull().default([]),
   empfohlen: boolean().notNull().default(false),
-  voranmeldungMoeglich: boolean().notNull().default(true),
+  /** Anmeldeweg wie CourseCard.dc.html (register/join/closed): Voranmeldung, ohne Anmeldung, geschlossen (V06). */
+  verfuegbarkeit: kursVerfuegbarkeitEnum().notNull().default('voranmeldung'),
+  /** Hinweis in der Karte (blaue Box, CourseCard.dc.html:25), z. B. „Außerhalb der Schulferien …“. */
+  hinweis: jsonb().$type<Mehrsprachig>(),
   sortierung: integer().notNull().default(0),
   bildId: uuid().references(() => medium.id, { onDelete: 'set null' }),
 });

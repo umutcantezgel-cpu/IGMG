@@ -220,10 +220,17 @@ async function oeffneMenue(seite: Page, sprache: Sprache, geraet: Geraet): Promi
 }
 
 /** Ein Besuch: laden, Konzept-Hinweis bestätigen, ans Ende scrollen, Menü öffnen, Netzwerk ruhig abwarten. */
+/** Erwarteter HTTP-Status: unbekannte Adressen antworten mit 404 (Tor A SP-A-05), alle anderen Routen mit 200. */
+function erwarteterStatus(pfad: string): number {
+  return pfad === routeZu('nichtgefunden', 'de') || pfad === routeZu('nichtgefunden', 'tr') || pfad === routeZu('nichtgefunden', 'en')
+    ? 404
+    : 200;
+}
+
 async function besuche(seite: Page, pfad: string, sprache: Sprache, geraet: Geraet): Promise<Response> {
   const antwort = await seite.goto(pfad);
   if (!antwort) throw new Error(`${pfad}: keine Antwort`);
-  expect(antwort.status(), `${pfad} antwortet nicht mit 200`).toBe(200);
+  expect(antwort.status(), `${pfad} antwortet nicht mit ${erwarteterStatus(pfad)}`).toBe(erwarteterStatus(pfad));
   await expect(seite.getByRole('main'), `${pfad}: Hauptinhalt fehlt`).toBeVisible();
   await seite.waitForLoadState('networkidle');
   // Der Konzept-Hinweis erscheint einmal je Browser und sperrt die Seite. Bestätigen setzt igmg-konzepthinweis-gesehen.

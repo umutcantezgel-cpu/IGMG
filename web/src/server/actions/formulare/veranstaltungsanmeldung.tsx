@@ -37,13 +37,14 @@ async function ladeNachId(id: unknown) {
 export async function meldeAn(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
   const sprache = (['de', 'tr', 'en'].includes(String(fd.get('sprache'))) ? fd.get('sprache') : 'de') as Sprache;
   const t = await getTranslations({ locale: sprache, namespace: 'veranstaltung.formular' });
-  let veranstaltung: { id: string; titel: string; termin: string; organisation: string | null } | null = null;
+  let veranstaltung: { id: string; titel: string; termin: string; organisation: string | null; loeschenAb: Date | null } | null = null;
   const ergebnis = await verarbeiteFormular({
     art: 'veranstaltungsanmeldung',
     fd,
     schema: anmeldungSchema,
     sprache,
     anzahl: (d) => d.personen,
+    loeschenAb: () => (veranstaltung as { loeschenAb: Date | null } | null)?.loeschenAb ?? null,
     bezugId: (d) => d.veranstaltungId,
     einwilligungen: () => [{ schluessel: 'veranstaltung.formular.einwilligung', text: t('einwilligung') }],
     pruefen: async (d) => {
@@ -59,6 +60,8 @@ export async function meldeAn(_vorher: FormularAntwort | null, fd: FormData): Pr
         titel: text(v.titel, sprache),
         termin: `${datumLang(beginn, sprache)}, ${zeitspanne(beginn, v.ende ? new Date(v.ende) : null, sprache)}`,
         organisation: v.organisation,
+        // Einmalige Termine: 30 Tage nach dem Ende löschen (Einwilligungstext, M-050); Reihen setzt C08
+        loeschenAb: v.regel ? null : new Date(new Date(v.ende ?? v.beginn).getTime() + 30 * 86_400_000),
       };
       return null;
     },

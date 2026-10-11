@@ -10,7 +10,7 @@ import { Text, textMitSprache } from './Text';
 
 const TOENUNG: Record<NachrichtDaten['kategorie'] | 'wichtig', string> = {
   wichtig: 'bg-tag-wichtig-bg text-tag-wichtig',
-  ankuendigung: 'bg-tag-bildung-bg text-tag-bildung',
+  ankuendigung: 'bg-tag-wichtig-bg text-tag-wichtig',
   neuigkeiten: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
   gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
   veranstaltung: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',

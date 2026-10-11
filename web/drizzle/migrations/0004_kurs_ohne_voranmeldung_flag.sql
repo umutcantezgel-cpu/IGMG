@@ -1,0 +1,1 @@
+ALTER TABLE "kurs" DROP COLUMN "voranmeldung_moeglich";

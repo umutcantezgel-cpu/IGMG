@@ -32,7 +32,8 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
           aria-label={t('adresse.karteLabel', { adresse: kontakt.adresse })}
           className={cn(KNOPF_RAHMEN, 'mt-auto self-start')}
         >
-          <ExternalLink aria-hidden className="size-5" />
+          {/* Sprung zum Kartenbereich dieser Seite – kein externer Dienst (Tor A SP-A-15, A-S11a) */}
+          <MapPin aria-hidden className="size-5" />
           {t('adresse.karte')}
         </a>
       </section>

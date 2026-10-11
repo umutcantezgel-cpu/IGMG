@@ -59,6 +59,9 @@ export const STIL: Record<Kuerzel, { akzent: string; band: string; tint: string;
   },
 };
 
+/** Textlink in den Listen („Mehr erfahren“, „Weiterlesen“, „Alle Veranstaltungen anzeigen“), Klickziel 48 px (K-11). */
+export const MEHR_LINK = 'inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4';
+
 /** Lucide-Symbole der Aktivitätskarten (Symbolnamen aus dem Seiteninhalt). */
 export const SYMBOL: Record<AktivitaetSymbol, LucideIcon> = {
   heart: Heart,

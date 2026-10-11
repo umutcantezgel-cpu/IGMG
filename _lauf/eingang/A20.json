@@ -1,0 +1,29 @@
+{
+  "korrekturen": {
+    "tr": {
+      "wissen.breadcrumb": "İslami Bilgi",
+      "voranmeldung.erfolg.startseite": "Ana Sayfaya Dön",
+      "voranmeldung.einwilligung.datenschutzLink": "Gizlilik bildirimini oku",
+      "mails.bestaetigung.hinweis": "Bu e-posta otomatik olarak oluşturulmuştur. Lütfen doğrudan yanıtlamayın. Bilgilerinizi yalnızca talebiniz için işliyoruz; ayrıntılar gizlilik bildirimimizde.",
+      "mails.bestaetigung.gruss": "Saygılarımızla, IGMG Wetzlar"
+    },
+    "en": {
+      "voranmeldung.erfolg.startseite": "Back to Home",
+      "mails.bestaetigung.text": "Thank you for your {art}. We received it on {datum} and will get back to you.",
+      "mails.bestaetigung.textVeranstaltung": "Thank you for registering for “{veranstaltung}” ({termin}). We received it on {datum}.",
+      "mails.bestaetigung.gruss": "Kind regards, IGMG Wetzlar"
+    }
+  },
+  "begruendung": {
+    "tr.wissen.breadcrumb": "Bestand Breadcrumbs.tsx (tr, islamic-knowledge) verwendet „İslami Bilgi“; Bestand bleibt wörtlich.",
+    "tr.voranmeldung.erfolg.startseite": "Bestand MosqueRequest.tsx (tr, backToHome) übersetzt dieselbe de-Quelle „Zurück zur Startseite“ mit „Ana Sayfaya Dön“.",
+    "tr.voranmeldung.einwilligung.datenschutzLink": "Link im kurzen Imperativ (Projektregel) statt Siz-Form „okuyun“; Begriff „gizlilik bildirimi“ wie in rechtliches.json.",
+    "tr.mails.bestaetigung.hinweis": "Gleicher Begriff für die Datenschutzerklärung wie in rechtliches.json („gizlilik bildirimi“) statt „gizlilik politikası“.",
+    "tr.mails.bestaetigung.gruss": "Grußformel fehlt: de „Ihre IGMG Wetzlar“ enthält die Schlussformel „Ihre“; tr ergänzt „Saygılarımızla“.",
+    "en.voranmeldung.erfolg.startseite": "Bestand MosqueRequest.tsx (en, backToHome) übersetzt dieselbe de-Quelle mit „Back to Home“.",
+    "en.mails.bestaetigung.text": "Satz steht in einem eigenen Absatz (src/lib/mail/vorlagen/index.tsx); Satzanfang groß.",
+    "en.mails.bestaetigung.textVeranstaltung": "Satz steht in einem eigenen Absatz; Satzanfang groß.",
+    "en.mails.bestaetigung.gruss": "Grußformel fehlt (de „Ihre“); „Kind regards“ ergänzt."
+  },
+  "geprueft_ok": 497
+}

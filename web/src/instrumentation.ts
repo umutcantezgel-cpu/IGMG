@@ -5,6 +5,12 @@
  */
 export async function register() {
   if (process.env.NEXT_RUNTIME !== 'nodejs') return;
+  // Ohne https-Adresse entfallen HSTS und upgrade-insecure-requests still (Tor A SP-A-17) – lokal (localhost) erlaubt
+  const adresse = process.env.APP_URL ?? '';
+  if (process.env.NODE_ENV === 'production' && !adresse.startsWith('https://') && !/^http:\/\/(localhost|127\.0\.0\.1)[:/]/.test(adresse))
+    console.warn(
+      `[start] APP_URL ist nicht https (${adresse || 'leer'}): HSTS und upgrade-insecure-requests sind abgeschaltet (BETRIEB.md 2).`,
+    );
   if (process.env.MIGRATION_BEIM_START === '1') {
     const { migriere } = await import('./lib/db/migration');
     await migriere();

@@ -10,8 +10,11 @@ import formulare from './formulare.json';
 import gebetszeiten from './gebetszeiten.json';
 import igmg from './igmg.json';
 import kontakt from './kontakt.json';
+import kontaktformular from './kontaktformular.json';
 import korankurse from './korankurse.json';
 import mails from './mails.json';
+import mitglied from './mitglied.json';
+import moscheeAnfrage from './moschee-anfrage.json';
 import nachrichten from './nachrichten.json';
 import organisationen from './organisationen.json';
 import projekte from './projekte.json';
@@ -32,8 +35,11 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   gebetszeiten,
   igmg,
   kontakt,
+  kontaktformular,
   korankurse,
   mails,
+  mitglied,
+  moscheeAnfrage,
   nachrichten,
   organisationen,
   projekte,

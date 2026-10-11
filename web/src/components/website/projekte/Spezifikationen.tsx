@@ -12,7 +12,7 @@ export async function Spezifikationen({ inhalt, sprache }: { inhalt: ProjekteInh
   const p = inhalt.projekt;
   const rueckfall = brauchtRueckfall(sprache, [p.kapazitaet.einheit, ...p.einrichtungen]);
   return (
-    <section aria-labelledby="spezifikationen-titel" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 md:p-8">
+    <section aria-labelledby="spezifikationen-titel" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
       <h2 id="spezifikationen-titel" className="flex items-center gap-3 text-30">
         <House aria-hidden className="size-7 shrink-0 text-gruen-700" />
         {t('bezeichnungen.spezifikationen')}

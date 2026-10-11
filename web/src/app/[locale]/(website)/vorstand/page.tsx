@@ -79,7 +79,7 @@ export default async function VorstandSeite() {
             <p className="text-20 text-tinte-2">{t('vorsitzUntertitel')}</p>
           </div>
           {inhalt.vorsitzende.length > 0 ? (
-            <ol className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] gap-4">
+            <ol className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,300px),1fr))] items-start gap-4">
               {inhalt.vorsitzende.map((v, i) => (
                 <li key={i}>
                   <PersonCard

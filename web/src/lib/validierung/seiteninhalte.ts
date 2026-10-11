@@ -9,6 +9,9 @@ import { schema as vorstand } from './seiteninhalte/vorstand';
 
 import { mehrsprachig } from './mehrsprachig';
 
+/** Externe Adresse: nur https mit Host (keine javascript:-, data:- oder http-Links in öffentlichen Seiten). */
+export const HTTPS_URL = z.url({ protocol: /^https$/, hostname: z.regexes.domain });
+
 export { mehrsprachig, mehrsprachigOptional } from './mehrsprachig';
 
 /** Kontaktdaten (Seiteninhalte › Kontaktdaten): Footer, Kontaktseite, JSON-LD. Platzhalter nach G-05. */
@@ -29,7 +32,8 @@ export const kontaktInhalt = z.object({
       }),
     )
     .default([]),
-  social: z.object({ facebook: z.url().optional(), instagram: z.url().optional(), youtube: z.url().optional() }).default({}),
+  // Nur https: z.url() allein akzeptiert javascript:/data: (gespeicherte XSS, Tor A SP-A-04)
+  social: z.object({ facebook: HTTPS_URL.optional(), instagram: HTTPS_URL.optional(), youtube: HTTPS_URL.optional() }).default({}),
   /** Koordinaten der Moschee (für Qibla/Gebetszeiten und Karte nach Klick); leer bis zur Bestätigung (M-010). */
   koordinaten: z.object({ breite: z.number(), laenge: z.number() }).optional(),
   /** Webadresse wie im Design (Contact.dc.html:32); nur Text, kein Link. */

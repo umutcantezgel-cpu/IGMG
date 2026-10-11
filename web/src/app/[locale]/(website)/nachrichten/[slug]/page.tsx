@@ -1,5 +1,5 @@
 import type { JSONContent } from '@tiptap/core';
-import { ArrowLeft, Calendar, Clock, Languages } from 'lucide-react';
+import { ArrowLeft, Bookmark, Calendar, Clock, Languages } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
@@ -138,6 +138,28 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
             <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie" />
             {inhalt ? (
               <RichText doc={inhalt.doc} lang={inhalt.rueckfall ? 'de' : undefined} className="gap-5 leading-[1.7] text-pretty" />
+            ) : null}
+            {n.schlagwoerter.length ? (
+              <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">
+                <h2 id="nachricht-schlagwoerter" className="flex items-center gap-2 font-text text-20 font-bold tracking-normal">
+                  <Bookmark aria-hidden className="size-5 text-gruen-700" />
+                  {t('schlagwoerter')}
+                </h2>
+                <ul className="flex flex-wrap gap-2">
+                  {n.schlagwoerter.map((s, i) => {
+                    const w = textMitSprache(s, sprache);
+                    return (
+                      <li
+                        key={i}
+                        lang={w.lang}
+                        className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2"
+                      >
+                        #{w.text}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
             ) : null}
             <div className="flex flex-wrap gap-2">
               <MerkKnopf art="gefallt" texte={t('gefaellt')} />

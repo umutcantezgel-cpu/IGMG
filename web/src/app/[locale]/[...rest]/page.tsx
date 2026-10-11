@@ -1,6 +1,4 @@
-import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
-import { NichtGefundenInhalt } from '@/components/website/fehler/NichtGefundenInhalt';
+import { notFound } from 'next/navigation';
 
 export const ensureStatic = 'navigation';
 
@@ -9,16 +7,10 @@ export function generateStaticParams() {
   return [{ rest: ['_'] }];
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('fehlerseiten');
-  return { title: t('nichtGefunden.titel'), robots: { index: false, follow: true } };
-}
-
 /**
- * Unbekannte Adressen innerhalb einer Sprache (Blatt S24, Variante 404). Hinweis: notFound() liefert hier nur den
- * englischen Standard-404 von Next ohne Layout (Root-Layout [locale], kein app/global-not-found). Darum gibt die
- * Seite den lokalisierten Inhalt mit HTTP 200 und noindex aus (siehe ABWEICHUNGEN).
+ * Unbekannte Adressen innerhalb einer Sprache (Blatt S24, Variante 404): `notFound()` – Next antwortet mit HTTP 404
+ * und rendert `[locale]/not-found.tsx` (lokalisierter Inhalt, noindex). Vorher HTTP 200 (Soft-404, Tor A SP-A-05).
  */
-export default function UnbekannteAdresse() {
-  return <NichtGefundenInhalt />;
+export default function UnbekannteAdresse(): never {
+  notFound();
 }

@@ -2,6 +2,7 @@ import 'server-only';
 import { headers } from 'next/headers';
 import { after } from 'next/server';
 import type { z } from 'zod';
+import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { sha256, verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
@@ -42,6 +43,8 @@ export async function verarbeiteFormular<S extends z.ZodType>(o: {
   einwilligungen: (daten: z.infer<S>) => Einwilligung[];
   bezugId?: (daten: z.infer<S>) => string | null;
   anzahl?: (daten: z.infer<S>) => number;
+  /** Löschfrist beim Anlegen, falls schon bekannt (z. B. 30 Tage nach einer Veranstaltung, M-050); sonst setzt C08 sie. */
+  loeschenAb?: (daten: z.infer<S>) => Date | null;
   /** Zusätzliche Prüfung nach Zod (z. B. Platzzahl); Rückgabe = Fehler oder null. */
   pruefen?: (daten: z.infer<S>) => Promise<FormularErgebnis | null>;
   mails: (daten: z.infer<S>, eingangId: string) => GeplanteMail[];
@@ -76,8 +79,14 @@ export async function verarbeiteFormular<S extends z.ZodType>(o: {
         anzahl: o.anzahl?.(daten) ?? 1,
         datenVerschluesselt: paket.daten,
         schluesselId: paket.schluesselId,
+        loeschenAb: o.loeschenAb?.(daten) ?? null,
       })
       .returning({ id: schema.eingang.id });
+    // Nachvollziehbarkeit (G-07, Tor A SP-A-07): Anlegen protokollieren – ohne Personendaten, nur die Art
+    await protokolliere(
+      { benutzerId: null, aktion: 'eingang.angelegt', zielTyp: 'eingang', zielId: eingang.id, details: { art: o.art } },
+      tx,
+    );
     const einwilligungen = o.einwilligungen(daten);
     if (einwilligungen.length)
       await tx.insert(schema.einwilligung).values(

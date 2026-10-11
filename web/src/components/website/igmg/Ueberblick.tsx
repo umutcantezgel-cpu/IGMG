@@ -41,7 +41,7 @@ export async function Ueberblick({ inhalt, sprache }: { inhalt: IgmgInhalt; spra
           {zahlen.map((zahl) => (
             <div key={zahl.label} className="border-t border-gruen-800 py-3">
               <dt className="text-gruen-100">{zahl.label}</dt>
-              <dd className="text-36 font-bold break-words tabular-nums">{zahl.wert}</dd>
+              <dd className="text-36 font-bold break-words">{zahl.wert}</dd>
             </div>
           ))}
         </dl>

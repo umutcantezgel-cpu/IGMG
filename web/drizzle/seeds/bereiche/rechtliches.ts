@@ -24,7 +24,9 @@ const impressum: z.input<typeof impressumSchema> = {
     { art: 'absatz', text: { de: 'Weitere Angaben: [Text – Rechtsberatung].' } },
     {
       art: 'absatz',
-      text: { de: '[Hinweis für die Prüfung: Der Bestand enthält keine Rechtsangaben. Die Pflichtangaben und ihr Lieferant sind offen.]' },
+      text: {
+        de: '[Hinweis für die Prüfung: Die bisherige Webseite enthält keine Rechtsangaben. Die Pflichtangaben und ihr Lieferant sind offen.]',
+      },
     },
   ],
 };
@@ -51,28 +53,29 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
       ],
     },
     {
-      art: 'absatz',
-      text: {
-        de: 'Weitere Formulare: Die folgenden Formulare sind in dieser Fassung nicht eingebaut. Die Angaben stammen aus dem Bestand (Blatt S23) und sind vor einer Freigabe zu prüfen.',
-      },
-    },
-    {
       art: 'liste',
-      titel: { de: 'Voranmeldung für Bildungsangebote (Bestand: Schüler-Voranmeldung)' },
+      titel: { de: 'Schüler-Voranmeldung für Bildungsangebote' },
       punkte: [
-        { de: 'Gewünschte Klasse und Geschlecht des Kindes' },
+        { de: 'Gewünschte Klasse und Geschlecht des Kindes (Pflicht)' },
         { de: 'Vorname, Nachname und Geburtsdatum des Kindes (Pflicht)' },
-        { de: 'Anschrift (Pflicht)' },
-        { de: 'Elternteil 1 (Pflicht) und Elternteil 2 (optional)' },
-        { de: 'Namen der Geschwisterkinder' },
-        { de: 'Angaben zur ausfüllenden Person (Pflicht)' },
-        { de: 'Zwei Einverständniserklärungen' },
+        { de: 'Anschrift: Straße und Hausnummer, Postleitzahl, Ort (Pflicht)' },
+        { de: 'Elternteil 1: Name, Telefonnummer und E-Mail-Adresse (Pflicht)' },
+        { de: 'Elternteil 2: Name, Telefonnummer und E-Mail-Adresse (freiwillig)' },
+        { de: 'Namen von Geschwisterkindern, die bereits angemeldet sind (freiwillig)' },
+        { de: 'Name der Person, die das Formular ausfüllt (Pflicht)' },
+        { de: 'Zwei Einverständniserklärungen mit Zeitpunkt und Textfassung (Pflicht)' },
       ],
     },
     { art: 'absatz', text: { de: '[Angaben zu Kindern – Prüfung durch die Rechtsberatung]' } },
     {
+      art: 'absatz',
+      text: {
+        de: 'Weitere Formulare: Die folgenden Formulare sind in dieser Fassung noch nicht eingebaut. Ihre Felder sind vorläufig und werden vor einer Freigabe geprüft.',
+      },
+    },
+    {
       art: 'liste',
-      titel: { de: 'Mitgliedsantrag (Bestand: Mitglied werden)' },
+      titel: { de: 'Mitgliedsantrag' },
       punkte: [
         { de: 'Name und E-Mail-Adresse (Pflicht)' },
         { de: 'Telefon, Adresse und Stadt (optional)' },
@@ -85,7 +88,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     },
     {
       art: 'liste',
-      titel: { de: 'Anfrage für eine Webseite der Moschee (Bestand: Webseite für Ihre Moschee)' },
+      titel: { de: 'Anfrage für eine Webseite der Moschee' },
       punkte: [
         { de: 'Name der Moschee, Ansprechperson und E-Mail-Adresse (Pflicht)' },
         { de: 'Telefon' },
@@ -97,7 +100,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     },
     {
       art: 'liste',
-      titel: { de: 'Rückmeldung zu einem Angebot (Bestand: Rückmeldung)' },
+      titel: { de: 'Rückmeldung zu einem Angebot' },
       punkte: [
         { de: 'Name, Nachname und Telefon (Pflicht)' },
         { de: 'E-Mail-Adresse (optional)' },
@@ -109,7 +112,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     {
       art: 'absatz',
       text: {
-        de: '[Hinweis für die Prüfung: Dieses Formular erhebt im Bestand keine Einwilligung; die Telefonnummer ist dort Pflicht.]',
+        de: '[Hinweis für die Prüfung: Dieses Formular erhebt bisher keine Einwilligung; die Telefonnummer ist Pflicht.]',
       },
     },
   ],
@@ -124,7 +127,13 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     {
       art: 'absatz',
       text: {
-        de: 'Für die weiteren Formulare gilt der Zweck aus dem jeweiligen Einwilligungstext, zum Beispiel „zu Beratungszwecken“ (Bestand, Anfrage für eine Webseite der Moschee). Rechtsgrundlage: [Text – Rechtsberatung].',
+        de: 'Schüler-Voranmeldungen verarbeiten wir, um Ihr Kind auf die Warteliste der Bildungsangebote zu setzen und Sie dazu zu kontaktieren. Die Einverständniserklärungen lauten: „Einverständnis zur Kontaktaufnahme“ und „Zustimmung zur Datenschutzerklärung. Bei Nichtinteresse werden die Daten wieder gelöscht.“ Rechtsgrundlage: [Text – Rechtsberatung].',
+      },
+    },
+    {
+      art: 'absatz',
+      text: {
+        de: 'Für die weiteren Formulare gilt der Zweck aus dem jeweiligen Einwilligungstext, zum Beispiel „zu Beratungszwecken“ (Anfrage für eine Webseite der Moschee). Rechtsgrundlage: [Text – Rechtsberatung].',
       },
     },
   ],
@@ -132,13 +141,13 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     {
       art: 'absatz',
       text: {
-        de: '[Hinweis für die Prüfung: Die Einwilligung zur Veranstaltungsanmeldung sagt eine Löschung „nach der Veranstaltung“ zu. Im Code ist noch keine automatische Löschung eingerichtet; diese Zusage ist vor der Freigabe zu klären.]',
+        de: '[Hinweis für die Prüfung: Die Einwilligung zur Veranstaltungsanmeldung sagt eine Löschung „nach der Veranstaltung“ zu. Anmeldungen zu einmaligen Terminen werden beim Eingang für 30 Tage nach dem Termin zur Löschung vorgemerkt; die automatische Löschung wird vor der Freigabe eingerichtet (M-050, M-079).]',
       },
     },
     { art: 'absatz', text: { de: 'Löschfrist für Anmeldungen zu Veranstaltungen: [Frist – Vorstand].' } },
     {
       art: 'absatz',
-      text: { de: 'Löschfristen der weiteren Formulare: [Frist je Formular – Vorstand]. Die Löschzusage im Bestand nennt keine Frist.' },
+      text: { de: 'Löschfristen der weiteren Formulare: [Frist je Formular – Vorstand].' },
     },
     { art: 'absatz', text: { de: 'Server-Protokolle: [Frist – Hoster und Vorstand].' } },
   ],
@@ -215,7 +224,7 @@ const datenschutz: z.input<typeof datenschutzSchema> = {
     {
       art: 'absatz',
       text: {
-        de: '[Hinweis für die Prüfung: Ob und wie der Anmeldebereich in dieser Erklärung erscheint, ist offen (Blatt S23, Frage 10).]',
+        de: '[Hinweis für die Prüfung: Ob und wie der Anmeldebereich der Verwaltung in dieser Erklärung erscheint, ist offen.]',
       },
     },
   ],
