@@ -5,9 +5,9 @@ import type { Sprache } from '@/lib/i18n/inhalt';
 import type { UeberUnsInhalt } from '@/lib/validierung/seiteninhalte/ueber-uns';
 import { cn } from '@/lib/utils';
 import type { CSSProperties } from 'react';
+import { ErstesSichtbarwerden } from '@/components/website/ErstesSichtbarwerden';
 import { Bildflaeche } from './Bildflaeche';
 import { SYMBOL } from './symbole';
-import { WegBeobachter } from './WegBeobachter';
 
 type Eintrag = UeberUnsInhalt['zeitleiste'][number];
 
@@ -20,11 +20,11 @@ function punktFarbe(i: number, anzahl: number): string {
 /**
  * Zeitleiste „Unsere Reise“ (design/AboutUs.dc.html D:37–50): Punkt mit Symbol, Jahresmarke, Ort, Titel und Bildfläche.
  * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN). Als „Weg der Gemeinde“ (B-07) zieht sich die
- * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`WegBeobachter`).
+ * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`ErstesSichtbarwerden`).
  */
 export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprache: Sprache }) {
   return (
-    <WegBeobachter className="flex flex-col">
+    <ErstesSichtbarwerden als="ol" className="flex flex-col">
       {eintraege.map((e, i) => {
         const Icon = SYMBOL[e.symbol];
         const bild = textMitSprache(e.bildbeschreibung, sprache);
@@ -69,6 +69,6 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
           </li>
         );
       })}
-    </WegBeobachter>
+    </ErstesSichtbarwerden>
   );
 }

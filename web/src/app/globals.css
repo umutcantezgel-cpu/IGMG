@@ -350,22 +350,36 @@
     transform-origin: center;
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
   }
-  /* B-07 Weg der Gemeinde: 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
-  [data-weg] {
+  /* B-07 Weg der Gemeinde (Auslöser `ErstesSichtbarwerden`): 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
+  [data-sicht] {
     --dauer-weg: 1400ms;
   }
-  [data-weg='bereit'] .weg-linie {
+  [data-sicht='bereit'] .weg-linie {
     scale: 1 0;
   }
-  [data-weg='bereit'] .weg-punkt {
+  [data-sicht='bereit'] .weg-punkt {
     opacity: 0;
   }
-  [data-weg='laeuft'] .weg-linie {
+  [data-sicht='laeuft'] .weg-linie {
     transform-origin: top;
     animation: wachsen calc(var(--dauer-weg) / var(--n)) linear calc((var(--i) + 0.5) * var(--dauer-weg) / var(--n)) both;
   }
-  [data-weg='laeuft'] .weg-punkt {
+  [data-sicht='laeuft'] .weg-punkt {
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * var(--dauer-weg) / var(--n)) both;
+  }
+  /* B-08 Meilensteinlinie: der erledigte Teil wächst von links (dauer-moment), erledigte Marken treten hervor, wenn er sie erreicht */
+  [data-sicht='bereit'] .meilenstein-fortschritt {
+    scale: 0 1;
+  }
+  [data-sicht='bereit'] .meilenstein-erreicht {
+    opacity: 0;
+  }
+  [data-sicht='laeuft'] .meilenstein-fortschritt {
+    transform-origin: left center;
+    animation: enthuellen var(--dauer-moment) var(--ease-eintritt) both;
+  }
+  [data-sicht='laeuft'] .meilenstein-erreicht {
+    animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) calc(var(--anteil) * var(--dauer-moment)) both;
   }
   /* B-12: Lade-Achtstern zeichnet sich höchstens viermal, dann steht er */
   .lade-stern {
