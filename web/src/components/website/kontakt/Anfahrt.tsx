@@ -15,6 +15,8 @@ import { KARTE, UEBERSCHRIFT_GROSS } from './stil';
 export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kontakt');
+  // Nächster Schritt ohne Karte: Verweis auf das Nachrichtenformular mit vorhandenem Schlüssel „Schreiben Sie uns“
+  const tk = await getTranslations('kontaktformular');
   const wege = [
     { schluessel: 'oeffentlich', Icon: Navigation, feld: kontakt.anfahrtOeffentlich },
     { schluessel: 'auto', Icon: Car, feld: kontakt.anfahrtAuto },
@@ -23,8 +25,8 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
   // Einbettung nur, wenn Koordinaten bestätigt sind (M-010); sonst Platzhalter ohne Schaltfläche
   const einbettung = kontakt.koordinaten ? osmEinbettung(kontakt.koordinaten) : undefined;
   return (
-    <section id="karte" aria-labelledby="kontakt-anfahrt" className="flex scroll-mt-24 flex-wrap items-stretch gap-6">
-      <div className={cn(KARTE, 'flex-[1_1_360px] gap-4')}>
+    <section id="karte" aria-labelledby="kontakt-anfahrt" className="grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-5">
+      <div className={cn(KARTE, 'gap-4 lg:col-span-2')}>
         <h2 id="kontakt-anfahrt" className={UEBERSCHRIFT_GROSS}>
           <MapPin aria-hidden className="size-7 shrink-0 text-gruen-700" />
           {t('anfahrt.titel')}
@@ -41,7 +43,7 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
           </div>
         ))}
       </div>
-      <div className="flex min-w-0 flex-[2_1_420px] flex-col">
+      <div className="flex min-w-0 flex-col lg:col-span-3">
         <KarteNachKlick
           einbettung={einbettung}
           texte={{
@@ -50,6 +52,7 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
             hinweis: t('karte.hinweis'),
             ohneKoordinaten: t('karte.ohneKoordinaten'),
             iframeTitel: t('karte.iframeTitel', { adresse: kontakt.adresse }),
+            naechsterSchritt: { label: tk('titel'), href: '#nachricht' },
           }}
         />
       </div>

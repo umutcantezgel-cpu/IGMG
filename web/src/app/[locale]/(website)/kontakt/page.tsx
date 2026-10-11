@@ -39,7 +39,7 @@ export default async function KontaktSeite() {
     <Seitenrahmen bereich="moschee" seite="kontakt" sprachZiel="/kontakt" pfad={[{ label: tp('kontakt') }]}>
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-16 md:pb-24">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt-klein md:px-8">
         <KontaktKarten kontakt={kontakt} />
         <Anfahrt kontakt={kontakt} />
         <AngeboteBesuch kontakt={kontakt} />
@@ -48,7 +48,7 @@ export default async function KontaktSeite() {
             <Mail aria-hidden className="size-7 shrink-0 text-gruen-700" />
             {tk('titel')}
           </h2>
-          <p className="max-w-(--container-text) text-pretty">{tk('einleitung')}</p>
+          <p className="max-w-einleitung text-20 leading-einleitung text-pretty text-tinte-2">{tk('einleitung')}</p>
           <FormularInsel aktion={sendeKontakt} ohneSkript={tf('ohneSkript')}>
             <KontaktFormular sprache={sprache} />
           </FormularInsel>

@@ -1,4 +1,4 @@
-import { CircleAlert, CircleCheck } from 'lucide-react';
+import { CircleAlert } from 'lucide-react';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { feldId } from './Felder';
 
@@ -55,9 +55,9 @@ export function Erfolg({ text }: { text: string }) {
       data-fokus
       tabIndex={-1}
       role="status"
-      className="flex items-start gap-2 rounded-md border border-gruen-700 bg-gruen-50 px-4 py-3 font-bold text-gruen-800 outline-none"
+      className="tritt-auf flex items-center gap-3 rounded-md border border-gruen-700 bg-gruen-50 px-4 py-3 font-bold text-gruen-800 outline-none"
     >
-      <CircleCheck aria-hidden className="mt-0.5 size-5 shrink-0" />
+      <Zustandsgrafik art="erfolg" groesse={64} />
       <p>{text}</p>
     </div>
   );

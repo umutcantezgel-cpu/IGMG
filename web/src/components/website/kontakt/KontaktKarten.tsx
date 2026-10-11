@@ -17,7 +17,7 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
   const t = await getTranslations('kontakt');
   const tp = await getTranslations('kopf');
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] gap-6">
+    <div className="grid raster-kacheln gap-6">
       <section aria-labelledby="kontakt-adresse" className={KARTE}>
         <h2 id="kontakt-adresse" className={UEBERSCHRIFT}>
           <MapPin aria-hidden className="size-6 shrink-0 text-gruen-700" />
@@ -44,22 +44,27 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
           <Phone aria-hidden className="size-6 shrink-0 text-gruen-700" />
           {t('kontaktdaten.titel')}
         </h2>
-        <p className="flex min-h-11 items-center gap-2.5">
-          <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
-          <span>{kontakt.telefon}</span>
-        </p>
-        <a
-          href={`mailto:${kontakt.email}`}
-          aria-label={t('kontaktdaten.emailLabel', { email: kontakt.email })}
-          className="flex min-h-12 items-center gap-2.5 [overflow-wrap:anywhere] text-gruen-700 underline underline-offset-[3px]"
-        >
-          <Mail aria-hidden className="size-5 shrink-0" />
-          {kontakt.email}
-        </a>
-        <p className="flex min-h-11 items-center gap-2.5">
-          <ExternalLink aria-hidden className="size-5 shrink-0 text-gruen-700" />
-          <span className="[overflow-wrap:anywhere]">{kontakt.website}</span>
-        </p>
+        {/* Drei Wege untereinander, durch Linien getrennt; jede Zeile mindestens 48 px hoch (K-11) */}
+        <ul className="flex flex-col divide-y divide-linie">
+          <li className="flex min-h-12 items-center gap-2.5">
+            <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
+            <span>{kontakt.telefon}</span>
+          </li>
+          <li>
+            <a
+              href={`mailto:${kontakt.email}`}
+              aria-label={t('kontaktdaten.emailLabel', { email: kontakt.email })}
+              className="flex min-h-12 items-center gap-2.5 wrap-anywhere text-gruen-700 underline underline-offset-3"
+            >
+              <Mail aria-hidden className="size-5 shrink-0" />
+              {kontakt.email}
+            </a>
+          </li>
+          <li className="flex min-h-12 items-center gap-2.5">
+            <ExternalLink aria-hidden className="size-5 shrink-0 text-gruen-700" />
+            <span className="wrap-anywhere">{kontakt.website}</span>
+          </li>
+        </ul>
       </section>
 
       <section aria-labelledby="kontakt-oeffnungszeiten" className={cn(KARTE, 'border-2 border-gruen-700')}>
@@ -111,7 +116,7 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
           {t('notfall.titel')}
         </h2>
         <Text feld={kontakt.notfalltext} sprache={sprache} als="p" />
-        <strong className="text-20 [overflow-wrap:anywhere] text-fehler">{kontakt.notfallTelefon}</strong>
+        <strong className="text-20 wrap-anywhere text-fehler">{kontakt.notfallTelefon}</strong>
       </section>
     </div>
   );

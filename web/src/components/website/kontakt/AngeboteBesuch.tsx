@@ -15,13 +15,14 @@ export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'konta
   const t = await getTranslations('kontakt');
   const chip = 'inline-flex items-center gap-1.5 rounded-pill bg-weiss px-3 py-0.5 text-16 font-bold text-gruen-950';
   return (
-    <div className="flex flex-wrap gap-6">
-      <section aria-labelledby="kontakt-angebote" className={cn(KARTE, 'flex-[2_1_480px] gap-4')}>
+    <div className="grid gap-6 lg:grid-cols-3">
+      <section aria-labelledby="kontakt-angebote" className={cn(KARTE, 'gap-4 lg:col-span-2')}>
         <h2 id="kontakt-angebote" className={UEBERSCHRIFT_GROSS}>
           <Heart aria-hidden className="size-7 shrink-0 text-gruen-700" />
           {t('angebote.titel')}
         </h2>
-        <ul className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-x-6 gap-y-2">
+        {/* Zwei Spalten ab 768 px, drei ab 1280 px – wie bisher je nach Breite des Feldes (kein Bruch in der Spaltenzahl) */}
+        <ul className="grid gap-x-6 gap-y-2 md:grid-cols-2 xl:grid-cols-3">
           {kontakt.angebote.map((angebot, nummer) => (
             <li key={nummer} className="flex items-start gap-2.5">
               <Check aria-hidden className="mt-1 size-5 shrink-0 text-gruen-700" />
@@ -30,10 +31,7 @@ export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'konta
           ))}
         </ul>
       </section>
-      <section
-        aria-labelledby="kontakt-besuch"
-        className="flex min-w-0 flex-[1_1_320px] flex-col gap-3 rounded-lg bg-gruen-950 p-6 text-weiss"
-      >
+      <section aria-labelledby="kontakt-besuch" className="flex min-w-0 flex-col gap-3 rounded-lg bg-gruen-950 p-6 text-weiss">
         <h2 id="kontakt-besuch" className={cn(UEBERSCHRIFT_GROSS, 'text-weiss')}>
           <Users aria-hidden className="size-7 shrink-0 text-gruen-100" />
           {t('besuch.titel')}
