@@ -72,7 +72,7 @@ export async function EventCard({
     </div>
   );
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
       {variante === 'liste' ? (
         bild ? (
           <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-40 border-b border-linie" />

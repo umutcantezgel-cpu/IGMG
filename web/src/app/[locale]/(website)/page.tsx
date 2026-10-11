@@ -129,7 +129,7 @@ export default async function Startseite() {
               <div className="min-w-0 lg:col-span-2">
                 <NewsCard n={aufmacher} sprache={sprache} variante="gross" bild={aufmacher.bild} />
               </div>
-              <ul className="flex min-w-0 flex-col gap-4">
+              <ul className="grid min-w-0 gap-4 lg:grid-rows-3">
                 {weitere.map((n) => (
                   <li key={n.id}>
                     <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />

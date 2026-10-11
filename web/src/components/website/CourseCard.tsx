@@ -52,7 +52,7 @@ export async function CourseCard({
   const StatusIcon = status.Icon;
 
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
+    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
       {bild ? (
         <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[150px] border-b border-linie" />
       ) : (

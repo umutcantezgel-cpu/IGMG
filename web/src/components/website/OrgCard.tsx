@@ -67,7 +67,7 @@ export async function OrgCard({ org, desc }: { org: OrgKuerzel; desc?: string })
   const name = t(`orgName_${org}`);
   const beschreibung = desc?.trim() ? desc : tk('beschreibungStandard');
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-normal shadow-s1 transition-[box-shadow,border-color] duration-150 hover:border-gruen-700 hover:shadow-s2 motion-reduce:transition-none">
+    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-normal shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2 motion-reduce:transition-none">
       <div aria-hidden className={cn('h-1.5', stil.band)} />
       <div className={cn('flex flex-1 flex-col gap-3 p-6', stil.tint)}>
         <span className={cn('flex self-start rounded-lg border-2 bg-weiss p-1.5', stil.rahmen)}>

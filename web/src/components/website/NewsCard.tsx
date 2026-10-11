@@ -52,14 +52,14 @@ export async function NewsCard({
 
   if (variante === 'kompakt') {
     return (
-      <article className="relative flex items-start gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
+      <article className="relative flex h-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
         {bild ? (
-          <MedienBild bild={bild} sprache={sprache} sizes="88px" className="size-[88px] shrink-0 rounded-md border border-linie" />
+          <MedienBild bild={bild} sprache={sprache} sizes="88px" className="size-22 shrink-0 rounded-md border border-linie" />
         ) : (
           <Bildplatzhalter
             beschriftung={t('fotoBeitrag')}
             kurz={t('foto')}
-            className="size-[88px] shrink-0 rounded-md border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_8px,var(--color-papier)_8px_16px)] px-1 text-[13px]"
+            className="size-22 shrink-0 rounded-md border border-linie px-1"
           />
         )}
         <div className="flex min-w-0 flex-col gap-1.5">
@@ -98,9 +98,9 @@ export async function NewsCard({
     return (
       <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1">
         {bild ? (
-          <MedienBild bild={bild} sprache={sprache} sizes={SIZES_AUFMACHER} className="h-[300px] border-b border-linie" />
+          <MedienBild bild={bild} sprache={sprache} sizes={SIZES_AUFMACHER} className="h-75 border-b border-linie" />
         ) : (
-          <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-[300px] border-b border-linie" />
+          <Bildplatzhalter beschriftung={t('fotoBeitrag')} className="h-75 border-b border-linie" />
         )}
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
@@ -138,7 +138,7 @@ export async function NewsCard({
   }
 
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
+    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
       {bild ? (
         <MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className="h-[180px] border-b border-linie" />
       ) : (
