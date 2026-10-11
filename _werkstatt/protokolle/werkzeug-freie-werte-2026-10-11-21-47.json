@@ -1,0 +1,85 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-21-47",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/suche/page.tsx",
+    "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+    "web/src/app/[locale]/(website)/quran/[sure]/page.tsx",
+    "web/src/app/[locale]/(website)/quran/page.tsx",
+    "web/src/app/[locale]/(website)/quran/stand.ts",
+    "web/src/app/[locale]/(website)/mitglied-werden/page.tsx",
+    "web/src/app/[locale]/(website)/meldung/page.tsx",
+    "web/src/app/[locale]/(website)/impressum/page.tsx",
+    "web/src/app/[locale]/(website)/datenschutz/page.tsx",
+    "web/src/components/website/rechtliches/Rechtstext.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 9
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[2.1]",
+      "zeileText": "<p dir=\"rtl\" lang=\"ar\" className=\"text-right text-30 leading-[2.1] md:text-36\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+      "zeile": 112,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[68ch]",
+      "zeileText": "<div className=\"flex max-w-[68ch] flex-col gap-1\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/mitglied-werden/page.tsx",
+      "zeile": 50,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[2_1_560px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-[2_1_560px] flex-col gap-4\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/mitglied-werden/page.tsx",
+      "zeile": 59,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_320px]",
+      "zeileText": "<aside className=\"flex min-w-0 flex-[1_1_320px] flex-col gap-6\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/mitglied-werden/page.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "underline-offset-[3px]",
+      "zeileText": "className=\"inline-flex min-h-12 items-center text-weiss underline underline-offset-[3px] hover:text-gruen-100\""
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/impressum/page.tsx",
+      "zeile": 34,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "<div className=\"mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/datenschutz/page.tsx",
+      "zeile": 36,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "<div className=\"mx-auto flex max-w-[880px] flex-col gap-6 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24\">"
+    },
+    {
+      "datei": "web/src/components/website/rechtliches/Rechtstext.tsx",
+      "zeile": 78,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:grid-cols-[220px_1fr]",
+      "zeileText": "className=\"grid gap-1 border-t border-linie py-3 first:border-t-0 first:pt-0 md:grid-cols-[220px_1fr] md:gap-4\""
+    },
+    {
+      "datei": "web/src/components/website/rechtliches/Rechtstext.tsx",
+      "zeile": 81,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[overflow-wrap:anywhere]",
+      "zeileText": "<dd lang={deutsch ? 'de' : undefined} className=\"[overflow-wrap:anywhere]\">"
+    }
+  ]
+}

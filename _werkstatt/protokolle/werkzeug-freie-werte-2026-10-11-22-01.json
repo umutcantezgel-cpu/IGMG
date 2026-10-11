@@ -1,0 +1,30 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-22-01",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+    "web/src/app/[locale]/(website)/quran/[sure]/page.tsx",
+    "web/src/app/[locale]/(website)/quran/page.tsx",
+    "web/src/app/[locale]/(website)/quran/stand.ts"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 2
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[2.1]",
+      "zeileText": "<p dir=\"rtl\" lang=\"ar\" className=\"text-right text-30 leading-[2.1] md:text-36\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/(website)/quran/QuranAnsicht.tsx",
+      "zeile": 112,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[68ch]",
+      "zeileText": "<div className=\"flex max-w-[68ch] flex-col gap-1\">"
+    }
+  ]
+}

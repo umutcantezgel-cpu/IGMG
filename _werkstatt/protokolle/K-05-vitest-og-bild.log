@@ -1,0 +1,34 @@
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+ ❯ |unit| tests/unit/og-bild.test.ts (7 tests | 1 failed) 35ms
+   ❯ Open-Graph-Bilder: Titel (K-14, K-16) (4)
+     × wählt die Schriftgröße nach Länge 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| tests/unit/og-bild.test.ts > Open-Graph-Bilder: Titel (K-14, K-16) > wählt die Schriftgröße nach Länge
+AssertionError: expected 96 to be 80 // Object.is equality
+
+- Expected
++ Received
+
+- 80
++ 96
+
+ ❯ tests/unit/og-bild.test.ts:8:49
+      6| describe('Open-Graph-Bilder: Titel (K-14, K-16)', () => {
+      7|   it('wählt die Schriftgröße nach Länge', () => {
+      8|     expect(titelSchriftgroesse('Ramadan 2025')).toBe(80);
+       |                                                 ^
+      9|     expect(titelSchriftgroesse('x'.repeat(36))).toBe(80);
+     10|     expect(titelSchriftgroesse('x'.repeat(37))).toBe(68);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  21:59:19
+   Duration  508ms (transform 78%, import 11%, tests 10%, worker 1%)
+
