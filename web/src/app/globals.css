@@ -129,6 +129,10 @@
 @utility raster-kacheln {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.25rem), 1fr));
 }
+/* Begleitspalte neben einem Formular (H-B10): der Kopf so hoch wie nötig, der Rest füllt */
+@utility raster-begleitspalte {
+  grid-template-rows: auto 1fr;
+}
 
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
 /* Symbol links, Text rechts (Kennzahlen mit Symbol): Spalte so breit wie das Symbol, Rest für den Text. */
@@ -366,9 +370,7 @@
   animation: var(--dauer-rueckmeldung) var(--ease-austritt) both ausblenden;
 }
 ::view-transition-new(.seite) {
-  animation:
-    var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden,
-    var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both auftritt;
+  animation: var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden;
 }
 /* B-05 gemeinsame Elemente (Karte → Detail): Morph 400 ms */
 ::view-transition-group(.morph) {
@@ -406,6 +408,11 @@
     transform-box: fill-box;
     transform-origin: center;
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
+  }
+  /* B-06: Ein Punkt färbt sich erst, wenn die Linie ihn erreicht (--anteil = Lage des Punkts auf dem Bogen, 0…1).
+     anteil³ nähert die Umkehrung von ease-eintritt: die Färbung kommt nie vor der Linie (H-B02). */
+  .bogen-punkt-erreicht {
+    transition-delay: calc(var(--anteil) * var(--anteil) * var(--anteil) * var(--dauer-moment));
   }
   /* B-07 Weg der Gemeinde (Auslöser `ErstesSichtbarwerden`): 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
   [data-sicht] {
@@ -471,6 +478,9 @@
   dialog.schublade[open],
   dialog.schublade[open] .schublade-gruppe {
     animation-name: einblenden;
+  }
+  .bogen-punkt-erreicht {
+    transition-delay: 0s;
   }
   *,
   *::before,

@@ -91,7 +91,8 @@ async function einladen() {
     process.exitCode = 1;
     return;
   }
-  const paket = join(DB_VERZEICHNIS, '..', 'node_modules', '@electric-sql', 'pglite', 'dist', 'index.js');
+  // PGLITE_PAKET: Modulpfad, wenn der Datenbankordner nicht neben node_modules liegt (z. B. Entwicklungsserver)
+  const paket = process.env.PGLITE_PAKET ?? join(DB_VERZEICHNIS, '..', 'node_modules', '@electric-sql', 'pglite', 'dist', 'index.js');
   const { PGlite } = await import(pathToFileURL(paket).href);
   const db = new PGlite(DB_VERZEICHNIS);
   const token = randomBytes(32).toString('base64url');
@@ -127,6 +128,9 @@ async function anmelden() {
     const seite = await kontext.newPage();
     seite.setDefaultTimeout(20000);
 
+    // Bei einem Fehler: Adresse und Bild des Zustands festhalten (Fehlersuche, z. B. langsames erstes Kompilieren im Dev-Server)
+    seite.on('pageerror', (f) => console.error(`Seitenfehler: ${f.message}`));
+    globalThis.__anmeldeSeite = seite;
     await seite.goto(`${basis}/verwaltung/einladung/${token}`, { waitUntil: 'load' });
     await seite.getByLabel('Neues Passwort').filter({ visible: true }).fill(PASSWORT);
     await seite.getByLabel('Passwort wiederholen').filter({ visible: true }).fill(PASSWORT);
@@ -153,6 +157,14 @@ async function anmelden() {
     console.log(`Bild nach Anmeldung: ${schirm}`);
     console.log(`Einzelbild von /verwaltung mit Anmeldung: node einzelbild.mjs /verwaltung --zustand ${ZUSTAND} --breite 1440`);
     await kontext.close();
+  } catch (fehler) {
+    const seite = globalThis.__anmeldeSeite;
+    if (seite) {
+      const bild = join(SCRATCHPAD, 'bilder', 'anmeldung-fehler.jpg');
+      await seite.screenshot({ path: bild, type: 'jpeg', quality: 70 }).catch(() => {});
+      console.error(`Stand beim Fehler: ${seite.url()} · Bild: ${bild}`);
+    }
+    throw fehler;
   } finally {
     await browser.close();
   }
