@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { cn } from '@/lib/utils';
 import { Abschnitt } from './Abschnitt';
-import { ANZEIGESTUFEN, LAUFWEITE, SCHRIFTEN, SCHRIFTGROESSEN, ZEILENHOEHEN } from './tokens';
+import { ANZEIGESTUFEN, LAUFWEITE, LAUFWEITE_CODE, SCHRIFTEN, SCHRIFTGROESSEN, ZEILENHOEHEN } from './tokens';
 
 const ZEILE = 'flex flex-col gap-3 border-t border-linie py-5 md:flex-row md:items-baseline md:gap-8';
 const BESCHRIFTUNG = 'flex shrink-0 flex-col gap-1 text-16 md:w-72';
@@ -89,6 +89,16 @@ export async function Typografie() {
             </div>
             <p className={cn('min-w-0 font-display text-30 font-semibold break-words', LAUFWEITE.klasse)}>
               {t('typografie.laufweiteMuster')}
+            </p>
+          </li>
+          <li className={ZEILE}>
+            <div className={BESCHRIFTUNG}>
+              <code className="font-mono font-bold">{LAUFWEITE_CODE.name}</code>
+              <span className="text-tinte-2">{t('typografie.laufweiteCode')}</span>
+              <span className="font-mono break-all text-tinte-2">{LAUFWEITE_CODE.wert}</span>
+            </div>
+            <p className={cn('min-w-0 font-mono text-30 font-bold tabular-nums', LAUFWEITE_CODE.klasse)}>
+              {t('typografie.laufweiteCodeMuster')}
             </p>
           </li>
         </ul>

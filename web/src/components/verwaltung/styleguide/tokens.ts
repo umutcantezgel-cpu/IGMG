@@ -105,6 +105,9 @@ export const SCHRIFTGROESSEN: readonly SchriftgroesseToken[] = [
 
 /** Laufweite der Überschriften. */
 export const LAUFWEITE = { name: '--tracking-titel', wert: '-0.01em', klasse: 'tracking-titel' } as const;
+/** Einmalcodes (TOTP, Wiederherstellungscodes): Ziffern deutlich getrennt. */
+export const LAUFWEITE_CODE = { name: '--tracking-code', wert: '0.3em', klasse: 'tracking-code' } as const;
+export const LAUFWEITEN = [LAUFWEITE, LAUFWEITE_CODE] as const;
 
 export type SchriftToken = {
   name: string;

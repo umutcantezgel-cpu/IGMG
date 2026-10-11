@@ -15,7 +15,7 @@ import {
   HALTEPUNKTE,
   KONTRASTBEISPIELE,
   KURVEN,
-  LAUFWEITE,
+  LAUFWEITEN,
   RADIEN,
   SCHATTEN,
   SCHRIFTEN,
@@ -141,7 +141,7 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
   });
 
   it.each([
-    [LAUFWEITE.name, LAUFWEITE.wert],
+    ...LAUFWEITEN.map((l) => [l.name, l.wert]),
     [ABSTAND_BASIS.name, ABSTAND_BASIS.wert],
     ...RADIEN.map((r) => [r.name, r.wert]),
     ...SCHATTEN.map((s) => [s.name, s.wert]),
@@ -161,7 +161,7 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
 
   it('Schriften, Laufweite, Abstände, Zeilenhöhen, Breiten, Haltepunkte, Kurven, Radien und Schatten sind vollständig', () => {
     expect(namen('--font-')).toEqual(SCHRIFTEN.map((s) => s.name).sort());
-    expect(namen('--tracking-')).toEqual([LAUFWEITE.name]);
+    expect(namen('--tracking-')).toEqual(LAUFWEITEN.map((l) => l.name).sort());
     expect(namen('--spacing')).toEqual([ABSTAND_BASIS.name, ...ABSCHNITTSABSTAENDE.map((a) => a.name)].sort());
     expect(namen('--leading-')).toEqual(ZEILENHOEHEN.map((z) => z.name).sort());
     expect(namen('--container-')).toEqual(BREITEN.map((b) => b.name).sort());
@@ -188,7 +188,7 @@ describe('Styleguide (V14): Werte und Namen gegen globals.css', () => {
     for (const d of DAUERN) expect(d.klasse).toBe(`duration-(${d.name})`);
     for (const e of EBENEN) expect(e.klasse).toBe(`z-(${e.name})`);
     for (const s of SCHRIFTEN) expect(s.klasse).toBe(`font-${s.name.slice('--font-'.length)}`);
-    expect(LAUFWEITE.klasse).toBe(`tracking-${LAUFWEITE.name.slice('--tracking-'.length)}`);
+    for (const l of LAUFWEITEN) expect(l.klasse).toBe(`tracking-${l.name.slice('--tracking-'.length)}`);
     for (const a of ABSTAENDE) expect(a.klasse).toBe(`w-${a.schritt}`);
     for (const r of RADIEN) expect(r.klasse).toBe(`rounded-${r.name.slice('--radius-'.length)}`);
     for (const s of SCHATTEN) expect(s.klasse).toBe(`shadow-${s.name.slice('--shadow-'.length)}`);
