@@ -1,17 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": ["fra1"],
   "services": {
     "web": {
       "root": "web",
-      "framework": "nextjs"
+      "framework": "nextjs",
+      "ignoreCommand": "node scripts/vercel-ignore.mjs || node web/scripts/vercel-ignore.mjs"
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": {
-        "service": "web"
-      }
-    }
+  "rewrites": [{ "source": "/(.*)", "destination": { "service": "web" } }],
+  "crons": [
+    { "path": "/api/wartung/loeschfristen", "schedule": "0 1 * * *" },
+    { "path": "/api/wartung/mail-ausgang", "schedule": "0 2 * * *" }
   ]
 }

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "vercel-build": "pnpm db:bau-vorbereiten && BAU_PGLITE=1 PGLITE_VERZEICHNIS=\"$PWD/.pglite-bau\" DATABASE_URL= next build",
+    "vercel-build": "node scripts/vercel-bau.mjs",
     "start": "next start",
     "lint": "eslint .",
     "typen": "next typegen && tsc --noEmit",
@@ -23,6 +23,7 @@
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
     "quran:import": "tsx --env-file-if-exists=.env scripts/quran-import.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
+    "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
     "format": "prettier --write",
     "start:standalone": "node scripts/start-standalone.mjs",
     "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs",
@@ -41,6 +42,7 @@
     "@tiptap/react": "3.31.4",
     "@tiptap/starter-kit": "3.31.4",
     "@tiptap/static-renderer": "3.31.4",
+    "@vercel/functions": "3.9.9",
     "adhan": "4.4.6",
     "altcha": "^3.3.0",
     "altcha-lib": "^2.6.0",
@@ -106,7 +108,7 @@
   },
   "packageManager": "pnpm@12.11.2",
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "simple-git-hooks": {
     "pre-commit": "export PATH=\"$HOME/.local/bin:$PATH\" && cd web && pnpm exec lint-staged && node scripts/geheimnis-pruefung.mjs --staged",
