@@ -1,0 +1,50 @@
+{
+  "werkzeug": "momente3",
+  "ziel": "b08",
+  "register": "B-08 Meilensteinlinie",
+  "pfad": "/projekte",
+  "modus": "reduziert",
+  "basis": "http://127.0.0.1:3400",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "zeit": "2026-10-11T20:32:23.368Z",
+  "laeufe": [
+    {
+      "http": 200,
+      "dataSicht": null,
+      "laufendNach2s": 0,
+      "endzustand": {
+        "gezaehlt": 3,
+        "opazitaetKleiner1": 0,
+        "nichtStandardSkalierung": 0,
+        "laufendLayout": [],
+        "beispiele": [
+          {
+            "sel": ".meilenstein-fortschritt",
+            "inMaske": false,
+            "opazitaet": 1,
+            "skalierung": "none",
+            "transform": "none"
+          },
+          {
+            "sel": ".meilenstein-erreicht",
+            "inMaske": false,
+            "opazitaet": 1,
+            "skalierung": "none",
+            "transform": "none"
+          },
+          {
+            "sel": ".meilenstein-erreicht",
+            "inMaske": false,
+            "opazitaet": 1,
+            "skalierung": "none",
+            "transform": "none"
+          }
+        ]
+      },
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/momente/b08-reduziert.jpg"
+    }
+  ]
+}

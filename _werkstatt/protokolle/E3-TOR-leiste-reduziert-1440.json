@@ -1,0 +1,104 @@
+{
+  "werkzeug": "leiste3",
+  "modus": "reduziert",
+  "breite": 1440,
+  "hoehe": 900,
+  "zeitAnfang": "2026-10-11T14:09:30Z",
+  "rate": 0.1,
+  "basis": "http://127.0.0.1:3400",
+  "rahmen": [
+    {
+      "nr": 1,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(255, 255, 255)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 0,
+          "dauerMs": 0.01,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 0,
+          "dauerMs": 0.01,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/reduziert/leiste-1440-reduziert.jpg"
+    }
+  ],
+  "vorher": {
+    "naechstes": "Asr",
+    "zeilen": [
+      {
+        "text": "Nächstes GebetImsak05:53",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAufgang07:",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetDhuhr13:18",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAsr16:10ve",
+        "aktuell": "time",
+        "hintergrund": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Nächstes GebetMaghrib18:",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetIsha20:25v",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      }
+    ]
+  },
+  "animationenVorWechsel": [],
+  "gewechselt": true,
+  "pageerrors": []
+}
