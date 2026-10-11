@@ -1,8 +1,8 @@
-import { WifiOff } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { ErneutLadenKnopf } from '@/components/website/fehler/ErneutLadenKnopf';
 import { knopfRahmen } from '@/components/website/fehler/knopf';
 import { Statusblock } from '@/components/website/fehler/Statusblock';
@@ -29,7 +29,11 @@ export default async function OfflineSeite() {
     <Seitenrahmen bereich="keiner" seite="offline" sprachZiel="/offline" pfad={[{ label: t('offline.titel') }]}>
       <PageHeader titel={t('offline.titel')} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 py-10 md:px-8 md:py-14">
-        <Statusblock sinnbild={<WifiOff aria-hidden className="size-8" />} ueberschrift={t('offline.h2')} text={t('offline.text')}>
+        <Statusblock
+          grafik={<Zustandsgrafik art="offline" className="tritt-auf" />}
+          ueberschrift={t('offline.h2')}
+          text={t('offline.text')}
+        >
           <ErneutLadenKnopf text={t('aktion.erneut')} />
           <Link href="/" className={knopfRahmen}>
             {t('aktion.startseite')}

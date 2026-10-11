@@ -25,6 +25,7 @@ export default function GlobalerFehler({ error, retry }: { error: Error & { dige
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex, follow" />
         <title>{t.titel}</title>
       </head>
       <body>
