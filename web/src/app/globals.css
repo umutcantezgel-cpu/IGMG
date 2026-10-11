@@ -73,6 +73,8 @@
   --text-36--line-height: 1.2;
   --text-48: 3rem;
   --text-48--line-height: 1.15;
+  /* Zeilenhöhe der Überschriften in Karten und Abschnitten: wie im Design erben sie 1,6 vom Fließtext (R-BC-D1, DP-B-07/-10) */
+  --leading-ueberschrift: 1.6;
   /* Sonderstufen nur für die Moschee-Anzeige (Laufbuch D-12) */
   --text-anzeige-64: 4rem;
   --text-anzeige-96: 6rem;
@@ -215,6 +217,17 @@
 
 /* Fließtext aus der Verwaltung (RichText, ADR 0006) */
 @layer components {
+  /* Keine automatische Silbentrennung für einzelne Textstellen (z. B. Einwilligungstext, DP-B-16); die Seite trennt weiter */
+  .ohne-silbentrennung {
+    hyphens: manual;
+  }
+  /* Verwaltung: keine Silbentrennung mitten im Wort (DP-C1 M1/M2, DP-C2 Befund 2); Fließtext (p) darf weiter trennen */
+  .verwaltung-huelle {
+    hyphens: manual;
+  }
+  .verwaltung-huelle p {
+    hyphens: auto;
+  }
   .fliesstext {
     display: flex;
     flex-direction: column;

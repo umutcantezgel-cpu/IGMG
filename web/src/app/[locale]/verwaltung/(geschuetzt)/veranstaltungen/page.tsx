@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumKurz, datumLang, zeitspanne } from '@/lib/i18n/format';
 import { lokaleTeile } from '@/lib/termine';
 import { darf, organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -66,7 +67,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
       {liste.length === 0 ? (
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
       ) : (
-        <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+        <TabellenRahmen beschriftung={t('titel')}>
           <table className="w-full min-w-[56rem] border-collapse text-left">
             <thead className="bg-sand">
               <tr>
@@ -181,7 +182,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
               })}
             </tbody>
           </table>
-        </div>
+        </TabellenRahmen>
       )}
     </>
   );

@@ -96,14 +96,15 @@ export function Seitenleiste({
                   aria-current={istAktiv ? 'page' : undefined}
                   onClick={() => setOffen(false)}
                   className={cn(
-                    'flex min-h-12 items-center gap-3 rounded-md px-4 font-bold no-underline',
+                    'flex min-h-12 items-center gap-3 rounded-md px-3.5 font-bold no-underline',
                     istAktiv
                       ? 'bg-gruen-700 text-weiss hover:bg-gruen-800 hover:text-weiss'
                       : 'text-tinte hover:bg-gruen-50 hover:text-tinte',
                   )}
                 >
                   <Icon aria-hidden className="size-5 shrink-0" />
-                  <span className="flex-1">{e.label}</span>
+                  {/* Ein Wort wie „Veranstaltungen“ bleibt in einer Zeile: keine Trennung, Zähler rechts daneben (DP-C1 M1) */}
+                  <span className="min-w-0 flex-1 hyphens-none">{e.label}</span>
                   {e.zaehler !== undefined ? (
                     <span
                       className={cn(

@@ -38,7 +38,7 @@ export function Seitenkopf({
               <span>{kennung}</span>
             </span>
           ) : null}
-          <h1 className="text-36 leading-[1.15] text-pretty md:text-48">{titel}</h1>
+          <h1 className="text-36 leading-[1.15] text-balance md:text-48">{titel}</h1>
           {untertitel ? <p className="max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2">{untertitel}</p> : null}
           {kinder}
         </div>

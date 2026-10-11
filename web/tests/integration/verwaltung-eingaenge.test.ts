@@ -111,7 +111,7 @@ describe('Sichtbarkeit je Rolle', () => {
 });
 
 describe('Bearbeiten', () => {
-  it('Status „erledigt“ startet die Frist (180 Tage), Wiederöffnen hebt sie auf; Audit mit von/nach', async () => {
+  it('Status „erledigt“ startet die Frist (180 Tage), Wiederöffnen setzt die Höchstfrist (365 Tage, B4); Audit mit von/nach', async () => {
     await als([{ rolle: 'bildung' }]);
     await actions.setzeStatus(formular({ id: voran, status: 'erledigt' }));
     let [z] = await db.select().from(schema.eingang).where(eq(schema.eingang.id, voran));
@@ -120,7 +120,8 @@ describe('Bearbeiten', () => {
     expect(Math.round((z.loeschenAb!.getTime() - z.erledigtAm!.getTime()) / 86_400_000)).toBe(180);
     await actions.setzeStatus(formular({ id: voran, status: 'in_bearbeitung' }));
     [z] = await db.select().from(schema.eingang).where(eq(schema.eingang.id, voran));
-    expect(z).toMatchObject({ status: 'in_bearbeitung', erledigtAm: null, loeschenAb: null });
+    expect(z).toMatchObject({ status: 'in_bearbeitung', erledigtAm: null });
+    expect(Math.round((z.loeschenAb!.getTime() - Date.now()) / 86_400_000)).toBe(365);
     const audit = (await auditVon(voran)).filter((x) => x.aktion === 'eingang.status');
     expect(audit.map((x) => x.details)).toEqual([
       { art: 'voranmeldung', von: 'neu', nach: 'erledigt' },
@@ -238,9 +239,9 @@ describe('Löschlauf (C16)', () => {
     expect(a).toMatchObject({ benutzerId: null, zielTyp: 'nachricht', details: { papierkorb: true } });
   });
 
-  it('Melderdaten geschlossener Tickets nach 180 Tagen entfernt (Ticket bleibt); offene unberührt', async () => {
+  it('Melderdaten gelöster und geschlossener Tickets nach 180 Tagen entfernt (Ticket bleibt); offene unberührt', async () => {
     const m = verschluessele({ vorname: 'Testperson', nachname: 'Elf' });
-    const [alt, offen] = await db
+    const [alt, offen, geloest] = await db
       .insert(schema.ticket)
       .values([
         {
@@ -253,14 +254,58 @@ describe('Löschlauf (C16)', () => {
           schluesselId: m.schluesselId,
         },
         { titel: 'Offen', beschreibung: 'x', typ: 'wunsch', status: 'offen', melderVerschluesselt: m.daten, schluesselId: m.schluesselId },
+        {
+          titel: 'Gelöst',
+          beschreibung: 'x',
+          typ: 'wunsch',
+          status: 'geloest',
+          geschlossenAm: new Date(Date.now() - 181 * 86_400_000),
+          melderVerschluesselt: m.daten,
+          schluesselId: m.schluesselId,
+        },
       ])
       .returning({ id: schema.ticket.id });
     const r = await loescheAbgelaufene();
-    expect(r.melder).toBe(1);
+    expect(r.melder).toBe(2);
+    const [g1] = await db.select().from(schema.ticket).where(eq(schema.ticket.id, geloest.id));
+    expect(g1.melderVerschluesselt).toBeNull();
     const [a1] = await db.select().from(schema.ticket).where(eq(schema.ticket.id, alt.id));
     expect(a1).toMatchObject({ titel: 'Alt', melderVerschluesselt: null, schluesselId: null });
     const [o1] = await db.select().from(schema.ticket).where(eq(schema.ticket.id, offen.id));
     expect(o1.melderVerschluesselt).not.toBeNull();
+  });
+
+  it('Einladungen 30 Tage nach Annahme, Widerruf oder Ablauf gelöscht; abgelaufene Verifikationen sofort (N7)', async () => {
+    const tag = 86_400_000;
+    const jetzt = Date.now();
+    const einladung = (name: string, w: Partial<typeof schema.einladung.$inferInsert>) => ({
+      email: `${name}@example.test`,
+      name: `Testperson ${name}`,
+      rollen: [{ rolle: 'redaktion' as const }],
+      tokenHash: `hash-${name}`,
+      laeuftAb: new Date(jetzt + 7 * tag),
+      ...w,
+    });
+    await db
+      .insert(schema.einladung)
+      .values([
+        einladung('angenommen', { angenommenAm: new Date(jetzt - 31 * tag) }),
+        einladung('widerrufen', { widerrufenAm: new Date(jetzt - 31 * tag) }),
+        einladung('abgelaufen', { laeuftAb: new Date(jetzt - 31 * tag) }),
+        einladung('offen', {}),
+        einladung('kuerzlich', { angenommenAm: new Date(jetzt - 2 * tag) }),
+      ]);
+    await db.insert(schema.verification).values([
+      { id: 'v-alt', identifier: 'reset-password:alt', value: 'x', expiresAt: new Date(jetzt - 1000) },
+      { id: 'v-neu', identifier: 'reset-password:neu', value: 'x', expiresAt: new Date(jetzt + 3_600_000) },
+    ]);
+    const r = await loescheAbgelaufene();
+    expect(r.einladungen).toBe(3);
+    expect((await db.select({ name: schema.einladung.name }).from(schema.einladung)).map((e) => e.name).sort()).toEqual([
+      'Testperson kuerzlich',
+      'Testperson offen',
+    ]);
+    expect((await db.select({ id: schema.verification.id }).from(schema.verification)).map((v) => v.id)).toEqual(['v-neu']);
   });
 
   it('Wartungsroute: ohne Token 401', async () => {

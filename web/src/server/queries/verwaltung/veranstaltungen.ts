@@ -104,12 +104,3 @@ export async function ladeVeranstaltungFuerVerwaltung(id: string) {
   const [z] = await db.select().from(v).where(eq(v.id, id)).limit(1);
   return z ?? null;
 }
-
-/** Zähler für die Seitenleiste: Veranstaltungen ohne Papierkorb. */
-export async function zaehleVeranstaltungen(): Promise<number> {
-  const [z] = await db
-    .select({ n: sql<number>`count(*)::int` })
-    .from(v)
-    .where(isNull(v.imPapierkorbSeit));
-  return z?.n ?? 0;
-}

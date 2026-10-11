@@ -31,14 +31,18 @@ describe('Passwort vergessen', () => {
       return { status: true };
     };
     expect(await actions.passwortVergessen({}, formular({ email: 'Testperson.Eins@Example.test' }))).toEqual({ ok: true });
+    // Erst nach der Antwort (N1: gleiche Antwortzeit mit und ohne Konto)
+    expect(aufruf).toBeNull();
+    expect(aufrufe.nachher).toHaveLength(1);
+    await aufrufe.nachher[0]();
     expect(aufruf).toMatchObject({
       body: { email: 'testperson.eins@example.test', redirectTo: expect.stringMatching(/\/verwaltung\/passwort-neu$/) },
     });
-    expect(aufrufe.nachher).toHaveLength(1);
     api.requestPasswordReset = async () => {
       throw new Error('kaputt');
     };
     expect(await actions.passwortVergessen({}, formular({ email: 'unbekannt@example.test' }))).toEqual({ ok: true });
+    await expect(aufrufe.nachher[1]()).resolves.toBeUndefined();
   });
 
   it('Link-Mail: verschlüsselt im Ausgang für aktive Konten, keine für gesperrte', async () => {

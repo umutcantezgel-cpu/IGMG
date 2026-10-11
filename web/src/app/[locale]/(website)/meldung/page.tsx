@@ -32,7 +32,10 @@ export default async function MeldungSeite() {
           aria-labelledby="meldung-titel"
           className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 md:p-8"
         >
-          <h2 id="meldung-titel" className="flex items-center gap-2.5 font-display text-30 font-semibold text-gruen-800">
+          <h2
+            id="meldung-titel"
+            className="flex items-center gap-2.5 font-display text-30 leading-ueberschrift font-semibold text-gruen-800"
+          >
             <MessageSquare aria-hidden className="size-7 shrink-0 text-gruen-700" />
             {t('titelFormular')}
           </h2>

@@ -13,7 +13,7 @@ const vorstandsmitglied = z.object({
   name: z.string().trim().min(1).max(120),
   funktion: mehrsprachig(120),
   seit: z.string().trim().max(10).default(''),
-  aufgaben: z.array(mehrsprachig(200)).default([]),
+  aufgaben: z.array(mehrsprachig(200)).max(20).default([]),
   email: z.union([z.email(), z.literal('')]).default(''),
   telefon: z.string().trim().max(60).default('[Telefonnummer]'),
 });
@@ -24,14 +24,14 @@ const amtszeit = z.object({
   von: z.string().trim().min(1).max(10),
   bis: z.string().trim().max(10).default(''),
   aktuell: z.boolean().default(false),
-  erfolge: z.array(mehrsprachig(200)).default([]),
+  erfolge: z.array(mehrsprachig(200)).max(30).default([]),
 });
 
 export const schema = z.object({
   /** Jahr für die Kennung „Führung seit …“ (BoardMembers.dc.html:30). Der Bestand nennt 1976 als Gründungsjahr (offen). */
   fuehrungSeit: z.string().trim().min(1).max(10).default('[Jahr]'),
-  vorstand: z.array(vorstandsmitglied).default([]),
-  vorsitzende: z.array(amtszeit).default([]),
+  vorstand: z.array(vorstandsmitglied).max(40).default([]),
+  vorsitzende: z.array(amtszeit).max(40).default([]),
 });
 
 export type VorstandInhalt = z.infer<typeof schema>;

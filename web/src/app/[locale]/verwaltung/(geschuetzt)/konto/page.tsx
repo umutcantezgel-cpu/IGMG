@@ -16,16 +16,16 @@ export default async function MeinKonto({ searchParams }: PageProps<'/[locale]/v
         <p className="max-w-[70ch] text-tinte-2">{t('konto.untertitel')}</p>
       </div>
       {sp.passwort === 'geaendert' ? <Meldung art="erfolg">{t('konto.passwortGeaendert')}</Meldung> : null}
-      <div className="grid max-w-5xl gap-6 lg:grid-cols-2">
+      <div className="grid max-w-6xl items-start gap-6 lg:grid-cols-2">
         <section aria-labelledby="konto-angaben" className={karte}>
           <h2 id="konto-angaben" className="text-24">
             {t('konto.angaben')}
           </h2>
-          <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-[minmax(0,10rem)_minmax(0,1fr)]">
+          <dl className="grid gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]">
             <dt className="font-bold">{t('formular.name')}</dt>
             <dd>{a.name}</dd>
             <dt className="font-bold">{t('formular.email')}</dt>
-            <dd className="break-all">{a.email}</dd>
+            <dd className="break-words">{a.email}</dd>
             <dt className="font-bold">{t('konto.rollen')}</dt>
             <dd>
               {a.rollen.map((r) => (r.organisation ? `${tr(r.rolle)} (${t(`organisationen.${r.organisation}`)})` : tr(r.rolle))).join(', ')}

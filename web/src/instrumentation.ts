@@ -7,9 +7,18 @@ export async function register() {
   if (process.env.NEXT_RUNTIME !== 'nodejs') return;
   // Ohne https-Adresse entfallen HSTS und upgrade-insecure-requests still (Tor A SP-A-17) – lokal (localhost) erlaubt
   const adresse = process.env.APP_URL ?? '';
+  // Ohne APP_URL zeigten Links in Mails und kanonische Adressen auf localhost (Tor B/C SP-B B11) – Start abbrechen wie
+  // bei fehlender DATABASE_URL. Bauläufe (Vorrendern) sind ausgenommen.
+  if (process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE !== 'phase-production-build' && !adresse)
+    throw new Error('[start] APP_URL fehlt (öffentliche Adresse, z. B. https://<domain>; BETRIEB.md 2).');
   if (process.env.NODE_ENV === 'production' && !adresse.startsWith('https://') && !/^http:\/\/(localhost|127\.0\.0\.1)[:/]/.test(adresse))
     console.warn(
       `[start] APP_URL ist nicht https (${adresse || 'leer'}): HSTS und upgrade-insecure-requests sind abgeschaltet (BETRIEB.md 2).`,
+    );
+  // Ratenbegrenzung braucht die Besucheradresse vom vertrauten Proxy (E-041); ohne ihn gilt ein gemeinsames Limit
+  if (process.env.NODE_ENV === 'production' && process.env.PROXY_VERTRAUEN !== '1')
+    console.error(
+      '[start] PROXY_VERTRAUEN ist nicht 1: Formulare und Anmeldung teilen sich ein gemeinsames Limit (kein vertrauter Proxy). Hinter dem TLS-Proxy PROXY_VERTRAUEN=1 setzen (BETRIEB.md 5a).',
     );
   if (process.env.MIGRATION_BEIM_START === '1') {
     const { migriere } = await import('./lib/db/migration');

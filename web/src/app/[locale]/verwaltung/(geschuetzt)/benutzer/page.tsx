@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
@@ -19,7 +20,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
     getTranslations('verwaltung.benutzer'),
     getTranslations('verwaltung.rollen'),
     searchParams,
-    ladeBenutzerListe(),
+    ladeBenutzerListe(a),
     ladeOffeneEinladungen(),
   ]);
   const rollenText = (rollen: RollenZuweisung[]) =>
@@ -52,7 +53,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
         {konten.length === 0 ? (
           <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p>
         ) : (
-          <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+          <TabellenRahmen beschriftung={t('listeTitel')}>
             <table className="w-full min-w-[64rem] border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
@@ -70,7 +71,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
                       {k.name}
                       {k.id === a.benutzerId ? <span className="block text-16 font-normal text-tinte-2">{t('du')}</span> : null}
                     </th>
-                    <td className="px-4 py-3 break-all">{k.email}</td>
+                    <td className="px-4 py-3 break-words">{k.email}</td>
                     <td className="px-4 py-3">{rollenText(k.rollen) || '–'}</td>
                     <td className="px-4 py-3">
                       <span className={k.zweiFaktor ? `${pille} bg-gruen-50 text-gruen-800` : `${pille} bg-warnung-toenung text-warnung`}>
@@ -95,7 +96,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
                 ))}
               </tbody>
             </table>
-          </div>
+          </TabellenRahmen>
         )}
       </section>
       <section aria-labelledby="benutzer-einladungen" className="flex flex-col gap-3">
@@ -105,7 +106,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
         {einladungen.length === 0 ? (
           <p className="text-tinte-2">{t('einladungen.leer')}</p>
         ) : (
-          <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+          <TabellenRahmen beschriftung={t('einladungen.titel')}>
             <table className="w-full min-w-[48rem] border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
@@ -122,7 +123,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
                     <th scope="row" className="px-4 py-3 font-bold">
                       {e.name}
                     </th>
-                    <td className="px-4 py-3 break-all">{e.email}</td>
+                    <td className="px-4 py-3 break-words">{e.email}</td>
                     <td className="px-4 py-3">{rollenText(e.rollen)}</td>
                     <td className="px-4 py-3 whitespace-nowrap">
                       {zeitpunkt(e.laeuftAb)}
@@ -142,7 +143,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
                 ))}
               </tbody>
             </table>
-          </div>
+          </TabellenRahmen>
         )}
       </section>
     </>

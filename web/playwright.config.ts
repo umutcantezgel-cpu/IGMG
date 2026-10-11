@@ -55,6 +55,8 @@ export default defineConfig({
       DATABASE_URL: process.env.DATABASE_URL ?? '',
       // Vorgerenderte Seiten stammen aus der Entwicklungsdatenbank → beim Start verfallen lassen (ADR 0017)
       CACHE_ERNEUERN_BEIM_START: '1',
+      // Die Tests spielen den vertrauten Proxy: je Test eine eigene Absenderadresse (hilfen/konto.ts, E-041)
+      PROXY_VERTRAUEN: '1',
     },
   },
 });

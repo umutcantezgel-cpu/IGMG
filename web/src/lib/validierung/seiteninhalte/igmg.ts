@@ -13,6 +13,14 @@ const zahl = (bezeichnung: string) => z.string().trim().max(40).default(`[Zahl f
 /** Kontaktwert der Zentralverwaltung, nicht mehrsprachig; bis zur Bestätigung ein Platzhalter (G-05, Laufbuch lb:225–226, lb:250). */
 const kontaktWert = (platzhalter: string, max = 200) => z.string().trim().max(max).default(platzhalter);
 
+/** E-Mail der Zentralverwaltung (mailto-Link, wenn gültig): gültige Adresse, leer oder der Platzhalter (G-05). */
+const kontaktMail = (platzhalter: string) =>
+  z
+    .string()
+    .trim()
+    .pipe(z.union([z.email().max(200), z.literal(''), z.literal(platzhalter)]))
+    .default(platzhalter);
+
 /**
  * Seiteninhalt „igmg“. Alle Felder haben Standardwerte, damit eine fehlende Zeile trotzdem rendert (ladeSeiteninhalt).
  * Listen dürfen leer sein; mehrsprachige Texte: Deutsch Pflicht, Türkisch und Englisch mit sichtbarem Rückfall (K-02).
@@ -54,7 +62,7 @@ export const schema = z.object({
     .object({
       adresse: kontaktWert('[Adresse]', 300),
       telefon: kontaktWert('[Telefonnummer]', 60),
-      email: kontaktWert('[E-Mail]'),
+      email: kontaktMail('[E-Mail]'),
       website: kontaktWert('[Website]'),
     })
     .default({ adresse: '[Adresse]', telefon: '[Telefonnummer]', email: '[E-Mail]', website: '[Website]' }),

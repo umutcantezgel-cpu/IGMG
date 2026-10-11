@@ -32,6 +32,7 @@ export const AKTION_SCHLUESSEL = {
   'benutzer.entsperrt': 'benutzerEntsperrt',
   'benutzer.zwei_faktor_zurueckgesetzt': 'benutzerZweiFaktorZurueckgesetzt',
   'benutzer.geloescht': 'benutzerGeloescht',
+  'benutzer.gelesen': 'benutzerGelesen',
   'konto.passwort_geaendert': 'kontoPasswortGeaendert',
   'konto.passwort_zurueckgesetzt': 'kontoPasswortZurueckgesetzt',
   'konto.ersatzcodes_erzeugt': 'kontoErsatzcodesErzeugt',

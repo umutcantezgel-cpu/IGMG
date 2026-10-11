@@ -37,7 +37,7 @@ Falsch, wenn Fachrollen in den Eingängen frei suchen müssen (z. B. nach Namen)
 
 - Schlüsselverlust = Datenverlust: BETRIEB.md beschreibt Sicherung des Schlüssels getrennt vom Datenbank-Backup.
 - E2E-Tests lesen Mails im Mail-Fänger (ADR 0011), nicht in der DB.
-- Die Ticket-Meldung („Neue Meldung“ aus dem Kontomenü) ist **intern** (Verwaltung, angemeldet) und kein öffentlicher Eingang.
+- Die Ticket-Meldung („Neue Meldung“ aus dem Kontomenü) ist **intern** (Verwaltung, angemeldet) und kein öffentlicher Eingang. Die **öffentliche** Meldung (`/meldung`, E-034) wird ebenfalls ein Ticket (E-037), nicht ein Eingang – siehe Nachtrag Tor B/C.
 
 ## Nachtrag 2026-10-11 (B02/B04, E-028)
 
@@ -45,3 +45,11 @@ Falsch, wenn Fachrollen in den Eingängen frei suchen müssen (z. B. nach Namen)
 - **Zod nicht im Browser** (≈ 15 kB): Schrittprüfung im FormWizard (B01) über native Feldprüfung des sichtbaren Schritts, die Action prüft immer das ganze Schema (ersetzt „`schema.pick` im Client“).
 - **ALTCHA CSP-fest:** `altcha/external` + `altcha/altcha.css` werden erst bei der ersten Interaktion nachgeladen; der PBKDF2-Worker liegt unter `/altcha/pbkdf2.js` (eigene Herkunft, `worker-src 'self'`; Kopie mit `pnpm altcha:kopieren`, Unit-Test prüft Gleichstand). Das Standardpaket startet Worker aus `blob:` und scheitert an der CSP (ADR 0012).
 - **ALTCHA-Lösungen sind einmalig:** Nach jeder Fehlerantwort rendert die Action `AltchaFeld` mit neuem `key` – das Widget löst sofort eine neue Aufgabe, ein zweiter Versuch braucht kein Neuladen.
+
+## Nachtrag 2026-10-11 (Tor B/C, Datenschutzprüfung SP-B)
+
+- **Öffentliche Meldung (E-037, SP-B B1):** Betreff und Text stehen zusammen mit den Kontaktangaben und dem Einwilligungsnachweis verschlüsselt in `ticket.melder_verschluesselt`. Das Ticket selbst trägt nur den neutralen Titel „Öffentliche Meldung“, Typ und Organisation, die Beschreibung bleibt leer. So zeigen Liste, Übersicht und Zähler keinen Freitext; lesen kann ihn nur `ticket.bearbeiten` im Detail, mit Audit `ticket.gelesen`. Nach 180 Tagen ab Abschluss entfernt der Löschlauf das Paket samt Text. Die Einwilligung der Meldung liegt im verschlüsselten Paket und nicht in `einwilligung`, weil es keinen Eingang gibt.
+- **Bestätigungen je Adresse begrenzt (SP-B B2):** höchstens 3 je Empfängeradresse und 24 Stunden über alle Formulare. Gezählt wird als HMAC der Adresse in `ratenbegrenzung`, im selben `tx` wie das Speichern. Darüber entfällt die Bestätigung still, die Antwort bleibt gleich.
+- **Höchstfrist für offene Eingänge (SP-B B4):** Beim Anlegen gilt `loeschen_ab` = Eingang + 365 Tage, sofern keine engere Frist bekannt ist (Anmeldung: Termin + 30 Tage). Wiederöffnen setzt 365 Tage ab dann. Tickets setzen `geschlossen_am` schon bei „gelöst“. Migration 0007 setzt beides für den Bestand.
+- **Verbindliche Prüfungen in der Transaktion (SP-B B9):** `verarbeiteFormular({ imVorgang })` prüft vor dem Anlegen im Speicher-`tx`. Bei Anmeldungen sperrt es die Veranstaltungszeile (`FOR UPDATE`) und zählt ungecacht. Die Vorprüfung `pruefen` liest weiter aus dem Cache und dient nur der schnellen Antwort.
+- **ALTCHA (SP-B B6):** Der gesuchte Zähler ist gleichverteilt in 1 … 2 × Kosten (im Mittel 5 000 Versuche); eine Untergrenze ließe sich überspringen.

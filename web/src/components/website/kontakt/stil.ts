@@ -4,11 +4,11 @@
  */
 export const KARTE = 'flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-weiss p-6';
 
-/** Kartenüberschrift (24 px, Icon 24 px, Abstand 10 px). */
-export const UEBERSCHRIFT = 'flex items-center gap-2.5 text-24';
+/** Kartenüberschrift (24 px, Icon 24 px, Abstand 10 px, Zeilenhöhe 1,6 wie im Design). */
+export const UEBERSCHRIFT = 'flex items-center gap-2.5 text-24 leading-ueberschrift';
 
-/** Abschnittsüberschrift (30 px) für Anfahrt, Angebote und Besucher. */
-export const UEBERSCHRIFT_GROSS = 'flex items-center gap-2.5 text-30';
+/** Abschnittsüberschrift (30 px, Zeilenhöhe 1,6 wie im Design) für Anfahrt, Angebote und Besucher. */
+export const UEBERSCHRIFT_GROSS = 'flex items-center gap-2.5 text-30 leading-ueberschrift';
 
 /** Umrandete Schaltfläche (Design: Google Maps), Mindesthöhe 48 px nach K-11. */
 export const KNOPF_RAHMEN =

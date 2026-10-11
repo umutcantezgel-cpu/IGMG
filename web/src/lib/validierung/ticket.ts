@@ -54,10 +54,16 @@ export const listenFilterSchema = z.object({
 export type ListenFilter = z.infer<typeof listenFilterSchema>;
 
 /**
- * Kontaktangaben der meldenden Person, verschlüsselt in `ticket.melder_verschluesselt` (G-07). Die Form ist mit dem
+ * Angaben der meldenden Person, verschlüsselt in `ticket.melder_verschluesselt` (G-07). Die Form ist mit dem
  * öffentlichen Meldeformular (C10b) abzustimmen; hier gelesen wird genau diese Form, alles andere gilt als unlesbar.
+ * Bei öffentlichen Meldungen stehen auch Betreff und Text hier (Tor B/C SP-B B1: Freitext kann Personendaten enthalten);
+ * das Ticket selbst trägt dann nur `OEFFENTLICHE_MELDUNG_TITEL` und eine leere Beschreibung.
  */
+export const OEFFENTLICHE_MELDUNG_TITEL = 'Öffentliche Meldung';
+
 export const melderSchema = z.object({
+  betreff: z.string().max(200).optional(),
+  nachricht: z.string().max(4000).optional(),
   vorname: z.string().max(200).optional(),
   nachname: z.string().max(200).optional(),
   telefon: z.string().max(60).optional(),

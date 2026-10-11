@@ -5,7 +5,8 @@ import { Label } from '@/components/ui/label';
 
 /**
  * Formularfeld mit Beschriftung, Hinweis und Fehler am Feld (K-07, K-11): Fehler über aria-describedby,
- * aria-invalid; Fehlertext mit Icon und Klartext (design/BaseComponents.dc.html).
+ * aria-invalid; Fehlertext mit Icon und Klartext (design/BaseComponents.dc.html). Der Hinweis steht unter dem
+ * Eingabefeld, damit nebeneinanderliegende Felder auch dann bündig bleiben, wenn nur eines einen Hinweis hat (DP-C1 M4).
  */
 type FeldProps = ComponentProps<typeof Input> & {
   id: string;
@@ -23,12 +24,12 @@ export function Feld({ id, label, hinweis, fehler, pflicht, ...input }: FeldProp
         {label}
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
       </Label>
+      <Input id={id} aria-invalid={fehler ? true : undefined} aria-describedby={beschreibung} {...input} />
       {hinweis ? (
         <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
           {hinweis}
         </p>
       ) : null}
-      <Input id={id} aria-invalid={fehler ? true : undefined} aria-describedby={beschreibung} {...input} />
       {fehler ? (
         <p id={`${id}-fehler`} className="flex items-start gap-1.5 text-16 font-bold text-fehler">
           <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />

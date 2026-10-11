@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, eq, inArray, isNotNull, lt, lte, sql } from 'drizzle-orm';
+import { and, eq, inArray, isNotNull, lt, lte, or, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { speicher } from '@/lib/storage';
@@ -41,7 +41,7 @@ async function leereMedienPapierkorb(jetzt: Date): Promise<number> {
 
 export const MELDER_FRIST_TAGE = 180;
 
-/** Meldungen (E-037): Kontaktangaben der meldenden Person 180 Tage nach dem Schließen entfernen; das Ticket bleibt. */
+/** Meldungen (E-037): Angaben der meldenden Person 180 Tage nach dem Abschluss (gelöst/geschlossen) entfernen; das Ticket bleibt. */
 async function entferneMelderdaten(jetzt: Date): Promise<number> {
   const grenze = new Date(jetzt.getTime() - MELDER_FRIST_TAGE * 86_400_000);
   const t = schema.ticket;
@@ -49,7 +49,7 @@ async function entferneMelderdaten(jetzt: Date): Promise<number> {
     const geaendert = await tx
       .update(t)
       .set({ melderVerschluesselt: null, schluesselId: null })
-      .where(and(eq(t.status, 'geschlossen'), isNotNull(t.melderVerschluesselt), lt(t.geschlossenAm, grenze)))
+      .where(and(inArray(t.status, ['geloest', 'geschlossen']), isNotNull(t.melderVerschluesselt), lt(t.geschlossenAm, grenze)))
       .returning({ id: t.id });
     for (const z of geaendert)
       await protokolliere(
@@ -83,9 +83,26 @@ async function leerePapierkorb(jetzt: Date): Promise<number> {
   });
 }
 
+export const EINLADUNG_AUFBEWAHRUNG_TAGE = 30;
+
+/**
+ * Konten-Nebendaten (Tor B/C N7, G-07): Einladungen (Name, E-Mail) 30 Tage nach Annahme, Widerruf oder Ablauf löschen;
+ * abgelaufene Better-Auth-Verifikationen (z. B. Passwort-Links, Token im Klartext) sofort.
+ */
+async function raeumeKontenAuf(jetzt: Date): Promise<number> {
+  const grenze = new Date(jetzt.getTime() - EINLADUNG_AUFBEWAHRUNG_TAGE * 86_400_000);
+  const e = schema.einladung;
+  const weg = await db
+    .delete(e)
+    .where(or(lt(e.angenommenAm, grenze), lt(e.widerrufenAm, grenze), lt(e.laeuftAb, grenze)))
+    .returning({ id: e.id });
+  await db.delete(schema.verification).where(lt(schema.verification.expiresAt, jetzt));
+  return weg.length;
+}
+
 export async function loescheAbgelaufene(
   jetzt = new Date(),
-): Promise<{ eingaenge: number; mails: number; papierkorb: number; melder: number; betroffeneTermine: string[] }> {
+): Promise<{ eingaenge: number; mails: number; papierkorb: number; melder: number; einladungen: number; betroffeneTermine: string[] }> {
   const faellig = await db
     .select({ id: schema.eingang.id, art: schema.eingang.art, bezugId: schema.eingang.bezugId })
     .from(schema.eingang)
@@ -110,10 +127,11 @@ export async function loescheAbgelaufene(
   await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf()]);
   const papierkorb = (await leerePapierkorb(jetzt)) + (await leereMedienPapierkorb(jetzt));
   const melder = await entferneMelderdaten(jetzt);
+  const einladungen = await raeumeKontenAuf(jetzt);
   const betroffeneTermine = [
     ...new Set(faellig.filter((f) => f.art === 'veranstaltungsanmeldung' && f.bezugId).map((f) => f.bezugId as string)),
   ];
-  return { eingaenge: faellig.length, mails: mails.length, papierkorb, melder, betroffeneTermine };
+  return { eingaenge: faellig.length, mails: mails.length, papierkorb, melder, einladungen, betroffeneTermine };
 }
 
 /** Anzahl fälliger Eingänge (Übersicht/Einstellungen), ohne zu löschen. */

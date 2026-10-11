@@ -8,6 +8,14 @@ import { mehrsprachig } from '../mehrsprachig';
 export const AKTIVITAET_SYMBOLE = ['heart', 'book-open', 'users', 'graduation-cap', 'pencil', 'target', 'monitor', 'star'] as const;
 export type AktivitaetSymbol = (typeof AKTIVITAET_SYMBOLE)[number];
 
+/** E-Mail der Organisation (mailto-Link, wenn gültig): gültige Adresse, leer oder der Platzhalter (G-05). */
+const kontaktMail = (platzhalter: string) =>
+  z
+    .string()
+    .trim()
+    .pipe(z.union([z.email().max(200), z.literal(''), z.literal(platzhalter)]))
+    .default(platzhalter);
+
 /**
  * Seiteninhalt „organisation“ (Blatt C11): je Organisation ein Datensatz im Bereich `organisation-<slug>`
  * (Registry seiteninhalte.ts). Fehlt ein Feld, bleibt ein Platzhalter in eckigen Klammern (G-05).
@@ -39,7 +47,7 @@ export const schema = z.object({
     .object({
       adresse: z.string().trim().max(300).default('[Adresse]'),
       telefon: z.string().trim().max(60).default('[Telefonnummer]'),
-      email: z.string().trim().max(200).default('[E-Mail]'),
+      email: kontaktMail('[E-Mail]'),
     })
     .default({ adresse: '[Adresse]', telefon: '[Telefonnummer]', email: '[E-Mail]' }),
 });

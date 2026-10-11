@@ -11,6 +11,14 @@ import { mehrsprachig } from '../mehrsprachig';
 /** Angabe zur verantwortlichen Stelle; nicht mehrsprachig, ein Platzhalter bis zur Lieferung. */
 const angabe = (platzhalter: string, max = 300) => z.string().trim().max(max).default(platzhalter);
 
+/** E-Mail der verantwortlichen Stelle: gültige Adresse, leer oder der Platzhalter (G-05). */
+const mailAngabe = (platzhalter: string) =>
+  z
+    .string()
+    .trim()
+    .pipe(z.union([z.email().max(200), z.literal(''), z.literal(platzhalter)]))
+    .default(platzhalter);
+
 /** Baustein eines Rechtstextes: Absatz oder Liste mit optionaler Überschrift. Deutsch Pflicht, tr/en optional (K-02). */
 export const baustein = z.discriminatedUnion('art', [
   z.object({ art: z.literal('absatz'), text: mehrsprachig(4000) }),
@@ -31,7 +39,7 @@ export const schema = z.object({
       name: angabe('[Name und Rechtsform – Vorstand]', 200),
       anschrift: angabe('[Anschrift]'),
       telefon: angabe('[Telefonnummer]', 60),
-      email: angabe('[E-Mail-Adresse]', 200),
+      email: mailAngabe('[E-Mail-Adresse]'),
       vertretung: angabe('[Vertretungsberechtigte – Vorstand]'),
       register: angabe('[Registergericht und Registernummer]'),
     })

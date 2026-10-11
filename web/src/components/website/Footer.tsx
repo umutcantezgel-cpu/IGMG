@@ -7,6 +7,7 @@ import { text } from '@/lib/i18n/inhalt';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { JetztGeoeffnet } from './fuss/JetztGeoeffnet';
+import { oeffnungszeitText } from './fuss/zeiten';
 import { Facebook, Instagram, Stern8, Youtube } from './Icons';
 import type { Ziel } from './navigation';
 
@@ -33,7 +34,7 @@ export async function Footer() {
     { netz: 'YouTube', url: kontakt.social.youtube, Icon: Youtube },
   ];
   const ueberschrift = (titel: string) => (
-    <h2 className="flex items-center gap-2 border-b border-gruen-800 pb-2 font-text text-18 font-bold tracking-normal">
+    <h2 className="flex items-center gap-2 border-b border-gruen-800 pb-2 font-text text-18 font-bold tracking-normal text-wrap">
       <Stern8 className="text-gruen-100" />
       {titel}
     </h2>
@@ -99,7 +100,7 @@ export async function Footer() {
             {kontakt.oeffnungszeiten.map((z) => (
               <div key={z.zeiten + z.tage.de} className="contents">
                 <dt className="text-gruen-100">{text(z.tage, sprache)}</dt>
-                <dd className="font-bold">{z.zeiten}</dd>
+                <dd className="font-bold">{oeffnungszeitText(z, sprache)}</dd>
               </div>
             ))}
             <dt className="border-t border-gruen-800 pt-2 text-gruen-100">{t('jetzt')}</dt>

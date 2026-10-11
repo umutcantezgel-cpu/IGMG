@@ -1,4 +1,4 @@
-import { User } from 'lucide-react';
+import { Search, User } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -19,6 +19,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
+  const tsu = await getTranslations('suche');
   const menues = baueMenues(
     (k) => t(k),
     (ziel) => pfadFuer(ziel, sprache),
@@ -50,6 +51,16 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           aktuelleSeiteText={t('aktuelleSeite')}
         />
         <div className="ml-auto flex shrink-0 items-center gap-2">
+          {/* Suche (ADR 0013): Link zur Suchseite, kein Client-JS; Design ohne Suchfeld → A-C01c. Unter 640 px im
+              Telefonmenü – Logo, Suche und Menüknopf passen nicht in 358 px (Tor B/C R-BC-D1, Frage 2) */}
+          <Link
+            href="/suche"
+            prefetch={false}
+            className="hidden size-12 items-center justify-center rounded-md text-gruen-800 hover:bg-gruen-50 hover:text-gruen-800 sm:inline-flex"
+          >
+            <Search aria-hidden className="size-6" />
+            <span className="sr-only">{tsu('kopfLink')}</span>
+          </Link>
           <div className="hidden menu:block">
             <Sprachwahl
               aktuell={sprache}
@@ -69,6 +80,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
             menues={menues}
             startHref={pfadFuer('/', sprache)}
             gebetszeitenHref={pfadFuer('/gebetszeiten', sprache)}
+            sucheHref={pfadFuer('/suche', sprache)}
             aktiv={aktiv}
             aktuell={aktuell}
             sprache={sprache}
@@ -83,6 +95,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
               mobilNavigation: t('mobilNavigation'),
               startseite: t('startseite'),
               gebetszeiten: t('gebetszeiten'),
+              suche: tsu('kopfLink'),
               anmelden: t('anmelden'),
               aktuelleSeite: t('aktuelleSeite'),
             }}

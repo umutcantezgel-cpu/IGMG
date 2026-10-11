@@ -48,6 +48,8 @@ describe('Kontaktformular', () => {
     expect(await sendeKontakt(null, formular({ ...werte(), altcha: await altcha() }))).toMatchObject({ status: 'erfolg' });
     const [eingang] = await db.select().from(schema.eingang).where(eq(schema.eingang.art, 'kontakt'));
     expect(eingang).toMatchObject({ art: 'kontakt', sprache: 'tr', anzahl: 1, bezugId: null });
+    // Höchstfrist ab Eingang (Tor B/C SP-B B4): nichts bleibt unbegrenzt liegen
+    expect(Math.round((eingang.loeschenAb!.getTime() - eingang.erstelltAm.getTime()) / 86_400_000)).toBe(365);
     // Datensparsam (G-07): gespeichert sind nur die Felder des Formulars – keine Schutz- oder Steuerfelder
     const daten = entschluessele<Record<string, string>>(eingang.datenVerschluesselt, eingang.schluesselId);
     expect(daten).toEqual({

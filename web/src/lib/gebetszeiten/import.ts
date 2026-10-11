@@ -58,6 +58,9 @@ export function leseTabelle(inhalt: string, art: 'csv' | 'json'): ImportErgebnis
     try {
       const daten = JSON.parse(inhalt) as unknown;
       if (!Array.isArray(daten)) return { ok: false, fehler: [{ zeile: 0, fehler: 'format' }] };
+      // Zeilen, die kein Objekt sind ([null], [1]), sind Formatfehler – nicht Absturz (Tor B/C SP-C2 B5)
+      const keinObjekt = daten.findIndex((z) => typeof z !== 'object' || z === null || Array.isArray(z));
+      if (keinObjekt >= 0) return { ok: false, fehler: [{ zeile: keinObjekt + 2, fehler: 'format' }] };
       roh = daten as Record<string, unknown>[];
     } catch {
       return { ok: false, fehler: [{ zeile: 0, fehler: 'format' }] };

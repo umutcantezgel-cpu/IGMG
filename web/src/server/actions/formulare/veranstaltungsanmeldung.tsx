@@ -14,7 +14,7 @@ import { verarbeiteFormular, type GeplanteMail } from '@/lib/formulare/verarbeit
 import { datumLang, datumOhneWochentag, zeitspanne } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
 import { anmeldungSchema } from '@/lib/validierung/formulare/veranstaltungsanmeldung';
-import { ladeAnmeldezahl, ladeVeranstaltung } from '@/server/queries/veranstaltungen';
+import { ladeAnmeldezahl, ladeVeranstaltung, zaehleBelegtePlaetze } from '@/server/queries/veranstaltungen';
 
 type Sprache = 'de' | 'tr' | 'en';
 
@@ -32,7 +32,8 @@ async function ladeNachId(id: unknown) {
 
 /**
  * Anmeldung zu einer Veranstaltung (B04, E-020, ADR 0005). Öffentlich: Schutz und Speichern über
- * `verarbeiteFormular`; zusätzlich: Veranstaltung veröffentlicht, Anmeldung aktiv, nicht vergangen, genug Plätze.
+ * `verarbeiteFormular`; zusätzlich: Veranstaltung veröffentlicht, Anmeldung aktiv, nicht vergangen, genug Plätze
+ * (vorab aus dem Cache für die schnelle Antwort, verbindlich unter Zeilensperre in der Speicher-Transaktion).
  * Danach Platzzahl sofort aktualisieren (Tag anmeldungen:<id>). Antwort mit auf dem Server gerenderter Ansicht (E-028).
  */
 export async function meldeAn(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
@@ -65,6 +66,19 @@ export async function meldeAn(_vorher: FormularAntwort | null, fd: FormData): Pr
         // Einmalige Termine: 30 Tage nach dem Ende löschen (Einwilligungstext, M-050); Reihen setzt C08
         loeschenAb: v.regel ? null : new Date(new Date(v.ende ?? v.beginn).getTime() + 30 * 86_400_000),
       };
+      return null;
+    },
+    // Verbindlich (Tor B/C SP-B B9): Zeile der Veranstaltung sperren und ungecacht zählen – parallele Anmeldungen
+    // laufen so nacheinander und überbuchen nicht.
+    imVorgang: async (d, tx) => {
+      const [v] = await tx
+        .select({ plaetze: schema.veranstaltung.plaetze })
+        .from(schema.veranstaltung)
+        .where(eq(schema.veranstaltung.id, d.veranstaltungId))
+        .for('update');
+      if (!v) return { status: 'fehler', fehler: 'geschlossen' };
+      if (v.plaetze !== null && (await zaehleBelegtePlaetze(d.veranstaltungId, tx)) + d.personen > v.plaetze)
+        return { status: 'fehler', fehler: 'ausgebucht' };
       return null;
     },
     mails: (d): GeplanteMail[] => {

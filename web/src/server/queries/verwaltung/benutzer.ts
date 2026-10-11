@@ -1,7 +1,9 @@
 import 'server-only';
 import { and, asc, count, desc, eq, inArray, isNull, max, sql } from 'drizzle-orm';
+import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
+import type { Angemeldet } from '@/lib/rechte/pruefe';
 
 /**
  * Verwaltung „Benutzer und Rollen“ (C12, V12, K-06, ADR 0003). Ohne Cache (Verwaltung ist dynamisch).
@@ -79,12 +81,34 @@ const spalten = {
   erstelltAm: u.createdAt,
 };
 
-export async function ladeBenutzerListe(): Promise<BenutzerZeile[]> {
+/**
+ * Liste für die Verwaltung (Tor B/C M2, G-07): Namen und E-Mail-Adressen sind Personendaten – der Abruf wird vorher
+ * protokolliert (ein Eintrag je Aufruf, deckt auch die offenen Einladungen ab). Ohne Personendaten im Eintrag.
+ */
+export async function ladeBenutzerListe(leser: Angemeldet): Promise<BenutzerZeile[]> {
+  await protokolliere({ benutzerId: leser.benutzerId, aktion: 'benutzer.gelesen', zielTyp: 'benutzer', details: { ansicht: 'liste' } });
   return anreichern(await db.select(spalten).from(u).orderBy(asc(u.name)));
 }
 
+/** Ein Konto für die Detailseite – Abruf protokolliert (Tor B/C M2). Actions nutzen `ladeBenutzer` (sie protokollieren ihre Änderung). */
+export async function ladeBenutzerAnsicht(id: string, leser: Angemeldet): Promise<BenutzerZeile | null> {
+  const konto = await ladeBenutzer(id);
+  if (konto)
+    await protokolliere({
+      benutzerId: leser.benutzerId,
+      aktion: 'benutzer.gelesen',
+      zielTyp: 'benutzer',
+      zielId: konto.id,
+      details: { ansicht: 'detail' },
+    });
+  return konto;
+}
+
+/** Konto-IDs von Better Auth: Buchstaben, Ziffern, „-“ und „_“ (Tor B/C N2: Format statt nur Länge prüfen). */
+const KONTO_ID = /^[A-Za-z0-9_-]{1,64}$/;
+
 export async function ladeBenutzer(id: string): Promise<BenutzerZeile | null> {
-  if (!id || id.length > 64) return null;
+  if (!KONTO_ID.test(id)) return null;
   const [z] = await anreichern(await db.select(spalten).from(u).where(eq(u.id, id)).limit(1));
   return z ?? null;
 }
@@ -132,10 +156,13 @@ export async function emailBelegt(email: string): Promise<'konto' | 'einladung' 
   return offen ? 'einladung' : null;
 }
 
-/** Nicht gesperrte Konten mit der Rolle Administration (ohne `ohne`) – nie die letzte entfernen, sperren oder löschen. */
-export async function zaehleAdministration(ohne?: string): Promise<number> {
+/**
+ * Nicht gesperrte Konten mit der Rolle Administration (ohne `ohne`) – nie die letzte entfernen, sperren oder löschen.
+ * In Actions innerhalb der Transaktion unter der Sperre aufrufen (`ausfuehrer = tx`, Tor B/C M3).
+ */
+export async function zaehleAdministration(ohne?: string, ausfuehrer: Pick<typeof db, 'select'> = db): Promise<number> {
   const r = schema.rolleZuweisung;
-  const [{ anzahl }] = await db
+  const [{ anzahl }] = await ausfuehrer
     .select({ anzahl: count() })
     .from(r)
     .innerJoin(u, eq(u.id, r.benutzerId))

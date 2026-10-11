@@ -155,7 +155,8 @@ export async function MeldungFormular({
           label={t('beschreibung')}
           pflicht={pflicht}
           wert={wert('beschreibung')}
-          zeilen={6}
+          zeilen={4}
+          platzhalter={t('beschreibungPlatzhalter')}
           maxLaenge={2000}
           fehler={f('beschreibung')}
           className="sm:col-span-2"
@@ -172,7 +173,7 @@ export async function MeldungFormular({
             ]}
             wert={wert('rueckmeldung')}
             fehler={f('rueckmeldung')}
-            spaltenMin="sm:grid-cols-2"
+            kompakt
           />
         </div>
         <div className="sm:col-span-2">

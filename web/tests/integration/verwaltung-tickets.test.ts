@@ -185,11 +185,14 @@ describe('Verwaltung › Tickets (V10, K-06, G-07)', () => {
       expect(await zeile(id)).toEqual(vorherZeile);
     });
 
-    it('Abschluss setzt geschlossenAm, Wiederöffnen hebt es auf', async () => {
+    it('Abschluss (gelöst oder geschlossen) setzt geschlossenAm, bleibt beim Wechsel gelöst → geschlossen; Wiederöffnen hebt es auf', async () => {
       await alsAdministration();
       const id = await anlegen(eingabe('Abschluss vorhanden'));
+      await actions.aendereTicket({}, formular({ id, status: 'geloest', prioritaet: 'mittel' }));
+      const geloestAm = (await zeile(id))?.geschlossenAm;
+      expect(geloestAm).toBeInstanceOf(Date);
       await actions.aendereTicket({}, formular({ id, status: 'geschlossen', prioritaet: 'mittel' }));
-      expect((await zeile(id))?.geschlossenAm).toBeInstanceOf(Date);
+      expect((await zeile(id))?.geschlossenAm).toEqual(geloestAm);
       await actions.aendereTicket({}, formular({ id, status: 'offen', prioritaet: 'mittel' }));
       expect((await zeile(id))?.geschlossenAm).toBeNull();
     });

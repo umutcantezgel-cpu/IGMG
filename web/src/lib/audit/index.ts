@@ -18,6 +18,7 @@ export type AuditAktion =
   | 'benutzer.entsperrt'
   | 'benutzer.zwei_faktor_zurueckgesetzt'
   | 'benutzer.geloescht'
+  | 'benutzer.gelesen'
   | 'konto.passwort_geaendert'
   | 'konto.passwort_zurueckgesetzt'
   | 'konto.ersatzcodes_erzeugt'

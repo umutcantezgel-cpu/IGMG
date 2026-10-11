@@ -9,7 +9,7 @@ import { createRequire } from 'node:module';
 import { join } from 'node:path';
 
 const web = createRequire(join(process.cwd(), 'package.json'));
-const { chromium } = web('playwright');
+const { chromium } = web('@playwright/test');
 const OTPAuth = web('otpauth');
 const [basis, aus, ...pfade] = process.argv.slice(2);
 await mkdir(aus, { recursive: true });

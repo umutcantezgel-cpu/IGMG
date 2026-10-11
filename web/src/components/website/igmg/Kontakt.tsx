@@ -15,17 +15,19 @@ export async function Kontakt({ inhalt }: { inhalt: IgmgInhalt }) {
     {
       Icon: Mail,
       label: t('email'),
-      wert: k.email.startsWith('[') ? (
-        <span>{k.email}</span>
-      ) : (
-        <a
-          href={`mailto:${k.email}`}
-          aria-label={`${k.email}: ${t('email')}`}
-          className="[overflow-wrap:anywhere] underline underline-offset-[3px]"
-        >
-          {k.email}
-        </a>
-      ),
+      // Link nur für eine Adresse – Platzhalter und leerer Wert bleiben Text (kein „mailto:“ ohne Ziel, R-BC-S3)
+      wert:
+        !k.email.includes('@') || k.email.startsWith('[') ? (
+          <span>{k.email}</span>
+        ) : (
+          <a
+            href={`mailto:${k.email}`}
+            aria-label={`${k.email}: ${t('email')}`}
+            className="[overflow-wrap:anywhere] underline underline-offset-[3px]"
+          >
+            {k.email}
+          </a>
+        ),
     },
     { Icon: ExternalLink, label: t('website'), wert: <span>{k.website}</span> },
   ];

@@ -9,7 +9,7 @@ import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { ABGESCHLOSSEN, bearbeitungsRecht, EINGANG_STATUS } from '@/lib/eingaenge/arten';
-import { ladeLoeschfristen, loeschenNachAbschluss } from '@/lib/eingaenge/fristen';
+import { hoechstfristOffen, ladeLoeschfristen, loeschenNachAbschluss } from '@/lib/eingaenge/fristen';
 import { verschluessele } from '@/lib/krypto';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { ladeEingangKopf, type EingangZeile } from '@/server/queries/verwaltung/eingaenge';
@@ -29,13 +29,12 @@ async function mitEingang(id: unknown): Promise<{ a: Angemeldet; kopf: EingangZe
   return { a, kopf };
 }
 
-const statusSchema = z.object({ id: z.uuid(), status: z.enum(EINGANG_STATUS) });
-
-/** Status ändern. Abschluss (erledigt/abgelehnt) startet die Löschfrist, Wiederöffnen hebt sie auf (außer der Terminfrist). */
+/** Status ändern. Abschluss (erledigt/abgelehnt) startet die Löschfrist, Wiederöffnen setzt die Höchstfrist (außer der Terminfrist). */
 export async function setzeStatus(fd: FormData): Promise<void> {
-  const p = statusSchema.safeParse({ id: fd.get('id'), status: fd.get('status') });
+  // Recht zuerst (Tor B/C N3), dann die übrigen Eingaben
+  const { a, kopf } = await mitEingang(fd.get('id'));
+  const p = z.object({ status: z.enum(EINGANG_STATUS) }).safeParse({ status: fd.get('status') });
   if (!p.success) throw new KeinRecht();
-  const { a, kopf } = await mitEingang(p.data.id);
   if (kopf.status === p.data.status) return;
   const jetzt = new Date();
   const abschluss = ABGESCHLOSSEN.has(p.data.status);
@@ -49,12 +48,12 @@ export async function setzeStatus(fd: FormData): Promise<void> {
       .set({
         status: p.data.status,
         erledigtAm: abschluss ? jetzt : null,
-        // Anmeldungen behalten die Frist nach dem Termin; sonst Frist ab Abschluss bzw. keine
+        // Anmeldungen behalten die Frist nach dem Termin; sonst Frist ab Abschluss bzw. Höchstfrist ab Wiederöffnen (B4)
         loeschenAb: abschluss
           ? loeschenNachAbschluss(kopf.art, jetzt, fristen!, alt?.loeschenAb ?? null)
-          : kopf.art === 'veranstaltungsanmeldung'
-            ? (alt?.loeschenAb ?? null)
-            : null,
+          : kopf.art === 'veranstaltungsanmeldung' && alt?.loeschenAb
+            ? alt.loeschenAb
+            : hoechstfristOffen(jetzt),
         bearbeitetVon: a.benutzerId,
       })
       .where(eq(e.id, kopf.id));
@@ -74,13 +73,13 @@ export async function setzeStatus(fd: FormData): Promise<void> {
   refresh();
 }
 
-const notizSchema = z.object({ id: z.uuid(), text: z.string().trim().min(1).max(2000) });
+const notizSchema = z.object({ text: z.string().trim().min(1).max(2000) });
 
 /** Interne Notiz (verschlüsselt, nur in der Verwaltung sichtbar). */
 export async function notizHinzufuegen(fd: FormData): Promise<void> {
-  const p = notizSchema.safeParse({ id: fd.get('id'), text: fd.get('text') });
+  const { a, kopf } = await mitEingang(fd.get('id'));
+  const p = notizSchema.safeParse({ text: fd.get('text') });
   if (!p.success) throw new KeinRecht();
-  const { a, kopf } = await mitEingang(p.data.id);
   const paket = verschluessele(p.data.text);
   await db.transaction(async (tx) => {
     await tx
@@ -96,9 +95,7 @@ export async function notizHinzufuegen(fd: FormData): Promise<void> {
 
 /** Endgültig löschen (K-05, G-07): Eingang samt Einwilligungen, Notizen (Kaskade) und Mail-Ausgang. */
 export async function endgueltigLoeschen(fd: FormData): Promise<void> {
-  const p = z.object({ id: z.uuid() }).safeParse({ id: fd.get('id') });
-  if (!p.success) throw new KeinRecht();
-  const { a, kopf } = await mitEingang(p.data.id);
+  const { a, kopf } = await mitEingang(fd.get('id'));
   const [roh] = await db.select({ bezugId: e.bezugId }).from(e).where(eq(e.id, kopf.id));
   await db.transaction(async (tx) => {
     await tx.delete(schema.mailAusgang).where(eq(schema.mailAusgang.bezugEingangId, kopf.id));

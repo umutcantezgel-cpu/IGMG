@@ -34,6 +34,7 @@ const ROUTEN: Route[] = [
   { name: 'Schüler-Voranmeldung', pfad: { de: '/bildung/voranmeldung', tr: '/tr/egitim/on-kayit', en: '/en/education/pre-registration' } },
   { name: 'Mitglied werden', pfad: { de: '/mitglied-werden', tr: '/tr/uye-ol', en: '/en/become-a-member' } },
   { name: 'Meldung', pfad: { de: '/meldung', tr: '/tr/bildirim', en: '/en/report' } },
+  { name: 'Suche', pfad: { de: '/suche?q=Gebet', tr: '/tr/arama?q=namaz', en: '/en/search?q=prayer' } },
   {
     name: 'Webseite für Moscheen',
     pfad: { de: '/webseite-fuer-moscheen', tr: '/tr/camiler-icin-web-sitesi', en: '/en/website-for-mosques' },

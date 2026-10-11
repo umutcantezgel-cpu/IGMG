@@ -115,6 +115,9 @@ describe('Tabellen-Import (K-08)', () => {
       fehler: [{ zeile: 2, fehler: 'format' }],
     });
     expect(leseTabelle('kein json', 'json')).toEqual({ ok: false, fehler: [{ zeile: 0, fehler: 'format' }] });
+    // Tor B/C SP-C2 B5: Zeilen, die kein Objekt sind, sind Formatfehler (kein Absturz)
+    expect(leseTabelle('[null]', 'json')).toEqual({ ok: false, fehler: [{ zeile: 2, fehler: 'format' }] });
+    expect(leseTabelle('[{"datum":"2026-01-01"}, 7]', 'json')).toEqual({ ok: false, fehler: [{ zeile: 3, fehler: 'format' }] });
     expect(leseTabelle('', 'csv')).toEqual({ ok: false, fehler: [{ zeile: 0, fehler: 'leer' }] });
   });
   it('liest JSON', () => {

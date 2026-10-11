@@ -58,6 +58,8 @@
     "nurAdministration": "Status und Priorität ändert nur die Administration.",
     "detail": {
       "beschreibung": "Beschreibung",
+      "keineBeschreibung": "Keine Beschreibung.",
+      "beschreibungVerschluesselt": "Öffentliche Meldung: Betreff und Text sind verschlüsselt gespeichert und stehen im Abschnitt „Meldung und Kontaktangaben“.",
       "angaben": "Angaben",
       "nummer": "Nummer",
       "typ": "Typ",
@@ -68,12 +70,12 @@
       "zugewiesen": "Zugewiesen",
       "erstellt": "Erstellt",
       "aktualisiert": "Zuletzt geändert",
-      "geschlossen": "Geschlossen am"
+      "geschlossen": "Abgeschlossen am"
     },
     "melder": {
-      "titel": "Kontaktangaben der meldenden Person",
+      "titel": "Meldung und Kontaktangaben",
       "keiner": "Zu diesem Ticket sind keine Kontaktangaben hinterlegt.",
-      "verborgen": "Zu diesem Ticket sind Kontaktangaben hinterlegt. Sie sind nur für die Administration einsehbar.",
+      "verborgen": "Zu diesem Ticket sind Angaben der meldenden Person hinterlegt (bei öffentlichen Meldungen auch Betreff und Text). Sie sind nur für die Administration einsehbar.",
       "unlesbar": "Die Kontaktangaben können nicht gelesen werden. Bitte informieren Sie die Administration.",
       "protokoll": "Jeder Abruf dieser Angaben wird im Audit-Log protokolliert.",
       "vorname": "Vorname",

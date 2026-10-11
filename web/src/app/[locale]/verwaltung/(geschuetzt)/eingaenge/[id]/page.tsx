@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
-import { bearbeitungsRecht, EINGANG_STATUS } from '@/lib/eingaenge/arten';
+import { ABGESCHLOSSEN, bearbeitungsRecht, EINGANG_STATUS } from '@/lib/eingaenge/arten';
 import { datumKurz, datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { lokaleTeile } from '@/lib/termine';
@@ -50,7 +50,12 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
           {d.bezugTitel ? ` · ${d.bezugTitel}` : ''} · {t(`status.${d.status}`)} · {t(`sprachen.${d.sprache}` as never)}
         </p>
         <p className="text-16 text-tinte-2">
-          {d.loeschenAb ? t('detail.loeschenAb', { datum: datumLang(d.loeschenAb, 'de') }) : t('detail.keineFrist')}
+          {/* Offene Eingänge tragen die Höchstfrist (Tor B/C SP-B B4), abgeschlossene die Frist der Art */}
+          {!d.loeschenAb
+            ? t('detail.keineFrist')
+            : ABGESCHLOSSEN.has(d.status)
+              ? t('detail.loeschenAb', { datum: datumLang(d.loeschenAb, 'de') })
+              : t('detail.hoechstfrist', { datum: datumLang(d.loeschenAb, 'de') })}
         </p>
         {!bearbeiten ? <p className="text-16 font-bold">{t('detail.nurLesen')}</p> : null}
       </div>

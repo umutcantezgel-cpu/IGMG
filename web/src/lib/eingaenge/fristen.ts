@@ -25,6 +25,16 @@ export const fristenSchema = z.object(
 
 export const FRISTEN_SCHLUESSEL = 'loeschfristen';
 
+/**
+ * Höchstfrist für nicht abgeschlossene Eingänge (Tor B/C SP-B B4, G-07): Was niemand bearbeitet, bleibt nicht
+ * unbegrenzt liegen. Gilt ab Eingang bzw. ab Wiederöffnen; der Abschluss setzt die (kürzere) Frist nach Art.
+ */
+export const HOECHSTFRIST_OFFEN_TAGE = 365;
+
+export function hoechstfristOffen(ab: Date): Date {
+  return new Date(ab.getTime() + HOECHSTFRIST_OFFEN_TAGE * 86_400_000);
+}
+
 export async function ladeLoeschfristen(): Promise<Record<EingangArt, number>> {
   const [z0] = await db
     .select({ wert: schema.einstellung.wert })

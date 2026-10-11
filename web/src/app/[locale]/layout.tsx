@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { ServiceWorkerAnmeldung } from '@/components/website/ServiceWorkerAnmeldung';
 import { getTranslations } from 'next-intl/server';
 import { locale } from 'next/root-params';
 import { routing } from '@/i18n/routing';
@@ -16,6 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: t('titel'), template: `%s · ${t('titel')}` },
     description: t('beschreibung'),
     applicationName: t('titel'),
+    icons: { icon: '/symbole/symbol-192.png', apple: '/symbole/apple-touch-icon.png' },
   };
 }
 
@@ -35,7 +37,10 @@ export default async function WurzelLayout({ children }: LayoutProps<'/[locale]'
   const sprache = await locale();
   return (
     <html lang={sprache} className={schriftKlassen}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ServiceWorkerAnmeldung />
+      </body>
     </html>
   );
 }

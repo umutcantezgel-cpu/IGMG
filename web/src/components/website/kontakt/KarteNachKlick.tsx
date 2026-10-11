@@ -23,11 +23,11 @@ export function KarteNachKlick({
   }, [geladen]);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-1 flex-col gap-3">
       <div
         ref={flaeche}
         tabIndex={-1}
-        className="relative flex min-h-85 items-center justify-center overflow-hidden rounded-lg border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)]"
+        className="relative flex min-h-85 flex-1 items-center justify-center overflow-hidden rounded-lg border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)]"
       >
         {geladen && einbettung ? (
           <iframe src={einbettung} title={texte.iframeTitel} referrerPolicy="no-referrer" className="absolute inset-0 size-full border-0" />

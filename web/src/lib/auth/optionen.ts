@@ -41,7 +41,9 @@ export const authOptionen = {
   advanced: {
     cookiePrefix: 'igmg',
     useSecureCookies: istHttps,
-    ipAddress: { ipAddressHeaders: ['x-real-ip', 'x-forwarded-for'] },
+    // Keine IP-Adressen in Sitzungen und Ratenzählern (Tor B/C M6, E-041): Anmeldung, Zwei-Faktor und „Passwort
+    // vergessen“ laufen über Server Actions mit eigener Begrenzung (HMAC der Adresse vom vertrauten Proxy)
+    ipAddress: { disableIpTracking: true },
   },
   user: {
     deleteUser: { enabled: false },
@@ -57,11 +59,21 @@ export const authOptionen = {
     // - Registrierung: Konten nur per Einladung (K-06)
     // - Anmeldung und Zwei-Faktor: nur über die Server Actions mit eigener Ratenbegrenzung je IP und Konto
     //   (Befund SP-P3 H2: auth.api umgeht die Begrenzung von Better Auth; ein offener HTTP-Weg wäre die Lücke)
-    // - Passkeys: bis zur gesicherten Einführung in C12 gesperrt (Befund SP-P3 H1)
+    // - Passkeys: bis zur gesicherten Einführung gesperrt (Befund SP-P3 H1)
+    // - Passwort anfordern/setzen/ändern und Kontodaten: nur über die Server Actions (Tor B/C M1)
     before: createAuthMiddleware(async (ctx) => {
       if (!ctx.request) return;
       if (ctx.path === '/sign-up/email') throw new APIError('FORBIDDEN', { message: 'Registrierung nur per Einladung.' });
-      if (ctx.path === '/sign-in/email' || ctx.path.startsWith('/two-factor/') || ctx.path.startsWith('/passkey/')) {
+      if (
+        ctx.path === '/sign-in/email' ||
+        ctx.path.startsWith('/two-factor/') ||
+        ctx.path.startsWith('/passkey/') ||
+        // Tor B/C M1: Passwort-Abläufe nur über die Server Actions (Begrenzung je Konto, gleiche Antwort für alle)
+        ctx.path === '/request-password-reset' ||
+        ctx.path === '/reset-password' ||
+        ctx.path === '/change-password' ||
+        ctx.path === '/update-user'
+      ) {
         throw new APIError('FORBIDDEN', { message: 'Nur über die Anmeldeseite.' });
       }
     }),

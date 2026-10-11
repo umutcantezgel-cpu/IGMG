@@ -44,3 +44,11 @@ Falsch, wenn die Gemeinde mehrere Moscheen/Mandanten verwalten will (dann Organi
 - **Anmeldung:** Better-Auth-Endpunkte für Anmeldung und Zwei-Faktor sind über HTTP gesperrt; die Server Actions begrenzen selbst je IP (10/10 min) und je Konto (8/15 min). Die IP ist der letzte Eintrag von X-Forwarded-For (H2, M3).
 - **Organisationsredaktion:** sieht in der Verwaltung nur Inhalte der eigenen Organisation, auch lesend (M1).
 - **Kontaktangaben bei Veranstaltungen** (Ansprechperson, dienstliche Telefonnummer/E-Mail) sind öffentlicher Inhalt der Detailseite, keine Personendaten im Sinn der Eingänge; ihr Lesen in der Verwaltung wird nicht einzeln protokolliert, Änderungen schon (M2). Personendaten aus Formularen (Eingänge) bleiben verschlüsselt und jeder Lesezugriff wird protokolliert.
+
+## Nachtrag Tor B/C (2026-10-11, SP-B/SP-C1, E-041)
+
+- **Adresse für Ratenbegrenzungen:** Die Regel „letzter Eintrag von X-Forwarded-For“ (Tor P3) ist ersetzt. Adress-Header gelten nur mit `PROXY_VERTRAUEN=1`, dann zuerst `X-Real-IP`, sonst der letzte XFF-Eintrag. Ohne vertrauten Proxy teilen sich alle Anfragen ein Limit, weil Next.js vom Client gesetzte Header unverändert durchreicht (H1).
+- **Better Auth** speichert keine IP-Adressen (`disableIpTracking`). Über HTTP gesperrt sind zusätzlich `request-password-reset`, `reset-password`, `change-password` und `update-user`. Die App nutzt dafür eigene Server Actions mit Begrenzung und Audit (M1, M6).
+- **Letzte Administration:** Rollen entziehen, Sperren und Löschen laufen in `mitAdministrationsSchutz`, einer Transaktion mit `pg_advisory_xact_lock`. Nach der Änderung wird im selben `tx` gezählt; fiele die Zahl nicht gesperrter Administrationskonten von ≥ 1 auf 0, wird zurückgerollt (M3).
+- **Lese-Audit:** Die Kontenliste und das Konto-Detail (Namen, E-Mail-Adressen) schreiben `benutzer.gelesen` ohne Personendaten (M2). Die Anmeldung mit zweitem Faktor schreibt `anmeldung.erfolg` (M7).
+- **Sperren** löscht Sitzungen und offene Passwort-Links des Kontos (N6). „Passwort vergessen“ arbeitet erst nach der Antwort, damit die Antwortzeit nicht verrät, ob es ein Konto gibt (N1).

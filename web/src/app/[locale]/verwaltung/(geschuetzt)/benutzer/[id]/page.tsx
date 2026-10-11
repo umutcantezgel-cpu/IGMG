@@ -9,7 +9,7 @@ import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { Button } from '@/components/ui/button';
 import { kontoEntsperren, kontoLoeschen, kontoSperren, zweiFaktorZuruecksetzen } from '@/server/actions/benutzer';
-import { ladeBenutzer } from '@/server/queries/verwaltung/benutzer';
+import { ladeBenutzerAnsicht } from '@/server/queries/verwaltung/benutzer';
 
 const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
 const FEHLER = ['selbst', 'letzteAdministration'] as const;
@@ -18,7 +18,7 @@ const FEHLER = ['selbst', 'letzteAdministration'] as const;
 export default async function KontoBearbeiten({ params, searchParams }: PageProps<'/[locale]/verwaltung/benutzer/[id]'>) {
   const a = await verlangeSeitenRecht('benutzer.lesen');
   const [{ id }, sp] = await Promise.all([params, searchParams]);
-  const konto = await ladeBenutzer(id);
+  const konto = await ladeBenutzerAnsicht(id, a);
   if (!konto) notFound();
   const t = await getTranslations('verwaltung.benutzer');
   const bearbeiten = darf(a.rollen, 'benutzer.bearbeiten');

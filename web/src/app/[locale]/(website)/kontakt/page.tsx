@@ -36,7 +36,7 @@ export default async function KontaktSeite() {
   return (
     <Seitenrahmen bereich="moschee" seite="kontakt" sprachZiel="/kontakt" pfad={[{ label: tp('kontakt') }]}>
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-24">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-8 pb-12 md:px-8 md:pt-16 md:pb-24">
         <KontaktKarten kontakt={kontakt} />
         <Anfahrt kontakt={kontakt} />
         <AngeboteBesuch kontakt={kontakt} />

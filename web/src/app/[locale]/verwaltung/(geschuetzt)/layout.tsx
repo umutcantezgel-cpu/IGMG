@@ -10,7 +10,7 @@ import { abmelden } from '@/server/actions/anmeldung';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
 import { zaehleUngelesene } from '@/server/queries/verwaltung/postfach';
 import { zaehleOffeneTickets } from '@/server/queries/verwaltung/tickets';
-import { zaehleVeranstaltungen } from '@/server/queries/verwaltung/veranstaltungen';
+import { ladeKommendeVeranstaltungen, zaehleAktiveAnkuendigungen, zaehleEntwuerfe } from '@/server/queries/verwaltung/uebersicht';
 
 /**
  * Geschützter Bereich mit Verwaltungs-Hülle (D05, V01): Sitzung + zweiter Faktor + Rolle (K-06).
@@ -21,15 +21,27 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   const t = await getTranslations('verwaltung');
   const sichtbar = MODULE.filter((m) => m.gebaut && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
-  const [veranstaltungen, eingaenge, postfach, tickets] = await Promise.all([
-    zeigt('veranstaltungen') ? zaehleVeranstaltungen() : undefined,
+  const jetzt = new Date();
+  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets] = await Promise.all([
+    // Bevorstehende, veröffentlichte Veranstaltungen: dieselbe Zahl wie die Kachel auf der Übersicht (DP-C1 M3)
+    zeigt('veranstaltungen') ? ladeKommendeVeranstaltungen(a, jetzt).then((kommend) => kommend?.length) : undefined,
+    // Entwürfe der Neuigkeiten und derzeit sichtbare Ankündigungen (DP-C1 H1)
+    zeigt('neuigkeiten') ? zaehleEntwuerfe(a) : undefined,
+    zeigt('ankuendigungen') ? zaehleAktiveAnkuendigungen(a, jetzt) : undefined,
     // Neue (unbearbeitete) Eingänge, die die Person sehen darf
     zeigt('eingaenge') ? zaehleNeueEingaenge(a) : undefined,
     // Ungelesene Nachrichten an die Person, offene Tickets im eigenen Sichtbereich
     zeigt('postfach') ? zaehleUngelesene(a) : undefined,
     zeigt('tickets') ? zaehleOffeneTickets(a) : undefined,
   ]);
-  const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = { veranstaltungen, eingaenge, postfach, tickets };
+  const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
+    veranstaltungen,
+    neuigkeiten,
+    ankuendigungen,
+    eingaenge,
+    postfach,
+    tickets,
+  };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => ({
     schluessel: m.schluessel,
     label: t(`module.${m.schluessel}`),
@@ -42,7 +54,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     rollen: a.rollen.map((r) => t(`rollen.${r.rolle}`) + (r.organisation ? ` (${r.organisation.toUpperCase()})` : '')).join(', '),
   });
   return (
-    <>
+    <div className="verwaltung-huelle">
       <a
         href="#inhalt"
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-weiss focus:px-4 focus:py-3 focus:font-bold"
@@ -93,6 +105,6 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
           {children}
         </main>
       </div>
-    </>
+    </div>
   );
 }

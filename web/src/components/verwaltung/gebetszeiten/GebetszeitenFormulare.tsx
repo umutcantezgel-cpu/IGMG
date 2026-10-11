@@ -60,7 +60,7 @@ export function QuelleFormular({ start, darf }: { start: Pick<GebetszeitenEinste
       <fieldset className="flex flex-col gap-2" disabled={!darf}>
         <legend className="font-bold">{t('quelle.legende')}</legend>
         {(['import', 'berechnung'] as const).map((q) => (
-          <label key={q} className="flex min-h-12 cursor-pointer items-start gap-3 rounded-md border border-linie px-3 py-2">
+          <label key={q} className="flex min-h-12 min-w-0 cursor-pointer items-start gap-3 rounded-md border border-linie px-3 py-2">
             <input
               type="radio"
               name="aktiveQuelle"
@@ -68,7 +68,7 @@ export function QuelleFormular({ start, darf }: { start: Pick<GebetszeitenEinste
               defaultChecked={start.aktiveQuelle === q}
               className="mt-1 size-5 accent-gruen-700"
             />
-            <span className="flex flex-col font-bold">
+            <span className="flex min-w-0 flex-col font-bold">
               {t(`quelle.${q}`)}
               <span className="text-16 font-normal text-tinte-2">{t(`quelle.${q}Text`)}</span>
             </span>
@@ -124,7 +124,7 @@ export function BerechnungFormular({ start, darf }: { start: GebetszeitenEinstel
           <select name="methode" defaultValue={start.methode} className={feld}>
             {METHODEN.map((m) => (
               <option key={m} value={m}>
-                {m}
+                {t(`berechnung.methoden.${m}`)}
               </option>
             ))}
           </select>
@@ -204,37 +204,42 @@ export function BerechnungFormular({ start, darf }: { start: GebetszeitenEinstel
 
 function ZeitenTabelle({ titel, tage }: { titel: string; tage: ({ datum: string } & Record<Gebet, string>)[] }) {
   const t = useTranslations('verwaltung.gebetszeiten');
+  const ts = useTranslations('verwaltung.shell');
+  // Scrollbarer Rahmen wie TabellenRahmen (Muster 7): per Tastatur erreichbar, benannt, Hinweis unter 768 px
   return (
-    <div className="relative overflow-x-auto rounded-lg border border-linie" tabIndex={-1}>
-      <table className="w-full min-w-[40rem] border-collapse text-left tabular-nums">
-        <caption className="px-4 py-2 text-left font-bold">{titel}</caption>
-        <thead className="bg-sand">
-          <tr>
-            <th scope="col" className="px-3 py-2 text-16">
-              {t('berechnung.datum')}
-            </th>
-            {GEBETE.map((g) => (
-              <th key={g} scope="col" className="px-3 py-2 text-16">
-                {t(`gebet.${g}`)}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {tage.map((d) => (
-            <tr key={d.datum} className="border-t border-linie">
-              <th scope="row" className="px-3 py-2 font-bold whitespace-nowrap">
-                {d.datum.split('-').reverse().join('.')}
+    <div className="flex min-w-0 flex-col gap-2">
+      <p className="text-16 text-tinte-2 md:hidden">{ts('wischen')}</p>
+      <div role="region" aria-label={titel} tabIndex={0} className="relative overflow-x-auto rounded-lg border border-linie">
+        <table className="w-full min-w-[40rem] border-collapse text-left tabular-nums">
+          <caption className="px-4 py-2 text-left font-bold">{titel}</caption>
+          <thead className="bg-sand">
+            <tr>
+              <th scope="col" className="px-3 py-2 text-16">
+                {t('berechnung.datum')}
               </th>
               {GEBETE.map((g) => (
-                <td key={g} className="px-3 py-2">
-                  {d[g]}
-                </td>
+                <th key={g} scope="col" className="px-3 py-2 text-16">
+                  {t(`gebet.${g}`)}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {tage.map((d) => (
+              <tr key={d.datum} className="border-t border-linie">
+                <th scope="row" className="px-3 py-2 font-bold whitespace-nowrap">
+                  {d.datum.split('-').reverse().join('.')}
+                </th>
+                {GEBETE.map((g) => (
+                  <td key={g} className="px-3 py-2">
+                    {d[g]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -260,14 +265,14 @@ export function ImportFormular() {
   return (
     <div className="flex flex-col gap-4">
       <form action={pruefen} className="flex flex-col gap-3" noValidate>
-        <label className="flex flex-col gap-1 font-bold">
+        <label className="flex min-w-0 flex-col gap-1 font-bold">
           {t('import.datei')}
           <input
             type="file"
             name="datei"
             accept=".csv,.json,text/csv,application/json"
             required
-            className="text-18"
+            className="w-full max-w-full min-w-0 text-18"
             aria-describedby="import-hinweis"
           />
         </label>

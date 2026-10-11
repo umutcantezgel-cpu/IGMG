@@ -8,12 +8,12 @@ import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import type { FormularAntwort } from '@/lib/formulare/ergebnis';
 import { zurueckOhneSkript } from '@/lib/formulare/ohne-skript';
-import { pruefeEinsendung, type GeplanteMail } from '@/lib/formulare/verarbeiten';
+import { begrenzeBestaetigungen, pruefeEinsendung, type GeplanteMail } from '@/lib/formulare/verarbeiten';
 import { datumOhneWochentag, isoZeit } from '@/lib/i18n/format';
 import { sha256, verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { meldungSchema } from '@/lib/validierung/formulare/meldung';
-import type { Melder } from '@/lib/validierung/ticket';
+import { OEFFENTLICHE_MELDUNG_TITEL, type Melder } from '@/lib/validierung/ticket';
 
 type Sprache = 'de' | 'tr' | 'en';
 
@@ -28,7 +28,8 @@ const EINWILLIGUNG_SCHLUESSEL = 'meldung.einwilligung';
 /**
  * Öffentliche Meldung (C10b, E-034, E-037): Schutz über `pruefeEinsendung` (Rate → Honigtopf → ALTCHA → Zod), kein
  * Eingang, sondern ein Ticket. Eine Transaktion legt Ticket, Melderangaben (verschlüsselt, mit Einwilligungsnachweis),
- * Audit und Mails an. Benachrichtigung an die Berechtigten ohne Formulardaten; Bestätigung nur mit E-Mail-Adresse.
+ * Audit und Mails an. Betreff und Text gehören zu den verschlüsselten Angaben (Tor B/C SP-B B1) – im Ticket stehen nur
+ * ein neutraler Titel, Typ und Organisation, damit Liste, Übersicht und Zähler keinen Freitext zeigen. Benachrichtigung an die Berechtigten ohne Formulardaten; Bestätigung nur mit E-Mail-Adresse.
  */
 export async function sendeMeldung(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
   await zurueckOhneSkript();
@@ -52,6 +53,8 @@ export async function sendeMeldung(_vorher: FormularAntwort | null, fd: FormData
   const jetzt = new Date();
   const t = await getTranslations({ locale: sprache, namespace: 'meldung' });
   const melder: MelderMitEinwilligung = {
+    betreff: daten.betreff,
+    nachricht: daten.beschreibung,
     vorname: daten.vorname,
     nachname: daten.nachname,
     ...(daten.telefon ? { telefon: daten.telefon } : {}),
@@ -71,8 +74,8 @@ export async function sendeMeldung(_vorher: FormularAntwort | null, fd: FormData
     const [neu] = await tx
       .insert(schema.ticket)
       .values({
-        titel: daten.betreff,
-        beschreibung: daten.beschreibung,
+        titel: OEFFENTLICHE_MELDUNG_TITEL,
+        beschreibung: '',
         typ: daten.typ,
         organisation: daten.organisation === '' ? null : daten.organisation,
         status: 'offen',
@@ -107,7 +110,7 @@ export async function sendeMeldung(_vorher: FormularAntwort | null, fd: FormData
         daten: { art: 'meldung', datum: datumOhneWochentag(jetzt, sprache) },
       });
     await tx.insert(schema.mailAusgang).values(
-      mails.map((m) => {
+      (await begrenzeBestaetigungen(mails, tx)).map((m) => {
         const v = verschluessele({ an: m.an, daten: m.daten });
         return { vorlage: m.vorlage, sprache: m.sprache, datenVerschluesselt: v.daten, schluesselId: v.schluesselId };
       }),

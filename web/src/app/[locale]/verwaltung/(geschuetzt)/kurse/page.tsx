@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumLang } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
@@ -61,7 +62,7 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
       {liste.length === 0 ? (
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
       ) : (
-        <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+        <TabellenRahmen beschriftung={t('titel')}>
           <table className="w-full min-w-[46rem] border-collapse text-left">
             <thead className="bg-sand">
               <tr>
@@ -161,7 +162,7 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
               ))}
             </tbody>
           </table>
-        </div>
+        </TabellenRahmen>
       )}
     </>
   );

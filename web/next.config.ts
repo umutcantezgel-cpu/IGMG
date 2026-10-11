@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   experimental: {
     agentFeedback: false,
+    // Medien bis 10 MB (ADR 0007) plus Formular-Overhead. Standard wäre 1 MB für Actions und 10 MB gepufferter Body im
+    // Proxy – größere Bilder kämen gekürzt an (Tor B/C SP-C2 B9). Öffentliche Formulare begrenzt der Reverse-Proxy
+    // enger (BETRIEB.md 5b).
+    serverActions: { bodySizeLimit: '11mb' },
+    proxyClientMaxBodySize: '11mb',
   },
   images: {
     // Medien kommen ausschließlich aus der eigenen Herkunft (ADR 0007).

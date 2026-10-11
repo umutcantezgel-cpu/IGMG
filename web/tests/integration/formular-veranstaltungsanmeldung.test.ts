@@ -12,6 +12,12 @@ import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/
  * ALTCHA (einmalig) → Zod → Platzprüfung → Transaktion (eingang verschlüsselt, einwilligung, mail_ausgang) → Versand.
  */
 vi.mock('next-intl/server', () => ({ getTranslations: async () => (k: string) => `[${k}]` }));
+// Veralteter Platzzahl-Cache (bis zu einer Stunde, Tor B/C SP-B B9): bei Bedarf 0 belegte Plätze melden
+const cache = vi.hoisted(() => ({ veraltet: false }));
+vi.mock('@/server/queries/veranstaltungen', async (original) => {
+  const echt = await original<typeof import('@/server/queries/veranstaltungen')>();
+  return { ...echt, ladeAnmeldezahl: async (id: string) => (cache.veraltet ? 0 : echt.ladeAnmeldezahl(id)) };
+});
 
 const { client, db } = await verwaltungsUmgebung();
 const { meldeAn } = await import('@/server/actions/formulare/veranstaltungsanmeldung');
@@ -123,6 +129,20 @@ describe('Veranstaltungsanmeldung', () => {
       status: 'fehler',
       fehler: 'ausgebucht',
     });
+  });
+
+  it('veralteter Cache meldet freie Plätze: die Prüfung in der Transaktion lehnt trotzdem ab, nichts gespeichert (B9)', async () => {
+    const vorher = (await db.select().from(schema.eingang)).length;
+    cache.veraltet = true;
+    try {
+      expect(await meldeAn(null, formular({ ...werte({ personen: '1' }), altcha: await altcha() }))).toMatchObject({
+        status: 'fehler',
+        fehler: 'ausgebucht',
+      });
+    } finally {
+      cache.veraltet = false;
+    }
+    expect((await db.select().from(schema.eingang)).length).toBe(vorher);
   });
 
   it('Validierung: E-Mail ungültig und fehlende Einwilligung → Feldfehler, Eingaben in werte', async () => {

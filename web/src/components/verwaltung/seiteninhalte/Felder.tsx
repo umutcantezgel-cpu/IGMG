@@ -50,6 +50,7 @@ function Feldrahmen({
         {label}
         {pflicht ? <span className="font-normal text-tinte-2"> ({t('pflichtfeld')})</span> : null}
       </label>
+      {children}
       {hinweis ? (
         <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
           {hinweis}
@@ -60,7 +61,6 @@ function Feldrahmen({
           {t('platzhalterFeld')}
         </p>
       ) : null}
-      {children}
       {fehler ? (
         <p id={`${id}-fehler`} className="flex items-start gap-1.5 text-16 font-bold text-fehler">
           <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />
@@ -303,9 +303,12 @@ export function Liste<T>({
   neu,
   maximal,
   renderEintrag,
+  titelVerborgen,
 }: {
   pfad: string;
   titel: string;
+  /** Überschrift nur für Hilfstechnik, wenn sie den Abschnittstitel wiederholt (DP-C2 Befund 7). */
+  titelVerborgen?: boolean;
   eintraege: readonly T[];
   onChange: (neue: T[]) => void;
   neu: () => T;
@@ -345,7 +348,7 @@ export function Liste<T>({
       aria-describedby={fehler ? `${id}-fehler` : undefined}
       className="flex flex-col gap-4"
     >
-      <h3 id={`${id}-titel`} className="font-bold">
+      <h3 id={`${id}-titel`} className={cn('font-bold', titelVerborgen && 'sr-only')}>
         {titel}
       </h3>
       {fehler ? (
@@ -369,9 +372,10 @@ export function Liste<T>({
                     disabled={index === 0}
                     aria-label={`${t('nachOben')}: ${nr}`}
                     onClick={() => verschiebe(index, index - 1)}
+                    className="max-sm:size-12 max-sm:px-0"
                   >
                     <ArrowUp aria-hidden />
-                    {t('nachOben')}
+                    <span className="max-sm:sr-only">{t('nachOben')}</span>
                   </Button>
                   <Button
                     type="button"
@@ -379,13 +383,20 @@ export function Liste<T>({
                     disabled={index === eintraege.length - 1}
                     aria-label={`${t('nachUnten')}: ${nr}`}
                     onClick={() => verschiebe(index, index + 1)}
+                    className="max-sm:size-12 max-sm:px-0"
                   >
                     <ArrowDown aria-hidden />
-                    {t('nachUnten')}
+                    <span className="max-sm:sr-only">{t('nachUnten')}</span>
                   </Button>
-                  <Button type="button" variant="outline" aria-label={`${t('entfernen')}: ${nr}`} onClick={() => entferne(index)}>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    aria-label={`${t('entfernen')}: ${nr}`}
+                    onClick={() => entferne(index)}
+                    className="max-sm:size-12 max-sm:px-0"
+                  >
                     <Trash2 aria-hidden />
-                    {t('entfernen')}
+                    <span className="max-sm:sr-only">{t('entfernen')}</span>
                   </Button>
                 </div>
               </div>

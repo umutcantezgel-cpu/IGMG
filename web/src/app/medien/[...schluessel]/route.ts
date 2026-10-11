@@ -4,7 +4,9 @@ import { ladeMediumNachSchluessel } from '@/server/queries/verwaltung/medien';
 
 /**
  * Auslieferung der Medien (C11, ADR 0007): nur bekannte Einträge außerhalb des Papierkorbs, Typ aus der Datenbank
- * (beim Upload über Magic Bytes bestimmt), lange gecacht (Schlüssel enthält den Inhalts-Hash). PDF in einer Sandbox.
+ * (beim Upload über Magic Bytes bestimmt). Gecacht für 7 Tage, nicht „immutable“: Der Schlüssel enthält zwar den
+ * Inhalts-Hash, nach Papierkorb oder Löschung sollen Kopien in Browsern aber binnen einer Woche verfallen (K-05,
+ * Tor B/C SP-C2 B7). PDF in einer Sandbox.
  */
 export async function GET(_anfrage: Request, { params }: RouteContext<'/medien/[...schluessel]'>) {
   await connection();
@@ -22,7 +24,7 @@ export async function GET(_anfrage: Request, { params }: RouteContext<'/medien/[
   const kopf: Record<string, string> = {
     'Content-Type': medium.typ,
     'Content-Length': String(medium.groesse),
-    'Cache-Control': 'public, max-age=31536000, immutable',
+    'Cache-Control': 'public, max-age=604800',
     'X-Content-Type-Options': 'nosniff',
     'Content-Disposition': 'inline',
   };

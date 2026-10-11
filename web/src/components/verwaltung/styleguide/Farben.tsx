@@ -12,7 +12,7 @@ export async function Farben() {
       {FARBGRUPPEN.map((gruppe) => (
         <div key={gruppe} className="flex flex-col gap-4">
           <h3 className="text-24">{t(`farben.gruppen.${gruppe}`)}</h3>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
             {FARBEN.filter((f) => f.gruppe === gruppe).map((f) => (
               <li key={f.name} className="min-w-0">
                 <Tokenkarte

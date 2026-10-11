@@ -122,7 +122,12 @@ export async function ladeAnmeldezahl(veranstaltungId: string): Promise<number> 
   'use cache';
   cacheLife('hours');
   cacheTag(TAG.anmeldungen, TAG.anmeldungenVon(veranstaltungId));
-  const [z] = await db
+  return zaehleBelegtePlaetze(veranstaltungId);
+}
+
+/** Ungecacht, optional in einer Transaktion – für die verbindliche Platzprüfung beim Speichern (Tor B/C SP-B B9). */
+export async function zaehleBelegtePlaetze(veranstaltungId: string, ausfuehrer: Pick<typeof db, 'select'> = db): Promise<number> {
+  const [z] = await ausfuehrer
     .select({ summe: sql<number>`coalesce(sum(${schema.eingang.anzahl}), 0)::int` })
     .from(schema.eingang)
     .where(

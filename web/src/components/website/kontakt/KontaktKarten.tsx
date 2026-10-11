@@ -1,5 +1,6 @@
 import { ArrowRight, Clock, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { oeffnungszeitText } from '@/components/website/fuss/zeiten';
 import { Text } from '@/components/website/Text';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -74,7 +75,7 @@ export async function KontaktKarten({ kontakt }: { kontakt: SeitenInhalt<'kontak
                 <dt className="font-bold">
                   <Text feld={z.tage} sprache={sprache} />
                 </dt>
-                <dd className="text-tinte-2">{z.zeiten}</dd>
+                <dd className="text-tinte-2">{oeffnungszeitText(z, sprache)}</dd>
               </div>
             ))}
           </dl>

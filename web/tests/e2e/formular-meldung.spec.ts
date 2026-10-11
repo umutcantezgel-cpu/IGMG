@@ -106,8 +106,15 @@ test('Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket i
   expect(benachrichtigung).not.toContain('Testperson Drei');
   expect(benachrichtigung).not.toContain(person);
   expect(benachrichtigung).not.toContain(nachricht);
+  // Liste ohne Freitext (SP-B B1): Betreff und Text nur im Detail, entschlüsselt für die Administration
   await page.goto('/verwaltung/tickets');
-  await expect(page.getByRole('row').filter({ hasText: betreff })).toBeVisible();
+  await expect(page.getByRole('row').filter({ hasText: betreff })).toHaveCount(0);
+  const pfad = benachrichtigung.match(/\/verwaltung\/tickets\/[0-9a-f-]{36}/)?.[0];
+  expect(pfad).toBeTruthy();
+  await page.goto(pfad!);
+  await expect(page.getByRole('heading', { level: 1, name: 'Öffentliche Meldung', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 3, name: betreff, exact: true })).toBeVisible();
+  await expect(page.getByText(nachricht, { exact: true })).toBeVisible();
 
   // Keine CSP-Verstöße (ALTCHA-Worker, Inline-Stile) und keine Konsolenfehler
   expect(fehlend).toEqual([]);

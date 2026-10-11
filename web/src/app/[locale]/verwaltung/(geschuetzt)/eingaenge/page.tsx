@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { EINGANG_ARTEN, EINGANG_STATUS } from '@/lib/eingaenge/arten';
 import { datumKurz, datumLang, uhrzeit } from '@/lib/i18n/format';
 import { lokaleTeile } from '@/lib/termine';
@@ -95,7 +96,7 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
       {zeilen.length === 0 ? (
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p>
       ) : (
-        <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+        <TabellenRahmen beschriftung={t('titel')}>
           <table className="w-full min-w-[56rem] border-collapse text-left">
             <thead className="bg-sand">
               <tr>
@@ -139,7 +140,7 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
               })}
             </tbody>
           </table>
-        </div>
+        </TabellenRahmen>
       )}
       {seiten > 1 ? (
         <nav aria-label={t('seiten', { seite: filter.seite, seiten })} className="flex items-center gap-3">

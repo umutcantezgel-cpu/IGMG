@@ -54,9 +54,12 @@ test('Gebetszeiten: Import prüfen, übernehmen, öffentlich sehen, wieder entfe
   await importBereich.getByRole('button', { name: t.import.uebernehmen }).click();
   await expect(importBereich.getByText('3 Tage wurden übernommen.', { exact: false })).toBeVisible();
 
-  // Öffentlich: heutige Imsak-Zeit aus dem Import
-  await page.goto('/gebetszeiten');
-  await expect(page.locator('main').getByText('04:44').first()).toBeVisible();
+  // Öffentlich: heutige Imsak-Zeit aus dem Import. Die statische Seite wird sofort und nach 5 s erneuert (E-025) –
+  // bis dahin kann noch die vorige Fassung kommen, daher mit Neuladen versuchen.
+  await expect(async () => {
+    await page.goto('/gebetszeiten');
+    await expect(page.locator('main').getByText('04:44').first()).toBeVisible({ timeout: 1000 });
+  }).toPass({ timeout: 15_000, intervals: [500, 1000, 2000] });
 
   // Aufräumen: Import entfernen, Quelle zurück auf Berechnung
   await page.goto('/verwaltung/gebetszeiten');

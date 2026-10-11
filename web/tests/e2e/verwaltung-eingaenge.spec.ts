@@ -52,7 +52,8 @@ test('Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgül
   await expect(page.getByRole('heading', { level: 1, name: /^Eingang vom/ })).toBeVisible();
   await expect(page.getByText(name, { exact: true })).toBeVisible();
   await expect(page.getByText(/^kontaktformular\.einwilligung – erteilt am/)).toBeVisible();
-  await expect(page.getByText(t.detail.keineFrist)).toBeVisible();
+  // Offen: Höchstfrist (Tor B/C B4)
+  await expect(page.getByText(/^Noch offen: wird spätestens am .+ gelöscht\./)).toBeVisible();
   await barrierefrei(page);
 
   // Abschließen startet die Löschfrist

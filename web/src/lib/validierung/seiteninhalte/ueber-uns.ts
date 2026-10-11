@@ -18,7 +18,7 @@ const zeitEintrag = z.object({
     .string()
     .trim()
     .max(300)
-    .regex(/^\/(?!\/)\S*$/)
+    .regex(/^\/(?![/\\])\S*$/)
     .optional(),
   bildbeschreibung: mehrsprachig(200),
   reihenfolge: z.number().int().min(0).max(999).default(0),
@@ -38,10 +38,10 @@ const wert = z.object({
  * Feste Überschriften, Untertitel und Aufrufe stehen in messages/bereiche/ueber-uns.json. Alle Listen dürfen leer sein.
  */
 export const schema = z.object({
-  geschichte: z.object({ absaetze: z.array(absatz).default([]) }).default({ absaetze: [] }),
-  zeitleiste: z.array(zeitEintrag).default([]),
-  gemeinschaft: z.object({ absaetze: z.array(absatz).default([]) }).default({ absaetze: [] }),
-  werte: z.array(wert).default([]),
+  geschichte: z.object({ absaetze: z.array(absatz).max(20).default([]) }).default({ absaetze: [] }),
+  zeitleiste: z.array(zeitEintrag).max(30).default([]),
+  gemeinschaft: z.object({ absaetze: z.array(absatz).max(20).default([]) }).default({ absaetze: [] }),
+  werte: z.array(wert).max(30).default([]),
 });
 
 export type UeberUnsInhalt = z.infer<typeof schema>;

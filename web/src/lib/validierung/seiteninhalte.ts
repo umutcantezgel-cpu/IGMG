@@ -14,28 +14,34 @@ export const HTTPS_URL = z.url({ protocol: /^https$/, hostname: z.regexes.domain
 
 export { mehrsprachig, mehrsprachigOptional } from './mehrsprachig';
 
+/** Uhrzeit HH:MM (00:00–23:59) oder leer, wenn keine Angabe. */
+const uhrzeit = z.union([z.literal(''), z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/)]);
+
 /** Kontaktdaten (Seiteninhalte › Kontaktdaten): Footer, Kontaktseite, JSON-LD. Platzhalter nach G-05. */
 export const kontaktInhalt = z.object({
   adresse: z.string().trim().max(300).default('[Adresse]'),
   telefon: z.string().trim().max(60).default('[Telefonnummer]'),
   notfallTelefon: z.string().trim().max(60).default('[Telefonnummer Notfall]'),
-  email: z.string().trim().max(200).default('info@igmg-wetzlar.de'),
-  /** Öffnungszeiten als Zeilen (z. B. „Mo.–Fr.“ → „09:00–22:00 Uhr“) */
+  /** Gültige E-Mail-Adresse (Fußzeile, Kontaktseite, mailto-Link); Standardwert unten. */
+  email: z.string().trim().pipe(z.email().max(200)).default('info@igmg-wetzlar.de'),
+  /** Öffnungszeiten als Zeilen (z. B. „Mo.–Fr.“ → „09:00–22:00 Uhr“), höchstens 14. */
   oeffnungszeiten: z
     .array(
       z.object({
         tage: mehrsprachig(60),
         zeiten: z.string().trim().max(60),
-        von: z.array(z.number().int().min(0).max(6)).default([]),
-        start: z.string().default(''),
-        ende: z.string().default(''),
+        /** Wochentage 0 (So) bis 6 (Sa), höchstens 7 Einträge. */
+        von: z.array(z.number().int().min(0).max(6)).max(7).default([]),
+        start: uhrzeit.default(''),
+        ende: uhrzeit.default(''),
       }),
     )
+    .max(14)
     .default([]),
   // Nur https: z.url() allein akzeptiert javascript:/data: (gespeicherte XSS, Tor A SP-A-04)
   social: z.object({ facebook: HTTPS_URL.optional(), instagram: HTTPS_URL.optional(), youtube: HTTPS_URL.optional() }).default({}),
   /** Koordinaten der Moschee (für Qibla/Gebetszeiten und Karte nach Klick); leer bis zur Bestätigung (M-010). */
-  koordinaten: z.object({ breite: z.number(), laenge: z.number() }).optional(),
+  koordinaten: z.object({ breite: z.number().min(-90).max(90), laenge: z.number().min(-180).max(180) }).optional(),
   /** Webadresse wie im Design (Contact.dc.html:32); nur Text, kein Link. */
   website: z.string().trim().max(200).default('www.igmg-wetzlar.de'),
   /** Anfahrtstexte je Verkehrsmittel (Contact.dc.html:79–81); die Überschriften stehen in messages/bereiche/kontakt.json. */
@@ -55,16 +61,19 @@ export const kontaktInhalt = z.object({
     en: '5 minutes from Wetzlar main station',
   }),
   /** Angebote der Moschee (Contact.dc.html:83), acht Einträge in Designreihenfolge. */
-  angebote: z.array(mehrsprachig(200)).default([
-    { de: 'Fünf tägliche Gebete', tr: 'Beş vakit namaz', en: 'Five daily prayers' },
-    { de: 'Freitagsgebet mit Khutba', tr: 'Hutbeli Cuma namazı', en: 'Friday prayer with Khutbah' },
-    { de: 'Korankurse für alle Altersgruppen', tr: 'Her yaş için Kuran kursları', en: 'Quran courses for all ages' },
-    { de: 'Islamunterricht', tr: 'Din dersleri', en: 'Islamic education' },
-    { de: 'Hochzeiten und religiöse Zeremonien', tr: 'Nikah ve dini törenler', en: 'Weddings and religious ceremonies' },
-    { de: 'Beratung und Seelsorge', tr: 'Danışmanlık ve manevi rehberlik', en: 'Counseling and spiritual guidance' },
-    { de: 'Jugend- und Frauenorganisationen', tr: 'Gençlik ve kadın teşkilatları', en: 'Youth and women organizations' },
-    { de: 'Kulturelle Veranstaltungen', tr: 'Kültürel etkinlikler', en: 'Cultural events' },
-  ]),
+  angebote: z
+    .array(mehrsprachig(200))
+    .max(20)
+    .default([
+      { de: 'Fünf tägliche Gebete', tr: 'Beş vakit namaz', en: 'Five daily prayers' },
+      { de: 'Freitagsgebet mit Khutba', tr: 'Hutbeli Cuma namazı', en: 'Friday prayer with Khutbah' },
+      { de: 'Korankurse für alle Altersgruppen', tr: 'Her yaş için Kuran kursları', en: 'Quran courses for all ages' },
+      { de: 'Islamunterricht', tr: 'Din dersleri', en: 'Islamic education' },
+      { de: 'Hochzeiten und religiöse Zeremonien', tr: 'Nikah ve dini törenler', en: 'Weddings and religious ceremonies' },
+      { de: 'Beratung und Seelsorge', tr: 'Danışmanlık ve manevi rehberlik', en: 'Counseling and spiritual guidance' },
+      { de: 'Jugend- und Frauenorganisationen', tr: 'Gençlik ve kadın teşkilatları', en: 'Youth and women organizations' },
+      { de: 'Kulturelle Veranstaltungen', tr: 'Kültürel etkinlikler', en: 'Cultural events' },
+    ]),
   /** Besuchstext (Contact.dc.html:65; tr/en Bestand Contact.tsx:132, 188). */
   besuchstext: mehrsprachig(500).default({
     de: 'Alle Menschen sind herzlich eingeladen, unsere Moschee zu besuchen. Führungen sind nach Vereinbarung möglich.',

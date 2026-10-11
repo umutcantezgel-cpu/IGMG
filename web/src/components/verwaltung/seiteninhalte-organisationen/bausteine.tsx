@@ -49,12 +49,12 @@ function Rahmen({
       <label htmlFor={id} className="font-bold">
         {label}
       </label>
+      {kinder({ id, ...(fehler ? { 'aria-invalid': true as const } : {}), 'aria-describedby': beschreibung })}
       {hinweis ? (
         <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
           {hinweis}
         </p>
       ) : null}
-      {kinder({ id, ...(fehler ? { 'aria-invalid': true as const } : {}), 'aria-describedby': beschreibung })}
       {fehler ? (
         <p id={`${id}-fehler`} className="flex items-start gap-1.5 text-16 font-bold text-fehler">
           <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />
@@ -183,8 +183,8 @@ export function MehrsprachigFeld({
   max: number;
 }) {
   const t = useTranslations('verwaltung.seiteninhalteOrganisationen');
-  // Ist eine Übersetzung befüllt oder fehlerhaft, bleibt der Abschnitt offen (Fehler sind sonst nicht erreichbar)
-  const offen = Boolean(wert.tr || wert.en || feldFehler?.[`${pfad}.tr`] || feldFehler?.[`${pfad}.en`]);
+  // Übersetzungen sind standardmäßig zugeklappt; nur ein Fehler in einer Übersetzung öffnet den Abschnitt (Fehler bleiben sonst unsichtbar)
+  const offen = Boolean(feldFehler?.[`${pfad}.tr`] || feldFehler?.[`${pfad}.en`]);
   return (
     <div className="flex min-w-0 flex-col gap-3 md:col-span-2">
       <TextFeld
@@ -198,9 +198,7 @@ export function MehrsprachigFeld({
         max={max}
       />
       <details className="rounded-md border border-linie p-4" open={offen}>
-        <summary className="flex min-h-12 cursor-pointer items-center font-bold">
-          {t('uebersetzungen.aufklappenVon', { feld: label })}
-        </summary>
+        <summary className="flex min-h-12 cursor-pointer items-center font-bold">{t('uebersetzungen.aufklappen')}</summary>
         <div className="mt-3 flex flex-col gap-4">
           <p className="text-16 text-tinte-2">{t('uebersetzungen.hinweis')}</p>
           <TextFeld

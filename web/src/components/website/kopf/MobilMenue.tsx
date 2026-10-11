@@ -18,6 +18,7 @@ type Texte = {
   mobilNavigation: string;
   startseite: string;
   gebetszeiten: string;
+  suche: string;
   anmelden: string;
   aktuelleSeite: string;
 };
@@ -30,6 +31,7 @@ export function MobilMenue({
   menues,
   startHref,
   gebetszeitenHref,
+  sucheHref,
   aktiv,
   aktuell,
   sprache,
@@ -39,6 +41,8 @@ export function MobilMenue({
   menues: Menue[];
   startHref: string;
   gebetszeitenHref: string;
+  /** Suche: unter 640 px nicht in der Kopfzeile (Platz), deshalb hier */
+  sucheHref: string;
   aktiv: Bereich;
   aktuell: string;
   sprache: Locale;
@@ -140,6 +144,18 @@ export function MobilMenue({
                   >
                     {texte.gebetszeiten}
                     {haken(aktuell === 'gebetszeiten')}
+                  </NextLink>
+                </li>
+                <li className="border-b border-linie sm:hidden">
+                  <NextLink
+                    href={sucheHref}
+                    prefetch={false}
+                    onClick={schliessen}
+                    aria-current={aktuell === 'suche' ? 'page' : undefined}
+                    className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
+                  >
+                    {texte.suche}
+                    {haken(aktuell === 'suche')}
                   </NextLink>
                 </li>
                 {menues.map((m) => {

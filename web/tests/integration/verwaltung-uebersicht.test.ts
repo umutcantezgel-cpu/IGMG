@@ -308,7 +308,11 @@ describe('Kurzlisten', () => {
 
   it('Einträge der Kurzlisten enthalten nur Titel, Datum, Status und Kennzeichen, keine Personendaten', async () => {
     const u = await ladeUebersicht(await als([{ rolle: 'administration' }]), alleModule);
-    expect(u.kommend?.map((z) => Object.keys(z).sort()).every((k) => k.join() === 'beginn,ende,ganztaegig,id,titel')).toBe(true);
+    // Organisation (Kürzel-Abzeichen, DP-C1 H2) ist ein Kennzeichen, kein Personendatum
+    expect(u.kommend?.map((z) => Object.keys(z).sort()).every((k) => k.join() === 'beginn,ende,ganztaegig,id,organisation,titel')).toBe(
+      true,
+    );
+    expect(u.kommend?.find((z) => z.titel === 'C01 GT kommend')?.organisation).toBe('gt');
     expect(u.neuigkeiten?.map((z) => Object.keys(z).sort()).every((k) => k.join() === 'datum,id,status,titel')).toBe(true);
   });
 });

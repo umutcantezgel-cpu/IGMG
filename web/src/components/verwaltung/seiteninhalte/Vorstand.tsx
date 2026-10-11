@@ -43,6 +43,7 @@ export function VorstandFormular({ startwerte, nurLesen, aktion }: { startwerte:
         <Liste
           pfad="vorstand"
           titel={t('feld.vorstand')}
+          titelVerborgen
           eintraege={wert.vorstand}
           onChange={(vorstand) => setWert({ ...wert, vorstand })}
           neu={neuesMitglied}

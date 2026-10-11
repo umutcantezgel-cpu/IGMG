@@ -38,13 +38,13 @@ export const schema = z.object({
       beschreibung: mehrsprachig(4000).default({ de: '[Projektbeschreibung – von der Gemeinde]' }),
       kapazitaet: zahlMitEinheit.default({ wert: null, einheit: { de: '' } }),
       flaecheM2: z.number().int().min(0).max(1_000_000).nullable().default(null),
-      einrichtungen: z.array(mehrsprachig(80)).default([]),
+      einrichtungen: z.array(mehrsprachig(80)).max(30).default([]),
       /** 3D-Modell als Pfad unter /public (K-14: keine fremden Adressen). Die Ansicht ist vorerst ein Platzhalter. */
       modell: z
         .string()
         .trim()
         .max(300)
-        .regex(/^\/(?!\/)\S*$/)
+        .regex(/^\/(?![/\\])\S*$/)
         .nullable()
         .default(null),
     })
@@ -65,7 +65,7 @@ export const schema = z.object({
       dank: mehrsprachig(2000).default({ de: '[Dank – von der Gemeinde]' }),
     })
     .prefault({}),
-  meilensteine: z.array(meilenstein).default([]),
+  meilensteine: z.array(meilenstein).max(30).default([]),
 });
 
 export type ProjekteInhalt = z.infer<typeof schema>;

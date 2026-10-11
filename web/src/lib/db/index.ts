@@ -10,6 +10,8 @@ import * as schema from './schema';
  * Alle Zugriffe laufen über Drizzle mit Parametern (K-13, S8).
  */
 export type Datenbank = NodePgDatabase<typeof schema>;
+/** Offene Transaktion (`db.transaction(async (tx) => …)`) für Hilfsfunktionen, die im selben `tx` arbeiten. */
+export type Transaktion = Parameters<Parameters<Datenbank['transaction']>[0]>[0];
 
 const globalFuerDb = globalThis as unknown as { __igmgDb?: Datenbank; __igmgPool?: Pool };
 

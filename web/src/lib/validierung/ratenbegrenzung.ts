@@ -16,10 +16,12 @@ export async function pruefeRate(
   formular: string,
   ip: string,
   grenze: Grenze = STANDARD_GRENZE,
+  /** In einer Transaktion: deren `tx` (zählt dann nur, wenn sie gelingt). */
+  ausfuehrer: Pick<typeof db, 'insert'> = db,
 ): Promise<{ erlaubt: boolean; zaehler: number }> {
   const schluessel = hmac(`${formular}|${ip}`, 'RATE_GEHEIMNIS');
   const intervall = `${grenze.fensterSekunden} seconds`;
-  const [zeile] = await db
+  const [zeile] = await ausfuehrer
     .insert(schema.ratenbegrenzung)
     .values({ schluessel, fensterStart: sql`now()`, zaehler: 1 })
     .onConflictDoUpdate({

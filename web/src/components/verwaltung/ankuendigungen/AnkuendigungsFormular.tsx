@@ -54,12 +54,12 @@ function Rahmen({
         {label}
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
       </label>
+      {kinder({ id, ...(fehler ? { 'aria-invalid': true as const } : {}), 'aria-describedby': beschreibung })}
       {hinweis ? (
         <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
           {hinweis}
         </p>
       ) : null}
-      {kinder({ id, ...(fehler ? { 'aria-invalid': true as const } : {}), 'aria-describedby': beschreibung })}
       {fehler ? (
         <p id={`${id}-fehler`} className="flex items-start gap-1.5 text-16 font-bold text-fehler">
           <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />

@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { and, eq, like } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -12,6 +12,7 @@ import { db, schema } from '@/lib/db';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { sha256, verschluessele, zufallsToken } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
+import { mitAdministrationsSchutz } from '@/lib/rechte/administration';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { clientAdresse } from '@/lib/sicherheit/ip';
@@ -21,8 +22,9 @@ import { emailBelegt, ladeBenutzer, zaehleAdministration } from '@/server/querie
 
 /**
  * Verwaltung „Benutzer und Rollen“ und „Mein Konto“ (C12, K-06, G-07). Reihenfolge je Action: Recht mit 2FA →
- * Eingabe prüfen → Schutzregeln (nie das eigene Konto aussperren, nie die letzte Administration entfernen) →
- * Speichern mit Audit (ohne Personendaten in den Details). Konten entstehen nur per Einladung.
+ * Eingabe prüfen → Schutzregeln (nie das eigene Konto aussperren, nie die letzte Administration entfernen – vorab für
+ * die Rückmeldung, verbindlich in der Transaktion über `mitAdministrationsSchutz`) → Speichern mit Audit (ohne
+ * Personendaten in den Details). Konten entstehen nur per Einladung.
  */
 export type BenutzerZustand = {
   fehler?: string;
@@ -137,7 +139,7 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };
   }
-  await db.transaction(async (tx) => {
+  const gespeichert = await mitAdministrationsSchutz(async (tx) => {
     await tx.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, konto.id));
     await tx
       .insert(schema.rolleZuweisung)
@@ -156,6 +158,7 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
       tx,
     );
   });
+  if (!gespeichert) return { fehler: 'letzteAdministration', werte: roh };
   refresh();
   return { ok: true };
 }
@@ -167,11 +170,16 @@ export async function kontoSperren(fd: FormData): Promise<void> {
   if (selbst) redirect(`/verwaltung/benutzer/${konto.id}?fehler=selbst`);
   if (istAdministration(konto.rollen) && (await zaehleAdministration(konto.id)) === 0)
     redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
-  await db.transaction(async (tx) => {
+  const gesperrt = await mitAdministrationsSchutz(async (tx) => {
     await tx.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, konto.id));
     await tx.delete(schema.session).where(eq(schema.session.userId, konto.id));
+    // Offene Passwort-Links verfallen mit der Sperre (Tor B/C N6) – sonst gälten sie nach dem Entsperren weiter
+    await tx
+      .delete(schema.verification)
+      .where(and(like(schema.verification.identifier, 'reset-password:%'), eq(schema.verification.value, konto.id)));
     await protokolliere({ benutzerId: a.benutzerId, aktion: 'benutzer.gesperrt', zielTyp: 'benutzer', zielId: konto.id }, tx);
   });
+  if (!gesperrt) redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
   redirect(`/verwaltung/benutzer/${konto.id}?meldung=gesperrt`);
 }
 
@@ -210,10 +218,11 @@ export async function kontoLoeschen(fd: FormData): Promise<void> {
   if (selbst) redirect(`/verwaltung/benutzer/${konto.id}?fehler=selbst`);
   if (istAdministration(konto.rollen) && (await zaehleAdministration(konto.id)) === 0)
     redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
-  await db.transaction(async (tx) => {
+  const geloescht = await mitAdministrationsSchutz(async (tx) => {
     await tx.delete(schema.user).where(eq(schema.user.id, konto.id));
     await protokolliere({ benutzerId: a.benutzerId, aktion: 'benutzer.geloescht', zielTyp: 'benutzer', zielId: konto.id }, tx);
   });
+  if (!geloescht) redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
   redirect('/verwaltung/benutzer?meldung=geloescht');
 }
 

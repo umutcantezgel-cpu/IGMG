@@ -66,8 +66,10 @@ export async function neuesTicket(_vorher: TicketZustand, fd: FormData): Promise
 
 /**
  * Status und Priorität ändern (nur `ticket.bearbeiten`). Jede Änderung je Feld steht im Audit-Log mit altem und neuem
- * Wert; `geschlossenAm` folgt dem Status.
+ * Wert; `geschlossenAm` folgt dem Status (gesetzt bei „gelöst“ und „geschlossen“, Tor B/C SP-B B4).
  */
+const ABGESCHLOSSEN = new Set<string>(['geloest', 'geschlossen']);
+
 export async function aendereTicket(_vorher: TicketZustand, fd: FormData): Promise<TicketZustand> {
   let a: Angemeldet;
   try {
@@ -94,7 +96,8 @@ export async function aendereTicket(_vorher: TicketZustand, fd: FormData): Promi
     if (!vorher) return 'nichtGefunden' as const;
     if (vorher.status === e.status && vorher.prioritaet === e.prioritaet) return 'unveraendert' as const;
 
-    const geschlossenAm = e.status !== 'geschlossen' ? null : vorher.status === 'geschlossen' ? vorher.geschlossenAm : jetzt;
+    // Abschluss = gelöst oder geschlossen (B4): ab dann läuft die Frist für die Melderangaben (E-037)
+    const geschlossenAm = !ABGESCHLOSSEN.has(e.status) ? null : ABGESCHLOSSEN.has(vorher.status) ? (vorher.geschlossenAm ?? jetzt) : jetzt;
     await tx.update(schema.ticket).set({ status: e.status, prioritaet: e.prioritaet, geschlossenAm }).where(eq(schema.ticket.id, alt.id));
     if (vorher.status !== e.status)
       await protokolliere(

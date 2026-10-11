@@ -1,4 +1,6 @@
+import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { datumLang, isoZeit, zeitspanne } from '@/lib/i18n/format';
+import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { cn } from '@/lib/utils';
 import type { KommendeVeranstaltung, LetzteNeuigkeit } from '@/server/queries/verwaltung/uebersicht';
 
@@ -9,6 +11,17 @@ export type ListenTexte = {
   veranstaltungenLeer: string;
   ganztaegig: string;
   status: Record<LetzteNeuigkeit['status'], string>;
+};
+
+/** Kommende Veranstaltung mit Organisations-Kürzel je Termin (DP-C1 H2). */
+type KommendEintrag = KommendeVeranstaltung;
+
+/** Kürzel-Abzeichen in den Organisationsfarben (Tokens aus globals.css). */
+const KUERZEL_TON: Record<OrganisationKuerzel, string> = {
+  at: 'bg-org-at-toenung text-org-at-text',
+  kt: 'bg-org-kt-toenung text-org-kt-text',
+  gt: 'bg-org-gt-toenung text-org-gt-text',
+  kgt: 'bg-org-kgt-toenung text-org-kgt-text',
 };
 
 /**
@@ -22,7 +35,7 @@ export function Listen({
   texte,
 }: {
   neuigkeiten: LetzteNeuigkeit[] | null;
-  kommend: KommendeVeranstaltung[] | null;
+  kommend: KommendEintrag[] | null;
   texte: ListenTexte;
 }) {
   if (neuigkeiten === null && kommend === null) return null;
@@ -69,13 +82,20 @@ export function Listen({
           ) : (
             <ul className="mt-2 flex flex-col">
               {kommend.map((z) => (
-                <li key={z.id} className="flex flex-col gap-1 border-t border-linie py-3">
-                  <span className="font-bold break-words">{z.titel}</span>
-                  <span className="text-16 text-tinte-2">
-                    <time dateTime={isoZeit(z.beginn)}>{datumLang(z.beginn, 'de')}</time>
-                    {' · '}
-                    {z.ganztaegig ? texte.ganztaegig : zeitspanne(z.beginn, z.ende, 'de')}
+                <li key={z.id} className="flex items-start justify-between gap-3 border-t border-linie py-3">
+                  <span className="flex min-w-0 flex-col gap-1">
+                    <span className="font-bold break-words">{z.titel}</span>
+                    <span className="text-16 text-tinte-2">
+                      <time dateTime={isoZeit(z.beginn)}>{datumLang(z.beginn, 'de')}</time>
+                      {' · '}
+                      {z.ganztaegig ? texte.ganztaegig : zeitspanne(z.beginn, z.ende, 'de')}
+                    </span>
                   </span>
+                  {z.organisation ? (
+                    <span className={cn('shrink-0 rounded-pill px-3 py-0.5 text-16 font-bold', KUERZEL_TON[z.organisation])}>
+                      {KENNUNG[z.organisation]}
+                    </span>
+                  ) : null}
                 </li>
               ))}
             </ul>

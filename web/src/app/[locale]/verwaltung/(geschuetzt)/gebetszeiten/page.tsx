@@ -3,12 +3,13 @@ import { getTranslations } from 'next-intl/server';
 import { BerechnungFormular, ImportFormular, QuelleFormular } from '@/components/verwaltung/gebetszeiten/GebetszeitenFormulare';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { entferneImport } from '@/server/actions/gebetszeiten';
 import { ladeAbdeckung, ladeGebetszeitenEinstellung, ladeImporte } from '@/server/queries/verwaltung/gebetszeiten';
 
-const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
+const karte = 'flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
 const datum = (d: string) => d.split('-').reverse().join('.');
 
 /** Verwaltung › Gebetszeiten (C07, Blatt V07, K-08, ADR 0008): Quelle, Berechnung mit Vorschau, Import mit Prüfung. */
@@ -51,7 +52,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
         </ul>
         {einstellung.aktiveQuelle === 'import' && !abdeckung.naechste30 ? <Meldung art="info">{t('stand.luecke')}</Meldung> : null}
       </section>
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-2">
         <section aria-labelledby="gz-quelle" className={karte}>
           <h2 id="gz-quelle" className="text-24">
             {t('quelle.titel')}
@@ -81,7 +82,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
         {importe.length === 0 ? (
           <p className="text-tinte-2">{t('importe.leer')}</p>
         ) : (
-          <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+          <TabellenRahmen beschriftung={t('importe.titel')}>
             <table className="w-full min-w-[48rem] border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
@@ -125,7 +126,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
                 ))}
               </tbody>
             </table>
-          </div>
+          </TabellenRahmen>
         )}
       </section>
     </>

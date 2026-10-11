@@ -20,7 +20,8 @@ vi.mock('@/lib/mail/transport', () => ({
 const { client, db } = await verwaltungsUmgebung();
 const actions = await import('@/server/actions/benutzer');
 const { ladeGueltigeEinladung } = await import('@/server/queries/einladung');
-const { ladeBenutzerListe } = await import('@/server/queries/verwaltung/benutzer');
+const { ladeBenutzerAnsicht, ladeBenutzerListe } = await import('@/server/queries/verwaltung/benutzer');
+const { mitAdministrationsSchutz } = await import('@/lib/rechte/administration');
 const { auth } = await import('@/lib/auth/server');
 afterAll(() => client.close());
 
@@ -31,6 +32,8 @@ const rollenVon = (id: string) =>
     .select({ rolle: schema.rolleZuweisung.rolle, organisation: schema.rolleZuweisung.organisation })
     .from(schema.rolleZuweisung)
     .where(eq(schema.rolleZuweisung.benutzerId, id));
+
+const leser = (benutzerId: string) => ({ benutzerId, name: 'Testperson Eins', email: '', rollen: [], zweiFaktorErfuellt: true });
 
 async function fremdesKonto(rollen: Parameters<typeof angemeldetAls>[0]) {
   // angemeldetAls legt ein Konto an und meldet es an – danach wieder als Administration anmelden
@@ -193,7 +196,7 @@ describe('Rollen, Zwei-Faktor, Löschen', () => {
     await expect(actions.kontoLoeschen(formular({ id: admin }))).rejects.toMatchObject({
       ziel: `/verwaltung/benutzer/${admin}?fehler=selbst`,
     });
-    expect((await ladeBenutzerListe()).some((k) => k.id === ziel)).toBe(false);
+    expect((await ladeBenutzerListe(leser(admin))).some((k) => k.id === ziel)).toBe(false);
   });
 });
 
@@ -208,10 +211,16 @@ describe('Sperren', () => {
       createdAt: new Date(),
       updatedAt: new Date(),
     });
+    // Offener Passwort-Link des Kontos und einer eines anderen Kontos (N6)
+    await db.insert(schema.verification).values([
+      { id: 'v-1', identifier: 'reset-password:tokenzielkonto', value: ziel, expiresAt: new Date(Date.now() + 3_600_000) },
+      { id: 'v-2', identifier: 'reset-password:tokenanderes', value: 'anderes-konto', expiresAt: new Date(Date.now() + 3_600_000) },
+    ]);
     const admin = (await angemeldetAls([{ rolle: 'administration' }]))!;
     await expect(actions.kontoSperren(formular({ id: ziel }))).rejects.toMatchObject({
       ziel: `/verwaltung/benutzer/${ziel}?meldung=gesperrt`,
     });
+    expect((await db.select({ id: schema.verification.id }).from(schema.verification)).map((v) => v.id)).toEqual(['v-2']);
     const [u] = await db.select({ g: schema.user.gesperrtAm }).from(schema.user).where(eq(schema.user.id, ziel));
     expect(u.g).toBeInstanceOf(Date);
     expect(await db.select().from(schema.session).where(eq(schema.session.userId, ziel))).toHaveLength(0);
@@ -244,6 +253,48 @@ describe('Sperren', () => {
     });
   });
 
+  it('letzte Administration: Schutz in der Transaktion greift auch ohne Vorprüfung und bei gleichzeitigen Änderungen', async () => {
+    const admin = (await angemeldetAls([{ rolle: 'administration' }]))!;
+    const zweite = await fremdesKonto([{ rolle: 'administration' }]);
+    // Alle anderen Administrationskonten sperren → genau admin und zweite bleiben
+    const andere = await db
+      .select({ id: schema.rolleZuweisung.benutzerId })
+      .from(schema.rolleZuweisung)
+      .where(eq(schema.rolleZuweisung.rolle, 'administration'));
+    for (const { id } of andere)
+      if (id !== admin && id !== zweite) await db.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, id));
+    const sperre = (id: string) => () =>
+      mitAdministrationsSchutz(async (tx) => {
+        await tx.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, id));
+      });
+    // Zwei gleichzeitige Sperren der beiden letzten: genau eine gelingt, die andere wird zurückgerollt
+    const ergebnisse = await Promise.all([sperre(admin)(), sperre(zweite)()]);
+    expect(ergebnisse.filter(Boolean)).toHaveLength(1);
+    const offen = await db
+      .select({ id: schema.user.id })
+      .from(schema.user)
+      .where(and(eq(schema.user.id, ergebnisse[0] ? zweite : admin)));
+    expect(offen).toHaveLength(1);
+    const { zaehleAdministration } = await import('@/server/queries/verwaltung/benutzer');
+    expect(await zaehleAdministration()).toBe(1);
+    // Rollen entziehen und Löschen der letzten: abgelehnt, nichts geändert
+    const letzte = ergebnisse[0] ? zweite : admin;
+    expect(
+      await mitAdministrationsSchutz(async (tx) => {
+        await tx.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, letzte));
+      }),
+    ).toBe(false);
+    expect(await rollenVon(letzte)).toEqual([{ rolle: 'administration', organisation: null }]);
+    expect(
+      await mitAdministrationsSchutz(async (tx) => {
+        await tx.delete(schema.user).where(eq(schema.user.id, letzte));
+      }),
+    ).toBe(false);
+    expect(await zaehleAdministration()).toBe(1);
+    // aufräumen: alle wieder entsperren
+    await db.update(schema.user).set({ gesperrtAm: null });
+  });
+
   it('gesperrte Administration zählt nicht als verbleibende Administration', async () => {
     const { zaehleAdministration } = await import('@/server/queries/verwaltung/benutzer');
     const vorher = await zaehleAdministration();
@@ -251,6 +302,24 @@ describe('Sperren', () => {
     expect(await zaehleAdministration()).toBe(vorher + 1);
     await db.update(schema.user).set({ gesperrtAm: new Date() }).where(eq(schema.user.id, zweite));
     expect(await zaehleAdministration()).toBe(vorher);
+  });
+});
+
+describe('Lesen protokolliert (G-07, Tor B/C M2)', () => {
+  it('Liste und Detail schreiben benutzer.gelesen ohne Personendaten', async () => {
+    const admin = (await angemeldetAls([{ rolle: 'administration' }]))!;
+    const ziel = await fremdesKonto([{ rolle: 'redaktion' }]);
+    await ladeBenutzerListe(leser(admin));
+    expect(await ladeBenutzerAnsicht(ziel, leser(admin))).toMatchObject({ id: ziel });
+    expect(await ladeBenutzerAnsicht('gibt-es-nicht', leser(admin))).toBeNull();
+    const eintraege = (await auditVon('benutzer.gelesen')).filter((e) => e.benutzerId === admin);
+    expect(eintraege.map((e) => [e.zielId, e.details])).toEqual(
+      expect.arrayContaining([
+        [null, { ansicht: 'liste' }],
+        [ziel, { ansicht: 'detail' }],
+      ]),
+    );
+    expect(eintraege).toHaveLength(2);
   });
 });
 

@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { PILLE, PRIORITAET_TON, STATUS_TON, ticketNummer } from '@/components/verwaltung/tickets/anzeige';
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumKurz, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { lokaleTeile } from '@/lib/termine';
@@ -29,7 +30,7 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex flex-col gap-2">
           <h1 className="text-30 md:text-36">{t('titel')}</h1>
-          <p className="max-w-[70ch] text-tinte-2">{t('einleitung')}</p>
+          <p className="max-w-[70ch] text-pretty text-tinte-2">{t('einleitung')}</p>
         </div>
         {darfAnlegen ? (
           <Button asChild>
@@ -45,57 +46,64 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
         method="get"
         action="/verwaltung/tickets"
         aria-label={t('filter.titel')}
-        className="flex flex-wrap items-end gap-3 rounded-lg border border-linie bg-weiss p-4"
+        className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4"
       >
-        <label className="flex flex-col gap-1 text-16 font-bold">
-          {t('filter.status')}
-          <select name="status" defaultValue={filter.status ?? ''} className={feld}>
-            <option value="">{t('filter.alle')}</option>
-            {TICKET_STATUS.map((s) => (
-              <option key={s} value={s}>
-                {t(`status.${s}`)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex flex-col gap-1 text-16 font-bold">
-          {t('filter.prioritaet')}
-          <select name="prioritaet" defaultValue={filter.prioritaet ?? ''} className={feld}>
-            <option value="">{t('filter.alle')}</option>
-            {TICKET_PRIORITAETEN.map((p) => (
-              <option key={p} value={p}>
-                {t(`prioritaet.${p}`)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex flex-col gap-1 text-16 font-bold">
-          {t('filter.typ')}
-          <select name="typ" defaultValue={filter.typ ?? ''} className={feld}>
-            <option value="">{t('filter.alle')}</option>
-            {TICKET_TYPEN.map((y) => (
-              <option key={y} value={y}>
-                {t(`typ.${y}`)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <Button type="submit" variant="outline">
-          {t('filter.absenden')}
-        </Button>
-        <Button asChild variant="ghost">
-          <NextLink href="/verwaltung/tickets">{t('filter.zuruecksetzen')}</NextLink>
-        </Button>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <label className="flex min-w-0 flex-col gap-1 text-16 font-bold">
+            {t('filter.status')}
+            <select name="status" defaultValue={filter.status ?? ''} className={cn(feld, 'w-full')}>
+              <option value="">{t('filter.alle')}</option>
+              {TICKET_STATUS.map((s) => (
+                <option key={s} value={s}>
+                  {t(`status.${s}`)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex min-w-0 flex-col gap-1 text-16 font-bold">
+            {t('filter.prioritaet')}
+            <select name="prioritaet" defaultValue={filter.prioritaet ?? ''} className={cn(feld, 'w-full')}>
+              <option value="">{t('filter.alle')}</option>
+              {TICKET_PRIORITAETEN.map((p) => (
+                <option key={p} value={p}>
+                  {t(`prioritaet.${p}`)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex min-w-0 flex-col gap-1 text-16 font-bold">
+            {t('filter.typ')}
+            <select name="typ" defaultValue={filter.typ ?? ''} className={cn(feld, 'w-full')}>
+              <option value="">{t('filter.alle')}</option>
+              {TICKET_TYPEN.map((y) => (
+                <option key={y} value={y}>
+                  {t(`typ.${y}`)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <Button type="submit" variant="outline">
+            {t('filter.absenden')}
+          </Button>
+          <Button asChild variant="link" className="min-h-12">
+            <NextLink href="/verwaltung/tickets">{t('filter.zuruecksetzen')}</NextLink>
+          </Button>
+        </div>
       </form>
 
-      <p className="text-16 text-tinte-2 tabular-nums" role="status">
-        {t('anzahl', { anzahl: zeilen.length })}
-      </p>
+      {/* Die Zählzeile nur bei Treffern; der Leerzustand steht darunter (DP-C1 N2) */}
+      {zeilen.length > 0 ? (
+        <p className="text-16 text-tinte-2 tabular-nums" role="status">
+          {t('anzahl', { anzahl: zeilen.length })}
+        </p>
+      ) : null}
 
       {zeilen.length === 0 ? (
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{filterAktiv ? t('leerMitFilter') : t('leer')}</p>
       ) : (
-        <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+        <TabellenRahmen beschriftung={t('tabelle')}>
           <table className="w-full min-w-[56rem] border-collapse text-left">
             <caption className="sr-only">{t('tabelle')}</caption>
             <thead className="bg-sand">
@@ -139,7 +147,7 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
               })}
             </tbody>
           </table>
-        </div>
+        </TabellenRahmen>
       )}
     </>
   );

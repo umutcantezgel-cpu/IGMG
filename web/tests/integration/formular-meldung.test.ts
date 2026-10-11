@@ -1,6 +1,6 @@
 import { deriveKey } from 'altcha-lib/algorithms/pbkdf2';
 import { solveChallenge } from 'altcha-lib';
-import { eq } from 'drizzle-orm';
+import { desc, eq } from 'drizzle-orm';
 import type { ReactElement } from 'react';
 import { afterAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { schema } from '@/lib/db';
@@ -57,6 +57,12 @@ function melderAus(ticket: { melderVerschluesselt: Buffer | null; schluesselId: 
   return entschluessele<Record<string, unknown>>(ticket.melderVerschluesselt!, ticket.schluesselId!);
 }
 
+/** Zuletzt angelegtes Ticket (Betreff und Text stehen nur verschlüsselt, SP-B B1). */
+async function letztesTicket() {
+  const [t] = await db.select().from(schema.ticket).orderBy(desc(schema.ticket.nummer)).limit(1);
+  return t;
+}
+
 /** Mail-Ausgang-Zeilen, die nach diesem Zeitpunkt (Kennungen) entstanden sind – unabhängig von der Reihenfolge. */
 async function mailsSeit(vorherIds: Set<string>) {
   return (await db.select().from(schema.mailAusgang)).filter((m) => !vorherIds.has(m.id));
@@ -71,10 +77,11 @@ describe('Meldung', () => {
     const vorher = await mailKennungen();
     expect(await sendeMeldung(null, formular({ ...werte(), altcha: await altcha() }))).toMatchObject({ status: 'erfolg' });
 
-    const [ticket] = await db.select().from(schema.ticket).where(eq(schema.ticket.beschreibung, NACHRICHT));
+    const ticket = await letztesTicket();
+    // Betreff und Text nie im Klartext am Ticket (Liste, Übersicht, Zähler zeigen keinen Freitext)
     expect(ticket).toMatchObject({
-      titel: 'Testbetreff',
-      beschreibung: NACHRICHT,
+      titel: 'Öffentliche Meldung',
+      beschreibung: '',
       typ: 'wunsch',
       organisation: 'kt',
       status: 'offen',
@@ -83,8 +90,11 @@ describe('Meldung', () => {
     });
     // Kontaktangaben nur verschlüsselt, Form von melderSchema plus Einwilligung mit Textversion (E-037, K-07)
     expect(ticket.melderVerschluesselt!.toString('utf8')).not.toContain('Testperson');
+    expect(ticket.melderVerschluesselt!.toString('utf8')).not.toContain('Testbetreff');
     const melder = melderAus(ticket);
     expect(melder).toEqual({
+      betreff: 'Testbetreff',
+      nachricht: NACHRICHT,
       vorname: 'Testperson',
       nachname: 'Eins',
       email: 'testperson.eins@example.test',
@@ -147,8 +157,10 @@ describe('Meldung', () => {
     const eingabe = ohne('rueckmeldeArt', werte({ email: '', rueckmeldung: 'nein', beschreibung: text }));
     expect(await sendeMeldung(null, formular({ ...eingabe, altcha: await altcha() }))).toMatchObject({ status: 'erfolg' });
 
-    const [ticket] = await db.select().from(schema.ticket).where(eq(schema.ticket.beschreibung, text));
+    const ticket = await letztesTicket();
     expect(melderAus(ticket)).toEqual({
+      betreff: 'Testbetreff',
+      nachricht: text,
       vorname: 'Testperson',
       nachname: 'Eins',
       rueckmeldung: false,
@@ -168,9 +180,26 @@ describe('Meldung', () => {
     const text = 'Dritte Testmeldung mit Rückruf.';
     const eingabe = ohne('email', werte({ telefon: '+49 000 1234567', rueckmeldeArt: 'telefon', beschreibung: text }));
     expect(await sendeMeldung(null, formular({ ...eingabe, altcha: await altcha() }))).toMatchObject({ status: 'erfolg' });
-    const [ticket] = await db.select().from(schema.ticket).where(eq(schema.ticket.beschreibung, text));
-    expect(melderAus(ticket)).toMatchObject({ telefon: '+49 000 1234567', rueckmeldung: true, rueckmeldeArt: 'telefon' });
+    const ticket = await letztesTicket();
+    expect(melderAus(ticket)).toMatchObject({ nachricht: text, telefon: '+49 000 1234567', rueckmeldung: true, rueckmeldeArt: 'telefon' });
     expect(ticket.melderVerschluesselt!.toString('utf8')).not.toContain('000 1234567');
+  });
+
+  it('Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt', async () => {
+    const adresse = 'testperson.vier@example.test';
+    const vorher = await mailKennungen();
+    const tickets = (await db.select().from(schema.ticket)).length;
+    for (let i = 0; i < 4; i++)
+      expect(await sendeMeldung(null, formular({ ...werte({ email: adresse }), altcha: await altcha() }))).toMatchObject({
+        status: 'erfolg',
+      });
+    expect((await db.select().from(schema.ticket)).length).toBe(tickets + 4);
+    const neu = await mailsSeit(vorher);
+    const an = neu.map((m) => ({ vorlage: m.vorlage, an: entschluessele<{ an: string }>(m.datenVerschluesselt, m.schluesselId).an }));
+    expect(an.filter((m) => m.vorlage === 'bestaetigung' && m.an === adresse)).toHaveLength(3);
+    expect(an.filter((m) => m.vorlage === 'benachrichtigung')).toHaveLength(4);
+    // Gezählt wird nur als HMAC – die Adresse steht nicht in der Ratentabelle
+    expect(JSON.stringify(await db.select().from(schema.ratenbegrenzung))).not.toContain('testperson');
   });
 
   it('Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert', async () => {

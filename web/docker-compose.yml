@@ -51,6 +51,8 @@ services:
       TZ: UTC
       HOSTNAME: 0.0.0.0
       PORT: 3000
+      # Nur hinter dem TLS-Proxy auf 1 setzen, der X-Real-IP setzt (BETRIEB.md 5a, E-041)
+      PROXY_VERTRAUEN: ${PROXY_VERTRAUEN:-0}
     ports:
       - '127.0.0.1:3000:3000'
     volumes:

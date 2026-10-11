@@ -60,7 +60,7 @@ export async function FormWizard({
               <span aria-hidden className={cn('h-1.5 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
               <span
                 className={cn(
-                  'flex items-center gap-1.5 text-16 leading-tight font-bold [overflow-wrap:anywhere]',
+                  'flex flex-col items-start gap-1.5 text-16 leading-tight font-bold [overflow-wrap:anywhere] sm:flex-row sm:items-center',
                   i === schritt ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >

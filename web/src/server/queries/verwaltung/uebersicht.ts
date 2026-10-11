@@ -23,7 +23,15 @@ const ut = schema.unterhaltungTeilnehmer;
 /** Länge der Kurzlisten (Blatt V01: „nächste 5“, „letzte 5“). */
 const LISTEN_GROESSE = 5;
 
-export type KommendeVeranstaltung = { id: string; titel: string; beginn: Date; ende: Date | null; ganztaegig: boolean };
+export type KommendeVeranstaltung = {
+  id: string;
+  titel: string;
+  beginn: Date;
+  ende: Date | null;
+  ganztaegig: boolean;
+  /** Kürzel-Abzeichen in der Übersicht (Blatt V01, Tor B/C DP-C1 H2); null = Gemeinde allgemein */
+  organisation: OrganisationKuerzel | null;
+};
 export type LetzteNeuigkeit = { id: string; titel: string; status: 'entwurf' | 'veroeffentlicht'; datum: Date };
 export type Uebersicht = {
   /** Kennzahl je angefragtem Modul; nicht angefragte Module fehlen. */
@@ -50,6 +58,7 @@ export async function ladeKommendeVeranstaltungen(a: Angemeldet, jetzt: Date): P
       beginn: v.beginn,
       ende: v.ende,
       ganztaegig: v.ganztaegig,
+      organisation: v.organisation,
       wiederholung: v.wiederholung,
       ausnahmen: v.ausnahmen,
     })
@@ -66,7 +75,18 @@ export async function ladeKommendeVeranstaltungen(a: Angemeldet, jetzt: Date): P
   return zeilen
     .flatMap((z) => {
       const naechstes = naechstesVorkommen({ beginn: z.beginn, ende: z.ende, wiederholung: z.wiederholung, ausnahmen: z.ausnahmen }, jetzt);
-      return naechstes ? [{ id: z.id, titel: z.titel.de, beginn: naechstes.beginn, ende: naechstes.ende, ganztaegig: z.ganztaegig }] : [];
+      return naechstes
+        ? [
+            {
+              id: z.id,
+              titel: z.titel.de,
+              beginn: naechstes.beginn,
+              ende: naechstes.ende,
+              ganztaegig: z.ganztaegig,
+              organisation: z.organisation,
+            },
+          ]
+        : [];
     })
     .sort((x, y) => x.beginn.getTime() - y.beginn.getTime());
 }

@@ -1,11 +1,13 @@
 import 'server-only';
 import { and, desc, eq, isNotNull, isNull, like, or, sql } from 'drizzle-orm';
+import type { AnyPgColumn } from 'drizzle-orm/pg-core';
 import { z } from 'zod';
 import { db, schema } from '@/lib/db';
 
 /**
  * Verwaltung „Medien“ (C11, V11, ADR 0007). Ohne Cache. Verwendung: Bild-Spalten von Veranstaltungen, Neuigkeiten und
- * Kursen sowie Bildknoten (`mediumId`) im Rich-Text der Neuigkeiten – ein genutztes Medium wird nie gelöscht.
+ * Kursen sowie Bildknoten (`mediumId`) im Rich-Text von Neuigkeiten und Veranstaltungen – ein genutztes Medium wird
+ * nie gelöscht.
  */
 const m = schema.medium;
 
@@ -43,18 +45,27 @@ export async function ladeMediumNachSchluessel(schluessel: string): Promise<Medi
 
 export type Verwendung = { art: 'veranstaltung' | 'nachricht' | 'kurs'; id: string; titel: string };
 
-/** Wo wird das Medium genutzt? (Bild-Spalten und Bildknoten im Rich-Text der Neuigkeiten) */
+/**
+ * Bildknoten im Rich-Text (alle Sprachen, jede Tiefe) mit dieser Medien-ID. Strukturell über JSONPath statt Textsuche
+ * (Tor B/C SP-C2 B1: `jsonb::text` schreibt `"mediumId": "…"` mit Leerzeichen, ein LIKE ohne fand nie etwas).
+ */
+const imRichText = (spalte: AnyPgColumn, id: string) =>
+  sql`jsonb_path_exists(coalesce(${spalte}, '{}'::jsonb), '$.** ? (@.type == "image" && @.attrs.mediumId == $id)', jsonb_build_object('id', ${id}::text))`;
+
+/** Wo wird das Medium genutzt? (Bild-Spalten und Bildknoten im Rich-Text von Neuigkeiten und Veranstaltungen) */
 export async function verwendungVon(id: string): Promise<Verwendung[]> {
   const v = schema.veranstaltung;
   const n = schema.nachricht;
   const k = schema.kurs;
-  const imText = sql`${n.inhalt}::text like ${`%"mediumId":"${id}"%`}`;
   const [va, na, ku] = await Promise.all([
-    db.select({ id: v.id, titel: v.titel }).from(v).where(eq(v.bildId, id)),
+    db
+      .select({ id: v.id, titel: v.titel })
+      .from(v)
+      .where(or(eq(v.bildId, id), imRichText(v.beschreibung, id))),
     db
       .select({ id: n.id, titel: n.titel })
       .from(n)
-      .where(or(eq(n.bildId, id), imText)),
+      .where(or(eq(n.bildId, id), imRichText(n.inhalt, id))),
     db.select({ id: k.id, titel: k.titel }).from(k).where(eq(k.bildId, id)),
   ]);
   return [

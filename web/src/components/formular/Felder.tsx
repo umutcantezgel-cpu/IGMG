@@ -36,7 +36,7 @@ function Rahmen({
   const id = feldId(name);
   const beschreibung = [hinweis ? `${id}-hinweis` : null, fehler ? `${id}-fehler` : null].filter(Boolean).join(' ') || undefined;
   return (
-    <div className={cn('flex flex-col gap-1.5', className)}>
+    <div className={cn('flex flex-col gap-2', className)}>
       <label htmlFor={id} className="text-16 font-bold">
         {label}
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
@@ -86,7 +86,13 @@ export function FeldText({
   );
 }
 
-export function FeldBereich({ wert, zeilen = 5, maxLaenge, ...b }: Basis & { wert?: string; zeilen?: number; maxLaenge?: number }) {
+export function FeldBereich({
+  wert,
+  zeilen = 5,
+  maxLaenge,
+  platzhalter,
+  ...b
+}: Basis & { wert?: string; zeilen?: number; maxLaenge?: number; platzhalter?: string }) {
   return (
     <Rahmen
       {...b}
@@ -98,6 +104,7 @@ export function FeldBereich({ wert, zeilen = 5, maxLaenge, ...b }: Basis & { wer
           defaultValue={wert}
           required={Boolean(b.pflicht)}
           maxLength={maxLaenge}
+          placeholder={platzhalter}
           className={cn(EINGABE, 'py-2.5')}
         />
       )}
@@ -157,7 +164,7 @@ export function FeldEinwilligung({
           aria-describedby={fehler ? `${id}-fehler` : undefined}
           className="mt-0.5 size-6 shrink-0 accent-gruen-700"
         />
-        <label htmlFor={id} className="text-16">
+        <label htmlFor={id} className="ohne-silbentrennung text-16">
           {text}
           {link ? (
             <>
@@ -190,6 +197,7 @@ export function FeldOptionen({
   fehler,
   pflicht,
   spaltenMin = 'sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]',
+  kompakt = false,
 }: {
   name: string;
   label: ReactNode;
@@ -201,6 +209,8 @@ export function FeldOptionen({
   pflicht?: string;
   /** Tailwind-Klasse für die Spaltenbreite der Karten */
   spaltenMin?: string;
+  /** Karten nur so breit wie ihr Inhalt, nebeneinander (z. B. Ja/Nein, DP-B-03) */
+  kompakt?: boolean;
 }) {
   const id = feldId(name);
   const gewaehlt = new Set(Array.isArray(wert) ? wert : wert ? [wert] : []);
@@ -220,13 +230,14 @@ export function FeldOptionen({
           {hinweis}
         </p>
       ) : null}
-      <div className={cn('grid gap-2', spaltenMin)}>
+      <div className={kompakt ? 'flex flex-wrap gap-2' : cn('grid gap-2', spaltenMin)}>
         {optionen.map((o, i) => (
           <label
             key={o.wert}
             className={cn(
               'flex min-h-14 cursor-pointer items-start gap-3 rounded-md border bg-weiss px-3.5 py-3 has-checked:border-2 has-checked:border-gruen-700 has-checked:bg-gruen-50',
               fehler ? 'border-2 border-fehler' : 'border-rand',
+              kompakt && 'px-4.5',
             )}
           >
             <input

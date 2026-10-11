@@ -122,11 +122,11 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     id = m.id;
   });
 
-  it('Auslieferung: Typ aus der Datenbank, lange gecacht, nosniff; Pfadausbruch und Unbekanntes 404', async () => {
+  it('Auslieferung: Typ aus der Datenbank, 7 Tage gecacht (nicht immutable, K-05), nosniff; Pfadausbruch und Unbekanntes 404', async () => {
     const r = await holen(schluessel);
     expect(r.status).toBe(200);
     expect(r.headers.get('content-type')).toBe('image/jpeg');
-    expect(r.headers.get('cache-control')).toContain('immutable');
+    expect(r.headers.get('cache-control')).toBe('public, max-age=604800');
     expect(r.headers.get('x-content-type-options')).toBe('nosniff');
     expect(Buffer.from(await r.arrayBuffer()).subarray(0, 3)).toEqual(Buffer.from([0xff, 0xd8, 0xff]));
     expect((await holen('../../etc/passwd')).status).toBe(404);
@@ -161,6 +161,50 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     });
     expect(await db.select().from(schema.medium).where(eq(schema.medium.id, id))).toHaveLength(0);
     expect(await vorhanden(join(verzeichnis, schluessel))).toBe(false);
+  });
+
+  it('Bildknoten im Rich-Text zählen als Verwendung (jede Sprache, jede Tiefe; Tor B/C SP-C2 B1)', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const { verwendungVon } = await import('@/server/queries/verwaltung/medien');
+    const imText = await hochladenId(upload(await jpegMitExif(14, 14), 'im-text.jpg'));
+    const anderes = await hochladenId(upload(await jpegMitExif(16, 16), 'anderes.jpg'));
+    const dok = (mediumId: string) => ({
+      type: 'doc',
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Testabsatz' }] },
+        { type: 'image', attrs: { mediumId } },
+      ],
+    });
+    const [n] = await db
+      .insert(schema.nachricht)
+      .values({ slug: 'bild-im-text', titel: { de: 'Bild im Text' }, inhalt: { de: dok(anderes), tr: dok(imText) } })
+      .returning({ id: schema.nachricht.id });
+    expect((await verwendungVon(imText)).map((v) => [v.art, v.id])).toEqual([['nachricht', n.id]]);
+    await expect(actions.inPapierkorb(formular({ id: imText }))).rejects.toMatchObject({
+      ziel: `/verwaltung/medien/${imText}?fehler=verwendet`,
+    });
+    // Ein Text, der die ID nur erwähnt, ist keine Verwendung
+    await db
+      .update(schema.nachricht)
+      .set({
+        inhalt: { de: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: `"mediumId": "${imText}"` }] }] } },
+      })
+      .where(eq(schema.nachricht.id, n.id));
+    expect(await verwendungVon(imText)).toEqual([]);
+    expect(await verwendungVon(anderes)).toEqual([]);
+    const [v] = await db
+      .insert(schema.veranstaltung)
+      .values({
+        slug: 'bild-in-beschreibung',
+        titel: { de: 'Bild in Beschreibung' },
+        beschreibung: { de: dok(anderes) },
+        kategorie: 'bildung',
+        beginn: new Date(),
+      })
+      .returning({ id: schema.veranstaltung.id });
+    expect((await verwendungVon(anderes)).map((x) => [x.art, x.id])).toEqual([['veranstaltung', v.id]]);
+    await db.delete(schema.veranstaltung).where(eq(schema.veranstaltung.id, v.id));
+    await db.delete(schema.nachricht).where(eq(schema.nachricht.id, n.id));
   });
 
   it('Löschlauf: Medien-Papierkorb nach 30 Tagen, genutzte bleiben', async () => {

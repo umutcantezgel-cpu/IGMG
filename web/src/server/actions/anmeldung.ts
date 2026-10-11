@@ -95,21 +95,20 @@ export async function zweiFaktorPruefen(_vorher: FormularZustand, daten: FormDat
   const eingabe = ersatz ? ersatzcodeSchema.safeParse({ code: roh }) : codeSchema.safeParse({ code: roh });
   if (!eingabe.success) return { feldFehler: { code: 'zweiFaktor.fehler' } };
   if (await begrenzt('zwei-faktor')) return { fehler: 'anmelden.zuViele', feldFehler: { code: 'zweiFaktor.fehler' } };
+  let ergebnis: unknown;
   try {
     const h = await headers();
-    if (ersatz) await auth.api.verifyBackupCode({ body: { code: eingabe.data.code }, headers: h });
-    else await auth.api.verifyTOTP({ body: { code: eingabe.data.code }, headers: h });
+    ergebnis = ersatz
+      ? await auth.api.verifyBackupCode({ body: { code: eingabe.data.code }, headers: h })
+      : await auth.api.verifyTOTP({ body: { code: eingabe.data.code }, headers: h });
   } catch (e) {
     await protokolliere({ benutzerId: null, aktion: 'anmeldung.fehlgeschlagen', details: { schritt: 'zwei_faktor' } });
     return { fehler: istZuViele(e) ? 'anmelden.zuViele' : 'zweiFaktor.fehler', feldFehler: { code: 'zweiFaktor.fehler' } };
   }
-  const angemeldet = await ladeAngemeldet();
-  if (angemeldet)
-    await protokolliere({
-      benutzerId: angemeldet.benutzerId,
-      aktion: 'anmeldung.erfolg',
-      details: { zweiFaktor: true, ersatzcode: ersatz },
-    });
+  // Wie beim Passwortschritt: Die Sitzung steht erst in der Antwort – Konto-ID aus dem Ergebnis (Tor B/C M7)
+  const benutzerId = ergebnis && typeof ergebnis === 'object' && 'user' in ergebnis ? (ergebnis.user as { id?: unknown }).id : undefined;
+  if (typeof benutzerId === 'string')
+    await protokolliere({ benutzerId, aktion: 'anmeldung.erfolg', details: { zweiFaktor: true, ersatzcode: ersatz } });
   redirect('/verwaltung');
 }
 
@@ -209,12 +208,17 @@ export async function passwortVergessen(_vorher: FormularZustand, daten: FormDat
   const eingabe = vergessenSchema.safeParse({ email: daten.get('email') });
   if (!eingabe.success) return { feldFehler: { email: 'passwortVergessen.fehlerEmail' } };
   if (await begrenzt('passwort-vergessen', eingabe.data.email)) return { fehler: 'anmelden.zuViele' };
-  try {
-    await auth.api.requestPasswordReset({ body: { email: eingabe.data.email, redirectTo: `${basisUrl()}/verwaltung/passwort-neu` } });
-  } catch {
-    // Antwort bleibt gleich – Fehler werden nicht nach außen gegeben
-  }
-  after(() => versendeOffeneMails().catch(() => undefined));
+  // Link erzeugen und Mail planen erst nach der Antwort (Tor B/C N1): Für bekannte Konten schreibt Better Auth einen
+  // Eintrag und plant die Mail, für unbekannte nicht – die Antwortzeit verriete sonst, ob es das Konto gibt.
+  const email = eingabe.data.email;
+  after(async () => {
+    try {
+      await auth.api.requestPasswordReset({ body: { email, redirectTo: `${basisUrl()}/verwaltung/passwort-neu` } });
+    } catch {
+      // Antwort bleibt gleich – Fehler werden nicht nach außen gegeben
+    }
+    await versendeOffeneMails().catch(() => undefined);
+  });
   return { ok: true };
 }
 

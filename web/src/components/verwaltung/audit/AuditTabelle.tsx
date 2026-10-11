@@ -1,3 +1,4 @@
+import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 /** Eine Zeile der Tabelle mit fertig formatierten Texten. */
 export type AnzeigeZeile = {
   id: number;
@@ -22,7 +23,7 @@ export type TabellenTexte = {
 export function AuditTabelle({ zeilen, texte }: { zeilen: AnzeigeZeile[]; texte: TabellenTexte }) {
   const s = texte.spalten;
   return (
-    <div className="relative overflow-x-auto rounded-lg border border-linie bg-weiss">
+    <TabellenRahmen beschriftung={texte.beschriftung}>
       <table className="w-full min-w-[48rem] border-collapse text-left">
         <caption className="sr-only">{texte.beschriftung}</caption>
         <thead className="bg-sand">
@@ -78,6 +79,6 @@ export function AuditTabelle({ zeilen, texte }: { zeilen: AnzeigeZeile[]; texte:
           ))}
         </tbody>
       </table>
-    </div>
+    </TabellenRahmen>
   );
 }

@@ -23,7 +23,9 @@ export async function neueChallenge(): Promise<Challenge> {
   return createChallenge({
     algorithm: 'PBKDF2/SHA-256',
     cost: KOSTEN,
-    counter: randomInt(KOSTEN, KOSTEN * 2),
+    // Gesuchter Zähler gleichverteilt in 1 … 2·KOSTEN (altcha-lib: randomInt(max, min)). Eine Untergrenze > 1 könnte ein
+    // Angreifer überspringen, der Browser-Löser beginnt bei 0 (Tor B/C SP-B B6): im Mittel KOSTEN Versuche für alle.
+    counter: randomInt(KOSTEN * 2, 1),
     deriveKey,
     expiresAt: new Date(Date.now() + GUELTIG_MINUTEN * 60_000),
     hmacSignatureSecret: g.signatur,

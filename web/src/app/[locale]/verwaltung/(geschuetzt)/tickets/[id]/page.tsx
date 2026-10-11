@@ -65,7 +65,13 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
             <h2 id="ticket-beschreibung" className="text-24">
               {t('detail.beschreibung')}
             </h2>
-            <p className="break-words whitespace-pre-line">{d.beschreibung}</p>
+            {d.beschreibung ? (
+              <p className="break-words whitespace-pre-line">{d.beschreibung}</p>
+            ) : (
+              <p className="text-tinte-2">
+                {t(melder.art === 'keiner' ? 'detail.keineBeschreibung' : 'detail.beschreibungVerschluesselt')}
+              </p>
+            )}
           </section>
 
           <section aria-labelledby="ticket-melder" className={karte}>
@@ -77,6 +83,12 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
             {melder.art === 'unlesbar' ? <Meldung art="fehler">{t('melder.unlesbar')}</Meldung> : null}
             {melder.art === 'lesbar' ? (
               <>
+                {melder.daten.betreff !== undefined || melder.daten.nachricht !== undefined ? (
+                  <div className="flex flex-col gap-2 border-b border-linie pb-4">
+                    <h3 className="text-20">{melder.daten.betreff || t('keinWert')}</h3>
+                    <p className="break-words whitespace-pre-line">{melder.daten.nachricht || t('keinWert')}</p>
+                  </div>
+                ) : null}
                 <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
                   <div className="contents">
                     <dt className="font-bold">{t('melder.vorname')}</dt>

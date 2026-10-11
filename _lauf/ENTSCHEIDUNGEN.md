@@ -133,3 +133,34 @@ Import in zwei Schritten: „Datei prüfen“ speichert nichts und zeigt Zeilenf
 
 **E-040 · 2026-10-11 · Seiteninhalte: Bearbeitung über das Schema, kein Lese-Audit**
 Seiteninhalte werden als ganzes JSON-Dokument bearbeitet (Client-Zustand → verstecktes Feld `inhalt`) und auf dem Server mit genau dem Schema geprüft, das auch die öffentliche Seite liest (`SEITENINHALT[bereich]`); Feldfehler tragen den Pfad. Das Öffnen der Bearbeitungsseiten wird nicht protokolliert: Die Angaben (z. B. Vorstand) sind zur Veröffentlichung bestimmt, keine Daten von Besucherinnen und Besuchern (G-07 betrifft Eingänge, Melderdaten, Konten); Änderungen stehen im Audit-Log. Öffnungszeiten haben eine Quelle (Kontakt-Seiteninhalt) für Kontaktseite und Fußzeile.
+
+**E-041 · 2026-10-11 · Besucheradresse nur vom vertrauten Proxy; keine IP-Adressen bei Better Auth**
+Gefunden im Tor B/C (SP-C1 H1, live bestätigt): Next.js setzt `X-Forwarded-For` nur, wenn der Header fehlt. Ein vom Client mitgeschickter Wert geht unverändert durch. Damit ließen sich alle Ratenbegrenzungen (Formulare, Anmeldung, Passwort vergessen) mit wechselnden Fantasie-Adressen umgehen. Entscheidung: `clientAdresse()` wertet Adress-Header nur mit `PROXY_VERTRAUEN=1` aus. Dann gilt zuerst `X-Real-IP`, das der Proxy überschreibt, sonst der letzte XFF-Eintrag, den der Proxy anhängt. Ohne vertrauten Proxy teilen sich alle Anfragen ein Limit; das ist strenger, aber nicht umgehbar. Der Start meldet diesen Zustand im Betrieb als Fehler im Log. Better Auth speichert keine IP-Adressen (`disableIpTracking`, Migration 0006 leert vorhandene Werte, M6). Über HTTP gesperrt sind zusätzlich `request-password-reset`, `reset-password`, `change-password` und `update-user`; die App nutzt eigene Server Actions mit Begrenzung und Audit (M1). Betrieb: BETRIEB.md 5a (nginx/Caddy). Verworfen: (a) den ersten XFF-Eintrag nehmen, weil der fälschbar ist; (b) eine Liste vertrauter Proxy-Adressen, weil sie für einen Ein-Server-Betrieb zu aufwendig und fehleranfällig wäre.
+
+**E-042 · 2026-10-11 · Datenschutz-Nachbesserungen aus Tor B/C und Klassifikation der Lesezugriffe**
+Umgesetzt (ADR 0003, 0005, 0007 Nachträge):
+- Öffentliche Meldungen: Betreff und Text verschlüsselt bei den Melderangaben, das Ticket nur mit neutralem Titel (B1).
+- Bestätigungsmails: höchstens 3 je Adresse in 24 h (B2).
+- Höchstfrist von 365 Tagen für offene Eingänge; „gelöst“ setzt die Abschlusszeit der Tickets (B4).
+- Platzprüfung unter Zeilensperre (B9).
+- Letzte Administration: Schutz per Transaktionssperre (M3).
+- Lese-Audit für Konten (`benutzer.gelesen`, M2) und Audit der Anmeldung mit zweitem Faktor (M7).
+- Sperren entwertet offene Passwort-Links (N6). Einladungen werden 30 Tage nach Annahme, Widerruf oder Ablauf gelöscht, abgelaufene Verifikationen sofort (N7). „Passwort vergessen“ antwortet zeitlich gleich (N1).
+- `verwendungVon` über JSONPath (SP-C2 B1).
+- Upload-Grenze 11 MB (SP-C2 B9); Medien-Cache 7 Tage statt immutable (B7).
+
+**Klassifikation (M4, M5, N5, SP-C2 B10):** Protokolliert wird jeder Lesezugriff auf Daten von Besucherinnen und Besuchern (Eingänge, Melderangaben samt Meldungstext) und auf das Kontenverzeichnis (Namen und E-Mail-Adressen aller Mitarbeitenden). Nicht protokolliert werden:
+- interne Ticketbeschreibungen und Kommentare (M4/M5): von Mitarbeitenden geschrieben, keine Besucherdaten;
+- Postfach (E-035);
+- Abfragen im Audit-Log: nur die Administration, der Zugriff ist selbst Prüfhandlung;
+- Namen von Erstellenden oder Importierenden neben Inhalten (B10).
+
+Diese Texte bleiben im Klartext, damit Liste, Suche und Zähler funktionieren. Die Verwaltung erhält die Regel „In Tickets und im Postfach keine Gesundheitsdaten, Kontaktdaten oder Anliegen Dritter eintragen – dafür sind Eingänge und Meldungen da“ (HANDBUCH-VERWALTUNG, M-095).
+
+**Bewusst offen (niedrig):**
+- Formular-Schritte ohne eigenen Zähler (SP-B B5): Proxy-Limit, BETRIEB 5b.
+- Ankündigungszeitfenster im Stundencache (SP-B B8): bis zu 1 h Verzug, dokumentiert.
+- Geschützte Seiten antworten ohne Sitzung mit 200 und Stream-Weiterleitung statt 307 (N8): kein Personendatum.
+- Melder-E-Mail im Leseschema ohne Formatprüfung (N4): Das öffentliche Schema prüft beim Schreiben.
+- Organisationsbindung erst im Aufrufer statt in der Abfrage (SP-C2 B3/B4): Seiten prüfen vor dem Rendern.
+- PDF-Metadaten (SP-C2 B8): Hinweis im Upload-Formular mit C11b.
