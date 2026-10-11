@@ -1,0 +1,81 @@
+E2-TOR-PRUEFER · Prüfstufe B · Referenzansicht / und /ueber-uns
+Gebaut und gemessen: Commit e6d900f80c4f93c83149b79361be6a2c43aa6836 (Branch claude/blissful-edison-x3j16w).
+Stand bei Beginn: HEAD 280a76a (17:58). Der Branch wurde während des Laufs mehrfach weitergeschoben (e6d900f, deab7cc, de04689, 588472a, 80a7d47, 25ad522, 1fdc6a3). Gemessen wurde durchgehend e6d900f; der Arbeitsbaum war nicht eingefroren (19 unkommittierte Dateien anderer Akteure, siehe git status).
+Server: Produktionsbau aus e6d900f, Standalone auf 127.0.0.1:3300, PID 7699, /api/health ok. Eingefroren 3100 (PID 11372) und Dev 3200 blieben unberührt.
+Last: Fremdlast auf 4 Kernen (ESLint-Lauf auf dem Live-Baum, weitere Node-Prozesse), 1-min-Last 2 bis 11,7 während der Messungen. Lighthouse-Block 18:40:50–18:44:26 UTC, Last vorher 4,66 / nachher 4,55.
+
+=== 1. Prüfungen (Schritt 2), Quelle: Worktree e6d900f ===
+pnpm check: rc 0 · Test Files 35/35 · Tests 599 bestanden, 3 erwartete Fehlschläge (602) · Protokoll E2-TOR-check.log (Vorlauf im Arbeitsbaum: E2-TOR-check-arbeitsbaum.log, gleiche Zahlen)
+pnpm test:integration: rc 1 · Test Files 5 fehlgeschlagen, 25 bestanden (30) · Tests 13 fehlgeschlagen, 1325 bestanden, 2 erwartete Fehlschläge (1340) · E2-TOR-integration.log
+  Fehlgeschlagen: formular-kontakt 3, formular-meldung 3, formular-mitgliedsantrag 1, formular-moschee-anfrage 3, formular-veranstaltungsanmeldung 3.
+  Art: 11 Zeitlimit (30 s bzw. 120 s), 2 AssertionError „expected 2 to be 1“ beim Honigtopf-Test (kontakt, veranstaltungsanmeldung).
+  Wiederholung der 5 Dateien (E2-TOR-integration-wiederholung.log): 6 fehlgeschlagen von 48 (5 Zeitlimit, 1 Assertion Honigtopf kontakt). Rot bleiben formular-meldung und formular-kontakt, die anderen drei sind grün.
+  Erster Lauf im Arbeitsbaum, abgebrochen, nicht gewertet: E2-TOR-integration-abgebrochen.log.
+pnpm sprachen:pruefen: rc 0 · 1168 Schlüssel vollständig in de, tr, en · 1868 Verwaltungsschlüssel nur de (ADR 0016) · E2-TOR-sprachen.log
+pnpm geheimnisse:pruefen: rc 0 · ohne Befund · E2-TOR-geheimnisse.log
+
+=== 2. Ansichten gegen 3300, Kennzahlen (E2) neben E0 (E0-PRUEFER-02-ausgangswerte.txt, Stand 9ebb4bc) ===
+Route /  (Startseite)
+  Lighthouse mobil, Median aus 3 Läufen (devtools)
+    Leistung: E0 89 (81–90) · E2 90 (83–91)
+    Barrierefreiheit / Best Practices / SEO: E0 100/100/100 · E2 100/100/100
+    LCP ms: E0 1937 (1851–1940) · E2 1994 (1870–2002)
+    CLS: E0 0,001 · E2 0,004
+    TBT ms: E0 375 (348–668) · E2 364 (314–592)
+    JS gz kB: E0 168 · E2 172,9
+  Bildsatz 390 / 768 / 1440: waagerecht nein, Befunde 0 · Ausschnitte E2 9 / 6 / 5 (E0 9 / 6 / 5)
+  Bildsatz reduziert: HTTP 200, Befunde 0 · Ausschnitte 9 / 6 / 5
+  axe (WCAG 2.2 AA) Verstöße 390 / 1440: E0 0 / 0 · E2 0 / 0
+  axe unklar 390 / 1440: E0 1 / 1 (IDs nicht erfasst) · E2 0 / 0
+  Bewegung, Werkzeug (Seitenaufruf, 390×844): laufende Animationen 0 · Lageänderung 0 px · Bildrate ohne Drosselung 0 % (122 Bilder) · CPU 4× 0 % (122 Bilder, Median-Abstand 16,7 ms) · E0 gleich
+  Bewegung, Zeitfenster ab 2,5 s nach load (5 Bilder über 2,0 s): laufende Animationen in allen 5 Bildern 0 · Bildrate CPU 4× Median aus 3 Läufen 0 % (122 Bilder) · ohne Drosselung 3,3 % (Median)
+
+Route /ueber-uns
+  Lighthouse mobil, Median aus 3 Läufen (devtools)
+    Leistung: E0 87 (80–89) · E2 91 (85–93)
+    Barrierefreiheit / Best Practices / SEO: E0 100/100/100 · E2 100/100/100
+    LCP ms: E0 1823 (1821–1908) · E2 1861 (1855–1981)
+    CLS: E0 0,001 · E2 0,002
+    TBT ms: E0 458 (411–745) · E2 331 (258–532)
+    JS gz kB: E0 168 · E2 169,8
+  Bildsatz 390 / 768 / 1440: waagerecht nein, Befunde 0 · Ausschnitte E2 9 / 6 / 5
+  Bildsatz reduziert: HTTP 200, Befunde 0 · Ausschnitte 9 / 6 / 5
+  axe Verstöße 390 / 1440: E0 0 / 0 · E2 0 / 0
+  axe unklar 390 / 1440: E0 1 / 1 · E2 1 / 1, Regel color-contrast (ernst, 6 Stellen), bei beiden Breiten gleich
+  Bewegung, Werkzeug (Seitenaufruf): laufende Animationen 0 · Lageänderung 0 px · ohne Drosselung 0 % (121 Bilder) · CPU 4× 0 % (122 Bilder). E0 nicht gemessen.
+  Bewegung, Zeitfenster Scroll zu #ueber-reise bei 2,5 s, 5 Bilder über 1,6 s: laufende Animationen in allen 5 Bildern 0 · Bildrate CPU 4× Median aus 3 Läufen 8,2 % verworfen (90 Bilder) · ohne Drosselung 0 %
+
+=== 3. Browser-Befunde (Schritt 4 bis 5) ===
+Seitenwechsel B-05 (1440 und 390): document.startViewTransition vorhanden (Funktion) · Start → /veranstaltungen: URL gewechselt, Aufrufe 0 · /veranstaltungen → Start: URL gewechselt, Aufrufe 0 · Zählung kann React-ViewTransition nicht sicher erfassen, siehe OFFENE FRAGEN
+Konsole 390, je einmal geladen (/, /ueber-uns, /veranstaltungen): 0 Konsolenfehler, 0 Warnungen, 0 Seitenfehler, 0 fehlgeschlagene Anfragen, 0 HTTP-Fehler ab 400 · E2-TOR-konsole.json
+
+=== 4. Quelltext-Prüfungen (Schritt 6), Worktree e6d900f ===
+freie-werte, 30 geänderte Dateien unter web/src (Basis 9ebb4bc): 91 Funde in 9 Dateien. Je Datei: globals.css 20 · styleguide/tokens.ts 50 · CourseCard 5 · EventCard 3 · Header 1 · KonzeptHinweis 2 · NewsCard 4 · OrgCard 2 · ueber-uns/Zeitleiste 4. Arten: Tailwind-Klammerwert 37, Hex 45, px in Style 6, Farbfunktion 3. Protokoll: E2-TOR-freie-werte.md
+svg-pruefung, ganzer Baum: 13 Einträge, Fehler 0, Befund 11, OK 2. In geänderten Dateien: Befund 5 (Icons.tsx:11, Icons.tsx:35, Zustandsgrafik.tsx:48, :85, :99), OK 1 (TagesbogenLive.tsx:80). Die fünf .svg unter _lauf/ sind nicht geändert und haben je Befund. Protokoll: E2-TOR-svg.md
+
+=== 5. Vorschau (Schritt 7, nur lesend) ===
+Neuestes Preview-Deployment des Branches: dpl_J9zLL9uYXSWMNUe3UAbKVMCjzGLK · READY · Commit deab7cc · Projekt prj_texCeXPLaac0TJIJguJJxEpMo7Dx.
+Build-Protokoll (list_deployment_events): pnpm run vercel-build erfolgreich, Migration und Seeds angewendet, Build 26 s, Deployment completed. Eine Warnung: engines.node >=24. Keine Fehlerzeile sichtbar. Das Werkzeug hat 353 Einträge ausgelassen (Kürzung im Ausgabewerkzeug).
+Laufzeitlogs Stufe error/fatal, letzte 2 h: keine Einträge.
+Abruf der Seiten: NICHT ORDNUNGSGEMÄSS. Ich habe web_fetch_vercel_url zweimal benutzt, bevor die Korrekturanweisung eintraf. Dieses Werkzeug legt einen Umgehungslink an oder nutzt einen bestehenden. Ergebnis, nur zur Kenntnis und nicht für die Freigabe verwendbar: /  → HTTP 200, „Der Tag in Wetzlar“ 3-mal; /ueber-uns → HTTP 200, 0-mal. Danach keine weitere Nutzung. Ob ein Umgehungslink tatsächlich neu angelegt wurde, zeigt das Werkzeug nicht an.
+Ersatz laut Vorgabe: Vorschau-Abruf nicht möglich ohne Umgehungslink (Mensch legt das Bypass-Geheimnis an, V-09). Maßgeblich ist der lokale Abruf auf 3300 (Schritt 3).
+
+=== 6. V-02 (Schritt 8) ===
+Worktree: e6d900f (nicht HEAD, weil HEAD sich bewegte). pnpm install --frozen-lockfile: rc 0 (1,5 s, Paketspeicher warm).
+vercel-build mit VERCEL=1, VERCEL_ENV=preview: rc 0, 166 s · Protokoll E2-TOR-v02-vercel-build.log
+vercel-build mit VERCEL=1, VERCEL_ENV=production: rc 0, 84 s · Last zu Beginn 11,7
+vercel build (CLI 63.1.2) ohne Zugangsdaten: rc 1 nach 28 s, „fetch failed“. Umgebungsausnahme, Ersatz: die beiden vercel-build-Läufe oben. Protokoll E2-TOR-v02-vercelcli.log
+Worktrees v02 und quelle entfernt. Vor dem Entfernen die Symlinks auf das Hauptrepo gelöst. Keine Änderung am Arbeitsbaum des Hauptrepos durch mich.
+
+=== 7. Auffälligkeit im Produktionsbau (Ursache nicht geprüft) ===
+Das vom Server auf 3300 ausgelieferte Stylesheet (1xgroub29-46e.css, 86675 Byte) enthält nicht: die Keyframes einblenden, ausblenden, auftritt, zeichnen, enthuellen, wachsen, hervortreten (nur @keyframes spin vorhanden), den Token --ease-eintritt, die Klassen .bogen-enthuellt, .linie-zeichnet, die Regeln ::view-transition-…(.seite) und .morph. Im Quellstand e6d900f stehen sie in web/src/app/globals.css (Keyframes Zeilen 267–312, Schicht components Zeilen 335–418, Token Zeile 118). In HTML und JS-Bundles fehlen sie ebenfalls.
+Folge: Auf / und /ueber-uns läuft in keiner Messung eine Animation (0 von 10 Zeitfenster-Bildern). Die Bewegungsfassung des Auftrags (Tagesbogen-Enthüllung 1,2 s, Weg der Gemeinde) ist im Produktionsbau nicht nachweisbar. Probe: E2-TOR-bewegung-zeitfenster.json; Nachweis: scratchpad/tor-e2/served-1xgroub29-46e.css.
+
+=== 8. Bildbelege (scratchpad, außerhalb des Repos) ===
+bilder/e2-tor/start/390x844/schirm-01…09.jpg · bilder/e2-tor/start/768x1024/schirm-01…06.jpg · bilder/e2-tor/start/1440x900/schirm-01…05.jpg
+bilder/e2-tor/ueber-uns/390x844/schirm-01…09.jpg · …/768x1024/schirm-01…06.jpg · …/1440x900/schirm-01…05.jpg
+bilder/e2-tor-reduziert/{start,ueber-uns}/<breite>/schirm-NN.jpg
+bilder/e2-tor/bewegung/start-1…5.jpg · bilder/e2-tor/bewegung/ueber-uns-1…5.jpg
+Zusammenfassung: bilder/e2-tor/zusammenfassung.md
+
+=== ENDE ERGEBNIS ===

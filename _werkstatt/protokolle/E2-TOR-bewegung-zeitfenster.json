@@ -1,0 +1,252 @@
+{
+  "werkzeug": "motion-e2b",
+  "zeit": "2026-10-11T18:48:11.824Z",
+  "basis": "http://127.0.0.1:3300",
+  "fenster": {
+    "width": 390,
+    "height": 844
+  },
+  "vorlaufMs": 2500,
+  "ziele": {
+    "start": {
+      "pfad": "/",
+      "fensterMs": 2000,
+      "bilder": {
+        "http": 200,
+        "fenster": "ab 2,5 s nach load",
+        "laufendZuBeginn": 0,
+        "rahmen": [
+          {
+            "nr": 1,
+            "sollMs": 0,
+            "istMs": 14,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/start-1.jpg"
+          },
+          {
+            "nr": 2,
+            "sollMs": 500,
+            "istMs": 502,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/start-2.jpg"
+          },
+          {
+            "nr": 3,
+            "sollMs": 1000,
+            "istMs": 1001,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/start-3.jpg"
+          },
+          {
+            "nr": 4,
+            "sollMs": 1500,
+            "istMs": 1501,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/start-4.jpg"
+          },
+          {
+            "nr": 5,
+            "sollMs": 2000,
+            "istMs": 2002,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/start-5.jpg"
+          }
+        ]
+      },
+      "bildrate": {
+        "ohneDrosselung": {
+          "laeufe": [
+            {
+              "drosselung": 1,
+              "bilder": 122,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.7
+            },
+            {
+              "drosselung": 1,
+              "bilder": 118,
+              "langeAbstaende": 2,
+              "verworfen": 4,
+              "anteilVerworfenProzent": 3.3,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            },
+            {
+              "drosselung": 1,
+              "bilder": 118,
+              "langeAbstaende": 2,
+              "verworfen": 4,
+              "anteilVerworfenProzent": 3.3,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            }
+          ],
+          "medianVerworfenProzent": 3.3,
+          "medianBilder": 118
+        },
+        "drossel4": {
+          "laeufe": [
+            {
+              "drosselung": 4,
+              "bilder": 122,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.7
+            },
+            {
+              "drosselung": 4,
+              "bilder": 111,
+              "langeAbstaende": 1,
+              "verworfen": 10,
+              "anteilVerworfenProzent": 8.3,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            },
+            {
+              "drosselung": 4,
+              "bilder": 122,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.7
+            }
+          ],
+          "medianVerworfenProzent": 0,
+          "medianBilder": 122,
+          "medianAbstandMs": 16.7
+        }
+      }
+    },
+    "ueber-uns": {
+      "pfad": "/ueber-uns",
+      "fensterMs": 1600,
+      "bilder": {
+        "http": 200,
+        "fenster": "Scroll zu #ueber-reise bei 2,5 s nach load",
+        "laufendZuBeginn": 0,
+        "rahmen": [
+          {
+            "nr": 1,
+            "sollMs": 0,
+            "istMs": 5,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/ueber-uns-1.jpg"
+          },
+          {
+            "nr": 2,
+            "sollMs": 400,
+            "istMs": 401,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/ueber-uns-2.jpg"
+          },
+          {
+            "nr": 3,
+            "sollMs": 800,
+            "istMs": 801,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/ueber-uns-3.jpg"
+          },
+          {
+            "nr": 4,
+            "sollMs": 1200,
+            "istMs": 1202,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/ueber-uns-4.jpg"
+          },
+          {
+            "nr": 5,
+            "sollMs": 1600,
+            "istMs": 1602,
+            "laufend": 0,
+            "animationen": [],
+            "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e2-tor/bewegung/ueber-uns-5.jpg"
+          }
+        ]
+      },
+      "bildrate": {
+        "ohneDrosselung": {
+          "laeufe": [
+            {
+              "drosselung": 1,
+              "bilder": 98,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            },
+            {
+              "drosselung": 1,
+              "bilder": 98,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.7
+            },
+            {
+              "drosselung": 1,
+              "bilder": 98,
+              "langeAbstaende": 0,
+              "verworfen": 0,
+              "anteilVerworfenProzent": 0,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            }
+          ],
+          "medianVerworfenProzent": 0,
+          "medianBilder": 98
+        },
+        "drossel4": {
+          "laeufe": [
+            {
+              "drosselung": 4,
+              "bilder": 90,
+              "langeAbstaende": 3,
+              "verworfen": 8,
+              "anteilVerworfenProzent": 8.2,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            },
+            {
+              "drosselung": 4,
+              "bilder": 96,
+              "langeAbstaende": 1,
+              "verworfen": 2,
+              "anteilVerworfenProzent": 2,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 16.8
+            },
+            {
+              "drosselung": 4,
+              "bilder": 83,
+              "langeAbstaende": 10,
+              "verworfen": 14,
+              "anteilVerworfenProzent": 14.4,
+              "medianAbstandMs": 16.7,
+              "p95AbstandMs": 33.4
+            }
+          ],
+          "medianVerworfenProzent": 8.2,
+          "medianBilder": 90,
+          "medianAbstandMs": 16.7
+        }
+      }
+    }
+  }
+}

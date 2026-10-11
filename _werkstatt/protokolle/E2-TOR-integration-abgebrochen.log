@@ -1,0 +1,16 @@
+== 2026-10-11T18:01:50Z HEAD e6d900f80c4f93c83149b79361be6a2c43aa6836 · pnpm test:integration
+$ vitest run --project integration
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+ ❯ |integration| tests/integration/formular-meldung.test.ts (11 tests | 4 failed) 275768ms
+   ❯ Meldung (11)
+     × Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt 30010ms
+     × Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert 20847ms
+     × Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit Schlüssel, nichts gespeichert 120002ms
+     × Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig) 30006ms
+ ❯ |integration| tests/integration/formular-veranstaltungsanmeldung.test.ts (9 tests | 3 failed) 119349ms
+   ❯ Veranstaltungsanmeldung (9)
+     × dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt 30011ms
+     × Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert 16622ms
+     × veralteter Cache meldet freie Plätze: die Prüfung in der Transaktion lehnt trotzdem ab, nichts gespeichert (B9) 30004ms

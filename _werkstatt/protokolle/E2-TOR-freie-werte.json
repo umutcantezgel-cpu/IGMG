@@ -1,0 +1,682 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-18-50",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/(website)/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/styleguide/page.tsx",
+    "web/src/app/globals.css",
+    "web/src/components/verwaltung/styleguide/Abstaende.tsx",
+    "web/src/components/verwaltung/styleguide/Bewegung.tsx",
+    "web/src/components/verwaltung/styleguide/BewegungsVorschau.tsx",
+    "web/src/components/verwaltung/styleguide/Ebenen.tsx",
+    "web/src/components/verwaltung/styleguide/Raster.tsx",
+    "web/src/components/verwaltung/styleguide/Typografie.tsx",
+    "web/src/components/verwaltung/styleguide/tokens.ts",
+    "web/src/components/website/Bildplatzhalter.tsx",
+    "web/src/components/website/CourseCard.tsx",
+    "web/src/components/website/EventCard.tsx",
+    "web/src/components/website/Header.tsx",
+    "web/src/components/website/Icons.tsx",
+    "web/src/components/website/KonzeptHinweis.tsx",
+    "web/src/components/website/NewsCard.tsx",
+    "web/src/components/website/OrgCard.tsx",
+    "web/src/components/website/Seitenkopf.tsx",
+    "web/src/components/website/Seitenrahmen.tsx",
+    "web/src/components/website/Zustandsgrafik.tsx",
+    "web/src/components/website/organisation/OrgKarte.tsx",
+    "web/src/components/website/start/Tagesbogen.tsx",
+    "web/src/components/website/start/TagesbogenLive.tsx",
+    "web/src/components/website/ueber-uns/WegBeobachter.tsx",
+    "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+    "web/src/lib/gebetszeiten/bogen.ts",
+    "web/src/lib/termine/ical.ts",
+    "web/src/server/ical/veranstaltungen.ts",
+    "web/src/server/queries/veranstaltungen.ts"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 37,
+    "Hex-Farbe": 45,
+    "px-Literal in Style": 6,
+    "Farbfunktion": 3
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 106,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.55]",
+      "zeileText": "/* Zeilenhöhe für Einleitungen in 20 px (statt leading-[1.55]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 108,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[72px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 108,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[88px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 111,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[760px]",
+      "zeileText": "/* Lesebreite für Einleitungen (statt max-w-[760px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 113,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "/* Textspalte im Seitenkopf (statt max-w-[880px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 124,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(…)]",
+      "zeileText": "/* Raster (Kern K-005, statt grid-cols-[repeat(…)]): Karten ab 340 px, Kacheln ab 260 px, je so viele Spalten wie passen */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 139,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "* (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Nie hinter Text."
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 179,
+      "art": "Tailwind-Klammerwert",
+      "fund": "z-50/z-60/z-[100]",
+      "zeileText": "/* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 413,
+      "art": "Hex-Farbe",
+      "fund": "#fff",
+      "zeileText": "background: #fff;"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 460,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 461,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 462,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 463,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 464,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 465,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 466,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 467,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 468,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 469,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 470,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 33,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "{ name: '--color-gruen-950', wert: '#0e3929', gruppe: 'marke', schluessel: 'gruen950', klasse: 'bg-gruen-950' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 34,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-gruen-800', wert: '#065f46', gruppe: 'marke', schluessel: 'gruen800', klasse: 'bg-gruen-800' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 35,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "{ name: '--color-gruen-700', wert: '#047857', gruppe: 'marke', schluessel: 'gruen700', klasse: 'bg-gruen-700' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 36,
+      "art": "Hex-Farbe",
+      "fund": "#d3f0e2",
+      "zeileText": "{ name: '--color-gruen-100', wert: '#d3f0e2', gruppe: 'marke', schluessel: 'gruen100', klasse: 'bg-gruen-100' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 37,
+      "art": "Hex-Farbe",
+      "fund": "#ebf9f2",
+      "zeileText": "{ name: '--color-gruen-50', wert: '#ebf9f2', gruppe: 'marke', schluessel: 'gruen50', klasse: 'bg-gruen-50' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 38,
+      "art": "Hex-Farbe",
+      "fund": "#1d1a17",
+      "zeileText": "{ name: '--color-tinte', wert: '#1d1a17', gruppe: 'neutral', schluessel: 'tinte', klasse: 'bg-tinte' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 39,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "{ name: '--color-tinte-2', wert: '#514c46', gruppe: 'neutral', schluessel: 'tinte2', klasse: 'bg-tinte-2' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 40,
+      "art": "Hex-Farbe",
+      "fund": "#68625b",
+      "zeileText": "{ name: '--color-tinte-3', wert: '#68625b', gruppe: 'neutral', schluessel: 'tinte3', klasse: 'bg-tinte-3' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 41,
+      "art": "Hex-Farbe",
+      "fund": "#8c857c",
+      "zeileText": "{ name: '--color-rand', wert: '#8c857c', gruppe: 'neutral', schluessel: 'rand', klasse: 'bg-rand', kontrast: '≥ 3:1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 42,
+      "art": "Hex-Farbe",
+      "fund": "#dfdad2",
+      "zeileText": "{ name: '--color-linie', wert: '#dfdad2', gruppe: 'neutral', schluessel: 'linie', klasse: 'bg-linie' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 43,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "{ name: '--color-sand', wert: '#f3f0e9', gruppe: 'neutral', schluessel: 'sand', klasse: 'bg-sand' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 44,
+      "art": "Hex-Farbe",
+      "fund": "#fcfaf6",
+      "zeileText": "{ name: '--color-papier', wert: '#fcfaf6', gruppe: 'neutral', schluessel: 'papier', klasse: 'bg-papier' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 45,
+      "art": "Hex-Farbe",
+      "fund": "#ffffff",
+      "zeileText": "{ name: '--color-weiss', wert: '#ffffff', gruppe: 'neutral', schluessel: 'weiss', klasse: 'bg-weiss' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 46,
+      "art": "Hex-Farbe",
+      "fund": "#af2b25",
+      "zeileText": "{ name: '--color-fehler', wert: '#af2b25', gruppe: 'status', schluessel: 'fehler', klasse: 'bg-fehler' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 47,
+      "art": "Hex-Farbe",
+      "fund": "#ffedea",
+      "zeileText": "{ name: '--color-fehler-toenung', wert: '#ffedea', gruppe: 'status', schluessel: 'fehlerToenung', klasse: 'bg-fehler-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 48,
+      "art": "Hex-Farbe",
+      "fund": "#81520a",
+      "zeileText": "{ name: '--color-warnung', wert: '#81520a', gruppe: 'status', schluessel: 'warnung', klasse: 'bg-warnung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 49,
+      "art": "Hex-Farbe",
+      "fund": "#fef2d9",
+      "zeileText": "{ name: '--color-warnung-toenung', wert: '#fef2d9', gruppe: 'status', schluessel: 'warnungToenung', klasse: 'bg-warnung-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 50,
+      "art": "Hex-Farbe",
+      "fund": "#225899",
+      "zeileText": "{ name: '--color-info', wert: '#225899', gruppe: 'status', schluessel: 'info', klasse: 'bg-info' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 51,
+      "art": "Hex-Farbe",
+      "fund": "#e9f3ff",
+      "zeileText": "{ name: '--color-info-toenung', wert: '#e9f3ff', gruppe: 'status', schluessel: 'infoToenung', klasse: 'bg-info-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 52,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "{ name: '--color-org-at', wert: '#047857', gruppe: 'organisationen', schluessel: 'orgAt', klasse: 'bg-org-at' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 53,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-org-at-text', wert: '#065f46', gruppe: 'organisationen', schluessel: 'orgAtText', klasse: 'bg-org-at-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 54,
+      "art": "Hex-Farbe",
+      "fund": "#e7f8f0",
+      "zeileText": "{ name: '--color-org-at-toenung', wert: '#e7f8f0', gruppe: 'organisationen', schluessel: 'orgAtToenung', klasse: 'bg-org-at-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 55,
+      "art": "Hex-Farbe",
+      "fund": "#592e81",
+      "zeileText": "{ name: '--color-org-kt', wert: '#592e81', gruppe: 'organisationen', schluessel: 'orgKt', klasse: 'bg-org-kt' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 56,
+      "art": "Hex-Farbe",
+      "fund": "#592e81",
+      "zeileText": "{ name: '--color-org-kt-text', wert: '#592e81', gruppe: 'organisationen', schluessel: 'orgKtText', klasse: 'bg-org-kt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 57,
+      "art": "Hex-Farbe",
+      "fund": "#f7f0ff",
+      "zeileText": "{ name: '--color-org-kt-toenung', wert: '#f7f0ff', gruppe: 'organisationen', schluessel: 'orgKtToenung', klasse: 'bg-org-kt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 58,
+      "art": "Hex-Farbe",
+      "fund": "#9b255a",
+      "zeileText": "{ name: '--color-org-kgt', wert: '#9b255a', gruppe: 'organisationen', schluessel: 'orgKgt', klasse: 'bg-org-kgt' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 59,
+      "art": "Hex-Farbe",
+      "fund": "#9b255a",
+      "zeileText": "{ name: '--color-org-kgt-text', wert: '#9b255a', gruppe: 'organisationen', schluessel: 'orgKgtText', klasse: 'bg-org-kgt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 60,
+      "art": "Hex-Farbe",
+      "fund": "#ffeef3",
+      "zeileText": "{ name: '--color-org-kgt-toenung', wert: '#ffeef3', gruppe: 'organisationen', schluessel: 'orgKgtToenung', klasse: 'bg-org-kgt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 61,
+      "art": "Hex-Farbe",
+      "fund": "#008c98",
+      "zeileText": "{ name: '--color-org-gt', wert: '#008c98', gruppe: 'organisationen', schluessel: 'orgGt', klasse: 'bg-org-gt', kontrast: '4,03:1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 62,
+      "art": "Hex-Farbe",
+      "fund": "#006177",
+      "zeileText": "{ name: '--color-org-gt-text', wert: '#006177', gruppe: 'organisationen', schluessel: 'orgGtText', klasse: 'bg-org-gt-text' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 63,
+      "art": "Hex-Farbe",
+      "fund": "#e6f7fd",
+      "zeileText": "{ name: '--color-org-gt-toenung', wert: '#e6f7fd', gruppe: 'organisationen', schluessel: 'orgGtToenung', klasse: 'bg-org-gt-toenung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 64,
+      "art": "Hex-Farbe",
+      "fund": "#225899",
+      "zeileText": "{ name: '--color-tag-bildung', wert: '#225899', gruppe: 'tags', schluessel: 'tagBildung', klasse: 'bg-tag-bildung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 65,
+      "art": "Hex-Farbe",
+      "fund": "#e9f3ff",
+      "zeileText": "{ name: '--color-tag-bildung-bg', wert: '#e9f3ff', gruppe: 'tags', schluessel: 'tagBildungBg', klasse: 'bg-tag-bildung-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 66,
+      "art": "Hex-Farbe",
+      "fund": "#81520a",
+      "zeileText": "{ name: '--color-tag-veranstaltung', wert: '#81520a', gruppe: 'tags', schluessel: 'tagVeranstaltung', klasse: 'bg-tag-veranstaltung' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 69,
+      "art": "Hex-Farbe",
+      "fund": "#fef2d9",
+      "zeileText": "wert: '#fef2d9',"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 74,
+      "art": "Hex-Farbe",
+      "fund": "#006177",
+      "zeileText": "{ name: '--color-tag-jugend', wert: '#006177', gruppe: 'tags', schluessel: 'tagJugend', klasse: 'bg-tag-jugend' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 75,
+      "art": "Hex-Farbe",
+      "fund": "#e6f7fd",
+      "zeileText": "{ name: '--color-tag-jugend-bg', wert: '#e6f7fd', gruppe: 'tags', schluessel: 'tagJugendBg', klasse: 'bg-tag-jugend-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 76,
+      "art": "Hex-Farbe",
+      "fund": "#af2b25",
+      "zeileText": "{ name: '--color-tag-wichtig', wert: '#af2b25', gruppe: 'tags', schluessel: 'tagWichtig', klasse: 'bg-tag-wichtig' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 77,
+      "art": "Hex-Farbe",
+      "fund": "#ffedea",
+      "zeileText": "{ name: '--color-tag-wichtig-bg', wert: '#ffedea', gruppe: 'tags', schluessel: 'tagWichtigBg', klasse: 'bg-tag-wichtig-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 78,
+      "art": "Hex-Farbe",
+      "fund": "#065f46",
+      "zeileText": "{ name: '--color-tag-neuigkeiten', wert: '#065f46', gruppe: 'tags', schluessel: 'tagNeuigkeiten', klasse: 'bg-tag-neuigkeiten' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 79,
+      "art": "Hex-Farbe",
+      "fund": "#ebf9f2",
+      "zeileText": "{ name: '--color-tag-neuigkeiten-bg', wert: '#ebf9f2', gruppe: 'tags', schluessel: 'tagNeuigkeitenBg', klasse: 'bg-tag-neuigkeiten-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 80,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "{ name: '--color-tag-gemeinde', wert: '#514c46', gruppe: 'tags', schluessel: 'tagGemeinde', klasse: 'bg-tag-gemeinde' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 81,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "{ name: '--color-tag-gemeinde-bg', wert: '#f3f0e9', gruppe: 'tags', schluessel: 'tagGemeindeBg', klasse: 'bg-tag-gemeinde-bg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 144,
+      "art": "px-Literal in Style",
+      "fund": "'4px'",
+      "zeileText": "{ name: '--radius-sm', wert: '4px', klasse: 'rounded-sm', schluessel: 'sm' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 145,
+      "art": "px-Literal in Style",
+      "fund": "'8px'",
+      "zeileText": "{ name: '--radius-md', wert: '8px', klasse: 'rounded-md', schluessel: 'md' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 146,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "{ name: '--radius-lg', wert: '12px', klasse: 'rounded-lg', schluessel: 'lg' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 147,
+      "art": "px-Literal in Style",
+      "fund": "'999px'",
+      "zeileText": "{ name: '--radius-pill', wert: '999px', klasse: 'rounded-pill', schluessel: 'pill' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 153,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s1', wert: '0 1px 2px rgba(29, 26, 23, 0.06)', klasse: 'shadow-s1', schluessel: 's1' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 154,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s2', wert: '0 6px 20px rgba(29, 26, 23, 0.1)', klasse: 'shadow-s2', schluessel: 's2' },"
+    },
+    {
+      "datei": "web/src/components/verwaltung/styleguide/tokens.ts",
+      "zeile": 155,
+      "art": "Farbfunktion",
+      "fund": "rgba(2",
+      "zeileText": "{ name: '--shadow-s3', wert: '0 24px 64px rgba(29, 26, 23, 0.22)', klasse: 'shadow-s3', schluessel: 's3' },"
+    },
+    {
+      "datei": "web/src/components/website/CourseCard.tsx",
+      "zeile": 57,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[150px]",
+      "zeileText": "<MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className=\"h-[150px] border-b border-linie\" />"
+    },
+    {
+      "datei": "web/src/components/website/CourseCard.tsx",
+      "zeile": 59,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[150px]",
+      "zeileText": "<Bildplatzhalter beschriftung={t('foto', { titel })} className=\"h-[150px] border-b border-linie\" />"
+    },
+    {
+      "datei": "web/src/components/website/CourseCard.tsx",
+      "zeile": 71,
+      "art": "Tailwind-Klammerwert",
+      "fund": "pt-[3px]",
+      "zeileText": "<dt className=\"flex pt-[3px] text-gruen-700\">"
+    },
+    {
+      "datei": "web/src/components/website/CourseCard.tsx",
+      "zeile": 82,
+      "art": "Tailwind-Klammerwert",
+      "fund": "pt-[3px]",
+      "zeileText": "<dt className=\"flex pt-[3px] text-gruen-700\">"
+    },
+    {
+      "datei": "web/src/components/website/CourseCard.tsx",
+      "zeile": 94,
+      "art": "Tailwind-Klammerwert",
+      "fund": "size-[18px]",
+      "zeileText": "<Info aria-hidden className=\"mt-0.5 size-[18px] shrink-0 text-tag-bildung\" />"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 67,
+      "art": "Tailwind-Klammerwert",
+      "fund": "pt-[3px]",
+      "zeileText": "<dt className=\"flex pt-[3px] text-gruen-700\">"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 129,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 flex-auto items-center justify-center gap-2 rounded-md bg-gruen-700 px-[18px] font-bold text-weiss no-underline hover:bg-gruen-8"
+    },
+    {
+      "datei": "web/src/components/website/EventCard.tsx",
+      "zeile": 138,
+      "art": "Tailwind-Klammerwert",
+      "fund": "px-[18px]",
+      "zeileText": "className=\"inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[18px] font-bold text-gruen-800 no-underline "
+    },
+    {
+      "datei": "web/src/components/website/Header.tsx",
+      "zeile": 42,
+      "art": "Tailwind-Klammerwert",
+      "fund": "text-[22px]",
+      "zeileText": "<span className=\"font-display text-[22px] leading-none font-semibold whitespace-nowrap\">IGMG Wetzlar</span>"
+    },
+    {
+      "datei": "web/src/components/website/KonzeptHinweis.tsx",
+      "zeile": 69,
+      "art": "Tailwind-Klammerwert",
+      "fund": "w-[calc(100%-32px)]",
+      "zeileText": "className=\"m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/KonzeptHinweis.tsx",
+      "zeile": 69,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[680px]",
+      "zeileText": "className=\"m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
+    },
+    {
+      "datei": "web/src/components/website/NewsCard.tsx",
+      "zeile": 57,
+      "art": "px-Literal in Style",
+      "fund": "\"88px\"",
+      "zeileText": "<MedienBild bild={bild} sprache={sprache} sizes=\"88px\" className=\"size-22 shrink-0 rounded-md border border-linie\" />"
+    },
+    {
+      "datei": "web/src/components/website/NewsCard.tsx",
+      "zeile": 127,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[62ch]",
+      "zeileText": "<Text feld={n.kurztext} sprache={sprache} als=\"p\" className=\"max-w-[62ch] text-pretty text-tinte-2\" />"
+    },
+    {
+      "datei": "web/src/components/website/NewsCard.tsx",
+      "zeile": 143,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[180px]",
+      "zeileText": "<MedienBild bild={bild} sprache={sprache} sizes={SIZES_RASTER} className=\"h-[180px] border-b border-linie\" />"
+    },
+    {
+      "datei": "web/src/components/website/NewsCard.tsx",
+      "zeile": 145,
+      "art": "Tailwind-Klammerwert",
+      "fund": "h-[180px]",
+      "zeileText": "<Bildplatzhalter beschriftung={t('fotoBeitrag')} className=\"h-[180px] border-b border-linie\" />"
+    },
+    {
+      "datei": "web/src/components/website/OrgCard.tsx",
+      "zeile": 76,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.25]",
+      "zeileText": "<h3 className=\"text-24 leading-[1.25] text-balance break-words\">"
+    },
+    {
+      "datei": "web/src/components/website/OrgCard.tsx",
+      "zeile": 82,
+      "art": "Tailwind-Klammerwert",
+      "fund": "underline-offset-[5px]",
+      "zeileText": "'text-tinte underline underline-offset-[5px] after:absolute after:inset-0 after:rounded-lg after:content-[\"\"]',"
+    },
+    {
+      "datei": "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+      "zeile": 45,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_320px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-[1_1_320px] flex-col gap-2\">"
+    },
+    {
+      "datei": "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+      "zeile": 62,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[0_1_280px]",
+      "zeileText": "<div className=\"relative h-35 flex-[0_1_280px] overflow-hidden rounded-md border border-linie\">"
+    },
+    {
+      "datei": "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+      "zeile": 63,
+      "art": "px-Literal in Style",
+      "fund": "\"280px\"",
+      "zeileText": "<Image src={e.bild} alt={bild.text} fill sizes=\"280px\" className=\"object-cover\" />"
+    },
+    {
+      "datei": "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+      "zeile": 66,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[0_1_280px]",
+      "zeileText": "<Bildflaeche beschriftung={bild.text} lang={bild.lang} className=\"h-35 flex-[0_1_280px]\" />"
+    }
+  ]
+}

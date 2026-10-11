@@ -1,0 +1,119 @@
+== 2026-10-11T18:28:43Z Wiederholung der 5 Dateien mit Fehlern · Quelle e6d900f80c4f93c83149b79361be6a2c43aa6836 · Last vorher: 3.53 3.81 3.22 8/325 26677
+✓ Lockfile passes supply-chain policies (verified 6h ago)
+Lockfile is up to date, resolution step is skipped
+Packages: -25
+-------------------------
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/tmp/claude-0/-home-user-IGMG/6e3f84a1-
+      4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web/node_modules":
+      workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web
+
+ ❯ |integration| tests/integration/formular-meldung.test.ts (11 tests | 3 failed) 240398ms
+   ❯ Meldung (11)
+     × Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt 30011ms
+     × Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit Schlüssel, nichts gespeichert 120007ms
+     × Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig) 30003ms
+ ❯ |integration| tests/integration/formular-kontakt.test.ts (8 tests | 3 failed) 104830ms
+   ❯ Kontaktformular (8)
+     × dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt 30013ms
+     × Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert 14610ms
+     × Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige Telefonnummer „telefon“, zu lange Texte „zuLang“ 30004ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-kontakt.test.ts:93:3
+     91|   });
+     92|
+     93|   it('dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt', async () => {
+       |   ^
+     94|     const loesung = await altcha();
+     95|     expect((await sendeKontakt(null, formular({ ...werte({ email: 'tes…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/integration/formular-kontakt.test.ts:115:61
+    113|       status: 'erfolg',
+    114|     });
+    115|     expect((await db.select().from(schema.eingang)).length).toBe(vorhe…
+       |                                                             ^
+    116|   });
+    117|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige Telefonnummer „telefon“, zu lange Texte „zuLang“
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-kontakt.test.ts:133:3
+    131|   });
+    132|
+    133|   it('Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige…
+       |   ^
+    134|     expect(await sendeKontakt(null, formular({ ...werte({ nachricht: '…
+    135|       status: 'fehler',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:188:3
+    186|   });
+    187|
+    188|   it('Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten inne…
+       |   ^
+    189|     const adresse = 'testperson.vier@example.test';
+    190|     const vorher = await mailKennungen();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit Schlüssel, nichts gespeichert
+Error: Test timed out in 120000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:230:3
+    228|   });
+    229|
+    230|   it('Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit S…
+       |   ^
+    231|     const vorher = (await db.select().from(schema.ticket)).length;
+    232|     const faelle: [string, Record<string, string>, Record<string, stri…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig)
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:260:3
+    258|   }, 120_000); // dreizehn ALTCHA-Lösungen (je Fall eine Aufgabe)
+    259|
+    260|   it('Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Sc…
+       |   ^
+    261|     const r = await sendeMeldung(null, formular({ ...ohne('typ', werte…
+    262|     expect(r).toMatchObject({ status: 'fehler', fehler: 'pruefen', fel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  2 failed | 3 passed (5)
+      Tests  6 failed | 42 passed (48)
+   Start at  18:28:46
+   Duration  584.46s (tests 95%, import 4%)
+
+WIEDERHOLUNG rc=1
+== 2026-10-11T18:38:30Z ende · Last nachher: 1.89 2.09 2.52 2/283 28933

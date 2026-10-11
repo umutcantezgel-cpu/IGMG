@@ -1,8 +1,9 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt:** Rückgabe E2-TOR-PRUEFER abwarten → frischen Opus-Unteragenten für die Sichtabnahme der Startseite (Bilder aus `$SCRATCHPAD/bilder/e2-tor/`) starten → Befunde als Pakete. Danach `pnpm add @vercel/functions@3.9.9` und O-05 (Pool mit attachDatabasePool, `vercel-build` → `node scripts/vercel-bau.mjs`, instrumentation auf Vercel), V-01 (`vercel.json`: regions, crons; engines 24.x), H-V03/H-V06 übernehmen.
-- **Laufende Pakete:** E2-TOR-PRUEFER, H-V06 (Cron-Routen), H-V03 (umgebung.ts), H-D01 (Runbook).
-- **Offene Pakete:** E0-PRUEFER-03 (Funktionsliste gegen 3100), O-06 Blob, O-07 Startklar-Kern, H-A01…A07, H-S01/S02, E4-Pakete (PLAN.md).
-- **Letzter grüner Commit:** de04689 (Branch; Unit grün, Typen grün außer laufendem H-V06-Stand) · fe97c33 (main).
-- **Entwicklungsserver Opus:** `localhost:3200`; bei veralteten Ständen `$SCRATCHPAD/dev-neustart.sh` (leert `.next/dev`). Postgres 16 lokal läuft (Port 5432, Rolle igmg) für Migrationstests.
+- **Nächster exakter Schritt:** Sauberen Build d17c02b (`$SCRATCHPAD/bau-sauber`, Log `bau-d17c02b.log`) abwarten → Standalone auf Port 3400 starten → B-05-Probe (`_werkstatt/werkzeuge/vt-probe.mjs`, `vt-probe3.mjs`) → E2-Tor wiederholen (Bildsatz, Bewegung, axe, Lighthouse gegen genau diesen Build; der erste Tor-Lauf maß einen veralteten Build, L-E09) → frischer Opus-Unteragent für die Sichtabnahme der Startseite → Befunde als Pakete.
+- **B-05 (offen):** Im veralteten Build löste `<ViewTransition>` nicht aus. Instrumentiert: Der Seitentausch-Commit lief auf einer Transition-Lane, der eingehängte Teilbaum trug aber keinen ViewTransition-Merker. Erst am sauberen Build neu bewerten. Ausweg, falls es bleibt: VT im `[locale]`-Layout mit `update` und Link-`transitionTypes` (Next-Doku view-transitions.md).
+- **Laufende Pakete:** H-A05 Korankurse, H-A07 Kontakt, H-G01 Header/Mobilmenü, H-G03 Gebetszeiten-Leiste.
+- **Offene Pakete:** E0-PRUEFER-03 (Funktionsliste gegen 3100), O-10–O-13 (Opus), H-G02, H-G04, H-Z01/Z02, H-W01–W03, H-V07/V08/V10, H-R01, H-L01, H-D04, H-B (PLAN 1.1).
+- **Letzter grüner Commit:** d17c02b (Branch; tsc grün, Formular-Integration 19/19 grün) · fe97c33 (main, unverändert).
+- **Server:** 3100 eingefrorener Ausgangsstand (PID 11372, nie beenden) · 3200 Entwicklung (`localhost`, bei veraltetem Stand `$SCRATCHPAD/dev-neustart.sh`) · 3300 veralteter Tor-Build (PID 7699, darf beendet werden). Postgres 16 lokal (5432, Rolle igmg).
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.

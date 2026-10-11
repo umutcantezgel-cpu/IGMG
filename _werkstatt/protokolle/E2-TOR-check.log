@@ -1,0 +1,31 @@
+== 2026-10-11T18:12:52Z Quelle e6d900f80c4f93c83149b79361be6a2c43aa6836 · pnpm check
+✓ Lockfile passes supply-chain policies (verified 6h ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/tmp/claude-0/-home-user-IGMG/6e3f84a1-
+      4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web/node_modules":
+      workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+$ pnpm typen && pnpm lint && pnpm test:unit
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully
+$ eslint .
+$ vitest run --project unit
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web
+
+
+ Test Files  35 passed (35)
+      Tests  599 passed | 3 expected fail (602)
+   Start at  18:13:56
+   Duration  5.97s (import 38%, transform 31%, tests 27%, worker 3%)
+
+
+real	1m10.408s
+user	1m42.376s
+sys	0m7.206s
+CHECK rc=0
+== 2026-10-11T18:14:02Z ende

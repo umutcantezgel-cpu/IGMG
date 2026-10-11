@@ -1,0 +1,15 @@
+== 2026-10-11T18:38:45Z sprachen:pruefen · Quelle e6d900f80c4f93c83149b79361be6a2c43aa6836
+✓ Lockfile passes supply-chain policies (verified 7h ago)
+Lockfile is up to date, resolution step is skipped
+Packages: -25
+-------------------------
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/tmp/claude-0/-home-user-IGMG/6e3f84a1-
+      4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web/node_modules":
+      workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+$ node scripts/sprachen-pruefen.mjs
+Sprachdateien vollständig: 1168 Schlüssel in de, tr, en; dazu 1868 Schlüssel der Verwaltung (nur de, ADR 0016).
+SPRACHEN rc=0
+== 2026-10-11T18:38:46Z ende

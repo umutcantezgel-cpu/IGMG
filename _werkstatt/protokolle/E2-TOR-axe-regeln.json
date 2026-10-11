@@ -1,0 +1,62 @@
+{
+  "basis": "http://127.0.0.1:3300",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "ergebnis": [
+    {
+      "breite": 390,
+      "pfad": "/",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "breite": 390,
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 6,
+          "beispiel": [
+            ".h-60 > span[aria-hidden=\"true\"]",
+            ".gap-5:nth-child(1) > .gap-y-4.gap-x-6.pb-8 > .h-35.flex-\\[0_1_280px\\].bg-\\[repeating-linear-gradient\\(135deg\\,var\\(--color-sand\\)_0_10px\\,var\\(--color-papier\\)_10px_20px\\)\\] > span[aria-hidden=\"true\"]"
+          ],
+          "grund": ""
+        }
+      ]
+    },
+    {
+      "breite": 1440,
+      "pfad": "/",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "breite": 1440,
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 6,
+          "beispiel": [
+            ".h-60 > span[aria-hidden=\"true\"]",
+            ".gap-5:nth-child(1) > .gap-y-4.gap-x-6.pb-8 > .h-35.flex-\\[0_1_280px\\].bg-\\[repeating-linear-gradient\\(135deg\\,var\\(--color-sand\\)_0_10px\\,var\\(--color-papier\\)_10px_20px\\)\\] > span[aria-hidden=\"true\"]"
+          ],
+          "grund": ""
+        }
+      ]
+    }
+  ]
+}

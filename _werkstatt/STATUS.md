@@ -1,4 +1,4 @@
-STATUS · Branch claude/blissful-edison-x3j16w · Etappe 2/5 (Tor läuft) · Welle 2 · Pflicht 14/≈45 · Kür 0/≈20 · Kriterien 0/12 · Ausnahmen 0 · Bestand grün (Unit 599 grün) · Vercel grün (Produktion ohne DB) · Nächster Schritt: E2-Tor-Ergebnis, Sichtabnahme, dann O-05 (Pool, vercel-bau) und Welle E3
+STATUS · Branch claude/blissful-edison-x3j16w · Etappe 2/5 (Tor wird wiederholt) · Welle 4 · Pflicht 31/≈69 · Kür 0/20 · Kriterien 0/12 · Ausnahmen 0 · Bestand grün (Formular-Integration 19/19 nach L-E07) · Vercel gelb (Vorschau READY; Build-Zwischenspeicher abgeschaltet, L-E09) · Nächster Schritt: sauberer Build, B-05-Probe, Tor-Wiederholung, Sichtabnahme
 
 # STATUS – Letzter Lauf (Gestaltung + Vercel-startklar)
 
@@ -26,3 +26,4 @@ STATUS · Branch claude/blissful-edison-x3j16w · Etappe 2/5 (Tor läuft) · Wel
 - 2026-10-11 17:05 UTC · E0 begonnen: _werkstatt angelegt, Auftrag gespeichert.
 - 2026-10-11 17:40 UTC · E0: Werkzeuge und Ausgangsstand eingefroren (9ebb4bc, Port 3100); Kundschafter 02/03/05 abgelegt; E2 vorgezogen: Designsystem-Skalen, Bewegungssystem, Tagesbogen (6b15832); H-FIX1 iCal-Zeitzone (65bcb4b).
 - 2026-10-11 18:15 UTC · E0 abgeschlossen (Ausgangswerte, LAGEBILD); E1: PLAN, ABNAHME, ADR 0018–0023; E2: alle vier großen Momente (Tagesbogen, Weg der Gemeinde, Meilensteinlinie, Familie der vier), SVG-Formsystem, Styleguide-Spiegel, iCal-Zeitzone und Ganztagstermine; E2-Tor (Stufe B) läuft.
+- 2026-10-11 19:10 UTC · L0-Planprüfung eingearbeitet (PLAN 1.1, ABNAHME 1.1); H-A01 Gebetszeiten, H-A02 Veranstaltungen, H-A04 Nachrichten, H-A06 Voranmeldung + Formular-Bausteine fertig; Formular-Integrationstests: Ursache Rechenzeit der ALTCHA-Lösungen (L-E07); E2-Tor maß einen veralteten Build (L-E09, Zwischenspeicher für Builds aus); Welle 4 läuft (Korankurse, Kontakt, Header, Leiste).

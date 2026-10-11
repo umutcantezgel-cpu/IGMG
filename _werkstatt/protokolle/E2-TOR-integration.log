@@ -1,0 +1,234 @@
+== 2026-10-11T18:14:07Z Quelle e6d900f80c4f93c83149b79361be6a2c43aa6836 · pnpm test:integration
+✓ Lockfile passes supply-chain policies (verified 6h ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/tmp/claude-0/-home-user-IGMG/6e3f84a1-
+      4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web/node_modules":
+      workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+$ vitest run --project integration
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/tor-e2/quelle/web
+
+ ❯ |integration| tests/integration/formular-meldung.test.ts (11 tests | 3 failed) 249846ms
+   ❯ Meldung (11)
+     × Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt 30014ms
+     × Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit Schlüssel, nichts gespeichert 120006ms
+     × Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig) 30003ms
+ ❯ |integration| tests/integration/formular-mitgliedsantrag.test.ts (10 tests | 1 failed) 62855ms
+   ❯ Mitgliedsantrag (10)
+     × manipuliertes Absenden mit ungültiger Altersgruppe → Fehler „ungueltig“ und zurück in Schritt 1 30013ms
+ ❯ |integration| tests/integration/formular-moschee-anfrage.test.ts (10 tests | 3 failed) 117077ms
+   ❯ Webseite für Moscheen (10)
+     × manipulierte Anforderung beim Absenden → Prüfung mit ALTCHA, zurück in Schritt 2 mit Feldfehler 30015ms
+     × Erfolg: Eingang verschlüsselt, Einwilligung mit Textversion, zwei Mails 30006ms
+     × ALTCHA wiederverwendet → Fehler „altcha“ (Lösungen sind einmalig) 30006ms
+ ❯ |integration| tests/integration/formular-veranstaltungsanmeldung.test.ts (9 tests | 3 failed) 137853ms
+   ❯ Veranstaltungsanmeldung (9)
+     × dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt 30017ms
+     × Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert 27077ms
+     × veralteter Cache meldet freie Plätze: die Prüfung in der Transaktion lehnt trotzdem ab, nichts gespeichert (B9) 30002ms
+ ❯ |integration| tests/integration/formular-kontakt.test.ts (8 tests | 3 failed) 68292ms
+   ❯ Kontaktformular (8)
+     × dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt 30011ms
+     × Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert 3819ms
+     × Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige Telefonnummer „telefon“, zu lange Texte „zuLang“ 30003ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-kontakt.test.ts:93:3
+     91|   });
+     92|
+     93|   it('dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt', async () => {
+       |   ^
+     94|     const loesung = await altcha();
+     95|     expect((await sendeKontakt(null, formular({ ...werte({ email: 'tes…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/integration/formular-kontakt.test.ts:115:61
+    113|       status: 'erfolg',
+    114|     });
+    115|     expect((await db.select().from(schema.eingang)).length).toBe(vorhe…
+       |                                                             ^
+    116|   });
+    117|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  |integration| tests/integration/formular-kontakt.test.ts > Kontaktformular > Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige Telefonnummer „telefon“, zu lange Texte „zuLang“
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-kontakt.test.ts:133:3
+    131|   });
+    132|
+    133|   it('Pflicht, Länge und Telefon: leere Nachricht „pflicht“, ungültige…
+       |   ^
+    134|     expect(await sendeKontakt(null, formular({ ...werte({ nachricht: '…
+    135|       status: 'fehler',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten innerhalb von 24 h keine Mail mehr, die Meldung gilt
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:188:3
+    186|   });
+    187|
+    188|   it('Bestätigungen je Adresse begrenzt (SP-B B2): ab der vierten inne…
+       |   ^
+    189|     const adresse = 'testperson.vier@example.test';
+    190|     const vorher = await mailKennungen();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit Schlüssel, nichts gespeichert
+Error: Test timed out in 120000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:230:3
+    228|   });
+    229|
+    230|   it('Pflicht, Auswahl, Länge und Format: jeweils ein Feldfehler mit S…
+       |   ^
+    231|     const vorher = (await db.select().from(schema.ticket)).length;
+    232|     const faelle: [string, Record<string, string>, Record<string, stri…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  |integration| tests/integration/formular-meldung.test.ts > Meldung > Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig)
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-meldung.test.ts:260:3
+    258|   }, 120_000); // dreizehn ALTCHA-Lösungen (je Fall eine Aufgabe)
+    259|
+    260|   it('Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Sc…
+       |   ^
+    261|     const r = await sendeMeldung(null, formular({ ...ohne('typ', werte…
+    262|     expect(r).toMatchObject({ status: 'fehler', fehler: 'pruefen', fel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  |integration| tests/integration/formular-mitgliedsantrag.test.ts > Mitgliedsantrag > manipuliertes Absenden mit ungültiger Altersgruppe → Fehler „ungueltig“ und zurück in Schritt 1
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-mitgliedsantrag.test.ts:141:3
+    139|   });
+    140|
+    141|   it('manipuliertes Absenden mit ungültiger Altersgruppe → Fehler „ung…
+       |   ^
+    142|     const r = await sendeMitgliedsantrag(null, formular({ ...alle({ al…
+    143|     expect(r).toMatchObject({ status: 'fehler', fehler: 'pruefen', fel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  |integration| tests/integration/formular-moschee-anfrage.test.ts > Webseite für Moscheen > manipulierte Anforderung beim Absenden → Prüfung mit ALTCHA, zurück in Schritt 2 mit Feldfehler
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-moschee-anfrage.test.ts:149:3
+    147|   });
+    148|
+    149|   it('manipulierte Anforderung beim Absenden → Prüfung mit ALTCHA, zur…
+       |   ^
+    150|     const r = await sendeMoscheeAnfrage(
+    151|       null,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  |integration| tests/integration/formular-moschee-anfrage.test.ts > Webseite für Moscheen > Erfolg: Eingang verschlüsselt, Einwilligung mit Textversion, zwei Mails
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-moschee-anfrage.test.ts:159:3
+    157|   });
+    158|
+    159|   it('Erfolg: Eingang verschlüsselt, Einwilligung mit Textversion, zwe…
+       |   ^
+    160|     const r = await sendeMoscheeAnfrage(null, formular({ ...alle(), sc…
+    161|     expect(r.status).toBe('erfolg');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  |integration| tests/integration/formular-moschee-anfrage.test.ts > Webseite für Moscheen > ALTCHA wiederverwendet → Fehler „altcha“ (Lösungen sind einmalig)
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-moschee-anfrage.test.ts:189:3
+    187|   });
+    188|
+    189|   it('ALTCHA wiederverwendet → Fehler „altcha“ (Lösungen sind einmalig…
+       |   ^
+    190|     const token = await altcha();
+    191|     const erster = await sendeMoscheeAnfrage(null, formular({ ...alle(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+ FAIL  |integration| tests/integration/formular-veranstaltungsanmeldung.test.ts > Veranstaltungsanmeldung > dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-veranstaltungsanmeldung.test.ts:103:3
+    101|   });
+    102|
+    103|   it('dieselbe ALTCHA-Lösung ein zweites Mal: abgelehnt', async () => {
+       |   ^
+    104|     const loesung = await altcha();
+    105|     expect((await meldeAn(null, formular({ ...werte({ email: 'testpers…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯
+
+ FAIL  |integration| tests/integration/formular-veranstaltungsanmeldung.test.ts > Veranstaltungsanmeldung > Honigtopf ausgefüllt: scheinbarer Erfolg, nichts gespeichert
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/integration/formular-veranstaltungsanmeldung.test.ts:123:61
+    121|       status: 'erfolg',
+    122|     });
+    123|     expect((await db.select().from(schema.eingang)).length).toBe(vorhe…
+       |                                                             ^
+    124|   });
+    125|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯
+
+ FAIL  |integration| tests/integration/formular-veranstaltungsanmeldung.test.ts > Veranstaltungsanmeldung > veralteter Cache meldet freie Plätze: die Prüfung in der Transaktion lehnt trotzdem ab, nichts gespeichert (B9)
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/integration/formular-veranstaltungsanmeldung.test.ts:134:3
+    132|   });
+    133|
+    134|   it('veralteter Cache meldet freie Plätze: die Prüfung in der Transak…
+       |   ^
+    135|     const vorher = (await db.select().from(schema.eingang)).length;
+    136|     cache.veraltet = true;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯
+
+
+ Test Files  5 failed | 25 passed (30)
+      Tests  13 failed | 1325 passed | 2 expected fail (1340)
+   Start at  18:14:08
+   Duration  857.44s (tests 82%, import 17%)
+
+[ELIFECYCLE] Command failed with exit code 1.
+
+real	14m19.167s
+user	15m7.729s
+sys	1m7.871s
+INTEGRATION rc=1
+== 2026-10-11T18:28:26Z ende

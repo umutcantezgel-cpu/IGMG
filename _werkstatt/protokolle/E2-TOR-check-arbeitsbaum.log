@@ -1,0 +1,22 @@
+== 2026-10-11T18:01:01Z HEAD e6d900f80c4f93c83149b79361be6a2c43aa6836 · pnpm check
+$ pnpm typen && pnpm lint && pnpm test:unit
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully
+$ eslint .
+$ vitest run --project unit
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+
+ Test Files  35 passed (35)
+      Tests  599 passed | 3 expected fail (602)
+   Start at  18:01:41
+   Duration  5.12s (import 39%, transform 32%, tests 26%, worker 3%)
+
+
+real	0m45.482s
+user	1m12.913s
+sys	0m6.647s
+CHECK rc=0
+== 2026-10-11T18:01:46Z ende
