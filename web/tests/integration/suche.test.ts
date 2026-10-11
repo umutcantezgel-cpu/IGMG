@@ -4,7 +4,7 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /** D-S1 (ADR 0013): Volltext je Sprache, nur Sichtbares, Ausschnitt mit Marken statt HTML, Eingabe bereinigt. */
 const { client, db } = await verwaltungsUmgebung();
-const { suche, bereinigeSuche, MARKE_AN, MARKE_AUS } = await import('@/server/queries/suche');
+const { suche, bereinigeSuche, teilwortMuster, MARKE_AN, MARKE_AUS } = await import('@/server/queries/suche');
 afterAll(() => client.close());
 
 const gestern = new Date(Date.now() - 86_400_000);
@@ -50,6 +50,27 @@ describe('Suche', () => {
     expect(n).toMatchObject({ art: 'nachricht', titel: 'Gebetsraum renoviert' });
     expect(n.ausschnitt).toContain(`${MARKE_AN}Teppiche${MARKE_AUS}`);
     expect(n.ausschnitt).not.toMatch(/<\/?b>/);
+  });
+
+  it('findet Teile zusammengesetzter Wörter (F-14), Volltext-Treffer zuerst', async () => {
+    const t = await suche('Gebet', 'de');
+    expect(t.map((x) => x.slug)).toEqual(['gebet', 'gebetsraum-renoviert']);
+    expect(t[0]!.rang).toBeGreaterThan(0);
+    expect(t[1]!.rang).toBe(0);
+    expect((await suche('raum', 'de')).map((x) => x.slug)).toEqual(['gebetsraum-renoviert']);
+    // nie Entwürfe, Papierkorb oder Geplantes – auch nicht über den Teilwort-Abgleich
+    expect((await suche('eppich', 'de')).map((x) => x.slug).sort()).toEqual(['gebet', 'gebetsraum-renoviert']);
+  });
+
+  it('Teilwort-Abgleich nur für ein Wort ab 3 Zeichen; Platzhalter maskiert', async () => {
+    expect(teilwortMuster('Gebet')).toBe('%Gebet%');
+    expect(teilwortMuster('ab')).toBeNull();
+    expect(teilwortMuster('neue Teppiche')).toBeNull();
+    expect(teilwortMuster('"Gebet"')).toBeNull();
+    expect(teilwortMuster('-Gebet')).toBeNull();
+    expect(teilwortMuster('50%_\\x')).toBe('%50\\%\\_\\\\x%');
+    expect(await suche('%%%', 'de')).toEqual([]);
+    expect(await suche('___', 'de')).toEqual([]);
   });
 
   it('türkisch sucht im türkischen Text, Titel in der Sprache', async () => {

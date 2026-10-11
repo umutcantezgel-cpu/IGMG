@@ -22,15 +22,27 @@ export const MARKE_AUS = '\u0003';
 const KONFIG = { de: 'german', tr: 'turkish', en: 'english' } as const;
 type Sprache = keyof typeof KONFIG;
 
-function teil(art: SuchArt, tabelle: string, sprache: Sprache, frage: SQL, sichtbar: SQL): SQL {
+/**
+ * Teilwort-Abgleich für genau ein Suchwort (ab 3 Zeichen, ohne Leerzeichen, Phrase oder Ausschluss): Die Volltextsuche
+ * zerlegt keine zusammengesetzten Wörter – „Gebet“ fände „Freitagsgebet“ oder „Gebetsraum“ nicht (Funktionsliste F-14).
+ * Solche Treffer kommen mit Rang 0 nach den Volltext-Treffern. Platzhalter der Eingabe (`%`, `_`, `\`) sind maskiert.
+ */
+export function teilwortMuster(q: string): string | null {
+  if (q.length < 3 || /\s|"|^-/.test(q)) return null;
+  return `%${q.replace(/[\\%_]/g, (z) => `\\${z}`)}%`;
+}
+
+function teil(art: SuchArt, tabelle: string, sprache: Sprache, frage: SQL, sichtbar: SQL, muster: string | null): SQL {
   const spalte = sql.raw(`suche_${sprache}`);
   const titel = sql`coalesce(${sql.raw(tabelle)}.titel->>${sprache}, ${sql.raw(tabelle)}.titel->>'de')`;
   const text = sql`coalesce(${sql.raw(tabelle)}.klartext->>${sprache}, ${sql.raw(tabelle)}.klartext->>'de', '')`;
+  const volltext = sql`${sql.raw(tabelle)}.${spalte} @@ ${frage}`;
+  const trifft = muster ? sql`(${volltext} or ${titel} ilike ${muster} or ${text} ilike ${muster})` : volltext;
   return sql`select ${art} as art, ${sql.raw(tabelle)}.slug as slug, ${titel} as titel,
     ts_headline(${sql.raw(`'${KONFIG[sprache]}'`)}::regconfig, ${text}, ${frage},
       ${`StartSel=${MARKE_AN}, StopSel=${MARKE_AUS}, MaxWords=28, MinWords=12, MaxFragments=1, FragmentDelimiter=" … "`}) as ausschnitt,
     ts_rank(${sql.raw(tabelle)}.${spalte}, ${frage}) as rang
-    from ${sql.raw(tabelle)} where ${sql.raw(tabelle)}.${spalte} @@ ${frage} and ${sichtbar}`;
+    from ${sql.raw(tabelle)} where ${trifft} and ${sichtbar}`;
 }
 
 /** Bereinigt die Eingabe (Länge, Steuerzeichen); leer = keine Suche. */
@@ -50,13 +62,14 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
   const q = bereinigeSuche(begriff);
   if (q.length < 2) return [];
   const frage = sql`websearch_to_tsquery(${sql.raw(`'${KONFIG[sprache]}'`)}::regconfig, ${q})`;
+  const muster = teilwortMuster(q);
   const veroeffentlicht = (t: string) => sql`${sql.raw(t)}.status = 'veroeffentlicht' and ${sql.raw(t)}.im_papierkorb_seit is null`;
   const anfrage = sql`select * from (
-    ${teil('nachricht', 'nachricht', sprache, frage, sql`${veroeffentlicht('nachricht')} and nachricht.veroeffentlicht_am <= now()`)}
+    ${teil('nachricht', 'nachricht', sprache, frage, sql`${veroeffentlicht('nachricht')} and nachricht.veroeffentlicht_am <= now()`, muster)}
     union all
-    ${teil('veranstaltung', 'veranstaltung', sprache, frage, veroeffentlicht('veranstaltung'))}
+    ${teil('veranstaltung', 'veranstaltung', sprache, frage, veroeffentlicht('veranstaltung'), muster)}
     union all
-    ${teil('wissen', 'wissen_thema', sprache, frage, veroeffentlicht('wissen_thema'))}
+    ${teil('wissen', 'wissen_thema', sprache, frage, veroeffentlicht('wissen_thema'), muster)}
   ) as treffer order by rang desc, titel asc limit 30`;
   const ergebnis = await db.execute<{ art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string }>(anfrage);
   const zeilen =
