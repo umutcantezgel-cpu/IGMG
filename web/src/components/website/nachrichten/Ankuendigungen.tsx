@@ -15,7 +15,7 @@ export async function Ankuendigungen({ sprache }: { sprache: Sprache }) {
   const t = await getTranslations('nachrichten.ankuendigungen');
   return (
     <section aria-labelledby="ankuendigungen-titel" className="mb-10 flex flex-col gap-5 md:mb-14">
-      <h2 id="ankuendigungen-titel" className="flex items-center gap-3 text-30 md:text-36">
+      <h2 id="ankuendigungen-titel" className="flex items-center gap-3 text-display-2">
         <Megaphone aria-hidden className="size-7 shrink-0 text-info" />
         {t('titel')}
       </h2>

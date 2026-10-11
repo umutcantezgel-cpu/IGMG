@@ -104,8 +104,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
           <ArrowLeft aria-hidden className="size-5" />
           {t('zurueck')}
         </Link>
-        <div className="flex flex-wrap items-start gap-8">
-          <article className="flex min-w-0 flex-[2_1_600px] flex-col gap-6">
+        <div className="grid items-start gap-8 lg:grid-cols-3">
+          <article className="flex min-w-0 flex-col gap-6 lg:col-span-2">
             <header className="flex flex-col gap-4">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-16 text-tinte-2">
                 <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 font-bold text-tinte-2">
@@ -135,11 +135,11 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                   </span>
                 ) : null}
               </div>
-              <h1 lang={titel.lang} className="text-36 leading-[1.15] text-pretty md:text-48">
+              <h1 lang={titel.lang} className="text-display-1 text-pretty">
                 {titel.text}
               </h1>
               {kurz.text ? (
-                <p lang={kurz.lang} className="max-w-[62ch] text-20 leading-[1.55] text-pretty text-tinte-2">
+                <p lang={kurz.lang} className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">
                   {kurz.text}
                 </p>
               ) : null}
@@ -157,23 +157,26 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
                 sprache={sprache}
                 vorladen
                 sizes={SIZES_HAUPTSPALTE}
-                className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie"
+                className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
               />
             ) : (
-              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-[clamp(220px,30cqi,400px)] rounded-lg border border-linie" />
+              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
             )}
             {inhalt ? (
               <RichText
                 doc={inhalt.doc}
                 lang={inhalt.rueckfall ? 'de' : undefined}
-                className="gap-5 leading-[1.7] text-pretty"
+                className="gap-5 text-pretty"
                 bilder={n.textBilder}
                 sprache={sprache}
               />
             ) : null}
             {n.schlagwoerter.length ? (
               <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">
-                <h2 id="nachricht-schlagwoerter" className="flex items-center gap-2 font-text text-20 font-bold tracking-normal">
+                <h2
+                  id="nachricht-schlagwoerter"
+                  className="flex items-center gap-2 font-text text-24 leading-tight font-bold tracking-normal"
+                >
                   <Bookmark aria-hidden className="size-5 text-gruen-700" />
                   {t('schlagwoerter')}
                 </h2>
@@ -197,7 +200,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
               <MerkKnopf art="gefallt" texte={t('gefaellt')} />
             </div>
           </article>
-          <aside className="flex min-w-0 flex-[1_1_300px] flex-col gap-6">
+          <aside className="flex min-w-0 flex-col gap-6">
             <AutorKarte ueberschrift={t('autorUeber')} name={autorName} funktion={autorFunktion} text={t('autorText')} />
             {aehnliche.length ? <AehnlicheArtikel titel={t('aehnlich')} artikel={aehnliche} sprache={sprache} /> : null}
           </aside>

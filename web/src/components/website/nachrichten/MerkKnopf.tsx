@@ -18,7 +18,7 @@ export function MerkKnopf({ art, texte }: { art: 'speichern' | 'gefallt'; texte:
       aria-pressed={an}
       onClick={() => setAn((v) => !v)}
       className={klassen(
-        'inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand px-4 font-bold text-tinte hover:border-gruen-700 hover:bg-gruen-50',
+        'inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand px-4 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98',
         an ? 'bg-gruen-50' : 'bg-weiss',
       )}
     >

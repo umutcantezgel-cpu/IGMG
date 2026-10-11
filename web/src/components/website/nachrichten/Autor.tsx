@@ -29,7 +29,7 @@ export function AutorZeile({ name, funktion }: { name: string; funktion: string 
   return (
     <div className="flex items-center gap-3">
       <Bild name={name} groesse="size-12" />
-      <span className="flex flex-col leading-[1.35]">
+      <span className="flex flex-col leading-snug">
         <strong>{name}</strong>
         <span className="text-16 text-tinte-2">{funktion}</span>
       </span>
@@ -46,7 +46,7 @@ export function AutorKarte({ ueberschrift, name, funktion, text }: { ueberschrif
       </h2>
       <div className="flex items-center gap-3">
         <Bild name={name} groesse="size-14" />
-        <span className="flex flex-col leading-[1.35]">
+        <span className="flex flex-col leading-snug">
           <strong>{name}</strong>
           <span className="text-16 text-tinte-2">{funktion}</span>
         </span>

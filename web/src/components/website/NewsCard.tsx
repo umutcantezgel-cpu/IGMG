@@ -175,9 +175,10 @@ export async function NewsCard({
           href={ziel}
           className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
         >
-          {/* Name als ein Text („Weiterlesen: Titel“, K-11): ein getrennter sr-only-Teil ergäbe in Chromium „Weiterlesen : …“ */}
+          {/* Name als ein Text („Weiterlesen: Titel“, K-11): ein getrennter sr-only-Teil ergäbe in Chromium „Weiterlesen : …“.
+              Der Text bricht in seiner 1-px-Box um (sonst ragt sein unsichtbarer Layoutkasten über den Rand). */}
           <span aria-hidden>{t('weiterlesen')}</span>
-          <span className="sr-only">
+          <span className="sr-only wrap-anywhere whitespace-normal">
             {t('weiterlesen')}: <span lang={titel.lang}>{titel.text}</span>
           </span>
           <ArrowRight aria-hidden className="size-5" />
