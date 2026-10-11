@@ -16,7 +16,7 @@ Design-Wurzel: /Users/umurey/Downloads/IGMG Wetzlar Website Design/ (nur gelesen
 
 ## ZWECK
 
-Verwaltung sieht Tickets und Meldungen, wählt eines aus, liest den Verlauf, kennzeichnet Nachrichten als intern und legt Tickets an. Das öffentliche Formular erfasst Anliegen von Gemeindemitgliedern. Zwei Feldschemata: Admin-Ticket (D:121; DT:1614–1706) und Meldung (TD:44–48; TT:83–121). Status, Priorität und Intern gibt es nur im Admin-Ticket.
+Verwaltung sieht Tickets und Meldungen, wählt eines aus, liest den Verlauf, kennzeichnet Nachrichten als intern und legt Tickets an (D:74–79). Das öffentliche Formular erfasst Anliegen von Gemeindemitgliedern (TD:19). Zwei Feldschemata: Admin-Ticket (D:121; DT:1614–1706) und Meldung (TD:44–48; TT:83–121). Status, Priorität und Intern gibt es nur im Admin-Ticket.
 
 ## ABSCHNITTE
 
@@ -86,7 +86,7 @@ Zustände: leer ohne Auswahl (D:78; DT:1162–1167); Ticket gewählt (D:79; DT:1
 
 ## BILDER
 
-Keine Bilder. Icons (RM:28): ticket 48 px (D:78), plus 20 px (D:74), x 24 px (D:93; TD:18), message-square 28 px (TD:19), circle-check 24 px (TD:20), circle-alert 18 px (TD:30).
+– (entfällt, keine Bilder). Icons nach RM:28: ticket 48 px (D:78), plus 20 px (D:74), x 24 px (D:93; TD:18), message-square 28 px (TD:19), circle-check 24 px (TD:20), circle-alert 18 px (TD:30).
 
 ## AUFFAELLIGKEITEN
 

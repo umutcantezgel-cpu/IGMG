@@ -65,3 +65,6 @@ Der Docker-Bau scheiterte zunächst, weil `src/lib/db` beim Import verband. Jetz
 
 **E-018 · 2026-10-11 · Uhrzeiten in allen Sprachen im 24-Stunden-Format**
 Deutsch „18:30 Uhr“ (Design D-10); Türkisch und Englisch „18:30“ ohne Zusatz (Bestand und Design liefern keine Fassung; 24-Stunden-Format ist in der Türkei üblich und für eine Gemeinde in Deutschland eindeutig). Umsetzung `src/lib/i18n/format.ts`, Prüfung in `tests/unit/i18n.test.ts`.
+
+**E-019 · 2026-10-11 · Tor P2 bestanden; E2E bekommt eine eigene Datenbank**
+Testläufer-Bericht `_lauf/belege/tore/tor-p2.md`: check, Integration, Build, E2E „Anmelden mit Zwei-Faktor“ (4/4), Startseite in drei Sprachen mit korrektem `lang`, Sicherheits-Header, kein Set-Cookie – alles grün. Befund des Testläufers: Die E2E-Läufe legen Einladungen/Testkonten in der Entwicklungsdatenbank an. Festlegung: E2E nutzt ab P3 eine eigene Datenbank `igmg_e2e` im selben PostgreSQL-Container (`E2E_DATABASE_URL`), die vor jedem Lauf frisch migriert und geseedet wird (Playwright globalSetup).
