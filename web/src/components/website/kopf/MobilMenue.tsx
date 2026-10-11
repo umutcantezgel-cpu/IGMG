@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useRef, useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
-import type { Bereich, Menue, Ziel } from '../navigation';
+import type { Bereich, Menue } from '../navigation';
 import type { SprachEintrag } from './Sprachwahl';
 
 type Texte = {
@@ -33,7 +33,6 @@ export function MobilMenue({
   aktuell,
   sprache,
   sprachen,
-  sprachZiel,
   texte,
 }: {
   menues: Menue[];
@@ -41,7 +40,6 @@ export function MobilMenue({
   aktuell: string;
   sprache: Locale;
   sprachen: SprachEintrag[];
-  sprachZiel: Ziel;
   texte: Texte;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -101,10 +99,10 @@ export function MobilMenue({
                 {sprachen.map((s) => {
                   const an = s.code === sprache;
                   return (
-                    <Link
+                    <NextLink
                       key={s.code}
-                      href={sprachZiel}
-                      locale={s.code}
+                      href={s.href}
+                      prefetch={false}
                       lang={s.code}
                       hrefLang={s.code}
                       aria-current={an ? 'true' : undefined}
@@ -112,7 +110,7 @@ export function MobilMenue({
                     >
                       <span>{s.kurz}</span>
                       <span className="font-normal">{s.name}</span>
-                    </Link>
+                    </NextLink>
                   );
                 })}
               </div>

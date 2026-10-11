@@ -116,29 +116,29 @@ export async function EventCard({
           <div className="flex flex-wrap gap-2">
             <Link
               href={ziel}
+              aria-label={`${t('details')}: ${titel.text}`}
               className="inline-flex min-h-12 flex-auto items-center justify-center gap-2 rounded-md bg-gruen-700 px-[18px] font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss"
             >
               <span>{t('details')}</span>
-              <span className="sr-only">: {titel.text}</span>
               <ArrowRight aria-hidden className="size-5" />
             </Link>
             {v.anmeldungAktiv && !v.vergangen ? (
               <Link
                 href={{ ...ziel, hash: 'anmeldung' }}
+                aria-label={`${t('anmelden')}: ${titel.text}`}
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-[18px] font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800"
               >
                 <span>{t('anmelden')}</span>
-                <span className="sr-only">: {titel.text}</span>
               </Link>
             ) : null}
           </div>
         ) : (
           <Link
             href={ziel}
+            aria-label={`${t('mehrErfahren')}: ${titel.text}`}
             className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
           >
             <span>{t('mehrErfahren')}</span>
-            <span className="sr-only">: {titel.text}</span>
             <ArrowRight aria-hidden className="size-5" />
           </Link>
         )}

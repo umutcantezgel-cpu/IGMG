@@ -26,7 +26,10 @@ export function istGueltigeRegel(regel: string): boolean {
   if (!roh || roh.length > 300) return false;
   const teile = roh.split(';');
   if (!teile.every((t) => ERLAUBT.test(t))) return false;
-  if (!/FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)/.test(roh)) return false;
+  // jeder Schlüssel höchstens einmal (sonst gilt bei rrule der letzte, z. B. „FREQ=DAILY;FREQ=HOURLY“)
+  const schluessel = teile.map((t) => t.split('=')[0]);
+  if (new Set(schluessel).size !== schluessel.length) return false;
+  if (!teile.some((t) => /^FREQ=(DAILY|WEEKLY|MONTHLY|YEARLY)$/.test(t))) return false;
   try {
     rrulestr(`RRULE:${roh}`);
     return true;
@@ -76,9 +79,20 @@ function ausSchwebend(s: Date): Date {
   );
 }
 
+/** UNTIL in UTC (…Z) → schwebende Wanduhrzeit Europe/Berlin, damit rrule es wie DTSTART liest. */
+function untilSchwebend(roh: string): string {
+  return roh.replace(/UNTIL=(\d{8}T\d{6})Z/, (_t, wert: string) => {
+    const utc = new Date(
+      Date.UTC(+wert.slice(0, 4), +wert.slice(4, 6) - 1, +wert.slice(6, 8), +wert.slice(9, 11), +wert.slice(11, 13), +wert.slice(13, 15)),
+    );
+    const s = schwebend(utc);
+    return `UNTIL=${s.toISOString().replace(/[-:]/g, '').slice(0, 15)}`;
+  });
+}
+
 function regelObjekt(regel: TerminRegel): RRule | null {
   if (!regel.wiederholung) return null;
-  const roh = regel.wiederholung.replace(/^RRULE:/, '').trim();
+  const roh = untilSchwebend(regel.wiederholung.replace(/^RRULE:/, '').trim());
   // UNTIL ohne Zeitzone wird als schwebend interpretiert (rrule-Konvention)
   const r = rrulestr(`RRULE:${roh}`, { dtstart: schwebend(regel.beginn) }) as RRule;
   return r;

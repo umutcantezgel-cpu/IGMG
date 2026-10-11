@@ -141,9 +141,14 @@ export type Ziel = { organisation?: OrganisationKuerzel | null };
  * Organisationsredaktion: nur, wenn das Ziel zu einer ihrer Organisationen gehört; allgemeine
  * Inhalte (organisation = null) und Listenansichten ohne Ziel sind ihr nur lesend erlaubt.
  */
+/** Rechte einer Rolle; unbekannte Rollen (auch „constructor“, „__proto__“) → keine Rechte. */
+function rechteVon(rolle: string): ReadonlySet<Aktion> | undefined {
+  return Object.hasOwn(MATRIX, rolle) ? MATRIX[rolle as Rolle] : undefined;
+}
+
 export function darf(rollen: readonly RollenZuweisung[], aktion: Aktion, ziel?: Ziel): boolean {
   for (const z of rollen) {
-    if (!MATRIX[z.rolle]?.has(aktion)) continue;
+    if (!rechteVon(z.rolle)?.has(aktion)) continue;
     if (z.rolle !== 'organisationsredaktion') return true;
     if (!ORGANISATIONSGEBUNDEN.has(aktion)) return true;
     if (aktion.endsWith('.lesen') && ziel === undefined) return true;
@@ -154,10 +159,10 @@ export function darf(rollen: readonly RollenZuweisung[], aktion: Aktion, ziel?: 
 
 /** Organisationen, auf die eine Person bei organisationsgebundenen Aktionen beschränkt ist (null = alle). */
 export function organisationsFilter(rollen: readonly RollenZuweisung[], aktion: Aktion): OrganisationKuerzel[] | null {
-  const uneingeschraenkt = rollen.some((z) => z.rolle !== 'organisationsredaktion' && MATRIX[z.rolle]?.has(aktion));
+  const uneingeschraenkt = rollen.some((z) => z.rolle !== 'organisationsredaktion' && rechteVon(z.rolle)?.has(aktion));
   if (uneingeschraenkt) return null;
   return rollen
-    .filter((z) => z.rolle === 'organisationsredaktion' && z.organisation && MATRIX[z.rolle].has(aktion))
+    .filter((z) => z.rolle === 'organisationsredaktion' && z.organisation && rechteVon(z.rolle)?.has(aktion))
     .map((z) => z.organisation as OrganisationKuerzel);
 }
 

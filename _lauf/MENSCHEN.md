@@ -85,6 +85,8 @@ Herkunft: L = Laufbuch des Designs (`00 Laufbuch.dc.html`), O = Orchestrator.
 |---|---|---|---|---|
 | M-061 | C | Lokalisierte Adressen für Türkisch und Englisch (z. B. /tr/namaz-vakitleri, /en/prayer-times, /tr/egitim/on-kayit) sind neu übersetzt. Bitte prüfen. | Wie in `web/src/i18n/routing.ts`. | |
 | M-062 | B | Die Verwaltung ist laut Auftrag nur deutsch (Abschnitt 0). Z-03 („alle UI-Texte in drei Sprachen“) wird daher auf die öffentliche Website bezogen. Einverstanden? | Ja; Verwaltung nur Deutsch, Texte trotzdem in messages/de.json. | |
+| M-063 | C | Türkische Anrede: Schaltflächen und Links im kurzen Imperativ wie im Bestand („Paylaş“, „Kaydet“, „Daha fazla öğren“), ganze Sätze in der Siz-Form. Die Übersetzungsprüfung (D06) schlug für 20 Schaltflächen die Siz-Form vor („Paylaşın“). Bitte von einer türkischsprachigen Person bestätigen. | Kurzer Imperativ (übliche Form für Bedienelemente, wie im Bestand). | |
+| M-064 | C | Veranstaltungen: Kontaktdaten der Ansprechperson (Name, Telefon, E-Mail) erscheinen öffentlich auf der Detailseite. Nur dienstliche Angaben eintragen – bitte in der Verwaltungseinweisung betonen. | Hinweis direkt im Formular. | |
 | M-060 | B | Lizenz-Ausnahmen gegenüber G-09 (nur MIT, Apache-2.0, BSD, ISC, MPL-2.0): nodemailer (MIT-0), sharp/libvips-Binärpakete (LGPL-3.0, optional über Next.js für Bildoptimierung), Schriften (SIL OFL 1.1). Einverstanden? | Ja, mit Begründung in ADR 0001 und LIZENZEN.md; Alternative für sharp: Bildoptimierung abschalten. | |
 
 ## 6 Gebetszeiten und Quran (aus ADR 0008/0009)

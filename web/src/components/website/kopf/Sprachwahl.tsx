@@ -2,12 +2,12 @@
 
 import { Check, Globe } from 'lucide-react';
 import { useCallback, useRef, useState } from 'react';
-import { Link } from '@/i18n/navigation';
+import NextLink from 'next/link';
 import type { Locale } from '@/i18n/routing';
-import type { Ziel } from '../navigation';
 import { useAussenKlick } from './useAussenKlick';
 
-export type SprachEintrag = { code: Locale; kurz: string; name: string };
+/** Sprache mit fertiger Adresse derselben Seite (serverseitig über getPathname, Deutsch ohne Präfix – K-02). */
+export type SprachEintrag = { code: Locale; kurz: string; name: string; href: string };
 
 /**
  * Sprachumschalter ohne Flaggen (Laufbuch D-09): Kürzel + Eigenname. Wechselt auf dieselbe Seite
@@ -15,12 +15,10 @@ export type SprachEintrag = { code: Locale; kurz: string; name: string };
  */
 export function Sprachwahl({
   aktuell,
-  ziel,
   sprachen,
   texte,
 }: {
   aktuell: Locale;
-  ziel: Ziel;
   sprachen: SprachEintrag[];
   texte: { aendern: string; titel: string; titelZweit: string; weitere: string };
 }) {
@@ -65,9 +63,9 @@ export function Sprachwahl({
             const an = s.code === aktuell;
             return (
               <li key={s.code}>
-                <Link
-                  href={ziel}
-                  locale={s.code}
+                <NextLink
+                  href={s.href}
+                  prefetch={false}
                   lang={s.code}
                   hrefLang={s.code}
                   aria-current={an ? 'true' : undefined}
@@ -79,7 +77,7 @@ export function Sprachwahl({
                   </span>
                   <span className="flex-1 font-bold">{s.name}</span>
                   {an ? <Check aria-hidden className="size-5 text-gruen-700" /> : null}
-                </Link>
+                </NextLink>
               </li>
             );
           })}

@@ -45,8 +45,8 @@ test('Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden', async (
 
   // 1 Einladung annehmen
   await page.goto(`/verwaltung/einladung/${token}`);
-  await page.getByLabel('Neues Passwort').fill(TESTPASSWORT);
-  await page.getByLabel('Passwort wiederholen').fill(TESTPASSWORT);
+  await page.getByLabel('Neues Passwort').filter({ visible: true }).fill(TESTPASSWORT);
+  await page.getByLabel('Passwort wiederholen').filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Konto anlegen' }).click();
   await expect(page).toHaveURL(/\/verwaltung\/anmelden\?eingeladen=1$/);
   await expect(page.getByRole('status')).toContainText('Ihr Konto ist angelegt');
@@ -57,14 +57,14 @@ test('Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden', async (
 
   // 2 Falsches Passwort → Fehlermeldung ohne Details
   await page.goto('/verwaltung/anmelden');
-  await page.getByLabel('E-Mail').fill(email);
-  await page.getByLabel('Passwort', { exact: true }).fill('falsches-passwort-123');
+  await page.getByLabel('E-Mail').filter({ visible: true }).fill(email);
+  await page.getByLabel('Passwort', { exact: true }).filter({ visible: true }).fill('falsches-passwort-123');
   await page.getByRole('button', { name: 'Anmelden' }).click();
   await expect(page.getByRole('alert').filter({ hasText: /\S/ })).toContainText('E-Mail-Adresse oder Passwort ist nicht korrekt.');
 
   // 3 Anmelden → Zwei-Faktor-Einrichtung ist Pflicht
-  await page.getByLabel('E-Mail').fill(email);
-  await page.getByLabel('Passwort', { exact: true }).fill(TESTPASSWORT);
+  await page.getByLabel('E-Mail').filter({ visible: true }).fill(email);
+  await page.getByLabel('Passwort', { exact: true }).filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Anmelden' }).click();
   await expect(page).toHaveURL(/\/verwaltung\/zwei-faktor$/);
   // Übersicht ist ohne zweiten Faktor nicht erreichbar
@@ -72,33 +72,34 @@ test('Einladung annehmen, Zwei-Faktor einrichten und mit TOTP anmelden', async (
   await expect(page).toHaveURL(/\/verwaltung\/zwei-faktor$/);
 
   // 4 Einrichten: Passwort → Schlüssel → Code
-  await page.getByLabel('Schritt 1: Passwort bestätigen').fill(TESTPASSWORT);
+  await page.getByLabel('Schritt 1: Passwort bestätigen').filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Weiter' }).click();
   await expect(page.getByRole('img', { name: 'QR-Code zum Einrichten der Zwei-Faktor-Anmeldung' })).toBeVisible();
   const geheimnis = (await page.getByTestId('totp-geheimnis').innerText()).trim();
   const totp = new OTPAuth.TOTP({ secret: OTPAuth.Secret.fromBase32(geheimnis), digits: 6, period: 30 });
-  await page.getByLabel('Schritt 3: Code eingeben').fill(totp.generate());
+  await page.getByLabel('Schritt 3: Code eingeben').filter({ visible: true }).fill(totp.generate());
   await page.getByRole('button', { name: 'Einrichtung abschließen' }).click();
   await expect(page).toHaveURL(/\/verwaltung$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Übersicht' })).toBeVisible();
 
-  // 5 Abmelden
-  await page.getByRole('button', { name: 'Abmelden' }).click();
+  // 5 Abmelden (Kontomenü der Verwaltung, ADR 0016)
+  await page.getByRole('button', { name: /Kontomenü öffnen/ }).click();
+  await page.getByRole('menuitem', { name: 'Abmelden' }).click();
   await expect(page).toHaveURL(/\/verwaltung\/anmelden\?abgemeldet=1$/);
 
   // 6 Erneut anmelden → Code verlangt; falscher Code abgelehnt; richtiger Code führt zur Übersicht
-  await page.getByLabel('E-Mail').fill(email);
-  await page.getByLabel('Passwort', { exact: true }).fill(TESTPASSWORT);
+  await page.getByLabel('E-Mail').filter({ visible: true }).fill(email);
+  await page.getByLabel('Passwort', { exact: true }).filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Anmelden' }).click();
   await expect(page).toHaveURL(/\/verwaltung\/anmelden\/zwei-faktor$/);
   await page.goto('/verwaltung');
   await expect(page).toHaveURL(/\/verwaltung\/anmelden$/);
   await page.goBack();
   await page.goto('/verwaltung/anmelden/zwei-faktor');
-  await page.getByLabel('Code aus Ihrer Authentifizierungs-App').fill('000000');
+  await page.getByLabel('Code aus Ihrer Authentifizierungs-App').filter({ visible: true }).fill('000000');
   await page.getByRole('button', { name: 'Bestätigen' }).click();
   await expect(page.getByRole('alert').filter({ hasText: /\S/ })).toContainText('Der Code ist nicht gültig.');
-  await page.getByLabel('Code aus Ihrer Authentifizierungs-App').fill(totp.generate());
+  await page.getByLabel('Code aus Ihrer Authentifizierungs-App').filter({ visible: true }).fill(totp.generate());
   await page.getByRole('button', { name: 'Bestätigen' }).click();
   await expect(page).toHaveURL(/\/verwaltung$/);
   await expect(page.getByText('Willkommen, Testperson Eins.')).toBeVisible();

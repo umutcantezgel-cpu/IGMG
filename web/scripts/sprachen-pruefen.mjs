@@ -71,10 +71,11 @@ for (const sprache of ['tr', 'en']) {
   for (const k of Object.keys(s)) if (!(k in de)) befunde.push(`${sprache}: überzählig ${k}`);
 }
 for (const [k, v] of Object.entries(de)) if (String(v).trim() === '') befunde.push(`de: leer ${k}`);
-const anzahl = Object.keys(de).length;
+const anzahl = Object.keys(de).filter((k) => !k.startsWith('verwaltung.')).length;
+const nurDe = Object.keys(de).length - anzahl;
 if (befunde.length) {
   console.error(`Sprachdateien: ${befunde.length} Befund(e) bei ${anzahl} Schlüsseln`);
   for (const b of befunde.slice(0, 200)) console.error(`  ${b}`);
   process.exit(1);
 }
-console.log(`Sprachdateien vollständig: ${anzahl} Schlüssel in de, tr, en (ohne verwaltung).`);
+console.log(`Sprachdateien vollständig: ${anzahl} Schlüssel in de, tr, en; dazu ${nurDe} Schlüssel der Verwaltung (nur de, ADR 0016).`);

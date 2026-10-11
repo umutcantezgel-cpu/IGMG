@@ -77,3 +77,13 @@ Tickets (Meldungen) entstehen in der Verwaltung (Abschnitt 9). Spam-Schutz = Anm
 
 **E-022 · 2026-10-11 · PLAN v2 nach Gegenprüfung Runde 1**
 14 Lücken, 7 Konfliktgruppen und 3 Risiken bewertet und eingearbeitet (`_lauf/PLAN.md` Abschnitt 8). Runde 2 folgt nach dem Durchstich nur bei Strukturfehlern (L0: höchstens zwei Runden).
+
+**E-023 · 2026-10-11 · Übersetzungsprüfung D06: 6 von 26 Korrekturen übernommen**
+Übernommen: tr `kopf.bVorstand` (Yönetim, Bestand), `kopf.hauptnavigation` (navigasyon, Bestand), `fuss.beschreibung` (İman/topluluk, Bestand), `allgemein.mehrErfahren` (Bestand „Daha fazla öğren“); en `allgemein.mehrErfahren` („Learn More“, Bestand), `fuss.platzhalterLink` (Platzhalter wie im Deutschen). Abgelehnt: 20 Umstellungen von Schaltflächen auf die Siz-Form – Bedienelemente bleiben im kurzen Imperativ wie im Bestand, Sätze in Siz-Form (M-063).
+
+**E-024 · 2026-10-11 · Verwaltung: eigene Hülle, Formulare als Seiten**
+Die Verwaltung bekommt eine eigene Kopfzeile mit Kontomenü und die Seitenleiste des Designs (280 px, unter 900 px aufklappbar); öffentlicher Kopf, Gebetszeitenleiste und Fußzeile entfallen dort (ADR 0016, dynamische Nonce-CSP-Seiten). Das Veranstaltungsformular ist eine eigene Seite statt des Design-Dialogs: Es hat mit Wiederholung, Ausfällen, Anmeldung, Programm und drei Sprachen rund 50 Felder; eine Seite hat eine Adresse, Fokus- und Zurück-Verhalten. Beides in `web/docs/ABWEICHUNGEN.md` (A-V01, A-V02). Seitenleiste zeigt nur gebaute Module, für die die Rolle Leserecht hat.
+
+**E-025 · 2026-10-11 · Cache-Invalidierung zweistufig (F-002)**
+Alle Verwaltungs-Actions rufen `inhaltGeaendert(...tags)`: `updateTag` sofort, zweite Invalidierung nach 5 s per `after()`. Grund: Rennen mit gleichzeitigen öffentlichen Seitenaufbauten. „Sofort öffentlich“ gilt damit im Normalfall sofort, im Rennfall nach höchstens rund 5 s.
+

@@ -65,6 +65,7 @@ export async function NewsCard({
           <h3 lang={titel.lang} className="font-text text-20 leading-snug font-bold tracking-normal">
             <Link
               href={ziel}
+              aria-label={`${t('artikelLesen')}: ${titel.text}`}
               className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg after:content-[''] hover:text-gruen-800 hover:underline"
             >
               {titel.text}
@@ -116,7 +117,6 @@ export async function NewsCard({
             className="mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition-colors hover:bg-gruen-800 hover:text-weiss"
           >
             <span>{t('artikelLesen')}</span>
-            <span className="sr-only">: {titel.text}</span>
             <ArrowRight aria-hidden className="size-5" />
           </Link>
         </div>
@@ -155,10 +155,10 @@ export async function NewsCard({
         </ul>
         <Link
           href={ziel}
+          aria-label={`${t('weiterlesen')}: ${titel.text}`}
           className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
         >
           <span>{t('weiterlesen')}</span>
-          <span className="sr-only">: {titel.text}</span>
           <ArrowRight aria-hidden className="size-5" />
         </Link>
       </div>

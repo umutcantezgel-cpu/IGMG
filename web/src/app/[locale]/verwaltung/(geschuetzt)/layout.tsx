@@ -1,30 +1,88 @@
+import { ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
-import { LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { verlangeSitzung } from '@/lib/rechte/pruefe';
+import { KontoMenue } from '@/components/verwaltung/shell/KontoMenue';
+import { MODULE } from '@/components/verwaltung/shell/module';
+import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung/shell/Seitenleiste';
+import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
+import { zaehleVeranstaltungen } from '@/server/queries/verwaltung/veranstaltungen';
 
-/** Geschützter Bereich: Sitzung + zweiter Faktor + mindestens eine Rolle (K-06). Shell folgt in D05. */
+/**
+ * Geschützter Bereich mit Verwaltungs-Hülle (D05, V01): Sitzung + zweiter Faktor + Rolle (K-06).
+ * Eigene Kopfzeile mit Kontomenü statt öffentlichem Kopf, Gebetszeitenleiste und Fußzeile (ADR 0016, ABWEICHUNGEN A-V01).
+ */
 export default async function GeschuetzterBereich({ children }: LayoutProps<'/[locale]/verwaltung'>) {
   const a = await verlangeSitzung();
   const t = await getTranslations('verwaltung');
+  const sichtbar = MODULE.filter((m) => darf(a.rollen, m.recht));
+  const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
+    veranstaltungen: sichtbar.some((m) => m.schluessel === 'veranstaltungen') ? await zaehleVeranstaltungen() : undefined,
+  };
+  const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => ({
+    schluessel: m.schluessel,
+    label: t(`module.${m.schluessel}`),
+    pfad: m.pfad,
+    icon: m.icon,
+    zaehler: zaehler[m.schluessel],
+    zaehlerLabel: zaehler[m.schluessel] !== undefined ? t('shell.anzahl', { anzahl: zaehler[m.schluessel] ?? 0 }) : undefined,
+  }));
+  const rollen = t('shell.rollen', {
+    rollen: a.rollen.map((r) => t(`rollen.${r.rolle}`) + (r.organisation ? ` (${r.organisation.toUpperCase()})` : '')).join(', '),
+  });
   return (
     <>
+      <a
+        href="#inhalt"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-weiss focus:px-4 focus:py-3 focus:font-bold"
+      >
+        {t('shell.zumInhalt')}
+      </a>
       <header className="border-b border-linie bg-weiss">
-        <div className="mx-auto flex max-w-(--container-inhalt) items-center justify-between gap-4 px-4 py-3 md:px-8">
-          <span className="font-display text-20 font-semibold">{t('titel')}</span>
-          <div className="flex items-center gap-3">
-            <span className="text-16 text-tinte-2">{t('konto.angemeldetAls', { name: a.name })}</span>
-            <form action={abmelden}>
-              <Button type="submit" variant="outline" size="sm">
-                <LogOut aria-hidden />
-                {t('konto.abmelden')}
-              </Button>
-            </form>
+        <div className="mx-auto flex max-w-360 flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6">
+          <NextLink href="/verwaltung" className="flex items-center gap-3 text-tinte no-underline hover:text-tinte">
+            <Image
+              src="/bilder/logos/logo-igmg-wetzlar.png"
+              alt=""
+              width={40}
+              height={40}
+              className="size-10 rounded-sm border border-linie"
+            />
+            <span className="flex flex-col leading-tight">
+              <span className="font-display text-20 font-semibold">IGMG Wetzlar</span>
+              <span className="text-16 text-tinte-2">{t('titel')}</span>
+            </span>
+          </NextLink>
+          <div className="flex flex-wrap items-center gap-3">
+            <NextLink href="/" prefetch={false} className="inline-flex min-h-12 items-center gap-2 font-bold underline underline-offset-4">
+              {t('shell.zurWebsite')}
+              <ExternalLink aria-hidden className="size-4" />
+            </NextLink>
+            <KontoMenue
+              name={a.name}
+              rollen={rollen}
+              abmelden={abmelden}
+              texte={{ kontoMenue: t('shell.kontoMenue'), abmelden: t('konto.abmelden') }}
+            />
           </div>
         </div>
       </header>
-      {children}
+      <div className="mx-auto flex max-w-360 flex-col gap-6 px-4 py-6 min-[900px]:flex-row md:px-6">
+        <Seitenleiste
+          eintraege={eintraege}
+          texte={{
+            titel: t('shell.titel'),
+            untertitel: t('shell.untertitel'),
+            navName: t('shell.navName'),
+            oeffnen: t('shell.menueOeffnen'),
+            schliessen: t('shell.menueSchliessen'),
+          }}
+        />
+        <main id="inhalt" tabIndex={-1} className="flex min-w-0 flex-1 flex-col gap-6 outline-none">
+          {children}
+        </main>
+      </div>
     </>
   );
 }

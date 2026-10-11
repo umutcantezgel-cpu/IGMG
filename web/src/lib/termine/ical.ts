@@ -61,7 +61,7 @@ export function erzeugeKalender(name: string, termine: readonly IcalTermin[], do
     });
     if (t.wiederholung) {
       const ausnahmen = (t.ausnahmen ?? []).map((d) => `EXDATE;TZID=${ZEITZONE}:${d.replaceAll('-', '')}T${zeitTeil(t.beginn)}`);
-      ereignis.repeating([`RRULE:${t.wiederholung.replace(/^RRULE:/, '')}`, ...ausnahmen].join('\r\n'));
+      ereignis.repeating([`RRULE:${untilInUtc(t.wiederholung.replace(/^RRULE:/, ''))}`, ...ausnahmen].join('\r\n'));
     }
   }
   return stempelInUtc(kalender.toString());
@@ -80,6 +80,23 @@ function stempelInUtc(ics: string): string {
         .toISOString()
         .replace(/[-:]/g, '')
         .replace(/\.\d{3}/, '')}${cr}`;
+    },
+  );
+}
+
+/**
+ * RFC 5545 (3.3.10): Hat DTSTART eine TZID, muss UNTIL in UTC stehen. Gespeichert wird UNTIL schwebend
+ * (Wanduhrzeit Europe/Berlin, `baueRegel`) – für die Ausgabe nach UTC mit „Z“ umrechnen.
+ */
+function untilInUtc(regel: string): string {
+  return regel.replace(
+    /UNTIL=(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(?!Z)/,
+    (_t, j: string, mo: string, d: string, h: string, mi: string, se: string) => {
+      const utc = new Date(new TZDate(+j, +mo - 1, +d, +h, +mi, +se, ZEITZONE).getTime());
+      return `UNTIL=${utc
+        .toISOString()
+        .replace(/[-:]/g, '')
+        .replace(/\.\d{3}/, '')}`;
     },
   );
 }

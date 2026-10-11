@@ -2,7 +2,7 @@ import { User } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
-import { Link } from '@/i18n/navigation';
+import { getPathname, Link } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
@@ -19,7 +19,12 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
   const menues = baueMenues((k) => t(k));
-  const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({ code, kurz: code.toUpperCase(), name: ts(code) }));
+  const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({
+    code,
+    kurz: code.toUpperCase(),
+    name: ts(code),
+    href: getPathname({ href: sprachZiel as Parameters<typeof getPathname>[0]['href'], locale: code }),
+  }));
   return (
     <header className="relative z-50 border-b border-linie bg-weiss">
       <div className="mx-auto flex h-[72px] max-w-(--container-inhalt) items-center gap-4 px-4 md:px-8 menu:h-20">
@@ -43,7 +48,6 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           <div className="hidden menu:block">
             <Sprachwahl
               aktuell={sprache}
-              ziel={sprachZiel}
               sprachen={sprachen}
               texte={{ aendern: ts('aendern'), titel: ts('titel'), titelZweit: ts('titelZweit'), weitere: ts('weitere') }}
             />
@@ -62,7 +66,6 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
             aktuell={aktuell}
             sprache={sprache}
             sprachen={sprachen}
-            sprachZiel={sprachZiel}
             texte={{
               menue: t('menue'),
               menueOeffnen: t('menueOeffnen'),
