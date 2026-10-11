@@ -1,0 +1,813 @@
+{
+  "werkzeug": "leiste3",
+  "modus": "wechsel",
+  "breite": 1440,
+  "hoehe": 900,
+  "zeitAnfang": "2026-10-11T14:09:30Z",
+  "rate": 0.1,
+  "basis": "http://127.0.0.1:3400",
+  "rahmen": [
+    {
+      "nr": 1,
+      "msNachErkennung": 223,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(255, 255, 255)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 3,
+          "dauerMs": 320,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/wechsel-1440/leiste-1440-1.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachErkennung": 1142,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(80, 111, 100)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(189, 201, 196)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 105,
+          "dauerMs": 320,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/wechsel-1440/leiste-1440-2.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachErkennung": 2061,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(30, 70, 55)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(239, 242, 241)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 197,
+          "dauerMs": 320,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/wechsel-1440/leiste-1440-3.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachErkennung": 2999,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(15, 58, 42)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(254, 254, 254)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-weiss tran"
+        },
+        {
+          "art": "Übergang",
+          "name": "background-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-bottom-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-left-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-right-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "border-top-color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex min-w-0 flex-col justify-center gap-0.5 border min-h-30"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "flex items-center gap-1.5 text-16 leading-snug font-bold wra"
+        },
+        {
+          "art": "Übergang",
+          "name": "color",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "font-bold tabular-nums text-24 leading-tight text-gruen-950 "
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "running",
+          "zeitstandMs": 288,
+          "dauerMs": 320,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/wechsel-1440/leiste-1440-4.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachErkennung": 3912,
+      "naechstes": "Maghrib",
+      "zeilen": [
+        {
+          "text": "Nächstes GebetImsak05:53",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAufgang07:",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetDhuhr13:18",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetAsr16:10ve",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        },
+        {
+          "text": "Nächstes GebetMaghrib18:",
+          "aktuell": "time",
+          "hintergrund": "rgb(255, 255, 255)"
+        },
+        {
+          "text": "Nächstes GebetIsha20:25v",
+          "aktuell": null,
+          "hintergrund": "rgb(14, 57, 41)"
+        }
+      ],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 320,
+          "dauerMs": 320,
+          "ziel": "text-16 font-bold text-gruen-800 blendet-ein"
+        },
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 320,
+          "dauerMs": 320,
+          "ziel": "col-start-1 row-start-1 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e3-tor/leiste/wechsel-1440/leiste-1440-5.jpg"
+    }
+  ],
+  "vorher": {
+    "naechstes": "Asr",
+    "zeilen": [
+      {
+        "text": "Nächstes GebetImsak05:53",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAufgang07:",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetDhuhr13:18",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAsr16:10ve",
+        "aktuell": "time",
+        "hintergrund": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Nächstes GebetMaghrib18:",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetIsha20:25v",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      }
+    ]
+  },
+  "animationenVorWechsel": [],
+  "gewechselt": true,
+  "nachAnimation": {
+    "naechstes": "Maghrib",
+    "zeilen": [
+      {
+        "text": "Nächstes GebetImsak05:53",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAufgang07:",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetDhuhr13:18",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetAsr16:10ve",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      },
+      {
+        "text": "Nächstes GebetMaghrib18:",
+        "aktuell": "time",
+        "hintergrund": "rgb(255, 255, 255)"
+      },
+      {
+        "text": "Nächstes GebetIsha20:25v",
+        "aktuell": null,
+        "hintergrund": "rgb(14, 57, 41)"
+      }
+    ]
+  },
+  "nachAnimationLaufend": 0,
+  "pageerrors": []
+}
