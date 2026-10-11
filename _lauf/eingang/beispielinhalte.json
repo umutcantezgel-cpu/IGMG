@@ -1,0 +1,370 @@
+{
+ "veranstaltungen_start": [
+  {
+   "title": "Wöchentlicher Qur'an Kurs",
+   "description": "Lernen Sie die richtige Rezitation und Bedeutung des Qur'an in unserem wöchentlichen Kurs.",
+   "date": "Jeden Samstag",
+   "time": "14:00 - 16:00",
+   "location": "Hauptsaal",
+   "participants": "Offen für alle",
+   "category": "Bildung",
+   "featured": true,
+   "organization": "at",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:19-30"
+  },
+  {
+   "title": "Frauenkreis - Islamische Erziehung",
+   "description": "Diskussionsrunde für Mütter über islamische Werte in der Kindererziehung.",
+   "date": "Jeden Dienstag",
+   "time": "14:00 - 16:00",
+   "location": "Frauenbereich",
+   "participants": "Frauen",
+   "category": "Bildung",
+   "featured": true,
+   "organization": "kt",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:31-42"
+  },
+  {
+   "title": "Jugendgruppe Treffen",
+   "description": "Diskussionen, Aktivitäten und islamische Bildung für junge Muslime.",
+   "date": "Jeden Freitag",
+   "time": "19:00 - 21:00",
+   "location": "Jugendraum",
+   "participants": "14-25 Jahre",
+   "category": "Jugend",
+   "featured": false,
+   "organization": "gt",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:43-54"
+  },
+  {
+   "title": "Junge Schwestern Kreis",
+   "description": "Gemeinschaft und islamische Bildung für junge Frauen und Mädchen.",
+   "date": "Jeden Samstag",
+   "time": "16:00 - 18:00",
+   "location": "Jugend-Frauenbereich",
+   "participants": "12-25 Jahre (weiblich)",
+   "category": "Jugend",
+   "featured": false,
+   "organization": "kgt",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:55-66"
+  },
+  {
+   "title": "Islamisches Familienfest",
+   "description": "Ein besonderer Tag für Familien mit Aktivitäten, Essen und Gemeinschaft.",
+   "date": "28. Juli 2025",
+   "time": "11:00 - 17:00",
+   "location": "Gemeinschaftsbereich",
+   "participants": "Familien",
+   "category": "Event",
+   "featured": true,
+   "organization": "at",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:67-78"
+  },
+  {
+   "title": "Arabisch Sprachkurs",
+   "description": "Grundlagen der arabischen Sprache für Anfänger und Fortgeschrittene.",
+   "date": "Jeden Donnerstag",
+   "time": "18:30 - 20:00",
+   "location": "Klassenzimmer 1",
+   "participants": "Alle Altersgruppen",
+   "category": "Bildung",
+   "featured": false,
+   "organization": "at",
+   "quelle": "bestand/src/app/components/EventsSection.tsx:79-90"
+  }
+ ],
+ "veranstaltungen": [
+  {
+   "title": {
+    "de": "Freitagsgebet mit Khutba",
+    "tr": "Cuma Namazı ve Hutbe",
+    "en": "Friday Prayer with Khutbah"
+   },
+   "description": {
+    "de": "Wöchentliches Freitagsgebet mit anschließender Khutba",
+    "tr": "Haftalık Cuma namazı ve hutbe",
+    "en": "Weekly Friday prayer with sermon"
+   },
+   "date": "2024-03-15",
+   "time": "13:00",
+   "location": "Hauptgebetsraum",
+   "category": "prayer",
+   "participants": "200+",
+   "featured": true,
+   "free": true,
+   "quelle": "bestand/src/app/components/Events.tsx:161-174"
+  },
+  {
+   "title": {
+    "de": "Korankurs für Kinder",
+    "tr": "Çocuklar için Kuran Kursu",
+    "en": "Quran Course for Children"
+   },
+   "description": {
+    "de": "Wöchentlicher Korankurs für Kinder im Alter von 6-12 Jahren",
+    "tr": "6-12 yaş arası çocuklar için haftalık Kuran kursu",
+    "en": "Weekly Quran course for children aged 6-12"
+   },
+   "date": "2024-03-16",
+   "time": "16:00",
+   "location": "Bildungsraum 1",
+   "category": "education",
+   "participants": "25",
+   "featured": false,
+   "free": true,
+   "quelle": "bestand/src/app/components/Events.tsx:175-188"
+  },
+  {
+   "title": {
+    "de": "Gemeindeversammlung",
+    "tr": "Cemaat Toplantısı",
+    "en": "Community Meeting"
+   },
+   "description": {
+    "de": "Monatliche Versammlung zur Besprechung aktueller Themen",
+    "tr": "Güncel konuları görüşmek için aylık toplantı",
+    "en": "Monthly meeting to discuss current issues"
+   },
+   "date": "2024-03-20",
+   "time": "19:00",
+   "location": "Konferenzraum",
+   "category": "community",
+   "participants": "50",
+   "featured": true,
+   "free": true,
+   "quelle": "bestand/src/app/components/Events.tsx:189-202"
+  },
+  {
+   "title": {
+    "de": "Türkischer Kulturabend",
+    "tr": "Türk Kültür Gecesi",
+    "en": "Turkish Cultural Evening"
+   },
+   "description": {
+    "de": "Abend mit türkischer Musik, Tanz und traditionellem Essen",
+    "tr": "Türk müziği, dans ve geleneksel yemeklerle kültür gecesi",
+    "en": "Evening with Turkish music, dance and traditional food"
+   },
+   "date": "2024-03-25",
+   "time": "18:00",
+   "location": "Mehrzweckhalle",
+   "category": "cultural",
+   "participants": "150",
+   "featured": false,
+   "free": false,
+   "quelle": "bestand/src/app/components/Events.tsx:203-216"
+  },
+  {
+   "title": {
+    "de": "Jugendtreffen",
+    "tr": "Gençlik Buluşması",
+    "en": "Youth Meeting"
+   },
+   "description": {
+    "de": "Wöchentliches Treffen der Jugendgruppe mit Diskussionen und Aktivitäten",
+    "tr": "Gençlik grubunun tartışma ve etkinliklerle haftalık buluşması",
+    "en": "Weekly youth group meeting with discussions and activities"
+   },
+   "date": "2024-03-17",
+   "time": "15:00",
+   "location": "Jugendraum",
+   "category": "youth",
+   "participants": "30",
+   "featured": false,
+   "free": true,
+   "quelle": "bestand/src/app/components/Events.tsx:217-230"
+  },
+  {
+   "title": {
+    "de": "Frauen-Kochkurs",
+    "tr": "Kadınlar Yemek Kursu",
+    "en": "Women's Cooking Course"
+   },
+   "description": {
+    "de": "Monatlicher Kochkurs für Frauen mit traditionellen Rezepten",
+    "tr": "Geleneksel tariflerle kadınlar için aylık yemek kursu",
+    "en": "Monthly cooking course for women with traditional recipes"
+   },
+   "date": "2024-03-22",
+   "time": "14:00",
+   "location": "Küche",
+   "category": "women",
+   "participants": "20",
+   "featured": false,
+   "free": true,
+   "quelle": "bestand/src/app/components/Events.tsx:231-244"
+  }
+ ],
+ "nachrichten_start": [
+  {
+   "title": "Neue Gebetszeiten für den Winter",
+   "excerpt": "Ab dem 1. November gelten neue Gebetszeiten. Bitte beachten Sie die aktualisierten Zeiten für eine bessere Teilnahme.",
+   "category": "Wichtig",
+   "date": "20. Juli 2025",
+   "readTime": "2 min",
+   "featured": true,
+   "quelle": "bestand/src/app/components/NewsSection.tsx:11-20"
+  },
+  {
+   "title": "Ramadan Vorbereitung 2025",
+   "excerpt": "Informationen zu den geplanten Aktivitäten und Programmen für den kommenden Ramadan.",
+   "category": "Ankündigung",
+   "date": "18. Juli 2025",
+   "readTime": "3 min",
+   "featured": false,
+   "quelle": "bestand/src/app/components/NewsSection.tsx:21-30"
+  },
+  {
+   "title": "Gemeinschaftsküche erweitert",
+   "excerpt": "Unsere Küche wurde renoviert und erweitert, um größere Veranstaltungen zu unterstützen.",
+   "category": "Neuigkeiten",
+   "date": "15. Juli 2025",
+   "readTime": "1 min",
+   "featured": false,
+   "quelle": "bestand/src/app/components/NewsSection.tsx:31-40"
+  },
+  {
+   "title": "Neuer Imam stellt sich vor",
+   "excerpt": "Wir freuen uns, Imam Hassan Ali als neues Mitglied unserer Gemeinde willkommen zu heißen.",
+   "category": "Gemeinde",
+   "date": "12. Juli 2025",
+   "readTime": "4 min",
+   "featured": false,
+   "quelle": "bestand/src/app/components/NewsSection.tsx:41-50"
+  }
+ ],
+ "nachrichten": [
+  {
+   "title": {
+    "de": "Ramadan 2024: Programm und Zeiten",
+    "tr": "Ramazan 2024: Program ve Saatler",
+    "en": "Ramadan 2024: Schedule and Times"
+   },
+   "excerpt": {
+    "de": "Erfahren Sie alles über unser Ramadan-Programm mit Iftar-Zeiten, Tarawih-Gebeten und besonderen Veranstaltungen.",
+    "tr": "İftar saatleri, teravih namazları ve özel etkinliklerle Ramazan programımız hakkında her şeyi öğrenin.",
+    "en": "Learn everything about our Ramadan program with Iftar times, Tarawih prayers and special events."
+   },
+   "content": {
+    "de": "Der heilige Monat Ramadan steht vor der Tür...",
+    "tr": "Mübarek Ramazan ayı yaklaşıyor...",
+    "en": "The holy month of Ramadan is approaching..."
+   },
+   "publishedAt": "2024-03-10",
+   "category": "religious",
+   "featured": true,
+   "readTime": 5,
+   "quelle": "bestand/src/app/components/News.tsx:159-172"
+  },
+  {
+   "title": {
+    "de": "Neue Korankurse für Erwachsene starten",
+    "tr": "Yetişkinler için yeni Kuran kursları başlıyor",
+    "en": "New Quran courses for adults starting"
+   },
+   "excerpt": {
+    "de": "Ab April bieten wir neue Korankurse für Erwachsene an. Anmeldungen ab sofort möglich.",
+    "tr": "Nisan ayından itibaren yetişkinler için yeni Kuran kursları sunuyoruz. Kayıtlar hemen başlayabilir.",
+    "en": "Starting in April, we offer new Quran courses for adults. Registration is now open."
+   },
+   "content": {
+    "de": "Wir freuen uns, neue Bildungsmöglichkeiten anzukündigen...",
+    "tr": "Yeni eğitim fırsatlarını duyurmaktan mutluluk duyuyoruz...",
+    "en": "We are pleased to announce new educational opportunities..."
+   },
+   "publishedAt": "2024-03-08",
+   "category": "education",
+   "featured": false,
+   "readTime": 3,
+   "quelle": "bestand/src/app/components/News.tsx:173-186"
+  },
+  {
+   "title": {
+    "de": "Gemeinschaftsküche: Hilfe für Bedürftige",
+    "tr": "Toplum Mutfağı: İhtiyaç sahiplerine yardım",
+    "en": "Community Kitchen: Help for those in need"
+   },
+   "excerpt": {
+    "de": "Unsere neue Gemeinschaftsküche versorgt täglich bedürftige Familien mit warmen Mahlzeiten.",
+    "tr": "Yeni toplum mutfağımız her gün ihtiyaç sahibi ailelere sıcak yemek sağlıyor.",
+    "en": "Our new community kitchen provides warm meals to families in need every day."
+   },
+   "content": {
+    "de": "Als Teil unserer sozialen Verantwortung haben wir...",
+    "tr": "Sosyal sorumluluğumuzun bir parçası olarak...",
+    "en": "As part of our social responsibility, we have..."
+   },
+   "publishedAt": "2024-03-05",
+   "category": "social",
+   "featured": true,
+   "readTime": 4,
+   "quelle": "bestand/src/app/components/News.tsx:187-200"
+  },
+  {
+   "title": {
+    "de": "Jugendcamp 2024 Anmeldungen offen",
+    "tr": "Gençlik Kampı 2024 kayıtları açık",
+    "en": "Youth Camp 2024 registration open"
+   },
+   "excerpt": {
+    "de": "Das diesjährige Jugendcamp findet vom 15.-22. Juli statt. Begrenzte Plätze verfügbar.",
+    "tr": "Bu yılki gençlik kampı 15-22 Temmuz tarihleri arasında yapılacak. Sınırlı kontenjan mevcut.",
+    "en": "This year's youth camp takes place from July 15-22. Limited spots available."
+   },
+   "content": {
+    "de": "Unser jährliches Jugendcamp ist eine großartige Gelegenheit...",
+    "tr": "Yıllık gençlik kampımız harika bir fırsat...",
+    "en": "Our annual youth camp is a great opportunity..."
+   },
+   "publishedAt": "2024-03-03",
+   "category": "events",
+   "featured": false,
+   "readTime": 3,
+   "quelle": "bestand/src/app/components/News.tsx:201-214"
+  },
+  {
+   "title": {
+    "de": "Moscheererweiterung genehmigt",
+    "tr": "Cami genişletme projesi onaylandı",
+    "en": "Mosque expansion approved"
+   },
+   "excerpt": {
+    "de": "Die Stadtverwaltung hat unseren Erweiterungsplan genehmigt. Bauarbeiten beginnen im Herbst.",
+    "tr": "Belediye genişletme planımızı onayladı. İnşaat çalışmaları sonbaharda başlayacak.",
+    "en": "The city administration has approved our expansion plan. Construction work begins in autumn."
+   },
+   "content": {
+    "de": "Nach langen Verhandlungen und Planungen...",
+    "tr": "Uzun müzakereler ve planlamalardan sonra...",
+    "en": "After long negotiations and planning..."
+   },
+   "publishedAt": "2024-03-01",
+   "category": "announcements",
+   "featured": true,
+   "readTime": 6,
+   "quelle": "bestand/src/app/components/News.tsx:215-228"
+  },
+  {
+   "title": {
+    "de": "Interreligiöser Dialog erfolgreich",
+    "tr": "Dinlerarası diyalog başarılı",
+    "en": "Interfaith dialogue successful"
+   },
+   "excerpt": {
+    "de": "Das erste interreligiöse Dialogtreffen war ein voller Erfolg mit über 100 Teilnehmern.",
+    "tr": "İlk dinlerarası diyalog toplantısı 100'den fazla katılımcıyla büyük başarı oldu.",
+    "en": "The first interfaith dialogue meeting was a great success with over 100 participants."
+   },
+   "content": {
+    "de": "Am vergangenen Wochenende fand unser erstes...",
+    "tr": "Geçtiğimiz hafta sonu ilk...",
+    "en": "Last weekend our first..."
+   },
+   "publishedAt": "2024-02-28",
+   "category": "community",
+   "featured": false,
+   "readTime": 4,
+   "quelle": "bestand/src/app/components/News.tsx:229-242"
+  }
+ ]
+}

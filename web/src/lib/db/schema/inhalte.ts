@@ -54,13 +54,15 @@ export const veranstaltung = pgTable(
   ],
 );
 
+/** Kategorien wie im Design (News.dc.html: Ankündigungen, Gemeinde, Veranstaltungen, Bildung, Religiös, Soziales; Startseite: Neuigkeiten). */
 export const nachrichtKategorieEnum = pgEnum('nachricht_kategorie', [
-  'neuigkeiten',
+  'ankuendigung',
   'gemeinde',
-  'bildung',
   'veranstaltung',
-  'jugend',
-  'wichtig',
+  'bildung',
+  'religioes',
+  'soziales',
+  'neuigkeiten',
 ]);
 
 /** Neuigkeiten (Nachrichten) mit Rich-Text und Bild. */
@@ -76,6 +78,10 @@ export const nachricht = pgTable(
     organisation: organisationEnum(),
     veroeffentlichtAm: timestamp({ withTimezone: true }),
     empfohlen: boolean().notNull().default(false),
+    /** Hervorhebung „Wichtig“ (Startseite, Tag-Farbe Fehlerrot) */
+    wichtig: boolean().notNull().default(false),
+    /** Lesezeit in Minuten (aus dem Text berechnet oder gepflegt) */
+    lesezeit: integer(),
     bildId: uuid().references(() => medium.id, { onDelete: 'set null' }),
     ...suchSpalten(),
   },

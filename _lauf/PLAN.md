@@ -194,3 +194,51 @@ Schichten (ohne P0): (≈ 84 Pakete ÷ (6 Plätze × 1 Paket je Platz und Schich
 
 ## 7 Tore
 Jedes Tor: TL führt `pnpm check`, `pnpm test:integration`, `pnpm test:e2e`, `pnpm build` aus und zitiert; DP prüft neue Seiten gegen Referenzen; SP prüft neue Actions/Routen (S1–S8). Befunde → Reparaturpakete (höchstens 2 Runden je Paket, dann Orchestrator). Danach: STATUS, Nebelkarte, Zielabstand (Z-Tabelle), KERN prüfen.
+
+---
+
+## 8 Revision v2 (nach Gegenprüfung Runde 1, `_lauf/belege/gegenpruefung-runde-1.md`)
+
+### 8.1 Entscheidungen zu den Lücken
+| Nr. | Befund | Entscheidung |
+|---|---|---|
+| L1 | Kontaktformular ohne Artboard | Der Auftrag (Abschnitt 9) verlangt es ausdrücklich. B03 leitet es aus den Formular-Mustern des Designs ab (FormWizard-Feldstil, einstufig); Abweichung „kein Artboard“ in ABWEICHUNGEN.md. |
+| L2 | Veranstaltungsanmeldung ohne Feldliste | Festgelegt (E-020): Name, E-Mail, Telefon (optional), Personenzahl (1–10), Einwilligung. Zustände „ausgebucht“ und „Anmeldung geschlossen“ abgeleitet. ALTCHA unsichtbar im Formular. |
+| L3 | Welle D ohne Übersetzung | Neues Paket **D-Ü** (Ü, Stufe 1) nach D-Q2…D-O4. |
+| L4 | Baumeister und Sprachdateien | Regel (MUSTER): Baumeister liefern neue Schlüssel als `_lauf/eingang/<Kennung>.json` (de, tr, en; neue tr/en markiert); der Orchestrator führt sie vor der Abnahme zusammen. Bis dahin greift der deutsche Rückfall in `src/i18n/request.ts`; `pnpm sprachen:pruefen` macht Lücken sichtbar. |
+| L5 | Sicherheitsupdate ohne Paket | Paket **F11** (O, Stufe 2) am 14.10.2026: Next.js-Patch einspielen, Build + E2E-Kurzlauf, Advisories prüfen. |
+| L6 | Tickets: öffentlich oder intern | Tickets entstehen in der Verwaltung (Abschnitt 9). Für Z-05 erfüllt das Ticket-Formular: Zod, Erfolg/Fehler, Ratenbegrenzung je Konto, Spam-Schutz durch Anmeldung + Rate, Einwilligung der meldenden Person (Häkchen mit Textversion, falls Personendaten der meldenden Person erfasst werden), Bestätigung an die anlegende Person, Benachrichtigung an die zuständige Rolle (E-021). |
+| L7 | ABWEICHUNGEN.md ohne Schreiber | Orchestrator führt `web/docs/ABWEICHUNGEN.md`; Baumeister melden Abweichungen im Ausgabeformular. |
+| L8 | Messrouten | T7 nennt sie: Startseite, Gebetszeiten, Veranstaltungen, Veranstaltungsdetail, Nachrichten, Voranmeldung. Messung ab Tor P3 auf allen vorhandenen davon. |
+| L9 | T1–T9 nicht definiert | Befehlstabelle in Abschnitt 8.3. |
+| L10 | Fehlende Tests | Neue Pakete **TS-U1** (Unit: validierung, seo, mail/vorlagen) in Welle B und D; D-T1 umfasst axe für /quran und /suche. |
+| L11 | Verwaltungs-Queries | Jedes Welle-C-Paket darf `src/server/queries/verwaltung/<modul>.ts` anlegen. |
+| L12 | Einstellungen | Kein eigenes Modul: Löschfristen in „Eingänge“, Gebetszeiten-Einstellungen in „Gebetszeiten“, Konzept-Hinweis und Kontaktdaten in „Seiteninhalte“. C16 = nur Wartungsroute. Zählung bleibt 14 Module. |
+| L13 | Lokalisierte Pfade, Logos | Pfade in `src/i18n/routing.ts` (P2) festgelegt, neue Übersetzungen → MENSCHEN M-061. Logos liegen in `web/public/bilder/logos/` (P2). |
+| L14 | Quran-Import ohne Datei | D-Q1: Ohne Datei (oder ohne passenden Hash) bleiben Surenseiten Platzhalter; Build und Seeds laufen ohne Datei grün. |
+
+### 8.2 Reihenfolge und Konflikte
+- A13 (Gebetszeiten-Bibliothek) ist **erledigt** (vor D01), D03 (Termine) **erledigt**.
+- Abhängigkeiten ergänzt: A14…A16, A22 nach A13 · A09 nach A08 · C02 nach C15 · B03…B07 nach B02 · D-Ü nach allen Welle-D-Paketen.
+- Gemeinsame Dateien je Paar genau einem Paket zugeordnet: Nachrichten-Query/Seed → **A01** (liefert Liste und Detail), A02 nutzt sie; Wissen-Query/Seed → **A11**; Gebetszeiten-Query → **O** (A13); A15 liefert nur Komponenten, **A14** bindet sie ein (A14 nach A15); Seiteninhalte-Actions getrennt: `seiteninhalte-moschee.ts` (C04) und `seiteninhalte-organisationen.ts` (C05); `src/lib/seo/jsonld.ts` → **D-O3**; `generateMetadata` schreibt jedes Seitenpaket selbst nach MUSTER (D-O1 prüft nur und ergänzt `src/lib/seo/metadaten.ts`).
+- Kontakt- und Veranstaltungsseite: B03/B04 dürfen die Seiten aus A06/D04 ändern (andere Welle, nicht gleichzeitig).
+- Z-03 und Verwaltung: Der Auftrag legt die Verwaltung auf Deutsch fest (Abschnitt 0); Z-03 wird auf die Website-Texte bezogen, der Abgleich nimmt `verwaltung` aus. Rückfrage zur Bestätigung in MENSCHEN (M-062), Kriterium wird nicht gesenkt.
+- E-010 gilt nur für `_lauf/belege/`; Bildschirmfotos im Handbuch (`web/docs/handbuch/`) zeigen nur Testdaten und werden versioniert.
+
+### 8.3 Prüfbefehle (T1–T9)
+| T | Befehl / Werkzeug | Tor |
+|---|---|---|
+| T1 | `pnpm check` (typegen + tsc, eslint, Unit) | jedes Paket, jedes Tor |
+| T2 | `pnpm test:unit`, `pnpm test:abdeckung` (src/lib ≥ 80 %) | jedes Tor |
+| T3 | `pnpm test:integration` (PGlite je Datei, alle Rollen) | jedes Tor |
+| T4 | `pnpm test:e2e` (eigene DB `igmg_e2e`, Mailpit) | jedes Tor |
+| T5 | E2E-Spezifikation `tests/e2e/barrierefreiheit.spec.ts` (axe, Routen × 3 Sprachen × 390/1440) | ab Tor P3 |
+| T6 | `_lauf/werkzeuge/app-bilder.mjs` + Darstellungsprüfer | ab Tor P3 |
+| T7 | `pnpm messen` (Lighthouse CI mobil, 6 Messrouten) + Bundle-Größe | ab Tor P3 |
+| T8 | E2E-Spezifikation `tests/e2e/datenschutz.spec.ts` (Netzwerk nur eigene Herkunft, Cookies) | **ab Tor P3, jedes Tor** |
+| T9 | `pnpm build`, `docker compose build app` + Health, `pnpm audit --audit-level high`, `pnpm geheimnisse:pruefen` | P2, P5, jedes Tor (audit) |
+
+### 8.4 Risiken (Ergänzung)
+- **Commits:** nur der Orchestrator, seriell, `git add` nur für Paketdateien, Hooks prüfen vor Commit und Push.
+- **Engpass Orchestrator:** Stufe-3-Pakete C08 (Eingänge), C11 (Medien), C12 (Benutzer) gehen bei Kontextdruck an einen Opus-Unteragenten (OU); Stufe-2-Formulare (B03, B04, B06, B07) an Haiku nach MUSTER.
+- **Späte Gates:** T8 und Bundle-Budget laufen ab Tor P3 in jedem Tor.

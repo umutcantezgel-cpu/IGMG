@@ -22,7 +22,8 @@
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "format": "prettier --write",
     "start:standalone": "node scripts/start-standalone.mjs",
-    "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs"
+    "db:bau-vorbereiten": "node scripts/bau-datenbank.mjs",
+    "sprachen:pruefen": "node scripts/sprachen-pruefen.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1149.0",

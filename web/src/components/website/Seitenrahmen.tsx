@@ -1,0 +1,69 @@
+import { getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
+import { ladeEinstellung } from '@/server/queries/einstellungen';
+import { Breadcrumbs, type PfadEintrag } from './Breadcrumbs';
+import { Footer } from './Footer';
+import { Header } from './Header';
+import { KonzeptHinweis } from './KonzeptHinweis';
+import type { Bereich, Ziel } from './navigation';
+import { PrayerTimesBar } from './PrayerTimesBar';
+
+/**
+ * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
+ * Jede Seite übergibt Bereich, aktuelle Seite und ihr Sprachziel ausdrücklich – so bleibt das HTML statisch
+ * (kein usePathname). Ausnahmen nach Laufbuch D-16: keine Breadcrumbs auf der Startseite, keine Leiste auf Gebetszeiten.
+ */
+export async function Seitenrahmen({
+  bereich,
+  seite,
+  sprachZiel,
+  pfad,
+  ohneLeiste = false,
+  children,
+}: {
+  bereich: Bereich;
+  seite: string;
+  sprachZiel: Ziel;
+  pfad?: PfadEintrag[];
+  ohneLeiste?: boolean;
+  children: ReactNode;
+}) {
+  const t = await getTranslations('kopf');
+  const th = await getTranslations('hinweis');
+  const { konzepthinweis } = await ladeEinstellung('allgemein');
+  return (
+    <>
+      <a
+        href="#inhalt"
+        className="sr-only z-[100] rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
+      >
+        {t('zumInhalt')}
+      </a>
+      <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
+      {ohneLeiste ? null : <PrayerTimesBar />}
+      {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
+      <main id="inhalt" tabIndex={-1} className="outline-none">
+        {children}
+      </main>
+      <Footer />
+      {konzepthinweis ? (
+        <KonzeptHinweis
+          texte={{
+            titelDe: th('titelDe'),
+            titelTr: th('titelTr'),
+            textDe: th('textDe'),
+            textTr: th('textTr'),
+            blockDe: th('blockDe'),
+            blockTr: th('blockTr'),
+            knopfDe: th('knopfDe'),
+            knopfTr: th('knopfTr'),
+            einmalDe: th('einmalDe'),
+            einmalTr: th('einmalTr'),
+            punkteDe: [th('de1'), th('de2'), th('de3'), th('de4')],
+            punkteTr: [th('tr1'), th('tr2'), th('tr3'), th('tr4')],
+          }}
+        />
+      ) : null}
+    </>
+  );
+}

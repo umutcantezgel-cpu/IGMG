@@ -68,3 +68,12 @@ Deutsch „18:30 Uhr“ (Design D-10); Türkisch und Englisch „18:30“ ohne Z
 
 **E-019 · 2026-10-11 · Tor P2 bestanden; E2E bekommt eine eigene Datenbank**
 Testläufer-Bericht `_lauf/belege/tore/tor-p2.md`: check, Integration, Build, E2E „Anmelden mit Zwei-Faktor“ (4/4), Startseite in drei Sprachen mit korrektem `lang`, Sicherheits-Header, kein Set-Cookie – alles grün. Befund des Testläufers: Die E2E-Läufe legen Einladungen/Testkonten in der Entwicklungsdatenbank an. Festlegung: E2E nutzt ab P3 eine eigene Datenbank `igmg_e2e` im selben PostgreSQL-Container (`E2E_DATABASE_URL`), die vor jedem Lauf frisch migriert und geseedet wird (Playwright globalSetup).
+
+**E-020 · 2026-10-11 · Felder der Veranstaltungsanmeldung**
+Name, E-Mail, Telefon (optional), Personenzahl 1–10, Einwilligung (Pflicht); Platzzählung über `eingang.anzahl` ohne Entschlüsseln; Zustände „ausgebucht“ und „Anmeldung geschlossen“ (abgeleitet, keine Artboards). Datensparsam nach G-07.
+
+**E-021 · 2026-10-11 · Tickets und Z-05**
+Tickets (Meldungen) entstehen in der Verwaltung (Abschnitt 9). Spam-Schutz = Anmeldung mit Zwei-Faktor + Ratenbegrenzung je Konto (ALTCHA wäre für angemeldete Ehrenamtliche ohne Nutzen). Erfasst ein Ticket Kontaktdaten der meldenden Person (TicketDialog-Felder), dokumentiert ein Pflicht-Häkchen deren Einwilligung mit Textversion. Mails: Bestätigung an die anlegende Person, Benachrichtigung an die Administration.
+
+**E-022 · 2026-10-11 · PLAN v2 nach Gegenprüfung Runde 1**
+14 Lücken, 7 Konfliktgruppen und 3 Risiken bewertet und eingearbeitet (`_lauf/PLAN.md` Abschnitt 8). Runde 2 folgt nach dem Durchstich nur bei Strukturfehlern (L0: höchstens zwei Runden).

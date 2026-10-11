@@ -90,7 +90,7 @@
   --shadow-s2: 0 6px 20px rgba(29, 26, 23, 0.1);
   --shadow-s3: 0 24px 64px rgba(29, 26, 23, 0.22);
   /* Raster */
-  --container-inhalt: 80rem; /* 1280 px */
+  --container-inhalt: 84rem; /* 1344 px außen = 1280 px Inhalt + 2 × 32 px Rand (Artboards) */
   --container-text: 68ch;
   --breakpoint-md: 48rem; /* 768 px Telefon/Tablet */
   --breakpoint-menu: 77.5rem; /* 1240 px Menü-Button darunter (Laufbuch D-04) */

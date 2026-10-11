@@ -148,9 +148,10 @@ async function main() {
         await page.addStyleTag({ content: '*,*::before,*::after{transition:none!important;animation:none!important;caret-color:transparent!important}' });
         await bereit(page);
         const kaputt = await page.$('.sc-logic-error, .sc-placeholder-error, .sc-interp.sc-unresolved');
-        const rahmen = TAFELN.includes(job.name) || DIALOGE.includes(job.name) ? null : await page.$('#ref-rahmen');
+        const ueberlagerung = DIALOGE.includes(job.name) || (job.name === 'Header' && job.props && 'open' in job.props);
+        const rahmen = TAFELN.includes(job.name) || ueberlagerung ? null : await page.$('#ref-rahmen');
         if (rahmen) await rahmen.screenshot({ path: join(AUS, datei) });
-        else await page.screenshot({ path: join(AUS, datei), fullPage: !DIALOGE.includes(job.name) });
+        else await page.screenshot({ path: join(AUS, datei), fullPage: !ueberlagerung });
         const h = await page.evaluate(() => document.documentElement.scrollHeight);
         index.push({ datei, seite: job.name, breite: job.w, props: job.props, hoehe: h, fehler, laufzeitfehler: Boolean(kaputt) });
       } catch (e) {
