@@ -36,7 +36,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** Vertragsunterlagen des Anbieters, dann die Werte in Vercel (VERCEL.md, Abschnitt 4).
   - **Aufwand:** Abhängig vom Anbieter.
   - **Wer:** Vorstand entscheidet und schließt den Vertrag. Technik trägt die Zugangsdaten ein.
-  - **Stand:** Der Anbieter ist **offen**. Dazu gibt es in MENSCHEN.md **keinen Eintrag [prüfen]**.
+  - **Stand:** Der Anbieter ist **offen**. Dazu gibt es in MENSCHEN.md den Eintrag **ML-10**.
   - **Das siehst du, wenn es geklappt hat:** Eine Testmail geht aus der Vorschau an eine Adresse im Vorstand.
 
 - [ ] **A5 · Zugang zur Domainverwaltung**
@@ -57,11 +57,11 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** VERCEL.md, Abschnitt 3.
   - **Aufwand:** 10 Minuten im Dashboard.
   - **Wer:** Technik.
-  - **Code:** vorhanden (`SPEICHER=blob`, `web/src/lib/storage/index.ts`, ADR 0020). Bilder über 4 MB verkleinert der Browser vor dem Hochladen.
+  - **Code:** vorhanden (`SPEICHER=blob`, `web/src/lib/storage/index.ts`, ADR 0020). Auf Vercel verkleinert der Browser Bilder über 4,2 MB vor dem Hochladen; größere PDF-Dateien werden abgelehnt.
   - **Das siehst du, wenn es geklappt hat:** Ein Testbild lässt sich in der Vorschau über die Verwaltung hochladen und erscheint auf der Seite.
 
 - [ ] **B3 · Umgebungsvariablen für Produktion und Vorschau**
-  - **Ort:** VERCEL.md, Abschnitt 4. Die vollständige Liste steht in `web/docs/deploy/VERCEL-ENV.md`, das parallel entsteht.
+  - **Ort:** VERCEL.md, Abschnitt 4. Die vollständige Liste steht in `web/docs/deploy/VERCEL-ENV.md`.
   - **Aufwand:** 30 Minuten.
   - **Wer:** Technik.
   - **Das siehst du, wenn es geklappt hat:** Jede Variable aus VERCEL-ENV.md ist in Vercel eingetragen, für den richtigen Bereich. `SITE_MODE` ist für Produktion `produktion` und für Vorschau `vorschau`.
@@ -99,7 +99,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** Verwaltung › Startklar-Cockpit (`/verwaltung/startklar`), Zeile „Hinweis ‚Konzept-Website‘“ › „Hinweis ausschalten“ (nur Administration).
   - **Aufwand:** 5 Minuten.
   - **Wer:** Technik.
-  - **Was passiert:** Das Fenster wird nur angezeigt, wenn der Wert `konzepthinweis` in der Zeile `allgemein` auf `true` steht (`web/src/components/website/Seitenrahmen.tsx` Zeilen 52 und 72; `web/src/lib/validierung/einstellungen.ts` Zeile 37). Die Werte stehen in der Tabelle `einstellung` (`web/src/lib/db/schema/system.ts` Zeilen 24–28).
+  - **Was passiert:** Das Fenster wird nur angezeigt, wenn der Wert `konzepthinweis` in der Zeile `allgemein` auf `true` steht (`web/src/components/website/Seitenrahmen.tsx` Zeilen 56 und 78; `web/src/lib/validierung/einstellungen.ts` Zeile 37). Die Werte stehen in der Tabelle `einstellung` (`web/src/lib/db/schema/system.ts` ab Zeile 24).
   - **Ersatzweg ohne Verwaltung (Notfall):** in der Neon-Konsole `UPDATE einstellung SET wert = jsonb_set(wert, '{konzepthinweis}', 'false'::jsonb) WHERE schluessel = 'allgemein';`
   - **Das siehst du, wenn es geklappt hat:** Beim ersten Besuch der Startseite erscheint kein Fenster, und das Cockpit zeigt den Punkt als erledigt.
 
@@ -108,26 +108,26 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Aufwand:** 60 Minuten (Schätzung).
   - **Wer:** Vorstand liefert die Angaben. Technik trägt sie ein.
   - **Regel:** Der Wortlaut der Rechtstexte bleibt unverändert. Nur die Platzhalter in eckigen Klammern werden durch echte Angaben ersetzt. Erfundene Angaben sind nicht erlaubt (`web/CLAUDE.md`, Abschnitt zu Personendaten und Platzhaltern).
-  - **Fundstellen der Platzhalter:** `web/drizzle/seeds/bereiche/rechtliches.ts` (Zeilen 40, 152, 178, Stand E0).
+  - **Fundstellen der Platzhalter:** `web/drizzle/seeds/bereiche/rechtliches.ts` (unter anderem Zeilen 16–24, 40, 152 und 178; alle Stellen mit eckiger Klammer finden).
   - **Das siehst du, wenn es geklappt hat:** Auf `/impressum` und `/datenschutz` stehen keine eckigen Klammern mehr.
 
 - [ ] **C3 · Rechtliche Prüfung**
-  - **Ort:** MENSCHEN.md, Punkte ML-01 (Einwilligungs-Banner) und der Hosting-Baustein nach V-11.
+  - **Ort:** MENSCHEN.md, Punkte ML-01 (Einwilligungs-Banner) und ML-11 (Hosting-Baustein).
   - **Aufwand:** 60 Minuten (Schätzung), plus Wartezeit der Rechtsberatung.
   - **Wer:** Vorstand, mit Rechtsberatung.
   - **Das siehst du, wenn es geklappt hat:** Die Rechtsberatung bestätigt die Annahmen, dass ohne Drittanbieter kein Einwilligungs-Banner nötig ist, und der Baustein für Vercel ist in MENSCHEN.md zur Prüfung eingetragen.
 
 - [ ] **C4 · Verarbeitungsverzeichnis**
-  - **Ort:** `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` (entsteht im Lauf, siehe `_werkstatt/PLAN.md`).
+  - **Ort:** `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` (Vorlage liegt vor; Ergänzung nach ML-12).
   - **Aufwand:** 30 Minuten.
   - **Wer:** Vorstand prüft. Technik liefert Region und Anbieter.
   - **Das siehst du, wenn es geklappt hat:** Vercel, Neon, Vercel Blob und der Mailanbieter stehen mit Rolle, Region und Auftragsverarbeitungsvertrag darin (AUFTRAG V-11).
 
 - [ ] **C5 · Tarif entschieden**
-  - **Ort:** MENSCHEN.md, Eintrag zu V-12 (den Eintrag gibt es noch nicht, siehe Stand).
+  - **Ort:** MENSCHEN.md, Eintrag ML-09 (Tarif).
   - **Aufwand:** 15 Minuten.
   - **Wer:** Vorstand.
-  - **Stand:** In MENSCHEN.md gibt es dazu **noch keinen Eintrag [prüfen]**.
+  - **Stand:** Die Empfehlung steht in MENSCHEN.md als ML-09. Die Entscheidung fehlt noch.
   - **Das siehst du, wenn es geklappt hat:** Der Tarif ist entschieden und begründet dokumentiert.
 
 ## D. Domain und Mail
@@ -149,10 +149,10 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
 
 - [ ] **E1 · Startklar-Cockpit grün**
   - **Ort:** `/verwaltung/startklar` in der Verwaltung, oder auf der Kommandozeile `pnpm startklar`.
-  - **Stand:** Das Cockpit **entsteht im Lauf** (`_werkstatt/ENTSCHEIDUNGEN.md` L-E02). Es fehlt heute noch.
+  - **Stand:** Das Cockpit ist im Code vorhanden (`web/src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx`, Prüfungen in `web/src/lib/startklar/pruefungen.ts`). Ob alle Punkte grün sind, zeigt ein Lauf.
   - **Aufwand:** 10 Minuten zum Durchsehen.
   - **Wer:** Technik.
-  - **Das siehst du, wenn es geklappt hat:** Alle Punkte sind grün. Soll-Zustand: Jeder Punkt, der rot bleibt, nennt Grund und Ort **[prüfen: sobald das Cockpit existiert]**.
+  - **Das siehst du, wenn es geklappt hat:** Alle Punkte sind grün. Soll-Zustand: Jeder Punkt, der rot bleibt, nennt Grund und Ort.
 
 - [ ] **E2 · Abnahme der zwölf Hauptseiten**
   - **Ort:** Die Vorschau-Adresse über den teilbaren Link (VERCEL.md, Abschnitt 5.4). Die Liste mit Adressen steht in VERCEL.md, Abschnitt 11.
@@ -181,7 +181,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
 ## Verweise
 
 - **VERCEL.md** (`web/docs/deploy/VERCEL.md`): das Runbook, Schritt für Schritt.
-- **VERCEL-ENV.md** (`web/docs/deploy/VERCEL-ENV.md`): alle Umgebungsvariablen, entsteht parallel.
+- **VERCEL-ENV.md** (`web/docs/deploy/VERCEL-ENV.md`): alle Umgebungsvariablen mit Pflicht je Betriebsart.
 - **MENSCHEN.md** (`_werkstatt/MENSCHEN.md`): alle offenen Entscheidungen und Aufgaben für Menschen.
 - **BETRIEB.md** (`web/docs/BETRIEB.md`): Betrieb mit Docker und Betrieb auf Vercel (§ 9).
-- **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0023.
+- **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024.
