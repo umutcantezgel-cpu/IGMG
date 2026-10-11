@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "pnpm db:bau-vorbereiten && BAU_PGLITE=1 PGLITE_VERZEICHNIS=\"$PWD/.pglite-bau\" DATABASE_URL= next build",
     "start": "next start",
     "lint": "eslint .",
     "typen": "next typegen && tsc --noEmit",
