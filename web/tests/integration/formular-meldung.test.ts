@@ -255,7 +255,7 @@ describe('Meldung', () => {
       expect(r, name).toMatchObject({ status: 'fehler', fehler: 'pruefen', feldFehler });
     }
     expect((await db.select().from(schema.ticket)).length).toBe(vorher);
-  }, 120_000); // dreizehn ALTCHA-Lösungen (je Fall eine Aufgabe)
+  }, 600_000); // dreizehn ALTCHA-Lösungen (je Fall eine Aufgabe, unter Last bis ≈40 s je Lösung)
 
   it('Fehler: die Ansicht trägt die Eingaben und einen neuen ALTCHA-Schlüssel (Lösungen sind einmalig)', async () => {
     const r = await sendeMeldung(null, formular({ ...ohne('typ', werte({ betreff: '' })), altcha: await altcha() }));

@@ -31,7 +31,9 @@ export default defineConfig({
           include: ['tests/integration/**/*.test.ts'],
           environment: 'node',
           setupFiles: ['tests/integration/hilfen/umgebung.ts'],
-          testTimeout: 30_000,
+          // Formular-Tests lösen bis zu vier echte ALTCHA-Aufgaben (PBKDF2, Zähler bis 10 000); eine Lösung dauert auf
+          // 4 Kernen unter Last bis ≈40 s. Die Grenze gilt der Rechenzeit, nicht den Prüfungen.
+          testTimeout: 240_000,
           hookTimeout: 60_000,
           fileParallelism: false,
         },
