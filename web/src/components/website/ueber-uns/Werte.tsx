@@ -5,10 +5,10 @@ import { SYMBOL } from './symbole';
 
 type Wert = UeberUnsInhalt['werte'][number];
 
-/** Werte-Karten (design/AboutUs.dc.html D:62–73): Raster mit mindestens 260 px je Karte, Symbol, Titel, Text. */
+/** Werte-Karten (design/AboutUs.dc.html D:62–73): Raster `raster-kacheln` (mindestens 260 px je Karte), Symbol, Titel, Text. */
 export function Werte({ eintraege, sprache }: { eintraege: Wert[]; sprache: Sprache }) {
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-4">
+    <ul className="grid raster-kacheln gap-4">
       {eintraege.map((w, i) => {
         const Icon = SYMBOL[w.symbol];
         return (

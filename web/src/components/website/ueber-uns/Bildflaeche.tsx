@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
 
 /**
- * Beschriftete Streifenfläche statt Foto (design/AboutUs.dc.html D:32 und D:46, Platzhalter nach M-018).
+ * Beschriftete Streifenfläche statt Foto (design/AboutUs.dc.html D:32 und D:46, Platzhalter nach M-018), im Stil von
+ * `Bildplatzhalter` (Beschriftung als Pille, keine eigene Schrift).
  * Die Beschriftung steht am role="img" als aria-label; der sichtbare Text ist für Hilfstechnik ausgeblendet.
  * `lang="de"` kennzeichnet deutschen Rückfall (K-02).
  */
@@ -12,11 +13,13 @@ export function Bildflaeche({ beschriftung, lang, className }: { beschriftung: s
       aria-label={beschriftung}
       lang={lang}
       className={cn(
-        'flex items-center justify-center rounded-md border border-linie bg-[repeating-linear-gradient(135deg,var(--color-sand)_0_10px,var(--color-papier)_10px_20px)] px-3 text-center font-mono text-16 text-tinte-2',
+        'flex items-center justify-center rounded-md border border-linie px-4 text-center text-16 text-tinte-2 streifen-platzhalter',
         className,
       )}
     >
-      <span aria-hidden>{beschriftung}</span>
+      <span aria-hidden className="rounded-pill bg-weiss/85 px-3 py-0.5 shadow-s1">
+        {beschriftung}
+      </span>
     </div>
   );
 }
