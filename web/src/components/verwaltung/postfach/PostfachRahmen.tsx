@@ -19,13 +19,14 @@ export async function PostfachRahmen({ liste, aktivId, children }: { liste: Unte
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         <p className="text-tinte-2">{t('untertitel')}</p>
       </div>
-      <div className="flex min-h-130 flex-col overflow-hidden rounded-lg border border-linie bg-weiss min-[900px]:flex-row">
+      {/* Ab 900 px zwei Spalten im Raster 2 : 3 (fünf Spalten). Das liegt annähernd bei der bisherigen Flex-Aufteilung (Basis 300 px / 360 px, Wachstum 1 : 2). */}
+      <div className="flex min-h-130 flex-col overflow-hidden rounded-lg border border-linie bg-weiss verwaltung:grid verwaltung:grid-cols-5">
         <section
           aria-labelledby="postfach-unterhaltungen"
-          className="flex min-w-0 flex-col min-[900px]:flex-[1_1_300px] min-[900px]:border-r min-[900px]:border-linie"
+          className="flex min-w-0 flex-col verwaltung:col-span-2 verwaltung:border-r verwaltung:border-linie"
         >
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-linie p-4">
             <h2 id="postfach-unterhaltungen" className="text-24 font-semibold">
@@ -50,8 +51,8 @@ export async function PostfachRahmen({ liste, aktivId, children }: { liste: Unte
                       href={`/verwaltung/postfach/${z.id}`}
                       aria-current={aktiv ? 'page' : undefined}
                       className={cn(
-                        'flex min-h-12 flex-col gap-1 px-4 py-3.5 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte',
-                        aktiv && 'bg-gruen-50',
+                        'flex min-h-12 flex-col gap-1 border-l-4 px-4 py-3.5 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
+                        aktiv ? 'border-gruen-700 bg-gruen-50' : 'border-transparent',
                       )}
                     >
                       <span className="flex items-baseline justify-between gap-3">
@@ -76,7 +77,7 @@ export async function PostfachRahmen({ liste, aktivId, children }: { liste: Unte
             </ul>
           )}
         </section>
-        <div className="flex min-w-0 flex-1 flex-col bg-papier min-[900px]:flex-[2_1_360px]">{children}</div>
+        <div className="flex min-w-0 flex-1 flex-col bg-papier verwaltung:col-span-3">{children}</div>
       </div>
     </>
   );

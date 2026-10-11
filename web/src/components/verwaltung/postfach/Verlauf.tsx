@@ -33,7 +33,7 @@ export async function Verlauf({
         {gesendet ? <Meldung art="erfolg">{t('gesendet')}</Meldung> : null}
         <ol aria-label={t('nachrichtenLabel')} className="flex flex-col gap-4">
           {u.nachrichten.map((m) => (
-            <li key={m.id} className={cn('flex max-w-[85%] flex-col gap-1', m.eigene ? 'items-end self-end' : 'items-start self-start')}>
+            <li key={m.id} className={cn('flex max-w-6/7 flex-col gap-1', m.eigene ? 'items-end self-end' : 'items-start self-start')}>
               <div className="flex flex-wrap gap-x-3 text-16 text-tinte-2">
                 <span className="font-bold text-tinte">{m.eigene ? t('ichAbsender') : (m.absenderName ?? t('absenderUnbekannt'))}</span>
                 <time dateTime={m.erstelltAm.toISOString()}>

@@ -33,7 +33,7 @@ export function KontoMenue({
     <>
       <form ref={formular} action={abmelden} hidden />
       <DropdownMenu>
-        <DropdownMenuTrigger className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-gruen-700 bg-gruen-50 px-4 font-bold text-gruen-800 hover:bg-gruen-100">
+        <DropdownMenuTrigger className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-gruen-700 bg-gruen-50 px-4 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-100 active:scale-98">
           <UserRound aria-hidden className="size-5" />
           <span className="max-w-48 truncate">{name}</span>
           <ChevronDown aria-hidden className="size-4" />
@@ -45,13 +45,13 @@ export function KontoMenue({
             <span className="text-16 font-normal text-tinte-2">{rollen}</span>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild className="min-h-11 cursor-pointer">
+          <DropdownMenuItem asChild className="min-h-12 cursor-pointer">
             <NextLink href="/verwaltung/konto">
               <UserRoundCog aria-hidden className="size-5" />
               {texte.meinKonto}
             </NextLink>
           </DropdownMenuItem>
-          <DropdownMenuItem className="min-h-11 cursor-pointer" onSelect={() => formular.current?.requestSubmit()}>
+          <DropdownMenuItem className="min-h-12 cursor-pointer" onSelect={() => formular.current?.requestSubmit()}>
             <LogOut aria-hidden className="size-5" />
             {texte.abmelden}
           </DropdownMenuItem>

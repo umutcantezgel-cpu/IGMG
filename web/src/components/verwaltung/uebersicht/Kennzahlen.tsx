@@ -20,21 +20,22 @@ export type KennzahlKachel = { schluessel: KennzahlModul; pfad: string; label: s
 export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; titel: string }) {
   return (
     <section aria-label={titel}>
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      {/* Karten ab 340 px, so viele Spalten wie passen (raster-karten, Kern K-005): auf dem Telefon eine Spalte. */}
+      <ul className="grid raster-karten gap-4">
         {kacheln.map((k) => {
           const Icon = ICONS[k.schluessel];
           return (
             <li key={k.schluessel}>
               <NextLink
                 href={k.pfad}
-                className="flex h-full min-h-12 flex-col items-start gap-1 rounded-lg border border-linie bg-weiss p-5 text-tinte no-underline hover:border-gruen-700 hover:text-tinte"
+                className="flex h-full min-h-12 flex-col items-start gap-2 rounded-lg border border-linie bg-weiss p-5 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98"
               >
                 <span className="flex items-center gap-2 font-bold text-tinte-2">
                   <Icon aria-hidden className="size-5 shrink-0" />
                   {k.label}
                 </span>
-                <strong className="text-36 leading-none font-bold tabular-nums">{k.wert}</strong>
-                <span className="text-16 text-gruen-800">{k.hinweis}</span>
+                <strong className="text-48 leading-none font-bold tabular-nums">{k.wert}</strong>
+                <span className="text-16 text-tinte-2">{k.hinweis}</span>
               </NextLink>
             </li>
           );

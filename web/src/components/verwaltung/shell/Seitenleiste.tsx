@@ -69,7 +69,7 @@ export function Seitenleiste({
   const [offen, setOffen] = useState(false);
   const aktiv = (p: string) => (p === '/verwaltung' ? pfad === p : pfad === p || pfad.startsWith(`${p}/`));
   return (
-    <aside className="flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 min-[900px]:sticky min-[900px]:top-4 min-[900px]:w-70 min-[900px]:shrink-0">
+    <aside className="flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 verwaltung:sticky verwaltung:top-4 verwaltung:w-70 verwaltung:shrink-0">
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col">
           <span className="text-20 font-bold">{texte.titel}</span>
@@ -80,13 +80,14 @@ export function Seitenleiste({
           aria-expanded={offen}
           aria-controls="verwaltung-navigation"
           onClick={() => setOffen((o) => !o)}
-          className="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-50 min-[900px]:hidden"
+          className="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 verwaltung:hidden"
         >
           {offen ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
           <span>{offen ? texte.schliessen : texte.oeffnen}</span>
         </button>
       </div>
-      <nav id="verwaltung-navigation" aria-label={texte.navName} className={cn(!offen && 'max-[899px]:hidden')}>
+      {/* Geöffnet tritt die Navigation mit B-03 auf (nur mobil sichtbar); geschlossen bleibt sie ohne Bewegung. */}
+      <nav id="verwaltung-navigation" aria-label={texte.navName} className={cn(offen ? 'tritt-auf' : 'max-verwaltung:hidden')}>
         <ul className="flex flex-col gap-1">
           {eintraege.map((e) => {
             const Icon = ICONS[e.icon];
@@ -98,10 +99,10 @@ export function Seitenleiste({
                   aria-current={istAktiv ? 'page' : undefined}
                   onClick={() => setOffen(false)}
                   className={cn(
-                    'flex min-h-12 items-center gap-3 rounded-md px-3.5 font-bold no-underline',
+                    'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98',
                     istAktiv
-                      ? 'bg-gruen-700 text-weiss hover:bg-gruen-800 hover:text-weiss'
-                      : 'text-tinte hover:bg-gruen-50 hover:text-tinte',
+                      ? 'border-gruen-700 bg-gruen-50 text-gruen-800 hover:bg-gruen-100 hover:text-gruen-800'
+                      : 'border-transparent text-tinte hover:bg-gruen-50 hover:text-tinte',
                   )}
                 >
                   <Icon aria-hidden className="size-5 shrink-0" />

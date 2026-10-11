@@ -44,7 +44,7 @@ export function ZweiFaktorFormular() {
           label={t('zweiFaktor.code')}
           hinweis={t('zweiFaktor.hinweis')}
           fehler={zustand.feldFehler?.code ? t(zustand.feldFehler.code) : undefined}
-          className="font-mono tracking-[0.3em]"
+          className="font-mono tracking-code"
         />
       )}
       <Button type="submit" disabled={laeuft} className="w-full">

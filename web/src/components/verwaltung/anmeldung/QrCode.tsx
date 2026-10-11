@@ -15,8 +15,8 @@ export function QrCode({ text, titel, groesse = 224 }: { text: string; titel: st
       className="rounded-md border border-linie bg-weiss"
     >
       <title>{titel}</title>
-      <rect width={size} height={size} fill="#FFFFFF" />
-      <path d={pfad} fill="#1D1A17" />
+      <rect width={size} height={size} className="fill-weiss" />
+      <path d={pfad} className="fill-tinte" />
     </svg>
   );
 }

@@ -1,4 +1,5 @@
 import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumLang, isoZeit, zeitspanne } from '@/lib/i18n/format';
 import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { cn } from '@/lib/utils';
@@ -25,6 +26,19 @@ const KUERZEL_TON: Record<OrganisationKuerzel, string> = {
 };
 
 /**
+ * Leerzustand einer Kurzliste (REFERENZ §2): Zustandsgrafik „leer“ und ein Satz. Dekorativ; der Satz trägt die Bedeutung.
+ * Die Karte ist die Liste selbst, deshalb hier kein zweiter Rahmen. Ein Schritt weiter (Link) fehlt noch: siehe Bericht.
+ */
+function Leerzustand({ text }: { text: string }) {
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center gap-3 py-6 text-center">
+      <Zustandsgrafik art="leer" />
+      <p className="text-tinte-2">{text}</p>
+    </div>
+  );
+}
+
+/**
  * Kurzlisten der Übersicht (design/Dashboard.dc.html, Blatt V01): „Aktuelle Neuigkeiten“ und „Kommende Veranstaltungen“.
  * Eine Liste erscheint nur mit dem Leserecht ihres Bereichs (`null` = kein Recht). Nur Titel, Datum und Status,
  * keine Personendaten; Einträge sind nicht anklickbar (wie im Design).
@@ -47,7 +61,7 @@ export function Listen({
             {texte.neuigkeiten}
           </h2>
           {neuigkeiten.length === 0 ? (
-            <p className="mt-3 text-tinte-2">{texte.neuigkeitenLeer}</p>
+            <Leerzustand text={texte.neuigkeitenLeer} />
           ) : (
             <ul className="mt-2 flex flex-col">
               {neuigkeiten.map((z) => (
@@ -78,7 +92,7 @@ export function Listen({
             {texte.veranstaltungen}
           </h2>
           {kommend.length === 0 ? (
-            <p className="mt-3 text-tinte-2">{texte.veranstaltungenLeer}</p>
+            <Leerzustand text={texte.veranstaltungenLeer} />
           ) : (
             <ul className="mt-2 flex flex-col">
               {kommend.map((z) => (

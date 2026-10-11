@@ -57,7 +57,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     <div className="verwaltung-huelle">
       <a
         href="#inhalt"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-weiss focus:px-4 focus:py-3 focus:font-bold"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-(--ebene-overlay) focus:rounded-md focus:bg-weiss focus:px-4 focus:py-3 focus:font-bold"
       >
         {t('shell.zumInhalt')}
       </a>
@@ -90,7 +90,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
           </div>
         </div>
       </header>
-      <div className="mx-auto flex max-w-360 flex-col gap-6 px-4 py-6 min-[900px]:flex-row md:px-6">
+      <div className="mx-auto flex max-w-360 flex-col gap-6 px-4 py-6 md:px-6 verwaltung:flex-row">
         <Seitenleiste
           eintraege={eintraege}
           texte={{

@@ -3,6 +3,7 @@ import { MODULE } from '@/components/verwaltung/shell/module';
 import { Kennzahlen } from '@/components/verwaltung/uebersicht/Kennzahlen';
 import { Listen } from '@/components/verwaltung/uebersicht/Listen';
 import { sichtbareKacheln } from '@/components/verwaltung/uebersicht/sichtbarkeit';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { ladeUebersicht } from '@/server/queries/verwaltung/uebersicht';
 
@@ -27,8 +28,8 @@ export default async function Uebersicht() {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
-        <p className="text-20">{t('willkommen', { name: a.name })}</p>
+        <h1 className="text-display-2">{t('titel')}</h1>
+        <p className="text-20 leading-einleitung text-tinte-2">{t('willkommen', { name: a.name })}</p>
       </div>
       {kacheln.length ? <Kennzahlen kacheln={kacheln} titel={t('kennzahlen')} /> : null}
       <Listen
@@ -43,7 +44,12 @@ export default async function Uebersicht() {
           status: { entwurf: t('status.entwurf'), veroeffentlicht: t('status.veroeffentlicht') },
         }}
       />
-      {leer ? <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p> : null}
+      {leer ? (
+        <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
+          <Zustandsgrafik art="leer" />
+          <p className="text-tinte-2">{t('leer')}</p>
+        </div>
+      ) : null}
     </>
   );
 }

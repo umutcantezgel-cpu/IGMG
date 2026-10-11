@@ -24,7 +24,7 @@ export function AuditTabelle({ zeilen, texte }: { zeilen: AnzeigeZeile[]; texte:
   const s = texte.spalten;
   return (
     <TabellenRahmen beschriftung={texte.beschriftung}>
-      <table className="w-full min-w-[48rem] border-collapse text-left">
+      <table className="w-full min-w-3xl border-collapse text-left">
         <caption className="sr-only">{texte.beschriftung}</caption>
         <thead className="bg-sand">
           <tr>

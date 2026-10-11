@@ -80,6 +80,7 @@
   --text-anzeige-96: 6rem;
   --text-anzeige-144: 9rem;
   --tracking-titel: -0.01em;
+  --tracking-code: 0.3em; /* Einmalcodes (TOTP, Wiederherstellung): Ziffern deutlich getrennt */
 
   /* Abstände: 4-px-Raster = Tailwind-Standard (1 = 4 px) */
   --spacing: 0.25rem;

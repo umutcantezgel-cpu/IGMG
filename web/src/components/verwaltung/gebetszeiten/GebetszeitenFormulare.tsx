@@ -210,7 +210,7 @@ function ZeitenTabelle({ titel, tage }: { titel: string; tage: ({ datum: string 
     <div className="flex min-w-0 flex-col gap-2">
       <p className="text-16 text-tinte-2 md:hidden">{ts('wischen')}</p>
       <div role="region" aria-label={titel} tabIndex={0} className="relative overflow-x-auto rounded-lg border border-linie">
-        <table className="w-full min-w-[40rem] border-collapse text-left tabular-nums">
+        <table className="w-full min-w-160 border-collapse text-left tabular-nums">
           <caption className="px-4 py-2 text-left font-bold">{titel}</caption>
           <thead className="bg-sand">
             <tr>

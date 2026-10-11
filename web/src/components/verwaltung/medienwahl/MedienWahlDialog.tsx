@@ -137,7 +137,7 @@ export function MedienWahlDialog({ bilder, ref }: { bilder: BildWahl[]; ref?: Re
                       width={bild.breite}
                       height={bild.hoehe}
                       loading="lazy"
-                      className="aspect-[4/3] w-full bg-sand object-cover"
+                      className="aspect-4/3 w-full bg-sand object-cover"
                     />
                     <span className="line-clamp-2 p-2.5 text-16">{bild.alt}</span>
                   </button>

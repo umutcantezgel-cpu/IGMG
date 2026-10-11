@@ -77,7 +77,7 @@ export function ZweiFaktorEinrichten() {
           required
           label={t('schritt3')}
           fehler={ende.feldFehler?.code ? t('fehlerCode') : undefined}
-          className="font-mono tracking-[0.3em]"
+          className="font-mono tracking-code"
         />
         <Button type="submit" disabled={endeLaeuft}>
           <ShieldCheck aria-hidden />
