@@ -3,6 +3,18 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import { cspOeffentlich, grundHeader, noindexHeader } from './src/lib/sicherheit/header';
 
 /**
+ * Beispielmodus auf Vercel (Bau ohne DATABASE_URL, ADR 0019): Die Inhalte stammen aus der PGlite-Bau-Datenbank und
+ * können sich nicht ändern. Jede Erneuerung im Hintergrund scheitert dort („DATABASE_URL fehlt“ im Laufzeitprotokoll),
+ * und nach `expire` (bei `hours` ein Tag) müsste eine Anfrage synchron neu erzeugen – mit Fehlerseite. Deshalb
+ * gelten in diesem Modus alle Cache-Profile, auch die eingebauten Namen, als dauerhaft (ein Jahr). Mit Datenbank
+ * (und unter Docker, das BAU_PGLITE ohne VERCEL nutzt) bleiben die Vorgaben von Next unverändert.
+ */
+const JAHR = 60 * 60 * 24 * 365;
+const beispielmodus = process.env.VERCEL === '1' && process.env.BAU_PGLITE === '1';
+const DAUERHAFT = { stale: 300, revalidate: JAHR, expire: 2 * JAHR };
+const PROFILE = ['default', 'seconds', 'minutes', 'hours', 'days', 'weeks', 'max'] as const;
+
+/**
  * Next.js-Konfiguration (K-01, K-13, K-14, K-17, K-19).
  * Telemetrie ist zusätzlich über NEXT_TELEMETRY_DISABLED=1 in .env und Skripten aus.
  */
@@ -12,6 +24,7 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   reactCompiler: true,
   poweredByHeader: false,
+  ...(beispielmodus ? { cacheLife: Object.fromEntries(PROFILE.map((name) => [name, DAUERHAFT])) } : {}),
   // PGlite (Bau-Datenbank, ADR 0017) nicht bündeln: Gebündelt sucht es pglite.data unter dem Turbopack-Platzhalter
   // /ROOT/node_modules/… statt im echten node_modules, und der Bau mit BAU_PGLITE=1 bricht beim Vorrendern ab.
   serverExternalPackages: ['@electric-sql/pglite'],

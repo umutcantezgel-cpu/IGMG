@@ -37,3 +37,9 @@ Falsch, wenn ein Bau mit Migration fehlschlägt, nachdem die Migration angewende
 ## Nachtrag 2026-10-11 (Prüfung H-V07/V10)
 
 - Die Migrationssperre ist eine Sitzungssperre (`pg_advisory_lock`). Hinter einem Pooler im Transaktionsmodus (Neon-Adresse mit `-pooler`) kann jede Anweisung auf einer anderen Serververbindung laufen; Sperren und Entsperren träfen dann womöglich verschiedene Sitzungen. `scripts/migriere-mit-sperre.mjs` nimmt deshalb `DATABASE_URL_UNPOOLED` (setzt die Neon-Integration zusammen mit `DATABASE_URL`) vor `DATABASE_URL` und warnt im Bauprotokoll, wenn nur eine Pooler-Adresse vorhanden ist. Die App selbst bleibt beim Pooler (ADR 0018).
+
+## Nachtrag 2026-10-11 (Beispielmodus ohne Datenbank)
+
+- Befund in der Produktion ohne `DATABASE_URL` (Vercel-Laufzeitfehler, 7 h): 755 × „DATABASE_URL fehlt“, fast nur Segment-Abrufe (`*.segments/_tree.segment.rsc`). Ursache: Die Cache-Profile (`hours`: Erneuerung stündlich, Ablauf nach einem Tag) lösen Erneuerungen im Hintergrund aus, die ohne Datenbank scheitern. Nach Ablauf (`expire`) müsste eine Anfrage synchron neu erzeugen – mit Fehlerseite.
+- Entscheidung: Im Beispielmodus (`VERCEL=1` und `BAU_PGLITE=1`, gesetzt von `scripts/vercel-bau.mjs`) überschreibt `next.config.ts` alle Cache-Profile, auch die eingebauten Namen, mit „dauerhaft“ (Erneuerung nach einem Jahr, Ablauf nach zwei). Die Inhalte stammen dort unveränderlich aus der Bau-Datenbank; ein neuer Bau aktualisiert sie. Mit Datenbank und unter Docker (BAU_PGLITE ohne VERCEL) gelten die Vorgaben von Next unverändert.
+- Folge: Datumsabhängige Teile (heute, kommende Termine, das 45-Tage-Fenster der Gebetszeiten) bleiben im Beispielmodus auf dem Stand des Baus. Das ist kein Betriebszustand – der Beispielmodus endet mit dem Anschluss der Datenbank (Runbook Abschnitt 4).
