@@ -15,7 +15,7 @@ export default async function PersonEinladen({ searchParams }: PageProps<'/[loca
         {t('formular.zurueck')}
       </NextLink>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('formular.einladenTitel')}</h1>
+        <h1 className="text-display-2">{t('formular.einladenTitel')}</h1>
         <p className="max-w-[70ch] text-tinte-2">{t('formular.einladenEinleitung')}</p>
       </div>
       <section className="max-w-3xl rounded-lg border border-linie bg-weiss p-5 md:p-6">

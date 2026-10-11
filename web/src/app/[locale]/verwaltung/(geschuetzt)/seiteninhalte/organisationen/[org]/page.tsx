@@ -33,7 +33,7 @@ export default async function OrganisationBearbeiten({ params }: PageProps<'/[lo
       </NextLink>
       <div>
         <p className="font-bold text-tinte-2">{KENNUNG[org]}</p>
-        <h1 lang="tr" className="text-30 md:text-36">
+        <h1 lang="tr" className="text-display-2">
           {name}
         </h1>
         <p className="text-tinte-2">{t('organisation.einleitung')}</p>

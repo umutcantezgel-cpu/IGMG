@@ -61,7 +61,7 @@ export default async function StartklarSeite() {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         <p className="max-w-3xl text-tinte-2">{t('einleitung')}</p>
       </div>
       <section
@@ -71,7 +71,7 @@ export default async function StartklarSeite() {
         <Zustandsgrafik art={ergebnis.startklar ? 'erfolg' : 'fehler'} className="self-center md:self-start" />
         <div className="flex min-w-0 flex-1 flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <h2 id="startklar-gesamt" className="text-30 md:text-36">
+            <h2 id="startklar-gesamt" className="text-display-2">
               {ergebnis.startklar ? t('gesamt.startklar') : t('gesamt.nochNicht')}
             </h2>
             <p className="text-18">{gesamtText}</p>

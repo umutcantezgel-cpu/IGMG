@@ -27,7 +27,7 @@ export default async function OrganisationenUebersicht() {
         {t('zurueckSeiteninhalte')}
       </NextLink>
       <div>
-        <h1 className="text-30 md:text-36">{t('uebersicht.titel')}</h1>
+        <h1 className="text-display-2">{t('uebersicht.titel')}</h1>
         <p className="text-tinte-2">{t('uebersicht.einleitung')}</p>
       </div>
       <ul className="grid gap-4 md:grid-cols-2">

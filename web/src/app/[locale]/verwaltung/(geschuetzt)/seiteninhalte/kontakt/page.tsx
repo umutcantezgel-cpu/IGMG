@@ -25,7 +25,7 @@ export default async function KontaktBearbeiten() {
         {t('zurueckSeiteninhalte')}
       </NextLink>
       <div>
-        <h1 className="text-30 md:text-36">{t('kontakt.titel')}</h1>
+        <h1 className="text-display-2">{t('kontakt.titel')}</h1>
         <p className="text-tinte-2">{t('kontakt.einleitung')}</p>
       </div>
       <Meldung art="info">{t('kontakt.wirkung')}</Meldung>

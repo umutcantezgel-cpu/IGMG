@@ -33,7 +33,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
   return (
     <>
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         {darfAnlegen ? (
           <Button asChild>
             <NextLink href="/verwaltung/veranstaltungen/neu">

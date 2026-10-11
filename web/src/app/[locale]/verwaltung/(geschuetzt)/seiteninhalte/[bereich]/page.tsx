@@ -47,7 +47,7 @@ export default async function SeiteninhaltBereich({ params }: PageProps<'/[local
       </NextLink>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex flex-col gap-2">
-          <h1 className="text-30 md:text-36">{t(`bereich.${bereich}`)}</h1>
+          <h1 className="text-display-2">{t(`bereich.${bereich}`)}</h1>
           <p className="flex flex-wrap items-center gap-2 text-tinte-2">
             <span className={cn(pille, stand.istBeispiel ? 'bg-warnung-toenung text-warnung' : 'bg-gruen-50 text-gruen-800')}>
               {stand.istBeispiel ? t('zustand.beispiel') : t('zustand.gepflegt')}

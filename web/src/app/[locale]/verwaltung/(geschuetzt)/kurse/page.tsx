@@ -28,7 +28,7 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
   return (
     <>
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         {darfBearbeiten ? (
           <Button asChild>
             <NextLink href="/verwaltung/kurse/neu">

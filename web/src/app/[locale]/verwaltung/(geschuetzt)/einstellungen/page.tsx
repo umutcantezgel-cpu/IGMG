@@ -16,7 +16,7 @@ export default async function Einstellungen() {
   ]);
   return (
     <>
-      <h1 className="text-30 md:text-36">{t('titel')}</h1>
+      <h1 className="text-display-2">{t('titel')}</h1>
       <section
         aria-labelledby="einstellungen-fristen"
         className="flex max-w-3xl flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6"

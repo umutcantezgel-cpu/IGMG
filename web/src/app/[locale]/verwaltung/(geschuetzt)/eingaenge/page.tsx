@@ -43,7 +43,7 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
       </div>
       {sp.geloescht === '1' ? <Meldung art="erfolg">{t('geloescht')}</Meldung> : null}

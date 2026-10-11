@@ -26,7 +26,7 @@ export default async function NeueNachricht() {
         {t('zurueck')}
       </NextLink>
       <div>
-        <h1 className="text-30 md:text-36">{t('neu')}</h1>
+        <h1 className="text-display-2">{t('neu')}</h1>
         <p className="text-tinte-2">{t('neuEinleitung')}</p>
       </div>
       <NeuigkeitsFormular

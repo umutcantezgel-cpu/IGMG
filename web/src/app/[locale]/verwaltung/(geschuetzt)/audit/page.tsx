@@ -91,7 +91,7 @@ export default async function AuditLogSeite({ searchParams }: PageProps<'/[local
   return (
     <>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('titel')}</h1>
+        <h1 className="text-display-2">{t('titel')}</h1>
         <p className="text-tinte-2">{t('einleitung')}</p>
       </div>
       <section aria-labelledby="audit-filter-titel" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6">

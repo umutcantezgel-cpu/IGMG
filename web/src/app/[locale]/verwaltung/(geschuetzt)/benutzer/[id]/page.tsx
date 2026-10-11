@@ -32,7 +32,7 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
         {t('detail.zurueck')}
       </NextLink>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{konto.name}</h1>
+        <h1 className="text-display-2">{konto.name}</h1>
         <p className="break-all text-tinte-2">{konto.email}</p>
         <p className="text-16 text-tinte-2">
           {t('detail.seit')} {datumLang(konto.erstelltAm, 'de')} ·{' '}

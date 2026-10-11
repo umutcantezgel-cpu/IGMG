@@ -31,7 +31,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
       </NextLink>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-30 md:text-36">{t('bearbeiten')}</h1>
+          <h1 className="text-display-2">{t('bearbeiten')}</h1>
           <p className="text-tinte-2">{k.titel.de}</p>
         </div>
         {k.status === 'veroeffentlicht' && !k.imPapierkorbSeit ? (

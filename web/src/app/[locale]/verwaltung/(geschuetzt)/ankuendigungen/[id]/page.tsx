@@ -31,7 +31,7 @@ export default async function AnkuendigungBearbeiten({ params, searchParams }: P
         {t('zurueck')}
       </NextLink>
       <div>
-        <h1 className="text-30 md:text-36">{t('bearbeiten')}</h1>
+        <h1 className="text-display-2">{t('bearbeiten')}</h1>
         <p className="text-tinte-2">{z.titel.de}</p>
       </div>
       {sp.angelegt ? <Meldung art="erfolg">{t('angelegt')}</Meldung> : null}

@@ -27,7 +27,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
     <>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="flex flex-col gap-2">
-          <h1 className="text-30 md:text-36">{t('titel')}</h1>
+          <h1 className="text-display-2">{t('titel')}</h1>
           <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
         </div>
         <div className="flex flex-wrap gap-4">

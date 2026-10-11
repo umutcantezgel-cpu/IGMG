@@ -38,7 +38,7 @@ export default async function VeranstaltungBearbeiten({ params, searchParams }: 
       </NextLink>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-30 md:text-36">{t('bearbeiten')}</h1>
+          <h1 className="text-display-2">{t('bearbeiten')}</h1>
           <p className="text-tinte-2">{z.titel.de}</p>
         </div>
         {z.status === 'veroeffentlicht' && !z.imPapierkorbSeit ? (

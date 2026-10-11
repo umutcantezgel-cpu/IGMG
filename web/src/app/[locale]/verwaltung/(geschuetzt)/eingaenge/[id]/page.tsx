@@ -44,7 +44,7 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
         {t('detail.zurueckZurListe')}
       </NextLink>
       <div className="flex flex-col gap-2">
-        <h1 className="text-30 md:text-36">{t('detail.titel', { datum: zeitpunkt(d.erstelltAm) })}</h1>
+        <h1 className="text-display-2">{t('detail.titel', { datum: zeitpunkt(d.erstelltAm) })}</h1>
         <p className="text-tinte-2">
           {t(`art.${d.art}`)}
           {d.bezugTitel ? ` · ${d.bezugTitel}` : ''} · {t(`status.${d.status}`)} · {t(`sprachen.${d.sprache}` as never)}
