@@ -25,15 +25,15 @@ KERN 1.0 (✓), PLAN (dieses Dokument), ABNAHME (Z-01–Z-12 mit Ausgangswerten)
 |---|---|---|---|---|---|
 | O-01 | Opus | Opus | Designsystem-Skalen (K-005), `dark:` neutral | `globals.css` | ✓ 6b15832 |
 | O-02 | Opus | Opus | Bewegungssystem (K-007), Seitenwechsel B-05 | `globals.css`, `Seitenrahmen.tsx`, `Header.tsx` | ✓ bis auf B-05-Nachweis |
-| O-03 | Opus | Opus | SVG-Formsystem: `Achtstern`, Achtstern-Trenner, `Zustandsgrafik.tsx`, Lade-Achtstern (B-12) | `Icons.tsx`, `website/Zustandsgrafik.tsx` | teilweise |
-| O-04 | Opus | Opus | Startseite mit Tagesbogen (B-06), alle Zustände | `page.tsx`, `website/start/*`, `lib/gebetszeiten/bogen.ts` | ✓ erste Fassung |
-| H-STYLE | Baumeister | Haiku | Styleguide-Spiegel der neuen Skalen, Abschnitte Bewegung/Ebenen | `verwaltung/styleguide/**`, Test | läuft |
+| O-03 | Opus | Opus | SVG-Formsystem: `Achtstern`, Achtstern-Trenner, `Zustandsgrafik.tsx`, Lade-Achtstern (B-12), Achtstern-Band | `Icons.tsx`, `website/Zustandsgrafik.tsx`, `Seitenkopf.tsx` | ✓ a7b7a66, c66465a |
+| O-04 | Opus | Opus | Startseite mit Tagesbogen (B-06), alle Zustände | `page.tsx`, `website/start/*`, `lib/gebetszeiten/bogen.ts` | ✓ 6b15832 … 1fe326e |
+| H-STYLE | Baumeister | Haiku | Styleguide-Spiegel der neuen Skalen, Abschnitte Bewegung/Ebenen | `verwaltung/styleguide/**`, Test | ✓ e8ced5f |
 | H-FIX1 | Baumeister | Haiku | iCal unabhängig von Prozess-TZ | `lib/termine/ical.ts`, Test | ✓ 65bcb4b |
 | H-FIX2 | – | – | `dark:` neutralisieren | – | ✓ in O-01 (`@custom-variant`) |
-| H-FIX3 | Baumeister | Haiku | Ganztagstermine an iCal übergeben (ML-08) | `server/queries/veranstaltungen.ts`, `server/ical/*`, Tests | offen |
+| H-FIX3 | Baumeister | Haiku | Ganztagstermine an iCal übergeben (ML-08) | `server/queries/veranstaltungen.ts`, `server/ical/*`, Tests | ✓ e6d900f |
 | H-V01 | Baumeister | Haiku | `.vercelignore` prüfen, ignore-Skript für ZWISCHENSTAND-Commits, regions/crons-Vorschlag | `web/scripts/vercel-ignore.mjs` (neu) | offen |
-| H-V03 | Baumeister | Haiku | `lib/umgebung.ts` (zod, SITE_MODE), `.env.example` vollständig, `geheimnisse:erzeugen`, Tests | `lib/umgebung.ts`, `scripts/geheimnisse-erzeugen.mjs`, `.env.example`, Tests | offen |
-| H-V06 | Baumeister | Haiku | Wartungsrouten GET + `Bearer CRON_SECRET` (POST + WARTUNG_TOKEN bleibt), `pg_try_advisory_lock`, Route `mail-ausgang`, Tests | `app/api/wartung/**`, `lib/wartung/**`, Tests | offen |
+| H-V03 (läuft) | Baumeister | Haiku | `lib/umgebung.ts` (zod, SITE_MODE), `.env.example` vollständig, `geheimnisse:erzeugen`, Tests | `lib/umgebung.ts`, `scripts/geheimnisse-erzeugen.mjs`, `.env.example`, Tests | offen |
+| H-V06 (läuft) | Baumeister | Haiku | Wartungsrouten GET + `Bearer CRON_SECRET` (POST + WARTUNG_TOKEN bleibt), `pg_try_advisory_lock`, Route `mail-ausgang`, Tests | `app/api/wartung/**`, `lib/wartung/**`, Tests | offen |
 | E2-TOR | Prüfer + Opus | Haiku/Opus | Stufe B Startseite, Sichtabnahme frischer Opus-Unteragent (≥ 8), Vorschau V-13 | – | offen |
 
 ### E3 Ausführung I
@@ -42,8 +42,8 @@ KERN 1.0 (✓), PLAN (dieses Dokument), ABNAHME (Z-01–Z-12 mit Ausgangswerten)
 | O-05 | Opus | Opus | ADR 0018/0019: `attachDatabasePool`, `vercel-build` mit/ohne DB, Migrationssperre, `instrumentation.ts` auf Vercel |
 | O-06 | Opus | Opus | ADR 0020: `BlobSpeicher`, Direkt-Upload, Bildvarianten 480/960/1600/2560, `MedienBild` srcset |
 | O-07 | Opus | Opus | `lib/startklar/pruefungen.ts` (Kernbibliothek, gemeinsam für Cockpit und CLI) |
-| O-08 | Opus | Opus | Momente: Weg der Gemeinde (B-07), Meilensteinlinie (B-08), Familie der vier (B-09) |
-| H-A01…A07 | Baumeister | Haiku | je eine Arbeitsansicht nach Referenz: Gebetszeiten, Veranstaltungen, Veranstaltungsdetail (+ Morph B-05), Nachrichten (+ Morph), Korankurse, Voranmeldung, Kontakt |
+| O-08 ✓ 280a76a, 80a7d47, 588472a | Opus | Opus | Momente: Weg der Gemeinde (B-07), Meilensteinlinie (B-08), Familie der vier (B-09) |
+| H-A01…A07 | Baumeister | Haiku | je eine Arbeitsansicht nach Referenz (`pakete/REFERENZ.md`): Gebetszeiten, Veranstaltungen (+ Ganztags-Anzeige statt „00:00 Uhr“, Befund H-FIX3), Veranstaltungsdetail (+ Morph B-05), Nachrichten (+ Morph, Überhang 390/768 aus E0), Korankurse, Voranmeldung, Kontakt |
 | H-S01 | Baumeister | Haiku | Cockpit-UI `/verwaltung/startklar` (Recht `einstellung.bearbeiten`, keine neue Aktion) |
 | H-S02 | Baumeister | Haiku | `pnpm startklar` (`web/scripts/startklar.ts`) und `pnpm release:check` (Bündel), Tests der Prüflogik |
 | E3-TOR | Prüfer + Opus | Haiku/Opus | Stufe B, Sichtabnahme, Vorschau |
