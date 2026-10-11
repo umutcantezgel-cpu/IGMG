@@ -31,6 +31,7 @@ async function alsTermine(liste: readonly VeranstaltungsDaten[], sprache: Locale
       url: `${basis}${getPathname({ href: { pathname: '/veranstaltungen/[slug]', params: { slug: v.slug } }, locale: sprache })}`,
       beginn,
       ende: dauer !== null ? new Date(beginn.getTime() + dauer) : null,
+      ganztaegig: v.ganztaegig,
       wiederholung: v.regel,
       ausnahmen: v.ausnahmen,
       aktualisiertAm: new Date(v.aktualisiertAm),

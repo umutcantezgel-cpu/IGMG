@@ -22,6 +22,8 @@ export type VeranstaltungsDaten = {
   /** nächstes Vorkommen (oder der einmalige Termin) */
   beginn: string;
   ende: string | null;
+  /** ganztägig: Beginn ist Mitternacht Ortszeit, iCal schreibt DATE-Werte (Spalte `ganztaegig`) */
+  ganztaegig: boolean;
   wiederholung: Wiederholungsart;
   regel: string | null;
   ausnahmen: string[];
@@ -56,6 +58,7 @@ function zuDaten(v: typeof schema.veranstaltung.$inferSelect, jetzt: Date, bilde
     ort: v.ort,
     beginn: vorkommen.beginn.toISOString(),
     ende: vorkommen.ende ? vorkommen.ende.toISOString() : null,
+    ganztaegig: v.ganztaegig,
     wiederholung: wiederholungsart(regel),
     regel: v.wiederholung,
     ausnahmen: v.ausnahmen,

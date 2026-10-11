@@ -229,3 +229,148 @@ describe('iCal: Ausgabe unabhängig von der Zeitzone des Prozesses (Vercel und d
     expect(process.env.TZ).toBe(vorher);
   });
 });
+
+describe('iCal: ganztägige Termine (DATE-Werte, DTEND exklusiv)', () => {
+  const STUNDE = 3_600_000;
+
+  it('einzelner ganztägiger Termin: DTSTART und DTEND als Datum, DTEND am Folgetag', () => {
+    const ics = erzeugeKalender(
+      'Test',
+      [{ uid: 'g1', titel: 'Ganztägig', beginn: berlin('2026-10-11T00:00'), ganztaegig: true }],
+      'example.test',
+    );
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261011\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261012\r?$/m);
+    expect(ics).not.toMatch(/^DTSTART;TZID=/m);
+    expect(ics).not.toMatch(/^DTEND;TZID=/m);
+  });
+
+  it('Gegenprobe: ohne Kennzeichen bleibt der Termin bei Uhrzeit und TZID', () => {
+    const ics = erzeugeKalender('Test', [{ uid: 'g0', titel: 'Mit Uhrzeit', beginn: berlin('2026-10-11T00:00') }], 'example.test');
+    expect(ics).toMatch(/^DTSTART;TZID=Europe\/Berlin:20261011T000000\r?$/m);
+    expect(ics).not.toMatch(/^DTSTART;VALUE=DATE:/m);
+  });
+
+  it('mehrtägiger ganztägiger Termin endet am Tagesbeginn nach dem letzten Tag', () => {
+    const ics = erzeugeKalender(
+      'Test',
+      [{ uid: 'g2', titel: 'Drei Tage', beginn: berlin('2026-10-16T00:00'), ende: berlin('2026-10-19T00:00'), ganztaegig: true }],
+      'example.test',
+    );
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261016\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261019\r?$/m);
+  });
+
+  it('ein Ende bis zwölf Stunden neben Mitternacht zählt als Tagesbeginn (Zeitumstellung am 25.10.)', () => {
+    const mitternacht = berlin('2026-10-26T00:00').getTime();
+    for (const ende of [new Date(mitternacht + STUNDE), new Date(mitternacht - STUNDE)]) {
+      const ics = erzeugeKalender(
+        'Test',
+        [{ uid: 'g3', titel: 'Über die Umstellung', beginn: berlin('2026-10-23T00:00'), ende, ganztaegig: true }],
+        'example.test',
+      );
+      expect(ics).toMatch(/^DTEND;VALUE=DATE:20261026\r?$/m);
+    }
+  });
+
+  it('ein Ende nicht nach dem Beginn ergibt genau einen Tag', () => {
+    const ics = erzeugeKalender(
+      'Test',
+      [{ uid: 'g4', titel: 'Ohne Dauer', beginn: berlin('2026-10-11T00:00'), ende: berlin('2026-10-11T00:00'), ganztaegig: true }],
+      'example.test',
+    );
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261011\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261012\r?$/m);
+  });
+
+  it('ganztägige Serie: DTSTART ohne Uhrzeit, UNTIL und EXDATE als Datum', () => {
+    const ics = erzeugeKalender(
+      'Test',
+      [
+        {
+          uid: 'gs',
+          titel: 'Samstags ganztägig',
+          beginn: berlin('2026-10-17T00:00'),
+          wiederholung: 'FREQ=WEEKLY;BYDAY=SA;UNTIL=20261219T235959',
+          ausnahmen: ['2026-10-24'],
+          ganztaegig: true,
+        },
+      ],
+      'example.test',
+    );
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261017\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261018\r?$/m);
+    expect(ics).toMatch(/^RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20261219\r?$/m);
+    expect(ics).toMatch(/^EXDATE;VALUE=DATE:20261024\r?$/m);
+    expect(ics).not.toMatch(/EXDATE;TZID=/);
+    expect(ics).not.toMatch(/UNTIL=\d{8}T/);
+  });
+
+  it('UNTIL mit UTC-Zeitpunkt wird auf das Ortszeit-Datum dieses Zeitpunkts gebracht', () => {
+    for (const [until, erwartet] of [
+      ['20261017T215959Z', '20261017'], // 23:59:59 MESZ am 17.10.
+      ['20261017T220000Z', '20261018'], // 00:00 MESZ am 18.10.
+    ]) {
+      const ics = erzeugeKalender(
+        'Test',
+        [
+          {
+            uid: 'gu',
+            titel: 'Serie',
+            beginn: berlin('2026-10-17T00:00'),
+            wiederholung: `FREQ=WEEKLY;BYDAY=SA;UNTIL=${until}`,
+            ganztaegig: true,
+          },
+        ],
+        'example.test',
+      );
+      expect(ics).toMatch(new RegExp(`^RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=${erwartet}\\r?$`, 'm'));
+    }
+  });
+});
+
+describe('iCal: ganztägige Termine unabhängig von der Zeitzone des Prozesses', () => {
+  const termine: IcalTermin[] = [
+    {
+      uid: 'ganz',
+      titel: 'Ganztägig',
+      beginn: berlin('2026-10-11T00:00'),
+      ganztaegig: true,
+      aktualisiertAm: new Date('2026-10-01T08:00:00Z'),
+    },
+    {
+      uid: 'mehr',
+      titel: 'Drei Tage',
+      beginn: berlin('2026-10-23T00:00'),
+      ende: berlin('2026-10-26T00:00'),
+      ganztaegig: true,
+    },
+    {
+      uid: 'serie',
+      titel: 'Samstags ganztägig',
+      beginn: berlin('2026-10-17T00:00'),
+      wiederholung: 'FREQ=WEEKLY;BYDAY=SA;UNTIL=20261219T235959',
+      ausnahmen: ['2026-10-24'],
+      ganztaegig: true,
+    },
+  ];
+
+  it('ergibt in jeder Zeitzone dieselbe Datei mit Datumswerten (auch in UTC und Pacific/Auckland)', () => {
+    const zonen = ['UTC', 'Europe/Berlin', 'America/New_York', 'Asia/Tokyo', 'Pacific/Auckland'];
+    const ergebnisse = zonen.map((zone) => kalenderUnterZeitzone(zone, termine));
+    expect(new Set(ergebnisse.map((e) => e.lokaleStunde)).size).toBe(zonen.length);
+
+    const [erste, ...weitere] = ergebnisse;
+    for (const e of weitere) expect(e.ics).toBe(erste.ics);
+
+    const ics = erste.ics;
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261011\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261012\r?$/m);
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261023\r?$/m);
+    expect(ics).toMatch(/^DTEND;VALUE=DATE:20261026\r?$/m);
+    expect(ics).toMatch(/^DTSTART;VALUE=DATE:20261017\r?$/m);
+    expect(ics).toMatch(/^RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20261219\r?$/m);
+    expect(ics).toMatch(/^EXDATE;VALUE=DATE:20261024\r?$/m);
+    expect(ics).toMatch(/^DTSTAMP:20261001T080000Z\r?$/m);
+  });
+});

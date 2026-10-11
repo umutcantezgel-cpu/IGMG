@@ -11,7 +11,7 @@ import { type Kuerzel, SLUG, STIL } from './stil';
 export function OrgKarte({ kuerzel, name, kurz, beschreibung }: { kuerzel: Kuerzel; name: string; kurz: string; beschreibung: string }) {
   const s = STIL[kuerzel];
   return (
-    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 transition-[box-shadow,border-color] hover:border-gruen-700 hover:shadow-s2">
+    <article className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
       <div aria-hidden className={cn('h-1.5', s.band)} />
       <div className={cn('flex flex-1 flex-col gap-3 p-6', s.tint)}>
         <span className={cn('flex self-start rounded-lg border-2 bg-weiss p-1.5', s.akzent)}>

@@ -2,11 +2,15 @@ import { TZDate } from '@date-fns/tz';
 import ical, { ICalCalendarMethod } from 'ical-generator';
 import { ZEITZONE, lokalesDatum, type TerminRegel } from './index';
 
+const STUNDE = 3_600_000;
+
 /**
  * iCal-Ausgabe (K-09): je Termin eine .ics-Datei und je Organisation ein Abo-Feed.
  * Zeiten mit TZID=Europe/Berlin und fester VTIMEZONE (MEZ/MESZ seit 1996 unverändert), damit
  * wiederkehrende Termine über den Sommerzeitwechsel ihre Uhrzeit behalten.
  * Die Ausgabe hängt nicht von der Zeitzone des Prozesses ab (Vercel und docker-compose laufen in UTC).
+ * Ganztägige Termine haben keine Uhrzeit: DTSTART und DTEND als DATE-Werte (DTEND am Folgetag, exklusiv),
+ * und ihre Serien tragen UNTIL und EXDATE ebenfalls als Datum (RFC 5545 3.3.10: gleicher Werttyp wie DTSTART).
  */
 const VTIMEZONE_BERLIN = [
   'BEGIN:VTIMEZONE',
@@ -60,11 +64,12 @@ export function erzeugeKalender(name: string, termine: readonly IcalTermin[], do
     method: ICalCalendarMethod.PUBLISH,
   });
   for (const t of termine) {
+    const ganztaegig = t.ganztaegig ?? false;
     const ereignis = kalender.createEvent({
       id: `${t.uid}@${domain}`,
       start: berlin(t.beginn),
-      end: t.ende ? berlin(t.ende) : undefined,
-      allDay: t.ganztaegig ?? false,
+      end: ganztaegig ? ganztaegigEnde(t.beginn, t.ende ?? null) : t.ende ? berlin(t.ende) : undefined,
+      allDay: ganztaegig,
       timezone: ZEITZONE,
       summary: t.titel,
       description: t.beschreibung,
@@ -73,12 +78,48 @@ export function erzeugeKalender(name: string, termine: readonly IcalTermin[], do
       lastModified: t.aktualisiertAm,
       stamp: t.aktualisiertAm ?? t.beginn,
     });
-    if (t.wiederholung) {
+    if (t.wiederholung && ganztaegig) {
+      ereignis.repeating(ganztaegigeSerie(t.wiederholung, t.ausnahmen ?? []));
+    } else if (t.wiederholung) {
       const ausnahmen = (t.ausnahmen ?? []).map((d) => `EXDATE;TZID=${ZEITZONE}:${d.replaceAll('-', '')}T${zeitTeil(t.beginn)}`);
       ereignis.repeating([`RRULE:${untilInUtc(t.wiederholung.replace(/^RRULE:/, ''))}`, ...ausnahmen].join('\r\n'));
     }
   }
   return mitZeitzone(kalender.toString());
+}
+
+/** Tagesbeginn (Mitternacht Ortszeit) des Tages von `zeitpunkt`, um `tage` Kalendertage verschoben. */
+function tagesbeginn(zeitpunkt: Date, tage = 0): TZDate {
+  const lokal = berlin(zeitpunkt);
+  return new TZDate(lokal.getFullYear(), lokal.getMonth(), lokal.getDate() + tage, 0, 0, 0, ZEITZONE);
+}
+
+/**
+ * DTEND eines ganztägigen Termins (exklusiv): der Tagesbeginn nach dem letzten Tag. Ohne Ende dauert der Termin
+ * einen Tag. Ein Ende bis zwölf Stunden neben einem Tagesbeginn zählt als dieser Tagesbeginn, damit eine
+ * Stunde Zeitumstellung zwischen Beginn und Ende keinen Tag verschiebt.
+ */
+function ganztaegigEnde(beginn: Date, ende: Date | null): TZDate {
+  const morgen = tagesbeginn(beginn, 1);
+  if (!ende) return morgen;
+  const tagDesEndes = tagesbeginn(new Date(ende.getTime() + 12 * STUNDE));
+  return tagDesEndes.getTime() > morgen.getTime() ? tagDesEndes : morgen;
+}
+
+/**
+ * Serie eines ganztägigen Termins: UNTIL und EXDATE als Datum (JJJJMMTT), passend zu DTSTART;VALUE=DATE.
+ * Ein UNTIL mit Uhrzeit in UTC wird auf das Ortszeit-Datum dieses Zeitpunkts gebracht.
+ */
+function ganztaegigeSerie(regel: string, ausnahmen: readonly string[]): string {
+  const rrule = regel.replace(/^RRULE:/, '').replace(/UNTIL=(\d{8})(?:T(\d{6})(Z)?)?/, (_t, datum: string, zeit?: string, utc?: string) => {
+    if (!zeit || !utc) return `UNTIL=${datum}`;
+    const zeitpunkt = new Date(
+      Date.UTC(+datum.slice(0, 4), +datum.slice(4, 6) - 1, +datum.slice(6, 8), +zeit.slice(0, 2), +zeit.slice(2, 4), +zeit.slice(4, 6)),
+    );
+    return `UNTIL=${lokalesDatum(zeitpunkt).replaceAll('-', '')}`;
+  });
+  const datumsAusnahmen = ausnahmen.map((d) => `EXDATE;VALUE=DATE:${d.replaceAll('-', '')}`);
+  return [`RRULE:${rrule}`, ...datumsAusnahmen].join('\r\n');
 }
 
 /**
