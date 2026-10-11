@@ -25,9 +25,18 @@
         "telefon": "Bitte geben Sie eine gültige Telefonnummer ein.",
         "zuLang": "Der Text ist zu lang.",
         "einwilligung": "Bitte bestätigen Sie die Einwilligung.",
-        "allgemein": "Das hat leider nicht geklappt. Bitte versuchen Sie es später erneut."
+        "allgemein": "Das hat leider nicht geklappt. Bitte versuchen Sie es später erneut.",
+        "datum": "Bitte geben Sie ein gültiges Datum ein.",
+        "plz": "Bitte geben Sie eine fünfstellige Postleitzahl ein."
       },
-      "erfolg": "Vielen Dank! Ihre Angaben sind angekommen. Sie erhalten eine Bestätigung per E-Mail."
+      "erfolg": "Vielen Dank! Ihre Angaben sind angekommen. Sie erhalten eine Bestätigung per E-Mail.",
+      "wizard": {
+        "fortschritt": "Fortschritt",
+        "schrittZeile": "Schritt {nr} von {anzahl}: {titel}",
+        "zurueck": "Zurück",
+        "weiter": "Weiter",
+        "erledigt": "(erledigt)"
+      }
     }
   },
   "tr": {
@@ -56,9 +65,18 @@
         "telefon": "Lütfen geçerli bir telefon numarası girin.",
         "zuLang": "Metin çok uzun.",
         "einwilligung": "Lütfen onayı işaretleyin.",
-        "allgemein": "Maalesef olmadı. Lütfen daha sonra tekrar deneyin."
+        "allgemein": "Maalesef olmadı. Lütfen daha sonra tekrar deneyin.",
+        "datum": "Lütfen geçerli bir tarih girin.",
+        "plz": "Lütfen beş haneli bir posta kodu girin."
       },
-      "erfolg": "Teşekkür ederiz! Bilgileriniz bize ulaştı. E-posta ile bir onay alacaksınız."
+      "erfolg": "Teşekkür ederiz! Bilgileriniz bize ulaştı. E-posta ile bir onay alacaksınız.",
+      "wizard": {
+        "fortschritt": "İlerleme",
+        "schrittZeile": "Adım {nr} / {anzahl}: {titel}",
+        "zurueck": "Geri",
+        "weiter": "İleri",
+        "erledigt": "(tamamlandı)"
+      }
     }
   },
   "en": {
@@ -87,9 +105,18 @@
         "telefon": "Please enter a valid phone number.",
         "zuLang": "The text is too long.",
         "einwilligung": "Please confirm your consent.",
-        "allgemein": "Sorry, that did not work. Please try again later."
+        "allgemein": "Sorry, that did not work. Please try again later.",
+        "datum": "Please enter a valid date.",
+        "plz": "Please enter a five-digit postal code."
       },
-      "erfolg": "Thank you! We have received your details. You will receive a confirmation by email."
+      "erfolg": "Thank you! We have received your details. You will receive a confirmation by email.",
+      "wizard": {
+        "fortschritt": "Progress",
+        "schrittZeile": "Step {nr} of {anzahl}: {titel}",
+        "zurueck": "Back",
+        "weiter": "Next",
+        "erledigt": "(completed)"
+      }
     }
   }
 }

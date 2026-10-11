@@ -109,7 +109,9 @@ export async function AnmeldeFormular({
       />
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
-      <SendenKnopf texte={{ senden: t('senden'), sendet: tf('sendet') }} />
+      <div className="self-start">
+        <SendenKnopf texte={{ senden: t('senden'), sendet: tf('sendet') }} />
+      </div>
     </>
   );
 }

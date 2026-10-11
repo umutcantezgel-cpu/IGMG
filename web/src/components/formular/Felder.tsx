@@ -37,7 +37,7 @@ function Rahmen({
   const beschreibung = [hinweis ? `${id}-hinweis` : null, fehler ? `${id}-fehler` : null].filter(Boolean).join(' ') || undefined;
   return (
     <div className={cn('flex flex-col gap-1.5', className)}>
-      <label htmlFor={id} className="font-bold">
+      <label htmlFor={id} className="text-16 font-bold">
         {label}
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
       </label>
@@ -169,6 +169,131 @@ export function FeldEinwilligung({
           ) : null}
         </label>
       </div>
+      {fehler ? <Fehler id={id} text={fehler} /> : null}
+    </div>
+  );
+}
+
+type Option = { wert: string; label: string; beschreibung?: string };
+
+/**
+ * Auswahl als Karten (FormWizard.dc.html: Radio und Mehrfachauswahl): `fieldset` mit `legend`, gewählte Karte grün
+ * (`has-checked`, ohne JavaScript). Radio: eine Wahl; Checkbox: mehrere Werte unter demselben Namen.
+ */
+export function FeldOptionen({
+  name,
+  label,
+  typ,
+  optionen,
+  wert,
+  hinweis,
+  fehler,
+  pflicht,
+  spaltenMin = 'sm:grid-cols-[repeat(auto-fit,minmax(220px,1fr))]',
+}: {
+  name: string;
+  label: ReactNode;
+  typ: 'radio' | 'checkbox';
+  optionen: Option[];
+  wert?: string | string[];
+  hinweis?: ReactNode;
+  fehler?: string;
+  pflicht?: string;
+  /** Tailwind-Klasse für die Spaltenbreite der Karten */
+  spaltenMin?: string;
+}) {
+  const id = feldId(name);
+  const gewaehlt = new Set(Array.isArray(wert) ? wert : wert ? [wert] : []);
+  const beschreibung = [hinweis ? `${id}-hinweis` : null, fehler ? `${id}-fehler` : null].filter(Boolean).join(' ') || undefined;
+  return (
+    <fieldset
+      aria-describedby={beschreibung}
+      aria-invalid={fehler ? true : undefined}
+      className="m-0 flex min-w-0 flex-col gap-2 border-0 p-0"
+    >
+      <legend className="mb-2 p-0 text-16 font-bold">
+        {label}
+        {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
+      </legend>
+      {hinweis ? (
+        <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
+          {hinweis}
+        </p>
+      ) : null}
+      <div className={cn('grid gap-2', spaltenMin)}>
+        {optionen.map((o, i) => (
+          <label
+            key={o.wert}
+            className={cn(
+              'flex min-h-14 cursor-pointer items-start gap-3 rounded-md border bg-weiss px-3.5 py-3 has-checked:border-2 has-checked:border-gruen-700 has-checked:bg-gruen-50',
+              fehler ? 'border-2 border-fehler' : 'border-rand',
+            )}
+          >
+            <input
+              id={i === 0 ? id : undefined}
+              type={typ}
+              name={name}
+              value={o.wert}
+              defaultChecked={gewaehlt.has(o.wert)}
+              className="mt-0.5 size-[22px] shrink-0 accent-gruen-700"
+            />
+            <span className="flex flex-col leading-snug">
+              <strong>{o.label}</strong>
+              {o.beschreibung ? <span className="text-16 text-tinte-2">{o.beschreibung}</span> : null}
+            </span>
+          </label>
+        ))}
+      </div>
+      {fehler ? <Fehler id={id} text={fehler} /> : null}
+    </fieldset>
+  );
+}
+
+/** Einzelnes Häkchen als Karte (FormWizard.dc.html „isCheck“), z. B. Newsletter oder Einwilligung mit Erläuterung. */
+export function FeldHaken({
+  name,
+  label,
+  beschreibung,
+  wert,
+  fehler,
+  pflicht,
+}: {
+  name: string;
+  label: ReactNode;
+  beschreibung?: ReactNode;
+  wert?: boolean;
+  fehler?: string;
+  pflicht?: string;
+}) {
+  const id = feldId(name);
+  return (
+    <div className="flex flex-col gap-2">
+      <label
+        htmlFor={id}
+        className={cn(
+          'flex min-h-14 cursor-pointer items-start gap-3 rounded-md border bg-weiss px-3.5 py-3 has-checked:bg-gruen-50',
+          fehler ? 'border-2 border-fehler' : 'border-rand',
+        )}
+      >
+        <input
+          id={id}
+          type="checkbox"
+          name={name}
+          value="ja"
+          defaultChecked={wert}
+          required={Boolean(pflicht)}
+          aria-invalid={fehler ? true : undefined}
+          aria-describedby={fehler ? `${id}-fehler` : undefined}
+          className="mt-0.5 size-[22px] shrink-0 accent-gruen-700"
+        />
+        <span className="flex flex-col leading-normal">
+          <span>
+            {label}
+            {pflicht ? <span className="text-tinte-2"> {pflicht}</span> : null}
+          </span>
+          {beschreibung ? <span className="text-16 text-tinte-2">{beschreibung}</span> : null}
+        </span>
+      </label>
       {fehler ? <Fehler id={id} text={fehler} /> : null}
     </div>
   );

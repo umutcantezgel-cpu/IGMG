@@ -79,6 +79,16 @@ Beispiel: Veranstaltungsanmeldung – Felder `src/components/website/veranstaltu
 - Einwilligungstext wörtlich aus `messages` (die Textversion ist sein SHA-256); Link zur Datenschutzerklärung.
 - Tests: Integration mit echter ALTCHA-Lösung (`solveChallenge` + `deriveKey` aus `altcha-lib`), Zähler der Ratenbegrenzung je Test leeren (`beforeEach`), Fälle Erfolg/Honigtopf/ALTCHA fehlt/wiederverwendet/Zod/Rate/Versand; E2E im Browser unter Produktions-CSP mit Fehler → zweitem Versuch **ohne** Neuladen, Mails in Mailpit (`/api/v1/search?query=to:"…"`), axe auf dem Formular im Fehlerzustand.
 
+## 6b Mehrstufiges Formular (FormWizard)
+
+Beispiel: Schüler-Voranmeldung – `src/components/website/formulare/VoranmeldungFormular.tsx`, `src/server/actions/formulare/voranmeldung.tsx`, `src/lib/validierung/formulare/voranmeldung.ts` (Schema + `…_SCHRITTE`), Seite `…/bildung/voranmeldung/page.tsx`, Tests `tests/unit/formular-wizard.test.ts`, `tests/integration/formular-voranmeldung.test.ts`, `tests/e2e/formular-voranmeldung.spec.ts`.
+
+- Schema exportiert zusätzlich die Feldnamen je Schritt (`as const satisfies readonly (readonly (keyof T)[])[]`).
+- Formular-Komponente rendert `<FormWizard sprache aktuell ergebnis felder sendenText altcha schritte={[{ titel, gruppen: [{ titel, hinweis?, inhalt }] }]} />`; Felder in `inhalt` mit `className="col-span-full"` für volle Breite; Auswahl als Karten mit `FeldOptionen` (radio/checkbox), einzelne Häkchen mit `FeldHaken`.
+- Action: zuerst `wizardSchritt(fd, schema, SCHRITTE, mehrfach)` aus `src/lib/formulare/wizard.ts` – bei `art: 'schritt'` nur die Ansicht des (nächsten) Schritts zurückgeben (`status: 'schritt' | 'fehler'`, **kein** Speichern, keine Ratenbegrenzung, kein ALTCHA); bei `absenden` wie 6a `verarbeiteFormular`, Fehler → `schritt={schrittMitFehler(feldFehler, SCHRITTE)}`.
+- Feldübergreifende Regeln (`refine`) brauchen `{ when: wennGueltig('feldA', 'feldB') }`: Zod 4 überspringt Refinements, solange irgendein Feld ungültig ist – und spätere Schritte sind anfangs leer.
+- E2E: Fehler-Zusammenfassung mit Fokus, Eingabetaste geht weiter, Zurück behält Werte, ALTCHA erst im letzten Schritt.
+
 ## 7 Verwaltungsmodul
 
 Beispiel: Veranstaltungen (`src/app/[locale]/verwaltung/(geschuetzt)/veranstaltungen/**`)

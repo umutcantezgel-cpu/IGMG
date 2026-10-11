@@ -80,16 +80,14 @@ export async function verarbeiteFormular<S extends z.ZodType>(o: {
       .returning({ id: schema.eingang.id });
     const einwilligungen = o.einwilligungen(daten);
     if (einwilligungen.length)
-      await tx
-        .insert(schema.einwilligung)
-        .values(
-          einwilligungen.map((e) => ({
-            eingangId: eingang.id,
-            textSchluessel: e.schluessel,
-            textVersion: sha256(e.text),
-            sprache: o.sprache,
-          })),
-        );
+      await tx.insert(schema.einwilligung).values(
+        einwilligungen.map((e) => ({
+          eingangId: eingang.id,
+          textSchluessel: e.schluessel,
+          textVersion: sha256(e.text),
+          sprache: o.sprache,
+        })),
+      );
     const mails = o.mails(daten, eingang.id);
     if (mails.length)
       await tx.insert(schema.mailAusgang).values(

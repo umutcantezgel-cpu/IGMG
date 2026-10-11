@@ -17,5 +17,6 @@ export async function ladeSeiteninhalt<B extends SeitenBereich>(bereich: B): Pro
   const zod = SEITENINHALT[bereich];
   const geprueft = zod.safeParse(zeile?.inhalt ?? {});
   const daten = geprueft.success ? geprueft.data : zod.parse({});
-  return { ...daten, istBeispiel: zeile ? zeile.istBeispiel : true } as SeitenInhalt<B>;
+  // `SEITENINHALT[bereich]` ist für TypeScript die Union aller Bereiche; die Zuordnung Bereich → Schema stimmt per Konstruktion
+  return { ...daten, istBeispiel: zeile ? zeile.istBeispiel : true } as unknown as SeitenInhalt<B>;
 }

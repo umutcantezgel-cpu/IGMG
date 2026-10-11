@@ -17,7 +17,8 @@ export const LEER: FormularErgebnis = { status: 'leer' };
  * `fehler`/`feldFehler` sind Schlüssel (für Tests und Protokoll), die Werte stecken nur in `ansicht`.
  */
 export type FormularAntwort = {
-  status: 'erfolg' | 'fehler';
+  /** „schritt“: FormWizard wechselt ohne Fehler in einen anderen Schritt */
+  status: 'erfolg' | 'fehler' | 'schritt';
   fehler?: string;
   feldFehler?: Record<string, string>;
   ansicht: ReactNode;

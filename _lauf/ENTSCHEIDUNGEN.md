@@ -97,3 +97,6 @@ Damit Baumeister gleichzeitig arbeiten, ohne gemeinsame Dateien zu ändern, hat 
 
 **E-028 · 2026-10-11 · Öffentliche Formulare: Ansicht vom Server, kleine Client-Insel**
 Felder, Fehler und Erfolgsmeldung rendert der Server; die Action liefert die nächste Ansicht mit (`FormularAntwort.ansicht`), im Browser bleiben `FormularInsel`, `SendenKnopf` und das nachgeladene ALTCHA. Gemessen auf der Veranstaltungsdetailseite: 182,5 → 178,7 kB JS (Budget 180). ALTCHA über `altcha/external` mit eigenem Worker (CSP `worker-src 'self'`), nach jeder Fehlerantwort neu gelöst. Die Insel bleibt beim Neurendern der Seite an ihrem Platz (Erfolgsmeldung bleibt sichtbar, wenn die Anmeldung den letzten Platz belegt). Zod nur auf dem Server. ADR 0005 Nachtrag; Muster: `web/docs/MUSTER.md` 6a.
+
+**E-029 · 2026-10-11 · FormWizard ohne Client-Logik (B01)**
+Schritte stehen alle im Formular (nicht sichtbare mit `hidden`), „Weiter“/„Zurück“ sind Absende-Knöpfe; `wizardSchritt()` prüft auf dem Server mit dem ganzen Schema nur die Felder des aktuellen Schritts, die Action rendert den nächsten Schritt (E-028). Schrittprüfungen speichern nichts und zählen nicht gegen die Ratenbegrenzung; ALTCHA nur im letzten Schritt. Ein unsichtbarer erster „Weiter“-Knopf sorgt dafür, dass die Eingabetaste vorwärts geht. Abweichungen A-C12a–d; Muster 6b. Insel der Voranmeldung: 1,8 kB.

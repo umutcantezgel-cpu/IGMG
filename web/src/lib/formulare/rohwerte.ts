@@ -1,8 +1,11 @@
+/** Felder, die nie zu den Formulardaten gehören: Schutzfelder und Steuerfelder des FormWizard. */
+const INTERN = new Set(['website', 'altcha', 'schritt', 'richtung']);
+
 /** FormData → Rohobjekt für Zod (Mehrfachfelder als Liste; Schutzfelder und interne Felder ausgenommen). */
 export function rohwerte(fd: FormData, mehrfach: readonly string[] = []): Record<string, unknown> {
   const roh: Record<string, unknown> = {};
   for (const [k, v] of fd.entries()) {
-    if (typeof v !== 'string' || k.startsWith('$ACTION') || k === 'website' || k === 'altcha') continue;
+    if (typeof v !== 'string' || k.startsWith('$ACTION') || INTERN.has(k)) continue;
     if (mehrfach.includes(k)) (roh[k] = (roh[k] as string[] | undefined) ?? []).push(v);
     else roh[k] = v;
   }

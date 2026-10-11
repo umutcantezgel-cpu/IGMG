@@ -16,6 +16,7 @@ import organisationen from './organisationen.json';
 import projekte from './projekte.json';
 import rechtliches from './rechtliches.json';
 import ueberUns from './ueber-uns.json';
+import voranmeldung from './voranmeldung.json';
 import vorstand from './vorstand.json';
 import wissen from './wissen.json';
 
@@ -36,6 +37,7 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   projekte,
   rechtliches,
   'ueber-uns': ueberUns,
+  voranmeldung,
   vorstand,
   wissen,
 };

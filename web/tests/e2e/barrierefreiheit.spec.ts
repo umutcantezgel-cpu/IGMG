@@ -31,6 +31,7 @@ const ROUTEN: Route[] = [
     pfad: { de: '/veranstaltungen/[slug]', tr: '/tr/etkinlikler/[slug]', en: '/en/events/[slug]' },
     slugAus: 'Veranstaltungen',
   },
+  { name: 'Schüler-Voranmeldung', pfad: { de: '/bildung/voranmeldung', tr: '/tr/egitim/on-kayit', en: '/en/education/pre-registration' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

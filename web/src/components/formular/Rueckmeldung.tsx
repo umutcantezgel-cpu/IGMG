@@ -2,8 +2,8 @@ import { CircleAlert, CircleCheck } from 'lucide-react';
 import { feldId } from './Felder';
 
 /**
- * Rückmeldung nach dem Absenden (K-07), auf dem Server gerendert (E-028): Fehler-Zusammenfassung mit
- * Sprungverweisen bzw. Erfolg. `data-fokus` – `FormularInsel` setzt den Fokus nach jeder Antwort dorthin.
+ * Rückmeldung nach dem Absenden (K-07, FormWizard.dc.html), auf dem Server gerendert (E-028): Fehler-Zusammenfassung
+ * mit Sprungverweisen bzw. Erfolg. `data-fokus` – `FormularInsel` setzt den Fokus nach jeder Antwort dorthin.
  * `felder` ordnet Feldnamen ihre Beschriftung zu, `texte.fehler` übersetzt Fehlerschlüssel.
  */
 export function FehlerZusammenfassung({
@@ -23,27 +23,31 @@ export function FehlerZusammenfassung({
       data-fokus
       tabIndex={-1}
       role="alert"
-      className="flex flex-col gap-2 rounded-md border border-fehler bg-fehler-toenung px-4 py-3 text-fehler outline-none"
+      className="flex items-start gap-3 rounded-lg border-2 border-fehler bg-fehler-toenung px-5 py-4 outline-none"
     >
-      <p className="flex items-start gap-2 font-bold">
-        <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />
-        {texte.fehler[fehler] ?? texte.zusammenfassung}
-      </p>
-      {liste.length ? (
-        <ul className="list-disc pl-7">
-          {liste.map(([feld, schluessel]) => (
-            <li key={feld}>
-              <a href={`#${feldId(feld)}`} className="text-fehler underline">
-                {felder[feld] ?? feld}: {texte.fehler[schluessel] ?? texte.fehler.ungueltig}
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      <CircleAlert aria-hidden className="mt-0.5 size-6 shrink-0 text-fehler" />
+      <div className="flex flex-col gap-1">
+        <p className="font-bold text-fehler">{texte.fehler[fehler] ?? texte.zusammenfassung}</p>
+        {liste.length ? (
+          <ul className="list-disc pl-5 text-16">
+            {liste.map(([feld, schluessel]) => {
+              const name = feld.split('.')[0];
+              return (
+                <li key={feld}>
+                  <a href={`#${feldId(name)}`} className="text-tinte underline">
+                    {felder[name] ?? name}: {texte.fehler[schluessel] ?? texte.fehler.ungueltig}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        ) : null}
+      </div>
     </div>
   );
 }
 
+/** Kurze Erfolgsmeldung (einstufige Formulare, z. B. Veranstaltungsanmeldung in der Seitenspalte). */
 export function Erfolg({ text }: { text: string }) {
   return (
     <div
@@ -55,5 +59,66 @@ export function Erfolg({ text }: { text: string }) {
       <CircleCheck aria-hidden className="mt-0.5 size-5 shrink-0" />
       <p>{text}</p>
     </div>
+  );
+}
+
+/**
+ * Erfolgsansicht mehrstufiger Formulare (FormWizard.dc.html:16–24): Rahmen grün, Symbol, Überschrift, Text,
+ * optional „So geht es weiter“ und Verweise (erster gefüllt, weitere umrandet).
+ */
+export function ErfolgsAnsicht({
+  titel,
+  text,
+  weiter,
+  verweise = [],
+}: {
+  titel: string;
+  text: string;
+  weiter?: { titel: string; schritte: string[] };
+  verweise?: { href: string; label: string }[];
+}) {
+  return (
+    <section
+      data-fokus
+      tabIndex={-1}
+      role="status"
+      aria-labelledby="formular-erfolg"
+      className="flex flex-col items-start gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6 outline-none md:p-12"
+    >
+      <span className="flex size-16 items-center justify-center rounded-pill bg-gruen-50 text-gruen-700">
+        <CircleCheck aria-hidden className="size-9" />
+      </span>
+      <h2 id="formular-erfolg" className="text-30 text-gruen-800 md:text-36">
+        {titel}
+      </h2>
+      <p className="max-w-[62ch] text-20">{text}</p>
+      {weiter ? (
+        <div className="max-w-[62ch] rounded-md bg-sand px-5 py-4">
+          <h3 className="mb-2 font-text text-18 font-bold tracking-normal">{weiter.titel}</h3>
+          <ol className="flex list-decimal flex-col gap-1 pl-6">
+            {weiter.schritte.map((s) => (
+              <li key={s}>{s}</li>
+            ))}
+          </ol>
+        </div>
+      ) : null}
+      {verweise.length ? (
+        <div className="flex flex-wrap gap-3">
+          {verweise.map((v, i) => (
+            <a
+              key={v.href}
+              href={v.href}
+              className={
+                i === 0
+                  ? 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-gruen-700 px-5 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss'
+                  : 'inline-flex min-h-12 items-center rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800'
+              }
+            >
+              {v.label}
+            </a>
+          ))}
+        </div>
+      ) : null}
+    </section>
   );
 }
