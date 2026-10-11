@@ -31,6 +31,9 @@ const nextConfig: NextConfig = {
     ],
     remotePatterns: [],
     formats: ['image/avif', 'image/webp'],
+    // Vercel (Services-Modus, BETRIEB.md 9) bindet /_next/image nicht an – die Anfrage landet in der App und endet
+    // mit 404, Logos und Bilder fehlen. Dort direkt ausliefern; Medien sind beim Hochladen bereits verkleinert (ADR 0007).
+    unoptimized: process.env.VERCEL === '1',
   },
   turbopack: {
     rules: {
