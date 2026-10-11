@@ -84,3 +84,14 @@ Herkunft: L = Laufbuch des Designs (`00 Laufbuch.dc.html`), O = Orchestrator.
 | Nr. | Dr. | Frage | Standardannahme | Antwort |
 |---|---|---|---|---|
 | M-060 | B | Lizenz-Ausnahmen gegenüber G-09 (nur MIT, Apache-2.0, BSD, ISC, MPL-2.0): nodemailer (MIT-0), sharp/libvips-Binärpakete (LGPL-3.0, optional über Next.js für Bildoptimierung), Schriften (SIL OFL 1.1). Einverstanden? | Ja, mit Begründung in ADR 0001 und LIZENZEN.md; Alternative für sharp: Bildoptimierung abschalten. | |
+
+## 6 Gebetszeiten und Quran (aus ADR 0008/0009)
+
+| Nr. | Dr. | Frage | Standardannahme | Antwort |
+|---|---|---|---|---|
+| M-017a | A | Imsak-Definition (Ramadan): Fajr bei 18° ohne Temkin oder mit Temkin-Minuten (Kalender mit Temkin zeigen Imsak ca. 20 min früher)? | Imsak = Fajr 18° ohne Temkin, sichtbar „berechnet“. | |
+| M-017b | B | Die adhan-Methode „Turkey“ enthält feste Anpassungen (Sonnenaufgang −7, Dhuhr +5, Asr +4, Maghrib +7 min), Herkunft unbelegt. Beibehalten? | Beibehalten bis zur Klärung. Empfehlung: IGMG (app@igmg.org) nach Methode und Erlaubnis für den Gebetskalender Wetzlar fragen. | |
+| M-017c | B | Qibla: Berechnet 128,3° für Wetzlar; der Bestand nannte 136°. Bestätigen. | 128,3° (berechnet). | |
+| M-036 | A | Quran-Text: Tanzil Project (tanzil.net) erlaubt unveränderte Wiedergabe mit Quellenangabe; Download nur nach Zustimmung zu den Nutzungsbedingungen. Bitte zustimmen, Datei (Uthmani, Version 1.1) herunterladen, nach `web/daten/quran/` legen und den SHA-256-Wert hier eintragen. | Bis dahin Platzhalter auf allen Surenseiten. | |
+| M-036b | A | Übersetzungen (de/tr/en): Tanzil-Übersetzungen sind nur nicht-kommerziell freigegeben. Welche Übersetzung mit welcher Erlaubnis? Gemeinfreie Ausgaben (z. B. Elmalılı Hamdi Yazır, Pickthall) möglich. | Platzhalter `[Koranvers – Text von der Gemeinde]`. | |
+| M-036c | C | Rezitations-Audio: Quelle mit Erlaubnis? | Kein Audio, Platzhalter-Zustand des Designs. | |

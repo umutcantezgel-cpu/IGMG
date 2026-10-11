@@ -46,3 +46,6 @@ Welle D verlangt eine Suche (ADR 0013), K-15 eine Offline-Seite; beide Adressen 
 
 **E-013 · 2026-10-11 · ADRs 0002–0007, 0010–0016 angenommen (P1)**
 Mehrsprachige Inhalte als JSONB (0002), eigene Rollentabelle statt Better-Auth-Organisationen (0003), Caching-Grenzen (0004), ein verschlüsseltes Eingangsmodul (0005), Tiptap-JSON (0006), Speicher-Adapter (0007), Push-Schutz (0010), Mailpit/Datei-Transport (0011), getrennte CSP öffentlich/Verwaltung (0012), PostgreSQL-Volltext (0013), lokale Schriftdateien (0014), Seeds mit Kennzeichnung (0015), Verwaltung nur Deutsch (0016). 0008 und 0009 folgen nach der Quellenrecherche.
+
+**E-014 · 2026-10-11 · ADR 0008 (Gebetszeiten) und 0009 (Quran) angenommen**
+Gebetszeiten: Import verbindlich, bis dahin adhan „Turkey“, Shafi, SeventhOfTheNight, Imsak = Fajr, sichtbar „berechnet“, Qibla ≈ 128,3°. Quran: Tanzil-Text nur nach menschlicher Zustimmung zu den Nutzungsbedingungen (M-036) per Import-Skript; bis dahin Platzhalter. Der Al-Fatiha-Text aus dem Bestand wird nicht verwendet (keine Quellenangabe, G-06).

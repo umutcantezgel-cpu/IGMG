@@ -6,17 +6,17 @@ Kopf: Rolle Kundschafter · Kern-Version 1.0 · Stand 2026-10-11 · Umfang ein S
 Über uns (Artboard 04.1, B:160). Datei: AboutUs.dc.html. Code-Ziel: AboutUs.tsx (B:160). Gemeinsame Teile Header, PrayerTimesBar, Breadcrumbs, PageHeader, Footer und Icon haben eigene Blätter und sind hier nur mit gesetzten Eigenschaften genannt.
 
 ## ROUTE
-de: /ueber-uns (ohne Präfix). tr: /tr/[lokalisierter Pfad offen]. en: /en/[lokalisierter Pfad offen]. Die lokalisierten Pfade stehen in keiner Quelle (siehe OFFENE FRAGEN).
+de: /ueber-uns (ohne Präfix, K-03). tr: /tr/[lokalisierter Pfad offen]. en: /en/[lokalisierter Pfad offen]. Die lokalisierten Pfade stehen in keiner Quelle (siehe OFFENE FRAGEN).
 
 ## QUELLEN
 - D = design/AboutUs.dc.html, vollständig gelesen (Template D:9–86, Skript mit renderVals D:87–107). Zahlen sind Zeilen.
 - T = bestand AboutUs.tsx, vollständig gelesen.
-- L = bestand LanguageContext.tsx, Namensraum aboutUs: de 209–268, tr 467–526, en 725–785. Schrägstrich-Zahlen sind de/tr/en. Zusätzlich header.mosque (22/280/538 Titel, 23/281/539 about) und hero (98/356/614 learnMore).
+- L = bestand LanguageContext.tsx, Namensraum aboutUs: de 209–268, tr 467–526, en 725–784. Schrägstrich-Zahlen sind de/tr/en. Zusätzlich header.mosque (22/280/538 Titel, 23/281/539 about) und hero (98/356/614 learnMore).
 - W = design/readme.md. B = design/00 Laufbuch.dc.html. BM = design/BoardMembers.dc.html. BMT = bestand BoardMembers.tsx (nur Zeilen 30 und 307).
 - Kopie uploads/IGMG_Wetzlar_Website_Code: AboutUs.tsx und LanguageContext.tsx sind identisch (diff geprüft).
 
 ## ZWECK
-Über-uns-Seite der IGMG Fatih Camii Wetzlar: Geschichte der Standorte, Gemeinschaftsbild, vier Werte und ein Aufruf zur Teilnahme mit Links zu Kontakt und Vorstand. Besucher geben nichts ein.
+Über-uns-Seite der IGMG Fatih Camii Wetzlar: Geschichte der Standorte, Gemeinschaftsbild, vier Werte und ein Aufruf zur Teilnahme mit Links zu Kontakt und Vorstand. Besucher geben nichts ein (D:9–86 ohne Eingabefelder, abgeleitet).
 
 ## ABSCHNITTE
 Aufbau nach D-Zeilen:
