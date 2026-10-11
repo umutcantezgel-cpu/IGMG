@@ -57,7 +57,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** VERCEL.md, Abschnitt 3.
   - **Aufwand:** 10 Minuten im Dashboard.
   - **Wer:** Technik.
-  - **Blocker [Code fehlt]:** Die App kennt `SPEICHER=blob` noch nicht (`web/src/lib/storage/index.ts`). Ohne den Adapter ist der Medienupload auf Vercel nicht betriebsbereit.
+  - **Code:** vorhanden (`SPEICHER=blob`, `web/src/lib/storage/index.ts`, ADR 0020). Bilder über 4 MB verkleinert der Browser vor dem Hochladen.
   - **Das siehst du, wenn es geklappt hat:** Ein Testbild lässt sich in der Vorschau über die Verwaltung hochladen und erscheint auf der Seite.
 
 - [ ] **B3 · Umgebungsvariablen für Produktion und Vorschau**
@@ -83,31 +83,25 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** `vercel.json` (Abschnitt `crons`) und Vercel › Projekt › Cron Jobs **[prüfen]**.
   - **Aufwand:** 15 Minuten.
   - **Wer:** Technik.
-  - **Blocker [Code fehlt]:** `vercel.json` hat noch keine Crons (Auftrag V-06).
+  - **Code:** vorhanden (`vercel.json` › `crons`: Löschfristen 01:00 UTC, Mail-Ausgang 02:00 UTC). Nötig ist nur `CRON_SECRET` in Production.
   - **Das siehst du, wenn es geklappt hat:** Die Löschfristen und der Mail-Ausgang laufen täglich. Die Antwort der Löschroute nennt die Anzahl gelöschter Einträge (`web/docs/BETRIEB.md` § 4).
 
 - [ ] **B7 · Bau nach ADR 0019 eingeschaltet**
   - **Ort:** `web/package.json`, Zeile 8 (`vercel-build`).
   - **Aufwand:** 5 Minuten, plus Prüfung.
   - **Wer:** Technik.
-  - **Stand:** `scripts/vercel-bau.mjs` ist vorhanden. `vercel-build` zeigt noch auf die alte Zeile (`web/package.json`).
+  - **Stand:** eingeschaltet (`vercel-build` → `scripts/vercel-bau.mjs`).
   - **Das siehst du, wenn es geklappt hat:** Im Build-Protokoll steht `[bau] Datenbank vorhanden`, und die Migration läuft unter Sperre.
 
 ## C. Inhalte und Recht
 
 - [ ] **C1 · Hinweisfenster „Alle angezeigten Daten sind fiktiv“ abschalten (ML-03)**
-  - **Ort:** Neon-Konsole › Zweig Produktion › SQL-Editor **[prüfen]**. Die Verwaltung hat dafür heute noch **keinen Schalter**.
+  - **Ort:** Verwaltung › Startklar-Cockpit (`/verwaltung/startklar`), Zeile „Hinweis ‚Konzept-Website‘“ › „Hinweis ausschalten“ (nur Administration).
   - **Aufwand:** 5 Minuten.
   - **Wer:** Technik.
   - **Was passiert:** Das Fenster wird nur angezeigt, wenn der Wert `konzepthinweis` in der Zeile `allgemein` auf `true` steht (`web/src/components/website/Seitenrahmen.tsx` Zeilen 52 und 72; `web/src/lib/validierung/einstellungen.ts` Zeile 37). Die Werte stehen in der Tabelle `einstellung` (`web/src/lib/db/schema/system.ts` Zeilen 24–28).
-  - **Befehl:**
-    ```sql
-    UPDATE einstellung
-    SET wert = jsonb_set(wert, '{konzepthinweis}', 'false'::jsonb)
-    WHERE schluessel = 'allgemein';
-    ```
-  - **Vorher prüfen [prüfen]:** Gibt es die Zeile `allgemein`? Die Spaltennamen in Neon nachsehen.
-  - **Das siehst du, wenn es geklappt hat:** Beim ersten Besuch der Startseite erscheint kein Fenster. Nach der Annahme in MENSCHEN.md (ML-03) soll das Startklar-Cockpit den Punkt melden, sobald es existiert.
+  - **Ersatzweg ohne Verwaltung (Notfall):** in der Neon-Konsole `UPDATE einstellung SET wert = jsonb_set(wert, '{konzepthinweis}', 'false'::jsonb) WHERE schluessel = 'allgemein';`
+  - **Das siehst du, wenn es geklappt hat:** Beim ersten Besuch der Startseite erscheint kein Fenster, und das Cockpit zeigt den Punkt als erledigt.
 
 - [ ] **C2 · Platzhalter in den Rechtstexten gefüllt**
   - **Ort:** Verwaltung › Seiteninhalte › Impressum und Datenschutz **[prüfen]**.

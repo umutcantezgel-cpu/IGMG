@@ -40,21 +40,20 @@ Bitte keine Geheimnisse in Chats, E-Mails, Screenshots oder ins Repository kopie
 
 Die Zeiten sind Schätzungen **[prüfen: beim ersten Durchgang messen]**.
 
-## Stand: Was im Code schon da ist und was noch fehlt
+## Stand: Was im Code schon da ist
 
-Einige Schritte setzen Code voraus, der noch in Arbeit ist. Diese Tabelle zeigt den Stand beim Schreiben. Steht bei einem Punkt „fehlt“, kannst du den Schritt noch nicht ausführen. Melde das der Technik.
+Alle Code-Bausteine für den Livegang sind vorhanden (Stand 2026-10-11, Branch `claude/blissful-edison-x3j16w`). Was bleibt, sind die Schritte in diesem Runbook – Konten, Werte, Domain.
 
 | Baustein | Stand | Beleg |
 |---|---|---|
-| `vercel.json` mit Dienst `web` (Wurzel `web/`) | vorhanden | `vercel.json` Zeilen 3–8 |
-| `vercel.json` mit `regions` (fra1), `crons` und `ignoreCommand` | fehlt | `vercel.json` (keine Schlüssel); AUFTRAG V-01, V-06 |
-| Bau-Skript nach ADR 0019 (`scripts/vercel-bau.mjs`) | Datei vorhanden, aber nicht eingebunden: `package.json` `vercel-build` ruft noch die alte Zeile mit leerer `DATABASE_URL` auf | `web/scripts/vercel-bau.mjs`; `web/package.json` Zeile 8; ADR 0019 |
-| Vercel Blob als `SPEICHER=blob` | fehlt im Code, nur `s3` und `dateisystem` | `web/src/lib/storage/index.ts` Zeile 94; `web/.env.example` Zeile 56 |
-| Betriebsart `SITE_MODE` | Liste in `umgebung.ts`, sonst noch nirgends verdrahtet | `web/src/lib/umgebung.ts`; ADR 0022 |
-| `pnpm geheimnisse:erzeugen` | Skript-Datei vorhanden, Eintrag in `package.json` fehlt | `web/scripts/geheimnisse-erzeugen.mjs`; `web/package.json` |
-| `noindex` für die Vorschau | fehlt | `web/src/app/robots.ts` Zeilen 5–16; ADR 0022 |
-| Startklar-Cockpit (`/verwaltung/startklar`, `pnpm startklar`) | fehlt, entsteht im Lauf | `_werkstatt/ENTSCHEIDUNGEN.md` L-E02 |
-| `docs/deploy/VERCEL-ENV.md` | entsteht parallel | ADR 0022 |
+| `vercel.json` mit Dienst `web`, `regions` (fra1), `crons`, `ignoreCommand` im Dienst | vorhanden, geprüft mit der Konfigurationsprüfung der Vercel CLI | `vercel.json`; ADR 0021 |
+| Bau nach ADR 0019 (`vercel-build` → `scripts/vercel-bau.mjs`, Migration unter Sperre) | vorhanden; Vorschau-Bau grün (ohne Datenbank: Warnung im Protokoll) | `web/package.json`; ADR 0019 |
+| Vercel Blob (`SPEICHER=blob`), Bildvarianten, Verkleinern im Browser | vorhanden | `web/src/lib/storage/index.ts`; ADR 0020 |
+| Betriebsart `SITE_MODE`, Umgebungsprüfung beim Start | vorhanden | `web/src/lib/umgebung.ts`, `web/src/instrumentation.ts`; ADR 0022 |
+| `pnpm geheimnisse:erzeugen` | vorhanden | `web/package.json` |
+| `noindex` für Vorschauen (robots.txt, `X-Robots-Tag`) | vorhanden | `web/src/app/robots.ts`, `web/src/lib/sicherheit/header.ts` |
+| Startklar-Cockpit (`/verwaltung/startklar`) und `pnpm startklar` | vorhanden | `web/src/lib/startklar/pruefungen.ts` |
+| `docs/deploy/VERCEL-ENV.md` | vorhanden | ADR 0022 |
 
 ## 1. Projekt prüfen (3 Minuten)
 
