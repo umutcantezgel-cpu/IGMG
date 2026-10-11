@@ -565,7 +565,11 @@ F['F-17'] = async (s, b, breite) => {
   b.pruefe('sw.js hält Gebetszeiten und Startseite vor (Quelltext)', sw.status() === 200 && quelle.includes('gebetszeiten') && quelle.includes('(tr|en)?\\/?$'), { status: sw.status(), zeichen: quelle.length });
   // Live: Dienst aktivieren, Gebetszeiten und Startseite vorhalten, dann offline laden
   await oeffne(s, vollerUrl(basis, '/'), { warte: 200 });
-  const bereit = await s.evaluate(() => navigator.serviceWorker.ready.then(() => true).catch(() => false));
+  // Ohne registrierten Dienst (z. B. next dev) löst „ready“ nie aus: nach 5 s abbrechen statt hängen
+  const bereit = await s.evaluate(() => Promise.race([
+    navigator.serviceWorker.ready.then(() => true).catch(() => false),
+    new Promise((ok) => setTimeout(() => ok(false), 5000)),
+  ])).catch(() => false);
   for (const p of ['/gebetszeiten', '/', '/gebetszeiten']) await oeffne(s, vollerUrl(basis, p), { warte: 300 });
   const gesteuert = await s.evaluate(() => !!navigator.serviceWorker.controller);
   b.messwert('Dienst bereit / steuert Seite', { bereit, gesteuert });
