@@ -19,7 +19,7 @@ export async function Breadcrumbs({ pfad }: { pfad: PfadEintrag[] }) {
           <Link
             href="/"
             aria-label={t('zurStartseite')}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-sm px-2 text-tinte-2 underline underline-offset-[3px] hover:bg-gruen-50 hover:text-gruen-800"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-sm px-2 text-tinte-2 underline underline-offset-3 hover:bg-gruen-50 hover:text-gruen-800"
           >
             <House aria-hidden className="size-4" />
             <span>{t('startseite')}</span>
@@ -38,7 +38,7 @@ export async function Breadcrumbs({ pfad }: { pfad: PfadEintrag[] }) {
             ) : (
               <Link
                 href={e.ziel}
-                className="inline-flex min-h-11 items-center rounded-sm px-2 text-tinte-2 underline underline-offset-[3px] hover:bg-gruen-50 hover:text-gruen-800"
+                className="inline-flex min-h-11 items-center rounded-sm px-2 text-tinte-2 underline underline-offset-3 hover:bg-gruen-50 hover:text-gruen-800"
               >
                 {e.label}
               </Link>
