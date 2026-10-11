@@ -78,7 +78,7 @@ Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich d
 | H-G03 | Baumeister | Haiku | PrayerTimesBar, Gebetszeit-Wechsel B-10 | `PrayerTimesBar.tsx`, `website/leiste/**` | K-007 B-10 | Z-05 | ✓ 53b9bc5 |
 | H-G04 | Baumeister | Haiku | Seitenkopf/PageHeader/Breadcrumbs vereinheitlichen | `Seitenkopf.tsx`, `PageHeader.tsx`, `Breadcrumbs.tsx` | REFERENZ | Z-03, Z-04 | ✓ 58f9840 (Rest nach O-03) |
 | H-Z01 | Grafiker/Baumeister | Haiku | Fehlerseiten mit Charakter (Pflicht nach AUFTRAG §6): 404, `error`, `global-error` mit Zustandsgrafik | `app/**/not-found.tsx`, `error.tsx`, `global-error.tsx`, `website/fehler/**` | K-008 | Z-04, Z-06 | ✓ a8a377f (+ Offline-Grafik) |
-| H-Z02 | Grafiker/Baumeister | Haiku | Offline-Seite, Lade-Zustände (B-12) | `(website)/offline/**`, `loading.tsx` | K-008 | Z-04–Z-06 | offen |
+| H-Z02 | Grafiker/Baumeister | Haiku | Offline-Seite, Lade-Zustände (B-12) | `(website)/offline/**`, `loading.tsx` | K-008 | Z-04–Z-06 | ✓ Offline-Grafik a8a377f; Lade-Achtstern in allen Absendeknöpfen (966db8c); Detailseiten mit Suspense ohne Platzhalter, Seitenwechsel wartet auf neuen Inhalt (5bca4db) |
 | H-W01 | Baumeister | Haiku | E-Mail-Vorlagen | `lib/mail/vorlagen/**` | REFERENZ (Farben, Schrift) | Z-04 | offen |
 | H-W02 | Baumeister | Haiku | Bildschirm-Anzeige: nur Zustandswechsel | `(website)/gebetszeiten/anzeige/**`, `website/anzeige/**` | K-007 B-10 | Z-05 | offen |
 | H-W03 | Baumeister | Haiku | Verwaltungs-Hülle (Feinschliff, `verwaltung:`-Breakpoint, Übersicht) | `components/verwaltung/huelle/**` | REFERENZ | Z-03 | offen |

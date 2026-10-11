@@ -92,9 +92,9 @@ export function LeisteLive({
   if (!heute) return null;
 
   /*
-   * Die Karte reserviert Zeilen für „Nächstes Gebet“ und die Restzeit auch dort, wo sie nicht hervorgehoben ist
-   * (unsichtbar). So bleibt die Höhe der Leiste bei jedem Wechsel gleich (kein Sprung nach dem Einhängen, K-12)
-   * und Namen und Zeiten stehen auf derselben Stelle.
+   * Karten zeigen nur Namen und Zeit; das nächste Gebet ist hervorgehoben (Fläche, aria-current). „Nächstes Gebet“
+   * und die Restzeit stehen am Telefon in der eigenen Karte, am Desktop in festen Zeilen links – so hat die Leiste in
+   * jedem Zustand dieselbe Höhe (kein Sprung nach dem Einhängen, K-12) und keine Karte bleibt halb leer.
    */
   const karte = (g: Gebet, klein: boolean) => {
     const ist = naechstes?.gebet === g && !naechstes.morgen;
@@ -104,19 +104,13 @@ export function LeisteLive({
       <li
         key={g}
         aria-current={ist ? 'time' : undefined}
-        style={DAUER_WECHSEL}
         className={klassen(
           'flex min-w-0 flex-col justify-center gap-0.5 border',
-          klein ? 'rounded-md px-2.5 py-2' : 'min-h-30 rounded-lg px-3 py-2.5',
+          klein ? 'rounded-md px-2.5 py-2' : 'rounded-lg px-3 py-2.5',
           ist ? 'border-weiss bg-weiss' : 'border-gruen-800 bg-gruen-950',
           wechsel,
         )}
       >
-        {klein ? null : (
-          <span className={klassen('text-16 font-bold text-gruen-800', ist ? gewechselt && 'blendet-ein' : 'invisible')}>
-            {texte.naechstes}
-          </span>
-        )}
         <span
           className={klassen(
             'flex items-center gap-1.5 text-16 leading-snug font-bold wrap-anywhere',
@@ -137,16 +131,6 @@ export function LeisteLive({
         >
           {heute[g]}
         </span>
-        {klein ? null : (
-          <span className="grid text-16 font-bold text-tinte-2 tabular-nums">
-            <span aria-hidden className="invisible col-start-1 row-start-1">
-              {platzRestzeit}
-            </span>
-            <span className={klassen('col-start-1 row-start-1', ist ? gewechselt && 'blendet-ein' : 'invisible')}>
-              {texte.verbleibt.replace('{zeit}', restText)}
-            </span>
-          </span>
-        )}
       </li>
     );
   };
@@ -170,6 +154,23 @@ export function LeisteLive({
           <div className="flex min-h-6 items-center gap-2 text-16 text-gruen-100">
             <Clock aria-hidden className="size-5" />
             <span className="tabular-nums">{jetzt ? `${datumText} · ${uhrText}` : ''}</span>
+          </div>
+          {/* Feste Zeilen: vor dem Einhängen unsichtbar mit Platzhalter, danach das nächste Gebet (B-10 blendet bei Wechsel ein) */}
+          <div
+            key={gebet ?? 'leer'}
+            style={DAUER_WECHSEL}
+            className={klassen('flex flex-col text-16 tabular-nums', !naechstes && 'invisible', gewechselt && 'blendet-ein')}
+          >
+            <span className="font-bold text-weiss">
+              {texte.naechstes}: {naechstesName}
+              {naechstesZeit ? ` · ${naechstesZeit}` : ''}
+            </span>
+            <span className="grid text-gruen-100">
+              <span aria-hidden className="invisible col-start-1 row-start-1">
+                {platzRestzeit}
+              </span>
+              <span className="col-start-1 row-start-1">{texte.verbleibt.replace('{zeit}', restText)}</span>
+            </span>
           </div>
           {hinweis}
         </div>
