@@ -57,6 +57,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/veransta
   const t = await getTranslations('veranstaltungen');
   return metadatenFuer({
     pfad: { pathname: '/veranstaltungen/[slug]', params: { slug } },
+    eigenesBild: true,
     titel: text(v.titel, sprache),
     // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
     beschreibung: text(v.kurztext, sprache) || t('untertitel'),

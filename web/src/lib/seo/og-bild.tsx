@@ -81,7 +81,7 @@ export const OG_FARBEN = {
  * CSS-Variablen; im Bild sind die Stufen unmittelbar in Pixeln gemeint, nicht in rem).
  */
 export const OG_SCHRIFT = {
-  /** Spiegel von --text-anzeige-96: kurze Titel (bis 20 Zeichen). */
+  /** Spiegel von --text-anzeige-96: kurze Titel (bis 16 Zeichen, bleiben einzeilig). */
   titelGross: 96,
   /** Spiegel von --text-anzeige-64: mittlere Titel. */
   titelMittel: 64,
@@ -114,9 +114,9 @@ export const OG_MASS = {
   /** Akzentlinie: 96 × 4 px. */
   akzentBreite: 96,
   akzentHoehe: 4,
-  /** Achtstern: 240 px, ragt zur Hälfte (120 px) über die obere und rechte Kante, sodass ein ruhiges Viertel bleibt. */
-  achtstern: 240,
-  achtsternUeberstand: 120,
+  /** Achtstern: 320 px, ragt zur Hälfte (160 px) über die obere und rechte Kante, sodass ein ruhiges, als Stern lesbares Viertel bleibt. */
+  achtstern: 320,
+  achtsternUeberstand: 160,
   kennungAbstand: 20,
   akzentAbstand: 32,
   zeileAbstand: 28,
@@ -209,10 +209,10 @@ export function bildTitel(titel: string, max = TITEL_MAX): string {
   return `${basis.trimEnd()}…`;
 }
 
-/** Stufe nach Gesamtlänge: bis 20 Zeichen 96 px, bis 60 64 px, bis 96 48 px, sonst 40 px. */
+/** Stufe nach Gesamtlänge: bis 16 Zeichen 96 px (einzeilig), bis 50 64 px (höchstens zwei Zeilen), bis 96 48 px, sonst 40 px. */
 function stufeNachLaenge(laenge: number): number {
-  if (laenge <= 20) return OG_SCHRIFT.titelGross;
-  if (laenge <= 60) return OG_SCHRIFT.titelMittel;
+  if (laenge <= 16) return OG_SCHRIFT.titelGross;
+  if (laenge <= 50) return OG_SCHRIFT.titelMittel;
   if (laenge <= 96) return OG_SCHRIFT.titelKlein;
   return OG_SCHRIFT.titelLang;
 }
@@ -221,7 +221,7 @@ function stufeNachLaenge(laenge: number): number {
 function stufeNachWort(wort: number): number {
   if (wort > 40) return OG_SCHRIFT.titelLang;
   if (wort > 30) return OG_SCHRIFT.titelKlein;
-  if (wort > 19) return OG_SCHRIFT.titelMittel;
+  if (wort > 16) return OG_SCHRIFT.titelMittel;
   return OG_SCHRIFT.titelGross;
 }
 

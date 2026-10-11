@@ -49,7 +49,7 @@ export async function Trefferliste({ treffer }: { treffer: SuchTreffer[] }) {
       {gruppen.map(({ art, eintraege }) => (
         <section key={art} aria-labelledby={`suche-gruppe-${art}`} className="flex flex-col gap-5">
           <h3 id={`suche-gruppe-${art}`} className="flex flex-wrap items-center gap-3 text-24 leading-tight font-bold">
-            <span>{t(`art.${art}`)}</span>
+            <span>{t(`gruppen.${art}`)}</span>
             <span aria-hidden="true" className={cn('inline-flex rounded-pill px-3 text-16 leading-normal font-bold', TOENUNG[art])}>
               {eintraege.length}
             </span>

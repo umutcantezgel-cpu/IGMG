@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: PageProps<'/[locale]/nachrich
   const t = await getTranslations('nachrichten');
   return metadatenFuer({
     pfad: { pathname: '/nachrichten/[slug]', params: { slug } },
+    eigenesBild: true,
     titel: text(n.titel, sprache),
     // Ohne Kurztext: Untertitel der Übersicht statt der Platzhalter-Beschreibung des Layouts (Muster Islamisches Wissen)
     beschreibung: text(n.kurztext, sprache) || t('untertitel'),

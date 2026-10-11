@@ -64,7 +64,7 @@ async function Ergebnisse({
               </Link>
               <Link href="/nachrichten" className={sekundaer}>
                 <span className="text-balance">{ts('alleNeuigkeiten')}</span>
-                <ArrowRight aria-hidden="true" className="size-5" />
+                <ArrowRight aria-hidden="true" className="size-5 shrink-0" />
               </Link>
             </div>
           }

@@ -222,6 +222,8 @@ export async function MeldungFormular({
           />
         </fieldset>
       </div>
+      {/* Die Prüfung gehört zum Absenden, nicht zur Einwilligung: optisch abgesetzt */}
+      <hr aria-hidden="true" className="m-0 border-0 border-t border-linie" />
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
       <div className="self-start">

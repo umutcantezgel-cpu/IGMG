@@ -1,0 +1,42 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-11-22-43",
+  "seit": null,
+  "geprueft": [
+    "web/src/components/website/ueber-uns/Aufruf.tsx",
+    "web/src/components/website/ueber-uns/Bildflaeche.tsx",
+    "web/src/components/website/ueber-uns/Werte.tsx",
+    "web/src/components/website/ueber-uns/Zeitleiste.tsx",
+    "web/src/components/website/projekte/Bauprojekt.tsx",
+    "web/src/components/website/projekte/Meilensteine.tsx",
+    "web/src/components/website/projekte/Spenden.tsx",
+    "web/src/components/website/projekte/Spezifikationen.tsx",
+    "web/src/components/website/projekte/Unterstuetzen.tsx",
+    "web/src/components/website/organisation/FamilieDerVier.tsx",
+    "web/src/components/website/organisation/OrgKarte.tsx",
+    "web/src/components/website/organisation/OrgMeldungen.tsx",
+    "web/src/components/website/organisation/OrgTermine.tsx",
+    "web/src/components/website/organisation/OrganizationPage.tsx",
+    "web/src/app/[locale]/(website)/ueber-uns/page.tsx",
+    "web/src/app/[locale]/(website)/projekte/page.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 2
+  },
+  "funde": [
+    {
+      "datei": "web/src/components/website/ueber-uns/Aufruf.tsx",
+      "zeile": 16,
+      "art": "Tailwind-Klammerwert",
+      "fund": "flex-[1_1_420px]",
+      "zeileText": "<div className=\"flex min-w-0 flex-[1_1_420px] flex-col gap-2\">"
+    },
+    {
+      "datei": "web/src/components/website/ueber-uns/Aufruf.tsx",
+      "zeile": 20,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[60ch]",
+      "zeileText": "<p className=\"max-w-[60ch] text-18 text-gruen-100\">{text}</p>"
+    }
+  ]
+}
