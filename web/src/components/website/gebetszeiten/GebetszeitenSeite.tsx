@@ -76,7 +76,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
           <h2 id="gz-naechstes" className="font-text text-20 font-bold text-gruen-100">
             {fuelle(texte.naechstesTitel, { name: naechstesName })}
           </h2>
-          <span className="text-48 leading-[1.1] font-bold tabular-nums md:text-anzeige-64">{naechsteZeit}</span>
+          <span className="text-48 font-bold tabular-nums md:text-anzeige-64">{naechsteZeit}</span>
           <span className="text-20 font-bold">{fuelle(texte.verbleibt, { zeit: verbleibt })}</span>
         </div>
         <ul className="flex flex-col gap-2 text-18">
@@ -115,7 +115,7 @@ function HeuteKarten({
   texte: GebetszeitenSeiteTexte;
 }) {
   return (
-    <ul className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,260px),1fr))] gap-4">
+    <ul className="grid raster-kacheln gap-4">
       {GEBETE.map((g) => {
         const ist = naechstes !== null && !naechstes.morgen && naechstes.gebet === g;
         const Icon = SYMBOL[g];
@@ -125,7 +125,7 @@ function HeuteKarten({
             key={g}
             data-gebet={g}
             className={klassen(
-              'flex flex-col gap-2 rounded-lg border border-linie px-6 py-5 shadow-s1',
+              'flex flex-col gap-2 rounded-lg border border-linie px-6 py-5 shadow-s1 transition duration-(--dauer-wechsel)',
               ist ? 'bg-gruen-50 ring-2 ring-gruen-700 ring-inset' : 'bg-weiss',
             )}
           >
@@ -141,7 +141,7 @@ function HeuteKarten({
               </span>
             </div>
             <h3 className="font-text text-20 leading-snug font-bold">{texte.namen[g]}</h3>
-            <span className="text-36 leading-[1.1] font-bold text-gruen-800 tabular-nums">{heute[g]}</span>
+            <span className="text-36 font-bold text-gruen-800 tabular-nums">{heute[g]}</span>
             <span className="text-16 text-tinte-2">{texte.beschreibungen[g]}</span>
             <span
               className={klassen(

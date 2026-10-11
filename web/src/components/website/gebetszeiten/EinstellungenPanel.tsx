@@ -53,13 +53,13 @@ export async function EinstellungenPanel({
 
   return (
     // Kein eigenes role="tabpanel": Das Panel liegt im Tab-Panel von GebetszeitenTabs (keine verschachtelten Panels)
-    <div className="flex w-full max-w-[880px] flex-col gap-6 rounded-lg border border-linie bg-weiss p-5 md:p-8">
+    <div className="flex w-full max-w-seitenkopf flex-col gap-6 rounded-lg border border-linie bg-weiss p-5 md:p-8">
       <div className="flex flex-col gap-2">
         <h3 className="flex items-center gap-2 text-24 leading-tight">
           <Settings aria-hidden className="size-6 shrink-0 text-gruen-700" />
           {t('titel')}
         </h3>
-        <p className="text-16 text-tinte-2">{t('untertitel')}</p>
+        <p className="text-16 leading-einleitung text-tinte-2">{t('untertitel')}</p>
       </div>
 
       <section aria-labelledby="einst-methode" className="flex flex-col gap-3">
@@ -92,7 +92,7 @@ export async function EinstellungenPanel({
             );
           })}
         </ul>
-        <dl className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4 pt-2">
+        <dl className="grid gap-4 pt-2 md:grid-cols-2">
           <div className="flex flex-col gap-1">
             <dt className="text-16 font-bold text-tinte-2">{t('quelle_label')}</dt>
             <dd className="m-0">{quelle === 'import' ? t('quelle_import') : t('quelle_berechnet')}</dd>
@@ -122,7 +122,7 @@ export async function EinstellungenPanel({
         <h4 id="einst-anpassung" className="font-text text-16 font-bold">
           {t('anpassungen_titel')}
         </h4>
-        <dl className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
+        <dl className="grid gap-4 md:grid-cols-2">
           <div className="flex flex-col gap-2">
             <dt className="text-16 font-bold">{t('imsak')}</dt>
             <dd className="m-0 flex h-12 items-center rounded-md bg-sand px-3.5 text-18 tabular-nums">{anpassungImsakMin}</dd>

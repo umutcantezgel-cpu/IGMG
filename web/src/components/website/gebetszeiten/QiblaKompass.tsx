@@ -2,6 +2,7 @@
 
 import { Compass } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 
 /** Texte kommen als Props aus der Server-Komponente QiblaPanel (K-12: kein next-intl im Browser). */
 export type QiblaKompassTexte = {
@@ -108,11 +109,13 @@ export function QiblaKompass({ winkel, texte }: { winkel: number; texte: QiblaKo
   }[phase];
   const drehung = phase === 'aktiv' && kurs !== null ? { transform: `rotate(${-kurs}deg)` } : undefined;
   const hinweisZeigen = phase === 'aus' || phase === 'verweigert';
+  /** Die Ortung schlägt fehl: Die Richtung oben bleibt gültig, der Text sagt, was zu tun ist. */
+  const fehlerZustand = phase === 'verweigert' || phase === 'fehlt';
 
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <div role="img" aria-label={texte.dialAria} className="relative size-60 rounded-full border-2 border-rand bg-papier">
-        <div aria-hidden className="absolute inset-0 transition-transform duration-150 motion-reduce:transition-none" style={drehung}>
+        <div aria-hidden className="absolute inset-0 transition-transform duration-(--dauer-rueckmeldung)" style={drehung}>
           <span className="absolute top-2 left-1/2 -translate-x-1/2 font-bold text-tinte">{texte.dialNord}</span>
           <div className="absolute inset-0" style={{ transform: `rotate(${winkel}deg)` }}>
             <span className="absolute top-1/2 left-1/2 h-24 w-1 -translate-x-1/2 -translate-y-full rounded-sm bg-gruen-700" />
@@ -128,14 +131,15 @@ export function QiblaKompass({ winkel, texte }: { winkel: number; texte: QiblaKo
           type="button"
           onClick={umschalten}
           disabled={phase === 'fragt' || phase === 'sucht'}
-          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 hover:bg-gruen-50 disabled:cursor-wait disabled:opacity-60"
+          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 disabled:cursor-wait disabled:opacity-60"
         >
           <Compass aria-hidden className="size-5" />
           <span>{phase === 'aktiv' ? texte.beenden : texte.aktivieren}</span>
         </button>
       )}
-      {hinweisZeigen ? <p className="max-w-[40ch] text-16 leading-normal text-tinte-2">{texte.hinweis}</p> : null}
-      <p role="status" className="min-h-12 max-w-[40ch] text-16 leading-normal text-tinte">
+      {hinweisZeigen ? <p className="max-w-text text-16 leading-normal text-tinte-2">{texte.hinweis}</p> : null}
+      {fehlerZustand ? <Zustandsgrafik art="fehler" groesse={48} /> : null}
+      <p role="status" className="min-h-12 max-w-text text-16 leading-normal text-tinte">
         {statusText}
       </p>
     </div>

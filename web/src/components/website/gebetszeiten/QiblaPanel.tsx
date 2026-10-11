@@ -53,11 +53,11 @@ export async function QiblaPanel({ sprache, ort, breite, laenge }: QiblaPanelPro
             <Compass aria-hidden className="size-6 shrink-0 text-gruen-700" />
             {t('titel')}
           </h3>
-          <p className="text-16 text-tinte-2">{t('untertitel')}</p>
+          <p className="text-16 leading-einleitung text-tinte-2">{t('untertitel')}</p>
         </div>
         <QiblaKompass winkel={winkel} texte={kompass} />
         <p className="text-24 font-bold">{t('winkel_norden', { winkel: winkelGanz })}</p>
-        <p className="max-w-[40ch] text-tinte-2">
+        <p className="max-w-text text-tinte-2">
           {t('ort_vor')} <Text feld={ort} sprache={sprache} als="span" /> {t('ort_nach')}
         </p>
       </section>

@@ -6,7 +6,7 @@ function Kennzahl({ begriff, wert }: { begriff: string; wert: string }) {
   return (
     <div className="flex flex-col gap-1 rounded-md bg-sand px-4 py-3">
       <dt className="text-16 font-bold text-tinte-2">{begriff}</dt>
-      <dd className="m-0 font-bold">{wert}</dd>
+      <dd className="m-0 font-bold wrap-break-word">{wert}</dd>
     </div>
   );
 }
@@ -23,9 +23,9 @@ export async function QiblaInformation({ winkelGenau }: { winkelGenau: string })
     <section className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6">
       <div className="flex flex-col gap-2">
         <h3 className="text-24 leading-tight">{t('information_titel')}</h3>
-        <p className="text-16 text-tinte-2">{t('information_untertitel')}</p>
+        <p className="text-16 leading-einleitung text-tinte-2">{t('information_untertitel')}</p>
       </div>
-      <dl className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-3">
+      <dl className="grid gap-3 sm:grid-cols-2">
         <Kennzahl begriff={t('genauer_winkel')} wert={t('genauer_winkel_wert', { winkel: winkelGenau })} />
         <Kennzahl begriff={t('entfernung')} wert={t('entfernung_wert')} />
         <Kennzahl begriff={t('kaaba_koordinaten')} wert={t('kaaba_koordinaten_wert')} />
@@ -36,7 +36,7 @@ export async function QiblaInformation({ winkelGenau }: { winkelGenau: string })
           <Info aria-hidden className="size-5 shrink-0" />
           {t('tipps_titel')}
         </h4>
-        <ul className="flex list-disc flex-col gap-1 pl-[22px]">
+        <ul className="flex list-disc flex-col gap-1 pl-5.5">
           {TIPPS.map((schluessel) => (
             <li key={schluessel}>{t(schluessel)}</li>
           ))}

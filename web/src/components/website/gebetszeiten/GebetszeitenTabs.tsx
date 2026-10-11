@@ -1,7 +1,7 @@
 'use client';
 
 import { CalendarDays, Compass, Settings, Sun, type LucideIcon } from 'lucide-react';
-import { useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+import { useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { klassen } from '@/lib/klassen';
 
 export type TabSchluessel = 'heute' | 'monat' | 'qibla' | 'einstellungen';
@@ -24,10 +24,18 @@ export function GebetszeitenTabs({
   panels: Record<TabSchluessel, ReactNode>;
 }) {
   const [aktiv, setAktiv] = useState<TabSchluessel>('heute');
+  /** Der neue Inhalt blendet erst nach einem Wechsel ein (B-04); beim ersten Laden steht er sofort da. */
+  const [gewechselt, setGewechselt] = useState(false);
   const knoepfe = useRef<Partial<Record<TabSchluessel, HTMLButtonElement | null>>>({});
 
-  function wechsle(ziel: TabSchluessel) {
+  function zeige(ziel: TabSchluessel) {
+    if (ziel === aktiv) return;
+    setGewechselt(true);
     setAktiv(ziel);
+  }
+
+  function wechsle(ziel: TabSchluessel) {
+    zeige(ziel);
     knoepfe.current[ziel]?.focus();
   }
 
@@ -67,21 +75,29 @@ export function GebetszeitenTabs({
               aria-selected={on}
               aria-controls={`gz-panel-${s}`}
               tabIndex={on ? 0 : -1}
-              onClick={() => setAktiv(s)}
+              onClick={() => zeige(s)}
               className={klassen(
-                'relative inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md px-[18px] text-18 font-bold',
+                'relative inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
                 on ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
               )}
             >
               <Icon aria-hidden className="size-5" />
               <span>{labels[s]}</span>
-              {on ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-[3px] rounded-sm bg-gruen-700" /> : null}
+              {on ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-0.75 rounded-sm bg-gruen-700" /> : null}
             </button>
           );
         })}
       </div>
       {REIHENFOLGE.map((s) => (
-        <div key={s} role="tabpanel" id={`gz-panel-${s}`} aria-labelledby={`gz-tab-${s}`} hidden={s !== aktiv}>
+        <div
+          key={s}
+          role="tabpanel"
+          id={`gz-panel-${s}`}
+          aria-labelledby={`gz-tab-${s}`}
+          hidden={s !== aktiv}
+          className={s === aktiv && gewechselt ? 'blendet-ein' : undefined}
+          style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
+        >
           {panels[s]}
         </div>
       ))}

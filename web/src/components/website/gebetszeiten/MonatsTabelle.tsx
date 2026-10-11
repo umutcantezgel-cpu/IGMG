@@ -23,7 +23,7 @@ export function MonatsTabelle({ monat, texte }: { monat: GebetszeitenMonat; text
   return (
     <section className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-        <p className="text-16 text-tinte-2">{texte.untertitel}</p>
+        <p className="text-16 leading-einleitung text-tinte-2">{texte.untertitel}</p>
         {texte.hinweis ? (
           <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
             <Info aria-hidden className="size-4" />
@@ -32,7 +32,7 @@ export function MonatsTabelle({ monat, texte }: { monat: GebetszeitenMonat; text
         ) : null}
       </div>
       <div className="relative overflow-x-auto rounded-md border border-linie">
-        <table className="w-full min-w-[640px] border-collapse text-18 tabular-nums">
+        <table className="w-full min-w-2xl border-collapse text-18 tabular-nums">
           <caption className="px-4 pt-4 pb-3 text-left font-display text-24 leading-tight">{texte.titel}</caption>
           <thead>
             <tr className="bg-sand text-left">
