@@ -9,7 +9,8 @@ import { useAussenKlick } from './useAussenKlick';
 
 /**
  * Hauptnavigation am Desktop (ab 1240 px, Laufbuch D-04) nach design/Header.dc.html:
- * Aufklapp-Menüs (Disclosure-Muster), Escape und Klick außerhalb schließen, aktueller Bereich unterstrichen.
+ * Aufklapp-Menüs (Disclosure-Muster), Escape und Klick außerhalb schließen (Fokus zurück auf den Auslöser),
+ * aktueller Bereich mit Farbe und Leiste. Öffnen mit `tritt-auf` (B-03), Schließen sofort.
  */
 export function KopfMenues({
   menues,
@@ -46,16 +47,15 @@ export function KopfMenues({
           <Link
             href={startHref}
             aria-current={aktuell === 'startseite' ? 'page' : undefined}
-            className="relative inline-flex min-h-12 items-center rounded-md px-3 text-18 font-bold whitespace-nowrap text-tinte no-underline transition-colors hover:bg-gruen-50 hover:text-gruen-800"
+            className={`relative inline-flex min-h-12 items-center rounded-md px-3 text-18 font-bold whitespace-nowrap no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 ${aktiv === 'startseite' ? 'text-gruen-800' : 'text-tinte'}`}
           >
             <span>{startseite}</span>
-            {aktiv === 'startseite' ? (
-              <span aria-hidden className="absolute right-3 bottom-1 left-3 h-[3px] rounded-sm bg-gruen-700" />
-            ) : null}
+            {aktiv === 'startseite' ? <span aria-hidden className="absolute inset-x-3 bottom-1 h-0.75 rounded-sm bg-gruen-700" /> : null}
           </Link>
         </li>
         {menues.map((m) => {
           const ist = offen === m.schluessel;
+          const markiert = ist || aktiv === m.schluessel;
           return (
             <li key={m.schluessel} className="relative">
               <button
@@ -64,18 +64,18 @@ export function KopfMenues({
                 aria-expanded={ist}
                 aria-controls={`menue-${m.schluessel}`}
                 onClick={() => setOffen(ist ? null : m.schluessel)}
-                className="relative inline-flex min-h-12 cursor-pointer items-center gap-1 rounded-md px-3 text-18 font-bold whitespace-nowrap text-tinte transition-colors hover:bg-gruen-50 hover:text-gruen-800"
+                className={`relative inline-flex min-h-12 cursor-pointer items-center gap-1 rounded-md px-3 text-18 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 ${ist ? 'bg-gruen-50 text-gruen-800' : markiert ? 'text-gruen-800' : 'text-tinte'}`}
               >
                 <span>{m.label}</span>
                 {ist ? <ChevronUp aria-hidden className="size-4" /> : <ChevronDown aria-hidden className="size-4" />}
                 {aktiv === m.schluessel ? (
-                  <span aria-hidden className="absolute right-3 bottom-1 left-3 h-[3px] rounded-sm bg-gruen-700" />
+                  <span aria-hidden className="absolute inset-x-3 bottom-1 h-0.75 rounded-sm bg-gruen-700" />
                 ) : null}
               </button>
               <div
                 id={`menue-${m.schluessel}`}
                 hidden={!ist}
-                className="absolute top-[calc(100%+12px)] left-0 z-60 w-[392px] rounded-lg border border-linie bg-weiss shadow-s2"
+                className="tritt-auf absolute top-full left-0 z-(--ebene-dialog) mt-3 w-100 rounded-lg border border-linie bg-weiss shadow-s2"
               >
                 <ul className="flex flex-col gap-0.5 p-2">
                   {m.punkte.map((p) => {
@@ -86,7 +86,7 @@ export function KopfMenues({
                           href={p.href}
                           aria-current={istAktuell ? 'page' : undefined}
                           onClick={() => setOffen(null)}
-                          className="flex min-h-14 items-center gap-3 rounded-md px-3 py-2.5 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte"
+                          className={`flex min-h-14 items-center gap-3 rounded-md px-3 py-2.5 no-underline transition duration-(--dauer-rueckmeldung) ${istAktuell ? 'bg-gruen-100 text-gruen-800' : 'text-tinte hover:bg-gruen-50 hover:text-tinte'}`}
                         >
                           {p.logo ? (
                             <Image src={p.logo} alt="" width={32} height={32} className="size-8 shrink-0 rounded-sm border border-linie" />

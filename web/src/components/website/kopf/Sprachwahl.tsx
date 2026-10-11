@@ -41,7 +41,7 @@ export function Sprachwahl({
         aria-label={texte.aendern}
         title={texte.aendern}
         onClick={() => setOffen((o) => !o)}
-        className="inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-md border border-rand bg-weiss px-3 text-16 font-bold text-tinte transition-colors hover:border-gruen-700 hover:bg-gruen-50"
+        className="inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-md border border-rand bg-weiss px-3 text-16 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
       >
         <Globe aria-hidden className="size-5" />
         <span>{kurz}</span>
@@ -49,7 +49,7 @@ export function Sprachwahl({
       <div
         id="sprachwahl-liste"
         hidden={!offen}
-        className="absolute top-[calc(100%+12px)] right-0 z-60 flex w-[300px] flex-col gap-1 rounded-lg border border-linie bg-weiss p-2 shadow-s2"
+        className="tritt-auf absolute top-full right-0 z-(--ebene-dialog) mt-3 flex w-75 flex-col gap-1 rounded-lg border border-linie bg-weiss p-2 shadow-s2"
       >
         <div className="flex items-start gap-2 rounded-md bg-gruen-50 px-3 py-2 text-gruen-800">
           <Globe aria-hidden className="mt-0.5 size-5 shrink-0" />
@@ -70,7 +70,7 @@ export function Sprachwahl({
                   hrefLang={s.code}
                   aria-current={an ? 'true' : undefined}
                   onClick={() => setOffen(false)}
-                  className={`flex min-h-12 w-full items-center gap-3 rounded-md px-3 text-18 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte ${an ? 'bg-gruen-50' : 'bg-weiss'}`}
+                  className={`flex min-h-12 w-full items-center gap-3 rounded-md px-3 text-18 no-underline transition duration-(--dauer-rueckmeldung) ${an ? 'bg-gruen-100 text-gruen-800' : 'bg-weiss text-tinte hover:bg-gruen-50 hover:text-tinte'}`}
                 >
                   <span className="inline-flex h-7 min-w-10 items-center justify-center rounded-sm border border-rand text-16 font-bold">
                     {s.kurz}

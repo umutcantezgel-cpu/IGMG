@@ -39,7 +39,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           className="flex min-h-12 shrink-0 items-center gap-3 rounded-md py-1 pr-2 text-gruen-800 no-underline hover:text-gruen-800"
         >
           <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" priority />
-          <span className="font-display text-[22px] leading-none font-semibold whitespace-nowrap">IGMG Wetzlar</span>
+          <span className="font-display text-20 leading-none font-semibold whitespace-nowrap">IGMG Wetzlar</span>
         </Link>
         <KopfMenues
           menues={menues}
@@ -56,7 +56,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           <Link
             href="/suche"
             prefetch={false}
-            className="hidden size-12 items-center justify-center rounded-md text-gruen-800 hover:bg-gruen-50 hover:text-gruen-800 sm:inline-flex"
+            className="hidden size-12 items-center justify-center rounded-md text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 sm:inline-flex"
           >
             <Search aria-hidden className="size-6" />
             <span className="sr-only">{tsu('kopfLink')}</span>
@@ -71,7 +71,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
           <NextLink
             href="/verwaltung/anmelden"
             prefetch={false}
-            className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition-colors hover:bg-gruen-50 hover:text-gruen-800 menu:inline-flex"
+            className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 menu:inline-flex"
           >
             <User aria-hidden className="size-5" />
             <span>{t('anmelden')}</span>

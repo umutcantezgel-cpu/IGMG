@@ -24,8 +24,10 @@ type Texte = {
 };
 
 /**
- * Telefonmenü (unter 1240 px) nach design/Header.dc.html: Schublade von rechts als natives <dialog>
- * (Fokusfalle und Escape durch den Browser, kein zusätzliches Skriptpaket).
+ * Telefonmenü (unter 1240 px) nach design/Header.dc.html: Schublade von rechts als natives <dialog>.
+ * Fokusfalle und Escape kommen vom Browser (modaler Dialog); Schließen gibt den Fokus an den Menü-Knopf zurück.
+ * Öffnen: die Fläche nutzt die globale Regel für `dialog[open]` (B-03, 8 px, `dauer-wechsel`, `ease-eintritt`);
+ * Aufklapper mit `tritt-auf`; Schließen ohne Animation. Bereiche sind Überschriften (h3) mit Aufklapp-Knopf.
  */
 export function MobilMenue({
   menues,
@@ -59,6 +61,8 @@ export function MobilMenue({
         <span className="sr-only">{texte.aktuelleSeite}</span>
       </span>
     ) : null;
+  const zeile = (an: boolean) =>
+    `flex min-h-14 items-center justify-between gap-3 rounded-md px-3 text-18 font-bold no-underline transition duration-(--dauer-rueckmeldung) ${an ? 'bg-gruen-50 text-gruen-800' : 'text-tinte hover:bg-sand'}`;
 
   return (
     <div className="menu:hidden">
@@ -67,7 +71,7 @@ export function MobilMenue({
         aria-haspopup="dialog"
         aria-label={texte.menueOeffnen}
         onClick={() => dialog.current?.showModal()}
-        className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 text-18 font-bold text-tinte hover:border-gruen-700 hover:bg-gruen-50"
+        className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
       >
         <Menu aria-hidden className="size-6" />
         <span aria-hidden>{texte.menue}</span>
@@ -78,11 +82,11 @@ export function MobilMenue({
         onClick={(e) => {
           if (e.target === dialog.current) schliessen();
         }}
-        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-[440px] bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/45"
+        className="m-0 ml-auto h-dvh max-h-dvh w-full max-w-110 bg-weiss p-0 text-tinte shadow-s3 backdrop:bg-tinte/45"
       >
         <div className="flex h-full flex-col">
-          <div className="flex items-start justify-between gap-4 border-b border-linie py-3 pr-4 pl-6">
-            <div className="flex flex-col gap-0.5 pt-2">
+          <div className="flex items-center justify-between gap-4 border-b border-linie px-6 py-3">
+            <div className="flex flex-col gap-0.5">
               <h2 id="mobil-menue-titel" className="text-24 leading-tight text-gruen-800">
                 {texte.navigation}
               </h2>
@@ -92,7 +96,7 @@ export function MobilMenue({
               type="button"
               aria-label={texte.menueSchliessen}
               onClick={schliessen}
-              className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss hover:bg-gruen-50"
+              className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
             >
               <X aria-hidden className="size-6" />
             </button>
@@ -113,7 +117,7 @@ export function MobilMenue({
                       lang={s.code}
                       hrefLang={s.code}
                       aria-current={an ? 'true' : undefined}
-                      className={`flex min-h-14 flex-col items-center justify-center rounded-md px-1 py-1.5 text-16 leading-tight font-bold text-tinte no-underline hover:text-tinte ${an ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-rand bg-weiss'}`}
+                      className={`flex min-h-14 flex-col items-center justify-center rounded-md border-2 px-1 py-1.5 text-16 leading-tight font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 motion-reduce:active:scale-100 ${an ? 'border-gruen-700 bg-gruen-50 text-gruen-800' : 'border-rand bg-weiss hover:bg-gruen-50'}`}
                     >
                       <span>{s.kurz}</span>
                       <span className="font-normal">{s.name}</span>
@@ -122,79 +126,91 @@ export function MobilMenue({
                 })}
               </div>
             </div>
-            <nav aria-label={texte.mobilNavigation}>
-              <ul className="flex flex-col border-t border-linie">
-                <li className="border-b border-linie">
+            <nav aria-label={texte.mobilNavigation} className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-1">
+                <li>
                   <NextLink
                     href={startHref}
                     onClick={schliessen}
                     aria-current={aktuell === 'startseite' ? 'page' : undefined}
-                    className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
+                    className={zeile(aktuell === 'startseite')}
                   >
                     {texte.startseite}
                     {haken(aktuell === 'startseite')}
                   </NextLink>
                 </li>
-                <li className="border-b border-linie">
+                <li>
                   <NextLink
                     href={gebetszeitenHref}
                     onClick={schliessen}
                     aria-current={aktuell === 'gebetszeiten' ? 'page' : undefined}
-                    className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
+                    className={zeile(aktuell === 'gebetszeiten')}
                   >
                     {texte.gebetszeiten}
                     {haken(aktuell === 'gebetszeiten')}
                   </NextLink>
                 </li>
-                <li className="border-b border-linie sm:hidden">
+                <li className="sm:hidden">
                   <NextLink
                     href={sucheHref}
                     prefetch={false}
                     onClick={schliessen}
                     aria-current={aktuell === 'suche' ? 'page' : undefined}
-                    className="flex min-h-14 items-center justify-between px-1 text-18 font-bold text-tinte no-underline hover:text-gruen-800"
+                    className={zeile(aktuell === 'suche')}
                   >
                     {texte.suche}
                     {haken(aktuell === 'suche')}
                   </NextLink>
                 </li>
+              </ul>
+              <ul className="flex flex-col gap-1 border-t border-linie pt-4">
                 {menues.map((m) => {
                   const auf = Boolean(offen[m.schluessel]);
+                  const hier = aktiv === m.schluessel;
                   return (
-                    <li key={m.schluessel} className="border-b border-linie">
-                      <button
-                        type="button"
-                        aria-expanded={auf}
-                        aria-controls={`mobil-${m.schluessel}`}
-                        onClick={() => setOffen((o) => ({ ...o, [m.schluessel]: !auf }))}
-                        className="flex min-h-14 w-full cursor-pointer items-center justify-between px-1 text-left text-18 font-bold text-tinte"
+                    <li key={m.schluessel}>
+                      <h3 className="font-text font-bold">
+                        <button
+                          type="button"
+                          aria-expanded={auf}
+                          aria-controls={`mobil-${m.schluessel}`}
+                          onClick={() => setOffen((o) => ({ ...o, [m.schluessel]: !auf }))}
+                          className={`flex min-h-14 w-full cursor-pointer items-center justify-between gap-3 rounded-md px-3 text-left text-18 font-bold transition duration-(--dauer-rueckmeldung) hover:bg-sand ${hier ? 'text-gruen-800' : 'text-tinte'}`}
+                        >
+                          <span>{m.label}</span>
+                          {auf ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
+                        </button>
+                      </h3>
+                      <ul
+                        id={`mobil-${m.schluessel}`}
+                        hidden={!auf}
+                        className="tritt-auf mt-1 mb-3 flex flex-col gap-0.5 rounded-lg bg-sand p-1.5"
                       >
-                        <span>{m.label}</span>
-                        {auf ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
-                      </button>
-                      <ul id={`mobil-${m.schluessel}`} hidden={!auf} className="flex flex-col gap-0.5 pb-3 pl-2">
-                        {m.punkte.map((p) => (
-                          <li key={p.schluessel}>
-                            <NextLink
-                              href={p.href}
-                              onClick={schliessen}
-                              aria-current={aktuell === p.schluessel ? 'page' : undefined}
-                              className="flex min-h-12 items-center gap-3 rounded-md px-3 py-2 text-18 text-tinte no-underline hover:bg-gruen-50 hover:text-tinte"
-                            >
-                              {p.logo ? (
-                                <Image
-                                  src={p.logo}
-                                  alt=""
-                                  width={32}
-                                  height={32}
-                                  className="size-8 shrink-0 rounded-sm border border-linie"
-                                />
-                              ) : null}
-                              <span className="flex-1">{p.label}</span>
-                              {haken(aktuell === p.schluessel)}
-                            </NextLink>
-                          </li>
-                        ))}
+                        {m.punkte.map((p) => {
+                          const istAktuell = aktuell === p.schluessel;
+                          return (
+                            <li key={p.schluessel}>
+                              <NextLink
+                                href={p.href}
+                                onClick={schliessen}
+                                aria-current={istAktuell ? 'page' : undefined}
+                                className={`flex min-h-12 items-center gap-3 rounded-md px-3 py-2 text-18 no-underline transition duration-(--dauer-rueckmeldung) ${istAktuell ? 'bg-weiss font-bold text-gruen-800 shadow-s1' : 'text-tinte hover:bg-weiss'}`}
+                              >
+                                {p.logo ? (
+                                  <Image
+                                    src={p.logo}
+                                    alt=""
+                                    width={32}
+                                    height={32}
+                                    className="size-8 shrink-0 rounded-sm border border-linie"
+                                  />
+                                ) : null}
+                                <span className="flex-1">{p.label}</span>
+                                {haken(istAktuell)}
+                              </NextLink>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </li>
                   );
@@ -204,7 +220,7 @@ export function MobilMenue({
             <NextLink
               href="/verwaltung/anmelden"
               prefetch={false}
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline hover:bg-gruen-50 hover:text-gruen-800"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
             >
               <LogIn aria-hidden className="size-5" />
               {texte.anmelden}
