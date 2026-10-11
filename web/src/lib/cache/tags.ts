@@ -5,6 +5,9 @@
 export const TAG = {
   veranstaltungen: 'veranstaltungen',
   veranstaltung: (id: string) => `veranstaltung:${id}`,
+  /** Anmeldezahlen (Platzzählung) – alle bzw. je Veranstaltung */
+  anmeldungen: 'anmeldungen',
+  anmeldungenVon: (id: string) => `anmeldungen:${id}`,
   nachrichten: 'nachrichten',
   nachricht: (id: string) => `nachricht:${id}`,
   ankuendigungen: 'ankuendigungen',
@@ -21,6 +24,7 @@ export const TAG = {
 /** Tags, die beim Start verfallen (ADR 0017) – alle inhaltsbezogenen Listen-Tags. */
 export const START_TAGS = [
   TAG.veranstaltungen,
+  TAG.anmeldungen,
   TAG.nachrichten,
   TAG.ankuendigungen,
   TAG.kurse,

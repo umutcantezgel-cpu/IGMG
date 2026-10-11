@@ -1,3 +1,4 @@
+import { TZDate } from '@date-fns/tz';
 import ical, { ICalCalendarMethod } from 'ical-generator';
 import { ZEITZONE, lokalesDatum, type TerminRegel } from './index';
 
@@ -63,7 +64,24 @@ export function erzeugeKalender(name: string, termine: readonly IcalTermin[], do
       ereignis.repeating([`RRULE:${t.wiederholung.replace(/^RRULE:/, '')}`, ...ausnahmen].join('\r\n'));
     }
   }
-  return kalender.toString();
+  return stempelInUtc(kalender.toString());
+}
+
+/**
+ * RFC 5545 (3.8.7.2, 3.8.7.3): DTSTAMP und LAST-MODIFIED müssen in UTC stehen. ical-generator schreibt sie
+ * in der Kalenderzeitzone (Wanduhrzeit Europe/Berlin) – hier zurück nach UTC mit „Z“.
+ */
+function stempelInUtc(ics: string): string {
+  return ics.replace(
+    /^(DTSTAMP|LAST-MODIFIED|CREATED):(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(\r?)$/gm,
+    (_t, feld: string, j: string, mo: string, d: string, h: string, mi: string, se: string, cr: string) => {
+      const utc = new Date(new TZDate(+j, +mo - 1, +d, +h, +mi, +se, ZEITZONE).getTime());
+      return `${feld}:${utc
+        .toISOString()
+        .replace(/[-:]/g, '')
+        .replace(/\.\d{3}/, '')}${cr}`;
+    },
+  );
 }
 
 /** Uhrzeit-Teil HHMMSS des Beginns in Europe/Berlin (für EXDATE). */

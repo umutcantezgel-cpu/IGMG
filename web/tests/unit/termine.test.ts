@@ -117,4 +117,15 @@ describe('iCal (K-09)', () => {
     expect(ics).toContain('EXDATE;TZID=Europe/Berlin:20261024T140000');
     expect(ics).toContain('UID:t1@example.test');
   });
+
+  it('schreibt DTSTAMP und LAST-MODIFIED in UTC (RFC 5545)', () => {
+    const ics = erzeugeKalender(
+      'Test',
+      [{ uid: 't2', titel: 'Stempel', beginn: berlin('2026-07-01T10:00'), aktualisiertAm: new Date('2026-07-01T08:30:15Z') }],
+      'example.test',
+    );
+    expect(ics).toMatch(/\r\nDTSTAMP:20260701T083015Z\r\n/);
+    expect(ics).toMatch(/\r\nLAST-MODIFIED:20260701T083015Z\r\n/);
+    expect(ics).toContain('DTSTART;TZID=Europe/Berlin:20260701T100000');
+  });
 });

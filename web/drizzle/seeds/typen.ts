@@ -15,6 +15,14 @@ export type SeedVeranstaltung = {
   wiederholung: string | null;
   empfohlen: boolean;
   kosten: 'kostenlos' | 'kostenpflichtig';
+  beschreibung?: { de: string[]; tr?: string[]; en?: string[] };
+  anmeldungAktiv?: boolean;
+  plaetze?: number;
+  programm?: { zeit: string; text: Mehrsprachig }[];
+  hinweise?: Mehrsprachig[];
+  schlagwoerter?: Mehrsprachig[];
+  veranstalter?: { name: string; funktion?: Mehrsprachig };
+  kontakt?: { name?: string; telefon?: string; email?: string };
   quelle: string;
 };
 

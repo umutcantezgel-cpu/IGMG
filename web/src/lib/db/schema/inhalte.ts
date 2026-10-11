@@ -42,6 +42,15 @@ export const veranstaltung = pgTable(
     kosten: kostenEnum().notNull().default('kostenlos'),
     empfohlen: boolean().notNull().default(false),
     teilnehmerHinweis: jsonb().$type<Mehrsprachig>(),
+    /** Programmpunkte (EventDetails.dc.html „Programm“): Uhrzeit HH:MM + Text */
+    programm: jsonb().$type<{ zeit: string; text: Mehrsprachig }[]>().notNull().default([]),
+    /** „Wichtige Hinweise“ */
+    hinweise: jsonb().$type<Mehrsprachig[]>().notNull().default([]),
+    /** Schlagwörter */
+    schlagwoerter: jsonb().$type<Mehrsprachig[]>().notNull().default([]),
+    /** Veranstalter (Funktion/Name, z. B. „[Name – Imam]“) und Kontakt – nur öffentliche Funktionsangaben */
+    veranstalter: jsonb().$type<{ name: string; funktion?: Mehrsprachig }>(),
+    kontakt: jsonb().$type<{ name?: string; telefon?: string; email?: string }>(),
     bildId: uuid().references(() => medium.id, { onDelete: 'set null' }),
     ...suchSpalten(),
   },

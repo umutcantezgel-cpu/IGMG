@@ -25,6 +25,7 @@ ENV NODE_ENV=production \
     HOSTNAME=0.0.0.0 \
     PORT=3000 \
     MIGRATION_BEIM_START=1 \
+    CACHE_ERNEUERN_BEIM_START=1 \
     MEDIEN_VERZEICHNIS=/app/.medien
 RUN addgroup -S app && adduser -S app -G app && mkdir -p /app/.medien && chown app:app /app/.medien
 COPY --from=bau --chown=app:app /app/.next/standalone ./

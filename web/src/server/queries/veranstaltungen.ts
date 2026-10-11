@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, eq, isNull } from 'drizzle-orm';
+import { and, eq, isNull, ne, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
@@ -83,8 +83,17 @@ export async function ladeVeranstaltungen(): Promise<VeranstaltungsDaten[]> {
   return [...kommend, ...vergangen];
 }
 
+/** Zusätzliche Felder der Detailseite (Migration 0002). */
+export type VeranstaltungsDetail = VeranstaltungsDaten & {
+  programm: { zeit: string; text: Mehrsprachig }[];
+  hinweise: Mehrsprachig[];
+  schlagwoerter: Mehrsprachig[];
+  veranstalter: { name: string; funktion?: Mehrsprachig } | null;
+  kontakt: { name?: string; telefon?: string; email?: string } | null;
+};
+
 /** Eine Veranstaltung über ihren Slug (gecacht je Slug, Tag veranstaltung:<id> und veranstaltungen). */
-export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDaten | null> {
+export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDetail | null> {
   'use cache';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen);
@@ -95,7 +104,35 @@ export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDat
     .limit(1);
   if (!z) return null;
   cacheTag(TAG.veranstaltung(z.id));
-  return zuDaten(z, new Date());
+  return {
+    ...zuDaten(z, new Date()),
+    programm: z.programm,
+    hinweise: z.hinweise,
+    schlagwoerter: z.schlagwoerter,
+    veranstalter: z.veranstalter ?? null,
+    kontakt: z.kontakt ?? null,
+  };
+}
+
+/**
+ * Belegte Plätze einer Veranstaltung: Summe der Personenzahl aller nicht abgelehnten Anmeldungen
+ * (ohne Entschlüsseln, Spalte `anzahl`). Die Anmelde-Action ruft `updateTag(TAG.anmeldungenVon(id))`.
+ */
+export async function ladeAnmeldezahl(veranstaltungId: string): Promise<number> {
+  'use cache';
+  cacheLife('hours');
+  cacheTag(TAG.anmeldungen, TAG.anmeldungenVon(veranstaltungId));
+  const [z] = await db
+    .select({ summe: sql<number>`coalesce(sum(${schema.eingang.anzahl}), 0)::int` })
+    .from(schema.eingang)
+    .where(
+      and(
+        eq(schema.eingang.art, 'veranstaltungsanmeldung'),
+        eq(schema.eingang.bezugId, veranstaltungId),
+        ne(schema.eingang.status, 'abgelehnt'),
+      ),
+    );
+  return z?.summe ?? 0;
 }
 
 /** Slugs für generateStaticParams. */

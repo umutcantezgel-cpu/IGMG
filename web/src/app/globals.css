@@ -211,3 +211,45 @@
     background: #fff;
   }
 }
+
+/* Fließtext aus der Verwaltung (RichText, ADR 0006) */
+@layer components {
+  .fliesstext {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: var(--container-text);
+    line-height: 1.6;
+  }
+  .fliesstext h2 {
+    font-size: var(--text-24);
+    line-height: 1.25;
+    margin-top: 0.5rem;
+  }
+  .fliesstext h3 {
+    font-size: var(--text-20);
+    line-height: 1.3;
+  }
+  .fliesstext ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+  .fliesstext ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+  .fliesstext blockquote {
+    border-left: 4px solid var(--color-gruen-700);
+    padding-left: 1rem;
+    color: var(--color-tinte-2);
+  }
+  /* Veranstaltungsfilter (VeranstaltungsFilter): Karten anderer Kategorien ausblenden */
+  [data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),
+  [data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),
+  [data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),
+  [data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),
+  [data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),
+  [data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {
+    display: none;
+  }
+}

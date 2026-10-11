@@ -5,6 +5,7 @@ import { TZDate } from '@date-fns/tz';
 import { holeDb, schema } from '../../src/lib/db';
 import { dokumentAusAbsaetzen, klartext } from '../../src/lib/inhalt/tiptap';
 import { BEISPIEL_NACHRICHTEN } from './daten/nachrichten';
+import { BEISPIEL_VERANSTALTUNG_DETAIL } from './daten/veranstaltung-detail';
 import { BEISPIEL_VERANSTALTUNGEN } from './daten/veranstaltungen';
 
 type Db = ReturnType<typeof holeDb>;
@@ -17,7 +18,7 @@ function berlin(lokal: string): Date {
 }
 
 async function veranstaltungen(db: Db): Promise<number> {
-  const werte = BEISPIEL_VERANSTALTUNGEN.map((v) => ({
+  const werte = [...BEISPIEL_VERANSTALTUNGEN, BEISPIEL_VERANSTALTUNG_DETAIL].map((v) => ({
     slug: v.slug,
     status: 'veroeffentlicht' as const,
     istBeispiel: true,
@@ -34,6 +35,20 @@ async function veranstaltungen(db: Db): Promise<number> {
     wiederholung: v.wiederholung,
     empfohlen: v.empfohlen,
     kosten: v.kosten,
+    beschreibung: v.beschreibung
+      ? {
+          de: dokumentAusAbsaetzen(v.beschreibung.de),
+          ...(v.beschreibung.tr ? { tr: dokumentAusAbsaetzen(v.beschreibung.tr) } : {}),
+          ...(v.beschreibung.en ? { en: dokumentAusAbsaetzen(v.beschreibung.en) } : {}),
+        }
+      : null,
+    anmeldungAktiv: v.anmeldungAktiv ?? false,
+    plaetze: v.plaetze ?? null,
+    programm: v.programm ?? [],
+    hinweise: v.hinweise ?? [],
+    schlagwoerter: v.schlagwoerter ?? [],
+    veranstalter: v.veranstalter ?? null,
+    kontakt: v.kontakt ?? null,
     klartext: {
       de: `${v.titel.de}\n${v.kurztext.de}`,
       ...(v.titel.tr ? { tr: `${v.titel.tr}\n${v.kurztext.tr ?? ''}` } : {}),
