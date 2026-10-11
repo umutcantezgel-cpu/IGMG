@@ -99,3 +99,16 @@ Die App erwartet einen Reverse-Proxy (z. B. Caddy oder nginx) für HTTPS. Für d
 - Dienste: `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit-Oberfläche 127.0.0.1:8025).
 - `pnpm dev` (Port 3000), `pnpm check`, `pnpm test:integration` (PGlite je Testdatei), `pnpm test:e2e` (eigene Datenbank `igmg_e2e`, wird je Lauf frisch angelegt), `pnpm messen` (Lighthouse mobil gegen einen laufenden Produktionsserver auf Port 3100).
 - Standalone-Server lokal: `pnpm build && PORT=3100 pnpm start:standalone` (setzt `HOSTNAME=0.0.0.0`, E-015).
+
+## 9 Betrieb auf Vercel (Services)
+
+Alternative zu Docker: ein Vercel-Projekt mit `vercel.json` im Repository-Wurzelverzeichnis. Einziger Service ist `web` (Wurzel `web/`, Next.js), öffentlich über die Rewrite `/(.*)`. Bindings gibt es nicht – die App ruft keine anderen Services auf.
+
+- **Projekteinstellung:** Root Directory leer lassen (Repository-Wurzel). Steht dort `web`, liest Vercel `vercel.json` nicht und baut mit `pnpm run build` ohne Bau-Datenbank – Abbruch mit „DATABASE_URL fehlt“.
+- **Bau:** wie im Dockerfile gegen die PGlite-Bau-Datenbank (ADR 0017, `buildCommand` des Service). `DATABASE_URL` wird dabei bewusst geleert; die Produktionsdatenbank wird beim Bau nicht angefasst.
+- **Nach jeder Produktionsbereitstellung** den Cache erneuern, sonst zeigen vorgerenderte Seiten die Beispielinhalte der Seeds: `curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://<domain>/api/wartung/cache-erneuern`. Die automatische Erneuerung beim Start (`CACHE_ERNEUERN_BEIM_START`) wirkt auf Vercel nicht – dort lauscht kein Server auf 127.0.0.1.
+- **Umgebungsvariablen** (Production) wie in Abschnitt 3, dazu: `DATABASE_URL` auf ein von Vercel erreichbares PostgreSQL, `SPEICHER=s3` mit `S3_*` (das Dateisystem ist schreibgeschützt), `MAIL_TRANSPORT=smtp` mit `SMTP_*`, `PROXY_VERTRAUEN=1` (Vercel setzt `X-Forwarded-For` selbst und lässt keine gefälschten Werte durch). **Nicht** setzen: `MIGRATION_BEIM_START`, `CACHE_ERNEUERN_BEIM_START` (liefen bei jedem Kaltstart jeder Instanz).
+- **Migrationen** vor der Bereitstellung von einem Arbeitsrechner aus: `DATABASE_URL=<produktion> pnpm db:migrate`.
+- **Grenzen:** Anfragen an Vercel Functions sind auf 4,5 MB begrenzt – Medien über etwa 4,5 MB lassen sich dort nicht hochladen (ADR 0007 sieht 10 MB vor). `'use cache'`-Einträge liegen im Speicher der jeweiligen Instanz; vorgerenderte Seiten und die Tag-Invalidierung gelten dagegen für alle Instanzen.
+- **Löschfristen (Abschnitt 4):** Vercel Cron sendet `GET` mit `CRON_SECRET`, die Route erwartet `POST` mit `WARTUNG_TOKEN` – vorerst weiter von außen aufrufen.
+- Lokal alle Services zusammen starten: `vercel dev` im Repository-Wurzelverzeichnis.

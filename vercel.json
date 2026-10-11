@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "web": {
+      "root": "web",
+      "framework": "nextjs",
+      "buildCommand": "pnpm db:bau-vorbereiten && BAU_PGLITE=1 PGLITE_VERZEICHNIS=\"$PWD/.pglite-bau\" DATABASE_URL= pnpm build"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "web"
+      }
+    }
+  ]
+}
