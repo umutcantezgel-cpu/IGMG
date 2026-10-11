@@ -1,11 +1,13 @@
 import 'server-only';
 import { DeleteObjectCommand, GetObjectCommand, HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
+import { BlobNotFoundError, del, get, head, put } from '@vercel/blob';
+import { VARIANTEN, variantenSchluessel } from '@/lib/medien/varianten';
 import { createReadStream } from 'node:fs';
 import { mkdir, rm, stat, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { Readable } from 'node:stream';
 
-/** Speicher-Adapter (ADR 0007): Dateisystem in der Entwicklung, S3-kompatibel im Betrieb. */
+/** Speicher-Adapter (ADR 0007, ADR 0020): Dateisystem in der Entwicklung, S3-kompatibel oder Vercel Blob im Betrieb. */
 export interface Speicher {
   schreibe(schluessel: string, daten: Buffer, typ: string): Promise<void>;
   lies(schluessel: string): Promise<ReadableStream<Uint8Array> | null>;
@@ -87,12 +89,52 @@ export class S3Speicher implements Speicher {
   }
 }
 
+/**
+ * Vercel Blob (ADR 0020): privater Speicher, Zugriff nur über die Medienroute (Papierkorb und Löschung wirken sofort).
+ * Token aus `BLOB_READ_WRITE_TOKEN` (setzt die Vercel-Integration). Gleicher Schlüssel = gleiche Datei (Hash im Schlüssel).
+ */
+export class BlobSpeicher implements Speicher {
+  async schreibe(schluessel: string, daten: Buffer, typ: string): Promise<void> {
+    await put(pruefeSchluessel(schluessel), daten, { access: 'private', contentType: typ, addRandomSuffix: false, allowOverwrite: false });
+  }
+  async lies(schluessel: string): Promise<ReadableStream<Uint8Array> | null> {
+    const ergebnis = await get(pruefeSchluessel(schluessel), { access: 'private' });
+    return ergebnis?.stream ?? null;
+  }
+  async loesche(schluessel: string): Promise<void> {
+    await del(pruefeSchluessel(schluessel));
+  }
+  async existiert(schluessel: string): Promise<boolean> {
+    try {
+      await head(pruefeSchluessel(schluessel));
+      return true;
+    } catch (e) {
+      if (e instanceof BlobNotFoundError) return false;
+      throw e;
+    }
+  }
+}
+
 let instanz: Speicher | null = null;
 export function speicher(): Speicher {
   if (instanz) return instanz;
   instanz =
     process.env.SPEICHER === 's3'
       ? new S3Speicher(process.env.S3_BUCKET ?? '')
-      : new DateisystemSpeicher(process.env.MEDIEN_VERZEICHNIS ?? '.medien');
+      : process.env.SPEICHER === 'blob'
+        ? new BlobSpeicher()
+        : new DateisystemSpeicher(process.env.MEDIEN_VERZEICHNIS ?? '.medien');
   return instanz;
+}
+
+/** Original und alle Varianten löschen (ADR 0020); fehlende Varianten (ältere Medien) sind kein Fehler. */
+export async function loescheMitVarianten(schluessel: string): Promise<void> {
+  await speicher().loesche(schluessel);
+  await Promise.all(
+    VARIANTEN.map((w) =>
+      speicher()
+        .loesche(variantenSchluessel(schluessel, w))
+        .catch(() => undefined),
+    ),
+  );
 }

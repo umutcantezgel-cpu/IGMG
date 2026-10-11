@@ -133,6 +133,27 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     expect((await holen('0000000000000000/gibt-es-nicht.jpg')).status).toBe(404);
   });
 
+  it('Bildvarianten (ADR 0020): WebP unterhalb der Originalbreite, Auslieferung mit Rückfall aufs Original, Papierkorb sperrt auch Varianten', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const breitesId = await hochladenId(upload(await jpegMitExif(1200, 600), 'breit.jpg'));
+    const [m] = await db.select().from(schema.medium).where(eq(schema.medium.id, breitesId));
+    for (const w of [480, 960]) expect(await vorhanden(join(verzeichnis, `${m.schluessel}.w${w}.webp`))).toBe(true);
+    expect(await vorhanden(join(verzeichnis, `${m.schluessel}.w1600.webp`))).toBe(false);
+    const v = await holen(`${m.schluessel}.w480.webp`);
+    expect(v.status).toBe(200);
+    expect(v.headers.get('content-type')).toBe('image/webp');
+    expect((await sharp(Buffer.from(await v.arrayBuffer())).metadata()).width).toBe(480);
+    // Medium von vor ADR 0020 (ohne Varianten): die Variantenadresse liefert das Original
+    const alt = await holen(`${schluessel}.w480.webp`);
+    expect(alt.status).toBe(200);
+    expect(alt.headers.get('content-type')).toBe('image/jpeg');
+    // Unbekanntes Original: auch die Variante 404
+    expect((await holen('0000000000000000/gibt-es-nicht.jpg.w480.webp')).status).toBe(404);
+    await angemeldetAls([{ rolle: 'administration' }]);
+    await actions.inPapierkorb(formular({ id: breitesId })).catch(() => undefined);
+    expect((await holen(`${m.schluessel}.w480.webp`)).status).toBe(404);
+  });
+
   it('Alt-Text ändern mit Audit', async () => {
     await angemeldetAls([{ rolle: 'redaktion' }]);
     expect(await actions.aendern({}, formular({ id, altDe: 'Gebetsraum, Testbild', bildrechte: '' }))).toEqual({ ok: true, id });

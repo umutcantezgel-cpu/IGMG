@@ -1,6 +1,7 @@
 import 'server-only';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
+import { type Variantenbreite, variantenBreiten } from './varianten';
 
 /**
  * Upload-Pipeline für Medien (C11, ADR 0007, K-10): Typ nur über Magic Bytes (nie über Endung oder MIME-Angabe des
@@ -89,4 +90,17 @@ export async function verarbeiteDatei(roh: Buffer, dateiname: string): Promise<V
   }
   const hash = createHash('sha256').update(daten).digest('hex').slice(0, 16);
   return { daten, typ, breite, hoehe, schluessel: `${hash}/${sichererName(dateiname)}.${ENDUNG[typ]}`, hash };
+}
+
+/** WebP-Varianten eines bereits verarbeiteten Bildes in den Breiten aus `varianten.ts` (ADR 0020); PDF: keine. */
+export async function erzeugeVarianten(
+  v: Pick<Verarbeitet, 'daten' | 'typ' | 'breite'>,
+): Promise<{ breite: Variantenbreite; daten: Buffer }[]> {
+  if (v.typ === 'application/pdf') return [];
+  return Promise.all(
+    variantenBreiten(v.breite).map(async (breite) => ({
+      breite,
+      daten: await sharp(v.daten).resize({ width: breite, withoutEnlargement: true }).webp({ quality: 80 }).toBuffer(),
+    })),
+  );
 }

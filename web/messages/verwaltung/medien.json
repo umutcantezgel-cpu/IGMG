@@ -33,7 +33,8 @@
       "bildrechte": "Bildrechte",
       "bildrechteHinweis": "Wer hat das Foto gemacht, und darf die Gemeinde es zeigen? Zum Beispiel „Foto: [Name], mit Erlaubnis“.",
       "senden": "Hochladen",
-      "sendet": "Wird hochgeladen …"
+      "sendet": "Wird hochgeladen …",
+    "verkleinert": "Das Bild war größer als {mb} MB und wurde vor dem Hochladen verkleinert (WebP, längste Kante 2560 px)."
     },
     "detail": {
       "zurueck": "Zur Übersicht",
@@ -69,6 +70,7 @@
       "zuLang": "Der Text ist zu lang.",
       "dateiFehlt": "Bitte wählen Sie eine Datei.",
       "datei_leer": "Die Datei ist leer.",
+      "datei_zuGrossServer": "Die Datei ist zu groß für den Server (höchstens {mb} MB je Upload). Bilder werden automatisch verkleinert – speichern Sie PDF-Dateien bitte kleiner.",
       "datei_zuGross": "Die Datei ist größer als 10 MB.",
       "datei_typ": "Dieser Dateityp ist nicht erlaubt. Erlaubt sind JPEG, PNG, WebP, AVIF und PDF (SVG nicht).",
       "datei_defekt": "Die Datei ließ sich nicht lesen. Ist sie beschädigt?",

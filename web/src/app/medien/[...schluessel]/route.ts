@@ -1,4 +1,5 @@
 import { connection } from 'next/server';
+import { zerlegeVariante } from '@/lib/medien/varianten';
 import { pruefeSchluessel, speicher } from '@/lib/storage';
 import { ladeMediumNachSchluessel } from '@/server/queries/verwaltung/medien';
 
@@ -7,6 +8,8 @@ import { ladeMediumNachSchluessel } from '@/server/queries/verwaltung/medien';
  * (beim Upload über Magic Bytes bestimmt). Gecacht für 1 Tag, nicht „immutable“: Der Schlüssel enthält zwar den
  * Inhalts-Hash, nach Papierkorb oder Löschung sollen Kopien verfallen (K-05, Tor B/C SP-C2 B7). Die Bildoptimierung
  * (`/_next/image`) übernimmt dieses Höchstalter für ihre Kopien und kennt keine Invalidierung (C11b). PDF in einer Sandbox.
+ * Bildvarianten (`<schlüssel>.w<breite>.webp`, ADR 0020) gelten nur, solange ihr Original gilt; fehlt die Variante
+ * (Medien von vor ADR 0020), kommt das Original.
  */
 export async function GET(_anfrage: Request, { params }: RouteContext<'/medien/[...schluessel]'>) {
   await connection();
@@ -17,13 +20,15 @@ export async function GET(_anfrage: Request, { params }: RouteContext<'/medien/[
   } catch {
     return new Response(null, { status: 404 });
   }
-  const medium = await ladeMediumNachSchluessel(schluessel);
+  const variante = zerlegeVariante(schluessel);
+  const medium = await ladeMediumNachSchluessel(variante?.original ?? schluessel);
   if (!medium || medium.imPapierkorbSeit) return new Response(null, { status: 404 });
-  const strom = await speicher().lies(schluessel);
+  const variantenStrom = variante && medium.typ.startsWith('image/') ? await speicher().lies(schluessel) : null;
+  const strom = variantenStrom ?? (await speicher().lies(medium.schluessel));
   if (!strom) return new Response(null, { status: 404 });
   const kopf: Record<string, string> = {
-    'Content-Type': medium.typ,
-    'Content-Length': String(medium.groesse),
+    'Content-Type': variantenStrom ? 'image/webp' : medium.typ,
+    ...(variantenStrom ? {} : { 'Content-Length': String(medium.groesse) }),
     'Cache-Control': 'public, max-age=86400',
     'X-Content-Type-Options': 'nosniff',
     'Content-Disposition': 'inline',

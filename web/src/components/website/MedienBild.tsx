@@ -2,6 +2,7 @@ import { getImageProps } from 'next/image';
 import { preload } from 'react-dom';
 import { waehle, type Sprache } from '@/lib/i18n/inhalt';
 import type { BildDaten } from '@/lib/medien/bild';
+import { variantenSrcSet } from '@/lib/medien/varianten';
 import { cn } from '@/lib/utils';
 
 /**
@@ -57,6 +58,9 @@ export function MedienBild({
     fetchPriority: vorladen ? 'high' : undefined,
     preload: vorladen,
   });
+  // Auf Vercel gibt es im Services-Modus keine Bildoptimierung (`images.unoptimized`, BETRIEB.md §9): Die beim
+  // Hochladen erzeugten WebP-Varianten bilden das srcset (ADR 0020), ältere Medien liefern dort das Original.
+  if (process.env.VERCEL === '1') props.srcSet = variantenSrcSet(bild.url, bild.breite);
   if (vorladen) preload(props.src, { as: 'image', imageSrcSet: props.srcSet, imageSizes: props.sizes, fetchPriority: 'high' });
   // Die Image-Komponente ist Client-Code (K-12); getImageProps liefert hier nur die Attribute, das Element bleibt ein img.
   // eslint-disable-next-line @next/next/no-img-element -- kein next/image-Element, daher kein Client-JavaScript

@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useEffect, useRef } from 'react';
+import { type ChangeEvent, useActionState, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Feld } from '@/components/verwaltung/Feld';
@@ -66,14 +66,57 @@ function TextFelder({ z, start, tv }: { z: MedienZustand; start: Start; tv: stri
   );
 }
 
-/** Hochladen (C11, ADR 0007): Datei, Alt-Text (Pflicht), Bildrechte; nach Erfolg zur Detailseite. */
-export function HochladenFormular() {
+/** Längste Kante beim Verkleinern im Browser (wie auf dem Server, `MAX_KANTE`). */
+const KANTE = 2560;
+
+/**
+ * Verkleinert ein Bild im Browser auf höchstens `KANTE` px als WebP, bis es unter `grenze` Bytes liegt (ADR 0020:
+ * Vercel nimmt höchstens 4,5 MB je Anfrage an). Der Server verarbeitet die Datei danach wie jede andere.
+ */
+async function verkleinere(datei: File, grenze: number): Promise<File | null> {
+  const bild = await createImageBitmap(datei);
+  const faktor = Math.min(1, KANTE / Math.max(bild.width, bild.height));
+  const leinwand = document.createElement('canvas');
+  leinwand.width = Math.round(bild.width * faktor);
+  leinwand.height = Math.round(bild.height * faktor);
+  leinwand.getContext('2d')?.drawImage(bild, 0, 0, leinwand.width, leinwand.height);
+  bild.close();
+  for (const qualitaet of [0.9, 0.82, 0.72]) {
+    const blob = await new Promise<Blob | null>((fertig) => leinwand.toBlob(fertig, 'image/webp', qualitaet));
+    if (blob && blob.size <= grenze) return new File([blob], `${datei.name.replace(/\.[^.]+$/, '')}.webp`, { type: 'image/webp' });
+  }
+  return null;
+}
+
+/**
+ * Hochladen (C11, ADR 0007): Datei, Alt-Text (Pflicht), Bildrechte; nach Erfolg zur Detailseite. Liegt die Grenze des
+ * Servers unter der Dateigröße (Vercel), werden Bilder vorher im Browser verkleinert; zu große PDFs werden abgelehnt.
+ */
+export function HochladenFormular({ grenzeBytes }: { grenzeBytes: number }) {
   const t = useTranslations('verwaltung.medien');
   const tv = useTranslations('verwaltung');
   // Erfolg leitet die Action selbst zur Detailseite weiter (kein router.push im Effekt, siehe hochladen())
   const [z, absenden, laeuft] = useActionState<MedienZustand, FormData>(hochladen, {});
   const ref = useFokus(z);
-  const dateiFehler = z.feldFehler?.datei ? t(`fehler.${z.feldFehler.datei}` as never) : undefined;
+  const [vorab, setVorab] = useState<{ fehler?: string; hinweis?: string }>({});
+  const mb = Math.floor(grenzeBytes / 1_000_000);
+  const dateiFehler = vorab.fehler ?? (z.feldFehler?.datei ? t(`fehler.${z.feldFehler.datei}` as never) : undefined);
+  async function gewaehlt(e: ChangeEvent<HTMLInputElement>) {
+    const eingabe = e.currentTarget;
+    const datei = eingabe.files?.[0];
+    setVorab({});
+    if (!datei || datei.size <= grenzeBytes) return;
+    const kleiner = datei.type.startsWith('image/') ? await verkleinere(datei, grenzeBytes).catch(() => null) : null;
+    if (!kleiner) {
+      eingabe.value = '';
+      setVorab({ fehler: t('fehler.datei_zuGrossServer', { mb }) });
+      return;
+    }
+    const liste = new DataTransfer();
+    liste.items.add(kleiner);
+    eingabe.files = liste.files;
+    setVorab({ hinweis: t('hochladen.verkleinert', { mb }) });
+  }
   return (
     <form action={absenden} className="flex flex-col gap-4" noValidate>
       <div ref={ref}>
@@ -96,6 +139,7 @@ export function HochladenFormular() {
           name="datei"
           required
           accept="image/jpeg,image/png,image/webp,image/avif,application/pdf"
+          onChange={gewaehlt}
           aria-invalid={dateiFehler ? true : undefined}
           aria-describedby={['medium-datei-hinweis', dateiFehler ? 'medium-datei-fehler' : ''].filter(Boolean).join(' ')}
           className="text-18"
@@ -103,6 +147,11 @@ export function HochladenFormular() {
         {dateiFehler ? (
           <p id="medium-datei-fehler" className="text-16 font-bold text-fehler">
             {dateiFehler}
+          </p>
+        ) : null}
+        {vorab.hinweis ? (
+          <p role="status" className="text-16 text-gruen-800">
+            {vorab.hinweis}
           </p>
         ) : null}
       </div>

@@ -1,6 +1,6 @@
 # ADR 0020 – Medienspeicher auf Vercel: Vercel Blob (Frankfurt), Direkt-Upload und Bildvarianten
 
-- Status: angenommen · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-05) · Bezug: ADR 0007
+- Status: angenommen, umgesetzt (Speicher, Varianten, Verkleinern im Browser) · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-05) · Bezug: ADR 0007
 
 ## Ziel
 
@@ -14,18 +14,20 @@ Auf Vercel ist das Dateisystem schreibgeschützt (außer `/tmp`), Funktionen neh
 
 ## Bewertung
 
-Weg 3 allein löst Dateisystem und Varianten nicht. Weg 2 funktioniert ebenfalls und bleibt als Alternative im Code (Docker, andere Hoster). **Weg 1 gewählt:** ein Klick in Vercel (Marketplace/Storage), Region Frankfurt, kein eigener Schlüsselbetrieb; die vorhandene Speicher-Schnittstelle nimmt den neuen Speicher auf.
+Weg 3 allein löst Dateisystem und Varianten nicht. Weg 2 funktioniert ebenfalls und bleibt als Alternative im Code (Docker, andere Hoster). **Gewählt: Speicher nach Weg 1 (Vercel Blob), Upload nach Weg 3** – Bilder über 4 MB verkleinert schon der Browser (gleiche Kantenlänge wie der Server), danach läuft die vorhandene Server Action mit Typprüfung, EXIF-Bereinigung und Varianten unverändert. Der Direkt-Upload in den Speicher (`@vercel/blob/client`, Token-Route) bleibt der nächste Schritt, falls große PDF-Aushänge nötig werden (Umkehrprobe).
 
 ## Festlegungen
 
 - `SPEICHER=blob` mit `BLOB_READ_WRITE_TOKEN`; `SPEICHER=dateisystem` auf Vercel ist ein Fehler der Startprüfung.
-- Direkt-Upload nur für angemeldete Konten mit Medienrecht (Token-Ausgabe prüft Sitzung, Zwei-Faktor, Rolle, Dateityp, Größe ≤ 25 MB).
-- Varianten: 480, 960, 1600, 2560 px Breite (nie hochskaliert), WebP; `MedienBild` baut daraus `srcset`/`sizes`. Bestehende Medien ohne Varianten bekommen das Original als Rückfall. Logos bleiben feste PNG (nie hochskaliert).
+- Upload auf Vercel: Grenze 4,2 MB je Anfrage (mit Rand zu den 4,5 MB von Vercel Functions). Bilder darüber verkleinert der Browser auf höchstens 2560 px als WebP (`MedienFormulare.tsx`); PDF darüber wird mit verständlicher Meldung abgelehnt. Außerhalb von Vercel gilt weiter `MAX_BYTES` (10 MB).
+- Speicher privat (`access: 'private'`), Auslieferung nur über `/medien/…` – Papierkorb und Löschung wirken sofort.
+- Varianten: 480, 960, 1600, 2560 px Breite (nur kleiner als das Original, nie hochskaliert), WebP, unter `<schlüssel>.w<breite>.webp` neben dem Original – das Datenmodell bleibt unverändert (UNANTASTBAR). Die Medienroute liefert eine fehlende Variante (Medien von vor dieser Entscheidung) als Original aus. `MedienBild` baut auf Vercel daraus `srcset`/`sizes` (`variantenSrcSet`). Logos bleiben feste PNG (nie hochskaliert).
+- Löschen (Verwaltung, Löschlauf) entfernt Original und Varianten (`loescheMitVarianten`).
 - Bildoptimierung von Vercel bleibt aus (`images.unoptimized` auf Vercel) – die Varianten ersetzen sie und halten die Tarifgrenzen ein.
 
 ## Umkehrprobe
 
-Falsch, wenn Blob in der gewählten Region nicht verfügbar ist oder die Kosten den Rahmen sprengen – dann `SPEICHER=s3` mit einem EU-Anbieter (Weg 2), ohne Änderung an den Aufrufern.
+Falsch, wenn Blob in der gewählten Region nicht verfügbar ist oder die Kosten den Rahmen sprengen – dann `SPEICHER=s3` mit einem EU-Anbieter (Weg 2), ohne Änderung an den Aufrufern. Falsch auch, wenn PDF-Aushänge regelmäßig größer als 4 MB sind – dann Direkt-Upload (`@vercel/blob/client`, Token nur mit `medium.hochladen`, danach Verarbeitung per Server Action).
 
 ## Folgen zweiter Ordnung
 

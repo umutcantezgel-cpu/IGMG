@@ -8,9 +8,10 @@ import { protokolliere } from '@/lib/audit';
 import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
-import { MedienFehler, verarbeiteDatei } from '@/lib/medien/verarbeiten';
+import { MedienFehler, erzeugeVarianten, verarbeiteDatei } from '@/lib/medien/verarbeiten';
+import { variantenSchluessel } from '@/lib/medien/varianten';
 import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
-import { speicher } from '@/lib/storage';
+import { loescheMitVarianten, speicher } from '@/lib/storage';
 import { ladeMedium, verwendungVon } from '@/server/queries/verwaltung/medien';
 
 /**
@@ -72,7 +73,16 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
   if (vorhanden?.imPapierkorbSeit) return { fehler: 'pruefen', feldFehler: { datei: 'datei_imPapierkorb' }, werte };
   if (vorhanden) redirect(`/verwaltung/medien/${vorhanden.id}?meldung=hochgeladen`);
   await speicher().schreibe(v.schluessel, v.daten, v.typ);
-  // Scheitert der Eintrag, die eben geschriebene Datei wieder entfernen – keine verwaiste Datei (SP-C2 H4)
+  // Bildvarianten (ADR 0020): WebP in festen Breiten unterhalb der Originalbreite, neben dem Original
+  try {
+    for (const variante of await erzeugeVarianten(v)) {
+      await speicher().schreibe(variantenSchluessel(v.schluessel, variante.breite), variante.daten, 'image/webp');
+    }
+  } catch (e) {
+    await loescheMitVarianten(v.schluessel).catch(() => undefined);
+    throw e;
+  }
+  // Scheitert der Eintrag, die eben geschriebenen Dateien wieder entfernen – keine verwaiste Datei (SP-C2 H4)
   const [neu] = await db
     .transaction(async (tx) => {
       const zeilen = await tx
@@ -102,9 +112,7 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
       return zeilen;
     })
     .catch(async (e: unknown) => {
-      await speicher()
-        .loesche(v.schluessel)
-        .catch(() => undefined);
+      await loescheMitVarianten(v.schluessel).catch(() => undefined);
       throw e;
     });
   inhaltGeaendert(TAG.medien);
@@ -178,6 +186,6 @@ export async function endgueltigLoeschen(fd: FormData): Promise<void> {
       tx,
     );
   });
-  await speicher().loesche(medium.schluessel);
+  await loescheMitVarianten(medium.schluessel);
   redirect('/verwaltung/medien?ansicht=papierkorb&meldung=geloescht');
 }

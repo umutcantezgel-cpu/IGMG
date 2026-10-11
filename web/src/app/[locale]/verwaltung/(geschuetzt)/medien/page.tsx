@@ -4,11 +4,15 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { HochladenFormular } from '@/components/verwaltung/medien/MedienFormulare';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { MAX_BYTES } from '@/lib/medien/verarbeiten';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
 import { ladeMedien, medienFilter } from '@/server/queries/verwaltung/medien';
 
 const MELDUNGEN = ['papierkorb', 'wiederhergestellt', 'geloescht'] as const;
+
+/** Vercel nimmt höchstens 4,5 MB je Anfrage an (ADR 0020); mit Rand für die übrigen Formularfelder. */
+const GRENZE_VERCEL = 4_200_000;
 
 /** Verwaltung › Medien (C11, Blatt V11): Raster mit Alt-Text, Filter, Papierkorb, Hochladen. */
 export default async function MedienVerwalten({ searchParams }: PageProps<'/[locale]/verwaltung/medien'>) {
@@ -49,7 +53,7 @@ export default async function MedienVerwalten({ searchParams }: PageProps<'/[loc
           <h2 id="medien-hochladen" className="text-24">
             {t('hochladen.titel')}
           </h2>
-          <HochladenFormular />
+          <HochladenFormular grenzeBytes={process.env.VERCEL === '1' ? GRENZE_VERCEL : MAX_BYTES} />
         </section>
       ) : null}
       <form method="get" className="flex flex-wrap items-end gap-3">

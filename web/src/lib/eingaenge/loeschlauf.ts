@@ -2,7 +2,7 @@ import 'server-only';
 import { and, eq, inArray, isNotNull, lt, lte, or, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
-import { speicher } from '@/lib/storage';
+import { loescheMitVarianten } from '@/lib/storage';
 import { raeumeAltchaAuf } from '@/lib/validierung/altcha';
 import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
 import { verwendungVon } from '@/server/queries/verwaltung/medien';
@@ -33,7 +33,7 @@ async function leereMedienPapierkorb(jetzt: Date): Promise<number> {
         tx,
       );
     });
-    await speicher().loesche(z.schluessel);
+    await loescheMitVarianten(z.schluessel);
     n++;
   }
   return n;
