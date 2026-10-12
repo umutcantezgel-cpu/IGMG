@@ -30,19 +30,19 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 - **UA-03 Verwaltungsflüsse auf der Vorschau:** Produktion/Vorschau ohne Datenbank und ohne Konten (G3/G5) → Ersatz: Verwaltungsflüsse lokal gegen PGlite (`anmeldung.mjs`), Vorschau nur öffentliche Ansichten.
 - **UA-04 Chromium-Version:** Playwright 1.64 erwartet Chromium 156, vorinstalliert ist 141 (Installation nicht erlaubt) → Ersatz: Chromium 141 für alle Läufe, vorher und nachher gleich.
 
-## V-Prüfliste (Stand 2026-10-11 19:00 UTC)
+## V-Prüfliste (Stand 2026-10-12 04:50 UTC; Beleg der Endprüfung: `berichte/STUFE-C.md`, Schritt 10/11)
 | V | Kurz | Stand |
 |---|---|---|
 | V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | erfüllt (0c224da; per `validateConfig` der CLI geprüft) – Bestätigung im E2-TOR |
-| V-02 | Build wie auf Vercel (preview, production) | E2-TOR läuft |
+| V-02 | Build wie auf Vercel (preview, production) | erfüllt je Fast-Forward (`vercel build --prod` in Archivkopie: 8da8efe, 25e8040, 6596a6e, f44119b, 560161e; Protokolle `$SCRATCHPAD/ff/vorab-*.log`); Endstand preview + production in Stufe C Schritt 10 |
 | V-03 | VERCEL-ENV.md, SITE_MODE, Startprüfung, Geheimnisse per Skript | erfüllt (c596742, 263cd1d, 0cd8173) – Beleg Stufe C |
 | V-04 | Postgres Frankfurt, attachDatabasePool, Migration vor Code, keine Prod-DB in Vorschau | Code erfüllt (0c224da, Sperre lokal 8/8); Konto: Menschen (ML) |
 | V-05 | Blob Frankfurt, große Uploads, Metadaten-Bereinigung, Varianten | Code erfüllt (47ed617; Verkleinern im Browser statt Direkt-Upload, ADR 0020 rev.) |
 | V-06 | Cron täglich, CRON_SECRET, idempotent mit Sperre | erfüllt (c596742, 0c224da) |
-| V-07 | gemeinsamer Speicher für Sitzungen, Raten, Sperren | Bestand (DB) – Beleg H-V07 offen |
-| V-08 | Caching wie lokal, sofort sichtbar, lange Lebensdauer statischer Dateien | teilweise (Cache-Header abd187e) – H-V08 offen |
-| V-09 | Vorschau geschützt, teilbarer Link, noindex, Toolbar in Tests ausgenommen | teilweise (noindex 263cd1d, Vercel Authentication aktiv) – Beleg im Tor |
-| V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | teilweise (Health, Runbook) – H-V10 offen |
+| V-07 | gemeinsamer Speicher für Sitzungen, Raten, Sperren | erfüllt (Bestand in der DB; Beleg `protokolle/H-V07-V10-pruefung.md`) |
+| V-08 | Caching wie lokal, sofort sichtbar, lange Lebensdauer statischer Dateien | erfüllt (Cache-Header abd187e, ADR 0024 d26e8bc; „sofort sichtbar“ 18/18 `berichte/H-V08.md`) |
+| V-09 | Vorschau geschützt, teilbarer Link, noindex, Toolbar in Tests ausgenommen | erfüllt im Code (noindex 263cd1d, CSP ohne Toolbar); Vercel Authentication im Projekt aktiv (MCP 11.10.); teilbarer Link: Menschen (ML-23) |
+| V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | erfüllt (`protokolle/H-V07-V10-pruefung.md`, `lib/db/fehler.ts`, Health mit Zeitlimit 352d1bb, Runbook §§ 12–13, 16; ML-14–16) |
 | V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | erfüllt als Entwurf (0cd8173, 8df9556); Freigabe: Menschen (ML-11, ML-12) |
 | V-12 | Tarif-Empfehlung in MENSCHEN | erfüllt (ML-09) |
-| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb); Vorschauprüfung je Tor läuft |
+| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen (READY, 0 Laufzeitfehler; zuletzt 560161e, dpl_KFfPJhrG4qFg1ECefPXnPAmNNKwL) |
