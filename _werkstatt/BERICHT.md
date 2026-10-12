@@ -22,14 +22,14 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
 - Die Logos der Organisationen gibt es nur sehr klein und mit weißem Grund. In kleinen Größen sind sie kaum zu erkennen. Gibt es größere Dateien (MENSCHEN M-015, M-016)?
 - Die Entfernung Wetzlar–Kaaba ist ausgeblendet, bis jemand sie mit Quelle liefert (ML-25).
 
-## Schlussbericht (Entwurf – Zahlen und Urteil der Endprüfung folgen)
+## Schlussbericht · Montag, 12. Oktober 2026
 
 **Ergebnis in drei Sätzen**
 1. Die Website der IGMG Wetzlar hat ein geschärftes, eigenes Erscheinungsbild:
    - ruhige Bewegung nach festen Regeln;
    - ein Formsystem aus dem Achtstern;
    - vier große Momente aus echten Inhalten: Tagesbogen der Gebetszeiten, Weg der Gemeinde, Projekt-Meilensteine, Familie der vier Organisationen.
-2. Alle zwölf Hauptansichten und zwanzig weitere Ansichten sind überarbeitet und von unabhängigen Prüfern abgenommen.
+2. Alle zwölf Hauptansichten und zwanzig weitere Ansichten sind überarbeitet und von unabhängigen Prüfern abgenommen; vier Prüfrunden haben die Bewertung von 6,3 auf 7,7 von 10 gehoben.
 3. Für Vercel ist alles im Code vorbereitet: Datenbank und Dateispeicher in Frankfurt, wiederkehrende Aufgaben, Schutz der Vorschau, Startklar-Prüfung. Bis zum Livegang fehlen nur noch die Schritte in `MENSCHEN.md`.
 
 **Was neu ist**
@@ -61,9 +61,40 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Die Zeitrechnung läuft nach dem Seitenaufbau.
   - Der islamische Kalender wird auf dem Server gerechnet (`berichte/H-L01.md`).
 
-**Kriterien:** siehe „Urteil der Endprüfung“ (folgt) und `_werkstatt/ABNAHME.md`.
+**In Zahlen (Stand 325c38a, Abschlussprüfung; Belege in `_werkstatt/ABNAHME.md`)**
+- **Pakete:** Pflicht 70 von ≈ 70, Kür 20 von 20, dazu 54 Befundpakete aus vier Sichtabnahmen (H-B 14, H-C 13, H-E 14, H-F 13), jedes von Opus abgenommen (Noten 8–8,5).
+- **Gestaltung:** Mittel der unabhängigen Sichtprüfer über 17 Ansichten:
+  - 6,29 (E3)
+  - 7,16 (E4)
+  - 7,52 (C2)
+  - 7,65 (C3, keine Kategorie unter 7)
 
-**Galerie:** `_werkstatt/bilder/galerie.html` – links der Stand vom Laufbeginn, rechts der Abschluss, je Hauptansicht für Telefon, Tablet und Desktop.
+  Die 13 Pakete der Welle H-F kamen danach.
+- **Zugänglichkeit:** axe WCAG 2.2 AA 0 Verstöße auf 25 Routen × 2 Breiten (dazu Türkisch und Englisch); Tastatur 0 unsichtbare Fokusse, keine Falle.
+- **Darstellung:** kein Querscrollen und kein abgeschnittener Text in 75 Ansichten Deutsch, 33 Türkisch, 9 Englisch und 75 mit reduzierter Bewegung.
+- **Bewegung und Grafik:** alle 12 Keyframes im Register. Momente bei vierfach gedrosseltem Prozessor im Median 0 % verworfene Bilder. 0 SVG-Befunde, eine Icon-Familie.
+- **Bestand:**
+  - release:check bestanden: Typen, Lint, 814 Unit- und 1412 Integrationstests, Sprachen, Geheimnisse.
+  - E2E 563 grün; die ALTCHA-Tests sind in den Wiederholungen grün.
+  - Funktionsliste F-01–F-24 je Telefon und Desktop: 36 von 36 prüfbaren Ergebnissen erfüllt (Ausgangsstand: 30 erfüllt, 5 nicht erfüllt).
+  - Konsole ohne Fehler.
+- **Leistung:**
+  - INP im Labor 11 von 11 Hauptansichten ≤ 200 ms.
+  - LCP ≤ 2,34 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100.
+  - JS_PLATZHALTER
+  - Die Performance-Note liegt mit 82–89 gleichauf mit dem Ausgangsstand und unter dem Ziel 90 (AUSNAHME A-01; Feldprüfung nach dem Livegang, ML-27).
+- **Vercel:**
+  - `vercel build` als Vorschau und Produktion grün.
+  - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte.
+
+**Offen und bewusst so gelassen**
+- **AUSNAHME A-01, Performance-Note:** Grund ist der Hydrierungsblock des Frameworks, gleich groß wie vor dem Lauf. Der Ausweg ist ein eigener Auftrag „Hydrierung verkleinern“ (L-E14).
+- **ML-28, Eingaben vor dem Laden:** Wer in den Verwaltungsformularen tippt, bevor die Seite fertig geladen ist, verliert die Eingabe. Formularlogik war tabu; der Vorschlag steht in MENSCHEN.
+- **Umgebungsausnahmen UA-01–UA-04:** Es gab keine echten Geräte und kein Docker, Verwaltungsflüsse nur lokal, Chromium 141. Ersatzwege stehen in ABNAHME.
+
+**Kriterien:** Das Urteil des frischen Endprüfers wird nach der Prüfung unten wörtlich eingefügt (AUFTRAG, Abschlussregel). Stand und Beleg je Kriterium stehen in `_werkstatt/ABNAHME.md`.
+
+**Galerie:** `_werkstatt/bilder/galerie.html` zeigt je Hauptansicht für Telefon, Tablet und Desktop links den Stand vom Laufbeginn und rechts den Abschluss. Dazu kommen die Momente und der Seitenwechsel.
 
 ## Anleitung: Zusammenführen und Zurückrollen
 

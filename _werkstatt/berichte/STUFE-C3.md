@@ -160,3 +160,32 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 - `protokolle/C-endstand.log`, `C-lauf.log`, `C3-nachmessung.log`: Ablauf.
 - `$SCRATCHPAD/e2e/endstand-vollauf.log`, `altcha-wdh*.log`, `nachmessung.log`: E2E.
 - `$SCRATCHPAD/menue-spur/`: Spuren und Versuch zum Menü-INP.
+
+## 12. Nachtrag: Abschlussprüfung 325c38a (nach Welle H-F)
+
+**Ablauf.** `OHNE_RUHE=1 endstand.sh 325c38a` lief von 17:18 bis 18:35 UTC (`protokolle/C-endstand.log`, `C-lauf.log`): Build 3500, Stufe C 1–3 und 5–11, E2E-Vollauf (Port 3700). Lighthouse und INP wurden nicht neu gemessen. Begründung: Die Welle H-F änderte Klassen, SVG und Texte, aber keine Interaktionslogik. Es gilt der Stand de91dcd (§6). Das JS-Gewicht ist per Kurzprüfung neu erhoben (unten).
+
+| Schritt | Ergebnis 325c38a | Beleg |
+|---|---|---|
+| 1 Bildsatz de/reduziert/tr/en | 0 Querscrollen, 0 abgeschnittene Texte; Hinweise nur gewollte Kürzungen (Anrisstext mit Zeilenbegrenzung, Brotkrumen am Telefon) | `C-bildsatz*.md` |
+| 2 axe, Tastatur, Telefonmenü | 0 Verstöße (25 Routen × 390/1440, tr, en); 0 Fokusbefunde; Fokus im Kreis | `C-a11y-*.md`, `C-tastatur-*.md`, `C-menue-fokus.json` |
+| 3 Konsole, Statuscodes | 0 Meldungen außer dem gewollten 404 auf `/gibt-es-nicht` | `C-konsole*.json` |
+| 5–6 Seitenwechsel, Momente, Bewegung | B-05 mit Inhalt nach Titel und Bild; Momente im Median 0 % verworfen | `C-vt-*.log`, `C-bildrate-b0*.log`, `C-bewegung-*.md` |
+| 7 freie Werte, SVG, Wortlaut | 0 echte freie Werte; 0 SVG-Befunde; Wortlaut 0 offen | `C-freie-werte.md`, `C-svg.md`, `C-wortlaut.md` |
+| 8 release:check, startklar | bestanden (unit 814, integration 1412); Produktion nur Menschen-Aufgaben | `C-release-check.log`, `C-startklar-*` |
+| 9 Funktionsliste gepaart | 3500: 36 × erfüllt, 0 × nicht erfüllt; 3100: 30 × erfüllt, 5 × nicht erfüllt | `C-funktionsliste-3100.md`, `C-funktionsliste-3500.md` |
+| 10 V-02 | `vercel build` preview und production grün | `C-lauf.log` Schritt 10 |
+| 11 Register | alle Keyframes im Register K-007 | `C-keyframes.txt` |
+| E2E | 563 grün, 6 rot: 4 × ALTCHA (in Wiederholungen grün, L-E07), 1 × PWA-offline (Umgebung), 1 × Kontaktdaten | `$S/e2e/endstand-vollauf.log`, `altcha-wdh3.log` |
+
+**Befund Kontaktdaten.**
+- Ursache: Der Test füllte das Feld vor der Hydrierung. React setzt das gesteuerte Textfeld beim Hydrieren auf den Server-Wert zurück. Die Drosselprobe zeigt das in 6 von 6 Fällen.
+- Einordnung: Formular und Test sind seit früheren Läufen unverändert, es ist also kein Rückschritt dieses Laufs.
+- Behebung: Der Test wartet jetzt, bis das Formular den Wert übernommen hat (3ac362e).
+- Das Produktverhalten geht als ML-28 an Menschen (Formularlogik UNANTASTBAR).
+- Beleg: `protokolle/C3-e2e-kontakt.md`.
+
+**Abschlussbilder und JS.**
+- Hauptansichten mit 3 s Wartezeit nach `bilder/abschluss/`; Momente und Seitenwechsel aus Stufe C; Verwaltung nach `bilder/C3b-verwaltung/`; Galerie neu erzeugt.
+- JS_NACHTRAG
+- Ablauf: `protokolle/C3b-abschluss-bilder.log`.
