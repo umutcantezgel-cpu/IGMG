@@ -1,0 +1,246 @@
+// Selbstprüfung H-E01 (Scratchpad, nicht im Repo). Modi: messen | momente | wechsel
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { GERAETE, basisAdresse, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+
+const SCR = '/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/H-E01';
+const AUS = '/home/user/IGMG/_werkstatt/bilder/H-E01';
+const BASIS = basisAdresse('http://localhost:3200');
+const MODUS = process.argv[2] ?? 'messen';
+const WARTE = 3500;
+mkdirSync(SCR, { recursive: true });
+mkdirSync(join(AUS, 'momente'), { recursive: true });
+
+const SEITEN = [
+  { name: 'start-de', pfad: '/' },
+  { name: 'start-tr', pfad: '/tr' },
+  { name: 'gebet-de', pfad: '/gebetszeiten' },
+  { name: 'gebet-tr', pfad: '/tr/namaz-vakitleri' },
+];
+const BREITEN = [390, 768, 1440];
+const UHREN = {
+  '22:30': '2026-10-12T22:30:00+02:00',
+  '19:30': '2026-10-12T19:30:00+02:00',
+  '04:00': '2026-10-12T04:00:00+02:00',
+  'juni-23:30': '2026-06-21T23:30:00+02:00',
+};
+
+/** Läuft im Browser: Marken, Zeiten, Fenster und Überlauf, alle Lagen in Einheiten des Zeichenfelds (640 breit). */
+function messen() {
+  const fig = document.querySelector('figure:has(svg[role="img"])');
+  if (!fig) return { fehler: 'keine Figur' };
+  const bereich = fig.querySelector('div[class*="aspect-16"]');
+  const rb = bereich.getBoundingClientRect();
+  const k = 640 / rb.width;
+  const box = (r) => [r.left, r.top, r.right, r.bottom].map((v) => +v.toFixed(1));
+  const marken = { sonne: [], ring: [], chip: [] };
+  for (const el of bereich.children) {
+    if (el.tagName !== 'SPAN') continue;
+    const r = el.getBoundingClientRect();
+    const cs = getComputedStyle(el);
+    const after = getComputedStyle(el, '::after');
+    const info = {
+      x: +((r.left + r.width / 2 - rb.left) * k).toFixed(1),
+      y: +((r.top + r.height / 2 - rb.top) * k).toFixed(1),
+      breite: +r.width.toFixed(1),
+      opazitaet: +(+cs.opacity).toFixed(3),
+      transform: cs.transform,
+      bg: cs.backgroundColor,
+      afterOpazitaet: +(+after.opacity).toFixed(3),
+      afterAnim: after.animationName,
+      afterVerzoegerung: after.animationDelay,
+      anim: cs.animationName,
+      verzoegerung: cs.animationDelay,
+      punktErreicht: el.className.includes('bogen-punkt-erreicht'),
+    };
+    const w = Math.round(r.width);
+    if (w === 16) marken.sonne.push(info);
+    else if (w === 12) marken.ring.push(info);
+    else if (w === 36) marken.chip.push(info);
+  }
+  const fenster = fig.querySelector('div[aria-hidden][class*="overflow-hidden"]');
+  const fensterRechts = fenster ? +((fenster.getBoundingClientRect().right - rb.left) * k).toFixed(1) : null;
+  const zeilen = [...fig.querySelectorAll('ol li')].map((l) => {
+    const sp = l.querySelectorAll(':scope > span');
+    const name = sp[0];
+    const zeit = sp[1];
+    const stern = name.querySelector('svg');
+    const cz = getComputedStyle(zeit);
+    return {
+      name: name.textContent.trim(),
+      zeit: zeit.textContent.trim(),
+      ist: l.getAttribute('aria-current') === 'time',
+      stern: !!stern,
+      zeitSchrift: parseFloat(cz.fontSize),
+      zeitZeile: parseFloat(cz.lineHeight),
+      zeitFarbe: cz.color,
+      liPosition: getComputedStyle(l).position,
+      box: box(l.getBoundingClientRect()),
+      namenBox: box(name.getBoundingClientRect()),
+      zeitBox: box(zeit.getBoundingClientRect()),
+      sternBox: stern ? box(stern.getBoundingClientRect()) : null,
+    };
+  });
+  // Überlappungen zwischen Beschriftungen (Namen, Zeiten) und zwischen Ebenen
+  const schneidet = (a, b) => a[0] < b[2] - 0.5 && b[0] < a[2] - 0.5 && a[1] < b[3] - 0.5 && b[1] < a[3] - 0.5;
+  const texte = [];
+  zeilen.forEach((z, i) => {
+    texte.push({ i, art: 'name', b: z.namenBox });
+    texte.push({ i, art: 'zeit', b: z.zeitBox });
+  });
+  const ueberlappt = [];
+  for (let a = 0; a < texte.length; a++)
+    for (let b = a + 1; b < texte.length; b++) {
+      if (texte[a].i === texte[b].i && texte[a].art === texte[b].art) continue;
+      if (schneidet(texte[a].b, texte[b].b)) ueberlappt.push(`${texte[a].i}${texte[a].art}/${texte[b].i}${texte[b].art}`);
+    }
+  // Ebenen: erste Ebene = oberste Lage, zweite = Imsak und Yatsı (tiefer gesetzt)
+  const oben = Math.min(...zeilen.map((z) => z.box[1]));
+  const ebene1 = zeilen.filter((z) => z.box[1] < oben + 8);
+  const ebene2 = zeilen.filter((z) => z.box[1] >= oben + 8);
+  let kleinsteLuecke = null;
+  for (const z2 of ebene2)
+    for (const z1 of ebene1) {
+      const xUeberlappt = z2.box[0] < z1.box[2] && z1.box[0] < z2.box[2];
+      if (!xUeberlappt) continue;
+      const luecke = +(z2.box[1] - z1.box[3]).toFixed(1);
+      if (kleinsteLuecke === null || luecke < kleinsteLuecke) kleinsteLuecke = luecke;
+    }
+  return {
+    viewport: window.innerWidth,
+    overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+    figurBreite: +fig.getBoundingClientRect().width.toFixed(1),
+    xlAktiv: zeilen.some((z) => z.liPosition === 'absolute'),
+    marken,
+    fensterRechts,
+    zeilen,
+    ueberlappt,
+    kleinsteLuecke,
+    ebene2: ebene2.map((z) => z.name),
+  };
+}
+
+function kurz(m) {
+  if (!m || m.fehler) return m;
+  return {
+    viewport: m.viewport,
+    overflowX: m.overflowX,
+    xl: m.xlAktiv,
+    fenster: m.fensterRechts,
+    sonne: m.marken.sonne.map((s) => ({ x: s.x, op: s.opazitaet, anim: s.anim, verz: s.verzoegerung })),
+    ringe: m.marken.ring.map((r) => ({ x: r.x, erreicht: r.punktErreicht, after: r.afterOpazitaet, verz: r.afterVerzoegerung })),
+    chips: m.marken.chip.map((c) => ({ x: c.x, op: c.opazitaet, bg: c.bg, anim: c.anim, verz: c.verzoegerung })),
+    zeilen: m.zeilen.map((z) => `${z.name}|${z.zeit}|${z.ist ? 'ist' : ''}${z.stern ? '*' : ''}|${z.zeitSchrift}px/${z.zeitZeile}|${z.liPosition}`),
+    ueberlappt: m.ueberlappt,
+    kleinsteLuecke: m.kleinsteLuecke,
+    ebene2: m.ebene2,
+  };
+}
+
+const browser = await starteBrowser();
+const ergebnis = { zeit: new Date().toISOString(), messen: [], momente: [], wechsel: [] };
+
+if (MODUS === 'messen') {
+  for (const s of SEITEN)
+    for (const b of BREITEN)
+      for (const [uhr, iso] of Object.entries(UHREN)) {
+        const kontext = await neuerKontext(browser, { viewport: { width: b, height: GERAETE[b].hoehe } });
+        const seite = await kontext.newPage();
+        await seite.clock.setFixedTime(new Date(iso));
+        const status = await oeffne(seite, vollerUrl(BASIS, s.pfad), { warte: WARTE });
+        const m = await seite.evaluate(messen);
+        ergebnis.messen.push({ seite: s.name, breite: b, uhr, status, ...kurz(m) });
+        await kontext.close();
+      }
+}
+
+if (MODUS === 'momente') {
+  const T_LISTE = [0, 300, 600, 900, 1200, 1500, 1600];
+  for (const [uhr, iso] of [['22:30', UHREN['22:30']], ['19:30', UHREN['19:30']]])
+    for (const b of [390, 1440]) {
+      const kontext = await neuerKontext(browser, { viewport: { width: b, height: GERAETE[b].hoehe } });
+      const seite = await kontext.newPage();
+      await seite.clock.setFixedTime(new Date(iso));
+      await oeffne(seite, vollerUrl(BASIS, '/'), { warte: WARTE });
+      const fig = seite.locator('figure:has(svg[role="img"])').first();
+      // Endzeiten aller Animationen in der Figur (Register B-06: nichts nach 1600 ms)
+      const enden = await seite.evaluate(() => {
+        const fig = document.querySelector('figure:has(svg[role="img"])');
+        return document
+          .getAnimations()
+          .filter((a) => a.effect && fig.contains(a.effect.target))
+          .map((a) => ({
+            name: a.animationName ?? a.constructor.name,
+            ende: a.effect.getComputedTiming().endTime,
+            pseudo: a.effect.pseudoElement ?? null,
+          }));
+      });
+      ergebnis.momente.push({ breite: b, uhr, animationenEnde: enden, maxEnde: Math.max(0, ...enden.map((e) => e.ende ?? 0)) });
+      for (const T of T_LISTE) {
+        const zustand = await seite.evaluate((T) => {
+          const fig = document.querySelector('figure:has(svg[role="img"])');
+          for (const a of document.getAnimations()) {
+            const ziel = a.effect && a.effect.target;
+            if (!ziel || !fig.contains(ziel)) continue;
+            a.pause();
+            a.currentTime = T;
+          }
+        }, T);
+        const m = await seite.evaluate(messen);
+        const datei = join(AUS, 'momente', `selbst-start-${b}-${uhr.replace(':', '')}-${T}ms.png`);
+        await fig.screenshot({ path: datei });
+        ergebnis.momente.push({ T, datei, ...kurz(m) });
+      }
+      await kontext.close();
+    }
+}
+
+if (MODUS === 'wechsel') {
+  // Gebetswechsel simuliert: Uhr springt über eine Gebetszeit; Layoutversatz über PerformanceObserver
+  const paare = [
+    ['11:00', '2026-10-12T11:00:00+02:00', '2026-10-12T14:30:00+02:00'],
+    ['19:00', '2026-10-12T19:00:00+02:00', '2026-10-12T22:45:00+02:00'],
+  ];
+  for (const s of SEITEN)
+    for (const b of BREITEN)
+      for (const [name, von, nach] of paare) {
+        const kontext = await neuerKontext(browser, { viewport: { width: b, height: GERAETE[b].hoehe } });
+        const seite = await kontext.newPage();
+        await seite.clock.install({ time: new Date(von) });
+        await oeffne(seite, vollerUrl(BASIS, s.pfad), { warte: WARTE });
+        const vorher = await seite.evaluate(messen);
+        await seite.evaluate(() => {
+          window.__cls = 0;
+          window.__clsEintraege = [];
+          new PerformanceObserver((l) => {
+            for (const e of l.getEntries()) {
+              if (!e.hadRecentInput) {
+                window.__cls += e.value;
+                window.__clsEintraege.push(+e.value.toFixed(4));
+              }
+            }
+          }).observe({ type: 'layout-shift' });
+        });
+        await seite.clock.setSystemTime(new Date(nach));
+        // Der Takt von useJetzt ist 30 s: runFor löst ihn aus, der Test läuft ohne reale Wartezeit
+        await seite.clock.runFor(31000);
+        await seite.waitForTimeout(800);
+        const cls = await seite.evaluate(() => ({ summe: window.__cls, eintraege: window.__clsEintraege }));
+        const nachher = await seite.evaluate(messen);
+        ergebnis.wechsel.push({
+          seite: s.name,
+          breite: b,
+          paar: name,
+          cls,
+          istVorher: vorher.zeilen?.find((z) => z.stern)?.name ?? null,
+          istNachher: nachher.zeilen?.find((z) => z.stern)?.name ?? null,
+          zeitenNachher: nachher.zeilen?.map((z) => `${z.name} ${z.zeit} ${z.zeitSchrift}px`),
+        });
+        await kontext.close();
+      }
+}
+
+await browser.close();
+const datei = join(SCR, `ergebnis-${MODUS}.json`);
+writeFileSync(datei, JSON.stringify(ergebnis, null, 2));
+console.log('geschrieben', datei, 'Einträge:', ergebnis.messen.length + ergebnis.momente.length + ergebnis.wechsel.length);

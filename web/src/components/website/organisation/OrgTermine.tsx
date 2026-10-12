@@ -12,7 +12,8 @@ import { type Kuerzel, MEHR_LINK, SLUG, STIL } from './stil';
 /**
  * Kompakte Terminliste der Organisationsseite (design/OrganizationPage.dc.html, „Kommende Veranstaltungen“):
  * Titel serifenlos fett als Link zur Veranstaltungsdetailseite; die ganze Zeile ist klickbar (after:-Fläche),
- * Datumspille mit Uhrzeit, kurze Beschreibung, Trennlinien. Ein eigener „Mehr erfahren“-Link entfällt.
+ * Terminzeile aus Datum und Uhrzeit in Organisationsfarbe (H-E05: ohne Pille), kurze Beschreibung, Trennlinien.
+ * Ein eigener „Mehr erfahren“-Link entfällt.
  * Darunter der Abo-Link auf den Feed dieser Organisation (K-19, webcal).
  */
 export async function OrgTermine({ termine, sprache, org }: { termine: VeranstaltungsDaten[]; sprache: Sprache; org: Kuerzel }) {
@@ -36,14 +37,14 @@ export async function OrgTermine({ termine, sprache, org }: { termine: Veranstal
                   {titel.text}
                 </Link>
               </h3>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-16">
-                <span className={cn('inline-flex items-center gap-1.5 rounded-pill px-2.5 font-bold', s.tint, s.ink)}>
-                  <Calendar aria-hidden className="size-4" />
+              <div className={cn('flex flex-wrap items-center gap-x-4 gap-y-1 text-16 leading-normal font-bold tabular-nums', s.ink)}>
+                <span className="inline-flex items-center gap-2">
+                  <Calendar aria-hidden className="size-5 shrink-0" />
                   {datum}
                 </span>
                 {/* Ganztägige Termine zeigen den Hinweis statt „00:00 Uhr“ (Befund H-FIX3, wie EventCard) */}
-                <span className="inline-flex items-center gap-1.5 text-tinte-2">
-                  <Clock aria-hidden className="size-4" />
+                <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                  <Clock aria-hidden className="size-5 shrink-0" />
                   {uhrzeitText(v, sprache, t('ganztaegig'))}
                 </span>
               </div>

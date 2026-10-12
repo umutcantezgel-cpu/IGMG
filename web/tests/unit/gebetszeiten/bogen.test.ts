@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { BOGEN, minutenAus, tagesbogen } from '@/lib/gebetszeiten/bogen';
+import { BOGEN, minutenAus, tagesbogen, zeitAnteilEintritt } from '@/lib/gebetszeiten/bogen';
 
 const herbst = { imsak: '05:52', gunes: '07:41', ogle: '13:16', ikindi: '16:08', aksam: '18:42', yatsi: '20:22' };
 const winter = { imsak: '06:31', gunes: '08:19', ogle: '12:25', ikindi: '14:12', aksam: '16:29', yatsi: '18:13' };
@@ -52,5 +52,14 @@ describe('Tagesbogen', () => {
     for (const p of b.punkte) expect(Number.isFinite(p.y)).toBe(true);
     expect(b.punkte[5].x).toBe(BOGEN.breite - BOGEN.rand);
     expect(b.punkte[5].y).toBeGreaterThan(BOGEN.horizont);
+  });
+
+  it('färbt im Takt der Linie: Zeitanteil der Kurve --ease-eintritt zu einem Weganteil', () => {
+    expect(zeitAnteilEintritt(0)).toBe(0);
+    expect(zeitAnteilEintritt(1)).toBe(1);
+    const werte = Array.from({ length: 21 }, (_, i) => zeitAnteilEintritt(i / 20));
+    for (let i = 1; i < werte.length; i++) expect(werte[i]).toBeGreaterThanOrEqual(werte[i - 1] ?? 0);
+    expect(zeitAnteilEintritt(0.5)).toBeCloseTo(0.062, 2);
+    expect(zeitAnteilEintritt(0.9)).toBeCloseTo(0.359, 2);
   });
 });

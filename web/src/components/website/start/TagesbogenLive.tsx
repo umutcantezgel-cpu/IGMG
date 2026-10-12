@@ -2,9 +2,9 @@
 
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { type CSSProperties, useEffect, useId, useRef, useState } from 'react';
+import { type CSSProperties, Fragment, useEffect, useId, useRef, useState } from 'react';
 import { Achtstern } from '@/components/website/Icons';
-import { BOGEN, minutenAus, tagesbogen } from '@/lib/gebetszeiten/bogen';
+import { BOGEN, minutenAus, tagesbogen, zeitAnteilEintritt } from '@/lib/gebetszeiten/bogen';
 import { berlinerDatum, naechstesGebet, uhrzeitBerlin } from '@/lib/gebetszeiten/naechstes';
 import type { Gebet, GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
@@ -28,8 +28,10 @@ const oben = (y: number) => `${(y / BOGEN.hoehe) * 100}%`;
 
 /**
  * Tagesbogen im Browser (B-06): Der Server liefert den Bogen des Referenztags ohne Hervorhebung; nach dem Einhängen
- * enthüllt sich die Linie bis „jetzt“ (einmal, `dauer-moment`), dann treten Sonne und Achtstern des nächsten Gebets
- * hervor. Reduzierte Bewegung: Endzustand sofort. Die Zeiten stehen zusätzlich als Liste im Text (K-008).
+ * enthüllt sich die Linie bis „jetzt“ (einmal, `dauer-moment`, 1,2 s). Die Sonne tritt ab 880 ms hervor, der Achtstern
+ * des nächsten Gebets ab 960 ms (gesamt 1,6 s, Register B-06). Der Ort des nächsten Gebets trägt durchgehend eine Marke:
+ * zuerst den Ring, darüber den Achtstern. Erreichte Punkte färben sich im Takt der Linie (`zeitAnteilEintritt`).
+ * Reduzierte Bewegung: Endzustand sofort. Die Zeiten stehen zusätzlich als Liste im Text (K-008).
  * Mit `ruhig` (Gebetszeiten): keine Enthüllung und kein Hervortreten; der Achtstern blendet nur nach einem echten
  * Gebetswechsel ein (B-10). Ohne `alleHref` entfällt der Link.
  */
@@ -188,7 +190,13 @@ export function TagesbogenLive({
               'absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-700 ring-6 ring-gruen-700/15',
               !ruhig && 'marke-tritt-hervor',
             )}
-            style={{ left: links(sonne.x), top: oben(sonne.y), '--verzoegerung': 'var(--dauer-moment)' } as CSSProperties}
+            style={
+              {
+                left: links(sonne.x),
+                top: oben(sonne.y),
+                '--verzoegerung': 'calc(var(--dauer-moment) - var(--dauer-wechsel))',
+              } as CSSProperties
+            }
           />
         ) : null}
         {/* Marken als HTML über der Zeichnung: gleiche Größe auf jedem Gerät, Achtstern aus dem Formsystem */}
@@ -196,38 +204,49 @@ export function TagesbogenLive({
           const erreicht = minuten !== null && minuten >= p.minuten;
           // Nach Isha trägt der Imsak-Punkt den Stern: er markiert den Beginn des nächsten Tages wie nach Mitternacht
           const ist = naechstes?.gebet === p.gebet;
-          return ist ? (
-            <span
-              key={p.gebet}
-              aria-hidden
-              className={klassen(
-                'absolute flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill bg-weiss text-gruen-700 shadow-s2',
-                ruhig ? gewechselt && 'blendet-ein' : 'marke-tritt-hervor',
-              )}
-              style={
-                ruhig
-                  ? ({ left: links(p.x), top: oben(p.y), '--dauer': 'var(--dauer-wechsel)' } as CSSProperties)
-                  : ({ left: links(p.x), top: oben(p.y), '--verzoegerung': 'calc(var(--dauer-moment) + 160ms)' } as CSSProperties)
-              }
-            >
-              <Achtstern size={26} />
-            </span>
-          ) : (
-            <span
-              key={p.gebet}
-              aria-hidden
-              className={klassen(
-                'absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-pill border-2 transition-colors duration-(--dauer-wechsel)',
-                // Mit ruhig steht die Linie schon voll: Der Punkt folgt ihr ohne Verzögerung (keine Enthüllung).
-                // Ohne ruhig färbt eine Deckfläche (::after) den Punkt per Überblendung, wenn die Linie ihn erreicht – nur opacity.
-                erreicht ? (ruhig ? 'border-gruen-700 bg-gruen-700' : 'bogen-punkt-erreicht border-rand bg-weiss') : 'border-rand bg-weiss',
-              )}
-              style={
-                erreicht && !ruhig
-                  ? ({ left: links(p.x), top: oben(p.y), '--anteil': bisX > 0 ? p.x / bisX : 0 } as CSSProperties)
-                  : { left: links(p.x), top: oben(p.y) }
-              }
-            />
+          // H-E01: Der Ring bleibt auch am nächsten Gebet stehen; der Achtstern liegt darüber (36-px-Chip deckt den Ring ab),
+          // damit der Ort nie ohne Marke ist.
+          return (
+            <Fragment key={p.gebet}>
+              <span
+                aria-hidden
+                className={klassen(
+                  'absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-pill border-2 transition-colors duration-(--dauer-wechsel)',
+                  // Mit ruhig steht die Linie schon voll: Der Punkt folgt ihr ohne Verzögerung (keine Enthüllung).
+                  // Ohne ruhig färbt eine Deckfläche (::after) den Punkt per Überblendung, wenn die Linie ihn erreicht – nur opacity.
+                  erreicht
+                    ? ruhig
+                      ? 'border-gruen-700 bg-gruen-700'
+                      : 'bogen-punkt-erreicht border-rand bg-weiss'
+                    : 'border-rand bg-weiss',
+                )}
+                style={
+                  erreicht && !ruhig
+                    ? ({ left: links(p.x), top: oben(p.y), '--anteil': bisX > 0 ? zeitAnteilEintritt(p.x / bisX) : 0 } as CSSProperties)
+                    : { left: links(p.x), top: oben(p.y) }
+                }
+              />
+              {ist ? (
+                <span
+                  aria-hidden
+                  className={klassen(
+                    'absolute flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill bg-weiss text-gruen-700 shadow-s2',
+                    ruhig ? gewechselt && 'blendet-ein' : 'marke-tritt-hervor',
+                  )}
+                  style={
+                    ruhig
+                      ? ({ left: links(p.x), top: oben(p.y), '--dauer': 'var(--dauer-wechsel)' } as CSSProperties)
+                      : ({
+                          left: links(p.x),
+                          top: oben(p.y),
+                          '--verzoegerung': 'calc(var(--dauer-moment) - var(--dauer-wechsel) + var(--staffel))',
+                        } as CSSProperties)
+                  }
+                >
+                  <Achtstern size={26} />
+                </span>
+              ) : null}
+            </Fragment>
           );
         })}
       </div>
@@ -250,7 +269,7 @@ export function TagesbogenLive({
               )}
               style={{ '--links': links(p.x) } as CSSProperties}
             >
-              {/* Ab @xl enger gesetzt (Eintrag 42,5 px statt 50 px): die zweite Ebene hat so ≥ 16 px Abstand zur ersten */}
+              {/* Ab @xl enger gesetzt (Eintrag 42,5 px statt 50 px): die zweite Ebene hat so ≥ 16 px Abstand zur ersten; betonter Eintrag 44 px, Abstand zur zweiten Ebene ≥ 16 px */}
               <span
                 className={klassen(
                   'flex items-center gap-1 text-16 leading-snug font-bold wrap-anywhere @xl:relative @xl:block @xl:leading-tight',
@@ -270,7 +289,12 @@ export function TagesbogenLive({
                 ) : null}
                 {texte.namen[p.gebet]}
               </span>
-              <span className={klassen('text-18 font-bold tabular-nums @xl:leading-tight', ist ? 'text-gruen-800' : 'text-tinte')}>
+              <span
+                className={klassen(
+                  'leading-8 font-bold tabular-nums',
+                  ist ? 'text-24 text-gruen-800 @xl:leading-none' : 'text-18 text-tinte @xl:leading-tight',
+                )}
+              >
                 {heute[p.gebet]}
               </span>
             </li>

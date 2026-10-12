@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { EINTRITT } from '@/lib/gebetszeiten/bogen';
 import { MAILFARBE, MAILMASS } from '@/lib/mail/vorlagen/farben';
 import { OG_FARBEN } from '@/lib/seo/og-bild';
 
@@ -101,5 +102,9 @@ describe('Token-Spiegel für Medien ohne CSS-Variablen', () => {
     const layout = readFileSync(join(WEB, 'src', 'app', '[locale]', 'layout.tsx'), 'utf8');
     const m = /themeColor:\s*'(#[0-9a-fA-F]{6})'/.exec(layout);
     expect(m?.[1]?.toLowerCase()).toBe(wert('--color-gruen-950'));
+  });
+
+  it('EINTRITT (Tagesbogen, Färbung im Takt) entspricht --ease-eintritt', () => {
+    expect(wert('--ease-eintritt')).toBe(`cubic-bezier(${EINTRITT.join(', ')})`);
   });
 });
