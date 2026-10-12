@@ -19,6 +19,9 @@ export function Seitenkopf({
   zierde,
   kinder,
   oben,
+  bild,
+  bildAbLg = false,
+  kennungZeichen = <Stern8 />,
   titelId,
   titelLang,
   titelStil,
@@ -38,6 +41,12 @@ export function Seitenkopf({
   kinder?: ReactNode;
   /** Zeile vor der Kennung, z. B. Rückweg zur Liste */
   oben?: ReactNode;
+  /** Kopfbild (H-C02): mit Bild steht es in einer eigenen Spalte rechts, auf dem Telefon nach dem Textblock */
+  bild?: ReactNode;
+  /** Kopfbild nur ab lg (Platzhalter ohne gepflegtes Bild): darunter keine leere Rasterzeile */
+  bildAbLg?: boolean;
+  /** Zeichen vor der Kennung; Vorgabe der Achtstern */
+  kennungZeichen?: ReactNode;
   /** Kennung des h1 (Verweise, Tests) */
   titelId?: string;
   /** Sprache des Titels, wenn sie von der Seite abweicht (K-02) */
@@ -47,15 +56,28 @@ export function Seitenkopf({
   /** Sprache des Untertitels */
   untertitelLang?: string;
 }) {
+  const mitBild = Boolean(bild);
   return (
     <section className={`border-b border-linie ${flaeche}`}>
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-wrap items-start gap-6 px-4 pt-8 pb-8 md:px-8 md:pt-16 md:pb-14">
+      <div
+        className={
+          mitBild
+            ? 'mx-auto grid max-w-(--container-inhalt) gap-6 px-4 pt-8 pb-8 md:px-8 md:pt-16 md:pb-14 lg:grid-cols-3 lg:items-start lg:gap-8'
+            : 'mx-auto flex max-w-(--container-inhalt) flex-wrap items-start gap-6 px-4 pt-8 pb-8 md:px-8 md:pt-16 md:pb-14'
+        }
+      >
         {vorn}
-        <div className="flex max-w-seitenkopf min-w-0 flex-1 basis-120 flex-col gap-3 max-md:order-2">
+        <div
+          className={
+            mitBild
+              ? 'flex max-w-seitenkopf min-w-0 flex-1 flex-col gap-3 lg:col-span-2'
+              : `flex max-w-seitenkopf min-w-0 flex-1 basis-120 flex-col gap-3 max-md:order-2 ${zierde ? 'md:basis-96' : ''}`
+          }
+        >
           {oben}
           {kennung ? (
             <span className={`inline-flex items-center gap-2 text-16 font-bold ${kennungFarbe}`}>
-              <Stern8 />
+              {kennungZeichen}
               <span>{kennung}</span>
             </span>
           ) : null}
@@ -69,6 +91,7 @@ export function Seitenkopf({
           ) : null}
           {kinder}
         </div>
+        {mitBild ? <div className={bildAbLg ? 'min-w-0 max-lg:hidden' : 'min-w-0'}>{bild}</div> : null}
         {/* Telefon: Grafik rechts neben dem Logo, Text darunter; breit: rechts neben dem Text */}
         {zierde ? <div className="ml-auto flex shrink-0 self-center max-md:order-1">{zierde}</div> : null}
       </div>

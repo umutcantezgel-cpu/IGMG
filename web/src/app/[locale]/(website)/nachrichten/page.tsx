@@ -8,6 +8,7 @@ import { NachrichtenFilter } from '@/components/website/nachrichten/NachrichtenF
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
+import { cn } from '@/lib/utils';
 import { ladeNachrichten } from '@/server/queries/nachrichten';
 
 export const ensureStatic = 'navigation';
@@ -45,8 +46,9 @@ export default async function NachrichtenSeite() {
       ))}
     </ul>
   );
-  // Startform unter „Alle“ (ab vier Nachrichten): Aufmacher über zwei Spalten, drei kompakte daneben, der Rest zweimal:
-  // kompakt bis md, als Raster ab md (display:none verhindert doppelten Fokus und doppeltes Vorlesen)
+  // Startform unter „Alle“ (ab vier Nachrichten): Aufmacher über zwei Spalten, daneben eine Liste in einem Rahmen mit
+  // allen übrigen Nachrichten als Zeilen (ab md drei, ab lg auf Aufmacherhöhe). Ab md steht der Rest als Raster darunter;
+  // ausgeblendete Fassungen (display:none) bekommen keinen Fokus und werden nicht vorgelesen.
   const [erste, ...ubrige] = liste;
   const startform =
     liste.length < 4 || !erste ? (
@@ -57,31 +59,22 @@ export default async function NachrichtenSeite() {
           <div data-kategorie={erste.kategorie} className="min-w-0 lg:col-span-2">
             <NewsCard n={erste} sprache={sprache} variante="gross" bild={erste.bild} />
           </div>
-          <ul className="grid min-w-0 gap-4 lg:grid-rows-3">
-            {ubrige.slice(0, 3).map((n) => (
-              <li key={n.id} data-kategorie={n.kategorie}>
-                <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
+          <ul className="grid min-w-0 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:grid-rows-3">
+            {ubrige.map((n, i) => (
+              <li key={n.id} data-kategorie={n.kategorie} className={cn('border-t border-linie first:border-t-0', i >= 3 && 'md:hidden')}>
+                <NewsCard n={n} sprache={sprache} variante="kompakt" rahmen={false} bild={n.bild} />
               </li>
             ))}
           </ul>
         </div>
         {ubrige.length > 3 ? (
-          <>
-            <ul className="mt-4 grid gap-4 md:hidden">
-              {ubrige.slice(3).map((n) => (
-                <li key={n.id} data-kategorie={n.kategorie}>
-                  <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
-                </li>
-              ))}
-            </ul>
-            <ul className="mt-6 grid raster-karten gap-6 max-md:hidden">
-              {ubrige.slice(3).map((n) => (
-                <li key={n.id} data-kategorie={n.kategorie}>
-                  <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
-                </li>
-              ))}
-            </ul>
-          </>
+          <ul className="mt-6 grid raster-karten gap-6 max-md:hidden">
+            {ubrige.slice(3).map((n) => (
+              <li key={n.id} data-kategorie={n.kategorie}>
+                <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
+              </li>
+            ))}
+          </ul>
         ) : null}
       </>
     );

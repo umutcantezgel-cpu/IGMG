@@ -6,7 +6,7 @@ import { Meldung } from '@/components/verwaltung/Meldung';
 import { KUERZEL_TON } from '@/components/verwaltung/organisationTon';
 import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
-import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
+import { ListenLeer, TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { datumKurz, datumLang, zeitspanne } from '@/lib/i18n/format';
 import { lokaleTeile } from '@/lib/termine';
@@ -78,7 +78,7 @@ async function ZeilenAktionen({
             type="submit"
             variant="outline"
             size="icon"
-            className="border-fehler text-fehler hover:bg-fehler-toenung hover:text-fehler"
+            className="hover:border-fehler hover:bg-fehler-toenung hover:text-fehler focus-visible:text-fehler"
           >
             <Trash2 aria-hidden />
             <span className="sr-only">{t('aktionPapierkorb', { titel: z.titel })}</span>
@@ -111,34 +111,47 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
     bearbeiten: darf(a.rollen, 'veranstaltung.bearbeiten', { organisation: z.organisation }),
     loeschen: darf(a.rollen, 'veranstaltung.loeschen', { organisation: z.organisation }),
   });
-  const datum = (z: Zeile) =>
+  const datum = (z: Zeile, karte = false) =>
     papierkorb && z.imPapierkorbSeit ? (
       datumLang(z.imPapierkorbSeit, 'de')
     ) : (
       <>
-        <span className="whitespace-nowrap">
+        <span className={karte ? 'whitespace-nowrap' : undefined}>
           {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr},
         </span>{' '}
         <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
-        {z.wiederkehrend ? <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span> : null}
+        {z.wiederkehrend ? (
+          karte ? (
+            <>
+              {' '}
+              {/* Trenner bleibt bei „wiederkehrend“, nicht am Zeilenende (Nachabnahme H-C04) */}
+              <span className="whitespace-nowrap text-tinte-2">· {t('wiederkehrend')}</span>
+            </>
+          ) : (
+            <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span>
+          )
+        ) : null}
       </>
+    );
+  const orgPille = (z: Zeile) =>
+    z.organisation ? (
+      <span className={cn(pille, KUERZEL_TON[z.organisation])}>{KENNUNG[z.organisation]}</span>
+    ) : (
+      <span className={cn(pille, 'bg-sand text-tinte-2')}>{t('allgemein')}</span>
     );
   const kategorie = (z: Zeile) => (
     <>
-      {z.organisation ? (
-        <span className={cn(pille, KUERZEL_TON[z.organisation])}>{KENNUNG[z.organisation]}</span>
-      ) : (
-        <span className={cn(pille, 'bg-sand text-tinte-2')}>{t('allgemein')}</span>
-      )}
+      {orgPille(z)}
       <span className="block text-16 text-tinte-2">{tk(`kat_${z.kategorie}`)}</span>
     </>
   );
+  // In „Aktuell“ zeigt der Status nur die Pille; im Papierkorb steht zusätzlich kommend/vergangen darunter
   const status = (z: Zeile) => (
     <>
       <span className={cn(pille, z.status === 'veroeffentlicht' ? 'bg-gruen-50 text-gruen-800' : 'bg-sand text-tinte-2')}>
         {t(`status.${z.status}`)}
       </span>
-      <span className="block text-16 text-tinte-2">{t(z.vergangen ? 'status.vergangen' : 'status.kommend')}</span>
+      {papierkorb ? <span className="block text-16 text-tinte-2">{t(z.vergangen ? 'status.vergangen' : 'status.kommend')}</span> : null}
     </>
   );
   const teilnehmer = (z: Zeile) =>
@@ -147,50 +160,94 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
       : z.plaetze !== null
         ? `${z.angemeldet} / ${z.plaetze}`
         : t('unbegrenzt', { angemeldet: z.angemeldet });
+  const leer = liste.length === 0;
+  const anlegen = (
+    <Button asChild>
+      <NextLink href="/verwaltung/veranstaltungen/neu">
+        <Plus aria-hidden />
+        {t('neu')}
+      </NextLink>
+    </Button>
+  );
 
-  // Telefon: je Veranstaltung eine Karte statt der breiten Tabelle (H-B06 Muster, Inhaltsliste)
-  const mobil = (
-    <ul className="flex flex-col gap-3">
-      {liste.map((z) => (
-        <li key={z.id} className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4">
-          <h2 className="font-text text-20 font-bold tracking-normal">
-            {z.titel}
-            {z.istBeispiel ? <span className={cn(pille, 'ml-2 bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
-          </h2>
-          <dl className="grid raster-symbol gap-x-3 gap-y-2 text-16">
-            <dt className="font-bold text-tinte-2">{papierkorb ? t('spalte.imPapierkorbSeit') : t('spalte.datum')}</dt>
-            <dd>{datum(z)}</dd>
-            <dt className="font-bold text-tinte-2">{t('spalte.kategorie')}</dt>
-            <dd>{kategorie(z)}</dd>
-            <dt className="font-bold text-tinte-2">{t('spalte.status')}</dt>
-            <dd>{status(z)}</dd>
+  // Aktuell: kommende und vergangene Veranstaltungen als Gruppen, leere Gruppen entfallen (H-C04); der Papierkorb bleibt ungegliedert
+  const gruppen = papierkorb
+    ? null
+    : (['kommend', 'vergangen'] as const)
+        .map((g) => ({ g, eintraege: liste.filter((z) => z.vergangen === (g === 'vergangen')) }))
+        .filter((gruppe) => gruppe.eintraege.length > 0);
+
+  const zeile = (z: Zeile) => (
+    <tr key={z.id} className="border-t border-linie align-middle">
+      <th scope="row" className="px-3 py-3 font-bold">
+        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>{z.titel}</span>
+          {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
+        </span>
+      </th>
+      <td className="px-3 py-3 tabular-nums">{datum(z)}</td>
+      <td className="px-3 py-3">{kategorie(z)}</td>
+      <td className="px-3 py-3">{status(z)}</td>
+      <td className="px-3 py-3 tabular-nums">{teilnehmer(z)}</td>
+      <td className="px-3 py-3">
+        <div className="flex gap-2">
+          <ZeilenAktionen z={z} papierkorb={papierkorb} {...rechte(z)} />
+        </div>
+      </td>
+    </tr>
+  );
+
+  // Telefon: je Veranstaltung eine Karte statt der breiten Tabelle (H-B06 Muster; H-C04 Telefonkarte)
+  const karte = (z: Zeile) => (
+    <li key={z.id} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4">
+      <h3 className="font-text text-20 font-bold tracking-normal">
+        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span>{z.titel}</span>
+          {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
+        </span>
+      </h3>
+      <dl className="flex flex-col gap-2 text-16">
+        <div>
+          <dt className={papierkorb ? 'font-bold text-tinte-2' : 'sr-only'}>
+            {papierkorb ? t('spalte.imPapierkorbSeit') : t('spalte.datum')}
+          </dt>
+          <dd>{datum(z, true)}</dd>
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <dt className="sr-only">{t('spalte.kategorie')}</dt>
+          <dd>{orgPille(z)}</dd>
+          <dd className="text-tinte-2">{tk(`kat_${z.kategorie}`)}</dd>
+          <dt className="sr-only">{t('spalte.status')}</dt>
+          <dd>{status(z)}</dd>
+        </div>
+        {z.anmeldungAktiv ? (
+          <div>
             <dt className="font-bold text-tinte-2">{t('spalte.teilnehmer')}</dt>
             <dd className="tabular-nums">{teilnehmer(z)}</dd>
-          </dl>
-          <div className="flex justify-end gap-2">
-            <ZeilenAktionen z={z} papierkorb={papierkorb} {...rechte(z)} />
           </div>
-        </li>
-      ))}
-    </ul>
+        ) : null}
+      </dl>
+      <div className="flex justify-end gap-2">
+        <ZeilenAktionen z={z} papierkorb={papierkorb} {...rechte(z)} />
+      </div>
+    </li>
+  );
+  const mobil = gruppen ? (
+    gruppen.map(({ g, eintraege }) => (
+      <section key={g} aria-labelledby={`veranstaltungen-${g}`} className="flex flex-col gap-3">
+        <h2 id={`veranstaltungen-${g}`} className="text-24">
+          {t(`status.${g}`)}
+        </h2>
+        <ul className="flex flex-col gap-3">{eintraege.map(karte)}</ul>
+      </section>
+    ))
+  ) : (
+    <ul className="flex flex-col gap-3">{liste.map(karte)}</ul>
   );
 
   return (
     <>
-      <VerwaltungsKopf
-        titel={t('titel')}
-        kennung={tg('gruppe.inhalte')}
-        aktion={
-          darfAnlegen ? (
-            <Button asChild>
-              <NextLink href="/verwaltung/veranstaltungen/neu">
-                <Plus aria-hidden />
-                {t('neu')}
-              </NextLink>
-            </Button>
-          ) : null
-        }
-      />
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.inhalte')} aktion={darfAnlegen && !papierkorb && !leer ? anlegen : null} />
       <nav aria-label={t('ansichten')}>
         <ul className="flex gap-2">
           {ansichten.map((v) => (
@@ -212,41 +269,34 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
         </ul>
       </nav>
       {papierkorb ? <Meldung art="info">{t('papierkorbHinweis')}</Meldung> : null}
-      {liste.length === 0 ? (
-        <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
+      {leer ? (
+        <ListenLeer text={papierkorb ? t('leerPapierkorb') : t('leer')} aktion={darfAnlegen && !papierkorb ? anlegen : undefined} />
       ) : (
         <TabellenRahmen beschriftung={t('titel')} mobil={mobil}>
-          <table className="w-full border-collapse text-left md:min-w-224">
+          <table className="w-full min-w-220 border-collapse text-left">
             <thead className="bg-sand">
               <tr>
                 {(['titel', 'datum', 'kategorie', 'status', 'teilnehmer', 'aktionen'] as const).map((s) => (
-                  <th key={s} scope="col" className="px-4 py-3 text-16 font-bold">
+                  <th key={s} scope="col" className="px-3 py-3 text-16 font-bold">
                     {s === 'datum' && papierkorb ? t('spalte.imPapierkorbSeit') : t(`spalte.${s}`)}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody>
-              {liste.map((z) => (
-                <tr key={z.id} className="border-t border-linie align-middle">
-                  <th scope="row" className="px-4 py-3 font-bold">
-                    {z.titel}
-                    {z.istBeispiel ? (
-                      <span className={cn(pille, 'ml-2 bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span>
-                    ) : null}
-                  </th>
-                  <td className="px-4 py-3 tabular-nums">{datum(z)}</td>
-                  <td className="px-4 py-3">{kategorie(z)}</td>
-                  <td className="px-4 py-3">{status(z)}</td>
-                  <td className="px-4 py-3 tabular-nums">{teilnehmer(z)}</td>
-                  <td className="px-4 py-3">
-                    <div className="flex gap-2">
-                      <ZeilenAktionen z={z} papierkorb={papierkorb} {...rechte(z)} />
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+            {gruppen ? (
+              gruppen.map(({ g, eintraege }) => (
+                <tbody key={g}>
+                  <tr className="border-t border-linie">
+                    <th scope="rowgroup" colSpan={6} className="bg-papier px-3 py-2 text-left text-16 font-bold text-tinte-2">
+                      {t(`status.${g}`)}
+                    </th>
+                  </tr>
+                  {eintraege.map(zeile)}
+                </tbody>
+              ))
+            ) : (
+              <tbody>{liste.map(zeile)}</tbody>
+            )}
           </table>
         </TabellenRahmen>
       )}

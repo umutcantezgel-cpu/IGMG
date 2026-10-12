@@ -156,8 +156,8 @@ function Karte({
       </span>
       <div className="flex min-w-0 flex-col gap-1.5">
         <Text feld={m.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold" />
-        <div className="flex flex-wrap gap-1.5">
-          <span className="inline-flex rounded-pill border border-linie bg-sand px-2.5 text-16 font-bold text-tinte-2">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          <span className="text-16 font-bold text-tinte-2 tabular-nums">
             <Text feld={m.datum} sprache={sprache} />
           </span>
           <span

@@ -133,26 +133,21 @@ export async function VoranmeldungFormular({
           titel: t('schritt.kind'),
           gruppen: [
             {
-              titel: t('gruppe.klasse'),
-              inhalt: (
-                <div className="col-span-full">
-                  <FeldOptionen
-                    name="klasse"
-                    typ="radio"
-                    label={t('feld.klasse')}
-                    pflicht={p}
-                    wert={w('klasse')}
-                    fehler={f('klasse')}
-                    spaltenMin="grid-cols-1"
-                    optionen={KLASSEN.map((k) => ({ wert: k, label: t(`klasse.${k}`), beschreibung: t(`klasse.${k}Text`) }))}
-                  />
-                </div>
-              ),
-            },
-            {
               titel: t('gruppe.kind'),
               inhalt: (
                 <>
+                  <div className="col-span-full">
+                    <FeldOptionen
+                      name="klasse"
+                      typ="radio"
+                      label={t('feld.klasse')}
+                      pflicht={p}
+                      wert={w('klasse')}
+                      fehler={f('klasse')}
+                      spaltenMin="grid-cols-1"
+                      optionen={KLASSEN.map((k) => ({ wert: k, label: t(`klasse.${k}`), beschreibung: t(`klasse.${k}Text`) }))}
+                    />
+                  </div>
                   <div className="col-span-full">
                     <FeldOptionen
                       name="geschlecht"

@@ -226,8 +226,8 @@ export async function MeldungFormular({
       <hr aria-hidden="true" className="m-0 border-0 border-t border-linie" />
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
-      <div className="self-start">
-        <SendenKnopf texte={{ senden: t('senden'), sendet: tf('sendet') }} />
+      <div className="self-stretch sm:self-start">
+        <SendenKnopf className="w-full sm:w-auto" texte={{ senden: t('senden'), sendet: tf('sendet') }} />
       </div>
     </>
   );

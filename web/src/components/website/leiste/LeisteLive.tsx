@@ -202,39 +202,45 @@ export function LeisteLive({
           <ArrowRight aria-hidden className="size-5" />
         </Link>
       </div>
-      {/* Telefon: nächstes Gebet + aufklappbare Liste */}
-      <div className="flex flex-col gap-3 px-4 pt-3 pb-4 md:hidden">
-        {/* Hinweis in eigener Zeile: Das Datum erscheint erst nach der Hydrierung und darf nichts umbrechen (CLS, K-12) */}
-        <div className="flex flex-col items-start gap-2 text-16">
-          <span className="flex items-center gap-1.5 text-gruen-100">
-            <MapPin aria-hidden className="size-4" />
-            <span>
-              {texte.ort}
-              {jetzt ? ` · ${datumText}` : ''}
-            </span>
+      {/* Telefon: Ort und Datum in einer Zeile, darunter die Karte „Nächstes Gebet“ mit Fußzeile zum Aufklappen */}
+      <div className="flex flex-col gap-3 px-4 py-3 md:hidden">
+        {/* Nur Ort und Datum, einzeilig: Das Datum erscheint erst nach der Hydrierung und darf nichts umbrechen (CLS, K-12) */}
+        <div className="flex min-w-0 items-center gap-1.5 text-16 text-gruen-100">
+          <MapPin aria-hidden className="size-4 shrink-0" />
+          <span className="min-w-0 truncate">
+            {texte.ort}
+            {jetzt ? ` · ${datumText}` : ''}
           </span>
-          {hinweis}
         </div>
-        <div className="rounded-lg bg-weiss px-4 py-3 text-gruen-950">
-          {/* Namensbereich: blendet bei jedem Gebetswechsel neu ein (B-10); der Countdown tickt ohne Bewegung */}
-          <div key={gebet ?? 'ohne'} style={DAUER_WECHSEL} className={klassen('flex flex-col gap-0.5', gewechselt && 'blendet-ein')}>
+        <div className="overflow-hidden rounded-lg bg-weiss text-gruen-950">
+          {/* Kopf: „Nächstes Gebet“ und der Hinweis „berechnet“ bleiben stehen, wenn das Gebet wechselt */}
+          <div className="flex items-center justify-between gap-2 px-4 pt-3">
             <span className="text-16 font-bold text-gruen-800">{texte.naechstes}</span>
+            {hinweis}
+          </div>
+          {/* Name, Zeit und Restzeit blenden bei jedem Gebetswechsel neu ein (B-10); der Countdown tickt ohne Bewegung */}
+          <div
+            key={gebet ?? 'ohne'}
+            style={DAUER_WECHSEL}
+            className={klassen('flex flex-col gap-0.5 px-4 pb-3', gewechselt && 'blendet-ein')}
+          >
             <span className="text-24 leading-tight font-bold">
               {naechstesName} · <span className="tabular-nums">{naechstesZeit}</span>
             </span>
             <span className="text-16 font-bold text-tinte-2 tabular-nums">{restZeile}</span>
           </div>
+          {/* Fußzeile der Karte; der Fokusrahmen liegt 2 px innen, damit der Zuschnitt der Karte ihn nicht abschneidet und er nicht mit dem dunklen Grund der Leiste verschwimmt */}
+          <button
+            type="button"
+            aria-expanded={aufgeklappt}
+            aria-controls="leiste-alle"
+            onClick={() => setAufgeklappt((a) => !a)}
+            className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 border-t border-linie text-18 font-bold text-gruen-800 -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+          >
+            <span>{aufgeklappt ? texte.ausblenden : texte.anzeigen}</span>
+            {aufgeklappt ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
+          </button>
         </div>
-        <button
-          type="button"
-          aria-expanded={aufgeklappt}
-          aria-controls="leiste-alle"
-          onClick={() => setAufgeklappt((a) => !a)}
-          className="flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border border-gruen-100 bg-transparent text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) active:scale-98"
-        >
-          <span>{aufgeklappt ? texte.ausblenden : texte.anzeigen}</span>
-          {aufgeklappt ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
-        </button>
         <div id="leiste-alle" hidden={!aufgeklappt} className="flex flex-col gap-3">
           <ul aria-label={texte.listeHeute} className="grid grid-cols-3 gap-2">
             {GEBETE.map((g) => karte(g, true))}

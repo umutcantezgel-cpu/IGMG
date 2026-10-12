@@ -1,6 +1,6 @@
 import { ArrowLeft, Check } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import type { CSSProperties, ReactNode } from 'react';
+import { Fragment, type CSSProperties, type ReactNode } from 'react';
 import type { Fehlerstand } from '@/lib/formulare/wizard';
 import { cn } from '@/lib/utils';
 import { Honigtopf } from './Felder';
@@ -8,7 +8,7 @@ import { FehlerZusammenfassung } from './Rueckmeldung';
 import { SendenKnopf } from './SendenKnopf';
 
 /**
- * Schritt-Anzeiger (H-B07): unter 1024 px eine Reihe aus Balken (sichtbar) mit der Schrittliste nur für Lesende;
+ * Schritt-Anzeiger (H-B07): unter 1024 px eine Reihe aus Schrittmarken mit Linien (sichtbar), die Schrittliste nur für Lesende;
  * ab 1024 px die Liste mit Achtstern-Marken – `seitenleiste`: eine Spalte links neben dem Formular, `oben`: eine Reihe
  * darüber (Standard).
  */
@@ -21,8 +21,12 @@ const BLENDET_EIN: CSSProperties = { '--dauer': 'var(--dauer-wechsel)' } as CSSP
 export type WizardGruppe = { titel: string; hinweis?: string; inhalt: ReactNode };
 export type WizardSchritt = { titel: string; gruppen: WizardGruppe[] };
 
-/** Schrittmarke (K-008): Achtstern als Fläche mit Umriss; erledigt grün mit Häkchen, aktuell hell, kommend grau. */
-function Schrittmarke({ nr, stand }: { nr: number; stand: 'erledigt' | 'aktuell' | 'kommend' }) {
+/**
+ * Schrittmarke (K-008): Achtstern als Fläche mit Umriss; erledigt grün mit Häkchen, aktuell hell, kommend grau
+ * (`sandig`: kommend auf Sand statt Weiß – in der Seitenleiste und in der Telefonreihe aller Assistenten; die Liste
+ * „oben“ ab 1024 px bleibt weiß).
+ */
+function Schrittmarke({ nr, stand, sandig = false }: { nr: number; stand: 'erledigt' | 'aktuell' | 'kommend'; sandig?: boolean }) {
   return (
     <span aria-hidden className="relative grid size-9 shrink-0 place-items-center">
       <svg aria-hidden viewBox="0 0 24 24" className="absolute inset-0 size-full">
@@ -34,7 +38,7 @@ function Schrittmarke({ nr, stand }: { nr: number; stand: 'erledigt' | 'aktuell'
           className={cn(
             stand === 'erledigt' && 'fill-gruen-700 stroke-gruen-700',
             stand === 'aktuell' && 'fill-gruen-50 stroke-gruen-700',
-            stand === 'kommend' && 'fill-weiss stroke-rand',
+            stand === 'kommend' && (sandig ? 'fill-sand stroke-rand' : 'fill-weiss stroke-rand'),
           )}
         />
       </svg>
@@ -96,10 +100,13 @@ export async function FormWizard({
         <p data-fokus={ergebnis ? undefined : true} tabIndex={-1} className="font-bold text-gruen-800 outline-none">
           {t('wizard.schrittZeile', { nr: schritt + 1, anzahl: schritte.length, titel: schritte[schritt].titel })}
         </p>
-        {/* Unter 1024 px: ein Balken je Schritt, bis einschließlich dem aktuellen gefüllt; die Liste darunter lesen Lesende */}
-        <div aria-hidden className="flex gap-2 lg:hidden">
+        {/* Unter 1024 px: Schrittmarken mit Linien dazwischen, Linie bis einschließlich dem aktuellen Schritt gefüllt; die Liste darunter lesen Lesende */}
+        <div aria-hidden className="flex items-center gap-1 lg:hidden">
           {schritte.map((s, i) => (
-            <span key={s.titel} className={cn('h-1.5 flex-1 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
+            <Fragment key={s.titel}>
+              {i > 0 ? <span className={cn('h-0.5 flex-1 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} /> : null}
+              <Schrittmarke nr={i + 1} stand={i < schritt ? 'erledigt' : i === schritt ? 'aktuell' : 'kommend'} sandig />
+            </Fragment>
           ))}
         </div>
         <ol
@@ -109,7 +116,7 @@ export async function FormWizard({
           )}
         >
           {schritte.map((s, i) => (
-            <li key={s.titel} aria-current={i === schritt ? 'step' : undefined} className="flex min-w-0 flex-col gap-1.5">
+            <li key={s.titel} aria-current={i === schritt ? 'step' : undefined} className="relative flex min-w-0 flex-col gap-1.5">
               {/* Fortschrittsbalken über dem Titel ab 1024 px (in der Seitenleiste entfällt er: die Marke zeigt den Stand) */}
               {seitenleiste ? null : (
                 <span aria-hidden className={cn('hidden h-1.5 rounded-pill lg:block', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
@@ -121,10 +128,20 @@ export async function FormWizard({
                   i === schritt ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >
-                <Schrittmarke nr={i + 1} stand={i < schritt ? 'erledigt' : i === schritt ? 'aktuell' : 'kommend'} />
+                <Schrittmarke nr={i + 1} stand={i < schritt ? 'erledigt' : i === schritt ? 'aktuell' : 'kommend'} sandig={seitenleiste} />
                 <span className="min-w-0">{s.titel}</span>
                 {i < schritt ? <span className="sr-only">{t('wizard.erledigt')}</span> : null}
               </span>
+              {/* Seitenleiste ab 1024 px: Linie Spitze an Spitze zur nächsten Marke, grün bis zur aktuellen; statisch, ohne Bewegung */}
+              {seitenleiste && i < letzter ? (
+                <span
+                  aria-hidden
+                  className={cn(
+                    'absolute top-7.75 -bottom-4.25 left-4.25 hidden w-0.5 rounded-pill lg:block',
+                    i < schritt ? 'bg-gruen-700' : 'bg-linie',
+                  )}
+                />
+              ) : null}
             </li>
           ))}
         </ol>

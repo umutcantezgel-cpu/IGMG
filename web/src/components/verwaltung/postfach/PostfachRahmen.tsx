@@ -2,8 +2,8 @@ import { Plus } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
+import { ListenLeer } from '@/components/verwaltung/TabellenRahmen';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
-import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Button } from '@/components/ui/button';
 import { datumKurz, uhrzeitNackt } from '@/lib/i18n/format';
 import { cn } from '@/lib/utils';
@@ -33,16 +33,17 @@ export async function PostfachRahmen({
     <>
       <VerwaltungsKopf titel={t('titel')} kennung={tk('gruppe.kommunikation')} einleitung={t('untertitel')} />
       {startseite && liste.length === 0 ? (
-        <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
-          <Zustandsgrafik art="leer" />
-          <p className="text-tinte-2">{t('leerListe')}</p>
-          <Button asChild>
-            <NextLink href="/verwaltung/postfach/neu">
-              <Plus aria-hidden />
-              {t('neu')}
-            </NextLink>
-          </Button>
-        </div>
+        <ListenLeer
+          text={t('leerListe')}
+          aktion={
+            <Button asChild>
+              <NextLink href="/verwaltung/postfach/neu">
+                <Plus aria-hidden />
+                {t('neu')}
+              </NextLink>
+            </Button>
+          }
+        />
       ) : (
         /* Ab 900 px zwei Spalten im Raster 2 : 3 (fünf Spalten). Das liegt annähernd bei der bisherigen Flex-Aufteilung (Basis 300 px / 360 px, Wachstum 1 : 2). */
         <div className="flex flex-col overflow-hidden rounded-lg border border-linie bg-weiss verwaltung:grid verwaltung:min-h-130 verwaltung:grid-cols-5">

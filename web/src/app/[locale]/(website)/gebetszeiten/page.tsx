@@ -14,6 +14,7 @@ import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeEinstellung } from '@/server/queries/einstellungen';
+import { tageszeilen } from '@/lib/gebetszeiten/hijri';
 import { ladeGebetszeitenFenster, ladeGebetszeitenMonat } from '@/server/queries/gebetszeiten';
 
 export const ensureStatic = 'navigation';
@@ -144,6 +145,10 @@ export default async function GebetszeitenSeitePage() {
             bogenTitel: ts('bogenTitel'),
             bogenBeschreibung: ts('bogenBeschreibung'),
             bogenLocale: BOGEN_LOCALE[sprache],
+            tageszeilen: tageszeilen(
+              fenster.tage.map((t) => t.datum),
+              BOGEN_LOCALE[sprache],
+            ),
             namen,
             beschreibungen,
             ansichtAria: t('ansichtAria'),

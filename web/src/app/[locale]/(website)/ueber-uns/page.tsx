@@ -88,15 +88,17 @@ export default async function UeberUnsSeite() {
 
       {/* Gebet, Gemeinschaft, Einheit: ruhige Lesefläche, vom Achtstern-Trenner eingeleitet */}
       <section aria-labelledby="ueber-gemeinschaft" className="bg-papier">
-        <div className="mx-auto flex max-w-(--container-seitenkopf) flex-col gap-6 px-4 py-abschnitt md:px-8">
-          <Trenner className="mx-auto w-full max-w-60" />
-          <h2 id="ueber-gemeinschaft" className="text-display-2 text-balance">
-            {t('gemeinschaftTitel')}
-          </h2>
-          <div className="fliesstext text-pretty">
-            {inhalt.gemeinschaft.absaetze.map((a, i) => (
-              <Text key={i} feld={a.absatz} sprache={sprache} als="p" className="text-18" />
-            ))}
+        <div className="mx-auto max-w-(--container-seitenkopf) px-4 py-abschnitt md:px-8">
+          <div className="mx-auto flex w-full max-w-text flex-col gap-6">
+            <Trenner className="mx-auto w-full max-w-60" />
+            <h2 id="ueber-gemeinschaft" className="text-display-2 text-balance">
+              {t('gemeinschaftTitel')}
+            </h2>
+            <div className="fliesstext text-pretty">
+              {inhalt.gemeinschaft.absaetze.map((a, i) => (
+                <Text key={i} feld={a.absatz} sprache={sprache} als="p" className="text-18" />
+              ))}
+            </div>
           </div>
         </div>
       </section>

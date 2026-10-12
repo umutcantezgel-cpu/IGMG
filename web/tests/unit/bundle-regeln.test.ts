@@ -36,6 +36,13 @@ describe('Client-Code öffentlicher Seiten', () => {
     },
   );
 
+  it.each(client.map((p) => [p.slice(WURZEL.length + 1), p]))(
+    '%s: kein islamischer Kalender im Browser (H-L01: Datumszeilen kommen vom Server)',
+    (_n, p) => {
+      expect(readFileSync(p, 'utf8')).not.toMatch(/from '@\/lib\/gebetszeiten\/hijri'/);
+    },
+  );
+
   it('nur eine Fehlergrenze (global-error.tsx), sie importiert keine gemeinsamen Seitenbausteine', () => {
     expect(() => statSync(join(WURZEL, 'app', '[locale]', 'error.tsx'))).toThrow();
     const s = readFileSync(join(WURZEL, 'app', 'global-error.tsx'), 'utf8');

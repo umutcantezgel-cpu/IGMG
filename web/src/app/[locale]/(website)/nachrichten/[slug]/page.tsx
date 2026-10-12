@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Suspense } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
-import { MedienBild, SIZES_HAUPTSPALTE } from '@/components/website/MedienBild';
+import { MedienBild, SIZES_KOPF } from '@/components/website/MedienBild';
 import { JsonLd } from '@/components/website/JsonLd';
 import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
@@ -20,6 +20,7 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
+import { auszugImRumpf } from '@/lib/inhalt/tiptap';
 import { nachricht } from '@/lib/seo/jsonld';
 import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { ladeAehnlicheNachrichten, ladeNachricht, ladeNachrichtenSlugs, type NachrichtDaten } from '@/server/queries/nachrichten';
@@ -76,7 +77,11 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
   ]);
   const titel = textMitSprache(n.titel, sprache);
   const kurz = textMitSprache(n.kurztext, sprache);
-  const inhalt = inhaltFuer(n.inhalt, sprache);
+  const inhaltRoh = inhaltFuer(n.inhalt, sprache);
+  // Auszug und Rumpf (H-C02): Steht der Kurztext schon als erster Absatz im Rumpf, erscheint er nur einmal
+  const auszug = inhaltRoh ? auszugImRumpf(inhaltRoh.doc, kurz.text) : null;
+  const inhalt = inhaltRoh && auszug ? { ...inhaltRoh, doc: auszug.doc } : inhaltRoh;
+  const zeigeUntertitel = auszug?.untertitel ?? true;
   // Sichtbare Kennzeichnung, sobald ein Teil der Seite nur auf Deutsch vorliegt (K-02)
   const rueckfall = sprache !== 'de' && (titel.lang === 'de' || (kurz.text !== '' && kurz.lang === 'de') || inhalt?.rueckfall === true);
   const veroeffentlicht = new Date(n.veroeffentlichtAm);
@@ -103,6 +108,25 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
         })}
       />
       <PageHeader
+        bild={
+          // Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher
+          <div style={morphStil(`n-${n.slug}-bild`)}>
+            {n.bild ? (
+              <MedienBild
+                bild={n.bild}
+                sprache={sprache}
+                vorladen
+                sizes={SIZES_KOPF}
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
+              />
+            ) : (
+              <Bildplatzhalter
+                beschriftung={tk('fotoBeitrag')}
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
+              />
+            )}
+          </div>
+        }
         oben={
           <Link
             href="/nachrichten"
@@ -116,7 +140,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
         titel={titel.text}
         titelLang={titel.lang}
         titelStil={morphStil(`n-${n.slug}-titel`, 'text')}
-        untertitel={kurz.text || undefined}
+        untertitel={zeigeUntertitel ? kurz.text || undefined : undefined}
         untertitelLang={kurz.lang}
         kinder={
           <>
@@ -157,20 +181,6 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
 
       <div className="@container mx-auto grid max-w-(--container-inhalt) items-start gap-12 px-4 py-abschnitt md:px-8 lg:grid-cols-3">
         <article className="flex min-w-0 flex-col gap-6 lg:col-span-2">
-          {/* Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher */}
-          <div style={morphStil(`n-${n.slug}-bild`)}>
-            {n.bild ? (
-              <MedienBild
-                bild={n.bild}
-                sprache={sprache}
-                vorladen
-                sizes={SIZES_HAUPTSPALTE}
-                className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
-              />
-            ) : (
-              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
-            )}
-          </div>
           {inhalt ? (
             <RichText
               doc={inhalt.doc}

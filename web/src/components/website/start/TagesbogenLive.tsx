@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { type CSSProperties, useEffect, useId, useRef, useState } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import { BOGEN, minutenAus, tagesbogen } from '@/lib/gebetszeiten/bogen';
-import { hijriText } from '@/lib/gebetszeiten/hijri';
 import { berlinerDatum, naechstesGebet } from '@/lib/gebetszeiten/naechstes';
 import type { Gebet, GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
@@ -18,9 +17,14 @@ export type TagesbogenTexte = {
   listeHeute: string;
   alle: string;
   locale: string;
+  /** Kopfzeile je Kalendertag (Wochentag · Hidschri-Datum), auf dem Server berechnet (`tageszeilen`, H-L01) */
+  tageszeilen?: Record<string, string>;
 };
 
-const uhr = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+/** Zeitzonenformat erst bei Gebrauch (H-L01: nicht in der Auswertung des Moduls beim Laden) */
+let uhr: Intl.DateTimeFormat | undefined;
+const uhrzeit = (d: Date) =>
+  (uhr ??= new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })).format(d);
 
 /** Lage im Zeichenfeld als Prozent der Breite bzw. Höhe (für HTML-Marken über der Zeichnung). */
 const links = (x: number) => `${(x / BOGEN.breite) * 100}%`;
@@ -75,12 +79,10 @@ export function TagesbogenLive({
   if (!heute) return null;
 
   const bogen = tagesbogen(heute);
-  const minuten = jetzt ? minutenAus(uhr.format(jetzt)) : null;
+  const minuten = jetzt ? minutenAus(uhrzeit(jetzt)) : null;
   const sonne = minuten !== null && bogen.anteil(minuten) > 0 && bogen.anteil(minuten) < 1 ? bogen.punktZu(minuten) : null;
   const bisX = minuten === null ? 0 : bogen.punktZu(minuten).x * (bogen.anteil(minuten) > 0 ? 1 : 0);
-  const datumText = jetzt
-    ? `${new Intl.DateTimeFormat(texte.locale, { timeZone: 'Europe/Berlin', weekday: 'short', day: 'numeric', month: 'short' }).format(jetzt)} · ${hijriText(datum, texte.locale)}`
-    : '';
+  const datumText = jetzt ? (texte.tageszeilen?.[datum] ?? '') : '';
   const zusammenfassung = `${texte.titel}. ${texte.beschreibung}`;
 
   return (
@@ -209,7 +211,11 @@ export function TagesbogenLive({
       </div>
 
       {/* Mit ruhig (Gebetszeiten) trägt die Tafel daneben die Zeiten für Hilfstechnik; hier sonst doppelt vorgelesen */}
-      <ol aria-label={texte.listeHeute} aria-hidden={ruhig || undefined} className="grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27">
+      <ol
+        aria-label={texte.listeHeute}
+        aria-hidden={ruhig || undefined}
+        className={klassen('grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27', ruhig && '@max-xl:hidden')}
+      >
         {bogen.punkte.map((p) => {
           const ist = naechstes?.gebet === p.gebet && !naechstes.morgen;
           return (
@@ -225,10 +231,21 @@ export function TagesbogenLive({
               {/* Ab @xl enger gesetzt (Eintrag 42,5 px statt 50 px): die zweite Ebene hat so ≥ 16 px Abstand zur ersten */}
               <span
                 className={klassen(
-                  'text-16 leading-snug font-bold wrap-anywhere @xl:leading-tight',
+                  'flex items-center gap-1 text-16 leading-snug font-bold wrap-anywhere @xl:relative @xl:block @xl:leading-tight',
                   ist ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >
+                {/* Achtstern des nächsten Gebets vor dem Namen; ab @xl links daneben. Blendet nur nach einem Wechsel ein (B-10). */}
+                {ist ? (
+                  <Achtstern
+                    size={16}
+                    className={klassen(
+                      'shrink-0 @xl:absolute @xl:top-1/2 @xl:right-full @xl:mr-1 @xl:-translate-y-1/2',
+                      gewechselt && 'blendet-ein',
+                    )}
+                    style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
+                  />
+                ) : null}
                 {texte.namen[p.gebet]}
               </span>
               <span className={klassen('text-18 font-bold tabular-nums @xl:leading-tight', ist ? 'text-gruen-800' : 'text-tinte')}>
@@ -242,7 +259,7 @@ export function TagesbogenLive({
       {alleHref ? (
         <Link
           href={alleHref}
-          className="inline-flex min-h-11 items-center gap-2 self-start font-bold text-gruen-700 underline-offset-4 hover:underline"
+          className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline-offset-4 hover:underline"
         >
           <span>{texte.alle}</span>
           <ArrowRight aria-hidden className="size-5" />

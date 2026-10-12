@@ -68,6 +68,11 @@ schritt "3 Konsole 390 (25 Routen + Türkisch + Englisch)"
 BASIS="$B" node "$K/konsole3.mjs" --routen "$R" --basis "$B" --protokoll "$P/C-konsole" > /dev/null 2> "$P/C-konsole.log"; rc $?
 BASIS="$B" node "$K/konsole3.mjs" --routen "$RT" --basis "$B" --protokoll "$P/C-konsole-tr" > /dev/null 2> "$P/C-konsole-tr.log"; rc $?
 BASIS="$B" node "$K/konsole3.mjs" --routen "$RE" --basis "$B" --protokoll "$P/C-konsole-en" > /dev/null 2> "$P/C-konsole-en.log"; rc $?
+schritt "3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit"
+{ for u in /gibt-es-nicht /veranstaltungen/gibt-es-nicht /nachrichten/gibt-es-nicht /organisationen/gibt-es-nicht /quran/999 /tr/etkinlikler/gibt-es-nicht /api/health; do
+    echo "$u $(curl -s -o /dev/null -w '%{http_code}' --max-time 60 "$B$u")"; done
+  python3 -c "import json;[print(r['pfad']) for r in json.load(open('$R'))]" | while read u; do echo "$u $(curl -s -o /dev/null -w '%{http_code}' --max-time 60 "$B$u")"; done
+} > "$P/C-statuscodes.txt" 2>&1; rc $?
 fi
 
 if soll 4; then

@@ -34,3 +34,18 @@ export function hijriText(datum: string, locale: string): string {
     timeZone: 'UTC',
   }).format(new Date(Date.UTC(j, m - 1, t, 12)));
 }
+
+/**
+ * Kopfzeile des Tagesbogens je Kalendertag, z. B. „Mo., 12. Okt. · 28. Rabiʻ II 1448 AH“. Wird auf dem Server
+ * berechnet und als Text übergeben (H-L01): Das erste Format mit islamischem Kalender kostet im Browser auf schwachen
+ * Telefonen spürbar Rechenzeit, die sonst in die Hydrierung der Startseite fiel.
+ */
+export function tageszeilen(daten: string[], locale: string): Record<string, string> {
+  const wochentag = new Intl.DateTimeFormat(locale, { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' });
+  return Object.fromEntries(
+    daten.map((datum) => {
+      const [j, m, t] = datum.split('-').map(Number);
+      return [datum, `${wochentag.format(new Date(Date.UTC(j, m - 1, t, 12)))} · ${hijriText(datum, locale)}`];
+    }),
+  );
+}

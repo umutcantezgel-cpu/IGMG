@@ -15,12 +15,15 @@ import {
   Users,
 } from 'lucide-react';
 import type { JSONContent } from '@tiptap/core';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
+import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
 import { Stern8 } from '@/components/website/Icons';
+import { MedienBild, SIZES_KOPF } from '@/components/website/MedienBild';
 import { LOGOS } from '@/components/website/navigation';
 import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
@@ -72,15 +75,8 @@ const STATUS_STIL = {
   ausgebucht: { klasse: 'bg-fehler-toenung text-fehler', Icon: CircleAlert },
   vergangen: { klasse: 'border border-linie bg-weiss text-tinte-2', Icon: CircleMinus },
 } as const;
-/** Tönung je Kategorie wie in EventCard (dort nicht exportiert). */
-const KATEGORIE_TOENUNG: Record<VeranstaltungsDetail['kategorie'], string> = {
-  gebet: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
-  bildung: 'bg-tag-bildung-bg text-tag-bildung',
-  gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
-  kultur: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
-  jugend: 'bg-tag-jugend-bg text-tag-jugend',
-  frauen: 'bg-org-kt-toenung text-org-kt-text',
-};
+/** Kategorie-Abzeichen sandfarben wie in EventCard (H-C01): Kategorien bleiben neutral, nur „Wichtig“ trägt Farbe. */
+const KATEGORIE_TOENUNG = 'border border-linie bg-sand text-tinte-2';
 /** Organisationsfarben: Rahmen des Logos (PageHeader leitet daraus das Band unter dem Kopf ab) und Text der Kennung. */
 const ORG_AKZENT = { at: 'border-org-at', kt: 'border-org-kt', gt: 'border-org-gt', kgt: 'border-org-kgt' } as const;
 const ORG_TEXT = { at: 'text-org-at-text', kt: 'text-org-kt-text', gt: 'text-org-gt-text', kgt: 'text-org-kgt-text' } as const;
@@ -198,11 +194,34 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             {t('zurueckListe')}
           </Link>
         }
-        logo={v.organisation ? LOGOS[v.organisation] : undefined}
-        logoAlt={orgName ? t('logoAlt', { organisation: orgName }) : ''}
         akzent={v.organisation ? ORG_AKZENT[v.organisation] : undefined}
         kennung={orgName ?? tk(`kat_${v.kategorie}`)}
+        // Mit Organisation steht das Logo (20 px) vor der Kennung; ohne Organisation bleibt der Achtstern
+        kennungZeichen={
+          v.organisation ? (
+            <Image src={LOGOS[v.organisation]} alt="" width={40} height={40} className="size-5 shrink-0 rounded-sm border border-linie" />
+          ) : undefined
+        }
         kennungFarbe={v.organisation ? ORG_TEXT[v.organisation] : undefined}
+        // Kopfbild (H-C02): ab lg ein Platzhalter, wenn kein Bild gepflegt ist; die Fläche trägt den Übergangsnamen
+        bildAbLg={!v.bild}
+        bild={
+          <div style={morphStil(`v-${v.slug}-bild`)}>
+            {v.bild ? (
+              <MedienBild
+                bild={v.bild}
+                sprache={sprache}
+                sizes={SIZES_KOPF}
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
+              />
+            ) : (
+              <Bildplatzhalter
+                beschriftung={`${tk('foto')}: ${titel.text}`}
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
+              />
+            )}
+          </div>
+        }
         titel={titel.text}
         titelId="ev-titel"
         titelLang={titel.lang}
@@ -213,10 +232,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               {/* Ohne Organisation steht die Kategorie schon als Kennung über dem Titel: keine zweite Pille */}
               {v.organisation ? (
                 <span
-                  className={cn(
-                    'inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold',
-                    KATEGORIE_TOENUNG[v.kategorie],
-                  )}
+                  className={cn('inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', KATEGORIE_TOENUNG)}
                 >
                   {tk(`kat_${v.kategorie}`)}
                 </span>
@@ -230,18 +246,18 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                 </span>
               ) : null}
             </div>
-            <dl className="grid grid-cols-2 gap-x-6 gap-y-4 lg:auto-cols-auto lg:grid-flow-col lg:grid-cols-none lg:gap-x-0 lg:divide-x lg:divide-linie">
+            <dl className="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-x-6 lg:auto-cols-auto lg:grid-flow-col lg:grid-cols-none lg:gap-x-0 lg:divide-x lg:divide-linie">
               {fakt(
                 Calendar,
                 t('datum'),
                 <>
-                  <strong>{datum}</strong>
+                  <strong className="whitespace-nowrap">{datum}</strong>
                   {wiederkehrend && !v.vergangen ? (
                     <span className="text-16 lg:w-0 lg:min-w-full">{t('naechster', { datum: datumLang(beginn, sprache) })}</span>
                   ) : null}
                 </>,
               )}
-              {zeit ? fakt(Clock, t('uhrzeit'), <strong className="lg:whitespace-nowrap">{zeit}</strong>) : null}
+              {zeit ? fakt(Clock, t('uhrzeit'), <strong className="whitespace-nowrap">{zeit}</strong>) : null}
               {fakt(
                 MapPin,
                 t('ort'),
@@ -337,8 +353,8 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               </h2>
               <ul className="flex flex-col gap-2">
                 {v.hinweise.map((h, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <CircleCheck aria-hidden className="mt-0.75 size-5 shrink-0 text-gruen-700" />
+                  <li key={i} className="flex items-start gap-3">
+                    <Stern8 aria-hidden className="mt-1.5 shrink-0 text-gruen-700" />
                     <Text feld={h} sprache={sprache} />
                   </li>
                 ))}
@@ -351,7 +367,10 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
           <section
             id="anmeldung"
             aria-labelledby="ev-anmeldung"
-            className="flex scroll-mt-24 flex-col gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6"
+            className={cn(
+              'flex scroll-mt-24 flex-col gap-4 rounded-lg bg-weiss p-6',
+              anmeldbar ? 'border-2 border-gruen-700' : 'border border-linie',
+            )}
           >
             <h2 id="ev-anmeldung" className="text-24">
               {t('anmeldung')}
@@ -360,8 +379,27 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
               <p>{t('keineAnmeldung')}</p>
             ) : (
               <>
-                {status === 'vergangen' ? <p className="text-20 font-bold text-tinte-2">{t('geschlossen')}</p> : null}
-                {status === 'ausgebucht' ? <p className="text-20 font-bold text-fehler">{t('ausgebucht')}</p> : null}
+                {status === 'vergangen' ? (
+                  <>
+                    <p className="flex items-center gap-2 text-18 font-bold text-tinte">
+                      <CircleMinus aria-hidden className="size-5 text-tinte-2" />
+                      {t('geschlossen')}
+                    </p>
+                    <Link
+                      href="/veranstaltungen"
+                      className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4"
+                    >
+                      <ArrowLeft aria-hidden className="size-5" />
+                      {t('zurueckListe')}
+                    </Link>
+                  </>
+                ) : null}
+                {status === 'ausgebucht' ? (
+                  <p className="flex items-center gap-2 text-20 font-bold text-fehler">
+                    <CircleAlert aria-hidden className="size-5" />
+                    {t('ausgebucht')}
+                  </p>
+                ) : null}
                 {status === 'offen' && quote !== null ? (
                   <>
                     <p className="flex items-baseline gap-2">
