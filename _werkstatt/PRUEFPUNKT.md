@@ -1,15 +1,17 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (11:05 UTC):**
-  1. **Produktionsfehler (Aufgabe 19): erledigt.** Commit siehe git log, Gegenprobe ohne Datenbank in `protokolle/C-produktionsfehler.md`.
-  2. **Endstand (läuft seit 10:48, REV 58a3344):**
-     - Stufe C 1–11: grün. Ausnahmen: SVG mit einem statischen Fehlalarm, behoben in 4331b03 (Nachprüfung `C3-svg-nach`, 0 Befunde). release:check rot nur in `geheimnisse:pruefen`: Das war ein Schwärzungs-Platzhalter im E2E-Protokoll, behoben in 01589e8, danach ohne Befund.
-     - Nach dem E2E-Teil `pnpm release:check` einmal komplett auf HEAD wiederholen, als grüner Beleg für Z-12.
-     - Danach den Bildsatz der Hauptansichten mit `--warte 3000` neu aufnehmen (`bildsatz.mjs --routen routen-hauptansichten.json --aus $S/bilder/abschluss-warte`) und nach `_werkstatt/bilder/abschluss/<ansicht>` übernehmen. Grund: Bei 600 ms fehlt im Tagesbogen noch die Jetzt-Marke; das Endbild von B-06 zeigt sie. Dann `galerie.mjs` und den Blindvergleich.
-     - Ablauf:  `bash _werkstatt/werkzeuge/endstand.sh <REV>`. Das umfasst den Build auf 3500, Stufe C 1–3 und 5–11, bei ruhiger Last 12 und die INP-Paare, dazu E2E auf 3700. Danach STUFE-C3 mit Einordnung schreiben, Z-08 gegebenenfalls als AUSNAHME mit Denkprotokoll. Anschließend `abschluss-kopieren.sh` und `galerie.mjs`.
-  3. **FF main** nach L-E01 (`git push origin claude/blissful-edison-x3j16w:main`, nie erzwungen). Danach die Produktion per MCP lesen, auch die Bot-UA-Prüfung.
-  4. **Endprüfung:** `blind-vorbereiten.py` und `endpruefung.workflow.js`. Urteil wörtlich übernehmen, ABNAHME setzen, BERICHT schreiben. Dann den CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
-- **Während der Endstand-Messung ausgeblendet:** Die getrackten `_werkstatt/protokolle/C-*` sind auf assume-unchanged gesetzt (Liste `$S/ausgeblendet.txt`), dazu die Zeile `_werkstatt/protokolle/C-*` in `.git/info/exclude`. Nach dem Lauf zurücksetzen: `xargs -a $S/ausgeblendet.txt git update-index --no-assume-unchanged` und die Zeile aus `.git/info/exclude` löschen. Danach alle Protokolle committen.
+- **Nächster exakter Schritt (14:00 UTC):**
+  1. **Endstand 58a3344 gemessen**, Protokolle in 6deda96, Einordnung folgt in `berichte/STUFE-C3.md`:
+     - Stufe C 1–11 grün.
+     - Lighthouse-Paarregel 11/11.
+     - E2E: 562 grün, 7 rot. 6 davon sind ALTCHA-Rechenzeit (L-E07), die Wiederholung mit Retries läuft (`$S/e2e/altcha-wdh2.log`). Einer ist PWA-offline (Umgebung).
+  2. **Offen aus dem Endstand:**
+     - (a) JS /gebetszeiten 181,4 > 180 kB gz. Der Fix ist umgesetzt (76eda7a, 466ddfb; tsc/eslint grün), es fehlen Build und Nachmessung.
+     - (b) INP-Regression beim Öffnen des Mobilmenüs, Ursache im Darstellungsverzug. Versuch mit `$S/menue-spur/inp-menue.mjs` (Varianten per CSS, bei ruhiger Last).
+  3. **Danach:**
+     - 3500 auf HEAD neu bauen (`head/e4-bau.sh`), dann Lighthouse und INP nachmessen, F-03, Bildsatz `--warte 3000` und Galerie, `pnpm release:check` komplett.
+     - STUFE-C3 schreiben, FF main.
+     - Endprüfung.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
