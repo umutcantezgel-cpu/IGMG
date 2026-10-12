@@ -33,3 +33,8 @@ Kein Deployment im Zustand ERROR.
 - Produktion READY in fra1, ohne Ausnahmefehler; nur die gewollten Startmeldungen über Menschen-Werte.
 - Vorschauen des Arbeitsbranchs READY.
 - Die Vorschau ist über Vercel Authentication geschützt (V-09) und wird nicht abgerufen (G3).
+
+## Nachtrag 21:08 UTC · FF main → 255179b (App 66965d0: Verwaltungs-Hülle mit INP-Behebung)
+- **Vorab:** grün (`protokolle/C3b-vorab-255179b.md`): `vercel build --prod`, `pnpm check` (unit 814), `geheimnisse:pruefen`.
+- **Produktion** dpl_FnfyEKRGwG5fsu8vhpGzFeyqXrHf: READY (Bau 92 s), Region fra1, Commit 255179b, Aliase igmg-five.vercel.app und igmg-codays-projects.vercel.app.
+- **Laufzeitfehler (3 h):** keine Ausnahmefehler. Es gibt nur die 11 gewollten Startmeldungen (`[start] …` über die Menschen-Werte, ML-21), zuletzt 19:11:30 UTC.
