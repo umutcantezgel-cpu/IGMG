@@ -12,8 +12,9 @@ export const meta = {
 const S = '/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad'
 const PAKETE = args.pakete
 const ANDERE = args.andere ?? ''
+const LAUF = args.lauf ?? 'E3'
 
-const bauPrompt = (p) => `Rolle: Baumeister (Haiku). Befundpaket ${p.kennung} aus der Sichtabnahme E3. Projekt: IGMG Wetzlar (Moscheegemeinde, vier Organisationen, de/tr/en), Next.js 16.4 in /home/user/IGMG/web, Branch claude/blissful-edison-x3j16w.
+const bauPrompt = (p) => `Rolle: Baumeister (Haiku). Befundpaket ${p.kennung} aus der Sichtabnahme ${LAUF}. Projekt: IGMG Wetzlar (Moscheegemeinde, vier Organisationen, de/tr/en), Next.js 16.4 in /home/user/IGMG/web, Branch claude/blissful-edison-x3j16w.
 
 ZUERST LESEN: dein Paketauftrag ${p.datei} (verbindlich: Änderung, Abnahmekriterien, Schreibrechte, Hinweise), dann /home/user/IGMG/_werkstatt/pakete/briefings/ROLLEN.md („Baumeister“, „Für alle“), /home/user/IGMG/_werkstatt/pakete/REFERENZ.md (Muster, freie Werte → Tokens), /home/user/IGMG/_werkstatt/KERN.md K-005 bis K-010 (Bewegungsregister K-007), web/CLAUDE.md, web/AGENTS.md, web/docs/MUSTER.md. Vor Next.js-Code die passende Seite in web/node_modules/next/dist/docs/ lesen.
 
@@ -61,7 +62,7 @@ const SCHEMA = {
   required: ['urteil', 'note', 'zusammenfassung', 'punkte', 'befunde', 'regelverstoesse', 'bedarf_opus'],
 }
 
-const abnahmePrompt = (p, bericht, runde, vorher) => `Du bist ${runde === 1 ? 'Abnehmer' : 'frischer Nachabnehmer'} (Opus) im Lauf „Gestaltung aufwerten und Vercel-startklar machen“ (IGMG Wetzlar, /home/user/IGMG/web, Next.js 16.4, Tokens in web/src/app/globals.css). Ein Haiku-Baumeister hat das Befundpaket ${p.kennung} aus der Sichtabnahme E3 ${runde === 1 ? 'gebaut' : 'nach deiner Vorgängerabnahme nachgebessert'}. Prüfe streng, aber fair. ÄNDERE KEINE DATEIEN (nur lesen, Befehle, eigene Bilder nach /home/user/IGMG/_werkstatt/bilder/${p.kennung}/${runde === 1 ? 'abnahme' : 'nachabnahme'}-*.jpg).
+const abnahmePrompt = (p, bericht, runde, vorher) => `Du bist ${runde === 1 ? 'Abnehmer' : 'frischer Nachabnehmer'} (Opus) im Lauf „Gestaltung aufwerten und Vercel-startklar machen“ (IGMG Wetzlar, /home/user/IGMG/web, Next.js 16.4, Tokens in web/src/app/globals.css). Ein Haiku-Baumeister hat das Befundpaket ${p.kennung} aus der Sichtabnahme ${LAUF} ${runde === 1 ? 'gebaut' : 'nach deiner Vorgängerabnahme nachgebessert'}. Prüfe streng, aber fair. ÄNDERE KEINE DATEIEN (nur lesen, Befehle, eigene Bilder nach /home/user/IGMG/_werkstatt/bilder/${p.kennung}/${runde === 1 ? 'abnahme' : 'nachabnahme'}-*.jpg).
 
 LIES ZUERST den Paketauftrag ${p.datei} (Änderung, Abnahmekriterien, Schreibrechte). Maßstab: Leitidee (KERN K-001), REFERENZ.md, Startseite als Referenzansicht; Ziel ist Note ≥ 8 der betroffenen Ansichten.
 ${vorher ? `VORGÄNGER-ABNAHME (Runde 1):\n${JSON.stringify(vorher, null, 1)}\n` : ''}BERICHT DES BAUMEISTERS:
