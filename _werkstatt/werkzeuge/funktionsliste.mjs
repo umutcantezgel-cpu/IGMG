@@ -173,8 +173,13 @@ F['F-01'] = async (s, b, breite) => {
   b.pruefe('H1 „IGMG Wetzlar“', h1 === 'IGMG Wetzlar', h1);
   const beitreten = await sichtbar(s.getByRole('link', { name: 'Gemeinde beitreten' })).first().getAttribute('href').catch(() => null);
   b.pruefe('„Gemeinde beitreten“ → /mitglied-werden', beitreten === '/mitglied-werden', beitreten);
-  const mehr = await sichtbar(s.getByRole('link', { name: 'Mehr erfahren' })).first().getAttribute('href').catch(() => null);
-  b.pruefe('„Mehr erfahren“ (Hero) → /ueber-uns', mehr === '/ueber-uns', mehr);
+  // Zweiter Hero-Knopf → /ueber-uns. Die Beschriftung ist bewusst geändert („Mehr erfahren“ → „Über uns“, H-E08,
+  // Sichtabnahme C2): geprüft wird das Ziel neben „Gemeinde beitreten“, nicht der Wortlaut.
+  const hero = s.locator('main section').filter({ has: s.getByRole('link', { name: 'Gemeinde beitreten' }) }).first();
+  const zweiter = sichtbar(hero.locator('a[href="/ueber-uns"]')).first();
+  const mehr = await zweiter.getAttribute('href').catch(() => null);
+  const mehrText = (await zweiter.innerText().catch(() => '')).trim();
+  b.pruefe('Hero: zweiter Knopf → /ueber-uns', mehr === '/ueber-uns', { href: mehr, text: mehrText });
   const ev = await zaehleImAbschnitt(s, 'Unsere Veranstaltungen', 'article');
   b.pruefe('bis zu 6 kommende Veranstaltungen', ev >= 1 && ev <= 6, ev);
   // Code: page.tsx – Aufmacher (variante „gross“) + höchstens 3 weitere („kompakt“): zusammen 4 Artikel
