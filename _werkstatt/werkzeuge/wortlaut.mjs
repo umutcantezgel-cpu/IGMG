@@ -522,6 +522,8 @@ const AUSNAHMEN = [
   },
   { id: 'A-04', grund: 'Neue Abschnittsüberschriften „meldung.gruppe.*“ (Legenden der Fieldsets im Meldeformular, K-12, z. B. „Einwilligung“). Der Einwilligungstext selbst ist unverändert. Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).', passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /(^|\.)meldung\.gruppe\.(person|anliegen|rueckmeldung|einwilligung)$/.test(e.schluessel) },
   { id: 'A-05', grund: 'Neuer Schlüssel „rechtliches.inhaltsverzeichnis“ („Inhalt“, Name der Navigation im Inhaltsverzeichnis der Rechtsseiten, K-14). Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).', passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /(^|\.)rechtliches\.inhaltsverzeichnis$/.test(e.schluessel) },
+  { id: 'A-06', grund: 'Neues internes Verarbeitungsverzeichnis `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` nach AUFTRAG V-11 (Vorlage für Vorstand und Rechtsberatung, MENSCHEN ML-12). Es wird nicht ausgeliefert und ändert keinen Wortlaut eines bestehenden Rechts- oder Einwilligungstextes; neue Datei, kein geänderter Wortlaut.', passt: (e) => e.status === 'neu' && String(e.datei).endsWith('docs/recht/VERARBEITUNGSVERZEICHNIS.md') },
+  { id: 'A-07', grund: 'Schriftangabe der Mail-Vorlage (`font-family` in `web/src/lib/mail/vorlagen/Rahmen.tsx`, H-W01): „Georgia, serif“ → „Georgia, \'Times New Roman\', serif“. Gestaltungswert ohne Wortlaut, kein Rechtstext.', passt: (e) => String(e.datei).endsWith('lib/mail/vorlagen/Rahmen.tsx') && /^Text: Georgia,( 'Times New Roman',)? serif$/.test(e.schluessel) },
 ];
 
 /** Bekannte erlaubte Schlüssel ohne Rechtsbezug (Vorgabe der Koordination): kennzeichnen, ohne Befund. */
