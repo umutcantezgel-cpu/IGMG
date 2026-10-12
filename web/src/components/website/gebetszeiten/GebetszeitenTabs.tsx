@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
+import { useDeferredValue, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { klassen } from '@/lib/klassen';
 
 export type TabSchluessel = 'heute' | 'monat' | 'qibla' | 'einstellungen';
@@ -28,6 +28,12 @@ export function GebetszeitenTabs({
   /** Der neue Inhalt blendet erst nach einem Wechsel ein (B-04); beim ersten Laden steht er sofort da. */
   const [gewechselt, setGewechselt] = useState(false);
   const knoepfe = useRef<Partial<Record<TabSchluessel, HTMLButtonElement | null>>>({});
+  /**
+   * Panel folgt dem Reiter einen Render später (INP, Z-08): Der Klick zeichnet sofort den gewählten Reiter, das Aufdecken
+   * des neuen Panels (Stil und Layout etwa der Monatstabellen) läuft danach als unterbrechbarer Render
+   * (protokolle/C3-menue-inp.md).
+   */
+  const sichtbar = useDeferredValue(aktiv);
 
   function zeige(ziel: TabSchluessel) {
     if (ziel === aktiv) return;
@@ -94,8 +100,8 @@ export function GebetszeitenTabs({
           role="tabpanel"
           id={`gz-panel-${s}`}
           aria-labelledby={`gz-tab-${s}`}
-          hidden={s !== aktiv}
-          className={s === aktiv && gewechselt ? 'blendet-ein' : undefined}
+          hidden={s !== sichtbar}
+          className={s === sichtbar && gewechselt ? 'blendet-ein' : undefined}
           style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
         >
           {panels[s]}
