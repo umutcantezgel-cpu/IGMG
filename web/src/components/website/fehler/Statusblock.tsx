@@ -8,8 +8,8 @@ import type { ReactNode } from 'react';
  * trägt die Bedeutung.
  *
  * `ausrichtung="start"` (H-B14): ohne Kartenrahmen direkt auf der Seitenachse – Grafik links in Spalte 1, Text und
- * Schritte daneben (ab lg), einspaltig mit Grafik oben auf dem Telefon. Ohne `role="status"`: die Seite ist kein
- * Rückmeldungsbereich, sondern der Inhalt selbst.
+ * Schritte daneben (ab lg), einspaltig mit Grafik oben auf dem Telefon. Ohne Grafik nehmen Text und Schritte ab lg die
+ * ganze Breite. Ohne `role="status"`: die Seite ist kein Rückmeldungsbereich, sondern der Inhalt selbst.
  */
 export function Statusblock({
   grafik,
@@ -30,7 +30,7 @@ export function Statusblock({
     return (
       <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
         {grafik ? <div className="justify-self-start">{grafik}</div> : null}
-        <div className="flex w-full flex-col items-start gap-6 lg:col-span-2">
+        <div className={`flex w-full flex-col items-start gap-6 ${grafik ? 'lg:col-span-2' : 'lg:col-span-3'}`}>
           {ueberschrift ? <h2 className="text-display-2">{ueberschrift}</h2> : null}
           <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{text}</p>
           {children ? <div className="flex w-full flex-col items-start gap-6">{children}</div> : null}

@@ -10,8 +10,9 @@ import { Statusblock } from './Statusblock';
 /**
  * Inhalt „Seite nicht gefunden“ (Blatt S24, Variante 404) für die Adressen unter [locale] (Datei [...rest]/page.tsx)
  * und die Datei not-found.tsx des Abschnitts. Server-Komponente ohne Parameter: statisch (K-01), ohne Anfrage an Dritte.
- * Seitenkopf links wie auf allen Seiten, darunter die Seitenachse (H-B14): Grafik links, Satz und Wege rechts. Der
- * Hauptweg ist der Startseiten-Knopf, darunter fünf Wege in Kacheln (Namen aus den bestehenden Schlüsseln, keine neuen Texte).
+ * Seitenkopf wie auf allen Seiten, die Zustandsgrafik rechts neben dem Titel (Zierde des Kopfs, dekorativ). Darunter die
+ * Seitenachse (H-B14): Satz, Startseiten-Knopf und fünf Wege in Kacheln, ab xl in einer Reihe (Namen aus den bestehenden
+ * Schlüsseln, keine neuen Texte).
  */
 export async function NichtGefundenInhalt() {
   const t = await getTranslations('fehlerseiten');
@@ -30,17 +31,13 @@ export async function NichtGefundenInhalt() {
   ];
   return (
     <Seitenrahmen bereich="keiner" seite="nicht-gefunden" sprachZiel="/" pfad={[{ label: t('nichtGefunden.titel') }]}>
-      <PageHeader titel={t('nichtGefunden.titel')} />
+      <PageHeader titel={t('nichtGefunden.titel')} zierde={<Zustandsgrafik art="nichtGefunden" groesse={120} />} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 pt-abschnitt-klein pb-abschnitt md:px-8">
-        <Statusblock
-          ausrichtung="start"
-          grafik={<Zustandsgrafik art="nichtGefunden" groesse={144} className="-ml-5" />}
-          text={t('nichtGefunden.text')}
-        >
+        <Statusblock ausrichtung="start" text={t('nichtGefunden.text')}>
           <Link href="/" className={knopfPrimaer}>
             {t('aktion.startseite')}
           </Link>
-          <ul className="grid w-full raster-kacheln gap-3">
+          <ul className="grid w-full raster-kacheln gap-3 lg:grid-cols-3 xl:grid-cols-5">
             {wege.map(({ href, text, Icon }) => (
               <li key={href}>
                 <Link

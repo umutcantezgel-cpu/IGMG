@@ -135,11 +135,11 @@ export function Seitenleiste({
   return (
     <aside
       className={cn(
-        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:overflow-y-auto verwaltung:py-4',
+        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
         offen ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >
-      <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4">
+      <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 verwaltung:min-h-0 verwaltung:overflow-y-auto verwaltung:overscroll-contain">
         {/* Geöffnet tritt die Navigation mit B-03 auf (nur unter 900 px sichtbar); geschlossen bleibt sie ohne Bewegung. */}
         <nav id="verwaltung-navigation" aria-label={texte.navName}>
           <ul className="flex flex-col gap-1">

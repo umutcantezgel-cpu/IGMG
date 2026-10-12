@@ -57,7 +57,10 @@ export function Listen({
           ) : (
             <ul className="mt-2 flex flex-col">
               {neuigkeiten.map((z) => (
-                <li key={z.id} className="flex items-start justify-between gap-3 border-t border-linie py-3">
+                <li
+                  key={z.id}
+                  className="flex flex-col gap-1 border-t border-linie py-3 menu:flex-row menu:items-start menu:justify-between menu:gap-3"
+                >
                   <span className="flex min-w-0 flex-col">
                     <span className="font-bold break-words">{z.titel}</span>
                     <time dateTime={isoZeit(z.datum)} className="text-16 text-tinte-2">
@@ -66,7 +69,7 @@ export function Listen({
                   </span>
                   <span
                     className={cn(
-                      'shrink-0 rounded-pill px-3 py-0.5 text-16 font-bold whitespace-nowrap',
+                      'shrink-0 self-start rounded-pill px-3 py-0.5 text-16 font-bold whitespace-nowrap',
                       z.status === 'veroeffentlicht' ? 'bg-gruen-50 text-gruen-800' : 'bg-sand text-tinte-2',
                     )}
                   >
@@ -94,7 +97,7 @@ export function Listen({
                     <span className="text-16 text-tinte-2">
                       <time dateTime={isoZeit(z.beginn)}>{datumLang(z.beginn, 'de')}</time>
                       {' · '}
-                      {z.ganztaegig ? texte.ganztaegig : zeitspanne(z.beginn, z.ende, 'de')}
+                      <span className="whitespace-nowrap">{z.ganztaegig ? texte.ganztaegig : zeitspanne(z.beginn, z.ende, 'de')}</span>
                     </span>
                   </span>
                   {z.organisation ? (

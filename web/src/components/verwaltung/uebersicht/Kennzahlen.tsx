@@ -24,8 +24,8 @@ export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; tite
   const handlung = (k: KennzahlKachel) => (HANDLUNGS_MODULE as readonly string[]).includes(k.schluessel) && k.wert > 0;
   return (
     <section aria-label={titel}>
-      {/* Karten ab 340 px, so viele Spalten wie passen (raster-karten, Kern K-005). */}
-      <ul className="grid raster-karten gap-4 max-md:hidden">
+      {/* Ab 768 px zwei Spalten, ab 1240 px (menu) drei: sechs Kacheln als drei Reihen zu zwei bzw. zwei Reihen zu drei. */}
+      <ul className="grid gap-4 max-md:hidden md:grid-cols-2 menu:grid-cols-3">
         {kacheln.map((k) => {
           const Icon = ICONS[k.schluessel];
           return (
@@ -44,7 +44,7 @@ export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; tite
                 {k.wert > 0 ? (
                   <strong className="text-48 leading-none font-bold text-tinte tabular-nums">{k.wert}</strong>
                 ) : (
-                  <strong className="text-30 leading-none font-bold text-tinte-3 tabular-nums">{k.wert}</strong>
+                  <strong className="text-30 leading-12 font-bold text-tinte-3 tabular-nums">{k.wert}</strong>
                 )}
                 <span className="text-16 text-tinte-2">{k.hinweis}</span>
               </NextLink>

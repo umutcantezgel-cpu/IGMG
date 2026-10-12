@@ -116,8 +116,8 @@ export async function KontaktFormular({
       />
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
-      <div className="self-start">
-        <SendenKnopf texte={{ senden: tf('senden'), sendet: tf('sendet') }} />
+      <div className="self-stretch sm:self-start">
+        <SendenKnopf className="w-full sm:w-auto" texte={{ senden: tf('senden'), sendet: tf('sendet') }} />
       </div>
     </>
   );
