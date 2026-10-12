@@ -45,4 +45,4 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 | V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | erfüllt (`protokolle/H-V07-V10-pruefung.md`, `lib/db/fehler.ts`, Health mit Zeitlimit 352d1bb, Runbook §§ 12–13, 16; ML-14–16) |
 | V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | erfüllt als Entwurf (0cd8173, 8df9556); Freigabe: Menschen (ML-11, ML-12) |
 | V-12 | Tarif-Empfehlung in MENSCHEN | erfüllt (ML-09) |
-| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen (READY, 0 Laufzeitfehler; zuletzt 560161e, dpl_KFfPJhrG4qFg1ECefPXnPAmNNKwL) |
+| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen (READY; zuletzt 71e263f, dpl_5Tvd5XVW2BYimH1u2Bos6MeHBMa3). Das Laufzeitprotokoll zeigt seit 11.10. 19:28 UTC keine Ausnahmefehler, nur die gewollten Meldungen der Startprüfung über fehlende Menschen-Werte. Vorschau des Arbeitsbranchs e0c8e9f READY in fra1 (`protokolle/C-vercel-mcp.md`) |
