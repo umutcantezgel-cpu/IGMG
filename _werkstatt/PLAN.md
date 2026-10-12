@@ -15,19 +15,19 @@ Grundlage: KERN.md 1.1, LAGEBILD.md, ABNAHME.md 1.1, Plan der Planabnahme (`/roo
 - Messungen gegen den eingefrorenen Ausgangsstand laufen auf Port 3100 (9ebb4bc). Opus-Entwicklung läuft auf `localhost:3200`.
 
 ## Kritischer Pfad
-O-04 ✓ → E2-TOR (läuft) → B-05-Nachweis (O-02) → Sichtabnahme Startseite → H-G01–G04/H-Z01–Z02 (Bausteine vor dem E3-Tor) → H-A02–A07, O-10–O-13 → E3-TOR → H-W, H-B → E4-TOR → Stufe C (inkl. Z-08-Paarmessung H-L01) → Endprüfung → ABSCHLUSS.
+O-04 ✓ → E2-TOR ✓ → B-05-Nachweis (O-02) → Sichtabnahme Startseite → H-G01–G04/H-Z01–Z02 (Bausteine vor dem E3-Tor) → H-A02–A07, O-10–O-13 → E3-TOR → H-W, H-B → E4-TOR → Stufe C (inkl. Z-08-Paarmessung H-L01) → Endprüfung → ABSCHLUSS.
 - Parallel dazu: O-05 ✓ → H-D01 ✓ → V-13 (Vorschauprüfung je Tor).
 - Parallel dazu: E0-PRUEFER-03 → Z-02.
 
 ## Etappen und Pakete
 
-### E0 Start und Erkundung (offen bis E0-PRUEFER-03)
+### E0 Start und Erkundung (abgeschlossen mit E0-PRUEFER-03)
 | Kennung | Rolle | Modell | Inhalt | Kriterium | Stand |
 |---|---|---|---|---|---|
 | E0-PRUEFER-01 | Prüfer | Haiku | Werkzeuge, Ausgangsstand einfrieren | – | ✓ a7456e9 |
 | E0-KUNDSCHAFTER-02/03/05/06 | Kundschafter | Haiku | Designsystem · Ansichten/Inhalte · Stack/Qualität · Auslieferung | – | ✓ `berichte/` |
 | E0-PRUEFER-02 | Prüfer | Haiku | Ausgangswerte Stufe B (11 Hauptansichten), Bilder in `bilder/e0/` | Z-04, Z-07–Z-09 | ✓ 280a76a |
-| E0-PRUEFER-03 | Prüfer | Haiku | Funktionsliste F-01–F-24 aus LAGEBILD gegen Port 3100 | Z-02 | läuft |
+| E0-PRUEFER-03 | Prüfer | Haiku | Funktionsliste F-01–F-24 aus LAGEBILD gegen Port 3100 | Z-02 | ✓ `berichte/E0-PRUEFER-03.md`, daf29ba |
 
 ### E1 Plan
 KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018–0023 (✓ de04689) · L0-Planprüfung (✓ eine Runde, eingearbeitet).
@@ -46,7 +46,7 @@ KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018�
 | H-V01 | Baumeister | Haiku | ignore-Skript für ZWISCHENSTAND, regions/crons | `web/scripts/vercel-ignore.mjs` | Vercel-Doku | V-01 | ✓ 0c224da |
 | H-V03 | Baumeister | Haiku | `lib/umgebung.ts`, `.env.example`, `geheimnisse:erzeugen`, Tests | `lib/umgebung.ts`, Skript, Tests | ADR 0022 | V-03 | ✓ c596742, 263cd1d |
 | H-V06 | Baumeister | Haiku | Wartungsrouten GET + CRON_SECRET, Sperre, `mail-ausgang`, Tests | `app/api/wartung/**`, `lib/wartung/**`, Tests | ADR 0021 | V-06 | ✓ c596742 |
-| E2-TOR | Prüfer + Opus | Haiku/Opus | Stufe B Startseite/Über uns, Sichtabnahme durch frischen Opus-Unteragenten (≥ 8, sechs Kategorien), Vorschau V-13, V-02 | – | REFERENZ, ABNAHME | Z-02, Z-04–Z-09, V-02, V-13 | läuft |
+| E2-TOR | Prüfer + Opus | Haiku/Opus | Stufe B Startseite/Über uns, Sichtabnahme durch frischen Opus-Unteragenten (≥ 8, sechs Kategorien), Vorschau V-13, V-02 | – | REFERENZ, ABNAHME | Z-02, Z-04–Z-09, V-02, V-13 | ✓ `berichte/E2-TOR.md`, `E2-TOR2.md` (Wiederholung am sauberen Build, L-E09) |
 
 ### E3 Ausführung I (Ansichten und Auslieferung)
 | Kennung | Rolle | Modell | Inhalt | Schreibrechte | Muster/Maßstab | Abhängig von | Kriterium | Stand |
@@ -67,7 +67,7 @@ KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018�
 | H-A07 | Baumeister | Haiku | Kontakt | `(website)/kontakt/**`, `website/kontakt/**` | REFERENZ, H-A06 | H-A06 | Z-03, Z-04 | ✓ 15f1013 |
 | H-S01 | Baumeister | Haiku | Cockpit-UI `/verwaltung/startklar` | `verwaltung/(geschuetzt)/startklar/**`, `components/verwaltung/startklar/**`, `server/actions/startklar.ts` | Kern 2.0 | O-07 | Z-12, V-11 | ✓ 0cd8173 |
 | H-S02 | Baumeister | Haiku | `pnpm startklar`, `pnpm release:check`, Tests | `scripts/startklar.ts`, `scripts/release-check.mjs`, Tests | Kern 2.0 | O-07 | Z-12 | ✓ 8df9556 |
-| E3-TOR | Prüfer + Opus | Haiku/Opus | Stufe B der fertigen Ansichten, Sichtabnahme (Opus), Vorschau | – | ABNAHME | alle E3-Pakete | Z-02–Z-09, V-13 | läuft (Build 93a0b3d) |
+| E3-TOR | Prüfer + Opus | Haiku/Opus | Stufe B der fertigen Ansichten, Sichtabnahme (Opus), Vorschau | – | ABNAHME | alle E3-Pakete | Z-02–Z-09, V-13 | ✓ `berichte/E3-TOR.md` (bedingt bestanden, Maßnahmen ae274ac, cf0d4d9), Sichtabnahme E3 (`berichte/SICHTABNAHME-E3.md`) |
 
 ### E4 Ausführung II (Bausteine, Zustände, Auslieferung, Dokumente)
 Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich die Bausteine nach den Ansichtsbildern nicht mehr ändern.
@@ -86,15 +86,15 @@ Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich d
 | H-D02 | Dokumentar | Haiku | `VERCEL-ENV.md`, Verarbeitungsverzeichnis, Hosting-Baustein v2, ML-09–ML-12 | Dateien | AUFTRAG V-03, V-11, V-12 | V-03, V-11, V-12 | ✓ 0cd8173 |
 | H-D03 | Dokumentar | Haiku | `docs/GO-LIVE.md` | Datei | Kern 2.0 | Z-12 | ✓ 290aaeb (Opus) |
 | H-D05 | Dokumentar | Haiku | Runbook und Umgebungsdoku gegen den Code (Datensicherung, Protokolle, Cache, direkte Migrationsverbindung) | `docs/deploy/*`, `GO-LIVE.md`, MENSCHEN ML-14–16 | AUFTRAG V-10, V-13 | V-10, V-13 | ✓ `berichte/H-D05.md`, f08432e |
-| H-D04 | Dokumentar | Haiku | MENSCHEN-Abschluss (jede Aufgabe mit Ort und Aufwand) | `MENSCHEN.md` | AUFTRAG §12 | Z-10, Z-12 | offen |
+| H-D04 | Dokumentar | Haiku | MENSCHEN-Abschluss (jede Aufgabe mit Ort und Aufwand) | `MENSCHEN.md` | AUFTRAG §12 | Z-10, Z-12 | ✓ `berichte/H-D04.md`, 1f1c2d8 (Reihenfolge zum Livegang, ML-22–25) |
 | H-V07 | Prüfer | Haiku | Beleg gemeinsamer Zustand: Sitzungen, Raten, ALTCHA, Sperren in der DB; nichts im Prozessspeicher, das Instanzen teilen müssten | – (Bericht) | AUFTRAG V-07 | V-07 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md` |
 | H-V08 | Prüfer + Baumeister | Haiku | Caching wie lokal: `revalidateTag` nach Verwaltungsänderung lokal im Produktions-Build sofort sichtbar; Cache-Header statischer Dateien (ADR 0023 ✓ abd187e) belegen | Bericht, ggf. Tests | ADR 0023, AUFTRAG V-08 | V-08 | ✓ `berichte/H-V08.md` (18/18 sichtbar beim ersten Abruf), ADR 0024 d26e8bc |
 | H-V10 | Prüfer | Haiku | Protokolle ohne Personendaten (alle `console.*`/Logger-Aufrufe), Health-Route, Backups/PITR und Rollback im Runbook | – (Bericht) | AUFTRAG V-10 | V-10 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md`; Datenbankfehler gekürzt (`lib/db/fehler.ts`), Health mit Zeitlimit 352d1bb; Runbook § 13/16 (H-D05) |
 | H-R01 | Prüfer | Haiku | Wortlaut-Snapshot der Rechts- und Einwilligungstexte: Hash je Text E0 (9ebb4bc) gegen jetzt | `protokolle/` | G6 | Z-12 | ✓ `berichte/H-R01.md`, 024f67d (alle Rechtstexte unverändert) |
-| H-L01 | Prüfer + Baumeister | Haiku | Leistung: Paarmessung Ausgangsstand/Nachher unter ruhigen Bedingungen, Budgets (JS ≤ 180 KB gz, TBT), Ursachen beheben | Bericht, Befundpakete | ABNAHME Z-08 (E0-Spanne 80–94) | Z-08 | offen |
+| H-L01 | Prüfer + Baumeister | Haiku | Leistung: Paarmessung Ausgangsstand/Nachher unter ruhigen Bedingungen, Budgets (JS ≤ 180 KB gz, TBT), Ursachen beheben | Bericht, Befundpakete | ABNAHME Z-08 (E0-Spanne 80–94) | Z-08 | Ursachen behoben in drei Teilen (6701f1c, 9b8ffd0, e0c8e9f; `berichte/H-L01.md`); Nachmessung verschränkt ×5 am Endstand fa5c005 (Stufe C Schritt 12, `berichte/STUFE-C2.md`) |
 | H-BILD | Dokumentar | Opus | E0-Bilder ins Repo (`bilder/e0/`, `bilder/e0-reduziert/`) | `_werkstatt/bilder/**` | AUFTRAG §8 | Z-04, Z-10 | ✓ (dieser Stand) |
-| H-B… | Baumeister | Haiku | Befundpakete aus den Sichtabnahmen (≤ 2 je Ansicht und Kategorie), ≈ 12 | je Befund | REFERENZ | Z-04 | ✓ H-B01–B14 + Welle 0 (`berichte/H-B*.md`, Noten 7,5–8,5; f44119b); H-C aus Sichtabnahme E4 offen |
-| E4-TOR | Prüfer + Opus | Haiku/Opus | Stufe B, Sichtabnahme, Vorschau | – | ABNAHME | Z-02–Z-09, Z-11 | läuft: Bildsatz E4 ✓ (127a9e7), Sichtabnahme E4 (wf_9df3d301-a41), H-L01 Paarmessung |
+| H-B… | Baumeister | Haiku | Befundpakete aus den Sichtabnahmen (≤ 2 je Ansicht und Kategorie), ≈ 12 | je Befund | REFERENZ | Z-04 | ✓ H-B01–B14 + Welle 0 (`berichte/H-B*.md`, Noten 7,5–8,5; f44119b); H-C01–C13 aus Sichtabnahme E4 ✓ (Noten 8–8,5; f0685ed, cd37656, 0dc2e7c, 5d19108) |
+| E4-TOR | Prüfer + Opus | Haiku/Opus | Stufe B, Sichtabnahme, Vorschau | – | ABNAHME | Z-02–Z-09, Z-11 | ✓ Bildsatz E4 (127a9e7), Sichtabnahme E4 (Ø 7,16 → 13 H-C-Pakete, `berichte/SICHTABNAHME-E4.md`), H-L01 Paarmessung (`berichte/H-L01.md`) |
 
 ### E5 Kür und Abschluss
 Kür nach Wirkung, je ein Haiku-Paket nach Referenz, 20 benannt. Inhalte werden nicht erfunden. „Islamisches Wissen“ und „Quran-Seiten“ gestalten nur die Darstellung vorhandener, belegter Inhalte, ohne Verse als Schmuck (G7).
@@ -117,7 +117,10 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Produktion läuft ohne Datenbank: Jeder Push auf `main` muss den PGlite-Rückfall im Bau erhalten.
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
-## Statusnachweis (Stand 2026-10-12 02:10 UTC)
+## Statusnachweis (Stand 2026-10-12 07:10 UTC)
+Pflicht erledigt 69 von ≈ 70: die 66 vom 02:10-Stand plus E4-TOR mit Sichtabnahme E4 und H-C01–C13 (5d19108), H-D04 (1f1c2d8) und H-L01 (Ursachen I–III; Nachmessung läuft). Offen ist nur noch die Endprüfung nach Stufe C: erste Messung 5d19108 in `berichte/STUFE-C.md`, Nacharbeit fa5c005, Nachmessung `berichte/STUFE-C2.md`. Kür 20 von 20.
+
+### Stand 2026-10-12 02:10 UTC
 Pflicht erledigt 66 von ≈ 70: die 50 unten plus E3-TOR, H-V08 und H-B01–B14. Offen: H-L01, E4-TOR (Sichtabnahme E4 + H-C), H-D04, Stufe C mit Endprüfung. Kür 20 von 20 (K-01–K-20; K-09/K-11/K-13/K-17 in den Berichten K-08, K-10, K-12, K-16).
 
 ### Stand 2026-10-11 19:50 UTC
