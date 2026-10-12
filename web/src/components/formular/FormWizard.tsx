@@ -22,9 +22,9 @@ export type WizardGruppe = { titel: string; hinweis?: string; inhalt: ReactNode 
 export type WizardSchritt = { titel: string; gruppen: WizardGruppe[] };
 
 /**
- * Schrittmarke (K-008): Achtstern als Fläche mit Umriss; erledigt grün mit Häkchen, aktuell hell, kommend grau
- * (`sandig`: kommend auf Sand statt Weiß – in der Seitenleiste und in der Telefonreihe aller Assistenten; die Liste
- * „oben“ ab 1024 px bleibt weiß).
+ * Schrittmarke (K-008): Achtstern als Fläche mit Umriss; aktuell voll grün mit weißer Ziffer, erledigt hell mit grünem
+ * Häkchen, kommend Weiß oder Sand (`sandig`: Sand in der Seitenleiste und in der Telefonreihe aller Assistenten; die
+ * Liste „oben“ ab 1024 px bleibt weiß).
  */
 function Schrittmarke({ nr, stand, sandig = false }: { nr: number; stand: 'erledigt' | 'aktuell' | 'kommend'; sandig?: boolean }) {
   return (
@@ -36,16 +36,16 @@ function Schrittmarke({ nr, stand, sandig = false }: { nr: number; stand: 'erled
           strokeLinejoin="round"
           vectorEffect="non-scaling-stroke"
           className={cn(
-            stand === 'erledigt' && 'fill-gruen-700 stroke-gruen-700',
-            stand === 'aktuell' && 'fill-gruen-50 stroke-gruen-700',
+            stand === 'erledigt' && 'fill-gruen-50 stroke-gruen-700',
+            stand === 'aktuell' && 'fill-gruen-700 stroke-gruen-700',
             stand === 'kommend' && (sandig ? 'fill-sand stroke-rand' : 'fill-weiss stroke-rand'),
           )}
         />
       </svg>
       {stand === 'erledigt' ? (
-        <Check aria-hidden className="relative size-4 text-weiss" />
+        <Check aria-hidden className="relative size-4 text-gruen-800" />
       ) : (
-        <span className={cn('relative text-16 font-bold', stand === 'aktuell' ? 'text-gruen-800' : 'text-tinte-2')}>{nr}</span>
+        <span className={cn('relative text-16 font-bold', stand === 'aktuell' ? 'text-weiss' : 'text-tinte-2')}>{nr}</span>
       )}
     </span>
   );
@@ -97,14 +97,18 @@ export async function FormWizard({
     <div className={cn('flex flex-col gap-6', seitenleiste && 'lg:grid lg:grid-cols-3 lg:items-start lg:gap-8')}>
       <nav aria-label={t('wizard.fortschritt')} className={cn('flex flex-col gap-3', seitenleiste && 'lg:sticky lg:top-6')}>
         {/* Schrittwechsel ohne Fehler: Fokus auf die Schrittzeile (data-fokus), damit Lesende den neuen Schritt hören */}
-        <p data-fokus={ergebnis ? undefined : true} tabIndex={-1} className="font-bold text-gruen-800 outline-none">
+        <p
+          data-fokus={ergebnis ? undefined : true}
+          tabIndex={-1}
+          className={cn('font-bold text-gruen-800 outline-none', seitenleiste && 'lg:sr-only')}
+        >
           {t('wizard.schrittZeile', { nr: schritt + 1, anzahl: schritte.length, titel: schritte[schritt].titel })}
         </p>
         {/* Unter 1024 px: Schrittmarken mit Linien dazwischen, Linie bis einschließlich dem aktuellen Schritt gefüllt; die Liste darunter lesen Lesende */}
-        <div aria-hidden className="flex items-center gap-1 lg:hidden">
+        <div aria-hidden className="flex items-center lg:hidden">
           {schritte.map((s, i) => (
             <Fragment key={s.titel}>
-              {i > 0 ? <span className={cn('h-0.5 flex-1 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} /> : null}
+              {i > 0 ? <span className={cn('-mx-1.25 h-0.5 flex-1 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} /> : null}
               <Schrittmarke nr={i + 1} stand={i < schritt ? 'erledigt' : i === schritt ? 'aktuell' : 'kommend'} sandig />
             </Fragment>
           ))}

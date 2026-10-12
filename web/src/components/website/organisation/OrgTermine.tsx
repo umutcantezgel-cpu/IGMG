@@ -28,7 +28,7 @@ export async function OrgTermine({ termine, sprache, org }: { termine: Veranstal
           const titel = textMitSprache(v.titel, sprache);
           const ziel = { pathname: '/veranstaltungen/[slug]' as const, params: { slug: v.slug } };
           return (
-            <li key={v.id} className="relative flex flex-col gap-1.5 border-t border-linie py-4">
+            <li key={v.id} className="relative flex flex-col gap-1.5 border-t border-linie py-4 first:border-t-0 first:pt-2">
               <h3 lang={titel.lang} className="font-text text-20 leading-snug font-bold tracking-normal">
                 <Link
                   href={ziel}

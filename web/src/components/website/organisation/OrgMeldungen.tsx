@@ -16,7 +16,7 @@ export function OrgMeldungen({ meldungen, sprache }: { meldungen: NachrichtDaten
         const titel = textMitSprache(n.titel, sprache);
         const ziel = { pathname: '/nachrichten/[slug]' as const, params: { slug: n.slug } };
         return (
-          <li key={n.id} className="relative flex flex-col gap-1.5 border-t border-linie py-4">
+          <li key={n.id} className="relative flex flex-col gap-1.5 border-t border-linie py-4 first:border-t-0 first:pt-2">
             <span className="text-16 text-tinte-2">{datumLang(new Date(n.veroeffentlichtAm), sprache)}</span>
             <h3 lang={titel.lang} className="font-text text-20 leading-snug font-bold tracking-normal">
               <Link

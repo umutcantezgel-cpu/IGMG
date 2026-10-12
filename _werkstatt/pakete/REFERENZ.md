@@ -38,6 +38,7 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 | `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens (Test `token-spiegel.test.ts`) |
 | `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` (Test `styleguide-tokens.test.ts`) |
 | `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` (Test `token-spiegel.test.ts`) |
+| `web/src/lib/gebetszeiten/bogen.ts` (`EINTRITT`) | `zeitAnteilEintritt` kehrt die Kurve für die Färbung im Takt der Linie um (H-E01) | `--ease-eintritt` (Test `token-spiegel.test.ts`) |
 
 **Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`) und die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß).
 
@@ -54,6 +55,15 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Trenner zwischen inhaltlich getrennten Blöcken: `Trenner` (Linie – Achtstern – Linie). Sparsam, höchstens einer je Bildschirmhöhe.
 - Laden: `LadeStern` im Knopf neben dem Text („Wird gesendet …“), nie allein.
 - Icons: nur lucide-react (Strich 2) und `web/src/components/website/Icons.tsx` (`Stern8`/`Achtstern` gefüllt, Social). Dekorativ immer `aria-hidden`.
+- Nachrichtenkarten (C2, H-E08): In allen `NewsCard`-Varianten gilt die Reihenfolge Abzeichen → Datum/Lesezeit (`<time>`) → Titel → Kurztext. „Aktuell“ trägt `Stern8` wie „Empfohlen“. Die Seitenspalte ab 1240 px (`menu:`) hat Zeilen nach Inhalt (`menu:grid-rows-none`) und einen zweizeiligen Auszug.
+- Begleitkarten (C2, L-E13, H-E03): Rubriken, die Daten ordnen (Kontaktdaten, Öffnungszeiten, Notfall, Adresse, Kalender-Abo), stehen in fetter Sans `font-text text-20 font-bold tracking-normal`. Inhaltstitel bleiben Serif.
+- Leiste (C2, H-E07): Ab 768 px steht „berechnet“ neben „Nächstes Gebet“, unter 1240 px stehen Ort und Datum in einer Zeile. Höhe ≈ 170 px bei 1440 und ≈ 234 px bei 768 (de).
+- Werkzeugknöpfe (C2): Teilen, Kalender, Menü und Sprache sind neutral, als dritte Knopfstufe `border border-rand bg-weiss … hover:border-gruen-700 hover:bg-gruen-50`, ohne grüne Füllung.
+- Bildplatzhalter (C2, H-E09): Die Beschriftung ist ein Etikett `rounded-lg bg-weiss px-3 py-1 text-balance shadow-s1`, keine Pille. `Bildflaeche` (Über uns) nutzt denselben Baustein. Die Ära im Weg der Gemeinde steht als grüne Textzeile (`text-16 font-bold text-gruen-800`) ohne Fläche.
+- Kursstatus (C2, H-E11): nach der Abzeichen-Regel. Steht eine Handlung an (Voranmeldung offen), ist das Abzeichen weiß mit `gruen-700`-Rand und `Stern8`, sonst neutral sand mit Rand `linie` und Text `tinte-2`. Kein Rot.
+- Schrittmarke (C2, H-E10): Die aktuelle Marke ist voll grün mit weißer Ziffer, erledigte Marken sind hellgrün mit Häkchen, kommende sandfarben. Die Linien laufen Spitze an Spitze, die Statuszeile ab lg nur für Hilfstechnik (`lg:sr-only`).
+- Wege-Kacheln der 404 (C2, H-E12): Symbole mit 20 px ohne Symbolkreis, der Satz steht im Kopf.
+- Tagesbogen (C2, H-E01): Die Zeit des nächsten Gebets steht mit 24 px in `gruen-800`, die übrigen mit 18 px. Der Ort des nächsten Gebets trägt durchgehend eine Marke (Ring, dann Achtstern-Chip).
 
 ## 3. Bewegung (nur Register K-007)
 - Arbeitsansichten: nur B-01 (Rückmeldung: Farbe + `active:scale-98`), B-02 (Fokus, global), B-03 (Öffnen: Klasse `tritt-auf`, Dialoge automatisch), B-04 (Inhaltswechsel: `blendet-ein` am neuen Inhalt, z. B. `key` beim Tab-/Monatswechsel), B-05 (Seitenwechsel: automatisch im Seitenrahmen; gemeinsame Elemente nur nach Auftrag), B-10, B-11 (Formular-Erfolg: `tritt-auf` + Zustandsgrafik `erfolg`; Fehler: Fokus auf Zusammenfassung, keine Bewegung), B-12 (`LadeStern`).

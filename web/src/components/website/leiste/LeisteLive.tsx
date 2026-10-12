@@ -150,7 +150,7 @@ export function LeisteLive({
         <div className="order-1 flex min-w-55 flex-none flex-col gap-1">
           {/* Ort und Datum: untereinander ab 1240 px, unter 1240 px in einer Zeile */}
           <div className="flex flex-col gap-1 max-menu:flex-row max-menu:gap-x-4">
-            <div className="flex items-center gap-2 font-bold">
+            <div className="flex items-center gap-2 leading-snug font-bold">
               <MapPin aria-hidden className="size-5 text-gruen-100" />
               <span>{texte.ort}</span>
             </div>

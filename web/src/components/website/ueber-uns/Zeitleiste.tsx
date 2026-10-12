@@ -47,11 +47,7 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
               <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:flex-row md:items-stretch md:gap-6 md:p-6">
                 <div className="flex min-w-0 flex-1 flex-col justify-start gap-2">
                   <div className="flex flex-wrap items-center gap-2">
-                    <Text
-                      feld={e.kennzeichnung}
-                      sprache={sprache}
-                      className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 font-bold text-weiss"
-                    />
+                    <Text feld={e.kennzeichnung} sprache={sprache} className="text-16 font-bold text-gruen-800" />
                     {e.ort?.de ? (
                       <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
                         <MapPin aria-hidden className="size-4" />
