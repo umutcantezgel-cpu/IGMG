@@ -1,0 +1,88 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-02-34",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 96,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1745,
+          "cls": 0.002,
+          "tbtMs": 195,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2863
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1796,
+          "cls": 0.002,
+          "tbtMs": 438,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 2867
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1758,
+          "cls": 0.002,
+          "tbtMs": 253,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3298
+          }
+        }
+      ],
+      "median": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1758,
+        "cls": 0.002,
+        "tbtMs": 253,
+        "jsKb": 168,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 2867
+      },
+      "spanneLeistung": [
+        88,
+        96
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    }
+  ]
+}

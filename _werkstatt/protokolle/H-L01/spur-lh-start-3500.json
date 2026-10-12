@@ -1,0 +1,149 @@
+{
+ "pfad": "/",
+ "basis": "http://127.0.0.1:3500",
+ "performance": 86,
+ "tbtMs": 421,
+ "fcpMs": 2149,
+ "blockierzeitNachFcpMs": 422,
+ "langeAufgaben": [
+  {
+   "beginnMs": 622,
+   "dauerMs": 141,
+   "blockiertMs": 91,
+   "nachFcp": false,
+   "anteile": {
+    "Skript": 1
+   },
+   "skripte": [
+    "EventDispatch 1 ms pagehide",
+    "EventDispatch 0 ms visibilitychange",
+    "EventDispatch 0 ms webkitvisibilitychange"
+   ]
+  },
+  {
+   "beginnMs": 1693,
+   "dauerMs": 281,
+   "blockiertMs": 231,
+   "nachFcp": false,
+   "anteile": {
+    "Skript": 277,
+    "Stil": 133,
+    "HTML": 0,
+    "Layout": 127
+   },
+   "skripte": [
+    "EvaluateScript 277 ms ",
+    "EventDispatch 2 ms pageshow",
+    "EventDispatch 1 ms readystatechange"
+   ]
+  },
+  {
+   "beginnMs": 1996,
+   "dauerMs": 94,
+   "blockiertMs": 44,
+   "nachFcp": false,
+   "anteile": {
+    "Skript": 2,
+    "Stil": 3,
+    "Layout": 50,
+    "Zeichnen": 31
+   },
+   "skripte": [
+    "EventDispatch 0 ms pagereveal",
+    "EventDispatch 0 ms scroll",
+    "EventDispatch 0 ms resize"
+   ]
+  },
+  {
+   "beginnMs": 3043,
+   "dauerMs": 74,
+   "blockiertMs": 24,
+   "nachFcp": true,
+   "anteile": {
+    "Stil": 4,
+    "Layout": 52,
+    "Zeichnen": 13
+   },
+   "skripte": []
+  },
+  {
+   "beginnMs": 3289,
+   "dauerMs": 318,
+   "blockiertMs": 268,
+   "nachFcp": true,
+   "anteile": {
+    "Skript": 316
+   },
+   "skripte": [
+    "EvaluateScript 308 ms 2cf-1ar8micdv.js",
+    "EventDispatch 9 ms load",
+    "FunctionCall 6 ms 2cf-1ar8micdv.js"
+   ]
+  },
+  {
+   "beginnMs": 4054,
+   "dauerMs": 113,
+   "blockiertMs": 63,
+   "nachFcp": true,
+   "anteile": {
+    "Skript": 109
+   },
+   "skripte": [
+    "FunctionCall 109 ms 2cf-1ar8micdv.js",
+    "FunctionCall 0 ms 2cf-1ar8micdv.js"
+   ]
+  },
+  {
+   "beginnMs": 4345,
+   "dauerMs": 52,
+   "blockiertMs": 2,
+   "nachFcp": true,
+   "anteile": {
+    "Skript": 52
+   },
+   "skripte": [
+    "FunctionCall 50 ms 2cf-1ar8micdv.js",
+    "FunctionCall 0 ms 36e5wfeg4-pqc.js",
+    "FunctionCall 0 ms 2cf-1ar8micdv.js"
+   ]
+  },
+  {
+   "beginnMs": 4398,
+   "dauerMs": 65,
+   "blockiertMs": 15,
+   "nachFcp": true,
+   "anteile": {
+    "Skript": 64
+   },
+   "skripte": [
+    "FunctionCall 48 ms 32autgsdgl_mu.js",
+    "FunctionCall 4 ms 32autgsdgl_mu.js"
+   ]
+  },
+  {
+   "beginnMs": 4463,
+   "dauerMs": 62,
+   "blockiertMs": 12,
+   "nachFcp": true,
+   "anteile": {
+    "Stil": 11,
+    "Layout": 13,
+    "Zeichnen": 34
+   },
+   "skripte": []
+  },
+  {
+   "beginnMs": 5787,
+   "dauerMs": 88,
+   "blockiertMs": 38,
+   "nachFcp": true,
+   "anteile": {
+    "Skript": 79
+   },
+   "skripte": [
+    "FunctionCall 8 ms 32autgsdgl_mu.js",
+    "FunctionCall 1 ms 32autgsdgl_mu.js"
+   ]
+  }
+ ]
+}

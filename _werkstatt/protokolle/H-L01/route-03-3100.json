@@ -1,0 +1,89 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-02-16",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2178,
+          "cls": 0.002,
+          "tbtMs": 272,
+          "jsKb": 171.5,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3483
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2100,
+          "cls": 0.002,
+          "tbtMs": 383,
+          "jsKb": 171.5,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3557
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2167,
+          "cls": 0.002,
+          "tbtMs": 442,
+          "jsKb": 171.5,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3462
+          }
+        }
+      ],
+      "median": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2167,
+        "cls": 0.002,
+        "tbtMs": 383,
+        "jsKb": 171.5,
+        "simuliertPerformance": 88,
+        "simuliertLcpMs": 3483
+      },
+      "spanneLeistung": [
+        85,
+        91
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

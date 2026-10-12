@@ -1,0 +1,88 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-02-27",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1895,
+          "cls": 0.002,
+          "tbtMs": 362,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3172
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1819,
+          "cls": 0.002,
+          "tbtMs": 371,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 93,
+            "lcpMs": 2868
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1900,
+          "cls": 0.002,
+          "tbtMs": 450,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 87,
+            "lcpMs": 3479
+          }
+        }
+      ],
+      "median": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1895,
+        "cls": 0.002,
+        "tbtMs": 371,
+        "jsKb": 168,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 3172
+      },
+      "spanneLeistung": [
+        87,
+        90
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    }
+  ]
+}

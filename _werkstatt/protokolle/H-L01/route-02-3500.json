@@ -1,0 +1,89 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-02-14",
+  "basis": "http://127.0.0.1:3500",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1869,
+          "cls": 0,
+          "tbtMs": 367,
+          "jsKb": 176.9,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3368
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1918,
+          "cls": 0,
+          "tbtMs": 388,
+          "jsKb": 176.9,
+          "simuliert": {
+            "performance": 0,
+            "lcpMs": null
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1889,
+          "cls": 0,
+          "tbtMs": 503,
+          "jsKb": 176.9,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3610
+          }
+        }
+      ],
+      "median": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1889,
+        "cls": 0,
+        "tbtMs": 388,
+        "jsKb": 176.9,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 3489
+      },
+      "spanneLeistung": [
+        86,
+        90
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}
