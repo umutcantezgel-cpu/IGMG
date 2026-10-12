@@ -48,16 +48,28 @@ function pgliteVerzeichnis(): string {
   const quelle = process.env.PGLITE_VERZEICHNIS ?? '.pglite';
   if (process.env.BAU_PGLITE !== '1' || process.env.NEXT_PHASE !== 'phase-production-build') return quelle;
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const { cpSync, mkdtempSync, rmSync } = require('node:fs') as typeof import('node:fs');
+  const { cpSync, mkdirSync, readdirSync, rmSync } = require('node:fs') as typeof import('node:fs');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { join } = require('node:path') as typeof import('node:path');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { tmpdir } = require('node:os') as typeof import('node:os');
-  const ordner = mkdtempSync(join(/*turbopackIgnore: true*/ tmpdir(), 'igmg-pglite-bau-'));
-  const ziel = join(/*turbopackIgnore: true*/ ordner, 'daten');
+  // Eine Kopie je Prozess-ID. Next beendet seine Bau-Worker ohne „exit“-Ereignis; Kopien beendeter Prozesse räumt
+  // deshalb der nächste Start auf.
+  const basis = join(/*turbopackIgnore: true*/ tmpdir(), 'igmg-pglite-bau');
+  mkdirSync(/*turbopackIgnore: true*/ basis, { recursive: true });
+  for (const eintrag of readdirSync(/*turbopackIgnore: true*/ basis)) {
+    const pid = Number(eintrag);
+    if (!Number.isInteger(pid) || pid === process.pid) continue;
+    try {
+      process.kill(pid, 0);
+    } catch {
+      rmSync(/*turbopackIgnore: true*/ join(basis, eintrag), { recursive: true, force: true });
+    }
+  }
+  const ziel = join(/*turbopackIgnore: true*/ basis, String(process.pid));
+  rmSync(/*turbopackIgnore: true*/ ziel, { recursive: true, force: true });
   cpSync(/*turbopackIgnore: true*/ quelle, ziel, { recursive: true });
-  // Kopie mit dem Bau-Prozess entfernen
-  process.once('exit', () => rmSync(/*turbopackIgnore: true*/ ordner, { recursive: true, force: true }));
+  process.once('exit', () => rmSync(/*turbopackIgnore: true*/ ziel, { recursive: true, force: true }));
   return ziel;
 }
 
