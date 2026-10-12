@@ -24,6 +24,13 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 - axe WCAG 2.2 AA: 0 Verstöße (390/1440), je 1 „unklar“ auf 8 Routen. Bildsatz: kein Querscrollen; `/nachrichten` 9 (390) bzw. 4 (768) Textelemente ragen über den rechten Rand (ohne Querscrollen).
 - **Messbedingung:** gemessen unter Last (Load 2,2–4,5 auf 4 Kernen, Entwicklungsserver parallel). Der frühere Lauf (09:07, ruhig) hatte Performance 98–99. Für Z-08 werden Ausgangsstand (Port 3100) und Nachher in Stufe C **unmittelbar nacheinander unter gleichen, ruhigen Bedingungen** gemessen; maßgeblich ist dieser Paarvergleich, die BUDGETS gelten absolut.
 
+## AUSNAHMEN (L7, höchstens zwei)
+- **A-01 · Z-08 Performance-Note ≥ 90** (L-E14, Denkprotokoll):
+  - Verfehlt: Verschränkt liegt 3500 bei 82–89, der Ausgangsstand in denselben Runden bei 80–88. In der ruhigen Stichprobe sind beide gleich (82–84).
+  - Ursache: TBT aus dem Hydrierungsblock des Frameworks, gleich groß wie in E0.
+  - Ersatz: alle übrigen Z-08-Budgets erfüllt (INP im Labor 11/11 ≤ 200 ms, LCP, CLS, A11y, BP, SEO, JS ≤ 180 kB gz), Paarregel 11/11, Feldprüfung nach dem Livegang (ML-27).
+  - Belege: `protokolle/C-lighthouse-v.md`, `C3-lh-ruhig-3100.md`, `C3-lh-ruhig-3500.md`, `C3-inp.md`, `C3-inp-gebetszeiten.md`, `C3-lh-gebetszeiten.md`, `berichte/STUFE-C3.md` §6.
+
 ## UMGEBUNGSAUSNAHMEN (mit Ersatz)
 - **UA-01 Echte Geräte:** keine Telefone/Tablets in der Cloud → Ersatz: Chromium-Emulation 390/768/1440, Drosselung 4× für Bildraten.
 - **UA-02 Docker-E2E:** kein Docker → Ersatz: Postgres 16 per apt (machbar, E0-PRUEFER-01) + Mailpit-Binärdatei; sonst Integrationssuite auf PGlite + Playwright-Rauchtest gegen Standalone-Server mit PGlite.

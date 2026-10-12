@@ -116,7 +116,7 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 
 - Diagnose und Spur: `C3-menue-inp.md`.
 
-**Einordnung:** Die Budgets Reaktion auf Eingaben, LCP, CLS, A11y, BP, SEO und JS sind erfüllt. Performance ≥ 90 ist verfehlt, gekoppelt an die TBT der Hydrierung; der Ausgangsstand verfehlt es unter denselben Bedingungen ebenso. Das ist der Fall der AUSNAHME nach L-E12, Entscheidung in ENTSCHEIDUNGEN.
+**Einordnung:** Die Budgets Reaktion auf Eingaben, LCP, CLS, A11y, BP, SEO und JS sind erfüllt. Performance ≥ 90 ist verfehlt, gekoppelt an die TBT der Hydrierung; der Ausgangsstand verfehlt es unter denselben Bedingungen ebenso. Ruhige Stichprobe (`C3-lh-ruhig-*.md`, je 3 Läufe): 3500 82/83/84, 3100 82/82/84, die Note ist gleichauf. Eingetragen als AUSNAHME A-01 (L-E14) mit Ersatz und Feldprüfung ML-27.
 
 ## 7. Z-09 Darstellung
 
@@ -132,7 +132,19 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 
 ## 9. release:check auf HEAD
 
-Ergebnis siehe Nachtrag unten.
+`pnpm release:check` (C3-release-check, a26c2b8 und Folgecommits ohne Code): **bestanden**.
+
+| Schritt | Ergebnis |
+|---|---|
+| Typen | grün |
+| Lint | grün |
+| Unit | 813 |
+| Integration | 1412 |
+| Sprachen | vollständig: 1203 Schlüssel de/tr/en, 1918 Verwaltung |
+| Geheimnisse | ohne Befund |
+| `startklar` | übersprungen (ohne DATABASE_URL) |
+
+`startklar` lief in Stufe C 8b gegen die Kopie der Prüflings-Datenbank: Entwicklung grün; in der Produktion stehen nur Menschen-Aufgaben aus, abgeglichen mit MENSCHEN.
 
 ## 10. Nicht geprüft und Grenzen
 

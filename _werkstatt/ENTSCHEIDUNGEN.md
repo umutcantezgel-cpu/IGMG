@@ -77,3 +77,45 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - **Auslegung:** K-006 gibt der Titelschrift (Serif) die Inhaltstitel: Seiten-, Abschnitts- und Kartentitel mit eigenem Inhalt. Rubriken, die in einer Begleitkarte nur Daten ordnen, stehen in fetter Sans `text-20`, wie die h3 von Mission und Vision (H-C05).
 - **Folgen:** H-E03 setzt das auf der Kontaktseite um. Nachziehen, sobald die Dateien ohnehin angefasst werden: `KalenderAbo.tsx` (Rubrik) und „Fragen?“ auf Mitglied werden. REFERENZ §2 wird nach der Welle ergänzt.
 
+
+## L-E14 · 2026-10-12 · Opus · AUSNAHME A-01: Z-08 Performance-Note ≥ 90 (Denkprotokoll, L7)
+
+**Ziel:** Das Budget „Performance ≥ 90“ (Lighthouse mobil) aus AUFTRAG BUDGETS auf allen Hauptansichten.
+
+**Stand.** Erfüllt sind die übrigen Teilbudgets von Z-08:
+- Reaktion auf Eingaben ≤ 200 ms (INP im Labor nach L-E12) auf 11/11 Hauptansichten.
+- LCP ≤ 2,5 s, CLS ≤ 0,1.
+- A11y 100, BP und SEO 100.
+- JS ≤ 180 kB gz.
+- Paarregel gegen den Ausgangsstand auf 11/11.
+
+**Verfehlt** ist nur die Performance-Note:
+- Verschränkt (5 Runden) liegt 3500 bei 82–89, der Ausgangsstand 3100 in denselben Runden bei 80–88 (`C-lighthouse-v.md`).
+- Ruhige Stichprobe: 3500 82/83/84, 3100 82/82/84 (`C3-lh-ruhig-*.md`).
+- Die Note hängt an der TBT, die TBT am Hydrierungsblock des Frameworks (≈ 510 ms bei 4× Drosselung). Der Block ist im Ausgangsstand gleich groß (L-E12, Spuren `$SCRATCHPAD/spur/`).
+
+**Zwei belegte Anläufe:**
+1. **H-L01 Teil I–III** (6701f1c, Teil II, e0c8e9f): Fehlergrenze lazy, Zeitinseln nach der Hydrierung, Formate lazy, Kalender auf dem Server, eine Kartenfassung je Termin. Die Paarregel ist wieder erfüllt, die Note bleibt < 90.
+2. **Endstand-Nacharbeit** (76eda7a, 6e1b46a, de91dcd): JS /gebetszeiten unter dem Budget, Menü und Reiter ohne Darstellungsverzug. INP ist erfüllt, die Note bleibt im Bereich des Ausgangsstands.
+
+**Wege:**
+1. **Hydrierung verkleinern:** Kopf, Leiste und Karten als reine Server-Komponenten, weniger Client-Inseln, große Momente nur bei Sichtbarkeit laden.
+   - Das ist ein Architektureingriff am Laufende mit Risiko für Bestand (Z-02), Barrierefreiheit (Menü, Leiste) und die Momente (Z-05).
+   - Aufwand mehrere Tage. Ob danach ≥ 90 erreicht würde, ist offen: Der Framework-Anteil bleibt.
+2. **Unter Einzelbedingungen messen** (ein Server, keine Paare): Das misst die Umgebung, nicht die App. Die Stichprobe zeigt, dass Lighthouse die Last selbst auf ≈ 1,8 hebt. Die E0-Werte 98–99 von 09:07 entstanden auf einer ruhigeren Maschine ohne weitere Server. Weder wiederholbar noch gepaart.
+3. **AUSNAHME mit bester Ersatzlösung:**
+   - Paarregel gegen den Ausgangsstand.
+   - Alle übrigen Z-08-Budgets erfüllt, INP im Labor bei 4× Drosselung ≤ 200 ms.
+   - Nach dem Livegang Feldprüfung durch Menschen mit PageSpeed Insights (ML-27; kein neuer Dienst im Code, Grenze „keine neuen Dritten“).
+
+**Bewertung:**
+- Nordstern „schnell, ruhig, würdevoll“: Die Seite reagiert auf Eingaben schneller als der Ausgangsstand (INP auf allen Routen besser). Sie lädt gleich schnell (LCP 1,9–2,3 s) und bleibt im JS-Budget.
+- Weg 1 riskiert genau das, was der Lauf aufgebaut hat, ohne sicheren Gewinn. Weg 2 belegt nichts.
+- Weg 3 ist ehrlich, prüfbar und lässt die Entscheidung über einen späteren Umbau bei den Menschen.
+
+**Umkehrprobe:** Wäre die Note mit vertretbarem Aufwand erreichbar, müsste der Ausgangsstand unter denselben Bedingungen ≥ 90 zeigen, oder ein Teilbudget müsste eine Ursache in der App benennen. Beides trifft nicht zu: 3100 liegt bei 80–88, und der Hydrierungsblock ist in E0 gleich groß.
+
+**Folgen zweiter Ordnung:**
+- Ausnahmen: 1 von höchstens 2. Z-02, Z-11 und Z-12 sind nicht betroffen.
+- Z-08 wird in ABNAHME als „AUSNAHME A-01“ geführt, nie als abgehakt.
+- ML-27 legt die Feldprüfung nach dem Livegang fest. Fällt sie aus, ist Weg 1 der nächste Schritt (eigener Auftrag).
