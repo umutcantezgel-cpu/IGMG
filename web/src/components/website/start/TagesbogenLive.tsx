@@ -143,14 +143,14 @@ export function TagesbogenLive({
             zeichnete jedes Bild neu). Verläufe und Himmel-Schnitt kommen aus den defs der Zeichnung darüber. */}
         {bisX > 0 ? (
           <div
-            aria-hidden
+            aria-hidden="true"
             className={klassen('absolute inset-y-0 left-0 overflow-hidden', !ruhig && 'bogen-enthuellt')}
             style={{ width: `${(bisX / BOGEN.breite) * 100}%` }}
           >
             <div className={klassen('relative size-full', !ruhig && 'bogen-enthuellt-inhalt')}>
               <svg
                 viewBox={`0 0 ${BOGEN.breite} ${BOGEN.hoehe}`}
-                aria-hidden
+                aria-hidden="true"
                 className="absolute inset-y-0 left-0 h-full overflow-visible"
                 style={{ width: `${(BOGEN.breite / bisX) * 100}%` }}
               >
@@ -185,7 +185,7 @@ export function TagesbogenLive({
         {/* „Jetzt“ zuerst, damit der Achtstern des nächsten Gebets bei Nähe obenauf liegt */}
         {sonne ? (
           <span
-            aria-hidden
+            aria-hidden="true"
             className={klassen(
               'absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-700 ring-6 ring-gruen-700/15',
               !ruhig && 'marke-tritt-hervor',
@@ -209,7 +209,7 @@ export function TagesbogenLive({
           return (
             <Fragment key={p.gebet}>
               <span
-                aria-hidden
+                aria-hidden="true"
                 className={klassen(
                   'absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-pill border-2 transition-colors duration-(--dauer-wechsel)',
                   // Mit ruhig steht die Linie schon voll: Der Punkt folgt ihr ohne Verzögerung (keine Enthüllung).
@@ -228,7 +228,7 @@ export function TagesbogenLive({
               />
               {ist ? (
                 <span
-                  aria-hidden
+                  aria-hidden="true"
                   className={klassen(
                     'absolute flex size-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-pill bg-weiss text-gruen-700 shadow-s2',
                     ruhig ? gewechselt && 'blendet-ein' : 'marke-tritt-hervor',
