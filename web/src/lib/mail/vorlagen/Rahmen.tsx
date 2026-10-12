@@ -94,7 +94,7 @@ const FUSS: MailStil = {
   background: F.sand,
   color: F.tinte2,
   fontFamily: SCHRIFT_TEXT,
-  fontSize: M.textKlein,
+  fontSize: M.text,
   lineHeight: '1.5',
   borderRadius: `0 0 ${M.radius} ${M.radius}`,
 };

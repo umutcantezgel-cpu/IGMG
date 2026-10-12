@@ -14,28 +14,27 @@ export const MAILFARBE = {
 } as const;
 
 /**
- * Maße für E-Mails, aus demselben Grund wie die Farben nur hier als px erlaubt. Schriftstufen = text-14/16/24,
- * Radien = --radius-md/-lg, Abstände aus der 4-px-Spacing-Skala; dazu die festen Maße des Mailrahmens
- * (Outlook-Breite, Grenze für schmale Bildschirme, Akzentlinie, Knopf-Mindesthöhe, unsichtbarer Vorschautext).
+ * Maße für E-Mails, aus demselben Grund wie die Farben nur hier als px erlaubt. Jeder Wert ist ein Token der Website
+ * (tests/unit/token-spiegel.test.ts prüft das gegen src/app/globals.css): Schriftstufen text-16/24, Radien
+ * --radius-md/-lg, Abstände als Vielfache von --spacing (4 px). Dazu fünf feste Maße des Mailrahmens, die es auf der
+ * Website nicht gibt: Outlook-Breite, Grenze für schmale Bildschirme, Akzentlinie, Haarlinie, unsichtbarer Vorschautext.
  */
 export const MAILMASS = {
-  textKlein: '14px',
-  text: '16px',
-  titel: '24px',
-  knopfZeile: '20px',
-  knopfHoehe: '48px',
-  radiusKnopf: '8px',
-  radius: '12px',
-  abstand1: '4px',
-  abstand3: '12px',
-  abstand4: '16px',
-  abstand5: '20px',
-  abstand6: '24px',
-  abstand8: '32px',
-  knopfSenkrecht: '14px',
-  breite: '600px',
-  schmal: '480px',
-  akzent: '2px',
-  haar: '1px',
-  aus: '0px',
+  text: '16px', // --text-16
+  titel: '24px', // --text-24
+  radiusKnopf: '8px', // --radius-md
+  radius: '12px', // --radius-lg
+  abstand1: '4px', // 1 × --spacing
+  abstand3: '12px', // 3 × --spacing
+  abstand4: '16px', // 4 × --spacing
+  abstand5: '20px', // 5 × --spacing (auch Zeilenhöhe im Knopf)
+  abstand6: '24px', // 6 × --spacing
+  abstand8: '32px', // 8 × --spacing
+  knopfSenkrecht: '14px', // 3,5 × --spacing (py-3.5)
+  knopfHoehe: '48px', // 12 × --spacing (min-h-12, Mindestgröße für Ziele)
+  breite: '600px', // Mailrahmen: Outlook-Breite
+  schmal: '480px', // Mailrahmen: schmale Bildschirme
+  akzent: '2px', // Mailrahmen: Akzentlinie unter dem Kopf
+  haar: '1px', // Mailrahmen: Haarlinie und unsichtbarer Vorschautext
+  aus: '0px', // Mailrahmen: ausgeblendeter Vorschautext
 } as const;

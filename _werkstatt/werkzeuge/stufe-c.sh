@@ -125,7 +125,7 @@ schritt "5b B-05 reduzierte Bewegung (keine Überblendung)"
 BASIS="$B" node "$K/vt-reduziert3.mjs" > "$P/C-vt-reduziert.json" 2> "$P/C-vt-reduziert.log"; rc $?
 schritt "5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)"
 BASIS="$B" OUT="$BI/seitenwechsel/nachricht" VON=/nachrichten SELEKTOR='a[href*="neue-gebetszeiten-fuer-den-winter"]' ZIEL=/nachrichten/neue-gebetszeiten-fuer-den-winter SCHRITT=700 PROTOKOLL="$P/C-vt-zeitlupe-nachricht" node "$K/vt-zeitlupe3.mjs" > "$P/C-vt-zeitlupe-nachricht.log" 2>&1; rc $?
-BASIS="$B" OUT="$BI/seitenwechsel/veranstaltung" VON=/veranstaltungen SELEKTOR='a[href*="freitagsgebet-mit-anschliessendem-vortrag"]' ZIEL=/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag SCHRITT=700 PROTOKOLL="$P/C-vt-zeitlupe-veranstaltung" node "$K/vt-zeitlupe3.mjs" > "$P/C-vt-zeitlupe-veranstaltung.log" 2>&1; rc $?
+BASIS="$B" OUT="$BI/seitenwechsel/veranstaltung" VON=/veranstaltungen SELEKTOR='a[href*="arabisch-sprachkurs"]' ZIEL=/veranstaltungen/arabisch-sprachkurs SCHRITT=700 PROTOKOLL="$P/C-vt-zeitlupe-veranstaltung" node "$K/vt-zeitlupe3.mjs" > "$P/C-vt-zeitlupe-veranstaltung.log" 2>&1; rc $?
 fi
 
 if soll 6; then

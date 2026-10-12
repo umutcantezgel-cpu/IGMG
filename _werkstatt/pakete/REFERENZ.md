@@ -34,10 +34,10 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 
 | Datei | Warum Literale | Spiegel von |
 |---|---|---|
-| `web/src/lib/mail/vorlagen/farben.ts` (`MAILFARBE`, `MAILMASS`) | E-Mail-Programme kennen keine CSS-Variablen; die Vorlagen `Rahmen.tsx` und `index.tsx` lesen jede Farbe und jedes Maß nur aus dieser Datei | Farb-Tokens, `text-14/16/24`, `--radius-md/-lg`, 4-px-Abstände |
-| `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens |
-| `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` |
-| `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` |
+| `web/src/lib/mail/vorlagen/farben.ts` (`MAILFARBE`, `MAILMASS`) | E-Mail-Programme kennen keine CSS-Variablen; die Vorlagen `Rahmen.tsx` und `index.tsx` lesen jede Farbe und jedes Maß nur aus dieser Datei | Farb-Tokens, `text-16/24`, `--radius-md/-lg`, Vielfache von `--spacing`; fünf feste Maße des Mailrahmens (Outlook-Breite 600 px, Grenze 480 px, Akzent 2 px, Haarlinie 1 px, 0 px); Gleichheit geprüft in `web/tests/unit/token-spiegel.test.ts` |
+| `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens (Test `token-spiegel.test.ts`) |
+| `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` (Test `styleguide-tokens.test.ts`) |
+| `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` (Test `token-spiegel.test.ts`) |
 
 **Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`) und die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß).
 
