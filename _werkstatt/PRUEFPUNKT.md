@@ -2,7 +2,7 @@
 
 - **Nächster exakter Schritt (02:10 UTC):**
   1. **Sichtabnahme E4** läuft (Workflow wf_9df3d301-a41, Werkzeug `werkzeuge/sichtabnahme.workflow.js`, args {lauf:'E4', bilder:'$SCRATCHPAD/bilder/e4', vorher:'$SCRATCHPAD/bilder/head', vorherName:'E3', …, praefix:'H-C'}). Ergebnis → `berichte/SICHTABNAHME-E4.md`; Ansichten < 8 als H-C-Pakete mit `werkzeuge/hb-welle.workflow.js` (Briefs in `$SCRATCHPAD/hb/`).
-  2. **H-L01** läuft (`$SCRATCHPAD/hl01/lauf.sh`, Protokoll `protokolle/H-L01-lauf.log`, Ergebnisse `$SCRATCHPAD/hl01/route-NN-{3100,3500}.json`): 11 Routen × 3 Läufe je Server, fertig ≈ 02:50. Während der Messung keine Builds. Danach Mediane in `berichte/H-L01.md` (Z-08).
+  2. **H-L01** läuft (Protokoll vorübergehend `git update-index --assume-unchanged`; nach „fertig“ mit `--no-assume-unchanged` zurücksetzen und committen; `$SCRATCHPAD/hl01/lauf.sh`, Protokoll `protokolle/H-L01-lauf.log`, Ergebnisse `$SCRATCHPAD/hl01/route-NN-{3100,3500}.json`): 11 Routen × 3 Läufe je Server, fertig ≈ 02:50. Während der Messung keine Builds. Danach Mediane in `berichte/H-L01.md` (Z-08).
   3. **FF main** auf cd91898 (Kür-Welle B) nach der Messung: `$SCRATCHPAD/ff/vorab.sh <rev>` → `git push origin <rev>:main` → Produktion per Vercel-MCP lesen.
   4. **Stufe C** gegen frischen 3500-Build des letzten Stands (`$SCRATCHPAD/head/e4-bau.sh <rev>`), Ablauf nach `_werkstatt/werkzeuge/stufe-c.sh` (in Vorbereitung, Vorlage `lauf-e3tor.sh`).
   5. H-D04 MENSCHEN-Abschluss · BERICHT.md (Galerie, Zusammenführen/Zurückrollen) · Morgenbericht 05:00 UTC · Endprüfung (frischer Opus) · CLAUDE.md-Block entfernen · ABSCHLUSS.
