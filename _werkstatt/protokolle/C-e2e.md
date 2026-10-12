@@ -148,7 +148,7 @@ Die Diagnose-Läufe zählen nicht als Umgebungswiederholung. Protokolle: `scratc
 
 ## Rohdaten
 
-`C-e2e.json` ist die Roh-JSON des Laufs 1. Das Passwort der E2E-Rolle stand darin in der Konfigurations-Ausgabe (webServer-Umgebung) und ist durch `***REDAKTIERT***` ersetzt. Geprüft: keine Geheimniswerte mehr enthalten.
+`C-e2e.json` ist die Roh-JSON des Laufs 1. Das Passwort der E2E-Rolle stand darin in der Konfigurations-Ausgabe (webServer-Umgebung) und ist durch `[***]` ersetzt. Geprüft: keine Geheimniswerte mehr enthalten.
 
 ## OFFENE FRAGEN
 
