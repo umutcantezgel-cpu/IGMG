@@ -196,7 +196,7 @@ function fokusHelfer() {
       imVp = imViewport(r);
     }
     let verdeckt = null;
-    if (imVp) {
+    if (imVp && istSichtbar) {
       const x = Math.min(Math.max(r.left + r.width / 2, 0), innerWidth - 1);
       const y = Math.min(Math.max(r.top + r.height / 2, 0), innerHeight - 1);
       const oben = document.elementFromPoint(x, y);
@@ -219,6 +219,7 @@ function fokusHelfer() {
       verdeckt,
       fokusSichtbar,
       dialog: Boolean(document.querySelector('dialog[open]')),
+      typ: el.tagName === 'INPUT' ? el.type : null,
       rect: { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) },
       zustand: { expanded: el.getAttribute('aria-expanded'), pressed: el.getAttribute('aria-pressed'), selected: el.getAttribute('aria-selected'), current: el.getAttribute('aria-current') },
       pruefung,
@@ -304,10 +305,24 @@ async function ruhe(seite) {
   await Promise.race([seite.waitForLoadState('networkidle').catch(() => undefined), seite.waitForTimeout(2500)]);
 }
 
-/** Ein Tab-Druck und die Messung des neuen Fokusziels (150 ms Wartezeit für das Scrollen). */
-async function schritt(seite) {
+/** Datumsfelder (Tag, Monat, Jahr) haben innere Stopps: Tab bleibt im selben Element, ohne Messung. */
+const SEGMENTIERT = ['date', 'time', 'datetime-local', 'month', 'week'];
+
+/** Ein Tab-Druck und die Messung des neuen Fokusziels (150 ms Wartezeit für das Scrollen). Liegt der Fokus noch im
+ *  selben Datumsfeld wie zuvor (vorigeId), liefert er nur { segment: true }: eine Messung würde den Fokus zurücksetzen. */
+async function schritt(seite, vorigeId = null) {
   await seite.keyboard.press('Tab');
   await seite.waitForTimeout(150);
+  const innen = await seite.evaluate(
+    ([vorige, typen]) => {
+      const el = document.activeElement;
+      if (!el || el === document.body) return null;
+      const id = window.__tast.id(el);
+      return el.tagName === 'INPUT' && typen.includes(el.type) && id === vorige ? { segment: true, id } : null;
+    },
+    [vorigeId, SEGMENTIERT],
+  );
+  if (innen) return innen;
   return seite.evaluate(() => window.__tast.pruefeAktiv());
 }
 
@@ -377,7 +392,8 @@ async function menuePruefung(url) {
       m.tabs = nr;
       knopf = await seite.evaluate(() => {
         const el = document.activeElement;
-        if (!el || !el.hasAttribute('aria-controls') || !el.hasAttribute('aria-expanded') || !/men[üu]/i.test(window.__tast.name(el))) return null;
+        const dialogKnopf = el?.getAttribute('aria-haspopup') === 'dialog' || (el?.hasAttribute('aria-controls') && el?.hasAttribute('aria-expanded'));
+        if (!el || !dialogKnopf || !/men[üu]/i.test(window.__tast.name(el))) return null;
         return window.__tast.id(el);
       });
       if (knopf !== null) {
@@ -409,10 +425,13 @@ async function menuePruefung(url) {
 /** Tab bis das Prädikat auf das aktive Element zutrifft; alle Zwischenziele werden erfasst. */
 async function tabBis(seite, bericht, praedikat, budget, bereich) {
   const passiert = [];
+  let vorige = null;
   for (let i = 0; i < budget; i += 1) {
-    const t = await schritt(seite);
+    const t = await schritt(seite, vorige);
     bericht.tabs += 1;
     if (t.ende) return { t: null, passiert, grund: 'Fokus fiel auf body' };
+    if (t.segment) continue;
+    vorige = t.id;
     passiert.push(t);
     bericht.ziele.push({ nr: bericht.tabs, ...t });
     await erfasse(seite, bereich, t, bericht.tabs, `aufgabe-${bericht.id}-${bericht.tabs}`);
@@ -459,7 +478,13 @@ async function veranstaltung(seite, bericht, bereich) {
   const pfad = new URL(seite.url()).pathname;
   if (!/\/veranstaltungen\/[^/]+\/?$/.test(pfad)) return { ok: false, grund: `nach Enter ist die URL ${pfad}` };
   const hatFormular = await seite.evaluate(() => Boolean(document.querySelector('main form:not([role=search])')));
-  if (!hatFormular) return { ok: !mangelKarte, grund: `Kartenlink ${mangelKarte ?? 'mit sichtbarem Fokus'}; Detailseite ${pfad}: kein Anmeldeformular (notiert)` };
+  if (!hatFormular) {
+    const hinweis = await seite.evaluate(() => [...document.querySelectorAll('main p, main span, main div')].map((e) => (e.childElementCount === 0 ? e.textContent.trim() : '')).find((t) => /keine Anmeldung/i.test(t)) ?? null);
+    return { ok: !mangelKarte, grund: `Kartenlink ${mangelKarte ?? 'mit sichtbarem Fokus'}; Detailseite ${pfad}: kein Anmeldeformular${hinweis ? `; Seite: „${hinweis.slice(0, 80)}“` : ''} (notiert)` };
+  }
+  // Nach der Navigation per Enter beginnt Tab an der alten Position: die Zielseite wird neu geladen, damit Tab oben beginnt.
+  await seite.goto(seite.url(), { waitUntil: 'load', timeout: 60000 });
+  await ruhe(seite);
   const knopf = await tabBis(seite, bericht, PRAED.knopfMain, aufgabenTabs, bereich);
   if (!knopf.t) return { ok: false, grund: `Absendeknopf des Anmeldeformulars: ${knopf.grund}` };
   const mangel = zielFokus(knopf.t);
@@ -477,6 +502,9 @@ async function kurs(seite, bericht, bereich) {
   await ruhe(seite);
   const pfad = new URL(seite.url()).pathname;
   if (!/\/bildung\/voranmeldung/.test(pfad)) return { ok: false, grund: `nach Enter ist die URL ${pfad}` };
+  // Nach der Navigation per Enter beginnt Tab an der alten Position: die Zielseite wird neu geladen, damit Tab oben beginnt.
+  await seite.goto(seite.url(), { waitUntil: 'load', timeout: 60000 });
+  await ruhe(seite);
   const feld = await tabBis(seite, bericht, PRAED.feld, aufgabenTabs, bereich);
   if (!feld.t) return { ok: false, grund: `erstes Feld des Formulars: ${feld.grund}` };
   const weiter = await tabBis(seite, bericht, PRAED.weiter, aufgabenTabs, bereich);
@@ -575,11 +603,12 @@ try {
       let vorige = null;
       let gleich = 0;
       for (let nr = 1; nr <= maxTabs; nr += 1) {
-        const t = await schritt(seite);
+        const t = await schritt(seite, vorige);
         if (t.ende) {
           bericht.abbruch = 'Fokus auf body';
           break;
         }
+        if (t.segment) continue;
         if (erster === null) erster = t.id;
         else if (t.id === erster) {
           bericht.abbruch = 'zum ersten Ziel zurückgekehrt';
