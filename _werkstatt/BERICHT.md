@@ -22,6 +22,49 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
 - Die Logos der Organisationen gibt es nur sehr klein und mit weißem Grund. In kleinen Größen sind sie kaum zu erkennen. Gibt es größere Dateien (MENSCHEN M-015, M-016)?
 - Die Entfernung Wetzlar–Kaaba ist ausgeblendet, bis jemand sie mit Quelle liefert (ML-25).
 
+## Schlussbericht (Entwurf – Zahlen und Urteil der Endprüfung folgen)
+
+**Ergebnis in drei Sätzen**
+1. Die Website der IGMG Wetzlar hat ein geschärftes, eigenes Erscheinungsbild:
+   - ruhige Bewegung nach festen Regeln;
+   - ein Formsystem aus dem Achtstern;
+   - vier große Momente aus echten Inhalten: Tagesbogen der Gebetszeiten, Weg der Gemeinde, Projekt-Meilensteine, Familie der vier Organisationen.
+2. Alle zwölf Hauptansichten und zwanzig weitere Ansichten sind überarbeitet und von unabhängigen Prüfern abgenommen.
+3. Für Vercel ist alles im Code vorbereitet: Datenbank und Dateispeicher in Frankfurt, wiederkehrende Aufgaben, Schutz der Vorschau, Startklar-Prüfung. Bis zum Livegang fehlen nur noch die Schritte in `MENSCHEN.md`.
+
+**Was neu ist**
+- **Gestaltung:**
+  - Feste Stufen für Dauer, Bewegungskurven, Ebenen, große Schriftgrade und Abschnittsabstände, alle in `web/src/app/globals.css`. Freie Einzelwerte sind in den geänderten Dateien durch diese Stufen ersetzt.
+  - Neue Gestaltungsregeln: neutrale Kategorie-Abzeichen, Terminzeile mit Kalender und Uhr, Detailköpfe mit Bild, ein Schrittweg in Formularen (`_werkstatt/pakete/REFERENZ.md`).
+- **Bewegung:**
+  - Zwölf festgelegte Bewegungen (KERN K-007), nur mit CSS.
+  - Seitenwechsel mit Übergang von der Karte zur Detailseite.
+  - Bei „reduzierter Bewegung“ alles sofort im Endzustand.
+- **Grafik:**
+  - Achtstern als einziges Ornament: Trenner, Band an Abschnittskanten, Lade-Stern, Zustandsgrafiken für leer, Fehler, Erfolg, offline und „nicht gefunden“.
+  - Keine Verse und keine Kalligrafie als Schmuck.
+- **Ansichten:**
+  - Startseite, Gebetszeiten, Veranstaltungen und Detail, Nachrichten und Detail, Über uns, Projekte, Organisationsseiten, Korankurse, Voranmeldung, Kontakt, Startklar-Cockpit.
+  - Dazu Vorstand, IGMG, Webseite für Moscheen, Suche, OG-Bilder, Druckansichten, Mobilmenü, Islamisches Wissen, Quran, Formulare, Rechtstexte (Wortlaut unverändert), Anmeldung, Verwaltungslisten, E-Mail-Vorlagen, Bildschirm-Anzeige, Fehlerseiten.
+- **Vercel und Betrieb (ADR 0018–0024 in `web/docs/adr/`):**
+  - Datenbank-Anbindung für Neon, Bau mit und ohne Datenbank, Migration mit Sperre.
+  - Dateispeicher Vercel Blob mit Bildvarianten und Verkleinern im Browser.
+  - Tägliche Aufgaben mit `CRON_SECRET`.
+  - Umgebungsprüfung mit Betriebsart. Die Vorschau ist für Suchmaschinen gesperrt.
+  - Lange Zwischenspeicherung statischer Dateien.
+- **Startklar:**
+  - Cockpit `/verwaltung/startklar`, `pnpm startklar`, `pnpm release:check`.
+  - Anleitungen `web/docs/deploy/VERCEL.md` (30 Minuten), `VERCEL-ENV.md` und `web/docs/GO-LIVE.md`.
+  - Verarbeitungsverzeichnis und Entwurf des Hosting-Bausteins für die Datenschutzerklärung (`web/docs/recht/`).
+- **Leistung:**
+  - Die Fehlerseite lädt erst im Fehlerfall.
+  - Die Zeitrechnung läuft nach dem Seitenaufbau.
+  - Der islamische Kalender wird auf dem Server gerechnet (`berichte/H-L01.md`).
+
+**Kriterien:** siehe „Urteil der Endprüfung“ (folgt) und `_werkstatt/ABNAHME.md`.
+
+**Galerie:** `_werkstatt/bilder/galerie.html` – links der Stand vom Laufbeginn, rechts der Abschluss, je Hauptansicht für Telefon, Tablet und Desktop.
+
 ## Anleitung: Zusammenführen und Zurückrollen
 
 **Wichtig vorab:** Auf deine Anweisung (L-E01) kamen geprüfte Stände schon während des Laufs per Fast-Forward auf `main`. Die Produktion `igmg-five.vercel.app` zeigt deshalb bereits den gestalteten Stand, aber noch ohne Datenbank: Sie zeigt Beispielinhalte, und Formulare und Verwaltung funktionieren dort nicht. Dieser Abschnitt beschreibt den Weg vom Beispielbetrieb zum echten Livegang.
