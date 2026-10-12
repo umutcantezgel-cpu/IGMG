@@ -1,15 +1,15 @@
 # H-R01 · Wortlaut der Rechts- und Einwilligungstexte
 
-Stand des Protokolls: 2026-10-12T05:36:38.410Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
-Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `5d19108` (5d1910814)
+Stand des Protokolls: 2026-10-12T07:25:42.341Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
+Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `fa5c005` (fa5c00513)
 Arbeitsbaum unter web/ weicht von HEAD ab: nein · unversionierte Dateien unter web/: 0
-Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
+Wiederholbarkeit: Ergebnis-Hash `4adcebe62a8fe9f2` (Vollwert in der JSON-Datei)
 
 ## Ergebnis
 
 - Rechts- und Einwilligungs-Einträge: 723 · gleich 637 · verschoben 0 · geändert 0 · neu 85 · entfernt 1
 - Befunde „hoch“ offen (Einheiten): **0** · durch Ausnahme gedeckt: 34
-- Nicht-Rechtstexte: 416 geändert, neu oder entfernt (Kontrolltabelle unten); 5695 gleich
+- Nicht-Rechtstexte: 417 geändert, neu oder entfernt (Kontrolltabelle unten); 5695 gleich
 
 ## Quellen
 
@@ -57,20 +57,20 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | M | messages/verwaltung/seiteninhalte-organisationen.json | Schlüssel (exakt) | 5d3b4c1c9565 | 5d3b4c1c9565 | ja |
 | M | messages/verwaltung/seiteninhalte.json | Schlüssel (exakt) | 2cca27bd4b97 | 2cca27bd4b97 | ja |
 | M | messages/verwaltung/startklar.json | Schlüssel (exakt) | — | d58037dbc6bb | nein |
-| M | messages/verwaltung/styleguide.json | Schlüssel (exakt) | 0c8884970a17 | 9a538e902322 | nein |
+| M | messages/verwaltung/styleguide.json | Schlüssel (exakt) | 0c8884970a17 | 5b1dded38498 | nein |
 | M | messages/verwaltung/tickets.json | Schlüssel (exakt) | 9e00d3442d32 | 9e00d3442d32 | ja |
 | M | messages/verwaltung/uebersicht.json | Schlüssel (exakt) | 229b8f50499c | 229b8f50499c | ja |
 | S | drizzle/seeds/bereiche/rechtliches.ts | alle Literale | 8a24ed43d03f | 8a24ed43d03f | ja |
 | C | src/app/[locale]/(website)/datenschutz/page.tsx | Prosa (Rechtsquelle) | 5a3530c9f678 | 5f72412eb3c5 | nein |
 | C | src/app/[locale]/(website)/impressum/page.tsx | Prosa (Rechtsquelle) | 69f04ea99db6 | acc8ddf7bc21 | nein |
-| C | src/components/website/KonzeptHinweis.tsx | Prosa (Rechtsquelle) | 9b9f07fea935 | 973029e528d4 | nein |
+| C | src/components/website/KonzeptHinweis.tsx | Prosa (Rechtsquelle) | 9b9f07fea935 | cf528f766b83 | nein |
 | C | src/components/website/rechtliches/Inhaltsverzeichnis.tsx | Prosa (Rechtsquelle) | — | 43570e9a6550 | nein |
 | C | src/components/website/rechtliches/Rechtstext.tsx | Prosa (Rechtsquelle) | da617e0c506f | c5c421f0fc82 | nein |
 | C | src/lib/validierung/seiteninhalte/datenschutz.ts | Prosa (Rechtsquelle) | c7ee99edf0c5 | c7ee99edf0c5 | ja |
 | C | src/lib/validierung/seiteninhalte/impressum.ts | Prosa (Rechtsquelle) | a3333ac21029 | a3333ac21029 | ja |
-| V | src/lib/mail/vorlagen/Rahmen.tsx | Prosa (Rechtsquelle) | 99918f5a36f0 | a0255f98648e | nein |
-| V | src/lib/mail/vorlagen/farben.ts | Prosa (Rechtsquelle) | a91ee0eac001 | a91ee0eac001 | ja |
-| V | src/lib/mail/vorlagen/index.tsx | Prosa (Rechtsquelle) | 00a0a9e09e66 | 35fc937dae22 | nein |
+| V | src/lib/mail/vorlagen/Rahmen.tsx | Prosa (Rechtsquelle) | 99918f5a36f0 | 37f0279c41ad | nein |
+| V | src/lib/mail/vorlagen/farben.ts | Prosa (Rechtsquelle) | a91ee0eac001 | a8742a576c58 | nein |
+| V | src/lib/mail/vorlagen/index.tsx | Prosa (Rechtsquelle) | 00a0a9e09e66 | 5e2af466d71e | nein |
 | D | docs/recht/VERARBEITUNGSVERZEICHNIS.md | Absätze | — | bde575d40316 | nein |
 | D | docs/recht/datenschutz-hosting-v2.md | Absätze | — | ca9c2a6b9866 | nein |
 | G | drizzle/seeds/bereiche/igmg.ts | Prosa + Rechtsbegriff | 3323a119391f | 3323a119391f | ja |
@@ -85,7 +85,7 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | G | src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx | Prosa + Rechtsbegriff | ed66cc13dc77 | fdc6e1669d50 | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/[bereich]/page.tsx | Prosa + Rechtsbegriff | c8afa1de2dc9 | 2e0f4587934a | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx | Prosa + Rechtsbegriff | — | f63bf02b54cd | nein |
-| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | fad2eaa4ce49 | nein |
+| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | 60573f417da3 | nein |
 | G | src/app/sitemap.ts | Prosa + Rechtsbegriff | b7757675f13b | b7757675f13b | ja |
 | G | src/components/formular/AltchaFeld.tsx | Prosa + Rechtsbegriff | 6b0852bf64aa | 4940825fba36 | nein |
 | G | src/components/formular/Felder.tsx | Prosa + Rechtsbegriff | 1a71ff89b4ef | fab833cc6944 | nein |
@@ -158,7 +158,7 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Speicherdauer und Löschung | 2c05e8176f8d | 2c05e8176f8d | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Zweck und Rechtsgrundlage | 8efa733ed8b4 | 8efa733ed8b4 | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/impressum.ts | Text: [Name und Rechtsform – Vorstand] | 659f4c8a7660 | 659f4c8a7660 | gleich | keiner | identisch (SHA-256 gleich) |
-| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | ca9c2a6b9866 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt. |
+| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | ca9c2a6b9866 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt. |
 | D docs/recht/VERARBEITUNGSVERZEICHNIS.md | neue Datei, 27 Absätze | — | bde575d40316 | neu | ausnahme | Neues internes Verzeichnis nach V-11 (Verarbeitungsverzeichnis). Kein Wortlaut eines bestehenden Textes wurde geändert. Die AUFTRAG-Ausnahme nennt nur den Hosting-Baustein v2. Einordnung als Rechtstext: OFFENE FRAGE an den Orchestrator. |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Das vom Vorsitzenden geleitete Präsidium ist neben dem vertretungsberechtigten Vorstand d… | ca1cbbe3d7e5 | ca1cbbe3d7e5 | gleich | keiner | identisch (SHA-256 gleich) |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Demnach beschreibt „Millî Görüş“ („görüş“ türkisch für „Sichtweise“) eine Gemeinschaft, d… | db4642a95c29 | db4642a95c29 | gleich | keiner | identisch (SHA-256 gleich) |
@@ -827,7 +827,7 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 
 ## Ausnahmen (AUFTRAG und Grund)
 
-- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt.
+- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt.
 - **A-02** (8 Einträge) · Neue Cockpit-Texte der Verwaltung (Startklar-Cockpit, V-13/Z-12). Sie beschreiben Prüfungen und Rechtsangaben, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-03** (20 Einträge) · Neue Cockpit-Prüftexte und Cockpit-Oberfläche (Verwaltung, V-13/Z-12). Sie beschreiben die Prüfungen, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-04** (3 Einträge) · Neue Abschnittsüberschriften „meldung.gruppe.*“ (Legenden der Fieldsets im Meldeformular, K-12, z. B. „Einwilligung“). Der Einwilligungstext selbst ist unverändert. Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).
@@ -1350,6 +1350,7 @@ keine
 | M messages/verwaltung/styleguide.json | styleguide.nav.bewegung | — | 1eaa52d0db4d | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.nav.ebenen | — | 2695c43b9189 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.nav.raster | — | 579a987f0721 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/verwaltung/styleguide.json | styleguide.raster.breiten.dialog | — | 25b04d4adf12 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.einleitung | — | ea790e951323 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.inhalt | — | 36624ba6fe94 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.seitenkopf | — | 829473f15664 | neu | keiner | kein Rechtsbezug (Kontrolle) |

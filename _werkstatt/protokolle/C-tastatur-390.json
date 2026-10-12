@@ -1,6 +1,6 @@
 {
   "werkzeug": "tastatur",
-  "zeit": "2026-10-12-04-58",
+  "zeit": "2026-10-12-07-14",
   "basis": "http://127.0.0.1:3500",
   "breite": 390,
   "hoehe": 844,
@@ -14828,7 +14828,7 @@
           "typ": "checkbox",
           "rect": {
             "x": 41,
-            "y": 410,
+            "y": 408,
             "w": 24,
             "h": 24
           },
@@ -14890,7 +14890,7 @@
           "typ": null,
           "rect": {
             "x": 145,
-            "y": 529,
+            "y": 527,
             "w": 164,
             "h": 21
           },
@@ -14941,18 +14941,18 @@
           "id": 14,
           "tag": "input",
           "rolle": "checkbox",
-          "name": "Überprüft",
+          "name": "Wird überprüft...",
           "href": null,
           "sprungKandidat": false,
-          "sichtbar": true,
+          "sichtbar": false,
           "imViewport": true,
-          "verdeckt": true,
+          "verdeckt": null,
           "fokusSichtbar": true,
           "dialog": false,
           "typ": "checkbox",
           "rect": {
             "x": 53,
-            "y": 580,
+            "y": 578,
             "w": 22,
             "h": 22
           },
@@ -14973,6 +14973,15 @@
                   "outline-color"
                 ],
                 "stark": true
+              },
+              {
+                "klasse": "eltern",
+                "diff": [
+                  "outline-style",
+                  "outline-width",
+                  "outline-color"
+                ],
+                "stark": true
               }
             ],
             "fokus": {
@@ -14980,8 +14989,8 @@
               "outline-width": "2px",
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "lab(50.7986 -51.0164 52.0791)",
-              "background-color": "lab(50.7986 -51.0164 52.0791)",
+              "border-color": "rgb(29, 26, 23)",
+              "background-color": "rgba(0, 0, 0, 0)",
               "text-decoration-line": "none"
             },
             "blur": {
@@ -14989,8 +14998,8 @@
               "outline-width": "0px",
               "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
-              "border-color": "lab(50.7986 -51.0164 52.0791)",
-              "background-color": "lab(50.7986 -51.0164 52.0791)",
+              "border-color": "rgb(29, 26, 23)",
+              "background-color": "rgba(0, 0, 0, 0)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -15014,7 +15023,7 @@
           "typ": null,
           "rect": {
             "x": 41,
-            "y": 684,
+            "y": 682,
             "w": 308,
             "h": 48
           },
@@ -18917,12 +18926,12 @@
           "id": 14,
           "tag": "input",
           "rolle": "checkbox",
-          "name": "Überprüft",
+          "name": "Wird überprüft...",
           "href": null,
           "sprungKandidat": false,
-          "sichtbar": true,
+          "sichtbar": false,
           "imViewport": true,
-          "verdeckt": true,
+          "verdeckt": null,
           "fokusSichtbar": true,
           "dialog": false,
           "typ": "checkbox",
@@ -18949,6 +18958,15 @@
                   "outline-color"
                 ],
                 "stark": true
+              },
+              {
+                "klasse": "eltern",
+                "diff": [
+                  "outline-style",
+                  "outline-width",
+                  "outline-color"
+                ],
+                "stark": true
               }
             ],
             "fokus": {
@@ -18956,8 +18974,8 @@
               "outline-width": "2px",
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "lab(50.7986 -51.0164 52.0791)",
-              "background-color": "lab(50.7986 -51.0164 52.0791)",
+              "border-color": "rgb(29, 26, 23)",
+              "background-color": "rgba(0, 0, 0, 0)",
               "text-decoration-line": "none"
             },
             "blur": {
@@ -18965,8 +18983,8 @@
               "outline-width": "0px",
               "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
-              "border-color": "lab(50.7986 -51.0164 52.0791)",
-              "background-color": "lab(50.7986 -51.0164 52.0791)",
+              "border-color": "rgb(29, 26, 23)",
+              "background-color": "rgba(0, 0, 0, 0)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true

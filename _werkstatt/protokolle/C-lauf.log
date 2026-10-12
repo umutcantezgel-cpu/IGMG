@@ -129,3 +129,84 @@
    rc=0
    rc=0 (Regeln)
 == 07:10:55 2a axe WCAG 2.2 AA 1440 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 07:13:17 2b axe Türkisch 390 und Englisch 1440
+   rc=0
+   rc=0
+== 07:14:04 2c Tastatur 390 (mit Hauptaufgaben) und 1440
+   rc=0
+   rc=0
+== 07:17:13 2d Telefonmenü: Fokus im Kreis, Escape (F-18)
+   rc=0
+== 07:17:20 3 Konsole 390 (25 Routen + Türkisch + Englisch)
+   rc=0
+   rc=0
+   rc=0
+== 07:19:20 3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit
+   rc=0
+== 07:19:21 STUFE C FERTIG (ab 1 bis 3)
+== 07:20:12 STUFE C REV=fa5c005 (Worktree fa5c005 Stufe-C-Nacharbeit: freie Werte, SVG, Zugänglichkei) ab 5 bis 11
+== 07:20:12 5a B-05 Seitenwechsel: vt-status /nachrichten, /veranstaltungen, / und drei Paare ohne Karte
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 07:20:56 5b B-05 reduzierte Bewegung (keine Überblendung)
+   rc=0
+== 07:21:11 5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)
+   rc=0
+   rc=1
+== 07:21:25 6a Momente B-06..B-09: Bilder (2 Läufe), Bildrate CPU 4× (3 Läufe), reduziert; B-06 bei Tageslicht (2026-10-12T14:10:00+02:00)
+   rc=0 (b06 bilder)
+   rc=0 (b06 bildrate)
+   rc=0 (b06 reduziert)
+   rc=0 (b07 bilder)
+   rc=0 (b07 bildrate)
+   rc=0 (b07 reduziert)
+   rc=0 (b08 bilder)
+   rc=0 (b08 bildrate)
+   rc=0 (b08 reduziert)
+   rc=0 (b09 bilder)
+   rc=0 (b09 bildrate)
+   rc=0 (b09 reduziert)
+== 07:23:17 6b bewegung: Start, Über uns, Projekte, Organisation (reduziert, Bildrate, Einzelbilder), Über uns/Projekte mit Scrollen
+   rc=0 (/)
+   rc=0 (/ueber-uns)
+   rc=0 (/projekte)
+   rc=0 (/organisationen/ana-teskilati)
+   rc=0 (/ueber-uns scrollen)
+   rc=0 (/projekte scrollen)
+== 07:24:54 6c B-10 Leiste: Wechsel 390/1440/aufgeklappt, reduziert, Erstladen
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 07:25:30 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree fa5c005)
+258
+   rc=0
+== 07:25:30 7b SVG-Prüfung (Worktree fa5c005)
+   rc=0
+== 07:25:31 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen fa5c005 (H-R01)
+   rc=0
+== 07:25:42 8a pnpm release:check (typen, lint, unit, integration, sprachen, geheimnisse; startklar ohne DATABASE_URL übersprungen)
+   rc=0
+== 07:45:42 8b pnpm startklar gegen Kopie der Prüflings-Datenbank: entwicklung und produktion (JSON, ohne Werte)
+   rc=0
+   rc=1 (produktion: Fehler sind Menschen-Aufgaben, Abgleich MENSCHEN.md)
+== 07:45:48 9 Funktionsliste F-01…F-24 gepaart: Ausgangsstand 3100, dann Prüfling 3500 (Verwaltung mit Anmeldestand)
+   rc=0 (3100)
+   rc=0 (3500)
+== 07:54:00 10 V-02: vercel build in Archivkopie von fa5c005, preview und production (ohne DB, wie das Projekt heute)
+   rc=0 (preview)
+   rc=0 (production)
+   NFT symbol-512.png in 3 OG-Spuren
+   NFT source-serif-4-latin-600-normal.woff in 3 OG-Spuren
+   NFT atkinson-hyperlegible-next-latin-700-normal.woff in 3 OG-Spuren
+  "crons": [
+== 07:57:58 11 Register-Abgleich: Animationen im CSS gegen KERN K-007 (B-01…B-12)
+ 10 /home/user/IGMG/_werkstatt/protokolle/C-keyframes.txt
+  3 /home/user/IGMG/_werkstatt/protokolle/C-animate-klassen.txt
+ 13 total
+== 07:57:58 STUFE C FERTIG (ab 5 bis 11)

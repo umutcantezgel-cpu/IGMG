@@ -10,95 +10,28 @@
     "wcag21aa",
     "wcag22aa"
   ],
-  "zeit": "2026-10-12T04:58:34.839Z",
+  "zeit": "2026-10-12T07:14:04.473Z",
   "routen": [
     {
       "name": "Start (EN)",
       "pfad": "/en",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 4,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".h-75 > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-ramadan-vorbereitung-2025\"] > .size-22.streifen-platzhalter[aria-label=\"Photo: Article image\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "li:nth-child(2) > .p-4.hover\\:shadow-s2 > .size-22.streifen-platzhalter[aria-label=\"Photo: Article image\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-neuer-imam-stellt-sich-vor\"] > .size-22.streifen-platzhalter[aria-label=\"Photo: Article image\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Events (EN)",
       "pfad": "/en/events",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 5,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".lg\\:h-full > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Photo: Arabisch Sprachkurs\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Photo: Jugendgruppe Treffen\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".group.overflow-hidden[data-morph-karte=\"v-woechentlicher-qur-an-kurs\"] > .h-40.streifen-platzhalter[data-morph=\"bild\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Photo: Junge Schwestern Kreis\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Event detail (EN)",
       "pfad": "/en/events/freitagsgebet-mit-anschliessendem-vortrag",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 1,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".bg-weiss\\/85",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     }
   ]
 }

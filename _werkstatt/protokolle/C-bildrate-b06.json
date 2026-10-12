@@ -9,7 +9,7 @@
     "width": 390,
     "height": 844
   },
-  "zeit": "2026-10-12T05:04:54.700Z",
+  "zeit": "2026-10-12T07:21:29.219Z",
   "laeufe": [
     {
       "lauf": 1,
@@ -20,61 +20,61 @@
       "verworfen": 0,
       "anteilVerworfenProzent": 0,
       "medianAbstandMs": 16,
-      "p95AbstandMs": 18
+      "p95AbstandMs": 17
     },
     {
       "lauf": 1,
       "drosselung": 4,
       "http": 200,
       "laufendBeiAuslosung": 18,
-      "bilder": 104,
-      "verworfen": 14,
-      "anteilVerworfenProzent": 11.9,
+      "bilder": 89,
+      "verworfen": 22,
+      "anteilVerworfenProzent": 19.8,
+      "medianAbstandMs": 18,
+      "p95AbstandMs": 37
+    },
+    {
+      "lauf": 2,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 18,
+      "bilder": 124,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16,
+      "p95AbstandMs": 17
+    },
+    {
+      "lauf": 2,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 18,
+      "bilder": 103,
+      "verworfen": 16,
+      "anteilVerworfenProzent": 13.4,
+      "medianAbstandMs": 16,
+      "p95AbstandMs": 40
+    },
+    {
+      "lauf": 3,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 18,
+      "bilder": 124,
+      "verworfen": 0,
+      "anteilVerworfenProzent": 0,
+      "medianAbstandMs": 16,
+      "p95AbstandMs": 17
+    },
+    {
+      "lauf": 3,
+      "drosselung": 4,
+      "http": 200,
+      "laufendBeiAuslosung": 18,
+      "bilder": 93,
+      "verworfen": 22,
+      "anteilVerworfenProzent": 19.1,
       "medianAbstandMs": 17,
-      "p95AbstandMs": 31
-    },
-    {
-      "lauf": 2,
-      "drosselung": 1,
-      "http": 200,
-      "laufendBeiAuslosung": 34,
-      "bilder": 124,
-      "verworfen": 0,
-      "anteilVerworfenProzent": 0,
-      "medianAbstandMs": 16,
-      "p95AbstandMs": 17
-    },
-    {
-      "lauf": 2,
-      "drosselung": 4,
-      "http": 200,
-      "laufendBeiAuslosung": 18,
-      "bilder": 108,
-      "verworfen": 6,
-      "anteilVerworfenProzent": 5.3,
-      "medianAbstandMs": 16,
-      "p95AbstandMs": 27
-    },
-    {
-      "lauf": 3,
-      "drosselung": 1,
-      "http": 200,
-      "laufendBeiAuslosung": 18,
-      "bilder": 124,
-      "verworfen": 0,
-      "anteilVerworfenProzent": 0,
-      "medianAbstandMs": 16,
-      "p95AbstandMs": 17
-    },
-    {
-      "lauf": 3,
-      "drosselung": 4,
-      "http": 200,
-      "laufendBeiAuslosung": 18,
-      "bilder": 97,
-      "verworfen": 20,
-      "anteilVerworfenProzent": 17.1,
-      "medianAbstandMs": 16,
       "p95AbstandMs": 47
     }
   ]

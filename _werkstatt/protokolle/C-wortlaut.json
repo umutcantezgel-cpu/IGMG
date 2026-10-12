@@ -2,23 +2,23 @@
   "werkzeug": {
     "name": "wortlaut.mjs",
     "version": "1.0",
-    "aufruf": "node wortlaut.mjs --basis 9ebb4bc --stand 5d19108 --protokoll /home/user/IGMG/_werkstatt/protokolle/C-wortlaut"
+    "aufruf": "node wortlaut.mjs --basis 9ebb4bc --stand fa5c005 --protokoll /home/user/IGMG/_werkstatt/protokolle/C-wortlaut"
   },
   "basis": {
     "rev": "9ebb4bc",
     "commit": "9ebb4bc5ffe5bdfc7782c9aaf5c7c04918ee8e4c"
   },
   "stand": {
-    "rev": "5d19108",
-    "commit": "5d1910814fb2c8ac3bb8ee3c25c196765a6380f1",
+    "rev": "fa5c005",
+    "commit": "fa5c00513e01ee1cca03407f62708bc2114baa09",
     "web_arbeitsbaum_abweichend_von_head": false,
     "unversionierte_dateien_unter_web": 0
   },
-  "erstellt": "2026-10-12T05:36:38.410Z",
+  "erstellt": "2026-10-12T07:25:42.341Z",
   "ausnahmen": [
     {
       "id": "A-01",
-      "grund": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt.",
+      "grund": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt.",
       "treffer": 23
     },
     {
@@ -500,7 +500,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "0c8884970a1761ac49fa3cb786a70377fd52c68e938ee832fb4c77608d355eaa",
-      "dateihash_stand": "9a538e9023222be85a8b0adc74a5e18a82bfe640610c22c501d58179d28c5404",
+      "dateihash_stand": "5b1dded3849864940abc1d6f622b0c900c837424cdb7f765c6a53ad44060d4c2",
       "identisch": false
     },
     {
@@ -564,7 +564,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "9b9f07fea9352d8d68af49d069621febab1bed495c8c11dc2f0691e261dfa1f5",
-      "dateihash_stand": "973029e528d4640bbdd0fc8b9f53e7e380d348efc688782a5b6f6d75cebe950c",
+      "dateihash_stand": "cf528f766b83851c39cf336e9024bc0cefdcfa1aa96636e9534d385b6368caa9",
       "identisch": false
     },
     {
@@ -619,7 +619,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "99918f5a36f06bd59945f51c6e7b03a2cb635b15847d264c8a1a8b27a06944ca",
-      "dateihash_stand": "a0255f98648e831b957f3435244e41b1c48aa9463fe0b2376597653b9aab99d8",
+      "dateihash_stand": "37f0279c41adde92cba68bdc0e5f059dde3050bd334cd3b9db055a7f341d1bb5",
       "identisch": false
     },
     {
@@ -630,8 +630,8 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "a91ee0eac0018f249ef4f1c0d542dca0fdb2ce7783af8a7bfa9400a24cadcd97",
-      "dateihash_stand": "a91ee0eac0018f249ef4f1c0d542dca0fdb2ce7783af8a7bfa9400a24cadcd97",
-      "identisch": true
+      "dateihash_stand": "a8742a576c58cfa4063ee3be6e61ce8cdc903a2bcad5b108469a4a8826c20f62",
+      "identisch": false
     },
     {
       "gruppe": "V",
@@ -641,7 +641,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "00a0a9e09e66c93cff22e5f89661e0a14f057a8d83fcc26eddaf9dcad722989c",
-      "dateihash_stand": "35fc937dae227754bc99ce4ffed43cec589dce1a325737c436374b7343904209",
+      "dateihash_stand": "5e2af466d71e3514a56b99dcf2d39152c5a84efee4bea408264058fecb164679",
       "identisch": false
     },
     {
@@ -806,7 +806,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "0ccdec0720489f67564961241d1d613cb71a15bb9eb4f9a765af15dfa2a033e6",
-      "dateihash_stand": "fad2eaa4ce49d0ab7af3cb535a3963df62a8e6b5ea31ee3a61088fe7e4471adf",
+      "dateihash_stand": "60573f417da3b5074904ddf647d3c3ae67288d57a5679507e4d0ffc1b021195f",
       "identisch": false
     },
     {
@@ -1437,11 +1437,11 @@
     },
     "befund_hoch_offen_einheiten": 0,
     "befund_ausnahme_einheiten": 34,
-    "nicht_recht_veraendert": 416,
+    "nicht_recht_veraendert": 417,
     "nicht_recht_gleich": 5695,
-    "eintraege_gesamt": 6834
+    "eintraege_gesamt": 6835
   },
-  "ergebnis_hash": "e5342e4456a2c1ae74b28ec8d59bcbd321a0cc52f40d1b1c8970a31651714775",
+  "ergebnis_hash": "4adcebe62a8fe9f2807b8601b11dcd94f2594cf9c0d4e1991b7d7fd0f30f3956",
   "eintraege": [
     {
       "gruppe": "C",
@@ -1611,7 +1611,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1628,7 +1628,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1645,7 +1645,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1662,7 +1662,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1679,7 +1679,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1696,7 +1696,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1713,7 +1713,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1730,7 +1730,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1747,7 +1747,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1764,7 +1764,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1781,7 +1781,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1798,7 +1798,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1815,7 +1815,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1832,7 +1832,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1849,7 +1849,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1866,7 +1866,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1883,7 +1883,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1900,7 +1900,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1917,7 +1917,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1934,7 +1934,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1951,7 +1951,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1968,7 +1968,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1985,7 +1985,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -101874,6 +101874,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/verwaltung/styleguide.json",
+      "schluessel": "styleguide.raster.breiten.dialog",
+      "sprache": "—",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "25b04d4adf12219e6790d482a52ccf800290a6a4e77b39b31897f056fadbaa7b",
+      "text_vorher": null,
+      "text_jetzt": "Breite schmaler Hinweis-Dialoge",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",

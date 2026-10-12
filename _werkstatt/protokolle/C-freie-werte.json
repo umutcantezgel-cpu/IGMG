@@ -1,6 +1,6 @@
 {
   "werkzeug": "freie-werte",
-  "zeitpunkt": "2026-10-12-05-36",
+  "zeitpunkt": "2026-10-12-07-25",
   "seit": null,
   "geprueft": [
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/[locale]/(website)/bildung/korankurse/page.tsx",
@@ -134,6 +134,7 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/Icons.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/KonzeptHinweis.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/MedienBild.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/NachRuhe.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/NewsCard.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/OrgCard.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/PageHeader.tsx",
@@ -151,6 +152,7 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/formulare/KontaktFormular.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/formulare/MeldungFormular.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/formulare/VoranmeldungFormular.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/fuss/JetztGeoeffnet.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/DruckKnopf.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/EinstellungenPanel.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/GebetszeitenSeite.tsx",
@@ -228,6 +230,7 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/gebetszeiten/naechstes.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/inhalt/tiptap.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/medien/varianten.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/medien/verarbeiten.ts",
@@ -242,7 +245,9 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/utils.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/wartung/sperre.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/wartung/zugang.ts",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/zeit/datumszeilen.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/zeit/useJetzt.ts",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/zeit/useNachRuhe.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/server/actions/medien.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/server/actions/startklar.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/server/ical/veranstaltungen.ts",
@@ -258,15 +263,15 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/server/queries/wissen.ts"
   ],
   "zaehl": {
-    "Hex-Farbe": 52,
-    "Tailwind-Klammerwert": 25,
-    "px-Literal in Style": 27,
+    "Hex-Farbe": 59,
+    "Tailwind-Klammerwert": 18,
+    "px-Literal in Style": 29,
     "Farbfunktion": 3
   },
   "funde": [
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/[locale]/layout.tsx",
-      "zeile": 26,
+      "zeile": 27,
       "art": "Hex-Farbe",
       "fund": "#0e3929",
       "zeileText": "themeColor: '#0e3929',"
@@ -308,129 +313,101 @@
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 125,
+      "zeile": 127,
       "art": "Tailwind-Klammerwert",
       "fund": "grid-cols-[repeat(…)]",
       "zeileText": "/* Raster (Kern K-005, statt grid-cols-[repeat(…)]): Karten ab 340 px, Kacheln ab 260 px, je so viele Spalten wie passen */"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 155,
+      "zeile": 165,
       "art": "Hex-Farbe",
       "fund": "#0e3929",
       "zeileText": "* (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Nie hinter Text. Regelmäßiger Achtstern auf"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 204,
+      "zeile": 214,
       "art": "Tailwind-Klammerwert",
       "fund": "z-50/z-60/z-[100]",
       "zeileText": "/* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 535,
-      "art": "Hex-Farbe",
-      "fund": "#fff",
-      "zeileText": "background: #fff;"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 670,
+      "zeile": 711,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 671,
+      "zeile": 712,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 672,
+      "zeile": 713,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 673,
+      "zeile": 714,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 674,
+      "zeile": 715,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 675,
+      "zeile": 716,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 676,
+      "zeile": 717,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 677,
+      "zeile": 718,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 678,
+      "zeile": 719,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 679,
+      "zeile": 720,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 680,
+      "zeile": 721,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
-      "zeile": 94,
-      "art": "Tailwind-Klammerwert",
-      "fund": "max-h-[calc(100dvh-2rem)]",
-      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
-      "zeile": 94,
-      "art": "Tailwind-Klammerwert",
-      "fund": "w-[calc(100%-2rem)]",
-      "zeileText": "className=\"m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backd"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
-      "zeile": 96,
-      "art": "Tailwind-Klammerwert",
-      "fund": "max-h-[calc(100dvh-2rem)]",
-      "zeileText": "<div className=\"flex max-h-[calc(100dvh-2rem)] flex-col gap-4 p-5 md:p-6\">"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/styleguide/tokens.ts",
@@ -783,34 +760,6 @@
       "zeileText": "{ name: '--shadow-s3', wert: '0 24px 64px rgba(29, 26, 23, 0.22)', klasse: 'shadow-s3', schluessel: 's3' },"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/KonzeptHinweis.tsx",
-      "zeile": 69,
-      "art": "Tailwind-Klammerwert",
-      "fund": "w-[calc(100%-32px)]",
-      "zeileText": "className=\"ohne-auftritt m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/KonzeptHinweis.tsx",
-      "zeile": 69,
-      "art": "Tailwind-Klammerwert",
-      "fund": "max-w-[680px]",
-      "zeileText": "className=\"ohne-auftritt m-auto w-[calc(100%-32px)] max-w-[680px] rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55\""
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/OrgCard.tsx",
-      "zeile": 76,
-      "art": "Tailwind-Klammerwert",
-      "fund": "leading-[1.25]",
-      "zeileText": "<h3 className=\"text-24 leading-[1.25] text-balance break-words\">"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/OrgCard.tsx",
-      "zeile": 82,
-      "art": "Tailwind-Klammerwert",
-      "fund": "underline-offset-[5px]",
-      "zeileText": "'text-tinte underline underline-offset-[5px] after:absolute after:inset-0 after:rounded-lg after:content-[\"\"]',"
-    },
-    {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
       "zeile": 39,
       "art": "px-Literal in Style",
@@ -826,143 +775,213 @@
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 44,
-      "art": "px-Literal in Style",
-      "fund": "'16px'",
-      "zeileText": "fontSize: '16px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 52,
-      "art": "px-Literal in Style",
-      "fund": "'0px'",
-      "zeileText": "maxHeight: '0px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 53,
-      "art": "px-Literal in Style",
-      "fund": "'0px'",
-      "zeileText": "maxWidth: '0px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 56,
-      "art": "px-Literal in Style",
-      "fund": "'1px'",
-      "zeileText": "fontSize: '1px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 57,
-      "art": "px-Literal in Style",
-      "fund": "'1px'",
-      "zeileText": "lineHeight: '1px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 68,
-      "art": "px-Literal in Style",
-      "fund": "'24px'",
-      "zeileText": "fontSize: '24px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 75,
-      "art": "px-Literal in Style",
-      "fund": "'2px'",
-      "zeileText": "height: '2px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 76,
-      "art": "px-Literal in Style",
-      "fund": "'0px'",
-      "zeileText": "fontSize: '0px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 77,
-      "art": "px-Literal in Style",
-      "fund": "'2px'",
-      "zeileText": "lineHeight: '2px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
       "zeile": 80,
       "art": "px-Literal in Style",
       "fund": "padding: 0",
       "zeileText": "padding: 0,"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 84,
-      "art": "px-Literal in Style",
-      "fund": "'32px'",
-      "zeileText": "padding: '32px',"
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 6,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "tiefgruen: '#0e3929',"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 88,
-      "art": "px-Literal in Style",
-      "fund": "'16px'",
-      "zeileText": "fontSize: '16px',"
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 7,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "gruen: '#047857',"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 97,
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 8,
+      "art": "Hex-Farbe",
+      "fund": "#1d1a17",
+      "zeileText": "tinte: '#1d1a17',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 9,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "tinte2: '#514c46',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 10,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "sand: '#f3f0e9',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 11,
+      "art": "Hex-Farbe",
+      "fund": "#fcfaf6",
+      "zeileText": "papier: '#fcfaf6',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 12,
+      "art": "Hex-Farbe",
+      "fund": "#dfdad2",
+      "zeileText": "linie: '#dfdad2',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 13,
+      "art": "Hex-Farbe",
+      "fund": "#ffffff",
+      "zeileText": "weiss: '#ffffff',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 22,
       "art": "px-Literal in Style",
       "fund": "'14px'",
-      "zeileText": "fontSize: '14px',"
+      "zeileText": "textKlein: '14px',"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",
-      "zeile": 149,
-      "art": "px-Literal in Style",
-      "fund": "'600px', '12px'",
-      "zeileText": "style={{ maxWidth: '600px', background: F.weiss, border: `1px solid ${F.linie}`, borderRadius: '12px' }}"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 31,
-      "art": "px-Literal in Style",
-      "fund": "'48px'",
-      "zeileText": "minHeight: '48px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 34,
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 23,
       "art": "px-Literal in Style",
       "fund": "'16px'",
-      "zeileText": "fontSize: '16px',"
+      "zeileText": "text: '16px',"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 36,
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 24,
+      "art": "px-Literal in Style",
+      "fund": "'24px'",
+      "zeileText": "titel: '24px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 25,
       "art": "px-Literal in Style",
       "fund": "'20px'",
-      "zeileText": "lineHeight: '20px',"
+      "zeileText": "knopfZeile: '20px',"
     },
     {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 51,
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 26,
+      "art": "px-Literal in Style",
+      "fund": "'48px'",
+      "zeileText": "knopfHoehe: '48px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 27,
       "art": "px-Literal in Style",
       "fund": "'8px'",
-      "zeileText": "<td style={{ background: F.gruen, borderRadius: '8px', padding: '14px 24px' }} {...hintergrund(F.gruen)}>"
+      "zeileText": "radiusKnopf: '8px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 28,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "radius: '12px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 29,
+      "art": "px-Literal in Style",
+      "fund": "'4px'",
+      "zeileText": "abstand1: '4px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 30,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "abstand3: '12px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 31,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "abstand4: '16px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 32,
+      "art": "px-Literal in Style",
+      "fund": "'20px'",
+      "zeileText": "abstand5: '20px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 33,
+      "art": "px-Literal in Style",
+      "fund": "'24px'",
+      "zeileText": "abstand6: '24px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 34,
+      "art": "px-Literal in Style",
+      "fund": "'32px'",
+      "zeileText": "abstand8: '32px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 35,
+      "art": "px-Literal in Style",
+      "fund": "'14px'",
+      "zeileText": "knopfSenkrecht: '14px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 36,
+      "art": "px-Literal in Style",
+      "fund": "'600px'",
+      "zeileText": "breite: '600px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 37,
+      "art": "px-Literal in Style",
+      "fund": "'480px'",
+      "zeileText": "schmal: '480px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 38,
+      "art": "px-Literal in Style",
+      "fund": "'2px'",
+      "zeileText": "akzent: '2px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 39,
+      "art": "px-Literal in Style",
+      "fund": "'1px'",
+      "zeileText": "haar: '1px',"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 40,
+      "art": "px-Literal in Style",
+      "fund": "'0px'",
+      "zeileText": "aus: '0px',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 60,
+      "zeile": 63,
       "art": "px-Literal in Style",
-      "fund": "'14px', margin: 0",
-      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: '14px', lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
+      "fund": "margin: 0",
+      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: M.textKlein, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
-      "zeile": 80,
+      "zeile": 83,
       "art": "px-Literal in Style",
-      "fund": "'14px', margin: 0",
-      "zeileText": "<p style={{ margin: 0, fontSize: '14px', color: F.tinte2 }}>{t.kontakt}</p>"
+      "fund": "margin: 0",
+      "zeileText": "<p style={{ margin: 0, fontSize: M.textKlein, color: F.tinte2 }}>{t.kontakt}</p>"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
