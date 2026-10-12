@@ -20,7 +20,7 @@ import {
   Users,
   type LucideIcon,
 } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useDeferredValue, useEffect, useRef } from 'react';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -75,6 +75,8 @@ export function Seitenleiste({
 }) {
   const pfad = usePathname();
   const { offen, setOffen } = useMenue();
+  // INP: Der Knopf zeigt den neuen Zustand sofort; die Navigation erscheint im nächsten, unterbrechbaren Durchlauf.
+  const sichtbar = useDeferredValue(offen);
   const navRef = useRef<HTMLDivElement>(null);
   const aktiv = (p: string) => (p === '/verwaltung' ? pfad === p : pfad === p || pfad.startsWith(`${p}/`));
   // Ab 900 px scrollt die Leiste bei kurzen Fenstern. Liegt der aktive Eintrag außerhalb, rückt er ohne Bewegung in die Mitte.
@@ -149,7 +151,7 @@ export function Seitenleiste({
     <aside
       className={cn(
         'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
-        offen ? 'tritt-auf' : 'max-verwaltung:hidden',
+        sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >
       <div
