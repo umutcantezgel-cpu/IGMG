@@ -1,0 +1,56 @@
+{
+  "werkzeug": "inp",
+  "basis": "http://127.0.0.1:3500",
+  "drossel": 4,
+  "laeufe": 1,
+  "schwelleMs": 200,
+  "routen": [
+    {
+      "name": "gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "inpMedianMs": 80,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "reiter",
+            "tab"
+          ],
+          "interaktionen": 6,
+          "inpMs": 80,
+          "jeEingabeMs": {
+            "reiter": 80,
+            "tab": 80,
+            "menue": 64
+          },
+          "laengste": [
+            {
+              "eingabe": "reiter",
+              "name": "pointerdown",
+              "dauerMs": 80,
+              "verarbeitungMs": 9,
+              "verzoegerungMs": 14
+            },
+            {
+              "eingabe": "tab",
+              "name": "keydown",
+              "dauerMs": 80,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 2
+            },
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 64,
+              "verarbeitungMs": 7,
+              "verzoegerungMs": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
