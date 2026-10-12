@@ -187,5 +187,5 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 
 **Abschlussbilder und JS.**
 - Hauptansichten mit 3 s Wartezeit nach `bilder/abschluss/`; Momente und Seitenwechsel aus Stufe C; Verwaltung nach `bilder/C3b-verwaltung/`; Galerie neu erzeugt.
-- JS_NACHTRAG
+- JS-Kurzprüfung (Lighthouse, 1 Lauf × 11 Routen, Last 1,1): 171,3–178,9 kB gz, alle ≤ 180 (`protokolle/C3b-lh-js.md`). Die Einzelläufe der Performance-Note (77–90) sind kein Median. Maßgeblich ist der verschränkte Lauf am Endstand (unten).
 - Ablauf: `protokolle/C3b-abschluss-bilder.log`.

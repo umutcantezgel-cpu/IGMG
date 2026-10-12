@@ -81,7 +81,7 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
 - **Leistung:**
   - INP im Labor 11 von 11 Hauptansichten ≤ 200 ms.
   - LCP ≤ 2,34 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100.
-  - JS_PLATZHALTER
+  - JavaScript je Hauptansicht 171–179 kB gz, Grenze 180 kB (Kurzprüfung am Endstand, `protokolle/C3b-lh-js.md`).
   - Die Performance-Note liegt mit 82–89 gleichauf mit dem Ausgangsstand und unter dem Ziel 90 (AUSNAHME A-01; Feldprüfung nach dem Livegang, ML-27).
 - **Vercel:**
   - `vercel build` als Vorschau und Produktion grün.
