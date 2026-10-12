@@ -119,3 +119,12 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Ausnahmen: 1 von höchstens 2. Z-02, Z-11 und Z-12 sind nicht betroffen.
 - Z-08 wird in ABNAHME als „AUSNAHME A-01“ geführt, nie als abgehakt.
 - ML-27 legt die Feldprüfung nach dem Livegang fest. Fällt sie aus, ist Weg 1 der nächste Schritt (eigener Auftrag).
+
+## L-E15 · 2026-10-12 · Opus · Abschlussblock direkt vor dem Fuß ist hell (Sichtabnahme C3, H-F01)
+- **Anlass:** Über uns, Projekte und Korankurse enden mit einem tiefgrünen Aufruf, und gleich darunter folgt der tiefgrüne Fuß. Zwei dunkle Flächen stehen übereinander, getrennt nur von einem schmalen Papierstreifen (≈ 25–72 px). Das senkt Farbe/Bild auf 7 (`berichte/SICHTABNAHME-C3.md` §1).
+- **Entscheidung:** Ein Abschlussblock, der unmittelbar vor dem Fuß steht, ist hell:
+  - Fläche `bg-gruen-50` mit einem `gruen-700`-Band oben (Muster Kontakt, H-E03).
+  - Titel in Tinte, Primärknopf grün, Sekundärknopf mit Rand.
+  - Die Fläche bleibt dunkel, wo sie nicht vor dem Fuß steht: Karte „Nächstes Gebet“ oben auf /gebetszeiten, Seitenspalte „Haben Sie Fragen?“ auf /mitglied-werden, Zahlen der IGMG im Tab.
+- **Löst ab:** Die Teilverwerfung „Seitenende hell“ aus C2 (H-C07). Ihre Begründung, dass die AnmeldeKarte zu den dunklen Aufrufen passt, entfällt, weil diese Aufrufe jetzt ebenfalls hell sind.
+- **Folgen:** REFERENZ §2 nimmt die Regel auf. Der Fuß bleibt die einzige tiefgrüne Schlussfläche jeder Seite.
