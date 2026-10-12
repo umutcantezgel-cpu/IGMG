@@ -1,13 +1,18 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (15:15 UTC):**
-  1. **Sichtabnahme C3** läuft als Workflow `wf_d40c0674-9bf` (Skript `werkzeuge/sichtabnahme.workflow.js`, Bilder `$S/bilder/c3` und `bilder/C3-verwaltung`). Ergebnis als `berichte/SICHTABNAHME-C3.md` übernehmen. Ansichten unter 8 oder Kategorien unter 7 werden zu H-F-Paketen (hb-welle). Danach Neubau, Bildsatz mit `--warte 3000`, Galerie.
-  2. **Produktion** nach FF fc08263 per MCP lesen (Deployment READY, Laufzeitfehler).
-  3. **Endprüfung:**
-     - ABNAHME Stand/Beleg füllen.
-     - `blind-vorbereiten.py --vorher bilder/e0 --nachher bilder/abschluss --aus $S/blind --schluessel $S/blind-schluessel.json`.
-     - `endpruefung.workflow.js` mit `{blind, schluessel, abnahme, bewegung: bilder/abschluss/momente, stand}`.
-     - Urteil wörtlich in BERICHT, dann den CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
+- **Nächster exakter Schritt (16:55 UTC):**
+  1. **Befundwelle H-F, Welle 1:** läuft als zwei hb-welle-Workflows: `wf_3a40f904-4c3` (A: H-F01, 03, 05, 07) und `wf_999e16ff-979` (B: H-F02, 04, 06). Dev 3200 läuft (pglite-h10, Zustand `$S/verwaltung-state.json` gültig). Danach:
+     - Ergebnisse sichten.
+     - REFERENZ §2 nachziehen (Seitenende L-E15, Nachrichtenkarten, Tagesbogen).
+     - Stufe A gesamt prüfen: tsc, eslint, Unit, sprachen, freie Werte.
+     - Committen.
+  2. **Welle 2:** H-F08–13. Die Vorbedingung H-F08 ist gesetzt (CSS-Regel und B-05-Vermerk, Commit nach 25ec8f4). Paketliste: `$S/hf-pakete.json`.
+  3. **Danach:**
+     - 3500 neu bauen.
+     - Bildsatz der Hauptansichten mit `--warte 3000`, `abschluss-kopieren.sh` plus Übernahme, `galerie.mjs`.
+     - Kurzprüfung: Konsole, axe, F-Liste, Unit/E2E-Teil.
+     - Vorab-Prüfung, dann FF main.
+  4. **Endprüfung** (Blindvergleich plus Endprüfer). Z-04 bei Bedarf als A-02 nach L7.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
