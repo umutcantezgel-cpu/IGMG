@@ -196,5 +196,5 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
   - LCP ≤ 2395 ms, CLS ≤ 0,01, A11y/BP/SEO 100, JS 171,3–178,9 kB gz.
   - Die Performance-Note bleibt < 90 (AUSNAHME A-01).
 - **INP verschränkt**, 3 Runden (`protokolle/C3b-inp.md`): 3500 ≤ 200 ms auf 11/11 (Mediane 80–184 ms), 3100 bei 152–232 ms. Jede Route ist schneller als der Ausgangsstand.
-- **Cockpit** (`/verwaltung/startklar`, angemeldet): COCKPIT_NACHTRAG
+- **Cockpit** (`/verwaltung/startklar`, angemeldet): Befund INP 408–568 ms (Kontomenü), behoben in 66965d0; danach INP 96–112 ms, Lighthouse 83, LCP 1,96 s, CLS 0, A11y/BP 100, SEO 66 nur durch das gewollte noindex (`protokolle/C3b-cockpit-inp.md`).
 - Ablauf: `protokolle/C3b-abschluss-bilder.log`.
