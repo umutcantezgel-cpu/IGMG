@@ -1,26 +1,27 @@
 'use client';
 
-import { CalendarDays, Compass, Settings, Sun, type LucideIcon } from 'lucide-react';
 import { useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { klassen } from '@/lib/klassen';
 
 export type TabSchluessel = 'heute' | 'monat' | 'qibla' | 'einstellungen';
 
 const REIHENFOLGE: TabSchluessel[] = ['heute', 'monat', 'qibla', 'einstellungen'];
-const SYMBOL: Record<TabSchluessel, LucideIcon> = { heute: Sun, monat: CalendarDays, qibla: Compass, einstellungen: Settings };
 
 /**
  * Tab-Leiste der Gebetszeiten (design/PrayerTimes.dc.html, Blatt S02). Nach dem WAI-ARIA-Muster „Tabs“:
  * Pfeiltasten wechseln den Tab, Pos1 und Ende springen an Anfang und Ende. Alle Panels sind bereits im
- * HTML; die inaktiven tragen `hidden`. Texte und Panels kommen als Props (K-12).
+ * HTML; die inaktiven tragen `hidden`. Texte, Symbole und Panels kommen als Props (K-12); die Symbole rendert der
+ * Server, damit lucide nicht im Browser-Code liegt (H-L01, JS ≤ 180 kB gz).
  */
 export function GebetszeitenTabs({
   ansichtAria,
   labels,
+  symbole,
   panels,
 }: {
   ansichtAria: string;
   labels: Record<TabSchluessel, string>;
+  symbole: Record<TabSchluessel, ReactNode>;
   panels: Record<TabSchluessel, ReactNode>;
 }) {
   const [aktiv, setAktiv] = useState<TabSchluessel>('heute');
@@ -62,7 +63,6 @@ export function GebetszeitenTabs({
       >
         {REIHENFOLGE.map((s) => {
           const on = s === aktiv;
-          const Icon = SYMBOL[s];
           return (
             <button
               key={s}
@@ -81,7 +81,7 @@ export function GebetszeitenTabs({
                 on ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
               )}
             >
-              <Icon aria-hidden className="size-5" />
+              {symbole[s]}
               <span>{labels[s]}</span>
               {on ? <span aria-hidden className="absolute inset-x-3.5 bottom-1 h-0.75 rounded-sm bg-gruen-700" /> : null}
             </button>

@@ -1,17 +1,19 @@
 'use client';
 
-import { Printer } from 'lucide-react';
+import type { ReactNode } from 'react';
 
-/** Druckknopf der Monatsansicht (window.print); der Text kommt als Prop (K-12). */
-export function DruckKnopf({ text }: { text: string }) {
+/**
+ * Druckknopf der Monatsansicht (window.print). Symbol und Text kommen als Kinder vom Server (K-12), damit das
+ * lucide-Symbol nicht im Browser-Code liegt (H-L01, JS ≤ 180 kB gz).
+ */
+export function DruckKnopf({ children }: { children: ReactNode }) {
   return (
     <button
       type="button"
       onClick={() => window.print()}
       className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 print:hidden"
     >
-      <Printer aria-hidden className="size-5" />
-      <span>{text}</span>
+      {children}
     </button>
   );
 }

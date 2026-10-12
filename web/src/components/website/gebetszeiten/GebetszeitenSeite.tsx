@@ -44,6 +44,8 @@ export type GebetszeitenSeiteProps = {
   referenz: string;
   texte: GebetszeitenSeiteTexte;
   panels: Record<'monat' | 'qibla' | 'einstellungen', ReactNode>;
+  /** Symbole der Tabs, auf dem Server gerendert (GebetszeitenTabs). */
+  tabSymbole: Record<TabSchluessel, ReactNode>;
 };
 
 const SYMBOL: Record<Gebet, LucideIcon> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
@@ -54,7 +56,7 @@ const SYMBOL: Record<Gebet, LucideIcon> = { imsak: Moon, gunes: Sunrise, ogle: S
  * zwischengespeicherten Tageszeiten (K-08). Bis zur Hydrierung steht ein Platzhalter „–“, und die Tafel zeigt alle
  * Zeiten grün, damit nichts springt (K-12, kein CLS).
  */
-export function GebetszeitenSeite({ tage, referenz, texte, panels }: GebetszeitenSeiteProps) {
+export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }: GebetszeitenSeiteProps) {
   const jetzt = useJetzt();
   const datum = jetzt ? berlinerDatum(jetzt) : referenz;
   const gefunden = tage.findIndex((t) => t.datum === datum);
@@ -134,6 +136,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels }: Gebetszeite
       <GebetszeitenTabs
         ansichtAria={texte.ansichtAria}
         labels={texte.tabs}
+        symbole={tabSymbole}
         panels={{
           heute: (
             // Unter lg steht die Tafel vor dem Bogen; ab lg liegt der Bogen links (zwei Spalten), die Tafel rechts

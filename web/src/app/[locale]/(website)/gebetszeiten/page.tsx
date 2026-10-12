@@ -1,4 +1,4 @@
-import { CalendarDays, Info, MapPin, Maximize } from 'lucide-react';
+import { CalendarDays, Compass, Info, MapPin, Maximize, Printer, Settings, Sun } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
@@ -62,7 +62,10 @@ export default async function GebetszeitenSeitePage() {
   const monatPanel = (
     <div id="gebetszeiten-monat" className="flex flex-col gap-6">
       <div className="flex justify-end print:hidden">
-        <DruckKnopf text={t('drucken')} />
+        <DruckKnopf>
+          <Printer aria-hidden className="size-5" />
+          <span>{t('drucken')}</span>
+        </DruckKnopf>
       </div>
       {monate.map((m) => (
         <MonatsTabelle
@@ -158,6 +161,12 @@ export default async function GebetszeitenSeitePage() {
               qibla: t('tabQibla'),
               einstellungen: t('tabEinstellungen'),
             },
+          }}
+          tabSymbole={{
+            heute: <Sun aria-hidden className="size-5" />,
+            monat: <CalendarDays aria-hidden className="size-5" />,
+            qibla: <Compass aria-hidden className="size-5" />,
+            einstellungen: <Settings aria-hidden className="size-5" />,
           }}
           panels={{
             monat: monatPanel,
