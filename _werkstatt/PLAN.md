@@ -117,7 +117,21 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Produktion läuft ohne Datenbank: Jeder Push auf `main` muss den PGlite-Rückfall im Bau erhalten.
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
-## Statusnachweis (Stand 2026-10-12 07:10 UTC)
+## Statusnachweis (Stand 2026-10-12 15:15 UTC)
+Pflicht erledigt 70 von ≈ 70:
+- die 69 vom 07:10-Stand,
+- dazu Stufe C mit Endstand-Messung und Nacharbeit (`berichte/STUFE-C3.md`):
+  - Endstand 58a3344, Nacharbeit 4331b03, 01589e8, 76eda7a, 466ddfb, 6e1b46a, de91dcd;
+  - release:check auf HEAD bestanden;
+  - main → fc08263.
+
+Ebenfalls umgesetzt:
+- Befundwelle H-E aus der Sichtabnahme C2 (14 Pakete, bis 8e93ef8).
+- Produktionsfehler des Beispielmodus (ce6e6a5).
+
+Offen ist nur noch der Abschlussschritt: Sichtabnahme C3 als Vorprüfung für Z-04, dann die Endprüfung. Ausnahmen: 1 (A-01, L-E14). Kür 20 von 20.
+
+### Stand 2026-10-12 07:10 UTC
 Pflicht erledigt 69 von ≈ 70: die 66 vom 02:10-Stand plus E4-TOR mit Sichtabnahme E4 und H-C01–C13 (5d19108), H-D04 (1f1c2d8) und H-L01 (Ursachen I–III; Nachmessung läuft). Offen ist nur noch die Endprüfung nach Stufe C: erste Messung 5d19108 in `berichte/STUFE-C.md`, Nacharbeit fa5c005, Nachmessung `berichte/STUFE-C2.md`. Kür 20 von 20.
 
 ### Stand 2026-10-12 02:10 UTC
