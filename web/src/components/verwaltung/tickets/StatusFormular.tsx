@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
-import { eingabe, Rahmen } from '@/components/verwaltung/tickets/Felder';
+import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
 import type { TicketZustand } from '@/server/actions/tickets';
 
 type Option = { wert: string; label: string };

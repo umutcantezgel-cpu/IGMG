@@ -149,17 +149,27 @@ for (const liste of LISTEN) {
     expect(await karten.count()).toBe(gesamt);
   });
 
-  test(`${liste.kuerzel}: „${t.veranstaltungen.abo}“ zeigt auf den Veranstaltungs-Feed und liefert einen Kalender`, async ({
+  test(`${liste.kuerzel}: Kalender-Abo „${t.veranstaltungen.aboTitel}“ bietet webcal-Abo und Datei, die Datei liefert einen Kalender`, async ({
     page,
     request,
   }) => {
+    // Der Abo-Knopf (webcal) und der Textlink „Datei laden“ (.ics) zeigen auf denselben Veranstaltungs-Feed (K-19).
+    const pfad = `/api/ical/${liste.kuerzel}/veranstaltungen`;
     await page.goto(liste.pfad);
-    const abo = page.getByRole('link', { name: t.veranstaltungen.abo, exact: true });
-    await expect(abo).toBeVisible();
-    const ziel = (await abo.getAttribute('href')) ?? '';
-    expect(new URL(ziel, page.url()).pathname).toBe(`/api/ical/${liste.kuerzel}/veranstaltungen`);
 
-    const antwort = await request.get(ziel);
+    const abo = page.getByRole('link', { name: t.veranstaltungen.aboAbonnieren, exact: true });
+    await expect(abo).toBeVisible();
+    const aboZiel = (await abo.getAttribute('href')) ?? '';
+    expect(aboZiel).toMatch(/^webcal:\/\//);
+    expect(new URL(aboZiel.replace(/^webcal:/, 'http:')).pathname).toBe(pfad);
+
+    const datei = page.getByRole('link', { name: t.veranstaltungen.aboDatei, exact: true });
+    await expect(datei).toBeVisible();
+    await expect(datei).toHaveAttribute('download', /\.ics$/);
+    const dateiZiel = (await datei.getAttribute('href')) ?? '';
+    expect(new URL(dateiZiel, page.url()).pathname).toBe(pfad);
+
+    const antwort = await request.get(dateiZiel);
     expect(antwort.status()).toBe(200);
     expect(antwort.headers()['content-type']).toContain('text/calendar');
     expect(await antwort.text()).toContain('BEGIN:VCALENDAR');

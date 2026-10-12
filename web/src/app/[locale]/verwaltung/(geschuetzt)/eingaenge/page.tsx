@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
-import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
+import { ListenKarte, ListenLeer, TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { EINGANG_ARTEN, EINGANG_STATUS } from '@/lib/eingaenge/arten';
 import { datumKurz, datumLang, uhrzeit } from '@/lib/i18n/format';
 import { lokaleTeile } from '@/lib/termine';
@@ -20,7 +20,9 @@ const STATUS_TOENUNG: Record<string, string> = {
   erledigt: 'bg-gruen-50 text-gruen-800',
   abgelehnt: 'bg-sand text-tinte-2',
 };
-const feld = 'min-h-11 rounded-md border border-rand bg-weiss px-3 text-18';
+const feld = 'min-h-12 rounded-md border border-rand bg-weiss px-3 text-18';
+
+type Zeile = Awaited<ReturnType<typeof ladeEingangsListe>>['zeilen'][number];
 
 /**
  * Verwaltung › Eingänge (C08, Blatt V08): Liste ohne Personendaten (G-07), Filter nach Art und Status, Export.
@@ -42,6 +44,51 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
     return s ? `?${s}` : '';
   };
   const tg = await getTranslations('verwaltung.shell');
+
+  /** Eine Eingangszeile: datum als Überschrift, Art, Bezug, Status, Sprache, Löschfrist, Ansehen (K-16). */
+  const datumVon = (z: Zeile) => `${datumKurz(z.erstelltAm, 'de')} ${lokaleTeile(z.erstelltAm).jahr}, ${uhrzeit(z.erstelltAm, 'de')}`;
+  const ansehen = (z: Zeile) => (
+    <Button asChild variant="outline" size="icon">
+      <NextLink href={`/verwaltung/eingaenge/${z.id}`}>
+        <Eye aria-hidden />
+        <span className="sr-only">{t('ansehen', { datum: datumVon(z) })}</span>
+      </NextLink>
+    </Button>
+  );
+
+  // Telefon: je Eingang eine Karte statt der breiten Tabelle (Muster der Veranstaltungsliste, H-B06)
+  const mobil = (
+    <ul className="flex flex-col gap-3">
+      {zeilen.map((z) => (
+        <ListenKarte
+          key={z.id}
+          titel={<span className="tabular-nums">{datumVon(z)}</span>}
+          angaben={[
+            { label: t('spalte.art'), wert: t(`art.${z.art}`) },
+            {
+              label: t('spalte.bezug'),
+              wert: (
+                <>
+                  {z.bezugTitel ?? '–'}
+                  {z.art === 'veranstaltungsanmeldung' && z.anzahl > 1 ? (
+                    <span className="block text-16 text-tinte-2">× {z.anzahl}</span>
+                  ) : null}
+                </>
+              ),
+            },
+            {
+              label: t('spalte.status'),
+              wert: <span className={cn(pille, STATUS_TOENUNG[z.status])}>{t(`status.${z.status}`)}</span>,
+            },
+            { label: t('spalte.sprache'), wert: t(`sprachen.${z.sprache}`) },
+            { label: t('spalte.loeschenAb'), wert: z.loeschenAb ? datumLang(z.loeschenAb, 'de') : '–', zahl: true },
+          ]}
+          aktionen={ansehen(z)}
+        />
+      ))}
+    </ul>
+  );
+
   return (
     <>
       <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.kommunikation')} einleitung={t('untertitel')} />
@@ -89,13 +136,16 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
         </span>
         <p className="w-full text-16 text-tinte-2">{t('exportHinweis')}</p>
       </form>
-      <p className="text-16 text-tinte-2" role="status">
-        {t('anzahl', { anzahl: gesamt })}
-      </p>
+      {/* Zählzeile nur bei Treffern (wie Tickets): ohne Einträge sagt der Leerzustand dasselbe */}
+      {gesamt > 0 ? (
+        <p className="text-16 text-tinte-2" role="status">
+          {t('anzahl', { anzahl: gesamt })}
+        </p>
+      ) : null}
       {zeilen.length === 0 ? (
-        <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p>
+        <ListenLeer text={t('leer')} />
       ) : (
-        <TabellenRahmen beschriftung={t('titel')}>
+        <TabellenRahmen beschriftung={t('titel')} mobil={mobil}>
           <table className="w-full min-w-224 border-collapse text-left">
             <thead className="bg-sand">
               <tr>
@@ -107,36 +157,26 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
               </tr>
             </thead>
             <tbody>
-              {zeilen.map((z) => {
-                const datum = `${datumKurz(z.erstelltAm, 'de')} ${lokaleTeile(z.erstelltAm).jahr}, ${uhrzeit(z.erstelltAm, 'de')}`;
-                return (
-                  <tr key={z.id} className="border-t border-linie align-middle">
-                    <th scope="row" className="px-4 py-3 font-bold whitespace-nowrap">
-                      {datum}
-                    </th>
-                    <td className="px-4 py-3">{t(`art.${z.art}`)}</td>
-                    <td className="px-4 py-3">
-                      {z.bezugTitel ?? '–'}
-                      {z.art === 'veranstaltungsanmeldung' && z.anzahl > 1 ? (
-                        <span className="block text-16 text-tinte-2">× {z.anzahl}</span>
-                      ) : null}
-                    </td>
-                    <td className="px-4 py-3">
-                      <span className={cn(pille, STATUS_TOENUNG[z.status])}>{t(`status.${z.status}`)}</span>
-                    </td>
-                    <td className="px-4 py-3">{t(`sprachen.${z.sprache}`)}</td>
-                    <td className="px-4 py-3 whitespace-nowrap">{z.loeschenAb ? datumLang(z.loeschenAb, 'de') : '–'}</td>
-                    <td className="px-4 py-3">
-                      <Button asChild variant="outline" size="icon">
-                        <NextLink href={`/verwaltung/eingaenge/${z.id}`}>
-                          <Eye aria-hidden />
-                          <span className="sr-only">{t('ansehen', { datum })}</span>
-                        </NextLink>
-                      </Button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {zeilen.map((z) => (
+                <tr key={z.id} className="border-t border-linie align-middle">
+                  <th scope="row" className="px-4 py-3 font-bold whitespace-nowrap">
+                    {datumVon(z)}
+                  </th>
+                  <td className="px-4 py-3">{t(`art.${z.art}`)}</td>
+                  <td className="px-4 py-3">
+                    {z.bezugTitel ?? '–'}
+                    {z.art === 'veranstaltungsanmeldung' && z.anzahl > 1 ? (
+                      <span className="block text-16 text-tinte-2">× {z.anzahl}</span>
+                    ) : null}
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={cn(pille, STATUS_TOENUNG[z.status])}>{t(`status.${z.status}`)}</span>
+                  </td>
+                  <td className="px-4 py-3">{t(`sprachen.${z.sprache}`)}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{z.loeschenAb ? datumLang(z.loeschenAb, 'de') : '–'}</td>
+                  <td className="px-4 py-3">{ansehen(z)}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </TabellenRahmen>

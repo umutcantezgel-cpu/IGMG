@@ -20,7 +20,7 @@ export default async function MeinKonto({ searchParams }: PageProps<'/[locale]/v
           <h2 id="konto-angaben" className="text-24">
             {t('konto.angaben')}
           </h2>
-          <dl className="grid gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]">
+          <dl className="grid gap-x-4 gap-y-2 sm:raster-stammdaten-kurz">
             <dt className="font-bold">{t('formular.name')}</dt>
             <dd>{a.name}</dd>
             <dt className="font-bold">{t('formular.email')}</dt>

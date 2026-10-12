@@ -133,6 +133,13 @@
 @utility raster-begleitspalte {
   grid-template-rows: auto 1fr;
 }
+/* Stammdaten der Verwaltung (Bezeichnung | Wert): Bezeichnungsspalte 14 rem bzw. 9 rem (K-16) */
+@utility raster-stammdaten {
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+}
+@utility raster-stammdaten-kurz {
+  grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+}
 
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
 /* Symbol links, Text rechts (Kennzahlen mit Symbol): Spalte so breit wie das Symbol, Rest für den Text. */
@@ -223,6 +230,10 @@
 }
 
 @layer base {
+  /* Aufklapper mit eigenem Chevron: kein zweites Dreieck in älterem Safari (K-19) */
+  summary::-webkit-details-marker {
+    display: none;
+  }
   *,
   *::before,
   *::after {

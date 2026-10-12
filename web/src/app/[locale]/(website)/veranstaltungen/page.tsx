@@ -1,9 +1,9 @@
-import { CalendarPlus } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { EventCard } from '@/components/website/EventCard';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { KalenderAbo } from '@/components/website/veranstaltungen/KalenderAbo';
 import { VeranstaltungsFilter } from '@/components/website/veranstaltungen/VeranstaltungsFilter';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -73,15 +73,9 @@ export default async function VeranstaltungenSeite() {
           kinder={startform}
           kinderGefiltert={einheitlich}
         />
-        <p className="mt-10">
-          <a
-            href={`/api/ical/${sprache}/veranstaltungen`}
-            className="inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4"
-          >
-            <CalendarPlus aria-hidden className="size-5" />
-            {t('abo')}
-          </a>
-        </p>
+        <div className="mt-10">
+          <KalenderAbo sprache={sprache} />
+        </div>
       </div>
     </Seitenrahmen>
   );

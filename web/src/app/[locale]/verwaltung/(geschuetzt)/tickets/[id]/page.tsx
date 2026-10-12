@@ -40,7 +40,7 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
     <>
       <NextLink
         href="/verwaltung/tickets"
-        className="inline-flex min-h-11 items-center gap-2 self-start font-bold underline underline-offset-4"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
       >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
@@ -59,8 +59,8 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
 
       {sp.angelegt === '1' ? <Meldung art="erfolg">{t('angelegt')}</Meldung> : null}
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="flex flex-col gap-6 lg:col-span-2">
           <section aria-labelledby="ticket-beschreibung" className={karte}>
             <h2 id="ticket-beschreibung" className="text-24">
               {t('detail.beschreibung')}
@@ -89,7 +89,7 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
                     <p className="break-words whitespace-pre-line">{melder.daten.nachricht || t('keinWert')}</p>
                   </div>
                 ) : null}
-                <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
+                <dl className="grid gap-x-6 gap-y-3 sm:raster-stammdaten">
                   <div className="contents">
                     <dt className="font-bold">{t('melder.vorname')}</dt>
                     <dd className="break-words">{melder.daten.vorname || t('keinWert')}</dd>
@@ -180,7 +180,7 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
             <h2 id="ticket-angaben" className="text-24">
               {t('detail.angaben')}
             </h2>
-            <dl className="grid gap-x-4 gap-y-3 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)] lg:grid-cols-1">
+            <dl className="grid gap-x-4 gap-y-3 sm:raster-stammdaten-kurz lg:grid-cols-1">
               <div className="contents">
                 <dt className="font-bold">{t('detail.nummer')}</dt>
                 <dd>{ticketNummer(d.nummer)}</dd>

@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { PILLE, PRIORITAET_TON, STATUS_TON, ticketNummer } from '@/components/verwaltung/tickets/anzeige';
-import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
+import { ListenKarte, ListenLeer, TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
 import { datumKurz, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { lokaleTeile } from '@/lib/termine';
@@ -13,6 +13,8 @@ import { listenFilterSchema, TICKET_PRIORITAETEN, TICKET_STATUS, TICKET_TYPEN } 
 import { ladeTicketListe } from '@/server/queries/verwaltung/tickets';
 
 const feld = 'min-h-12 rounded-md border border-rand bg-weiss px-3.5 text-18 text-tinte';
+
+type Zeile = Awaited<ReturnType<typeof ladeTicketListe>>[number];
 
 /**
  * Verwaltung › Tickets (V10): Liste mit Filtern nach Status, Priorität und Typ über Suchparameter (GET-Formular wie im
@@ -25,24 +27,70 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
   const [t, zeilen] = await Promise.all([getTranslations('verwaltung.tickets'), ladeTicketListe(filter, a)]);
   const filterAktiv = Boolean(filter.status || filter.prioritaet || filter.typ);
   const darfAnlegen = darf(a.rollen, 'ticket.anlegen');
+  const leer = zeilen.length === 0;
 
   const tg = await getTranslations('verwaltung.shell');
+  // Anlegen steht im Kopf oder – bei leerer Liste – im Leerzustand, nie an beiden Stellen (K-16)
+  const anlegen = (
+    <Button asChild>
+      <NextLink href="/verwaltung/tickets/neu">
+        <Plus aria-hidden />
+        {t('neu')}
+      </NextLink>
+    </Button>
+  );
+  const erstelltVon = (z: Zeile) => `${datumKurz(z.erstelltAm, 'de')} ${lokaleTeile(z.erstelltAm).jahr}, ${uhrzeit(z.erstelltAm, 'de')}`;
+  const ansehen = (z: Zeile) => (
+    <Button asChild variant="outline" size="icon">
+      <NextLink href={`/verwaltung/tickets/${z.id}`}>
+        <Eye aria-hidden />
+        <span className="sr-only">{t('aktionAnsehen', { titel: z.titel })}</span>
+      </NextLink>
+    </Button>
+  );
+
+  // Telefon: je Ticket eine Karte statt der breiten Tabelle (Muster der Veranstaltungsliste, H-B06).
+  // Eine Status-Pille; die Priorität steht als Text (K-16).
+  const mobil = (
+    <ul className="flex flex-col gap-3">
+      {zeilen.map((z) => (
+        <ListenKarte
+          key={z.id}
+          titel={
+            <>
+              <span className="block text-16 font-normal text-tinte-2">{ticketNummer(z.nummer)}</span>
+              {z.titel}
+              {z.kategorie ? <span className="block text-16 font-normal text-tinte-2">{z.kategorie}</span> : null}
+            </>
+          }
+          angaben={[
+            { label: t('spalte.typ'), wert: t(`typ.${z.typ}`) },
+            {
+              label: t('spalte.prioritaet'),
+              wert: (
+                <span className={z.prioritaet === 'hoch' ? 'font-bold text-fehler' : undefined}>{t(`prioritaet.${z.prioritaet}`)}</span>
+              ),
+            },
+            { label: t('spalte.organisation'), wert: z.organisation ? z.organisation.toUpperCase() : t('allgemeinKurz') },
+            { label: t('spalte.erstellt'), wert: erstelltVon(z), zahl: true },
+            {
+              label: t('spalte.status'),
+              wert: <span className={cn(PILLE, STATUS_TON[z.status])}>{t(`status.${z.status}`)}</span>,
+            },
+          ]}
+          aktionen={ansehen(z)}
+        />
+      ))}
+    </ul>
+  );
+
   return (
     <>
       <VerwaltungsKopf
         titel={t('titel')}
         kennung={tg('gruppe.kommunikation')}
         einleitung={t('einleitung')}
-        aktion={
-          darfAnlegen ? (
-            <Button asChild>
-              <NextLink href="/verwaltung/tickets/neu">
-                <Plus aria-hidden />
-                {t('neu')}
-              </NextLink>
-            </Button>
-          ) : null
-        }
+        aktion={darfAnlegen && !leer ? anlegen : null}
       />
 
       <form
@@ -103,10 +151,10 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
         </p>
       ) : null}
 
-      {zeilen.length === 0 ? (
-        <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{filterAktiv ? t('leerMitFilter') : t('leer')}</p>
+      {leer ? (
+        <ListenLeer text={filterAktiv ? t('leerMitFilter') : t('leer')} aktion={darfAnlegen ? anlegen : undefined} />
       ) : (
-        <TabellenRahmen beschriftung={t('tabelle')}>
+        <TabellenRahmen beschriftung={t('tabelle')} mobil={mobil}>
           <table className="w-full min-w-224 border-collapse text-left">
             <caption className="sr-only">{t('tabelle')}</caption>
             <thead className="bg-sand">
@@ -119,35 +167,25 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
               </tr>
             </thead>
             <tbody>
-              {zeilen.map((z) => {
-                const erstellt = `${datumKurz(z.erstelltAm, 'de')} ${lokaleTeile(z.erstelltAm).jahr}, ${uhrzeit(z.erstelltAm, 'de')}`;
-                return (
-                  <tr key={z.id} className="border-t border-linie align-middle">
-                    <th scope="row" className="px-4 py-3 text-left font-bold">
-                      <span className="block text-16 font-normal text-tinte-2">{ticketNummer(z.nummer)}</span>
-                      {z.titel}
-                      {z.kategorie ? <span className="block text-16 font-normal text-tinte-2">{z.kategorie}</span> : null}
-                    </th>
-                    <td className="px-4 py-3">{t(`typ.${z.typ}`)}</td>
-                    <td className="px-4 py-3">
-                      <span className={cn(PILLE, PRIORITAET_TON[z.prioritaet])}>{t(`prioritaet.${z.prioritaet}`)}</span>
-                    </td>
-                    <td className="px-4 py-3">
-                      <span className={cn(PILLE, STATUS_TON[z.status])}>{t(`status.${z.status}`)}</span>
-                    </td>
-                    <td className="px-4 py-3">{z.organisation ? z.organisation.toUpperCase() : t('allgemeinKurz')}</td>
-                    <td className="px-4 py-3 whitespace-nowrap">{erstellt}</td>
-                    <td className="px-4 py-3">
-                      <Button asChild variant="outline" size="icon">
-                        <NextLink href={`/verwaltung/tickets/${z.id}`}>
-                          <Eye aria-hidden />
-                          <span className="sr-only">{t('aktionAnsehen', { titel: z.titel })}</span>
-                        </NextLink>
-                      </Button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {zeilen.map((z) => (
+                <tr key={z.id} className="border-t border-linie align-middle">
+                  <th scope="row" className="px-4 py-3 text-left font-bold">
+                    <span className="block text-16 font-normal text-tinte-2">{ticketNummer(z.nummer)}</span>
+                    {z.titel}
+                    {z.kategorie ? <span className="block text-16 font-normal text-tinte-2">{z.kategorie}</span> : null}
+                  </th>
+                  <td className="px-4 py-3">{t(`typ.${z.typ}`)}</td>
+                  <td className="px-4 py-3">
+                    <span className={cn(PILLE, PRIORITAET_TON[z.prioritaet])}>{t(`prioritaet.${z.prioritaet}`)}</span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <span className={cn(PILLE, STATUS_TON[z.status])}>{t(`status.${z.status}`)}</span>
+                  </td>
+                  <td className="px-4 py-3">{z.organisation ? z.organisation.toUpperCase() : t('allgemeinKurz')}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{erstelltVon(z)}</td>
+                  <td className="px-4 py-3">{ansehen(z)}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </TabellenRahmen>

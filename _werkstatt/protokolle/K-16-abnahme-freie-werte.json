@@ -1,0 +1,55 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-12-01-42",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/page.tsx",
+    "web/src/components/verwaltung/Feld.tsx",
+    "web/src/components/verwaltung/TabellenRahmen.tsx",
+    "web/src/components/verwaltung/ankuendigungen/AnkuendigungsFormular.tsx",
+    "web/src/components/verwaltung/kurse/KursFormular.tsx",
+    "web/src/components/verwaltung/neuigkeiten/NeuigkeitsFormular.tsx",
+    "web/src/components/verwaltung/tickets/KommentarFormular.tsx",
+    "web/src/components/verwaltung/tickets/NeuesTicketFormular.tsx",
+    "web/src/components/verwaltung/tickets/StatusFormular.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 3
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx",
+      "zeile": 70,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]",
+      "zeileText": "<dl className=\"grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/[id]/page.tsx",
+      "zeile": 92,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]",
+      "zeileText": "<dl className=\"grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/[id]/page.tsx",
+      "zeile": 183,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]",
+      "zeileText": "<dl className=\"grid gap-x-4 gap-y-3 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)] lg:grid-cols-1\">"
+    }
+  ]
+}

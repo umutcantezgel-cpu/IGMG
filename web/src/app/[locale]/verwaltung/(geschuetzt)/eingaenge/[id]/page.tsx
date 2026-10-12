@@ -13,7 +13,7 @@ import { endgueltigLoeschen, notizHinzufuegen, setzeStatus } from '@/server/acti
 import { ladeEingangDetail } from '@/server/queries/verwaltung/eingaenge';
 
 const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
-const feld = 'min-h-11 rounded-md border border-rand bg-weiss px-3 text-18';
+const feld = 'min-h-12 rounded-md border border-rand bg-weiss px-3 text-18';
 
 const zeitpunkt = (d: Date) => `${datumKurz(d, 'de')} ${lokaleTeile(d).jahr}, ${uhrzeit(d, 'de')}`;
 
@@ -41,7 +41,7 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
   const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <NextLink href="/verwaltung/eingaenge" className="inline-flex min-h-11 items-center gap-2 self-start font-bold">
+      <NextLink href="/verwaltung/eingaenge" className="inline-flex min-h-12 items-center gap-2 self-start font-bold">
         <ArrowLeft aria-hidden className="size-5" />
         {t('detail.zurueckZurListe')}
       </NextLink>
@@ -67,7 +67,7 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
             <h2 id="eingang-angaben" className="text-24">
               {t('detail.angaben')}
             </h2>
-            <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
+            <dl className="grid gap-x-6 gap-y-3 sm:raster-stammdaten">
               {angaben.map(([k, w]) => (
                 <div key={k} className="contents">
                   <dt className="font-bold">{beschriftung(k)}</dt>

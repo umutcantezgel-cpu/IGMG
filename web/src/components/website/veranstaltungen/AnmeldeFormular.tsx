@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { AltchaFeld } from '@/components/formular/AltchaFeld';
-import { FeldAuswahl, FeldEinwilligung, FeldText, Honigtopf } from '@/components/formular/Felder';
+import { FeldAuswahl, FeldHaken, FeldText, Honigtopf } from '@/components/formular/Felder';
 import { Erfolg, FehlerZusammenfassung } from '@/components/formular/Rueckmeldung';
 import { SendenKnopf } from '@/components/formular/SendenKnopf';
 import { pfadFuer } from '@/i18n/navigation';
@@ -43,8 +43,10 @@ export async function AnmeldeFormular({
     return s ? (fehlerTexte[s] ?? fehlerTexte.ungueltig) : undefined;
   };
   const datenschutz = { href: pfadFuer('/datenschutz', sprache), label: t('datenschutz') };
+  // Formularmuster der Voranmeldung: Felder je Gruppe mit gap-4, Gruppen und Knopf mit gap-6, Knopf volle Breite
   return (
-    <>
+    // Abgesetzt vom Belegungsblock darüber (nur hier, damit geschlossen/ausgebucht keine leere Linie entsteht)
+    <div className="flex min-w-0 flex-col gap-6 border-t border-linie pt-6">
       {ergebnis ? (
         <FehlerZusammenfassung
           fehler={ergebnis.fehler}
@@ -55,64 +57,71 @@ export async function AnmeldeFormular({
       ) : null}
       <input type="hidden" name="veranstaltungId" value={veranstaltungId} />
       <input type="hidden" name="sprache" value={sprache} />
-      <FeldText
-        name="name"
-        label={t('name')}
-        pflicht={tf('pflicht')}
-        wert={wert('name')}
-        autoComplete="name"
-        maxLaenge={100}
-        fehler={f('name')}
-      />
-      <FeldText
-        name="email"
-        typ="email"
-        label={t('email')}
-        pflicht={tf('pflicht')}
-        wert={wert('email')}
-        autoComplete="email"
-        maxLaenge={254}
-        fehler={f('email')}
-      />
-      <FeldText
-        name="telefon"
-        typ="tel"
-        label={
-          <>
-            {t('telefon')} <span className="font-normal text-tinte-2">{tf('optional')}</span>
-          </>
-        }
-        hinweis={t('telefonHinweis')}
-        wert={wert('telefon')}
-        autoComplete="tel"
-        maxLaenge={30}
-        fehler={f('telefon')}
-      />
-      <FeldAuswahl
-        name="personen"
-        label={t('personen')}
-        pflicht={tf('pflicht')}
-        hinweis={verfuegbar !== null ? t('personenHinweis', { verfuegbar }) : undefined}
-        wert={wert('personen') ?? '1'}
-        optionen={Array.from({ length: Math.max(1, Math.min(10, verfuegbar ?? 10)) }, (_, i) => ({
-          wert: String(i + 1),
-          label: String(i + 1),
-        }))}
-        fehler={f('personen')}
-      />
-      <FeldEinwilligung
-        name="einwilligung"
-        text={t('einwilligung')}
-        link={datenschutz}
-        wert={wert('einwilligung') === 'ja'}
-        fehler={f('einwilligung')}
-      />
+      <div className="flex flex-col gap-4">
+        <FeldText
+          name="name"
+          label={t('name')}
+          pflicht={tf('pflicht')}
+          wert={wert('name')}
+          autoComplete="name"
+          maxLaenge={100}
+          fehler={f('name')}
+        />
+        <FeldText
+          name="email"
+          typ="email"
+          label={t('email')}
+          pflicht={tf('pflicht')}
+          wert={wert('email')}
+          autoComplete="email"
+          maxLaenge={254}
+          fehler={f('email')}
+        />
+        <FeldText
+          name="telefon"
+          typ="tel"
+          label={
+            <>
+              {t('telefon')} <span className="font-normal text-tinte-2">{tf('optional')}</span>
+            </>
+          }
+          hinweis={t('telefonHinweis')}
+          wert={wert('telefon')}
+          autoComplete="tel"
+          maxLaenge={30}
+          fehler={f('telefon')}
+        />
+        <FeldAuswahl
+          name="personen"
+          label={t('personen')}
+          pflicht={tf('pflicht')}
+          hinweis={verfuegbar !== null ? t('personenHinweis', { verfuegbar }) : undefined}
+          wert={wert('personen') ?? '1'}
+          optionen={Array.from({ length: Math.max(1, Math.min(10, verfuegbar ?? 10)) }, (_, i) => ({
+            wert: String(i + 1),
+            label: String(i + 1),
+          }))}
+          fehler={f('personen')}
+        />
+      </div>
+      <div className="flex flex-col gap-4">
+        <FeldHaken
+          name="einwilligung"
+          label={t('einwilligung')}
+          pflicht={tf('pflicht')}
+          wert={wert('einwilligung') === 'ja'}
+          fehler={f('einwilligung')}
+        />
+        <p className="text-16">
+          <a href={datenschutz.href} className="font-bold underline underline-offset-2">
+            {datenschutz.label}
+          </a>
+        </p>
+      </div>
       <Honigtopf label={tf('honigtopf')} />
       <AltchaFeld key={altchaSchluessel} sprache={sprache} texte={{ label: tf('altcha.label'), hinweis: tf('altcha.hinweis') }} />
-      <div className="self-start">
-        <SendenKnopf texte={{ senden: t('senden'), sendet: tf('sendet') }} />
-      </div>
-    </>
+      <SendenKnopf className="w-full" texte={{ senden: t('senden'), sendet: tf('sendet') }} />
+    </div>
   );
 }
 

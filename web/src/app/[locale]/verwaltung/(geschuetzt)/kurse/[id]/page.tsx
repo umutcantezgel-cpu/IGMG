@@ -26,7 +26,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
     <>
       <NextLink
         href="/verwaltung/kurse"
-        className="inline-flex min-h-11 items-center gap-2 self-start font-bold underline underline-offset-4"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
       >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
@@ -40,7 +40,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
             <NextLink
               href="/bildung/korankurse"
               prefetch={false}
-              className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4"
+              className="inline-flex min-h-12 items-center gap-2 font-bold underline underline-offset-4"
             >
               {t('oeffentlichAnsehen')}
               <ExternalLink aria-hidden className="size-4" />

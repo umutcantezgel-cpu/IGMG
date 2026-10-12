@@ -16,7 +16,7 @@ export default async function NeuesTicketSeite() {
     <>
       <NextLink
         href="/verwaltung/tickets"
-        className="inline-flex min-h-11 items-center gap-2 self-start font-bold underline underline-offset-4"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
       >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
