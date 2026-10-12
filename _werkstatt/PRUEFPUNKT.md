@@ -13,7 +13,7 @@
      - Kurzprüfung: Konsole, axe, F-Liste, Unit/E2E-Teil.
      - Vorab-Prüfung, dann FF main.
   4. **Endprüfung** (Blindvergleich plus Endprüfer). Z-04 bei Bedarf als A-02 nach L7.
-- **Während Welle H-F ausgeblendet:** Die Schreibrechte von Welle 1 (`$S/hf-w1-dateien.txt`) stehen auf assume-unchanged. Dazu stehen `_werkstatt/bilder/H-F*/` und `_werkstatt/protokolle/werkzeug-*` in `.git/info/exclude`. Nach der Welle zurücksetzen: `xargs -a $S/hf-w1-dateien.txt -d "\n" git update-index --no-assume-unchanged`, die zwei Zeilen aus `.git/info/exclude` löschen, dann die geprüften Änderungen committen.
+- **Während Welle H-F ausgeblendet:** Die Schreibrechte von Welle 1 (`$S/hf-w1-dateien.txt`) stehen auf assume-unchanged. Dazu stehen `_werkstatt/bilder/H-F*/` und `_werkstatt/protokolle/werkzeug-*` sowie `_werkstatt/protokolle/H-F*` in `.git/info/exclude`. Nach der Welle zurücksetzen: `xargs -a $S/hf-w1-dateien.txt -d "\n" git update-index --no-assume-unchanged`, die drei Zeilen aus `.git/info/exclude` löschen, dann die geprüften Änderungen committen.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
