@@ -1,0 +1,119 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-13-57",
+  "basis": "http://127.0.0.1:3500",
+  "laeufe": 5,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1878,
+          "cls": 0,
+          "tbtMs": 348,
+          "jsKb": 178.8,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 2578
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 73,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2047,
+          "cls": 0,
+          "tbtMs": 1222,
+          "jsKb": 178.8,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3034
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1930,
+          "cls": 0,
+          "tbtMs": 479,
+          "jsKb": 178.8,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3550
+          }
+        },
+        {
+          "lauf": 4,
+          "performance": 83,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1904,
+          "cls": 0,
+          "tbtMs": 597,
+          "jsKb": 178.8,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3558
+          }
+        },
+        {
+          "lauf": 5,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1865,
+          "cls": 0,
+          "tbtMs": 403,
+          "jsKb": 178.8,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3570
+          }
+        }
+      ],
+      "median": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1904,
+        "cls": 0,
+        "tbtMs": 479,
+        "jsKb": 178.8,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 3550
+      },
+      "spanneLeistung": [
+        73,
+        90
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}
