@@ -80,3 +80,9 @@ In dieser Liste der damals jüngsten Deployments stand kein Deployment im Zustan
   (`⨯ turbopackFileSystemCacheForBuild` ist die Liste der Next-Experimente, ausgeschaltet, keine Warnung.)
 - **Laufzeitfehler (`get_runtime_errors`, 3 h):** „No runtime errors found in the selected time range.“ Laufzeitprotokolle des neuen Deployments (30 min, nach Stufe gruppiert): keine Einträge.
 - **Ablauf bei Wiederauftreten:** In VERCEL.md §15 steht eine eigene Zeile „Build rot mit RuntimeError: Aborted()“ mit dem Hinweis auf Redeploy.
+
+## Nachtrag 23:55 UTC · ABSCHLUSS, FF main → b0bcc11
+- **Vorab:** grün (`C3b-vorab-b0bcc11.md`): `vercel build --prod`, `pnpm check` (unit 818), `geheimnisse:pruefen`, Warnung 0, Aborted 0. Seit 90bb76d nur Dokumentation, `_werkstatt` und das Entfernen der Root-`CLAUDE.md`.
+- **Vorschau** dpl_4FYsBcZa7c8igezPK7DYAgt5Ug1B (b0bcc11): READY. Auch 6687f9f und 5caf6a7 READY.
+- **Produktion** dpl_8rTxRG2W4vZePuKc8e55881RT7x9: READY (Bau 79 s), Region fra1, Commit b0bcc11, Aliase igmg-five.vercel.app und igmg-codays-projects.vercel.app. Im Bauprotokoll folgt auf „Creating an optimized production build ...“ direkt „✓ Compiled successfully in 19.0s“, danach „Collecting page data using 3 workers“ und 466 Seiten; keine Warnung.
+- **Laufzeitfehler (`get_runtime_errors`, 1 h):** „No runtime errors found in the selected time range.“

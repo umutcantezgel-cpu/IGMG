@@ -34,4 +34,4 @@ Davor stehen (gekürzt) die Bauwarnungen von `scripts/vercel-bau.mjs`: `[bau] WA
 | dpl_5dY9LXRNkSL3PKvhJvDc4tXo151v | 830ab9f | git_info_fail | Wie oben |
 | dpl_FfeizT9AnkKtZiJpev8CpJX6pz7o, dpl_2ZMMTTtMZpr6K8WM7uoQ4wxhvbq1, dpl_AaTbbcMwjqbqjGmhfYHfRcAS6dpu, dpl_JAGfyhu4nxq9Pe72w7JxCFZJhdZV | 13a4bb7, a659d42, 1934632, 4e19742 | lint_or_type_error | ZWISCHENSTAND-Commits mit halbfertigen Paketen innerhalb von 3 Minuten am 11.10. Nie auf `main` (L-E01: FF nur nach grünem Vorab) |
 
-Seit der Behebung (f9f7016, ff92cad, 90bb76d) sind alle Vorschauen READY. Aus einem ERROR-Stand ging nie ein Produktions-Deployment hervor.
+Seit der Behebung (f9f7016, ff92cad, 90bb76d) sind alle Vorschauen READY. Kein ERROR-Deployment war ein Produktions-Deployment. Berichtigung nach Endprüfung Lauf 4: Der Commit 39c76b1 kam trotz seiner fehlgeschlagenen Vorschau auf `main`. Der lokale Vorab war grün, die Vorschau hatte ich nicht abgewartet. Seine Produktion baute READY (dpl_8jbdVAyopENkp7qZXT8qfP71vBrU).
