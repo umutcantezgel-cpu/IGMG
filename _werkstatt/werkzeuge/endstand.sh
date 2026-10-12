@@ -2,7 +2,7 @@
 # Endstand-Messung (Stufe C am endgültigen Stand): Dev 3200 stoppen (Speicher), 3500 aus REV bauen, Stufe-C-Schritte
 # 1–3 und 5–11, bei ruhiger Last Schritt 12 (Lighthouse verschränkt) und INP-Paare, zuletzt die E2E-Suite (Port 3700,
 # Postgres, Mailpit). Protokolle: _werkstatt/protokolle/C-* (Stufe C) und C-endstand.log (Ablauf).
-# Aufruf: bash endstand.sh REV [--ab teil]   Teile: bau, c1, c2, ruhe, e2e
+# Aufruf: bash endstand.sh REV [--ab teil]   Teile: bau, c1, c2, ruhe, e2e · OHNE_RUHE=1 überspringt Lighthouse und INP
 set -u
 REV=${1:?REV}
 AB=${3:-bau}
@@ -29,7 +29,7 @@ if soll bau; then
 fi
 if soll c1; then s "Stufe C 1–3"; bash "$W/stufe-c.sh" "$REV" --ab 1 --bis 3; fi
 if soll c2; then s "Stufe C 5–11"; bash "$W/stufe-c.sh" "$REV" --ab 5 --bis 11; fi
-if soll ruhe; then
+if soll ruhe && [ "${OHNE_RUHE:-0}" != 1 ]; then
   s "warten auf ruhige Last (1-min < 1,5, höchstens 15 min)"
   for i in $(seq 1 90); do awk '{exit !($1 < 1.5)}' /proc/loadavg && break; sleep 10; done
   s "Stufe C 12 Lighthouse verschränkt (5 Runden)"
