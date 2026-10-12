@@ -31,10 +31,14 @@ Keine Klammerwerte (`px-[22px]`, `text-[15px]`, `max-w-[760px]`, `grid-cols-[rep
 Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN einen Token vorschlagen – nie selbst `globals.css` ändern.
 
 ## 2. Bausteine
-- Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen.
+- Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen. Detailseiten (E4, H-C02): Kopfbild über `bild` in der rechten Spalte ab lg (Fläche `h-55 md:h-75 lg:aspect-4/3 lg:h-auto rounded-lg border border-linie`), ohne gepflegtes Bild nur ab lg ein Platzhalter mit `bildAbLg`; Organisationsbezug über `kennungZeichen` (Logo 20 px, nie vergrößert) statt Achtstern.
 - Abschnitt: `<section aria-labelledby=…>` → innen `mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8`, Kopf mit Kennung (`text-16 font-bold text-gruen-800` + `Stern8` aus Icons.tsx mit `size-4` (16 px), wie auf der Startseite – kein lucide-Icon und kein Punkt als Kennungszeichen; Sichtabnahme E3), `h2.text-display-2`, Einleitung `text-20 leading-einleitung text-pretty text-tinte-2 max-w-einleitung`, Aktion rechts (sekundärer Knopf).
 - Knöpfe: primär `bg-gruen-700 … hover:bg-gruen-800 active:scale-98 transition duration-(--dauer-rueckmeldung)` (`transition`, nicht `transition-colors`: nur so läuft auch die Skalierung weich), sekundär `border-2 border-gruen-700 bg-weiss px-5.5 … hover:bg-gruen-50 active:scale-98`. Mindesthöhe `min-h-12` (48 px).
 - Karten: `EventCard`, `NewsCard`, `CourseCard`, `OrgCard`, `PersonCard` – vorhandene nutzen. Hover: Rand `gruen-700` + `shadow-s2`; ganze Karte klickbar über `after:absolute after:inset-0` am Titel-Link.
+- Abzeichen (E4, H-C01): Kategorien neutral `border border-linie bg-sand text-tinte-2`; nur „Wichtig“ rot (`bg-tag-wichtig-bg text-tag-wichtig`); Status-Abzeichen „Empfohlen“/„Aktuell“ als weiße Pille mit grünem Rand und `Stern8`. Org-Farben nur in Band, Kante und Org-Text, nie als Kategorie.
+- Terminzeile (E4, H-C01): `Calendar` + Datum, `Clock` + Uhrzeit (nur die Uhrzeit `whitespace-nowrap`), kein „·“ dazwischen; das Datum darf umbrechen.
+- Gebetszeiten (E4, H-C09): Telefonleiste als Karte mit Fußzeilenknopf „Alle Zeiten“, nächstes Gebet in der Zeitenliste mit `Stern8` 16 px, Link „Alle Gebetszeiten“ mindestens 48 px hoch.
+- Schrittweg in Formularen (E4, H-C10): Achtstern-Marken mit 2-px-Linie Spitze an Spitze, grün bis zur aktuellen Marke, kommende sandfarben; unter 1024 px als Markenreihe statt Balken.
 - Zustände: `Zustandsgrafik` (`leer`, `fehler`, `erfolg`, `offline`, `nichtGefunden`) aus `web/src/components/website/Zustandsgrafik.tsx`. Leerzustand = Grafik + ein Satz + nächster Schritt (Link/Knopf), Karte `rounded-lg border border-linie bg-weiss px-6 py-12 text-center`.
 - Trenner zwischen inhaltlich getrennten Blöcken: `Trenner` (Linie – Achtstern – Linie). Sparsam, höchstens einer je Bildschirmhöhe.
 - Laden: `LadeStern` im Knopf neben dem Text („Wird gesendet …“), nie allein.
