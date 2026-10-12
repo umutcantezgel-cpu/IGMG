@@ -1,7 +1,7 @@
 # PRÜFPUNKT
 
 - **Nächster exakter Schritt (16:55 UTC):**
-  1. **Befundwelle H-F, Welle 1:** läuft als zwei hb-welle-Workflows: `wf_3a40f904-4c3` (A: H-F01, 03, 05, 07) und `wf_999e16ff-979` (B: H-F02, 04, 06). Dev 3200 läuft (pglite-h10, Zustand `$S/verwaltung-state.json` gültig). Danach:
+  1. **Befundwelle H-F, Welle 1: fertig (1bbee03).** Davor lief: läuft als zwei hb-welle-Workflows: `wf_3a40f904-4c3` (A: H-F01, 03, 05, 07) und `wf_999e16ff-979` (B: H-F02, 04, 06). Dev 3200 läuft (pglite-h10, Zustand `$S/verwaltung-state.json` gültig). Danach:
      - Ergebnisse sichten.
      - REFERENZ §2 nachziehen (Seitenende L-E15, Nachrichtenkarten, Tagesbogen).
      - Stufe A gesamt prüfen: tsc, eslint, Unit, sprachen, freie Werte.
@@ -13,7 +13,7 @@
      - Kurzprüfung: Konsole, axe, F-Liste, Unit/E2E-Teil.
      - Vorab-Prüfung, dann FF main.
   4. **Endprüfung** (Blindvergleich plus Endprüfer). Z-04 bei Bedarf als A-02 nach L7.
-- **Während Welle H-F ausgeblendet:** Die Schreibrechte von Welle 1 (`$S/hf-w1-dateien.txt`) stehen auf assume-unchanged. Dazu stehen `_werkstatt/bilder/H-F*/` und `_werkstatt/protokolle/werkzeug-*` sowie `_werkstatt/protokolle/H-F*` in `.git/info/exclude`. Nach der Welle zurücksetzen: `xargs -a $S/hf-w1-dateien.txt -d "\n" git update-index --no-assume-unchanged`, die drei Zeilen aus `.git/info/exclude` löschen, dann die geprüften Änderungen committen.
+- **Während Welle H-F2 ausgeblendet:** Die Schreibrechte von Welle 2 (`$S/hf-w2-dateien.txt`) stehen auf assume-unchanged. Dazu stehen in `.git/info/exclude`: `_werkstatt/bilder/H-F*/`, `_werkstatt/protokolle/werkzeug-*`, `_werkstatt/protokolle/H-F*`, `web/src/components/verwaltung/startklar/kennung.tsx`. Nach der Welle zurücksetzen (`--no-assume-unchanged`, vier Zeilen löschen), dann committen.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
