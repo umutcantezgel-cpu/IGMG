@@ -80,15 +80,12 @@ export default async function StartklarSeite() {
             </h2>
             <p className="text-18">{gesamtText}</p>
           </div>
-          <dl className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+          <dl className="flex flex-col divide-y divide-linie rounded-md border border-linie md:flex-row md:flex-wrap md:gap-2 md:divide-y-0 md:rounded-none md:border-0">
             {STATUS_REIHE.map((s) => {
-              const { Icon, kante, ziffer } = STATUS_STIL[s];
+              const { Icon, ziffer } = STATUS_STIL[s];
               return (
-                <div
-                  key={s}
-                  className={cn('flex flex-col gap-0.5 rounded-md border border-linie px-3 py-2', z[s] > 0 && `border-l-4 ${kante}`)}
-                >
-                  <dt className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
+                <div key={s} className="flex min-h-12 items-center gap-3 px-3 md:gap-2 md:rounded-md md:border md:border-linie md:py-1">
+                  <dt className="inline-flex flex-1 items-center gap-1.5 text-16 text-tinte-2 md:flex-none md:whitespace-nowrap">
                     <Icon aria-hidden className="size-4 shrink-0" />
                     {t(`status.${s}`)}
                   </dt>

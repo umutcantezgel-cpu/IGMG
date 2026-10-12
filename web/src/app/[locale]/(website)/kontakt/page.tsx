@@ -38,7 +38,7 @@ export default async function KontaktSeite() {
     <Seitenrahmen bereich="moschee" seite="kontakt" sprachZiel="/kontakt" pfad={[{ label: tp('kontakt') }]}>
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt-klein md:px-8">
+      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt-klein md:gap-16 md:px-8">
         {/* Erster Block (H-B10): Telefonreihenfolge im DOM – Kontaktdaten, Formular, dann die Begleitspalte; ab 1024 px nebeneinander */}
         <div className="grid gap-6 lg:grid-cols-3 lg:raster-begleitspalte">
           {/* Ab lg fest rechts oben neben dem Formular, nicht nur durch Auto-Platzierung */}
@@ -65,7 +65,8 @@ export default async function KontaktSeite() {
               </Link>
             </p>
           </section>
-          <div className="flex flex-col gap-6 lg:col-start-3 lg:row-start-2 lg:self-start">
+          {/* Ab 768 px drei gleich hohe Karten nebeneinander, ab 1024 px wieder rechts untereinander (H-C06) */}
+          <div className="grid gap-6 md:grid-cols-3 lg:col-start-3 lg:row-start-2 lg:flex lg:flex-col lg:self-start">
             <KarteOeffnungszeiten kontakt={kontakt} />
             <KarteNotfall kontakt={kontakt} />
             <KarteAdresse kontakt={kontakt} />

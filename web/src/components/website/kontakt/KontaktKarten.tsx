@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowRight, Globe, Mail, MapPin, Phone } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { oeffnungszeitText } from '@/components/website/fuss/zeiten';
 import { Text } from '@/components/website/Text';
@@ -21,7 +21,6 @@ export async function KarteKontaktdaten({ kontakt }: { kontakt: SeitenInhalt<'ko
   return (
     <section aria-labelledby="kontakt-daten" className={KARTE}>
       <h2 id="kontakt-daten" className={UEBERSCHRIFT}>
-        <Phone aria-hidden className="size-6 shrink-0 text-gruen-700" />
         {t('kontaktdaten.titel')}
       </h2>
       {/* Drei Wege untereinander, durch Linien getrennt; jede Zeile mindestens 48 px hoch (K-11) */}
@@ -65,7 +64,6 @@ export async function KarteOeffnungszeiten({ kontakt }: { kontakt: SeitenInhalt<
   return (
     <section aria-labelledby="kontakt-oeffnungszeiten" className={KARTE}>
       <h2 id="kontakt-oeffnungszeiten" className={UEBERSCHRIFT}>
-        <Clock aria-hidden className="size-6 shrink-0 text-gruen-700" />
         {t('oeffnungszeiten.titel')}
       </h2>
       {/* Gepflegte Öffnungszeiten (Verwaltung › Seiteninhalte › Kontakt, dieselbe Quelle wie die Fußzeile); sonst Design-Texte */}
@@ -113,18 +111,24 @@ export async function KarteNotfall({ kontakt }: { kontakt: SeitenInhalt<'kontakt
   const t = await getTranslations('kontakt');
   const notfall = telefonHref(kontakt.notfallTelefon);
   return (
-    <section aria-labelledby="kontakt-notfall" className="flex flex-col gap-3 rounded-lg bg-fehler-toenung p-6">
+    <section aria-labelledby="kontakt-notfall" className={KARTE}>
       <h2 id="kontakt-notfall" className={UEBERSCHRIFT}>
-        <Phone aria-hidden className="size-6 shrink-0 text-fehler" />
         {t('notfall.titel')}
       </h2>
       <Text feld={kontakt.notfalltext} sprache={sprache} als="p" />
       {notfall ? (
-        <a href={notfall} className="flex min-h-12 items-center text-20 font-bold wrap-anywhere text-fehler underline underline-offset-3">
+        <a
+          href={notfall}
+          className="flex min-h-12 items-center gap-2.5 text-20 font-bold wrap-anywhere text-fehler underline underline-offset-3"
+        >
+          <Phone aria-hidden className="size-5 shrink-0" />
           {kontakt.notfallTelefon}
         </a>
       ) : (
-        <strong className="text-20 wrap-anywhere text-fehler">{kontakt.notfallTelefon}</strong>
+        <strong className="flex min-h-12 items-center gap-2.5 text-20 font-bold wrap-anywhere text-fehler">
+          <Phone aria-hidden className="size-5 shrink-0" />
+          {kontakt.notfallTelefon}
+        </strong>
       )}
     </section>
   );
@@ -135,7 +139,6 @@ export async function KarteAdresse({ kontakt }: { kontakt: SeitenInhalt<'kontakt
   return (
     <section aria-labelledby="kontakt-adresse" className={KARTE}>
       <h2 id="kontakt-adresse" className={UEBERSCHRIFT}>
-        <MapPin aria-hidden className="size-6 shrink-0 text-gruen-700" />
         {t('adresse.titel')}
       </h2>
       <address className="flex flex-col not-italic">
@@ -149,7 +152,7 @@ export async function KarteAdresse({ kontakt }: { kontakt: SeitenInhalt<'kontakt
         className={cn(KNOPF_RAHMEN, 'mt-auto self-start')}
       >
         {/* Sprung zum Kartenbereich dieser Seite – kein externer Dienst (Tor A SP-A-15, A-S11a) */}
-        <MapPin aria-hidden className="size-5" />
+        <MapPin aria-hidden className="size-5 shrink-0" />
         {t('adresse.karte')}
       </a>
     </section>

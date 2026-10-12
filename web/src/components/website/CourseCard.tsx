@@ -1,4 +1,4 @@
-import { ArrowRight, CircleCheck, CircleX, Clock, Info, LogIn, User } from 'lucide-react';
+import { ArrowRight, CircleCheck, CircleX, Clock, Info, MapPin, User } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
@@ -49,7 +49,7 @@ export async function CourseCard({
           Icon: CircleCheck,
         };
   const aktionText = zustand === 'register' ? t('aktionVoranmeldung') : zustand === 'join' ? t('aktionTeilnahme') : t('aktionGesperrt');
-  const AktionIcon = zustand === 'join' ? LogIn : ArrowRight;
+  const AktionIcon = zustand === 'join' ? MapPin : ArrowRight;
   const StatusIcon = status.Icon;
 
   return (
@@ -71,37 +71,43 @@ export async function CourseCard({
           {status.text}
         </span>
         <Text feld={kurs.titel} sprache={sprache} als="h3" className="text-24" />
-        {kurs.beschreibung ? <Text feld={kurs.beschreibung} sprache={sprache} als="p" className="text-pretty text-tinte-2" /> : null}
-        <dl className="flex flex-col gap-2 border-t border-linie pt-4">
-          {kurs.zielgruppe ? (
-            <div className="flex items-start gap-3">
-              <dt className="flex pt-0.75 text-gruen-700">
-                <User aria-hidden className="size-5" />
-                <span className="sr-only">{t('zielgruppe')}</span>
-              </dt>
-              <dd className="font-bold text-pretty">
-                <Text feld={kurs.zielgruppe} sprache={sprache} />
-              </dd>
-            </div>
-          ) : null}
-          {kurs.zeiten ? (
-            <div className="flex items-start gap-3">
-              <dt className="flex pt-0.75 text-gruen-700">
-                <Clock aria-hidden className="size-5" />
-                <span className="sr-only">{t('zeiten')}</span>
-              </dt>
-              <dd className="text-pretty">
-                <Text feld={kurs.zeiten} sprache={sprache} />
-              </dd>
-            </div>
-          ) : null}
-        </dl>
-        {kurs.hinweis ? (
-          <p className="flex items-start gap-2.5 rounded-md bg-tag-bildung-bg px-3.5 py-2.5 text-16 text-tinte">
-            <Info aria-hidden className="mt-0.5 size-4.5 shrink-0 text-tag-bildung" />
-            <Text feld={kurs.hinweis} sprache={sprache} />
-          </p>
+        {kurs.beschreibung ? (
+          <Text feld={kurs.beschreibung} sprache={sprache} als="p" className="max-w-text text-pretty text-tinte-2" />
         ) : null}
+        <div className="flex flex-col gap-2 border-t border-linie pt-4">
+          <dl className="flex flex-col gap-2">
+            {kurs.zielgruppe ? (
+              <div className="flex items-start gap-3">
+                <dt className="flex pt-0.75 text-gruen-700">
+                  <User aria-hidden className="size-5" />
+                  <span className="sr-only">{t('zielgruppe')}</span>
+                </dt>
+                <dd className="font-bold text-pretty">
+                  <Text feld={kurs.zielgruppe} sprache={sprache} />
+                </dd>
+              </div>
+            ) : null}
+            {kurs.zeiten ? (
+              <div className="flex items-start gap-3">
+                <dt className="flex pt-0.75 text-gruen-700">
+                  <Clock aria-hidden className="size-5" />
+                  <span className="sr-only">{t('zeiten')}</span>
+                </dt>
+                <dd className="text-pretty">
+                  <Text feld={kurs.zeiten} sprache={sprache} />
+                </dd>
+              </div>
+            ) : null}
+          </dl>
+          {kurs.hinweis ? (
+            <p className="flex items-start gap-3 text-pretty text-tinte-2">
+              <span className="flex pt-0.75 text-gruen-700">
+                <Info aria-hidden className="size-5" />
+              </span>
+              <Text feld={kurs.hinweis} sprache={sprache} />
+            </p>
+          ) : null}
+        </div>
         {kurs.inhalte.length ? (
           <div className="flex flex-col gap-1.5">
             <h4 className="font-text text-16 font-bold text-tinte-2">{t('kursinhalte')}</h4>
@@ -115,7 +121,8 @@ export async function CourseCard({
             </ul>
           </div>
         ) : null}
-        <div className="mt-auto pt-2">
+        {/* In der vollbreiten letzten Karte (768–1279 px) bleibt der Knopf so breit wie in den schmalen Karten */}
+        <div className="mt-auto pt-2 md:max-w-sm">
           {ziel ? (
             <Link
               href={ziel}

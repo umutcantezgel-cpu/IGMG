@@ -42,9 +42,9 @@ export default async function KorankurseSeite() {
             {t('kursangebote')}
           </h2>
           {kurse.length ? (
-            <ul className="grid raster-karten gap-6">
+            <ul className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {kurse.map((kurs) => (
-                <li key={kurs.id}>
+                <li key={kurs.id} className="md:max-xl:odd:last:col-span-2">
                   <CourseCard kurs={kurs} sprache={sprache} bild={kurs.bild} />
                 </li>
               ))}
@@ -62,10 +62,8 @@ export default async function KorankurseSeite() {
             </div>
           )}
         </section>
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-          <AllgemeineInformationen />
-          <AnmeldeKarte kurse={kurse} kontakt={kontakt} sprache={sprache} />
-        </div>
+        <AllgemeineInformationen />
+        <AnmeldeKarte kurse={kurse} kontakt={kontakt} sprache={sprache} />
       </div>
     </Seitenrahmen>
   );

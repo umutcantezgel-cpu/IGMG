@@ -1,13 +1,12 @@
-import { Car, Map as MapIcon, MapPin, Navigation } from 'lucide-react';
+import { Car, Map as MapIcon, Navigation } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { Text } from '@/components/website/Text';
 import type { Locale } from '@/i18n/routing';
-import { cn } from '@/lib/utils';
 import type { SeitenInhalt } from '@/server/queries/seiteninhalte';
 import { KarteNachKlick } from './KarteNachKlick';
 import { osmEinbettung } from './karte';
-import { KARTE, KNOPF_RAHMEN, UEBERSCHRIFT } from './stil';
+import { KNOPF_RAHMEN } from './stil';
 
 /**
  * Anfahrt (design/Contact.dc.html:49–57): drei Wege mit Texten aus dem Seiteninhalt und die Kartenfläche,
@@ -26,10 +25,9 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
   // Einbettung nur, wenn Koordinaten bestätigt sind (M-010); sonst Platzhalter mit Rahmen und Fuß (H-B10)
   const einbettung = kontakt.koordinaten ? osmEinbettung(kontakt.koordinaten) : undefined;
   return (
-    <section id="karte" aria-labelledby="kontakt-anfahrt" className="grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-5">
-      <div className={cn(KARTE, 'gap-4 lg:col-span-2')}>
-        <h2 id="kontakt-anfahrt" className={UEBERSCHRIFT}>
-          <MapPin aria-hidden className="size-6 shrink-0 text-gruen-700" />
+    <section id="karte" aria-labelledby="kontakt-anfahrt" className="grid scroll-mt-24 items-start gap-6 lg:grid-cols-5">
+      <div className="flex min-w-0 flex-col gap-4 lg:col-span-2">
+        <h2 id="kontakt-anfahrt" className="text-display-2">
           {t('anfahrt.titel')}
         </h2>
         {wege.map(({ schluessel, Icon, feld }) => (
