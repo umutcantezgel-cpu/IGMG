@@ -23,4 +23,5 @@
 - **Letzter grüner Commit:**
   - Branch: e0c8e9f (Perf III, Unit 797, tsc grün). Die Vorschau dpl_5RDkcAe97uNMjxwesxHAcGm4pZjc ist READY in fra1.
   - main: 71e263f, Produktion READY. Das Protokoll enthält nur die erwarteten Startprüfungs-Meldungen über fehlende Menschen-Werte (`protokolle/C-vercel-mcp.md`).
+- **Git während der Nachmessung:** 159 Protokolle `_werkstatt/protokolle/C-*` stehen auf `assume-unchanged` (Liste `$SCRATCHPAD/c-dateien.txt`). In `.git/info/exclude` steht der Block `stufe-c2-laufend`. Nach dem Lauf zurücksetzen: `xargs -a $SCRATCHPAD/c-dateien.txt git update-index --no-assume-unchanged`, den Block aus `.git/info/exclude` entfernen, dann alles committen.
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.
