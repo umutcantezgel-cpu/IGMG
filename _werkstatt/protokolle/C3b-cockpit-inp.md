@@ -28,4 +28,8 @@
   - JavaScript 253 kB gz: Das Budget „JavaScript beim ersten Laden einer öffentlichen Seite“ (AUFTRAG BUDGETS) gilt für öffentliche Seiten, das Cockpit liegt hinter der Anmeldung.
 - **E2E** der betroffenen Abläufe (Abmelden über das Kontomenü, Benutzer, Seiteninhalte): siehe unten.
 
-E2E_NACHTRAG
+**E2E am neuen Build** (`$S/e2e/verwaltung-menue.sh`, bau-head 66965d0, Port 3700, ohne Wiederholung, 20:57 UTC):
+- `verwaltung-anmeldung.spec.ts`: 5/5 grün, darunter Abmelden über das Kontomenü.
+- `verwaltung-benutzer.spec.ts`: 2/2 grün, darunter das Kontomenü von der Übersicht aus.
+- `verwaltung-seiteninhalte-organisationen.spec.ts`: 3/3 grün.
+- Zusammen 10 grün, 0 rot. Die 10 Telefon-Läufe sind wie vorgesehen übersprungen (Verwaltungsabläufe nur am Desktop).
