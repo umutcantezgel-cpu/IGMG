@@ -34,8 +34,31 @@ function erzeuge(): Datenbank {
   const { PGlite } = require('@electric-sql/pglite') as typeof import('@electric-sql/pglite');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { drizzle: drizzleLite } = require('drizzle-orm/pglite') as typeof import('drizzle-orm/pglite');
-  const client = new PGlite(process.env.PGLITE_VERZEICHNIS ?? '.pglite');
+  const client = new PGlite(pgliteVerzeichnis());
   return drizzleLite(client, { schema, casing: 'snake_case' }) as unknown as Datenbank;
+}
+
+/**
+ * Beim Bau ohne Datenbank (BAU_PGLITE=1, ADR 0017/0019) sammeln mehrere Worker-Prozesse gleichzeitig Seitendaten. PGlite
+ * erlaubt je Datenverzeichnis nur einen Prozess; zwei gleichzeitige Öffner brechen mit „RuntimeError: Aborted()“ ab
+ * (Vorschau 39c76b1). Deshalb öffnet jeder Bau-Prozess eine eigene Kopie der Bau-Datenbank – beim Bau wird nur gelesen.
+ * Außerhalb des Baus (Entwicklung, Tests, lokaler Server) bleibt es beim gemeinsamen Verzeichnis.
+ */
+function pgliteVerzeichnis(): string {
+  const quelle = process.env.PGLITE_VERZEICHNIS ?? '.pglite';
+  if (process.env.BAU_PGLITE !== '1' || process.env.NEXT_PHASE !== 'phase-production-build') return quelle;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { cpSync, mkdtempSync, rmSync } = require('node:fs') as typeof import('node:fs');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { join } = require('node:path') as typeof import('node:path');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { tmpdir } = require('node:os') as typeof import('node:os');
+  const ordner = mkdtempSync(join(/*turbopackIgnore: true*/ tmpdir(), 'igmg-pglite-bau-'));
+  const ziel = join(/*turbopackIgnore: true*/ ordner, 'daten');
+  cpSync(/*turbopackIgnore: true*/ quelle, ziel, { recursive: true });
+  // Kopie mit dem Bau-Prozess entfernen
+  process.once('exit', () => rmSync(/*turbopackIgnore: true*/ ordner, { recursive: true, force: true }));
+  return ziel;
 }
 
 /**

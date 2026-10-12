@@ -61,7 +61,8 @@ export async function pruefeSpeicher(env: Umgebung): Promise<SpeicherProbe> {
       return { erreichbar: true, art, meldung: `Der S3-Bucket ${env.S3_BUCKET} antwortet (lesende Probe).` };
     }
     // Dateisystem: das Verzeichnis oder, falls es noch fehlt, der nächste vorhandene Elternordner muss beschreibbar sein
-    const verzeichnis = resolve(env.MEDIEN_VERZEICHNIS ?? '.medien');
+    // turbopackIgnore: Pfad erst zur Laufzeit bekannt, sonst verfolgt der Bau das ganze Projekt in die Cockpit-Route
+    const verzeichnis = resolve(/*turbopackIgnore: true*/ env.MEDIEN_VERZEICHNIS ?? '.medien');
     let ziel = verzeichnis;
     for (;;) {
       try {
