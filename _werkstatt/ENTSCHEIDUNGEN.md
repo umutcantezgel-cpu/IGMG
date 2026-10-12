@@ -71,3 +71,9 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - **Bewertung:** Weg 2 misst den Wortlaut, ist gepaart wiederholbar und bleibt im Repo. Weg 1 bleibt als Lighthouse-Kennzahl im Protokoll und in der Performance-Note, gilt aber nicht als „Reaktion auf Eingaben“. Weg 3 entfällt.
 - **Umkehrprobe:** Wäre die Ladephase gemeint, stünde dort Blockierzeit oder Interaktivität. Der Wortlaut nennt Eingaben.
 - **Folgen zweiter Ordnung:** TBT wird weiter berichtet, mit E0-Vergleich und Paarregel. INP im Labor bei 4× Drosselung ist strenger als Feld-INP auf echten Telefonen (UA-01). Die Performance-Note ≥ 90 bleibt ein eigenes Budget; verfehlt sie es am Endstand, folgt eine AUSNAHME nach L7 mit eigenem Denkprotokoll.
+
+## L-E13 · 2026-10-12 · Opus · Auslegung K-006: Rubriken in Begleitkarten in fetter Sans (Sichtabnahme C2)
+- **Anlass:** Auf der Kontaktseite tragen vier Begleitkarten neun Serif-Titel (Kontaktdaten, Öffnungszeiten, Notfallkontakt, Adresse, Besucher willkommen …). Laut Prüfern stapeln sie sich zu einem Kastenstapel, die Seite wirkt unruhig (Sichtabnahme C2, Paket H-E03).
+- **Auslegung:** K-006 gibt der Titelschrift (Serif) die Inhaltstitel: Seiten-, Abschnitts- und Kartentitel mit eigenem Inhalt. Rubriken, die in einer Begleitkarte nur Daten ordnen, stehen in fetter Sans `text-20`, wie die h3 von Mission und Vision (H-C05).
+- **Folgen:** H-E03 setzt das auf der Kontaktseite um. Nachziehen, sobald die Dateien ohnehin angefasst werden: `KalenderAbo.tsx` (Rubrik) und „Fragen?“ auf Mitglied werden. REFERENZ §2 wird nach der Welle ergänzt.
+

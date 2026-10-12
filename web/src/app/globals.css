@@ -434,10 +434,11 @@
 ::view-transition-new(.seite) {
   animation: var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden;
 }
-/* B-05 gemeinsame Elemente (Karte → Detail): Morph 400 ms */
+/* B-05 gemeinsame Elemente (Karte → Detail): Morph 400 ms mit ease-eintritt – der Titel kommt vor dem Inhalt an
+   (Sichtabnahme C2, H-E14; vorher ease-standard) */
 ::view-transition-group(.morph) {
   animation-duration: 400ms;
-  animation-timing-function: var(--ease-standard);
+  animation-timing-function: var(--ease-eintritt);
 }
 /* Titel brechen auf Karte und Detailseite verschieden um: Schnappschüsse in natürlicher Größe oben links statt auf die
    Gruppenbreite gestreckt, und nacheinander statt gleichzeitig (der alte geht, dann kommt der neue) – kein Geisterbild */
@@ -472,16 +473,16 @@
     transform-origin: center;
     animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
   }
-  /* B-06: Ein Punkt färbt sich erst, wenn die Linie ihn erreicht (--anteil = Lage des Punkts auf dem Bogen, 0…1).
-     anteil³ nähert die Umkehrung von ease-eintritt: die Färbung kommt nie vor der Linie (H-B02). */
+  /* B-06: Ein Punkt färbt sich, wenn die Linie ihn erreicht. --anteil ist der Zeitanteil der Enthüllung (0…1), zu dem die
+     Kante den Punkt erreicht (TagesbogenLive rechnet ihn über die Umkehrung von ease-eintritt, H-E01). Bis dahin ist es die
+     Lage auf dem Bogen: Linear auf die Zeit gelegt färbt sie nie vor der Linie, nur später (H-B02). */
   .bogen-punkt-erreicht::after {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: inherit;
     background: var(--color-gruen-700);
-    animation: einblenden var(--dauer-wechsel) var(--ease-standard)
-      calc(var(--anteil) * var(--anteil) * var(--anteil) * var(--dauer-moment)) both;
+    animation: einblenden var(--dauer-wechsel) var(--ease-standard) calc(var(--anteil) * var(--dauer-moment)) both;
   }
   /* B-07 Weg der Gemeinde (Auslöser `ErstesSichtbarwerden`): 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
   [data-sicht] {
