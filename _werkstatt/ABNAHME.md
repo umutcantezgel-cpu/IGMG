@@ -30,7 +30,7 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 - **UA-03 Verwaltungsflüsse auf der Vorschau:** Produktion/Vorschau ohne Datenbank und ohne Konten (G3/G5) → Ersatz: Verwaltungsflüsse lokal gegen PGlite (`anmeldung.mjs`), Vorschau nur öffentliche Ansichten.
 - **UA-04 Chromium-Version:** Playwright 1.64 erwartet Chromium 156, vorinstalliert ist 141 (Installation nicht erlaubt) → Ersatz: Chromium 141 für alle Läufe, vorher und nachher gleich.
 
-## V-Prüfliste (Stand 2026-10-12 04:50 UTC; Beleg der Endprüfung: `berichte/STUFE-C.md`, Schritt 10/11)
+## V-Prüfliste (Stand 2026-10-12 11:00 UTC; Beleg der Endprüfung: `berichte/STUFE-C.md`, Schritt 10/11)
 | V | Kurz | Stand |
 |---|---|---|
 | V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | erfüllt (0c224da; per `validateConfig` der CLI geprüft) – Bestätigung im E2-TOR |
@@ -45,4 +45,4 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 | V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | erfüllt (`protokolle/H-V07-V10-pruefung.md`, `lib/db/fehler.ts`, Health mit Zeitlimit 352d1bb, Runbook §§ 12–13, 16; ML-14–16) |
 | V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | erfüllt als Entwurf (0cd8173, 8df9556); Freigabe: Menschen (ML-11, ML-12) |
 | V-12 | Tarif-Empfehlung in MENSCHEN | erfüllt (ML-09) |
-| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen (READY; zuletzt 71e263f, dpl_5Tvd5XVW2BYimH1u2Bos6MeHBMa3). Das Laufzeitprotokoll zeigt seit 11.10. 19:28 UTC keine Ausnahmefehler, nur die gewollten Meldungen der Startprüfung über fehlende Menschen-Werte. Vorschau des Arbeitsbranchs e0c8e9f READY in fra1 (`protokolle/C-vercel-mcp.md`) |
+| V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen. Am 12.10. gab es zwei Ausnahmefehler auf 71e263f/1ca46e0: OG-Standardbild mit DYNAMIC_SERVER_USAGE und „DATABASE_URL fehlt“ durch HTML-begrenzte Bots auf `/`. Beide sind in ce6e6a5 behoben und ohne Datenbank gegengeprüft (`protokolle/C-produktionsfehler.md`). main = 58a3344, `dpl_2yJkXGasRVpVRaB7L2KvW7Wjibsm` READY in fra1, seitdem 0 Laufzeitfehler. Sonst nur die gewollten Meldungen der Startprüfung über fehlende Menschen-Werte. Vorschau des Arbeitsbranchs e0c8e9f READY in fra1 (`protokolle/C-vercel-mcp.md`) |

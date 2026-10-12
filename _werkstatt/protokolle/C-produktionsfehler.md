@@ -77,3 +77,11 @@ Prüfung je Anfrage am frischen Server: 8 OG-Bilder (Standard de/tr/en, Beitrag 
   - Unbekannte Termin-Slugs (500 statt 404).
   - Die Suche mit Begriff: Die Hülle kommt mit 200, der Ergebnisteil scheitert.
   - Alle drei enden mit dem Anschluss der Datenbank.
+
+## Produktion nach dem Fast-Forward (Vercel-MCP, nur lesend)
+- main → 58a3344 um 10:48 UTC. Deployment `dpl_2yJkXGasRVpVRaB7L2KvW7Wjibsm` ist READY in fra1, Aliase `igmg-five.vercel.app` und `igmg-codays-projects.vercel.app`.
+- Laufzeitfehler seit 10:51 UTC: keine. Bis 10:57 UTC gab es noch keinen Abruf; vor dem ABSCHLUSS lese ich erneut.
+- Einordnung des 24-h-Clusters „DATABASE_URL fehlt“ (1041×) nach Deployment, Abfrage 16 h:
+  - `dpl_DF7tp…` (Stand vor dem Cache-Profil-Fix vom 11.10.): 183 Zeilen, fast nur Segment-Abrufe.
+  - `dpl_5Tvd5…` (71e263f) und `dpl_6TbZ2…` (1ca46e0): je 4 Zeilen, alle auf `/`. Das ist der Bot-Fall (Befund 2), behoben mit 58a3344.
+- Unverändert und erwartet sind die Startprüfungs-Meldungen `[start] …` (fehlende Variablen, Menschen-Aufgaben ML) und „BETTER_AUTH_SECRET fehlt“ auf `/verwaltung/anmelden`. Die Verwaltung braucht Datenbank und Geheimnisse, Runbook Abschnitt 4.
