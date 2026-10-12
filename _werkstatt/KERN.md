@@ -1,4 +1,4 @@
-# KERN – Letzter Lauf · Version 1.1 (2026-10-11; 1.1: Register B-06–B-09, B-12 und Formsystem an die Umsetzung angeglichen)
+# KERN – Letzter Lauf · Version 1.2 (2026-10-12; 1.1: Register B-06–B-09, B-12 und Formsystem an die Umsetzung angeglichen; 1.2: B-03 Schublade, B-09 Wachsen aus der Mitte)
 
 Quelle der Wahrheit für Gestaltung und Auslieferung dieses Laufs. Bei Widerspruch gilt der alte Kern 2.0 (Anhang), außer wo dieser Kern ihn mit Vermerk in ENTSCHEIDUNGEN.md fortschreibt. Änderungen nur durch den Orchestrator, mit Versionsnummer und Grund. Jedes Paket nennt die Version, gegen die es gebaut wurde.
 

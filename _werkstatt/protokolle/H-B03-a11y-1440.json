@@ -1,0 +1,57 @@
+{
+  "werkzeug": "a11y",
+  "zeit": "2026-10-12-00-24",
+  "basis": "http://localhost:3200",
+  "breite": 1440,
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "routen": [
+    {
+      "name": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "/nachrichten/gemeinschaftskueche-erweitert",
+      "pfad": "/nachrichten/gemeinschaftskueche-erweitert",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    }
+  ]
+}
