@@ -1,0 +1,231 @@
+{
+  "werkzeug": "vt-zeitlupe3",
+  "basis": "http://localhost:3200",
+  "von": "/veranstaltungen",
+  "ziel": "/veranstaltungen/frauenkreis-islamische-erziehung",
+  "selektor": "[data-morph-karte^=\"v-\"] a[href*=\"/veranstaltungen/\"]",
+  "rate": 0.1,
+  "breite": 1440,
+  "bilder": [
+    {
+      "nr": 1,
+      "msNachKlick": 1838,
+      "adresse": "/veranstaltungen",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": [],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-E14/zeitlupe-veranstaltung-1440/zeitlupe-01.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachKlick": 2818,
+      "adresse": "/veranstaltungen/frauenkreis-islamische-erziehung",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 11,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-bild",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-titel",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "ausblenden",
+          "pseudo": "::view-transition-old(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 110
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-E14/zeitlupe-veranstaltung-1440/zeitlupe-02.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachKlick": 3936,
+      "adresse": "/veranstaltungen/frauenkreis-islamische-erziehung",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 9,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-bild",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-titel",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 208
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-E14/zeitlupe-veranstaltung-1440/zeitlupe-03.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachKlick": 4898,
+      "adresse": "/veranstaltungen/frauenkreis-islamische-erziehung",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 7,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-bild",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-frauenkreis-islamische-erziehung-titel",
+          "pseudo": "::view-transition-group(v-frauenkreis-islamische-erziehung-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-frauenkreis-islamische-erziehung-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 320
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-E14/zeitlupe-veranstaltung-1440/zeitlupe-04.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachKlick": 5890,
+      "adresse": "/veranstaltungen/frauenkreis-islamische-erziehung",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 1,
+      "animationen": [
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 415
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-E14/zeitlupe-veranstaltung-1440/zeitlupe-05.jpg"
+    }
+  ],
+  "kopfVorKlick": 0,
+  "endeAdresse": "/veranstaltungen/frauenkreis-islamische-erziehung",
+  "endeVt": 1,
+  "zielErreicht": true
+}

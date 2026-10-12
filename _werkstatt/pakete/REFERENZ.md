@@ -63,6 +63,8 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Kursstatus (C2, H-E11): nach der Abzeichen-Regel. Steht eine Handlung an (Voranmeldung offen), ist das Abzeichen weiß mit `gruen-700`-Rand und `Stern8`, sonst neutral sand mit Rand `linie` und Text `tinte-2`. Kein Rot.
 - Schrittmarke (C2, H-E10): Die aktuelle Marke ist voll grün mit weißer Ziffer, erledigte Marken sind hellgrün mit Häkchen, kommende sandfarben. Die Linien laufen Spitze an Spitze, die Statuszeile ab lg nur für Hilfstechnik (`lg:sr-only`).
 - Wege-Kacheln der 404 (C2, H-E12): Symbole mit 20 px ohne Symbolkreis, der Satz steht im Kopf.
+- Seitenwechsel (C2, H-E14): Der Morph Karte → Detail läuft 400 ms mit `ease-eintritt`, der Titel kommt vor dem Inhalt an.
+- Zeitenliste der Gebetszeiten (C2, H-E13): Das nächste Gebet trägt den gefüllten Achtstern (16 px) wie Karte und Bogen, vergangene Zeiten stehen in `tinte-3`.
 - Tagesbogen (C2, H-E01): Die Zeit des nächsten Gebets steht mit 24 px in `gruen-800`, die übrigen mit 18 px. Der Ort des nächsten Gebets trägt durchgehend eine Marke (Ring, dann Achtstern-Chip).
 
 ## 3. Bewegung (nur Register K-007)
