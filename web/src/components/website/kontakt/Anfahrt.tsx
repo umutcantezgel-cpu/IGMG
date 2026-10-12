@@ -1,12 +1,13 @@
 import { Car, Map as MapIcon, MapPin, Navigation } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { Text } from '@/components/website/Text';
 import type { Locale } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import type { SeitenInhalt } from '@/server/queries/seiteninhalte';
 import { KarteNachKlick } from './KarteNachKlick';
 import { osmEinbettung } from './karte';
-import { KARTE, UEBERSCHRIFT_GROSS } from './stil';
+import { KARTE, KNOPF_RAHMEN, UEBERSCHRIFT } from './stil';
 
 /**
  * Anfahrt (design/Contact.dc.html:49–57): drei Wege mit Texten aus dem Seiteninhalt und die Kartenfläche,
@@ -22,13 +23,13 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
     { schluessel: 'auto', Icon: Car, feld: kontakt.anfahrtAuto },
     { schluessel: 'fuss', Icon: MapIcon, feld: kontakt.anfahrtFuss },
   ];
-  // Einbettung nur, wenn Koordinaten bestätigt sind (M-010); sonst Platzhalter ohne Schaltfläche
+  // Einbettung nur, wenn Koordinaten bestätigt sind (M-010); sonst Platzhalter mit Rahmen und Fuß (H-B10)
   const einbettung = kontakt.koordinaten ? osmEinbettung(kontakt.koordinaten) : undefined;
   return (
     <section id="karte" aria-labelledby="kontakt-anfahrt" className="grid scroll-mt-24 items-stretch gap-6 lg:grid-cols-5">
       <div className={cn(KARTE, 'gap-4 lg:col-span-2')}>
-        <h2 id="kontakt-anfahrt" className={UEBERSCHRIFT_GROSS}>
-          <MapPin aria-hidden className="size-7 shrink-0 text-gruen-700" />
+        <h2 id="kontakt-anfahrt" className={UEBERSCHRIFT}>
+          <MapPin aria-hidden className="size-6 shrink-0 text-gruen-700" />
           {t('anfahrt.titel')}
         </h2>
         {wege.map(({ schluessel, Icon, feld }) => (
@@ -43,19 +44,29 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
           </div>
         ))}
       </div>
-      <div className="flex min-w-0 flex-col lg:col-span-3">
-        <KarteNachKlick
-          einbettung={einbettung}
-          texte={{
-            platzhalter: t('karte.platzhalter', { adresse: kontakt.adresse }),
-            laden: t('karte.laden'),
-            hinweis: t('karte.hinweis'),
-            ohneKoordinaten: t('karte.ohneKoordinaten'),
-            iframeTitel: t('karte.iframeTitel', { adresse: kontakt.adresse }),
-            naechsterSchritt: { label: tk('titel'), href: '#nachricht' },
-          }}
-        />
-      </div>
+      {einbettung ? (
+        <div className="flex min-w-0 flex-col lg:col-span-3">
+          <KarteNachKlick
+            einbettung={einbettung}
+            texte={{
+              platzhalter: t('karte.platzhalter', { adresse: kontakt.adresse }),
+              laden: t('karte.laden'),
+              hinweis: t('karte.hinweis'),
+              iframeTitel: t('karte.iframeTitel', { adresse: kontakt.adresse }),
+            }}
+          />
+        </div>
+      ) : (
+        <div className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-linie lg:col-span-3">
+          <Bildplatzhalter beschriftung={t('karte.platzhalter', { adresse: kontakt.adresse })} className="min-h-75 flex-1" />
+          <div className="flex flex-col items-start gap-4 border-t border-linie bg-weiss p-6">
+            <p className="max-w-text">{t('karte.ohneKoordinaten')}</p>
+            <a href="#nachricht" className={KNOPF_RAHMEN}>
+              {tk('titel')}
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

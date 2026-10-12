@@ -12,7 +12,7 @@ import { Text, textMitSprache } from './Text';
 
 const TOENUNG: Record<NachrichtDaten['kategorie'] | 'wichtig', string> = {
   wichtig: 'bg-tag-wichtig-bg text-tag-wichtig',
-  ankuendigung: 'bg-tag-wichtig-bg text-tag-wichtig',
+  ankuendigung: 'bg-info-toenung text-info',
   neuigkeiten: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
   gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
   veranstaltung: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
@@ -57,7 +57,13 @@ export async function NewsCard({
         className="relative flex h-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
       >
         {bild ? (
-          <MedienBild bild={bild} sprache={sprache} morph="bild" sizes="88px" className="size-22 shrink-0 rounded-md border border-linie" />
+          <MedienBild
+            bild={bild}
+            sprache={sprache}
+            morph="bild"
+            sizes="5.5rem"
+            className="size-22 shrink-0 rounded-md border border-linie"
+          />
         ) : (
           <Bildplatzhalter
             morph="bild"
@@ -112,7 +118,7 @@ export async function NewsCard({
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
             {kategorie}
-            <span className="inline-flex rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
+            <span className="inline-flex rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
               {t('aktuell')}
             </span>
           </div>
@@ -131,12 +137,16 @@ export async function NewsCard({
               </span>
             ) : null}
           </div>
-          <Text feld={n.kurztext} sprache={sprache} als="p" className="max-w-[62ch] text-pretty text-tinte-2" />
+          <Text feld={n.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty text-tinte-2" />
           <Link
             href={ziel}
-            className="mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition-colors hover:bg-gruen-800 hover:text-weiss"
+            className="mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
           >
-            <span>{t('artikelLesen')}</span>
+            {/* Name mit Titel wie in der Standardkarte (K-11, Lighthouse link-text: „Weiterlesen“ allein ist nichtssagend) */}
+            <span aria-hidden>{t('weiterlesen')}</span>
+            <span className="sr-only wrap-anywhere whitespace-normal">
+              {t('weiterlesen')}: <span lang={titel.lang}>{titel.text}</span>
+            </span>
             <ArrowRight aria-hidden className="size-5" />
           </Link>
         </div>
@@ -150,40 +160,43 @@ export async function NewsCard({
       className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
     >
       {bild ? (
-        <MedienBild bild={bild} sprache={sprache} morph="bild" sizes={SIZES_RASTER} className="h-[180px] border-b border-linie" />
+        <MedienBild bild={bild} sprache={sprache} morph="bild" sizes={SIZES_RASTER} className="h-45 border-b border-linie" />
       ) : (
-        <Bildplatzhalter morph="bild" beschriftung={t('fotoBeitrag')} className="h-[180px] border-b border-linie" />
+        <Bildplatzhalter morph="bild" beschriftung={t('fotoBeitrag')} className="h-45 border-b border-linie" />
       )}
       <div className="flex flex-1 flex-col gap-3 px-6 pt-5 pb-6">
         <div className="flex flex-wrap gap-2">
           {kategorie}
           {n.empfohlen ? (
-            <span className="inline-flex items-center gap-1.5 rounded-pill bg-gruen-700 px-3 py-0.5 text-16 leading-normal font-bold text-weiss">
+            <span className="inline-flex items-center gap-1.5 rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
               <Star aria-hidden className="size-4" />
               {t('empfohlen')}
             </span>
           ) : null}
         </div>
+        {/* Zeit zuerst (H-B01): das Datum steht direkt über dem Titel */}
+        <p className="flex flex-wrap items-center gap-x-3 text-16 text-tinte-2">
+          <span className="inline-flex items-center gap-1.5">
+            <Calendar aria-hidden className="size-4" />
+            <time dateTime={n.veroeffentlichtAm} className="font-bold">
+              {datum}
+            </time>
+          </span>
+          {lesezeit ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Clock aria-hidden className="size-4" />
+              {lesezeit}
+            </span>
+          ) : null}
+        </p>
         <h3 lang={titel.lang} data-morph="titel" className="text-24 leading-tight text-balance">
           {titel.text}
         </h3>
         <Text feld={n.kurztext} sprache={sprache} als="p" className="text-pretty text-tinte-2" />
-        <ul className="mt-auto flex flex-col gap-1 border-t border-linie pt-3 text-16 text-tinte-2">
-          <li className="flex items-center gap-2">
-            <Calendar aria-hidden className="size-4" />
-            <span>{datum}</span>
-          </li>
-          {lesezeit ? (
-            <li className="flex items-center gap-2">
-              <Clock aria-hidden className="size-4" />
-              <span>{lesezeit}</span>
-            </li>
-          ) : null}
-        </ul>
         {/* Linktext mit unsichtbarem Titel statt aria-label: „Weiterlesen“ allein ist nichtssagend (Lighthouse link-text) */}
         <Link
           href={ziel}
-          className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
+          className="mt-auto inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
         >
           {/* Name als ein Text („Weiterlesen: Titel“, K-11): ein getrennter sr-only-Teil ergäbe in Chromium „Weiterlesen : …“.
               Der Text bricht in seiner 1-px-Box um (sonst ragt sein unsichtbarer Layoutkasten über den Rand). */}

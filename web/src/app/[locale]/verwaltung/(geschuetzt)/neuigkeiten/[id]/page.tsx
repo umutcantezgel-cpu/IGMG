@@ -2,6 +2,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { formularWerte } from '@/components/verwaltung/neuigkeiten/formularwerte';
 import { NeuigkeitsFormular } from '@/components/verwaltung/neuigkeiten/NeuigkeitsFormular';
@@ -28,6 +29,7 @@ export default async function NachrichtBearbeiten({ params, searchParams }: Page
   const organisationen = optionen.organisationen.some((o) => o.wert === (z.organisation ?? ''))
     ? optionen.organisationen
     : [...optionen.organisationen, { wert: z.organisation ?? '', label: z.organisation ? z.organisation.toUpperCase() : t('allgemein') }];
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -37,22 +39,23 @@ export default async function NachrichtBearbeiten({ params, searchParams }: Page
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-display-2">{t('bearbeiten')}</h1>
-          <p className="text-tinte-2">{z.titel.de}</p>
-        </div>
-        {z.status === 'veroeffentlicht' && !z.imPapierkorbSeit ? (
-          <NextLink
-            href={`/nachrichten/${z.slug}`}
-            prefetch={false}
-            className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4"
-          >
-            {t('oeffentlichAnsehen')}
-            <ExternalLink aria-hidden className="size-4" />
-          </NextLink>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('bearbeiten')}
+        kennung={tg('gruppe.inhalte')}
+        einleitung={z.titel.de}
+        aktion={
+          z.status === 'veroeffentlicht' && !z.imPapierkorbSeit ? (
+            <NextLink
+              href={`/nachrichten/${z.slug}`}
+              prefetch={false}
+              className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4"
+            >
+              {t('oeffentlichAnsehen')}
+              <ExternalLink aria-hidden className="size-4" />
+            </NextLink>
+          ) : null
+        }
+      />
       {sp.angelegt ? <Meldung art="erfolg">{t('angelegt')}</Meldung> : null}
       {z.imPapierkorbSeit ? <Meldung art="info">{t('imPapierkorb')}</Meldung> : null}
       <NeuigkeitsFormular

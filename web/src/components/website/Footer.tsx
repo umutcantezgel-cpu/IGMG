@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { text } from '@/lib/i18n/inhalt';
+import { telefonHref } from '@/lib/telefon';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { JetztGeoeffnet } from './fuss/JetztGeoeffnet';
@@ -39,6 +40,7 @@ export async function Footer() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('fuss');
   const kontakt = await ladeSeiteninhalt('kontakt');
+  const telefon = telefonHref(kontakt.telefon);
   const schnell: { label: string; ziel: Ziel }[] = [
     { label: t('qGebetszeiten'), ziel: '/gebetszeiten' },
     { label: t('qVeranstaltungen'), ziel: '/veranstaltungen' },
@@ -93,10 +95,17 @@ export async function Footer() {
               <MapPin aria-hidden className="size-5 shrink-0 text-gruen-100" />
               <span>{kontakt.adresse}</span>
             </span>
-            <span className={KONTAKTZEILE}>
-              <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
-              <span>{kontakt.telefon}</span>
-            </span>
+            {telefon ? (
+              <a href={telefon} className={MAILLINK}>
+                <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
+                <span>{kontakt.telefon}</span>
+              </a>
+            ) : (
+              <span className={KONTAKTZEILE}>
+                <Phone aria-hidden className="size-5 shrink-0 text-gruen-100" />
+                <span>{kontakt.telefon}</span>
+              </span>
+            )}
             <a href={`mailto:${kontakt.email}`} className={MAILLINK}>
               <Mail aria-hidden className="size-5 shrink-0 text-gruen-100" />
               <span>{kontakt.email}</span>

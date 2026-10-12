@@ -1,0 +1,822 @@
+[
+ {
+  "breite": 390,
+  "zeit": "tag",
+  "sprache": "de",
+  "figHoehe": 445,
+  "zeitenAbstand": [],
+  "olHoehe": 114,
+  "li": [
+   {
+    "n": "Imsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Aufgang",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Dhuhr",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Asr",
+    "mitteAbweichung": -168,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Maghrib",
+    "mitteAbweichung": -111.1,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Isha",
+    "mitteAbweichung": -32.9,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "Imsak",
+    "Aufgang",
+    12
+   ],
+   [
+    "Imsak",
+    "Asr",
+    12
+   ],
+   [
+    "Aufgang",
+    "Dhuhr",
+    12
+   ],
+   [
+    "Aufgang",
+    "Maghrib",
+    12
+   ],
+   [
+    "Dhuhr",
+    "Isha",
+    12
+   ],
+   [
+    "Asr",
+    "Maghrib",
+    12
+   ],
+   [
+    "Maghrib",
+    "Isha",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [],
+  "punkteErreicht": 2,
+  "punkteHohl": 3,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 1,
+  "enthuellt": 1,
+  "sternX": 325,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ },
+ {
+  "breite": 390,
+  "zeit": "tag",
+  "sprache": "tr",
+  "figHoehe": 467,
+  "zeitenAbstand": [],
+  "olHoehe": 136,
+  "li": [
+   {
+    "n": "İmsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Güneş Doğuşu",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 44
+   },
+   {
+    "n": "Öğle",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "İkindi",
+    "mitteAbweichung": -168,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Akşam",
+    "mitteAbweichung": -111.1,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Yatsı",
+    "mitteAbweichung": -32.9,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "İmsak",
+    "Güneş Doğuşu",
+    12
+   ],
+   [
+    "İmsak",
+    "İkindi",
+    12
+   ],
+   [
+    "Güneş Doğuşu",
+    "Öğle",
+    12
+   ],
+   [
+    "Güneş Doğuşu",
+    "Akşam",
+    12
+   ],
+   [
+    "Öğle",
+    "Yatsı",
+    12
+   ],
+   [
+    "İkindi",
+    "Akşam",
+    12
+   ],
+   [
+    "Akşam",
+    "Yatsı",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 2,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [
+   "Güneş Doğuşu"
+  ],
+  "punkteErreicht": 2,
+  "punkteHohl": 3,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 1,
+  "enthuellt": 1,
+  "sternX": 325,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ },
+ {
+  "breite": 390,
+  "zeit": "tag",
+  "sprache": "en",
+  "figHoehe": 445,
+  "zeitenAbstand": [],
+  "olHoehe": 114,
+  "li": [
+   {
+    "n": "Imsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Sunrise",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Dhuhr",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Asr",
+    "mitteAbweichung": -168,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Maghrib",
+    "mitteAbweichung": -111.1,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Isha",
+    "mitteAbweichung": -32.9,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "Imsak",
+    "Sunrise",
+    12
+   ],
+   [
+    "Imsak",
+    "Asr",
+    12
+   ],
+   [
+    "Sunrise",
+    "Dhuhr",
+    12
+   ],
+   [
+    "Sunrise",
+    "Maghrib",
+    12
+   ],
+   [
+    "Dhuhr",
+    "Isha",
+    12
+   ],
+   [
+    "Asr",
+    "Maghrib",
+    12
+   ],
+   [
+    "Maghrib",
+    "Isha",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [],
+  "punkteErreicht": 2,
+  "punkteHohl": 3,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 1,
+  "enthuellt": 1,
+  "sternX": 325,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ },
+ {
+  "breite": 390,
+  "zeit": "abend",
+  "sprache": "de",
+  "figHoehe": 445,
+  "zeitenAbstand": [],
+  "olHoehe": 114,
+  "li": [
+   {
+    "n": "Imsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Aufgang",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Dhuhr",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Asr",
+    "mitteAbweichung": -168,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Maghrib",
+    "mitteAbweichung": -111.1,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Isha",
+    "mitteAbweichung": -32.9,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "Imsak",
+    "Aufgang",
+    12
+   ],
+   [
+    "Imsak",
+    "Asr",
+    12
+   ],
+   [
+    "Aufgang",
+    "Dhuhr",
+    12
+   ],
+   [
+    "Aufgang",
+    "Maghrib",
+    12
+   ],
+   [
+    "Dhuhr",
+    "Isha",
+    12
+   ],
+   [
+    "Asr",
+    "Maghrib",
+    12
+   ],
+   [
+    "Maghrib",
+    "Isha",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [],
+  "punkteErreicht": 5,
+  "punkteHohl": 0,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 0,
+  "enthuellt": 1,
+  "sternX": 32,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ },
+ {
+  "breite": 390,
+  "zeit": "abend",
+  "sprache": "tr",
+  "figHoehe": 467,
+  "zeitenAbstand": [],
+  "olHoehe": 136,
+  "li": [
+   {
+    "n": "İmsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Güneş Doğuşu",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 44
+   },
+   {
+    "n": "Öğle",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 227,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "İkindi",
+    "mitteAbweichung": -168,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Akşam",
+    "mitteAbweichung": -111.1,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Yatsı",
+    "mitteAbweichung": -32.9,
+    "t": 239,
+    "b": 290,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "İmsak",
+    "Güneş Doğuşu",
+    12
+   ],
+   [
+    "İmsak",
+    "İkindi",
+    12
+   ],
+   [
+    "Güneş Doğuşu",
+    "Öğle",
+    12
+   ],
+   [
+    "Güneş Doğuşu",
+    "Akşam",
+    12
+   ],
+   [
+    "Öğle",
+    "Yatsı",
+    12
+   ],
+   [
+    "İkindi",
+    "Akşam",
+    12
+   ],
+   [
+    "Akşam",
+    "Yatsı",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 2,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [
+   "Güneş Doğuşu"
+  ],
+  "punkteErreicht": 5,
+  "punkteHohl": 0,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 0,
+  "enthuellt": 1,
+  "sternX": 32,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ },
+ {
+  "breite": 390,
+  "zeit": "abend",
+  "sprache": "en",
+  "figHoehe": 445,
+  "zeitenAbstand": [],
+  "olHoehe": 114,
+  "li": [
+   {
+    "n": "Imsak",
+    "mitteAbweichung": 32.9,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Sunrise",
+    "mitteAbweichung": 108.8,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Dhuhr",
+    "mitteAbweichung": 106.7,
+    "t": 154,
+    "b": 205,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Asr",
+    "mitteAbweichung": -168,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Maghrib",
+    "mitteAbweichung": -111.1,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   },
+   {
+    "n": "Isha",
+    "mitteAbweichung": -32.9,
+    "t": 217,
+    "b": 268,
+    "w": 97,
+    "nameHoehe": 22
+   }
+  ],
+  "kollision": false,
+  "paare": [
+   [
+    "Imsak",
+    "Sunrise",
+    12
+   ],
+   [
+    "Imsak",
+    "Asr",
+    12
+   ],
+   [
+    "Sunrise",
+    "Dhuhr",
+    12
+   ],
+   [
+    "Sunrise",
+    "Maghrib",
+    12
+   ],
+   [
+    "Dhuhr",
+    "Isha",
+    12
+   ],
+   [
+    "Asr",
+    "Maghrib",
+    12
+   ],
+   [
+    "Maghrib",
+    "Isha",
+    12
+   ]
+  ],
+  "minHorizontalLuecke": 12,
+  "minVertikalLuecke": 12,
+  "namenZeilen": [
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   },
+   {
+    "zeilen": 1,
+    "mitten": 0
+   }
+  ],
+  "mehrzeilig": [],
+  "punkteErreicht": 5,
+  "punkteHohl": 0,
+  "sterne": 1,
+  "sterneBlendet": 0,
+  "sterneTritt": 1,
+  "sonne": 0,
+  "enthuellt": 1,
+  "sternX": 32,
+  "leisteHoehe": 266,
+  "seitenBreite": 390,
+  "fensterBreite": 390
+ }
+]

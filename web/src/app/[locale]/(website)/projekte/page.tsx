@@ -4,8 +4,6 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Bauprojekt } from '@/components/website/projekte/Bauprojekt';
 import { Meilensteine } from '@/components/website/projekte/Meilensteine';
-import { Spenden } from '@/components/website/projekte/Spenden';
-import { Spezifikationen } from '@/components/website/projekte/Spezifikationen';
 import { Unterstuetzen } from '@/components/website/projekte/Unterstuetzen';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -19,8 +17,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit 3D-Platzhalter, Meilensteine, Spenden und
- * Spezifikationen, Unterstützen. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
+ * Projekte (design/Projects.dc.html, Blatt S10): Bauprojekt mit 3D-Platzhalter und Fakten, Meilensteine, Unterstützen
+ * mit der Spendenkarte. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
  * und Schaltflächen aus messages/bereiche/projekte.json. Keine Formulare, keine Anfragen an Dritte (K-14).
  */
 export default async function ProjekteSeite() {
@@ -42,11 +40,7 @@ export default async function ProjekteSeite() {
         </div>
       </div>
       <div className="bg-papier">
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt-klein px-4 py-abschnitt md:px-8">
-          <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2">
-            <Spenden inhalt={inhalt} sprache={sprache} />
-            <Spezifikationen inhalt={inhalt} sprache={sprache} />
-          </div>
+        <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
           <Unterstuetzen inhalt={inhalt} sprache={sprache} />
         </div>
       </div>

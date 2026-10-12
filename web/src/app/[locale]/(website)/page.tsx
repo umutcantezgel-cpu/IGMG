@@ -1,7 +1,8 @@
-import { ArrowRight, Calendar, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { EventCard } from '@/components/website/EventCard';
+import { Stern8 } from '@/components/website/Icons';
 import { JsonLd } from '@/components/website/JsonLd';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
@@ -25,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const sekundaer =
-  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition-colors duration-(--dauer-rueckmeldung) active:scale-98 hover:bg-gruen-50 hover:text-gruen-800';
+  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 hover:bg-gruen-50 hover:text-gruen-800';
 
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter),
@@ -45,32 +46,35 @@ export default async function Startseite() {
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
-        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-8 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-16">
-          <div className="flex flex-col gap-5 lg:col-span-5">
-            <span className="inline-flex items-center gap-2 self-start rounded-pill bg-gruen-50 px-3.5 py-1 text-16 font-bold text-gruen-800">
-              <Users aria-hidden className="size-4" />
+        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-8 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16 lg:gap-y-5">
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">
+            <span className="inline-flex items-center gap-2 self-start text-16 font-bold text-gruen-800">
+              <Stern8 className="size-4" />
               {t('willkommen')}
             </span>
             <h1 id="hero-titel" className="text-display-1 text-gruen-800">
               {t('titel')}
             </h1>
+          </div>
+          <Tagesbogen className="lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
             <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{t('untertitel')}</p>
             <div className="flex flex-wrap gap-3 pt-1">
               <Link
                 href="/mitglied-werden"
-                className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition-colors duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
+                className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
               >
                 <span>{t('beitreten')}</span>
                 <ArrowRight aria-hidden className="size-5" />
               </Link>
               <Link href="/ueber-uns" className={sekundaer}>
-                <Users aria-hidden className="size-5" />
                 <span>{t('mehrErfahren')}</span>
+                <ArrowRight aria-hidden className="size-5" />
               </Link>
             </div>
           </div>
-          <Tagesbogen className="lg:col-span-6" />
         </div>
+        <div aria-hidden className="h-5 achtstern-band" />
       </section>
 
       <section aria-labelledby="veranstaltungen-titel" className="border-b border-linie bg-sand">
@@ -78,7 +82,7 @@ export default async function Startseite() {
           <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
             <div className="flex max-w-einleitung flex-col gap-3">
               <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
-                <Calendar aria-hidden className="size-4" />
+                <Stern8 className="size-4" />
                 {t('kommend')}
               </span>
               <h2 id="veranstaltungen-titel" className="text-display-2">
@@ -92,9 +96,9 @@ export default async function Startseite() {
             </Link>
           </div>
           {veranstaltungen.length > 0 ? (
-            <ul className="grid raster-karten gap-6">
-              {veranstaltungen.map((v) => (
-                <li key={v.id}>
+            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {veranstaltungen.map((v, i) => (
+                <li key={v.id} className={i === 0 && veranstaltungen.length % 2 === 1 ? 'md:max-lg:col-span-2' : undefined}>
                   <EventCard v={v} sprache={sprache} />
                 </li>
               ))}
@@ -113,7 +117,7 @@ export default async function Startseite() {
           <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
             <div className="flex max-w-einleitung flex-col gap-3">
               <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
-                <span aria-hidden className="size-2 rounded-pill bg-gruen-700" />
+                <Stern8 className="size-4" />
                 {t('neuigkeitenKennung')}
               </span>
               <h2 id="neuigkeiten-titel" className="text-display-2">

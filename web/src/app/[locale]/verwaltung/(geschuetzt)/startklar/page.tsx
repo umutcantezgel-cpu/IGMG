@@ -2,11 +2,14 @@ import { connection } from 'next/server';
 import { getTranslations } from 'next-intl/server';
 import { ErneutPruefen } from '@/components/verwaltung/startklar/ErneutPruefen';
 import { PruefListe, type PruefGruppe, type PruefStatus, type PruefZeile } from '@/components/verwaltung/startklar/PruefListe';
+import { STATUS_STIL } from '@/components/verwaltung/startklar/status';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { db } from '@/lib/db';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { fuehreStartklarAus, type Bereich, type Pruefung } from '@/lib/startklar/pruefungen';
+import { cn } from '@/lib/utils';
 
 /** Reihenfolge der Bereiche auf der Seite (Umgebung bis E-Mail). */
 const BEREICHE = ['umgebung', 'auslieferung', 'datenbank', 'inhalte', 'recht', 'mail'] as const satisfies readonly Bereich[];
@@ -22,7 +25,11 @@ const STATUS_REIHE = ['fehler', 'warnung', 'manuell', 'hinweis', 'ok'] as const 
 export default async function StartklarSeite() {
   await connection();
   await verlangeSeitenRecht('einstellung.bearbeiten');
-  const [t, ergebnis] = await Promise.all([getTranslations('verwaltung.startklar'), fuehreStartklarAus({ env: process.env, db })]);
+  const [t, tg, ergebnis] = await Promise.all([
+    getTranslations('verwaltung.startklar'),
+    getTranslations('verwaltung.shell'),
+    fuehreStartklarAus({ env: process.env, db }),
+  ]);
 
   const zeitpunkt = new Date(ergebnis.zeitpunkt);
   const zeile = (p: Pruefung): PruefZeile => ({
@@ -60,10 +67,7 @@ export default async function StartklarSeite() {
 
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="max-w-3xl text-tinte-2">{t('einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.betrieb')} einleitung={t('einleitung')} />
       <section
         aria-labelledby="startklar-gesamt"
         className="flex flex-col gap-5 rounded-lg border border-linie bg-weiss p-5 md:flex-row md:items-start md:gap-8 md:p-6"
@@ -77,12 +81,21 @@ export default async function StartklarSeite() {
             <p className="text-18">{gesamtText}</p>
           </div>
           <dl className="grid grid-cols-2 gap-2 sm:grid-cols-5">
-            {STATUS_REIHE.map((s) => (
-              <div key={s} className="flex flex-col gap-0.5 rounded-md border border-linie px-3 py-2">
-                <dt className="text-16 text-tinte-2">{t(`status.${s}`)}</dt>
-                <dd className="text-24 font-bold tabular-nums">{z[s]}</dd>
-              </div>
-            ))}
+            {STATUS_REIHE.map((s) => {
+              const { Icon, kante, ziffer } = STATUS_STIL[s];
+              return (
+                <div
+                  key={s}
+                  className={cn('flex flex-col gap-0.5 rounded-md border border-linie px-3 py-2', z[s] > 0 && `border-l-4 ${kante}`)}
+                >
+                  <dt className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
+                    <Icon aria-hidden className="size-4 shrink-0" />
+                    {t(`status.${s}`)}
+                  </dt>
+                  <dd className={cn('text-24 font-bold tabular-nums', z[s] > 0 ? ziffer : 'text-tinte-3')}>{z[s]}</dd>
+                </div>
+              );
+            })}
           </dl>
           <p className="text-16 text-tinte-2">
             {t('zeile', {

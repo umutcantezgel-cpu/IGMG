@@ -1,6 +1,7 @@
 import { Pencil, UserPlus } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
@@ -26,22 +27,24 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
   const rollenText = (rollen: RollenZuweisung[]) =>
     rollen.map((r) => (r.organisation ? `${tr(r.rolle)} (${t(`organisationen.${r.organisation}`)})` : tr(r.rolle))).join(', ');
   const meldung = typeof sp.meldung === 'string' && ['widerrufen', 'geloescht'].includes(sp.meldung) ? sp.meldung : null;
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-display-2">{t('titel')}</h1>
-          <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
-        </div>
-        {darf(a.rollen, 'benutzer.einladen') ? (
-          <Button asChild>
-            <NextLink href="/verwaltung/benutzer/einladen">
-              <UserPlus aria-hidden />
-              {t('einladen')}
-            </NextLink>
-          </Button>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.betrieb')}
+        einleitung={t('untertitel')}
+        aktion={
+          darf(a.rollen, 'benutzer.einladen') ? (
+            <Button asChild>
+              <NextLink href="/verwaltung/benutzer/einladen">
+                <UserPlus aria-hidden />
+                {t('einladen')}
+              </NextLink>
+            </Button>
+          ) : null
+        }
+      />
       {meldung ? <Meldung art="erfolg">{t(`meldung.${meldung}` as never)}</Meldung> : null}
       <section aria-labelledby="benutzer-konten" className="flex flex-col gap-3">
         <h2 id="benutzer-konten" className="text-24">
@@ -54,7 +57,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
           <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p>
         ) : (
           <TabellenRahmen beschriftung={t('listeTitel')}>
-            <table className="w-full min-w-[64rem] border-collapse text-left">
+            <table className="w-full min-w-256 border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
                   {(['name', 'email', 'rollen', 'zweiFaktor', 'status', 'letzteAnmeldung', 'aktion'] as const).map((s) => (
@@ -107,7 +110,7 @@ export default async function BenutzerVerwalten({ searchParams }: PageProps<'/[l
           <p className="text-tinte-2">{t('einladungen.leer')}</p>
         ) : (
           <TabellenRahmen beschriftung={t('einladungen.titel')}>
-            <table className="w-full min-w-[48rem] border-collapse text-left">
+            <table className="w-full min-w-192 border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
                   {(['name', 'email', 'rollen', 'gueltigBis', 'aktion'] as const).map((s) => (

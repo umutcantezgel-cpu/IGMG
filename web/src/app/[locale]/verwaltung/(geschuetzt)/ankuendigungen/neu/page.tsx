@@ -2,6 +2,7 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { AnkuendigungsFormular } from '@/components/verwaltung/ankuendigungen/AnkuendigungsFormular';
 import { NEUE_ANKUENDIGUNG } from '@/components/verwaltung/ankuendigungen/werte';
 import { organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -15,6 +16,7 @@ export default async function NeueAnkuendigung() {
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.ankuendigungen'), formularOptionen(a)]);
   const startwerte = { ...NEUE_ANKUENDIGUNG, organisation: optionen.organisationen[0]?.wert ?? '' };
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -24,10 +26,7 @@ export default async function NeueAnkuendigung() {
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('neu')}</h1>
-        <p className="text-tinte-2">{t('neuEinleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('neu')} kennung={tg('gruppe.inhalte')} einleitung={t('neuEinleitung')} />
       <AnkuendigungsFormular aktion={speichereAnkuendigung} startwerte={startwerte} modus="neu" organisationen={optionen.organisationen} />
     </>
   );

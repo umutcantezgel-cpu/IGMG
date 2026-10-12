@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Check } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { CSSProperties, ReactNode } from 'react';
 import type { Fehlerstand } from '@/lib/formulare/wizard';
@@ -8,16 +8,44 @@ import { FehlerZusammenfassung } from './Rueckmeldung';
 import { SendenKnopf } from './SendenKnopf';
 
 /**
- * Schritt-Anzeiger (K-005): eine Spalte auf dem Telefon, zwei ab 640 px, je Schritt eine Spalte ab 1024 px.
- * Erst ab 1024 px stehen Kreis und Titel untereinander; so passt der längste Titel („Einverständniserklärungen“,
- * 200 px fett) ohne Umbruch in jede Spalte.
+ * Schritt-Anzeiger (H-B07): unter 1024 px eine Reihe aus Balken (sichtbar) mit der Schrittliste nur für Lesende;
+ * ab 1024 px die Liste mit Achtstern-Marken – `seitenleiste`: eine Spalte links neben dem Formular, `oben`: eine Reihe
+ * darüber (Standard).
  */
 const SPALTEN_LG: Record<number, string> = { 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4', 5: 'lg:grid-cols-5' };
+/** Achtstern der Schrittmarke (K-008, wie `Achtstern` in Icons.tsx) */
+const ACHTSTERN = 'M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z';
 /** Blendet den neuen Schritt in der Überblendung `dauer-wechsel` ein (B-04). */
 const BLENDET_EIN: CSSProperties = { '--dauer': 'var(--dauer-wechsel)' } as CSSProperties;
 
 export type WizardGruppe = { titel: string; hinweis?: string; inhalt: ReactNode };
 export type WizardSchritt = { titel: string; gruppen: WizardGruppe[] };
+
+/** Schrittmarke (K-008): Achtstern als Fläche mit Umriss; erledigt grün mit Häkchen, aktuell hell, kommend grau. */
+function Schrittmarke({ nr, stand }: { nr: number; stand: 'erledigt' | 'aktuell' | 'kommend' }) {
+  return (
+    <span aria-hidden className="relative grid size-9 shrink-0 place-items-center">
+      <svg aria-hidden viewBox="0 0 24 24" className="absolute inset-0 size-full">
+        <path
+          d={ACHTSTERN}
+          strokeWidth={2}
+          strokeLinejoin="round"
+          vectorEffect="non-scaling-stroke"
+          className={cn(
+            stand === 'erledigt' && 'fill-gruen-700 stroke-gruen-700',
+            stand === 'aktuell' && 'fill-gruen-50 stroke-gruen-700',
+            stand === 'kommend' && 'fill-weiss stroke-rand',
+          )}
+        />
+      </svg>
+      {stand === 'erledigt' ? (
+        <Check aria-hidden className="relative size-4 text-weiss" />
+      ) : (
+        <span className={cn('relative text-16 font-bold', stand === 'aktuell' ? 'text-gruen-800' : 'text-tinte-2')}>{nr}</span>
+      )}
+    </span>
+  );
+}
 
 /**
  * FormWizard (B01, C12, FormWizard.dc.html, E-028): Server-Komponente ohne eigenes Client-JavaScript.
@@ -36,6 +64,7 @@ export async function FormWizard({
   sendenText,
   altcha,
   gewechselt = false,
+  anordnung = 'oben',
 }: {
   sprache: 'de' | 'tr' | 'en';
   schritte: WizardSchritt[];
@@ -52,42 +81,47 @@ export async function FormWizard({
   altcha: ReactNode;
   /** true nach einem Schrittwechsel ohne Fehler: der sichtbare Schritt blendet ein (B-04); beim ersten Laden nicht */
   gewechselt?: boolean;
+  /** `seitenleiste`: Schrittliste links neben dem Formular ab 1024 px; `oben` (Standard): darüber */
+  anordnung?: 'oben' | 'seitenleiste';
 }) {
   const t = await getTranslations({ locale: sprache, namespace: 'formulare' });
   const letzter = schritte.length - 1;
   const schritt = Math.min(Math.max(aktuell, 0), letzter);
   const fehler = { ...(t.raw('fehler') as Record<string, string>), ...fehlerTexte };
+  const seitenleiste = anordnung === 'seitenleiste';
   return (
-    <div className="flex flex-col gap-6">
-      <nav aria-label={t('wizard.fortschritt')} className="flex flex-col gap-3">
+    <div className={cn('flex flex-col gap-6', seitenleiste && 'lg:grid lg:grid-cols-3 lg:items-start lg:gap-8')}>
+      <nav aria-label={t('wizard.fortschritt')} className={cn('flex flex-col gap-3', seitenleiste && 'lg:sticky lg:top-6')}>
         {/* Schrittwechsel ohne Fehler: Fokus auf die Schrittzeile (data-fokus), damit Lesende den neuen Schritt hören */}
         <p data-fokus={ergebnis ? undefined : true} tabIndex={-1} className="font-bold text-gruen-800 outline-none">
           {t('wizard.schrittZeile', { nr: schritt + 1, anzahl: schritte.length, titel: schritte[schritt].titel })}
         </p>
-        <ol className={cn('m-0 grid list-none gap-2 p-0 sm:grid-cols-2', SPALTEN_LG[schritte.length])}>
+        {/* Unter 1024 px: ein Balken je Schritt, bis einschließlich dem aktuellen gefüllt; die Liste darunter lesen Lesende */}
+        <div aria-hidden className="flex gap-2 lg:hidden">
+          {schritte.map((s, i) => (
+            <span key={s.titel} className={cn('h-1.5 flex-1 rounded-pill', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
+          ))}
+        </div>
+        <ol
+          className={cn(
+            'sr-only m-0 grid list-none gap-2 p-0 lg:not-sr-only',
+            seitenleiste ? 'lg:grid-cols-1 lg:gap-3' : SPALTEN_LG[schritte.length],
+          )}
+        >
           {schritte.map((s, i) => (
             <li key={s.titel} aria-current={i === schritt ? 'step' : undefined} className="flex min-w-0 flex-col gap-1.5">
-              {/* Fortschrittsbalken ab 640 px; auf dem Telefon zeigen Kreis und Häkchen den Stand (Liste statt Balken) */}
-              <span aria-hidden className={cn('hidden h-1.5 rounded-pill sm:block', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
+              {/* Fortschrittsbalken über dem Titel ab 1024 px (in der Seitenleiste entfällt er: die Marke zeigt den Stand) */}
+              {seitenleiste ? null : (
+                <span aria-hidden className={cn('hidden h-1.5 rounded-pill lg:block', i <= schritt ? 'bg-gruen-700' : 'bg-linie')} />
+              )}
               <span
                 className={cn(
-                  'flex min-w-0 flex-row items-center gap-1.5 text-16 leading-tight font-bold lg:flex-col lg:items-start',
+                  'flex min-w-0 flex-row items-center gap-1.5 text-16 leading-tight font-bold',
+                  !seitenleiste && 'lg:flex-col lg:items-start',
                   i === schritt ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >
-                <span
-                  aria-hidden
-                  className={cn(
-                    'inline-flex h-7 min-w-7 shrink-0 items-center justify-center rounded-pill border-2 text-16',
-                    i < schritt
-                      ? 'border-gruen-700 bg-gruen-700 text-weiss'
-                      : i === schritt
-                        ? 'border-gruen-700 bg-gruen-50 text-gruen-800'
-                        : 'border-rand bg-weiss text-gruen-800',
-                  )}
-                >
-                  {i < schritt ? '✓' : i + 1}
-                </span>
+                <Schrittmarke nr={i + 1} stand={i < schritt ? 'erledigt' : i === schritt ? 'aktuell' : 'kommend'} />
                 <span className="min-w-0">{s.titel}</span>
                 {i < schritt ? <span className="sr-only">{t('wizard.erledigt')}</span> : null}
               </span>
@@ -95,54 +129,62 @@ export async function FormWizard({
           ))}
         </ol>
       </nav>
-      {ergebnis ? (
-        <FehlerZusammenfassung
-          fehler={ergebnis.fehler}
-          feldFehler={ergebnis.feldFehler}
-          felder={felder}
-          texte={{ fehler, zusammenfassung: t('zusammenfassung') }}
-        />
-      ) : null}
-      <button type="submit" name="richtung" value="weiter" hidden tabIndex={-1} aria-hidden />
-      <input type="hidden" name="schritt" value={schritt} />
-      <input type="hidden" name="sprache" value={sprache} />
-      {schritte.map((s, i) => (
-        <div
-          key={s.titel}
-          hidden={i !== schritt}
-          className={cn('flex flex-col gap-6', gewechselt && i === schritt && 'blendet-ein')}
-          style={gewechselt && i === schritt ? BLENDET_EIN : undefined}
-        >
-          {s.gruppen.map((g) => (
-            <fieldset key={g.titel} className="m-0 flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
-              <legend className="-ml-2 px-2 font-display text-24 font-semibold">{g.titel}</legend>
-              {g.hinweis ? <p className="text-16 text-tinte-2">{g.hinweis}</p> : null}
-              <div className="grid gap-x-6 gap-y-4 sm:raster-kacheln">{g.inhalt}</div>
-            </fieldset>
-          ))}
-        </div>
-      ))}
-      <Honigtopf label={t('honigtopf')} />
-      {schritt === letzter ? altcha : null}
-      <div className="flex flex-wrap justify-between gap-3">
-        {schritt > 0 ? (
-          <button
-            type="submit"
-            name="richtung"
-            value="zurueck"
-            className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+      <div className={cn('flex min-w-0 flex-col gap-6', seitenleiste && 'lg:col-span-2')}>
+        {ergebnis ? (
+          <FehlerZusammenfassung
+            fehler={ergebnis.fehler}
+            feldFehler={ergebnis.feldFehler}
+            felder={felder}
+            texte={{ fehler, zusammenfassung: t('zusammenfassung') }}
+          />
+        ) : null}
+        <button type="submit" name="richtung" value="weiter" hidden tabIndex={-1} aria-hidden />
+        <input type="hidden" name="schritt" value={schritt} />
+        <input type="hidden" name="sprache" value={sprache} />
+        {schritte.map((s, i) => (
+          <div
+            key={s.titel}
+            hidden={i !== schritt}
+            className={cn('flex flex-col gap-6', gewechselt && i === schritt && 'blendet-ein')}
+            style={gewechselt && i === schritt ? BLENDET_EIN : undefined}
           >
-            <ArrowLeft aria-hidden className="size-5" />
-            {t('wizard.zurueck')}
-          </button>
-        ) : (
-          <span />
-        )}
-        {schritt < letzter ? (
-          <SendenKnopf symbol="weiter" name="richtung" wert="weiter" texte={{ senden: t('wizard.weiter'), sendet: t('sendet') }} />
-        ) : (
-          <SendenKnopf name="richtung" wert="weiter" texte={{ senden: sendenText, sendet: t('sendet') }} />
-        )}
+            {s.gruppen.map((g) => (
+              <fieldset key={g.titel} className="m-0 flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-8">
+                <legend className="-ml-2 px-2 font-display text-24 font-semibold">{g.titel}</legend>
+                {g.hinweis ? <p className="max-w-text text-16 text-tinte-2">{g.hinweis}</p> : null}
+                <div className="grid gap-x-6 gap-y-4 sm:raster-kacheln">{g.inhalt}</div>
+              </fieldset>
+            ))}
+          </div>
+        ))}
+        <Honigtopf label={t('honigtopf')} />
+        {schritt === letzter ? altcha : null}
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-between">
+          {schritt > 0 ? (
+            <button
+              type="submit"
+              name="richtung"
+              value="zurueck"
+              className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 sm:w-auto"
+            >
+              <ArrowLeft aria-hidden className="size-5" />
+              {t('wizard.zurueck')}
+            </button>
+          ) : (
+            <span className="hidden sm:block" />
+          )}
+          {schritt < letzter ? (
+            <SendenKnopf
+              className="w-full sm:w-auto"
+              symbol="weiter"
+              name="richtung"
+              wert="weiter"
+              texte={{ senden: t('wizard.weiter'), sendet: t('sendet') }}
+            />
+          ) : (
+            <SendenKnopf className="w-full sm:w-auto" name="richtung" wert="weiter" texte={{ senden: sendenText, sendet: t('sendet') }} />
+          )}
+        </div>
       </div>
     </div>
   );

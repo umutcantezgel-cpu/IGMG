@@ -1,6 +1,7 @@
 import { Eye, Pencil, Plus, RotateCcw, Trash2 } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
@@ -37,19 +38,23 @@ export default async function AnkuendigungenVerwalten({ searchParams }: PageProp
     { schluessel: 'papierkorb', label: t('ansichtPapierkorb'), href: '/verwaltung/ankuendigungen?ansicht=papierkorb', aktiv: papierkorb },
   ];
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        {darfAnlegen ? (
-          <Button asChild>
-            <NextLink href="/verwaltung/ankuendigungen/neu">
-              <Plus aria-hidden />
-              {t('neu')}
-            </NextLink>
-          </Button>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.inhalte')}
+        aktion={
+          darfAnlegen ? (
+            <Button asChild>
+              <NextLink href="/verwaltung/ankuendigungen/neu">
+                <Plus aria-hidden />
+                {t('neu')}
+              </NextLink>
+            </Button>
+          ) : null
+        }
+      />
       <nav aria-label={t('ansichten')}>
         <ul className="flex gap-2">
           {ansichten.map((v) => (
@@ -75,7 +80,7 @@ export default async function AnkuendigungenVerwalten({ searchParams }: PageProp
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
       ) : (
         <TabellenRahmen beschriftung={t('titel')}>
-          <table className="w-full min-w-[56rem] border-collapse text-left">
+          <table className="w-full min-w-224 border-collapse text-left">
             <thead className="bg-sand">
               <tr>
                 {(['titel', 'sichtbarkeit', 'prioritaet', 'organisation', 'status', 'aktionen'] as const).map((s) => (

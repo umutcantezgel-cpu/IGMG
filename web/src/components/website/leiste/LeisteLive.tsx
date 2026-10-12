@@ -82,7 +82,8 @@ export function LeisteLive({
   const restZeile = (naechstes?.morgen ? texte.verbleibtMorgen : texte.verbleibt).replace('{zeit}', restText);
   // Unsichtbare Platzhalter aller Formen (jedes Gebet, längste Uhrzeit, Restzeit heute/morgen): Der linke Block hat
   // vom Server an seine endgültige Breite – kein Verschieben der Karten nach dem Einhängen oder beim Gebetswechsel
-  const platzNaechstes = GEBETE.map((g) => `${texte.naechstes}: ${texte.namen[g]} · ${zeit('88:88')}`);
+  // Breite Fassung: jeder Name mit längster Uhrzeit (ohne Güneş, er zählt nicht als Gebet, siehe naechstesGebet)
+  const platzWert = GEBETE.filter((g) => g !== 'gunes').map((g) => `${texte.namen[g]} · ${zeit('88:88')}`);
   const platzRest = [texte.verbleibt, texte.verbleibtMorgen].map((v) => v.replace('{zeit}', `88${texte.dauer.std} 88${texte.dauer.min}`));
 
   // B-10: Gewechselt wird erst, wenn ein bekanntes Gebet auf ein anderes folgt. Der Sprung von „noch keine Uhrzeit“
@@ -110,8 +111,9 @@ export function LeisteLive({
         key={g}
         aria-current={ist ? 'time' : undefined}
         className={klassen(
-          'flex min-w-0 flex-col justify-center gap-0.5 border',
-          klein ? 'rounded-md px-2.5 py-2' : 'rounded-lg px-3 py-2.5',
+          // Breit: Namen oben, Zeiten unten – alle Zeiten stehen auf einer Linie, auch wenn ein Name umbricht
+          'flex min-w-0 flex-col gap-0.5 border',
+          klein ? 'justify-center rounded-md px-2.5 py-2' : 'justify-between rounded-lg px-2.5 py-2.5',
           ist ? 'border-weiss bg-weiss' : 'border-gruen-800 bg-gruen-950',
           wechsel,
         )}
@@ -123,7 +125,7 @@ export function LeisteLive({
             wechsel,
           )}
         >
-          {klein ? null : <Icon aria-hidden className="size-4 shrink-0" />}
+          {klein ? null : <Icon aria-hidden className="size-4 shrink-0 max-xl:hidden" />}
           <span>{texte.namen[g]}</span>
         </span>
         <span
@@ -166,14 +168,15 @@ export function LeisteLive({
             style={DAUER_WECHSEL}
             className={klassen('flex flex-col text-16 tabular-nums', !naechstes && 'invisible', gewechselt && 'blendet-ein')}
           >
-            <span className="grid font-bold text-weiss">
-              {platzNaechstes.map((p) => (
+            <span className="text-16 text-gruen-100">{texte.naechstes}</span>
+            <span className="grid text-20 leading-tight font-bold text-weiss">
+              {platzWert.map((p) => (
                 <span key={p} aria-hidden className="invisible col-start-1 row-start-1">
                   {p}
                 </span>
               ))}
               <span className="col-start-1 row-start-1">
-                {texte.naechstes}: {naechstesName}
+                {naechstesName}
                 {naechstesZeit ? ` · ${naechstesZeit}` : ''}
               </span>
             </span>

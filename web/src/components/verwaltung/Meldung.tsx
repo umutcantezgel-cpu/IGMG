@@ -25,6 +25,7 @@ export function Meldung({
         art === 'fehler' && 'border-fehler bg-fehler-toenung text-fehler',
         art === 'erfolg' && 'border-gruen-700 bg-gruen-50 text-gruen-800',
         art === 'info' && 'border-info bg-info-toenung text-info',
+        art === 'erfolg' && 'tritt-auf',
       )}
     >
       <Icon aria-hidden className="mt-0.5 size-5 shrink-0" />

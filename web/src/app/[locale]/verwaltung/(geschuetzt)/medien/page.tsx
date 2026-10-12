@@ -1,6 +1,7 @@
 import { FileText, Pencil } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { HochladenFormular } from '@/components/verwaltung/medien/MedienFormulare';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -22,12 +23,10 @@ export default async function MedienVerwalten({ searchParams }: PageProps<'/[loc
   const [t, medien] = await Promise.all([getTranslations('verwaltung.medien'), ladeMedien(filter)]);
   const meldung = MELDUNGEN.find((m) => m === sp.meldung);
   const papierkorb = filter.ansicht === 'papierkorb';
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.inhalte')} einleitung={t('untertitel')} />
       {meldung ? <Meldung art="erfolg">{t(`meldung.${meldung}`)}</Meldung> : null}
       <nav aria-label={t('ansichten')} className="flex gap-2">
         {(['aktiv', 'papierkorb'] as const).map((ansicht) => (
@@ -48,7 +47,7 @@ export default async function MedienVerwalten({ searchParams }: PageProps<'/[loc
       {!papierkorb && darf(a.rollen, 'medium.hochladen') ? (
         <section
           aria-labelledby="medien-hochladen"
-          className="flex max-w-3xl flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6"
+          className="flex max-w-einleitung flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6"
         >
           <h2 id="medien-hochladen" className="text-24">
             {t('hochladen.titel')}

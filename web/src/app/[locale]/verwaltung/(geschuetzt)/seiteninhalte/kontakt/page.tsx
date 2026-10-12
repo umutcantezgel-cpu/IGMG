@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { KontaktFormular } from '@/components/verwaltung/seiteninhalte-organisationen/KontaktFormular';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -15,6 +16,7 @@ export default async function KontaktBearbeiten() {
     getTranslations('verwaltung.seiteninhalteOrganisationen'),
     ladeSeiteninhaltFuerVerwaltung('kontakt'),
   ]);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -24,10 +26,7 @@ export default async function KontaktBearbeiten() {
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueckSeiteninhalte')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('kontakt.titel')}</h1>
-        <p className="text-tinte-2">{t('kontakt.einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('kontakt.titel')} kennung={tg('gruppe.inhalte')} einleitung={t('kontakt.einleitung')} />
       <Meldung art="info">{t('kontakt.wirkung')}</Meldung>
       <KontaktFormular
         aktion={speichereKontakt}

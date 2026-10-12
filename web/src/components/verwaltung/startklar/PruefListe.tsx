@@ -1,12 +1,14 @@
 'use client';
 
 import { useActionState, useEffect, useRef } from 'react';
-import { CircleAlert, CircleCheck, Hand, Info, TriangleAlert, type LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LadeStern } from '@/components/website/Zustandsgrafik';
 import { cn } from '@/lib/utils';
 import { setzeKonzepthinweis, type KonzepthinweisZustand } from '@/server/actions/startklar';
+import { type PruefStatus, STATUS_STIL } from '@/components/verwaltung/startklar/status';
+
+export type { PruefStatus } from '@/components/verwaltung/startklar/status';
 
 /**
  * Liste der Startklar-Prüfungen je Bereich (Cockpit, AUFTRAG V-11). Offene Punkte zuerst (Fehler, Warnung, von Hand,
@@ -14,8 +16,6 @@ import { setzeKonzepthinweis, type KonzepthinweisZustand } from '@/server/action
  * Der Konzept-Hinweis wird hier geschaltet: Die Rückmeldung steht oberhalb der Gruppen, weil die Zeile nach dem
  * Speichern in „Erledigt“ wandern kann und dann nicht mehr sichtbar wäre.
  */
-export type PruefStatus = 'fehler' | 'warnung' | 'manuell' | 'hinweis' | 'ok';
-
 export type PruefZeile = {
   id: string;
   status: PruefStatus;
@@ -52,14 +52,6 @@ export type PruefTexte = {
   };
 };
 
-const STATUS_STIL: Record<PruefStatus, { Icon: LucideIcon; klasse: string }> = {
-  fehler: { Icon: CircleAlert, klasse: 'border-fehler bg-fehler-toenung text-fehler' },
-  warnung: { Icon: TriangleAlert, klasse: 'border-warnung bg-warnung-toenung text-warnung' },
-  manuell: { Icon: Hand, klasse: 'border-info bg-info-toenung text-info' },
-  hinweis: { Icon: Info, klasse: 'border-info bg-info-toenung text-info' },
-  ok: { Icon: CircleCheck, klasse: 'border-gruen-700 bg-gruen-50 text-gruen-800' },
-};
-
 export function PruefListe({ gruppen, texte }: { gruppen: PruefGruppe[]; texte: PruefTexte }) {
   const [zustand, absenden, laeuft] = useActionState<KonzepthinweisZustand, FormData>(setzeKonzepthinweis, {});
   const rueckmeldung = useRef<HTMLDivElement>(null);
@@ -84,7 +76,7 @@ export function PruefListe({ gruppen, texte }: { gruppen: PruefGruppe[]; texte: 
       {gruppen.map((g) => (
         <section key={g.schluessel} aria-labelledby={`startklar-${g.schluessel}`} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <h2 id={`startklar-${g.schluessel}`} className="text-24 font-bold">
+            <h2 id={`startklar-${g.schluessel}`} className="text-24">
               {g.titel}
             </h2>
             <p className="text-tinte-2">{g.beschreibung}</p>
@@ -114,11 +106,11 @@ export function PruefListe({ gruppen, texte }: { gruppen: PruefGruppe[]; texte: 
 }
 
 function Zeile({ z, texte, absenden, laeuft }: { z: PruefZeile; texte: PruefTexte; absenden: (fd: FormData) => void; laeuft: boolean }) {
-  const { Icon, klasse } = STATUS_STIL[z.status];
+  const { Icon, klasse, kante } = STATUS_STIL[z.status];
   return (
-    <li className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4 md:p-5">
+    <li className={cn('flex flex-col gap-3 rounded-lg border border-l-4 border-linie bg-weiss p-4 md:p-5', kante)}>
       <div className="flex flex-wrap items-center gap-2">
-        <h3 className="text-20 font-bold">{z.titel}</h3>
+        <h3 className="font-text text-20 font-bold tracking-normal">{z.titel}</h3>
         <span className={cn('inline-flex items-center gap-1.5 rounded-md border px-2.5 py-0.5 text-16 font-bold', klasse)}>
           <Icon aria-hidden className="size-4 shrink-0" />
           {z.statusText}

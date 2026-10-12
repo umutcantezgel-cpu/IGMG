@@ -1,6 +1,7 @@
 import { Eye, Pencil, Plus, RotateCcw, Trash2 } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
@@ -29,19 +30,23 @@ export default async function NeuigkeitenVerwalten({ searchParams }: PageProps<'
     { schluessel: 'aktiv', label: t('ansichtAktiv'), href: '/verwaltung/neuigkeiten', aktiv: !papierkorb },
     { schluessel: 'papierkorb', label: t('ansichtPapierkorb'), href: '/verwaltung/neuigkeiten?ansicht=papierkorb', aktiv: papierkorb },
   ];
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        {darfAnlegen ? (
-          <Button asChild>
-            <NextLink href="/verwaltung/neuigkeiten/neu">
-              <Plus aria-hidden />
-              {t('neu')}
-            </NextLink>
-          </Button>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.inhalte')}
+        aktion={
+          darfAnlegen ? (
+            <Button asChild>
+              <NextLink href="/verwaltung/neuigkeiten/neu">
+                <Plus aria-hidden />
+                {t('neu')}
+              </NextLink>
+            </Button>
+          ) : null
+        }
+      />
       <nav aria-label={t('ansichten')}>
         <ul className="flex gap-2">
           {ansichten.map((v) => (
@@ -67,7 +72,7 @@ export default async function NeuigkeitenVerwalten({ searchParams }: PageProps<'
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{papierkorb ? t('leerPapierkorb') : t('leer')}</p>
       ) : (
         <TabellenRahmen beschriftung={t('titel')}>
-          <table className="w-full min-w-[48rem] border-collapse text-left">
+          <table className="w-full min-w-192 border-collapse text-left">
             <thead className="bg-sand">
               <tr>
                 {(['titel', 'datum', 'kategorie', 'status', 'aktionen'] as const).map((s) => (

@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import NextLink from 'next/link';
 import { redirect } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -36,12 +37,10 @@ export default async function SeiteninhaltUebersicht() {
     },
   ].filter((gruppe) => gruppe.karten.length > 0);
 
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="max-w-3xl text-tinte-2">{t('einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.inhalte')} einleitung={t('einleitung')} />
       {gruppen.map((gruppe) => (
         <section key={gruppe.schluessel} aria-labelledby={`gruppe-${gruppe.schluessel}`} className="flex flex-col gap-4">
           <h2 id={`gruppe-${gruppe.schluessel}`} className="font-display text-24 font-semibold">

@@ -2,7 +2,8 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
-import { BEREICH_ORGANISATION, istOrganisation, KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
+import { BEREICH_ORGANISATION, istOrganisation } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { OrganisationFormular } from '@/components/verwaltung/seiteninhalte-organisationen/OrganisationFormular';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { speichereOrganisation } from '@/server/actions/seiteninhalte-organisationen';
@@ -22,6 +23,7 @@ export default async function OrganisationBearbeiten({ params }: PageProps<'/[lo
     ladeSeiteninhaltFuerVerwaltung(BEREICH_ORGANISATION[org]),
   ]);
   const name = t(`orgName.${org}`);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -31,13 +33,7 @@ export default async function OrganisationBearbeiten({ params }: PageProps<'/[lo
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueckOrganisationen')}
       </NextLink>
-      <div>
-        <p className="font-bold text-tinte-2">{KENNUNG[org]}</p>
-        <h1 lang="tr" className="text-display-2">
-          {name}
-        </h1>
-        <p className="text-tinte-2">{t('organisation.einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={name} titelLang="tr" kennung={tg('gruppe.inhalte')} einleitung={t('organisation.einleitung')} />
       <OrganisationFormular
         aktion={speichereOrganisation.bind(null, org)}
         startwerte={stand.inhalt}

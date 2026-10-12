@@ -4,6 +4,7 @@ import type { Aktion } from '@/lib/rechte/matrix';
  * Module der Verwaltung (V01–V14 + Einstellungen) in der Reihenfolge der Seitenleiste. Ein Modul erscheint nur, wenn
  * es gebaut ist (`gebaut`, setzt der Orchestrator bei der Abnahme) und die Rolle eines der Leserechte hat (`recht`).
  * Alle Module sind vorab eingetragen, damit parallele Pakete (Welle C) diese Datei nicht ändern (E-027, E-031).
+ * Die Gruppen (`gruppe`) gliedern die Seitenleiste; ihre Reihenfolge in dieser Liste ist fest (H-B05).
  */
 export type ModulSchluessel =
   | 'uebersicht'
@@ -23,29 +24,67 @@ export type ModulSchluessel =
   | 'startklar'
   | 'einstellungen';
 export type ModulIcon = ModulSchluessel;
+export type ModulGruppe = 'inhalte' | 'kommunikation' | 'betrieb';
 
-export type Modul = { schluessel: ModulSchluessel; pfad: string; recht: Aktion | readonly Aktion[]; icon: ModulIcon; gebaut: boolean };
+export type Modul = {
+  schluessel: ModulSchluessel;
+  pfad: string;
+  recht: Aktion | readonly Aktion[];
+  icon: ModulIcon;
+  gebaut: boolean;
+  gruppe?: ModulGruppe;
+};
+
+/**
+ * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
+ * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
+ */
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
-  { schluessel: 'neuigkeiten', pfad: '/verwaltung/neuigkeiten', recht: 'nachricht.lesen', icon: 'neuigkeiten', gebaut: true },
+  {
+    schluessel: 'neuigkeiten',
+    pfad: '/verwaltung/neuigkeiten',
+    recht: 'nachricht.lesen',
+    icon: 'neuigkeiten',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   {
     schluessel: 'veranstaltungen',
     pfad: '/verwaltung/veranstaltungen',
     recht: 'veranstaltung.lesen',
     icon: 'veranstaltungen',
     gebaut: true,
+    gruppe: 'inhalte',
   },
-  { schluessel: 'ankuendigungen', pfad: '/verwaltung/ankuendigungen', recht: 'ankuendigung.lesen', icon: 'ankuendigungen', gebaut: true },
+  {
+    schluessel: 'ankuendigungen',
+    pfad: '/verwaltung/ankuendigungen',
+    recht: 'ankuendigung.lesen',
+    icon: 'ankuendigungen',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   {
     schluessel: 'seiteninhalte',
     pfad: '/verwaltung/seiteninhalte',
     recht: ['seiteninhalt.lesen', 'organisationsinhalt.bearbeiten'],
     icon: 'seiteninhalte',
     gebaut: true,
+    gruppe: 'inhalte',
   },
-  { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true },
-  { schluessel: 'gebetszeiten', pfad: '/verwaltung/gebetszeiten', recht: 'gebetszeiten.lesen', icon: 'gebetszeiten', gebaut: true },
+  { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true, gruppe: 'inhalte' },
+  {
+    schluessel: 'gebetszeiten',
+    pfad: '/verwaltung/gebetszeiten',
+    recht: 'gebetszeiten.lesen',
+    icon: 'gebetszeiten',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: true, gruppe: 'inhalte' },
   {
     schluessel: 'eingaenge',
     pfad: '/verwaltung/eingaenge',
@@ -58,15 +97,50 @@ export const MODULE: readonly Modul[] = [
     ],
     icon: 'eingaenge',
     gebaut: true,
+    gruppe: 'kommunikation',
   },
-  { schluessel: 'postfach', pfad: '/verwaltung/postfach', recht: 'postfach.nutzen', icon: 'postfach', gebaut: true },
-  { schluessel: 'tickets', pfad: '/verwaltung/tickets', recht: ['ticket.lesen', 'ticket.anlegen'], icon: 'tickets', gebaut: true },
-  { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: true },
-  { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true },
-  { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true },
-  { schluessel: 'styleguide', pfad: '/verwaltung/styleguide', recht: 'styleguide.lesen', icon: 'styleguide', gebaut: true },
-  { schluessel: 'startklar', pfad: '/verwaltung/startklar', recht: 'einstellung.bearbeiten', icon: 'startklar', gebaut: true },
-  { schluessel: 'einstellungen', pfad: '/verwaltung/einstellungen', recht: 'einstellung.bearbeiten', icon: 'einstellungen', gebaut: true },
+  {
+    schluessel: 'postfach',
+    pfad: '/verwaltung/postfach',
+    recht: 'postfach.nutzen',
+    icon: 'postfach',
+    gebaut: true,
+    gruppe: 'kommunikation',
+  },
+  {
+    schluessel: 'tickets',
+    pfad: '/verwaltung/tickets',
+    recht: ['ticket.lesen', 'ticket.anlegen'],
+    icon: 'tickets',
+    gebaut: true,
+    gruppe: 'kommunikation',
+  },
+  { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true, gruppe: 'betrieb' },
+  { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true, gruppe: 'betrieb' },
+  {
+    schluessel: 'startklar',
+    pfad: '/verwaltung/startklar',
+    recht: 'einstellung.bearbeiten',
+    icon: 'startklar',
+    gebaut: true,
+    gruppe: 'betrieb',
+  },
+  {
+    schluessel: 'einstellungen',
+    pfad: '/verwaltung/einstellungen',
+    recht: 'einstellung.bearbeiten',
+    icon: 'einstellungen',
+    gebaut: true,
+    gruppe: 'betrieb',
+  },
+  {
+    schluessel: 'styleguide',
+    pfad: '/verwaltung/styleguide',
+    recht: 'styleguide.lesen',
+    icon: 'styleguide',
+    gebaut: true,
+    gruppe: 'betrieb',
+  },
 ];
 
 /** Hat die Rolle eines der Leserechte des Moduls? */

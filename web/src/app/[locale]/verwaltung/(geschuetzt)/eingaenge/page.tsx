@@ -2,6 +2,7 @@ import { Download, Eye } from 'lucide-react';
 import NextLink from 'next/link';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
@@ -40,12 +41,10 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
     const s = p.toString();
     return s ? `?${s}` : '';
   };
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.kommunikation')} einleitung={t('untertitel')} />
       {sp.geloescht === '1' ? <Meldung art="erfolg">{t('geloescht')}</Meldung> : null}
       <form method="get" aria-label={t('filter')} className="flex flex-wrap items-end gap-3 rounded-lg border border-linie bg-weiss p-4">
         <label className="flex flex-col gap-1 text-16 font-bold">
@@ -97,7 +96,7 @@ export default async function EingaengeVerwalten({ searchParams }: PageProps<'/[
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{t('leer')}</p>
       ) : (
         <TabellenRahmen beschriftung={t('titel')}>
-          <table className="w-full min-w-[56rem] border-collapse text-left">
+          <table className="w-full min-w-224 border-collapse text-left">
             <thead className="bg-sand">
               <tr>
                 {(['eingegangen', 'art', 'bezug', 'status', 'sprache', 'loeschenAb', 'aktion'] as const).map((s) => (

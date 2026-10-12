@@ -1,6 +1,7 @@
 import { Eye, Plus } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { PILLE, PRIORITAET_TON, STATUS_TON, ticketNummer } from '@/components/verwaltung/tickets/anzeige';
 import { TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
@@ -25,22 +26,24 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
   const filterAktiv = Boolean(filter.status || filter.prioritaet || filter.typ);
   const darfAnlegen = darf(a.rollen, 'ticket.anlegen');
 
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-display-2">{t('titel')}</h1>
-          <p className="max-w-[70ch] text-pretty text-tinte-2">{t('einleitung')}</p>
-        </div>
-        {darfAnlegen ? (
-          <Button asChild>
-            <NextLink href="/verwaltung/tickets/neu">
-              <Plus aria-hidden />
-              {t('neu')}
-            </NextLink>
-          </Button>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.kommunikation')}
+        einleitung={t('einleitung')}
+        aktion={
+          darfAnlegen ? (
+            <Button asChild>
+              <NextLink href="/verwaltung/tickets/neu">
+                <Plus aria-hidden />
+                {t('neu')}
+              </NextLink>
+            </Button>
+          ) : null
+        }
+      />
 
       <form
         method="get"
@@ -104,7 +107,7 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
         <p className="rounded-lg border border-linie bg-weiss p-6 text-tinte-2">{filterAktiv ? t('leerMitFilter') : t('leer')}</p>
       ) : (
         <TabellenRahmen beschriftung={t('tabelle')}>
-          <table className="w-full min-w-[56rem] border-collapse text-left">
+          <table className="w-full min-w-224 border-collapse text-left">
             <caption className="sr-only">{t('tabelle')}</caption>
             <thead className="bg-sand">
               <tr>

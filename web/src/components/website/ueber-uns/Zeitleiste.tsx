@@ -1,5 +1,6 @@
 import { MapPin } from 'lucide-react';
 import Image from 'next/image';
+import { Achtstern } from '@/components/website/Icons';
 import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { UeberUnsInhalt } from '@/lib/validierung/seiteninhalte/ueber-uns';
@@ -11,15 +12,16 @@ import { SYMBOL } from './symbole';
 
 type Eintrag = UeberUnsInhalt['zeitleiste'][number];
 
-/** Punktfarbe nach Stufe: die ersten beiden hell, die letzte Marke tiefgrün (design/AboutUs.dc.html D:46, D:92–96). */
+/** Punktfarbe nach Stufe: die ersten beiden Stationen hell, die letzte Marke tiefgrün (design/AboutUs.dc.html D:46, D:92–96). Die Marke ist ein gefüllter Achtstern, die Farbe kommt über `text-*`. */
 function punktFarbe(i: number, anzahl: number): string {
-  if (i < 2) return 'bg-gruen-700';
-  return i < anzahl - 1 ? 'bg-gruen-800' : 'bg-gruen-950';
+  if (i < 2) return 'text-gruen-700';
+  return i < anzahl - 1 ? 'text-gruen-800' : 'text-gruen-950';
 }
 
 /**
- * Zeitleiste „Unsere Reise“ (design/AboutUs.dc.html D:37–50): Punkt mit Symbol, Jahresmarke, Ort, Titel und Bildfläche;
- * jede Station als Karte am Weg (O-10).
+ * Zeitleiste „Unsere Reise“ (design/AboutUs.dc.html D:37–50): Achtstern-Marke mit Symbol, Jahresmarke, Ort, Titel und Bildfläche;
+ * jede Station als Karte am Weg (O-10). Die Verbindungslinie ist durchgehend (H-B12): Die Linie reicht bis zur nächsten Marke,
+ * darum hat die Punktspalte oben Abstand und die Linie unten ein negatives Maß.
  * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN). Als „Weg der Gemeinde“ (B-07) zieht sich die
  * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`ErstesSichtbarwerden`).
  */
@@ -30,22 +32,20 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
         const Icon = SYMBOL[e.symbol];
         const bild = textMitSprache(e.bildbeschreibung, sprache);
         return (
-          <li key={i} className="flex gap-5" style={{ '--i': i, '--n': eintraege.length } as CSSProperties}>
-            <div aria-hidden className="flex shrink-0 flex-col items-center">
+          <li key={i} className="flex gap-3 md:gap-5" style={{ '--i': i, '--n': eintraege.length } as CSSProperties}>
+            <div aria-hidden className="flex shrink-0 flex-col items-center pt-3.5">
               <span
-                className={cn(
-                  'weg-punkt flex size-12 items-center justify-center rounded-pill text-weiss',
-                  punktFarbe(i, eintraege.length),
-                )}
+                className={cn('weg-punkt relative flex size-10 items-center justify-center md:size-12', punktFarbe(i, eintraege.length))}
               >
-                <Icon aria-hidden className="size-5" />
+                <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
+                <Icon aria-hidden className="relative size-5 stroke-weiss" />
               </span>
-              {i < eintraege.length - 1 ? <span className="weg-linie min-h-6 w-0.5 flex-1 bg-gruen-700/50" /> : null}
+              {i < eintraege.length - 1 ? <span className="weg-linie -mb-3.5 min-h-6 w-1 flex-1 bg-gruen-700" /> : null}
             </div>
             {/* Station als Karte am Weg; der Abstand unten gehört zur Zeile, damit die Linie bis zum nächsten Punkt reicht */}
             <div className="min-w-0 flex-1 pb-6 md:pb-8">
               <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:flex-row md:items-stretch md:gap-6 md:p-6">
-                <div className="flex min-w-0 flex-1 flex-col justify-center gap-2">
+                <div className="flex min-w-0 flex-1 flex-col justify-start gap-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <Text
                       feld={e.kennzeichnung}
@@ -62,11 +62,11 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
                   <Text feld={e.titel} sprache={sprache} als="h3" className="text-24 text-pretty" />
                 </div>
                 {e.bild ? (
-                  <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-auto md:min-h-36 md:w-70 md:shrink-0">
-                    <Image src={e.bild} alt={bild.text} fill sizes="(min-width: 768px) 280px, 100vw" className="object-cover" />
+                  <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-36 md:w-60 md:shrink-0">
+                    <Image src={e.bild} alt={bild.text} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
                   </div>
                 ) : (
-                  <Bildflaeche beschriftung={bild.text} lang={bild.lang} className="h-28 md:h-auto md:min-h-36 md:w-70 md:shrink-0" />
+                  <Bildflaeche beschriftung={bild.text} lang={bild.lang} className="h-28 md:h-36 md:w-60 md:shrink-0" />
                 )}
               </div>
             </div>

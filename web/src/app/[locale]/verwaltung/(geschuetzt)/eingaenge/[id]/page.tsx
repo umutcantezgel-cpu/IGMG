@@ -2,6 +2,7 @@ import { ArrowLeft, Download } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
 import { ABGESCHLOSSEN, bearbeitungsRecht, EINGANG_STATUS } from '@/lib/eingaenge/arten';
@@ -37,14 +38,15 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
     return String(w);
   };
   const angaben = Object.entries(d.daten).filter(([k]) => k !== 'sprache');
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink href="/verwaltung/eingaenge" className="inline-flex min-h-11 items-center gap-2 self-start font-bold">
         <ArrowLeft aria-hidden className="size-5" />
         {t('detail.zurueckZurListe')}
       </NextLink>
+      <VerwaltungsKopf titel={t('detail.titel', { datum: zeitpunkt(d.erstelltAm) })} kennung={tg('gruppe.kommunikation')} />
       <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('detail.titel', { datum: zeitpunkt(d.erstelltAm) })}</h1>
         <p className="text-tinte-2">
           {t(`art.${d.art}`)}
           {d.bezugTitel ? ` · ${d.bezugTitel}` : ''} · {t(`status.${d.status}`)} · {t(`sprachen.${d.sprache}` as never)}
@@ -59,8 +61,8 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
         </p>
         {!bearbeiten ? <p className="text-16 font-bold">{t('detail.nurLesen')}</p> : null}
       </div>
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-        <div className="flex flex-col gap-6">
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="flex flex-col gap-6 lg:col-span-2">
           <section aria-labelledby="eingang-angaben" className={karte}>
             <h2 id="eingang-angaben" className="text-24">
               {t('detail.angaben')}

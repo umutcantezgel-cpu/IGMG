@@ -1,21 +1,23 @@
-import { Calendar, CircleCheck, Clock, Hammer, Target, type LucideIcon } from 'lucide-react';
+import { Calendar, Check, CircleCheck, Clock, Hammer, Ruler, Target, Users, type LucideIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 import type { ProjektStatus, ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
-import { brauchtRueckfall } from './hilfen';
+import { brauchtRueckfall, zahl } from './hilfen';
 
 const STATUS_STIL: Record<ProjektStatus, { Icon: LucideIcon; klasse: string }> = {
-  in_planung: { Icon: Clock, klasse: 'border-warnung bg-warnung-toenung text-warnung' },
+  in_planung: { Icon: Clock, klasse: 'border-dashed border-rand bg-weiss text-tinte-2' },
   im_bau: { Icon: Hammer, klasse: 'border-info bg-info-toenung text-info' },
   fertiggestellt: { Icon: CircleCheck, klasse: 'border-gruen-700 bg-gruen-50 text-gruen-800' },
 };
 
 /**
- * Bauprojekt (Design Projects.dc.html D:22–37): 3D-Platzhalter mit Name und Status, Projektbeschreibung, Beginn und
- * Fertigstellung. Die 3D-Ansicht ist eine beschriftete Fläche, kein 3D-Viewer und keine Bibliothek (Briefing).
+ * Bauprojekt (Design Projects.dc.html D:22–37): 3D-Platzhalter mit Name und Status, Projektbeschreibung, im Kopf die
+ * vier Fakten (Beginn, Fertigstellung, Kapazität, Fläche) und die Einrichtungen als Chips. Die 3D-Ansicht ist eine
+ * beschriftete Fläche, kein 3D-Viewer und keine Bibliothek (Briefing).
  */
 export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
@@ -23,7 +25,7 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
   const p = inhalt.projekt;
   const name = textMitSprache(p.name, sprache).text;
   const { Icon: StatusIcon, klasse } = STATUS_STIL[p.status];
-  const rueckfall = brauchtRueckfall(sprache, [p.name, p.ort, p.beschreibung]);
+  const rueckfall = brauchtRueckfall(sprache, [p.name, p.ort, p.beschreibung, p.kapazitaet.einheit, ...p.einrichtungen]);
   return (
     <section aria-labelledby="projekt-beschreibung" className="grid items-stretch gap-8 lg:grid-cols-12 lg:gap-12">
       <div className="relative min-h-70 min-w-0 md:min-h-115 lg:col-span-7">
@@ -52,16 +54,52 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
             label={t('bezeichnungen.fertigstellung')}
             wert={p.fertigstellung === null ? t('platzhalter.gemeinde') : String(p.fertigstellung)}
           />
+          <Fakt
+            Icon={Users}
+            label={t('bezeichnungen.kapazitaet')}
+            wert={
+              p.kapazitaet.wert === null ? (
+                t('platzhalter.gemeinde')
+              ) : (
+                <>
+                  {zahl(p.kapazitaet.wert, sprache)} <Text feld={p.kapazitaet.einheit} sprache={sprache} />
+                </>
+              )
+            }
+          />
+          <Fakt
+            Icon={Ruler}
+            label={t('bezeichnungen.flaeche')}
+            wert={p.flaecheM2 === null ? t('platzhalter.gemeinde') : `${zahl(p.flaecheM2, sprache)} ${t('einheiten.m2')}`}
+          />
         </dl>
+        <div className="flex flex-col gap-2">
+          <span className="text-16 font-bold text-tinte-2">{t('bezeichnungen.einrichtungen')}</span>
+          {p.einrichtungen.length > 0 ? (
+            <ul className="flex flex-wrap gap-2">
+              {p.einrichtungen.map((e, i) => (
+                <li
+                  key={i}
+                  className="inline-flex items-center gap-1.5 rounded-pill bg-gruen-50 px-3 py-1 text-16 font-bold text-gruen-800"
+                >
+                  <Check aria-hidden className="size-4 shrink-0" />
+                  <Text feld={e} sprache={sprache} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-16 text-tinte-2">{t('platzhalter.gemeinde')}</p>
+          )}
+        </div>
       </div>
     </section>
   );
 }
 
-/** Kennzahl mit Symbol (Beginn, Fertigstellung): Symbol links, Bezeichnung und Wert rechts. */
-function Fakt({ Icon, label, wert }: { Icon: LucideIcon; label: string; wert: string }) {
+/** Kennzahl mit Symbol (Beginn, Fertigstellung, Kapazität, Fläche): Symbol links, Bezeichnung und Wert rechts. */
+function Fakt({ Icon, label, wert }: { Icon: LucideIcon; label: string; wert: ReactNode }) {
   return (
-    <div className="grid raster-symbol items-start gap-x-3 rounded-lg bg-sand p-4">
+    <div className="grid raster-symbol content-start items-start gap-x-3 rounded-lg bg-sand p-4">
       <Icon aria-hidden className="row-span-2 mt-0.5 size-6 shrink-0 text-gruen-700" />
       <dt className="text-16 leading-snug text-tinte-2">{label}</dt>
       <dd className="text-24 font-bold hyphens-none">{wert}</dd>

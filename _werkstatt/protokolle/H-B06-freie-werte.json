@@ -1,0 +1,68 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-12-00-00",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/ankuendigungen/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/audit/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/benutzer/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/benutzer/einladen/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/benutzer/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/einstellungen/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/gebetszeiten/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/konto/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/kurse/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/medien/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/neuigkeiten/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/postfach/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/[bereich]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/kontakt/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/organisationen/[org]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/organisationen/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/tickets/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/veranstaltungen/[id]/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/veranstaltungen/neu/page.tsx",
+    "web/src/app/[locale]/verwaltung/(geschuetzt)/veranstaltungen/page.tsx",
+    "web/src/components/verwaltung/Meldung.tsx",
+    "web/src/components/verwaltung/TabellenRahmen.tsx",
+    "web/src/components/verwaltung/VerwaltungsKopf.tsx",
+    "web/src/components/verwaltung/organisationTon.ts",
+    "web/src/components/verwaltung/postfach/AntwortFormular.tsx",
+    "web/src/components/verwaltung/postfach/PostfachRahmen.tsx",
+    "web/src/components/verwaltung/startklar/PruefListe.tsx",
+    "web/src/components/verwaltung/startklar/status.ts",
+    "web/src/components/verwaltung/uebersicht/Kennzahlen.tsx",
+    "web/src/components/verwaltung/uebersicht/Listen.tsx"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 2
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx",
+      "zeile": 70,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]",
+      "zeileText": "<dl className=\"grid gap-x-6 gap-y-3 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]\">"
+    },
+    {
+      "datei": "web/src/app/[locale]/verwaltung/(geschuetzt)/konto/page.tsx",
+      "zeile": 23,
+      "art": "Tailwind-Klammerwert",
+      "fund": "sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]",
+      "zeileText": "<dl className=\"grid gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,9rem)_minmax(0,1fr)]\">"
+    }
+  ]
+}

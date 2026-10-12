@@ -102,6 +102,7 @@ export async function VoranmeldungFormular({
   return (
     <FormWizard
       sprache={sprache}
+      anordnung="seitenleiste"
       aktuell={schritt}
       ergebnis={ergebnis}
       gewechselt={!ergebnis && Object.keys(werte).length > 0}
@@ -142,7 +143,7 @@ export async function VoranmeldungFormular({
                     pflicht={p}
                     wert={w('klasse')}
                     fehler={f('klasse')}
-                    spaltenMin="sm:raster-kacheln"
+                    spaltenMin="grid-cols-1"
                     optionen={KLASSEN.map((k) => ({ wert: k, label: t(`klasse.${k}`), beschreibung: t(`klasse.${k}Text`) }))}
                   />
                 </div>

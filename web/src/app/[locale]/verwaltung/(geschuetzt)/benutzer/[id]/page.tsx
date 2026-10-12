@@ -2,6 +2,7 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { RollenFormular } from '@/components/verwaltung/benutzer/RollenFormular';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -25,15 +26,15 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
   const selbst = konto.id === a.benutzerId;
   const fehler = FEHLER.find((f) => f === sp.fehler);
   const meldung = (['zweiFaktor', 'gesperrt', 'entsperrt'] as const).find((m) => m === sp.meldung);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink href="/verwaltung/benutzer" className="inline-flex min-h-11 items-center gap-2 self-start font-bold">
         <ArrowLeft aria-hidden className="size-5" />
         {t('detail.zurueck')}
       </NextLink>
+      <VerwaltungsKopf titel={konto.name} kennung={tg('gruppe.betrieb')} einleitung={<span className="break-all">{konto.email}</span>} />
       <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{konto.name}</h1>
-        <p className="break-all text-tinte-2">{konto.email}</p>
         <p className="text-16 text-tinte-2">
           {t('detail.seit')} {datumLang(konto.erstelltAm, 'de')} ·{' '}
           {t(konto.zweiFaktor ? 'zweiFaktorStatus.eingerichtet' : 'zweiFaktorStatus.ausstehend')} ({t('spalte.zweiFaktor')}) ·{' '}
@@ -44,7 +45,7 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
       {fehler ? <Meldung art="fehler">{t(`fehler.${fehler}`)}</Meldung> : null}
       {meldung ? <Meldung art="erfolg">{t(`meldung.${meldung}`)}</Meldung> : null}
       {selbst ? <Meldung art="info">{t('detail.selbstHinweis')}</Meldung> : null}
-      <section aria-labelledby="konto-rollen" className={`${karte} max-w-3xl`}>
+      <section aria-labelledby="konto-rollen" className={`${karte} max-w-einleitung`}>
         <h2 id="konto-rollen" className="text-24">
           {t('detail.rollenTitel')}
         </h2>

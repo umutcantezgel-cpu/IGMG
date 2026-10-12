@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { FristenFormular } from '@/components/verwaltung/einstellungen/FristenFormular';
 import { EINGANG_ARTEN } from '@/lib/eingaenge/arten';
 import { ladeLoeschfristen } from '@/lib/eingaenge/fristen';
@@ -14,12 +15,13 @@ export default async function Einstellungen() {
     ladeLoeschfristen(),
     zaehleFaellige(),
   ]);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <h1 className="text-display-2">{t('titel')}</h1>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.betrieb')} />
       <section
         aria-labelledby="einstellungen-fristen"
-        className="flex max-w-3xl flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6"
+        className="flex max-w-einleitung flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6"
       >
         <h2 id="einstellungen-fristen" className="text-24">
           {t('fristenTitel')}

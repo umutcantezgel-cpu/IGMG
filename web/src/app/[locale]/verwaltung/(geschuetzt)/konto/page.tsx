@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { ErsatzcodesFormular, PasswortFormular } from '@/components/verwaltung/benutzer/KontoFormulare';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { verlangeSitzung } from '@/lib/rechte/pruefe';
@@ -9,12 +10,10 @@ const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 m
 export default async function MeinKonto({ searchParams }: PageProps<'/[locale]/verwaltung/konto'>) {
   const a = await verlangeSitzung();
   const [t, tr, sp] = await Promise.all([getTranslations('verwaltung.benutzer'), getTranslations('verwaltung.rollen'), searchParams]);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('konto.titel')}</h1>
-        <p className="max-w-[70ch] text-tinte-2">{t('konto.untertitel')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('konto.titel')} kennung={tg('konto')} einleitung={t('konto.untertitel')} />
       {sp.passwort === 'geaendert' ? <Meldung art="erfolg">{t('konto.passwortGeaendert')}</Meldung> : null}
       <div className="grid max-w-6xl items-start gap-6 lg:grid-cols-2">
         <section aria-labelledby="konto-angaben" className={karte}>

@@ -1,5 +1,6 @@
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { BerechnungFormular, ImportFormular, QuelleFormular } from '@/components/verwaltung/gebetszeiten/GebetszeitenFormulare';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -23,22 +24,24 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
     ladeImporte(),
   ]);
   const bearbeiten = darf(a.rollen, 'gebetszeiten.bearbeiten');
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-display-2">{t('titel')}</h1>
-          <p className="max-w-[70ch] text-tinte-2">{t('untertitel')}</p>
-        </div>
-        <div className="flex flex-wrap gap-4">
-          <NextLink href="/gebetszeiten" className="inline-flex min-h-11 items-center font-bold">
-            {t('oeffentlich')}
-          </NextLink>
-          <NextLink href="/gebetszeiten/anzeige" prefetch={false} className="inline-flex min-h-11 items-center font-bold">
-            {t('vollbild')}
-          </NextLink>
-        </div>
-      </div>
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.inhalte')}
+        einleitung={t('untertitel')}
+        aktion={
+          <div className="flex flex-wrap gap-4">
+            <NextLink href="/gebetszeiten" className="inline-flex min-h-11 items-center font-bold">
+              {t('oeffentlich')}
+            </NextLink>
+            <NextLink href="/gebetszeiten/anzeige" prefetch={false} className="inline-flex min-h-11 items-center font-bold">
+              {t('vollbild')}
+            </NextLink>
+          </div>
+        }
+      />
       {sp.entfernt === '1' ? <Meldung art="erfolg">{t('importe.entfernt')}</Meldung> : null}
       {!bearbeiten ? <p className="font-bold">{t('nurLesen')}</p> : null}
       <section aria-labelledby="gz-stand" className={karte}>
@@ -52,7 +55,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
         </ul>
         {einstellung.aktiveQuelle === 'import' && !abdeckung.naechste30 ? <Meldung art="info">{t('stand.luecke')}</Meldung> : null}
       </section>
-      <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-6 xl:grid-cols-2">
+      <div className="grid min-w-0 grid-cols-1 gap-6 xl:grid-cols-2">
         <section aria-labelledby="gz-quelle" className={karte}>
           <h2 id="gz-quelle" className="text-24">
             {t('quelle.titel')}
@@ -83,7 +86,7 @@ export default async function GebetszeitenVerwalten({ searchParams }: PageProps<
           <p className="text-tinte-2">{t('importe.leer')}</p>
         ) : (
           <TabellenRahmen beschriftung={t('importe.titel')}>
-            <table className="w-full min-w-[48rem] border-collapse text-left">
+            <table className="w-full min-w-192 border-collapse text-left">
               <thead className="bg-sand">
                 <tr>
                   {(['zeitraum', 'tage', 'datei', 'am', 'von', 'aktion'] as const).map((s) => (

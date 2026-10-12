@@ -3,6 +3,7 @@ import { MODULE } from '@/components/verwaltung/shell/module';
 import { Kennzahlen } from '@/components/verwaltung/uebersicht/Kennzahlen';
 import { Listen } from '@/components/verwaltung/uebersicht/Listen';
 import { sichtbareKacheln } from '@/components/verwaltung/uebersicht/sichtbarkeit';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { ladeUebersicht } from '@/server/queries/verwaltung/uebersicht';
@@ -27,10 +28,7 @@ export default async function Uebersicht() {
   const leer = kacheln.length === 0 && daten.kommend === null && daten.neuigkeiten === null;
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="text-20 leading-einleitung text-tinte-2">{t('willkommen', { name: a.name })}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tv('titel')} einleitung={t('willkommen', { name: a.name })} />
       {kacheln.length ? <Kennzahlen kacheln={kacheln} titel={t('kennzahlen')} /> : null}
       <Listen
         neuigkeiten={daten.neuigkeiten}

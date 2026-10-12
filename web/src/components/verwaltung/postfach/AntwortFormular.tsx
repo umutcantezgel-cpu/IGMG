@@ -29,7 +29,7 @@ export function AntwortFormular({ unterhaltungId, aktion }: { unterhaltungId: st
 
   return (
     <form action={absenden} noValidate className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4 md:p-5">
-      <h3 className="text-20 font-bold">{t('antwortTitel')}</h3>
+      <h3 className="font-text text-20 font-bold tracking-normal">{t('antwortTitel')}</h3>
       <div ref={meldungRef} tabIndex={-1} className="outline-none">
         {zustand.fehler ? (
           <Meldung art="fehler">

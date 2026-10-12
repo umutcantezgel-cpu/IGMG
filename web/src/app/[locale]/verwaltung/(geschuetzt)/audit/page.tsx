@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import type { AuditAktion } from '@/lib/audit';
 import { AuditFilter, type Auswahl } from '@/components/verwaltung/audit/AuditFilter';
 import { AuditSeiten } from '@/components/verwaltung/audit/AuditSeiten';
@@ -88,12 +89,10 @@ export default async function AuditLogSeite({ searchParams }: PageProps<'/[local
     return q ? `/verwaltung/audit?${q}` : '/verwaltung/audit';
   };
 
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-display-2">{t('titel')}</h1>
-        <p className="text-tinte-2">{t('einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.betrieb')} einleitung={t('einleitung')} />
       <section aria-labelledby="audit-filter-titel" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6">
         <h2 id="audit-filter-titel" className="text-20 font-bold">
           {t('filterTitel')}

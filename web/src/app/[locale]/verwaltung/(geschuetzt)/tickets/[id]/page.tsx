@@ -85,7 +85,7 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
               <>
                 {melder.daten.betreff !== undefined || melder.daten.nachricht !== undefined ? (
                   <div className="flex flex-col gap-2 border-b border-linie pb-4">
-                    <h3 className="text-20">{melder.daten.betreff || t('keinWert')}</h3>
+                    <h3 className="font-text text-20 font-bold tracking-normal">{melder.daten.betreff || t('keinWert')}</h3>
                     <p className="break-words whitespace-pre-line">{melder.daten.nachricht || t('keinWert')}</p>
                   </div>
                 ) : null}
@@ -150,7 +150,7 @@ export default async function TicketDetail({ params, searchParams }: PageProps<'
             )}
             {kommentieren ? (
               <div className="flex flex-col gap-3 border-t border-linie pt-4">
-                <h3 className="font-bold">{t('kommentar.titel')}</h3>
+                <h3 className="font-text text-20 font-bold tracking-normal">{t('kommentar.titel')}</h3>
                 <KommentarFormular aktion={kommentiereTicket} id={d.id} />
               </div>
             ) : null}

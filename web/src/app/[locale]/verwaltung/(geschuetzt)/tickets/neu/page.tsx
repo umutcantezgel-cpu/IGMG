@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { NeuesTicketFormular } from '@/components/verwaltung/tickets/NeuesTicketFormular';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { neuesTicket } from '@/server/actions/tickets';
@@ -10,6 +11,7 @@ import { anlageOptionen } from '../formular-optionen';
 export default async function NeuesTicketSeite() {
   const a = await verlangeSeitenRecht('ticket.anlegen');
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.tickets'), anlageOptionen(a)]);
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -19,10 +21,7 @@ export default async function NeuesTicketSeite() {
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('neu')}</h1>
-        <p className="text-tinte-2">{t('neuEinleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('neu')} kennung={tg('gruppe.kommunikation')} einleitung={t('neuEinleitung')} />
       <NeuesTicketFormular
         aktion={neuesTicket}
         organisationen={optionen.organisationen}

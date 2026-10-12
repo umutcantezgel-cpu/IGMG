@@ -2,6 +2,7 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { VeranstaltungsFormular } from '@/components/verwaltung/veranstaltungen/VeranstaltungsFormular';
 import { organisationsFilter, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { NEUE_VERANSTALTUNG } from '@/lib/veranstaltung/formularwerte';
@@ -16,6 +17,7 @@ export default async function NeueVeranstaltung() {
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
   const [t, optionen, bilder] = await Promise.all([getTranslations('verwaltung.veranstaltungen'), formularOptionen(a), ladeBildAuswahl()]);
   const startwerte = { ...NEUE_VERANSTALTUNG, organisation: optionen.organisationen[0]?.wert ?? '' };
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -25,10 +27,7 @@ export default async function NeueVeranstaltung() {
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('neu')}</h1>
-        <p className="text-tinte-2">{t('neuEinleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('neu')} kennung={tg('gruppe.inhalte')} einleitung={t('neuEinleitung')} />
       <VeranstaltungsFormular aktion={speichereVeranstaltung} startwerte={startwerte} modus="neu" {...optionen} bilder={bilder} />
     </>
   );

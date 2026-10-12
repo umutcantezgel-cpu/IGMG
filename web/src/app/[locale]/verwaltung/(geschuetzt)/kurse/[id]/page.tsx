@@ -2,6 +2,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { KursFormular } from '@/components/verwaltung/kurse/KursFormular';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -20,6 +21,7 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.kurse'), formularOptionen()]);
   const nurLesen = !darf(a.rollen, 'kurs.bearbeiten') || k.imPapierkorbSeit !== null;
   const bilder = nurLesen ? [] : await ladeBildAuswahl();
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -29,22 +31,23 @@ export default async function KursBearbeiten({ params, searchParams }: PageProps
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-display-2">{t('bearbeiten')}</h1>
-          <p className="text-tinte-2">{k.titel.de}</p>
-        </div>
-        {k.status === 'veroeffentlicht' && !k.imPapierkorbSeit ? (
-          <NextLink
-            href="/bildung/korankurse"
-            prefetch={false}
-            className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4"
-          >
-            {t('oeffentlichAnsehen')}
-            <ExternalLink aria-hidden className="size-4" />
-          </NextLink>
-        ) : null}
-      </div>
+      <VerwaltungsKopf
+        titel={t('bearbeiten')}
+        kennung={tg('gruppe.inhalte')}
+        einleitung={k.titel.de}
+        aktion={
+          k.status === 'veroeffentlicht' && !k.imPapierkorbSeit ? (
+            <NextLink
+              href="/bildung/korankurse"
+              prefetch={false}
+              className="inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-4"
+            >
+              {t('oeffentlichAnsehen')}
+              <ExternalLink aria-hidden className="size-4" />
+            </NextLink>
+          ) : null
+        }
+      />
       {sp.angelegt ? <Meldung art="erfolg">{t('angelegt')}</Meldung> : null}
       {k.imPapierkorbSeit ? <Meldung art="info">{t('imPapierkorb')}</Meldung> : null}
       <KursFormular

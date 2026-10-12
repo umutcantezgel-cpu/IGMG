@@ -27,7 +27,7 @@ export default async function VoranmeldungSeite() {
       pfad={[{ label: tp('bildung') }, { label: tp('voranmeldung') }]}
     >
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
-      <div className="mx-auto max-w-5xl px-4 py-10 md:px-8 md:py-14">
+      <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
         <FormularInsel aktion={sendeVoranmeldung} ohneSkript={tf('ohneSkript')}>
           <VoranmeldungFormular sprache={sprache} />
         </FormularInsel>

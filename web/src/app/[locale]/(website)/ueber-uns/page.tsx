@@ -1,8 +1,8 @@
-import { Clock, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { Stern8 } from '@/components/website/Icons';
 import { Text } from '@/components/website/Text';
 import { Trenner } from '@/components/website/Zustandsgrafik';
 import { Aufruf } from '@/components/website/ueber-uns/Aufruf';
@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * Über uns (design/AboutUs.dc.html, Blatt S08): Geschichte, Zeitleiste, Gebet und Gemeinschaft, Werte und Aufruf.
  * Redaktionelle Texte kommen aus dem Seiteninhalt „ueber-uns“, feste Überschriften und Schaltflächen aus messages.
  * Komposition nach der Referenz (O-10): vollbreite Abschnitte im Wechsel Papier/Sand, Kopfblock mit `text-display-2`.
+ * Abschnittsköpfe (H-B12): Kennung mit Achtstern über dem Titel; der Weg steht im Breitformat neben seinem Kopf.
  */
 export default async function UeberUnsSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -41,10 +42,15 @@ export default async function UeberUnsSeite() {
       <section aria-labelledby="ueber-geschichte" className="bg-papier">
         <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-8 px-4 py-abschnitt md:px-8 lg:grid-cols-12 lg:gap-16">
           <div className="flex min-w-0 flex-col gap-6 lg:col-span-7">
-            <h2 id="ueber-geschichte" className="flex items-start gap-3 text-display-2 text-balance">
-              <Clock aria-hidden className="mt-1.5 size-8 shrink-0 text-gruen-700" />
-              {t('geschichteTitel')}
-            </h2>
+            <div className="flex max-w-einleitung flex-col gap-3">
+              <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+                <Stern8 className="size-4" />
+                {t('geschichteKennung')}
+              </span>
+              <h2 id="ueber-geschichte" className="text-display-2 text-balance">
+                {t('geschichteTitel')}
+              </h2>
+            </div>
             <div className="fliesstext text-pretty">
               {inhalt.geschichte.absaetze.map((a, i) => (
                 <Text
@@ -61,16 +67,22 @@ export default async function UeberUnsSeite() {
         </div>
       </section>
 
-      {/* Weg der Gemeinde (B-07): Stationen als Karten am Weg */}
+      {/* Weg der Gemeinde (B-07): Kopf links und Stationen als Karten am Weg rechts (ab lg zwei Drittel) */}
       <section aria-labelledby="ueber-reise" className="border-y border-linie bg-sand">
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt md:px-8">
-          <div className="flex max-w-einleitung flex-col gap-3">
+        <div className="mx-auto grid max-w-(--container-inhalt) gap-10 px-4 py-abschnitt md:px-8 lg:grid-cols-3 lg:gap-12">
+          <div className="flex max-w-einleitung flex-col gap-3 lg:sticky lg:top-8 lg:self-start">
+            <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+              <Stern8 className="size-4" />
+              {t('reiseKennung')}
+            </span>
             <h2 id="ueber-reise" className="text-display-2">
               {t('reiseTitel')}
             </h2>
             <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('reiseUntertitel')}</p>
           </div>
-          <Zeitleiste eintraege={zeitleiste} sprache={sprache} />
+          <div className="min-w-0 lg:col-span-2">
+            <Zeitleiste eintraege={zeitleiste} sprache={sprache} />
+          </div>
         </div>
       </section>
 
@@ -78,8 +90,7 @@ export default async function UeberUnsSeite() {
       <section aria-labelledby="ueber-gemeinschaft" className="bg-papier">
         <div className="mx-auto flex max-w-(--container-seitenkopf) flex-col gap-6 px-4 py-abschnitt md:px-8">
           <Trenner className="mx-auto w-full max-w-60" />
-          <h2 id="ueber-gemeinschaft" className="flex items-start gap-3 text-display-2 text-balance">
-            <Users aria-hidden className="mt-1.5 size-8 shrink-0 text-gruen-700" />
+          <h2 id="ueber-gemeinschaft" className="text-display-2 text-balance">
             {t('gemeinschaftTitel')}
           </h2>
           <div className="fliesstext text-pretty">
@@ -93,6 +104,10 @@ export default async function UeberUnsSeite() {
       <section aria-labelledby="ueber-werte" className="border-t border-linie bg-sand">
         <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
           <div className="flex max-w-einleitung flex-col gap-3">
+            <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+              <Stern8 className="size-4" />
+              {t('wertKennung')}
+            </span>
             <h2 id="ueber-werte" className="text-display-2">
               {t('wertTitel')}
             </h2>

@@ -13,11 +13,11 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
       aria-labelledby="ueber-aufruf"
       className="flex flex-wrap items-center justify-between gap-6 rounded-lg bg-gruen-950 p-6 text-weiss md:p-12"
     >
-      <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-2">
+      <div className="flex min-w-0 flex-1 basis-105 flex-col gap-2">
         <h2 id="ueber-aufruf" className="text-30 text-weiss md:text-36">
           {titel}
         </h2>
-        <p className="max-w-[60ch] text-18 text-gruen-100">{text}</p>
+        <p className="max-w-text text-18 text-gruen-100">{text}</p>
       </div>
       <div className="flex flex-wrap gap-3">
         <Link

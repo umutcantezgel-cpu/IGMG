@@ -2,6 +2,7 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { istVerwaltungBereich, type VerwaltungBereich } from '@/components/verwaltung/seiteninhalte/bereiche';
 import { SeiteninhaltFormular } from '@/components/verwaltung/seiteninhalte/Formular';
@@ -36,6 +37,7 @@ export default async function SeiteninhaltBereich({ params }: PageProps<'/[local
   const [t, stand] = await Promise.all([getTranslations('verwaltung.seiteninhalte'), ladeSeiteninhaltFuerVerwaltung(bereich)]);
   const nurLesen = !darf(a.rollen, 'seiteninhalt.bearbeiten');
   const zuletzt = stand.aktualisiertAm ? `${datumLang(stand.aktualisiertAm, 'de')}, ${uhrzeit(stand.aktualisiertAm, 'de')}` : null;
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -45,25 +47,26 @@ export default async function SeiteninhaltBereich({ params }: PageProps<'/[local
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueckUebersicht')}
       </NextLink>
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-display-2">{t(`bereich.${bereich}`)}</h1>
-          <p className="flex flex-wrap items-center gap-2 text-tinte-2">
-            <span className={cn(pille, stand.istBeispiel ? 'bg-warnung-toenung text-warnung' : 'bg-gruen-50 text-gruen-800')}>
-              {stand.istBeispiel ? t('zustand.beispiel') : t('zustand.gepflegt')}
-            </span>
-            <span>{zuletzt ? t('zuletzt', { datum: zuletzt }) : t('nochKeinStand')}</span>
-          </p>
-        </div>
-        <NextLink
-          href={pfadFuer(OEFFENTLICH[bereich], 'de')}
-          prefetch={false}
-          className="inline-flex min-h-12 items-center gap-2 font-bold underline underline-offset-4"
-        >
-          {t('oeffentlichAnsehen')}
-          <ExternalLink aria-hidden className="size-4" />
-        </NextLink>
-      </div>
+      <VerwaltungsKopf
+        titel={t(`bereich.${bereich}`)}
+        kennung={tg('gruppe.inhalte')}
+        aktion={
+          <NextLink
+            href={pfadFuer(OEFFENTLICH[bereich], 'de')}
+            prefetch={false}
+            className="inline-flex min-h-12 items-center gap-2 font-bold underline underline-offset-4"
+          >
+            {t('oeffentlichAnsehen')}
+            <ExternalLink aria-hidden className="size-4" />
+          </NextLink>
+        }
+      />
+      <p className="flex flex-wrap items-center gap-2 text-16 text-tinte-2">
+        <span className={cn(pille, stand.istBeispiel ? 'bg-warnung-toenung text-warnung' : 'bg-gruen-50 text-gruen-800')}>
+          {stand.istBeispiel ? t('zustand.beispiel') : t('zustand.gepflegt')}
+        </span>
+        <span>{zuletzt ? t('zuletzt', { datum: zuletzt }) : t('nochKeinStand')}</span>
+      </p>
       {stand.unlesbar ? <Meldung art="info">{t('unlesbar')}</Meldung> : null}
       <SeiteninhaltFormular stand={stand} nurLesen={nurLesen} aktion={speichereSeiteninhalt} />
     </>

@@ -4,6 +4,7 @@ import {
   CalendarDays,
   ClipboardCheck,
   Clock,
+  ExternalLink,
   FileText,
   GraduationCap,
   Image as Bild,
@@ -11,22 +12,21 @@ import {
   LayoutDashboard,
   Mail,
   Megaphone,
-  Menu,
   Newspaper,
   Palette,
   ScrollText,
   Settings,
   Ticket,
   Users,
-  X,
+  type LucideIcon,
 } from 'lucide-react';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import type { ModulIcon } from './module';
+import { useMenue } from './MenueZustand';
+import { HANDLUNGS_MODULE, type ModulGruppe, type ModulIcon } from './module';
 
-const ICONS: Record<ModulIcon, typeof Menu> = {
+const ICONS: Record<ModulIcon, LucideIcon> = {
   uebersicht: LayoutDashboard,
   neuigkeiten: Newspaper,
   veranstaltungen: CalendarDays,
@@ -45,86 +45,120 @@ const ICONS: Record<ModulIcon, typeof Menu> = {
   einstellungen: Settings,
 };
 
+const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];
+
+const EINTRAG =
+  'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98';
+
 export type SeitenleistenEintrag = {
   schluessel: string;
   label: string;
   pfad: string;
   icon: ModulIcon;
+  gruppe?: ModulGruppe;
   zaehler?: number;
   zaehlerLabel?: string;
 };
 
 /**
- * Seitenleiste der Verwaltung (design/Dashboard.dc.html Z. 20–26): Kopf „Admin Dashboard“, Navigation mit Zählern.
- * Unter 900 px als aufklappbares Menü (aria-expanded), aktiver Eintrag mit aria-current="page".
+ * Seitenleiste der Verwaltung: Übersicht zuerst, dann die Gruppen Inhalte, Kommunikation und Betrieb (H-B05).
+ * Unter 900 px ist sie nur sichtbar, wenn der Menüknopf der Kopfzeile sie geöffnet hat (aria-expanded am Knopf).
+ * Aktiver Eintrag mit aria-current="page". Zähler nur mit Bedeutung: ab 1 und nie bei 0.
  */
 export function Seitenleiste({
   eintraege,
   texte,
 }: {
   eintraege: SeitenleistenEintrag[];
-  texte: { titel: string; untertitel: string; navName: string; oeffnen: string; schliessen: string };
+  texte: { navName: string; zurWebsite: string; gruppe: Record<ModulGruppe, string> };
 }) {
   const pfad = usePathname();
-  const [offen, setOffen] = useState(false);
+  const { offen, setOffen } = useMenue();
   const aktiv = (p: string) => (p === '/verwaltung' ? pfad === p : pfad === p || pfad.startsWith(`${p}/`));
-  return (
-    <aside className="flex w-full flex-col gap-4 self-start rounded-lg border border-linie bg-weiss p-4 verwaltung:sticky verwaltung:top-4 verwaltung:w-70 verwaltung:shrink-0">
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex flex-col">
-          <span className="text-20 font-bold">{texte.titel}</span>
-          <span className="text-16 text-tinte-2">{texte.untertitel}</span>
-        </div>
-        <button
-          type="button"
-          aria-expanded={offen}
-          aria-controls="verwaltung-navigation"
-          onClick={() => setOffen((o) => !o)}
-          className="inline-flex min-h-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 verwaltung:hidden"
+  const schliessen = () => setOffen(false);
+  const uebersicht = eintraege.filter((e) => e.gruppe === undefined);
+  const gruppen = GRUPPEN.map((g) => ({ gruppe: g, liste: eintraege.filter((e) => e.gruppe === g) })).filter((g) => g.liste.length > 0);
+  const letzteGruppe = gruppen.length - 1;
+
+  const zeile = (e: SeitenleistenEintrag) => {
+    const Icon = ICONS[e.icon];
+    const istAktiv = aktiv(e.pfad);
+    const handlung = (HANDLUNGS_MODULE as readonly string[]).includes(e.schluessel);
+    const zeigtZaehler = e.zaehler !== undefined && e.zaehler > 0;
+    return (
+      <li key={e.schluessel}>
+        <NextLink
+          href={e.pfad}
+          aria-current={istAktiv ? 'page' : undefined}
+          onClick={schliessen}
+          className={cn(
+            EINTRAG,
+            istAktiv
+              ? 'border-gruen-700 bg-gruen-50 text-gruen-800 hover:bg-gruen-100 hover:text-gruen-800'
+              : 'border-transparent text-tinte hover:bg-gruen-50 hover:text-tinte',
+          )}
         >
-          {offen ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
-          <span>{offen ? texte.schliessen : texte.oeffnen}</span>
-        </button>
+          <Icon aria-hidden className="size-5 shrink-0" />
+          {/* Ein Wort wie „Veranstaltungen“ bleibt in einer Zeile: keine Trennung, Zähler rechts daneben (DP-C1 M1) */}
+          <span className="min-w-0 flex-1 hyphens-none">{e.label}</span>
+          {zeigtZaehler ? (
+            <span
+              className={cn(
+                'inline-flex min-w-7 justify-center rounded-pill px-2 text-16 tabular-nums',
+                istAktiv ? 'bg-weiss text-gruen-800' : handlung ? 'bg-gruen-700 text-weiss' : 'bg-sand text-tinte-2',
+              )}
+            >
+              <span aria-hidden>{e.zaehler}</span>
+              <span className="sr-only">{e.zaehlerLabel}</span>
+            </span>
+          ) : null}
+        </NextLink>
+      </li>
+    );
+  };
+
+  // Letzter Eintrag, nur auf dem Telefon: die Rückkehr zur Website steht im Menü, weil die Kopfzeile dafür zu schmal ist
+  const zurWebsite = (
+    <li className="verwaltung:hidden">
+      <NextLink
+        href="/"
+        prefetch={false}
+        onClick={schliessen}
+        className={cn(EINTRAG, 'border-transparent text-tinte hover:bg-gruen-50 hover:text-tinte')}
+      >
+        <ExternalLink aria-hidden className="size-5 shrink-0" />
+        <span className="min-w-0 flex-1 hyphens-none">{texte.zurWebsite}</span>
+      </NextLink>
+    </li>
+  );
+
+  return (
+    <aside
+      className={cn(
+        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:overflow-y-auto verwaltung:py-4',
+        offen ? 'tritt-auf' : 'max-verwaltung:hidden',
+      )}
+    >
+      <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4">
+        {/* Geöffnet tritt die Navigation mit B-03 auf (nur unter 900 px sichtbar); geschlossen bleibt sie ohne Bewegung. */}
+        <nav id="verwaltung-navigation" aria-label={texte.navName}>
+          <ul className="flex flex-col gap-1">
+            {uebersicht.map(zeile)}
+            {gruppen.length === 0 ? zurWebsite : null}
+          </ul>
+          {gruppen.map(({ gruppe, liste }, index) => (
+            <div key={gruppe} className="mt-3 border-t border-linie pt-3">
+              <span id={`nav-gruppe-${gruppe}`} className="block px-3.5 pb-1 text-16 font-bold text-tinte-2">
+                {texte.gruppe[gruppe]}
+              </span>
+              <ul aria-labelledby={`nav-gruppe-${gruppe}`} className="flex flex-col gap-1">
+                {liste.map(zeile)}
+                {index === letzteGruppe ? zurWebsite : null}
+              </ul>
+            </div>
+          ))}
+        </nav>
       </div>
-      {/* Geöffnet tritt die Navigation mit B-03 auf (nur mobil sichtbar); geschlossen bleibt sie ohne Bewegung. */}
-      <nav id="verwaltung-navigation" aria-label={texte.navName} className={cn(offen ? 'tritt-auf' : 'max-verwaltung:hidden')}>
-        <ul className="flex flex-col gap-1">
-          {eintraege.map((e) => {
-            const Icon = ICONS[e.icon];
-            const istAktiv = aktiv(e.pfad);
-            return (
-              <li key={e.schluessel}>
-                <NextLink
-                  href={e.pfad}
-                  aria-current={istAktiv ? 'page' : undefined}
-                  onClick={() => setOffen(false)}
-                  className={cn(
-                    'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98',
-                    istAktiv
-                      ? 'border-gruen-700 bg-gruen-50 text-gruen-800 hover:bg-gruen-100 hover:text-gruen-800'
-                      : 'border-transparent text-tinte hover:bg-gruen-50 hover:text-tinte',
-                  )}
-                >
-                  <Icon aria-hidden className="size-5 shrink-0" />
-                  {/* Ein Wort wie „Veranstaltungen“ bleibt in einer Zeile: keine Trennung, Zähler rechts daneben (DP-C1 M1) */}
-                  <span className="min-w-0 flex-1 hyphens-none">{e.label}</span>
-                  {e.zaehler !== undefined ? (
-                    <span
-                      className={cn(
-                        'inline-flex min-w-7 justify-center rounded-pill px-2 text-16 tabular-nums',
-                        istAktiv ? 'bg-weiss text-gruen-800' : 'bg-sand text-tinte-2',
-                      )}
-                    >
-                      <span aria-hidden>{e.zaehler}</span>
-                      <span className="sr-only">{e.zaehlerLabel}</span>
-                    </span>
-                  ) : null}
-                </NextLink>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
     </aside>
   );
 }

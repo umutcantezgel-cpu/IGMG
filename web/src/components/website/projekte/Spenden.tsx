@@ -1,21 +1,20 @@
-import { Banknote, Heart } from 'lucide-react';
+import { Banknote } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { Text, textMitSprache } from '@/components/website/Text';
-import { Link } from '@/i18n/link';
+import { Text } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
 import { betrag, brauchtRueckfall, fortschritt } from './hilfen';
 
 /**
  * Spenden (Design Projects.dc.html D:40–52, Sprungziel #spenden): Titel und Text aus dem Seiteninhalt, Fortschritt als
- * Fortschrittsbalken (role="progressbar") nur aus gesammeltem Betrag und Ziel, Bankverbindung als Platzhalter, zwei
- * Schaltflächen. Ohne Beträge zeigt die Seite Platzhalter und keinen Prozentwert.
+ * Fortschrittsbalken (role="progressbar") nur aus gesammeltem Betrag und Ziel, Bankverbindung als Platzhalter. Die Karte
+ * steht rechts neben dem Aufruf in „Unterstützen“; #spendenkonto führt zur Bankverbindung. Ohne Beträge zeigt die Seite
+ * Platzhalter und keinen Prozentwert.
  */
 export async function Spenden({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
   const s = inhalt.spende;
-  const titel = textMitSprache(s.titel, sprache).text;
   const prozent = fortschritt(s.gesammelt, s.ziel);
   const rueckfall = brauchtRueckfall(sprache, [s.titel, s.text, s.bankverbindung]);
   const betragText =
@@ -25,12 +24,12 @@ export async function Spenden({ inhalt, sprache }: { inhalt: ProjekteInhalt; spr
     <section
       id="spenden"
       aria-labelledby="spenden-titel"
-      className="flex scroll-mt-24 flex-col gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-5 md:p-8"
+      className="flex scroll-mt-24 flex-col gap-4 rounded-lg bg-weiss p-5 text-tinte shadow-s2 md:p-8"
     >
-      <h2 id="spenden-titel" className="flex items-center gap-3 text-30">
+      <h3 id="spenden-titel" className="flex items-center gap-3 font-text text-24 leading-snug font-bold tracking-normal">
         <Banknote aria-hidden className="size-7 shrink-0 text-gruen-700" />
         <Text feld={s.titel} sprache={sprache} />
-      </h2>
+      </h3>
       <Text feld={s.text} sprache={sprache} als="p" className="text-pretty" />
       {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
       <div className="flex flex-col gap-2 rounded-lg bg-sand p-4">
@@ -51,29 +50,12 @@ export async function Spenden({ inhalt, sprache }: { inhalt: ProjekteInhalt; spr
         </div>
         <span className="font-bold text-gruen-800">{standText}</span>
       </div>
-      <dl className="flex flex-col gap-1 rounded-lg border border-dashed border-rand px-4 py-3 text-16">
+      <dl id="spendenkonto" className="flex scroll-mt-24 flex-col gap-1 rounded-lg border border-dashed border-rand px-4 py-3 text-16">
         <dt className="font-bold">{t('bezeichnungen.spendenkonto')}</dt>
         <dd>
           <Text feld={s.bankverbindung} sprache={sprache} />
         </dd>
       </dl>
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href={{ pathname: '/projekte', hash: 'spenden' }}
-          aria-label={t('linkKontext', { sichtbar: t('spenden.jetzt'), titel })}
-          className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-gruen-700 px-6 font-bold text-weiss no-underline hover:bg-gruen-800"
-        >
-          <Heart aria-hidden className="size-5 shrink-0" />
-          {t('spenden.jetzt')}
-        </Link>
-        <Link
-          href={{ pathname: '/projekte', hash: 'meilensteine' }}
-          aria-label={t('linkKontext', { sichtbar: t('spenden.mehr'), titel: t('bezeichnungen.meilensteine') })}
-          className="inline-flex min-h-12 items-center rounded-lg border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 no-underline hover:bg-gruen-50"
-        >
-          {t('spenden.mehr')}
-        </Link>
-      </div>
     </section>
   );
 }

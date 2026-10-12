@@ -60,7 +60,7 @@ export function AltchaFeld({ sprache, texte }: { sprache: 'de' | 'tr' | 'en'; te
             configuration: JSON.stringify({ hideLogo: true, hideFooter: true, humanInteractionSignature: false }),
           })
         : null}
-      <p className="text-16 text-tinte-2">{texte.hinweis}</p>
+      <p className="max-w-text text-16 text-tinte-2">{texte.hinweis}</p>
     </div>
   );
 }

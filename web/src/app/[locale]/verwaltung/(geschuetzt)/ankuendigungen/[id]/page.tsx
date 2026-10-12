@@ -2,6 +2,7 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { AnkuendigungsFormular } from '@/components/verwaltung/ankuendigungen/AnkuendigungsFormular';
 import { formularWerte } from '@/components/verwaltung/ankuendigungen/werte';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -21,6 +22,7 @@ export default async function AnkuendigungBearbeiten({ params, searchParams }: P
   if (filter !== null && !(z.organisation && filter.includes(z.organisation))) redirect('/verwaltung/kein-zugriff');
   const [t, optionen] = await Promise.all([getTranslations('verwaltung.ankuendigungen'), formularOptionen(a)]);
   const nurLesen = !darf(a.rollen, 'ankuendigung.bearbeiten', { organisation: z.organisation }) || z.imPapierkorbSeit !== null;
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -30,10 +32,7 @@ export default async function AnkuendigungBearbeiten({ params, searchParams }: P
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('bearbeiten')}</h1>
-        <p className="text-tinte-2">{z.titel.de}</p>
-      </div>
+      <VerwaltungsKopf titel={t('bearbeiten')} kennung={tg('gruppe.inhalte')} einleitung={z.titel.de} />
       {sp.angelegt ? <Meldung art="erfolg">{t('angelegt')}</Meldung> : null}
       {z.imPapierkorbSeit ? <Meldung art="info">{t('imPapierkorb')}</Meldung> : null}
       <AnkuendigungsFormular

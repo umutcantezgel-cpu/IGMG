@@ -4,7 +4,7 @@ import { Text } from '@/components/website/Text';
 import type { Locale } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 import type { SeitenInhalt } from '@/server/queries/seiteninhalte';
-import { KARTE, UEBERSCHRIFT_GROSS } from './stil';
+import { KARTE, UEBERSCHRIFT } from './stil';
 
 /**
  * Angebote (Liste aus dem Seiteninhalt) und die Karte „Besucher willkommen“ mit zwei Chips
@@ -13,12 +13,13 @@ import { KARTE, UEBERSCHRIFT_GROSS } from './stil';
 export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kontakt');
-  const chip = 'inline-flex items-center gap-1.5 rounded-pill bg-weiss px-3 py-0.5 text-16 font-bold text-gruen-950';
+  // Ehrliche Elemente (H-B10): Die Chips sind Hinweise auf Dunkelgrün und sehen nicht wie weiße Knöpfe aus
+  const chip = 'inline-flex items-center gap-1.5 rounded-pill bg-gruen-800 px-3 py-0.5 text-16 font-bold text-gruen-50';
   return (
     <div className="grid gap-6 lg:grid-cols-3">
       <section aria-labelledby="kontakt-angebote" className={cn(KARTE, 'gap-4 lg:col-span-2')}>
-        <h2 id="kontakt-angebote" className={UEBERSCHRIFT_GROSS}>
-          <Heart aria-hidden className="size-7 shrink-0 text-gruen-700" />
+        <h2 id="kontakt-angebote" className={UEBERSCHRIFT}>
+          <Heart aria-hidden className="size-6 shrink-0 text-gruen-700" />
           {t('angebote.titel')}
         </h2>
         {/* Zwei Spalten ab 768 px, drei ab 1280 px – wie bisher je nach Breite des Feldes (kein Bruch in der Spaltenzahl) */}
@@ -32,8 +33,8 @@ export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'konta
         </ul>
       </section>
       <section aria-labelledby="kontakt-besuch" className="flex min-w-0 flex-col gap-3 rounded-lg bg-gruen-950 p-6 text-weiss">
-        <h2 id="kontakt-besuch" className={cn(UEBERSCHRIFT_GROSS, 'text-weiss')}>
-          <Users aria-hidden className="size-7 shrink-0 text-gruen-100" />
+        <h2 id="kontakt-besuch" className={cn(UEBERSCHRIFT, 'text-weiss')}>
+          <Users aria-hidden className="size-6 shrink-0 text-gruen-100" />
           {t('besuch.titel')}
         </h2>
         <Text feld={kontakt.besuchstext} sprache={sprache} als="p" className="text-gruen-50" />

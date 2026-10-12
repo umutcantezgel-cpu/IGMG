@@ -77,12 +77,12 @@ export function Zustandsgrafik({ art, groesse = 96, className }: { art: Zustand;
   );
 }
 
-/** Achtstern-Trenner (K-008): Linie – Stern – Linie, dekorativ zwischen Abschnitten. */
+/** Achtstern-Trenner (K-008): Linie – Stern – Linie, dekorativ zwischen Abschnitten. Der Stern ist eine Fläche in Grün (H-B12). */
 export function Trenner({ className }: { className?: string }) {
   return (
-    <div aria-hidden className={klassen('flex items-center gap-3 text-rand', className)}>
+    <div aria-hidden className={klassen('flex items-center gap-3 text-gruen-700', className)}>
       <span className="h-px flex-1 bg-linie" />
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <svg width="20" height="20" viewBox="3.5 3.5 17 17" fill="currentColor" aria-hidden="true">
         <path d="M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z" />
       </svg>
       <span className="h-px flex-1 bg-linie" />

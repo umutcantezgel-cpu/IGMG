@@ -42,7 +42,7 @@ function Rahmen({
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
       </label>
       {hinweis ? (
-        <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
+        <p id={`${id}-hinweis`} className="max-w-text text-16 text-tinte-2">
           {hinweis}
         </p>
       ) : null}
@@ -164,7 +164,7 @@ export function FeldEinwilligung({
           aria-describedby={fehler ? `${id}-fehler` : undefined}
           className="mt-0.5 size-6 shrink-0 accent-gruen-700"
         />
-        <label htmlFor={id} className="ohne-silbentrennung text-16">
+        <label htmlFor={id} className="ohne-silbentrennung max-w-text text-16">
           {text}
           {link ? (
             <>
@@ -226,7 +226,7 @@ export function FeldOptionen({
         {pflicht ? <span className="font-normal text-tinte-2"> {pflicht}</span> : null}
       </legend>
       {hinweis ? (
-        <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
+        <p id={`${id}-hinweis`} className="max-w-text text-16 text-tinte-2">
           {hinweis}
         </p>
       ) : null}

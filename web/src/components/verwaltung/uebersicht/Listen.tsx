@@ -1,7 +1,7 @@
+import { KUERZEL_TON } from '@/components/verwaltung/organisationTon';
 import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumLang, isoZeit, zeitspanne } from '@/lib/i18n/format';
-import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { cn } from '@/lib/utils';
 import type { KommendeVeranstaltung, LetzteNeuigkeit } from '@/server/queries/verwaltung/uebersicht';
 
@@ -16,14 +16,6 @@ export type ListenTexte = {
 
 /** Kommende Veranstaltung mit Organisations-Kürzel je Termin (DP-C1 H2). */
 type KommendEintrag = KommendeVeranstaltung;
-
-/** Kürzel-Abzeichen in den Organisationsfarben (Tokens aus globals.css). */
-const KUERZEL_TON: Record<OrganisationKuerzel, string> = {
-  at: 'bg-org-at-toenung text-org-at-text',
-  kt: 'bg-org-kt-toenung text-org-kt-text',
-  gt: 'bg-org-gt-toenung text-org-gt-text',
-  kgt: 'bg-org-kgt-toenung text-org-kgt-text',
-};
 
 /**
  * Leerzustand einer Kurzliste (REFERENZ §2): Zustandsgrafik „leer“ und ein Satz. Dekorativ; der Satz trägt die Bedeutung.
@@ -57,7 +49,7 @@ export function Listen({
     <div className="grid gap-4 md:grid-cols-2">
       {neuigkeiten !== null ? (
         <section aria-labelledby="uebersicht-neuigkeiten" className="flex flex-col rounded-lg border border-linie bg-weiss p-5">
-          <h2 id="uebersicht-neuigkeiten" className="text-20 font-bold">
+          <h2 id="uebersicht-neuigkeiten" className="text-24">
             {texte.neuigkeiten}
           </h2>
           {neuigkeiten.length === 0 ? (
@@ -88,7 +80,7 @@ export function Listen({
       ) : null}
       {kommend !== null ? (
         <section aria-labelledby="uebersicht-veranstaltungen" className="flex flex-col rounded-lg border border-linie bg-weiss p-5">
-          <h2 id="uebersicht-veranstaltungen" className="text-20 font-bold">
+          <h2 id="uebersicht-veranstaltungen" className="text-24">
             {texte.veranstaltungen}
           </h2>
           {kommend.length === 0 ? (

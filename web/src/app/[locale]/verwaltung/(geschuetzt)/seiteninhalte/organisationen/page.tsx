@@ -2,6 +2,7 @@ import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { ORGANISATION_KUERZEL } from '@/lib/rechte/matrix';
@@ -17,6 +18,7 @@ export default async function OrganisationenUebersicht() {
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
   const t = await getTranslations('verwaltung.seiteninhalteOrganisationen');
   const sichtbar = ORGANISATION_KUERZEL.filter((k) => filter === null || filter.includes(k));
+  const tg = await getTranslations('verwaltung.shell');
   return (
     <>
       <NextLink
@@ -26,10 +28,7 @@ export default async function OrganisationenUebersicht() {
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueckSeiteninhalte')}
       </NextLink>
-      <div>
-        <h1 className="text-display-2">{t('uebersicht.titel')}</h1>
-        <p className="text-tinte-2">{t('uebersicht.einleitung')}</p>
-      </div>
+      <VerwaltungsKopf titel={t('uebersicht.titel')} kennung={tg('gruppe.inhalte')} einleitung={t('uebersicht.einleitung')} />
       <ul className="grid gap-4 md:grid-cols-2">
         {sichtbar.map((k) => (
           <li key={k} className="flex flex-col items-start gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6">
