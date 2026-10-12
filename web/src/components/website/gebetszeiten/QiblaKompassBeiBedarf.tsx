@@ -26,11 +26,8 @@ export function QiblaKompassBeiBedarf({
 
   useEffect(() => {
     const ziel = huelle.current;
-    if (!ziel || laden) return;
-    if (typeof IntersectionObserver === 'undefined') {
-      setLaden(true);
-      return;
-    }
+    // Ohne IntersectionObserver (kein unterstützter Browser) bleibt die Vorschau stehen: Richtung und Text gelten weiter.
+    if (!ziel || laden || typeof IntersectionObserver === 'undefined') return;
     const beobachter = new IntersectionObserver(
       (eintraege) => {
         if (eintraege.some((e) => e.isIntersecting)) setLaden(true);
