@@ -12,7 +12,6 @@
      - 3500 auf HEAD neu bauen (`head/e4-bau.sh`), dann Lighthouse und INP nachmessen, F-03, Bildsatz `--warte 3000` und Galerie, `pnpm release:check` komplett.
      - STUFE-C3 schreiben, FF main.
      - Endprüfung.
-- **Während der Nachmessung ausgeblendet:** `_werkstatt/protokolle/C-inp*` und `C3-*` stehen auf assume-unchanged (Liste `$S/ausgeblendet2.txt`) und in `.git/info/exclude`. Nach dem Lauf zurücksetzen: `xargs -a $S/ausgeblendet2.txt git update-index --no-assume-unchanged`, die zwei Zeilen aus `.git/info/exclude` löschen, dann committen.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.

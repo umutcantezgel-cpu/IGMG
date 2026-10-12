@@ -10,3 +10,75 @@ Vollberichte: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9
    rc=0
 == 14:01:05 INP verschränkt (3 Runden) · Last 1.38
 14:01:05 Runde 1 · 3100 · Last 1.38
+14:02:58 Runde 1 · 3500 · Last 2.17
+14:04:51 Runde 2 · 3100 · Last 1.40
+14:06:44 Runde 2 · 3500 · Last 1.58
+14:08:39 Runde 3 · 3100 · Last 2.02
+14:10:28 Runde 3 · 3500 · Last 1.30
+# Reaktion auf Eingaben (INP, Labor) verschränkt · 3100 gegen 3500
+
+Telefon 390×844, CPU 4×; je Runde ein Lauf je Route und Server; Median über die Runden. Schwelle 200 ms.
+
+| Route | INP 3100 (ms) | INP 3500 (ms) | Läufe 3100 | Läufe 3500 | 3500 ≤ 200 | längste Eingabe 3500 (Median ms) |
+|---|---|---|---|---|---|---|
+| / | 176 | 144 | [144, 176, 184] | [128, 208, 144] | ja | menue 144, leiste 104 |
+| /gebetszeiten | 224 | 208 | [280, 224, 160] | [192, 328, 208] | nein | reiter 208, menue 80 |
+| /veranstaltungen | 152 | 112 | [152, 168, 120] | [96, 216, 112] | ja | leiste 112, menue 96 |
+| /veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag | 144 | 120 | [128, 232, 144] | [120, 144, 96] | ja | menue 120, leiste 80 |
+| /nachrichten | 136 | 104 | [144, 136, 128] | [96, 136, 104] | ja | menue 104, leiste 72 |
+| /ueber-uns | 176 | 104 | [192, 176, 136] | [104, 168, 96] | ja | menue 104, leiste 96 |
+| /projekte | 224 | 120 | [248, 224, 128] | [120, 136, 88] | ja | leiste 120, menue 104 |
+| /organisationen/ana-teskilati | 144 | 96 | [160, 136, 144] | [96, 96, 104] | ja | menue 96, leiste 96 |
+| /bildung/korankurse | 144 | 104 | [144, 152, 128] | [120, 96, 104] | ja | menue 104, leiste 64 |
+| /bildung/voranmeldung | 184 | 104 | [200, 184, 168] | [160, 104, 96] | ja | leiste 104, menue 88 |
+| /kontakt | 168 | 144 | [224, 152, 168] | [144, 208, 104] | ja | menue 104, leiste 96 |
+
+3500 ≤ 200 ms auf 10 von 11 Routen.
+== 14:12:20 Funktionsliste F-03 (3500) · Last 1.24
+F-03 390: nicht prüfbar
+F-03 1440: nicht prüfbar
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C3-funktionsliste-f03.json · /home/user/IGMG/_werkstatt/protokolle/C3-funktionsliste-f03.md
+Funktionen: 1 · technische Fehler: 0
+   rc=0
+== 14:12:23 Abschluss-Bildsatz Hauptansichten (--warte 3000) · Last 1.86
+/ 390×844: HTTP 200 · 7 Ausschnitte · horizontal nein · Befunde 0
+/ 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/ 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 3
+/gebetszeiten 390×844: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/gebetszeiten 768×1024: HTTP 200 · 3 Ausschnitte · horizontal nein · Befunde 0
+/gebetszeiten 1440×900: HTTP 200 · 3 Ausschnitte · horizontal nein · Befunde 0
+/veranstaltungen 390×844: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/veranstaltungen 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/veranstaltungen 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag 390×844: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 1
+/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag 768×1024: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag 1440×900: HTTP 200 · 3 Ausschnitte · horizontal nein · Befunde 0
+/nachrichten 390×844: HTTP 200 · 6 Ausschnitte · horizontal nein · Befunde 0
+/nachrichten 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/nachrichten 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 3
+/ueber-uns 390×844: HTTP 200 · 9 Ausschnitte · horizontal nein · Befunde 0
+/ueber-uns 768×1024: HTTP 200 · 6 Ausschnitte · horizontal nein · Befunde 0
+/ueber-uns 1440×900: HTTP 200 · 6 Ausschnitte · horizontal nein · Befunde 0
+/projekte 390×844: HTTP 200 · 7 Ausschnitte · horizontal nein · Befunde 0
+/projekte 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/projekte 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/organisationen/ana-teskilati 390×844: HTTP 200 · 8 Ausschnitte · horizontal nein · Befunde 0
+/organisationen/ana-teskilati 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/organisationen/ana-teskilati 1440×900: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/bildung/korankurse 390×844: HTTP 200 · 7 Ausschnitte · horizontal nein · Befunde 0
+/bildung/korankurse 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/bildung/korankurse 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/bildung/voranmeldung 390×844: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+/bildung/voranmeldung 768×1024: HTTP 200 · 3 Ausschnitte · horizontal nein · Befunde 0
+/bildung/voranmeldung 1440×900: HTTP 200 · 3 Ausschnitte · horizontal nein · Befunde 0
+/kontakt 390×844: HTTP 200 · 7 Ausschnitte · horizontal nein · Befunde 0
+/kontakt 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/kontakt 1440×900: HTTP 200 · 4 Ausschnitte · horizontal nein · Befunde 0
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C3-bildsatz-abschluss.json, /home/user/IGMG/_werkstatt/protokolle/C3-bildsatz-abschluss.md
+Bilder: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/abschluss-warte
+   rc=0
+== 14:15:25 E2E-Teilsuite: Menü (datenschutz, veranstaltungen, suche) und Gebetszeiten · Last 1.39
+   E2E_RC=0
+  5 skipped
+  217 passed (10.9m)
+== 14:26:21 NACHMESSUNG FERTIG · Last 2.99
