@@ -4,6 +4,7 @@ import { drizzle as drizzlePg, type NodePgDatabase } from 'drizzle-orm/node-post
 import { Pool } from 'pg';
 import { installiereFehlerKuerzung } from './fehler';
 import * as schema from './schema';
+import { datenbankVerfuegbar } from './verfuegbar';
 
 /**
  * Datenbankzugang (K-05, ADR 0001, ADR 0017, ADR 0018): PostgreSQL über `pg` (Betrieb, docker compose, Vercel).
@@ -26,7 +27,7 @@ function erzeuge(): Datenbank {
     globalFuerDb.__igmgPool = pool;
     return drizzlePg(pool, { schema, casing: 'snake_case' });
   }
-  if (process.env.NODE_ENV === 'production' && process.env.BAU_PGLITE !== '1') {
+  if (!datenbankVerfuegbar()) {
     throw new Error('DATABASE_URL fehlt (Betrieb braucht PostgreSQL).');
   }
   // eslint-disable-next-line @typescript-eslint/no-require-imports

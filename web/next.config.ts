@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   poweredByHeader: false,
   ...(beispielmodus ? { cacheLife: Object.fromEntries(PROFILE.map((name) => [name, DAUERHAFT])) } : {}),
+  // Beispielmodus: Für „HTML-begrenzte“ Bots (WhatsApp, Slackbot, facebookexternalhit, Twitterbot, Bingbot …) umgeht
+  // Next die vorgerenderte Hülle und rendert jede Anfrage neu – ohne Datenbank „DATABASE_URL fehlt“ und 500 für Linkvorschauen.
+  // Die Hülle trägt Titel, Beschreibung und og:* schon im <head>; deshalb hier kein Bot als HTML-begrenzt (reines Literal ohne ^/$,
+  // Next macht daraus „.*(?:…).*“ für den Vercel-Header-Matcher). Mit Datenbank: Vorgabe.
+  ...(beispielmodus ? { htmlLimitedBots: /igmg-beispielmodus-ohne-html-begrenzte-bots/ } : {}),
   // PGlite (Bau-Datenbank, ADR 0017) nicht bündeln: Gebündelt sucht es pglite.data unter dem Turbopack-Platzhalter
   // /ROOT/node_modules/… statt im echten node_modules, und der Bau mit BAU_PGLITE=1 bricht beim Vorrendern ab.
   serverExternalPackages: ['@electric-sql/pglite'],

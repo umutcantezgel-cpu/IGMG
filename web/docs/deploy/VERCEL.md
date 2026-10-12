@@ -222,7 +222,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 - **Ort:** Deployments › Eintrag anklicken › Build Logs **[prüfen]**.
 - **Gute Zeile:** `[bau] Datenbank vorhanden (production)` bzw. `(preview)`, danach `[migration] Migrationen angewendet.` (ADR 0019, `web/scripts/vercel-bau.mjs`, `web/scripts/migriere-mit-sperre.mjs`). `vercel-build` zeigt auf dieses Skript (`web/package.json`, Zeile 8).
-- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview oder Production. Der Bau bleibt dann grün, und die Seite wird mit Beispielinhalten gebaut. In diesem Beispielmodus erneuert die Seite ihre Inhalte nicht (Cache-Profile dauerhaft, ADR 0019 Nachtrag): Datumsangaben wie „heute“ bleiben auf dem Stand des Baus, bis die Datenbank angeschlossen ist.
+- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview oder Production. Der Bau bleibt dann grün, und die Seite wird mit Beispielinhalten gebaut. In diesem Beispielmodus erneuert die Seite ihre Inhalte nicht (Cache-Profile dauerhaft, ADR 0019 Nachtrag): Datumsangaben wie „heute“ bleiben auf dem Stand des Baus, bis die Datenbank angeschlossen ist. Linkvorschauen (WhatsApp, Slack, Facebook) bekommen in diesem Modus die vorgerenderte Seite. OG-Bilder von Beiträgen und Veranstaltungen, die beim Bau nicht dabei waren, zeigen das Standardbild. Was ohne Datenbank nicht geht: unbekannte Beitrags- und Termin-Adressen (Fehlerseite statt „nicht gefunden“), Suche mit Begriff und alle Formulare (ADR 0019, Nachtrag 2026-10-12).
 
 **5.3 Vercel-Schutz für die Vorschau**
 

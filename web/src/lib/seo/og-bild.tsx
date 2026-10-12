@@ -1,9 +1,10 @@
-import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { ReactElement } from 'react';
 import de from '../../../messages/de.json';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
 
@@ -144,26 +145,27 @@ const TITEL_MAX = 120;
 /** Emoji, Hautton, Flaggen, Verbindungs- und Variationszeichen. © ® ™ bleiben erhalten. */
 const EMOJI = /(?![©®™])\p{Extended_Pictographic}|\p{Emoji_Modifier}|\p{Regional_Indicator}|[‍️⃣]/gu;
 
-let monogramm: Promise<string> | undefined;
+/*
+ * Feste Dateien werden synchron gelesen (Next-Doku Cache Components, „Predictable values“): Die Bildrouten unter
+ * [locale] werden zur Laufzeit erzeugt (ISR), und ein ungecachter asynchroner Dateizugriff außerhalb von 'use cache'
+ * gilt dort als dynamische Datenquelle – die erste Anfrage endete mit DYNAMIC_SERVER_USAGE und 500 (Produktion,
+ * Beispielmodus). Im OG-Pfad darf deshalb kein asynchroner Dateizugriff außerhalb von 'use cache' stehen.
+ */
+let monogramm: string | undefined;
 
 /**
  * Monogramm als PNG-Datenadresse. Die Datei wird einmal gelesen (Projektwurzel = process.cwd(), im Image unter /app/public);
  * ein Lesefehler wird nicht zwischengespeichert.
  */
-export function ladeOgSymbol(): Promise<string> {
-  monogramm ??= readFile(join(process.cwd(), 'public', 'symbole', 'symbol-512.png'))
-    .then((bytes) => `data:image/png;base64,${bytes.toString('base64')}`)
-    .catch((fehler: unknown) => {
-      monogramm = undefined;
-      throw fehler;
-    });
+export async function ladeOgSymbol(): Promise<string> {
+  monogramm ??= `data:image/png;base64,${readFileSync(join(process.cwd(), 'public', 'symbole', 'symbol-512.png')).toString('base64')}`;
   return monogramm;
 }
 
 /** Schrift für ImageResponse (Satori): Name, Stärke und die Bytes der Datei. */
 export type OgSchrift = { name: string; weight: 400 | 600 | 700; style: 'normal'; data: Buffer };
 
-let schriften: Promise<OgSchrift[] | undefined> | undefined;
+let schriften: OgSchrift[] | undefined;
 
 /**
  * Schriften aus den WOFF-Dateien der Fontsource-Pakete (bereits Abhängigkeiten). Die Dateien werden einmal gelesen.
@@ -171,20 +173,29 @@ let schriften: Promise<OgSchrift[] | undefined> | undefined;
  * next/og nimmt dann seine eingebaute Schrift. Ein leeres Array wäre schlechter, Satori bricht dann mit „No fonts are
  * loaded“ ab. Ein Lesefehler wird nicht zwischengespeichert, beim nächsten Bild wird erneut gelesen.
  */
-export function ladeOgSchriften(): Promise<OgSchrift[] | undefined> {
-  schriften ??= Promise.all(
-    SCHRIFTDATEIEN.map(async ({ name, weight, datei }) => ({
+export async function ladeOgSchriften(): Promise<OgSchrift[] | undefined> {
+  try {
+    schriften ??= SCHRIFTDATEIEN.map(({ name, weight, datei }) => ({
       name,
       weight,
       style: 'normal' as const,
-      data: await readFile(join(process.cwd(), 'node_modules', '@fontsource', datei)),
-    })),
-  ).catch((fehler: unknown) => {
-    schriften = undefined;
+      data: readFileSync(join(process.cwd(), 'node_modules', '@fontsource', datei)),
+    }));
+    return schriften;
+  } catch (fehler: unknown) {
     console.warn('[og-bild] Schriftdateien nicht lesbar; next/og nimmt seine eingebaute Schrift.', fehler);
     return undefined;
-  });
-  return schriften;
+  }
+}
+
+/**
+ * Inhalt eines Bildes (Beitrag, Veranstaltung) oder `null` für das Standardbild. Zur Laufzeit des Beispielmodus (Vercel
+ * ohne Datenbank, ADR 0019) wird gar nicht erst abgefragt: Die Bildrouten entstehen dort zur Laufzeit (ISR), und eine
+ * scheiternde 'use cache'-Abfrage ließ die Antwort hängen (Gegenprobe ohne Datenbank, 0 % CPU, keine Antwort) oder
+ * endete mit 500. Mit Datenbank, in Entwicklung und beim Bau wird normal geladen; ein Fehler geht dann weiter.
+ */
+export async function inhaltOderStandard<T>(laden: () => Promise<T | null>): Promise<T | null> {
+  return datenbankVerfuegbar() ? laden() : null;
 }
 
 /** Optionen für `new ImageResponse(…)`: Maße und, wenn lesbar, die Schriften (sonst die eingebaute Schrift von next/og). */

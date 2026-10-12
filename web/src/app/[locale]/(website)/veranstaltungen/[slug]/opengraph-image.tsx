@@ -3,6 +3,7 @@ import { text, type Sprache } from '@/lib/i18n/inhalt';
 import {
   OG_GROESSE,
   fuelle,
+  inhaltOderStandard,
   kennungMitDatum,
   ladeOgSymbol,
   ogGestaltung,
@@ -16,7 +17,8 @@ import { ladeVeranstaltung, ladeVeranstaltungsSlugs } from '@/server/queries/ver
 
 /**
  * Open-Graph-Bild einer Veranstaltung (K-16, D-O4): Bereich und Datum als Kennung, Name in der Displayschrift,
- * Uhrzeit darunter. Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs bekommen das Standardbild.
+ * Uhrzeit darunter. Beim Bau alle veröffentlichten Slugs (wie die Seite); unbekannte Slugs – und ohne Datenbank
+ * (Beispielmodus) alle nicht vorgerenderten – bekommen das Standardbild.
  */
 export async function generateStaticParams() {
   const slugs = await ladeVeranstaltungsSlugs();
@@ -36,7 +38,8 @@ export async function generateImageMetadata({ params }: { params?: Parameter }) 
   const werte: Werte = (await params) ?? {};
   const sprache = spracheAus(werte.locale);
   const texte = ogTexte(sprache);
-  const veranstaltung = werte.slug ? await ladeVeranstaltung(werte.slug) : null;
+  const slug = werte.slug;
+  const veranstaltung = slug ? await inhaltOderStandard(() => ladeVeranstaltung(slug)) : null;
   const alt = veranstaltung
     ? fuelle(texte.alt.veranstaltung, {
         titel: text(veranstaltung.titel, sprache),
@@ -50,7 +53,7 @@ export default async function TerminBild({ params }: { params: Parameter }) {
   const { locale, slug } = await params;
   const sprache = spracheAus(locale);
   const texte = ogTexte(sprache);
-  const veranstaltung = slug ? await ladeVeranstaltung(slug) : null;
+  const veranstaltung = slug ? await inhaltOderStandard(() => ladeVeranstaltung(slug)) : null;
   const symbol = await ladeOgSymbol();
   if (!veranstaltung) {
     return new ImageResponse(
