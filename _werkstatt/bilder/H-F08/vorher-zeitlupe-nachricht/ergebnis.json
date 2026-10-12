@@ -1,0 +1,290 @@
+{
+  "werkzeug": "vt-zeitlupe3",
+  "basis": "http://localhost:3200",
+  "von": "/nachrichten",
+  "ziel": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+  "selektor": "a[href*=\"neue-gebetszeiten-fuer-den-winter\"]",
+  "rate": 0.1,
+  "breite": 1440,
+  "bilder": [
+    {
+      "nr": 1,
+      "msNachKlick": 1092,
+      "adresse": "/nachrichten",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": [],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-01.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachKlick": 1930,
+      "adresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 11,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-bild",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-titel",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "ausblenden",
+          "pseudo": "::view-transition-old(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 87
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-02.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachKlick": 2803,
+      "adresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 9,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-bild",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-titel",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-03.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachKlick": 3707,
+      "adresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 8,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-bild",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-titel",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 258
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-04.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachKlick": 4539,
+      "adresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 7,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-bild",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "-ua-view-transition-group-anim-n-neue-gebetszeiten-fuer-den-winter-titel",
+          "pseudo": "::view-transition-group(n-neue-gebetszeiten-fuer-den-winter-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(n-neue-gebetszeiten-fuer-den-winter-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 348
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-05.jpg"
+    },
+    {
+      "nr": 6,
+      "msNachKlick": 5481,
+      "adresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 1,
+      "animationen": [
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 432
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/vorher-zeitlupe-nachricht/zeitlupe-06.jpg"
+    }
+  ],
+  "kopfVorKlick": 0,
+  "endeAdresse": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+  "endeVt": 1,
+  "zielErreicht": true
+}

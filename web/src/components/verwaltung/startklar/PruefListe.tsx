@@ -5,6 +5,7 @@ import { ChevronDown, CircleCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { LadeStern } from '@/components/website/Zustandsgrafik';
+import { istKennung, mitKennungen } from '@/components/verwaltung/startklar/kennung';
 import { cn } from '@/lib/utils';
 import { setzeKonzepthinweis, type KonzepthinweisZustand } from '@/server/actions/startklar';
 import { type PruefStatus, STATUS_STIL } from '@/components/verwaltung/startklar/status';
@@ -121,19 +122,21 @@ function Zeile({ z, texte, absenden, laeuft }: { z: PruefZeile; texte: PruefText
   return (
     <li className="flex flex-col gap-3 p-4 md:p-5">
       <div className="flex flex-col items-start gap-2 md:flex-row md:flex-wrap md:items-center">
-        <h3 className="font-text text-20 font-bold tracking-normal">{z.titel}</h3>
+        <h3 className="font-text text-20 font-bold tracking-normal">
+          {istKennung(z.titel) ? <code className="font-mono">{z.titel}</code> : z.titel}
+        </h3>
         <span className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
           <Icon aria-hidden className="size-4 shrink-0" />
           {z.statusText}
         </span>
       </div>
-      <p>{z.meldung}</p>
+      <p>{mitKennungen(z.meldung)}</p>
       {z.ort || z.aufwand ? (
         <dl className="grid raster-symbol gap-x-3 gap-y-1 text-16 text-tinte-2 md:flex md:flex-row md:flex-wrap md:gap-x-6">
           {z.ort ? (
             <div className="contents md:flex md:flex-wrap md:gap-x-1.5">
               <dt className="font-bold">{texte.wo}</dt>
-              <dd>{z.ort}</dd>
+              <dd>{mitKennungen(z.ort)}</dd>
             </div>
           ) : null}
           {z.aufwand ? (

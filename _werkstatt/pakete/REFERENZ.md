@@ -65,6 +65,7 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Schrittmarke (C2, H-E10): Die aktuelle Marke ist voll grün mit weißer Ziffer, erledigte Marken sind hellgrün mit Häkchen, kommende sandfarben. Die Linien laufen Spitze an Spitze, die Statuszeile ab lg nur für Hilfstechnik (`lg:sr-only`).
 - Wege-Kacheln der 404 (C2, H-E12): Symbole mit 20 px ohne Symbolkreis, der Satz steht im Kopf.
 - Seitenwechsel (C2, H-E14): Der Morph Karte → Detail läuft 400 ms mit `ease-eintritt`, der Titel kommt vor dem Inhalt an.
+- Seitenwechsel (C3, H-F08): Mit gemeinsamen Elementen (Karte → Detail) blendet der Inhalt erst nach `dauer-wechsel` ein. Titel und Bild kommen zuerst an, gesamt 640 ms. `SeitenUebergang` setzt dafür `data-uebergang="morph"` an `<html>` (globals.css).
 - Zeitenliste der Gebetszeiten (C2, H-E13): Das nächste Gebet trägt den gefüllten Achtstern (16 px) wie Karte und Bogen, vergangene Zeiten stehen in `tinte-3`.
 - Tagesbogen (C2, H-E01): Die Zeit des nächsten Gebets steht mit 24 px in `gruen-800`, die übrigen mit 18 px. Der Ort des nächsten Gebets trägt durchgehend eine Marke (Ring, dann Achtstern-Chip).
 - Tagesbogen (C3, H-F04): Unter dem Horizont läuft die Linie mit derselben Steigung weiter und wird weich auf `tief` begrenzt (`tief · tanh(e·hoch/tief)`). So entsteht bei Güneş und Akşam keine Ecke (`bogen.ts`).

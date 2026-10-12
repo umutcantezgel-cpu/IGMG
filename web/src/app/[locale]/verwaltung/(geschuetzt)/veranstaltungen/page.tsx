@@ -111,37 +111,35 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
     bearbeiten: darf(a.rollen, 'veranstaltung.bearbeiten', { organisation: z.organisation }),
     loeschen: darf(a.rollen, 'veranstaltung.loeschen', { organisation: z.organisation }),
   });
+  // Karte und Tabelle zeigen dieselben Glieder (Kalender, Uhr, Wiederholung); nur der Behälter unterscheidet sich
   const datum = (z: Zeile, karte = false) =>
     papierkorb && z.imPapierkorbSeit ? (
       datumLang(z.imPapierkorbSeit, 'de')
-    ) : karte ? (
-      // Telefonkarte: Kalender, Uhr und Wiederholung als Glieder mit Icon; der Umbruch fällt nur zwischen den Gliedern
-      <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-tinte-2 tabular-nums">
-        <span className="inline-flex items-center gap-1.5">
+    ) : (
+      <span
+        className={
+          karte
+            ? 'flex flex-wrap items-center gap-x-4 gap-y-1 text-tinte-2 tabular-nums'
+            : 'flex flex-col items-start gap-1 text-16 text-tinte-2 tabular-nums'
+        }
+      >
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
           <Calendar aria-hidden className="size-4 shrink-0" />
-          <span className="whitespace-nowrap">
+          <span>
             {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr}
           </span>
         </span>
-        <span className="inline-flex items-center gap-1.5">
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
           <Clock aria-hidden className="size-4 shrink-0" />
-          <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
+          <span>{zeitspanne(z.beginn, z.ende, 'de')}</span>
         </span>
         {z.wiederkehrend ? (
-          <span className="inline-flex items-center gap-1.5">
+          <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
             <Repeat aria-hidden className="size-4 shrink-0" />
-            <span className="whitespace-nowrap">{t('wiederkehrend')}</span>
+            <span>{t('wiederkehrend')}</span>
           </span>
         ) : null}
       </span>
-    ) : (
-      <>
-        <span>
-          {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr},
-        </span>{' '}
-        <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
-        {z.wiederkehrend ? <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span> : null}
-      </>
     );
   const orgPille = (z: Zeile) =>
     z.organisation ? (

@@ -161,7 +161,10 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             {termine.length ? (
               <OrgTermine termine={termine} sprache={sprache} org={org} />
             ) : (
-              <p className="text-tinte-2">{t('events.leer')}</p>
+              <div className="flex items-center gap-4 py-4">
+                <Zustandsgrafik art="leer" groesse={48} />
+                <p className="text-tinte-2">{t('events.leer')}</p>
+              </div>
             )}
             <Link href="/veranstaltungen" className={MEHR_LINK}>
               {t('events.all')}

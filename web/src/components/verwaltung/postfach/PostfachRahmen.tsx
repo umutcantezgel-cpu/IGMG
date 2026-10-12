@@ -74,7 +74,7 @@ export async function PostfachRahmen({
                         href={`/verwaltung/postfach/${z.id}`}
                         aria-current={aktiv ? 'page' : undefined}
                         className={cn(
-                          'flex min-h-12 flex-col gap-1 border-l-4 px-4 py-3.5 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
+                          'flex min-h-12 flex-col gap-1 border-l-4 px-4 py-3.5 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
                           aktiv ? 'border-gruen-700 bg-gruen-50' : 'border-transparent',
                         )}
                       >
