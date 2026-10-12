@@ -32,7 +32,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
   }));
   return (
     <header className="relative z-(--ebene-kopf) border-b border-linie bg-weiss" style={{ viewTransitionName: 'kopf' }}>
-      <div className="mx-auto flex h-18 max-w-(--container-inhalt) items-center gap-4 px-4 md:px-8 menu:h-20">
+      <div className="mx-auto flex h-18 max-w-(--container-inhalt) items-center gap-3 px-4 sm:gap-4 md:px-8 menu:h-20">
         <Link
           href="/"
           aria-label={t('logoLabel')}

@@ -90,8 +90,9 @@ export function MobilMenue({
         aria-haspopup="dialog"
         aria-label={texte.menueOeffnen}
         onClick={() => dialog.current?.showModal()}
-        className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+        className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-3 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
       >
+        {/* px-3 statt px-4: bei 320 px passen Logo, Name und Knopf sonst nicht in die Zeile (Querscrollen 9 px, Sichtabnahme E4) */}
         <Menu aria-hidden className="size-6" />
         <span aria-hidden>{texte.menue}</span>
       </button>
