@@ -1,10 +1,11 @@
 import { Info } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { klassen } from '@/lib/klassen';
 
 /** Kennzahl: Begriff und Wert (design/PrayerTimes.dc.html, Karte „Qibla Information“). */
-function Kennzahl({ begriff, wert }: { begriff: string; wert: string }) {
+function Kennzahl({ begriff, wert, className }: { begriff: string; wert: string; className?: string }) {
   return (
-    <div className="flex flex-col gap-1 rounded-md bg-sand px-4 py-3">
+    <div className={klassen('flex flex-col gap-1 rounded-md bg-sand px-4 py-3', className)}>
       <dt className="text-16 font-bold text-tinte-2">{begriff}</dt>
       <dd className="m-0 font-bold wrap-break-word">{wert}</dd>
     </div>
@@ -27,9 +28,9 @@ export async function QiblaInformation({ winkelGenau }: { winkelGenau: string })
       </div>
       <dl className="grid gap-3 sm:grid-cols-2">
         <Kennzahl begriff={t('genauer_winkel')} wert={t('genauer_winkel_wert', { winkel: winkelGenau })} />
-        <Kennzahl begriff={t('entfernung')} wert={t('entfernung_wert')} />
+        {/* Die Entfernung zur Kaaba entfällt, bis ein belegter Wert vorliegt (MENSCHEN.md); nicht selbst rechnen. */}
         <Kennzahl begriff={t('kaaba_koordinaten')} wert={t('kaaba_koordinaten_wert')} />
-        <Kennzahl begriff={t('berechnungsmethode')} wert={t('berechnungsmethode_wert')} />
+        <Kennzahl begriff={t('berechnungsmethode')} wert={t('berechnungsmethode_wert')} className="sm:col-span-2" />
       </dl>
       <div className="flex flex-col gap-2 rounded-md bg-info-toenung px-5 py-4 text-tinte">
         <h4 className="flex items-center gap-2 font-text text-18 font-bold text-info">

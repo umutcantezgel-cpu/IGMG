@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Clock, Star } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang } from '@/lib/i18n/format';
@@ -7,19 +7,16 @@ import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { Stern8 } from './Icons';
 import { MedienBild, SIZES_AUFMACHER, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
 
-const TOENUNG: Record<NachrichtDaten['kategorie'] | 'wichtig', string> = {
-  wichtig: 'bg-tag-wichtig-bg text-tag-wichtig',
-  ankuendigung: 'bg-info-toenung text-info',
-  neuigkeiten: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
-  gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
-  veranstaltung: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
-  bildung: 'bg-tag-bildung-bg text-tag-bildung',
-  religioes: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
-  soziales: 'bg-tag-jugend-bg text-tag-jugend',
-};
+/**
+ * Kategorie-Abzeichen neutral (H-C01): sandfarben mit Rand wie „Kostenlos“. Nur „Wichtig“ bleibt rot.
+ * Keine Kategorie trägt eine Org-Farbe.
+ */
+const TOENUNG = 'border border-linie bg-sand text-tinte-2';
+const TOENUNG_WICHTIG = 'bg-tag-wichtig-bg text-tag-wichtig';
 
 /**
  * NewsCard (design/NewsCard.dc.html): „gross“ (Startseite, Aufmacher), „kompakt“ (Startseite, Seitenspalte),
@@ -43,9 +40,7 @@ export async function NewsCard({
   const datum = datumLang(new Date(n.veroeffentlichtAm), sprache);
   const lesezeit = n.lesezeit ? t('lesezeit', { minuten: n.lesezeit }) : null;
   const kategorie = (
-    <span
-      className={cn('inline-flex rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', TOENUNG[n.wichtig ? 'wichtig' : n.kategorie])}
-    >
+    <span className={cn('inline-flex rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', n.wichtig ? TOENUNG_WICHTIG : TOENUNG)}>
       {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
     </span>
   );
@@ -76,12 +71,12 @@ export async function NewsCard({
           <span
             className={cn(
               'inline-flex self-start rounded-pill px-2.5 text-16 leading-relaxed font-bold',
-              TOENUNG[n.wichtig ? 'wichtig' : n.kategorie],
+              n.wichtig ? TOENUNG_WICHTIG : TOENUNG,
             )}
           >
             {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
           </span>
-          <h3 lang={titel.lang} data-morph="titel" className="font-text text-20 leading-snug font-bold tracking-normal">
+          <h3 lang={titel.lang} data-morph="titel" className="text-20 leading-snug">
             <Link
               href={ziel}
               aria-label={`${t('artikelLesen')}: ${titel.text}`}
@@ -169,7 +164,7 @@ export async function NewsCard({
           {kategorie}
           {n.empfohlen ? (
             <span className="inline-flex items-center gap-1.5 rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
-              <Star aria-hidden className="size-4" />
+              <Stern8 aria-hidden className="size-4" />
               {t('empfohlen')}
             </span>
           ) : null}
@@ -178,9 +173,7 @@ export async function NewsCard({
         <p className="flex flex-wrap items-center gap-x-3 text-16 text-tinte-2">
           <span className="inline-flex items-center gap-1.5">
             <Calendar aria-hidden className="size-4" />
-            <time dateTime={n.veroeffentlichtAm} className="font-bold">
-              {datum}
-            </time>
+            <time dateTime={n.veroeffentlichtAm}>{datum}</time>
           </span>
           {lesezeit ? (
             <span className="inline-flex items-center gap-1.5">

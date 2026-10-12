@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, MapPin, Star, Users } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin, Users } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
@@ -8,19 +8,16 @@ import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { VeranstaltungsDaten } from '@/server/queries/veranstaltungen';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { Stern8 } from './Icons';
 import { MedienBild, SIZES_AUFMACHER, SIZES_RASTER } from './MedienBild';
 import { LOGOS } from './navigation';
 import { Text, textMitSprache } from './Text';
 
-/** Tönung je Kategorie (design/EventCard.dc.html CAT/TONE) – nur Token-Klassen. */
-const TOENUNG: Record<VeranstaltungsDaten['kategorie'], string> = {
-  gebet: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
-  bildung: 'bg-tag-bildung-bg text-tag-bildung',
-  gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
-  kultur: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
-  jugend: 'bg-tag-jugend-bg text-tag-jugend',
-  frauen: 'bg-org-kt-toenung text-org-kt-text',
-};
+/**
+ * Kategorie-Abzeichen neutral (H-C01): alle Kategorien sandfarben mit Rand wie „Kostenlos“.
+ * Keine Kategorie trägt eine Org-Farbe; Org-Farben bleiben Kanten, Bänder und Texte der Organisation.
+ */
+const TOENUNG = 'border border-linie bg-sand text-tinte-2';
 /** `band`: Streifen unter der Bildfläche (Listen) bzw. oben (Variante start); `kante`: linke Kante ab lg (Aufmacher). */
 const ORG = {
   at: { logo: LOGOS.at, band: 'bg-org-at', kante: 'lg:border-org-at', text: 'text-org-at-text' },
@@ -99,9 +96,15 @@ export async function EventCard({
     >
       {listenArt ? (
         bild ? (
-          <MedienBild bild={bild} sprache={sprache} sizes={aufmacher ? SIZES_AUFMACHER : SIZES_RASTER} className={bildKlassen} />
+          <MedienBild
+            bild={bild}
+            sprache={sprache}
+            morph="bild"
+            sizes={aufmacher ? SIZES_AUFMACHER : SIZES_RASTER}
+            className={bildKlassen}
+          />
         ) : (
-          <Bildplatzhalter beschriftung={`${t('foto')}: ${titel.text}`} className={bildKlassen} />
+          <Bildplatzhalter morph="bild" beschriftung={`${t('foto')}: ${titel.text}`} className={bildKlassen} />
         )
       ) : (
         <div aria-hidden className={cn('h-1', org ? org.band : 'bg-gruen-700')} />
@@ -109,12 +112,12 @@ export async function EventCard({
       {listenArt ? <div aria-hidden className={cn('h-1', aufmacher && 'lg:hidden', org ? org.band : 'bg-gruen-700')} /> : null}
       <div className={cn('flex flex-1 flex-col gap-4 p-6', aufmacher && cn('lg:border-l-4', kante))}>
         <div className="flex flex-wrap items-center gap-2">
-          <span className={cn('inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', TOENUNG[v.kategorie])}>
+          <span className={cn('inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', TOENUNG)}>
             {t(`kat_${v.kategorie}`)}
           </span>
           {v.empfohlen ? (
             <span className="inline-flex items-center gap-1.5 rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
-              <Star aria-hidden className="size-4" />
+              <Stern8 aria-hidden className="size-4" />
               {t('empfohlen')}
             </span>
           ) : null}
@@ -126,14 +129,15 @@ export async function EventCard({
         </div>
         <div className="flex flex-col gap-2">
           {/* Zeit zuerst (H-B01): die Terminzeile steht direkt über dem Titel */}
-          <p className="flex flex-wrap items-center gap-x-2 text-16 leading-normal font-bold text-gruen-800 tabular-nums">
-            <Calendar aria-hidden className="size-5" />
-            <span className="sr-only">{t('datum')}</span>
-            <span>{datum}</span>
+          <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-16 leading-normal font-bold text-gruen-800 tabular-nums">
+            <span className="inline-flex items-center gap-2">
+              <Calendar aria-hidden className="size-5 shrink-0" />
+              <span className="sr-only">{t('datum')}</span>
+              <span>{datum}</span>
+            </span>
             {zeit ? (
-              // Punkt und Uhrzeit als eine Gruppe: bricht die Zeile um, hängt der Punkt nicht allein am Ende
-              <span className="inline-flex items-center gap-x-2 whitespace-nowrap">
-                <span aria-hidden>·</span>
+              <span className="inline-flex items-center gap-2 whitespace-nowrap">
+                <Clock aria-hidden className="size-5 shrink-0" />
                 <span className="sr-only">{t('uhrzeit')}</span>
                 <span>{zeit}</span>
               </span>

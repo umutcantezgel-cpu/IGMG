@@ -155,7 +155,7 @@ export default async function TicketsVerwalten({ searchParams }: PageProps<'/[lo
         <ListenLeer text={filterAktiv ? t('leerMitFilter') : t('leer')} aktion={darfAnlegen ? anlegen : undefined} />
       ) : (
         <TabellenRahmen beschriftung={t('tabelle')} mobil={mobil}>
-          <table className="w-full min-w-224 border-collapse text-left">
+          <table className="w-full min-w-220 border-collapse text-left">
             <caption className="sr-only">{t('tabelle')}</caption>
             <thead className="bg-sand">
               <tr>

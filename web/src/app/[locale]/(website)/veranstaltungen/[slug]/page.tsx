@@ -15,12 +15,15 @@ import {
   Users,
 } from 'lucide-react';
 import type { JSONContent } from '@tiptap/core';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
+import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
 import { Stern8 } from '@/components/website/Icons';
+import { MedienBild, SIZES_KOPF } from '@/components/website/MedienBild';
 import { LOGOS } from '@/components/website/navigation';
 import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
@@ -198,11 +201,33 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             {t('zurueckListe')}
           </Link>
         }
-        logo={v.organisation ? LOGOS[v.organisation] : undefined}
-        logoAlt={orgName ? t('logoAlt', { organisation: orgName }) : ''}
         akzent={v.organisation ? ORG_AKZENT[v.organisation] : undefined}
         kennung={orgName ?? tk(`kat_${v.kategorie}`)}
+        // Mit Organisation steht das Logo (20 px) vor der Kennung; ohne Organisation bleibt der Achtstern
+        kennungZeichen={
+          v.organisation ? (
+            <Image src={LOGOS[v.organisation]} alt="" width={40} height={40} className="size-5 shrink-0 rounded-sm border border-linie" />
+          ) : undefined
+        }
         kennungFarbe={v.organisation ? ORG_TEXT[v.organisation] : undefined}
+        // Kopfbild (H-C02): ab lg ein Platzhalter, wenn kein Bild gepflegt ist; die Fläche trägt den Übergangsnamen
+        bild={
+          <div style={morphStil(`v-${v.slug}-bild`)}>
+            {v.bild ? (
+              <MedienBild
+                bild={v.bild}
+                sprache={sprache}
+                sizes={SIZES_KOPF}
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
+              />
+            ) : (
+              <Bildplatzhalter
+                beschriftung={`${tk('foto')}: ${titel.text}`}
+                className="hidden h-55 rounded-lg border border-linie md:h-75 lg:flex lg:aspect-4/3 lg:h-auto"
+              />
+            )}
+          </div>
+        }
         titel={titel.text}
         titelId="ev-titel"
         titelLang={titel.lang}

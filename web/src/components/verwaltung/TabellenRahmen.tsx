@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 /**
  * Scrollbarer Rahmen für breite Tabellen (Muster 7). Der Rahmen ist per Tastatur erreichbar, hat einen Namen
  * (role="region") und zeigt unter 768 px den Hinweis „Zum Weiterlesen seitlich wischen“ (DP-C2 Befund 3).
- * Mit `mobil` (H-B06) zeigt das Telefon stattdessen diese Fassung (Karten), die Tabelle ist dort ausgeblendet; dann
- * entfällt auch der Wischhinweis. Nur für Server-Komponenten; die Tabelle selbst bleibt unverändert.
+ * Mit `mobil` (H-B06) zeigt alles unter 1240 px (menu) stattdessen diese Fassung (Karten), die Tabelle ist dort
+ * ausgeblendet (H-C04: erst ab Laptopbreite die Tabelle); dann entfällt auch der Wischhinweis. Nur für Server-Komponenten.
  */
 export async function TabellenRahmen({
   beschriftung,
@@ -23,13 +23,13 @@ export async function TabellenRahmen({
   const t = await getTranslations('verwaltung.shell');
   return (
     <div className="flex min-w-0 flex-col gap-2">
-      <p className={cn('text-16 text-tinte-2 md:hidden', mobil && 'max-md:hidden')}>{t('wischen')}</p>
-      {mobil ? <div className="flex min-w-0 flex-col gap-3 md:hidden">{mobil}</div> : null}
+      <p className={cn('text-16 text-tinte-2 md:hidden', mobil && 'hidden')}>{t('wischen')}</p>
+      {mobil ? <div className="flex min-w-0 flex-col gap-3 menu:hidden">{mobil}</div> : null}
       <div
         role="region"
         aria-label={beschriftung}
         tabIndex={0}
-        className={cn('relative overflow-x-auto rounded-lg border border-linie bg-weiss', mobil && 'max-md:hidden', className)}
+        className={cn('relative overflow-x-auto rounded-lg border border-linie bg-weiss', mobil && 'max-menu:hidden', className)}
       >
         {children}
       </div>
@@ -45,7 +45,7 @@ export function ListenLeer({ text, aktion }: { text: string; aktion?: ReactNode 
   return (
     <div className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
       <Zustandsgrafik art="leer" />
-      <p className="text-tinte-2">{text}</p>
+      <p className="max-w-text text-20 font-bold text-pretty">{text}</p>
       {aktion}
     </div>
   );

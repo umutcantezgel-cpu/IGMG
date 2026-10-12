@@ -209,7 +209,11 @@ export function TagesbogenLive({
       </div>
 
       {/* Mit ruhig (Gebetszeiten) trägt die Tafel daneben die Zeiten für Hilfstechnik; hier sonst doppelt vorgelesen */}
-      <ol aria-label={texte.listeHeute} aria-hidden={ruhig || undefined} className="grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27">
+      <ol
+        aria-label={texte.listeHeute}
+        aria-hidden={ruhig || undefined}
+        className={klassen('grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27', ruhig && '@max-xl:hidden')}
+      >
         {bogen.punkte.map((p) => {
           const ist = naechstes?.gebet === p.gebet && !naechstes.morgen;
           return (
@@ -225,10 +229,21 @@ export function TagesbogenLive({
               {/* Ab @xl enger gesetzt (Eintrag 42,5 px statt 50 px): die zweite Ebene hat so ≥ 16 px Abstand zur ersten */}
               <span
                 className={klassen(
-                  'text-16 leading-snug font-bold wrap-anywhere @xl:leading-tight',
+                  'flex items-center gap-1 text-16 leading-snug font-bold wrap-anywhere @xl:relative @xl:block @xl:leading-tight',
                   ist ? 'text-gruen-800' : 'text-tinte-2',
                 )}
               >
+                {/* Achtstern des nächsten Gebets vor dem Namen; ab @xl links daneben. Blendet nur nach einem Wechsel ein (B-10). */}
+                {ist ? (
+                  <Achtstern
+                    size={16}
+                    className={klassen(
+                      'shrink-0 @xl:absolute @xl:top-1/2 @xl:right-full @xl:mr-1 @xl:-translate-y-1/2',
+                      gewechselt && 'blendet-ein',
+                    )}
+                    style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
+                  />
+                ) : null}
                 {texte.namen[p.gebet]}
               </span>
               <span className={klassen('text-18 font-bold tabular-nums @xl:leading-tight', ist ? 'text-gruen-800' : 'text-tinte')}>
@@ -242,7 +257,7 @@ export function TagesbogenLive({
       {alleHref ? (
         <Link
           href={alleHref}
-          className="inline-flex min-h-11 items-center gap-2 self-start font-bold text-gruen-700 underline-offset-4 hover:underline"
+          className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline-offset-4 hover:underline"
         >
           <span>{texte.alle}</span>
           <ArrowRight aria-hidden className="size-5" />

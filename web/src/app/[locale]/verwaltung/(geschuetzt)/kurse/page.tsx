@@ -84,7 +84,7 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
               type="submit"
               variant="outline"
               size="icon"
-              className="border-fehler text-fehler hover:bg-fehler-toenung hover:text-fehler"
+              className="hover:border-fehler hover:bg-fehler-toenung hover:text-fehler focus-visible:text-fehler"
             >
               <Trash2 aria-hidden />
               <span className="sr-only">{t('aktionPapierkorb', { titel: z.titel })}</span>
@@ -102,8 +102,10 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
           key={z.id}
           titel={
             <>
-              {z.titel}
-              {z.istBeispiel ? <span className={cn(pille, 'ml-2 bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
+              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span>{z.titel}</span>
+                {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
+              </span>
             </>
           }
           angaben={[
@@ -175,10 +177,10 @@ export default async function KurseVerwalten({ searchParams }: PageProps<'/[loca
               {liste.map((z) => (
                 <tr key={z.id} className="border-t border-linie align-middle">
                   <th scope="row" className="px-4 py-3 font-bold">
-                    {z.titel}
-                    {z.istBeispiel ? (
-                      <span className={cn(pille, 'ml-2 bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span>
-                    ) : null}
+                    <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span>{z.titel}</span>
+                      {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
+                    </span>
                   </th>
                   <td className="px-4 py-3">{z.zielgruppe ?? t('keineAngabe')}</td>
                   <td className="px-4 py-3">{z.zeiten ?? t('keineAngabe')}</td>

@@ -19,6 +19,11 @@ export const SIZES_AUFMACHER = '(min-width: 1344px) 812px, (min-width: 968px) 62
 /** Hauptspalte der Nachrichtendetailseite (flex 2 1 600 px neben der Seitenspalte): 832 px im Container. */
 export const SIZES_HAUPTSPALTE = '(min-width: 1344px) 832px, (min-width: 996px) 62vw, 100vw';
 /**
+ * Kopfbild der Detailseiten (H-C02): rechte Spalte ab 1024 px Viewport (405 px im Container, dazwischen 30 vw),
+ * auf dem Telefon und Tablet volle Breite.
+ */
+export const SIZES_KOPF = '(min-width: 1344px) 405px, (min-width: 1024px) 30vw, 100vw';
+/**
  * Bild im Fließtext der Nachrichtendetailseite. Die Textspalte (52ch, bei 1440 px rund 607 px) liegt innerhalb der
  * Hauptspalte (832 px, darunter 62 vw). Als Angabe nimmt die Hauptspalte die Obergrenze, damit der Browser nie eine zu
  * kleine Datei wählt, die dann hochskaliert würde.

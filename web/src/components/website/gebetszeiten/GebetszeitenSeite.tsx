@@ -134,7 +134,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels }: Gebetszeite
         panels={{
           heute: (
             // Unter lg steht die Tafel vor dem Bogen; ab lg liegt der Bogen links (zwei Spalten), die Tafel rechts
-            <div className="grid items-start gap-6 lg:grid-cols-3">
+            <div className="grid items-start gap-6 lg:grid-cols-3 lg:items-stretch">
               <HeuteTafel heute={heute} naechstes={naechstes} texte={texte} gewechselt={gewechselt} />
               <TagesbogenLive ruhig tage={tage} referenz={referenz} texte={bogenTexte} className="lg:order-first lg:col-span-2" />
             </div>
@@ -165,7 +165,10 @@ function HeuteTafel({
   gewechselt: boolean;
 }) {
   return (
-    <ul aria-label={texte.listeHeute} className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1">
+    <ul
+      aria-label={texte.listeHeute}
+      className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:flex lg:flex-col"
+    >
       {GEBETE.map((g) => {
         const ist = naechstes !== null && !naechstes.morgen && naechstes.gebet === g;
         const vergangen = naechstes !== null && (naechstes.morgen || GEBETE.indexOf(g) < GEBETE.indexOf(naechstes.gebet));
@@ -176,7 +179,7 @@ function HeuteTafel({
             data-gebet={g}
             aria-current={ist ? 'time' : undefined}
             className={klassen(
-              'flex min-h-18 items-center gap-4 px-4 py-3 md:px-6',
+              'flex min-h-18 items-center gap-4 px-4 py-3 md:px-6 lg:flex-1',
               ist && 'bg-gruen-50',
               gewechselt && 'transition-colors duration-(--dauer-wechsel)',
             )}
