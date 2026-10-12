@@ -372,10 +372,21 @@
     stroke-dashoffset: 0;
   }
 }
-/* B-06: Linie enthüllt sich von links bis „jetzt“ (Schnittmaske wächst; waagerecht verläuft die Zeit linear) */
+/* B-08: der erledigte Teil der Meilensteinlinie wächst von links (scale-x) */
 @keyframes enthuellen {
   from {
     scale: 0 1;
+  }
+}
+/* B-06: Schiebefenster – Fenster von links herein, Inhalt gleich weit zurück (beide nur translate) */
+@keyframes schiebefenster {
+  from {
+    translate: -100% 0;
+  }
+}
+@keyframes schiebefenster-gegen {
+  from {
+    translate: 100% 0;
   }
 }
 /* B-07: Linie wächst von oben */
@@ -448,11 +459,12 @@
     stroke-dasharray: 1;
     animation: zeichnen var(--dauer, var(--dauer-moment)) var(--ease-eintritt) var(--verzoegerung, 0ms) both;
   }
-  /* B-06: Schnittmaske des Tagesbogens */
+  /* B-06: Schiebefenster des Tagesbogens (Fenster herein, Inhalt gleich weit zurück: die Kante wandert bis „jetzt“) */
   .bogen-enthuellt {
-    transform-box: fill-box;
-    transform-origin: left center;
-    animation: enthuellen var(--dauer-moment) var(--ease-eintritt) both;
+    animation: schiebefenster var(--dauer-moment) var(--ease-eintritt) both;
+  }
+  .bogen-enthuellt-inhalt {
+    animation: schiebefenster-gegen var(--dauer-moment) var(--ease-eintritt) both;
   }
   /* B-06: Marke nach der Linie (Verzögerung über --verzoegerung) */
   .marke-tritt-hervor {
@@ -462,8 +474,14 @@
   }
   /* B-06: Ein Punkt färbt sich erst, wenn die Linie ihn erreicht (--anteil = Lage des Punkts auf dem Bogen, 0…1).
      anteil³ nähert die Umkehrung von ease-eintritt: die Färbung kommt nie vor der Linie (H-B02). */
-  .bogen-punkt-erreicht {
-    transition-delay: calc(var(--anteil) * var(--anteil) * var(--anteil) * var(--dauer-moment));
+  .bogen-punkt-erreicht::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: var(--color-gruen-700);
+    animation: einblenden var(--dauer-wechsel) var(--ease-standard)
+      calc(var(--anteil) * var(--anteil) * var(--anteil) * var(--dauer-moment)) both;
   }
   /* B-07 Weg der Gemeinde (Auslöser `ErstesSichtbarwerden`): 1400 ms über alle Stationen; Station i tritt hervor, wenn die Linie sie erreicht */
   [data-sicht] {
@@ -527,6 +545,8 @@
   /* Reduzierte Bewegung: Linien und Marken stehen sofort im Endzustand, Auftritte werden zur Überblendung */
   .linie-zeichnet,
   .bogen-enthuellt,
+  .bogen-enthuellt-inhalt,
+  .bogen-punkt-erreicht::after,
   .marke-tritt-hervor,
   .familie-eigen,
   .lade-stern {
@@ -538,9 +558,6 @@
   [data-slot='dialog-content'][data-state='open'],
   [data-slot='dropdown-menu-content'][data-state='open'] {
     animation-name: einblenden;
-  }
-  .bogen-punkt-erreicht {
-    transition-delay: 0s;
   }
   *,
   *::before,

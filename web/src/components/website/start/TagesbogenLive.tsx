@@ -101,9 +101,6 @@ export function TagesbogenLive({
           className="absolute inset-0 size-full overflow-visible"
         >
           <defs>
-            <clipPath id={`${kennung}-bis`}>
-              {bisX > 0 ? <rect x="0" y="0" width={bisX} height={BOGEN.hoehe} className={ruhig ? undefined : 'bogen-enthuellt'} /> : null}
-            </clipPath>
             <clipPath id={`${kennung}-himmel`}>
               <rect x="0" y="0" width={BOGEN.breite} height={BOGEN.horizont} />
             </clipPath>
@@ -118,16 +115,6 @@ export function TagesbogenLive({
           </defs>
           {/* Unter dem Horizont: die Zeit vor Sonnenaufgang und nach Sonnenuntergang */}
           <rect x="0" y={BOGEN.horizont} width={BOGEN.breite} height={BOGEN.hoehe - BOGEN.horizont} fill={`url(#${kennung}-nacht)`} />
-          {/* Der vergangene Teil des Tages über dem Horizont als Fläche, enthüllt bis „jetzt“ */}
-          {bisX > 0 ? (
-            <g clipPath={`url(#${kennung}-bis)`}>
-              <path
-                d={`${bogen.pfad} L${BOGEN.breite - BOGEN.rand} ${BOGEN.horizont} L${BOGEN.rand} ${BOGEN.horizont} Z`}
-                clipPath={`url(#${kennung}-himmel)`}
-                fill={`url(#${kennung}-tag)`}
-              />
-            </g>
-          ) : null}
           <line
             x1="0"
             x2={BOGEN.breite}
@@ -146,19 +133,52 @@ export function TagesbogenLive({
             strokeLinecap="round"
             strokeDasharray="1 6"
           />
-          {bisX > 0 ? (
-            <path
-              d={bogen.pfad}
-              fill="none"
-              clipPath={`url(#${kennung}-bis)`}
-              vectorEffect="non-scaling-stroke"
-              className="stroke-gruen-700"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          ) : null}
         </svg>
+
+        {/* Der vergangene Teil des Tages (Fläche und Linie) als eigene Ebene, sichtbar bis „jetzt“. B-06 enthüllt sie als
+            Schiebefenster: Das Fenster (Breite bis „jetzt“) gleitet von links herein, sein Inhalt gleitet gleich weit zurück.
+            Die Zeichnung steht still, die Kante wandert – nur transform, also im Compositor (Z-05: die frühere SVG-Schnittmaske
+            zeichnete jedes Bild neu). Verläufe und Himmel-Schnitt kommen aus den defs der Zeichnung darüber. */}
+        {bisX > 0 ? (
+          <div
+            aria-hidden
+            className={klassen('absolute inset-y-0 left-0 overflow-hidden', !ruhig && 'bogen-enthuellt')}
+            style={{ width: `${(bisX / BOGEN.breite) * 100}%` }}
+          >
+            <div className={klassen('relative size-full', !ruhig && 'bogen-enthuellt-inhalt')}>
+              <svg
+                viewBox={`0 0 ${BOGEN.breite} ${BOGEN.hoehe}`}
+                aria-hidden
+                className="absolute inset-y-0 left-0 h-full overflow-visible"
+                style={{ width: `${(BOGEN.breite / bisX) * 100}%` }}
+              >
+                <path
+                  d={`${bogen.pfad} L${BOGEN.breite - BOGEN.rand} ${BOGEN.horizont} L${BOGEN.rand} ${BOGEN.horizont} Z`}
+                  clipPath={`url(#${kennung}-himmel)`}
+                  fill={`url(#${kennung}-tag)`}
+                />
+                <line
+                  x1="0"
+                  x2={BOGEN.breite}
+                  y1={BOGEN.horizont}
+                  y2={BOGEN.horizont}
+                  vectorEffect="non-scaling-stroke"
+                  className="stroke-linie"
+                  strokeWidth="2"
+                />
+                <path
+                  d={bogen.pfad}
+                  fill="none"
+                  vectorEffect="non-scaling-stroke"
+                  className="stroke-gruen-700"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        ) : null}
 
         {/* „Jetzt“ zuerst, damit der Achtstern des nächsten Gebets bei Nähe obenauf liegt */}
         {sonne ? (
@@ -199,7 +219,8 @@ export function TagesbogenLive({
               className={klassen(
                 'absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-pill border-2 transition-colors duration-(--dauer-wechsel)',
                 // Mit ruhig steht die Linie schon voll: Der Punkt folgt ihr ohne Verzögerung (keine Enthüllung).
-                erreicht ? klassen('border-gruen-700 bg-gruen-700', !ruhig && 'bogen-punkt-erreicht') : 'border-rand bg-weiss',
+                // Ohne ruhig färbt eine Deckfläche (::after) den Punkt per Überblendung, wenn die Linie ihn erreicht – nur opacity.
+                erreicht ? (ruhig ? 'border-gruen-700 bg-gruen-700' : 'bogen-punkt-erreicht border-rand bg-weiss') : 'border-rand bg-weiss',
               )}
               style={
                 erreicht && !ruhig
