@@ -1,4 +1,4 @@
-# Bewegungsprüfung · / · 2026-10-12-07-23 · http://127.0.0.1:3500
+# Bewegungsprüfung · / · 2026-10-12-11-13 · http://127.0.0.1:3500
 
 ## (1) Reduzierte Bewegung
 
@@ -11,11 +11,11 @@
 
 | Nr | Soll ms | Ist ms | laufend | Eigenschaften | Bild |
 |---|---|---|---|---|---|
-| 1 | 0 | 0 | 13 | backgroundColor, borderBottomColor, borderLeftColor, borderRightColor, borderTopColor, scale, opacity | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-1.jpg |
-| 2 | 500 | 501 | 3 | scale, opacity | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-2.jpg |
-| 3 | 1000 | 1002 | 3 | scale, opacity | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-3.jpg |
-| 4 | 1500 | 1502 | 2 | scale, opacity | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-4.jpg |
-| 5 | 2000 | 2002 | 0 | scale, opacity | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-5.jpg |
+| 1 | 0 | 0 | 6 | translate, opacity, scale | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-1.jpg |
+| 2 | 500 | 501 | 4 | translate, opacity, scale | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-2.jpg |
+| 3 | 1000 | 1001 | 4 | translate, opacity, scale | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-3.jpg |
+| 4 | 1500 | 1502 | 0 | translate, opacity, scale | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-4.jpg |
+| 5 | 2000 | 2002 | 0 | translate, opacity, scale | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-5.jpg |
 
 ## (3) Bildrate (rAF, Fenster 390×844, 2000 ms)
 

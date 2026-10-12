@@ -1,6 +1,6 @@
 {
   "werkzeug": "bewegung",
-  "zeit": "2026-10-12-07-24",
+  "zeit": "2026-10-12-11-15",
   "basis": "http://127.0.0.1:3500",
   "pfad": "/projekte",
   "dauer": 2000,
@@ -38,7 +38,7 @@
       {
         "nr": 3,
         "sollMs": 1000,
-        "istMs": 1003,
+        "istMs": 1002,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-projekte/bewegung-3.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": []
@@ -46,7 +46,7 @@
       {
         "nr": 4,
         "sollMs": 1500,
-        "istMs": 1503,
+        "istMs": 1502,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-projekte/bewegung-4.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": []
@@ -63,21 +63,21 @@
     "bildrate": {
       "ohneDrosselung": {
         "drosselung": 1,
-        "bilder": 122,
-        "langeAbstaende": 0,
-        "verworfen": 0,
-        "anteilVerworfenProzent": 0,
+        "bilder": 118,
+        "langeAbstaende": 3,
+        "verworfen": 4,
+        "anteilVerworfenProzent": 3.3,
         "medianAbstandMs": 16.7,
         "p95AbstandMs": 16.8
       },
       "drossel4": {
         "drosselung": 4,
-        "bilder": 98,
-        "langeAbstaende": 3,
-        "verworfen": 24,
-        "anteilVerworfenProzent": 19.7,
+        "bilder": 122,
+        "langeAbstaende": 0,
+        "verworfen": 0,
+        "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "scrollen": true,
       "fenster": {

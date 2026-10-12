@@ -10,7 +10,7 @@
     "wcag21aa",
     "wcag22aa"
   ],
-  "zeit": "2026-10-12T07:13:17.590Z",
+  "zeit": "2026-10-12T11:04:49.493Z",
   "routen": [
     {
       "name": "Start",
@@ -74,7 +74,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".size-10.-translate-x-1\\/2.top-1\\/2 > .relative.rounded-pill.text-weiss",
+              "ziel": ".size-10.top-1\\/2.-translate-y-1\\/2 > .relative.rounded-pill.text-weiss",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -112,7 +112,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".flex-row.leading-tight.text-gruen-800 > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "ziel": ".flex-row.leading-tight.text-gruen-800 > .size-9.place-items-center.grid > .text-weiss.relative.text-16",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -211,7 +211,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-weiss.text-16",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -257,7 +257,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-weiss.text-16",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {

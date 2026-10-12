@@ -1,6 +1,6 @@
 {
   "werkzeug": "bewegung",
-  "zeit": "2026-10-12-07-23",
+  "zeit": "2026-10-12-11-13",
   "basis": "http://127.0.0.1:3500",
   "pfad": "/",
   "dauer": 2000,
@@ -24,15 +24,11 @@
         "sollMs": 0,
         "istMs": 0,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-1.jpg",
-        "laufendeAnimationen": 13,
+        "laufendeAnimationen": 6,
         "eigenschaften": [
-          "backgroundColor",
-          "borderBottomColor",
-          "borderLeftColor",
-          "borderRightColor",
-          "borderTopColor",
-          "scale",
-          "opacity"
+          "translate",
+          "opacity",
+          "scale"
         ]
       },
       {
@@ -40,21 +36,23 @@
         "sollMs": 500,
         "istMs": 501,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-2.jpg",
-        "laufendeAnimationen": 3,
+        "laufendeAnimationen": 4,
         "eigenschaften": [
-          "scale",
-          "opacity"
+          "translate",
+          "opacity",
+          "scale"
         ]
       },
       {
         "nr": 3,
         "sollMs": 1000,
-        "istMs": 1002,
+        "istMs": 1001,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-3.jpg",
-        "laufendeAnimationen": 3,
+        "laufendeAnimationen": 4,
         "eigenschaften": [
-          "scale",
-          "opacity"
+          "translate",
+          "opacity",
+          "scale"
         ]
       },
       {
@@ -62,10 +60,11 @@
         "sollMs": 1500,
         "istMs": 1502,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-4.jpg",
-        "laufendeAnimationen": 2,
+        "laufendeAnimationen": 0,
         "eigenschaften": [
-          "scale",
-          "opacity"
+          "translate",
+          "opacity",
+          "scale"
         ]
       },
       {
@@ -75,8 +74,9 @@
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-5.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": [
-          "scale",
-          "opacity"
+          "translate",
+          "opacity",
+          "scale"
         ]
       }
     ],

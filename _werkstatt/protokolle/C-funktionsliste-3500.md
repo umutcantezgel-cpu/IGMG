@@ -1,14 +1,14 @@
 # E0-PRUEFER-03 · Funktionsliste F-01 … F-24 · Stand http://127.0.0.1:3500
 
-> Stufe C, Prüfling fa5c005
+> Stufe C, Prüfling 58a3344
 
-Zeitpunkt: 2026-10-12T07:49:38.514Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500` · Verwaltungszustand: ja.
+Zeitpunkt: 2026-10-12T11:41:45.096Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500` · Verwaltungszustand: ja.
 
 Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Einzelprüfungen stehen unter „Einzelbefunde“. Messwerte zählen nicht zum Ergebnis. Formular-POSTs sind aus dem Netzwerk gezählt.
 
 | ID | Funktion | Ablauf | 390 | 1440 |
 |---|---|---|---|---|
-| F-01 | Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten | `/` öffnen | erfüllt | erfüllt |
+| F-01 | Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten | `/` öffnen | nicht erfüllt | nicht erfüllt |
 | F-02 | Leiste auf jeder Seite außer Gebetszeiten | Leiste auf 19 Seiten; Telefon: aufklappen | erfüllt | erfüllt |
 | F-03 | /gebetszeiten: Tabs, Tastatur, Monatstabelle, Qibla | Tabs per Tastatur; Monat; Kompass | nicht prüfbar | nicht prüfbar |
 | F-04 | Gebetszeiten-Anzeige: Vollbild, Schließen, Sprachwechsel | /gebetszeiten/anzeige; X und Esc; 11 s warten | erfüllt | erfüllt |
@@ -36,25 +36,25 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 ## Einzelbefunde
 
 ### F-01 · Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten
-- 390 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 09:49:38) · "2026-10-12T10:00:00.000Z"
+- 390 px: **nicht erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 13:41:45) · "2026-10-12T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
   - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland · Mo., 12. Okt. Nächstes Gebet berechnet Dhuhr · 13:17 Uhr verbleibt: 1 Std. 17 Min. Zeiten ausblenden Imsak 05:55 Aufgang 07:37 Dhuhr 13:17 Asr 16:08 Maghrib "
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
-  - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
+  - nicht erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · null
   - erfüllt · bis zu 6 kommende Veranstaltungen · 3
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-01-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-01-390-ende.jpg`
-- 1440 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 09:49:41) · "2026-10-12T10:00:00.000Z"
+- 1440 px: **nicht erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 13:41:57) · "2026-10-12T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
-  - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland Mo., 12. Okt. · 12:00 Uhr Nächstes Gebet Dhuhr · 13:17 Uhr verbleibt: 1 Std. 17 Min. berechnet Imsak 05:55 Aufgang 07:37 Dhuhr 13:17 Asr 16:08 Maghrib 18:48 Is"
+  - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland Mo., 12. Okt. · 12:00 Uhr Nächstes Gebet berechnet Dhuhr · 13:17 Uhr verbleibt: 1 Std. 17 Min. Imsak 05:55 Aufgang 07:37 Dhuhr 13:17 Asr 16:08 Maghrib 18:48 Is"
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
-  - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
+  - nicht erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · null
   - erfüllt · bis zu 6 kommende Veranstaltungen · 3
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-01-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-01-1440-ende.jpg`
@@ -194,14 +194,14 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 ### F-08 · Über uns, Projekte, Vorstand, IGMG (Tabs)
 - 390 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
   - erfüllt · /ueber-uns: 200, H1, Inhalt · {"status":200,"h1":"Über uns","zeichen":3379}
-  - erfüllt · /projekte: 200, H1, Inhalt · {"status":200,"h1":"Gemeinsam glauben, gemeinsam wachsen","zeichen":2550}
+  - erfüllt · /projekte: 200, H1, Inhalt · {"status":200,"h1":"Gemeinsam glauben, gemeinsam wachsen","zeichen":2515}
   - erfüllt · /vorstand: 200, H1, Inhalt · {"status":200,"h1":"Unser Vorstand","zeichen":3759}
   - erfüllt · /igmg: 200, H1, Inhalt · {"status":200,"h1":"IGMG - Islamische Gemeinschaft Millî Görüş","zeichen":829}
   - erfüllt · /igmg: Tabs zeigen Inhalt · {"tabs":5,"zeichen":[699,1045,1716,1175,98]}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-08-igmg-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-08-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
   - erfüllt · /ueber-uns: 200, H1, Inhalt · {"status":200,"h1":"Über uns","zeichen":3379}
-  - erfüllt · /projekte: 200, H1, Inhalt · {"status":200,"h1":"Gemeinsam glauben, gemeinsam wachsen","zeichen":2550}
+  - erfüllt · /projekte: 200, H1, Inhalt · {"status":200,"h1":"Gemeinsam glauben, gemeinsam wachsen","zeichen":2613}
   - erfüllt · /vorstand: 200, H1, Inhalt · {"status":200,"h1":"Unser Vorstand","zeichen":3759}
   - erfüllt · /igmg: 200, H1, Inhalt · {"status":200,"h1":"IGMG - Islamische Gemeinschaft Millî Görüş","zeichen":829}
   - erfüllt · /igmg: Tabs zeigen Inhalt · {"tabs":5,"zeichen":[699,1045,1716,1175,98]}
@@ -259,7 +259,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 390 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 19.8 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 2.5 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -267,7 +267,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 1440 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 3.3 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 25.5 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -284,7 +284,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 30 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 7.5 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-13-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-13-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 3 · HTTP ≥ 400: keine
@@ -297,7 +297,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 20.5 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 5.8 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-13-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3500/F-13-1440-ende.jpg`
 

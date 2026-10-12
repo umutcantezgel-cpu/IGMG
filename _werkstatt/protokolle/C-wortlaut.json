@@ -2,23 +2,23 @@
   "werkzeug": {
     "name": "wortlaut.mjs",
     "version": "1.0",
-    "aufruf": "node wortlaut.mjs --basis 9ebb4bc --stand fa5c005 --protokoll /home/user/IGMG/_werkstatt/protokolle/C-wortlaut"
+    "aufruf": "node wortlaut.mjs --basis 9ebb4bc --stand 58a3344 --protokoll /home/user/IGMG/_werkstatt/protokolle/C-wortlaut"
   },
   "basis": {
     "rev": "9ebb4bc",
     "commit": "9ebb4bc5ffe5bdfc7782c9aaf5c7c04918ee8e4c"
   },
   "stand": {
-    "rev": "fa5c005",
-    "commit": "fa5c00513e01ee1cca03407f62708bc2114baa09",
+    "rev": "58a3344",
+    "commit": "58a33449ceded2320a0f72e0ec8a759dc1a760d8",
     "web_arbeitsbaum_abweichend_von_head": false,
     "unversionierte_dateien_unter_web": 0
   },
-  "erstellt": "2026-10-12T07:25:42.341Z",
+  "erstellt": "2026-10-12T11:16:18.684Z",
   "ausnahmen": [
     {
       "id": "A-01",
-      "grund": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt.",
+      "grund": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt.",
       "treffer": 23
     },
     {
@@ -140,8 +140,8 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "7a0cf7e9c3aeba6a0268e69594609eab00548412337d3023c003dcd875849449",
-      "dateihash_stand": "7a0cf7e9c3aeba6a0268e69594609eab00548412337d3023c003dcd875849449",
-      "identisch": true
+      "dateihash_stand": "e95fccbd8c72776c65aef580126c614c7bbe0cbc76f2b30f5287c568be9f2e52",
+      "identisch": false
     },
     {
       "gruppe": "M",
@@ -220,7 +220,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "9422c3315fc287d9a44e0725c4953d20d14fd925d560befac5ce9f148d9b5af1",
-      "dateihash_stand": "5a3e06e28191197f06efb4a95ac596c6c8fcc26ac37d4483f728bfa138a887b3",
+      "dateihash_stand": "6119ee7890057be91ffc8faee96d4104168f1726fb01b6ad7caff784569377f7",
       "identisch": false
     },
     {
@@ -230,7 +230,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "8bca072605e23aafb217d3dada54e6a516ce06e3fe47fa6e0c58d9a4cc5ec8d0",
-      "dateihash_stand": "e5f3f3695abbc4a4ab5c55d39e3ec570322ece391056d53cb03975ad97a8b24c",
+      "dateihash_stand": "c788a33caa1461b9d6ad8dab743233ed8b59f35524d07c168b91a90de2e3c775",
       "identisch": false
     },
     {
@@ -310,7 +310,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "15560c5e7321d5eebd5492d9d1827a2133fe010ef77ed2dc48071beeab3e931d",
-      "dateihash_stand": "7063beef32e94e45c868d7ff4d4de7771e3531217b21f831c2f88f6b4fcde498",
+      "dateihash_stand": "0466f1a731b446be78ed7a13231f8754b99ab6be8c8fc7f9a5bd4b7c1bcbaa86",
       "identisch": false
     },
     {
@@ -320,7 +320,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "f54b47b1c6fd90d78a9cd6c70ddef86d964b9a56bd4921f955cba1588a58c350",
-      "dateihash_stand": "714acada0bc02ed85c7b772f635e7c14ec2b442422fcb2d8d3c059ba298fe47e",
+      "dateihash_stand": "c3a7a07a030c5ec336f9a3ed93aec266e7bbc6c7ee92e11c9605ac463d949c4b",
       "identisch": false
     },
     {
@@ -330,7 +330,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "bc6be52cd52d074104516cb1fb18a0032989aa0e082c98139c4e79a446aa1767",
-      "dateihash_stand": "acfcf6e737ef89bbe4e11476735bde9bbe8f7ce5b1be02be931d2161b764a442",
+      "dateihash_stand": "8bf41ca8191cb248e66e9072ca8564a617d14971f1d541078dd7d4c55ac52c3b",
       "identisch": false
     },
     {
@@ -340,7 +340,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "20b86d31f618623cecf89cfe25da86e6d91e8153153f5cc3cdf0e3d6715c2dac",
-      "dateihash_stand": "b313010c7782028ec1627bf969f791a9d363009841b60ed3be92084600cee83e",
+      "dateihash_stand": "ccd4ae45356d76538e3b7c2769ae220ff2ac7c8fc31cdf5d5ec1a30724304248",
       "identisch": false
     },
     {
@@ -430,7 +430,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "4bf9453bb586026f1c110e70b7236379c2be9807497089d1f1c387acbdcf84f9",
-      "dateihash_stand": "bd364a7489cd04b316a1cc38da80b34d841e0b4d5f73b1fdb02fb5ffa8cf2cac",
+      "dateihash_stand": "b58f515a6259dd4f31995ef4a4bd8371d7e2d7692ce37e484d7a27c762d6d79b",
       "identisch": false
     },
     {
@@ -619,7 +619,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "99918f5a36f06bd59945f51c6e7b03a2cb635b15847d264c8a1a8b27a06944ca",
-      "dateihash_stand": "37f0279c41adde92cba68bdc0e5f059dde3050bd334cd3b9db055a7f341d1bb5",
+      "dateihash_stand": "6beb5833b191e5d72ba13ef1452c06abb07a977350d8d1e2a554bc014d2ec293",
       "identisch": false
     },
     {
@@ -630,7 +630,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "a91ee0eac0018f249ef4f1c0d542dca0fdb2ce7783af8a7bfa9400a24cadcd97",
-      "dateihash_stand": "a8742a576c58cfa4063ee3be6e61ce8cdc903a2bcad5b108469a4a8826c20f62",
+      "dateihash_stand": "380a5a55a6b2bcb7bc1f2b36e141906f171c50690b41f7fbd6b66e1414b62ed5",
       "identisch": false
     },
     {
@@ -641,7 +641,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "00a0a9e09e66c93cff22e5f89661e0a14f057a8d83fcc26eddaf9dcad722989c",
-      "dateihash_stand": "5e2af466d71e3514a56b99dcf2d39152c5a84efee4bea408264058fecb164679",
+      "dateihash_stand": "93799ed1f98d85dbdccdba948a6ffc88c38eb1ecd26b482e21bd9d0005ee1ddc",
       "identisch": false
     },
     {
@@ -652,7 +652,7 @@
       "vorhanden_basis": false,
       "vorhanden_stand": true,
       "dateihash_basis": null,
-      "dateihash_stand": "bde575d4031680eb05f11842311c53c0bbd1b9b2954a1b57dda84e12387f4001",
+      "dateihash_stand": "528bd7177b336e8ab272afacdda85417a7235ed14a1717cc71b62f4cb3dbd489",
       "identisch": false
     },
     {
@@ -663,7 +663,7 @@
       "vorhanden_basis": false,
       "vorhanden_stand": true,
       "dateihash_basis": null,
-      "dateihash_stand": "ca9c2a6b9866ee4520d39952a1ba0ec23b310b8afbadb192363d0a49641a558b",
+      "dateihash_stand": "fea8c1cded943d2638e7f7694319ebe2f0820cf4506359539b3ce4cb81da8b85",
       "identisch": false
     },
     {
@@ -795,7 +795,7 @@
       "vorhanden_basis": false,
       "vorhanden_stand": true,
       "dateihash_basis": null,
-      "dateihash_stand": "f63bf02b54cd6a51617dd5e261a6816f24c50c7d2a26a9a9fdb04408ffb46b9e",
+      "dateihash_stand": "f813314f160b61c269c4b0f7762d4270d8709ce4a8088548109b51b90ed97cec",
       "identisch": false
     },
     {
@@ -806,7 +806,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "0ccdec0720489f67564961241d1d613cb71a15bb9eb4f9a765af15dfa2a033e6",
-      "dateihash_stand": "60573f417da3b5074904ddf647d3c3ae67288d57a5679507e4d0ffc1b021195f",
+      "dateihash_stand": "399b08a079121c98e2f5528007bccd467db0c5f157336f4394d23dc34fe39b64",
       "identisch": false
     },
     {
@@ -894,7 +894,7 @@
       "vorhanden_basis": false,
       "vorhanden_stand": true,
       "dateihash_basis": null,
-      "dateihash_stand": "4f01ab9d9f303f7f513d96e7f675194e0dbe810b267d8b1d59487dd766f6d992",
+      "dateihash_stand": "cfacd90276536e76e6b5b331058065368f255be40046230e597e01673e324bc2",
       "identisch": false
     },
     {
@@ -1136,7 +1136,7 @@
       "vorhanden_basis": true,
       "vorhanden_stand": true,
       "dateihash_basis": "44388564807901b49b4d365d741e02a6b9e9c998c0485c223333df7a2135f475",
-      "dateihash_stand": "c89b2e55e457f2fa8b7e088f4bf061e8a838b808e99ff1b56a890097db2cf946",
+      "dateihash_stand": "880f2b20f74e41662216b06de1f12353ba427b9ed7777e1b2a9b05b0c7fd7fdd",
       "identisch": false
     },
     {
@@ -1437,11 +1437,11 @@
     },
     "befund_hoch_offen_einheiten": 0,
     "befund_ausnahme_einheiten": 34,
-    "nicht_recht_veraendert": 417,
-    "nicht_recht_gleich": 5695,
-    "eintraege_gesamt": 6835
+    "nicht_recht_veraendert": 449,
+    "nicht_recht_gleich": 5683,
+    "eintraege_gesamt": 6855
   },
-  "ergebnis_hash": "4adcebe62a8fe9f2807b8601b11dcd94f2594cf9c0d4e1991b7d7fd0f30f3956",
+  "ergebnis_hash": "c13edfc4f03f7b7d72afa04bce633e5254169e3ddc7f2ca35b014214ce7d5fd3",
   "eintraege": [
     {
       "gruppe": "C",
@@ -1611,7 +1611,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1628,7 +1628,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1645,7 +1645,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1662,7 +1662,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1679,7 +1679,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1696,7 +1696,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1713,7 +1713,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1730,7 +1730,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1747,7 +1747,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1764,7 +1764,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1781,7 +1781,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1798,7 +1798,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1815,7 +1815,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1832,24 +1832,24 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
       "datei": "web/docs/recht/datenschutz-hosting-v2.md",
-      "schluessel": "Text: | Platzhalter | Wer liefert | |---|---| | `[Anbieter: Vercel Inc., Anschrift und Sitz prü…",
+      "schluessel": "Text: | Platzhalter | Wer liefert | | ---------------------------------------------------- | --…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "fe750e11831fd91058115d19e1d82b4b73937c253a88b9c7a7908cd631df038e",
+      "hash_jetzt": "c765cabac9945c1ac9816de236843ce33b7342a1904d8875d7b3b0db5afcfbc4",
       "text_vorher": null,
-      "text_jetzt": "| Platzhalter | Wer liefert | |---|---| | `[Anbieter: Vercel Inc., Anschrift und Sitz prüfen]` | Technik, Vorstand | | `[Frist – Anbieter und Vorstand]` | Vorstand | | `[Interessenabwägung …]` | Rechtsberatung | | `[prüfen: …]` | Technik und Rechtsberatung je nach Punkt |",
+      "text_jetzt": "| Platzhalter | Wer liefert | | ---------------------------------------------------- | ---------------------------------------- | | `[Anbieter: Vercel Inc., Anschrift und Sitz prüfen]` | Technik, Vorstand | | `[Frist – Anbieter und Vorstand]` | Vorstand | | `[Interessenabwägung …]` | Rechtsberatung | | `[prüfen: …]` | Technik und Rechtsberatung je nach Punkt |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1866,7 +1866,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1883,7 +1883,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1900,7 +1900,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1917,7 +1917,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1934,7 +1934,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1951,7 +1951,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1968,7 +1968,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -1985,7 +1985,7 @@
       "anzahl": null,
       "ausnahme": "A-01",
       "befund": "ausnahme",
-      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei fa5c005 gefunden; 0 bedeutet nicht eingespielt."
+      "begruendung": "AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt."
     },
     {
       "gruppe": "D",
@@ -2279,14 +2279,14 @@
     {
       "gruppe": "D",
       "datei": "web/docs/recht/VERARBEITUNGSVERZEICHNIS.md",
-      "schluessel": "Text: | Feld | Angabe | |---|---| | Anbieter | [Anbieter – offen, ML-10 in `_werkstatt/MENSCHEN…",
+      "schluessel": "Text: | Feld | Angabe | | ------------- | -----------------------------------------------------…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "7ec125a810585233f94c6c7479af57388e5fcf0d585ac394035ea41eeb5202a4",
+      "hash_jetzt": "38a8fc0f7479adb323689c0e746c88611ed38bb73c8a3d59e5f9639eef1d0ccf",
       "text_vorher": null,
-      "text_jetzt": "| Feld | Angabe | |---|---| | Anbieter | [Anbieter – offen, ML-10 in `_werkstatt/MENSCHEN.md`] | | Rolle | Auftragsverarbeiter für den Versand der Bestätigungs- und Benachrichtigungsmails. | | Daten | E-Mail-Adresse der Empfänger, Betreff und Text der Mail (Bestätigung mit Veranstaltung, Termin und Datum). Laut Seed enthält die Benachrichtigung der Ehrenamtlichen keine Formulardaten, nur einen Hinweis und einen Link (`rechtliches.ts`, Abschnitt „Empfänger“). | | Region | [prüfen: EU-Anbieter, Standort der Server]. | | Vertrag (AVV) | Vertrag mit dem gewählten Anbieter, vor dem Livegang [prüfen]. Verantwortlich: Vorstand. | | Drittland | [prüfen]. | | Hinweis | In der Produktion ist der Versand ohne `SMTP_HOST` nicht möglich (`web/src/lib/mail/transport.ts`, Zeilen 12–20). |",
+      "text_jetzt": "| Feld | Angabe | | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | Rolle | Auftragsverarbeiter für Hosting, Auslieferung, Funktionen, Build- und Laufzeitprotokolle [prüfen: Rollenzuordnung im Vertrag] | | Daten | Verbindungsdaten bei jedem Seitenaufruf (Adresse des Aufrufs, Zeitpunkt, Antwortstatus). Ob die IP-Adresse in den Protokollen steht, ist [prüfen]. Build-Protokolle und Deployment-Angaben. Konten der Technik-Mitglieder im Vercel-Team. | | Region | Funktionen laufen in `fra1` (Frankfurt), gesetzt in `vercel.json` (Zeile 3, Schlüssel `regions`). Ohne diese Angabe wäre die Standardregion `iad1` (Belege: https://vercel.com/docs/llms-full.txt; https://vercel.com/docs/functions/configuring-functions/region). Laut Vercel-Doku bleiben statische Dateien standardmäßig in allen Regionen verteilt (https://vercel.com/docs/llms-full.txt). Ort der Logs und Protokollspeicher: [prüfen]. | | Vertrag (AVV) | Auftragsverarbeitungsvertrag über die Vercel-Vertragsbedingungen für das Team [prüfen: Ort des Vertrags und Akzeptanzweg; die Vercel-Doku zu DPA wurde nicht gefunden]. Verantwortlich: Vorstand. | | Drittland | Sitz des Vertragspartners und Übermittlung in ein Drittland [prüfen]. Grundlage laut Vercel (EU-US Data Privacy Framework oder Standardvertragsklauseln) [prüfen: nicht in der Vercel-Doku gefunden]. |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-06",
@@ -2296,14 +2296,14 @@
     {
       "gruppe": "D",
       "datei": "web/docs/recht/VERARBEITUNGSVERZEICHNIS.md",
-      "schluessel": "Text: | Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für den Medienspeicher, über Ve…",
+      "schluessel": "Text: | Feld | Angabe | | ------------- | -----------------------------------------------------…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "73904b0e3fe8b2ea8530c31a0a53b9643e48b9b7162cbb672532518da448f61c",
+      "hash_jetzt": "d3fb4e78864d343a60b2cb5d199c13d91e59ef7cb1f8030d7d552c2a727e8adf",
       "text_vorher": null,
-      "text_jetzt": "| Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für den Medienspeicher, über Vercel [prüfen: Rolle und Vertragspartner]. | | Daten | Hochgeladene Bilder und PDF-Dateien (Aushänge). Beim Hochladen entfernt die App Angaben wie EXIF und GPS (`web/src/lib/medien/verarbeiten.ts`, Zeilen 5–14). | | Region | Ziel laut ADR 0020: Frankfurt (`fra1`). Die Vercel-Doku nennt für `vercel blob create-store` den Standard `iad1` und belegt `fra1` nicht (https://vercel.com/docs/cli/blob) [prüfen]. | | Stand | Im Code gibt es den Adapter `BlobSpeicher` (`web/src/lib/storage/index.ts`, Zeilen 96 und 124–125). Die Startprüfung meldet `blob` dagegen als „noch nicht angebunden“ (`web/src/lib/umgebung.ts`, Zeilen 829–835). Die Technik klärt, ob der Speicher produktiv ist [prüfen]. | | Vertrag (AVV) | Über Vercel, wie in 2.1 [prüfen]. | | Drittland | [prüfen]. |",
+      "text_jetzt": "| Feld | Angabe | | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | Rolle | Auftragsverarbeiter für die Datenbank. Vertragspartner: [prüfen: direkt bei Neon oder über den Vercel Marketplace]. | | Daten | Alle Inhalte der Website-Datenbank: Veranstaltungsanmeldungen und weitere Formulareingänge (verschlüsselt, siehe Seed „Sicherheit“), Konten der Verwaltung, Sitzungen, Audit-Protokoll, Ratenfenster mit nicht umkehrbaren IP-Prüfwerten, Warteschlange des Mail-Ausgangs (ADR 0018, Festlegungen; `web/src/lib/umgebung.ts` Eintrag `DATABASE_URL`). | | Region | Ziel laut ADR 0018: `aws-eu-central-1` (Frankfurt). Die Vercel-Doku belegt diese Region nicht [prüfen: im Neon-Dashboard nachsehen]. | | Vertrag (AVV) | Auftragsverarbeitungsvertrag mit dem Vertragspartner aus der Zeile „Rolle“ [prüfen]. Verantwortlich: Vorstand. | | Drittland | [prüfen]. |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-06",
@@ -2313,14 +2313,14 @@
     {
       "gruppe": "D",
       "datei": "web/docs/recht/VERARBEITUNGSVERZEICHNIS.md",
-      "schluessel": "Text: | Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für die Datenbank. Vertragspart…",
+      "schluessel": "Text: | Feld | Angabe | | ------------- | -----------------------------------------------------…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "deb37c7bad20e5faeba68c1a3a60d532e7cfad322ca8ea380f09582bcec18182",
+      "hash_jetzt": "7caa83bad6c754c7b8e604f9afe609fda5e3ee2a8bd818079c3d156c77f5987b",
       "text_vorher": null,
-      "text_jetzt": "| Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für die Datenbank. Vertragspartner: [prüfen: direkt bei Neon oder über den Vercel Marketplace]. | | Daten | Alle Inhalte der Website-Datenbank: Veranstaltungsanmeldungen und weitere Formulareingänge (verschlüsselt, siehe Seed „Sicherheit“), Konten der Verwaltung, Sitzungen, Audit-Protokoll, Ratenfenster mit nicht umkehrbaren IP-Prüfwerten, Warteschlange des Mail-Ausgangs (ADR 0018, Festlegungen; `web/src/lib/umgebung.ts` Eintrag `DATABASE_URL`). | | Region | Ziel laut ADR 0018: `aws-eu-central-1` (Frankfurt). Die Vercel-Doku belegt diese Region nicht [prüfen: im Neon-Dashboard nachsehen]. | | Vertrag (AVV) | Auftragsverarbeitungsvertrag mit dem Vertragspartner aus der Zeile „Rolle“ [prüfen]. Verantwortlich: Vorstand. | | Drittland | [prüfen]. |",
+      "text_jetzt": "| Feld | Angabe | | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | | Rolle | Auftragsverarbeiter für den Medienspeicher, über Vercel [prüfen: Rolle und Vertragspartner]. | | Daten | Hochgeladene Bilder und PDF-Dateien (Aushänge). Beim Hochladen entfernt die App Angaben wie EXIF und GPS (`web/src/lib/medien/verarbeiten.ts`, Zeilen 5–14). | | Region | Ziel laut ADR 0020: Frankfurt (`fra1`). Die Vercel-Doku nennt für `vercel blob create-store` den Standard `iad1` und belegt `fra1` nicht (https://vercel.com/docs/cli/blob) [prüfen]. | | Stand | Im Code gibt es den Adapter `BlobSpeicher` (`web/src/lib/storage/index.ts`, Zeilen 96 und 124–125). Die Startprüfung meldet `blob` dagegen als „noch nicht angebunden“ (`web/src/lib/umgebung.ts`, Zeilen 829–835). Die Technik klärt, ob der Speicher produktiv ist [prüfen]. | | Vertrag (AVV) | Über Vercel, wie in 2.1 [prüfen]. | | Drittland | [prüfen]. |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-06",
@@ -2330,14 +2330,14 @@
     {
       "gruppe": "D",
       "datei": "web/docs/recht/VERARBEITUNGSVERZEICHNIS.md",
-      "schluessel": "Text: | Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für Hosting, Auslieferung, Funk…",
+      "schluessel": "Text: | Feld | Angabe | | ------------- | -----------------------------------------------------…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "4e6f09aa1d210ee39cfbfdcf7f9fe951cf074cc46ab324beb5989062b1fbf1dc",
+      "hash_jetzt": "d8ab46196710a3ebfb47d2f12c9c98e1fc06b94573cada8098d5c58af814c51a",
       "text_vorher": null,
-      "text_jetzt": "| Feld | Angabe | |---|---| | Rolle | Auftragsverarbeiter für Hosting, Auslieferung, Funktionen, Build- und Laufzeitprotokolle [prüfen: Rollenzuordnung im Vertrag] | | Daten | Verbindungsdaten bei jedem Seitenaufruf (Adresse des Aufrufs, Zeitpunkt, Antwortstatus). Ob die IP-Adresse in den Protokollen steht, ist [prüfen]. Build-Protokolle und Deployment-Angaben. Konten der Technik-Mitglieder im Vercel-Team. | | Region | Funktionen laufen in `fra1` (Frankfurt), gesetzt in `vercel.json` (Zeile 3, Schlüssel `regions`). Ohne diese Angabe wäre die Standardregion `iad1` (Belege: https://vercel.com/docs/llms-full.txt; https://vercel.com/docs/functions/configuring-functions/region). Laut Vercel-Doku bleiben statische Dateien standardmäßig in allen Regionen verteilt (https://vercel.com/docs/llms-full.txt). Ort der Logs und Protokollspeicher: [prüfen]. | | Vertrag (AVV) | Auftragsverarbeitungsvertrag über die Vercel-Vertragsbedingungen für das Team [prüfen: Ort des Vertrags und Akzeptanzweg; die Vercel-Doku zu DPA wurde nicht gefunden]. Verantwortlich: Vorstand. | | Drittland | Sitz des Vertragspartners und Übermittlung in ein Drittland [prüfen]. Grundlage laut Vercel (EU-US Data Privacy Framework oder Standardvertragsklauseln) [prüfen: nicht in der Vercel-Doku gefunden]. |",
+      "text_jetzt": "| Feld | Angabe | | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | | Anbieter | [Anbieter – offen, ML-10 in `_werkstatt/MENSCHEN.md`] | | Rolle | Auftragsverarbeiter für den Versand der Bestätigungs- und Benachrichtigungsmails. | | Daten | E-Mail-Adresse der Empfänger, Betreff und Text der Mail (Bestätigung mit Veranstaltung, Termin und Datum). Laut Seed enthält die Benachrichtigung der Ehrenamtlichen keine Formulardaten, nur einen Hinweis und einen Link (`rechtliches.ts`, Abschnitt „Empfänger“). | | Region | [prüfen: EU-Anbieter, Standort der Server]. | | Vertrag (AVV) | Vertrag mit dem gewählten Anbieter, vor dem Livegang [prüfen]. Verantwortlich: Vorstand. | | Drittland | [prüfen]. | | Hinweis | In der Produktion ist der Versand ohne `SMTP_HOST` nicht möglich (`web/src/lib/mail/transport.ts`, Zeilen 12–20). |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-06",
@@ -2347,14 +2347,14 @@
     {
       "gruppe": "D",
       "datei": "web/docs/recht/VERARBEITUNGSVERZEICHNIS.md",
-      "schluessel": "Text: | Feld | Angabe | |---|---| | Rolle | Hosting des Quellcodes und der Versionsverwaltung. …",
+      "schluessel": "Text: | Feld | Angabe | | ------------- | -----------------------------------------------------…",
       "sprache": "—",
       "status": "neu",
       "recht": true,
       "hash_vorher": null,
-      "hash_jetzt": "7052b1ead56f86041b61266be48532bf191f80f6235dcc24580f01b1fc8b305f",
+      "hash_jetzt": "b60e6d798e3d01f9749249cef85c3d8be5fd1316113e122848a90feaca8debe1",
       "text_vorher": null,
-      "text_jetzt": "| Feld | Angabe | |---|---| | Rolle | Hosting des Quellcodes und der Versionsverwaltung. Keine Verarbeitung von Besucherdaten. | | Daten | Keine Personendaten der Besucher. Konten der Technik-Mitglieder [prüfen: Rolle]. Geheimnisse und Umgebungsdateien stehen nicht im Repository (AUFTRAG, Grenze G4). | | Region | [prüfen]. | | Vertrag (AVV) | [prüfen], nur falls Personendaten im Konto verarbeitet werden. |",
+      "text_jetzt": "| Feld | Angabe | | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | | Rolle | Hosting des Quellcodes und der Versionsverwaltung. Keine Verarbeitung von Besucherdaten. | | Daten | Keine Personendaten der Besucher. Konten der Technik-Mitglieder [prüfen: Rolle]. Geheimnisse und Umgebungsdateien stehen nicht im Repository (AUFTRAG, Grenze G4). | | Region | [prüfen]. | | Vertrag (AVV) | [prüfen], nur falls Personendaten im Konto verarbeitet werden. |",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": "A-06",
@@ -17720,30 +17720,34 @@
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "de.kontakt.besuch.fuehrungen",
       "sprache": "de",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "0e29e77a8f6378c5949d9eca5664b958851dd1e67aa30ba580c1e1642fae5109",
-      "hash_jetzt": "0e29e77a8f6378c5949d9eca5664b958851dd1e67aa30ba580c1e1642fae5109",
+      "hash_jetzt": null,
+      "text_vorher": "Führungen",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "de.kontakt.besuch.termine",
       "sprache": "de",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "b047659c7285e08d7494624455324c005b4b1f47b0c19e879b321b8466f4955d",
-      "hash_jetzt": "b047659c7285e08d7494624455324c005b4b1f47b0c19e879b321b8466f4955d",
+      "hash_jetzt": null,
+      "text_vorher": "Termine",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -17759,6 +17763,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/kontakt.json",
+      "schluessel": "de.kontakt.besuch.vereinbaren",
+      "sprache": "de",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "799134eb85adbb3943d52b4f9ba5747973cbc5bfc30afef8daff1f198bda064a",
+      "text_vorher": null,
+      "text_jetzt": "Besuch vereinbaren",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -18187,30 +18208,34 @@
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "en.kontakt.besuch.fuehrungen",
       "sprache": "en",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "b49f1e41f0b681e12c662ffa2089c973587b4e6808c38b45eb92fbb17d84bd37",
-      "hash_jetzt": "b49f1e41f0b681e12c662ffa2089c973587b4e6808c38b45eb92fbb17d84bd37",
+      "hash_jetzt": null,
+      "text_vorher": "Tours",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "en.kontakt.besuch.termine",
       "sprache": "en",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "f2e46531202ad1f237947834b4d654e657c5cf60c70ae03cba1df026422a5825",
-      "hash_jetzt": "f2e46531202ad1f237947834b4d654e657c5cf60c70ae03cba1df026422a5825",
+      "hash_jetzt": null,
+      "text_vorher": "Appointments",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -18226,6 +18251,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/kontakt.json",
+      "schluessel": "en.kontakt.besuch.vereinbaren",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "afced5544df8ea23d1d512117c8c61df149eb37b8f52ef1ac82e258c845e6d7f",
+      "text_vorher": null,
+      "text_jetzt": "Arrange a visit",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -18654,30 +18696,34 @@
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "tr.kontakt.besuch.fuehrungen",
       "sprache": "tr",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "0c751cfca418ea4bed42f58e462eb619a95cfc4b6a434d7b22fdf384bbe78ceb",
-      "hash_jetzt": "0c751cfca418ea4bed42f58e462eb619a95cfc4b6a434d7b22fdf384bbe78ceb",
+      "hash_jetzt": null,
+      "text_vorher": "Rehberli turlar",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/kontakt.json",
       "schluessel": "tr.kontakt.besuch.termine",
       "sprache": "tr",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "d22c536d6204f5b50b15691fa22a8e6e07a231bc369861e296f191b23048e405",
-      "hash_jetzt": "d22c536d6204f5b50b15691fa22a8e6e07a231bc369861e296f191b23048e405",
+      "hash_jetzt": null,
+      "text_vorher": "Randevular",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -18693,6 +18739,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/kontakt.json",
+      "schluessel": "tr.kontakt.besuch.vereinbaren",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "0777a3c16e54f3725b5a5fff5312d4444785734d4ecd0f6ae1259b586da469d2",
+      "text_vorher": null,
+      "text_jetzt": "Ziyaret için randevu alın",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -32196,6 +32259,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "de.organisation.about.kennung",
+      "sprache": "de",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "9e80091d552198b3c344cf5be08d232f7729477e58b506e2d9b74dba7f02ab4f",
+      "text_vorher": null,
+      "text_jetzt": "Wer wir sind",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
       "schluessel": "de.organisation.about.mission",
       "sprache": "de",
       "status": "gleich",
@@ -32635,6 +32715,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "de.organisation.orgs.aktuell",
+      "sprache": "de",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "166c6f67b00a14696131d23a62352c268aeff4e71715d64ccfead609c12ed21b",
+      "text_vorher": null,
+      "text_jetzt": "Diese Seite",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
       "schluessel": "de.organisation.orgs.beschreibung",
       "sprache": "de",
       "status": "gleich",
@@ -32690,6 +32787,23 @@
       "hash_jetzt": "31bc11121bbffbf174802c58ab4fe2c57d630e1a7f8a1576cd5fb44d55a22925",
       "text_vorher": null,
       "text_jetzt": "Subscribe to this organisation's events",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "en.organisation.about.kennung",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "696ab4d5bfb5383b32834cc7435b2425605f1535be8004319519b2d27cc90b99",
+      "text_vorher": null,
+      "text_jetzt": "Who we are",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
@@ -33138,6 +33252,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "en.organisation.orgs.aktuell",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "ebf2023c7ca044e48b9280c1c74a60df483aff211fdc98a958a5797edf0e153a",
+      "text_vorher": null,
+      "text_jetzt": "This page",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
       "schluessel": "en.organisation.orgs.beschreibung",
       "sprache": "en",
       "status": "gleich",
@@ -33193,6 +33324,23 @@
       "hash_jetzt": "fcce30c9f2e390f38665f42eeb43cc2175740b672840677ab170d6a6b67564a9",
       "text_vorher": null,
       "text_jetzt": "Bu kuruluşun etkinliklerine abone ol",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "tr.organisation.about.kennung",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "432d37842b2d2ef9f6f07131b33bd334d748cf515023f4f65cf0101265843fa4",
+      "text_vorher": null,
+      "text_jetzt": "Biz kimiz",
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
@@ -33641,6 +33789,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/organisationen.json",
+      "schluessel": "tr.organisation.orgs.aktuell",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "4b9f8b1ac43e1b114ffc57c78b0e202bd01987484fea51dfadb5132e0ce3f899",
+      "text_vorher": null,
+      "text_jetzt": "Bu sayfa",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/organisationen.json",
       "schluessel": "tr.organisation.orgs.beschreibung",
       "sprache": "tr",
       "status": "gleich",
@@ -33729,6 +33894,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/projekte.json",
+      "schluessel": "de.projekte.bezeichnungen.beschreibungKennung",
+      "sprache": "de",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "1ef8269ea1a10d3166fa0a115717ce3068b597168834af782e2761dafffc217f",
+      "text_vorher": null,
+      "text_jetzt": "Bauprojekt",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -34176,6 +34358,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/bereiche/projekte.json",
+      "schluessel": "en.projekte.bezeichnungen.beschreibungKennung",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "64629c4d29ff70df58e65a8136a746d6c59c9ad257f761de3e643f2b71fb7282",
+      "text_vorher": null,
+      "text_jetzt": "Building project",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/projekte.json",
       "schluessel": "en.projekte.bezeichnungen.einrichtungen",
       "sprache": "en",
       "status": "gleich",
@@ -34611,6 +34810,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/bereiche/projekte.json",
+      "schluessel": "tr.projekte.bezeichnungen.beschreibungKennung",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "d5e6c392b8f1c8410ddae94ddbee95b26299b0eca08d07344f66d5b51d338c68",
+      "text_vorher": null,
+      "text_jetzt": "İnşaat projesi",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -47508,15 +47724,17 @@
       "datei": "web/messages/de.json",
       "schluessel": "karten.mehrErfahren",
       "sprache": "de",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "a85e18d1411ad31cb9734d03a8ea98364301774b0caa703c0ce03124eaa86e1a",
-      "hash_jetzt": "a85e18d1411ad31cb9734d03a8ea98364301774b0caa703c0ce03124eaa86e1a",
+      "hash_jetzt": null,
+      "text_vorher": "Mehr erfahren",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -49269,15 +49487,17 @@
       "datei": "web/messages/de.json",
       "schluessel": "start.mehrErfahren",
       "sprache": "de",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "a85e18d1411ad31cb9734d03a8ea98364301774b0caa703c0ce03124eaa86e1a",
-      "hash_jetzt": "a85e18d1411ad31cb9734d03a8ea98364301774b0caa703c0ce03124eaa86e1a",
+      "hash_jetzt": null,
+      "text_vorher": "Mehr erfahren",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -58502,15 +58722,17 @@
       "datei": "web/messages/en.json",
       "schluessel": "karten.mehrErfahren",
       "sprache": "en",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "8d8cd546b58d91c300d3149ef40b8d98d3061dc38f15ea937d2ed785a3f25771",
-      "hash_jetzt": "8d8cd546b58d91c300d3149ef40b8d98d3061dc38f15ea937d2ed785a3f25771",
+      "hash_jetzt": null,
+      "text_vorher": "Learn More",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -60263,15 +60485,17 @@
       "datei": "web/messages/en.json",
       "schluessel": "start.mehrErfahren",
       "sprache": "en",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "8d8cd546b58d91c300d3149ef40b8d98d3061dc38f15ea937d2ed785a3f25771",
-      "hash_jetzt": "8d8cd546b58d91c300d3149ef40b8d98d3061dc38f15ea937d2ed785a3f25771",
+      "hash_jetzt": null,
+      "text_vorher": "Learn More",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -63745,6 +63969,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "en[kontakt.besuch.vereinbaren]",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "c895c33dda8a70fe81f4611381978795f54db3885713fc80417972bd857a460b",
+      "text_vorher": null,
+      "text_jetzt": "kontakt.besuch.vereinbaren",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
       "schluessel": "en[kontakt.karte.*]",
       "sprache": "en",
       "status": "gleich",
@@ -65773,6 +66014,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "en[organisation.about.kennung]",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "7ac8a8e4f4aa79776e776324bee23230e8ad0b392be0bdcf38d71128683f6138",
+      "text_vorher": null,
+      "text_jetzt": "organisation.about.kennung",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
       "schluessel": "en[organisation.activities.kennung]",
       "sprache": "en",
       "status": "neu",
@@ -65801,6 +66059,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "en[organisation.orgs.aktuell]",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "e93f7962e5c34810e7119fce7a8d4697c1c9ff321e0465ca4b8ba0b097f7dabb",
+      "text_vorher": null,
+      "text_jetzt": "organisation.orgs.aktuell",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -65968,6 +66243,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "en[projekte.bezeichnungen.beschreibungKennung]",
+      "sprache": "en",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "0c88afb6e7a39b3cfffa95520aaed2b512b84b47a47f2fa1bce394dc8f9f70ac",
+      "text_vorher": null,
+      "text_jetzt": "projekte.bezeichnungen.beschreibungKennung",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -69006,6 +69298,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "tr[kontakt.besuch.vereinbaren]",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "c895c33dda8a70fe81f4611381978795f54db3885713fc80417972bd857a460b",
+      "text_vorher": null,
+      "text_jetzt": "kontakt.besuch.vereinbaren",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
       "schluessel": "tr[kontakt.karte.*]",
       "sprache": "tr",
       "status": "gleich",
@@ -71051,6 +71360,23 @@
     {
       "gruppe": "M",
       "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "tr[organisation.about.kennung]",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "7ac8a8e4f4aa79776e776324bee23230e8ad0b392be0bdcf38d71128683f6138",
+      "text_vorher": null,
+      "text_jetzt": "organisation.about.kennung",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
       "schluessel": "tr[organisation.activities.kennung]",
       "sprache": "tr",
       "status": "neu",
@@ -71079,6 +71405,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "tr[organisation.orgs.aktuell]",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "e93f7962e5c34810e7119fce7a8d4697c1c9ff321e0465ca4b8ba0b097f7dabb",
+      "text_vorher": null,
+      "text_jetzt": "organisation.orgs.aktuell",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -71246,6 +71589,23 @@
       "ausnahme": null,
       "befund": "keiner",
       "begruendung": "identisch (SHA-256 gleich)"
+    },
+    {
+      "gruppe": "M",
+      "datei": "web/messages/neu-uebersetzt.json",
+      "schluessel": "tr[projekte.bezeichnungen.beschreibungKennung]",
+      "sprache": "tr",
+      "status": "neu",
+      "recht": false,
+      "hash_vorher": null,
+      "hash_jetzt": "0c88afb6e7a39b3cfffa95520aaed2b512b84b47a47f2fa1bce394dc8f9f70ac",
+      "text_vorher": null,
+      "text_jetzt": "projekte.bezeichnungen.beschreibungKennung",
+      "aehnlichkeit": null,
+      "anzahl": null,
+      "ausnahme": null,
+      "befund": "keiner",
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -76873,15 +77233,17 @@
       "datei": "web/messages/tr.json",
       "schluessel": "karten.mehrErfahren",
       "sprache": "tr",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "af46dfeac585882928566aad6be3daaf089e28800b26b19f96531b0621ddc9e4",
-      "hash_jetzt": "af46dfeac585882928566aad6be3daaf089e28800b26b19f96531b0621ddc9e4",
+      "hash_jetzt": null,
+      "text_vorher": "Daha fazla öğren",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",
@@ -78634,15 +78996,17 @@
       "datei": "web/messages/tr.json",
       "schluessel": "start.mehrErfahren",
       "sprache": "tr",
-      "status": "gleich",
+      "status": "entfernt",
       "recht": false,
       "hash_vorher": "af46dfeac585882928566aad6be3daaf089e28800b26b19f96531b0621ddc9e4",
-      "hash_jetzt": "af46dfeac585882928566aad6be3daaf089e28800b26b19f96531b0621ddc9e4",
+      "hash_jetzt": null,
+      "text_vorher": "Daha fazla öğren",
+      "text_jetzt": null,
       "aehnlichkeit": null,
       "anzahl": null,
       "ausnahme": null,
       "befund": "keiner",
-      "begruendung": "identisch (SHA-256 gleich)"
+      "begruendung": "kein Rechtsbezug (Kontrolle)"
     },
     {
       "gruppe": "M",

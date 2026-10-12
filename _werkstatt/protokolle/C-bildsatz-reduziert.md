@@ -1,4 +1,4 @@
-# Bildsatz und Überlaufprüfung · 2026-10-12-07-02 · http://127.0.0.1:3500 · reduzierte Bewegung
+# Bildsatz und Überlaufprüfung · 2026-10-12-10-54 · http://127.0.0.1:3500 · reduzierte Bewegung
 
 Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, abgeschnittene Elemente (ohne Kürzung mit Auslassungszeichen), vermutlich beabsichtigte Kürzungen.
 
@@ -8,7 +8,12 @@ Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, ab
 |---|---|---|---|---|---|
 | 390x844 | 200 | 7 | nein | 0 | 0 |
 | 768x1024 | 200 | 5 | nein | 0 | 0 |
-| 1440x900 | 200 | 4 | nein | 0 | 0 |
+| 1440x900 | 200 | 4 | nein | 0 | 3 |
+
+Befunde 1440x900 (erste 8):
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Informationen zu den geplanten Aktivitäten und Pro“
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Unsere Küche wurde renoviert und erweitert, um grö“
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Wir freuen uns, [Name – Imam] als neues Mitglied u“
 
 ## Gebetszeiten (/gebetszeiten)
 
@@ -43,7 +48,12 @@ Befunde 390x844 (erste 8):
 |---|---|---|---|---|---|
 | 390x844 | 200 | 6 | nein | 0 | 0 |
 | 768x1024 | 200 | 5 | nein | 0 | 0 |
-| 1440x900 | 200 | 4 | nein | 0 | 0 |
+| 1440x900 | 200 | 4 | nein | 0 | 3 |
+
+Befunde 1440x900 (erste 8):
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Informationen zu den geplanten Aktivitäten und Pro“
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Unsere Küche wurde renoviert und erweitert, um grö“
+- Schirm 4: senkrecht (Lücke 24 px) p.hidden.text-16 „Wir freuen uns, [Name – Imam] als neues Mitglied u“
 
 ## Nachricht (Detailseite) (/nachrichten/neue-gebetszeiten-fuer-den-winter)
 
@@ -51,7 +61,7 @@ Befunde 390x844 (erste 8):
 |---|---|---|---|---|---|
 | 390x844 | 200 | 4 | nein | 0 | 1 |
 | 768x1024 | 200 | 3 | nein | 0 | 0 |
-| 1440x900 | 200 | 3 | nein | 0 | 0 |
+| 1440x900 | 200 | 2 | nein | 0 | 0 |
 
 Befunde 390x844 (erste 8):
 - Schirm 4: waagerecht (Lücke 81 px) span.min-w-0.truncate „Neue Gebetszeiten für den Winter“
@@ -68,9 +78,9 @@ Befunde 390x844 (erste 8):
 
 | Größe | HTTP | Ausschnitte | horizontal | abgeschnitten | Kürzung (beabsichtigt?) |
 |---|---|---|---|---|---|
-| 390x844 | 200 | 8 | nein | 0 | 0 |
+| 390x844 | 200 | 7 | nein | 0 | 0 |
 | 768x1024 | 200 | 5 | nein | 0 | 0 |
-| 1440x900 | 200 | 5 | nein | 0 | 0 |
+| 1440x900 | 200 | 4 | nein | 0 | 0 |
 
 ## Organisation Ana Teşkilatı (/organisationen/ana-teskilati)
 
@@ -100,7 +110,7 @@ Befunde 390x844 (erste 8):
 
 | Größe | HTTP | Ausschnitte | horizontal | abgeschnitten | Kürzung (beabsichtigt?) |
 |---|---|---|---|---|---|
-| 390x844 | 200 | 8 | nein | 0 | 0 |
+| 390x844 | 200 | 7 | nein | 0 | 0 |
 | 768x1024 | 200 | 5 | nein | 0 | 0 |
 | 1440x900 | 200 | 4 | nein | 0 | 0 |
 
@@ -166,7 +176,7 @@ Befunde 390x844 (erste 8):
 |---|---|---|---|---|---|
 | 390x844 | 200 | 7 | nein | 0 | 0 |
 | 768x1024 | 200 | 4 | nein | 0 | 0 |
-| 1440x900 | 200 | 4 | nein | 0 | 0 |
+| 1440x900 | 200 | 3 | nein | 0 | 0 |
 
 ## Mitglied werden (/mitglied-werden)
 

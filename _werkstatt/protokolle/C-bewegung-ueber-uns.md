@@ -1,4 +1,4 @@
-# Bewegungsprüfung · /ueber-uns · 2026-10-12-07-23 · http://127.0.0.1:3500
+# Bewegungsprüfung · /ueber-uns · 2026-10-12-11-14 · http://127.0.0.1:3500
 
 ## (1) Reduzierte Bewegung
 
@@ -12,12 +12,12 @@
 | Nr | Soll ms | Ist ms | laufend | Eigenschaften | Bild |
 |---|---|---|---|---|---|
 | 1 | 0 | 0 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-1.jpg |
-| 2 | 500 | 502 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-2.jpg |
+| 2 | 500 | 501 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-2.jpg |
 | 3 | 1000 | 1002 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-3.jpg |
-| 4 | 1500 | 1502 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-4.jpg |
+| 4 | 1500 | 1501 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-4.jpg |
 | 5 | 2000 | 2002 | 0 | – | /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-5.jpg |
 
 ## (3) Bildrate (rAF, Fenster 390×844, 2000 ms)
 
 - Ohne Drosselung: 0 % verworfen · 122 Bilder · lange Abstände 0 · Median 16.7 ms
-- CPU 4×: 0 % verworfen · 122 Bilder · lange Abstände 0 · Median 16.7 ms · p95 16.8 ms
+- CPU 4×: 5.7 % verworfen · 115 Bilder · lange Abstände 1 · Median 16.7 ms · p95 16.7 ms

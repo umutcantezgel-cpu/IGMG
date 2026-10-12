@@ -1,6 +1,6 @@
 {
   "werkzeug": "freie-werte",
-  "zeitpunkt": "2026-10-12-07-25",
+  "zeitpunkt": "2026-10-12-11-16",
   "seit": null,
   "geprueft": [
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/[locale]/(website)/bildung/korankurse/page.tsx",
@@ -224,6 +224,7 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/auth/optionen.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/db/fehler.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/db/index.ts",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/db/verfuegbar.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/eingaenge/loeschlauf.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/gebetszeiten/bogen.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/gebetszeiten/hijri.ts",
@@ -265,7 +266,7 @@
   "zaehl": {
     "Hex-Farbe": 59,
     "Tailwind-Klammerwert": 18,
-    "px-Literal in Style": 29,
+    "px-Literal in Style": 27,
     "Farbfunktion": 3
   },
   "funde": [
@@ -334,77 +335,77 @@
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 711,
+      "zeile": 729,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 712,
+      "zeile": 730,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 713,
+      "zeile": 731,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 714,
+      "zeile": 732,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 715,
+      "zeile": 733,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 716,
+      "zeile": 734,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 717,
+      "zeile": 735,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 718,
+      "zeile": 736,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 719,
+      "zeile": 737,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 720,
+      "zeile": 738,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 721,
+      "zeile": 739,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
@@ -838,196 +839,182 @@
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
-      "zeile": 22,
-      "art": "px-Literal in Style",
-      "fund": "'14px'",
-      "zeileText": "textKlein: '14px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 23,
       "art": "px-Literal in Style",
       "fund": "'16px'",
-      "zeileText": "text: '16px',"
+      "zeileText": "text: '16px', // --text-16"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 24,
       "art": "px-Literal in Style",
       "fund": "'24px'",
-      "zeileText": "titel: '24px',"
+      "zeileText": "titel: '24px', // --text-24"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 25,
       "art": "px-Literal in Style",
-      "fund": "'20px'",
-      "zeileText": "knopfZeile: '20px',"
+      "fund": "'8px'",
+      "zeileText": "radiusKnopf: '8px', // --radius-md"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 26,
       "art": "px-Literal in Style",
-      "fund": "'48px'",
-      "zeileText": "knopfHoehe: '48px',"
+      "fund": "'12px'",
+      "zeileText": "radius: '12px', // --radius-lg"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 27,
       "art": "px-Literal in Style",
-      "fund": "'8px'",
-      "zeileText": "radiusKnopf: '8px',"
+      "fund": "'4px'",
+      "zeileText": "abstand1: '4px', // 1 × --spacing"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 28,
       "art": "px-Literal in Style",
       "fund": "'12px'",
-      "zeileText": "radius: '12px',"
+      "zeileText": "abstand3: '12px', // 3 × --spacing"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 29,
       "art": "px-Literal in Style",
-      "fund": "'4px'",
-      "zeileText": "abstand1: '4px',"
+      "fund": "'16px'",
+      "zeileText": "abstand4: '16px', // 4 × --spacing"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 30,
       "art": "px-Literal in Style",
-      "fund": "'12px'",
-      "zeileText": "abstand3: '12px',"
+      "fund": "'20px'",
+      "zeileText": "abstand5: '20px', // 5 × --spacing (auch Zeilenhöhe im Knopf)"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 31,
       "art": "px-Literal in Style",
-      "fund": "'16px'",
-      "zeileText": "abstand4: '16px',"
+      "fund": "'24px'",
+      "zeileText": "abstand6: '24px', // 6 × --spacing"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 32,
       "art": "px-Literal in Style",
-      "fund": "'20px'",
-      "zeileText": "abstand5: '20px',"
+      "fund": "'32px'",
+      "zeileText": "abstand8: '32px', // 8 × --spacing"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 33,
       "art": "px-Literal in Style",
-      "fund": "'24px'",
-      "zeileText": "abstand6: '24px',"
+      "fund": "'14px'",
+      "zeileText": "knopfSenkrecht: '14px', // 3,5 × --spacing (py-3.5)"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 34,
       "art": "px-Literal in Style",
-      "fund": "'32px'",
-      "zeileText": "abstand8: '32px',"
+      "fund": "'48px'",
+      "zeileText": "knopfHoehe: '48px', // 12 × --spacing (min-h-12, Mindestgröße für Ziele)"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 35,
       "art": "px-Literal in Style",
-      "fund": "'14px'",
-      "zeileText": "knopfSenkrecht: '14px',"
+      "fund": "'600px'",
+      "zeileText": "breite: '600px', // Mailrahmen: Outlook-Breite"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 36,
       "art": "px-Literal in Style",
-      "fund": "'600px'",
-      "zeileText": "breite: '600px',"
+      "fund": "'480px'",
+      "zeileText": "schmal: '480px', // Mailrahmen: schmale Bildschirme"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 37,
       "art": "px-Literal in Style",
-      "fund": "'480px'",
-      "zeileText": "schmal: '480px',"
+      "fund": "'2px'",
+      "zeileText": "akzent: '2px', // Mailrahmen: Akzentlinie unter dem Kopf"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 38,
       "art": "px-Literal in Style",
-      "fund": "'2px'",
-      "zeileText": "akzent: '2px',"
+      "fund": "'1px'",
+      "zeileText": "haar: '1px', // Mailrahmen: Haarlinie und unsichtbarer Vorschautext"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
       "zeile": 39,
       "art": "px-Literal in Style",
-      "fund": "'1px'",
-      "zeileText": "haar: '1px',"
-    },
-    {
-      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/farben.ts",
-      "zeile": 40,
-      "art": "px-Literal in Style",
       "fund": "'0px'",
-      "zeileText": "aus: '0px',"
+      "zeileText": "aus: '0px', // Mailrahmen: ausgeblendeter Vorschautext"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
       "zeile": 63,
       "art": "px-Literal in Style",
       "fund": "margin: 0",
-      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: M.textKlein, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
+      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: M.text, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/index.tsx",
       "zeile": 83,
       "art": "px-Literal in Style",
       "fund": "margin: 0",
-      "zeileText": "<p style={{ margin: 0, fontSize: M.textKlein, color: F.tinte2 }}>{t.kontakt}</p>"
+      "zeileText": "<p style={{ margin: 0, fontSize: M.text, color: F.tinte2 }}>{t.kontakt}</p>"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 58,
+      "zeile": 59,
       "art": "px-Literal in Style",
       "fund": "width: 1200, height: 630",
       "zeileText": "export const OG_GROESSE = { width: 1200, height: 630 } as const;"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 66,
+      "zeile": 67,
       "art": "Hex-Farbe",
       "fund": "#fcfaf6",
       "zeileText": "papier: '#fcfaf6',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 68,
+      "zeile": 69,
       "art": "Hex-Farbe",
       "fund": "#1d1a17",
       "zeileText": "tinte: '#1d1a17',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 70,
+      "zeile": 71,
       "art": "Hex-Farbe",
       "fund": "#514c46",
       "zeileText": "tinte2: '#514c46',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 72,
+      "zeile": 73,
       "art": "Hex-Farbe",
       "fund": "#065f46",
       "zeileText": "gruen800: '#065f46',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 74,
+      "zeile": 75,
       "art": "Hex-Farbe",
       "fund": "#047857",
       "zeileText": "gruen700: '#047857',"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/seo/og-bild.tsx",
-      "zeile": 76,
+      "zeile": 77,
       "art": "Hex-Farbe",
       "fund": "#d3f0e2",
       "zeileText": "gruen100: '#d3f0e2',"

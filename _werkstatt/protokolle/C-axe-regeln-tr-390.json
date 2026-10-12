@@ -10,7 +10,7 @@
     "wcag21aa",
     "wcag22aa"
   ],
-  "zeit": "2026-10-12T07:13:53.843Z",
+  "zeit": "2026-10-12T11:05:19.651Z",
   "routen": [
     {
       "name": "Start (TR)",
@@ -67,7 +67,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".size-10.-translate-x-1\\/2.top-1\\/2 > .relative.rounded-pill.text-weiss",
+              "ziel": ".size-10.top-1\\/2.-translate-y-1\\/2 > .relative.rounded-pill.text-weiss",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -105,7 +105,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".lg\\:hidden > .size-9.place-items-center.grid:nth-child(1) > .text-gruen-800.relative.text-16",
+              "ziel": ".lg\\:hidden > .size-9.place-items-center.grid:nth-child(1) > .text-weiss.relative.text-16",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {

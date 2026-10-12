@@ -1,0 +1,530 @@
+{
+  "werkzeug": "inp",
+  "basis": "http://127.0.0.1:3100",
+  "drossel": 4,
+  "laeufe": 1,
+  "schwelleMs": 200,
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "inpMedianMs": 224,
+      "erfuellt": false,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 224,
+          "jeEingabeMs": {
+            "menue": 224,
+            "leiste": 88,
+            "tab": 40
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 224,
+              "verarbeitungMs": 6,
+              "verzoegerungMs": 20
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 104,
+              "verarbeitungMs": 73,
+              "verzoegerungMs": 1
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 88,
+              "verarbeitungMs": 7,
+              "verzoegerungMs": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "inpMedianMs": 248,
+      "erfuellt": false,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "reiter",
+            "tab"
+          ],
+          "interaktionen": 6,
+          "inpMs": 248,
+          "jeEingabeMs": {
+            "menue": 248,
+            "reiter": 248,
+            "tab": 80
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 248,
+              "verarbeitungMs": 8,
+              "verzoegerungMs": 29
+            },
+            {
+              "eingabe": "reiter",
+              "name": "pointerdown",
+              "dauerMs": 248,
+              "verarbeitungMs": 4,
+              "verzoegerungMs": 14
+            },
+            {
+              "eingabe": "tab",
+              "name": "keydown",
+              "dauerMs": 80,
+              "verarbeitungMs": 19,
+              "verzoegerungMs": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "inpMedianMs": 152,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 152,
+          "jeEingabeMs": {
+            "menue": 152,
+            "leiste": 96,
+            "tab": 40
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 152,
+              "verarbeitungMs": 6,
+              "verzoegerungMs": 16
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 104,
+              "verarbeitungMs": 75,
+              "verzoegerungMs": 1
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 96,
+              "verarbeitungMs": 4,
+              "verzoegerungMs": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "inpMedianMs": 168,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 168,
+          "jeEingabeMs": {
+            "menue": 168,
+            "leiste": 56,
+            "tab": 24
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 168,
+              "verarbeitungMs": 1,
+              "verzoegerungMs": 19
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 80,
+              "verarbeitungMs": 60,
+              "verzoegerungMs": 1
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 56,
+              "verarbeitungMs": 2,
+              "verzoegerungMs": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "inpMedianMs": 208,
+      "erfuellt": false,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 208,
+          "jeEingabeMs": {
+            "menue": 208,
+            "leiste": 72,
+            "tab": 32
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 208,
+              "verarbeitungMs": 6,
+              "verzoegerungMs": 21
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 80,
+              "verarbeitungMs": 54,
+              "verzoegerungMs": 1
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "inpMedianMs": 160,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 160,
+          "jeEingabeMs": {
+            "menue": 160,
+            "leiste": 80,
+            "tab": 32
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 160,
+              "verarbeitungMs": 7,
+              "verzoegerungMs": 26
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 104,
+              "verarbeitungMs": 65,
+              "verzoegerungMs": 3
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 80,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "inpMedianMs": 160,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 160,
+          "jeEingabeMs": {
+            "menue": 160,
+            "leiste": 72,
+            "tab": 40
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 160,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 19
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 136,
+              "verarbeitungMs": 87,
+              "verzoegerungMs": 4
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 1,
+              "verzoegerungMs": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "inpMedianMs": 200,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 200,
+          "jeEingabeMs": {
+            "menue": 200,
+            "leiste": 96,
+            "tab": 32
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 200,
+              "verarbeitungMs": 6,
+              "verzoegerungMs": 21
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 96,
+              "verarbeitungMs": 69,
+              "verzoegerungMs": 1
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 96,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "inpMedianMs": 168,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 168,
+          "jeEingabeMs": {
+            "menue": 168,
+            "leiste": 72,
+            "tab": 48
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 168,
+              "verarbeitungMs": 3,
+              "verzoegerungMs": 16
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 128,
+              "verarbeitungMs": 93,
+              "verzoegerungMs": 2
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 4,
+              "verzoegerungMs": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "inpMedianMs": 136,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tippen",
+            "tab"
+          ],
+          "interaktionen": 11,
+          "inpMs": 136,
+          "jeEingabeMs": {
+            "menue": 136,
+            "leiste": 72,
+            "tab": 40,
+            "tippen": 32
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 136,
+              "verarbeitungMs": 6,
+              "verzoegerungMs": 19
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 104,
+              "verarbeitungMs": 71,
+              "verzoegerungMs": 2
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 3,
+              "verzoegerungMs": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "inpMedianMs": 160,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tippen",
+            "tab"
+          ],
+          "interaktionen": 11,
+          "inpMs": 160,
+          "jeEingabeMs": {
+            "menue": 160,
+            "tippen": 104,
+            "leiste": 80,
+            "tab": 32
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 160,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 23
+            },
+            {
+              "eingabe": "tippen",
+              "name": "keydown",
+              "dauerMs": 104,
+              "verarbeitungMs": 5,
+              "verzoegerungMs": 67
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 88,
+              "verarbeitungMs": 72,
+              "verzoegerungMs": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

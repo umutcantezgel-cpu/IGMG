@@ -1,14 +1,14 @@
 {
   "werkzeug": "bewegung",
-  "zeit": "2026-10-12-07-24",
+  "zeit": "2026-10-12-11-14",
   "basis": "http://127.0.0.1:3500",
   "pfad": "/organisationen/ana-teskilati",
   "dauer": 2000,
   "teile": {
     "reduziert": {
       "http": 200,
-      "animierteElemente": 0,
-      "laufendeAnimationen": 0,
+      "animierteElemente": 1,
+      "laufendeAnimationen": 1,
       "keyframeBefunde": [],
       "groesteLageAenderungPx": 0,
       "unsichtbarNach2s": [],
@@ -32,7 +32,7 @@
       {
         "nr": 2,
         "sollMs": 500,
-        "istMs": 501,
+        "istMs": 502,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-organisationen_ana-teskilati/bewegung-2.jpg",
         "laufendeAnimationen": 1,
         "eigenschaften": [
@@ -62,7 +62,7 @@
       {
         "nr": 5,
         "sollMs": 2000,
-        "istMs": 2001,
+        "istMs": 2002,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-organisationen_ana-teskilati/bewegung-5.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": [
@@ -78,16 +78,16 @@
         "verworfen": 0,
         "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "drossel4": {
         "drosselung": 4,
-        "bilder": 117,
-        "langeAbstaende": 3,
-        "verworfen": 5,
-        "anteilVerworfenProzent": 4.1,
+        "bilder": 122,
+        "langeAbstaende": 0,
+        "verworfen": 0,
+        "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "scrollen": false,
       "fenster": {

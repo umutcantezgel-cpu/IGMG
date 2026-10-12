@@ -1,10 +1,10 @@
 {
   "werkzeug": "svg-pruefung",
-  "zeitpunkt": "2026-10-12-07-25",
+  "zeitpunkt": "2026-10-12-11-16",
   "svgDateien": [],
   "zaehl": {
     "Fehler": 0,
-    "Befund": 0,
+    "Befund": 1,
     "OK": 12
   },
   "ergebnisse": [
@@ -86,7 +86,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 34,
+      "zeile": 44,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -95,7 +95,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 43,
+      "zeile": 53,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -104,7 +104,7 @@
     },
     {
       "datei": "web/src/components/website/start/TagesbogenLive.tsx",
-      "zeile": 97,
+      "zeile": 99,
       "art": "inline",
       "status": "OK",
       "rolle": "bedeutungstragend, benannt",
@@ -112,8 +112,19 @@
       "hinweise": []
     },
     {
+      "datei": "web/src/components/website/start/TagesbogenLive.tsx",
+      "zeile": 151,
+      "art": "inline",
+      "status": "Befund",
+      "rolle": "ungeklärt",
+      "befunde": [
+        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
+      ],
+      "hinweise": []
+    },
+    {
       "datei": "web/src/lib/seo/og-bild.tsx",
-      "zeile": 291,
+      "zeile": 302,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
