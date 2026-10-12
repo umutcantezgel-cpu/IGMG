@@ -28,7 +28,7 @@ const FLAECHE: Record<Kuerzel, { voll: string; leise: string }> = {
 
 export function FamilieDerVier({ org, className }: { org: Kuerzel; className?: string }) {
   return (
-    <span aria-hidden="true" className={cn('relative block size-24 shrink-0 md:size-48', className)}>
+    <span aria-hidden="true" className={cn('relative block size-24 shrink-0 md:size-36 lg:size-48', className)}>
       <svg viewBox="16 16 88 88" aria-hidden="true" className="size-full">
         <path
           d="M30 30h17.57L60 17.57 72.43 30H90v17.57L102.43 60 90 72.43V90H72.43L60 102.43 47.57 90H30V72.43L17.57 60 30 47.57z"

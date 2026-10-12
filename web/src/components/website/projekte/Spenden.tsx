@@ -24,7 +24,7 @@ export async function Spenden({ inhalt, sprache }: { inhalt: ProjekteInhalt; spr
     <section
       id="spenden"
       aria-labelledby="spenden-titel"
-      className="flex scroll-mt-24 flex-col gap-4 rounded-lg bg-weiss p-5 text-tinte shadow-s2 md:p-8"
+      className="flex scroll-mt-24 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 text-tinte shadow-s2 md:p-8"
     >
       <h3 id="spenden-titel" className="flex items-center gap-3 font-text text-24 leading-snug font-bold tracking-normal">
         <Banknote aria-hidden className="size-7 shrink-0 text-gruen-700" />

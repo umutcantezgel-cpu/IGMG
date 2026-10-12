@@ -71,7 +71,7 @@ export function Seitenkopf({
           className={
             mitBild
               ? 'flex max-w-seitenkopf min-w-0 flex-1 flex-col gap-3 lg:col-span-2'
-              : 'flex max-w-seitenkopf min-w-0 flex-1 basis-120 flex-col gap-3 max-md:order-2'
+              : `flex max-w-seitenkopf min-w-0 flex-1 basis-120 flex-col gap-3 max-md:order-2 ${zierde ? 'md:basis-96' : ''}`
           }
         >
           {oben}

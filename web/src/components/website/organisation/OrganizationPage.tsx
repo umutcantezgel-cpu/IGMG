@@ -1,4 +1,4 @@
-import { ArrowRight, Award, Calendar, Mail, Newspaper, Phone, Telescope } from 'lucide-react';
+import { ArrowRight, Award, Mail, Telescope } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { z } from 'zod';
 import { Stern8 } from '@/components/website/Icons';
@@ -23,7 +23,7 @@ import { KENNUNG, KUERZEL_ALLE, type Kuerzel, MEHR_LINK, STIL, SYMBOL } from './
 const ANZAHL = 3;
 
 const KNOPF =
-  'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss';
+  'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
 
 export type OrganizationPageProps = {
   /** Organisation (Enum at | kt | gt | kgt, D-06). Unbekannte Adressen prüft die Seite vorher (notFound). */
@@ -81,33 +81,29 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
       <div className="bg-papier">
         <section
           aria-labelledby={`${org}-ueber`}
-          className="mx-auto grid max-w-(--container-inhalt) items-stretch gap-6 px-4 py-abschnitt md:px-8 lg:grid-cols-12"
+          className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
         >
-          <div className="flex min-w-0 flex-col gap-4 lg:col-span-7 lg:pr-8">
+          <div className="flex min-w-0 flex-col gap-4">
             <h2 id={`${org}-ueber`} className="text-display-2">
               {t(`${kennung}.aboutTitle`)}
             </h2>
             <Text feld={inhalt.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
             {hinweis([inhalt.beschreibung, inhalt.mission, inhalt.vision])}
           </div>
-          <div className="flex min-w-0 flex-col gap-4 lg:col-span-5">
-            <div className={cn('flex shrink-0 flex-col overflow-hidden rounded-lg', s.tint)}>
+          <div className="grid items-stretch gap-6 md:grid-cols-2">
+            <div className={cn('flex flex-col overflow-hidden rounded-lg', s.tint)}>
               <div aria-hidden className={cn('h-1.5 shrink-0', s.band)} />
               <div className="flex flex-col gap-2 p-6">
-                <h3 className="flex items-center gap-2 text-24">
-                  <span className={cn('flex', s.ink)}>
-                    <Award aria-hidden className="size-6" />
-                  </span>
+                <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
+                  <Award aria-hidden className={cn('size-6 shrink-0', s.ink)} />
                   {t('about.mission')}
                 </h3>
                 <Text feld={inhalt.mission} sprache={sprache} als="p" />
               </div>
             </div>
-            <div className="flex flex-1 flex-col gap-2 rounded-lg border border-linie bg-weiss p-6">
-              <h3 className="flex items-center gap-2 text-24">
-                <span className={cn('flex', s.ink)}>
-                  <Telescope aria-hidden className="size-6" />
-                </span>
+            <div className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-6">
+              <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
+                <Telescope aria-hidden className={cn('size-6 shrink-0', s.ink)} />
                 {t('about.vision')}
               </h3>
               <Text feld={inhalt.vision} sprache={sprache} als="p" />
@@ -156,10 +152,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             aria-labelledby={`${org}-termine`}
             className="flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
-            <h2 id={`${org}-termine`} className="flex items-center gap-2.5 text-30">
-              <span className={cn('flex', s.ink)}>
-                <Calendar aria-hidden className="size-7" />
-              </span>
+            <h2 id={`${org}-termine`} className="text-display-2">
               {t('events.title')}
             </h2>
             {termine.length ? (
@@ -177,10 +170,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             aria-labelledby={`${org}-news`}
             className="flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 md:p-8"
           >
-            <h2 id={`${org}-news`} className="flex items-center gap-2.5 text-30">
-              <span className={cn('flex', s.ink)}>
-                <Newspaper aria-hidden className="size-7" />
-              </span>
+            <h2 id={`${org}-news`} className="text-display-2">
               {t('news.title')}
             </h2>
             {meldungen.length ? (
@@ -201,10 +191,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
         <section aria-labelledby={`${org}-kontakt`} className={cn('overflow-hidden rounded-lg', s.tint)}>
           <div aria-hidden className={cn('h-1.5', s.band)} />
           <div className="flex flex-col gap-6 p-5 md:p-10">
-            <h2 id={`${org}-kontakt`} className="flex items-center gap-2.5 text-30">
-              <span className={cn('flex', s.ink)}>
-                <Phone aria-hidden className="size-7" />
-              </span>
+            <h2 id={`${org}-kontakt`} className="text-display-2">
               {t('contact.title')}
             </h2>
             <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

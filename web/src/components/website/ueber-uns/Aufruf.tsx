@@ -14,7 +14,7 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
       className="flex flex-wrap items-center justify-between gap-6 rounded-lg bg-gruen-950 p-6 text-weiss md:p-12"
     >
       <div className="flex min-w-0 flex-1 basis-105 flex-col gap-2">
-        <h2 id="ueber-aufruf" className="text-30 text-weiss md:text-36">
+        <h2 id="ueber-aufruf" className="text-display-2 text-weiss">
           {titel}
         </h2>
         <p className="max-w-text text-18 text-gruen-100">{text}</p>
@@ -23,7 +23,7 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
         <Link
           href="/kontakt"
           aria-label={kontakt.label}
-          className="inline-flex min-h-12 items-center gap-2 rounded-md bg-weiss px-6 font-bold text-gruen-950 no-underline hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-weiss"
+          className="inline-flex min-h-12 items-center gap-2 rounded-md bg-weiss px-6 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-weiss active:scale-98"
         >
           <Mail aria-hidden className="size-5" />
           {kontakt.text}
@@ -31,7 +31,7 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
         <Link
           href="/vorstand"
           aria-label={mehr.label}
-          className="inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-weiss px-5.5 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-weiss"
+          className="inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-weiss px-5.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-weiss active:scale-98"
         >
           {mehr.text}
           <ArrowRight aria-hidden className="size-5" />

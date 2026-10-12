@@ -21,18 +21,22 @@ const TOENUNG_WICHTIG = 'bg-tag-wichtig-bg text-tag-wichtig';
 /**
  * NewsCard (design/NewsCard.dc.html): „gross“ (Startseite, Aufmacher), „kompakt“ (Startseite, Seitenspalte),
  * „standard“ (Nachrichtenliste, ähnliche Artikel). Ganze Karte klickbar über ::after.
+ * `rahmen={false}` (nur „kompakt“, H-C03): Zeile ohne eigenen Rahmen für eine gemeinsame Liste; Hover als Hintergrund.
  */
 export async function NewsCard({
   n,
   sprache,
   variante = 'standard',
   bild,
+  rahmen = true,
 }: {
   n: NachrichtDaten;
   sprache: Sprache;
   variante?: 'gross' | 'kompakt' | 'standard';
   /** Titelbild aus der Mediathek; null oder fehlend = Bildplatzhalter wie bisher */
   bild?: BildDaten | null;
+  /** Nur „kompakt“: mit eigenem Rahmen (Vorgabe, Startseite und Ähnliche Artikel) oder ohne, in einer gemeinsamen Liste */
+  rahmen?: boolean;
 }) {
   const t = await getTranslations('karten');
   const titel = textMitSprache(n.titel, sprache);
@@ -49,7 +53,10 @@ export async function NewsCard({
     return (
       <article
         data-morph-karte={`n-${n.slug}`}
-        className="relative flex h-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
+        className={cn(
+          'relative flex h-full items-center gap-4 bg-weiss p-4 text-18 leading-relaxed transition duration-(--dauer-rueckmeldung)',
+          rahmen ? 'rounded-lg border border-linie shadow-s1 hover:border-gruen-700 hover:shadow-s2' : 'hover:bg-gruen-50',
+        )}
       >
         {bild ? (
           <MedienBild
@@ -76,7 +83,8 @@ export async function NewsCard({
           >
             {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
           </span>
-          <h3 lang={titel.lang} data-morph="titel" className="text-20 leading-snug">
+          {/* wrap-anywhere: ein langes Wort darf in der schmalen Zeile umbrechen (320 px, Ähnliche Artikel bei 1024 px) */}
+          <h3 lang={titel.lang} data-morph="titel" className="text-20 leading-snug wrap-anywhere">
             <Link
               href={ziel}
               aria-label={`${t('artikelLesen')}: ${titel.text}`}

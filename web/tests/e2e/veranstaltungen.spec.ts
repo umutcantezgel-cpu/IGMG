@@ -43,6 +43,9 @@ function kategorien(texte: Texte): string[] {
   return [karten.kat_gebet, karten.kat_bildung, karten.kat_gemeinde, karten.kat_kultur, karten.kat_jugend, karten.kat_frauen];
 }
 
+/** Kategorie-Schlüssel (data-kategorie der Listenelemente) in derselben Reihenfolge wie kategorien(). */
+const KATEGORIE_SCHLUESSEL = ['gebet', 'bildung', 'gemeinde', 'kultur', 'jugend', 'frauen'];
+
 /** Schaltfläche in der Filterleiste (Gruppe „Kategorie“). Die Gruppe trennt sie von gleichnamigen Menüknöpfen der Hauptnavigation. */
 function filterKnopf(seite: Page, texte: Texte, name: string): Locator {
   return seite.getByRole('group', { name: texte.veranstaltungen.kategorie, exact: true }).getByRole('button', { name, exact: true });
@@ -84,9 +87,9 @@ for (const liste of LISTEN) {
     await expect(filterKnopf(page, t, t.veranstaltungen.alle)).toHaveAttribute('aria-pressed', 'true');
   });
 
-  test(`${liste.kuerzel}: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten tragen das Kategorie-Etikett`, async ({
+  test(`${liste.kuerzel}: Kategorie-Schalter blendet andere Karten aus, sichtbare Karten gehören zur gewählten Kategorie`, async ({
     page,
-  }) => {
+  }, testInfo) => {
     await page.goto(liste.pfad);
     const karten = page.getByRole('article');
     await expect(karten.first()).toBeVisible();
@@ -113,8 +116,14 @@ for (const liste of LISTEN) {
     await expect(filterKnopf(page, t, gewaehlt)).toHaveAttribute('aria-pressed', 'true');
     await expect(filterKnopf(page, t, t.veranstaltungen.alle)).toHaveAttribute('aria-pressed', 'false');
     expect(await karten.count()).toBeLessThan(gesamt);
+    // Telefon (H-C03): die Kompaktzeile trägt kein Kategorie-Etikett; dort zählt die Kategorie der umschließenden Zeile.
+    const schluessel = KATEGORIE_SCHLUESSEL[kategorien(t).indexOf(gewaehlt)];
     for (const karte of await karten.all()) {
-      await expect(karte.getByText(gewaehlt, { exact: true }).first()).toBeVisible();
+      if (testInfo.project.name === 'telefon') {
+        await expect(karte.locator('xpath=ancestor::li[1]')).toHaveAttribute('data-kategorie', schluessel);
+      } else {
+        await expect(karte.getByText(gewaehlt, { exact: true }).first()).toBeVisible();
+      }
     }
   });
 

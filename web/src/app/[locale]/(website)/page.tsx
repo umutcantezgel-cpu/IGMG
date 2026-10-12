@@ -12,6 +12,7 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { moschee } from '@/lib/seo/jsonld';
 import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
+import { cn } from '@/lib/utils';
 import { ladeNachrichten } from '@/server/queries/nachrichten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
@@ -96,9 +97,13 @@ export default async function Startseite() {
             </Link>
           </div>
           {veranstaltungen.length > 0 ? (
-            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              {/* Telefon (H-C03): höchstens drei Termine; der Rest über „Alle Veranstaltungen anzeigen“ */}
               {veranstaltungen.map((v, i) => (
-                <li key={v.id} className={i === 0 && veranstaltungen.length % 2 === 1 ? 'md:max-lg:col-span-2' : undefined}>
+                <li
+                  key={v.id}
+                  className={cn(i === 0 && veranstaltungen.length % 2 === 1 && 'md:max-lg:col-span-2', i >= 3 && 'max-md:hidden')}
+                >
                   <EventCard v={v} sprache={sprache} />
                 </li>
               ))}

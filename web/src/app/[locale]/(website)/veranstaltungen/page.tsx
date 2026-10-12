@@ -7,7 +7,7 @@ import { KalenderAbo } from '@/components/website/veranstaltungen/KalenderAbo';
 import { VeranstaltungsFilter } from '@/components/website/veranstaltungen/VeranstaltungsFilter';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
-import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
+import { type VeranstaltungsDaten, ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
 export const ensureStatic = 'navigation';
 
@@ -34,11 +34,23 @@ export default async function VeranstaltungenSeite() {
   );
   // Ein Aufmacher nur ab drei Terminen; er ist der erste der chronologisch sortierten Termine (neutral gegenüber den Organisationen).
   // Unter „Alle“ steht er über zwei Spalten (ab lg), die Termine danach im Raster; eine Kategorie zeigt nur das Raster.
+  // Telefon (H-C03): jeder weitere Termin als Kompaktzeile, ab md die Karte; die jeweils ausgeblendete Fassung ist nicht sichtbar.
+  // Die Hülle `h-full` hält die Karten im Raster gleich hoch wie zuvor.
+  const fassungen = (v: VeranstaltungsDaten) => (
+    <>
+      <div className="h-full max-md:hidden">
+        <EventCard v={v} sprache={sprache} variante="liste" bild={v.bild} />
+      </div>
+      <div className="h-full md:hidden">
+        <EventCard v={v} sprache={sprache} variante="kompakt" bild={v.bild} />
+      </div>
+    </>
+  );
   const einheitlich = (
-    <ul className="grid raster-karten gap-6">
+    <ul className="grid raster-karten gap-3 md:gap-6">
       {liste.map((v) => (
         <li key={v.id} data-kategorie={v.kategorie}>
-          <EventCard v={v} sprache={sprache} variante="liste" bild={v.bild} />
+          {fassungen(v)}
         </li>
       ))}
     </ul>
@@ -47,10 +59,10 @@ export default async function VeranstaltungenSeite() {
     liste.length < 3 ? (
       einheitlich
     ) : (
-      <ul className="grid raster-karten gap-6">
+      <ul className="grid raster-karten gap-3 md:gap-6">
         {liste.map((v, i) => (
           <li key={v.id} data-kategorie={v.kategorie} className={i === 0 ? 'lg:col-span-2' : undefined}>
-            <EventCard v={v} sprache={sprache} variante={i === 0 ? 'aufmacher' : 'liste'} bild={v.bild} />
+            {i === 0 ? <EventCard v={v} sprache={sprache} variante="aufmacher" bild={v.bild} /> : fassungen(v)}
           </li>
         ))}
       </ul>
