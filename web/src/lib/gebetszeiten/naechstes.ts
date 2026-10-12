@@ -2,42 +2,49 @@ import { GEBETE, type Gebet, type Tageszeiten } from './typen';
 
 /**
  * Nächstes Gebet und Restzeit – läuft im Browser aus den zwischengespeicherten Tageszeiten (K-08).
- * Reine Funktionen ohne Serverabhängigkeit; Zeitzone nur über Intl (kein Zeitzonen-Paket im Browser, K-12).
+ * Reine Funktionen ohne Serverabhängigkeit und ohne Zeitzonen-Paket im Browser (K-12).
+ *
+ * Ortszeit Europe/Berlin ohne Intl (H-L01): MEZ (UTC+1), Sommerzeit MESZ (UTC+2) nach der EU-Regel (seit 1996) vom
+ * letzten Sonntag im März bis zum letzten Sonntag im Oktober, jeweils 01:00 UTC. Das erste Zeitzonen-Format kostete im
+ * Browser auf schwachen Telefonen spürbar Rechenzeit direkt nach dem Laden (Leiste auf jeder Seite, Tagesbogen,
+ * „Jetzt geöffnet“). Gleichwertigkeit mit Intl über alle Umstellungen 1996–2040: tests/unit/gebetszeiten/berlin-zeit.test.ts.
  */
-const ZONE = 'Europe/Berlin';
-/**
- * Erst beim ersten Gebrauch angelegt (H-L01): Ein Zeitzonen-Format kostet beim Anlegen auf schwachen Telefonen
- * spürbar Rechenzeit; auf Modulebene fiel sie in die Hydrierung jeder Seite mit Gebetszeitleiste.
- */
-let teileFormat: Intl.DateTimeFormat | undefined;
-function teileFormatHolen(): Intl.DateTimeFormat {
-  teileFormat ??= new Intl.DateTimeFormat('en-GB', {
-    timeZone: ZONE,
-    hourCycle: 'h23',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
-  return teileFormat;
+
+/** 01:00 UTC am letzten Sonntag des Monats (Monat 0-basiert). */
+function letzterSonntagUtc(jahr: number, monat: number): number {
+  const letzterTag = new Date(Date.UTC(jahr, monat + 1, 0));
+  return Date.UTC(jahr, monat, letzterTag.getUTCDate() - letzterTag.getUTCDay(), 1);
 }
 
-/** Wanduhr-Teile in Europe/Berlin. */
-function teile(d: Date) {
-  const t = Object.fromEntries(
-    teileFormatHolen()
-      .formatToParts(d)
-      .map((p) => [p.type, p.value]),
-  );
-  return { j: +t.year, m: +t.month, t: +t.day, h: +t.hour, min: +t.minute, s: +t.second };
+/** Abstand Europe/Berlin zu UTC in Millisekunden zum Zeitpunkt `ms` (+1 h bzw. +2 h). */
+function versatzMs(ms: number): number {
+  const jahr = new Date(ms).getUTCFullYear();
+  return ms >= letzterSonntagUtc(jahr, 2) && ms < letzterSonntagUtc(jahr, 9) ? 7_200_000 : 3_600_000;
+}
+
+/** Wanduhr-Teile in Europe/Berlin (Wochentag 0 = Sonntag). */
+export function berlinTeile(d: Date) {
+  const w = new Date(d.getTime() + versatzMs(d.getTime()));
+  return {
+    j: w.getUTCFullYear(),
+    m: w.getUTCMonth() + 1,
+    t: w.getUTCDate(),
+    h: w.getUTCHours(),
+    min: w.getUTCMinutes(),
+    s: w.getUTCSeconds(),
+    wochentag: w.getUTCDay(),
+  };
+}
+
+/** Uhrzeit „HH:MM“ (24 h) in Europe/Berlin. */
+export function uhrzeitBerlin(d: Date): string {
+  const w = berlinTeile(d);
+  return `${String(w.h).padStart(2, '0')}:${String(w.min).padStart(2, '0')}`;
 }
 
 /** Abstand Europe/Berlin zu UTC in Millisekunden zum Zeitpunkt `d` (+1 h bzw. +2 h). */
 function versatz(d: Date): number {
-  const w = teile(d);
-  return Date.UTC(w.j, w.m - 1, w.t, w.h, w.min, w.s) - Math.floor(d.getTime() / 1000) * 1000;
+  return versatzMs(d.getTime());
 }
 
 /** Zeitpunkt aus Kalenderdatum „JJJJ-MM-TT“ und Ortszeit „HH:MM“ in Europe/Berlin (auch an Umstellungstagen). */
@@ -52,7 +59,7 @@ export function zeitpunkt(datum: string, zeit: string): Date {
 
 /** Kalenderdatum in Europe/Berlin für einen Zeitpunkt. */
 export function berlinerDatum(d: Date): string {
-  const w = teile(d);
+  const w = berlinTeile(d);
   return `${w.j}-${String(w.m).padStart(2, '0')}-${String(w.t).padStart(2, '0')}`;
 }
 

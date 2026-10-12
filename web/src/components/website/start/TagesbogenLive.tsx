@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { type CSSProperties, useEffect, useId, useRef, useState } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import { BOGEN, minutenAus, tagesbogen } from '@/lib/gebetszeiten/bogen';
-import { berlinerDatum, naechstesGebet } from '@/lib/gebetszeiten/naechstes';
+import { berlinerDatum, naechstesGebet, uhrzeitBerlin } from '@/lib/gebetszeiten/naechstes';
 import type { Gebet, GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
@@ -20,11 +20,6 @@ export type TagesbogenTexte = {
   /** Kopfzeile je Kalendertag (Wochentag · Hidschri-Datum), auf dem Server berechnet (`tageszeilen`, H-L01) */
   tageszeilen?: Record<string, string>;
 };
-
-/** Zeitzonenformat erst bei Gebrauch (H-L01: nicht in der Auswertung des Moduls beim Laden) */
-let uhr: Intl.DateTimeFormat | undefined;
-const uhrzeit = (d: Date) =>
-  (uhr ??= new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })).format(d);
 
 /** Lage im Zeichenfeld als Prozent der Breite bzw. Höhe (für HTML-Marken über der Zeichnung). */
 const links = (x: number) => `${(x / BOGEN.breite) * 100}%`;
@@ -79,7 +74,7 @@ export function TagesbogenLive({
   if (!heute) return null;
 
   const bogen = tagesbogen(heute);
-  const minuten = jetzt ? minutenAus(uhrzeit(jetzt)) : null;
+  const minuten = jetzt ? minutenAus(uhrzeitBerlin(jetzt)) : null;
   const sonne = minuten !== null && bogen.anteil(minuten) > 0 && bogen.anteil(minuten) < 1 ? bogen.punktZu(minuten) : null;
   const bisX = minuten === null ? 0 : bogen.punktZu(minuten).x * (bogen.anteil(minuten) > 0 ? 1 : 0);
   const datumText = jetzt ? (texte.tageszeilen?.[datum] ?? '') : '';

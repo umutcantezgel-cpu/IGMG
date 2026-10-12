@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
+import { datumszeilen } from '@/lib/zeit/datumszeilen';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
 import { LeisteLive } from './leiste/LeisteLive';
 
@@ -33,6 +34,10 @@ export async function PrayerTimesBar() {
         uhrSuffix: sprache === 'de',
         dauer: { std: t('einheitStd'), min: t('einheitMin') },
         locale: LOCALE[sprache],
+        datumszeilen: datumszeilen(
+          fenster.tage.map((t) => t.datum),
+          LOCALE[sprache],
+        ),
       }}
     />
   );

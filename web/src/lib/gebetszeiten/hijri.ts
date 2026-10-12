@@ -3,6 +3,8 @@
  * Monatsansicht). Berechnet, nicht beobachtet: Der Kalender der Diyanet/IGMG kann um einen Tag abweichen (M-066).
  * Reine Funktionen, im Browser und auf dem Server nutzbar.
  */
+import { datumszeilen } from '@/lib/zeit/datumszeilen';
+
 export type HijriDatum = { tag: number; monat: number; jahr: number };
 
 const zahlen = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn', {
@@ -41,11 +43,6 @@ export function hijriText(datum: string, locale: string): string {
  * Telefonen spürbar Rechenzeit, die sonst in die Hydrierung der Startseite fiel.
  */
 export function tageszeilen(daten: string[], locale: string): Record<string, string> {
-  const wochentag = new Intl.DateTimeFormat(locale, { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' });
-  return Object.fromEntries(
-    daten.map((datum) => {
-      const [j, m, t] = datum.split('-').map(Number);
-      return [datum, `${wochentag.format(new Date(Date.UTC(j, m - 1, t, 12)))} · ${hijriText(datum, locale)}`];
-    }),
-  );
+  const datum = datumszeilen(daten, locale);
+  return Object.fromEntries(daten.map((d) => [d, `${datum[d]} · ${hijriText(d, locale)}`]));
 }

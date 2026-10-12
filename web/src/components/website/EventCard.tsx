@@ -20,11 +20,42 @@ import { Text, textMitSprache } from './Text';
 const TOENUNG = 'border border-linie bg-sand text-tinte-2';
 /** `band`: Streifen unter der Bildfläche (Listen) bzw. oben (Variante start); `kante`: linke Kante ab lg (Aufmacher). */
 const ORG = {
-  at: { logo: LOGOS.at, band: 'bg-org-at', kante: 'lg:border-org-at', links: 'border-l-org-at', text: 'text-org-at-text' },
-  kt: { logo: LOGOS.kt, band: 'bg-org-kt', kante: 'lg:border-org-kt', links: 'border-l-org-kt', text: 'text-org-kt-text' },
-  gt: { logo: LOGOS.gt, band: 'bg-org-gt', kante: 'lg:border-org-gt', links: 'border-l-org-gt', text: 'text-org-gt-text' },
-  kgt: { logo: LOGOS.kgt, band: 'bg-org-kgt', kante: 'lg:border-org-kgt', links: 'border-l-org-kgt', text: 'text-org-kgt-text' },
+  at: {
+    logo: LOGOS.at,
+    band: 'bg-org-at',
+    kante: 'lg:border-org-at',
+    links: 'border-l-org-at',
+    linksMobil: 'max-md:border-l-org-at',
+    text: 'text-org-at-text',
+  },
+  kt: {
+    logo: LOGOS.kt,
+    band: 'bg-org-kt',
+    kante: 'lg:border-org-kt',
+    links: 'border-l-org-kt',
+    linksMobil: 'max-md:border-l-org-kt',
+    text: 'text-org-kt-text',
+  },
+  gt: {
+    logo: LOGOS.gt,
+    band: 'bg-org-gt',
+    kante: 'lg:border-org-gt',
+    links: 'border-l-org-gt',
+    linksMobil: 'max-md:border-l-org-gt',
+    text: 'text-org-gt-text',
+  },
+  kgt: {
+    logo: LOGOS.kgt,
+    band: 'bg-org-kgt',
+    kante: 'lg:border-org-kgt',
+    links: 'border-l-org-kgt',
+    linksMobil: 'max-md:border-l-org-kgt',
+    text: 'text-org-kgt-text',
+  },
 } as const;
+
+/** Vorschaubild der Kompaktzeile (Variante liste unter 768 px) */
+const KOMPAKT_BILD = 'max-md:size-22 max-md:shrink-0 max-md:rounded-md max-md:border max-md:border-linie';
 
 /** Datumstext: wiederkehrend wörtlich („Jeden Samstag“, Laufbuch D-10), sonst „Mo., 28. Juli 2025“. */
 export async function terminDatum(v: VeranstaltungsDaten, sprache: Sprache): Promise<string> {
@@ -51,7 +82,8 @@ export function uhrzeitText(v: VeranstaltungsDaten, sprache: Sprache, ganztaegig
  * EventCard (design/EventCard.dc.html): Variante „start“ (Akzentband, „Mehr erfahren“, ganze Karte klickbar),
  * „liste“ (Bildfläche mit Org-Kante, „Details ansehen“ + „Anmelden“) und „aufmacher“ (wie liste; ab lg zwei Spalten
  * mit Org-Kante am Inhaltsblock, Einsatz in H-B04). Ganze Karte als Link über ::after (wie Design).
- * „kompakt“ (nur Telefon, H-C03): Zeile mit Vorschaubild, Terminzeile, Titel und Organisation; ganz klickbar.
+ * Unter 768 px wird „liste“ zur Kompaktzeile (H-C03; eine Fassung je Termin, H-L01): Vorschaubild, Terminzeile,
+ * Titel als Link der ganzen Zeile und Organisation.
  */
 export async function EventCard({
   v,
@@ -61,7 +93,7 @@ export async function EventCard({
 }: {
   v: VeranstaltungsDaten;
   sprache: Sprache;
-  variante?: 'start' | 'liste' | 'aufmacher' | 'kompakt';
+  variante?: 'start' | 'liste' | 'aufmacher';
   /** Bild aus der Mediathek (nur Varianten „liste“ und „aufmacher“); null oder fehlend = Bildplatzhalter */
   bild?: BildDaten | null;
 }) {
@@ -74,6 +106,9 @@ export async function EventCard({
   const zeit = uhrzeitText(v, sprache, t.has('ganztaegig') ? t('ganztaegig') : null);
   const listenArt = variante !== 'start';
   const aufmacher = variante === 'aufmacher';
+  // Variante liste (H-C03, H-L01): unter 768 px dieselbe Karte als Kompaktzeile (Vorschaubild, Termin, Titel, Organisation)
+  // statt einer zweiten, ausgeblendeten Fassung – halbiert HTML und Hydrierung der Terminliste.
+  const liste = variante === 'liste';
   const kante = org ? org.kante : 'lg:border-gruen-700';
   const bildKlassen = aufmacher ? 'h-40 lg:h-full lg:min-h-75' : 'h-40';
   // Ohne Ort und Zielgruppe entfällt die Angabenliste; dann rücken Knöpfe bzw. Link an den Kartenboden
@@ -104,60 +139,17 @@ export async function EventCard({
       ) : null}
     </p>
   );
-  if (variante === 'kompakt') {
-    // Telefon (H-C03): Zeile mit Vorschaubild, Terminzeile, Titel und Organisation; ohne Abzeichen, Kurztext, Ort, Zielgruppe, Anmelden
-    return (
-      <article
-        data-morph-karte={`v-${v.slug}`}
-        className={cn(
-          'relative flex items-start gap-4 rounded-lg border border-l-4 border-linie bg-weiss p-4 shadow-s1 transition duration-(--dauer-rueckmeldung) hover:shadow-s2',
-          org ? org.links : 'border-l-gruen-700',
-        )}
-      >
-        {bild ? (
-          <MedienBild
-            bild={bild}
-            sprache={sprache}
-            morph="bild"
-            sizes="5.5rem"
-            className="size-22 shrink-0 rounded-md border border-linie"
-          />
-        ) : (
-          <Bildplatzhalter
-            morph="bild"
-            beschriftung={`${t('foto')}: ${titel.text}`}
-            kurz={t('foto')}
-            className="size-22 shrink-0 rounded-md border border-linie px-1"
-          />
-        )}
-        <div className="flex min-w-0 flex-col gap-1.5">
-          {terminZeile}
-          {/* wrap-anywhere: ein langes Wort darf in der schmalen Zeile umbrechen (320 px) */}
-          <h3 lang={titel.lang} data-morph="titel" className="text-20 leading-snug text-balance wrap-anywhere">
-            <Link
-              href={ziel}
-              aria-label={`${t('details')}: ${titel.text}`}
-              className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg after:content-[''] hover:text-gruen-800 hover:underline"
-            >
-              {titel.text}
-            </Link>
-          </h3>
-          {org ? (
-            <div className="flex items-center gap-2 text-16 leading-snug text-tinte-2">
-              <Image src={org.logo} alt="" width={20} height={20} className="size-5 shrink-0 rounded-sm border border-linie" />
-              <strong className={org.text}>{t(`org_${v.organisation}`)}</strong>
-            </div>
-          ) : null}
-        </div>
-      </article>
-    );
-  }
   return (
     <article
       data-morph-karte={`v-${v.slug}`}
       className={cn(
         'group relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2',
         aufmacher && 'lg:grid lg:grid-cols-2',
+        liste &&
+          cn(
+            'max-md:flex-row max-md:items-start max-md:gap-4 max-md:border-l-4 max-md:p-4',
+            org ? org.linksMobil : 'max-md:border-l-gruen-700',
+          ),
       )}
     >
       {listenArt ? (
@@ -166,20 +158,32 @@ export async function EventCard({
             bild={bild}
             sprache={sprache}
             morph="bild"
-            sizes={aufmacher ? SIZES_AUFMACHER : SIZES_RASTER}
-            className={bildKlassen}
+            sizes={aufmacher ? SIZES_AUFMACHER : liste ? `(max-width: 767px) 5.5rem, ${SIZES_RASTER}` : SIZES_RASTER}
+            className={cn(bildKlassen, liste && KOMPAKT_BILD)}
           />
         ) : (
-          <Bildplatzhalter morph="bild" beschriftung={`${t('foto')}: ${titel.text}`} className={bildKlassen} />
+          <Bildplatzhalter
+            morph="bild"
+            beschriftung={`${t('foto')}: ${titel.text}`}
+            kurzBisMd={liste ? t('foto') : undefined}
+            className={cn(bildKlassen, liste && cn(KOMPAKT_BILD, 'max-md:px-1'))}
+          />
         )
       ) : (
         <div aria-hidden className={cn('h-1', org ? org.band : 'bg-gruen-700')} />
       )}
-      {listenArt ? <div aria-hidden className={cn('h-1', aufmacher && 'lg:hidden', org ? org.band : 'bg-gruen-700')} /> : null}
+      {listenArt ? (
+        <div aria-hidden className={cn('h-1', aufmacher && 'lg:hidden', liste && 'max-md:hidden', org ? org.band : 'bg-gruen-700')} />
+      ) : null}
       <div
-        className={cn('flex flex-1 flex-col gap-4 p-6', !listenArt && 'max-md:gap-3 max-md:p-5', aufmacher && cn('lg:border-l-4', kante))}
+        className={cn(
+          'flex flex-1 flex-col gap-4 p-6',
+          !listenArt && 'max-md:gap-3 max-md:p-5',
+          liste && 'max-md:min-w-0 max-md:gap-1.5 max-md:p-0',
+          aufmacher && cn('lg:border-l-4', kante),
+        )}
       >
-        <div className="flex flex-wrap items-center gap-2">
+        <div className={cn('flex flex-wrap items-center gap-2', liste && 'max-md:hidden')}>
           <span className={cn('inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', TOENUNG)}>
             {t(`kat_${v.kategorie}`)}
           </span>
@@ -195,30 +199,61 @@ export async function EventCard({
             </span>
           ) : null}
         </div>
-        <div className="flex flex-col gap-2">
+        <div className={cn('flex flex-col gap-2', liste && 'max-md:gap-1.5')}>
           {terminZeile}
           <h3
             lang={titel.lang}
             data-morph="titel"
-            className={cn(aufmacher ? 'text-24 leading-tight lg:text-display-2' : 'text-24 leading-tight', 'text-balance break-words')}
+            className={cn(
+              aufmacher ? 'text-24 leading-tight lg:text-display-2' : 'text-24 leading-tight',
+              'text-balance break-words',
+              liste && 'max-md:text-20 max-md:leading-snug max-md:wrap-anywhere',
+            )}
           >
-            {titel.text}
+            {liste ? (
+              <>
+                {/* Telefon: der Titel ist der Link der ganzen Zeile; ab md trägt „Details ansehen“ den Link */}
+                <Link
+                  href={ziel}
+                  aria-label={`${t('details')}: ${titel.text}`}
+                  className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg after:content-[''] hover:text-gruen-800 hover:underline md:hidden"
+                >
+                  {titel.text}
+                </Link>
+                <span className="max-md:hidden">{titel.text}</span>
+              </>
+            ) : (
+              titel.text
+            )}
           </h3>
           {org ? (
             <div className="flex items-center gap-2 text-16 leading-snug text-tinte-2">
-              <Image src={org.logo} alt="" width={24} height={24} className="size-6 shrink-0 rounded-sm border border-linie" />
+              <Image
+                src={org.logo}
+                alt=""
+                width={24}
+                height={24}
+                className={cn('size-6 shrink-0 rounded-sm border border-linie', liste && 'max-md:size-5')}
+              />
               <span>
-                {t('organisiertVon')} <strong className={org.text}>{t(`org_${v.organisation}`)}</strong>
+                <span className={liste ? 'max-md:hidden' : undefined}>{t('organisiertVon')} </span>
+                <strong className={org.text}>{t(`org_${v.organisation}`)}</strong>
               </span>
             </div>
           ) : null}
         </div>
-        <Text feld={v.kurztext} sprache={sprache} als="p" className={cn('text-pretty text-tinte-2', !listenArt && 'max-md:hidden')} />
+        <Text
+          feld={v.kurztext}
+          sprache={sprache}
+          als="p"
+          className={cn('text-pretty text-tinte-2', (!listenArt || liste) && 'max-md:hidden')}
+        />
         {angabenZeigen ? (
           <dl
             className={cn(
               'mt-auto flex flex-col gap-2 border-t border-linie pt-4',
               !listenArt && 'max-md:flex-row max-md:flex-wrap max-md:gap-x-4 max-md:gap-y-1 max-md:border-t-0 max-md:pt-0',
+              liste && 'max-md:hidden',
             )}
           >
             {v.ort ? zeile(MapPin, t('ort'), <Text feld={v.ort} sprache={sprache} />) : null}
@@ -228,7 +263,7 @@ export async function EventCard({
           </dl>
         ) : null}
         {listenArt ? (
-          <div className={cn('flex flex-wrap items-center justify-between gap-3', !angabenZeigen && 'mt-auto')}>
+          <div className={cn('flex flex-wrap items-center justify-between gap-3', !angabenZeigen && 'mt-auto', liste && 'max-md:hidden')}>
             <Link
               href={ziel}
               aria-label={`${t('details')}: ${titel.text}`}

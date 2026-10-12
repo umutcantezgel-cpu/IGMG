@@ -34,18 +34,9 @@ export default async function VeranstaltungenSeite() {
   );
   // Ein Aufmacher nur ab drei Terminen; er ist der erste der chronologisch sortierten Termine (neutral gegenüber den Organisationen).
   // Unter „Alle“ steht er über zwei Spalten (ab lg), die Termine danach im Raster; eine Kategorie zeigt nur das Raster.
-  // Telefon (H-C03): jeder weitere Termin als Kompaktzeile, ab md die Karte; die jeweils ausgeblendete Fassung ist nicht sichtbar.
-  // Die Hülle `h-full` hält die Karten im Raster gleich hoch wie zuvor.
-  const fassungen = (v: VeranstaltungsDaten) => (
-    <>
-      <div className="h-full max-md:hidden">
-        <EventCard v={v} sprache={sprache} variante="liste" bild={v.bild} />
-      </div>
-      <div className="h-full md:hidden">
-        <EventCard v={v} sprache={sprache} variante="kompakt" bild={v.bild} />
-      </div>
-    </>
-  );
+  // Telefon (H-C03): jeder weitere Termin als Kompaktzeile, ab md die Karte – eine Fassung, die je nach Breite umschaltet
+  // (EventCard Variante liste, H-L01: vorher zwei Fassungen je Termin im HTML).
+  const fassungen = (v: VeranstaltungsDaten) => <EventCard v={v} sprache={sprache} variante="liste" bild={v.bild} />;
   const einheitlich = (
     <ul className="grid raster-karten gap-3 md:gap-6">
       {liste.map((v) => (

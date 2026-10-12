@@ -1,8 +1,10 @@
 'use client';
 
 import { Compass } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+
+/** Erst im Fehlerfall (nach dem Aktivieren) gebraucht: nicht im Bundle der Gebetszeiten-Seite (H-L01, JS ≤ 180 kB) */
+const Zustandsgrafik = lazy(() => import('@/components/website/Zustandsgrafik').then((m) => ({ default: m.Zustandsgrafik })));
 
 /** Texte kommen als Props aus der Server-Komponente QiblaPanel (K-12: kein next-intl im Browser). */
 export type QiblaKompassTexte = {
@@ -138,7 +140,11 @@ export function QiblaKompass({ winkel, texte }: { winkel: number; texte: QiblaKo
         </button>
       )}
       {hinweisZeigen ? <p className="max-w-text text-16 leading-normal text-tinte-2">{texte.hinweis}</p> : null}
-      {fehlerZustand ? <Zustandsgrafik art="fehler" groesse={48} /> : null}
+      {fehlerZustand ? (
+        <Suspense fallback={null}>
+          <Zustandsgrafik art="fehler" groesse={48} />
+        </Suspense>
+      ) : null}
       <p role="status" className="min-h-12 max-w-text text-16 leading-normal text-tinte">
         {statusText}
       </p>

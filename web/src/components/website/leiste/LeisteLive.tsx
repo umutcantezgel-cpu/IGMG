@@ -3,7 +3,7 @@
 import { ArrowRight, ChevronDown, ChevronUp, Clock, Info, MapPin, Moon, Sun, Sunrise, Sunset } from 'lucide-react';
 import { type CSSProperties, useState } from 'react';
 import Link from 'next/link';
-import { berlinerDatum, naechstesGebet, restzeit } from '@/lib/gebetszeiten/naechstes';
+import { berlinerDatum, naechstesGebet, restzeit, uhrzeitBerlin } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
@@ -24,6 +24,8 @@ export type LeisteTexte = {
   uhrSuffix: boolean;
   dauer: { std: string; min: string };
   locale: string;
+  /** Kurzes Datum je Kalendertag, auf dem Server berechnet (`datumszeilen`, H-L01: kein Datumsformat beim Laden) */
+  datumszeilen?: Record<string, string>;
 };
 
 const ICON: Record<Gebet, typeof Sun> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
@@ -67,16 +69,8 @@ export function LeisteLive({
   const rest = naechstes ? restzeit(naechstes.restMs) : null;
   const restText = rest ? `${rest.stunden ? `${rest.stunden}${texte.dauer.std} ` : ''}${rest.minuten}${texte.dauer.min}` : '–';
   const zeit = (z: string) => (texte.uhrSuffix ? `${z} Uhr` : z);
-  const datumText = jetzt
-    ? new Intl.DateTimeFormat(texte.locale, { timeZone: 'Europe/Berlin', weekday: 'short', day: 'numeric', month: 'short' }).format(jetzt)
-    : '';
-  const uhrText = jetzt
-    ? zeit(
-        new Intl.DateTimeFormat(texte.locale, { timeZone: 'Europe/Berlin', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(
-          jetzt,
-        ),
-      )
-    : '';
+  const datumText = jetzt ? (texte.datumszeilen?.[berlinerDatum(jetzt)] ?? '') : '';
+  const uhrText = jetzt ? zeit(uhrzeitBerlin(jetzt)) : '';
   const naechstesName = naechstes ? texte.namen[naechstes.gebet] : '–';
   const naechstesZeit = naechstes ? zeit((naechstes.morgen ? morgen : heute)?.[naechstes.gebet] ?? '') : '';
   const restZeile = (naechstes?.morgen ? texte.verbleibtMorgen : texte.verbleibt).replace('{zeit}', restText);
