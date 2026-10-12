@@ -1,0 +1,72 @@
+# Integration der von V-05/V-11 und dem Bau ohne Datenbank betroffenen Dateien · Stand 3cdc9b4 (App-Stand 90bb76d, danach nur _werkstatt) · 2026-10-12T22:53:34Z
+# pnpm vitest run --project integration --reporter=verbose tests/integration/verwaltung-medien.test.ts tests/integration/startklar.test.ts tests/integration/verwaltung-eingaenge.test.ts
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Konzept-Hinweis ohne Eintrag ist eingeschaltet: Fehler in produktion, Warnung in vorschau 45ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Konzept-Hinweis ausgeschaltet: ok 27ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Gebetszeiten unbestätigt: Warnung; bestätigt: ok 28ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Rechtstexte fehlen oder enthalten Platzhalter: Fehler in produktion, Warnung in vorschau 38ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Rechtstexte ohne Platzhalter (ohne Absatzlisten): ok 24ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Absatzlisten in Rechtstexten gelten nicht als Platzhalter 25ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > Beispielinhalte werden aus Veranstaltungen, Nachrichten und Seiteninhalten gezählt 50ms
+ ✓ |integration| tests/integration/startklar.test.ts > Leere Seed-Lage: Inhalte und Einstellungen > ohne Beispielinhalte: ok 33ms
+ ✓ |integration| tests/integration/startklar.test.ts > Migrationen > alle Journal-Einträge angewendet (Migrationstabelle aus testDatenbank): ok 23ms
+ ✓ |integration| tests/integration/startklar.test.ts > Migrationen > teilweise angewendet (Einträge fehlen in der Tabelle): Fehler mit Zählung 2892ms
+ ✓ |integration| tests/integration/startklar.test.ts > Migrationen > leere Datenbank ohne Migrationen: Fehler in der Migrationsprüfung, kein Abbruch der Gesamtprüfung 2293ms
+ ✓ |integration| tests/integration/startklar.test.ts > Datenbank nicht verbunden > ohne Datenbank: Fehler in produktion, Hinweis in vorschau und entwicklung; keine Inhaltsprüfungen 19ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > Region fra1 ergibt ok 24ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > Region iad1 ergibt warnung 22ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > Region fehlt ergibt manuell 19ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > https-Adresse: ok in produktion 21ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > http-Adresse: Fehler in produktion, Hinweis in vorschau 36ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > vercel.app-Adresse in produktion: Warnung; eigene Domain: ok 30ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > Domain-Prüfung nur in produktion 28ms
+ ✓ |integration| tests/integration/startklar.test.ts > Auslieferung > localhost gilt nicht als eigene Domain 23ms
+ ✓ |integration| tests/integration/startklar.test.ts > Mail > dnsPruefen: false ergibt SPF/DMARC als manuellen Punkt 20ms
+ ✓ |integration| tests/integration/startklar.test.ts > Mail > ohne Absender-Domain in produktion: manueller Punkt 18ms
+ ✓ |integration| tests/integration/startklar.test.ts > Gesamtergebnis > saubere Produktionslage ist startklar (keine Fehler) 40ms
+ ✓ |integration| tests/integration/startklar.test.ts > Gesamtergebnis > ein Fehler macht die Lage nicht startklar 29ms
+ ✓ |integration| tests/integration/startklar.test.ts > Gesamtergebnis > Zähler entsprechen den Prüfungen 23ms
+ ✓ |integration| tests/integration/startklar.test.ts > Medienspeicher erreichbar (V-11) > Nicht erreichbar: Fehler in produktion und vorschau, Warnung in entwicklung, mit Ort und Aufwand 35ms
+ ✓ |integration| tests/integration/startklar.test.ts > Medienspeicher erreichbar (V-11) > Erreichbar: ok mit der Meldung der Probe 30ms
+ ✓ |integration| tests/integration/startklar.test.ts > Medienspeicher erreichbar (V-11) > Echte Probe: Dateisystem beschreibbar, Blob ohne Token und S3 ohne Bucket nicht erreichbar, ohne Geheimnisse 27ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Pipeline > erkennt Typen nur an den Bytes; SVG und Text abgelehnt 13ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Pipeline > entfernt EXIF, behält die Ausrichtung, begrenzt auf 2560 px; Name aus der Datei im Schlüssel 190ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > nur mit medium.hochladen; Alt-Text Pflicht; falscher Typ am Feld 76ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Erfolg: Datei im Speicher, Eintrag mit Maßen, Audit; gleicher Inhalt → derselbe Eintrag 43ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Auslieferung: Typ aus der Datenbank, 1 Tag gecacht (nicht immutable, K-05), nosniff; Pfadausbruch und Unbekanntes 404 19ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Bildvarianten (ADR 0020): WebP unterhalb der Originalbreite, Auslieferung mit Rückfall aufs Original, Papierkorb sperrt auch Varianten 142ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Alt-Text ändern mit Audit 9ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > verwendet → kein Papierkorb; ungenutzt → Papierkorb (nicht ausgeliefert), wiederherstellen, löschen nur aus dem Papierkorb 69ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Bildknoten im Rich-Text zählen als Verwendung (jede Sprache, jede Tiefe; Tor B/C SP-C2 B1) 64ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Papierkorb: gleiche Datei erneut hochladen meldet den Papierkorb, Ändern dort gesperrt (SP-C2 H2/H3) 40ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Hochladen, Ändern, Ausliefern > Löschlauf: Medien-Papierkorb nach 30 Tagen, genutzte bleiben 63ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Direkt-Upload großer PDF-Dateien (ADR 0020, V-05) > übernimmt den Eingang nur mit Vercel Blob: geprüft, gespeichert, Eingang entfernt, Dateiname übernommen 58ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Direkt-Upload großer PDF-Dateien (ADR 0020, V-05) > ohne Vercel Blob, mit fremdem Schlüssel oder fehlendem Eingang: Datei fehlt 8ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Direkt-Upload großer PDF-Dateien (ADR 0020, V-05) > Eingang ohne PDF-Inhalt: abgelehnt wie jeder Upload, Eingang entfernt 6ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Direkt-Upload großer PDF-Dateien (ADR 0020, V-05) > Aufräumen der Eingänge: ohne Blob nichts zu tun; bei gestörtem Speicher Abbruch nach dem Zeitbudget 1368ms
+ ✓ |integration| tests/integration/verwaltung-medien.test.ts > Direkt-Upload großer PDF-Dateien (ADR 0020, V-05) > Token-Route: nur mit Vercel Blob, nur Token-Anfragen, nur mit Recht, nur für Eingangsschlüssel 33ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Sichtbarkeit je Rolle > Bildung sieht nur Voranmeldungen, Mitgliederverwaltung nur Mitgliedsanfragen, Administration alles 70ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Sichtbarkeit je Rolle > Organisationsredaktion GT sieht nur Anmeldungen zu GT-Terminen; fremdes Detail = null ohne Audit 16ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Sichtbarkeit je Rolle > Liste enthält keine Personendaten; Detail entschlüsselt und protokolliert den Abruf (ohne Personendaten) 18ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Sichtbarkeit je Rolle > Zähler neuer Eingänge je Rolle 12ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Bearbeiten > Status „erledigt“ startet die Frist (180 Tage), Wiederöffnen setzt die Höchstfrist (365 Tage, B4); Audit mit von/nach 27ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Bearbeiten > Anmeldung: Abschluss nimmt die frühere Frist (Termin + 30 oder Abschluss + 30); Wiederöffnen behält sie; Platzzählung erneuert 32ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Bearbeiten > ohne Bearbeitungsrecht oder für fremde Organisation: KeinRecht, nichts geändert 28ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Bearbeiten > Notiz wird verschlüsselt gespeichert und protokolliert 22ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Bearbeiten > endgültig löschen: Eingang, Einwilligung, Notizen und Mail-Ausgang weg; Audit bleibt (ohne Personendaten) 34ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Löschlauf (C16) > löscht fällige Eingänge mit Audit (System), behält nicht fällige; versendete Mails nach 30 Tagen weg 47ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Löschlauf (C16) > Papierkorb nach 30 Tagen: endgültig gelöscht mit Audit (System); jüngere Einträge bleiben 32ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Löschlauf (C16) > Melderdaten gelöster und geschlossener Tickets nach 180 Tagen entfernt (Ticket bleibt); offene unberührt 33ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Löschlauf (C16) > Einladungen 30 Tage nach Annahme, Widerruf oder Ablauf gelöscht; abgelaufene Verifikationen sofort (N7) 23ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Löschlauf (C16) > Wartungsroute: ohne Token 401 44ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Export und Einstellungen > Export CSV: BOM, Semikolon, Schutz vor Formeln, nur sichtbare Arten; Audit mit Anzahl; ohne Recht 403 23ms
+ ✓ |integration| tests/integration/verwaltung-eingaenge.test.ts > Export und Einstellungen > Löschfristen speichern: nur mit Recht, Werte geprüft, Audit; Abschluss nutzt die neue Frist 32ms
+
+ Test Files  3 passed (3)
+      Tests  60 passed (60)
+   Start at  22:53:35
+   Duration  23.08s (import 55%, tests 38%, transform 6%)
+
+RC=0

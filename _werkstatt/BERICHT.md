@@ -88,7 +88,11 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Alle Leistungswerte sind am Endstand gemessen: Lighthouse verschränkt in 5 Runden, INP in 3 Runden (`protokolle/C-lighthouse-v.md`, `C3b-inp.md`).
 - **Vercel:**
   - `vercel build` als Vorschau und Produktion grün.
-  - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte.
+  - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte. Endstand main = 90bb76d.
+  - Nachgebessert nach der Endprüfung:
+    - Der Bau ohne Datenbank brach in zwei Vorschauen ab, weil mehrere Bau-Prozesse dieselbe Beispiel-Datenbank lasen. Jetzt hat jeder Prozess eine eigene Kopie.
+    - Die Speicherprobe löste eine Bauwarnung aus. Auch die ist behoben.
+    - Vorschau und Produktion 90bb76d bauen ohne Warnung (`protokolle/C3b-vercel-mcp.md`, Nachtrag 23:00 UTC).
 
 **Offen und bewusst so gelassen**
 - **AUSNAHME A-02, Gestaltung ≥ 8 je Ansicht:** Vier Prüf- und Verbesserungsrunden (54 Pakete) haben das Mittel auf ein Plateau knapp unter 8 gebracht (maßgeblicher Blindvergleich: 7,50–7,83 je Ansicht, Mittel 7,68; der neue Stand ist überall vorgezogen). Die verbleibenden Hinweise der Prüfer sind Einzelheiten in Komposition und Details. Beispiele: Kopfzone der Veranstaltungsseite etwas leer, doppelter Rücksprung-Link, Umbrüche einzelner Zeilen, Farbe einzelner Hinweise auf den Korankursen. Sie eignen sich für einen eigenen, kleinen Gestaltungsauftrag (Denkprotokoll ENTSCHEIDUNGEN L-E16; vollständige Begründungen in `protokolle/C3b-endpruefung.md`). Die wichtigsten Hinweise aus dem maßgeblichen Blindvergleich:
