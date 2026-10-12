@@ -1,4 +1,4 @@
-# Bildsatz und Überlaufprüfung · 2026-10-12-04-48 · http://127.0.0.1:3500 · reduzierte Bewegung
+# Bildsatz und Überlaufprüfung · 2026-10-12-07-02 · http://127.0.0.1:3500 · reduzierte Bewegung
 
 Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, abgeschnittene Elemente (ohne Kürzung mit Auslassungszeichen), vermutlich beabsichtigte Kürzungen.
 
