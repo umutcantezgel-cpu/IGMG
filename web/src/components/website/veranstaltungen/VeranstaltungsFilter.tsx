@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Funnel } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { klassen } from '@/lib/klassen';
 import { Leerzustand } from './Leerzustand';
@@ -8,18 +8,27 @@ import { Leerzustand } from './Leerzustand';
 /**
  * Kategorie-Filter der Veranstaltungsliste (Events.dc.html): blendet Karten per data-Attribut aus –
  * die Liste bleibt statisch gerendert, nur die Auswahl läuft im Browser. Leerzustand bei 0 Treffern.
+ * Rechts der Chips steht die Trefferzahl des aktiven Filters als Live-Region (aria-live).
+ * Unter „Alle“ zeigt `kinder` die Startform mit Aufmacher, für eine Kategorie `kinderGefiltert` (einheitliches Raster).
  * Der neue Inhalt blendet nach einem Wechsel ein (B-04); beim ersten Laden steht er sofort da.
  */
 export function VeranstaltungsFilter({
   kategorien,
   zaehler,
+  zaehlTexte,
   texte,
   kinder,
+  kinderGefiltert,
 }: {
   kategorien: { schluessel: string; label: string }[];
   zaehler: Record<string, number>;
-  texte: { gruppe: string; alle: string; kommend: string; leerTitel: string; leerText: string; keineTermine: string };
+  /** Trefferzahl je Filter („Alle“ und jede Kategorie), vom Server übersetzt, z. B. „5 Veranstaltungen“. */
+  zaehlTexte: Record<string, string>;
+  texte: { gruppe: string; alle: string; leerTitel: string; leerText: string; keineTermine: string };
+  /** Liste unter „Alle“: Aufmacher und Rest. */
   kinder: ReactNode;
+  /** Liste für eine einzelne Kategorie; fehlt sie, gilt `kinder`. */
+  kinderGefiltert?: ReactNode;
 }) {
   const [filter, setFilter] = useState('alle');
   const [gewechselt, setGewechselt] = useState(false);
@@ -83,10 +92,9 @@ export function VeranstaltungsFilter({
           {chip('alle', texte.alle)}
           {kategorien.map((k) => chip(k.schluessel, k.label))}
         </div>
-        <span className="inline-flex items-center gap-2 text-18 font-bold text-tinte-2">
-          <Funnel aria-hidden className="size-5" />
-          {texte.kommend}
-        </span>
+        <p aria-live="polite" className="text-16 text-tinte-2">
+          {zaehlTexte[filter]}
+        </p>
       </div>
       <div
         key={filter}
@@ -94,7 +102,7 @@ export function VeranstaltungsFilter({
         className={gewechselt ? 'blendet-ein' : undefined}
         style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
       >
-        {treffer > 0 ? kinder : leer}
+        {treffer > 0 ? (filter === 'alle' ? kinder : (kinderGefiltert ?? kinder)) : leer}
       </div>
     </div>
   );

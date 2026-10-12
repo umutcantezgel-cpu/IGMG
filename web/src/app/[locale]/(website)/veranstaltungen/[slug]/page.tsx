@@ -1,7 +1,7 @@
 import {
   ArrowLeft,
-  Bookmark,
   Calendar,
+  CalendarPlus,
   Check,
   CircleAlert,
   CircleCheck,
@@ -16,12 +16,13 @@ import {
 } from 'lucide-react';
 import type { JSONContent } from '@tiptap/core';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { terminDatum, uhrzeitText } from '@/components/website/EventCard';
+import { Stern8 } from '@/components/website/Icons';
 import { LOGOS } from '@/components/website/navigation';
+import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
 import { JsonLd } from '@/components/website/JsonLd';
 import { morphStil } from '@/components/website/morph';
@@ -34,6 +35,7 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { datumLang } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
+import { telefonHref } from '@/lib/telefon';
 import { ORGANISATION, veranstaltung } from '@/lib/seo/jsonld';
 import { adresse, basisUrl, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
@@ -68,15 +70,20 @@ type Status = 'offen' | 'ausgebucht' | 'vergangen' | null;
 const STATUS_STIL = {
   offen: { klasse: 'bg-gruen-50 text-gruen-800', Icon: CircleCheck },
   ausgebucht: { klasse: 'bg-fehler-toenung text-fehler', Icon: CircleAlert },
-  vergangen: { klasse: 'bg-sand text-tinte-2', Icon: CircleMinus },
+  vergangen: { klasse: 'border border-linie bg-weiss text-tinte-2', Icon: CircleMinus },
 } as const;
-const ORG_TOENUNG = {
-  at: 'bg-org-at-toenung text-org-at-text',
-  kt: 'bg-org-kt-toenung text-org-kt-text',
-  gt: 'bg-org-gt-toenung text-org-gt-text',
-  kgt: 'bg-org-kgt-toenung text-org-kgt-text',
-} as const;
-const ORG_BAND = { at: 'bg-org-at', kt: 'bg-org-kt', gt: 'bg-org-gt', kgt: 'bg-org-kgt' } as const;
+/** Tönung je Kategorie wie in EventCard (dort nicht exportiert). */
+const KATEGORIE_TOENUNG: Record<VeranstaltungsDetail['kategorie'], string> = {
+  gebet: 'bg-tag-neuigkeiten-bg text-tag-neuigkeiten',
+  bildung: 'bg-tag-bildung-bg text-tag-bildung',
+  gemeinde: 'bg-tag-gemeinde-bg text-tag-gemeinde',
+  kultur: 'bg-tag-veranstaltung-bg text-tag-veranstaltung',
+  jugend: 'bg-tag-jugend-bg text-tag-jugend',
+  frauen: 'bg-org-kt-toenung text-org-kt-text',
+};
+/** Organisationsfarben: Rahmen des Logos (PageHeader leitet daraus das Band unter dem Kopf ab) und Text der Kennung. */
+const ORG_AKZENT = { at: 'border-org-at', kt: 'border-org-kt', gt: 'border-org-gt', kgt: 'border-org-kgt' } as const;
+const ORG_TEXT = { at: 'text-org-at-text', kt: 'text-org-kt-text', gt: 'text-org-gt-text', kgt: 'text-org-kgt-text' } as const;
 
 function statusVon(v: VeranstaltungsDetail, angemeldet: number): Status {
   if (v.vergangen) return 'vergangen';
@@ -101,11 +108,11 @@ const knopfPrimaer =
   'inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
 const knopfRahmen =
   'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
-const karte = 'rounded-lg border border-linie bg-weiss';
 
 /**
- * Veranstaltungsdetails (design/EventDetails.dc.html, Blatt S05). URL-Daten nur innerhalb von Suspense lesen
- * (keeping-pages-static, Schritt 3); mit ensureStatic 'navigation' wartet die erste Anfrage auf die ganze Seite.
+ * Veranstaltungsdetails (design/EventDetails.dc.html, Blatt S05). Kopf im Seitenkopf-Muster: Rückweg, Organisation,
+ * Titel, Status, Fakten und Aktionen; darunter Inhalt ohne Kästen, Anmeldung als einzige Karte. URL-Daten nur innerhalb
+ * von Suspense lesen (keeping-pages-static, Schritt 3); mit ensureStatic 'navigation' wartet die erste Anfrage auf die ganze Seite.
  */
 export default function VeranstaltungSeite({ params }: PageProps<'/[locale]/veranstaltungen/[slug]'>) {
   return (
@@ -130,6 +137,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
   ]);
   const titel = textMitSprache(v.titel, sprache);
   const status = statusVon(v, angemeldet);
+  const StatusIcon = status ? STATUS_STIL[status].Icon : null;
   const beginn = new Date(v.beginn);
   const datum = await terminDatum(v, sprache);
   // Hinweis „ganztägig“, sobald der Schlüssel in den Sprachdateien steht (Bedarf: karten.ganztaegig)
@@ -141,14 +149,16 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
   // Rich-Text in der Sprache, sonst sichtbarer Rückfall auf Deutsch (K-02)
   const beschreibungSprache = v.beschreibung ? (sprache !== 'de' && v.beschreibung[sprache] ? sprache : 'de') : null;
   const anmeldbar = status === 'offen';
+  const telefonZiel = telefonHref(v.kontakt?.telefon);
 
-  const infokarte = (Icon: typeof Calendar, label: string, inhalt: React.ReactNode) => (
-    <div className="flex gap-3 rounded-md bg-sand p-4">
+  // Fakt der Faktenzeile: Icon und Beschriftung, ohne eigene Fläche; ab lg durch Trennlinien getrennt
+  const fakt = (Icon: typeof Calendar, label: string, inhalt: React.ReactNode) => (
+    <div className="flex gap-3 lg:px-6 lg:first:pl-0 lg:last:pr-0">
       <dt className="flex pt-0.5 text-gruen-700">
-        <Icon aria-hidden className="size-6" />
+        <Icon aria-hidden className="size-5" />
         <span className="sr-only">{label}</span>
       </dt>
-      <dd className="flex flex-1 flex-col leading-snug">
+      <dd className="flex min-w-0 flex-1 flex-col leading-snug">
         <span aria-hidden className="text-16 text-tinte-2">
           {label}
         </span>
@@ -162,7 +172,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
       bereich="moschee"
       seite="veranstaltungen"
       sprachZiel={{ pathname: '/veranstaltungen/[slug]', params: { slug } }}
-      pfad={[{ label: tp('veranstaltungen'), ziel: '/veranstaltungen' }, { label: t('seite') }]}
+      pfad={[{ label: tp('veranstaltungen'), ziel: '/veranstaltungen' }, { label: titel.text }]}
     >
       <JsonLd
         daten={veranstaltung({
@@ -178,91 +188,77 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
           veranstalter: v.organisation && orgName ? orgName : ORGANISATION,
         })}
       />
-      <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-4 pb-12 md:px-8 md:pt-8 md:pb-24">
-        <Link href="/" className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4">
-          <ArrowLeft aria-hidden className="size-5" />
-          {t('zurueck')}
-        </Link>
-
-        <section aria-labelledby="ev-titel" className={cn(karte, 'overflow-hidden rounded-lg shadow-s1')}>
-          <div aria-hidden className={cn('h-1.5', v.organisation ? ORG_BAND[v.organisation] : 'bg-gruen-700')} />
-          <div className="flex flex-col gap-6 p-5 md:p-10">
-            <div className="flex flex-wrap items-center gap-3">
-              {v.organisation && orgName ? (
-                <>
-                  <Image
-                    src={LOGOS[v.organisation]}
-                    alt={t('logoAlt', { organisation: orgName })}
-                    width={40}
-                    height={40}
-                    className="size-10 rounded-sm border border-linie"
-                  />
-                  <span className={cn('inline-flex rounded-pill px-3 py-0.5 text-16 font-bold', ORG_TOENUNG[v.organisation])}>
-                    {orgName}
-                  </span>
-                </>
+      <PageHeader
+        oben={
+          <Link
+            href="/veranstaltungen"
+            className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4"
+          >
+            <ArrowLeft aria-hidden className="size-5" />
+            {t('zurueckListe')}
+          </Link>
+        }
+        logo={v.organisation ? LOGOS[v.organisation] : undefined}
+        logoAlt={orgName ? t('logoAlt', { organisation: orgName }) : ''}
+        akzent={v.organisation ? ORG_AKZENT[v.organisation] : undefined}
+        kennung={orgName ?? tk(`kat_${v.kategorie}`)}
+        kennungFarbe={v.organisation ? ORG_TEXT[v.organisation] : undefined}
+        titel={titel.text}
+        titelId="ev-titel"
+        titelLang={titel.lang}
+        titelStil={morphStil(`v-${v.slug}-titel`, 'text')}
+        kinder={
+          <>
+            <div className="flex flex-wrap items-center gap-2">
+              {/* Ohne Organisation steht die Kategorie schon als Kennung über dem Titel: keine zweite Pille */}
+              {v.organisation ? (
+                <span
+                  className={cn(
+                    'inline-flex items-center rounded-pill px-3 py-0.5 text-16 leading-normal font-bold',
+                    KATEGORIE_TOENUNG[v.kategorie],
+                  )}
+                >
+                  {tk(`kat_${v.kategorie}`)}
+                </span>
               ) : null}
-              {status ? (
+              {status && StatusIcon ? (
                 <span
                   className={cn('inline-flex items-center gap-1.5 rounded-pill px-3 py-0.5 text-16 font-bold', STATUS_STIL[status].klasse)}
                 >
-                  {(() => {
-                    const I = STATUS_STIL[status].Icon;
-                    return <I aria-hidden className="size-4" />;
-                  })()}
+                  <StatusIcon aria-hidden className="size-4" />
                   {t(status)}
                 </span>
               ) : null}
             </div>
-            <div className="flex flex-col gap-2">
-              <h1 id="ev-titel" lang={titel.lang} className="text-display-1 break-words" style={morphStil(`v-${v.slug}-titel`, 'text')}>
-                {titel.text}
-              </h1>
-              <p className="text-20 text-tinte-2">{tk(`kat_${v.kategorie}`)}</p>
-            </div>
-            <dl className="grid raster-kacheln gap-3">
-              {infokarte(
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-4 lg:auto-cols-auto lg:grid-flow-col lg:grid-cols-none lg:gap-x-0 lg:divide-x lg:divide-linie">
+              {fakt(
                 Calendar,
                 t('datum'),
                 <>
                   <strong>{datum}</strong>
                   {wiederkehrend && !v.vergangen ? (
-                    <span className="text-16">{t('naechster', { datum: datumLang(beginn, sprache) })}</span>
+                    <span className="text-16 lg:w-0 lg:min-w-full">{t('naechster', { datum: datumLang(beginn, sprache) })}</span>
                   ) : null}
                 </>,
               )}
-              {zeit ? infokarte(Clock, t('uhrzeit'), <strong>{zeit}</strong>) : null}
-              {infokarte(
+              {zeit ? fakt(Clock, t('uhrzeit'), <strong className="lg:whitespace-nowrap">{zeit}</strong>) : null}
+              {fakt(
                 MapPin,
                 t('ort'),
                 <>
                   {v.ort ? <Text feld={v.ort} sprache={sprache} als="strong" /> : null}
-                  <span className="text-16">{kontaktSeite.adresse}</span>
+                  <span className="text-16 lg:w-0 lg:min-w-full">{kontaktSeite.adresse}</span>
+                  <Link
+                    href="/kontakt"
+                    className="inline-flex min-h-12 items-center gap-1.5 font-bold text-gruen-700 underline underline-offset-4 lg:whitespace-nowrap"
+                  >
+                    {t('routeAnzeigen')}
+                  </Link>
                 </>,
               )}
-              {v.anmeldungAktiv
-                ? infokarte(
-                    Users,
-                    t('teilnehmer'),
-                    <span className="flex flex-col gap-1.5">
-                      <strong className="tabular-nums">{v.plaetze !== null ? `${angemeldet} / ${v.plaetze}` : angemeldet}</strong>
-                      {v.plaetze !== null ? (
-                        <span
-                          role="progressbar"
-                          aria-label={t('auslastung')}
-                          aria-valuenow={angemeldet}
-                          aria-valuemin={0}
-                          aria-valuemax={v.plaetze}
-                          className="block h-2 overflow-hidden rounded-pill border border-rand bg-weiss"
-                        >
-                          <span className="block h-full bg-gruen-700" style={{ width: `${quote}%` }} />
-                        </span>
-                      ) : null}
-                    </span>,
-                  )
-                : v.zielgruppe || v.teilnehmerHinweis
-                  ? infokarte(Users, tk('zielgruppe'), <Text feld={v.zielgruppe ?? v.teilnehmerHinweis} sprache={sprache} als="strong" />)
-                  : null}
+              {v.zielgruppe || v.teilnehmerHinweis
+                ? fakt(Users, tk('zielgruppe'), <Text feld={v.zielgruppe ?? v.teilnehmerHinweis} sprache={sprache} als="strong" />)
+                : null}
             </dl>
             <div className="flex flex-wrap items-center gap-3">
               {anmeldbar ? (
@@ -277,105 +273,107 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                 download={`${v.slug}.ics`}
                 className="inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-4.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98"
               >
-                <Bookmark aria-hidden className="size-5" />
+                <CalendarPlus aria-hidden className="size-5" />
                 {t('merken')}
                 <span className="sr-only">: {t('merkenHinweis')}</span>
               </a>
             </div>
-          </div>
-        </section>
+          </>
+        }
+      />
 
-        <div className="grid items-start gap-6 lg:grid-cols-3">
-          <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
-            {v.beschreibung || v.schlagwoerter.length ? (
-              <section aria-labelledby="ev-beschreibung" className={cn(karte, 'flex flex-col gap-4 p-5 md:p-8')}>
-                <h2 id="ev-beschreibung" className="text-display-2">
-                  {t('beschreibung')}
-                </h2>
-                {v.beschreibung && beschreibungSprache ? (
-                  <RichText
-                    doc={v.beschreibung[beschreibungSprache] as JSONContent}
-                    lang={beschreibungSprache !== sprache ? 'de' : undefined}
-                    className="max-w-text text-pretty"
-                  />
-                ) : (
-                  <Text feld={v.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty" />
-                )}
-                {v.schlagwoerter.length ? (
-                  <ul aria-label={t('schlagwoerter')} className="flex flex-wrap gap-2">
-                    {v.schlagwoerter.map((s, i) => (
-                      <li
-                        key={i}
-                        className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2"
-                      >
-                        <Text feld={s} sprache={sprache} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </section>
-            ) : null}
-
-            {v.programm.length ? (
-              <section aria-labelledby="ev-programm" className={cn(karte, 'flex flex-col gap-4 p-5 md:p-8')}>
-                <h2 id="ev-programm" className="text-display-2">
-                  {t('programm')}
-                </h2>
-                <ol className="flex flex-col">
-                  {v.programm.map((p, i) => (
-                    <li key={i} className="flex items-baseline gap-4 border-t border-linie py-3">
-                      <span className="min-w-21 shrink-0 font-bold whitespace-nowrap text-gruen-800 tabular-nums">
-                        {t('uhrPrefix', { zeit: p.zeit })}
-                      </span>
-                      <Text feld={p.text} sprache={sprache} />
-                    </li>
-                  ))}
-                </ol>
-              </section>
-            ) : null}
-
-            {v.hinweise.length ? (
-              <section aria-labelledby="ev-hinweise" className="flex flex-col gap-3 rounded-lg bg-warnung-toenung p-5 md:p-8">
-                <h2 id="ev-hinweise" className="flex items-center gap-2.5 text-display-2">
-                  <CircleCheck aria-hidden className="size-6 text-warnung" />
-                  {t('hinweise')}
-                </h2>
-                <ul className="flex flex-col gap-2">
-                  {v.hinweise.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CircleAlert aria-hidden className="mt-0.75 size-5 shrink-0 text-warnung" />
-                      <Text feld={h} sprache={sprache} />
+      <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-12 px-4 py-abschnitt md:px-8 lg:grid-cols-3">
+        <div className="flex min-w-0 flex-col gap-12 lg:col-span-2">
+          {v.beschreibung || v.schlagwoerter.length ? (
+            <section aria-labelledby="ev-beschreibung" className="flex flex-col gap-4">
+              <h2 id="ev-beschreibung" className="text-display-2">
+                {t('beschreibung')}
+              </h2>
+              {v.beschreibung && beschreibungSprache ? (
+                <RichText
+                  doc={v.beschreibung[beschreibungSprache] as JSONContent}
+                  lang={beschreibungSprache !== sprache ? 'de' : undefined}
+                  className="max-w-text text-pretty"
+                />
+              ) : (
+                <Text feld={v.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty" />
+              )}
+              {v.schlagwoerter.length ? (
+                <ul aria-label={t('schlagwoerter')} className="flex flex-wrap gap-2">
+                  {v.schlagwoerter.map((s, i) => (
+                    <li key={i} className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2">
+                      <Text feld={s} sprache={sprache} />
                     </li>
                   ))}
                 </ul>
-              </section>
-            ) : null}
-          </div>
+              ) : null}
+            </section>
+          ) : null}
 
-          <aside className="flex min-w-0 flex-col gap-6">
-            <section
-              id="anmeldung"
-              aria-labelledby="ev-anmeldung"
-              className="flex scroll-mt-24 flex-col gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6"
-            >
-              <h2 id="ev-anmeldung" className="text-24">
-                {t('anmeldung')}
+          {v.programm.length ? (
+            <section aria-labelledby="ev-programm" className="flex flex-col gap-4">
+              <h2 id="ev-programm" className="text-display-2">
+                {t('programm')}
               </h2>
-              {!v.anmeldungAktiv ? (
-                <p>{t('keineAnmeldung')}</p>
-              ) : (
-                <>
-                  {quote !== null ? (
-                    <>
-                      <p className="flex items-baseline gap-2">
-                        <span className="text-36 font-bold text-gruen-800 tabular-nums">{quote}%</span>
-                        <span className="text-tinte-2">{t('ausgelastet')}</span>
-                      </p>
-                      <span aria-hidden className="block h-2.5 overflow-hidden rounded-pill border border-rand bg-sand">
-                        <span className="block h-full bg-gruen-700" style={{ width: `${quote}%` }} />
-                      </span>
-                    </>
-                  ) : null}
+              {/* Zeitleiste: die senkrechte Linie ist ein Pseudo-Element der Liste (nur Schmuck; ein span direkt in ol wäre ungültiges HTML) */}
+              <ol className="relative flex flex-col before:absolute before:inset-y-3 before:left-1.5 before:w-0.5 before:bg-linie before:content-['']">
+                {v.programm.map((p, i) => (
+                  <li key={i} className="relative flex items-baseline gap-4 py-2.5 pl-8">
+                    <Stern8 aria-hidden className="absolute top-4 left-0 text-gruen-700" />
+                    <span className="min-w-21 shrink-0 font-bold whitespace-nowrap text-gruen-800 tabular-nums">
+                      {t('uhrPrefix', { zeit: p.zeit })}
+                    </span>
+                    <Text feld={p.text} sprache={sprache} />
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ) : null}
+
+          {v.hinweise.length ? (
+            <section aria-labelledby="ev-hinweise" className="flex flex-col gap-4">
+              <h2 id="ev-hinweise" className="text-display-2">
+                {t('hinweise')}
+              </h2>
+              <ul className="flex flex-col gap-2">
+                {v.hinweise.map((h, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <CircleCheck aria-hidden className="mt-0.75 size-5 shrink-0 text-gruen-700" />
+                    <Text feld={h} sprache={sprache} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+        </div>
+
+        <aside className="flex min-w-0 flex-col gap-6">
+          <section
+            id="anmeldung"
+            aria-labelledby="ev-anmeldung"
+            className="flex scroll-mt-24 flex-col gap-4 rounded-lg border-2 border-gruen-700 bg-weiss p-6"
+          >
+            <h2 id="ev-anmeldung" className="text-24">
+              {t('anmeldung')}
+            </h2>
+            {!v.anmeldungAktiv ? (
+              <p>{t('keineAnmeldung')}</p>
+            ) : (
+              <>
+                {status === 'vergangen' ? <p className="text-20 font-bold text-tinte-2">{t('geschlossen')}</p> : null}
+                {status === 'ausgebucht' ? <p className="text-20 font-bold text-fehler">{t('ausgebucht')}</p> : null}
+                {status === 'offen' && quote !== null ? (
+                  <>
+                    <p className="flex items-baseline gap-2">
+                      <span className="text-36 font-bold text-gruen-800 tabular-nums">{quote}%</span>
+                      <span className="text-tinte-2">{t('ausgelastet')}</span>
+                    </p>
+                    <span aria-hidden className="block h-2.5 overflow-hidden rounded-pill border border-rand bg-sand">
+                      <span className="block h-full bg-gruen-700" style={{ width: `${quote}%` }} />
+                    </span>
+                  </>
+                ) : null}
+                {status !== 'vergangen' ? (
                   <dl className="flex flex-col gap-1">
                     <div className="flex justify-between gap-3">
                       <dt className="text-tinte-2">{t('angemeldet')}</dt>
@@ -386,84 +384,74 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                       <dd className="font-bold tabular-nums">{verfuegbar !== null ? verfuegbar : t('unbegrenzt')}</dd>
                     </div>
                   </dl>
-                  {status === 'vergangen' ? <p className="font-bold text-tinte-2">{t('geschlossen')}</p> : null}
-                  {status === 'ausgebucht' ? <p className="font-bold text-fehler">{t('ausgebucht')}</p> : null}
-                  {/* Immer an derselben Stelle (E-028): Nimmt die Anmeldung den letzten Platz, rendert die Action die Seite
-                      als „ausgebucht“ neu – die Insel bleibt erhalten und zeigt weiter die Erfolgsmeldung. */}
-                  <FormularInsel aktion={meldeAn} ohneSkript={tf('ohneSkript')}>
-                    {anmeldbar ? <AnmeldeFormular veranstaltungId={v.id} sprache={sprache} verfuegbar={verfuegbar} /> : null}
-                  </FormularInsel>
-                </>
-              )}
-              <Link href="/kontakt" className={knopfRahmen}>
-                <MapPin aria-hidden className="size-5" />
-                {t('routeAnzeigen')}
-              </Link>
-            </section>
-
-            {v.veranstalter || v.kontakt ? (
-              <section aria-labelledby="ev-veranstalter" className={cn(karte, 'flex flex-col gap-4 p-6')}>
-                <h2 id="ev-veranstalter" className="text-24">
-                  {t('veranstalter')}
-                </h2>
-                {v.veranstalter ? (
-                  <div className="flex items-center gap-3">
-                    <span
-                      aria-hidden
-                      className="flex size-14 shrink-0 items-center justify-center rounded-pill bg-gruen-50 font-bold text-gruen-800"
-                    >
-                      {initialen(v.veranstalter.name) ?? <UserRound className="size-6" />}
-                    </span>
-                    <span className="flex flex-col leading-snug">
-                      <strong>{v.veranstalter.name}</strong>
-                      {v.veranstalter.funktion || orgName ? (
-                        <span className="text-16 text-tinte-2">
-                          {v.veranstalter.funktion ? <Text feld={v.veranstalter.funktion} sprache={sprache} /> : orgName}
-                        </span>
-                      ) : null}
-                    </span>
-                  </div>
                 ) : null}
-                {v.kontakt ? (
-                  <div className="flex flex-col gap-2 border-t border-linie pt-3">
-                    <h3 className="font-text text-18 font-bold tracking-normal">{t('kontakt')}</h3>
-                    {v.kontakt.name ? <span className="text-16 text-tinte-2">{v.kontakt.name}</span> : null}
-                    {v.kontakt.telefon ? (
-                      <span className="flex items-center gap-2.5">
-                        <Phone aria-hidden className="size-5 text-gruen-700" />
-                        {v.kontakt.telefon.startsWith('[') ? (
-                          v.kontakt.telefon
-                        ) : (
-                          <a href={`tel:${v.kontakt.telefon.replace(/[^\d+]/g, '')}`}>{v.kontakt.telefon}</a>
-                        )}
+                {/* Immer an derselben Stelle (E-028): Nimmt die Anmeldung den letzten Platz, rendert die Action die Seite
+                    als „ausgebucht“ neu – die Insel bleibt erhalten und zeigt weiter die Erfolgsmeldung. */}
+                <FormularInsel aktion={meldeAn} ohneSkript={tf('ohneSkript')}>
+                  {anmeldbar ? <AnmeldeFormular veranstaltungId={v.id} sprache={sprache} verfuegbar={verfuegbar} /> : null}
+                </FormularInsel>
+              </>
+            )}
+          </section>
+
+          {v.veranstalter || v.kontakt ? (
+            <section aria-labelledby="ev-veranstalter" className="flex flex-col gap-4 border-t border-linie pt-6">
+              <h2 id="ev-veranstalter" className="text-24">
+                {t('veranstalter')}
+              </h2>
+              {v.veranstalter ? (
+                <div className="flex items-center gap-3">
+                  <span
+                    aria-hidden
+                    className="flex size-14 shrink-0 items-center justify-center rounded-pill bg-gruen-50 font-bold text-gruen-800"
+                  >
+                    {initialen(v.veranstalter.name) ?? <UserRound className="size-6" />}
+                  </span>
+                  <span className="flex flex-col leading-snug">
+                    <strong>{v.veranstalter.name}</strong>
+                    {v.veranstalter.funktion || orgName ? (
+                      <span className="text-16 text-tinte-2">
+                        {v.veranstalter.funktion ? <Text feld={v.veranstalter.funktion} sprache={sprache} /> : orgName}
                       </span>
                     ) : null}
-                    {v.kontakt.email ? (
-                      <a
-                        href={`mailto:${v.kontakt.email}`}
-                        className="flex min-h-12 items-center gap-2.5 wrap-anywhere underline underline-offset-3"
-                      >
-                        <Mail aria-hidden className="size-5 shrink-0" />
-                        {v.kontakt.email}
-                      </a>
-                    ) : null}
-                  </div>
-                ) : null}
-                {v.kontakt?.email ? (
-                  <a href={`mailto:${v.kontakt.email}`} className={knopfRahmen}>
-                    <Mail aria-hidden className="size-5" />
-                    {t('nachrichtSenden')}
-                  </a>
-                ) : (
-                  <Link href="/kontakt" className={knopfRahmen}>
-                    <User aria-hidden className="size-5" />
-                    {t('nachrichtSenden')}
-                  </Link>
-                )}
-              </section>
-            ) : null}
-          </aside>
-        </div>
+                  </span>
+                </div>
+              ) : null}
+              {v.kontakt ? (
+                <div className="flex flex-col gap-2 border-t border-linie pt-3">
+                  <h3 className="font-text text-18 font-bold tracking-normal">{t('kontakt')}</h3>
+                  {v.kontakt.name ? <span className="text-16 text-tinte-2">{v.kontakt.name}</span> : null}
+                  {v.kontakt.telefon ? (
+                    <span className="flex items-center gap-2.5">
+                      <Phone aria-hidden className="size-5 text-gruen-700" />
+                      {telefonZiel ? <a href={telefonZiel}>{v.kontakt.telefon}</a> : v.kontakt.telefon}
+                    </span>
+                  ) : null}
+                  {v.kontakt.email ? (
+                    <a
+                      href={`mailto:${v.kontakt.email}`}
+                      className="flex min-h-12 items-center gap-2.5 wrap-anywhere underline underline-offset-3"
+                    >
+                      <Mail aria-hidden className="size-5 shrink-0" />
+                      {v.kontakt.email}
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
+              {v.kontakt?.email ? (
+                <a href={`mailto:${v.kontakt.email}`} className={knopfRahmen}>
+                  <Mail aria-hidden className="size-5" />
+                  {t('nachrichtSenden')}
+                </a>
+              ) : (
+                <Link href="/kontakt" className={knopfRahmen}>
+                  <User aria-hidden className="size-5" />
+                  {t('nachrichtSenden')}
+                </Link>
+              )}
+            </section>
+          ) : null}
+        </aside>
       </div>
     </Seitenrahmen>
   );

@@ -35,8 +35,58 @@ export default async function NachrichtenSeite() {
       return { ...c, anzahl, zaehl: t('anzahl', { anzahl }) };
     },
   );
+  // Einheitliches Raster: ohne Aufmacher (Kategorie-Filter und Listen mit weniger als vier Nachrichten)
+  const einheitlich = (
+    <ul className="grid raster-karten gap-6">
+      {liste.map((n) => (
+        <li key={n.id} data-kategorie={n.kategorie}>
+          <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
+        </li>
+      ))}
+    </ul>
+  );
+  // Startform unter „Alle“ (ab vier Nachrichten): Aufmacher über zwei Spalten, drei kompakte daneben, der Rest zweimal:
+  // kompakt bis md, als Raster ab md (display:none verhindert doppelten Fokus und doppeltes Vorlesen)
+  const [erste, ...ubrige] = liste;
+  const startform =
+    liste.length < 4 || !erste ? (
+      einheitlich
+    ) : (
+      <>
+        <div className="grid items-stretch gap-6 lg:grid-cols-3">
+          <div data-kategorie={erste.kategorie} className="min-w-0 lg:col-span-2">
+            <NewsCard n={erste} sprache={sprache} variante="gross" bild={erste.bild} />
+          </div>
+          <ul className="grid min-w-0 gap-4 lg:grid-rows-3">
+            {ubrige.slice(0, 3).map((n) => (
+              <li key={n.id} data-kategorie={n.kategorie}>
+                <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        {ubrige.length > 3 ? (
+          <>
+            <ul className="mt-4 grid gap-4 md:hidden">
+              {ubrige.slice(3).map((n) => (
+                <li key={n.id} data-kategorie={n.kategorie}>
+                  <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-6 grid raster-karten gap-6 max-md:hidden">
+              {ubrige.slice(3).map((n) => (
+                <li key={n.id} data-kategorie={n.kategorie}>
+                  <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
+      </>
+    );
   return (
-    <Seitenrahmen bereich="moschee" seite="nachrichten" sprachZiel="/nachrichten" pfad={[{ label: tp('neuigkeiten') }]}>
+    <Seitenrahmen bereich="moschee" seite="nachrichten" sprachZiel="/nachrichten" pfad={[{ label: t('titel') }]}>
       <PageHeader kennung={tp('moschee')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt-klein md:px-8">
         <Ankuendigungen sprache={sprache} />
@@ -44,7 +94,6 @@ export default async function NachrichtenSeite() {
           kategorien={chips}
           texte={{
             gruppe: t('gruppe'),
-            neueste: t('neueste'),
             alle: t('alle'),
             leerTitel: t('leerTitel'),
           }}
@@ -56,15 +105,8 @@ export default async function NachrichtenSeite() {
               {tn('zurueck')}
             </Link>
           }
-          kinder={
-            <ul className="grid raster-karten gap-6">
-              {liste.map((n) => (
-                <li key={n.id} data-kategorie={n.kategorie}>
-                  <NewsCard n={n} sprache={sprache} variante="standard" bild={n.bild} />
-                </li>
-              ))}
-            </ul>
-          }
+          kinder={startform}
+          kinderGefiltert={einheitlich}
         />
       </div>
     </Seitenrahmen>

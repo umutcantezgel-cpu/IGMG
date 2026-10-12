@@ -1,30 +1,60 @@
+import { BookOpen, Calendar, Clock, Mail, Search, type LucideIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { PageHeader } from '../PageHeader';
 import { Seitenrahmen } from '../Seitenrahmen';
 import { Zustandsgrafik } from '../Zustandsgrafik';
-import { knopfRahmen } from './knopf';
+import { knopfPrimaer } from './knopf';
 import { Statusblock } from './Statusblock';
 
 /**
  * Inhalt „Seite nicht gefunden“ (Blatt S24, Variante 404) für die Adressen unter [locale] (Datei [...rest]/page.tsx)
  * und die Datei not-found.tsx des Abschnitts. Server-Komponente ohne Parameter: statisch (K-01), ohne Anfrage an Dritte.
- * Seitenkopf links wie auf allen Seiten, der Zustand mittig als eigene Karte (Muster Leerzustand).
+ * Seitenkopf links wie auf allen Seiten, darunter die Seitenachse (H-B14): Grafik links, Satz und Wege rechts. Der
+ * Hauptweg ist der Startseiten-Knopf, darunter fünf Wege in Kacheln (Namen aus den bestehenden Schlüsseln, keine neuen Texte).
  */
 export async function NichtGefundenInhalt() {
   const t = await getTranslations('fehlerseiten');
+  const tk = await getTranslations('kopf');
+  const ts = await getTranslations('suche');
+  const wege: {
+    href: '/gebetszeiten' | '/veranstaltungen' | '/bildung/korankurse' | '/kontakt' | '/suche';
+    text: string;
+    Icon: LucideIcon;
+  }[] = [
+    { href: '/gebetszeiten', text: tk('gebetszeiten'), Icon: Clock },
+    { href: '/veranstaltungen', text: tk('veranstaltungen'), Icon: Calendar },
+    { href: '/bildung/korankurse', text: tk('korankurse'), Icon: BookOpen },
+    { href: '/kontakt', text: tk('kontakt'), Icon: Mail },
+    { href: '/suche', text: ts('titel'), Icon: Search },
+  ];
   return (
     <Seitenrahmen bereich="keiner" seite="nicht-gefunden" sprachZiel="/" pfad={[{ label: t('nichtGefunden.titel') }]}>
       <PageHeader titel={t('nichtGefunden.titel')} />
-      <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8">
+      <div className="mx-auto max-w-(--container-inhalt) px-4 pt-abschnitt-klein pb-abschnitt md:px-8">
         <Statusblock
-          grafik={<Zustandsgrafik art="nichtGefunden" className="tritt-auf" />}
-          ueberschrift={t('nichtGefunden.h2')}
+          ausrichtung="start"
+          grafik={<Zustandsgrafik art="nichtGefunden" groesse={144} className="-ml-5" />}
           text={t('nichtGefunden.text')}
         >
-          <Link href="/" className={knopfRahmen}>
+          <Link href="/" className={knopfPrimaer}>
             {t('aktion.startseite')}
           </Link>
+          <ul className="grid w-full raster-kacheln gap-3">
+            {wege.map(({ href, text, Icon }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="flex min-h-14 items-center gap-3 rounded-md border border-linie bg-weiss px-3 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-gruen-50 text-gruen-700">
+                    <Icon aria-hidden className="size-5" />
+                  </span>
+                  {text}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Statusblock>
       </div>
     </Seitenrahmen>

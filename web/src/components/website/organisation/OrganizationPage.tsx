@@ -1,6 +1,7 @@
-import { ArrowRight, Award, Calendar, Mail, Newspaper, Phone, Star, Target } from 'lucide-react';
+import { ArrowRight, Award, Calendar, Mail, Newspaper, Phone, Telescope } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { z } from 'zod';
+import { Stern8 } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Text } from '@/components/website/Text';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
@@ -82,11 +83,8 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
           aria-labelledby={`${org}-ueber`}
           className="mx-auto grid max-w-(--container-inhalt) items-stretch gap-6 px-4 py-abschnitt md:px-8 lg:grid-cols-12"
         >
-          <div className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-10 lg:col-span-7">
-            <h2 id={`${org}-ueber`} className="flex items-center gap-2.5 text-display-2">
-              <span className={cn('flex', s.ink)}>
-                <Target aria-hidden className="size-7" />
-              </span>
+          <div className="flex min-w-0 flex-col gap-4 lg:col-span-7 lg:pr-8">
+            <h2 id={`${org}-ueber`} className="text-display-2">
               {t(`${kennung}.aboutTitle`)}
             </h2>
             <Text feld={inhalt.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
@@ -108,7 +106,7 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             <div className="flex flex-1 flex-col gap-2 rounded-lg border border-linie bg-weiss p-6">
               <h3 className="flex items-center gap-2 text-24">
                 <span className={cn('flex', s.ink)}>
-                  <Star aria-hidden className="size-6" />
+                  <Telescope aria-hidden className="size-6" />
                 </span>
                 {t('about.vision')}
               </h3>
@@ -124,19 +122,25 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
             aria-labelledby={`${org}-aktiv`}
             className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
           >
-            <h2 id={`${org}-aktiv`} className="text-display-2">
-              {t('activities.title')}
-            </h2>
-            <ul className="grid raster-kacheln gap-4">
+            <div className="flex max-w-einleitung flex-col gap-3">
+              <p className={cn('flex items-center gap-2 text-16 font-bold', s.ink)}>
+                <Stern8 className="size-4" />
+                {t('activities.kennung')}
+              </p>
+              <h2 id={`${org}-aktiv`} className="text-display-2">
+                {t('activities.title')}
+              </h2>
+            </div>
+            <ul className="grid raster-kacheln gap-x-8 gap-y-10">
               {inhalt.aktivitaeten.map((a, i) => {
                 const Icon = SYMBOL[a.symbol];
                 return (
-                  <li key={i} className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6">
-                    <span className={cn('flex size-12 items-center justify-center rounded-lg', s.tint, s.ink)}>
-                      <Icon aria-hidden className="size-6" />
-                    </span>
-                    <Text feld={a.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold tracking-normal" />
-                    <Text feld={a.text} sprache={sprache} als="p" className="text-16 text-tinte-2" />
+                  <li key={i} className={cn('flex flex-col gap-3 border-t-2 pt-5', s.akzent)}>
+                    <h3 className="flex items-center gap-2 font-text text-20 leading-snug font-bold tracking-normal">
+                      <Icon aria-hidden className={cn('size-6 shrink-0', s.ink)} />
+                      <Text feld={a.titel} sprache={sprache} als="span" />
+                    </h3>
+                    <Text feld={a.text} sprache={sprache} als="p" className="text-18 text-tinte-2" />
                   </li>
                 );
               })}
@@ -253,9 +257,15 @@ export async function OrganizationPage({ org, inhalt, veranstaltungen, nachricht
           aria-labelledby={`${org}-orgs`}
           className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8"
         >
-          <h2 id={`${org}-orgs`} className="text-display-2">
-            {t('orgs.title')}
-          </h2>
+          <div className="flex max-w-einleitung flex-col gap-3">
+            <p className={cn('flex items-center gap-2 text-16 font-bold', s.ink)}>
+              <Stern8 className="size-4" />
+              {t('orgs.kennung')}
+            </p>
+            <h2 id={`${org}-orgs`} className="text-display-2">
+              {t('orgs.title')}
+            </h2>
+          </div>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {KUERZEL_ALLE.filter((k) => k !== org).map((k) => (
               <li key={k}>

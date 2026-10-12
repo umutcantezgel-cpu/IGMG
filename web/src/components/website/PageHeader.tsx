@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { Seitenkopf } from './Seitenkopf';
 
 /**
  * Seitenkopf (design/PageHeader.dc.html): Kennung mit Stern, Titel (h1), Untertitel; optional Logo und
  * Akzentband (Organisationen, D-06). Fläche Sand oder Organisations-Tönung. Nur in Server-Komponenten verwenden –
- * Client-Komponenten nehmen `Seitenkopf` (ohne Bildkomponente).
+ * Client-Komponenten nehmen `Seitenkopf` (ohne Bildkomponente). Die Zusatzangaben (`oben`, Titel- und Untertitel-
+ * Sprache, Morph-Name des Titels) reicht er an `Seitenkopf` weiter.
  */
 export function PageHeader({
   titel,
@@ -18,6 +19,11 @@ export function PageHeader({
   kennungFarbe = 'text-gruen-800',
   zierde,
   kinder,
+  oben,
+  titelId,
+  titelLang,
+  titelStil,
+  untertitelLang,
 }: {
   titel: string;
   untertitel?: string;
@@ -30,6 +36,12 @@ export function PageHeader({
   /** Grafik rechts neben dem Text (dekorativ) */
   zierde?: ReactNode;
   kinder?: ReactNode;
+  /** Zeile vor der Kennung, z. B. Rückweg zur Liste */
+  oben?: ReactNode;
+  titelId?: string;
+  titelLang?: string;
+  titelStil?: CSSProperties;
+  untertitelLang?: string;
 }) {
   return (
     <Seitenkopf
@@ -40,6 +52,11 @@ export function PageHeader({
       flaeche={flaeche}
       kinder={kinder}
       zierde={zierde}
+      oben={oben}
+      titelId={titelId}
+      titelLang={titelLang}
+      titelStil={titelStil}
+      untertitelLang={untertitelLang}
       vorn={
         logo ? (
           <span className={`flex shrink-0 rounded-lg border-2 bg-weiss p-2 ${akzent ?? ''}`}>

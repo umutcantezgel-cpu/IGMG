@@ -142,7 +142,7 @@ export async function EventCard({
           <h3
             lang={titel.lang}
             data-morph="titel"
-            className={cn(aufmacher ? 'text-display-2' : 'text-24 leading-tight', 'text-balance break-words')}
+            className={cn(aufmacher ? 'text-24 leading-tight lg:text-display-2' : 'text-24 leading-tight', 'text-balance break-words')}
           >
             {titel.text}
           </h3>

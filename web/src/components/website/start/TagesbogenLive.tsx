@@ -208,7 +208,8 @@ export function TagesbogenLive({
         })}
       </div>
 
-      <ol aria-label={texte.listeHeute} className="grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27">
+      {/* Mit ruhig (Gebetszeiten) trägt die Tafel daneben die Zeiten für Hilfstechnik; hier sonst doppelt vorgelesen */}
+      <ol aria-label={texte.listeHeute} aria-hidden={ruhig || undefined} className="grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27">
         {bogen.punkte.map((p) => {
           const ist = naechstes?.gebet === p.gebet && !naechstes.morgen;
           return (

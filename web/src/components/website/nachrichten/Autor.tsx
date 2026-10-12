@@ -24,7 +24,10 @@ function Bild({ name, groesse }: { name: string; groesse: string }) {
   );
 }
 
-/** Autorzeile im Kopf des Beitrags (design/NewsDetails.dc.html, Kopfzeile mit Trennlinien). */
+/**
+ * Autorzeile im Kopf des Beitrags (design/NewsDetails.dc.html, Kopfzeile mit Trennlinien). Der Autor steht nur hier:
+ * die frühere Autorenkarte der Seitenspalte entfällt (H-B03, Abnahme „Autor einmal“).
+ */
 export function AutorZeile({ name, funktion }: { name: string; funktion: string }) {
   return (
     <div className="flex items-center gap-3">
@@ -34,24 +37,5 @@ export function AutorZeile({ name, funktion }: { name: string; funktion: string 
         <span className="text-16 text-tinte-2">{funktion}</span>
       </span>
     </div>
-  );
-}
-
-/** Autorenkarte der Seitenspalte (design/NewsDetails.dc.html, „Über den Autor“). */
-export function AutorKarte({ ueberschrift, name, funktion, text }: { ueberschrift: string; name: string; funktion: string; text: string }) {
-  return (
-    <section aria-labelledby="nd-autor" className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6">
-      <h2 id="nd-autor" className="text-24">
-        {ueberschrift}
-      </h2>
-      <div className="flex items-center gap-3">
-        <Bild name={name} groesse="size-14" />
-        <span className="flex flex-col leading-snug">
-          <strong>{name}</strong>
-          <span className="text-16 text-tinte-2">{funktion}</span>
-        </span>
-      </div>
-      <p className="text-16 text-tinte-2">{text}</p>
-    </section>
   );
 }

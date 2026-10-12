@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Funnel } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useState, type CSSProperties, type ReactNode } from 'react';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { klassen } from '@/lib/klassen';
@@ -12,24 +12,31 @@ export type NachrichtenFilterChip = { schluessel: string; label: string; anzahl:
  * Kategoriefilter der Nachrichtenliste (design/News.dc.html, Blatt S06): Chips mit aria-pressed. Karten anderer
  * Kategorien blendet die CSS-Regel per data-kategorie aus (globals.css). Ohne Treffer erscheint der Leerzustand
  * mit Zustandsgrafik, einem Satz und einem nächsten Schritt: „Alle“ im Filter, sonst der Weg zur Startseite (`leerSchritt`).
- * Texte und Zähler sind Props; die Liste bleibt statisch gerendert.
+ * Texte und Zähler sind Props; die Liste bleibt statisch gerendert. Rechts der Chips steht die Trefferzahl des
+ * aktiven Filters als Live-Region (aria-live): Sie wechselt beim Filtern und wird vorgelesen.
+ * Unter „Alle“ zeigt `kinder` die Startform mit Aufmacher, für eine Kategorie `kinderGefiltert` (einheitliches Raster).
  */
 export function NachrichtenFilter({
   kategorien,
   texte,
   leerSchritt,
   kinder,
+  kinderGefiltert,
 }: {
   kategorien: NachrichtenFilterChip[];
-  texte: { gruppe: string; neueste: string; alle: string; leerTitel: string };
+  texte: { gruppe: string; alle: string; leerTitel: string };
   /** Nächster Schritt, wenn ohne Filter gar keine Nachricht da ist (Server-Link, K-12). */
   leerSchritt: ReactNode;
+  /** Liste unter „Alle“: Aufmacher, Begleitspalte und Rest. */
   kinder: ReactNode;
+  /** Liste für eine einzelne Kategorie; fehlt sie, gilt `kinder`. */
+  kinderGefiltert?: ReactNode;
 }) {
   const [filter, setFilter] = useState('alle');
   /** Die neue Liste blendet erst nach einem Wechsel ein (B-04); beim ersten Laden steht sie sofort da. */
   const [gewechselt, setGewechselt] = useState(false);
-  const treffer = kategorien.find((k) => k.schluessel === filter)?.anzahl ?? 0;
+  const aktiv = kategorien.find((k) => k.schluessel === filter);
+  const treffer = aktiv?.anzahl ?? 0;
 
   function waehle(schluessel: string) {
     if (schluessel === filter) return;
@@ -63,10 +70,9 @@ export function NachrichtenFilter({
             );
           })}
         </div>
-        <span className="inline-flex items-center gap-2 text-18 font-bold text-tinte-2">
-          <Funnel aria-hidden className="size-5" />
-          {texte.neueste}
-        </span>
+        <p aria-live="polite" className="text-16 text-tinte-2">
+          {aktiv?.zaehl ?? ''}
+        </p>
       </div>
       {/* key: bei jedem Wechsel ein neues Element, damit die Überblendung erneut läuft */}
       <div
@@ -76,7 +82,11 @@ export function NachrichtenFilter({
         style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
       >
         {treffer > 0 ? (
-          kinder
+          filter === 'alle' ? (
+            kinder
+          ) : (
+            (kinderGefiltert ?? kinder)
+          )
         ) : (
           <div role="status" className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss px-6 py-12 text-center">
             <Zustandsgrafik art="leer" />

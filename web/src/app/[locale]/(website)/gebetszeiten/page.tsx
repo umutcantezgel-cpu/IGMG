@@ -10,7 +10,6 @@ import { datumMitJahr, folgemonat, METHODEN_ANZEIGE, monatsname } from '@/compon
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { qiblaRichtung } from '@/lib/gebetszeiten/berechnung';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 import { heuteBerlin } from '@/lib/zeit/heute';
@@ -19,20 +18,29 @@ import { ladeGebetszeitenFenster, ladeGebetszeitenMonat } from '@/server/queries
 
 export const ensureStatic = 'navigation';
 
+/** Locale für Datum und Hidschri im Tagesbogen (wie in start/Tagesbogen.tsx). */
+const BOGEN_LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
+
+/** Knopf „Vollbild“: steht im Kopf ab md und am Seitenende unter md (je eine Instanz, siehe unten). */
+const VOLLBILD =
+  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('gebetszeiten');
   return metadatenFuer({ pfad: '/gebetszeiten', titel: t('titel'), beschreibung: t('metaBeschreibung') });
 }
 
 /**
- * Gebetszeiten (design/PrayerTimes.dc.html, Blatt S02): Kopf mit Datum, Vollbild-Link und Standort, Nächstes Gebet,
- * Tabs Heute, Monatlich, Qibla, Einstellungen. Zeiten aus den Abfragen (K-08); der Standort ist fest Wetzlar.
+ * Gebetszeiten (Blatt S02): Kopf mit Datum, Standort und Vollbild-Link, darunter das nächste Gebet, die Tabs Heute,
+ * Monatlich, Qibla und Einstellungen. Zeiten aus den Abfragen (K-08); der Standort ist fest Wetzlar. Koordinaten stehen
+ * im Tab Einstellungen, die Qibla-Richtung im Tab Qibla.
  */
 export default async function GebetszeitenSeitePage() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('gebetszeiten');
   const tl = await getTranslations('leiste');
   const tk = await getTranslations('kopf');
+  const ts = await getTranslations('start');
   const [tDe, tTr, tEn] = await Promise.all([
     getTranslations({ locale: 'de', namespace: 'leiste' }),
     getTranslations({ locale: 'tr', namespace: 'leiste' }),
@@ -46,13 +54,6 @@ export default async function GebetszeitenSeitePage() {
 
   const namen = Object.fromEntries(GEBETE.map((g) => [g, tl(g)])) as Record<Gebet, string>;
   const beschreibungen = Object.fromEntries(GEBETE.map((g) => [g, t(`beschreibungen.${g}`)])) as Record<Gebet, string>;
-  const winkel = Math.round(qiblaRichtung(einst.breite, einst.laenge));
-  const koordinaten = t('koordinaten', {
-    breite: Math.abs(einst.breite).toFixed(4),
-    breitenRichtung: einst.breite >= 0 ? t('richtungNord') : t('richtungSued'),
-    laenge: Math.abs(einst.laenge).toFixed(4),
-    laengenRichtung: einst.laenge >= 0 ? t('richtungOst') : t('richtungWest'),
-  });
   const methode = METHODEN_ANZEIGE[einst.methode] ?? null;
   const hinweisHeute = fenster.quelle === 'berechnet' && !fenster.bestaetigt;
   const datumText = datumMitJahr(heute.datum, sprache);
@@ -109,6 +110,11 @@ export default async function GebetszeitenSeitePage() {
                 <CalendarDays aria-hidden className="size-5" />
                 {datumText}
               </span>
+              <span className="inline-flex items-center gap-2">
+                <MapPin aria-hidden className="size-5" />
+                <span className="sr-only">{t('standort')}:</span>
+                {tl('ort')}
+              </span>
               {hinweisHeute ? (
                 <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
                   <Info aria-hidden className="size-4" />
@@ -117,39 +123,27 @@ export default async function GebetszeitenSeitePage() {
               ) : null}
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
-            {/* Kein Vorabruf: Die Anzeige ist für den Moschee-Bildschirm, ihr Code (≈ 16 kB) wäre sonst Ballast (K-12) */}
-            <Link
-              href="/gebetszeiten/anzeige"
-              prefetch={false}
-              aria-label={t('vollbildAria')}
-              className="inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
-            >
-              <Maximize aria-hidden className="size-5" />
-              {t('vollbild')}
-            </Link>
-            <div className="flex min-h-14 flex-col justify-center rounded-md border border-rand bg-weiss px-4 py-1.5">
-              <span className="text-16 text-tinte-2">{t('standort')}</span>
-              <span className="flex items-center gap-2 font-bold">
-                <MapPin aria-hidden className="size-5 shrink-0 text-gruen-700" />
-                {tl('ort')}
-              </span>
-            </div>
-          </div>
+          {/* Kein Vorabruf: Die Anzeige ist für den Moschee-Bildschirm, ihr Code (≈ 16 kB) wäre sonst Ballast (K-12) */}
+          <Link href="/gebetszeiten/anzeige" prefetch={false} aria-label={t('vollbildAria')} className={`${VOLLBILD} max-md:hidden`}>
+            <Maximize aria-hidden className="size-5" />
+            {t('vollbild')}
+          </Link>
         </div>
         <GebetszeitenSeite
           tage={fenster.tage}
           referenz={fenster.referenz}
           texte={{
-            naechstesTitel: t.raw('naechstesTitel'),
             naechstesMorgen: t.raw('naechstesMorgen'),
             uhr: tl.raw('uhr'),
             verbleibt: tl.raw('verbleibt'),
             restStunden: t.raw('restStunden'),
             restMinuten: t.raw('restMinuten'),
             naechstesTag: tl('naechstes'),
-            badgeGebet: t('badgeGebet'),
             badgeInfo: t('badgeInfo'),
+            listeHeute: tl('listeHeute'),
+            bogenTitel: ts('bogenTitel'),
+            bogenBeschreibung: ts('bogenBeschreibung'),
+            bogenLocale: BOGEN_LOCALE[sprache],
             namen,
             beschreibungen,
             ansichtAria: t('ansichtAria'),
@@ -160,14 +154,16 @@ export default async function GebetszeitenSeitePage() {
               einstellungen: t('tabEinstellungen'),
             },
           }}
-          qiblaText={t('qibla', { winkel: String(winkel) })}
-          koordinatenText={koordinaten}
           panels={{
             monat: monatPanel,
             qibla: <QiblaPanel sprache={sprache} ort={ort} breite={einst.breite} laenge={einst.laenge} />,
             einstellungen: einstellungenPanel,
           }}
         />
+        <Link href="/gebetszeiten/anzeige" prefetch={false} aria-label={t('vollbildAria')} className={`${VOLLBILD} self-start md:hidden`}>
+          <Maximize aria-hidden className="size-5" />
+          {t('vollbild')}
+        </Link>
       </div>
     </Seitenrahmen>
   );

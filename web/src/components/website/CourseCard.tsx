@@ -7,6 +7,7 @@ import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { Anmeldeweg, KursDaten } from '@/server/queries/kurse';
 import { Bildplatzhalter } from './Bildplatzhalter';
+import { Achtstern } from './Icons';
 import { MedienBild, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
 
@@ -78,7 +79,7 @@ export async function CourseCard({
                 <User aria-hidden className="size-5" />
                 <span className="sr-only">{t('zielgruppe')}</span>
               </dt>
-              <dd className="font-bold">
+              <dd className="font-bold text-pretty">
                 <Text feld={kurs.zielgruppe} sprache={sprache} />
               </dd>
             </div>
@@ -89,7 +90,7 @@ export async function CourseCard({
                 <Clock aria-hidden className="size-5" />
                 <span className="sr-only">{t('zeiten')}</span>
               </dt>
-              <dd>
+              <dd className="text-pretty">
                 <Text feld={kurs.zeiten} sprache={sprache} />
               </dd>
             </div>
@@ -104,9 +105,10 @@ export async function CourseCard({
         {kurs.inhalte.length ? (
           <div className="flex flex-col gap-1.5">
             <h4 className="font-text text-16 font-bold text-tinte-2">{t('kursinhalte')}</h4>
-            <ul className="flex list-disc flex-col gap-0.5 pl-5.5 text-16">
+            <ul className="flex flex-col gap-0.5 text-16">
               {kurs.inhalte.map((inhalt, n) => (
-                <li key={n}>
+                <li key={n} className="flex items-start gap-2.5">
+                  <Achtstern size={12} className="mt-1.5 shrink-0 text-gruen-700" />
                   <Text feld={inhalt} sprache={sprache} />
                 </li>
               ))}

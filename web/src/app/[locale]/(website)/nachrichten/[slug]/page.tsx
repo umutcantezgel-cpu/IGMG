@@ -7,13 +7,14 @@ import { Suspense } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
 import { MedienBild, SIZES_HAUPTSPALTE } from '@/components/website/MedienBild';
 import { JsonLd } from '@/components/website/JsonLd';
+import { PageHeader } from '@/components/website/PageHeader';
 import { RichText } from '@/components/website/RichText';
 import { morphStil } from '@/components/website/morph';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { textMitSprache } from '@/components/website/Text';
+import { Trenner } from '@/components/website/Zustandsgrafik';
 import { AehnlicheArtikel } from '@/components/website/nachrichten/AehnlicheArtikel';
-import { AutorKarte, AutorZeile } from '@/components/website/nachrichten/Autor';
-import { MerkKnopf } from '@/components/website/nachrichten/MerkKnopf';
+import { AutorZeile } from '@/components/website/nachrichten/Autor';
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -67,10 +68,10 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
   const sprache = locale as Locale;
   const n = await ladeNachricht(slug);
   if (!n) notFound();
-  const [t, tk, tp, ta] = await Promise.all([
+  const [t, tk, tn, ta] = await Promise.all([
     getTranslations('nachricht'),
     getTranslations('karten'),
-    getTranslations('kopf'),
+    getTranslations('nachrichten'),
     getTranslations('allgemein'),
   ]);
   const titel = textMitSprache(n.titel, sprache);
@@ -88,7 +89,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
       bereich="moschee"
       seite="nachrichten"
       sprachZiel={{ pathname: '/nachrichten/[slug]', params: { slug } }}
-      pfad={[{ label: tp('neuigkeiten'), ziel: '/nachrichten' }, { label: titel.text }]}
+      pfad={[{ label: tn('titel'), ziel: '/nachrichten' }, { label: titel.text }]}
     >
       <JsonLd
         daten={nachricht({
@@ -101,115 +102,116 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
           sprache: titel.lang ?? sprache,
         })}
       />
-      <div className="@container mx-auto flex max-w-(--container-inhalt) flex-col gap-6 px-4 pt-4 pb-12 md:px-8 md:pt-8 md:pb-24">
-        <Link href="/" className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4">
-          <ArrowLeft aria-hidden className="size-5" />
-          {t('zurueck')}
-        </Link>
-        <div className="grid items-start gap-8 lg:grid-cols-3">
-          <article className="flex min-w-0 flex-col gap-6 lg:col-span-2">
-            <header className="flex flex-col gap-4">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-16 text-tinte-2">
-                <span className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 font-bold text-tinte-2">
-                  {tk(`nkat_${n.kategorie}`)}
+      <PageHeader
+        oben={
+          <Link
+            href="/nachrichten"
+            className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4"
+          >
+            <ArrowLeft aria-hidden className="size-5" />
+            {t('zurueckListe')}
+          </Link>
+        }
+        kennung={tk(`nkat_${n.kategorie}`)}
+        titel={titel.text}
+        titelLang={titel.lang}
+        titelStil={morphStil(`n-${n.slug}-titel`, 'text')}
+        untertitel={kurz.text || undefined}
+        untertitelLang={kurz.lang}
+        kinder={
+          <>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-16 text-tinte-2">
+              {n.wichtig ? (
+                <span className="inline-flex rounded-pill bg-tag-wichtig-bg px-3 py-0.5 font-bold text-tag-wichtig">
+                  {tk('nkat_wichtig')}
                 </span>
-                {n.wichtig ? (
-                  <span className="inline-flex rounded-pill bg-tag-wichtig-bg px-3 py-0.5 font-bold text-tag-wichtig">
-                    {tk('nkat_wichtig')}
-                  </span>
-                ) : null}
-                <span className="inline-flex items-center gap-1.5">
-                  <Calendar aria-hidden className="size-4" />
-                  <time dateTime={n.veroeffentlichtAm}>
-                    {t('datumZeit', { datum: datumLang(veroeffentlicht, sprache), zeit: uhrzeit(veroeffentlicht, sprache) })}
-                  </time>
-                </span>
-                {n.lesezeit ? (
-                  <span className="inline-flex items-center gap-1.5">
-                    <Clock aria-hidden className="size-4" />
-                    {t('lesezeit', { minuten: n.lesezeit })}
-                  </span>
-                ) : null}
-                {rueckfall ? (
-                  <span className="inline-flex items-center gap-1.5 rounded-pill bg-info-toenung px-3 py-0.5 font-bold text-info">
-                    <Languages aria-hidden className="size-4" />
-                    {ta('nurDeutsch')}
-                  </span>
-                ) : null}
-              </div>
-              <h1 lang={titel.lang} className="text-display-1 text-pretty" style={morphStil(`n-${n.slug}-titel`, 'text')}>
-                {titel.text}
-              </h1>
-              {kurz.text ? (
-                <p lang={kurz.lang} className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">
-                  {kurz.text}
-                </p>
               ) : null}
-              <div className="flex flex-wrap items-center justify-between gap-4 border-y border-linie py-4">
-                <AutorZeile name={autorName} funktion={autorFunktion} />
-                <div className="flex flex-wrap gap-2">
-                  <TeilenKnopf titel={titel.text} texte={{ teilen: t('teilen'), kopiert: t('teilenKopiert'), fehler: t('teilenFehler') }} />
-                  <MerkKnopf art="speichern" texte={t('speichern')} />
-                </div>
+              <span className="inline-flex items-center gap-1.5">
+                <Calendar aria-hidden className="size-4" />
+                <time dateTime={n.veroeffentlichtAm}>
+                  {t('datumZeit', { datum: datumLang(veroeffentlicht, sprache), zeit: uhrzeit(veroeffentlicht, sprache) })}
+                </time>
+              </span>
+              {n.lesezeit ? (
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock aria-hidden className="size-4" />
+                  {t('lesezeit', { minuten: n.lesezeit })}
+                </span>
+              ) : null}
+              {rueckfall ? (
+                <span className="inline-flex items-center gap-1.5 rounded-pill bg-info-toenung px-3 py-0.5 font-bold text-info">
+                  <Languages aria-hidden className="size-4" />
+                  {ta('nurDeutsch')}
+                </span>
+              ) : null}
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-4 border-y border-linie py-4">
+              <AutorZeile name={autorName} funktion={autorFunktion} />
+              <div className="flex flex-wrap gap-2">
+                <TeilenKnopf titel={titel.text} texte={{ teilen: t('teilen'), kopiert: t('teilenKopiert'), fehler: t('teilenFehler') }} />
               </div>
-            </header>
-            {/* Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher */}
-            <div style={morphStil(`n-${n.slug}-bild`)}>
-              {n.bild ? (
-                <MedienBild
-                  bild={n.bild}
-                  sprache={sprache}
-                  vorladen
-                  sizes={SIZES_HAUPTSPALTE}
-                  className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
-                />
-              ) : (
-                <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
-              )}
             </div>
-            {inhalt ? (
-              <RichText
-                doc={inhalt.doc}
-                lang={inhalt.rueckfall ? 'de' : undefined}
-                className="gap-5 text-pretty"
-                bilder={n.textBilder}
+          </>
+        }
+      />
+
+      <div className="@container mx-auto grid max-w-(--container-inhalt) items-start gap-12 px-4 py-abschnitt md:px-8 lg:grid-cols-3">
+        <article className="flex min-w-0 flex-col gap-6 lg:col-span-2">
+          {/* Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher */}
+          <div style={morphStil(`n-${n.slug}-bild`)}>
+            {n.bild ? (
+              <MedienBild
+                bild={n.bild}
                 sprache={sprache}
+                vorladen
+                sizes={SIZES_HAUPTSPALTE}
+                className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100"
               />
-            ) : null}
-            {n.schlagwoerter.length ? (
-              <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">
-                <h2
-                  id="nachricht-schlagwoerter"
-                  className="flex items-center gap-2 font-text text-24 leading-tight font-bold tracking-normal"
-                >
-                  <Bookmark aria-hidden className="size-5 text-gruen-700" />
-                  {t('schlagwoerter')}
-                </h2>
-                <ul className="flex flex-wrap gap-2">
-                  {n.schlagwoerter.map((s, i) => {
-                    const w = textMitSprache(s, sprache);
-                    return (
-                      <li
-                        key={i}
-                        lang={w.lang}
-                        className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2"
-                      >
-                        #{w.text}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            ) : null}
-            <div className="flex flex-wrap gap-2">
-              <MerkKnopf art="gefallt" texte={t('gefaellt')} />
-            </div>
-          </article>
+            ) : (
+              <Bildplatzhalter beschriftung={t('bildPlatz')} className="h-55 rounded-lg border border-linie @3xl:h-75 @6xl:h-100" />
+            )}
+          </div>
+          {inhalt ? (
+            <RichText
+              doc={inhalt.doc}
+              lang={inhalt.rueckfall ? 'de' : undefined}
+              className="gap-5 text-pretty"
+              bilder={n.textBilder}
+              sprache={sprache}
+            />
+          ) : null}
+          {n.schlagwoerter.length ? (
+            <section aria-labelledby="nachricht-schlagwoerter" className="flex flex-col gap-3">
+              <h2
+                id="nachricht-schlagwoerter"
+                className="flex items-center gap-2 font-text text-24 leading-tight font-bold tracking-normal"
+              >
+                <Bookmark aria-hidden className="size-5 text-gruen-700" />
+                {t('schlagwoerter')}
+              </h2>
+              <ul className="flex flex-wrap gap-2">
+                {n.schlagwoerter.map((s, i) => {
+                  const w = textMitSprache(s, sprache);
+                  return (
+                    <li
+                      key={i}
+                      lang={w.lang}
+                      className="inline-flex rounded-pill border border-linie bg-sand px-3 py-0.5 text-16 font-bold text-tinte-2"
+                    >
+                      #{w.text}
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          ) : null}
+          {aehnliche.length ? <Trenner className="lg:hidden" /> : null}
+        </article>
+        {aehnliche.length ? (
           <aside className="flex min-w-0 flex-col gap-6">
-            <AutorKarte ueberschrift={t('autorUeber')} name={autorName} funktion={autorFunktion} text={t('autorText')} />
-            {aehnliche.length ? <AehnlicheArtikel titel={t('aehnlich')} artikel={aehnliche} sprache={sprache} /> : null}
+            <AehnlicheArtikel titel={t('aehnlich')} artikel={aehnliche} sprache={sprache} />
           </aside>
-        </div>
+        ) : null}
       </div>
     </Seitenrahmen>
   );

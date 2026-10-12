@@ -44,6 +44,8 @@ const ZEICHEN: Record<Exclude<Zustand, 'erfolg'>, string[]> = {
 
 export function Zustandsgrafik({ art, groesse = 96, className }: { art: Zustand; groesse?: number; className?: string }) {
   const farbe = FARBE[art];
+  // Strich 2 px auf dem Bildschirm bei jeder Größe (H-B14): Die Grafik zeichnet im 96er-Raster, also 192 / groesse
+  const strich = 192 / groesse;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -56,18 +58,18 @@ export function Zustandsgrafik({ art, groesse = 96, className }: { art: Zustand;
       aria-hidden="true"
       className={klassen('shrink-0', farbe.zeichen, className)}
     >
-      <path d={ACHTSTERN_96} className={klassen(farbe.flaeche, farbe.linie)} strokeWidth="2" />
+      <path d={ACHTSTERN_96} className={klassen(farbe.flaeche, farbe.linie)} strokeWidth={strich} />
       {art === 'erfolg' ? (
         <path
           d="M37 49l7 7 15-16"
           pathLength={1}
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth={strich}
           className="linie-zeichnet"
           style={{ '--dauer': 'var(--dauer-auftritt)', '--verzoegerung': 'var(--dauer-rueckmeldung)' } as CSSProperties}
         />
       ) : (
-        <g transform="translate(36 36)" stroke="currentColor" strokeWidth="2">
+        <g transform="translate(36 36)" stroke="currentColor" strokeWidth={strich}>
           {ZEICHEN[art].map((d) => (
             <path key={d} d={d} />
           ))}

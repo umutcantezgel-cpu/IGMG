@@ -9,6 +9,7 @@ import { KUERZEL_ALLE, type Kuerzel } from './stil';
  * Mittelpunkt, Skalieren um die Mitte wirkt wie Enthüllen – und läuft nur im Compositor (E3-Tor: die frühere Maske
  * erzwang Neuzeichnen je Bild, 13,9 % verworfene Bilder bei 4-facher Drosselung).
  * Geometrie: Quadrat 30–90 und dasselbe Quadrat um 45° gedreht (Spitzen bei 17,57 und 102,43), geteilt an den Diagonalen.
+ * Ausschnitt 16 16 88 88 mit 1,5 px Strich (Fuge ≈ 3 px); eine weiße Unterlage ohne Strich liegt unter den Tönungen.
  */
 const SEGMENT: Record<Kuerzel, string> = {
   at: 'M60 60 30 30h17.57L60 17.57 72.43 30H90z',
@@ -27,14 +28,18 @@ const FLAECHE: Record<Kuerzel, { voll: string; leise: string }> = {
 
 export function FamilieDerVier({ org, className }: { org: Kuerzel; className?: string }) {
   return (
-    <span aria-hidden="true" className={cn('relative block size-16 shrink-0 md:size-48', className)}>
-      <svg viewBox="0 0 120 120" aria-hidden="true" className="size-full">
+    <span aria-hidden="true" className={cn('relative block size-24 shrink-0 md:size-48', className)}>
+      <svg viewBox="16 16 88 88" aria-hidden="true" className="size-full">
+        <path
+          d="M30 30h17.57L60 17.57 72.43 30H90v17.57L102.43 60 90 72.43V90H72.43L60 102.43 47.57 90H30V72.43L17.57 60 30 47.57z"
+          className="fill-weiss"
+        />
         {KUERZEL_ALLE.map((k) => (
-          <path key={k} d={SEGMENT[k]} className={cn(FLAECHE[k].leise, 'stroke-weiss')} strokeWidth="2" strokeLinejoin="round" />
+          <path key={k} d={SEGMENT[k]} className={cn(FLAECHE[k].leise, 'stroke-weiss')} strokeWidth="1.5" strokeLinejoin="round" />
         ))}
       </svg>
-      <svg viewBox="0 0 120 120" aria-hidden="true" className="familie-eigen absolute inset-0 size-full">
-        <path d={SEGMENT[org]} className={cn(FLAECHE[org].voll, 'stroke-weiss')} strokeWidth="2" strokeLinejoin="round" />
+      <svg viewBox="16 16 88 88" aria-hidden="true" className="familie-eigen absolute inset-0 size-full">
+        <path d={SEGMENT[org]} className={cn(FLAECHE[org].voll, 'stroke-weiss')} strokeWidth="1.5" strokeLinejoin="round" />
       </svg>
     </span>
   );

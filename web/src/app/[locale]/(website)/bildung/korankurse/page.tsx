@@ -35,7 +35,7 @@ export default async function KorankurseSeite() {
       sprachZiel="/bildung/korankurse"
       pfad={[{ label: tp('bildung') }, { label: tp('korankurse') }]}
     >
-      <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
+      <PageHeader kennung={tp('bildung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-10 px-4 py-abschnitt-klein md:gap-16 md:px-8">
         <section aria-labelledby="kurse" className="flex flex-col gap-8">
           <h2 id="kurse" className="text-display-2">
@@ -62,7 +62,7 @@ export default async function KorankurseSeite() {
             </div>
           )}
         </section>
-        <div className="flex flex-wrap items-stretch gap-6">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
           <AllgemeineInformationen />
           <AnmeldeKarte kurse={kurse} kontakt={kontakt} sprache={sprache} />
         </div>

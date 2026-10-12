@@ -1,7 +1,9 @@
 'use client';
 
-import { Clock, Compass, Globe, Moon, Sun, Sunrise, Sunset, type LucideIcon } from 'lucide-react';
-import type { ReactNode } from 'react';
+import { Clock, Moon, Sun, Sunrise, Sunset, type LucideIcon } from 'lucide-react';
+import { type CSSProperties, type ReactNode, useState } from 'react';
+import { Achtstern } from '@/components/website/Icons';
+import { TagesbogenLive, type TagesbogenTexte } from '@/components/website/start/TagesbogenLive';
 import { berlinerDatum, naechstesGebet, type NaechstesGebet } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
@@ -11,16 +13,22 @@ import { fuelle, restzeitText } from './zeiten';
 
 /** Fertig übersetzte Texte aus messages; Platzhalter wie {name} füllt die Komponente (K-12). */
 export type GebetszeitenSeiteTexte = {
-  naechstesTitel: string;
-  /** „{name} (morgen)“: Das nächste Gebet liegt am Folgetag (nach Isha), damit die Zeit nicht mit der heutigen Karte verwechselt wird. */
+  /** „{name} (morgen)“: Das nächste Gebet liegt am Folgetag (nach Isha), damit die Zeit nicht mit der heutigen Tafel verwechselt wird. */
   naechstesMorgen: string;
   uhr: string;
   verbleibt: string;
   restStunden: string;
   restMinuten: string;
+  /** Kennung „Nächstes Gebet“ (Leiste): in der Überschrift des Bereichs und an der nächsten Zeit der Tafel. */
   naechstesTag: string;
-  badgeGebet: string;
   badgeInfo: string;
+  /** Name der Tafel für Hilfstechnik (Leiste, listeHeute). */
+  listeHeute: string;
+  /** Titel und Beschreibung des Tagesbogens (start.bogenTitel, start.bogenBeschreibung). */
+  bogenTitel: string;
+  bogenBeschreibung: string;
+  /** Locale für Datum und Hidschri im Tagesbogen. */
+  bogenLocale: string;
   namen: Record<Gebet, string>;
   beschreibungen: Record<Gebet, string>;
   ansichtAria: string;
@@ -33,20 +41,18 @@ export type GebetszeitenSeiteProps = {
   /** Kalendertag des Servers beim Rendern; bis zur Hydrierung und ohne Browserzeit gilt er. */
   referenz: string;
   texte: GebetszeitenSeiteTexte;
-  qiblaText: string;
-  koordinatenText: string;
   panels: Record<'monat' | 'qibla' | 'einstellungen', ReactNode>;
 };
 
 const SYMBOL: Record<Gebet, LucideIcon> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
 
 /**
- * Gebetszeiten im Browser (design/PrayerTimes.dc.html, Blatt S02): Nächstes Gebet mit Restzeit über den Tabs,
- * im Tab Heute sechs Karten mit der nächsten Karte hervorgehoben. Uhrzeit, nächstes Gebet und Restzeit rechnet
- * der Browser aus den zwischengespeicherten Tageszeiten (K-08). Bis zur Hydrierung steht ein Platzhalter „–“
- * und jede Karte reserviert ihre Zeile für „Nächstes Gebet“, damit nichts springt (K-12, kein CLS).
+ * Gebetszeiten im Browser (Blatt S02): oben das nächste Gebet mit Restzeit, im Tab Heute der Tagesbogen (ruhig, B-10)
+ * neben einer Tafel mit den sechs Zeiten. Uhrzeit, nächstes Gebet und Restzeit rechnet der Browser aus den
+ * zwischengespeicherten Tageszeiten (K-08). Bis zur Hydrierung steht ein Platzhalter „–“, und die Tafel zeigt alle
+ * Zeiten grün, damit nichts springt (K-12, kein CLS).
  */
-export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinatenText, panels }: GebetszeitenSeiteProps) {
+export function GebetszeitenSeite({ tage, referenz, texte, panels }: GebetszeitenSeiteProps) {
   const jetzt = useJetzt();
   const datum = jetzt ? berlinerDatum(jetzt) : referenz;
   const gefunden = tage.findIndex((t) => t.datum === datum);
@@ -58,11 +64,23 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
           tage.findIndex((t) => t.datum === referenz),
         );
   const heute = tage[index];
-  if (!heute) return null;
   const morgen = tage[index + 1];
-  const naechstes = jetzt
-    ? naechstesGebet({ datum: heute.datum, zeiten: heute }, morgen ? { datum: morgen.datum, zeiten: morgen } : null, jetzt, true)
-    : null;
+  const naechstes =
+    heute && jetzt
+      ? naechstesGebet({ datum: heute.datum, zeiten: heute }, morgen ? { datum: morgen.datum, zeiten: morgen } : null, jetzt, true)
+      : null;
+  // B-10: Gewechselt ist nur ein echter Wechsel von Gebet oder Tagesteil; der erste Wert nach der Hydrierung zählt nicht.
+  // Der Merker wird beim Rendern fortgeschrieben (Muster „Information aus vorherigem Rendern“), nicht im Effekt: So wirken
+  // Einblendung und Überblendung schon in dem Durchgang, der die neue Hervorhebung zeigt.
+  const wechsel = naechstes ? `${naechstes.gebet}-${naechstes.morgen ? 'morgen' : 'heute'}` : null;
+  const [merker, setMerker] = useState<{ wechsel: string | null; gewechselt: boolean }>({ wechsel, gewechselt: false });
+  let gewechselt = merker.gewechselt;
+  if (merker.wechsel !== wechsel) {
+    gewechselt = merker.wechsel !== null && wechsel !== null;
+    setMerker({ wechsel, gewechselt });
+  }
+  if (!heute) return null;
+
   const zeitTag = naechstes ? (naechstes.morgen ? morgen : heute) : undefined;
   const naechstesName = naechstes
     ? naechstes.morgen
@@ -71,6 +89,15 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
     : '–';
   const naechsteZeit = naechstes && zeitTag ? fuelle(texte.uhr, { zeit: zeitTag[naechstes.gebet] }) : '–';
   const verbleibt = naechstes ? restzeitText(naechstes.restMs, { stunden: texte.restStunden, minuten: texte.restMinuten }) : '–';
+  // Ohne alleHref zeigt der Tagesbogen keinen Link; das Pflichtfeld bleibt leer.
+  const bogenTexte: TagesbogenTexte = {
+    titel: texte.bogenTitel,
+    beschreibung: texte.bogenBeschreibung,
+    namen: texte.namen,
+    listeHeute: texte.listeHeute,
+    alle: '',
+    locale: texte.bogenLocale,
+  };
 
   return (
     <>
@@ -78,29 +105,40 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
         aria-labelledby="gz-naechstes"
         className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8"
       >
-        <div className="flex min-w-0 flex-col gap-1">
-          <h2 id="gz-naechstes" className="font-text text-20 font-bold text-gruen-100">
-            {fuelle(texte.naechstesTitel, { name: naechstesName })}
+        {/* Name, Zeit und Restzeit gehören zu einem Gebet: Bei jedem echten Wechsel blenden sie neu ein (B-10) */}
+        <div
+          key={wechsel ?? 'ohne'}
+          className={klassen(
+            'flex min-w-0 flex-col gap-1 lg:w-full lg:flex-row lg:items-end lg:justify-between lg:gap-8',
+            gewechselt && 'blendet-ein',
+          )}
+          style={gewechselt ? ({ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties) : undefined}
+        >
+          <h2 id="gz-naechstes" className="flex flex-col items-start gap-1">
+            <span className="inline-flex items-center gap-2 font-text text-16 font-bold text-gruen-100">
+              <Achtstern size={16} />
+              {texte.naechstesTag}
+            </span>{' '}
+            <span className="block font-display text-display-2 text-weiss">{naechstesName}</span>
           </h2>
-          <span className="text-48 font-bold tabular-nums md:text-anzeige-64">{naechsteZeit}</span>
-          <span className="text-20 font-bold">{fuelle(texte.verbleibt, { zeit: verbleibt })}</span>
+          {/* Ab lg steht die Zeit rechts neben dem Namen: die dunkle Fläche trägt eine Zeile statt eines leeren Viertels */}
+          <div className="flex flex-col gap-1 lg:items-end">
+            <span className="text-48 font-bold tabular-nums md:text-anzeige-64">{naechsteZeit}</span>
+            <span className="text-20 font-bold">{fuelle(texte.verbleibt, { zeit: verbleibt })}</span>
+          </div>
         </div>
-        <ul className="flex flex-col gap-2 text-18">
-          <li className="flex items-center gap-2.5">
-            <Compass aria-hidden className="size-5 shrink-0 text-gruen-100" />
-            <span>{qiblaText}</span>
-          </li>
-          <li className="flex items-center gap-2.5">
-            <Globe aria-hidden className="size-5 shrink-0 text-gruen-100" />
-            <span>{koordinatenText}</span>
-          </li>
-        </ul>
       </section>
       <GebetszeitenTabs
         ansichtAria={texte.ansichtAria}
         labels={texte.tabs}
         panels={{
-          heute: <HeuteKarten heute={heute} naechstes={naechstes} texte={texte} />,
+          heute: (
+            // Unter lg steht die Tafel vor dem Bogen; ab lg liegt der Bogen links (zwei Spalten), die Tafel rechts
+            <div className="grid items-start gap-6 lg:grid-cols-3">
+              <HeuteTafel heute={heute} naechstes={naechstes} texte={texte} gewechselt={gewechselt} />
+              <TagesbogenLive ruhig tage={tage} referenz={referenz} texte={bogenTexte} className="lg:order-first lg:col-span-2" />
+            </div>
+          ),
           monat: panels.monat,
           qibla: panels.qibla,
           einstellungen: panels.einstellungen,
@@ -110,54 +148,60 @@ export function GebetszeitenSeite({ tage, referenz, texte, qiblaText, koordinate
   );
 }
 
-/** Sechs Tageszeiten als Karten (Tab Heute). Die Karte „Nächstes Gebet“ bekommt Ring und Hintergrund, ihre Zeile bleibt immer. */
-function HeuteKarten({
+/**
+ * Die sechs Tageszeiten als Tafel (Tab Heute, alle Breiten): eine Liste mit Trennlinien. Das nächste Gebet ist
+ * hervorgehoben und trägt die Kennung; Gebete vor dem nächsten sind grau. Die Hervorhebung wandert nur nach einem
+ * echten Wechsel (`gewechselt`), beim ersten Setzen sofort.
+ */
+function HeuteTafel({
   heute,
   naechstes,
   texte,
+  gewechselt,
 }: {
   heute: GebetszeitTag;
   naechstes: NaechstesGebet | null;
   texte: GebetszeitenSeiteTexte;
+  gewechselt: boolean;
 }) {
-  // Sechs Karten: eine Reihe ab 1280 px, sonst 3 × 2 bzw. 2 × 3 – nie 4 + 2 (O-Feinschliff nach H-A01)
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+    <ul aria-label={texte.listeHeute} className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1">
       {GEBETE.map((g) => {
         const ist = naechstes !== null && !naechstes.morgen && naechstes.gebet === g;
+        const vergangen = naechstes !== null && (naechstes.morgen || GEBETE.indexOf(g) < GEBETE.indexOf(naechstes.gebet));
         const Icon = SYMBOL[g];
-        const sonnenaufgang = g === 'gunes';
         return (
           <li
             key={g}
             data-gebet={g}
+            aria-current={ist ? 'time' : undefined}
             className={klassen(
-              'flex flex-col gap-2 rounded-lg border border-linie px-6 py-5 shadow-s1 transition duration-(--dauer-wechsel)',
-              ist ? 'bg-gruen-50 ring-2 ring-gruen-700 ring-inset' : 'bg-weiss',
+              'flex min-h-18 items-center gap-4 px-4 py-3 md:px-6',
+              ist && 'bg-gruen-50',
+              gewechselt && 'transition-colors duration-(--dauer-wechsel)',
             )}
           >
-            <div className="flex items-center justify-between gap-2">
-              <Icon aria-hidden className="size-6 text-gruen-700" />
-              <span
-                className={klassen(
-                  'inline-flex rounded-pill px-2.5 py-0.5 text-16 font-bold',
-                  sonnenaufgang ? 'bg-info-toenung text-info' : 'bg-gruen-50 text-gruen-800',
-                )}
-              >
-                {sonnenaufgang ? texte.badgeInfo : texte.badgeGebet}
-              </span>
-            </div>
-            <h3 className="font-text text-20 leading-snug font-bold">{texte.namen[g]}</h3>
-            <span className="text-36 font-bold text-gruen-800 tabular-nums">{heute[g]}</span>
-            <span className="text-16 text-tinte-2">{texte.beschreibungen[g]}</span>
-            <span
-              className={klassen(
-                'mt-auto inline-flex items-center gap-1.5 self-start rounded-pill bg-gruen-700 px-2.5 py-0.5 text-16 font-bold text-weiss',
-                !ist && 'invisible',
+            <Icon aria-hidden className={klassen('size-6 shrink-0', vergangen ? 'text-tinte-3' : 'text-gruen-700')} />
+            <div className="flex min-w-0 flex-1 flex-col">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <h3 className="font-text text-20 leading-snug font-bold">{texte.namen[g]}</h3>
+                {g === 'gunes' ? (
+                  <span className="inline-flex rounded-pill bg-info-toenung px-2.5 py-0.5 text-16 font-bold text-info">
+                    {texte.badgeInfo}
+                  </span>
+                ) : null}
+              </div>
+              {ist ? (
+                <span className="inline-flex min-h-6 items-center gap-1.5 text-16 font-bold text-gruen-800">
+                  <Clock aria-hidden className="size-4" />
+                  {texte.naechstesTag}
+                </span>
+              ) : (
+                <span className="min-h-6 text-16 text-tinte-2">{texte.beschreibungen[g]}</span>
               )}
-            >
-              <Clock aria-hidden className="size-4" />
-              {texte.naechstesTag}
+            </div>
+            <span className={klassen('shrink-0 text-30 font-bold tabular-nums', vergangen ? 'text-tinte-2' : 'text-gruen-800')}>
+              {heute[g]}
             </span>
           </li>
         );
