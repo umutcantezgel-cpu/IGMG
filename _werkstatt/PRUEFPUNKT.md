@@ -1,27 +1,19 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (06:55 UTC):**
-  1. **Stufe-C-Nacharbeit committen** (nach grünen Unit-Tests). Inhalt:
-     - Z-03: Mail-Maße in `farben.ts` (`MAILMASS`), Dialog-Utilities `breite-dialog`/`hoehe-dialog`/`max-w-dialog`, OrgCard `leading-tight`/`underline-offset-5`, Druck `var(--color-weiss)`, belegte Ausnahmen in REFERENZ §1.
-     - Z-06: `aria-hidden="true"` explizit in FormWizard, `tor/svg3.mjs` ohne `_lauf/`, Icon-Familie in K-008.
-     - Z-07: Platzhalter-Pillen deckend (axe „unklar“), Tastaturregel erkennt den Fokusring am ALTCHA-Rahmen (`bilder/Z07-altcha/`).
-     - Z-05: B-06/B-09 starten nach Ruhe (`useNachRuhe`, `NachRuhe`); B-03 für Radix-Dialog und Kontomenü der Verwaltung; Register-Notiz zu den wirkungslosen shadcn-Klassen.
-     - Z-02: F-08-Erwartung (H-B11-Schreibweise).
-     - Z-11: `protokolle/C-vercel-mcp.md`.
-  2. **3500 neu bauen** vom neuen Commit (`$SCRATCHPAD/head/e4-bau.sh <rev>`, Dev 3200 vorher aus, wegen OOM).
-  3. **Nachmessung (Haiku):** betroffene Stufe-C-Schritte gegen 3500. Das sind Bildsatz, axe, Tastatur, freie Werte, SVG, Bildrate b06/b09, Konsole, Statuscodes, Funktionsliste, vercel build und release:check, dazu Lighthouse-Paare verschränkt ×5. Danach STUFE-C.md und H-L01.md fortschreiben.
-  4. **E2E-Suite** (`$SCRATCHPAD/e2e-brief.md`, Port 3700; Worktree auf den neuen Stand umstellen).
-  5. **Sichtabnahme** des neuen Bildsatzes, Abschlussbilder und Galerie erneuern.
-  6. **FF main** nach L-E01, danach Produktion per MCP lesen.
-  7. **Endprüfung:** `blind-vorbereiten.py` + `endpruefung.workflow.js`. Urteil wörtlich, ABNAHME-Häkchen, BERICHT. Dann CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
+- **Nächster exakter Schritt (09:05 UTC):**
+  1. **H-E-Welle 1 läuft** als zwei `hb-welle`-Workflows: A = H-E01, 03, 05, 07; B = H-E02, 04, 06, 08. Paketaufträge liegen unter `pakete/H-E/`, Bericht `berichte/SICHTABNAHME-C2.md`. Nach den Workflows:
+     - Ergebnisse sichten und gemeinsame Dateien nachziehen (REFERENZ §1 `bogen.ts EINTRITT`, REFERENZ §2).
+     - Stufe A gesamt prüfen: tsc, eslint, Unit, `sprachen:pruefen`, freie Werte.
+     - Bilder sichten, dann committen.
+  2. **H-E-Welle 2:** H-E09–14 (H-E14: die CSS-Zeile ist gesetzt, der Baumeister zieht nur den Kommentar in `morph.ts` nach).
+  3. **Endstand:** 3500 neu bauen (`head/e4-bau.sh <rev>`). Dann Stufe-C-Schritte 1, 2, 5, 6, 7 und 9–11, anschließend bei ruhiger Last 12 (`LH_RUNDEN=5`) und `inp-paare.sh 3`. Danach die ALTCHA-E2E einzeln wiederholen (Mitgliedsantrag, Voranmeldung, Eingänge) und `abschluss-kopieren.sh` + `galerie.mjs` ausführen.
+  4. **FF main** nach L-E01, danach die Produktion per MCP lesen.
+  5. **Endprüfung:** `blind-vorbereiten.py` + `endpruefung.workflow.js`. Urteil wörtlich übernehmen, ABNAHME-Häkchen setzen, BERICHT schreiben. Dann CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
-  - 3500 Endstand 5d19108 (wird neu gebaut).
-  - 3200 Entwicklung (pglite-h10; übernimmt Dateiänderungen derzeit nicht zuverlässig, für Proben nur mit Neustart über `$SCRATCHPAD/dev-neustart.sh`).
-  - Postgres 16 lokal (5432).
-- **Letzter grüner Commit:**
-  - Branch: e0c8e9f (Perf III, Unit 797, tsc grün). Die Vorschau dpl_5RDkcAe97uNMjxwesxHAcGm4pZjc ist READY in fra1.
-  - main: 71e263f, Produktion READY. Das Protokoll enthält nur die erwarteten Startprüfungs-Meldungen über fehlende Menschen-Werte (`protokolle/C-vercel-mcp.md`).
-- **Git während der Nachmessung:** 159 Protokolle `_werkstatt/protokolle/C-*` stehen auf `assume-unchanged` (Liste `$SCRATCHPAD/c-dateien.txt`). In `.git/info/exclude` steht der Block `stufe-c2-laufend`. Nach dem Lauf zurücksetzen: `xargs -a $SCRATCHPAD/c-dateien.txt git update-index --no-assume-unchanged`, den Block aus `.git/info/exclude` entfernen, dann alles committen.
+  - 3500 Stand f2a5f8d (Anmeldestand `head/verwaltung-werkzeug`).
+  - 3200 Entwicklung (pglite-h10, Testkonto `pruefer-dev5`, `$SCRATCHPAD/verwaltung-state.json`). Neustart nur über `$SCRATCHPAD/dev-neustart.sh`, Anmeldung über `dev-anmeldung.sh <name>`.
+  - Postgres 16 lokal (5432), E2E-Datenbank `igmg_e2e`.
+- **Letzter grüner Commit:** c6c96ba (Unit 804, tsc grün). main = 71e263f, Produktion READY.
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.
