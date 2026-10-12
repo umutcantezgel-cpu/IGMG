@@ -1,15 +1,15 @@
 # H-R01 · Wortlaut der Rechts- und Einwilligungstexte
 
-Stand des Protokolls: 2026-10-12T11:16:18.684Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
-Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `58a3344` (58a33449c)
+Stand des Protokolls: 2026-10-12T17:46:31.137Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
+Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `325c38a` (325c38a39)
 Arbeitsbaum unter web/ weicht von HEAD ab: nein · unversionierte Dateien unter web/: 0
-Wiederholbarkeit: Ergebnis-Hash `c13edfc4f03f7b7d` (Vollwert in der JSON-Datei)
+Wiederholbarkeit: Ergebnis-Hash `befcb0e32a032ac7` (Vollwert in der JSON-Datei)
 
 ## Ergebnis
 
 - Rechts- und Einwilligungs-Einträge: 723 · gleich 637 · verschoben 0 · geändert 0 · neu 85 · entfernt 1
 - Befunde „hoch“ offen (Einheiten): **0** · durch Ausnahme gedeckt: 34
-- Nicht-Rechtstexte: 449 geändert, neu oder entfernt (Kontrolltabelle unten); 5683 gleich
+- Nicht-Rechtstexte: 452 geändert, neu oder entfernt (Kontrolltabelle unten); 5680 gleich
 
 ## Quellen
 
@@ -30,7 +30,7 @@ Wiederholbarkeit: Ergebnis-Hash `c13edfc4f03f7b7d` (Vollwert in der JSON-Datei)
 | M | messages/bereiche/moschee-anfrage.json | Schlüssel (exakt) | 721ad60b9ee8 | 721ad60b9ee8 | ja |
 | M | messages/bereiche/nachrichten.json | Schlüssel (exakt) | 10528de4d7c1 | 56a9f7a0e2fd | nein |
 | M | messages/bereiche/organisationen.json | Schlüssel (exakt) | 9422c3315fc2 | 6119ee789005 | nein |
-| M | messages/bereiche/projekte.json | Schlüssel (exakt) | 8bca072605e2 | c788a33caa14 | nein |
+| M | messages/bereiche/projekte.json | Schlüssel (exakt) | 8bca072605e2 | 78d687f66161 | nein |
 | M | messages/bereiche/quran.json | Schlüssel (exakt) | 2ee4be930784 | 48ebe6728f24 | nein |
 | M | messages/bereiche/rechtliches.json | Schlüssel (exakt) | fee0ee073319 | c27264a703ca | nein |
 | M | messages/bereiche/suche.json | Schlüssel (exakt) | 91cd76220ecf | 8f3ca9b24130 | nein |
@@ -84,8 +84,8 @@ Wiederholbarkeit: Ergebnis-Hash `c13edfc4f03f7b7d` (Vollwert in der JSON-Datei)
 | G | src/app/[locale]/verwaltung/(geschuetzt)/benutzer/page.tsx | Prosa + Rechtsbegriff | fd8759b7077b | 674094e3fa71 | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx | Prosa + Rechtsbegriff | ed66cc13dc77 | fdc6e1669d50 | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/[bereich]/page.tsx | Prosa + Rechtsbegriff | c8afa1de2dc9 | 2e0f4587934a | nein |
-| G | src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx | Prosa + Rechtsbegriff | — | f813314f160b | nein |
-| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | 399b08a07912 | nein |
+| G | src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx | Prosa + Rechtsbegriff | — | 17becfad11e2 | nein |
+| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | e04d0b6e330c | nein |
 | G | src/app/sitemap.ts | Prosa + Rechtsbegriff | b7757675f13b | b7757675f13b | ja |
 | G | src/components/formular/AltchaFeld.tsx | Prosa + Rechtsbegriff | 6b0852bf64aa | 4940825fba36 | nein |
 | G | src/components/formular/Felder.tsx | Prosa + Rechtsbegriff | 1a71ff89b4ef | fab833cc6944 | nein |
@@ -93,7 +93,7 @@ Wiederholbarkeit: Ergebnis-Hash `c13edfc4f03f7b7d` (Vollwert in der JSON-Datei)
 | G | src/components/verwaltung/seiteninhalte/Formular.tsx | Prosa + Rechtsbegriff | 2da707ef39b7 | 2da707ef39b7 | ja |
 | G | src/components/verwaltung/seiteninhalte/Rechtstexte.tsx | Prosa + Rechtsbegriff | 17bc6b90527f | 17bc6b90527f | ja |
 | G | src/components/verwaltung/seiteninhalte/bereiche.ts | Prosa + Rechtsbegriff | f81a20797624 | f81a20797624 | ja |
-| G | src/components/verwaltung/startklar/PruefListe.tsx | Prosa + Rechtsbegriff | — | cfacd9027653 | nein |
+| G | src/components/verwaltung/startklar/PruefListe.tsx | Prosa + Rechtsbegriff | — | 5fe016208404 | nein |
 | G | src/components/verwaltung/styleguide/Felder.tsx | Prosa + Rechtsbegriff | ddeeae06b391 | ddeeae06b391 | ja |
 | G | src/components/website/Footer.tsx | Prosa + Rechtsbegriff | 06ca385a1fcc | d4c918b7e505 | nein |
 | G | src/components/website/Header.tsx | Prosa + Rechtsbegriff | 44b6b7140f5a | b02be9faa663 | nein |
@@ -158,7 +158,7 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Speicherdauer und Löschung | 2c05e8176f8d | 2c05e8176f8d | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Zweck und Rechtsgrundlage | 8efa733ed8b4 | 8efa733ed8b4 | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/impressum.ts | Text: [Name und Rechtsform – Vorstand] | 659f4c8a7660 | 659f4c8a7660 | gleich | keiner | identisch (SHA-256 gleich) |
-| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | fea8c1cded94 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt. |
+| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | fea8c1cded94 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 325c38a gefunden; 0 bedeutet nicht eingespielt. |
 | D docs/recht/VERARBEITUNGSVERZEICHNIS.md | neue Datei, 27 Absätze | — | 528bd7177b33 | neu | ausnahme | Neues internes Verzeichnis nach V-11 (Verarbeitungsverzeichnis). Kein Wortlaut eines bestehenden Textes wurde geändert. Die AUFTRAG-Ausnahme nennt nur den Hosting-Baustein v2. Einordnung als Rechtstext: OFFENE FRAGE an den Orchestrator. |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Das vom Vorsitzenden geleitete Präsidium ist neben dem vertretungsberechtigten Vorstand d… | ca1cbbe3d7e5 | ca1cbbe3d7e5 | gleich | keiner | identisch (SHA-256 gleich) |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Demnach beschreibt „Millî Görüş“ („görüş“ türkisch für „Sichtweise“) eine Gemeinschaft, d… | db4642a95c29 | db4642a95c29 | gleich | keiner | identisch (SHA-256 gleich) |
@@ -827,7 +827,7 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 
 ## Ausnahmen (AUFTRAG und Grund)
 
-- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 58a3344 gefunden; 0 bedeutet nicht eingespielt.
+- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 325c38a gefunden; 0 bedeutet nicht eingespielt.
 - **A-02** (8 Einträge) · Neue Cockpit-Texte der Verwaltung (Startklar-Cockpit, V-13/Z-12). Sie beschreiben Prüfungen und Rechtsangaben, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-03** (20 Einträge) · Neue Cockpit-Prüftexte und Cockpit-Oberfläche (Verwaltung, V-13/Z-12). Sie beschreiben die Prüfungen, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-04** (3 Einträge) · Neue Abschnittsüberschriften „meldung.gruppe.*“ (Legenden der Fieldsets im Meldeformular, K-12, z. B. „Einwilligung“). Der Einwilligungstext selbst ist unverändert. Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).
@@ -1070,14 +1070,17 @@ keine
 | M messages/bereiche/organisationen.json | tr.organisation.news.leer | 28b60c9c9444 | 98cf3017a965 | geändert | keiner | Bekannte Ausnahme (Vorgabe): Platzhalter „[Text fehlt: organisation.news.leer]“ durch den Leerzustand-Text ersetzt (Organisationsseite, O-12), kein Rechtstext. |
 | M messages/bereiche/organisationen.json | tr.organisation.orgs.aktuell | — | 4b9f8b1ac43e | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | tr.organisation.orgs.kennung | — | dc26406b45a9 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | de.projekte.bezeichnungen.beschreibung | 75676dc82ce0 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.bezeichnungen.beschreibungKennung | — | 1ef8269ea1a1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.bezeichnungen.meilensteinKennung | — | 6d7769b689f9 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.kopf.titel | aa56f7c99b10 | c80a57398b7f | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.meilenstein.stand | — | 30bcd32cdb47 | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |
 | M messages/bereiche/projekte.json | de.projekte.spenden.jetzt | 208b5509871b | 47b9c491eaa7 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | en.projekte.bezeichnungen.beschreibung | 09dea2d7078b | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | en.projekte.bezeichnungen.beschreibungKennung | — | 64629c4d29ff | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | en.projekte.bezeichnungen.meilensteinKennung | — | 5a596d40303b | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | en.projekte.meilenstein.stand | — | df9f1e6ae24f | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |
+| M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.beschreibung | 91a8fcf5035f | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.beschreibungKennung | — | d5e6c392b8f1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.meilensteinKennung | — | 87255cf811ac | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | tr.projekte.meilenstein.stand | — | a029a7336377 | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |

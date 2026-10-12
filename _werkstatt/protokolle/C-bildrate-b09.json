@@ -9,7 +9,7 @@
     "width": 390,
     "height": 844
   },
-  "zeit": "2026-10-12T11:13:29.785Z",
+  "zeit": "2026-10-12T17:43:46.195Z",
   "laeufe": [
     {
       "lauf": 1,
@@ -20,14 +20,25 @@
       "verworfen": 0,
       "anteilVerworfenProzent": 0,
       "medianAbstandMs": 16.7,
-      "p95AbstandMs": 16.8
+      "p95AbstandMs": 16.7
     },
     {
       "lauf": 1,
       "drosselung": 4,
       "http": 200,
       "laufendBeiAuslosung": 1,
-      "bilder": 118,
+      "bilder": 117,
+      "verworfen": 1,
+      "anteilVerworfenProzent": 0.8,
+      "medianAbstandMs": 16.7,
+      "p95AbstandMs": 16.7
+    },
+    {
+      "lauf": 2,
+      "drosselung": 1,
+      "http": 200,
+      "laufendBeiAuslosung": 1,
+      "bilder": 119,
       "verworfen": 0,
       "anteilVerworfenProzent": 0,
       "medianAbstandMs": 16.7,
@@ -35,18 +46,18 @@
     },
     {
       "lauf": 2,
-      "drosselung": 1,
+      "drosselung": 4,
       "http": 200,
       "laufendBeiAuslosung": 1,
-      "bilder": 120,
+      "bilder": 116,
       "verworfen": 0,
       "anteilVerworfenProzent": 0,
       "medianAbstandMs": 16.7,
       "p95AbstandMs": 16.7
     },
     {
-      "lauf": 2,
-      "drosselung": 4,
+      "lauf": 3,
+      "drosselung": 1,
       "http": 200,
       "laufendBeiAuslosung": 1,
       "bilder": 119,
@@ -57,25 +68,14 @@
     },
     {
       "lauf": 3,
-      "drosselung": 1,
+      "drosselung": 4,
       "http": 200,
       "laufendBeiAuslosung": 1,
-      "bilder": 120,
+      "bilder": 119,
       "verworfen": 0,
       "anteilVerworfenProzent": 0,
       "medianAbstandMs": 16.7,
       "p95AbstandMs": 16.8
-    },
-    {
-      "lauf": 3,
-      "drosselung": 4,
-      "http": 200,
-      "laufendBeiAuslosung": 1,
-      "bilder": 118,
-      "verworfen": 0,
-      "anteilVerworfenProzent": 0,
-      "medianAbstandMs": 16.7,
-      "p95AbstandMs": 16.7
     }
   ]
 }

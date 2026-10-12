@@ -1,6 +1,6 @@
 {
   "werkzeug": "tastatur",
-  "zeit": "2026-10-12-11-07",
+  "zeit": "2026-10-12-17-37",
   "basis": "http://127.0.0.1:3500",
   "breite": 1440,
   "hoehe": 900,
@@ -1218,7 +1218,7 @@
           "rect": {
             "x": 109,
             "y": 426,
-            "w": 176,
+            "w": 128,
             "h": 48
           },
           "zustand": {
@@ -1246,17 +1246,17 @@
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "wiederhergestellt": true
           },
@@ -1341,7 +1341,7 @@
           "typ": null,
           "rect": {
             "x": 1070,
-            "y": 210,
+            "y": 204,
             "w": 272,
             "h": 28
           },
@@ -1403,7 +1403,7 @@
           "typ": null,
           "rect": {
             "x": 1070,
-            "y": 420,
+            "y": 408,
             "w": 234,
             "h": 28
           },
@@ -1465,7 +1465,7 @@
           "typ": null,
           "rect": {
             "x": 517,
-            "y": 852,
+            "y": 846,
             "w": 180,
             "h": 48
           },
@@ -6690,7 +6690,7 @@
           "tag": "a",
           "rolle": "link",
           "name": "Route anzeigen",
-          "href": "/kontakt",
+          "href": "/kontakt#karte",
           "sprungKandidat": false,
           "sichtbar": true,
           "imViewport": true,
@@ -8880,7 +8880,7 @@
           "rect": {
             "x": 109,
             "y": 426,
-            "w": 176,
+            "w": 128,
             "h": 48
           },
           "zustand": {
@@ -8908,17 +8908,17 @@
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "wiederhergestellt": true
           },
@@ -9003,7 +9003,7 @@
           "typ": null,
           "rect": {
             "x": 1070,
-            "y": 205,
+            "y": 208,
             "w": 272,
             "h": 28
           },
@@ -9065,7 +9065,7 @@
           "typ": null,
           "rect": {
             "x": 1070,
-            "y": 409,
+            "y": 416,
             "w": 234,
             "h": 28
           },
@@ -9499,7 +9499,7 @@
           "typ": null,
           "rect": {
             "x": 517,
-            "y": 808,
+            "y": 809,
             "w": 180,
             "h": 48
           },
@@ -10898,19 +10898,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -10951,7 +10951,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -10959,19 +10960,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(6, 95, 70)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -12394,19 +12395,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -12447,7 +12448,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -12455,19 +12457,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(6, 95, 70)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -15857,9 +15859,9 @@
           "typ": null,
           "rect": {
             "x": 112,
-            "y": 418,
+            "y": 417,
             "w": 592,
-            "h": 63
+            "h": 65
           },
           "zustand": {
             "expanded": null,
@@ -15883,7 +15885,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -15892,7 +15894,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -15919,9 +15921,9 @@
           "typ": null,
           "rect": {
             "x": 112,
-            "y": 489,
+            "y": 490,
             "w": 592,
-            "h": 63
+            "h": 65
           },
           "zustand": {
             "expanded": null,
@@ -15945,7 +15947,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -15954,7 +15956,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -15981,7 +15983,7 @@
           "typ": null,
           "rect": {
             "x": 863,
-            "y": 384,
+            "y": 383,
             "w": 168,
             "h": 29
           },
@@ -15998,7 +16000,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -16006,7 +16009,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgba(0, 0, 0, 0)",
@@ -16015,7 +16018,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgba(0, 0, 0, 0)",
@@ -16042,7 +16045,7 @@
           "typ": null,
           "rect": {
             "x": 769,
-            "y": 438,
+            "y": 437,
             "w": 137,
             "h": 48
           },
@@ -16068,19 +16071,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true

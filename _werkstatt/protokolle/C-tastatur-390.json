@@ -1,6 +1,6 @@
 {
   "werkzeug": "tastatur",
-  "zeit": "2026-10-12-11-05",
+  "zeit": "2026-10-12-17-35",
   "basis": "http://127.0.0.1:3500",
   "breite": 390,
   "hoehe": 844,
@@ -597,7 +597,7 @@
           "typ": null,
           "rect": {
             "x": 37,
-            "y": 759,
+            "y": 761,
             "w": 163,
             "h": 48
           },
@@ -784,7 +784,7 @@
           "rect": {
             "x": 45,
             "y": 398,
-            "w": 176,
+            "w": 128,
             "h": 48
           },
           "zustand": {
@@ -812,17 +812,17 @@
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "wiederhergestellt": true
           },
@@ -907,7 +907,7 @@
           "typ": null,
           "rect": {
             "x": 137,
-            "y": 748,
+            "y": 731,
             "w": 186,
             "h": 56
           },
@@ -1092,7 +1092,7 @@
           "typ": null,
           "rect": {
             "x": 16,
-            "y": 718,
+            "y": 719,
             "w": 92,
             "h": 48
           },
@@ -1153,7 +1153,7 @@
           "typ": null,
           "rect": {
             "x": 207,
-            "y": 718,
+            "y": 719,
             "w": 114,
             "h": 48
           },
@@ -1214,7 +1214,7 @@
           "typ": null,
           "rect": {
             "x": 16,
-            "y": 766,
+            "y": 767,
             "w": 142,
             "h": 48
           },
@@ -1275,7 +1275,7 @@
           "typ": null,
           "rect": {
             "x": 207,
-            "y": 766,
+            "y": 767,
             "w": 62,
             "h": 48
           },
@@ -4954,7 +4954,7 @@
           "tag": "a",
           "rolle": "link",
           "name": "Route anzeigen",
-          "href": "/kontakt",
+          "href": "/kontakt#karte",
           "sprungKandidat": false,
           "sichtbar": true,
           "imViewport": true,
@@ -6710,7 +6710,7 @@
           "rect": {
             "x": 45,
             "y": 398,
-            "w": 176,
+            "w": 128,
             "h": 48
           },
           "zustand": {
@@ -6738,17 +6738,17 @@
               "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(4, 120, 87)",
-              "text-decoration-line": "none"
+              "background-color": "rgba(0, 0, 0, 0)",
+              "text-decoration-line": "underline"
             },
             "wiederhergestellt": true
           },
@@ -8269,7 +8269,7 @@
           "rect": {
             "x": 40,
             "y": 398,
-            "w": 240,
+            "w": 310,
             "h": 48
           },
           "zustand": {
@@ -8294,19 +8294,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -8331,7 +8331,7 @@
           "rect": {
             "x": 40,
             "y": 458,
-            "w": 193,
+            "w": 310,
             "h": 48
           },
           "zustand": {
@@ -8347,7 +8347,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -8355,19 +8356,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(6, 95, 70)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -9331,7 +9332,7 @@
           "rect": {
             "x": 40,
             "y": 398,
-            "w": 240,
+            "w": 310,
             "h": 48
           },
           "zustand": {
@@ -9356,19 +9357,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -9393,7 +9394,7 @@
           "rect": {
             "x": 40,
             "y": 458,
-            "w": 196,
+            "w": 310,
             "h": 48
           },
           "zustand": {
@@ -9409,7 +9410,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -9417,19 +9419,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(6, 95, 70)",
               "box-shadow": "none",
-              "border-color": "rgb(255, 255, 255)",
-              "background-color": "rgba(0, 0, 0, 0)",
+              "border-color": "rgb(4, 120, 87)",
+              "background-color": "rgb(255, 255, 255)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -11951,9 +11953,9 @@
           "typ": null,
           "rect": {
             "x": 36,
-            "y": 390,
+            "y": 389,
             "w": 318,
-            "h": 63
+            "h": 65
           },
           "zustand": {
             "expanded": null,
@@ -11977,7 +11979,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -11986,7 +11988,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -12013,9 +12015,9 @@
           "typ": null,
           "rect": {
             "x": 36,
-            "y": 461,
+            "y": 462,
             "w": 318,
-            "h": 63
+            "h": 65
           },
           "zustand": {
             "expanded": null,
@@ -12039,7 +12041,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -12048,7 +12050,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(29, 26, 23)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgb(255, 255, 255)",
@@ -12075,7 +12077,7 @@
           "typ": null,
           "rect": {
             "x": 130,
-            "y": 730,
+            "y": 733,
             "w": 168,
             "h": 29
           },
@@ -12092,7 +12094,8 @@
                 "klasse": "el",
                 "diff": [
                   "outline-style",
-                  "outline-width"
+                  "outline-width",
+                  "outline-color"
                 ],
                 "stark": true
               }
@@ -12100,7 +12103,7 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgba(0, 0, 0, 0)",
@@ -12109,7 +12112,7 @@
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(4, 120, 87)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
               "background-color": "rgba(0, 0, 0, 0)",
@@ -12136,8 +12139,8 @@
           "typ": null,
           "rect": {
             "x": 36,
-            "y": 784,
-            "w": 137,
+            "y": 787,
+            "w": 318,
             "h": 48
           },
           "zustand": {
@@ -12162,19 +12165,19 @@
             "fokus": {
               "outline-style": "solid",
               "outline-width": "2px",
-              "outline-color": "rgb(255, 255, 255)",
+              "outline-color": "rgb(14, 57, 41)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "blur": {
               "outline-style": "none",
               "outline-width": "0px",
-              "outline-color": "rgb(14, 57, 41)",
+              "outline-color": "rgb(255, 255, 255)",
               "box-shadow": "none",
               "border-color": "rgb(223, 218, 210)",
-              "background-color": "rgb(255, 255, 255)",
+              "background-color": "rgb(4, 120, 87)",
               "text-decoration-line": "none"
             },
             "wiederhergestellt": true
@@ -16009,7 +16012,7 @@
       "titel": "Gebetszeit (nächste Gebetszeit sehen)",
       "pfad": "/",
       "ok": true,
-      "grund": "Link „Alle Gebetszeiten“ mit sichtbarem Fokus; URL /gebetszeiten; nächste Gebetszeit markiert: „Dhuhr Nächstes Gebet 13:17“",
+      "grund": "Link „Alle Gebetszeiten“ mit sichtbarem Fokus; URL /gebetszeiten; nächste Gebetszeit markiert: „Isha Nächstes Gebet 20:23“",
       "tabs": 5,
       "post": 0,
       "ziele": [

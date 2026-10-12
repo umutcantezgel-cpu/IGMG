@@ -1,6 +1,6 @@
 {
   "werkzeug": "bewegung",
-  "zeit": "2026-10-12-11-13",
+  "zeit": "2026-10-12-17-44",
   "basis": "http://127.0.0.1:3500",
   "pfad": "/",
   "dauer": 2000,
@@ -24,7 +24,7 @@
         "sollMs": 0,
         "istMs": 0,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-1.jpg",
-        "laufendeAnimationen": 6,
+        "laufendeAnimationen": 9,
         "eigenschaften": [
           "translate",
           "opacity",
@@ -36,7 +36,7 @@
         "sollMs": 500,
         "istMs": 501,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-2.jpg",
-        "laufendeAnimationen": 4,
+        "laufendeAnimationen": 5,
         "eigenschaften": [
           "translate",
           "opacity",
@@ -46,7 +46,7 @@
       {
         "nr": 3,
         "sollMs": 1000,
-        "istMs": 1001,
+        "istMs": 1002,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-3.jpg",
         "laufendeAnimationen": 4,
         "eigenschaften": [
@@ -70,7 +70,7 @@
       {
         "nr": 5,
         "sollMs": 2000,
-        "istMs": 2002,
+        "istMs": 2001,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-start/bewegung-5.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": [
@@ -83,21 +83,21 @@
     "bildrate": {
       "ohneDrosselung": {
         "drosselung": 1,
-        "bilder": 121,
+        "bilder": 122,
         "langeAbstaende": 0,
         "verworfen": 0,
         "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "drossel4": {
         "drosselung": 4,
-        "bilder": 121,
+        "bilder": 122,
         "langeAbstaende": 0,
         "verworfen": 0,
         "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "scrollen": false,
       "fenster": {

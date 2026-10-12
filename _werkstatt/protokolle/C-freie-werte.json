@@ -1,6 +1,6 @@
 {
   "werkzeug": "freie-werte",
-  "zeitpunkt": "2026-10-12-11-16",
+  "zeitpunkt": "2026-10-12-17-46",
   "seit": null,
   "geprueft": [
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/[locale]/(website)/bildung/korankurse/page.tsx",
@@ -111,6 +111,7 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/shell/module.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/startklar/ErneutPruefen.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/startklar/PruefListe.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/startklar/kennung.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/startklar/status.ts",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/styleguide/Abstaende.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/verwaltung/styleguide/Bewegung.tsx",
@@ -160,6 +161,8 @@
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/MonatsTabelle.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaInformation.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaKompass.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaKompassAnsicht.tsx",
+    "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaKompassBeiBedarf.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaPanel.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/igmg/Bedeutung.tsx",
     "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/igmg/Geschichte.tsx",
@@ -266,7 +269,7 @@
   "zaehl": {
     "Hex-Farbe": 59,
     "Tailwind-Klammerwert": 18,
-    "px-Literal in Style": 27,
+    "px-Literal in Style": 28,
     "Farbfunktion": 3
   },
   "funde": [
@@ -335,77 +338,77 @@
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 729,
+      "zeile": 734,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 730,
+      "zeile": 735,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 731,
+      "zeile": 736,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 732,
+      "zeile": 737,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 733,
+      "zeile": 738,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 734,
+      "zeile": 739,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 735,
+      "zeile": 740,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 736,
+      "zeile": 741,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 737,
+      "zeile": 742,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 738,
+      "zeile": 743,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/app/globals.css",
-      "zeile": 739,
+      "zeile": 744,
       "art": "Tailwind-Klammerwert",
       "fund": "[data-kategorie]:not",
       "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
@@ -759,6 +762,13 @@
       "art": "Farbfunktion",
       "fund": "rgba(2",
       "zeileText": "{ name: '--shadow-s3', wert: '0 24px 64px rgba(29, 26, 23, 0.22)', klasse: 'shadow-s3', schluessel: 's3' },"
+    },
+    {
+      "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/components/website/gebetszeiten/QiblaKompassBeiBedarf.tsx",
+      "zeile": 35,
+      "art": "px-Literal in Style",
+      "fund": "'200px'",
+      "zeileText": "{ rootMargin: '200px' },"
     },
     {
       "datei": "../../../tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web/src/lib/mail/vorlagen/Rahmen.tsx",

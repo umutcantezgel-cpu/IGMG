@@ -1,4 +1,4 @@
-# Bildsatz und Überlaufprüfung · 2026-10-12-10-50 · http://127.0.0.1:3500
+# Bildsatz und Überlaufprüfung · 2026-10-12-17-20 · http://127.0.0.1:3500
 
 Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, abgeschnittene Elemente (ohne Kürzung mit Auslassungszeichen), vermutlich beabsichtigte Kürzungen.
 

@@ -1,6 +1,6 @@
-# SVG-Prüfung · 2026-10-12-11-16
+# SVG-Prüfung · 2026-10-12-17-46
 
-SVG-Prüfung: 0 .svg-Dateien, 13 inline <svg> in web/src · Fehler 0 · Befund 1 · OK 12
+SVG-Prüfung: 0 .svg-Dateien, 13 inline <svg> in web/src · Fehler 0 · Befund 0 · OK 13
 
 | Datei | Zeile | Art | Status | Rolle | Befunde | Hinweise |
 |---|---|---|---|---|---|---|
@@ -12,8 +12,8 @@ SVG-Prüfung: 0 .svg-Dateien, 13 inline <svg> in web/src · Fehler 0 · Befund 1
 | web/src/components/website/Zustandsgrafik.tsx | 50 | inline | OK | dekorativ | – | – |
 | web/src/components/website/Zustandsgrafik.tsx | 87 | inline | OK | dekorativ | – | – |
 | web/src/components/website/Zustandsgrafik.tsx | 101 | inline | OK | dekorativ | – | – |
-| web/src/components/website/organisation/FamilieDerVier.tsx | 44 | inline | OK | dekorativ | – | – |
-| web/src/components/website/organisation/FamilieDerVier.tsx | 53 | inline | OK | dekorativ | – | – |
+| web/src/components/website/organisation/FamilieDerVier.tsx | 47 | inline | OK | dekorativ | – | – |
+| web/src/components/website/organisation/FamilieDerVier.tsx | 56 | inline | OK | dekorativ | – | – |
 | web/src/components/website/start/TagesbogenLive.tsx | 99 | inline | OK | bedeutungstragend, benannt | – | – |
-| web/src/components/website/start/TagesbogenLive.tsx | 151 | inline | Befund | ungeklärt | Befund: weder aria-hidden="true" noch role="img" mit Name | – |
+| web/src/components/website/start/TagesbogenLive.tsx | 151 | inline | OK | dekorativ | – | – |
 | web/src/lib/seo/og-bild.tsx | 302 | inline | OK | dekorativ | – | – |

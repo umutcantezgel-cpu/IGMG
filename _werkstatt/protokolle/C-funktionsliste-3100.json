@@ -2,7 +2,7 @@
   "lauf": {
     "werkzeug": "funktionsliste.mjs",
     "basis": "http://127.0.0.1:3100",
-    "zeit": "2026-10-12T11:38:03.503Z",
+    "zeit": "2026-10-12T18:05:25.794Z",
     "browser": "141.0.7390.37",
     "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100",
     "zustand": "nein"
@@ -13,7 +13,7 @@
         "status": "erfüllt",
         "befunde": [
           {
-            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 13:38:03)",
+            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 20:05:25)",
             "ergebnis": "Messwert",
             "gemessen": "2026-10-12T10:00:00.000Z"
           },
@@ -43,9 +43,12 @@
             "gemessen": "/mitglied-werden"
           },
           {
-            "pruefung": "„Mehr erfahren“ (Hero) → /ueber-uns",
+            "pruefung": "Hero: zweiter Knopf → /ueber-uns",
             "ergebnis": "erfüllt",
-            "gemessen": "/ueber-uns"
+            "gemessen": {
+              "href": "/ueber-uns",
+              "text": "Mehr erfahren"
+            }
           },
           {
             "pruefung": "bis zu 6 kommende Veranstaltungen",
@@ -71,7 +74,7 @@
         "status": "erfüllt",
         "befunde": [
           {
-            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 13:38:06)",
+            "pruefung": "Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 20:05:28)",
             "ergebnis": "Messwert",
             "gemessen": "2026-10-12T10:00:00.000Z"
           },
@@ -101,9 +104,12 @@
             "gemessen": "/mitglied-werden"
           },
           {
-            "pruefung": "„Mehr erfahren“ (Hero) → /ueber-uns",
+            "pruefung": "Hero: zweiter Knopf → /ueber-uns",
             "ergebnis": "erfüllt",
-            "gemessen": "/ueber-uns"
+            "gemessen": {
+              "href": "/ueber-uns",
+              "text": "Mehr erfahren"
+            }
           },
           {
             "pruefung": "bis zu 6 kommende Veranstaltungen",
@@ -1566,7 +1572,7 @@
             "gemessen": {
               "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen",
               "feldLinks": 4,
-              "altcha": "geprüft nach 6.8 s"
+              "altcha": "geprüft nach 0.8 s"
             }
           },
           {
@@ -1622,7 +1628,7 @@
             "gemessen": {
               "text": "Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen",
               "feldLinks": 4,
-              "altcha": "geprüft nach 19.3 s"
+              "altcha": "geprüft nach 14.8 s"
             }
           },
           {
@@ -1737,7 +1743,7 @@
             "gemessen": {
               "text": "Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam",
               "feldLinks": 7,
-              "altcha": "geprüft nach 12.3 s"
+              "altcha": "geprüft nach 30 s"
             }
           },
           {
@@ -1833,7 +1839,7 @@
             "gemessen": {
               "text": "Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam",
               "feldLinks": 7,
-              "altcha": "geprüft nach 8 s"
+              "altcha": "geprüft nach 7.5 s"
             }
           },
           {

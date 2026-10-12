@@ -1,11 +1,11 @@
 {
   "werkzeug": "svg-pruefung",
-  "zeitpunkt": "2026-10-12-11-16",
+  "zeitpunkt": "2026-10-12-17-46",
   "svgDateien": [],
   "zaehl": {
     "Fehler": 0,
-    "Befund": 1,
-    "OK": 12
+    "Befund": 0,
+    "OK": 13
   },
   "ergebnisse": [
     {
@@ -86,7 +86,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 44,
+      "zeile": 47,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -95,7 +95,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 53,
+      "zeile": 56,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -115,11 +115,9 @@
       "datei": "web/src/components/website/start/TagesbogenLive.tsx",
       "zeile": 151,
       "art": "inline",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
+      "status": "OK",
+      "rolle": "dekorativ",
+      "befunde": [],
       "hinweise": []
     },
     {

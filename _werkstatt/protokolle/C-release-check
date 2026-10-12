@@ -1,4 +1,4 @@
-Release-Check · 2026-10-12T11:16:19.645Z · --bau: nein
+Release-Check · 2026-10-12T17:46:31.981Z · --bau: nein
 
 === Schritt typen: pnpm typen ===
 $ next typegen && tsc --noEmit
@@ -15,9 +15,9 @@ $ vitest run --project unit
 
 
  Test Files  46 passed (46)
-      Tests  811 passed | 3 expected fail (814)
-   Start at  11:17:35
-   Duration  8.83s (import 42%, transform 29%, tests 25%, worker 3%)
+      Tests  814 passed | 3 expected fail (817)
+   Start at  17:47:24
+   Duration  7.14s (import 39%, transform 33%, tests 25%, worker 3%)
 
 
 === Schritt test:integration: pnpm test:integration ===
@@ -28,31 +28,29 @@ $ vitest run --project integration
 
  Test Files  35 passed | 1 skipped (36)
       Tests  1412 passed | 2 expected fail | 4 skipped (1418)
-   Start at  11:17:45
-   Duration  1210.13s (tests 86%, import 14%)
+   Start at  17:47:32
+   Duration  1065.78s (tests 84%, import 16%)
 
 
 === Schritt sprachen:pruefen: pnpm sprachen:pruefen ===
 $ node scripts/sprachen-pruefen.mjs
-Sprachdateien vollständig: 1203 Schlüssel in de, tr, en; dazu 1918 Schlüssel der Verwaltung (nur de, ADR 0016).
+Sprachdateien vollständig: 1202 Schlüssel in de, tr, en; dazu 1918 Schlüssel der Verwaltung (nur de, ADR 0016).
 
 === Schritt geheimnisse:pruefen: pnpm geheimnisse:pruefen ===
 $ node scripts/geheimnis-pruefung.mjs --alles
-Geheimnis-/Datenschutz-Prüfung: 1 Befund(e) – Vorgang abgebrochen.
-  _werkstatt/protokolle/C-e2e.json:168: Verbindungs-URL mit Passwort
-[ELIFECYCLE] Command failed with exit code 1.
+Geheimnis-/Datenschutz-Prüfung (--alles): ohne Befund.
 
 === Schritt startklar: übersprungen ===
 Hinweis: keine DATABASE_URL gesetzt (weder in der Umgebung noch in .env). Datenbankprüfung nicht ausgeführt; mit DATABASE_URL erneut starten.
 
   Schritt              Ergebnis        Dauer
   -------------------  --------------  ------
-  typen                [OK]            34,9 s
-  lint                 [OK]            39,7 s
-  test:unit            [OK]            10,0 s
-  test:integration     [OK]            1211,1 s
+  typen                [OK]            18,8 s
+  lint                 [OK]            33,2 s
+  test:unit            [OK]            8,0 s
+  test:integration     [OK]            1066,7 s
   sprachen:pruefen     [OK]            0,2 s
-  geheimnisse:pruefen  [FEHLER]        1,0 s
+  geheimnisse:pruefen  [OK]            1,1 s
   startklar            [ÜBERSPRUNGEN]  –
 
-=== RELEASE-CHECK: NICHT BESTANDEN (rot: geheimnisse:pruefen) ===
+=== RELEASE-CHECK: BESTANDEN, mit übersprungenem Schritt: startklar ===

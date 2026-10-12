@@ -1,4 +1,4 @@
-# Tastaturdurchlauf (Z-07) · 2026-10-12-11-05 · http://127.0.0.1:3500 · 390×844
+# Tastaturdurchlauf (Z-07) · 2026-10-12-17-35 · http://127.0.0.1:3500 · 390×844
 
 Prüfumfang: Sprunglink, dann Tab bis 60 Ziele je Route (Aufgaben bis 150). „Fokus unsichtbar“: kein Wechsel von Umriss, Schatten, Hintergrund oder Rahmen beim Fokus (Element, Elternteil, ::before/::after). „Fokus schwach“: nur ein Wechsel ohne starken Indikator (Umriss unter 2 px, nur Unterstreichung o. ä.). „verdeckt (Hinweis)“ ist keine Befundart, sondern zählt Ziele, deren Mitte von einem anderen Element überdeckt wird.
 
@@ -28,7 +28,7 @@ Knopf „Menü öffnen“ nach 3 Tabs gefunden · Dialog offen: ja · Fokus im D
 
 | Aufgabe | Ergebnis | Tabs | POST | Grund |
 |---|---|---|---|---|
-| a) Gebetszeit (nächste Gebetszeit sehen) | ok | 5 | 0 | Link „Alle Gebetszeiten“ mit sichtbarem Fokus; URL /gebetszeiten; nächste Gebetszeit markiert: „Dhuhr Nächstes Gebet 13:17“ |
+| a) Gebetszeit (nächste Gebetszeit sehen) | ok | 5 | 0 | Link „Alle Gebetszeiten“ mit sichtbarem Fokus; URL /gebetszeiten; nächste Gebetszeit markiert: „Isha Nächstes Gebet 20:23“ |
 | b) Veranstaltung finden und anmelden (bis zum Absendeknopf) | ok | 13 | 0 | Kartenlink mit sichtbarem Fokus; Detailseite /veranstaltungen/frauenkreis-islamische-erziehung: kein Anmeldeformular; Seite: „Für diese Veranstaltung ist keine Anmeldung nötig.“ (notiert) |
 | c) Kurs finden und Schüler voranmelden (bis zum Weiter-Knopf) | ok | 20 | 0 | Link mit sichtbarem Fokus; Voranmeldung /bildung/voranmeldung; „Weiter“ nach 3 Zielen erreicht, sichtbarer Fokus; nicht gedrückt |
 | d) Kontakt aufnehmen (bis zum Absendeknopf, nicht gesendet) | ok | 15 | 0 | Absendeknopf „Absenden“ nach 8 Zielen erreicht, sichtbarer Fokus; nicht gedrückt |

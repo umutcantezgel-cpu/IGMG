@@ -1,6 +1,6 @@
 {
   "werkzeug": "bewegung",
-  "zeit": "2026-10-12-11-14",
+  "zeit": "2026-10-12-17-44",
   "basis": "http://127.0.0.1:3500",
   "pfad": "/ueber-uns",
   "dauer": 2000,
@@ -30,7 +30,7 @@
       {
         "nr": 2,
         "sollMs": 500,
-        "istMs": 501,
+        "istMs": 502,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-2.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": []
@@ -46,7 +46,7 @@
       {
         "nr": 4,
         "sollMs": 1500,
-        "istMs": 1501,
+        "istMs": 1502,
         "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-4.jpg",
         "laufendeAnimationen": 0,
         "eigenschaften": []
@@ -68,16 +68,16 @@
         "verworfen": 0,
         "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.8
+        "p95AbstandMs": 16.7
       },
       "drossel4": {
         "drosselung": 4,
-        "bilder": 115,
-        "langeAbstaende": 1,
-        "verworfen": 7,
-        "anteilVerworfenProzent": 5.7,
+        "bilder": 122,
+        "langeAbstaende": 0,
+        "verworfen": 0,
+        "anteilVerworfenProzent": 0,
         "medianAbstandMs": 16.7,
-        "p95AbstandMs": 16.7
+        "p95AbstandMs": 16.8
       },
       "scrollen": false,
       "fenster": {

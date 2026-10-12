@@ -12,7 +12,6 @@
      - STUFE-C3 ergänzen.
      - Vorab-Prüfung, dann FF main.
   3. **Endprüfung:** Blindvergleich und Endprüfer. Z-04 bei Bedarf als A-02 nach L7.
-- **Während der Abschlussprüfung ausgeblendet:** `_werkstatt/protokolle/C-*` (Liste `$S/ausgeblendet3.txt`, assume-unchanged) und die Zeile `_werkstatt/protokolle/C-*` in `.git/info/exclude`. Nach dem Lauf zurücksetzen und committen.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.

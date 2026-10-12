@@ -1,4 +1,4 @@
-# Tastaturdurchlauf (Z-07) · 2026-10-12-11-07 · http://127.0.0.1:3500 · 1440×900
+# Tastaturdurchlauf (Z-07) · 2026-10-12-17-37 · http://127.0.0.1:3500 · 1440×900
 
 Prüfumfang: Sprunglink, dann Tab bis 60 Ziele je Route (Aufgaben bis 150). „Fokus unsichtbar“: kein Wechsel von Umriss, Schatten, Hintergrund oder Rahmen beim Fokus (Element, Elternteil, ::before/::after). „Fokus schwach“: nur ein Wechsel ohne starken Indikator (Umriss unter 2 px, nur Unterstreichung o. ä.). „verdeckt (Hinweis)“ ist keine Befundart, sondern zählt Ziele, deren Mitte von einem anderen Element überdeckt wird.
 
