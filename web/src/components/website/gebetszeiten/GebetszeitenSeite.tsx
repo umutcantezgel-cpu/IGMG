@@ -1,6 +1,6 @@
 'use client';
 
-import { Clock, Moon, Sun, Sunrise, Sunset, type LucideIcon } from 'lucide-react';
+import { Moon, Sun, Sunrise, Sunset, type LucideIcon } from 'lucide-react';
 import { type CSSProperties, type ReactNode, useState } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import { TagesbogenLive, type TagesbogenTexte } from '@/components/website/start/TagesbogenLive';
@@ -199,14 +199,14 @@ function HeuteTafel({
               </div>
               {ist ? (
                 <span className="inline-flex min-h-6 items-center gap-1.5 text-16 font-bold text-gruen-800">
-                  <Clock aria-hidden className="size-4" />
+                  <Achtstern size={16} className="shrink-0" />
                   {texte.naechstesTag}
                 </span>
               ) : (
                 <span className="min-h-6 text-16 text-tinte-2">{texte.beschreibungen[g]}</span>
               )}
             </div>
-            <span className={klassen('shrink-0 text-30 font-bold tabular-nums', vergangen ? 'text-tinte-2' : 'text-gruen-800')}>
+            <span className={klassen('shrink-0 text-30 font-bold tabular-nums', vergangen ? 'text-tinte-3' : 'text-gruen-800')}>
               {heute[g]}
             </span>
           </li>
