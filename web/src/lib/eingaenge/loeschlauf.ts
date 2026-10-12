@@ -125,11 +125,13 @@ export async function loescheAbgelaufene(
     .delete(schema.mailAusgang)
     .where(and(isNotNull(schema.mailAusgang.gesendetAm), lt(schema.mailAusgang.gesendetAm, grenze)))
     .returning({ id: schema.mailAusgang.id });
-  // Nie übernommene Direkt-Uploads großer PDF-Dateien (ADR 0020); ein Ausfall des Speichers hält den Löschlauf nicht auf
-  await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf(), raeumeDirektEingaengeAuf(jetzt).catch(() => 0)]);
+  await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf()]);
   const papierkorb = (await leerePapierkorb(jetzt)) + (await leereMedienPapierkorb(jetzt));
   const melder = await entferneMelderdaten(jetzt);
   const einladungen = await raeumeKontenAuf(jetzt);
+  // Nie übernommene Direkt-Uploads großer PDF-Dateien (ADR 0020): nach den fristgebundenen Löschungen und mit
+  // Zeitbudget, damit eine Störung des Speichers den Löschlauf nicht aufhält
+  await raeumeDirektEingaengeAuf(jetzt).catch(() => 0);
   const betroffeneTermine = [
     ...new Set(faellig.filter((f) => f.art === 'veranstaltungsanmeldung' && f.bezugId).map((f) => f.bezugId as string)),
   ];

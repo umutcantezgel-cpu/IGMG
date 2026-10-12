@@ -13,12 +13,21 @@ export type Umgebung = Readonly<Record<string, string | undefined>>;
 
 const ZEITLIMIT_MS = 4000;
 
-function mitZeitlimit<T>(versprechen: Promise<T>): Promise<T> {
-  let uhr: ReturnType<typeof setTimeout> | undefined;
-  const ablauf = new Promise<never>((_, nein) => {
-    uhr = setTimeout(() => nein(Object.assign(new Error('Zeitlimit'), { name: 'Zeitlimit' })), ZEITLIMIT_MS);
-  });
-  return Promise.race([versprechen, ablauf]).finally(() => clearTimeout(uhr));
+/**
+ * Führt die Anfrage mit Abbruch nach dem Zeitlimit aus. Der Abbruch beendet die Anfrage selbst (auch die eingebauten
+ * Wiederholungen von Vercel Blob), damit `pnpm startklar` nicht im Hintergrund weiterläuft.
+ */
+async function mitZeitlimit<T>(anfrage: (signal: AbortSignal) => Promise<T>): Promise<T> {
+  const abbruch = new AbortController();
+  const uhr = setTimeout(() => abbruch.abort(), ZEITLIMIT_MS);
+  try {
+    return await anfrage(abbruch.signal);
+  } catch (e) {
+    if (abbruch.signal.aborted) throw Object.assign(new Error('Zeitlimit'), { name: 'Zeitlimit' });
+    throw e;
+  } finally {
+    clearTimeout(uhr);
+  }
 }
 
 export function speicherArt(env: Umgebung): SpeicherArt {
@@ -31,7 +40,7 @@ export async function pruefeSpeicher(env: Umgebung): Promise<SpeicherProbe> {
     if (art === 'blob') {
       if (!env.BLOB_READ_WRITE_TOKEN) return { erreichbar: false, art, meldung: 'Vercel Blob ist nicht erreichbar: BLOB_READ_WRITE_TOKEN fehlt.' };
       const { list } = await import('@vercel/blob');
-      await mitZeitlimit(list({ limit: 1, token: env.BLOB_READ_WRITE_TOKEN }));
+      await mitZeitlimit((abortSignal) => list({ limit: 1, token: env.BLOB_READ_WRITE_TOKEN, abortSignal }));
       return { erreichbar: true, art, meldung: 'Vercel Blob antwortet (lesende Probe).' };
     }
     if (art === 's3') {
@@ -45,7 +54,7 @@ export async function pruefeSpeicher(env: Umgebung): Promise<SpeicherProbe> {
         credentials: { accessKeyId: env.S3_ZUGANG ?? '', secretAccessKey: env.S3_GEHEIMNIS ?? '' },
       });
       try {
-        await mitZeitlimit(client.send(new HeadBucketCommand({ Bucket: env.S3_BUCKET })));
+        await mitZeitlimit((abortSignal) => client.send(new HeadBucketCommand({ Bucket: env.S3_BUCKET }), { abortSignal }));
       } finally {
         client.destroy();
       }

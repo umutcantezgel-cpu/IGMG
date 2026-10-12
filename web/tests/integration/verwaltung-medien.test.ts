@@ -314,6 +314,21 @@ describe('Direkt-Upload großer PDF-Dateien (ADR 0020, V-05)', () => {
     }
   });
 
+  it('Aufräumen der Eingänge: ohne Blob nichts zu tun; bei gestörtem Speicher Abbruch nach dem Zeitbudget', async () => {
+    const { raeumeDirektEingaengeAuf } = await import('@/lib/medien/eingang');
+    expect(await raeumeDirektEingaengeAuf()).toBe(0);
+    vi.stubEnv('SPEICHER', 'blob');
+    vi.stubEnv('BLOB_READ_WRITE_TOKEN', 'vercel_blob_rw_teststore_nurzumpruefen');
+    vi.stubEnv('VERCEL_BLOB_API_URL', 'http://127.0.0.1:9');
+    try {
+      const start = Date.now();
+      await expect(raeumeDirektEingaengeAuf(new Date(), 1_000)).rejects.toThrow();
+      expect(Date.now() - start).toBeLessThan(4_000);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  }, 10_000);
+
   it('Token-Route: nur mit Vercel Blob, nur Token-Anfragen, nur mit Recht, nur für Eingangsschlüssel', async () => {
     const { POST } = await import('@/app/[locale]/verwaltung/(geschuetzt)/medien/direkt/route');
     const anfrage = (pathname: string, type = 'blob.generate-client-token') =>

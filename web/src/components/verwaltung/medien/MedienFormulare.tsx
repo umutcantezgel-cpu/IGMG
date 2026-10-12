@@ -173,6 +173,8 @@ export function HochladenFormular({ grenzeBytes, direkt = false }: { grenzeBytes
           required
           accept="image/jpeg,image/png,image/webp,image/avif,application/pdf"
           onChange={gewaehlt}
+          // Während des Direkt-Uploads gesperrt: sonst überschriebe das Ergebnis eine neue Auswahl
+          disabled={laedtDirekt}
           aria-invalid={dateiFehler ? true : undefined}
           aria-describedby={['medium-datei-hinweis', dateiFehler ? 'medium-datei-fehler' : ''].filter(Boolean).join(' ')}
           className="text-18"
