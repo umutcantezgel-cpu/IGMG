@@ -40,7 +40,7 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 | `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` (Test `token-spiegel.test.ts`) |
 | `web/src/lib/gebetszeiten/bogen.ts` (`EINTRITT`) | `zeitAnteilEintritt` kehrt die Kurve für die Färbung im Takt der Linie um (H-E01) | `--ease-eintritt` (Test `token-spiegel.test.ts`) |
 
-**Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`) und die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß).
+**Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`), die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß) und Optionen von Browser-Schnittstellen, die keine Gestaltung sind (z. B. `rootMargin: '200px'` des IntersectionObserver in `QiblaKompassBeiBedarf.tsx`: lädt den Kompass 200 px vor dem Sichtbarwerden).
 
 ## 2. Bausteine
 - Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen. Detailseiten (E4, H-C02): Kopfbild über `bild` in der rechten Spalte ab lg (Fläche `h-55 md:h-75 lg:aspect-4/3 lg:h-auto rounded-lg border border-linie`), ohne gepflegtes Bild nur ab lg ein Platzhalter mit `bildAbLg`; Organisationsbezug über `kennungZeichen` (Logo 20 px, nie vergrößert) statt Achtstern.
