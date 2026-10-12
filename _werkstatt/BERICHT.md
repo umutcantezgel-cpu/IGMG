@@ -79,10 +79,11 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Funktionsliste F-01–F-24 je Telefon und Desktop: 36 von 36 prüfbaren Ergebnissen erfüllt (Ausgangsstand: 30 erfüllt, 5 nicht erfüllt).
   - Konsole ohne Fehler.
 - **Leistung:**
-  - INP im Labor 11 von 11 Hauptansichten ≤ 200 ms.
-  - LCP ≤ 2,34 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100.
+  - INP im Labor 11 von 11 Hauptansichten ≤ 200 ms (80–184 ms); jede ist schneller als der Ausgangsstand (152–232 ms).
+  - LCP ≤ 2,40 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100.
   - JavaScript je Hauptansicht 171–179 kB gz, Grenze 180 kB (Kurzprüfung am Endstand, `protokolle/C3b-lh-js.md`).
-  - Die Performance-Note liegt mit 82–89 gleichauf mit dem Ausgangsstand und unter dem Ziel 90 (AUSNAHME A-01; Feldprüfung nach dem Livegang, ML-27).
+  - Die Performance-Note liegt mit 81–89 gleichauf mit dem Ausgangsstand (79–86, gleiche Runden, Paarregel 11 von 11) und unter dem Ziel 90 (AUSNAHME A-01; Feldprüfung nach dem Livegang, ML-27).
+  - Alle Leistungswerte sind am Endstand gemessen: Lighthouse verschränkt in 5 Runden, INP in 3 Runden (`protokolle/C-lighthouse-v.md`, `C3b-inp.md`).
 - **Vercel:**
   - `vercel build` als Vorschau und Produktion grün.
   - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte.

@@ -163,7 +163,7 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 
 ## 12. Nachtrag: Abschlussprüfung 325c38a (nach Welle H-F)
 
-**Ablauf.** `OHNE_RUHE=1 endstand.sh 325c38a` lief von 17:18 bis 18:35 UTC (`protokolle/C-endstand.log`, `C-lauf.log`): Build 3500, Stufe C 1–3 und 5–11, E2E-Vollauf (Port 3700). Lighthouse und INP wurden nicht neu gemessen. Begründung: Die Welle H-F änderte Klassen, SVG und Texte, aber keine Interaktionslogik. Es gilt der Stand de91dcd (§6). Das JS-Gewicht ist per Kurzprüfung neu erhoben (unten).
+**Ablauf.** `OHNE_RUHE=1 endstand.sh 325c38a` lief von 17:18 bis 18:35 UTC (`protokolle/C-endstand.log`, `C-lauf.log`): Build 3500, Stufe C 1–3 und 5–11, E2E-Vollauf (Port 3700). Lighthouse und INP liefen im Endstand-Lauf nicht mit (`OHNE_RUHE`), sondern danach als eigene Endleistung bei ruhiger Last (unten).
 
 | Schritt | Ergebnis 325c38a | Beleg |
 |---|---|---|
@@ -188,4 +188,13 @@ Damit ist in jeder geänderten Datei 0 echter freier Wert.
 **Abschlussbilder und JS.**
 - Hauptansichten mit 3 s Wartezeit nach `bilder/abschluss/`; Momente und Seitenwechsel aus Stufe C; Verwaltung nach `bilder/C3b-verwaltung/`; Galerie neu erzeugt.
 - JS-Kurzprüfung (Lighthouse, 1 Lauf × 11 Routen, Last 1,1): 171,3–178,9 kB gz, alle ≤ 180 (`protokolle/C3b-lh-js.md`). Die Einzelläufe der Performance-Note (77–90) sind kein Median. Maßgeblich ist der verschränkte Lauf am Endstand (unten).
+
+**Leistung am Endstand** (`$S/endleistung.sh`, 19:09–20:38 UTC, Log `protokolle/C3b-endleistung.log`):
+- **Lighthouse verschränkt**, 5 Runden × 11 Routen × (3100, 3500), Stufe C 12 (`protokolle/C-lighthouse-v.md`, jetzt am Endstand; der Lauf an 58a3344 ist in der Git-Geschichte):
+  - Mediane 3500: 81–89; 3100: 79–86.
+  - Paarregel 11/11.
+  - LCP ≤ 2395 ms, CLS ≤ 0,01, A11y/BP/SEO 100, JS 171,3–178,9 kB gz.
+  - Die Performance-Note bleibt < 90 (AUSNAHME A-01).
+- **INP verschränkt**, 3 Runden (`protokolle/C3b-inp.md`): 3500 ≤ 200 ms auf 11/11 (Mediane 80–184 ms), 3100 bei 152–232 ms. Jede Route ist schneller als der Ausgangsstand.
+- **Cockpit** (`/verwaltung/startklar`, angemeldet): COCKPIT_NACHTRAG
 - Ablauf: `protokolle/C3b-abschluss-bilder.log`.

@@ -4,10 +4,10 @@
 // Kategorien) und „simulate“ (Lighthouse-Standard, nur Performance und LCP, zum Vergleich).
 // Medianwerte: Performance, Barrierefreiheit, Best Practices, SEO, LCP, CLS, TBT; zusätzlich JS (gzip) je Route.
 // Schwellen aus messen.mjs bzw. AUFTRAG §0. Befunde stehen im Protokoll; Exit-Code 0 auch bei verfehlten Schwellen.
-// Aufruf: node lighthouse.mjs --routen datei.json [--laeufe 3] [--basis URL] [--protokoll basisname]
+// Aufruf: node lighthouse.mjs --routen datei.json [--laeufe 3] [--basis URL] [--zustand storageState.json] [--protokoll basisname]
 // CHROME_PATH setzt den Chromium-Pfad (Standard: /opt/pw-browsers). Vollständige Berichte: SCRATCHPAD/lighthouse/.
 // Nicht parallel zu anderen schweren Läufen starten (4 Kerne).
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import lighthouse from 'lighthouse';
@@ -24,7 +24,7 @@ import {
   vollerUrl,
 } from './hilfen.mjs';
 
-const HILFE = `Aufruf: node lighthouse.mjs --routen datei.json [--laeufe 3] [--basis URL] [--protokoll basisname]
+const HILFE = `Aufruf: node lighthouse.mjs --routen datei.json [--laeufe 3] [--basis URL] [--zustand storageState.json] [--protokoll basisname]
 Beispiel: node lighthouse.mjs --routen routen-hauptansichten.json --laeufe 3
 Zum Funktionsnachweis: node lighthouse.mjs --routen <datei mit einer Route> --laeufe 1`;
 
@@ -37,6 +37,7 @@ const { values } = parseArgs({
     laeufe: { type: 'string', default: '3' },
     basis: { type: 'string' },
     protokoll: { type: 'string' },
+    zustand: { type: 'string' },
     hilfe: { type: 'boolean', short: 'h', default: false },
   },
 });
@@ -49,9 +50,17 @@ const zeit = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
 const berichtOrdner = join(SCRATCHPAD, 'lighthouse', zeit);
 mkdirSync(berichtOrdner, { recursive: true });
 
+/** Anmeldestand (storageState) als Cookie-Kopfzeile für den Host der Basis (Verwaltungsansichten, nur lesend). */
+const kopfzeilen = (() => {
+  if (!values.zustand) return undefined;
+  const host = new URL(basis).hostname;
+  const kekse = JSON.parse(readFileSync(values.zustand, 'utf8')).cookies.filter((k) => host.endsWith(k.domain.replace(/^\./, '')));
+  return kekse.length ? { Cookie: kekse.map((k) => `${k.name}=${k.value}`).join('; ') } : undefined;
+})();
+
 /** Eine Messung mit dem Lighthouse-Eintrag aus messen.mjs. */
 async function messe(url, port, drosselung) {
-  const optionen = { port, output: 'json', logLevel: 'error' };
+  const optionen = { port, output: 'json', logLevel: 'error', ...(kopfzeilen ? { extraHeaders: kopfzeilen } : {}) };
   if (drosselung === 'devtools') {
     return lighthouse(url, { ...optionen, onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], throttlingMethod: 'devtools' });
   }

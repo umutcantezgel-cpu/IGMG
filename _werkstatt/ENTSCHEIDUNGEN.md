@@ -120,6 +120,11 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Z-08 wird in ABNAHME als „AUSNAHME A-01“ geführt, nie als abgehakt.
 - ML-27 legt die Feldprüfung nach dem Livegang fest. Fällt sie aus, ist Weg 1 der nächste Schritt (eigener Auftrag).
 
+**Nachtrag Endstand 325c38a (20:38 UTC, `protokolle/C3b-endleistung.log`):**
+- Verschränkt in 5 Runden: Mediane 3500 81–89, 3100 79–86, Paarregel 11/11 (`C-lighthouse-v.md`).
+- INP in 3 Runden: 11/11 ≤ 200 ms, jede Route schneller als der Ausgangsstand (`C3b-inp.md`).
+- Die Ausnahme gilt unverändert.
+
 ## L-E15 · 2026-10-12 · Opus · Abschlussblock direkt vor dem Fuß ist hell (Sichtabnahme C3, H-F01)
 - **Anlass:** Über uns, Projekte und Korankurse enden mit einem tiefgrünen Aufruf, und gleich darunter folgt der tiefgrüne Fuß. Zwei dunkle Flächen stehen übereinander, getrennt nur von einem schmalen Papierstreifen (≈ 25–72 px). Das senkt Farbe/Bild auf 7 (`berichte/SICHTABNAHME-C3.md` §1).
 - **Entscheidung:** Ein Abschlussblock, der unmittelbar vor dem Fuß steht, ist hell:
