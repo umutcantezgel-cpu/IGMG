@@ -1,6 +1,6 @@
 # GO-LIVE: Was vor dem Livegang erledigt sein muss
 
-Stand: 11.10.2026. Diese Liste sagt dir, was vor der ersten öffentlichen Veröffentlichung auf Vercel fertig sein muss. Der Weg dorthin steht in **VERCEL.md** (Runbook, etwa 30 Minuten). Was nur ein Mensch entscheiden oder erledigen kann, steht in **MENSCHEN.md**.
+Stand: 12.10.2026 (Abschluss des Gestaltungs- und Vercel-Laufs). Diese Liste sagt dir, was vor der ersten öffentlichen Veröffentlichung auf Vercel fertig sein muss. Der Weg dorthin steht in **VERCEL.md** (Runbook, etwa 30 Minuten). Was nur ein Mensch entscheiden oder erledigen kann, steht in **MENSCHEN.md**.
 
 ## So liest du die Liste
 
@@ -150,13 +150,15 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
 - [ ] **E1 · Startklar-Cockpit grün**
   - **Ort:** `/verwaltung/startklar` in der Verwaltung, oder auf der Kommandozeile `pnpm startklar`.
   - **Stand:** Das Cockpit ist im Code vorhanden (`web/src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx`, Prüfungen in `web/src/lib/startklar/pruefungen.ts`). Ob alle Punkte grün sind, zeigt ein Lauf.
+  - **Von Hand:** Die Funktionsregion `fra1` im Projekt bestätigen (MENSCHEN ML-22). Den Speicher prüft das Cockpit nur als Einstellung; ob er erreichbar ist, zeigt der Testupload aus B2.
   - **Aufwand:** 10 Minuten zum Durchsehen.
   - **Wer:** Technik.
   - **Das siehst du, wenn es geklappt hat:** Alle Punkte sind grün. Soll-Zustand: Jeder Punkt, der rot bleibt, nennt Grund und Ort.
 
 - [ ] **E2 · Abnahme der zwölf Hauptseiten**
-  - **Ort:** Die Vorschau-Adresse über den teilbaren Link (VERCEL.md, Abschnitt 5.4). Die Liste mit Adressen steht in VERCEL.md, Abschnitt 11.
-  - **Aufwand:** 30 Minuten, auf dem Handy und auf dem Computer.
+  - **Ort:** Die Vorschau-Adresse über den teilbaren Link (VERCEL.md, Abschnitt 5.4; MENSCHEN ML-23). Die Liste mit Adressen steht in VERCEL.md, Abschnitt 11.
+  - **Aufwand:** 30 Minuten, auf dem Handy und auf dem Computer. Mindestens ein iPhone mit Safari und ein Android-Telefon mit Chrome, denn der Lauf hat nur mit Chromium-Emulation geprüft (MENSCHEN, Umgebungsausnahmen UA-01 und UA-04).
+  - **Dazu in der Verwaltung:** einmal anmelden (mit zweitem Faktor), einen Seiteninhalt speichern, ein Bild hochladen. Der Lauf konnte diese Abläufe nur lokal prüfen (UA-03).
   - **Wer:** Vorstand.
   - **Das siehst du, wenn es geklappt hat:** Jede Seite öffnet ohne Fehler, Texte und Bilder sind vollständig, das Menü funktioniert auf dem Handy, und der Vorstand hat schriftlich bestätigt, was er übernimmt.
 
@@ -177,6 +179,20 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Aufwand:** 5 Minuten.
   - **Wer:** Vorstand.
   - **Das siehst du, wenn es geklappt hat:** Eine Nachricht vom Vorstand mit dem Satz „Freigegeben“ liegt vor.
+
+## F. Nach dem Livegang
+
+- [ ] **F1 · Ladeleistung im Feld prüfen**
+  - **Ort:** https://pagespeed.web.dev, „Mobil“, für Startseite, `/gebetszeiten` und `/veranstaltungen` (MENSCHEN ML-27).
+  - **Aufwand:** 10 Minuten.
+  - **Wer:** Technik.
+  - **Das siehst du, wenn es geklappt hat:** Performance ≥ 90 sowie INP und LCP im grünen Bereich. Sonst folgt ein eigener Auftrag „Hydrierung verkleinern“.
+
+- [ ] **F2 · Eingaben vor dem Laden der Verwaltungsformulare entscheiden**
+  - **Ort:** Technik, Vorschlag in MENSCHEN ML-28.
+  - **Aufwand:** Entscheidung 5 Minuten; Umsetzung 1–2 Stunden mit Test.
+  - **Wer:** Vorstand entscheidet, Technik setzt um.
+  - **Das siehst du, wenn es geklappt hat:** Wer in der ersten Ladesekunde tippt, verliert keine Eingabe mehr.
 
 ## Verweise
 

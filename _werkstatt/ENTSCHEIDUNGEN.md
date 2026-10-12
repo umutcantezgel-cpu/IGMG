@@ -128,3 +128,45 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
   - Die Fläche bleibt dunkel, wo sie nicht vor dem Fuß steht: Karte „Nächstes Gebet“ oben auf /gebetszeiten, Seitenspalte „Haben Sie Fragen?“ auf /mitglied-werden, Zahlen der IGMG im Tab.
 - **Löst ab:** Die Teilverwerfung „Seitenende hell“ aus C2 (H-C07). Ihre Begründung, dass die AnmeldeKarte zu den dunklen Aufrufen passt, entfällt, weil diese Aufrufe jetzt ebenfalls hell sind.
 - **Folgen:** REFERENZ §2 nimmt die Regel auf. Der Fuß bleibt die einzige tiefgrüne Schlussfläche jeder Seite.
+
+## L-E16 · 2026-10-12 · Opus · AUSNAHME A-02: Z-04 jede Hauptansicht ≥ 8 (Denkprotokoll, L7)
+
+**Ziel:** Z-04. Der Endprüfer bewertet die Nachher-Bilder nach Rubrik §10 in sechs Kategorien. Ziel: jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen.
+
+**Stand** (Trockenlauf der Endprüfung, `protokolle/C3b-endpruefung-trockenlauf.md`):
+- Nachher ist im Blindvergleich in 11 von 11 Ansichten vorgezogen. Mittel aus fünf Kategorien: nachher 7,0–7,8, vorher 5,0–6,0.
+- Mit Bewegung als sechster Kategorie liegen die Ansichten bei 7,17–7,83 (Mittel 7,58), das Cockpit bei 7,67. Keine Hauptansicht erreicht 8.
+- Eine einzige Kategorie liegt unter 7: Über uns, Details 6. Grund ist der Weg der Gemeinde als Zwischenbild der Bewegung im Bildsatz (Schirm 3, 350 ms nach dem Scrollen). Der Endprüfer nennt das selbst.
+- Die maßgeblichen Werte stammen aus der Endprüfung mit dem Bildsatz im Endzustand und werden dort nachgetragen.
+
+**Vier belegte Anläufe** (Sichtabnahme → Befundwelle → neue Sichtabnahme, je fünf frische Opus-Prüfer):
+1. Sichtabnahme E3 (Ø 6,29) → H-B, 14 Pakete
+2. Sichtabnahme E4 (Ø 7,16) → H-C, 13 Pakete
+3. Sichtabnahme C2 (Ø 7,52) → H-E, 14 Pakete
+4. Sichtabnahme C3 (Ø 7,65, erstmals keine Kategorie unter 7) → H-F, 13 Pakete
+
+Alle 54 Pakete sind von Opus abgenommen (Noten 8–8,5). Belege: `berichte/SICHTABNAHME-E3.md`, `-E4.md`, `-C2.md`, `-C3.md`; Commits 6596a6e, f44119b, 0dc2e7c–5d19108, 8e93ef8, 1bbee03, 6464993.
+
+**Wege:**
+1. **Fünfte Befundwelle.** Der Zuwachs je Welle sinkt: +0,87, +0,36, +0,13. Die Restabzüge liegen verstreut in Komposition und Details, ohne gemeinsame Ursache: Kopfzone der Detailseite, doppelter Rücksprung, Leerflächen, Umbrüche einzelner Zeilen, Farben einzelner Hinweise. Für Detail (7,33) und Über uns (7,17) fehlen 0,7–0,8 Punkte, also mehrere Wellen.
+   - Neue Blickwinkel der Prüfer nehmen Punkte auch wieder weg; in C3 fielen zwei Ansichten ohne Bildregression.
+   - Jede Welle riskiert den Bestand (Z-02) und die Momente (Z-05).
+   - Pflicht und Kür sind erfüllt, und laut Lauf entstehen keine neuen Pakete ohne Befund.
+2. **Rubrik lockern oder andere Prüfer wählen:** Das wäre unredlich und widerspricht der Abschlussregel.
+3. **AUSNAHME mit bester Ersatzlösung:**
+   - Nachher ist im Blindvergleich überall vorgezogen, mit +2,2 Punkten im Mittel gegenüber dem Ausgangsstand.
+   - Jede Hauptansicht liegt ≥ 7; die Bewegungsnoten liegen bei 7–8.
+   - Die benannten Restbefunde werden als Übergabe für einen eigenen Gestaltungsauftrag in BERICHT „Offen“ geführt.
+
+**Bewertung:**
+- Der Nordstern „würdevoll, ruhig, eigenständig“ ist im Blindvergleich deutlich erreicht: Die Prüfer nennen Achtstern-System, Tagesbogen, mobile Eigenlösungen und neutrale Kennmarken.
+- Das Ziel 8 je Ansicht ist ein Spitzenmaß. Der Abstand von 0,2–0,8 Punkten liegt in Einzelheiten, nicht in der Richtung.
+- Weg 1 kostet mehrere Wellen mit sinkendem Ertrag und Risiko für Geprüftes. Weg 3 ist ehrlich und prüfbar und lässt die Fortsetzung bei den Menschen.
+
+**Umkehrprobe:** Wäre ≥ 8 mit vertretbarem Aufwand erreichbar, hätte die vierte Welle mit 13 gezielten Paketen auf die C3-Befunde den Abstand schließen müssen. Das Mittel stieg aber nur um 0,13 (C2 → C3); im Blindvergleich nach H-F liegt es bei 7,58 mit Bewegung. Das ist ein Plateau.
+
+**Folgen zweiter Ordnung:**
+- Ausnahmen: 2 von höchstens 2. Eine weitere AUSNAHME ist nicht möglich; wäre eine nötig, folgt HALT nach AUFTRAG.
+- Z-02, Z-11 und Z-12 sind nicht betroffen.
+- Z-04 steht in ABNAHME als „AUSNAHME A-02“, nie als abgehakt.
+- Übergabe: Restbefunde aus dem Blindvergleich in BERICHT „Offen“.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Prüfwerkzeug c: automatische Zugänglichkeitsprüfung (axe-core) nach WCAG 2.2 AA je Route.
 // Tags: wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa. Zählung je Route nach Schwere (critical, serious, moderate, minor).
-// Aufruf: node a11y.mjs --routen datei.json [--breite 390|1440] [--basis URL] [--warte ms] [--protokoll basisname]
+// Aufruf: node a11y.mjs --routen datei.json [--breite 390|768|1440] [--basis URL] [--warte ms] [--zustand storageState.json] [--protokoll basisname]
 // Beispiel: node a11y.mjs --routen routen-hauptansichten.json --breite 1440
 // Befunde sind Daten, kein Fehlerabbruch: Exit-Code 0, außer bei technischen Fehlern.
 import AxeBuilder from '@axe-core/playwright';
@@ -18,7 +18,7 @@ import {
   vollerUrl,
 } from './hilfen.mjs';
 
-const HILFE = `Aufruf: node a11y.mjs --routen datei.json [--breite 390|768|1440] [--basis URL] [--warte ms] [--protokoll basisname]
+const HILFE = `Aufruf: node a11y.mjs --routen datei.json [--breite 390|768|1440] [--basis URL] [--warte ms] [--zustand storageState.json] [--protokoll basisname]
 Beispiel: node a11y.mjs --routen routen-hauptansichten.json --breite 1440`;
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
@@ -30,6 +30,7 @@ const { values } = parseArgs({
     breite: { type: 'string', default: '390' },
     basis: { type: 'string' },
     warte: { type: 'string', default: '800' },
+    zustand: { type: 'string' },
     protokoll: { type: 'string' },
     hilfe: { type: 'boolean', short: 'h', default: false },
   },
@@ -46,8 +47,10 @@ const browser = await starteBrowser();
 const ergebnis = [];
 try {
   for (const route of routen) {
-    const kontext = await neuerKontext(browser, { viewport: { width: breite, height: hoehe }, reducedMotion: 'no-preference' });
+    const kontext = await neuerKontext(browser, { viewport: { width: breite, height: hoehe }, reducedMotion: 'no-preference', ...(values.zustand ? { storageState: values.zustand } : {}) });
     const seite = await kontext.newPage();
+    // Mit Anmeldestand nur lesend: POST außerhalb von /_next/ wird abgebrochen
+    if (values.zustand) await seite.route('**/*', (r) => (r.request().method() === 'POST' && !r.request().url().includes('/_next/') ? r.abort() : r.continue()));
     const status = await oeffne(seite, vollerUrl(basis, route.pfad), { warte: Number(values.warte) });
     const erg = await new AxeBuilder({ page: seite }).withTags(TAGS).analyze();
     await kontext.close();

@@ -6,7 +6,9 @@
 //     (mit Auslassungszeichen oder Zeilenkürzung markiert: vermutlich beabsichtigt)
 //   - Elemente, die über den rechten Rand ragen (zur Ursachensuche beim Querscrollen)
 // Aufruf: node bildsatz.mjs --routen datei.json [--aus ordner] [--reduziert] [--max-schirme 16] [--basis URL]
-//         [--warte ms] [--protokoll basisname]
+//         [--warte ms] [--schirm-warte ms] [--zustand storageState.json] [--protokoll basisname]
+//   --schirm-warte: Wartezeit nach jedem Scrollen (Vorgabe 350; für Endzustände von Momenten ≥ 1600)
+//   --zustand: Anmeldestand (storageState) für Verwaltungsansichten; POST außerhalb von /_next/ wird abgebrochen
 // Beispiel: node bildsatz.mjs --routen routen-hauptansichten.json --reduziert
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -26,7 +28,7 @@ import {
   vollerUrl,
 } from './hilfen.mjs';
 
-const HILFE = `Aufruf: node bildsatz.mjs --routen datei.json [--aus ordner] [--reduziert] [--max-schirme 16] [--basis URL] [--warte ms] [--protokoll basisname]
+const HILFE = `Aufruf: node bildsatz.mjs --routen datei.json [--aus ordner] [--reduziert] [--max-schirme 16] [--basis URL] [--warte ms] [--schirm-warte ms] [--zustand storageState.json] [--protokoll basisname]
 Beispiel: node bildsatz.mjs --routen routen-hauptansichten.json --aus /tmp/bildsatz --max-schirme 4`;
 
 const { values } = parseArgs({
@@ -37,6 +39,8 @@ const { values } = parseArgs({
     'max-schirme': { type: 'string', default: '16' },
     basis: { type: 'string' },
     warte: { type: 'string', default: '600' },
+    'schirm-warte': { type: 'string', default: '350' },
+    zustand: { type: 'string' },
     protokoll: { type: 'string' },
     hilfe: { type: 'boolean', short: 'h', default: false },
   },
@@ -98,8 +102,10 @@ try {
         viewport: { width: breite, height: hoehe },
         deviceScaleFactor: 1,
         reducedMotion: values.reduziert ? 'reduce' : 'no-preference',
+        ...(values.zustand ? { storageState: values.zustand } : {}),
       });
       const seite = await kontext.newPage();
+      if (values.zustand) await seite.route('**/*', (r) => (r.request().method() === 'POST' && !r.request().url().includes('/_next/') ? r.abort() : r.continue()));
       const status = await oeffne(seite, vollerUrl(basis, route.pfad), { warte: Number(values.warte) });
       const gesamtHoehe = await seite.evaluate(() => document.documentElement.scrollHeight);
       const anzahl = Math.max(1, Math.min(maxSchirme, Math.ceil(gesamtHoehe / hoehe)));
@@ -110,7 +116,7 @@ try {
       for (let i = 0; i < anzahl; i++) {
         const y = Math.min(i * hoehe, Math.max(0, gesamtHoehe - hoehe));
         await seite.evaluate((pos) => window.scrollTo(0, pos), y);
-        await seite.waitForTimeout(350);
+        await seite.waitForTimeout(Number(values['schirm-warte']));
         const bildPfad = join(ordner, `schirm-${String(i + 1).padStart(2, '0')}.jpg`);
         await seite.screenshot({ path: bildPfad, type: 'jpeg', quality: 70 });
         bilder.push(bildPfad);

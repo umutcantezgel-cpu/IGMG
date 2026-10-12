@@ -50,3 +50,24 @@ Stand 12.10.2026, gegen den Code geprüft (H-D04). Die Schritte folgen `web/docs
 - **ML-26 · Projektdaten bestätigen (Sichtabnahme C2, H-E04):** Die Projektseite zeigt die Meilensteine jetzt mit Datumszeile auf einer Zeitachse (März 2024 bis Januar 2026). Am 12.10.2026 wirken einige davon veraltet: „Grundsteinlegung September 2024 – Geplant“, „Eröffnung Januar 2026 – Geplant“, „Fertigstellung 2026“. Die Daten sind Beispielinhalte (`web/drizzle/seeds/`) und werden vom Lauf nicht geändert (G-08). Ort: Vorstand bestätigt Daten und Status; Pflege in der Verwaltung › Projekte bzw. in den Stammdaten. Aufwand: 15 min. Annahme: Bis zur Bestätigung bleiben die Beispieldaten sichtbar.
 - **ML-27 · Ladeleistung im Feld prüfen (AUSNAHME A-01, L-E14):** Nach dem Livegang mit echter Datenbank öffnest du https://pagespeed.web.dev und prüfst „Mobil“ für die Startseite, `/gebetszeiten` und `/veranstaltungen`. Ziel: Performance ≥ 90 sowie INP und LCP im grünen Bereich. Im Labor dieses Laufs lag die Note bei 82–89 und damit gleichauf mit dem Ausgangsstand; Ursache ist die Hydrierung des Frameworks. Liegt die Feldnote darunter, ist der nächste Schritt ein eigener Auftrag „Hydrierung verkleinern“ (L-E14 Weg 1). Aufwand: 10 Minuten; Ort: Browser, kein Konto nötig.
 - **ML-28 · Eingaben vor dem Laden der Verwaltungsformulare (Abschlussprüfung 325c38a, protokolle/C3-e2e-kontakt.md):** Die Seiteninhalts-Formulare der Verwaltung (Kontaktdaten, Organisationen) führen ihre Felder im React-Zustand. Tippt jemand, bevor die Seite fertig geladen (hydriert) ist, setzt React die mehrzeiligen Felder auf den gespeicherten Wert zurück; die Eingabe ist weg oder landet vor dem alten Text. Beobachtet: bei sechsfach gedrosseltem Prozessor in 6 von 6 Proben, in der E2E-Suite unter hoher Last. Am normalen Rechner ist die Spanne kürzer als eine Sekunde. Der Lauf ändert das nicht, weil Formularlogik UNANTASTBAR ist (G8); der E2E-Test wartet jetzt, bis das Formular den Wert übernommen hat. Vorschlag für ein eigenes Paket: Formular bis zur Hydrierung sperren (`fieldset disabled`, bis ein Effekt gelaufen ist) oder Felder ungesteuert mit `defaultValue` führen. Ort: Technik. Aufwand: 1–2 Stunden mit Test. Annahme: Das Verhalten bleibt bis zur Entscheidung; betroffen ist nur, wer in der ersten Ladesekunde tippt.
+
+## Umgebungsausnahmen des Laufs: was Menschen nachholen (AUFTRAG E1, ABNAHME UA-01–UA-04)
+
+- **UA-01 · Echte Geräte:** Der Lauf hatte keine Telefone oder Tablets. Geprüft wurde mit Chromium-Emulation in 390, 768 und 1440 px und mit vierfach gedrosseltem Prozessor. Nachholen:
+  - Startseite, Gebetszeiten, Veranstaltungen, Kontakt und Telefonmenü auf einem iPhone mit Safari und einem Android-Telefon mit Chrome öffnen.
+  - Ein Moment (Tagesbogen auf der Startseite) muss flüssig laufen.
+  - Ort: Vorschau über den teilbaren Link (GO-LIVE E2). Aufwand: 20 min.
+  - Annahme: Das Verhalten entspricht der Emulation.
+- **UA-02 · Docker-E2E:** In der Cloud gab es kein Docker. Die E2E-Suite lief gegen Postgres 16 und Mailpit als Binärdatei (563 grün). Nachholen nur, wenn die App auch per Docker betrieben wird: `docker compose` nach `web/docs/BETRIEB.md` starten und `pnpm test:e2e` dagegen laufen lassen. Ort: Rechner der Technik mit Docker. Aufwand: 30 min. Annahme: Für Vercel entfällt der Punkt.
+- **UA-03 · Verwaltungsabläufe auf der Vorschau:** Vorschau und Produktion hatten im Lauf weder Datenbank noch Konten. Die Verwaltung ist nur lokal geprüft. Nachholen nach GO-LIVE B1–B3:
+  - auf der Vorschau anmelden (mit zweitem Faktor);
+  - einen Seiteninhalt speichern und auf der öffentlichen Seite sehen;
+  - ein Bild hochladen (Vercel Blob);
+  - das Startklar-Cockpit ansehen.
+
+  Ort: Vorschau (GO-LIVE E2). Aufwand: 30 min. Annahme: Das Verhalten entspricht dem lokalen Stand.
+- **UA-04 · Browser-Version:** Alle Prüfungen liefen mit Chromium 141, weil Playwright 1.64 eigentlich Chromium 156 erwartet und die Installation nicht erlaubt war. Nachholen:
+  - in einer Umgebung mit passendem Browser (`pnpm exec playwright install chromium`) die E2E-Suite einmal laufen lassen;
+  - die Hauptseiten in aktuellem Firefox und Safari ansehen.
+
+  Ort: Rechner der Technik oder CI. Aufwand: 30 min plus Laufzeit. Annahme: Keine Abweichung.
