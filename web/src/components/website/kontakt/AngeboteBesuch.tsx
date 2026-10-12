@@ -1,20 +1,17 @@
-import { BookOpen, Calendar, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Text } from '@/components/website/Text';
 import type { Locale } from '@/i18n/routing';
-import { cn } from '@/lib/utils';
 import type { SeitenInhalt } from '@/server/queries/seiteninhalte';
 import { UEBERSCHRIFT } from './stil';
 
 /**
- * Angebote (Liste aus dem Seiteninhalt) und die Karte „Besucher willkommen“ mit zwei Chips
- * (design/Contact.dc.html:59–67).
+ * Angebote (Liste aus dem Seiteninhalt) und die Karte „Besucher willkommen“ (design/Contact.dc.html:59–67).
+ * H-E03: Die Besuchskarte ist eine helle Sandfläche mit Rand und führt mit einem Link zum Nachrichtenformular.
  */
 export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kontakt');
-  // Ehrliche Elemente (H-B10): Die Chips sind Hinweise auf Dunkelgrün und sehen nicht wie weiße Knöpfe aus
-  const chip = 'inline-flex items-center gap-1.5 rounded-pill bg-gruen-800 px-3 py-0.5 text-16 font-bold text-gruen-50';
   return (
     <div className="grid items-start gap-6 lg:grid-cols-3">
       <section aria-labelledby="kontakt-angebote" className="flex min-w-0 flex-col gap-4 lg:col-span-2">
@@ -31,21 +28,18 @@ export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'konta
           ))}
         </ul>
       </section>
-      <section aria-labelledby="kontakt-besuch" className="flex min-w-0 flex-col gap-3 rounded-lg bg-gruen-950 p-6 text-weiss">
-        <h2 id="kontakt-besuch" className={cn(UEBERSCHRIFT, 'text-weiss')}>
+      <section aria-labelledby="kontakt-besuch" className="flex min-w-0 flex-col gap-3 rounded-lg border border-linie bg-sand p-6">
+        <h2 id="kontakt-besuch" className={UEBERSCHRIFT}>
           {t('besuch.titel')}
         </h2>
-        <Text feld={kontakt.besuchstext} sprache={sprache} als="p" className="text-gruen-50" />
-        <ul className="flex flex-wrap gap-2">
-          <li className={chip}>
-            <BookOpen aria-hidden className="size-4" />
-            {t('besuch.fuehrungen')}
-          </li>
-          <li className={chip}>
-            <Calendar aria-hidden className="size-4" />
-            {t('besuch.termine')}
-          </li>
-        </ul>
+        <Text feld={kontakt.besuchstext} sprache={sprache} als="p" className="text-tinte-2" />
+        <a
+          href="#nachricht"
+          className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4"
+        >
+          {t('besuch.vereinbaren')}
+          <ArrowRight aria-hidden className="size-5" />
+        </a>
       </section>
     </div>
   );

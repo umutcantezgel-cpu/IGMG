@@ -7,7 +7,7 @@ import type { Locale } from '@/i18n/routing';
 import { telefonHref } from '@/lib/telefon';
 import { cn } from '@/lib/utils';
 import type { SeitenInhalt } from '@/server/queries/seiteninhalte';
-import { KARTE, KNOPF_RAHMEN, UEBERSCHRIFT } from './stil';
+import { KARTE, KNOPF_RAHMEN, TEIL, UEBERSCHRIFT } from './stil';
 
 /*
  * Die vier Karten der Kontaktseite (design/Contact.dc.html:22–47), je als eigener Baustein, damit die Seite sie
@@ -62,7 +62,7 @@ export async function KarteOeffnungszeiten({ kontakt }: { kontakt: SeitenInhalt<
   const t = await getTranslations('kontakt');
   const tp = await getTranslations('kopf');
   return (
-    <section aria-labelledby="kontakt-oeffnungszeiten" className={KARTE}>
+    <section aria-labelledby="kontakt-oeffnungszeiten" className={TEIL}>
       <h2 id="kontakt-oeffnungszeiten" className={UEBERSCHRIFT}>
         {t('oeffnungszeiten.titel')}
       </h2>
@@ -111,7 +111,7 @@ export async function KarteNotfall({ kontakt }: { kontakt: SeitenInhalt<'kontakt
   const t = await getTranslations('kontakt');
   const notfall = telefonHref(kontakt.notfallTelefon);
   return (
-    <section aria-labelledby="kontakt-notfall" className={KARTE}>
+    <section aria-labelledby="kontakt-notfall" className={TEIL}>
       <h2 id="kontakt-notfall" className={UEBERSCHRIFT}>
         {t('notfall.titel')}
       </h2>
@@ -137,7 +137,7 @@ export async function KarteNotfall({ kontakt }: { kontakt: SeitenInhalt<'kontakt
 export async function KarteAdresse({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> }) {
   const t = await getTranslations('kontakt');
   return (
-    <section aria-labelledby="kontakt-adresse" className={KARTE}>
+    <section aria-labelledby="kontakt-adresse" className={TEIL}>
       <h2 id="kontakt-adresse" className={UEBERSCHRIFT}>
         {t('adresse.titel')}
       </h2>

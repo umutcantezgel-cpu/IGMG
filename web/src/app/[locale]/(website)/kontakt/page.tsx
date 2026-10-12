@@ -65,8 +65,8 @@ export default async function KontaktSeite() {
               </Link>
             </p>
           </section>
-          {/* Ab 768 px drei gleich hohe Karten nebeneinander, ab 1024 px wieder rechts untereinander (H-C06) */}
-          <div className="grid gap-6 md:grid-cols-3 lg:col-start-3 lg:row-start-2 lg:flex lg:flex-col lg:self-start">
+          {/* Begleitspalte als ein Rahmen mit drei Teilen (H-E03): ab 768 px drei Spalten mit senkrechten Linien, ab 1024 px untereinander mit waagerechten */}
+          <div className="grid gap-6 rounded-lg border border-linie bg-weiss p-6 md:grid-cols-3 lg:col-start-3 lg:row-start-2 lg:flex lg:flex-col lg:self-start">
             <KarteOeffnungszeiten kontakt={kontakt} />
             <KarteNotfall kontakt={kontakt} />
             <KarteAdresse kontakt={kontakt} />
