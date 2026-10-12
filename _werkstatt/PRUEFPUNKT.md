@@ -17,4 +17,5 @@
 - **Letzter grüner Commit:**
   - Branch: 5d19108, alle 13 H-C-Pakete, Unit 794, tsc grün.
   - main: 560161e, Produktion READY, 0 Laufzeitfehler.
+- **Stufe-C-Protokolle während des Laufs ausgeblendet:** `.git/info/exclude` (Muster `_werkstatt/protokolle/C-*`) und `git update-index --assume-unchanged` für schon verfolgte C-Protokolle. Nach dem Lauf: Zeilen aus `.git/info/exclude` entfernen, `git update-index --no-assume-unchanged` je Datei, dann alle C-Protokolle committen.
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.
