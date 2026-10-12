@@ -61,3 +61,13 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Ergebnis H-R01 (9ebb4bc gegen ff27650, Werkzeug `werkzeuge/wortlaut.mjs`): 717 Rechts- und Einwilligungseinträge, 0 geändert, 0 entfernt; Einwilligungs-Textversionen (SHA-256) damit unverändert.
 - Entscheidung zu den neuen Einträgen: A-01 Hosting-Baustein v2 (erlaubte Ausnahme, Entwurf, nicht eingespielt) · A-02/A-03 Cockpit-Texte (nur Verwaltung, keine Besuchertexte) · **A-04 `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md`**: internes Dokument nach V-11, nicht veröffentlicht, kein Rechtstext für Besucher → Ausnahme, kein Befund.
 - Mikrotext-Änderungen nach dem Prüfstand (a94d0dd: Leerzustände Korankurse, Leertext der Filter) betreffen keine Rechtsquelle; Stufe C wiederholt die Prüfung am Endstand.
+
+## L-E12 · 2026-10-12 · Opus · „Reaktion auf Eingaben“ im Labor als INP messen (Denkprotokoll)
+- **Ziel:** das Budget „Reaktion auf Eingaben höchstens 200 ms“ (AUFTRAG BUDGETS) belegen. ABNAHME Z-08 nennt „INP/TBT ≤ 200 ms“, gemessen wurde bisher nur TBT aus Lighthouse.
+- **Wege:**
+  1. Nur TBT. Das ist die Blockierzeit der Ladephase; sie misst keine Eingabe. Im Ausgangsstand liegt sie schon bei 255–656 ms. Getrieben wird sie von der Hydrierung des Frameworks: ein Skriptblock von ≈ 510 ms bei 4× Drosselung auf der Startseite, in E0 gleich groß (`$SCRATCHPAD/spur/lh-start-fa5c005.json`, `profil-start-fa5c005.json`).
+  2. INP im Labor: Event Timing bei typischen Eingaben ohne Seitenwechsel (Menü, Leiste, Reiter, Tippen, Tab), Telefon 390 px, CPU 4×. Ausgangsstand und Prüfling verschränkt gemessen (`werkzeuge/inp.mjs`, `inp-paare.sh`).
+  3. Feld-INP (CrUX, Vercel Speed Insights): gibt es vor dem Livegang nicht und bräuchte einen neuen Dienst (Grenze „keine neuen Dritten“).
+- **Bewertung:** Weg 2 misst den Wortlaut, ist gepaart wiederholbar und bleibt im Repo. Weg 1 bleibt als Lighthouse-Kennzahl im Protokoll und in der Performance-Note, gilt aber nicht als „Reaktion auf Eingaben“. Weg 3 entfällt.
+- **Umkehrprobe:** Wäre die Ladephase gemeint, stünde dort Blockierzeit oder Interaktivität. Der Wortlaut nennt Eingaben.
+- **Folgen zweiter Ordnung:** TBT wird weiter berichtet, mit E0-Vergleich und Paarregel. INP im Labor bei 4× Drosselung ist strenger als Feld-INP auf echten Telefonen (UA-01). Die Performance-Note ≥ 90 bleibt ein eigenes Budget; verfehlt sie es am Endstand, folgt eine AUSNAHME nach L7 mit eigenem Denkprotokoll.
