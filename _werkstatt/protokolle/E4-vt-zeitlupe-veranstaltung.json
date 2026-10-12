@@ -1,0 +1,159 @@
+{
+  "werkzeug": "vt-zeitlupe3",
+  "basis": "http://127.0.0.1:3500",
+  "von": "/veranstaltungen",
+  "ziel": "/veranstaltungen/arabisch-sprachkurs",
+  "selektor": "a[href*=\"arabisch-sprachkurs\"]",
+  "rate": 0.1,
+  "breite": 1440,
+  "bilder": [
+    {
+      "nr": 1,
+      "msNachKlick": 753,
+      "adresse": "/veranstaltungen",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": [],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e4/seitenwechsel/veranstaltung/zeitlupe-01.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachKlick": 1626,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 6,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        },
+        {
+          "name": "ausblenden",
+          "pseudo": "::view-transition-old(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        },
+        {
+          "name": "ausblenden",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 82
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e4/seitenwechsel/veranstaltung/zeitlupe-02.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachKlick": 2462,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 4,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 170
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e4/seitenwechsel/veranstaltung/zeitlupe-03.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachKlick": 3305,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 3,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 253
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 253
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 253
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e4/seitenwechsel/veranstaltung/zeitlupe-04.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachKlick": 4183,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 2,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 337
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 337
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/e4/seitenwechsel/veranstaltung/zeitlupe-05.jpg"
+    }
+  ],
+  "kopfVorKlick": 0,
+  "endeAdresse": "/veranstaltungen/arabisch-sprachkurs",
+  "endeVt": 1,
+  "zielErreicht": true
+}
