@@ -434,6 +434,11 @@
 ::view-transition-new(.seite) {
   animation: var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden;
 }
+/* B-05 Karte → Detail: Inhalt erst, wenn Titel und Bild stehen; gesamt dauer-auftritt (C3, H-F08). SeitenUebergang setzt
+   data-uebergang='morph' nur, wenn gemeinsame Elemente benannt sind. */
+html[data-uebergang='morph']::view-transition-new(.seite) {
+  animation-delay: var(--dauer-wechsel);
+}
 /* B-05 gemeinsame Elemente (Karte → Detail): Morph 400 ms mit ease-eintritt – der Titel kommt vor dem Inhalt an
    (Sichtabnahme C2, H-E14; vorher ease-standard) */
 ::view-transition-group(.morph) {
