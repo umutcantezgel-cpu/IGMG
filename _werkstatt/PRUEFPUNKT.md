@@ -16,6 +16,6 @@
   - Postgres 16 lokal (5432).
 - **Letzter grüner Commit:**
   - Branch: 5d19108, alle 13 H-C-Pakete, Unit 794, tsc grün.
-  - main: 560161e, Produktion READY, 0 Laufzeitfehler.
+  - main: 71e263f (Merge von PR #3 durch den Menschen, 05:18 UTC; Code = 5d19108), Produktion READY (dpl_5Tvd5XVW2BYimH1u2Bos6MeHBMa3), 0 Laufzeitfehler. Arbeitsbranch = 71e263f (Fast-Forward). Weitere Stände wieder per FF auf main.
 - **Stufe-C-Protokolle während des Laufs ausgeblendet:** `.git/info/exclude` (Muster `_werkstatt/protokolle/C-*`) und `git update-index --assume-unchanged` für schon verfolgte C-Protokolle. Nach dem Lauf: Zeilen aus `.git/info/exclude` entfernen, `git update-index --no-assume-unchanged` je Datei, dann alle C-Protokolle committen.
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.
