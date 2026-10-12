@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
+  // = --color-gruen-950: Browser-Metadaten verlangen einen Farbwert als Text, CSS-Variablen gelten hier nicht
   themeColor: '#0e3929',
   width: 'device-width',
   initialScale: 1,

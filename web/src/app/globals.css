@@ -113,6 +113,8 @@
   --container-einleitung: 47.5rem;
   /* Textspalte im Seitenkopf (statt max-w-[880px]) */
   --container-seitenkopf: 55rem;
+  /* Schmaler Hinweis-Dialog (680 px) */
+  --container-dialog: 42.5rem;
 
   /* Bewegung (Kern K-007): drei Kurven. Dauern und Ebenen stehen in :root (Tailwind kennt dafür keinen Namensraum). */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* Zustandswechsel an Ort und Stelle */
@@ -139,6 +141,14 @@
 }
 @utility raster-stammdaten-kurz {
   grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
+}
+
+/* Dialoge halten auf jeder Breite 1 rem Abstand zum Fensterrand (Breite und Höhe) */
+@utility breite-dialog {
+  width: calc(100% - 2rem);
+}
+@utility hoehe-dialog {
+  max-height: calc(100dvh - 2rem);
 }
 
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
@@ -303,6 +313,21 @@
   dialog.schublade[open] .schublade-gruppe {
     animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) calc(var(--dauer-rueckmeldung) + var(--i, 0) * var(--staffel)) both;
   }
+  /* B-03 auch für die Radix-Bausteine der Verwaltung (Löschen-Dialog, Kontomenü): Die animate-in-Klassen der
+     shadcn-Vorlagen sind ohne Animations-Plugin wirkungslos, Öffnen und Schließen kommen deshalb von hier.
+     Der Dialog ist über translate zentriert, sein Auftritt nutzt transform (auftritt-mitte). */
+  [data-slot='dialog-overlay'][data-state='open'] {
+    animation: einblenden var(--dauer-wechsel) var(--ease-standard) both;
+  }
+  [data-slot='dialog-content'][data-state='open'] {
+    animation: auftritt-mitte var(--dauer-wechsel) var(--ease-eintritt) both;
+  }
+  [data-slot='dropdown-menu-content'][data-state='open'] {
+    animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) both;
+  }
+  :is([data-slot='dialog-overlay'], [data-slot='dialog-content'], [data-slot='dropdown-menu-content'])[data-state='closed'] {
+    animation: ausblenden var(--dauer-rueckmeldung) var(--ease-austritt) both;
+  }
   [lang='ar'],
   [dir='rtl'] {
     font-family: var(--font-arabic);
@@ -329,6 +354,13 @@
   from {
     opacity: 0;
     translate: 0 0.5rem;
+  }
+}
+/* B-03 für Elemente, die translate schon zum Zentrieren brauchen (Radix-Dialog der Verwaltung) */
+@keyframes auftritt-mitte {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
   }
 }
 /* B-06/B-07/B-08/B-12: Linie zeichnet sich (pathLength="1", stroke-dasharray 1) */
@@ -469,6 +501,13 @@
     transform-origin: center;
     animation: aufziehen 900ms var(--ease-eintritt) 200ms both;
   }
+  /* B-09 wartet bei aktivem Skript, bis NachRuhe data-ruhe="ja" setzt (Seite nach der Hydrierung zur Ruhe); ohne
+     Skript läuft es ab dem ersten Bild wie bisher und endet im Endzustand. */
+  @media (scripting: enabled) {
+    [data-ruhe='nein'] .familie-eigen {
+      animation-play-state: paused;
+    }
+  }
   /* B-12: Lade-Achtstern zeichnet sich höchstens viermal, dann steht er */
   .lade-stern {
     stroke-dasharray: 1;
@@ -495,7 +534,9 @@
   }
   .tritt-auf,
   dialog.schublade[open],
-  dialog.schublade[open] .schublade-gruppe {
+  dialog.schublade[open] .schublade-gruppe,
+  [data-slot='dialog-content'][data-state='open'],
+  [data-slot='dropdown-menu-content'][data-state='open'] {
     animation-name: einblenden;
   }
   .bogen-punkt-erreicht {
@@ -532,7 +573,7 @@
     font-size: 75%;
   }
   body {
-    background: #fff;
+    background: var(--color-weiss);
     color: var(--color-tinte);
   }
   *,

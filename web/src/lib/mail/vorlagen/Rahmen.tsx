@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-head-element -- E-Mail-HTML, keine Next.js-Seite */
 import type { CSSProperties, ReactNode } from 'react';
-import { MAILFARBE as F } from './farben';
+import { MAILFARBE as F, MAILMASS as M } from './farben';
 
 /**
  * Gemeinsamer Mailrahmen in der Bauweise der Website: warmes Papier, Tiefgrün, Serifen-Titel, ruhige Abstände.
@@ -22,9 +22,9 @@ export function hintergrund(farbe: string): { bgcolor: string } {
 }
 
 const MOBIL_CSS = `
-@media (max-width: 480px) {
-  .igmg-kopf, .igmg-fuss { padding-left: 24px !important; padding-right: 24px !important; }
-  .igmg-innen { padding: 24px !important; }
+@media (max-width: ${M.schmal}) {
+  .igmg-kopf, .igmg-fuss { padding-left: ${M.abstand6} !important; padding-right: ${M.abstand6} !important; }
+  .igmg-innen { padding: ${M.abstand6} !important; }
 }`;
 
 /** Outlook (Word-Darstellung) bekommt eine feste Breite von 600 px; andere Programme sehen nur Kommentare. */
@@ -41,7 +41,7 @@ const KOERPER: MailStil = {
   background: F.papier,
   color: F.tinte,
   fontFamily: SCHRIFT_TEXT,
-  fontSize: '16px',
+  fontSize: M.text,
   lineHeight: '1.6',
   WebkitTextSizeAdjust: '100%',
 };
@@ -49,12 +49,12 @@ const KOERPER: MailStil = {
 /** Vorschautext nach dem üblichen Muster; `data-skip-in-text` hält ihn aus der Textfassung heraus. */
 const VORSCHAU: MailStil = {
   display: 'none',
-  maxHeight: '0px',
-  maxWidth: '0px',
+  maxHeight: M.aus,
+  maxWidth: M.aus,
   opacity: 0,
   overflow: 'hidden',
-  fontSize: '1px',
-  lineHeight: '1px',
+  fontSize: M.haar,
+  lineHeight: M.haar,
   color: F.papier,
   msoHide: 'all',
 };
@@ -62,41 +62,41 @@ const VORSCHAU: MailStil = {
 const KOPF: MailStil = {
   background: F.tiefgruen,
   color: F.weiss,
-  padding: '20px 32px',
-  borderRadius: '12px 12px 0 0',
+  padding: `${M.abstand5} ${M.abstand8}`,
+  borderRadius: `${M.radius} ${M.radius} 0 0`,
   fontFamily: SCHRIFT_TITEL,
-  fontSize: '24px',
+  fontSize: M.titel,
   fontWeight: 700,
   lineHeight: '1.3',
 };
 
 /** Feine Akzentlinie unter dem Kopf: 2 px hoch, ohne Text und ohne Innenabstand. */
 const AKZENT: MailStil = {
-  height: '2px',
-  fontSize: '0px',
-  lineHeight: '2px',
+  height: M.akzent,
+  fontSize: M.aus,
+  lineHeight: M.akzent,
   msoLineHeightRule: 'exactly',
   background: F.gruen,
   padding: 0,
 };
 
 const INNEN: MailStil = {
-  padding: '32px',
+  padding: M.abstand8,
   background: F.weiss,
   color: F.tinte,
   fontFamily: SCHRIFT_TEXT,
-  fontSize: '16px',
+  fontSize: M.text,
   lineHeight: '1.6',
 };
 
 const FUSS: MailStil = {
-  padding: '20px 32px',
+  padding: `${M.abstand5} ${M.abstand8}`,
   background: F.sand,
   color: F.tinte2,
   fontFamily: SCHRIFT_TEXT,
-  fontSize: '14px',
+  fontSize: M.textKlein,
   lineHeight: '1.5',
-  borderRadius: '0 0 12px 12px',
+  borderRadius: `0 0 ${M.radius} ${M.radius}`,
 };
 
 export function MailRahmen({
@@ -138,7 +138,7 @@ export function MailRahmen({
         >
           <tbody>
             <tr>
-              <td align="center" style={{ padding: '24px 12px' }} {...hintergrund(F.papier)}>
+              <td align="center" style={{ padding: `${M.abstand6} ${M.abstand3}` }} {...hintergrund(F.papier)}>
                 <div dangerouslySetInnerHTML={{ __html: MSO_AUF }} />
                 <table
                   role="presentation"
@@ -146,7 +146,7 @@ export function MailRahmen({
                   cellPadding={0}
                   cellSpacing={0}
                   border={0}
-                  style={{ maxWidth: '600px', background: F.weiss, border: `1px solid ${F.linie}`, borderRadius: '12px' }}
+                  style={{ maxWidth: M.breite, background: F.weiss, border: `${M.haar} solid ${F.linie}`, borderRadius: M.radius }}
                   {...hintergrund(F.weiss)}
                 >
                   <tbody>

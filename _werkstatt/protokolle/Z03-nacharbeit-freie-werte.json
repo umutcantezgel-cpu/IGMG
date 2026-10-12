@@ -1,0 +1,386 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-12-06-37",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/globals.css",
+    "web/src/components/verwaltung/medienwahl/MedienWahlDialog.tsx",
+    "web/src/components/website/KonzeptHinweis.tsx",
+    "web/src/components/website/OrgCard.tsx",
+    "web/src/app/[locale]/layout.tsx",
+    "web/src/lib/mail/vorlagen/Rahmen.tsx",
+    "web/src/lib/mail/vorlagen/index.tsx",
+    "web/src/lib/mail/vorlagen/farben.ts"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 18,
+    "Hex-Farbe": 10,
+    "px-Literal in Style": 24
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 107,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.55]",
+      "zeileText": "/* Zeilenhöhe für Einleitungen in 20 px (statt leading-[1.55]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[72px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[88px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 112,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[760px]",
+      "zeileText": "/* Lesebreite für Einleitungen (statt max-w-[760px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 114,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "/* Textspalte im Seitenkopf (statt max-w-[880px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 127,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(…)]",
+      "zeileText": "/* Raster (Kern K-005, statt grid-cols-[repeat(…)]): Karten ab 340 px, Kacheln ab 260 px, je so viele Spalten wie passen */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 165,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "* (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Nie hinter Text. Regelmäßiger Achtstern auf"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 214,
+      "art": "Tailwind-Klammerwert",
+      "fund": "z-50/z-60/z-[100]",
+      "zeileText": "/* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 680,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 681,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 682,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 683,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 684,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 685,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 686,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 687,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 688,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 689,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 690,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
+    },
+    {
+      "datei": "web/src/app/[locale]/layout.tsx",
+      "zeile": 27,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "themeColor: '#0e3929',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 39,
+      "art": "px-Literal in Style",
+      "fund": "margin: 0",
+      "zeileText": "margin: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 40,
+      "art": "px-Literal in Style",
+      "fund": "padding: 0",
+      "zeileText": "padding: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/Rahmen.tsx",
+      "zeile": 80,
+      "art": "px-Literal in Style",
+      "fund": "padding: 0",
+      "zeileText": "padding: 0,"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 63,
+      "art": "px-Literal in Style",
+      "fund": "margin: 0",
+      "zeileText": "<p data-skip-in-text=\"true\" style={{ margin: 0, fontSize: M.textKlein, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/index.tsx",
+      "zeile": 83,
+      "art": "px-Literal in Style",
+      "fund": "margin: 0",
+      "zeileText": "<p style={{ margin: 0, fontSize: M.textKlein, color: F.tinte2 }}>{t.kontakt}</p>"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 6,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "tiefgruen: '#0e3929',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 7,
+      "art": "Hex-Farbe",
+      "fund": "#047857",
+      "zeileText": "gruen: '#047857',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 8,
+      "art": "Hex-Farbe",
+      "fund": "#1d1a17",
+      "zeileText": "tinte: '#1d1a17',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 9,
+      "art": "Hex-Farbe",
+      "fund": "#514c46",
+      "zeileText": "tinte2: '#514c46',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 10,
+      "art": "Hex-Farbe",
+      "fund": "#f3f0e9",
+      "zeileText": "sand: '#f3f0e9',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 11,
+      "art": "Hex-Farbe",
+      "fund": "#fcfaf6",
+      "zeileText": "papier: '#fcfaf6',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 12,
+      "art": "Hex-Farbe",
+      "fund": "#dfdad2",
+      "zeileText": "linie: '#dfdad2',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 13,
+      "art": "Hex-Farbe",
+      "fund": "#ffffff",
+      "zeileText": "weiss: '#ffffff',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 22,
+      "art": "px-Literal in Style",
+      "fund": "'14px'",
+      "zeileText": "textKlein: '14px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 23,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "text: '16px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 24,
+      "art": "px-Literal in Style",
+      "fund": "'24px'",
+      "zeileText": "titel: '24px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 25,
+      "art": "px-Literal in Style",
+      "fund": "'20px'",
+      "zeileText": "knopfZeile: '20px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 26,
+      "art": "px-Literal in Style",
+      "fund": "'48px'",
+      "zeileText": "knopfHoehe: '48px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 27,
+      "art": "px-Literal in Style",
+      "fund": "'8px'",
+      "zeileText": "radiusKnopf: '8px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 28,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "radius: '12px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 29,
+      "art": "px-Literal in Style",
+      "fund": "'4px'",
+      "zeileText": "abstand1: '4px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 30,
+      "art": "px-Literal in Style",
+      "fund": "'12px'",
+      "zeileText": "abstand3: '12px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 31,
+      "art": "px-Literal in Style",
+      "fund": "'16px'",
+      "zeileText": "abstand4: '16px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 32,
+      "art": "px-Literal in Style",
+      "fund": "'20px'",
+      "zeileText": "abstand5: '20px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 33,
+      "art": "px-Literal in Style",
+      "fund": "'24px'",
+      "zeileText": "abstand6: '24px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 34,
+      "art": "px-Literal in Style",
+      "fund": "'32px'",
+      "zeileText": "abstand8: '32px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 35,
+      "art": "px-Literal in Style",
+      "fund": "'14px'",
+      "zeileText": "knopfSenkrecht: '14px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 36,
+      "art": "px-Literal in Style",
+      "fund": "'600px'",
+      "zeileText": "breite: '600px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 37,
+      "art": "px-Literal in Style",
+      "fund": "'480px'",
+      "zeileText": "schmal: '480px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 38,
+      "art": "px-Literal in Style",
+      "fund": "'2px'",
+      "zeileText": "akzent: '2px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 39,
+      "art": "px-Literal in Style",
+      "fund": "'1px'",
+      "zeileText": "haar: '1px',"
+    },
+    {
+      "datei": "web/src/lib/mail/vorlagen/farben.ts",
+      "zeile": 40,
+      "art": "px-Literal in Style",
+      "fund": "'0px'",
+      "zeileText": "aus: '0px',"
+    }
+  ]
+}

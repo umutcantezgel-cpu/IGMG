@@ -12,3 +12,30 @@ export const MAILFARBE = {
   linie: '#dfdad2',
   weiss: '#ffffff',
 } as const;
+
+/**
+ * Maße für E-Mails, aus demselben Grund wie die Farben nur hier als px erlaubt. Schriftstufen = text-14/16/24,
+ * Radien = --radius-md/-lg, Abstände aus der 4-px-Spacing-Skala; dazu die festen Maße des Mailrahmens
+ * (Outlook-Breite, Grenze für schmale Bildschirme, Akzentlinie, Knopf-Mindesthöhe, unsichtbarer Vorschautext).
+ */
+export const MAILMASS = {
+  textKlein: '14px',
+  text: '16px',
+  titel: '24px',
+  knopfZeile: '20px',
+  knopfHoehe: '48px',
+  radiusKnopf: '8px',
+  radius: '12px',
+  abstand1: '4px',
+  abstand3: '12px',
+  abstand4: '16px',
+  abstand5: '20px',
+  abstand6: '24px',
+  abstand8: '32px',
+  knopfSenkrecht: '14px',
+  breite: '600px',
+  schmal: '480px',
+  akzent: '2px',
+  haar: '1px',
+  aus: '0px',
+} as const;

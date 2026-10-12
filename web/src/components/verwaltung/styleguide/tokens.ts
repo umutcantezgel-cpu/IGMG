@@ -265,6 +265,7 @@ export const BREITEN: readonly WertToken[] = [
   { name: '--container-text', wert: '52ch', klasse: 'max-w-text', schluessel: 'text' },
   { name: '--container-einleitung', wert: '47.5rem', klasse: 'max-w-einleitung', schluessel: 'einleitung' },
   { name: '--container-seitenkopf', wert: '55rem', klasse: 'max-w-seitenkopf', schluessel: 'seitenkopf' },
+  { name: '--container-dialog', wert: '42.5rem', klasse: 'max-w-dialog', schluessel: 'dialog' },
 ];
 
 /** Haltepunkte; die Klasse nennt die Variante, z. B. `verwaltung:`. */

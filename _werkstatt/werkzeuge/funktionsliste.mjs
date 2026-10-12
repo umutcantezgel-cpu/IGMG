@@ -339,7 +339,8 @@ F['F-07'] = async (s, b, breite) => {
 F['F-08'] = async (s, b, breite) => {
   const seiten = [
     ['/ueber-uns', 'Über uns'],
-    ['/projekte', 'Gemeinsam Glauben, Gemeinsam Wachsen'],
+    // H-B11 (Sichtabnahme E3) hat die deutsche Schreibweise des Titels berichtigt; beide Fassungen gelten als erfüllt
+    ['/projekte', ['Gemeinsam Glauben, Gemeinsam Wachsen', 'Gemeinsam glauben, gemeinsam wachsen']],
     ['/vorstand', 'Unser Vorstand'],
     ['/igmg', 'IGMG - Islamische Gemeinschaft Millî Görüş'],
   ];
@@ -347,7 +348,8 @@ F['F-08'] = async (s, b, breite) => {
     const status = await besuche(s, pfad, 250);
     const h1 = await h1Text(s);
     const zeichen = await s.evaluate(() => document.querySelector('main')?.innerText.length ?? 0);
-    b.pruefe(`${pfad}: 200, H1, Inhalt`, status === 200 && h1 === erwartet && zeichen > 200, { status, h1, zeichen });
+    const passt = Array.isArray(erwartet) ? erwartet.includes(h1) : h1 === erwartet;
+    b.pruefe(`${pfad}: 200, H1, Inhalt`, status === 200 && passt && zeichen > 200, { status, h1, zeichen });
   }
   await besuche(s, '/igmg', 250);
   const tabs = s.getByRole('tab');

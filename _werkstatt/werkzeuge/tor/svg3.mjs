@@ -22,7 +22,8 @@ if (values.hilfe) hilfeAusgeben(HILFE);
 
 const svgDateien = execFileSync('git', ['-C', WURZEL, 'ls-files', '--cached', '--others', '--exclude-standard', '--', '*.svg'], { encoding: 'utf8' })
   .split('\n')
-  .filter((d) => d && !d.includes('node_modules/'))
+  // Nur ausgelieferte Grafiken: Ablagen früherer Läufe (_lauf/, _archiv/) gehören nicht zur App (wie svg-pruefung.mjs)
+  .filter((d) => d && !d.includes('node_modules/') && !/^(_lauf|_archiv)\//.test(d))
   .map((d) => join(WURZEL, d))
   .filter((d) => statSync(d, { throwIfNoEntry: false })?.isFile());
 

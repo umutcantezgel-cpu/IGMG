@@ -328,7 +328,9 @@ async function schritt(seite, vorigeId = null) {
 
 function arten(t) {
   if (t.ende) return [];
-  if (!t.sichtbar) return ['ziel unsichtbar'];
+  // Ersatzziel: Das Element selbst ist unsichtbar (ALTCHA ersetzt das Kästchen während der Prüfung durch den Ladekreis),
+  // der sichtbare Elternteil zeigt aber einen starken Fokusindikator. Dann ist der Fokus sichtbar, kein Befund.
+  if (!t.sichtbar) return t.pruefung?.treffer?.some((x) => x.klasse === 'eltern' && x.stark) ? [] : ['ziel unsichtbar'];
   const liste = [];
   if (!t.pruefung.quelle) liste.push(t.pruefung.treffer.length ? 'fokus schwach' : 'fokus unsichtbar');
   if (t.imViewport === false) liste.push('ausserhalb');

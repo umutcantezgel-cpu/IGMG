@@ -17,7 +17,7 @@ export function Bildflaeche({ beschriftung, lang, className }: { beschriftung: s
         className,
       )}
     >
-      <span aria-hidden className="rounded-pill bg-weiss/85 px-3 py-0.5 shadow-s1">
+      <span aria-hidden className="rounded-pill bg-weiss px-3 py-0.5 shadow-s1">
         {beschriftung}
       </span>
     </div>

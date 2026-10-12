@@ -2,7 +2,7 @@
 # Stufe C (ABNAHME Z-01–Z-12): Endprüfung am Prüfling REV auf Server 127.0.0.1:3500 (Build über head/e4-bau.sh REV,
 # Worktree $SCRATCHPAD/bau-head). Vorlage: E3-Tor-Lauf (tor-e3/skripte/lauf-e3tor.sh). Alle schweren Schritte nacheinander.
 # Protokolle nach _werkstatt/protokolle/C-*, Bilder nach $SCRATCHPAD/bilder/stufe-c/, Prüfskripte in werkzeuge/ und werkzeuge/tor/.
-# Aufruf: bash stufe-c.sh REV [--ab SCHRITT] [--bis SCHRITT]   (SCHRITT 1 bis 11)
+# Aufruf: bash stufe-c.sh REV [--ab SCHRITT] [--bis SCHRITT]   (SCHRITT 1 bis 12; 12 = Lighthouse verschränkt, LH_RUNDEN)
 # Sicherheit: nur lesende Abrufe und Formularprüfungen bis zur Serverprüfung (funktionsliste.mjs zählt POSTs);
 # keine echten Sendungen, keine Geheimnisse in Protokollen (lokal.env wird nie ausgegeben).
 set -u
@@ -90,6 +90,29 @@ for f in "$S"/stufe-c/lh/route-*.json; do
   node "$W/lighthouse.mjs" --routen "$f" --laeufe 3 --basis "$B" --protokoll "$S/stufe-c/lh/$n-3500" > /dev/null 2>> "$P/C-lighthouse.log"
 done
 rc "fertig · Last $(cut -d' ' -f1 /proc/loadavg)"
+fi
+
+if soll 12; then
+# Verschränkt (H-L01, Nachmessung): je Runde ein Lauf je Route auf 3100 und direkt danach auf 3500, LH_RUNDEN Runden
+# (Standard 5). Lastschwankungen treffen so beide Seiten gleich. Auswertung: lh-paare.py (Median, Spanne, Paarregel).
+RUNDEN=${LH_RUNDEN:-5}
+schritt "12 Lighthouse mobil verschränkt: $RUNDEN Runden × 11 Routen × (3100, 3500), je 1 Lauf (Z-08)"
+LV=$S/stufe-c/lh-v
+mkdir -p "$LV"
+python3 -c "
+import json
+r=json.load(open('$RH'))
+for i,x in enumerate(r): json.dump([x], open('$LV/route-%02d.json'%i,'w'), ensure_ascii=False)
+"
+for runde in $(seq 1 "$RUNDEN"); do
+  for f in "$LV"/route-??.json; do
+    n=$(basename "$f" .json)
+    echo "   $(date -u +%T) Runde $runde $n · Last $(cut -d' ' -f1 /proc/loadavg)" >> "$LOG"
+    node "$W/lighthouse.mjs" --routen "$f" --laeufe 1 --basis "$B0" --protokoll "$LV/$n-3100-r$runde" > /dev/null 2>> "$P/C-lighthouse-v.log"
+    node "$W/lighthouse.mjs" --routen "$f" --laeufe 1 --basis "$B" --protokoll "$LV/$n-3500-r$runde" > /dev/null 2>> "$P/C-lighthouse-v.log"
+  done
+done
+python3 "$W/lh-paare.py" "$LV" "$P/C-lighthouse-v" >> "$LOG" 2>&1; rc "$? · Last $(cut -d' ' -f1 /proc/loadavg)"
 fi
 
 if soll 5; then

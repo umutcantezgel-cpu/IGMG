@@ -1,5 +1,5 @@
 import { render } from '@react-email/render';
-import { MAILFARBE as F } from './farben';
+import { MAILFARBE as F, MAILMASS as M } from './farben';
 import { hintergrund, MailRahmen, type MailStil, SCHRIFT_TEXT } from './Rahmen';
 
 /**
@@ -26,14 +26,14 @@ function vorschau(text: string): string {
 const KNOPF: MailStil = {
   display: 'block',
   boxSizing: 'border-box',
-  margin: '-14px -24px',
-  padding: '14px 24px',
-  minHeight: '48px',
+  margin: `-${M.knopfSenkrecht} -${M.abstand6}`,
+  padding: `${M.knopfSenkrecht} ${M.abstand6}`,
+  minHeight: M.knopfHoehe,
   color: F.weiss,
   fontFamily: SCHRIFT_TEXT,
-  fontSize: '16px',
+  fontSize: M.text,
   fontWeight: 700,
-  lineHeight: '20px',
+  lineHeight: M.knopfZeile,
   textDecoration: 'none',
 };
 
@@ -44,11 +44,14 @@ const KNOPF: MailStil = {
 function KnopfMitLink({ link, text }: { link: string; text: string }) {
   return (
     <>
-      <div style={{ margin: '0 0 16px' }}>
+      <div style={{ margin: `0 0 ${M.abstand4}` }}>
         <table role="presentation" cellPadding={0} cellSpacing={0} border={0}>
           <tbody>
             <tr>
-              <td style={{ background: F.gruen, borderRadius: '8px', padding: '14px 24px' }} {...hintergrund(F.gruen)}>
+              <td
+                style={{ background: F.gruen, borderRadius: M.radiusKnopf, padding: `${M.knopfSenkrecht} ${M.abstand6}` }}
+                {...hintergrund(F.gruen)}
+              >
                 <a href={link} style={KNOPF}>
                   {text}
                 </a>
@@ -57,7 +60,7 @@ function KnopfMitLink({ link, text }: { link: string; text: string }) {
           </tbody>
         </table>
       </div>
-      <p data-skip-in-text="true" style={{ margin: 0, fontSize: '14px', lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>
+      <p data-skip-in-text="true" style={{ margin: 0, fontSize: M.textKlein, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>
         <a href={link} style={{ color: F.tinte2, textDecoration: 'underline', wordBreak: 'break-all' }}>
           {link}
         </a>
@@ -74,10 +77,10 @@ export async function bestaetigungMail(sprache: string, t: BestaetigungTexte) {
       vorschau={vorschau(t.text)}
       kinder={
         <>
-          <p style={{ margin: '0 0 16px' }}>{t.anrede}</p>
-          <p style={{ margin: '0 0 24px' }}>{t.text}</p>
-          <p style={{ margin: '0 0 4px' }}>{t.gruss}</p>
-          <p style={{ margin: 0, fontSize: '14px', color: F.tinte2 }}>{t.kontakt}</p>
+          <p style={{ margin: `0 0 ${M.abstand4}` }}>{t.anrede}</p>
+          <p style={{ margin: `0 0 ${M.abstand6}` }}>{t.text}</p>
+          <p style={{ margin: `0 0 ${M.abstand1}` }}>{t.gruss}</p>
+          <p style={{ margin: 0, fontSize: M.textKlein, color: F.tinte2 }}>{t.kontakt}</p>
         </>
       }
       fuss={t.hinweis}
@@ -94,7 +97,7 @@ export async function benachrichtigungMail(t: BenachrichtigungTexte) {
       vorschau={vorschau(t.text)}
       kinder={
         <>
-          <p style={{ margin: '0 0 24px' }}>{t.text}</p>
+          <p style={{ margin: `0 0 ${M.abstand6}` }}>{t.text}</p>
           <KnopfMitLink link={t.link} text={t.knopf} />
         </>
       }

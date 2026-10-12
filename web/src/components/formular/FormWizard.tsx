@@ -29,7 +29,7 @@ export type WizardSchritt = { titel: string; gruppen: WizardGruppe[] };
 function Schrittmarke({ nr, stand, sandig = false }: { nr: number; stand: 'erledigt' | 'aktuell' | 'kommend'; sandig?: boolean }) {
   return (
     <span aria-hidden className="relative grid size-9 shrink-0 place-items-center">
-      <svg aria-hidden viewBox="0 0 24 24" className="absolute inset-0 size-full">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="absolute inset-0 size-full">
         <path
           d={ACHTSTERN}
           strokeWidth={2}

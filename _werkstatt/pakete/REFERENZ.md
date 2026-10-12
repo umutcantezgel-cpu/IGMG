@@ -30,6 +30,17 @@ Keine Klammerwerte (`px-[22px]`, `text-[15px]`, `max-w-[760px]`, `grid-cols-[rep
 
 Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN einen Token vorschlagen – nie selbst `globals.css` ändern.
 
+**Belegte Ausnahmen (Medien ohne CSS-Variablen; Werte sind Spiegel der Tokens, Stand Stufe-C-Nacharbeit):**
+
+| Datei | Warum Literale | Spiegel von |
+|---|---|---|
+| `web/src/lib/mail/vorlagen/farben.ts` (`MAILFARBE`, `MAILMASS`) | E-Mail-Programme kennen keine CSS-Variablen; die Vorlagen `Rahmen.tsx` und `index.tsx` lesen jede Farbe und jedes Maß nur aus dieser Datei | Farb-Tokens, `text-14/16/24`, `--radius-md/-lg`, 4-px-Abstände |
+| `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens |
+| `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` |
+| `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` |
+
+**Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`) und die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß).
+
 ## 2. Bausteine
 - Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen. Detailseiten (E4, H-C02): Kopfbild über `bild` in der rechten Spalte ab lg (Fläche `h-55 md:h-75 lg:aspect-4/3 lg:h-auto rounded-lg border border-linie`), ohne gepflegtes Bild nur ab lg ein Platzhalter mit `bildAbLg`; Organisationsbezug über `kennungZeichen` (Logo 20 px, nie vergrößert) statt Achtstern.
 - Abschnitt: `<section aria-labelledby=…>` → innen `mx-auto max-w-(--container-inhalt) px-4 py-abschnitt md:px-8`, Kopf mit Kennung (`text-16 font-bold text-gruen-800` + `Stern8` aus Icons.tsx mit `size-4` (16 px), wie auf der Startseite – kein lucide-Icon und kein Punkt als Kennungszeichen; Sichtabnahme E3), `h2.text-display-2`, Einleitung `text-20 leading-einleitung text-pretty text-tinte-2 max-w-einleitung`, Aktion rechts (sekundärer Knopf).

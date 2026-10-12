@@ -91,9 +91,9 @@ export function MedienWahlDialog({ bilder, ref }: { bilder: BildWahl[]; ref?: Re
         // Escape schließt nativ ohne Ergebnis. Ist die Auswahl inzwischen erneut offen, gilt das Ereignis nicht mehr.
         if (!dialogRef.current?.open) warte.beenden(null);
       }}
-      className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backdrop:bg-tinte/50"
+      className="m-auto hoehe-dialog breite-dialog max-w-4xl overflow-hidden rounded-lg border border-linie bg-weiss p-0 text-tinte shadow-s1 backdrop:bg-tinte/50"
     >
-      <div className="flex max-h-[calc(100dvh-2rem)] flex-col gap-4 p-5 md:p-6">
+      <div className="flex hoehe-dialog flex-col gap-4 p-5 md:p-6">
         <h2 id={titelId} className="font-display text-24 font-semibold">
           {t('titel')}
         </h2>

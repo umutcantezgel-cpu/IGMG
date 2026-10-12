@@ -1,21 +1,26 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (04:55 UTC):**
-  1. **Stufe C läuft** (Haiku-Prüfer): `werkzeuge/stufe-c.sh 5d19108` in drei Abschnitten (1–3, 5–11, zuletzt 4 = Lighthouse-Paar bei ruhiger Last). Protokoll `protokolle/C-lauf.log`, Bericht → `berichte/STUFE-C.md`.
-  2. Danach **E2E-Suite** gegen den Endstand (eigener Port 3700, nie 3100; lokales Postgres 16 auf 5432; Mailpit-Binärdatei; UA-02).
-  3. **Sichtabnahme** der Stufe-C-Bilder (`$SCRATCHPAD/bilder/stufe-c/`, Vergleich E4), bei Ansichten < 8 Nachpakete.
-  4. **Abschlussbilder** nach `bilder/abschluss/` (Hauptansichten aus dem Stufe-C-Bildsatz, Momente, Seitenwechsel, Verwaltung) und `werkzeuge/galerie.mjs` → `bilder/galerie.html`.
-  5. **FF main** auf den geprüften Stand (Stufe C Schritt 10 = vercel build preview + production; check aus release:check), danach Produktion per Vercel-MCP lesen.
-  6. **Endprüfung:** `werkzeuge/blind-vorbereiten.py` (Schlüssel getrennt) + `werkzeuge/endpruefung.workflow.js` (args: blind, schluessel, abnahme, bewegung, stand). Urteil wörtlich in die letzte Antwort, ABNAHME.md Häkchen nach Beleg, BERICHT ergänzen.
-  7. CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
+- **Nächster exakter Schritt (06:55 UTC):**
+  1. **Stufe-C-Nacharbeit committen** (nach grünen Unit-Tests). Inhalt:
+     - Z-03: Mail-Maße in `farben.ts` (`MAILMASS`), Dialog-Utilities `breite-dialog`/`hoehe-dialog`/`max-w-dialog`, OrgCard `leading-tight`/`underline-offset-5`, Druck `var(--color-weiss)`, belegte Ausnahmen in REFERENZ §1.
+     - Z-06: `aria-hidden="true"` explizit in FormWizard, `tor/svg3.mjs` ohne `_lauf/`, Icon-Familie in K-008.
+     - Z-07: Platzhalter-Pillen deckend (axe „unklar“), Tastaturregel erkennt den Fokusring am ALTCHA-Rahmen (`bilder/Z07-altcha/`).
+     - Z-05: B-06/B-09 starten nach Ruhe (`useNachRuhe`, `NachRuhe`); B-03 für Radix-Dialog und Kontomenü der Verwaltung; Register-Notiz zu den wirkungslosen shadcn-Klassen.
+     - Z-02: F-08-Erwartung (H-B11-Schreibweise).
+     - Z-11: `protokolle/C-vercel-mcp.md`.
+  2. **3500 neu bauen** vom neuen Commit (`$SCRATCHPAD/head/e4-bau.sh <rev>`, Dev 3200 vorher aus, wegen OOM).
+  3. **Nachmessung (Haiku):** betroffene Stufe-C-Schritte gegen 3500. Das sind Bildsatz, axe, Tastatur, freie Werte, SVG, Bildrate b06/b09, Konsole, Statuscodes, Funktionsliste, vercel build und release:check, dazu Lighthouse-Paare verschränkt ×5. Danach STUFE-C.md und H-L01.md fortschreiben.
+  4. **E2E-Suite** (`$SCRATCHPAD/e2e-brief.md`, Port 3700; Worktree auf den neuen Stand umstellen).
+  5. **Sichtabnahme** des neuen Bildsatzes, Abschlussbilder und Galerie erneuern.
+  6. **FF main** nach L-E01, danach Produktion per MCP lesen.
+  7. **Endprüfung:** `blind-vorbereiten.py` + `endpruefung.workflow.js`. Urteil wörtlich, ABNAHME-Häkchen, BERICHT. Dann CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
-  - 3500 Endstand 5d19108 (Anmeldestand `$SCRATCHPAD/head/verwaltung-werkzeug/`).
-  - **3200 Entwicklung ist aus:** OOM um 04:40, der Dev-Server war auf 7,5 GB angewachsen und riss den Build mit. Nur bei Bedarf mit `$SCRATCHPAD/dev-neustart.sh` starten (Sperre, Datenbank pglite-h10, Testkonto pruefer-dev4).
+  - 3500 Endstand 5d19108 (wird neu gebaut).
+  - 3200 Entwicklung (pglite-h10; übernimmt Dateiänderungen derzeit nicht zuverlässig, für Proben nur mit Neustart über `$SCRATCHPAD/dev-neustart.sh`).
   - Postgres 16 lokal (5432).
 - **Letzter grüner Commit:**
-  - Branch: 5d19108, alle 13 H-C-Pakete, Unit 794, tsc grün.
-  - main: 71e263f (Merge von PR #3 durch den Menschen, 05:18 UTC; Code = 5d19108), Produktion READY (dpl_5Tvd5XVW2BYimH1u2Bos6MeHBMa3), 0 Laufzeitfehler. Arbeitsbranch = 71e263f (Fast-Forward). Weitere Stände wieder per FF auf main.
-- **Zurückgestellt (git stash):** „H-L01 III: QiblaKompass Zustandsgrafik lazy“ – nach der Lighthouse-Messung mit `git stash pop` zurückholen, tsc/Unit prüfen, committen.
+  - Branch: e0c8e9f (Perf III, Unit 797, tsc grün). Die Vorschau dpl_5RDkcAe97uNMjxwesxHAcGm4pZjc ist READY in fra1.
+  - main: 71e263f, Produktion READY. Das Protokoll enthält nur die erwarteten Startprüfungs-Meldungen über fehlende Menschen-Werte (`protokolle/C-vercel-mcp.md`).
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.

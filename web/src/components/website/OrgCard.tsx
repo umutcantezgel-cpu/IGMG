@@ -73,13 +73,13 @@ export async function OrgCard({ org, desc }: { org: OrgKuerzel; desc?: string })
         <span className={cn('flex self-start rounded-lg border-2 bg-weiss p-1.5', stil.rahmen)}>
           <Image src={stil.logo} alt="" width={40} height={40} className="size-10" />
         </span>
-        <h3 className="text-24 leading-[1.25] text-balance break-words">
+        <h3 className="text-24 leading-tight text-balance break-words">
           <Link
             href={{ pathname: '/organisationen/[organisation]', params: { organisation: stil.slug } }}
             lang="tr"
             aria-label={tk('linkKontext', { sichtbar: name, titel: beschreibung })}
             className={cn(
-              'text-tinte underline underline-offset-[5px] after:absolute after:inset-0 after:rounded-lg after:content-[""]',
+              'text-tinte underline underline-offset-5 after:absolute after:inset-0 after:rounded-lg after:content-[""]',
               stil.linie,
               stil.hover,
             )}

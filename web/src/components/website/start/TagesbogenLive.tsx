@@ -9,6 +9,7 @@ import { berlinerDatum, naechstesGebet, uhrzeitBerlin } from '@/lib/gebetszeiten
 import type { Gebet, GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
+import { useNachRuhe } from '@/lib/zeit/useNachRuhe';
 
 export type TagesbogenTexte = {
   titel: string;
@@ -47,7 +48,12 @@ export function TagesbogenLive({
   className?: string;
   ruhig?: boolean;
 }) {
-  const jetzt = useJetzt();
+  const jetztRoh = useJetzt();
+  // B-06: Der Bogen enthüllt sich erst, wenn die Seite nach der Hydrierung zur Ruhe kommt (Z-05: vorher fiel die
+  // Enthüllung in die Rechnungen der Zeitinseln, 11,5 % verworfene Bilder bei 4-facher Drosselung). Bis dahin zeigt er
+  // den Zustand ohne Uhrzeit, wie beim Hydrieren. Die ruhige Fassung (ohne Bewegung) rechnet sofort.
+  const ruhe = useNachRuhe(!ruhig && jetztRoh !== null);
+  const jetzt = ruhig || ruhe ? jetztRoh : null;
   const kennung = `bogen${useId().replace(/[^\w-]/g, '')}`;
 
   const datum = jetzt ? berlinerDatum(jetzt) : referenz;
