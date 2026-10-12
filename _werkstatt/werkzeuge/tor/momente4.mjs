@@ -193,7 +193,7 @@ try {
       const http = await oeffne(seite, vollerUrl(BASIS, cfg0.pfad), { warte: 0 });
       await ausloesen(seite, cfg0);
       // Bildausschnitt: Der Tagesbogen liegt auf dem Telefon unter dem ersten Bildschirm; für die Bilder dorthin scrollen (die Animation bleibt angehalten)
-      if (cfg0.bildScrollen) await seite.evaluate(() => document.querySelector('.bogen-enthuellt').closest('svg').scrollIntoView({ block: 'center', behavior: 'instant' }));
+      if (cfg0.bildScrollen) await seite.evaluate(() => (document.querySelector('.bogen-enthuellt').closest('figure, svg') ?? document.querySelector('.bogen-enthuellt')).scrollIntoView({ block: 'center', behavior: 'instant' }));
       const rahmen = [];
       for (let k = 0; k < SOLL.length; k++) {
         const info = await seite.evaluate(zeitstandSetzen, SOLL[k]);
