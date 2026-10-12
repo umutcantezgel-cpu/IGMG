@@ -1,4 +1,4 @@
-# Bildsatz und Überlaufprüfung · 2026-10-12-20-40 · http://127.0.0.1:3500
+# Bildsatz und Überlaufprüfung · 2026-10-12-22-05 · http://127.0.0.1:3500
 
 Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, abgeschnittene Elemente (ohne Kürzung mit Auslassungszeichen), vermutlich beabsichtigte Kürzungen.
 
@@ -10,4 +10,4 @@ Je Route und Größe: HTTP-Status, Anzahl Ausschnitte, horizontales Scrollen, ab
 | 768x1024 | 200 | 5 | nein | 0 | 0 |
 | 1440x900 | 200 | 5 | nein | 0 | 0 |
 
-Bilder: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/cockpit-ende
+Bilder: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/cockpit-v05

@@ -1,1 +1,23 @@
 == 22:02:13 3500 bauen (e6d3341) · Last 1.03
+BAU_RC=0
+ANMELDUNG_RC=0
+   health 200
+== 22:04:05 E2E Medien und Verwaltungsmenüs (bau-head, Port 3700, ohne Wiederholung) · Last 2.83
+e6d3341 Review V-05/V-11: Zeitlimit bricht Blob- und S3-Anfr
+   E2E_RC=0
+  10 passed (53.0s)
+== 22:05:01 Cockpit: Bildsatz 390/768/1440, axe 390/1440 (angemeldet) · Last 2.91
+/verwaltung/startklar 390×844: HTTP 200 · 9 Ausschnitte · horizontal nein · Befunde 0
+/verwaltung/startklar 768×1024: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+/verwaltung/startklar 1440×900: HTTP 200 · 5 Ausschnitte · horizontal nein · Befunde 0
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C3b-bildsatz-cockpit.json, /home/user/IGMG/_werkstatt/protokolle/C3b-bildsatz-cockpit.md
+Bilder: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/cockpit-v05
+   rc=0
+/verwaltung/startklar: HTTP 200 · kritisch 0 · ernst 0 · mittel 0 · gering 0 · Regeln 0 · unklar 0
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C3b-a11y-cockpit-390.json, /home/user/IGMG/_werkstatt/protokolle/C3b-a11y-cockpit-390.md
+   axe 390 rc=0
+/verwaltung/startklar: HTTP 200 · kritisch 0 · ernst 0 · mittel 0 · gering 0 · Regeln 0 · unklar 0
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C3b-a11y-cockpit-1440.json, /home/user/IGMG/_werkstatt/protokolle/C3b-a11y-cockpit-1440.md
+   axe 1440 rc=0
+galerie: /home/user/IGMG/_werkstatt/bilder/galerie.html · 11 Ansichten · 0 Gerätesätze ohne Nachher-Bilder
+== 22:05:54 FERTIG · Last 1.41
