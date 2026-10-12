@@ -38,3 +38,8 @@ Kein Deployment im Zustand ERROR.
 - **Vorab:** grün (`protokolle/C3b-vorab-255179b.md`): `vercel build --prod`, `pnpm check` (unit 814), `geheimnisse:pruefen`.
 - **Produktion** dpl_FnfyEKRGwG5fsu8vhpGzFeyqXrHf: READY (Bau 92 s), Region fra1, Commit 255179b, Aliase igmg-five.vercel.app und igmg-codays-projects.vercel.app.
 - **Laufzeitfehler (3 h):** keine Ausnahmefehler. Es gibt nur die 11 gewollten Startmeldungen (`[start] …` über die Menschen-Werte, ML-21), zuletzt 19:11:30 UTC.
+
+## Nachtrag 22:20 UTC · FF main → 39c76b1 (V-05 Direkt-Upload großer PDF-Dateien, V-11 Speicherprobe)
+- **Vorab:** grün (`protokolle/C3b-vorab-39c76b1.md`): `vercel build --prod`, `pnpm check` (unit 818), `geheimnisse:pruefen`.
+- **Produktion** dpl_8jbdVAyopENkp7qZXT8qfP71vBrU: READY (Bau 102 s), Region fra1, Commit 39c76b1, Aliase igmg-five.vercel.app und igmg-codays-projects.vercel.app, Rollback-Kandidat.
+- **Laufzeitfehler (2 h):** keine Fehlergruppe.
