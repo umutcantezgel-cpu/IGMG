@@ -3,6 +3,7 @@ import { and, eq, inArray, isNotNull, lt, lte, or, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { loescheMitVarianten } from '@/lib/storage';
+import { raeumeDirektEingaengeAuf } from '@/lib/medien/eingang';
 import { raeumeAltchaAuf } from '@/lib/validierung/altcha';
 import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
 import { verwendungVon } from '@/server/queries/verwaltung/medien';
@@ -124,7 +125,8 @@ export async function loescheAbgelaufene(
     .delete(schema.mailAusgang)
     .where(and(isNotNull(schema.mailAusgang.gesendetAm), lt(schema.mailAusgang.gesendetAm, grenze)))
     .returning({ id: schema.mailAusgang.id });
-  await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf()]);
+  // Nie übernommene Direkt-Uploads großer PDF-Dateien (ADR 0020); ein Ausfall des Speichers hält den Löschlauf nicht auf
+  await Promise.all([raeumeAltchaAuf(), raeumeRatenAuf(), raeumeDirektEingaengeAuf(jetzt).catch(() => 0)]);
   const papierkorb = (await leerePapierkorb(jetzt)) + (await leereMedienPapierkorb(jetzt));
   const melder = await entferneMelderdaten(jetzt);
   const einladungen = await raeumeKontenAuf(jetzt);

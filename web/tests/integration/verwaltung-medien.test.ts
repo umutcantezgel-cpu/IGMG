@@ -1,10 +1,11 @@
+import { randomUUID } from 'node:crypto';
 import { mkdtempSync } from 'node:fs';
 import { access, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { eq } from 'drizzle-orm';
 import sharp from 'sharp';
-import { afterAll, describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 import { schema } from '@/lib/db';
 import { angemeldetAls, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
@@ -252,5 +253,92 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     await loescheAbgelaufene();
     expect(await db.select().from(schema.medium).where(eq(schema.medium.id, frei))).toHaveLength(0);
     expect(await db.select().from(schema.medium).where(eq(schema.medium.id, genutzt))).toHaveLength(1);
+  });
+});
+
+describe('Direkt-Upload großer PDF-Dateien (ADR 0020, V-05)', () => {
+  const pdf = (groesse: number) => Buffer.concat([Buffer.from(`%PDF-1.4\n% ${randomUUID()}\n`), Buffer.alloc(groesse, 0x20)]);
+  const fehlerVon = (z: Awaited<ReturnType<typeof actions.hochladen>>) => z.feldFehler?.datei;
+
+  it('übernimmt den Eingang nur mit Vercel Blob: geprüft, gespeichert, Eingang entfernt, Dateiname übernommen', async () => {
+    const { speicher } = await import('@/lib/storage');
+    const s = speicher(); // Dateisystem-Speicher der Tests (vor dem Umschalten der Umgebung angelegt)
+    const schluessel = `eingang/${randomUUID()}.pdf`;
+    await s.schreibe(schluessel, pdf(6_000_000), 'application/pdf');
+    vi.stubEnv('SPEICHER', 'blob');
+    try {
+      await angemeldetAls([{ rolle: 'redaktion' }]);
+      const id = await hochladenId(formular({ altDe: 'Aushang Gemeindefest groß', eingang: schluessel, eingangName: 'Aushang Gemeindefest.pdf' }));
+      const [zeile] = await db.select().from(schema.medium).where(eq(schema.medium.id, id));
+      expect(zeile).toMatchObject({ typ: 'application/pdf', dateiname: 'Aushang Gemeindefest.pdf' });
+      expect(zeile.groesse).toBeGreaterThan(6_000_000);
+      expect(await s.existiert(schluessel)).toBe(false);
+      expect(await s.existiert(zeile.schluessel)).toBe(true);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  it('ohne Vercel Blob, mit fremdem Schlüssel oder fehlendem Eingang: Datei fehlt', async () => {
+    const { speicher } = await import('@/lib/storage');
+    const s = speicher();
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const schluessel = `eingang/${randomUUID()}.pdf`;
+    await s.schreibe(schluessel, pdf(10), 'application/pdf');
+    const felder = (eingang: string) => formular({ altDe: 'Aushang ohne Datei', eingang, eingangName: 'x.pdf' });
+    expect(fehlerVon(await actions.hochladen({}, felder(schluessel)))).toBe('dateiFehlt');
+    vi.stubEnv('SPEICHER', 'blob');
+    try {
+      for (const fremd of ['medien/geheim.pdf', 'eingang/../geheim.pdf', `eingang/${randomUUID().toUpperCase()}.pdf`])
+        expect(fehlerVon(await actions.hochladen({}, felder(fremd)))).toBe('dateiFehlt');
+      expect(fehlerVon(await actions.hochladen({}, felder(`eingang/${randomUUID()}.pdf`)))).toBe('dateiFehlt');
+      expect(await s.existiert(schluessel)).toBe(true);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  it('Eingang ohne PDF-Inhalt: abgelehnt wie jeder Upload, Eingang entfernt', async () => {
+    const { speicher } = await import('@/lib/storage');
+    const s = speicher();
+    const schluessel = `eingang/${randomUUID()}.pdf`;
+    await s.schreibe(schluessel, Buffer.from('<svg xmlns="http://www.w3.org/2000/svg"/>'), 'application/pdf');
+    vi.stubEnv('SPEICHER', 'blob');
+    try {
+      await angemeldetAls([{ rolle: 'redaktion' }]);
+      const z = await actions.hochladen({}, formular({ altDe: 'Aushang mit falschem Inhalt', eingang: schluessel, eingangName: 'falsch.pdf' }));
+      expect(fehlerVon(z)).toMatch(/^datei_/);
+      expect(await s.existiert(schluessel)).toBe(false);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  it('Token-Route: nur mit Vercel Blob, nur Token-Anfragen, nur mit Recht, nur für Eingangsschlüssel', async () => {
+    const { POST } = await import('@/app/[locale]/verwaltung/(geschuetzt)/medien/direkt/route');
+    const anfrage = (pathname: string, type = 'blob.generate-client-token') =>
+      new Request('http://localhost/verwaltung/medien/direkt', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ type, payload: { pathname, clientPayload: null, multipart: false } }),
+      });
+    const gut = `eingang/${randomUUID()}.pdf`;
+    expect((await POST(anfrage(gut))).status).toBe(404);
+    vi.stubEnv('SPEICHER', 'blob');
+    vi.stubEnv('BLOB_READ_WRITE_TOKEN', 'vercel_blob_rw_teststore_nurzumpruefen');
+    try {
+      await angemeldetAls(null);
+      expect((await POST(anfrage(gut))).status).toBe(403);
+      await angemeldetAls([{ rolle: 'mitgliederverwaltung' }]);
+      expect((await POST(anfrage(gut))).status).toBe(403);
+      await angemeldetAls([{ rolle: 'redaktion' }]);
+      expect((await POST(anfrage(gut, 'blob.upload-completed'))).status).toBe(400);
+      expect((await POST(anfrage('medien/geheim.pdf'))).status).toBe(400);
+      const ok = await POST(anfrage(gut));
+      expect(ok.status).toBe(200);
+      expect(await ok.json()).toMatchObject({ type: 'blob.generate-client-token', clientToken: expect.any(String) });
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 });

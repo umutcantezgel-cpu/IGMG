@@ -146,9 +146,9 @@ Hochgeladene Bilder brauchen einen Speicher, der nicht auf der Festplatte des Se
 
 **3.4 Größe der Uploads**
 
-- **Regel:** Auf Vercel nimmt die App Anfragen bis 4,2 MB an (`web/src/app/[locale]/verwaltung/(geschuetzt)/medien/page.tsx`, Konstante `GRENZE_VERCEL`). Größere Bilder verkleinert der Browser auf höchstens 2560 px als WebP (`web/src/components/verwaltung/medien/MedienFormulare.tsx`). Größere PDF-Dateien lehnt die Verwaltung mit einer Meldung ab. Außerhalb von Vercel gilt die Grenze von 10 MB (`web/src/lib/medien/verarbeiten.ts`, `MAX_BYTES`).
-- **Grund:** `web/docs/BETRIEB.md` § 9 nennt für Vercel-Funktionen eine Grenze von 4,5 MB pro Anfrage. Die Vercel-Doku dazu habe ich **nicht gegengeprüft [prüfen]**. Der direkte Upload in den Speicher ist die nächste Stufe, falls große PDF-Aushänge nötig werden (ADR 0020, Umkehrprobe).
-- **Prüfpunkt:** Ein Foto von etwa 6 MB lässt sich hochladen, der Browser verkleinert es vorher. Ein PDF von etwa 6 MB wird mit einer Meldung zur Größe abgelehnt.
+- **Regel:** Auf Vercel nimmt die App Anfragen bis 4,2 MB an (`web/src/app/[locale]/verwaltung/(geschuetzt)/medien/page.tsx`, Konstante `GRENZE_VERCEL`). Größere Bilder verkleinert der Browser auf höchstens 2560 px als WebP (`web/src/components/verwaltung/medien/MedienFormulare.tsx`). Größere PDF-Dateien bis 10 MB lädt der Browser mit `SPEICHER=blob` direkt in Vercel Blob. Die Berechtigung kommt von `/verwaltung/medien/direkt` (Sitzung, zweiter Faktor, Recht `medium.hochladen`), die Übernahme und Prüfung von der Server Action `hochladen` (ADR 0020, Nachtrag 2026-10-12). Außerhalb von Vercel gilt die Grenze von 10 MB (`web/src/lib/medien/verarbeiten.ts`, `MAX_BYTES`).
+- **Grund:** `web/docs/BETRIEB.md` § 9 nennt für Vercel-Funktionen eine Grenze von 4,5 MB pro Anfrage. Die Vercel-Doku dazu habe ich **nicht gegengeprüft [prüfen]**. Vercel Functions nehmen höchstens 4,5 MB je Anfrage an (AUFTRAG V-05). Deshalb gehen große PDF-Dateien am Server vorbei direkt in den Speicher; die Verwaltung erlaubt dafür in ihrer CSP `connect-src https://vercel.com`.
+- **Prüfpunkt:** Ein Foto von etwa 6 MB lässt sich hochladen, der Browser verkleinert es vorher. Ein PDF von etwa 6 MB zeigt „wird direkt in den Speicher geladen …“, danach „liegt im Speicher“; nach dem Speichern steht es in der Medienliste. Ein PDF über 10 MB wird mit Meldung abgelehnt.
 
 ## 4. Umgebungsvariablen und Geheimnisse (6 Minuten)
 

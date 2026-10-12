@@ -8,6 +8,8 @@ import { protokolliere } from '@/lib/audit';
 import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { istEingangsSchluessel } from '@/lib/medien/direkt';
+import { direktUploadAktiv } from '@/lib/medien/eingang';
 import { MedienFehler, erzeugeVarianten, verarbeiteDatei } from '@/lib/medien/verarbeiten';
 import { variantenSchluessel } from '@/lib/medien/varianten';
 import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
@@ -54,12 +56,28 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
   const werte = texte(fd);
   const p = textFelder.safeParse(werte);
   const datei = fd.get('datei');
-  if (!(datei instanceof File) || datei.size === 0)
+  // Große PDF-Datei schon direkt im Speicher (ADR 0020, V-05): Eingangsschlüssel statt Datei
+  const eingang = fd.get('eingang');
+  const direkt = !(datei instanceof File && datei.size > 0) && direktUploadAktiv() && istEingangsSchluessel(eingang);
+  if (!direkt && (!(datei instanceof File) || datei.size === 0))
     return { fehler: 'pruefen', feldFehler: { datei: 'dateiFehlt', ...(p.success ? {} : feldFehler(p.error)) }, werte };
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
+  const dateiname = direkt ? String(fd.get('eingangName') ?? '').trim() || 'dokument.pdf' : (datei as File).name;
+  let roh: Buffer;
+  if (direkt) {
+    const strom = await speicher().lies(eingang);
+    if (!strom) return { fehler: 'pruefen', feldFehler: { datei: 'dateiFehlt' }, werte };
+    roh = Buffer.from(await new Response(strom).arrayBuffer());
+    // Die Bytes liegen jetzt im Speicher der Funktion; der Eingang wird nicht mehr gebraucht
+    await speicher()
+      .loesche(eingang)
+      .catch(() => undefined);
+  } else {
+    roh = Buffer.from(await (datei as File).arrayBuffer());
+  }
   let v;
   try {
-    v = await verarbeiteDatei(Buffer.from(await datei.arrayBuffer()), datei.name);
+    v = await verarbeiteDatei(roh, dateiname);
   } catch (e) {
     return { fehler: 'pruefen', feldFehler: { datei: e instanceof MedienFehler ? `datei_${e.grund}` : 'datei_defekt' }, werte };
   }
@@ -95,7 +113,7 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
           hoehe: v.hoehe,
           alt: alt(p.data),
           bildrechte: p.data.bildrechte || null,
-          dateiname: datei.name.slice(0, 200),
+          dateiname: dateiname.slice(0, 200),
           erstelltVon: a.benutzerId,
         })
         .returning({ id: m.id });

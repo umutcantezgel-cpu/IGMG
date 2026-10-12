@@ -142,7 +142,7 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Nachher ist im Blindvergleich in 11 von 11 Ansichten vorgezogen. Mittel aus fünf Kategorien: nachher 7,0–7,8, vorher 5,0–6,0.
 - Mit Bewegung als sechster Kategorie liegen die Ansichten bei 7,17–7,83 (Mittel 7,58), das Cockpit bei 7,67. Keine Hauptansicht erreicht 8.
 - Eine einzige Kategorie liegt unter 7: Über uns, Details 6. Grund ist der Weg der Gemeinde als Zwischenbild der Bewegung im Bildsatz (Schirm 3, 350 ms nach dem Scrollen). Der Endprüfer nennt das selbst.
-- Die maßgeblichen Werte stammen aus der Endprüfung mit dem Bildsatz im Endzustand und werden dort nachgetragen.
+- Maßgebliche Werte (Endprüfung Lauf 2, `protokolle/C3b-endpruefung.md`, Bildsatz im Endzustand): Ansichten 7,50–7,83, Mittel 7,68, keine Kategorie unter 7, Nachher 11/11 vorgezogen (+2,3 im Mittel aus fünf Kategorien); Cockpit 7,67.
 
 **Vier belegte Anläufe** (Sichtabnahme → Befundwelle → neue Sichtabnahme, je fünf frische Opus-Prüfer):
 1. Sichtabnahme E3 (Ø 6,29) → H-B, 14 Pakete

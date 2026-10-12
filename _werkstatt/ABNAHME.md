@@ -26,20 +26,20 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 
 ## AUSNAHMEN (L7, höchstens zwei; belegt: 2)
 - **A-01 · Z-08 Performance-Note ≥ 90** (L-E14, Denkprotokoll):
-  - Verfehlt: Am Endstand 325c38a liegt 3500 verschränkt (5 Runden) bei 81–89, der Ausgangsstand in denselben Runden bei 79–86. Das Startklar-Cockpit (neu im Lauf, ohne Ausgangsstand) liegt bei 83 (81–90, `C3b-lh-cockpit.md`). An 58a3344 war es 82–89 gegen 80–88; in der ruhigen Stichprobe waren beide gleich (82–84).
+  - Verfehlt: Am Endstand 325c38a liegt 3500 verschränkt (5 Runden) bei 81–89, der Ausgangsstand in denselben Runden bei 79–86. Das Startklar-Cockpit (neu im Lauf, ohne Ausgangsstand) liegt bei 83 (81–90, TBT 570 ms; SEO 66 nur durch das gewollte noindex der Verwaltung; `C3b-lh-cockpit.md`). An 58a3344 war es 82–89 gegen 80–88; in der ruhigen Stichprobe waren beide gleich (82–84).
   - Ursache: TBT aus dem Hydrierungsblock des Frameworks, gleich groß wie in E0.
   - Ersatz: alle übrigen Z-08-Budgets am Endstand erfüllt (INP im Labor 11/11 ≤ 200 ms, LCP ≤ 2,40 s, CLS ≤ 0,01, A11y/BP/SEO 100, JS ≤ 180 kB gz), Paarregel 11/11, Feldprüfung nach dem Livegang (ML-27).
   - Belege: `protokolle/C-lighthouse-v.md` (Endstand), `C3b-inp.md`, `C3b-endleistung.log`, `C3-lh-ruhig-3100.md`, `C3-lh-ruhig-3500.md`, `berichte/STUFE-C3.md` §6 und §12.
 
 - **A-02 · Z-04 jede Hauptansicht ≥ 8** (L-E16, Denkprotokoll):
   - Verfehlt: Im Blindvergleich ist Nachher überall vorgezogen, aber keine Hauptansicht erreicht 8 (Mittel aus sechs Kategorien).
-  - Werte des Trockenlaufs: 7,17–7,83. Die maßgeblichen Werte trägt die Endprüfung nach.
+  - Maßgebliche Werte (Endprüfung wf_dbbbeb44-b34, Bildsatz im Endzustand): Ansichten 7,50–7,83, Mittel 7,68, keine Kategorie unter 7; Trockenlauf 7,17–7,83.
   - Anläufe: vier Sichtabnahmen mit vier Befundwellen (H-B, H-C, H-E, H-F; 54 Pakete). Das Mittel stieg zuletzt nur noch um 0,13 (Plateau).
   - Ersatz:
-    - Nachher überall vorgezogen (+2,2 Punkte im Mittel).
+    - Nachher überall vorgezogen (+2,3 Punkte im Mittel aus fünf Kategorien).
     - Jede Hauptansicht ≥ 7.
     - Restbefunde als Übergabe in BERICHT „Offen“.
-  - Belege: `protokolle/C3b-endpruefung-trockenlauf.md`, `berichte/SICHTABNAHME-E3.md`, `-E4.md`, `-C2.md`, `-C3.md`, ENTSCHEIDUNGEN L-E16.
+  - Belege: `protokolle/C3b-endpruefung.md` (maßgeblich), `protokolle/C3b-endpruefung-trockenlauf.md`, `berichte/SICHTABNAHME-E3.md`, `-E4.md`, `-C2.md`, `-C3.md`, ENTSCHEIDUNGEN L-E16.
 
 ## UMGEBUNGSAUSNAHMEN (mit Ersatz)
 - **UA-01 Echte Geräte:** keine Telefone/Tablets in der Cloud → Ersatz: Chromium-Emulation 390/768/1440, Drosselung 4× für Bildraten.
@@ -50,16 +50,16 @@ Je Kriterium: Messweg · Ausgangswert E0 · Zielwert · Stand · Beleg. „Erled
 ## V-Prüfliste (Stand 2026-10-12 19:15 UTC; Beleg der Endprüfung: `berichte/STUFE-C.md`, Schritt 10/11)
 | V | Kurz | Stand |
 |---|---|---|
-| V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | erfüllt (0c224da; per `validateConfig` der CLI geprüft) – Bestätigung im E2-TOR |
+| V-01 | vercel.json ($schema, regions fra1, crons, ignoreCommand), engines/packageManager, .vercelignore | erfüllt (0c224da; per `validateConfig` der CLI geprüft) – Bestätigung im E2-TOR. Hinweis: `ignoreCommand` im Dienst greift bei Git-Deployments im Services-Modus nicht (ZWISCHENSTAND-Commits bauen eine Vorschau); Abhilfe im Projekt als Menschen-Schritt ML-13 |
 | V-02 | Build wie auf Vercel (preview, production) | erfüllt je Fast-Forward (`vercel build --prod` in Archivkopie: 8da8efe, 25e8040, 6596a6e, f44119b, 560161e; Protokolle `$SCRATCHPAD/ff/vorab-*.log`); Endstand preview + production in Stufe C Schritt 10 |
 | V-03 | VERCEL-ENV.md, SITE_MODE, Startprüfung, Geheimnisse per Skript | erfüllt (c596742, 263cd1d, 0cd8173) – Beleg Stufe C |
 | V-04 | Postgres Frankfurt, attachDatabasePool, Migration vor Code, keine Prod-DB in Vorschau | Code erfüllt (0c224da, Sperre lokal 8/8); Konto: Menschen (ML) |
-| V-05 | Blob Frankfurt, große Uploads, Metadaten-Bereinigung, Varianten | Code erfüllt (47ed617; Verkleinern im Browser statt Direkt-Upload, ADR 0020 rev.) |
+| V-05 | Blob Frankfurt, große Uploads, Metadaten-Bereinigung, Varianten | erfüllt im Code: Blob-Adapter und Varianten (47ed617); Bilder über 4,2 MB verkleinert der Browser; PDF über 4,2 MB (bis 10 MB) lädt der Browser direkt in Vercel Blob (Token-Route `/verwaltung/medien/direkt` mit Recht `medium.hochladen`, Übernahme und Prüfung in `hochladen`, Aufräumen im Löschlauf, CSP der Verwaltung; ADR 0020 Nachtrag 2026-10-12); Tests `tests/unit/medien-direkt.test.ts`, `tests/integration/verwaltung-medien.test.ts` (Direkt-Upload). Echter Upload gegen einen Blob-Speicher: Menschen-Schritt GO-LIVE B2 |
 | V-06 | Cron täglich, CRON_SECRET, idempotent mit Sperre | erfüllt (c596742, 0c224da) |
 | V-07 | gemeinsamer Speicher für Sitzungen, Raten, Sperren | erfüllt (Bestand in der DB; Beleg `protokolle/H-V07-V10-pruefung.md`) |
 | V-08 | Caching wie lokal, sofort sichtbar, lange Lebensdauer statischer Dateien | erfüllt (Cache-Header abd187e, ADR 0024 d26e8bc; „sofort sichtbar“ 18/18 `berichte/H-V08.md`) |
 | V-09 | Vorschau geschützt, teilbarer Link, noindex, Toolbar in Tests ausgenommen | erfüllt im Code (noindex 263cd1d, CSP ohne Toolbar); Vercel Authentication im Projekt aktiv (MCP 11.10.); teilbarer Link: Menschen (ML-23) |
 | V-10 | Protokolle ohne Personendaten, Health, Backups, Rollback | erfüllt (`protokolle/H-V07-V10-pruefung.md`, `lib/db/fehler.ts`, Health mit Zeitlimit 352d1bb, Runbook §§ 12–13, 16; ML-14–16) |
-| V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | erfüllt als Entwurf (0cd8173, 8df9556); Freigabe: Menschen (ML-11, ML-12) |
+| V-11 | Verarbeitungsverzeichnis, Hosting-Baustein v2, Cockpit/startklar-Prüfungen | Verzeichnis und Hosting-Baustein erfüllt als Entwurf (0cd8173, 8df9556), Freigabe: Menschen (ML-11, ML-12). Cockpit und `pnpm startklar` prüfen Region, Pflichtvariablen, CRON_SECRET, Domain mit HTTPS, Betriebsart und jetzt auch den erreichbaren Speicher: lesende Probe `auslieferung.speicher` (Blob `list`, S3 `HeadBucket`, Dateisystem Schreibrecht; Zeitlimit 4 s; `src/lib/startklar/speicher-probe.ts`). Belege `protokolle/C3b-startklar-produktion-*.json` (Dateisystem ok, Blob ohne Token Fehler, S3 unerreichbar Fehler), Tests `tests/integration/startklar.test.ts` |
 | V-12 | Tarif-Empfehlung in MENSCHEN | erfüllt (ML-09) |
 | V-13 | Runbook VERCEL.md, GO-LIVE.md, Vorschauprüfung je Tor | Dokumente erfüllt (290aaeb, f08432e); Produktion je Fast-Forward per Vercel-MCP gelesen. Am 12.10. gab es zwei Ausnahmefehler auf 71e263f/1ca46e0: OG-Standardbild mit DYNAMIC_SERVER_USAGE und „DATABASE_URL fehlt“ durch HTML-begrenzte Bots auf `/`. Beide sind in ce6e6a5 behoben und ohne Datenbank gegengeprüft (`protokolle/C-produktionsfehler.md`). Danach main = 58a3344 (`dpl_2yJkXGasRVpVRaB7L2KvW7Wjibsm`) und fc08263 (`dpl_HgAErFQuAZ8JsDAnqZTLJVzjjx1P`, Endstand mit Nacharbeit), beide READY in fra1. Seit 10:51 UTC 0 Laufzeitfehler. Sonst nur die gewollten Meldungen der Startprüfung über fehlende Menschen-Werte. Vorschau des Arbeitsbranchs e0c8e9f READY in fra1 (`protokolle/C-vercel-mcp.md`). Endstand: main = 255179b (dpl_FnfyEKRGwG5fsu8vhpGzFeyqXrHf; vorher 2b930f7) READY in fra1, ohne Ausnahmefehler (`protokolle/C3b-vercel-mcp.md`) |

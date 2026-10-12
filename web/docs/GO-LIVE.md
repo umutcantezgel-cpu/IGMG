@@ -57,7 +57,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Ort:** VERCEL.md, Abschnitt 3.
   - **Aufwand:** 10 Minuten im Dashboard.
   - **Wer:** Technik.
-  - **Code:** vorhanden (`SPEICHER=blob`, `web/src/lib/storage/index.ts`, ADR 0020). Auf Vercel verkleinert der Browser Bilder über 4,2 MB vor dem Hochladen; größere PDF-Dateien werden abgelehnt.
+  - **Code:** vorhanden (`SPEICHER=blob`, `web/src/lib/storage/index.ts`, ADR 0020). Auf Vercel verkleinert der Browser Bilder über 4,2 MB vor dem Hochladen; PDF-Dateien über 4,2 MB (bis 10 MB) lädt er direkt in Vercel Blob (ADR 0020).
   - **Das siehst du, wenn es geklappt hat:** Ein Testbild lässt sich in der Vorschau über die Verwaltung hochladen und erscheint auf der Seite.
 
 - [ ] **B3 · Umgebungsvariablen für Produktion und Vorschau**
@@ -150,7 +150,7 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
 - [ ] **E1 · Startklar-Cockpit grün**
   - **Ort:** `/verwaltung/startklar` in der Verwaltung, oder auf der Kommandozeile `pnpm startklar`.
   - **Stand:** Das Cockpit ist im Code vorhanden (`web/src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx`, Prüfungen in `web/src/lib/startklar/pruefungen.ts`). Ob alle Punkte grün sind, zeigt ein Lauf.
-  - **Von Hand:** Die Funktionsregion `fra1` im Projekt bestätigen (MENSCHEN ML-22). Den Speicher prüft das Cockpit nur als Einstellung; ob er erreichbar ist, zeigt der Testupload aus B2.
+  - **Von Hand:** Die Funktionsregion `fra1` im Projekt bestätigen (MENSCHEN ML-22). Ob der Medienspeicher antwortet, zeigt die Zeile „Medienspeicher erreichbar“ (lesende Probe, `auslieferung.speicher`); der Testupload aus B2 bestätigt das Schreiben.
   - **Aufwand:** 10 Minuten zum Durchsehen.
   - **Wer:** Technik.
   - **Das siehst du, wenn es geklappt hat:** Alle Punkte sind grün. Soll-Zustand: Jeder Punkt, der rot bleibt, nennt Grund und Ort.

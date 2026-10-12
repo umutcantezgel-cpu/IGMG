@@ -49,11 +49,12 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
 - **Vercel und Betrieb (ADR 0018–0024 in `web/docs/adr/`):**
   - Datenbank-Anbindung für Neon, Bau mit und ohne Datenbank, Migration mit Sperre.
   - Dateispeicher Vercel Blob mit Bildvarianten und Verkleinern im Browser.
+  - Große PDF-Aushänge (über 4,2 MB, bis 10 MB) gehen direkt aus dem Browser in den Dateispeicher, weil Vercel-Funktionen nur 4,5 MB je Anfrage annehmen (ADR 0020, Nachtrag).
   - Tägliche Aufgaben mit `CRON_SECRET`.
   - Umgebungsprüfung mit Betriebsart. Die Vorschau ist für Suchmaschinen gesperrt.
   - Lange Zwischenspeicherung statischer Dateien.
 - **Startklar:**
-  - Cockpit `/verwaltung/startklar`, `pnpm startklar`, `pnpm release:check`.
+  - Cockpit `/verwaltung/startklar`, `pnpm startklar`, `pnpm release:check`. Das Cockpit prüft auch, ob der Dateispeicher wirklich antwortet.
   - Anleitungen `web/docs/deploy/VERCEL.md` (30 Minuten), `VERCEL-ENV.md` und `web/docs/GO-LIVE.md`.
   - Verarbeitungsverzeichnis und Entwurf des Hosting-Bausteins für die Datenschutzerklärung (`web/docs/recht/`).
 - **Leistung:**
@@ -80,8 +81,8 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Konsole ohne Fehler.
 - **Leistung:**
   - INP im Labor 11 von 11 Hauptansichten ≤ 200 ms (80–184 ms); jede ist schneller als der Ausgangsstand (152–232 ms).
-  - LCP ≤ 2,40 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100.
-  - JavaScript je Hauptansicht 171–179 kB gz, Grenze 180 kB (Kurzprüfung am Endstand, `protokolle/C3b-lh-js.md`).
+  - Auf den 11 öffentlichen Hauptansichten: LCP ≤ 2,40 s, CLS ≤ 0,01, Barrierefreiheit, Best Practices und SEO je 100. Im Startklar-Cockpit sind Barrierefreiheit und Best Practices 100; SEO 66 kommt nur vom gewollten Ausschluss der Verwaltung aus Suchmaschinen.
+  - JavaScript je öffentlicher Hauptansicht 171–179 kB gz, Grenze 180 kB für öffentliche Seiten (Kurzprüfung am Endstand, `protokolle/C3b-lh-js.md`).
   - Startklar-Cockpit (angemeldet): Das Öffnen des Kontomenüs dauerte bei gedrosseltem Prozessor bis 568 ms. Behoben (66965d0): jetzt 96–112 ms (`protokolle/C3b-cockpit-inp.md`).
   - Die Performance-Note liegt mit 81–89 gleichauf mit dem Ausgangsstand (79–86, gleiche Runden, Paarregel 11 von 11) und unter dem Ziel 90 (AUSNAHME A-01; Feldprüfung nach dem Livegang, ML-27).
   - Alle Leistungswerte sind am Endstand gemessen: Lighthouse verschränkt in 5 Runden, INP in 3 Runden (`protokolle/C-lighthouse-v.md`, `C3b-inp.md`).
@@ -90,7 +91,12 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte.
 
 **Offen und bewusst so gelassen**
-- **AUSNAHME A-02, Gestaltung ≥ 8 je Ansicht:** Vier Prüf- und Verbesserungsrunden (54 Pakete) haben das Mittel auf ein Plateau knapp unter 8 gebracht. Die verbleibenden Hinweise der Prüfer sind Einzelheiten in Komposition und Details. Beispiele: Kopfzone der Veranstaltungsseite etwas leer, doppelter Rücksprung-Link, Umbrüche einzelner Zeilen, Farbe einzelner Hinweise auf den Korankursen. Sie eignen sich für einen eigenen, kleinen Gestaltungsauftrag (Denkprotokoll ENTSCHEIDUNGEN L-E16; Liste in `protokolle/C3b-endpruefung-trockenlauf.md`).
+- **AUSNAHME A-02, Gestaltung ≥ 8 je Ansicht:** Vier Prüf- und Verbesserungsrunden (54 Pakete) haben das Mittel auf ein Plateau knapp unter 8 gebracht (maßgeblicher Blindvergleich: 7,50–7,83 je Ansicht, Mittel 7,68; der neue Stand ist überall vorgezogen). Die verbleibenden Hinweise der Prüfer sind Einzelheiten in Komposition und Details. Beispiele: Kopfzone der Veranstaltungsseite etwas leer, doppelter Rücksprung-Link, Umbrüche einzelner Zeilen, Farbe einzelner Hinweise auf den Korankursen. Sie eignen sich für einen eigenen, kleinen Gestaltungsauftrag (Denkprotokoll ENTSCHEIDUNGEN L-E16; vollständige Begründungen in `protokolle/C3b-endpruefung.md`). Die wichtigsten Hinweise aus dem maßgeblichen Blindvergleich:
+  - Startseite: Am Telefon steht der Einleitungstext erst unter der Tageskurve, und ein Nachrichtentitel reicht am Desktop fast bis an den Kartenrand.
+  - Gebetszeiten: Die Kurve am Telefon hat keine Beschriftung, und der Knopf „Vollbild“ steht etwas verloren darunter.
+  - Veranstaltungen: Unter dem Text der Leitkarte bleibt eine Leerfläche, und „Kostenlos“ rutscht am Telefon in eine eigene Zeile.
+  - Organisationsseite: Die Töne des Organisationsdiagramms weichen leicht vom Farbklima ab.
+  - Allgemein: Typografie und Komposition liegen überall bei 8. Bei den Details liegen sieben von elf Ansichten bei 7, bei Farbe und Grafik die Detailseite, Nachrichten und Über uns.
 - **AUSNAHME A-01, Performance-Note:** Grund ist der Hydrierungsblock des Frameworks, gleich groß wie vor dem Lauf. Der Ausweg ist ein eigener Auftrag „Hydrierung verkleinern“ (L-E14).
 - **ML-28, Eingaben vor dem Laden:** Wer in den Verwaltungsformularen tippt, bevor die Seite fertig geladen ist, verliert die Eingabe. Formularlogik war tabu; der Vorschlag steht in MENSCHEN.
 - **Umgebungsausnahmen UA-01–UA-04:** Es gab keine echten Geräte und kein Docker, Verwaltungsflüsse nur lokal, Chromium 141. Ersatzwege stehen in ABNAHME.
@@ -112,7 +118,7 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
    - Den letzten Stand der Arbeitsbranche `claude/blissful-edison-x3j16w` bringst du per Pull Request nach `main`. Das geht als Fast-Forward, ohne Erzwingen (`VERCEL.md` Abschnitt 10).
    - Danach prüfst du die Hauptseiten (`VERCEL.md` Abschnitt 11) und das Startklar-Cockpit `/verwaltung/startklar`.
 3. **Zurückrollen geht per Instant Rollback oder Revert.**
-   - **Schnell:** Vercel › Projekt `igmg` › Deployments › letzte gute Produktion › „Instant Rollback“ [prüfen: Menüname]. Gleichwertig auf der Kommandozeile: `vercel rollback <Adresse des guten Deployments>` (https://vercel.com/docs/cli/rollback; auf dem Hobby-Tarif nur zum direkt vorigen Produktions-Deployment).
+   - **Schnell:** Vercel › Projekt `igmg` › Deployments › letzte gute Produktion › „Instant Rollback“ [prüfen: Menüname]. Den Menünamen in der Oberfläche hat der Lauf nicht gegengeprüft. Belegt ist der Weg auf der Kommandozeile: `vercel rollback <Adresse des guten Deployments>` (https://vercel.com/docs/cli/rollback; auf dem Hobby-Tarif nur zum direkt vorigen Produktions-Deployment).
    - **Über Git:** einen Revert-Commit auf `main` setzen. Vercel baut dann den alten Stand neu (`VERCEL.md` Abschnitt 12).
    - Ein Rollback setzt nur den Code zurück, nie die Datenbank. Deshalb ändern Migrationen die Datenbank nur ergänzend (ADR 0019).
 4. **`_werkstatt` entfernen oder bewusst behalten.**
