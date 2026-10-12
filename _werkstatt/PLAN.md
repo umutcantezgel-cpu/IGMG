@@ -52,8 +52,8 @@ KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018�
 | Kennung | Rolle | Modell | Inhalt | Schreibrechte | Muster/Maßstab | Abhängig von | Kriterium | Stand |
 |---|---|---|---|---|---|---|---|---|
 | O-05 | Opus | Opus | `attachDatabasePool`, `vercel-build` mit/ohne DB, Migrationssperre, Instrumentation | `lib/db/index.ts`, `scripts/vercel-bau.mjs`, `scripts/migriere-mit-sperre.mjs`, `instrumentation.ts` | ADR 0018/0019 | – | V-04 | ✓ 0c224da |
-| O-06 | Opus | Opus | Blob privat, Bildvarianten, Verkleinern im Browser, `MedienBild` srcset | `lib/storage/**`, `lib/medien/**`, `app/medien/**`, Medien-Aktionen/-Formulare | ADR 0020 | O-05 | V-05 | ✓ 47ed617 |
-| O-07 | Opus | Opus | `lib/startklar/pruefungen.ts` | `lib/startklar/**`, Test | Kern 2.0 | H-V03 | Z-12, V-11 | ✓ c596742, 8df9556 |
+| O-06 | Opus | Opus | Blob privat, Bildvarianten, Verkleinern im Browser, `MedienBild` srcset | `lib/storage/**`, `lib/medien/**`, `app/medien/**`, Medien-Aktionen/-Formulare | ADR 0020 | O-05 | V-05 | ✓ 47ed617; Direkt-Upload großer PDF-Dateien 1d9fef5, e6d3341 |
+| O-07 | Opus | Opus | `lib/startklar/pruefungen.ts` | `lib/startklar/**`, Test | Kern 2.0 | H-V03 | Z-12, V-11 | ✓ c596742, 8df9556; Speicherprobe 1d9fef5, e6d3341, f9f7016 |
 | O-08 | Opus | Opus | Momente B-07 Weg der Gemeinde, B-08 Meilensteinlinie, B-09 Familie der vier | `ueber-uns/Zeitleiste`, `projekte/Meilensteine`, `organisation/FamilieDerVier`, `ErstesSichtbarwerden` | K-007 | O-02 | Z-04, Z-05 | ✓ 280a76a, 80a7d47, 588472a |
 | O-10 | Opus | Opus | Über uns als Gesamtansicht (Komposition um B-07) | `(website)/ueber-uns/**`, `website/ueber-uns/**` | REFERENZ | Sichtabnahme Start | Z-04 | ✓ 05dbf97 |
 | O-11 | Opus | Opus | Projekte als Gesamtansicht (um B-08) | `(website)/projekte/**`, `website/projekte/**` | REFERENZ | Sichtabnahme Start | Z-04 | ✓ 5732e90 |

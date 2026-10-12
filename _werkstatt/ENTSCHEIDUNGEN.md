@@ -159,7 +159,7 @@ Alle 54 Pakete sind von Opus abgenommen (Noten 8–8,5). Belege: `berichte/SICHT
    - Pflicht und Kür sind erfüllt, und laut Lauf entstehen keine neuen Pakete ohne Befund.
 2. **Rubrik lockern oder andere Prüfer wählen:** Das wäre unredlich und widerspricht der Abschlussregel.
 3. **AUSNAHME mit bester Ersatzlösung:**
-   - Nachher ist im Blindvergleich überall vorgezogen, mit +2,2 Punkten im Mittel gegenüber dem Ausgangsstand.
+   - Nachher ist im Blindvergleich überall vorgezogen, mit +2,3 Punkten im Mittel gegenüber dem Ausgangsstand (Endprüfung Lauf 2; Trockenlauf +2,2).
    - Jede Hauptansicht liegt ≥ 7; die Bewegungsnoten liegen bei 7–8.
    - Die benannten Restbefunde werden als Übergabe für einen eigenen Gestaltungsauftrag in BERICHT „Offen“ geführt.
 
