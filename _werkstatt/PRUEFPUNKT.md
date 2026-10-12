@@ -5,6 +5,7 @@
   2. **Endstand (läuft seit 10:48, REV 58a3344):**
      - Stufe C 1–11: grün. Ausnahmen: SVG mit einem statischen Fehlalarm, behoben in 4331b03 (Nachprüfung `C3-svg-nach`, 0 Befunde). release:check rot nur in `geheimnisse:pruefen`: Das war ein Schwärzungs-Platzhalter im E2E-Protokoll, behoben in 01589e8, danach ohne Befund.
      - Nach dem E2E-Teil `pnpm release:check` einmal komplett auf HEAD wiederholen, als grüner Beleg für Z-12.
+     - Danach den Bildsatz der Hauptansichten mit `--warte 3000` neu aufnehmen (`bildsatz.mjs --routen routen-hauptansichten.json --aus $S/bilder/abschluss-warte`) und nach `_werkstatt/bilder/abschluss/<ansicht>` übernehmen. Grund: Bei 600 ms fehlt im Tagesbogen noch die Jetzt-Marke; das Endbild von B-06 zeigt sie. Dann `galerie.mjs` und den Blindvergleich.
      - Ablauf:  `bash _werkstatt/werkzeuge/endstand.sh <REV>`. Das umfasst den Build auf 3500, Stufe C 1–3 und 5–11, bei ruhiger Last 12 und die INP-Paare, dazu E2E auf 3700. Danach STUFE-C3 mit Einordnung schreiben, Z-08 gegebenenfalls als AUSNAHME mit Denkprotokoll. Anschließend `abschluss-kopieren.sh` und `galerie.mjs`.
   3. **FF main** nach L-E01 (`git push origin claude/blissful-edison-x3j16w:main`, nie erzwungen). Danach die Produktion per MCP lesen, auch die Bot-UA-Prüfung.
   4. **Endprüfung:** `blind-vorbereiten.py` und `endpruefung.workflow.js`. Urteil wörtlich übernehmen, ABNAHME setzen, BERICHT schreiben. Dann den CLAUDE.md-Block entfernen, Commit, Push, ABSCHLUSS.
