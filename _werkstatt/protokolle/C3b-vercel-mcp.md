@@ -11,7 +11,7 @@ Werkzeuge: `list_deployments`, `get_deployment`, `get_runtime_errors`, `get_runt
 | dpl_9zDEcnR9xujWev3hPQdBDeARCeu1, dpl_CrGtZ81euJj79KLR3VRQVTft4YYz, dpl_2QPkHCjbaNLTbpqA9borgV18AVTQ, dpl_FAiDAnCmQHDNLfLgZtfvNu6TWnee | Vorschau | 6e76848, 9214738, 8a397eb, 6464993 | READY | – |
 | dpl_Epw2S6zkLgTGmfUiEKJBMn47XWyk | Vorschau | 325c38a | CANCELED (von 8a397eb überholt) | – |
 
-Kein Deployment im Zustand ERROR.
+In dieser Liste der damals jüngsten Deployments stand kein Deployment im Zustand ERROR. Berichtigung nach Endprüfung Lauf 3: Über den ganzen Lauf gab es 8 ERROR-Vorschauen, keine auf `main`. Sie sind mit Ursache erfasst in `C3b-vorschau-90bb76d-bau.md`; Behebung im Nachtrag 23:00 UTC unten.
 
 ## Laufzeitfehler (24 h, gruppiert)
 - **Ausnahmefehler:** keine seit 08:14 UTC.
