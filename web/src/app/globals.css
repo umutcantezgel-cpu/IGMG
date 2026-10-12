@@ -274,6 +274,13 @@
     outline: 2px solid var(--color-gruen-950);
     outline-offset: 2px;
   }
+  /* Tastaturprobe (Z-07): Während ALTCHA prüft, ist das native Kästchen unsichtbar (Ladekreis an seiner Stelle). Der
+     Fokusring liegt dann am Rahmen des Kästchens, damit der Tastaturfokus sichtbar bleibt – nur Darstellung. */
+  .altcha-checkbox[data-loading='true']:has(input:focus-visible) {
+    outline: 2px solid var(--color-gruen-950);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
   /* B-03 Öffnen: modale Dialoge treten mit 8 px Weg auf, der Hintergrund blendet ein */
   dialog[open] {
     animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) both;

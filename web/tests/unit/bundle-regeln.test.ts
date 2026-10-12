@@ -40,5 +40,8 @@ describe('Client-Code öffentlicher Seiten', () => {
     expect(() => statSync(join(WURZEL, 'app', '[locale]', 'error.tsx'))).toThrow();
     const s = readFileSync(join(WURZEL, 'app', 'global-error.tsx'), 'utf8');
     expect(s).not.toMatch(/PageHeader|Seitenkopf|Statusblock|lucide-react|@\/i18n\//);
+    // H-L01: die gestaltete Ansicht (mit Seitenkopf und Zustandsgrafik) nur dynamisch, nie statisch im Bundle jeder Route
+    expect(s).not.toMatch(/^import .*fehler\/FehlerAnsicht/m);
+    expect(s).toMatch(/import\('@\/components\/website\/fehler\/FehlerAnsicht'\)/);
   });
 });

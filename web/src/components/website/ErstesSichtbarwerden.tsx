@@ -21,16 +21,26 @@ export function ErstesSichtbarwerden({
   useEffect(() => {
     const el = element.current;
     if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const r = el.getBoundingClientRect();
-    if (r.top < window.innerHeight && r.bottom > 0) return;
-    el.dataset.sicht = 'bereit';
+    // Die erste Meldung des Beobachters sagt, ob das Element beim Einhängen schon zu sehen ist – ohne erzwungene
+    // Layoutberechnung in der Hydrierung (H-L01; früher getBoundingClientRect).
+    let erste = true;
     const beobachter = new IntersectionObserver(
       ([eintrag]) => {
-        if (!eintrag?.isIntersecting) return;
+        if (!eintrag) return;
+        if (erste) {
+          erste = false;
+          if (eintrag.isIntersecting) {
+            beobachter.disconnect();
+            return;
+          }
+          el.dataset.sicht = 'bereit';
+          return;
+        }
+        if (eintrag.intersectionRatio < 0.15) return;
         el.dataset.sicht = 'laeuft';
         beobachter.disconnect();
       },
-      { threshold: 0.15 },
+      { threshold: [0, 0.15] },
     );
     beobachter.observe(el);
     return () => beobachter.disconnect();

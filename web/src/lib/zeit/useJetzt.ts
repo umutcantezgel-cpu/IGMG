@@ -18,7 +18,9 @@ function abonnieren(rueckruf: () => void) {
       jetzt = new Date();
       zuhoerer.forEach((z) => z());
     }, 30_000);
-    queueMicrotask(() => zuhoerer.forEach((z) => z()));
+    // Erste Aktualisierung als eigene Aufgabe statt als Mikroaufgabe (H-L01): Die zeitabhängigen Inseln (Leiste,
+    // Tagesbogen) rechnen dann nach der Hydrierung, nicht in derselben langen Aufgabe.
+    setTimeout(() => zuhoerer.forEach((z) => z()), 0);
   }
   return () => {
     zuhoerer.delete(rueckruf);

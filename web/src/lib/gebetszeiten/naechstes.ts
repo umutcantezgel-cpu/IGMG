@@ -5,20 +5,32 @@ import { GEBETE, type Gebet, type Tageszeiten } from './typen';
  * Reine Funktionen ohne Serverabhängigkeit; Zeitzone nur über Intl (kein Zeitzonen-Paket im Browser, K-12).
  */
 const ZONE = 'Europe/Berlin';
-const teileFormat = new Intl.DateTimeFormat('en-GB', {
-  timeZone: ZONE,
-  hourCycle: 'h23',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit',
-});
+/**
+ * Erst beim ersten Gebrauch angelegt (H-L01): Ein Zeitzonen-Format kostet beim Anlegen auf schwachen Telefonen
+ * spürbar Rechenzeit; auf Modulebene fiel sie in die Hydrierung jeder Seite mit Gebetszeitleiste.
+ */
+let teileFormat: Intl.DateTimeFormat | undefined;
+function teileFormatHolen(): Intl.DateTimeFormat {
+  teileFormat ??= new Intl.DateTimeFormat('en-GB', {
+    timeZone: ZONE,
+    hourCycle: 'h23',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  return teileFormat;
+}
 
 /** Wanduhr-Teile in Europe/Berlin. */
 function teile(d: Date) {
-  const t = Object.fromEntries(teileFormat.formatToParts(d).map((p) => [p.type, p.value]));
+  const t = Object.fromEntries(
+    teileFormatHolen()
+      .formatToParts(d)
+      .map((p) => [p.type, p.value]),
+  );
   return { j: +t.year, m: +t.month, t: +t.day, h: +t.hour, min: +t.minute, s: +t.second };
 }
 
