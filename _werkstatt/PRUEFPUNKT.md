@@ -1,12 +1,13 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (01:40 UTC):** (1) Bildsatz E4 läuft (`$SCRATCHPAD/head/skripte/bilder-e4.sh a|b|c` → `$SCRATCHPAD/bilder/e4/`, Verwaltung `_werkstatt/bilder/E4-verwaltung/`; Server 3500 = Build f44119b, Anmeldestand `$SCRATCHPAD/head/verwaltung-werkzeug/`). Danach Sichtabnahme E4 mit `_werkstatt/werkzeuge/sichtabnahme.workflow.js`, args {lauf:'E4', bilder:'$SCRATCHPAD/bilder/e4', vorher:'$SCRATCHPAD/bilder/head', vorherName:'E3', verwaltung:'/home/user/IGMG/_werkstatt/bilder/E4-verwaltung', vorherVerwaltung:'/home/user/IGMG/_werkstatt/bilder/HEAD-verwaltung', praefix:'H-C'} → `_werkstatt/berichte/SICHTABNAHME-E4.md`. (2) Kür-Welle B läuft (wf_3d5f9daa-c46: K-16/17 Verwaltung, K-18 Anmeldung, K-19 Kalender-Abo). (3) FF f44119b nach dem Bildsatz (`$SCRATCHPAD/ff/vorab.sh f44119b`). Danach H-L01, Stufe C, Morgenbericht 05:00 UTC.
-- **H-B Stand:** 14/14 abgenommen und committet (f44119b); Noten 7,5–8,5 (H-B03 Muss-Befund von Opus behoben).
-- **Sichtabnahme E3:** `_werkstatt/berichte/SICHTABNAHME-E3.md` (Ø 6,29; Ziel ≥ 8). Welle 0 erledigt (ec02e62, e3198cc).
-- **Entwicklungsserver 3200:** startet mit Test-Geheimnissen aus `$SCRATCHPAD/dev-geheimnisse.env` (dev-neustart.sh); Datenbank `$SCRATCHPAD/pglite-h03` (pglite-dev war abgebrochen), Anmeldestand `$SCRATCHPAD/verwaltung-state.json` (Testkonto pruefer-dev3@example.test).
-- **B-05:** eigener `SeitenUebergang` (L-E10) mit Morph (O-13); im Entwicklungsserver nachgewiesen (`werkzeuge/vt-status.mjs`: ready, Namen alt/neu). Nachweis am Produktions-Build im E3-TOR.
-- **Laufende Pakete:** Bildsatz E4 (Hintergrund), wf_3d5f9daa-c46 (Kür-Welle B).
-- **Offene Pakete:** H-V08-Nachweis, H-L01, H-D04, H-B (nach Sichtabnahme), Kür K-02…K-20 (PLAN 1.1), Bilder der Verwaltung (Anmeldestand neu erzeugen).
-- **Letzter grüner Commit:** f44119b (Branch, check 761 grün) · 6596a6e (main, Produktion READY) · 25e8040 (main, Produktion READY, 0 Laufzeitfehler) · 8d79ddc (Unit grün, geheimnisse grün) · 93a0b3d (E3-Tor-Prüfling, Lauf grün außer 8c) · fe97c33 (main, unverändert).
-- **Server:** 3100 Ausgangsstand (PID 18692, Routen-Cache bereinigt 21:17) · 3200 Entwicklung · 3400 E3-Tor-Prüfling 93a0b3d · 3500 HEAD bc4b5b7 (PID-Datei `$SCRATCHPAD/head/server.pid`). Postgres 16 lokal (5432).
+- **Nächster exakter Schritt (02:10 UTC):**
+  1. **Sichtabnahme E4** läuft (Workflow wf_9df3d301-a41, Werkzeug `werkzeuge/sichtabnahme.workflow.js`, args {lauf:'E4', bilder:'$SCRATCHPAD/bilder/e4', vorher:'$SCRATCHPAD/bilder/head', vorherName:'E3', …, praefix:'H-C'}). Ergebnis → `berichte/SICHTABNAHME-E4.md`; Ansichten < 8 als H-C-Pakete mit `werkzeuge/hb-welle.workflow.js` (Briefs in `$SCRATCHPAD/hb/`).
+  2. **H-L01** läuft (`$SCRATCHPAD/hl01/lauf.sh`, Protokoll `protokolle/H-L01-lauf.log`, Ergebnisse `$SCRATCHPAD/hl01/route-NN-{3100,3500}.json`): 11 Routen × 3 Läufe je Server, fertig ≈ 02:50. Während der Messung keine Builds. Danach Mediane in `berichte/H-L01.md` (Z-08).
+  3. **FF main** auf cd91898 (Kür-Welle B) nach der Messung: `$SCRATCHPAD/ff/vorab.sh <rev>` → `git push origin <rev>:main` → Produktion per Vercel-MCP lesen.
+  4. **Stufe C** gegen frischen 3500-Build des letzten Stands (`$SCRATCHPAD/head/e4-bau.sh <rev>`), Ablauf nach `_werkstatt/werkzeuge/stufe-c.sh` (in Vorbereitung, Vorlage `lauf-e3tor.sh`).
+  5. H-D04 MENSCHEN-Abschluss · BERICHT.md (Galerie, Zusammenführen/Zurückrollen) · Morgenbericht 05:00 UTC · Endprüfung (frischer Opus) · CLAUDE.md-Block entfernen · ABSCHLUSS.
+- **H-B Stand:** 14/14 abgenommen (f44119b). Kür 20/20 (Welle B: ff45fef).
+- **Entwicklungsserver 3200:** startet mit Test-Geheimnissen aus `$SCRATCHPAD/dev-geheimnisse.env` (dev-neustart.sh); Datenbank `$SCRATCHPAD/pglite-h03`, Anmeldestand `$SCRATCHPAD/verwaltung-state.json` (Testkonto pruefer-dev3@example.test).
+- **Letzter grüner Commit:** ff45fef (Branch, Kür-Welle B, check grün) · f44119b (main, Produktion READY, keine App-Laufzeitfehler) · 6596a6e / 25e8040 / 8da8efe (frühere main-Stände, READY).
+- **Server:** 3100 Ausgangsstand 9ebb4bc · 3200 Entwicklung · 3400 E3-Tor-Prüfling 93a0b3d · 3500 HEAD f44119b (PID-Datei `$SCRATCHPAD/head/server.pid`). Postgres 16 lokal (5432).
 - **Wiederaufnahme (L5):** Branch `claude/blissful-edison-x3j16w` holen, dann STATUS.md (Einrichtung) und diese Datei lesen.

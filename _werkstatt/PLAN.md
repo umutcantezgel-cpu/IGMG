@@ -88,13 +88,13 @@ Die Bausteine H-G und die Zustände H-Z laufen vor dem E3-Tor (L0), damit sich d
 | H-D05 | Dokumentar | Haiku | Runbook und Umgebungsdoku gegen den Code (Datensicherung, Protokolle, Cache, direkte Migrationsverbindung) | `docs/deploy/*`, `GO-LIVE.md`, MENSCHEN ML-14–16 | AUFTRAG V-10, V-13 | V-10, V-13 | ✓ `berichte/H-D05.md`, f08432e |
 | H-D04 | Dokumentar | Haiku | MENSCHEN-Abschluss (jede Aufgabe mit Ort und Aufwand) | `MENSCHEN.md` | AUFTRAG §12 | Z-10, Z-12 | offen |
 | H-V07 | Prüfer | Haiku | Beleg gemeinsamer Zustand: Sitzungen, Raten, ALTCHA, Sperren in der DB; nichts im Prozessspeicher, das Instanzen teilen müssten | – (Bericht) | AUFTRAG V-07 | V-07 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md` |
-| H-V08 | Prüfer + Baumeister | Haiku | Caching wie lokal: `revalidateTag` nach Verwaltungsänderung lokal im Produktions-Build sofort sichtbar; Cache-Header statischer Dateien (ADR 0023 ✓ abd187e) belegen | Bericht, ggf. Tests | ADR 0023, AUFTRAG V-08 | V-08 | teilweise: ADR 0024 umgesetzt d26e8bc; Nachweis „sofort sichtbar“ offen |
+| H-V08 | Prüfer + Baumeister | Haiku | Caching wie lokal: `revalidateTag` nach Verwaltungsänderung lokal im Produktions-Build sofort sichtbar; Cache-Header statischer Dateien (ADR 0023 ✓ abd187e) belegen | Bericht, ggf. Tests | ADR 0023, AUFTRAG V-08 | V-08 | ✓ `berichte/H-V08.md` (18/18 sichtbar beim ersten Abruf), ADR 0024 d26e8bc |
 | H-V10 | Prüfer | Haiku | Protokolle ohne Personendaten (alle `console.*`/Logger-Aufrufe), Health-Route, Backups/PITR und Rollback im Runbook | – (Bericht) | AUFTRAG V-10 | V-10 | ✓ Bericht `protokolle/H-V07-V10-pruefung.md`; Datenbankfehler gekürzt (`lib/db/fehler.ts`), Health mit Zeitlimit 352d1bb; Runbook § 13/16 (H-D05) |
 | H-R01 | Prüfer | Haiku | Wortlaut-Snapshot der Rechts- und Einwilligungstexte: Hash je Text E0 (9ebb4bc) gegen jetzt | `protokolle/` | G6 | Z-12 | ✓ `berichte/H-R01.md`, 024f67d (alle Rechtstexte unverändert) |
 | H-L01 | Prüfer + Baumeister | Haiku | Leistung: Paarmessung Ausgangsstand/Nachher unter ruhigen Bedingungen, Budgets (JS ≤ 180 KB gz, TBT), Ursachen beheben | Bericht, Befundpakete | ABNAHME Z-08 (E0-Spanne 80–94) | Z-08 | offen |
 | H-BILD | Dokumentar | Opus | E0-Bilder ins Repo (`bilder/e0/`, `bilder/e0-reduziert/`) | `_werkstatt/bilder/**` | AUFTRAG §8 | Z-04, Z-10 | ✓ (dieser Stand) |
-| H-B… | Baumeister | Haiku | Befundpakete aus den Sichtabnahmen (≤ 2 je Ansicht und Kategorie), ≈ 12 | je Befund | REFERENZ | Z-04 | offen |
-| E4-TOR | Prüfer + Opus | Haiku/Opus | Stufe B, Sichtabnahme, Vorschau | – | ABNAHME | Z-02–Z-09, Z-11 | offen |
+| H-B… | Baumeister | Haiku | Befundpakete aus den Sichtabnahmen (≤ 2 je Ansicht und Kategorie), ≈ 12 | je Befund | REFERENZ | Z-04 | ✓ H-B01–B14 + Welle 0 (`berichte/H-B*.md`, Noten 7,5–8,5; f44119b); H-C aus Sichtabnahme E4 offen |
+| E4-TOR | Prüfer + Opus | Haiku/Opus | Stufe B, Sichtabnahme, Vorschau | – | ABNAHME | Z-02–Z-09, Z-11 | läuft: Bildsatz E4 ✓ (127a9e7), Sichtabnahme E4 (wf_9df3d301-a41), H-L01 Paarmessung |
 
 ### E5 Kür und Abschluss
 Kür nach Wirkung, je ein Haiku-Paket nach Referenz, 20 benannt. Inhalte werden nicht erfunden. „Islamisches Wissen“ und „Quran-Seiten“ gestalten nur die Darstellung vorhandener, belegter Inhalte, ohne Verse als Schmuck (G7).
@@ -117,7 +117,10 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Produktion läuft ohne Datenbank: Jeder Push auf `main` muss den PGlite-Rückfall im Bau erhalten.
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
-## Statusnachweis (Stand 2026-10-11 19:50 UTC)
+## Statusnachweis (Stand 2026-10-12 02:10 UTC)
+Pflicht erledigt 66 von ≈ 70: die 50 unten plus E3-TOR, H-V08 und H-B01–B14. Offen: H-L01, E4-TOR (Sichtabnahme E4 + H-C), H-D04, Stufe C mit Endprüfung. Kür 20 von 20 (K-01–K-20; K-09/K-11/K-13/K-17 in den Berichten K-08, K-10, K-12, K-16).
+
+### Stand 2026-10-11 19:50 UTC
 Pflicht erledigt 50 von ≈ 70:
 - E0: 6
 - E2: 10 (O-02 zählt erst mit dem B-05-Nachweis am Produktions-Build)
