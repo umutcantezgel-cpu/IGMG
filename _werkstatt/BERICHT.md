@@ -29,7 +29,7 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
    - ruhige Bewegung nach festen Regeln;
    - ein Formsystem aus dem Achtstern;
    - vier große Momente aus echten Inhalten: Tagesbogen der Gebetszeiten, Weg der Gemeinde, Projekt-Meilensteine, Familie der vier Organisationen.
-2. Alle zwölf Hauptansichten und zwanzig weitere Ansichten sind überarbeitet und von unabhängigen Prüfern abgenommen; vier Prüfrunden haben die Bewertung von 6,3 auf 7,7 von 10 gehoben.
+2. Alle zwölf Hauptansichten und zwanzig weitere Ansichten sind überarbeitet. Unabhängige Prüfer haben sie in vier Runden bewertet: Das Mittel stieg von 6,3 auf 7,7 von 10, und im Blindvergleich ziehen sie den neuen Stand überall dem alten vor. Das Spitzenziel 8 je Ansicht ist nicht erreicht (AUSNAHME A-02).
 3. Für Vercel ist alles im Code vorbereitet: Datenbank und Dateispeicher in Frankfurt, wiederkehrende Aufgaben, Schutz der Vorschau, Startklar-Prüfung. Bis zum Livegang fehlen nur noch die Schritte in `MENSCHEN.md`.
 
 **Was neu ist**
@@ -88,6 +88,7 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
   - Die Produktion `igmg-five.vercel.app` läuft seit dem Fast-Forward ohne Laufzeitfehler, nur mit den gewollten Hinweisen der Startprüfung auf fehlende Menschen-Werte.
 
 **Offen und bewusst so gelassen**
+- **AUSNAHME A-02, Gestaltung ≥ 8 je Ansicht:** Vier Prüf- und Verbesserungsrunden (54 Pakete) haben das Mittel auf ein Plateau knapp unter 8 gebracht. Die verbleibenden Hinweise der Prüfer sind Einzelheiten in Komposition und Details. Beispiele: Kopfzone der Veranstaltungsseite etwas leer, doppelter Rücksprung-Link, Umbrüche einzelner Zeilen, Farbe einzelner Hinweise auf den Korankursen. Sie eignen sich für einen eigenen, kleinen Gestaltungsauftrag (Denkprotokoll ENTSCHEIDUNGEN L-E16; Liste in `protokolle/C3b-endpruefung-trockenlauf.md`).
 - **AUSNAHME A-01, Performance-Note:** Grund ist der Hydrierungsblock des Frameworks, gleich groß wie vor dem Lauf. Der Ausweg ist ein eigener Auftrag „Hydrierung verkleinern“ (L-E14).
 - **ML-28, Eingaben vor dem Laden:** Wer in den Verwaltungsformularen tippt, bevor die Seite fertig geladen ist, verliert die Eingabe. Formularlogik war tabu; der Vorschlag steht in MENSCHEN.
 - **Umgebungsausnahmen UA-01–UA-04:** Es gab keine echten Geräte und kein Docker, Verwaltungsflüsse nur lokal, Chromium 141. Ersatzwege stehen in ABNAHME.
@@ -109,7 +110,7 @@ Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende de
    - Den letzten Stand der Arbeitsbranche `claude/blissful-edison-x3j16w` bringst du per Pull Request nach `main`. Das geht als Fast-Forward, ohne Erzwingen (`VERCEL.md` Abschnitt 10).
    - Danach prüfst du die Hauptseiten (`VERCEL.md` Abschnitt 11) und das Startklar-Cockpit `/verwaltung/startklar`.
 3. **Zurückrollen geht per Instant Rollback oder Revert.**
-   - **Schnell:** Vercel › Projekt `igmg` › Deployments › letzte gute Produktion › „Instant Rollback“ [prüfen: Menüname].
+   - **Schnell:** Vercel › Projekt `igmg` › Deployments › letzte gute Produktion › „Instant Rollback“ [prüfen: Menüname]. Gleichwertig auf der Kommandozeile: `vercel rollback <Adresse des guten Deployments>` (https://vercel.com/docs/cli/rollback; auf dem Hobby-Tarif nur zum direkt vorigen Produktions-Deployment).
    - **Über Git:** einen Revert-Commit auf `main` setzen. Vercel baut dann den alten Stand neu (`VERCEL.md` Abschnitt 12).
    - Ein Rollback setzt nur den Code zurück, nie die Datenbank. Deshalb ändern Migrationen die Datenbank nur ergänzend (ADR 0019).
 4. **`_werkstatt` entfernen oder bewusst behalten.**
