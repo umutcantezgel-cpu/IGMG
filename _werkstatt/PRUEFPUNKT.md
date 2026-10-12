@@ -1,19 +1,18 @@
 # PRÜFPUNKT
 
-- **Nächster exakter Schritt (16:55 UTC):**
-  1. **Befundwelle H-F, Welle 1: fertig (1bbee03).** Davor lief: läuft als zwei hb-welle-Workflows: `wf_3a40f904-4c3` (A: H-F01, 03, 05, 07) und `wf_999e16ff-979` (B: H-F02, 04, 06). Dev 3200 läuft (pglite-h10, Zustand `$S/verwaltung-state.json` gültig). Danach:
-     - Ergebnisse sichten.
-     - REFERENZ §2 nachziehen (Seitenende L-E15, Nachrichtenkarten, Tagesbogen).
-     - Stufe A gesamt prüfen: tsc, eslint, Unit, sprachen, freie Werte.
-     - Committen.
-  2. **Welle 2:** H-F08–13. Die Vorbedingung H-F08 ist gesetzt (CSS-Regel und B-05-Vermerk, Commit nach 25ec8f4). Paketliste: `$S/hf-pakete.json`.
-  3. **Danach:**
-     - 3500 neu bauen.
-     - Bildsatz der Hauptansichten mit `--warte 3000`, `abschluss-kopieren.sh` plus Übernahme, `galerie.mjs`.
-     - Kurzprüfung: Konsole, axe, F-Liste, Unit/E2E-Teil.
+- **Nächster exakter Schritt (18:20 UTC):**
+  1. **Befundwelle H-F fertig:** Welle 1 in 1bbee03, Welle 2 in 6464993, alle 13 Pakete angenommen (8–8,5).
+     - Vorfall: Dev-DB pglite-h10 beschädigt (Neuanmeldung durch einen Baumeister). `dev-neustart.sh` und `dev-anmeldung.sh` zeigen jetzt auf pglite-hf12.
+  2. **Abschlussprüfung läuft:** `OHNE_RUHE=1 endstand.sh 325c38a`, Ablauf in `protokolle/C-endstand.log`: Build 3500, Stufe C 1–3 und 5–11, E2E. Danach:
+     - JS-Kurzprüfung mit Lighthouse, 1 Lauf × 11 Routen.
+     - Bildsatz der Hauptansichten mit `--warte 3000` nach `bilder/abschluss`, dazu Momente und Seitenwechsel aus `$S/bilder/stufe-c`.
+     - `verwaltung-bilder.mjs` mit dem Zustand `head/verwaltung-werkzeug` nach `bilder/C3b-verwaltung`.
+     - `galerie.mjs`.
+     - ALTCHA-Wiederholung, falls nötig.
+     - STUFE-C3 ergänzen.
      - Vorab-Prüfung, dann FF main.
-  4. **Endprüfung** (Blindvergleich plus Endprüfer). Z-04 bei Bedarf als A-02 nach L7.
-- **Während Welle H-F2 ausgeblendet:** Die Schreibrechte von Welle 2 (`$S/hf-w2-dateien.txt`) stehen auf assume-unchanged. Dazu stehen in `.git/info/exclude`: `_werkstatt/bilder/H-F*/`, `_werkstatt/protokolle/werkzeug-*`, `_werkstatt/protokolle/H-F*`, `web/src/components/verwaltung/startklar/kennung.tsx`. Nach der Welle zurücksetzen (`--no-assume-unchanged`, vier Zeilen löschen), dann committen.
+  3. **Endprüfung:** Blindvergleich und Endprüfer. Z-04 bei Bedarf als A-02 nach L7.
+- **Während der Abschlussprüfung ausgeblendet:** `_werkstatt/protokolle/C-*` (Liste `$S/ausgeblendet3.txt`, assume-unchanged) und die Zeile `_werkstatt/protokolle/C-*` in `.git/info/exclude`. Nach dem Lauf zurücksetzen und committen.
 - **Server:**
   - 3100 Ausgangsstand 9ebb4bc.
   - 3400 E3-Tor-Prüfling.
