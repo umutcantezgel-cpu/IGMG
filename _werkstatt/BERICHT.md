@@ -2,6 +2,26 @@
 
 Morgenberichte (höchstens 20 Zeilen, du-Anrede, ohne Fachjargon) und am Ende der Schlussbericht mit Vorher-Nachher-Galerie (`_werkstatt/bilder/galerie.html`).
 
+## Morgenbericht · Montag, 12. Oktober 2026, 07:00 Uhr
+
+**Fertig seit gestern Abend**
+- Fünf frische Prüfer haben alle Hauptansichten bewertet (Mittel 7,2 von 10, vorher 6,3). Aus ihren Hinweisen sind 13 Verbesserungspakete entstanden. Alle sind gebaut und abgenommen, mit Noten von 8 bis 8,5.
+- Auf dem Telefon sind die Listen deutlich ruhiger. Die Veranstaltungsseite ist jetzt ein Drittel kürzer (`bilder/H-C03/abnahme-veranstaltungen-390.jpg`).
+- Die Kopfbereiche der Veranstaltungs- und Nachrichtenseiten zeigen jetzt Bild und Organisationslogo (`bilder/H-C02/abnahme-nachricht-1440.jpg`).
+- Kontakt, Korankurse und Organisationsseite sind aufgeräumt: weniger Kästen, klarere Überschriften (`bilder/H-C06/abnahme-kontakt-1440.jpg`, `bilder/H-C05/abnahme-ana-1440.jpg`).
+- Die Gebetszeiten auf dem Telefon sind kompakter (`bilder/H-C09/abnahme-gebetszeiten-390.jpg`).
+- Startseite und Projekte waren auf schwachen Telefonen etwas langsamer als vorher. Die Ursachen sind gefunden und behoben. Gemessen wird gleich in Ruhe.
+- Die Website im Netz (`igmg-five.vercel.app`) zeigt den Stand von 05:40 Uhr. Sie läuft ohne Fehler.
+- Die Liste „Was nur ein Mensch tun kann“ steht jetzt in der richtigen Reihenfolge bis zum Livegang (`_werkstatt/MENSCHEN.md`, rund 11 Stunden Arbeit, verteilt auf Vorstand und Technik).
+
+**Stand der Kriterien:** 0 von 12 abgehakt. Abgehakt wird erst nach der Schlussprüfung. Gestaltung, Bewegung, Grafik, Vercel und Recht sind gebaut, Leistung wird nachgemessen.
+
+**Als Nächstes:** Schlussprüfung aller zwölf Kriterien (Bilder in drei Größen, Zugänglichkeit, Tastatur, Leistung, Sprachen Deutsch, Türkisch, Englisch, Vercel-Bau), dann der Schlussbericht mit Vorher-Nachher-Galerie.
+
+**Bitte prüfen oder entscheiden**
+- Die Logos der Organisationen gibt es nur sehr klein und mit weißem Grund. In kleinen Größen sind sie kaum zu erkennen. Gibt es größere Dateien (MENSCHEN M-015, M-016)?
+- Die Entfernung Wetzlar–Kaaba ist ausgeblendet, bis jemand sie mit Quelle liefert (ML-25).
+
 ## Anleitung: Zusammenführen und Zurückrollen
 
 **Wichtig vorab:** Auf deine Anweisung (L-E01) kamen geprüfte Stände schon während des Laufs per Fast-Forward auf `main`. Die Produktion `igmg-five.vercel.app` zeigt deshalb bereits den gestalteten Stand, aber noch ohne Datenbank: Sie zeigt Beispielinhalte, und Formulare und Verwaltung funktionieren dort nicht. Dieser Abschnitt beschreibt den Weg vom Beispielbetrieb zum echten Livegang.
