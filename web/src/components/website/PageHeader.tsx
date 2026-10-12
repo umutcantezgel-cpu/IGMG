@@ -21,6 +21,7 @@ export function PageHeader({
   kinder,
   oben,
   bild,
+  bildAbLg,
   kennungZeichen,
   titelId,
   titelLang,
@@ -42,6 +43,8 @@ export function PageHeader({
   oben?: ReactNode;
   /** Kopfbild (H-C02), siehe `Seitenkopf` */
   bild?: ReactNode;
+  /** Kopfbild nur ab lg, siehe `Seitenkopf` */
+  bildAbLg?: boolean;
   /** Zeichen vor der Kennung (Vorgabe Achtstern), siehe `Seitenkopf` */
   kennungZeichen?: ReactNode;
   titelId?: string;
@@ -60,6 +63,7 @@ export function PageHeader({
       zierde={zierde}
       oben={oben}
       bild={bild}
+      bildAbLg={bildAbLg}
       kennungZeichen={kennungZeichen}
       titelId={titelId}
       titelLang={titelLang}

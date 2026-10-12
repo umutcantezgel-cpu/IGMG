@@ -122,7 +122,11 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
         <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
         {z.wiederkehrend ? (
           karte ? (
-            <span className="text-tinte-2"> · {t('wiederkehrend')}</span>
+            <>
+              {' '}
+              {/* Trenner bleibt bei „wiederkehrend“, nicht am Zeilenende (Nachabnahme H-C04) */}
+              <span className="whitespace-nowrap text-tinte-2">· {t('wiederkehrend')}</span>
+            </>
           ) : (
             <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span>
           )

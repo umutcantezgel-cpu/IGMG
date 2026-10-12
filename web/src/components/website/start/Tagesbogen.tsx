@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
+import { tageszeilen } from '@/lib/gebetszeiten/hijri';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
 import { TagesbogenLive } from './TagesbogenLive';
@@ -9,7 +10,8 @@ const LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' }
 
 /**
  * Tagesbogen (Startseite, großer Moment B-06): die sechs Zeiten des Tages als Weg der Sonne über den Horizont.
- * Daten wie die PrayerTimesBar aus dem Zwischenspeicher, Rechnung im Browser (K-08); ohne Zeiten bleibt der Platz leer.
+ * Daten wie die PrayerTimesBar aus dem Zwischenspeicher, Rechnung im Browser (K-08); die Datumszeilen je Tag kommen
+ * fertig vom Server (H-L01). Ohne Zeiten bleibt der Platz leer.
  */
 export async function Tagesbogen({ className }: { className?: string }) {
   const sprache = (await getLocale()) as Locale;
@@ -30,6 +32,10 @@ export async function Tagesbogen({ className }: { className?: string }) {
         listeHeute: tl('listeHeute'),
         alle: tl('alle'),
         locale: LOCALE[sprache],
+        tageszeilen: tageszeilen(
+          fenster.tage.map((t) => t.datum),
+          LOCALE[sprache],
+        ),
       }}
     />
   );

@@ -29,6 +29,8 @@ export type GebetszeitenSeiteTexte = {
   bogenBeschreibung: string;
   /** Locale für Datum und Hidschri im Tagesbogen. */
   bogenLocale: string;
+  /** Kopfzeilen des Tagesbogens je Kalendertag, auf dem Server berechnet (H-L01) */
+  tageszeilen?: Record<string, string>;
   namen: Record<Gebet, string>;
   beschreibungen: Record<Gebet, string>;
   ansichtAria: string;
@@ -97,6 +99,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels }: Gebetszeite
     listeHeute: texte.listeHeute,
     alle: '',
     locale: texte.bogenLocale,
+    tageszeilen: texte.tageszeilen,
   };
 
   return (

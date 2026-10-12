@@ -20,6 +20,7 @@ export function Seitenkopf({
   kinder,
   oben,
   bild,
+  bildAbLg = false,
   kennungZeichen = <Stern8 />,
   titelId,
   titelLang,
@@ -42,6 +43,8 @@ export function Seitenkopf({
   oben?: ReactNode;
   /** Kopfbild (H-C02): mit Bild steht es in einer eigenen Spalte rechts, auf dem Telefon nach dem Textblock */
   bild?: ReactNode;
+  /** Kopfbild nur ab lg (Platzhalter ohne gepflegtes Bild): darunter keine leere Rasterzeile */
+  bildAbLg?: boolean;
   /** Zeichen vor der Kennung; Vorgabe der Achtstern */
   kennungZeichen?: ReactNode;
   /** Kennung des h1 (Verweise, Tests) */
@@ -88,7 +91,7 @@ export function Seitenkopf({
           ) : null}
           {kinder}
         </div>
-        {mitBild ? <div className="min-w-0">{bild}</div> : null}
+        {mitBild ? <div className={bildAbLg ? 'min-w-0 max-lg:hidden' : 'min-w-0'}>{bild}</div> : null}
         {/* Telefon: Grafik rechts neben dem Logo, Text darunter; breit: rechts neben dem Text */}
         {zierde ? <div className="ml-auto flex shrink-0 self-center max-md:order-1">{zierde}</div> : null}
       </div>

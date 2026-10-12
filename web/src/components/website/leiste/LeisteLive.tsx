@@ -229,13 +229,13 @@ export function LeisteLive({
             </span>
             <span className="text-16 font-bold text-tinte-2 tabular-nums">{restZeile}</span>
           </div>
-          {/* Fußzeile der Karte; der Fokusrahmen liegt innen, damit der Zuschnitt der Karte ihn nicht abschneidet */}
+          {/* Fußzeile der Karte; der Fokusrahmen liegt 2 px innen, damit der Zuschnitt der Karte ihn nicht abschneidet und er nicht mit dem dunklen Grund der Leiste verschwimmt */}
           <button
             type="button"
             aria-expanded={aufgeklappt}
             aria-controls="leiste-alle"
             onClick={() => setAufgeklappt((a) => !a)}
-            className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 border-t border-linie text-18 font-bold text-gruen-800 -outline-offset-2 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+            className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 border-t border-linie text-18 font-bold text-gruen-800 -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
           >
             <span>{aufgeklappt ? texte.ausblenden : texte.anzeigen}</span>
             {aufgeklappt ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}

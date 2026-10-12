@@ -211,6 +211,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
         }
         kennungFarbe={v.organisation ? ORG_TEXT[v.organisation] : undefined}
         // Kopfbild (H-C02): ab lg ein Platzhalter, wenn kein Bild gepflegt ist; die Fläche trägt den Übergangsnamen
+        bildAbLg={!v.bild}
         bild={
           <div style={morphStil(`v-${v.slug}-bild`)}>
             {v.bild ? (
@@ -223,7 +224,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
             ) : (
               <Bildplatzhalter
                 beschriftung={`${tk('foto')}: ${titel.text}`}
-                className="hidden h-55 rounded-lg border border-linie md:h-75 lg:flex lg:aspect-4/3 lg:h-auto"
+                className="h-55 rounded-lg border border-linie md:h-75 lg:aspect-4/3 lg:h-auto"
               />
             )}
           </div>
