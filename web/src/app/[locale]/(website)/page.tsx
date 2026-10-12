@@ -141,10 +141,10 @@ export default async function Startseite() {
               <div className="min-w-0 lg:col-span-2">
                 <NewsCard n={aufmacher} sprache={sprache} variante="gross" bild={aufmacher.bild} />
               </div>
-              <ul className="grid min-w-0 gap-4 lg:grid-rows-3 menu:grid-rows-none">
+              <ul className="grid min-w-0 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:grid-rows-3 menu:grid-rows-none">
                 {weitere.map((n) => (
-                  <li key={n.id}>
-                    <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} auszug />
+                  <li key={n.id} className="border-t border-linie first:border-t-0">
+                    <NewsCard n={n} sprache={sprache} variante="kompakt" rahmen={false} bild={n.bild} auszug />
                   </li>
                 ))}
               </ul>

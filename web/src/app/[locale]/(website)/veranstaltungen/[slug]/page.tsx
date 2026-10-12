@@ -265,7 +265,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                   {v.ort ? <Text feld={v.ort} sprache={sprache} als="strong" /> : null}
                   <span className="text-16 lg:w-0 lg:min-w-full">{kontaktSeite.adresse}</span>
                   <Link
-                    href="/kontakt"
+                    href={{ pathname: '/kontakt', hash: 'karte' }}
                     className="inline-flex min-h-12 items-center gap-1.5 font-bold text-gruen-700 underline underline-offset-4 lg:whitespace-nowrap"
                   >
                     {t('routeAnzeigen')}

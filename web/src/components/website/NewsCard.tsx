@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, BookOpen, Calendar } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang } from '@/lib/i18n/format';
@@ -30,16 +30,22 @@ export async function NewsCard({
   bild,
   rahmen = true,
   auszug = false,
+  titelStufe,
 }: {
   n: NachrichtDaten;
   sprache: Sprache;
   variante?: 'gross' | 'kompakt' | 'standard';
   /** Titelbild aus der Mediathek; null oder fehlend = Bildplatzhalter wie bisher */
   bild?: BildDaten | null;
-  /** Nur „kompakt“: mit eigenem Rahmen (Vorgabe, Startseite und Ähnliche Artikel) oder ohne, in einer gemeinsamen Liste */
+  /** Nur „kompakt“: Vorgabe mit eigenem Rahmen (Ähnliche Artikel); false = Zeile in einer gemeinsamen Liste (Startseite, Nachrichten) */
   rahmen?: boolean;
   /** Nur „kompakt“: Kurztext direkt nach dem Titel, ab dem Menü (1240 px) auf zwei Zeilen gekürzt. Vorgabe false; „Ähnliche Artikel“ ohne. */
   auszug?: boolean;
+  /**
+   * Nur „gross“: Titel in der Abschnittsstufe (display-2) statt 30 px. Auf /nachrichten fehlt die Abschnitts-h2:
+   * Aufmacher eine Stufe unter h1 (Sichtabnahme C3). Vorgabe undefined.
+   */
+  titelStufe?: 'abschnitt';
 }) {
   const t = await getTranslations('karten');
   const titel = textMitSprache(n.titel, sprache);
@@ -91,7 +97,7 @@ export async function NewsCard({
             <time dateTime={n.veroeffentlichtAm}>{datum}</time>
             {lesezeit ? (
               <span className="inline-flex items-center gap-1">
-                <Clock aria-hidden className="size-4" />
+                <BookOpen aria-hidden className="size-4" />
                 {lesezeit}
               </span>
             ) : null}
@@ -119,7 +125,7 @@ export async function NewsCard({
     return (
       <article
         data-morph-karte={`n-${n.slug}`}
-        className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1"
+        className="relative flex h-full flex-col overflow-hidden rounded-lg border border-linie bg-weiss text-18 leading-relaxed shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
       >
         {bild ? (
           <MedienBild bild={bild} sprache={sprache} morph="bild" sizes={SIZES_AUFMACHER} className="h-75 border-b border-linie" />
@@ -142,18 +148,23 @@ export async function NewsCard({
             </span>
             {lesezeit ? (
               <span className="inline-flex items-center gap-1.5">
-                <Clock aria-hidden className="size-4" />
+                <BookOpen aria-hidden className="size-4" />
                 {lesezeit}
               </span>
             ) : null}
           </div>
-          <h3 lang={titel.lang} data-morph="titel" className="text-30 leading-tight text-balance">
+          <h3
+            lang={titel.lang}
+            data-morph="titel"
+            className={titelStufe ? 'text-display-2 text-balance' : 'text-30 leading-tight text-balance'}
+          >
             {titel.text}
           </h3>
           <Text feld={n.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty text-tinte-2" />
+          {/* Textlink wie in der Standardkarte: kein gefüllter Knopf; der Überzug trägt die ganze Karte (Klick auf Bild, Titel, Kurztext) */}
           <Link
             href={ziel}
-            className="mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
+            className="mt-auto inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']"
           >
             {/* Name mit Titel wie in der Standardkarte (K-11, Lighthouse link-text: „Weiterlesen“ allein ist nichtssagend) */}
             <span aria-hidden>{t('weiterlesen')}</span>
@@ -195,7 +206,7 @@ export async function NewsCard({
           </span>
           {lesezeit ? (
             <span className="inline-flex items-center gap-1.5">
-              <Clock aria-hidden className="size-4" />
+              <BookOpen aria-hidden className="size-4" />
               {lesezeit}
             </span>
           ) : null}

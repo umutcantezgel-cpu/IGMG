@@ -18,8 +18,8 @@ export async function AngeboteBesuch({ kontakt }: { kontakt: SeitenInhalt<'konta
         <h2 id="kontakt-angebote" className="text-display-2">
           {t('angebote.titel')}
         </h2>
-        {/* Zwei Spalten ab 768 px, drei ab 1280 px – wie bisher je nach Breite des Feldes (kein Bruch in der Spaltenzahl) */}
-        <ul className="grid gap-x-6 gap-y-2 md:grid-cols-2 xl:grid-cols-3">
+        {/* Zwei Spalten ab 768 px, auch breit: In Drittelspalten brachen längere Angebote zweizeilig um (Sichtabnahme C3) */}
+        <ul className="grid gap-x-6 gap-y-2 md:grid-cols-2">
           {kontakt.angebote.map((angebot, nummer) => (
             <li key={nummer} className="flex items-start gap-2.5">
               <Check aria-hidden className="mt-1 size-5 shrink-0 text-gruen-700" />

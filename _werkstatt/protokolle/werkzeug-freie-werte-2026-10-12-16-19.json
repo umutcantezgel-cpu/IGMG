@@ -1,0 +1,147 @@
+{
+  "werkzeug": "freie-werte",
+  "zeitpunkt": "2026-10-12-16-19",
+  "seit": null,
+  "geprueft": [
+    "web/src/app/globals.css"
+  ],
+  "zaehl": {
+    "Tailwind-Klammerwert": 18,
+    "Hex-Farbe": 1
+  },
+  "funde": [
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 107,
+      "art": "Tailwind-Klammerwert",
+      "fund": "leading-[1.55]",
+      "zeileText": "/* Zeilenhöhe für Einleitungen in 20 px (statt leading-[1.55]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[72px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 109,
+      "art": "Tailwind-Klammerwert",
+      "fund": "md:py-[88px]",
+      "zeileText": "/* Abschnittsabstände (statt md:py-[72px]/md:py-[88px]): 48 → 88 px und 40 → 72 px */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 112,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[760px]",
+      "zeileText": "/* Lesebreite für Einleitungen (statt max-w-[760px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 114,
+      "art": "Tailwind-Klammerwert",
+      "fund": "max-w-[880px]",
+      "zeileText": "/* Textspalte im Seitenkopf (statt max-w-[880px]) */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 127,
+      "art": "Tailwind-Klammerwert",
+      "fund": "grid-cols-[repeat(…)]",
+      "zeileText": "/* Raster (Kern K-005, statt grid-cols-[repeat(…)]): Karten ab 340 px, Kacheln ab 260 px, je so viele Spalten wie passen */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 165,
+      "art": "Hex-Farbe",
+      "fund": "#0e3929",
+      "zeileText": "* (#0e3929 = --color-gruen-950; Daten-URI kennt keine CSS-Variablen). Nie hinter Text. Regelmäßiger Achtstern auf"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 214,
+      "art": "Tailwind-Klammerwert",
+      "fund": "z-50/z-60/z-[100]",
+      "zeileText": "/* Ebenen (statt z-50/z-60/z-[100]): als z-(--ebene-kopf) usw. */"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 734,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='ankuendigung'] [data-kategorie]:not([data-kategorie='ankuendigung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 735,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='veranstaltung'] [data-kategorie]:not([data-kategorie='veranstaltung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 736,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='religioes'] [data-kategorie]:not([data-kategorie='religioes']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 737,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='soziales'] [data-kategorie]:not([data-kategorie='soziales']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 738,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='neuigkeiten'] [data-kategorie]:not([data-kategorie='neuigkeiten']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 739,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gebet'] [data-kategorie]:not([data-kategorie='gebet']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 740,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='bildung'] [data-kategorie]:not([data-kategorie='bildung']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 741,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='gemeinde'] [data-kategorie]:not([data-kategorie='gemeinde']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 742,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='kultur'] [data-kategorie]:not([data-kategorie='kultur']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 743,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='jugend'] [data-kategorie]:not([data-kategorie='jugend']),"
+    },
+    {
+      "datei": "web/src/app/globals.css",
+      "zeile": 744,
+      "art": "Tailwind-Klammerwert",
+      "fund": "[data-kategorie]:not",
+      "zeileText": "[data-filter='frauen'] [data-kategorie]:not([data-kategorie='frauen']) {"
+    }
+  ]
+}

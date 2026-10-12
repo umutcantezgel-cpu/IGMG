@@ -57,7 +57,7 @@ export default async function NachrichtenSeite() {
       <>
         <div className="grid items-stretch gap-6 lg:grid-cols-3">
           <div data-kategorie={erste.kategorie} className="min-w-0 lg:col-span-2">
-            <NewsCard n={erste} sprache={sprache} variante="gross" bild={erste.bild} />
+            <NewsCard n={erste} sprache={sprache} variante="gross" bild={erste.bild} titelStufe="abschnitt" />
           </div>
           <ul className="grid min-w-0 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:grid-rows-3 menu:grid-rows-none">
             {ubrige.map((n, i) => (

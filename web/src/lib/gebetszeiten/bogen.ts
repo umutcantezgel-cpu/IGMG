@@ -3,8 +3,9 @@ import { GEBETE, type Gebet, type Tageszeiten } from './typen';
 /**
  * Geometrie des Tagesbogens (Startseite, Kern K-007 B-06): Die Sonne steigt zwischen Güneş und Akşam über den
  * Horizont, Imsak und Yatsı liegen darunter. Waagerecht verläuft die Uhrzeit von Imsak bis Yatsı, senkrecht eine
- * Kosinuskurve mit Nullstellen bei Güneş und Akşam. Reine Funktionen; die Zeiten bleiben unverändert (UNANTASTBAR),
- * sie werden nur abgebildet.
+ * Kosinuskurve mit Nullstellen bei Güneş und Akşam. Die Linie geht unter dem Horizont mit derselben Steigung weiter,
+ * weich auf `tief` begrenzt (tanh), damit die Linie bei Güneş und Akşam ohne Ecke durchgeht. Reine Funktionen; die Zeiten
+ * bleiben unverändert (UNANTASTBAR), sie werden nur abgebildet.
  */
 export const BOGEN = { breite: 640, hoehe: 280, rand: 32, horizont: 188, hoch: 148, tief: 64 } as const;
 
@@ -75,7 +76,7 @@ export function tagesbogen(zeiten: Tageszeiten, schritte = 72): Bogen {
   const punktZu = (t: number) => {
     const e = hoehe(begrenzt(t), aufgang, untergang);
     const x = rand + anteil(t) * (breite - 2 * rand);
-    const y = horizont - (e >= 0 ? e * hoch : e * tief);
+    const y = horizont - (e >= 0 ? e * hoch : tief * Math.tanh((e * hoch) / tief));
     return { x: runde(x), y: runde(y) };
   };
   const pfadZwischen = (von: number, bis: number) => {

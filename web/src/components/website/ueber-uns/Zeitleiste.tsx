@@ -24,6 +24,7 @@ function punktFarbe(i: number, anzahl: number): string {
  * darum hat die Punktspalte oben Abstand und die Linie unten ein negatives Maß.
  * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN). Als „Weg der Gemeinde“ (B-07) zieht sich die
  * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`ErstesSichtbarwerden`).
+ * Ära, Titel, Ort (ab md unten bündig mit der Bildfläche): Die Textspalte stapelt die drei Zeilen in fester Reihenfolge.
  */
 export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprache: Sprache }) {
   return (
@@ -46,16 +47,14 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
             <div className="min-w-0 flex-1 pb-6 md:pb-8">
               <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:flex-row md:items-stretch md:gap-6 md:p-6">
                 <div className="flex min-w-0 flex-1 flex-col justify-start gap-2">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Text feld={e.kennzeichnung} sprache={sprache} className="text-16 font-bold text-gruen-800" />
-                    {e.ort?.de ? (
-                      <span className="inline-flex items-center gap-1.5 text-16 text-tinte-2">
-                        <MapPin aria-hidden className="size-4" />
-                        <Text feld={e.ort} sprache={sprache} />
-                      </span>
-                    ) : null}
-                  </div>
+                  <Text feld={e.kennzeichnung} sprache={sprache} className="text-16 font-bold text-gruen-800" />
                   <Text feld={e.titel} sprache={sprache} als="h3" className="text-24 text-pretty" />
+                  {e.ort?.de ? (
+                    <span className="inline-flex items-center gap-1.5 self-start text-16 text-tinte-2 md:mt-auto">
+                      <MapPin aria-hidden className="size-4" />
+                      <Text feld={e.ort} sprache={sprache} />
+                    </span>
+                  ) : null}
                 </div>
                 {e.bild ? (
                   <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-36 md:w-60 md:shrink-0">

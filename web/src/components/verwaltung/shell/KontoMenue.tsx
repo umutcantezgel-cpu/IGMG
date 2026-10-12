@@ -33,7 +33,7 @@ export function KontoMenue({
     <>
       <form ref={formular} action={abmelden} hidden />
       <DropdownMenu>
-        <DropdownMenuTrigger className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-gruen-700 bg-gruen-50 px-4 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-100 active:scale-98 max-verwaltung:size-12 max-verwaltung:justify-center max-verwaltung:px-0">
+        <DropdownMenuTrigger className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 aria-expanded:border-gruen-700 aria-expanded:bg-gruen-50 max-verwaltung:size-12 max-verwaltung:justify-center max-verwaltung:px-0">
           <UserRound aria-hidden className="size-5" />
           <span className="max-w-48 truncate max-verwaltung:sr-only">{name}</span>
           <ChevronDown aria-hidden className="size-4 max-verwaltung:hidden" />

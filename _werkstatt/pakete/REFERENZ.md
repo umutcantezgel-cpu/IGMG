@@ -56,6 +56,7 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Laden: `LadeStern` im Knopf neben dem Text („Wird gesendet …“), nie allein.
 - Icons: nur lucide-react (Strich 2) und `web/src/components/website/Icons.tsx` (`Stern8`/`Achtstern` gefüllt, Social). Dekorativ immer `aria-hidden`.
 - Nachrichtenkarten (C2, H-E08): In allen `NewsCard`-Varianten gilt die Reihenfolge Abzeichen → Datum/Lesezeit (`<time>`) → Titel → Kurztext. „Aktuell“ trägt `Stern8` wie „Empfohlen“. Die Seitenspalte ab 1240 px (`menu:`) hat Zeilen nach Inhalt (`menu:grid-rows-none`) und einen zweizeiligen Auszug.
+- Nachrichtenkarten (C3, H-F03): Der Aufmacher „gross“ ist als ganze Karte klickbar. „Weiterlesen“ ist ein Textlink mit den Klassen der Standardkarte, Hover Rand `gruen-700` und `shadow-s2`. Auf /nachrichten trägt der Aufmacher den Titel über `titelStufe="abschnitt"` (display-2). Die Lesezeit steht mit `BookOpen`, nie mit Uhr. Die Startseiten-Liste ist eine Fläche (`rahmen={false}`).
 - Begleitkarten (C2, L-E13, H-E03): Rubriken, die Daten ordnen (Kontaktdaten, Öffnungszeiten, Notfall, Adresse, Kalender-Abo), stehen in fetter Sans `font-text text-20 font-bold tracking-normal`. Inhaltstitel bleiben Serif.
 - Leiste (C2, H-E07): Ab 768 px steht „berechnet“ neben „Nächstes Gebet“, unter 1240 px stehen Ort und Datum in einer Zeile. Höhe ≈ 170 px bei 1440 und ≈ 234 px bei 768 (de).
 - Werkzeugknöpfe (C2): Teilen, Kalender, Menü und Sprache sind neutral, als dritte Knopfstufe `border border-rand bg-weiss … hover:border-gruen-700 hover:bg-gruen-50`, ohne grüne Füllung.
@@ -66,6 +67,9 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Seitenwechsel (C2, H-E14): Der Morph Karte → Detail läuft 400 ms mit `ease-eintritt`, der Titel kommt vor dem Inhalt an.
 - Zeitenliste der Gebetszeiten (C2, H-E13): Das nächste Gebet trägt den gefüllten Achtstern (16 px) wie Karte und Bogen, vergangene Zeiten stehen in `tinte-3`.
 - Tagesbogen (C2, H-E01): Die Zeit des nächsten Gebets steht mit 24 px in `gruen-800`, die übrigen mit 18 px. Der Ort des nächsten Gebets trägt durchgehend eine Marke (Ring, dann Achtstern-Chip).
+- Tagesbogen (C3, H-F04): Unter dem Horizont läuft die Linie mit derselben Steigung weiter und wird weich auf `tief` begrenzt (`tief · tanh(e·hoch/tief)`). So entsteht bei Güneş und Akşam keine Ecke (`bogen.ts`).
+
+- Seitenende (C3, H-F01, L-E15): Ein Abschlussblock direkt vor dem Fuß ist hell. Fläche `overflow-hidden rounded-lg bg-gruen-50`, Band `h-1.5 bg-gruen-700` als erstes Kind, Titel in Tinte, genau ein gefüllter Knopf. Der Fuß bleibt die einzige tiefgrüne Schlussfläche.
 
 ## 3. Bewegung (nur Register K-007)
 - Arbeitsansichten: nur B-01 (Rückmeldung: Farbe + `active:scale-98`), B-02 (Fokus, global), B-03 (Öffnen: Klasse `tritt-auf`, Dialoge automatisch), B-04 (Inhaltswechsel: `blendet-ein` am neuen Inhalt, z. B. `key` beim Tab-/Monatswechsel), B-05 (Seitenwechsel: automatisch im Seitenrahmen; gemeinsame Elemente nur nach Auftrag), B-10, B-11 (Formular-Erfolg: `tritt-auf` + Zustandsgrafik `erfolg`; Fehler: Fokus auf Zusammenfassung, keine Bewegung), B-12 (`LadeStern`).

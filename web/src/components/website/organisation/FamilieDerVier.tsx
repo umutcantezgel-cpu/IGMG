@@ -6,8 +6,9 @@ import { KENNUNG, KUERZEL_ALLE, type Kuerzel, STIL } from './stil';
  * Familie der vier (großer Moment B-09): ein Achtstern aus vier Segmenten – je Organisation eines, im Uhrzeigersinn
  * AT, KT, GT, KGT. Das eigene Segment steht in der vollen Organisationsfarbe und wächst einmal aus der Mitte (900 ms,
  * reines CSS ab dem ersten Bild); die übrigen bleiben als Tönung sichtbar. Dekorativ: Name und Zugehörigkeit stehen im Text.
- * `beschriftet` (H-E05): ab lg stehen die Kürzel AT oben, KT rechts, GT unten, KGT links außerhalb des Achtsterns, das
- * eigene fett. Die Kürzel bewegen sich nicht; das Segment bleibt unverändert.
+ * `beschriftet` (H-E05): unter md und ab lg stehen die Kürzel AT oben, KT rechts, GT unten, KGT links außerhalb des
+ * Achtsterns, das eigene fett; 768–1023 ohne Kürzel (kein Platz neben dem Text). Die Kürzel bewegen sich nicht; das
+ * Segment bleibt unverändert.
  * Das Aufziehen wartet, bis die Seite nach der Hydrierung zur Ruhe kommt (`NachRuhe`, Z-05: vorher fiel es in die
  * Hydrierung, 7,8 % verworfene Bilder bei 4-facher Drosselung). Das eigene Segment liegt als zweites SVG über den Tönungen und wird als Ganzes skaliert: Alle Segmente beginnen im
  * Mittelpunkt, Skalieren um die Mitte wirkt wie Enthüllen – und läuft nur im Compositor (E3-Tor: die frühere Maske
@@ -40,7 +41,9 @@ const LAGE: Record<Kuerzel, string> = {
 
 export function FamilieDerVier({ org, className, beschriftet = false }: { org: Kuerzel; className?: string; beschriftet?: boolean }) {
   return (
-    <NachRuhe className={cn('relative block size-24 shrink-0 md:size-36 lg:size-48', beschriftet && 'lg:mx-10', className)}>
+    <NachRuhe
+      className={cn('relative block size-32 shrink-0 md:size-36 lg:size-48', beschriftet && 'max-md:mx-10 max-md:my-7 lg:mx-10', className)}
+    >
       <svg viewBox="16 16 88 88" aria-hidden="true" className="size-full">
         <path
           d="M30 30h17.57L60 17.57 72.43 30H90v17.57L102.43 60 90 72.43V90H72.43L60 102.43 47.57 90H30V72.43L17.57 60 30 47.57z"
@@ -55,7 +58,10 @@ export function FamilieDerVier({ org, className, beschriftet = false }: { org: K
       </svg>
       {beschriftet
         ? KUERZEL_ALLE.map((k) => (
-            <span key={k} className={cn('absolute hidden text-16 lg:block', LAGE[k], STIL[k].ink, k === org ? 'font-bold' : 'font-normal')}>
+            <span
+              key={k}
+              className={cn('absolute hidden text-16 max-md:block lg:block', LAGE[k], STIL[k].ink, k === org ? 'font-bold' : 'font-normal')}
+            >
               {KENNUNG[k]}
             </span>
           ))

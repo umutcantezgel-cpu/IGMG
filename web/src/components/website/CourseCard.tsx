@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import type { ComponentType } from 'react';
 import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
+import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
@@ -23,6 +24,30 @@ export function zielFuer(anmeldeweg: Anmeldeweg): Ziel | null {
   if (anmeldeweg === 'register') return { pathname: '/bildung/voranmeldung' };
   if (anmeldeweg === 'join') return { pathname: '/kontakt', hash: 'karte' };
   return null;
+}
+
+/**
+ * Uhrzeitspannen brechen nicht mitten im Bereich um (REFERENZ §2, Terminzeile); Wochentage davor dürfen umbrechen.
+ * Nur Darstellung, Daten unverändert.
+ */
+const ZEITSPANNE = /(\d{1,2}:\d{2}\s?[–-]\s?\d{1,2}:\d{2}(?:\s?Uhr)?)/;
+
+function ZeitenText({ feld, sprache }: { feld: Mehrsprachig; sprache: Sprache }) {
+  const { text, lang } = textMitSprache(feld, sprache);
+  if (!text) return null;
+  return (
+    <span lang={lang}>
+      {text.split(ZEITSPANNE).map((teil, i) =>
+        i % 2 ? (
+          <span key={i} className="whitespace-nowrap">
+            {teil}
+          </span>
+        ) : (
+          teil
+        ),
+      )}
+    </span>
+  );
 }
 
 /**
@@ -102,7 +127,7 @@ export async function CourseCard({
                   <span className="sr-only">{t('zeiten')}</span>
                 </dt>
                 <dd className="text-pretty">
-                  <Text feld={kurs.zeiten} sprache={sprache} />
+                  <ZeitenText feld={kurs.zeiten} sprache={sprache} />
                 </dd>
               </div>
             ) : null}

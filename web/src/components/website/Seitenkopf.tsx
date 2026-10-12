@@ -92,8 +92,8 @@ export function Seitenkopf({
           {kinder}
         </div>
         {mitBild ? <div className={bildAbLg ? 'min-w-0 max-lg:hidden' : 'min-w-0'}>{bild}</div> : null}
-        {/* Telefon: Grafik rechts neben dem Logo, Text darunter; breit: rechts neben dem Text */}
-        {zierde ? <div className="ml-auto flex shrink-0 self-center max-md:order-1">{zierde}</div> : null}
+        {/* Telefon: mit Logo Grafik rechts daneben, ohne Logo bündig zur Textkante; Text darunter. Breit: rechts neben dem Text */}
+        {zierde ? <div className={`${vorn ? 'ml-auto' : 'md:ml-auto'} flex shrink-0 self-center max-md:order-1`}>{zierde}</div> : null}
       </div>
       {/* Ohne eigenes Akzentband: schmales Achtstern-Band an der Abschnittskante (K-008, dekorativ, nie hinter Text) */}
       {hinten ?? <div aria-hidden className="h-5 achtstern-band" />}

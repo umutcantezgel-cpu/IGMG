@@ -46,6 +46,22 @@ describe('Tagesbogen', () => {
     expect(b.anteil(minutenAus('13:16'))).toBeGreaterThan(0.4);
   });
 
+  it('geht bei Güneş und Akşam ohne Ecke durch, Imsak und Yatsı liegen unter dem Horizont innerhalb von tief', () => {
+    const d = 10;
+    for (const zeiten of [herbst, winter, sommer]) {
+      const b = tagesbogen(zeiten);
+      for (const gebet of ['gunes', 'aksam'] as const) {
+        const t = minutenAus(zeiten[gebet]);
+        const knick = b.punktZu(t).y - b.punktZu(t - d).y - (b.punktZu(t + d).y - b.punktZu(t).y);
+        expect(Math.abs(knick)).toBeLessThanOrEqual(0.3);
+      }
+      for (const p of b.punkte.filter((q) => q.gebet === 'imsak' || q.gebet === 'yatsi')) {
+        expect(p.y).toBeGreaterThan(BOGEN.horizont);
+        expect(p.y).toBeLessThanOrEqual(BOGEN.horizont + BOGEN.tief);
+      }
+    }
+  });
+
   it('führt Yatsı nach Mitternacht ans rechte Ende des Bogens', () => {
     const b = tagesbogen(sommer);
     expect(b.pfad.startsWith('M')).toBe(true);
