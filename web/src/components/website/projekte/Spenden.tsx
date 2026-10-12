@@ -37,18 +37,22 @@ export async function Spenden({ inhalt, sprache }: { inhalt: ProjekteInhalt; spr
           <span className="text-tinte-2">{t('bezeichnungen.gesammelt')}</span>
           <strong>{betragText}</strong>
         </div>
-        <div
-          role="progressbar"
-          aria-label={t('spenden.fortschritt')}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-valuenow={prozent ?? undefined}
-          aria-valuetext={standText}
-          className="h-3 overflow-hidden rounded-pill border border-rand bg-weiss"
-        >
-          <span aria-hidden className="block h-full bg-gruen-700" style={{ width: `${prozent ?? 0}%` }} />
-        </div>
-        <span className="font-bold text-gruen-800">{standText}</span>
+        {prozent !== null ? (
+          <>
+            <div
+              role="progressbar"
+              aria-label={t('spenden.fortschritt')}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={prozent}
+              aria-valuetext={standText}
+              className="h-3 overflow-hidden rounded-pill border border-rand bg-weiss"
+            >
+              <span aria-hidden className="block h-full bg-gruen-700" style={{ width: `${prozent}%` }} />
+            </div>
+            <span className="font-bold text-gruen-800">{standText}</span>
+          </>
+        ) : null}
       </div>
       <dl id="spendenkonto" className="flex scroll-mt-24 flex-col gap-1 rounded-lg border border-dashed border-rand px-4 py-3 text-16">
         <dt className="font-bold">{t('bezeichnungen.spendenkonto')}</dt>

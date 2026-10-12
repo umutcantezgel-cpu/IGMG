@@ -1,7 +1,8 @@
-import { Calendar, Check, CircleCheck, Clock, Hammer, Ruler, Target, Users, type LucideIcon } from 'lucide-react';
+import { Calendar, CircleCheck, Clock, Hammer, Ruler, Target, Users, type LucideIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import { Bildplatzhalter } from '@/components/website/Bildplatzhalter';
+import { Stern8 } from '@/components/website/Icons';
 import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
@@ -32,7 +33,7 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
         <Bildplatzhalter beschriftung={t('3d.text', { name })} className="absolute inset-0 rounded-lg border border-linie pb-32 md:pb-0" />
         <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">
           <span className="flex flex-col rounded-lg border border-linie bg-weiss px-3.5 py-2 leading-snug">
-            <Text feld={p.name} sprache={sprache} als="strong" />
+            <Text feld={p.name} sprache={sprache} als="strong" className="max-md:hidden" />
             <Text feld={p.ort} sprache={sprache} className="text-16 text-tinte-2" />
           </span>
           <span className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
@@ -42,9 +43,15 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
         </div>
       </div>
       <div className="flex min-w-0 flex-col justify-center gap-4 lg:col-span-5">
-        <h2 id="projekt-beschreibung" className="text-display-2">
-          {t('bezeichnungen.beschreibung')}
-        </h2>
+        <div className="flex flex-col gap-3">
+          <span className="inline-flex items-center gap-2 text-16 font-bold text-gruen-800">
+            <Stern8 className="size-4" />
+            {t('bezeichnungen.beschreibungKennung')}
+          </span>
+          <h2 id="projekt-beschreibung" className="text-display-2">
+            {t('bezeichnungen.beschreibung')}
+          </h2>
+        </div>
         <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
         {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
         <dl className="grid grid-cols-2 gap-3">
@@ -78,11 +85,7 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
           {p.einrichtungen.length > 0 ? (
             <ul className="flex flex-wrap gap-2">
               {p.einrichtungen.map((e, i) => (
-                <li
-                  key={i}
-                  className="inline-flex items-center gap-1.5 rounded-pill bg-gruen-50 px-3 py-1 text-16 font-bold text-gruen-800"
-                >
-                  <Check aria-hidden className="size-4 shrink-0" />
+                <li key={i} className="inline-flex items-center rounded-pill border border-linie bg-sand px-3 py-1 text-16 text-tinte-2">
                   <Text feld={e} sprache={sprache} />
                 </li>
               ))}

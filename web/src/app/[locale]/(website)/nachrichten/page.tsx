@@ -59,10 +59,10 @@ export default async function NachrichtenSeite() {
           <div data-kategorie={erste.kategorie} className="min-w-0 lg:col-span-2">
             <NewsCard n={erste} sprache={sprache} variante="gross" bild={erste.bild} />
           </div>
-          <ul className="grid min-w-0 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:grid-rows-3">
+          <ul className="grid min-w-0 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1 lg:grid-rows-3 menu:grid-rows-none">
             {ubrige.map((n, i) => (
               <li key={n.id} data-kategorie={n.kategorie} className={cn('border-t border-linie first:border-t-0', i >= 3 && 'md:hidden')}>
-                <NewsCard n={n} sprache={sprache} variante="kompakt" rahmen={false} bild={n.bild} />
+                <NewsCard n={n} sprache={sprache} variante="kompakt" rahmen={false} bild={n.bild} auszug />
               </li>
             ))}
           </ul>

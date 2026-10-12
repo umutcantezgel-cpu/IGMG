@@ -122,7 +122,13 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
               key={i}
               className={cn(
                 'absolute top-0 text-16 whitespace-nowrap text-tinte-2 tabular-nums',
-                i === 0 ? '-ml-4' : i === liste.length - 1 ? '-translate-x-full ml-4' : '-translate-x-1/2',
+                liste.length === 1
+                  ? '-translate-x-1/2'
+                  : i === 0
+                    ? '-ml-4'
+                    : i === liste.length - 1
+                      ? 'ml-4 -translate-x-full'
+                      : '-translate-x-1/2',
               )}
               style={{ left: `${lage(i) * 100}%` }}
             >

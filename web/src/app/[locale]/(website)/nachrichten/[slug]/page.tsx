@@ -108,6 +108,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
         })}
       />
       <PageHeader
+        // Kopfbild (H-C02): ab lg ein Platzhalter, wenn kein Bild gepflegt ist; die Fläche trägt den Übergangsnamen
+        bildAbLg={!n.bild}
         bild={
           // Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher
           <div style={morphStil(`n-${n.slug}-bild`)}>

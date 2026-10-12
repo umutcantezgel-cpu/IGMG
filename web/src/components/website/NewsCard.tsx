@@ -29,6 +29,7 @@ export async function NewsCard({
   variante = 'standard',
   bild,
   rahmen = true,
+  auszug = false,
 }: {
   n: NachrichtDaten;
   sprache: Sprache;
@@ -37,6 +38,8 @@ export async function NewsCard({
   bild?: BildDaten | null;
   /** Nur „kompakt“: mit eigenem Rahmen (Vorgabe, Startseite und Ähnliche Artikel) oder ohne, in einer gemeinsamen Liste */
   rahmen?: boolean;
+  /** Nur „kompakt“: Kurztext direkt nach dem Titel, ab dem Menü (1240 px) auf zwei Zeilen gekürzt. Vorgabe false; „Ähnliche Artikel“ ohne. */
+  auszug?: boolean;
 }) {
   const t = await getTranslations('karten');
   const titel = textMitSprache(n.titel, sprache);
@@ -83,6 +86,16 @@ export async function NewsCard({
           >
             {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
           </span>
+          {/* Zeit zuerst (H-E08): das Datum steht direkt über dem Titel */}
+          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-16 text-tinte-2">
+            <time dateTime={n.veroeffentlichtAm}>{datum}</time>
+            {lesezeit ? (
+              <span className="inline-flex items-center gap-1">
+                <Clock aria-hidden className="size-4" />
+                {lesezeit}
+              </span>
+            ) : null}
+          </div>
           {/* wrap-anywhere: ein langes Wort darf in der schmalen Zeile umbrechen (320 px, Ähnliche Artikel bei 1024 px) */}
           <h3 lang={titel.lang} data-morph="titel" className="text-20 leading-snug wrap-anywhere">
             <Link
@@ -93,15 +106,10 @@ export async function NewsCard({
               {titel.text}
             </Link>
           </h3>
-          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-16 text-tinte-2">
-            <span>{datum}</span>
-            {lesezeit ? (
-              <span className="inline-flex items-center gap-1">
-                <Clock aria-hidden className="size-4" />
-                {lesezeit}
-              </span>
-            ) : null}
-          </div>
+          {/* Kurztext nach dem Titel nur in der Seitenspalte; unter 1240 px ausgeblendet, ab dort zwei Zeilen mit „…“ */}
+          {auszug ? (
+            <Text feld={n.kurztext} sprache={sprache} als="p" className="hidden text-16 leading-normal text-tinte-2 menu:line-clamp-2" />
+          ) : null}
         </div>
       </article>
     );
@@ -121,17 +129,16 @@ export async function NewsCard({
         <div className="flex flex-1 flex-col gap-4 px-7 pt-6 pb-7">
           <div className="flex flex-wrap gap-2">
             {kategorie}
-            <span className="inline-flex rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
+            <span className="inline-flex items-center gap-1.5 rounded-pill border border-gruen-700 bg-weiss px-3 py-px text-16 leading-normal font-bold text-gruen-800">
+              <Stern8 aria-hidden className="size-4" />
               {t('aktuell')}
             </span>
           </div>
-          <h3 lang={titel.lang} data-morph="titel" className="text-30 leading-tight text-balance">
-            {titel.text}
-          </h3>
+          {/* Zeit zuerst (H-E08): das Datum steht direkt über dem Titel */}
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-16 text-tinte-2">
             <span className="inline-flex items-center gap-1.5">
               <Calendar aria-hidden className="size-4" />
-              {datum}
+              <time dateTime={n.veroeffentlichtAm}>{datum}</time>
             </span>
             {lesezeit ? (
               <span className="inline-flex items-center gap-1.5">
@@ -140,6 +147,9 @@ export async function NewsCard({
               </span>
             ) : null}
           </div>
+          <h3 lang={titel.lang} data-morph="titel" className="text-30 leading-tight text-balance">
+            {titel.text}
+          </h3>
           <Text feld={n.kurztext} sprache={sprache} als="p" className="max-w-text text-pretty text-tinte-2" />
           <Link
             href={ziel}

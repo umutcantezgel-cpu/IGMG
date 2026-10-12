@@ -36,6 +36,7 @@ const sekundaer =
 export default async function Startseite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('start');
+  const tk = await getTranslations('kopf');
   const kommende = (await ladeVeranstaltungen()).filter((v) => !v.vergangen);
   // Volle Reihen im Dreierraster: sechs, sonst drei (bei fünf Terminen bliebe am Desktop eine Lücke)
   const veranstaltungen = kommende.slice(0, kommende.length >= 6 ? 6 : 3);
@@ -63,13 +64,13 @@ export default async function Startseite() {
             <div className="flex flex-wrap gap-3 pt-1">
               <Link
                 href="/mitglied-werden"
-                className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
+                className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 max-md:w-full max-md:justify-center"
               >
                 <span>{t('beitreten')}</span>
                 <ArrowRight aria-hidden className="size-5" />
               </Link>
-              <Link href="/ueber-uns" className={sekundaer}>
-                <span>{t('mehrErfahren')}</span>
+              <Link href="/ueber-uns" className={cn(sekundaer, 'max-md:w-full max-md:justify-center')}>
+                <span>{tk('ueberUns')}</span>
                 <ArrowRight aria-hidden className="size-5" />
               </Link>
             </div>
@@ -140,10 +141,10 @@ export default async function Startseite() {
               <div className="min-w-0 lg:col-span-2">
                 <NewsCard n={aufmacher} sprache={sprache} variante="gross" bild={aufmacher.bild} />
               </div>
-              <ul className="grid min-w-0 gap-4 lg:grid-rows-3">
+              <ul className="grid min-w-0 gap-4 lg:grid-rows-3 menu:grid-rows-none">
                 {weitere.map((n) => (
                   <li key={n.id}>
-                    <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} />
+                    <NewsCard n={n} sprache={sprache} variante="kompakt" bild={n.bild} auszug />
                   </li>
                 ))}
               </ul>

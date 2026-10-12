@@ -120,9 +120,9 @@ function Zeile({ z, texte, absenden, laeuft }: { z: PruefZeile; texte: PruefText
   const { Icon, klasse } = STATUS_STIL[z.status];
   return (
     <li className="flex flex-col gap-3 p-4 md:p-5">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-col items-start gap-2 md:flex-row md:flex-wrap md:items-center">
         <h3 className="font-text text-20 font-bold tracking-normal">{z.titel}</h3>
-        <span className={cn('inline-flex items-center gap-1.5 rounded-md border px-2.5 py-0.5 text-16 font-bold', klasse)}>
+        <span className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
           <Icon aria-hidden className="size-4 shrink-0" />
           {z.statusText}
         </span>

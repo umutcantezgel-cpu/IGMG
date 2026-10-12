@@ -72,7 +72,8 @@ export default async function StartklarSeite() {
         aria-labelledby="startklar-gesamt"
         className="flex flex-col gap-5 rounded-lg border border-linie bg-weiss p-5 md:flex-row md:items-start md:gap-8 md:p-6"
       >
-        <Zustandsgrafik art={ergebnis.startklar ? 'erfolg' : 'fehler'} className="self-center md:self-start" />
+        {/* max-md:-ml-3.5: die sichtbare Sternspitze fluchtet auf dem Telefon mit Überschrift und Zählern (H-E02, Innenrand im 96er-Raster) */}
+        <Zustandsgrafik art={ergebnis.startklar ? 'erfolg' : 'fehler'} className="self-start max-md:-ml-3.5" />
         <div className="flex min-w-0 flex-1 flex-col gap-4">
           <div className="flex flex-col gap-1">
             <h2 id="startklar-gesamt" className="text-display-2">

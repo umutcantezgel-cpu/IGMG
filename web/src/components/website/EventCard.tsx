@@ -285,13 +285,13 @@ export async function EventCard({
         ) : (
           <Link
             href={ziel}
-            aria-label={`${t('mehrErfahren')}: ${titel.text}`}
+            aria-label={`${t('details')}: ${titel.text}`}
             className={cn(
               "inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']",
               !angabenZeigen && 'mt-auto',
             )}
           >
-            <span>{t('mehrErfahren')}</span>
+            <span>{t('details')}</span>
             <ArrowRight aria-hidden className="size-5" />
           </Link>
         )}
