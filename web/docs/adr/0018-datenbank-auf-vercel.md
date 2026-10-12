@@ -21,7 +21,7 @@ Weg 2 bindet die App an einen Anbieter und ersetzt den Treiber in Code und Tests
 - `src/lib/db/index.ts`: Auf Vercel (`VERCEL=1`) kleiner Pool (`max: 5`, `idleTimeoutMillis: 5000`) und `attachDatabasePool(pool)` – Vercel schließt ruhende Verbindungen, bevor die Instanz eingefroren wird. Außerhalb von Vercel unverändert (`max: 10`).
 - Neue Abhängigkeit `@vercel/functions` 3.9.x (Apache-2.0, ≈ 180 KB entpackt, eine Abhängigkeit `@vercel/oidc`, von Vercel gepflegt) – G6: der vorhandene Stack kann ruhende Verbindungen vor dem Einfrieren nicht schließen.
 - Verbindungszeichenfolge: `DATABASE_URL` mit Pooler-Adresse (`-pooler`) und `sslmode=require`; Region der Datenbank = Region der Funktionen (fra1, ADR 0019/`vercel.json`).
-- Vorschauen: `DATABASE_URL` nur im Bereich *Preview* über die Neon-Integration (Branch je Vorschau). Die Startprüfung (`lib/umgebung.ts`) meldet eine Vorschau ohne eigene Datenbank als Hinweis, nie als Fehler.
+- Vorschauen: `DATABASE_URL` nur im Bereich _Preview_ über die Neon-Integration (Branch je Vorschau). Die Startprüfung (`lib/umgebung.ts`) meldet eine Vorschau ohne eigene Datenbank als Hinweis, nie als Fehler.
 - Gemeinsamer Zustand liegt bereits in der Datenbank (Sitzungen, Ratenfenster, ALTCHA, Sperren, Mail-Ausgang) – nichts hängt am Dateisystem einer Instanz (V-07); Medien siehe ADR 0020.
 
 ## Umkehrprobe

@@ -45,9 +45,9 @@ Diese Angaben betreffen die Auslieferung der Website. Die öffentlichen Seiten s
 
 ## Platzhalter in diesem Baustein
 
-| Platzhalter | Wer liefert |
-|---|---|
-| `[Anbieter: Vercel Inc., Anschrift und Sitz prüfen]` | Technik, Vorstand |
-| `[Frist – Anbieter und Vorstand]` | Vorstand |
-| `[Interessenabwägung …]` | Rechtsberatung |
-| `[prüfen: …]` | Technik und Rechtsberatung je nach Punkt |
+| Platzhalter                                          | Wer liefert                              |
+| ---------------------------------------------------- | ---------------------------------------- |
+| `[Anbieter: Vercel Inc., Anschrift und Sitz prüfen]` | Technik, Vorstand                        |
+| `[Frist – Anbieter und Vorstand]`                    | Vorstand                                 |
+| `[Interessenabwägung …]`                             | Rechtsberatung                           |
+| `[prüfen: …]`                                        | Technik und Rechtsberatung je nach Punkt |
