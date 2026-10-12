@@ -1,0 +1,483 @@
+{
+  "werkzeug": "axe-regeln3",
+  "basis": "http://127.0.0.1:3500",
+  "breite": 1440,
+  "hoehe": 900,
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "zeit": "2026-10-12T04:57:55.254Z",
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 4,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".h-75 > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "article[data-morph-karte=\"n-ramadan-vorbereitung-2025\"] > .size-22.streifen-platzhalter[aria-label=\"Foto: Beitragsbild\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "li:nth-child(2) > .p-4.hover\\:shadow-s2 > .size-22.streifen-platzhalter[aria-label=\"Foto: Beitragsbild\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "article[data-morph-karte=\"n-neuer-imam-stellt-sich-vor\"] > .size-22.streifen-platzhalter[aria-label=\"Foto: Beitragsbild\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 5,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".lg\\:h-full > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Foto: Arabisch Sprachkurs\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Foto: Jugendgruppe Treffen\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".group.overflow-hidden[data-morph-karte=\"v-woechentlicher-qur-an-kurs\"] > .h-40.streifen-platzhalter[data-morph=\"bild\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".h-40.streifen-platzhalter[aria-label=\"Foto: Junge Schwestern Kreis\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 1,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".bg-weiss\\/85",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 10,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".h-75 > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "article[data-morph-karte=\"n-ramadan-vorbereitung-2025\"] > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".first\\:border-t-0.border-t[data-kategorie=\"neuigkeiten\"] > .p-4.gap-4 > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "article[data-morph-karte=\"n-neuer-imam-stellt-sich-vor\"] > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "li[data-kategorie=\"religioes\"] > .hover\\:shadow-s2.overflow-hidden.hover\\:border-gruen-700 > .h-45.border-b.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "li[data-kategorie=\"bildung\"] > .hover\\:shadow-s2.overflow-hidden.hover\\:border-gruen-700 > .h-45.border-b.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 2,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".h-55 > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".size-22 > .bg-weiss\\/85.shadow-s1.py-0\\.5",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 6,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".aspect-4\\/3 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".md\\:gap-5.gap-3:nth-child(1) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".md\\:gap-5.gap-3:nth-child(2) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".md\\:gap-5.gap-3:nth-child(3) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".md\\:gap-5.gap-3:nth-child(4) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".md\\:gap-5.gap-3:nth-child(5) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 3,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".bg-weiss\\/85",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": ".size-10.-translate-x-1\\/2.top-1\\/2 > .relative.rounded-pill.text-weiss",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".text-gruen-700.mt-0\\.5.relative > .relative.rounded-pill.text-weiss",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 3,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": "div[aria-label=\"Foto: Korankurs für Kinder\"] > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "div[aria-label=\"Foto: Korankurs für Erwachsene\"] > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "ziel": "div[aria-label=\"Foto: Hafiz Vorbereitungskurs\"] > .bg-weiss\\/85.shadow-s1.rounded-pill",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 5,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".flex-row.leading-tight.text-gruen-800 > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(2) > .flex-row.leading-tight.gap-1\\.5 > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(3) > .flex-row.leading-tight.gap-1\\.5 > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(4) > .flex-row.leading-tight.gap-1\\.5 > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-6:nth-child(4) > .p-5.md\\:p-8 > .-ml-2",
+              "meldung": "Fix any of the following: Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 1,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".bg-weiss\\/85",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "404 (nicht gefunden)",
+      "pfad": "/gibt-es-nicht",
+      "http": 404,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Vorstand",
+      "pfad": "/vorstand",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "IGMG",
+      "pfad": "/igmg",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Suche (Treffer)",
+      "pfad": "/suche?q=gebet",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Suche (leer)",
+      "pfad": "/suche",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Quran (Übersicht)",
+      "pfad": "/quran",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Quran (Sure 1)",
+      "pfad": "/quran/1",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Islamisches Wissen",
+      "pfad": "/islamisches-wissen",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Mitglied werden",
+      "pfad": "/mitglied-werden",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 5,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(2) > .flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(3) > .flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-6:nth-child(4) > .md\\:p-8 > .-ml-2",
+              "meldung": "Fix any of the following: Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "ziel": ".bg-weiss\\/85",
+              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Meldung",
+      "pfad": "/meldung",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Impressum",
+      "pfad": "/impressum",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    },
+    {
+      "name": "Webseite für Moscheen",
+      "pfad": "/webseite-fuer-moscheen",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": [
+        {
+          "id": "color-contrast",
+          "schwere": "serious",
+          "knoten": 5,
+          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
+          "beispiele": [
+            {
+              "ziel": ".flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .text-gruen-800.relative.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(2) > .flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-1\\.5.relative.min-w-0:nth-child(3) > .flex-row.lg\\:flex-col.lg\\:items-start > .size-9.place-items-center.grid > .relative.text-tinte-2.text-16",
+              "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
+            },
+            {
+              "ziel": ".gap-6:nth-child(4) > .p-5.md\\:p-8:nth-child(1) > .-ml-2",
+              "meldung": "Fix any of the following: Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "ziel": ".gap-6:nth-child(4) > .p-5.md\\:p-8:nth-child(2) > .-ml-2",
+              "meldung": "Fix any of the following: Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bildschirm-Anzeige",
+      "pfad": "/gebetszeiten/anzeige",
+      "http": 200,
+      "verstoesse": [],
+      "unklar": []
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "werkzeug": "a11y",
+  "zeit": "2026-10-12-04-53",
+  "basis": "http://127.0.0.1:3500",
+  "breite": 390,
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "404 (nicht gefunden)",
+      "pfad": "/gibt-es-nicht",
+      "http": 404,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Vorstand",
+      "pfad": "/vorstand",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "IGMG",
+      "pfad": "/igmg",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Suche (Treffer)",
+      "pfad": "/suche?q=gebet",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Suche (leer)",
+      "pfad": "/suche",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Quran (Übersicht)",
+      "pfad": "/quran",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Quran (Sure 1)",
+      "pfad": "/quran/1",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Islamisches Wissen",
+      "pfad": "/islamisches-wissen",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Mitglied werden",
+      "pfad": "/mitglied-werden",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Meldung",
+      "pfad": "/meldung",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Impressum",
+      "pfad": "/impressum",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    },
+    {
+      "name": "Webseite für Moscheen",
+      "pfad": "/webseite-fuer-moscheen",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 1,
+      "regeln": []
+    },
+    {
+      "name": "Bildschirm-Anzeige",
+      "pfad": "/gebetszeiten/anzeige",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-05-42",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1788,
+          "cls": 0,
+          "tbtMs": 320,
+          "jsKb": 174.1,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3245
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1712,
+          "cls": 0,
+          "tbtMs": 460,
+          "jsKb": 174.1,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3290
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1771,
+          "cls": 0,
+          "tbtMs": 477,
+          "jsKb": 174.1,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3269
+          }
+        }
+      ],
+      "median": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1771,
+        "cls": 0,
+        "tbtMs": 460,
+        "jsKb": 174.1,
+        "simuliertPerformance": 90,
+        "simuliertLcpMs": 3269
+      },
+      "spanneLeistung": [
+        87,
+        92
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

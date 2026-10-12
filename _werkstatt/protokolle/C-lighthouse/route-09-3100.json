@@ -1,0 +1,88 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-06-10",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1899,
+          "cls": 0.002,
+          "tbtMs": 261,
+          "jsKb": 170.9,
+          "simuliert": {
+            "performance": 95,
+            "lcpMs": 2713
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1934,
+          "cls": 0.002,
+          "tbtMs": 328,
+          "jsKb": 170.9,
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2865
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1837,
+          "cls": 0.002,
+          "tbtMs": 233,
+          "jsKb": 170.9,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3313
+          }
+        }
+      ],
+      "median": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1899,
+        "cls": 0.002,
+        "tbtMs": 261,
+        "jsKb": 170.9,
+        "simuliertPerformance": 94,
+        "simuliertLcpMs": 2865
+      },
+      "spanneLeistung": [
+        91,
+        94
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    }
+  ]
+}

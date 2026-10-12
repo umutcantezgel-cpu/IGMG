@@ -1,0 +1,89 @@
+{
+  "werkzeug": "bewegung",
+  "zeit": "2026-10-12-05-06",
+  "basis": "http://127.0.0.1:3500",
+  "pfad": "/ueber-uns",
+  "dauer": 2000,
+  "teile": {
+    "reduziert": {
+      "http": 200,
+      "animierteElemente": 0,
+      "laufendeAnimationen": 0,
+      "keyframeBefunde": [],
+      "groesteLageAenderungPx": 0,
+      "unsichtbarNach2s": [],
+      "unsichtbarNachScrollen": [],
+      "befund": {
+        "lageOderGroesse": false,
+        "opacityNull": false
+      }
+    },
+    "einzelbilder": [
+      {
+        "nr": 1,
+        "sollMs": 0,
+        "istMs": 0,
+        "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-1.jpg",
+        "laufendeAnimationen": 0,
+        "eigenschaften": []
+      },
+      {
+        "nr": 2,
+        "sollMs": 500,
+        "istMs": 503,
+        "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-2.jpg",
+        "laufendeAnimationen": 0,
+        "eigenschaften": []
+      },
+      {
+        "nr": 3,
+        "sollMs": 1000,
+        "istMs": 1002,
+        "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-3.jpg",
+        "laufendeAnimationen": 0,
+        "eigenschaften": []
+      },
+      {
+        "nr": 4,
+        "sollMs": 1500,
+        "istMs": 1502,
+        "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-4.jpg",
+        "laufendeAnimationen": 0,
+        "eigenschaften": []
+      },
+      {
+        "nr": 5,
+        "sollMs": 2000,
+        "istMs": 2002,
+        "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/bewegung/bewegung-ueber-uns/bewegung-5.jpg",
+        "laufendeAnimationen": 0,
+        "eigenschaften": []
+      }
+    ],
+    "bildrate": {
+      "ohneDrosselung": {
+        "drosselung": 1,
+        "bilder": 122,
+        "langeAbstaende": 0,
+        "verworfen": 0,
+        "anteilVerworfenProzent": 0,
+        "medianAbstandMs": 16.7,
+        "p95AbstandMs": 16.7
+      },
+      "drossel4": {
+        "drosselung": 4,
+        "bilder": 122,
+        "langeAbstaende": 0,
+        "verworfen": 0,
+        "anteilVerworfenProzent": 0,
+        "medianAbstandMs": 16.7,
+        "p95AbstandMs": 16.7
+      },
+      "scrollen": false,
+      "fenster": {
+        "width": 390,
+        "height": 844
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-06-03",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2188,
+          "cls": 0.002,
+          "tbtMs": 313,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2657
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2244,
+          "cls": 0.002,
+          "tbtMs": 456,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 85,
+            "lcpMs": 3473
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2243,
+          "cls": 0.002,
+          "tbtMs": 453,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3385
+          }
+        }
+      ],
+      "median": {
+        "performance": 85,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2243,
+        "cls": 0.002,
+        "tbtMs": 453,
+        "jsKb": 168,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 3385
+      },
+      "spanneLeistung": [
+        85,
+        90
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

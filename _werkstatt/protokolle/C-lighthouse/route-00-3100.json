@@ -1,0 +1,89 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-05-38",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1877,
+          "cls": 0.002,
+          "tbtMs": 656,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 2879
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 83,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1920,
+          "cls": 0.002,
+          "tbtMs": 612,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2411
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 80,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2003,
+          "cls": 0.002,
+          "tbtMs": 723,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3296
+          }
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1920,
+        "cls": 0.002,
+        "tbtMs": 656,
+        "jsKb": 168,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 2879
+      },
+      "spanneLeistung": [
+        80,
+        83
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

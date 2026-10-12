@@ -1,0 +1,88 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-05-56",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1795,
+          "cls": 0.002,
+          "tbtMs": 320,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3344
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1771,
+          "cls": 0.002,
+          "tbtMs": 347,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2863
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1797,
+          "cls": 0.002,
+          "tbtMs": 282,
+          "jsKb": 168,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3408
+          }
+        }
+      ],
+      "median": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1795,
+        "cls": 0.002,
+        "tbtMs": 320,
+        "jsKb": 168,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 3344
+      },
+      "spanneLeistung": [
+        91,
+        93
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    }
+  ]
+}

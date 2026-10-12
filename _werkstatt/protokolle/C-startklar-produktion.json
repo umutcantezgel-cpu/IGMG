@@ -1,0 +1,219 @@
+{
+  "betriebsart": "produktion",
+  "zeitpunkt": "2026-10-12T05:25:37.299Z",
+  "pruefungen": [
+    {
+      "id": "umgebung.APP_URL",
+      "bereich": "umgebung",
+      "titel": "APP_URL",
+      "status": "fehler",
+      "meldung": "APP_URL fehlt (Betriebsart produktion). Die öffentliche Adresse mit https:// eintragen, z. B. https://<domain>.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.BETTER_AUTH_SECRET",
+      "bereich": "umgebung",
+      "titel": "BETTER_AUTH_SECRET",
+      "status": "fehler",
+      "meldung": "BETTER_AUTH_SECRET fehlt (Betriebsart produktion). Mit `pnpm geheimnisse:erzeugen` erzeugen und in Vercel eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.DATABASE_URL",
+      "bereich": "umgebung",
+      "titel": "DATABASE_URL",
+      "status": "fehler",
+      "meldung": "DATABASE_URL fehlt (Betriebsart produktion). Die Verbindungs-URL des Datenbankanbieters eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.EINGANG_SCHLUESSEL",
+      "bereich": "umgebung",
+      "titel": "EINGANG_SCHLUESSEL",
+      "status": "fehler",
+      "meldung": "EINGANG_SCHLUESSEL fehlt (Betriebsart produktion). Mit `pnpm geheimnisse:erzeugen` erzeugen und in Vercel eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.RATE_GEHEIMNIS",
+      "bereich": "umgebung",
+      "titel": "RATE_GEHEIMNIS",
+      "status": "fehler",
+      "meldung": "RATE_GEHEIMNIS fehlt (Betriebsart produktion). Mit `pnpm geheimnisse:erzeugen` erzeugen und in Vercel eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.ALTCHA_GEHEIMNIS",
+      "bereich": "umgebung",
+      "titel": "ALTCHA_GEHEIMNIS",
+      "status": "fehler",
+      "meldung": "ALTCHA_GEHEIMNIS fehlt (Betriebsart produktion). Mit `pnpm geheimnisse:erzeugen` erzeugen und in Vercel eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.WARTUNG_TOKEN",
+      "bereich": "umgebung",
+      "titel": "WARTUNG_TOKEN",
+      "status": "fehler",
+      "meldung": "WARTUNG_TOKEN fehlt (Betriebsart produktion). Mit `pnpm geheimnisse:erzeugen` erzeugen und in Vercel eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.MAIL_TRANSPORT",
+      "bereich": "umgebung",
+      "titel": "MAIL_TRANSPORT",
+      "status": "fehler",
+      "meldung": "MAIL_TRANSPORT fehlt (Betriebsart produktion). Auf smtp setzen; datei gibt es nur lokal.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.MAIL_ABSENDER",
+      "bereich": "umgebung",
+      "titel": "MAIL_ABSENDER",
+      "status": "fehler",
+      "meldung": "MAIL_ABSENDER fehlt (Betriebsart produktion). Eine Absenderadresse der eigenen Domain eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.SMTP_HOST",
+      "bereich": "umgebung",
+      "titel": "SMTP_HOST",
+      "status": "fehler",
+      "meldung": "SMTP_HOST fehlt (Betriebsart produktion). Den Hostnamen des Mailanbieters eintragen.",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "umgebung.PROXY_VERTRAUEN",
+      "bereich": "umgebung",
+      "titel": "PROXY_VERTRAUEN",
+      "status": "fehler",
+      "meldung": "PROXY_VERTRAUEN fehlt (Betriebsart produktion). Auf 1 setzen: Vercel und ein eigener TLS-Proxy setzen X-Forwarded-For (BETRIEB.md 5a).",
+      "ort": "Vercel › Projekt › Settings › Environment Variables (docs/deploy/VERCEL-ENV.md)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "auslieferung.region",
+      "bereich": "auslieferung",
+      "titel": "Region der Funktionen",
+      "status": "manuell",
+      "meldung": "Außerhalb von Vercel nicht feststellbar. Auf Vercel muss fra1 (Frankfurt) eingestellt sein.",
+      "ort": "vercel.json › regions; Vercel › Projekt › Settings › Functions",
+      "aufwand": "2 min"
+    },
+    {
+      "id": "auslieferung.https",
+      "bereich": "auslieferung",
+      "titel": "Öffentliche Adresse mit HTTPS",
+      "status": "fehler",
+      "meldung": "Die Adresse http://localhost:3000 ist nicht https.",
+      "ort": "APP_URL (Vercel › Environment Variables)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "auslieferung.domain",
+      "bereich": "auslieferung",
+      "titel": "Eigene Domain",
+      "status": "warnung",
+      "meldung": "Die öffentliche Adresse zeigt auf diesen Rechner (localhost) – APP_URL mit der eigenen Domain setzen.",
+      "ort": "Vercel › Projekt › Settings › Domains (docs/deploy/VERCEL.md, Schritt Domain)",
+      "aufwand": "15 min + DNS-Wartezeit"
+    },
+    {
+      "id": "auslieferung.schutz",
+      "bereich": "auslieferung",
+      "titel": "Vorschauen geschützt",
+      "status": "manuell",
+      "meldung": "Vercel Authentication für Vorschauen einschalten und den teilbaren Link für den Vorstand anlegen.",
+      "ort": "Vercel › Projekt › Settings › Deployment Protection",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "datenbank.verbindung",
+      "bereich": "datenbank",
+      "titel": "Datenbank",
+      "status": "ok",
+      "meldung": "Die Datenbank antwortet."
+    },
+    {
+      "id": "datenbank.migrationen",
+      "bereich": "datenbank",
+      "titel": "Migrationen",
+      "status": "ok",
+      "meldung": "Alle 8 Migrationen sind angewendet.",
+      "ort": "Vercel › Deployments › Redeploy",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "inhalte.konzepthinweis",
+      "bereich": "inhalte",
+      "titel": "Hinweis „Konzept-Website“",
+      "status": "fehler",
+      "meldung": "Der Dialog „Alle angezeigten Daten sind fiktiv“ ist eingeschaltet und erscheint jedem Besucher.",
+      "ort": "Einstellung „allgemein.konzepthinweis“ (MENSCHEN ML-03)",
+      "aufwand": "5 min"
+    },
+    {
+      "id": "inhalte.gebetszeiten",
+      "bereich": "inhalte",
+      "titel": "Gebetszeiten bestätigt",
+      "status": "warnung",
+      "meldung": "Die Gebetszeiten sind berechnet und noch nicht bestätigt (Hinweis „berechnet“ auf jeder Seite).",
+      "ort": "Verwaltung › Gebetszeiten",
+      "aufwand": "15 min"
+    },
+    {
+      "id": "inhalte.beispiele",
+      "bereich": "inhalte",
+      "titel": "Beispielinhalte",
+      "status": "warnung",
+      "meldung": "35 Beispielinhalte (Veranstaltungen, Nachrichten, Seiten) sind noch vorhanden.",
+      "ort": "Verwaltung › Veranstaltungen, Neuigkeiten, Seiteninhalte",
+      "aufwand": "1–3 h"
+    },
+    {
+      "id": "recht.impressum",
+      "bereich": "recht",
+      "titel": "Impressum",
+      "status": "fehler",
+      "meldung": "Enthält noch Platzhalter in eckigen Klammern oder fehlt.",
+      "ort": "Verwaltung › Seiteninhalte › Impressum (fachliche Prüfung: MENSCHEN.md)",
+      "aufwand": "30 min"
+    },
+    {
+      "id": "recht.datenschutz",
+      "bereich": "recht",
+      "titel": "Datenschutzerklärung",
+      "status": "fehler",
+      "meldung": "Enthält noch Platzhalter in eckigen Klammern oder fehlt.",
+      "ort": "Verwaltung › Seiteninhalte › Datenschutz (fachliche Prüfung: MENSCHEN.md)",
+      "aufwand": "30 min"
+    },
+    {
+      "id": "mail.dns",
+      "bereich": "mail",
+      "titel": "SPF, DKIM und DMARC",
+      "status": "manuell",
+      "meldung": "Für die Absender-Domain SPF-, DKIM- und DMARC-Einträge setzen (Werte vom Mailanbieter).",
+      "ort": "DNS-Verwaltung der Domain (docs/deploy/VERCEL.md, Schritt E-Mail)",
+      "aufwand": "20 min"
+    }
+  ],
+  "zaehler": {
+    "ok": 2,
+    "hinweis": 0,
+    "warnung": 3,
+    "fehler": 15,
+    "manuell": 3
+  },
+  "startklar": false
+}

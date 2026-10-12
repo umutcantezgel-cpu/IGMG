@@ -1,0 +1,194 @@
+{
+  "werkzeug": "konsole3",
+  "basis": "http://127.0.0.1:3500",
+  "breite": 390,
+  "zeit": "2026-10-12T05:02:53.583Z",
+  "ergebnis": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Nachricht (Detailseite)",
+      "pfad": "/nachrichten/neue-gebetszeiten-fuer-den-winter",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "404 (nicht gefunden)",
+      "pfad": "/gibt-es-nicht",
+      "http": 404,
+      "anzahl": 2,
+      "meldungen": [
+        {
+          "art": "http-404",
+          "text": "GET",
+          "ort": "http://127.0.0.1:3500/gibt-es-nicht"
+        },
+        {
+          "art": "konsole-error",
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "ort": "http://127.0.0.1:3500/gibt-es-nicht"
+        }
+      ]
+    },
+    {
+      "name": "Vorstand",
+      "pfad": "/vorstand",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "IGMG",
+      "pfad": "/igmg",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Suche (Treffer)",
+      "pfad": "/suche?q=gebet",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Suche (leer)",
+      "pfad": "/suche",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Quran (Übersicht)",
+      "pfad": "/quran",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Quran (Sure 1)",
+      "pfad": "/quran/1",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Islamisches Wissen",
+      "pfad": "/islamisches-wissen",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Mitglied werden",
+      "pfad": "/mitglied-werden",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Meldung",
+      "pfad": "/meldung",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Impressum",
+      "pfad": "/impressum",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Webseite für Moscheen",
+      "pfad": "/webseite-fuer-moscheen",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    },
+    {
+      "name": "Bildschirm-Anzeige",
+      "pfad": "/gebetszeiten/anzeige",
+      "http": 200,
+      "anzahl": 0,
+      "meldungen": []
+    }
+  ]
+}

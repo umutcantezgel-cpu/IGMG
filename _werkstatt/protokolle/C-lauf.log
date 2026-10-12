@@ -1,2 +1,118 @@
 == 04:44:56 STUFE C REV=5d19108 (Worktree 5d19108 H-C03 Listen auf dem Telefon, H-C05 Erzählansichten) ab 1 bis 3
 == 04:44:56 1a Bildsatz normal (25 Routen: 13 Haupt-/Zustandsansichten + 12 Stichprobe, 390/768/1440)
+   rc=0
+== 04:48:19 1b Bildsatz reduziert (25 Routen)
+   rc=0
+== 04:51:40 1c Bildsatz Türkisch vollständig (11 Hauptansichten)
+   rc=0
+== 04:53:20 1d Bildsatz Englisch (3 Ansichten)
+   rc=0
+== 04:53:47 2a axe WCAG 2.2 AA 390 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 04:55:49 2a axe WCAG 2.2 AA 1440 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 04:57:55 2b axe Türkisch 390 und Englisch 1440
+   rc=0
+   rc=0
+== 04:58:34 2c Tastatur 390 (mit Hauptaufgaben) und 1440
+   rc=0
+   rc=0
+== 05:01:35 2d Telefonmenü: Fokus im Kreis, Escape (F-18)
+   rc=0
+== 05:01:41 3 Konsole 390 (25 Routen + Türkisch + Englisch)
+   rc=0
+   rc=0
+   rc=0
+== 05:03:35 3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit
+   rc=0
+== 05:03:36 STUFE C FERTIG (ab 1 bis 3)
+== 05:03:43 STUFE C REV=5d19108 (Worktree 5d19108 H-C03 Listen auf dem Telefon, H-C05 Erzählansichten) ab 5 bis 11
+== 05:03:43 5a B-05 Seitenwechsel: vt-status /nachrichten, /veranstaltungen, / und drei Paare ohne Karte
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 05:04:24 5b B-05 reduzierte Bewegung (keine Überblendung)
+   rc=0
+== 05:04:38 5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)
+   rc=0
+   rc=1
+== 05:04:51 6a Momente B-06..B-09: Bilder (2 Läufe), Bildrate CPU 4× (3 Läufe), reduziert; B-06 bei Tageslicht (2026-10-12T14:10:00+02:00)
+   rc=0 (b06 bilder)
+   rc=0 (b06 bildrate)
+   rc=0 (b06 reduziert)
+   rc=0 (b07 bilder)
+   rc=0 (b07 bildrate)
+   rc=0 (b07 reduziert)
+   rc=0 (b08 bilder)
+   rc=0 (b08 bildrate)
+   rc=0 (b08 reduziert)
+   rc=0 (b09 bilder)
+   rc=0 (b09 bildrate)
+   rc=0 (b09 reduziert)
+== 05:06:31 6b bewegung: Start, Über uns, Projekte, Organisation (reduziert, Bildrate, Einzelbilder), Über uns/Projekte mit Scrollen
+   rc=0 (/)
+   rc=0 (/ueber-uns)
+   rc=0 (/projekte)
+   rc=0 (/organisationen/ana-teskilati)
+   rc=0 (/ueber-uns scrollen)
+   rc=0 (/projekte scrollen)
+== 05:08:05 6c B-10 Leiste: Wechsel 390/1440/aufgeklappt, reduziert, Erstladen
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 05:08:39 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree 5d19108)
+253
+   rc=0
+== 05:08:39 7b SVG-Prüfung (Worktree 5d19108)
+   rc=0
+== 05:08:40 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen 5d19108 (H-R01)
+   rc=2
+== 05:08:48 8a pnpm release:check (typen, lint, unit, integration, sprachen, geheimnisse; startklar ohne DATABASE_URL übersprungen)
+   rc=0
+== 05:25:33 8b pnpm startklar gegen Kopie der Prüflings-Datenbank: entwicklung und produktion (JSON, ohne Werte)
+   rc=0
+   rc=1 (produktion: Fehler sind Menschen-Aufgaben, Abgleich MENSCHEN.md)
+== 05:25:37 9 Funktionsliste F-01…F-24 gepaart: Ausgangsstand 3100, dann Prüfling 3500 (Verwaltung mit Anmeldestand)
+   rc=0 (3100)
+   rc=0 (3500)
+== 05:33:04 10 V-02: vercel build in Archivkopie von 5d19108, preview und production (ohne DB, wie das Projekt heute)
+   rc=0 (preview)
+   rc=0 (production)
+   NFT symbol-512.png in 3 OG-Spuren
+   NFT source-serif-4-latin-600-normal.woff in 3 OG-Spuren
+   NFT atkinson-hyperlegible-next-latin-700-normal.woff in 3 OG-Spuren
+  "crons": [
+== 05:36:01 11 Register-Abgleich: Animationen im CSS gegen KERN K-007 (B-01…B-12)
+  9 /home/user/IGMG/_werkstatt/protokolle/C-keyframes.txt
+  3 /home/user/IGMG/_werkstatt/protokolle/C-animate-klassen.txt
+ 12 total
+== 05:36:01 STUFE C FERTIG (ab 5 bis 11)
+== 05:36:27 STUFE C REV=5d19108 (Worktree 5d19108 H-C03 Listen auf dem Telefon, H-C05 Erzählansichten) ab 7 bis 7
+== 05:36:27 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree 5d19108)
+253
+   rc=0
+== 05:36:28 7b SVG-Prüfung (Worktree 5d19108)
+   rc=0
+== 05:36:28 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen 5d19108 (H-R01)
+   rc=0
+== 05:36:38 STUFE C FERTIG (ab 7 bis 7)
+== 05:38:54 STUFE C REV=5d19108 (Worktree 5d19108 H-C03 Listen auf dem Telefon, H-C05 Erzählansichten) ab 4 bis 4
+== 05:38:54 4 Lighthouse mobil, gepaart je Route: 3 Läufe Ausgangsstand 3100, dann 3 Läufe Prüfling 3500 (Z-08)
+   05:38:54 route-00 · Last 0.32
+   05:42:41 route-01 · Last 1.67
+   05:46:09 route-02 · Last 1.46
+   05:49:46 route-03 · Last 1.37
+   05:53:16 route-04 · Last 1.32
+   05:56:41 route-05 · Last 1.31
+   06:00:04 route-06 · Last 1.63
+   06:03:31 route-07 · Last 1.35
+   06:07:07 route-08 · Last 1.87
+   06:10:42 route-09 · Last 1.53
+   06:14:03 route-10 · Last 1.57
+   rc=fertig · Last 1.41
+== 06:17:28 STUFE C FERTIG (ab 4 bis 4)

@@ -1,0 +1,88 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-05-53",
+  "basis": "http://127.0.0.1:3100",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1751,
+          "cls": 0.002,
+          "tbtMs": 482,
+          "jsKb": 170.5,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3484
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1784,
+          "cls": 0.002,
+          "tbtMs": 313,
+          "jsKb": 170.5,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3572
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1773,
+          "cls": 0.002,
+          "tbtMs": 268,
+          "jsKb": 170.5,
+          "simuliert": {
+            "performance": 93,
+            "lcpMs": 2868
+          }
+        }
+      ],
+      "median": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1773,
+        "cls": 0.002,
+        "tbtMs": 313,
+        "jsKb": 170.5,
+        "simuliertPerformance": 90,
+        "simuliertLcpMs": 3484
+      },
+      "spanneLeistung": [
+        87,
+        93
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    }
+  ]
+}

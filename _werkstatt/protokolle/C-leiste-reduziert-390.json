@@ -1,0 +1,34 @@
+{
+  "werkzeug": "leiste3",
+  "modus": "reduziert",
+  "breite": 390,
+  "hoehe": 844,
+  "zeitAnfang": "2026-10-11T14:09:30Z",
+  "rate": 0.1,
+  "basis": "http://127.0.0.1:3500",
+  "rahmen": [
+    {
+      "nr": 1,
+      "naechstes": "berechnet",
+      "zeilen": [],
+      "animationen": [
+        {
+          "art": "Animation",
+          "name": "einblenden",
+          "zustand": "finished",
+          "zeitstandMs": 0,
+          "dauerMs": 0.01,
+          "ziel": "flex flex-col gap-0.5 px-4 pb-3 blendet-ein"
+        }
+      ],
+      "bild": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/leiste/reduziert/leiste-390-reduziert.jpg"
+    }
+  ],
+  "vorher": {
+    "naechstes": "berechnet",
+    "zeilen": []
+  },
+  "animationenVorWechsel": [],
+  "gewechselt": false,
+  "pageerrors": []
+}

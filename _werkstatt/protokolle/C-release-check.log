@@ -1,0 +1,57 @@
+$ node scripts/release-check.mjs --protokoll /home/user/IGMG/_werkstatt/protokolle/C-release-check
+
+=== Schritt typen: pnpm typen ===
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully
+
+=== Schritt lint: pnpm lint ===
+$ eslint .
+
+=== Schritt test:unit: pnpm test:unit ===
+$ vitest run --project unit
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web
+
+
+ Test Files  44 passed (44)
+      Tests  794 passed | 3 expected fail (797)
+   Start at  05:09:42
+   Duration  5.50s (import 40%, transform 31%, tests 25%, worker 3%)
+
+
+=== Schritt test:integration: pnpm test:integration ===
+$ vitest run --project integration
+
+ RUN  v5.0.3 /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bau-head/web
+
+
+ Test Files  35 passed | 1 skipped (36)
+      Tests  1412 passed | 2 expected fail | 4 skipped (1418)
+   Start at  05:09:48
+   Duration  943.75s (tests 85%, import 15%)
+
+
+=== Schritt sprachen:pruefen: pnpm sprachen:pruefen ===
+$ node scripts/sprachen-pruefen.mjs
+Sprachdateien vollständig: 1203 Schlüssel in de, tr, en; dazu 1917 Schlüssel der Verwaltung (nur de, ADR 0016).
+
+=== Schritt geheimnisse:pruefen: pnpm geheimnisse:pruefen ===
+$ node scripts/geheimnis-pruefung.mjs --alles
+Geheimnis-/Datenschutz-Prüfung (--alles): ohne Befund.
+
+=== Schritt startklar: übersprungen ===
+Hinweis: keine DATABASE_URL gesetzt (weder in der Umgebung noch in .env). Datenbankprüfung nicht ausgeführt; mit DATABASE_URL erneut starten.
+
+  Schritt              Ergebnis        Dauer
+  -------------------  --------------  ------
+  typen                [OK]            24,6 s
+  lint                 [OK]            27,7 s
+  test:unit            [OK]            6,2 s
+  test:integration     [OK]            944,5 s
+  sprachen:pruefen     [OK]            0,2 s
+  geheimnisse:pruefen  [OK]            0,7 s
+  startklar            [ÜBERSPRUNGEN]  –
+
+=== RELEASE-CHECK: BESTANDEN, mit übersprungenem Schritt: startklar ===
+Protokoll: /home/user/IGMG/_werkstatt/protokolle/C-release-check
