@@ -31,10 +31,8 @@ export async function Anfahrt({ kontakt }: { kontakt: SeitenInhalt<'kontakt'> })
           {t('anfahrt.titel')}
         </h2>
         {wege.map(({ schluessel, Icon, feld }) => (
-          <div key={schluessel} className="flex items-start gap-3.5 border-t border-linie py-3">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-pill bg-gruen-50 text-gruen-800">
-              <Icon aria-hidden className="size-5" />
-            </span>
+          <div key={schluessel} className="flex items-start gap-2.5 border-t border-linie py-3">
+            <Icon aria-hidden className="mt-1 size-5 shrink-0 text-gruen-700" />
             <div className="flex min-w-0 flex-col">
               <h3 className="font-text text-18 font-bold tracking-normal">{t(`anfahrt.${schluessel}`)}</h3>
               <Text feld={feld} sprache={sprache} als="p" className="text-tinte-2" />

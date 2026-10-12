@@ -50,10 +50,14 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
       </div>
       {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
       {liste.length > 0 ? (
-        <Linie liste={liste} stand={t('meilenstein.stand', { erledigt: liste.filter((m) => m.erledigt).length, gesamt: liste.length })} />
+        <Linie
+          liste={liste}
+          sprache={sprache}
+          stand={t('meilenstein.stand', { erledigt: liste.filter((m) => m.erledigt).length, gesamt: liste.length })}
+        />
       ) : null}
       {liste.length > 0 ? (
-        <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <ol className="grid gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
           {liste.map((m, i) => (
             <Karte key={i} m={m} sprache={sprache} bezeichnung={bezeichnung} nummer={i + 1} naechster={i === naechster} />
           ))}
@@ -70,13 +74,13 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
  * sind Bild (aria-hidden); den Stand trägt der Satz darüber, die Einzelheiten tragen die Karten darunter. Der nächste
  * offene Meilenstein trägt einen gefüllten Achtstern (wie „nächstes Gebet“), erledigte einen Haken, übrige eine Ziffer.
  */
-function Linie({ liste, stand }: { liste: Meilenstein[]; stand: string }) {
+function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprache; stand: string }) {
   const { zuletzt, naechster } = marken(liste);
   const lage = (i: number) => (liste.length > 1 ? i / (liste.length - 1) : 0.5);
   const anteil = zuletzt < 0 ? 0 : lage(zuletzt);
   return (
     <ErstesSichtbarwerden className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss px-5 py-5 md:px-8">
-      <p className="text-18 font-bold text-gruen-800">{stand}</p>
+      <p className="font-display text-24 text-tinte">{stand}</p>
       <div aria-hidden className="relative mx-4 h-10">
         <span className="absolute inset-x-0 top-1/2 -translate-y-1/2 border-t-2 border-dashed border-rand" />
         {anteil > 0 ? (
@@ -111,6 +115,22 @@ function Linie({ liste, stand }: { liste: Meilenstein[]; stand: string }) {
           )}
         </ol>
       </div>
+      {liste.length <= 6 ? (
+        <ol aria-hidden className="relative mx-4 hidden h-6 lg:block">
+          {liste.map((m, i) => (
+            <li
+              key={i}
+              className={cn(
+                'absolute top-0 text-16 whitespace-nowrap text-tinte-2 tabular-nums',
+                i === 0 ? '-ml-4' : i === liste.length - 1 ? '-translate-x-full ml-4' : '-translate-x-1/2',
+              )}
+              style={{ left: `${lage(i) * 100}%` }}
+            >
+              <Text feld={m.datum} sprache={sprache} />
+            </li>
+          ))}
+        </ol>
+      ) : null}
     </ErstesSichtbarwerden>
   );
 }
@@ -133,7 +153,14 @@ function Karte({
   naechster: boolean;
 }) {
   return (
-    <li className={cn('flex gap-4 rounded-lg bg-weiss p-5', m.erledigt ? 'border-2 border-gruen-700' : 'border border-linie')}>
+    <li
+      className={cn(
+        'flex gap-4',
+        naechster
+          ? 'rounded-lg border border-linie bg-weiss p-5 shadow-s1'
+          : cn('border-t-2 px-5 pt-5', m.erledigt ? 'border-gruen-700' : 'border-linie'),
+      )}
+    >
       <span
         aria-hidden
         className={cn(
@@ -157,7 +184,7 @@ function Karte({
       <div className="flex min-w-0 flex-col gap-1.5">
         <Text feld={m.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold" />
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-          <span className="text-16 font-bold text-tinte-2 tabular-nums">
+          <span className="text-16 text-tinte-2 tabular-nums">
             <Text feld={m.datum} sprache={sprache} />
           </span>
           <span
