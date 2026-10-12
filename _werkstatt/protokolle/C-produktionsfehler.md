@@ -85,3 +85,4 @@ Prüfung je Anfrage am frischen Server: 8 OG-Bilder (Standard de/tr/en, Beitrag 
   - `dpl_DF7tp…` (Stand vor dem Cache-Profil-Fix vom 11.10.): 183 Zeilen, fast nur Segment-Abrufe.
   - `dpl_5Tvd5…` (71e263f) und `dpl_6TbZ2…` (1ca46e0): je 4 Zeilen, alle auf `/`. Das ist der Bot-Fall (Befund 2), behoben mit 58a3344.
 - Unverändert und erwartet sind die Startprüfungs-Meldungen `[start] …` (fehlende Variablen, Menschen-Aufgaben ML) und „BETTER_AUTH_SECRET fehlt“ auf `/verwaltung/anmelden`. Die Verwaltung braucht Datenbank und Geheimnisse, Runbook Abschnitt 4.
+- Nachtrag 15:35 UTC: main → fc08263 (Endstand mit Nacharbeit: JS /gebetszeiten, Menü- und Reiter-INP). `dpl_HgAErFQuAZ8JsDAnqZTLJVzjjx1P` ist READY in fra1. Laufzeitfehler seit 10:51 UTC: keine (`get_runtime_errors`). Laufzeitprotokoll der letzten 5 h ohne Einträge, also kaum Abrufe.
