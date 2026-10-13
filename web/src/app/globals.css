@@ -642,6 +642,11 @@ html[data-uebergang='morph']::view-transition-new(.seite) {
     transform-origin: top;
     animation: wachsen calc(var(--dauer-moment) / var(--n)) linear calc(var(--i) * var(--dauer-moment) / var(--n)) both;
   }
+  /* B-24 waagerecht (Kurs-Lernweg der Korankurse): derselbe Abschnitt wächst von links (scale-x) */
+  .lernweg-abschnitt-quer {
+    transform-origin: left;
+    animation: enthuellen calc(var(--dauer-moment) / var(--n)) linear calc(var(--i) * var(--dauer-moment) / var(--n)) both;
+  }
   .lernweg-station {
     transform-box: fill-box;
     transform-origin: center;
@@ -685,6 +690,7 @@ html[data-uebergang='morph']::view-transition-new(.seite) {
   .schreibweg-zug,
   .lernweg-welle,
   .lernweg-abschnitt,
+  .lernweg-abschnitt-quer,
   .lernweg-station,
   .stern-fuellt {
     animation: none;

@@ -4,12 +4,14 @@ import { Check } from 'lucide-react';
 import { useState, type CSSProperties, type ReactNode } from 'react';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { klassen } from '@/lib/klassen';
+import { KategorieMarke } from './KategorieMarke';
 
 /** Ein Filter-Chip. `schluessel` ist der Enum-Wert (wie data-kategorie und die CSS-Regeln); Anzahl und Zähltext kommen vom Server. */
 export type NachrichtenFilterChip = { schluessel: string; label: string; anzahl: number; zaehl: string };
 
 /**
- * Kategoriefilter der Nachrichtenliste (design/News.dc.html, Blatt S06): Chips mit aria-pressed. Karten anderer
+ * Kategoriefilter der Nachrichtenliste (design/News.dc.html, Blatt S06): Chips mit aria-pressed und der Kategorie-Marke
+ * vor dem Namen (dieselbe Form wie auf den Karten, AUFTRAG 4). Karten anderer
  * Kategorien blendet die CSS-Regel per data-kategorie aus (globals.css). Ohne Treffer erscheint der Leerzustand
  * mit Zustandsgrafik, einem Satz und einem nächsten Schritt: „Alle“ im Filter, sonst der Weg zur Startseite (`leerSchritt`).
  * Texte und Zähler sind Props; die Liste bleibt statisch gerendert. Rechts der Chips steht die Trefferzahl des
@@ -63,6 +65,7 @@ export function NachrichtenFilter({
                     : 'border border-rand bg-weiss text-tinte hover:border-gruen-700',
                 )}
               >
+                {k.schluessel === 'alle' ? null : <KategorieMarke kategorie={k.schluessel} />}
                 <span>{k.label}</span>
                 <span className="sr-only">{` ${k.zaehl}`}</span>
                 {an ? <Check aria-hidden className="size-4" /> : null}

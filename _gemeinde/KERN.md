@@ -40,7 +40,42 @@ und jeder Schritt vom ersten Buchstaben bis zum Hatim ist ein sichtbarer Weg –
 - Push nur nach Opt-in; Nutzlast ohne Inhalte und Namen.
 
 ## Bewegungsregister (Fortschreibung, K-007)
+Pfade unter `web/src/components/` (Website: `website/…`). Alle Bewegung ist reines CSS; der Block „Reduzierte Bewegung“ in
+`globals.css` setzt zusätzlich jede Animation und jeden Übergang auf 0,01 ms. Bestand E5 (Bestandsaufnahme O-B01).
+
 | ID | Bewegung | Umsetzung | Reduziert |
 |---|---|---|---|
+| B-08 | Fortschreibung Meilensteinlinie: Ist alles erledigt, endet die Linie in der gefüllten Marke „Eröffnung“ (Achtstern mit Haken) | `website/projekte/Meilensteine.tsx` (`meilenstein-fortschritt`, `meilenstein-erreicht` mit `--anteil: 1` am Ziel), Auslöser `ErstesSichtbarwerden` | Endzustand |
+| B-13 | Mitlesen: Vers getönt per opacity, Wort sofort hervorgehoben; Folgen-Scroll nur mit Schalter „Mitlesen folgen“, 2,5 s Ruhe nach eigenem Scrollen | `website/quran/Player.tsx` (CSS Custom Highlight `quran-wort`, Rückfall `.wort-aktiv`), `quran.css` (`.vers::before`, `dauer-wechsel`) | Tönung ohne Übergang, Scrollen `behavior: auto` |
+| B-14 | Wortkarte: opacity + scale .96 → 1 vom Wort aus; Telefon: Blatt von unten (translate 24 px) | `website/quran/Wortkarte.tsx` (`--ursprung`), `quran.css` (`.wortkarte`, `@starting-style`) | nur opacity (`dauer-rueckmeldung`) |
+| B-15 | Regel-Seitenleiste: Schublade von rechts, Telefon Blatt von unten (Kurven aus B-03) | `website/quran/TajwidLeiste.tsx`, `quran.css` (`dialog.regel-leiste`, `regel-schublade`/`regel-blatt`) | `einblenden` |
+| B-16 | Tajwid-Farben an/aus: sofort, ohne Bewegung | `globals.css` (`.tj-*` mit Unterstreichungsmuster), `quran.css` (`data-tajwid='aus'`) | – (keine Bewegung) |
+| B-17 | Schreibweg (großer Moment): Züge per `stroke-dashoffset` nacheinander, dann Punkte, ≤ 1,6 s; Glyphe ohne JS sichtbar; „Nochmal schreiben“ | `website/elifbe/Schreibweg.tsx`, `SchreibwegSteuerung.tsx`, `globals.css` (`.schreibweg-zug`, `schreiben`) | Endzustand + nummerierte Zugpfeile (`.schreibweg-pfeile`) |
+| B-18 | Übungs-Rückmeldung: richtig → Achtstern füllt sich von unten; falsch → Farbe + Text, ohne Bewegung | `website/elifbe/Uebungen.tsx` (`.stern-fuellt`) | sofort gefüllt |
+| B-19 | Hatim-Ring: Fortschrittsbogen zeichnet sich einmal (nur der erste Ring je Bildschirmhöhe); Zahl in der Mitte statisch | `website/hatim/HatimRing.tsx` (`linie-zeichnet`, `--dauer: dauer-moment`, Schalter `zeichnen`), `HatimKarte.tsx` | Endzustand |
+| B-20 | Fastenbogen (Ramadan-Variante von B-06): Linie bis „jetzt“ nach der Ruhe, dann Achtstern | `website/ramadan/FastenbogenLive.tsx` (`useNachRuhe`, `linie-zeichnet`, `marke-tritt-hervor`), nur `/ramadan` | Endzustand |
 | B-21 | Ortswechsel „Mein Ort“: Zeiten blenden über, Qibla-Nadel dreht einmal | `MeinOrtRechner.tsx` (`blendet-ein`, `transition-transform duration-(--dauer-moment)`) | ohne Drehung |
+| B-22 | Neue Nachricht im Gruppenchat: opacity + translateY 8 px, nicht beim ersten Laden | `chat/ChatFenster.tsx` (`tritt-auf` ab `neuAb`) | nur opacity (`einblenden`) |
+| B-23 | Anwesenheit: Druck-Rückmeldung, Häkchen zeichnet sich | `unterricht/AnwesenheitErfassen.tsx` (`active:scale-98`, Häkchen `linie-zeichnet` mit `--dauer: dauer-wechsel`) | Häkchen steht sofort |
+| B-24 | Lernweg: Linie zeichnet sich von Station zu Station, Station tritt hervor, wenn die Linie sie erreicht | `website/elifbe/Weg.tsx` (`/elifbe`, `/lernen`: `lernweg-welle`, `lernweg-abschnitt`, `lernweg-station`), `mein-bereich/Lernweg.tsx` (Schüler-Start, Linie bis zur aktuellen Station), `website/korankurse/KursWeg.tsx` (Kurs-Lernweg `/bildung/korankurse`, ab md `lernweg-abschnitt-quer`) | Endzustand |
+| B-25 | Anzeige-Folien: Überblendung; im Gebetsfenster keine Folien | noch nicht im Code (Paket O-K05 Anzeige-CMS) | – |
 | B-26 | Seitenwechsel mit Richtung: tiefer → von rechts, höher → von links, seitlich → Überblendung; Kopf steht | `SeitenUebergang.tsx` (`data-richtung`), `globals.css` (`seite-von-rechts/links`) | kein Übergang |
+| B-27 | Offline speichern: Ring nach echten Bytes (oder Dateien, wenn die Größe offen ist) | `website/quran/OfflineSpeichern.tsx` (`stroke-dashoffset`, `dauer-rueckmeldung`) | ohne Übergang (`motion-reduce:transition-none`) |
+
+**Morph-Paare (B-05/O-13, `website/morph.ts`):** Veranstaltung, Nachricht (Karte → Detail), Surenkachel → Kopf (`quran/SurenRaster.tsx`),
+Buchstabenkarte → Glyphe (`elifbe/Buchstabenraster.tsx`), Hadith-Buch → Kopf (`hadith/BuchKacheln.tsx`, `BuchStern.tsx`),
+Hatim-Karte → Ring (`hatim/HatimKarte.tsx`). Offen: Wissen-Karte → Kopf (Wissen-Karten öffnen einen Dialog, keine eigene Seite),
+Gruppenkarte → Kopf (Mein Bereich hat keinen `Seitenrahmen`, also keinen Seitenwechsel).
+
+**SVG-Programm je Route (Stand E5):**
+
+| Route | Zeichen | Umsetzung |
+|---|---|---|
+| Veranstaltungen | Wochenband: sieben Tage ab heute an einer Linie, Achtstern-Punkt je Tag mit Terminen, sonst Punkt; statisch | `website/veranstaltungen/Wochenband.tsx`, `wochenband.ts` (Serien inklusive, `heuteBerlin`) |
+| Nachrichten | Kategorie-Marken: je Kategorie eine Fläche aus der Achtstern-Geometrie (Raute, Quadrat, vier Spitzen, Quadrat mit Rautenfenster, Achtstern, verschränkte Rauten, Raute mit Fenster; „Wichtig“ Raute mit Ausrufezeichen) in Karten, Filter, Detailkopf, Ankündigungen | `website/nachrichten/KategorieMarke.tsx` (Form statt Farbe, `currentColor`) |
+| Korankurse | Kurs-Lernweg, zeichnet sich einmal (B-24) | `website/korankurse/KursWeg.tsx` |
+| Voranmeldung | Achtstern-Schrittanzeige | `formular/FormWizard.tsx` (`Schrittmarke`) |
+| Kalender, Ramadan | Achtstern-Marken (gefüllt = bestätigt, Umriss = vorläufig), keine Mondsichel | `website/kalender/Marken.tsx` |
+| Vorstand | Verbindungslinie der Amtszeiten vom ersten Amtsbeginn bis „Heute“, statisch | `website/vorstand/Amtszeiten.tsx`, `amtszeiten.ts` |
+| Hadith | Buchraster mit Morph Buch → Kopf | `website/hadith/BuchKacheln.tsx`, `BuchStern.tsx`, `BuchAnsicht.tsx` |
+| `/quran` | Cüz-Ring (Linie zeichnet sich, Segmente blenden ein) + Morph Surenkachel → Kopf | `website/quran/CuzRing.tsx`, `quran.css` |
