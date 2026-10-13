@@ -1,1 +1,698 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "kinder": {
+      "meta": {
+        "uebersicht": "Meine Kinder",
+        "kind": "Kind"
+      },
+      "titel": "Meine Kinder",
+      "untertitel": "Termine, Anwesenheit und Fortschritt Ihrer Kinder.",
+      "leer": {
+        "titel": "Noch kein Kind verknüpft",
+        "text": "Sobald die Bildungsabteilung die Anmeldung Ihres Kindes aufgenommen hat, erscheint es hier."
+      },
+      "karte": {
+        "naechster": "Nächster Termin",
+        "keinTermin": "Kein Termin geplant",
+        "gruppe": "Gruppe",
+        "keineGruppe": "Noch keiner Gruppe zugeordnet",
+        "fehltAm": "Abgemeldet für {daten}",
+        "zugang": "Eigener Zugang",
+        "zugangJa": "eingerichtet",
+        "zugangNein": "noch nicht eingerichtet",
+        "oeffnen": "Ansehen",
+        "oeffnenAria": "Ansehen: {name}",
+        "status": {
+          "aktiv": "nimmt teil",
+          "pausiert": "Teilnahme ruht",
+          "beendet": "Teilnahme beendet"
+        }
+      },
+      "detail": {
+        "zurueck": "Alle Kinder",
+        "naechsterTitel": "Nächster Termin",
+        "keinTermin": "Zurzeit ist kein Termin geplant.",
+        "danach": "Danach",
+        "ausgefallen": "fällt aus",
+        "ort": "Ort: {ort}",
+        "fehlenTitel": "Kind fehlt",
+        "fehlenText": "Melden Sie Ihr Kind ab, wenn es nicht kommen kann. Die Lehrkraft sieht die Abmeldung, wenn sie die Anwesenheit erfasst.",
+        "fehlen": {
+          "datum": "Tag",
+          "grund": "Grund",
+          "gruende": {
+            "krank": "krank",
+            "familie": "familiäre Gründe",
+            "schule": "Schule",
+            "sonstiges": "anderer Grund"
+          },
+          "senden": "Abmelden",
+          "gesendet": "Danke, die Abmeldung ist eingegangen.",
+          "fehler": "Das hat nicht geklappt. Bitte wählen Sie einen Tag zwischen heute und in 60 Tagen.",
+          "gemeldetTitel": "Bereits abgemeldet",
+          "gemeldet": "{datum} – {grund}"
+        },
+        "anwesenheitTitel": "Anwesenheit",
+        "anwesenheitLeer": "Es ist noch keine Anwesenheit erfasst.",
+        "anwesenheitSatz": "Bei den letzten {gesamt} erfassten Terminen: {anwesend} anwesend, {verspaetet} verspätet, {entschuldigt} entschuldigt, {fehlt} gefehlt.",
+        "status": {
+          "anwesend": "anwesend",
+          "verspaetet": "verspätet",
+          "entschuldigt": "entschuldigt",
+          "fehlt": "gefehlt"
+        },
+        "fortschrittTitel": "Fortschritt",
+        "fortschrittLeer": "Die Lehrkraft hat noch keinen Fortschritt eingetragen.",
+        "fortschrittStand": "{kursart}: Stufe {aktuell} von {gesamt}",
+        "fortschrittStatus": {
+          "offen": "noch offen",
+          "begonnen": "begonnen",
+          "sicher": "sicher",
+          "abgeschlossen": "abgeschlossen"
+        },
+        "fortschrittWeitere": "{kursart}: {erreicht} von {gesamt} Stufen abgeschlossen",
+        "hifzTitel": "Hifz",
+        "hifzEintrag": "Sure {sure}, Vers {von}–{bis}",
+        "einwilligungenTitel": "Einwilligungen",
+        "einwilligungenText": "Jede Einwilligung gilt für sich. Sie können sie jederzeit widerrufen – der Widerruf wirkt sofort.",
+        "einwilligung": {
+          "lernplattform": {
+            "titel": "Lernplattform",
+            "text": "Ich willige ein, dass die IGMG Wetzlar für mein Kind die Lernplattform nutzt: Gruppe, Termine, Anwesenheit, Abmeldungen und Lernfortschritt werden gespeichert, damit die Lehrkräfte den Unterricht begleiten und ich ihn verfolgen kann. Diese Angaben sehen nur die Lehrkräfte der Gruppe, ich und – mit eigenem Zugang – mein Kind. Ich kann die Einwilligung jederzeit hier widerrufen."
+          },
+          "kinderkonto": {
+            "titel": "Eigener Zugang für Ihr Kind",
+            "text": "Ich willige ein, dass mein Kind einen eigenen Zugang zu „Mein Bereich“ erhält. Es meldet sich mit einem Benutzernamen an, ohne E-Mail-Adresse. Gespeichert werden der Benutzername, der Anzeigename (Vorname und erster Buchstabe des Nachnamens) und die Anmeldungen. Ich kann die Einwilligung jederzeit hier widerrufen; der Zugang wird dann gelöscht."
+          },
+          "gruppenchat": {
+            "titel": "Gruppenchat",
+            "text": "Ich willige ein, dass mein Kind im moderierten Gruppenchat seiner Lerngruppe lesen und schreiben darf. Es gibt nur Text, keine Bilder und keine Direktnachrichten; die Lehrkräfte lesen mit. Nachrichten werden verschlüsselt gespeichert und nach spätestens 90 Tagen gelöscht. Ich kann die Einwilligung jederzeit hier widerrufen; mein Kind sieht den Chat dann sofort nicht mehr."
+          },
+          "push_kind": {
+            "titel": "Benachrichtigungen für Ihr Kind",
+            "text": "Ich willige ein, dass mein Kind auf seinem Gerät Benachrichtigungen der Moschee einschalten darf, zum Beispiel zu Gebetszeiten oder Neuem aus der Gruppe. Benachrichtigungen enthalten keine Namen und keine Nachrichteninhalte. Ich kann die Einwilligung jederzeit hier widerrufen; die Benachrichtigungen meines Kindes enden dann sofort."
+          }
+        },
+        "einvernehmen": "Ich bin sorgeberechtigt und handle im Einvernehmen mit der zweiten sorgeberechtigten Person.",
+        "erteilen": "Einwilligen",
+        "erteilenAria": "Einwilligen: {titel}",
+        "widerrufen": "Widerrufen",
+        "widerrufenAria": "Widerrufen: {titel}",
+        "aktiv": "erteilt",
+        "inaktiv": "nicht erteilt",
+        "erteiltAm": "Erteilt am {datum} {von}",
+        "durchSie": "von Ihnen",
+        "durchAndere": "von der zweiten sorgeberechtigten Person",
+        "widerrufenAm": "Widerrufen am {datum}",
+        "zugangWarnung": "Mit dem Widerruf wird der Zugang Ihres Kindes sofort gelöscht. Anwesenheit und Fortschritt bleiben erhalten.",
+        "zugangBestaetigen": "Ich verstehe, dass der Zugang meines Kindes gelöscht wird.",
+        "datenschutz": "Mehr dazu in der Datenschutzerklärung",
+        "ok": {
+          "erteilt": "Die Einwilligung ist erteilt.",
+          "widerrufen": "Die Einwilligung ist widerrufen. Das gilt ab sofort."
+        },
+        "fehler": {
+          "einvernehmen": "Bitte bestätigen Sie, dass Sie sorgeberechtigt sind und im Einvernehmen handeln.",
+          "bestaetigen": "Bitte bestätigen Sie, dass der Zugang Ihres Kindes gelöscht wird.",
+          "sorgerecht": "Für dieses Kind sind Sie nicht als sorgeberechtigt eingetragen. Bitte wenden Sie sich an die Bildungsabteilung.",
+          "allgemein": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."
+        },
+        "zugangTitel": "Zugang für Ihr Kind",
+        "zugangText": "Mit einem eigenen Zugang sieht Ihr Kind seinen Lernweg, seine Gruppe und – mit Ihrer Einwilligung – den Gruppenchat. Es meldet sich mit einem Benutzernamen an, ohne E-Mail-Adresse, und bleibt höchstens 12 Stunden angemeldet.",
+        "zugangErst": "Für einen eigenen Zugang brauchen wir zuerst Ihre Einwilligung „Eigener Zugang für Ihr Kind“.",
+        "zugang": {
+          "benutzername": "Benutzername",
+          "benutzernameHilfe": "4 bis 32 Zeichen: Kleinbuchstaben, Ziffern, Punkt oder Unterstrich. Bitte nicht den vollständigen Namen.",
+          "passwort": "Passwort",
+          "passwortHilfe": "Mindestens 12 Zeichen. Gut abzuschreiben ist ein Vorschlag mit drei Vierergruppen.",
+          "vorschlag": "Passwort vorschlagen",
+          "anlegen": "Zugang anlegen",
+          "neuesPasswort": "Neues Passwort",
+          "zuruecksetzenTitel": "Passwort vergessen?",
+          "zuruecksetzenText": "Setzen Sie ein neues Passwort. Alle Anmeldungen Ihres Kindes enden dann.",
+          "zuruecksetzen": "Neues Passwort setzen",
+          "gesperrt": "Dieser Zugang ist gesperrt. Bitte wenden Sie sich an die Bildungsabteilung.",
+          "angelegt": "Der Zugang ist angelegt.",
+          "gesetzt": "Das neue Passwort gilt ab sofort.",
+          "fehler": {
+            "kurz": "Der Benutzername ist zu kurz (mindestens 4 Zeichen).",
+            "lang": "Der Benutzername ist zu lang (höchstens 32 Zeichen).",
+            "zeichen": "Erlaubt sind Kleinbuchstaben, Ziffern, Punkt und Unterstrich – am Anfang und Ende ein Buchstabe oder eine Ziffer.",
+            "vergeben": "Dieser Benutzername ist schon vergeben. Bitte wählen Sie einen anderen.",
+            "passwort": "Das Passwort braucht mindestens 12 Zeichen.",
+            "keinElternteil": "Für dieses Kind können Sie keinen Zugang anlegen.",
+            "keineEinwilligung": "Bitte erteilen Sie zuerst die Einwilligung „Eigener Zugang für Ihr Kind“.",
+            "bereitsKonto": "Ihr Kind hat schon einen Zugang.",
+            "keinZugang": "Ihr Kind hat noch keinen Zugang.",
+            "zuViele": "Zu viele Versuche. Bitte warten Sie ein paar Minuten.",
+            "unbekannt": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."
+          },
+          "karteTitel": "Zugangskarte",
+          "karteText": "Zum Ausdrucken oder Abschreiben.",
+          "karteEinmal": "Das Passwort sehen Sie nur jetzt. Danach zeigen wir es aus Sicherheitsgründen nicht mehr an.",
+          "karteOhnePasswort": "Das Passwort zeigen wir aus Sicherheitsgründen nicht noch einmal. Ist es vergessen, setzen Sie ein neues.",
+          "karteKopf": "Mein Zugang bei der IGMG Wetzlar",
+          "karteFuer": "für {name}",
+          "anmeldung": "Hier anmelden",
+          "passwortZeile": "Passwort",
+          "passwortLeer": "(auf der Karte notieren)",
+          "drucken": "Zugangskarte drucken"
+        },
+        "chatTitel": "Elternkanal",
+        "chatText": "Im Elternkanal schreiben Sie mit den Lehrkräften und den anderen Eltern der Gruppe.",
+        "chatOeffnen": "Elternkanal öffnen",
+        "chatOeffnenAria": "Elternkanal öffnen: {gruppe}",
+        "gruppeOeffnen": "Gruppe ansehen",
+        "gruppeOeffnenAria": "Gruppe ansehen: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} ist 16 geworden. Ihre Einwilligungen für Gruppenchat und Benachrichtigungen gelten noch bis zum {datum}. Danach zählt nur noch die Zustimmung Ihres Kindes – es erteilt sie selbst in seinem Bereich.",
+          "eigene": "{name} ist 16 oder älter. Über Gruppenchat und Benachrichtigungen entscheidet Ihr Kind seit dem {datum} selbst; Ihre Einwilligung zählt dafür nicht mehr.",
+          "nurKind": "Darüber entscheidet Ihr Kind jetzt selbst."
+        },
+        "wortlaut": "Wortlaut der Einwilligung"
+      }
+    },
+    "lernweg": {
+      "titel": "Mein Lernweg",
+      "kursart": {
+        "elifbe": "Elifbe",
+        "kuran": "Koran",
+        "tecvid": "Tecvid",
+        "ilmihal": "Ilmihal",
+        "hifz": "Hifz"
+      },
+      "stand": "{kursart}: Station {aktuell} von {gesamt}",
+      "geschafft": "Du hast alle Stationen geschafft – stark!",
+      "jetzt": "Hier bist du gerade",
+      "status": {
+        "abgeschlossen": "geschafft",
+        "sicher": "sitzt schon gut",
+        "begonnen": "angefangen",
+        "offen": "kommt noch"
+      },
+      "station": "Station {nr}",
+      "stationenLabel": "Stationen auf deinem Lernweg",
+      "leer": "Sobald deine Lehrkraft deinen Fortschritt einträgt, wächst hier dein Weg.",
+      "weitere": "Außerdem {kursart}: {erreicht} von {gesamt} Stationen geschafft",
+      "keinLernweg": "Dein Lernweg erscheint, sobald du in einer Gruppe bist.",
+      "gruppeTitel": "Meine Gruppe",
+      "naechster": "Nächstes Mal",
+      "keinTermin": "Gerade ist kein Termin geplant.",
+      "gruppeOeffnen": "Zu meiner Gruppe",
+      "chatOeffnen": "Zum Gruppenchat",
+      "keineGruppe": "Du bist noch in keiner Gruppe.",
+      "einwilligungen": {
+        "titel": "Meine Einwilligungen",
+        "text": "Du bist 16 oder älter. Ob du den Gruppenchat nutzt und Benachrichtigungen bekommst, entscheidest du jetzt selbst.",
+        "uebergang": "Ab dem {datum} brauchst du deine eigene Zustimmung. Bis dahin gilt noch die Zustimmung deiner Eltern.",
+        "eigene": "Seit dem {datum} zählt nur noch deine eigene Zustimmung.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Gruppenchat",
+            "text": "Ich möchte den moderierten Gruppenchat meiner Lerngruppe nutzen. Meine Nachrichten werden verschlüsselt gespeichert und nach spätestens 90 Tagen gelöscht; die Lehrkräfte lesen mit. Ich kann meine Zustimmung jederzeit hier zurücknehmen – dann sehe ich den Chat sofort nicht mehr."
+          },
+          "push_kind": {
+            "titel": "Benachrichtigungen",
+            "text": "Ich möchte auf meinem Gerät Benachrichtigungen der Moschee einschalten können, zum Beispiel zu Gebetszeiten oder Neuem aus meiner Gruppe. Sie enthalten keine Namen und keine Nachrichteninhalte. Ich kann meine Zustimmung jederzeit hier zurücknehmen – dann enden die Benachrichtigungen sofort."
+          }
+        },
+        "gilt": "gilt",
+        "giltNicht": "gilt nicht",
+        "durchDich": "Von dir erteilt am {datum}.",
+        "durchEltern": "Deine Eltern haben zugestimmt – das gilt bis zum {datum}.",
+        "erteilen": "Zustimmen",
+        "erteilenAria": "Zustimmen: {titel}",
+        "widerrufen": "Zurücknehmen",
+        "widerrufenAria": "Zurücknehmen: {titel}",
+        "ok": {
+          "erteilt": "Danke, deine Zustimmung ist gespeichert.",
+          "widerrufen": "Deine Zustimmung ist zurückgenommen. Das gilt ab sofort."
+        }
+      }
+    }
+  },
+  "tr": {
+    "kinder": {
+      "meta": {
+        "uebersicht": "Çocuklarım",
+        "kind": "Çocuk"
+      },
+      "titel": "Çocuklarım",
+      "untertitel": "Çocuklarınızın ders günleri, devamı ve ilerlemesi.",
+      "leer": {
+        "titel": "Henüz bağlı bir çocuk yok",
+        "text": "Eğitim birimi çocuğunuzun kaydını aldığında çocuğunuz burada görünür."
+      },
+      "karte": {
+        "naechster": "Sıradaki ders",
+        "keinTermin": "Planlanmış ders yok",
+        "gruppe": "Grup",
+        "keineGruppe": "Henüz bir gruba atanmadı",
+        "fehltAm": "Gelemeyeceği bildirildi: {daten}",
+        "zugang": "Kendi erişimi",
+        "zugangJa": "kurulu",
+        "zugangNein": "henüz kurulmadı",
+        "oeffnen": "Görüntüle",
+        "oeffnenAria": "Görüntüle: {name}",
+        "status": {
+          "aktiv": "derslere katılıyor",
+          "pausiert": "katılım askıda",
+          "beendet": "katılım sona erdi"
+        }
+      },
+      "detail": {
+        "zurueck": "Tüm çocuklar",
+        "naechsterTitel": "Sıradaki ders",
+        "keinTermin": "Şu an planlanmış ders yok.",
+        "danach": "Sonra",
+        "ausgefallen": "yapılmayacak",
+        "ort": "Yer: {ort}",
+        "fehlenTitel": "Çocuğum gelemeyecek",
+        "fehlenText": "Çocuğunuz derse gelemeyecekse burada bildirin. Öğretmen, yoklama alırken bildiriminizi görür.",
+        "fehlen": {
+          "datum": "Gün",
+          "grund": "Neden",
+          "gruende": {
+            "krank": "hasta",
+            "familie": "ailevi nedenler",
+            "schule": "okul",
+            "sonstiges": "başka bir neden"
+          },
+          "senden": "Bildir",
+          "gesendet": "Teşekkürler, bildiriminiz alındı.",
+          "fehler": "Bu işlem olmadı. Lütfen bugünden itibaren 60 gün içinde bir gün seçin.",
+          "gemeldetTitel": "Bildirilen günler",
+          "gemeldet": "{datum} – {grund}"
+        },
+        "anwesenheitTitel": "Devam durumu",
+        "anwesenheitLeer": "Henüz yoklama kaydı yok.",
+        "anwesenheitSatz": "Kaydedilen son {gesamt} derste: {anwesend} kez geldi, {verspaetet} kez geç kaldı, {entschuldigt} kez izinliydi, {fehlt} kez gelmedi.",
+        "status": {
+          "anwesend": "geldi",
+          "verspaetet": "geç kaldı",
+          "entschuldigt": "izinli",
+          "fehlt": "gelmedi"
+        },
+        "fortschrittTitel": "İlerleme",
+        "fortschrittLeer": "Öğretmen henüz ilerleme kaydı girmedi.",
+        "fortschrittStand": "{kursart}: {gesamt} seviyeden {aktuell}.",
+        "fortschrittStatus": {
+          "offen": "henüz açık",
+          "begonnen": "başladı",
+          "sicher": "oturdu",
+          "abgeschlossen": "tamamlandı"
+        },
+        "fortschrittWeitere": "{kursart}: {gesamt} seviyeden {erreicht} tanesi tamamlandı",
+        "hifzTitel": "Hıfz",
+        "hifzEintrag": "Sure {sure}, ayet {von}–{bis}",
+        "einwilligungenTitel": "Onaylar",
+        "einwilligungenText": "Her onay ayrı geçerlidir. İstediğiniz zaman geri alabilirsiniz – geri alma hemen geçerli olur.",
+        "einwilligung": {
+          "lernplattform": {
+            "titel": "Öğrenme platformu",
+            "text": "IGMG Wetzlar’ın çocuğum için öğrenme platformunu kullanmasına onay veriyorum: Öğretmenler dersi takip edebilsin ve ben de izleyebileyim diye grup, ders günleri, devam durumu, gelemeyeceği bildirimleri ve öğrenme ilerlemesi kaydedilir. Bu bilgileri yalnızca grubun öğretmenleri, ben ve – kendi erişimi varsa – çocuğum görür. Bu onayı istediğim zaman burada geri alabilirim."
+          },
+          "kinderkonto": {
+            "titel": "Çocuğunuz için kendi erişimi",
+            "text": "Çocuğumun „Hesabım“ alanına kendi erişimi olmasına onay veriyorum. Çocuğum e-posta adresi olmadan, bir kullanıcı adıyla giriş yapar. Kullanıcı adı, görünen ad (adı ve soyadının ilk harfi) ve girişler kaydedilir. Bu onayı istediğim zaman burada geri alabilirim; o zaman erişim silinir."
+          },
+          "gruppenchat": {
+            "titel": "Grup sohbeti",
+            "text": "Çocuğumun, öğrenim grubunun denetimli grup sohbetinde okumasına ve yazmasına onay veriyorum. Yalnızca yazı vardır; resim ve özel mesaj yoktur, öğretmenler sohbeti okur. Mesajlar şifreli saklanır ve en geç 90 gün sonra silinir. Bu onayı istediğim zaman burada geri alabilirim; çocuğum sohbeti o andan itibaren göremez."
+          },
+          "push_kind": {
+            "titel": "Çocuğunuz için bildirimler",
+            "text": "Çocuğumun kendi cihazında caminin bildirimlerini, örneğin namaz vakitleri veya gruptan haberler için açabilmesine onay veriyorum. Bildirimlerde isim ve mesaj içeriği bulunmaz. Bu onayı istediğim zaman burada geri alabilirim; çocuğumun bildirimleri o anda sona erer."
+          }
+        },
+        "einvernehmen": "Velayet hakkına sahibim ve diğer velayet sahibiyle mutabık olarak hareket ediyorum.",
+        "erteilen": "Onay ver",
+        "erteilenAria": "Onay ver: {titel}",
+        "widerrufen": "Geri al",
+        "widerrufenAria": "Geri al: {titel}",
+        "aktiv": "verildi",
+        "inaktiv": "verilmedi",
+        "erteiltAm": "{datum} tarihinde verildi {von}",
+        "durchSie": "(sizin tarafınızdan)",
+        "durchAndere": "(diğer velayet sahibi tarafından)",
+        "widerrufenAm": "{datum} tarihinde geri alındı",
+        "zugangWarnung": "Geri aldığınızda çocuğunuzun erişimi hemen silinir. Devam durumu ve ilerleme kayıtları kalır.",
+        "zugangBestaetigen": "Çocuğumun erişiminin silineceğini anlıyorum.",
+        "datenschutz": "Ayrıntılar gizlilik politikasında",
+        "ok": {
+          "erteilt": "Onay verildi.",
+          "widerrufen": "Onay geri alındı. Bu, hemen geçerlidir."
+        },
+        "fehler": {
+          "einvernehmen": "Lütfen velayet hakkınız olduğunu ve mutabık hareket ettiğinizi onaylayın.",
+          "bestaetigen": "Lütfen çocuğunuzun erişiminin silineceğini onaylayın.",
+          "sorgerecht": "Bu çocuk için velayet sahibi olarak kayıtlı değilsiniz. Lütfen eğitim birimine başvurun.",
+          "allgemein": "Bu işlem olmadı. Lütfen tekrar deneyin."
+        },
+        "zugangTitel": "Çocuğunuzun erişimi",
+        "zugangText": "Kendi erişimiyle çocuğunuz öğrenme yolunu, grubunu ve – sizin onayınızla – grup sohbetini görür. E-posta adresi olmadan bir kullanıcı adıyla giriş yapar ve en fazla 12 saat oturumu açık kalır.",
+        "zugangErst": "Kendi erişimi için önce „Çocuğunuz için kendi erişimi“ onayınız gerekiyor.",
+        "zugang": {
+          "benutzername": "Kullanıcı adı",
+          "benutzernameHilfe": "4 ile 32 karakter arası: küçük harf, rakam, nokta veya alt çizgi. Lütfen tam adı kullanmayın.",
+          "passwort": "Şifre",
+          "passwortHilfe": "En az 12 karakter. Dörtlü üç gruptan oluşan öneri kolayca yazılabilir.",
+          "vorschlag": "Şifre öner",
+          "anlegen": "Erişim oluştur",
+          "neuesPasswort": "Yeni şifre",
+          "zuruecksetzenTitel": "Şifre mi unutuldu?",
+          "zuruecksetzenText": "Yeni bir şifre belirleyin. Çocuğunuzun açık olan tüm oturumları kapanır.",
+          "zuruecksetzen": "Yeni şifre belirle",
+          "gesperrt": "Bu erişim kilitli. Lütfen eğitim birimine başvurun.",
+          "angelegt": "Erişim oluşturuldu.",
+          "gesetzt": "Yeni şifre hemen geçerlidir.",
+          "fehler": {
+            "kurz": "Kullanıcı adı çok kısa (en az 4 karakter).",
+            "lang": "Kullanıcı adı çok uzun (en fazla 32 karakter).",
+            "zeichen": "Küçük harf, rakam, nokta ve alt çizgi kullanılabilir – başta ve sonda harf ya da rakam olmalı.",
+            "vergeben": "Bu kullanıcı adı alınmış. Lütfen başka bir ad seçin.",
+            "passwort": "Şifre en az 12 karakter olmalı.",
+            "keinElternteil": "Bu çocuk için erişim oluşturamazsınız.",
+            "keineEinwilligung": "Lütfen önce „Çocuğunuz için kendi erişimi“ onayını verin.",
+            "bereitsKonto": "Çocuğunuzun zaten bir erişimi var.",
+            "keinZugang": "Çocuğunuzun henüz erişimi yok.",
+            "zuViele": "Çok fazla deneme. Lütfen birkaç dakika bekleyin.",
+            "unbekannt": "Bu işlem olmadı. Lütfen tekrar deneyin."
+          },
+          "karteTitel": "Erişim kartı",
+          "karteText": "Yazdırmak veya not almak için.",
+          "karteEinmal": "Şifreyi yalnızca şimdi görüyorsunuz. Güvenlik nedeniyle daha sonra tekrar gösterilmez.",
+          "karteOhnePasswort": "Güvenlik nedeniyle şifreyi tekrar göstermiyoruz. Unutulduysa yeni bir şifre belirleyin.",
+          "karteKopf": "IGMG Wetzlar erişimim",
+          "karteFuer": "{name} için",
+          "anmeldung": "Giriş adresi",
+          "passwortZeile": "Şifre",
+          "passwortLeer": "(karta not edin)",
+          "drucken": "Erişim kartını yazdır"
+        },
+        "chatTitel": "Veli kanalı",
+        "chatText": "Veli kanalında grubun öğretmenleri ve diğer velilerle yazışırsınız.",
+        "chatOeffnen": "Veli kanalını aç",
+        "chatOeffnenAria": "Veli kanalını aç: {gruppe}",
+        "gruppeOeffnen": "Grubu gör",
+        "gruppeOeffnenAria": "Grubu gör: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} 16 yaşına girdi. Grup sohbeti ve bildirimler için verdiğiniz onaylar {datum} tarihine kadar geçerli. Ondan sonra yalnızca çocuğunuzun onayı geçerli olur – çocuğunuz onu kendi alanında verir.",
+          "eigene": "{name} 16 yaşında veya daha büyük. Grup sohbeti ve bildirimler hakkında çocuğunuz {datum} tarihinden beri kendisi karar veriyor; bunun için sizin onayınız artık geçerli değil.",
+          "nurKind": "Buna artık çocuğunuz kendisi karar veriyor."
+        },
+        "wortlaut": "Onay metni"
+      }
+    },
+    "lernweg": {
+      "titel": "Öğrenme yolum",
+      "kursart": {
+        "elifbe": "Elifba",
+        "kuran": "Kur'an",
+        "tecvid": "Tecvid",
+        "ilmihal": "İlmihal",
+        "hifz": "Hıfz"
+      },
+      "stand": "{kursart}: {gesamt} duraktan {aktuell}.",
+      "geschafft": "Tüm durakları bitirdin – harika!",
+      "jetzt": "Şu an buradasın",
+      "status": {
+        "abgeschlossen": "bitti",
+        "sicher": "iyi oturdu",
+        "begonnen": "başladın",
+        "offen": "sırada"
+      },
+      "station": "Durak {nr}",
+      "stationenLabel": "Öğrenme yolundaki duraklar",
+      "leer": "Öğretmenin ilerlemeni girdiğinde yolun burada büyür.",
+      "weitere": "Ayrıca {kursart}: {gesamt} duraktan {erreicht} tanesi bitti",
+      "keinLernweg": "Bir gruba katıldığında öğrenme yolun burada görünür.",
+      "gruppeTitel": "Grubum",
+      "naechster": "Bir dahaki ders",
+      "keinTermin": "Şu an planlanmış ders yok.",
+      "gruppeOeffnen": "Grubuma git",
+      "chatOeffnen": "Grup sohbetine git",
+      "keineGruppe": "Henüz bir grupta değilsin.",
+      "einwilligungen": {
+        "titel": "Onaylarım",
+        "text": "16 yaşında veya daha büyüksün. Grup sohbetini kullanıp kullanmayacağına ve bildirim alıp almayacağına artık kendin karar veriyorsun.",
+        "uebergang": "{datum} tarihinden itibaren kendi onayın gerekiyor. O zamana kadar annenin veya babanın onayı geçerli.",
+        "eigene": "{datum} tarihinden beri yalnızca senin kendi onayın geçerli.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Grup sohbeti",
+            "text": "Öğrenim grubumun denetimli grup sohbetini kullanmak istiyorum. Mesajlarım şifreli saklanır ve en geç 90 gün sonra silinir; öğretmenler sohbeti okur. Onayımı istediğim zaman burada geri alabilirim – o zaman sohbeti hemen göremem."
+          },
+          "push_kind": {
+            "titel": "Bildirimler",
+            "text": "Cihazımda caminin bildirimlerini, örneğin namaz vakitleri veya grubumdan haberler için açabilmek istiyorum. Bildirimlerde isim ve mesaj içeriği bulunmaz. Onayımı istediğim zaman burada geri alabilirim – o zaman bildirimler hemen sona erer."
+          }
+        },
+        "gilt": "geçerli",
+        "giltNicht": "geçerli değil",
+        "durchDich": "{datum} tarihinde senin tarafından verildi.",
+        "durchEltern": "Annen veya baban onay verdi – bu {datum} tarihine kadar geçerli.",
+        "erteilen": "Onayla",
+        "erteilenAria": "Onayla: {titel}",
+        "widerrufen": "Geri al",
+        "widerrufenAria": "Geri al: {titel}",
+        "ok": {
+          "erteilt": "Teşekkürler, onayın kaydedildi.",
+          "widerrufen": "Onayın geri alındı. Bu, hemen geçerlidir."
+        }
+      }
+    }
+  },
+  "en": {
+    "kinder": {
+      "meta": {
+        "uebersicht": "My children",
+        "kind": "Child"
+      },
+      "titel": "My children",
+      "untertitel": "Your children's lessons, attendance and progress.",
+      "leer": {
+        "titel": "No child linked yet",
+        "text": "As soon as the education department has accepted your child's registration, your child will appear here."
+      },
+      "karte": {
+        "naechster": "Next lesson",
+        "keinTermin": "No lesson planned",
+        "gruppe": "Group",
+        "keineGruppe": "Not assigned to a group yet",
+        "fehltAm": "Excused for {daten}",
+        "zugang": "Own access",
+        "zugangJa": "set up",
+        "zugangNein": "not set up yet",
+        "oeffnen": "View",
+        "oeffnenAria": "View: {name}",
+        "status": {
+          "aktiv": "taking part",
+          "pausiert": "participation paused",
+          "beendet": "participation ended"
+        }
+      },
+      "detail": {
+        "zurueck": "All children",
+        "naechsterTitel": "Next lesson",
+        "keinTermin": "No lesson is planned at the moment.",
+        "danach": "After that",
+        "ausgefallen": "cancelled",
+        "ort": "Place: {ort}",
+        "fehlenTitel": "Child absent",
+        "fehlenText": "Let us know if your child cannot come. The teacher sees your note when taking attendance.",
+        "fehlen": {
+          "datum": "Day",
+          "grund": "Reason",
+          "gruende": {
+            "krank": "ill",
+            "familie": "family reasons",
+            "schule": "school",
+            "sonstiges": "other reason"
+          },
+          "senden": "Report absence",
+          "gesendet": "Thank you, we have received your note.",
+          "fehler": "That did not work. Please choose a day between today and 60 days from now.",
+          "gemeldetTitel": "Already reported",
+          "gemeldet": "{datum} – {grund}"
+        },
+        "anwesenheitTitel": "Attendance",
+        "anwesenheitLeer": "No attendance has been recorded yet.",
+        "anwesenheitSatz": "At the last {gesamt} recorded lessons: {anwesend} present, {verspaetet} late, {entschuldigt} excused, {fehlt} absent.",
+        "status": {
+          "anwesend": "present",
+          "verspaetet": "late",
+          "entschuldigt": "excused",
+          "fehlt": "absent"
+        },
+        "fortschrittTitel": "Progress",
+        "fortschrittLeer": "The teacher has not recorded any progress yet.",
+        "fortschrittStand": "{kursart}: level {aktuell} of {gesamt}",
+        "fortschrittStatus": {
+          "offen": "still open",
+          "begonnen": "started",
+          "sicher": "secure",
+          "abgeschlossen": "completed"
+        },
+        "fortschrittWeitere": "{kursart}: {erreicht} of {gesamt} levels completed",
+        "hifzTitel": "Hifz",
+        "hifzEintrag": "Surah {sure}, verses {von}–{bis}",
+        "einwilligungenTitel": "Consents",
+        "einwilligungenText": "Each consent stands on its own. You can withdraw it at any time – the withdrawal takes effect immediately.",
+        "einwilligung": {
+          "lernplattform": {
+            "titel": "Learning platform",
+            "text": "I consent to IGMG Wetzlar using the learning platform for my child: group, lessons, attendance, absence notes and learning progress are stored so that the teachers can support the lessons and I can follow them. Only the group's teachers, I and – with their own access – my child can see this information. I can withdraw this consent here at any time."
+          },
+          "kinderkonto": {
+            "titel": "Own access for your child",
+            "text": "I consent to my child getting their own access to “My account”. My child signs in with a username, without an email address. The username, the display name (first name and first letter of the surname) and the sign-ins are stored. I can withdraw this consent here at any time; the access is then deleted."
+          },
+          "gruppenchat": {
+            "titel": "Group chat",
+            "text": "I consent to my child reading and writing in the moderated group chat of their learning group. There is only text, no pictures and no direct messages; the teachers read along. Messages are stored encrypted and deleted after 90 days at the latest. I can withdraw this consent here at any time; my child then no longer sees the chat, with immediate effect."
+          },
+          "push_kind": {
+            "titel": "Notifications for your child",
+            "text": "I consent to my child switching on the mosque's notifications on their device, for example for prayer times or news from the group. Notifications contain no names and no message content. I can withdraw this consent here at any time; my child's notifications then stop immediately."
+          }
+        },
+        "einvernehmen": "I have parental responsibility and am acting in agreement with the other person with parental responsibility.",
+        "erteilen": "Give consent",
+        "erteilenAria": "Give consent: {titel}",
+        "widerrufen": "Withdraw",
+        "widerrufenAria": "Withdraw: {titel}",
+        "aktiv": "given",
+        "inaktiv": "not given",
+        "erteiltAm": "Given on {datum} {von}",
+        "durchSie": "by you",
+        "durchAndere": "by the other person with parental responsibility",
+        "widerrufenAm": "Withdrawn on {datum}",
+        "zugangWarnung": "Withdrawing deletes your child's access immediately. Attendance and progress are kept.",
+        "zugangBestaetigen": "I understand that my child's access will be deleted.",
+        "datenschutz": "More in the privacy policy",
+        "ok": {
+          "erteilt": "The consent has been given.",
+          "widerrufen": "The consent has been withdrawn, with immediate effect."
+        },
+        "fehler": {
+          "einvernehmen": "Please confirm that you have parental responsibility and are acting in agreement.",
+          "bestaetigen": "Please confirm that your child's access will be deleted.",
+          "sorgerecht": "You are not registered as having parental responsibility for this child. Please contact the education department.",
+          "allgemein": "That did not work. Please try again."
+        },
+        "zugangTitel": "Access for your child",
+        "zugangText": "With their own access, your child sees their learning path, their group and – with your consent – the group chat. They sign in with a username, without an email address, and stay signed in for 12 hours at most.",
+        "zugangErst": "For their own access we first need your consent “Own access for your child”.",
+        "zugang": {
+          "benutzername": "Username",
+          "benutzernameHilfe": "4 to 32 characters: lowercase letters, digits, full stop or underscore. Please do not use the full name.",
+          "passwort": "Password",
+          "passwortHilfe": "At least 12 characters. A suggestion made of three groups of four is easy to copy.",
+          "vorschlag": "Suggest a password",
+          "anlegen": "Create access",
+          "neuesPasswort": "New password",
+          "zuruecksetzenTitel": "Password forgotten?",
+          "zuruecksetzenText": "Set a new password. All of your child's sign-ins will then end.",
+          "zuruecksetzen": "Set new password",
+          "gesperrt": "This access is locked. Please contact the education department.",
+          "angelegt": "The access has been created.",
+          "gesetzt": "The new password applies immediately.",
+          "fehler": {
+            "kurz": "The username is too short (at least 4 characters).",
+            "lang": "The username is too long (at most 32 characters).",
+            "zeichen": "Lowercase letters, digits, full stop and underscore are allowed – starting and ending with a letter or digit.",
+            "vergeben": "This username is already taken. Please choose another one.",
+            "passwort": "The password needs at least 12 characters.",
+            "keinElternteil": "You cannot create access for this child.",
+            "keineEinwilligung": "Please first give the consent “Own access for your child”.",
+            "bereitsKonto": "Your child already has access.",
+            "keinZugang": "Your child does not have access yet.",
+            "zuViele": "Too many attempts. Please wait a few minutes.",
+            "unbekannt": "That did not work. Please try again."
+          },
+          "karteTitel": "Access card",
+          "karteText": "To print or copy down.",
+          "karteEinmal": "You can only see the password now. For security reasons we will not show it again.",
+          "karteOhnePasswort": "For security reasons we do not show the password again. If it has been forgotten, set a new one.",
+          "karteKopf": "My access at IGMG Wetzlar",
+          "karteFuer": "for {name}",
+          "anmeldung": "Sign in at",
+          "passwortZeile": "Password",
+          "passwortLeer": "(write it on the card)",
+          "drucken": "Print access card"
+        },
+        "chatTitel": "Parents' channel",
+        "chatText": "In the parents' channel you write with the teachers and the other parents of the group.",
+        "chatOeffnen": "Open parents' channel",
+        "chatOeffnenAria": "Open parents' channel: {gruppe}",
+        "gruppeOeffnen": "View group",
+        "gruppeOeffnenAria": "View group: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} has turned 16. Your consents for the group chat and notifications still apply until {datum}. After that only your child’s own consent counts – they give it themselves in their area.",
+          "eigene": "{name} is 16 or older. Since {datum} your child decides about the group chat and notifications themselves; your consent no longer counts for this.",
+          "nurKind": "Your child now decides this themselves."
+        },
+        "wortlaut": "Wording of the consent"
+      }
+    },
+    "lernweg": {
+      "titel": "My learning path",
+      "kursart": {
+        "elifbe": "Elifba",
+        "kuran": "Quran",
+        "tecvid": "Tajwid",
+        "ilmihal": "Ilmihal",
+        "hifz": "Hifz"
+      },
+      "stand": "{kursart}: stop {aktuell} of {gesamt}",
+      "geschafft": "You have made it through every stop – brilliant!",
+      "jetzt": "You are here",
+      "status": {
+        "abgeschlossen": "done",
+        "sicher": "going well",
+        "begonnen": "started",
+        "offen": "still to come"
+      },
+      "station": "Stop {nr}",
+      "stationenLabel": "Stops on your learning path",
+      "leer": "As soon as your teacher records your progress, your path grows here.",
+      "weitere": "Also {kursart}: {erreicht} of {gesamt} stops done",
+      "keinLernweg": "Your learning path appears as soon as you are in a group.",
+      "gruppeTitel": "My group",
+      "naechster": "Next time",
+      "keinTermin": "No lesson is planned right now.",
+      "gruppeOeffnen": "Go to my group",
+      "chatOeffnen": "Go to the group chat",
+      "keineGruppe": "You are not in a group yet.",
+      "einwilligungen": {
+        "titel": "My consents",
+        "text": "You are 16 or older. You now decide yourself whether you use the group chat and get notifications.",
+        "uebergang": "From {datum} you need to give your own consent. Until then your parents’ consent still applies.",
+        "eigene": "Since {datum} only your own consent counts.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Group chat",
+            "text": "I would like to use the moderated group chat of my learning group. My messages are stored encrypted and deleted after 90 days at the latest; the teachers read along. I can withdraw my consent here at any time – then I no longer see the chat, with immediate effect."
+          },
+          "push_kind": {
+            "titel": "Notifications",
+            "text": "I would like to be able to switch on the mosque’s notifications on my device, for example for prayer times or news from my group. They contain no names and no message content. I can withdraw my consent here at any time – then the notifications stop immediately."
+          }
+        },
+        "gilt": "valid",
+        "giltNicht": "not valid",
+        "durchDich": "Given by you on {datum}.",
+        "durchEltern": "Your parents have consented – this applies until {datum}.",
+        "erteilen": "Consent",
+        "erteilenAria": "Consent: {titel}",
+        "widerrufen": "Withdraw",
+        "widerrufenAria": "Withdraw: {titel}",
+        "ok": {
+          "erteilt": "Thank you, your consent has been saved.",
+          "widerrufen": "Your consent has been withdrawn, with immediate effect."
+        }
+      }
+    }
+  }
+}

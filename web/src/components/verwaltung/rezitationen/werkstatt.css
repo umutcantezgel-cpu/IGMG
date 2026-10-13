@@ -1,0 +1,54 @@
+/* Rezitations-Werkstatt (ADR 0029): Verstext wie im Koran-Leser (quran.css), Hervorhebung wie im Player (B-13). */
+.werkstatt-vers-ar {
+  margin: 0;
+  font-family: var(--font-quran);
+  font-size: var(--text-arabisch-2);
+  line-height: var(--text-arabisch-2--line-height);
+  color: var(--color-tinte);
+  overflow: visible;
+  padding-block: 0.15em;
+  word-spacing: 0.08em;
+}
+.werkstatt-vers {
+  position: relative;
+  isolation: isolate;
+}
+.werkstatt-vers::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-gruen-50);
+  opacity: 0;
+  transition: opacity var(--dauer-wechsel) var(--ease-standard);
+  pointer-events: none;
+  z-index: -1;
+}
+.werkstatt-vers[data-aktiv]::before {
+  opacity: 1;
+}
+::highlight(werkstatt-wort) {
+  background-color: var(--color-gruen-100);
+  color: var(--color-gruen-950);
+}
+.werkstatt-wort-aktiv {
+  background: var(--color-gruen-100);
+  border-radius: var(--radius-sm);
+}
+/* Mitklopfen: geklopfte Wörter getönt, das nächste unterstrichen (Farbe nie allein) */
+.werkstatt-klopf-wort[data-stand='getippt'] {
+  background: var(--color-gruen-50);
+  color: var(--color-gruen-950);
+  border-radius: var(--radius-sm);
+}
+.werkstatt-klopf-wort[data-stand='naechstes'] {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+  text-decoration-color: var(--color-gruen-700);
+}
+@media (prefers-reduced-motion: reduce) {
+  .werkstatt-vers::before {
+    transition: none;
+  }
+}

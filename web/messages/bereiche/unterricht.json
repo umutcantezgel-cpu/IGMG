@@ -1,1 +1,590 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "unterricht": {
+      "meta": {
+        "uebersicht": "Unterricht",
+        "gruppe": "Gruppe",
+        "anwesenheit": "Anwesenheit",
+        "fortschritt": "Fortschritt",
+        "moderation": "Moderation"
+      },
+      "titel": "Unterricht",
+      "untertitel": "Ihre Gruppen und der Unterricht von heute.",
+      "rolle": { "lehrkraft": "Lehrkraft", "aufsicht": "Aufsicht" },
+      "heute": {
+        "titel": "Heute",
+        "leer": "Heute steht kein Unterricht an.",
+        "anwesenheit": "Anwesenheit erfassen",
+        "anwesenheitAria": "Anwesenheit erfassen: {gruppe}, {zeit}",
+        "korrigieren": "Anwesenheit ansehen",
+        "korrigierenAria": "Anwesenheit ansehen: {gruppe}, {zeit}",
+        "erfasst": "{anzahl} erfasst",
+        "ausgefallen": "Fällt aus"
+      },
+      "woche": {
+        "titel": "Die nächsten Tage",
+        "leer": "In den nächsten sechs Tagen ist kein Unterricht geplant."
+      },
+      "gruppen": {
+        "titel": "Ihre Gruppen",
+        "leer": "Ihnen ist noch keine Gruppe zugeordnet. Die Bildungsabteilung ordnet Lehrkräfte und Aufsichten den Gruppen zu.",
+        "oeffnen": "Gruppe öffnen",
+        "oeffnenAria": "Gruppe öffnen: {gruppe}",
+        "lernende": "{anzahl, plural, one {# Lernende/r} other {# Lernende}}",
+        "meldungen": "{anzahl, plural, one {# offene Meldung} other {# offene Meldungen}}"
+      },
+      "gruppe": {
+        "zurueck": "Zur Übersicht",
+        "lernendeTitel": "Lernende",
+        "lernendeLeer": "In dieser Gruppe sind noch keine Lernenden.",
+        "fehltAm": "Abgemeldet für {daten}",
+        "leitungTitel": "Leitung",
+        "ich": "Sie",
+        "termineTitel": "Nächste Termine",
+        "termineLeer": "Keine Termine geplant. Die Bildungsabteilung legt die Terminserie an.",
+        "vergangeneTitel": "Letzte Termine",
+        "anwesenheit": "Anwesenheit",
+        "anwesenheitAria": "Anwesenheit: {datum}",
+        "erfasst": "{anzahl} erfasst",
+        "nichtErfasst": "noch nicht erfasst",
+        "ausfall": "Ausfallen lassen",
+        "ausfallAria": "Ausfallen lassen: {datum}",
+        "findetStatt": "Findet doch statt",
+        "findetStattAria": "Findet doch statt: {datum}",
+        "ausgefallen": "Fällt aus",
+        "werkzeuge": "Werkzeuge",
+        "fortschritt": "Fortschritt",
+        "fortschrittText": "Stufen setzen und Hifz eintragen.",
+        "moderation": "Moderation",
+        "moderationText": "Meldungen aus dem Chat bearbeiten, Kanäle pausieren.",
+        "chatGruppe": "Gruppenchat",
+        "chatGruppeText": "Mit den Lernenden schreiben.",
+        "chatEltern": "Elternkanal",
+        "chatElternText": "Mit den Eltern der Gruppe schreiben.",
+        "chatModus": {
+          "aus": "Chat aus",
+          "nur_lehrkraft": "Chat: nur Lehrkräfte schreiben",
+          "offen": "Chat offen ({von}–{bis} Uhr)"
+        }
+      },
+      "anwesenheit": {
+        "titel": "Anwesenheit",
+        "untertitel": "{gruppe} · {datum}",
+        "zurueck": "Zur Gruppe",
+        "ausgefallen": "Dieser Termin ist als ausgefallen markiert. Sie können die Anwesenheit trotzdem erfassen.",
+        "leer": "Für diesen Termin gibt es keine Lernenden.",
+        "erfassen": {
+          "titel": "Wer ist da?",
+          "status": {
+            "anwesend": "Da",
+            "verspaetet": "Später",
+            "entschuldigt": "Entschuldigt",
+            "fehlt": "Fehlt"
+          },
+          "fehlmeldung": "Von den Eltern abgemeldet",
+          "speichern": "Anwesenheit speichern",
+          "gespeichert": "Gespeichert.",
+          "fehler": "Nicht gespeichert. Bitte versuchen Sie es noch einmal.",
+          "alleAnwesend": "Alle da",
+          "zaehler": "{anwesend} von {gesamt} da"
+        }
+      },
+      "fortschritt": {
+        "titel": "Fortschritt",
+        "zurueck": "Zur Gruppe",
+        "kursartLabel": "Lehrplan",
+        "kursart": {
+          "elifbe": "Elifbe",
+          "kuran": "Koran",
+          "tecvid": "Tecvid",
+          "ilmihal": "Ilmihal",
+          "hifz": "Hifz"
+        },
+        "rasterTitel": "Stufen je Lernende/r",
+        "hilfe": "Tippen Sie auf ein Feld, um den Stand weiterzuschalten: offen → begonnen → sicher → abgeschlossen → offen. Jede Änderung wird sofort gespeichert.",
+        "lernende": "Lernende",
+        "stufe": "Stufe {nr}",
+        "status": {
+          "offen": "offen",
+          "begonnen": "begonnen",
+          "sicher": "sicher",
+          "abgeschlossen": "abgeschlossen"
+        },
+        "zelleAria": "{name}, {stufe}: {status}. Weiter zu: {naechster}",
+        "gespeichert": "Gespeichert: {name}, {stufe} – {status}",
+        "fehler": "Nicht gespeichert. Bitte versuchen Sie es noch einmal.",
+        "leer": "In dieser Gruppe sind noch keine Lernenden.",
+        "keineStufen": "Für diesen Lehrplan sind noch keine Stufen angelegt.",
+        "legende": "Legende",
+        "hifz": {
+          "titel": "Hifz eintragen",
+          "text": "Geprüften Abschnitt eintragen: Sure und Verse, auf Wunsch mit Bewertung.",
+          "lernende": "Lernende/r",
+          "waehlen": "Bitte wählen",
+          "sure": "Sure",
+          "vonVers": "Von Vers",
+          "bisVers": "Bis Vers",
+          "bewertung": "Bewertung (freiwillig)",
+          "ohne": "keine",
+          "speichern": "Eintragen",
+          "gespeichert": "Eingetragen.",
+          "fehler": "Nicht eingetragen. Bitte prüfen Sie Sure und Verse.",
+          "zuletzt": "Zuletzt eingetragen",
+          "leer": "Noch keine Einträge.",
+          "eintrag": "Sure {sure}, Vers {von}–{bis}",
+          "bewertet": "Bewertung {wert} von 5",
+          "verseMax": "Diese Sure hat {anzahl} Verse."
+        }
+      },
+      "moderation": {
+        "titel": "Moderation",
+        "zurueck": "Zur Gruppe",
+        "einleitung": "Hier bearbeiten Sie Meldungen aus dem Gruppenchat und dem Elternkanal. Jede Maßnahme braucht einen kurzen Grund und steht im unveränderlichen Moderationsprotokoll.",
+        "eigene": "Meldungen über Ihre eigenen Nachrichten sehen Sie hier nicht – sie gehen direkt an die Ansprechperson für Kinderschutz.",
+        "kinderschutz": "Besteht Gefahr für ein Kind, informieren Sie sofort die Ansprechperson für Kinderschutz: [Kontakt – von der Gemeinde].",
+        "kanaeleTitel": "Kanäle",
+        "kanal": { "gruppe": "Gruppenchat", "eltern": "Elternkanal" },
+        "kanalStatus": { "aktiv": "offen", "pausiert": "pausiert", "archiviert": "archiviert" },
+        "keineKanaele": "Die Kanäle entstehen, sobald jemand den Chat der Gruppe zum ersten Mal öffnet.",
+        "pausieren": "Kanal pausieren",
+        "fortsetzen": "Kanal fortsetzen",
+        "pauseGrund": "Grund (wird protokolliert)",
+        "meldungenTitel": "Offene Meldungen",
+        "leer": "Keine offenen Meldungen.",
+        "gemeldetAm": "Gemeldet am {zeit}",
+        "meldungStatus": { "offen": "neu", "in_bearbeitung": "in Bearbeitung" },
+        "absender": "Nachricht von {name}",
+        "absenderUnbekannt": "Absender nicht mehr bekannt",
+        "nachrichtEntfernt": "Nachricht bereits entfernt",
+        "ansehen": "Ansehen und bearbeiten",
+        "ansehenAria": "Ansehen und bearbeiten: Meldung vom {zeit}",
+        "schliessen": "Ansicht schließen",
+        "kontextTitel": "Verlauf um die gemeldete Nachricht",
+        "kontextHinweis": "Ihre Einsicht steht im Moderationsprotokoll.",
+        "kontextLeer": "Der Verlauf ist nicht mehr vorhanden.",
+        "gemeldet": "gemeldet",
+        "entfernt": "entfernt",
+        "freitext": "Anmerkung der meldenden Person",
+        "massnahmeTitel": "Maßnahme",
+        "massnahme": {
+          "entfernen": "Nachricht entfernen",
+          "stumm30": "Absender 30 Minuten stummschalten",
+          "stummTag": "Absender 24 Stunden stummschalten",
+          "mitglied": "Lernende/n aus der Gruppe entfernen",
+          "in_bearbeitung": "Als „in Bearbeitung“ markieren",
+          "erledigt": "Ohne weitere Maßnahme abschließen"
+        },
+        "abschliessen": "Meldung damit abschließen",
+        "begruendung": "Grund (wird protokolliert)",
+        "begruendungHilfe": "Mindestens 3 Zeichen, sachlich und ohne Namen.",
+        "ausfuehren": "Ausführen",
+        "ok": {
+          "entfernen": "Die Nachricht wurde entfernt.",
+          "stumm": "Der Absender ist stummgeschaltet.",
+          "mitglied": "Die Mitgliedschaft in der Gruppe ist beendet.",
+          "in_bearbeitung": "Die Meldung ist in Bearbeitung.",
+          "erledigt": "Die Meldung ist abgeschlossen.",
+          "pausiert": "Der Kanal ist pausiert.",
+          "fortgesetzt": "Der Kanal ist wieder offen."
+        },
+        "fehler": {
+          "grund": "Bitte geben Sie einen Grund mit mindestens 3 Zeichen an.",
+          "nichtMoeglich": "Diese Maßnahme ist hier nicht möglich.",
+          "allgemein": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."
+        }
+      }
+    }
+  },
+  "tr": {
+    "unterricht": {
+      "meta": {
+        "uebersicht": "Derslerim",
+        "gruppe": "Grup",
+        "anwesenheit": "Yoklama",
+        "fortschritt": "İlerleme",
+        "moderation": "Moderasyon"
+      },
+      "titel": "Derslerim",
+      "untertitel": "Gruplarınız ve bugünkü dersler.",
+      "rolle": { "lehrkraft": "Öğretmen", "aufsicht": "Gözetmen" },
+      "heute": {
+        "titel": "Bugün",
+        "leer": "Bugün ders yok.",
+        "anwesenheit": "Yoklama al",
+        "anwesenheitAria": "Yoklama al: {gruppe}, {zeit}",
+        "korrigieren": "Yoklamayı gör",
+        "korrigierenAria": "Yoklamayı gör: {gruppe}, {zeit}",
+        "erfasst": "{anzahl} kayıtlı",
+        "ausgefallen": "Yapılmayacak"
+      },
+      "woche": {
+        "titel": "Önümüzdeki günler",
+        "leer": "Önümüzdeki altı gün içinde planlanmış ders yok."
+      },
+      "gruppen": {
+        "titel": "Gruplarınız",
+        "leer": "Size henüz bir grup atanmadı. Öğretmen ve gözetmenleri gruplara eğitim birimi atar.",
+        "oeffnen": "Grubu aç",
+        "oeffnenAria": "Grubu aç: {gruppe}",
+        "lernende": "{anzahl, plural, one {# öğrenci} other {# öğrenci}}",
+        "meldungen": "{anzahl, plural, one {# açık bildirim} other {# açık bildirim}}"
+      },
+      "gruppe": {
+        "zurueck": "Genel bakışa dön",
+        "lernendeTitel": "Öğrenciler",
+        "lernendeLeer": "Bu grupta henüz öğrenci yok.",
+        "fehltAm": "Gelemeyeceği bildirildi: {daten}",
+        "leitungTitel": "Grup sorumluları",
+        "ich": "Siz",
+        "termineTitel": "Sıradaki dersler",
+        "termineLeer": "Planlanmış ders yok. Ders takvimini eğitim birimi oluşturur.",
+        "vergangeneTitel": "Son dersler",
+        "anwesenheit": "Yoklama",
+        "anwesenheitAria": "Yoklama: {datum}",
+        "erfasst": "{anzahl} kayıtlı",
+        "nichtErfasst": "henüz alınmadı",
+        "ausfall": "Dersi iptal et",
+        "ausfallAria": "Dersi iptal et: {datum}",
+        "findetStatt": "Ders yapılacak",
+        "findetStattAria": "Ders yapılacak: {datum}",
+        "ausgefallen": "Yapılmayacak",
+        "werkzeuge": "Araçlar",
+        "fortschritt": "İlerleme",
+        "fortschrittText": "Seviyeleri işaretleyin, hıfz kaydı girin.",
+        "moderation": "Moderasyon",
+        "moderationText": "Sohbetten gelen bildirimleri işleyin, kanalları duraklatın.",
+        "chatGruppe": "Grup sohbeti",
+        "chatGruppeText": "Öğrencilerle yazışın.",
+        "chatEltern": "Veli kanalı",
+        "chatElternText": "Grubun velileriyle yazışın.",
+        "chatModus": {
+          "aus": "Sohbet kapalı",
+          "nur_lehrkraft": "Sohbet: yalnızca öğretmenler yazar",
+          "offen": "Sohbet açık ({von}–{bis})"
+        }
+      },
+      "anwesenheit": {
+        "titel": "Yoklama",
+        "untertitel": "{gruppe} · {datum}",
+        "zurueck": "Gruba dön",
+        "ausgefallen": "Bu ders yapılmayacak olarak işaretli. Yine de yoklama alabilirsiniz.",
+        "leer": "Bu derste öğrenci yok.",
+        "erfassen": {
+          "titel": "Kimler burada?",
+          "status": {
+            "anwesend": "Burada",
+            "verspaetet": "Geç",
+            "entschuldigt": "İzinli",
+            "fehlt": "Yok"
+          },
+          "fehlmeldung": "Velisi gelemeyeceğini bildirdi",
+          "speichern": "Yoklamayı kaydet",
+          "gespeichert": "Kaydedildi.",
+          "fehler": "Kaydedilemedi. Lütfen tekrar deneyin.",
+          "alleAnwesend": "Herkes burada",
+          "zaehler": "{gesamt} öğrenciden {anwesend} burada"
+        }
+      },
+      "fortschritt": {
+        "titel": "İlerleme",
+        "zurueck": "Gruba dön",
+        "kursartLabel": "Müfredat",
+        "kursart": {
+          "elifbe": "Elifba",
+          "kuran": "Kur'an",
+          "tecvid": "Tecvid",
+          "ilmihal": "İlmihal",
+          "hifz": "Hıfz"
+        },
+        "rasterTitel": "Öğrenci başına seviyeler",
+        "hilfe": "Durumu ilerletmek için bir alana dokunun: açık → başladı → oturdu → tamamlandı → açık. Her değişiklik hemen kaydedilir.",
+        "lernende": "Öğrenciler",
+        "stufe": "Seviye {nr}",
+        "status": {
+          "offen": "açık",
+          "begonnen": "başladı",
+          "sicher": "oturdu",
+          "abgeschlossen": "tamamlandı"
+        },
+        "zelleAria": "{name}, {stufe}: {status}. Sonraki: {naechster}",
+        "gespeichert": "Kaydedildi: {name}, {stufe} – {status}",
+        "fehler": "Kaydedilemedi. Lütfen tekrar deneyin.",
+        "leer": "Bu grupta henüz öğrenci yok.",
+        "keineStufen": "Bu müfredat için henüz seviye tanımlanmadı.",
+        "legende": "Açıklama",
+        "hifz": {
+          "titel": "Hıfz kaydı",
+          "text": "Dinlenen bölümü girin: sure ve ayetler, isterseniz değerlendirmeyle.",
+          "lernende": "Öğrenci",
+          "waehlen": "Lütfen seçin",
+          "sure": "Sure",
+          "vonVers": "Başlangıç ayeti",
+          "bisVers": "Bitiş ayeti",
+          "bewertung": "Değerlendirme (isteğe bağlı)",
+          "ohne": "yok",
+          "speichern": "Kaydet",
+          "gespeichert": "Kaydedildi.",
+          "fehler": "Kaydedilemedi. Lütfen sureyi ve ayetleri kontrol edin.",
+          "zuletzt": "Son kayıtlar",
+          "leer": "Henüz kayıt yok.",
+          "eintrag": "Sure {sure}, ayet {von}–{bis}",
+          "bewertet": "Değerlendirme: 5 üzerinden {wert}",
+          "verseMax": "Bu surede {anzahl} ayet var."
+        }
+      },
+      "moderation": {
+        "titel": "Moderasyon",
+        "zurueck": "Gruba dön",
+        "einleitung": "Grup sohbetinden ve veli kanalından gelen bildirimleri burada işlersiniz. Her işlem kısa bir gerekçe ister ve değiştirilemez moderasyon kaydına yazılır.",
+        "eigene": "Kendi mesajlarınızla ilgili bildirimleri burada görmezsiniz – bunlar doğrudan çocuk koruma sorumlusuna gider.",
+        "kinderschutz": "Bir çocuk için tehlike varsa hemen çocuk koruma sorumlusuna haber verin: [İletişim – cemaat tarafından].",
+        "kanaeleTitel": "Kanallar",
+        "kanal": { "gruppe": "Grup sohbeti", "eltern": "Veli kanalı" },
+        "kanalStatus": { "aktiv": "açık", "pausiert": "duraklatıldı", "archiviert": "arşivlendi" },
+        "keineKanaele": "Kanallar, grubun sohbeti ilk kez açıldığında oluşur.",
+        "pausieren": "Kanalı duraklat",
+        "fortsetzen": "Kanalı yeniden aç",
+        "pauseGrund": "Gerekçe (kayda geçer)",
+        "meldungenTitel": "Açık bildirimler",
+        "leer": "Açık bildirim yok.",
+        "gemeldetAm": "Bildirim tarihi: {zeit}",
+        "meldungStatus": { "offen": "yeni", "in_bearbeitung": "işlemde" },
+        "absender": "Gönderen: {name}",
+        "absenderUnbekannt": "Gönderen artık bilinmiyor",
+        "nachrichtEntfernt": "Mesaj zaten kaldırıldı",
+        "ansehen": "Gör ve işle",
+        "ansehenAria": "Gör ve işle: {zeit} tarihli bildirim",
+        "schliessen": "Görünümü kapat",
+        "kontextTitel": "Bildirilen mesajın çevresindeki yazışma",
+        "kontextHinweis": "Görüntülemeniz moderasyon kaydına yazılır.",
+        "kontextLeer": "Yazışma artık mevcut değil.",
+        "gemeldet": "bildirildi",
+        "entfernt": "kaldırıldı",
+        "freitext": "Bildiren kişinin notu",
+        "massnahmeTitel": "İşlem",
+        "massnahme": {
+          "entfernen": "Mesajı kaldır",
+          "stumm30": "Göndereni 30 dakika sustur",
+          "stummTag": "Göndereni 24 saat sustur",
+          "mitglied": "Öğrenciyi gruptan çıkar",
+          "in_bearbeitung": "“İşlemde” olarak işaretle",
+          "erledigt": "Başka işlem yapmadan kapat"
+        },
+        "abschliessen": "Bildirimi bununla kapat",
+        "begruendung": "Gerekçe (kayda geçer)",
+        "begruendungHilfe": "En az 3 karakter, nesnel ve isim yazmadan.",
+        "ausfuehren": "Uygula",
+        "ok": {
+          "entfernen": "Mesaj kaldırıldı.",
+          "stumm": "Gönderen susturuldu.",
+          "mitglied": "Grup üyeliği sona erdi.",
+          "in_bearbeitung": "Bildirim işlemde.",
+          "erledigt": "Bildirim kapatıldı.",
+          "pausiert": "Kanal duraklatıldı.",
+          "fortgesetzt": "Kanal yeniden açık."
+        },
+        "fehler": {
+          "grund": "Lütfen en az 3 karakterlik bir gerekçe yazın.",
+          "nichtMoeglich": "Bu işlem burada yapılamaz.",
+          "allgemein": "Bu işlem olmadı. Lütfen tekrar deneyin."
+        }
+      }
+    }
+  },
+  "en": {
+    "unterricht": {
+      "meta": {
+        "uebersicht": "Teaching",
+        "gruppe": "Group",
+        "anwesenheit": "Attendance",
+        "fortschritt": "Progress",
+        "moderation": "Moderation"
+      },
+      "titel": "Teaching",
+      "untertitel": "Your groups and today's lessons.",
+      "rolle": { "lehrkraft": "Teacher", "aufsicht": "Supervisor" },
+      "heute": {
+        "titel": "Today",
+        "leer": "No lessons today.",
+        "anwesenheit": "Take attendance",
+        "anwesenheitAria": "Take attendance: {gruppe}, {zeit}",
+        "korrigieren": "View attendance",
+        "korrigierenAria": "View attendance: {gruppe}, {zeit}",
+        "erfasst": "{anzahl} recorded",
+        "ausgefallen": "Cancelled"
+      },
+      "woche": {
+        "titel": "The next few days",
+        "leer": "No lessons are planned for the next six days."
+      },
+      "gruppen": {
+        "titel": "Your groups",
+        "leer": "You have not been assigned to a group yet. The education department assigns teachers and supervisors to groups.",
+        "oeffnen": "Open group",
+        "oeffnenAria": "Open group: {gruppe}",
+        "lernende": "{anzahl, plural, one {# learner} other {# learners}}",
+        "meldungen": "{anzahl, plural, one {# open report} other {# open reports}}"
+      },
+      "gruppe": {
+        "zurueck": "Back to overview",
+        "lernendeTitel": "Learners",
+        "lernendeLeer": "There are no learners in this group yet.",
+        "fehltAm": "Excused for {daten}",
+        "leitungTitel": "Group leaders",
+        "ich": "You",
+        "termineTitel": "Upcoming lessons",
+        "termineLeer": "No lessons planned. The education department sets up the schedule.",
+        "vergangeneTitel": "Recent lessons",
+        "anwesenheit": "Attendance",
+        "anwesenheitAria": "Attendance: {datum}",
+        "erfasst": "{anzahl} recorded",
+        "nichtErfasst": "not recorded yet",
+        "ausfall": "Cancel lesson",
+        "ausfallAria": "Cancel lesson: {datum}",
+        "findetStatt": "Lesson takes place",
+        "findetStattAria": "Lesson takes place: {datum}",
+        "ausgefallen": "Cancelled",
+        "werkzeuge": "Tools",
+        "fortschritt": "Progress",
+        "fortschrittText": "Set levels and record hifz.",
+        "moderation": "Moderation",
+        "moderationText": "Handle reports from the chat, pause channels.",
+        "chatGruppe": "Group chat",
+        "chatGruppeText": "Write with the learners.",
+        "chatEltern": "Parents' channel",
+        "chatElternText": "Write with the group's parents.",
+        "chatModus": {
+          "aus": "Chat off",
+          "nur_lehrkraft": "Chat: teachers only",
+          "offen": "Chat open ({von}–{bis})"
+        }
+      },
+      "anwesenheit": {
+        "titel": "Attendance",
+        "untertitel": "{gruppe} · {datum}",
+        "zurueck": "Back to group",
+        "ausgefallen": "This lesson is marked as cancelled. You can still record attendance.",
+        "leer": "There are no learners for this lesson.",
+        "erfassen": {
+          "titel": "Who is here?",
+          "status": {
+            "anwesend": "Here",
+            "verspaetet": "Late",
+            "entschuldigt": "Excused",
+            "fehlt": "Absent"
+          },
+          "fehlmeldung": "Excused by the parents",
+          "speichern": "Save attendance",
+          "gespeichert": "Saved.",
+          "fehler": "Not saved. Please try again.",
+          "alleAnwesend": "Everyone here",
+          "zaehler": "{anwesend} of {gesamt} here"
+        }
+      },
+      "fortschritt": {
+        "titel": "Progress",
+        "zurueck": "Back to group",
+        "kursartLabel": "Curriculum",
+        "kursart": {
+          "elifbe": "Elifba",
+          "kuran": "Quran",
+          "tecvid": "Tajwid",
+          "ilmihal": "Ilmihal",
+          "hifz": "Hifz"
+        },
+        "rasterTitel": "Levels per learner",
+        "hilfe": "Tap a cell to move the status on: open → started → secure → completed → open. Every change is saved straight away.",
+        "lernende": "Learners",
+        "stufe": "Level {nr}",
+        "status": {
+          "offen": "open",
+          "begonnen": "started",
+          "sicher": "secure",
+          "abgeschlossen": "completed"
+        },
+        "zelleAria": "{name}, {stufe}: {status}. Next: {naechster}",
+        "gespeichert": "Saved: {name}, {stufe} – {status}",
+        "fehler": "Not saved. Please try again.",
+        "leer": "There are no learners in this group yet.",
+        "keineStufen": "No levels have been set up for this curriculum yet.",
+        "legende": "Key",
+        "hifz": {
+          "titel": "Record hifz",
+          "text": "Record a section you have heard: surah and verses, with a rating if you like.",
+          "lernende": "Learner",
+          "waehlen": "Please choose",
+          "sure": "Surah",
+          "vonVers": "From verse",
+          "bisVers": "To verse",
+          "bewertung": "Rating (optional)",
+          "ohne": "none",
+          "speichern": "Record",
+          "gespeichert": "Recorded.",
+          "fehler": "Not recorded. Please check the surah and verses.",
+          "zuletzt": "Recently recorded",
+          "leer": "No entries yet.",
+          "eintrag": "Surah {sure}, verses {von}–{bis}",
+          "bewertet": "Rating {wert} of 5",
+          "verseMax": "This surah has {anzahl} verses."
+        }
+      },
+      "moderation": {
+        "titel": "Moderation",
+        "zurueck": "Back to group",
+        "einleitung": "Here you handle reports from the group chat and the parents' channel. Every action needs a short reason and is written to the tamper-proof moderation log.",
+        "eigene": "You will not see reports about your own messages here – they go straight to the child protection contact.",
+        "kinderschutz": "If a child may be in danger, inform the child protection contact immediately: [contact – from the community].",
+        "kanaeleTitel": "Channels",
+        "kanal": { "gruppe": "Group chat", "eltern": "Parents' channel" },
+        "kanalStatus": { "aktiv": "open", "pausiert": "paused", "archiviert": "archived" },
+        "keineKanaele": "The channels are created when someone opens the group's chat for the first time.",
+        "pausieren": "Pause channel",
+        "fortsetzen": "Resume channel",
+        "pauseGrund": "Reason (logged)",
+        "meldungenTitel": "Open reports",
+        "leer": "No open reports.",
+        "gemeldetAm": "Reported on {zeit}",
+        "meldungStatus": { "offen": "new", "in_bearbeitung": "in progress" },
+        "absender": "Message from {name}",
+        "absenderUnbekannt": "Sender no longer known",
+        "nachrichtEntfernt": "Message already removed",
+        "ansehen": "View and handle",
+        "ansehenAria": "View and handle: report from {zeit}",
+        "schliessen": "Close view",
+        "kontextTitel": "Conversation around the reported message",
+        "kontextHinweis": "Your access is recorded in the moderation log.",
+        "kontextLeer": "The conversation is no longer available.",
+        "gemeldet": "reported",
+        "entfernt": "removed",
+        "freitext": "Note from the person reporting",
+        "massnahmeTitel": "Action",
+        "massnahme": {
+          "entfernen": "Remove message",
+          "stumm30": "Mute sender for 30 minutes",
+          "stummTag": "Mute sender for 24 hours",
+          "mitglied": "Remove learner from the group",
+          "in_bearbeitung": "Mark as “in progress”",
+          "erledigt": "Close without further action"
+        },
+        "abschliessen": "Close the report with this",
+        "begruendung": "Reason (logged)",
+        "begruendungHilfe": "At least 3 characters, factual and without names.",
+        "ausfuehren": "Apply",
+        "ok": {
+          "entfernen": "The message has been removed.",
+          "stumm": "The sender has been muted.",
+          "mitglied": "The group membership has ended.",
+          "in_bearbeitung": "The report is in progress.",
+          "erledigt": "The report is closed.",
+          "pausiert": "The channel is paused.",
+          "fortgesetzt": "The channel is open again."
+        },
+        "fehler": {
+          "grund": "Please give a reason of at least 3 characters.",
+          "nichtMoeglich": "This action is not possible here.",
+          "allgemein": "That did not work. Please try again."
+        }
+      }
+    }
+  }
+}

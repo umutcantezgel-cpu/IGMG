@@ -57,11 +57,11 @@ export async function POST(anfrage: Request) {
   if (konto?.istKind && !(await kindDarfPush(konto.benutzerId))) return antwort(403, { fehler: 'einwilligung' });
   // Chat und Unterricht nur mit Konto (Inhalte gehören zu einer Person); anonym bleiben Gebet und Ankündigung
   const themen = konto ? eingabe.data.themen : eingabe.data.themen.filter((t) => t === 'gebet' || t === 'ankuendigung');
-  const ergebnis = await speichereAbo(
-    { ...eingabe.data, themen },
-    konto?.benutzerId ?? null,
-    `${nachrichten.de.push.einwilligung}|${nachrichten.tr.push.einwilligung}|${nachrichten.en.push.einwilligung}`,
-  );
+  // Kinder sehen den Wortlaut in Du-Form (Mein Bereich › Benachrichtigungen): Version aus genau diesem Text
+  const wortlaut = konto?.istKind
+    ? `${nachrichten.de.push.kind.einwilligung}|${nachrichten.tr.push.kind.einwilligung}|${nachrichten.en.push.kind.einwilligung}`
+    : `${nachrichten.de.push.einwilligung}|${nachrichten.tr.push.einwilligung}|${nachrichten.en.push.einwilligung}`;
+  const ergebnis = await speichereAbo({ ...eingabe.data, themen }, konto?.benutzerId ?? null, wortlaut);
   if (ergebnis.neu) {
     after(async () => {
       const [abo] = await db.select().from(schema.pushAbo).where(eq(schema.pushAbo.id, ergebnis.id));
