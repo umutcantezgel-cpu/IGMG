@@ -3,9 +3,9 @@
 import { useDeferredValue, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { klassen } from '@/lib/klassen';
 
-export type TabSchluessel = 'heute' | 'monat' | 'qibla' | 'einstellungen';
+export type TabSchluessel = 'heute' | 'ort' | 'monat' | 'qibla' | 'einstellungen';
 
-const REIHENFOLGE: TabSchluessel[] = ['heute', 'monat', 'qibla', 'einstellungen'];
+const REIHENFOLGE: TabSchluessel[] = ['heute', 'ort', 'monat', 'qibla', 'einstellungen'];
 
 /**
  * Tab-Leiste der Gebetszeiten (design/PrayerTimes.dc.html, Blatt S02). Nach dem WAI-ARIA-Muster „Tabs“:

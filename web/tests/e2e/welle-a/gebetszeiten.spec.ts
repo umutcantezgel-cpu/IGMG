@@ -1,15 +1,16 @@
 import { expect, test } from '@playwright/test';
 import gebetszeiten from '../../../messages/bereiche/gebetszeiten.json';
+import meinOrt from '../../../messages/bereiche/mein-ort.json';
 
 /**
- * E2E Welle A (Kennung A23b), Ablauf 3: Gebetszeiten. Die Reiter Heute, Monatlich, Qibla und Einstellungen wechseln mit
+ * E2E Welle A (Kennung A23b), Ablauf 3: Gebetszeiten. Die Reiter Heute, Mein Ort, Monatlich, Qibla und Einstellungen wechseln mit
  * Tastatur und Klick. Der Qibla-Kompass hört erst nach „Kompass aktivieren“ auf Lagesensoren und zeigt danach einen
  * Hinweis. Der Link „Vollbild“ führt zur Anzeige. Texte aus messages/bereiche/gebetszeiten.json (de).
  */
 
 const t = gebetszeiten.de.gebetszeiten;
 const q = gebetszeiten.de.gebetszeitenQibla;
-const REITER = [t.tabHeute, t.tabMonat, t.tabQibla, t.tabEinstellungen] as const;
+const REITER = [t.tabHeute, meinOrt.de.meinOrt.tab, t.tabMonat, t.tabQibla, t.tabEinstellungen] as const;
 
 /** Der Erstbesuch-Hinweis (Konzeptseite) ist vorab als gesehen markiert, damit er Tastatur und Klicks nicht verdeckt. */
 test.beforeEach(async ({ context }) => {
@@ -22,7 +23,9 @@ test.beforeEach(async ({ context }) => {
   });
 });
 
-test('Reiter Heute, Monatlich, Qibla und Einstellungen: Pfeiltasten, Pos1 und Ende; aria-selected und Panel stimmen', async ({ page }) => {
+test('Reiter Heute, Mein Ort, Monatlich, Qibla und Einstellungen: Pfeiltasten, Pos1 und Ende; aria-selected und Panel stimmen', async ({
+  page,
+}) => {
   await page.goto('/gebetszeiten');
   const liste = page.getByRole('tablist', { name: t.ansichtAria, exact: true });
   const reiter = (name: string) => liste.getByRole('tab', { name, exact: true });
@@ -44,11 +47,11 @@ test('Reiter Heute, Monatlich, Qibla und Einstellungen: Pfeiltasten, Pos1 und En
   await page.keyboard.press('ArrowRight');
   await pruefeAuswahl(REITER[2]);
   await page.keyboard.press('End');
-  await pruefeAuswahl(REITER[3]);
+  await pruefeAuswahl(REITER[4]);
   await page.keyboard.press('ArrowRight');
   await pruefeAuswahl(REITER[0]);
   await page.keyboard.press('ArrowLeft');
-  await pruefeAuswahl(REITER[3]);
+  await pruefeAuswahl(REITER[4]);
   await page.keyboard.press('Home');
   await pruefeAuswahl(REITER[0]);
 

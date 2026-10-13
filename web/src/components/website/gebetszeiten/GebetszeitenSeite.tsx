@@ -43,7 +43,7 @@ export type GebetszeitenSeiteProps = {
   /** Kalendertag des Servers beim Rendern; bis zur Hydrierung und ohne Browserzeit gilt er. */
   referenz: string;
   texte: GebetszeitenSeiteTexte;
-  panels: Record<'monat' | 'qibla' | 'einstellungen', ReactNode>;
+  panels: Record<'ort' | 'monat' | 'qibla' | 'einstellungen', ReactNode>;
   /** Symbole der Tabs, auf dem Server gerendert (GebetszeitenTabs). */
   tabSymbole: Record<TabSchluessel, ReactNode>;
 };
@@ -145,6 +145,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }:
               <TagesbogenLive ruhig tage={tage} referenz={referenz} texte={bogenTexte} className="lg:order-first lg:col-span-2" />
             </div>
           ),
+          ort: panels.ort,
           monat: panels.monat,
           qibla: panels.qibla,
           einstellungen: panels.einstellungen,

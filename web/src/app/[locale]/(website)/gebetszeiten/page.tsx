@@ -1,9 +1,10 @@
-import { CalendarDays, Compass, Info, MapPin, Maximize, Printer, Settings, Sun } from 'lucide-react';
+import { CalendarDays, Compass, Info, List, LocateFixed, MapPin, Maximize, Printer, Settings, Sun } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
 import { EinstellungenPanel } from '@/components/website/gebetszeiten/EinstellungenPanel';
 import { GebetszeitenSeite } from '@/components/website/gebetszeiten/GebetszeitenSeite';
+import { MeinOrt, type MeinOrtTexte } from '@/components/website/gebetszeiten/MeinOrt';
 import { MonatsTabelle } from '@/components/website/gebetszeiten/MonatsTabelle';
 import { QiblaPanel } from '@/components/website/gebetszeiten/QiblaPanel';
 import { datumMitJahr, folgemonat, METHODEN_ANZEIGE, monatsname } from '@/components/website/gebetszeiten/zeiten';
@@ -42,6 +43,7 @@ export default async function GebetszeitenSeitePage() {
   const tl = await getTranslations('leiste');
   const tk = await getTranslations('kopf');
   const ts = await getTranslations('start');
+  const to = await getTranslations('meinOrt');
   const [tDe, tTr, tEn] = await Promise.all([
     getTranslations({ locale: 'de', namespace: 'leiste' }),
     getTranslations({ locale: 'tr', namespace: 'leiste' }),
@@ -83,6 +85,80 @@ export default async function GebetszeitenSeitePage() {
         />
       ))}
     </div>
+  );
+
+  const ortTexte: MeinOrtTexte = {
+    ...(Object.fromEntries(
+      (
+        [
+          'titel',
+          'einleitung',
+          'standortVerwenden',
+          'ortWaehlen',
+          'datenschutz',
+          'ohneJs',
+          'laedt',
+          'sucht',
+          'verweigert',
+          'nichtVerfuegbar',
+          'spaeter',
+          'frueher',
+          'fehler',
+          'ortLabel',
+          'ortBitteWaehlen',
+          'gruppeUmgebung',
+          'gruppeWeitere',
+          'eigenerStandort',
+          'hinweisBerechnet',
+          'spalteGebet',
+          'spalteZeit',
+          'spalteUnterschied',
+          'unterschiedGleich',
+          'naechstes',
+          'qiblaTitel',
+          'merken',
+          'vergessen',
+          'gemerktHinweis',
+          'andererOrt',
+        ] as const
+      ).map((k) => [k, to(k)]),
+    ) as Omit<
+      MeinOrtTexte,
+      | 'namen'
+      | 'zeitenFuer'
+      | 'naehe'
+      | 'entfernungMoschee'
+      | 'zeitzone'
+      | 'unterschiedPlus'
+      | 'unterschiedMinus'
+      | 'qiblaWert'
+      | 'qiblaAria'
+    >),
+    zeitenFuer: to.raw('zeitenFuer'),
+    entfernungMoschee: to.raw('entfernungMoschee'),
+    zeitzone: to.raw('zeitzone'),
+    unterschiedPlus: to.raw('unterschiedPlus'),
+    unterschiedMinus: to.raw('unterschiedMinus'),
+    unterschiedVorlesen: to.raw('unterschiedVorlesen'),
+    naehe: to.raw('naehe'),
+    qiblaWert: to.raw('qiblaWert'),
+    qiblaAria: to.raw('qiblaAria'),
+    namen,
+  };
+  const ortPanel = (
+    <MeinOrt
+      texte={ortTexte}
+      sprache={BOGEN_LOCALE[sprache]}
+      einstellungen={{
+        methode: einst.methode,
+        madhab: einst.madhab,
+        hoheBreite: einst.hoheBreite,
+        anpassungen: einst.anpassungen,
+        breite: einst.breite,
+        laenge: einst.laenge,
+      }}
+      symbole={{ gps: <LocateFixed aria-hidden className="size-5" />, liste: <List aria-hidden className="size-5" /> }}
+    />
   );
 
   const einstellungenPanel = methode ? (
@@ -157,6 +233,7 @@ export default async function GebetszeitenSeitePage() {
             ansichtAria: t('ansichtAria'),
             tabs: {
               heute: t('tabHeute'),
+              ort: to('tab'),
               monat: t('tabMonat'),
               qibla: t('tabQibla'),
               einstellungen: t('tabEinstellungen'),
@@ -164,11 +241,13 @@ export default async function GebetszeitenSeitePage() {
           }}
           tabSymbole={{
             heute: <Sun aria-hidden className="size-5" />,
+            ort: <LocateFixed aria-hidden className="size-5" />,
             monat: <CalendarDays aria-hidden className="size-5" />,
             qibla: <Compass aria-hidden className="size-5" />,
             einstellungen: <Settings aria-hidden className="size-5" />,
           }}
           panels={{
+            ort: ortPanel,
             monat: monatPanel,
             qibla: <QiblaPanel sprache={sprache} ort={ort} breite={einst.breite} laenge={einst.laenge} />,
             einstellungen: einstellungenPanel,

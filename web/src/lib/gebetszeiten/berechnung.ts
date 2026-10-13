@@ -6,7 +6,16 @@ import { GEBETE, STANDARD_EINSTELLUNGEN, type Berechnungseinstellungen, type Tag
  * Imsak = Fajr (18° bei „Turkey“, ohne Temkin; MENSCHEN M-017a).
  */
 const ZONE = 'Europe/Berlin';
-const zeitFormat = new Intl.DateTimeFormat('de-DE', { timeZone: ZONE, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+const formate = new Map<string, Intl.DateTimeFormat>();
+/** „HH:MM“ in der Zeitzone `zone` (Standard Europe/Berlin; „Mein Ort“ nutzt die Zeitzone des Geräts). */
+function zeitFormat(zone: string): Intl.DateTimeFormat {
+  let format = formate.get(zone);
+  if (!format) {
+    format = new Intl.DateTimeFormat('de-DE', { timeZone: zone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+    formate.set(zone, format);
+  }
+  return format;
+}
 
 function parameter(e: Berechnungseinstellungen) {
   const p = CalculationMethod[e.methode]();
@@ -26,8 +35,8 @@ function parameter(e: Berechnungseinstellungen) {
   return p;
 }
 
-/** Tageszeiten für ein Datum „JJJJ-MM-TT“ (Kalenderdatum in Europe/Berlin). */
-export function berechneTag(datum: string, e: Berechnungseinstellungen = STANDARD_EINSTELLUNGEN): Tageszeiten {
+/** Tageszeiten für ein Datum „JJJJ-MM-TT“ (Kalenderdatum in `zone`, Standard Europe/Berlin). */
+export function berechneTag(datum: string, e: Berechnungseinstellungen = STANDARD_EINSTELLUNGEN, zone = ZONE): Tageszeiten {
   const [j, m, t] = datum.split('-').map(Number);
   // adhan liest Jahr/Monat/Tag über die lokalen Getter – deshalb lokaler Konstruktor (unabhängig von der Server-Zeitzone)
   const zeiten = new PrayerTimes(new Coordinates(e.breite, e.laenge), new Date(j, m - 1, t, 12), parameter(e));
@@ -39,7 +48,8 @@ export function berechneTag(datum: string, e: Berechnungseinstellungen = STANDAR
     aksam: zeiten.maghrib,
     yatsi: zeiten.isha,
   };
-  return Object.fromEntries(GEBETE.map((g) => [g, zeitFormat.format(werte[g])])) as Tageszeiten;
+  const format = zeitFormat(zone);
+  return Object.fromEntries(GEBETE.map((g) => [g, format.format(werte[g])])) as Tageszeiten;
 }
 
 /** Alle Tage eines Monats „JJJJ-MM“. */

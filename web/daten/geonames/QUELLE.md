@@ -17,8 +17,10 @@ Nicht im Repo: `DE.zip` (nur im Scratchpad). Der Zip-Inhalt `DE.txt` ist die Gru
 | `DE.txt` (aus DE.zip) | 28192053 | `5afa14f06e5856cfb522945f647dfd06d042f4486cbf983425fef1d4b98aaf5b` | nein |
 | `admin1CodesASCII.txt` | 151583 | `1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a` | ja |
 | `readme.txt` | 8843 | `b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5` | ja |
-| `erzeuge.mjs` (Skript) | 4071 | `cae676ee581672810d74249f74cb0dfd9538746924db82bf95edbbbf9c073b5a` | ja |
-| `orte.json` (erzeugt) | 18570 | `7189909e5983953a8ca52743b0310a563144574528a73cb753e1aeba54b7398b` | ja |
+| `alternatenames/DE.zip` (Quelle deutscher Namen, Abruf 2026-10-13) | 4017959 | `7b46807f7f366240eb47a1ed102a14ec6a0d28f26b2cd2dba1b94445175b46ea` | nein |
+| `erzeuge.mjs` (Skript) | 6322 | `46c4301088353bcc9bfd805fd55be8e813753865871d3a9060ece29cf1e9784a` | ja |
+| `orte.json` (erzeugt) | 32872 | `d3f029d76e7a0e6a9574636543cf927c42a00c09a2b8ce2f867a85c8904cc0dd` | ja |
+| `web/src/lib/gebetszeiten/orte.json` (erzeugt, kompakt für den Browser) | 7809 | `d22a9ef63b80d1ca9085f86e09af627fbae189b5408bd93e93d76389aaec22cc` | ja |
 
 ## Lizenz (wörtlich aus readme.txt)
 
@@ -34,22 +36,23 @@ Bedingungen auf https://www.geonames.org/export/ (wörtlich, Auszug): „cc-by l
 
 ## Auswahl und Erzeugung
 
-Erzeugt mit `erzeuge.mjs` (Aufruf: `node erzeuge.mjs <DE.txt|DE.zip> admin1CodesASCII.txt`):
+Erzeugt mit `erzeuge.mjs` (Aufruf: `node erzeuge.mjs DE.zip admin1CodesASCII.txt orte.json alternatenames/DE.zip ../../src/lib/gebetszeiten/orte.json`):
 
-- Feature-Klasse `P`.
-- Hessen (admin1 `05`) mit mindestens 15.000 Einwohnern, plus alle deutschen Orte mit mindestens 200.000 Einwohnern.
-- Felder: `name` (GeoNames-Hauptname), `breite`, `laenge` (auf 5 Nachkommastellen gerundete Zahlen), `einwohner`, `bundesland` (deutsch).
+- Feature-Klasse `P` ohne Ortsteile (Feature-Codes `PPLX`, `PPLH`, `PPLQ`, `PPLW`).
+- Hessen (admin1 `05`) mit mindestens 10.000 Einwohnern, Orte im Umkreis von 40 km um Wetzlar mit mindestens 3.000 Einwohnern,
+  plus alle deutschen Orte mit mindestens 200.000 Einwohnern.
+- Felder: `name` (bevorzugter deutscher Name aus `alternatenames`, sonst GeoNames-Hauptname), `breite`, `laenge` (5 Nachkommastellen),
+  `einwohner`, `bundesland` (deutsch).
 - Sortierung: Einwohner absteigend, dann Name.
+- Kompakte Browserliste: `[Name, Breite, Länge]`; doppelte Namen erhalten das Bundesland in Klammern (z. B. „Münster (Hessen)“).
 
-Ergebnis: 137 Orte. Davon 94 in Hessen (alle mit mindestens 15.000 Einwohnern). 45 Orte haben mindestens 200.000 Einwohner.
+Ergebnis: 245 Orte, davon 205 in Hessen, 38 mit mindestens 200.000 Einwohnern.
 
 ## Prüfung
 
 - Admin1-Codes: `admin1CodesASCII.txt` bestätigt `DE.05` = „Hesse“ (Hessen). Das Skript prüft alle 16 Codes gegen die englischen Namen. Ergebnis: bestanden.
-- Stichproben: Frankfurt am Main 650000, Hessen. Wetzlar 52656, Hessen.
-- Alle Einträge haben Bundesland und Einwohnerzahl.
+- Deutsche Namen: „München“, „Nürnberg“, „Freiburg im Breisgau“ statt der englischen Hauptnamen; Stadtbezirke (Wandsbek, Altona …) entfallen.
 
-## Offene Fragen
-
-- OFFENE FRAGE: Stadtbezirke und Ortsteile zählen als „Orte“ und erreichen 200.000 Einwohner. Beispiele: Wandsbek, Hamburg-Nord, Altona, Eimsbüttel, Hamburg-Mitte, Marienthal, Neue Neustadt. Ausschließen oder behalten?
-- OFFENE FRAGE: Das Feld `name` ist der GeoNames-Hauptname. Er ist teils englisch, z. B. „Munich“, „Nuremberg“. Deutsche Namen oder `asciiname` verwenden?
+## Verwendung
+- Gebetszeiten „Mein Ort“: nächster Ort zum (im Browser gerundeten) Standort und Ortsauswahl ohne GPS. Die Liste lädt erst nach einem Klick;
+  Koordinaten verlassen das Gerät nie (Z-19).
