@@ -83,7 +83,7 @@ export async function MeinBereichRahmen({
   return (
     <KontoHuelle seite="mein-bereich" sprachZiel={sprachZiel} pfad={pfad}>
       <PageHeader kennung={t('kennung')} titel={titel} untertitel={untertitel} />
-      <div className="mx-auto grid max-w-(--container-inhalt) gap-8 px-4 pt-6 pb-abschnitt md:px-8 md:pt-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12">
+      <div className="mx-auto grid max-w-(--container-inhalt) gap-8 px-4 pt-6 pb-abschnitt md:px-8 md:pt-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12 print:block">
         <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-6 lg:self-start print:hidden">
           <div className="hidden items-center gap-3 rounded-lg border border-linie bg-weiss p-4 lg:flex">
             <span

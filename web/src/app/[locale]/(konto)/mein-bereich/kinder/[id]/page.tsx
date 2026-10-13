@@ -316,7 +316,15 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
                       </h3>
                       {nurKind ? null : <Pille ton={e.aktiv ? 'gruen' : 'sand'}>{t(e.aktiv ? 'aktiv' : 'inaktiv')}</Pille>}
                     </div>
-                    <p className="text-16 text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
+                    {e.aktiv || nurKind ? (
+                      // Erteilt: Wortlaut zum Nachlesen aufklappbar (vor dem Erteilen steht er immer offen da)
+                      <details className="text-16">
+                        <summary className="flex min-h-12 cursor-pointer items-center font-bold text-gruen-800">{t('wortlaut')}</summary>
+                        <p className="text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
+                      </details>
+                    ) : (
+                      <p className="text-16 text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
+                    )}
                     <p className="text-16 text-tinte-2">
                       {nurKind
                         ? null

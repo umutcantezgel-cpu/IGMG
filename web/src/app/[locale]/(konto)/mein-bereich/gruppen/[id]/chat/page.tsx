@@ -10,6 +10,7 @@ import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { kanaeleDerGruppe, ladeKanal, schreibLage } from '@/lib/chat/dienst';
+import { echtzeitAusUmgebung } from '@/lib/echtzeit/konfig';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text } from '@/lib/i18n/inhalt';
@@ -117,6 +118,7 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
     getTranslations('gruppenSeite'),
     eigeneEinwilligungen(kontext, heute),
   ]);
+  const tu = await getTranslations('unterricht');
 
   const leitung = kontext.leitung.has(g.id);
   const schueler = wahl === 'gruppe' && !leitung && kontext.eigeneLernendeId !== null;
@@ -135,7 +137,7 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
         params: { id: g.id },
         ...(wahl === 'eltern' ? { query: { kanal: wahl } } : {}),
       }}
-      zwischen={[{ label: name, ziel: { pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } } }]}
+      zwischen={[{ label: tu('meta.gruppe'), ziel: { pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } } }]}
     >
       <ZurueckLink ziel={{ pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } }} text={ts('zurGruppe')} />
       {erlaubt.length > 1 ? (
@@ -189,7 +191,13 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
           </div>
         </section>
       ) : (
-        <ChatFenster kanalId={kanal.kanalId} texte={chatTexte(t, wahl, sie)} istLeitung={leitung} zeitformat={localeFuer(sprache)} />
+        <ChatFenster
+          kanalId={kanal.kanalId}
+          texte={chatTexte(t, wahl, sie)}
+          istLeitung={leitung}
+          zeitformat={localeFuer(sprache)}
+          echtzeit={echtzeitAusUmgebung() !== null && (await funktionAn('echtzeit'))}
+        />
       )}
 
       <aside aria-label={t('chatRegeln.titel')} className="flex flex-col gap-2 rounded-lg bg-sand px-5 py-4 text-16 text-tinte-2">

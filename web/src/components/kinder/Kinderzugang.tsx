@@ -200,13 +200,15 @@ export function Kinderzugang({
             <path d="M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z" fill="currentColor" />
           </svg>
         </div>
-        <dl className="grid gap-3 sm:grid-cols-[auto_minmax(0,1fr)] sm:gap-x-6">
+        <dl className="grid gap-3 sm:grid-cols-3 sm:gap-x-6">
           <dt className="text-16 font-bold text-tinte-2">{texte.anmeldung}</dt>
-          <dd className="font-mono text-18 break-all">{adresse}</dd>
+          <dd className="font-mono text-18 break-all sm:col-span-2">{adresse}</dd>
           <dt className="text-16 font-bold text-tinte-2">{texte.benutzername}</dt>
-          <dd className="font-mono text-20 font-bold">{name}</dd>
+          <dd className="font-mono text-20 font-bold sm:col-span-2">{name}</dd>
           <dt className="text-16 font-bold text-tinte-2">{texte.passwortZeile}</dt>
-          <dd className={klassen('font-mono', ergebnis.passwort ? 'text-20 font-bold tracking-wide' : 'text-16 text-tinte-2')}>
+          <dd
+            className={klassen('font-mono sm:col-span-2', ergebnis.passwort ? 'text-20 font-bold tracking-wide' : 'text-16 text-tinte-2')}
+          >
             {ergebnis.passwort ?? texte.passwortLeer}
           </dd>
         </dl>

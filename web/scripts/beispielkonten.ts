@@ -9,7 +9,8 @@
 // nie in Dateien. Adressen unter `.invalid` (RFC 2606): Der Mail-Ausgang weist sie ab, es geht keine Mail hinaus.
 //
 // Lernplattform (Paket O-L02-UI/H-L06/H-L07): eine Beispielgruppe mit zwei Erwachsenen in der Leitung (Lehrkraft und
-// Aufsicht, S-02), drei Lernenden (zwei Kinder des Elternkontos mit Kinderzugang, eines ohne), Einwilligungen, Terminen
+// Aufsicht, S-02), drei Lernenden (Geschwister des Elternkontos mit Kinderzugang; Yunus ist seit zehn Tagen 16 und steht im
+// Übergang nach DSFA D-11), Einwilligungen, Terminen
 // (Serie am Wochenende plus ein Vorführtermin heute), Anwesenheiten, Fortschritt, einer Abmeldung für heute, Nachrichten im
 // Gruppen- und Elternkanal und einer offenen Meldung. Nur Platzhalter- bzw. offensichtliche Beispielnamen.
 import { randomBytes } from 'node:crypto';
@@ -52,8 +53,9 @@ if (praefix && !/^[a-z0-9]{1,12}$/.test(praefix)) fehler('--praefix: 1–12 Zeic
 const adresse = (art: string) => (praefix ? `${art}.${praefix}@beispiel.invalid` : `${art}@beispiel.invalid`);
 const benutzername = praefix ? `kind.${praefix}` : 'kind.beispiel';
 const benutzername2 = praefix ? `kind2.${praefix}` : 'kind2.beispiel';
+const benutzername3 = praefix ? `kind3.${praefix}` : 'kind3.beispiel';
 const kennung = praefix ? ` (${praefix})` : '';
-const NAMEN = { emre: `Emre B.${kennung}`, zeynep: `Zeynep B.${kennung}`, yunus: `Yunus K.${kennung}` };
+const NAMEN = { emre: `Emre B.${kennung}`, zeynep: `Zeynep B.${kennung}`, yunus: `Yunus B.${kennung}` };
 const GRUPPE = {
   de: `[Beispielgruppe] Elifbe am Wochenende${kennung}`,
   tr: `[Örnek grup] Hafta sonu Elifba${kennung}`,
@@ -73,7 +75,7 @@ async function loesche() {
     .where(
       or(
         inArray(schema.user.email, [adresse('gemeinde'), adresse('eltern'), adresse('lehrkraft'), adresse('aufsicht')]),
-        inArray(schema.user.username, [benutzername, benutzername2]),
+        inArray(schema.user.username, [benutzername, benutzername2, benutzername3]),
       ),
     );
   if (alt.length)
@@ -109,7 +111,13 @@ async function lernende(anzeigename: string, vorname: string, sechzehnAm: string
   const paket = verschluessele({ vorname, nachname: 'Beispiel', geburtsdatum: '[fiktiv]' });
   const [z] = await db
     .insert(schema.lernende)
-    .values({ datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId, anzeigename, sechzehnAm, aufgenommenVon: 'beispielkonten' })
+    .values({
+      datenVerschluesselt: paket.daten,
+      schluesselId: paket.schluesselId,
+      anzeigename,
+      sechzehnAm,
+      aufgenommenVon: 'beispielkonten',
+    })
     .returning({ id: schema.lernende.id });
   return { id: z.id, neu: true };
 }
@@ -181,16 +189,15 @@ async function beispielgruppe(o: {
     { gruppeId: g.id, benutzerId: o.lehrkraft, rolle: 'lehrkraft' },
     { gruppeId: g.id, benutzerId: o.aufsicht, rolle: 'aufsicht' },
   ]);
-  await db.insert(schema.gruppenMitglied).values(
-    [o.emre.lernendeId, o.zeynep.lernendeId, o.yunus].map((lernendeId) => ({ gruppeId: g.id, lernendeId, seit: tagPlus(heute, -35) })),
-  );
+  await db
+    .insert(schema.gruppenMitglied)
+    .values(
+      [o.emre.lernendeId, o.zeynep.lernendeId, o.yunus].map((lernendeId) => ({ gruppeId: g.id, lernendeId, seit: tagPlus(heute, -35) })),
+    );
 
   // Termine: Serie am Wochenende (drei Wochen zurück, drei voraus) und ein Vorführtermin heute
   await erzeugeTermine(g.id, tagPlus(heute, -21), tagPlus(heute, 21));
-  await db
-    .insert(schema.unterrichtstermin)
-    .values({ gruppeId: g.id, datum: heute, beginn: '16:00', ende: '17:30' })
-    .onConflictDoNothing();
+  await db.insert(schema.unterrichtstermin).values({ gruppeId: g.id, datum: heute, beginn: '16:00', ende: '17:30' }).onConflictDoNothing();
 
   // Anwesenheit der vergangenen Termine
   const vergangen = await db
@@ -205,11 +212,13 @@ async function beispielgruppe(o: {
   ] as const;
   const kinder = [o.emre.lernendeId, o.zeynep.lernendeId, o.yunus];
   if (vergangen.length)
-    await db.insert(schema.anwesenheit).values(
-      vergangen.flatMap((t, i) =>
-        kinder.map((lernendeId, j) => ({ terminId: t.id, lernendeId, status: muster[i % muster.length][j], erfasstVon: o.lehrkraft })),
-      ),
-    );
+    await db
+      .insert(schema.anwesenheit)
+      .values(
+        vergangen.flatMap((t, i) =>
+          kinder.map((lernendeId, j) => ({ terminId: t.id, lernendeId, status: muster[i % muster.length][j], erfasstVon: o.lehrkraft })),
+        ),
+      );
   // Abmeldung der Eltern für heute (belegt die Anwesenheit mit „entschuldigt“ vor)
   await db.insert(schema.fehlmeldung).values({ lernendeId: o.zeynep.lernendeId, datum: heute, grund: 'krank', erstelltVon: o.eltern });
 
@@ -244,7 +253,11 @@ async function beispielgruppe(o: {
 
   // Chat: Gruppen- und Elternkanal mit Beispielnachrichten und einer offenen Meldung (Vorführung der Moderation)
   const kanal = await kanaeleDerGruppe(g.id);
-  await nachricht(kanal.gruppe, o.lehrkraft, 'Willkommen im Gruppenchat! Hier sprechen wir über Termine und Fragen zum Unterricht. [Beispiel]');
+  await nachricht(
+    kanal.gruppe,
+    o.lehrkraft,
+    'Willkommen im Gruppenchat! Hier sprechen wir über Termine und Fragen zum Unterricht. [Beispiel]',
+  );
   await nachricht(kanal.gruppe, o.emre.benutzerId, 'Danke! Bis Samstag. [Beispiel]');
   const gemeldet = await nachricht(kanal.gruppe, o.zeynep.benutzerId, '[Beispielnachricht für die Vorführung der Moderation]');
   await nachricht(kanal.eltern, o.lehrkraft, 'Liebe Eltern, bitte geben Sie Ihrem Kind am Samstag das Heft mit. [Beispiel]');
@@ -272,7 +285,8 @@ async function main() {
   // Kinder des Elternkontos: Lerndatensatz + Eltern-Bezug + Einwilligungen → Kinderzugang
   const emre = await lernende(NAMEN.emre, 'Emre', `${jahr + 4}-03-14`);
   const zeynep = await lernende(NAMEN.zeynep, 'Zeynep', `${jahr + 6}-06-02`);
-  const yunus = await lernende(NAMEN.yunus, 'Yunus', `${jahr + 3}-11-20`);
+  // Yunus ist seit zehn Tagen 16: Übergang (D-11) – die Einwilligung der Eltern gilt noch 20 Tage, dann zählt seine eigene
+  const yunus = await lernende(NAMEN.yunus, 'Yunus', tagPlus(heute, -10));
   if (emre.neu) {
     await db.insert(schema.elternKind).values({ elternId: eltern.id, lernendeId: emre.id, bestaetigtAm: new Date() });
     await einwilligen(emre.id, eltern.id, ['lernplattform', 'kinderkonto', 'gruppenchat']);
@@ -282,7 +296,12 @@ async function main() {
     await einwilligen(zeynep.id, eltern.id, ['lernplattform', 'kinderkonto', 'gruppenchat']);
   }
   const kind = await kinderzugang(benutzername, emre.id, eltern.id);
+  if (yunus.neu) {
+    await db.insert(schema.elternKind).values({ elternId: eltern.id, lernendeId: yunus.id, bestaetigtAm: new Date() });
+    await einwilligen(yunus.id, eltern.id, ['lernplattform', 'kinderkonto', 'gruppenchat']);
+  }
   const kind2 = await kinderzugang(benutzername2, zeynep.id, eltern.id);
+  const kind3 = await kinderzugang(benutzername3, yunus.id, eltern.id);
 
   const gruppeId = await beispielgruppe({
     lehrkraft: lehrkraft.id,
@@ -300,7 +319,16 @@ async function main() {
     aufsicht: { email: aufsicht.email, passwort: aufsicht.passwort },
     kind: { benutzername: kind.benutzername, passwort: kind.passwort },
     kind2: { benutzername: kind2.benutzername, passwort: kind2.passwort },
-    lernplattform: { gruppeId, kinder: { emre: emre.id, zeynep: zeynep.id, yunus: yunus.id } },
+    kind3: { benutzername: kind3.benutzername, passwort: kind3.passwort },
+    lernplattform: {
+      gruppeId,
+      gruppe: GRUPPE.de,
+      kinder: {
+        emre: { id: emre.id, name: NAMEN.emre },
+        zeynep: { id: zeynep.id, name: NAMEN.zeynep },
+        yunus: { id: yunus.id, name: NAMEN.yunus },
+      },
+    },
   };
   if (values.json) {
     console.log(JSON.stringify(ergebnis));

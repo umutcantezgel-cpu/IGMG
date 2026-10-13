@@ -86,19 +86,25 @@ export function Lernweg({
                 />
               ) : null}
             </div>
-            <div className={cn('flex min-w-0 flex-1 flex-col gap-0.5 pt-2.5', i < anzahl - 1 ? 'pb-4' : 'pb-0')}>
-              <span className={cn('text-16 font-bold', i <= aktuell ? 'text-gruen-800' : 'text-tinte-2')}>{stationText(s.nr)}</span>
-              <span
-                lang={s.titelLang}
-                className={cn('text-pretty', i === aktuell ? 'text-18 font-bold text-tinte' : 'text-16 text-tinte-2')}
-              >
-                {s.titel}
-              </span>
-              <span className="text-16 text-tinte-2">{s.statusText}</span>
-              {i === aktuell ? (
+            {i === aktuell ? (
+              <div className={cn('flex min-w-0 flex-1 flex-col gap-0.5 pt-2.5', i < anzahl - 1 ? 'pb-5' : 'pb-0')}>
+                <span className="text-16 font-bold text-gruen-800">{stationText(s.nr)}</span>
+                <span lang={s.titelLang} className="text-18 font-bold text-pretty text-tinte">
+                  {s.titel}
+                </span>
+                <span className="text-16 text-tinte-2">{s.statusText}</span>
                 <span className="mt-1 self-start rounded-pill bg-gruen-50 px-3 py-0.5 text-16 font-bold text-gruen-800">{jetztText}</span>
-              ) : null}
-            </div>
+              </div>
+            ) : (
+              // Übrige Stationen in einer Zeile (Telefon: kurzer Weg); der Titel bleibt für Screenreader
+              <div className={cn('flex min-w-0 flex-1 flex-wrap items-baseline gap-x-2 pt-3', i < anzahl - 1 ? 'pb-4' : 'pb-0')}>
+                <span className={cn('text-16 font-bold', i < aktuell ? 'text-gruen-800' : 'text-tinte-2')}>{stationText(s.nr)}</span>
+                <span className="text-16 text-tinte-2">{s.statusText}</span>
+                <span lang={s.titelLang} className="sr-only">
+                  {s.titel}
+                </span>
+              </div>
+            )}
           </li>
         ))}
       </ol>

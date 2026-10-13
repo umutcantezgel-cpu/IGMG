@@ -61,8 +61,8 @@ export default async function GruppenSeite({ params }: PageProps<'/[locale]/mein
       untertitel={zeiten || undefined}
       sprachZiel={{ pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } }}
     >
-      <div className="grid gap-4 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-        <section aria-labelledby="gruppe-kopf" className="flex flex-col gap-4 rounded-lg bg-gruen-950 p-6 text-weiss">
+      <div className="grid gap-4 lg:grid-cols-5">
+        <section aria-labelledby="gruppe-kopf" className="flex flex-col gap-4 rounded-lg bg-gruen-950 p-6 text-weiss lg:col-span-3">
           <h2 id="gruppe-kopf" className="sr-only">
             {name}
           </h2>
@@ -97,16 +97,18 @@ export default async function GruppenSeite({ params }: PageProps<'/[locale]/mein
           ) : null}
         </section>
 
-        <Abschnitt id="leitung" Icon={Users} titel={t('leitungTitel')}>
-          <ul className="flex flex-col gap-2">
-            {g.leitung.map((l, i) => (
-              <li key={`${l.name}-${i}`} className="flex flex-wrap items-center gap-2">
-                <span className="font-bold">{l.name}</span>
-                <Pille>{t(`rolle.${l.rolle}`)}</Pille>
-              </li>
-            ))}
-          </ul>
-        </Abschnitt>
+        <div className="min-w-0 lg:col-span-2">
+          <Abschnitt id="leitung" Icon={Users} titel={t('leitungTitel')}>
+            <ul className="flex flex-col gap-2">
+              {g.leitung.map((l, i) => (
+                <li key={`${l.name}-${i}`} className="flex flex-wrap items-center gap-2">
+                  <span className="font-bold">{l.name}</span>
+                  <Pille>{t(`rolle.${l.rolle}`)}</Pille>
+                </li>
+              ))}
+            </ul>
+          </Abschnitt>
+        </div>
       </div>
 
       <Abschnitt id="termine" Icon={CalendarDays} titel={t('termineTitel')}>

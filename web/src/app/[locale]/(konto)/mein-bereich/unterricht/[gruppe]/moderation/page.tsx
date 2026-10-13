@@ -87,10 +87,8 @@ export default async function ModerationSeite({
       titel={tm('titel')}
       untertitel={name}
       sprachZiel={ziel()}
-      zwischen={[
-        { label: t('titel'), ziel: '/mein-bereich/unterricht' },
-        { label: name, ziel: { pathname: '/mein-bereich/unterricht/[gruppe]', params: { gruppe: gruppeId } } },
-      ]}
+      // Ein kurzes Zwischenglied: Brotkrumen stehen auf dem Telefon in einer Zeile, nur das Endglied kürzt sich
+      zwischen={[{ label: t('meta.gruppe'), ziel: { pathname: '/mein-bereich/unterricht/[gruppe]', params: { gruppe: gruppeId } } }]}
     >
       <ZurueckLink ziel={{ pathname: '/mein-bereich/unterricht/[gruppe]', params: { gruppe: gruppeId } }} text={tm('zurueck')} />
       {ok ? <Meldung art="erfolg">{tm(`ok.${ok}`)}</Meldung> : null}

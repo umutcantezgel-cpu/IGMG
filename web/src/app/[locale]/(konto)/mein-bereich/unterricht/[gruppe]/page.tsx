@@ -222,35 +222,39 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
         </Abschnitt>
       ) : null}
 
-      <div className="grid gap-8 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-        <Abschnitt id="lernende" Icon={UserRound} titel={tg('lernendeTitel')}>
-          {g.lernende.length ? (
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {g.lernende.map((l) => (
-                <li key={l.id} className="flex flex-col gap-1 rounded-md bg-papier px-4 py-3">
-                  <span className="font-bold">{l.name}</span>
-                  {l.fehltAm.length ? (
-                    <span className="text-16 text-tinte-2">
-                      {tg('fehltAm', { daten: l.fehltAm.map((d) => datumText(d, sprache)).join(', ') })}
-                    </span>
-                  ) : null}
+      <div className="grid gap-8 xl:grid-cols-5">
+        <div className="min-w-0 xl:col-span-3">
+          <Abschnitt id="lernende" Icon={UserRound} titel={tg('lernendeTitel')}>
+            {g.lernende.length ? (
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {g.lernende.map((l) => (
+                  <li key={l.id} className="flex flex-col gap-1 rounded-md bg-papier px-4 py-3">
+                    <span className="font-bold">{l.name}</span>
+                    {l.fehltAm.length ? (
+                      <span className="text-16 text-tinte-2">
+                        {tg('fehltAm', { daten: l.fehltAm.map((d) => datumText(d, sprache)).join(', ') })}
+                      </span>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-tinte-2">{tg('lernendeLeer')}</p>
+            )}
+          </Abschnitt>
+        </div>
+        <div className="min-w-0 xl:col-span-2">
+          <Abschnitt id="leitung" Icon={Users} titel={tg('leitungTitel')}>
+            <ul className="flex flex-col gap-2">
+              {g.leitung.map((l, i) => (
+                <li key={`${l.name}-${i}`} className="flex flex-wrap items-center gap-2">
+                  <span className="font-bold">{l.ich ? `${l.name} (${tg('ich')})` : l.name}</span>
+                  <Pille>{t(`rolle.${l.rolle}`)}</Pille>
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="text-tinte-2">{tg('lernendeLeer')}</p>
-          )}
-        </Abschnitt>
-        <Abschnitt id="leitung" Icon={Users} titel={tg('leitungTitel')}>
-          <ul className="flex flex-col gap-2">
-            {g.leitung.map((l, i) => (
-              <li key={`${l.name}-${i}`} className="flex flex-wrap items-center gap-2">
-                <span className="font-bold">{l.ich ? `${l.name} (${tg('ich')})` : l.name}</span>
-                <Pille>{t(`rolle.${l.rolle}`)}</Pille>
-              </li>
-            ))}
-          </ul>
-        </Abschnitt>
+          </Abschnitt>
+        </div>
       </div>
     </MeinBereichRahmen>
   );
