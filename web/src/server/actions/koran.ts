@@ -98,7 +98,9 @@ function auditFuer(neu: FreigabeStatus): AuditAktion {
 
 /** Eintrag im Freigabe-Verlauf (wie das Modul „Freigaben“: Art und Kennung des Inhalts). */
 async function verlauf(tx: Transaktion, typ: string, kennung: string, status: FreigabeStatus, von: string, kommentar?: string) {
-  await tx.insert(schema.freigabe).values({ inhaltTyp: typ, inhaltId: kennung, art: 'religioes', status, von, kommentar: kommentar || null });
+  await tx
+    .insert(schema.freigabe)
+    .values({ inhaltTyp: typ, inhaltId: kennung, art: 'religioes', status, von, kommentar: kommentar || null });
 }
 
 /**
@@ -116,7 +118,13 @@ async function protokolliereSpeichern(
 ) {
   if (geaendert)
     await protokolliere(
-      { benutzerId: a.benutzerId, aktion: alt === null ? 'inhalt.angelegt' : 'inhalt.geaendert', zielTyp: art, zielId: kennung, details: { ...details, freigabe: neu } },
+      {
+        benutzerId: a.benutzerId,
+        aktion: alt === null ? 'inhalt.angelegt' : 'inhalt.geaendert',
+        zielTyp: art,
+        zielId: kennung,
+        details: { ...details, freigabe: neu },
+      },
       tx,
     );
   if (neu !== alt && !(alt === null && neu === 'entwurf')) {
@@ -132,7 +140,12 @@ function nachher(tag: string, alt: FreigabeStatus | null, neu: FreigabeStatus | 
 }
 
 /** Werte für eine geänderte Zeile: verfasst von der speichernden Person, Prüfvermerk entfällt. */
-const neuVerfasst = (a: Angemeldet, freigabe: FreigabeStatus) => ({ freigabe, verfasstVon: a.benutzerId, geprueftVon: null, geprueftAm: null });
+const neuVerfasst = (a: Angemeldet, freigabe: FreigabeStatus) => ({
+  freigabe,
+  verfasstVon: a.benutzerId,
+  geprueftVon: null,
+  geprueftAm: null,
+});
 
 // ————————————————————————————————————————— Wortbedeutungen
 
@@ -145,9 +158,17 @@ export async function bedeutungSpeichern(_: KoranZustand, fd: FormData): Promise
     const e = p.data;
     const wb = schema.quranWortbedeutung;
     const ergebnis = await db.transaction(async (tx) => {
-      const [form] = await tx.select({ id: schema.quranWortform.id }).from(schema.quranWortform).where(eq(schema.quranWortform.id, e.formId)).limit(1);
+      const [form] = await tx
+        .select({ id: schema.quranWortform.id })
+        .from(schema.quranWortform)
+        .where(eq(schema.quranWortform.id, e.formId))
+        .limit(1);
       if (!form) return null;
-      const [alt] = await tx.select().from(wb).where(and(eq(wb.formId, e.formId), eq(wb.sprache, e.sprache))).limit(1);
+      const [alt] = await tx
+        .select()
+        .from(wb)
+        .where(and(eq(wb.formId, e.formId), eq(wb.sprache, e.sprache)))
+        .limit(1);
       const inhalt = { bedeutung: e.bedeutung, wurzel: e.wurzel || null, anmerkung: e.anmerkung || null };
       const geaendert = !alt || !gleicherInhalt(inhalt, { bedeutung: alt.bedeutung, wurzel: alt.wurzel, anmerkung: alt.anmerkung });
       const vorher = alt?.freigabe ?? null;
@@ -158,7 +179,11 @@ export async function bedeutungSpeichern(_: KoranZustand, fd: FormData): Promise
           .insert(wb)
           .values({ formId: e.formId, sprache: e.sprache, ...inhalt, ...neuVerfasst(a, neu) })
           .returning({ id: wb.id });
-      } else if (geaendert) await tx.update(wb).set({ ...inhalt, ...neuVerfasst(a, neu) }).where(eq(wb.id, alt.id));
+      } else if (geaendert)
+        await tx
+          .update(wb)
+          .set({ ...inhalt, ...neuVerfasst(a, neu) })
+          .where(eq(wb.id, alt.id));
       else if (neu !== vorher) await tx.update(wb).set({ freigabe: neu }).where(eq(wb.id, alt.id));
       await protokolliereSpeichern(tx, a, 'quran_wortbedeutung', id!, vorher, neu, geaendert, { formId: e.formId, sprache: e.sprache });
       return { vorher, neu, geaendert };
@@ -175,10 +200,19 @@ export async function bedeutungEntfernen(_: KoranZustand, fd: FormData): Promise
     if (!id.success) return { fehler: 'eingabe' };
     const wb = schema.quranWortbedeutung;
     const alt = await db.transaction(async (tx) => {
-      const [z] = await tx.delete(wb).where(eq(wb.id, id.data)).returning({ freigabe: wb.freigabe, formId: wb.formId, sprache: wb.sprache });
+      const [z] = await tx
+        .delete(wb)
+        .where(eq(wb.id, id.data))
+        .returning({ freigabe: wb.freigabe, formId: wb.formId, sprache: wb.sprache });
       if (z)
         await protokolliere(
-          { benutzerId: a.benutzerId, aktion: 'inhalt.geloescht', zielTyp: 'quran_wortbedeutung', zielId: id.data, details: { formId: z.formId, sprache: z.sprache } },
+          {
+            benutzerId: a.benutzerId,
+            aktion: 'inhalt.geloescht',
+            zielTyp: 'quran_wortbedeutung',
+            zielId: id.data,
+            details: { formId: z.formId, sprache: z.sprache },
+          },
           tx,
         );
       return z;
@@ -211,10 +245,20 @@ export async function ortSpeichern(_: KoranZustand, fd: FormData): Promise<Koran
       const vorher = alt?.freigabe ?? null;
       const neu = statusNachSpeichern(vorher, geaendert, e.einreichen);
       if (!alt)
-        await tx.insert(o).values({ sure: e.sure, vers: e.vers, pos: e.pos, sprache: e.sprache, bedeutung: e.bedeutung, ...neuVerfasst(a, neu) });
-      else if (geaendert) await tx.update(o).set({ bedeutung: e.bedeutung, ...neuVerfasst(a, neu) }).where(stelle);
+        await tx
+          .insert(o)
+          .values({ sure: e.sure, vers: e.vers, pos: e.pos, sprache: e.sprache, bedeutung: e.bedeutung, ...neuVerfasst(a, neu) });
+      else if (geaendert)
+        await tx
+          .update(o)
+          .set({ bedeutung: e.bedeutung, ...neuVerfasst(a, neu) })
+          .where(stelle);
       else if (neu !== vorher) await tx.update(o).set({ freigabe: neu }).where(stelle);
-      await protokolliereSpeichern(tx, a, 'quran_wortbedeutung_ort', ortKennung(e), vorher, neu, geaendert, { sure: e.sure, vers: e.vers, pos: e.pos });
+      await protokolliereSpeichern(tx, a, 'quran_wortbedeutung_ort', ortKennung(e), vorher, neu, geaendert, {
+        sure: e.sure,
+        vers: e.vers,
+        pos: e.pos,
+      });
       return { vorher, neu, geaendert };
     });
     if (!ergebnis) return { fehler: 'nichtGefunden' };
@@ -235,7 +279,10 @@ export async function ortEntfernen(_: KoranZustand, fd: FormData): Promise<Koran
         .where(and(eq(o.sure, e.sure), eq(o.vers, e.vers), eq(o.pos, e.pos), eq(o.sprache, e.sprache)))
         .returning({ freigabe: o.freigabe });
       if (z)
-        await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geloescht', zielTyp: 'quran_wortbedeutung_ort', zielId: ortKennung(e) }, tx);
+        await protokolliere(
+          { benutzerId: a.benutzerId, aktion: 'inhalt.geloescht', zielTyp: 'quran_wortbedeutung_ort', zielId: ortKennung(e) },
+          tx,
+        );
       return z;
     });
     if (!alt) return { fehler: 'nichtGefunden' };
@@ -272,7 +319,11 @@ export async function tajwidSpeichern(_: KoranZustand, fd: FormData): Promise<Ko
       const erklaerung = mehrsprachig<JSONContent>(e.erklaerungDe, e.erklaerungTr, alt.erklaerung?.en) as MehrsprachigRich | null;
       const geaendert = !gleicherInhalt({ name, kurz, erklaerung }, { name: alt.name, kurz: alt.kurz, erklaerung: alt.erklaerung });
       const neu = statusNachSpeichern(alt.freigabe, geaendert, e.einreichen);
-      if (geaendert) await tx.update(t).set({ name, kurz, erklaerung, ...neuVerfasst(a, neu) }).where(eq(t.schluessel, e.schluessel));
+      if (geaendert)
+        await tx
+          .update(t)
+          .set({ name, kurz, erklaerung, ...neuVerfasst(a, neu) })
+          .where(eq(t.schluessel, e.schluessel));
       else if (neu !== alt.freigabe) await tx.update(t).set({ freigabe: neu }).where(eq(t.schluessel, e.schluessel));
       await protokolliereSpeichern(tx, a, 'tajwid_regel', e.schluessel, alt.freigabe, neu, geaendert, { schluessel: e.schluessel });
       return { vorher: alt.freigabe, neu, geaendert };
@@ -303,11 +354,16 @@ export async function hadithUebersetzungSpeichern(_: KoranZustand, fd: FormData)
       if (!hadith) return null;
       const [alt] = await tx.select().from(u).where(schluessel).limit(1);
       const inhalt = { text: e.text, uebersetzer: e.uebersetzer, quelle: e.quelle, lizenz: e.lizenz };
-      const geaendert = !alt || !gleicherInhalt(inhalt, { text: alt.text, uebersetzer: alt.uebersetzer, quelle: alt.quelle, lizenz: alt.lizenz });
+      const geaendert =
+        !alt || !gleicherInhalt(inhalt, { text: alt.text, uebersetzer: alt.uebersetzer, quelle: alt.quelle, lizenz: alt.lizenz });
       const vorher = alt?.freigabe ?? null;
       const neu = statusNachSpeichern(vorher, geaendert, e.einreichen);
       if (!alt) await tx.insert(u).values({ sammlungId: BUKHARI, nummer: e.nummer, sprache: e.sprache, ...inhalt, ...neuVerfasst(a, neu) });
-      else if (geaendert) await tx.update(u).set({ ...inhalt, ...neuVerfasst(a, neu) }).where(schluessel);
+      else if (geaendert)
+        await tx
+          .update(u)
+          .set({ ...inhalt, ...neuVerfasst(a, neu) })
+          .where(schluessel);
       else if (neu !== vorher) await tx.update(u).set({ freigabe: neu }).where(schluessel);
       const kennung = hadithKennung({ sammlungId: BUKHARI, nummer: e.nummer, sprache: e.sprache });
       await protokolliereSpeichern(tx, a, 'hadith_uebersetzung', kennung, vorher, neu, geaendert, { nummer: e.nummer, sprache: e.sprache });
@@ -330,7 +386,11 @@ export async function hadithUebersetzungEntfernen(_: KoranZustand, fd: FormData)
         .delete(u)
         .where(and(eq(u.sammlungId, BUKHARI), eq(u.nummer, nummer), eq(u.sprache, sprache)))
         .returning({ freigabe: u.freigabe });
-      if (z) await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geloescht', zielTyp: 'hadith_uebersetzung', zielId: teile.join('|') }, tx);
+      if (z)
+        await protokolliere(
+          { benutzerId: a.benutzerId, aktion: 'inhalt.geloescht', zielTyp: 'hadith_uebersetzung', zielId: teile.join('|') },
+          tx,
+        );
       return z;
     });
     if (!alt) return { fehler: 'nichtGefunden' };
@@ -377,7 +437,12 @@ async function leseStand(tx: Transaktion, art: ReligioeseArt, wo: SQL): Promise<
   return z ?? null;
 }
 
-async function setzeStand(tx: Transaktion, art: ReligioeseArt, wo: SQL, werte: { freigabe: FreigabeStatus; geprueftVon: string | null; geprueftAm: Date | null }) {
+async function setzeStand(
+  tx: Transaktion,
+  art: ReligioeseArt,
+  wo: SQL,
+  werte: { freigabe: FreigabeStatus; geprueftVon: string | null; geprueftAm: Date | null },
+) {
   switch (art) {
     case 'quran_wortbedeutung':
       await tx.update(schema.quranWortbedeutung).set(werte).where(wo);
@@ -416,7 +481,11 @@ export async function statusSetzen(_: KoranZustand, fd: FormData): Promise<Koran
       if (!schritt) return { fehler: 'uebergang' };
       if (schritt === 'freigeben' && !vierAugenErfuellt(stand.verfasstVon, a.benutzerId)) return { fehler: 'vierAugen' };
       const freigeben = schritt === 'freigeben';
-      await setzeStand(tx, e.art, wo, { freigabe: e.ziel, geprueftVon: freigeben ? a.benutzerId : null, geprueftAm: freigeben ? new Date() : null });
+      await setzeStand(tx, e.art, wo, {
+        freigabe: e.ziel,
+        geprueftVon: freigeben ? a.benutzerId : null,
+        geprueftAm: freigeben ? new Date() : null,
+      });
       await verlauf(tx, e.art, e.kennung, e.ziel, a.benutzerId, e.grund);
       await protokolliere({ benutzerId: a.benutzerId, aktion: auditFuer(e.ziel), zielTyp: e.art, zielId: e.kennung }, tx);
       return { vorher: stand.freigabe };
@@ -445,7 +514,13 @@ export async function ausgabeFreigeben(_: KoranZustand, fd: FormData): Promise<K
       await tx.update(t).set({ aktiv: true, freigegebenVon: a.benutzerId, freigegebenAm: new Date() }).where(eq(t.id, alt.id));
       await verlauf(tx, 'quran_ausgabe', alt.id, 'geprueft', a.benutzerId, `Version ${alt.version} · SHA-256 ${alt.sha256}`);
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'religioes.freigegeben', zielTyp: 'quran_ausgabe', zielId: alt.id, details: { version: alt.version, sha256: alt.sha256 } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'religioes.freigegeben',
+          zielTyp: 'quran_ausgabe',
+          zielId: alt.id,
+          details: { version: alt.version, sha256: alt.sha256 },
+        },
         tx,
       );
       return true;
@@ -491,10 +566,19 @@ export async function ausgabeStandard(_: KoranZustand, fd: FormData): Promise<Ko
       const [alt] = await tx.select().from(t).where(eq(t.id, p.data.id)).limit(1);
       if (!alt) return 'nichtGefunden';
       if (!istFreigegeben(alt)) return 'nichtFreigegeben';
-      await tx.update(t).set({ standard: false }).where(and(eq(t.sprache, alt.sprache), ne(t.id, alt.id)));
+      await tx
+        .update(t)
+        .set({ standard: false })
+        .where(and(eq(t.sprache, alt.sprache), ne(t.id, alt.id)));
       await tx.update(t).set({ standard: true }).where(eq(t.id, alt.id));
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'quran_ausgabe', zielId: alt.id, details: { standard: true, sprache: alt.sprache } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'inhalt.geaendert',
+          zielTyp: 'quran_ausgabe',
+          zielId: alt.id,
+          details: { standard: true, sprache: alt.sprache },
+        },
         tx,
       );
       return null;

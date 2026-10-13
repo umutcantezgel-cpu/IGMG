@@ -1,5 +1,6 @@
 'use client';
 
+import { Check, RotateCcw, Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useRef, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
@@ -40,7 +41,9 @@ export function useKoranFormular(aktion: KoranAktion, startwerte: Record<string,
           <p>{t(`fehler.${zustand.fehler}`)}</p>
         </Meldung>
       ) : zustand.gespeichert ? (
-        <Meldung art="erfolg">{zustand.status ? t('gespeichertStatus', { status: t(`status.${zustand.status}`) }) : t('gespeichert')}</Meldung>
+        <Meldung art="erfolg">
+          {zustand.status ? t('gespeichertStatus', { status: t(`status.${zustand.status}`) }) : t('gespeichert')}
+        </Meldung>
       ) : null}
     </div>
   );
@@ -259,5 +262,83 @@ export function AktionsFormular({
       <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold text-tinte marker:text-tinte-2">{aufklappen}</summary>
       <div className="border-t border-linie p-4">{inhalt}</div>
     </details>
+  );
+}
+
+/**
+ * Schritte im Freigabe-Ablauf mit einem gemeinsamen Zustand: Die Rückmeldung bleibt stehen, auch wenn nach dem
+ * Statuswechsel ein anderer Knopf erscheint (einreichen → freigeben → aufheben). Welche Schritte erscheinen,
+ * entscheidet die Seite nach Recht und Vier-Augen-Prinzip; der Server prüft alles erneut.
+ */
+export function FreigabeSchritte({
+  aktion,
+  art,
+  kennung,
+  status,
+  eigen,
+  darfBearbeiten,
+  darfFreigeben,
+}: {
+  aktion: KoranAktion;
+  art: string;
+  kennung: string;
+  status: 'entwurf' | 'zur_pruefung' | 'geprueft';
+  eigen: boolean;
+  darfBearbeiten: boolean;
+  darfFreigeben: boolean;
+}) {
+  const { t, absenden, laeuft, wert, fehler, id, rueckmeldung } = useKoranFormular(aktion);
+  const versteckt = (ziel: string) => (
+    <>
+      <input type="hidden" name="art" value={art} />
+      <input type="hidden" name="kennung" value={kennung} />
+      <input type="hidden" name="ziel" value={ziel} />
+    </>
+  );
+  const schritt = (ziel: string, knopf: string, symbol: ReactNode, variante: 'default' | 'secondary') => (
+    <form action={absenden}>
+      {versteckt(ziel)}
+      <Button type="submit" variant={variante} disabled={laeuft}>
+        {symbol}
+        {laeuft ? t('laeuft') : knopf}
+      </Button>
+    </form>
+  );
+  const vorwaerts = (status === 'entwurf' && darfBearbeiten) || (status === 'zur_pruefung' && darfFreigeben && !eigen);
+  return (
+    <div className="flex flex-col gap-3">
+      {rueckmeldung}
+      {status === 'zur_pruefung' && eigen && darfFreigeben ? <p className="text-16 font-bold text-warnung">{t('eigen')}</p> : null}
+      {vorwaerts ? (
+        <div className="flex flex-wrap items-start gap-3">
+          {status === 'entwurf' ? schritt('zur_pruefung', t('aktion.einreichen'), <Send aria-hidden />, 'secondary') : null}
+          {status === 'zur_pruefung' ? schritt('geprueft', t('aktion.freigeben'), <Check aria-hidden />, 'default') : null}
+        </div>
+      ) : null}
+      {status !== 'entwurf' && darfFreigeben ? (
+        <details className="rounded-md border border-linie bg-papier">
+          <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold text-tinte marker:text-tinte-2">
+            {status === 'geprueft' ? t('aktion.aufhebenOeffnen') : t('aktion.zurueckweisenOeffnen')}
+          </summary>
+          <form action={absenden} className="flex flex-col gap-3 border-t border-linie p-4" noValidate>
+            {versteckt('entwurf')}
+            <TextBereich
+              id={id('grund')}
+              name="grund"
+              label={t('aktion.grund')}
+              hinweis={t('aktion.grundHinweis')}
+              wert={wert('grund')}
+              fehler={fehler('grund')}
+              zeilen={2}
+              max={300}
+            />
+            <Button type="submit" variant="outline" disabled={laeuft} className="self-start">
+              <RotateCcw aria-hidden />
+              {laeuft ? t('laeuft') : status === 'geprueft' ? t('aktion.aufheben') : t('aktion.zurueckweisen')}
+            </Button>
+          </form>
+        </details>
+      ) : null}
+    </div>
   );
 }

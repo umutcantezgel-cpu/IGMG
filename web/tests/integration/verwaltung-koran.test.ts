@@ -22,7 +22,16 @@ let formA = 0;
 let formB = 0;
 
 beforeAll(async () => {
-  await db.insert(schema.quranQuelle).values({ id: 'tanzil', bezeichnung: '[Quelle]', url: 'https://example.test', version: 'test', sha256: '0'.repeat(64), lizenz: '[Lizenz]' });
+  await db
+    .insert(schema.quranQuelle)
+    .values({
+      id: 'tanzil',
+      bezeichnung: '[Quelle]',
+      url: 'https://example.test',
+      version: 'test',
+      sha256: '0'.repeat(64),
+      lizenz: '[Lizenz]',
+    });
   await db.insert(schema.quranSure).values({ nr: 1, nameAr: '[Sure 1]', verseAnzahl: 2, quelleId: 'tanzil', nameUmschrift: '[Sure Eins]' });
   await db.insert(schema.quranVers).values([
     { sure: 1, vers: 1, textAr: '[a] [b]' },
@@ -106,7 +115,10 @@ describe('Rechte (Matrix: Redaktion nie, Administration ja, religiöse Prüfung 
       expect(await aktionen.ausgabeFreigeben({}, formular({ id: 'test-de', bestaetigt: 'on' }))).toEqual({ fehler: 'keinRecht' });
       expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '1' }))).toEqual({ fehler: 'keinRecht' });
       expect(
-        await aktionen.hadithUebersetzungSpeichern({}, formular({ nummer: '1', sprache: 'de', text: '[x]', uebersetzer: '[x]', quelle: '[x]', lizenz: '[x]' })),
+        await aktionen.hadithUebersetzungSpeichern(
+          {},
+          formular({ nummer: '1', sprache: 'de', text: '[x]', uebersetzer: '[x]', quelle: '[x]', lizenz: '[x]' }),
+        ),
       ).toEqual({ fehler: 'keinRecht' });
     }
     expect(await db.select().from(schema.quranWortbedeutung)).toEqual([]);
@@ -125,7 +137,10 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
   let hoca = '';
   it('Entwurf: gespeichert, nicht öffentlich, keine Cache-Erneuerung', async () => {
     hoca = (await angemeldetAls(PRUEFUNG))!;
-    const z = await aktionen.bedeutungSpeichern({}, formular({ formId: String(formA), sprache: 'de', bedeutung: '[Bedeutung A]', wurzel: '[W]' }));
+    const z = await aktionen.bedeutungSpeichern(
+      {},
+      formular({ formId: String(formA), sprache: 'de', bedeutung: '[Bedeutung A]', wurzel: '[W]' }),
+    );
     expect(z).toMatchObject({ status: 'entwurf' });
     expect(await bedeutung()).toMatchObject({ freigabe: 'entwurf', verfasstVon: hoca, bedeutung: '[Bedeutung A]' });
     expect(aufrufe.updateTag).toEqual([]);
@@ -138,7 +153,9 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
       fehler: 'pruefen',
       feldFehler: { bedeutung: 'pflicht' },
     });
-    expect(await aktionen.bedeutungSpeichern({}, formular({ formId: '999999', sprache: 'de', bedeutung: '[x]' }))).toEqual({ fehler: 'nichtGefunden' });
+    expect(await aktionen.bedeutungSpeichern({}, formular({ formId: '999999', sprache: 'de', bedeutung: '[x]' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
   });
 
   it('Einreichen; die verfassende Person darf nicht selbst freigeben (Vier-Augen)', async () => {
@@ -195,7 +212,9 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
     });
     expect(aufrufe.updateTag).toEqual(['quran']);
     expect(await verlauf('quran_wortbedeutung')).toEqual(['zur_pruefung', 'geprueft', 'zur_pruefung', 'geprueft', 'entwurf']);
-    const audit = (await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielTyp, 'quran_wortbedeutung'))).map((z) => z.aktion);
+    const audit = (await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielTyp, 'quran_wortbedeutung'))).map(
+      (z) => z.aktion,
+    );
     expect(audit).toContain('religioes.freigegeben');
     expect(audit).toContain('religioes.zurueckgewiesen');
     expect(JSON.stringify(await db.select().from(schema.auditEintrag))).not.toContain('[Bedeutung');
@@ -203,13 +222,19 @@ describe('Wortbedeutungen: Vier-Augen-Freigabe und Rücksetzen', () => {
 
   it('Bedeutung an einer Stelle: öffentlich nur geprüft, unbekannte Stelle abgelehnt', async () => {
     await angemeldetAls(PRUEFUNG);
-    expect(await aktionen.ortSpeichern({}, formular({ sure: '1', vers: '2', pos: '1', sprache: 'tr', bedeutung: '[Ort]', einreichen: '1' }))).toMatchObject({
+    expect(
+      await aktionen.ortSpeichern({}, formular({ sure: '1', vers: '2', pos: '1', sprache: 'tr', bedeutung: '[Ort]', einreichen: '1' })),
+    ).toMatchObject({
       status: 'zur_pruefung',
     });
-    expect(await aktionen.ortSpeichern({}, formular({ sure: '1', vers: '2', pos: '9', sprache: 'tr', bedeutung: '[Ort]' }))).toEqual({ fehler: 'nichtGefunden' });
+    expect(await aktionen.ortSpeichern({}, formular({ sure: '1', vers: '2', pos: '9', sprache: 'tr', bedeutung: '[Ort]' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
     expect((await quran.ladeWortDaten(1))!.orte).toEqual({});
     await angemeldetAls(PRUEFUNG);
-    expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung_ort', '1|2|1|tr', 'geprueft'))).toMatchObject({ status: 'geprueft' });
+    expect(await aktionen.statusSetzen({}, status('quran_wortbedeutung_ort', '1|2|1|tr', 'geprueft'))).toMatchObject({
+      status: 'geprueft',
+    });
     expect((await quran.ladeWortDaten(1))!.orte).toEqual({ '2:1': { tr: '[Ort]' } });
     const detail = await abfragen.ladeWortform(1, formA);
     expect(detail?.orte).toMatchObject([{ sure: 1, vers: 2, pos: 1, status: 'geprueft' }]);
@@ -242,7 +267,10 @@ describe('Tajwid-Regeltexte', () => {
       ),
     ).toMatchObject({ fehler: 'pruefen', feldFehler: { kurzDe: 'deFehlt' } });
     expect(
-      await aktionen.tajwidSpeichern({}, formular({ schluessel: 'ghunnah', nameDe: '[Name geändert]', nameTr: '[Ad]', kurzDe: '[Kurz]', einreichen: '1' })),
+      await aktionen.tajwidSpeichern(
+        {},
+        formular({ schluessel: 'ghunnah', nameDe: '[Name geändert]', nameTr: '[Ad]', kurzDe: '[Kurz]', einreichen: '1' }),
+      ),
     ).toMatchObject({ status: 'zur_pruefung' });
     expect(aufrufe.updateTag).toEqual([]);
     const vorher = (await quran.ladeTajwidRegeln()).find((r) => r.schluessel === 'ghunnah');
@@ -258,7 +286,10 @@ describe('Tajwid-Regeltexte', () => {
     await angemeldetAls(PRUEFUNG);
     const doc = JSON.stringify({ type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: '[Erklärung]' }] }] });
     expect(
-      await aktionen.tajwidSpeichern({}, formular({ schluessel: 'ghunnah', nameDe: '[Name geändert]', nameTr: '[Ad]', kurzDe: '[Kurz]', erklaerungDe: doc })),
+      await aktionen.tajwidSpeichern(
+        {},
+        formular({ schluessel: 'ghunnah', nameDe: '[Name geändert]', nameTr: '[Ad]', kurzDe: '[Kurz]', erklaerungDe: doc }),
+      ),
     ).toMatchObject({ status: 'zur_pruefung' });
     expect(aufrufe.updateTag).toEqual(['tajwid']);
     expect((await quran.ladeTajwidRegeln()).find((r) => r.schluessel === 'ghunnah')?.kurz).toBeNull();
@@ -268,24 +299,46 @@ describe('Tajwid-Regeltexte', () => {
 describe('Hadith: Übersetzungen und kuratierte Listen', () => {
   it('Übersetzung nur zu importierten Hadithen; öffentlich nur geprüft', async () => {
     await angemeldetAls(PRUEFUNG);
-    const felder = { sprache: 'de', text: '[Übersetzung]', uebersetzer: '[Übersetzer]', quelle: '[eigene Übersetzung]', lizenz: '[Rechte]' };
-    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: '99' }))).toMatchObject({ feldFehler: { nummer: 'unbekannt' } });
-    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: 'x1' }))).toMatchObject({ feldFehler: { nummer: 'nummer' } });
-    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: '1', einreichen: '1' }))).toMatchObject({ status: 'zur_pruefung' });
+    const felder = {
+      sprache: 'de',
+      text: '[Übersetzung]',
+      uebersetzer: '[Übersetzer]',
+      quelle: '[eigene Übersetzung]',
+      lizenz: '[Rechte]',
+    };
+    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: '99' }))).toMatchObject({
+      feldFehler: { nummer: 'unbekannt' },
+    });
+    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: 'x1' }))).toMatchObject({
+      feldFehler: { nummer: 'nummer' },
+    });
+    expect(await aktionen.hadithUebersetzungSpeichern({}, formular({ ...felder, nummer: '1', einreichen: '1' }))).toMatchObject({
+      status: 'zur_pruefung',
+    });
     await angemeldetAls(PRUEFUNG);
-    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '1' }))).toMatchObject({ gespeichert: expect.any(Number) });
+    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '1' }))).toMatchObject({
+      gespeichert: expect.any(Number),
+    });
     expect(aufrufe.updateTag).toEqual(['hadith']);
     expect((await hadith.ladeHadithAuswahl()).hadithe[0].uebersetzungen).toEqual([]);
-    expect(await aktionen.statusSetzen({}, status('hadith_uebersetzung', 'bukhari|1|de', 'geprueft'))).toMatchObject({ status: 'geprueft' });
+    expect(await aktionen.statusSetzen({}, status('hadith_uebersetzung', 'bukhari|1|de', 'geprueft'))).toMatchObject({
+      status: 'geprueft',
+    });
     expect((await hadith.ladeHadithAuswahl()).hadithe[0].uebersetzungen).toMatchObject([{ sprache: 'de', text: '[Übersetzung]' }]);
   });
 
   it('Listen: hinzufügen, doppelt, unbekannt, verschieben, entfernen; „des-tages“ getrennt', async () => {
     await angemeldetAls(PRUEFUNG);
     for (const nummer of ['2', '3']) await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer }));
-    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '2' }))).toMatchObject({ feldFehler: { nummer: 'vorhanden' } });
-    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '7' }))).toMatchObject({ feldFehler: { nummer: 'unbekannt' } });
-    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'fremd', nummer: '2' }))).toMatchObject({ feldFehler: { liste: 'ungueltig' } });
+    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '2' }))).toMatchObject({
+      feldFehler: { nummer: 'vorhanden' },
+    });
+    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'auswahl', nummer: '7' }))).toMatchObject({
+      feldFehler: { nummer: 'unbekannt' },
+    });
+    expect(await aktionen.listeHinzufuegen({}, formular({ liste: 'fremd', nummer: '2' }))).toMatchObject({
+      feldFehler: { liste: 'ungueltig' },
+    });
     await aktionen.listeVerschieben({}, formular({ liste: 'auswahl', nummer: '3', richtung: 'hoch' }));
     expect(await abfragen.listenNummern('auswahl')).toEqual(['1', '3', '2']);
     await aktionen.listeEntfernen({}, formular({ liste: 'auswahl', nummer: '1' }));
@@ -306,7 +359,9 @@ describe('Übersetzungsausgaben', () => {
     expect(await aktionen.ausgabeStandard({}, formular({ id: 'test-de' }))).toEqual({ fehler: 'nichtFreigegeben' });
     expect(await aktionen.ausgabeFreigeben({}, formular({ id: 'test-de' }))).toMatchObject({ fehler: 'bestaetigen' });
     expect(await aktionen.ausgabeFreigeben({}, formular({ id: 'gibt-es-nicht', bestaetigt: 'on' }))).toEqual({ fehler: 'nichtGefunden' });
-    expect(await aktionen.ausgabeFreigeben({}, formular({ id: 'test-de', bestaetigt: 'on' }))).toMatchObject({ gespeichert: expect.any(Number) });
+    expect(await aktionen.ausgabeFreigeben({}, formular({ id: 'test-de', bestaetigt: 'on' }))).toMatchObject({
+      gespeichert: expect.any(Number),
+    });
     expect(aufrufe.updateTag).toEqual(['quran']);
     expect((await quran.ladeAusgaben(false)).map((a) => [a.id, a.ausstehend, a.standard])).toEqual([['test-de', false, false]]);
     expect(await aktionen.ausgabeStandard({}, formular({ id: 'test-de' }))).toMatchObject({ gespeichert: expect.any(Number) });

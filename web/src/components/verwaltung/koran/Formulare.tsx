@@ -158,8 +158,25 @@ export function TajwidFormular({
       <fieldset className={abschnitt}>
         <legend className={legende}>{t('tajwid.abschnittName')}</legend>
         <div className="clear-both grid gap-4 md:grid-cols-2">
-          <TextFeld id={id('nameDe')} name="nameDe" label={t('tajwid.nameDe')} wert={wert('nameDe')} fehler={fehler('nameDe')} pflicht={pflicht} max={80} lang="de" />
-          <TextFeld id={id('nameTr')} name="nameTr" label={t('tajwid.nameTr')} wert={wert('nameTr')} fehler={fehler('nameTr')} max={80} lang="tr" />
+          <TextFeld
+            id={id('nameDe')}
+            name="nameDe"
+            label={t('tajwid.nameDe')}
+            wert={wert('nameDe')}
+            fehler={fehler('nameDe')}
+            pflicht={pflicht}
+            max={80}
+            lang="de"
+          />
+          <TextFeld
+            id={id('nameTr')}
+            name="nameTr"
+            label={t('tajwid.nameTr')}
+            wert={wert('nameTr')}
+            fehler={fehler('nameTr')}
+            max={80}
+            lang="tr"
+          />
         </div>
       </fieldset>
       <fieldset className={abschnitt}>
@@ -219,7 +236,16 @@ export function HadithFormular({
       {rueckmeldung}
       <input type="hidden" name="nummer" value={nummer} />
       <input type="hidden" name="sprache" value={sprache} />
-      <TextBereich id={id('text')} name="text" label={t('hadith.text')} wert={wert('text')} fehler={fehler('text')} pflicht={pflicht} zeilen={8} lang={sprache} />
+      <TextBereich
+        id={id('text')}
+        name="text"
+        label={t('hadith.text')}
+        wert={wert('text')}
+        fehler={fehler('text')}
+        pflicht={pflicht}
+        zeilen={8}
+        lang={sprache}
+      />
       <div className="grid gap-4 md:grid-cols-3">
         <TextFeld
           id={id('uebersetzer')}

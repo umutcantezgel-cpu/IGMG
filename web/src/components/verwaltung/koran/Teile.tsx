@@ -1,4 +1,4 @@
-import { ArrowLeft, Check, RotateCcw, Send } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { datumOhneWochentag } from '@/lib/i18n/format';
@@ -6,7 +6,7 @@ import { prozent, vierAugenErfuellt, type FreigabeStatus, type ReligioeseArt } f
 import { cn } from '@/lib/utils';
 import { statusSetzen } from '@/server/actions/koran';
 import type { VerlaufEintrag } from '@/server/queries/verwaltung/koran';
-import { AktionsFormular } from './FormularBausteine';
+import { FreigabeSchritte } from './FormularBausteine';
 
 /**
  * Bausteine des Moduls „Koran & Hadith“ (Server-Komponenten): Statuspille, Bereichsnavigation, Freigabeleiste mit den
@@ -26,7 +26,7 @@ export async function StatusPille({ status }: { status: FreigabeStatus }) {
 }
 
 /** Leere Pille „noch nicht erfasst“ (gestrichelt). */
-export async function LeerPille({ text }: { text: string }) {
+export function LeerPille({ text }: { text: string }) {
   return <span className={cn(PILLE, 'border border-dashed border-rand bg-weiss font-normal text-tinte-2')}>{text}</span>;
 }
 
@@ -69,7 +69,10 @@ export async function KoranNavigation({ aktiv }: { aktiv: KoranBereich }) {
 
 export function ZurueckLink({ href, text }: { href: string; text: string }) {
   return (
-    <NextLink href={href} className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-800 underline underline-offset-4">
+    <NextLink
+      href={href}
+      className="inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-800 underline underline-offset-4"
+    >
       <ArrowLeft aria-hidden className="size-5" />
       {text}
     </NextLink>
@@ -125,7 +128,6 @@ export async function FreigabeLeiste({
   darfFreigeben: boolean;
 }) {
   const t = await getTranslations('verwaltung.koran');
-  const felder = (ziel: FreigabeStatus) => ({ art, kennung, ziel });
   const eigen = !vierAugenErfuellt(verfasstVonId, benutzerId);
   const person = (name: string | null, id: string | null) => name ?? (id ? t('kontoFehlt') : null);
   const verfasser = person(verfasstVon, verfasstVonId);
@@ -140,26 +142,15 @@ export async function FreigabeLeiste({
           </span>
         ) : null}
       </div>
-      {status === 'zur_pruefung' && eigen && darfFreigeben ? <p className="text-16 font-bold text-warnung">{t('eigen')}</p> : null}
-      <div className="flex flex-wrap items-start gap-3">
-        {status === 'entwurf' && darfBearbeiten ? (
-          <AktionsFormular aktion={statusSetzen} felder={felder('zur_pruefung')} knopf={t('aktion.einreichen')} symbol={<Send aria-hidden />} variante="secondary" />
-        ) : null}
-        {status === 'zur_pruefung' && darfFreigeben && !eigen ? (
-          <AktionsFormular aktion={statusSetzen} felder={felder('geprueft')} knopf={t('aktion.freigeben')} symbol={<Check aria-hidden />} />
-        ) : null}
-      </div>
-      {status !== 'entwurf' && darfFreigeben ? (
-        <AktionsFormular
-          aktion={statusSetzen}
-          felder={felder('entwurf')}
-          aufklappen={status === 'geprueft' ? t('aktion.aufhebenOeffnen') : t('aktion.zurueckweisenOeffnen')}
-          knopf={status === 'geprueft' ? t('aktion.aufheben') : t('aktion.zurueckweisen')}
-          symbol={<RotateCcw aria-hidden />}
-          variante="outline"
-          grund
-        />
-      ) : null}
+      <FreigabeSchritte
+        aktion={statusSetzen}
+        art={art}
+        kennung={kennung}
+        status={status}
+        eigen={eigen}
+        darfBearbeiten={darfBearbeiten}
+        darfFreigeben={darfFreigeben}
+      />
     </div>
   );
 }
@@ -173,7 +164,11 @@ export async function VerlaufListe({ eintraege }: { eintraege: VerlaufEintrag[] 
       {eintraege.map((e, i) => (
         <li key={i} className="flex flex-col border-l-2 border-linie pl-3">
           <span>
-            {t('verlauf.eintrag', { status: t(`status.${e.status}`), name: e.von ?? t('verlauf.ohneName'), datum: datumOhneWochentag(e.am, 'de') })}
+            {t('verlauf.eintrag', {
+              status: t(`status.${e.status}`),
+              name: e.von ?? t('verlauf.ohneName'),
+              datum: datumOhneWochentag(e.am, 'de'),
+            })}
           </span>
           {e.kommentar ? <span className="text-tinte-2">{e.kommentar}</span> : null}
         </li>

@@ -20,7 +20,10 @@ const OFFEN: Status = 'zur_pruefung';
 async function namen(ids: readonly (string | null | undefined)[]): Promise<Map<string, string>> {
   const eindeutig = [...new Set(ids.filter((id): id is string => Boolean(id)))];
   if (!eindeutig.length) return new Map();
-  const zeilen = await db.select({ id: schema.user.id, name: schema.user.name }).from(schema.user).where(inArray(schema.user.id, eindeutig));
+  const zeilen = await db
+    .select({ id: schema.user.id, name: schema.user.name })
+    .from(schema.user)
+    .where(inArray(schema.user.id, eindeutig));
   return new Map(zeilen.map((z) => [z.id, z.name]));
 }
 
@@ -101,10 +104,7 @@ async function ersteSure(formIds: number[]): Promise<Map<number, number>> {
 export async function ladeKoranUebersicht(benutzerId: string, jetzt: Date, grenze = 30): Promise<KoranUebersicht> {
   const zaehle = async (
     tabelle:
-      | typeof schema.quranWortbedeutung
-      | typeof schema.quranWortbedeutungOrt
-      | typeof schema.tajwidRegel
-      | typeof schema.hadithUebersetzung,
+      typeof schema.quranWortbedeutung | typeof schema.quranWortbedeutungOrt | typeof schema.tajwidRegel | typeof schema.hadithUebersetzung,
   ) => {
     const zeilen = await db.select({ status: tabelle.freigabe, n: count() }).from(tabelle).groupBy(tabelle.freigabe);
     const z = leer();
@@ -116,22 +116,42 @@ export async function ladeKoranUebersicht(benutzerId: string, jetzt: Date, grenz
   const tr = schema.tajwidRegel;
   const hu = schema.hadithUebersetzung;
   const [ausgaben, zWb, zWo, zTr, zHu, bedeutungen, orte, regeln, hadithe, listen] = await Promise.all([
-    db.select({ aktiv: schema.quranAusgabe.aktiv, am: schema.quranAusgabe.freigegebenAm, abgerufenAm: schema.quranAusgabe.abgerufenAm }).from(schema.quranAusgabe),
+    db
+      .select({ aktiv: schema.quranAusgabe.aktiv, am: schema.quranAusgabe.freigegebenAm, abgerufenAm: schema.quranAusgabe.abgerufenAm })
+      .from(schema.quranAusgabe),
     zaehle(wb),
     zaehle(wo),
     zaehle(tr),
     zaehle(hu),
     db
-      .select({ id: wb.id, formId: wb.formId, sprache: wb.sprache, bedeutung: wb.bedeutung, von: wb.verfasstVon, wort: schema.quranWortform.textAr })
+      .select({
+        id: wb.id,
+        formId: wb.formId,
+        sprache: wb.sprache,
+        bedeutung: wb.bedeutung,
+        von: wb.verfasstVon,
+        wort: schema.quranWortform.textAr,
+      })
       .from(wb)
       .innerJoin(schema.quranWortform, eq(schema.quranWortform.id, wb.formId))
       .where(eq(wb.freigabe, OFFEN))
       .orderBy(asc(wb.aktualisiertAm))
       .limit(grenze),
     db
-      .select({ sure: wo.sure, vers: wo.vers, pos: wo.pos, sprache: wo.sprache, bedeutung: wo.bedeutung, von: wo.verfasstVon, formId: schema.quranWort.formId })
+      .select({
+        sure: wo.sure,
+        vers: wo.vers,
+        pos: wo.pos,
+        sprache: wo.sprache,
+        bedeutung: wo.bedeutung,
+        von: wo.verfasstVon,
+        formId: schema.quranWort.formId,
+      })
       .from(wo)
-      .leftJoin(schema.quranWort, and(eq(schema.quranWort.sure, wo.sure), eq(schema.quranWort.vers, wo.vers), eq(schema.quranWort.pos, wo.pos)))
+      .leftJoin(
+        schema.quranWort,
+        and(eq(schema.quranWort.sure, wo.sure), eq(schema.quranWort.vers, wo.vers), eq(schema.quranWort.pos, wo.pos)),
+      )
       .where(eq(wo.freigabe, OFFEN))
       .orderBy(asc(wo.sure), asc(wo.vers), asc(wo.pos))
       .limit(grenze),
@@ -277,7 +297,16 @@ export type SureFortschritt = {
 /** Fortschritt je Sure: eindeutige Wortformen, davon mit geprüfter Bedeutung de/tr, Einträge zur Prüfung. */
 export async function ladeSurenFortschritt(): Promise<{ suren: SureFortschritt[]; cuz30Ab: number }> {
   const [ergebnis, [cuz]] = await Promise.all([
-    db.execute<{ nr: number; name_ar: string; umschrift: string | null; verse: number; formen: number; de: number; tr: number; offen: number }>(sql`
+    db.execute<{
+      nr: number;
+      name_ar: string;
+      umschrift: string | null;
+      verse: number;
+      formen: number;
+      de: number;
+      tr: number;
+      offen: number;
+    }>(sql`
       with f as (select distinct sure, form_id from ${schema.quranWort}),
       b as (
         select form_id,
@@ -338,7 +367,12 @@ export type SureKopf = { nr: number; nameAr: string; umschrift: string; verse: n
 
 async function sureKopf(nr: number): Promise<SureKopf | null> {
   const [s] = await db
-    .select({ nr: schema.quranSure.nr, nameAr: schema.quranSure.nameAr, umschrift: schema.quranSure.nameUmschrift, verse: schema.quranSure.verseAnzahl })
+    .select({
+      nr: schema.quranSure.nr,
+      nameAr: schema.quranSure.nameAr,
+      umschrift: schema.quranSure.nameUmschrift,
+      verse: schema.quranSure.verseAnzahl,
+    })
     .from(schema.quranSure)
     .where(eq(schema.quranSure.nr, nr))
     .limit(1);
@@ -482,9 +516,7 @@ export async function ladeWortform(nr: number, formId: number): Promise<Wortform
       .where(and(eq(w.formId, formId), ne(w.sure, nr)))
       .groupBy(w.sure)
       .orderBy(asc(w.sure)),
-    db.execute<{ form_id: number }>(
-      sql`select form_id from ${w} where sure = ${nr} group by form_id order by min(vers * 1000 + pos)`,
-    ),
+    db.execute<{ form_id: number }>(sql`select form_id from ${w} where sure = ${nr} group by form_id order by min(vers * 1000 + pos)`),
     db.select().from(schema.quranWortbedeutung).where(eq(schema.quranWortbedeutung.formId, formId)),
     db
       .select({
@@ -500,7 +532,11 @@ export async function ladeWortform(nr: number, formId: number): Promise<Wortform
       .from(schema.quranWortbedeutungOrt)
       .innerJoin(
         w,
-        and(eq(w.sure, schema.quranWortbedeutungOrt.sure), eq(w.vers, schema.quranWortbedeutungOrt.vers), eq(w.pos, schema.quranWortbedeutungOrt.pos)),
+        and(
+          eq(w.sure, schema.quranWortbedeutungOrt.sure),
+          eq(w.vers, schema.quranWortbedeutungOrt.vers),
+          eq(w.pos, schema.quranWortbedeutungOrt.pos),
+        ),
       )
       .where(eq(w.formId, formId))
       .orderBy(asc(schema.quranWortbedeutungOrt.sure), asc(schema.quranWortbedeutungOrt.vers), asc(schema.quranWortbedeutungOrt.pos)),
@@ -508,7 +544,10 @@ export async function ladeWortform(nr: number, formId: number): Promise<Wortform
   if (!stellen.length) return null;
   const folge = reihenfolge.rows.map((r) => Number(r.form_id));
   const i = folge.indexOf(formId);
-  const wer = await namen([...bedeutungen.flatMap((b) => [b.verfasstVon, b.geprueftVon]), ...orte.flatMap((o) => [o.verfasstVon, o.geprueftVon])]);
+  const wer = await namen([
+    ...bedeutungen.flatMap((b) => [b.verfasstVon, b.geprueftVon]),
+    ...orte.flatMap((o) => [o.verfasstVon, o.geprueftVon]),
+  ]);
   const name = (id: string | null) => (id ? (wer.get(id) ?? null) : null);
   const auswahl = stellen.slice(0, ZUSAMMENHANG);
   const verse = await db
@@ -525,7 +564,10 @@ export async function ladeWortform(nr: number, formId: number): Promise<Wortform
     andereSuren: andere.map((a) => ({ sure: a.sure, anzahl: Number(a.anzahl) })),
     bedeutungen: {},
     orte: orte.map((o) => ({ ...o, verfasstVonId: o.verfasstVon, verfasstVon: name(o.verfasstVon), geprueftVon: name(o.geprueftVon) })),
-    zusammenhang: auswahl.map((s) => ({ ...s, woerter: verse.filter((v) => v.vers === s.vers).map((v) => ({ pos: v.pos, text: v.text })) })),
+    zusammenhang: auswahl.map((s) => ({
+      ...s,
+      woerter: verse.filter((v) => v.vers === s.vers).map((v) => ({ pos: v.pos, text: v.text })),
+    })),
     vorher: i > 0 ? folge[i - 1] : null,
     naechste: i >= 0 && i < folge.length - 1 ? folge[i + 1] : null,
   };
@@ -603,7 +645,12 @@ export type HadithFilter = (typeof HADITH_FILTER)[number];
 
 async function sammlung(): Promise<HadithSammlungKurz | null> {
   const [s] = await db
-    .select({ id: schema.hadithSammlung.id, version: schema.hadithSammlung.version, lizenz: schema.hadithSammlung.lizenz, freigegeben: schema.hadithSammlung.freigegeben })
+    .select({
+      id: schema.hadithSammlung.id,
+      version: schema.hadithSammlung.version,
+      lizenz: schema.hadithSammlung.lizenz,
+      freigegeben: schema.hadithSammlung.freigegeben,
+    })
     .from(schema.hadithSammlung)
     .where(eq(schema.hadithSammlung.id, BUKHARI))
     .limit(1);
@@ -621,12 +668,7 @@ export async function ladeHadithVerwaltung(filter: HadithFilter): Promise<{
   const s = await sammlung();
   if (!s) return { sammlung: null, zahlen: {}, zeilen: [] };
   const hu = schema.hadithUebersetzung;
-  const wo =
-    filter === 'offen'
-      ? ne(hu.freigabe, 'geprueft')
-      : filter === 'alle'
-        ? undefined
-        : eq(hu.freigabe, filter);
+  const wo = filter === 'offen' ? ne(hu.freigabe, 'geprueft') : filter === 'alle' ? undefined : eq(hu.freigabe, filter);
   const [stand, zeilen] = await Promise.all([
     db
       .select({ sprache: hu.sprache, status: hu.freigabe, n: count() })
@@ -634,7 +676,14 @@ export async function ladeHadithVerwaltung(filter: HadithFilter): Promise<{
       .where(eq(hu.sammlungId, BUKHARI))
       .groupBy(hu.sprache, hu.freigabe),
     db
-      .select({ nummer: hu.nummer, sprache: hu.sprache, text: hu.text, uebersetzer: hu.uebersetzer, status: hu.freigabe, von: hu.verfasstVon })
+      .select({
+        nummer: hu.nummer,
+        sprache: hu.sprache,
+        text: hu.text,
+        uebersetzer: hu.uebersetzer,
+        status: hu.freigabe,
+        von: hu.verfasstVon,
+      })
       .from(hu)
       .leftJoin(schema.hadith, and(eq(schema.hadith.sammlungId, hu.sammlungId), eq(schema.hadith.nummer, hu.nummer)))
       .where(and(eq(hu.sammlungId, BUKHARI), wo))
@@ -696,7 +745,10 @@ export async function ladeHadithDetail(nummer: string): Promise<HadithDetail | n
       buchTitel: schema.hadithBuch.titel,
     })
     .from(schema.hadith)
-    .leftJoin(schema.hadithBuch, and(eq(schema.hadithBuch.sammlungId, schema.hadith.sammlungId), eq(schema.hadithBuch.nr, schema.hadith.buchNr)))
+    .leftJoin(
+      schema.hadithBuch,
+      and(eq(schema.hadithBuch.sammlungId, schema.hadith.sammlungId), eq(schema.hadithBuch.nr, schema.hadith.buchNr)),
+    )
     .where(and(eq(schema.hadith.sammlungId, BUKHARI), eq(schema.hadith.nummer, nummer)))
     .limit(1);
   if (!h) return null;
@@ -815,8 +867,12 @@ export async function listenNummern(liste: HadithListe): Promise<string[]> {
 
 /** Jüngste Einträge des Freigabe-Verlaufs zu einem Inhalt (wer hat wann eingereicht, geprüft, zurückgewiesen). */
 export type VerlaufEintrag = { status: Status; am: Date; von: string | null; kommentar: string | null };
-export async function ladeVerlauf(art: ReligioeseArt | 'quran_ausgabe', kennung: string, grenze = 8): Promise<VerlaufEintrag[]> {
-  if (art !== 'quran_ausgabe' && !RELIGIOESE_ARTEN.includes(art)) return [];
+export async function ladeVerlauf(
+  art: ReligioeseArt | 'quran_ausgabe' | 'hadith_auswahl',
+  kennung: string,
+  grenze = 8,
+): Promise<VerlaufEintrag[]> {
+  if (art !== 'quran_ausgabe' && art !== 'hadith_auswahl' && !RELIGIOESE_ARTEN.includes(art)) return [];
   const f = schema.freigabe;
   const zeilen = await db
     .select({ status: f.status, am: f.am, von: f.von, kommentar: f.kommentar })
