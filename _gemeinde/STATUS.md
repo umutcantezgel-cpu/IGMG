@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 2–6/7 parallel · Welle 1 (6 Pakete in Arbeitsbäumen) · Orchestrator: Mein Ort, Push, Chat-Kern, Unterricht-Kern, Echtzeit, Server-Kit, Hatim/Kalender/GiroCode fertig · Nächster Schritt: Pakete zusammenführen, Tor E2
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · Tor E2 (Integration 1633 grün, Bau grün, Beispielmodus ohne 500) – E2E-Ersatzlauf läuft · Pakete: Bewegung/SVG, Anzeige-CMS + D-14…D-17 · Nächster Schritt: Fast-Forward main, Pakete mergen, Stufe B
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -12,3 +12,6 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 2–6/7 parallel · W
 - 2026-10-13 · E1: Datenmodell, Rechte, Schalter, Inhaltsimport (Koran 6236 Verse/77433 Wörter, Tajwid, 3 Übersetzungen, Bukhari 7580) fertig; KERN 3.0, MENSCHEN, ABNAHME, PLAN, Religion-Prüfung (grün).
 - 2026-10-13 · Welle 1 gestartet (Arbeitsbäume): O-Q01 Koran-Leser, O-A01/A02 Konten + Mein Bereich, H-D01/H-R01/H-I01 Hadith + Quellen + Moschee 2026, O-E01 Elifbe + /lernen.
 - 2026-10-13 · Orchestrator fertig: H-G01 Mein Ort, O-P01 Push, O-C01 Chat-Kern (S-01…S-17), O-L02 Unterricht-Kern, O-S01 Server-Kit, O-C02 Echtzeit, Kern Hatim/besondere Tage/GiroCode, ADRs angenommen. Gestartet: O-M01 CMS (Arbeitsbaum), H-R02/R03 Recht + Handbücher (Arbeitsbaum).
+- 2026-10-13 · Zusammengeführt: Recht/Handbücher, Hadith/Quellen/Moschee, Elifbe, Koran-Leser, Konten, CMS, Kür A, Verwaltung Lernen (0011), Koran-Verwaltung, Mein Bereich (Unterricht/Kinder/Chat/Push), Rezitations-Werkstatt. S1-Sicherheitsprüfung: alle Befunde behoben.
+- 2026-10-13 · Tor E2: Typen, Lint, Unit, Integration (1633), Sprachen, Religion 0, Wortlaut 0, Bau Produktion (1399 Seiten); Befund „Beispielmodus 500 bei unbekannten Adressen“ (auch live) behoben – 61 Adressen nur 200/404.
+- 2026-10-13 15:15 UTC · Gestartet: O-B01/H-B01…B08 Bewegung + SVG je Route; O-K05 Anzeige-CMS + D-14…D-17 + Mail bei Passkey/2FA + Vers/Hadith des Tages (Migration 0012).
