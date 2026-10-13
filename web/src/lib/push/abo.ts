@@ -1,7 +1,8 @@
 import 'server-only';
 import { and, eq, isNull, lt, or, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
-import { zeitpunkt } from '@/lib/gebetszeiten/naechstes';
+import { berlinerDatum, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
+import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { entschluessele, hmac, sha256, verschluessele } from '@/lib/krypto';
 import { erinnerungFaellig, type PushAboEingabe } from '@/lib/validierung/push';
@@ -116,9 +117,9 @@ export async function raeumePushAuf(): Promise<number> {
 }
 
 /** Kinder (< 16) bekommen Push nur mit Einwilligung der Eltern „Push für das Kind“ (ADR 0026, D-07). */
-export async function kindDarfPush(benutzerId: string): Promise<boolean> {
+export async function kindDarfPush(benutzerId: string, jetzt = new Date()): Promise<boolean> {
   const z = await db
-    .select({ id: schema.kontoEinwilligung.id })
+    .select({ erteiltVon: schema.kontoEinwilligung.erteiltVon, sechzehnAm: schema.lernende.sechzehnAm })
     .from(schema.kontoEinwilligung)
     .innerJoin(schema.lernende, eq(schema.lernende.id, schema.kontoEinwilligung.lernendeId))
     .where(
@@ -127,9 +128,9 @@ export async function kindDarfPush(benutzerId: string): Promise<boolean> {
         eq(schema.kontoEinwilligung.art, 'push_kind'),
         isNull(schema.kontoEinwilligung.widerrufenAm),
       ),
-    )
-    .limit(1);
-  return z.length > 0;
+    );
+  // D-11: nach dem 16. Geburtstag und 30 Tagen Übergang zählt nur die eigene Einwilligung
+  return einwilligungGilt(einwilligungsLage(z[0]?.sechzehnAm ?? null, berlinerDatum(jetzt)), z, benutzerId);
 }
 
 export type TaktErgebnis = { gebetsErinnerungen: number; fehlgeschlagen: number; geloeschteAbos: number };

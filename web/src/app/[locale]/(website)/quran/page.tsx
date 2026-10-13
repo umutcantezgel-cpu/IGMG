@@ -5,6 +5,7 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { CuzRing } from '@/components/website/quran/CuzRing';
 import { SurenRaster } from '@/components/website/quran/SurenRaster';
 import { SurenSuche } from '@/components/website/quran/SurenSuche';
+import { OfflineListe } from '@/components/website/quran/OfflineListe';
 import { Weiterlesen } from '@/components/website/quran/Weiterlesen';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
@@ -91,6 +92,13 @@ export default async function QuranEinstieg() {
                   lesezeichenLink: tu('lesezeichenLink'),
                   leer: tu('weiterlesenLeer'),
                   geraet: tu('geraetHinweis'),
+                }}
+              />
+              <OfflineListe
+                texte={{
+                  liste: t('offline.liste'),
+                  listeGroesse: t.raw('offline.listeGroesse') as string,
+                  listeEntfernen: t.raw('offline.listeEntfernen') as string,
                 }}
               />
               <section aria-labelledby="tajwid-titel" className="flex flex-col gap-3 rounded-lg border border-linie bg-sand p-6">

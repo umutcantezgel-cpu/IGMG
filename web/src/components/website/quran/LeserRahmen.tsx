@@ -45,6 +45,7 @@ export async function LeserRahmen({
     wortkarte: q.wortkarte,
     tajwidLeiste: q.tajwidLeiste,
     player: q.player,
+    offline: q.offline,
     quelleUebersetzung: q.quelle.uebersetzung,
   };
   const rezitationen = (await ladeRezitationen()).map((r) => ({

@@ -303,6 +303,8 @@ Die öffentlichen Seiten setzen **keine Cookies**. Zur Bedienung speichert die W
 | `igmg-quran-einstellungen` | Lesemodus, Ausgabe, Schriftgröße, Tajwid an/aus | beim Ändern der Ansicht | Leser wie zuletzt eingestellt |
 | `igmg-quran-weiterlesen` | zuletzt gelesene Stelle (Sure, Vers) | beim Lesen | „Weiterlesen“ |
 | `igmg-elifbe-fortschritt` | gelöste Übungen je Buchstabe | beim Üben | Fortschritt im Elifbe |
+| `igmg-quran-offline` | Liste der offline gespeicherten Koranseiten (Adresse, Titel, Größe, Datum) | nur nach „Offline speichern“ | Übersicht und Entfernen der gespeicherten Seiten |
+| Browser-Vorrat `igmg-koran-v1` (Cache Storage) | Koranseite, Wort- und Übersetzungsdaten, Programmteile, auf Wunsch Rezitation – keine Personendaten | nur nach „Offline speichern“ | Lesen ohne Netz; „Vom Gerät entfernen“ löscht ihn |
 | Leser-Einstellungen | Lesemodus, Schriftgröße, Tajwid an/aus, gewählte Ausgabe, zuletzt gelesene Stelle | wenn Sie sie ändern bzw. lesen | Einstellungen und „Weiterlesen“ |
 | Übungsstand (Elifbe) | geübte Buchstaben | beim Üben | Fortschritt auf diesem Gerät |
 
@@ -312,7 +314,7 @@ Außerdem hält der **Service Worker** (`/sw.js`) öffentliche Seiten der Gebets
 
 ### Hinweise für die Prüfung
 
-- **Schlüsselnamen (vereinheitlicht 13.10.2026):** alle mit Präfix `igmg-` (geprüft in `web/tests/e2e/datenschutz.spec.ts`): `igmg-konzepthinweis-gesehen`, `igmg-gebetszeiten-ort`, `igmg-push-auswahl`, `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser schreibt, Mein Bereich liest), `igmg-elifbe-fortschritt`. Vor der Veröffentlichung gegen den Code prüfen.
+- **Schlüsselnamen (vereinheitlicht 13.10.2026):** alle mit Präfix `igmg-` (geprüft in `web/tests/e2e/datenschutz.spec.ts`): `igmg-konzepthinweis-gesehen`, `igmg-gebetszeiten-ort`, `igmg-push-auswahl`, `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser schreibt, Mein Bereich liest), `igmg-quran-offline`, `igmg-elifbe-fortschritt`. Vor der Veröffentlichung gegen den Code prüfen.
 - Cookies der Anmeldung: siehe Baustein 2.
 - Service Worker: `web/public/sw.js` (Kopfkommentar: nie vorhalten: Verwaltung, API, Medien-Uploads, Server Actions).
 
