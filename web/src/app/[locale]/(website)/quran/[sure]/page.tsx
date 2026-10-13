@@ -106,9 +106,23 @@ async function Sure({ params }: { params: Promise<{ locale: string; sure: string
         <QuellenFuss ausgabe={ausgabe} />
         <QuranWeiter
           label={t('sure.blaettern')}
-          vorher={vorher ? { ziel: { pathname: '/quran/[sure]', params: { sure: String(vorher.nr) } }, text: t('sure.navVorher'), name: `${vorher.nr} · ${vorher.umschrift}` } : null}
+          vorher={
+            vorher
+              ? {
+                  ziel: { pathname: '/quran/[sure]', params: { sure: String(vorher.nr) } },
+                  text: t('sure.navVorher'),
+                  name: `${vorher.nr} · ${vorher.umschrift}`,
+                }
+              : null
+          }
           naechste={
-            naechste ? { ziel: { pathname: '/quran/[sure]', params: { sure: String(naechste.nr) } }, text: t('sure.navNaechste'), name: `${naechste.nr} · ${naechste.umschrift}` } : null
+            naechste
+              ? {
+                  ziel: { pathname: '/quran/[sure]', params: { sure: String(naechste.nr) } },
+                  text: t('sure.navNaechste'),
+                  name: `${naechste.nr} · ${naechste.umschrift}`,
+                }
+              : null
           }
         />
       </LeserRahmen>

@@ -37,7 +37,10 @@ describe('mit Sure 1 und 2 aus den Repository-Daten', () => {
   const suren = leseTanzil(lies('tanzil/quran-uthmani.xml')).slice(0, 2);
   const { suren: meta, einteilungen } = leseMetadaten(lies('tanzil/quran-data.xml'));
   const tajwid = new Map(
-    (JSON.parse(lies('quran-tajweed/tajwid-tanzil-1.1.json')) as [number, number, TajwidSegment[]][]).map(([s, v, seg]) => [`${s}:${v}`, seg]),
+    (JSON.parse(lies('quran-tajweed/tajwid-tanzil-1.1.json')) as [number, number, TajwidSegment[]][]).map(([s, v, seg]) => [
+      `${s}:${v}`,
+      seg,
+    ]),
   );
 
   beforeAll(async () => {
@@ -61,7 +64,12 @@ describe('mit Sure 1 und 2 aus den Repository-Daten', () => {
         basmala: s.basmala ?? null,
       });
       await db.insert(schema.quranVers).values(
-        s.verse.map((v) => ({ sure: s.nr, vers: v.nr, textAr: v.textAr, tajwid: bereinige(v.textAr, tajwid.get(`${s.nr}:${v.nr}`) ?? []).segmente })),
+        s.verse.map((v) => ({
+          sure: s.nr,
+          vers: v.nr,
+          textAr: v.textAr,
+          tajwid: bereinige(v.textAr, tajwid.get(`${s.nr}:${v.nr}`) ?? []).segmente,
+        })),
       );
     }
     const alle = suren.flatMap((s) => s.verse.flatMap((v) => woerter(v.textAr).map((w) => ({ sure: s.nr, vers: v.nr, ...w }))));
@@ -75,7 +83,9 @@ describe('mit Sure 1 und 2 aus den Repository-Daten', () => {
     for (let i = 0; i < alle.length; i += 1000) {
       await db
         .insert(schema.quranWort)
-        .values(alle.slice(i, i + 1000).map((w) => ({ sure: w.sure, vers: w.vers, pos: w.pos, textAr: w.text, formId: formId.get(w.text)! })));
+        .values(
+          alle.slice(i, i + 1000).map((w) => ({ sure: w.sure, vers: w.vers, pos: w.pos, textAr: w.text, formId: formId.get(w.text)! })),
+        );
     }
     await db.insert(schema.quranEinteilung).values(einteilungen.filter((e) => e.art === 'cuz'));
     await db.insert(schema.quranAusgabe).values({
@@ -127,10 +137,17 @@ describe('mit Sure 1 und 2 aus den Repository-Daten', () => {
       expect(v.teile.map((t) => t.text).join(' ')).toBe(text);
       const ws = v.teile.filter((t) => t.pos !== null);
       expect(ws.map((t) => t.pos)).toEqual(ws.map((_, i) => i + 1));
-      for (const t of v.teile) expect(Array.from(text).slice(t.versatz, t.versatz + Array.from(t.text).length).join('')).toBe(t.text);
+      for (const t of v.teile)
+        expect(
+          Array.from(text)
+            .slice(t.versatz, t.versatz + Array.from(t.text).length)
+            .join(''),
+        ).toBe(t.text);
       woerterGesamt += ws.length;
     }
-    expect(woerterGesamt).toBe(6141);
+    // Jedes Wort aus quran_wort passt zu seiner Stelle (keines fiel auf „ohne Wortnummer“ zurück)
+    expect(woerterGesamt).toBe(suren[1].verse.reduce((n, v) => n + woerter(v.textAr).length, 0));
+    expect(woerterGesamt).toBe(6117);
     expect(sure!.verse.some((v) => v.tajwid.length > 0)).toBe(true);
     expect(sure!.verse.every((v) => v.uebersetzung === null)).toBe(true);
   });
@@ -138,7 +155,9 @@ describe('mit Sure 1 und 2 aus den Repository-Daten', () => {
   it('Übersetzung aus quran_uebersetzung (nie aus dem Altfeld)', async () => {
     const sure = await q.ladeSure(2, 'tanzil-de.bubenheim');
     expect(sure!.verse.every((v) => v.uebersetzung && v.uebersetzung !== '[Altfeld]')).toBe(true);
-    expect(sure!.verse[0].uebersetzung).toBe(leseUebersetzung(lies('tanzil-uebersetzungen/de.bubenheim.txt'), new Map([[1, 7], [2, 286], ...Array.from({ length: 112 }, (_, i) => [i + 3, 0] as [number, number])])).length ? sure!.verse[0].uebersetzung : null);
+    const verseJe = new Map(leseTanzil(lies('tanzil/quran-uthmani.xml')).map((s) => [s.nr, s.verse.length]));
+    const datei = leseUebersetzung(lies('tanzil-uebersetzungen/de.bubenheim.txt'), verseJe);
+    expect(sure!.verse[254].uebersetzung).toBe(datei.find((v) => v.sure === 2 && v.vers === 255)?.text);
   });
 
   it('Sichtbarkeit: nicht freigegebene Ausgabe nur in Entwicklung/Vorschau, mit Hinweis', async () => {

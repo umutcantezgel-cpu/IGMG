@@ -1,40 +1,17 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import quran from '../../messages/bereiche/quran.json';
 
 /**
- * E2E Quran (Blatt S13, Routen /quran (Übersicht seit K-10) und /quran/[sure]): Adresse und Sprache, genau eine h1, Platzhalter ohne
- * importierte Quelle (kein arabischer Verstext), Surwahl mit aria-current, Blättern nur innerhalb der vorhandenen
- * Suren, 404 für unbekannte Nummern, axe ohne Befund. Texte kommen aus messages/bereiche/quran.json, Selektoren über
- * Rollen und Beschriftungen. Die Test-Datenbank hat keinen Quran-Import: dann gibt es genau fünf Suren.
+ * E2E Quran-Seiten (O-Q01): Übersicht, Surenseite, Cüz und Tajwid in allen drei Sprachen – Status, Sprache, genau
+ * eine h1, arabischer Text mit lang/dir, Quellenzeile mit tanzil.net, Blättern, 404 für unbekannte Nummern, kein
+ * horizontaler Seitenscroll, axe ohne Befund. Voraussetzung: Inhaltsimport in der E2E-Datenbank (Tanzil 1.1).
  */
-
 type Sprache = 'de' | 'tr' | 'en';
-
-const TEXTE = {
-  de: quran.de.quranSeite,
-  tr: quran.tr.quranSeite,
-  en: quran.en.quranSeite,
-} as const;
-
-/** Adresse der Surenliste je Sprache (Deutsch ohne Präfix, /tr und /en mit Präfix). */
-const WURZEL: Record<Sprache, string> = { de: '/quran', tr: '/tr/kuran', en: '/en/quran' };
-
+const T = { de: quran.de.quranSeite, tr: quran.tr.quranSeite, en: quran.en.quranSeite } as const;
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
-
-/** Einstieg /quran: seit Kür K-10 (85fe3e4) eine Übersicht mit Surenliste, ohne gewählte Sure. */
-const UEBERSICHTEN: { sprache: Sprache; pfad: string }[] = [
-  { sprache: 'de', pfad: '/quran' },
-  { sprache: 'tr', pfad: '/tr/kuran' },
-];
-
-/** Surenansichten in allen drei Sprachen (Platzhalter, Zählzeile, aria-current und Blättern gibt es nur hier). */
-const SEITEN: { sprache: Sprache; pfad: string; sure: number }[] = [
-  { sprache: 'de', pfad: '/quran/1', sure: 1 },
-  { sprache: 'de', pfad: '/quran/2', sure: 2 },
-  { sprache: 'tr', pfad: '/tr/kuran/1', sure: 1 },
-  { sprache: 'en', pfad: '/en/quran/5', sure: 5 },
-];
+const fuelle = (vorlage: string, werte: Record<string, string | number>) =>
+  vorlage.replace(/\{(\w+)\}/g, (_g, k: string) => String(werte[k] ?? ''));
 
 test.beforeEach(async ({ context }) => {
   await context.addInitScript(() => {
@@ -46,114 +23,87 @@ test.beforeEach(async ({ context }) => {
   });
 });
 
-function surenliste(seite: Page, sprache: Sprache) {
-  return seite.getByRole('navigation', { name: TEXTE[sprache].liste, exact: true });
-}
-
-function blaettern(seite: Page, sprache: Sprache) {
-  return seite.getByRole('navigation', { name: TEXTE[sprache].blaettern, exact: true });
-}
-
-for (const u of UEBERSICHTEN) {
-  test(`${u.pfad} (Übersicht) antwortet mit 200, html lang="${u.sprache}", genau eine h1`, async ({ page }) => {
-    const antwort = await page.goto(u.pfad);
-    expect(antwort?.status()).toBe(200);
-    await expect(page.locator('html')).toHaveAttribute('lang', u.sprache);
-    const ueberschrift = page.getByRole('heading', { level: 1 });
-    await expect(ueberschrift).toHaveCount(1);
-    await expect(ueberschrift).toHaveText(TEXTE[u.sprache].titel);
-  });
-
-  test(`${u.pfad} (Übersicht): Surenliste mit fünf Suren, keine gewählt, kein arabischer Verstext`, async ({ page }) => {
-    await page.goto(u.pfad);
-    const liste = surenliste(page, u.sprache);
-    await expect(liste.getByRole('link')).toHaveCount(5);
-    await expect(liste.locator('[aria-current="page"]')).toHaveCount(0);
-    await expect(page.locator('main [lang="ar"]')).toHaveCount(0);
-  });
-
-  test(`${u.pfad} (Übersicht): kein horizontaler Seitenscroll, axe ohne Befund`, async ({ page }) => {
-    await page.goto(u.pfad);
-    const ueberlauf = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-    expect(ueberlauf).toBeLessThanOrEqual(0);
-    const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
-    expect(ergebnis.violations.map((verstoss) => `${verstoss.id} (${verstoss.nodes.length} Knoten)`)).toEqual([]);
-  });
-}
+const SEITEN: { sprache: Sprache; pfad: string; h1: string | RegExp }[] = [
+  { sprache: 'de', pfad: '/quran', h1: T.de.titel },
+  { sprache: 'tr', pfad: '/tr/kuran', h1: T.tr.titel },
+  { sprache: 'de', pfad: '/quran/1', h1: 'Al-Faatiha' },
+  { sprache: 'tr', pfad: '/tr/kuran/36', h1: 'Yaseen' },
+  { sprache: 'en', pfad: '/en/quran/114', h1: 'An-Naas' },
+  { sprache: 'de', pfad: '/quran/cuz/30', h1: fuelle(T.de.cuz.titel, { nr: 30 }) },
+  { sprache: 'en', pfad: '/en/quran/juz/1', h1: fuelle(T.en.cuz.titel, { nr: 1 }) },
+  { sprache: 'de', pfad: '/quran/tajwid', h1: T.de.tajwidSeite.titel },
+  { sprache: 'tr', pfad: '/tr/kuran/tecvid', h1: T.tr.tajwidSeite.titel },
+];
 
 for (const s of SEITEN) {
-  test(`${s.pfad} antwortet mit 200, html lang="${s.sprache}", genau eine h1`, async ({ page }) => {
+  test(`${s.pfad}: 200, lang="${s.sprache}", genau eine h1, kein Seitenscroll, axe ohne Befund`, async ({ page }) => {
     const antwort = await page.goto(s.pfad);
     expect(antwort?.status()).toBe(200);
     await expect(page.locator('html')).toHaveAttribute('lang', s.sprache);
-    const ueberschrift = page.getByRole('heading', { level: 1 });
-    await expect(ueberschrift).toHaveCount(1);
-    await expect(ueberschrift).toHaveText(TEXTE[s.sprache].titel);
-  });
-
-  test(`${s.pfad}: Platzhalter sichtbar, ohne Quelle kein arabischer Verstext`, async ({ page }) => {
-    await page.goto(s.pfad);
-    await expect(page.getByRole('status').filter({ hasText: TEXTE[s.sprache].platzhalter })).toBeVisible();
-    await expect(page.locator('main [lang="ar"]')).toHaveCount(0);
-    await expect(page.locator('main [dir="rtl"]')).toHaveCount(0);
-  });
-
-  test(`${s.pfad}: Zählzeile mit Strich, Audio ist deaktiviert`, async ({ page }) => {
-    await page.goto(s.pfad);
-    await expect(page.getByText(TEXTE[s.sprache].zaehlung.replace('{anzahl}', '–'), { exact: true })).toBeVisible();
-    await expect(page.getByRole('button', { name: TEXTE[s.sprache].audioFolgt, exact: true })).toBeDisabled();
-  });
-
-  test(`${s.pfad}: Surenliste mit fünf Suren, aria-current an Sure ${s.sure}`, async ({ page }) => {
-    await page.goto(s.pfad);
-    const liste = surenliste(page, s.sprache);
-    await expect(liste.getByRole('link')).toHaveCount(5);
-    const aktuell = liste.locator('[aria-current="page"]');
-    await expect(aktuell).toHaveCount(1);
-    await expect(aktuell).toHaveAttribute('href', `${WURZEL[s.sprache]}/${s.sure}`);
-  });
-
-  test(`${s.pfad}: kein horizontaler Seitenscroll`, async ({ page }) => {
-    await page.goto(s.pfad);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(s.h1);
     const ueberlauf = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(ueberlauf).toBeLessThanOrEqual(0);
-  });
-
-  test(`${s.pfad}: axe ohne Befund`, async ({ page }) => {
-    await page.goto(s.pfad);
     const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
-    expect(ergebnis.violations.map((verstoss) => `${verstoss.id} (${verstoss.nodes.length} Knoten)`)).toEqual([]);
+    expect(ergebnis.violations.map((v) => `${v.id} (${v.nodes.length} Knoten)`)).toEqual([]);
   });
 }
 
-test('Surwahl: Link in der Surenliste führt zur Surenansicht', async ({ page }) => {
-  await page.goto('/quran');
-  await surenliste(page, 'de').getByRole('link', { name: TEXTE.de.sura['4'] }).click();
-  await expect(page).toHaveURL(/\/quran\/4$/);
-  await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText(TEXTE.de.sura['4']);
-  expect(await page.title()).toContain(TEXTE.de.sura['4']);
-});
-
-test('Blättern: Nächste Sura führt weiter, Vorherige fehlt auf Sure 1', async ({ page }) => {
-  await page.goto('/quran/2');
-  await blaettern(page, 'de').getByRole('link', { name: TEXTE.de.navNaechste, exact: true }).click();
-  await expect(page).toHaveURL(/\/quran\/3$/);
-  await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText(TEXTE.de.sura['3']);
-
+test('Surenseite: arabischer Text rechtsläufig, Basmala nur ab Sure 2 (nicht 9), Quellenzeile mit tanzil.net', async ({ page }) => {
   await page.goto('/quran/1');
-  await expect(blaettern(page, 'de').getByRole('link', { name: TEXTE.de.navVorher, exact: true })).toHaveCount(0);
-  await expect(blaettern(page, 'de').getByRole('link', { name: TEXTE.de.navNaechste, exact: true })).toHaveAttribute('href', '/quran/2');
+  await expect(page.locator('.vers-ar')).toHaveCount(7);
+  await expect(page.locator('.vers-ar').first()).toHaveAttribute('lang', 'ar');
+  await expect(page.locator('.vers-ar').first()).toHaveAttribute('dir', 'rtl');
+  await expect(page.locator('.basmala')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'tanzil.net' })).toHaveAttribute('href', 'https://tanzil.net');
+  await expect(page.getByRole('link', { name: T.de.quelle.link })).toHaveAttribute('href', '/quellen');
+
+  await page.goto('/quran/9');
+  await expect(page.locator('.basmala')).toHaveCount(0);
+  await page.goto('/quran/36');
+  await expect(page.locator('.basmala')).toHaveCount(1);
+  await expect(page.locator('.vers-ar')).toHaveCount(83);
 });
 
-test('Blättern: auf der letzten Sure ohne Import fehlt „Nächste Sura“', async ({ page }) => {
-  await page.goto('/en/quran/5');
-  await expect(blaettern(page, 'en').getByRole('link', { name: TEXTE.en.navNaechste, exact: true })).toHaveCount(0);
-  await expect(blaettern(page, 'en').getByRole('link', { name: TEXTE.en.navVorher, exact: true })).toHaveAttribute('href', '/en/quran/4');
+test('Kachel → Surenseite, Blättern zur nächsten und vorigen Sure', async ({ page }) => {
+  await page.goto('/quran');
+  await page.locator('li[data-nr="4"] a').click();
+  await expect(page).toHaveURL(/\/quran\/4$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('An-Nisaa');
+  const blaettern = page.getByRole('navigation', { name: T.de.sure.blaettern });
+  await blaettern.getByRole('link', { name: new RegExp(T.de.sure.navNaechste) }).click();
+  await expect(page).toHaveURL(/\/quran\/5$/);
+  await page.goto('/quran/1');
+  await expect(
+    page.getByRole('navigation', { name: T.de.sure.blaettern }).getByRole('link', { name: new RegExp(T.de.sure.navVorher) }),
+  ).toHaveCount(0);
 });
 
-test('unbekannte Suren antworten mit 404: /quran/6, /quran/02, /en/quran/0', async ({ page }) => {
-  for (const pfad of ['/quran/6', '/quran/02', '/en/quran/0']) {
+test('unbekannte Suren und Cüz antworten mit 404', async ({ page }) => {
+  for (const pfad of ['/quran/0', '/quran/02', '/quran/115', '/en/quran/999', '/quran/cuz/31', '/quran/cuz/0']) {
     const antwort = await page.goto(pfad);
     expect(antwort?.status(), pfad).toBe(404);
   }
+});
+
+test('Tajwid-Seite: 18 Regeln in sechs Familien, Erklärung nur freigegeben (sonst Platzhalter), Beispielvers markiert', async ({
+  page,
+}) => {
+  await page.goto('/quran/tajwid');
+  await expect(page.locator('li[id^="regel-"]')).toHaveCount(18);
+  await expect(page.locator('section[id^="familie-"]')).toHaveCount(6);
+  await expect(page.getByText(T.de.tajwidLeiste.platzhalter).first()).toBeVisible();
+  await expect(page.locator('#regel-madd_2 .beispiel-vers .tj-madd').first()).toBeAttached();
+  await expect(page.locator('#regel-madd_2 .beispiel-vers .tj:not(.tj-madd)')).toHaveCount(0);
+});
+
+test('statische Wortdaten: JSON ohne Cookies, nur geprüfte Bedeutungen', async ({ request }) => {
+  const antwort = await request.get('/api/quran/1/woerter');
+  expect(antwort.status()).toBe(200);
+  expect(antwort.headers()['set-cookie']).toBeUndefined();
+  const daten = (await antwort.json()) as { sure: number; verse: Record<string, { w: unknown[] }>; regeln: unknown[] };
+  expect(daten.sure).toBe(1);
+  expect(Object.keys(daten.verse)).toHaveLength(7);
+  expect(daten.regeln.length).toBeGreaterThan(0);
+  expect((await request.get('/api/quran/115/woerter')).status()).toBe(404);
 });

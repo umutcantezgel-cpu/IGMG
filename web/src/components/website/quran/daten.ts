@@ -22,4 +22,6 @@ function json<T>(url: string): Promise<T> {
 export const ladeWoerter = (url: string) => json<WortDaten>(url);
 export const ladeZeitenJson = (url: string) => json<ZeitenDaten>(url);
 export const ladeAusgabeJson = (url: string) =>
-  json<{ ausgabe: { id: string; sprache: string; titel: string; uebersetzer: string; ausstehend: boolean }; verse: [number, string][] }>(url);
+  json<{ ausgabe: { id: string; sprache: string; titel: string; uebersetzer: string; ausstehend: boolean }; verse: [number, string][] }>(
+    url,
+  );

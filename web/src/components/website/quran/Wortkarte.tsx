@@ -183,7 +183,12 @@ export default function Wortkarte({
                     const name = r.name[sprache as 'de'] ?? r.name.de;
                     return (
                       <li key={r.schluessel}>
-                        <button type="button" onClick={() => onRegel(r.schluessel)} aria-label={fuelle(w.regelOeffnen, { name })} className={kleinerKnopf}>
+                        <button
+                          type="button"
+                          onClick={() => onRegel(r.schluessel)}
+                          aria-label={fuelle(w.regelOeffnen, { name })}
+                          className={kleinerKnopf}
+                        >
                           <span lang={r.name[sprache as 'de'] ? undefined : 'de'} className={`tj tj-${r.familie} muster-probe`}>
                             {name}
                           </span>

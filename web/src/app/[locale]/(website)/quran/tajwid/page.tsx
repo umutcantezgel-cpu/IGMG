@@ -32,9 +32,16 @@ export default async function TajwidSeite() {
   const beispielJe = new Map(beispiele.map((b) => [b.regel, b]));
 
   return (
-    <Seitenrahmen bereich="islam" seite="quran" sprachZiel="/quran/tajwid" pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: ts('titel') }]}>
+    <Seitenrahmen
+      bereich="islam"
+      seite="quran"
+      sprachZiel="/quran/tajwid"
+      pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: ts('titel') }]}
+    >
       <PageHeader kennung={ts('kennung')} titel={ts('titel')} untertitel={ts('untertitel')} />
-      <div className={`leser ${schriftQuran.variable} mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt px-4 py-abschnitt-klein md:px-8`}>
+      <div
+        className={`leser ${schriftQuran.variable} mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt px-4 py-abschnitt-klein md:px-8`}
+      >
         <section aria-labelledby="legende-titel" className="flex flex-col gap-4">
           <div className="flex max-w-einleitung flex-col gap-2">
             <h2 id="legende-titel" className="text-display-2">
@@ -45,7 +52,10 @@ export default async function TajwidSeite() {
           <ul className="grid raster-kacheln gap-3">
             {TAJWID_FAMILIEN.map((f) => (
               <li key={f}>
-                <a href={`#familie-${f}`} className="flex min-h-16 items-center justify-between gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline shadow-s1 hover:border-gruen-700">
+                <a
+                  href={`#familie-${f}`}
+                  className="flex min-h-16 items-center justify-between gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline shadow-s1 hover:border-gruen-700"
+                >
                   <span className={`tj tj-${f} muster-probe text-20`}>{t(`familien.${f}`)}</span>
                   <span className="text-16 text-tinte-2">{t(`muster.${f}`)}</span>
                 </a>
@@ -75,7 +85,11 @@ export default async function TajwidSeite() {
                   const erklaerung = r.erklaerung ? (r.erklaerung[sprache] ?? r.erklaerung.de) : null;
                   const b = beispielJe.get(r.schluessel);
                   return (
-                    <li key={r.schluessel} id={`regel-${r.schluessel}`} className="flex scroll-mt-8 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6">
+                    <li
+                      key={r.schluessel}
+                      id={`regel-${r.schluessel}`}
+                      className="flex scroll-mt-8 flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6"
+                    >
                       <h3 lang={r.name[sprache] ? undefined : 'de'} className="text-24">
                         {name}
                       </h3>

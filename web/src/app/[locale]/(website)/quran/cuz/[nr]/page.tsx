@@ -61,14 +61,24 @@ async function Cuz({ params }: { params: Promise<{ locale: string; nr: string }>
   const ziel = (n: number) => ({ pathname: '/quran/cuz/[nr]', params: { nr: String(n) } }) as const;
 
   return (
-    <Seitenrahmen bereich="islam" seite="quran" sprachZiel={ziel(nr)} pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: t('cuz.titel', { nr }) }]}>
+    <Seitenrahmen
+      bereich="islam"
+      seite="quran"
+      sprachZiel={ziel(nr)}
+      pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: t('cuz.titel', { nr }) }]}
+    >
       <SurenKopf
         kennung={t('cuz.kennung', { nr })}
         nr={nr}
         titel={t('cuz.titel', { nr })}
         angaben={
           <span className="basis-full">
-            {t('cuz.bereich', { vonSure: bereich.von.sure, vonVers: bereich.von.vers, bisSure: bereich.bis.sure, bisVers: bereich.bis.vers })}
+            {t('cuz.bereich', {
+              vonSure: bereich.von.sure,
+              vonVers: bereich.von.vers,
+              bisSure: bereich.bis.sure,
+              bisVers: bereich.bis.vers,
+            })}
           </span>
         }
         quelle={<Quellenzeile quelle={quelle} />}

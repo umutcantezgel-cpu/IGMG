@@ -8,7 +8,7 @@
 export function sucheNormal(text: string): string {
   return text
     .normalize('NFD')
-    .replace(/[̀-ًͯ-ٰٟۖ-ۭ]/g, '')
+    .replace(/[\u0300-\u036f\u064b-\u065f\u0670\u06d6-\u06ed]/g, '')
     .toLocaleLowerCase('de')
     .replace(/ı/g, 'i')
     .replace(/[^\p{L}\p{N}]/gu, '')

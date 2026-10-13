@@ -252,7 +252,11 @@ export default function Player({
         </div>
         <p className="min-w-0 flex-1 text-16">
           <span className="font-bold">{s ? fuelle(p.stelle, { sure: s.sure, vers: s.vers }) : p.laden}</span>
-          {aktuell ? <span className="block truncate text-tinte-2">{fuelle(p.quelle, { rezitator: aktuell.rezitator, lizenz: aktuell.lizenz })}</span> : null}
+          {aktuell ? (
+            <span className="block truncate text-tinte-2">
+              {fuelle(p.quelle, { rezitator: aktuell.rezitator, lizenz: aktuell.lizenz })}
+            </span>
+          ) : null}
         </p>
         <label className="flex items-center gap-2 text-16">
           <span>{p.wiederholen}</span>
@@ -294,7 +298,13 @@ export default function Player({
           </label>
         ) : null}
         <label htmlFor={`${id}-folgen`} className="flex min-h-12 cursor-pointer items-center gap-2 text-16">
-          <input id={`${id}-folgen`} type="checkbox" checked={folgen} onChange={(e) => setFolgen(e.target.checked)} className="size-5 accent-gruen-700" />
+          <input
+            id={`${id}-folgen`}
+            type="checkbox"
+            checked={folgen}
+            onChange={(e) => setFolgen(e.target.checked)}
+            className="size-5 accent-gruen-700"
+          />
           {p.folgen}
         </label>
         <button type="button" aria-label={p.schliessen} onClick={onSchliessen} className={knopf}>

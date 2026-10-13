@@ -61,7 +61,13 @@ export async function LeserRahmen({
         sure={sure}
         cuz={cuz}
         texte={texte}
-        ausgaben={ausgaben.map((a) => ({ id: a.id, sprache: a.sprache, titel: a.titel, uebersetzer: a.uebersetzer, ausstehend: a.ausstehend }))}
+        ausgaben={ausgaben.map((a) => ({
+          id: a.id,
+          sprache: a.sprache,
+          titel: a.titel,
+          uebersetzer: a.uebersetzer,
+          ausstehend: a.ausstehend,
+        }))}
         ausgabe={ausgabe?.id ?? null}
         rezitationen={rezitationen}
         pfade={{
@@ -80,7 +86,12 @@ export async function LeserRahmen({
         >
           {t('leser.hinweisAusstehend')}
         </p>
-        <p data-keine-uebersetzung data-nur-uebersetzung hidden={Boolean(ausgabe)} className="rounded-lg border border-linie bg-sand px-4 py-3 text-16 text-tinte-2">
+        <p
+          data-keine-uebersetzung
+          data-nur-uebersetzung
+          hidden={Boolean(ausgabe)}
+          className="rounded-lg border border-linie bg-sand px-4 py-3 text-16 text-tinte-2"
+        >
           {t('leser.keineUebersetzung')}
         </p>
         {children}

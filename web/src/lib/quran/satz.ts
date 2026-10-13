@@ -3,8 +3,8 @@
  * Reine Funktionen ohne Abhängigkeit vom Server. Arabisch entsteht nie im Code: Der Text kommt aus der Datenbank, das
  * Versende-Zeichen und die Ziffern aus Unicode-Codepunkten.
  *
- * Kompakt, weil Al-Baqara (286 Verse, 6.141 Wörter) als statisches HTML klein bleiben muss: Wörter als
- * `<span data-w="n">`, Tajwid-Abschnitte als `<b class="tj tj-familie">`, Pausen- und Sajda-Zeichen als bloßer Text
+ * Kompakt, weil Al-Baqara (286 Verse, 6.117 Wörter) als statisches HTML klein bleiben muss: Wörter als
+ * `<span data-w=n>`, Tajwid-Abschnitte als `<b class="tj tj-familie">`, Pausen- und Sajda-Zeichen als bloßer Text
  * zwischen den Wörtern (sie hängen am Leerzeichen davor).
  */
 import { abschnitte, type TajwidSegment } from './tajwid';
@@ -49,14 +49,14 @@ export function wortHtml(text: string, tajwid: readonly TajwidSegment[], versatz
 }
 
 /**
- * HTML des arabischen Verses: Wörter als `<span data-w="pos">`, dazwischen Zeichen als Text. `teile` stammen aus
+ * HTML des arabischen Verses: Wörter als `<span data-w=pos>`, dazwischen Zeichen als Text. `teile` stammen aus
  * `quran_wort` (Positionen) und dem Verstext (Versatz); fehlt `tajwid`, bleibt der Vers ungefärbt (lieber ungefärbt
  * als falsch). Das Versende mit Nummer setzt in Listen das CSS (Zähler `vers`, `quran.css`), sonst `versEndeHtml`.
  */
 export function versHtml(teile: readonly SatzTeil[], tajwid: readonly TajwidSegment[] | null): string {
   const segmente = tajwid ?? [];
   return teile
-    .map((t) => (t.pos === null ? maskiere(t.text) : `<span data-w="${t.pos}">${wortHtml(t.text, segmente, t.versatz)}</span>`))
+    .map((t) => (t.pos === null ? maskiere(t.text) : `<span data-w=${t.pos}>${wortHtml(t.text, segmente, t.versatz)}</span>`))
     .join(' ');
 }
 
@@ -90,7 +90,8 @@ export function satzLaenge(verse: readonly SatzVers[]): number {
 }
 
 /**
- * Listeneinträge einer Sure (oder eines Teils davon) als ein HTML-Text: je Vers ein `<li class="vers">` mit Anker,
+ * Listeneinträge einer Sure (oder eines Teils davon) als ein HTML-Text: je Vers ein `<li class=vers>` mit Anker,
+ * (Attributwerte ohne Anführungszeichen, wo HTML es erlaubt: In den Daten der Hydrierung würde jedes zu `\"`),
  * dem arabischen Vers (`lang="ar" dir="rtl"`) und darunter der Übersetzung. Versende und Versnummern setzt das CSS
  * (Zähler), damit jedes Byte zählt: Ein einziger Text statt tausender Elemente hält die Seite klein.
  * `voll`: Wörter und Tajwid im HTML; sonst schlichter Text mit `data-roh` (siehe `VOLLSATZ_GRENZE`).
@@ -98,9 +99,11 @@ export function satzLaenge(verse: readonly SatzVers[]): number {
 export function versListeHtml(sure: number, verse: readonly SatzVers[], mitSure: boolean, voll = true): string {
   return verse
     .map((v) => {
-      const ar = voll ? `<p class="vers-ar" lang="ar" dir="rtl">${versHtml(v.teile, v.tajwid)}</p>` : `<p class="vers-ar" lang="ar" dir="rtl" data-roh>${maskiere(v.teile.map((t) => t.text).join(' '))}</p>`;
-      const ue = v.uebersetzung === null ? '' : `<p class="vers-ue">${maskiere(v.uebersetzung)}</p>`;
-      return `<li class="vers" id="${versAnker(sure, v.nr, mitSure)}" data-v="${v.nr}">${ar}${ue}</li>`;
+      const ar = voll
+        ? `<p class=vers-ar lang=ar dir=rtl>${versHtml(v.teile, v.tajwid)}</p>`
+        : `<p class=vers-ar lang=ar dir=rtl data-roh>${maskiere(v.teile.map((t) => t.text).join(' '))}</p>`;
+      const ue = v.uebersetzung === null ? '' : `<p class=vers-ue>${maskiere(v.uebersetzung)}</p>`;
+      return `<li class=vers id=${versAnker(sure, v.nr, mitSure)} data-v=${v.nr}>${ar}${ue}</li>`;
     })
     .join('');
 }

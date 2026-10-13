@@ -67,7 +67,7 @@ export default async function QuranEinstieg() {
                           href={cuzZiel(b.nr)}
                           prefetch={false}
                           aria-label={tu('cuzLabel', { nr: b.nr, sure: b.von.sure, vers: b.von.vers })}
-                          className="flex aspect-square min-h-12 items-center justify-center rounded-md border border-linie bg-weiss font-bold text-tinte no-underline tabular-nums transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
+                          className="flex aspect-square min-h-12 items-center justify-center rounded-md border border-linie bg-weiss font-bold text-tinte tabular-nums no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
                         >
                           {b.nr}
                         </Link>

@@ -72,7 +72,10 @@ export function QuranLeser(props: LeserProps) {
   const t = texte.leser;
   const leiste = useRef<HTMLDivElement>(null);
   // Gespeicherte Ansicht (Server und Hydrierung: keine), dazu die Wahl in dieser Sitzung
-  const gespeichert = gueltig(useSyncExternalStore(abonniereSpeicher, liesEinstellungen, () => null), ausgaben);
+  const gespeichert = gueltig(
+    useSyncExternalStore(abonniereSpeicher, liesEinstellungen, () => null),
+    ausgaben,
+  );
   const [eigene, setEigene] = useState<Einstellungen>({});
   const modus = eigene.modus ?? gespeichert.modus ?? 'beide';
   const tajwid = (eigene.tajwid ?? gespeichert.tajwid ?? 'an') === 'an';
@@ -155,7 +158,8 @@ export function QuranLeser(props: LeserProps) {
         clearTimeout(uhr);
         uhr = setTimeout(() => {
           const s = aktuell?.closest<HTMLElement>('[data-sure]')?.dataset.sure;
-          if (aktuell && s) schreibe(SPEICHER.weiterlesen, { sure: Number(s), vers: Number(aktuell.dataset.v), cuz: props.cuz, zeit: Date.now() });
+          if (aktuell && s)
+            schreibe(SPEICHER.weiterlesen, { sure: Number(s), vers: Number(aktuell.dataset.v), cuz: props.cuz, zeit: Date.now() });
         }, 1500);
       },
       { rootMargin: '-15% 0px -60% 0px' },
@@ -238,7 +242,11 @@ export function QuranLeser(props: LeserProps) {
         </button>
         <span className="ml-auto" />
         {rezitationen.length ? (
-          <button type="button" onClick={() => setSpielt(leiste.current?.closest<HTMLElement>('.leser') ?? null)} className={`${knopf} bg-gruen-700 text-weiss hover:bg-gruen-800`}>
+          <button
+            type="button"
+            onClick={() => setSpielt(leiste.current?.closest<HTMLElement>('.leser') ?? null)}
+            className={`${knopf} bg-gruen-700 text-weiss hover:bg-gruen-800`}
+          >
             <Play aria-hidden className="size-5" />
             {t.abspielen}
           </button>
@@ -257,8 +265,8 @@ export function QuranLeser(props: LeserProps) {
       </p>
 
       <div id={panelId} hidden={!offen} className="mx-auto max-w-(--container-lesen) px-4 pt-2 pb-5 md:px-8">
-        <div className="grid gap-6 border-t border-linie pt-4 md:grid-cols-2">
-          <fieldset className="flex flex-col gap-2 md:col-span-2">
+        <div className="grid gap-6 border-t border-linie pt-4 md:grid-cols-3">
+          <fieldset className="flex flex-col gap-2 md:col-span-3">
             <legend className="mb-2 text-16 font-bold">{t.lesemodus}</legend>
             <div className="flex flex-wrap gap-2">
               {MODI.map((m) => (
@@ -266,7 +274,13 @@ export function QuranLeser(props: LeserProps) {
                   key={m}
                   className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 has-checked:border-gruen-700 has-checked:bg-gruen-50 has-focus-visible:outline-2 has-focus-visible:outline-gruen-950"
                 >
-                  <input type="radio" name={`${panelId}-modus`} checked={modus === m} onChange={() => setze({ modus: m })} className="size-4 accent-gruen-700" />
+                  <input
+                    type="radio"
+                    name={`${panelId}-modus`}
+                    checked={modus === m}
+                    onChange={() => setze({ modus: m })}
+                    className="size-4 accent-gruen-700"
+                  />
                   {t.modus[m]}
                 </label>
               ))}
@@ -275,7 +289,7 @@ export function QuranLeser(props: LeserProps) {
 
           <>
             {ausgaben.length ? (
-              <label className="flex min-w-0 flex-col gap-2">
+              <label className="flex min-w-0 flex-col gap-2 md:col-span-2">
                 <span className="text-16 font-bold">{t.ausgabe}</span>
                 <select
                   value={ausgabe ?? ''}
@@ -319,8 +333,8 @@ export function QuranLeser(props: LeserProps) {
             </div>
           </>
 
-          <div className="flex flex-col gap-2 md:col-span-2">
-            <h2 className="text-16 font-bold font-text">{t.legende}</h2>
+          <div className="flex flex-col gap-2 md:col-span-3">
+            <h2 className="font-text text-16 font-bold">{t.legende}</h2>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3">
               {TAJWID_FAMILIEN.map((f) => (
                 <li key={f} className="flex flex-wrap items-baseline gap-x-2 text-16">
@@ -375,7 +389,15 @@ export function QuranLeser(props: LeserProps) {
             }}
           />
         ) : null}
-        {spielt ? <Player rezitationen={rezitationen} texte={texte} pfadZeiten={props.pfade.zeiten} behaelter={spielt} onSchliessen={() => setSpielt(null)} /> : null}
+        {spielt ? (
+          <Player
+            rezitationen={rezitationen}
+            texte={texte}
+            pfadZeiten={props.pfade.zeiten}
+            behaelter={spielt}
+            onSchliessen={() => setSpielt(null)}
+          />
+        ) : null}
       </Suspense>
     </div>
   );

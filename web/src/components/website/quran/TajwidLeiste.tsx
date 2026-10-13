@@ -200,7 +200,11 @@ export default function TajwidLeiste({
 
         <section className="flex flex-col gap-2">
           <h3 className="font-text text-16 font-bold">{fuelle(l.beispiel, { sure: wort.sure, vers: wort.vers })}</h3>
-          <p lang="ar" dir="rtl" className="beispiel-wort rounded-lg border border-linie bg-weiss px-4 text-center font-quran text-arabisch-1">
+          <p
+            lang="ar"
+            dir="rtl"
+            className="beispiel-wort rounded-lg border border-linie bg-weiss px-4 text-center font-quran text-arabisch-1"
+          >
             {beispiel.map((a, i) =>
               a.regeln.includes(schluessel) && regel ? (
                 <b key={i} className={`tj tj-${regel.familie} regel-markiert`}>

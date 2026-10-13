@@ -58,7 +58,10 @@ export function Weiterlesen({ texte, namen, pfadSure, pfadCuz }: { texte: Texte;
     'inline-flex min-h-12 items-center gap-2 self-start rounded-pill bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
 
   return (
-    <section aria-labelledby="weiterlesen-titel" className="flex min-h-56 flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 shadow-s1">
+    <section
+      aria-labelledby="weiterlesen-titel"
+      className="flex min-h-56 flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 shadow-s1"
+    >
       <h2 id="weiterlesen-titel" className="flex items-center gap-2 text-24">
         <Stern8 className="text-gruen-700" />
         {texte.titel}

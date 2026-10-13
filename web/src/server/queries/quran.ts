@@ -113,9 +113,7 @@ async function verseIm(sure: number, von: number, bis: number, ausgabeId: string
   const textJe = new Map(uebersetzungen.map((u) => [u.vers, u.text]));
   return verse.map((z) => ({
     nr: z.nr,
-    teile: teileMitVersatz(z.text).map((t) =>
-      t.pos !== null && wortJe.get(`${z.nr}:${t.pos}`) !== t.text ? { ...t, pos: null } : t,
-    ),
+    teile: teileMitVersatz(z.text).map((t) => (t.pos !== null && wortJe.get(`${z.nr}:${t.pos}`) !== t.text ? { ...t, pos: null } : t)),
     tajwid: z.tajwid ?? [],
     uebersetzung: textJe.get(z.nr) ?? null,
   }));
@@ -227,10 +225,7 @@ export async function ladeTajwidRegeln(): Promise<TajwidRegelDaten[]> {
       hoerbeispiel: schema.medium.schluessel,
     })
     .from(schema.tajwidRegel)
-    .leftJoin(
-      schema.medium,
-      and(eq(schema.medium.id, schema.tajwidRegel.hoerbeispielMediumId), isNull(schema.medium.imPapierkorbSeit)),
-    )
+    .leftJoin(schema.medium, and(eq(schema.medium.id, schema.tajwidRegel.hoerbeispielMediumId), isNull(schema.medium.imPapierkorbSeit)))
     .orderBy(asc(schema.tajwidRegel.sortierung), asc(schema.tajwidRegel.schluessel));
   return zeilen.flatMap((z) => {
     // Familie aus der festen Zuordnung (Farbe und Muster); unbekannte Regeln erscheinen nicht

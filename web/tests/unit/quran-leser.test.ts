@@ -82,7 +82,12 @@ describe('Satz: Wörter mit Versatz und Tajwid-Abschnitte', () => {
   it('Versatz je Teil in Codepunkten; Wortnummern wie quran_wort', () => {
     const { text } = vers(2, 255);
     const teile = teileMitVersatz(text);
-    for (const t of teile) expect(Array.from(text).slice(t.versatz, t.versatz + Array.from(t.text).length).join('')).toBe(t.text);
+    for (const t of teile)
+      expect(
+        Array.from(text)
+          .slice(t.versatz, t.versatz + Array.from(t.text).length)
+          .join(''),
+      ).toBe(t.text);
     expect(teile.filter((t) => t.pos !== null).map((t) => t.text)).toEqual(woerter(text).map((w) => w.text));
   });
 
@@ -106,7 +111,7 @@ describe('Satz: Wörter mit Versatz und Tajwid-Abschnitte', () => {
       const { text, tajwid } = vers(2, v);
       const html = versHtml(teileMitVersatz(text), tajwid);
       expect(nurText(html)).toBe(text);
-      const spans = [...html.matchAll(/<span data-w="(\d+)">/g)].map((m) => Number(m[1]));
+      const spans = [...html.matchAll(/<span data-w=(\d+)>/g)].map((m) => Number(m[1]));
       expect(spans).toEqual(woerter(text).map((w) => w.pos));
       tajwidAbschnitte += (html.match(/<b class="tj tj-(ghunna|ikhfa|iqlab|qalqala|madd|stumm)">/g) ?? []).length;
       // Kein Abschnitt beginnt mit einem Vokalzeichen (Harakat bleiben am Buchstaben)
@@ -124,15 +129,17 @@ describe('Satz: Wörter mit Versatz und Tajwid-Abschnitte', () => {
     const { text, tajwid } = vers(1, 1);
     const v = { nr: 1, teile: teileMitVersatz(text), tajwid, uebersetzung: 'A <b>&' };
     const voll = versListeHtml(1, [v], false);
-    expect(voll).toContain('<li class="vers" id="v1" data-v="1"><p class="vers-ar" lang="ar" dir="rtl"><span data-w="1">');
-    expect(voll).toContain('<p class="vers-ue">A &lt;b&gt;&amp;</p>');
-    expect(versListeHtml(1, [v], true)).toContain('id="v1-1"');
+    expect(voll).toContain('<li class=vers id=v1 data-v=1><p class=vers-ar lang=ar dir=rtl><span data-w=1>');
+    expect(voll).toContain('<p class=vers-ue>A &lt;b&gt;&amp;</p>');
+    expect(versListeHtml(1, [v], true)).toContain('id=v1-1 ');
     const schlicht = versListeHtml(1, [{ ...v, uebersetzung: null }], false, false);
-    expect(schlicht).toBe(`<li class="vers" id="v1" data-v="1"><p class="vers-ar" lang="ar" dir="rtl" data-roh>${maskiere(text)}</p></li>`);
+    expect(schlicht).toBe(`<li class=vers id=v1 data-v=1><p class=vers-ar lang=ar dir=rtl data-roh>${maskiere(text)}</p></li>`);
   });
 
   it('nur Al-Baqara liegt über der Grenze des vollen Satzes', () => {
-    const laengen = suren.map((s) => satzLaenge(s.verse.map((v) => ({ nr: v.nr, teile: teileMitVersatz(v.textAr), tajwid: [], uebersetzung: null }))));
+    const laengen = suren.map((s) =>
+      satzLaenge(s.verse.map((v) => ({ nr: v.nr, teile: teileMitVersatz(v.textAr), tajwid: [], uebersetzung: null }))),
+    );
     expect(laengen.filter((l) => l > VOLLSATZ_GRENZE).length).toBe(1);
     expect(laengen[1]).toBeGreaterThan(VOLLSATZ_GRENZE);
   });
@@ -183,7 +190,8 @@ describe('Sichtbarkeit der Übersetzungen (ADR 0030, MN-02)', () => {
 });
 
 describe('Surensuche', () => {
-  const schluessel = (nr: number) => surenSchluessel(['', 'Al-Faatiha', 'Al-Baqara'][nr] ?? 'Yaseen', suren[nr === 36 ? 35 : nr - 1].nameAr);
+  const schluessel = (nr: number) =>
+    surenSchluessel(['', 'Al-Faatiha', 'Al-Baqara'][nr] ?? 'Yaseen', suren[nr === 36 ? 35 : nr - 1].nameAr);
 
   it('lange Vokale, Bindestriche und q/k werden gleich behandelt', () => {
     expect(sucheNormal('Al-Faatiha')).toBe(sucheNormal('al fatiha'));

@@ -39,6 +39,10 @@ const ROUTEN = [
     en: '/en/organizations/ana-teskilati',
   },
   { id: 'korankurse', seite: 'Korankurse', de: '/bildung/korankurse', tr: '/tr/egitim/kuran-kurslari', en: '/en/education/quran-courses' },
+  { id: 'quran', seite: 'Quran', de: '/quran', tr: '/tr/kuran', en: '/en/quran' },
+  { id: 'quransure', seite: 'Quran, Sure', de: '/quran/36', tr: '/tr/kuran/36', en: '/en/quran/36' },
+  { id: 'qurancuz', seite: 'Quran, Cüz', de: '/quran/cuz/30', tr: '/tr/kuran/cuz/30', en: '/en/quran/juz/30' },
+  { id: 'qurantajwid', seite: 'Quran, Tajwid', de: '/quran/tajwid', tr: '/tr/kuran/tecvid', en: '/en/quran/tajweed' },
   { id: 'gebetszeiten', seite: 'Gebetszeiten', de: '/gebetszeiten', tr: '/tr/namaz-vakitleri', en: '/en/prayer-times' },
   { id: 'wissen', seite: 'Islamisches Wissen', de: '/islamisches-wissen', tr: '/tr/islami-bilgiler', en: '/en/islamic-knowledge' },
   {
