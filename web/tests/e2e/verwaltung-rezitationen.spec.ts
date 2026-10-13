@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import { test as basis, expect, type Page } from '@playwright/test';
+import { test as basis, expect as basisExpect, type Page } from '@playwright/test';
 import texte from '../../messages/verwaltung/rezitationen.json';
 import { angemeldetesKonto } from './hilfen/konto';
 
@@ -15,6 +15,8 @@ import { angemeldetesKonto } from './hilfen/konto';
 const t = texte.rezitationen;
 const w = t.werkstatt;
 const ZUSTAND = process.env.E2E_ZUSTAND;
+/** Erstes Kompilieren im Entwicklungsserver und Auswerten im Browser brauchen Zeit. */
+const expect = basisExpect.configure({ timeout: 30_000 });
 
 /** Chromium mit Ersatz-Mikrofon (ohne Rückfrage) und ohne Autoplay-Sperre (Testton im Browser erzeugen und abspielen). */
 const test = basis.extend({
@@ -123,7 +125,7 @@ test('Werkstatt: Testton hochladen, Grenzen vorschlagen und speichern, mitklopfe
   // Upload des Testtons
   const ton = await testton(page);
   await quelle.locator('input[type="file"]').setInputFiles({ name: 'testton.webm', mimeType: 'audio/webm', buffer: ton });
-  await quelle.getByRole('button', { name: w.quelle.dateiHochladen }).click();
+  await quelle.getByRole('button', { name: w.quelle.dateiHochladen, exact: true }).click();
   await expect(quelle.getByText(w.quelle.uebernommen)).toBeVisible({ timeout: 30_000 });
 
   // Wellenform und Versgrenzen

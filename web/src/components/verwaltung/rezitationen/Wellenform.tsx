@@ -182,6 +182,8 @@ export function Wellenform({
   const prozent = (ms: number) => `${(ms / dauer) * 100}%`;
   const imAusschnitt = (ms: number) => `${((ms - ausschnitt.von) / Math.max(1, ausschnitt.bis - ausschnitt.von)) * 100}%`;
   const stufe = ZOOM.indexOf(zoom);
+  // Beschriftung beginnt am Strich: rechts am Rand kein angeschnittener Text
+  const randfrei = (ms: number) => (ms - ausschnitt.von) / Math.max(1, ausschnitt.bis - ausschnitt.von) < 0.9;
 
   return (
     <div className="flex flex-col gap-2">
@@ -262,8 +264,8 @@ export function Wellenform({
         </div>
       </div>
       <div aria-hidden className="relative h-6 overflow-hidden text-16 text-tinte-2 tabular-nums">
-        {raster.striche.map((ms) => (
-          <span key={ms} className="absolute top-0 -translate-x-1/2 border-l border-linie ps-1" style={{ left: imAusschnitt(ms) }}>
+        {raster.striche.filter(randfrei).map((ms) => (
+          <span key={ms} className="absolute top-0 border-l border-linie ps-1" style={{ left: imAusschnitt(ms) }}>
             {formatZeit(ms, raster.schrittMs < 1000 ? 1 : 0)}
           </span>
         ))}

@@ -96,17 +96,15 @@ beforeAll(async () => {
     sha256: '0'.repeat(64),
     lizenz: 'CC BY 3.0',
   });
-  await db
-    .insert(schema.quranSure)
-    .values(
-      suren.map((s) => ({
-        nr: s.nr,
-        nameAr: s.nameAr,
-        verseAnzahl: s.verse.length,
-        quelleId: 'tanzil',
-        nameUmschrift: meta[s.nr - 1].umschrift,
-      })),
-    );
+  await db.insert(schema.quranSure).values(
+    suren.map((s) => ({
+      nr: s.nr,
+      nameAr: s.nameAr,
+      verseAnzahl: s.verse.length,
+      quelleId: 'tanzil',
+      nameUmschrift: meta[s.nr - 1].umschrift,
+    })),
+  );
   // Verse und Wörter nur für Al-Fatiha und Sure 108 (genug für Werkstatt und Raster)
   const auswahl = suren.filter((s) => s.nr === 1 || s.nr === 108);
   await db.insert(schema.quranVers).values(auswahl.flatMap((s) => s.verse.map((v) => ({ sure: s.nr, vers: v.nr, textAr: v.textAr }))));

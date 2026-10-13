@@ -16,7 +16,10 @@ const FORMAT: Record<string, string> = { 'audio/webm': 'WebM', 'audio/mp4': 'M4A
 /** Aufnahmeformate in dieser Reihenfolge (Chromium/Firefox: WebM/Opus, Safari: MP4/AAC). */
 const AUFNAHME_TYPEN = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/ogg;codecs=opus', 'audio/webm'];
 
-export const groesseText = (bytes: number) => `${(bytes / 1_000_000).toLocaleString('de-DE', { maximumFractionDigits: 1 })} MB`;
+export const groesseText = (bytes: number) =>
+  bytes < 1_000_000
+    ? `${Math.max(1, Math.round(bytes / 1000)).toLocaleString('de-DE')} kB`
+    : `${(bytes / 1_000_000).toLocaleString('de-DE', { maximumFractionDigits: 1 })} MB`;
 
 type Aufnahme = { blob: Blob; dauerMs: number; puffer: AudioBuffer | null };
 
@@ -213,7 +216,7 @@ export function AudioQuelle({
         <>
           {datei ? <p className="max-w-text text-16 text-tinte-2">{t('ersetzen')}</p> : null}
           <div className="grid gap-6 lg:grid-cols-2">
-            <fieldset className="flex flex-col gap-3 rounded-md border border-linie p-4">
+            <fieldset className="flex min-w-0 flex-col gap-3 rounded-md border border-linie p-4">
               <legend className="px-1 font-bold">{t('aufnahme')}</legend>
               {laeuft ? (
                 <>
@@ -254,7 +257,7 @@ export function AudioQuelle({
                 </Button>
               )}
             </fieldset>
-            <fieldset className="flex flex-col gap-3 rounded-md border border-linie p-4">
+            <fieldset className="flex min-w-0 flex-col gap-3 rounded-md border border-linie p-4">
               <legend className="px-1 font-bold">{t('datei')}</legend>
               <label htmlFor={`${id}-datei`} className="sr-only">
                 {t('datei')}
@@ -266,7 +269,7 @@ export function AudioQuelle({
                 accept="audio/mp4,audio/x-m4a,audio/aac,audio/mpeg,audio/ogg,audio/webm,.m4a,.mp3,.ogg,.oga,.opus,.webm"
                 aria-describedby={`${id}-hinweis`}
                 disabled={sendet}
-                className="min-h-12 text-18"
+                className="min-h-12 w-full max-w-full text-18"
               />
               <p id={`${id}-hinweis`} className="text-16 text-tinte-2">
                 {t('dateiHinweis')}

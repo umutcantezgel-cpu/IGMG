@@ -1,6 +1,6 @@
 'use client';
 
-import { Minus, Play, Plus, Save, Square } from 'lucide-react';
+import { Minus, Play, Plus, Save, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useId, useMemo, useRef, useState, useTransition, type KeyboardEvent } from 'react';
 import { Button } from '@/components/ui/button';
@@ -200,7 +200,7 @@ export function Mitklopfen({
             ))}
           </select>
         </label>
-        <fieldset className="flex flex-col gap-1.5">
+        <fieldset className="flex min-w-0 flex-col gap-1.5">
           <legend className="font-bold">{t('tempo')}</legend>
           <div className="flex flex-wrap gap-2">
             {TEMPI.map((wert) => (
@@ -255,7 +255,7 @@ export function Mitklopfen({
               </span>
             </button>
             <Button type="button" variant="ghost" className="self-start" onClick={abbrechen}>
-              <Square aria-hidden />
+              <X aria-hidden />
               {t('abbrechen')}
             </Button>
           </div>
@@ -273,16 +273,13 @@ export function Mitklopfen({
             <table className="w-full text-start">
               <thead className="bg-sand text-16">
                 <tr>
-                  <th scope="col" className="px-3 py-2 text-start">
+                  <th scope="col" className="px-2 py-2 text-start md:px-3">
                     {t('spalteWort')}
                   </th>
-                  <th scope="col" className="px-3 py-2 text-start">
-                    {t('spalteText')}
-                  </th>
-                  <th scope="col" className="px-3 py-2 text-start">
+                  <th scope="col" className="px-2 py-2 text-start md:px-3">
                     {t('spalteStart')}
                   </th>
-                  <th scope="col" className="px-3 py-2 text-end">
+                  <th scope="col" className="px-2 py-2 text-end md:px-3">
                     {t('spalteAktion')}
                   </th>
                 </tr>
@@ -290,17 +287,17 @@ export function Mitklopfen({
               <tbody>
                 {woerter.map((w, i) => (
                   <tr key={w.pos} className="border-t border-linie">
-                    <th scope="row" className="px-3 py-1 text-start font-bold tabular-nums">
-                      {w.pos}
-                    </th>
-                    <td className="px-3 py-1">
-                      <span lang="ar" dir="rtl" className="font-quran text-arabisch-3">
-                        {w.text}
+                    <th scope="row" className="px-2 py-1 text-start font-bold md:px-3">
+                      <span className="flex items-center gap-2">
+                        <span className="tabular-nums">{w.pos}</span>
+                        <span lang="ar" dir="rtl" className="font-quran text-arabisch-3 font-normal">
+                          {w.text}
+                        </span>
                       </span>
-                    </td>
-                    <td className="px-3 py-1 tabular-nums">{formatZeit(anfaenge[i])}</td>
-                    <td className="px-3 py-1">
-                      <span className="flex justify-end gap-1">
+                    </th>
+                    <td className="px-2 py-1 tabular-nums md:px-3">{formatZeit(anfaenge[i])}</td>
+                    <td className="px-2 py-1 md:px-3">
+                      <span className="flex justify-end gap-0.5 md:gap-1">
                         {darfBearbeiten ? (
                           <>
                             <Button type="button" variant="ghost" size="icon" onClick={() => verschiebe(i, -SCHRITT_MS)}>

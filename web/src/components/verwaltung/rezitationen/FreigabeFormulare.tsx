@@ -92,7 +92,9 @@ export function VereinbarungFormular({
           label={t('vereinbarung.datei')}
           hinweis={t('vereinbarung.dateiHinweis')}
           fehler={dateiFehler}
-          kinder={(aria) => <input {...aria} type="file" name="datei" accept="application/pdf,.pdf" className="min-h-12 text-18" />}
+          kinder={(aria) => (
+            <input {...aria} type="file" name="datei" accept="application/pdf,.pdf" className="min-h-12 w-full max-w-full text-18" />
+          )}
         />
       ) : null}
       {auswahl.length ? (

@@ -62,7 +62,7 @@ export function RezitationsFormular({
           <Meldung art="erfolg">{t('formular.gespeichert')}</Meldung>
         ) : null}
       </div>
-      <fieldset disabled={nurLesen || laeuft} className="flex flex-col gap-4">
+      <fieldset disabled={nurLesen || laeuft} className="flex min-w-0 flex-col gap-4">
         <Feld
           id={feldId('nameDe')}
           name="nameDe"

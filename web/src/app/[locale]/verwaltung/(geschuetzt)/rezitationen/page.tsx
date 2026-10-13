@@ -9,7 +9,7 @@ import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
 import { ladeRezitationsListe, type RezitationZeile } from '@/server/queries/verwaltung/rezitationen';
 
-const PILLE = 'inline-flex rounded-pill px-3 text-16 leading-normal font-bold';
+const PILLE = 'inline-flex rounded-pill px-3 text-16 leading-normal font-bold whitespace-nowrap';
 
 /**
  * Verwaltung › Rezitationen (O-Q02, H-Q05, ADR 0029): Liste mit Vollständigkeit (Suren mit Audio, mit Verszeiten, mit

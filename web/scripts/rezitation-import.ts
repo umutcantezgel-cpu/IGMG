@@ -24,26 +24,31 @@ if (!values.manifest) {
   console.error('Bitte --manifest <pfad/manifest.json> angeben.');
   process.exit(1);
 }
+const manifestPfad: string = values.manifest;
 
-try {
-  const b = await importiereRezitation({
-    manifestPfad: values.manifest,
-    trocken: values.trocken,
-    ueberschreibeGeprueft: values['ueberschreiben-geprueft'],
-  });
-  console.log(
-    `${values.trocken ? '[trocken] ' : ''}Rezitation ${b.rezitation}${b.angelegt ? ' (neu, inaktiv)' : ''}: ` +
-      `Dateien neu ${b.dateien.neu}, ersetzt ${b.dateien.ersetzt}, unverändert ${b.dateien.unveraendert}; ` +
-      `Verszeiten ${b.verszeiten}; Wortzeiten ${b.wortzeiten} (ungeprüft).`,
-  );
-  for (const h of b.hinweise) console.log(`Hinweis: ${h}`);
-  console.log('Aktivieren nur in der Verwaltung mit hinterlegter Vereinbarung (ADR 0029).');
-  process.exit(0);
-} catch (e) {
-  if (e instanceof ImportFehler) {
-    console.error('Import abgebrochen, nichts geschrieben:');
-    for (const f of e.fehler) console.error(`- ${f}`);
-    process.exit(1);
+async function main() {
+  try {
+    const b = await importiereRezitation({
+      manifestPfad,
+      trocken: values.trocken,
+      ueberschreibeGeprueft: values['ueberschreiben-geprueft'],
+    });
+    console.log(
+      `${values.trocken ? '[trocken] ' : ''}Rezitation ${b.rezitation}${b.angelegt ? ' (neu, inaktiv)' : ''}: ` +
+        `Dateien neu ${b.dateien.neu}, ersetzt ${b.dateien.ersetzt}, unverändert ${b.dateien.unveraendert}; ` +
+        `Verszeiten ${b.verszeiten}; Wortzeiten ${b.wortzeiten} (ungeprüft).`,
+    );
+    for (const h of b.hinweise) console.log(`Hinweis: ${h}`);
+    console.log('Aktivieren nur in der Verwaltung mit hinterlegter Vereinbarung (ADR 0029).');
+    process.exit(0);
+  } catch (e) {
+    if (e instanceof ImportFehler) {
+      console.error('Import abgebrochen, nichts geschrieben:');
+      for (const f of e.fehler) console.error(`- ${f}`);
+      process.exit(1);
+    }
+    throw e;
   }
-  throw e;
 }
+
+void main();
