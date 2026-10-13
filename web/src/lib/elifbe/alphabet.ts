@@ -13,7 +13,7 @@
  */
 
 /** Verbinder (Zero Width Joiner): erzwingt die verbundene Form, ohne ein sichtbares Zeichen hinzuzufügen. */
-export const ZWJ = '‍';
+export const ZWJ = '\u200D';
 
 export type Sprache = 'de' | 'tr' | 'en';
 export type Mehrsprachig = Record<Sprache, string>;

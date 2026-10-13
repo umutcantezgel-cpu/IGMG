@@ -50,6 +50,7 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Men
       punkte: [
         p('gebetszeiten', 'gebetszeiten', 'bGebetszeiten', '/gebetszeiten'),
         p('quran', 'quran', 'bQuran', '/quran'),
+        p('hadith', 'hadith', 'bHadith', '/hadith'),
         p('islamisches-wissen', 'wissen', 'bWissen', '/islamisches-wissen'),
       ],
     },
@@ -67,6 +68,8 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Men
       schluessel: 'bildung',
       label: t('bildung'),
       punkte: [
+        p('lernen', 'lernen', 'bLernen', '/lernen'),
+        p('elifbe', 'elifbe', 'bElifbe', '/elifbe'),
         p('voranmeldung', 'voranmeldung', 'bVoranmeldung', '/bildung/voranmeldung'),
         p('korankurse', 'korankurse', 'bKorankurse', '/bildung/korankurse'),
         // Laufbuch D-07: „Islamunterricht“ vorläufig → Islamisches Wissen (MENSCHEN M-022)
