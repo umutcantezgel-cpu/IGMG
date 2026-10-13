@@ -39,11 +39,13 @@ export function cspOeffentlich(): string {
 }
 
 /** Strikte CSP der Verwaltung mit Nonce (Verwaltung wird ohnehin je Anfrage gerendert). Mit Vercel Blob darf der
- * Browser große PDF-Dateien direkt zur Blob-Schnittstelle laden (ADR 0020, V-05) – nur in der Verwaltung. */
-export function cspVerwaltung(nonce: string): string {
+ * Browser große PDF-Dateien direkt zur Blob-Schnittstelle laden (ADR 0020, V-05) – nur in der Verwaltung.
+ * `weitereVerbindungen`: z. B. der Echtzeit-Server (wss://) nur für Mein Bereich (ADR 0027). */
+export function cspVerwaltung(nonce: string, weitereVerbindungen: readonly string[] = []): string {
+  const verbindungen = ["'self'", ...(process.env.SPEICHER === 'blob' ? ['https://vercel.com'] : []), ...weitereVerbindungen];
   return richtlinie({
     ...gemeinsam,
-    ...(process.env.SPEICHER === 'blob' ? { 'connect-src': ["'self'", 'https://vercel.com'] } : {}),
+    'connect-src': verbindungen,
     'script-src': ["'self'", `'nonce-${nonce}'`, "'strict-dynamic'", ...(istEntwicklung ? ["'unsafe-eval'"] : [])],
     'style-src': ["'self'", "'unsafe-inline'"],
   });

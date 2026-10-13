@@ -1,6 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
+import { echtzeitUrsprung } from './lib/echtzeit/konfig';
 import { cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
 
 const sprachRouting = createMiddleware(routing);
@@ -26,7 +27,9 @@ export default function proxy(request: NextRequest) {
   // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR 0026)
   if (verwaltung || istKontoPfad(pathname)) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
-    const csp = cspVerwaltung(nonce);
+    // Echtzeit-Server (wss://) nur für Konto-Seiten, nie für die Verwaltung oder öffentliche Seiten (ADR 0027)
+    const echtzeit = verwaltung ? null : echtzeitUrsprung();
+    const csp = cspVerwaltung(nonce, echtzeit ? [echtzeit] : []);
     // next-intl übernimmt die Request-Header in den Rewrite; Next.js liest die Nonce aus der CSP.
     request.headers.set('x-nonce', nonce);
     request.headers.set('Content-Security-Policy', csp);

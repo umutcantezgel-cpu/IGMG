@@ -32,6 +32,9 @@ export const GEHEIMNISSE = [
   { name: 'CRON_SECRET', kodierung: 'base64url', bytes: 48 },
   // Web Push (ADR 0034): geheimer P-256-Skalar, 32 Byte base64url; der öffentliche Schlüssel wird daraus berechnet
   { name: 'VAPID_PRIVAT', kodierung: 'vapid', bytes: 32 },
+  // Echtzeit-Signal (ADR 0027): HMAC für Tokens und Schlüssel der Centrifugo-Schnittstelle
+  { name: 'ECHTZEIT_GEHEIMNIS', kodierung: 'base64url', bytes: 48 },
+  { name: 'ECHTZEIT_API_SCHLUESSEL', kodierung: 'base64url', bytes: 48 },
 ];
 
 /** Gültiger P-256-Schlüssel (nicht jede Zufallszahl ist ein gültiger Skalar). */

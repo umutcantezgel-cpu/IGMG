@@ -16,6 +16,7 @@ import {
   stummschalten,
 } from '@/lib/chat/dienst';
 import { db, schema } from '@/lib/db';
+import { echtzeitAusUmgebung, signalisiere } from '@/lib/echtzeit/centrifugo';
 import { funktionAn } from '@/lib/funktionen';
 import { verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
@@ -45,7 +46,11 @@ export async function sendeChatNachricht(kanalId: string, text: string) {
     return { ok: false as const, grund: 'keinRecht' as const };
   const kanal = await ladeKanal(kanalId);
   if (!kanal) return { ok: false as const, grund: 'keinRecht' as const };
-  return sendeNachricht(kanal, k, text);
+  const ergebnis = await sendeNachricht(kanal, k, text);
+  // Echtzeit (K-A): nur das Signal „Kanal hat Neues“ an den lokalen Server, nie der Text (S-16)
+  const echtzeit = echtzeitAusUmgebung();
+  if (ergebnis.ok && echtzeit && (await funktionAn('echtzeit'))) after(() => signalisiere(echtzeit, kanalId));
+  return ergebnis;
 }
 
 export async function bestaetigeChatRegeln() {
