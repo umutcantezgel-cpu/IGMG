@@ -45,7 +45,11 @@ export type AuditAktion =
   | 'ticket.geaendert'
   | 'ticket.kommentiert'
   | 'ticket.gelesen'
-  | 'postfach.gesendet';
+  | 'postfach.gesendet'
+  | 'chat.gemeldet'
+  | 'chat.meldung_bearbeitet'
+  | 'chat.notfallpause'
+  | 'chat.notfallpause_aufgehoben';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

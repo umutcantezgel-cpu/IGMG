@@ -60,6 +60,10 @@ export const AKTION_SCHLUESSEL = {
   'ticket.kommentiert': 'ticketKommentiert',
   'ticket.gelesen': 'ticketGelesen',
   'postfach.gesendet': 'postfachGesendet',
+  'chat.gemeldet': 'chatGemeldet',
+  'chat.meldung_bearbeitet': 'chatMeldungBearbeitet',
+  'chat.notfallpause': 'chatNotfallpause',
+  'chat.notfallpause_aufgehoben': 'chatNotfallpauseAufgehoben',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

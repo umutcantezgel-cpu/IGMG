@@ -96,8 +96,8 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       text: t('benachrichtigung.text', { art }),
       knopf: t('benachrichtigung.knopf'),
       hinweis: t('benachrichtigung.hinweis'),
-      // Ziel in der Verwaltung: eigener Pfad (z. B. Ticket) oder der Eingang
-      link: `${basisUrl()}${inhalt.daten.pfad?.startsWith('/verwaltung/') ? inhalt.daten.pfad : `/verwaltung/eingaenge${eingangId ? `/${eingangId}` : ''}`}`,
+      // Ziel in der Verwaltung oder in „Mein Bereich“ (Chat-Meldung an die Gruppenleitung): eigener Pfad oder der Eingang
+      link: `${basisUrl()}${/^\/(verwaltung|mein-bereich)\//.test(inhalt.daten.pfad ?? '') ? inhalt.daten.pfad : `/verwaltung/eingaenge${eingangId ? `/${eingangId}` : ''}`}`,
     });
   }
   const t = uebersetzer(sprache, nachrichten(sprache), 'mails');
