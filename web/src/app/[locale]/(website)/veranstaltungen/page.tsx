@@ -5,8 +5,10 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { KalenderAbo } from '@/components/website/veranstaltungen/KalenderAbo';
 import { VeranstaltungsFilter } from '@/components/website/veranstaltungen/VeranstaltungsFilter';
+import { Wochenband } from '@/components/website/veranstaltungen/Wochenband';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
+import { heuteBerlin } from '@/lib/zeit/heute';
 import { type VeranstaltungsDaten, ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
 export const ensureStatic = 'navigation';
@@ -18,14 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadatenFuer({ pfad: '/veranstaltungen', titel: t('titel'), beschreibung: t('untertitel') });
 }
 
-/** Veranstaltungen (design/Events.dc.html, Blatt S04): kommende und wiederkehrende Termine, Kategoriefilter, Leerzustand. */
+/**
+ * Veranstaltungen (design/Events.dc.html, Blatt S04): Wochenband der nächsten sieben Tage (AUFTRAG 4, statisch), kommende
+ * und wiederkehrende Termine, Kategoriefilter, Leerzustand. „Heute“ aus dem stündlich erneuerten Datum (`heuteBerlin`).
+ */
 export default async function VeranstaltungenSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('veranstaltungen');
   const tk = await getTranslations('karten');
   const tp = await getTranslations('kopf');
   const ts = await getTranslations('start');
-  const liste = (await ladeVeranstaltungen()).filter((v) => !v.vergangen);
+  const [alle, heute] = await Promise.all([ladeVeranstaltungen(), heuteBerlin()]);
+  const liste = alle.filter((v) => !v.vergangen);
   const zaehler: Record<string, number> = { alle: liste.length };
   for (const v of liste) zaehler[v.kategorie] = (zaehler[v.kategorie] ?? 0) + 1;
   // Trefferzahl je Filter („5 Veranstaltungen“), rechts der Chips als Live-Region
@@ -62,6 +68,11 @@ export default async function VeranstaltungenSeite() {
     <Seitenrahmen bereich="moschee" seite="veranstaltungen" sprachZiel="/veranstaltungen" pfad={[{ label: tp('veranstaltungen') }]}>
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto max-w-(--container-inhalt) px-4 py-abschnitt-klein md:px-8">
+        {liste.length ? (
+          <div className="mb-10 md:mb-12">
+            <Wochenband liste={liste} heute={heute.datum} sprache={sprache} />
+          </div>
+        ) : null}
         <VeranstaltungsFilter
           kategorien={KATEGORIEN.map((k) => ({ schluessel: k, label: tk(`kat_${k}`) }))}
           zaehler={zaehler}

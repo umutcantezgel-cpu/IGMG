@@ -6,6 +6,7 @@ import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { AllgemeineInformationen } from '@/components/website/korankurse/AllgemeineInformationen';
 import { AnmeldeKarte } from '@/components/website/korankurse/AnmeldeKarte';
+import { KursWeg } from '@/components/website/korankurse/KursWeg';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -20,8 +21,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /**
- * Korankurse (design/QuranCourses.dc.html, Blatt S19): Kursangebote aus der Tabelle kurs, danach Allgemeine
- * Informationen und die Anmeldekarte. Vollständig statisch (K-01): keine Cookies, keine Header, kein Datum im Render.
+ * Korankurse (design/QuranCourses.dc.html, Blatt S19): Kursangebote aus der Tabelle kurs – darüber der Kurs-Lernweg
+ * (AUFTRAG 4, B-24: zeichnet sich einmal, Sprünge zu den Karten) –, danach Allgemeine Informationen und die Anmeldekarte.
+ * Vollständig statisch (K-01): keine Cookies, keine Header, kein Datum im Render.
  */
 export default async function KorankurseSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -41,10 +43,11 @@ export default async function KorankurseSeite() {
           <h2 id="kurse" className="text-display-2">
             {t('kursangebote')}
           </h2>
+          <KursWeg kurse={kurse} sprache={sprache} />
           {kurse.length ? (
             <ul className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {kurse.map((kurs) => (
-                <li key={kurs.id} className="md:max-xl:odd:last:col-span-2">
+                <li key={kurs.id} id={`kurs-${kurs.slug}`} className="scroll-mt-6 md:max-xl:odd:last:col-span-2">
                   <CourseCard kurs={kurs} sprache={sprache} bild={kurs.bild} />
                 </li>
               ))}

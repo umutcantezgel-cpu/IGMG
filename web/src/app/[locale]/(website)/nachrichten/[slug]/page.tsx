@@ -15,6 +15,7 @@ import { textMitSprache } from '@/components/website/Text';
 import { Trenner } from '@/components/website/Zustandsgrafik';
 import { AehnlicheArtikel } from '@/components/website/nachrichten/AehnlicheArtikel';
 import { AutorZeile } from '@/components/website/nachrichten/Autor';
+import { KategorieMarke } from '@/components/website/nachrichten/KategorieMarke';
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -139,6 +140,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
           </Link>
         }
         kennung={tk(`nkat_${n.kategorie}`)}
+        kennungZeichen={<KategorieMarke kategorie={n.kategorie} />}
         titel={titel.text}
         titelLang={titel.lang}
         titelStil={morphStil(`n-${n.slug}-titel`, 'text')}
@@ -148,7 +150,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
           <>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-16 text-tinte-2">
               {n.wichtig ? (
-                <span className="inline-flex rounded-pill bg-tag-wichtig-bg px-3 py-0.5 font-bold text-tag-wichtig">
+                <span className="inline-flex items-center gap-1.5 rounded-pill bg-tag-wichtig-bg px-3 py-0.5 font-bold text-tag-wichtig">
+                  <KategorieMarke kategorie="wichtig" />
                   {tk('nkat_wichtig')}
                 </span>
               ) : null}
