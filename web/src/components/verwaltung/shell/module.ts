@@ -18,6 +18,7 @@ export type ModulSchluessel =
   | 'postfach'
   | 'tickets'
   | 'kinderschutz'
+  | 'gemeindeImBlick'
   | 'medien'
   | 'benutzer'
   | 'audit'
@@ -44,6 +45,14 @@ export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschu
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
+  // Leitung (AUFTRAG 3.10): Kennzahlen ohne Personendaten
+  {
+    schluessel: 'gemeindeImBlick',
+    pfad: '/verwaltung/gemeinde-im-blick',
+    recht: 'leitung.lesen',
+    icon: 'gemeindeImBlick',
+    gebaut: true,
+  },
   {
     schluessel: 'neuigkeiten',
     pfad: '/verwaltung/neuigkeiten',

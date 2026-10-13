@@ -16,6 +16,7 @@ import {
   Palette,
   ScrollText,
   Settings,
+  ChartColumn,
   ShieldAlert,
   Ticket,
   Users,
@@ -40,6 +41,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   postfach: Mail,
   tickets: Ticket,
   kinderschutz: ShieldAlert,
+  gemeindeImBlick: ChartColumn,
   medien: Bild,
   benutzer: Users,
   audit: ScrollText,
@@ -152,7 +154,7 @@ export function Seitenleiste({
   return (
     <aside
       className={cn(
-        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
+        'flex w-full flex-col self-start print:hidden verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
         sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >

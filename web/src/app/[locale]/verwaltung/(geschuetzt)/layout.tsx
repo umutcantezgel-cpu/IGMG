@@ -73,7 +73,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
         >
           {t('shell.zumInhalt')}
         </a>
-        <header className="border-b border-linie bg-weiss">
+        <header className="border-b border-linie bg-weiss print:hidden">
           <div className="mx-auto flex max-w-360 flex-nowrap items-center justify-between gap-3 px-4 py-3 md:px-6">
             <NextLink href="/verwaltung" className="flex items-center gap-3 text-tinte no-underline hover:text-tinte">
               <Image
