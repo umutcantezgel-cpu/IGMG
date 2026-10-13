@@ -150,3 +150,21 @@ describe('Takt: Gebetserinnerungen', () => {
     expect(await r.json()).toHaveProperty('gebetsErinnerungen');
   });
 });
+
+describe('Meldungen des lokalen Servers (ADR 0036)', () => {
+  it('nur mit Token; speichert je Art den letzten Stand', async () => {
+    const route = await import('@/app/api/wartung/lokal-meldung/route');
+    const anfrage = (koerper: unknown, token = WARTUNG) =>
+      new Request('https://example.test/api/wartung/lokal-meldung', {
+        method: 'POST',
+        headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' },
+        body: JSON.stringify(koerper),
+      });
+    expect((await route.POST(anfrage({ art: 'sicherung', ok: true, bytes: 1 }, 'falsch'.repeat(8)))).status).toBe(401);
+    expect((await route.POST(anfrage({ art: 'unbekannt', ok: true, bytes: 1 }))).status).toBe(400);
+    expect((await route.POST(anfrage({ art: 'sicherung', ok: true, bytes: 1234 }))).status).toBe(200);
+    expect((await route.POST(anfrage({ art: 'probe', ok: false, bytes: 0 }))).status).toBe(200);
+    const [z] = await db.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, 'lokaler_server'));
+    expect(z.wert).toMatchObject({ sicherung: { ok: true, bytes: 1234 }, probe: { ok: false } });
+  });
+});

@@ -1,0 +1,66 @@
+# Lokaler Helfer-Server der IGMG Wetzlar (ADR 0036): läuft neben Vercel, nie statt Vercel.
+# Alles Kernhafte funktioniert auch ohne ihn (Abruf statt Echtzeit, täglicher Cron, Erinnerung im Browser).
+#   docker compose up -d                    Sicherung, Probe, Takt, Überwachung, Medienspiegel
+#   docker compose --profile echtzeit up -d zusätzlich Centrifugo + Caddy (nur mit öffentlicher Adresse, MN-12)
+# Werte stehen in .env (Vorlage .env.beispiel); nie ins Repository.
+name: igmg-lokal
+
+x-standard: &standard
+  restart: unless-stopped
+  env_file: .env
+  logging:
+    driver: json-file
+    options: { max-size: '5m', max-file: '3' }
+
+services:
+  takt:
+    <<: *standard
+    image: curlimages/curl:8.17.0
+    entrypoint: ['/bin/sh', '/takt/takt.sh']
+    volumes:
+      - ./takt:/takt:ro
+
+  sicherung:
+    <<: *standard
+    build: ./sicherung
+    command: ['/sicherung/zeitplan.sh']
+    volumes:
+      - ./sicherung:/sicherung:ro
+      - sicherungen:/daten
+      - ./schluessel:/schluessel:ro
+
+  medien-spiegel:
+    <<: *standard
+    build: ./spiegel
+    volumes:
+      - spiegel:/daten
+
+  ueberwachung:
+    <<: *standard
+    build: ./ueberwachung
+    volumes:
+      - ./ueberwachung:/ueberwachung:ro
+
+  centrifugo:
+    <<: *standard
+    profiles: [echtzeit]
+    image: centrifugo/centrifugo:v6.5.1
+    command: ['centrifugo', '--config', '/centrifugo/config.json']
+    volumes:
+      - ./echtzeit/centrifugo.json:/centrifugo/config.json:ro
+    expose: ['8000']
+
+  caddy:
+    <<: *standard
+    profiles: [echtzeit]
+    image: caddy:2.10.2-alpine
+    ports: ['80:80', '443:443']
+    volumes:
+      - ./echtzeit/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-daten:/data
+    depends_on: [centrifugo]
+
+volumes:
+  sicherungen:
+  spiegel:
+  caddy-daten:

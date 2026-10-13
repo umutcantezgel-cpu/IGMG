@@ -1,0 +1,11 @@
+# Nur für das Profil „echtzeit“ (ADR 0027): TLS automatisch, nur WebSocket-Verbindungen zu Centrifugo.
+{$ECHTZEIT_DOMAIN} {
+	encode zstd gzip
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000"
+	}
+	reverse_proxy /connection/* centrifugo:8000
+	reverse_proxy /api/* centrifugo:8000
+	respond 404
+}

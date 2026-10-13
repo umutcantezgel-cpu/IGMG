@@ -1,0 +1,13 @@
+{
+  "client": {
+    "allowed_origins": []
+  },
+  "channel": {
+    "without_namespace": {
+      "allow_subscribe_for_client": false,
+      "allow_publish_for_client": false,
+      "history_size": 0
+    }
+  },
+  "log": { "level": "warn" }
+}
