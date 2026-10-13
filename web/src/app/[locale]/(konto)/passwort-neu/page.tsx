@@ -5,11 +5,14 @@ import { KontoEinstieg } from '@/components/konto/KontoEinstieg';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
+import { verlangeKontenSeite } from '@/lib/konto/zugang';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
 
 export async function generateMetadata(): Promise<Metadata> {
+  // Konten aus: auch Titel und Inhalt der Seite nicht ausliefern (Layout und Seite rendern parallel)
+  await verlangeKontenSeite();
   const t = await getTranslations('konto.meta');
   return { title: t('passwortNeu') };
 }
@@ -19,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
  * hierher (`?token=…`, bei ungültigem Link `?error=INVALID_TOKEN`). Danach enden alle Sitzungen.
  */
 export default async function PasswortNeuSeite({ searchParams }: PageProps<'/[locale]/passwort-neu'>) {
+  await verlangeKontenSeite();
   const sprache = (await getLocale()) as Locale;
   const s = await searchParams;
   const token = typeof s.token === 'string' && /^[A-Za-z0-9_-]{10,100}$/.test(s.token) && !s.error ? s.token : null;

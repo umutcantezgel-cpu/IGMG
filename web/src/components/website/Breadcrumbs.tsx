@@ -10,7 +10,8 @@ export type PfadEintrag = { label: string; ziel?: Ziel };
  * Breadcrumbs (02.3, design/Breadcrumbs.dc.html): Startseite › [Elternseiten] › aktuelle Seite.
  * Nicht auf Startseite und Styleguide (Laufbuch D-16). JSON-LD BreadcrumbList ergänzt die Seite (K-16).
  * Auf dem Telefon eine Zeile (H-B07): das Haus wird zum Symbol mit 48-px-Ziel, das Endglied kürzt sich mit „…“;
- * nur das Endglied ist fett grün, Zwischenglieder ohne Ziel stehen in Tinte-2.
+ * nur das Endglied ist fett grün, Zwischenglieder ohne Ziel stehen in Tinte-2. Bei tiefen Pfaden (z. B. Hadith-Teilseiten)
+ * zeigt das Telefon nur das direkte Elternglied (kürzbar) und davor „…“ – sonst liefe die Zeile über (Live-Prüfung 13.10.).
  */
 export async function Breadcrumbs({ pfad }: { pfad: PfadEintrag[] }) {
   const t = await getTranslations('pfad');
@@ -28,8 +29,21 @@ export async function Breadcrumbs({ pfad }: { pfad: PfadEintrag[] }) {
             <span className="hidden md:inline">{t('startseite')}</span>
           </Link>
         </li>
+        {letzte > 1 ? (
+          <li aria-hidden className="flex shrink-0 items-center text-tinte-3 md:hidden">
+            <ChevronRight className="size-4 shrink-0" />
+            <span className="px-1">…</span>
+          </li>
+        ) : null}
         {pfad.map((e, i) => (
-          <li key={`${e.label}-${i}`} className={cn('flex min-w-0 items-center', i < letzte && 'shrink-0')}>
+          <li
+            key={`${e.label}-${i}`}
+            className={cn(
+              'flex min-w-0 items-center',
+              i < letzte - 1 && 'hidden shrink-0 md:flex',
+              i === letzte - 1 && 'shrink md:shrink-0',
+            )}
+          >
             <ChevronRight aria-hidden className="size-4 shrink-0 text-tinte-3" />
             {i === letzte ? (
               <span aria-current="page" className="inline-flex min-h-11 min-w-0 items-center px-2 font-bold text-gruen-800">
@@ -38,12 +52,14 @@ export async function Breadcrumbs({ pfad }: { pfad: PfadEintrag[] }) {
             ) : e.ziel ? (
               <Link
                 href={e.ziel}
-                className="inline-flex min-h-11 items-center rounded-sm px-2 text-tinte-2 underline underline-offset-3 hover:bg-gruen-50 hover:text-gruen-800"
+                className="inline-flex min-h-11 min-w-0 items-center rounded-sm px-2 text-tinte-2 underline underline-offset-3 hover:bg-gruen-50 hover:text-gruen-800"
               >
-                {e.label}
+                <span className="min-w-0 truncate md:overflow-visible md:whitespace-normal">{e.label}</span>
               </Link>
             ) : (
-              <span className="inline-flex min-h-11 items-center px-2 text-tinte-2">{e.label}</span>
+              <span className="inline-flex min-h-11 min-w-0 items-center px-2 text-tinte-2">
+                <span className="min-w-0 truncate md:overflow-visible md:whitespace-normal">{e.label}</span>
+              </span>
             )}
           </li>
         ))}

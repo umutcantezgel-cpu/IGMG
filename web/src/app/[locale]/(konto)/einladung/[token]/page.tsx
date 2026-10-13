@@ -9,11 +9,14 @@ import type { Locale } from '@/i18n/routing';
 import { kontoZurAdresse } from '@/lib/konto/einladung';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
 import { ladeGueltigeEinladung } from '@/server/queries/einladung';
+import { verlangeKontenSeite } from '@/lib/konto/zugang';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
 
 export async function generateMetadata(): Promise<Metadata> {
+  // Konten aus: auch Titel und Inhalt der Seite nicht ausliefern (Layout und Seite rendern parallel)
+  await verlangeKontenSeite();
   const t = await getTranslations('konto.meta');
   return { title: t('einladung') };
 }
@@ -25,6 +28,7 @@ const DATUM: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
  * Konto derselben Adresse → anmelden und Rollen übernehmen. Der Link selbst ist der Nachweis der Adresse.
  */
 export default async function EinladungSeite({ params }: PageProps<'/[locale]/einladung/[token]'>) {
+  await verlangeKontenSeite();
   const { token } = await params;
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('konto');

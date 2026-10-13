@@ -3,9 +3,12 @@ import { redirect } from 'next/navigation';
 import { AnmeldeFormular } from '@/components/verwaltung/anmeldung/AnmeldeFormular';
 import { AnmeldeRahmen } from '@/components/verwaltung/anmeldung/AnmeldeRahmen';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { ladeAngemeldet } from '@/lib/rechte/pruefe';
 
 export default async function AnmeldenSeite({ searchParams }: PageProps<'/[locale]/verwaltung/anmelden'>) {
+  // Beispielmodus ohne Datenbank: das Layout zeigt den Hinweis; das Formular gar nicht erst rendern (auch nicht im Datenstrom)
+  if (!datenbankVerfuegbar()) return null;
   const a = await ladeAngemeldet();
   if (a?.zweiFaktorErfuellt && a.rollen.length > 0) redirect('/verwaltung');
   const t = await getTranslations('verwaltung.anmelden');

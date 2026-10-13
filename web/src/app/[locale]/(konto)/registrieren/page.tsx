@@ -6,17 +6,21 @@ import { RegistrierFormular } from '@/components/konto/RegistrierFormular';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
+import { verlangeKontenSeite } from '@/lib/konto/zugang';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
 
 export async function generateMetadata(): Promise<Metadata> {
+  // Konten aus: auch Titel und Inhalt der Seite nicht ausliefern (Layout und Seite rendern parallel)
+  await verlangeKontenSeite();
   const t = await getTranslations('konto.meta');
   return { title: t('registrieren') };
 }
 
 /** Registrierung für Gemeindemitglieder (ADR 0026). Eltern, Lehrkräfte und Schüler kommen per Einladung. */
 export default async function RegistrierenSeite() {
+  await verlangeKontenSeite();
   const sprache = (await getLocale()) as Locale;
   if (await ladeKonto()) redirect(pfadFuer('/anmelden', sprache));
   const t = await getTranslations('konto');

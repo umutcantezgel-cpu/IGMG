@@ -11,13 +11,15 @@ import { Meldung } from '@/components/verwaltung/Meldung';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { sichererRuecksprung } from '@/lib/konto/regeln';
-import { hatZugang } from '@/lib/konto/zugang';
+import { hatZugang, verlangeKontenSeite } from '@/lib/konto/zugang';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
 export const instant = false;
 
 export async function generateMetadata(): Promise<Metadata> {
+  // Konten aus: auch Titel und Inhalt der Seite nicht ausliefern (Layout und Seite rendern parallel)
+  await verlangeKontenSeite();
   const t = await getTranslations('konto.meta');
   return { title: t('anmelden') };
 }
@@ -31,6 +33,7 @@ type Hinweis = (typeof HINWEISE)[number];
  * alle anderen gehen direkt nach Mein Bereich. Die Verwaltungsanmeldung bleibt verlinkt („Zugang für Mitarbeitende“).
  */
 export default async function AnmeldenSeite({ searchParams }: PageProps<'/[locale]/anmelden'>) {
+  await verlangeKontenSeite();
   const sprache = (await getLocale()) as Locale;
   const s = await searchParams;
   const weiter = sichererRuecksprung(s.weiter);
