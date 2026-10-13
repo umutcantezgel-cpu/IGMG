@@ -11,7 +11,7 @@ export type BestaetigungTexte = { betreff: string; anrede: string; text: string;
 export type BenachrichtigungTexte = { betreff: string; text: string; knopf: string; hinweis: string; link: string };
 
 /** Vorschautext: der erste Satz des Inhalts, höchstens 140 Zeichen in ganzen Wörtern. Es wird nichts hinzugefügt. */
-function vorschau(text: string): string {
+export function vorschau(text: string): string {
   const zeile = text.trim();
   const satz = /^.*?[.!?](?=\s|$)/.exec(zeile)?.[0] ?? zeile;
   if (satz.length <= 140) return satz;
@@ -41,7 +41,7 @@ const KNOPF: MailStil = {
  * Knopf „kugelsicher“: eine Tabellenzelle mit Hintergrund und Innenabstand. Darunter steht der Link als Text;
  * die Textfassung nennt ihn nur über den Knopf.
  */
-function KnopfMitLink({ link, text }: { link: string; text: string }) {
+export function KnopfMitLink({ link, text }: { link: string; text: string }) {
   return (
     <>
       <div style={{ margin: `0 0 ${M.abstand4}` }}>

@@ -1,7 +1,9 @@
 'use client';
 
 import {
+  BookOpen,
   CalendarDays,
+  CalendarHeart,
   ClipboardCheck,
   Clock,
   ExternalLink,
@@ -15,6 +17,7 @@ import {
   Newspaper,
   Palette,
   ScrollText,
+  Send,
   Settings,
   Ticket,
   Users,
@@ -44,6 +47,9 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   styleguide: Palette,
   startklar: ClipboardCheck,
   einstellungen: Settings,
+  hatim: BookOpen,
+  besondereTage: CalendarHeart,
+  newsletter: Send,
 };
 
 const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];

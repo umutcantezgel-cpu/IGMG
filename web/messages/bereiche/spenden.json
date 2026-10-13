@@ -1,1 +1,146 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "spenden": {
+      "kennung": "Moschee",
+      "titel": "Spenden",
+      "untertitel": "Ihre Spende trägt die Arbeit der Gemeinde – die Moschee, den Unterricht, die Jugend und die Nachbarschaft. Vielen Dank, dass Sie mithelfen.",
+      "metaBeschreibung": "Spenden an die IGMG Wetzlar per Überweisung: Bankverbindung, Spendenzwecke und GiroCode für die Banking-App.",
+      "bank": {
+        "titel": "Bankverbindung",
+        "empfaenger": "Empfänger",
+        "iban": "IBAN",
+        "bic": "BIC",
+        "kopieren": "IBAN kopieren",
+        "kopiert": "IBAN kopiert",
+        "kopierenFehler": "Kopieren ist hier nicht möglich – bitte markieren Sie die IBAN."
+      },
+      "girocode": {
+        "titel": "GiroCode",
+        "text": "Mit der Banking-App scannen: Empfänger, IBAN und Verwendungszweck sind schon eingetragen, den Betrag wählen Sie selbst.",
+        "label": "GiroCode für die Überweisung: {zweck}",
+        "zeigen": "GiroCode für diesen Zweck"
+      },
+      "keinDienst": "Kein Zahlungsdienst: Diese Seite nimmt kein Geld an und speichert nichts. Ihre Banking-App öffnet die Überweisung, und Sie bestätigen sie dort selbst.",
+      "schritte": {
+        "titel": "So geht’s",
+        "eins": "Öffnen Sie Ihre Banking-App und wählen Sie „Scannen“ oder „Foto-Überweisung“.",
+        "zwei": "Scannen Sie den GiroCode des Zwecks, für den Sie spenden möchten.",
+        "drei": "Tragen Sie den Betrag ein, prüfen Sie die Angaben und bestätigen Sie die Überweisung."
+      },
+      "zwecke": {
+        "titel": "Wofür Sie spenden können",
+        "verwendungszweck": "Verwendungszweck"
+      },
+      "allgemeinTitel": "Allgemeine Spende",
+      "allgemeinText": "Für die laufende Arbeit der Gemeinde, dort, wo es gerade am meisten gebraucht wird.",
+      "allgemeinZweck": "Spende",
+      "quittung": {
+        "titel": "Zuwendungsbestätigung",
+        "text": "[Hinweis zur Zuwendungsbestätigung – vom Vorstand]"
+      },
+      "platzhalter": {
+        "titel": "Die Bankverbindung folgt",
+        "text": "Die Bankverbindung für Spenden wird gerade vom Kassenwart bestätigt. Bis dahin zeigen wir hier keinen GiroCode – damit keine Überweisung ins Leere geht.",
+        "eintrag": "[Bankverbindung – vom Kassenwart bestätigt]",
+        "kontakt": "Sie möchten schon jetzt spenden oder haben eine Frage?",
+        "kontaktLink": "Schreiben Sie uns"
+      }
+    }
+  },
+  "tr": {
+    "spenden": {
+      "kennung": "Cami",
+      "titel": "Bağış",
+      "untertitel": "Bağışınız cemaatimizin çalışmalarını taşıyor – camiyi, dersleri, gençliği ve komşuluğu. Desteğiniz için çok teşekkür ederiz.",
+      "metaBeschreibung": "IGMG Wetzlar’a havale ile bağış: banka bilgileri, bağış amaçları ve banka uygulaması için GiroCode.",
+      "bank": {
+        "titel": "Banka bilgileri",
+        "empfaenger": "Alıcı",
+        "iban": "IBAN",
+        "bic": "BIC",
+        "kopieren": "IBAN’ı kopyala",
+        "kopiert": "IBAN kopyalandı",
+        "kopierenFehler": "Burada kopyalama mümkün değil – lütfen IBAN’ı işaretleyin."
+      },
+      "girocode": {
+        "titel": "GiroCode",
+        "text": "Banka uygulamanızla tarayın: Alıcı, IBAN ve açıklama hazır gelir, tutarı siz belirlersiniz.",
+        "label": "Havale için GiroCode: {zweck}",
+        "zeigen": "Bu amaç için GiroCode"
+      },
+      "keinDienst": "Ödeme hizmeti değildir: Bu sayfa para almaz ve hiçbir şey kaydetmez. Banka uygulamanız havaleyi açar, onayı siz verirsiniz.",
+      "schritte": {
+        "titel": "Nasıl yapılır?",
+        "eins": "Banka uygulamanızı açın ve “Tara” veya “Fotoğrafla havale” seçeneğini seçin.",
+        "zwei": "Bağış yapmak istediğiniz amacın GiroCode’unu tarayın.",
+        "drei": "Tutarı girin, bilgileri kontrol edin ve havaleyi onaylayın."
+      },
+      "zwecke": {
+        "titel": "Neler için bağış yapabilirsiniz?",
+        "verwendungszweck": "Açıklama"
+      },
+      "allgemeinTitel": "Genel bağış",
+      "allgemeinText": "Cemaatimizin süregelen çalışmaları için, en çok ihtiyaç duyulan yerde.",
+      "allgemeinZweck": "Bağış",
+      "quittung": {
+        "titel": "Bağış makbuzu",
+        "text": "[Bağış makbuzu hakkında bilgi – yönetim tarafından]"
+      },
+      "platzhalter": {
+        "titel": "Banka bilgileri yakında",
+        "text": "Bağışlar için banka bilgileri şu anda saymanımız tarafından onaylanıyor. O zamana kadar burada GiroCode göstermiyoruz – hiçbir havale boşa gitmesin diye.",
+        "eintrag": "[Banka bilgileri – sayman tarafından onaylanacak]",
+        "kontakt": "Şimdiden bağış yapmak mı istiyorsunuz veya bir sorunuz mu var?",
+        "kontaktLink": "Bize yazın"
+      }
+    }
+  },
+  "en": {
+    "spenden": {
+      "kennung": "Mosque",
+      "titel": "Donate",
+      "untertitel": "Your donation sustains the community’s work – the mosque, classes, youth work and the neighbourhood. Thank you for helping.",
+      "metaBeschreibung": "Donate to IGMG Wetzlar by bank transfer: bank details, donation purposes and a GiroCode for your banking app.",
+      "bank": {
+        "titel": "Bank details",
+        "empfaenger": "Recipient",
+        "iban": "IBAN",
+        "bic": "BIC",
+        "kopieren": "Copy IBAN",
+        "kopiert": "IBAN copied",
+        "kopierenFehler": "Copying is not possible here – please select the IBAN."
+      },
+      "girocode": {
+        "titel": "GiroCode",
+        "text": "Scan with your banking app: recipient, IBAN and reference are filled in for you, and you choose the amount.",
+        "label": "GiroCode for the transfer: {zweck}",
+        "zeigen": "GiroCode for this purpose"
+      },
+      "keinDienst": "Not a payment service: this page does not accept money and stores nothing. Your banking app opens the transfer, and you confirm it there yourself.",
+      "schritte": {
+        "titel": "How it works",
+        "eins": "Open your banking app and choose “Scan” or “Photo transfer”.",
+        "zwei": "Scan the GiroCode of the purpose you would like to support.",
+        "drei": "Enter the amount, check the details and confirm the transfer."
+      },
+      "zwecke": {
+        "titel": "What you can donate to",
+        "verwendungszweck": "Reference"
+      },
+      "allgemeinTitel": "General donation",
+      "allgemeinText": "For the community’s ongoing work, wherever it is needed most.",
+      "allgemeinZweck": "Donation",
+      "quittung": {
+        "titel": "Donation receipt",
+        "text": "[Information on donation receipts – from the board]"
+      },
+      "platzhalter": {
+        "titel": "Bank details coming soon",
+        "text": "The bank details for donations are currently being confirmed by our treasurer. Until then we show no GiroCode here – so that no transfer goes astray.",
+        "eintrag": "[Bank details – to be confirmed by the treasurer]",
+        "kontakt": "Would you like to donate now or do you have a question?",
+        "kontaktLink": "Write to us"
+      }
+    }
+  }
+}

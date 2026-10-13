@@ -1,0 +1,97 @@
+{
+  "hatim": {
+    "titel": "Hatim",
+    "einleitung": "Gemeinsame Hatims anlegen, veröffentlichen und abschließen. Gemeindemitglieder übernehmen die Cüz in „Mein Bereich“; öffentlich erscheinen nur Zahlen und der Ring.",
+    "neu": "Neue Hatim",
+    "neuTitel": "Neue Hatim anlegen",
+    "zurueck": "Zurück zur Liste",
+    "angelegt": "Die Hatim ist angelegt. Sie ist noch ein Entwurf – veröffentlichen Sie sie, wenn alles stimmt.",
+    "geloescht": "Der Entwurf wurde gelöscht.",
+    "gespeichert": "Die Änderungen sind gespeichert.",
+    "leerTitel": "Noch keine Hatim",
+    "leerText": "Legen Sie die erste gemeinsame Hatim an – zum Beispiel zum Ramadan oder zu einem Anlass der Gemeinde.",
+    "tabelle": "Hatims, neueste zuerst",
+    "spalte": {
+      "titel": "Titel",
+      "zeitraum": "Zeitraum",
+      "sichtbarkeit": "Sichtbarkeit",
+      "status": "Stand",
+      "fortschritt": "Fortschritt",
+      "aktionen": "Aktionen"
+    },
+    "sichtbarkeit": {
+      "entwurf": "Entwurf",
+      "veroeffentlicht": "Veröffentlicht"
+    },
+    "status": {
+      "offen": "Läuft",
+      "abgeschlossen": "Vollendet",
+      "archiviert": "Archiviert"
+    },
+    "fortschritt": "{gelesen} gelesen · {vergeben} übernommen · {frei} frei",
+    "zeitraum": "ab {beginn}",
+    "zeitraumBis": "{beginn} bis {ziel}",
+    "aktionBearbeiten": "Bearbeiten: {titel}",
+    "formular": {
+      "abschnittInhalt": "Titel und Anlass",
+      "abschnittZeit": "Zeitraum",
+      "abschnittUebersetzung": "Übersetzungen",
+      "titel": "Titel",
+      "titelHinweis": "Zum Beispiel „Hatim zum Ramadan 2027“.",
+      "anlass": "Anlass",
+      "anlassHinweis": "Optional, ein Satz – zum Beispiel für wen oder zu welchem Anlass gelesen wird.",
+      "beginn": "Beginn",
+      "ziel": "Vollendung geplant bis",
+      "zielHinweis": "Optional. Erscheint öffentlich als Ziel.",
+      "feldSprache": "{feld} ({sprache})",
+      "sprache": {
+        "Tr": "Türkisch",
+        "En": "Englisch"
+      },
+      "speichern": "Speichern",
+      "anlegen": "Hatim anlegen"
+    },
+    "zustand": {
+      "titel": "Sichtbarkeit und Stand",
+      "entwurfText": "Entwurf: nur hier sichtbar. Übernahmen sind erst nach dem Veröffentlichen möglich.",
+      "veroeffentlichtText": "Veröffentlicht: Die Hatim steht unter /hatim mit Ring und Zahlen.",
+      "veroeffentlichen": "Veröffentlichen",
+      "zurueckziehen": "Zurückziehen (Entwurf)",
+      "abschliessen": "Als vollendet abschließen",
+      "oeffnen": "Wieder öffnen",
+      "archivieren": "Archivieren",
+      "archivText": "Archiviert: nicht mehr in der öffentlichen Liste, der Link bleibt erreichbar.",
+      "loeschen": "Entwurf löschen",
+      "loeschenText": "Nur Entwürfe ohne übernommene Cüz lassen sich löschen."
+    },
+    "stand": {
+      "titel": "Stand der 30 Cüz",
+      "einleitung": "Ohne Namen. Wer welchen Cüz liest, sehen Sie nur auf Anfrage – jeder Abruf steht im Audit-Log.",
+      "cuz": "Cüz {nr}",
+      "frei": "frei",
+      "vergeben": "übernommen",
+      "gelesen": "gelesen",
+      "namenZeigen": "Namen anzeigen",
+      "namenVerbergen": "Namen verbergen",
+      "namenHinweis": "Die Namen sind nur für die Organisation der Hatim bestimmt. Bitte nicht weitergeben.",
+      "tabelle": "Cüz mit Übernehmenden",
+      "spalteCuz": "Cüz",
+      "spalteName": "Name",
+      "spalteStand": "Stand",
+      "seit": "übernommen am {datum}",
+      "gelesenAm": "gelesen am {datum}",
+      "kontoGeloescht": "Konto gelöscht"
+    },
+    "oeffentlich": "Öffentliche Seite ansehen",
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "nichtGefunden": "Diese Hatim gibt es nicht mehr.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "datum": "Bitte geben Sie ein gültiges Datum ein.",
+      "zielVorBeginn": "Das Ziel liegt vor dem Beginn.",
+      "ungueltig": "Dieser Wert ist nicht gültig."
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { createTranslator } from 'next-intl';
 import { db, schema } from '@/lib/db';
 import { entschluessele } from '@/lib/krypto';
 import { AKTIONEN, EINGANG_AKTION, MATRIX, ROLLEN, type Aktion, type OrganisationKuerzel } from '@/lib/rechte/matrix';
+import { baueNewsletterMail, NEWSLETTER_EMPFAENGER, newsletterEmpfaenger } from '@/lib/newsletter/mails';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { BEREICHE } from '../../../messages/bereiche';
 import de from '../../../messages/de.json';
@@ -24,6 +25,8 @@ const MAX_VERSUCHE = 6;
  * (z. B. `recht:ticket.bearbeiten` für Meldungen, E-037) → E-Mail-Adressen aller zuständigen, nicht gesperrten Konten.
  */
 async function empfaenger(an: string): Promise<string[]> {
+  // Newsletter (AUFTRAG 3.10): Adresse erst beim Versand und nur bei bestätigter Anmeldung
+  if (an.startsWith(NEWSLETTER_EMPFAENGER)) return newsletterEmpfaenger(an.slice(NEWSLETTER_EMPFAENGER.length));
   if (!an.startsWith('rolle:') && !an.startsWith('recht:')) return [an];
   const [art, schluessel, organisation] = an.split(':') as ['rolle' | 'recht', string, OrganisationKuerzel | undefined];
   const aktion: Aktion | undefined =
@@ -66,6 +69,8 @@ async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
 }
 
 async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt, eingangId: string | null) {
+  const newsletter = await baueNewsletterMail(vorlage, sprache, inhalt.daten);
+  if (newsletter) return newsletter;
   if (vorlage === 'passwort') {
     // Passwort vergessen (C12): Link von Better Auth, 60 Minuten gültig
     const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');

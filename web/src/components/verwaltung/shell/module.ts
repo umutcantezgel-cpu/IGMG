@@ -22,7 +22,11 @@ export type ModulSchluessel =
   | 'audit'
   | 'styleguide'
   | 'startklar'
-  | 'einstellungen';
+  | 'einstellungen'
+  // Lauf Gemeinde-Plattform, Kür A (H-K01–H-K04)
+  | 'hatim'
+  | 'besondereTage'
+  | 'newsletter';
 export type ModulIcon = ModulSchluessel;
 export type ModulGruppe = 'inhalte' | 'kommunikation' | 'betrieb';
 
@@ -86,6 +90,15 @@ export const MODULE: readonly Modul[] = [
   },
   { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: true, gruppe: 'inhalte' },
   {
+    schluessel: 'besondereTage',
+    pfad: '/verwaltung/besondere-tage',
+    recht: 'kalender.bearbeiten',
+    icon: 'besondereTage',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  { schluessel: 'hatim', pfad: '/verwaltung/hatim', recht: 'hatim.bearbeiten', icon: 'hatim', gebaut: true, gruppe: 'inhalte' },
+  {
     schluessel: 'eingaenge',
     pfad: '/verwaltung/eingaenge',
     recht: [
@@ -112,6 +125,14 @@ export const MODULE: readonly Modul[] = [
     pfad: '/verwaltung/tickets',
     recht: ['ticket.lesen', 'ticket.anlegen'],
     icon: 'tickets',
+    gebaut: true,
+    gruppe: 'kommunikation',
+  },
+  {
+    schluessel: 'newsletter',
+    pfad: '/verwaltung/newsletter',
+    recht: 'newsletter.lesen',
+    icon: 'newsletter',
     gebaut: true,
     gruppe: 'kommunikation',
   },

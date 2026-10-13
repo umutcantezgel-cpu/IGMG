@@ -67,6 +67,12 @@ const ROUTEN: Route[] = [
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
+  // Kür A (H-K01–H-K04); Hatim und Newsletter antworten mit 404, wenn ihr Funktionsschalter zur Bauzeit aus ist
+  { name: 'Kalender', pfad: { de: '/kalender', tr: '/tr/takvim', en: '/en/calendar' } },
+  { name: 'Ramadan', pfad: { de: '/ramadan', tr: '/tr/ramazan', en: '/en/ramadan' } },
+  { name: 'Spenden', pfad: { de: '/spenden', tr: '/tr/bagis', en: '/en/donate' } },
+  { name: 'Hatim', pfad: { de: '/hatim', tr: '/tr/hatim', en: '/en/khatm' } },
+  { name: 'Newsletter', pfad: { de: '/newsletter', tr: '/tr/bulten', en: '/en/newsletter' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

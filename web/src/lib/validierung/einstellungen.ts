@@ -53,8 +53,35 @@ export const funktionenEinstellung = z.object({
 });
 export type FunktionenEinstellung = z.infer<typeof funktionenEinstellung>;
 
+/** Text in drei Sprachen (Deutsch Pflicht) für Einstellungen, die öffentlich erscheinen. */
+const einstellungText = (max: number) =>
+  z.object({ de: z.string().trim().min(1).max(max), tr: z.string().trim().max(max).optional(), en: z.string().trim().max(max).optional() });
+
+/**
+ * Spenden (AUFTRAG 3.10, MN-13): Bankverbindung und Spendenzwecke für /spenden und den GiroCode. Leer bis der
+ * Kassenwart die Daten bestätigt; ohne gültige IBAN zeigt die Seite einen Platzhalter und keinen QR-Code.
+ * Der Verwendungszweck steht so im GiroCode (höchstens 140 Zeichen, EPC069-12).
+ */
+export const spendenZweck = z.object({
+  titel: einstellungText(80),
+  beschreibung: z
+    .object({ de: z.string().trim().max(300), tr: z.string().trim().max(300).optional(), en: z.string().trim().max(300).optional() })
+    .optional(),
+  verwendungszweck: z.string().trim().min(1).max(140),
+});
+export type SpendenZweck = z.infer<typeof spendenZweck>;
+
+export const spendenEinstellung = z.object({
+  empfaenger: z.string().trim().max(70).default(''),
+  iban: z.string().trim().max(42).default(''),
+  bic: z.string().trim().max(11).default(''),
+  zwecke: z.array(spendenZweck).max(6).default([]),
+});
+export type SpendenEinstellung = z.infer<typeof spendenEinstellung>;
+
 export const EINSTELLUNG = {
   gebetszeiten: { schluessel: 'gebetszeiten', schema: gebetszeitenEinstellung },
   allgemein: { schluessel: 'allgemein', schema: allgemeineEinstellung },
   funktionen: { schluessel: 'funktionen', schema: funktionenEinstellung },
+  spenden: { schluessel: 'spenden', schema: spendenEinstellung },
 } as const;
