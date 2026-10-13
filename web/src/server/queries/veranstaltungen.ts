@@ -3,6 +3,7 @@ import { and, eq, isNull, ne, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { ladeBilder, type BildDaten, type BildKarte } from '@/lib/medien/bild';
 import { naechstesVorkommen, wiederholungsart, type Wiederholungsart } from '@/lib/termine';
@@ -105,6 +106,8 @@ export async function ladeVeranstaltung(slug: string): Promise<VeranstaltungsDet
   'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen, TAG.medien);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const [z] = await db
     .select()
     .from(schema.veranstaltung)

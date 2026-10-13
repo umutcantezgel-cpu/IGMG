@@ -5,6 +5,7 @@ import type { Locale } from '@/i18n/routing';
 import { TAG } from '@/lib/cache/tags';
 import { seitenAdressen, type SeitenSlugs } from '@/lib/cms/slugs';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { ladeBilder, medienUrl, type BildKarte } from '@/lib/medien/bild';
 import { gueltigeBloecke, medienIdsAus, type Block } from '@/lib/validierung/bloecke';
@@ -47,6 +48,10 @@ function sichtbar(jetzt: Date) {
  * `expire` 1 Tag halten die Vorgaben von `ensureStatic` ein (stale ≥ 30 s, expire ≥ 5 min).
  */
 export async function zeitplanLebensdauer(jetzt: Date): Promise<void> {
+  if (!datenbankVerfuegbar()) {
+    cacheLife('hours');
+    return;
+  }
   const [naechste] = await db
     .select({ am: min(s.veroeffentlichenAm) })
     .from(s)
@@ -103,6 +108,8 @@ export type SeitenTreffer = { art: 'seite'; seite: SeiteOeffentlich } | { art: '
 export async function ladeSeite(sprache: Locale, slug: string): Promise<SeitenTreffer> {
   'use cache: remote';
   cacheTag(TAG.seiten, TAG.medien);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const jetzt = new Date();
   await zeitplanLebensdauer(jetzt);
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) return null;
@@ -126,6 +133,7 @@ export async function ladeSeite(sprache: Locale, slug: string): Promise<SeitenTr
 export async function ladeSeitenSlugs(sprache: Locale): Promise<string[]> {
   'use cache: remote';
   cacheTag(TAG.seiten);
+  if (!datenbankVerfuegbar()) return [];
   const jetzt = new Date();
   await zeitplanLebensdauer(jetzt);
   const zeilen = await db.select({ de: s.slugDe, tr: s.slugTr, en: s.slugEn }).from(s).where(sichtbar(jetzt));
@@ -136,6 +144,8 @@ export async function ladeSeitenSlugs(sprache: Locale): Promise<string[]> {
 export async function ladeSeitenAdressen(): Promise<Record<string, Record<Locale, string>>> {
   'use cache: remote';
   cacheTag(TAG.seiten);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return {};
   const jetzt = new Date();
   await zeitplanLebensdauer(jetzt);
   const zeilen = await db.select({ id: s.id, de: s.slugDe, tr: s.slugTr, en: s.slugEn }).from(s).where(sichtbar(jetzt));
@@ -147,6 +157,8 @@ export async function ladeWeiterleitung(pfad: string): Promise<{ nach: string; c
   'use cache: remote';
   cacheLife('days');
   cacheTag(TAG.weiterleitungen);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   if (pfad.length > 300) return null;
   const w = schema.weiterleitung;
   const [z] = await db.select({ nach: w.nach, code: w.code }).from(w).where(eq(w.von, pfad)).limit(1);

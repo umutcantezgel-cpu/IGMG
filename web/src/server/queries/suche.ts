@@ -3,6 +3,7 @@ import { sql, type SQL } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, teilVon, type Ausschnitt } from '@/lib/hadith/anzeige';
 import { normalisiereArabisch } from '@/lib/hadith/import';
 
@@ -62,7 +63,8 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.veranstaltungen, TAG.wissen);
   const q = bereinigeSuche(begriff);
-  if (q.length < 2) return [];
+  // Beispielmodus ohne Datenbank (ADR 0019): keine Treffer statt Absturz
+  if (q.length < 2 || !datenbankVerfuegbar()) return [];
   const frage = sql`websearch_to_tsquery(${sql.raw(`'${KONFIG[sprache]}'`)}::regconfig, ${q})`;
   const muster = teilwortMuster(q);
   const veroeffentlicht = (t: string) => sql`${sql.raw(t)}.status = 'veroeffentlicht' and ${sql.raw(t)}.im_papierkorb_seit is null`;
@@ -112,6 +114,7 @@ export async function sucheHadith(begriff: string): Promise<HadithTreffer[]> {
   const nummer = hadithNummerAus(q);
   const normalisiert = normalisiereArabisch(q);
   if (!nummer && (normalisiert.length < 2 || !enthaeltArabisch(normalisiert))) return [];
+  if (!datenbankVerfuegbar()) return [];
   const anfrage = nummer
     ? sql`select h.nummer, h.buch_nr, h.im_buch_nr, h.text_ar, ${POSITION}, 1 as rang
         from hadith as h where h.sammlung_id = ${BUKHARI} and h.nummer = ${nummer}`

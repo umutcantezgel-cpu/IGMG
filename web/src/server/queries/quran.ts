@@ -3,6 +3,7 @@ import { and, asc, eq, gte, inArray, isNull, lte, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { TajwidSegment } from '@/lib/db/schema/quran';
 import type { Mehrsprachig, MehrsprachigRich } from '@/lib/db/schema/typen';
 import { medienUrl } from '@/lib/medien/bild';
@@ -52,6 +53,7 @@ export async function ladeQuranStand(): Promise<{ quelle: QuranQuelle | null; su
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return { quelle: null, suren: [] }; // Beispielmodus ohne Datenbank (ADR 0019)
   const [quelle] = await db
     .select({
       bezeichnung: schema.quranQuelle.bezeichnung,
@@ -71,6 +73,7 @@ export async function ladeAusgaben(vorschau: boolean): Promise<SichtbareAusgabe[
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const alle = await db
     .select({
       id: schema.quranAusgabe.id,
@@ -133,6 +136,7 @@ export async function ladeSure(nr: number, ausgabeId: string | null): Promise<Su
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   if (!Number.isInteger(nr) || nr < 1 || nr > 114) return null;
   const kopf = await sureKopf(nr);
   if (!kopf) return null;
@@ -144,6 +148,7 @@ export async function ladeCuzBereiche(): Promise<CuzBereich[]> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const anfaenge = await db
     .select({ nr: schema.quranEinteilung.nr, sure: schema.quranEinteilung.sure, vers: schema.quranEinteilung.vers })
     .from(schema.quranEinteilung)
@@ -167,6 +172,7 @@ export async function ladeCuz(nr: number, ausgabeId: string | null): Promise<Cuz
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   if (!Number.isInteger(nr) || nr < 1 || nr > 30) return null;
   const bereich = (await ladeCuzBereiche()).find((b) => b.nr === nr);
   if (!bereich) return null;
@@ -190,6 +196,7 @@ export async function ladeUebersetzungstext(
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   const ausgabe = (await ladeAusgaben(vorschau)).find((a) => a.id === ausgabeId);
   if (!ausgabe) return null;
   const zeilen = await db
@@ -214,6 +221,7 @@ export async function ladeTajwidRegeln(): Promise<TajwidRegelDaten[]> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.tajwid);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const zeilen = await db
     .select({
       schluessel: schema.tajwidRegel.schluessel,
@@ -253,6 +261,7 @@ export async function ladeTajwidBeispiele(): Promise<TajwidBeispiel[]> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const zeilen = await db.execute<{ regel: string; sure: number; vers: number; text_ar: string; tajwid: TajwidSegment[] }>(sql`
     select distinct on (x.regel) x.regel, v.sure, v.vers, v.text_ar, v.tajwid
     from ${schema.quranVers} v
@@ -284,6 +293,7 @@ export async function ladeWortDaten(sure: number): Promise<WortDaten | null> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.quran, TAG.tajwid);
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   if (!Number.isInteger(sure) || sure < 1 || sure > 114) return null;
   const [verse, woerter] = await Promise.all([
     db
@@ -349,6 +359,7 @@ export async function ladeRezitationen(): Promise<RezitationKurz[]> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.rezitationen);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   return db
     .select({
       id: schema.quranRezitation.id,
@@ -367,6 +378,7 @@ export async function ladeRezitationsSuren(): Promise<{ rezitation: string; sure
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.rezitationen);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const zeilen = await db
     .selectDistinct({ rezitation: schema.quranAudio.rezitationId, sure: schema.quranAudio.sure })
     .from(schema.quranAudio)
@@ -391,6 +403,7 @@ export async function ladeZeiten(sure: number, rezitationId: string): Promise<Ze
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.rezitationen, TAG.rezitation(rezitationId));
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   const [rezitation] = await db
     .select({ id: schema.quranRezitation.id })
     .from(schema.quranRezitation)
