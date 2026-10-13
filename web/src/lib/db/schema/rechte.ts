@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm';
 import { check, index, jsonb, pgTable, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
 import { user } from './auth';
-import { organisationEnum, rolleEnum } from './typen';
+import { gemeindeRolleEnum, organisationEnum, rolleEnum } from './typen';
 
 /** Rollen je Konto (ADR 0003). Organisationsredaktion immer mit Organisation, alle anderen ohne. */
 export const rolleZuweisung = pgTable(
@@ -24,6 +24,8 @@ export const rolleZuweisung = pgTable(
 );
 
 export type EinladungRolle = { rolle: (typeof rolleEnum.enumValues)[number]; organisation?: (typeof organisationEnum.enumValues)[number] };
+/** Kontoarten in „Mein Bereich“, die eine Einladung vergibt (Eltern, Lehrkraft, Schüler ≥ 16; ADR 0026). */
+export type EinladungGemeindeRolle = (typeof gemeindeRolleEnum.enumValues)[number];
 
 /** Einladungen: Konten entstehen nur so (K-06). Token nur als SHA-256-Hash gespeichert. */
 export const einladung = pgTable(
@@ -33,6 +35,8 @@ export const einladung = pgTable(
     email: text().notNull(),
     name: text().notNull(),
     rollen: jsonb().$type<EinladungRolle[]>().notNull(),
+    /** Gemeinde-Rollen (Mein Bereich); eine Einladung kann Verwaltungs- und Gemeinde-Rollen zugleich tragen. */
+    gemeindeRollen: jsonb().$type<EinladungGemeindeRolle[]>().notNull().default([]),
     tokenHash: text().notNull().unique(),
     laeuftAb: timestamp({ withTimezone: true }).notNull(),
     angenommenAm: timestamp({ withTimezone: true }),

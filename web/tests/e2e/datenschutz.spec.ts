@@ -97,6 +97,16 @@ const ROUTEN = [
   },
   { id: 'elifbelektion', seite: 'Elifbe, Lektion', de: '/elifbe/lektion/1', tr: '/tr/elifba/ders/4', en: '/en/arabic-alphabet/lesson/7' },
   { id: 'elifbeueben', seite: 'Elifbe, Üben', de: '/elifbe/ueben', tr: '/tr/elifba/alistirma', en: '/en/arabic-alphabet/practice' },
+  // Konto-Einstieg (ADR 0026): ohne Anmeldung keine Cookies, keine Dritten (mit Funktion `konten` aus: 404-Seite)
+  { id: 'anmelden', seite: 'Anmelden', de: '/anmelden', tr: '/tr/giris', en: '/en/sign-in' },
+  { id: 'registrieren', seite: 'Registrieren', de: '/registrieren', tr: '/tr/kayit', en: '/en/register' },
+  {
+    id: 'passwortvergessen',
+    seite: 'Passwort vergessen',
+    de: '/passwort-vergessen',
+    tr: '/tr/sifremi-unuttum',
+    en: '/en/forgot-password',
+  },
 ] as const;
 
 type Sprache = 'de' | 'tr' | 'en';

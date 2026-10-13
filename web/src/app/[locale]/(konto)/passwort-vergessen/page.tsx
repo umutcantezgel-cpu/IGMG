@@ -1,0 +1,31 @@
+import type { Metadata } from 'next';
+import { getLocale, getTranslations } from 'next-intl/server';
+import { PasswortVergessenFormular } from '@/components/konto/EinstiegFormulare';
+import { KontoEinstieg } from '@/components/konto/KontoEinstieg';
+import { pfadFuer } from '@/i18n/navigation';
+import type { Locale } from '@/i18n/routing';
+
+/** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
+export const instant = false;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('konto.meta');
+  return { title: t('passwortVergessen') };
+}
+
+/** Passwort vergessen: immer dieselbe Antwort, ob es die Adresse gibt oder nicht (keine Kontenaufzählung). */
+export default async function PasswortVergessenSeite() {
+  const sprache = (await getLocale()) as Locale;
+  const t = await getTranslations('konto');
+  return (
+    <KontoEinstieg
+      seite="passwort-vergessen"
+      sprachZiel="/passwort-vergessen"
+      titel={t('passwortVergessen.titel')}
+      untertitel={t('passwortVergessen.text')}
+      ohneEinordnung
+    >
+      <PasswortVergessenFormular zurAnmeldung={pfadFuer('/anmelden', sprache)} />
+    </KontoEinstieg>
+  );
+}

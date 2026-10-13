@@ -2,6 +2,7 @@ import 'server-only';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import nodemailer, { type Transporter } from 'nodemailer';
+import { istUnzustellbar, MailUnzustellbar } from './adresse';
 
 /**
  * Mail-Transport (ADR 0011): SMTP (Mailpit lokal, echter Dienst im Betrieb) oder Datei (.eml in .mail/).
@@ -32,6 +33,8 @@ function smtp(): Transporter {
 }
 
 export async function versende(mail: Mail): Promise<void> {
+  // Kinderkonten und Beispielkonten haben nie zustellbare Adressen (RFC 2606 `.invalid`): hart abweisen (ADR 0026)
+  if (istUnzustellbar(mail.an)) throw new MailUnzustellbar();
   const absender = process.env.MAIL_ABSENDER ?? 'IGMG Wetzlar <noreply@example.test>';
   if (dateiTransport()) {
     const strom = nodemailer.createTransport({ streamTransport: true, buffer: true, newline: 'unix' });

@@ -2,13 +2,15 @@ import 'server-only';
 import { and, eq, inArray, isNull, lt, lte, sql } from 'drizzle-orm';
 import { createTranslator } from 'next-intl';
 import { db, schema } from '@/lib/db';
-import { entschluessele } from '@/lib/krypto';
+import { entschluessele, verschluessele } from '@/lib/krypto';
 import { AKTIONEN, EINGANG_AKTION, MATRIX, ROLLEN, type Aktion, type OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { BEREICHE } from '../../../messages/bereiche';
 import de from '../../../messages/de.json';
+import { istUnzustellbar, MailUnzustellbar } from './adresse';
+import { istKontoVorlage, KONTO_MAIL_SCHLUESSEL, kontoSpracheAusLink, type KontoVorlage, type MailSprache } from './konto-vorlagen';
 import { versende } from './transport';
-import { benachrichtigungMail, bestaetigungMail } from './vorlagen';
+import { benachrichtigungMail, bestaetigungMail, kontoMail } from './vorlagen';
 
 /**
  * Mail-Ausgang (ADR 0005): Einträge entstehen in der Transaktion des Formulars, der Versand läuft danach
@@ -55,6 +57,40 @@ function nachrichten(sprache: 'de' | 'tr' | 'en') {
   return { ...(sprache === 'de' ? {} : datei.de), ...datei[sprache] } as Record<string, unknown>;
 }
 
+/** Texte der Konto-Mails (messages/bereiche/konto.json, Namensraum `konto.mails`), mit Rückfall auf Deutsch. */
+function kontoNachrichten(sprache: MailSprache) {
+  const datei = BEREICHE.konto;
+  return { ...(sprache === 'de' ? {} : datei.de), ...datei[sprache] } as Record<string, unknown>;
+}
+
+/** Konto-Mail rendern: nur Betreff, ein Satz, Knopf mit Link und Fußhinweis (ADR 0026, keine Inhalte). */
+async function kontoMailBauen(vorlage: KontoVorlage, sprache: MailSprache, inhalt: Inhalt) {
+  const t = uebersetzer(sprache, kontoNachrichten(sprache), `konto.mails.${KONTO_MAIL_SCHLUESSEL[vorlage]}`);
+  return kontoMail(sprache, {
+    betreff: t('betreff'),
+    text: t('text', { gueltigBis: inhalt.daten.gueltigBis ?? '' }),
+    knopf: t('knopf'),
+    hinweis: t('hinweis'),
+    link: inhalt.daten.link ?? basisUrl(),
+  });
+}
+
+/**
+ * Geplante Konto-Mail (verschlüsselt im Ausgang). Unzustellbare Adressen (`.invalid`, z. B. Kinderkonten) werden gar
+ * nicht erst geplant (ADR 0026). Rückgabe: true, wenn eine Mail geplant wurde.
+ */
+export async function planeKontoMail(
+  o: { an: string; vorlage: KontoVorlage; sprache: MailSprache; daten: Record<string, string> },
+  tx: Pick<typeof db, 'insert'> = db,
+): Promise<boolean> {
+  if (istUnzustellbar(o.an)) return false;
+  const paket = verschluessele({ an: o.an, daten: o.daten });
+  await tx
+    .insert(schema.mailAusgang)
+    .values({ vorlage: o.vorlage, sprache: o.sprache, datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
+  return true;
+}
+
 async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
   const [z] = await db
     .select({ inhalt: schema.seiteninhalt.inhalt })
@@ -66,7 +102,11 @@ async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
 }
 
 async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt, eingangId: string | null) {
+  if (istKontoVorlage(vorlage)) return kontoMailBauen(vorlage, sprache, inhalt);
   if (vorlage === 'passwort') {
+    // Gemeinde-Konto (Rücksprung nicht in die Verwaltung): Mail in der Sprache des Rücksprungs
+    const kontoSprache = kontoSpracheAusLink(inhalt.daten.link);
+    if (kontoSprache) return kontoMailBauen('konto-passwort', kontoSprache, inhalt);
     // Passwort vergessen (C12): Link von Better Auth, 60 Minuten gültig
     const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
     return benachrichtigungMail({
@@ -148,11 +188,20 @@ export async function versendeOffeneMails(max = 20): Promise<{ gesendet: number;
         inhalt,
         zeile.bezugEingangId,
       );
-      for (const an of await empfaenger(inhalt.an)) await versende({ an, betreff: mail.betreff, html: mail.html, text: mail.text });
+      // Unzustellbare Empfänger (`.invalid`: Kinder- und Beispielkonten) nie ansprechen; eine Mail nur an sie ist ein
+      // endgültiger Fehler ohne weitere Versuche (ADR 0026)
+      const alle = await empfaenger(inhalt.an);
+      const zustellbar = alle.filter((a) => !istUnzustellbar(a));
+      if (alle.length > 0 && zustellbar.length === 0) throw new MailUnzustellbar();
+      for (const an of zustellbar) await versende({ an, betreff: mail.betreff, html: mail.html, text: mail.text });
       await db.update(schema.mailAusgang).set({ gesendetAm: new Date(), fehler: null }).where(eq(schema.mailAusgang.id, id));
       gesendet++;
     } catch (e) {
       fehler++;
+      if (e instanceof MailUnzustellbar) {
+        await db.update(schema.mailAusgang).set({ fehler: e.name, versuche: MAX_VERSUCHE }).where(eq(schema.mailAusgang.id, id));
+        continue;
+      }
       const warten = 2 ** zeile.versuche;
       await db
         .update(schema.mailAusgang)

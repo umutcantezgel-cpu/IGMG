@@ -1,1 +1,716 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "meinBereich": {
+      "kennung": "Mein Bereich",
+      "abbrechen": "Abbrechen",
+      "zuViele": "Zu viele Versuche. Bitte warten Sie einige Minuten.",
+      "fehler": {
+        "allgemein": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut."
+      },
+      "meta": {
+        "start": "Mein Bereich",
+        "konto": "Konto",
+        "benachrichtigungen": "Benachrichtigungen",
+        "lesezeichen": "Lesezeichen"
+      },
+      "nav": {
+        "label": "Mein Bereich",
+        "start": "Übersicht",
+        "kinder": "Kinder",
+        "unterricht": "Unterricht",
+        "lernweg": "Lernweg",
+        "gruppe": "Gruppe",
+        "lesezeichen": "Lesezeichen",
+        "benachrichtigungen": "Benachrichtigungen",
+        "konto": "Konto",
+        "verwaltung": "Verwaltung",
+        "abmelden": "Abmelden",
+        "bald": "bald verfügbar"
+      },
+      "kontoart": {
+        "gemeinde": "Gemeinde",
+        "eltern": "Eltern",
+        "lehrkraft": "Lehrkraft",
+        "schueler": "Schüler",
+        "verwaltung": "Verwaltung"
+      },
+      "start": {
+        "titel": "Willkommen, {vorname}",
+        "untertitel": "Ihr persönlicher Bereich bei der IGMG Wetzlar.",
+        "untertitelKind": "Schön, dass du da bist!",
+        "bereiche": "Ihre Bereiche",
+        "bereicheKind": "Deine Bereiche",
+        "kontoTitelKind": "Dein Zugang",
+        "gebet": {
+          "titel": "Nächstes Gebet in Wetzlar",
+          "um": "um {zeit} Uhr",
+          "morgen": "morgen",
+          "alle": "Alle Gebetszeiten",
+          "keine": "Die Gebetszeiten sind gerade nicht verfügbar."
+        },
+        "schutz": {
+          "titel": "Konto zusätzlich schützen",
+          "text": "Mit einem zweiten Faktor ist Ihr Konto auch dann sicher, wenn jemand Ihr Passwort kennt.",
+          "knopf": "Zweiten Faktor einrichten"
+        },
+        "kontoTitel": "Ihr Konto",
+        "kontoText": "Ihr Konto ist mit einem zweiten Faktor geschützt.",
+        "kontoTextKind": "Du bleibst bis zu 12 Stunden angemeldet. Danach meldest du dich einfach neu an."
+      },
+      "kachel": {
+        "kinder": { "titel": "Meine Kinder", "text": "Termine, Anwesenheit und Fortschritt Ihrer Kinder." },
+        "unterricht": { "titel": "Unterricht", "text": "Ihre Gruppen und der Unterricht von heute." },
+        "anwesenheit": { "titel": "Anwesenheit", "text": "Anwesenheit auf einem Bildschirm erfassen." },
+        "lernweg": { "titel": "Mein Lernweg", "text": "Vom Elifbe bis zum Koran – Schritt für Schritt." },
+        "gruppe": { "titel": "Meine Gruppe", "text": "Termine und Aufgaben deiner Gruppe." },
+        "lesezeichen": {
+          "titel": "Lesezeichen",
+          "text": "Ihre gespeicherten Stellen im Koran.",
+          "textKind": "Deine gespeicherten Stellen im Koran."
+        },
+        "quran": { "titel": "Koran lesen", "text": "Alle Suren mit Übersetzung." },
+        "gebetszeiten": { "titel": "Gebetszeiten", "text": "Die Zeiten der Moschee in Wetzlar." },
+        "veranstaltungen": { "titel": "Veranstaltungen", "text": "Was in der Gemeinde ansteht." },
+        "benachrichtigungen": { "titel": "Benachrichtigungen", "text": "Erinnerungen und Neuigkeiten – folgen bald." },
+        "konto": {
+          "titel": "Konto und Sicherheit",
+          "text": "Profil, Passwort, zweiter Faktor und Ihre Daten.",
+          "textKind": "Dein Passwort und deine Sprache."
+        },
+        "verwaltung": { "titel": "Verwaltung", "text": "Zur Verwaltung der Website." }
+      },
+      "konto": {
+        "titel": "Konto",
+        "untertitel": "Profil, Sicherheit und Ihre Daten.",
+        "pflicht": {
+          "titel": "Zweiten Faktor einrichten",
+          "text": "Als Lehrkraft schützen Sie Ihr Konto mit einem zweiten Faktor. Richten Sie ihn jetzt ein – danach geht es weiter in Ihren Bereich."
+        },
+        "profil": {
+          "titel": "Profil",
+          "email": "E-Mail-Adresse",
+          "benutzername": "Benutzername",
+          "seit": "Konto seit",
+          "kindHinweis": "Deinen Namen ändern deine Eltern über die Gemeinde.",
+          "name": "Vor- und Nachname",
+          "anzeigename": "Anzeigename",
+          "anzeigenameHinweis": "So sehen andere Sie, z. B. „Ayşe Y.“ – Vorname und erster Buchstabe des Nachnamens.",
+          "sprache": "Sprache",
+          "spracheHinweis": "In dieser Sprache schicken wir Ihnen E-Mails.",
+          "speichern": "Profil speichern",
+          "gespeichert": "Ihr Profil ist gespeichert.",
+          "fehler": {
+            "pruefen": "Bitte prüfen Sie die markierten Felder.",
+            "name": "Bitte geben Sie 2 bis 80 Zeichen ein.",
+            "anzeigename": "Bitte geben Sie 2 bis 40 Zeichen ein.",
+            "sprache": "Bitte wählen Sie eine Sprache."
+          }
+        },
+        "passwort": {
+          "titel": "Passwort ändern",
+          "hinweis": "Andere angemeldete Geräte werden dabei abgemeldet.",
+          "aktuell": "Aktuelles Passwort",
+          "neu": "Neues Passwort (mindestens 12 Zeichen)",
+          "wiederholung": "Neues Passwort wiederholen",
+          "speichern": "Passwort ändern",
+          "gespeichert": "Ihr neues Passwort ist gespeichert.",
+          "fehlerAktuell": "Das aktuelle Passwort stimmt nicht.",
+          "fehlerKurz": "Das neue Passwort braucht mindestens 12 Zeichen.",
+          "fehlerGleich": "Die beiden Passwörter stimmen nicht überein."
+        },
+        "zweiFaktor": {
+          "titel": "Zwei-Faktor-Anmeldung",
+          "aktiv": "Aktiv",
+          "inaktiv": "Nicht eingerichtet",
+          "text": "Zusätzlich zum Passwort fragen wir bei der Anmeldung nach einem Code aus einer Authentifizierungs-App auf Ihrem Telefon.",
+          "textAktiv": "Bei jeder Anmeldung fragen wir nach dem Code aus Ihrer Authentifizierungs-App.",
+          "pflicht": "Für Ihr Konto ist der zweite Faktor Pflicht und lässt sich nicht abschalten.",
+          "eingerichtet": "Die Zwei-Faktor-Anmeldung ist eingerichtet.",
+          "schritt1": "Schritt 1: Passwort bestätigen",
+          "weiter": "Weiter",
+          "schritt2": "Schritt 2: App verbinden",
+          "scannen": "Scannen Sie den QR-Code mit Ihrer Authentifizierungs-App.",
+          "manuell": "Oder geben Sie diesen Schlüssel in der App ein:",
+          "qrAlt": "QR-Code zum Einrichten der Zwei-Faktor-Anmeldung",
+          "ersatzTitel": "Ersatzcodes",
+          "ersatzHinweis": "Bewahren Sie diese Codes sicher auf. Jeder Code gilt einmal, falls Ihr Telefon nicht zur Hand ist.",
+          "schritt3": "Schritt 3: Code eingeben",
+          "code": "Sechsstelliger Code aus der App",
+          "bestaetigen": "Einrichtung abschließen",
+          "abschalten": "Abschalten",
+          "abschaltenText": "Ohne zweiten Faktor schützt nur noch Ihr Passwort das Konto. Bitte bestätigen Sie mit Ihrem Passwort.",
+          "abschaltenKnopf": "Zwei-Faktor-Anmeldung abschalten",
+          "abgeschaltet": "Die Zwei-Faktor-Anmeldung ist abgeschaltet.",
+          "passwort": "Passwort",
+          "fehlerPasswort": "Das Passwort stimmt nicht.",
+          "fehlerCode": "Der Code ist nicht gültig. Bitte versuchen Sie es mit dem aktuellen Code."
+        },
+        "passkeys": {
+          "titel": "Passkeys",
+          "text": "Mit einem Passkey melden Sie sich per Fingerabdruck, Gesichtserkennung oder Geräte-PIN an – ohne Passwort.",
+          "keine": "Noch kein Passkey hinterlegt.",
+          "ohneName": "Passkey",
+          "erstellt": "hinzugefügt am {datum}",
+          "gesichert": "in der Cloud gesichert",
+          "entfernen": "Entfernen",
+          "entfernenLabel": "Entfernen: {name}",
+          "name": "Name des Passkeys",
+          "nameHinweis": "Zum Beispiel das Gerät, auf dem Sie ihn anlegen.",
+          "nameStandard": "Mein Gerät",
+          "hinzufuegen": "Passkey hinzufügen",
+          "laeuft": "Passkey wird angelegt …",
+          "hinzugefuegt": "Der Passkey ist hinzugefügt.",
+          "fehler": "Der Passkey konnte nicht angelegt werden.",
+          "fehlerFrisch": "Bitte melden Sie sich zur Sicherheit neu an und versuchen Sie es dann erneut.",
+          "abgebrochen": "Das Anlegen wurde abgebrochen.",
+          "nichtMoeglich": "Dieser Browser unterstützt keine Passkeys.",
+          "verwaltung": "Für Konten mit Verwaltungszugang sind Passkeys noch nicht freigegeben. Sie melden sich mit Passwort und zweitem Faktor an."
+        },
+        "sitzungen": {
+          "titel": "Angemeldete Geräte",
+          "text": "Hier sind Sie gerade angemeldet. Unbekanntes Gerät? Melden Sie es ab und ändern Sie Ihr Passwort.",
+          "aktuell": "Dieses Gerät",
+          "seit": "angemeldet {zeit}",
+          "zuletzt": "zuletzt aktiv {zeit}",
+          "unbekannt": "Unbekanntes Gerät",
+          "beenden": "Abmelden",
+          "beendenLabel": "Abmelden: {geraet}",
+          "alleAnderen": "Alle anderen Geräte abmelden"
+        },
+        "export": {
+          "titel": "Meine Daten",
+          "text": "Laden Sie alle Daten herunter, die wir zu Ihrem Konto speichern (Art. 15 und 20 DSGVO) – als JSON-Datei.",
+          "knopf": "Daten herunterladen",
+          "laeuft": "Daten werden zusammengestellt …",
+          "fertig": "Die Datei ist heruntergeladen."
+        },
+        "loeschen": {
+          "titel": "Konto löschen",
+          "text": "Sie können die Löschung Ihres Kontos beantragen (Art. 17 DSGVO). Die Gemeinde prüft den Antrag und löscht Ihr Konto innerhalb von 30 Tagen.",
+          "oeffnen": "Löschung beantragen",
+          "passwort": "Passwort zur Bestätigung",
+          "bestaetigt": "Ich möchte mein Konto und meine Daten löschen lassen.",
+          "knopf": "Löschantrag senden",
+          "eingegangen": "Ihr Löschantrag ist eingegangen. Die Gemeinde meldet sich, falls Fragen bestehen.",
+          "gestellt": "Ihr Löschantrag ist eingegangen ({seit}). Ihr Konto wird spätestens am {datum} gelöscht. Möchten Sie es behalten, wenden Sie sich bitte an die Gemeinde.",
+          "kind": "Kinderzugänge löschen die Eltern über die Gemeinde.",
+          "fehler": {
+            "passwort": "Das Passwort stimmt nicht.",
+            "bestaetigt": "Bitte bestätigen Sie, dass Sie die Löschung möchten."
+          }
+        }
+      },
+      "benachrichtigungen": {
+        "titel": "Benachrichtigungen",
+        "untertitel": "Erinnerungen und Neuigkeiten aus der Gemeinde.",
+        "hinweis": "Benachrichtigungen sind noch in Vorbereitung. Bis dahin schicken wir Ihnen keine Benachrichtigungen – auch keine Werbung.",
+        "bald": "bald verfügbar",
+        "push": {
+          "titel": "Mitteilungen aufs Gerät",
+          "text": "Später können Sie hier Erinnerungen an die Gebetszeiten, Ankündigungen und Hinweise zum Unterricht einschalten – jedes Thema einzeln."
+        },
+        "newsletter": {
+          "titel": "Newsletter",
+          "text": "Später können Sie hier den Newsletter der Gemeinde bestellen und wieder abbestellen."
+        }
+      },
+      "lesezeichen": {
+        "titel": "Lesezeichen",
+        "untertitel": "Ihre gespeicherten Stellen im Koran.",
+        "listeTitel": "Auf diesem Gerät",
+        "lokal": "Lesezeichen setzen Sie im Koran-Leser. Sie liegen nur auf diesem Gerät.",
+        "leer": "Noch keine Lesezeichen",
+        "leerText": "Setzen Sie im Koran-Leser ein Lesezeichen – es erscheint dann hier.",
+        "zumQuran": "Zum Koran",
+        "weiterlesen": "Weiterlesen",
+        "eintrag": "Sure {sure}, Vers {vers}",
+        "gespeichert": "gespeichert am {datum}",
+        "entfernen": "Entfernen",
+        "entfernenLabel": "Entfernen: {eintrag}",
+        "sync": {
+          "titel": "Auf allen Geräten",
+          "text": "Später können Sie Ihre Lesezeichen mit Ihrem Konto abgleichen und auf jedem Gerät finden.",
+          "label": "Lesezeichen mit meinem Konto abgleichen",
+          "hinweis": "Der Abgleich ist noch nicht freigeschaltet. Bis dahin bleiben Ihre Lesezeichen nur auf diesem Gerät.",
+          "bald": "bald verfügbar"
+        }
+      }
+    }
+  },
+  "tr": {
+    "meinBereich": {
+      "kennung": "Hesabım",
+      "abbrechen": "Vazgeç",
+      "zuViele": "Çok fazla deneme yapıldı. Lütfen birkaç dakika bekleyin.",
+      "fehler": {
+        "allgemein": "Maalesef olmadı. Lütfen tekrar deneyin."
+      },
+      "meta": {
+        "start": "Hesabım",
+        "konto": "Hesap",
+        "benachrichtigungen": "Bildirimler",
+        "lesezeichen": "Yer imleri"
+      },
+      "nav": {
+        "label": "Hesabım",
+        "start": "Genel bakış",
+        "kinder": "Çocuklarım",
+        "unterricht": "Derslerim",
+        "lernweg": "Öğrenme yolu",
+        "gruppe": "Grup",
+        "lesezeichen": "Yer imleri",
+        "benachrichtigungen": "Bildirimler",
+        "konto": "Hesap",
+        "verwaltung": "Yönetim",
+        "abmelden": "Çıkış yap",
+        "bald": "yakında"
+      },
+      "kontoart": {
+        "gemeinde": "Cemaat",
+        "eltern": "Veli",
+        "lehrkraft": "Öğretmen",
+        "schueler": "Öğrenci",
+        "verwaltung": "Yönetim"
+      },
+      "start": {
+        "titel": "Hoş geldiniz, {vorname}",
+        "untertitel": "IGMG Wetzlar’daki kişisel alanınız.",
+        "untertitelKind": "Burada olman çok güzel!",
+        "bereiche": "Alanlarınız",
+        "bereicheKind": "Alanların",
+        "kontoTitelKind": "Girişin",
+        "gebet": {
+          "titel": "Wetzlar’da bir sonraki namaz",
+          "um": "saat {zeit}",
+          "morgen": "yarın",
+          "alle": "Tüm namaz vakitleri",
+          "keine": "Namaz vakitleri şu anda kullanılamıyor."
+        },
+        "schutz": {
+          "titel": "Hesabınızı ek olarak koruyun",
+          "text": "İkinci bir faktörle hesabınız, biri şifrenizi bilse bile güvende kalır.",
+          "knopf": "İkinci faktörü kur"
+        },
+        "kontoTitel": "Hesabınız",
+        "kontoText": "Hesabınız ikinci bir faktörle korunuyor.",
+        "kontoTextKind": "En fazla 12 saat giriş yapmış kalırsın. Sonra yeniden giriş yapman yeterli."
+      },
+      "kachel": {
+        "kinder": { "titel": "Çocuklarım", "text": "Çocuklarınızın dersleri, devamı ve ilerlemesi." },
+        "unterricht": { "titel": "Derslerim", "text": "Gruplarınız ve bugünkü dersler." },
+        "anwesenheit": { "titel": "Yoklama", "text": "Yoklamayı tek bir ekranda alın." },
+        "lernweg": { "titel": "Öğrenme yolum", "text": "Elifbadan Kur’an’a – adım adım." },
+        "gruppe": { "titel": "Grubum", "text": "Grubunun dersleri ve ödevleri." },
+        "lesezeichen": {
+          "titel": "Yer imleri",
+          "text": "Kur’an’da kaydettiğiniz yerler.",
+          "textKind": "Kur’an’da kaydettiğin yerler."
+        },
+        "quran": { "titel": "Kur’an oku", "text": "Tüm sureler mealleriyle." },
+        "gebetszeiten": { "titel": "Namaz vakitleri", "text": "Wetzlar’daki caminin vakitleri." },
+        "veranstaltungen": { "titel": "Etkinlikler", "text": "Cemaatte yaklaşan etkinlikler." },
+        "benachrichtigungen": { "titel": "Bildirimler", "text": "Hatırlatmalar ve haberler – yakında." },
+        "konto": {
+          "titel": "Hesap ve güvenlik",
+          "text": "Profil, şifre, ikinci faktör ve verileriniz.",
+          "textKind": "Şifren ve dilin."
+        },
+        "verwaltung": { "titel": "Yönetim", "text": "Web sitesinin yönetimine git." }
+      },
+      "konto": {
+        "titel": "Hesap",
+        "untertitel": "Profil, güvenlik ve verileriniz.",
+        "pflicht": {
+          "titel": "İkinci faktörü kurun",
+          "text": "Öğretmen olarak hesabınızı ikinci bir faktörle korursunuz. Şimdi kurun – ardından alanınıza devam edersiniz."
+        },
+        "profil": {
+          "titel": "Profil",
+          "email": "E-posta adresi",
+          "benutzername": "Kullanıcı adı",
+          "seit": "Hesap tarihi",
+          "kindHinweis": "Adını, anne baban cemaat üzerinden değiştirir.",
+          "name": "Ad ve soyad",
+          "anzeigename": "Görünen ad",
+          "anzeigenameHinweis": "Diğerleri sizi böyle görür, örn. „Ayşe Y.“ – ad ve soyadın ilk harfi.",
+          "sprache": "Dil",
+          "spracheHinweis": "E-postaları size bu dilde göndeririz.",
+          "speichern": "Profili kaydet",
+          "gespeichert": "Profiliniz kaydedildi.",
+          "fehler": {
+            "pruefen": "Lütfen işaretli alanları kontrol edin.",
+            "name": "Lütfen 2 ile 80 karakter arasında girin.",
+            "anzeigename": "Lütfen 2 ile 40 karakter arasında girin.",
+            "sprache": "Lütfen bir dil seçin."
+          }
+        },
+        "passwort": {
+          "titel": "Şifre değiştir",
+          "hinweis": "Bu sırada diğer cihazlardaki oturumlar kapatılır.",
+          "aktuell": "Mevcut şifre",
+          "neu": "Yeni şifre (en az 12 karakter)",
+          "wiederholung": "Yeni şifreyi tekrarlayın",
+          "speichern": "Şifreyi değiştir",
+          "gespeichert": "Yeni şifreniz kaydedildi.",
+          "fehlerAktuell": "Mevcut şifre doğru değil.",
+          "fehlerKurz": "Yeni şifre en az 12 karakter olmalıdır.",
+          "fehlerGleich": "İki şifre birbiriyle aynı değil."
+        },
+        "zweiFaktor": {
+          "titel": "İki faktörlü giriş",
+          "aktiv": "Etkin",
+          "inaktiv": "Kurulmadı",
+          "text": "Girişte şifrenin yanı sıra telefonunuzdaki bir kimlik doğrulama uygulamasından bir kod isteriz.",
+          "textAktiv": "Her girişte kimlik doğrulama uygulamanızdaki kodu isteriz.",
+          "pflicht": "Hesabınız için ikinci faktör zorunludur ve kapatılamaz.",
+          "eingerichtet": "İki faktörlü giriş kuruldu.",
+          "schritt1": "Adım 1: Şifreyi onaylayın",
+          "weiter": "Devam",
+          "schritt2": "Adım 2: Uygulamayı bağlayın",
+          "scannen": "QR kodu kimlik doğrulama uygulamanızla tarayın.",
+          "manuell": "Veya bu anahtarı uygulamaya girin:",
+          "qrAlt": "İki faktörlü girişi kurmak için QR kodu",
+          "ersatzTitel": "Yedek kodlar",
+          "ersatzHinweis": "Bu kodları güvenli bir yerde saklayın. Telefonunuz yanınızda değilse her kod bir kez geçerlidir.",
+          "schritt3": "Adım 3: Kodu girin",
+          "code": "Uygulamadaki altı haneli kod",
+          "bestaetigen": "Kurulumu tamamla",
+          "abschalten": "Kapat",
+          "abschaltenText": "İkinci faktör olmadan hesabınızı yalnızca şifreniz korur. Lütfen şifrenizle onaylayın.",
+          "abschaltenKnopf": "İki faktörlü girişi kapat",
+          "abgeschaltet": "İki faktörlü giriş kapatıldı.",
+          "passwort": "Şifre",
+          "fehlerPasswort": "Şifre doğru değil.",
+          "fehlerCode": "Kod geçerli değil. Lütfen güncel kodu deneyin."
+        },
+        "passkeys": {
+          "titel": "Geçiş anahtarları",
+          "text": "Geçiş anahtarıyla parmak izi, yüz tanıma veya cihaz PIN’i ile şifresiz giriş yaparsınız.",
+          "keine": "Henüz geçiş anahtarı eklenmedi.",
+          "ohneName": "Geçiş anahtarı",
+          "erstellt": "{datum} tarihinde eklendi",
+          "gesichert": "bulutta yedekli",
+          "entfernen": "Kaldır",
+          "entfernenLabel": "Kaldır: {name}",
+          "name": "Geçiş anahtarının adı",
+          "nameHinweis": "Örneğin anahtarı oluşturduğunuz cihaz.",
+          "nameStandard": "Cihazım",
+          "hinzufuegen": "Geçiş anahtarı ekle",
+          "laeuft": "Geçiş anahtarı oluşturuluyor …",
+          "hinzugefuegt": "Geçiş anahtarı eklendi.",
+          "fehler": "Geçiş anahtarı oluşturulamadı.",
+          "fehlerFrisch": "Güvenliğiniz için lütfen yeniden giriş yapıp tekrar deneyin.",
+          "abgebrochen": "Oluşturma iptal edildi.",
+          "nichtMoeglich": "Bu tarayıcı geçiş anahtarlarını desteklemiyor.",
+          "verwaltung": "Yönetim erişimi olan hesaplar için geçiş anahtarları henüz açılmadı. Şifre ve ikinci faktörle giriş yaparsınız."
+        },
+        "sitzungen": {
+          "titel": "Giriş yapılmış cihazlar",
+          "text": "Şu anda bu cihazlarda giriş yapılmış durumda. Tanımadığınız bir cihaz mı var? Oturumunu kapatın ve şifrenizi değiştirin.",
+          "aktuell": "Bu cihaz",
+          "seit": "giriş {zeit}",
+          "zuletzt": "son etkinlik {zeit}",
+          "unbekannt": "Bilinmeyen cihaz",
+          "beenden": "Oturumu kapat",
+          "beendenLabel": "Oturumu kapat: {geraet}",
+          "alleAnderen": "Diğer tüm cihazlarda oturumu kapat"
+        },
+        "export": {
+          "titel": "Verilerim",
+          "text": "Hesabınız için sakladığımız tüm verileri indirin (GVKT/DSGVO madde 15 ve 20) – JSON dosyası olarak.",
+          "knopf": "Verileri indir",
+          "laeuft": "Veriler hazırlanıyor …",
+          "fertig": "Dosya indirildi."
+        },
+        "loeschen": {
+          "titel": "Hesabı sil",
+          "text": "Hesabınızın silinmesini talep edebilirsiniz (GVKT/DSGVO madde 17). Cemaat talebi inceler ve hesabınızı 30 gün içinde siler.",
+          "oeffnen": "Silinmesini talep et",
+          "passwort": "Onay için şifre",
+          "bestaetigt": "Hesabımın ve verilerimin silinmesini istiyorum.",
+          "knopf": "Silme talebini gönder",
+          "eingegangen": "Silme talebiniz alındı. Sorusu olursa cemaat sizinle iletişime geçer.",
+          "gestellt": "Silme talebiniz alındı ({seit}). Hesabınız en geç {datum} tarihinde silinecek. Hesabınızı korumak isterseniz lütfen cemaate başvurun.",
+          "kind": "Çocuk girişlerini veliler cemaat üzerinden sildirir.",
+          "fehler": {
+            "passwort": "Şifre doğru değil.",
+            "bestaetigt": "Lütfen silinmesini istediğinizi onaylayın."
+          }
+        }
+      },
+      "benachrichtigungen": {
+        "titel": "Bildirimler",
+        "untertitel": "Cemaatten hatırlatmalar ve haberler.",
+        "hinweis": "Bildirimler henüz hazırlık aşamasında. O zamana kadar size hiçbir bildirim göndermiyoruz – reklam da göndermiyoruz.",
+        "bald": "yakında",
+        "push": {
+          "titel": "Cihaza bildirimler",
+          "text": "İleride burada namaz vakti hatırlatmalarını, duyuruları ve derslerle ilgili bilgileri – her konuyu ayrı ayrı – açabileceksiniz."
+        },
+        "newsletter": {
+          "titel": "Bülten",
+          "text": "İleride burada cemaatin bültenine abone olabilecek ve aboneliği iptal edebileceksiniz."
+        }
+      },
+      "lesezeichen": {
+        "titel": "Yer imleri",
+        "untertitel": "Kur’an’da kaydettiğiniz yerler.",
+        "listeTitel": "Bu cihazda",
+        "lokal": "Yer imlerini Kur’an okuyucusunda eklersiniz. Yalnızca bu cihazda saklanırlar.",
+        "leer": "Henüz yer imi yok",
+        "leerText": "Kur’an okuyucusunda bir yer imi ekleyin – burada görünecektir.",
+        "zumQuran": "Kur’an’a git",
+        "weiterlesen": "Okumaya devam et",
+        "eintrag": "Sure {sure}, ayet {vers}",
+        "gespeichert": "{datum} tarihinde kaydedildi",
+        "entfernen": "Kaldır",
+        "entfernenLabel": "Kaldır: {eintrag}",
+        "sync": {
+          "titel": "Tüm cihazlarda",
+          "text": "İleride yer imlerinizi hesabınızla eşitleyip her cihazda bulabileceksiniz.",
+          "label": "Yer imlerini hesabımla eşitle",
+          "hinweis": "Eşitleme henüz açılmadı. O zamana kadar yer imleriniz yalnızca bu cihazda kalır.",
+          "bald": "yakında"
+        }
+      }
+    }
+  },
+  "en": {
+    "meinBereich": {
+      "kennung": "My account",
+      "abbrechen": "Cancel",
+      "zuViele": "Too many attempts. Please wait a few minutes.",
+      "fehler": {
+        "allgemein": "Unfortunately that did not work. Please try again."
+      },
+      "meta": {
+        "start": "My account",
+        "konto": "Account",
+        "benachrichtigungen": "Notifications",
+        "lesezeichen": "Bookmarks"
+      },
+      "nav": {
+        "label": "My account",
+        "start": "Overview",
+        "kinder": "Children",
+        "unterricht": "Teaching",
+        "lernweg": "Learning path",
+        "gruppe": "Group",
+        "lesezeichen": "Bookmarks",
+        "benachrichtigungen": "Notifications",
+        "konto": "Account",
+        "verwaltung": "Administration",
+        "abmelden": "Sign out",
+        "bald": "coming soon"
+      },
+      "kontoart": {
+        "gemeinde": "Community",
+        "eltern": "Parent",
+        "lehrkraft": "Teacher",
+        "schueler": "Student",
+        "verwaltung": "Administration"
+      },
+      "start": {
+        "titel": "Welcome, {vorname}",
+        "untertitel": "Your personal area at IGMG Wetzlar.",
+        "untertitelKind": "Great to have you here!",
+        "bereiche": "Your areas",
+        "bereicheKind": "Your areas",
+        "kontoTitelKind": "Your access",
+        "gebet": {
+          "titel": "Next prayer in Wetzlar",
+          "um": "at {zeit}",
+          "morgen": "tomorrow",
+          "alle": "All prayer times",
+          "keine": "The prayer times are not available right now."
+        },
+        "schutz": {
+          "titel": "Protect your account even better",
+          "text": "With a second factor, your account stays safe even if someone knows your password.",
+          "knopf": "Set up a second factor"
+        },
+        "kontoTitel": "Your account",
+        "kontoText": "Your account is protected by a second factor.",
+        "kontoTextKind": "You stay signed in for up to 12 hours. After that, just sign in again."
+      },
+      "kachel": {
+        "kinder": { "titel": "My children", "text": "Your children’s classes, attendance and progress." },
+        "unterricht": { "titel": "Teaching", "text": "Your groups and today’s classes." },
+        "anwesenheit": { "titel": "Attendance", "text": "Take attendance on a single screen." },
+        "lernweg": { "titel": "My learning path", "text": "From the Arabic alphabet to the Quran – step by step." },
+        "gruppe": { "titel": "My group", "text": "Your group’s classes and tasks." },
+        "lesezeichen": {
+          "titel": "Bookmarks",
+          "text": "The places you saved in the Quran.",
+          "textKind": "The places you saved in the Quran."
+        },
+        "quran": { "titel": "Read the Quran", "text": "All surahs with translation." },
+        "gebetszeiten": { "titel": "Prayer times", "text": "The mosque’s times in Wetzlar." },
+        "veranstaltungen": { "titel": "Events", "text": "What is coming up in the community." },
+        "benachrichtigungen": { "titel": "Notifications", "text": "Reminders and news – coming soon." },
+        "konto": {
+          "titel": "Account and security",
+          "text": "Profile, password, second factor and your data.",
+          "textKind": "Your password and language."
+        },
+        "verwaltung": { "titel": "Administration", "text": "Go to the website administration." }
+      },
+      "konto": {
+        "titel": "Account",
+        "untertitel": "Profile, security and your data.",
+        "pflicht": {
+          "titel": "Set up a second factor",
+          "text": "As a teacher, you protect your account with a second factor. Set it up now – then you continue to your area."
+        },
+        "profil": {
+          "titel": "Profile",
+          "email": "Email address",
+          "benutzername": "Username",
+          "seit": "Account since",
+          "kindHinweis": "Your parents change your name through the community.",
+          "name": "First and last name",
+          "anzeigename": "Display name",
+          "anzeigenameHinweis": "This is how others see you, e.g. “Ayşe Y.” – first name and the first letter of the last name.",
+          "sprache": "Language",
+          "spracheHinweis": "We send you emails in this language.",
+          "speichern": "Save profile",
+          "gespeichert": "Your profile has been saved.",
+          "fehler": {
+            "pruefen": "Please check the highlighted fields.",
+            "name": "Please enter 2 to 80 characters.",
+            "anzeigename": "Please enter 2 to 40 characters.",
+            "sprache": "Please choose a language."
+          }
+        },
+        "passwort": {
+          "titel": "Change password",
+          "hinweis": "Other signed-in devices will be signed out.",
+          "aktuell": "Current password",
+          "neu": "New password (at least 12 characters)",
+          "wiederholung": "Repeat new password",
+          "speichern": "Change password",
+          "gespeichert": "Your new password has been saved.",
+          "fehlerAktuell": "The current password is not correct.",
+          "fehlerKurz": "The new password needs at least 12 characters.",
+          "fehlerGleich": "The two passwords do not match."
+        },
+        "zweiFaktor": {
+          "titel": "Two-factor sign-in",
+          "aktiv": "On",
+          "inaktiv": "Not set up",
+          "text": "In addition to your password, we ask for a code from an authenticator app on your phone when you sign in.",
+          "textAktiv": "Each time you sign in, we ask for the code from your authenticator app.",
+          "pflicht": "A second factor is required for your account and cannot be turned off.",
+          "eingerichtet": "Two-factor sign-in is set up.",
+          "schritt1": "Step 1: Confirm your password",
+          "weiter": "Continue",
+          "schritt2": "Step 2: Connect your app",
+          "scannen": "Scan the QR code with your authenticator app.",
+          "manuell": "Or enter this key in the app:",
+          "qrAlt": "QR code for setting up two-factor sign-in",
+          "ersatzTitel": "Backup codes",
+          "ersatzHinweis": "Keep these codes in a safe place. Each code works once if your phone is not at hand.",
+          "schritt3": "Step 3: Enter the code",
+          "code": "Six-digit code from the app",
+          "bestaetigen": "Finish setup",
+          "abschalten": "Turn off",
+          "abschaltenText": "Without a second factor, only your password protects your account. Please confirm with your password.",
+          "abschaltenKnopf": "Turn off two-factor sign-in",
+          "abgeschaltet": "Two-factor sign-in is turned off.",
+          "passwort": "Password",
+          "fehlerPasswort": "The password is not correct.",
+          "fehlerCode": "The code is not valid. Please try the current code."
+        },
+        "passkeys": {
+          "titel": "Passkeys",
+          "text": "With a passkey, you sign in with your fingerprint, face recognition or device PIN – no password needed.",
+          "keine": "No passkey added yet.",
+          "ohneName": "Passkey",
+          "erstellt": "added on {datum}",
+          "gesichert": "backed up in the cloud",
+          "entfernen": "Remove",
+          "entfernenLabel": "Remove: {name}",
+          "name": "Name of the passkey",
+          "nameHinweis": "For example, the device you create it on.",
+          "nameStandard": "My device",
+          "hinzufuegen": "Add a passkey",
+          "laeuft": "Creating passkey …",
+          "hinzugefuegt": "The passkey has been added.",
+          "fehler": "The passkey could not be created.",
+          "fehlerFrisch": "For your security, please sign in again and then try once more.",
+          "abgebrochen": "Creating the passkey was cancelled.",
+          "nichtMoeglich": "This browser does not support passkeys.",
+          "verwaltung": "Passkeys are not yet enabled for accounts with staff access. You sign in with your password and a second factor."
+        },
+        "sitzungen": {
+          "titel": "Signed-in devices",
+          "text": "You are currently signed in on these devices. Do not recognise one? Sign it out and change your password.",
+          "aktuell": "This device",
+          "seit": "signed in {zeit}",
+          "zuletzt": "last active {zeit}",
+          "unbekannt": "Unknown device",
+          "beenden": "Sign out",
+          "beendenLabel": "Sign out: {geraet}",
+          "alleAnderen": "Sign out all other devices"
+        },
+        "export": {
+          "titel": "My data",
+          "text": "Download all data we store for your account (Art. 15 and 20 GDPR) – as a JSON file.",
+          "knopf": "Download data",
+          "laeuft": "Collecting data …",
+          "fertig": "The file has been downloaded."
+        },
+        "loeschen": {
+          "titel": "Delete account",
+          "text": "You can request the deletion of your account (Art. 17 GDPR). The community reviews the request and deletes your account within 30 days.",
+          "oeffnen": "Request deletion",
+          "passwort": "Password to confirm",
+          "bestaetigt": "I want my account and my data to be deleted.",
+          "knopf": "Send deletion request",
+          "eingegangen": "Your deletion request has been received. The community will contact you if there are questions.",
+          "gestellt": "Your deletion request has been received ({seit}). Your account will be deleted by {datum} at the latest. If you want to keep it, please contact the community.",
+          "kind": "Parents have children’s access deleted through the community.",
+          "fehler": {
+            "passwort": "The password is not correct.",
+            "bestaetigt": "Please confirm that you want the deletion."
+          }
+        }
+      },
+      "benachrichtigungen": {
+        "titel": "Notifications",
+        "untertitel": "Reminders and news from the community.",
+        "hinweis": "Notifications are still being prepared. Until then, we do not send you any notifications – and no advertising either.",
+        "bald": "coming soon",
+        "push": {
+          "titel": "Notifications on your device",
+          "text": "Later, you will be able to turn on reminders for prayer times, announcements and class updates here – each topic separately."
+        },
+        "newsletter": {
+          "titel": "Newsletter",
+          "text": "Later, you will be able to subscribe to and unsubscribe from the community newsletter here."
+        }
+      },
+      "lesezeichen": {
+        "titel": "Bookmarks",
+        "untertitel": "The places you saved in the Quran.",
+        "listeTitel": "On this device",
+        "lokal": "You add bookmarks in the Quran reader. They are stored only on this device.",
+        "leer": "No bookmarks yet",
+        "leerText": "Add a bookmark in the Quran reader – it will then appear here.",
+        "zumQuran": "Go to the Quran",
+        "weiterlesen": "Continue reading",
+        "eintrag": "Surah {sure}, verse {vers}",
+        "gespeichert": "saved on {datum}",
+        "entfernen": "Remove",
+        "entfernenLabel": "Remove: {eintrag}",
+        "sync": {
+          "titel": "On all devices",
+          "text": "Later, you will be able to sync your bookmarks with your account and find them on every device.",
+          "label": "Sync bookmarks with my account",
+          "hinweis": "Syncing is not enabled yet. Until then, your bookmarks stay on this device only.",
+          "bald": "coming soon"
+        }
+      }
+    }
+  }
+}

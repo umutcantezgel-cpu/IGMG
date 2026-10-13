@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
+import { entscheide } from '@/lib/funktionen';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
 import { Sprachwahl, type SprachEintrag } from './kopf/Sprachwahl';
@@ -12,11 +13,14 @@ import { baueMenues, type Bereich, type Ziel } from './navigation';
 
 /**
  * Kopfzeile nach design/Header.dc.html (02.1): Logo, Hauptnavigation mit Untermenüs (ab 1240 px),
- * Sprachumschalter, „Anmelden“ (→ Verwaltung, ADR 0016), darunter Menü-Button mit Schublade.
+ * Sprachumschalter, „Anmelden“, darunter Menü-Button mit Schublade.
  * Öffentlich ohne Anmeldezustand (K-01: keine Cookies auf öffentlichen Seiten).
+ * „Anmelden“ führt zur Konto-Anmeldung (ADR 0026), solange die Funktion `konten` an ist – sonst wie bisher zur
+ * Verwaltung (ADR 0016). Der Kopf ist statisch: Entschieden wird zur Bauzeit allein aus der Umgebung (ADR 0035).
  */
 export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; aktuell: string; sprachZiel: Ziel }) {
   const sprache = (await getLocale()) as Locale;
+  const anmeldenHref = entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden';
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
   const tsu = await getTranslations('suche');
@@ -69,7 +73,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
             />
           </div>
           <NextLink
-            href="/verwaltung/anmelden"
+            href={anmeldenHref}
             prefetch={false}
             className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 menu:inline-flex"
           >
@@ -81,6 +85,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
             startHref={pfadFuer('/', sprache)}
             gebetszeitenHref={pfadFuer('/gebetszeiten', sprache)}
             sucheHref={pfadFuer('/suche', sprache)}
+            anmeldenHref={anmeldenHref}
             aktiv={aktiv}
             aktuell={aktuell}
             sprache={sprache}

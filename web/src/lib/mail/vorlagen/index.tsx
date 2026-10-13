@@ -89,6 +89,30 @@ export async function bestaetigungMail(sprache: string, t: BestaetigungTexte) {
   return { betreff: t.betreff, html: await render(element), text: await render(element, { plainText: true }) };
 }
 
+/**
+ * Mails der Gemeinde-Konten (Adresse bestätigen, Konto vorhanden, Einladung, Passwort): in der Sprache der Person,
+ * ohne Inhalte außer dem Link (ADR 0026) – kein Name, keine Rollen. Aufbau wie die Benachrichtigung.
+ */
+export type KontoMailTexte = { betreff: string; text: string; knopf: string; hinweis: string; link: string };
+
+export async function kontoMail(sprache: string, t: KontoMailTexte) {
+  const element = (
+    <MailRahmen
+      sprache={sprache}
+      titel={t.betreff}
+      vorschau={vorschau(t.text)}
+      kinder={
+        <>
+          <p style={{ margin: `0 0 ${M.abstand6}` }}>{t.text}</p>
+          <KnopfMitLink link={t.link} text={t.knopf} />
+        </>
+      }
+      fuss={t.hinweis}
+    />
+  );
+  return { betreff: t.betreff, html: await render(element), text: await render(element, { plainText: true }) };
+}
+
 export async function benachrichtigungMail(t: BenachrichtigungTexte) {
   const element = (
     <MailRahmen

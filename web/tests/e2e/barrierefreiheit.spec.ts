@@ -76,6 +76,10 @@ const ROUTEN: Route[] = [
   { name: 'Hadith-Auswahl', pfad: { de: '/hadith/auswahl', tr: '/tr/hadis/secme', en: '/en/hadith/selection' } },
   { name: 'Sahih al-Bukhari', pfad: { de: '/hadith/bukhari', tr: '/tr/hadis/buhari', en: '/en/hadith/bukhari' } },
   { name: 'Hadith-Buch 1', pfad: { de: '/hadith/bukhari/1', tr: '/tr/hadis/buhari/1', en: '/en/hadith/bukhari/1' } },
+  {
+    name: 'Hadith-Buch 64, Teil 2',
+    pfad: { de: '/hadith/bukhari/64/teil/2', tr: '/tr/hadis/buhari/64/bolum/2', en: '/en/hadith/bukhari/64/part/2' },
+  },
   { name: 'Quellen', pfad: { de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' } },
   { name: 'Barrierefreiheit', pfad: { de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' } },
   // Paket Elifbe und Lernen (H-E01…E03)
@@ -88,6 +92,10 @@ const ROUTEN: Route[] = [
   },
   { name: 'Elifbe, Lektion', pfad: { de: '/elifbe/lektion/1', tr: '/tr/elifba/ders/4', en: '/en/arabic-alphabet/lesson/7' } },
   { name: 'Elifbe, Üben', pfad: { de: '/elifbe/ueben', tr: '/tr/elifba/alistirma', en: '/en/arabic-alphabet/practice' } },
+  // Konto-Einstieg (ADR 0026; mit Funktion `konten` aus liefern sie die 404-Seite, die ebenso geprüft wird)
+  { name: 'Anmelden', pfad: { de: '/anmelden', tr: '/tr/giris', en: '/en/sign-in' } },
+  { name: 'Registrieren', pfad: { de: '/registrieren', tr: '/tr/kayit', en: '/en/register' } },
+  { name: 'Passwort vergessen', pfad: { de: '/passwort-vergessen', tr: '/tr/sifremi-unuttum', en: '/en/forgot-password' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];
