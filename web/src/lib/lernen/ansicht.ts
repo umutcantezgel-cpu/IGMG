@@ -79,10 +79,14 @@ export function lernwegStand(
 }
 
 /**
- * Kursart für den Lernweg eines Kindes: die mit dem jüngsten Eintrag (bei Gleichstand die frühere im Lehrplan),
- * ohne Einträge Elifbe (der Anfang des Weges).
+ * Kursart für den Lernweg eines Kindes: die der aktuellen Gruppe, wenn die Verwaltung sie festgelegt hat; sonst die mit
+ * dem jüngsten Eintrag (bei Gleichstand die frühere im Lehrplan), ohne Einträge Elifbe (der Anfang des Weges).
  */
-export function lernwegKursart(eintraege: readonly { kursart: KursartSchluessel; datum: string }[]): KursartSchluessel {
+export function lernwegKursart(
+  eintraege: readonly { kursart: KursartSchluessel; datum: string }[],
+  gruppenKursart: KursartSchluessel | null = null,
+): KursartSchluessel {
+  if (gruppenKursart) return gruppenKursart;
   let beste: { kursart: KursartSchluessel; datum: string } | null = null;
   for (const e of eintraege) {
     if (!beste || e.datum > beste.datum || (e.datum === beste.datum && KURSARTEN.indexOf(e.kursart) < KURSARTEN.indexOf(beste.kursart)))

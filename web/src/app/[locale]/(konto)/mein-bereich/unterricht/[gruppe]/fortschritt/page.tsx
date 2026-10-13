@@ -2,6 +2,7 @@ import { BookOpenCheck, ListChecks } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
 import { LeerHinweis, ZurueckLink } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
@@ -39,18 +40,21 @@ export default async function FortschrittSeite({
   params,
   searchParams,
 }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/fortschritt'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);
   const [{ gruppe: gruppeId }, sp] = await Promise.all([params, searchParams]);
   if (!UUID.test(gruppeId)) notFound();
-  const kursart: KursartSchluessel = (KURSARTEN as readonly string[]).includes(String(sp.kursart))
-    ? (sp.kursart as KursartSchluessel)
-    : 'elifbe';
   const heute = berlinerDatum(new Date());
   const kontext = await ladeGruppenKontext(k.benutzerId);
   const g = await gruppeFuerLeitung(gruppeId, kontext, heute);
   if (!g || g.rolle !== 'lehrkraft') notFound();
+  // Ohne Wahl die Kursart der Gruppe (Verwaltung, Migration 0011), sonst Elifbe
+  const kursart: KursartSchluessel = (KURSARTEN as readonly string[]).includes(String(sp.kursart))
+    ? (sp.kursart as KursartSchluessel)
+    : (g.kursart ?? 'elifbe');
   const [raster, hifz, { suren }, t] = await Promise.all([
     fortschrittDerGruppe(gruppeId, kursart, kontext).catch((e: unknown) => {
       if (e instanceof KeinGruppenRecht) return null;

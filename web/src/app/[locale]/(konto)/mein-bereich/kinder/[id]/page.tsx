@@ -2,6 +2,7 @@ import { BookOpenCheck, CalendarX2, ClipboardList, KeyRound, MessagesSquare, Shi
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Haken } from '@/components/konto/Haken';
 import { FehlmeldungFormular, type FehlmeldungTexte } from '@/components/kinder/FehlmeldungFormular';
 import { Kinderzugang, type KinderzugangTexte } from '@/components/kinder/Kinderzugang';
@@ -43,6 +44,8 @@ const STATUS_TON = { anwesend: 'gruen', verspaetet: 'info', entschuldigt: 'sand'
  * Kinderzugang mit druckbarer Zugangskarte und der Elternkanal. Fremde Kinder → 404.
  */
 export default async function KindSeite({ params, searchParams }: PageProps<'/[locale]/mein-bereich/kinder/[id]'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['eltern']);

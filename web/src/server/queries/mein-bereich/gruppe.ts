@@ -1,7 +1,8 @@
 import 'server-only';
-import { and, asc, eq, gte, inArray, isNull } from 'drizzle-orm';
+import { and, asc, desc, eq, gte, inArray, isNotNull, isNull, or } from 'drizzle-orm';
 import { chatName } from '@/lib/chat/regeln';
 import { db, schema } from '@/lib/db';
+import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { EIGENE_EINWILLIGUNG_FRIST_TAGE, einwilligungGilt, einwilligungsLage, type EinwilligungsLage } from '@/lib/konto/sechzehn';
 import { tagPlus } from '@/lib/lernen/termine';
@@ -88,17 +89,34 @@ export type Lernweg = {
  */
 export async function lernwegVon(lernendeId: string, kontext: GruppenKontext): Promise<Lernweg | null> {
   if (kontext.eigeneLernendeId !== lernendeId && !kontext.kinder.has(lernendeId)) return null;
-  const eintraege = await db
-    .select({
-      stufeId: schema.lernfortschritt.stufeId,
-      status: schema.lernfortschritt.status,
-      datum: schema.lernfortschritt.datum,
-      kursart: schema.lehrplanStufe.kursart,
-    })
-    .from(schema.lernfortschritt)
-    .innerJoin(schema.lehrplanStufe, eq(schema.lehrplanStufe.id, schema.lernfortschritt.stufeId))
-    .where(eq(schema.lernfortschritt.lernendeId, lernendeId));
-  const kursart = lernwegKursart(eintraege);
+  const heute = berlinerDatum(new Date());
+  const [eintraege, gruppen] = await Promise.all([
+    db
+      .select({
+        stufeId: schema.lernfortschritt.stufeId,
+        status: schema.lernfortschritt.status,
+        datum: schema.lernfortschritt.datum,
+        kursart: schema.lehrplanStufe.kursart,
+      })
+      .from(schema.lernfortschritt)
+      .innerJoin(schema.lehrplanStufe, eq(schema.lehrplanStufe.id, schema.lernfortschritt.stufeId))
+      .where(eq(schema.lernfortschritt.lernendeId, lernendeId)),
+    // Kursart der jüngsten laufenden Gruppe (Migration 0011; ältere Gruppen haben keine)
+    db
+      .select({ kursart: schema.gruppe.kursart })
+      .from(schema.gruppenMitglied)
+      .innerJoin(schema.gruppe, eq(schema.gruppe.id, schema.gruppenMitglied.gruppeId))
+      .where(
+        and(
+          eq(schema.gruppenMitglied.lernendeId, lernendeId),
+          or(isNull(schema.gruppenMitglied.bis), gte(schema.gruppenMitglied.bis, heute)),
+          isNotNull(schema.gruppe.kursart),
+        ),
+      )
+      .orderBy(desc(schema.gruppenMitglied.seit))
+      .limit(1),
+  ]);
+  const kursart = lernwegKursart(eintraege, gruppen[0]?.kursart ?? null);
   const kursarten = [...new Set([kursart, ...eintraege.map((e) => e.kursart)])];
   const stufen = await db
     .select({

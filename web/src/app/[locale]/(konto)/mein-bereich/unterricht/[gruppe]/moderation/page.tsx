@@ -2,6 +2,7 @@ import { Flag, MessagesSquare } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
 import { FELD, KNOPF_LEISE, KNOPF_PRIMAER, KNOPF_SEKUNDAER, LeerHinweis, Pille, ZurueckLink } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
@@ -52,6 +53,8 @@ export default async function ModerationSeite({
   params,
   searchParams,
 }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/moderation'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform')) || !(await funktionAn('chat'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);

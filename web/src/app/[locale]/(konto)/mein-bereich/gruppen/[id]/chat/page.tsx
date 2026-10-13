@@ -2,6 +2,7 @@ import { ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { ChatFenster, type ChatTexte } from '@/components/chat/ChatFenster';
 import { KNOPF_SEKUNDAER, ZurueckLink } from '@/components/mein-bereich/Bausteine';
 import type { BereichSchluessel } from '@/components/mein-bereich/eintraege';
@@ -98,6 +99,8 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean): ChatTexte {
  * Einwilligung der Eltern (und ab 16 ohne eigene, D-11) sehen statt des Chats nur einen freundlichen Hinweis.
  */
 export default async function ChatSeite({ params, searchParams }: PageProps<'/[locale]/mein-bereich/gruppen/[id]/chat'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform')) || !(await funktionAn('chat'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { LeerHinweis, ZurueckLink } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
 import { AnwesenheitErfassen, type AnwesenheitsTexte } from '@/components/unterricht/AnwesenheitErfassen';
@@ -31,6 +32,8 @@ const UUID = /^[0-9a-f-]{36}$/i;
  * zusammengehören, sonst 404.
  */
 export default async function AnwesenheitSeite({ params }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/anwesenheit/[termin]'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);

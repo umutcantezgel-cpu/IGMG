@@ -13,6 +13,7 @@ import {
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
 import { DatumsMarke, KNOPF_LEISE, KNOPF_SEKUNDAER, Pille, ZurueckLink } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
@@ -44,6 +45,8 @@ const UUID = /^[0-9a-f-]{36}$/i;
  * S-14) und Leitung. Fremde Gruppe → 404 (kein Unterschied zu „gibt es nicht“).
  */
 export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);

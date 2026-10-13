@@ -74,6 +74,9 @@ describe('Lernweg (B-24)', () => {
         { kursart: 'kuran', datum: '2026-10-01' },
       ]),
     ).toBe('kuran');
+    // Die Kursart der Gruppe (Verwaltung) geht vor
+    expect(lernwegKursart([{ kursart: 'kuran', datum: '2026-10-01' }], 'tecvid')).toBe('tecvid');
+    expect(lernwegKursart([], null)).toBe('elifbe');
   });
 
   it('Fortschritt schaltet im Kreis weiter', () => {

@@ -1,13 +1,16 @@
 import { execFileSync } from 'node:child_process';
 import { randomBytes, randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import { expect, test, type Page } from '@playwright/test';
+import { expect as basisExpect, test, type Page } from '@playwright/test';
 import * as OTPAuth from 'otpauth';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import kontoTexte from '../../messages/bereiche/konto.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../messages/bereiche/unterricht.json';
 import { eigeneAbsenderAdresse } from './hilfen/konto';
+
+/** Gegen den Entwicklungsserver kompiliert jede Seite beim ersten Aufruf noch (oft über 5 s) – großzügiger warten. */
+const expect = basisExpect.configure({ timeout: 15_000 });
 
 /**
  * Lernplattform in „Mein Bereich“ (Paket O-L02-UI, H-L06): Lehrkraft erfasst die Anwesenheit von „Heute“ auf einem

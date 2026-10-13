@@ -3,6 +3,7 @@ import { and, asc, count, desc, eq, gte, inArray, isNull, lt, lte, ne, or } from
 import { chatName } from '@/lib/chat/regeln';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import type { KursartSchluessel } from '@/lib/lernen/ansicht';
 import { darfInGruppe, type GruppenKontext, type LeitungsRolle } from '@/lib/rechte/gruppen';
 
 /**
@@ -113,6 +114,8 @@ export type TerminZeile = {
 };
 
 export type GruppeFuerLeitung = Omit<GruppeKurz, 'lernende' | 'offeneMeldungen'> & {
+  /** Kursart der Gruppe aus der Verwaltung (Migration 0011), bei älteren Gruppen leer. */
+  kursart: KursartSchluessel | null;
   chatMindestalter: number;
   chatVon: string;
   chatBis: string;
@@ -187,6 +190,7 @@ export async function gruppeFuerLeitung(gruppeId: string, kontext: GruppenKontex
     id: g.id,
     name: g.name,
     rolle,
+    kursart: g.kursart,
     ort: g.ort,
     wochentage: g.wochentage,
     uhrzeitVon: g.uhrzeitVon,

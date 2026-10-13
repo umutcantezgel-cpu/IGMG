@@ -2,6 +2,7 @@ import { CalendarDays, Clock, MapPin, MessagesSquare, Users } from 'lucide-react
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
 import { DatumsMarke, KNOPF_PRIMAER, KNOPF_SEKUNDAER, Pille } from '@/components/mein-bereich/Bausteine';
 import type { BereichSchluessel } from '@/components/mein-bereich/eintraege';
@@ -30,6 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Mitglieds und die Leitung (`gruppe.sehen`), sonst 404. Kinder werden geduzt.
  */
 export default async function GruppenSeite({ params }: PageProps<'/[locale]/mein-bereich/gruppen/[id]'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache);

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Kacheln, type Kachel } from '@/components/mein-bereich/Kacheln';
 import { BEREICH_ICON, MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
 import { SchuelerStart } from '@/components/mein-bereich/SchuelerStart';
@@ -41,6 +42,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * erscheinen als „bald verfügbar“.
  */
 export default async function MeinBereichStart({ searchParams }: PageProps<'/[locale]/mein-bereich'>) {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache);
   const [t, tl, fenster, lernplattform, chatAn, pushAn, sp] = await Promise.all([

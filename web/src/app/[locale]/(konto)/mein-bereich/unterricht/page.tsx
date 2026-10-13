@@ -2,6 +2,7 @@ import { ArrowRight, CalendarDays, ClipboardCheck, MapPin, UsersRound } from 'lu
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
 import { DatumsMarke, KNOPF_PRIMAER, KNOPF_SEKUNDAER, LeerHinweis, Pille } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
@@ -30,6 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Termine nur aus der eigenen Leitung (ADR 0026). Funktion `lernplattform` aus → 404.
  */
 export default async function UnterrichtSeite() {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);

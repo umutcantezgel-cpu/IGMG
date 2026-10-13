@@ -2,6 +2,7 @@ import { BellOff, BellRing, LifeBuoy, Newspaper, Smartphone } from 'lucide-react
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { connection } from 'next/server';
 import { Abschnitt, Status } from '@/components/mein-bereich/Abschnitt';
 import { KNOPF_SEKUNDAER } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
@@ -55,6 +56,8 @@ const SCHLUESSEL = [
  * ohne Freigabe ein freundlicher Hinweis. Funktion `push` aus → 404; ohne VAPID-Schlüssel ein ehrlicher Hinweis.
  */
 export default async function BenachrichtigungenSeite() {
+  // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
+  await connection();
   if (!(await funktionAn('push'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache);

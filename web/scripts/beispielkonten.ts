@@ -172,6 +172,7 @@ async function beispielgruppe(o: {
     .insert(schema.gruppe)
     .values({
       name: GRUPPE,
+      kursart: 'elifbe',
       schuljahr: `${jahr}/${jahr + 1}`,
       beginn: tagPlus(heute, -35),
       ort: '[Unterrichtsraum – Beispiel]',
