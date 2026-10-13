@@ -17,13 +17,13 @@ const fuelle = (vorlage: string, werte: Record<string, string>) => vorlage.repla
  * Stufen in Zeichen des arabischen Texts bzw. der Übersetzung.
  */
 function arabischGroesse(laenge: number): string {
-  if (laenge <= 160) return 'text-arabisch-1 @5xl:text-48 @7xl:text-anzeige-64';
-  if (laenge <= 420) return 'text-24 @5xl:text-36 @7xl:text-48';
-  return 'text-20 @5xl:text-30 @7xl:text-36';
+  if (laenge <= 160) return 'text-arabisch-1 @5xl:text-48';
+  if (laenge <= 420) return 'text-24 @5xl:text-30 @7xl:text-36';
+  return 'text-20 @5xl:text-24 @7xl:text-30';
 }
 function uebersetzungGroesse(laenge: number): string {
-  if (laenge <= 220) return 'text-20 @5xl:text-24 @7xl:text-30';
-  return 'text-18 @5xl:text-20 @7xl:text-24';
+  if (laenge <= 220) return 'text-20 @5xl:text-24';
+  return 'text-18 @5xl:text-20';
 }
 
 /**
@@ -37,16 +37,16 @@ export function FolienAnsicht({ folie, sprache, texte }: { folie: AnzeigeFolie; 
     const titel = textIn(folie.titel, sprache);
     const text = textIn(folie.text, sprache);
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-4 text-center @5xl:gap-6">
+      <div className="flex h-full flex-1 flex-col items-center justify-center gap-4 text-center @5xl:gap-6">
         {titel ? (
-          <p lang={titel.sprache} className="text-30 leading-tight font-bold text-balance @3xl:text-36 @5xl:text-48 @7xl:text-anzeige-64">
+          <p lang={titel.sprache} className="text-30 leading-tight font-bold text-balance @3xl:text-36 @5xl:text-48">
             {titel.text}
           </p>
         ) : null}
         {text ? (
           <p
             lang={text.sprache}
-            className="max-w-(--container-lesen) text-20 leading-snug whitespace-pre-line text-gruen-100 @3xl:text-24 @5xl:text-30 @7xl:text-36"
+            className="max-w-(--container-lesen) text-20 leading-snug whitespace-pre-line text-gruen-100 @3xl:text-24 @5xl:text-30"
           >
             {text.text}
           </p>
@@ -58,7 +58,7 @@ export function FolienAnsicht({ folie, sprache, texte }: { folie: AnzeigeFolie; 
     const alt = textIn(folie.bild.alt, sprache);
     const titel = textIn(folie.titel, sprache);
     return (
-      <figure className="flex h-full min-h-0 flex-col items-center justify-center gap-3">
+      <figure className="flex h-full min-h-0 flex-1 flex-col items-center justify-center gap-3">
         {/* Anzeige: Originaldatei aus der Mediathek, ohne Bildoptimierung (Kiosk, Vorrat im Browser) */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -87,7 +87,7 @@ export function FolienAnsicht({ folie, sprache, texte }: { folie: AnzeigeFolie; 
         })
       : fuelle(texte.hadithQuelle, { nummer: folie.nummer });
   return (
-    <figure className="flex h-full flex-col items-center justify-center gap-4 text-center @5xl:gap-6">
+    <figure className="flex h-full flex-1 flex-col items-center justify-center gap-4 text-center @5xl:gap-6">
       <blockquote
         lang="ar"
         dir="rtl"

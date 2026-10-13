@@ -141,7 +141,7 @@ export default async function FolieBearbeiten({ params, searchParams }: PageProp
         <p className="max-w-einleitung text-16 text-tinte-2">{t('detail.vorschauHinweis')}</p>
         {vorschau ? (
           <>
-            <div className="@container flex aspect-video max-h-120 flex-col overflow-hidden rounded-lg bg-gruen-950 p-6 text-weiss">
+            <div className="@container flex min-h-60 flex-col rounded-lg bg-gruen-950 p-6 text-weiss md:min-h-80">
               <FolienAnsicht
                 folie={vorschau}
                 sprache="de"

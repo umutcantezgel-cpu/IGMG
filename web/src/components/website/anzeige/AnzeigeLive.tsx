@@ -299,7 +299,7 @@ export function AnzeigeLive({
           // Ruhe zum Gebet bzw. Freitagsmodus: ein stiller Hinweis, ohne Überblendung (B-25)
           <section
             aria-label={t.folien}
-            className="flex min-h-48 flex-1 flex-col items-center justify-center gap-3 rounded-2xl border-2 border-gruen-800 px-6 py-8 text-center"
+            className="flex min-h-48 flex-1 flex-col items-center justify-center gap-3 rounded-2xl border-2 border-gruen-800 px-6 py-6 text-center"
           >
             <p className="text-36 leading-tight font-bold @5xl:text-48 @7xl:text-anzeige-64">
               {plan.modus === 'ruhe' ? `${t.ruheTitel} · ${t.namen[plan.gebet]}` : t.freitagTitel}
@@ -323,9 +323,13 @@ export function AnzeigeLive({
             </div>
           </section>
         ) : null}
+        {/* Mit Folie oder Ruhe-Hinweis bleibt die Zeile nur für Hilfstechnik (die Karten zeigen dasselbe): alles passt auf 1080 px */}
         <p
           role="status"
-          className="min-h-lh rounded-lg border border-gruen-800 px-6 py-4 text-center text-20 font-bold tabular-nums @5xl:text-24 @7xl:text-30"
+          className={klassen(
+            'min-h-lh rounded-lg border border-gruen-800 px-6 py-4 text-center text-20 font-bold tabular-nums @5xl:text-24 @7xl:text-30',
+            (folie || (plan && plan.modus !== 'folien')) && 'sr-only',
+          )}
         >
           {status}
         </p>
