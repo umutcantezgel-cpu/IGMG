@@ -31,6 +31,7 @@ const BEREICHE: { id: Bereich; titel: string }[] = [
   { id: 'datenbank', titel: 'Datenbank' },
   { id: 'inhalte', titel: 'Inhalte' },
   { id: 'recht', titel: 'Recht' },
+  { id: 'gemeinde', titel: 'Gemeinde-Plattform' },
   { id: 'mail', titel: 'Mail' },
 ];
 const BREITE = { titel: 26, meldung: 56, aufwand: 14 };

@@ -5,6 +5,7 @@ import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
 import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
+import { gemeindePruefen } from './gemeinde';
 import { vergangeneOffene } from './meilensteine';
 import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-probe';
 
@@ -14,7 +15,7 @@ import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-pr
  * erweitert, nie abgeschwächt werden (UNANTASTBAR). Werte von Geheimnissen erscheinen nie in einer Meldung.
  */
 export type Status = 'ok' | 'hinweis' | 'warnung' | 'fehler' | 'manuell';
-export type Bereich = 'umgebung' | 'auslieferung' | 'datenbank' | 'inhalte' | 'recht' | 'mail';
+export type Bereich = 'umgebung' | 'auslieferung' | 'datenbank' | 'inhalte' | 'recht' | 'gemeinde' | 'mail';
 
 export type Pruefung = {
   id: string;
@@ -207,6 +208,19 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
         titel: 'Inhalte lesbar',
         status: 'fehler',
         meldung: 'Die Inhalte lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig (siehe Migrationen).',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
+    try {
+      await gemeindePruefen(db, env, produktion, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'gemeinde.lesbar',
+        bereich: 'gemeinde',
+        titel: 'Gemeinde-Plattform lesbar',
+        status: 'fehler',
+        meldung: 'Schalter, Protokoll und Betriebsmeldungen lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
         ort: 'Vercel › Deployments › Redeploy',
         aufwand: '5 min',
       });

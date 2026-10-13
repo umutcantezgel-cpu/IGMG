@@ -1,7 +1,6 @@
-import { sql } from 'drizzle-orm';
 import { connection } from 'next/server';
 import { z } from 'zod';
-import { db, schema } from '@/lib/db';
+import { meldeLokal } from '@/lib/wartung/lokal';
 import { wartungErlaubt } from '@/lib/wartung/zugang';
 
 /**
@@ -16,13 +15,6 @@ export async function POST(anfrage: Request) {
   if (!wartungErlaubt(anfrage)) return new Response(null, { status: 401 });
   const p = meldung.safeParse(await anfrage.json().catch(() => null));
   if (!p.success) return new Response(null, { status: 400 });
-  const eintrag = { [p.data.art]: { ok: p.data.ok, bytes: p.data.bytes, zeit: new Date().toISOString() } };
-  await db
-    .insert(schema.einstellung)
-    .values({ schluessel: 'lokaler_server', wert: eintrag })
-    .onConflictDoUpdate({
-      target: schema.einstellung.schluessel,
-      set: { wert: sql`${schema.einstellung.wert} || ${JSON.stringify(eintrag)}::jsonb` },
-    });
+  await meldeLokal(p.data.art, p.data.ok, p.data.bytes);
   return Response.json({ gespeichert: true }, { headers: { 'Cache-Control': 'no-store' } });
 }

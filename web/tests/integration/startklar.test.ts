@@ -332,9 +332,21 @@ describe('Medienspeicher erreichbar (V-11)', () => {
 
   it('Nicht erreichbar: Fehler in produktion und vorschau, Warnung in entwicklung, mit Ort und Aufwand', async () => {
     const jetzt = new Date('2026-10-11T12:00:00Z');
-    const produktion = await fuehreStartklarAus({ env: produktionsUmgebung(), db, dnsPruefen: false, speicherProbe: ort('s3', false), jetzt });
+    const produktion = await fuehreStartklarAus({
+      env: produktionsUmgebung(),
+      db,
+      dnsPruefen: false,
+      speicherProbe: ort('s3', false),
+      jetzt,
+    });
     const vorschau = await fuehreStartklarAus({ env: vorschauUmgebung(), db, dnsPruefen: false, speicherProbe: ort('s3', false), jetzt });
-    const entwicklung = await fuehreStartklarAus({ env: { NODE_ENV: 'development' }, db, dnsPruefen: false, speicherProbe: ort('dateisystem', false), jetzt });
+    const entwicklung = await fuehreStartklarAus({
+      env: { NODE_ENV: 'development' },
+      db,
+      dnsPruefen: false,
+      speicherProbe: ort('dateisystem', false),
+      jetzt,
+    });
     expect(befund(produktion, 'auslieferung.speicher').status).toBe('fehler');
     expect(befund(produktion, 'auslieferung.speicher').ort).toMatch(/S3/);
     expect(befund(produktion, 'auslieferung.speicher').aufwand).toBeTruthy();
@@ -344,7 +356,12 @@ describe('Medienspeicher erreichbar (V-11)', () => {
   });
 
   it('Erreichbar: ok mit der Meldung der Probe', async () => {
-    const e = await fuehreStartklarAus({ env: produktionsUmgebung({ SPEICHER: 'blob' }), db, dnsPruefen: false, speicherProbe: ort('blob', true) });
+    const e = await fuehreStartklarAus({
+      env: produktionsUmgebung({ SPEICHER: 'blob' }),
+      db,
+      dnsPruefen: false,
+      speicherProbe: ort('blob', true),
+    });
     expect(befund(e, 'auslieferung.speicher')).toMatchObject({ status: 'ok', meldung: 'Probe blob' });
   });
 
@@ -355,7 +372,10 @@ describe('Medienspeicher erreichbar (V-11)', () => {
     const { pruefeSpeicher } = await import('@/lib/startklar/speicher-probe');
     const ordner = await mkdtemp(join(tmpdir(), 'igmg-probe-'));
     try {
-      expect(await pruefeSpeicher({ SPEICHER: 'dateisystem', MEDIEN_VERZEICHNIS: join(ordner, 'medien') })).toMatchObject({ art: 'dateisystem', erreichbar: true });
+      expect(await pruefeSpeicher({ SPEICHER: 'dateisystem', MEDIEN_VERZEICHNIS: join(ordner, 'medien') })).toMatchObject({
+        art: 'dateisystem',
+        erreichbar: true,
+      });
     } finally {
       await rm(ordner, { recursive: true, force: true });
     }
@@ -363,5 +383,95 @@ describe('Medienspeicher erreichbar (V-11)', () => {
     const s3 = await pruefeSpeicher({ SPEICHER: 's3', S3_GEHEIMNIS: 'geheim-wert-123' });
     expect(s3).toMatchObject({ art: 's3', erreichbar: false });
     expect(s3.meldung).not.toContain('geheim-wert-123');
+  });
+});
+
+describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
+  const pg = (e: StartklarErgebnis) => e.pruefungen.filter((p) => p.bereich === 'gemeinde');
+
+  it('Produktion ohne Schalter: alles mit Personendaten aus (ok); lokaler Server ohne Meldung: Warnung, Takt nicht nötig', async () => {
+    const e = await pruefe(produktionsUmgebung());
+    expect(befund(e, 'gemeinde.schalter').status).toBe('ok');
+    expect(befund(e, 'gemeinde.sicherung')).toMatchObject({ status: 'warnung' });
+    expect(befund(e, 'gemeinde.sicherung').meldung).toContain('noch nie gemeldet');
+    expect(befund(e, 'gemeinde.probe').status).toBe('warnung');
+    expect(befund(e, 'gemeinde.spiegel').status).toBe('warnung');
+    expect(pg(e).map((p) => p.id)).not.toContain('gemeinde.takt');
+    expect(pg(e).map((p) => p.id)).not.toContain('gemeinde.push-schluessel');
+    expect(befund(e, 'gemeinde.kette').status).toBe('ok');
+    expect(befund(e, 'gemeinde.uebersetzungen').status).toBe('ok');
+  });
+
+  it('Vorschau: eingeschaltete Schalter nur als Hinweis, fehlende Läufe als Hinweis', async () => {
+    const e = await pruefe(vorschauUmgebung());
+    expect(befund(e, 'gemeinde.schalter')).toMatchObject({ status: 'hinweis' });
+    expect(befund(e, 'gemeinde.schalter').meldung).toContain('Gruppenchat');
+    expect(befund(e, 'gemeinde.sicherung').status).toBe('hinweis');
+  });
+
+  it('Produktion mit Chat und Push, ohne VAPID: manueller Punkt mit Voraussetzungen, Fehler beim Schlüssel, Takt fehlt', async () => {
+    const e = await pruefe(produktionsUmgebung({ FUNKTION_CHAT: 'an', FUNKTION_PUSH: 'an', FUNKTION_PUSH_GEBET: 'an' }));
+    const schalter = befund(e, 'gemeinde.schalter');
+    expect(schalter.status).toBe('manuell');
+    expect(schalter.meldung).toContain('Schutzkonzept');
+    expect(befund(e, 'gemeinde.push-schluessel').status).toBe('fehler');
+    expect(befund(e, 'gemeinde.takt').status).toBe('warnung');
+    expect(befund(e, 'gemeinde.chat-leitung').status).toBe('ok');
+    expect(e.startklar).toBe(false);
+    const mitSchluessel = await pruefe(
+      produktionsUmgebung({ FUNKTION_PUSH: 'an', VAPID_PRIVAT: 'x'.repeat(43), VAPID_KONTAKT: 'mailto:technik@beispiel.de' }),
+    );
+    expect(befund(mitSchluessel, 'gemeinde.push-schluessel').status).toBe('ok');
+  });
+
+  it('Meldungen des lokalen Servers: aktuell ok mit Größe, fehlgeschlagen Fehler, zu alt Warnung; Takt nach 15 min alt', async () => {
+    await setzeEinstellung('lokaler_server', {
+      sicherung: { ok: true, bytes: 52_000_000, zeit: '2026-10-11T03:00:00Z' },
+      probe: { ok: false, bytes: 0, zeit: '2026-10-01T03:00:00Z' },
+      spiegel: { ok: true, bytes: 0, zeit: '2026-10-08T03:00:00Z' },
+      takt: { ok: true, bytes: 0, zeit: '2026-10-11T11:55:00Z' },
+    });
+    const e = await pruefe(produktionsUmgebung({ FUNKTION_PUSH: 'an', FUNKTION_PUSH_GEBET: 'an', VAPID_PRIVAT: 'x'.repeat(43) }));
+    expect(befund(e, 'gemeinde.sicherung')).toMatchObject({ status: 'ok' });
+    expect(befund(e, 'gemeinde.sicherung').meldung).toContain('52 MB');
+    expect(befund(e, 'gemeinde.probe').status).toBe('fehler');
+    expect(befund(e, 'gemeinde.spiegel').status).toBe('warnung');
+    expect(befund(e, 'gemeinde.takt').status).toBe('ok');
+    const spaeter = await fuehreStartklarAus({
+      env: produktionsUmgebung({ FUNKTION_PUSH: 'an', FUNKTION_PUSH_GEBET: 'an', VAPID_PRIVAT: 'x'.repeat(43) }),
+      db,
+      dnsPruefen: false,
+      speicherPruefen: false,
+      jetzt: new Date('2026-10-11T12:20:00Z'),
+    });
+    expect(befund(spaeter, 'gemeinde.takt').status).toBe('warnung');
+  });
+
+  it('S-02: Gruppe mit Chat und nur einer Leitungsperson ergibt eine Warnung', async () => {
+    await db
+      .insert(schema.user)
+      .values({ id: 'l1', name: 'Leitung', email: 'l1@beispiel.invalid', emailVerified: true })
+      .onConflictDoNothing();
+    const [g] = await db
+      .insert(schema.gruppe)
+      .values({ name: { de: '[Gruppe]', tr: '[Grup]', en: '[Group]' }, chatModus: 'offen' })
+      .returning({ id: schema.gruppe.id });
+    await db.insert(schema.gruppenLeitung).values({ gruppeId: g.id, benutzerId: 'l1' });
+    const e = await pruefe(produktionsUmgebung({ FUNKTION_CHAT: 'an' }));
+    expect(befund(e, 'gemeinde.chat-leitung').status).toBe('warnung');
+    await db.execute(sql`delete from gruppe where id = ${g.id}`);
+  });
+
+  it('S-10: unveränderte Hash-Kette ok, eine eingeschobene Zeile mit falschem Hash ergibt einen Fehler', async () => {
+    const { kettenHash, KETTEN_ANFANG } = await import('@/lib/chat/hashkette');
+    const zeitpunkt = new Date('2026-10-10T10:00:00.000Z');
+    const inhalt = { kanalId: null, nachrichtId: null, akteurId: null, aktion: 'notfallpause' as const, grund: '[Test]' };
+    const hash = kettenHash(KETTEN_ANFANG, { ...inhalt, zeitpunkt: zeitpunkt.toISOString() });
+    await db.insert(schema.moderationsprotokoll).values({ ...inhalt, zeitpunkt, vorgaengerHash: KETTEN_ANFANG, hash });
+    expect(befund(await pruefe(produktionsUmgebung()), 'gemeinde.kette')).toMatchObject({ status: 'ok' });
+    await db.insert(schema.moderationsprotokoll).values({ ...inhalt, zeitpunkt, vorgaengerHash: hash, hash: '0'.repeat(64) });
+    const e = await pruefe(produktionsUmgebung());
+    expect(befund(e, 'gemeinde.kette')).toMatchObject({ status: 'fehler' });
+    expect(befund(e, 'gemeinde.kette').meldung).toContain('Eintrag 2 von 2');
   });
 });
