@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import type { AnwesenheitsStatus } from '@/lib/lernen/termine';
 import { klassen } from '@/lib/klassen';
 import { speichereAnwesenheit } from '@/server/actions/unterricht';
@@ -103,6 +103,7 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
                           strokeWidth="2.5"
                           pathLength={1}
                           className="linie-zeichnet"
+                          style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
                         />
                       </svg>
                     ) : null}

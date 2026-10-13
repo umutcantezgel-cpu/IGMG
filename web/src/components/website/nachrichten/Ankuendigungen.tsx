@@ -4,6 +4,7 @@ import { textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { istErlaubterLink } from '@/lib/inhalt/links';
 import { ladeAnkuendigungen } from '@/server/queries/ankuendigungen';
+import { KategorieMarke } from './KategorieMarke';
 
 /**
  * Block „Ankündigungen“ oberhalb der Nachrichtenliste (E-033): aktive Ankündigungen nach Priorität, in den
@@ -28,7 +29,8 @@ export async function Ankuendigungen({ sprache }: { sprache: Sprache }) {
           return (
             <li key={a.id} className="flex flex-col gap-3 rounded-lg border border-info bg-info-toenung p-5 md:p-6">
               <div className="flex flex-wrap gap-2">
-                <span className="inline-flex rounded-pill bg-weiss px-3 py-0.5 text-16 leading-normal font-bold text-info">
+                <span className="inline-flex items-center gap-1.5 rounded-pill bg-weiss px-3 py-0.5 text-16 leading-normal font-bold text-info">
+                  <KategorieMarke kategorie="ankuendigung" />
                   {t('kategorie')}
                 </span>
                 {a.prioritaet === 'hoch' ? (

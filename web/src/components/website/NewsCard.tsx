@@ -8,12 +8,13 @@ import { cn } from '@/lib/utils';
 import type { NachrichtDaten } from '@/server/queries/nachrichten';
 import { Bildplatzhalter } from './Bildplatzhalter';
 import { Stern8 } from './Icons';
+import { KategorieMarke } from './nachrichten/KategorieMarke';
 import { MedienBild, SIZES_AUFMACHER, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
 
 /**
  * Kategorie-Abzeichen neutral (H-C01): sandfarben mit Rand wie „Kostenlos“. Nur „Wichtig“ bleibt rot.
- * Keine Kategorie trägt eine Org-Farbe.
+ * Keine Kategorie trägt eine Org-Farbe. Vor dem Namen steht die Kategorie-Marke (Form statt Farbe, AUFTRAG 4).
  */
 const TOENUNG = 'border border-linie bg-sand text-tinte-2';
 const TOENUNG_WICHTIG = 'bg-tag-wichtig-bg text-tag-wichtig';
@@ -53,7 +54,13 @@ export async function NewsCard({
   const datum = datumLang(new Date(n.veroeffentlichtAm), sprache);
   const lesezeit = n.lesezeit ? t('lesezeit', { minuten: n.lesezeit }) : null;
   const kategorie = (
-    <span className={cn('inline-flex rounded-pill px-3 py-0.5 text-16 leading-normal font-bold', n.wichtig ? TOENUNG_WICHTIG : TOENUNG)}>
+    <span
+      className={cn(
+        'inline-flex items-center gap-1.5 rounded-pill px-3 py-0.5 text-16 leading-normal font-bold',
+        n.wichtig ? TOENUNG_WICHTIG : TOENUNG,
+      )}
+    >
+      <KategorieMarke kategorie={n.wichtig ? 'wichtig' : n.kategorie} />
       {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
     </span>
   );
@@ -86,10 +93,11 @@ export async function NewsCard({
         <div className="flex min-w-0 flex-col gap-1.5">
           <span
             className={cn(
-              'inline-flex self-start rounded-pill px-2.5 text-16 leading-relaxed font-bold',
+              'inline-flex items-center gap-1.5 self-start rounded-pill px-2.5 text-16 leading-relaxed font-bold',
               n.wichtig ? TOENUNG_WICHTIG : TOENUNG,
             )}
           >
+            <KategorieMarke kategorie={n.wichtig ? 'wichtig' : n.kategorie} />
             {t(n.wichtig ? 'nkat_wichtig' : `nkat_${n.kategorie}`)}
           </span>
           {/* Zeit zuerst (H-E08): das Datum steht direkt über dem Titel */}

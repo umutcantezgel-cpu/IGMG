@@ -78,7 +78,7 @@ test('Wortkarte → Tajwid-Seitenleiste: Regel mit Familie, Platzhalter statt un
 
   const leiste = page.locator('dialog.regel-leiste[open]');
   await expect(leiste).toBeVisible();
-  await expect(leiste.getByText(T.tajwidLeiste.kennung)).toBeVisible();
+  await expect(leiste.getByText(T.tajwidLeiste.kennung, { exact: true })).toBeVisible();
   await expect(leiste.getByText(T.tajwidLeiste.platzhalter)).toBeVisible();
   await expect(leiste.getByText(fuelle(T.tajwidLeiste.beispiel, { sure: 1, vers: 1 }))).toBeVisible();
   await expect(leiste.locator('.regel-markiert')).not.toHaveCount(0);
