@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · main 2ee3e80 live (Bukhari gesamt, Beispielmodus ohne Fehler) · Läuft: Anzeige-CMS + D-14…D-17, Live-Prüfung · Nächster Schritt: Anzeige mergen, Tor, Fast-Forward, Sichtabnahme
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–7/7 · main c581594 live (Anzeige, Erzählansichten, D-14…D-17) · Läuft: Sichtabnahme Z-04 · Nächster Schritt: Befundpakete, Stufe C, BERICHT
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -18,4 +18,4 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · main 2ee3e
 - 2026-10-13 16:00 UTC · Nutzer: „so viel live wie möglich“; Bukhari-Gesamt freigeschaltet (MN-06 entschieden). Live-Prüfung (4 Prüfer + Gegenprüfung) fand weiße Verwaltungs-/Konto-Seiten und 500er der Konto-APIs (auth stürzte ohne BETTER_AUTH_SECRET beim Import ab) – behoben.
 - 2026-10-13 18:20 UTC · Dritter Abbruch am Sitzungslimit; Pakete gesichert und fortgesetzt. Bewegung/SVG und Erzählansichten gemergt.
 - 2026-10-13 19:00 UTC · Fast-Forward `main` 8cbd2a6 → 2ee3e80, live `dpl_ErTf52ypPHU5hC21df6S2nGAMQh6`.
-
+- 2026-10-13 20:00 UTC · Fast-Forward `main` 2ee3e80 → c581594, live `dpl_FC6GBM8cpj3WLm3KBQvU8d9i2xFB`; Sichtabnahme gestartet.

@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 13.10. 20:05 UTC:** `main` = c581594 live (`dpl_FC6GBM8cpj3WLm3KBQvU8d9i2xFB`): zusätzlich Anzeige-CMS (Migration
+  0012), Vers/Hadith des Tages, D-14…D-17, Sicherheitsmail, Erzählansichten (Moschee eröffnet, Eröffnung in Über uns,
+  Fastenbogen-Vorschau, Nachtzeichen), Brotkrumen-Kürzung, Konto-Einstiegsseiten prüfen den Schalter selbst. Tor: Bau
+  Produktion 1866 + Vorschau 2207 Seiten, Integration 1680 grün, Unit 1395 (Speicherprobe robust gemacht), Religion 0,
+  Sweep wie Vercel ohne Fehler; zweite Live-Prüfung ohne 5xx.
+- **Läuft:** Sichtabnahme Z-04 (Workflow `wf_c540185b-0fe`) gegen den Vorschau-Server mit Beispieldaten
+  (`scratchpad/pglite-sicht`, Konten `scratchpad/sicht/konten.json`, Admin-Einladung `scratchpad/sicht/admin-token.txt`).
+  Danach: Befundpakete parallel umsetzen → Tor → Fast-Forward; dann Stufe C, BERICHT, `_werkstatt/` archivieren.
 - **Stand 13.10. 19:05 UTC – Auftrag des Nutzers: „so viel live wie möglich“.** `main` = 2ee3e80 live
   (`dpl_ErTf52ypPHU5hC21df6S2nGAMQh6`): Beispielmodus ohne Absturz in Verwaltung/Konten (auth ohne Geheimnis nur mit
   Datenbank Pflicht; Sitzungslader ohne Datenbank null; /api/auth 404; Verwaltung zeigt Hinweis), Bukhari-Gesamt an
