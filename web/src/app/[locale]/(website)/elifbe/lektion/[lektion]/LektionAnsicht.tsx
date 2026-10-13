@@ -30,7 +30,8 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
   const vorher = LEKTIONEN[lektion.nr - 2];
   const naechste = LEKTIONEN[lektion.nr];
   const sprachZiel: Ziel = { pathname: '/elifbe/lektion/[lektion]', params: { lektion: lektion.slug } };
-  const spalte = (art: SilbenArt) => (art in MED ? `${haraka(MED[art]!).name[sprache]} + ${t('lektionen.med.titel')}` : haraka(art as HarakaSchluessel).name[sprache]);
+  const spalte = (art: SilbenArt) =>
+    art in MED ? `${haraka(MED[art]!).name[sprache]} + ${t('lektionen.med.titel')}` : haraka(art as HarakaSchluessel).name[sprache];
   const nameLang = sprache === 'tr' ? undefined : 'tr';
 
   return (
@@ -53,7 +54,11 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
           {texte ? (
             <>
               <Text feld={texte.ziel} sprache={sprache} als="p" className="text-20 leading-einleitung" />
-              <RichText doc={texte.inhalt?.[sprache] ?? texte.inhalt?.de} lang={texte.inhalt?.[sprache] ? undefined : 'de'} sprache={sprache} />
+              <RichText
+                doc={texte.inhalt?.[sprache] ?? texte.inhalt?.de}
+                lang={texte.inhalt?.[sprache] ? undefined : 'de'}
+                sprache={sprache}
+              />
             </>
           ) : (
             <p className="text-18 text-tinte-2">{t('lektion.erklaerungPlatzhalter')}</p>
@@ -68,11 +73,19 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
             <p className="text-18 leading-einleitung text-pretty text-tinte-2">{t('lektion.tafelText')}</p>
           </div>
           {lektion.arten.length === 1 ? (
-            <ul dir="rtl" aria-label={t('lektion.tafel', { titel })} className="grid grid-cols-3 gap-3 font-text leading-normal sm:grid-cols-5 md:grid-cols-6 md:gap-4 lg:grid-cols-8">
+            <ul
+              dir="rtl"
+              aria-label={t('lektion.tafel', { titel })}
+              className="grid grid-cols-3 gap-3 font-text leading-normal sm:grid-cols-5 md:grid-cols-6 md:gap-4 lg:grid-cols-8"
+            >
               {tafel.flatMap(({ buchstabe, silben }) =>
                 silben.map((s) =>
                   s ? (
-                    <li key={s.schluessel} dir="ltr" className="flex flex-col items-center rounded-lg border border-linie bg-weiss px-2 pt-1 pb-3 text-center shadow-s1">
+                    <li
+                      key={s.schluessel}
+                      dir="ltr"
+                      className="flex flex-col items-center rounded-lg border border-linie bg-weiss px-2 pt-1 pb-3 text-center shadow-s1"
+                    >
                       <span lang="ar" dir="rtl" className="text-48 leading-loose text-gruen-950">
                         {s.text}
                       </span>
@@ -140,7 +153,10 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
           </div>
           <ol className="flex flex-col gap-3">
             {reihen.map((reihe, i) => (
-              <li key={i} className="flex flex-col gap-1 rounded-lg border border-linie bg-weiss px-4 py-3 shadow-s1 md:flex-row md:items-center md:gap-6 md:px-6">
+              <li
+                key={i}
+                className="flex flex-col gap-1 rounded-lg border border-linie bg-weiss px-4 py-3 shadow-s1 md:flex-row md:items-center md:gap-6 md:px-6"
+              >
                 <span className="shrink-0 text-16 font-bold text-gruen-800 md:w-24">{t('lektion.reihe', { nr: i + 1 })}</span>
                 <p lang="ar" dir="rtl" className="flex flex-1 flex-wrap gap-x-6 gap-y-1 text-48 leading-loose text-gruen-950 md:gap-x-10">
                   {reihe.map((s) => (
@@ -151,7 +167,9 @@ export async function LektionAnsicht({ lektion }: { lektion: Lektion }) {
             ))}
           </ol>
           <details className="group rounded-lg border border-linie bg-sand">
-            <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold text-gruen-800">{t('lektion.umschriftZeigen')}</summary>
+            <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold text-gruen-800">
+              {t('lektion.umschriftZeigen')}
+            </summary>
             <ol className="flex flex-col gap-2 px-4 pb-4">
               {reihen.map((reihe, i) => (
                 <li key={i} className="flex flex-wrap gap-x-2 text-18">

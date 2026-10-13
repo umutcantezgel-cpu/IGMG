@@ -7,17 +7,7 @@ import { cn } from '@/lib/utils';
  * das Zeichen `data-morph="glyphe"`; die Buchstabenseite trägt den Namen `b-<slug>-glyphe` fest am Schreibweg.
  * Der Elifbâ-Name ist türkisch (`lang="tr"`), wenn die Seite in einer anderen Sprache steht.
  */
-export function Buchstabenkarte({
-  b,
-  sprache,
-  label,
-  gross = false,
-}: {
-  b: Buchstabe;
-  sprache: Sprache;
-  label: string;
-  gross?: boolean;
-}) {
+export function Buchstabenkarte({ b, sprache, label, gross = false }: { b: Buchstabe; sprache: Sprache; label: string; gross?: boolean }) {
   return (
     <Link
       href={{ pathname: '/elifbe/buchstaben/[buchstabe]', params: { buchstabe: b.slug } }}
@@ -34,7 +24,7 @@ export function Buchstabenkarte({
         lang="ar"
         dir="rtl"
         data-morph="glyphe"
-        className={cn('block text-gruen-950 group-hover:text-gruen-800', gross ? 'buchstabe-gross pb-5' : 'text-48 leading-loose')}
+        className={cn('block text-gruen-950 group-hover:text-gruen-800', gross ? 'pb-5 buchstabe-gross' : 'text-48 leading-loose')}
       >
         {zeichen(b)}
       </span>

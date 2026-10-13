@@ -43,7 +43,12 @@ export function Weg({
   return (
     <div className="relative">
       {waagerecht ? (
-        <svg aria-hidden viewBox="0 0 1000 96" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 top-0 hidden h-24 w-full lg:block">
+        <svg
+          aria-hidden
+          viewBox="0 0 1000 96"
+          preserveAspectRatio="none"
+          className="pointer-events-none absolute inset-x-0 top-0 hidden h-24 w-full lg:block"
+        >
           <path
             d="M100 48C166 8 233 8 300 48S433 88 500 48S633 8 700 48S833 88 900 48"
             pathLength={1}
@@ -54,7 +59,11 @@ export function Weg({
           />
         </svg>
       ) : null}
-      <ol aria-label={beschriftung} className={cn('relative flex flex-col', waagerecht && 'lg:grid lg:grid-cols-5')} style={{ '--n': n } as CSSProperties}>
+      <ol
+        aria-label={beschriftung}
+        className={cn('relative flex flex-col', waagerecht && 'lg:grid lg:grid-cols-5')}
+        style={{ '--n': n } as CSSProperties}
+      >
         {stationen.map((s, i) => (
           <li
             key={s.titel}
@@ -64,12 +73,18 @@ export function Weg({
             <div aria-hidden className={cn('flex shrink-0 flex-col items-center pt-2', waagerecht && 'lg:h-24 lg:justify-center lg:pt-0')}>
               <span className="lernweg-station relative flex size-14 items-center justify-center text-gruen-700">
                 <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
-                <span lang={s.arabisch ? 'ar' : undefined} className={cn('relative font-bold text-weiss', s.arabisch ? 'text-24 leading-none' : 'text-18')}>
+                <span
+                  lang={s.arabisch ? 'ar' : undefined}
+                  className={cn('relative font-bold text-weiss', s.arabisch ? 'text-24 leading-none' : 'text-18')}
+                >
                   {s.zeichen ?? i + 1}
                 </span>
               </span>
               {i < stationen.length - 1 ? (
-                <span className={cn('lernweg-abschnitt -mb-2 min-h-6 w-0.5 flex-1 bg-gruen-700', waagerecht && 'lg:hidden')} style={{ '--i': i } as CSSProperties} />
+                <span
+                  className={cn('lernweg-abschnitt -mb-2 min-h-6 w-0.5 flex-1 bg-gruen-700', waagerecht && 'lg:hidden')}
+                  style={{ '--i': i } as CSSProperties}
+                />
               ) : null}
             </div>
             <div className={cn('min-w-0 flex-1', kompakt ? 'pb-3' : 'pb-6', waagerecht && 'lg:pb-0')}>
@@ -83,7 +98,10 @@ export function Weg({
                 <span className="text-16 font-bold text-gruen-800">{s.kennung}</span>
                 <h3 className={cn('leading-tight', kompakt ? 'text-20' : 'text-24')}>
                   {s.ziel && !s.linkText ? (
-                    <Link href={s.ziel} className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg hover:text-gruen-800">
+                    <Link
+                      href={s.ziel}
+                      className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg hover:text-gruen-800"
+                    >
                       {s.titel}
                     </Link>
                   ) : (

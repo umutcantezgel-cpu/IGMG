@@ -25,10 +25,37 @@ export default async function LernenSeite() {
   const tk = await getTranslations('kopf');
   const station = (nr: number) => t('station', { nr });
   const stationen: WegStation[] = [
-    { kennung: station(1), titel: t('elifbeTitel'), text: t('elifbeText'), ziel: '/elifbe', linkText: t('elifbeLink'), zeichen: <PenLine aria-hidden className={symbol} /> },
-    { kennung: station(2), titel: t('tajwidTitel'), text: t('tajwidText'), ziel: '/quran/tajwid', linkText: t('tajwidLink'), zeichen: <Highlighter aria-hidden className={symbol} /> },
-    { kennung: station(3), titel: t('koranTitel'), text: t('koranText'), ziel: '/quran', linkText: t('koranLink'), zeichen: <BookOpen aria-hidden className={symbol} /> },
-    { kennung: station(4), titel: t('hifzTitel'), text: t('hifzText'), hinweis: t('hifzHinweis'), zeichen: <BookHeart aria-hidden className={symbol} /> },
+    {
+      kennung: station(1),
+      titel: t('elifbeTitel'),
+      text: t('elifbeText'),
+      ziel: '/elifbe',
+      linkText: t('elifbeLink'),
+      zeichen: <PenLine aria-hidden className={symbol} />,
+    },
+    {
+      kennung: station(2),
+      titel: t('tajwidTitel'),
+      text: t('tajwidText'),
+      ziel: '/quran/tajwid',
+      linkText: t('tajwidLink'),
+      zeichen: <Highlighter aria-hidden className={symbol} />,
+    },
+    {
+      kennung: station(3),
+      titel: t('koranTitel'),
+      text: t('koranText'),
+      ziel: '/quran',
+      linkText: t('koranLink'),
+      zeichen: <BookOpen aria-hidden className={symbol} />,
+    },
+    {
+      kennung: station(4),
+      titel: t('hifzTitel'),
+      text: t('hifzText'),
+      hinweis: t('hifzHinweis'),
+      zeichen: <BookHeart aria-hidden className={symbol} />,
+    },
     {
       kennung: station(5),
       titel: t('kurseTitel'),

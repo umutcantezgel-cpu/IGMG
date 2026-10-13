@@ -53,13 +53,18 @@ test.describe('Übungen', () => {
 
   test('falsche Antwort: Farbe und Text, ohne Bewegung, ohne Stern', async ({ page }) => {
     const name = await starteErkennen(page);
-    const falsch = frage(page).locator('.grid button').filter({ hasNotText: new RegExp(`^${name}$`) }).first();
+    const falsch = frage(page)
+      .locator('.grid button')
+      .filter({ hasNotText: new RegExp(`^${name}$`) })
+      .first();
     await falsch.click();
     await expect(frage(page).getByRole('status')).toContainText(name);
     await expect(falsch).toHaveClass(/border-fehler/);
     await expect(frage(page).locator('.stern-fuellt')).toHaveCount(0);
     // Nur Farbübergänge (CSS-Transitions), keine Bewegungs-Animation
-    const bewegungen = await frage(page).evaluate((el) => el.getAnimations({ subtree: true }).filter((a) => a instanceof CSSAnimation).length);
+    const bewegungen = await frage(page).evaluate(
+      (el) => el.getAnimations({ subtree: true }).filter((a) => a instanceof CSSAnimation).length,
+    );
     expect(bewegungen).toBe(0);
   });
 
@@ -113,7 +118,9 @@ test.describe('Schreibweg', () => {
       await expect(svg.locator('.schreibweg-tinte')).toBeHidden();
       // Be: ein Hauptzug und ein Punkt → Nummern 1 und 2
       await expect(svg.locator('.schreibweg-pfeile text')).toHaveText(['1', '2']);
-      const laufend = await page.evaluate(() => document.getAnimations().filter((a) => (a as CSSAnimation).animationName === 'schreiben').length);
+      const laufend = await page.evaluate(
+        () => document.getAnimations().filter((a) => (a as CSSAnimation).animationName === 'schreiben').length,
+      );
       expect(laufend).toBe(0);
       await expect(page.getByRole('button', { name: T.buchstabe.nochmal })).toBeHidden();
     });

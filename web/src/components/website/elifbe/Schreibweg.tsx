@@ -48,15 +48,7 @@ export function Schreibweg({
   const maske = { maskUnits: 'userSpaceOnUse' as const, x: vx, y: vy, width: vb, height: vh };
   const ersterPunkt = weg.punkte[0];
   return (
-    <svg
-      id={id}
-      viewBox={`${vx} ${vy} ${vb} ${vh}`}
-      role="img"
-      aria-label={bild}
-      className={className}
-      style={stil}
-      data-schreibweg=""
-    >
+    <svg id={id} viewBox={`${vx} ${vy} ${vb} ${vh}`} role="img" aria-label={bild} className={className} style={stil} data-schreibweg="">
       <defs>
         <mask id={`${id}-rumpf`} {...maske}>
           <g fill="none" className="stroke-weiss" strokeLinecap="round" strokeLinejoin="round">

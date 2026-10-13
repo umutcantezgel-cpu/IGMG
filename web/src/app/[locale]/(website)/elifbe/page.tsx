@@ -26,7 +26,12 @@ export default async function ElifbeSeite() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('elifbe');
   return (
-    <Seitenrahmen bereich="bildung" seite="elifbe" sprachZiel="/elifbe" pfad={[{ label: t('pfadLernen'), ziel: '/lernen' }, { label: t('titel') }]}>
+    <Seitenrahmen
+      bereich="bildung"
+      seite="elifbe"
+      sprachZiel="/elifbe"
+      pfad={[{ label: t('pfadLernen'), ziel: '/lernen' }, { label: t('titel') }]}
+    >
       <PageHeader kennung={t('kennung')} titel={t('titel')} untertitel={t('untertitel')} />
       <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-abschnitt-klein px-4 py-abschnitt-klein md:px-8 lg:grid-cols-3 lg:gap-12">
         <section aria-labelledby="elifbe-raster" className="flex flex-col gap-6 lg:col-span-2 lg:col-start-2 lg:row-start-1">
@@ -42,7 +47,10 @@ export default async function ElifbeSeite() {
             label={(b) => t('raster.karte', { name: b.elifbe, nr: b.nr })}
             className="lg:grid-cols-4 xl:grid-cols-5"
           />
-          <Link href={{ pathname: '/elifbe/buchstaben', hash: 'formen' }} className="inline-flex min-h-12 items-center gap-2 self-start font-bold">
+          <Link
+            href={{ pathname: '/elifbe/buchstaben', hash: 'formen' }}
+            className="inline-flex min-h-12 items-center gap-2 self-start font-bold"
+          >
             {t('raster.alle')}
             <ArrowRight aria-hidden className="size-5" />
           </Link>

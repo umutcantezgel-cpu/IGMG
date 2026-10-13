@@ -42,11 +42,7 @@ export function buchstabenDer(l: Lektion): readonly Buchstabe[] {
 }
 
 /** Stationen des Elifbe-Wegs: Buchstaben, Formen, die Lektionen, dann Üben. */
-export type Station =
-  | { art: 'buchstaben' }
-  | { art: 'formen' }
-  | { art: 'lektion'; lektion: Lektion }
-  | { art: 'ueben' };
+export type Station = { art: 'buchstaben' } | { art: 'formen' } | { art: 'lektion'; lektion: Lektion } | { art: 'ueben' };
 
 export const STATIONEN: readonly Station[] = [
   { art: 'buchstaben' },

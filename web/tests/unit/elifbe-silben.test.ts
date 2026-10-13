@@ -11,7 +11,11 @@ describe('Silben aus Codepunkten (H-E02)', () => {
   const be = buchstabeFuer('be')!;
 
   it('Buchstabe + Haraka; Umschrift a/i/u, Tanwin mit n', () => {
-    expect(silbe(be, 'fatha')).toMatchObject({ text: cp(BE, 0x064e), umschrift: { de: 'ba', tr: 'ba', en: 'ba' }, schluessel: 'silbe:0628-064E' });
+    expect(silbe(be, 'fatha')).toMatchObject({
+      text: cp(BE, 0x064e),
+      umschrift: { de: 'ba', tr: 'ba', en: 'ba' },
+      schluessel: 'silbe:0628-064E',
+    });
     expect(silbe(be, 'kasra').umschrift.de).toBe('bi');
     expect(silbe(be, 'damma').umschrift.de).toBe('bu');
     expect(silbe(be, 'fathatan')).toMatchObject({ text: cp(BE, 0x064b), umschrift: { de: 'ban' } });

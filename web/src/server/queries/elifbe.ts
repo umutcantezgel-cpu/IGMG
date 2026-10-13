@@ -37,11 +37,7 @@ export async function ladeBeispielwoerter(codepunkt: number, anzahl = 3): Promis
     .from(schema.elifbeBeispielwort)
     .innerJoin(
       w,
-      and(
-        eq(w.sure, schema.elifbeBeispielwort.sure),
-        eq(w.vers, schema.elifbeBeispielwort.vers),
-        eq(w.pos, schema.elifbeBeispielwort.pos),
-      ),
+      and(eq(w.sure, schema.elifbeBeispielwort.sure), eq(w.vers, schema.elifbeBeispielwort.vers), eq(w.pos, schema.elifbeBeispielwort.pos)),
     )
     .where(eq(schema.elifbeBeispielwort.buchstabe, hex(codepunkt)))
     .orderBy(asc(w.sure), asc(w.vers), asc(w.pos))
@@ -98,7 +94,12 @@ export async function ladeLektionstexte(): Promise<Record<number, Lektionstext>>
   cacheLife('max');
   cacheTag(TAG.elifbe);
   const zeilen = await db
-    .select({ nr: schema.elifbeLektion.nr, titel: schema.elifbeLektion.titel, ziel: schema.elifbeLektion.ziel, inhalt: schema.elifbeLektion.inhalt })
+    .select({
+      nr: schema.elifbeLektion.nr,
+      titel: schema.elifbeLektion.titel,
+      ziel: schema.elifbeLektion.ziel,
+      inhalt: schema.elifbeLektion.inhalt,
+    })
     .from(schema.elifbeLektion)
     .where(eq(schema.elifbeLektion.freigabe, 'geprueft'))
     .orderBy(asc(schema.elifbeLektion.nr));

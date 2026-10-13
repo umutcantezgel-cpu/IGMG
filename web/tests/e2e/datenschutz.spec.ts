@@ -71,7 +71,13 @@ const ROUTEN = [
   // Paket Elifbe und Lernen (H-E01…E03)
   { id: 'lernen', seite: 'Lernen', de: '/lernen', tr: '/tr/ogren', en: '/en/learn' },
   { id: 'elifbe', seite: 'Elifbe', de: '/elifbe', tr: '/tr/elifba', en: '/en/arabic-alphabet' },
-  { id: 'elifbebuchstaben', seite: 'Elifbe, Buchstaben', de: '/elifbe/buchstaben', tr: '/tr/elifba/harfler', en: '/en/arabic-alphabet/letters' },
+  {
+    id: 'elifbebuchstaben',
+    seite: 'Elifbe, Buchstaben',
+    de: '/elifbe/buchstaben',
+    tr: '/tr/elifba/harfler',
+    en: '/en/arabic-alphabet/letters',
+  },
   {
     id: 'elifbebuchstabe',
     seite: 'Elifbe, Buchstabe',

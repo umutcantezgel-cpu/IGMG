@@ -82,11 +82,22 @@ export function UebenStart({ daten, texte }: { daten: UebenDaten; texte: UebenTe
               type="button"
               onClick={() => setArten(w.arten)}
               className={`flex size-full min-h-24 items-center gap-4 rounded-lg border-2 p-5 text-left transition duration-(--dauer-rueckmeldung) active:scale-98 ${
-                i === 0 ? 'border-gruen-700 bg-gruen-700 text-weiss hover:bg-gruen-800' : 'border-linie bg-weiss text-tinte shadow-s1 hover:border-gruen-700 hover:bg-gruen-50'
+                i === 0
+                  ? 'border-gruen-700 bg-gruen-700 text-weiss hover:bg-gruen-800'
+                  : 'border-linie bg-weiss text-tinte shadow-s1 hover:border-gruen-700 hover:bg-gruen-50'
               }`}
             >
-              <span className={`flex size-12 shrink-0 items-center justify-center rounded-pill ${i === 0 ? 'bg-weiss text-gruen-800' : 'bg-gruen-50 text-gruen-800'}`}>
-                <svg aria-hidden viewBox="0 0 24 24" className="size-6 fill-none stroke-current" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <span
+                className={`flex size-12 shrink-0 items-center justify-center rounded-pill ${i === 0 ? 'bg-weiss text-gruen-800' : 'bg-gruen-50 text-gruen-800'}`}
+              >
+                <svg
+                  aria-hidden
+                  viewBox="0 0 24 24"
+                  className="size-6 fill-none stroke-current"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   {ZEICHEN[w.schluessel].map((d) => (
                     <path key={d} d={d} />
                   ))}

@@ -18,8 +18,16 @@ function aufBewegung(rueckruf: () => void) {
  */
 export function SchreibwegSteuerung({ ziel, texte }: { ziel: string; texte: { nochmal: string; pfeile: string } }) {
   // Erst im Browser bedienbar; bis zur ersten Wahl folgen die Pfeile dem Wunsch nach reduzierter Bewegung
-  const bereit = useSyncExternalStore(nichts, () => true, () => false);
-  const reduziert = useSyncExternalStore(aufBewegung, () => matchMedia(REDUZIERT).matches, () => false);
+  const bereit = useSyncExternalStore(
+    nichts,
+    () => true,
+    () => false,
+  );
+  const reduziert = useSyncExternalStore(
+    aufBewegung,
+    () => matchMedia(REDUZIERT).matches,
+    () => false,
+  );
   const [wahl, setPfeile] = useState<boolean | null>(null);
   const pfeile = wahl ?? reduziert;
 
@@ -64,7 +72,14 @@ export function SchreibwegSteuerung({ ziel, texte }: { ziel: string; texte: { no
             onClick={nochmal}
             className="inline-flex min-h-12 items-center gap-2 rounded-pill bg-gruen-700 px-5 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98 motion-reduce:hidden"
           >
-            <svg aria-hidden viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              aria-hidden
+              viewBox="0 0 24 24"
+              className="size-5 fill-none stroke-current"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
               <path d="M3 3v5h5" />
             </svg>
@@ -76,7 +91,14 @@ export function SchreibwegSteuerung({ ziel, texte }: { ziel: string; texte: { no
             onClick={umschalten}
             className="inline-flex min-h-12 items-center gap-2 rounded-pill border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 aria-pressed:bg-gruen-50"
           >
-            <svg aria-hidden viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              aria-hidden
+              viewBox="0 0 24 24"
+              className="size-5 fill-none stroke-current"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>

@@ -32,8 +32,13 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
   const form = formen(b);
   const harakat = HARAKAT.filter((h) => erlaubt(b, h.schluessel)).map((h) => ({ h, s: silbe(b, h.schluessel) }));
   const aehnlich = b.aehnlich.map(buchstabeFuer).filter((x): x is Buchstabe => Boolean(x));
-  const punkte = b.punkte.anzahl === 0 ? t('punkte.keine') : t(`punkte.${b.punkte.lage as 'oben' | 'unten' | 'innen'}`, { anzahl: b.punkte.anzahl });
-  const verbindung = !b.verbindetRechts ? t('buchstabe.verbindetGar', { name }) : b.verbindetLinks ? t('buchstabe.verbindetJa', { name }) : t('buchstabe.verbindetNein', { name });
+  const punkte =
+    b.punkte.anzahl === 0 ? t('punkte.keine') : t(`punkte.${b.punkte.lage as 'oben' | 'unten' | 'innen'}`, { anzahl: b.punkte.anzahl });
+  const verbindung = !b.verbindetRechts
+    ? t('buchstabe.verbindetGar', { name })
+    : b.verbindetLinks
+      ? t('buchstabe.verbindetJa', { name })
+      : t('buchstabe.verbindetNein', { name });
 
   return (
     <Seitenrahmen
@@ -56,7 +61,10 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt-klein px-4 py-abschnitt-klein md:px-8">
         <div className="grid items-start gap-8 lg:grid-cols-5">
           {/* Schreibweg (großer Moment) */}
-          <section aria-labelledby="schreibweg-titel" className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 shadow-s1 md:p-8 lg:col-span-3">
+          <section
+            aria-labelledby="schreibweg-titel"
+            className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 shadow-s1 md:p-8 lg:col-span-3"
+          >
             <div className="flex flex-col gap-1">
               <h2 id="schreibweg-titel" className="text-24">
                 {t('buchstabe.schreibwegTitel', { name })}
@@ -147,7 +155,12 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
               <tbody>
                 <tr>
                   {FORM_ARTEN.map((f) => (
-                    <td key={f} lang="ar" dir="rtl" className="border-l border-linie px-3 py-2 text-center text-display-1 leading-loose text-gruen-950 first:border-l-0">
+                    <td
+                      key={f}
+                      lang="ar"
+                      dir="rtl"
+                      className="border-l border-linie px-3 py-2 text-center text-display-1 leading-loose text-gruen-950 first:border-l-0"
+                    >
                       {form[f]}
                     </td>
                   ))}
@@ -167,7 +180,10 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
           </div>
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-4">
             {harakat.map(({ h, s }) => (
-              <li key={h.schluessel} className="flex flex-col items-center gap-1 rounded-lg border border-linie bg-weiss px-3 pt-2 pb-4 text-center shadow-s1">
+              <li
+                key={h.schluessel}
+                className="flex flex-col items-center gap-1 rounded-lg border border-linie bg-weiss px-3 pt-2 pb-4 text-center shadow-s1"
+              >
                 <span lang="ar" dir="rtl" className="text-48 leading-loose text-gruen-950">
                   {s.text}
                 </span>
@@ -189,7 +205,11 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
               <p className="text-18 leading-einleitung text-pretty text-tinte-2">{t('buchstabe.aehnlichText')}</p>
             </div>
             <ul dir="rtl" className="grid grid-cols-3 gap-3 font-text leading-normal sm:grid-cols-4 md:grid-cols-6 md:gap-4">
-              <li dir="ltr" aria-hidden className="flex flex-col items-center justify-end rounded-lg border-2 border-gruen-700 bg-gruen-50 px-2 pt-8 pb-3">
+              <li
+                dir="ltr"
+                aria-hidden
+                className="flex flex-col items-center justify-end rounded-lg border-2 border-gruen-700 bg-gruen-50 px-2 pt-8 pb-3"
+              >
                 <span lang="ar" dir="rtl" className="text-48 leading-loose text-gruen-950">
                   {zeichen(b)}
                 </span>
@@ -220,7 +240,10 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
             <>
               <ul className="grid gap-4 md:grid-cols-3">
                 {woerter.map((w) => (
-                  <li key={`${w.sure}-${w.vers}-${w.pos}`} className="flex flex-col items-center gap-3 rounded-lg border border-linie bg-weiss p-5 text-center shadow-s1">
+                  <li
+                    key={`${w.sure}-${w.vers}-${w.pos}`}
+                    className="flex flex-col items-center gap-3 rounded-lg border border-linie bg-weiss p-5 text-center shadow-s1"
+                  >
                     <span lang="ar" dir="rtl" className="text-display-1 leading-loose text-gruen-950">
                       {w.textAr}
                     </span>

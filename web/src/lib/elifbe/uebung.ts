@@ -83,7 +83,13 @@ export function aufgabe(art: UebungsArt, d: UebungsDaten, z: Zufall): Aufgabe {
       const s = waehle(d.silben, z);
       const als = (x: UebungsSilbe): Option => ({ wert: x.umschrift, text: x.umschrift });
       const gleicherBuchstabe = d.silben.filter((x) => x.buchstabe === s.buchstabe).map(als);
-      return { art, ziel: s.umschrift, buchstabe: s.buchstabe, zeige: s.text, optionen: optionen(als(s), gleicherBuchstabe, d.silben.map(als), z) };
+      return {
+        art,
+        ziel: s.umschrift,
+        buchstabe: s.buchstabe,
+        zeige: s.text,
+        optionen: optionen(als(s), gleicherBuchstabe, d.silben.map(als), z),
+      };
     }
     case 'nachspuren':
       return { art, ziel: waehle(d.spurBuchstaben, z) };
@@ -157,7 +163,8 @@ export function leseFortschritt(roh: string | null): Fortschritt {
     const f = JSON.parse(roh ?? '') as Partial<Fortschritt>;
     if (f && f.version === 1 && f.buchstaben && typeof f.buchstaben === 'object') {
       const buchstaben: Record<string, number> = {};
-      for (const [k, v] of Object.entries(f.buchstaben)) if (typeof v === 'number' && v > 0 && /^[a-z]+$/.test(k)) buchstaben[k] = Math.floor(v);
+      for (const [k, v] of Object.entries(f.buchstaben))
+        if (typeof v === 'number' && v > 0 && /^[a-z]+$/.test(k)) buchstaben[k] = Math.floor(v);
       return { version: 1, buchstaben };
     }
   } catch {

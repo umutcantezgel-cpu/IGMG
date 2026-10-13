@@ -82,7 +82,10 @@ export function silbe(b: Buchstabe, art: SilbenArt): Silbe {
 }
 
 /** Tafel: je Buchstabe eine Zeile mit den Silben der gewählten Arten (nicht erlaubte bleiben leer). */
-export function silbentafel(buchstaben: readonly Buchstabe[], arten: readonly SilbenArt[]): { buchstabe: Buchstabe; silben: (Silbe | null)[] }[] {
+export function silbentafel(
+  buchstaben: readonly Buchstabe[],
+  arten: readonly SilbenArt[],
+): { buchstabe: Buchstabe; silben: (Silbe | null)[] }[] {
   return buchstaben.map((b) => ({ buchstabe: b, silben: arten.map((a) => (erlaubt(b, a) ? silbe(b, a) : null)) }));
 }
 

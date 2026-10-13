@@ -36,7 +36,17 @@ const daten: UebungsDaten = {
 
 describe('Übungen (H-E03)', () => {
   it('Antworten: vier verschiedene Texte, das Ziel ist dabei', () => {
-    const o = optionen({ wert: 'x', text: 'X' }, [{ wert: 'y', text: 'X' }], [{ wert: 'a', text: 'A' }, { wert: 'b', text: 'B' }, { wert: 'c', text: 'C' }, { wert: 'd', text: 'D' }], zufall(1));
+    const o = optionen(
+      { wert: 'x', text: 'X' },
+      [{ wert: 'y', text: 'X' }],
+      [
+        { wert: 'a', text: 'A' },
+        { wert: 'b', text: 'B' },
+        { wert: 'c', text: 'C' },
+        { wert: 'd', text: 'D' },
+      ],
+      zufall(1),
+    );
     expect(o).toHaveLength(4);
     expect(new Set(o.map((x) => x.text)).size).toBe(4);
     expect(o.map((x) => x.wert)).toContain('x');
@@ -81,7 +91,13 @@ describe('Übungen (H-E03)', () => {
     const wackelig = zug.filter((_, i) => i % 3 === 0).map(([x, y], i) => [x + 15, y + (i % 2 ? 30 : -30)] as [number, number]);
     expect(bewerteSpur(wackelig, zug, 60)).toMatchObject({ ok: true, richtung: true });
     expect(bewerteSpur([...zug].reverse(), zug, 60)).toMatchObject({ ok: false, richtung: false });
-    expect(bewerteSpur(zug.map(([x]) => [x, 200] as [number, number]), zug, 60).ok).toBe(false);
+    expect(
+      bewerteSpur(
+        zug.map(([x]) => [x, 200] as [number, number]),
+        zug,
+        60,
+      ).ok,
+    ).toBe(false);
     expect(bewerteSpur(zug.slice(0, 15), zug, 60).ok).toBe(false);
     expect(bewerteSpur([], zug, 60).ok).toBe(false);
   });

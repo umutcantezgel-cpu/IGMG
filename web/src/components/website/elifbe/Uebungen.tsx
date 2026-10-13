@@ -41,7 +41,17 @@ type Phase = 'frage' | 'richtig' | 'falsch';
  * Übungsmaschine (Lazy-Chunk): acht Aufgaben je Runde. Rückmeldung nach B-18: richtig → der Achtstern füllt sich,
  * falsch → Farbe und Text, ohne Bewegung. Nach der Antwort geht der Fokus auf „Weiter“. Fortschritt lokal.
  */
-export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]; daten: UebenDaten; texte: UebenTexte; zurueck: () => void }) {
+export function Uebungen({
+  arten,
+  daten,
+  texte,
+  zurueck,
+}: {
+  arten: UebungsArt[];
+  daten: UebenDaten;
+  texte: UebenTexte;
+  zurueck: () => void;
+}) {
   const [aufgaben, setAufgaben] = useState<Aufgabe[]>(() => runde(arten, daten, Math.random, RUNDE));
   const [nr, setNr] = useState(0);
   const [phase, setPhase] = useState<Phase>('frage');
@@ -84,7 +94,11 @@ export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]
   }
 
   const sterne = (
-    <div className="flex flex-wrap items-center gap-1" role="img" aria-label={`${texte.sterne}: ${ergebnisse.filter(Boolean).length}/${aufgaben.length}`}>
+    <div
+      className="flex flex-wrap items-center gap-1"
+      role="img"
+      aria-label={`${texte.sterne}: ${ergebnisse.filter(Boolean).length}/${aufgaben.length}`}
+    >
       {aufgaben.map((_, i) => (
         <Stern key={i} voll={ergebnisse[i] === true} neu={i === ergebnisse.length - 1 && phase === 'richtig'} />
       ))}
@@ -94,17 +108,28 @@ export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]
   if (fertig || !a) {
     const richtig = ergebnisse.filter(Boolean).length;
     return (
-      <section aria-labelledby="ueben-fertig" className="flex flex-col items-start gap-5 rounded-lg border border-linie bg-weiss p-6 shadow-s1 md:p-10">
+      <section
+        aria-labelledby="ueben-fertig"
+        className="flex flex-col items-start gap-5 rounded-lg border border-linie bg-weiss p-6 shadow-s1 md:p-10"
+      >
         <h2 id="ueben-fertig" ref={titel} tabIndex={-1} className="text-display-2 outline-none">
           {texte.fertigTitel}
         </h2>
         {sterne}
         <p className="text-20 leading-einleitung">{texte.fertig[richtig] ?? ''}</p>
         <div className="flex flex-wrap gap-3">
-          <button type="button" onClick={neueRunde} className="min-h-12 rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800 active:scale-98">
+          <button
+            type="button"
+            onClick={neueRunde}
+            className="min-h-12 rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800 active:scale-98"
+          >
             {texte.nochEineRunde}
           </button>
-          <button type="button" onClick={zurueck} className="min-h-12 rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50">
+          <button
+            type="button"
+            onClick={zurueck}
+            className="min-h-12 rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50"
+          >
             {texte.andereUebung}
           </button>
         </div>
@@ -113,7 +138,13 @@ export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]
   }
 
   const frage =
-    a.art === 'erkennen' ? texte.frageErkennen : a.art === 'zuordnen' ? `${texte.frageZuordnen} (${texte.formen[a.form]})` : a.art === 'lesen' ? texte.frageLesen : '';
+    a.art === 'erkennen'
+      ? texte.frageErkennen
+      : a.art === 'zuordnen'
+        ? `${texte.frageZuordnen} (${texte.formen[a.form]})`
+        : a.art === 'lesen'
+          ? texte.frageLesen
+          : '';
   const loesung = a.art === 'nachspuren' ? '' : (a.optionen.find((o) => o.wert === a.ziel)?.text ?? a.ziel);
 
   return (
@@ -136,7 +167,11 @@ export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]
           <h2 id="ueben-frage" ref={titel} tabIndex={-1} className="text-24 outline-none">
             {frage}
           </h2>
-          <p lang="ar" dir="rtl" className="flex min-h-40 items-center justify-center rounded-lg bg-sand py-2 text-center buchstabe-riesig text-gruen-950">
+          <p
+            lang="ar"
+            dir="rtl"
+            className="flex min-h-40 items-center justify-center rounded-lg bg-sand py-2 text-center buchstabe-riesig text-gruen-950"
+          >
             {a.zeige}
           </p>
           <div className="grid grid-cols-2 gap-3">
@@ -172,14 +207,21 @@ export function Uebungen({ arten, daten, texte, zurueck }: { arten: UebungsArt[]
       <div role="status" className="min-h-12">
         {phase === 'richtig' ? (
           <p className="text-20 font-bold text-gruen-800">
-            {a.art === 'nachspuren' ? fuelle(texte.spurGeschafft, { name: daten.spur.find((s) => s.slug === a.ziel)?.name ?? '' }) : texte.richtig}
+            {a.art === 'nachspuren'
+              ? fuelle(texte.spurGeschafft, { name: daten.spur.find((s) => s.slug === a.ziel)?.name ?? '' })
+              : texte.richtig}
           </p>
         ) : phase === 'falsch' && a.art !== 'nachspuren' ? (
           <p className="text-20 font-bold text-fehler">{fuelle(texte.falsch, { antwort: loesung })}</p>
         ) : null}
       </div>
       {phase !== 'frage' ? (
-        <button ref={weiterKnopf} type="button" onClick={weiter} className="min-h-12 self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800 active:scale-98">
+        <button
+          ref={weiterKnopf}
+          type="button"
+          onClick={weiter}
+          className="min-h-12 self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800 active:scale-98"
+        >
           {texte.weiter}
         </button>
       ) : null}
@@ -322,13 +364,25 @@ function Nachspuren({
         ))}
         {!alles ? <circle cx={start[0]} cy={start[1]} r={46} className="fill-gruen-700 stroke-weiss" strokeWidth={10} /> : null}
         {spur.length > 1 ? (
-          <polyline points={spur.map((p) => p.join(',')).join(' ')} fill="none" className="stroke-gruen-800" strokeWidth={34} strokeLinecap="round" strokeLinejoin="round" opacity={0.55} />
+          <polyline
+            points={spur.map((p) => p.join(',')).join(' ')}
+            fill="none"
+            className="stroke-gruen-800"
+            strokeWidth={34}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity={0.55}
+          />
         ) : null}
       </svg>
       <div className="flex min-h-12 flex-wrap items-center gap-3">
         {fast ? <p className="text-18 font-bold text-warnung">{texte.spurNochmal}</p> : null}
         {!alles && !gesperrt ? (
-          <button type="button" onClick={() => fertig(false)} className="ms-auto min-h-12 font-bold text-gruen-800 underline underline-offset-4">
+          <button
+            type="button"
+            onClick={() => fertig(false)}
+            className="ms-auto min-h-12 font-bold text-gruen-800 underline underline-offset-4"
+          >
             {texte.spurUeberspringen}
           </button>
         ) : null}
