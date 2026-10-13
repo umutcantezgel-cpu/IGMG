@@ -62,11 +62,14 @@ export function ChatFenster({
   texte,
   istLeitung,
   zeitformat,
+  echtzeit = true,
 }: {
   kanalId: string;
   texte: ChatTexte;
   istLeitung: boolean;
   zeitformat: string;
+  /** Echtzeit-Signal versuchen (Schalter `echtzeit` und Konfiguration); sonst nur Abruf, ohne 404 im Protokoll. */
+  echtzeit?: boolean;
 }) {
   const [z, setZ] = useState<Zustand>({ nachrichten: [], schreiben: null });
   const [geladen, setGeladen] = useState(false);
@@ -102,10 +105,14 @@ export function ChatFenster({
           letzteId.current = daten.nachrichten.at(-1)!.id;
           if (!erstes) aktivitaet.current = Date.now();
         }
-        setZ((alt) => ({
-          nachrichten: erstes ? daten.nachrichten : [...alt.nachrichten, ...daten.nachrichten],
-          schreiben: daten.schreiben,
-        }));
+        // Zwei Abrufe können sich überholen (Sichtbarkeit, Signal, Neustart des Effekts): nur unbekannte Nachrichten anhängen
+        setZ((alt) => {
+          const bekannt = new Set(alt.nachrichten.map((n) => n.id));
+          return {
+            nachrichten: erstes ? daten.nachrichten : [...alt.nachrichten, ...daten.nachrichten.filter((n) => !bekannt.has(n.id))],
+            schreiben: daten.schreiben,
+          };
+        });
         if (erstes) {
           setNeuAb((letzteId.current ?? 0) + 1);
           setGeladen(true);
@@ -138,6 +145,7 @@ export function ChatFenster({
 
   // Echtzeit-Signal (K-A, ADR 0027): nur „Kanal hat Neues“ → sofort abrufen. Ohne Konfiguration 404 → nur Abruf.
   useEffect(() => {
+    if (!echtzeit) return;
     let ws: WebSocket | null = null;
     let aus = false;
     (async () => {
@@ -160,7 +168,7 @@ export function ChatFenster({
       aus = true;
       ws?.close();
     };
-  }, [kanalId, abrufen]);
+  }, [kanalId, abrufen, echtzeit]);
 
   useEffect(() => {
     const el = liste.current;

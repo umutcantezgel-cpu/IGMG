@@ -9,7 +9,7 @@
       "themen": {
         "gebet": "Gebetszeiten",
         "ankuendigung": "Wichtige Ankündigungen der Moschee",
-        "chat": "Neue Nachrichten in meiner Gruppe",
+        "chat": "Neue Nachrichten in meiner Gruppe oder im Elternkanal",
         "unterricht": "Neuigkeiten aus dem Unterricht"
       },
       "gebeteTitel": "Bei welchen Gebeten?",
@@ -41,6 +41,27 @@
         "unterrichtText": "Tippen Sie, um sie zu lesen.",
         "probe": "Benachrichtigungen sind eingeschaltet",
         "probeText": "So sehen Erinnerungen der IGMG Wetzlar aus."
+      },
+      "kind": {
+        "themenTitel": "Worüber möchtest du benachrichtigt werden?",
+        "themen": {
+          "gebet": "Gebetszeiten",
+          "ankuendigung": "Wichtige Ankündigungen der Moschee",
+          "chat": "Neue Nachrichten in meiner Gruppe",
+          "unterricht": "Neues aus meinem Unterricht"
+        },
+        "gebeteTitel": "Bei welchen Gebeten?",
+        "minutenTitel": "Wie früh?",
+        "einwilligung": "Ich möchte Benachrichtigungen bekommen. Meine Eltern haben das erlaubt. Dafür speichert die Moschee verschlüsselt die Adresse, die mein Browser für Benachrichtigungen vergibt, und ordnet sie meinem Zugang zu. Die Zustellung läuft über den Benachrichtigungsdienst meines Browsers (Google, Mozilla, Apple oder Microsoft, teils außerhalb der EU); er sieht nie, was drinsteht. Benachrichtigungen enthalten keine Namen und keine Nachrichten. Ich kann sie jederzeit hier wieder abschalten.",
+        "aktiv": "Benachrichtigungen sind an. Gleich kommt eine Probe-Benachrichtigung.",
+        "gespeichert": "Deine Auswahl ist gespeichert.",
+        "aus": "Benachrichtigungen sind aus.",
+        "verweigert": "Dein Browser hat Benachrichtigungen für diese Seite blockiert. Das lässt sich in den Einstellungen des Browsers ändern – frag gern deine Eltern.",
+        "nichtUnterstuetzt": "Dieser Browser kann keine Benachrichtigungen empfangen.",
+        "ios": "Auf iPhone und iPad: Tippe auf „Teilen“ und dann auf „Zum Home-Bildschirm“. Öffne die Seite danach über das neue Symbol – dort kannst du die Benachrichtigungen einschalten.",
+        "fehler": "Das hat nicht geklappt. Bitte versuch es später noch einmal.",
+        "mindestensEins": "Bitte wähle mindestens ein Thema.",
+        "einwilligungFehlt": "Bitte setz zuerst das Häkchen."
       }
     }
   },
@@ -54,7 +75,7 @@
       "themen": {
         "gebet": "Namaz vakitleri",
         "ankuendigung": "Camiden önemli duyurular",
-        "chat": "Grubumdaki yeni mesajlar",
+        "chat": "Grubumda veya veli kanalında yeni mesajlar",
         "unterricht": "Dersten haberler"
       },
       "gebeteTitel": "Hangi namazlarda?",
@@ -86,6 +107,27 @@
         "unterrichtText": "Okumak için dokunun.",
         "probe": "Bildirimler açık",
         "probeText": "IGMG Wetzlar hatırlatmaları böyle görünür."
+      },
+      "kind": {
+        "themenTitel": "Hangi konularda bildirim almak istersin?",
+        "themen": {
+          "gebet": "Namaz vakitleri",
+          "ankuendigung": "Caminin önemli duyuruları",
+          "chat": "Grubumda yeni mesajlar",
+          "unterricht": "Dersimden haberler"
+        },
+        "gebeteTitel": "Hangi namazlarda?",
+        "minutenTitel": "Ne kadar önce?",
+        "einwilligung": "Bildirim almak istiyorum. Annem veya babam buna izin verdi. Bunun için cami, tarayıcımın bildirimler için verdiği adresi şifreli olarak saklar ve erişimime bağlar. Gönderim tarayıcımın bildirim hizmeti üzerinden yapılır (Google, Mozilla, Apple veya Microsoft, kısmen AB dışında); bu hizmet içeriği hiçbir zaman görmez. Bildirimlerde isim ve mesaj bulunmaz. Bildirimleri istediğim zaman burada kapatabilirim.",
+        "aktiv": "Bildirimler açık. Birazdan bir deneme bildirimi gelecek.",
+        "gespeichert": "Seçimin kaydedildi.",
+        "aus": "Bildirimler kapalı.",
+        "verweigert": "Tarayıcın bu sayfa için bildirimleri engelledi. Bunu tarayıcının ayarlarından değiştirebilirsin – annene veya babana sorabilirsin.",
+        "nichtUnterstuetzt": "Bu tarayıcı bildirim alamaz.",
+        "ios": "iPhone ve iPad’de: „Paylaş“a, sonra „Ana Ekrana Ekle“ye dokun. Sayfayı daha sonra yeni simgeden aç – orada bildirimleri açabilirsin.",
+        "fehler": "Bu olmadı. Lütfen daha sonra tekrar dene.",
+        "mindestensEins": "Lütfen en az bir konu seç.",
+        "einwilligungFehlt": "Lütfen önce kutucuğu işaretle."
       }
     }
   },
@@ -99,7 +141,7 @@
       "themen": {
         "gebet": "Prayer times",
         "ankuendigung": "Important announcements from the mosque",
-        "chat": "New messages in my group",
+        "chat": "New messages in my group or the parents’ channel",
         "unterricht": "News from class"
       },
       "gebeteTitel": "For which prayers?",
@@ -131,6 +173,27 @@
         "unterrichtText": "Tap to read it.",
         "probe": "Notifications are on",
         "probeText": "This is how IGMG Wetzlar reminders look."
+      },
+      "kind": {
+        "themenTitel": "What would you like to be notified about?",
+        "themen": {
+          "gebet": "Prayer times",
+          "ankuendigung": "Important announcements from the mosque",
+          "chat": "New messages in my group",
+          "unterricht": "News from my lessons"
+        },
+        "gebeteTitel": "For which prayers?",
+        "minutenTitel": "How early?",
+        "einwilligung": "I would like to get notifications. My parents have allowed it. For this, the mosque stores the address my browser gives out for notifications in encrypted form and links it to my access. Delivery runs through my browser’s notification service (Google, Mozilla, Apple or Microsoft, partly outside the EU); it never sees what is inside. Notifications contain no names and no messages. I can switch them off here at any time.",
+        "aktiv": "Notifications are on. A test notification is on its way.",
+        "gespeichert": "Your choice has been saved.",
+        "aus": "Notifications are off.",
+        "verweigert": "Your browser has blocked notifications for this site. You can change that in the browser settings – feel free to ask your parents.",
+        "nichtUnterstuetzt": "This browser cannot receive notifications.",
+        "ios": "On iPhone and iPad: tap “Share” and then “Add to Home Screen”. Then open the site from the new icon – there you can switch on notifications.",
+        "fehler": "That did not work. Please try again later.",
+        "mindestensEins": "Please choose at least one topic.",
+        "einwilligungFehlt": "Please tick the box first."
       }
     }
   }

@@ -23,6 +23,7 @@ import { echtzeitAusUmgebung, signalisiere } from '@/lib/echtzeit/centrifugo';
 import { funktionAn } from '@/lib/funktionen';
 import { verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
+import { sendeGruppenPush } from '@/lib/push/gruppe';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
 import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
 import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
@@ -56,6 +57,12 @@ export async function sendeChatNachricht(kanalId: string, text: string) {
   // Echtzeit (K-A): nur das Signal „Kanal hat Neues“ an den lokalen Server, nie der Text (S-16)
   const echtzeit = echtzeitAusUmgebung();
   if (ergebnis.ok && echtzeit && (await funktionAn('echtzeit'))) after(() => signalisiere(echtzeit, kanalId));
+  // Push „Chat und Elternkanal“ (ADR 0034): ohne Inhalt und Namen, höchstens einmal je 10 Minuten (src/lib/push/gruppe.ts)
+  if (ergebnis.ok) {
+    const eltern = kanal.art === 'eltern';
+    const pfad = `/mein-bereich/gruppen/${kanal.gruppeId}/chat${eltern ? '?kanal=eltern' : ''}`;
+    after(() => sendeGruppenPush(kanal.gruppeId, 'chat', { schueler: !eltern, eltern }, pfad, k.benutzerId).catch(() => 0));
+  }
   return ergebnis;
 }
 

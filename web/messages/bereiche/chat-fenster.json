@@ -51,6 +51,70 @@
         "pausieren": "Chat pausieren",
         "fortsetzen": "Chat fortsetzen",
         "begruendung": "Bitte kurz begründen (wird protokolliert):"
+      },
+      "sie": {
+        "leer": "Noch keine Nachrichten. Schreiben Sie die erste – freundlich und respektvoll.",
+        "du": "Sie",
+        "meldenFreitext": "Möchten Sie etwas ergänzen? (freiwillig)",
+        "gemeldet": "Danke! Die Lehrkräfte und die Ansprechperson für Kinderschutz kümmern sich darum.",
+        "hilfe": "Bei Sorgen um ein Kind erreichen Sie die Ansprechperson für Kinderschutz über die Lehrkraft. Kostenlos und anonym berät auch das Elterntelefon der Nummer gegen Kummer: 0800 111 0 550.",
+        "fehler": "Das hat nicht geklappt. Bitte versuchen Sie es gleich noch einmal.",
+        "regelnTitel": "Bevor Sie schreiben: unsere Regeln für den Kanal",
+        "regelnBestaetigen": "Ich habe die Regeln gelesen",
+        "grund": {
+          "keinRecht": "Sie können in diesem Kanal nicht schreiben.",
+          "kanalAus": "Der Chat ist für diese Gruppe ausgeschaltet.",
+          "notfallpause": "Der Chat ist gerade für alle pausiert.",
+          "pausiert": "Die Lehrkraft hat den Kanal kurz pausiert.",
+          "zuWenigeErwachsene": "Der Kanal startet, sobald zwei Erwachsene die Gruppe begleiten.",
+          "geschlossen": "Der Kanal ist gerade geschlossen. Lesen geht immer.",
+          "nurLehrkraft": "In diesem Kanal schreiben nur die Lehrkräfte.",
+          "stumm": "Sie können gerade eine Weile nicht schreiben.",
+          "einwilligungFehlt": "Für diesen Kanal fehlt eine Einwilligung.",
+          "zuJung": "Schreiben ist ab dem Mindestalter der Gruppe möglich.",
+          "regelnFehlen": "Bitte bestätigen Sie zuerst die Regeln.",
+          "leer": "Die Nachricht ist leer.",
+          "zuLang": "Die Nachricht ist zu lang (höchstens 500 Zeichen).",
+          "rate": "Bitte warten Sie einen Moment, bevor Sie wieder schreiben."
+        }
+      }
+    },
+    "gruppenSeite": {
+      "termineTitel": "Nächste Termine",
+      "ausgefallen": "fällt aus",
+      "wann": "Wann",
+      "wo": "Wo",
+      "leitungTitel": "Leitung",
+      "rolle": {
+        "lehrkraft": "Lehrkraft",
+        "aufsicht": "Aufsicht"
+      },
+      "chatTitel": "Chat",
+      "kanal": {
+        "gruppe": "Gruppenchat",
+        "eltern": "Elternkanal"
+      },
+      "kanaeleLabel": "Kanal",
+      "oeffnungszeiten": "Schreiben geht von {von} bis {bis} Uhr. Lesen geht immer.",
+      "zurGruppe": "Zur Gruppe",
+      "kindAnsehen": "Zu {name}",
+      "du": {
+        "termineLeer": "Gerade ist kein Termin geplant.",
+        "chatText": "Schreib mit deiner Gruppe – freundlich und respektvoll.",
+        "chatAus": "Der Chat ist für deine Gruppe gerade ausgeschaltet.",
+        "datenschutz": "Hier gibt es keine Lesebestätigungen und keine Online-Anzeige. Alle sehen nur den Vornamen und den ersten Buchstaben des Nachnamens.",
+        "einwilligungTitel": "Der Chat ist noch nicht freigeschaltet",
+        "einwilligungText": "Deine Eltern müssen den Gruppenchat für dich zuerst erlauben. Das geht in ihrem Bereich unter „Meine Kinder“. Bis dahin siehst du hier keine Nachrichten.",
+        "chatOeffnen": "Zum Gruppenchat",
+        "einwilligungSelbst": "Für den Gruppenchat brauchst du jetzt deine eigene Zustimmung. Du gibst sie auf deiner Startseite unter „Meine Einwilligungen“.",
+        "zuEinwilligungen": "Zu meinen Einwilligungen"
+      },
+      "sie": {
+        "termineLeer": "Zurzeit ist kein Termin geplant.",
+        "chatText": "Schreiben Sie mit der Gruppe – freundlich und respektvoll.",
+        "chatAus": "Der Chat ist für diese Gruppe ausgeschaltet.",
+        "datenschutz": "Es gibt keine Lesebestätigungen und keine Online-Anzeige. Alle sehen nur den Vornamen und den ersten Buchstaben des Nachnamens.",
+        "chatOeffnen": "{kanal} öffnen"
       }
     }
   },
@@ -106,6 +170,70 @@
         "pausieren": "Sohbeti durdur",
         "fortsetzen": "Sohbeti devam ettir",
         "begruendung": "Lütfen kısaca gerekçe yaz (kayda geçer):"
+      },
+      "sie": {
+        "leer": "Henüz mesaj yok. İlk mesajı siz yazın – nazik ve saygılı.",
+        "du": "Siz",
+        "meldenFreitext": "Eklemek istediğiniz bir şey var mı? (isteğe bağlı)",
+        "gemeldet": "Teşekkürler! Öğretmenler ve çocuk koruma sorumlusu bununla ilgilenecek.",
+        "hilfe": "Bir çocukla ilgili endişeniz varsa çocuk koruma sorumlusuna öğretmen aracılığıyla ulaşabilirsiniz. Nummer gegen Kummer’in veli hattı da ücretsiz ve isimsiz danışmanlık verir: 0800 111 0 550.",
+        "fehler": "Bu olmadı. Lütfen birazdan tekrar deneyin.",
+        "regelnTitel": "Yazmadan önce: kanal kurallarımız",
+        "regelnBestaetigen": "Kuralları okudum",
+        "grund": {
+          "keinRecht": "Bu kanalda yazamazsınız.",
+          "kanalAus": "Bu grup için sohbet kapalı.",
+          "notfallpause": "Sohbet şu anda herkes için durduruldu.",
+          "pausiert": "Öğretmen kanalı kısa bir süre durdurdu.",
+          "zuWenigeErwachsene": "Gruba iki yetişkin eşlik ettiğinde kanal başlar.",
+          "geschlossen": "Kanal şu anda kapalı. Okumak her zaman mümkün.",
+          "nurLehrkraft": "Bu kanalda yalnızca öğretmenler yazar.",
+          "stumm": "Bir süre yazamazsınız.",
+          "einwilligungFehlt": "Bu kanal için bir onay eksik.",
+          "zuJung": "Yazmak grubun yaş sınırından itibaren mümkün.",
+          "regelnFehlen": "Lütfen önce kuralları onaylayın.",
+          "leer": "Mesaj boş.",
+          "zuLang": "Mesaj çok uzun (en fazla 500 karakter).",
+          "rate": "Lütfen tekrar yazmadan önce biraz bekleyin."
+        }
+      }
+    },
+    "gruppenSeite": {
+      "termineTitel": "Sıradaki dersler",
+      "ausgefallen": "yapılmayacak",
+      "wann": "Ne zaman",
+      "wo": "Nerede",
+      "leitungTitel": "Grup sorumluları",
+      "rolle": {
+        "lehrkraft": "Öğretmen",
+        "aufsicht": "Gözetmen"
+      },
+      "chatTitel": "Sohbet",
+      "kanal": {
+        "gruppe": "Grup sohbeti",
+        "eltern": "Veli kanalı"
+      },
+      "kanaeleLabel": "Kanal",
+      "oeffnungszeiten": "Yazmak {von} ile {bis} arasında mümkün. Okumak her zaman mümkün.",
+      "zurGruppe": "Gruba dön",
+      "kindAnsehen": "{name} sayfasına git",
+      "du": {
+        "termineLeer": "Şu an planlanmış ders yok.",
+        "chatText": "Grubunla yazış – nazik ve saygılı.",
+        "chatAus": "Grubun için sohbet şu anda kapalı.",
+        "datenschutz": "Burada okundu bilgisi ve çevrimiçi gösterimi yok. Herkes yalnızca adı ve soyadının ilk harfini görür.",
+        "einwilligungTitel": "Sohbet henüz açılmadı",
+        "einwilligungText": "Önce annenin veya babanın grup sohbetine izin vermesi gerekiyor. Bunu kendi alanlarında „Çocuklarım“ bölümünden yapabilirler. O zamana kadar burada mesaj görmezsin.",
+        "chatOeffnen": "Grup sohbetine git",
+        "einwilligungSelbst": "Grup sohbeti için artık kendi onayın gerekiyor. Onu başlangıç sayfanda „Onaylarım“ bölümünden verebilirsin.",
+        "zuEinwilligungen": "Onaylarıma git"
+      },
+      "sie": {
+        "termineLeer": "Şu an planlanmış ders yok.",
+        "chatText": "Grupla yazışın – nazik ve saygılı.",
+        "chatAus": "Bu grup için sohbet kapalı.",
+        "datenschutz": "Okundu bilgisi ve çevrimiçi gösterimi yoktur. Herkes yalnızca adı ve soyadının ilk harfini görür.",
+        "chatOeffnen": "{kanal} aç"
       }
     }
   },
@@ -161,6 +289,70 @@
         "pausieren": "Pause chat",
         "fortsetzen": "Resume chat",
         "begruendung": "Please give a short reason (it will be logged):"
+      },
+      "sie": {
+        "leer": "No messages yet. Write the first one – kind and respectful.",
+        "du": "You",
+        "meldenFreitext": "Would you like to add something? (optional)",
+        "gemeldet": "Thank you! The teachers and the child protection contact will deal with it.",
+        "hilfe": "If you are worried about a child, you can reach the child protection contact through the teacher. The parents’ line of Nummer gegen Kummer also offers free, anonymous advice: 0800 111 0 550.",
+        "fehler": "That did not work. Please try again in a moment.",
+        "regelnTitel": "Before you write: our channel rules",
+        "regelnBestaetigen": "I have read the rules",
+        "grund": {
+          "keinRecht": "You cannot write in this channel.",
+          "kanalAus": "Chat is switched off for this group.",
+          "notfallpause": "Chat is paused for everyone right now.",
+          "pausiert": "The teacher has paused the channel for a moment.",
+          "zuWenigeErwachsene": "The channel starts once two adults accompany the group.",
+          "geschlossen": "The channel is closed right now. You can always read.",
+          "nurLehrkraft": "Only teachers write in this channel.",
+          "stumm": "You cannot write for a while.",
+          "einwilligungFehlt": "A consent is missing for this channel.",
+          "zuJung": "Writing is possible from the group’s minimum age.",
+          "regelnFehlen": "Please confirm the rules first.",
+          "leer": "The message is empty.",
+          "zuLang": "The message is too long (500 characters at most).",
+          "rate": "Please wait a moment before writing again."
+        }
+      }
+    },
+    "gruppenSeite": {
+      "termineTitel": "Upcoming lessons",
+      "ausgefallen": "cancelled",
+      "wann": "When",
+      "wo": "Where",
+      "leitungTitel": "Group leaders",
+      "rolle": {
+        "lehrkraft": "Teacher",
+        "aufsicht": "Supervisor"
+      },
+      "chatTitel": "Chat",
+      "kanal": {
+        "gruppe": "Group chat",
+        "eltern": "Parents’ channel"
+      },
+      "kanaeleLabel": "Channel",
+      "oeffnungszeiten": "Writing is possible from {von} to {bis}. Reading is always possible.",
+      "zurGruppe": "Back to group",
+      "kindAnsehen": "Go to {name}",
+      "du": {
+        "termineLeer": "No lesson is planned right now.",
+        "chatText": "Write with your group – kind and respectful.",
+        "chatAus": "The chat is switched off for your group right now.",
+        "datenschutz": "There are no read receipts and no online status here. Everyone only sees the first name and the first letter of the surname.",
+        "einwilligungTitel": "The chat is not unlocked yet",
+        "einwilligungText": "Your parents need to allow the group chat for you first. They can do this in their area under “My children”. Until then you will not see any messages here.",
+        "chatOeffnen": "Go to the group chat",
+        "einwilligungSelbst": "You now need to give your own consent for the group chat. You can do this on your start page under “My consents”.",
+        "zuEinwilligungen": "Go to my consents"
+      },
+      "sie": {
+        "termineLeer": "No lesson is planned at the moment.",
+        "chatText": "Write with the group – kind and respectful.",
+        "chatAus": "The chat is switched off for this group.",
+        "datenschutz": "There are no read receipts and no online status. Everyone only sees the first name and the first letter of the surname.",
+        "chatOeffnen": "Open {kanal}"
       }
     }
   }

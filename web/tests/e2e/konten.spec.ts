@@ -3,6 +3,7 @@ import { randomBytes } from 'node:crypto';
 import { expect, test, type Page } from '@playwright/test';
 import * as OTPAuth from 'otpauth';
 import kontoTexte from '../../messages/bereiche/konto.json';
+import kinderTexte from '../../messages/bereiche/kinder.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
 import { eigeneAbsenderAdresse } from './hilfen/konto';
 
@@ -18,6 +19,7 @@ import { eigeneAbsenderAdresse } from './hilfen/konto';
 const MAILPIT = process.env.MAILPIT_URL ?? 'http://127.0.0.1:8025';
 const k = kontoTexte.de.konto;
 const m = meinTexte.de.meinBereich;
+const lw = kinderTexte.de.lernweg;
 const PASSWORT = 'Testpasswort-Gemeinde-2026';
 
 type Zugaenge = {
@@ -126,7 +128,7 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   expect(fehler.filter((f) => /Content Security Policy|Refused to/.test(f))).toEqual([]);
 });
 
-test('Kinderzugang: Anmeldung mit Benutzername, Mein Bereich mit Lernweg „bald verfügbar“', async ({ page }) => {
+test('Kinderzugang: Anmeldung mit Benutzername, Mein Bereich mit Lernweg (mit Funktion „lernplattform“)', async ({ page }) => {
   test.setTimeout(120_000);
   const fehler = sammleKonsolenfehler(page);
   const { kind } = beispielkonten();
@@ -143,8 +145,13 @@ test('Kinderzugang: Anmeldung mit Benutzername, Mein Bereich mit Lernweg „bald
   await page.getByRole('button', { name: k.kinder.absenden }).filter({ visible: true }).click();
   await expect(page).toHaveURL(/\/mein-bereich$/);
   await expect(page.getByRole('heading', { level: 1, name: /^Willkommen, Emre/ })).toBeVisible();
-  await expect(page.getByText(m.kachel.lernweg.titel, { exact: true })).toBeVisible();
-  await expect(page.getByRole('link', { name: m.kachel.lernweg.titel })).toHaveCount(0);
+  // Lernweg (B-24) als Abschnitt der Startseite – nur mit Funktion „lernplattform“, sonst verschwindet er ganz (ADR 0035)
+  const lernweg = page.getByRole('heading', { level: 2, name: lw.titel, exact: true });
+  if (await page.getByRole('navigation', { name: m.nav.label }).getByRole('link', { name: m.nav.lernweg }).count()) {
+    await expect(lernweg).toBeVisible();
+  } else {
+    await expect(lernweg).toHaveCount(0);
+  }
   // Kinder: keine Benachrichtigungen, kein zweiter Faktor, keine Passkeys
   await expect(page.getByRole('navigation', { name: m.nav.label }).getByRole('link', { name: m.nav.benachrichtigungen })).toHaveCount(0);
   await page.goto('/mein-bereich/konto');
@@ -178,7 +185,9 @@ test('Lehrkraft: zweiter Faktor ist Pflicht (Einrichtung), danach Anmeldung nur 
   // Pflicht: kein Abschalten
   await expect(page.getByText(m.konto.zweiFaktor.pflicht)).toBeVisible();
   await page.goto('/mein-bereich');
-  await expect(page.getByText(m.kachel.unterricht.text)).toBeVisible();
+  // Kachel „Unterricht“ nur mit Funktion „lernplattform“ (ADR 0035), sonst die Konto-Kachel
+  const unterricht = await page.getByRole('navigation', { name: m.nav.label }).getByRole('link', { name: m.nav.unterricht }).count();
+  await expect(page.getByText(unterricht ? m.kachel.unterricht.text : m.kachel.konto.text)).toBeVisible();
 
   await abmelden(page);
   await emailAnmelden(page, lehrkraft.email, lehrkraft.passwort);
