@@ -14,6 +14,7 @@ export type LeserTexte = {
   wortkarte: Seite['wortkarte'];
   tajwidLeiste: Seite['tajwidLeiste'];
   player: Seite['player'];
+  offline: Seite['offline'];
   quelleUebersetzung: string;
 };
 
@@ -50,6 +51,8 @@ export const SPEICHER = {
   einstellungen: 'igmg-quran-einstellungen',
   weiterlesen: 'igmg-quran-weiterlesen',
   lesezeichen: 'igmg-quran-lesezeichen',
+  /** Verzeichnis der offline gespeicherten Seiten (Inhalte im Vorrat `igmg-koran-v1`, H-O01) */
+  offline: 'igmg-quran-offline',
 } as const;
 
 export type Stelle = { sure: number; vers: number; cuz?: number | null; zeit?: number };

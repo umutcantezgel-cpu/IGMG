@@ -4,6 +4,7 @@ import { TAG } from '@/lib/cache/tags';
 import { chatLoeschlauf } from '@/lib/chat/dienst';
 import { raeumePushAuf } from '@/lib/push/abo';
 import { loescheAbgelaufene } from '@/lib/eingaenge/loeschlauf';
+import { gemeindeLoeschlauf } from '@/lib/loeschen/gemeinde';
 import { mitSperre } from '@/lib/wartung/sperre';
 import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
 
@@ -23,6 +24,9 @@ async function laufe(): Promise<Response> {
     const chat = await chatLoeschlauf();
     // Push-Abos ohne Erfolg seit 12 Monaten (auch wenn der Minutentakt des lokalen Servers ausfällt)
     const push = await raeumePushAuf();
+    // Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-16): Lernende nach Austritt, offene Meldungen nach Höchstfrist,
+    // Moderationsprotokoll nach 3 Jahren, nicht zustellbare Mails, Audit-Protokoll
+    const gemeinde = await gemeindeLoeschlauf();
     // Platzzählung betroffener Veranstaltungen sofort neu berechnen
     for (const id of ergebnis.betroffeneTermine) revalidateTag(TAG.anmeldungenVon(id), { expire: 0 });
     if (ergebnis.betroffeneTermine.length) revalidateTag(TAG.anmeldungen, { expire: 0 });
@@ -34,6 +38,11 @@ async function laufe(): Promise<Response> {
       geloeschteChatNachrichten: chat.nachrichten,
       geloeschteChatMeldungen: chat.meldungen,
       geloeschtePushAbos: push,
+      geloeschteLernende: gemeinde.lernende,
+      geloeschteOffeneMeldungen: gemeinde.offeneMeldungen,
+      geloeschteProtokolleintraege: gemeinde.protokoll,
+      geloeschteUnzustellbareMails: gemeinde.mails,
+      geloeschteAuditEintraege: gemeinde.audit,
     };
   });
   return Response.json(lauf.uebersprungen ? { uebersprungen: true } : lauf.ergebnis, {

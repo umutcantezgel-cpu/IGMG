@@ -9,6 +9,7 @@ import { fuelle, MODI, schreibe, SPEICHER, type LeserAusgabe, type LeserProps, t
 const Wortkarte = lazy(() => import('./Wortkarte'));
 const TajwidLeiste = lazy(() => import('./TajwidLeiste'));
 const Player = lazy(() => import('./Player'));
+const OfflineSpeichern = lazy(() => import('./OfflineSpeichern'));
 
 export type WortZiel = { el: HTMLElement; sure: number; vers: number; pos: number };
 
@@ -346,6 +347,21 @@ export function QuranLeser(props: LeserProps) {
             <a href={props.pfade.tajwid} className="self-start text-16 font-bold">
               {t.legendeLink}
             </a>
+          </div>
+          <div className="flex flex-col gap-2 md:col-span-3">
+            <h2 className="font-text text-16 font-bold">{texte.offline.titel}</h2>
+            {offen ? (
+              <Suspense fallback={null}>
+                <OfflineSpeichern
+                  texte={texte.offline}
+                  pfade={props.pfade}
+                  ausgabe={ausgabe}
+                  htmlAusgabe={props.ausgabe}
+                  rezitationen={rezitationen}
+                  behaelter={() => leiste.current?.closest<HTMLElement>('.leser') ?? null}
+                />
+              </Suspense>
+            ) : null}
           </div>
           {rezitationen.length ? null : (
             <p className="inline-flex items-center gap-2 text-16 text-tinte-2 md:hidden">

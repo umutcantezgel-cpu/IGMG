@@ -1,0 +1,254 @@
+import { and, asc, count, eq, lt, ne, sql } from 'drizzle-orm';
+import type { Datenbank } from '@/lib/db';
+import * as schema from '@/lib/db/schema';
+import { entscheide, type Funktion, MIT_PERSONENDATEN } from '@/lib/funktionen-regeln';
+import { pruefeKette } from '@/lib/chat/hashkette';
+import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
+import type { Pruefung } from './pruefungen';
+
+/**
+ * Startklar-Prüfungen der Gemeinde-Plattform (PLAN 2.8/2.9, ABNAHME Z-12, Z-20): Funktionsschalter in der Produktion,
+ * Push-Schlüssel, Kinderschutz (S-02 zwei Erwachsene, S-10 Hash-Kette), Takt und lokaler Helfer-Server (Sicherung,
+ * Wiederherstellungsprobe, Medienspiegel) und die Pflegepflicht der Koran-Übersetzungen (QuranEnc, 90 Tage).
+ * Prüfungen dürfen erweitert, nie abgeschwächt werden.
+ */
+type Umgebung = Readonly<Record<string, string | undefined>>;
+type LokalEintrag = { ok?: boolean; bytes?: number; zeit?: string };
+
+const STUNDE = 60 * 60 * 1000;
+const NAMEN: Record<Funktion, string> = {
+  konten: 'Konten',
+  lernplattform: 'Lernplattform',
+  chat: 'Gruppenchat',
+  echtzeit: 'Echtzeit',
+  push: 'Web Push',
+  push_gebet: 'Gebetserinnerung',
+  hatim: 'Gemeinsame Hatim',
+  newsletter: 'Newsletter',
+  hadith_gesamt: 'Bukhari-Gesamtsammlung',
+  ramadan_vorschau: 'Ramadan-Vorschau',
+};
+const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
+  konten: 'Datenschutz v2 (MN-11)',
+  lernplattform: 'DSFA und Einwilligungstexte (MN-11)',
+  chat: 'DSFA, Schutzkonzept und Ansprechpersonen (MN-10, MN-11)',
+  echtzeit: 'lokaler Server mit Echtzeit-Profil (MN-12)',
+  push: 'Push-Themen und Drittland-Hinweis (MN-11, MN-17)',
+  push_gebet: 'Takt vom lokalen Server oder Vercel Pro (MN-18)',
+  hatim: 'Datenschutz v2 (MN-11)',
+  newsletter: 'Datenschutz v2 und Double-Opt-in-Text (MN-11)',
+  hadith_gesamt: 'Rechtsfreigabe der Hadith-Quelle (MN-06)',
+};
+
+/** Zustand eines gemeldeten Laufs: fehlt, fehlgeschlagen, zu alt oder in Ordnung. */
+export function bewerteLauf(e: LokalEintrag | undefined, jetzt: Date, maxStunden: number): 'fehlt' | 'fehlgeschlagen' | 'alt' | 'ok' {
+  if (!e?.zeit || Number.isNaN(Date.parse(e.zeit))) return 'fehlt';
+  if (e.ok === false) return 'fehlgeschlagen';
+  return jetzt.getTime() - Date.parse(e.zeit) > maxStunden * STUNDE ? 'alt' : 'ok';
+}
+
+/** Schalter mit Personendaten (oder Rechtsvorbehalt), die eingeschaltet sind. */
+export function eingeschaltet(env: Umgebung, einstellung: unknown): Funktion[] {
+  const gelesen = funktionenEinstellung.safeParse(einstellung ?? {});
+  const werte = gelesen.success ? gelesen.data : null;
+  return [...MIT_PERSONENDATEN, 'hadith_gesamt' as const].filter((f) => entscheide(f, env, werte));
+}
+
+function groesse(bytes: number | undefined): string {
+  if (!bytes) return '';
+  const mb = bytes / 1e6;
+  return mb >= 1000 ? ` (${(mb / 1000).toFixed(1).replace('.', ',')} GB)` : ` (${Math.max(1, Math.round(mb))} MB)`;
+}
+
+function zeitText(iso: string | undefined): string {
+  if (!iso) return '';
+  return new Intl.DateTimeFormat('de-DE', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' }).format(new Date(iso));
+}
+
+async function einstellungWert(db: Datenbank, schluessel: string): Promise<unknown> {
+  const [z] = await db
+    .select({ wert: schema.einstellung.wert })
+    .from(schema.einstellung)
+    .where(eq(schema.einstellung.schluessel, schluessel))
+    .limit(1);
+  return z?.wert ?? null;
+}
+
+export async function gemeindePruefen(
+  db: Datenbank,
+  env: Umgebung,
+  produktion: boolean,
+  jetzt: Date,
+  neu: (p: Pruefung) => void,
+): Promise<void> {
+  const an = eingeschaltet(env, await einstellungWert(db, 'funktionen'));
+  const ist = (f: Funktion) => an.includes(f);
+
+  // Schalter: in der Produktion nur nach Freigabe durch Menschen
+  neu(
+    an.length === 0
+      ? {
+          id: 'gemeinde.schalter',
+          bereich: 'gemeinde',
+          titel: 'Funktionsschalter',
+          status: 'ok',
+          meldung: 'Alle Funktionen mit Personendaten sind aus (Konten, Lernplattform, Chat, Push, Hatim, Newsletter).',
+        }
+      : {
+          id: 'gemeinde.schalter',
+          bereich: 'gemeinde',
+          titel: 'Funktionsschalter',
+          status: produktion ? 'manuell' : 'hinweis',
+          meldung: produktion
+            ? `Eingeschaltet: ${an.map((f) => `${NAMEN[f]} (Voraussetzung: ${VORAUSSETZUNG[f] ?? '–'})`).join('; ')}. Voraussetzungen bestätigen.`
+            : `Für die Vorführung eingeschaltet: ${an.map((f) => NAMEN[f]).join(', ')}. In der Produktion sind sie aus, bis Menschen freigeben.`,
+          ort: 'Umgebung FUNKTION_<NAME>=an|aus (docs/deploy/VERCEL-ENV.md) oder Einstellung „funktionen“; MENSCHEN.md',
+          aufwand: '5 min je Schalter',
+        },
+  );
+
+  // Push: ohne VAPID-Schlüssel kein Versand
+  if (ist('push')) {
+    const vapid = Boolean(env.VAPID_PRIVAT?.trim());
+    neu({
+      id: 'gemeinde.push-schluessel',
+      bereich: 'gemeinde',
+      titel: 'Push-Schlüssel (VAPID)',
+      status: vapid ? 'ok' : produktion ? 'fehler' : 'warnung',
+      meldung: vapid
+        ? 'Der VAPID-Schlüssel ist gesetzt.'
+        : 'Push ist eingeschaltet, aber VAPID_PRIVAT fehlt – Abos und Versand schlagen fehl.',
+      ort: 'pnpm geheimnisse:erzeugen; Vercel › Environment Variables (VAPID_PRIVAT, VAPID_KONTAKT)',
+      aufwand: '10 min',
+    });
+  }
+
+  // S-02: Gruppen mit Chat brauchen mindestens zwei Erwachsene in der Leitung
+  if (ist('chat')) {
+    const leitung = db
+      .select({ gruppeId: schema.gruppenLeitung.gruppeId, anzahl: count().as('anzahl') })
+      .from(schema.gruppenLeitung)
+      .groupBy(schema.gruppenLeitung.gruppeId)
+      .as('leitung');
+    const zuWenig = await db
+      .select({ id: schema.gruppe.id })
+      .from(schema.gruppe)
+      .leftJoin(leitung, eq(leitung.gruppeId, schema.gruppe.id))
+      .where(and(ne(schema.gruppe.chatModus, 'aus'), eq(schema.gruppe.status, 'aktiv'), sql`coalesce(${leitung.anzahl}, 0) < 2`));
+    neu({
+      id: 'gemeinde.chat-leitung',
+      bereich: 'gemeinde',
+      titel: 'Chat nur mit zwei Erwachsenen',
+      status: zuWenig.length ? 'warnung' : 'ok',
+      meldung: zuWenig.length
+        ? `${zuWenig.length === 1 ? 'Eine Gruppe hat' : `${zuWenig.length} Gruppen haben`} Chat eingeschaltet, aber weniger als zwei Erwachsene in der Leitung – der Chat bleibt dort gesperrt (S-02).`
+        : 'Jede Gruppe mit Chat hat mindestens zwei Erwachsene in der Leitung.',
+      ort: 'Verwaltung › Gruppen',
+      aufwand: '10 min',
+    });
+  }
+
+  // S-10: Moderationsprotokoll unverändert (Hash-Kette; nach dem Löschlauf beginnt sie beim gespeicherten Anker)
+  const zeilen = await db.select().from(schema.moderationsprotokoll).orderBy(asc(schema.moderationsprotokoll.id));
+  const anker = (await einstellungWert(db, 'moderationsprotokoll_anker')) as { hash?: string } | null;
+  const bruch = pruefeKette(
+    zeilen.map((z) => ({ ...z, zeitpunkt: z.zeitpunkt.toISOString() })),
+    typeof anker?.hash === 'string' ? anker.hash : undefined,
+  );
+  neu({
+    id: 'gemeinde.kette',
+    bereich: 'gemeinde',
+    titel: 'Moderationsprotokoll unverändert',
+    status: bruch === null ? 'ok' : 'fehler',
+    meldung:
+      bruch === null
+        ? `Die Hash-Kette ist vollständig (${zeilen.length} Einträge).`
+        : `Die Hash-Kette bricht bei Eintrag ${bruch + 1} von ${zeilen.length}: Das Protokoll wurde verändert. Sofort die Kinderschutz-Verantwortlichen informieren.`,
+    ort: 'Datenbank › moderationsprotokoll (Schutzkonzept, MENSCHEN MN-10)',
+    aufwand: '1 h',
+  });
+
+  // D-05: offene Chat-Meldungen vor der Höchstfrist (12 Monate) – Erinnerung ab 11 Monaten
+  const [{ alteMeldungen }] = await db
+    .select({ alteMeldungen: count() })
+    .from(schema.chatMeldung)
+    .where(
+      and(ne(schema.chatMeldung.status, 'erledigt'), lt(schema.chatMeldung.erstelltAm, new Date(jetzt.getTime() - 334 * 24 * STUNDE))),
+    );
+  if (alteMeldungen > 0 || ist('chat'))
+    neu({
+      id: 'gemeinde.meldungen',
+      bereich: 'gemeinde',
+      titel: 'Offene Chat-Meldungen',
+      status: alteMeldungen > 0 ? 'warnung' : 'ok',
+      meldung:
+        alteMeldungen > 0
+          ? `${alteMeldungen === 1 ? 'Eine Meldung ist' : `${alteMeldungen} Meldungen sind`} seit mehr als 11 Monaten offen. Nach 12 Monaten löscht der Löschlauf sie (Höchstfrist).`
+          : 'Keine Meldung ist länger als 11 Monate offen.',
+      ort: 'Verwaltung › Meldungen & Kinderschutz',
+      aufwand: '30 min',
+    });
+
+  // Lokaler Helfer-Server (ADR 0036): Takt, Sicherung, Probe, Spiegel
+  const lokal = ((await einstellungWert(db, 'lokaler_server')) ?? {}) as Record<string, LokalEintrag | undefined>;
+  const fehltStatus = produktion ? 'warnung' : 'hinweis';
+  const laeufe: { art: string; titel: string; stunden: number; noetig: boolean; ok: string; fehlt: string }[] = [
+    {
+      art: 'takt',
+      titel: 'Minutentakt',
+      stunden: 0.25,
+      noetig: ist('push') && ist('push_gebet'),
+      ok: 'Der Takt läuft',
+      fehlt: 'Gebetserinnerungen sind an, aber der Minutentakt meldet sich nicht',
+    },
+    { art: 'sicherung', titel: 'Tägliche Sicherung', stunden: 36, noetig: true, ok: 'Letzte Sicherung', fehlt: 'Keine aktuelle Sicherung' },
+    {
+      art: 'probe',
+      titel: 'Wiederherstellungsprobe',
+      stunden: 40 * 24,
+      noetig: true,
+      ok: 'Letzte Probe',
+      fehlt: 'Keine Wiederherstellungsprobe in den letzten 40 Tagen',
+    },
+    { art: 'spiegel', titel: 'Medienspiegel', stunden: 36, noetig: true, ok: 'Letzter Abgleich', fehlt: 'Kein aktueller Medienspiegel' },
+  ];
+  for (const l of laeufe) {
+    const e = lokal[l.art];
+    const zustand = bewerteLauf(e, jetzt, l.stunden);
+    if (!l.noetig && zustand !== 'ok') continue;
+    neu({
+      id: `gemeinde.${l.art}`,
+      bereich: 'gemeinde',
+      titel: l.titel,
+      status: zustand === 'ok' ? 'ok' : zustand === 'fehlgeschlagen' ? (produktion ? 'fehler' : 'warnung') : fehltStatus,
+      meldung:
+        zustand === 'ok'
+          ? `${l.ok}: ${zeitText(e?.zeit)}${groesse(e?.bytes)}.`
+          : zustand === 'fehlgeschlagen'
+            ? `Der letzte Lauf am ${zeitText(e?.zeit)} ist fehlgeschlagen. Protokoll auf dem lokalen Server ansehen.`
+            : zustand === 'alt'
+              ? `${l.fehlt} (letzte Meldung ${zeitText(e?.zeit)}).`
+              : `${l.fehlt}: Der lokale Server hat sich noch nie gemeldet.`,
+      ort: 'Lokaler Server: betrieb/lokal/LIESMICH.md (MENSCHEN MN-12, MN-18)',
+      aufwand: zustand === 'fehlt' ? '3–4 h (Einrichtung)' : '15 min',
+    });
+  }
+
+  // QuranEnc-Bedingung: Übersetzungen regelmäßig auf neue Versionen prüfen (90 Tage)
+  const grenze = new Date(jetzt.getTime() - 90 * 24 * STUNDE);
+  const alt = await db
+    .select({ titel: schema.quranAusgabe.titel })
+    .from(schema.quranAusgabe)
+    .where(and(eq(schema.quranAusgabe.aktiv, true), lt(schema.quranAusgabe.abgerufenAm, grenze)));
+  neu({
+    id: 'gemeinde.uebersetzungen',
+    bereich: 'gemeinde',
+    titel: 'Koran-Übersetzungen aktuell',
+    status: alt.length ? 'hinweis' : 'ok',
+    meldung: alt.length
+      ? `Vor mehr als 90 Tagen abgerufen: ${alt.map((a) => a.titel).join(', ')}. Auf neue Versionen prüfen (Bedingung von QuranEnc).`
+      : 'Alle aktiven Übersetzungen wurden in den letzten 90 Tagen abgerufen oder geprüft.',
+    ort: 'pnpm inhalte:import; web/daten/quranenc/QUELLE.md',
+    aufwand: '20 min',
+  });
+}

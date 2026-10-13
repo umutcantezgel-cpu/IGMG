@@ -9,6 +9,7 @@ import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
+import { zaehleOffeneMeldungen } from '@/server/queries/verwaltung/kinderschutz';
 import { zaehleUngelesene } from '@/server/queries/verwaltung/postfach';
 import { zaehleOffeneTickets } from '@/server/queries/verwaltung/tickets';
 import { ladeKommendeVeranstaltungen, zaehleAktiveAnkuendigungen, zaehleEntwuerfe } from '@/server/queries/verwaltung/uebersicht';
@@ -24,7 +25,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   const sichtbar = MODULE.filter((m) => m.gebaut && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
   const jetzt = new Date();
-  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets] = await Promise.all([
+  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz] = await Promise.all([
     // Bevorstehende, veröffentlichte Veranstaltungen: dieselbe Zahl wie die Kachel auf der Übersicht (DP-C1 M3)
     zeigt('veranstaltungen') ? ladeKommendeVeranstaltungen(a, jetzt).then((kommend) => kommend?.length) : undefined,
     // Entwürfe der Neuigkeiten und derzeit sichtbare Ankündigungen (DP-C1 H1)
@@ -35,6 +36,8 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     // Ungelesene Nachrichten an die Person, offene Tickets im eigenen Sichtbereich
     zeigt('postfach') ? zaehleUngelesene(a) : undefined,
     zeigt('tickets') ? zaehleOffeneTickets(a) : undefined,
+    // Offene Chat-Meldungen (nur Rolle kinderschutz)
+    zeigt('kinderschutz') ? zaehleOffeneMeldungen() : undefined,
   ]);
   const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
     veranstaltungen,
@@ -43,6 +46,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     eingaenge,
     postfach,
     tickets,
+    kinderschutz,
   };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => {
     const anzahl = zaehler[m.schluessel];

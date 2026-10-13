@@ -1,11 +1,18 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
-- **Stand 13.10. 08:35 UTC:** Alle Pakete brachen um ≈ 06:00 UTC am Sitzungslimit ab; ihre Arbeit ist in den Arbeitsbäumen
-  als Commit „ZWISCHENSTAND …“ auf den Branches `worktree-agent-*` gesichert. Pakete wurden fortgesetzt (SendMessage):
-  Konten (adda99e), Koran-Leser (a4ada8d), Hadith/Quellen/Moschee (ad7cbf8), Elifbe (a1feebc), CMS (a24e520),
-  Recht/Handbücher (ae898de), Kür (aad315d).
-- **Orchestrator parallel:** Chat-Oberfläche (Komponente mit adaptivem Abruf), Unterricht-Actions/Komponenten (Anwesenheit),
-  danach Zusammenführen in der Reihenfolge Recht → Hadith → Elifbe → Koran → Konten → CMS → Kür, Migrationen neu nummerieren,
-  Navigation, Mein-Bereich-Anbindung, Startklar-Prüfungen, Tor E2, Fast-Forward `main`.
-- **Wiederaufnahme nach Neustart:** `git worktree list`; je Branch `worktree-agent-*` prüfen, ob ein Abschluss-Commit nach dem
-  ZWISCHENSTAND existiert; unfertige Pakete per SendMessage (Agent-ID aus Branchname) fortsetzen oder neu starten.
+- **Stand 13.10. 09:10 UTC (Branch be5e405 + Hadith-Teile be8bf38):** Zusammengeführt sind Recht, Hadith/Quellen/Moschee,
+  Elifbe, Koran-Leser, Konten/Mein Bereich. Lange Bukhari-Bücher stehen in Teilen zu je 100 Hadithen
+  (`/hadith/bukhari/[buch]/teil/[teil]`).
+- **Laufende Pakete (Worktree-Branches `worktree-agent-<id>`):**
+  - CMS-Kern und Module (a24e520) – Migration ggf. auf `0011_*` neu erzeugen.
+  - Kür: Hatim, Kalender, Ramadan, Spenden, Newsletter (aad315d).
+  - Verwaltung Lernen + Aufnahme aus Voranmeldung (a4cbd4b) – Gruppen, Lernende, Lehrplan, Gemeinde-Konten, Löschlauf.
+  - Mein Bereich: Unterricht, Kinder, Gruppe/Chat, Benachrichtigungen, Beispieldaten (a2e7dba).
+- **Orchestrator parallel:** Startklar-Prüfungen (Schalter, Sicherung, Kette, Takt, lokaler Server), wortlaut-Ausnahmen,
+  Medienspiegel-Löschabgleich (D-06); danach Zusammenführen CMS → Kür → Lernen-Verwaltung → Mein Bereich, Navigation
+  (Kalender, Hatim, Ramadan, Spenden), Tor E2 (check, Integration, sprachen, Religion, Build beider Betriebsarten,
+  E2E lokal, S1) → Fast-Forward `main` mit Produktionsschaltern aus.
+- **Danach:** E3–E7 nach PLAN (Koran-Verwaltung + Rezitations-Werkstatt, Anzeige-CMS-Oberfläche, Gemeinde im Blick,
+  Kinderschutz-Verwaltung, SVG-Programm je Route, Offline-Koran, Passkey, Stufe C, BERICHT, ABSCHLUSS).
+- **Wiederaufnahme nach Neustart:** `git worktree list`; je Branch `worktree-agent-*` prüfen, ob ein Abschluss-Commit
+  existiert; unfertige Pakete per SendMessage (Agent-ID aus Branchname) fortsetzen oder neu starten.

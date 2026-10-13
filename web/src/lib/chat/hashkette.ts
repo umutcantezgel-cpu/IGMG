@@ -20,9 +20,15 @@ export function kettenHash(vorgaenger: string, e: ProtokollInhalt): string {
   return createHash('sha256').update(`${vorgaenger}|${inhalt}`, 'utf8').digest('hex');
 }
 
-/** Prüft eine Kette in ID-Reihenfolge; liefert die erste fehlerhafte Position oder null. */
-export function pruefeKette(zeilen: readonly (ProtokollInhalt & { vorgaengerHash: string; hash: string })[]): number | null {
-  let vorher = KETTEN_ANFANG;
+/**
+ * Prüft eine Kette in ID-Reihenfolge; liefert die erste fehlerhafte Position oder null. `anfang` ist nach einem
+ * Löschlauf (Frist 3 Jahre, D-04) der Hash des zuletzt gelöschten Eintrags, sonst „0“ × 64.
+ */
+export function pruefeKette(
+  zeilen: readonly (ProtokollInhalt & { vorgaengerHash: string; hash: string })[],
+  anfang: string = KETTEN_ANFANG,
+): number | null {
+  let vorher = anfang;
   for (let i = 0; i < zeilen.length; i++) {
     const z = zeilen[i];
     if (z.vorgaengerHash !== vorher || kettenHash(z.vorgaengerHash, z) !== z.hash) return i;

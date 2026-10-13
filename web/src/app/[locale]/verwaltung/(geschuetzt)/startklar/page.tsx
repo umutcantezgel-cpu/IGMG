@@ -12,8 +12,8 @@ import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { fuehreStartklarAus, type Bereich, type Pruefung } from '@/lib/startklar/pruefungen';
 import { cn } from '@/lib/utils';
 
-/** Reihenfolge der Bereiche auf der Seite (Umgebung bis E-Mail). */
-const BEREICHE = ['umgebung', 'auslieferung', 'datenbank', 'inhalte', 'recht', 'mail'] as const satisfies readonly Bereich[];
+/** Reihenfolge der Bereiche auf der Seite (Umgebung bis E-Mail, dazu die Gemeinde-Plattform). */
+const BEREICHE = ['umgebung', 'auslieferung', 'datenbank', 'inhalte', 'recht', 'gemeinde', 'mail'] as const satisfies readonly Bereich[];
 /** Reihenfolge der offenen Punkte: Fehler zuerst, erledigte am Ende. */
 const RANG: Record<PruefStatus, number> = { fehler: 0, warnung: 1, manuell: 2, hinweis: 3, ok: 4 };
 const STATUS_REIHE = ['fehler', 'warnung', 'manuell', 'hinweis', 'ok'] as const satisfies readonly PruefStatus[];

@@ -1,6 +1,7 @@
 import 'server-only';
 import { and, asc, count, desc, eq, gt, gte, inArray, isNull, lt, lte, sql } from 'drizzle-orm';
 import { db, schema, type Transaktion } from '@/lib/db';
+import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { uhrzeitBerlin, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { entschluessele, verschluessele } from '@/lib/krypto';
 import { darfInGruppe, type GruppenAktion, type GruppenKontext } from '@/lib/rechte/gruppen';
@@ -107,7 +108,7 @@ export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jet
       : Promise.resolve([]),
     istLernende && kontext.eigeneLernendeId
       ? db
-          .select({ id: schema.kontoEinwilligung.id })
+          .select({ erteiltVon: schema.kontoEinwilligung.erteiltVon })
           .from(schema.kontoEinwilligung)
           .where(
             and(
@@ -121,6 +122,8 @@ export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jet
   ]);
   const heute = berlinerDatum(jetzt);
   const sechzehnAm = lernende[0]?.sechzehnAm ?? null;
+  // D-11: bis 16 (und 30 Tage danach) zählt die Einwilligung der Eltern, danach nur die eigene
+  const lage = einwilligungsLage(sechzehnAm, heute);
   return schreibGrund({
     darfLesen,
     darfSchreibenRecht: darfInGruppe(kontext, schreibAktion(kanal.art), kanal.gruppeId),
@@ -135,9 +138,9 @@ export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jet
     stummBis: stumm[0]?.bis ?? null,
     jetzt,
     istLernende,
-    // Ohne bekanntes Datum gilt das Kind als unter 16 (vorsichtig)
-    unter16: sechzehnAm === null || sechzehnAm > heute,
-    einwilligungGruppenchat: einwilligung.length > 0,
+    // Einwilligung nötig: vor 16 die der Eltern, nach dem Übergang die eigene (ohne Datum vorsichtig „unter 16“)
+    unter16: true,
+    einwilligungGruppenchat: einwilligungGilt(lage, einwilligung, kontext.benutzerId),
     alter: sechzehnAm ? alterAus(sechzehnAm, heute) : null,
     mindestalter: kanal.mindestalter,
     regelnBestaetigt: regeln.length > 0,

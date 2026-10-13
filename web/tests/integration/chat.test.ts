@@ -37,6 +37,12 @@ async function lernende(benutzerId: string | null, sechzehnAm: string): Promise<
   return z.id;
 }
 
+/** Datum in Berlin, verschoben um Tage (für den Übergang nach dem 16. Geburtstag). */
+function berlinerHeute(tage: number): string {
+  const d = new Date(Date.now() + tage * 86_400_000);
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin' }).format(d);
+}
+
 let gruppeId: string;
 let kanal: { gruppe: string; eltern: string };
 const ids = {} as Record<'hoca1' | 'hoca2' | 'kind' | 'kind2' | 'eltern' | 'fremd', string>;
@@ -137,6 +143,24 @@ describe('Kinder: Einwilligung, Alter, Regeln, Zeiten (S-03…S-06, S-13, S-15)'
     await db
       .insert(schema.kontoEinwilligung)
       .values({ lernendeId: lern.kind, art: 'gruppenchat', textVersion: 'v1', erteiltVon: ids.eltern });
+  });
+
+  it('D-11: ab 16 und nach 30 Tagen Übergang zählt nur die eigene Einwilligung', async () => {
+    await db.update(schema.lernende).set({ sechzehnAm: '2026-01-01' }).where(eq(schema.lernende.id, lern.kind));
+    expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('einwilligungFehlt');
+    const [eigene] = await db
+      .insert(schema.kontoEinwilligung)
+      .values({ lernendeId: lern.kind, art: 'gruppenchat', textVersion: 'v1', erteiltVon: ids.kind })
+      .returning({ id: schema.kontoEinwilligung.id });
+    expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('ok');
+    await db.delete(schema.kontoEinwilligung).where(eq(schema.kontoEinwilligung.id, eigene.id));
+    // Im Übergang (weniger als 30 Tage nach dem 16. Geburtstag) gilt die Elterneinwilligung noch
+    await db
+      .update(schema.lernende)
+      .set({ sechzehnAm: berlinerHeute(-10) })
+      .where(eq(schema.lernende.id, lern.kind));
+    expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('ok');
+    await db.update(schema.lernende).set({ sechzehnAm: '2030-03-01' }).where(eq(schema.lernende.id, lern.kind));
   });
 
   it('S-15: ohne bestätigte Regeln kein Schreiben', async () => {

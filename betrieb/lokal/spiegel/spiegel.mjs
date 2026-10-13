@@ -1,11 +1,16 @@
 // Medienspiegel: lädt alle Blob-Dateien, die lokal fehlen oder sich geändert haben, nach /daten (täglich 01:37).
-// Dateien werden nie gelöscht (ein versehentliches Löschen in Vercel bleibt so wiederherstellbar). Meldung ans Cockpit.
+// Löschabgleich (DSFA D-06, Löschkonzept L-32): Fehlt eine Datei in Vercel Blob, bekommt sie im Spiegel eine Marke
+// `<datei>.geloescht` mit dem Datum; nach 30 Tagen werden Datei, Prüfsumme und Marke entfernt. Bis dahin bleibt ein
+// versehentliches Löschen wiederherstellbar. Taucht die Datei wieder auf, fällt die Marke weg. Meldung ans Cockpit.
 import { createHash } from 'node:crypto';
-import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { list } from '@vercel/blob';
 
-const ZIEL = '/daten';
+const ZIEL = process.env.SPIEGEL_ZIEL ?? '/daten';
+const FRIST_TAGE = Number(process.env.SPIEGEL_LOESCHFRIST_TAGE ?? 30);
+const TAG_MS = 24 * 60 * 60 * 1000;
+const lokalerPfad = (pathname) => join(ZIEL, pathname.replace(/\.\.+/g, '_'));
 const melden = (ok, bytes) =>
   fetch(`${process.env.APP_URL}/api/wartung/lokal-meldung`, {
     method: 'POST',
@@ -17,10 +22,13 @@ async function lauf() {
   let cursor;
   let neu = 0;
   let bytes = 0;
+  const inBlob = new Set();
   do {
     const seite = await list({ cursor, limit: 1000 });
     for (const b of seite.blobs) {
-      const pfad = join(ZIEL, b.pathname.replace(/\.\.+/g, '_'));
+      const pfad = lokalerPfad(b.pathname);
+      inBlob.add(pfad);
+      await rm(`${pfad}.geloescht`, { force: true });
       const vorhanden = await stat(pfad).catch(() => null);
       if (vorhanden && vorhanden.size === b.size) continue;
       const antwort = await fetch(b.downloadUrl);
@@ -34,13 +42,44 @@ async function lauf() {
     }
     cursor = seite.cursor;
   } while (cursor);
-  console.log(`${new Date().toISOString()} Spiegel: ${neu} neue Dateien, ${bytes} Bytes`);
+  const { markiert, entfernt } = await loeschAbgleich(inBlob);
+  console.log(`${new Date().toISOString()} Spiegel: ${neu} neue Dateien, ${bytes} Bytes; ${markiert} neu als gelöscht markiert, ${entfernt} nach ${FRIST_TAGE} Tagen entfernt`);
   await melden(true, bytes);
+}
+
+/** Dateien im Spiegel, die es in Blob nicht mehr gibt: markieren, nach Ablauf der Frist entfernen. */
+async function loeschAbgleich(inBlob, jetzt = Date.now()) {
+  const lokal = (await readdir(ZIEL, { recursive: true }).catch(() => [])).filter(
+    (d) => !d.endsWith('.sha256') && !d.endsWith('.geloescht'),
+  );
+  let markiert = 0;
+  let entfernt = 0;
+  // Schutz: Eine leere Blob-Liste bei vollem Spiegel ist eher ein Zugangsfehler als eine Massenlöschung
+  if (inBlob.size === 0 && lokal.length > 0) {
+    console.error('Spiegel: Blob-Liste leer, Löschabgleich ausgesetzt');
+    return { markiert, entfernt };
+  }
+  for (const d of lokal) {
+    const pfad = join(ZIEL, d);
+    const info = await stat(pfad).catch(() => null);
+    if (!info?.isFile() || inBlob.has(pfad)) continue;
+    const marke = `${pfad}.geloescht`;
+    const seit = Date.parse((await readFile(marke, 'utf8').catch(() => '')).trim());
+    if (Number.isNaN(seit)) {
+      await writeFile(marke, new Date(jetzt).toISOString());
+      markiert++;
+    } else if (jetzt - seit >= FRIST_TAGE * TAG_MS) {
+      await rm(pfad, { force: true });
+      await rm(`${pfad}.sha256`, { force: true });
+      await rm(marke, { force: true });
+      entfernt++;
+    }
+  }
+  return { markiert, entfernt };
 }
 
 async function pruefe() {
   // Stichprobe: Prüfsummen vorhandener Dateien (Bitfäule auf dem Datenträger)
-  const { readdir } = await import('node:fs/promises');
   const dateien = (await readdir(ZIEL, { recursive: true })).filter((d) => d.endsWith('.sha256')).slice(0, 50);
   for (const d of dateien) {
     const soll = (await readFile(join(ZIEL, d), 'utf8')).trim();
@@ -49,7 +88,9 @@ async function pruefe() {
   }
 }
 
-for (;;) {
+// Als Modul (Probe des Löschabgleichs) ohne Endlosschleife
+export { loeschAbgleich };
+if (!process.env.SPIEGEL_NUR_MODUL) for (;;) {
   const jetzt = new Date();
   if (jetzt.getHours() === 1 && jetzt.getMinutes() === 37) {
     await lauf().catch(async (e) => {

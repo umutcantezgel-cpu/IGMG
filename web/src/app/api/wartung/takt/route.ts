@@ -2,16 +2,19 @@ import { connection } from 'next/server';
 import { funktionAn } from '@/lib/funktionen';
 import { fuehreTaktAus } from '@/lib/push/abo';
 import { vapidAusUmgebung } from '@/lib/push/vapid';
+import { meldeTakt } from '@/lib/wartung/lokal';
 import { mitSperre } from '@/lib/wartung/sperre';
 import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
 
 /**
  * Minutentakt (ADR 0034, MN-18): fällige Gebetserinnerungen senden. Aufruf jede Minute vom lokalen Server
  * (`POST`, `Authorization: Bearer <WARTUNG_TOKEN>`) oder – nach Entscheidung – von Vercel Cron (`GET`, CRON_SECRET).
- * Idempotent (Einmal-Schlüssel je Abo, Tag und Gebet); die Sperre verhindert parallele Läufe.
+ * Idempotent (Einmal-Schlüssel je Abo, Tag und Gebet); die Sperre verhindert parallele Läufe. Jeder berechtigte Aufruf
+ * hinterlässt ein Lebenszeichen für das Startklar-Cockpit (Takt läuft), auch wenn Push aus ist.
  */
 async function laufe(): Promise<Response> {
   const kopf = { 'Cache-Control': 'no-store' };
+  await meldeTakt();
   const vapid = vapidAusUmgebung();
   if (!vapid || !(await funktionAn('push')) || !(await funktionAn('push_gebet'))) return Response.json({ aus: true }, { headers: kopf });
   const lauf = await mitSperre('takt', () => fuehreTaktAus(vapid));

@@ -17,6 +17,7 @@ export type ModulSchluessel =
   | 'eingaenge'
   | 'postfach'
   | 'tickets'
+  | 'kinderschutz'
   | 'medien'
   | 'benutzer'
   | 'audit'
@@ -39,7 +40,7 @@ export type Modul = {
  * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
  * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
  */
-export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets'] as const;
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
@@ -112,6 +113,15 @@ export const MODULE: readonly Modul[] = [
     pfad: '/verwaltung/tickets',
     recht: ['ticket.lesen', 'ticket.anlegen'],
     icon: 'tickets',
+    gebaut: true,
+    gruppe: 'kommunikation',
+  },
+  // Kinderschutz (S-08, S-11): nur Rolle kinderschutz – nie über „Administration darf alles“ (ADR 0026)
+  {
+    schluessel: 'kinderschutz',
+    pfad: '/verwaltung/kinderschutz',
+    recht: 'meldung.chat.lesen',
+    icon: 'kinderschutz',
     gebaut: true,
     gruppe: 'kommunikation',
   },

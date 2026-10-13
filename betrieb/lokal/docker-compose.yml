@@ -27,7 +27,7 @@ services:
     volumes:
       - ./sicherung:/sicherung:ro
       - sicherungen:/daten
-      - ./schluessel:/schluessel:ro
+      # Kein privater Schlüssel auf diesem Server (DSFA D-08): die Probe entschlüsselt nicht
 
   medien-spiegel:
     <<: *standard
