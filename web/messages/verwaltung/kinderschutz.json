@@ -1,0 +1,125 @@
+{
+  "kinderschutz": {
+    "titel": "Meldungen & Kinderschutz",
+    "kennung": "Kinderschutz",
+    "einleitung": "Meldungen aus den Gruppenchats, die Notfall-Pause und das unveränderliche Moderationsprotokoll. Chat-Inhalte sehen Sie nur im gesicherten Kontext einer Meldung – jede Einsicht wird protokolliert.",
+    "lage": {
+      "titel": "Lage",
+      "offen": "{anzahl, plural, =0 {Keine offene Meldung} one {# offene Meldung} other {# offene Meldungen}}",
+      "inBearbeitung": "{anzahl, plural, =0 {keine in Bearbeitung} one {# in Bearbeitung} other {# in Bearbeitung}}",
+      "ketteIntakt": "Moderationsprotokoll unverändert ({anzahl, plural, one {# Eintrag} other {# Einträge}})",
+      "ketteGebrochen": "Das Moderationsprotokoll wurde verändert. Bitte sofort den Vorstand informieren."
+    },
+    "notfall": {
+      "titel": "Notfall-Pause aller Chats",
+      "an": "Die Notfall-Pause ist eingeschaltet: Alle Gruppen- und Elternkanäle sind gesperrt.",
+      "aus": "Alle Chats laufen normal. Die Notfall-Pause sperrt sofort jeden Kanal, bis sie aufgehoben wird.",
+      "einschalten": "Notfall-Pause einschalten",
+      "aufheben": "Notfall-Pause aufheben",
+      "keinRecht": "Die Notfall-Pause darf nur die Rolle Kinderschutz schalten."
+    },
+    "liste": {
+      "titel": "Meldungen",
+      "beschriftung": "Meldungen aus den Chats",
+      "leer": "Keine Meldungen in dieser Ansicht.",
+      "filter": "Anzeigen",
+      "filterOffen": "Offen und in Bearbeitung",
+      "filterAlle": "Alle",
+      "filterErledigt": "Erledigt",
+      "filterAnwenden": "Anzeigen",
+      "ansehen": "Meldung vom {datum} ansehen"
+    },
+    "spalte": {
+      "eingang": "Eingang",
+      "grund": "Grund",
+      "kanal": "Kanal",
+      "status": "Status",
+      "aktion": "Aktion"
+    },
+    "grundArt": {
+      "beleidigung": "Beleidigung",
+      "bedrohung": "Bedrohung",
+      "unangemessen": "Unangemessener Inhalt",
+      "spam": "Spam",
+      "sonstiges": "Sonstiges"
+    },
+    "status": {
+      "offen": "Offen",
+      "in_bearbeitung": "In Bearbeitung",
+      "erledigt": "Erledigt"
+    },
+    "kanalArt": {
+      "gruppe": "Gruppenkanal",
+      "eltern": "Elternkanal",
+      "ohne": "Kanal entfernt"
+    },
+    "detail": {
+      "zurueck": "Alle Meldungen",
+      "titel": "Meldung vom {datum}",
+      "angaben": "Angaben",
+      "eingang": "Eingegangen",
+      "bearbeitet": "Zuletzt bearbeitet",
+      "bearbeitetVon": "{datum} von {name}",
+      "nieBearbeitet": "noch nicht",
+      "kanal": "Kanal",
+      "kanalPausiert": "pausiert",
+      "kontextTitel": "Kontext der Meldung",
+      "statusTitel": "Status ändern",
+      "kanalTitel": "Kanal",
+      "nichtGefunden": "Diese Meldung gibt es nicht mehr."
+    },
+    "kontext": {
+      "hinweis": "Der Kontext zeigt die gemeldete Nachricht mit bis zu zehn Nachrichten davor und danach. Die Einsicht wird mit Ihrem Namen im Moderationsprotokoll vermerkt.",
+      "anzeigen": "Kontext anzeigen",
+      "liste": "Nachrichten im Kontext der Meldung",
+      "freitext": "Angabe der meldenden Person",
+      "gemeldet": "gemeldet",
+      "unbekannt": "Konto gelöscht"
+    },
+    "aktion": {
+      "status": "Neuer Status",
+      "statusKnopf": "Status speichern",
+      "pausieren": "Kanal pausieren",
+      "fortsetzen": "Kanal fortsetzen",
+      "entfernen": "Nachricht entfernen",
+      "entfernenKnopf": "Nachricht endgültig entfernen"
+    },
+    "protokoll": {
+      "titel": "Moderationsprotokoll",
+      "link": "Moderationsprotokoll ansehen",
+      "einleitung": "Jede Moderation, jede Einsicht und jeder Löschlauf – unveränderlich und über eine Hash-Kette gesichert. Ohne Chat-Inhalte.",
+      "beschriftung": "Einträge des Moderationsprotokolls, neueste zuerst",
+      "leer": "Noch keine Einträge.",
+      "zeit": "Zeitpunkt",
+      "aktion": "Aktion",
+      "wer": "Person",
+      "wo": "Kanal",
+      "grund": "Grund",
+      "system": "System",
+      "begrenzt": "Angezeigt werden die neuesten {anzahl} Einträge."
+    },
+    "aktionArt": {
+      "entfernt": "Nachricht entfernt",
+      "stumm": "Stummgeschaltet",
+      "stumm_aufgehoben": "Stummschaltung aufgehoben",
+      "pausiert": "Kanal pausiert",
+      "fortgesetzt": "Kanal fortgesetzt",
+      "mitglied_entfernt": "Mitglied entfernt",
+      "meldung_bearbeitet": "Meldung bearbeitet",
+      "notfallpause": "Notfall-Pause eingeschaltet",
+      "notfallpause_aufgehoben": "Notfall-Pause aufgehoben",
+      "kontext_eingesehen": "Kontext eingesehen",
+      "loeschlauf": "Löschlauf"
+    },
+    "grund": "Grund",
+    "grundHinweis": "Pflichtangabe, 3 bis 300 Zeichen. Steht im Moderationsprotokoll – bitte keine Namen von Kindern.",
+    "laeuft": "Wird gespeichert …",
+    "gespeichert": "Gespeichert und im Moderationsprotokoll vermerkt.",
+    "fehler": {
+      "grundFehlt": "Bitte einen Grund mit mindestens drei Zeichen angeben.",
+      "keinRecht": "Für diese Handlung fehlt Ihnen das Recht der Rolle Kinderschutz.",
+      "nichtGefunden": "Die Meldung, der Kanal oder die Nachricht wurde nicht gefunden.",
+      "eingabe": "Die Angaben sind unvollständig. Bitte die Seite neu laden."
+    }
+  }
+}

@@ -22,6 +22,7 @@ import editor from './editor.json';
 import startklar from './startklar.json';
 import einstellungen from './einstellungen.json';
 import medienwahl from './medienwahl.json';
+import kinderschutz from './kinderschutz.json';
 
 type Teil = Record<string, unknown>;
 
@@ -44,4 +45,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   startklar,
   einstellungen,
   medienwahl,
+  kinderschutz,
 };
