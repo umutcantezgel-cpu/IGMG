@@ -1,15 +1,18 @@
 'use client';
 
 import {
+  Backpack,
   CalendarDays,
   ClipboardCheck,
   Clock,
   ExternalLink,
   FileText,
   GraduationCap,
+  IdCard,
   Image as Bild,
   Inbox,
   LayoutDashboard,
+  ListOrdered,
   Mail,
   Megaphone,
   Newspaper,
@@ -18,6 +21,7 @@ import {
   Settings,
   Ticket,
   Users,
+  UsersRound,
   type LucideIcon,
 } from 'lucide-react';
 import { useDeferredValue, useEffect, useRef } from 'react';
@@ -34,12 +38,16 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   ankuendigungen: Megaphone,
   seiteninhalte: FileText,
   kurse: GraduationCap,
+  gruppen: UsersRound,
+  lernende: Backpack,
+  lehrplan: ListOrdered,
   gebetszeiten: Clock,
   eingaenge: Inbox,
   postfach: Mail,
   tickets: Ticket,
   medien: Bild,
   benutzer: Users,
+  gemeindeKonten: IdCard,
   audit: ScrollText,
   styleguide: Palette,
   startklar: ClipboardCheck,

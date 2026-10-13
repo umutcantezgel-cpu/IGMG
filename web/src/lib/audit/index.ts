@@ -60,7 +60,22 @@ export type AuditAktion =
   | 'chat.gemeldet'
   | 'chat.meldung_bearbeitet'
   | 'chat.notfallpause'
-  | 'chat.notfallpause_aufgehoben';
+  | 'chat.notfallpause_aufgehoben'
+  // Verwaltung Lernen und Aufnahme (O-L01, H-L01…L05)
+  | 'gruppe.angelegt'
+  | 'gruppe.geaendert'
+  | 'gruppe.leitung'
+  | 'gruppe.mitglieder'
+  | 'gruppe.termine'
+  | 'lernende.aufgenommen'
+  | 'lernende.gelesen'
+  | 'lernende.geaendert'
+  | 'lehrplan.geaendert'
+  | 'gemeindekonto.gelesen'
+  | 'gemeindekonto.rollen_geaendert'
+  | 'gemeindekonto.gesperrt'
+  | 'gemeindekonto.entsperrt'
+  | 'gemeindekonto.geloescht';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

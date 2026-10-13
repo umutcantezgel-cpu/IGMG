@@ -5,6 +5,8 @@ import { getTranslations } from 'next-intl/server';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
+import { AufnahmeKarte } from '@/components/verwaltung/lernen/AufnahmeKarte';
+import { funktionAn } from '@/lib/funktionen';
 import { ABGESCHLOSSEN, bearbeitungsRecht, EINGANG_STATUS } from '@/lib/eingaenge/arten';
 import { datumKurz, datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -21,9 +23,9 @@ const zeitpunkt = (d: Date) => `${datumKurz(d, 'de')} ${lokaleTeile(d).jahr}, ${
  * Verwaltung › Eingang (C08, Blatt V08): entschlüsselte Angaben – jeder Abruf steht im Audit-Log (G-07) –,
  * Einwilligungen mit Zeitpunkt und Textfassung, Status, interne Notizen, Export und endgültiges Löschen.
  */
-export default async function EingangDetail({ params }: PageProps<'/[locale]/verwaltung/eingaenge/[id]'>) {
+export default async function EingangDetail({ params, searchParams }: PageProps<'/[locale]/verwaltung/eingaenge/[id]'>) {
   const a = await verlangeSeitenRecht('verwaltung.betreten');
-  const { id } = await params;
+  const [{ id }, sp] = await Promise.all([params, searchParams]);
   const d = await ladeEingangDetail(id, a);
   if (!d) notFound();
   const t = await getTranslations('verwaltung.eingaenge');
@@ -39,6 +41,9 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
   };
   const angaben = Object.entries(d.daten).filter(([k]) => k !== 'sprache');
   const tg = await getTranslations('verwaltung.shell');
+  // Aufnahme aus der Voranmeldung (O-L01): nur mit Bearbeitungsrecht, Recht „lernende.aufnehmen“ und Schalter
+  const aufnahme = d.art === 'voranmeldung' && bearbeiten && darf(a.rollen, 'lernende.aufnehmen') && (await funktionAn('lernplattform'));
+  const kontenAn = aufnahme ? await funktionAn('konten') : false;
   return (
     <>
       <NextLink href="/verwaltung/eingaenge" className="inline-flex min-h-12 items-center gap-2 self-start font-bold">
@@ -98,6 +103,16 @@ export default async function EingangDetail({ params }: PageProps<'/[locale]/ver
           </section>
         </div>
         <div className="flex flex-col gap-6">
+          {aufnahme ? (
+            <AufnahmeKarte
+              eingangId={d.id}
+              daten={d.daten}
+              meldung={typeof sp.aufnahme === 'string' ? sp.aufnahme : undefined}
+              einladungen={typeof sp.einladungen === 'string' ? sp.einladungen : undefined}
+              kontenAn={kontenAn}
+              lernendeSehen={darf(a.rollen, 'lernende.lesen')}
+            />
+          ) : null}
           {bearbeiten ? (
             <section aria-labelledby="eingang-status" className={karte}>
               <h2 id="eingang-status" className="text-24">

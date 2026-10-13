@@ -18,6 +18,7 @@ export async function ladeGueltigeEinladung(token: string) {
       name: schema.einladung.name,
       rollen: schema.einladung.rollen,
       gemeindeRollen: schema.einladung.gemeindeRollen,
+      lernendeId: schema.einladung.lernendeId,
       laeuftAb: schema.einladung.laeuftAb,
       erstelltVon: schema.einladung.erstelltVon,
     })
