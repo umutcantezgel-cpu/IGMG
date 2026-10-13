@@ -42,6 +42,7 @@ import hatim from './hatim.json';
 import spenden from './spenden.json';
 import newsletter from './newsletter.json';
 import chat from './chat.json';
+import chatFenster from './chat-fenster.json';
 import unterricht from './unterricht.json';
 import kinder from './kinder.json';
 type Teil = Record<string, unknown>;
@@ -86,6 +87,7 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   spenden,
   newsletter,
   chat,
+  'chat-fenster': chatFenster,
   unterricht,
   kinder,
 };

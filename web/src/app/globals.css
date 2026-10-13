@@ -115,6 +115,8 @@
   --container-seitenkopf: 55rem;
   /* Schmaler Hinweis-Dialog (680 px) */
   --container-dialog: 42.5rem;
+  /* Höhe des Nachrichtenverlaufs im Gruppenchat (Telefon: Tastatur bleibt sichtbar) */
+  --hoehe-chat: 60svh;
 
   /* Bewegung (Kern K-007): drei Kurven. Dauern und Ebenen stehen in :root (Tailwind kennt dafür keinen Namensraum). */
   --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* Zustandswechsel an Ort und Stelle */

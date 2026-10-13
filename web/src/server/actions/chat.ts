@@ -21,7 +21,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
-import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
+import { verlangeRecht } from '@/lib/rechte/pruefe';
 
 /**
  * Server Actions des Gruppenchats (S-01…S-18). Reihenfolge wie MUSTER §5: Konto/Recht zuerst, dann Eingabe prüfen,
@@ -132,5 +132,3 @@ export async function schalteNotfallpause(an: boolean, begruendung: string) {
   if (!fehler) await protokolliere({ benutzerId: a.benutzerId, aktion: an ? 'chat.notfallpause' : 'chat.notfallpause_aufgehoben' });
   return fehler ? { fehler } : { ok: true as const };
 }
-
-export { KeinRecht };

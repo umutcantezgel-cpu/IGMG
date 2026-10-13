@@ -152,6 +152,8 @@ export type ChatNachricht = {
   text: string | null;
   zeit: string;
   leitung: boolean;
+  /** Nur für die Gruppenleitung (Stummschalten): Konto-ID des Absenders. */
+  absender?: string;
 };
 
 export type AbrufErgebnis = {
@@ -192,8 +194,10 @@ export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext,
         .where(eq(schema.gruppenLeitung.gruppeId, kanal.gruppeId))
     ).map((z) => z.id),
   );
+  const fuerLeitung = kontext.leitung.has(kanal.gruppeId);
   return {
     nachrichten: zeilen.map((z) => ({
+      ...(fuerLeitung && z.absenderId ? { absender: z.absenderId } : {}),
       id: z.id,
       eigen: z.absenderId === kontext.benutzerId,
       name: chatName(z.anzeigename ?? z.name ?? ''),
