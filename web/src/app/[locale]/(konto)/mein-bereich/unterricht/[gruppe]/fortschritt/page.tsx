@@ -35,13 +35,18 @@ const UUID = /^[0-9a-f-]{36}$/i;
  * die Lehrkraft der Gruppe (nicht die Aufsicht, `fortschritt.erfassen`); sonst 404. Die Stufentitel stammen aus dem
  * Lehrplan der Verwaltung (Platzhalter, bis die Lehrkräfte sie benennen).
  */
-export default async function FortschrittSeite({ params, searchParams }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/fortschritt'>) {
+export default async function FortschrittSeite({
+  params,
+  searchParams,
+}: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/fortschritt'>) {
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);
   const [{ gruppe: gruppeId }, sp] = await Promise.all([params, searchParams]);
   if (!UUID.test(gruppeId)) notFound();
-  const kursart: KursartSchluessel = (KURSARTEN as readonly string[]).includes(String(sp.kursart)) ? (sp.kursart as KursartSchluessel) : 'elifbe';
+  const kursart: KursartSchluessel = (KURSARTEN as readonly string[]).includes(String(sp.kursart))
+    ? (sp.kursart as KursartSchluessel)
+    : 'elifbe';
   const heute = berlinerDatum(new Date());
   const kontext = await ladeGruppenKontext(k.benutzerId);
   const g = await gruppeFuerLeitung(gruppeId, kontext, heute);
@@ -61,7 +66,12 @@ export default async function FortschrittSeite({ params, searchParams }: PagePro
   const texte: FortschrittTexte = {
     lernende: tf('lernende'),
     stufe: t.raw('fortschritt.stufe') as string,
-    status: { offen: tf('status.offen'), begonnen: tf('status.begonnen'), sicher: tf('status.sicher'), abgeschlossen: tf('status.abgeschlossen') },
+    status: {
+      offen: tf('status.offen'),
+      begonnen: tf('status.begonnen'),
+      sicher: tf('status.sicher'),
+      abgeschlossen: tf('status.abgeschlossen'),
+    },
     zelleAria: t.raw('fortschritt.zelleAria') as string,
     gespeichert: t.raw('fortschritt.gespeichert') as string,
     fehler: tf('fehler'),
@@ -105,7 +115,9 @@ export default async function FortschrittSeite({ params, searchParams }: PagePro
                 aria-current={ka === kursart ? 'page' : undefined}
                 className={cn(
                   'inline-flex min-h-12 items-center rounded-pill border px-5 font-bold no-underline transition duration-(--dauer-rueckmeldung)',
-                  ka === kursart ? 'border-gruen-700 bg-gruen-700 text-weiss hover:text-weiss' : 'border-rand bg-weiss text-tinte hover:border-gruen-700 hover:text-gruen-800',
+                  ka === kursart
+                    ? 'border-gruen-700 bg-gruen-700 text-weiss hover:text-weiss'
+                    : 'border-rand bg-weiss text-tinte hover:border-gruen-700 hover:text-gruen-800',
                 )}
               >
                 {tf(`kursart.${ka}`)}

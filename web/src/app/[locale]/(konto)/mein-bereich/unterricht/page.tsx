@@ -49,7 +49,11 @@ export default async function UnterrichtSeite() {
 
   return (
     <MeinBereichRahmen konto={k} aktuell="unterricht" titel={t('titel')} untertitel={t('untertitel')} sprachZiel="/mein-bereich/unterricht">
-      <section id="heute" aria-labelledby="heute-titel" className="scroll-mt-6 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1">
+      <section
+        id="heute"
+        aria-labelledby="heute-titel"
+        className="scroll-mt-6 overflow-hidden rounded-lg border border-linie bg-weiss shadow-s1"
+      >
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 bg-gruen-950 px-5 py-4 md:px-7">
           <h2 id="heute-titel" className="flex items-center gap-2 text-24 text-weiss">
             <ClipboardCheck aria-hidden className="size-6 text-gruen-100" />

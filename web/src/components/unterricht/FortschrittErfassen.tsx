@@ -29,12 +29,29 @@ export function Fuellkreis({ status }: { status: 'offen' | FortschrittStatus }) 
   const y = 12 - 8 * Math.cos(winkel);
   return (
     <svg aria-hidden viewBox="0 0 24 24" className="size-6 shrink-0">
-      <circle cx="12" cy="12" r="9" fill="none" strokeWidth="2" className={a ? 'stroke-gruen-700' : 'stroke-rand'} strokeDasharray={a ? undefined : '2 3'} />
-      {a > 0 && a < 1 ? <path d={`M12 12V4A8 8 0 ${a > 0.5 ? 1 : 0} 1 ${x.toFixed(2)} ${y.toFixed(2)}Z`} className="fill-gruen-700" /> : null}
+      <circle
+        cx="12"
+        cy="12"
+        r="9"
+        fill="none"
+        strokeWidth="2"
+        className={a ? 'stroke-gruen-700' : 'stroke-rand'}
+        strokeDasharray={a ? undefined : '2 3'}
+      />
+      {a > 0 && a < 1 ? (
+        <path d={`M12 12V4A8 8 0 ${a > 0.5 ? 1 : 0} 1 ${x.toFixed(2)} ${y.toFixed(2)}Z`} className="fill-gruen-700" />
+      ) : null}
       {a === 1 ? (
         <>
           <circle cx="12" cy="12" r="9" className="fill-gruen-700" />
-          <path d="M8 12.5l2.8 2.8L16.5 9.5" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="stroke-weiss" />
+          <path
+            d="M8 12.5l2.8 2.8L16.5 9.5"
+            fill="none"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="stroke-weiss"
+          />
         </>
       ) : null}
     </svg>
@@ -70,7 +87,10 @@ export function FortschrittErfassen({
     setStand((alt) => ({ ...alt, [schluessel]: neu }));
     const r = await speichereFortschritt({ gruppeId, lernendeId: l.id, stufeId: s.id, status: neu }).catch(() => null);
     if (r?.ok && r.wert) {
-      setMeldung({ text: fuelle(texte.gespeichert, { name: l.name, stufe: fuelle(texte.stufe, { nr: s.nr }), status: name(neu) }), fehler: false });
+      setMeldung({
+        text: fuelle(texte.gespeichert, { name: l.name, stufe: fuelle(texte.stufe, { nr: s.nr }), status: name(neu) }),
+        fehler: false,
+      });
     } else {
       setStand((alt) => ({ ...alt, [schluessel]: vorher }));
       setMeldung({ text: texte.fehler, fehler: true });

@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, desc, eq, gte, inArray, isNull } from 'drizzle-orm';
+import { and, asc, desc, eq, gte, inArray } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { KIND_EINWILLIGUNGEN, type KindEinwilligung } from '@/lib/lernen/ansicht';
@@ -103,8 +103,13 @@ export async function einwilligungenDesKindes(lernendeId: string, kontext: Grupp
     .from(schema.kontoEinwilligung)
     .where(and(eq(schema.kontoEinwilligung.lernendeId, lernendeId), inArray(schema.kontoEinwilligung.art, [...KIND_EINWILLIGUNGEN])))
     .orderBy(desc(schema.kontoEinwilligung.erteiltAm));
+  // Eigene Einwilligungen des Kindes ab 16 (D-11) sind seine Sache – die Elternansicht zeigt nur die der Eltern
+  const [kind] = await db
+    .select({ benutzerId: schema.lernende.benutzerId })
+    .from(schema.lernende)
+    .where(eq(schema.lernende.id, lernendeId));
   return KIND_EINWILLIGUNGEN.map((art) => {
-    const eigene = zeilen.filter((z) => z.art === art);
+    const eigene = zeilen.filter((z) => z.art === art && (kind?.benutzerId == null || z.erteiltVon !== kind.benutzerId));
     const aktiv = eigene.find((z) => z.widerrufenAm === null);
     const letzte = eigene[0];
     return {
@@ -134,39 +139,13 @@ export async function kinderzugang(lernendeId: string, kontext: GruppenKontext):
 export async function kindKopf(lernendeId: string, kontext: GruppenKontext) {
   if (!kontext.kinder.has(lernendeId)) return null;
   const [k] = await db
-    .select({ id: schema.lernende.id, name: schema.lernende.anzeigename, status: schema.lernende.status })
+    .select({
+      id: schema.lernende.id,
+      name: schema.lernende.anzeigename,
+      status: schema.lernende.status,
+      sechzehnAm: schema.lernende.sechzehnAm,
+    })
     .from(schema.lernende)
     .where(eq(schema.lernende.id, lernendeId));
   return k ?? null;
-}
-
-/** Kurznamen der Gruppen-Lehrpläne (Elternansicht des Fortschritts): alle Stufen der Kursarten, in denen es Einträge gibt. */
-export async function stufenDerKursarten(kursarten: string[]) {
-  if (!kursarten.length) return [];
-  return db
-    .select({
-      id: schema.lehrplanStufe.id,
-      kursart: schema.lehrplanStufe.kursart,
-      reihenfolge: schema.lehrplanStufe.reihenfolge,
-      titel: schema.lehrplanStufe.titel,
-    })
-    .from(schema.lehrplanStufe)
-    .where(inArray(schema.lehrplanStufe.kursart, kursarten as (typeof schema.kursartEnum.enumValues)[number][]))
-    .orderBy(asc(schema.lehrplanStufe.kursart), asc(schema.lehrplanStufe.reihenfolge));
-}
-
-/** Aktive Einwilligung „push_kind“ für ein Kinderkonto? (gleich `kindDarfPush`, hier für die Elternansicht nicht nötig) */
-export async function hatAktiveEinwilligung(lernendeId: string, art: KindEinwilligung): Promise<boolean> {
-  const [z] = await db
-    .select({ id: schema.kontoEinwilligung.id })
-    .from(schema.kontoEinwilligung)
-    .where(
-      and(
-        eq(schema.kontoEinwilligung.lernendeId, lernendeId),
-        eq(schema.kontoEinwilligung.art, art),
-        isNull(schema.kontoEinwilligung.widerrufenAm),
-      ),
-    )
-    .limit(1);
-  return Boolean(z);
 }

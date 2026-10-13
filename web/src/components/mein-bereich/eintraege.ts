@@ -30,7 +30,13 @@ export const BEREICHE: readonly BereichEintrag[] = [
   { schluessel: 'kinder', ziel: '/mein-bereich/kinder', rollen: ['eltern'], gebaut: true, funktion: 'lernplattform' },
   { schluessel: 'unterricht', ziel: '/mein-bereich/unterricht', rollen: ['lehrkraft'], gebaut: true, funktion: 'lernplattform' },
   // Lernweg (B-24) steht auf der Startseite der Schüler
-  { schluessel: 'lernweg', ziel: { pathname: '/mein-bereich', hash: 'lernweg' }, rollen: ['schueler'], gebaut: true, funktion: 'lernplattform' },
+  {
+    schluessel: 'lernweg',
+    ziel: { pathname: '/mein-bereich', hash: 'lernweg' },
+    rollen: ['schueler'],
+    gebaut: true,
+    funktion: 'lernplattform',
+  },
   // Ziel je Konto (eigene Gruppe), siehe `bereicheFuer`
   { schluessel: 'gruppe', ziel: null, rollen: ['schueler'], gebaut: true, funktion: 'lernplattform' },
   { schluessel: 'lesezeichen', ziel: '/mein-bereich/lesezeichen', rollen: [], gebaut: true },

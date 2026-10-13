@@ -1,11 +1,15 @@
 'use server';
 
+import { eq } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { bearbeiteMeldung, entferneMitglied, entferneNachricht, ladeKanal, setzeKanalPause, stummschalten } from '@/lib/chat/dienst';
+import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
+import { sendeGruppenPush } from '@/lib/push/gruppe';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
 import { MASSNAHMEN } from '@/lib/lernen/ansicht';
 import { aendereTermin, KeinGruppenRecht } from '@/lib/lernen/dienst';
@@ -33,9 +37,12 @@ async function lehrkraftKontext(chat = false) {
 
 const ausfallSchema = z.object({ terminId: uuid, ausgefallen: z.enum(['1', '0']) });
 
-/** Termin ausfallen lassen oder wieder stattfinden lassen (Leitung der Gruppe); die Seite rendert neu. */
+/**
+ * Termin ausfallen lassen oder wieder stattfinden lassen (Leitung der Gruppe); die Seite rendert neu. Schüler und Eltern
+ * mit dem Thema „Unterricht“ bekommen danach einen Push ohne Inhalt (ADR 0034).
+ */
 export async function terminAusfallSetzen(fd: FormData): Promise<void> {
-  const { kontext } = await lehrkraftKontext();
+  const { konto, kontext } = await lehrkraftKontext();
   const p = ausfallSchema.safeParse({ terminId: fd.get('terminId'), ausgefallen: fd.get('ausgefallen') });
   if (!p.success) throw new KeinRecht();
   try {
@@ -44,6 +51,20 @@ export async function terminAusfallSetzen(fd: FormData): Promise<void> {
     if (e instanceof KeinGruppenRecht) throw new KeinRecht();
     throw e;
   }
+  const [t] = await db
+    .select({ gruppeId: schema.unterrichtstermin.gruppeId })
+    .from(schema.unterrichtstermin)
+    .where(eq(schema.unterrichtstermin.id, p.data.terminId));
+  if (t)
+    after(() =>
+      sendeGruppenPush(
+        t.gruppeId,
+        'unterricht',
+        { schueler: true, eltern: true },
+        `/mein-bereich/gruppen/${t.gruppeId}`,
+        konto.benutzerId,
+      ).catch(() => 0),
+    );
   refresh();
 }
 
@@ -86,7 +107,8 @@ export async function moderiereMeldung(fd: FormData): Promise<void> {
   let fehler: string | null = null;
   let ok: string = massnahme;
   if (massnahme === 'entfernen') {
-    fehler = meldung.nachrichtId && !meldung.nachrichtEntfernt ? await entferneNachricht(kontext, meldung.nachrichtId, grund) : 'nichtMoeglich';
+    fehler =
+      meldung.nachrichtId && !meldung.nachrichtEntfernt ? await entferneNachricht(kontext, meldung.nachrichtId, grund) : 'nichtMoeglich';
   } else if (massnahme === 'stumm30' || massnahme === 'stummTag') {
     const kanal = await ladeKanal(meldung.kanalId);
     fehler =
@@ -95,7 +117,9 @@ export async function moderiereMeldung(fd: FormData): Promise<void> {
         : 'nichtMoeglich';
     ok = 'stumm';
   } else if (massnahme === 'mitglied') {
-    fehler = meldung.absenderLernendeId ? await entferneMitglied(kontext, gruppeId.data, meldung.absenderLernendeId, grund) : 'nichtMoeglich';
+    fehler = meldung.absenderLernendeId
+      ? await entferneMitglied(kontext, gruppeId.data, meldung.absenderLernendeId, grund)
+      : 'nichtMoeglich';
   }
   if (fehler) zurueck({ fehler: fehler === 'grundFehlt' ? 'grund' : 'nichtMoeglich', meldung: meldung.id });
 
@@ -121,5 +145,11 @@ export async function kanalPauseSetzen(fd: FormData): Promise<void> {
   const kanal = await ladeKanal(p.data.kanalId);
   if (!kanal || kanal.gruppeId !== gruppeId.data) throw new KeinRecht();
   const fehler = await setzeKanalPause(kontext, kanal, p.data.pause === '1', p.data.grund);
-  redirect(moderationsZiel(gruppeId.data, sprache, fehler ? { fehler: 'nichtMoeglich' } : { ok: p.data.pause === '1' ? 'pausiert' : 'fortgesetzt' }));
+  redirect(
+    moderationsZiel(
+      gruppeId.data,
+      sprache,
+      fehler ? { fehler: 'nichtMoeglich' } : { ok: p.data.pause === '1' ? 'pausiert' : 'fortgesetzt' },
+    ),
+  );
 }

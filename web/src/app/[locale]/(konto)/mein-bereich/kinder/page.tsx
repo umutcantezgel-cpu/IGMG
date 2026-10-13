@@ -39,16 +39,26 @@ export default async function KinderSeite() {
         <ul className="grid gap-4 xl:grid-cols-2">
           {kinder.map((kind) => (
             <li key={kind.id} className="flex">
-              <article aria-labelledby={`kind-${kind.id}`} className="flex w-full flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6">
+              <article
+                aria-labelledby={`kind-${kind.id}`}
+                className="flex w-full flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6"
+              >
                 <div className="flex items-center gap-4">
-                  <span aria-hidden className="flex size-14 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-display text-24 text-weiss">
+                  <span
+                    aria-hidden
+                    className="flex size-14 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-display text-24 text-weiss"
+                  >
                     {Array.from(kind.name.trim())[0]?.toLocaleUpperCase(sprache) ?? ''}
                   </span>
                   <div className="flex min-w-0 flex-col gap-1">
                     <h2 id={`kind-${kind.id}`} className="text-24">
                       {kind.name}
                     </h2>
-                    {kind.status !== 'aktiv' ? <Pille ton="warnung" className="self-start">{t(`karte.status.${kind.status}`)}</Pille> : null}
+                    {kind.status !== 'aktiv' ? (
+                      <Pille ton="warnung" className="self-start">
+                        {t(`karte.status.${kind.status}`)}
+                      </Pille>
+                    ) : null}
                   </div>
                 </div>
                 <dl className="grid gap-3 sm:grid-cols-2">
@@ -66,7 +76,9 @@ export default async function KinderSeite() {
                     </dt>
                     <dd className="tabular-nums">
                       {kind.naechster
-                        ? [datumText(kind.naechster.datum, sprache, 'tag'), zeitspanne(kind.naechster.beginn, kind.naechster.ende)].filter(Boolean).join(', ')
+                        ? [datumText(kind.naechster.datum, sprache, 'tag'), zeitspanne(kind.naechster.beginn, kind.naechster.ende)]
+                            .filter(Boolean)
+                            .join(', ')
                         : t('karte.keinTermin')}
                     </dd>
                   </div>

@@ -1,6 +1,6 @@
 'use server';
 
-import { and, eq, isNull } from 'drizzle-orm';
+import { and, eq, isNull, ne, or } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
@@ -9,8 +9,10 @@ import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
+import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { KONTO_EINWILLIGUNG_VERSION, textVersion } from '@/lib/konto/einwilligung';
 import { legeKinderkontoAn } from '@/lib/konto/kinderkonto';
+import { einwilligungsLage } from '@/lib/konto/sechzehn';
 import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
 import { KIND_EINWILLIGUNGEN, type KindEinwilligung } from '@/lib/lernen/ansicht';
@@ -38,7 +40,11 @@ async function elternKontext() {
 /** Eltern-Kind-Bezug dieses Kontos: null ohne Bezug, sonst mit Sorgerecht und dem Konto des Kindes (falls vorhanden). */
 async function bezug(elternId: string, lernendeId: string) {
   const [b] = await db
-    .select({ sorgeberechtigt: schema.elternKind.sorgeberechtigt, kindBenutzerId: schema.lernende.benutzerId })
+    .select({
+      sorgeberechtigt: schema.elternKind.sorgeberechtigt,
+      kindBenutzerId: schema.lernende.benutzerId,
+      sechzehnAm: schema.lernende.sechzehnAm,
+    })
     .from(schema.elternKind)
     .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
     .where(and(eq(schema.elternKind.elternId, elternId), eq(schema.elternKind.lernendeId, lernendeId)));
@@ -82,6 +88,9 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
   const b = await bezug(konto.benutzerId, lernendeId);
   if (!b) throw new KeinRecht();
   if (!b.sorgeberechtigt) zurueck({ fehler: 'sorgerecht', art });
+  // D-11: Ab 16 (nach 30 Tagen Übergang) entscheidet das Kind über Chat und Push selbst – Eltern ändern dort nichts mehr
+  const selbstbestimmt = art === 'gruppenchat' || art === 'push_kind';
+  if (selbstbestimmt && einwilligungsLage(b.sechzehnAm, berlinerDatum(new Date())) === 'eigene') zurueck({ fehler: 'nurKind', art });
 
   if (aktion === 'erteilen') {
     if (!p.data.einvernehmen) zurueck({ fehler: 'einvernehmen', art });
@@ -124,13 +133,27 @@ export async function einwilligungAendern(fd: FormData): Promise<void> {
           eq(schema.kontoEinwilligung.lernendeId, lernendeId),
           eq(schema.kontoEinwilligung.art, art),
           isNull(schema.kontoEinwilligung.widerrufenAm),
+          // Eine eigene Einwilligung des Kindes (ab 16) nehmen die Eltern nicht zurück
+          b.kindBenutzerId
+            ? or(isNull(schema.kontoEinwilligung.erteiltVon), ne(schema.kontoEinwilligung.erteiltVon, b.kindBenutzerId))
+            : undefined,
         ),
       )
       .returning({ id: schema.kontoEinwilligung.id });
     if (!widerrufen.length) return;
     let zugangGeloescht = false;
     if (b.kindBenutzerId && art === 'push_kind') {
-      await tx.delete(schema.pushAbo).where(eq(schema.pushAbo.benutzerId, b.kindBenutzerId));
+      const [eigene] = await tx
+        .select({ id: schema.kontoEinwilligung.id })
+        .from(schema.kontoEinwilligung)
+        .where(
+          and(
+            eq(schema.kontoEinwilligung.lernendeId, lernendeId),
+            eq(schema.kontoEinwilligung.art, 'push_kind'),
+            isNull(schema.kontoEinwilligung.widerrufenAm),
+          ),
+        );
+      if (!eigene) await tx.delete(schema.pushAbo).where(eq(schema.pushAbo.benutzerId, b.kindBenutzerId));
     }
     if (b.kindBenutzerId && art === 'kinderkonto') {
       // Sitzungen, Rollen, Profil und Push-Abos hängen am Konto (Kaskade); der Lerndatensatz bleibt (set null)
@@ -160,7 +183,11 @@ const zugangSchema = z.object({ lernendeId: uuid, benutzername: z.string().max(6
 /** Kinderzugang anlegen (`legeKinderkontoAn`, prüft zusätzlich Bezug und Einwilligung „kinderkonto“ dieses Elternteils). */
 export async function kinderzugangAnlegen(_vorher: ZugangZustand, fd: FormData): Promise<ZugangZustand> {
   const { konto } = await elternKontext();
-  const p = zugangSchema.safeParse({ lernendeId: fd.get('lernendeId'), benutzername: fd.get('benutzername'), passwort: fd.get('passwort') });
+  const p = zugangSchema.safeParse({
+    lernendeId: fd.get('lernendeId'),
+    benutzername: fd.get('benutzername'),
+    passwort: fd.get('passwort'),
+  });
   if (!p.success) return { fehler: 'unbekannt' };
   const b = await bezug(konto.benutzerId, p.data.lernendeId);
   if (!b || !b.sorgeberechtigt) return { fehler: 'keinElternteil' };
@@ -203,10 +230,7 @@ export async function kinderPasswortSetzen(_vorher: ZugangZustand, fd: FormData)
       .returning({ id: schema.account.id });
     if (!z.length) throw new KeinRecht();
     await tx.delete(schema.session).where(eq(schema.session.userId, kindId));
-    await protokolliere(
-      { benutzerId: konto.benutzerId, aktion: 'konto.kinderpasswort_gesetzt', zielTyp: 'benutzer', zielId: kindId },
-      tx,
-    );
+    await protokolliere({ benutzerId: konto.benutzerId, aktion: 'konto.kinderpasswort_gesetzt', zielTyp: 'benutzer', zielId: kindId }, tx);
   });
   return { ok: 'gesetzt', benutzername: kind.benutzername ?? undefined, zeit: Date.now() };
 }

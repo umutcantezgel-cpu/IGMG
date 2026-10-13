@@ -48,7 +48,10 @@ function moeglich(m: MeldungKurz): Massnahme[] {
  * (`?meldung=`), jede Einsicht wird protokolliert. Nur Gruppenleitung; nie Meldungen über eigene Nachrichten (D-02).
  * Funktioniert ohne JavaScript (Formulare mit Server Actions).
  */
-export default async function ModerationSeite({ params, searchParams }: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/moderation'>) {
+export default async function ModerationSeite({
+  params,
+  searchParams,
+}: PageProps<'/[locale]/mein-bereich/unterricht/[gruppe]/moderation'>) {
   if (!(await funktionAn('lernplattform')) || !(await funktionAn('chat'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['lehrkraft']);
@@ -144,7 +147,10 @@ export default async function ModerationSeite({ params, searchParams }: PageProp
                 <li
                   key={m.id}
                   id={`meldung-${m.id}`}
-                  className={cn('scroll-mt-6 rounded-lg border p-4 md:p-5', geoeffnet ? 'border-2 border-gruen-700 bg-weiss' : 'border-linie bg-papier')}
+                  className={cn(
+                    'scroll-mt-6 rounded-lg border p-4 md:p-5',
+                    geoeffnet ? 'border-2 border-gruen-700 bg-weiss' : 'border-linie bg-papier',
+                  )}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex min-w-0 flex-col gap-1">
@@ -186,7 +192,10 @@ export default async function ModerationSeite({ params, searchParams }: PageProp
                             {kontextDaten.kontext.map((n) => (
                               <li
                                 key={n.id}
-                                className={cn('flex flex-col gap-0.5 rounded-md px-3 py-2', n.gemeldet ? 'border-2 border-warnung bg-warnung-toenung' : 'bg-weiss')}
+                                className={cn(
+                                  'flex flex-col gap-0.5 rounded-md px-3 py-2',
+                                  n.gemeldet ? 'border-2 border-warnung bg-warnung-toenung' : 'bg-weiss',
+                                )}
                               >
                                 <span className="flex flex-wrap items-center gap-2 text-16 text-tinte-2">
                                   <span className="font-bold text-tinte">{n.name}</span>
@@ -219,7 +228,14 @@ export default async function ModerationSeite({ params, searchParams }: PageProp
                               key={x}
                               className="flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-rand bg-weiss px-3 has-checked:border-gruen-700 has-checked:bg-gruen-50"
                             >
-                              <input type="radio" name="massnahme" value={x} defaultChecked={i === 0} required className="size-5 accent-gruen-700" />
+                              <input
+                                type="radio"
+                                name="massnahme"
+                                value={x}
+                                defaultChecked={i === 0}
+                                required
+                                className="size-5 accent-gruen-700"
+                              />
                               <span>{tm(`massnahme.${x}`)}</span>
                             </label>
                           ))}

@@ -1,4 +1,15 @@
-import { ArrowRight, CalendarDays, ClipboardCheck, History, type LucideIcon, MessagesSquare, ShieldCheck, TrendingUp, UserRound, Users } from 'lucide-react';
+import {
+  ArrowRight,
+  CalendarDays,
+  ClipboardCheck,
+  History,
+  type LucideIcon,
+  MessagesSquare,
+  ShieldCheck,
+  TrendingUp,
+  UserRound,
+  Users,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -40,7 +51,11 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
   if (!UUID.test(gruppeId)) notFound();
   const heute = berlinerDatum(new Date());
   const kontext = await ladeGruppenKontext(k.benutzerId);
-  const [g, chatAn, t] = await Promise.all([gruppeFuerLeitung(gruppeId, kontext, heute), funktionAn('chat'), getTranslations('unterricht')]);
+  const [g, chatAn, t] = await Promise.all([
+    gruppeFuerLeitung(gruppeId, kontext, heute),
+    funktionAn('chat'),
+    getTranslations('unterricht'),
+  ]);
   if (!g) notFound();
   const name = text(g.name, sprache);
   const tg = (s: string, w?: Record<string, string | number>) => t(`gruppe.${s}`, w);
@@ -176,7 +191,11 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
                   <span className="flex min-w-0 flex-1 flex-col gap-0.5">
                     <span className="text-18 font-bold">{titel}</span>
                     <span className="text-16 text-pretty text-tinte-2">{beschreibung}</span>
-                    {zusatz ? <Pille ton="warnung" className="mt-1 self-start">{zusatz}</Pille> : null}
+                    {zusatz ? (
+                      <Pille ton="warnung" className="mt-1 self-start">
+                        {zusatz}
+                      </Pille>
+                    ) : null}
                   </span>
                   <ArrowRight
                     aria-hidden

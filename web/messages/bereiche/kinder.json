@@ -1,7 +1,10 @@
 {
   "de": {
     "kinder": {
-      "meta": { "uebersicht": "Meine Kinder", "kind": "Kind" },
+      "meta": {
+        "uebersicht": "Meine Kinder",
+        "kind": "Kind"
+      },
       "titel": "Meine Kinder",
       "untertitel": "Termine, Anwesenheit und Fortschritt Ihrer Kinder.",
       "leer": {
@@ -19,7 +22,11 @@
         "zugangNein": "noch nicht eingerichtet",
         "oeffnen": "Ansehen",
         "oeffnenAria": "Ansehen: {name}",
-        "status": { "aktiv": "nimmt teil", "pausiert": "Teilnahme ruht", "beendet": "Teilnahme beendet" }
+        "status": {
+          "aktiv": "nimmt teil",
+          "pausiert": "Teilnahme ruht",
+          "beendet": "Teilnahme beendet"
+        }
       },
       "detail": {
         "zurueck": "Alle Kinder",
@@ -156,7 +163,12 @@
         "chatOeffnen": "Elternkanal öffnen",
         "chatOeffnenAria": "Elternkanal öffnen: {gruppe}",
         "gruppeOeffnen": "Gruppe ansehen",
-        "gruppeOeffnenAria": "Gruppe ansehen: {gruppe}"
+        "gruppeOeffnenAria": "Gruppe ansehen: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} ist 16 geworden. Ihre Einwilligungen für Gruppenchat und Benachrichtigungen gelten noch bis zum {datum}. Danach zählt nur noch die Zustimmung Ihres Kindes – es erteilt sie selbst in seinem Bereich.",
+          "eigene": "{name} ist 16 oder älter. Über Gruppenchat und Benachrichtigungen entscheidet Ihr Kind seit dem {datum} selbst; Ihre Einwilligung zählt dafür nicht mehr.",
+          "nurKind": "Darüber entscheidet Ihr Kind jetzt selbst."
+        }
       }
     },
     "lernweg": {
@@ -187,12 +199,43 @@
       "keinTermin": "Gerade ist kein Termin geplant.",
       "gruppeOeffnen": "Zu meiner Gruppe",
       "chatOeffnen": "Zum Gruppenchat",
-      "keineGruppe": "Du bist noch in keiner Gruppe."
+      "keineGruppe": "Du bist noch in keiner Gruppe.",
+      "einwilligungen": {
+        "titel": "Meine Einwilligungen",
+        "text": "Du bist 16 oder älter. Ob du den Gruppenchat nutzt und Benachrichtigungen bekommst, entscheidest du jetzt selbst.",
+        "uebergang": "Ab dem {datum} brauchst du deine eigene Zustimmung. Bis dahin gilt noch die Zustimmung deiner Eltern.",
+        "eigene": "Seit dem {datum} zählt nur noch deine eigene Zustimmung.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Gruppenchat",
+            "text": "Ich möchte den moderierten Gruppenchat meiner Lerngruppe nutzen. Meine Nachrichten werden verschlüsselt gespeichert und nach spätestens 90 Tagen gelöscht; die Lehrkräfte lesen mit. Ich kann meine Zustimmung jederzeit hier zurücknehmen – dann sehe ich den Chat sofort nicht mehr."
+          },
+          "push_kind": {
+            "titel": "Benachrichtigungen",
+            "text": "Ich möchte auf meinem Gerät Benachrichtigungen der Moschee einschalten können, zum Beispiel zu Gebetszeiten oder Neuem aus meiner Gruppe. Sie enthalten keine Namen und keine Nachrichteninhalte. Ich kann meine Zustimmung jederzeit hier zurücknehmen – dann enden die Benachrichtigungen sofort."
+          }
+        },
+        "gilt": "gilt",
+        "giltNicht": "gilt nicht",
+        "durchDich": "Von dir erteilt am {datum}.",
+        "durchEltern": "Deine Eltern haben zugestimmt – das gilt bis zum {datum}.",
+        "erteilen": "Zustimmen",
+        "erteilenAria": "Zustimmen: {titel}",
+        "widerrufen": "Zurücknehmen",
+        "widerrufenAria": "Zurücknehmen: {titel}",
+        "ok": {
+          "erteilt": "Danke, deine Zustimmung ist gespeichert.",
+          "widerrufen": "Deine Zustimmung ist zurückgenommen. Das gilt ab sofort."
+        }
+      }
     }
   },
   "tr": {
     "kinder": {
-      "meta": { "uebersicht": "Çocuklarım", "kind": "Çocuk" },
+      "meta": {
+        "uebersicht": "Çocuklarım",
+        "kind": "Çocuk"
+      },
       "titel": "Çocuklarım",
       "untertitel": "Çocuklarınızın ders günleri, devamı ve ilerlemesi.",
       "leer": {
@@ -210,7 +253,11 @@
         "zugangNein": "henüz kurulmadı",
         "oeffnen": "Görüntüle",
         "oeffnenAria": "Görüntüle: {name}",
-        "status": { "aktiv": "derslere katılıyor", "pausiert": "katılım askıda", "beendet": "katılım sona erdi" }
+        "status": {
+          "aktiv": "derslere katılıyor",
+          "pausiert": "katılım askıda",
+          "beendet": "katılım sona erdi"
+        }
       },
       "detail": {
         "zurueck": "Tüm çocuklar",
@@ -347,7 +394,12 @@
         "chatOeffnen": "Veli kanalını aç",
         "chatOeffnenAria": "Veli kanalını aç: {gruppe}",
         "gruppeOeffnen": "Grubu gör",
-        "gruppeOeffnenAria": "Grubu gör: {gruppe}"
+        "gruppeOeffnenAria": "Grubu gör: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} 16 yaşına girdi. Grup sohbeti ve bildirimler için verdiğiniz onaylar {datum} tarihine kadar geçerli. Ondan sonra yalnızca çocuğunuzun onayı geçerli olur – çocuğunuz onu kendi alanında verir.",
+          "eigene": "{name} 16 yaşında veya daha büyük. Grup sohbeti ve bildirimler hakkında çocuğunuz {datum} tarihinden beri kendisi karar veriyor; bunun için sizin onayınız artık geçerli değil.",
+          "nurKind": "Buna artık çocuğunuz kendisi karar veriyor."
+        }
       }
     },
     "lernweg": {
@@ -378,12 +430,43 @@
       "keinTermin": "Şu an planlanmış ders yok.",
       "gruppeOeffnen": "Grubuma git",
       "chatOeffnen": "Grup sohbetine git",
-      "keineGruppe": "Henüz bir grupta değilsin."
+      "keineGruppe": "Henüz bir grupta değilsin.",
+      "einwilligungen": {
+        "titel": "Onaylarım",
+        "text": "16 yaşında veya daha büyüksün. Grup sohbetini kullanıp kullanmayacağına ve bildirim alıp almayacağına artık kendin karar veriyorsun.",
+        "uebergang": "{datum} tarihinden itibaren kendi onayın gerekiyor. O zamana kadar annenin veya babanın onayı geçerli.",
+        "eigene": "{datum} tarihinden beri yalnızca senin kendi onayın geçerli.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Grup sohbeti",
+            "text": "Öğrenim grubumun denetimli grup sohbetini kullanmak istiyorum. Mesajlarım şifreli saklanır ve en geç 90 gün sonra silinir; öğretmenler sohbeti okur. Onayımı istediğim zaman burada geri alabilirim – o zaman sohbeti hemen göremem."
+          },
+          "push_kind": {
+            "titel": "Bildirimler",
+            "text": "Cihazımda caminin bildirimlerini, örneğin namaz vakitleri veya grubumdan haberler için açabilmek istiyorum. Bildirimlerde isim ve mesaj içeriği bulunmaz. Onayımı istediğim zaman burada geri alabilirim – o zaman bildirimler hemen sona erer."
+          }
+        },
+        "gilt": "geçerli",
+        "giltNicht": "geçerli değil",
+        "durchDich": "{datum} tarihinde senin tarafından verildi.",
+        "durchEltern": "Annen veya baban onay verdi – bu {datum} tarihine kadar geçerli.",
+        "erteilen": "Onayla",
+        "erteilenAria": "Onayla: {titel}",
+        "widerrufen": "Geri al",
+        "widerrufenAria": "Geri al: {titel}",
+        "ok": {
+          "erteilt": "Teşekkürler, onayın kaydedildi.",
+          "widerrufen": "Onayın geri alındı. Bu, hemen geçerlidir."
+        }
+      }
     }
   },
   "en": {
     "kinder": {
-      "meta": { "uebersicht": "My children", "kind": "Child" },
+      "meta": {
+        "uebersicht": "My children",
+        "kind": "Child"
+      },
       "titel": "My children",
       "untertitel": "Your children's lessons, attendance and progress.",
       "leer": {
@@ -401,7 +484,11 @@
         "zugangNein": "not set up yet",
         "oeffnen": "View",
         "oeffnenAria": "View: {name}",
-        "status": { "aktiv": "taking part", "pausiert": "participation paused", "beendet": "participation ended" }
+        "status": {
+          "aktiv": "taking part",
+          "pausiert": "participation paused",
+          "beendet": "participation ended"
+        }
       },
       "detail": {
         "zurueck": "All children",
@@ -538,7 +625,12 @@
         "chatOeffnen": "Open parents' channel",
         "chatOeffnenAria": "Open parents' channel: {gruppe}",
         "gruppeOeffnen": "View group",
-        "gruppeOeffnenAria": "View group: {gruppe}"
+        "gruppeOeffnenAria": "View group: {gruppe}",
+        "sechzehn": {
+          "uebergang": "{name} has turned 16. Your consents for the group chat and notifications still apply until {datum}. After that only your child’s own consent counts – they give it themselves in their area.",
+          "eigene": "{name} is 16 or older. Since {datum} your child decides about the group chat and notifications themselves; your consent no longer counts for this.",
+          "nurKind": "Your child now decides this themselves."
+        }
       }
     },
     "lernweg": {
@@ -569,7 +661,35 @@
       "keinTermin": "No lesson is planned right now.",
       "gruppeOeffnen": "Go to my group",
       "chatOeffnen": "Go to the group chat",
-      "keineGruppe": "You are not in a group yet."
+      "keineGruppe": "You are not in a group yet.",
+      "einwilligungen": {
+        "titel": "My consents",
+        "text": "You are 16 or older. You now decide yourself whether you use the group chat and get notifications.",
+        "uebergang": "From {datum} you need to give your own consent. Until then your parents’ consent still applies.",
+        "eigene": "Since {datum} only your own consent counts.",
+        "art": {
+          "gruppenchat": {
+            "titel": "Group chat",
+            "text": "I would like to use the moderated group chat of my learning group. My messages are stored encrypted and deleted after 90 days at the latest; the teachers read along. I can withdraw my consent here at any time – then I no longer see the chat, with immediate effect."
+          },
+          "push_kind": {
+            "titel": "Notifications",
+            "text": "I would like to be able to switch on the mosque’s notifications on my device, for example for prayer times or news from my group. They contain no names and no message content. I can withdraw my consent here at any time – then the notifications stop immediately."
+          }
+        },
+        "gilt": "valid",
+        "giltNicht": "not valid",
+        "durchDich": "Given by you on {datum}.",
+        "durchEltern": "Your parents have consented – this applies until {datum}.",
+        "erteilen": "Consent",
+        "erteilenAria": "Consent: {titel}",
+        "widerrufen": "Withdraw",
+        "widerrufenAria": "Withdraw: {titel}",
+        "ok": {
+          "erteilt": "Thank you, your consent has been saved.",
+          "widerrufen": "Your consent has been withdrawn, with immediate effect."
+        }
+      }
     }
   }
 }

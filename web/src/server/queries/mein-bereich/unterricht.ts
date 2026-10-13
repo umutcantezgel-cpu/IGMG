@@ -215,7 +215,15 @@ export async function terminDerGruppe(gruppeId: string, terminId: string) {
   return t ?? null;
 }
 
-export type HifzZeile = { id: string; name: string; sure: number; vonVers: number; bisVers: number; bewertung: number | null; datum: string };
+export type HifzZeile = {
+  id: string;
+  name: string;
+  sure: number;
+  vonVers: number;
+  bisVers: number;
+  bewertung: number | null;
+  datum: string;
+};
 
 /** Letzte Hifz-Einträge der Lernenden einer Gruppe (nur Lehrkraft der Gruppe). */
 export async function hifzDerGruppe(gruppeId: string, kontext: GruppenKontext, heute: string): Promise<HifzZeile[] | null> {

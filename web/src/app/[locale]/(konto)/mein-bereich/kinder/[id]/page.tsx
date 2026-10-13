@@ -16,14 +16,14 @@ import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text, waehle } from '@/lib/i18n/inhalt';
 import { verlangeMeinBereich } from '@/lib/konto/zugang';
-import { anwesenheitsZaehlung, datumText, KIND_EINWILLIGUNGEN, localeFuer, zeitspanne } from '@/lib/lernen/ansicht';
+import { anwesenheitsZaehlung, datumText, localeFuer, zeitspanne } from '@/lib/lernen/ansicht';
 import { lernendenUebersicht } from '@/lib/lernen/dienst';
 import { tagPlus } from '@/lib/lernen/termine';
 import { ladeGruppenKontext } from '@/lib/rechte/gemeinde';
 import { adresse } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { einwilligungAendern } from '@/server/actions/kinder';
-import { lernwegVon } from '@/server/queries/mein-bereich/gruppe';
+import { lageFuerEltern, lernwegVon } from '@/server/queries/mein-bereich/gruppe';
 import { einwilligungenDesKindes, kinderzugang, kindKopf } from '@/server/queries/mein-bereich/kinder';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
@@ -70,15 +70,23 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
   const danach = termine.filter((x) => x !== naechster).slice(0, 3);
   const gemeldet = [...new Map(uebersicht.fehlmeldungen.map((f) => [f.datum, f])).values()];
   const zaehlung = anwesenheitsZaehlung(uebersicht.anwesenheit.map((a) => a.status));
-  const datumZeit = (d: string, b: string | null, e: string | null) => [datumText(d, sprache, 'tag'), zeitspanne(b, e)].filter(Boolean).join(', ');
+  const datumZeit = (d: string, b: string | null, e: string | null) =>
+    [datumText(d, sprache, 'tag'), zeitspanne(b, e)].filter(Boolean).join(', ');
   const kinderkontoAktiv = einwilligungen.find((e) => e.art === 'kinderkonto')?.aktiv ?? false;
   const datumLang = new Intl.DateTimeFormat(localeFuer(sprache), { dateStyle: 'long', timeZone: 'Europe/Berlin' });
   const rueckmeldungArt = typeof sp.art === 'string' ? sp.art : null;
+  // D-11: ab 16 (nach 30 Tagen Übergang) entscheidet das Kind über Chat und Push selbst
+  const sechzehn = lageFuerEltern(kopf.sechzehnAm, heute);
 
   const fehlTexte: FehlmeldungTexte = {
     datum: t('fehlen.datum'),
     grund: t('fehlen.grund'),
-    gruende: { krank: t('fehlen.gruende.krank'), familie: t('fehlen.gruende.familie'), schule: t('fehlen.gruende.schule'), sonstiges: t('fehlen.gruende.sonstiges') },
+    gruende: {
+      krank: t('fehlen.gruende.krank'),
+      familie: t('fehlen.gruende.familie'),
+      schule: t('fehlen.gruende.schule'),
+      sonstiges: t('fehlen.gruende.sonstiges'),
+    },
     senden: t('fehlen.senden'),
     gesendet: t('fehlen.gesendet'),
     fehler: t('fehlen.fehler'),
@@ -99,10 +107,19 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
     angelegt: zt('angelegt'),
     gesetzt: zt('gesetzt'),
     fehler: Object.fromEntries(
-      ['kurz', 'lang', 'zeichen', 'vergeben', 'passwort', 'keinElternteil', 'keineEinwilligung', 'bereitsKonto', 'keinZugang', 'zuViele', 'unbekannt'].map((f) => [
-        f,
-        zt(`fehler.${f}`),
-      ]),
+      [
+        'kurz',
+        'lang',
+        'zeichen',
+        'vergeben',
+        'passwort',
+        'keinElternteil',
+        'keineEinwilligung',
+        'bereitsKonto',
+        'keinZugang',
+        'zuViele',
+        'unbekannt',
+      ].map((f) => [f, zt(`fehler.${f}`)]),
     ),
     karteTitel: zt('karteTitel'),
     karteText: zt('karteText'),
@@ -171,7 +188,13 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
               <p className="text-16 text-pretty text-tinte-2">{t('fehlenText')}</p>
             </div>
           </div>
-          <FehlmeldungFormular lernendeId={id} vorschlag={naechster?.datum ?? heute} min={heute} max={tagPlus(heute, 60)} texte={fehlTexte} />
+          <FehlmeldungFormular
+            lernendeId={id}
+            vorschlag={naechster?.datum ?? heute}
+            min={heute}
+            max={tagPlus(heute, 60)}
+            texte={fehlTexte}
+          />
           {gemeldet.length ? (
             <div className="flex flex-col gap-1.5 border-t border-linie pt-3">
               <p className="text-16 font-bold">{t('fehlen.gemeldetTitel')}</p>
@@ -191,9 +214,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
         <Abschnitt id="anwesenheit" Icon={ClipboardList} titel={t('anwesenheitTitel')}>
           {uebersicht.anwesenheit.length ? (
             <div className="flex flex-col gap-4">
-              <p className="max-w-text text-pretty">
-                {t('anwesenheitSatz', { gesamt: uebersicht.anwesenheit.length, ...zaehlung })}
-              </p>
+              <p className="max-w-text text-pretty">{t('anwesenheitSatz', { gesamt: uebersicht.anwesenheit.length, ...zaehlung })}</p>
               <ul className="flex flex-wrap gap-2">
                 {uebersicht.anwesenheit.slice(0, 12).map((a, i) => (
                   <li key={`${a.datum}-${i}`}>
@@ -236,7 +257,9 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
                   weg.weitere.length ? (
                     <ul className="flex flex-col gap-1 text-16 text-tinte-2">
                       {weg.weitere.map((w) => (
-                        <li key={w.kursart}>{t('fortschrittWeitere', { kursart: tu(`kursart.${w.kursart}`), erreicht: w.erreicht, gesamt: w.gesamt })}</li>
+                        <li key={w.kursart}>
+                          {t('fortschrittWeitere', { kursart: tu(`kursart.${w.kursart}`), erreicht: w.erreicht, gesamt: w.gesamt })}
+                        </li>
                       ))}
                     </ul>
                   ) : null
@@ -265,58 +288,79 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
         </Abschnitt>
 
         <Abschnitt id="einwilligungen" Icon={ShieldCheck} titel={t('einwilligungenTitel')} text={t('einwilligungenText')}>
+          {sechzehn.lage !== 'eltern' && sechzehn.ab ? (
+            <div className="mb-4">
+              <Meldung art="info">
+                {t(`sechzehn.${sechzehn.lage}`, { name: kopf.name, datum: datumText(sechzehn.ab, sprache, 'lang') })}
+              </Meldung>
+            </div>
+          ) : null}
           <ul className="grid gap-4 xl:grid-cols-2">
             {einwilligungen.map((e) => {
               const titel = t(`einwilligung.${e.art}.titel`);
               const hier = rueckmeldungArt === e.art;
               const zugangLoeschen = e.art === 'kinderkonto' && zugang !== null;
+              const nurKind = sechzehn.lage === 'eigene' && (e.art === 'gruppenchat' || e.art === 'push_kind');
               return (
                 <li key={e.art} id={`einwilligung-${e.art}`} className="flex scroll-mt-6">
                   <article
                     aria-labelledby={`einwilligung-${e.art}-titel`}
-                    className={cn('flex w-full flex-col gap-3 rounded-lg border p-4 md:p-5', e.aktiv ? 'border-gruen-700 bg-gruen-50' : 'border-linie bg-papier')}
+                    className={cn(
+                      'flex w-full flex-col gap-3 rounded-lg border p-4 md:p-5',
+                      e.aktiv ? 'border-gruen-700 bg-gruen-50' : 'border-linie bg-papier',
+                    )}
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <h3 id={`einwilligung-${e.art}-titel`} className="text-20">
                         {titel}
                       </h3>
-                      <Pille ton={e.aktiv ? 'gruen' : 'sand'}>{t(e.aktiv ? 'aktiv' : 'inaktiv')}</Pille>
+                      {nurKind ? null : <Pille ton={e.aktiv ? 'gruen' : 'sand'}>{t(e.aktiv ? 'aktiv' : 'inaktiv')}</Pille>}
                     </div>
                     <p className="text-16 text-pretty">{t(`einwilligung.${e.art}.text`)}</p>
                     <p className="text-16 text-tinte-2">
-                      {e.aktiv && e.erteiltAm
-                        ? t('erteiltAm', { datum: datumLang.format(e.erteiltAm), von: t(e.durchMich ? 'durchSie' : 'durchAndere') })
-                        : e.widerrufenAm
-                          ? t('widerrufenAm', { datum: datumLang.format(e.widerrufenAm) })
-                          : null}
+                      {nurKind
+                        ? null
+                        : e.aktiv && e.erteiltAm
+                          ? t('erteiltAm', { datum: datumLang.format(e.erteiltAm), von: t(e.durchMich ? 'durchSie' : 'durchAndere') })
+                          : e.widerrufenAm
+                            ? t('widerrufenAm', { datum: datumLang.format(e.widerrufenAm) })
+                            : null}
                     </p>
-                    {hier && typeof sp.ok === 'string' && ['erteilt', 'widerrufen'].includes(sp.ok) ? <Meldung art="erfolg">{t(`ok.${sp.ok}`)}</Meldung> : null}
-                    {hier && typeof sp.fehler === 'string' && ['einvernehmen', 'bestaetigen', 'sorgerecht'].includes(sp.fehler) ? (
-                      <Meldung art="fehler">{t(`fehler.${sp.fehler}`)}</Meldung>
+                    {hier && typeof sp.ok === 'string' && ['erteilt', 'widerrufen'].includes(sp.ok) ? (
+                      <Meldung art="erfolg">{t(`ok.${sp.ok}`)}</Meldung>
                     ) : null}
-                    <form action={einwilligungAendern} className="mt-auto flex flex-col gap-3">
-                      <input type="hidden" name="sprache" value={sprache} />
-                      <input type="hidden" name="lernendeId" value={id} />
-                      <input type="hidden" name="art" value={e.art} />
-                      <input type="hidden" name="aktion" value={e.aktiv ? 'widerrufen' : 'erteilen'} />
-                      {e.aktiv ? (
-                        zugangLoeschen ? (
-                          <>
-                            <p className="text-16 font-bold text-warnung">{t('zugangWarnung')}</p>
-                            <Haken id={`bestaetigt-${e.art}`} name="bestaetigt" label={t('zugangBestaetigen')} />
-                          </>
-                        ) : null
-                      ) : (
-                        <Haken id={`einvernehmen-${e.art}`} name="einvernehmen" label={t('einvernehmen')} />
-                      )}
-                      <button
-                        type="submit"
-                        aria-label={t(e.aktiv ? 'widerrufenAria' : 'erteilenAria', { titel })}
-                        className={cn(e.aktiv ? KNOPF_SEKUNDAER : KNOPF_PRIMAER, 'self-start')}
-                      >
-                        {t(e.aktiv ? 'widerrufen' : 'erteilen')}
-                      </button>
-                    </form>
+                    {hier &&
+                    typeof sp.fehler === 'string' &&
+                    ['einvernehmen', 'bestaetigen', 'sorgerecht', 'nurKind'].includes(sp.fehler) ? (
+                      <Meldung art="fehler">{sp.fehler === 'nurKind' ? t('sechzehn.nurKind') : t(`fehler.${sp.fehler}`)}</Meldung>
+                    ) : null}
+                    {nurKind ? (
+                      <p className="mt-auto font-bold text-gruen-800">{t('sechzehn.nurKind')}</p>
+                    ) : (
+                      <form action={einwilligungAendern} className="mt-auto flex flex-col gap-3">
+                        <input type="hidden" name="sprache" value={sprache} />
+                        <input type="hidden" name="lernendeId" value={id} />
+                        <input type="hidden" name="art" value={e.art} />
+                        <input type="hidden" name="aktion" value={e.aktiv ? 'widerrufen' : 'erteilen'} />
+                        {e.aktiv ? (
+                          zugangLoeschen ? (
+                            <>
+                              <p className="text-16 font-bold text-warnung">{t('zugangWarnung')}</p>
+                              <Haken id={`bestaetigt-${e.art}`} name="bestaetigt" label={t('zugangBestaetigen')} />
+                            </>
+                          ) : null
+                        ) : (
+                          <Haken id={`einvernehmen-${e.art}`} name="einvernehmen" label={t('einvernehmen')} />
+                        )}
+                        <button
+                          type="submit"
+                          aria-label={t(e.aktiv ? 'widerrufenAria' : 'erteilenAria', { titel })}
+                          className={cn(e.aktiv ? KNOPF_SEKUNDAER : KNOPF_PRIMAER, 'self-start')}
+                        >
+                          {t(e.aktiv ? 'widerrufen' : 'erteilen')}
+                        </button>
+                      </form>
+                    )}
                   </article>
                 </li>
               );

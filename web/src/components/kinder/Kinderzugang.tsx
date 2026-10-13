@@ -76,7 +76,11 @@ function PasswortFeld({ id, label, hilfe, knopf }: { id: string; label: string; 
           aria-describedby={`${id}-hilfe`}
           className={FELD}
         />
-        <button type="button" onClick={() => setWert(vorschlag())} className={klassen(KNOPF, 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50')}>
+        <button
+          type="button"
+          onClick={() => setWert(vorschlag())}
+          className={klassen(KNOPF, 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50')}
+        >
           {knopf}
         </button>
       </div>
@@ -156,7 +160,13 @@ export function Kinderzugang({
             {texte.benutzernameHilfe}
           </p>
         </div>
-        <PasswortFeld key={anlage.zeit ?? 0} id="kind-passwort" label={texte.passwort} hilfe={texte.passwortHilfe} knopf={texte.vorschlag} />
+        <PasswortFeld
+          key={anlage.zeit ?? 0}
+          id="kind-passwort"
+          label={texte.passwort}
+          hilfe={texte.passwortHilfe}
+          knopf={texte.vorschlag}
+        />
         <button type="submit" disabled={legtAn} className={klassen(KNOPF, 'self-start bg-gruen-700 text-weiss hover:bg-gruen-800')}>
           {texte.anlegen}
         </button>
@@ -219,8 +229,18 @@ export function Kinderzugang({
             <p className="text-16 text-tinte-2">{texte.zuruecksetzenText}</p>
           </div>
           {fehler(neu)}
-          <PasswortFeld key={neu.zeit ?? 0} id="kind-passwort-neu" label={texte.neuesPasswort} hilfe={texte.passwortHilfe} knopf={texte.vorschlag} />
-          <button type="submit" disabled={setzt} className={klassen(KNOPF, 'self-start border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50')}>
+          <PasswortFeld
+            key={neu.zeit ?? 0}
+            id="kind-passwort-neu"
+            label={texte.neuesPasswort}
+            hilfe={texte.passwortHilfe}
+            knopf={texte.vorschlag}
+          />
+          <button
+            type="submit"
+            disabled={setzt}
+            className={klassen(KNOPF, 'self-start border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50')}
+          >
             {texte.zuruecksetzen}
           </button>
         </form>

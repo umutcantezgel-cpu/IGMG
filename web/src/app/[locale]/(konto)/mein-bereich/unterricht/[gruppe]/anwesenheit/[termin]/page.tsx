@@ -53,7 +53,12 @@ export default async function AnwesenheitSeite({ params }: PageProps<'/[locale]/
   const ta = (s: string) => t(`anwesenheit.erfassen.${s}`);
   const texte: AnwesenheitsTexte = {
     titel: ta('titel'),
-    status: { anwesend: ta('status.anwesend'), verspaetet: ta('status.verspaetet'), entschuldigt: ta('status.entschuldigt'), fehlt: ta('status.fehlt') },
+    status: {
+      anwesend: ta('status.anwesend'),
+      verspaetet: ta('status.verspaetet'),
+      entschuldigt: ta('status.entschuldigt'),
+      fehlt: ta('status.fehlt'),
+    },
     fehlmeldung: ta('fehlmeldung'),
     speichern: ta('speichern'),
     gespeichert: ta('gespeichert'),

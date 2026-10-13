@@ -1,8 +1,10 @@
 import 'server-only';
-import { and, asc, eq, gte, inArray } from 'drizzle-orm';
+import { and, asc, eq, gte, inArray, isNull } from 'drizzle-orm';
 import { chatName } from '@/lib/chat/regeln';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
+import { EIGENE_EINWILLIGUNG_FRIST_TAGE, einwilligungGilt, einwilligungsLage, type EinwilligungsLage } from '@/lib/konto/sechzehn';
+import { tagPlus } from '@/lib/lernen/termine';
 import { lernwegKursart, lernwegStand, type FortschrittStatus, type KursartSchluessel } from '@/lib/lernen/ansicht';
 import { darfInGruppe, type GruppenKontext, type LeitungsRolle } from '@/lib/rechte/gruppen';
 
@@ -153,4 +155,65 @@ export async function meineGruppen(kontext: GruppenKontext, heute: string) {
       .limit(20),
   ]);
   return gruppen.map((g) => ({ ...g, naechster: termine.find((t) => t.gruppeId === g.id) ?? null }));
+}
+
+export type EigeneEinwilligung = {
+  art: 'gruppenchat' | 'push_kind';
+  /** Von der Person selbst erteilt (aktiv). */
+  eigen: Date | null;
+  /** Von den Eltern erteilt (aktiv). */
+  eltern: Date | null;
+  /** Zählt die Einwilligung heute (D-11)? */
+  gilt: boolean;
+};
+
+export type EigeneEinwilligungen = {
+  lage: Exclude<EinwilligungsLage, 'eltern'>;
+  /** Ab diesem Tag zählt nur die eigene Einwilligung (16. Geburtstag + 30 Tage). */
+  ab: string;
+  arten: EigeneEinwilligung[];
+};
+
+/**
+ * Einwilligungen ab 16 (DSFA D-11): Für Gruppenchat und Push zählt nach dem Übergang nur die eigene Einwilligung.
+ * Für Schüler unter 16 (oder ohne bekanntes Datum) null – dort entscheiden die Eltern.
+ */
+export async function eigeneEinwilligungen(kontext: GruppenKontext, heute: string): Promise<EigeneEinwilligungen | null> {
+  if (!kontext.eigeneLernendeId) return null;
+  const lernendeId = kontext.eigeneLernendeId;
+  const [l] = await db.select({ sechzehnAm: schema.lernende.sechzehnAm }).from(schema.lernende).where(eq(schema.lernende.id, lernendeId));
+  const lage = einwilligungsLage(l?.sechzehnAm ?? null, heute);
+  if (lage === 'eltern' || !l?.sechzehnAm) return null;
+  const zeilen = await db
+    .select({
+      art: schema.kontoEinwilligung.art,
+      erteiltVon: schema.kontoEinwilligung.erteiltVon,
+      erteiltAm: schema.kontoEinwilligung.erteiltAm,
+    })
+    .from(schema.kontoEinwilligung)
+    .where(
+      and(
+        eq(schema.kontoEinwilligung.lernendeId, lernendeId),
+        inArray(schema.kontoEinwilligung.art, ['gruppenchat', 'push_kind']),
+        isNull(schema.kontoEinwilligung.widerrufenAm),
+      ),
+    );
+  return {
+    lage,
+    ab: tagPlus(l.sechzehnAm, EIGENE_EINWILLIGUNG_FRIST_TAGE),
+    arten: (['gruppenchat', 'push_kind'] as const).map((art) => {
+      const aktiv = zeilen.filter((z) => z.art === art);
+      return {
+        art,
+        eigen: aktiv.find((z) => z.erteiltVon === kontext.benutzerId)?.erteiltAm ?? null,
+        eltern: aktiv.find((z) => z.erteiltVon !== kontext.benutzerId)?.erteiltAm ?? null,
+        gilt: einwilligungGilt(lage, aktiv, kontext.benutzerId),
+      };
+    }),
+  };
+}
+
+/** Einwilligungslage eines Kindes für die Elternansicht (D-11): ab wann zählt die Zustimmung des Kindes selbst? */
+export function lageFuerEltern(sechzehnAm: string | null, heute: string): { lage: EinwilligungsLage; ab: string | null } {
+  return { lage: einwilligungsLage(sechzehnAm, heute), ab: sechzehnAm ? tagPlus(sechzehnAm, EIGENE_EINWILLIGUNG_FRIST_TAGE) : null };
 }

@@ -31,7 +31,17 @@ export function ZurueckLink({ ziel, text }: { ziel: Ziel; text: string }) {
 }
 
 /** Ruhiger Leerzustand (K-008): Achtstern-Grafik und Text; ohne Rahmen, wenn er in einem Abschnitt steht. */
-export function LeerHinweis({ titel, text, art = 'leer', rahmen = false }: { titel?: string; text: string; art?: Zustand; rahmen?: boolean }) {
+export function LeerHinweis({
+  titel,
+  text,
+  art = 'leer',
+  rahmen = false,
+}: {
+  titel?: string;
+  text: string;
+  art?: Zustand;
+  rahmen?: boolean;
+}) {
   return (
     <div className={cn('flex items-center gap-4', rahmen && 'rounded-lg border border-linie bg-weiss p-5 md:p-7')}>
       <Zustandsgrafik art={art} groesse={56} />
@@ -53,7 +63,9 @@ const TON = {
 
 export function Pille({ ton = 'sand', children, className }: { ton?: keyof typeof TON; children: ReactNode; className?: string }) {
   return (
-    <span className={cn('inline-flex items-center gap-1.5 rounded-pill px-3 py-0.5 text-16 font-bold whitespace-nowrap', TON[ton], className)}>
+    <span
+      className={cn('inline-flex items-center gap-1.5 rounded-pill px-3 py-0.5 text-16 font-bold whitespace-nowrap', TON[ton], className)}
+    >
       {children}
     </span>
   );

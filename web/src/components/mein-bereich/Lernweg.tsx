@@ -31,9 +31,7 @@ function Marke({ s, i, aktuell, anzahl }: { s: LernwegStationAnsicht; i: number;
           vectorEffect="non-scaling-stroke"
           strokeWidth={2}
           strokeLinejoin="round"
-          className={cn(
-            erreicht ? 'fill-gruen-700 stroke-gruen-700' : hier ? 'fill-gruen-50 stroke-gruen-700' : 'fill-weiss stroke-rand',
-          )}
+          className={cn(erreicht ? 'fill-gruen-700 stroke-gruen-700' : hier ? 'fill-gruen-50 stroke-gruen-700' : 'fill-weiss stroke-rand')}
         />
       </svg>
       {erreicht ? (
@@ -90,7 +88,10 @@ export function Lernweg({
             </div>
             <div className={cn('flex min-w-0 flex-1 flex-col gap-0.5 pt-2.5', i < anzahl - 1 ? 'pb-4' : 'pb-0')}>
               <span className={cn('text-16 font-bold', i <= aktuell ? 'text-gruen-800' : 'text-tinte-2')}>{stationText(s.nr)}</span>
-              <span lang={s.titelLang} className={cn('text-pretty', i === aktuell ? 'text-18 font-bold text-tinte' : 'text-16 text-tinte-2')}>
+              <span
+                lang={s.titelLang}
+                className={cn('text-pretty', i === aktuell ? 'text-18 font-bold text-tinte' : 'text-16 text-tinte-2')}
+              >
                 {s.titel}
               </span>
               <span className="text-16 text-tinte-2">{s.statusText}</span>
@@ -125,7 +126,11 @@ export function Lernweg({
           </svg>
           <ol aria-label={listenLabel} className="relative grid" style={{ gridTemplateColumns: `repeat(${anzahl}, minmax(0, 1fr))` }}>
             {stationen.map((s, i) => (
-              <li key={s.schluessel} aria-current={i === aktuell ? 'step' : undefined} className="flex flex-col items-center gap-2 px-1 text-center">
+              <li
+                key={s.schluessel}
+                aria-current={i === aktuell ? 'step' : undefined}
+                className="flex flex-col items-center gap-2 px-1 text-center"
+              >
                 <Marke s={s} i={i} aktuell={aktuell} anzahl={n} />
                 <span className={cn('text-16 font-bold', i <= aktuell ? 'text-gruen-800' : 'text-tinte-2')}>{stationText(s.nr)}</span>
                 <span className="text-16 leading-snug text-tinte-2">{s.statusText}</span>
