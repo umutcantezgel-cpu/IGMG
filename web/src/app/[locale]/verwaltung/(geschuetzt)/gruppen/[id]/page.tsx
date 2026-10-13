@@ -125,8 +125,8 @@ export default async function GruppeBearbeiten({ params, searchParams }: PagePro
             lehrkraefte.length ? (
               <form action={leitungZuweisen} className="flex flex-col gap-3 border-t border-linie pt-4">
                 <input type="hidden" name="gruppeId" value={g.id} />
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <label className="flex flex-col gap-1 font-bold">
+                <div className="grid gap-3">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('leitung.konto')}
                     <select name="benutzerId" required className={feldKlein}>
                       {lehrkraefte.map((k) => (
@@ -137,7 +137,7 @@ export default async function GruppeBearbeiten({ params, searchParams }: PagePro
                       ))}
                     </select>
                   </label>
-                  <label className="flex flex-col gap-1 font-bold">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('leitung.art')}
                     <select name="rolle" defaultValue="lehrkraft" className={feldKlein}>
                       <option value="lehrkraft">{t('leitung.rolle.lehrkraft')}</option>
@@ -188,11 +188,11 @@ export default async function GruppeBearbeiten({ params, searchParams }: PagePro
               <form action={termineAnlegen} className="flex flex-col gap-3 border-t border-linie pt-4">
                 <input type="hidden" name="gruppeId" value={g.id} />
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <label className="flex flex-col gap-1 font-bold">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('termine.von')}
                     <input type="date" name="von" required defaultValue={terminVon} className={feldKlein} />
                   </label>
-                  <label className="flex flex-col gap-1 font-bold">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('termine.bis')}
                     <input type="date" name="bis" required defaultValue={terminBis} className={feldKlein} />
                   </label>

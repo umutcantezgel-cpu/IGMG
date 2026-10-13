@@ -4,7 +4,16 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { EinladungFormular } from '@/components/verwaltung/lernen/EinladungFormular';
-import { alsTag, feldKlein, karte, pilleFehler, pilleGut, pilleNeutral, pilleWarnung } from '@/components/verwaltung/lernen/stil';
+import {
+  alsTag,
+  feldKlein,
+  karte,
+  pilleFehler,
+  pilleFehlerLang,
+  pilleGut,
+  pilleNeutral,
+  pilleWarnung,
+} from '@/components/verwaltung/lernen/stil';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { alterAus } from '@/lib/chat/regeln';
@@ -215,7 +224,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                           {t.has(`einwilligungArt.${e.art}`) ? t(`einwilligungArt.${e.art}` as never) : e.art}
                         </span>
                         {e.widerrufenAm ? (
-                          <span className={pilleFehler}>{t('detail.widerrufenAm', { datum: zeitpunkt(e.widerrufenAm) })}</span>
+                          <span className={pilleFehlerLang}>{t('detail.widerrufenAm', { datum: zeitpunkt(e.widerrufenAm) })}</span>
                         ) : (
                           <span className={pilleGut}>{t('detail.gueltig')}</span>
                         )}
@@ -250,7 +259,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
             {bearbeiten ? (
               <form action={setzeLernendeStatus} className="flex flex-col gap-3">
                 <input type="hidden" name="id" value={l.id} />
-                <label className="flex flex-col gap-1 font-bold">
+                <label className="flex min-w-0 flex-col gap-1 font-bold">
                   {t('spalte.status')}
                   <select name="status" defaultValue={l.status} className={feldKlein}>
                     {(['aktiv', 'pausiert', 'beendet'] as const).map((s) => (
@@ -305,7 +314,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
               <form action={mitgliedHinzufuegen} className="flex flex-col gap-3 border-t border-linie pt-4">
                 <input type="hidden" name="lernendeId" value={l.id} />
                 <input type="hidden" name="zurueck" value="lernende" />
-                <label className="flex flex-col gap-1 font-bold">
+                <label className="flex min-w-0 flex-col gap-1 font-bold">
                   {t('detail.gruppeWaehlen')}
                   <select name="gruppeId" required className={feldKlein}>
                     {freieGruppen.map((g) => (

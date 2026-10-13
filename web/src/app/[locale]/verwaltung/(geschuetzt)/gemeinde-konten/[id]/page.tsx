@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Rueckfrage } from '@/components/verwaltung/lernen/Rueckfrage';
-import { karte, pilleFehler, pilleGut, pilleNeutral, pilleWarnung } from '@/components/verwaltung/lernen/stil';
+import { karte, pilleFehlerLang, pilleGut, pilleNeutral, pilleWarnung } from '@/components/verwaltung/lernen/stil';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { funktionAn } from '@/lib/funktionen';
@@ -61,7 +61,7 @@ export default async function GemeindeKonto({ params, searchParams }: PageProps<
           {k.zweiFaktor ? t('detail.zweiFaktorJa') : t('detail.zweiFaktorNein')}
         </span>
         {k.istKind ? <span className={pilleNeutral}>{t('kinderkonto')}</span> : null}
-        {k.gesperrtAm ? <span className={pilleFehler}>{t('detail.gesperrtSeit', { datum: zeitpunkt(k.gesperrtAm) })}</span> : null}
+        {k.gesperrtAm ? <span className={pilleFehlerLang}>{t('detail.gesperrtSeit', { datum: zeitpunkt(k.gesperrtAm) })}</span> : null}
       </p>
       {meldung ? <Meldung art="erfolg">{t(`meldung.${meldung}`)}</Meldung> : null}
       {fehler ? <Meldung art="fehler">{t(`fehler.${fehler}`)}</Meldung> : null}
@@ -92,7 +92,7 @@ export default async function GemeindeKonto({ params, searchParams }: PageProps<
                   return (
                     <label
                       key={r}
-                      className="grid min-h-12 cursor-pointer raster-symbol gap-x-3 has-disabled:cursor-not-allowed has-disabled:text-tinte-2"
+                      className="grid min-h-12 cursor-pointer raster-symbol content-start gap-x-3 has-disabled:cursor-not-allowed has-disabled:text-tinte-2"
                     >
                       <input
                         type="checkbox"

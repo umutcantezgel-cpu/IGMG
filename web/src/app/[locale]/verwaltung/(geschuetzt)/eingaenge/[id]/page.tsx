@@ -180,7 +180,7 @@ export default async function EingangDetail({ params, searchParams }: PageProps<
             ) : null}
           </section>
           <section aria-label={t('detail.export')} className={karte}>
-            <Button asChild variant="outline" className="self-start">
+            <Button asChild variant="outline" className="self-start py-2 text-left whitespace-normal">
               <a href={`/verwaltung/eingaenge/export?format=json&id=${d.id}`}>
                 <Download aria-hidden />
                 {t('detail.export')}

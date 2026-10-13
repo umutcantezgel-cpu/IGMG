@@ -89,7 +89,7 @@ export default async function LernendeVerwalten({ searchParams }: PageProps<'/[l
         </nav>
         <form method="get" action="/verwaltung/lernende" className="flex flex-wrap items-end gap-2">
           {filter.status !== 'aktiv' ? <input type="hidden" name="status" value={filter.status} /> : null}
-          <label className="flex flex-col gap-1 font-bold">
+          <label className="flex min-w-0 flex-col gap-1 font-bold">
             {t('gruppeFilter')}
             <select name="gruppe" defaultValue={filter.gruppe ?? ''} className={feldKlein}>
               <option value="">{t('alleGruppen')}</option>

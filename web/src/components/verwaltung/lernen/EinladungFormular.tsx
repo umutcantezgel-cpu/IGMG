@@ -85,7 +85,7 @@ export function EinladungFormular({
             {ARTEN.map((art) => (
               <label
                 key={art}
-                className="grid min-h-12 cursor-pointer raster-symbol gap-x-3 rounded-md border border-rand bg-weiss p-3.5 has-checked:border-gruen-700 has-checked:bg-gruen-50"
+                className="grid min-h-12 cursor-pointer raster-symbol content-start gap-x-3 rounded-md border border-rand bg-weiss p-3.5 has-checked:border-gruen-700 has-checked:bg-gruen-50"
               >
                 <input
                   type="radio"

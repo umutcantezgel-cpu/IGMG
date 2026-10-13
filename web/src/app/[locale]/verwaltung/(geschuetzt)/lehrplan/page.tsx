@@ -120,7 +120,7 @@ export default async function LehrplanVerwalten({ searchParams }: PageProps<'/[l
                           </summary>
                           <form action={stufeUmbenennen} className="mt-3 flex flex-col gap-3 rounded-md border border-linie bg-papier p-4">
                             <input type="hidden" name="id" value={s.id} />
-                            <label className="flex flex-col gap-1 font-bold">
+                            <label className="flex min-w-0 flex-col gap-1 font-bold">
                               {t('titelDe')}
                               <input
                                 name="titelDe"
@@ -131,7 +131,7 @@ export default async function LehrplanVerwalten({ searchParams }: PageProps<'/[l
                                 className={feldKlein}
                               />
                             </label>
-                            <label className="flex flex-col gap-1 font-bold">
+                            <label className="flex min-w-0 flex-col gap-1 font-bold">
                               {t('titelTr')}
                               <input name="titelTr" lang="tr" maxLength={120} defaultValue={s.titel.tr ?? ''} className={feldKlein} />
                             </label>
@@ -154,11 +154,11 @@ export default async function LehrplanVerwalten({ searchParams }: PageProps<'/[l
                 <h3 className="font-text text-20 font-bold tracking-normal">{t('neueStufe')}</h3>
                 {fehlerKursart === k ? <p className="font-bold text-fehler">{t('fehler.titel')}</p> : null}
                 <div className="grid gap-3 md:grid-cols-2">
-                  <label className="flex flex-col gap-1 font-bold">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('titelDe')}
                     <input name="titelDe" required minLength={2} maxLength={120} placeholder={t('platzhalterDe')} className={feldKlein} />
                   </label>
-                  <label className="flex flex-col gap-1 font-bold">
+                  <label className="flex min-w-0 flex-col gap-1 font-bold">
                     {t('titelTr')}
                     <input name="titelTr" lang="tr" maxLength={120} placeholder={t('platzhalterTr')} className={feldKlein} />
                   </label>

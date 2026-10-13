@@ -128,7 +128,7 @@ export default async function GemeindeKonten({ searchParams }: PageProps<'/[loca
           {t('listeTitel')}
         </h2>
         <form method="get" action="/verwaltung/gemeinde-konten" className="flex flex-wrap items-end gap-3">
-          <label className="flex flex-col gap-1 font-bold">
+          <label className="flex min-w-0 flex-col gap-1 font-bold">
             {t('filter.rolle')}
             <select name="rolle" defaultValue={filter.rolle} className={feldKlein}>
               <option value="alle">{t('filter.alle')}</option>
@@ -139,7 +139,7 @@ export default async function GemeindeKonten({ searchParams }: PageProps<'/[loca
               ))}
             </select>
           </label>
-          <label className="flex flex-col gap-1 font-bold">
+          <label className="flex min-w-0 flex-col gap-1 font-bold">
             {t('filter.zustand')}
             <select name="zustand" defaultValue={filter.zustand} className={feldKlein}>
               {(['alle', 'gesperrt', 'loeschantrag', 'unbestaetigt'] as const).map((z) => (

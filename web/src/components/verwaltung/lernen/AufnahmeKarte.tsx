@@ -66,7 +66,7 @@ export async function AufnahmeKarte({
         <form action={aufnehmen} className="flex flex-col gap-4">
           <input type="hidden" name="id" value={eingangId} />
           <p className="text-16 text-tinte-2">{t('text')}</p>
-          <label className="flex flex-col gap-1 font-bold">
+          <label className="flex min-w-0 flex-col gap-1 font-bold">
             {t('gruppe')}
             <select name="gruppeId" defaultValue="" className={feldKlein}>
               <option value="">{t('spaeterZuordnen')}</option>
@@ -82,7 +82,7 @@ export async function AufnahmeKarte({
               <fieldset className="flex flex-col gap-2">
                 <legend className="mb-1 font-bold">{t('elternEinladen')}</legend>
                 {eltern.map((e) => (
-                  <label key={e.n} className="grid min-h-12 cursor-pointer raster-symbol gap-x-3">
+                  <label key={e.n} className="grid min-h-12 cursor-pointer raster-symbol content-start gap-x-3">
                     <input
                       type="checkbox"
                       name={`eltern${e.n}`}
