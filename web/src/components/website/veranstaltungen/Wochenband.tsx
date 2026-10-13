@@ -1,10 +1,11 @@
 import { getTranslations } from 'next-intl/server';
+import { cacheLife } from 'next/cache';
 import { Achtstern, Stern8 } from '@/components/website/Icons';
 import { textMitSprache } from '@/components/website/Text';
 import { datumLang, uhrzeitNackt } from '@/lib/i18n/format';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
-import { type WochenQuelle, wochenband } from './wochenband';
+import { type WochenQuelle, type WochenTag, wochenband } from './wochenband';
 
 const LOCALE: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 /** Je Tag sichtbar höchstens so viele Termine; der Rest steht als „+n“ (Bildschirmleser hören alle). */
@@ -13,6 +14,16 @@ const SICHTBAR = 3;
 /** Kalendertag (JJJJ-MM-TT) als Mittag UTC: für Wochentag und Tageszahl unabhängig von der Zeitzone des Servers. */
 function mittag(datum: string): Date {
   return new Date(`${datum}T12:00:00Z`);
+}
+
+/**
+ * Die sieben Tage gecacht (stündlich, wie `heuteBerlin`): `TZDate` ruft intern `new Date()` auf – beim Vorrendern
+ * statischer Seiten ist das nur in einem Cache erlaubt (Cache Components).
+ */
+async function wocheGecacht(liste: readonly WochenQuelle[], heute: string): Promise<WochenTag[]> {
+  'use cache';
+  cacheLife('hours');
+  return wochenband(liste, heute);
 }
 
 /**
@@ -25,7 +36,7 @@ function mittag(datum: string): Date {
  */
 export async function Wochenband({ liste, heute, sprache }: { liste: readonly WochenQuelle[]; heute: string; sprache: Sprache }) {
   const t = await getTranslations('wochenband');
-  const tage = wochenband(liste, heute);
+  const tage = await wocheGecacht(liste, heute);
   const locale = LOCALE[sprache];
   const wochentag = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' });
   const tagZahl = new Intl.DateTimeFormat(locale, { day: 'numeric', timeZone: 'UTC' });
