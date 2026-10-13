@@ -1,4 +1,4 @@
-import { CalendarDays, Compass, Info, List, LocateFixed, MapPin, Maximize, Printer, Settings, Sun } from 'lucide-react';
+import { BellRing, CalendarDays, Compass, Info, List, LocateFixed, MapPin, Maximize, Printer, Settings, Sun } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
@@ -8,7 +8,11 @@ import { MeinOrt, type MeinOrtTexte } from '@/components/website/gebetszeiten/Me
 import { MonatsTabelle } from '@/components/website/gebetszeiten/MonatsTabelle';
 import { QiblaPanel } from '@/components/website/gebetszeiten/QiblaPanel';
 import { datumMitJahr, folgemonat, METHODEN_ANZEIGE, monatsname } from '@/components/website/gebetszeiten/zeiten';
+import { PushStart } from '@/components/website/push/PushStart';
+import type { PushTexte } from '@/components/website/push/PushEinstellungen';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { funktionAn } from '@/lib/funktionen';
+import { vapidAusUmgebung } from '@/lib/push/vapid';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
@@ -44,6 +48,10 @@ export default async function GebetszeitenSeitePage() {
   const tk = await getTranslations('kopf');
   const ts = await getTranslations('start');
   const to = await getTranslations('meinOrt');
+  const tp = await getTranslations('push');
+  // Push nur mit Schalter und VAPID-Schlüssel (zur Bauzeit; die Seite ist statisch, ADR 0034/0035)
+  const vapid = vapidAusUmgebung();
+  const pushAn = vapid !== null && (await funktionAn('push')) && (await funktionAn('push_gebet'));
   const [tDe, tTr, tEn] = await Promise.all([
     getTranslations({ locale: 'de', namespace: 'leiste' }),
     getTranslations({ locale: 'tr', namespace: 'leiste' }),
@@ -161,6 +169,40 @@ export default async function GebetszeitenSeitePage() {
     />
   );
 
+  const pushTexte: PushTexte = {
+    ...(Object.fromEntries(
+      (
+        [
+          'themenTitel',
+          'gebeteTitel',
+          'minutenTitel',
+          'minutenNull',
+          'einwilligung',
+          'speichern',
+          'aktualisieren',
+          'abschalten',
+          'aktiv',
+          'gespeichert',
+          'aus',
+          'verweigert',
+          'nichtUnterstuetzt',
+          'ios',
+          'fehler',
+          'mindestensEins',
+          'einwilligungFehlt',
+          'laedt',
+        ] as const
+      ).map((k) => [k, tp(k)]),
+    ) as Omit<PushTexte, 'themen' | 'minuten'>),
+    minuten: tp.raw('minuten'),
+    themen: {
+      gebet: tp('themen.gebet'),
+      ankuendigung: tp('themen.ankuendigung'),
+      chat: tp('themen.chat'),
+      unterricht: tp('themen.unterricht'),
+    },
+  };
+
   const einstellungenPanel = methode ? (
     <EinstellungenPanel
       sprache={sprache}
@@ -253,6 +295,19 @@ export default async function GebetszeitenSeitePage() {
             einstellungen: einstellungenPanel,
           }}
         />
+        {pushAn && vapid ? (
+          <PushStart
+            titel={tp('titel')}
+            einleitung={tp('einleitung')}
+            knopf={tp('einrichten')}
+            symbol={<BellRing aria-hidden className="size-6 shrink-0 text-gruen-700" />}
+            texte={pushTexte}
+            oeffentlich={vapid.oeffentlich}
+            themen={['gebet', 'ankuendigung']}
+            gebete={Object.fromEntries(GEBETE.filter((g) => g !== 'gunes').map((g) => [g, namen[g]]))}
+            sprache={sprache}
+          />
+        ) : null}
         <Link href="/gebetszeiten/anzeige" prefetch={false} aria-label={t('vollbildAria')} className={`${VOLLBILD} self-start md:hidden`}>
           <Maximize aria-hidden className="size-5" />
           {t('vollbild')}

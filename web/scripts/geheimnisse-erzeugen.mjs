@@ -13,7 +13,7 @@
  *
  * Länge und Kodierung entsprechen den Prüfregeln in src/lib/umgebung.ts; tests/unit/umgebung.test.ts prüft das.
  */
-import { randomBytes } from 'node:crypto';
+import { generateKeyPairSync, randomBytes } from 'node:crypto';
 import { chmodSync, writeFileSync } from 'node:fs';
 import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -30,11 +30,21 @@ export const GEHEIMNISSE = [
   { name: 'ALTCHA_GEHEIMNIS', kodierung: 'base64', bytes: 32 },
   { name: 'WARTUNG_TOKEN', kodierung: 'base64url', bytes: 48 }, // 64 Zeichen, ohne + / = (URL-sicher)
   { name: 'CRON_SECRET', kodierung: 'base64url', bytes: 48 },
+  // Web Push (ADR 0034): geheimer P-256-Skalar, 32 Byte base64url; der öffentliche Schlüssel wird daraus berechnet
+  { name: 'VAPID_PRIVAT', kodierung: 'vapid', bytes: 32 },
 ];
+
+/** Gültiger P-256-Schlüssel (nicht jede Zufallszahl ist ein gültiger Skalar). */
+function vapidPrivat() {
+  return generateKeyPairSync('ec', { namedCurve: 'P-256' }).privateKey.export({ format: 'jwk' }).d;
+}
 
 /** Frische Werte; jeder Aufruf liefert neue Zufallswerte. */
 export function erzeugeWerte() {
-  return GEHEIMNISSE.map(({ name, kodierung, bytes }) => ({ name, wert: randomBytes(bytes).toString(kodierung) }));
+  return GEHEIMNISSE.map(({ name, kodierung, bytes }) => ({
+    name,
+    wert: kodierung === 'vapid' ? vapidPrivat() : randomBytes(bytes).toString(kodierung),
+  }));
 }
 
 /** Liegt der Pfad im Repository oder im App-Ordner web/? */

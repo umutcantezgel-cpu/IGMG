@@ -34,6 +34,7 @@ import konto from './konto.json';
 import meinBereich from './mein-bereich.json';
 import quellen from './quellen.json';
 import barrierefreiheit from './barrierefreiheit.json';
+import benachrichtigungen from './benachrichtigungen.json';
 import meinOrt from './mein-ort.json';
 import kalender from './kalender.json';
 import ramadan from './ramadan.json';
@@ -77,6 +78,7 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   'mein-bereich': meinBereich,
   quellen,
   barrierefreiheit,
+  benachrichtigungen,
   'mein-ort': meinOrt,
   kalender,
   ramadan,
