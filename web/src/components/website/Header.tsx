@@ -8,27 +8,31 @@ import type { Locale } from '@/i18n/routing';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
 import { Sprachwahl, type SprachEintrag } from './kopf/Sprachwahl';
-import { baueMenues, type Bereich, type Ziel } from './navigation';
+import { ladeKopfMenue } from '@/server/queries/menues';
+import { baueMenues, menuesAusDb, sprachAdresse, type Bereich, type SprachZiel } from './navigation';
 
 /**
  * Kopfzeile nach design/Header.dc.html (02.1): Logo, Hauptnavigation mit Untermenüs (ab 1240 px),
  * Sprachumschalter, „Anmelden“ (→ Verwaltung, ADR 0016), darunter Menü-Button mit Schublade.
  * Öffentlich ohne Anmeldezustand (K-01: keine Cookies auf öffentlichen Seiten).
  */
-export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; aktuell: string; sprachZiel: Ziel }) {
+export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; aktuell: string; sprachZiel: SprachZiel }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
   const tsu = await getTranslations('suche');
-  const menues = baueMenues(
+  const bestand = baueMenues(
     (k) => t(k),
     (ziel) => pfadFuer(ziel, sprache),
   );
+  // Menü aus der Verwaltung (ADR 0032), sonst der Bestand
+  const ausDb = await ladeKopfMenue(sprache);
+  const menues = ausDb ? menuesAusDb(ausDb, bestand) : bestand;
   const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({
     code,
     kurz: code.toUpperCase(),
     name: ts(code),
-    href: pfadFuer(sprachZiel, code),
+    href: sprachAdresse(sprachZiel, code),
   }));
   return (
     <header className="relative z-(--ebene-kopf) border-b border-linie bg-weiss" style={{ viewTransitionName: 'kopf' }}>

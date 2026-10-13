@@ -1,0 +1,91 @@
+{
+  "freigaben": {
+    "titel": "Freigaben",
+    "einleitung": "Inhalte, die auf eine Prüfung warten. Religiöse Inhalte gibt nur die religiöse Prüfung (Imam oder Hoca) frei; Seiten zur redaktionellen Prüfung gibt frei, wer Seiten veröffentlichen darf.",
+    "ansichten": "Ansicht",
+    "offen": "Offen ({anzahl})",
+    "verlauf": "Verlauf",
+    "leer": "Zurzeit wartet nichts auf eine Prüfung.",
+    "leerVerlauf": "Noch keine Prüfungen.",
+    "gruppe": {
+      "religioes": "Religiöse Prüfung",
+      "redaktion": "Redaktionelle Prüfung"
+    },
+    "gruppeHinweis": {
+      "religioes": "Bitte lesen Sie den Inhalt vollständig. Mit „Freigeben“ wird er öffentlich; mit „Zurückweisen“ geht er mit Ihrem Kommentar zurück an die verfassende Person.",
+      "redaktion": "Seiten, die eine zweite Person durchsehen soll. „Freigeben“ veröffentlicht die Seite."
+    },
+    "typ": {
+      "seite": "Seite",
+      "quran_wortbedeutung": "Wortbedeutung",
+      "quran_wortbedeutung_ort": "Wortbedeutung an einer Stelle",
+      "tajwid_regel": "Tajwid-Regel",
+      "hadith_uebersetzung": "Hadith-Übersetzung",
+      "elifbe_lektion": "Elifbe-Lektion",
+      "besonderer_tag": "Besonderer Tag"
+    },
+    "angabe": {
+      "adresse": "Adresse",
+      "vers": "Koranvers (Sure:Verse)",
+      "hadith": "Hadith",
+      "bausteine": "Bausteine",
+      "wort": "Wort",
+      "sprache": "Sprache",
+      "bedeutung": "Bedeutung",
+      "wurzel": "Wurzel",
+      "anmerkung": "Anmerkung",
+      "stelle": "Stelle (Sure:Vers · Wort)",
+      "schluessel": "Schlüssel",
+      "kurz": "Kurzbeschreibung",
+      "uebersetzung": "Übersetzung",
+      "uebersetzer": "Übersetzt von",
+      "quelle": "Quelle und Lizenz",
+      "ziel": "Lernziel",
+      "datum": "Datum",
+      "tagArt": "Art"
+    },
+    "eingereicht": "Eingereicht von {name} am {datum}",
+    "eingereichtOhneName": "Eingereicht am {datum}",
+    "verfasstVon": "Verfasst von {name}",
+    "seiteAnsehen": "Seite ansehen",
+    "seiteAnsehenName": "Seite ansehen: {titel}",
+    "kommentar": "Kommentar",
+    "kommentarHinweis": "Beim Zurückweisen Pflicht: Was soll geändert werden?",
+    "freigeben": "Freigeben",
+    "zurueckweisen": "Zurückweisen",
+    "freigebenName": "Freigeben: {titel}",
+    "zurueckweisenName": "Zurückweisen: {titel}",
+    "nurReligioes": "Nur die religiöse Prüfung (Imam oder Hoca) kann das freigeben.",
+    "nurVeroeffentlichen": "Nur wer Seiten dieser Organisation veröffentlichen darf, kann das freigeben.",
+    "erledigt": {
+      "freigeben": "Freigegeben. Der Inhalt ist jetzt öffentlich.",
+      "zurueckweisen": "Zurückgewiesen. Der Inhalt bleibt ein Entwurf; Ihr Kommentar steht im Verlauf."
+    },
+    "status": {
+      "entwurf": "Zurückgewiesen oder zurückgezogen",
+      "zur_pruefung": "Zur Prüfung gegeben",
+      "geprueft": "Freigegeben"
+    },
+    "spalte": {
+      "am": "Wann",
+      "inhalt": "Inhalt",
+      "art": "Art",
+      "status": "Ergebnis",
+      "von": "Von",
+      "kommentar": "Kommentar"
+    },
+    "unbekannt": "unbekannt",
+    "vorschauTitel": "Seite prüfen",
+    "vorschauHinweis": "So sähe die Seite veröffentlicht aus. Entscheiden Sie unten.",
+    "zurueck": "Zurück zu den Freigaben",
+    "fehler": {
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "pruefen": "Bitte prüfen Sie die Eingaben.",
+      "nurReligioesePruefung": "Nur die religiöse Prüfung (Imam oder Hoca) kann religiöse Inhalte freigeben.",
+      "nichtMehrOffen": "Dieser Inhalt wartet nicht mehr auf eine Prüfung (vielleicht hat ihn schon jemand anderes bearbeitet).",
+      "kommentarPflicht": "Bitte schreiben Sie kurz, was geändert werden soll.",
+      "zuLang": "Der Kommentar ist zu lang (höchstens 1000 Zeichen).",
+      "ungueltig": "Diese Angabe ist ungültig."
+    }
+  }
+}

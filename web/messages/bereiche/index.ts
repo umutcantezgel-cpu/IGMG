@@ -43,6 +43,7 @@ import newsletter from './newsletter.json';
 import chat from './chat.json';
 import unterricht from './unterricht.json';
 import kinder from './kinder.json';
+import seiten from './seiten.json';
 type Teil = Record<string, unknown>;
 export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
@@ -86,4 +87,5 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   chat,
   unterricht,
   kinder,
+  seiten,
 };

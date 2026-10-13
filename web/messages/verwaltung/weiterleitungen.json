@@ -1,0 +1,48 @@
+{
+  "weiterleitungen": {
+    "titel": "Weiterleitungen",
+    "einleitung": "Wenn sich eine Adresse ändert, führt eine Weiterleitung Besucherinnen und Besucher von der alten zur neuen Adresse – auch aus Suchmaschinen und alten Links.",
+    "neu": "Neue Weiterleitung",
+    "bearbeiten": "Weiterleitung ändern",
+    "abbrechen": "Abbrechen",
+    "von": "Alte Adresse",
+    "vonHinweis": "Der Teil nach dem Domainnamen, z. B. /alte-seite oder /tr/eski-sayfa. Ohne Dateiendung.",
+    "nach": "Neue Adresse",
+    "nachHinweis": "Eine Adresse dieser Website, z. B. /unsere-moschee oder /gebetszeiten.",
+    "code": "Art",
+    "code308": "Dauerhaft (308, empfohlen)",
+    "code301": "Dauerhaft (301, klassisch)",
+    "codeHinweis": "Beide sagen Suchmaschinen: Die Seite ist umgezogen. Wenn Sie unsicher sind, lassen Sie 308.",
+    "speichern": "Weiterleitung speichern",
+    "speichert": "Wird gespeichert …",
+    "gespeichert": "Die Weiterleitung wurde gespeichert und gilt ab sofort.",
+    "liste": "Bestehende Weiterleitungen",
+    "leer": "Noch keine Weiterleitungen angelegt.",
+    "spalte": {
+      "von": "Alte Adresse",
+      "nach": "Neue Adresse",
+      "code": "Art",
+      "angelegt": "Angelegt",
+      "aktionen": "Aktionen"
+    },
+    "aktionBearbeiten": "Ändern: {von}",
+    "aktionLoeschen": "Löschen: {von}",
+    "loeschenTitel": "Weiterleitung löschen?",
+    "loeschenText": "Die Weiterleitung von {von} wird gelöscht. Wer die alte Adresse aufruft, sieht danach „Seite nicht gefunden“.",
+    "loeschen": "Löschen",
+    "fehler": {
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "nichtGefunden": "Diese Weiterleitung gibt es nicht mehr.",
+      "pflicht": "Bitte ausfüllen.",
+      "zuLang": "Die Adresse ist zu lang.",
+      "ungueltig": "Diese Angabe ist ungültig.",
+      "pfad": "Bitte eine Adresse wie /alte-seite eingeben – ohne Domain, ohne ? und ohne Dateiendung.",
+      "reserviert": "Unter dieser Adresse liegt schon ein Bereich der Website. Eine Weiterleitung würde dort nie greifen.",
+      "seiteVorhanden": "Unter dieser Adresse gibt es schon eine Seite. Eine Weiterleitung würde dort nie greifen.",
+      "vonVergeben": "Für diese alte Adresse gibt es schon eine Weiterleitung.",
+      "zielUnbekannt": "Unter der neuen Adresse gibt es keine Seite. Bitte prüfen Sie die Schreibweise.",
+      "schleife": "Diese Weiterleitung würde im Kreis führen (die neue Adresse leitet wieder zurück)."
+    }
+  }
+}

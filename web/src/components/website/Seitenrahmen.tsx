@@ -9,7 +9,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { JsonLd } from './JsonLd';
 import { KonzeptHinweis } from './KonzeptHinweis';
-import type { Bereich, Ziel } from './navigation';
+import type { Bereich, SprachZiel } from './navigation';
 import { PrayerTimesBar } from './PrayerTimesBar';
 import { SeitenUebergang } from './SeitenUebergang';
 
@@ -44,7 +44,7 @@ export async function Seitenrahmen({
 }: {
   bereich: Bereich;
   seite: string;
-  sprachZiel: Ziel;
+  sprachZiel: SprachZiel;
   pfad?: PfadEintrag[];
   ohneLeiste?: boolean;
   children: ReactNode;
