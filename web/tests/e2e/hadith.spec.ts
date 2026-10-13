@@ -19,7 +19,13 @@ const B = { de: barriere.de.barrierefreiheit, tr: barriere.tr.barrierefreiheit, 
 const PFAD = {
   de: { start: '/hadith', auswahl: '/hadith/auswahl', bukhari: '/hadith/bukhari', buch: '/hadith/bukhari/1', suche: '/suche' },
   tr: { start: '/tr/hadis', auswahl: '/tr/hadis/secme', bukhari: '/tr/hadis/buhari', buch: '/tr/hadis/buhari/1', suche: '/tr/arama' },
-  en: { start: '/en/hadith', auswahl: '/en/hadith/selection', bukhari: '/en/hadith/bukhari', buch: '/en/hadith/bukhari/1', suche: '/en/search' },
+  en: {
+    start: '/en/hadith',
+    auswahl: '/en/hadith/selection',
+    bukhari: '/en/hadith/bukhari',
+    buch: '/en/hadith/bukhari/1',
+    suche: '/en/search',
+  },
 } as const;
 const QUELLEN = { de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' } as const;
 const ERKLAERUNG = { de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' } as const;
@@ -59,7 +65,10 @@ for (const s of SPRACHEN) {
     await expect(fuss.getByRole('link', { name: Q[s].fussLink, exact: true })).toHaveAttribute('href', QUELLEN[s]);
     await expect(fuss.getByRole('link', { name: B[s].fussLink, exact: true })).toHaveAttribute('href', ERKLAERUNG[s]);
     await ohneBefund(page);
-    await page.getByRole('link', { name: new RegExp(T[s].wege.auswahlTitel) }).first().click();
+    await page
+      .getByRole('link', { name: new RegExp(T[s].wege.auswahlTitel) })
+      .first()
+      .click();
     await expect(page).toHaveURL(new RegExp(`${PFAD[s].auswahl}$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(T[s].auswahl.titel);
   });
