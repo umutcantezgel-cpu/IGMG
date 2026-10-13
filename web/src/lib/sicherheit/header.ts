@@ -61,7 +61,8 @@ export function permissionsPolicy(erlaubt: readonly Berechtigung[] = []): string
 
 /**
  * Berechtigungen je Pfad (ADR 0028, ADR 0029): Standort nur auf den Gebetszeiten-Seiten (Berechnung im Browser,
- * nie an den Server), Mikrofon und Kamera nur in der Verwaltung (Rezitations-Aufnahme, Einlass-Scan).
+ * nie an den Server), Mikrofon nur in der Rezitations-Werkstatt der Verwaltung (Aufnahme, ADR 0029); Kamera nirgends
+ * (kein Einlass-Scan gebaut – bei Bedarf hier nur für dessen Pfad freigeben).
  * In next.config.ts nach `grundHeader` eingetragen – spätere Regeln überschreiben frühere.
  */
 export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly Berechtigung[] }[] = [
@@ -69,8 +70,8 @@ export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly B
   { source: '/de/gebetszeiten', erlaubt: ['geolocation'] },
   { source: '/tr/namaz-vakitleri', erlaubt: ['geolocation'] },
   { source: '/en/prayer-times', erlaubt: ['geolocation'] },
-  { source: '/verwaltung/:pfad*', erlaubt: ['microphone', 'camera'] },
-  { source: '/de/verwaltung/:pfad*', erlaubt: ['microphone', 'camera'] },
+  { source: '/verwaltung/rezitationen/:pfad*', erlaubt: ['microphone'] },
+  { source: '/de/verwaltung/rezitationen/:pfad*', erlaubt: ['microphone'] },
 ];
 
 /**
