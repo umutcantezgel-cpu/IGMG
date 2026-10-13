@@ -5,7 +5,7 @@ import { adresse } from '@/lib/seo/metadaten';
 import { funktionAn } from '@/lib/funktionen';
 import { SLUGS as BUCHSTABEN_SLUGS } from '@/lib/elifbe/alphabet';
 import { LEKTIONEN } from '@/lib/elifbe/lektionen';
-import { ladeHadithBuchNummern } from '@/server/queries/hadith';
+import { ladeHadithBuchNummern, ladeHadithBuchTeile } from '@/server/queries/hadith';
 import { ladeNachrichtenSlugs } from '@/server/queries/nachrichten';
 import { ladeVeranstaltungsSlugs } from '@/server/queries/veranstaltungen';
 import { ladeWissensSlugs } from '@/server/queries/wissen';
@@ -60,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ladeWissensSlugs(),
     funktionAn('hadith_gesamt'),
   ]);
-  const hadithBuecher = hadithGesamt ? await ladeHadithBuchNummern() : [];
+  const [hadithBuecher, hadithTeile] = hadithGesamt ? await Promise.all([ladeHadithBuchNummern(), ladeHadithBuchTeile()]) : [[], []];
   const ziele: Ziel[] = [
     ...FEST,
     ...Object.values(SLUG).map((organisation) => ({ pathname: '/organisationen/[organisation]' as const, params: { organisation } })),
@@ -76,6 +76,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ? [
           '/hadith/bukhari' as const,
           ...hadithBuecher.map((buch) => ({ pathname: '/hadith/bukhari/[buch]' as const, params: { buch: String(buch) } })),
+          ...hadithTeile.flatMap((b) =>
+            Array.from({ length: b.teile - 1 }, (_, i) => ({
+              pathname: '/hadith/bukhari/[buch]/teil/[teil]' as const,
+              params: { buch: String(b.nr), teil: String(i + 2) },
+            })),
+          ),
         ]
       : []),
   ];

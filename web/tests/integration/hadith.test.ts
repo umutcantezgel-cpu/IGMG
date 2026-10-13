@@ -12,7 +12,9 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
  * (web/daten/hadith, Bücher 1 und 2 – schneller als die ganze Sammlung); Übersetzungen sind Testplatzhalter.
  */
 const { client, db } = await verwaltungsUmgebung();
-const { ladeHadithAuswahl, ladeHadithBuch, ladeHadithBuchNummern, ladeHadithUebersicht } = await import('@/server/queries/hadith');
+const { ladeHadithAuswahl, ladeHadithBuch, ladeHadithBuchNummern, ladeHadithBuchTeile, ladeHadithUebersicht } = await import(
+  '@/server/queries/hadith'
+);
 const { sucheHadith } = await import('@/server/queries/suche');
 afterAll(() => client.close());
 
@@ -97,6 +99,10 @@ describe('Hadith-Abfragen', () => {
     const b = await ladeHadithBuch(1);
     expect(b?.hadithe.map((h) => h.nummer)).toEqual(['1', '2', '3', '4', '5', '6', '7']);
     expect(b?.hadithe.map((h) => h.imBuchNr)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(b).toMatchObject({ teil: 1, teile: 1 });
+    expect(b?.hadithe.every((h) => h.teil === 1)).toBe(true);
+    expect(await ladeHadithBuch(1, 2)).toBeNull();
+    expect(await ladeHadithBuchTeile()).toEqual([]);
     expect(b?.hadithe[0].textAr).toBe(hadithe.find((h) => h.nummer === '1')!.textAr);
     expect(b?.vorher).toBeNull();
     expect(b?.naechstes).toMatchObject({ nr: 2, titelEn: 'Belief' });
@@ -149,5 +155,48 @@ describe('Hadith-Suche', () => {
     expect(await sucheHadith('Gebet')).toEqual([]);
     expect(await sucheHadith("'; drop table hadith; --")).toEqual([]);
     expect((await db.select().from(schema.hadith)).length).toBe(hadithe.length);
+  });
+});
+
+describe('Lange Bücher in Teilen zu je 100 Hadithen', () => {
+  // Buch 4 der Quelle hat mehr als 100 Hadithe; erst nach der Suche eingefügt, damit deren Erwartungen gelten
+  const buch4 = quelle.hadithe.filter((h) => h.buchNr === 4);
+
+  it('Teil 1 und 2, Teil jenseits des Buchs null, Teile für Seiten und Sitemap', async () => {
+    expect(buch4.length).toBeGreaterThan(100);
+    expect(buch4.length).toBeLessThanOrEqual(200);
+    const b = quelle.buecher.find((x) => x.nr === 4)!;
+    await db
+      .insert(schema.hadithBuch)
+      .values({ sammlungId: 'bukhari', nr: 4, titel: { de: '', en: b.titelEn }, hadithVon: b.hadithVon, hadithBis: b.hadithBis });
+    await db.insert(schema.hadith).values(buch4.map((h) => ({ sammlungId: 'bukhari', ...h })));
+    const eins = await ladeHadithBuch(4);
+    const zwei = await ladeHadithBuch(4, 2);
+    expect(eins).toMatchObject({ teil: 1, teile: 2, buch: { nr: 4, anzahl: buch4.length } });
+    expect(eins?.hadithe.map((h) => h.nummer)).toEqual(buch4.slice(0, 100).map((h) => h.nummer));
+    expect(zwei?.hadithe.map((h) => h.nummer)).toEqual(buch4.slice(100).map((h) => h.nummer));
+    expect(zwei?.hadithe.every((h) => h.teil === 2)).toBe(true);
+    expect(zwei?.vorher?.nr).toBe(2);
+    expect(await ladeHadithBuch(4, 3)).toBeNull();
+    expect(await ladeHadithBuch(4, 0)).toBeNull();
+    expect(await ladeHadithBuchTeile()).toEqual([{ nr: 4, teile: 2 }]);
+  });
+
+  it('Auswahl und Suche kennen den Teil, auf dem der Hadith steht', async () => {
+    const vorn = buch4[0].nummer;
+    const hinten = buch4[100].nummer;
+    await db.insert(schema.hadithAuswahl).values([
+      { liste: 'teile', sammlungId: 'bukhari', nummer: hinten, reihenfolge: 1 },
+      { liste: 'teile', sammlungId: 'bukhari', nummer: vorn, reihenfolge: 2 },
+      { liste: 'teile', sammlungId: 'bukhari', nummer: '1', reihenfolge: 3 },
+    ]);
+    const a = await ladeHadithAuswahl('teile');
+    expect(a.hadithe.map((h) => [h.nummer, h.teil])).toEqual([
+      [hinten, 2],
+      [vorn, 1],
+      ['1', 1],
+    ]);
+    expect((await sucheHadith(hinten)).map((t) => [t.nummer, t.teil])).toEqual([[hinten, 2]]);
+    expect((await sucheHadith(vorn)).map((t) => [t.nummer, t.teil])).toEqual([[vorn, 1]]);
   });
 });

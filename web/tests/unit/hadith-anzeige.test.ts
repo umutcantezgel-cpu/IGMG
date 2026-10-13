@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   buchNummer,
+  buchTeilZiel,
   enthaeltArabisch,
   gepruefteUebersetzung,
   hadithAnker,
@@ -8,6 +9,11 @@ import {
   hadithSicht,
   stelle,
   suchAusschnitt,
+  TEIL_GROESSE,
+  teilAnzahl,
+  teilBereich,
+  teilNummer,
+  teilVon,
 } from '@/lib/hadith/anzeige';
 
 /**
@@ -59,6 +65,32 @@ describe('Adressen und Bezug', () => {
     expect(buchNummer('1')).toBe(1);
     expect(buchNummer('97')).toBe(97);
     for (const roh of ['0', '01', '2a', '', '_', '1.5', '-3', '1000']) expect(buchNummer(roh)).toBeNull();
+  });
+
+  it('Teile zu je 100 Hadithen: Anzahl, Teil je Position, Bereich (Buch 64 mit 526 Hadithen → 6 Teile)', () => {
+    expect(TEIL_GROESSE).toBe(100);
+    expect([0, 1, 100, 101, 200, 526].map(teilAnzahl)).toEqual([1, 1, 1, 2, 2, 6]);
+    expect([0, 99, 100, 199, 200, 525].map(teilVon)).toEqual([1, 1, 2, 2, 3, 6]);
+    expect(teilVon(-1)).toBe(1);
+    expect(teilBereich(1, 526)).toEqual({ von: 1, bis: 100 });
+    expect(teilBereich(6, 526)).toEqual({ von: 501, bis: 526 });
+    expect(teilBereich(2, 113)).toEqual({ von: 101, bis: 113 });
+  });
+
+  it('Teilnummer nur kanonisch 2–99 (Teil 1 ist die Buchseite)', () => {
+    expect(teilNummer('2')).toBe(2);
+    expect(teilNummer('99')).toBe(99);
+    for (const roh of ['1', '0', '02', '100', '_', '', '2a', '-2']) expect(teilNummer(roh)).toBeNull();
+  });
+
+  it('Linkziel: Teil 1 = Buchseite, ab Teil 2 die Teiladresse, Anker optional', () => {
+    expect(buchTeilZiel(4, 1)).toEqual({ pathname: '/hadith/bukhari/[buch]', params: { buch: '4' } });
+    expect(buchTeilZiel(4, 1, 'h-135')).toEqual({ pathname: '/hadith/bukhari/[buch]', params: { buch: '4' }, hash: 'h-135' });
+    expect(buchTeilZiel(64, 3, 'h-4300')).toEqual({
+      pathname: '/hadith/bukhari/[buch]/teil/[teil]',
+      params: { buch: '64', teil: '3' },
+      hash: 'h-4300',
+    });
   });
 
   it('Stelle im Buch fehlt, wenn die Quelle sie nicht nennt', () => {

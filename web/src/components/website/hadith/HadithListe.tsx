@@ -3,7 +3,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import type { CSSProperties } from 'react';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { gepruefteUebersetzung, hadithAnker, stelle } from '@/lib/hadith/anzeige';
+import { buchTeilZiel, gepruefteUebersetzung, hadithAnker, stelle } from '@/lib/hadith/anzeige';
 import type { HadithEintrag } from '@/server/queries/hadith';
 import { LinkKopieren } from './LinkKopieren';
 
@@ -77,7 +77,7 @@ export async function HadithListe({
                   <span className="flex flex-wrap gap-x-4">
                     {imBuch ? (
                       <Link
-                        href={{ pathname: '/hadith/bukhari/[buch]', params: { buch: String(h.buchNr) }, hash: anker }}
+                        href={buchTeilZiel(h.buchNr, h.teil, anker)}
                         aria-label={`${ta('imBuch')}: ${bezug}`}
                         className="inline-flex min-h-12 items-center gap-2 text-16 font-bold text-gruen-800"
                       >

@@ -1,10 +1,10 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
-import { hadithAnker, stelle } from '@/lib/hadith/anzeige';
+import { buchTeilZiel, hadithAnker, stelle } from '@/lib/hadith/anzeige';
 import type { HadithTreffer } from '@/server/queries/suche';
 
 /**
- * Gruppe „Hadith“ der Suche (Muster Trefferliste): Bezug als Link zur Stelle im Buch (`#h-<nummer>`), darunter der
+ * Gruppe „Hadith“ der Suche (Muster Trefferliste): Bezug als Link zur Stelle im Buch oder Buchteil (`#h-<nummer>`), darunter der
  * Ausschnitt aus dem unveränderten arabischen Text mit markierten Trefferwörtern. Die ganze Karte ist klickbar.
  */
 export async function HadithTrefferliste({ treffer }: { treffer: HadithTreffer[] }) {
@@ -27,7 +27,7 @@ export async function HadithTrefferliste({ treffer }: { treffer: HadithTreffer[]
               <article className="relative flex h-full flex-col gap-3 rounded-lg border border-linie bg-weiss p-6 shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2">
                 <h4 className="text-20 leading-snug font-bold">
                   <Link
-                    href={{ pathname: '/hadith/bukhari/[buch]', params: { buch: String(z.buchNr) }, hash: hadithAnker(z.nummer) }}
+                    href={buchTeilZiel(z.buchNr, z.teil, hadithAnker(z.nummer))}
                     className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg hover:text-gruen-800 hover:underline"
                   >
                     {name} {z.nummer}

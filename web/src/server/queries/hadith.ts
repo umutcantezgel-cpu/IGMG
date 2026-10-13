@@ -1,10 +1,10 @@
 import 'server-only';
-import { and, asc, count, eq, inArray } from 'drizzle-orm';
+import { and, asc, count, eq, inArray, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
-import { BUKHARI } from '@/lib/hadith/anzeige';
+import { BUKHARI, TEIL_GROESSE, teilAnzahl, teilVon } from '@/lib/hadith/anzeige';
 
 /**
  * Hadith (AUFTRAG 3.3, ADR 0025, ADR 0030): Sahih al-Bukhari arabisch aus dem Import (`pnpm inhalte:import`).
@@ -22,6 +22,8 @@ export type HadithEintrag = {
   textAr: string;
   bewertung: string | null;
   bewertetVon: string | null;
+  /** Teil des Buchs, auf dem der Hadith steht (Teile zu je 100, `TEIL_GROESSE`). */
+  teil: number;
   uebersetzungen: HadithUebersetzung[];
 };
 export type HadithUebersicht = {
@@ -35,7 +37,10 @@ export type HadithUebersicht = {
 export type HadithBuch = {
   sammlung: HadithSammlung;
   buch: HadithBuchKurz;
+  /** Hadithe dieses Teils in der Reihenfolge der Quelle. */
   hadithe: HadithEintrag[];
+  teil: number;
+  teile: number;
   vorher: HadithBuchKurz | null;
   naechstes: HadithBuchKurz | null;
 };
@@ -109,6 +114,10 @@ const EINTRAG = {
   bewertetVon: schema.hadith.bewertetVon,
 };
 
+/** Position eines Hadith in seinem Buch (0-basiert, Reihenfolge der Quelle) – daraus folgt sein Teil. */
+const POSITION = sql<number>`(select count(*) from hadith as frueher where frueher.sammlung_id = ${schema.hadith.sammlungId}
+  and frueher.buch_nr = ${schema.hadith.buchNr} and frueher.sortierung < ${schema.hadith.sortierung})`.mapWith(Number);
+
 /** Übersicht für /hadith und /hadith/bukhari: Sammlung, Bücher mit Anzahl, Stand der Übersetzungen, Größe der Auswahl. */
 export async function ladeHadithUebersicht(): Promise<HadithUebersicht> {
   'use cache: remote';
@@ -140,27 +149,36 @@ export async function ladeHadithUebersicht(): Promise<HadithUebersicht> {
   };
 }
 
-/** Ein Buch mit allen Hadithen in der Reihenfolge der Quelle; null ohne Import oder bei unbekannter Nummer. */
-export async function ladeHadithBuch(nr: number): Promise<HadithBuch | null> {
+/**
+ * Ein Teil eines Buchs (Teil 1 = Buchseite) mit bis zu 100 Hadithen in der Reihenfolge der Quelle; null ohne Import,
+ * bei unbekannter Nummer oder einem Teil jenseits des Buchs.
+ */
+export async function ladeHadithBuch(nr: number, teil = 1): Promise<HadithBuch | null> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
-  if (!Number.isInteger(nr) || nr < 1) return null;
+  if (!Number.isInteger(nr) || nr < 1 || !Number.isInteger(teil) || teil < 1) return null;
   const s = await sammlung();
   if (!s) return null;
   const liste = await buecher();
   const index = liste.findIndex((b) => b.nr === nr);
   if (index < 0) return null;
+  const teile = teilAnzahl(liste[index].anzahl);
+  if (teil > teile) return null;
   const zeilen = await db
     .select(EINTRAG)
     .from(schema.hadith)
     .where(and(eq(schema.hadith.sammlungId, BUKHARI), eq(schema.hadith.buchNr, nr)))
-    .orderBy(asc(schema.hadith.sortierung));
+    .orderBy(asc(schema.hadith.sortierung))
+    .limit(TEIL_GROESSE)
+    .offset((teil - 1) * TEIL_GROESSE);
   const ue = await uebersetzungen(zeilen.map((z) => z.nummer));
   return {
     sammlung: s,
     buch: liste[index],
-    hadithe: zeilen.map((z) => ({ ...z, uebersetzungen: ue.get(z.nummer) ?? [] })),
+    hadithe: zeilen.map((z) => ({ ...z, teil, uebersetzungen: ue.get(z.nummer) ?? [] })),
+    teil,
+    teile,
     vorher: liste[index - 1] ?? null,
     naechstes: liste[index + 1] ?? null,
   };
@@ -174,7 +192,7 @@ export async function ladeHadithAuswahl(liste: string = AUSWAHL): Promise<{ samm
   const s = await sammlung();
   if (!s) return { sammlung: null, hadithe: [] };
   const zeilen = await db
-    .select(EINTRAG)
+    .select({ ...EINTRAG, position: POSITION })
     .from(schema.hadithAuswahl)
     .innerJoin(
       schema.hadith,
@@ -183,7 +201,19 @@ export async function ladeHadithAuswahl(liste: string = AUSWAHL): Promise<{ samm
     .where(and(eq(schema.hadithAuswahl.liste, liste), eq(schema.hadithAuswahl.sammlungId, BUKHARI)))
     .orderBy(asc(schema.hadithAuswahl.reihenfolge), asc(schema.hadith.sortierung));
   const ue = await uebersetzungen(zeilen.map((z) => z.nummer));
-  return { sammlung: s, hadithe: zeilen.map((z) => ({ ...z, uebersetzungen: ue.get(z.nummer) ?? [] })) };
+  return {
+    sammlung: s,
+    hadithe: zeilen.map(({ position, ...z }) => ({ ...z, teil: teilVon(position), uebersetzungen: ue.get(z.nummer) ?? [] })),
+  };
+}
+
+/** Bücher mit mehr als einem Teil und ihre Teilzahl, für `generateStaticParams` der Teilseiten und die Sitemap. */
+export async function ladeHadithBuchTeile(): Promise<{ nr: number; teile: number }[]> {
+  'use cache: remote';
+  cacheLife('max');
+  cacheTag(TAG.hadith);
+  if (!(await sammlung())) return [];
+  return (await buecher()).map((b) => ({ nr: b.nr, teile: teilAnzahl(b.anzahl) })).filter((b) => b.teile > 1);
 }
 
 /** Nummern aller Bücher für `generateStaticParams` (leer ohne Import). */

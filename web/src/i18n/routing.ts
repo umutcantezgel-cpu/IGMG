@@ -51,6 +51,11 @@ export const routing = defineRouting({
     '/hadith': { de: '/hadith', tr: '/hadis', en: '/hadith' },
     '/hadith/bukhari': { de: '/hadith/bukhari', tr: '/hadis/buhari', en: '/hadith/bukhari' },
     '/hadith/bukhari/[buch]': { de: '/hadith/bukhari/[buch]', tr: '/hadis/buhari/[buch]', en: '/hadith/bukhari/[buch]' },
+    '/hadith/bukhari/[buch]/teil/[teil]': {
+      de: '/hadith/bukhari/[buch]/teil/[teil]',
+      tr: '/hadis/buhari/[buch]/bolum/[teil]',
+      en: '/hadith/bukhari/[buch]/part/[teil]',
+    },
     '/hadith/auswahl': { de: '/hadith/auswahl', tr: '/hadis/secme', en: '/hadith/selection' },
     '/lernen': { de: '/lernen', tr: '/ogren', en: '/learn' },
     '/elifbe': { de: '/elifbe', tr: '/elifba', en: '/arabic-alphabet' },

@@ -1,3 +1,4 @@
+import type { Ziel } from '@/i18n/navigation';
 import { normalisiereArabisch } from './import';
 
 /**
@@ -17,6 +18,42 @@ export function hadithAnker(nummer: string): string {
 /** Buchnummer aus dem Adressteil: nur die kanonische Schreibweise 1–999 („2“ ja, „02“, „2a“, „0“ nein). */
 export function buchNummer(roh: string): number | null {
   return /^[1-9]\d{0,2}$/.test(roh) ? Number(roh) : null;
+}
+
+/**
+ * Lange Bücher (bis über 500 Hadithe) stehen in Teilen zu je 100 Hadithen: Jede Seite bleibt im HTML-Budget
+ * (Buch 64 am Stück ≈ 390 KB gz). Teil 1 ist die Buchseite selbst, ab Teil 2 eine eigene Adresse `…/teil/<n>`.
+ */
+export const TEIL_GROESSE = 100;
+
+/** Zahl der Teile eines Buchs (mindestens 1, auch ohne Hadithe). */
+export function teilAnzahl(anzahl: number): number {
+  return Math.max(1, Math.ceil(anzahl / TEIL_GROESSE));
+}
+
+/** Teil zu einer Position im Buch (0-basiert in der Reihenfolge der Quelle). */
+export function teilVon(position: number): number {
+  return Math.floor(Math.max(0, position) / TEIL_GROESSE) + 1;
+}
+
+/** Teilnummer aus dem Adressteil: nur 2–99 in kanonischer Schreibweise („1“ ist die Buchseite, „02“ nein). */
+export function teilNummer(roh: string): number | null {
+  return /^[1-9]\d?$/.test(roh) && roh !== '1' ? Number(roh) : null;
+}
+
+/** Positionen eines Teils, 1-basiert und einschließlich (z. B. Teil 2 von 526 → 101–200). */
+export function teilBereich(teil: number, anzahl: number): { von: number; bis: number } {
+  const von = (teil - 1) * TEIL_GROESSE + 1;
+  return { von, bis: Math.min(anzahl, teil * TEIL_GROESSE) };
+}
+
+/** Linkziel eines Buchteils, optional mit Anker eines Hadith; Teil 1 ist die Buchseite. */
+export function buchTeilZiel(buchNr: number, teil: number, anker?: string): Ziel {
+  const buch = String(buchNr);
+  const hash = anker ? { hash: anker } : {};
+  return teil > 1
+    ? { pathname: '/hadith/bukhari/[buch]/teil/[teil]', params: { buch, teil: String(teil) }, ...hash }
+    : { pathname: '/hadith/bukhari/[buch]', params: { buch }, ...hash };
 }
 
 /**

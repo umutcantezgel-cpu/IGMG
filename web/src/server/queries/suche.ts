@@ -3,7 +3,7 @@ import { sql, type SQL } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db } from '@/lib/db';
-import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, type Ausschnitt } from '@/lib/hadith/anzeige';
+import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, teilVon, type Ausschnitt } from '@/lib/hadith/anzeige';
 import { normalisiereArabisch } from '@/lib/hadith/import';
 
 /**
@@ -82,9 +82,20 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
 }
 
 /** Treffer der Hadith-Suche: Bezug und Ausschnitt aus dem unveränderten arabischen Text (Trefferwörter markiert). */
-export type HadithTreffer = { nummer: string; buchNr: number; imBuchNr: number | null; ausschnitt: Ausschnitt; rang: number };
+export type HadithTreffer = { nummer: string; buchNr: number; imBuchNr: number | null; teil: number; ausschnitt: Ausschnitt; rang: number };
 
-type HadithZeile = { nummer: string; buch_nr: number; im_buch_nr: number | null; text_ar: string; rang: number | string };
+type HadithZeile = {
+  nummer: string;
+  buch_nr: number;
+  im_buch_nr: number | null;
+  text_ar: string;
+  position: number | string;
+  rang: number | string;
+};
+
+/** Position im Buch (0-basiert) für den Teil, auf dem der Treffer steht. */
+const POSITION = sql`(select count(*) from hadith as frueher where frueher.sammlung_id = h.sammlung_id
+  and frueher.buch_nr = h.buch_nr and frueher.sortierung < h.sortierung) as position`;
 
 /**
  * Hadith-Suche (AUFTRAG 3.3, Filter „Hadith“ in /suche): Volltext über `hadith.suche` (tsvector 'simple' aus dem Text
@@ -102,16 +113,19 @@ export async function sucheHadith(begriff: string): Promise<HadithTreffer[]> {
   const normalisiert = normalisiereArabisch(q);
   if (!nummer && (normalisiert.length < 2 || !enthaeltArabisch(normalisiert))) return [];
   const anfrage = nummer
-    ? sql`select nummer, buch_nr, im_buch_nr, text_ar, 1 as rang from hadith where sammlung_id = ${BUKHARI} and nummer = ${nummer}`
-    : sql`select nummer, buch_nr, im_buch_nr, text_ar, ts_rank(suche, plainto_tsquery('simple', ${normalisiert})) as rang
-        from hadith where sammlung_id = ${BUKHARI} and suche @@ plainto_tsquery('simple', ${normalisiert})
-        order by rang desc, sortierung asc limit 30`;
+    ? sql`select h.nummer, h.buch_nr, h.im_buch_nr, h.text_ar, ${POSITION}, 1 as rang
+        from hadith as h where h.sammlung_id = ${BUKHARI} and h.nummer = ${nummer}`
+    : sql`select h.nummer, h.buch_nr, h.im_buch_nr, h.text_ar, ${POSITION},
+          ts_rank(h.suche, plainto_tsquery('simple', ${normalisiert})) as rang
+        from hadith as h where h.sammlung_id = ${BUKHARI} and h.suche @@ plainto_tsquery('simple', ${normalisiert})
+        order by rang desc, h.sortierung asc limit 30`;
   const ergebnis = await db.execute<HadithZeile>(anfrage);
   const zeilen = 'rows' in ergebnis ? ergebnis.rows : (ergebnis as unknown as HadithZeile[]);
   return zeilen.map((z) => ({
     nummer: z.nummer,
     buchNr: Number(z.buch_nr),
     imBuchNr: z.im_buch_nr === null ? null : Number(z.im_buch_nr),
+    teil: teilVon(Number(z.position)),
     ausschnitt: suchAusschnitt(z.text_ar, nummer ? '' : normalisiert),
     rang: Number(z.rang),
   }));
