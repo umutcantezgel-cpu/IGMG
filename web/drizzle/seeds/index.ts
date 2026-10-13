@@ -8,6 +8,7 @@ import { BEREICHS_SEEDS } from './bereiche';
 import { BEISPIEL_NACHRICHTEN } from './daten/nachrichten';
 import { BEISPIEL_VERANSTALTUNG_DETAIL } from './daten/veranstaltung-detail';
 import { BEISPIEL_VERANSTALTUNGEN } from './daten/veranstaltungen';
+import { lehrplanStufen } from './lernplattform';
 
 type Db = ReturnType<typeof holeDb>;
 
@@ -165,6 +166,7 @@ const SEEDS: { name: string; lauf: (db: Db) => Promise<number> }[] = [
   { name: 'veranstaltungen', lauf: veranstaltungen },
   { name: 'nachrichten', lauf: nachrichten },
   ...BEREICHS_SEEDS,
+  { name: 'lehrplanstufen', lauf: lehrplanStufen },
 ];
 
 async function main() {
