@@ -9,7 +9,7 @@ Das Startklar-Cockpit zeigt den Zustand (Sicherung, Probe, Spiegel; gelb, wenn e
 | `takt` | stößt Gebetserinnerungen (Push), Mail-Ausgang und Löschfristen an | jede Minute / alle 5 Min. / täglich 03:17 |
 | `sicherung` | Datenbank sichern (`pg_dump`, mit `age` verschlüsselt), 30 Tage aufheben | täglich 02:43 |
 | `sicherung` (Probe) | neueste Sicherung testweise wiederherstellen | am 1. des Monats 04:13 |
-| `medien-spiegel` | Bilder, PDFs und Audio aus Vercel Blob spiegeln, mit Prüfsummen | täglich 01:37 |
+| `medien-spiegel` | Bilder, PDFs und Audio aus Vercel Blob spiegeln, mit Prüfsummen; in Blob gelöschte Dateien nach 30 Tagen auch im Spiegel entfernen | täglich 01:37 |
 | `ueberwachung` | Website-Gesundheit prüfen, Mail an die Technik nach 15 Min. Ausfall | alle 5 Min. |
 | `centrifugo` + `caddy` | Echtzeit-Signal für den Gruppenchat (nur „es gibt Neues“, nie Inhalte) | Profil `echtzeit` |
 
