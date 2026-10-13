@@ -14,6 +14,8 @@ export const user = pgTable('user', {
     .$onUpdate(() => /* @__PURE__ */ new Date())
     .notNull(),
   twoFactorEnabled: boolean('two_factor_enabled').default(false),
+  username: text('username').unique(),
+  displayUsername: text('display_username'),
   gesperrtAm: timestamp('gesperrt_am', { withTimezone: true }),
 });
 

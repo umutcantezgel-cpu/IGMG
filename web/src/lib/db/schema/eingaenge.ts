@@ -31,6 +31,9 @@ export const eingang = pgTable(
     erledigtAm: timestamp({ withTimezone: true }),
     loeschenAb: timestamp({ withTimezone: true }),
     bearbeitetVon: text(),
+    /** QR-Einlass bei Veranstaltungen (Kür): nur Hash des Einlasscodes, Zeitpunkt des Einlasses. */
+    checkinHash: text().unique(),
+    eingechecktAm: timestamp({ withTimezone: true }),
   },
   (t) => [
     index('eingang_art_status_idx').on(t.art, t.status),

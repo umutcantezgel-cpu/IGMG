@@ -1,9 +1,31 @@
 import { describe, expect, it } from 'vitest';
-import { AKTIONEN, MATRIX, ROLLEN, darf, organisationsFilter } from '@/lib/rechte/matrix';
+import { AKTIONEN, MATRIX, NIE_PER_ADMINISTRATION, ROLLEN, darf, organisationsFilter } from '@/lib/rechte/matrix';
 
 describe('Rechte-Matrix (K-06, ADR 0003)', () => {
-  it('Administration darf jede Aktion', () => {
-    for (const a of AKTIONEN) expect(darf([{ rolle: 'administration' }], a)).toBe(true);
+  it('Administration darf jede Aktion außer Chat-Inhalten (ADR Kontoarten, S-11)', () => {
+    for (const a of AKTIONEN) expect(darf([{ rolle: 'administration' }], a)).toBe(!NIE_PER_ADMINISTRATION.has(a));
+  });
+
+  it('Chat-Meldungen und Moderationsprotokoll nur mit der Rolle Kinderschutz', () => {
+    const erlaubt = ROLLEN.filter((r) => MATRIX[r].has('meldung.chat.lesen'));
+    expect(erlaubt).toEqual(['kinderschutz']);
+    for (const a of NIE_PER_ADMINISTRATION) expect(darf([{ rolle: 'kinderschutz' }], a)).toBe(true);
+    expect(darf([{ rolle: 'administration' }, { rolle: 'bildung' }], 'moderationsprotokoll.lesen')).toBe(false);
+  });
+
+  it('Leitung liest nur und ändert nichts', () => {
+    for (const a of MATRIX.leitung)
+      expect(a.endsWith('.lesen') || ['verwaltung.betreten', 'postfach.nutzen', 'ticket.anlegen'].includes(a)).toBe(true);
+  });
+
+  it('religiöse Freigabe nur Administration und religiöse Prüfung', () => {
+    const erlaubt = ROLLEN.filter((r) => MATRIX[r].has('religioes.freigeben'));
+    expect(erlaubt.sort()).toEqual(['administration', 'religioese_pruefung']);
+  });
+
+  it('Gruppen und Lernende verwaltet nur Bildung (und Administration)', () => {
+    const erlaubt = ROLLEN.filter((r) => MATRIX[r].has('lernende.bearbeiten'));
+    expect(erlaubt.sort()).toEqual(['administration', 'bildung']);
   });
 
   it('ohne Rolle ist nichts erlaubt', () => {

@@ -16,7 +16,10 @@ export const aufrufe = {
   nachher: [] as (() => unknown)[],
 };
 
-let sitzung: { user: { id: string; name: string; email: string; twoFactorEnabled: boolean } } | null = null;
+let sitzung: {
+  user: { id: string; name: string; email: string; twoFactorEnabled: boolean };
+  session: { id: string; createdAt: Date };
+} | null = null;
 
 vi.mock('next/cache', () => ({
   updateTag: (t: string) => aufrufe.updateTag.push(t),
@@ -79,7 +82,11 @@ export async function angemeldetAls(rollen: RollenZuweisung[] | null, zweiFaktor
     await db
       .insert(schema.rolleZuweisung)
       .values(rollen.map((r) => ({ benutzerId: id, rolle: r.rolle, organisation: r.organisation ?? null })));
-  sitzung = { user: { id, name: 'Testperson Eins', email: `testperson.${id.slice(0, 8)}@example.test`, twoFactorEnabled: zweiFaktor } };
+  sitzung = {
+    user: { id, name: 'Testperson Eins', email: `testperson.${id.slice(0, 8)}@example.test`, twoFactorEnabled: zweiFaktor },
+    // Wie Better Auth: Sitzung mit Anmeldezeitpunkt (absolute Grenzen je Kontoart, ADR Kontoarten)
+    session: { id: `sitzung-${id}`, createdAt: new Date() },
+  };
   return id;
 }
 

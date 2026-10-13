@@ -39,7 +39,12 @@ async function legePerson(name: string, rollen: RollenZuweisung[], zweiFaktor = 
 
 function alsPerson(person: Person | null, zweiFaktor = true): void {
   sitzungsApi.getSession = async () =>
-    person ? { user: { id: person.id, name: person.name, email: person.email, twoFactorEnabled: zweiFaktor } } : null;
+    person
+      ? {
+          user: { id: person.id, name: person.name, email: person.email, twoFactorEnabled: zweiFaktor },
+          session: { id: `sitzung-${person.id}`, createdAt: new Date() },
+        }
+      : null;
 }
 
 /** Angemeldet-Objekt für Abfragen, die nur die Person-ID brauchen (Rechte prüft die Action selbst). */

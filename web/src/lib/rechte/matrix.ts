@@ -3,7 +3,16 @@
  * Jede Server Action und jede Verwaltungsroute ruft `verlangeRecht(aktion, ziel)` (pruefe.ts) auf.
  */
 
-export const ROLLEN = ['administration', 'redaktion', 'organisationsredaktion', 'bildung', 'mitgliederverwaltung'] as const;
+export const ROLLEN = [
+  'administration',
+  'redaktion',
+  'organisationsredaktion',
+  'bildung',
+  'mitgliederverwaltung',
+  'leitung',
+  'religioese_pruefung',
+  'kinderschutz',
+] as const;
 export type Rolle = (typeof ROLLEN)[number];
 
 export const ORGANISATION_KUERZEL = ['at', 'kt', 'gt', 'kgt'] as const;
@@ -55,6 +64,41 @@ export const AKTIONEN = [
   'audit.lesen',
   'einstellung.bearbeiten',
   'styleguide.lesen',
+  // Lauf Gemeinde-Plattform (ADR Kontoarten, ADR CMS, ADR Religiöse Freigabe)
+  'gruppe.lesen',
+  'gruppe.bearbeiten',
+  'lernende.lesen',
+  'lernende.bearbeiten',
+  'lernende.aufnehmen',
+  'lehrplan.bearbeiten',
+  'gemeindekonto.lesen',
+  'gemeindekonto.bearbeiten',
+  'seite.lesen',
+  'seite.bearbeiten',
+  'seite.veroeffentlichen',
+  'menue.bearbeiten',
+  'startseite.bearbeiten',
+  'weiterleitung.bearbeiten',
+  'wissen.bearbeiten',
+  'freigabe.lesen',
+  'religioes.freigeben',
+  'quran.bearbeiten',
+  'hadith.bearbeiten',
+  'elifbe.bearbeiten',
+  'rezitation.bearbeiten',
+  'anzeige.bearbeiten',
+  'kalender.bearbeiten',
+  'hatim.bearbeiten',
+  'newsletter.lesen',
+  'newsletter.senden',
+  'ehrenamt.bearbeiten',
+  'push.ankuendigung',
+  'meldung.chat.lesen',
+  'meldung.chat.bearbeiten',
+  'moderationsprotokoll.lesen',
+  'chat.notfallpause',
+  'leitung.lesen',
+  'funktion.schalten',
 ] as const;
 export type Aktion = (typeof AKTIONEN)[number];
 
@@ -69,6 +113,18 @@ const ORGANISATIONSGEBUNDEN: ReadonlySet<Aktion> = new Set<Aktion>([
   'organisationsinhalt.bearbeiten',
   'eingang.veranstaltungsanmeldung.lesen',
   'eingang.veranstaltungsanmeldung.bearbeiten',
+  'seite.bearbeiten',
+  'seite.veroeffentlichen',
+]);
+
+/**
+ * Kinderschutz (ADR Kontoarten, S-11): Chat-Meldungen und Moderationsprotokoll sind NICHT über
+ * „Administration darf alles“ erreichbar, sondern nur mit der Rolle `kinderschutz` (jeder Zugriff im Audit).
+ */
+export const NIE_PER_ADMINISTRATION: ReadonlySet<Aktion> = new Set<Aktion>([
+  'meldung.chat.lesen',
+  'meldung.chat.bearbeiten',
+  'moderationsprotokoll.lesen',
 ]);
 
 const GRUNDRECHTE: Aktion[] = [
@@ -81,9 +137,9 @@ const GRUNDRECHTE: Aktion[] = [
   'medium.lesen',
 ];
 
-/** Matrix Rolle → erlaubte Aktionen. Administration darf alles (ADR 0003). */
+/** Matrix Rolle → erlaubte Aktionen. Administration darf alles (ADR 0003) – außer Chat-Inhalten (NIE_PER_ADMINISTRATION). */
 export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
-  administration: new Set<Aktion>(AKTIONEN),
+  administration: new Set<Aktion>(AKTIONEN.filter((a) => !NIE_PER_ADMINISTRATION.has(a))),
   redaktion: new Set<Aktion>([
     ...GRUNDRECHTE,
     'veranstaltung.lesen',
@@ -104,6 +160,21 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'medium.loeschen',
     'eingang.veranstaltungsanmeldung.lesen',
     'eingang.veranstaltungsanmeldung.bearbeiten',
+    'seite.lesen',
+    'seite.bearbeiten',
+    'seite.veroeffentlichen',
+    'menue.bearbeiten',
+    'startseite.bearbeiten',
+    'weiterleitung.bearbeiten',
+    'wissen.bearbeiten',
+    'freigabe.lesen',
+    'anzeige.bearbeiten',
+    'kalender.bearbeiten',
+    'hatim.bearbeiten',
+    'newsletter.lesen',
+    'newsletter.senden',
+    'ehrenamt.bearbeiten',
+    'push.ankuendigung',
   ]),
   organisationsredaktion: new Set<Aktion>([
     ...GRUNDRECHTE,
@@ -120,6 +191,9 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'medium.hochladen',
     'eingang.veranstaltungsanmeldung.lesen',
     'eingang.veranstaltungsanmeldung.bearbeiten',
+    'seite.lesen',
+    'seite.bearbeiten',
+    'seite.veroeffentlichen',
   ]),
   bildung: new Set<Aktion>([
     ...GRUNDRECHTE,
@@ -129,8 +203,57 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'eingang.voranmeldung.lesen',
     'eingang.voranmeldung.bearbeiten',
     'medium.hochladen',
+    'gruppe.lesen',
+    'gruppe.bearbeiten',
+    'lernende.lesen',
+    'lernende.bearbeiten',
+    'lernende.aufnehmen',
+    'lehrplan.bearbeiten',
+    'gemeindekonto.lesen',
+    'gemeindekonto.bearbeiten',
+    'elifbe.bearbeiten',
+    'freigabe.lesen',
   ]),
-  mitgliederverwaltung: new Set<Aktion>([...GRUNDRECHTE, 'eingang.mitgliedsantrag.lesen', 'eingang.mitgliedsantrag.bearbeiten']),
+  mitgliederverwaltung: new Set<Aktion>([
+    ...GRUNDRECHTE,
+    'eingang.mitgliedsantrag.lesen',
+    'eingang.mitgliedsantrag.bearbeiten',
+    'gemeindekonto.lesen',
+  ]),
+  /** Leitung (Vorstand): liest Cockpit und Übersichten, ändert nichts. */
+  leitung: new Set<Aktion>([
+    ...GRUNDRECHTE,
+    'leitung.lesen',
+    'veranstaltung.lesen',
+    'nachricht.lesen',
+    'ankuendigung.lesen',
+    'kurs.lesen',
+    'gruppe.lesen',
+    'seite.lesen',
+    'freigabe.lesen',
+    'newsletter.lesen',
+  ]),
+  /** Imam/Hoca: verfasst religiöse Inhalte und gibt sie frei (ADR Religiöse Freigabe). */
+  religioese_pruefung: new Set<Aktion>([
+    ...GRUNDRECHTE,
+    'religioes.freigeben',
+    'freigabe.lesen',
+    'quran.bearbeiten',
+    'hadith.bearbeiten',
+    'elifbe.bearbeiten',
+    'rezitation.bearbeiten',
+    'wissen.bearbeiten',
+    'kalender.bearbeiten',
+    'medium.hochladen',
+  ]),
+  /** Kinderschutz: Meldungen aus Chats, Moderationsprotokoll, Notfall-Pause (S-08, S-10, S-11, S-17). */
+  kinderschutz: new Set<Aktion>([
+    ...GRUNDRECHTE,
+    'meldung.chat.lesen',
+    'meldung.chat.bearbeiten',
+    'moderationsprotokoll.lesen',
+    'chat.notfallpause',
+  ]),
 };
 
 /** Ziel einer Aktion: Bei organisationsgebundenen Inhalten die Organisation des Inhalts (null = allgemein). */

@@ -6,6 +6,7 @@ import { cache } from 'react';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
 import { darf, organisationsFilter, type Aktion, type RollenZuweisung, type Ziel } from './matrix';
+import { sitzungAbgelaufen } from './sitzung';
 
 /** Fehler für fehlende Rechte. Die Meldung nennt keine Interna (S4). */
 export class KeinRecht extends Error {
@@ -38,6 +39,15 @@ export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
   if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;
   const rollen = await ladeRollen(benutzerId);
+  // Verwaltung: höchstens 8 h ab Anmeldung (absolut), obwohl Better Auth Gemeinde-Sitzungen bis 30 Tage hält
+  // (ADR Kontoarten). Abgelaufene Sitzungen werden widerrufen.
+  if (
+    rollen.length > 0 &&
+    sitzungAbgelaufen(new Date(sitzung.session.createdAt), { verwaltung: true, gemeindeRollen: [], istKind: false })
+  ) {
+    await db.delete(schema.session).where(eq(schema.session.id, sitzung.session.id));
+    return null;
+  }
   // 2FA-Pflicht (K-06): Mit aktiviertem TOTP entsteht eine Sitzung erst nach dem zweiten Faktor (Lichtung b).
   // Ein vorhandener Passkey zählt NICHT (Befund SP-P3 H1: sonst könnte jemand mit bekanntem Passwort einen eigenen
   // Passkey registrieren). Passkey-Anmeldung folgt in C12 mit Sitzungskennzeichen.

@@ -22,7 +22,32 @@ export const bytea = customType<{ data: Buffer; driverData: Buffer }>({
 
 export const organisationEnum = pgEnum('organisation', ['at', 'kt', 'gt', 'kgt']);
 export const inhaltStatusEnum = pgEnum('inhalt_status', ['entwurf', 'veroeffentlicht']);
-export const rolleEnum = pgEnum('rolle', ['administration', 'redaktion', 'organisationsredaktion', 'bildung', 'mitgliederverwaltung']);
+export const rolleEnum = pgEnum('rolle', [
+  'administration',
+  'redaktion',
+  'organisationsredaktion',
+  'bildung',
+  'mitgliederverwaltung',
+  // Lauf Gemeinde-Plattform (ADR Kontoarten): Leitung liest das Cockpit, religiöse Prüfung gibt religiöse Inhalte frei,
+  // Kinderschutz bearbeitet Chat-Meldungen und das Moderationsprotokoll.
+  'leitung',
+  'religioese_pruefung',
+  'kinderschutz',
+]);
+
+/** Kontoarten in „Mein Bereich“ (ADR Kontoarten), getrennt von den Verwaltungsrollen. */
+export const gemeindeRolleEnum = pgEnum('gemeinde_rolle_art', ['gemeinde', 'eltern', 'lehrkraft', 'schueler']);
+
+/** Freigabestand religiöser und redaktioneller Inhalte (ADR Religiöse Freigabe): öffentlich ist nur „geprueft“. */
+export const freigabeStatusEnum = pgEnum('freigabe_status', ['entwurf', 'zur_pruefung', 'geprueft']);
+
+/** Freigabespalten für Inhalte mit Pflichtprüfung (religiös: Rolle `religioese_pruefung`). */
+export const freigabeSpalten = () => ({
+  freigabe: freigabeStatusEnum().notNull().default('entwurf'),
+  verfasstVon: text(),
+  geprueftVon: text(),
+  geprueftAm: timestamp({ withTimezone: true }),
+});
 
 /** Gemeinsame Spalten aller Inhalte: Status, Papierkorb (30 Tage, K-05), Beispielkennzeichnung (ADR 0015). */
 export const inhaltSpalten = () => ({

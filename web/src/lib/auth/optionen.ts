@@ -2,6 +2,7 @@ import { passkey } from '@better-auth/passkey';
 import type { BetterAuthOptions } from 'better-auth';
 import { APIError, createAuthMiddleware } from 'better-auth/api';
 import { twoFactor } from 'better-auth/plugins/two-factor';
+import { username } from 'better-auth/plugins/username';
 import { oeffentlicheAdresse } from '../umgebung';
 
 /**
@@ -26,7 +27,9 @@ export const authOptionen = {
     revokeSessionsOnPasswordReset: true,
   },
   session: {
-    expiresIn: 60 * 60 * 8,
+    // Höchstdauer für Gemeinde-Konten (30 Tage gleitend). Kürzere, absolute Grenzen je Kontoart setzt
+    // `sitzungsGrenzeMs` (src/lib/rechte/sitzung.ts): Verwaltung 8 h, Lehrkraft und Kinder 12 h (ADR Kontoarten).
+    expiresIn: 60 * 60 * 24 * 30,
     updateAge: 60 * 30,
     cookieCache: { enabled: false },
   },
@@ -55,11 +58,13 @@ export const authOptionen = {
   },
   plugins: [
     twoFactor({ issuer: 'IGMG Wetzlar', backupCodeOptions: { amount: 10, length: 10 } }),
+    // Kinderkonten ohne E-Mail melden sich mit Benutzernamen an (ADR Kontoarten); nur über die Server Action.
+    username({ minUsernameLength: 4, maxUsernameLength: 32 }),
     passkey({ rpID: new URL(appUrl).hostname, rpName: 'IGMG Wetzlar Verwaltung', origin: new URL(appUrl).origin }),
   ],
   hooks: {
     // Über HTTP gesperrt (ctx.request vorhanden); die Server Actions rufen auth.api serverseitig ohne Request auf:
-    // - Registrierung: Konten nur per Einladung (K-06)
+    // - Registrierung: nur per Einladung (K-06) bzw. Gemeinde-Selbstregistrierung über die Server Action mit ALTCHA
     // - Anmeldung und Zwei-Faktor: nur über die Server Actions mit eigener Ratenbegrenzung je IP und Konto
     //   (Befund SP-P3 H2: auth.api umgeht die Begrenzung von Better Auth; ein offener HTTP-Weg wäre die Lücke)
     // - Passkeys: bis zur gesicherten Einführung gesperrt (Befund SP-P3 H1)
@@ -69,6 +74,8 @@ export const authOptionen = {
       if (ctx.path === '/sign-up/email') throw new APIError('FORBIDDEN', { message: 'Registrierung nur per Einladung.' });
       if (
         ctx.path === '/sign-in/email' ||
+        ctx.path === '/sign-in/username' ||
+        ctx.path === '/is-username-available' ||
         ctx.path.startsWith('/two-factor/') ||
         ctx.path.startsWith('/passkey/') ||
         // Tor B/C M1: Passwort-Abläufe nur über die Server Actions (Begrenzung je Konto, gleiche Antwort für alle)
