@@ -30,7 +30,7 @@ export type PushTexte = {
 type Auswahl = { themen: PushThemaSchluessel[]; gebete: string[]; minuten: number };
 type Zustand = 'pruefen' | 'nicht' | 'ios' | 'bereit';
 
-const AUSWAHL_SPEICHER = 'igmg.push.auswahl';
+const AUSWAHL_SPEICHER = 'igmg-push-auswahl';
 const MINUTEN = [0, 5, 10, 15, 20, 30, 45];
 const STANDARD: Auswahl = { themen: ['gebet'], gebete: ['imsak', 'ogle', 'ikindi', 'aksam', 'yatsi'], minuten: 10 };
 

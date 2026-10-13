@@ -211,7 +211,7 @@ Auf den Seiten der Gebetszeiten können Sie die Zeiten für Ihren Ort berechnen 
 - Er wird **nie an uns oder an Dritte übertragen**, nicht gespeichert und nicht protokolliert. Es gibt keine Geokodierung durch einen Fremddienst.
 - Die Berechnung läuft in Ihrem Gerät mit den Einstellungen der Moschee und der Zeitzone Ihres Geräts. Die Zeiten der Moschee gelten für Wetzlar.
 - Ohne Standort können Sie einen Ort aus der Liste wählen.
-- **Ort merken** ist freiwillig. Dann speichert Ihr Gerät (nicht wir) Ortsname, gerundete Koordinaten und Zeitzone unter dem Schlüssel `igmg.gebetszeiten.ort`. Mit „Vergessen“ löschen Sie das wieder.
+- **Ort merken** ist freiwillig. Dann speichert Ihr Gerät (nicht wir) Ortsname, gerundete Koordinaten und Zeitzone unter dem Schlüssel `igmg-gebetszeiten-ort`. Mit „Vergessen“ löschen Sie das wieder.
 - Die Erlaubnis für den Standort gilt technisch nur auf den Seiten der Gebetszeiten.
 
 Wie Ihr Gerät den Standort bestimmt (GPS, WLAN, Mobilfunk), regelt Ihr Browser bzw. Betriebssystem. Dabei können deren Anbieter Daten verarbeiten; das liegt außerhalb dieser Website.
@@ -220,7 +220,7 @@ Wie Ihr Gerät den Standort bestimmt (GPS, WLAN, Mobilfunk), regelt Ihr Browser 
 
 ### Hinweise für die Prüfung
 
-- Belege: `web/src/components/website/gebetszeiten/MeinOrtRechner.tsx` (Rundung über `gerundet`, `getCurrentPosition`, Speicherung nur nach Haken), `web/src/lib/gebetszeiten/ort.ts` (`ORT_SPEICHER = 'igmg.gebetszeiten.ort'`), ADR 0028, Test `web/tests/unit/kopfzeilen-pfade.test.ts` (`geolocation=(self)` nur auf Gebetszeiten-Pfaden), E2E `web/tests/e2e/gebetszeiten-mein-ort.spec.ts` (Netz-Abhörung: keine Koordinaten im Netz).
+- Belege: `web/src/components/website/gebetszeiten/MeinOrtRechner.tsx` (Rundung über `gerundet`, `getCurrentPosition`, Speicherung nur nach Haken), `web/src/lib/gebetszeiten/ort.ts` (`ORT_SPEICHER = 'igmg-gebetszeiten-ort'`), ADR 0028, Test `web/tests/unit/kopfzeilen-pfade.test.ts` (`geolocation=(self)` nur auf Gebetszeiten-Pfaden), E2E `web/tests/e2e/gebetszeiten-mein-ort.spec.ts` (Netz-Abhörung: keine Koordinaten im Netz).
 - Der Qibla-Kompass (Lage- und Bewegungssensoren, nach Einschalten) ist in Version 1 bereits beschrieben und bleibt unverändert.
 
 ## 8. Audio und Rezitationen
@@ -297,9 +297,12 @@ Die öffentlichen Seiten setzen **keine Cookies**. Zur Bedienung speichert die W
 | Schlüssel | Inhalt | Wann gesetzt | Zweck |
 | --- | --- | --- | --- |
 | `igmg-konzepthinweis-gesehen` | `1` | wenn Sie den Konzept-Hinweis schließen | Hinweis nur einmal zeigen (bereits in Version 1) |
-| `igmg.gebetszeiten.ort` | Ortsname, gerundete Koordinaten, Zeitzone | nur nach „Ort merken“ | gemerkter Ort für die Gebetszeiten |
-| `igmg.push.auswahl` | gewählte Themen, Gebete, Vorlauf in Minuten | beim Einschalten der Benachrichtigungen | Auswahl vorbelegen |
-| `igmg.quran.lesezeichen` | Lesezeichen (Sure, Vers) | wenn Sie ein Lesezeichen setzen | Lesezeichen im Koran-Leser |
+| `igmg-gebetszeiten-ort` | Ortsname, gerundete Koordinaten, Zeitzone | nur nach „Ort merken“ | gemerkter Ort für die Gebetszeiten |
+| `igmg-push-auswahl` | gewählte Themen, Gebete, Vorlauf in Minuten | beim Einschalten der Benachrichtigungen | Auswahl vorbelegen |
+| `igmg-quran-lesezeichen` | Lesezeichen (Sure, Vers) | wenn Sie ein Lesezeichen setzen | Lesezeichen im Koran-Leser |
+| `igmg-quran-einstellungen` | Lesemodus, Ausgabe, Schriftgröße, Tajwid an/aus | beim Ändern der Ansicht | Leser wie zuletzt eingestellt |
+| `igmg-quran-weiterlesen` | zuletzt gelesene Stelle (Sure, Vers) | beim Lesen | „Weiterlesen“ |
+| `igmg-elifbe-fortschritt` | gelöste Übungen je Buchstabe | beim Üben | Fortschritt im Elifbe |
 | Leser-Einstellungen | Lesemodus, Schriftgröße, Tajwid an/aus, gewählte Ausgabe, zuletzt gelesene Stelle | wenn Sie sie ändern bzw. lesen | Einstellungen und „Weiterlesen“ |
 | Übungsstand (Elifbe) | geübte Buchstaben | beim Üben | Fortschritt auf diesem Gerät |
 
@@ -309,7 +312,7 @@ Außerdem hält der **Service Worker** (`/sw.js`) öffentliche Seiten der Gebets
 
 ### Hinweise für die Prüfung
 
-- **Schlüsselnamen sind nicht einheitlich.** Der Stand dieses Branches kennt `igmg-konzepthinweis-gesehen` (`KonzeptHinweis.tsx`), `igmg.gebetszeiten.ort` (`ort.ts`), `igmg.push.auswahl` (`PushEinstellungen.tsx`). In den noch nicht zusammengeführten Paketen stehen außerdem `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser), `igmg.quran.lesezeichen` (Mein Bereich, `LesezeichenListe`) und `elifbe-fortschritt` (Elifbe-Übungen). **Der Koran-Leser schreibt also `igmg-quran-lesezeichen`, Mein Bereich liest `igmg.quran.lesezeichen`.** Vor der Veröffentlichung die Namen vereinheitlichen und die Tabelle gegen den zusammengeführten Code prüfen.
+- **Schlüsselnamen (vereinheitlicht 13.10.2026):** alle mit Präfix `igmg-` (geprüft in `web/tests/e2e/datenschutz.spec.ts`): `igmg-konzepthinweis-gesehen`, `igmg-gebetszeiten-ort`, `igmg-push-auswahl`, `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser schreibt, Mein Bereich liest), `igmg-elifbe-fortschritt`. Vor der Veröffentlichung gegen den Code prüfen.
 - Cookies der Anmeldung: siehe Baustein 2.
 - Service Worker: `web/public/sw.js` (Kopfkommentar: nie vorhalten: Verwaltung, API, Medien-Uploads, Server Actions).
 

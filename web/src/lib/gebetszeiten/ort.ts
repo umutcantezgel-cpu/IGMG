@@ -59,7 +59,7 @@ export function datumIn(zone: string, jetzt: Date): string {
 }
 
 /** Schlüssel im Gerätespeicher (localStorage) – nur nach ausdrücklichem „Ort merken“. */
-export const ORT_SPEICHER = 'igmg.gebetszeiten.ort';
+export const ORT_SPEICHER = 'igmg-gebetszeiten-ort';
 
 /** Gespeicherter Ort (nur nach ausdrücklichem „Ort merken“): Name und gerundete Lage. */
 export type GemerkterOrt = { name: string; breite: number; laenge: number; zone: string };

@@ -59,5 +59,5 @@ test('Ort merken überlebt Neuladen und lässt sich vergessen', async ({ page })
   await expect(page.getByRole('heading', { name: t.zeitenFuer.replace('{ort}', 'Solms') })).toBeVisible();
   await page.getByRole('button', { name: t.vergessen }).click();
   await expect(page.getByRole('button', { name: t.standortVerwenden })).toBeVisible();
-  expect(await page.evaluate(() => window.localStorage.getItem('igmg.gebetszeiten.ort'))).toBeNull();
+  expect(await page.evaluate(() => window.localStorage.getItem('igmg-gebetszeiten-ort'))).toBeNull();
 });

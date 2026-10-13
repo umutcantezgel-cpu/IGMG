@@ -237,7 +237,7 @@ Stand: 13.10.2026 · Stand des Codes: Branch `claude/trusting-lovelace-6nfolz`, 
 | Zweck | Gebetszeiten und Qibla für den Ort der Besucherin oder des Besuchers berechnen |
 | Rechtsgrundlage | keine Verarbeitung durch den Verantwortlichen; Zugriff auf den Standort nach Zustimmung im Browser (§ 25 Abs. 1 TDDDG); Merken: § 25 Abs. 2 Nr. 2 TDDDG |
 | Betroffene | Besucher |
-| Datenkategorien | Standort auf zwei Nachkommastellen gerundet, nur im Gerät; bei „Ort merken“ im Gerätespeicher (`igmg.gebetszeiten.ort`) |
+| Datenkategorien | Standort auf zwei Nachkommastellen gerundet, nur im Gerät; bei „Ort merken“ im Gerätespeicher (`igmg-gebetszeiten-ort`) |
 | Besondere Kategorien | keine |
 | Empfänger | **keine**; es gibt keine Übertragung an den Server und keine Geokodierung durch Dritte |
 | Drittland | keines durch die Website; die Standortbestimmung selbst liegt beim Browser/Betriebssystem |
