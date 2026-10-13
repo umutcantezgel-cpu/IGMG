@@ -1,6 +1,7 @@
 import 'server-only';
 import { and, asc, eq, isNotNull, isNull, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
+import type { Mehrsprachig } from '@/lib/db/schema/typen';
 
 /**
  * Gemeinsame Hatim (AUFTRAG 3.10, B-19): 30 Cüz werden an angemeldete Gemeindemitglieder verteilt. Eine Übernahme ist
@@ -9,8 +10,8 @@ import { db, schema } from '@/lib/db';
 export type CuzStand = 'frei' | 'vergeben' | 'gelesen';
 export type HatimOeffentlich = {
   id: string;
-  titel: Record<string, string>;
-  anlass: Record<string, string> | null;
+  titel: Mehrsprachig;
+  anlass: Mehrsprachig | null;
   beginn: string;
   ziel: string | null;
   status: 'offen' | 'abgeschlossen' | 'archiviert';
@@ -20,13 +21,13 @@ export type HatimOeffentlich = {
 };
 
 export async function legeHatimAn(
-  e: { titel: Record<string, string>; anlass?: Record<string, string> | null; beginn: string; ziel?: string | null },
+  e: { titel: Mehrsprachig; anlass?: Mehrsprachig | null; beginn: string; ziel?: string | null },
   von: string,
 ): Promise<string> {
   return db.transaction(async (tx) => {
     const [h] = await tx
       .insert(schema.hatim)
-      .values({ titel: { de: e.titel.de, ...e.titel }, anlass: e.anlass ?? null, beginn: e.beginn, ziel: e.ziel ?? null, erstelltVon: von })
+      .values({ titel: e.titel, anlass: e.anlass ?? null, beginn: e.beginn, ziel: e.ziel ?? null, erstelltVon: von })
       .returning({ id: schema.hatim.id });
     await tx.insert(schema.hatimTeil).values(Array.from({ length: 30 }, (_, i) => ({ hatimId: h.id, cuz: i + 1 })));
     return h.id;
@@ -45,8 +46,8 @@ export async function ladeHatim(id: string, nurVeroeffentlicht = true): Promise<
   const stand = teile.map((t): CuzStand => (t.gelesenAm ? 'gelesen' : t.benutzerId ? 'vergeben' : 'frei'));
   return {
     id: h.id,
-    titel: h.titel as Record<string, string>,
-    anlass: (h.anlass as Record<string, string> | null) ?? null,
+    titel: h.titel,
+    anlass: h.anlass ?? null,
     beginn: h.beginn,
     ziel: h.ziel,
     status: h.status,
