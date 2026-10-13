@@ -10,7 +10,7 @@
  * Quelltext stehenden Namen, deshalb stehen sie hier ausgeschrieben und werden nicht zusammengesetzt.
  */
 
-export type FarbGruppe = 'marke' | 'neutral' | 'status' | 'organisationen' | 'tags';
+export type FarbGruppe = 'marke' | 'neutral' | 'status' | 'organisationen' | 'tags' | 'tajwid';
 
 export type FarbToken = {
   /** CSS-Variable im Theme, z. B. `--color-gruen-700` */
@@ -27,7 +27,7 @@ export type FarbToken = {
 };
 
 /** Reihenfolge der Farbgruppen wie in globals.css. */
-export const FARBGRUPPEN: readonly FarbGruppe[] = ['marke', 'neutral', 'status', 'organisationen', 'tags'];
+export const FARBGRUPPEN: readonly FarbGruppe[] = ['marke', 'neutral', 'status', 'organisationen', 'tags', 'tajwid'];
 
 export const FARBEN: readonly FarbToken[] = [
   { name: '--color-gruen-950', wert: '#0e3929', gruppe: 'marke', schluessel: 'gruen950', klasse: 'bg-gruen-950' },
@@ -79,6 +79,13 @@ export const FARBEN: readonly FarbToken[] = [
   { name: '--color-tag-neuigkeiten-bg', wert: '#ebf9f2', gruppe: 'tags', schluessel: 'tagNeuigkeitenBg', klasse: 'bg-tag-neuigkeiten-bg' },
   { name: '--color-tag-gemeinde', wert: '#514c46', gruppe: 'tags', schluessel: 'tagGemeinde', klasse: 'bg-tag-gemeinde' },
   { name: '--color-tag-gemeinde-bg', wert: '#f3f0e9', gruppe: 'tags', schluessel: 'tagGemeindeBg', klasse: 'bg-tag-gemeinde-bg' },
+  // Koran-Leser: Tajwid-Familien (Schriftfarbe, je Familie zusätzlich ein Linienmuster)
+  { name: '--color-tajwid-ghunna', wert: '#94430a', gruppe: 'tajwid', schluessel: 'tajwidGhunna', klasse: 'bg-tajwid-ghunna', kontrast: '6,57:1' },
+  { name: '--color-tajwid-ikhfa', wert: '#2e6a1e', gruppe: 'tajwid', schluessel: 'tajwidIkhfa', klasse: 'bg-tajwid-ikhfa', kontrast: '6,30:1' },
+  { name: '--color-tajwid-iqlab', wert: '#6a3d9a', gruppe: 'tajwid', schluessel: 'tajwidIqlab', klasse: 'bg-tajwid-iqlab', kontrast: '7,33:1' },
+  { name: '--color-tajwid-qalqala', wert: '#1e5a96', gruppe: 'tajwid', schluessel: 'tajwidQalqala', klasse: 'bg-tajwid-qalqala', kontrast: '6,81:1' },
+  { name: '--color-tajwid-madd', wert: '#a3271f', gruppe: 'tajwid', schluessel: 'tajwidMadd', klasse: 'bg-tajwid-madd', kontrast: '7,03:1' },
+  { name: '--color-tajwid-stumm', wert: '#706a63', gruppe: 'tajwid', schluessel: 'tajwidStumm', klasse: 'bg-tajwid-stumm', kontrast: '5,12:1' },
 ];
 
 export type SchriftgroesseToken = {
@@ -116,13 +123,14 @@ export type SchriftToken = {
   /** Klasse, die die Schriftfamilie setzt */
   klasse: string;
   /** Schlüssel unter `styleguide.typografie.schriftVerwendung` und `schriftMuster` */
-  schluessel: 'text' | 'display' | 'arabisch';
+  schluessel: 'text' | 'display' | 'arabisch' | 'quran';
 };
 
 export const SCHRIFTEN: readonly SchriftToken[] = [
   { name: '--font-text', wert: "var(--schrift-text), 'Source Sans 3', system-ui, sans-serif", klasse: 'font-text', schluessel: 'text' },
   { name: '--font-display', wert: 'var(--schrift-titel), Georgia, serif', klasse: 'font-display', schluessel: 'display' },
   { name: '--font-arabic', wert: 'var(--schrift-arabisch), serif', klasse: 'font-arabic', schluessel: 'arabisch' },
+  { name: '--font-quran', wert: 'schriftQuran, var(--schrift-arabisch), serif', klasse: 'font-quran', schluessel: 'quran' },
 ];
 
 /** Basis aller Abstände: ein Schritt des Rasters. */
@@ -228,6 +236,33 @@ export const ANZEIGESTUFEN: readonly AnzeigeToken[] = [
     schluessel: 'display2',
     muster: 'font-display text-display-2 font-semibold',
   },
+  {
+    name: '--text-arabisch-1',
+    wert: 'clamp(1.875rem, 1.643rem + 0.952vw, 2.5rem)',
+    min: '1.875rem',
+    max: '2.5rem',
+    zeile: '2.3',
+    schluessel: 'arabisch1',
+    muster: 'font-quran text-arabisch-1',
+  },
+  {
+    name: '--text-arabisch-2',
+    wert: 'clamp(1.5rem, 1.361rem + 0.571vw, 1.875rem)',
+    min: '1.5rem',
+    max: '1.875rem',
+    zeile: '2.2',
+    schluessel: 'arabisch2',
+    muster: 'font-quran text-arabisch-2',
+  },
+  {
+    name: '--text-arabisch-3',
+    wert: 'clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem)',
+    min: '1.25rem',
+    max: '1.5rem',
+    zeile: '2.1',
+    schluessel: 'arabisch3',
+    muster: 'font-arabic text-arabisch-3',
+  },
 ];
 
 /** Abschnittsabstände: Klasse `py-abschnitt` und `py-abschnitt-klein`. */
@@ -266,6 +301,7 @@ export const BREITEN: readonly WertToken[] = [
   { name: '--container-einleitung', wert: '47.5rem', klasse: 'max-w-einleitung', schluessel: 'einleitung' },
   { name: '--container-seitenkopf', wert: '55rem', klasse: 'max-w-seitenkopf', schluessel: 'seitenkopf' },
   { name: '--container-dialog', wert: '42.5rem', klasse: 'max-w-dialog', schluessel: 'dialog' },
+  { name: '--container-lesen', wert: '46rem', klasse: 'max-w-lesen', schluessel: 'lesen' },
 ];
 
 /** Haltepunkte; die Klasse nennt die Variante, z. B. `verwaltung:`. */
@@ -293,6 +329,7 @@ export const DAUERN: readonly WertToken[] = [
 /** Ebenen (Kern K-005): stehen in `:root`; die Klasse ist `z-(…)`, aufsteigend nach Rang. */
 export const EBENEN: readonly WertToken[] = [
   { name: '--ebene-kopf', wert: '40', klasse: 'z-(--ebene-kopf)', schluessel: 'kopf' },
+  { name: '--ebene-player', wert: '45', klasse: 'z-(--ebene-player)', schluessel: 'player' },
   { name: '--ebene-overlay', wert: '50', klasse: 'z-(--ebene-overlay)', schluessel: 'overlay' },
   { name: '--ebene-dialog', wert: '60', klasse: 'z-(--ebene-dialog)', schluessel: 'dialog' },
   { name: '--ebene-toast', wert: '70', klasse: 'z-(--ebene-toast)', schluessel: 'toast' },

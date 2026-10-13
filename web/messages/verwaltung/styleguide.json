@@ -32,7 +32,8 @@
         "neutral": "Neutrale Töne",
         "status": "Status",
         "organisationen": "Organisationen (Akzent, Text, Tönung)",
-        "tags": "Kategorie-Tags (Text und Hintergrund)"
+        "tags": "Kategorie-Tags (Text und Hintergrund)",
+        "tajwid": "Tajwid-Familien im Koran-Leser (Schriftfarbe, dazu je ein Linienmuster)"
       },
       "verwendungen": {
         "gruen950": "Gebetszeitenleiste, Fußzeile und Fokusrahmen",
@@ -77,7 +78,13 @@
         "tagNeuigkeiten": "Kategorie Neuigkeiten: Text",
         "tagNeuigkeitenBg": "Kategorie Neuigkeiten: Hintergrund",
         "tagGemeinde": "Kategorie Gemeinde: Text",
-        "tagGemeindeBg": "Kategorie Gemeinde: Hintergrund"
+        "tagGemeindeBg": "Kategorie Gemeinde: Hintergrund",
+        "tajwidGhunna": "Tajwid Ghunna: Wellenlinie",
+        "tajwidIkhfa": "Tajwid Ikhfa: gepunktete Linie",
+        "tajwidIqlab": "Tajwid Iqlab: doppelte Linie",
+        "tajwidQalqala": "Tajwid Qalqala: gestrichelte Linie",
+        "tajwidMadd": "Tajwid Madd: kräftige Linie",
+        "tajwidStumm": "Tajwid nicht gesprochen: feine Linie"
       }
     },
     "typografie": {
@@ -107,12 +114,14 @@
       "schriftVerwendung": {
         "text": "Textschrift: Atkinson Hyperlegible Next, Gewichte 400 und 700",
         "display": "Titelschrift „IGMG Wetzlar Titel“, abgeleitet von Source Serif 4 (Gewicht 600)",
-        "arabisch": "Arabische Schrift: Amiri, Gewichte 400 und 700"
+        "arabisch": "Arabische Schrift: Amiri, Gewichte 400 und 700",
+        "quran": "Koranschrift: Amiri Quran, nur auf den Koran-Seiten geladen und vorgeladen"
       },
       "schriftMuster": {
         "text": "Textschrift: Beispieltext in Standardgröße.",
         "display": "Titelschrift: Beispieltitel",
-        "arabisch": "أبجد هوز"
+        "arabisch": "أبجد هوز",
+        "quran": "Koranschrift für den Verstext"
       },
       "laufweite": "Laufweite für Überschriften",
       "laufweiteMuster": "Überschrift mit Laufweite",
@@ -122,11 +131,17 @@
       "anzeigeEinleitung": "Die Anzeigestufen wachsen stufenlos zwischen Telefon und Computer. Sie sind für Seitentitel und große Abschnittstitel gedacht, nicht für Fließtext.",
       "anzeigeRollen": {
         "display1": "Seitentitel der Erzählansichten",
-        "display2": "Abschnittstitel"
+        "display2": "Abschnittstitel",
+        "arabisch1": "Verstext im Koran-Leser (Zeilenhöhe 2,3)",
+        "arabisch2": "Basmala und arabische Surennamen (Zeilenhöhe 2,2)",
+        "arabisch3": "Arabische Namen in Listen und Karten (Zeilenhöhe 2,1)"
       },
       "anzeigeMuster": {
         "display1": "Gemeindeleben",
-        "display2": "Veranstaltungen im Überblick"
+        "display2": "Veranstaltungen im Überblick",
+        "arabisch1": "Verstext",
+        "arabisch2": "Surenname",
+        "arabisch3": "Name in der Liste"
       },
       "fliessend": "Schriftgröße {min} bis {max}, dazwischen fließend. Zeilenhöhe {zeile}",
       "zeilenTitel": "Zeilenhöhen",
@@ -159,7 +174,8 @@
         "text": "Lesebreite für Fließtext",
         "einleitung": "Lesebreite für Einleitungen",
         "seitenkopf": "Textspalte im Seitenkopf",
-        "dialog": "Breite schmaler Hinweis-Dialoge"
+        "dialog": "Breite schmaler Hinweis-Dialoge",
+        "lesen": "Lesespalte des Koran-Lesers: Vers und Übersetzung"
       },
       "haltepunktTitel": "Haltepunkte",
       "haltepunkte": {
@@ -287,6 +303,7 @@
       "einleitung": "Ebenen legen fest, was über was liegt. Verwenden Sie den Namen der Ebene, zum Beispiel z-(--ebene-overlay), nicht eine Zahl wie z-50.",
       "ebene": {
         "kopf": "Kopfzeile der Website",
+        "player": "Koran-Player am unteren Rand",
         "overlay": "Schleier hinter Dialogen sowie Auswahllisten und Tooltips (bisher z-50)",
         "dialog": "Dialoge und Menüs im Kopf, zum Beispiel die Sprachwahl (bisher z-60)",
         "toast": "Kurze Rückmeldungen über Dialogen",

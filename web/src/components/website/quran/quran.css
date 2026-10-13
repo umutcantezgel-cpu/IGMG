@@ -1,0 +1,410 @@
+/*
+ * Koran-Leser (O-Q01, H-Q01, H-Q02): Satz, Lesemodi, Wortkarte, Regel-Seitenleiste, Player und Cüz-Ring.
+ * Nur auf den Koran-Seiten geladen. Farben, Maße, Schriften und Ebenen ausschließlich über die Tokens aus
+ * src/app/globals.css. Bewegung nur über opacity/scale/translate/stroke-dashoffset, jede mit reduzierter Variante
+ * (Register B-13 Mitlesen, B-14 Wortkarte, B-15 Regel-Seitenleiste, B-16 Tajwid-Farben ohne Bewegung).
+ * Die Tajwid-Familien selbst (.tj, .tj-…) stehen in globals.css.
+ */
+
+/* ---------- Leser: Einstellungen als data-Attribute am Container ---------- */
+.leser {
+  --lese-faktor: 1;
+}
+.leser[data-groesse='1'] {
+  --lese-faktor: 0.85;
+}
+.leser[data-groesse='3'] {
+  --lese-faktor: 1.2;
+}
+.leser[data-groesse='4'] {
+  --lese-faktor: 1.4;
+}
+.leser[data-groesse='5'] {
+  --lese-faktor: 1.65;
+}
+.leser[data-modus='arabisch'] .vers-ue,
+.leser[data-modus='arabisch'] [data-nur-uebersetzung] {
+  display: none;
+}
+.leser[data-modus='uebersetzung'] :is(.vers-ar, .basmala) {
+  display: none;
+}
+/* B-16: Tajwid-Farben aus – sofort, ohne Übergang */
+.leser[data-tajwid='aus'] .vers-ar .tj,
+.leser[data-tajwid='aus'] .wortkarte-wort .tj {
+  color: inherit;
+  text-decoration-line: none;
+}
+/* Ohne JavaScript wirken die Werkzeuge nicht: dann nicht zeigen (der Text bleibt voll lesbar) */
+@media (scripting: none) {
+  .nur-mit-skript {
+    display: none !important;
+  }
+}
+
+/* ---------- Satz ---------- */
+.verse {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Versnummern über einen Zähler: kein Markup je Vers (Cüz-Listen setzen den Anfang am Element) */
+  counter-reset: vers;
+}
+.vers {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 4);
+  /* Fläche der Tönung (B-13) reicht seitlich über die Textkante; content-visibility schneidet an der Box ab */
+  margin-inline: calc(var(--spacing) * -4);
+  padding: calc(var(--spacing) * 7) calc(var(--spacing) * 4);
+  border-top: 1px solid var(--color-linie);
+  /* Lange Suren: nur sichtbare Verse werden gezeichnet; die Höhe bleibt nach dem ersten Zeichnen gemerkt */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 14rem;
+  scroll-margin-top: calc(var(--spacing) * 20);
+}
+.vers:first-child {
+  border-top: 0;
+}
+.vers {
+  counter-increment: vers;
+}
+/* Versende: ARABIC END OF AYAH (U+06DD) mit arabisch-indischer Nummer; die Koranschrift umschließt die Ziffern.
+   Geschütztes Leerzeichen davor, damit das Zeichen nie allein in eine neue Zeile rutscht. */
+.verse .vers-ar::after {
+  content: '\a0\06DD' counter(vers, arabic-indic);
+  white-space: nowrap;
+  color: var(--color-gruen-800);
+}
+/* Übersetzung mit hängender Versnummer (Zähler, kein Markup) */
+.vers-ue::before {
+  content: counter(vers);
+  padding-top: 0.15em;
+  font-size: var(--text-16);
+  font-weight: 700;
+  color: var(--color-gruen-800);
+  font-variant-numeric: tabular-nums;
+}
+.vers-ar {
+  margin: 0;
+  font-family: var(--font-quran);
+  font-size: calc(var(--text-arabisch-1) * var(--lese-faktor));
+  line-height: var(--text-arabisch-1--line-height);
+  text-align: start;
+  color: var(--color-tinte);
+  /* Harakat und Pausenzeichen ragen über die Zeile hinaus: nie abschneiden */
+  overflow: visible;
+  padding-block: 0.15em;
+  word-spacing: 0.08em;
+}
+.vers-ar:focus-visible {
+  outline-offset: calc(var(--spacing) * 2);
+  border-radius: var(--radius-sm);
+}
+.versende {
+  white-space: nowrap;
+  color: var(--color-gruen-800);
+}
+.vers-ue {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  margin: 0;
+  max-width: calc(var(--container-text) + 2.25rem);
+  font-size: calc(var(--text-18) * (1 + (var(--lese-faktor) - 1) * 0.5));
+  line-height: 1.65;
+  color: var(--color-tinte-2);
+  hyphens: auto;
+}
+.leser[data-modus='uebersetzung'] .vers-ue {
+  color: var(--color-tinte);
+  font-size: calc(var(--text-20) * (1 + (var(--lese-faktor) - 1) * 0.5));
+}
+.basmala {
+  margin: 0;
+  padding-block: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
+  font-family: var(--font-quran);
+  font-size: calc(var(--text-arabisch-2) * var(--lese-faktor));
+  line-height: var(--text-arabisch-2--line-height);
+  text-align: center;
+  color: var(--color-tinte);
+}
+
+/* ---------- Wörter: Tastatur, Zeiger, Hervorhebung ---------- */
+.leser-bereit .vers-ar [data-w] {
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+.leser-bereit .vers-ar [data-w]:hover {
+  background: var(--color-gruen-50);
+}
+.vers-ar [data-w]:focus-visible {
+  outline: 2px solid var(--color-gruen-950);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+.vers-ar [data-w][aria-expanded='true'] {
+  background: var(--color-gruen-100);
+}
+/* B-13 Mitlesen: Vers getönt (opacity), Wort sofort über die CSS Custom Highlight API; Rückfall Klasse */
+.vers::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-gruen-50);
+  opacity: 0;
+  transition: opacity var(--dauer-wechsel) var(--ease-standard);
+  pointer-events: none;
+  z-index: -1;
+}
+.vers {
+  position: relative;
+  isolation: isolate;
+}
+.vers[data-aktiv]::before {
+  opacity: 1;
+}
+::highlight(quran-wort) {
+  background-color: var(--color-gruen-100);
+  color: var(--color-gruen-950);
+}
+.wort-aktiv {
+  background: var(--color-gruen-100);
+  border-radius: var(--radius-sm);
+}
+/* Seitenleiste: Beispiel der Regel im Vers markiert */
+::highlight(quran-regel) {
+  background-color: var(--color-warnung-toenung);
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-warnung);
+}
+.regel-markiert {
+  background: var(--color-warnung-toenung);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Wortkarte (B-14): Popover am Wort, opacity + scale .96 → 1 vom Wort aus ---------- */
+.wortkarte {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  width: min(22rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: calc(var(--spacing) * 5);
+  border: 1px solid var(--color-linie);
+  border-radius: var(--radius-lg);
+  background: var(--color-weiss);
+  color: var(--color-tinte);
+  box-shadow: var(--shadow-s3);
+  opacity: 1;
+  scale: 1;
+  transform-origin: var(--ursprung, top center);
+  transition:
+    opacity var(--dauer-wechsel) var(--ease-eintritt),
+    scale var(--dauer-wechsel) var(--ease-eintritt),
+    display var(--dauer-wechsel) allow-discrete,
+    overlay var(--dauer-wechsel) allow-discrete;
+}
+.wortkarte:not(:popover-open) {
+  opacity: 0;
+  scale: 0.96;
+}
+@starting-style {
+  .wortkarte:popover-open {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+.wortkarte::backdrop {
+  background: transparent;
+}
+.wortkarte-wort {
+  font-family: var(--font-quran);
+  font-size: calc(var(--text-arabisch-1) * 1.25);
+  line-height: var(--text-arabisch-1--line-height);
+  text-align: center;
+}
+/* Telefon: als Blatt am unteren Rand */
+@media (max-width: 47.99rem) {
+  .wortkarte {
+    inset: auto 0 0 0 !important;
+    width: 100%;
+    max-height: 75dvh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform-origin: bottom center;
+  }
+  .wortkarte:not(:popover-open) {
+    scale: 1;
+    translate: 0 1.5rem;
+  }
+  @starting-style {
+    .wortkarte:popover-open {
+      scale: 1;
+      translate: 0 1.5rem;
+    }
+  }
+  .wortkarte {
+    transition:
+      opacity var(--dauer-wechsel) var(--ease-eintritt),
+      translate var(--dauer-wechsel) var(--ease-eintritt),
+      display var(--dauer-wechsel) allow-discrete,
+      overlay var(--dauer-wechsel) allow-discrete;
+  }
+}
+
+/* ---------- Regel-Seitenleiste (B-15): Schublade von rechts, auf dem Telefon Blatt von unten ---------- */
+dialog.regel-leiste {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  width: min(26rem, 100vw);
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0;
+  border: 0;
+  border-inline-start: 1px solid var(--color-linie);
+  background: var(--color-papier);
+  color: var(--color-tinte);
+  box-shadow: var(--shadow-s3);
+}
+dialog.regel-leiste[open] {
+  animation: regel-schublade var(--dauer-wechsel) var(--ease-eintritt) both;
+}
+dialog.regel-leiste::backdrop {
+  background: color-mix(in srgb, var(--color-tinte) 16%, transparent);
+}
+@keyframes regel-schublade {
+  from {
+    opacity: 0;
+    translate: 1.5rem 0;
+  }
+}
+@keyframes regel-blatt {
+  from {
+    opacity: 0;
+    translate: 0 1.5rem;
+  }
+}
+@media (max-width: 47.99rem) {
+  dialog.regel-leiste {
+    inset: auto 0 0 0;
+    width: 100vw;
+    height: auto;
+    max-height: 80dvh;
+    border-inline-start: 0;
+    border-top: 1px solid var(--color-linie);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  dialog.regel-leiste[open] {
+    animation-name: regel-blatt;
+  }
+}
+
+/* Beispiel der Regel in der Seitenleiste: groß, die Stelle der Regel getönt */
+.beispiel-wort {
+  font-size: calc(var(--text-arabisch-1) * 1.6);
+  line-height: 2;
+}
+.beispiel-wort .regel-markiert {
+  background-color: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+/* ---------- Muster-Probe der Legende: Wort mit Familienfarbe und -linie ---------- */
+.muster-probe {
+  display: inline-block;
+  min-width: 2.5rem;
+  font-weight: 700;
+}
+
+/* ---------- Player am unteren Rand ---------- */
+.player {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--ebene-player);
+  border-top: 1px solid var(--color-linie);
+  background: var(--color-weiss);
+  box-shadow: var(--shadow-s2);
+  animation: auftritt var(--dauer-wechsel) var(--ease-eintritt) both;
+}
+.leser:has(.player) {
+  padding-bottom: calc(var(--spacing) * 40);
+}
+
+/* ---------- Cüz-Ring: Linie zeichnet sich einmal, Segmente treten gestaffelt auf ---------- */
+.cuz-segment {
+  fill: var(--color-weiss);
+  stroke: var(--color-gruen-100);
+  stroke-width: 1;
+  transition: fill var(--dauer-rueckmeldung) var(--ease-standard);
+  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * 30ms + 200ms) both;
+}
+/* Wechselnde Tönung wie eine Rosette: jeder zweite Cüz auf Grün-50 */
+.cuz-ring a:nth-of-type(even) .cuz-segment {
+  fill: var(--color-gruen-50);
+}
+.cuz-ring a:hover .cuz-segment,
+.cuz-ring a:focus-visible .cuz-segment {
+  fill: var(--color-gruen-100);
+  stroke: var(--color-gruen-700);
+}
+.cuz-ring a:hover .cuz-zahl {
+  fill: var(--color-gruen-800);
+}
+.cuz-zahl {
+  fill: var(--color-tinte-2);
+  font-family: var(--font-text);
+  font-size: var(--text-16);
+  font-weight: 700;
+  pointer-events: none;
+  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * 30ms + 400ms) both;
+}
+
+/* ---------- Bewegung reduziert: alles steht sofort im Endzustand ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .wortkarte,
+  .wortkarte:not(:popover-open) {
+    transition: opacity var(--dauer-rueckmeldung) linear;
+    scale: 1;
+    translate: none;
+  }
+  @starting-style {
+    .wortkarte:popover-open {
+      scale: 1;
+      translate: none;
+    }
+  }
+  dialog.regel-leiste[open] {
+    animation-name: einblenden;
+  }
+  .vers::before {
+    transition: none;
+  }
+  .cuz-segment,
+  .cuz-zahl,
+  .player {
+    animation: none;
+  }
+}
+
+/* ---------- Tajwid-Seite: Beispielvers mit nur dieser Regel, markiert ---------- */
+.beispiel-vers {
+  font-size: var(--text-arabisch-2);
+  line-height: var(--text-arabisch-2--line-height);
+}
+.beispiel-vers .tj {
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Druck: nur Text ---------- */
+@media print {
+  .vers {
+    content-visibility: visible;
+  }
+  .leser .nur-mit-skript,
+  .player {
+    display: none !important;
+  }
+}
