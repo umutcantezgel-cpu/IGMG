@@ -524,6 +524,42 @@ const AUSNAHMEN = [
   { id: 'A-05', grund: 'Neuer Schlüssel „rechtliches.inhaltsverzeichnis“ („Inhalt“, Name der Navigation im Inhaltsverzeichnis der Rechtsseiten, K-14). Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).', passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /(^|\.)rechtliches\.inhaltsverzeichnis$/.test(e.schluessel) },
   { id: 'A-06', grund: 'Neues internes Verarbeitungsverzeichnis `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md` nach AUFTRAG V-11 (Vorlage für Vorstand und Rechtsberatung, MENSCHEN ML-12). Es wird nicht ausgeliefert und ändert keinen Wortlaut eines bestehenden Rechts- oder Einwilligungstextes; neue Datei, kein geänderter Wortlaut.', passt: (e) => e.status === 'neu' && String(e.datei).endsWith('docs/recht/VERARBEITUNGSVERZEICHNIS.md') },
   { id: 'A-07', grund: 'Schriftangabe der Mail-Vorlage (`font-family` in `web/src/lib/mail/vorlagen/Rahmen.tsx`, H-W01): „Georgia, serif“ → „Georgia, \'Times New Roman\', serif“. Gestaltungswert ohne Wortlaut, kein Rechtstext.', passt: (e) => String(e.datei).endsWith('lib/mail/vorlagen/Rahmen.tsx') && /^Text: Georgia,( 'Times New Roman',)? serif$/.test(e.schluessel) },
+  // Lauf „Gemeinde-Plattform“ (PLAN §5): neue Texte für neue Funktionen; kein bestehender Wortlaut ändert sich
+  {
+    id: 'G-01',
+    grund: 'Rechtsentwürfe der Gemeinde-Plattform in `web/docs/recht/entwuerfe/` (Datenschutz v2, Einwilligungen, DSFA, Schutzkonzept, Löschkonzept, Nutzungsbedingungen, Vereinbarung Rezitation, Verarbeitungsverzeichnis-Ergänzung). Als Entwurf markiert, nicht ausgeliefert; Prüfung durch DSB/Recht (MENSCHEN MN-11).',
+    passt: (e) => e.status === 'neu' && String(e.datei).startsWith('web/docs/recht/entwuerfe/'),
+  },
+  {
+    id: 'G-02',
+    grund: 'Nur Tabellenschreibweise (Prettier, Commit 58a3344): Zellen auf Spaltenbreite aufgefüllt, Trennzeile mit Strichen. Ohne Leerzeichen, Striche und Spaltenstriche ist der Text gleich (geprüft je Eintrag).',
+    passt: (e) => {
+      const kern = (t) => String(t ?? '').replace(/[\s|\-]/g, '');
+      return e.status === 'geaendert' && String(e.datei).endsWith('docs/recht/VERARBEITUNGSVERZEICHNIS.md') && kern(e.text_vorher) === kern(e.text_jetzt) && kern(e.text_jetzt) !== '';
+    },
+  },
+  {
+    id: 'G-03',
+    grund: 'Neue Schlüssel der Gemeinde-Plattform für neue Funktionen (Konten, Mein Bereich, Push-Einwilligung, Chat, Mein Ort, Koran, Hadith, Elifbe, Lernen, Quellen, Barrierefreiheit): Einwilligungs- und Datenschutzhinweise der neuen Funktionen, versioniert über den Text-Hash (src/lib/konto/einwilligung.ts). Kein bestehender Text geändert; die Funktionen sind in der Produktion aus, bis MN-11 freigibt.',
+    passt: (e) =>
+      e.gruppe === 'M' &&
+      e.status === 'neu' &&
+      /messages\/bereiche\/(konto|mein-bereich|benachrichtigungen|chat|chat-fenster|kinder|unterricht|mein-ort|quran|hadith|elifbe|lernen|quellen|barrierefreiheit|hatim|kalender|ramadan|spenden|newsletter)\.json$/.test(String(e.datei)),
+  },
+  {
+    id: 'G-04',
+    grund: 'K-29: neue Verwaltungstexte zur Zustimmung bei Personenfotos (`messages/verwaltung/medien.json`, nur Verwaltung, neue Schlüssel).',
+    passt: (e) => e.gruppe === 'M' && e.status === 'neu' && String(e.datei).endsWith('messages/verwaltung/medien.json') && /^medien\.(fehler\.einwilligungFehlt|hochladen\.(einwilligung|personenHinweis))$/.test(e.schluessel),
+  },
+  {
+    id: 'G-05',
+    grund: 'Neue technische Bezeichnungen der Konten (Betreff des Löschantrags-Tickets, Titel des Datenexports nach Art. 15/20) und ein Quellenkommentar im Seed der Eröffnungsnachricht – keine Texte bestehender Rechtsseiten.',
+    passt: (e) =>
+      e.status === 'neu' &&
+      (String(e.datei).endsWith('src/server/actions/mein-bereich.ts') ||
+        String(e.datei).endsWith('src/server/queries/konto.ts') ||
+        (String(e.datei).endsWith('drizzle/seeds/daten/nachrichten.ts') && String(e.text_jetzt ?? '').startsWith('AUFTRAG 3.9'))),
+  },
 ];
 
 /** Bekannte erlaubte Schlüssel ohne Rechtsbezug (Vorgabe der Koordination): kennzeichnen, ohne Befund. */
