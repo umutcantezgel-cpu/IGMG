@@ -60,7 +60,11 @@ export type AuditAktion =
   | 'chat.gemeldet'
   | 'chat.meldung_bearbeitet'
   | 'chat.notfallpause'
-  | 'chat.notfallpause_aufgehoben';
+  | 'chat.notfallpause_aufgehoben'
+  // Religiöse Freigabe (ADR 0030): Verwaltung „Koran & Hadith“
+  | 'religioes.eingereicht'
+  | 'religioes.freigegeben'
+  | 'religioes.zurueckgewiesen';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

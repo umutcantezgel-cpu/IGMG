@@ -18,6 +18,7 @@ export type ModulSchluessel =
   | 'postfach'
   | 'tickets'
   | 'kinderschutz'
+  | 'koran'
   | 'medien'
   | 'benutzer'
   | 'audit'
@@ -40,7 +41,7 @@ export type Modul = {
  * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
  * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
  */
-export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz'] as const;
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
@@ -82,6 +83,15 @@ export const MODULE: readonly Modul[] = [
     pfad: '/verwaltung/gebetszeiten',
     recht: 'gebetszeiten.lesen',
     icon: 'gebetszeiten',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  // Koran & Hadith (H-Q03/Q04, ADR 0030): Ausgaben, Wortbedeutungen, Tajwid-Texte, Hadith; Zähler = offene religiöse Freigaben
+  {
+    schluessel: 'koran',
+    pfad: '/verwaltung/koran',
+    recht: ['quran.bearbeiten', 'hadith.bearbeiten', 'religioes.freigeben'],
+    icon: 'koran',
     gebaut: true,
     gruppe: 'inhalte',
   },

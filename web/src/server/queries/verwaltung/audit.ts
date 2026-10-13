@@ -74,6 +74,9 @@ export const AKTION_SCHLUESSEL = {
   'chat.meldung_bearbeitet': 'chatMeldungBearbeitet',
   'chat.notfallpause': 'chatNotfallpause',
   'chat.notfallpause_aufgehoben': 'chatNotfallpauseAufgehoben',
+  'religioes.eingereicht': 'religioesEingereicht',
+  'religioes.freigegeben': 'religioesFreigegeben',
+  'religioes.zurueckgewiesen': 'religioesZurueckgewiesen',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

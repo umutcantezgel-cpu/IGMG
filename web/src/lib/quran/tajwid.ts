@@ -32,6 +32,31 @@ export const REGEL_FAMILIE: Readonly<Record<string, TajwidFamilie>> = {
   idghaam_mutaqaribayn: 'stumm',
 };
 
+/**
+ * Deutsche Fachbegriffe der Regeln aus dem Import (Reihenfolge = Sortierung). Sie gelten öffentlich, bis die Lehrkraft
+ * einen eigenen Namen erfasst und dieser religiös geprüft ist (ADR 0030, Verwaltung „Koran & Hadith“).
+ */
+export const REGEL_FACHBEGRIFF: Readonly<Record<string, string>> = {
+  ghunnah: 'Ghunna',
+  idghaam_ghunnah: 'Idgham mit Ghunna',
+  idghaam_shafawi: 'Idgham schafawi',
+  ikhfa: 'Ikhfa',
+  ikhfa_shafawi: 'Ikhfa schafawi',
+  iqlab: 'Iqlab',
+  qalqalah: 'Qalqala',
+  madd_2: 'Madd (2)',
+  madd_246: 'Madd (2, 4 oder 6)',
+  madd_6: 'Madd (6)',
+  madd_munfasil: 'Madd munfasil',
+  madd_muttasil: 'Madd muttasil',
+  silent: 'Nicht gesprochen',
+  hamzat_wasl: 'Hamzat al-Wasl',
+  lam_shamsiyyah: 'Lam schamsiyya',
+  idghaam_no_ghunnah: 'Idgham ohne Ghunna',
+  idghaam_mutajanisayn: 'Idgham mutadschanisain',
+  idghaam_mutaqaribayn: 'Idgham mutaqaribain',
+};
+
 /** Codepunkt-Indizes, an denen ein neues Graphem beginnt (plus Textende). */
 export function graphemGrenzen(text: string): Set<number> {
   const grenzen = new Set<number>([0]);

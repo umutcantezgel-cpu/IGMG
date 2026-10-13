@@ -23,6 +23,7 @@ import startklar from './startklar.json';
 import einstellungen from './einstellungen.json';
 import medienwahl from './medienwahl.json';
 import kinderschutz from './kinderschutz.json';
+import koran from './koran.json';
 
 type Teil = Record<string, unknown>;
 
@@ -46,4 +47,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   einstellungen,
   medienwahl,
   kinderschutz,
+  koran,
 };

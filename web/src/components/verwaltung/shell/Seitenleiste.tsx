@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  BookOpen,
   CalendarDays,
   ClipboardCheck,
   Clock,
@@ -40,6 +41,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   postfach: Mail,
   tickets: Ticket,
   kinderschutz: ShieldAlert,
+  koran: BookOpen,
   medien: Bild,
   benutzer: Users,
   audit: ScrollText,
