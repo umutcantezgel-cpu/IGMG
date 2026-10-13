@@ -3,49 +3,42 @@ import { schema } from '../../../src/lib/db';
 import { schema as inhaltSchema } from '../../../src/lib/validierung/seiteninhalte/projekte';
 import type { BereichsSeed } from './typ';
 
+/** Platzhalter je Sprache (G-05): Fakten, die nur die Gemeinde liefern kann (MENSCHEN MN-08, MN-13). */
+const ORT = { de: '[Ortsangabe – von der Gemeinde]', tr: '[Konum – cemaat tarafından]', en: '[Location – from the community]' };
+/** Kurz, weil die Meilensteinlinie die Daten nebeneinander beschriftet (lange Platzhalter überlappen bei 1440 px). */
+const DATUM = { de: '[Datum]', tr: '[Tarih]', en: '[Date]' };
+
 /**
- * Beispielinhalt „projekte“ (Blatt S10, DATEN). Texte, Namen und Zahlen wörtlich aus dem Design (Projects.dc.html) und dem
- * Bestand (Projects.tsx, tr/en); fehlende tr/en-Fassungen sind NEU ÜBERSETZT (Meldung im Bericht). Ortsangabe nicht
- * ausgeschrieben: [Ortsangabe] (Blatt S10, A5). Beträge und Bankverbindung bleiben Platzhalter (G-05): Die Gemeinde
- * liefert gesammelten Betrag, Zielbetrag und Kontodaten.
+ * Beispielinhalt „projekte“ (Blatt S10, DATEN), Stand 2026: Die neue Fatih-Moschee ist fertiggestellt (AUFTRAG 3.9,
+ * Bericht E0-K05). Name nach E0-K05 (Frage 11), Status „fertiggestellt“, alle Meilensteine erledigt. Belegt aus dem
+ * Bestand (Projects.tsx) sind nur die Meilensteine „Genehmigungen“ (März 2024) und „Architektenpläne“ (April 2024);
+ * alle übrigen Daten, Ort, Kapazität, Fläche, Einrichtungen und der Spendenzweck sind Platzhalter, bis die Gemeinde sie
+ * bestätigt (MN-08, MN-13). Keine Aussagen über Behörden. Fertigstellung 2026 laut AUFTRAG 3.9.
+ * Die Inhaltsmigration `scripts/inhalte-2026.ts` setzt denselben Stand in bestehenden Beispieldaten.
  */
-const inhalt: z.input<typeof inhaltSchema> = {
+export const PROJEKTE_BEISPIEL: z.input<typeof inhaltSchema> = {
   projekt: {
-    name: {
-      de: 'Neue Fatih Moschee Projekt',
-      tr: 'Yeni Fatih Cami Projesi',
-      en: 'New Fatih Mosque Project',
-    },
-    status: 'in_planung',
-    ort: { de: '[Ortsangabe]', tr: '[Ortsangabe]', en: '[Ortsangabe]' },
-    beginn: 2024,
+    name: { de: 'Neue Fatih-Moschee', tr: 'Yeni Fatih Camii', en: 'New Fatih Mosque' },
+    status: 'fertiggestellt',
+    ort: ORT,
+    beginn: null,
     fertigstellung: 2026,
     beschreibung: {
-      de: 'Das neue Moschee-Projekt in der [Ortsangabe] hat trotz verschiedener Hindernisse über viele Jahre hinweg Fortschritte gemacht. Obwohl es von der örtlichen Verwaltung kontinuierlich blockiert wurde, haben wir mit Entschlossenheit und Beharrlichkeit unseren Weg fortgesetzt. Und endlich wurden uns die lang erwarteten Genehmigungen erteilt, um mit diesem wichtigen Projekt fortzufahren.',
-      tr: "[Ortsangabe]'deki yeni cami projesi, uzun yıllar boyunca çeşitli engellere rağmen ilerlemeye devam etti. Yerel yönetim tarafından sürekli olarak bloke edilmesine rağmen, azim ve kararlılıkla yolumuza devam ettik. Ve nihayet, bu önemli projeye devam etmek için beklediğimiz izinler verildi.",
-      en: 'The new mosque project on [Ortsangabe] has continued to progress over many years despite various obstacles. Although it was continuously blocked by the local administration, we continued on our path with determination and perseverance. And finally, we have been granted the long-awaited permits to continue with this important project.',
+      de: 'Die neue Fatih-Moschee in [Ortsangabe – von der Gemeinde] ist fertiggestellt. Eröffnung: [Datum – von der Gemeinde]. [Kurzbeschreibung der Moschee – von der Gemeinde]',
+      tr: '[Konum – cemaat tarafından] adresindeki yeni Fatih Camii tamamlandı. Açılış: [Tarih – cemaat tarafından]. [Caminin kısa tanıtımı – cemaat tarafından]',
+      en: 'The new Fatih Mosque in [Location – from the community] is complete. Opening: [Date – from the community]. [Short description of the mosque – from the community]',
     },
-    kapazitaet: {
-      wert: 500,
-      einheit: { de: 'Gläubige', tr: 'Cemaat', en: 'Worshippers' },
-    },
-    flaecheM2: 1200,
-    einrichtungen: [
-      { de: 'Hauptgebetsraum', tr: 'Ana İbadet Salonu', en: 'Main Prayer Hall' },
-      { de: 'Frauengebetsbereich', tr: 'Kadınlar Bölümü', en: "Women's Prayer Area" },
-      { de: 'Koranschule', tr: 'Kuran Kursu', en: 'Quran School' },
-      { de: 'Gemeindezentrum', tr: 'Cemaat Merkezi', en: 'Community Center' },
-      { de: 'Bibliothek', tr: 'Kütüphane', en: 'Library' },
-      { de: 'Küche und Sozialräume', tr: 'Mutfak ve Sosyal Alanlar', en: 'Kitchen and Social Areas' },
-    ],
+    kapazitaet: { wert: null, einheit: { de: 'Gläubige', tr: 'Cemaat', en: 'Worshippers' } },
+    flaecheM2: null,
+    einrichtungen: [],
     modell: null,
   },
   spende: {
-    titel: { de: 'Die Bedeutung von Spenden', tr: 'Bağışların Önemi', en: 'The Importance of Donations' },
+    titel: { de: 'Spenden für unsere Gemeinde', tr: 'Cemaatimiz için bağış', en: 'Donations for our community' },
     text: {
-      de: 'Jetzt brauchen wir Ihre Hilfe, um dieses Ziel zu erreichen. Ein wichtiger Teil der Finanzierung kommt aus Ihren Spenden. Jede Spende bringt uns unserem Ziel einen Schritt näher und hilft uns, es schneller zu verwirklichen. Spenden jeder Größe helfen uns dabei, dieses wertvolle Projekt zu verwirklichen.',
-      tr: 'Şimdi, bu hedefe ulaşmak için sizin yardımınıza ihtiyacımız var. Finansmanın önemli bir parçası bağışlarınızdan gelmektedir. Yapılan her bağış, hedefimize bir adım daha yaklaşmamızı sağlar ve daha hızlı bir şekilde tamamlamamıza yardımcı olur. Her büyüklükteki bağış, bu değerli projeyi hayata geçirmemize yardımcı olur.',
-      en: 'Now we need your help to achieve this goal. A significant part of the funding comes from your donations. Every donation made brings us one step closer to our goal and helps us complete it faster. Donations of every size help us bring this valuable project to life.',
+      de: '[Spendentext und Spendenzweck – von der Gemeinde]',
+      tr: '[Bağış metni ve bağış amacı – cemaat tarafından]',
+      en: '[Donation text and purpose – from the community]',
     },
     gesammelt: null,
     ziel: null,
@@ -54,14 +47,14 @@ const inhalt: z.input<typeof inhaltSchema> = {
   unterstuetzung: {
     titel: { de: 'Unterstützen Sie uns', tr: 'Destek Olun', en: 'Support Us' },
     text: {
-      de: 'Werden Sie Teil dieses historischen Moments. Auch Sie können zum Moschee-Projekt in der [Ortsangabe] beitragen und dabei helfen, die Zukunft unserer Gemeinschaft zu gestalten. Spenden Sie noch heute und schließen Sie sich uns auf dieser wichtigen Reise an, um zur Entwicklung unserer Gemeinschaft beizutragen. Ihre Spende ist von entscheidender Bedeutung für den Bau einer Moschee, die zukünftigen Generationen dienen wird.',
-      tr: "Bu tarihi anın bir parçası olun. Siz de [Ortsangabe]'deki cami projesine katkıda bulunarak, topluluğumuzun geleceğini şekillendirmeye yardımcı olabilirsiniz. Bugün bağış yaparak, bizimle birlikte bu önemli yolculuğa çıkın ve topluluğumuzun gelişmesine katkıda bulunun. Bağışınız, gelecek nesillere hizmet edecek bir caminin inşası için kritik öneme sahiptir.",
-      en: 'Be part of this historic moment. You too can contribute to the mosque project on [Ortsangabe] and help shape the future of our community. Donate today and join us on this important journey to contribute to the development of our community. Your donation is critical for the construction of a mosque that will serve future generations.',
+      de: 'Unterstützen Sie unsere Gemeinde. [Spendenzweck – von der Gemeinde]',
+      tr: 'Cemaatimize destek olun. [Bağış amacı – cemaat tarafından]',
+      en: 'Support our community. [Purpose of donations – from the community]',
     },
     dank: {
-      de: 'Wir danken jedem unserer Unterstützer dafür, dass sie uns bei der Verwirklichung dieses wertvollen Projekts geholfen haben. Wir glauben, dass wir gemeinsam unsere neue Moschee in der [Ortsangabe] bauen und eine neue Ära für unsere Gemeinschaft einläuten können.',
-      tr: "Her bir destekçimize, bu değerli projeyi gerçekleştirmemizde bize yardımcı oldukları için teşekkür ederiz. İnanıyoruz ki, birlikte, [Ortsangabe]'deki yeni camiimizi inşa edebilir ve topluluğumuz için yeni bir dönemi başlatabiliriz.",
-      en: 'We thank each of our supporters for helping us realize this valuable project. We believe that together, we can build our new mosque on [Ortsangabe] and usher in a new era for our community.',
+      de: 'Wir danken allen, die die neue Fatih-Moschee in [Ortsangabe – von der Gemeinde] möglich gemacht haben.',
+      tr: "[Konum – cemaat tarafından] adresindeki yeni Fatih Camii'nin hayata geçmesine katkıda bulunan herkese teşekkür ederiz.",
+      en: 'We thank everyone who made the new Fatih Mosque in [Location – from the community] possible.',
     },
   },
   meilensteine: [
@@ -88,8 +81,8 @@ const inhalt: z.input<typeof inhaltSchema> = {
     {
       titel: { de: 'Grundsteinlegung', tr: 'Temel Atma', en: 'Groundbreaking' },
       beschreibung: { de: 'Offizielle Grundsteinlegungszeremonie', tr: 'Resmi temel atma töreni', en: 'Official groundbreaking ceremony' },
-      datum: { de: 'September 2024', tr: 'Eylül 2024', en: 'September 2024' },
-      erledigt: false,
+      datum: DATUM,
+      erledigt: true,
     },
     {
       titel: { de: 'Rohbau', tr: 'Kaba İnşaat', en: 'Shell Construction' },
@@ -98,8 +91,8 @@ const inhalt: z.input<typeof inhaltSchema> = {
         tr: 'Kaba inşaat işlerinin tamamlanması',
         en: 'Completion of shell construction work',
       },
-      datum: { de: 'März 2025', tr: 'Mart 2025', en: 'March 2025' },
-      erledigt: false,
+      datum: DATUM,
+      erledigt: true,
     },
     {
       titel: { de: 'Innenausstattung', tr: 'İç Dekorasyon', en: 'Interior Design' },
@@ -108,34 +101,32 @@ const inhalt: z.input<typeof inhaltSchema> = {
         tr: 'İç dekorasyon ve son işlemler',
         en: 'Interior design and finishing work',
       },
-      datum: { de: 'Oktober 2025', tr: 'Ekim 2025', en: 'October 2025' },
-      erledigt: false,
+      datum: DATUM,
+      erledigt: true,
     },
     {
       titel: { de: 'Eröffnung', tr: 'Açılış', en: 'Opening' },
       beschreibung: {
-        de: 'Offizielle Eröffnung der neuen Moschee',
-        tr: 'Yeni caminin resmi açılışı',
-        en: 'Official opening of the new mosque',
+        de: 'Offizielle Eröffnung der neuen Fatih-Moschee',
+        tr: "Yeni Fatih Camii'nin resmi açılışı",
+        en: 'Official opening of the new Fatih Mosque',
       },
-      datum: { de: 'Januar 2026', tr: 'Ocak 2026', en: 'January 2026' },
-      erledigt: false,
+      datum: DATUM,
+      erledigt: true,
     },
   ],
 };
 
+/** Quellenvermerk des Beispielinhalts (ADR 0015). */
+export const PROJEKTE_QUELLE =
+  'design/Projects.dc.html und bestand/src/app/components/Projects.tsx (Meilensteine Genehmigungen März 2024, Architektenpläne April 2024, Titel und Beschreibungen der Meilensteine); Stand 2026 nach AUFTRAG 3.9 und _gemeinde/berichte/E0-K05-moschee-fundstellen.md (Name, Status fertiggestellt, alle Meilensteine erledigt); Ort, Daten, Kapazität, Fläche, Einrichtungen, Spendenzweck und Bankverbindung als Platzhalter (G-05, MN-08, MN-13)';
+
 /** Seed „projekte“ (Welle A): idempotent (onConflictDoNothing), Beispielinhalt mit Quelle, Prüfung gegen das Schema. */
 export const seed: BereichsSeed = async (db) => {
-  const geprueft = inhaltSchema.parse(inhalt);
+  const geprueft = inhaltSchema.parse(PROJEKTE_BEISPIEL);
   const r = await db
     .insert(schema.seiteninhalt)
-    .values({
-      bereich: 'projekte',
-      istBeispiel: true,
-      quelle:
-        'design/Projects.dc.html: Name D:26, Status D:27, Beschreibung D:32, Zeitraum D:34-35, Spenden D:42-43, Spendenkonto D:49, Spezifikationen D:58-61, Unterstützen D:66-68, Meilensteine D:93-104; bestand/src/app/components/Projects.tsx (de/tr/en): Name T:31, T:112, T:193; Beschreibung T:32, T:113, T:194; Zeitraum T:35-36, T:116-117, T:197-198; Spenden T:39-43, T:120-123, T:201-204; Unterstützen T:46-48, T:127-129, T:208-210; Einrichtungen T:92-97, T:173-178, T:254-259; Meilensteine T:52-85, T:133-166, T:214-247; Knöpfe T:183-185, T:264-266; Blatt S10 (Ortsangabe [Ortsangabe] nach A5; Beträge und Bankverbindung nur Platzhalter nach G-05)',
-      inhalt: geprueft,
-    })
+    .values({ bereich: 'projekte', istBeispiel: true, quelle: PROJEKTE_QUELLE, inhalt: geprueft })
     .onConflictDoNothing({ target: schema.seiteninhalt.bereich })
     .returning({ bereich: schema.seiteninhalt.bereich });
   return r.length;

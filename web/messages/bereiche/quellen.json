@@ -1,1 +1,407 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "quellen": {
+      "titel": "Quellen und Lizenzen",
+      "kennung": "Transparenz",
+      "untertitel": "Woher die Texte, Daten, Schriften und Programme dieser Website stammen – mit Urheber, Lizenz und Verweis auf die Quelle.",
+      "fussLink": "Quellen",
+      "inhaltsverzeichnis": "Inhalt",
+      "standTitel": "Stand: 13. Oktober 2026",
+      "standText": "Übernommene Dateien liegen unverändert und mit Prüfsumme im Quellcode der Website. Religiöse Inhalte erscheinen öffentlich erst nach der Prüfung durch den Imam bzw. die Lehrkraft.",
+      "felder": {
+        "urheber": "Urheber",
+        "lizenz": "Lizenz",
+        "fassung": "Fassung",
+        "herkunft": "Herkunft",
+        "verwendung": "Verwendung",
+        "aenderungen": "Änderungen",
+        "projekt": "Zur Quelle"
+      },
+      "abschnitte": {
+        "koran": "Korantext",
+        "uebersetzungen": "Koranübersetzungen",
+        "hadith": "Hadith",
+        "orte": "Ortsdaten",
+        "gebetszeiten": "Gebetszeiten",
+        "schriften": "Schriften",
+        "bibliotheken": "Programmbibliotheken"
+      },
+      "einleitung": {
+        "koran": "Der arabische Korantext und seine Einteilung stammen vom Tanzil-Projekt und werden unverändert wiedergegeben. Den aktuellen Stand des Textes finden Sie auf tanzil.net.",
+        "uebersetzungen": "Bis die Gemeinde ihre Übersetzungen gewählt und freigegeben hat, nutzen wir als Übergang Übersetzungen, die Tanzil.net bereitstellt.",
+        "hadith": "Der arabische Text von Sahih al-Bukhari stammt aus einer frei verfügbaren Sammlung von Hadith-Ausgaben.",
+        "orte": "Für die Gebetszeiten an Ihrem Ort nutzen wir eine kleine Ortsliste. Sie wird nur in Ihrem Browser ausgewertet; Ihr Standort verlässt Ihr Gerät nicht.",
+        "gebetszeiten": "Die Gebetszeiten werden mit einer quelloffenen Bibliothek berechnet, solange keine bestätigte Jahrestabelle vorliegt.",
+        "schriften": "Alle Schriften liegen auf unserem eigenen Server. Es werden keine Schriften von fremden Diensten geladen.",
+        "bibliotheken": "Die Website ist mit freier Software gebaut. Die wichtigsten Bibliotheken mit ihrer Lizenz:"
+      },
+      "uebersetzungsbedingungen": {
+        "titel": "Bedingungen von Tanzil.net",
+        "text": "Die Übersetzungen dürfen nur für nicht kommerzielle Zwecke genutzt werden; für jede andere Nutzung ist die Erlaubnis des Übersetzers oder Verlags nötig. Wir nutzen sie nicht kommerziell (Website der Moscheegemeinde, ohne Werbung und ohne Verkauf) und nennen Übersetzer und Quelle hier und im Koranleser.",
+        "wortlaut": "Wortlaut der Bedingungen (Englisch)",
+        "zitat": "The translations provided at this page are for non-commercial purposes only. If used otherwise, you need to obtain necessary permission from the translator or the publisher."
+      },
+      "eintraege": {
+        "tanzil": {
+          "fassung": "Version 1.1 vom 12. Februar 2021, Variante mit Pausen- und Sajda-Zeichen; abgerufen am 13. Oktober 2026.",
+          "verwendung": "Arabischer Korantext im Koranleser.",
+          "aenderungen": "Keine. Der Text ist unverändert übernommen; der Urheberrechtshinweis im Dateikopf bleibt erhalten."
+        },
+        "tanzil-metadaten": {
+          "fassung": "Lizenzangabe im Dateikopf: „cc-by“; abgerufen am 13. Oktober 2026.",
+          "verwendung": "Namen, Verszahlen und Einteilungen der Suren (Cüz, Hizb, Seiten).",
+          "aenderungen": "Keine."
+        },
+        "tajwid": {
+          "fassung": "Regelwerk aus Commit 496f71c vom 12. Oktober 2021.",
+          "verwendung": "Farbige Markierung der Tajwid-Regeln im Koranleser.",
+          "aenderungen": "Für die Tanzil-Fassung 1.1 mit dem Regelwerk des Projekts neu berechnet (13. Oktober 2026); weitergegeben werden nur die erzeugten Daten.",
+          "hinweis": "Die Markierungen sind eine maschinelle Hilfe. Öffentlich erscheinen sie erst, wenn die Lehrkraft Stichproben geprüft und die Regeltexte freigegeben hat."
+        },
+        "de-bubenheim": {
+          "lizenz": "Bedingungen von Tanzil.net (nur nicht kommerziell)",
+          "fassung": "Stand 17. Juli 2011 laut Datei; über Tanzil.net abgerufen am 13. Oktober 2026.",
+          "verwendung": "Deutsche Übersetzung im Koranleser, als Übergang."
+        },
+        "tr-diyanet": {
+          "lizenz": "Bedingungen von Tanzil.net (nur nicht kommerziell)",
+          "fassung": "Stand 27. Dezember 2011 laut Datei; über Tanzil.net abgerufen am 13. Oktober 2026.",
+          "verwendung": "Türkische Übersetzung im Koranleser, als Übergang."
+        },
+        "en-sahih": {
+          "lizenz": "Bedingungen von Tanzil.net (nur nicht kommerziell)",
+          "fassung": "Stand 24. April 2011 laut Datei; über Tanzil.net abgerufen am 13. Oktober 2026.",
+          "verwendung": "Englische Übersetzung im Koranleser, als Übergang."
+        },
+        "hadith-api": {
+          "fassung": "Ausgabe ara-bukhari, Commit df57907 vom 3. Juni 2026; abgerufen am 13. Oktober 2026.",
+          "verwendung": "Arabischer Text von Sahih al-Bukhari auf den Hadith-Seiten und in der Suche.",
+          "aenderungen": "Keine am Text. Für die Suche entsteht zusätzlich eine Fassung ohne Vokalzeichen; fehlende Buchnummern werden aus den Nummernbereichen der Quelle ergänzt.",
+          "hinweis": "Die Unlicense gilt für das Repository. Als Herkunft des Textes nennt es sunnah.com. Die Rechte am arabischen Text klärt die Gemeinde noch; bis dahin ist die vollständige Sammlung nicht öffentlich."
+        },
+        "geonames": {
+          "fassung": "Abzug vom 13. Oktober 2026 (GeoNames nennt kein Datum).",
+          "verwendung": "Ortsliste für die Gebetszeiten an Ihrem Ort.",
+          "aenderungen": "Auswahl: Orte in Hessen ab 15.000 Einwohnern und Orte in Deutschland ab 200.000 Einwohnern; nur Name, Koordinaten (auf 5 Nachkommastellen gerundet), Einwohnerzahl und Bundesland."
+        },
+        "adhan": {
+          "fassung": "Version 4.4.6.",
+          "verwendung": "Berechnung der Gebetszeiten und der Qibla-Richtung."
+        },
+        "atkinson": {
+          "fassung": "Über @fontsource/atkinson-hyperlegible-next 5.3.0, selbst gehostet.",
+          "verwendung": "Fließtext der Website."
+        },
+        "source-serif": {
+          "fassung": "Über @fontsource-variable/source-serif-4 5.3.0, selbst gehostet.",
+          "verwendung": "Überschriften.",
+          "aenderungen": "Abgeleitete Fassung „IGMG Wetzlar Titel“: Gewicht 600 festgesetzt, Achse für die optische Größe erhalten; nach der Namensregel der Lizenz umbenannt (reservierter Name „Source“)."
+        },
+        "amiri": {
+          "fassung": "Über @fontsource/amiri 5.3.0, selbst gehostet.",
+          "verwendung": "Arabische Schrift, zum Beispiel für Hadith-Texte."
+        },
+        "amiri-quran": {
+          "fassung": "Aus dem Amiri-Projekt, selbst gehostet.",
+          "verwendung": "Korantext im Koranleser."
+        }
+      },
+      "bibliotheken": {
+        "name": "Bibliothek",
+        "zweck": "Zweck",
+        "lizenz": "Lizenz",
+        "zwecke": {
+          "next": "Web-Framework",
+          "react": "Benutzeroberfläche",
+          "next-intl": "Mehrsprachigkeit",
+          "tailwind": "Gestaltung (CSS)",
+          "drizzle": "Datenbankzugriff",
+          "pg": "Anbindung an PostgreSQL",
+          "pglite": "Datenbank für Bau und Entwicklung",
+          "better-auth": "Anmeldung",
+          "tiptap": "Texteditor der Verwaltung",
+          "radix": "Bedienelemente der Verwaltung",
+          "lucide": "Symbole",
+          "date-fns": "Datum und Zeitzonen",
+          "zod": "Prüfung von Eingaben",
+          "altcha": "Spamschutz ohne Tracking",
+          "ical": "Kalenderdateien",
+          "rrule": "Wiederkehrende Termine",
+          "uqr": "QR-Codes",
+          "sharp": "Bildverarbeitung",
+          "nodemailer": "E-Mail-Versand"
+        }
+      }
+    }
+  },
+  "tr": {
+    "quellen": {
+      "titel": "Kaynaklar ve lisanslar",
+      "kennung": "Şeffaflık",
+      "untertitel": "Bu web sitesindeki metinlerin, verilerin, yazı tiplerinin ve programların nereden geldiği – hak sahibi, lisans ve kaynak bağlantısıyla.",
+      "fussLink": "Kaynaklar",
+      "inhaltsverzeichnis": "İçindekiler",
+      "standTitel": "Tarih: 13 Ekim 2026",
+      "standText": "Alınan dosyalar değiştirilmeden ve sağlama toplamıyla web sitesinin kaynak kodunda yer alır. Dinî içerikler ancak imam ya da öğretmen tarafından incelendikten sonra yayımlanır.",
+      "felder": {
+        "urheber": "Hak sahibi",
+        "lizenz": "Lisans",
+        "fassung": "Sürüm",
+        "herkunft": "Asıl kaynak",
+        "verwendung": "Kullanım",
+        "aenderungen": "Değişiklikler",
+        "projekt": "Kaynağa git"
+      },
+      "abschnitte": {
+        "koran": "Kur'an metni",
+        "uebersetzungen": "Kur'an mealleri",
+        "hadith": "Hadis",
+        "orte": "Yer verileri",
+        "gebetszeiten": "Namaz vakitleri",
+        "schriften": "Yazı tipleri",
+        "bibliotheken": "Program kütüphaneleri"
+      },
+      "einleitung": {
+        "koran": "Arapça Kur'an metni ve bölümlemesi Tanzil projesinden alınmıştır ve değiştirilmeden sunulur. Metnin güncel hâlini tanzil.net adresinde bulabilirsiniz.",
+        "uebersetzungen": "Cemaatimiz kendi meallerini seçip onaylayana kadar, geçici olarak Tanzil.net'in sunduğu mealleri kullanıyoruz.",
+        "hadith": "Sahîh-i Buhârî'nin Arapça metni, serbestçe erişilebilen bir hadis koleksiyonundan alınmıştır.",
+        "orte": "Bulunduğunuz yerin namaz vakitleri için küçük bir yer listesi kullanıyoruz. Liste yalnızca tarayıcınızda işlenir; konumunuz cihazınızdan çıkmaz.",
+        "gebetszeiten": "Onaylanmış bir yıllık takvim bulunmadığı sürece namaz vakitleri açık kaynaklı bir kütüphaneyle hesaplanır.",
+        "schriften": "Tüm yazı tipleri kendi sunucumuzda bulunur. Yabancı hizmetlerden yazı tipi yüklenmez.",
+        "bibliotheken": "Web sitesi özgür yazılımla geliştirilmiştir. En önemli kütüphaneler ve lisansları:"
+      },
+      "uebersetzungsbedingungen": {
+        "titel": "Tanzil.net koşulları",
+        "text": "Mealler yalnızca ticari olmayan amaçlarla kullanılabilir; başka her kullanım için mütercimin veya yayınevinin izni gerekir. Mealleri ticari olmayan biçimde kullanıyoruz (cami cemaatinin web sitesi, reklamsız ve satışsız) ve mütercimi ile kaynağı burada ve Kur'an okuyucusunda belirtiyoruz.",
+        "wortlaut": "Koşulların asıl metni (İngilizce)",
+        "zitat": "The translations provided at this page are for non-commercial purposes only. If used otherwise, you need to obtain necessary permission from the translator or the publisher."
+      },
+      "eintraege": {
+        "tanzil": {
+          "fassung": "12 Şubat 2021 tarihli 1.1 sürümü, vakıf ve secde işaretli varyant; 13 Ekim 2026'da indirildi.",
+          "verwendung": "Kur'an okuyucusundaki Arapça Kur'an metni.",
+          "aenderungen": "Yok. Metin değiştirilmeden alınmıştır; dosya başlığındaki telif hakkı notu korunur."
+        },
+        "tanzil-metadaten": {
+          "fassung": "Dosya başlığındaki lisans bilgisi: „cc-by“; 13 Ekim 2026'da indirildi.",
+          "verwendung": "Surelerin adları, ayet sayıları ve bölümlemeleri (cüz, hizb, sayfa).",
+          "aenderungen": "Yok."
+        },
+        "tajwid": {
+          "fassung": "12 Ekim 2021 tarihli 496f71c commit'indeki kurallar.",
+          "verwendung": "Kur'an okuyucusunda tecvid kurallarının renkli işaretlenmesi.",
+          "aenderungen": "Tanzil 1.1 sürümü için projenin kurallarıyla yeniden hesaplandı (13 Ekim 2026); yalnızca üretilen veriler paylaşılır.",
+          "hinweis": "İşaretler makine yardımıdır. Öğretmen örnekleri inceleyip kural açıklamalarını onaylamadan yayımlanmaz."
+        },
+        "de-bubenheim": {
+          "lizenz": "Tanzil.net koşulları (yalnızca ticari olmayan kullanım)",
+          "fassung": "Dosyaya göre 17 Temmuz 2011 tarihli; 13 Ekim 2026'da Tanzil.net üzerinden indirildi.",
+          "verwendung": "Kur'an okuyucusunda Almanca meal, geçici olarak."
+        },
+        "tr-diyanet": {
+          "lizenz": "Tanzil.net koşulları (yalnızca ticari olmayan kullanım)",
+          "fassung": "Dosyaya göre 27 Aralık 2011 tarihli; 13 Ekim 2026'da Tanzil.net üzerinden indirildi.",
+          "verwendung": "Kur'an okuyucusunda Türkçe meal, geçici olarak."
+        },
+        "en-sahih": {
+          "lizenz": "Tanzil.net koşulları (yalnızca ticari olmayan kullanım)",
+          "fassung": "Dosyaya göre 24 Nisan 2011 tarihli; 13 Ekim 2026'da Tanzil.net üzerinden indirildi.",
+          "verwendung": "Kur'an okuyucusunda İngilizce meal, geçici olarak."
+        },
+        "hadith-api": {
+          "fassung": "ara-bukhari baskısı, 3 Haziran 2026 tarihli df57907 commit'i; 13 Ekim 2026'da indirildi.",
+          "verwendung": "Hadis sayfalarında ve aramada Sahîh-i Buhârî'nin Arapça metni.",
+          "aenderungen": "Metinde değişiklik yok. Arama için ayrıca harekesiz bir sürüm oluşturulur; eksik kitap numaraları kaynağın numara aralıklarından tamamlanır.",
+          "hinweis": "Unlicense, depo için geçerlidir. Depo, metnin kaynağı olarak sunnah.com'u gösterir. Arapça metnin haklarını cemaatimiz hâlâ netleştiriyor; o zamana kadar eserin tamamı yayımlanmaz."
+        },
+        "geonames": {
+          "fassung": "13 Ekim 2026 tarihli döküm (GeoNames tarih belirtmez).",
+          "verwendung": "Bulunduğunuz yerin namaz vakitleri için yer listesi.",
+          "aenderungen": "Seçim: Hessen'de 15.000 ve üzeri nüfuslu yerler ile Almanya'da 200.000 ve üzeri nüfuslu yerler; yalnızca ad, koordinatlar (5 ondalık basamağa yuvarlanmış), nüfus ve eyalet."
+        },
+        "adhan": {
+          "fassung": "Sürüm 4.4.6.",
+          "verwendung": "Namaz vakitlerinin ve kıble yönünün hesaplanması."
+        },
+        "atkinson": {
+          "fassung": "@fontsource/atkinson-hyperlegible-next 5.3.0 üzerinden, kendi sunucumuzda.",
+          "verwendung": "Web sitesinin metin yazı tipi."
+        },
+        "source-serif": {
+          "fassung": "@fontsource-variable/source-serif-4 5.3.0 üzerinden, kendi sunucumuzda.",
+          "verwendung": "Başlıklar.",
+          "aenderungen": "Türetilmiş sürüm „IGMG Wetzlar Titel“: kalınlık 600'e sabitlendi, optik boyut ekseni korundu; lisansın ad kuralına göre yeniden adlandırıldı (ayrılmış ad „Source“)."
+        },
+        "amiri": {
+          "fassung": "@fontsource/amiri 5.3.0 üzerinden, kendi sunucumuzda.",
+          "verwendung": "Arapça yazı tipi, örneğin hadis metinleri için."
+        },
+        "amiri-quran": {
+          "fassung": "Amiri projesinden, kendi sunucumuzda.",
+          "verwendung": "Kur'an okuyucusundaki Kur'an metni."
+        }
+      },
+      "bibliotheken": {
+        "name": "Kütüphane",
+        "zweck": "Amaç",
+        "lizenz": "Lisans",
+        "zwecke": {
+          "next": "Web çatısı",
+          "react": "Kullanıcı arayüzü",
+          "next-intl": "Çok dillilik",
+          "tailwind": "Tasarım (CSS)",
+          "drizzle": "Veritabanı erişimi",
+          "pg": "PostgreSQL bağlantısı",
+          "pglite": "Derleme ve geliştirme için veritabanı",
+          "better-auth": "Oturum açma",
+          "tiptap": "Yönetim panelindeki metin düzenleyici",
+          "radix": "Yönetim panelindeki kontrol öğeleri",
+          "lucide": "Simgeler",
+          "date-fns": "Tarih ve saat dilimleri",
+          "zod": "Girişlerin denetimi",
+          "altcha": "İzleme yapmadan spam koruması",
+          "ical": "Takvim dosyaları",
+          "rrule": "Tekrarlanan etkinlikler",
+          "uqr": "QR kodları",
+          "sharp": "Görsel işleme",
+          "nodemailer": "E-posta gönderimi"
+        }
+      }
+    }
+  },
+  "en": {
+    "quellen": {
+      "titel": "Sources and licences",
+      "kennung": "Transparency",
+      "untertitel": "Where the texts, data, fonts and software of this website come from – with author, licence and a link to the source.",
+      "fussLink": "Sources",
+      "inhaltsverzeichnis": "Contents",
+      "standTitel": "As of 13 October 2026",
+      "standText": "Adopted files are kept unchanged and with a checksum in the website's source code. Religious content is published only after it has been reviewed by the imam or the teacher.",
+      "felder": {
+        "urheber": "Author",
+        "lizenz": "Licence",
+        "fassung": "Version",
+        "herkunft": "Origin",
+        "verwendung": "Used for",
+        "aenderungen": "Changes",
+        "projekt": "Go to the source"
+      },
+      "abschnitte": {
+        "koran": "Quran text",
+        "uebersetzungen": "Quran translations",
+        "hadith": "Hadith",
+        "orte": "Place data",
+        "gebetszeiten": "Prayer times",
+        "schriften": "Fonts",
+        "bibliotheken": "Software libraries"
+      },
+      "einleitung": {
+        "koran": "The Arabic Quran text and its divisions come from the Tanzil project and are reproduced unchanged. You can find the latest version of the text at tanzil.net.",
+        "uebersetzungen": "Until our community has chosen and approved its translations, we use translations provided by Tanzil.net as an interim solution.",
+        "hadith": "The Arabic text of Sahih al-Bukhari comes from a freely available collection of hadith editions.",
+        "orte": "For the prayer times at your location we use a short list of places. It is evaluated only in your browser; your location never leaves your device.",
+        "gebetszeiten": "As long as no confirmed annual timetable is available, the prayer times are calculated with an open-source library.",
+        "schriften": "All fonts are hosted on our own server. No fonts are loaded from third-party services.",
+        "bibliotheken": "This website is built with free software. The most important libraries and their licences:"
+      },
+      "uebersetzungsbedingungen": {
+        "titel": "Terms of Tanzil.net",
+        "text": "The translations may only be used for non-commercial purposes; any other use requires permission from the translator or the publisher. We use them non-commercially (the website of a mosque community, without advertising or sales) and name the translator and the source here and in the Quran reader.",
+        "wortlaut": "Wording of the terms",
+        "zitat": "The translations provided at this page are for non-commercial purposes only. If used otherwise, you need to obtain necessary permission from the translator or the publisher."
+      },
+      "eintraege": {
+        "tanzil": {
+          "fassung": "Version 1.1 of 12 February 2021, variant with pause and sajda marks; retrieved on 13 October 2026.",
+          "verwendung": "Arabic Quran text in the Quran reader.",
+          "aenderungen": "None. The text is adopted unchanged; the copyright notice in the file header is kept."
+        },
+        "tanzil-metadaten": {
+          "fassung": "Licence stated in the file header: “cc-by”; retrieved on 13 October 2026.",
+          "verwendung": "Names, verse counts and divisions of the surahs (juz, hizb, pages).",
+          "aenderungen": "None."
+        },
+        "tajwid": {
+          "fassung": "Rule set from commit 496f71c of 12 October 2021.",
+          "verwendung": "Colour marking of the tajweed rules in the Quran reader.",
+          "aenderungen": "Recalculated for Tanzil version 1.1 with the project's rule set (13 October 2026); only the generated data is distributed.",
+          "hinweis": "The markings are a machine-generated aid. They are published only after the teacher has checked samples and approved the rule texts."
+        },
+        "de-bubenheim": {
+          "lizenz": "Terms of Tanzil.net (non-commercial use only)",
+          "fassung": "Dated 17 July 2011 according to the file; retrieved via Tanzil.net on 13 October 2026.",
+          "verwendung": "German translation in the Quran reader, as an interim solution."
+        },
+        "tr-diyanet": {
+          "lizenz": "Terms of Tanzil.net (non-commercial use only)",
+          "fassung": "Dated 27 December 2011 according to the file; retrieved via Tanzil.net on 13 October 2026.",
+          "verwendung": "Turkish translation in the Quran reader, as an interim solution."
+        },
+        "en-sahih": {
+          "lizenz": "Terms of Tanzil.net (non-commercial use only)",
+          "fassung": "Dated 24 April 2011 according to the file; retrieved via Tanzil.net on 13 October 2026.",
+          "verwendung": "English translation in the Quran reader, as an interim solution."
+        },
+        "hadith-api": {
+          "fassung": "Edition ara-bukhari, commit df57907 of 3 June 2026; retrieved on 13 October 2026.",
+          "verwendung": "Arabic text of Sahih al-Bukhari on the hadith pages and in the search.",
+          "aenderungen": "None to the text. For the search, an additional version without vowel marks is created; missing book numbers are filled in from the number ranges of the source.",
+          "hinweis": "The Unlicense applies to the repository. It names sunnah.com as the origin of the text. Our community is still clarifying the rights to the Arabic text; until then, the complete collection is not public."
+        },
+        "geonames": {
+          "fassung": "Extract of 13 October 2026 (GeoNames does not state a date).",
+          "verwendung": "List of places for the prayer times at your location.",
+          "aenderungen": "Selection: places in Hesse with at least 15,000 inhabitants and places in Germany with at least 200,000 inhabitants; only name, coordinates (rounded to 5 decimal places), population and federal state."
+        },
+        "adhan": {
+          "fassung": "Version 4.4.6.",
+          "verwendung": "Calculation of the prayer times and the qibla direction."
+        },
+        "atkinson": {
+          "fassung": "Via @fontsource/atkinson-hyperlegible-next 5.3.0, self-hosted.",
+          "verwendung": "Body text of the website."
+        },
+        "source-serif": {
+          "fassung": "Via @fontsource-variable/source-serif-4 5.3.0, self-hosted.",
+          "verwendung": "Headings.",
+          "aenderungen": "Derived version “IGMG Wetzlar Titel”: weight fixed at 600, optical size axis kept; renamed according to the naming rule of the licence (reserved name “Source”)."
+        },
+        "amiri": {
+          "fassung": "Via @fontsource/amiri 5.3.0, self-hosted.",
+          "verwendung": "Arabic typeface, for example for hadith texts."
+        },
+        "amiri-quran": {
+          "fassung": "From the Amiri project, self-hosted.",
+          "verwendung": "Quran text in the Quran reader."
+        }
+      },
+      "bibliotheken": {
+        "name": "Library",
+        "zweck": "Purpose",
+        "lizenz": "Licence",
+        "zwecke": {
+          "next": "Web framework",
+          "react": "User interface",
+          "next-intl": "Multilingual support",
+          "tailwind": "Styling (CSS)",
+          "drizzle": "Database access",
+          "pg": "PostgreSQL connection",
+          "pglite": "Database for builds and development",
+          "better-auth": "Sign-in",
+          "tiptap": "Text editor of the admin area",
+          "radix": "Controls of the admin area",
+          "lucide": "Icons",
+          "date-fns": "Dates and time zones",
+          "zod": "Input validation",
+          "altcha": "Spam protection without tracking",
+          "ical": "Calendar files",
+          "rrule": "Recurring events",
+          "uqr": "QR codes",
+          "sharp": "Image processing",
+          "nodemailer": "Sending e-mail"
+        }
+      }
+    }
+  }
+}
