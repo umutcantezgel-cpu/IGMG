@@ -3,6 +3,8 @@ import { sql, type SQL } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db } from '@/lib/db';
+import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, type Ausschnitt } from '@/lib/hadith/anzeige';
+import { normalisiereArabisch } from '@/lib/hadith/import';
 
 /**
  * Volltextsuche (ADR 0013, D-S1): PostgreSQL-tsvector je Sprache (generierte Spalten `suche_de|tr|en` aus `klartext`),
@@ -77,4 +79,40 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
       ? ergebnis.rows
       : (ergebnis as unknown as { art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string }[]);
   return zeilen.map((z) => ({ art: z.art, slug: z.slug, titel: z.titel, ausschnitt: z.ausschnitt ?? '', rang: Number(z.rang) }));
+}
+
+/** Treffer der Hadith-Suche: Bezug und Ausschnitt aus dem unveränderten arabischen Text (Trefferwörter markiert). */
+export type HadithTreffer = { nummer: string; buchNr: number; imBuchNr: number | null; ausschnitt: Ausschnitt; rang: number };
+
+type HadithZeile = { nummer: string; buch_nr: number; im_buch_nr: number | null; text_ar: string; rang: number | string };
+
+/**
+ * Hadith-Suche (AUFTRAG 3.3, Filter „Hadith“ in /suche): Volltext über `hadith.suche` (tsvector 'simple' aus dem Text
+ * ohne Harakat und Tatweel). Die Eingabe wird genauso normalisiert (`normalisiereArabisch`) und mit `plainto_tsquery`
+ * parametrisiert abgefragt – mit oder ohne Vokalzeichen findet sie dieselben Hadithe. Eine reine Nummer („1“, „402.2“,
+ * „Bukhari 7“) findet den Hadith direkt. Ohne arabische Buchstaben und ohne Nummer keine Abfrage. Ob die Suche
+ * angeboten wird (Schalter `hadith_gesamt`), entscheidet die Seite.
+ */
+export async function sucheHadith(begriff: string): Promise<HadithTreffer[]> {
+  'use cache';
+  cacheLife('hours');
+  cacheTag(TAG.hadith);
+  const q = bereinigeSuche(begriff);
+  const nummer = hadithNummerAus(q);
+  const normalisiert = normalisiereArabisch(q);
+  if (!nummer && (normalisiert.length < 2 || !enthaeltArabisch(normalisiert))) return [];
+  const anfrage = nummer
+    ? sql`select nummer, buch_nr, im_buch_nr, text_ar, 1 as rang from hadith where sammlung_id = ${BUKHARI} and nummer = ${nummer}`
+    : sql`select nummer, buch_nr, im_buch_nr, text_ar, ts_rank(suche, plainto_tsquery('simple', ${normalisiert})) as rang
+        from hadith where sammlung_id = ${BUKHARI} and suche @@ plainto_tsquery('simple', ${normalisiert})
+        order by rang desc, sortierung asc limit 30`;
+  const ergebnis = await db.execute<HadithZeile>(anfrage);
+  const zeilen = 'rows' in ergebnis ? ergebnis.rows : (ergebnis as unknown as HadithZeile[]);
+  return zeilen.map((z) => ({
+    nummer: z.nummer,
+    buchNr: Number(z.buch_nr),
+    imBuchNr: z.im_buch_nr === null ? null : Number(z.im_buch_nr),
+    ausschnitt: suchAusschnitt(z.text_ar, nummer ? '' : normalisiert),
+    rang: Number(z.rang),
+  }));
 }

@@ -59,7 +59,14 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
       {liste.length > 0 ? (
         <ol className="grid gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
           {liste.map((m, i) => (
-            <Karte key={i} m={m} sprache={sprache} bezeichnung={bezeichnung} nummer={i + 1} naechster={i === naechster} />
+            <Karte
+              key={i}
+              m={m}
+              sprache={sprache}
+              bezeichnung={bezeichnung}
+              nummer={i + 1}
+              hervorgehoben={i === naechster || (naechster < 0 && i === liste.length - 1)}
+            />
           ))}
         </ol>
       ) : (
@@ -78,6 +85,8 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
   const { zuletzt, naechster } = marken(liste);
   const lage = (i: number) => (liste.length > 1 ? i / (liste.length - 1) : 0.5);
   const anteil = zuletzt < 0 ? 0 : lage(zuletzt);
+  // B-08 Fortschreibung (AUFTRAG 4): Ist alles erledigt, endet die Linie in der gefüllten Marke des letzten Meilensteins
+  const ziel = naechster < 0 && liste.length > 0 ? liste.length - 1 : -1;
   return (
     <ErstesSichtbarwerden className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss px-5 py-5 md:px-8">
       <p className="font-display text-24 text-tinte">{stand}</p>
@@ -99,6 +108,15 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
               >
                 <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
                 <span className="relative rounded-pill text-16 font-bold text-weiss">{i + 1}</span>
+              </li>
+            ) : i === ziel ? (
+              <li
+                key={i}
+                className="meilenstein-erreicht absolute top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center text-gruen-700"
+                style={{ left: `${lage(i) * 100}%`, '--anteil': 1 } as CSSProperties}
+              >
+                <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
+                <Check className="relative size-5 text-weiss" strokeWidth={3} />
               </li>
             ) : (
               <li
@@ -150,19 +168,20 @@ function Karte({
   sprache,
   bezeichnung,
   nummer,
-  naechster,
+  hervorgehoben,
 }: {
   m: Meilenstein;
   sprache: Sprache;
   bezeichnung: { abgeschlossen: string; geplant: string };
   nummer: number;
-  naechster: boolean;
+  /** Nächster offener Meilenstein – oder, wenn alles erledigt ist, der letzte (B-08: „Eröffnung“) */
+  hervorgehoben: boolean;
 }) {
   return (
     <li
       className={cn(
         'flex gap-4',
-        naechster
+        hervorgehoben
           ? 'rounded-lg border border-linie bg-weiss p-5 shadow-s1'
           : cn('border-t-2 px-5 pt-5', m.erledigt ? 'border-gruen-700' : 'border-linie'),
       )}
@@ -171,18 +190,22 @@ function Karte({
         aria-hidden
         className={cn(
           'mt-0.5 flex size-8 shrink-0 items-center justify-center text-16 font-bold',
-          m.erledigt && 'rounded-pill border-2 border-gruen-700 bg-gruen-700 text-weiss',
-          !m.erledigt && !naechster && 'rounded-pill border-2 border-rand bg-weiss text-tinte-2',
-          naechster && 'relative text-gruen-700',
+          m.erledigt && !hervorgehoben && 'rounded-pill border-2 border-gruen-700 bg-gruen-700 text-weiss',
+          !m.erledigt && !hervorgehoben && 'rounded-pill border-2 border-rand bg-weiss text-tinte-2',
+          hervorgehoben && 'relative text-gruen-700',
         )}
       >
-        {m.erledigt ? (
-          <Check className="size-4" strokeWidth={3} />
-        ) : naechster ? (
+        {hervorgehoben ? (
           <>
             <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
-            <span className="relative rounded-pill text-weiss">{nummer}</span>
+            {m.erledigt ? (
+              <Check className="relative size-4 text-weiss" strokeWidth={3} />
+            ) : (
+              <span className="relative rounded-pill text-weiss">{nummer}</span>
+            )}
           </>
+        ) : m.erledigt ? (
+          <Check className="size-4" strokeWidth={3} />
         ) : (
           nummer
         )}

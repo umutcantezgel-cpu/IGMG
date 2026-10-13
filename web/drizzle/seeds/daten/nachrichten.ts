@@ -219,4 +219,40 @@ export const BEISPIEL_NACHRICHTEN: SeedNachricht[] = [
     lesezeit: 4,
     quelle: 'bestand/src/app/components/News.tsx:229-242',
   },
+  // Von Hand ergänzt (Lauf Gemeinde-Plattform, H-I01, AUFTRAG 3.9): Nachtrag zur fertiggestellten Moschee, kein Ersatz
+  // für die historische Meldung von 2024. Datum der Eröffnung und Einzelheiten liefert die Gemeinde (MN-08).
+  {
+    slug: 'eroeffnung-der-neuen-fatih-moschee',
+    titel: {
+      de: 'Eröffnung der neuen Fatih-Moschee',
+      tr: "Yeni Fatih Camii'nin açılışı",
+      en: 'Opening of the new Fatih Mosque',
+    },
+    kurztext: {
+      de: 'Die neue Fatih-Moschee ist fertiggestellt. Eröffnung: [Datum – von der Gemeinde].',
+      tr: 'Yeni Fatih Camii tamamlandı. Açılış: [Tarih – cemaat tarafından].',
+      en: 'The new Fatih Mosque is complete. Opening: [Date – from the community].',
+    },
+    absaetze: {
+      de: [
+        'Die neue Fatih-Moschee in [Ortsangabe – von der Gemeinde] ist fertiggestellt. Die Eröffnung findet am [Datum – von der Gemeinde] statt.',
+        '[Programm und Einzelheiten zur Eröffnung – von der Gemeinde]',
+      ],
+      tr: [
+        '[Konum – cemaat tarafından] adresindeki yeni Fatih Camii tamamlandı. Açılış [Tarih – cemaat tarafından] tarihinde yapılacak.',
+        '[Açılış programı ve ayrıntılar – cemaat tarafından]',
+      ],
+      en: [
+        'The new Fatih Mosque in [Location – from the community] is complete. The opening will take place on [Date – from the community].',
+        '[Programme and details of the opening – from the community]',
+      ],
+    },
+    kategorie: 'gemeinde',
+    wichtig: false,
+    veroeffentlicht: '2026-10-12T10:00',
+    empfohlen: false,
+    lesezeit: 1,
+    quelle:
+      'AUFTRAG 3.9 und _gemeinde/berichte/E0-K05-moschee-fundstellen.md (Nachtrag „Eröffnung“); Datum und Einzelheiten Platzhalter (MN-08)',
+  },
 ];

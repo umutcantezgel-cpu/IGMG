@@ -67,6 +67,13 @@ const ROUTEN: Route[] = [
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
+  // Gemeinde-Plattform H-D01/H-R01: Hadith (Buchseite je nach Schalter hadith_gesamt mit Inhalt oder 404), Quellen, Erklärung
+  { name: 'Hadith', pfad: { de: '/hadith', tr: '/tr/hadis', en: '/en/hadith' } },
+  { name: 'Hadith-Auswahl', pfad: { de: '/hadith/auswahl', tr: '/tr/hadis/secme', en: '/en/hadith/selection' } },
+  { name: 'Sahih al-Bukhari', pfad: { de: '/hadith/bukhari', tr: '/tr/hadis/buhari', en: '/en/hadith/bukhari' } },
+  { name: 'Hadith-Buch 1', pfad: { de: '/hadith/bukhari/1', tr: '/tr/hadis/buhari/1', en: '/en/hadith/bukhari/1' } },
+  { name: 'Quellen', pfad: { de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' } },
+  { name: 'Barrierefreiheit', pfad: { de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

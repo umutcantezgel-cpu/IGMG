@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { HadithTrefferliste } from '@/components/website/hadith/HadithTrefferliste';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { SucheFormular } from '@/components/website/suche/SucheFormular';
@@ -8,8 +9,9 @@ import { SucheLeer } from '@/components/website/suche/SucheLeer';
 import { Trefferliste } from '@/components/website/suche/Trefferliste';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
+import { funktionAn } from '@/lib/funktionen';
 import { metadatenFuer } from '@/lib/seo/metadaten';
-import { bereinigeSuche, suche } from '@/server/queries/suche';
+import { bereinigeSuche, suche, sucheHadith } from '@/server/queries/suche';
 
 // Die Suche rendert je Anfrage und blockierend, ohne Suspense: Gestreamte Treffer setzt React erst per Skript an ihren
 // Platz – ohne JavaScript bliebe der Platzhalter stehen. Das GET-Formular lädt die Seite ohnehin neu; die Treffer selbst
@@ -29,7 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
 const sekundaer =
   'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-4 text-center font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 sm:w-auto sm:px-5.5';
 
-/** Formular, dann Treffer je Bereich oder ein Leerzustand (kein Begriff / keine Treffer). */
+/**
+ * Formular, dann Treffer je Bereich oder ein Leerzustand (kein Begriff / keine Treffer). Mit Schalter `hadith_gesamt`
+ * kommen der Filter „Hadith“ (Feld `bereich`) und die Gruppe „Hadith“ dazu (AUFTRAG 3.3); „Hadith“ sucht nur dort.
+ */
 async function Ergebnisse({
   searchParams,
   sprache,
@@ -37,20 +42,45 @@ async function Ergebnisse({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
   sprache: Locale;
 }) {
-  const [sp, t, ts] = await Promise.all([searchParams, getTranslations('suche'), getTranslations('start')]);
+  const [sp, t, ts, th, hadithAn] = await Promise.all([
+    searchParams,
+    getTranslations('suche'),
+    getTranslations('start'),
+    getTranslations('hadith.suche'),
+    funktionAn('hadith_gesamt'),
+  ]);
   const begriff = bereinigeSuche(Array.isArray(sp.q) ? sp.q[0] : sp.q);
-  const treffer = begriff.length >= 2 ? await suche(begriff, sprache) : [];
+  const nurHadith = hadithAn && (Array.isArray(sp.bereich) ? sp.bereich[0] : sp.bereich) === 'hadith';
+  const [treffer, hadithTreffer] =
+    begriff.length >= 2 ? await Promise.all([nurHadith ? [] : suche(begriff, sprache), hadithAn ? sucheHadith(begriff) : []]) : [[], []];
+  const anzahl = treffer.length + hadithTreffer.length;
   return (
     <>
-      <SucheFormular begriff={begriff} />
+      <SucheFormular
+        begriff={begriff}
+        filter={
+          hadithAn
+            ? {
+                legende: th('filter'),
+                aktiv: nurHadith ? 'hadith' : 'alle',
+                optionen: [
+                  { wert: 'alle', label: th('alle') },
+                  { wert: 'hadith', label: th('hadith') },
+                ],
+                hinweis: th('hinweis'),
+              }
+            : undefined
+        }
+      />
       {begriff.length < 2 ? (
         <SucheLeer text={t('leer')} />
-      ) : treffer.length ? (
+      ) : anzahl ? (
         <section aria-labelledby="suche-ergebnisse" className="flex flex-col gap-10">
           <h2 id="suche-ergebnisse" aria-live="polite" className="text-display-2 text-balance">
-            {t('ergebnisse', { anzahl: treffer.length, begriff })}
+            {t('ergebnisse', { anzahl, begriff })}
           </h2>
-          <Trefferliste treffer={treffer} />
+          {treffer.length ? <Trefferliste treffer={treffer} /> : null}
+          {hadithTreffer.length ? <HadithTrefferliste treffer={hadithTreffer} /> : null}
         </section>
       ) : (
         <SucheLeer

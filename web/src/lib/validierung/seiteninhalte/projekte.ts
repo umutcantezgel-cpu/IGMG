@@ -31,7 +31,8 @@ export const schema = z.object({
   projekt: z
     .object({
       name: mehrsprachig(120).default({ de: '[Projektname – von der Gemeinde]' }),
-      status: z.enum(PROJEKT_STATI).default('in_planung'),
+      // Standard seit 2026 (AUFTRAG 3.9): Die neue Fatih-Moschee ist fertiggestellt; andere Stati wählt die Redaktion
+      status: z.enum(PROJEKT_STATI).default('fertiggestellt'),
       ort: mehrsprachigOptional(120).default({ de: '[Ortsangabe]' }),
       beginn: jahr,
       fertigstellung: jahr,

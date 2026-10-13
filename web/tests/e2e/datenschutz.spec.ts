@@ -68,6 +68,12 @@ const ROUTEN = [
     tr: '/tr/camiler-icin-web-sitesi',
     en: '/en/website-for-mosques',
   },
+  // Gemeinde-Plattform H-D01/H-R01 (die Buchseiten antworten je nach Schalter hadith_gesamt mit 404 und stehen nur in der a11y-Tabelle)
+  { id: 'hadith', seite: 'Hadith', de: '/hadith', tr: '/tr/hadis', en: '/en/hadith' },
+  { id: 'hadithauswahl', seite: 'Hadith-Auswahl', de: '/hadith/auswahl', tr: '/tr/hadis/secme', en: '/en/hadith/selection' },
+  { id: 'bukhari', seite: 'Sahih al-Bukhari', de: '/hadith/bukhari', tr: '/tr/hadis/buhari', en: '/en/hadith/bukhari' },
+  { id: 'quellen', seite: 'Quellen', de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' },
+  { id: 'barrierefreiheit', seite: 'Barrierefreiheit', de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' },
 ] as const;
 
 type Sprache = 'de' | 'tr' | 'en';

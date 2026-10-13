@@ -4,6 +4,8 @@ import journal from '../../../drizzle/migrations/meta/_journal.json';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
+import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
+import { vergangeneOffene } from './meilensteine';
 import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-probe';
 
 /**
@@ -196,7 +198,7 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
     });
   } else {
     try {
-      await datenbankPruefen(db, neu, produktion);
+      await datenbankPruefen(db, neu, produktion, kontext.jetzt ?? new Date());
     } catch {
       // Laufzeitfehler (Tabellen fehlen, obwohl die Verbindung steht): als Fehler melden statt die ganze Prüfung abzubrechen.
       neu({
@@ -232,7 +234,7 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
   return { betriebsart, zeitpunkt: (kontext.jetzt ?? new Date()).toISOString(), pruefungen, zaehler, startklar: zaehler.fehler === 0 };
 }
 
-async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produktion: boolean) {
+async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produktion: boolean, jetzt: Date) {
   try {
     await db.execute(sql`select 1`);
     neu({ id: 'datenbank.verbindung', bereich: 'datenbank', titel: 'Datenbank', status: 'ok', meldung: 'Die Datenbank antwortet.' });
@@ -310,6 +312,42 @@ async function datenbankPruefen(db: Datenbank, neu: (p: Pruefung) => void, produ
         : `${beispiele} Beispielinhalte (Veranstaltungen, Nachrichten, Seiten) sind noch vorhanden.`,
     ort: 'Verwaltung › Veranstaltungen, Neuigkeiten, Seiteninhalte',
     aufwand: '1–3 h',
+  });
+
+  // Projekte (AUFTRAG 3.9, E0-K05): Meilensteine mit vergangenem Datum, die noch offen sind, und Platzhalter der Gemeinde
+  // (Ort, Daten, Spendenzweck, Bankverbindung). Ohne gespeicherten Inhalt gelten die Standardwerte der Seite.
+  const [projektZeile] = await db
+    .select({ inhalt: schema.seiteninhalt.inhalt })
+    .from(schema.seiteninhalt)
+    .where(eq(schema.seiteninhalt.bereich, 'projekte'))
+    .limit(1);
+  const gelesen = projekteSchema.safeParse(projektZeile?.inhalt ?? {});
+  const projekt = gelesen.success ? gelesen.data : projekteSchema.parse({});
+  const offen = vergangeneOffene(projekt.meilensteine, jetzt);
+  neu({
+    id: 'inhalte.meilensteine',
+    bereich: 'inhalte',
+    titel: 'Meilenstein vergangen, aber offen',
+    status: offen.length ? 'warnung' : 'ok',
+    meldung: offen.length
+      ? `${offen.length === 1 ? 'Ein Meilenstein ist' : `${offen.length} Meilensteine sind`} vorbei, aber nicht erledigt: ${offen
+          .map((m) => `„${m.titel}“ (${m.datum})`)
+          .join(', ')}. Erledigt setzen, Datum anpassen oder entfernen.`
+      : 'Kein Meilenstein mit vergangenem Datum ist offen.',
+    ort: 'Verwaltung › Seiteninhalte › Projekte',
+    aufwand: '10 min',
+  });
+  const projektPlatzhalter = !projektZeile || hatPlatzhalter(projekt);
+  neu({
+    id: 'inhalte.projekt-platzhalter',
+    bereich: 'inhalte',
+    titel: 'Projekt-Platzhalter offen',
+    status: projektPlatzhalter ? 'warnung' : 'ok',
+    meldung: projektPlatzhalter
+      ? 'Die Seite „Projekte“ enthält noch Platzhalter in eckigen Klammern (z. B. Ort, Eröffnungsdatum, Spendenzweck, Bankverbindung).'
+      : 'Die Seite „Projekte“ ist ohne Platzhalter.',
+    ort: 'Verwaltung › Seiteninhalte › Projekte (MENSCHEN MN-08, MN-13)',
+    aufwand: '30 min',
   });
 
   for (const bereich of ['impressum', 'datenschutz'] as const) {

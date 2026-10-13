@@ -1,1 +1,284 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "hadith": {
+      "breadcrumb": "Hadith",
+      "kennung": "Islam",
+      "titel": "Hadith",
+      "untertitel": "Die Sammlung Sahih al-Bukhari im arabischen Wortlaut. Eine Übersetzung erscheint erst, wenn sie geprüft ist.",
+      "sammlung": {
+        "titel": "Die Sammlung",
+        "textAn": "Hier steht die Hadith-Sammlung Sahih al-Bukhari im arabischen Wortlaut der Quelle: {buecher} Bücher mit {hadithe} Hadithen. Nummern, Bücher und Reihenfolge folgen der Zählung der Quelle.",
+        "textAus": "Die vollständige Sammlung Sahih al-Bukhari ({buecher} Bücher, {hadithe} Hadithe) schalten wir frei, sobald die Rechte am arabischen Text geklärt sind. Bis dahin finden Sie hier eine Auswahl.",
+        "textLeer": "Die Sammlung ist noch nicht eingelesen.",
+        "einfuehrung": "[Einführung zur Sammlung – vom Imam, Freigabe ausstehend]",
+        "bezugTitel": "So lesen Sie den Bezug",
+        "bezugText": "Jeder Hadith trägt einen Bezug wie „{beispiel}“: zuerst die fortlaufende Nummer in der Sammlung, danach das Buch und die Stelle im Buch.",
+        "fakten": "Auf einen Blick",
+        "buecher": "Bücher",
+        "hadithe": "Hadithe",
+        "text": "Text",
+        "textWert": "Arabisch, mit Vokalzeichen"
+      },
+      "wege": {
+        "titel": "Lesen",
+        "auswahlTitel": "Auswahl",
+        "auswahlText": "Ausgewählte Hadithe, zusammengestellt von der Gemeinde.",
+        "auswahlAnzahl": "{anzahl, plural, =0 {Wird zusammengestellt} one {# Hadith} other {# Hadithe}}",
+        "alleTitel": "Alle Bücher",
+        "alleText": "Die ganze Sammlung, Buch für Buch, im arabischen Wortlaut.",
+        "alleAnzahl": "{anzahl} Bücher",
+        "alleAus": "Wird freigeschaltet, sobald die Rechte am arabischen Text geklärt sind."
+      },
+      "stand": {
+        "titel": "Stand der Übersetzungen",
+        "text": "Übersetzungen verfasst der Imam, oder sie stammen aus Quellen mit geklärter Lizenz. Öffentlich erscheint eine Übersetzung erst nach der religiösen Prüfung.",
+        "zeile": "{geprueft} von {gesamt} geprüft",
+        "sprache": {
+          "de": "Deutsch",
+          "tr": "Türkisch",
+          "en": "Englisch"
+        }
+      },
+      "quelle": {
+        "zeile": "Arabischer Text: hadith-api (fawazahmed0), Unlicense; Herkunft sunnah.com",
+        "link": "Quellen und Lizenzen"
+      },
+      "bukhari": {
+        "titel": "Sahih al-Bukhari",
+        "untertitel": "{anzahl} Bücher im arabischen Wortlaut. Die Buchtitel stehen in der Sprache der Quelle (Englisch).",
+        "liste": "Bücher",
+        "buch": "Buch {nr}",
+        "anzahl": "{anzahl, plural, one {# Hadith} other {# Hadithe}}",
+        "ausTitel": "Noch nicht freigeschaltet",
+        "ausText": "Die vollständige Sammlung erscheint, sobald die Rechte am arabischen Text geklärt sind. Bis dahin lesen Sie die Auswahl.",
+        "zurAuswahl": "Zur Auswahl",
+        "leer": "Die Sammlung ist noch nicht eingelesen."
+      },
+      "buch": {
+        "kennung": "Buch {nr}",
+        "metaTitel": "{titel} · Buch {nr} · Sahih al-Bukhari",
+        "untertitel": "{anzahl, plural, one {# Hadith} other {# Hadithe}} im arabischen Wortlaut. Buchtitel der Quelle (Englisch).",
+        "zurueck": "Alle Bücher",
+        "liste": "Hadithe in Buch {nr}",
+        "stelle": "Buch {buch}, Hadith {hadith}",
+        "stelleBuch": "Buch {buch}",
+        "uebersetzungInArbeit": "Übersetzung in Arbeit",
+        "uebersetzungVon": "Übersetzung: {uebersetzer}",
+        "bewertung": "Bewertung: {bewertung}",
+        "linkKopieren": "Link kopieren",
+        "kopiert": "Link kopiert",
+        "kopierenFehler": "Kopieren war nicht möglich. Die Adresse des Hadith steht jetzt in der Adresszeile.",
+        "blaettern": "Bücher blättern",
+        "vorher": "Vorheriges Buch",
+        "naechstes": "Nächstes Buch",
+        "dieserBand": "Dieses Buch",
+        "umfang": "Umfang",
+        "nummern": "Nummern"
+      },
+      "auswahl": {
+        "titel": "Auswahl",
+        "untertitel": "Ausgewählte Hadithe aus Sahih al-Bukhari, mit Übersetzung, sobald sie geprüft ist.",
+        "liste": "Ausgewählte Hadithe",
+        "leerTitel": "Die Auswahl wird zusammengestellt.",
+        "leerText": "Sobald der Imam die ersten Hadithe ausgewählt und freigegeben hat, erscheinen sie hier.",
+        "zurueck": "Zur Übersicht",
+        "imBuch": "Im Buch lesen"
+      },
+      "suche": {
+        "filter": "Suchen in",
+        "alle": "Allen Bereichen",
+        "hadith": "Hadith",
+        "gruppe": "Hadith (Sahih al-Bukhari)",
+        "hinweis": "Hadithe finden Sie mit arabischen Wörtern (mit oder ohne Vokalzeichen) oder mit der Nummer, z. B. „Bukhari 1“ oder „402.2“."
+      }
+    }
+  },
+  "tr": {
+    "hadith": {
+      "breadcrumb": "Hadis",
+      "kennung": "İslam",
+      "titel": "Hadis",
+      "untertitel": "Sahîh-i Buhârî, Arapça aslıyla. Bir çeviri ancak incelendikten sonra yayımlanır.",
+      "sammlung": {
+        "titel": "Eser hakkında",
+        "textAn": "Burada Sahîh-i Buhârî hadis külliyatı, kaynaktaki Arapça metniyle yer alıyor: {buecher} kitapta {hadithe} hadis. Numaralar, kitaplar ve sıralama kaynağın numaralandırmasını izler.",
+        "textAus": "Sahîh-i Buhârî'nin tamamını ({buecher} kitap, {hadithe} hadis), Arapça metnin hakları netleşince yayına açacağız. O zamana kadar burada bir seçki bulabilirsiniz.",
+        "textLeer": "Eser henüz sisteme aktarılmadı.",
+        "einfuehrung": "[Eser hakkında giriş – imam tarafından, onay bekleniyor]",
+        "bezugTitel": "Künye nasıl okunur?",
+        "bezugText": "Her hadisin „{beispiel}“ gibi bir künyesi vardır: önce eserdeki sıra numarası, ardından kitap ve kitaptaki yeri.",
+        "fakten": "Kısaca",
+        "buecher": "Kitap",
+        "hadithe": "Hadis",
+        "text": "Metin",
+        "textWert": "Arapça, harekeli"
+      },
+      "wege": {
+        "titel": "Okuyun",
+        "auswahlTitel": "Seçme hadisler",
+        "auswahlText": "Cemaatimizin derlediği seçme hadisler.",
+        "auswahlAnzahl": "{anzahl, plural, =0 {Hazırlanıyor} one {# hadis} other {# hadis}}",
+        "alleTitel": "Tüm kitaplar",
+        "alleText": "Eserin tamamı, kitap kitap, Arapça aslıyla.",
+        "alleAnzahl": "{anzahl} kitap",
+        "alleAus": "Arapça metnin hakları netleşince yayına açılacak."
+      },
+      "stand": {
+        "titel": "Çevirilerin durumu",
+        "text": "Çevirileri imamımız hazırlar ya da lisansı netleşmiş kaynaklardan alınır. Bir çeviri ancak dinî incelemeden sonra yayımlanır.",
+        "zeile": "{gesamt} hadisten {geprueft} tanesi incelendi",
+        "sprache": {
+          "de": "Almanca",
+          "tr": "Türkçe",
+          "en": "İngilizce"
+        }
+      },
+      "quelle": {
+        "zeile": "Arapça metin: hadith-api (fawazahmed0), Unlicense; kaynağı sunnah.com",
+        "link": "Kaynaklar ve lisanslar"
+      },
+      "bukhari": {
+        "titel": "Sahîh-i Buhârî",
+        "untertitel": "Arapça aslıyla {anzahl} kitap. Kitap başlıkları kaynağın dilindedir (İngilizce).",
+        "liste": "Kitaplar",
+        "buch": "Kitap {nr}",
+        "anzahl": "{anzahl, plural, one {# hadis} other {# hadis}}",
+        "ausTitel": "Henüz yayında değil",
+        "ausText": "Eserin tamamı, Arapça metnin hakları netleşince yayımlanacak. O zamana kadar seçme hadisleri okuyabilirsiniz.",
+        "zurAuswahl": "Seçme hadislere git",
+        "leer": "Eser henüz sisteme aktarılmadı."
+      },
+      "buch": {
+        "kennung": "Kitap {nr}",
+        "metaTitel": "{titel} · Kitap {nr} · Sahîh-i Buhârî",
+        "untertitel": "Arapça aslıyla {anzahl, plural, one {# hadis} other {# hadis}}. Kitap başlığı kaynaktan (İngilizce).",
+        "zurueck": "Tüm kitaplar",
+        "liste": "Kitap {nr} içindeki hadisler",
+        "stelle": "Kitap {buch}, Hadis {hadith}",
+        "stelleBuch": "Kitap {buch}",
+        "uebersetzungInArbeit": "Çeviri hazırlanıyor",
+        "uebersetzungVon": "Çeviri: {uebersetzer}",
+        "bewertung": "Derece: {bewertung}",
+        "linkKopieren": "Bağlantıyı kopyala",
+        "kopiert": "Bağlantı kopyalandı",
+        "kopierenFehler": "Kopyalanamadı. Hadisin adresi şimdi adres çubuğunda.",
+        "blaettern": "Kitaplar arasında gezin",
+        "vorher": "Önceki kitap",
+        "naechstes": "Sonraki kitap",
+        "dieserBand": "Bu kitap",
+        "umfang": "Kapsam",
+        "nummern": "Numaralar"
+      },
+      "auswahl": {
+        "titel": "Seçme hadisler",
+        "untertitel": "Sahîh-i Buhârî'den seçilmiş hadisler; çevirisi incelendikten sonra yayımlanır.",
+        "liste": "Seçilmiş hadisler",
+        "leerTitel": "Seçki hazırlanıyor.",
+        "leerText": "İmamımız ilk hadisleri seçip onayladığında burada yer alacak.",
+        "zurueck": "Genel bakışa dön",
+        "imBuch": "Kitapta oku"
+      },
+      "suche": {
+        "filter": "Arama alanı",
+        "alle": "Tüm alanlar",
+        "hadith": "Hadis",
+        "gruppe": "Hadis (Sahîh-i Buhârî)",
+        "hinweis": "Hadisleri Arapça kelimelerle (harekeli ya da harekesiz) veya numarasıyla bulabilirsiniz, örneğin „Buhari 1“ ya da „402.2“."
+      }
+    }
+  },
+  "en": {
+    "hadith": {
+      "breadcrumb": "Hadith",
+      "kennung": "Islam",
+      "titel": "Hadith",
+      "untertitel": "The collection Sahih al-Bukhari in its Arabic wording. A translation appears only once it has been reviewed.",
+      "sammlung": {
+        "titel": "The collection",
+        "textAn": "This is the hadith collection Sahih al-Bukhari in the Arabic wording of the source: {buecher} books with {hadithe} hadiths. Numbers, books and order follow the numbering of the source.",
+        "textAus": "We will publish the complete collection Sahih al-Bukhari ({buecher} books, {hadithe} hadiths) as soon as the rights to the Arabic text are settled. Until then, you will find a selection here.",
+        "textLeer": "The collection has not been imported yet.",
+        "einfuehrung": "[Introduction to the collection – by the imam, approval pending]",
+        "bezugTitel": "How to read the reference",
+        "bezugText": "Every hadith carries a reference such as “{beispiel}”: first the running number in the collection, then the book and the position within the book.",
+        "fakten": "At a glance",
+        "buecher": "Books",
+        "hadithe": "Hadiths",
+        "text": "Text",
+        "textWert": "Arabic, with vowel marks"
+      },
+      "wege": {
+        "titel": "Read",
+        "auswahlTitel": "Selection",
+        "auswahlText": "Selected hadiths, compiled by our community.",
+        "auswahlAnzahl": "{anzahl, plural, =0 {Being compiled} one {# hadith} other {# hadiths}}",
+        "alleTitel": "All books",
+        "alleText": "The whole collection, book by book, in its Arabic wording.",
+        "alleAnzahl": "{anzahl} books",
+        "alleAus": "Will be published as soon as the rights to the Arabic text are settled."
+      },
+      "stand": {
+        "titel": "Status of the translations",
+        "text": "Translations are written by the imam or come from sources with a settled licence. A translation is published only after the religious review.",
+        "zeile": "{geprueft} of {gesamt} reviewed",
+        "sprache": {
+          "de": "German",
+          "tr": "Turkish",
+          "en": "English"
+        }
+      },
+      "quelle": {
+        "zeile": "Arabic text: hadith-api (fawazahmed0), Unlicense; origin sunnah.com",
+        "link": "Sources and licences"
+      },
+      "bukhari": {
+        "titel": "Sahih al-Bukhari",
+        "untertitel": "{anzahl} books in their Arabic wording. Book titles are given in the language of the source (English).",
+        "liste": "Books",
+        "buch": "Book {nr}",
+        "anzahl": "{anzahl, plural, one {# hadith} other {# hadiths}}",
+        "ausTitel": "Not published yet",
+        "ausText": "The complete collection will appear as soon as the rights to the Arabic text are settled. Until then, please read the selection.",
+        "zurAuswahl": "Go to the selection",
+        "leer": "The collection has not been imported yet."
+      },
+      "buch": {
+        "kennung": "Book {nr}",
+        "metaTitel": "{titel} · Book {nr} · Sahih al-Bukhari",
+        "untertitel": "{anzahl, plural, one {# hadith} other {# hadiths}} in their Arabic wording. Book title from the source (English).",
+        "zurueck": "All books",
+        "liste": "Hadiths in book {nr}",
+        "stelle": "Book {buch}, Hadith {hadith}",
+        "stelleBuch": "Book {buch}",
+        "uebersetzungInArbeit": "Translation in progress",
+        "uebersetzungVon": "Translation: {uebersetzer}",
+        "bewertung": "Grade: {bewertung}",
+        "linkKopieren": "Copy link",
+        "kopiert": "Link copied",
+        "kopierenFehler": "Copying was not possible. The address of the hadith is now in the address bar.",
+        "blaettern": "Browse books",
+        "vorher": "Previous book",
+        "naechstes": "Next book",
+        "dieserBand": "This book",
+        "umfang": "Size",
+        "nummern": "Numbers"
+      },
+      "auswahl": {
+        "titel": "Selection",
+        "untertitel": "Selected hadiths from Sahih al-Bukhari, with a translation once it has been reviewed.",
+        "liste": "Selected hadiths",
+        "leerTitel": "The selection is being compiled.",
+        "leerText": "As soon as the imam has selected and approved the first hadiths, they will appear here.",
+        "zurueck": "Back to the overview",
+        "imBuch": "Read in the book"
+      },
+      "suche": {
+        "filter": "Search in",
+        "alle": "All areas",
+        "hadith": "Hadith",
+        "gruppe": "Hadith (Sahih al-Bukhari)",
+        "hinweis": "Find hadiths by Arabic words (with or without vowel marks) or by number, e.g. “Bukhari 1” or “402.2”."
+      }
+    }
+  }
+}

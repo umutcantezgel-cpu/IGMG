@@ -7,7 +7,31 @@ import type { BereichsSeed } from './typ';
  * Beispielinhalt „ueber-uns“ (Blatt S08, DATEN). Texte wörtlich aus dem Bestand (LanguageContext aboutUs), Werte und
  * Zeitleistenbilder aus dem Design. Das Gründungsjahr ist offen (1976 gegen 1975): Platzhalter [Gründungsjahr] (G-05).
  * Ersatzzeichen im türkischen Zeitleisten-Eintrag (L:485) durch das eindeutige Wort „taşınma“ ersetzt, siehe OFFENE FRAGEN.
+ * Stand 2026 (AUFTRAG 3.9, E0-K05): Die frühere Station „Zukunft“ ist die Eröffnung der neuen Fatih-Moschee; Jahr und Foto
+ * liefert die Gemeinde (MN-08). Die Inhaltsmigration `scripts/inhalte-2026.ts` ersetzt sie in bestehenden Beispieldaten.
  */
+
+/** Frühere letzte Station (Bestand), an der die Inhaltsmigration den alten Stand erkennt. */
+export const ZEITLEISTE_ZUKUNFT_DE = 'Zukunft';
+
+/** Letzte Station der Zeitleiste „Unsere Reise“: Eröffnung der neuen Fatih-Moschee (Platzhalter für Jahr und Foto). */
+export const ZEITLEISTE_EROEFFNUNG = {
+  kennzeichnung: { de: '[Jahr – von der Gemeinde]', tr: '[Yıl – cemaat tarafından]', en: '[Year – from the community]' },
+  titel: {
+    de: '[Jahr – von der Gemeinde] – Eröffnung der neuen Fatih-Moschee',
+    tr: "[Yıl – cemaat tarafından] – Yeni Fatih Camii'nin açılışı",
+    en: '[Year – from the community] – Opening of the new Fatih Mosque',
+  },
+  ort: { de: 'Wetzlar', tr: 'Wetzlar', en: 'Wetzlar' },
+  bildbeschreibung: {
+    de: 'Foto: Neue Fatih-Moschee [Foto – von der Gemeinde]',
+    tr: 'Fotoğraf: Yeni Fatih Camii [Fotoğraf – cemaat tarafından]',
+    en: 'Photo: New Fatih Mosque [Photo – from the community]',
+  },
+  reihenfolge: 5,
+  symbol: 'gebaeude',
+} satisfies NonNullable<z.input<typeof inhaltSchema>['zeitleiste']>[number];
+
 const inhalt: z.input<typeof inhaltSchema> = {
   geschichte: {
     absaetze: [
@@ -90,18 +114,7 @@ const inhalt: z.input<typeof inhaltSchema> = {
       reihenfolge: 4,
       symbol: 'standort',
     },
-    {
-      kennzeichnung: { de: 'Zukunft', tr: 'Gelecek', en: 'Future' },
-      titel: {
-        de: 'Zukunft - Weiterhin im Dienste unserer Gemeinde',
-        tr: 'Gelecek - Cemaatimize hizmet etmeye devam',
-        en: 'Future - Continuing to serve our community',
-      },
-      ort: { de: 'Wetzlar', tr: 'Wetzlar', en: 'Wetzlar' },
-      bildbeschreibung: { de: 'Foto: Zukunftsvision - Gemeinsam in die Zukunft' },
-      reihenfolge: 5,
-      symbol: 'aufwaerts',
-    },
+    ZEITLEISTE_EROEFFNUNG,
   ],
   gemeinschaft: {
     absaetze: [
@@ -181,7 +194,7 @@ export const seed: BereichsSeed = async (db) => {
       bereich: 'ueber-uns',
       istBeispiel: true,
       quelle:
-        'bestand/src/app/components/LanguageContext.tsx:209-268 (de), 467-526 (tr), 725-784 (en), L:485 Ersatzzeichen durch taşınma ersetzt; design/AboutUs.dc.html:26-29, 54-58, 92-102; Blatt S08 (Jahresmarken tr/en abgeleitet)',
+        'bestand/src/app/components/LanguageContext.tsx:209-268 (de), 467-526 (tr), 725-784 (en), L:485 Ersatzzeichen durch taşınma ersetzt; design/AboutUs.dc.html:26-29, 54-58, 92-102; Blatt S08 (Jahresmarken tr/en abgeleitet); letzte Station „Eröffnung der neuen Fatih-Moschee“ nach AUFTRAG 3.9 (Jahr und Foto Platzhalter, MN-08)',
       inhalt: geprueft,
     })
     .onConflictDoNothing({ target: schema.seiteninhalt.bereich })

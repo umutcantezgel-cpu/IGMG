@@ -39,6 +39,8 @@ const SOZIAL_PLATZHALTER = 'flex size-12 items-center justify-center rounded-md 
 export async function Footer() {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('fuss');
+  // Rechtslinks der neuen Seiten: Texte aus deren Bereichsdateien (messages/bereiche/barrierefreiheit.json, quellen.json)
+  const [tb, tq] = await Promise.all([getTranslations('barrierefreiheit'), getTranslations('quellen')]);
   const kontakt = await ladeSeiteninhalt('kontakt');
   const telefon = telefonHref(kontakt.telefon);
   const schnell: { label: string; ziel: Ziel }[] = [
@@ -167,6 +169,16 @@ export async function Footer() {
             <li>
               <Link href="/impressum" className={TEXTLINK}>
                 {t('impressum')}
+              </Link>
+            </li>
+            <li>
+              <Link href="/barrierefreiheit" className={TEXTLINK}>
+                {tb('fussLink')}
+              </Link>
+            </li>
+            <li>
+              <Link href="/quellen" className={TEXTLINK}>
+                {tq('fussLink')}
               </Link>
             </li>
           </ul>
