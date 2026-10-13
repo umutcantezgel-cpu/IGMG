@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { AKTIONEN, MATRIX, NIE_PER_ADMINISTRATION, ROLLEN, darf, organisationsFilter } from '@/lib/rechte/matrix';
 
 describe('Rechte-Matrix (K-06, ADR 0003)', () => {
-  it('Administration darf jede Aktion außer Chat-Inhalten (ADR Kontoarten, S-11)', () => {
+  it('Administration darf jede Aktion außer Chat-Inhalten (ADR 0026, S-11)', () => {
     for (const a of AKTIONEN) expect(darf([{ rolle: 'administration' }], a)).toBe(!NIE_PER_ADMINISTRATION.has(a));
   });
 

@@ -4,7 +4,7 @@ import { gruppe } from './lernen';
 import { bytea } from './typen';
 
 /**
- * Moderierter Gruppen- und Elternkanal (Kinderschutz S-01…S-18, ADR Kontoarten).
+ * Moderierter Gruppen- und Elternkanal (Kinderschutz S-01…S-18, ADR 0026).
  * Keine Direktnachrichten, keine selbst angelegten Gruppen: Kanäle gibt es nur je Gruppe.
  */
 export const chatKanalArtEnum = pgEnum('chat_kanal_art', ['gruppe', 'eltern']);

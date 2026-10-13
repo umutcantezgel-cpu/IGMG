@@ -40,7 +40,7 @@ export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
   const benutzerId = sitzung.user.id;
   const rollen = await ladeRollen(benutzerId);
   // Verwaltung: höchstens 8 h ab Anmeldung (absolut), obwohl Better Auth Gemeinde-Sitzungen bis 30 Tage hält
-  // (ADR Kontoarten). Abgelaufene Sitzungen werden widerrufen.
+  // (ADR 0026). Abgelaufene Sitzungen werden widerrufen.
   if (
     rollen.length > 0 &&
     sitzungAbgelaufen(new Date(sitzung.session.createdAt), { verwaltung: true, gemeindeRollen: [], istKind: false })

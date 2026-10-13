@@ -58,7 +58,7 @@ export function permissionsPolicy(erlaubt: readonly Berechtigung[] = []): string
 }
 
 /**
- * Berechtigungen je Pfad (ADR Mein Ort, ADR Audio): Standort nur auf den Gebetszeiten-Seiten (Berechnung im Browser,
+ * Berechtigungen je Pfad (ADR 0028, ADR 0029): Standort nur auf den Gebetszeiten-Seiten (Berechnung im Browser,
  * nie an den Server), Mikrofon und Kamera nur in der Verwaltung (Rezitations-Aufnahme, Einlass-Scan).
  * In next.config.ts nach `grundHeader` eingetragen – spätere Regeln überschreiben frühere.
  */
@@ -73,7 +73,7 @@ export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly B
 
 /**
  * Erste Pfadsegmente der Konto-Seiten (Anmeldung, Registrierung, Mein Bereich) in allen Sprachen. Diese Seiten sind
- * dynamisch und bekommen im Proxy die strikte Nonce-CSP der Verwaltung, `noindex` und `no-store` (ADR Kontoarten).
+ * dynamisch und bekommen im Proxy die strikte Nonce-CSP der Verwaltung, `noindex` und `no-store` (ADR 0026).
  */
 export const KONTO_SEGMENTE = [
   'anmelden',

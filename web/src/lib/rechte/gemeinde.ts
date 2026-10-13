@@ -12,7 +12,7 @@ import type { RollenZuweisung } from './matrix';
 import { KeinRecht } from './pruefe';
 import { sitzungAbgelaufen } from './sitzung';
 
-/** Kontoarten in „Mein Bereich“ (ADR Kontoarten). */
+/** Kontoarten in „Mein Bereich“ (ADR 0026). */
 export type GemeindeRolle = (typeof schema.gemeindeRolleEnum.enumValues)[number];
 
 export type Konto = {

@@ -5,7 +5,7 @@ import { betriebsart, type UmgebungsWerte } from '@/lib/umgebung';
 import type { FunktionenEinstellung } from '@/lib/validierung/einstellungen';
 
 /**
- * Funktionsschalter (ADR Funktionsschalter). Alles mit Personendaten (Konten, Lernplattform, Chat, Push, Hatim,
+ * Funktionsschalter (ADR 0035). Alles mit Personendaten (Konten, Lernplattform, Chat, Push, Hatim,
  * Newsletter) ist in der Produktion aus, bis Menschen es im Cockpit oder per Umgebung einschalten.
  * Vorrang: Umgebung `FUNKTION_<NAME>=an|aus` → Einstellung `funktionen` (Datenbank) → Standard der Betriebsart.
  * In der Produktion gewinnt immer die Umgebung, wenn sie gesetzt ist; ohne Datenbank (Beispielmodus) zählt nur sie.

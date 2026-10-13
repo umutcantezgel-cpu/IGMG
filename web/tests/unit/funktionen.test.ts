@@ -5,7 +5,7 @@ vi.mock('@/server/queries/einstellungen', () => ({ ladeEinstellung: async () => 
 
 const { entscheide, FUNKTIONEN } = await import('@/lib/funktionen');
 
-describe('Funktionsschalter (ADR Funktionsschalter)', () => {
+describe('Funktionsschalter (ADR 0035)', () => {
   it('Produktion: ohne Angaben ist alles aus', () => {
     for (const f of FUNKTIONEN) expect(entscheide(f, { SITE_MODE: 'produktion', NODE_ENV: 'production' }, null)).toBe(false);
   });

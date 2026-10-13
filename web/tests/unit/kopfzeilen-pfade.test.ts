@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { PFAD_BERECHTIGUNGEN, grundHeader, istKontoPfad, permissionsPolicy } from '@/lib/sicherheit/header';
 
-describe('Berechtigungen je Pfad (ADR Mein Ort, ADR Audio)', () => {
+describe('Berechtigungen je Pfad (ADR 0028, ADR 0029)', () => {
   it('Grundregel sperrt Kamera, Mikrofon und Standort', () => {
     const wert = grundHeader().find((h) => h.key === 'Permissions-Policy')?.value ?? '';
     expect(wert).toContain('camera=()');

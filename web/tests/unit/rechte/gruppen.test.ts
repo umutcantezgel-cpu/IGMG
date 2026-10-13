@@ -22,7 +22,7 @@ const schueler = kontext({ eigeneLernendeId: 'kind-a', eigeneGruppen: new Set([G
 const eltern = kontext({ kinder: new Map([['kind-b', new Set([G1])]]) });
 const fremd = kontext({});
 
-describe('Gruppenrechte (ADR Kontoarten)', () => {
+describe('Gruppenrechte (ADR 0026)', () => {
   it('ohne Bezug zur Gruppe ist nichts erlaubt', () => {
     for (const a of GRUPPEN_AKTIONEN) expect(darfInGruppe(fremd, a, G1, { lernendeId: 'kind-a' })).toBe(false);
   });

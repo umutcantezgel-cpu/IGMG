@@ -23,7 +23,7 @@ export default function proxy(request: NextRequest) {
     pathname.startsWith('/verwaltung/') ||
     pathname === '/de/verwaltung' ||
     pathname.startsWith('/de/verwaltung/');
-  // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR Kontoarten)
+  // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR 0026)
   if (verwaltung || istKontoPfad(pathname)) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
     const csp = cspVerwaltung(nonce);

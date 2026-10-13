@@ -84,7 +84,7 @@ export async function angemeldetAls(rollen: RollenZuweisung[] | null, zweiFaktor
       .values(rollen.map((r) => ({ benutzerId: id, rolle: r.rolle, organisation: r.organisation ?? null })));
   sitzung = {
     user: { id, name: 'Testperson Eins', email: `testperson.${id.slice(0, 8)}@example.test`, twoFactorEnabled: zweiFaktor },
-    // Wie Better Auth: Sitzung mit Anmeldezeitpunkt (absolute Grenzen je Kontoart, ADR Kontoarten)
+    // Wie Better Auth: Sitzung mit Anmeldezeitpunkt (absolute Grenzen je Kontoart, ADR 0026)
     session: { id: `sitzung-${id}`, createdAt: new Date() },
   };
   return id;

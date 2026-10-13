@@ -1,5 +1,5 @@
 /**
- * Absolute Sitzungsgrenzen je Kontoart (ADR Kontoarten). Better Auth hält Sitzungen höchstens 30 Tage (gleitend);
+ * Absolute Sitzungsgrenzen je Kontoart (ADR 0026). Better Auth hält Sitzungen höchstens 30 Tage (gleitend);
  * strengere Grenzen gelten ab der Anmeldung (`session.createdAt`) und werden bei jedem Laden geprüft.
  * Reine Funktion ohne Datenbank, vollständig unit-testbar.
  */

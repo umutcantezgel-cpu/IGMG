@@ -64,7 +64,7 @@ export const AKTIONEN = [
   'audit.lesen',
   'einstellung.bearbeiten',
   'styleguide.lesen',
-  // Lauf Gemeinde-Plattform (ADR Kontoarten, ADR CMS, ADR Religiöse Freigabe)
+  // Lauf Gemeinde-Plattform (ADR 0026, ADR 0032, ADR 0030)
   'gruppe.lesen',
   'gruppe.bearbeiten',
   'lernende.lesen',
@@ -118,7 +118,7 @@ const ORGANISATIONSGEBUNDEN: ReadonlySet<Aktion> = new Set<Aktion>([
 ]);
 
 /**
- * Kinderschutz (ADR Kontoarten, S-11): Chat-Meldungen und Moderationsprotokoll sind NICHT über
+ * Kinderschutz (ADR 0026, S-11): Chat-Meldungen und Moderationsprotokoll sind NICHT über
  * „Administration darf alles“ erreichbar, sondern nur mit der Rolle `kinderschutz` (jeder Zugriff im Audit).
  */
 export const NIE_PER_ADMINISTRATION: ReadonlySet<Aktion> = new Set<Aktion>([
@@ -233,7 +233,7 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'freigabe.lesen',
     'newsletter.lesen',
   ]),
-  /** Imam/Hoca: verfasst religiöse Inhalte und gibt sie frei (ADR Religiöse Freigabe). */
+  /** Imam/Hoca: verfasst religiöse Inhalte und gibt sie frei (ADR 0030). */
   religioese_pruefung: new Set<Aktion>([
     ...GRUNDRECHTE,
     'religioes.freigeben',

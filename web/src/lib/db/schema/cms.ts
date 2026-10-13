@@ -2,7 +2,7 @@ import { index, jsonb, pgEnum, pgTable, smallint, text, timestamp, uuid } from '
 import { freigabeStatusEnum, inhaltSpalten, organisationEnum, type Mehrsprachig } from './typen';
 
 /**
- * CMS (ADR CMS): freie Seiten aus Blöcken, Revisionen für alle Inhaltsarten, Menüs, Weiterleitungen,
+ * CMS (ADR 0032): freie Seiten aus Blöcken, Revisionen für alle Inhaltsarten, Menüs, Weiterleitungen,
  * Freigaben (redaktionell/religiös) und signierte Vorschau-Links.
  */
 export type SeitenSlug = { de: string; tr?: string; en?: string };

@@ -1,5 +1,5 @@
 /**
- * Gruppenrechte der Lernplattform (ADR Kontoarten). Reine Daten und Funktionen – ohne Datenbank, vollständig
+ * Gruppenrechte der Lernplattform (ADR 0026). Reine Daten und Funktionen – ohne Datenbank, vollständig
  * unit-testbar. Den Kontext lädt `ladeGruppenKontext` (gemeinde.ts); jede Action ruft zuerst `verlangeGruppenRecht`.
  * Schüler sehen nur sich selbst, Eltern nur ihr Kind, Lehrkräfte und Aufsicht nur ihre Gruppen.
  */

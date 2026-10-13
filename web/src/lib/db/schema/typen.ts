@@ -28,17 +28,17 @@ export const rolleEnum = pgEnum('rolle', [
   'organisationsredaktion',
   'bildung',
   'mitgliederverwaltung',
-  // Lauf Gemeinde-Plattform (ADR Kontoarten): Leitung liest das Cockpit, religiöse Prüfung gibt religiöse Inhalte frei,
+  // Lauf Gemeinde-Plattform (ADR 0026): Leitung liest das Cockpit, religiöse Prüfung gibt religiöse Inhalte frei,
   // Kinderschutz bearbeitet Chat-Meldungen und das Moderationsprotokoll.
   'leitung',
   'religioese_pruefung',
   'kinderschutz',
 ]);
 
-/** Kontoarten in „Mein Bereich“ (ADR Kontoarten), getrennt von den Verwaltungsrollen. */
+/** Kontoarten in „Mein Bereich“ (ADR 0026), getrennt von den Verwaltungsrollen. */
 export const gemeindeRolleEnum = pgEnum('gemeinde_rolle_art', ['gemeinde', 'eltern', 'lehrkraft', 'schueler']);
 
-/** Freigabestand religiöser und redaktioneller Inhalte (ADR Religiöse Freigabe): öffentlich ist nur „geprueft“. */
+/** Freigabestand religiöser und redaktioneller Inhalte (ADR 0030): öffentlich ist nur „geprueft“. */
 export const freigabeStatusEnum = pgEnum('freigabe_status', ['entwurf', 'zur_pruefung', 'geprueft']);
 
 /** Freigabespalten für Inhalte mit Pflichtprüfung (religiös: Rolle `religioese_pruefung`). */

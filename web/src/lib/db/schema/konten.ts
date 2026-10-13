@@ -4,7 +4,7 @@ import { lernende } from './lernen';
 import { gemeindeRolleEnum } from './typen';
 
 /**
- * Kontoarten in „Mein Bereich“ (ADR Kontoarten): Gemeinde, Eltern, Lehrkraft, Schüler.
+ * Kontoarten in „Mein Bereich“ (ADR 0026): Gemeinde, Eltern, Lehrkraft, Schüler.
  * Getrennt von `rolle_zuweisung` (Verwaltung); ein Konto kann beides haben.
  */
 export const gemeindeRolle = pgTable(

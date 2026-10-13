@@ -3,7 +3,7 @@ import { user } from './auth';
 import { bytea } from './typen';
 
 /**
- * Web-Push-Abos (ADR Web Push): nur nach Opt-in je Person, Endpoint verschlüsselt (Eindeutigkeit über HMAC),
+ * Web-Push-Abos (ADR 0034): nur nach Opt-in je Person, Endpoint verschlüsselt (Eindeutigkeit über HMAC),
  * Themen und Gebete einzeln wählbar; inaktive Abos werden nach 12 Monaten gelöscht.
  */
 export const pushAbo = pgTable(
@@ -28,7 +28,7 @@ export const pushAbo = pgTable(
   (t) => [index('push_abo_benutzer_idx').on(t.benutzerId)],
 );
 
-/** Einmal-Schlüssel gegen Doppelversand (Takt idempotent, ADR Web Push). */
+/** Einmal-Schlüssel gegen Doppelversand (Takt idempotent, ADR 0034). */
 export const pushVersand = pgTable('push_versand', {
   schluessel: text().primaryKey(),
   gesendetAm: timestamp({ withTimezone: true }).notNull().defaultNow(),

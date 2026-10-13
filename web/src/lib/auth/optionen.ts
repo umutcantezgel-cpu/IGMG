@@ -28,7 +28,7 @@ export const authOptionen = {
   },
   session: {
     // Höchstdauer für Gemeinde-Konten (30 Tage gleitend). Kürzere, absolute Grenzen je Kontoart setzt
-    // `sitzungsGrenzeMs` (src/lib/rechte/sitzung.ts): Verwaltung 8 h, Lehrkraft und Kinder 12 h (ADR Kontoarten).
+    // `sitzungsGrenzeMs` (src/lib/rechte/sitzung.ts): Verwaltung 8 h, Lehrkraft und Kinder 12 h (ADR 0026).
     expiresIn: 60 * 60 * 24 * 30,
     updateAge: 60 * 30,
     cookieCache: { enabled: false },
@@ -58,7 +58,7 @@ export const authOptionen = {
   },
   plugins: [
     twoFactor({ issuer: 'IGMG Wetzlar', backupCodeOptions: { amount: 10, length: 10 } }),
-    // Kinderkonten ohne E-Mail melden sich mit Benutzernamen an (ADR Kontoarten); nur über die Server Action.
+    // Kinderkonten ohne E-Mail melden sich mit Benutzernamen an (ADR 0026); nur über die Server Action.
     username({ minUsernameLength: 4, maxUsernameLength: 32 }),
     passkey({ rpID: new URL(appUrl).hostname, rpName: 'IGMG Wetzlar Verwaltung', origin: new URL(appUrl).origin }),
   ],

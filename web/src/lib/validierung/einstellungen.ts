@@ -38,7 +38,7 @@ export const allgemeineEinstellung = z.object({
 });
 export type AllgemeineEinstellung = z.infer<typeof allgemeineEinstellung>;
 
-/** Funktionsschalter (ADR Funktionsschalter): nur gesetzte Werte; Standard je Betriebsart in src/lib/funktionen.ts. */
+/** Funktionsschalter (ADR 0035): nur gesetzte Werte; Standard je Betriebsart in src/lib/funktionen.ts. */
 export const funktionenEinstellung = z.object({
   konten: z.boolean().optional(),
   lernplattform: z.boolean().optional(),

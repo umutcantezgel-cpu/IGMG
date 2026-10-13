@@ -18,7 +18,7 @@ import {
 import { medium } from './medien';
 import { freigabeSpalten, type Mehrsprachig, type MehrsprachigRich } from './typen';
 
-/** Quran-Daten (ADR 0009, ADR Daten im Repository): nur über Import-Skripte aus gepinnten, lizenzierten Quellen. */
+/** Quran-Daten (ADR 0009, ADR 0025): nur über Import-Skripte aus gepinnten, lizenzierten Quellen. */
 export const quranQuelle = pgTable('quran_quelle', {
   id: text().primaryKey(),
   bezeichnung: text().notNull(),
@@ -106,7 +106,7 @@ export const quranWort = pgTable(
   (t) => [primaryKey({ columns: [t.sure, t.vers, t.pos] }), index('quran_wort_form_idx').on(t.formId)],
 );
 
-/** Wortbedeutungen: nur von Menschen verfasst, öffentlich erst nach religiöser Freigabe (ADR Religiöse Freigabe). */
+/** Wortbedeutungen: nur von Menschen verfasst, öffentlich erst nach religiöser Freigabe (ADR 0030). */
 export const quranWortbedeutung = pgTable(
   'quran_wortbedeutung',
   {
@@ -186,7 +186,7 @@ export const tajwidRegel = pgTable('tajwid_regel', {
 
 export const rezitationArtEnum = pgEnum('quran_rezitation_art', ['eigen', 'lizenziert']);
 
-/** Rezitationen: eigene Aufnahmen der Gemeinde oder lizenzierte Sätze. Aktiv nur mit hinterlegter Vereinbarung (ADR Audio). */
+/** Rezitationen: eigene Aufnahmen der Gemeinde oder lizenzierte Sätze. Aktiv nur mit hinterlegter Vereinbarung (ADR 0029). */
 export const quranRezitation = pgTable(
   'quran_rezitation',
   {
