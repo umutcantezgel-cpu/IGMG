@@ -27,6 +27,22 @@ import voranmeldung from './voranmeldung.json';
 import vorstand from './vorstand.json';
 import wissen from './wissen.json';
 
+import hadith from './hadith.json';
+import elifbe from './elifbe.json';
+import lernen from './lernen.json';
+import konto from './konto.json';
+import meinBereich from './mein-bereich.json';
+import quellen from './quellen.json';
+import barrierefreiheit from './barrierefreiheit.json';
+import meinOrt from './mein-ort.json';
+import kalender from './kalender.json';
+import ramadan from './ramadan.json';
+import hatim from './hatim.json';
+import spenden from './spenden.json';
+import newsletter from './newsletter.json';
+import chat from './chat.json';
+import unterricht from './unterricht.json';
+import kinder from './kinder.json';
 type Teil = Record<string, unknown>;
 export type BereichsDatei = { de: Teil; tr: Teil; en: Teil };
 
@@ -54,4 +70,20 @@ export const BEREICHE: Record<string, BereichsDatei> = {
   voranmeldung,
   vorstand,
   wissen,
+  hadith,
+  elifbe,
+  lernen,
+  konto,
+  'mein-bereich': meinBereich,
+  quellen,
+  barrierefreiheit,
+  'mein-ort': meinOrt,
+  kalender,
+  ramadan,
+  hatim,
+  spenden,
+  newsletter,
+  chat,
+  unterricht,
+  kinder,
 };
