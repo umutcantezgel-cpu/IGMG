@@ -1,5 +1,5 @@
 // E2E-Datenbank (E-019): `igmg_e2e` im selben PostgreSQL wie die Entwicklung, vor jedem Lauf frisch
-// angelegt, migriert und geseedet – Testkonten und Testtermine landen nie in der Entwicklungsdatenbank.
+// angelegt, migriert, geseedet und mit den Inhaltsdaten (Koran, Hadith) befüllt – Testkonten und Testtermine landen nie in der Entwicklungsdatenbank.
 // Aufruf durch playwright.config.ts (webServer); einzeln: node scripts/e2e-datenbank.mjs
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
@@ -37,7 +37,13 @@ async function main() {
     env,
     stdio: ['ignore', 'ignore', 'inherit'],
   });
-  console.log(`E2E-Datenbank ${name} frisch angelegt, migriert und geseedet.`);
+  // Koran, Tajwid, Übersetzungen und Bukhari aus web/daten (ADR 0025): ohne sie gibt es keine Koran- und Hadith-Seiten
+  execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts'], {
+    cwd: wurzel,
+    env,
+    stdio: ['ignore', 'ignore', 'inherit'],
+  });
+  console.log(`E2E-Datenbank ${name} frisch angelegt, migriert, geseedet und mit Inhaltsdaten befüllt.`);
 }
 
 await main();
