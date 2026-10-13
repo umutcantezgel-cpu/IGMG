@@ -33,7 +33,7 @@ const KNOPF: MailStil = {
   fontFamily: SCHRIFT_TEXT,
   fontSize: M.text,
   fontWeight: 700,
-  lineHeight: M.knopfZeile,
+  lineHeight: M.abstand5,
   textDecoration: 'none',
 };
 
@@ -60,7 +60,7 @@ function KnopfMitLink({ link, text }: { link: string; text: string }) {
           </tbody>
         </table>
       </div>
-      <p data-skip-in-text="true" style={{ margin: 0, fontSize: M.textKlein, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>
+      <p data-skip-in-text="true" style={{ margin: 0, fontSize: M.text, lineHeight: '1.5', color: F.tinte2, wordBreak: 'break-all' }}>
         <a href={link} style={{ color: F.tinte2, textDecoration: 'underline', wordBreak: 'break-all' }}>
           {link}
         </a>
@@ -80,7 +80,7 @@ export async function bestaetigungMail(sprache: string, t: BestaetigungTexte) {
           <p style={{ margin: `0 0 ${M.abstand4}` }}>{t.anrede}</p>
           <p style={{ margin: `0 0 ${M.abstand6}` }}>{t.text}</p>
           <p style={{ margin: `0 0 ${M.abstand1}` }}>{t.gruss}</p>
-          <p style={{ margin: 0, fontSize: M.textKlein, color: F.tinte2 }}>{t.kontakt}</p>
+          <p style={{ margin: 0, fontSize: M.text, color: F.tinte2 }}>{t.kontakt}</p>
         </>
       }
       fuss={t.hinweis}

@@ -74,7 +74,8 @@ function befund(e: StartklarErgebnis, id: string): Pruefung {
 }
 
 async function pruefe(env: Umgebung, datenbank: Datenbank | null = db) {
-  return fuehreStartklarAus({ env, db: datenbank, dnsPruefen: false, jetzt: new Date('2026-10-11T12:00:00Z') });
+  // Speicherprobe hier aus (keine Netzanfragen); eigene Fälle unten mit Attrappe und mit echtem Dateisystem
+  return fuehreStartklarAus({ env, db: datenbank, dnsPruefen: false, speicherPruefen: false, jetzt: new Date('2026-10-11T12:00:00Z') });
 }
 
 async function setzeEinstellung(schluessel: string, wert: unknown) {
@@ -323,5 +324,44 @@ describe('Gesamtergebnis', () => {
     for (const status of ['ok', 'hinweis', 'warnung', 'fehler', 'manuell'] as const) {
       expect(e.zaehler[status]).toBe(e.pruefungen.filter((p) => p.status === status).length);
     }
+  });
+});
+
+describe('Medienspeicher erreichbar (V-11)', () => {
+  const ort = (art: 'blob' | 's3' | 'dateisystem', erreichbar: boolean) => async () => ({ art, erreichbar, meldung: `Probe ${art}` });
+
+  it('Nicht erreichbar: Fehler in produktion und vorschau, Warnung in entwicklung, mit Ort und Aufwand', async () => {
+    const jetzt = new Date('2026-10-11T12:00:00Z');
+    const produktion = await fuehreStartklarAus({ env: produktionsUmgebung(), db, dnsPruefen: false, speicherProbe: ort('s3', false), jetzt });
+    const vorschau = await fuehreStartklarAus({ env: vorschauUmgebung(), db, dnsPruefen: false, speicherProbe: ort('s3', false), jetzt });
+    const entwicklung = await fuehreStartklarAus({ env: { NODE_ENV: 'development' }, db, dnsPruefen: false, speicherProbe: ort('dateisystem', false), jetzt });
+    expect(befund(produktion, 'auslieferung.speicher').status).toBe('fehler');
+    expect(befund(produktion, 'auslieferung.speicher').ort).toMatch(/S3/);
+    expect(befund(produktion, 'auslieferung.speicher').aufwand).toBeTruthy();
+    expect(produktion.startklar).toBe(false);
+    expect(befund(vorschau, 'auslieferung.speicher').status).toBe('fehler');
+    expect(befund(entwicklung, 'auslieferung.speicher').status).toBe('warnung');
+  });
+
+  it('Erreichbar: ok mit der Meldung der Probe', async () => {
+    const e = await fuehreStartklarAus({ env: produktionsUmgebung({ SPEICHER: 'blob' }), db, dnsPruefen: false, speicherProbe: ort('blob', true) });
+    expect(befund(e, 'auslieferung.speicher')).toMatchObject({ status: 'ok', meldung: 'Probe blob' });
+  });
+
+  it('Echte Probe: Dateisystem beschreibbar, Blob ohne Token und S3 ohne Bucket nicht erreichbar, ohne Geheimnisse', async () => {
+    const { mkdtemp, rm } = await import('node:fs/promises');
+    const { tmpdir } = await import('node:os');
+    const { join } = await import('node:path');
+    const { pruefeSpeicher } = await import('@/lib/startklar/speicher-probe');
+    const ordner = await mkdtemp(join(tmpdir(), 'igmg-probe-'));
+    try {
+      expect(await pruefeSpeicher({ SPEICHER: 'dateisystem', MEDIEN_VERZEICHNIS: join(ordner, 'medien') })).toMatchObject({ art: 'dateisystem', erreichbar: true });
+    } finally {
+      await rm(ordner, { recursive: true, force: true });
+    }
+    expect(await pruefeSpeicher({ SPEICHER: 'blob' })).toMatchObject({ art: 'blob', erreichbar: false });
+    const s3 = await pruefeSpeicher({ SPEICHER: 's3', S3_GEHEIMNIS: 'geheim-wert-123' });
+    expect(s3).toMatchObject({ art: 's3', erreichbar: false });
+    expect(s3.meldung).not.toContain('geheim-wert-123');
   });
 });

@@ -34,7 +34,9 @@
       "bildrechteHinweis": "Wer hat das Foto gemacht, und darf die Gemeinde es zeigen? Zum Beispiel „Foto: [Name], mit Erlaubnis“.",
       "senden": "Hochladen",
       "sendet": "Wird hochgeladen …",
-    "verkleinert": "Das Bild war größer als {mb} MB und wurde vor dem Hochladen verkleinert (WebP, längste Kante 2560 px)."
+      "verkleinert": "Das Bild war größer als {mb} MB und wurde vor dem Hochladen verkleinert (WebP, längste Kante 2560 px).",
+      "direktLaeuft": "Die PDF-Datei ist größer als {mb} MB und wird direkt in den Speicher geladen …",
+      "direktFertig": "„{name}“ liegt im Speicher. Ergänzen Sie den Alt-Text und speichern Sie."
     },
     "detail": {
       "zurueck": "Zur Übersicht",
@@ -72,6 +74,7 @@
       "datei_leer": "Die Datei ist leer.",
       "datei_zuGrossServer": "Die Datei ist zu groß für den Server (höchstens {mb} MB je Upload). Bilder werden automatisch verkleinert – speichern Sie PDF-Dateien bitte kleiner.",
       "datei_zuGross": "Die Datei ist größer als 10 MB.",
+      "direktFehlgeschlagen": "Das direkte Hochladen der PDF-Datei ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
       "datei_typ": "Dieser Dateityp ist nicht erlaubt. Erlaubt sind JPEG, PNG, WebP, AVIF und PDF (SVG nicht).",
       "datei_defekt": "Die Datei ließ sich nicht lesen. Ist sie beschädigt?",
       "verwendet": "Das Medium wird noch verwendet und kann nicht entfernt werden.",

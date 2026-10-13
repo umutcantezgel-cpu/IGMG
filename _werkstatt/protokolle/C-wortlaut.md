@@ -1,15 +1,15 @@
 # H-R01 · Wortlaut der Rechts- und Einwilligungstexte
 
-Stand des Protokolls: 2026-10-12T05:36:38.410Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
-Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `5d19108` (5d1910814)
+Stand des Protokolls: 2026-10-12T17:46:31.137Z · Werkzeug: `_werkstatt/werkzeuge/wortlaut.mjs` (Version 1.0)
+Basis: `9ebb4bc` (9ebb4bc5f) · Stand: `325c38a` (325c38a39)
 Arbeitsbaum unter web/ weicht von HEAD ab: nein · unversionierte Dateien unter web/: 0
-Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
+Wiederholbarkeit: Ergebnis-Hash `befcb0e32a032ac7` (Vollwert in der JSON-Datei)
 
 ## Ergebnis
 
 - Rechts- und Einwilligungs-Einträge: 723 · gleich 637 · verschoben 0 · geändert 0 · neu 85 · entfernt 1
 - Befunde „hoch“ offen (Einheiten): **0** · durch Ausnahme gedeckt: 34
-- Nicht-Rechtstexte: 416 geändert, neu oder entfernt (Kontrolltabelle unten); 5695 gleich
+- Nicht-Rechtstexte: 452 geändert, neu oder entfernt (Kontrolltabelle unten); 5680 gleich
 
 ## Quellen
 
@@ -21,7 +21,7 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | M | messages/bereiche/formulare.json | Schlüssel (exakt) | 9c320c9f7212 | 9c320c9f7212 | ja |
 | M | messages/bereiche/gebetszeiten.json | Schlüssel (exakt) | cbd2eb79ecb0 | 2032f0373757 | nein |
 | M | messages/bereiche/igmg.json | Schlüssel (exakt) | 9a6b44cfab7e | 9a6b44cfab7e | ja |
-| M | messages/bereiche/kontakt.json | Schlüssel (exakt) | 7a0cf7e9c3ae | 7a0cf7e9c3ae | ja |
+| M | messages/bereiche/kontakt.json | Schlüssel (exakt) | 7a0cf7e9c3ae | e95fccbd8c72 | nein |
 | M | messages/bereiche/kontaktformular.json | Schlüssel (exakt) | 8bef9ea5bd9c | 8bef9ea5bd9c | ja |
 | M | messages/bereiche/korankurse.json | Schlüssel (exakt) | ec36ef6a6df0 | 0513952ca0d4 | nein |
 | M | messages/bereiche/mails.json | Schlüssel (exakt) | 4c735a17a164 | 4c735a17a164 | ja |
@@ -29,8 +29,8 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | M | messages/bereiche/mitglied.json | Schlüssel (exakt) | 762041aa75fc | 762041aa75fc | ja |
 | M | messages/bereiche/moschee-anfrage.json | Schlüssel (exakt) | 721ad60b9ee8 | 721ad60b9ee8 | ja |
 | M | messages/bereiche/nachrichten.json | Schlüssel (exakt) | 10528de4d7c1 | 56a9f7a0e2fd | nein |
-| M | messages/bereiche/organisationen.json | Schlüssel (exakt) | 9422c3315fc2 | 5a3e06e28191 | nein |
-| M | messages/bereiche/projekte.json | Schlüssel (exakt) | 8bca072605e2 | e5f3f3695abb | nein |
+| M | messages/bereiche/organisationen.json | Schlüssel (exakt) | 9422c3315fc2 | 6119ee789005 | nein |
+| M | messages/bereiche/projekte.json | Schlüssel (exakt) | 8bca072605e2 | 78d687f66161 | nein |
 | M | messages/bereiche/quran.json | Schlüssel (exakt) | 2ee4be930784 | 48ebe6728f24 | nein |
 | M | messages/bereiche/rechtliches.json | Schlüssel (exakt) | fee0ee073319 | c27264a703ca | nein |
 | M | messages/bereiche/suche.json | Schlüssel (exakt) | 91cd76220ecf | 8f3ca9b24130 | nein |
@@ -38,10 +38,10 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | M | messages/bereiche/voranmeldung.json | Schlüssel (exakt) | 612aa19445c8 | 612aa19445c8 | ja |
 | M | messages/bereiche/vorstand.json | Schlüssel (exakt) | 8bd1a6e86f7b | d0aa4b873d35 | nein |
 | M | messages/bereiche/wissen.json | Schlüssel (exakt) | fa865459fa0e | 66d61989813d | nein |
-| M | messages/de.json | Schlüssel (exakt) | 15560c5e7321 | 7063beef32e9 | nein |
-| M | messages/en.json | Schlüssel (exakt) | f54b47b1c6fd | 714acada0bc0 | nein |
-| M | messages/neu-uebersetzt.json | Schlüssel (exakt) | bc6be52cd52d | acfcf6e737ef | nein |
-| M | messages/tr.json | Schlüssel (exakt) | 20b86d31f618 | b313010c7782 | nein |
+| M | messages/de.json | Schlüssel (exakt) | 15560c5e7321 | 0466f1a731b4 | nein |
+| M | messages/en.json | Schlüssel (exakt) | f54b47b1c6fd | c3a7a07a030c | nein |
+| M | messages/neu-uebersetzt.json | Schlüssel (exakt) | bc6be52cd52d | 8bf41ca8191c | nein |
+| M | messages/tr.json | Schlüssel (exakt) | 20b86d31f618 | ccd4ae45356d | nein |
 | M | messages/verwaltung/ankuendigungen.json | Schlüssel (exakt) | 9df44437f8e8 | 9df44437f8e8 | ja |
 | M | messages/verwaltung/audit.json | Schlüssel (exakt) | 2e0aaa23661b | 2e0aaa23661b | ja |
 | M | messages/verwaltung/benutzer.json | Schlüssel (exakt) | ba244a31eda9 | ba244a31eda9 | ja |
@@ -50,29 +50,29 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | M | messages/verwaltung/einstellungen.json | Schlüssel (exakt) | eee87ab18ee9 | eee87ab18ee9 | ja |
 | M | messages/verwaltung/gebetszeiten.json | Schlüssel (exakt) | 72832ce077d7 | 72832ce077d7 | ja |
 | M | messages/verwaltung/kurse.json | Schlüssel (exakt) | 4c2bbbc9b936 | 4c2bbbc9b936 | ja |
-| M | messages/verwaltung/medien.json | Schlüssel (exakt) | 4bf9453bb586 | bd364a7489cd | nein |
+| M | messages/verwaltung/medien.json | Schlüssel (exakt) | 4bf9453bb586 | b58f515a6259 | nein |
 | M | messages/verwaltung/medienwahl.json | Schlüssel (exakt) | 9246a8cb573f | 9246a8cb573f | ja |
 | M | messages/verwaltung/neuigkeiten.json | Schlüssel (exakt) | 9072a564d6a9 | 9072a564d6a9 | ja |
 | M | messages/verwaltung/postfach.json | Schlüssel (exakt) | 6839f732be6d | 6839f732be6d | ja |
 | M | messages/verwaltung/seiteninhalte-organisationen.json | Schlüssel (exakt) | 5d3b4c1c9565 | 5d3b4c1c9565 | ja |
 | M | messages/verwaltung/seiteninhalte.json | Schlüssel (exakt) | 2cca27bd4b97 | 2cca27bd4b97 | ja |
 | M | messages/verwaltung/startklar.json | Schlüssel (exakt) | — | d58037dbc6bb | nein |
-| M | messages/verwaltung/styleguide.json | Schlüssel (exakt) | 0c8884970a17 | 9a538e902322 | nein |
+| M | messages/verwaltung/styleguide.json | Schlüssel (exakt) | 0c8884970a17 | 5b1dded38498 | nein |
 | M | messages/verwaltung/tickets.json | Schlüssel (exakt) | 9e00d3442d32 | 9e00d3442d32 | ja |
 | M | messages/verwaltung/uebersicht.json | Schlüssel (exakt) | 229b8f50499c | 229b8f50499c | ja |
 | S | drizzle/seeds/bereiche/rechtliches.ts | alle Literale | 8a24ed43d03f | 8a24ed43d03f | ja |
 | C | src/app/[locale]/(website)/datenschutz/page.tsx | Prosa (Rechtsquelle) | 5a3530c9f678 | 5f72412eb3c5 | nein |
 | C | src/app/[locale]/(website)/impressum/page.tsx | Prosa (Rechtsquelle) | 69f04ea99db6 | acc8ddf7bc21 | nein |
-| C | src/components/website/KonzeptHinweis.tsx | Prosa (Rechtsquelle) | 9b9f07fea935 | 973029e528d4 | nein |
+| C | src/components/website/KonzeptHinweis.tsx | Prosa (Rechtsquelle) | 9b9f07fea935 | cf528f766b83 | nein |
 | C | src/components/website/rechtliches/Inhaltsverzeichnis.tsx | Prosa (Rechtsquelle) | — | 43570e9a6550 | nein |
 | C | src/components/website/rechtliches/Rechtstext.tsx | Prosa (Rechtsquelle) | da617e0c506f | c5c421f0fc82 | nein |
 | C | src/lib/validierung/seiteninhalte/datenschutz.ts | Prosa (Rechtsquelle) | c7ee99edf0c5 | c7ee99edf0c5 | ja |
 | C | src/lib/validierung/seiteninhalte/impressum.ts | Prosa (Rechtsquelle) | a3333ac21029 | a3333ac21029 | ja |
-| V | src/lib/mail/vorlagen/Rahmen.tsx | Prosa (Rechtsquelle) | 99918f5a36f0 | a0255f98648e | nein |
-| V | src/lib/mail/vorlagen/farben.ts | Prosa (Rechtsquelle) | a91ee0eac001 | a91ee0eac001 | ja |
-| V | src/lib/mail/vorlagen/index.tsx | Prosa (Rechtsquelle) | 00a0a9e09e66 | 35fc937dae22 | nein |
-| D | docs/recht/VERARBEITUNGSVERZEICHNIS.md | Absätze | — | bde575d40316 | nein |
-| D | docs/recht/datenschutz-hosting-v2.md | Absätze | — | ca9c2a6b9866 | nein |
+| V | src/lib/mail/vorlagen/Rahmen.tsx | Prosa (Rechtsquelle) | 99918f5a36f0 | 6beb5833b191 | nein |
+| V | src/lib/mail/vorlagen/farben.ts | Prosa (Rechtsquelle) | a91ee0eac001 | 380a5a55a6b2 | nein |
+| V | src/lib/mail/vorlagen/index.tsx | Prosa (Rechtsquelle) | 00a0a9e09e66 | 93799ed1f98d | nein |
+| D | docs/recht/VERARBEITUNGSVERZEICHNIS.md | Absätze | — | 528bd7177b33 | nein |
+| D | docs/recht/datenschutz-hosting-v2.md | Absätze | — | fea8c1cded94 | nein |
 | G | drizzle/seeds/bereiche/igmg.ts | Prosa + Rechtsbegriff | 3323a119391f | 3323a119391f | ja |
 | G | drizzle/seeds/bereiche/index.ts | Prosa + Rechtsbegriff | 2134bbda8cd1 | 2134bbda8cd1 | ja |
 | G | drizzle/seeds/bereiche/organisationen.ts | Prosa + Rechtsbegriff | a620d0a36c22 | a620d0a36c22 | ja |
@@ -84,8 +84,8 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | G | src/app/[locale]/verwaltung/(geschuetzt)/benutzer/page.tsx | Prosa + Rechtsbegriff | fd8759b7077b | 674094e3fa71 | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/eingaenge/[id]/page.tsx | Prosa + Rechtsbegriff | ed66cc13dc77 | fdc6e1669d50 | nein |
 | G | src/app/[locale]/verwaltung/(geschuetzt)/seiteninhalte/[bereich]/page.tsx | Prosa + Rechtsbegriff | c8afa1de2dc9 | 2e0f4587934a | nein |
-| G | src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx | Prosa + Rechtsbegriff | — | f63bf02b54cd | nein |
-| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | fad2eaa4ce49 | nein |
+| G | src/app/[locale]/verwaltung/(geschuetzt)/startklar/page.tsx | Prosa + Rechtsbegriff | — | 17becfad11e2 | nein |
+| G | src/app/globals.css | Prosa + Rechtsbegriff | 0ccdec072048 | e04d0b6e330c | nein |
 | G | src/app/sitemap.ts | Prosa + Rechtsbegriff | b7757675f13b | b7757675f13b | ja |
 | G | src/components/formular/AltchaFeld.tsx | Prosa + Rechtsbegriff | 6b0852bf64aa | 4940825fba36 | nein |
 | G | src/components/formular/Felder.tsx | Prosa + Rechtsbegriff | 1a71ff89b4ef | fab833cc6944 | nein |
@@ -93,7 +93,7 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | G | src/components/verwaltung/seiteninhalte/Formular.tsx | Prosa + Rechtsbegriff | 2da707ef39b7 | 2da707ef39b7 | ja |
 | G | src/components/verwaltung/seiteninhalte/Rechtstexte.tsx | Prosa + Rechtsbegriff | 17bc6b90527f | 17bc6b90527f | ja |
 | G | src/components/verwaltung/seiteninhalte/bereiche.ts | Prosa + Rechtsbegriff | f81a20797624 | f81a20797624 | ja |
-| G | src/components/verwaltung/startklar/PruefListe.tsx | Prosa + Rechtsbegriff | — | 4f01ab9d9f30 | nein |
+| G | src/components/verwaltung/startklar/PruefListe.tsx | Prosa + Rechtsbegriff | — | 5fe016208404 | nein |
 | G | src/components/verwaltung/styleguide/Felder.tsx | Prosa + Rechtsbegriff | ddeeae06b391 | ddeeae06b391 | ja |
 | G | src/components/website/Footer.tsx | Prosa + Rechtsbegriff | 06ca385a1fcc | d4c918b7e505 | nein |
 | G | src/components/website/Header.tsx | Prosa + Rechtsbegriff | 44b6b7140f5a | b02be9faa663 | nein |
@@ -115,7 +115,7 @@ Wiederholbarkeit: Ergebnis-Hash `e5342e4456a2c1ae` (Vollwert in der JSON-Datei)
 | G | src/lib/formulare/verarbeiten.ts | Prosa + Rechtsbegriff | 60e9c587eabc | 60e9c587eabc | ja |
 | G | src/lib/krypto/index.ts | Prosa + Rechtsbegriff | ee1ca4c36d18 | ee1ca4c36d18 | ja |
 | G | src/lib/medien/verarbeiten.ts | Prosa + Rechtsbegriff | f4fc3616fe7e | 96a44b49a88a | nein |
-| G | src/lib/seo/og-bild.tsx | Prosa + Rechtsbegriff | 443885648079 | c89b2e55e457 | nein |
+| G | src/lib/seo/og-bild.tsx | Prosa + Rechtsbegriff | 443885648079 | 880f2b20f74e | nein |
 | G | src/lib/startklar/pruefungen.ts | Prosa + Rechtsbegriff | — | 31122974e179 | nein |
 | G | src/lib/validierung/altcha.ts | Prosa + Rechtsbegriff | 8b8be1018f49 | 8b8be1018f49 | ja |
 | G | src/lib/validierung/einstellungen.ts | Prosa + Rechtsbegriff | b891f585b573 | b891f585b573 | ja |
@@ -158,8 +158,8 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Speicherdauer und Löschung | 2c05e8176f8d | 2c05e8176f8d | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/datenschutz.ts | Text: Zweck und Rechtsgrundlage | 8efa733ed8b4 | 8efa733ed8b4 | gleich | keiner | identisch (SHA-256 gleich) |
 | C src/lib/validierung/seiteninhalte/impressum.ts | Text: [Name und Rechtsform – Vorstand] | 659f4c8a7660 | 659f4c8a7660 | gleich | keiner | identisch (SHA-256 gleich) |
-| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | ca9c2a6b9866 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt. |
-| D docs/recht/VERARBEITUNGSVERZEICHNIS.md | neue Datei, 27 Absätze | — | bde575d40316 | neu | ausnahme | Neues internes Verzeichnis nach V-11 (Verarbeitungsverzeichnis). Kein Wortlaut eines bestehenden Textes wurde geändert. Die AUFTRAG-Ausnahme nennt nur den Hosting-Baustein v2. Einordnung als Rechtstext: OFFENE FRAGE an den Orchestrator. |
+| D docs/recht/datenschutz-hosting-v2.md | neue Datei, 23 Absätze | — | fea8c1cded94 | neu | ausnahme | AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 325c38a gefunden; 0 bedeutet nicht eingespielt. |
+| D docs/recht/VERARBEITUNGSVERZEICHNIS.md | neue Datei, 27 Absätze | — | 528bd7177b33 | neu | ausnahme | Neues internes Verzeichnis nach V-11 (Verarbeitungsverzeichnis). Kein Wortlaut eines bestehenden Textes wurde geändert. Die AUFTRAG-Ausnahme nennt nur den Hosting-Baustein v2. Einordnung als Rechtstext: OFFENE FRAGE an den Orchestrator. |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Das vom Vorsitzenden geleitete Präsidium ist neben dem vertretungsberechtigten Vorstand d… | ca1cbbe3d7e5 | ca1cbbe3d7e5 | gleich | keiner | identisch (SHA-256 gleich) |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Demnach beschreibt „Millî Görüş“ („görüş“ türkisch für „Sichtweise“) eine Gemeinschaft, d… | db4642a95c29 | db4642a95c29 | gleich | keiner | identisch (SHA-256 gleich) |
 | G drizzle/seeds/bereiche/igmg.ts | Text: Der islamischen Lehre zufolge stammt die Menschheit von dem ersten Menschen und Propheten… | a146fc3543b6 | a146fc3543b6 | gleich | keiner | identisch (SHA-256 gleich) |
@@ -827,7 +827,7 @@ Gruppen: M Sprachdateien · S Seed Impressum/Datenschutz · C Rechtskomponenten 
 
 ## Ausnahmen (AUFTRAG und Grund)
 
-- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 5d19108 gefunden; 0 bedeutet nicht eingespielt.
+- **A-01** (23 Einträge) · AUFTRAG-Ausnahme (einzige erlaubte Abweichung): versionierter Hosting-Baustein v2 als Entwurf. Automatische Prüfung: 23 Absätze, davon 0 in den Quellen (web/src, web/messages, web/drizzle/seeds) bei 325c38a gefunden; 0 bedeutet nicht eingespielt.
 - **A-02** (8 Einträge) · Neue Cockpit-Texte der Verwaltung (Startklar-Cockpit, V-13/Z-12). Sie beschreiben Prüfungen und Rechtsangaben, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-03** (20 Einträge) · Neue Cockpit-Prüftexte und Cockpit-Oberfläche (Verwaltung, V-13/Z-12). Sie beschreiben die Prüfungen, sind aber keine Texte für Besucherinnen und Besucher.
 - **A-04** (3 Einträge) · Neue Abschnittsüberschriften „meldung.gruppe.*“ (Legenden der Fieldsets im Meldeformular, K-12, z. B. „Einwilligung“). Der Einwilligungstext selbst ist unverändert. Neuer Schlüssel, kein geänderter Wortlaut (Bedienelement).
@@ -1014,6 +1014,15 @@ keine
 | M messages/bereiche/gebetszeiten.json | de.gebetszeiten.naechstesMorgen | — | 571b0da1e53f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/gebetszeiten.json | en.gebetszeiten.naechstesMorgen | — | b4a532467e60 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/gebetszeiten.json | tr.gebetszeiten.naechstesMorgen | — | 7432955cb323 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | de.kontakt.besuch.fuehrungen | 0e29e77a8f63 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | de.kontakt.besuch.termine | b047659c7285 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | de.kontakt.besuch.vereinbaren | — | 799134eb85ad | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | en.kontakt.besuch.fuehrungen | b49f1e41f0b6 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | en.kontakt.besuch.termine | f2e46531202a | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | en.kontakt.besuch.vereinbaren | — | afced5544df8 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | tr.kontakt.besuch.fuehrungen | 0c751cfca418 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | tr.kontakt.besuch.termine | d22c536d6204 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/kontakt.json | tr.kontakt.besuch.vereinbaren | — | 0777a3c16e54 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/korankurse.json | de.korankurse.email | 17507dcf8457 | ef34d93f31a7 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/korankurse.json | de.korankurse.keineKurse | 7969618fd654 | 2dfc2e125b45 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/korankurse.json | de.korankurse.keineVerfuegbar | 4872acbffa75 | 1652cc03eb32 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1044,23 +1053,35 @@ keine
 | M messages/bereiche/nachrichten.json | tr.nachricht.zurueckListe | — | 4aa5a68c197a | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/nachrichten.json | tr.nachrichten.leerText | 8b1ddfa9eb96 | 216296771038 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | de.organisation.aboTermine | — | 1de8b1b8abc1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/organisationen.json | de.organisation.about.kennung | — | 9e80091d5521 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | de.organisation.activities.kennung | — | d8d08e1939b1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | de.organisation.news.leer | 28b60c9c9444 | 67a2993019ef | geändert | keiner | Bekannte Ausnahme (Vorgabe): Platzhalter „[Text fehlt: organisation.news.leer]“ durch den Leerzustand-Text ersetzt (Organisationsseite, O-12), kein Rechtstext. |
+| M messages/bereiche/organisationen.json | de.organisation.orgs.aktuell | — | 166c6f67b00a | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | de.organisation.orgs.kennung | — | c87eb050ac66 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | en.organisation.aboTermine | — | 31bc11121bbf | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/organisationen.json | en.organisation.about.kennung | — | 696ab4d5bfb5 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | en.organisation.activities.kennung | — | 12e9aa6e0da8 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | en.organisation.news.leer | 28b60c9c9444 | a035c50ebc7a | geändert | keiner | Bekannte Ausnahme (Vorgabe): Platzhalter „[Text fehlt: organisation.news.leer]“ durch den Leerzustand-Text ersetzt (Organisationsseite, O-12), kein Rechtstext. |
+| M messages/bereiche/organisationen.json | en.organisation.orgs.aktuell | — | ebf2023c7ca0 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | en.organisation.orgs.kennung | — | f9dbaf0d680f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | tr.organisation.aboTermine | — | fcce30c9f2e3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/organisationen.json | tr.organisation.about.kennung | — | 432d37842b2d | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | tr.organisation.activities.kennung | — | bb5bf44f3613 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | tr.organisation.news.leer | 28b60c9c9444 | 98cf3017a965 | geändert | keiner | Bekannte Ausnahme (Vorgabe): Platzhalter „[Text fehlt: organisation.news.leer]“ durch den Leerzustand-Text ersetzt (Organisationsseite, O-12), kein Rechtstext. |
+| M messages/bereiche/organisationen.json | tr.organisation.orgs.aktuell | — | 4b9f8b1ac43e | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/organisationen.json | tr.organisation.orgs.kennung | — | dc26406b45a9 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | de.projekte.bezeichnungen.beschreibung | 75676dc82ce0 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | de.projekte.bezeichnungen.beschreibungKennung | — | 1ef8269ea1a1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.bezeichnungen.meilensteinKennung | — | 6d7769b689f9 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.kopf.titel | aa56f7c99b10 | c80a57398b7f | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | de.projekte.meilenstein.stand | — | 30bcd32cdb47 | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |
 | M messages/bereiche/projekte.json | de.projekte.spenden.jetzt | 208b5509871b | 47b9c491eaa7 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | en.projekte.bezeichnungen.beschreibung | 09dea2d7078b | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | en.projekte.bezeichnungen.beschreibungKennung | — | 64629c4d29ff | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | en.projekte.bezeichnungen.meilensteinKennung | — | 5a596d40303b | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | en.projekte.meilenstein.stand | — | df9f1e6ae24f | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |
+| M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.beschreibung | 91a8fcf5035f | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.beschreibungKennung | — | d5e6c392b8f1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | tr.projekte.bezeichnungen.meilensteinKennung | — | 87255cf811ac | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/projekte.json | tr.projekte.meilenstein.stand | — | a029a7336377 | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „projekte.meilenstein.stand“ (Fortschritt der Meilensteine), kein Rechtstext. |
 | M messages/bereiche/quran.json | de.quranSeite.keineSuren | — | 353713c069af | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1121,9 +1142,11 @@ keine
 | M messages/bereiche/wissen.json | tr.wissenThema.vorher | — | 6b62980418bc | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/bereiche/wissen.json | tr.wissenThema.weitereThemen | — | 33757c6f07da | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | karten.ganztaegig | — | 331867a63501 | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „karten.ganztaegig“ (Kartenbeschriftung „ganztägig“), kein Rechtstext. |
+| M messages/de.json | karten.mehrErfahren | a85e18d1411a | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | leiste.verbleibtMorgen | — | 309ca15d5a26 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | start.bogenBeschreibung | — | 00df7c18b157 | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
 | M messages/de.json | start.bogenTitel | — | 6bf426afe815 | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
+| M messages/de.json | start.mehrErfahren | a85e18d1411a | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | veranstaltung.logoAlt | 1c885390348a | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | veranstaltung.merken | 160a48abff68 | 8e3f0ab7e787 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | veranstaltungen.aboAbonnieren | — | 7200813cf26b | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1141,9 +1164,11 @@ keine
 | M messages/de.json | verwaltung.shell.titel | 66d1605446f4 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/de.json | verwaltung.shell.untertitel | a0e48051f82e | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | karten.ganztaegig | — | 34233e542b7b | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „karten.ganztaegig“ (Kartenbeschriftung „ganztägig“), kein Rechtstext. |
+| M messages/en.json | karten.mehrErfahren | 8d8cd546b58d | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | leiste.verbleibtMorgen | — | a7b6ca859844 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | start.bogenBeschreibung | — | bd97bdfdb5d6 | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
 | M messages/en.json | start.bogenTitel | — | 7b802756f865 | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
+| M messages/en.json | start.mehrErfahren | 8d8cd546b58d | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | veranstaltung.logoAlt | 6938e9a3017d | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | veranstaltung.merken | 1509f561f241 | d0efffa65ea7 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/en.json | veranstaltungen.aboAbonnieren | — | cc0e38da9c41 | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1185,6 +1210,7 @@ keine
 | M messages/neu-uebersetzt.json | de[veranstaltungen.aboTitel] | — | 5e353e0f56b1 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[gebetszeiten.naechstesMorgen] | — | 75d0a029c3a5 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[karten.ganztaegig] | — | c280552cc75a | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | en[kontakt.besuch.vereinbaren] | — | c895c33dda8a | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[leiste.verbleibtMorgen] | — | 296290635fcf | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[meldung.gruppe.anliegen] | — | 78b2571229b6 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[meldung.gruppe.einwilligung] | — | 733eb1fb292d | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1194,8 +1220,11 @@ keine
 | M messages/neu-uebersetzt.json | en[nachricht.bildPlatz] | 249ee5d6da2d | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[nachricht.zurueckListe] | — | 30bd074f482f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[organisation.aboTermine] | — | 1daf0741015e | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | en[organisation.about.kennung] | — | 7ac8a8e4f4aa | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[organisation.activities.kennung] | — | 453127b1a879 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | en[organisation.orgs.aktuell] | — | e93f7962e5c3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[organisation.orgs.kennung] | — | 2f82ef25c78b | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | en[projekte.bezeichnungen.beschreibungKennung] | — | 0c88afb6e7a3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[projekte.bezeichnungen.meilensteinKennung] | — | d0df30b27fa3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[projekte.meilenstein.stand] | — | eae03d179207 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | en[quranSeite.keineSuren] | — | b19ab9d39507 | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1228,6 +1257,7 @@ keine
 | M messages/neu-uebersetzt.json | en[wissenThema.weitereThemen] | — | 212dd110ed7f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[gebetszeiten.naechstesMorgen] | — | 75d0a029c3a5 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[karten.ganztaegig] | — | c280552cc75a | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | tr[kontakt.besuch.vereinbaren] | — | c895c33dda8a | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[korankurse.email] | — | f19570151cc7 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[leiste.verbleibtMorgen] | — | 296290635fcf | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[meldung.gruppe.anliegen] | — | 78b2571229b6 | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1238,8 +1268,11 @@ keine
 | M messages/neu-uebersetzt.json | tr[nachricht.bildPlatz] | 249ee5d6da2d | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[nachricht.zurueckListe] | — | 30bd074f482f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[organisation.aboTermine] | — | 1daf0741015e | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | tr[organisation.about.kennung] | — | 7ac8a8e4f4aa | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[organisation.activities.kennung] | — | 453127b1a879 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | tr[organisation.orgs.aktuell] | — | e93f7962e5c3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[organisation.orgs.kennung] | — | 2f82ef25c78b | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/neu-uebersetzt.json | tr[projekte.bezeichnungen.beschreibungKennung] | — | 0c88afb6e7a3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[projekte.bezeichnungen.meilensteinKennung] | — | d0df30b27fa3 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[projekte.meilenstein.stand] | — | eae03d179207 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[quranSeite.keineSuren] | — | b19ab9d39507 | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1271,9 +1304,11 @@ keine
 | M messages/neu-uebersetzt.json | tr[wissenThema.vorher] | — | 28380a951b92 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/neu-uebersetzt.json | tr[wissenThema.weitereThemen] | — | 212dd110ed7f | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | karten.ganztaegig | — | 8d3acf9bc42d | neu | keiner | Bekannte Ausnahme (Vorgabe): neuer Schlüssel „karten.ganztaegig“ (Kartenbeschriftung „ganztägig“), kein Rechtstext. |
+| M messages/tr.json | karten.mehrErfahren | af46dfeac585 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | leiste.verbleibtMorgen | — | 1988f5c762e4 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | start.bogenBeschreibung | — | 0ca681d57552 | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
 | M messages/tr.json | start.bogenTitel | — | 5c587819e89a | neu | keiner | Neue Schlüssel „start.bogenTitel“ und „start.bogenBeschreibung“ (Tagesbogen auf der Startseite, B-06), kein Rechtstext. |
+| M messages/tr.json | start.mehrErfahren | af46dfeac585 | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | veranstaltung.logoAlt | 53cac1e85ffd | — | entfernt | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | veranstaltung.merken | c1fe2ecdff02 | 374164f86ce8 | geändert | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/tr.json | veranstaltungen.aboAbonnieren | — | 733dd4efb915 | neu | keiner | kein Rechtsbezug (Kontrolle) |
@@ -1350,6 +1385,7 @@ keine
 | M messages/verwaltung/styleguide.json | styleguide.nav.bewegung | — | 1eaa52d0db4d | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.nav.ebenen | — | 2695c43b9189 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.nav.raster | — | 579a987f0721 | neu | keiner | kein Rechtsbezug (Kontrolle) |
+| M messages/verwaltung/styleguide.json | styleguide.raster.breiten.dialog | — | 25b04d4adf12 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.einleitung | — | ea790e951323 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.inhalt | — | 36624ba6fe94 | neu | keiner | kein Rechtsbezug (Kontrolle) |
 | M messages/verwaltung/styleguide.json | styleguide.raster.breiten.seitenkopf | — | 829473f15664 | neu | keiner | kein Rechtsbezug (Kontrolle) |

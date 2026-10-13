@@ -7,7 +7,7 @@
 //                Verworfen wie bewegung.mjs: Abstand > 1,5 × 16,7 ms; verworfene je Lücke = max(1, round(Abstand/16,7) − 1).
 //   reduziert  – reduzierte Bewegung: Endzustand sichtbar, keine laufende Animation mit Lage/Größe nach 2,5 s,
 //                Deckkraft und Skalierung der Momentelemente im Endzustand (auch in <mask>).
-// Auslöser: b06 = Animation enthuellen auf .bogen-enthuellt (nach Hydrierung, ohne Scrollen);
+// Auslöser: b06 = Animation schiebefenster auf .bogen-enthuellt (seit der Stufe-C-Nacharbeit; vorher enthuellen) (nach Ruhe, ohne Scrollen);
 //           b09 = Animation aufziehen auf .familie-eigen (seit ae274ac) (ab dem ersten Bild);
 //           b07/b08 = Scroll zum ersten [data-sicht]-Element, Auslösung bei data-sicht="laeuft".
 // Aufruf: node momente3.mjs --ziel b06|b07|b08|b09 --modus bilder|bildrate|reduziert [--laeufe 2] [--aus ordner]
@@ -18,7 +18,7 @@ import { parseArgs } from 'node:util';
 import { basisAdresse, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
 
 const ZIELE = {
-  b06: { pfad: '/', ausloeser: 'anim', anim: 'enthuellen', ziel: '.bogen-enthuellt', scrollen: false, bildScrollen: true, register: 'B-06 Tagesbogen' },
+  b06: { pfad: '/', ausloeser: 'anim', anim: 'schiebefenster', ziel: '.bogen-enthuellt', scrollen: false, bildScrollen: true, register: 'B-06 Tagesbogen' },
   b07: { pfad: '/ueber-uns', ausloeser: 'sicht', scrollen: true, register: 'B-07 Weg der Gemeinde' },
   b08: { pfad: '/projekte', ausloeser: 'sicht', scrollen: true, register: 'B-08 Meilensteinlinie' },
   b09: { pfad: '/organisationen/ana-teskilati', ausloeser: 'anim', anim: 'aufziehen', ziel: '.familie-eigen', scrollen: false, register: 'B-09 Familie der vier' },
@@ -193,7 +193,7 @@ try {
       const http = await oeffne(seite, vollerUrl(BASIS, cfg0.pfad), { warte: 0 });
       await ausloesen(seite, cfg0);
       // Bildausschnitt: Der Tagesbogen liegt auf dem Telefon unter dem ersten Bildschirm; für die Bilder dorthin scrollen (die Animation bleibt angehalten)
-      if (cfg0.bildScrollen) await seite.evaluate(() => document.querySelector('.bogen-enthuellt').closest('svg').scrollIntoView({ block: 'center', behavior: 'instant' }));
+      if (cfg0.bildScrollen) await seite.evaluate(() => (document.querySelector('.bogen-enthuellt').closest('figure, svg') ?? document.querySelector('.bogen-enthuellt')).scrollIntoView({ block: 'center', behavior: 'instant' }));
       const rahmen = [];
       for (let k = 0; k < SOLL.length; k++) {
         const info = await seite.evaluate(zeitstandSetzen, SOLL[k]);

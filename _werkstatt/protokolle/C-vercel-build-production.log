@@ -6,7 +6,7 @@ Vercel CLI 63.1.2 (Node.js 24.21.0)
 [vc:service:web] WARNING: You should not upload the `.next` directory.
 [vc:service:web] Installing dependencies...
 [vc:service:web] Already up to date
-[vc:service:web] Done in 4ms using pnpm v12.11.2
+[vc:service:web] Done in 8ms using pnpm v12.11.2
 [vc:service:web] Detected Next.js version: 16.4.0
 [vc:service:web] Running "pnpm run vercel-build"
 [vc:service:web] $ node scripts/vercel-bau.mjs
@@ -31,7 +31,7 @@ Vercel CLI 63.1.2 (Node.js 24.21.0)
 [vc:service:web] Seeds fertig.
 [vc:service:web] Bau-Datenbank bereit: /tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/stufe-c/kopie/web/.pglite-bau
 [vc:service:web] ▲ Next.js 16.4.0 (Turbopack)
-[vc:service:web] ✓ Running next.config.ts took 345ms
+[vc:service:web] ✓ Running next.config.ts took 462ms
 [vc:service:web] - Cache Components enabled
 [vc:service:web] - Partial Prefetching enabled
 [vc:service:web] - Experiments (use with caution):
@@ -40,15 +40,15 @@ Vercel CLI 63.1.2 (Node.js 24.21.0)
 [vc:service:web]   ⨯ turbopackFileSystemCacheForBuild
 [vc:service:web] 
 [vc:service:web]   Creating an optimized production build ...
-[vc:service:web] ✓ Compiled successfully in 25.1s
+[vc:service:web] ✓ Compiled successfully in 38.8s
 [vc:service:web]   Running TypeScript ...
-[vc:service:web]   Finished TypeScript in 5.4s ...
+[vc:service:web]   Finished TypeScript in 6.6s ...
 [vc:service:web]   Collecting page data using 3 workers ...
 [vc:service:web]   Generating static pages using 3 workers (0/466) ...
 [vc:service:web]   Generating static pages using 3 workers (116/466) 
 [vc:service:web]   Generating static pages using 3 workers (232/466) 
 [vc:service:web]   Generating static pages using 3 workers (349/466) 
-[vc:service:web] ✓ Generating static pages using 3 workers (466/466) in 14.6s
+[vc:service:web] ✓ Generating static pages using 3 workers (466/466) in 17.6s
 [vc:service:web]   Finalizing page optimization ...
 [vc:service:web] 
 [vc:service:web] Route (app)                                                                    Revalidate  Expire
@@ -434,9 +434,9 @@ Vercel CLI 63.1.2 (Node.js 24.21.0)
 [vc:service:web] ◐  (Partial Prerender)  prerendered as static HTML with dynamic server-streamed content
 [vc:service:web] ƒ  (Dynamic)            server-rendered on demand
 [vc:service:web] 
-[vc:service:web] Traced Next.js server files in: 109.524ms
-[vc:service:web] Created all serverless functions in: 3.766s
-[vc:service:web] Collected static files (public/, static/, .next/static): 18.203ms
+[vc:service:web] Traced Next.js server files in: 183.816ms
+[vc:service:web] Created all serverless functions in: 4.429s
+[vc:service:web] Collected static files (public/, static/, .next/static): 18.315ms
 {
   "status": "ok",
   "outputDir": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/stufe-c/kopie/.vercel/output",

@@ -124,7 +124,12 @@ export async function EventCard({
   );
   // Terminzeile (H-B01, H-C01): Datum und Uhrzeit stehen über dem Titel, in jeder Variante gleich
   const terminZeile = (
-    <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-16 leading-normal font-bold text-gruen-800 tabular-nums">
+    <p
+      className={cn(
+        'flex flex-wrap items-center gap-x-4 gap-y-1 text-16 leading-normal font-bold text-gruen-800 tabular-nums',
+        !listenArt && 'max-md:flex-col max-md:items-start max-md:gap-1',
+      )}
+    >
       <span className="inline-flex items-center gap-2">
         <Calendar aria-hidden className="size-5 shrink-0" />
         <span className="sr-only">{t('datum')}</span>
@@ -252,7 +257,7 @@ export async function EventCard({
           <dl
             className={cn(
               'mt-auto flex flex-col gap-2 border-t border-linie pt-4',
-              !listenArt && 'max-md:flex-row max-md:flex-wrap max-md:gap-x-4 max-md:gap-y-1 max-md:border-t-0 max-md:pt-0',
+              !listenArt && 'max-md:gap-1.5 max-md:border-t-0 max-md:pt-0',
               liste && 'max-md:hidden',
             )}
           >
@@ -285,13 +290,13 @@ export async function EventCard({
         ) : (
           <Link
             href={ziel}
-            aria-label={`${t('mehrErfahren')}: ${titel.text}`}
+            aria-label={`${t('details')}: ${titel.text}`}
             className={cn(
               "inline-flex min-h-12 items-center gap-2 self-start font-bold text-gruen-700 underline underline-offset-4 after:absolute after:inset-0 after:rounded-lg after:content-['']",
               !angabenZeigen && 'mt-auto',
             )}
           >
-            <span>{t('mehrErfahren')}</span>
+            <span>{t('details')}</span>
             <ArrowRight aria-hidden className="size-5" />
           </Link>
         )}

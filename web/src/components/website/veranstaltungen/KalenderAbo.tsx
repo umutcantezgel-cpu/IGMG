@@ -35,8 +35,9 @@ export async function KalenderAbo({ sprache }: { sprache: Locale }) {
       className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 md:p-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-x-12"
     >
       <div className="flex flex-col gap-2">
-        <h2 id="kalender-abo" className="flex items-start gap-2.5 text-24">
-          <Stern8 className="mt-2 size-4 shrink-0 text-tinte-2" />
+        <h2 id="kalender-abo" className="flex items-start gap-2.5 font-text text-20 leading-snug font-bold tracking-normal">
+          {/* Rubrik einer Begleitkarte in fetter Sans (L-E13) */}
+          <Stern8 className="mt-1.5 size-4 shrink-0 text-tinte-2" />
           {t('aboTitel')}
         </h2>
         <p className="max-w-text text-16 text-tinte-2">{t('aboText')}</p>

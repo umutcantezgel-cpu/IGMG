@@ -3,6 +3,7 @@ import { and, eq, inArray, isNotNull, lt, lte, or, sql } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { loescheMitVarianten } from '@/lib/storage';
+import { raeumeDirektEingaengeAuf } from '@/lib/medien/eingang';
 import { raeumeAltchaAuf } from '@/lib/validierung/altcha';
 import { raeumeRatenAuf } from '@/lib/validierung/ratenbegrenzung';
 import { verwendungVon } from '@/server/queries/verwaltung/medien';
@@ -128,6 +129,9 @@ export async function loescheAbgelaufene(
   const papierkorb = (await leerePapierkorb(jetzt)) + (await leereMedienPapierkorb(jetzt));
   const melder = await entferneMelderdaten(jetzt);
   const einladungen = await raeumeKontenAuf(jetzt);
+  // Nie übernommene Direkt-Uploads großer PDF-Dateien (ADR 0020): nach den fristgebundenen Löschungen und mit
+  // Zeitbudget, damit eine Störung des Speichers den Löschlauf nicht aufhält
+  await raeumeDirektEingaengeAuf(jetzt).catch(() => 0);
   const betroffeneTermine = [
     ...new Set(faellig.filter((f) => f.art === 'veranstaltungsanmeldung' && f.bezugId).map((f) => f.bezugId as string)),
   ];

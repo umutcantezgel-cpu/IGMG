@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test';
 import quran from '../../messages/bereiche/quran.json';
 
 /**
- * E2E Quran (Blatt S13, Routen /quran und /quran/[sure]): Adresse und Sprache, genau eine h1, Platzhalter ohne
+ * E2E Quran (Blatt S13, Routen /quran (Übersicht seit K-10) und /quran/[sure]): Adresse und Sprache, genau eine h1, Platzhalter ohne
  * importierte Quelle (kein arabischer Verstext), Surwahl mit aria-current, Blättern nur innerhalb der vorhandenen
  * Suren, 404 für unbekannte Nummern, axe ohne Befund. Texte kommen aus messages/bereiche/quran.json, Selektoren über
  * Rollen und Beschriftungen. Die Test-Datenbank hat keinen Quran-Import: dann gibt es genau fünf Suren.
@@ -22,11 +22,17 @@ const WURZEL: Record<Sprache, string> = { de: '/quran', tr: '/tr/kuran', en: '/e
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
-/** Einstieg /quran (Sure 1) und Surenansichten in allen drei Sprachen. */
+/** Einstieg /quran: seit Kür K-10 (85fe3e4) eine Übersicht mit Surenliste, ohne gewählte Sure. */
+const UEBERSICHTEN: { sprache: Sprache; pfad: string }[] = [
+  { sprache: 'de', pfad: '/quran' },
+  { sprache: 'tr', pfad: '/tr/kuran' },
+];
+
+/** Surenansichten in allen drei Sprachen (Platzhalter, Zählzeile, aria-current und Blättern gibt es nur hier). */
 const SEITEN: { sprache: Sprache; pfad: string; sure: number }[] = [
-  { sprache: 'de', pfad: '/quran', sure: 1 },
+  { sprache: 'de', pfad: '/quran/1', sure: 1 },
   { sprache: 'de', pfad: '/quran/2', sure: 2 },
-  { sprache: 'tr', pfad: '/tr/kuran', sure: 1 },
+  { sprache: 'tr', pfad: '/tr/kuran/1', sure: 1 },
   { sprache: 'en', pfad: '/en/quran/5', sure: 5 },
 ];
 
@@ -46,6 +52,33 @@ function surenliste(seite: Page, sprache: Sprache) {
 
 function blaettern(seite: Page, sprache: Sprache) {
   return seite.getByRole('navigation', { name: TEXTE[sprache].blaettern, exact: true });
+}
+
+for (const u of UEBERSICHTEN) {
+  test(`${u.pfad} (Übersicht) antwortet mit 200, html lang="${u.sprache}", genau eine h1`, async ({ page }) => {
+    const antwort = await page.goto(u.pfad);
+    expect(antwort?.status()).toBe(200);
+    await expect(page.locator('html')).toHaveAttribute('lang', u.sprache);
+    const ueberschrift = page.getByRole('heading', { level: 1 });
+    await expect(ueberschrift).toHaveCount(1);
+    await expect(ueberschrift).toHaveText(TEXTE[u.sprache].titel);
+  });
+
+  test(`${u.pfad} (Übersicht): Surenliste mit fünf Suren, keine gewählt, kein arabischer Verstext`, async ({ page }) => {
+    await page.goto(u.pfad);
+    const liste = surenliste(page, u.sprache);
+    await expect(liste.getByRole('link')).toHaveCount(5);
+    await expect(liste.locator('[aria-current="page"]')).toHaveCount(0);
+    await expect(page.locator('main [lang="ar"]')).toHaveCount(0);
+  });
+
+  test(`${u.pfad} (Übersicht): kein horizontaler Seitenscroll, axe ohne Befund`, async ({ page }) => {
+    await page.goto(u.pfad);
+    const ueberlauf = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(ueberlauf).toBeLessThanOrEqual(0);
+    const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+    expect(ergebnis.violations.map((verstoss) => `${verstoss.id} (${verstoss.nodes.length} Knoten)`)).toEqual([]);
+  });
 }
 
 for (const s of SEITEN) {
@@ -107,7 +140,7 @@ test('Blättern: Nächste Sura führt weiter, Vorherige fehlt auf Sure 1', async
   await expect(page).toHaveURL(/\/quran\/3$/);
   await expect(page.getByRole('article').getByRole('heading', { level: 2 })).toHaveText(TEXTE.de.sura['3']);
 
-  await page.goto('/quran');
+  await page.goto('/quran/1');
   await expect(blaettern(page, 'de').getByRole('link', { name: TEXTE.de.navVorher, exact: true })).toHaveCount(0);
   await expect(blaettern(page, 'de').getByRole('link', { name: TEXTE.de.navNaechste, exact: true })).toHaveAttribute('href', '/quran/2');
 });

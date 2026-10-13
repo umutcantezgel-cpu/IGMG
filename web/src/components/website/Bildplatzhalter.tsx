@@ -7,6 +7,7 @@ export function Bildplatzhalter({
   kurz,
   kurzBisMd,
   morph,
+  lang,
 }: {
   beschriftung: string;
   className?: string;
@@ -15,15 +16,18 @@ export function Bildplatzhalter({
   kurzBisMd?: string;
   /** Markierung für den Seitenwechsel (O-13): SeitenUebergang vergibt beim Klick den Übergangsnamen */
   morph?: string;
+  /** Sprache der Beschriftung; `de` bei deutschem Rückfall (K-02) */
+  lang?: string;
 }) {
   return (
     <div
       role="img"
       aria-label={beschriftung}
+      lang={lang}
       data-morph={morph}
       className={cn('flex items-center justify-center px-4 text-center text-16 text-tinte-2 streifen-platzhalter', className)}
     >
-      <span aria-hidden className="rounded-pill bg-weiss px-3 py-0.5 shadow-s1">
+      <span aria-hidden className="rounded-lg bg-weiss px-3 py-1 text-balance shadow-s1">
         {kurzBisMd ? (
           <>
             <span className="md:hidden">{kurzBisMd}</span>

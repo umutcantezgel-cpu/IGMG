@@ -1,24 +1,12 @@
 'use client';
 
-import { Compass } from 'lucide-react';
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, type ReactNode, Suspense, useEffect, useRef, useState } from 'react';
+import { QiblaKompassAnsicht, type QiblaKompassTexte } from './QiblaKompassAnsicht';
 
 /** Erst im Fehlerfall (nach dem Aktivieren) gebraucht: nicht im Bundle der Gebetszeiten-Seite (H-L01, JS ≤ 180 kB) */
 const Zustandsgrafik = lazy(() => import('@/components/website/Zustandsgrafik').then((m) => ({ default: m.Zustandsgrafik })));
 
-/** Texte kommen als Props aus der Server-Komponente QiblaPanel (K-12: kein next-intl im Browser). */
-export type QiblaKompassTexte = {
-  dialAria: string;
-  dialNord: string;
-  winkelKurz: string;
-  aktivieren: string;
-  beenden: string;
-  hinweis: string;
-  startet: string;
-  aktiv: string;
-  verweigert: string;
-  fehlt: string;
-};
+export type { QiblaKompassTexte };
 
 type Phase = 'aus' | 'fragt' | 'sucht' | 'aktiv' | 'verweigert' | 'fehlt';
 
@@ -44,9 +32,10 @@ function kursAus(signal: Lagesignal): number | null {
 /**
  * Kompass der Qibla-Richtung (design/PrayerTimes.dc.html, Tab „Qibla“): Die Richtung steht fest und wird
  * auf dem Server berechnet. Der Kompass hört erst nach „Kompass aktivieren“ auf die Lagesensoren, dreht
- * den Kreis nach Norden und stoppt wieder mit „Kompass beenden“. Nichts geschieht beim Laden.
+ * den Kreis nach Norden und stoppt wieder mit „Kompass beenden“. Nichts geschieht beim Laden. Der Code lädt erst,
+ * wenn der Tab „Qibla“ sichtbar wird (QiblaKompassBeiBedarf); bis dahin zeigt der Server dieselbe Ansicht.
  */
-export function QiblaKompass({ winkel, texte }: { winkel: number; texte: QiblaKompassTexte }) {
+export function QiblaKompass({ winkel, texte, symbol }: { winkel: number; texte: QiblaKompassTexte; symbol: ReactNode }) {
   const [phase, setPhase] = useState<Phase>('aus');
   const [kurs, setKurs] = useState<number | null>(null);
   const datenDa = useRef(false);
@@ -109,45 +98,29 @@ export function QiblaKompass({ winkel, texte }: { winkel: number; texte: QiblaKo
     verweigert: texte.verweigert,
     fehlt: texte.fehlt,
   }[phase];
-  const drehung = phase === 'aktiv' && kurs !== null ? { transform: `rotate(${-kurs}deg)` } : undefined;
   const hinweisZeigen = phase === 'aus' || phase === 'verweigert';
   /** Die Ortung schlägt fehl: Die Richtung oben bleibt gültig, der Text sagt, was zu tun ist. */
   const fehlerZustand = phase === 'verweigert' || phase === 'fehlt';
 
   return (
-    <div className="flex w-full flex-col items-center gap-4">
-      <div role="img" aria-label={texte.dialAria} className="relative size-60 rounded-full border-2 border-rand bg-papier">
-        <div aria-hidden className="absolute inset-0 transition-transform duration-(--dauer-rueckmeldung)" style={drehung}>
-          <span className="absolute top-2 left-1/2 -translate-x-1/2 font-bold text-tinte">{texte.dialNord}</span>
-          <div className="absolute inset-0" style={{ transform: `rotate(${winkel}deg)` }}>
-            <span className="absolute top-1/2 left-1/2 h-24 w-1 -translate-x-1/2 -translate-y-full rounded-sm bg-gruen-700" />
-          </div>
-        </div>
-        <span aria-hidden className="absolute top-1/2 left-1/2 size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-950" />
-        <span aria-hidden className="absolute bottom-5 left-1/2 -translate-x-1/2 text-20 font-bold text-gruen-800">
-          {texte.winkelKurz}
-        </span>
-      </div>
-      {phase === 'fehlt' ? null : (
-        <button
-          type="button"
-          onClick={umschalten}
-          disabled={phase === 'fragt' || phase === 'sucht'}
-          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 disabled:cursor-wait disabled:opacity-60"
-        >
-          <Compass aria-hidden className="size-5" />
-          <span>{phase === 'aktiv' ? texte.beenden : texte.aktivieren}</span>
-        </button>
-      )}
-      {hinweisZeigen ? <p className="max-w-text text-16 leading-normal text-tinte-2">{texte.hinweis}</p> : null}
-      {fehlerZustand ? (
-        <Suspense fallback={null}>
-          <Zustandsgrafik art="fehler" groesse={48} />
-        </Suspense>
-      ) : null}
-      <p role="status" className="min-h-12 max-w-text text-16 leading-normal text-tinte">
-        {statusText}
-      </p>
-    </div>
+    <QiblaKompassAnsicht
+      winkel={winkel}
+      texte={texte}
+      symbol={symbol}
+      kurs={phase === 'aktiv' ? kurs : null}
+      knopfText={phase === 'aktiv' ? texte.beenden : texte.aktivieren}
+      knopfZeigen={phase !== 'fehlt'}
+      knopfGesperrt={phase === 'fragt' || phase === 'sucht'}
+      onKnopf={umschalten}
+      hinweisZeigen={hinweisZeigen}
+      statusText={statusText}
+      fehler={
+        fehlerZustand ? (
+          <Suspense fallback={null}>
+            <Zustandsgrafik art="fehler" groesse={48} />
+          </Suspense>
+        ) : null
+      }
+    />
   );
 }

@@ -5,6 +5,7 @@ import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Button } from '@/components/ui/button';
 import { HochladenFormular } from '@/components/verwaltung/medien/MedienFormulare';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { direktUploadAktiv } from '@/lib/medien/eingang';
 import { MAX_BYTES } from '@/lib/medien/verarbeiten';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { cn } from '@/lib/utils';
@@ -52,7 +53,7 @@ export default async function MedienVerwalten({ searchParams }: PageProps<'/[loc
           <h2 id="medien-hochladen" className="text-24">
             {t('hochladen.titel')}
           </h2>
-          <HochladenFormular grenzeBytes={process.env.VERCEL === '1' ? GRENZE_VERCEL : MAX_BYTES} />
+          <HochladenFormular grenzeBytes={process.env.VERCEL === '1' ? GRENZE_VERCEL : MAX_BYTES} direkt={direktUploadAktiv()} />
         </section>
       ) : null}
       <form method="get" className="flex flex-wrap items-end gap-3">

@@ -1,4 +1,4 @@
-import { Eye, Pencil, Plus, RotateCcw, Trash2 } from 'lucide-react';
+import { Calendar, Clock, Eye, Pencil, Plus, Repeat, RotateCcw, Trash2 } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
@@ -111,27 +111,35 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
     bearbeiten: darf(a.rollen, 'veranstaltung.bearbeiten', { organisation: z.organisation }),
     loeschen: darf(a.rollen, 'veranstaltung.loeschen', { organisation: z.organisation }),
   });
+  // Karte und Tabelle zeigen dieselben Glieder (Kalender, Uhr, Wiederholung); nur der Behälter unterscheidet sich
   const datum = (z: Zeile, karte = false) =>
     papierkorb && z.imPapierkorbSeit ? (
       datumLang(z.imPapierkorbSeit, 'de')
     ) : (
-      <>
-        <span className={karte ? 'whitespace-nowrap' : undefined}>
-          {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr},
-        </span>{' '}
-        <span className="whitespace-nowrap">{zeitspanne(z.beginn, z.ende, 'de')}</span>
+      <span
+        className={
+          karte
+            ? 'flex flex-wrap items-center gap-x-4 gap-y-1 text-tinte-2 tabular-nums'
+            : 'flex flex-col items-start gap-1 text-16 text-tinte-2 tabular-nums'
+        }
+      >
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+          <Calendar aria-hidden className="size-4 shrink-0" />
+          <span>
+            {datumKurz(z.beginn, 'de')} {lokaleTeile(z.beginn).jahr}
+          </span>
+        </span>
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+          <Clock aria-hidden className="size-4 shrink-0" />
+          <span>{zeitspanne(z.beginn, z.ende, 'de')}</span>
+        </span>
         {z.wiederkehrend ? (
-          karte ? (
-            <>
-              {' '}
-              {/* Trenner bleibt bei „wiederkehrend“, nicht am Zeilenende (Nachabnahme H-C04) */}
-              <span className="whitespace-nowrap text-tinte-2">· {t('wiederkehrend')}</span>
-            </>
-          ) : (
-            <span className="block text-16 text-tinte-2">{t('wiederkehrend')}</span>
-          )
+          <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+            <Repeat aria-hidden className="size-4 shrink-0" />
+            <span>{t('wiederkehrend')}</span>
+          </span>
         ) : null}
-      </>
+      </span>
     );
   const orgPille = (z: Zeile) =>
     z.organisation ? (
@@ -180,7 +188,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
   const zeile = (z: Zeile) => (
     <tr key={z.id} className="border-t border-linie align-middle">
       <th scope="row" className="px-3 py-3 font-bold">
-        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+        <span className="flex flex-col items-start gap-1">
           <span>{z.titel}</span>
           {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
         </span>
@@ -201,7 +209,7 @@ export default async function VeranstaltungenVerwalten({ searchParams }: PagePro
   const karte = (z: Zeile) => (
     <li key={z.id} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4">
       <h3 className="font-text text-20 font-bold tracking-normal">
-        <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+        <span className="flex flex-col items-start gap-1">
           <span>{z.titel}</span>
           {z.istBeispiel ? <span className={cn(pille, 'bg-warnung-toenung text-warnung')}>{t('status.beispiel')}</span> : null}
         </span>

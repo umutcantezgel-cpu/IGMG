@@ -1,0 +1,91 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-20-55",
+  "basis": "http://127.0.0.1:3500",
+  "laeufe": 3,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Startklar-Cockpit",
+      "pfad": "/verwaltung/startklar",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 83,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 66,
+          "lcpMs": 1960,
+          "cls": 0,
+          "tbtMs": 570,
+          "jsKb": 253.1,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3214
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 66,
+          "lcpMs": 2105,
+          "cls": 0,
+          "tbtMs": 658,
+          "jsKb": 253.1,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3213
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 66,
+          "lcpMs": 1939,
+          "cls": 0,
+          "tbtMs": 350,
+          "jsKb": 253.1,
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3176
+          }
+        }
+      ],
+      "median": {
+        "performance": 83,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66,
+        "lcpMs": 1960,
+        "cls": 0,
+        "tbtMs": 570,
+        "jsKb": 253.1,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 3213
+      },
+      "spanneLeistung": [
+        81,
+        90
+      ],
+      "verfehlt": [
+        "Performance",
+        "SEO",
+        "TBT",
+        "JS"
+      ]
+    }
+  ]
+}

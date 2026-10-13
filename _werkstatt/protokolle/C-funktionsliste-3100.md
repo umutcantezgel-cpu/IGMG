@@ -2,7 +2,7 @@
 
 > Stufe C, Ausgangsstand 9ebb4bc
 
-Zeitpunkt: 2026-10-12T05:25:38.370Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100` · Verwaltungszustand: nein.
+Zeitpunkt: 2026-10-12T18:05:25.794Z · Browser: Chromium 141.0.7390.37 · Breiten: 390 und 1440, sofern nicht anders vorgesehen · Konzept-Hinweis: vorgemerkt (außer F-24) · Belegbilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100` · Verwaltungszustand: nein.
 
 Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Einzelprüfungen stehen unter „Einzelbefunde“. Messwerte zählen nicht zum Ergebnis. Formular-POSTs sind aus dem Netzwerk gezählt.
 
@@ -37,24 +37,24 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 
 ### F-01 · Startseite: Leiste, H1, Knöpfe, Veranstaltungen, Neuigkeiten
 - 390 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 07:25:38) · "2026-10-12T10:00:00.000Z"
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 20:05:25) · "2026-10-12T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
   - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland · Mo., 12. Okt. berechnet Nächstes Gebet Dhuhr · 13:17 Uhr verbleibt: 1 Std. 17 Min. Zeiten ausblenden Imsak 05:55 Aufgang 07:37 Dhuhr 13:17 Asr 16:08 Maghrib "
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
-  - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
+  - erfüllt · Hero: zweiter Knopf → /ueber-uns · {"href":"/ueber-uns","text":"Mehr erfahren"}
   - erfüllt · bis zu 6 kommende Veranstaltungen · 5
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-01-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-01-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 0 · HTTP ≥ 400: keine
-  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 07:25:40) · "2026-10-12T10:00:00.000Z"
+  - Messwert · Browseruhr fest auf 12:00 Berlin (Laufzeit-Uhrzeit Berlin: 20:05:28) · "2026-10-12T10:00:00.000Z"
   - erfüllt · HTTP 200 · 200
   - erfüllt · Leiste: sechs Gebetszeiten sichtbar · 6
   - erfüllt · Leiste: „Nächstes Gebet“ und Restzeit nach Hydrierung · "Wetzlar, Deutschland Mo., 12. Okt. · 12:00 Uhr berechnet Imsak 05:55 Aufgang 07:37 Nächstes Gebet Dhuhr 13:17 verbleibt: 1 Std. 17 Min. Asr 16:08 Maghrib 18:48 Isha 20:23 Alle Gebe"
   - erfüllt · H1 „IGMG Wetzlar“ · "IGMG Wetzlar"
   - erfüllt · „Gemeinde beitreten“ → /mitglied-werden · "/mitglied-werden"
-  - erfüllt · „Mehr erfahren“ (Hero) → /ueber-uns · "/ueber-uns"
+  - erfüllt · Hero: zweiter Knopf → /ueber-uns · {"href":"/ueber-uns","text":"Mehr erfahren"}
   - erfüllt · bis zu 6 kommende Veranstaltungen · 5
   - erfüllt · Aufmacher + 3 Neuigkeiten (4 Artikel) · {"artikel":4}
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-01-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-01-1440-ende.jpg`
@@ -259,7 +259,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 390 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 11 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 0.8 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -267,7 +267,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
 - 1440 px: **nicht prüfbar** · Formular-POSTs: 1 · HTTP ≥ 400: keine
   - erfüllt · HTTP 200 · 200
   - Messwert · Formularfelder (Pflicht mit *) · ["name*","email*","telefon","betreff","nachricht*","einwilligung*"]
-  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 12.5 s"}
+  - erfüllt · Kontakt: Fehlerzusammenfassung nach leerem Absenden („Absenden“) · {"text":"Bitte prüfen Sie die markierten Felder. Name: Bitte füllen Sie dieses Feld aus. E-Mail: Bitte geben Sie eine gültige E-Mail-Adresse ein. Nachricht: Bitte füllen","feldLinks":4,"altcha":"geprüft nach 14.8 s"}
   - erfüllt · Kontakt: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Messwert · Karte vor Klick · {"iframes":0,"osmAnfragen":0,"kartenKnopf":0}
   - nicht prüfbar · Karte lädt erst nach Klick (OpenStreetMap) · Bestand ohne Koordinaten: keine Kartenschaltfläche. Gemessen vor Klick: 0 iframe(s), 0 OSM-Anfragen.
@@ -284,7 +284,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 19.3 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 30 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-13-390.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-13-390-ende.jpg`
 - 1440 px: **erfüllt** · Formular-POSTs: 3 · HTTP ≥ 400: keine
@@ -297,7 +297,7 @@ Ergebnis je Zeile: erfüllt, nicht erfüllt oder nicht prüfbar (mit Grund). Ein
   - erfüllt · Moschee-Anfrage: Fokus in der Fehlerzusammenfassung · "Fokus"
   - erfüllt · Moschee-Anfrage: Schritt bleibt nach leerem „Weiter“ · {"vorher":{"anzahl":3,"aktiv":0},"nachher":{"anzahl":3,"aktiv":0}}
   - erfüllt · Meldung: HTTP 200 mit Formular · 200
-  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 22.8 s"}
+  - erfüllt · Meldung: Fehlerzusammenfassung nach leerem Absenden („Meldung senden“) · {"text":"Bitte prüfen Sie die markierten Felder. Meldungstyp: Meldungstyp ist erforderlich Betreff: Betreff ist erforderlich Nachricht: Nachricht ist erforderlich Vornam","feldLinks":7,"altcha":"geprüft nach 7.5 s"}
   - erfüllt · Meldung: Fokus in der Fehlerzusammenfassung · "Fokus"
   - Bilder: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-13-1440.jpg`, `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/stufe-c/funktionsliste-3100/F-13-1440-ende.jpg`
 

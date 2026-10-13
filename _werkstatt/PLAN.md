@@ -36,7 +36,7 @@ KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018�
 | Kennung | Rolle | Modell | Inhalt | Schreibrechte | Muster/Maßstab | Kriterium | Stand |
 |---|---|---|---|---|---|---|---|
 | O-01 | Opus | Opus | Designsystem-Skalen (K-005), `dark:` neutral | `globals.css` | K-005 | Z-03 | ✓ 6b15832 |
-| O-02 | Opus | Opus | Bewegungssystem (K-007), Seitenwechsel B-05 | `globals.css`, `Seitenrahmen.tsx`, `Header.tsx` | K-007 | Z-05 | ✓ bis auf B-05-Nachweis (Produktions-Build, E2-TOR) |
+| O-02 | Opus | Opus | Bewegungssystem (K-007), Seitenwechsel B-05 | `globals.css`, `Seitenrahmen.tsx`, `Header.tsx` | K-007 | Z-05 | ✓ (B-05-Nachweis im Produktions-Build: `protokolle/C-vt-*.json`; Inhalt nach Titel und Bild seit 2b70a95/H-F08) |
 | O-03 | Opus | Opus | SVG-Formsystem: Achtstern, Trenner, Zustandsgrafik, Lade-Achtstern (B-12), Achtstern-Band | `Icons.tsx`, `Zustandsgrafik.tsx`, `Seitenkopf.tsx` | K-008 | Z-06 | ✓ a7b7a66, c66465a |
 | O-04 | Opus | Opus | Startseite mit Tagesbogen (B-06), alle Zustände | `page.tsx`, `website/start/*`, `lib/gebetszeiten/bogen.ts` | K-006, K-007 | Z-04, Z-05 | ✓ 6b15832 … b592670 |
 | H-STYLE | Baumeister | Haiku | Styleguide-Spiegel der neuen Skalen | `verwaltung/styleguide/**`, Test | O-01 | Z-03 | ✓ e8ced5f |
@@ -52,8 +52,8 @@ KERN 1.1 (✓ 44bd7ee) · PLAN 1.1 (dieses Dokument) · ABNAHME 1.1 · ADR 0018�
 | Kennung | Rolle | Modell | Inhalt | Schreibrechte | Muster/Maßstab | Abhängig von | Kriterium | Stand |
 |---|---|---|---|---|---|---|---|---|
 | O-05 | Opus | Opus | `attachDatabasePool`, `vercel-build` mit/ohne DB, Migrationssperre, Instrumentation | `lib/db/index.ts`, `scripts/vercel-bau.mjs`, `scripts/migriere-mit-sperre.mjs`, `instrumentation.ts` | ADR 0018/0019 | – | V-04 | ✓ 0c224da |
-| O-06 | Opus | Opus | Blob privat, Bildvarianten, Verkleinern im Browser, `MedienBild` srcset | `lib/storage/**`, `lib/medien/**`, `app/medien/**`, Medien-Aktionen/-Formulare | ADR 0020 | O-05 | V-05 | ✓ 47ed617 |
-| O-07 | Opus | Opus | `lib/startklar/pruefungen.ts` | `lib/startklar/**`, Test | Kern 2.0 | H-V03 | Z-12, V-11 | ✓ c596742, 8df9556 |
+| O-06 | Opus | Opus | Blob privat, Bildvarianten, Verkleinern im Browser, `MedienBild` srcset | `lib/storage/**`, `lib/medien/**`, `app/medien/**`, Medien-Aktionen/-Formulare | ADR 0020 | O-05 | V-05 | ✓ 47ed617; Direkt-Upload großer PDF-Dateien 1d9fef5, e6d3341 |
+| O-07 | Opus | Opus | `lib/startklar/pruefungen.ts` | `lib/startklar/**`, Test | Kern 2.0 | H-V03 | Z-12, V-11 | ✓ c596742, 8df9556; Speicherprobe 1d9fef5, e6d3341, f9f7016 |
 | O-08 | Opus | Opus | Momente B-07 Weg der Gemeinde, B-08 Meilensteinlinie, B-09 Familie der vier | `ueber-uns/Zeitleiste`, `projekte/Meilensteine`, `organisation/FamilieDerVier`, `ErstesSichtbarwerden` | K-007 | O-02 | Z-04, Z-05 | ✓ 280a76a, 80a7d47, 588472a |
 | O-10 | Opus | Opus | Über uns als Gesamtansicht (Komposition um B-07) | `(website)/ueber-uns/**`, `website/ueber-uns/**` | REFERENZ | Sichtabnahme Start | Z-04 | ✓ 05dbf97 |
 | O-11 | Opus | Opus | Projekte als Gesamtansicht (um B-08) | `(website)/projekte/**`, `website/projekte/**` | REFERENZ | Sichtabnahme Start | Z-04 | ✓ 5732e90 |
@@ -117,7 +117,30 @@ Danach Stufe C (Haiku), BERICHT.md mit Galerie (Dokumentar), Endprüfung durch f
 - Produktion läuft ohne Datenbank: Jeder Push auf `main` muss den PGlite-Rückfall im Bau erhalten.
 - Formular-Integrationstests liefen unter Last in die Zeitgrenze. Ursache: echte ALTCHA-Aufgaben, bis ≈ 40 s je Lösung bei Last 4–5. Die Grenze wurde angehoben (L-E07), keine Prüfung abgeschwächt.
 
-## Statusnachweis (Stand 2026-10-12 07:10 UTC)
+## Statusnachweis (Stand 2026-10-12 22:00 UTC)
+Pflicht erledigt 70 von ≈ 70, Kür 20 von 20. Seit 15:15:
+- Sichtabnahme C3 (Ø 7,65, 25ec8f4) und Befundwelle H-F, 13 Pakete, alle angenommen (Noten 8–8,5): 1bbee03, 6464993.
+- Abschlussprüfung 325c38a (Stufe C 1–11, E2E 563 grün; Testbefund Kontaktdaten 3ac362e, ML-28).
+- Endleistung am Endstand: Paarregel 11/11, INP 11/11. Cockpit-INP behoben (66965d0).
+- Befunde der Endprüfung zu Z-11/Z-12 umgesetzt: Erreichbarkeitsprobe des Speichers (V-11) und Direkt-Upload großer PDF-Dateien (V-05), siehe `protokolle/C3b-v05-v11.md`.
+- main → 2b930f7 → 255179b, danach der Stand mit V-05/V-11.
+- Ausnahmen: 2 (A-01 L-E14, A-02 L-E16).
+
+### Stand 2026-10-12 15:15 UTC
+Pflicht erledigt 70 von ≈ 70:
+- die 69 vom 07:10-Stand,
+- dazu Stufe C mit Endstand-Messung und Nacharbeit (`berichte/STUFE-C3.md`):
+  - Endstand 58a3344, Nacharbeit 4331b03, 01589e8, 76eda7a, 466ddfb, 6e1b46a, de91dcd;
+  - release:check auf HEAD bestanden;
+  - main → fc08263.
+
+Ebenfalls umgesetzt:
+- Befundwelle H-E aus der Sichtabnahme C2 (14 Pakete, bis 8e93ef8).
+- Produktionsfehler des Beispielmodus (ce6e6a5).
+
+Offen ist nur noch der Abschlussschritt: Sichtabnahme C3 als Vorprüfung für Z-04, dann die Endprüfung. Ausnahmen: 1 (A-01, L-E14). Kür 20 von 20.
+
+### Stand 2026-10-12 07:10 UTC
 Pflicht erledigt 69 von ≈ 70: die 66 vom 02:10-Stand plus E4-TOR mit Sichtabnahme E4 und H-C01–C13 (5d19108), H-D04 (1f1c2d8) und H-L01 (Ursachen I–III; Nachmessung läuft). Offen ist nur noch die Endprüfung nach Stufe C: erste Messung 5d19108 in `berichte/STUFE-C.md`, Nacharbeit fa5c005, Nachmessung `berichte/STUFE-C2.md`. Kür 20 von 20.
 
 ### Stand 2026-10-12 02:10 UTC

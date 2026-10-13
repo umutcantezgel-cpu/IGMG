@@ -5,7 +5,8 @@ import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { qiblaRichtung } from '@/lib/gebetszeiten/berechnung';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import { QiblaInformation } from './QiblaInformation';
-import { QiblaKompass, type QiblaKompassTexte } from './QiblaKompass';
+import { QiblaKompassAnsicht, type QiblaKompassTexte } from './QiblaKompassAnsicht';
+import { QiblaKompassBeiBedarf } from './QiblaKompassBeiBedarf';
 
 export type QiblaPanelProps = {
   sprache: Sprache;
@@ -45,6 +46,8 @@ export async function QiblaPanel({ sprache, ort, breite, laenge }: QiblaPanelPro
     verweigert: t('kompass_verweigert'),
     fehlt: t('kompass_fehlt'),
   };
+  /** Symbol im Knopf auf dem Server gerendert: lucide bleibt aus dem Browser-Code (H-L01, JS ≤ 180 kB gz). */
+  const symbol = <Compass aria-hidden className="size-5" />;
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
       <section className="flex flex-col items-center gap-4 rounded-lg border border-linie bg-weiss p-6 text-center">
@@ -55,7 +58,21 @@ export async function QiblaPanel({ sprache, ort, breite, laenge }: QiblaPanelPro
           </h3>
           <p className="text-16 leading-einleitung text-tinte-2">{t('untertitel')}</p>
         </div>
-        <QiblaKompass winkel={winkel} texte={kompass} />
+        <QiblaKompassBeiBedarf
+          winkel={winkel}
+          texte={kompass}
+          symbol={symbol}
+          vorschau={
+            <QiblaKompassAnsicht
+              winkel={winkel}
+              texte={kompass}
+              symbol={symbol}
+              knopfText={kompass.aktivieren}
+              hinweisZeigen
+              statusText=""
+            />
+          }
+        />
         <p className="text-24 font-bold">{t('winkel_norden', { winkel: winkelGanz })}</p>
         <p className="max-w-text text-tinte-2">
           {t('ort_vor')} <Text feld={ort} sprache={sprache} als="span" /> {t('ort_nach')}

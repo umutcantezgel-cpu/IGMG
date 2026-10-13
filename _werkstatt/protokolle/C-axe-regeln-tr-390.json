@@ -10,39 +10,14 @@
     "wcag21aa",
     "wcag22aa"
   ],
-  "zeit": "2026-10-12T04:58:25.093Z",
+  "zeit": "2026-10-12T17:35:35.914Z",
   "routen": [
     {
       "name": "Start (TR)",
       "pfad": "/tr",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 4,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".h-75 > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-ramadan-vorbereitung-2025\"] > .size-22.streifen-platzhalter[aria-label=\"Fotoğraf: Haber görseli\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "li:nth-child(2) > .p-4.hover\\:shadow-s2 > .size-22.streifen-platzhalter[aria-label=\"Fotoğraf: Haber görseli\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-neuer-imam-stellt-sich-vor\"] > .size-22.streifen-platzhalter[aria-label=\"Fotoğraf: Haber görseli\"] > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Namaz vakitleri (Gebetszeiten)",
@@ -56,36 +31,7 @@
       "pfad": "/tr/etkinlikler",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 5,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".lg\\:h-full > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".size-22.px-1[aria-label=\"Fotoğraf: Arabisch Sprachkurs\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".size-22.px-1[aria-label=\"Fotoğraf: Jugendgruppe Treffen\"] > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".border-l-org-at.border-l-4[data-morph-karte=\"v-woechentlicher-qur-an-kurs\"] > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".border-l-org-kgt > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.shadow-s1.py-0\\.5",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Etkinlik (Detailseite)",
@@ -99,80 +45,14 @@
       "pfad": "/tr/haberler",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 10,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".h-75 > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-ramadan-vorbereitung-2025\"] > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".first\\:border-t-0.border-t[data-kategorie=\"neuigkeiten\"] > .p-4.gap-4 > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": "article[data-morph-karte=\"n-neuer-imam-stellt-sich-vor\"] > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:hidden.first\\:border-t-0[data-kategorie=\"religioes\"] > .p-4.gap-4 > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:hidden.first\\:border-t-0[data-kategorie=\"bildung\"] > .p-4.gap-4 > .size-22.px-1.streifen-platzhalter > .bg-weiss\\/85.py-0\\.5.shadow-s1",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Hakkımızda (Über uns)",
       "pfad": "/tr/hakkimizda",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 6,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".aspect-4\\/3 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:gap-5.gap-3:nth-child(1) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:gap-5.gap-3:nth-child(2) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:gap-5.gap-3:nth-child(3) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:gap-5.gap-3:nth-child(4) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:gap-5.gap-3:nth-child(5) > .pb-6.md\\:pb-8.min-w-0 > .p-5.md\\:items-stretch.md\\:gap-6 > .h-28.md\\:h-36.md\\:w-60 > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Projeler (Projekte)",
@@ -183,15 +63,11 @@
         {
           "id": "color-contrast",
           "schwere": "serious",
-          "knoten": 3,
+          "knoten": 2,
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".bg-weiss\\/85",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".size-10.-translate-x-1\\/2.top-1\\/2 > .relative.rounded-pill.text-weiss",
+              "ziel": ".size-10.top-1\\/2.-translate-y-1\\/2 > .relative.rounded-pill.text-weiss",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -214,28 +90,7 @@
       "pfad": "/tr/egitim/kuran-kurslari",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 3,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".md\\:max-xl\\:odd\\:last\\:col-span-2:nth-child(1) > .hover\\:shadow-s2 > .streifen-platzhalter.h-40.text-center > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:max-xl\\:odd\\:last\\:col-span-2:nth-child(2) > .hover\\:shadow-s2 > .streifen-platzhalter.h-40.text-center > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            },
-            {
-              "ziel": ".md\\:max-xl\\:odd\\:last\\:col-span-2:nth-child(3) > article > .streifen-platzhalter.h-40.text-center > .bg-weiss\\/85.shadow-s1.rounded-pill",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     },
     {
       "name": "Ön kayıt (Voranmeldung)",
@@ -250,7 +105,7 @@
           "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
           "beispiele": [
             {
-              "ziel": ".lg\\:hidden > .size-9.place-items-center.grid:nth-child(1) > .text-gruen-800.relative.text-16",
+              "ziel": ".lg\\:hidden > .size-9.place-items-center.grid:nth-child(1) > .text-weiss.relative.text-16",
               "meldung": "Fix any of the following: Element content is too short to determine if it is actual text content"
             },
             {
@@ -278,20 +133,7 @@
       "pfad": "/tr/iletisim",
       "http": 200,
       "verstoesse": [],
-      "unklar": [
-        {
-          "id": "color-contrast",
-          "schwere": "serious",
-          "knoten": 1,
-          "beschreibung": "Elements must meet minimum color contrast ratio thresholds",
-          "beispiele": [
-            {
-              "ziel": ".bg-weiss\\/85",
-              "meldung": "Fix any of the following: Element's background color could not be determined due to a background gradient"
-            }
-          ]
-        }
-      ]
+      "unklar": []
     }
   ]
 }

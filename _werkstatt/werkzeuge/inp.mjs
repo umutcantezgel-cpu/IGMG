@@ -6,11 +6,12 @@
 // (PerformanceObserver type "event", durationThreshold 16): je interactionId die längste Dauer (Eingabe bis zum nächsten
 // Bild). INP je Lauf = längste Interaktion (bei < 50 Interaktionen); Ergebnis je Route = Median über --laeufe Läufe.
 // Keine Absendungen: POST-Anfragen werden abgebrochen.
-// Aufruf: node inp.mjs --routen datei.json [--basis URL] [--laeufe 3] [--drossel 4] [--protokoll basisname]
+// Aufruf: node inp.mjs --routen datei.json [--basis URL] [--laeufe 3] [--drossel 4] [--zustand storageState.json] [--protokoll basisname]
+//   --zustand: Anmeldestand für Verwaltungsansichten (Cockpit); POST außerhalb von /_next/ bleibt abgebrochen
 import { parseArgs } from 'node:util';
 import { basisAdresse, hilfeAusgeben, lesePfade, neuerKontext, schreibeProtokoll, standardProtokoll, starteBrowser, vollerUrl } from './hilfen.mjs';
 
-const HILFE = `Aufruf: node inp.mjs --routen datei.json [--basis URL] [--laeufe 3] [--drossel 4] [--protokoll basisname]
+const HILFE = `Aufruf: node inp.mjs --routen datei.json [--basis URL] [--laeufe 3] [--drossel 4] [--zustand storageState.json] [--protokoll basisname]
 Beispiel: node inp.mjs --routen routen-hauptansichten.json --basis http://127.0.0.1:3500`;
 const { values } = parseArgs({
   options: {
@@ -19,6 +20,7 @@ const { values } = parseArgs({
     laeufe: { type: 'string', default: '3' },
     drossel: { type: 'string', default: '4' },
     protokoll: { type: 'string' },
+    zustand: { type: 'string' },
     hilfe: { type: 'boolean', short: 'h', default: false },
   },
 });
@@ -104,7 +106,7 @@ const ergebnis = { werkzeug: 'inp', basis: BASIS, drossel: DROSSEL, laeufe: LAEU
 for (const route of routen) {
   const laeufe = [];
   for (let n = 1; n <= LAEUFE; n++) {
-    const kontext = await neuerKontext(browser, { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: false });
+    const kontext = await neuerKontext(browser, { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: false, ...(values.zustand ? { storageState: values.zustand } : {}) });
     const seite = await kontext.newPage();
     await seite.route('**/*', (r) => (r.request().method() === 'POST' && !r.request().url().includes('/_next/') ? r.abort() : r.continue()));
     await seite.addInitScript(BEOBACHTER);

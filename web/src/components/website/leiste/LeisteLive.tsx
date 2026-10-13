@@ -148,21 +148,28 @@ export function LeisteLive({
       {/* Breit (ab 768 px): Ort, sechs Karten, Link */}
       <div className="mx-auto hidden max-w-(--container-inhalt) flex-wrap items-center gap-x-6 gap-y-4 px-6 py-4 md:flex lg:px-8">
         <div className="order-1 flex min-w-55 flex-none flex-col gap-1">
-          <div className="flex items-center gap-2 font-bold">
-            <MapPin aria-hidden className="size-5 text-gruen-100" />
-            <span>{texte.ort}</span>
+          {/* Ort und Datum: untereinander ab 1240 px, unter 1240 px in einer Zeile */}
+          <div className="flex flex-col gap-1 max-menu:flex-row max-menu:gap-x-4">
+            <div className="flex items-center gap-2 leading-snug font-bold">
+              <MapPin aria-hidden className="size-5 text-gruen-100" />
+              <span>{texte.ort}</span>
+            </div>
+            <div className="flex min-h-6 items-center gap-2 text-16 text-gruen-100">
+              <Clock aria-hidden className="size-5" />
+              <span className="tabular-nums">{jetzt ? `${datumText} · ${uhrText}` : ''}</span>
+            </div>
           </div>
-          <div className="flex min-h-6 items-center gap-2 text-16 text-gruen-100">
-            <Clock aria-hidden className="size-5" />
-            <span className="tabular-nums">{jetzt ? `${datumText} · ${uhrText}` : ''}</span>
+          {/* „Nächstes Gebet“ und „berechnet“ sind fester Text aus dem Server-HTML: ohne Skript und vor der Hydrierung da */}
+          <div className="flex items-center gap-2">
+            <span className="text-16 text-gruen-100">{texte.naechstes}</span>
+            {hinweis}
           </div>
-          {/* Feste Zeilen: vor dem Einhängen unsichtbar mit Platzhalter, danach das nächste Gebet (B-10 blendet bei Wechsel ein) */}
+          {/* Feste Zeilen: vor dem Einhängen unsichtbar mit Platzhalter, danach Name, Zeit und Restzeit (B-10 blendet bei Wechsel ein) */}
           <div
             key={gebet ?? 'leer'}
             style={DAUER_WECHSEL}
             className={klassen('flex flex-col text-16 tabular-nums', !naechstes && 'invisible', gewechselt && 'blendet-ein')}
           >
-            <span className="text-16 text-gruen-100">{texte.naechstes}</span>
             <span className="grid text-20 leading-tight font-bold text-weiss">
               {platzWert.map((p) => (
                 <span key={p} aria-hidden className="invisible col-start-1 row-start-1">
@@ -183,7 +190,6 @@ export function LeisteLive({
               <span className="col-start-1 row-start-1">{restZeile}</span>
             </span>
           </div>
-          {hinweis}
         </div>
         <ul aria-label={texte.listeHeute} className="order-3 grid w-full grid-cols-6 gap-2 menu:order-2 menu:w-auto menu:flex-1">
           {GEBETE.map((g) => karte(g, false))}

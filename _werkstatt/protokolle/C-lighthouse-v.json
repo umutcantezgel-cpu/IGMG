@@ -1,0 +1,764 @@
+{
+ "werkzeug": "lh-paare",
+ "ordner": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/stufe-c/lh-v",
+ "schwellen": {
+  "performance": 90,
+  "accessibility": 100,
+  "best-practices": 95,
+  "seo": 95,
+  "lcpMs": 2500,
+  "cls": 0.1,
+  "tbtMs": 200,
+  "jsKb": 180
+ },
+ "routen": [
+  {
+   "nr": "00",
+   "pfad": "/",
+   "name": "Start",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1927,
+    "cls": 0.002,
+    "tbtMs": 525,
+    "jsKb": 168
+   },
+   "spanne3100": [
+    81,
+    87
+   ],
+   "perfLaeufe3100": [
+    87,
+    85,
+    86,
+    81,
+    84
+   ],
+   "tbtLaeufe3100": [
+    441,
+    525,
+    470,
+    642,
+    550
+   ],
+   "median3500": {
+    "performance": 84,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2063,
+    "cls": 0.01,
+    "tbtMs": 521,
+    "jsKb": 175.5
+   },
+   "spanne3500": [
+    77,
+    91
+   ],
+   "perfLaeufe3500": [
+    91,
+    81,
+    84,
+    77,
+    89
+   ],
+   "tbtLaeufe3500": [
+    304,
+    695,
+    521,
+    765,
+    351
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "01",
+   "pfad": "/gebetszeiten",
+   "name": "Gebetszeiten",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1872,
+    "cls": 0,
+    "tbtMs": 530,
+    "jsKb": 174.1
+   },
+   "spanne3100": [
+    79,
+    88
+   ],
+   "perfLaeufe3100": [
+    88,
+    85,
+    82,
+    79,
+    87
+   ],
+   "tbtLaeufe3100": [
+    409,
+    530,
+    653,
+    720,
+    468
+   ],
+   "median3500": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1988,
+    "cls": 0,
+    "tbtMs": 513,
+    "jsKb": 178.9
+   },
+   "spanne3500": [
+    76,
+    87
+   ],
+   "perfLaeufe3500": [
+    86,
+    76,
+    82,
+    87,
+    85
+   ],
+   "tbtLaeufe3500": [
+    475,
+    943,
+    634,
+    424,
+    513
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "02",
+   "pfad": "/veranstaltungen",
+   "name": "Veranstaltungen",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2023,
+    "cls": 0.002,
+    "tbtMs": 626,
+    "jsKb": 170.7
+   },
+   "spanne3100": [
+    78,
+    89
+   ],
+   "perfLaeufe3100": [
+    78,
+    83,
+    89,
+    80,
+    83
+   ],
+   "tbtLaeufe3100": [
+    821,
+    506,
+    351,
+    738,
+    626
+   ],
+   "median3500": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1983,
+    "cls": 0,
+    "tbtMs": 582,
+    "jsKb": 174.2
+   },
+   "spanne3500": [
+    79,
+    89
+   ],
+   "perfLaeufe3500": [
+    82,
+    79,
+    88,
+    89,
+    83
+   ],
+   "tbtLaeufe3500": [
+    605,
+    787,
+    403,
+    347,
+    582
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "03",
+   "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+   "name": "Veranstaltung (Detailseite)",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2176,
+    "cls": 0.002,
+    "tbtMs": 455,
+    "jsKb": 171.5
+   },
+   "spanne3100": [
+    81,
+    86
+   ],
+   "perfLaeufe3100": [
+    86,
+    81,
+    85,
+    85,
+    82
+   ],
+   "tbtLaeufe3100": [
+    439,
+    584,
+    430,
+    455,
+    563
+   ],
+   "median3500": {
+    "performance": 81,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2382,
+    "cls": 0,
+    "tbtMs": 553,
+    "jsKb": 175
+   },
+   "spanne3500": [
+    77,
+    88
+   ],
+   "perfLaeufe3500": [
+    80,
+    77,
+    81,
+    88,
+    86
+   ],
+   "tbtLaeufe3500": [
+    553,
+    643,
+    555,
+    364,
+    407
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "04",
+   "pfad": "/nachrichten",
+   "name": "Nachrichten",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 79,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2073,
+    "cls": 0.002,
+    "tbtMs": 681,
+    "jsKb": 170.5
+   },
+   "spanne3100": [
+    75,
+    87
+   ],
+   "perfLaeufe3100": [
+    76,
+    75,
+    79,
+    87,
+    82
+   ],
+   "tbtLaeufe3100": [
+    958,
+    974,
+    681,
+    460,
+    623
+   ],
+   "median3500": {
+    "performance": 86,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1963,
+    "cls": 0,
+    "tbtMs": 487,
+    "jsKb": 173.9
+   },
+   "spanne3500": [
+    74,
+    91
+   ],
+   "perfLaeufe3500": [
+    74,
+    86,
+    82,
+    91,
+    87
+   ],
+   "tbtLaeufe3500": [
+    1046,
+    487,
+    604,
+    330,
+    428
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "05",
+   "pfad": "/ueber-uns",
+   "name": "Über uns",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1963,
+    "cls": 0.002,
+    "tbtMs": 489,
+    "jsKb": 168
+   },
+   "spanne3100": [
+    79,
+    90
+   ],
+   "perfLaeufe3100": [
+    79,
+    89,
+    85,
+    90,
+    83
+   ],
+   "tbtLaeufe3100": [
+    716,
+    401,
+    489,
+    346,
+    602
+   ],
+   "median3500": {
+    "performance": 82,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2008,
+    "cls": 0,
+    "tbtMs": 623,
+    "jsKb": 171.7
+   },
+   "spanne3500": [
+    76,
+    86
+   ],
+   "perfLaeufe3500": [
+    76,
+    80,
+    82,
+    85,
+    86
+   ],
+   "tbtLaeufe3500": [
+    864,
+    687,
+    623,
+    513,
+    454
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "06",
+   "pfad": "/projekte",
+   "name": "Projekte",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 86,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1917,
+    "cls": 0.002,
+    "tbtMs": 486,
+    "jsKb": 168
+   },
+   "spanne3100": [
+    83,
+    90
+   ],
+   "perfLaeufe3100": [
+    83,
+    83,
+    86,
+    90,
+    88
+   ],
+   "tbtLaeufe3100": [
+    564,
+    597,
+    486,
+    370,
+    385
+   ],
+   "median3500": {
+    "performance": 89,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1974,
+    "cls": 0,
+    "tbtMs": 380,
+    "jsKb": 171.7
+   },
+   "spanne3500": [
+    82,
+    92
+   ],
+   "perfLaeufe3500": [
+    89,
+    85,
+    92,
+    82,
+    90
+   ],
+   "tbtLaeufe3500": [
+    380,
+    486,
+    238,
+    602,
+    354
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "07",
+   "pfad": "/organisationen/ana-teskilati",
+   "name": "Organisation Ana Teşkilatı",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2236,
+    "cls": 0.002,
+    "tbtMs": 480,
+    "jsKb": 168
+   },
+   "spanne3100": [
+    81,
+    84
+   ],
+   "perfLaeufe3100": [
+    83,
+    81,
+    84,
+    83,
+    84
+   ],
+   "tbtLaeufe3100": [
+    487,
+    476,
+    468,
+    506,
+    480
+   ],
+   "median3500": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2395,
+    "cls": 0,
+    "tbtMs": 525,
+    "jsKb": 171.7
+   },
+   "spanne3500": [
+    79,
+    87
+   ],
+   "perfLaeufe3500": [
+    85,
+    81,
+    87,
+    79,
+    83
+   ],
+   "tbtLaeufe3500": [
+    410,
+    528,
+    372,
+    594,
+    525
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "08",
+   "pfad": "/bildung/korankurse",
+   "name": "Korankurse",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 84,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2000,
+    "cls": 0.002,
+    "tbtMs": 568,
+    "jsKb": 168
+   },
+   "spanne3100": [
+    78,
+    86
+   ],
+   "perfLaeufe3100": [
+    84,
+    83,
+    84,
+    78,
+    86
+   ],
+   "tbtLaeufe3100": [
+    531,
+    585,
+    568,
+    833,
+    502
+   ],
+   "median3500": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 2047,
+    "cls": 0,
+    "tbtMs": 570,
+    "jsKb": 171.3
+   },
+   "spanne3500": [
+    78,
+    85
+   ],
+   "perfLaeufe3500": [
+    85,
+    78,
+    83,
+    82,
+    83
+   ],
+   "tbtLaeufe3500": [
+    497,
+    820,
+    509,
+    570,
+    619
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "09",
+   "pfad": "/bildung/voranmeldung",
+   "name": "Voranmeldung",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1869,
+    "cls": 0.002,
+    "tbtMs": 527,
+    "jsKb": 170.9
+   },
+   "spanne3100": [
+    79,
+    87
+   ],
+   "perfLaeufe3100": [
+    79,
+    87,
+    85,
+    85,
+    85
+   ],
+   "tbtLaeufe3100": [
+    816,
+    450,
+    513,
+    547,
+    527
+   ],
+   "median3500": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1951,
+    "cls": 0,
+    "tbtMs": 397,
+    "jsKb": 174.4
+   },
+   "spanne3500": [
+    85,
+    88
+   ],
+   "perfLaeufe3500": [
+    87,
+    88,
+    88,
+    85,
+    86
+   ],
+   "tbtLaeufe3500": [
+    376,
+    396,
+    397,
+    534,
+    483
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  },
+  {
+   "nr": "10",
+   "pfad": "/kontakt",
+   "name": "Kontakt",
+   "laeufe3100": 5,
+   "laeufe3500": 5,
+   "median3100": {
+    "performance": 86,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1977,
+    "cls": 0.002,
+    "tbtMs": 455,
+    "jsKb": 171.4
+   },
+   "spanne3100": [
+    77,
+    87
+   ],
+   "perfLaeufe3100": [
+    77,
+    87,
+    86,
+    84,
+    87
+   ],
+   "tbtLaeufe3100": [
+    869,
+    455,
+    446,
+    557,
+    414
+   ],
+   "median3500": {
+    "performance": 86,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "lcpMs": 1925,
+    "cls": 0,
+    "tbtMs": 464,
+    "jsKb": 174.8
+   },
+   "spanne3500": [
+    80,
+    90
+   ],
+   "perfLaeufe3500": [
+    86,
+    90,
+    86,
+    90,
+    80
+   ],
+   "tbtLaeufe3500": [
+    490,
+    326,
+    464,
+    368,
+    688
+   ],
+   "paarregel": true,
+   "verfehlt3500": [
+    "Performance",
+    "TBT"
+   ]
+  }
+ ]
+}

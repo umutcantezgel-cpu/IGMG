@@ -4,6 +4,7 @@ import journal from '../../../drizzle/migrations/meta/_journal.json';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
+import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-probe';
 
 /**
  * Startklar-Prüfungen (Kern 2.0, AUFTRAG V-11, Z-12): eine Quelle für das Cockpit `/verwaltung/startklar` und
@@ -40,10 +41,19 @@ export type StartklarKontext = {
   db: Datenbank | null;
   /** DNS-Abfragen für Mail-Einträge (SPF/DMARC); in Tests abschaltbar. */
   dnsPruefen?: boolean;
+  /** Erreichbarkeitsprobe des Medienspeichers (V-11); in Tests abschaltbar oder durch eine Attrappe ersetzbar. */
+  speicherPruefen?: boolean;
+  speicherProbe?: (env: Umgebung) => Promise<SpeicherProbe>;
   jetzt?: Date;
 };
 
 const VERCEL_DOMAIN = /\.vercel\.app$/i;
+/** Wo ein nicht erreichbarer Speicher zu beheben ist, je Art (ADR 0007, ADR 0020). */
+const SPEICHER_ORT: Record<SpeicherProbe['art'], string> = {
+  blob: 'Vercel › Storage › Blob (Frankfurt) und BLOB_READ_WRITE_TOKEN (docs/deploy/VERCEL.md, Speicher)',
+  s3: 'S3-Anbieter: Bucket, Zugang und Endpunkt (S3_* in den Umgebungsvariablen)',
+  dateisystem: 'MEDIEN_VERZEICHNIS bzw. Docker-Volume (docs/BETRIEB.md)',
+};
 const LOKAL = /^(localhost|127\.0\.0\.1|\[::1\])$/i;
 /** Platzhalter in eckigen Klammern, z. B. „[Adresse]“ (Seeds, MENSCHEN.md). */
 const PLATZHALTER = /\[[^\]]{2,}\]/;
@@ -155,6 +165,20 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
       meldung:
         'Vorschauen dürfen nie die Produktionsdatenbank nutzen: DATABASE_URL im Bereich „Preview“ muss auf einen Neon-Branch zeigen.',
       ort: 'Vercel › Projekt › Storage (Neon-Integration) und Environment Variables › Preview',
+      aufwand: '10 min',
+    });
+  }
+
+  // Medienspeicher erreichbar (AUFTRAG V-11): lesende Probe mit Zeitlimit, schreibt nichts
+  if (kontext.speicherPruefen !== false) {
+    const probe = await (kontext.speicherProbe ?? pruefeSpeicher)(env);
+    neu({
+      id: 'auslieferung.speicher',
+      bereich: 'auslieferung',
+      titel: 'Medienspeicher erreichbar',
+      status: probe.erreichbar ? 'ok' : betriebsart === 'entwicklung' ? 'warnung' : 'fehler',
+      meldung: probe.meldung,
+      ort: SPEICHER_ORT[probe.art],
       aufwand: '10 min',
     });
   }

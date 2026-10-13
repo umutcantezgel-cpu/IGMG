@@ -2,6 +2,7 @@ import { connection } from 'next/server';
 import { getTranslations } from 'next-intl/server';
 import { ErneutPruefen } from '@/components/verwaltung/startklar/ErneutPruefen';
 import { PruefListe, type PruefGruppe, type PruefStatus, type PruefZeile } from '@/components/verwaltung/startklar/PruefListe';
+import { mitKennungen } from '@/components/verwaltung/startklar/kennung';
 import { STATUS_STIL } from '@/components/verwaltung/startklar/status';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
@@ -70,22 +71,23 @@ export default async function StartklarSeite() {
       <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.betrieb')} einleitung={t('einleitung')} />
       <section
         aria-labelledby="startklar-gesamt"
-        className="flex flex-col gap-5 rounded-lg border border-linie bg-weiss p-5 md:flex-row md:items-start md:gap-8 md:p-6"
+        className="flex flex-wrap items-center gap-4 rounded-lg border border-linie bg-weiss p-5 md:flex-nowrap md:items-start md:gap-8 md:p-6"
       >
-        <Zustandsgrafik art={ergebnis.startklar ? 'erfolg' : 'fehler'} className="self-center md:self-start" />
-        <div className="flex min-w-0 flex-1 flex-col gap-4">
-          <div className="flex flex-col gap-1">
-            <h2 id="startklar-gesamt" className="text-display-2">
+        {/* max-md:-ml-3.5: die sichtbare Sternspitze fluchtet auf dem Telefon mit Überschrift und Zählern (H-E02, Innenrand im 96er-Raster) */}
+        <Zustandsgrafik art={ergebnis.startklar ? 'erfolg' : 'fehler'} className="max-md:-ml-3.5" />
+        <div className="flex min-w-0 flex-1 flex-col gap-4 max-md:contents">
+          <div className="flex flex-col gap-1 max-md:contents">
+            <h2 id="startklar-gesamt" className="text-30 max-md:min-w-0 max-md:flex-1">
               {ergebnis.startklar ? t('gesamt.startklar') : t('gesamt.nochNicht')}
             </h2>
-            <p className="text-18">{gesamtText}</p>
+            <p className="text-18 max-md:basis-full">{gesamtText}</p>
           </div>
-          <dl className="flex flex-col divide-y divide-linie rounded-md border border-linie md:flex-row md:flex-wrap md:gap-2 md:divide-y-0 md:rounded-none md:border-0">
+          <dl className="flex flex-wrap gap-2 max-md:basis-full">
             {STATUS_REIHE.map((s) => {
               const { Icon, ziffer } = STATUS_STIL[s];
               return (
-                <div key={s} className="flex min-h-12 items-center gap-3 px-3 md:gap-2 md:rounded-md md:border md:border-linie md:py-1">
-                  <dt className="inline-flex flex-1 items-center gap-1.5 text-16 text-tinte-2 md:flex-none md:whitespace-nowrap">
+                <div key={s} className="flex min-h-12 items-center gap-2 rounded-md border border-linie px-3 py-1">
+                  <dt className="inline-flex items-center gap-1.5 text-16 whitespace-nowrap text-tinte-2">
                     <Icon aria-hidden className="size-4 shrink-0" />
                     {t(`status.${s}`)}
                   </dt>
@@ -94,13 +96,13 @@ export default async function StartklarSeite() {
               );
             })}
           </dl>
-          <p className="text-16 text-tinte-2">
+          <p className="text-16 text-tinte-2 max-md:basis-full">
             {t('zeile', {
               art: t(`betriebsart.${ergebnis.betriebsart}`),
               zeit: `${datumLang(zeitpunkt, 'de')}, ${uhrzeit(zeitpunkt, 'de')}`,
             })}
           </p>
-          <div>
+          <div className="max-md:basis-full">
             <ErneutPruefen stand={ergebnis.zeitpunkt} texte={{ knopf: t('erneutPruefen'), laeuft: t('erneutLaeuft') }} />
           </div>
         </div>
@@ -123,8 +125,8 @@ export default async function StartklarSeite() {
         }}
       />
       <div className="flex flex-col gap-1 border-t border-linie pt-4 text-16 text-tinte-2">
-        <p>{t('fussnote.kommandozeile')}</p>
-        <p>{t('fussnote.anleitung')}</p>
+        <p>{mitKennungen(t('fussnote.kommandozeile'))}</p>
+        <p>{mitKennungen(t('fussnote.anleitung'))}</p>
       </div>
     </>
   );

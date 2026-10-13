@@ -1,83 +1,20 @@
 {
   "werkzeug": "svg-pruefung",
-  "zeitpunkt": "2026-10-12-05-36",
-  "svgDateien": [
-    "_lauf/lichtung/a/public/file.svg",
-    "_lauf/lichtung/a/public/globe.svg",
-    "_lauf/lichtung/a/public/next.svg",
-    "_lauf/lichtung/a/public/vercel.svg",
-    "_lauf/lichtung/a/public/window.svg"
-  ],
+  "zeitpunkt": "2026-10-12-17-46",
+  "svgDateien": [],
   "zaehl": {
     "Fehler": 0,
-    "Befund": 6,
-    "OK": 11
+    "Befund": 0,
+    "OK": 13
   },
   "ergebnisse": [
-    {
-      "datei": "_lauf/lichtung/a/public/file.svg",
-      "zeile": 1,
-      "art": "Datei",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
-      "hinweise": []
-    },
-    {
-      "datei": "_lauf/lichtung/a/public/globe.svg",
-      "zeile": 1,
-      "art": "Datei",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
-      "hinweise": []
-    },
-    {
-      "datei": "_lauf/lichtung/a/public/next.svg",
-      "zeile": 1,
-      "art": "Datei",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
-      "hinweise": []
-    },
-    {
-      "datei": "_lauf/lichtung/a/public/vercel.svg",
-      "zeile": 1,
-      "art": "Datei",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
-      "hinweise": []
-    },
-    {
-      "datei": "_lauf/lichtung/a/public/window.svg",
-      "zeile": 1,
-      "art": "Datei",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
-      "hinweise": []
-    },
     {
       "datei": "web/src/components/formular/FormWizard.tsx",
       "zeile": 32,
       "art": "inline",
-      "status": "Befund",
-      "rolle": "ungeklärt",
-      "befunde": [
-        "Befund: weder aria-hidden=\"true\" noch role=\"img\" mit Name"
-      ],
+      "status": "OK",
+      "rolle": "dekorativ",
+      "befunde": [],
       "hinweise": []
     },
     {
@@ -149,7 +86,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 32,
+      "zeile": 47,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -158,7 +95,7 @@
     },
     {
       "datei": "web/src/components/website/organisation/FamilieDerVier.tsx",
-      "zeile": 41,
+      "zeile": 56,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",
@@ -167,7 +104,7 @@
     },
     {
       "datei": "web/src/components/website/start/TagesbogenLive.tsx",
-      "zeile": 96,
+      "zeile": 99,
       "art": "inline",
       "status": "OK",
       "rolle": "bedeutungstragend, benannt",
@@ -175,8 +112,17 @@
       "hinweise": []
     },
     {
+      "datei": "web/src/components/website/start/TagesbogenLive.tsx",
+      "zeile": 151,
+      "art": "inline",
+      "status": "OK",
+      "rolle": "dekorativ",
+      "befunde": [],
+      "hinweise": []
+    },
+    {
       "datei": "web/src/lib/seo/og-bild.tsx",
-      "zeile": 291,
+      "zeile": 302,
       "art": "inline",
       "status": "OK",
       "rolle": "dekorativ",

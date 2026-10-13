@@ -61,3 +61,117 @@ Kennung L-Exx. Folgenreiches mit Denkprotokoll (Ziel → drei Wege → Bewertung
 - Ergebnis H-R01 (9ebb4bc gegen ff27650, Werkzeug `werkzeuge/wortlaut.mjs`): 717 Rechts- und Einwilligungseinträge, 0 geändert, 0 entfernt; Einwilligungs-Textversionen (SHA-256) damit unverändert.
 - Entscheidung zu den neuen Einträgen: A-01 Hosting-Baustein v2 (erlaubte Ausnahme, Entwurf, nicht eingespielt) · A-02/A-03 Cockpit-Texte (nur Verwaltung, keine Besuchertexte) · **A-04 `web/docs/recht/VERARBEITUNGSVERZEICHNIS.md`**: internes Dokument nach V-11, nicht veröffentlicht, kein Rechtstext für Besucher → Ausnahme, kein Befund.
 - Mikrotext-Änderungen nach dem Prüfstand (a94d0dd: Leerzustände Korankurse, Leertext der Filter) betreffen keine Rechtsquelle; Stufe C wiederholt die Prüfung am Endstand.
+
+## L-E12 · 2026-10-12 · Opus · „Reaktion auf Eingaben“ im Labor als INP messen (Denkprotokoll)
+- **Ziel:** das Budget „Reaktion auf Eingaben höchstens 200 ms“ (AUFTRAG BUDGETS) belegen. ABNAHME Z-08 nennt „INP/TBT ≤ 200 ms“, gemessen wurde bisher nur TBT aus Lighthouse.
+- **Wege:**
+  1. Nur TBT. Das ist die Blockierzeit der Ladephase; sie misst keine Eingabe. Im Ausgangsstand liegt sie schon bei 255–656 ms. Getrieben wird sie von der Hydrierung des Frameworks: ein Skriptblock von ≈ 510 ms bei 4× Drosselung auf der Startseite, in E0 gleich groß (`$SCRATCHPAD/spur/lh-start-fa5c005.json`, `profil-start-fa5c005.json`).
+  2. INP im Labor: Event Timing bei typischen Eingaben ohne Seitenwechsel (Menü, Leiste, Reiter, Tippen, Tab), Telefon 390 px, CPU 4×. Ausgangsstand und Prüfling verschränkt gemessen (`werkzeuge/inp.mjs`, `inp-paare.sh`).
+  3. Feld-INP (CrUX, Vercel Speed Insights): gibt es vor dem Livegang nicht und bräuchte einen neuen Dienst (Grenze „keine neuen Dritten“).
+- **Bewertung:** Weg 2 misst den Wortlaut, ist gepaart wiederholbar und bleibt im Repo. Weg 1 bleibt als Lighthouse-Kennzahl im Protokoll und in der Performance-Note, gilt aber nicht als „Reaktion auf Eingaben“. Weg 3 entfällt.
+- **Umkehrprobe:** Wäre die Ladephase gemeint, stünde dort Blockierzeit oder Interaktivität. Der Wortlaut nennt Eingaben.
+- **Folgen zweiter Ordnung:** TBT wird weiter berichtet, mit E0-Vergleich und Paarregel. INP im Labor bei 4× Drosselung ist strenger als Feld-INP auf echten Telefonen (UA-01). Die Performance-Note ≥ 90 bleibt ein eigenes Budget; verfehlt sie es am Endstand, folgt eine AUSNAHME nach L7 mit eigenem Denkprotokoll.
+
+## L-E13 · 2026-10-12 · Opus · Auslegung K-006: Rubriken in Begleitkarten in fetter Sans (Sichtabnahme C2)
+- **Anlass:** Auf der Kontaktseite tragen vier Begleitkarten neun Serif-Titel (Kontaktdaten, Öffnungszeiten, Notfallkontakt, Adresse, Besucher willkommen …). Laut Prüfern stapeln sie sich zu einem Kastenstapel, die Seite wirkt unruhig (Sichtabnahme C2, Paket H-E03).
+- **Auslegung:** K-006 gibt der Titelschrift (Serif) die Inhaltstitel: Seiten-, Abschnitts- und Kartentitel mit eigenem Inhalt. Rubriken, die in einer Begleitkarte nur Daten ordnen, stehen in fetter Sans `text-20`, wie die h3 von Mission und Vision (H-C05).
+- **Folgen:** H-E03 setzt das auf der Kontaktseite um. Nachziehen, sobald die Dateien ohnehin angefasst werden: `KalenderAbo.tsx` (Rubrik) und „Fragen?“ auf Mitglied werden. REFERENZ §2 wird nach der Welle ergänzt.
+
+
+## L-E14 · 2026-10-12 · Opus · AUSNAHME A-01: Z-08 Performance-Note ≥ 90 (Denkprotokoll, L7)
+
+**Ziel:** Das Budget „Performance ≥ 90“ (Lighthouse mobil) aus AUFTRAG BUDGETS auf allen Hauptansichten.
+
+**Stand.** Erfüllt sind die übrigen Teilbudgets von Z-08:
+- Reaktion auf Eingaben ≤ 200 ms (INP im Labor nach L-E12) auf 11/11 Hauptansichten.
+- LCP ≤ 2,5 s, CLS ≤ 0,1.
+- A11y 100, BP und SEO 100.
+- JS ≤ 180 kB gz.
+- Paarregel gegen den Ausgangsstand auf 11/11.
+
+**Verfehlt** ist nur die Performance-Note:
+- Verschränkt (5 Runden) liegt 3500 bei 82–89, der Ausgangsstand 3100 in denselben Runden bei 80–88 (`C-lighthouse-v.md`).
+- Ruhige Stichprobe: 3500 82/83/84, 3100 82/82/84 (`C3-lh-ruhig-*.md`).
+- Die Note hängt an der TBT, die TBT am Hydrierungsblock des Frameworks (≈ 510 ms bei 4× Drosselung). Der Block ist im Ausgangsstand gleich groß (L-E12, Spuren `$SCRATCHPAD/spur/`).
+
+**Zwei belegte Anläufe:**
+1. **H-L01 Teil I–III** (6701f1c, Teil II, e0c8e9f): Fehlergrenze lazy, Zeitinseln nach der Hydrierung, Formate lazy, Kalender auf dem Server, eine Kartenfassung je Termin. Die Paarregel ist wieder erfüllt, die Note bleibt < 90.
+2. **Endstand-Nacharbeit** (76eda7a, 6e1b46a, de91dcd): JS /gebetszeiten unter dem Budget, Menü und Reiter ohne Darstellungsverzug. INP ist erfüllt, die Note bleibt im Bereich des Ausgangsstands.
+
+**Wege:**
+1. **Hydrierung verkleinern:** Kopf, Leiste und Karten als reine Server-Komponenten, weniger Client-Inseln, große Momente nur bei Sichtbarkeit laden.
+   - Das ist ein Architektureingriff am Laufende mit Risiko für Bestand (Z-02), Barrierefreiheit (Menü, Leiste) und die Momente (Z-05).
+   - Aufwand mehrere Tage. Ob danach ≥ 90 erreicht würde, ist offen: Der Framework-Anteil bleibt.
+2. **Unter Einzelbedingungen messen** (ein Server, keine Paare): Das misst die Umgebung, nicht die App. Die Stichprobe zeigt, dass Lighthouse die Last selbst auf ≈ 1,8 hebt. Die E0-Werte 98–99 von 09:07 entstanden auf einer ruhigeren Maschine ohne weitere Server. Weder wiederholbar noch gepaart.
+3. **AUSNAHME mit bester Ersatzlösung:**
+   - Paarregel gegen den Ausgangsstand.
+   - Alle übrigen Z-08-Budgets erfüllt, INP im Labor bei 4× Drosselung ≤ 200 ms.
+   - Nach dem Livegang Feldprüfung durch Menschen mit PageSpeed Insights (ML-27; kein neuer Dienst im Code, Grenze „keine neuen Dritten“).
+
+**Bewertung:**
+- Nordstern „schnell, ruhig, würdevoll“: Die Seite reagiert auf Eingaben schneller als der Ausgangsstand (INP auf allen Routen besser). Sie lädt gleich schnell (LCP 1,9–2,3 s) und bleibt im JS-Budget.
+- Weg 1 riskiert genau das, was der Lauf aufgebaut hat, ohne sicheren Gewinn. Weg 2 belegt nichts.
+- Weg 3 ist ehrlich, prüfbar und lässt die Entscheidung über einen späteren Umbau bei den Menschen.
+
+**Umkehrprobe:** Wäre die Note mit vertretbarem Aufwand erreichbar, müsste der Ausgangsstand unter denselben Bedingungen ≥ 90 zeigen, oder ein Teilbudget müsste eine Ursache in der App benennen. Beides trifft nicht zu: 3100 liegt bei 80–88, und der Hydrierungsblock ist in E0 gleich groß.
+
+**Folgen zweiter Ordnung:**
+- Ausnahmen: 1 von höchstens 2. Z-02, Z-11 und Z-12 sind nicht betroffen.
+- Z-08 wird in ABNAHME als „AUSNAHME A-01“ geführt, nie als abgehakt.
+- ML-27 legt die Feldprüfung nach dem Livegang fest. Fällt sie aus, ist Weg 1 der nächste Schritt (eigener Auftrag).
+
+**Nachtrag Endstand 325c38a (20:38 UTC, `protokolle/C3b-endleistung.log`):**
+- Verschränkt in 5 Runden: Mediane 3500 81–89, 3100 79–86, Paarregel 11/11 (`C-lighthouse-v.md`).
+- INP in 3 Runden: 11/11 ≤ 200 ms, jede Route schneller als der Ausgangsstand (`C3b-inp.md`).
+- Die Ausnahme gilt unverändert.
+
+## L-E15 · 2026-10-12 · Opus · Abschlussblock direkt vor dem Fuß ist hell (Sichtabnahme C3, H-F01)
+- **Anlass:** Über uns, Projekte und Korankurse enden mit einem tiefgrünen Aufruf, und gleich darunter folgt der tiefgrüne Fuß. Zwei dunkle Flächen stehen übereinander, getrennt nur von einem schmalen Papierstreifen (≈ 25–72 px). Das senkt Farbe/Bild auf 7 (`berichte/SICHTABNAHME-C3.md` §1).
+- **Entscheidung:** Ein Abschlussblock, der unmittelbar vor dem Fuß steht, ist hell:
+  - Fläche `bg-gruen-50` mit einem `gruen-700`-Band oben (Muster Kontakt, H-E03).
+  - Titel in Tinte, Primärknopf grün, Sekundärknopf mit Rand.
+  - Die Fläche bleibt dunkel, wo sie nicht vor dem Fuß steht: Karte „Nächstes Gebet“ oben auf /gebetszeiten, Seitenspalte „Haben Sie Fragen?“ auf /mitglied-werden, Zahlen der IGMG im Tab.
+- **Löst ab:** Die Teilverwerfung „Seitenende hell“ aus C2 (H-C07). Ihre Begründung, dass die AnmeldeKarte zu den dunklen Aufrufen passt, entfällt, weil diese Aufrufe jetzt ebenfalls hell sind.
+- **Folgen:** REFERENZ §2 nimmt die Regel auf. Der Fuß bleibt die einzige tiefgrüne Schlussfläche jeder Seite.
+
+## L-E16 · 2026-10-12 · Opus · AUSNAHME A-02: Z-04 jede Hauptansicht ≥ 8 (Denkprotokoll, L7)
+
+**Ziel:** Z-04. Der Endprüfer bewertet die Nachher-Bilder nach Rubrik §10 in sechs Kategorien. Ziel: jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen.
+
+**Stand** (Trockenlauf der Endprüfung, `protokolle/C3b-endpruefung-trockenlauf.md`):
+- Nachher ist im Blindvergleich in 11 von 11 Ansichten vorgezogen. Mittel aus fünf Kategorien: nachher 7,0–7,8, vorher 5,0–6,0.
+- Mit Bewegung als sechster Kategorie liegen die Ansichten bei 7,17–7,83 (Mittel 7,58), das Cockpit bei 7,67. Keine Hauptansicht erreicht 8.
+- Eine einzige Kategorie liegt unter 7: Über uns, Details 6. Grund ist der Weg der Gemeinde als Zwischenbild der Bewegung im Bildsatz (Schirm 3, 350 ms nach dem Scrollen). Der Endprüfer nennt das selbst.
+- Maßgebliche Werte (Endprüfung Lauf 2, `protokolle/C3b-endpruefung.md`, Bildsatz im Endzustand): Ansichten 7,50–7,83, Mittel 7,68, keine Kategorie unter 7, Nachher 11/11 vorgezogen (+2,3 im Mittel aus fünf Kategorien); Cockpit 7,67.
+
+**Vier belegte Anläufe** (Sichtabnahme → Befundwelle → neue Sichtabnahme, je fünf frische Opus-Prüfer):
+1. Sichtabnahme E3 (Ø 6,29) → H-B, 14 Pakete
+2. Sichtabnahme E4 (Ø 7,16) → H-C, 13 Pakete
+3. Sichtabnahme C2 (Ø 7,52) → H-E, 14 Pakete
+4. Sichtabnahme C3 (Ø 7,65, erstmals keine Kategorie unter 7) → H-F, 13 Pakete
+
+Alle 54 Pakete sind von Opus abgenommen (Noten 8–8,5). Belege: `berichte/SICHTABNAHME-E3.md`, `-E4.md`, `-C2.md`, `-C3.md`; Commits 6596a6e, f44119b, 0dc2e7c–5d19108, 8e93ef8, 1bbee03, 6464993.
+
+**Wege:**
+1. **Fünfte Befundwelle.** Der Zuwachs je Welle sinkt: +0,87, +0,36, +0,13. Die Restabzüge liegen verstreut in Komposition und Details, ohne gemeinsame Ursache: Kopfzone der Detailseite, doppelter Rücksprung, Leerflächen, Umbrüche einzelner Zeilen, Farben einzelner Hinweise. Für Detail (7,33) und Über uns (7,17) fehlen 0,7–0,8 Punkte, also mehrere Wellen.
+   - Neue Blickwinkel der Prüfer nehmen Punkte auch wieder weg; in C3 fielen zwei Ansichten ohne Bildregression.
+   - Jede Welle riskiert den Bestand (Z-02) und die Momente (Z-05).
+   - Pflicht und Kür sind erfüllt, und laut Lauf entstehen keine neuen Pakete ohne Befund.
+2. **Rubrik lockern oder andere Prüfer wählen:** Das wäre unredlich und widerspricht der Abschlussregel.
+3. **AUSNAHME mit bester Ersatzlösung:**
+   - Nachher ist im Blindvergleich überall vorgezogen, mit +2,3 Punkten im Mittel gegenüber dem Ausgangsstand (Endprüfung Lauf 2; Trockenlauf +2,2).
+   - Jede Hauptansicht liegt ≥ 7; die Bewegungsnoten liegen bei 7–8.
+   - Die benannten Restbefunde werden als Übergabe für einen eigenen Gestaltungsauftrag in BERICHT „Offen“ geführt.
+
+**Bewertung:**
+- Der Nordstern „würdevoll, ruhig, eigenständig“ ist im Blindvergleich deutlich erreicht: Die Prüfer nennen Achtstern-System, Tagesbogen, mobile Eigenlösungen und neutrale Kennmarken.
+- Das Ziel 8 je Ansicht ist ein Spitzenmaß. Der Abstand von 0,2–0,8 Punkten liegt in Einzelheiten, nicht in der Richtung.
+- Weg 1 kostet mehrere Wellen mit sinkendem Ertrag und Risiko für Geprüftes. Weg 3 ist ehrlich und prüfbar und lässt die Fortsetzung bei den Menschen.
+
+**Umkehrprobe:** Wäre ≥ 8 mit vertretbarem Aufwand erreichbar, hätte die vierte Welle mit 13 gezielten Paketen auf die C3-Befunde den Abstand schließen müssen. Das Mittel stieg aber nur um 0,13 (C2 → C3); im Blindvergleich nach H-F liegt es bei 7,58 mit Bewegung. Das ist ein Plateau.
+
+**Folgen zweiter Ordnung:**
+- Ausnahmen: 2 von höchstens 2. Eine weitere AUSNAHME ist nicht möglich; wäre eine nötig, folgt HALT nach AUFTRAG.
+- Z-02, Z-11 und Z-12 sind nicht betroffen.
+- Z-04 steht in ABNAHME als „AUSNAHME A-02“, nie als abgehakt.
+- Übergabe: Restbefunde aus dem Blindvergleich in BERICHT „Offen“.

@@ -1,15 +1,20 @@
 import { ArrowRight, CircleCheck, CircleX, Clock, Info, MapPin, User } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import type { ComponentType } from 'react';
 import { Link } from '@/i18n/link';
 import type { Ziel } from '@/i18n/navigation';
+import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import type { Sprache } from '@/lib/i18n/inhalt';
 import type { BildDaten } from '@/lib/medien/bild';
 import { cn } from '@/lib/utils';
 import type { Anmeldeweg, KursDaten } from '@/server/queries/kurse';
 import { Bildplatzhalter } from './Bildplatzhalter';
-import { Achtstern } from './Icons';
+import { Achtstern, Stern8 } from './Icons';
 import { MedienBild, SIZES_RASTER } from './MedienBild';
 import { Text, textMitSprache } from './Text';
+
+/** Lucide-Symbole und der Achtstern (Stern8) haben dieselbe Form: Größe über className, dekorativ über aria-hidden. */
+type StatusZeichen = ComponentType<{ className?: string; 'aria-hidden'?: boolean }>;
 
 /**
  * Lokales Ziel je Anmeldeweg (design/CourseCard.dc.html Z38, Blatt C09): Voranmeldung bzw. Kontakt › Anfahrt.
@@ -19,6 +24,30 @@ export function zielFuer(anmeldeweg: Anmeldeweg): Ziel | null {
   if (anmeldeweg === 'register') return { pathname: '/bildung/voranmeldung' };
   if (anmeldeweg === 'join') return { pathname: '/kontakt', hash: 'karte' };
   return null;
+}
+
+/**
+ * Uhrzeitspannen brechen nicht mitten im Bereich um (REFERENZ §2, Terminzeile); Wochentage davor dürfen umbrechen.
+ * Nur Darstellung, Daten unverändert.
+ */
+const ZEITSPANNE = /(\d{1,2}:\d{2}\s?[–-]\s?\d{1,2}:\d{2}(?:\s?Uhr)?)/;
+
+function ZeitenText({ feld, sprache }: { feld: Mehrsprachig; sprache: Sprache }) {
+  const { text, lang } = textMitSprache(feld, sprache);
+  if (!text) return null;
+  return (
+    <span lang={lang}>
+      {text.split(ZEITSPANNE).map((teil, i) =>
+        i % 2 ? (
+          <span key={i} className="whitespace-nowrap">
+            {teil}
+          </span>
+        ) : (
+          teil
+        ),
+      )}
+    </span>
+  );
 }
 
 /**
@@ -40,14 +69,13 @@ export async function CourseCard({
   const titel = textMitSprache(kurs.titel, sprache).text;
   const zustand = kurs.anmeldeweg;
   const ziel = zielFuer(zustand);
-  const status =
+  // Grün nur bei der Voranmeldung (Handlung); Teilnahme und geschlossen sind neutral (H-E11, K-010)
+  const status: { text: string; klasse: string; Icon: StatusZeichen } =
     zustand === 'closed'
-      ? { text: t('statusGeschlossen'), klasse: 'bg-fehler-toenung text-fehler', Icon: CircleX }
-      : {
-          text: zustand === 'register' ? t('statusVoranmeldung') : t('statusKeineAnmeldung'),
-          klasse: 'bg-gruen-50 text-gruen-800',
-          Icon: CircleCheck,
-        };
+      ? { text: t('statusGeschlossen'), klasse: 'border border-linie bg-sand text-tinte-2', Icon: CircleX }
+      : zustand === 'register'
+        ? { text: t('statusVoranmeldung'), klasse: 'border border-gruen-700 bg-weiss text-gruen-800', Icon: Stern8 }
+        : { text: t('statusKeineAnmeldung'), klasse: 'border border-linie bg-sand text-tinte-2', Icon: CircleCheck };
   const aktionText = zustand === 'register' ? t('aktionVoranmeldung') : zustand === 'join' ? t('aktionTeilnahme') : t('aktionGesperrt');
   const AktionIcon = zustand === 'join' ? MapPin : ArrowRight;
   const StatusIcon = status.Icon;
@@ -66,7 +94,12 @@ export async function CourseCard({
         <Bildplatzhalter beschriftung={t('foto', { titel })} className="h-40 border-b border-linie" />
       )}
       <div className="flex flex-1 flex-col gap-3.5 p-6">
-        <span className={cn('inline-flex items-center gap-1.5 self-start rounded-pill px-3 py-0.5 text-16 font-bold', status.klasse)}>
+        <span
+          className={cn(
+            'inline-flex items-center gap-1.5 self-start rounded-pill px-3 py-px text-16 leading-normal font-bold',
+            status.klasse,
+          )}
+        >
           <StatusIcon aria-hidden className="size-4" />
           {status.text}
         </span>
@@ -94,7 +127,7 @@ export async function CourseCard({
                   <span className="sr-only">{t('zeiten')}</span>
                 </dt>
                 <dd className="text-pretty">
-                  <Text feld={kurs.zeiten} sprache={sprache} />
+                  <ZeitenText feld={kurs.zeiten} sprache={sprache} />
                 </dd>
               </div>
             ) : null}

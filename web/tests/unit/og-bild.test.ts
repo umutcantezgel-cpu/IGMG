@@ -1,7 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { describe, expect, it } from 'vitest';
-import { bildTitel, ohneEmoji, terminZeile, titelSchriftgroesse } from '@/lib/seo/og-bild';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import {
+  bildTitel,
+  inhaltOderStandard,
+  ladeOgSchriften,
+  ladeOgSymbol,
+  ohneEmoji,
+  terminZeile,
+  titelSchriftgroesse,
+} from '@/lib/seo/og-bild';
 
 describe('Open-Graph-Bilder: Titel (K-14, K-16)', () => {
   it('wählt die Schriftgröße nach Gesamtlänge (höchstens drei Zeilen)', () => {
@@ -72,5 +80,55 @@ describe('Open-Graph-Texte (Namensraum ogBild)', () => {
       expect(lade(sprache).alt.nachricht).toContain('{titel}');
       expect(lade(sprache).alt.veranstaltung).toContain('{zeit}');
     }
+  });
+});
+
+describe('Open-Graph-Bilder: Laufzeit ohne Datenbank (Beispielmodus, ADR 0019)', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+  const fehlschlag = () => Promise.reject(new Error('DATABASE_URL fehlt (Betrieb braucht PostgreSQL).'));
+
+  it('gibt den Inhalt unverändert weiter', async () => {
+    await expect(inhaltOderStandard(() => Promise.resolve({ titel: 'A' }))).resolves.toEqual({ titel: 'A' });
+    await expect(inhaltOderStandard(() => Promise.resolve(null))).resolves.toBeNull();
+  });
+
+  it('fragt zur Laufzeit ohne DATABASE_URL gar nicht erst ab und nimmt das Standardbild (null)', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.stubEnv('DATABASE_URL', '');
+    vi.stubEnv('BAU_PGLITE', '');
+    const laden = vi.fn(fehlschlag);
+    await expect(inhaltOderStandard(laden)).resolves.toBeNull();
+    expect(laden).not.toHaveBeenCalled();
+  });
+
+  it('lädt beim Bau mit PGlite (BAU_PGLITE=1) auch ohne DATABASE_URL', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.stubEnv('DATABASE_URL', '');
+    vi.stubEnv('BAU_PGLITE', '1');
+    await expect(inhaltOderStandard(() => Promise.resolve({ titel: 'B' }))).resolves.toEqual({ titel: 'B' });
+  });
+
+  it('reicht mit Datenbank einen Fehler weiter (keine Störung als Standardbild zwischenspeichern)', async () => {
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.stubEnv('DATABASE_URL', 'postgres://beispiel');
+    await expect(inhaltOderStandard(fehlschlag)).rejects.toThrow('DATABASE_URL fehlt');
+  });
+
+  it('liest Monogramm und Schriften synchron und liefert jedes Mal dasselbe Ergebnis', async () => {
+    const symbol = await ladeOgSymbol();
+    expect(symbol.startsWith('data:image/png;base64,')).toBe(true);
+    expect(await ladeOgSymbol()).toBe(symbol);
+    const schriften = await ladeOgSchriften();
+    expect(schriften?.map((s) => `${s.name} ${s.weight}`)).toEqual([
+      'Titel 600',
+      'Titel 600',
+      'Text 400',
+      'Text 400',
+      'Text 700',
+      'Text 700',
+    ]);
+    expect(await ladeOgSchriften()).toBe(schriften);
   });
 });

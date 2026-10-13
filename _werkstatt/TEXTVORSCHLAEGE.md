@@ -36,3 +36,11 @@ Vorschlag: Titel ohne die Kennung, also nur „Umzug in die Garbenheimerstraße�
 | `korankurse.anmeldungText` | Melden Sie sich noch heute für unsere Korankurse an und beginnen Sie Ihre spirituelle Reise. | Anmeldung für die Korankurse: Wir melden uns mit Ort, Zeit und den nächsten Schritten. |
 
 Begründung: Der neue 404-Satz führt zu der Liste der Hauptwege, die H-B14 unter dem Text ergänzt. Der Korankurs-Satz verzichtet auf Werbesprache und sagt, was nach der Anmeldung passiert.
+
+## TV-06 · Weg der Gemeinde: Ära nicht doppelt, Halbgeviertstrich in Bildbeschreibungen (Sichtabnahme C2, H-E09)
+- **Anlass:** Seit H-E09 steht die Ära jeder Station als grüne Zeile über dem Titel. Die Stationstitel beginnen aber selbst noch mit der Ära, etwa „[Gründungsjahr] - Gründung in der Formerstraße“ oder „Frühe Jahre - Umzug zur Garbenheimerstraße“. Damit steht die Ära doppelt da.
+- **Vorschlag de:**
+  - Stationstitel ohne vorangestellte Ära, etwa „Gründung in der Formerstraße“ und „Umzug zur Garbenheimerstraße“.
+  - In den Bildbeschreibungen „ – “ (Halbgeviertstrich mit Leerzeichen) statt „ - “, etwa „Foto: Größeres Gemeindezentrum – Wachstum in der Garbenheimerstraße“. Mit `text-balance` stand sonst „- Wachstum“ am Zeilenanfang.
+- **tr/en:** gleiches Muster, Titel ohne Ära, „ – “ in den Bildbeschreibungen.
+- **Ort:** Stammdaten bzw. Verwaltung › Seiteninhalte (Zeitleiste von Über uns). Der Lauf ändert Seeds und gepflegte Texte nicht (G-08). Deshalb gibt es keinen Eintrag in `neu-uebersetzt.json`.

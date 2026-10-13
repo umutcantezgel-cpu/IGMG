@@ -10,6 +10,12 @@ import { morphKlasse } from './morph';
  */
 const HOECHSTENS_MS = 3500;
 
+/**
+ * Jüngster Übergang. Nur er räumt das Kennzeichen `data-uebergang` wieder ab: Ein schnellerer Klick dazwischen
+ * übernimmt den Zustand, der ältere Übergang darf ihn nicht löschen.
+ */
+let letzter: ViewTransition | null = null;
+
 /** Kurze Pause über setTimeout: requestAnimationFrame ruft der Browser während der Übergangs-Aktualisierung nicht auf. */
 function pause(ms: number): Promise<void> {
   return new Promise((fertig) => setTimeout(fertig, ms));
@@ -58,6 +64,9 @@ function benenneKarte(link: Element): HTMLElement[] {
  * internen Link → `document.startViewTransition` → darin `router.push` → Ende, sobald die neue Seite steht.
  * Ohne Unterstützung im Browser, bei reduzierter Bewegung, Zusatztasten, neuen Fenstern, Downloads, fremden Zielen
  * und Sprungmarken auf derselben Seite bleibt der normale Link-Klick unverändert.
+ * Gibt es gemeinsame Elemente (Karte → Detail), setzt der Baustein `data-uebergang='morph'` an `<html>`: Der Inhalt
+ * blendet dann erst nach `dauer-wechsel` ein, Titel und Bild kommen zuerst an (K-007, B-05; gesamt 640 ms, C3, H-F08).
+ * Nach dem Übergang steht das Kennzeichen nicht mehr an `<html>`.
  */
 export function SeitenUebergang() {
   const router = useRouter();
@@ -76,16 +85,26 @@ export function SeitenUebergang() {
       if (ziel === location.pathname + location.search) return;
       e.preventDefault();
       const markiert = benenneKarte(link);
+      if (markiert.length) {
+        document.documentElement.dataset.uebergang = 'morph';
+      } else {
+        delete document.documentElement.dataset.uebergang;
+      }
       const alt = sichtbareSeite();
       const uebergang = document.startViewTransition(async () => {
         router.push(ziel + url.hash);
         await warteAufSeite(ziel, alt);
       });
+      letzter = uebergang;
       // Nach dem Übergang die Namen wieder lösen (Rückweg ohne doppelte Namen)
       void uebergang.finished.finally(() => {
         for (const el of markiert) {
           el.style.removeProperty('view-transition-name');
           el.style.removeProperty('view-transition-class');
+        }
+        if (letzter === uebergang) {
+          delete document.documentElement.dataset.uebergang;
+          letzter = null;
         }
       });
     }

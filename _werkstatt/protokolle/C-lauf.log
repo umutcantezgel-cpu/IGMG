@@ -129,3 +129,392 @@
    rc=0
    rc=0 (Regeln)
 == 07:10:55 2a axe WCAG 2.2 AA 1440 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 07:13:17 2b axe Türkisch 390 und Englisch 1440
+   rc=0
+   rc=0
+== 07:14:04 2c Tastatur 390 (mit Hauptaufgaben) und 1440
+   rc=0
+   rc=0
+== 07:17:13 2d Telefonmenü: Fokus im Kreis, Escape (F-18)
+   rc=0
+== 07:17:20 3 Konsole 390 (25 Routen + Türkisch + Englisch)
+   rc=0
+   rc=0
+   rc=0
+== 07:19:20 3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit
+   rc=0
+== 07:19:21 STUFE C FERTIG (ab 1 bis 3)
+== 07:20:12 STUFE C REV=fa5c005 (Worktree fa5c005 Stufe-C-Nacharbeit: freie Werte, SVG, Zugänglichkei) ab 5 bis 11
+== 07:20:12 5a B-05 Seitenwechsel: vt-status /nachrichten, /veranstaltungen, / und drei Paare ohne Karte
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 07:20:56 5b B-05 reduzierte Bewegung (keine Überblendung)
+   rc=0
+== 07:21:11 5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)
+   rc=0
+   rc=1
+== 07:21:25 6a Momente B-06..B-09: Bilder (2 Läufe), Bildrate CPU 4× (3 Läufe), reduziert; B-06 bei Tageslicht (2026-10-12T14:10:00+02:00)
+   rc=0 (b06 bilder)
+   rc=0 (b06 bildrate)
+   rc=0 (b06 reduziert)
+   rc=0 (b07 bilder)
+   rc=0 (b07 bildrate)
+   rc=0 (b07 reduziert)
+   rc=0 (b08 bilder)
+   rc=0 (b08 bildrate)
+   rc=0 (b08 reduziert)
+   rc=0 (b09 bilder)
+   rc=0 (b09 bildrate)
+   rc=0 (b09 reduziert)
+== 07:23:17 6b bewegung: Start, Über uns, Projekte, Organisation (reduziert, Bildrate, Einzelbilder), Über uns/Projekte mit Scrollen
+   rc=0 (/)
+   rc=0 (/ueber-uns)
+   rc=0 (/projekte)
+   rc=0 (/organisationen/ana-teskilati)
+   rc=0 (/ueber-uns scrollen)
+   rc=0 (/projekte scrollen)
+== 07:24:54 6c B-10 Leiste: Wechsel 390/1440/aufgeklappt, reduziert, Erstladen
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 07:25:30 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree fa5c005)
+258
+   rc=0
+== 07:25:30 7b SVG-Prüfung (Worktree fa5c005)
+   rc=0
+== 07:25:31 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen fa5c005 (H-R01)
+   rc=0
+== 07:25:42 8a pnpm release:check (typen, lint, unit, integration, sprachen, geheimnisse; startklar ohne DATABASE_URL übersprungen)
+   rc=0
+== 07:45:42 8b pnpm startklar gegen Kopie der Prüflings-Datenbank: entwicklung und produktion (JSON, ohne Werte)
+   rc=0
+   rc=1 (produktion: Fehler sind Menschen-Aufgaben, Abgleich MENSCHEN.md)
+== 07:45:48 9 Funktionsliste F-01…F-24 gepaart: Ausgangsstand 3100, dann Prüfling 3500 (Verwaltung mit Anmeldestand)
+   rc=0 (3100)
+   rc=0 (3500)
+== 07:54:00 10 V-02: vercel build in Archivkopie von fa5c005, preview und production (ohne DB, wie das Projekt heute)
+   rc=0 (preview)
+   rc=0 (production)
+   NFT symbol-512.png in 3 OG-Spuren
+   NFT source-serif-4-latin-600-normal.woff in 3 OG-Spuren
+   NFT atkinson-hyperlegible-next-latin-700-normal.woff in 3 OG-Spuren
+  "crons": [
+== 07:57:58 11 Register-Abgleich: Animationen im CSS gegen KERN K-007 (B-01…B-12)
+ 10 /home/user/IGMG/_werkstatt/protokolle/C-keyframes.txt
+  3 /home/user/IGMG/_werkstatt/protokolle/C-animate-klassen.txt
+ 13 total
+== 07:57:58 STUFE C FERTIG (ab 5 bis 11)
+== 10:50:41 STUFE C REV=58a3344 (Worktree 58a3344 Formatierung: vier im Lauf geänderte Dateien nach P) ab 1 bis 3
+== 10:50:41 1a Bildsatz normal (25 Routen: 13 Haupt-/Zustandsansichten + 12 Stichprobe, 390/768/1440)
+   rc=0
+== 10:54:11 1b Bildsatz reduziert (25 Routen)
+   rc=0
+== 10:57:44 1c Bildsatz Türkisch vollständig (11 Hauptansichten)
+   rc=0
+== 10:59:28 1d Bildsatz Englisch (3 Ansichten)
+   rc=0
+== 10:59:55 2a axe WCAG 2.2 AA 390 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 11:02:19 2a axe WCAG 2.2 AA 1440 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 11:04:49 2b axe Türkisch 390 und Englisch 1440
+   rc=0
+   rc=0
+== 11:05:30 2c Tastatur 390 (mit Hauptaufgaben) und 1440
+   rc=0
+   rc=0
+== 11:08:37 2d Telefonmenü: Fokus im Kreis, Escape (F-18)
+   rc=0
+== 11:08:44 3 Konsole 390 (25 Routen + Türkisch + Englisch)
+   rc=0
+   rc=0
+   rc=0
+== 11:10:40 3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit
+   rc=0
+== 11:10:42 STUFE C FERTIG (ab 1 bis 3)
+== 11:10:42 STUFE C REV=58a3344 (Worktree 58a3344 Formatierung: vier im Lauf geänderte Dateien nach P) ab 5 bis 11
+== 11:10:42 5a B-05 Seitenwechsel: vt-status /nachrichten, /veranstaltungen, / und drei Paare ohne Karte
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 11:11:26 5b B-05 reduzierte Bewegung (keine Überblendung)
+   rc=0
+== 11:11:41 5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)
+   rc=0
+   rc=0
+== 11:12:03 6a Momente B-06..B-09: Bilder (2 Läufe), Bildrate CPU 4× (3 Läufe), reduziert; B-06 bei Tageslicht (2026-10-12T14:10:00+02:00)
+   rc=0 (b06 bilder)
+   rc=0 (b06 bildrate)
+   rc=0 (b06 reduziert)
+   rc=0 (b07 bilder)
+   rc=0 (b07 bildrate)
+   rc=0 (b07 reduziert)
+   rc=0 (b08 bilder)
+   rc=0 (b08 bildrate)
+   rc=0 (b08 reduziert)
+   rc=0 (b09 bilder)
+   rc=0 (b09 bildrate)
+   rc=0 (b09 reduziert)
+== 11:13:52 6b bewegung: Start, Über uns, Projekte, Organisation (reduziert, Bildrate, Einzelbilder), Über uns/Projekte mit Scrollen
+   rc=0 (/)
+   rc=0 (/ueber-uns)
+   rc=0 (/projekte)
+   rc=0 (/organisationen/ana-teskilati)
+   rc=0 (/ueber-uns scrollen)
+   rc=0 (/projekte scrollen)
+== 11:15:28 6c B-10 Leiste: Wechsel 390/1440/aufgeklappt, reduziert, Erstladen
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 11:16:04 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree 58a3344)
+259
+   rc=0
+== 11:16:05 7b SVG-Prüfung (Worktree 58a3344)
+   rc=0
+== 11:16:06 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen 58a3344 (H-R01)
+   rc=0
+== 11:16:18 8a pnpm release:check (typen, lint, unit, integration, sprachen, geheimnisse; startklar ohne DATABASE_URL übersprungen)
+   rc=1
+== 11:37:56 8b pnpm startklar gegen Kopie der Prüflings-Datenbank: entwicklung und produktion (JSON, ohne Werte)
+   rc=0
+   rc=1 (produktion: Fehler sind Menschen-Aufgaben, Abgleich MENSCHEN.md)
+== 11:38:02 9 Funktionsliste F-01…F-24 gepaart: Ausgangsstand 3100, dann Prüfling 3500 (Verwaltung mit Anmeldestand)
+   rc=0 (3100)
+   rc=0 (3500)
+== 11:45:48 10 V-02: vercel build in Archivkopie von 58a3344, preview und production (ohne DB, wie das Projekt heute)
+   rc=0 (preview)
+   rc=0 (production)
+   NFT symbol-512.png in 3 OG-Spuren
+   NFT source-serif-4-latin-600-normal.woff in 3 OG-Spuren
+   NFT atkinson-hyperlegible-next-latin-700-normal.woff in 3 OG-Spuren
+  "crons": [
+== 11:49:52 11 Register-Abgleich: Animationen im CSS gegen KERN K-007 (B-01…B-12)
+ 12 /home/user/IGMG/_werkstatt/protokolle/C-keyframes.txt
+  3 /home/user/IGMG/_werkstatt/protokolle/C-animate-klassen.txt
+ 15 total
+== 11:49:52 STUFE C FERTIG (ab 5 bis 11)
+== 11:52:52 STUFE C REV=58a3344 (Worktree 58a3344 Formatierung: vier im Lauf geänderte Dateien nach P) ab 12 bis 12
+== 11:52:52 12 Lighthouse mobil verschränkt: 5 Runden × 11 Routen × (3100, 3500), je 1 Lauf (Z-08)
+   11:52:52 Runde 1 route-00 · Last 1.30
+   11:54:20 Runde 1 route-01 · Last 1.39
+   11:55:47 Runde 1 route-02 · Last 0.74
+   11:57:13 Runde 1 route-03 · Last 1.17
+   11:58:37 Runde 1 route-04 · Last 1.74
+   12:00:00 Runde 1 route-05 · Last 1.38
+   12:01:23 Runde 1 route-06 · Last 1.64
+   12:02:46 Runde 1 route-07 · Last 1.74
+   12:04:13 Runde 1 route-08 · Last 1.31
+   12:05:35 Runde 1 route-09 · Last 0.96
+   12:06:57 Runde 1 route-10 · Last 1.00
+   12:08:17 Runde 2 route-00 · Last 1.06
+   12:09:43 Runde 2 route-01 · Last 0.98
+   12:11:06 Runde 2 route-02 · Last 0.89
+   12:12:33 Runde 2 route-03 · Last 0.82
+   12:13:56 Runde 2 route-04 · Last 1.00
+   12:15:16 Runde 2 route-05 · Last 1.73
+   12:16:37 Runde 2 route-06 · Last 1.06
+   12:18:01 Runde 2 route-07 · Last 1.04
+   12:19:28 Runde 2 route-08 · Last 1.62
+   12:20:49 Runde 2 route-09 · Last 2.11
+   12:22:10 Runde 2 route-10 · Last 2.12
+   12:23:36 Runde 3 route-00 · Last 1.46
+   12:25:02 Runde 3 route-01 · Last 1.64
+   12:26:22 Runde 3 route-02 · Last 1.36
+   12:27:47 Runde 3 route-03 · Last 1.77
+   12:29:09 Runde 3 route-04 · Last 1.51
+   12:30:30 Runde 3 route-05 · Last 1.40
+   12:31:55 Runde 3 route-06 · Last 1.06
+   12:33:16 Runde 3 route-07 · Last 1.74
+   12:34:41 Runde 3 route-08 · Last 1.66
+   12:36:05 Runde 3 route-09 · Last 1.95
+   12:37:26 Runde 3 route-10 · Last 1.57
+   12:38:46 Runde 4 route-00 · Last 1.13
+   12:40:10 Runde 4 route-01 · Last 1.85
+   12:41:33 Runde 4 route-02 · Last 1.46
+   12:43:04 Runde 4 route-03 · Last 2.68
+   12:44:29 Runde 4 route-04 · Last 1.59
+   12:45:49 Runde 4 route-05 · Last 1.05
+   12:47:11 Runde 4 route-06 · Last 1.40
+   12:48:35 Runde 4 route-07 · Last 1.81
+   12:50:05 Runde 4 route-08 · Last 1.45
+   12:51:25 Runde 4 route-09 · Last 1.08
+   12:52:46 Runde 4 route-10 · Last 0.97
+   12:54:07 Runde 5 route-00 · Last 1.06
+   12:55:32 Runde 5 route-01 · Last 1.93
+   12:56:55 Runde 5 route-02 · Last 1.57
+   12:58:21 Runde 5 route-03 · Last 1.85
+   12:59:43 Runde 5 route-04 · Last 1.33
+   13:01:04 Runde 5 route-05 · Last 1.97
+   13:02:25 Runde 5 route-06 · Last 1.16
+   13:03:49 Runde 5 route-07 · Last 1.05
+   13:05:15 Runde 5 route-08 · Last 1.07
+   13:06:37 Runde 5 route-09 · Last 1.10
+   13:07:55 Runde 5 route-10 · Last 1.20
+lh-paare: 11 Routen, Paarregel erfüllt auf 11; Protokoll /home/user/IGMG/_werkstatt/protokolle/C-lighthouse-v.md
+   rc=0 · Last 2.94
+== 13:09:17 STUFE C FERTIG (ab 12 bis 12)
+== 17:20:58 STUFE C REV=325c38a (Worktree 325c38a endstand.sh: Schalter OHNE_RUHE (Abschlussprüfung o) ab 1 bis 3
+== 17:20:58 1a Bildsatz normal (25 Routen: 13 Haupt-/Zustandsansichten + 12 Stichprobe, 390/768/1440)
+   rc=0
+== 17:24:29 1b Bildsatz reduziert (25 Routen)
+   rc=0
+== 17:28:02 1c Bildsatz Türkisch vollständig (11 Hauptansichten)
+   rc=0
+== 17:29:46 1d Bildsatz Englisch (3 Ansichten)
+   rc=0
+== 17:30:14 2a axe WCAG 2.2 AA 390 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 17:32:37 2a axe WCAG 2.2 AA 1440 (25 Routen)
+   rc=0
+   rc=0 (Regeln)
+== 17:35:02 2b axe Türkisch 390 und Englisch 1440
+   rc=0
+   rc=0
+== 17:35:47 2c Tastatur 390 (mit Hauptaufgaben) und 1440
+   rc=0
+   rc=0
+== 17:39:00 2d Telefonmenü: Fokus im Kreis, Escape (F-18)
+   rc=0
+== 17:39:06 3 Konsole 390 (25 Routen + Türkisch + Englisch)
+   rc=0
+   rc=0
+   rc=0
+== 17:41:04 3b Statuscodes: unbekannte Adressen 404, Hauptansichten 200, Gesundheit
+   rc=0
+== 17:41:05 STUFE C FERTIG (ab 1 bis 3)
+== 17:41:05 STUFE C REV=325c38a (Worktree 325c38a endstand.sh: Schalter OHNE_RUHE (Abschlussprüfung o) ab 5 bis 11
+== 17:41:05 5a B-05 Seitenwechsel: vt-status /nachrichten, /veranstaltungen, / und drei Paare ohne Karte
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 17:41:47 5b B-05 reduzierte Bewegung (keine Überblendung)
+   rc=0
+== 17:42:02 5c B-05 Zeitlupe Nachricht und Veranstaltung (5 Bilder)
+   rc=0
+   rc=0
+== 17:42:22 6a Momente B-06..B-09: Bilder (2 Läufe), Bildrate CPU 4× (3 Läufe), reduziert; B-06 bei Tageslicht (2026-10-12T14:10:00+02:00)
+   rc=0 (b06 bilder)
+   rc=0 (b06 bildrate)
+   rc=0 (b06 reduziert)
+   rc=0 (b07 bilder)
+   rc=0 (b07 bildrate)
+   rc=0 (b07 reduziert)
+   rc=0 (b08 bilder)
+   rc=0 (b08 bildrate)
+   rc=0 (b08 reduziert)
+   rc=0 (b09 bilder)
+   rc=0 (b09 bildrate)
+   rc=0 (b09 reduziert)
+== 17:44:08 6b bewegung: Start, Über uns, Projekte, Organisation (reduziert, Bildrate, Einzelbilder), Über uns/Projekte mit Scrollen
+   rc=0 (/)
+   rc=0 (/ueber-uns)
+   rc=0 (/projekte)
+   rc=0 (/organisationen/ana-teskilati)
+   rc=0 (/ueber-uns scrollen)
+   rc=0 (/projekte scrollen)
+== 17:45:43 6c B-10 Leiste: Wechsel 390/1440/aufgeklappt, reduziert, Erstladen
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+   rc=0
+== 17:46:19 7a freie Werte: alle seit 9ebb4bc geänderten .ts/.tsx/.css unter web/src (Worktree 325c38a)
+262
+   rc=0
+== 17:46:19 7b SVG-Prüfung (Worktree 325c38a)
+   rc=0
+== 17:46:20 7c Wortlaut Rechts- und Einwilligungstexte 9ebb4bc gegen 325c38a (H-R01)
+   rc=0
+== 17:46:31 8a pnpm release:check (typen, lint, unit, integration, sprachen, geheimnisse; startklar ohne DATABASE_URL übersprungen)
+   rc=0
+== 18:05:20 8b pnpm startklar gegen Kopie der Prüflings-Datenbank: entwicklung und produktion (JSON, ohne Werte)
+   rc=0
+   rc=1 (produktion: Fehler sind Menschen-Aufgaben, Abgleich MENSCHEN.md)
+== 18:05:25 9 Funktionsliste F-01…F-24 gepaart: Ausgangsstand 3100, dann Prüfling 3500 (Verwaltung mit Anmeldestand)
+   rc=0 (3100)
+   rc=0 (3500)
+== 18:13:00 10 V-02: vercel build in Archivkopie von 325c38a, preview und production (ohne DB, wie das Projekt heute)
+   rc=0 (preview)
+   rc=0 (production)
+   NFT symbol-512.png in 3 OG-Spuren
+   NFT source-serif-4-latin-600-normal.woff in 3 OG-Spuren
+   NFT atkinson-hyperlegible-next-latin-700-normal.woff in 3 OG-Spuren
+  "crons": [
+== 18:17:07 11 Register-Abgleich: Animationen im CSS gegen KERN K-007 (B-01…B-12)
+ 12 /home/user/IGMG/_werkstatt/protokolle/C-keyframes.txt
+  3 /home/user/IGMG/_werkstatt/protokolle/C-animate-klassen.txt
+ 15 total
+== 18:17:07 STUFE C FERTIG (ab 5 bis 11)
+== 19:09:44 STUFE C REV=325c38a (Worktree 325c38a endstand.sh: Schalter OHNE_RUHE (Abschlussprüfung o) ab 12 bis 12
+== 19:09:44 12 Lighthouse mobil verschränkt: 5 Runden × 11 Routen × (3100, 3500), je 1 Lauf (Z-08)
+   19:09:44 Runde 1 route-00 · Last 1.35
+   19:11:10 Runde 1 route-01 · Last 1.83
+   19:12:30 Runde 1 route-02 · Last 1.70
+   19:13:58 Runde 1 route-03 · Last 1.92
+   19:15:28 Runde 1 route-04 · Last 1.78
+   19:16:59 Runde 1 route-05 · Last 1.48
+   19:18:32 Runde 1 route-06 · Last 1.75
+   19:19:53 Runde 1 route-07 · Last 0.95
+   19:21:19 Runde 1 route-08 · Last 1.40
+   19:22:40 Runde 1 route-09 · Last 1.74
+   19:24:07 Runde 1 route-10 · Last 1.37
+   19:25:27 Runde 2 route-00 · Last 1.11
+   19:26:53 Runde 2 route-01 · Last 1.30
+   19:28:21 Runde 2 route-02 · Last 1.32
+   19:29:53 Runde 2 route-03 · Last 1.50
+   19:31:20 Runde 2 route-04 · Last 2.02
+   19:32:44 Runde 2 route-05 · Last 1.19
+   19:34:06 Runde 2 route-06 · Last 1.33
+   19:35:29 Runde 2 route-07 · Last 0.95
+   19:36:58 Runde 2 route-08 · Last 0.97
+   19:38:23 Runde 2 route-09 · Last 1.76
+   19:39:45 Runde 2 route-10 · Last 1.12
+   19:41:04 Runde 3 route-00 · Last 1.82
+   19:42:32 Runde 3 route-01 · Last 2.68
+   19:43:57 Runde 3 route-02 · Last 1.39
+   19:45:22 Runde 3 route-03 · Last 1.46
+   19:46:50 Runde 3 route-04 · Last 0.89
+   19:48:10 Runde 3 route-05 · Last 2.22
+   19:49:30 Runde 3 route-06 · Last 1.32
+   19:50:50 Runde 3 route-07 · Last 1.60
+   19:52:14 Runde 3 route-08 · Last 0.97
+   19:53:35 Runde 3 route-09 · Last 1.08
+   19:54:58 Runde 3 route-10 · Last 1.03
+   19:56:20 Runde 4 route-00 · Last 1.06
+   19:57:50 Runde 4 route-01 · Last 1.19
+   19:59:13 Runde 4 route-02 · Last 1.85
+   20:00:41 Runde 4 route-03 · Last 1.03
+   20:02:02 Runde 4 route-04 · Last 1.15
+   20:03:20 Runde 4 route-05 · Last 1.59
+   20:04:39 Runde 4 route-06 · Last 1.39
+   20:06:01 Runde 4 route-07 · Last 1.85
+   20:07:26 Runde 4 route-08 · Last 1.21
+   20:08:51 Runde 4 route-09 · Last 1.47
+   20:10:11 Runde 4 route-10 · Last 1.40
+   20:11:32 Runde 5 route-00 · Last 1.14
+   20:12:56 Runde 5 route-01 · Last 1.11
+   20:14:19 Runde 5 route-02 · Last 1.92
+   20:15:44 Runde 5 route-03 · Last 1.52
+   20:17:06 Runde 5 route-04 · Last 1.46
+   20:18:26 Runde 5 route-05 · Last 1.06
+   20:19:47 Runde 5 route-06 · Last 1.04
+   20:21:05 Runde 5 route-07 · Last 0.84
+   20:22:33 Runde 5 route-08 · Last 1.32
+   20:23:52 Runde 5 route-09 · Last 1.19
+   20:25:10 Runde 5 route-10 · Last 2.06
+lh-paare: 11 Routen, Paarregel erfüllt auf 11; Protokoll /home/user/IGMG/_werkstatt/protokolle/C-lighthouse-v.md
+   rc=0 · Last 1.45
+== 20:26:33 STUFE C FERTIG (ab 12 bis 12)

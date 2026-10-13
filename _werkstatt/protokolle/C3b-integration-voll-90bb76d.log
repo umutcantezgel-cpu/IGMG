@@ -1,0 +1,13 @@
+# Integrationssuite vollständig · Stand 1501ccf (App-Stand 90bb76d, danach nur Dokumentation) · 2026-10-12T23:24:36Z
+# pnpm test:integration
+$ vitest run --project integration
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+
+ Test Files  35 passed | 1 skipped (36)
+      Tests  1420 passed | 2 expected fail | 4 skipped (1426)
+   Start at  23:24:37
+   Duration  1081.64s (tests 85%, import 15%)
+
+RC=0

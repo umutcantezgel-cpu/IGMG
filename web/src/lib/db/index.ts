@@ -4,6 +4,7 @@ import { drizzle as drizzlePg, type NodePgDatabase } from 'drizzle-orm/node-post
 import { Pool } from 'pg';
 import { installiereFehlerKuerzung } from './fehler';
 import * as schema from './schema';
+import { datenbankVerfuegbar } from './verfuegbar';
 
 /**
  * Datenbankzugang (K-05, ADR 0001, ADR 0017, ADR 0018): PostgreSQL über `pg` (Betrieb, docker compose, Vercel).
@@ -26,15 +27,50 @@ function erzeuge(): Datenbank {
     globalFuerDb.__igmgPool = pool;
     return drizzlePg(pool, { schema, casing: 'snake_case' });
   }
-  if (process.env.NODE_ENV === 'production' && process.env.BAU_PGLITE !== '1') {
+  if (!datenbankVerfuegbar()) {
     throw new Error('DATABASE_URL fehlt (Betrieb braucht PostgreSQL).');
   }
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { PGlite } = require('@electric-sql/pglite') as typeof import('@electric-sql/pglite');
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { drizzle: drizzleLite } = require('drizzle-orm/pglite') as typeof import('drizzle-orm/pglite');
-  const client = new PGlite(process.env.PGLITE_VERZEICHNIS ?? '.pglite');
+  const client = new PGlite(pgliteVerzeichnis());
   return drizzleLite(client, { schema, casing: 'snake_case' }) as unknown as Datenbank;
+}
+
+/**
+ * Beim Bau ohne Datenbank (BAU_PGLITE=1, ADR 0017/0019) sammeln mehrere Worker-Prozesse gleichzeitig Seitendaten. PGlite
+ * erlaubt je Datenverzeichnis nur einen Prozess; zwei gleichzeitige Öffner brechen mit „RuntimeError: Aborted()“ ab
+ * (Vorschau 39c76b1). Deshalb öffnet jeder Bau-Prozess eine eigene Kopie der Bau-Datenbank – beim Bau wird nur gelesen.
+ * Außerhalb des Baus (Entwicklung, Tests, lokaler Server) bleibt es beim gemeinsamen Verzeichnis.
+ */
+function pgliteVerzeichnis(): string {
+  const quelle = process.env.PGLITE_VERZEICHNIS ?? '.pglite';
+  if (process.env.BAU_PGLITE !== '1' || process.env.NEXT_PHASE !== 'phase-production-build') return quelle;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { cpSync, mkdirSync, readdirSync, rmSync } = require('node:fs') as typeof import('node:fs');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { join } = require('node:path') as typeof import('node:path');
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { tmpdir } = require('node:os') as typeof import('node:os');
+  // Eine Kopie je Prozess-ID. Next beendet seine Bau-Worker ohne „exit“-Ereignis; Kopien beendeter Prozesse räumt
+  // deshalb der nächste Start auf.
+  const basis = join(/*turbopackIgnore: true*/ tmpdir(), 'igmg-pglite-bau');
+  mkdirSync(/*turbopackIgnore: true*/ basis, { recursive: true });
+  for (const eintrag of readdirSync(/*turbopackIgnore: true*/ basis)) {
+    const pid = Number(eintrag);
+    if (!Number.isInteger(pid) || pid === process.pid) continue;
+    try {
+      process.kill(pid, 0);
+    } catch {
+      rmSync(/*turbopackIgnore: true*/ join(basis, eintrag), { recursive: true, force: true });
+    }
+  }
+  const ziel = join(/*turbopackIgnore: true*/ basis, String(process.pid));
+  rmSync(/*turbopackIgnore: true*/ ziel, { recursive: true, force: true });
+  cpSync(/*turbopackIgnore: true*/ quelle, ziel, { recursive: true });
+  process.once('exit', () => rmSync(/*turbopackIgnore: true*/ ziel, { recursive: true, force: true }));
+  return ziel;
 }
 
 /**

@@ -1,0 +1,248 @@
+{
+  "werkzeug": "vt-zeitlupe3",
+  "basis": "http://localhost:3200",
+  "von": "/veranstaltungen",
+  "ziel": "/veranstaltungen/arabisch-sprachkurs",
+  "selektor": "a[href*=\"arabisch-sprachkurs\"]",
+  "rate": 0.1,
+  "breite": 1440,
+  "bilder": [
+    {
+      "nr": 1,
+      "msNachKlick": 2095,
+      "adresse": "/veranstaltungen",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 0,
+      "animationen": [],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-01.jpg"
+    },
+    {
+      "nr": 2,
+      "msNachKlick": 3056,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 11,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-bild",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "ausblenden",
+          "pseudo": "::view-transition-old(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 113
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-02.jpg"
+    },
+    {
+      "nr": 3,
+      "msNachKlick": 4123,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 9,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-view-transition-group-anim-root",
+          "pseudo": "::view-transition-group(root)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-bild",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 210
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-03.jpg"
+    },
+    {
+      "nr": 4,
+      "msNachKlick": 5070,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 7,
+      "animationen": [
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-titel",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-titel)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "-ua-view-transition-group-anim-v-arabisch-sprachkurs-bild",
+          "pseudo": "::view-transition-group(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "-ua-view-transition-fade-in",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-new(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "-ua-view-transition-fade-out",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        },
+        {
+          "name": "-ua-mix-blend-mode-plus-lighter",
+          "pseudo": "::view-transition-old(v-arabisch-sprachkurs-bild)",
+          "ziel": "HTML",
+          "zeitstandMs": 317
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-04.jpg"
+    },
+    {
+      "nr": 5,
+      "msNachKlick": 6094,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 1,
+      "animationen": [
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 410
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-05.jpg"
+    },
+    {
+      "nr": 6,
+      "msNachKlick": 7301,
+      "adresse": "/veranstaltungen/arabisch-sprachkurs",
+      "vt": 1,
+      "kopfTop": 0,
+      "laufend": 1,
+      "animationen": [
+        {
+          "name": "einblenden",
+          "pseudo": "::view-transition-new(seite)",
+          "ziel": "HTML",
+          "zeitstandMs": 513
+        }
+      ],
+      "bild": "/home/user/IGMG/_werkstatt/bilder/H-F08/nachher-zeitlupe-veranstaltung/zeitlupe-06.jpg"
+    }
+  ],
+  "kopfVorKlick": 0,
+  "endeAdresse": "/veranstaltungen/arabisch-sprachkurs",
+  "endeVt": 1,
+  "zielErreicht": true
+}

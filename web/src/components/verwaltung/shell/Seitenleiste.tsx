@@ -20,6 +20,7 @@ import {
   Users,
   type LucideIcon,
 } from 'lucide-react';
+import { useDeferredValue, useEffect, useRef } from 'react';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -48,7 +49,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
 const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];
 
 const EINTRAG =
-  'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98';
+  'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 verwaltung:min-h-11';
 
 export type SeitenleistenEintrag = {
   schluessel: string;
@@ -74,7 +75,21 @@ export function Seitenleiste({
 }) {
   const pfad = usePathname();
   const { offen, setOffen } = useMenue();
+  // INP: Der Knopf zeigt den neuen Zustand sofort; die Navigation erscheint im nächsten, unterbrechbaren Durchlauf.
+  const sichtbar = useDeferredValue(offen);
+  const navRef = useRef<HTMLDivElement>(null);
   const aktiv = (p: string) => (p === '/verwaltung' ? pfad === p : pfad === p || pfad.startsWith(`${p}/`));
+  // Ab 900 px scrollt die Leiste bei kurzen Fenstern. Liegt der aktive Eintrag außerhalb, rückt er ohne Bewegung in die Mitte.
+  useEffect(() => {
+    const k = navRef.current;
+    const a = k?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (!k || !a || k.scrollHeight <= k.clientHeight) return;
+    const kasten = k.getBoundingClientRect();
+    const eintrag = a.getBoundingClientRect();
+    if (eintrag.top >= kasten.top && eintrag.bottom <= kasten.bottom) return;
+    const oben = eintrag.top - kasten.top + k.scrollTop;
+    k.scrollTop = oben - (k.clientHeight - a.offsetHeight) / 2;
+  }, [pfad]);
   const schliessen = () => setOffen(false);
   const uebersicht = eintraege.filter((e) => e.gruppe === undefined);
   const gruppen = GRUPPEN.map((g) => ({ gruppe: g, liste: eintraege.filter((e) => e.gruppe === g) })).filter((g) => g.liste.length > 0);
@@ -136,22 +151,25 @@ export function Seitenleiste({
     <aside
       className={cn(
         'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
-        offen ? 'tritt-auf' : 'max-verwaltung:hidden',
+        sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >
-      <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 verwaltung:min-h-0 verwaltung:overflow-y-auto verwaltung:overscroll-contain">
+      <div
+        ref={navRef}
+        className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 verwaltung:min-h-0 verwaltung:overflow-y-auto verwaltung:overscroll-contain"
+      >
         {/* Geöffnet tritt die Navigation mit B-03 auf (nur unter 900 px sichtbar); geschlossen bleibt sie ohne Bewegung. */}
         <nav id="verwaltung-navigation" aria-label={texte.navName}>
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-1 verwaltung:gap-0">
             {uebersicht.map(zeile)}
             {gruppen.length === 0 ? zurWebsite : null}
           </ul>
           {gruppen.map(({ gruppe, liste }, index) => (
-            <div key={gruppe} className="mt-3 border-t border-linie pt-3">
-              <span id={`nav-gruppe-${gruppe}`} className="block px-3.5 pb-1 text-16 font-bold text-tinte-2">
+            <div key={gruppe} className="mt-3 border-t border-linie pt-3 verwaltung:mt-2 verwaltung:pt-2">
+              <span id={`nav-gruppe-${gruppe}`} className="block px-3.5 pb-1 text-16 font-bold text-tinte-2 verwaltung:pb-0">
                 {texte.gruppe[gruppe]}
               </span>
-              <ul aria-labelledby={`nav-gruppe-${gruppe}`} className="flex flex-col gap-1">
+              <ul aria-labelledby={`nav-gruppe-${gruppe}`} className="flex flex-col gap-1 verwaltung:gap-0">
                 {liste.map(zeile)}
                 {index === letzteGruppe ? zurWebsite : null}
               </ul>

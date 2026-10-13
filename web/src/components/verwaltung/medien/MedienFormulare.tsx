@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Feld } from '@/components/verwaltung/Feld';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { DIREKT_MAX_BYTES, DIREKT_PFAD, neuerEingangsSchluessel } from '@/lib/medien/direkt';
 import { aendern, hochladen, type MedienZustand } from '@/server/actions/medien';
 
 type Start = { altDe: string; altTr: string; altEn: string; bildrechte: string };
@@ -90,22 +91,54 @@ async function verkleinere(datei: File, grenze: number): Promise<File | null> {
 
 /**
  * Hochladen (C11, ADR 0007): Datei, Alt-Text (Pflicht), Bildrechte; nach Erfolg zur Detailseite. Liegt die Grenze des
- * Servers unter der Dateigröße (Vercel), werden Bilder vorher im Browser verkleinert; zu große PDFs werden abgelehnt.
+ * Servers unter der Dateigröße (Vercel), werden Bilder vorher im Browser verkleinert. Große PDF-Dateien lädt der Browser
+ * mit Vercel Blob direkt in den Speicher (`direkt`, ADR 0020, V-05); das Formular schickt dann nur den Eingangsschlüssel.
+ * Ohne Direkt-Upload (andere Speicher) werden zu große PDF-Dateien wie bisher abgelehnt.
  */
-export function HochladenFormular({ grenzeBytes }: { grenzeBytes: number }) {
+export function HochladenFormular({ grenzeBytes, direkt = false }: { grenzeBytes: number; direkt?: boolean }) {
   const t = useTranslations('verwaltung.medien');
   const tv = useTranslations('verwaltung');
   // Erfolg leitet die Action selbst zur Detailseite weiter (kein router.push im Effekt, siehe hochladen())
   const [z, absenden, laeuft] = useActionState<MedienZustand, FormData>(hochladen, {});
   const ref = useFokus(z);
   const [vorab, setVorab] = useState<{ fehler?: string; hinweis?: string }>({});
+  const [eingang, setEingang] = useState<{ schluessel: string; name: string } | null>(null);
+  const [laedtDirekt, setLaedtDirekt] = useState(false);
   const mb = Math.floor(grenzeBytes / 1_000_000);
   const dateiFehler = vorab.fehler ?? (z.feldFehler?.datei ? t(`fehler.${z.feldFehler.datei}` as never) : undefined);
   async function gewaehlt(e: ChangeEvent<HTMLInputElement>) {
     const eingabe = e.currentTarget;
     const datei = eingabe.files?.[0];
     setVorab({});
+    setEingang(null);
     if (!datei || datei.size <= grenzeBytes) return;
+    if (direkt && datei.type === 'application/pdf') {
+      if (datei.size > DIREKT_MAX_BYTES) {
+        eingabe.value = '';
+        setVorab({ fehler: t('fehler.datei_zuGross') });
+        return;
+      }
+      setLaedtDirekt(true);
+      setVorab({ hinweis: t('hochladen.direktLaeuft', { mb }) });
+      try {
+        const { upload } = await import('@vercel/blob/client');
+        const ergebnis = await upload(neuerEingangsSchluessel(), datei, {
+          access: 'private',
+          handleUploadUrl: DIREKT_PFAD,
+          contentType: 'application/pdf',
+        });
+        // Die große Datei geht nicht mehr über die Server Action, nur ihr Eingangsschlüssel
+        eingabe.value = '';
+        setEingang({ schluessel: ergebnis.pathname, name: datei.name });
+        setVorab({ hinweis: t('hochladen.direktFertig', { name: datei.name }) });
+      } catch {
+        eingabe.value = '';
+        setVorab({ fehler: t('fehler.direktFehlgeschlagen') });
+      } finally {
+        setLaedtDirekt(false);
+      }
+      return;
+    }
     const kleiner = datei.type.startsWith('image/') ? await verkleinere(datei, grenzeBytes).catch(() => null) : null;
     if (!kleiner) {
       eingabe.value = '';
@@ -140,6 +173,8 @@ export function HochladenFormular({ grenzeBytes }: { grenzeBytes: number }) {
           required
           accept="image/jpeg,image/png,image/webp,image/avif,application/pdf"
           onChange={gewaehlt}
+          // Während des Direkt-Uploads gesperrt: sonst überschriebe das Ergebnis eine neue Auswahl
+          disabled={laedtDirekt}
           aria-invalid={dateiFehler ? true : undefined}
           aria-describedby={['medium-datei-hinweis', dateiFehler ? 'medium-datei-fehler' : ''].filter(Boolean).join(' ')}
           className="text-18"
@@ -155,8 +190,14 @@ export function HochladenFormular({ grenzeBytes }: { grenzeBytes: number }) {
           </p>
         ) : null}
       </div>
+      {eingang ? (
+        <>
+          <input type="hidden" name="eingang" value={eingang.schluessel} />
+          <input type="hidden" name="eingangName" value={eingang.name} />
+        </>
+      ) : null}
       <TextFelder z={z} start={{ altDe: '', altTr: '', altEn: '', bildrechte: '' }} tv={tv('pflichtfeld')} />
-      <Button type="submit" className="self-start" disabled={laeuft}>
+      <Button type="submit" className="self-start" disabled={laeuft || laedtDirekt}>
         {laeuft ? t('hochladen.sendet') : t('hochladen.senden')}
       </Button>
     </form>

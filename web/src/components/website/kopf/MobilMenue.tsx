@@ -55,6 +55,18 @@ export function MobilMenue({
   const dialog = useRef<HTMLDialogElement>(null);
   const [offen, setOffen] = useState<Record<string, boolean>>({ [aktiv]: true });
   const schliessen = () => dialog.current?.close();
+  /**
+   * Erst das gedrückte Bild des Knopfs zeichnen, dann öffnen (INP, Z-08): showModal() macht die übrige Seite inert und
+   * berechnet dafür die Stile des ganzen Dokuments synchron neu (≈ 100 ms bei 4× gedrosselter CPU, Spur in
+   * protokolle/C3-menue-inp.md). Das Menü steht ein Bild später; Modalität, Fokus und Escape bleiben beim Browser.
+   */
+  const oeffnen = () =>
+    requestAnimationFrame(() =>
+      setTimeout(() => {
+        const d = dialog.current;
+        if (d && !d.open) d.showModal();
+      }, 0),
+    );
   /** F-18: Fokus bleibt im Menü – vom letzten sichtbaren Ziel zurück zum ersten und umgekehrt. */
   const fokusImKreis = (e: KeyboardEvent<HTMLDialogElement>) => {
     if (e.key !== 'Tab' || !dialog.current) return;
@@ -89,7 +101,7 @@ export function MobilMenue({
         type="button"
         aria-haspopup="dialog"
         aria-label={texte.menueOeffnen}
-        onClick={() => dialog.current?.showModal()}
+        onClick={oeffnen}
         className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-3 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
       >
         {/* px-3 statt px-4: bei 320 px passen Logo, Name und Knopf sonst nicht in die Zeile (Querscrollen 9 px, Sichtabnahme E4) */}

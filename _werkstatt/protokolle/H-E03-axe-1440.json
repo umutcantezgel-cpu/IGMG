@@ -1,0 +1,29 @@
+{
+  "werkzeug": "a11y",
+  "zeit": "2026-10-12-08-59",
+  "basis": "http://localhost:3200",
+  "breite": 1440,
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "routen": [
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "http": 200,
+      "anzahl": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 0,
+        "minor": 0,
+        "unbekannt": 0
+      },
+      "unklar": 0,
+      "regeln": []
+    }
+  ]
+}

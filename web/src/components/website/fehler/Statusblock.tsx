@@ -22,7 +22,7 @@ export function Statusblock({
   grafik?: ReactNode;
   sinnbild?: ReactNode;
   ueberschrift?: string;
-  text: string;
+  text?: string;
   ausrichtung?: 'mitte' | 'start';
   children?: ReactNode;
 }) {
@@ -32,7 +32,7 @@ export function Statusblock({
         {grafik ? <div className="justify-self-start">{grafik}</div> : null}
         <div className={`flex w-full flex-col items-start gap-6 ${grafik ? 'lg:col-span-2' : 'lg:col-span-3'}`}>
           {ueberschrift ? <h2 className="text-display-2">{ueberschrift}</h2> : null}
-          <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{text}</p>
+          {text ? <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{text}</p> : null}
           {children ? <div className="flex w-full flex-col items-start gap-6">{children}</div> : null}
         </div>
       </div>
@@ -46,7 +46,7 @@ export function Statusblock({
         <span className="flex size-16 items-center justify-center rounded-pill bg-sand text-tinte-2">{sinnbild}</span>
       ) : null}
       {ueberschrift ? <h2 className="text-display-2">{ueberschrift}</h2> : null}
-      <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{text}</p>
+      {text ? <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{text}</p> : null}
       {children ? <div className="flex flex-wrap items-center justify-center gap-3">{children}</div> : null}
     </div>
   );

@@ -23,17 +23,19 @@ export type KennzahlKachel = { schluessel: KennzahlModul; pfad: string; label: s
 export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; titel: string }) {
   const handlung = (k: KennzahlKachel) => (HANDLUNGS_MODULE as readonly string[]).includes(k.schluessel) && k.wert > 0;
   return (
-    <section aria-label={titel}>
-      {/* Ab 768 px zwei Spalten, ab 1240 px (menu) drei: sechs Kacheln als drei Reihen zu zwei bzw. zwei Reihen zu drei. */}
-      <ul className="grid gap-4 max-md:hidden md:grid-cols-2 menu:grid-cols-3">
+    <section aria-label={titel} className="md:overflow-hidden md:rounded-lg md:border md:border-linie md:bg-weiss">
+      {/* Ab 768 px zwei Spalten, ab 1240 px (menu) drei: sechs Kacheln als drei Reihen zu zwei bzw. zwei Reihen zu drei.
+          Ab 768 px ein gerahmter Block mit 1-px-Linien zwischen den Feldern: die Liste rückt um 1 px nach oben und links,
+          damit ihre Linien unter die Rahmenkante fallen (keine Doppellinie). */}
+      <ul className="-mt-px -ml-px grid max-md:hidden md:grid-cols-2 menu:grid-cols-3">
         {kacheln.map((k) => {
           const Icon = ICONS[k.schluessel];
           return (
-            <li key={k.schluessel}>
+            <li key={k.schluessel} className="border-t border-l border-linie">
               <NextLink
                 href={k.pfad}
                 className={cn(
-                  'flex h-full min-h-12 flex-col items-start gap-2 rounded-lg border border-linie bg-weiss p-5 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98',
+                  'flex h-full min-h-12 flex-col items-start gap-2 p-5 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
                   handlung(k) && 'border-l-4 border-l-gruen-700',
                 )}
               >
@@ -60,7 +62,7 @@ export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; tite
               <NextLink
                 href={k.pfad}
                 className={cn(
-                  'flex min-h-14 items-center gap-3 px-4 py-2 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
+                  'flex min-h-14 items-center gap-3 px-4 py-2 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
                   handlung(k) && 'border-l-4 border-l-gruen-700',
                 )}
               >

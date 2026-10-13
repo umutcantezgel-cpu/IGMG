@@ -1,0 +1,157 @@
+{
+  "lauf": {
+    "werkzeug": "funktionsliste.mjs",
+    "basis": "http://127.0.0.1:3500",
+    "zeit": "2026-10-12T14:31:25.279Z",
+    "browser": "141.0.7390.37",
+    "bilder": "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste",
+    "zustand": "nein"
+  },
+  "ergebnisse": [
+    {
+      "390": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "aside-Zahl 0"
+          },
+          {
+            "pruefung": "vier Tabs",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              "Heute",
+              "Monatlich",
+              "Qibla",
+              "Einstellungen"
+            ]
+          },
+          {
+            "pruefung": "Tabs per Tastatur (Pfeil rechts, Ende, Pos1)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "nachPfeil": [
+                "Monatlich"
+              ],
+              "nachEnde": [
+                "Einstellungen"
+              ],
+              "nachPos1": [
+                "Heute"
+              ]
+            }
+          },
+          {
+            "pruefung": "Monatlich: sichtbare Tabellenüberschriften",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "Oktober 2026 – Gebetszeiten",
+              "November 2026 – Gebetszeiten"
+            ]
+          },
+          {
+            "pruefung": "Monatstabelle mit Überschrift „Gebetszeiten“",
+            "ergebnis": "erfüllt",
+            "gemessen": "Oktober 2026 – Gebetszeiten"
+          },
+          {
+            "pruefung": "Monat wechselt",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Im Bestand gibt es kein Bedienelement für einen Monatswechsel; die Tabelle zeigt den laufenden Monat (Messwert oben). OFFENE FRAGE: Was „Monat wechselt“ genau prüfen soll."
+          },
+          {
+            "pruefung": "Qibla-Kompass sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-monat-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-qibla-390.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-390-ende.jpg"
+        ]
+      },
+      "1440": {
+        "status": "nicht prüfbar",
+        "befunde": [
+          {
+            "pruefung": "HTTP 200",
+            "ergebnis": "erfüllt",
+            "gemessen": 200
+          },
+          {
+            "pruefung": "keine Leiste auf /gebetszeiten",
+            "ergebnis": "erfüllt",
+            "gemessen": "aside-Zahl 0"
+          },
+          {
+            "pruefung": "vier Tabs",
+            "ergebnis": "erfüllt",
+            "gemessen": [
+              "Heute",
+              "Monatlich",
+              "Qibla",
+              "Einstellungen"
+            ]
+          },
+          {
+            "pruefung": "Tabs per Tastatur (Pfeil rechts, Ende, Pos1)",
+            "ergebnis": "erfüllt",
+            "gemessen": {
+              "nachPfeil": [
+                "Monatlich"
+              ],
+              "nachEnde": [
+                "Einstellungen"
+              ],
+              "nachPos1": [
+                "Heute"
+              ]
+            }
+          },
+          {
+            "pruefung": "Monatlich: sichtbare Tabellenüberschriften",
+            "ergebnis": "Messwert",
+            "gemessen": [
+              "Oktober 2026 – Gebetszeiten",
+              "November 2026 – Gebetszeiten"
+            ]
+          },
+          {
+            "pruefung": "Monatstabelle mit Überschrift „Gebetszeiten“",
+            "ergebnis": "erfüllt",
+            "gemessen": "Oktober 2026 – Gebetszeiten"
+          },
+          {
+            "pruefung": "Monat wechselt",
+            "ergebnis": "nicht prüfbar",
+            "grund": "Im Bestand gibt es kein Bedienelement für einen Monatswechsel; die Tabelle zeigt den laufenden Monat (Messwert oben). OFFENE FRAGE: Was „Monat wechselt“ genau prüfen soll."
+          },
+          {
+            "pruefung": "Qibla-Kompass sichtbar",
+            "ergebnis": "erfüllt",
+            "gemessen": 1
+          }
+        ],
+        "posts": 0,
+        "http4xx": [],
+        "bilder": [
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-monat-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-qibla-1440.jpg",
+          "/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad/bilder/c3-funktionsliste/F-03-1440-ende.jpg"
+        ]
+      },
+      "id": "F-03",
+      "titel": "/gebetszeiten: Tabs, Tastatur, Monatstabelle, Qibla",
+      "ablauf": "Tabs per Tastatur; Monat; Kompass"
+    }
+  ]
+}

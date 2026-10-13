@@ -1,5 +1,5 @@
 import type { JSONContent } from '@tiptap/core';
-import { ArrowLeft, Bookmark, Calendar, Clock, Languages } from 'lucide-react';
+import { ArrowLeft, BookOpen, Bookmark, Calendar, Languages } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
@@ -108,6 +108,8 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
         })}
       />
       <PageHeader
+        // Kopfbild (H-C02): ab lg ein Platzhalter, wenn kein Bild gepflegt ist; die Fläche trägt den Übergangsnamen
+        bildAbLg={!n.bild}
         bild={
           // Gegenstück zum Kartenbild (O-13): Titel und Bild morphen von der Karte hierher
           <div style={morphStil(`n-${n.slug}-bild`)}>
@@ -158,7 +160,7 @@ async function Nachricht({ params }: { params: Promise<{ locale: string; slug: s
               </span>
               {n.lesezeit ? (
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock aria-hidden className="size-4" />
+                  <BookOpen aria-hidden className="size-4" />
                   {t('lesezeit', { minuten: n.lesezeit })}
                 </span>
               ) : null}

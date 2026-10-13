@@ -1,0 +1,212 @@
+{
+  "werkzeug": "inp",
+  "basis": "http://127.0.0.1:3500",
+  "drossel": 4,
+  "laeufe": 5,
+  "schwelleMs": 200,
+  "routen": [
+    {
+      "name": "Startklar-Cockpit",
+      "pfad": "/verwaltung/startklar",
+      "inpMedianMs": 104,
+      "erfuellt": true,
+      "laeufe": [
+        {
+          "lauf": 1,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 112,
+          "jeEingabeMs": {
+            "leiste": 112,
+            "menue": 96,
+            "tab": 40
+          },
+          "laengste": [
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 112,
+              "verarbeitungMs": 52,
+              "verzoegerungMs": 4
+            },
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 96,
+              "verarbeitungMs": 14,
+              "verzoegerungMs": 16
+            },
+            {
+              "eingabe": "menue",
+              "name": "keydown",
+              "dauerMs": 56,
+              "verarbeitungMs": 14,
+              "verzoegerungMs": 10
+            }
+          ]
+        },
+        {
+          "lauf": 2,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 96,
+          "jeEingabeMs": {
+            "leiste": 96,
+            "menue": 72,
+            "tab": 48
+          },
+          "laengste": [
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 96,
+              "verarbeitungMs": 44,
+              "verzoegerungMs": 5
+            },
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 10,
+              "verzoegerungMs": 19
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 56,
+              "verarbeitungMs": 2,
+              "verzoegerungMs": 11
+            }
+          ]
+        },
+        {
+          "lauf": 3,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 112,
+          "jeEingabeMs": {
+            "leiste": 112,
+            "menue": 96,
+            "tab": 56
+          },
+          "laengste": [
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 112,
+              "verarbeitungMs": 51,
+              "verzoegerungMs": 6
+            },
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 96,
+              "verarbeitungMs": 17,
+              "verzoegerungMs": 19
+            },
+            {
+              "eingabe": "tab",
+              "name": "keyup",
+              "dauerMs": 56,
+              "verarbeitungMs": 1,
+              "verzoegerungMs": 33
+            }
+          ]
+        },
+        {
+          "lauf": 4,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 104,
+          "jeEingabeMs": {
+            "menue": 104,
+            "leiste": 72,
+            "tab": 40
+          },
+          "laengste": [
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 104,
+              "verarbeitungMs": 13,
+              "verzoegerungMs": 24
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 38,
+              "verzoegerungMs": 4
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 48,
+              "verarbeitungMs": 13,
+              "verzoegerungMs": 17
+            }
+          ]
+        },
+        {
+          "lauf": 5,
+          "http": 200,
+          "eingaben": [
+            "menue",
+            "leiste",
+            "tab"
+          ],
+          "interaktionen": 7,
+          "inpMs": 104,
+          "jeEingabeMs": {
+            "leiste": 104,
+            "menue": 72,
+            "tab": 48
+          },
+          "laengste": [
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 104,
+              "verarbeitungMs": 47,
+              "verzoegerungMs": 4
+            },
+            {
+              "eingabe": "leiste",
+              "name": "pointerdown",
+              "dauerMs": 80,
+              "verarbeitungMs": 15,
+              "verzoegerungMs": 20
+            },
+            {
+              "eingabe": "menue",
+              "name": "pointerdown",
+              "dauerMs": 72,
+              "verarbeitungMs": 9,
+              "verzoegerungMs": 18
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

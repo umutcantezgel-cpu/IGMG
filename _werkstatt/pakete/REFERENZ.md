@@ -34,12 +34,13 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 
 | Datei | Warum Literale | Spiegel von |
 |---|---|---|
-| `web/src/lib/mail/vorlagen/farben.ts` (`MAILFARBE`, `MAILMASS`) | E-Mail-Programme kennen keine CSS-Variablen; die Vorlagen `Rahmen.tsx` und `index.tsx` lesen jede Farbe und jedes Maß nur aus dieser Datei | Farb-Tokens, `text-14/16/24`, `--radius-md/-lg`, 4-px-Abstände |
-| `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens |
-| `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` |
-| `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` |
+| `web/src/lib/mail/vorlagen/farben.ts` (`MAILFARBE`, `MAILMASS`) | E-Mail-Programme kennen keine CSS-Variablen; die Vorlagen `Rahmen.tsx` und `index.tsx` lesen jede Farbe und jedes Maß nur aus dieser Datei | Farb-Tokens, `text-16/24`, `--radius-md/-lg`, Vielfache von `--spacing`; fünf feste Maße des Mailrahmens (Outlook-Breite 600 px, Grenze 480 px, Akzent 2 px, Haarlinie 1 px, 0 px); Gleichheit geprüft in `web/tests/unit/token-spiegel.test.ts` |
+| `web/src/lib/seo/og-bild.tsx` (`OG_FARBEN`, 1200 × 630) | Satori rendert ein Bild, keine Seite | Farb-Tokens (Test `token-spiegel.test.ts`) |
+| `web/src/components/verwaltung/styleguide/tokens.ts` | der Styleguide zeigt die Token-Werte als Text | `globals.css` (Test `styleguide-tokens.test.ts`) |
+| `web/src/app/[locale]/layout.tsx` (`themeColor`) | Browser-Metadaten verlangen einen Farbwert als Text | `--color-gruen-950` (Test `token-spiegel.test.ts`) |
+| `web/src/lib/gebetszeiten/bogen.ts` (`EINTRITT`) | `zeitAnteilEintritt` kehrt die Kurve für die Färbung im Takt der Linie um (H-E01) | `--ease-eintritt` (Test `token-spiegel.test.ts`) |
 
-**Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`) und die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß).
+**Fehlalarm-Klassen von `freie-werte.mjs`:** Werte in Kommentaren, CSS-Attributselektoren (`[data-kategorie]`), die Zahl `0` in Inline-Stilen (`margin: 0`, kein Maß) und Optionen von Browser-Schnittstellen, die keine Gestaltung sind (z. B. `rootMargin: '200px'` des IntersectionObserver in `QiblaKompassBeiBedarf.tsx`: lädt den Kompass 200 px vor dem Sichtbarwerden).
 
 ## 2. Bausteine
 - Seitenkopf: `PageHeader`/`Seitenkopf` (Kennung mit Achtstern, `text-display-1`, Einleitung, Achtstern-Band an der Kante). Nicht nachbauen. Detailseiten (E4, H-C02): Kopfbild über `bild` in der rechten Spalte ab lg (Fläche `h-55 md:h-75 lg:aspect-4/3 lg:h-auto rounded-lg border border-linie`), ohne gepflegtes Bild nur ab lg ein Platzhalter mit `bildAbLg`; Organisationsbezug über `kennungZeichen` (Logo 20 px, nie vergrößert) statt Achtstern.
@@ -54,6 +55,22 @@ Nicht im System und nicht ersetzbar? Dann im Bericht unter GEMEINSAME DATEIEN ei
 - Trenner zwischen inhaltlich getrennten Blöcken: `Trenner` (Linie – Achtstern – Linie). Sparsam, höchstens einer je Bildschirmhöhe.
 - Laden: `LadeStern` im Knopf neben dem Text („Wird gesendet …“), nie allein.
 - Icons: nur lucide-react (Strich 2) und `web/src/components/website/Icons.tsx` (`Stern8`/`Achtstern` gefüllt, Social). Dekorativ immer `aria-hidden`.
+- Nachrichtenkarten (C2, H-E08): In allen `NewsCard`-Varianten gilt die Reihenfolge Abzeichen → Datum/Lesezeit (`<time>`) → Titel → Kurztext. „Aktuell“ trägt `Stern8` wie „Empfohlen“. Die Seitenspalte ab 1240 px (`menu:`) hat Zeilen nach Inhalt (`menu:grid-rows-none`) und einen zweizeiligen Auszug.
+- Nachrichtenkarten (C3, H-F03): Der Aufmacher „gross“ ist als ganze Karte klickbar. „Weiterlesen“ ist ein Textlink mit den Klassen der Standardkarte, Hover Rand `gruen-700` und `shadow-s2`. Auf /nachrichten trägt der Aufmacher den Titel über `titelStufe="abschnitt"` (display-2). Die Lesezeit steht mit `BookOpen`, nie mit Uhr. Die Startseiten-Liste ist eine Fläche (`rahmen={false}`).
+- Begleitkarten (C2, L-E13, H-E03): Rubriken, die Daten ordnen (Kontaktdaten, Öffnungszeiten, Notfall, Adresse, Kalender-Abo), stehen in fetter Sans `font-text text-20 font-bold tracking-normal`. Inhaltstitel bleiben Serif.
+- Leiste (C2, H-E07): Ab 768 px steht „berechnet“ neben „Nächstes Gebet“, unter 1240 px stehen Ort und Datum in einer Zeile. Höhe ≈ 170 px bei 1440 und ≈ 234 px bei 768 (de).
+- Werkzeugknöpfe (C2): Teilen, Kalender, Menü und Sprache sind neutral, als dritte Knopfstufe `border border-rand bg-weiss … hover:border-gruen-700 hover:bg-gruen-50`, ohne grüne Füllung.
+- Bildplatzhalter (C2, H-E09): Die Beschriftung ist ein Etikett `rounded-lg bg-weiss px-3 py-1 text-balance shadow-s1`, keine Pille. `Bildflaeche` (Über uns) nutzt denselben Baustein. Die Ära im Weg der Gemeinde steht als grüne Textzeile (`text-16 font-bold text-gruen-800`) ohne Fläche.
+- Kursstatus (C2, H-E11): nach der Abzeichen-Regel. Steht eine Handlung an (Voranmeldung offen), ist das Abzeichen weiß mit `gruen-700`-Rand und `Stern8`, sonst neutral sand mit Rand `linie` und Text `tinte-2`. Kein Rot.
+- Schrittmarke (C2, H-E10): Die aktuelle Marke ist voll grün mit weißer Ziffer, erledigte Marken sind hellgrün mit Häkchen, kommende sandfarben. Die Linien laufen Spitze an Spitze, die Statuszeile ab lg nur für Hilfstechnik (`lg:sr-only`).
+- Wege-Kacheln der 404 (C2, H-E12): Symbole mit 20 px ohne Symbolkreis, der Satz steht im Kopf.
+- Seitenwechsel (C2, H-E14): Der Morph Karte → Detail läuft 400 ms mit `ease-eintritt`, der Titel kommt vor dem Inhalt an.
+- Seitenwechsel (C3, H-F08): Mit gemeinsamen Elementen (Karte → Detail) blendet der Inhalt erst nach `dauer-wechsel` ein. Titel und Bild kommen zuerst an, gesamt 640 ms. `SeitenUebergang` setzt dafür `data-uebergang="morph"` an `<html>` (globals.css).
+- Zeitenliste der Gebetszeiten (C2, H-E13): Das nächste Gebet trägt den gefüllten Achtstern (16 px) wie Karte und Bogen, vergangene Zeiten stehen in `tinte-3`.
+- Tagesbogen (C2, H-E01): Die Zeit des nächsten Gebets steht mit 24 px in `gruen-800`, die übrigen mit 18 px. Der Ort des nächsten Gebets trägt durchgehend eine Marke (Ring, dann Achtstern-Chip).
+- Tagesbogen (C3, H-F04): Unter dem Horizont läuft die Linie mit derselben Steigung weiter und wird weich auf `tief` begrenzt (`tief · tanh(e·hoch/tief)`). So entsteht bei Güneş und Akşam keine Ecke (`bogen.ts`).
+
+- Seitenende (C3, H-F01, L-E15): Ein Abschlussblock direkt vor dem Fuß ist hell. Fläche `overflow-hidden rounded-lg bg-gruen-50`, Band `h-1.5 bg-gruen-700` als erstes Kind, Titel in Tinte, genau ein gefüllter Knopf. Der Fuß bleibt die einzige tiefgrüne Schlussfläche.
 
 ## 3. Bewegung (nur Register K-007)
 - Arbeitsansichten: nur B-01 (Rückmeldung: Farbe + `active:scale-98`), B-02 (Fokus, global), B-03 (Öffnen: Klasse `tritt-auf`, Dialoge automatisch), B-04 (Inhaltswechsel: `blendet-ein` am neuen Inhalt, z. B. `key` beim Tab-/Monatswechsel), B-05 (Seitenwechsel: automatisch im Seitenrahmen; gemeinsame Elemente nur nach Auftrag), B-10, B-11 (Formular-Erfolg: `tritt-auf` + Zustandsgrafik `erfolg`; Fehler: Fokus auf Zusammenfassung, keine Bewegung), B-12 (`LadeStern`).

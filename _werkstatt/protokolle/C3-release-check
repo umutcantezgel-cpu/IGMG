@@ -1,0 +1,56 @@
+Release-Check · 2026-10-12T14:31:42.362Z · --bau: nein
+
+=== Schritt typen: pnpm typen ===
+$ next typegen && tsc --noEmit
+Generating route types...
+✓ Types generated successfully
+
+=== Schritt lint: pnpm lint ===
+$ eslint .
+
+=== Schritt test:unit: pnpm test:unit ===
+$ vitest run --project unit
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+
+ Test Files  46 passed (46)
+      Tests  813 passed | 3 expected fail (816)
+   Start at  14:32:26
+   Duration  7.41s (import 41%, transform 30%, tests 26%, worker 3%)
+
+
+=== Schritt test:integration: pnpm test:integration ===
+$ vitest run --project integration
+
+ RUN  v5.0.3 /home/user/IGMG/web
+
+
+ Test Files  35 passed | 1 skipped (36)
+      Tests  1412 passed | 2 expected fail | 4 skipped (1418)
+   Start at  14:32:35
+   Duration  1242.22s (tests 86%, import 14%)
+
+
+=== Schritt sprachen:pruefen: pnpm sprachen:pruefen ===
+$ node scripts/sprachen-pruefen.mjs
+Sprachdateien vollständig: 1203 Schlüssel in de, tr, en; dazu 1918 Schlüssel der Verwaltung (nur de, ADR 0016).
+
+=== Schritt geheimnisse:pruefen: pnpm geheimnisse:pruefen ===
+$ node scripts/geheimnis-pruefung.mjs --alles
+Geheimnis-/Datenschutz-Prüfung (--alles): ohne Befund.
+
+=== Schritt startklar: übersprungen ===
+Hinweis: keine DATABASE_URL gesetzt (weder in der Umgebung noch in .env). Datenbankprüfung nicht ausgeführt; mit DATABASE_URL erneut starten.
+
+  Schritt              Ergebnis        Dauer
+  -------------------  --------------  ------
+  typen                [OK]            8,7 s
+  lint                 [OK]            35,1 s
+  test:unit            [OK]            8,2 s
+  test:integration     [OK]            1243,1 s
+  sprachen:pruefen     [OK]            0,2 s
+  geheimnisse:pruefen  [OK]            0,9 s
+  startklar            [ÜBERSPRUNGEN]  –
+
+=== RELEASE-CHECK: BESTANDEN, mit übersprungenem Schritt: startklar ===

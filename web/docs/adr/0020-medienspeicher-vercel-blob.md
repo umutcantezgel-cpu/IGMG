@@ -1,6 +1,6 @@
 # ADR 0020 – Medienspeicher auf Vercel: Vercel Blob (Frankfurt), Direkt-Upload und Bildvarianten
 
-- Status: angenommen, umgesetzt (Speicher, Varianten, Verkleinern im Browser) · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-05) · Bezug: ADR 0007
+- Status: angenommen, umgesetzt (Speicher, Varianten, Verkleinern im Browser; Direkt-Upload für PDF seit 2026-10-12) · 2026-10-11 · Letzter Lauf (Kern K-013, AUFTRAG V-05) · Bezug: ADR 0007
 
 ## Ziel
 
@@ -19,7 +19,7 @@ Weg 3 allein löst Dateisystem und Varianten nicht. Weg 2 funktioniert ebenfalls
 ## Festlegungen
 
 - `SPEICHER=blob` mit `BLOB_READ_WRITE_TOKEN`; `SPEICHER=dateisystem` auf Vercel ist ein Fehler der Startprüfung.
-- Upload auf Vercel: Grenze 4,2 MB je Anfrage (mit Rand zu den 4,5 MB von Vercel Functions). Bilder darüber verkleinert der Browser auf höchstens 2560 px als WebP (`MedienFormulare.tsx`); PDF darüber wird mit verständlicher Meldung abgelehnt. Außerhalb von Vercel gilt weiter `MAX_BYTES` (10 MB).
+- Upload auf Vercel: Grenze 4,2 MB je Anfrage (mit Rand zu den 4,5 MB von Vercel Functions). Bilder darüber verkleinert der Browser auf höchstens 2560 px als WebP (`MedienFormulare.tsx`). PDF darüber lädt der Browser mit `SPEICHER=blob` direkt in Vercel Blob (Nachtrag 2026-10-12, Weg 1 für PDF, AUFTRAG V-05): Die Route `/verwaltung/medien/direkt` stellt nach Sitzung, zweitem Faktor und Recht `medium.hochladen` ein kurzlebiges Upload-Token für genau einen Eingangsschlüssel `eingang/<uuid>.pdf` aus (nur PDF, höchstens 10 MB, kein Überschreiben, gültig 10 Minuten, ohne Rückruf von Vercel). Die Server Action `hochladen` übernimmt den Eingang, prüft ihn wie jeden Upload (`verarbeiteDatei`: Magic Bytes, Größe), speichert unter dem Hash-Schlüssel und entfernt den Eingang. Nie übernommene Eingänge räumt der tägliche Löschlauf nach 24 Stunden ab (`raeumeDirektEingaengeAuf`). Die CSP der Verwaltung erlaubt dafür `connect-src https://vercel.com`, nur mit `SPEICHER=blob`; die öffentlichen Seiten bleiben bei `'self'`. Ohne Vercel Blob (lokal, Docker, S3) gilt die Grenze des Servers (10 MB), eine zu große PDF-Datei wird dort mit Meldung abgelehnt.
 - Speicher privat (`access: 'private'`), Auslieferung nur über `/medien/…` – Papierkorb und Löschung wirken sofort.
 - Varianten: 480, 960, 1600, 2560 px Breite (nur kleiner als das Original, nie hochskaliert), WebP, unter `<schlüssel>.w<breite>.webp` neben dem Original – das Datenmodell bleibt unverändert (UNANTASTBAR). Die Medienroute liefert eine fehlende Variante (Medien von vor dieser Entscheidung) als Original aus. `MedienBild` baut auf Vercel daraus `srcset`/`sizes` (`variantenSrcSet`). Logos bleiben feste PNG (nie hochskaliert).
 - Löschen (Verwaltung, Löschlauf) entfernt Original und Varianten (`loescheMitVarianten`).

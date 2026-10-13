@@ -1,0 +1,468 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-12-18-57",
+  "basis": "http://127.0.0.1:3500",
+  "laeufe": 1,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2000,
+          "cls": 0.01,
+          "tbtMs": 608,
+          "jsKb": 175.5,
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2492
+          }
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2000,
+        "cls": 0.01,
+        "tbtMs": 608,
+        "jsKb": 175.5,
+        "simuliertPerformance": 96,
+        "simuliertLcpMs": 2492
+      },
+      "spanneLeistung": [
+        82,
+        82
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2003,
+          "cls": 0,
+          "tbtMs": 437,
+          "jsKb": 178.9,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3500
+          }
+        }
+      ],
+      "median": {
+        "performance": 87,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2003,
+        "cls": 0,
+        "tbtMs": 437,
+        "jsKb": 178.9,
+        "simuliertPerformance": 90,
+        "simuliertLcpMs": 3500
+      },
+      "spanneLeistung": [
+        87,
+        87
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Veranstaltungen",
+      "pfad": "/veranstaltungen",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2112,
+          "cls": 0,
+          "tbtMs": 389,
+          "jsKb": 174.2,
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3630
+          }
+        }
+      ],
+      "median": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2112,
+        "cls": 0,
+        "tbtMs": 389,
+        "jsKb": 174.2,
+        "simuliertPerformance": 86,
+        "simuliertLcpMs": 3630
+      },
+      "spanneLeistung": [
+        88,
+        88
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Veranstaltung (Detailseite)",
+      "pfad": "/veranstaltungen/freitagsgebet-mit-anschliessendem-vortrag",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2260,
+          "cls": 0,
+          "tbtMs": 401,
+          "jsKb": 175,
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3839
+          }
+        }
+      ],
+      "median": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2260,
+        "cls": 0,
+        "tbtMs": 401,
+        "jsKb": 175,
+        "simuliertPerformance": 86,
+        "simuliertLcpMs": 3839
+      },
+      "spanneLeistung": [
+        86,
+        86
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Nachrichten",
+      "pfad": "/nachrichten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2069,
+          "cls": 0,
+          "tbtMs": 625,
+          "jsKb": 173.9,
+          "simuliert": {
+            "performance": 95,
+            "lcpMs": 2734
+          }
+        }
+      ],
+      "median": {
+        "performance": 82,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2069,
+        "cls": 0,
+        "tbtMs": 625,
+        "jsKb": 173.9,
+        "simuliertPerformance": 95,
+        "simuliertLcpMs": 2734
+      },
+      "spanneLeistung": [
+        82,
+        82
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Über uns",
+      "pfad": "/ueber-uns",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 77,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2088,
+          "cls": 0,
+          "tbtMs": 876,
+          "jsKb": 171.7,
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 3021
+          }
+        }
+      ],
+      "median": {
+        "performance": 77,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2088,
+        "cls": 0,
+        "tbtMs": 876,
+        "jsKb": 171.7,
+        "simuliertPerformance": 94,
+        "simuliertLcpMs": 3021
+      },
+      "spanneLeistung": [
+        77,
+        77
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Projekte",
+      "pfad": "/projekte",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 88,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1969,
+          "cls": 0,
+          "tbtMs": 406,
+          "jsKb": 171.7,
+          "simuliert": {
+            "performance": 85,
+            "lcpMs": 3654
+          }
+        }
+      ],
+      "median": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1969,
+        "cls": 0,
+        "tbtMs": 406,
+        "jsKb": 171.7,
+        "simuliertPerformance": 85,
+        "simuliertLcpMs": 3654
+      },
+      "spanneLeistung": [
+        88,
+        88
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Organisation Ana Teşkilatı",
+      "pfad": "/organisationen/ana-teskilati",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 78,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2447,
+          "cls": 0,
+          "tbtMs": 651,
+          "jsKb": 171.7,
+          "simuliert": {
+            "performance": 89,
+            "lcpMs": 3450
+          }
+        }
+      ],
+      "median": {
+        "performance": 78,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2447,
+        "cls": 0,
+        "tbtMs": 651,
+        "jsKb": 171.7,
+        "simuliertPerformance": 89,
+        "simuliertLcpMs": 3450
+      },
+      "spanneLeistung": [
+        78,
+        78
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Korankurse",
+      "pfad": "/bildung/korankurse",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 90,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 2056,
+          "cls": 0,
+          "tbtMs": 312,
+          "jsKb": 171.3,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3431
+          }
+        }
+      ],
+      "median": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 2056,
+        "cls": 0,
+        "tbtMs": 312,
+        "jsKb": 171.3,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 3431
+      },
+      "spanneLeistung": [
+        90,
+        90
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    },
+    {
+      "name": "Voranmeldung",
+      "pfad": "/bildung/voranmeldung",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 81,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1914,
+          "cls": 0,
+          "tbtMs": 697,
+          "jsKb": 174.4,
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3260
+          }
+        }
+      ],
+      "median": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1914,
+        "cls": 0,
+        "tbtMs": 697,
+        "jsKb": 174.4,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 3260
+      },
+      "spanneLeistung": [
+        81,
+        81
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Kontakt",
+      "pfad": "/kontakt",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 84,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100,
+          "lcpMs": 1925,
+          "cls": 0,
+          "tbtMs": 572,
+          "jsKb": 174.8,
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3531
+          }
+        }
+      ],
+      "median": {
+        "performance": 84,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "lcpMs": 1925,
+        "cls": 0,
+        "tbtMs": 572,
+        "jsKb": 174.8,
+        "simuliertPerformance": 90,
+        "simuliertLcpMs": 3531
+      },
+      "spanneLeistung": [
+        84,
+        84
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}
