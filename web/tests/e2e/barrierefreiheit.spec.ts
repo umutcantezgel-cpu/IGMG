@@ -74,6 +74,16 @@ const ROUTEN: Route[] = [
   { name: 'Hadith-Buch 1', pfad: { de: '/hadith/bukhari/1', tr: '/tr/hadis/buhari/1', en: '/en/hadith/bukhari/1' } },
   { name: 'Quellen', pfad: { de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' } },
   { name: 'Barrierefreiheit', pfad: { de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' } },
+  // Paket Elifbe und Lernen (H-E01…E03)
+  { name: 'Lernen', pfad: { de: '/lernen', tr: '/tr/ogren', en: '/en/learn' } },
+  { name: 'Elifbe', pfad: { de: '/elifbe', tr: '/tr/elifba', en: '/en/arabic-alphabet' } },
+  { name: 'Elifbe, Buchstaben', pfad: { de: '/elifbe/buchstaben', tr: '/tr/elifba/harfler', en: '/en/arabic-alphabet/letters' } },
+  {
+    name: 'Elifbe, Buchstabe',
+    pfad: { de: '/elifbe/buchstaben/be', tr: '/tr/elifba/harfler/cim', en: '/en/arabic-alphabet/letters/shin' },
+  },
+  { name: 'Elifbe, Lektion', pfad: { de: '/elifbe/lektion/1', tr: '/tr/elifba/ders/4', en: '/en/arabic-alphabet/lesson/7' } },
+  { name: 'Elifbe, Üben', pfad: { de: '/elifbe/ueben', tr: '/tr/elifba/alistirma', en: '/en/arabic-alphabet/practice' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

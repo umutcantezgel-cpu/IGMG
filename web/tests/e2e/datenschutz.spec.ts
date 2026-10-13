@@ -74,6 +74,25 @@ const ROUTEN = [
   { id: 'bukhari', seite: 'Sahih al-Bukhari', de: '/hadith/bukhari', tr: '/tr/hadis/buhari', en: '/en/hadith/bukhari' },
   { id: 'quellen', seite: 'Quellen', de: '/quellen', tr: '/tr/kaynaklar', en: '/en/sources' },
   { id: 'barrierefreiheit', seite: 'Barrierefreiheit', de: '/barrierefreiheit', tr: '/tr/erisilebilirlik', en: '/en/accessibility' },
+  // Paket Elifbe und Lernen (H-E01…E03)
+  { id: 'lernen', seite: 'Lernen', de: '/lernen', tr: '/tr/ogren', en: '/en/learn' },
+  { id: 'elifbe', seite: 'Elifbe', de: '/elifbe', tr: '/tr/elifba', en: '/en/arabic-alphabet' },
+  {
+    id: 'elifbebuchstaben',
+    seite: 'Elifbe, Buchstaben',
+    de: '/elifbe/buchstaben',
+    tr: '/tr/elifba/harfler',
+    en: '/en/arabic-alphabet/letters',
+  },
+  {
+    id: 'elifbebuchstabe',
+    seite: 'Elifbe, Buchstabe',
+    de: '/elifbe/buchstaben/be',
+    tr: '/tr/elifba/harfler/cim',
+    en: '/en/arabic-alphabet/letters/shin',
+  },
+  { id: 'elifbelektion', seite: 'Elifbe, Lektion', de: '/elifbe/lektion/1', tr: '/tr/elifba/ders/4', en: '/en/arabic-alphabet/lesson/7' },
+  { id: 'elifbeueben', seite: 'Elifbe, Üben', de: '/elifbe/ueben', tr: '/tr/elifba/alistirma', en: '/en/arabic-alphabet/practice' },
 ] as const;
 
 type Sprache = 'de' | 'tr' | 'en';

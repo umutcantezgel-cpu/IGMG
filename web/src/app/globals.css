@@ -145,6 +145,17 @@
   grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
 }
 
+/* Elifbe (B-17/B-18): große arabische Einzelbuchstaben, fließend 56 → 80 px bzw. 72 → 112 px zwischen 390 und 1440 px;
+   die Zeilenhöhe lässt Lesezeichen und tiefen Bögen Raum (Harakat nie abgeschnitten) */
+@utility buchstabe-gross {
+  font-size: clamp(3.5rem, 2.943rem + 2.286vw, 5rem);
+  line-height: 1.6;
+}
+@utility buchstabe-riesig {
+  font-size: clamp(4.5rem, 3.571rem + 3.81vw, 7rem);
+  line-height: 2;
+}
+
 /* Dialoge halten auf jeder Breite 1 rem Abstand zum Fensterrand (Breite und Höhe) */
 @utility breite-dialog {
   width: calc(100% - 2rem);
@@ -586,6 +597,62 @@ html[data-uebergang='morph']::view-transition-new(.seite) {
   .blendet-ein {
     animation: einblenden var(--dauer, 400ms) var(--ease-standard) var(--verzoegerung, 0ms) both;
   }
+  /* B-17 Schreibweg: Maskenstriche (pathLength 1) decken die Glyphe Zug für Zug auf, danach die Punkte. Muster „1 2“ und
+     Start bei 1.05: Kein Strichende liegt am Pfadanfang, runde Enden zeichnen vor dem Start keinen Fleck. Dauer und
+     Verzögerung je Zug setzt die Komponente (Summe ≤ 1,6 s); ohne Animation steht der Endzustand (Glyphe ganz). */
+  .schreibweg-zug {
+    stroke-dasharray: 1 2;
+    animation: schreiben var(--dauer) linear var(--verzoegerung) both;
+  }
+  /* Nummerierte Zugpfeile: auf Wunsch (data-pfeile="an") oder bei reduzierter Bewegung; die Tinte tritt dann zurück */
+  .schreibweg-pfeile {
+    display: none;
+  }
+  [data-pfeile='an'] .schreibweg-pfeile {
+    display: inline;
+  }
+  [data-pfeile='an'] .schreibweg-tinte {
+    display: none;
+  }
+  /* B-24 Lernweg: die Linie zeichnet sich von Station zu Station, jede Station tritt hervor, wenn die Linie sie erreicht
+     (--i Station bzw. Abschnitt, --n Anzahl der Abschnitte; waagerecht als Welle, senkrecht als Abschnitte) */
+  .lernweg-welle {
+    stroke-dasharray: 1 2;
+    animation: schreiben var(--dauer-moment) linear both;
+  }
+  .lernweg-abschnitt {
+    transform-origin: top;
+    animation: wachsen calc(var(--dauer-moment) / var(--n)) linear calc(var(--i) * var(--dauer-moment) / var(--n)) both;
+  }
+  .lernweg-station {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: hervortreten var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * var(--dauer-moment) / var(--n)) both;
+  }
+  /* B-18 Übungs-Rückmeldung „richtig“: der Achtstern füllt sich von unten */
+  .stern-fuellt {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: wachsen var(--dauer-auftritt) var(--ease-eintritt) both;
+  }
+}
+/* B-17/B-24: Strich zeichnet sich (Muster „1 2“, siehe .schreibweg-zug) */
+@keyframes schreiben {
+  from {
+    stroke-dashoffset: 1.05;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* B-17 reduziert: Endzustand mit nummerierten Zugpfeilen (außer die Person blendet sie aus) */
+  :not([data-pfeile='aus']) > .schreibweg-pfeile {
+    display: inline;
+  }
+  :not([data-pfeile='aus']) > .schreibweg-tinte {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -596,7 +663,12 @@ html[data-uebergang='morph']::view-transition-new(.seite) {
   .bogen-punkt-erreicht::after,
   .marke-tritt-hervor,
   .familie-eigen,
-  .lade-stern {
+  .lade-stern,
+  .schreibweg-zug,
+  .lernweg-welle,
+  .lernweg-abschnitt,
+  .lernweg-station,
+  .stern-fuellt {
     animation: none;
   }
   .tritt-auf,
