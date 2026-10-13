@@ -211,7 +211,13 @@ export async function vereinbarungSetzen(_vorher: RezitationZustand, fd: FormDat
     await db.transaction(async (tx) => {
       await tx.update(r).set({ vereinbarungMediumId: mediumId }).where(eq(r.id, kopf.id));
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'quran_rezitation', zielId: kopf.id, details: { vereinbarung: true } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'inhalt.geaendert',
+          zielTyp: 'quran_rezitation',
+          zielId: kopf.id,
+          details: { vereinbarung: true },
+        },
         tx,
       );
     });
@@ -227,9 +233,18 @@ export async function vereinbarungLoesen(_vorher: RezitationZustand, fd: FormDat
     if (!kopf) return { fehler: 'nichtGefunden' };
     if (kopf.aktiv) return { fehler: 'aktiv' };
     await db.transaction(async (tx) => {
-      await tx.update(r).set({ vereinbarungMediumId: null }).where(and(eq(r.id, kopf.id), eq(r.aktiv, false)));
+      await tx
+        .update(r)
+        .set({ vereinbarungMediumId: null })
+        .where(and(eq(r.id, kopf.id), eq(r.aktiv, false)));
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'quran_rezitation', zielId: kopf.id, details: { vereinbarung: false } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'inhalt.geaendert',
+          zielTyp: 'quran_rezitation',
+          zielId: kopf.id,
+          details: { vereinbarung: false },
+        },
         tx,
       );
     });
@@ -318,7 +333,12 @@ export async function audioUebernehmen(_vorher: RezitationZustand, fd: FormData)
     if (!kopf || !sure.success) return { fehler: 'nichtGefunden' };
     const eingang = fd.get('eingang');
     if (!istAudioEingang(eingang)) return { fehler: 'eingang' };
-    const dauer = z.coerce.number().int().positive().max(4 * 3_600_000).safeParse(fd.get('dauerMs'));
+    const dauer = z.coerce
+      .number()
+      .int()
+      .positive()
+      .max(4 * 3_600_000)
+      .safeParse(fd.get('dauerMs'));
     const strom = await speicher().lies(eingang);
     if (!strom) return { fehler: 'eingang' };
     const roh = Buffer.from(await new Response(strom).arrayBuffer());
@@ -377,7 +397,9 @@ export async function verszeitenSpeichern(_vorher: RezitationZustand, fd: FormDa
       const vorher = new Map((await tx.select({ vers: v.vers, s: v.startMs, e: v.endeMs }).from(v).where(stelle)).map((z) => [z.vers, z]));
       const anders = verse.filter(([nr, start, ende]) => vorher.get(nr)?.s !== start || vorher.get(nr)?.e !== ende).map(([nr]) => nr);
       await tx.delete(v).where(stelle);
-      await tx.insert(v).values(verse.map(([vers, startMs, endeMs]) => ({ rezitationId: kopf.id, sure: sure.data, vers, startMs, endeMs })));
+      await tx
+        .insert(v)
+        .values(verse.map(([vers, startMs, endeMs]) => ({ rezitationId: kopf.id, sure: sure.data, vers, startMs, endeMs })));
       if (anders.length)
         await tx
           .update(schema.quranWortzeit)
@@ -445,7 +467,10 @@ export async function wortzeitenSpeichern(_vorher: RezitationZustand, fd: FormDa
     if (!kopf || !sure.success || !vers.success) return { fehler: 'nichtGefunden' };
     let anfaenge: number[];
     try {
-      const p = z.array(z.number().int().min(0)).max(200).safeParse(JSON.parse(String(fd.get('anfaenge') ?? '')));
+      const p = z
+        .array(z.number().int().min(0))
+        .max(200)
+        .safeParse(JSON.parse(String(fd.get('anfaenge') ?? '')));
       if (!p.success) return { fehler: 'woerter_anzahl' };
       anfaenge = p.data;
     } catch {

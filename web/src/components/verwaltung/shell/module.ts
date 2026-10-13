@@ -19,6 +19,7 @@ export type ModulSchluessel =
   | 'tickets'
   | 'kinderschutz'
   | 'medien'
+  | 'rezitationen'
   | 'benutzer'
   | 'audit'
   | 'styleguide'
@@ -86,6 +87,15 @@ export const MODULE: readonly Modul[] = [
     gruppe: 'inhalte',
   },
   { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: true, gruppe: 'inhalte' },
+  // Rezitations-Werkstatt (O-Q02, ADR 0029): religiöse Prüfung und Administration
+  {
+    schluessel: 'rezitationen',
+    pfad: '/verwaltung/rezitationen',
+    recht: 'rezitation.bearbeiten',
+    icon: 'rezitationen',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   {
     schluessel: 'eingaenge',
     pfad: '/verwaltung/eingaenge',

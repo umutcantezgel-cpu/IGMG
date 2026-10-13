@@ -72,7 +72,9 @@ export function webmDauer(d: Uint8Array): number | null {
   return info.dauerMs;
 }
 
-function findeInfo(d: Uint8Array): { kopfStart: number; kopf: Kopf; segment: Kopf & { start: number }; dauerMs: number | null; skala: number } | null {
+function findeInfo(
+  d: Uint8Array,
+): { kopfStart: number; kopf: Kopf; segment: Kopf & { start: number }; dauerMs: number | null; skala: number } | null {
   const ebml = leseKopf(d, 0);
   if (!ebml || ebml.id !== ID_EBML || ebml.groesse === null) return null;
   const segStart = ebml.inhalt + ebml.groesse;
@@ -99,7 +101,13 @@ function findeInfo(d: Uint8Array): { kopfStart: number; kopf: Kopf; segment: Kop
         }
         q = c.inhalt + c.groesse;
       }
-      return { kopfStart: p, kopf: k, segment: { ...segment, start: segStart }, dauerMs: dauer === null ? null : (dauer * skala) / 1e6, skala };
+      return {
+        kopfStart: p,
+        kopf: k,
+        segment: { ...segment, start: segStart },
+        dauerMs: dauer === null ? null : (dauer * skala) / 1e6,
+        skala,
+      };
     }
     p = k.inhalt + k.groesse;
   }
@@ -110,14 +118,16 @@ function findeInfo(d: Uint8Array): { kopfStart: number; kopf: Kopf; segment: Kop
 export function webmMitDauer(d: Uint8Array, dauerMs: number): Uint8Array {
   if (!(dauerMs > 0)) return d;
   const info = findeInfo(d);
-  if (!info || info.dauerMs !== null || info.kopf.groesse === null) return d;
+  if (!info || info.dauerMs !== null) return d;
   const { kopfStart, kopf, segment, skala } = info;
+  const groesse = kopf.groesse;
+  if (groesse === null) return d;
   const dauerElement = new Uint8Array(11);
   dauerElement.set([0x44, 0x89, 0x88]);
   new DataView(dauerElement.buffer).setFloat64(3, (dauerMs * 1e6) / skala);
-  const alterInhalt = d.subarray(kopf.inhalt, kopf.inhalt + kopf.groesse);
-  const neueInfo = verbinde(idBytes(ID_INFO), groesse8(kopf.groesse + dauerElement.length), alterInhalt, dauerElement);
-  const zuwachs = neueInfo.length - (kopf.inhalt + kopf.groesse - kopfStart);
+  const alterInhalt = d.subarray(kopf.inhalt, kopf.inhalt + groesse);
+  const neueInfo = verbinde(idBytes(ID_INFO), groesse8(groesse + dauerElement.length), alterInhalt, dauerElement);
+  const zuwachs = neueInfo.length - (kopf.inhalt + groesse - kopfStart);
   // Segment mit bekannter Größe (selten bei MediaRecorder): Größe anpassen
   const segmentKopf =
     segment.groesse === null
@@ -128,6 +138,6 @@ export function webmMitDauer(d: Uint8Array, dauerMs: number): Uint8Array {
     segmentKopf,
     d.subarray(segment.inhalt, kopfStart),
     neueInfo,
-    d.subarray(kopf.inhalt + kopf.groesse),
+    d.subarray(kopf.inhalt + groesse),
   );
 }

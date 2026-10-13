@@ -58,6 +58,23 @@ export function verszeitenAusPunkten(punkte: readonly number[]): VersTripel[] {
   return punkte.slice(0, -1).map((start, i) => [i + 1, Math.round(start), Math.round(punkte[i + 1])]);
 }
 
+/**
+ * Wortanfänge nach dem Einrasten in das Versfenster bringen: erstes Wort nicht vor dem Versanfang, je Wort mindestens
+ * {@link MIN_WORT_MS} Abstand, das letzte Wort mindestens so weit vor dem Versende. Reicht das Fenster nicht, werden die
+ * Anfänge gleichmäßig verteilt (der Mensch korrigiert danach).
+ */
+export function bereinigeAnfaenge(anfaenge: readonly number[], fenster: { startMs: number; endeMs: number }): number[] {
+  const n = anfaenge.length;
+  if (!n) return [];
+  const platz = fenster.endeMs - fenster.startMs;
+  if (platz < (n + 1) * MIN_WORT_MS) return anfaenge.map((_, i) => Math.round(fenster.startMs + (platz * i) / (n + 1)));
+  const neu = anfaenge.map((a) => Math.round(Math.min(Math.max(a, fenster.startMs), fenster.endeMs)));
+  // vorwärts: Mindestabstand; rückwärts: Platz bis zum Versende
+  for (let i = 0; i < n; i++) neu[i] = Math.max(neu[i], i === 0 ? fenster.startMs : neu[i - 1] + MIN_WORT_MS);
+  for (let i = n - 1; i >= 0; i--) neu[i] = Math.min(neu[i], i === n - 1 ? fenster.endeMs - MIN_WORT_MS : neu[i + 1] - MIN_WORT_MS);
+  return neu;
+}
+
 /** Wortzeiten eines Verses aus den Wortanfängen: Ende = Anfang des nächsten Wortes, das letzte Wort endet mit dem Vers. */
 export function wortzeitenAusAnfaengen(anfaenge: readonly number[], versEndeMs: number): [number, number][] {
   return anfaenge.map((a, i) => [Math.round(a), Math.round(i + 1 < anfaenge.length ? anfaenge[i + 1] : versEndeMs)]);
@@ -128,7 +145,10 @@ export function formatZeit(ms: number, stellen: 0 | 1 | 2 = 2): string {
 export function zeitVorlesen(ms: number): string {
   const s = Math.max(0, Math.round(ms / 10) / 100);
   const minuten = Math.floor(s / 60);
-  const sekunden = (s - minuten * 60).toFixed(2).replace(/\.?0+$/, '').replace('.', ',');
+  const sekunden = (s - minuten * 60)
+    .toFixed(2)
+    .replace(/\.?0+$/, '')
+    .replace('.', ',');
   const teil = `${sekunden} Sekunden`;
   return minuten ? `${minuten} ${minuten === 1 ? 'Minute' : 'Minuten'} ${teil}` : teil;
 }

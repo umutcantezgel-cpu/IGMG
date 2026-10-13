@@ -39,11 +39,7 @@ export async function legeAudioAb(eingabe: {
     .where(eq(schema.quranRezitation.id, rezitationId))
     .limit(1);
   if (!rezitation) throw new AudioFehler('rezitation');
-  const [s] = await db
-    .select({ verse: schema.quranSure.verseAnzahl })
-    .from(schema.quranSure)
-    .where(eq(schema.quranSure.nr, sure))
-    .limit(1);
+  const [s] = await db.select({ verse: schema.quranSure.verseAnzahl }).from(schema.quranSure).where(eq(schema.quranSure.nr, sure)).limit(1);
   if (!s) throw new AudioFehler('sure');
   if (!Number.isInteger(vers) || vers < 0 || vers > s.verse) throw new AudioFehler('vers');
 

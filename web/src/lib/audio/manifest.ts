@@ -39,7 +39,11 @@ const datei = z.object({ datei: relativ, sha256: sha });
 const manifestSchema = z.object({
   format: z.literal(MANIFEST_FORMAT),
   rezitation: z.string().regex(/^[a-z0-9-]{2,40}$/, 'kennung'),
-  name: z.object({ de: z.string().trim().min(2).max(120), tr: z.string().trim().max(120).optional(), en: z.string().trim().max(120).optional() }),
+  name: z.object({
+    de: z.string().trim().min(2).max(120),
+    tr: z.string().trim().max(120).optional(),
+    en: z.string().trim().max(120).optional(),
+  }),
   rezitator: z.string().trim().min(2).max(120),
   lizenz: z.string().trim().min(2).max(300),
   lizenzdatei: datei,
@@ -50,7 +54,12 @@ const manifestSchema = z.object({
         vers: z.number().int().min(0).max(286).default(0),
         datei: relativ,
         sha256: sha,
-        dauerMs: z.number().int().positive().max(4 * 3_600_000).optional(),
+        dauerMs: z
+          .number()
+          .int()
+          .positive()
+          .max(4 * 3_600_000)
+          .optional(),
       }),
     )
     .min(1),

@@ -71,10 +71,7 @@ async function ladeKoepfe(id?: string): Promise<RezitationKopf[]> {
 
 /** Wörter je Sure (für „alle Wortzeiten geprüft“). */
 async function woerterJeSure(): Promise<Map<number, number>> {
-  const zeilen = await db
-    .select({ sure: schema.quranWort.sure, n: count() })
-    .from(schema.quranWort)
-    .groupBy(schema.quranWort.sure);
+  const zeilen = await db.select({ sure: schema.quranWort.sure, n: count() }).from(schema.quranWort).groupBy(schema.quranWort.sure);
   return new Map(zeilen.map((z) => [z.sure, z.n]));
 }
 
@@ -86,14 +83,23 @@ async function surenStand(ids: string[]): Promise<Map<string, SurenStand[]>> {
   const w = schema.quranWortzeit;
   const [suren, woerter, audio, verszeiten, wortzeiten] = await Promise.all([
     db
-      .select({ nr: schema.quranSure.nr, umschrift: sql<string>`coalesce(${schema.quranSure.nameUmschrift}, '')`, verse: schema.quranSure.verseAnzahl })
+      .select({
+        nr: schema.quranSure.nr,
+        umschrift: sql<string>`coalesce(${schema.quranSure.nameUmschrift}, '')`,
+        verse: schema.quranSure.verseAnzahl,
+      })
       .from(schema.quranSure)
       .orderBy(asc(schema.quranSure.nr)),
     woerterJeSure(),
     db.select({ id: a.rezitationId, sure: a.sure, vers: a.vers }).from(a).where(inArray(a.rezitationId, ids)),
     db.select({ id: v.rezitationId, sure: v.sure, vers: v.vers }).from(v).where(inArray(v.rezitationId, ids)),
     db
-      .select({ id: w.rezitationId, sure: w.sure, n: count(), geprueft: sql<number>`count(*) filter (where ${w.geprueft})`.mapWith(Number) })
+      .select({
+        id: w.rezitationId,
+        sure: w.sure,
+        n: count(),
+        geprueft: sql<number>`count(*) filter (where ${w.geprueft})`.mapWith(Number),
+      })
       .from(w)
       .where(inArray(w.rezitationId, ids))
       .groupBy(w.rezitationId, w.sure),
