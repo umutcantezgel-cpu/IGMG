@@ -6,6 +6,7 @@ import { KontoMenue } from '@/components/verwaltung/shell/KontoMenue';
 import { MenueKnopf, MenueZustand } from '@/components/verwaltung/shell/MenueZustand';
 import { MODULE, rechtListe } from '@/components/verwaltung/shell/module';
 import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung/shell/Seitenleiste';
+import { funktionAn } from '@/lib/funktionen';
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
@@ -22,7 +23,9 @@ import { ladeKommendeVeranstaltungen, zaehleAktiveAnkuendigungen, zaehleEntwuerf
 export default async function GeschuetzterBereich({ children }: LayoutProps<'/[locale]/verwaltung'>) {
   const a = await verlangeSitzung();
   const t = await getTranslations('verwaltung');
-  const sichtbar = MODULE.filter((m) => m.gebaut && rechtListe(m).some((r) => darf(a.rollen, r)));
+  // Module mit Personendaten erscheinen nur bei eingeschaltetem Funktionsschalter (ADR 0035)
+  const schalter = { lernplattform: await funktionAn('lernplattform'), konten: await funktionAn('konten') };
+  const sichtbar = MODULE.filter((m) => m.gebaut && (!m.funktion || schalter[m.funktion]) && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
   const jetzt = new Date();
   const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz] = await Promise.all([

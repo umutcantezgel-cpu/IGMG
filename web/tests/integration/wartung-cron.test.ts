@@ -90,6 +90,8 @@ describe('Löschfristen per Cron (GET, CRON_SECRET)', () => {
       geloeschteUnzustellbareMails: expect.any(Number),
       geloeschteAuditEintraege: expect.any(Number),
       geloeschteNewsletterAnmeldungen: expect.any(Number),
+      geloeschteKonten: expect.any(Number),
+      geloeschteUnbestaetigteKonten: expect.any(Number),
     });
   });
 

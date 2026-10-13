@@ -32,6 +32,7 @@ import hatim from './hatim.json';
 import besondereTage from './besondereTage.json';
 import newsletter from './newsletter.json';
 import spenden from './spenden.json';
+import lernen from './lernen.json';
 
 type Teil = Record<string, unknown>;
 
@@ -64,4 +65,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   besondereTage,
   newsletter,
   spenden,
+  lernen,
 };

@@ -1,5 +1,8 @@
 import type { Aktion } from '@/lib/rechte/matrix';
 
+/** Funktionsschalter (ADR 0035), ohne den ein Modul nicht erscheint (Seiten antworten dann mit 404). */
+export type ModulFunktion = 'lernplattform' | 'konten';
+
 /**
  * Module der Verwaltung (V01–V14 + Einstellungen) in der Reihenfolge der Seitenleiste. Ein Modul erscheint nur, wenn
  * es gebaut ist (`gebaut`, setzt der Orchestrator bei der Abnahme) und die Rolle eines der Leserechte hat (`recht`).
@@ -17,6 +20,9 @@ export type ModulSchluessel =
   | 'weiterleitungen'
   | 'freigaben'
   | 'kurse'
+  | 'gruppen'
+  | 'lernende'
+  | 'lehrplan'
   | 'gebetszeiten'
   | 'eingaenge'
   | 'postfach'
@@ -25,6 +31,7 @@ export type ModulSchluessel =
   | 'gemeindeImBlick'
   | 'medien'
   | 'benutzer'
+  | 'gemeindeKonten'
   | 'audit'
   | 'styleguide'
   | 'startklar'
@@ -43,6 +50,7 @@ export type Modul = {
   icon: ModulIcon;
   gebaut: boolean;
   gruppe?: ModulGruppe;
+  funktion?: ModulFunktion;
 };
 
 /**
@@ -106,6 +114,34 @@ export const MODULE: readonly Modul[] = [
   },
   { schluessel: 'freigaben', pfad: '/verwaltung/freigaben', recht: 'freigabe.lesen', icon: 'freigaben', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true, gruppe: 'inhalte' },
+  // Lernplattform (H-L01…L03): nur mit eingeschaltetem Schalter `lernplattform`
+  {
+    schluessel: 'gruppen',
+    pfad: '/verwaltung/gruppen',
+    recht: 'gruppe.lesen',
+    icon: 'gruppen',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
+  {
+    schluessel: 'lernende',
+    pfad: '/verwaltung/lernende',
+    recht: 'lernende.lesen',
+    icon: 'lernende',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
+  {
+    schluessel: 'lehrplan',
+    pfad: '/verwaltung/lehrplan',
+    recht: 'gruppe.lesen',
+    icon: 'lehrplan',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
   {
     schluessel: 'gebetszeiten',
     pfad: '/verwaltung/gebetszeiten',
@@ -172,6 +208,15 @@ export const MODULE: readonly Modul[] = [
     gruppe: 'kommunikation',
   },
   { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true, gruppe: 'betrieb' },
+  {
+    schluessel: 'gemeindeKonten',
+    pfad: '/verwaltung/gemeinde-konten',
+    recht: 'gemeindekonto.lesen',
+    icon: 'gemeindeKonten',
+    gebaut: true,
+    gruppe: 'betrieb',
+    funktion: 'konten',
+  },
   { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true, gruppe: 'betrieb' },
   {
     schluessel: 'startklar',

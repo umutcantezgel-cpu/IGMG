@@ -1,6 +1,7 @@
 import { sql } from 'drizzle-orm';
 import { check, index, jsonb, pgTable, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
 import { user } from './auth';
+import { lernende } from './lernen';
 import { gemeindeRolleEnum, organisationEnum, rolleEnum } from './typen';
 
 /** Rollen je Konto (ADR 0003). Organisationsredaktion immer mit Organisation, alle anderen ohne. */
@@ -37,6 +38,11 @@ export const einladung = pgTable(
     rollen: jsonb().$type<EinladungRolle[]>().notNull(),
     /** Gemeinde-Rollen (Mein Bereich); eine Einladung kann Verwaltungs- und Gemeinde-Rollen zugleich tragen. */
     gemeindeRollen: jsonb().$type<EinladungGemeindeRolle[]>().notNull().default([]),
+    /**
+     * Bezug auf Lernende (Aufnahme aus einer Voranmeldung, O-L01): Bei der Annahme entsteht für Eltern der
+     * Eltern-Kind-Bezug, für Schüler ab 16 die Verknüpfung des eigenen Kontos mit dem Lerndatensatz.
+     */
+    lernendeId: uuid().references(() => lernende.id, { onDelete: 'cascade' }),
     tokenHash: text().notNull().unique(),
     laeuftAb: timestamp({ withTimezone: true }).notNull(),
     angenommenAm: timestamp({ withTimezone: true }),

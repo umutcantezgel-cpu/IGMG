@@ -6,6 +6,7 @@ import { raeumePushAuf } from '@/lib/push/abo';
 import { loescheAbgelaufene } from '@/lib/eingaenge/loeschlauf';
 import { gemeindeLoeschlauf } from '@/lib/loeschen/gemeinde';
 import { raeumeNewsletterAuf } from '@/lib/newsletter/dienst';
+import { kontenLoeschlauf } from '@/lib/konto/loeschen';
 import { mitSperre } from '@/lib/wartung/sperre';
 import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
 
@@ -48,6 +49,8 @@ async function laufe(): Promise<Response> {
       geloeschteUnzustellbareMails: gemeinde.mails,
       geloeschteAuditEintraege: gemeinde.audit,
       geloeschteNewsletterAnmeldungen: newsletter,
+      // Gemeinde-Konten: Löschanträge nach Frist (Art. 17) und unbestätigte Registrierungen nach 7 Tagen (H-L05)
+      ...(await kontenLoeschlauf()),
     };
   });
   return Response.json(lauf.uebersprungen ? { uebersprungen: true } : lauf.ergebnis, {

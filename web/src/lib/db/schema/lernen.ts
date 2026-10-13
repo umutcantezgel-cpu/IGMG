@@ -43,7 +43,11 @@ export const lernende = pgTable(
     aufgenommenVon: text(),
     loeschenAb: timestamp({ withTimezone: true }),
   },
-  (t) => [index('lernende_status_idx').on(t.status)],
+  (t) => [
+    index('lernende_status_idx').on(t.status),
+    // Aufnahme aus einer Voranmeldung ist idempotent: je Eingang höchstens ein Datensatz (O-L01)
+    unique('lernende_eingang_eindeutig').on(t.eingangId),
+  ],
 );
 
 /** Eltern ↔ Kind. Eltern sehen nur ihr eigenes Kind (Gruppenrechte). */
@@ -62,6 +66,9 @@ export const elternKind = pgTable(
   (t) => [primaryKey({ columns: [t.elternId, t.lernendeId] }), index('eltern_kind_lernende_idx').on(t.lernendeId)],
 );
 
+/** Kursarten des Lehrplans (Elifbe, Koran, Tecvid, İlmihal, Hifz). */
+export const kursartEnum = pgEnum('kursart', ['elifbe', 'kuran', 'tecvid', 'ilmihal', 'hifz']);
+
 export const chatModusEnum = pgEnum('gruppe_chat_modus', ['aus', 'nur_lehrkraft', 'offen']);
 export const gruppeStatusEnum = pgEnum('gruppe_status', ['aktiv', 'archiviert']);
 
@@ -69,6 +76,8 @@ export const gruppeStatusEnum = pgEnum('gruppe_status', ['aktiv', 'archiviert'])
 export const gruppe = pgTable('gruppe', {
   id: uuid().primaryKey().defaultRandom(),
   kursId: uuid().references(() => kurs.id, { onDelete: 'set null' }),
+  /** Kursart für Lehrplan und Fortschritt (optional; Verwaltung „Gruppen“). */
+  kursart: kursartEnum(),
   name: jsonb().$type<Mehrsprachig>().notNull(),
   schuljahr: text(),
   beginn: date({ mode: 'string' }),
@@ -180,8 +189,6 @@ export const fehlmeldung = pgTable(
   },
   (t) => [index('fehlmeldung_lernende_datum_idx').on(t.lernendeId, t.datum)],
 );
-
-export const kursartEnum = pgEnum('kursart', ['elifbe', 'kuran', 'tecvid', 'ilmihal', 'hifz']);
 
 /** Stufen eines Lehrplans (z. B. Elifbe Stufe 4). Texte verfasst die Lehrkraft (religiöse Freigabe, wo nötig). */
 export const lehrplanStufe = pgTable(

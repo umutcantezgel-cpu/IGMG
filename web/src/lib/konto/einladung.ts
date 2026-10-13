@@ -27,6 +27,33 @@ async function vergibRollen(tx: Transaktion, e: Einladung, benutzerId: string): 
   for (const rolle of e.gemeindeRollen) {
     await tx.insert(schema.gemeindeRolle).values({ benutzerId, rolle, erstelltVon: e.erstelltVon }).onConflictDoNothing();
   }
+  await verknuepfeLernende(tx, e, benutzerId);
+}
+
+/**
+ * Bezug auf Lernende (Aufnahme aus einer Voranmeldung, O-L01): Eltern bekommen den Eltern-Kind-Bezug (bestätigt mit
+ * der Annahme über den Link aus der Mail), Schüler ab 16 ihr Konto am Lerndatensatz – nur, wenn dieser noch keins hat.
+ */
+async function verknuepfeLernende(tx: Transaktion, e: Einladung, benutzerId: string): Promise<void> {
+  if (!e.lernendeId) return;
+  if (e.gemeindeRollen.includes('eltern'))
+    await tx
+      .insert(schema.elternKind)
+      .values({ elternId: benutzerId, lernendeId: e.lernendeId, bestaetigtAm: new Date() })
+      .onConflictDoNothing();
+  if (e.gemeindeRollen.includes('schueler')) {
+    // Ein Konto gehört zu höchstens einem Lerndatensatz (eindeutig)
+    const [eigen] = await tx
+      .select({ id: schema.lernende.id })
+      .from(schema.lernende)
+      .where(eq(schema.lernende.benutzerId, benutzerId))
+      .limit(1);
+    if (!eigen)
+      await tx
+        .update(schema.lernende)
+        .set({ benutzerId })
+        .where(and(eq(schema.lernende.id, e.lernendeId), isNull(schema.lernende.benutzerId)));
+  }
 }
 
 async function beanspruche(id: string): Promise<boolean> {

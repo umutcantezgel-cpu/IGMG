@@ -82,6 +82,20 @@ export const AKTION_SCHLUESSEL = {
   'hatim.namen_gelesen': 'hatimNamenGelesen',
   'besonderer_tag.bestaetigt': 'besondererTagBestaetigt',
   'newsletter.versendet': 'newsletterVersendet',
+  'gruppe.angelegt': 'gruppeAngelegt',
+  'gruppe.geaendert': 'gruppeGeaendert',
+  'gruppe.leitung': 'gruppeLeitung',
+  'gruppe.mitglieder': 'gruppeMitglieder',
+  'gruppe.termine': 'gruppeTermine',
+  'lernende.aufgenommen': 'lernendeAufgenommen',
+  'lernende.gelesen': 'lernendeGelesen',
+  'lernende.geaendert': 'lernendeGeaendert',
+  'lehrplan.geaendert': 'lehrplanGeaendert',
+  'gemeindekonto.gelesen': 'gemeindekontoGelesen',
+  'gemeindekonto.rollen_geaendert': 'gemeindekontoRollenGeaendert',
+  'gemeindekonto.gesperrt': 'gemeindekontoGesperrt',
+  'gemeindekonto.entsperrt': 'gemeindekontoEntsperrt',
+  'gemeindekonto.geloescht': 'gemeindekontoGeloescht',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */
