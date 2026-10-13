@@ -8,6 +8,12 @@
   - Kür: Hatim, Kalender, Ramadan, Spenden, Newsletter (aad315d).
   - Verwaltung Lernen + Aufnahme aus Voranmeldung (a4cbd4b) – Gruppen, Lernende, Lehrplan, Gemeinde-Konten, Löschlauf.
   - Mein Bereich: Unterricht, Kinder, Gruppe/Chat, Benachrichtigungen, Beispieldaten (a2e7dba).
+  - Koran-Verwaltung: Ausgaben, Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen/Listen (a68d2a2).
+  - Rezitations-Werkstatt: Aufnahme/Upload, Versgrenzen, Mitklopfen, Prüfwiedergabe, Import (a9358d9).
+- **Orchestrator erledigt seit 09:10:** Startklar „Gemeinde-Plattform“ (570ebd8), Wortlaut G-01…G-05 (23f3a96),
+  Medienspiegel-Löschabgleich D-06 (01299d8), Löschfristen D-04/05/10/13/16 (7150de5), Kinderschutz-Modul (ced6d43),
+  Probe ohne privaten Schlüssel D-08/D-09 (00872a4), Offline-Koran (in Arbeit: sw.js, offline.ts, E2E quran-offline).
+  Probebau Produktion grün (1211 Seiten, /quran/2 84 KB gz).
 - **Orchestrator parallel:** Startklar-Prüfungen (Schalter, Sicherung, Kette, Takt, lokaler Server), wortlaut-Ausnahmen,
   Medienspiegel-Löschabgleich (D-06); danach Zusammenführen CMS → Kür → Lernen-Verwaltung → Mein Bereich, Navigation
   (Kalender, Hatim, Ramadan, Spenden), Tor E2 (check, Integration, sprachen, Religion, Build beider Betriebsarten,
