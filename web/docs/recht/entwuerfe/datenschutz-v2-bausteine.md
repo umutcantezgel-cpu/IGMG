@@ -198,7 +198,7 @@ Den Newsletter erhalten Sie nur, wenn Sie ihn bestellen **und** die Bestellung b
 ### Hinweise für die Prüfung
 
 - Belege: `web/src/lib/db/schema/gemeinde.ts` (`newsletter_abo`, `newsletter_ausgabe`). Der Newsletter ist Kür; die Oberfläche war beim Schreiben noch nicht gebaut.
-- **Löschroutine fehlt** für unbestätigte und abbestellte Einträge (`loeschkonzept.md` Z-14). Vor Einschalten von `newsletter` einbauen.
+- **Löschroutine fehlt** für unbestätigte und abbestellte Einträge (`loeschkonzept.md` L-28). Vor Einschalten von `newsletter` einbauen.
 - „Keine Messpixel“ ist eine Zusage an die Mail-Vorlage `newsletter`; beim Bau gegenprüfen.
 
 ## 7. Standort „Mein Ort“ (nur im Gerät)
@@ -238,7 +238,7 @@ Wie Ihr Gerät den Standort bestimmt (GPS, WLAN, Mobilfunk), regelt Ihr Browser 
 ### Hinweise für die Prüfung
 
 - Belege: ADR 0029; `web/src/lib/db/schema/quran.ts` (`quran_rezitation`: Prüfung `quran_rezitation_vereinbarung`, nicht aktiv ohne `vereinbarung_medium_id`); `web/src/lib/storage`; `kopfzeilen-pfade.test.ts` (Mikrofon nur Verwaltung).
-- Sicherungen rotieren nach 30 Tagen (`betrieb/lokal/sicherung/sichern.sh`). **Der Medienspiegel löscht nie** (`betrieb/lokal/spiegel/spiegel.mjs`, Kommentar im Kopf). Für einen Widerruf der Rezitierenden oder einer Fotoeinwilligung muss die Datei im Spiegel von Hand entfernt werden `[Verfahren – Technik/DSB; siehe Löschkonzept Z-22]`.
+- Sicherungen rotieren nach 30 Tagen (`betrieb/lokal/sicherung/sichern.sh`). **Der Medienspiegel löscht nie** (`betrieb/lokal/spiegel/spiegel.mjs`, Kommentar im Kopf). Für einen Widerruf der Rezitierenden oder einer Fotoeinwilligung muss die Datei im Spiegel von Hand entfernt werden `[Verfahren – Technik/DSB; siehe Löschkonzept L-32]`.
 - Offline-Kopien in Geräten Dritter können wir nicht zurückholen; die Vereinbarung sagt das ausdrücklich.
 - Die Rezitation **fremder** Rezitatoren (MN-03b) braucht eigene Lizenztexte; hier nicht geregelt.
 

@@ -49,7 +49,7 @@ Die Einwilligung ist freiwillig. [Bestätigen – Bildung: Mein Kind kann auch o
 
 ### Türkçe
 
-IGMG Wetzlar'ın ([Name und Rechtsform – Vorstand]), çocuğum [Name des Kindes] ile ilgili aşağıdaki bilgileri öğrenme platformunda işlemesine rıza veriyorum: ad-soyad, doğum tarihi ve adres (şifreli olarak saklanır), grup, devam durumu ve devamsızlık bildirimleri, öğrenme ilerlemesi ile puanlı hıfz sınavları.
+IGMG Wetzlar'ın ([Name und Rechtsform – Vorstand]), [Name des Kindes] adlı çocuğumla ilgili aşağıdaki bilgileri öğrenme platformunda işlemesine rıza veriyorum: ad-soyad, doğum tarihi ve adres (şifreli olarak saklanır), grup, devam durumu ve devamsızlık bildirimleri, öğrenme ilerlemesi ile puanlı hıfz sınavları.
 
 Dini eğitime katılım ve öğrenme durumu, dini inanca dair çıkarımlara yol açabilir. Bu bilgilerin işlenmesine de **açıkça** rıza veriyorum.
 
@@ -93,7 +93,7 @@ Die Einwilligung ist freiwillig.
 
 ### Türkçe
 
-Çocuğum [Name des Kindes] için „Hesabım“ alanında bir erişim (çocuk hesabı) açılmasına rıza veriyorum. Erişim bir kullanıcı adı ve bir şifreden oluşur; çocuğumun e-posta adresi saklanmaz. Ayrıca görünen ad (ad ve soyadın ilk harfi) ile oturum açma zamanları saklanır.
+[Name des Kindes] adlı çocuğum için „Hesabım“ alanında bir erişim (çocuk hesabı) açılmasına rıza veriyorum. Erişim bir kullanıcı adı ve bir şifreden oluşur; çocuğumun e-posta adresi saklanmaz. Ayrıca görünen ad (ad ve soyadın ilk harfi) ile oturum açma zamanları saklanır.
 
 Çocuğum bu erişimle öğrenme yolunu, grubunu ve derslerini görür. Oturum 12 saat sonra kendiliğinden sona erer. Şifreyi istediğim zaman sıfırlayabilirim ve erişimin cami yönetimi aracılığıyla silinmesini isteyebilirim. Çocuğum tüm gruplardan ayrıldığında erişim silinir [Frist – siehe Löschkonzept L-11].
 
@@ -135,7 +135,7 @@ Die Einwilligung ist freiwillig. Mein Kind kann auch ohne Chat am Unterricht tei
 
 ### Türkçe
 
-Çocuğum [Name des Kindes] grubunun denetimli grup sohbetine katılabilsin diye rıza veriyorum. Grup sohbetinde grubun çocukları ve öğretmenleri yazar. Doğrudan mesaj, fotoğraf ve dosya yoktur; yalnızca en fazla 500 karakterlik yazı vardır. Sohbet yalnızca belirlenen saatlerde açıktır (standart: 08.00–20.00).
+[Name des Kindes] adlı çocuğumun grubunun denetimli grup sohbetine katılmasına rıza veriyorum. Grup sohbetinde grubun çocukları ve öğretmenleri yazar. Doğrudan mesaj, fotoğraf ve dosya yoktur; yalnızca en fazla 500 karakterlik yazı vardır. Sohbet yalnızca belirlenen saatlerde açıktır (standart: 08.00–20.00).
 
 Grubun öğretmenleri sohbeti okur ve denetler. Biri bir mesajı bildirirse, öğretmenler ve cami'nin çocuk koruma sorumlusu bildirilen mesajı ve öncesindeki ile sonrasındaki mesajları görür. Böyle her inceleme kayda geçirilir. Web sitesinin yönetimi sohbetleri okumaz.
 
@@ -179,7 +179,7 @@ Die Einwilligung ist freiwillig.
 
 ### Türkçe
 
-Çocuğum [Name des Kindes] adlı çocuğun cihazında bildirimlerin (Web Push) açılmasına rıza veriyorum. Çocuğum bu durumda grubundaki yeniliklere ve dersten haberlere dair bildirimler alabilir [ve caminin namaz vakitleri ile duyurularına dair bildirimler].
+[Name des Kindes] adlı çocuğumun cihazında bildirimlerin (Web Push) açılmasına rıza veriyorum. Çocuğum bu durumda grubundaki yeniliklere ve dersten haberlere dair bildirimler alabilir [ve caminin namaz vakitleri ile duyurularına dair bildirimler].
 
 Bunun için cami, tarayıcının bildirimler için verdiği adresi şifreli olarak saklar ve çocuğumun hesabıyla ilişkilendirir. İletim, tarayıcının bildirim hizmeti üzerinden yapılır (örneğin Google, Mozilla, Apple veya Microsoft; merkezi ABD'dedir). Bu hizmet yalnızca şifreli bir mesajın geldiğini görür, içeriğini görmez. Mesajlar hiçbir zaman ad veya sohbet içeriği taşımaz. Başarılı bir iletim olmayan abonelik 12 ay sonra silinir.
 
@@ -243,7 +243,7 @@ I consent to IGMG Wetzlar ([Name und Rechtsform – Vorstand]) publishing photos
 
 ### E5b: çocuğumun fotoğrafı (Türkçe)
 
-IGMG Wetzlar'ın ([Name und Rechtsform – Vorstand]), çocuğum [Name des Kindes] ile ilgili [Anlass und Datum] tarihinde çekilen fotoğrafları web sitesinde [ve şu yerlerde: ilan panosu, bülten – Auswahl Vorstand] yayımlamasına rıza veriyorum. [Entscheidung Vorstand: Fotoğraf altı yazısında çocuğun adı yer almaz.] İnternetteki fotoğraflara dünya çapında erişilebilir ve üçüncü kişiler onları kopyalayabilir; zaten kopyalanmış fotoğrafları cami geri alamaz. Rıza, ben geri çekene kadar ya da çocuğum 16 yaşını doldurduktan sonra kendisi geri çekene kadar geçerlidir. Rıza gönüllüdür; çocuğumun derse katılımı buna bağlı değildir.
+IGMG Wetzlar'ın ([Name und Rechtsform – Vorstand]), [Name des Kindes] adlı çocuğumun [Anlass und Datum] tarihinde çekilen fotoğraflarını web sitesinde [ve şu yerlerde: ilan panosu, bülten – Auswahl Vorstand] yayımlamasına rıza veriyorum. [Entscheidung Vorstand: Fotoğraf altı yazısında çocuğun adı yer almaz.] İnternetteki fotoğraflara dünya çapında erişilebilir ve üçüncü kişiler onları kopyalayabilir; zaten kopyalanmış fotoğrafları cami geri alamaz. Rıza, ben geri çekene kadar ya da çocuğum 16 yaşını doldurduktan sonra kendisi geri çekene kadar geçerlidir. Rıza gönüllüdür; çocuğumun derse katılımı buna bağlı değildir.
 
 ☐ Velayet hakkına sahibim ve ikinci velayet hakkı sahibi kişiyle mutabık kalarak hareket ediyorum.
 
