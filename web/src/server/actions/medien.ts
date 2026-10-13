@@ -62,6 +62,15 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
   if (!direkt && (!(datei instanceof File) || datei.size === 0))
     return { fehler: 'pruefen', feldFehler: { datei: 'dateiFehlt', ...(p.success ? {} : feldFehler(p.error)) }, werte };
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
+  // K-29: Personen erkennbar → Einwilligung der Abgebildeten (bei Kindern der Eltern) bestätigen
+  const personen = fd.get('personen') === 'ja';
+  const einwilligung = fd.get('einwilligung') === 'ja';
+  if (personen && !einwilligung)
+    return {
+      fehler: 'pruefen',
+      feldFehler: { einwilligung: 'einwilligungFehlt' },
+      werte: { ...werte, personen: 'ja', einwilligung: '' },
+    };
   const dateiname = direkt ? String(fd.get('eingangName') ?? '').trim() || 'dokument.pdf' : (datei as File).name;
   let roh: Buffer;
   if (direkt) {
@@ -123,7 +132,7 @@ export async function hochladen(_vorher: MedienZustand, fd: FormData): Promise<M
           aktion: 'medium.hochgeladen',
           zielTyp: 'medium',
           zielId: zeilen[0].id,
-          details: { typ: v.typ, groesse: v.daten.length },
+          details: { typ: v.typ, groesse: v.daten.length, personen, einwilligungBestaetigt: personen && einwilligung },
         },
         tx,
       );

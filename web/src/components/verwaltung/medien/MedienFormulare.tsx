@@ -197,10 +197,60 @@ export function HochladenFormular({ grenzeBytes, direkt = false }: { grenzeBytes
         </>
       ) : null}
       <TextFelder z={z} start={{ altDe: '', altTr: '', altEn: '', bildrechte: '' }} tv={tv('pflichtfeld')} />
+      <PersonenFelder z={z} />
       <Button type="submit" className="self-start" disabled={laeuft || laedtDirekt}>
         {laeuft ? t('hochladen.sendet') : t('hochladen.senden')}
       </Button>
     </form>
+  );
+}
+
+/**
+ * K-29: Sind Personen erkennbar, bestätigt die hochladende Person die Einwilligung der Abgebildeten (bei Kindern die der
+ * Eltern). Ohne Bestätigung lehnt der Server den Upload ab; die Angabe steht im Audit-Log.
+ */
+function PersonenFelder({ z }: { z: MedienZustand }) {
+  const t = useTranslations('verwaltung.medien');
+  const [personen, setPersonen] = useState(z.werte?.personen === 'ja');
+  const fehler = z.feldFehler?.einwilligung ? t(`fehler.${z.feldFehler.einwilligung}` as never) : undefined;
+  return (
+    <fieldset className="flex flex-col gap-3 rounded-md border border-linie p-4">
+      <legend className="px-1 font-bold">{t('hochladen.personenTitel')}</legend>
+      <label className="flex min-h-11 cursor-pointer items-center gap-3">
+        <input
+          type="checkbox"
+          name="personen"
+          value="ja"
+          checked={personen}
+          onChange={(e) => setPersonen(e.currentTarget.checked)}
+          className="size-5 accent-gruen-700"
+        />
+        <span>{t('hochladen.personen')}</span>
+      </label>
+      {personen ? (
+        <div className="flex flex-col gap-1.5">
+          <label className="flex cursor-pointer items-start gap-3">
+            <input
+              type="checkbox"
+              name="einwilligung"
+              value="ja"
+              required
+              defaultChecked={z.werte?.einwilligung === 'ja'}
+              aria-invalid={fehler ? true : undefined}
+              aria-describedby={fehler ? 'medium-einwilligung-fehler' : undefined}
+              className="mt-1 size-5 shrink-0 accent-gruen-700"
+            />
+            <span>{t('hochladen.einwilligung')}</span>
+          </label>
+          {fehler ? (
+            <p id="medium-einwilligung-fehler" className="text-16 font-bold text-fehler">
+              {fehler}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+      <p className="text-16 text-tinte-2">{t('hochladen.personenHinweis')}</p>
+    </fieldset>
   );
 }
 

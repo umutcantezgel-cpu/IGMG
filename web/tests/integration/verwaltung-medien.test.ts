@@ -101,6 +101,17 @@ describe('Hochladen, Ändern, Ausliefern', () => {
     expect((await actions.hochladen({}, formular({ altDe: 'Testbild' }))).feldFehler).toMatchObject({ datei: 'dateiFehlt' });
   });
 
+  it('K-29: Personen erkennbar → Einwilligung Pflicht, Bestätigung im Audit', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const ohne = await actions.hochladen({}, upload(await jpegMitExif(41, 31), 'p.jpg', { altDe: 'Gruppenbild Test', personen: 'ja' }));
+    expect(ohne.feldFehler).toMatchObject({ einwilligung: 'einwilligungFehlt' });
+    const id = await hochladenId(
+      upload(await jpegMitExif(42, 32), 'p2.jpg', { altDe: 'Gruppenbild Test', personen: 'ja', einwilligung: 'ja' }),
+    );
+    const [audit] = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielId, id));
+    expect(audit.details).toMatchObject({ personen: true, einwilligungBestaetigt: true });
+  });
+
   it('Erfolg: Datei im Speicher, Eintrag mit Maßen, Audit; gleicher Inhalt → derselbe Eintrag', async () => {
     const ich = (await angemeldetAls([{ rolle: 'redaktion' }]))!;
     const bild = await jpegMitExif();
@@ -268,7 +279,9 @@ describe('Direkt-Upload großer PDF-Dateien (ADR 0020, V-05)', () => {
     vi.stubEnv('SPEICHER', 'blob');
     try {
       await angemeldetAls([{ rolle: 'redaktion' }]);
-      const id = await hochladenId(formular({ altDe: 'Aushang Gemeindefest groß', eingang: schluessel, eingangName: 'Aushang Gemeindefest.pdf' }));
+      const id = await hochladenId(
+        formular({ altDe: 'Aushang Gemeindefest groß', eingang: schluessel, eingangName: 'Aushang Gemeindefest.pdf' }),
+      );
       const [zeile] = await db.select().from(schema.medium).where(eq(schema.medium.id, id));
       expect(zeile).toMatchObject({ typ: 'application/pdf', dateiname: 'Aushang Gemeindefest.pdf' });
       expect(zeile.groesse).toBeGreaterThan(6_000_000);
@@ -306,7 +319,10 @@ describe('Direkt-Upload großer PDF-Dateien (ADR 0020, V-05)', () => {
     vi.stubEnv('SPEICHER', 'blob');
     try {
       await angemeldetAls([{ rolle: 'redaktion' }]);
-      const z = await actions.hochladen({}, formular({ altDe: 'Aushang mit falschem Inhalt', eingang: schluessel, eingangName: 'falsch.pdf' }));
+      const z = await actions.hochladen(
+        {},
+        formular({ altDe: 'Aushang mit falschem Inhalt', eingang: schluessel, eingangName: 'falsch.pdf' }),
+      );
       expect(fehlerVon(z)).toMatch(/^datei_/);
       expect(await s.existiert(schluessel)).toBe(false);
     } finally {
