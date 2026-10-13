@@ -100,6 +100,38 @@ async function einmal(schluessel: string): Promise<boolean> {
   return zeilen.length > 0;
 }
 
+/** Inaktive Abos (12 Monate ohne Erfolg) und alte Einmal-Schlüssel entfernen – im Takt und im täglichen Löschlauf. */
+export async function raeumePushAuf(): Promise<number> {
+  const alt = await db
+    .delete(schema.pushAbo)
+    .where(
+      or(
+        lt(schema.pushAbo.letzterErfolg, sql`now() - interval '12 months'`),
+        and(isNull(schema.pushAbo.letzterErfolg), lt(schema.pushAbo.erstelltAm, sql`now() - interval '12 months'`)),
+      ),
+    )
+    .returning({ id: schema.pushAbo.id });
+  await db.delete(schema.pushVersand).where(lt(schema.pushVersand.gesendetAm, sql`now() - interval '3 days'`));
+  return alt.length;
+}
+
+/** Kinder (< 16) bekommen Push nur mit Einwilligung der Eltern „Push für das Kind“ (ADR 0026, D-07). */
+export async function kindDarfPush(benutzerId: string): Promise<boolean> {
+  const z = await db
+    .select({ id: schema.kontoEinwilligung.id })
+    .from(schema.kontoEinwilligung)
+    .innerJoin(schema.lernende, eq(schema.lernende.id, schema.kontoEinwilligung.lernendeId))
+    .where(
+      and(
+        eq(schema.lernende.benutzerId, benutzerId),
+        eq(schema.kontoEinwilligung.art, 'push_kind'),
+        isNull(schema.kontoEinwilligung.widerrufenAm),
+      ),
+    )
+    .limit(1);
+  return z.length > 0;
+}
+
 export type TaktErgebnis = { gebetsErinnerungen: number; fehlgeschlagen: number; geloeschteAbos: number };
 
 /**
@@ -132,16 +164,6 @@ export async function fuehreTaktAus(vapid: VapidSchluessel, jetzt = new Date()):
       }
     }
   }
-  // Aufräumen: inaktive Abos (12 Monate ohne Erfolg) und alte Einmal-Schlüssel
-  const alt = await db
-    .delete(schema.pushAbo)
-    .where(
-      or(
-        lt(schema.pushAbo.letzterErfolg, sql`now() - interval '12 months'`),
-        and(isNull(schema.pushAbo.letzterErfolg), lt(schema.pushAbo.erstelltAm, sql`now() - interval '12 months'`)),
-      ),
-    )
-    .returning({ id: schema.pushAbo.id });
-  await db.delete(schema.pushVersand).where(lt(schema.pushVersand.gesendetAm, sql`now() - interval '3 days'`));
-  return { gebetsErinnerungen: gesendet, fehlgeschlagen, geloeschteAbos: alt.length };
+  const geloescht = await raeumePushAuf();
+  return { gebetsErinnerungen: gesendet, fehlgeschlagen, geloeschteAbos: geloescht };
 }

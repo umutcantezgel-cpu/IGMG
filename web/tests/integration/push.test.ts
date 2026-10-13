@@ -5,6 +5,7 @@ import { schema } from '@/lib/db';
 import { zeitpunkt, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { erzeugeVapid } from '@/lib/push/vapid';
 import { base64url } from '@/lib/push/verschluesselung';
+import { verschluessele } from '@/lib/krypto';
 import { angemeldetAls, aufrufe, verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /**
@@ -114,6 +115,21 @@ describe('Push-Abo über die API', () => {
     const r = await abo.DELETE(anfrage('DELETE', { endpoint: a.endpoint }));
     expect(r.status).toBe(204);
     expect((await abo.DELETE(anfrage('DELETE', { endpoint: a.endpoint }))).status).toBe(204);
+  });
+});
+
+describe('Push für Kinder (D-07)', () => {
+  it('Kinderkonto ohne Elterneinwilligung „Push für das Kind“ → 403, mit Einwilligung → 200', async () => {
+    const id = (await angemeldetAls([]))!;
+    await db.insert(schema.kontoProfil).values({ benutzerId: id, anzeigename: 'Kind T.', istKind: true });
+    expect((await abo.POST(anfrage('POST', eingabe()))).status).toBe(403);
+    const v = verschluessele({ name: 'Kind' });
+    const [l] = await db
+      .insert(schema.lernende)
+      .values({ benutzerId: id, datenVerschluesselt: v.daten, schluesselId: v.schluesselId, anzeigename: 'Kind T.' })
+      .returning({ id: schema.lernende.id });
+    await db.insert(schema.kontoEinwilligung).values({ lernendeId: l.id, art: 'push_kind', textVersion: 'v1' });
+    expect((await abo.POST(anfrage('POST', eingabe()))).status).toBe(200);
   });
 });
 

@@ -6,10 +6,13 @@ import { protokolliere } from '@/lib/audit';
 import {
   bearbeiteMeldung,
   bestaetigeRegeln,
+  entferneAlsKinderschutz,
+  entferneMitglied,
   entferneNachricht,
   ladeKanal,
   leitungsAdressen,
   meldeNachricht,
+  pausiereAlsKinderschutz,
   sendeNachricht,
   setzeKanalPause,
   setzeNotfallpause,
@@ -73,7 +76,10 @@ export async function meldeChatNachricht(eingabe: z.input<typeof meldungsEingabe
   if (!ergebnis.ok) return { ok: false as const };
   // S-08: Gruppenleitung und Rolle kinderschutz erfahren von der Meldung – ohne Inhalt
   const empfaenger = [
-    ...(await leitungsAdressen(ergebnis.gruppeId)).map((an) => ({ an, pfad: `/mein-bereich/unterricht/${ergebnis.gruppeId}/moderation` })),
+    ...(await leitungsAdressen(ergebnis.gruppeId, ergebnis.absenderId)).map((an) => ({
+      an,
+      pfad: `/mein-bereich/unterricht/${ergebnis.gruppeId}/moderation`,
+    })),
     { an: 'recht:meldung.chat.bearbeiten', pfad: '/verwaltung/kinderschutz' },
   ];
   await db.insert(schema.mailAusgang).values(
@@ -130,5 +136,28 @@ export async function schalteNotfallpause(an: boolean, begruendung: string) {
   if (!grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
   const fehler = await setzeNotfallpause(a.benutzerId, an, begruendung);
   if (!fehler) await protokolliere({ benutzerId: a.benutzerId, aktion: an ? 'chat.notfallpause' : 'chat.notfallpause_aufgehoben' });
+  return fehler ? { fehler } : { ok: true as const };
+}
+
+export async function entferneGruppenmitglied(gruppeId: string, lernendeId: string, begruendung: string) {
+  const { kontext: k } = await kontext();
+  if (!uuid.safeParse(gruppeId).success || !uuid.safeParse(lernendeId).success || !grund.safeParse(begruendung).success)
+    return { fehler: 'grundFehlt' as const };
+  const fehler = await entferneMitglied(k, gruppeId, lernendeId, begruendung);
+  return fehler ? { fehler } : { ok: true as const };
+}
+
+/** Kinderschutz (Verwaltung): entfernen und pausieren auch ohne Gruppenleitung, z. B. bei Meldungen gegen eine Lehrkraft. */
+export async function entferneAlsKinderschutzAction(nachrichtId: number, begruendung: string) {
+  const a = await verlangeRecht('meldung.chat.bearbeiten');
+  if (!Number.isInteger(nachrichtId) || nachrichtId < 1 || !grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
+  const fehler = await entferneAlsKinderschutz(a.benutzerId, nachrichtId, begruendung);
+  return fehler ? { fehler } : { ok: true as const };
+}
+
+export async function pausiereAlsKinderschutzAction(kanalId: string, pause: boolean, begruendung: string) {
+  const a = await verlangeRecht('meldung.chat.bearbeiten');
+  if (!uuid.safeParse(kanalId).success || !grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
+  const fehler = await pausiereAlsKinderschutz(a.benutzerId, kanalId, pause, begruendung);
   return fehler ? { fehler } : { ok: true as const };
 }

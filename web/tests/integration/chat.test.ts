@@ -129,6 +129,11 @@ describe('Kinder: Einwilligung, Alter, Regeln, Zeiten (S-03…S-06, S-13, S-15)'
     await db.update(schema.kontoEinwilligung).set({ widerrufenAm: new Date() }).where(eq(schema.kontoEinwilligung.lernendeId, lern.kind));
     expect((await dienst.sendeNachricht(await lage('gruppe'), await k(ids.kind), 'Noch da?')).ok).toBe(false);
     expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('einwilligungFehlt');
+    // D-01: auch Lesen endet sofort – nur der Grund kommt zurück
+    expect(await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind))).toMatchObject({
+      nachrichten: [],
+      schreiben: 'einwilligungFehlt',
+    });
     await db
       .insert(schema.kontoEinwilligung)
       .values({ lernendeId: lern.kind, art: 'gruppenchat', textVersion: 'v1', erteiltVon: ids.eltern });
@@ -213,6 +218,9 @@ describe('Moderation und Meldung (S-07…S-11, S-17)', () => {
   it('S-17: Notfall-Pause sperrt alle Kanäle sofort, auch für die Leitung', async () => {
     expect(await dienst.setzeNotfallpause(ids.hoca1, true, 'Vorfall wird geprüft')).toBeNull();
     expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.hoca1))).toBe('notfallpause');
+    // Kinder sehen in der Pause nichts, die Leitung liest weiter (Aufarbeitung)
+    expect((await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind)))?.nachrichten).toEqual([]);
+    expect((await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.hoca1)))?.nachrichten.length).toBeGreaterThan(0);
     expect(await dienst.setzeNotfallpause(ids.hoca1, false, 'Geprüft, alles in Ordnung')).toBeNull();
     expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('ok');
   });
@@ -236,6 +244,29 @@ describe('Moderation und Meldung (S-07…S-11, S-17)', () => {
         })),
       ),
     ).toBeNull();
+  });
+});
+
+describe('Meldung gegen die Leitung, Kinderschutz, Mitglied entfernen (D-02, S-09)', () => {
+  it('die gemeldete Lehrkraft bekommt keine Hinweis-Mail; Kinderschutz kann entfernen und pausieren', async () => {
+    const r = await dienst.sendeNachricht(await lage('gruppe'), await k(ids.hoca1), 'Nachricht der Lehrkraft');
+    const id = (r as { id: number }).id;
+    const m = await dienst.meldeNachricht(await k(ids.kind), id, 'unangemessen', null);
+    expect(m.ok && m.absenderId).toBe(ids.hoca1);
+    const adressen = await dienst.leitungsAdressen(gruppeId, ids.hoca1);
+    expect(adressen).toHaveLength(1);
+    expect(await dienst.entferneAlsKinderschutz('kinderschutz-person', id, 'Prüfung durch Kinderschutz')).toBeNull();
+    const [z] = await db.select().from(schema.chatNachricht).where(eq(schema.chatNachricht.id, id));
+    expect(z.entferntAm).not.toBeNull();
+    expect(await dienst.pausiereAlsKinderschutz('kinderschutz-person', kanal.gruppe, true, 'Prüfung läuft')).toBeNull();
+    expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('pausiert');
+    expect(await dienst.pausiereAlsKinderschutz('kinderschutz-person', kanal.gruppe, false, 'Prüfung beendet')).toBeNull();
+  });
+
+  it('Mitglied entfernen beendet den Zugang sofort (nur Leitung, mit Grund)', async () => {
+    expect(await dienst.entferneMitglied(await k(ids.kind), gruppeId, lern.kind2, 'kein Recht')).toBe('keinRecht');
+    expect(await dienst.entferneMitglied(await k(ids.hoca1), gruppeId, lern.kind2, 'Gruppe gewechselt')).toBeNull();
+    expect(await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind2))).toBeNull();
   });
 });
 

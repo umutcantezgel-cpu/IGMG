@@ -165,6 +165,11 @@ export type AbrufErgebnis = {
 /** Nachrichten nach `nachId` (aufsteigend, höchstens 50; ohne `nachId` die letzten 50). Keine Lesebestätigungen (S-14). */
 export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext, nachId?: number): Promise<AbrufErgebnis | null> {
   if (!darfInGruppe(kontext, leseAktion(kanal.art), kanal.gruppeId)) return null;
+  // S-03/S-17: Ohne (oder nach widerrufener) Elterneinwilligung und während der Notfall-Pause sehen Kinder und Eltern
+  // keine Nachrichten – nur den Grund. Die Gruppenleitung liest weiter (Aufarbeitung).
+  const lage = await schreibLage(kanal, kontext);
+  if (lage === 'einwilligungFehlt' || (lage === 'notfallpause' && !kontext.leitung.has(kanal.gruppeId)))
+    return { nachrichten: [], schreiben: lage, regelnVersion: REGELN_VERSION };
   const basis = db
     .select({
       id: schema.chatNachricht.id,
@@ -205,7 +210,7 @@ export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext,
       zeit: z.zeit.toISOString(),
       leitung: z.absenderId !== null && leitung.has(z.absenderId),
     })),
-    schreiben: await schreibLage(kanal, kontext),
+    schreiben: lage,
     regelnVersion: REGELN_VERSION,
   };
 }
@@ -281,14 +286,99 @@ export async function entferneNachricht(kontext: GruppenKontext, nachrichtId: nu
     .where(eq(schema.chatNachricht.id, nachrichtId));
   if (!n) return 'nichtGefunden';
   if (!darfInGruppe(kontext, 'chat.moderieren', n.gruppeId)) return 'keinRecht';
+  await entferne(n.kanalId, nachrichtId, kontext.benutzerId, g);
+  return null;
+}
+
+/** Entfernen ohne Text (Chiffrat wird sofort überschrieben, D-03): bleibt als Platzhalter mit Grund im Verlauf. */
+async function entferne(kanalId: string, nachrichtId: number, akteurId: string, grund: string): Promise<void> {
+  const leer = verschluessele('');
   await db.transaction(async (tx) => {
     await tx
       .update(schema.chatNachricht)
-      .set({ entferntAm: new Date(), entferntVon: kontext.benutzerId, entferntGrund: g })
+      .set({
+        entferntAm: new Date(),
+        entferntVon: akteurId,
+        entferntGrund: grund,
+        textVerschluesselt: leer.daten,
+        schluesselId: leer.schluesselId,
+      })
       .where(eq(schema.chatNachricht.id, nachrichtId));
-    await protokolliereModeration(tx, { kanalId: n.kanalId, nachrichtId, akteurId: kontext.benutzerId, aktion: 'entfernt', grund: g });
+    await protokolliereModeration(tx, { kanalId, nachrichtId, akteurId, aktion: 'entfernt', grund });
   });
+}
+
+/**
+ * Rolle kinderschutz (Verwaltung, Recht `meldung.chat.bearbeiten`; die Action prüft es): entfernen und pausieren auch
+ * ohne Gruppenleitung – nötig, wenn sich eine Meldung gegen eine Lehrkraft richtet (D-02).
+ */
+export async function entferneAlsKinderschutz(akteurId: string, nachrichtId: number, grund: string): Promise<ModerationsFehler | null> {
+  const g = grundGueltig(grund);
+  if (!g) return 'grundFehlt';
+  const [n] = await db
+    .select({ kanalId: schema.chatNachricht.kanalId })
+    .from(schema.chatNachricht)
+    .where(eq(schema.chatNachricht.id, nachrichtId));
+  if (!n) return 'nichtGefunden';
+  await entferne(n.kanalId, nachrichtId, akteurId, g);
   return null;
+}
+
+export async function pausiereAlsKinderschutz(
+  akteurId: string,
+  kanalId: string,
+  pause: boolean,
+  grund: string,
+): Promise<ModerationsFehler | null> {
+  const g = grundGueltig(grund);
+  if (!g) return 'grundFehlt';
+  const r = await db.transaction(async (tx) => {
+    const z = await tx
+      .update(schema.chatKanal)
+      .set({ status: pause ? 'pausiert' : 'aktiv' })
+      .where(eq(schema.chatKanal.id, kanalId))
+      .returning({ id: schema.chatKanal.id });
+    if (z.length)
+      await protokolliereModeration(tx, { kanalId, nachrichtId: null, akteurId, aktion: pause ? 'pausiert' : 'fortgesetzt', grund: g });
+    return z.length;
+  });
+  return r ? null : 'nichtGefunden';
+}
+
+/** S-09: Mitglied aus der Gruppe entfernen (Leitung, mit Grund); die Mitgliedschaft endet heute, der Zugang sofort. */
+export async function entferneMitglied(
+  kontext: GruppenKontext,
+  gruppeId: string,
+  lernendeId: string,
+  grund: string,
+): Promise<ModerationsFehler | null> {
+  const g = grundGueltig(grund);
+  if (!g) return 'grundFehlt';
+  if (!darfInGruppe(kontext, 'chat.moderieren', gruppeId)) return 'keinRecht';
+  const kanaele = await kanaeleDerGruppe(gruppeId);
+  const r = await db.transaction(async (tx) => {
+    const z = await tx
+      .update(schema.gruppenMitglied)
+      .set({ bis: berlinerDatum(new Date()) })
+      .where(
+        and(
+          eq(schema.gruppenMitglied.gruppeId, gruppeId),
+          eq(schema.gruppenMitglied.lernendeId, lernendeId),
+          isNull(schema.gruppenMitglied.bis),
+        ),
+      )
+      .returning({ id: schema.gruppenMitglied.lernendeId });
+    if (z.length)
+      await protokolliereModeration(tx, {
+        kanalId: kanaele.gruppe,
+        nachrichtId: null,
+        akteurId: kontext.benutzerId,
+        aktion: 'mitglied_entfernt',
+        grund: g,
+      });
+    return z.length;
+  });
+  return r ? null : 'nichtGefunden';
 }
 
 /** S-09: Stummschalten für eine Dauer (Minuten) oder aufheben (0). */
@@ -360,9 +450,14 @@ export async function meldeNachricht(
   nachrichtId: number,
   grund: (typeof schema.chatMeldungGrundEnum.enumValues)[number],
   freitext: string | null,
-): Promise<{ ok: true; meldungId: string; gruppeId: string } | { ok: false; grund: ModerationsFehler }> {
+): Promise<{ ok: true; meldungId: string; gruppeId: string; absenderId: string | null } | { ok: false; grund: ModerationsFehler }> {
   const [n] = await db
-    .select({ kanalId: schema.chatNachricht.kanalId, gruppeId: schema.chatKanal.gruppeId, art: schema.chatKanal.art })
+    .select({
+      kanalId: schema.chatNachricht.kanalId,
+      gruppeId: schema.chatKanal.gruppeId,
+      art: schema.chatKanal.art,
+      absenderId: schema.chatNachricht.absenderId,
+    })
     .from(schema.chatNachricht)
     .innerJoin(schema.chatKanal, eq(schema.chatKanal.id, schema.chatNachricht.kanalId))
     .where(eq(schema.chatNachricht.id, nachrichtId));
@@ -408,17 +503,20 @@ export async function meldeNachricht(
       schluesselId: k.schluesselId,
     })
     .returning({ id: schema.chatMeldung.id });
-  return { ok: true, meldungId: m.id, gruppeId: n.gruppeId };
+  return { ok: true, meldungId: m.id, gruppeId: n.gruppeId, absenderId: n.absenderId };
 }
 
-/** Empfänger einer Meldung aus der Gruppenleitung (Mail ohne Inhalt, S-08). */
-export async function leitungsAdressen(gruppeId: string): Promise<string[]> {
+/** Empfänger einer Meldung aus der Gruppenleitung (Mail ohne Inhalt, S-08) – nie die gemeldete Person selbst (D-02). */
+export async function leitungsAdressen(gruppeId: string, ausser: string | null = null): Promise<string[]> {
   const zeilen = await db
-    .select({ email: schema.user.email })
+    .select({ email: schema.user.email, id: schema.user.id })
     .from(schema.gruppenLeitung)
     .innerJoin(schema.user, eq(schema.user.id, schema.gruppenLeitung.benutzerId))
     .where(and(eq(schema.gruppenLeitung.gruppeId, gruppeId), isNull(schema.user.gesperrtAm)));
-  return zeilen.map((z) => z.email).filter((e) => !e.endsWith('.invalid'));
+  return zeilen
+    .filter((z) => z.id !== ausser)
+    .map((z) => z.email)
+    .filter((e) => !e.endsWith('.invalid'));
 }
 
 /** S-11: Kontext einer Meldung lesen (Rolle kinderschutz bzw. Gruppenleitung) – jede Einsicht steht im Protokoll. */

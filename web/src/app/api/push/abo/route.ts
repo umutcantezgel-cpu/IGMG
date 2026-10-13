@@ -1,7 +1,7 @@
 import { after, connection } from 'next/server';
 import nachrichten from '../../../../../messages/bereiche/benachrichtigungen.json';
 import { funktionAn } from '@/lib/funktionen';
-import { entferneAbo, sendeAnAbo, speichereAbo } from '@/lib/push/abo';
+import { entferneAbo, kindDarfPush, sendeAnAbo, speichereAbo } from '@/lib/push/abo';
 import { erlaubterEndpunkt } from '@/lib/push/senden';
 import { vapidAusUmgebung } from '@/lib/push/vapid';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
@@ -47,9 +47,14 @@ export async function POST(anfrage: Request) {
   if (!eingabe.success || !erlaubterEndpunkt(eingabe.data.abo.endpoint)) return antwort(400, { fehler: 'pruefen' });
   if (!eingabe.data.themen.length) return antwort(400, { fehler: 'thema' });
   const konto = await ladeKonto();
+  if (konto?.istKind && !(await kindDarfPush(konto.benutzerId))) return antwort(403, { fehler: 'einwilligung' });
   // Chat und Unterricht nur mit Konto (Inhalte gehören zu einer Person); anonym bleiben Gebet und Ankündigung
   const themen = konto ? eingabe.data.themen : eingabe.data.themen.filter((t) => t === 'gebet' || t === 'ankuendigung');
-  const ergebnis = await speichereAbo({ ...eingabe.data, themen }, konto?.benutzerId ?? null, nachrichten.de.push.einwilligung);
+  const ergebnis = await speichereAbo(
+    { ...eingabe.data, themen },
+    konto?.benutzerId ?? null,
+    `${nachrichten.de.push.einwilligung}|${nachrichten.tr.push.einwilligung}|${nachrichten.en.push.einwilligung}`,
+  );
   if (ergebnis.neu) {
     after(async () => {
       const [abo] = await db.select().from(schema.pushAbo).where(eq(schema.pushAbo.id, ergebnis.id));

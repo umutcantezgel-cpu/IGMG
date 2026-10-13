@@ -2,6 +2,7 @@ import { revalidateTag } from 'next/cache';
 import { connection } from 'next/server';
 import { TAG } from '@/lib/cache/tags';
 import { chatLoeschlauf } from '@/lib/chat/dienst';
+import { raeumePushAuf } from '@/lib/push/abo';
 import { loescheAbgelaufene } from '@/lib/eingaenge/loeschlauf';
 import { mitSperre } from '@/lib/wartung/sperre';
 import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
@@ -20,6 +21,8 @@ async function laufe(): Promise<Response> {
     const ergebnis = await loescheAbgelaufene();
     // Gruppenchat (S-12): Nachrichten nach 90 Tagen bzw. 30 Tage nach Gruppenende, erledigte Meldungen nach einem Jahr
     const chat = await chatLoeschlauf();
+    // Push-Abos ohne Erfolg seit 12 Monaten (auch wenn der Minutentakt des lokalen Servers ausfällt)
+    const push = await raeumePushAuf();
     // Platzzählung betroffener Veranstaltungen sofort neu berechnen
     for (const id of ergebnis.betroffeneTermine) revalidateTag(TAG.anmeldungenVon(id), { expire: 0 });
     if (ergebnis.betroffeneTermine.length) revalidateTag(TAG.anmeldungen, { expire: 0 });
@@ -30,6 +33,7 @@ async function laufe(): Promise<Response> {
       entfernteMelderdaten: ergebnis.melder,
       geloeschteChatNachrichten: chat.nachrichten,
       geloeschteChatMeldungen: chat.meldungen,
+      geloeschtePushAbos: push,
     };
   });
   return Response.json(lauf.uebersprungen ? { uebersprungen: true } : lauf.ergebnis, {

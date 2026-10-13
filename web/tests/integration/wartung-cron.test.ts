@@ -82,6 +82,7 @@ describe('Löschfristen per Cron (GET, CRON_SECRET)', () => {
       entfernteMelderdaten: expect.any(Number),
       geloeschteChatNachrichten: expect.any(Number),
       geloeschteChatMeldungen: expect.any(Number),
+      geloeschtePushAbos: expect.any(Number),
     });
   });
 
