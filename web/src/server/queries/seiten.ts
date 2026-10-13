@@ -48,6 +48,10 @@ function sichtbar(jetzt: Date) {
  * `expire` 1 Tag halten die Vorgaben von `ensureStatic` ein (stale ≥ 30 s, expire ≥ 5 min).
  */
 export async function zeitplanLebensdauer(jetzt: Date): Promise<void> {
+  if (!datenbankVerfuegbar()) {
+    cacheLife('hours');
+    return;
+  }
   const [naechste] = await db
     .select({ am: min(s.veroeffentlichenAm) })
     .from(s)
@@ -129,6 +133,7 @@ export async function ladeSeite(sprache: Locale, slug: string): Promise<SeitenTr
 export async function ladeSeitenSlugs(sprache: Locale): Promise<string[]> {
   'use cache: remote';
   cacheTag(TAG.seiten);
+  if (!datenbankVerfuegbar()) return [];
   const jetzt = new Date();
   await zeitplanLebensdauer(jetzt);
   const zeilen = await db.select({ de: s.slugDe, tr: s.slugTr, en: s.slugEn }).from(s).where(sichtbar(jetzt));
