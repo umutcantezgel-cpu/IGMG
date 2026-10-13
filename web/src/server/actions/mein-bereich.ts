@@ -4,11 +4,14 @@ import { and, eq, lt, ne } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
 import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
+import { meldeSicherheitsaenderung } from '@/lib/konto/sicherheitsmail';
+import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { aktuelleSitzungsId, faktorPflicht, hatZugang, verlangeKontenAktion } from '@/lib/konto/zugang';
 import { ladeKonto, verlangeKontoRecht, type Konto } from '@/lib/rechte/gemeinde';
 import { KeinRecht } from '@/lib/rechte/pruefe';
@@ -176,7 +179,15 @@ export async function kontoZweiFaktorBestaetigen(vorher: MeinZustand, daten: For
   // Better Auth ersetzt nur diese Sitzung; ältere (ohne Faktor entstandene) enden jetzt (N-1 der Prüfung S1)
   await db.delete(schema.session).where(and(eq(schema.session.userId, k.benutzerId), lt(schema.session.createdAt, beginn)));
   await protokolliere({ benutzerId: k.benutzerId, aktion: 'zwei_faktor.eingerichtet' });
+  sicherheitshinweis(k.benutzerId, 'zwei_faktor');
   redirect(pfadFuer({ pathname: '/mein-bereich/konto', query: { faktor: 'eingerichtet' } }, sprache));
+}
+
+/** Sicherheitshinweis per Mail (neuer Passkey, Zwei-Faktor eingerichtet) nach der Antwort; Fehler bleiben folgenlos. */
+function sicherheitshinweis(benutzerId: string, art: 'passkey' | 'zwei_faktor') {
+  after(async () => {
+    if (await meldeSicherheitsaenderung(benutzerId, art).catch(() => false)) await versendeOffeneMails().catch(() => undefined);
+  });
 }
 
 /** Abschalten nur ohne Pflicht (nicht für Lehrkräfte und Verwaltung) und mit Passwort. */
@@ -235,6 +246,7 @@ export async function passkeyRegistrieren(antwort: string, name: string): Promis
     return { fehler: 'konto.passkeys.fehler' };
   }
   await protokolliere({ benutzerId: k.benutzerId, aktion: 'konto.passkey_angelegt', zielTyp: 'benutzer', zielId: k.benutzerId });
+  sicherheitshinweis(k.benutzerId, 'passkey');
   return { ok: true };
 }
 

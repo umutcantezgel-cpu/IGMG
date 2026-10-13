@@ -31,6 +31,16 @@ type Auswahl = { themen: PushThemaSchluessel[]; gebete: string[]; minuten: numbe
 type Zustand = 'pruefen' | 'nicht' | 'ios' | 'bereit';
 
 const AUSWAHL_SPEICHER = 'igmg-push-auswahl';
+/** Wortlaut, dem diese Person auf diesem Gerät zugestimmt hat (D-17: neuer Wortlaut → Haken neu setzen). */
+const EINWILLIGUNG_SPEICHER = 'igmg-push-einwilligung';
+
+function zugestimmterText(): string | null {
+  try {
+    return window.localStorage.getItem(EINWILLIGUNG_SPEICHER);
+  } catch {
+    return null;
+  }
+}
 const MINUTEN = [0, 5, 10, 15, 20, 30, 45];
 const STANDARD: Auswahl = { themen: ['gebet'], gebete: ['imsak', 'ogle', 'ikindi', 'aksam', 'yatsi'], minuten: 10 };
 
@@ -104,13 +114,14 @@ export function PushEinstellungen({
       if (!aktiv) return;
       setAbo(vorhanden);
       setAuswahl(gespeicherteAuswahl());
-      setEinwilligung(Boolean(vorhanden));
+      // Haken nur vorbelegt, wenn diese Person genau diesem Wortlaut schon zugestimmt hat (sonst neu bestätigen)
+      setEinwilligung(Boolean(vorhanden) && zugestimmterText() === texte.einwilligung);
       setZustand('bereit');
     })();
     return () => {
       aktiv = false;
     };
-  }, []);
+  }, [texte.einwilligung]);
 
   function umschalten<T>(liste: T[], wert: T): T[] {
     return liste.includes(wert) ? liste.filter((x) => x !== wert) : [...liste, wert];
@@ -147,6 +158,7 @@ export function PushEinstellungen({
       const ergebnis = (await antwort.json()) as { neu?: boolean };
       try {
         window.localStorage.setItem(AUSWAHL_SPEICHER, JSON.stringify({ ...auswahl, themen: gewaehlt }));
+        window.localStorage.setItem(EINWILLIGUNG_SPEICHER, texte.einwilligung);
       } catch {
         // Ohne Gerätespeicher gilt die Auswahl trotzdem (sie liegt auf dem Server)
       }
@@ -170,6 +182,11 @@ export function PushEinstellungen({
         body: JSON.stringify({ endpoint: abo.endpoint }),
       });
       await abo.unsubscribe();
+      try {
+        window.localStorage.removeItem(EINWILLIGUNG_SPEICHER);
+      } catch {
+        // ohne Gerätespeicher nichts zu entfernen
+      }
       setAbo(null);
       setEinwilligung(false);
       setMeldung({ text: texte.aus, fehler: false });

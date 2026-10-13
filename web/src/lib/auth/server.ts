@@ -5,6 +5,7 @@ import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
 import { db, schema } from '@/lib/db';
+import { merkeAnmeldung } from '@/lib/konto/anmeldung-merken';
 import { authOptionen } from './optionen';
 import { planePasswortMail, protokolliereZuruecksetzen } from './passwort';
 
@@ -38,6 +39,10 @@ export const auth = betterAuth({
             .where(eq(schema.user.id, sitzung.userId))
             .limit(1);
           return u?.gesperrtAm ? false : undefined;
+        },
+        // DSFA D-16: letzte Anmeldung für die Frist inaktiver Gemeinde-Konten (setzt eine Vorwarnung zurück)
+        after: async (sitzung) => {
+          await merkeAnmeldung(sitzung.userId);
         },
       },
     },

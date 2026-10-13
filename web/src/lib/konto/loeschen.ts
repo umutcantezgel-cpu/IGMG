@@ -16,7 +16,7 @@ import { KINDER_DOMAIN } from './regeln';
  *
  * Konten mit Verwaltungsrollen löscht nur „Benutzer und Rollen“ (Schutz der letzten Administration) – hier nie.
  */
-export type LoeschAnlass = 'verwaltung' | 'frist' | 'unbestaetigt';
+export type LoeschAnlass = 'verwaltung' | 'frist' | 'unbestaetigt' | 'inaktiv';
 export type LoeschErgebnis = { ok: true; nachrichten: number } | { ok: false; fehler: 'nichtGefunden' | 'verwaltungskonto' };
 
 const KONTO_LOESCH_GRUND = 'Konto gelöscht';
@@ -60,6 +60,12 @@ export async function loescheGemeindeKonto(
     // Ausdrücklich (auch wenn die Kaskade es täte): Push-Abos, Sitzungen und eigene Einwilligungen sofort weg
     await tx.delete(schema.pushAbo).where(eq(schema.pushAbo.benutzerId, benutzerId));
     await tx.delete(schema.session).where(eq(schema.session.userId, benutzerId));
+    // D-14: Einwilligungen für einen Lerndatensatz (etwa die eigene ab 16) bleiben als Nachweis am Datensatz – ohne
+    // Kontobezug und als beendet; sie folgen der Frist der Lernenden. Alle übrigen Einwilligungen des Kontos gehen.
+    await tx
+      .update(schema.kontoEinwilligung)
+      .set({ benutzerId: null, widerrufenAm: sql`coalesce(${schema.kontoEinwilligung.widerrufenAm}, now())` })
+      .where(and(eq(schema.kontoEinwilligung.benutzerId, benutzerId), isNotNull(schema.kontoEinwilligung.lernendeId)));
     await tx.delete(schema.kontoEinwilligung).where(eq(schema.kontoEinwilligung.benutzerId, benutzerId));
     // Einladungen an die Adresse (Name, E-Mail) und Links (Bestätigung, Passwort) des Kontos
     await tx.delete(schema.einladung).where(sql`lower(${schema.einladung.email}) = ${u.email.toLowerCase()}`);

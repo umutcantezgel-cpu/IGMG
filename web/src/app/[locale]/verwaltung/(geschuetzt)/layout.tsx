@@ -9,6 +9,7 @@ import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung
 import { funktionAn } from '@/lib/funktionen';
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
+import { zaehleOffeneFolien } from '@/server/queries/verwaltung/anzeige';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
 import { zaehleOffeneMeldungen } from '@/server/queries/verwaltung/kinderschutz';
 import { zaehleOffeneFreigaben } from '@/server/queries/verwaltung/koran';
@@ -29,7 +30,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   const sichtbar = MODULE.filter((m) => m.gebaut && (!m.funktion || schalter[m.funktion]) && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
   const jetzt = new Date();
-  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz, koran] = await Promise.all([
+  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz, koran, anzeige] = await Promise.all([
     // Bevorstehende, veröffentlichte Veranstaltungen: dieselbe Zahl wie die Kachel auf der Übersicht (DP-C1 M3)
     zeigt('veranstaltungen') ? ladeKommendeVeranstaltungen(a, jetzt).then((kommend) => kommend?.length) : undefined,
     // Entwürfe der Neuigkeiten und derzeit sichtbare Ankündigungen (DP-C1 H1)
@@ -44,6 +45,8 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     zeigt('kinderschutz') ? zaehleOffeneMeldungen() : undefined,
     // Religiöse Freigaben „zur Prüfung“, die die Person prüfen darf (nicht selbst verfasst, ADR 0030)
     zeigt('koran') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFreigaben(a.benutzerId) : undefined,
+    // Vers- und Hadith-Folien „zur Prüfung“, die die Person freigeben darf (O-K05)
+    zeigt('anzeige') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFolien(a.benutzerId) : undefined,
   ]);
   const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
     veranstaltungen,
@@ -54,6 +57,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     tickets,
     kinderschutz,
     koran,
+    anzeige,
   };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => {
     const anzahl = zaehler[m.schluessel];

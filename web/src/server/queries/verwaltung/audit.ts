@@ -46,6 +46,7 @@ export const AKTION_SCHLUESSEL = {
   'konto.daten_exportiert': 'kontoDatenExportiert',
   'konto.loeschantrag': 'kontoLoeschantrag',
   'konto.kinderkonto_angelegt': 'kontoKinderkontoAngelegt',
+  'konto.inaktiv_gewarnt': 'kontoInaktivGewarnt',
   'konto.einwilligung_erteilt': 'kontoEinwilligungErteilt',
   'konto.einwilligung_widerrufen': 'kontoEinwilligungWiderrufen',
   'konto.kinderpasswort_gesetzt': 'kontoKinderpasswortGesetzt',

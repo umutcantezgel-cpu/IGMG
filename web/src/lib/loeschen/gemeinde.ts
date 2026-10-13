@@ -1,12 +1,14 @@
 import 'server-only';
-import { and, desc, isNotNull, isNull, like, lt, lte, ne, sql } from 'drizzle-orm';
+import { and, desc, inArray, isNotNull, isNull, like, lt, lte, ne, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import { protokolliereModeration } from '@/lib/chat/dienst';
+import { inaktiveKontenLauf } from '@/lib/konto/inaktiv';
 import { KINDER_DOMAIN } from '@/lib/konto/regeln';
 import { MAX_VERSUCHE } from '@/lib/mail/ausgang';
+import { nachweisFrist } from './fristen';
 
 /**
- * Löschfristen der Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-16; Löschkonzept). Läuft im täglichen
+ * Löschfristen der Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-14, D-16; Löschkonzept). Läuft im täglichen
  * Löschlauf (`/api/wartung/loeschfristen`), idempotent. Die Fristen sind Vorschläge der DSFA, bis Vorstand und DSB
  * entscheiden (MENSCHEN MN-11); Änderung nur hier und im Löschkonzept.
  */
@@ -19,6 +21,10 @@ export const GEMEINDE_FRISTEN = {
   mailFehlTage: 30,
   /** D-16: Audit-Protokoll 12 Monate. */
   auditTage: 365,
+  /** D-14: Einwilligungsnachweise ohne Lernende bis zum Ende der Verjährung (3 Jahre ab Jahresende, `nachweisFrist`). */
+  nachweisJahre: 3,
+  /** D-16: Gemeinde-Konten ohne Anmeldung 24 Monate, Vorwarnung 30 Tage vorher (`src/lib/konto/inaktiv.ts`). */
+  inaktivMonate: 24,
 } as const;
 
 /** Einstellung mit dem Hash des zuletzt gelöschten Protokolleintrags: Anfang der Kette für die Prüfung (S-10). */
@@ -33,15 +39,42 @@ export type GemeindeLoeschErgebnis = {
   protokoll: number;
   mails: number;
   audit: number;
+  /** D-14: abgelaufene Einwilligungsnachweise ohne Lernende */
+  nachweise: number;
+  /** D-16: Vorwarnungen an inaktive Konten bzw. gelöschte inaktive Konten */
+  inaktivGewarnt: number;
+  inaktivGeloescht: number;
 };
 
 export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLoeschErgebnis> {
   // D-10: Lernende nach Ablauf ihrer Frist (gesetzt beim Austritt: 12 Monate); Anwesenheit, Fortschritt, Hifz,
-  // Fehlmeldungen und Gruppenzuordnung folgen über die Fremdschlüssel
-  const lernende = await db
-    .delete(schema.lernende)
-    .where(and(isNotNull(schema.lernende.loeschenAb), lte(schema.lernende.loeschenAb, jetzt)))
-    .returning({ id: schema.lernende.id });
+  // Fehlmeldungen und Gruppenzuordnung folgen über die Fremdschlüssel.
+  // D-14: Die Einwilligungsnachweise bleiben – ohne Bezug zu Lernenden und Konto, also ohne Namen – bis zum Ende der
+  // Verjährung (3 Jahre ab Ende des Jahres) erhalten; der Fremdschlüssel setzt `lernende_id` auf null.
+  const lernende = await db.transaction(async (tx) => {
+    const faellig = await tx
+      .select({ id: schema.lernende.id })
+      .from(schema.lernende)
+      .where(and(isNotNull(schema.lernende.loeschenAb), lte(schema.lernende.loeschenAb, jetzt)));
+    if (!faellig.length) return [];
+    const ids = faellig.map((l) => l.id);
+    await tx
+      .update(schema.kontoEinwilligung)
+      .set({ aufbewahrenBis: nachweisFrist(jetzt), benutzerId: null })
+      .where(inArray(schema.kontoEinwilligung.lernendeId, ids));
+    return tx.delete(schema.lernende).where(inArray(schema.lernende.id, ids)).returning({ id: schema.lernende.id });
+  });
+
+  // D-14: Nachweise ohne Bezug, die noch keine Frist haben (Altbestand), bekommen sie jetzt; abgelaufene gehen
+  const k = schema.kontoEinwilligung;
+  await db
+    .update(k)
+    .set({ aufbewahrenBis: nachweisFrist(jetzt) })
+    .where(and(isNull(k.lernendeId), isNull(k.benutzerId), isNull(k.aufbewahrenBis)));
+  const nachweise = await db
+    .delete(k)
+    .where(and(isNull(k.lernendeId), isNull(k.benutzerId), isNotNull(k.aufbewahrenBis), lte(k.aufbewahrenBis, jetzt)))
+    .returning({ id: k.id });
 
   // Kinderkonten (.invalid) ohne Lernende: Zugang endet mit dem Datensatz (N-6 der Sicherheitsprüfung S1)
   const kinderkonten = await db
@@ -111,6 +144,9 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     return { offeneMeldungen: offen.length, protokoll: geloescht };
   });
 
+  // D-16: inaktive Gemeinde-Konten (24 Monate ohne Anmeldung, Vorwarnung 30 Tage vorher; Kinderkonten über die Eltern)
+  const inaktiv = await inaktiveKontenLauf(jetzt);
+
   return {
     lernende: lernende.length,
     kinderkonten: kinderkonten.length,
@@ -118,5 +154,8 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     protokoll,
     mails: mails.length,
     audit: audit.length,
+    nachweise: nachweise.length,
+    inaktivGewarnt: inaktiv.gewarnt,
+    inaktivGeloescht: inaktiv.geloescht,
   };
 }

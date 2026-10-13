@@ -36,6 +36,7 @@ const lehrkraftAktionen = await import('@/server/actions/lehrkraft');
 const chat = await import('@/lib/chat/dienst');
 const { sendeGruppenPush } = await import('@/lib/push/gruppe');
 const { erzeugeVapid } = await import('@/lib/push/vapid');
+const { pushEinwilligungsVersion } = await import('@/lib/push/einwilligung');
 const { KONTO_EINWILLIGUNG_VERSION, textVersion } = await import('@/lib/konto/einwilligung');
 afterAll(() => client.close());
 
@@ -497,7 +498,8 @@ describe('Push an eine Gruppe (ADR 0034, S-16)', () => {
         p256dh: 'x',
         auth: 'y',
         themen,
-        einwilligungVersion: 'test',
+        // D-17: nur Abos mit Einwilligung zum aktuellen Wortlaut bekommen Push
+        einwilligungVersion: pushEinwilligungsVersion('de', false),
       });
     };
     await abo(p.lehrkraftA.id, ['chat']);

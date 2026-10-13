@@ -36,6 +36,10 @@ export const kontoProfil = pgTable('konto_profil', {
   /** Löschantrag (Art. 17 DSGVO): Konto wird nach Frist gelöscht. */
   loeschenAb: timestamp({ withTimezone: true }),
   erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  /** Letzte Anmeldung (neue Sitzung); Grundlage der Frist für inaktive Konten (DSFA D-16). */
+  letzteAnmeldung: timestamp({ withTimezone: true }),
+  /** Vorwarnung „Konto wird wegen Inaktivität gelöscht“ verschickt; eine Anmeldung setzt sie zurück (D-16). */
+  inaktivGewarntAm: timestamp({ withTimezone: true }),
 });
 
 export const einwilligungArtEnum = pgEnum('konto_einwilligung_art', [
@@ -60,7 +64,11 @@ export const kontoEinwilligung = pgTable(
   {
     id: uuid().primaryKey().defaultRandom(),
     benutzerId: text().references(() => user.id, { onDelete: 'cascade' }),
-    lernendeId: uuid().references(() => lernende.id, { onDelete: 'cascade' }),
+    /**
+     * Lernende, für die eingewilligt wurde. Beim Löschen der Lernenden bleibt der Nachweis ohne Bezug und ohne Namen
+     * bis `aufbewahrenBis` erhalten (DSFA D-14: Verjährung, 3 Jahre ab Jahresende) – deshalb `set null`, keine Kaskade.
+     */
+    lernendeId: uuid().references(() => lernende.id, { onDelete: 'set null' }),
     art: einwilligungArtEnum().notNull(),
     textVersion: text().notNull(),
     sprache: text().notNull().default('de'),
@@ -69,6 +77,8 @@ export const kontoEinwilligung = pgTable(
     erteiltVon: text().references(() => user.id, { onDelete: 'set null' }),
     erteiltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
     widerrufenAm: timestamp({ withTimezone: true }),
+    /** Nur Nachweise ohne Lernende (D-14): Löschung durch den Löschlauf ab diesem Zeitpunkt. */
+    aufbewahrenBis: timestamp({ withTimezone: true }),
   },
   (t) => [index('konto_einwilligung_benutzer_idx').on(t.benutzerId), index('konto_einwilligung_lernende_idx').on(t.lernendeId, t.art)],
 );

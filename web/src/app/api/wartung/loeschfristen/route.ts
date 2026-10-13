@@ -26,8 +26,9 @@ async function laufe(): Promise<Response> {
     const chat = await chatLoeschlauf();
     // Push-Abos ohne Erfolg seit 12 Monaten (auch wenn der Minutentakt des lokalen Servers ausfällt)
     const push = await raeumePushAuf();
-    // Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-16): Lernende nach Austritt, offene Meldungen nach Höchstfrist,
-    // Moderationsprotokoll nach 3 Jahren, nicht zustellbare Mails, Audit-Protokoll
+    // Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-14, D-16): Lernende nach Austritt (Einwilligungsnachweis bleibt
+    // bis zur Verjährung), offene Meldungen nach Höchstfrist, Moderationsprotokoll nach 3 Jahren, nicht zustellbare
+    // Mails, Audit-Protokoll, inaktive Konten
     const gemeinde = await gemeindeLoeschlauf();
     // Newsletter (Double-Opt-in): nicht bestätigte Anmeldungen nach 48 h löschen
     const newsletter = await raeumeNewsletterAuf();
@@ -48,6 +49,10 @@ async function laufe(): Promise<Response> {
       geloeschteProtokolleintraege: gemeinde.protokoll,
       geloeschteUnzustellbareMails: gemeinde.mails,
       geloeschteAuditEintraege: gemeinde.audit,
+      // DSFA D-14 (Einwilligungsnachweise nach Verjährung) und D-16 (inaktive Konten mit Vorwarnung)
+      geloeschteEinwilligungsnachweise: gemeinde.nachweise,
+      vorgewarnteInaktiveKonten: gemeinde.inaktivGewarnt,
+      geloeschteInaktiveKonten: gemeinde.inaktivGeloescht,
       geloeschteNewsletterAnmeldungen: newsletter,
       // Gemeinde-Konten: Löschanträge nach Frist (Art. 17) und unbestätigte Registrierungen nach 7 Tagen (H-L05)
       ...(await kontenLoeschlauf()),

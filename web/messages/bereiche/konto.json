@@ -209,6 +209,30 @@
           "text": "Über den Knopf legen Sie ein neues Passwort fest. Der Link gilt 60 Minuten.",
           "knopf": "Neues Passwort festlegen",
           "hinweis": "Sie haben kein neues Passwort angefordert? Dann ignorieren Sie diese E-Mail einfach – Ihr Passwort bleibt unverändert."
+        },
+        "inaktiv": {
+          "betreff": "Ihr Gemeinde-Konto wird bald gelöscht",
+          "text": "Sie haben sich seit fast zwei Jahren nicht mehr bei Ihrem Gemeinde-Konto der IGMG Wetzlar angemeldet. Aus Datenschutzgründen löschen wir es am {gueltigBis}. Wenn Sie es behalten möchten, melden Sie sich vorher einfach einmal an.",
+          "knopf": "Anmelden",
+          "hinweis": "Sie brauchen das Konto nicht mehr? Dann müssen Sie nichts tun."
+        },
+        "inaktivKind": {
+          "betreff": "Ein Kinderzugang wird bald gelöscht",
+          "text": "Ein Kinderzugang, für den Sie sorgeberechtigt sind, wurde seit fast zwei Jahren nicht genutzt. Aus Datenschutzgründen löschen wir den Zugang am {gueltigBis}. Die Unterlagen der Lerngruppe bleiben davon unberührt. Soll der Zugang bleiben, genügt vorher eine Anmeldung mit dem Kinderzugang.",
+          "knopf": "Mein Bereich öffnen",
+          "hinweis": "Einen gelöschten Zugang können Sie später jederzeit neu anlegen."
+        },
+        "passkey": {
+          "betreff": "Neuer Passkey für Ihr Gemeinde-Konto",
+          "text": "Für Ihr Gemeinde-Konto bei der IGMG Wetzlar wurde am {zeitpunkt} ein neuer Passkey hinterlegt.",
+          "knopf": "Konto ansehen",
+          "hinweis": "Waren Sie das nicht? Dann ändern Sie bitte sofort Ihr Passwort, entfernen Sie den Passkey unter „Konto“ und schreiben Sie uns. Diese E-Mail enthält keine Codes und keine Schlüssel."
+        },
+        "zweiFaktor": {
+          "betreff": "Zwei-Faktor-Anmeldung eingerichtet",
+          "text": "Für Ihr Gemeinde-Konto bei der IGMG Wetzlar wurde am {zeitpunkt} die Zwei-Faktor-Anmeldung eingerichtet.",
+          "knopf": "Konto ansehen",
+          "hinweis": "Waren Sie das nicht? Dann ändern Sie bitte sofort Ihr Passwort und schreiben Sie uns. Diese E-Mail enthält keine Codes und keine Schlüssel."
         }
       }
     }
@@ -423,6 +447,30 @@
           "text": "Düğmeye tıklayarak yeni bir şifre belirleyebilirsiniz. Bağlantı 60 dakika geçerlidir.",
           "knopf": "Yeni şifre belirle",
           "hinweis": "Yeni şifre istemediniz mi? O zaman bu e-postayı dikkate almayın – şifreniz değişmez."
+        },
+        "inaktiv": {
+          "betreff": "Cemaat hesabınız yakında silinecek",
+          "text": "IGMG Wetzlar’daki cemaat hesabınıza yaklaşık iki yıldır giriş yapmadınız. Veri koruma gereği hesabınızı {gueltigBis} tarihinde sileceğiz. Hesabınızı korumak istiyorsanız bu tarihten önce bir kez giriş yapmanız yeterlidir.",
+          "knopf": "Giriş yap",
+          "hinweis": "Hesaba artık ihtiyacınız yok mu? O zaman hiçbir şey yapmanıza gerek yok."
+        },
+        "inaktivKind": {
+          "betreff": "Bir çocuk erişimi yakında silinecek",
+          "text": "Velisi olduğunuz bir çocuk erişimi yaklaşık iki yıldır kullanılmadı. Veri koruma gereği bu erişimi {gueltigBis} tarihinde sileceğiz. Öğrenim grubundaki kayıtlar bundan etkilenmez. Erişimin kalmasını istiyorsanız, bu tarihten önce çocuk erişimiyle bir kez giriş yapılması yeterlidir.",
+          "knopf": "Hesabımı aç",
+          "hinweis": "Silinen bir erişimi daha sonra istediğiniz zaman yeniden oluşturabilirsiniz."
+        },
+        "passkey": {
+          "betreff": "Cemaat hesabınız için yeni geçiş anahtarı",
+          "text": "IGMG Wetzlar’daki cemaat hesabınıza {zeitpunkt} tarihinde yeni bir geçiş anahtarı (passkey) eklendi.",
+          "knopf": "Hesabı görüntüle",
+          "hinweis": "Bunu siz yapmadınız mı? Lütfen hemen şifrenizi değiştirin, geçiş anahtarını „Hesap“ bölümünden kaldırın ve bize yazın. Bu e-posta kod veya anahtar içermez."
+        },
+        "zweiFaktor": {
+          "betreff": "İki adımlı giriş etkinleştirildi",
+          "text": "IGMG Wetzlar’daki cemaat hesabınız için {zeitpunkt} tarihinde iki adımlı giriş etkinleştirildi.",
+          "knopf": "Hesabı görüntüle",
+          "hinweis": "Bunu siz yapmadınız mı? Lütfen hemen şifrenizi değiştirin ve bize yazın. Bu e-posta kod veya anahtar içermez."
         }
       }
     }
@@ -637,6 +685,30 @@
           "text": "Use the button to set a new password. The link is valid for 60 minutes.",
           "knopf": "Set a new password",
           "hinweis": "You did not request a new password? Then simply ignore this email – your password stays the same."
+        },
+        "inaktiv": {
+          "betreff": "Your community account will be deleted soon",
+          "text": "You have not signed in to your community account at IGMG Wetzlar for almost two years. For data protection reasons, we will delete it on {gueltigBis}. If you would like to keep it, simply sign in once before then.",
+          "knopf": "Sign in",
+          "hinweis": "You no longer need the account? Then you do not need to do anything."
+        },
+        "inaktivKind": {
+          "betreff": "A child access will be deleted soon",
+          "text": "A child access for which you have parental responsibility has not been used for almost two years. For data protection reasons, we will delete the access on {gueltigBis}. The records of the learning group are not affected. If the access should remain, signing in once with the child access before then is enough.",
+          "knopf": "Open my account",
+          "hinweis": "You can create a deleted access again at any time later."
+        },
+        "passkey": {
+          "betreff": "New passkey for your community account",
+          "text": "A new passkey was added to your community account at IGMG Wetzlar on {zeitpunkt}.",
+          "knopf": "View account",
+          "hinweis": "Wasn’t this you? Please change your password right away, remove the passkey under “Account” and write to us. This email contains no codes and no keys."
+        },
+        "zweiFaktor": {
+          "betreff": "Two-factor sign-in set up",
+          "text": "Two-factor sign-in was set up for your community account at IGMG Wetzlar on {zeitpunkt}.",
+          "knopf": "View account",
+          "hinweis": "Wasn’t this you? Please change your password right away and write to us. This email contains no codes and no keys."
         }
       }
     }

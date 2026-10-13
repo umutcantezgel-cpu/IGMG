@@ -21,6 +21,7 @@ import {
   ListOrdered,
   Mail,
   Megaphone,
+  MonitorPlay,
   Mic,
   Newspaper,
   Palette,
@@ -74,6 +75,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   hatim: BookOpen,
   besondereTage: CalendarHeart,
   newsletter: Send,
+  anzeige: MonitorPlay,
 };
 
 const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];

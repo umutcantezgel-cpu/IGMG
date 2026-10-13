@@ -4,9 +4,12 @@ import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { type CSSProperties, useEffect, useState } from 'react';
+import type { AnzeigeDaten } from '@/lib/anzeige/folien';
+import { anzeigeZustand, iqamaZeiten } from '@/lib/anzeige/plan';
 import { berlinerDatum, naechstesGebet, restzeit, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
+import { FolienAnsicht } from './FolienAnsicht';
 
 export type AnzeigeTexte = {
   ort: string;
@@ -25,6 +28,16 @@ export type AnzeigeTexte = {
   arabisch: Record<Gebet, string>;
   einheitStd: string;
   einheitMin: string;
+  /** Folien, Iqama, Ruhe und Freitagsmodus (AUFTRAG 3.10, B-25) */
+  folien: string;
+  iqama: string;
+  ruheTitel: string;
+  ruheText: string;
+  freitagTitel: string;
+  freitagText: string;
+  versQuelle: string;
+  hadithQuelle: string;
+  uebersetzung: string;
 };
 type Sprache = 'de' | 'tr' | 'en';
 const LOCALE: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
@@ -33,6 +46,15 @@ const LOCALE: Record<Sprache, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' 
 const WECHSEL = 'transition-colors duration-(--dauer-wechsel) ease-standard';
 /** Dauer des Einblendens für den neuen Namens- und Zeitbereich (`blendet-ein` liest `--dauer`). */
 const DAUER_WECHSEL = { '--dauer': 'var(--dauer-wechsel)' } as CSSProperties;
+/** B-25: Folien blenden langsamer über (Auftritt), nur außerhalb des Gebetsfensters. */
+const DAUER_FOLIE = { '--dauer': 'var(--dauer-auftritt)' } as CSSProperties;
+/** Neue Folien holt die Anzeige alle fünf Minuten (statische JSON-Datei); ohne Netz bleibt der letzte Stand. */
+const ABRUF_MS = 5 * 60_000;
+
+function gueltigeDaten(d: unknown): d is AnzeigeDaten {
+  const x = d as Partial<AnzeigeDaten> | null;
+  return Boolean(x && Array.isArray(x.folien) && x.einstellung && typeof x.einstellung === 'object' && x.einstellung.freitag);
+}
 
 /**
  * Moschee-Bildschirm (design/FullscreenPrayerTimes.dc.html, Blatt S03, K-08): Uhr und Tageswechsel in
@@ -48,16 +70,40 @@ export function AnzeigeLive({
   sprachen,
   berechnet,
   zurueckHref,
+  anzeige,
 }: {
   tage: GebetszeitTag[];
   texte: Record<Sprache, AnzeigeTexte>;
   sprachen: Sprache[];
   berechnet: boolean;
   zurueckHref: string;
+  anzeige: AnzeigeDaten;
 }) {
   const [jetzt, setJetzt] = useState<Date | null>(null);
   const [index, setIndex] = useState(0);
   const [online, setOnline] = useState(true);
+  const [daten, setDaten] = useState<AnzeigeDaten>(anzeige);
+
+  // Neue Folien und Einstellungen ohne Neuladen übernehmen; Fehler (kein Netz) lassen den Stand unverändert
+  useEffect(() => {
+    let aktiv = true;
+    const abrufen = async () => {
+      if (!navigator.onLine) return;
+      try {
+        const antwort = await fetch('/api/anzeige', { cache: 'no-store' });
+        if (!antwort.ok) return;
+        const neu: unknown = await antwort.json();
+        if (aktiv && gueltigeDaten(neu)) setDaten(neu);
+      } catch {
+        // ohne Netz weiter mit dem letzten Stand
+      }
+    };
+    const takt = window.setInterval(() => void abrufen(), ABRUF_MS);
+    return () => {
+      aktiv = false;
+      window.clearInterval(takt);
+    };
+  }, []);
 
   useEffect(() => {
     const geladenAm = berlinerDatum(new Date());
@@ -115,6 +161,13 @@ export function AnzeigeLive({
       ? t.naechsteZeit.replace('{gebet}', t.namen[naechstes.gebet])
       : '';
   const zeiten = heute ?? tage[1] ?? tage[0];
+  // B-25: im Gebetsfenster (Ezan bis Iqama + Ruhe) keine Folien; Freitagsmodus um das Freitagsgebet
+  // Ohne gepflegte Folien und ohne Iqama-Angaben bleibt die Anzeige wie bisher (nur Uhr und Gebetszeiten)
+  const cmsAktiv = daten.folien.length > 0 || Object.keys(daten.einstellung.iqama).length > 0;
+  const plan = cmsAktiv && jetzt && heute ? anzeigeZustand(heute.datum, heute, daten.folien, daten.einstellung, jetzt) : null;
+  const iqama = zeiten ? iqamaZeiten(zeiten.datum, zeiten, daten.einstellung) : {};
+  const folie = plan?.modus === 'folien' && plan.folieId ? (daten.folien.find((f) => f.id === plan.folieId) ?? null) : null;
+  const folienTexte = { versQuelle: t.versQuelle, hadithQuelle: t.hadithQuelle, uebersetzung: t.uebersetzung };
 
   // B-10: Gewechselt wird erst, wenn ein bekanntes Gebet auf ein anderes folgt. Der Sprung von „noch keine Zeit“
   // (vor dem Einhängen) auf das erste Gebet ist kein Wechsel und bleibt ohne Bewegung.
@@ -220,6 +273,12 @@ export function AnzeigeLive({
                   ) : null}
                 </div>
                 <span className="text-48 leading-none font-bold tabular-nums @3xl:text-anzeige-64">{zeiten?.[g]}</span>
+                {/* Iqama nur mit Angabe in der Einstellung (MN-14: sonst ausgeblendet) */}
+                {g !== 'gunes' && iqama[g] ? (
+                  <span className="text-20 font-bold tabular-nums @3xl:text-24">
+                    {t.iqama} {iqama[g]}
+                  </span>
+                ) : null}
                 <span
                   dir="rtl"
                   lang="ar"
@@ -236,6 +295,34 @@ export function AnzeigeLive({
             );
           })}
         </ul>
+        {plan && plan.modus !== 'folien' ? (
+          // Ruhe zum Gebet bzw. Freitagsmodus: ein stiller Hinweis, ohne Überblendung (B-25)
+          <section
+            aria-label={t.folien}
+            className="flex min-h-48 flex-1 flex-col items-center justify-center gap-3 rounded-2xl border-2 border-gruen-800 px-6 py-8 text-center"
+          >
+            <p className="text-36 leading-tight font-bold @5xl:text-48 @7xl:text-anzeige-64">
+              {plan.modus === 'ruhe' ? `${t.ruheTitel} · ${t.namen[plan.gebet]}` : t.freitagTitel}
+            </p>
+            {plan.modus === 'ruhe' && plan.iqama ? (
+              <p className="text-30 font-bold tabular-nums @5xl:text-36 @7xl:text-48">
+                {t.iqama} {plan.iqama}
+              </p>
+            ) : null}
+            <p className="text-20 text-gruen-100 @5xl:text-24 @7xl:text-30">{plan.modus === 'ruhe' ? t.ruheText : t.freitagText}</p>
+          </section>
+        ) : folie ? (
+          <section
+            aria-label={t.folien}
+            aria-live="off"
+            className="@container relative flex min-h-60 flex-1 flex-col overflow-hidden rounded-2xl border-2 border-gruen-800 px-6 py-6 @5xl:px-10"
+          >
+            {/* B-25: Überblendung beim Folienwechsel; reduzierte Bewegung → sofort */}
+            <div key={folie.id} style={DAUER_FOLIE} className="blendet-ein flex min-h-0 flex-1 flex-col">
+              <FolienAnsicht folie={folie} sprache={sprache} texte={folienTexte} />
+            </div>
+          </section>
+        ) : null}
         <p
           role="status"
           className="min-h-lh rounded-lg border border-gruen-800 px-6 py-4 text-center text-20 font-bold tabular-nums @5xl:text-24 @7xl:text-30"
