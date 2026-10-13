@@ -19,7 +19,7 @@ import { benachrichtigungMail, bestaetigungMail, kontoMail } from './vorlagen';
  */
 type Inhalt = { an: string; daten: Record<string, string> };
 type EingangArt = keyof typeof EINGANG_AKTION;
-const MAX_VERSUCHE = 6;
+export const MAX_VERSUCHE = 6;
 
 /**
  * Empfänger „rolle:<art>[:<organisation>]“ (Leserecht der Eingangsart) oder „recht:<aktion>[:<organisation>]“

@@ -148,9 +148,13 @@ export async function gemeindePruefen(
     });
   }
 
-  // S-10: Moderationsprotokoll unverändert (Hash-Kette)
+  // S-10: Moderationsprotokoll unverändert (Hash-Kette; nach dem Löschlauf beginnt sie beim gespeicherten Anker)
   const zeilen = await db.select().from(schema.moderationsprotokoll).orderBy(asc(schema.moderationsprotokoll.id));
-  const bruch = pruefeKette(zeilen.map((z) => ({ ...z, zeitpunkt: z.zeitpunkt.toISOString() })));
+  const anker = (await einstellungWert(db, 'moderationsprotokoll_anker')) as { hash?: string } | null;
+  const bruch = pruefeKette(
+    zeilen.map((z) => ({ ...z, zeitpunkt: z.zeitpunkt.toISOString() })),
+    typeof anker?.hash === 'string' ? anker.hash : undefined,
+  );
   neu({
     id: 'gemeinde.kette',
     bereich: 'gemeinde',
@@ -163,6 +167,27 @@ export async function gemeindePruefen(
     ort: 'Datenbank › moderationsprotokoll (Schutzkonzept, MENSCHEN MN-10)',
     aufwand: '1 h',
   });
+
+  // D-05: offene Chat-Meldungen vor der Höchstfrist (12 Monate) – Erinnerung ab 11 Monaten
+  const [{ alteMeldungen }] = await db
+    .select({ alteMeldungen: count() })
+    .from(schema.chatMeldung)
+    .where(
+      and(ne(schema.chatMeldung.status, 'erledigt'), lt(schema.chatMeldung.erstelltAm, new Date(jetzt.getTime() - 334 * 24 * STUNDE))),
+    );
+  if (alteMeldungen > 0 || ist('chat'))
+    neu({
+      id: 'gemeinde.meldungen',
+      bereich: 'gemeinde',
+      titel: 'Offene Chat-Meldungen',
+      status: alteMeldungen > 0 ? 'warnung' : 'ok',
+      meldung:
+        alteMeldungen > 0
+          ? `${alteMeldungen === 1 ? 'Eine Meldung ist' : `${alteMeldungen} Meldungen sind`} seit mehr als 11 Monaten offen. Nach 12 Monaten löscht der Löschlauf sie (Höchstfrist).`
+          : 'Keine Meldung ist länger als 11 Monate offen.',
+      ort: 'Verwaltung › Meldungen & Kinderschutz',
+      aufwand: '30 min',
+    });
 
   // Lokaler Helfer-Server (ADR 0036): Takt, Sicherung, Probe, Spiegel
   const lokal = ((await einstellungWert(db, 'lokaler_server')) ?? {}) as Record<string, LokalEintrag | undefined>;
