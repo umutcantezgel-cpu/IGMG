@@ -5,6 +5,7 @@ import { notFound, redirect } from 'next/navigation';
 import { cache } from 'react';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
 import { ladeKonto, verlangeKonto, type GemeindeRolle, type Konto } from '@/lib/rechte/gemeinde';
 import { KeinRecht } from '@/lib/rechte/pruefe';
@@ -18,12 +19,13 @@ import type { Locale } from '@/i18n/routing';
 
 /** Seiten: Funktion `konten` aus → 404 (in der Produktion bis zur Freigabe). */
 export async function verlangeKontenSeite(): Promise<void> {
-  if (!(await funktionAn('konten'))) notFound();
+  // Konten brauchen die Datenbank: im Beispielmodus (ADR 0019) wie ausgeschaltet
+  if (!datenbankVerfuegbar() || !(await funktionAn('konten'))) notFound();
 }
 
 /** Server Actions: Funktion `konten` aus → `KeinRecht` (Actions sind auch ohne Seite aufrufbar). */
 export async function verlangeKontenAktion(): Promise<void> {
-  if (!(await funktionAn('konten'))) throw new KeinRecht();
+  if (!datenbankVerfuegbar() || !(await funktionAn('konten'))) throw new KeinRecht();
 }
 
 /** Konten mit Pflicht zum zweiten Faktor: Lehrkräfte (ADR 0026) und alle mit Verwaltungsrolle (K-06). */
@@ -58,6 +60,7 @@ export async function verlangeKontoSeite(locale: Locale): Promise<Konto> {
 
 /** ID der aktuellen Sitzung (je Anfrage einmal); markiert „dieses Gerät“ und schützt sie vor „andere abmelden“. */
 export const aktuelleSitzungsId = cache(async (): Promise<string | null> => {
+  if (!datenbankVerfuegbar()) return null;
   const s = await auth.api.getSession({ headers: await headers() });
   return s?.session.id ?? null;
 });

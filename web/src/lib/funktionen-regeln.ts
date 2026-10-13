@@ -19,8 +19,15 @@ export const FUNKTIONEN = [
 ] as const satisfies readonly (keyof FunktionenEinstellung)[];
 export type Funktion = (typeof FUNKTIONEN)[number];
 
-/** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus. */
-export function standardFuer(env: UmgebungsWerte): boolean {
+/**
+ * Ohne Personendaten und für die Produktion freigegeben – dort standardmäßig an. `hadith_gesamt`: Entscheidung des
+ * Nutzers vom 13.10.2026 (gemeinfreie Quelle, Restrisiko der offenen Rechtsprüfung MN-06 trägt die Gemeinde).
+ */
+export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt'];
+
+/** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus – außer `IN_PRODUKTION_AN`. */
+export function standardFuer(env: UmgebungsWerte, f?: Funktion): boolean {
+  if (f && IN_PRODUKTION_AN.includes(f)) return true;
   return betriebsart(env) !== 'produktion';
 }
 
@@ -38,7 +45,7 @@ export function entscheide(f: Funktion, env: UmgebungsWerte, einstellung: Funkti
   if (ausUmgebung !== undefined) return ausUmgebung;
   const ausEinstellung = einstellung?.[f];
   if (ausEinstellung !== undefined) return ausEinstellung;
-  return standardFuer(env);
+  return standardFuer(env, f);
 }
 
 /** Funktionen mit Personendaten: in der Produktion erst nach Freigabe durch Menschen (MN-10, MN-11, MN-17). */
