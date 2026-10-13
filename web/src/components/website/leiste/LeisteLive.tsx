@@ -1,8 +1,9 @@
 'use client';
 
-import { ArrowRight, ChevronDown, ChevronUp, Clock, Info, MapPin, Moon, Sun, Sunrise, Sunset } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronUp, Clock, Info, MapPin } from 'lucide-react';
 import { type CSSProperties, useState } from 'react';
 import Link from 'next/link';
+import { GEBET_ZEICHEN } from '@/components/website/gebetszeiten/zeichen';
 import { berlinerDatum, naechstesGebet, restzeit, uhrzeitBerlin } from '@/lib/gebetszeiten/naechstes';
 import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
@@ -27,8 +28,6 @@ export type LeisteTexte = {
   /** Kurzes Datum je Kalendertag, auf dem Server berechnet (`datumszeilen`, H-L01: kein Datumsformat beim Laden) */
   datumszeilen?: Record<string, string>;
 };
-
-const ICON: Record<Gebet, typeof Sun> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
 
 /** B-10 Gebetszeit-Wechsel: Hervorhebung wandert per Überblendung (Dauer `--dauer-wechsel`, Kurve `ease-standard`). */
 const WECHSEL = 'transition-colors duration-(--dauer-wechsel) ease-standard';
@@ -98,7 +97,7 @@ export function LeisteLive({
    */
   const karte = (g: Gebet, klein: boolean) => {
     const ist = naechstes?.gebet === g && !naechstes.morgen;
-    const Icon = ICON[g];
+    const Icon = GEBET_ZEICHEN[g];
     const wechsel = gewechselt ? WECHSEL : undefined;
     return (
       <li

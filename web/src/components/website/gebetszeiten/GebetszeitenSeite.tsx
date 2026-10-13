@@ -1,6 +1,5 @@
 'use client';
 
-import { Moon, Sun, Sunrise, Sunset, type LucideIcon } from 'lucide-react';
 import { type CSSProperties, type ReactNode, useState } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import { TagesbogenLive, type TagesbogenTexte } from '@/components/website/start/TagesbogenLive';
@@ -10,6 +9,7 @@ import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 import { GebetszeitenTabs, type TabSchluessel } from './GebetszeitenTabs';
 import { fuelle, restzeitText } from './zeiten';
+import { GEBET_ZEICHEN } from './zeichen';
 
 /** Fertig übersetzte Texte aus messages; Platzhalter wie {name} füllt die Komponente (K-12). */
 export type GebetszeitenSeiteTexte = {
@@ -48,7 +48,6 @@ export type GebetszeitenSeiteProps = {
   tabSymbole: Record<TabSchluessel, ReactNode>;
 };
 
-const SYMBOL: Record<Gebet, LucideIcon> = { imsak: Moon, gunes: Sunrise, ogle: Sun, ikindi: Sun, aksam: Sunset, yatsi: Moon };
 
 /**
  * Gebetszeiten im Browser (Blatt S02): oben das nächste Gebet mit Restzeit, im Tab Heute der Tagesbogen (ruhig, B-10)
@@ -179,7 +178,7 @@ function HeuteTafel({
       {GEBETE.map((g) => {
         const ist = naechstes !== null && !naechstes.morgen && naechstes.gebet === g;
         const vergangen = naechstes !== null && (naechstes.morgen || GEBETE.indexOf(g) < GEBETE.indexOf(naechstes.gebet));
-        const Icon = SYMBOL[g];
+        const Icon = GEBET_ZEICHEN[g];
         return (
           <li
             key={g}

@@ -10,6 +10,13 @@ function punkt(r: number, grad: number): string {
 const AUSSEN = 152;
 const INNEN = 102;
 const LUECKE = 1.2;
+/** K-007: höchstens 8 Elemente je Staffel. Die 30 Cüz treten als 6 Sechstel zu je 5 auf (6 Staffelschritte). */
+export const STAFFEL_GRUPPEN = 6;
+
+/** Staffelschritt eines Segments: Gruppe 0 … STAFFEL_GRUPPEN − 1, im Uhrzeigersinn wie die Linie. */
+export function staffelGruppe(i: number, n: number): number {
+  return Math.floor(i / Math.ceil(n / STAFFEL_GRUPPEN));
+}
 
 /** Ringsegment i von n als Fläche (Kreisringausschnitt) mit kleiner Lücke. */
 function segment(i: number, n: number): string {
@@ -21,8 +28,9 @@ function segment(i: number, n: number): string {
 
 /**
  * Cüz-Ring der Übersicht (O-Q01, Erzählansicht /quran): 30 Segmente im Kreis, jedes führt zu seinem Cüz. Eine
- * Linie zeichnet sich einmal um den Ring (B-06-Kurve, `linie-zeichnet`), die Segmente treten gestaffelt auf; bei
- * reduzierter Bewegung und ohne JavaScript steht der Ring sofort. Der Ring ist Zeigerbedienung und Bild zugleich:
+ * Linie zeichnet sich einmal um den Ring (B-06-Kurve, `linie-zeichnet`), die Segmente treten in sechs Gruppen zu fünf
+ * Cüz gestaffelt auf (`--gruppe`, Versatz `staffel`; K-007: ≤ 8 je Staffel, vorher 30 Einzelschritte); bei reduzierter
+ * Bewegung steht der Ring sofort (Endzustand). Der Ring ist Zeigerbedienung und Bild zugleich:
  * Für Tastatur und Screenreader steht daneben die Liste der 30 Cüz (48-px-Ziele), deshalb ist er hier verborgen.
  */
 export function CuzRing({ eintraege, mitte }: { eintraege: { nr: number; href: string }[]; mitte: string }) {
@@ -40,7 +48,7 @@ export function CuzRing({ eintraege, mitte }: { eintraege: { nr: number; href: s
         const mittelwinkel = (i + 0.5) * (360 / n);
         const [x, y] = punkt((AUSSEN + INNEN) / 2, mittelwinkel).split(' ');
         return (
-          <a key={e.nr} href={e.href} tabIndex={-1} style={{ '--i': i } as CSSProperties}>
+          <a key={e.nr} href={e.href} tabIndex={-1} style={{ '--gruppe': staffelGruppe(i, n) } as CSSProperties}>
             <path d={segment(i, n)} className="cuz-segment" />
             <text x={x} y={y} textAnchor="middle" dominantBaseline="central" className="cuz-zahl">
               {e.nr}

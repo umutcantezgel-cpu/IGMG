@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/website/JsonLd';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Tagesbogen } from '@/components/website/start/Tagesbogen';
+import { UnsereMoschee } from '@/components/website/start/UnsereMoschee';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
@@ -30,7 +31,8 @@ const sekundaer =
   'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 hover:bg-gruen-50 hover:text-gruen-800';
 
 /**
- * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter),
+ * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
+ * im Ramadan der Fastenbogen B-20), „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, ruhig, ohne Bewegung),
  * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3).
  */
 export default async function Startseite() {
@@ -78,6 +80,8 @@ export default async function Startseite() {
         </div>
         <div aria-hidden className="h-5 achtstern-band" />
       </section>
+
+      <UnsereMoschee sprache={sprache} />
 
       <section aria-labelledby="veranstaltungen-titel" className="border-b border-linie bg-sand">
         <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
