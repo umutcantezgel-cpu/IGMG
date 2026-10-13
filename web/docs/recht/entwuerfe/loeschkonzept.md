@@ -9,7 +9,7 @@ Stand: 13.10.2026 · Stand des Codes: Branch `claude/trusting-lovelace-6nfolz`, 
 1. **Speicherbegrenzung.** Personenbezogene Daten werden nur so lange gespeichert, wie der Zweck es verlangt. Die Fristen unten sind **Höchstfristen**; früher löschen ist immer erlaubt.
 2. **Löschen heißt unwiderruflich.** Datensätze werden aus der Datenbank entfernt, nicht nur ausgeblendet. Ausnahme: Chat-Nachrichten, die **entfernt** wurden (Platzhalter), bleiben verschlüsselt bis zum Löschlauf (Lücke D-03).
 3. **Aufbewahrungspflichten gehen vor** (Art. 17 Abs. 3 lit. b). Die Gemeinde kennt für die Lernplattform keine gesetzliche Aufbewahrungspflicht `[prüfen: steuerrechtliche Pflichten gelten für Spendenbelege, nicht für diese Daten; Rechtsberatung bestätigt]`. Besteht eine Pflicht, wird gesperrt (Zugriff nur für diesen Zweck) statt gelöscht.
-4. **Kaskade.** Das Datenmodell löscht abhängige Zeilen mit (`onDelete: cascade`). Das gilt zum Beispiel für Anwesenheit, Fortschritt, Hifz, Fehlmeldung, Eltern-Kind-Zuordnung, Gruppenmitgliedschaft und Einwilligungen der Lernenden, sobald der Datensatz der Lernenden gelöscht wird. Der Einwilligungsnachweis geht dabei verloren (D-14).
+4. **Kaskade.** Das Datenmodell löscht abhängige Zeilen mit (`onDelete: cascade`). Das gilt zum Beispiel für Anwesenheit, Fortschritt, Hifz, Fehlmeldung, Eltern-Kind-Zuordnung, Gruppenmitgliedschaft und Einwilligungen der Lernenden, sobald der Datensatz der Lernenden gelöscht wird. Ausnahme seit 13.10.: Der Einwilligungsnachweis bleibt ohne Namen bis zum Ablauf seiner Frist erhalten (L-15, D-14).
 5. **Löschnachweis ohne Personendaten.** Das Audit-Protokoll hält Art und Kennung der Löschung fest, nie Namen oder Inhalte (z. B. `eingang.frist_geloescht`).
 6. **Fristen beschließt der Vorstand** nach Rat der Datenschutzbeauftragten ([Datenschutzbeauftragte/r – Angaben von der Gemeinde]); jede Änderung wird in diesem Konzept und in der Datenschutzerklärung nachgeführt.
 
@@ -44,7 +44,7 @@ Spalte „Stand“: **umgesetzt** = im Code; **Vorschlag** = nicht beschlossen, 
 | L-05 | ALTCHA-Lösungen, Ratenfenster (Prüfwerte, nie IP im Klartext) | bis Ablauf bzw. 1 Tag nach Fensterbeginn | Ablauf | Löschlauf (`raeumeAltchaAuf`, `raeumeRatenAuf`) | umgesetzt |
 | L-06 | Einladungen (Name, E-Mail); Verifikationen (Passwort-Links, Bestätigungs-Token) | Einladung 30 Tage nach Annahme, Widerruf oder Ablauf; Verifikation sofort nach Ablauf | Annahme, Widerruf, Ablauf | Löschlauf (`raeumeKontenAuf`) | umgesetzt |
 | L-07 | Direkt-Uploads großer PDF-Dateien, nie übernommen | nach Ablauf der Frist des Uploads | Ablauf | Löschlauf (`raeumeDirektEingaengeAuf`, mit Zeitbudget) | umgesetzt |
-| L-08 | Audit-Protokoll (wer hat wann was getan; keine Personendaten in den Details) | keine Frist im Code [Frist – Vorschlag 12 Monate] | Zeitpunkt | keine Routine | Lücke (D-16) |
+| L-08 | Audit-Protokoll (wer hat wann was getan; keine Personendaten in den Details) | keine Frist im Code [Frist – Vorschlag 12 Monate] | Zeitpunkt | Löschlauf `gemeindeLoeschlauf` (`src/lib/loeschen/gemeinde.ts`): Audit-Einträge älter als 12 Monate | umgesetzt 13.10. (Frist Vorschlag, D-16) |
 | L-09 | Server-Protokolle des Hosters (Vercel) | [Frist – Hoster und Vorstand; prüfen: Aufbewahrung laut Anbieter] | Zeitpunkt | beim Hoster | offen |
 
 ### 3.2 Konten
@@ -55,8 +55,8 @@ Spalte „Stand“: **umgesetzt** = im Code; **Vorschlag** = nicht beschlossen, 
 | L-11 | Kinderzugang (Benutzername, Passwort-Hash, Anzeigename) | mit dem Austritt des Kindes aus allen Gruppen [Frist – Vorschlag 30 Tage danach] oder auf Wunsch der Eltern (über die Gemeinde) | Austritt, Wunsch der Eltern | wie L-10 | Vorschlag / Lücke |
 | L-12 | Sitzungen | absolut 8 h (Verwaltung), 12 h (Lehrkraft, Kind), 30 Tage (übrige) ab Anmeldung | Ablauf | beim Laden der Sitzung geprüft und gelöscht (`ladeKonto`); [prüfen: Bereinigung abgelaufener Sitzungszeilen, die nie wieder geladen werden] | teilweise |
 | L-13 | Gesperrtes Konto | bleibt bis zur Entscheidung [Frist – Vorschlag 6 Monate, dann Löschung oder Entsperrung] | Sperre | `user.gesperrt_am`; Sitzungen enden sofort | Vorschlag |
-| L-14 | Konten ohne Anmeldung | [Frist – Vorschlag 24 Monate ohne Anmeldung, Vorwarnung per E-Mail 30 Tage vorher] | Zeit seit letzter Anmeldung | keine Routine | Vorschlag / Lücke (D-16) |
-| L-15 | Einwilligungsnachweise (Art, Textversion, Zeit, erteilende Person; ohne Namen der Kinder) | nach Widerruf oder Löschung der Lernenden [Frist – Vorschlag bis Ablauf der Verjährung: 3 Jahre ab Ende des Jahres] | Widerruf, Löschung | derzeit Kaskade: Nachweis wird mit den Lernenden gelöscht | Lücke (D-14) |
+| L-14 | Konten ohne Anmeldung | [Frist – Vorschlag 24 Monate ohne Anmeldung, Vorwarnung per E-Mail 30 Tage vorher] | Zeit seit letzter Anmeldung | Löschlauf: Gemeindekonten ohne Rolle nach 24 Monaten ohne Anmeldung, Vorwarnung per Mail 30 Tage vorher (Kinderkonten über die Eltern, nie an `.invalid`; `src/lib/konto/inaktiv.ts`) | umgesetzt 13.10. (Frist Vorschlag, D-16) |
+| L-15 | Einwilligungsnachweise (Art, Textversion, Zeit, erteilende Person; ohne Namen der Kinder) | nach Widerruf oder Löschung der Lernenden [Frist – Vorschlag bis Ablauf der Verjährung: 3 Jahre ab Ende des Jahres] | Widerruf, Löschung | Einwilligungen bleiben beim Löschen der Lernenden ohne Namen erhalten (Migration 0012); Löschlauf am 1. 1. des vierten Folgejahres (`src/lib/loeschen/fristen.ts`) | umgesetzt 13.10. (Frist Vorschlag, D-14) |
 
 ### 3.3 Lernplattform
 
