@@ -1,6 +1,6 @@
 # ADR 0034 – Web Push ohne Bibliothek nach RFC 8291 und RFC 8292
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.7, §2.8 (Schalter `push`, `push_gebet`), §3.5, §3.6 (S-16), §6 (MN-17, MN-18, V4), §7 (Z-19)
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.7, §2.8 (Schalter `push`, `push_gebet`), §3.5, §3.6 (S-16), §6 (MN-17, MN-18, V4), §7 (Z-19)
 
 ## Kontext
 
@@ -39,3 +39,10 @@
 - Die echte Zustellung ist eine Umgebungsausnahme der Abnahme. Ersatz: eine Attrappe im E2E-Test (Plan §6).
 - Tests: RFC-8291-Vektoren, Idempotenz des Takts, Nutzlast ohne Inhalt, Chat-Rate.
 - Datenschutz: Der Opt-in-Text und die Datenschutzerklärung nennen die Push-Dienste (Plan §5).
+
+## Umsetzung (13.10.2026)
+- `src/lib/push/{verschluesselung,vapid,senden,abo}.ts`; RFC-8291-Anhang-A-Vektoren in `tests/unit/push.test.ts` (alle Zwischenwerte gleich).
+- Abweichung: Es gibt nur `VAPID_PRIVAT` (geheim, erzeugbar) und `VAPID_KONTAKT`; der öffentliche Schlüssel wird aus dem
+  privaten berechnet. So kann kein Paar auseinanderlaufen.
+- Abo-API `/api/push/abo` (gleiche Herkunft, Ratenbegrenzung, nur bekannte Push-Dienste), Takt `/api/wartung/takt`
+  (idempotent über `push_versand`), Wortlaut im Service Worker aus `/api/push/texte/<sprache>`.

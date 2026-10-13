@@ -1,6 +1,6 @@
 # ADR 0035 – Funktionsschalter für riskante Bereiche
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ Ziel, §2.8, §6 (Fast-Forward mit Produktionsschaltern), §7 (Z-20)
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ Ziel, §2.8, §6 (Fast-Forward mit Produktionsschaltern), §7 (Z-20)
 
 ## Kontext
 

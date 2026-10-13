@@ -1,6 +1,6 @@
 # ADR 0025 – Offene Datensätze im Repository mit SHA-256-Pin
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §0 (V1), §2.4, §7 (Z-15) · ersetzt den Menschen-Download aus ADR 0009
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §0 (V1), §2.4, §7 (Z-15) · ersetzt den Menschen-Download aus ADR 0009
 
 ## Kontext
 

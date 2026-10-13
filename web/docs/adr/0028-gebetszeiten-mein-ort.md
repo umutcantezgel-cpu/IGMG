@@ -1,6 +1,6 @@
 # ADR 0028 – Gebetszeiten „Mein Ort“ nur im Browser und wählbare Methode IGMG-Gemeinschaftskalender
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §3.8, §2.10, §5 (Standort nur lokal), §7 (Z-19), MN-09 · ergänzt ADR 0008 (Gebetszeiten-Quelle)
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §3.8, §2.10, §5 (Standort nur lokal), §7 (Z-19), MN-09 · ergänzt ADR 0008 (Gebetszeiten-Quelle)
 
 ## Kontext
 

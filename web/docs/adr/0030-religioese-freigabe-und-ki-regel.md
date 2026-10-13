@@ -1,6 +1,6 @@
 # ADR 0030 – Religiöse Freigabe und KI-Regel
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §5 (Religiöse Freigabe, KI-Regel), §1 („bewusst abgelehnt“), §7 (Z-15, Risiko „Religiöser Fehler“), MN-06, MN-20
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §5 (Religiöse Freigabe, KI-Regel), §1 („bewusst abgelehnt“), §7 (Z-15, Risiko „Religiöser Fehler“), MN-06, MN-20
 
 ## Kontext
 

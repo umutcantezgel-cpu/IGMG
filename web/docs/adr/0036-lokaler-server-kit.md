@@ -1,6 +1,6 @@
 # ADR 0036 – Lokaler-Server-Kit als Helfer neben Vercel
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ Ziel, §2.9, §3.10 (Anzeige-CMS), §6 (E6, O-S01, H-S01), §7 (Z-20, Risiken), MN-00, MN-12, MN-18, V3, V4
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ Ziel, §2.9, §3.10 (Anzeige-CMS), §6 (E6, O-S01, H-S01), §7 (Z-20, Risiken), MN-00, MN-12, MN-18, V3, V4
 
 ## Kontext
 
@@ -39,3 +39,7 @@ Docker Compose unter `betrieb/lokal/`, mit diesen Diensten:
 - OFFENE FRAGE: Die Verwahrung des `age`-Schlüssels und die Zugangsdaten der Neon-Leserolle sind im Plan nicht festgelegt. Zuständig ist die Technik mit dem Vorstand.
 - Die Sicherung setzt eine Produktionsdatenbank voraus. Die Neon-Vorschau-Datenbank ist MN-00 (Standard: Vorführung lokal).
 - Umgebungsausnahme: Centrifugo ohne öffentliche Adresse wird in der Vorschau nicht geprüft.
+
+## Umsetzung (13.10.2026)
+- `betrieb/lokal/` (Docker Compose: takt, sicherung inkl. monatlicher Probe, medien-spiegel, ueberwachung, Profil echtzeit),
+  Handbuch `betrieb/lokal/LIESMICH.md`, Kiosk `betrieb/lokal/kiosk/KIOSK.md`; Meldungen ans Cockpit `/api/wartung/lokal-meldung`.

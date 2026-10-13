@@ -1,6 +1,6 @@
 # ADR 0027 – Echtzeit: adaptiver Abruf und Centrifugo-Signal auf dem lokalen Server
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.6, §2.8 (Schalter `echtzeit`), §2.9, §6 (E6, O-C02), §7 (Risiken) · Pflicht: Abruf; Kür: Signal
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.6, §2.8 (Schalter `echtzeit`), §2.9, §6 (E6, O-C02), §7 (Risiken) · Pflicht: Abruf; Kür: Signal
 
 ## Kontext
 
@@ -33,3 +33,8 @@
 - Betrieb: Der lokale Server braucht Hardware, Installation und DynDNS (MN-12, 3 bis 4 h). Ohne ihn zeigt das Cockpit Gelb.
 - Tests: Chat-Cursor (Abruf mit `nach=`), Pausen bei verborgenem Tab und außerhalb der Öffnungszeiten, Rückfall bei ausgefallenem Signal. E2E mit zwei Browser-Kontexten (Plan §6).
 - Umgebungsausnahme: Centrifugo ohne öffentliche Adresse wird in der Vorschau nicht geprüft.
+
+## Umsetzung (13.10.2026)
+- Pflichtweg Abruf: `GET /api/mein/chat/<kanal>?nach=<id>` (`src/lib/chat/dienst.ts`).
+- Signal: `src/lib/echtzeit/{konfig,centrifugo}.ts`, Tokens über `GET /api/mein/echtzeit?kanal=<id>`, Publish nach dem
+  Senden (`after()`), `wss://` nur in der CSP der Konto-Seiten (`src/proxy.ts`). Server: `betrieb/lokal` Profil `echtzeit`.

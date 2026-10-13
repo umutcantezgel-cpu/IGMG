@@ -1,6 +1,6 @@
 # ADR 0026 – Kontoarten, Gemeinde-Rollen, Gruppenrechte und Admin-Ausschluss für Chat-Inhalte
 
-- Status: vorgeschlagen (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.2, §3.5, §3.6 (S-01…S-18), §7 (Z-13, Z-14) · baut auf dem bestehenden Rechte-Modell auf (ADR 0003)
+- Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §2.2, §3.5, §3.6 (S-01…S-18), §7 (Z-13, Z-14) · baut auf dem bestehenden Rechte-Modell auf (ADR 0003)
 
 ## Kontext
 
