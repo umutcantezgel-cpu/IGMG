@@ -4,6 +4,7 @@ import { cacheLife, cacheTag } from 'next/cache';
 import { wissenInhalt, type WissenInhalt } from '@/components/website/wissen/inhalt';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig, MehrsprachigRich } from '@/lib/db/schema/typen';
 
 /** Thema für Filter und Themenseiten (serialisierbar für den Cache, Zeitpunkte als ISO-Text). */
@@ -52,6 +53,8 @@ export async function ladeWissensThema(slug: string): Promise<WissensThema | nul
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.wissen);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const [z] = await db
     .select()
     .from(schema.wissenThema)

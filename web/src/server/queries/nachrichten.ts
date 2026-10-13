@@ -3,6 +3,7 @@ import { and, desc, eq, isNull, lte, ne } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig, MehrsprachigRich } from '@/lib/db/schema/typen';
 import { bildIdsAus, ladeBilder, type BildDaten, type BildKarte } from '@/lib/medien/bild';
 
@@ -77,6 +78,8 @@ export async function ladeNachricht(slug: string): Promise<NachrichtDetail | nul
   'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.medien);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const [z] = await db
     .select()
     .from(schema.nachricht)

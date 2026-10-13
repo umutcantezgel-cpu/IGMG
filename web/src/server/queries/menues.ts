@@ -6,6 +6,7 @@ import type { Locale } from '@/i18n/routing';
 import { TAG } from '@/lib/cache/tags';
 import { routingZielFuer, seitenIdAusZiel } from '@/lib/cms/ziele';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { waehle } from '@/lib/i18n/inhalt';
 import { fussMenue, kopfMenue, type MenueSchluessel } from '@/lib/validierung/menue';
 import { ladeSeitenAdressen, zeitplanLebensdauer } from './seiten';
@@ -27,6 +28,8 @@ export function zielAdresse(ziel: string, sprache: Locale, seiten: Record<string
 }
 
 async function ladeRoh(schluessel: MenueSchluessel): Promise<unknown | null> {
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – leer bzw. Standardwerte, die Seite antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const [z] = await db
     .select({ eintraege: schema.menue.eintraege })
     .from(schema.menue)
