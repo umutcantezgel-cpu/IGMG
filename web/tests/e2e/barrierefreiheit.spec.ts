@@ -67,6 +67,16 @@ const ROUTEN: Route[] = [
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
+  // Paket Elifbe und Lernen (H-E01…E03)
+  { name: 'Lernen', pfad: { de: '/lernen', tr: '/tr/ogren', en: '/en/learn' } },
+  { name: 'Elifbe', pfad: { de: '/elifbe', tr: '/tr/elifba', en: '/en/arabic-alphabet' } },
+  { name: 'Elifbe, Buchstaben', pfad: { de: '/elifbe/buchstaben', tr: '/tr/elifba/harfler', en: '/en/arabic-alphabet/letters' } },
+  {
+    name: 'Elifbe, Buchstabe',
+    pfad: { de: '/elifbe/buchstaben/be', tr: '/tr/elifba/harfler/cim', en: '/en/arabic-alphabet/letters/shin' },
+  },
+  { name: 'Elifbe, Lektion', pfad: { de: '/elifbe/lektion/1', tr: '/tr/elifba/ders/4', en: '/en/arabic-alphabet/lesson/7' } },
+  { name: 'Elifbe, Üben', pfad: { de: '/elifbe/ueben', tr: '/tr/elifba/alistirma', en: '/en/arabic-alphabet/practice' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];
