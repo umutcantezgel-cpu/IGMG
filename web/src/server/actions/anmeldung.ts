@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { and, eq, lt } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -57,6 +57,31 @@ function istZuViele(e: unknown): boolean {
   return e instanceof APIError && (e.statusCode === 429 || e.status === 'TOO_MANY_REQUESTS');
 }
 
+/**
+ * Unbestätigte Selbstregistrierung ohne jede Rolle? Solche Konten bekommen in der Verwaltung keine Sitzung (H-2 der
+ * Sicherheitsprüfung S1): sonst könnte, wer eine fremde Adresse vorbelegt, schon vor der Bestätigung Zwei-Faktor
+ * einrichten. Konten aus Einladungen haben Rollen und bleiben unberührt.
+ */
+async function unbestaetigtOhneRolle(email: string): Promise<boolean> {
+  const [u] = await db
+    .select({ id: schema.user.id, bestaetigt: schema.user.emailVerified })
+    .from(schema.user)
+    .where(eq(schema.user.email, email.trim().toLowerCase()))
+    .limit(1);
+  if (!u || u.bestaetigt) return false;
+  const [r] = await db
+    .select({ r: schema.rolleZuweisung.rolle })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.benutzerId, u.id))
+    .limit(1);
+  const [g] = await db
+    .select({ r: schema.gemeindeRolle.rolle })
+    .from(schema.gemeindeRolle)
+    .where(eq(schema.gemeindeRolle.benutzerId, u.id))
+    .limit(1);
+  return !r && !g;
+}
+
 export async function anmelden(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
   const eingabe = anmeldeSchema.safeParse({ email: daten.get('email'), passwort: daten.get('passwort') });
   const email = String(daten.get('email') ?? '');
@@ -64,6 +89,10 @@ export async function anmelden(_vorher: FormularZustand, daten: FormData): Promi
   if (await begrenzt('anmelden', eingabe.data.email)) {
     await protokolliere({ benutzerId: null, aktion: 'anmeldung.fehlgeschlagen', details: { grund: 'ratenbegrenzung' } });
     return { fehler: 'anmelden.zuViele', werte: { email } };
+  }
+  if (await unbestaetigtOhneRolle(eingabe.data.email)) {
+    await protokolliere({ benutzerId: null, aktion: 'anmeldung.fehlgeschlagen', details: { grund: 'unbestaetigt' } });
+    return { fehler: 'anmelden.fehler', werte: { email } };
   }
   let ergebnis: unknown;
   try {
@@ -136,11 +165,14 @@ export async function zweiFaktorBestaetigen(vorher: FormularZustand, daten: Form
   const eingabe = codeSchema.safeParse({ code: String(daten.get('code') ?? '').replace(/\s+/g, '') });
   if (!eingabe.success) return { ...vorher, feldFehler: { code: 'zweiFaktorEinrichten.fehlerCode' } };
   if (await begrenzt('zwei-faktor-einrichten', angemeldet.email)) return { ...vorher, fehler: 'anmelden.zuViele' };
+  const beginn = new Date();
   try {
     await auth.api.verifyTOTP({ body: { code: eingabe.data.code }, headers: await headers() });
   } catch {
     return { ...vorher, feldFehler: { code: 'zweiFaktorEinrichten.fehlerCode' } };
   }
+  // Better Auth ersetzt nur diese Sitzung; ältere (ohne Faktor entstandene) enden jetzt (N-1 der Prüfung S1)
+  await db.delete(schema.session).where(and(eq(schema.session.userId, angemeldet.benutzerId), lt(schema.session.createdAt, beginn)));
   await protokolliere({ benutzerId: angemeldet.benutzerId, aktion: 'zwei_faktor.eingerichtet' });
   redirect('/verwaltung');
 }

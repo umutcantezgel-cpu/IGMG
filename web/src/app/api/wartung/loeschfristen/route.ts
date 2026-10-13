@@ -5,12 +5,14 @@ import { chatLoeschlauf } from '@/lib/chat/dienst';
 import { raeumePushAuf } from '@/lib/push/abo';
 import { loescheAbgelaufene } from '@/lib/eingaenge/loeschlauf';
 import { gemeindeLoeschlauf } from '@/lib/loeschen/gemeinde';
+import { raeumeNewsletterAuf } from '@/lib/newsletter/dienst';
+import { kontenLoeschlauf } from '@/lib/konto/loeschen';
 import { mitSperre } from '@/lib/wartung/sperre';
 import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
 
 /**
  * Löschfristen (C16, G-07): löscht Eingänge nach Ablauf ihrer Frist, leert den Papierkorb nach 30 Tagen (K-05) und
- * räumt Mail-Ausgang, ALTCHA und Ratenfenster auf.
+ * räumt Mail-Ausgang, ALTCHA und Ratenfenster auf. Unbestätigte Newsletter-Anmeldungen verfallen nach 48 Stunden.
  *
  * Aufruf: täglich per Vercel Cron als `GET` mit `Authorization: Bearer <CRON_SECRET>`; von Hand als `POST` mit
  * `Authorization: Bearer <WARTUNG_TOKEN>`. Beide Wege laufen durch dieselbe Funktion `laufe()`.
@@ -27,6 +29,8 @@ async function laufe(): Promise<Response> {
     // Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-16): Lernende nach Austritt, offene Meldungen nach Höchstfrist,
     // Moderationsprotokoll nach 3 Jahren, nicht zustellbare Mails, Audit-Protokoll
     const gemeinde = await gemeindeLoeschlauf();
+    // Newsletter (Double-Opt-in): nicht bestätigte Anmeldungen nach 48 h löschen
+    const newsletter = await raeumeNewsletterAuf();
     // Platzzählung betroffener Veranstaltungen sofort neu berechnen
     for (const id of ergebnis.betroffeneTermine) revalidateTag(TAG.anmeldungenVon(id), { expire: 0 });
     if (ergebnis.betroffeneTermine.length) revalidateTag(TAG.anmeldungen, { expire: 0 });
@@ -39,10 +43,14 @@ async function laufe(): Promise<Response> {
       geloeschteChatMeldungen: chat.meldungen,
       geloeschtePushAbos: push,
       geloeschteLernende: gemeinde.lernende,
+      geloeschteKinderkonten: gemeinde.kinderkonten,
       geloeschteOffeneMeldungen: gemeinde.offeneMeldungen,
       geloeschteProtokolleintraege: gemeinde.protokoll,
       geloeschteUnzustellbareMails: gemeinde.mails,
       geloeschteAuditEintraege: gemeinde.audit,
+      geloeschteNewsletterAnmeldungen: newsletter,
+      // Gemeinde-Konten: Löschanträge nach Frist (Art. 17) und unbestätigte Registrierungen nach 7 Tagen (H-L05)
+      ...(await kontenLoeschlauf()),
     };
   });
   return Response.json(lauf.uebersprungen ? { uebersprungen: true } : lauf.ergebnis, {

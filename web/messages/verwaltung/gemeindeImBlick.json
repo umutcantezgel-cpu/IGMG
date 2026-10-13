@@ -1,0 +1,43 @@
+{
+  "gemeindeImBlick": {
+    "titel": "Gemeinde im Blick",
+    "kennung": "Leitung",
+    "einleitung": "Zahlen für die Leitung – ohne Namen und ohne Personendaten. Werte von 1 bis 4 erscheinen als „< 5“, damit niemand auf einzelne Personen schließen kann. Seitenaufrufe zählen wir nicht.",
+    "zeitraum": "Zeitraum",
+    "zeitraumTage": "{tage, plural, =30 {letzte 30 Tage} =90 {letzte 90 Tage} =365 {letzte 12 Monate} other {letzte # Tage}}",
+    "anzeigen": "Anzeigen",
+    "drucken": "Bericht drucken",
+    "stand": "Stand: {datum}",
+    "bereiche": {
+      "anfragen": "Anfragen und Anmeldungen",
+      "lernen": "Unterricht",
+      "gemeinschaft": "Gemeinschaft",
+      "inhalte": "Inhalte"
+    },
+    "kachel": {
+      "lernende": "Lernende (aktiv)",
+      "gruppen": "Gruppen (aktiv)",
+      "unterrichtstermine": "Unterrichtstermine",
+      "anwesenheit": "Anwesenheit",
+      "anwesenheitWert": "{prozent} %",
+      "anwesenheitWenig": "zu wenige Einträge",
+      "anwesenheitHinweis": "erst ab 20 erfassten Einträgen",
+      "konten": "Gemeinde-Konten",
+      "pushAbos": "Benachrichtigungen (Geräte)",
+      "newsletter": "Newsletter (bestätigt)",
+      "hatimGelesen": "Gelesene Cüz (Hatim)",
+      "veroeffentlichteNachrichten": "Veröffentlichte Nachrichten"
+    },
+    "art": {
+      "kontakt": "Kontaktanfragen",
+      "veranstaltungsanmeldung": "Veranstaltungsanmeldungen",
+      "voranmeldung": "Schüler-Voranmeldungen",
+      "mitgliedsantrag": "Mitgliedsanfragen",
+      "moschee_anfrage": "Anfragen Moschee-Webseite"
+    },
+    "keineAnfragen": "Keine Anfragen in diesem Zeitraum.",
+    "diagramm": "Anfragen je Art im gewählten Zeitraum",
+    "kleinerFuenf": "< 5",
+    "fussnote": "Alle Zahlen stammen aus der Datenbank der Website. Seitenaufrufe, Besuche oder Geräte werden nicht gezählt (keine Tracker)."
+  }
+}

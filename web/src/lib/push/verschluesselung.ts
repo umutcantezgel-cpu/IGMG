@@ -16,6 +16,24 @@ export function ausBase64url(text: string): Buffer {
   return Buffer.from(text.replace(/\s+/g, ''), 'base64url');
 }
 
+/**
+ * Schlüssel eines Abos taugen für RFC 8291 (M-4 der Sicherheitsprüfung S1): `p256dh` ist ein unkomprimierter Punkt
+ * (65 Byte, 0x04) auf P-256 – geprüft mit einer Probe-ECDH –, `auth` genau 16 Byte. Ungültige Abos würden sonst
+ * jeden Versandlauf abbrechen.
+ */
+export function gueltigeAboSchluessel(p256dh: string, auth: string): boolean {
+  try {
+    const punkt = ausBase64url(p256dh);
+    if (punkt.length !== 65 || punkt[0] !== 0x04 || ausBase64url(auth).length !== 16) return false;
+    const probe = createECDH('prime256v1');
+    probe.generateKeys();
+    probe.computeSecret(punkt);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export type VerschluesselungsEingabe = {
   klartext: Buffer;
   /** Öffentlicher Schlüssel des Browsers (p256dh), 65 Byte unkomprimiert. */

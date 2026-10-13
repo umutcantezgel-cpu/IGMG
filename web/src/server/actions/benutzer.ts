@@ -66,6 +66,8 @@ export async function einladen(_vorher: BenutzerZustand, fd: FormData): Promise<
   };
   const p = einladungSchema.safeParse(roh);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
+  const schutz = kinderschutzVergabe(a, [], alsZuweisungen(p.data), false);
+  if (schutz) return { fehler: schutz, werte };
   const belegt = await emailBelegt(p.data.email);
   if (belegt) return { fehler: 'pruefen', feldFehler: { email: belegt === 'konto' ? 'emailKonto' : 'emailEingeladen' }, werte };
   const token = zufallsToken();
@@ -127,6 +129,21 @@ async function zielKonto(fd: FormData, a: Angemeldet) {
   return { konto, selbst: konto.id === a.benutzerId };
 }
 const istAdministration = (rollen: { rolle: string }[]) => rollen.some((r) => r.rolle === 'administration');
+const hat = (rollen: { rolle: string }[], rolle: string) => rollen.some((r) => r.rolle === rolle);
+
+/**
+ * Rolle `kinderschutz` (S-11, ADR 0026, M-2 der Sicherheitsprüfung S1): Chat-Inhalte sind nie über „Administration darf
+ * alles“ erreichbar – also darf die Administration sich diese Rolle auch nicht selbst geben. Vergabe nur durch den
+ * Vorstand (Rolle `leitung`), nie an sich selbst und nie zusammen mit `administration`. Jede Vergabe steht im Audit.
+ */
+function kinderschutzVergabe(a: Angemeldet, vorher: { rolle: string }[], neu: { rolle: string }[], selbst: boolean): string | null {
+  if (!hat(neu, 'kinderschutz')) return null;
+  if (hat(neu, 'administration')) return 'kinderschutzAdministration';
+  if (hat(vorher, 'kinderschutz')) return null;
+  if (selbst) return 'kinderschutzSelbst';
+  if (!hat(a.rollen, 'leitung')) return 'kinderschutzLeitung';
+  return null;
+}
 
 export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): Promise<BenutzerZustand> {
   const a = await verlangeRecht('benutzer.bearbeiten');
@@ -135,6 +152,8 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
   const p = rollenSchema.safeParse(roh);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte: roh };
   const neu = alsZuweisungen(p.data);
+  const schutz = kinderschutzVergabe(a, konto.rollen, neu, selbst);
+  if (schutz) return { fehler: schutz, werte: roh };
   if (istAdministration(konto.rollen) && !istAdministration(neu)) {
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };

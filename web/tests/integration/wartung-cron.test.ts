@@ -84,11 +84,40 @@ describe('Löschfristen per Cron (GET, CRON_SECRET)', () => {
       geloeschteChatMeldungen: expect.any(Number),
       geloeschtePushAbos: expect.any(Number),
       geloeschteLernende: expect.any(Number),
+      geloeschteKinderkonten: expect.any(Number),
       geloeschteOffeneMeldungen: expect.any(Number),
       geloeschteProtokolleintraege: expect.any(Number),
       geloeschteUnzustellbareMails: expect.any(Number),
       geloeschteAuditEintraege: expect.any(Number),
+      geloeschteNewsletterAnmeldungen: expect.any(Number),
+      geloeschteKonten: expect.any(Number),
+      geloeschteUnbestaetigteKonten: expect.any(Number),
     });
+  });
+
+  it('löscht unbestätigte Newsletter-Anmeldungen nach 48 Stunden, bestätigte und frische bleiben', async () => {
+    const zeile = (hmac: string, alt: boolean, bestaetigt: boolean) => {
+      const p = verschluessele('testperson.newsletter@example.test');
+      return {
+        emailVerschluesselt: p.daten,
+        schluesselId: p.schluesselId,
+        emailHmac: hmac,
+        tokenHash: `hash-${hmac}`,
+        einwilligungVersion: 'newsletter-test',
+        erstelltAm: new Date(Date.now() - (alt ? 49 : 1) * 3_600_000),
+        bestaetigtAm: bestaetigt ? new Date() : null,
+      };
+    };
+    const [alt, frisch, bestaetigt] = await db
+      .insert(schema.newsletterAbo)
+      .values([zeile('nl-alt', true, false), zeile('nl-frisch', false, false), zeile('nl-bestaetigt', true, true)])
+      .returning({ id: schema.newsletterAbo.id });
+    const erster = await (await loesch.GET(anfrage('GET', bearer(CRON)))).json();
+    expect(erster.geloeschteNewsletterAnmeldungen).toBe(1);
+    const uebrig = (await db.select({ id: schema.newsletterAbo.id }).from(schema.newsletterAbo)).map((z) => z.id);
+    expect(uebrig).not.toContain(alt.id);
+    expect(uebrig).toEqual(expect.arrayContaining([frisch.id, bestaetigt.id]));
+    expect(await (await loesch.GET(anfrage('GET', bearer(CRON)))).json()).toMatchObject({ geloeschteNewsletterAnmeldungen: 0 });
   });
 
   it('löscht den fälligen Eingang und ist beim zweiten Lauf ohne Wirkung (idempotent)', async () => {

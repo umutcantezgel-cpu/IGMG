@@ -1,5 +1,8 @@
 import type { Aktion } from '@/lib/rechte/matrix';
 
+/** Funktionsschalter (ADR 0035), ohne den ein Modul nicht erscheint (Seiten antworten dann mit 404). */
+export type ModulFunktion = 'lernplattform' | 'konten';
+
 /**
  * Module der Verwaltung (V01–V14 + Einstellungen) in der Reihenfolge der Seitenleiste. Ein Modul erscheint nur, wenn
  * es gebaut ist (`gebaut`, setzt der Orchestrator bei der Abnahme) und die Rolle eines der Leserechte hat (`recht`).
@@ -12,18 +15,32 @@ export type ModulSchluessel =
   | 'neuigkeiten'
   | 'ankuendigungen'
   | 'seiteninhalte'
+  | 'seiten'
+  | 'menues'
+  | 'weiterleitungen'
+  | 'freigaben'
   | 'kurse'
+  | 'gruppen'
+  | 'lernende'
+  | 'lehrplan'
   | 'gebetszeiten'
   | 'eingaenge'
   | 'postfach'
   | 'tickets'
   | 'kinderschutz'
+  | 'gemeindeImBlick'
+  | 'koran'
   | 'medien'
   | 'benutzer'
+  | 'gemeindeKonten'
   | 'audit'
   | 'styleguide'
   | 'startklar'
-  | 'einstellungen';
+  | 'einstellungen'
+  // Lauf Gemeinde-Plattform, Kür A (H-K01–H-K04)
+  | 'hatim'
+  | 'besondereTage'
+  | 'newsletter';
 export type ModulIcon = ModulSchluessel;
 export type ModulGruppe = 'inhalte' | 'kommunikation' | 'betrieb';
 
@@ -34,16 +51,25 @@ export type Modul = {
   icon: ModulIcon;
   gebaut: boolean;
   gruppe?: ModulGruppe;
+  funktion?: ModulFunktion;
 };
 
 /**
  * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
  * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
  */
-export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz'] as const;
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
+  // Leitung (AUFTRAG 3.10): Kennzahlen ohne Personendaten
+  {
+    schluessel: 'gemeindeImBlick',
+    pfad: '/verwaltung/gemeinde-im-blick',
+    recht: 'leitung.lesen',
+    icon: 'gemeindeImBlick',
+    gebaut: true,
+  },
   {
     schluessel: 'neuigkeiten',
     pfad: '/verwaltung/neuigkeiten',
@@ -76,7 +102,47 @@ export const MODULE: readonly Modul[] = [
     gebaut: true,
     gruppe: 'inhalte',
   },
+  // CMS (ADR 0032): freie Seiten, Menüs, Weiterleitungen, Freigaben
+  { schluessel: 'seiten', pfad: '/verwaltung/seiten', recht: 'seite.lesen', icon: 'seiten', gebaut: true, gruppe: 'inhalte' },
+  { schluessel: 'menues', pfad: '/verwaltung/menues', recht: 'menue.bearbeiten', icon: 'menues', gebaut: true, gruppe: 'inhalte' },
+  {
+    schluessel: 'weiterleitungen',
+    pfad: '/verwaltung/weiterleitungen',
+    recht: 'weiterleitung.bearbeiten',
+    icon: 'weiterleitungen',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  { schluessel: 'freigaben', pfad: '/verwaltung/freigaben', recht: 'freigabe.lesen', icon: 'freigaben', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true, gruppe: 'inhalte' },
+  // Lernplattform (H-L01…L03): nur mit eingeschaltetem Schalter `lernplattform`
+  {
+    schluessel: 'gruppen',
+    pfad: '/verwaltung/gruppen',
+    recht: 'gruppe.lesen',
+    icon: 'gruppen',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
+  {
+    schluessel: 'lernende',
+    pfad: '/verwaltung/lernende',
+    recht: 'lernende.lesen',
+    icon: 'lernende',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
+  {
+    schluessel: 'lehrplan',
+    pfad: '/verwaltung/lehrplan',
+    recht: 'gruppe.lesen',
+    icon: 'lehrplan',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernplattform',
+  },
   {
     schluessel: 'gebetszeiten',
     pfad: '/verwaltung/gebetszeiten',
@@ -85,7 +151,25 @@ export const MODULE: readonly Modul[] = [
     gebaut: true,
     gruppe: 'inhalte',
   },
+  // Koran & Hadith (H-Q03/Q04, ADR 0030): Ausgaben, Wortbedeutungen, Tajwid-Texte, Hadith; Zähler = offene religiöse Freigaben
+  {
+    schluessel: 'koran',
+    pfad: '/verwaltung/koran',
+    recht: ['quran.bearbeiten', 'hadith.bearbeiten', 'religioes.freigeben'],
+    icon: 'koran',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   { schluessel: 'medien', pfad: '/verwaltung/medien', recht: 'medium.lesen', icon: 'medien', gebaut: true, gruppe: 'inhalte' },
+  {
+    schluessel: 'besondereTage',
+    pfad: '/verwaltung/besondere-tage',
+    recht: 'kalender.bearbeiten',
+    icon: 'besondereTage',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  { schluessel: 'hatim', pfad: '/verwaltung/hatim', recht: 'hatim.bearbeiten', icon: 'hatim', gebaut: true, gruppe: 'inhalte' },
   {
     schluessel: 'eingaenge',
     pfad: '/verwaltung/eingaenge',
@@ -125,7 +209,24 @@ export const MODULE: readonly Modul[] = [
     gebaut: true,
     gruppe: 'kommunikation',
   },
+  {
+    schluessel: 'newsletter',
+    pfad: '/verwaltung/newsletter',
+    recht: 'newsletter.lesen',
+    icon: 'newsletter',
+    gebaut: true,
+    gruppe: 'kommunikation',
+  },
   { schluessel: 'benutzer', pfad: '/verwaltung/benutzer', recht: 'benutzer.lesen', icon: 'benutzer', gebaut: true, gruppe: 'betrieb' },
+  {
+    schluessel: 'gemeindeKonten',
+    pfad: '/verwaltung/gemeinde-konten',
+    recht: 'gemeindekonto.lesen',
+    icon: 'gemeindeKonten',
+    gebaut: true,
+    gruppe: 'betrieb',
+    funktion: 'konten',
+  },
   { schluessel: 'audit', pfad: '/verwaltung/audit', recht: 'audit.lesen', icon: 'audit', gebaut: true, gruppe: 'betrieb' },
   {
     schluessel: 'startklar',

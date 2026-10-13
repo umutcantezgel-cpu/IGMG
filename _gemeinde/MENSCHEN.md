@@ -27,6 +27,9 @@ Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stan
 | MN-18 | Minutentakt: Vercel Pro oder lokaler Server | Vorstand | 10 min | lokaler Server | offen |
 | MN-19 | Prüfung auf echten Geräten (iOS/Safari, Android), u. a. Tajwid-Färbung in WebKit | Technik | 1 h | UMGEBUNGSAUSNAHME | offen |
 | MN-20 | Imam-Konto mit Zwei-Faktor und Rolle `religioese_pruefung` | Vorstand | 15 min | Freigaben stauen sich | offen |
+| MN-21 | Löschfristen bestätigen (Vorschläge der DSFA, im Code umgesetzt in `web/src/lib/loeschen/gemeinde.ts`): Moderationsprotokoll 3 Jahre, offene Meldungen höchstens 12 Monate, Audit 12 Monate, Lernende 12 Monate nach Austritt, unzustellbare Mails 30 Tage; Frist für inaktive Konten (Vorschlag 24 Monate mit Vorwarnung) | Vorstand / DSB | 30 min | Vorschläge gelten | offen |
+| MN-22 | Vierteljährlich eine Sicherung mit dem privaten age-Schlüssel entschlüsseln (Schlüssel nie auf dem lokalen Server, DSFA D-08); nach jeder Wiederherstellung Löschanträge seit Sicherungsdatum erneut anwenden (D-09) | Vorstand / Technik | 30 min je Quartal | Probe nur ohne Entschlüsseln | offen |
+| MN-23 | Rolle `kinderschutz` an zwei benannte Personen vergeben (Zwei-Faktor); Meldewege im Schutzkonzept | Vorstand | 15 min | Meldungen erreichen nur die Gruppenleitung | offen |
 
 ## Datenbefunde aus E0/E1 (zur Kenntnis)
 - Tajwid-Daten von cpfair/quran-tajweed passten nicht zu Tanzil 1.1 (Versatz um die Basmala in Vers 1). Sie wurden mit dem Klassifizierer

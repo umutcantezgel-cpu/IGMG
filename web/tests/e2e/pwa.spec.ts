@@ -34,6 +34,9 @@ test('offline: Gebetszeiten aus dem Vorrat, andere Seiten → Offline-Seite', as
   await context.setOffline(true);
   await page.reload();
   await expect(page.getByRole('heading', { level: 1, name: gebetszeiten.de.gebetszeiten.titel })).toBeVisible();
+  // Playwright wendet „offline“ nach dem Neuladen nicht auf den neu gestarteten Service Worker an – erneut setzen
+  await context.setOffline(false);
+  await context.setOffline(true);
   await page.goto('/veranstaltungen').catch(() => undefined);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(fehlerseiten.de.fehlerseiten.offline.titel);
   await context.setOffline(false);

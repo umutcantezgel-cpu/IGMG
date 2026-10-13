@@ -1,0 +1,40 @@
+{
+  "spenden": {
+    "titel": "Spenden",
+    "text": "Bankverbindung und Spendenzwecke für die Seite „Spenden“ mit GiroCode. Bitte nur Daten eintragen, die der Kassenwart bestätigt hat. Ohne gültige IBAN zeigt die Seite einen Hinweis statt eines QR-Codes.",
+    "stand": {
+      "gueltig": "Die Seite „Spenden“ zeigt die Bankverbindung und GiroCodes.",
+      "leer": "Zurzeit keine gültige Bankverbindung – die Seite „Spenden“ zeigt einen Platzhalter."
+    },
+    "abschnittBank": "Bankverbindung",
+    "empfaenger": "Empfänger (Kontoinhaber)",
+    "empfaengerHinweis": "Höchstens 70 Zeichen, so wie bei der Bank hinterlegt.",
+    "iban": "IBAN",
+    "ibanHinweis": "Wird über die Prüfziffer kontrolliert. Leer lassen, um Spenden auszublenden.",
+    "bic": "BIC",
+    "bicHinweis": "Optional – Banking-Apps im Euro-Raum brauchen sie nicht.",
+    "abschnittZwecke": "Spendenzwecke",
+    "zweckeHinweis": "Bis zu vier Zwecke. Ohne Zweck erscheint eine allgemeine Spende mit dem Verwendungszweck „Spende“.",
+    "zweck": "Zweck {nr}",
+    "titelFeld": "Titel",
+    "beschreibung": "Beschreibung",
+    "verwendungszweck": "Verwendungszweck",
+    "verwendungszweckHinweis": "Steht so im GiroCode und auf dem Kontoauszug, höchstens 140 Zeichen.",
+    "feldSprache": "{feld} ({sprache})",
+    "sprache": {
+      "Tr": "Türkisch",
+      "En": "Englisch"
+    },
+    "speichern": "Spenden speichern",
+    "gespeichert": "Gespeichert. Die Seite „Spenden“ zeigt die neuen Angaben.",
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "iban": "Diese IBAN ist nicht gültig (Prüfziffer).",
+      "bic": "Diese BIC ist nicht gültig (8 oder 11 Zeichen).",
+      "ungueltig": "Dieser Wert ist nicht gültig."
+    }
+  }
+}

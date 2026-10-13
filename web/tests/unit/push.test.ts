@@ -1,8 +1,8 @@
 import { createDecipheriv, createECDH, createHmac } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
-import { erlaubterEndpunkt } from '@/lib/push/senden';
+import { erlaubterEndpunkt, sendePush } from '@/lib/push/senden';
 import { erzeugeVapid, pruefeVapid, vapidAusUmgebung, vapidKopf } from '@/lib/push/vapid';
-import { ausBase64url, base64url, verschluesselePush } from '@/lib/push/verschluesselung';
+import { ausBase64url, base64url, gueltigeAboSchluessel, verschluesselePush } from '@/lib/push/verschluesselung';
 
 /** RFC 8291, Abschnitt 5 und Anhang A (wörtlich). */
 const RFC = {
@@ -91,6 +91,20 @@ describe('Web Push RFC 8291 (ADR 0034)', () => {
     expect(vapidAusUmgebung({})).toBeNull();
     expect(vapidAusUmgebung({ VAPID_PRIVAT: 'def', VAPID_KONTAKT: 'mailto:x@y' })).toBeNull();
     expect(vapidAusUmgebung({ VAPID_PRIVAT: erzeugeVapid().privat, VAPID_KONTAKT: 'kein-kontakt' })).toBeNull();
+  });
+
+  it('M-4 (S1): nur gültige Abo-Schlüssel; unbrauchbare führen beim Senden zum Entfernen statt zum Abbruch', async () => {
+    expect(gueltigeAboSchluessel(RFC.uaOeffentlich, RFC.auth)).toBe(true);
+    expect(gueltigeAboSchluessel(`B${'A'.repeat(85)}`, RFC.auth)).toBe(false);
+    expect(gueltigeAboSchluessel(RFC.uaOeffentlich.slice(0, 80), RFC.auth)).toBe(false);
+    expect(gueltigeAboSchluessel(RFC.uaOeffentlich, `${RFC.auth}AAAA`)).toBe(false);
+    const vapid = { ...erzeugeVapid(), kontakt: 'mailto:technik@beispiel.de' };
+    const ergebnis = await sendePush(
+      { endpoint: 'https://fcm.googleapis.com/fcm/send/x', p256dh: `B${'A'.repeat(85)}`, auth: RFC.auth },
+      { art: 'probe' },
+      vapid,
+    );
+    expect(ergebnis).toEqual({ ok: false, status: 0, entfernen: true });
   });
 
   it('nur bekannte Push-Dienste als Endpunkt', () => {

@@ -4,7 +4,8 @@ import { funktionAn } from '@/lib/funktionen';
 import { entferneAbo, kindDarfPush, sendeAnAbo, speichereAbo } from '@/lib/push/abo';
 import { erlaubterEndpunkt } from '@/lib/push/senden';
 import { vapidAusUmgebung } from '@/lib/push/vapid';
-import { ladeKonto } from '@/lib/rechte/gemeinde';
+import { gueltigeAboSchluessel } from '@/lib/push/verschluesselung';
+import { ladeKontoMitFaktor } from '@/lib/rechte/gemeinde';
 import { clientAdresse } from '@/lib/sicherheit/ip';
 import { db, schema } from '@/lib/db';
 import { eq } from 'drizzle-orm';
@@ -44,9 +45,15 @@ export async function POST(anfrage: Request) {
   const rate = await pruefeRate('push-abo', clientAdresse(anfrage.headers), GRENZE);
   if (!rate.erlaubt) return antwort(429, { fehler: 'rate' });
   const eingabe = pushAboEingabe.safeParse(roh);
-  if (!eingabe.success || !erlaubterEndpunkt(eingabe.data.abo.endpoint)) return antwort(400, { fehler: 'pruefen' });
+  if (
+    !eingabe.success ||
+    !erlaubterEndpunkt(eingabe.data.abo.endpoint) ||
+    !gueltigeAboSchluessel(eingabe.data.abo.keys.p256dh, eingabe.data.abo.keys.auth)
+  )
+    return antwort(400, { fehler: 'pruefen' });
   if (!eingabe.data.themen.length) return antwort(400, { fehler: 'thema' });
-  const konto = await ladeKonto();
+  // Verknüpfung mit dem Konto nur mit erfülltem zweiten Faktor (M-1 der Sicherheitsprüfung S1); sonst anonymes Abo
+  const konto = await ladeKontoMitFaktor();
   if (konto?.istKind && !(await kindDarfPush(konto.benutzerId))) return antwort(403, { fehler: 'einwilligung' });
   // Chat und Unterricht nur mit Konto (Inhalte gehören zu einer Person); anonym bleiben Gebet und Ankündigung
   const themen = konto ? eingabe.data.themen : eingabe.data.themen.filter((t) => t === 'gebet' || t === 'ankuendigung');

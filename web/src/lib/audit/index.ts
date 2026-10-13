@@ -43,6 +43,11 @@ export type AuditAktion =
   | 'inhalt.papierkorb'
   | 'inhalt.wiederhergestellt'
   | 'inhalt.geloescht'
+  | 'inhalt.zur_pruefung'
+  | 'inhalt.revision_wiederhergestellt'
+  | 'inhalt.vorschau_erstellt'
+  | 'freigabe.erteilt'
+  | 'freigabe.zurueckgewiesen'
   | 'eingang.angelegt'
   | 'eingang.gelesen'
   | 'eingang.status'
@@ -64,7 +69,30 @@ export type AuditAktion =
   | 'chat.gemeldet'
   | 'chat.meldung_bearbeitet'
   | 'chat.notfallpause'
-  | 'chat.notfallpause_aufgehoben';
+  | 'chat.notfallpause_aufgehoben'
+  // Kür A (H-K01–H-K04): Namen der Übernehmenden einer Hatim ansehen, besonderen Tag bestätigen, Newsletter versenden
+  | 'hatim.namen_gelesen'
+  | 'besonderer_tag.bestaetigt'
+  | 'newsletter.versendet'
+  // Verwaltung Lernen und Aufnahme (O-L01, H-L01…L05)
+  | 'gruppe.angelegt'
+  | 'gruppe.geaendert'
+  | 'gruppe.leitung'
+  | 'gruppe.mitglieder'
+  | 'gruppe.termine'
+  | 'lernende.aufgenommen'
+  | 'lernende.gelesen'
+  | 'lernende.geaendert'
+  | 'lehrplan.geaendert'
+  | 'gemeindekonto.gelesen'
+  | 'gemeindekonto.rollen_geaendert'
+  | 'gemeindekonto.gesperrt'
+  | 'gemeindekonto.entsperrt'
+  | 'gemeindekonto.geloescht'
+  // Religiöse Freigabe (ADR 0030): Verwaltung „Koran & Hadith“
+  | 'religioes.eingereicht'
+  | 'religioes.freigegeben'
+  | 'religioes.zurueckgewiesen';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

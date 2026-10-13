@@ -1,24 +1,37 @@
 'use client';
 
 import {
+  BadgeCheck,
+  BookOpen,
+  BookText,
+  Backpack,
   CalendarDays,
+  CalendarHeart,
   ClipboardCheck,
   Clock,
   ExternalLink,
   FileText,
+  Files,
   GraduationCap,
+  IdCard,
   Image as Bild,
   Inbox,
   LayoutDashboard,
+  ListTree,
+  ListOrdered,
   Mail,
   Megaphone,
   Newspaper,
   Palette,
   ScrollText,
+  Send,
   Settings,
+  ChartColumn,
   ShieldAlert,
+  Signpost,
   Ticket,
   Users,
+  UsersRound,
   type LucideIcon,
 } from 'lucide-react';
 import { useDeferredValue, useEffect, useRef } from 'react';
@@ -34,18 +47,31 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   veranstaltungen: CalendarDays,
   ankuendigungen: Megaphone,
   seiteninhalte: FileText,
+  seiten: Files,
+  menues: ListTree,
+  weiterleitungen: Signpost,
+  freigaben: BadgeCheck,
   kurse: GraduationCap,
+  gruppen: UsersRound,
+  lernende: Backpack,
+  lehrplan: ListOrdered,
   gebetszeiten: Clock,
   eingaenge: Inbox,
   postfach: Mail,
   tickets: Ticket,
   kinderschutz: ShieldAlert,
+  gemeindeImBlick: ChartColumn,
+  koran: BookText,
   medien: Bild,
   benutzer: Users,
+  gemeindeKonten: IdCard,
   audit: ScrollText,
   styleguide: Palette,
   startklar: ClipboardCheck,
   einstellungen: Settings,
+  hatim: BookOpen,
+  besondereTage: CalendarHeart,
+  newsletter: Send,
 };
 
 const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];
@@ -152,7 +178,7 @@ export function Seitenleiste({
   return (
     <aside
       className={cn(
-        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
+        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4 print:hidden',
         sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >

@@ -43,6 +43,7 @@ export function BestaetigenFormular({ token }: { token: string }) {
           {t(zustand.fehler)}
         </Meldung>
       ) : null}
+      <PasswortFeld id="bestaetigen-passwort" name="passwort" label={t('bestaetigen.passwort')} autoComplete="current-password" />
       <Button type="submit" disabled={laeuft} className={ANMELDE_KNOPF}>
         {laeuft ? <LadeStern /> : <MailCheck aria-hidden />}
         {t('bestaetigen.absenden')}

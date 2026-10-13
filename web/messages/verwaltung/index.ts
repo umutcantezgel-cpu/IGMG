@@ -23,6 +23,17 @@ import startklar from './startklar.json';
 import einstellungen from './einstellungen.json';
 import medienwahl from './medienwahl.json';
 import kinderschutz from './kinderschutz.json';
+import gemeindeImBlick from './gemeindeImBlick.json';
+import seiten from './seiten.json';
+import menues from './menues.json';
+import weiterleitungen from './weiterleitungen.json';
+import freigaben from './freigaben.json';
+import hatim from './hatim.json';
+import besondereTage from './besondereTage.json';
+import newsletter from './newsletter.json';
+import spenden from './spenden.json';
+import lernen from './lernen.json';
+import koran from './koran.json';
 
 type Teil = Record<string, unknown>;
 
@@ -46,4 +57,15 @@ export const VERWALTUNG: Record<string, Teil> = {
   einstellungen,
   medienwahl,
   kinderschutz,
+  gemeindeImBlick,
+  seiten,
+  menues,
+  weiterleitungen,
+  freigaben,
+  hatim,
+  besondereTage,
+  newsletter,
+  spenden,
+  lernen,
+  koran,
 };

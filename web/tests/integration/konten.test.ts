@@ -110,13 +110,22 @@ describe('Registrierung → Bestätigung → Rolle', () => {
     expect(await aktionen.kontoAnmelden({}, formular({ email, passwort: PASSWORT }))).toMatchObject({ fehler: 'anmelden.unbestaetigt' });
     expect(await sitzungenVon(u.id)).toHaveLength(0);
 
+    // Bestätigen verlangt das gewählte Passwort (H-2 der Sicherheitsprüfung S1); ein falsches verbraucht den Token nicht
+    expect(await aktionen.kontoBestaetigen({}, formular({ token, sprache: 'tr', passwort: 'Falsches-Passwort-123' }))).toEqual({
+      fehler: 'bestaetigen.passwortFalsch',
+    });
+    expect(await rollenVon(u.id)).toEqual([]);
     // Bestätigen (POST über die Action) → Rolle „gemeinde“
-    expect(await umleitung(aktionen.kontoBestaetigen({}, formular({ token, sprache: 'tr' })))).toBe('/tr/giris?hinweis=bestaetigt');
+    expect(await umleitung(aktionen.kontoBestaetigen({}, formular({ token, sprache: 'tr', passwort: PASSWORT })))).toBe(
+      '/tr/giris?hinweis=bestaetigt',
+    );
     expect(await rollenVon(u.id)).toEqual(['gemeinde']);
     expect((await kontoZu(email)).emailVerified).toBe(true);
     expect((await auditVon('konto.bestaetigt')).map((a) => a.benutzerId)).toContain(u.id);
     // Einmal verwendbar
-    expect(await aktionen.kontoBestaetigen({}, formular({ token, sprache: 'tr' }))).toEqual({ fehler: 'bestaetigen.ungueltig' });
+    expect(await aktionen.kontoBestaetigen({}, formular({ token, sprache: 'tr', passwort: PASSWORT }))).toEqual({
+      fehler: 'bestaetigen.ungueltig',
+    });
 
     // Jetzt Anmeldung → Mein Bereich (tr) mit Sitzung
     expect(await umleitung(aktionen.kontoAnmelden({}, formular({ email, passwort: PASSWORT, sprache: 'tr' })))).toBe('/tr/hesabim');
@@ -146,6 +155,52 @@ describe('Registrierung → Bestätigung → Rolle', () => {
       fehler: 'anmelden.fehler',
     });
     expect(await umleitung(aktionen.kontoAnmelden({}, formular({ email, passwort: PASSWORT })))).toBe('/mein-bereich');
+  });
+
+  it('H-2: erneute Registrierung einer unbestätigten Adresse ersetzt das Konto; nur das neue Passwort bestätigt', async () => {
+    const adresse = 'vorbelegt@example.test';
+    const registriere = async (passwort: string) => {
+      expect(
+        await aktionen.registrieren(
+          {},
+          formular({ sprache: 'de', name: 'Testperson Drei', email: adresse, passwort, einwilligung: 'ja', altcha: await altcha() }),
+        ),
+      ).toEqual({ ok: true });
+      await nachDerAntwort();
+    };
+    const linkVon = async (benutzerId: string) => {
+      const mails = await db.select().from(schema.mailAusgang).where(eq(schema.mailAusgang.vorlage, 'konto-bestaetigen'));
+      const links = mails.map((m) => entschluessele<{ an: string; daten: { link: string } }>(m.datenVerschluesselt, m.schluesselId));
+      const [v] = await db.select().from(schema.verification).where(eq(schema.verification.value, benutzerId));
+      return links
+        .map((l) => new URL(l.daten.link).searchParams.get('token')!)
+        .find((t) => v && v.identifier === `konto-bestaetigen:${sha256(t)}`)!;
+    };
+    // Angreifer belegt die Adresse vor; die Inhaberin registriert sich danach selbst
+    await registriere('Angreifer-Passwort-1234');
+    const alt = await kontoZu(adresse);
+    const altToken = await linkVon(alt.id);
+    await registriere('Inhaberin-Passwort-5678');
+    const neu = await kontoZu(adresse);
+    expect(neu.id).not.toBe(alt.id);
+    expect(await db.select().from(schema.user).where(eq(schema.user.email, adresse))).toHaveLength(1);
+    // Der alte Link ist verfallen; der neue bestätigt nur mit dem Passwort der Inhaberin
+    expect(await aktionen.kontoBestaetigen({}, formular({ token: altToken, passwort: 'Angreifer-Passwort-1234' }))).toMatchObject({
+      fehler: expect.stringMatching(/^bestaetigen\./),
+    });
+    const token = await linkVon(neu.id);
+    expect(await aktionen.kontoBestaetigen({}, formular({ token, passwort: 'Angreifer-Passwort-1234' }))).toEqual({
+      fehler: 'bestaetigen.passwortFalsch',
+    });
+    expect(await umleitung(aktionen.kontoBestaetigen({}, formular({ token, passwort: 'Inhaberin-Passwort-5678' })))).toBe(
+      '/anmelden?hinweis=bestaetigt',
+    );
+    expect(await aktionen.kontoAnmelden({}, formular({ email: adresse, passwort: 'Angreifer-Passwort-1234' }))).toMatchObject({
+      fehler: 'anmelden.fehler',
+    });
+    expect(await umleitung(aktionen.kontoAnmelden({}, formular({ email: adresse, passwort: 'Inhaberin-Passwort-5678' })))).toBe(
+      '/mein-bereich',
+    );
   });
 
   it('Schutzschritte: Honigtopf (scheinbarer Erfolg), ALTCHA fehlt, Zod-Feldfehler, `.invalid` abgelehnt', async () => {

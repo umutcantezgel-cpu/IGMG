@@ -35,8 +35,23 @@ test('Sure offline speichern, ohne Netz lesen und wieder entfernen', async ({ pa
   await context.setOffline(true);
   await page.reload();
   await expect(page.locator('.vers-ar').first()).toBeVisible();
-  const woerter = await page.evaluate(async () => (await fetch('/api/quran/1/woerter')).ok);
-  expect(woerter).toBe(true);
+  // Playwright wendet „offline“ nach dem Neuladen nicht auf den neu gestarteten Service Worker an – erneut setzen
+  await context.setOffline(false);
+  await context.setOffline(true);
+  const abruf = (adresse: string) =>
+    page.evaluate(
+      async (a) =>
+        fetch(a).then(
+          (r) => r.ok,
+          () => false,
+        ),
+      adresse,
+    );
+  expect(await abruf('/api/quran/1/woerter')).toBe(true);
+  // Nicht Gespeichertes ist ohne Netz wirklich nicht erreichbar
+  expect(await abruf('/api/quran/2/woerter')).toBe(false);
+  await page.reload();
+  await expect(page.locator('.vers-ar').first()).toBeVisible();
   await context.setOffline(false);
 
   await page.goto('/quran');

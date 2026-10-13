@@ -54,6 +54,7 @@ const ROUTEN = [
   },
   { id: 'impressum', seite: 'Impressum', de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' },
   { id: 'datenschutz', seite: 'Datenschutz', de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' },
+  { id: 'freieseite', seite: 'Freie Seite (Unsere Moschee)', de: '/unsere-moschee', tr: '/tr/camimiz', en: '/en/our-mosque' },
   { id: 'nichtgefunden', seite: 'Seite nicht gefunden', de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' },
   {
     id: 'voranmeldung',
@@ -107,6 +108,11 @@ const ROUTEN = [
     tr: '/tr/sifremi-unuttum',
     en: '/en/forgot-password',
   },
+  // Kür A (H-K01–H-K04). Hatim und Newsletter fehlen hier bewusst: Ihr Funktionsschalter ist im Produktionsbau ohne
+  // FUNKTION_HATIM/FUNKTION_NEWSLETTER aus (404), und diese Tabelle erwartet 200 – eintragen, sobald der E2E-Bau sie einschaltet.
+  { id: 'kalender', seite: 'Kalender', de: '/kalender', tr: '/tr/takvim', en: '/en/calendar' },
+  { id: 'ramadan', seite: 'Ramadan', de: '/ramadan', tr: '/tr/ramazan', en: '/en/ramadan' },
+  { id: 'spenden', seite: 'Spenden', de: '/spenden', tr: '/tr/bagis', en: '/en/donate' },
 ] as const;
 
 type Sprache = 'de' | 'tr' | 'en';

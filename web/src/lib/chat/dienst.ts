@@ -10,6 +10,8 @@ import {
   alterAus,
   bereinigeText,
   chatName,
+  leseGrund,
+  type LeseGrund,
   MELDUNG_KONTEXT,
   pruefeText,
   RATE_MINUTE,
@@ -17,6 +19,7 @@ import {
   REGELN_VERSION,
   schreibGrund,
   type SchreibGrund,
+  type SchreibLage,
   type TextFehler,
 } from './regeln';
 
@@ -57,7 +60,12 @@ export async function ladeKanal(kanalId: string): Promise<KanalLage | null> {
     .innerJoin(schema.gruppe, eq(schema.gruppe.id, schema.chatKanal.gruppeId))
     .where(eq(schema.chatKanal.id, kanalId));
   if (!k) return null;
-  const [{ zahl }] = await db.select({ zahl: count() }).from(schema.gruppenLeitung).where(eq(schema.gruppenLeitung.gruppeId, k.gruppeId));
+  // S-02: nur Erwachsene mit nicht gesperrtem Konto zählen (N-3 der Sicherheitsprüfung S1)
+  const [{ zahl }] = await db
+    .select({ zahl: count() })
+    .from(schema.gruppenLeitung)
+    .innerJoin(schema.user, eq(schema.user.id, schema.gruppenLeitung.benutzerId))
+    .where(and(eq(schema.gruppenLeitung.gruppeId, k.gruppeId), isNull(schema.user.gesperrtAm)));
   return { ...k, erwachsene: zahl };
 }
 
@@ -91,6 +99,16 @@ const schreibAktion = (art: KanalArt): GruppenAktion => (art === 'gruppe' ? 'cha
 
 /** Lage zum Schreiben für ein Konto (ohne Ratenprüfung). */
 export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jetzt = new Date()): Promise<SchreibGrund> {
+  return schreibGrund(await lageDaten(kanal, kontext, jetzt));
+}
+
+/** Darf das Konto die Nachrichten sehen? (Abruf-Route, Echtzeit-Token; H-1 der Sicherheitsprüfung S1) */
+export async function leseLage(kanal: KanalLage, kontext: GruppenKontext, jetzt = new Date()): Promise<LeseGrund> {
+  return leseGrund(await lageDaten(kanal, kontext, jetzt));
+}
+
+/** Alle Angaben für Lese- und Schreibentscheidung aus der Datenbank. */
+async function lageDaten(kanal: KanalLage, kontext: GruppenKontext, jetzt: Date): Promise<SchreibLage> {
   const darfLesen = darfInGruppe(kontext, leseAktion(kanal.art), kanal.gruppeId);
   const istLeitung = kontext.leitung.has(kanal.gruppeId);
   const istLernende = kanal.art === 'gruppe' && !istLeitung && kontext.eigeneLernendeId !== null;
@@ -124,7 +142,7 @@ export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jet
   const sechzehnAm = lernende[0]?.sechzehnAm ?? null;
   // D-11: bis 16 (und 30 Tage danach) zählt die Einwilligung der Eltern, danach nur die eigene
   const lage = einwilligungsLage(sechzehnAm, heute);
-  return schreibGrund({
+  return {
     darfLesen,
     darfSchreibenRecht: darfInGruppe(kontext, schreibAktion(kanal.art), kanal.gruppeId),
     istLeitung,
@@ -144,7 +162,7 @@ export async function schreibLage(kanal: KanalLage, kontext: GruppenKontext, jet
     alter: sechzehnAm ? alterAus(sechzehnAm, heute) : null,
     mindestalter: kanal.mindestalter,
     regelnBestaetigt: regeln.length > 0,
-  });
+  };
 }
 
 export type ChatNachricht = {
@@ -168,11 +186,13 @@ export type AbrufErgebnis = {
 /** Nachrichten nach `nachId` (aufsteigend, höchstens 50; ohne `nachId` die letzten 50). Keine Lesebestätigungen (S-14). */
 export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext, nachId?: number): Promise<AbrufErgebnis | null> {
   if (!darfInGruppe(kontext, leseAktion(kanal.art), kanal.gruppeId)) return null;
-  // S-03/S-17: Ohne (oder nach widerrufener) Elterneinwilligung und während der Notfall-Pause sehen Kinder und Eltern
-  // keine Nachrichten – nur den Grund. Die Gruppenleitung liest weiter (Aufarbeitung).
-  const lage = await schreibLage(kanal, kontext);
-  if (lage === 'einwilligungFehlt' || (lage === 'notfallpause' && !kontext.leitung.has(kanal.gruppeId)))
-    return { nachrichten: [], schreiben: lage, regelnVersion: REGELN_VERSION };
+  // S-03/S-17/D-01: Ohne (oder nach widerrufener) Einwilligung und während der Notfall-Pause sehen Kinder und Eltern
+  // keine Nachrichten – nur den Grund, auch außerhalb der Öffnungszeiten oder bei Pause. Die Leitung liest weiter.
+  const daten = await lageDaten(kanal, kontext, new Date());
+  const lesen = leseGrund(daten);
+  if (lesen === 'keinRecht') return null;
+  if (lesen !== 'ok') return { nachrichten: [], schreiben: lesen, regelnVersion: REGELN_VERSION };
+  const lage = schreibGrund(daten);
   const basis = db
     .select({
       id: schema.chatNachricht.id,

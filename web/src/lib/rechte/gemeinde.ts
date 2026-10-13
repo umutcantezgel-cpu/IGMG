@@ -25,6 +25,8 @@ export type Konto = {
   gemeindeRollen: GemeindeRolle[];
   verwaltungsRollen: RollenZuweisung[];
   zweiFaktorErfuellt: boolean;
+  /** Leitet mindestens eine Gruppe (Lehrkraft oder Aufsicht) – dann gilt die Pflicht zum zweiten Faktor. */
+  leitetGruppe: boolean;
 };
 
 /** Lehrkräfte brauchen den zweiten Faktor (TOTP), wie die Verwaltung. */
@@ -38,13 +40,18 @@ export const ladeKonto = cache(async (): Promise<Konto | null> => {
   const sitzung = await auth.api.getSession({ headers: await headers() });
   if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;
-  const [gemeinde, verwaltung, profil] = await Promise.all([
+  const [gemeinde, verwaltung, profil, leitung] = await Promise.all([
     db.select({ rolle: schema.gemeindeRolle.rolle }).from(schema.gemeindeRolle).where(eq(schema.gemeindeRolle.benutzerId, benutzerId)),
     db
       .select({ rolle: schema.rolleZuweisung.rolle, organisation: schema.rolleZuweisung.organisation })
       .from(schema.rolleZuweisung)
       .where(eq(schema.rolleZuweisung.benutzerId, benutzerId)),
     db.select().from(schema.kontoProfil).where(eq(schema.kontoProfil.benutzerId, benutzerId)).limit(1),
+    db
+      .select({ g: schema.gruppenLeitung.gruppeId })
+      .from(schema.gruppenLeitung)
+      .where(eq(schema.gruppenLeitung.benutzerId, benutzerId))
+      .limit(1),
   ]);
   const gemeindeRollen = gemeinde.map((z) => z.rolle);
   const istKind = profil[0]?.istKind ?? false;
@@ -62,11 +69,23 @@ export const ladeKonto = cache(async (): Promise<Konto | null> => {
     gemeindeRollen,
     verwaltungsRollen: verwaltung,
     zweiFaktorErfuellt: Boolean(sitzung.user.twoFactorEnabled),
+    leitetGruppe: leitung.length > 0,
   };
 });
 
-function faktorFehlt(k: Konto): boolean {
-  return !k.zweiFaktorErfuellt && k.gemeindeRollen.some((r) => ZWEI_FAKTOR_PFLICHT.has(r));
+/**
+ * Pflicht zum zweiten Faktor (ADR 0026): Lehrkräfte, alle, die eine Gruppe leiten (auch Aufsicht), und Konten mit
+ * Verwaltungsrolle (N-4/M-1 der Sicherheitsprüfung S1).
+ */
+export function faktorFehlt(k: Pick<Konto, 'zweiFaktorErfuellt' | 'gemeindeRollen' | 'verwaltungsRollen' | 'leitetGruppe'>): boolean {
+  if (k.zweiFaktorErfuellt) return false;
+  return k.leitetGruppe || k.verwaltungsRollen.length > 0 || k.gemeindeRollen.some((r) => ZWEI_FAKTOR_PFLICHT.has(r));
+}
+
+/** Für Route Handler (Abruf, Echtzeit, Push): angemeldet und mit erfülltem Faktor, sonst null. */
+export async function ladeKontoMitFaktor(): Promise<Konto | null> {
+  const k = await ladeKonto();
+  return k && !faktorFehlt(k) ? k : null;
 }
 
 /**

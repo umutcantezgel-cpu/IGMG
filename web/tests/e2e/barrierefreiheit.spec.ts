@@ -70,6 +70,8 @@ const ROUTEN: Route[] = [
   },
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
+  // Freie Seite aus dem CMS (Beispielseite aus dem Seed, ADR 0032)
+  { name: 'Freie Seite (Unsere Moschee)', pfad: { de: '/unsere-moschee', tr: '/tr/camimiz', en: '/en/our-mosque' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
   // Gemeinde-Plattform H-D01/H-R01: Hadith (Buchseite je nach Schalter hadith_gesamt mit Inhalt oder 404), Quellen, Erklärung
   { name: 'Hadith', pfad: { de: '/hadith', tr: '/tr/hadis', en: '/en/hadith' } },
@@ -96,6 +98,12 @@ const ROUTEN: Route[] = [
   { name: 'Anmelden', pfad: { de: '/anmelden', tr: '/tr/giris', en: '/en/sign-in' } },
   { name: 'Registrieren', pfad: { de: '/registrieren', tr: '/tr/kayit', en: '/en/register' } },
   { name: 'Passwort vergessen', pfad: { de: '/passwort-vergessen', tr: '/tr/sifremi-unuttum', en: '/en/forgot-password' } },
+  // Kür A (H-K01–H-K04); Hatim und Newsletter antworten mit 404, wenn ihr Funktionsschalter zur Bauzeit aus ist
+  { name: 'Kalender', pfad: { de: '/kalender', tr: '/tr/takvim', en: '/en/calendar' } },
+  { name: 'Ramadan', pfad: { de: '/ramadan', tr: '/tr/ramazan', en: '/en/ramadan' } },
+  { name: 'Spenden', pfad: { de: '/spenden', tr: '/tr/bagis', en: '/en/donate' } },
+  { name: 'Hatim', pfad: { de: '/hatim', tr: '/tr/hatim', en: '/en/khatm' } },
+  { name: 'Newsletter', pfad: { de: '/newsletter', tr: '/tr/bulten', en: '/en/newsletter' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

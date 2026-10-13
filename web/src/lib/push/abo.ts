@@ -159,7 +159,13 @@ export async function fuehreTaktAus(vapid: VapidSchluessel, jetzt = new Date()):
         const ms = zeitpunkt(tag.datum, tag[gebet]).getTime();
         if (!erinnerungFaellig(ms, abo.minutenVorher, jetztMs)) continue;
         if (!(await einmal(`gebet|${abo.id}|${tag.datum}|${gebet}`))) continue;
-        const ok = await sendeAnAbo(abo, { art: 'gebet', gebet, zeit: tag[gebet], minuten: abo.minutenVorher }, vapid, `gebet-${gebet}`);
+        // Ein fehlerhaftes Abo darf den Lauf für alle anderen nicht abbrechen (M-4 der Sicherheitsprüfung S1)
+        const ok = await sendeAnAbo(
+          abo,
+          { art: 'gebet', gebet, zeit: tag[gebet], minuten: abo.minutenVorher },
+          vapid,
+          `gebet-${gebet}`,
+        ).catch(() => false);
         if (ok) gesendet++;
         else fehlgeschlagen++;
       }

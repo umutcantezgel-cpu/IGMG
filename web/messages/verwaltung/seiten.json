@@ -1,0 +1,348 @@
+{
+  "seiten": {
+    "titel": "Seiten verwalten",
+    "einleitung": "Eigene Seiten der Website, zusammengesetzt aus Bausteinen: Text, Bilder, Fragen und Antworten, Termine und mehr.",
+    "neu": "Neue Seite",
+    "neuEinleitung": "Geben Sie einen Titel ein und füllen Sie die Bausteine. Zuerst wird als Entwurf gespeichert – öffentlich wird die Seite erst, wenn Sie es wählen.",
+    "bearbeiten": "Seite bearbeiten",
+    "zurueck": "Zurück zur Liste",
+    "ansichten": "Ansicht",
+    "ansichtAktiv": "Aktuell",
+    "ansichtPapierkorb": "Papierkorb",
+    "papierkorbHinweis": "Seiten im Papierkorb sind nicht öffentlich und werden nach 30 Tagen endgültig gelöscht.",
+    "leer": "Noch keine eigenen Seiten angelegt.",
+    "leerPapierkorb": "Der Papierkorb ist leer.",
+    "spalte": {
+      "titel": "Titel und Adresse",
+      "status": "Status",
+      "uebersetzung": "Übersetzt",
+      "geaendert": "Zuletzt geändert",
+      "aktionen": "Aktionen",
+      "imPapierkorbSeit": "Im Papierkorb seit"
+    },
+    "status": {
+      "entwurf": "Entwurf",
+      "zur_pruefung": "Zur Prüfung",
+      "geplant": "Geplant",
+      "veroeffentlicht": "Veröffentlicht",
+      "beispiel": "Beispielinhalt"
+    },
+    "statusPruefung": "Zur Prüfung ({art})",
+    "pruefArt": {
+      "redaktion": "redaktionell",
+      "religioes": "religiös"
+    },
+    "geplantAb": "ab {datum}, {zeit}",
+    "prozent": "{wert} %",
+    "sprache": {
+      "tr": "Türkisch",
+      "en": "Englisch"
+    },
+    "allgemein": "Allgemein (ganze Gemeinde)",
+    "aktionBearbeiten": "Bearbeiten: {titel}",
+    "aktionPapierkorb": "In den Papierkorb: {titel}",
+    "aktionWiederherstellen": "Wiederherstellen: {titel}",
+    "aktionLoeschen": "Endgültig löschen: {titel}",
+    "endgueltigLoeschen": "Endgültig löschen",
+    "loeschenTitel": "Seite endgültig löschen?",
+    "loeschenText": "„{titel}“ wird mit allen früheren Fassungen endgültig gelöscht. Das lässt sich nicht rückgängig machen.",
+    "abbrechen": "Abbrechen",
+    "angelegt": "Die Seite wurde angelegt.",
+    "gespeichert": "Die Änderungen wurden gespeichert.",
+    "wiederhergestellt": "Die frühere Fassung wurde wiederhergestellt und ist jetzt die aktuelle Fassung.",
+    "hinweis": {
+      "religioesePruefung": "Gespeichert. Die Seite enthält Koranverse oder Hadithe und wartet jetzt auf die religiöse Freigabe (Imam oder Hoca). Bis dahin ist sie nicht öffentlich.",
+      "zurPruefung": "Gespeichert und zur Prüfung gegeben. Sobald jemand sie freigibt, wird die Seite veröffentlicht.",
+      "geplant": "Gespeichert. Die Seite erscheint automatisch zum geplanten Zeitpunkt.",
+      "veroeffentlicht": "Gespeichert und veröffentlicht. Die Seite ist jetzt auf der Website zu sehen."
+    },
+    "imPapierkorb": "Diese Seite liegt im Papierkorb und ist nicht öffentlich.",
+    "oeffentlichAnsehen": "Öffentlich ansehen",
+    "revisionen": "Frühere Fassungen",
+    "offenerAntrag": "Diese Seite wartet auf die {art} Prüfung. Nach der Freigabe wird sie veröffentlicht.",
+    "zurueckgewiesen": "Bei der letzten Prüfung zurückgewiesen: „{kommentar}“",
+    "formular": {
+      "abschnittGrunddaten": "Titel und Beschreibung",
+      "titel": "Titel der Seite",
+      "titelHinweis": "Erscheint als große Überschrift und im Reiter des Browsers.",
+      "titelPlatzhalter": "z. B. Unsere Moschee",
+      "beschreibung": "Kurzbeschreibung",
+      "beschreibungHinweis": "Ein bis zwei Sätze. Erscheint unter dem Titel und in Suchmaschinen (höchstens 300 Zeichen).",
+      "organisation": "Gehört zu",
+      "organisationHinweis": "Allgemein oder eine Organisation. Davon hängt ab, wer die Seite bearbeiten darf.",
+      "abschnittUebersetzungen": "Titel und Beschreibung übersetzen (Türkisch, Englisch)",
+      "uebersetzungenHinweis": "Freiwillig. Fehlt eine Übersetzung, zeigt die Website den deutschen Text mit dem Hinweis „Nur auf Deutsch verfügbar“.",
+      "abschnittBausteine": "Inhalt der Seite",
+      "bausteineHinweis": "Die Seite besteht aus Bausteinen, die untereinander stehen. Fügen Sie unten Bausteine hinzu und bringen Sie sie mit „Nach oben“ und „Nach unten“ in die richtige Reihenfolge.",
+      "abschnittAdresse": "Adresse der Seite",
+      "adresseHinweis": "Die Adresse entsteht aus dem Titel. Ändern Sie sie nur, wenn es nötig ist – geteilte Links funktionieren sonst nicht mehr.",
+      "slug": "Adresse",
+      "slugHinweis": "Leer lassen: wird aus dem Titel gebildet. Nur Kleinbuchstaben, Ziffern und Bindestriche.",
+      "slugUebersetzungHinweis": "Leer lassen: dieselbe Adresse wie auf Deutsch.",
+      "slugVorschau": "Erreichbar unter",
+      "abschnittVeroeffentlichung": "Veröffentlichung",
+      "status": "Was soll beim Speichern passieren?",
+      "statusEntwurf": "Als Entwurf speichern",
+      "statusEntwurfHinweis": "Nur in der Verwaltung sichtbar. Sie können später weiterarbeiten.",
+      "statusPruefung": "Zur Prüfung geben",
+      "statusPruefungHinweis": "Eine zweite Person sieht die Seite durch und veröffentlicht sie.",
+      "statusVeroeffentlicht": "Veröffentlichen",
+      "statusVeroeffentlichtHinweis": "Die Seite ist danach öffentlich – sofort oder ab dem gewählten Zeitpunkt.",
+      "statusVeroeffentlichtGesperrt": "Dafür fehlt Ihnen das Recht. Wählen Sie „Zur Prüfung geben“.",
+      "religioesHinweis": "Diese Seite enthält Koranverse oder Hadithe. Beim Veröffentlichen geht sie zuerst an die religiöse Prüfung (Imam oder Hoca) und erscheint nach deren Freigabe.",
+      "veroeffentlichenAm": "Veröffentlichen am (freiwillig)",
+      "veroeffentlichenAmHinweis": "Leer lassen für „sofort“. Mit Datum und Uhrzeit erscheint die Seite automatisch zu diesem Zeitpunkt.",
+      "speichern": "Speichern",
+      "erstellen": "Seite anlegen",
+      "speichert": "Wird gespeichert …",
+      "speichernHinweis": {
+        "entwurf": "Wird als Entwurf gespeichert – noch nicht öffentlich.",
+        "zur_pruefung": "Wird gespeichert und zur Prüfung gegeben.",
+        "veroeffentlicht": "Wird gespeichert und veröffentlicht."
+      },
+      "feldSprache": "{feld} ({sprache})",
+      "sprache": {
+        "de": "Deutsch",
+        "tr": "Türkisch",
+        "en": "Englisch"
+      },
+      "feldname": {
+        "titel": "Titel der Seite",
+        "beschreibung": "Kurzbeschreibung",
+        "slug": "Adresse",
+        "organisation": "Gehört zu",
+        "status": "Veröffentlichung",
+        "veroeffentlichenAm": "Veröffentlichen am",
+        "bloecke": "Bausteine"
+      }
+    },
+    "baustein": {
+      "baustein": "Baustein",
+      "nummer": "{nr}",
+      "bausteinName": "Baustein {nr} ({typ})",
+      "keine": "Noch keine Bausteine. Beginnen Sie zum Beispiel mit einem Text.",
+      "hinzufuegen": "Baustein hinzufügen",
+      "auswahlSchliessen": "Auswahl schließen",
+      "auswahlTitel": "Welchen Baustein möchten Sie hinzufügen?",
+      "nachOben": "Nach oben",
+      "nachUnten": "Nach unten",
+      "entfernen": "Entfernen",
+      "aufklappen": "Aufklappen",
+      "zuklappen": "Zuklappen",
+      "nachObenName": "Nach oben: {name}",
+      "nachUntenName": "Nach unten: {name}",
+      "entfernenName": "Entfernen: {name}",
+      "aufklappenName": "Aufklappen: {name}",
+      "zuklappenName": "Zuklappen: {name}",
+      "fehlerMarke": "Bitte prüfen",
+      "verschoben": "{typ} steht jetzt an Position {nr} von {anzahl}.",
+      "entferntAnsage": "{typ} entfernt. Mit „Rückgängig“ holen Sie ihn zurück.",
+      "zurueckAnsage": "{typ} ist wieder da.",
+      "hinzugefuegt": "{typ} hinzugefügt (Position {nr}).",
+      "entfernt": "Baustein „{typ}“ entfernt.",
+      "rueckgaengig": "Rückgängig",
+      "uebersetzungen": "Übersetzungen dieses Bausteins (Türkisch, Englisch)",
+      "uebersetzungenHinweis": "Freiwillig. Fehlt eine Übersetzung, erscheint der deutsche Text.",
+      "sprache": {
+        "tr": "Türkisch",
+        "en": "Englisch"
+      },
+      "eintragNachOben": "Nach oben: {name}",
+      "eintragNachUnten": "Nach unten: {name}",
+      "eintragEntfernen": "Entfernen: {name}",
+      "galerieBild": "Bild {nr}",
+      "galerieHinzufuegen": "Bild hinzufügen",
+      "frageNr": "Frage {nr}",
+      "frageHinzufuegen": "Weitere Frage hinzufügen",
+      "spalteNr": "Spalte {nr}",
+      "zielSeiten": "Eigene Seiten",
+      "zielBereiche": "Bereiche der Website",
+      "trennerHinweis": "Eine ruhige Linie mit Achtstern. Keine Einstellungen nötig.",
+      "autoHinweis": "Dieser Baustein füllt sich von selbst und ist immer aktuell.",
+      "kontaktHinweis": "Zeigt Adresse, Telefon, E-Mail und Öffnungszeiten aus „Seiteninhalte › Kontaktdaten“.",
+      "gebetszeitenHinweis": "Zeigt die heutigen Gebetszeiten der Moschee – jeden Tag automatisch neu.",
+      "versHinweis": "Sie wählen nur die Stelle (Sure und Verse). Der arabische Text kommt aus der geprüften Koran-Datenbank, eine Übersetzung erscheint nur, wenn sie freigegeben ist. Die Seite wird vor dem Veröffentlichen religiös geprüft.",
+      "hadithHinweis": "Sie wählen nur die Nummer. Text und Übersetzung kommen aus der Datenbank und erscheinen erst nach der Freigabe. Die Seite wird vor dem Veröffentlichen religiös geprüft.",
+      "sureOption": "Sure {nr} · {name} ({anzahl} Verse)",
+      "sammlung": {
+        "bukhari": "Sahih al-Bukhari"
+      },
+      "feld": {
+        "einstellung": "Einstellung",
+        "titel": "Überschrift",
+        "titelOptional": "Überschrift (freiwillig)",
+        "text": "Text",
+        "textHinweis": "Mit der Werkzeugleiste setzen Sie Zwischenüberschriften, Listen und Links.",
+        "textKurz": "Kurzer Text (freiwillig)",
+        "alt": "Bildbeschreibung",
+        "altHinweis": "Beschreiben Sie in einem Satz, was zu sehen ist – für Menschen, die das Bild nicht sehen können.",
+        "unterschrift": "Bildunterschrift (freiwillig)",
+        "breite": "Breite",
+        "breiteText": "So breit wie der Text",
+        "breiteBreit": "Ganze Breite",
+        "bilder": "Bilder",
+        "knopf": "Beschriftung des Knopfs",
+        "knopfHinweis": "Kurz und klar, z. B. „Jetzt anmelden“.",
+        "ziel": "Der Knopf führt zu",
+        "zielHinweis": "Eine eigene Seite oder ein Bereich der Website.",
+        "frage": "Frage",
+        "antwort": "Antwort",
+        "absatzHinweis": "Absätze durch eine Leerzeile trennen.",
+        "spaltenAnzahl": "Anzahl der Spalten",
+        "zweiSpalten": "Zwei Spalten",
+        "dreiSpalten": "Drei Spalten",
+        "anzahl": "Wie viele anzeigen?",
+        "organisation": "Nur Termine von",
+        "alleOrganisationen": "allen Organisationen",
+        "datei": "Datei",
+        "dateiHinweis": "Ein PDF aus der Mediathek. Neue Dateien laden Sie unter „Medien“ hoch.",
+        "dateiWaehlen": "Bitte wählen …",
+        "keineDateien": "Noch keine Dateien in der Mediathek. Laden Sie zuerst ein PDF unter „Medien“ hoch.",
+        "linktext": "Name der Datei auf der Seite",
+        "beschreibung": "Kurzbeschreibung (freiwillig)",
+        "sure": "Sure",
+        "vonVers": "Von Vers",
+        "bisVers": "Bis Vers",
+        "bisVersHinweis": "Höchstens {max} Verse in einem Baustein.",
+        "uebersetzungZeigen": "Übersetzung anzeigen",
+        "uebersetzungZeigenHinweis": "Nur eine geprüfte, freigegebene Übersetzung in der Sprache der Seite.",
+        "sammlung": "Sammlung",
+        "nummer": "Hadith-Nummer",
+        "nummerHinweis": "Wie in der Quelle, z. B. 1 oder 402.2."
+      },
+      "typ": {
+        "text": {
+          "name": "Text",
+          "beschreibung": "Absätze, Zwischenüberschriften, Listen und Links."
+        },
+        "bild": {
+          "name": "Bild",
+          "beschreibung": "Ein Foto aus der Mediathek mit Beschreibung."
+        },
+        "galerie": {
+          "name": "Bildergalerie",
+          "beschreibung": "Mehrere Fotos in einem ruhigen Raster."
+        },
+        "aufruf": {
+          "name": "Hinweis mit Knopf",
+          "beschreibung": "Hervorgehobener Kasten, der zu einer anderen Seite führt."
+        },
+        "faq": {
+          "name": "Fragen und Antworten",
+          "beschreibung": "Aufklappbare Fragen mit Antworten."
+        },
+        "trenner": {
+          "name": "Trennlinie",
+          "beschreibung": "Linie mit Achtstern zwischen zwei Abschnitten."
+        },
+        "spalten": {
+          "name": "Spalten",
+          "beschreibung": "Zwei oder drei Textkästen nebeneinander."
+        },
+        "termine": {
+          "name": "Nächste Termine",
+          "beschreibung": "Die nächsten Veranstaltungen – automatisch aktuell."
+        },
+        "nachrichten": {
+          "name": "Neueste Nachrichten",
+          "beschreibung": "Die neuesten Beiträge – automatisch aktuell."
+        },
+        "kontakt": {
+          "name": "Kontakt",
+          "beschreibung": "Adresse, Telefon, E-Mail und Öffnungszeiten."
+        },
+        "download": {
+          "name": "Datei zum Herunterladen",
+          "beschreibung": "Ein PDF aus der Mediathek, z. B. ein Flyer."
+        },
+        "gebetszeiten": {
+          "name": "Gebetszeiten heute",
+          "beschreibung": "Die heutigen Gebetszeiten der Moschee, kompakt."
+        },
+        "vers": {
+          "name": "Koranvers (Verweis)",
+          "beschreibung": "Sure und Verse wählen – der Text kommt aus der Datenbank."
+        },
+        "hadith": {
+          "name": "Hadith (Verweis)",
+          "beschreibung": "Hadith-Nummer wählen – Text erst nach Freigabe."
+        }
+      }
+    },
+    "vorschau": {
+      "knopf": "Vorschau-Link erzeugen",
+      "hinweis": "Zeigt die gespeicherte Fassung – auch als Entwurf – ohne Anmeldung. Der Link gilt 24 Stunden; geben Sie ihn nur an Menschen weiter, die die Seite vorab sehen sollen.",
+      "erzeugt": "Vorschau-Link erstellt. Gültig bis {zeit}.",
+      "oeffnen": "Vorschau öffnen",
+      "kopieren": "Link kopieren",
+      "kopiert": "Kopiert",
+      "fehler": {
+        "keinRecht": "Für diese Seite dürfen Sie keine Vorschau erstellen.",
+        "imPapierkorb": "Seiten im Papierkorb haben keine Vorschau."
+      },
+      "titel": "Vorschau",
+      "banner": "Vorschau – so sieht die Seite aus. Status: {status}. Dieser Link gilt bis {zeit}.",
+      "spracheWaehlen": "Sprache der Vorschau",
+      "abgelaufenTitel": "Vorschau nicht verfügbar",
+      "abgelaufen": "Dieser Vorschau-Link ist abgelaufen oder ungültig. Bitten Sie um einen neuen Link.",
+      "zurVerwaltung": "Zur Verwaltung"
+    },
+    "revision": {
+      "titel": "Frühere Fassungen",
+      "einleitung": "Bei jedem Speichern entsteht eine Fassung. Die letzten 30 bleiben erhalten. Sie können jede davon ansehen und zurückholen.",
+      "zurueck": "Zurück zur Seite",
+      "spalteZeit": "Gespeichert am",
+      "spalteVon": "Von",
+      "spalteInhalt": "Inhalt",
+      "spalteAktionen": "Aktionen",
+      "aktuell": "Aktuelle Fassung",
+      "unbekannt": "unbekannt",
+      "bausteine": "{anzahl, plural, one {# Baustein} other {# Bausteine}}",
+      "wiederhergestelltVermerk": "aus einer früheren Fassung zurückgeholt",
+      "ansehen": "Ansehen: Fassung vom {zeit}",
+      "ansehenKurz": "Ansehen",
+      "wiederherstellen": "Diese Fassung zurückholen",
+      "wiederherstellenName": "Zurückholen: Fassung vom {zeit}",
+      "wiederherstellenHinweis": "Titel, Beschreibung und Bausteine werden auf diese Fassung gesetzt. Adresse, Status und Zeitplan bleiben, wie sie sind.",
+      "leer": "Noch keine Fassungen gespeichert.",
+      "ansichtTitel": "Fassung vom {zeit}",
+      "ansichtHinweis": "So sah die Seite in dieser Fassung aus (Deutsch)."
+    },
+    "fehler": {
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "nichtGefunden": "Diese Seite gibt es nicht mehr.",
+      "imPapierkorb": "Die Seite liegt im Papierkorb. Stellen Sie sie zuerst wieder her.",
+      "pflicht": "Bitte ausfüllen.",
+      "zuLang": "Der Text ist zu lang.",
+      "ungueltig": "Diese Angabe ist ungültig.",
+      "slug": "Nur Kleinbuchstaben, Ziffern und Bindestriche, z. B. unsere-moschee.",
+      "reserviert": "Diese Adresse gehört schon zu einem Bereich der Website. Bitte wählen Sie eine andere.",
+      "slugVergeben": "Diese Adresse hat schon eine andere Seite.",
+      "slugVergebenSprache": "In einer anderen Sprache ist diese Adresse schon vergeben. Bitte tragen Sie dort eine eigene Adresse ein.",
+      "datum": "Bitte ein gültiges Datum mit Uhrzeit eingeben.",
+      "organisation": "Für diese Organisation dürfen Sie keine Seiten anlegen.",
+      "keinRechtVeroeffentlichen": "Sie dürfen diese Seite nicht veröffentlichen. Wählen Sie „Zur Prüfung geben“.",
+      "bildFehlt": "Bitte ein Bild wählen.",
+      "bildUngueltig": "Das Bild ist nicht mehr in der Mediathek. Bitte ein anderes wählen.",
+      "dateiFehlt": "Bitte eine Datei wählen.",
+      "dateiUngueltig": "Die Datei ist nicht mehr in der Mediathek. Bitte eine andere wählen.",
+      "galerieMin": "Eine Galerie braucht mindestens zwei Bilder.",
+      "galerieMax": "Höchstens 24 Bilder je Galerie.",
+      "faqMin": "Mindestens eine Frage.",
+      "zuViele": "Zu viele Einträge.",
+      "spaltenAnzahl": "Zwei oder drei Spalten.",
+      "zahl": "Bitte eine gültige Zahl eingeben.",
+      "zielUngueltig": "Bitte ein Ziel aus der Liste wählen.",
+      "zielUnbekannt": "Die gewählte Seite gibt es nicht mehr.",
+      "sure": "Bitte eine Sure zwischen 1 und 114 wählen.",
+      "vers": "Bitte eine gültige Versnummer eingeben.",
+      "versBereich": "„Bis Vers“ muss gleich oder größer als „Von Vers“ sein – höchstens 10 Verse.",
+      "versUnbekannt": "So viele Verse hat diese Sure nicht.",
+      "hadithNummer": "Bitte eine Nummer wie 1 oder 402.2 eingeben.",
+      "hadithUnbekannt": "Diese Nummer gibt es in der Sammlung nicht.",
+      "richtext": "Der Text konnte nicht gelesen werden.",
+      "link": "Dieser Link ist nicht erlaubt."
+    }
+  }
+}
