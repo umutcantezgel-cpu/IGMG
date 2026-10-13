@@ -47,6 +47,8 @@ export const einwilligungArtEnum = pgEnum('konto_einwilligung_art', [
   'newsletter',
   'personenfotos',
   'chat_regeln',
+  /** Datenschutz-Einwilligung beim Anlegen eines Gemeinde-Kontos (Registrierung, Einladung). */
+  'konto',
 ]);
 
 /**

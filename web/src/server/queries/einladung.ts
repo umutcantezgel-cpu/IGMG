@@ -17,6 +17,8 @@ export async function ladeGueltigeEinladung(token: string) {
       email: schema.einladung.email,
       name: schema.einladung.name,
       rollen: schema.einladung.rollen,
+      gemeindeRollen: schema.einladung.gemeindeRollen,
+      laeuftAb: schema.einladung.laeuftAb,
       erstelltVon: schema.einladung.erstelltVon,
     })
     .from(schema.einladung)

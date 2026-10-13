@@ -189,6 +189,13 @@ export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormDat
           .insert(schema.rolleZuweisung)
           .values({ benutzerId: r.user.id, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: einladung.erstelltVon });
       }
+      // Gemeinde-Rollen (Mein Bereich, ADR 0026), falls die Einladung welche trägt
+      for (const rolle of einladung.gemeindeRollen) {
+        await tx
+          .insert(schema.gemeindeRolle)
+          .values({ benutzerId: r.user.id, rolle, erstelltVon: einladung.erstelltVon })
+          .onConflictDoNothing();
+      }
       await tx.update(schema.einladung).set({ angenommenAm: new Date() }).where(eq(schema.einladung.id, einladung.id));
       await protokolliere({ benutzerId: r.user.id, aktion: 'einladung.angenommen', zielTyp: 'einladung', zielId: einladung.id }, tx);
     });

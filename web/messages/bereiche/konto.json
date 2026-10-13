@@ -1,1 +1,638 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "konto": {
+      "meta": {
+        "anmelden": "Anmelden",
+        "registrieren": "Registrieren",
+        "bestaetigen": "E-Mail-Adresse bestätigen",
+        "einladung": "Einladung annehmen",
+        "passwortVergessen": "Passwort vergessen",
+        "passwortNeu": "Neues Passwort"
+      },
+      "einordnung": {
+        "kennung": "Gemeinde-Konto",
+        "titel": "Ihr persönlicher Zugang zur Gemeinde",
+        "text": "Mit einem Konto haben Sie Ihre Bereiche bei der IGMG Wetzlar an einem Ort – auf dem Telefon wie am Computer.",
+        "punkt1": "Koran-Lesezeichen an einem Ort",
+        "punkt2": "Unterricht, Lernweg und Elternbereich",
+        "punkt3": "Benachrichtigungen, wenn Sie es wünschen",
+        "punkt4": "Geschützt mit zweitem Faktor und Passkey"
+      },
+      "einwilligung": {
+        "text": "Ich habe die <link>Datenschutzerklärung</link> gelesen und willige ein, dass die IGMG Wetzlar meine Angaben für mein Gemeinde-Konto verarbeitet. Ich kann die Einwilligung jederzeit widerrufen, indem ich mein Konto löschen lasse."
+      },
+      "felder": {
+        "email": "E-Mail-Adresse",
+        "passwort": "Passwort",
+        "passwortNeu": "Neues Passwort (mindestens 12 Zeichen)",
+        "passwortWiederholen": "Neues Passwort wiederholen",
+        "name": "Vor- und Nachname",
+        "benutzername": "Benutzername",
+        "passwortAnzeigen": "Passwort anzeigen",
+        "passwortVerbergen": "Passwort verbergen"
+      },
+      "staerke": {
+        "label": "Passwortstärke",
+        "stufe0": "Noch zu kurz – mindestens 12 Zeichen.",
+        "stufe1": "Schwach – länger ist sicherer.",
+        "stufe2": "Mittel – gut, noch länger wäre besser.",
+        "stufe3": "Stark.",
+        "tipp": "Tipp: Ein Satz aus mehreren Wörtern ist leicht zu merken und schwer zu erraten."
+      },
+      "anmelden": {
+        "titel": "Anmelden",
+        "untertitel": "Melden Sie sich bei Ihrem Gemeinde-Konto an.",
+        "reiter": {
+          "label": "Art der Anmeldung",
+          "email": "E-Mail",
+          "kinder": "Kinderzugang"
+        },
+        "absenden": "Anmelden",
+        "passwortVergessen": "Passwort vergessen?",
+        "keinKonto": "Noch kein Konto?",
+        "registrieren": "Jetzt registrieren",
+        "mitarbeitende": "Zugang für Mitarbeitende",
+        "mitarbeitendeText": "Für die Verwaltung der Website gibt es eine eigene Anmeldung.",
+        "verwaltung": "Zur Verwaltungsanmeldung",
+        "fehler": "E-Mail-Adresse oder Passwort ist nicht korrekt.",
+        "zuViele": "Zu viele Versuche. Bitte warten Sie einige Minuten und versuchen Sie es dann erneut.",
+        "unbestaetigt": "Bitte bestätigen Sie zuerst Ihre E-Mail-Adresse. Den Link dazu haben wir Ihnen per E-Mail geschickt.",
+        "oder": "oder"
+      },
+      "hinweis": {
+        "abgemeldet": "Sie sind abgemeldet.",
+        "bestaetigt": "Ihre E-Mail-Adresse ist bestätigt. Sie können sich jetzt anmelden.",
+        "eingeladen": "Ihr Konto ist angelegt. Bitte melden Sie sich an.",
+        "passwort": "Ihr neues Passwort ist gespeichert. Bitte melden Sie sich an.",
+        "unbestaetigt": "Ihr Konto ist noch nicht freigeschaltet. Bitte bestätigen Sie zuerst Ihre E-Mail-Adresse."
+      },
+      "kinder": {
+        "text": "Melde dich mit dem Benutzernamen und dem Passwort an, die deine Eltern für dich eingerichtet haben.",
+        "absenden": "Anmelden",
+        "fehler": "Benutzername oder Passwort stimmt nicht.",
+        "vergessen": "Passwort vergessen? Deine Eltern können es für dich neu setzen."
+      },
+      "zweiFaktor": {
+        "titel": "Bestätigungscode",
+        "text": "Geben Sie den sechsstelligen Code aus Ihrer Authentifizierungs-App ein.",
+        "code": "Code aus Ihrer Authentifizierungs-App",
+        "ersatzcode": "Ersatzcode",
+        "ersatzVerwenden": "Stattdessen einen Ersatzcode verwenden",
+        "appVerwenden": "Code aus der App verwenden",
+        "absenden": "Bestätigen",
+        "fehler": "Der Code ist nicht gültig.",
+        "abgelaufen": "Die Anmeldung ist abgelaufen.",
+        "zurueck": "Bitte erneut anmelden."
+      },
+      "passkey": {
+        "knopf": "Mit Passkey anmelden",
+        "laeuft": "Passkey wird geprüft …",
+        "fehler": "Die Anmeldung mit Passkey hat nicht geklappt. Bitte versuchen Sie es erneut oder melden Sie sich mit Passwort an.",
+        "abgebrochen": "Die Anmeldung mit Passkey wurde abgebrochen.",
+        "verwaltung": "Konten mit Verwaltungszugang melden sich mit E-Mail-Adresse, Passwort und Bestätigungscode an."
+      },
+      "wahl": {
+        "titel": "Willkommen zurück",
+        "text": "Sie sind als {name} angemeldet. Wohin möchten Sie?",
+        "verwaltung": "Verwaltung",
+        "verwaltungText": "Inhalte, Eingänge und Einstellungen der Gemeinde",
+        "meinBereich": "Mein Bereich",
+        "meinBereichText": "Ihr persönliches Konto, Lesezeichen und mehr",
+        "abmelden": "Abmelden",
+        "unbestaetigtTitel": "Konto noch nicht freigeschaltet",
+        "unbestaetigtText": "Ihr Konto hat noch keinen Zugang. Bitte bestätigen Sie zuerst Ihre E-Mail-Adresse über den Link aus unserer E-Mail."
+      },
+      "registrieren": {
+        "titel": "Registrieren",
+        "untertitel": "Ein Gemeinde-Konto für Mitglieder und Besucher der IGMG Wetzlar.",
+        "hinweisEinladung": "Eltern, Lehrkräfte und Schüler erhalten eine persönliche Einladung von der Gemeinde und brauchen sich nicht zu registrieren.",
+        "nameHinweis": "Andere sehen nur Ihren Vornamen und den ersten Buchstaben des Nachnamens.",
+        "absenden": "Konto anlegen",
+        "sendet": "Wird gesendet …",
+        "altcha": {
+          "label": "Schutz vor automatisierten Anfragen",
+          "hinweis": "Die Prüfung läuft automatisch in Ihrem Browser – ohne Dritte und ohne Cookies."
+        },
+        "honigtopf": "Bitte dieses Feld leer lassen",
+        "erfolgTitel": "Fast geschafft",
+        "erfolgText": "Wir haben Ihnen eine E-Mail geschickt. Bitte klicken Sie auf den Link darin, um Ihre Adresse zu bestätigen. Der Link gilt 48 Stunden.",
+        "erfolgHinweis": "Keine E-Mail erhalten? Schauen Sie bitte auch im Spam-Ordner nach. Haben Sie schon ein Konto, schicken wir Ihnen stattdessen einen Hinweis.",
+        "zurAnmeldung": "Zur Anmeldung",
+        "schonKonto": "Schon ein Konto?",
+        "anmelden": "Anmelden",
+        "fehler": {
+          "pruefen": "Bitte prüfen Sie die markierten Felder.",
+          "altcha": "Die automatische Prüfung hat nicht geklappt. Bitte warten Sie einen Moment und senden Sie erneut.",
+          "allgemein": "Das hat leider nicht geklappt. Bitte versuchen Sie es erneut.",
+          "name": "Bitte geben Sie Ihren Namen ein (2 bis 80 Zeichen).",
+          "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+          "passwort": "Das Passwort braucht mindestens 12 Zeichen.",
+          "einwilligung": "Bitte stimmen Sie der Datenschutzerklärung zu."
+        }
+      },
+      "bestaetigen": {
+        "titel": "E-Mail-Adresse bestätigen",
+        "text": "Klicken Sie auf „Jetzt bestätigen“, um Ihr Gemeinde-Konto freizuschalten.",
+        "absenden": "Jetzt bestätigen",
+        "ungueltig": "Dieser Link ist ungültig oder abgelaufen. Registrieren Sie sich bitte erneut mit derselben Adresse – wir schicken Ihnen dann einen neuen Link.",
+        "zurRegistrierung": "Zur Registrierung"
+      },
+      "einladung": {
+        "titel": "Einladung annehmen",
+        "willkommen": "Willkommen, {name}!",
+        "text": "Die IGMG Wetzlar hat Sie zu einem Gemeinde-Konto eingeladen. Ihr Konto erhält diese Bereiche:",
+        "rollenLabel": "Bereiche Ihres Kontos",
+        "rollen": {
+          "gemeinde": "Gemeinde",
+          "eltern": "Eltern",
+          "lehrkraft": "Lehrkraft",
+          "schueler": "Schüler",
+          "verwaltung": "Verwaltung"
+        },
+        "gueltigBis": "Die Einladung gilt bis {datum}.",
+        "faktorHinweis": "Für dieses Konto ist die Anmeldung mit zweitem Faktor Pflicht. Nach dem ersten Anmelden richten Sie ihn in wenigen Schritten ein.",
+        "absenden": "Konto anlegen",
+        "ungueltig": "Diese Einladung ist ungültig oder abgelaufen. Bitte wenden Sie sich an die Gemeinde.",
+        "zurAnmeldung": "Zur Anmeldung",
+        "vorhanden": "Für diese Adresse gibt es bereits ein Konto. Bitte melden Sie sich an – danach können Sie die Einladung annehmen.",
+        "anmeldenUndAnnehmen": "Anmelden und Einladung annehmen",
+        "uebernehmenText": "Sie sind mit der eingeladenen Adresse angemeldet. Mit einem Klick erhält Ihr Konto die neuen Bereiche.",
+        "uebernehmen": "Einladung annehmen",
+        "andereAdresse": "Sie sind mit einem anderen Konto angemeldet. Diese Einladung gilt für eine andere E-Mail-Adresse – bitte melden Sie sich zuerst ab.",
+        "fehlerPasswort": "Das Passwort braucht mindestens 12 Zeichen.",
+        "fehlerGleich": "Die beiden Passwörter stimmen nicht überein.",
+        "fehlerEinwilligung": "Bitte stimmen Sie der Datenschutzerklärung zu.",
+        "fehlerPruefen": "Bitte prüfen Sie die markierten Felder.",
+        "fehlerAllgemein": "Das Konto konnte nicht angelegt werden. Bitte versuchen Sie es erneut oder wenden Sie sich an die Gemeinde."
+      },
+      "passwortVergessen": {
+        "titel": "Passwort vergessen",
+        "text": "Geben Sie Ihre E-Mail-Adresse ein. Gibt es dazu ein Konto, schicken wir Ihnen einen Link für ein neues Passwort.",
+        "absenden": "Link anfordern",
+        "gesendet": "Wenn es zu dieser Adresse ein Konto gibt, ist ein Link unterwegs. Er gilt 60 Minuten.",
+        "fehlerEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "zurueck": "Zur Anmeldung",
+        "kinderHinweis": "Kinderzugang ohne E-Mail-Adresse? Das Passwort setzen die Eltern neu."
+      },
+      "passwortNeu": {
+        "titel": "Neues Passwort",
+        "text": "Legen Sie ein neues Passwort fest. Danach werden Sie auf allen Geräten abgemeldet.",
+        "absenden": "Passwort speichern",
+        "ungueltig": "Dieser Link ist ungültig oder abgelaufen. Bitte fordern Sie einen neuen an.",
+        "fehlerKurz": "Das Passwort braucht mindestens 12 Zeichen.",
+        "fehlerGleich": "Die beiden Passwörter stimmen nicht überein.",
+        "neuAnfordern": "Neuen Link anfordern"
+      },
+      "mails": {
+        "bestaetigen": {
+          "betreff": "Bitte bestätigen Sie Ihre E-Mail-Adresse",
+          "text": "Bitte bestätigen Sie Ihre E-Mail-Adresse, um Ihr Gemeinde-Konto bei der IGMG Wetzlar freizuschalten. Der Link gilt 48 Stunden.",
+          "knopf": "Adresse bestätigen",
+          "hinweis": "Sie haben kein Konto angelegt? Dann ignorieren Sie diese E-Mail einfach – ohne Bestätigung wird nichts freigeschaltet."
+        },
+        "vorhanden": {
+          "betreff": "Ihr Gemeinde-Konto",
+          "text": "Für diese E-Mail-Adresse gibt es bereits ein Gemeinde-Konto. Haben Sie Ihr Passwort vergessen, können Sie hier ein neues festlegen.",
+          "knopf": "Neues Passwort festlegen",
+          "hinweis": "Sie haben sich nicht registriert? Dann ignorieren Sie diese E-Mail einfach – an Ihrem Konto ändert sich nichts."
+        },
+        "einladung": {
+          "betreff": "Einladung zu Ihrem Gemeinde-Konto",
+          "text": "Die IGMG Wetzlar lädt Sie zu einem Gemeinde-Konto ein. Die Einladung gilt bis {gueltigBis}.",
+          "knopf": "Einladung annehmen",
+          "hinweis": "Sie erwarten keine Einladung? Dann ignorieren Sie diese E-Mail einfach."
+        },
+        "passwort": {
+          "betreff": "Neues Passwort für Ihr Gemeinde-Konto",
+          "text": "Über den Knopf legen Sie ein neues Passwort fest. Der Link gilt 60 Minuten.",
+          "knopf": "Neues Passwort festlegen",
+          "hinweis": "Sie haben kein neues Passwort angefordert? Dann ignorieren Sie diese E-Mail einfach – Ihr Passwort bleibt unverändert."
+        }
+      }
+    }
+  },
+  "tr": {
+    "konto": {
+      "meta": {
+        "anmelden": "Giriş",
+        "registrieren": "Kayıt ol",
+        "bestaetigen": "E-posta adresini onayla",
+        "einladung": "Daveti kabul et",
+        "passwortVergessen": "Şifremi unuttum",
+        "passwortNeu": "Yeni şifre"
+      },
+      "einordnung": {
+        "kennung": "Cemaat hesabı",
+        "titel": "Cemaate kişisel erişiminiz",
+        "text": "Bir hesapla IGMG Wetzlar’daki tüm alanlarınız tek bir yerde – telefonda da bilgisayarda da.",
+        "punkt1": "Kur’an yer imleri tek bir yerde",
+        "punkt2": "Ders, öğrenme yolu ve veli alanı",
+        "punkt3": "İsterseniz bildirimler",
+        "punkt4": "İkinci faktör ve geçiş anahtarıyla korunur"
+      },
+      "einwilligung": {
+        "text": "<link>Gizlilik bildirimini</link> okudum ve IGMG Wetzlar’ın cemaat hesabım için bilgilerimi işlemesine onay veriyorum. Hesabımı sildirerek bu onayı istediğim zaman geri alabilirim."
+      },
+      "felder": {
+        "email": "E-posta adresi",
+        "passwort": "Şifre",
+        "passwortNeu": "Yeni şifre (en az 12 karakter)",
+        "passwortWiederholen": "Yeni şifreyi tekrarlayın",
+        "name": "Ad ve soyad",
+        "benutzername": "Kullanıcı adı",
+        "passwortAnzeigen": "Şifreyi göster",
+        "passwortVerbergen": "Şifreyi gizle"
+      },
+      "staerke": {
+        "label": "Şifre gücü",
+        "stufe0": "Henüz çok kısa – en az 12 karakter.",
+        "stufe1": "Zayıf – daha uzun olması daha güvenli.",
+        "stufe2": "Orta – iyi, biraz daha uzun olsa daha iyi.",
+        "stufe3": "Güçlü.",
+        "tipp": "İpucu: Birkaç kelimeden oluşan bir cümle kolay hatırlanır ve zor tahmin edilir."
+      },
+      "anmelden": {
+        "titel": "Giriş",
+        "untertitel": "Cemaat hesabınıza giriş yapın.",
+        "reiter": {
+          "label": "Giriş türü",
+          "email": "E-posta",
+          "kinder": "Çocuk girişi"
+        },
+        "absenden": "Giriş yap",
+        "passwortVergessen": "Şifrenizi mi unuttunuz?",
+        "keinKonto": "Henüz hesabınız yok mu?",
+        "registrieren": "Hemen kayıt olun",
+        "mitarbeitende": "Görevliler için giriş",
+        "mitarbeitendeText": "Web sitesinin yönetimi için ayrı bir giriş vardır.",
+        "verwaltung": "Yönetim girişine git",
+        "fehler": "E-posta adresi veya şifre doğru değil.",
+        "zuViele": "Çok fazla deneme yapıldı. Lütfen birkaç dakika bekleyip tekrar deneyin.",
+        "unbestaetigt": "Lütfen önce e-posta adresinizi onaylayın. Onay bağlantısını size e-posta ile gönderdik.",
+        "oder": "veya"
+      },
+      "hinweis": {
+        "abgemeldet": "Çıkış yaptınız.",
+        "bestaetigt": "E-posta adresiniz onaylandı. Artık giriş yapabilirsiniz.",
+        "eingeladen": "Hesabınız oluşturuldu. Lütfen giriş yapın.",
+        "passwort": "Yeni şifreniz kaydedildi. Lütfen giriş yapın.",
+        "unbestaetigt": "Hesabınız henüz etkinleştirilmedi. Lütfen önce e-posta adresinizi onaylayın."
+      },
+      "kinder": {
+        "text": "Anne babanın senin için oluşturduğu kullanıcı adı ve şifreyle giriş yap.",
+        "absenden": "Giriş yap",
+        "fehler": "Kullanıcı adı veya şifre doğru değil.",
+        "vergessen": "Şifreni mi unuttun? Anne baban senin için yeni bir şifre belirleyebilir."
+      },
+      "zweiFaktor": {
+        "titel": "Doğrulama kodu",
+        "text": "Kimlik doğrulama uygulamanızdaki altı haneli kodu girin.",
+        "code": "Kimlik doğrulama uygulamasındaki kod",
+        "ersatzcode": "Yedek kod",
+        "ersatzVerwenden": "Bunun yerine yedek kod kullan",
+        "appVerwenden": "Uygulamadaki kodu kullan",
+        "absenden": "Onayla",
+        "fehler": "Kod geçerli değil.",
+        "abgelaufen": "Giriş işleminin süresi doldu.",
+        "zurueck": "Lütfen tekrar giriş yapın."
+      },
+      "passkey": {
+        "knopf": "Geçiş anahtarıyla giriş yap",
+        "laeuft": "Geçiş anahtarı kontrol ediliyor …",
+        "fehler": "Geçiş anahtarıyla giriş yapılamadı. Lütfen tekrar deneyin veya şifrenizle giriş yapın.",
+        "abgebrochen": "Geçiş anahtarıyla giriş iptal edildi.",
+        "verwaltung": "Yönetim erişimi olan hesaplar e-posta adresi, şifre ve doğrulama koduyla giriş yapar."
+      },
+      "wahl": {
+        "titel": "Tekrar hoş geldiniz",
+        "text": "{name} olarak giriş yaptınız. Nereye gitmek istersiniz?",
+        "verwaltung": "Yönetim",
+        "verwaltungText": "Cemaatin içerikleri, gelen başvuruları ve ayarları",
+        "meinBereich": "Hesabım",
+        "meinBereichText": "Kişisel hesabınız, yer imleriniz ve daha fazlası",
+        "abmelden": "Çıkış yap",
+        "unbestaetigtTitel": "Hesap henüz etkin değil",
+        "unbestaetigtText": "Hesabınızın henüz erişimi yok. Lütfen önce e-postamızdaki bağlantıyla e-posta adresinizi onaylayın."
+      },
+      "registrieren": {
+        "titel": "Kayıt ol",
+        "untertitel": "IGMG Wetzlar üyeleri ve ziyaretçileri için cemaat hesabı.",
+        "hinweisEinladung": "Veliler, öğretmenler ve öğrenciler cemaatten kişisel bir davet alır; kayıt olmalarına gerek yoktur.",
+        "nameHinweis": "Diğerleri yalnızca adınızı ve soyadınızın ilk harfini görür.",
+        "absenden": "Hesap oluştur",
+        "sendet": "Gönderiliyor …",
+        "altcha": {
+          "label": "Otomatik isteklere karşı koruma",
+          "hinweis": "Kontrol tarayıcınızda otomatik olarak yapılır – üçüncü taraflar ve çerezler olmadan."
+        },
+        "honigtopf": "Lütfen bu alanı boş bırakın",
+        "erfolgTitel": "Neredeyse bitti",
+        "erfolgText": "Size bir e-posta gönderdik. Adresinizi onaylamak için lütfen içindeki bağlantıya tıklayın. Bağlantı 48 saat geçerlidir.",
+        "erfolgHinweis": "E-posta gelmedi mi? Lütfen istenmeyen posta klasörüne de bakın. Zaten bir hesabınız varsa size bunun yerine bir bilgilendirme gönderiyoruz.",
+        "zurAnmeldung": "Girişe git",
+        "schonKonto": "Zaten hesabınız var mı?",
+        "anmelden": "Giriş yap",
+        "fehler": {
+          "pruefen": "Lütfen işaretli alanları kontrol edin.",
+          "altcha": "Otomatik kontrol başarısız oldu. Lütfen biraz bekleyip tekrar gönderin.",
+          "allgemein": "Maalesef olmadı. Lütfen tekrar deneyin.",
+          "name": "Lütfen adınızı girin (2 ile 80 karakter arası).",
+          "email": "Lütfen geçerli bir e-posta adresi girin.",
+          "passwort": "Şifre en az 12 karakter olmalıdır.",
+          "einwilligung": "Lütfen gizlilik bildirimini onaylayın."
+        }
+      },
+      "bestaetigen": {
+        "titel": "E-posta adresini onayla",
+        "text": "Cemaat hesabınızı etkinleştirmek için „Şimdi onayla“ düğmesine tıklayın.",
+        "absenden": "Şimdi onayla",
+        "ungueltig": "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen aynı adresle tekrar kayıt olun – size yeni bir bağlantı göndeririz.",
+        "zurRegistrierung": "Kayda git"
+      },
+      "einladung": {
+        "titel": "Daveti kabul et",
+        "willkommen": "Hoş geldiniz, {name}!",
+        "text": "IGMG Wetzlar sizi bir cemaat hesabına davet etti. Hesabınız şu alanları içerecek:",
+        "rollenLabel": "Hesabınızın alanları",
+        "rollen": {
+          "gemeinde": "Cemaat",
+          "eltern": "Veli",
+          "lehrkraft": "Öğretmen",
+          "schueler": "Öğrenci",
+          "verwaltung": "Yönetim"
+        },
+        "gueltigBis": "Davet {datum} tarihine kadar geçerlidir.",
+        "faktorHinweis": "Bu hesap için ikinci faktörle giriş zorunludur. İlk girişten sonra birkaç adımda kurulur.",
+        "absenden": "Hesap oluştur",
+        "ungueltig": "Bu davet geçersiz veya süresi dolmuş. Lütfen cemaate başvurun.",
+        "zurAnmeldung": "Girişe git",
+        "vorhanden": "Bu adres için zaten bir hesap var. Lütfen giriş yapın – ardından daveti kabul edebilirsiniz.",
+        "anmeldenUndAnnehmen": "Giriş yap ve daveti kabul et",
+        "uebernehmenText": "Davet edilen adresle giriş yaptınız. Tek bir tıklamayla hesabınız yeni alanlara kavuşur.",
+        "uebernehmen": "Daveti kabul et",
+        "andereAdresse": "Başka bir hesapla giriş yaptınız. Bu davet farklı bir e-posta adresi içindir – lütfen önce çıkış yapın.",
+        "fehlerPasswort": "Şifre en az 12 karakter olmalıdır.",
+        "fehlerGleich": "İki şifre birbiriyle aynı değil.",
+        "fehlerEinwilligung": "Lütfen gizlilik bildirimini onaylayın.",
+        "fehlerPruefen": "Lütfen işaretli alanları kontrol edin.",
+        "fehlerAllgemein": "Hesap oluşturulamadı. Lütfen tekrar deneyin veya cemaate başvurun."
+      },
+      "passwortVergessen": {
+        "titel": "Şifremi unuttum",
+        "text": "E-posta adresinizi girin. Bu adrese ait bir hesap varsa yeni şifre için bir bağlantı göndeririz.",
+        "absenden": "Bağlantı iste",
+        "gesendet": "Bu adrese ait bir hesap varsa bağlantı yola çıktı. Bağlantı 60 dakika geçerlidir.",
+        "fehlerEmail": "Lütfen geçerli bir e-posta adresi girin.",
+        "zurueck": "Girişe git",
+        "kinderHinweis": "E-posta adresi olmayan çocuk girişi mi? Şifreyi veliler yeniden belirler."
+      },
+      "passwortNeu": {
+        "titel": "Yeni şifre",
+        "text": "Yeni bir şifre belirleyin. Ardından tüm cihazlarda oturumunuz kapatılır.",
+        "absenden": "Şifreyi kaydet",
+        "ungueltig": "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen yeni bir bağlantı isteyin.",
+        "fehlerKurz": "Şifre en az 12 karakter olmalıdır.",
+        "fehlerGleich": "İki şifre birbiriyle aynı değil.",
+        "neuAnfordern": "Yeni bağlantı iste"
+      },
+      "mails": {
+        "bestaetigen": {
+          "betreff": "Lütfen e-posta adresinizi onaylayın",
+          "text": "IGMG Wetzlar’daki cemaat hesabınızı etkinleştirmek için lütfen e-posta adresinizi onaylayın. Bağlantı 48 saat geçerlidir.",
+          "knopf": "Adresi onayla",
+          "hinweis": "Hesap oluşturmadınız mı? O zaman bu e-postayı dikkate almayın – onay olmadan hiçbir şey etkinleştirilmez."
+        },
+        "vorhanden": {
+          "betreff": "Cemaat hesabınız",
+          "text": "Bu e-posta adresi için zaten bir cemaat hesabı var. Şifrenizi unuttuysanız buradan yeni bir şifre belirleyebilirsiniz.",
+          "knopf": "Yeni şifre belirle",
+          "hinweis": "Kayıt olmadınız mı? O zaman bu e-postayı dikkate almayın – hesabınızda hiçbir şey değişmez."
+        },
+        "einladung": {
+          "betreff": "Cemaat hesabınız için davet",
+          "text": "IGMG Wetzlar sizi bir cemaat hesabına davet ediyor. Davet {gueltigBis} tarihine kadar geçerlidir.",
+          "knopf": "Daveti kabul et",
+          "hinweis": "Bir davet beklemiyor musunuz? O zaman bu e-postayı dikkate almayın."
+        },
+        "passwort": {
+          "betreff": "Cemaat hesabınız için yeni şifre",
+          "text": "Düğmeye tıklayarak yeni bir şifre belirleyebilirsiniz. Bağlantı 60 dakika geçerlidir.",
+          "knopf": "Yeni şifre belirle",
+          "hinweis": "Yeni şifre istemediniz mi? O zaman bu e-postayı dikkate almayın – şifreniz değişmez."
+        }
+      }
+    }
+  },
+  "en": {
+    "konto": {
+      "meta": {
+        "anmelden": "Sign in",
+        "registrieren": "Register",
+        "bestaetigen": "Confirm your email address",
+        "einladung": "Accept invitation",
+        "passwortVergessen": "Forgot password",
+        "passwortNeu": "New password"
+      },
+      "einordnung": {
+        "kennung": "Community account",
+        "titel": "Your personal access to the community",
+        "text": "With an account, everything you use at IGMG Wetzlar is in one place – on your phone as well as on your computer.",
+        "punkt1": "Quran bookmarks in one place",
+        "punkt2": "Classes, learning path and parents’ area",
+        "punkt3": "Notifications, if you want them",
+        "punkt4": "Protected by a second factor and passkeys"
+      },
+      "einwilligung": {
+        "text": "I have read the <link>privacy policy</link> and agree that IGMG Wetzlar processes my details for my community account. I can withdraw this consent at any time by having my account deleted."
+      },
+      "felder": {
+        "email": "Email address",
+        "passwort": "Password",
+        "passwortNeu": "New password (at least 12 characters)",
+        "passwortWiederholen": "Repeat new password",
+        "name": "First and last name",
+        "benutzername": "Username",
+        "passwortAnzeigen": "Show password",
+        "passwortVerbergen": "Hide password"
+      },
+      "staerke": {
+        "label": "Password strength",
+        "stufe0": "Still too short – at least 12 characters.",
+        "stufe1": "Weak – longer is safer.",
+        "stufe2": "Fair – good, a little longer would be better.",
+        "stufe3": "Strong.",
+        "tipp": "Tip: a sentence of several words is easy to remember and hard to guess."
+      },
+      "anmelden": {
+        "titel": "Sign in",
+        "untertitel": "Sign in to your community account.",
+        "reiter": {
+          "label": "Type of sign-in",
+          "email": "Email",
+          "kinder": "Children’s access"
+        },
+        "absenden": "Sign in",
+        "passwortVergessen": "Forgot your password?",
+        "keinKonto": "No account yet?",
+        "registrieren": "Register now",
+        "mitarbeitende": "Access for staff",
+        "mitarbeitendeText": "Managing the website has its own sign-in.",
+        "verwaltung": "Go to the staff sign-in",
+        "fehler": "Email address or password is not correct.",
+        "zuViele": "Too many attempts. Please wait a few minutes and then try again.",
+        "unbestaetigt": "Please confirm your email address first. We have emailed you the link.",
+        "oder": "or"
+      },
+      "hinweis": {
+        "abgemeldet": "You have signed out.",
+        "bestaetigt": "Your email address is confirmed. You can sign in now.",
+        "eingeladen": "Your account has been created. Please sign in.",
+        "passwort": "Your new password has been saved. Please sign in.",
+        "unbestaetigt": "Your account is not activated yet. Please confirm your email address first."
+      },
+      "kinder": {
+        "text": "Sign in with the username and password your parents set up for you.",
+        "absenden": "Sign in",
+        "fehler": "Username or password is not right.",
+        "vergessen": "Forgot your password? Your parents can set a new one for you."
+      },
+      "zweiFaktor": {
+        "titel": "Verification code",
+        "text": "Enter the six-digit code from your authenticator app.",
+        "code": "Code from your authenticator app",
+        "ersatzcode": "Backup code",
+        "ersatzVerwenden": "Use a backup code instead",
+        "appVerwenden": "Use the code from the app",
+        "absenden": "Confirm",
+        "fehler": "The code is not valid.",
+        "abgelaufen": "The sign-in has expired.",
+        "zurueck": "Please sign in again."
+      },
+      "passkey": {
+        "knopf": "Sign in with a passkey",
+        "laeuft": "Checking passkey …",
+        "fehler": "Signing in with a passkey did not work. Please try again or sign in with your password.",
+        "abgebrochen": "Signing in with a passkey was cancelled.",
+        "verwaltung": "Accounts with staff access sign in with email address, password and verification code."
+      },
+      "wahl": {
+        "titel": "Welcome back",
+        "text": "You are signed in as {name}. Where would you like to go?",
+        "verwaltung": "Administration",
+        "verwaltungText": "The community’s content, submissions and settings",
+        "meinBereich": "My account",
+        "meinBereichText": "Your personal account, bookmarks and more",
+        "abmelden": "Sign out",
+        "unbestaetigtTitel": "Account not activated yet",
+        "unbestaetigtText": "Your account has no access yet. Please first confirm your email address using the link in our email."
+      },
+      "registrieren": {
+        "titel": "Register",
+        "untertitel": "A community account for members and visitors of IGMG Wetzlar.",
+        "hinweisEinladung": "Parents, teachers and students receive a personal invitation from the community and do not need to register.",
+        "nameHinweis": "Others only see your first name and the first letter of your last name.",
+        "absenden": "Create account",
+        "sendet": "Sending …",
+        "altcha": {
+          "label": "Protection against automated requests",
+          "hinweis": "The check runs automatically in your browser – without third parties and without cookies."
+        },
+        "honigtopf": "Please leave this field empty",
+        "erfolgTitel": "Almost done",
+        "erfolgText": "We have sent you an email. Please click the link in it to confirm your address. The link is valid for 48 hours.",
+        "erfolgHinweis": "No email? Please also check your spam folder. If you already have an account, we send you a short note instead.",
+        "zurAnmeldung": "Go to sign-in",
+        "schonKonto": "Already have an account?",
+        "anmelden": "Sign in",
+        "fehler": {
+          "pruefen": "Please check the highlighted fields.",
+          "altcha": "The automatic check did not work. Please wait a moment and send again.",
+          "allgemein": "Unfortunately that did not work. Please try again.",
+          "name": "Please enter your name (2 to 80 characters).",
+          "email": "Please enter a valid email address.",
+          "passwort": "The password needs at least 12 characters.",
+          "einwilligung": "Please agree to the privacy policy."
+        }
+      },
+      "bestaetigen": {
+        "titel": "Confirm your email address",
+        "text": "Click “Confirm now” to activate your community account.",
+        "absenden": "Confirm now",
+        "ungueltig": "This link is invalid or has expired. Please register again with the same address – we will then send you a new link.",
+        "zurRegistrierung": "Go to registration"
+      },
+      "einladung": {
+        "titel": "Accept invitation",
+        "willkommen": "Welcome, {name}!",
+        "text": "IGMG Wetzlar has invited you to a community account. Your account will include these areas:",
+        "rollenLabel": "Areas of your account",
+        "rollen": {
+          "gemeinde": "Community",
+          "eltern": "Parent",
+          "lehrkraft": "Teacher",
+          "schueler": "Student",
+          "verwaltung": "Administration"
+        },
+        "gueltigBis": "The invitation is valid until {datum}.",
+        "faktorHinweis": "This account requires sign-in with a second factor. You set it up in a few steps after signing in for the first time.",
+        "absenden": "Create account",
+        "ungueltig": "This invitation is invalid or has expired. Please contact the community.",
+        "zurAnmeldung": "Go to sign-in",
+        "vorhanden": "There is already an account for this address. Please sign in – then you can accept the invitation.",
+        "anmeldenUndAnnehmen": "Sign in and accept the invitation",
+        "uebernehmenText": "You are signed in with the invited address. With one click, your account gets the new areas.",
+        "uebernehmen": "Accept invitation",
+        "andereAdresse": "You are signed in with another account. This invitation is for a different email address – please sign out first.",
+        "fehlerPasswort": "The password needs at least 12 characters.",
+        "fehlerGleich": "The two passwords do not match.",
+        "fehlerEinwilligung": "Please agree to the privacy policy.",
+        "fehlerPruefen": "Please check the highlighted fields.",
+        "fehlerAllgemein": "The account could not be created. Please try again or contact the community."
+      },
+      "passwortVergessen": {
+        "titel": "Forgot password",
+        "text": "Enter your email address. If there is an account for it, we will send you a link to set a new password.",
+        "absenden": "Request link",
+        "gesendet": "If there is an account for this address, a link is on its way. It is valid for 60 minutes.",
+        "fehlerEmail": "Please enter a valid email address.",
+        "zurueck": "Go to sign-in",
+        "kinderHinweis": "Children’s access without an email address? Parents set a new password."
+      },
+      "passwortNeu": {
+        "titel": "New password",
+        "text": "Choose a new password. You will then be signed out on all devices.",
+        "absenden": "Save password",
+        "ungueltig": "This link is invalid or has expired. Please request a new one.",
+        "fehlerKurz": "The password needs at least 12 characters.",
+        "fehlerGleich": "The two passwords do not match.",
+        "neuAnfordern": "Request a new link"
+      },
+      "mails": {
+        "bestaetigen": {
+          "betreff": "Please confirm your email address",
+          "text": "Please confirm your email address to activate your community account at IGMG Wetzlar. The link is valid for 48 hours.",
+          "knopf": "Confirm address",
+          "hinweis": "You did not create an account? Then simply ignore this email – nothing is activated without confirmation."
+        },
+        "vorhanden": {
+          "betreff": "Your community account",
+          "text": "There is already a community account for this email address. If you have forgotten your password, you can set a new one here.",
+          "knopf": "Set a new password",
+          "hinweis": "You did not register? Then simply ignore this email – nothing changes in your account."
+        },
+        "einladung": {
+          "betreff": "Invitation to your community account",
+          "text": "IGMG Wetzlar invites you to a community account. The invitation is valid until {gueltigBis}.",
+          "knopf": "Accept invitation",
+          "hinweis": "Not expecting an invitation? Then simply ignore this email."
+        },
+        "passwort": {
+          "betreff": "New password for your community account",
+          "text": "Use the button to set a new password. The link is valid for 60 minutes.",
+          "knopf": "Set a new password",
+          "hinweis": "You did not request a new password? Then simply ignore this email – your password stays the same."
+        }
+      }
+    }
+  }
+}
