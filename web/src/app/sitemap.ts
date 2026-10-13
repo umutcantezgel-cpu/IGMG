@@ -46,6 +46,9 @@ const FEST: Ziel[] = [
   '/elifbe/ueben',
   '/quellen',
   '/barrierefreiheit',
+  '/kalender',
+  '/ramadan',
+  '/spenden',
 ];
 
 function eintrag(ziel: Ziel): MetadataRoute.Sitemap[number] {
@@ -54,11 +57,13 @@ function eintrag(ziel: Ziel): MetadataRoute.Sitemap[number] {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [veranstaltungen, nachrichten, themen, hadithGesamt] = await Promise.all([
+  const [veranstaltungen, nachrichten, themen, hadithGesamt, hatim, newsletter] = await Promise.all([
     ladeVeranstaltungsSlugs(),
     ladeNachrichtenSlugs(),
     ladeWissensSlugs(),
     funktionAn('hadith_gesamt'),
+    funktionAn('hatim'),
+    funktionAn('newsletter'),
   ]);
   const [hadithBuecher, hadithTeile] = hadithGesamt ? await Promise.all([ladeHadithBuchNummern(), ladeHadithBuchTeile()]) : [[], []];
   const ziele: Ziel[] = [
@@ -71,6 +76,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...Array.from({ length: 30 }, (_, i) => ({ pathname: '/quran/cuz/[nr]' as const, params: { nr: String(i + 1) } })),
     ...BUCHSTABEN_SLUGS.map((buchstabe) => ({ pathname: '/elifbe/buchstaben/[buchstabe]' as const, params: { buchstabe } })),
     ...LEKTIONEN.map((l) => ({ pathname: '/elifbe/lektion/[lektion]' as const, params: { lektion: l.slug } })),
+    // Hatim und Newsletter nur mit eingeschaltetem Schalter (ADR 0035)
+    ...(hatim ? ['/hatim' as const] : []),
+    ...(newsletter ? ['/newsletter' as const] : []),
     // Der Bukhari-Volltext nur, wenn er freigeschaltet ist (MN-06)
     ...(hadithGesamt
       ? [

@@ -28,6 +28,7 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
   const bestand = baueMenues(
     (k) => t(k),
     (ziel) => pfadFuer(ziel, sprache),
+    { hatim: entscheide('hatim', process.env, null), newsletter: entscheide('newsletter', process.env, null) },
   );
   // Menü aus der Verwaltung (ADR 0032), sonst der Bestand
   const ausDb = await ladeKopfMenue(sprache);

@@ -34,7 +34,10 @@ type Uebersetzer = (schluessel: string) => string;
 
 const org = (slug: string): Ziel => ({ pathname: '/organisationen/[organisation]', params: { organisation: slug } });
 
-export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Menue[] {
+/** Menüpunkte hinter Funktionsschaltern (ADR 0035): ausgeschaltet erscheinen sie nicht. */
+export type MenueSchalter = { hatim?: boolean; newsletter?: boolean };
+
+export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string, schalter: MenueSchalter = {}): Menue[] {
   const p = (schluessel: string, label: string, beschreibung: string, ziel: Ziel, logo?: string): MenuePunkt => ({
     schluessel,
     label: t(label),
@@ -52,6 +55,8 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Men
         p('projekte', 'projekt', 'bProjekt', '/projekte'),
         p('veranstaltungen', 'veranstaltungen', 'bVeranstaltungen', '/veranstaltungen'),
         p('nachrichten', 'neuigkeiten', 'bNeuigkeiten', '/nachrichten'),
+        p('spenden', 'spenden', 'bSpenden', '/spenden'),
+        ...(schalter.newsletter ? [p('newsletter', 'newsletter', 'bNewsletter', '/newsletter')] : []),
         p('kontakt', 'kontakt', 'bKontakt', '/kontakt'),
         p('igmg', 'igmg', 'bIgmg', '/igmg'),
       ],
@@ -63,6 +68,9 @@ export function baueMenues(t: Uebersetzer, adresse: (ziel: Ziel) => string): Men
         p('gebetszeiten', 'gebetszeiten', 'bGebetszeiten', '/gebetszeiten'),
         p('quran', 'quran', 'bQuran', '/quran'),
         p('hadith', 'hadith', 'bHadith', '/hadith'),
+        p('kalender', 'kalender', 'bKalender', '/kalender'),
+        p('ramadan', 'ramadan', 'bRamadan', '/ramadan'),
+        ...(schalter.hatim ? [p('hatim', 'hatim', 'bHatim', '/hatim')] : []),
         p('islamisches-wissen', 'wissen', 'bWissen', '/islamisches-wissen'),
       ],
     },
