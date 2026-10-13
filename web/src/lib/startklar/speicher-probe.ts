@@ -38,7 +38,8 @@ export async function pruefeSpeicher(env: Umgebung): Promise<SpeicherProbe> {
   const art = speicherArt(env);
   try {
     if (art === 'blob') {
-      if (!env.BLOB_READ_WRITE_TOKEN) return { erreichbar: false, art, meldung: 'Vercel Blob ist nicht erreichbar: BLOB_READ_WRITE_TOKEN fehlt.' };
+      if (!env.BLOB_READ_WRITE_TOKEN)
+        return { erreichbar: false, art, meldung: 'Vercel Blob ist nicht erreichbar: BLOB_READ_WRITE_TOKEN fehlt.' };
       const { list } = await import('@vercel/blob');
       await mitZeitlimit((abortSignal) => list({ limit: 1, token: env.BLOB_READ_WRITE_TOKEN, abortSignal }));
       return { erreichbar: true, art, meldung: 'Vercel Blob antwortet (lesende Probe).' };
@@ -79,7 +80,12 @@ export async function pruefeSpeicher(env: Umgebung): Promise<SpeicherProbe> {
   } catch (e) {
     // Nur Art bzw. Code des Fehlers (z. B. ECONNREFUSED, NoSuchBucket, BlobAccessError), nie Werte
     const code = (e as { code?: unknown }).code;
-    const grund = typeof code === 'string' && /^[A-Z_]{3,40}$/.test(code) ? code : e instanceof Error && e.name && e.name !== 'Error' ? e.name : 'unbekannter Fehler';
+    const grund =
+      typeof code === 'string' && /^[A-Z_]{3,40}$/.test(code)
+        ? code
+        : e instanceof Error && e.name && e.name !== 'Error'
+          ? e.name
+          : 'unbekannter Fehler';
     return { erreichbar: false, art, meldung: `Der Medienspeicher (${art}) antwortet nicht (${grund}).` };
   }
 }

@@ -114,6 +114,21 @@ export type SchreibLage = {
   regelnBestaetigt: boolean;
 };
 
+export type LeseGrund = 'ok' | 'keinRecht' | 'einwilligungFehlt' | 'notfallpause';
+
+/**
+ * Entscheidet, ob jemand die Nachrichten sehen darf (S-03, S-17, D-01, D-11) – unabhängig von Öffnungszeiten, Pause,
+ * Modus oder Stummschaltung: Lernende ohne gültige Einwilligung sehen nie etwas, während der Notfall-Pause nur die
+ * Gruppenleitung (Aufarbeitung).
+ */
+export function leseGrund(l: SchreibLage): LeseGrund {
+  if (!l.darfLesen) return 'keinRecht';
+  if (l.istLeitung) return 'ok';
+  if (l.istLernende && l.unter16 && !l.einwilligungGruppenchat) return 'einwilligungFehlt';
+  if (l.notfallpause) return 'notfallpause';
+  return 'ok';
+}
+
 /** Entscheidet, ob jemand jetzt schreiben darf (S-01…S-06, S-09, S-15, S-17). Leitung darf außerhalb der Zeiten schreiben. */
 export function schreibGrund(l: SchreibLage): SchreibGrund {
   if (!l.darfLesen || !l.darfSchreibenRecht) return 'keinRecht';

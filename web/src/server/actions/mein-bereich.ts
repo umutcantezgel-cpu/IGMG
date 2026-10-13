@@ -1,6 +1,6 @@
 'use server';
 
-import { and, eq, ne } from 'drizzle-orm';
+import { and, eq, lt, ne } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -167,11 +167,14 @@ export async function kontoZweiFaktorBestaetigen(vorher: MeinZustand, daten: For
   const code = String(daten.get('code') ?? '').replace(/\s+/g, '');
   if (!/^\d{6}$/.test(code)) return { ...vorher, feldFehler: { code: 'konto.zweiFaktor.fehlerCode' } };
   if (await begrenzt('zwei-faktor', k.benutzerId)) return { ...vorher, fehler: 'zuViele' };
+  const beginn = new Date();
   try {
     await auth.api.verifyTOTP({ body: { code }, headers: await headers() });
   } catch {
     return { ...vorher, feldFehler: { code: 'konto.zweiFaktor.fehlerCode' } };
   }
+  // Better Auth ersetzt nur diese Sitzung; ältere (ohne Faktor entstandene) enden jetzt (N-1 der Prüfung S1)
+  await db.delete(schema.session).where(and(eq(schema.session.userId, k.benutzerId), lt(schema.session.createdAt, beginn)));
   await protokolliere({ benutzerId: k.benutzerId, aktion: 'zwei_faktor.eingerichtet' });
   redirect(pfadFuer({ pathname: '/mein-bereich/konto', query: { faktor: 'eingerichtet' } }, sprache));
 }

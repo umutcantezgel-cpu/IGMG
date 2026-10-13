@@ -41,11 +41,17 @@ export async function sendePush(
   optionen: { ttlSek?: number; dringlichkeit?: 'very-low' | 'low' | 'normal' | 'high'; thema?: string } = {},
 ): Promise<VersandErgebnis> {
   if (!erlaubterEndpunkt(ziel.endpoint)) return { ok: false, status: 0, entfernen: true };
-  const { rumpf } = verschluesselePush({
-    klartext: Buffer.from(JSON.stringify(nutzlast), 'utf8'),
-    uaOeffentlich: ausBase64url(ziel.p256dh),
-    authGeheimnis: ausBase64url(ziel.auth),
-  });
+  let rumpf: Buffer;
+  try {
+    ({ rumpf } = verschluesselePush({
+      klartext: Buffer.from(JSON.stringify(nutzlast), 'utf8'),
+      uaOeffentlich: ausBase64url(ziel.p256dh),
+      authGeheimnis: ausBase64url(ziel.auth),
+    }));
+  } catch {
+    // Unbrauchbare Schlüssel: Abo entfernen statt den ganzen Lauf abzubrechen (M-4 der Sicherheitsprüfung S1)
+    return { ok: false, status: 0, entfernen: true };
+  }
   const kopf: Record<string, string> = {
     TTL: String(optionen.ttlSek ?? 60 * 60),
     'Content-Encoding': 'aes128gcm',

@@ -1,6 +1,6 @@
 'use server';
 
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { APIError } from 'better-auth/api';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -8,6 +8,7 @@ import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
+import { funktionAn } from '@/lib/funktionen';
 import { db, schema } from '@/lib/db';
 import { pruefeEinsendung } from '@/lib/formulare/verarbeiten';
 import { pruefeBenutzername } from '@/lib/konto/benutzername';
@@ -210,12 +211,25 @@ export async function passkeyAnmelden(antwort: string, sprache: string, weiterRo
   }
   const benutzer = benutzerAus(ergebnis);
   if (!benutzer) return { fehler: 'passkey.fehler' };
-  const [verwaltung] = await db
-    .select({ id: schema.rolleZuweisung.id })
-    .from(schema.rolleZuweisung)
-    .where(eq(schema.rolleZuweisung.benutzerId, benutzer.id))
-    .limit(1);
-  if (verwaltung) {
+  // Pflicht zum zweiten Faktor (Verwaltung, Lehrkraft, Gruppenleitung): ein Passkey ersetzt ihn nicht (M-3 der Prüfung S1)
+  const [[verwaltung], [lehrkraft], [leitung]] = await Promise.all([
+    db
+      .select({ id: schema.rolleZuweisung.id })
+      .from(schema.rolleZuweisung)
+      .where(eq(schema.rolleZuweisung.benutzerId, benutzer.id))
+      .limit(1),
+    db
+      .select({ r: schema.gemeindeRolle.rolle })
+      .from(schema.gemeindeRolle)
+      .where(and(eq(schema.gemeindeRolle.benutzerId, benutzer.id), eq(schema.gemeindeRolle.rolle, 'lehrkraft')))
+      .limit(1),
+    db
+      .select({ g: schema.gruppenLeitung.gruppeId })
+      .from(schema.gruppenLeitung)
+      .where(eq(schema.gruppenLeitung.benutzerId, benutzer.id))
+      .limit(1),
+  ]);
+  if (verwaltung || lehrkraft || leitung) {
     const token =
       ergebnis && typeof ergebnis === 'object' && 'session' in ergebnis ? (ergebnis.session as { token?: string }).token : undefined;
     if (token) await db.delete(schema.session).where(eq(schema.session.token, token));
@@ -287,7 +301,8 @@ export async function kontoBestaetigen(_vorher: KontoZustand, daten: FormData): 
   await verlangeKontenAktion();
   const sprache = sprachAus(daten);
   if (await begrenzt('bestaetigen')) return { fehler: 'anmelden.zuViele' };
-  const id = await bestaetigeKonto(String(daten.get('token') ?? ''));
+  const id = await bestaetigeKonto(String(daten.get('token') ?? ''), String(daten.get('passwort') ?? ''));
+  if (id === 'passwort') return { fehler: 'bestaetigen.passwortFalsch' };
   if (!id) return { fehler: 'bestaetigen.ungueltig' };
   redirect(pfadFuer({ pathname: '/anmelden', query: { hinweis: 'bestaetigt' } }, sprache));
 }
@@ -412,10 +427,12 @@ export async function kontoPasswortNeu(_vorher: KontoZustand, daten: FormData): 
 // ───────────────────────────── Abmelden ─────────────────────────────
 
 export async function kontoAbmelden(daten: FormData): Promise<void> {
-  await verlangeKontenAktion();
+  // Abmelden geht immer – auch wenn die Funktion `konten` inzwischen aus ist (N-7 der Sicherheitsprüfung S1)
   const sprache = sprachAus(daten);
   const k = await ladeKonto();
   await auth.api.signOut({ headers: await headers() }).catch(() => undefined);
   if (k) await protokolliere({ benutzerId: k.benutzerId, aktion: 'abmeldung' });
-  redirect(pfadFuer({ pathname: '/anmelden', query: { hinweis: 'abgemeldet' } }, sprache));
+  redirect(
+    (await funktionAn('konten')) ? pfadFuer({ pathname: '/anmelden', query: { hinweis: 'abgemeldet' } }, sprache) : pfadFuer('/', sprache),
+  );
 }

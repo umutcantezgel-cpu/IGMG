@@ -181,7 +181,8 @@ self.addEventListener('push', (e) => {
       } else if (daten.art === 'ankuendigung' || daten.art === 'chat' || daten.art === 'unterricht') {
         titel = t[daten.art] || titel;
         text = t[`${daten.art}Text`] || '';
-        if (typeof daten.pfad === 'string' && daten.pfad.startsWith('/')) ziel = daten.pfad;
+        if (typeof daten.pfad === 'string' && daten.pfad.startsWith('/') && !daten.pfad.startsWith('//') && !daten.pfad.includes('\\'))
+          ziel = daten.pfad;
       }
       return self.registration.showNotification(titel, {
         body: text,

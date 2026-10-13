@@ -1,7 +1,8 @@
 import 'server-only';
-import { and, desc, isNotNull, isNull, lt, lte, ne, sql } from 'drizzle-orm';
+import { and, desc, isNotNull, isNull, like, lt, lte, ne, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import { protokolliereModeration } from '@/lib/chat/dienst';
+import { KINDER_DOMAIN } from '@/lib/konto/regeln';
 import { MAX_VERSUCHE } from '@/lib/mail/ausgang';
 
 /**
@@ -25,7 +26,14 @@ export const PROTOKOLL_ANKER = 'moderationsprotokoll_anker';
 
 const vor = (jetzt: Date, tage: number) => new Date(jetzt.getTime() - tage * 86_400_000);
 
-export type GemeindeLoeschErgebnis = { lernende: number; offeneMeldungen: number; protokoll: number; mails: number; audit: number };
+export type GemeindeLoeschErgebnis = {
+  lernende: number;
+  kinderkonten: number;
+  offeneMeldungen: number;
+  protokoll: number;
+  mails: number;
+  audit: number;
+};
 
 export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLoeschErgebnis> {
   // D-10: Lernende nach Ablauf ihrer Frist (gesetzt beim Austritt: 12 Monate); Anwesenheit, Fortschritt, Hifz,
@@ -34,6 +42,17 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     .delete(schema.lernende)
     .where(and(isNotNull(schema.lernende.loeschenAb), lte(schema.lernende.loeschenAb, jetzt)))
     .returning({ id: schema.lernende.id });
+
+  // Kinderkonten (.invalid) ohne Lernende: Zugang endet mit dem Datensatz (N-6 der Sicherheitsprüfung S1)
+  const kinderkonten = await db
+    .delete(schema.user)
+    .where(
+      and(
+        like(schema.user.email, `%@${KINDER_DOMAIN}`),
+        sql`not exists (select 1 from lernende where lernende.benutzer_id = ${schema.user.id})`,
+      ),
+    )
+    .returning({ id: schema.user.id });
 
   // D-13: Mails, die nie zugestellt werden konnten
   const mails = await db
@@ -92,5 +111,12 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     return { offeneMeldungen: offen.length, protokoll: geloescht };
   });
 
-  return { lernende: lernende.length, offeneMeldungen, protokoll, mails: mails.length, audit: audit.length };
+  return {
+    lernende: lernende.length,
+    kinderkonten: kinderkonten.length,
+    offeneMeldungen,
+    protokoll,
+    mails: mails.length,
+    audit: audit.length,
+  };
 }

@@ -76,7 +76,7 @@ describe('Löschlauf der Gemeinde-Plattform', () => {
     await protokoll(tageVor(30), h2);
 
     const r = await gemeindeLoeschlauf(JETZT);
-    expect(r).toEqual({ lernende: 1, offeneMeldungen: 1, protokoll: 2, mails: 1, audit: 1 });
+    expect(r).toEqual({ lernende: 1, kinderkonten: 0, offeneMeldungen: 1, protokoll: 2, mails: 1, audit: 1 });
 
     const rest = (await db.select({ id: schema.lernende.id }).from(schema.lernende)).map((z) => z.id);
     expect(rest).not.toContain(faellig);
@@ -96,7 +96,7 @@ describe('Löschlauf der Gemeinde-Plattform', () => {
     ).toBeNull();
     expect(pruefeKette(zeilen.map((z) => ({ ...z, zeitpunkt: z.zeitpunkt.toISOString() })))).toBe(0);
 
-    expect(await gemeindeLoeschlauf(JETZT)).toEqual({ lernende: 0, offeneMeldungen: 0, protokoll: 0, mails: 0, audit: 0 });
+    expect(await gemeindeLoeschlauf(JETZT)).toEqual({ lernende: 0, kinderkonten: 0, offeneMeldungen: 0, protokoll: 0, mails: 0, audit: 0 });
   });
 
   it('außerhalb des Löschlaufs bleibt das Protokoll unveränderlich (Trigger)', async () => {

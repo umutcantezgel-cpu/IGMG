@@ -42,6 +42,7 @@ async function laufe(): Promise<Response> {
       geloeschteChatMeldungen: chat.meldungen,
       geloeschtePushAbos: push,
       geloeschteLernende: gemeinde.lernende,
+      geloeschteKinderkonten: gemeinde.kinderkonten,
       geloeschteOffeneMeldungen: gemeinde.offeneMeldungen,
       geloeschteProtokolleintraege: gemeinde.protokoll,
       geloeschteUnzustellbareMails: gemeinde.mails,

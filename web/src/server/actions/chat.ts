@@ -24,7 +24,8 @@ import { funktionAn } from '@/lib/funktionen';
 import { verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
-import { verlangeRecht } from '@/lib/rechte/pruefe';
+import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
+import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
 
 /**
  * Server Actions des Gruppenchats (S-01…S-18). Reihenfolge wie MUSTER §5: Konto/Recht zuerst, dann Eingabe prüfen,
@@ -37,7 +38,9 @@ async function chatAn(): Promise<boolean> {
   return funktionAn('chat');
 }
 
+/** Konto mit Faktor und eingeschaltetem Chat (N-2 der Sicherheitsprüfung S1: auch Moderation und Melden). */
 async function kontext() {
+  if (!(await chatAn())) throw new KeinRecht();
   const konto = await verlangeKontoRecht();
   return { konto, kontext: await ladeGruppenKontext(konto.benutzerId) };
 }
@@ -68,10 +71,14 @@ const meldungsEingabe = z.object({
   freitext: z.string().max(1000).nullable(),
 });
 
+/** Höchstens 10 Meldungen je Stunde und Konto – sonst ließen sich Gruppenleitung und Kinderschutz mit Mails fluten. */
+const MELDE_GRENZE = { max: 10, fensterSekunden: 3600 };
+
 export async function meldeChatNachricht(eingabe: z.input<typeof meldungsEingabe>) {
   const { konto, kontext: k } = await kontext();
   const p = meldungsEingabe.safeParse(eingabe);
   if (!p.success) return { ok: false as const };
+  if (!(await pruefeRate('chat-meldung', konto.benutzerId, MELDE_GRENZE)).erlaubt) return { ok: false as const };
   const ergebnis = await meldeNachricht(k, p.data.nachrichtId, p.data.grund, p.data.freitext);
   if (!ergebnis.ok) return { ok: false as const };
   // S-08: Gruppenleitung und Rolle kinderschutz erfahren von der Meldung – ohne Inhalt

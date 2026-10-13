@@ -163,6 +163,27 @@ describe('Kinder: Einwilligung, Alter, Regeln, Zeiten (S-03…S-06, S-13, S-15)'
     await db.update(schema.lernende).set({ sechzehnAm: '2030-03-01' }).where(eq(schema.lernende.id, lern.kind));
   });
 
+  it('H-1 (S1): ohne Einwilligung kein Mitlesen – auch außerhalb der Öffnungszeiten, bei Pause oder nur Lehrkraft', async () => {
+    await db.update(schema.kontoEinwilligung).set({ widerrufenAm: new Date() }).where(eq(schema.kontoEinwilligung.lernendeId, lern.kind));
+    const stunde = Number(uhrzeitBerlin(new Date()).split(':')[0]);
+    const zu = stunde < 12 ? { chatVon: '23:00', chatBis: '23:30' } : { chatVon: '00:00', chatBis: '00:30' };
+    for (const aenderung of [zu, { chatModus: 'nur_lehrkraft' as const }]) {
+      await db.update(schema.gruppe).set(aenderung).where(eq(schema.gruppe.id, gruppeId));
+      expect(await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind))).toMatchObject({
+        nachrichten: [],
+        schreiben: 'einwilligungFehlt',
+      });
+      expect(await dienst.leseLage(await lage('gruppe'), await k(ids.kind))).toBe('einwilligungFehlt');
+      // Die Leitung liest weiter
+      expect((await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.hoca1)))?.nachrichten.length).toBeGreaterThan(0);
+      await db.update(schema.gruppe).set({ chatVon: '00:00', chatBis: '23:59', chatModus: 'offen' }).where(eq(schema.gruppe.id, gruppeId));
+    }
+    await db
+      .insert(schema.kontoEinwilligung)
+      .values({ lernendeId: lern.kind, art: 'gruppenchat', textVersion: 'v1', erteiltVon: ids.eltern });
+    expect(await dienst.leseLage(await lage('gruppe'), await k(ids.kind))).toBe('ok');
+  });
+
   it('S-15: ohne bestätigte Regeln kein Schreiben', async () => {
     await db.delete(schema.chatRegelnBestaetigt).where(eq(schema.chatRegelnBestaetigt.benutzerId, ids.kind));
     expect(await dienst.schreibLage(await lage('gruppe'), await k(ids.kind))).toBe('regelnFehlen');

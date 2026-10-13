@@ -154,6 +154,20 @@ describe('Rollen, Zwei-Faktor, Löschen', () => {
     expect(await rollenVon(admin)).toEqual([{ rolle: 'administration', organisation: null }]);
   });
 
+  it('M-2 (S1): Kinderschutz nie selbst, nie mit Administration, sonst nur durch die Leitung vergeben', async () => {
+    const ziel = await fremdesKonto([{ rolle: 'redaktion' }]);
+    const admin = (await angemeldetAls([{ rolle: 'administration' }]))!;
+    const selbst = formular({ id: admin, rollen: 'administration' });
+    selbst.append('rollen', 'kinderschutz');
+    expect((await actions.rollenSpeichern({}, selbst)).fehler).toBe('kinderschutzAdministration');
+    expect((await actions.rollenSpeichern({}, formular({ id: ziel, rollen: 'kinderschutz' }))).fehler).toBe('kinderschutzLeitung');
+    expect(await rollenVon(ziel)).toEqual([{ rolle: 'redaktion', organisation: null }]);
+    const vorstand = (await angemeldetAls([{ rolle: 'administration' }, { rolle: 'leitung' }]))!;
+    expect((await actions.rollenSpeichern({}, formular({ id: vorstand, rollen: 'leitung' }))).fehler).toBe('eigeneAdministration');
+    expect(await actions.rollenSpeichern({}, formular({ id: ziel, rollen: 'kinderschutz' }))).toEqual({ ok: true });
+    expect(await rollenVon(ziel)).toEqual([{ rolle: 'kinderschutz', organisation: null }]);
+  });
+
   it('ohne benutzer.bearbeiten: KeinRecht', async () => {
     const ziel = await fremdesKonto([{ rolle: 'redaktion' }]);
     await angemeldetAls([{ rolle: 'mitgliederverwaltung' }]);

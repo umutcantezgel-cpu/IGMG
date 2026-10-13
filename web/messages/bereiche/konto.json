@@ -89,7 +89,7 @@
         "laeuft": "Passkey wird geprüft …",
         "fehler": "Die Anmeldung mit Passkey hat nicht geklappt. Bitte versuchen Sie es erneut oder melden Sie sich mit Passwort an.",
         "abgebrochen": "Die Anmeldung mit Passkey wurde abgebrochen.",
-        "verwaltung": "Konten mit Verwaltungszugang melden sich mit E-Mail-Adresse, Passwort und Bestätigungscode an."
+        "verwaltung": "Konten mit Verwaltungszugang, Lehrkräfte und Gruppenleitungen melden sich mit E-Mail-Adresse, Passwort und Bestätigungscode an."
       },
       "wahl": {
         "titel": "Willkommen zurück",
@@ -132,10 +132,12 @@
       },
       "bestaetigen": {
         "titel": "E-Mail-Adresse bestätigen",
-        "text": "Klicken Sie auf „Jetzt bestätigen“, um Ihr Gemeinde-Konto freizuschalten.",
+        "text": "Geben Sie Ihr Passwort ein und klicken Sie auf „Jetzt bestätigen“, um Ihr Gemeinde-Konto freizuschalten.",
         "absenden": "Jetzt bestätigen",
         "ungueltig": "Dieser Link ist ungültig oder abgelaufen. Registrieren Sie sich bitte erneut mit derselben Adresse – wir schicken Ihnen dann einen neuen Link.",
-        "zurRegistrierung": "Zur Registrierung"
+        "zurRegistrierung": "Zur Registrierung",
+        "passwort": "Ihr Passwort aus der Registrierung",
+        "passwortFalsch": "Das Passwort passt nicht zu dieser Registrierung. Geben Sie das Passwort ein, das Sie bei der Registrierung gewählt haben – oder registrieren Sie sich erneut mit derselben Adresse."
       },
       "einladung": {
         "titel": "Einladung annehmen",
@@ -301,7 +303,7 @@
         "laeuft": "Geçiş anahtarı kontrol ediliyor …",
         "fehler": "Geçiş anahtarıyla giriş yapılamadı. Lütfen tekrar deneyin veya şifrenizle giriş yapın.",
         "abgebrochen": "Geçiş anahtarıyla giriş iptal edildi.",
-        "verwaltung": "Yönetim erişimi olan hesaplar e-posta adresi, şifre ve doğrulama koduyla giriş yapar."
+        "verwaltung": "Yönetim erişimi olan hesaplar, öğreticiler ve grup sorumluları e-posta adresi, şifre ve doğrulama koduyla giriş yapar."
       },
       "wahl": {
         "titel": "Tekrar hoş geldiniz",
@@ -344,10 +346,12 @@
       },
       "bestaetigen": {
         "titel": "E-posta adresini onayla",
-        "text": "Cemaat hesabınızı etkinleştirmek için „Şimdi onayla“ düğmesine tıklayın.",
+        "text": "Şifrenizi girin ve topluluk hesabınızı etkinleştirmek için „Şimdi onayla“ düğmesine tıklayın.",
         "absenden": "Şimdi onayla",
         "ungueltig": "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen aynı adresle tekrar kayıt olun – size yeni bir bağlantı göndeririz.",
-        "zurRegistrierung": "Kayda git"
+        "zurRegistrierung": "Kayda git",
+        "passwort": "Kayıt sırasında belirlediğiniz şifre",
+        "passwortFalsch": "Şifre bu kayıtla eşleşmiyor. Kayıt olurken belirlediğiniz şifreyi girin – ya da aynı adresle yeniden kaydolun."
       },
       "einladung": {
         "titel": "Daveti kabul et",
@@ -513,7 +517,7 @@
         "laeuft": "Checking passkey …",
         "fehler": "Signing in with a passkey did not work. Please try again or sign in with your password.",
         "abgebrochen": "Signing in with a passkey was cancelled.",
-        "verwaltung": "Accounts with staff access sign in with email address, password and verification code."
+        "verwaltung": "Accounts with staff access, teachers and group leaders sign in with email address, password and verification code."
       },
       "wahl": {
         "titel": "Welcome back",
@@ -556,10 +560,12 @@
       },
       "bestaetigen": {
         "titel": "Confirm your email address",
-        "text": "Click “Confirm now” to activate your community account.",
+        "text": "Enter your password and click “Confirm now” to activate your community account.",
         "absenden": "Confirm now",
         "ungueltig": "This link is invalid or has expired. Please register again with the same address – we will then send you a new link.",
-        "zurRegistrierung": "Go to registration"
+        "zurRegistrierung": "Go to registration",
+        "passwort": "Your password from registration",
+        "passwortFalsch": "The password does not match this registration. Enter the password you chose when registering – or register again with the same address."
       },
       "einladung": {
         "titel": "Accept invitation",
