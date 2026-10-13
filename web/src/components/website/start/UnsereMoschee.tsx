@@ -29,7 +29,7 @@ export async function UnsereMoschee({ sprache }: { sprache: Locale }) {
         <Bildplatzhalter
           beschriftung={tp('3d.text', { name: name.text })}
           lang={name.lang}
-          className="aspect-16/10 rounded-lg border border-linie lg:col-span-5"
+          className="aspect-16/9 rounded-lg border border-linie lg:col-span-5 lg:aspect-16/10"
         />
         <div className="flex min-w-0 flex-col gap-5 lg:col-span-7">
           <div className="flex flex-col gap-3">
@@ -46,7 +46,12 @@ export async function UnsereMoschee({ sprache }: { sprache: Locale }) {
             {tp('status.fertiggestellt')}
             {p.fertigstellung === null ? null : <span className="font-normal"> · {p.fertigstellung}</span>}
           </span>
-          <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2" />
+          <Text
+            feld={p.beschreibung}
+            sprache={sprache}
+            als="p"
+            className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2"
+          />
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link href="/projekte" className={SEKUNDAER}>
               <span>{t('moschee.projekt')}</span>

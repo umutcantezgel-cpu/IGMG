@@ -37,17 +37,30 @@ export function projekteNeu(alt: unknown): ProjekteInhalt | null {
   return stabil(alt) === stabil(neu) ? null : neu;
 }
 
+/** Trägt die Zeitleiste schon die Station „Eröffnung der neuen Fatih-Moschee“ (Seed-Stand, Titel auf Deutsch)? */
+function hatEroeffnung(zeitleiste: UeberUnsInhalt['zeitleiste']): boolean {
+  const titel = ZEITLEISTE_EROEFFNUNG.titel.de.replace(/^\[[^\]]*\]\s*–\s*/, '');
+  return zeitleiste.some((e) => e.titel.de.includes(titel));
+}
+
 /**
- * Zeitleiste mit der Station „Eröffnung der neuen Fatih-Moschee“ statt „Zukunft“; null, wenn es keine Station „Zukunft“
- * (mehr) gibt. Alle übrigen Stationen bleiben unverändert.
+ * Zeitleiste mit der Station „Eröffnung der neuen Fatih-Moschee“ statt „Zukunft“. Endet der Beispielstand ohne
+ * „Zukunft“ und ohne Eröffnung (z. B. bei 2019, H-B09: so stand er im Bild), wird die Eröffnung als letzte Station
+ * angehängt (Reihenfolge nach der bisher letzten). null, wenn nichts zu tun ist (Eröffnung vorhanden, Zeitleiste leer
+ * oder Inhalt ungültig). Alle übrigen Stationen bleiben unverändert.
  */
 export function ueberUnsNeu(alt: unknown): UeberUnsInhalt | null {
   const gelesen = ueberUnsSchema.safeParse(alt);
   if (!gelesen.success) return null;
-  const index = gelesen.data.zeitleiste.findIndex((e) => e.kennzeichnung.de.trim() === ZEITLEISTE_ZUKUNFT_DE);
-  if (index < 0) return null;
-  const zeitleiste = gelesen.data.zeitleiste.map((e, i) => (i === index ? { ...ZEITLEISTE_EROEFFNUNG, reihenfolge: e.reihenfolge } : e));
-  return ueberUnsSchema.parse({ ...gelesen.data, zeitleiste });
+  const liste = gelesen.data.zeitleiste;
+  const index = liste.findIndex((e) => e.kennzeichnung.de.trim() === ZEITLEISTE_ZUKUNFT_DE);
+  if (index >= 0) {
+    const zeitleiste = liste.map((e, i) => (i === index ? { ...ZEITLEISTE_EROEFFNUNG, reihenfolge: e.reihenfolge } : e));
+    return ueberUnsSchema.parse({ ...gelesen.data, zeitleiste });
+  }
+  if (liste.length === 0 || hatEroeffnung(liste)) return null;
+  const reihenfolge = Math.min(999, Math.max(...liste.map((e) => e.reihenfolge)) + 1);
+  return ueberUnsSchema.parse({ ...gelesen.data, zeitleiste: [...liste, { ...ZEITLEISTE_EROEFFNUNG, reihenfolge }] });
 }
 
 async function zeile(tx: Transaktion, bereich: string) {

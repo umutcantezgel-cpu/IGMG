@@ -48,7 +48,6 @@ export type GebetszeitenSeiteProps = {
   tabSymbole: Record<TabSchluessel, ReactNode>;
 };
 
-
 /**
  * Gebetszeiten im Browser (Blatt S02): oben das nächste Gebet mit Restzeit, im Tab Heute der Tagesbogen (ruhig, B-10)
  * neben einer Tafel mit den sechs Zeiten. Uhrzeit, nächstes Gebet und Restzeit rechnet der Browser aus den

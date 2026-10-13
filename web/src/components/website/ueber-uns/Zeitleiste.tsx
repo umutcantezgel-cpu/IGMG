@@ -23,7 +23,11 @@ function punktFarbe(i: number, anzahl: number): string {
  * jede Station als Karte am Weg (O-10). Die Verbindungslinie ist durchgehend (H-B12): Die Linie reicht bis zur nächsten Marke,
  * darum hat die Punktspalte oben Abstand und die Linie unten ein negatives Maß.
  * Die Bildflächen sind nicht anklickbar (Blatt S08, INTERAKTIONEN). Als „Weg der Gemeinde“ (B-07) zieht sich die
- * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`ErstesSichtbarwerden`).
+ * Verbindungslinie beim ersten Sichtbarwerden durch die Stationen (`ErstesSichtbarwerden`); jede Station tritt hervor, wenn
+ * die Linie sie erreicht (Punkt mit `--i` + 0,5: der Abschnitt davor endet genau dann).
+ * B-07 mit Eröffnung (AUFTRAG 4, H-B09): Die letzte Station ist das Ziel des Wegs (heute die Eröffnung der neuen
+ * Fatih-Moschee) – tiefgrüne Marke mit hellem Achtstern-Hof und grün gerahmter Karte. Der Hof liegt außerhalb des
+ * Layouts, damit die Punktspalte überall gleich breit bleibt und die Linie gerade durchläuft.
  * Ära, Titel, Ort (ab md unten bündig mit der Bildfläche): Die Textspalte stapelt die drei Zeilen in fester Reihenfolge.
  */
 export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprache: Sprache }) {
@@ -32,12 +36,19 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
       {eintraege.map((e, i) => {
         const Icon = SYMBOL[e.symbol];
         const bild = textMitSprache(e.bildbeschreibung, sprache);
+        const ziel = eintraege.length > 1 && i === eintraege.length - 1;
         return (
           <li key={i} className="flex gap-3 md:gap-5" style={{ '--i': i, '--n': eintraege.length } as CSSProperties}>
             <div aria-hidden className="flex shrink-0 flex-col items-center pt-3.5">
               <span
                 className={cn('weg-punkt relative flex size-10 items-center justify-center md:size-12', punktFarbe(i, eintraege.length))}
+                style={{ '--i': i + 0.5 } as CSSProperties}
               >
+                {ziel ? (
+                  <span className="absolute -inset-2.5 text-gruen-700/20">
+                    <Achtstern viewBox="3.5 3.5 17 17" className="size-full" />
+                  </span>
+                ) : null}
                 <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
                 <Icon aria-hidden className="relative size-5 stroke-weiss" />
               </span>
@@ -45,7 +56,12 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
             </div>
             {/* Station als Karte am Weg; der Abstand unten gehört zur Zeile, damit die Linie bis zum nächsten Punkt reicht */}
             <div className="min-w-0 flex-1 pb-6 md:pb-8">
-              <div className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:flex-row md:items-stretch md:gap-6 md:p-6">
+              <div
+                className={cn(
+                  'flex flex-col gap-4 rounded-lg border bg-weiss p-5 shadow-s1 md:flex-row md:items-stretch md:gap-6 md:p-6',
+                  ziel ? 'border-gruen-700' : 'border-linie',
+                )}
+              >
                 <div className="flex min-w-0 flex-1 flex-col justify-start gap-2">
                   <Text feld={e.kennzeichnung} sprache={sprache} className="text-16 font-bold text-gruen-800" />
                   <Text feld={e.titel} sprache={sprache} als="h3" className="text-24 text-pretty" />
