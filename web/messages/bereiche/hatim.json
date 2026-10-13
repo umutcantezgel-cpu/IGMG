@@ -1,1 +1,158 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "hatim": {
+      "kennung": "Gemeinsam lesen",
+      "titel": "Hatim",
+      "untertitel": "Gemeinsam lesen wir den ganzen Koran: Jede und jeder übernimmt einen oder mehrere der 30 Cüz und liest in Ruhe zu Hause.",
+      "metaBeschreibung": "Gemeinsame Hatim der IGMG Wetzlar: Stand der 30 Cüz, Anlass und Ziel – und wie Sie einen Cüz übernehmen.",
+      "soGehts": {
+        "titel": "So machen Sie mit",
+        "schritt1": "Mit Ihrem Gemeindekonto anmelden.",
+        "schritt2": "Einen freien Cüz übernehmen – bis zu drei gleichzeitig.",
+        "schritt3": "Nach dem Lesen „gelesen“ melden. Sind alle 30 Cüz gelesen, ist die Hatim vollendet."
+      },
+      "uebernehmen": "Cüz übernehmen",
+      "uebernehmenLabel": "Cüz übernehmen: {titel}",
+      "kontoHinweis": "Zum Übernehmen brauchen Sie ein Gemeindekonto.",
+      "standAnsehen": "Stand ansehen",
+      "standAnsehenLabel": "Stand ansehen: {titel}",
+      "laufendTitel": "Laufende Hatims",
+      "vollendetTitel": "Vollendet",
+      "leerTitel": "Zurzeit läuft keine gemeinsame Hatim",
+      "leerText": "Sobald die Gemeinde eine neue Hatim beginnt, erscheint sie hier.",
+      "anlass": "Anlass",
+      "beginn": "Begonnen am {datum}",
+      "ziel": "Vollendung geplant bis {datum}",
+      "status": {
+        "offen": "Läuft",
+        "abgeschlossen": "Vollendet",
+        "archiviert": "Archiviert"
+      },
+      "zahl": {
+        "gelesen": "{anzahl} gelesen",
+        "vergeben": "{anzahl} übernommen",
+        "frei": "{anzahl} frei"
+      },
+      "stand": {
+        "frei": "frei",
+        "vergeben": "übernommen",
+        "gelesen": "gelesen"
+      },
+      "legende": "So lesen Sie den Ring",
+      "ringLabel": "Stand der Hatim „{titel}“: {gelesen} von 30 Cüz gelesen, {vergeben} übernommen, {frei} frei.",
+      "ringMitte": "Cüz gelesen",
+      "cuzTitel": "Die 30 Cüz",
+      "cuzEinleitung": "Hier stehen nie Namen – nur, ob ein Cüz frei, übernommen oder gelesen ist.",
+      "cuz": "Cüz {nr}",
+      "lesen": "Lesen",
+      "lesenLabel": "Cüz {nr} im Koran-Leser öffnen",
+      "zurueck": "Alle Hatims",
+      "vollendetText": "Alle 30 Cüz sind gelesen. Danke an alle, die mitgelesen haben.",
+      "datenschutz": "Wer welchen Cüz liest, sieht nur die Verwaltung der Gemeinde. Öffentlich zeigen wir nur Zahlen."
+    }
+  },
+  "tr": {
+    "hatim": {
+      "kennung": "Birlikte okuyalım",
+      "titel": "Hatim",
+      "untertitel": "Kur’an-ı Kerim’i birlikte baştan sona okuyoruz: Herkes 30 cüzden birini veya birkaçını üstlenir ve evinde huzurla okur.",
+      "metaBeschreibung": "IGMG Wetzlar ortak hatmi: 30 cüzün durumu, vesilesi ve hedef tarihi – ve nasıl cüz üstlenebileceğiniz.",
+      "soGehts": {
+        "titel": "Nasıl katılırsınız?",
+        "schritt1": "Cemaat hesabınızla giriş yapın.",
+        "schritt2": "Boş bir cüzü üstlenin – aynı anda en fazla üç cüz.",
+        "schritt3": "Okuduktan sonra “okundu” olarak bildirin. 30 cüzün hepsi okunduğunda hatim tamamlanır."
+      },
+      "uebernehmen": "Cüz üstlen",
+      "uebernehmenLabel": "Cüz üstlen: {titel}",
+      "kontoHinweis": "Cüz üstlenmek için bir cemaat hesabına ihtiyacınız var.",
+      "standAnsehen": "Durumu gör",
+      "standAnsehenLabel": "Durumu gör: {titel}",
+      "laufendTitel": "Devam eden hatimler",
+      "vollendetTitel": "Tamamlananlar",
+      "leerTitel": "Şu anda devam eden bir ortak hatim yok",
+      "leerText": "Cemaatimiz yeni bir hatme başladığında burada görünecek.",
+      "anlass": "Vesile",
+      "beginn": "Başlangıç: {datum}",
+      "ziel": "Hedeflenen bitiş: {datum}",
+      "status": {
+        "offen": "Devam ediyor",
+        "abgeschlossen": "Tamamlandı",
+        "archiviert": "Arşivlendi"
+      },
+      "zahl": {
+        "gelesen": "{anzahl} okundu",
+        "vergeben": "{anzahl} üstlenildi",
+        "frei": "{anzahl} boş"
+      },
+      "stand": {
+        "frei": "boş",
+        "vergeben": "üstlenildi",
+        "gelesen": "okundu"
+      },
+      "legende": "Halka nasıl okunur?",
+      "ringLabel": "“{titel}” hatminin durumu: 30 cüzden {gelesen} cüz okundu, {vergeben} cüz üstlenildi, {frei} cüz boş.",
+      "ringMitte": "cüz okundu",
+      "cuzTitel": "30 cüz",
+      "cuzEinleitung": "Burada asla isim görünmez – yalnızca bir cüzün boş, üstlenilmiş veya okunmuş olduğu.",
+      "cuz": "{nr}. cüz",
+      "lesen": "Oku",
+      "lesenLabel": "{nr}. cüzü Kur’an okuyucusunda aç",
+      "zurueck": "Tüm hatimler",
+      "vollendetText": "30 cüzün hepsi okundu. Birlikte okuyan herkese teşekkürler.",
+      "datenschutz": "Hangi cüzü kimin okuduğunu yalnızca cemaat yönetimi görür. Herkese açık olarak sadece sayılar gösterilir."
+    }
+  },
+  "en": {
+    "hatim": {
+      "kennung": "Reading together",
+      "titel": "Khatm",
+      "untertitel": "Together we read the whole Quran: each person takes on one or more of the 30 juz and reads at home in their own time.",
+      "metaBeschreibung": "Community khatm of IGMG Wetzlar: progress of the 30 juz, occasion and target date – and how to take on a juz.",
+      "soGehts": {
+        "titel": "How to take part",
+        "schritt1": "Sign in with your community account.",
+        "schritt2": "Take on a free juz – up to three at a time.",
+        "schritt3": "Mark it as “read” when you have finished. Once all 30 juz are read, the khatm is complete."
+      },
+      "uebernehmen": "Take on a juz",
+      "uebernehmenLabel": "Take on a juz: {titel}",
+      "kontoHinweis": "You need a community account to take on a juz.",
+      "standAnsehen": "View progress",
+      "standAnsehenLabel": "View progress: {titel}",
+      "laufendTitel": "Current khatms",
+      "vollendetTitel": "Completed",
+      "leerTitel": "There is no community khatm at the moment",
+      "leerText": "As soon as the community starts a new khatm, it will appear here.",
+      "anlass": "Occasion",
+      "beginn": "Started on {datum}",
+      "ziel": "Planned completion by {datum}",
+      "status": {
+        "offen": "In progress",
+        "abgeschlossen": "Completed",
+        "archiviert": "Archived"
+      },
+      "zahl": {
+        "gelesen": "{anzahl} read",
+        "vergeben": "{anzahl} taken",
+        "frei": "{anzahl} free"
+      },
+      "stand": {
+        "frei": "free",
+        "vergeben": "taken",
+        "gelesen": "read"
+      },
+      "legende": "How to read the ring",
+      "ringLabel": "Progress of the khatm “{titel}”: {gelesen} of 30 juz read, {vergeben} taken, {frei} free.",
+      "ringMitte": "juz read",
+      "cuzTitel": "The 30 juz",
+      "cuzEinleitung": "No names ever appear here – only whether a juz is free, taken or read.",
+      "cuz": "Juz {nr}",
+      "lesen": "Read",
+      "lesenLabel": "Open juz {nr} in the Quran reader",
+      "zurueck": "All khatms",
+      "vollendetText": "All 30 juz have been read. Thank you to everyone who read along.",
+      "datenschutz": "Only the community’s administration can see who is reading which juz. Publicly we only show numbers."
+    }
+  }
+}

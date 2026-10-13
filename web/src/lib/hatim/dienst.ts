@@ -1,6 +1,6 @@
 import 'server-only';
 import { and, asc, eq, isNotNull, isNull, sql } from 'drizzle-orm';
-import { db, schema } from '@/lib/db';
+import { db, schema, type Transaktion } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 
 /**
@@ -20,9 +20,11 @@ export type HatimOeffentlich = {
   gelesen: number;
 };
 
+/** Neue Hatim (Entwurf) mit 30 freien Cüz; `imVorgang` läuft in derselben Transaktion (z. B. Audit-Eintrag). */
 export async function legeHatimAn(
   e: { titel: Mehrsprachig; anlass?: Mehrsprachig | null; beginn: string; ziel?: string | null },
   von: string,
+  imVorgang?: (tx: Transaktion, id: string) => Promise<void>,
 ): Promise<string> {
   return db.transaction(async (tx) => {
     const [h] = await tx
@@ -30,6 +32,7 @@ export async function legeHatimAn(
       .values({ titel: e.titel, anlass: e.anlass ?? null, beginn: e.beginn, ziel: e.ziel ?? null, erstelltVon: von })
       .returning({ id: schema.hatim.id });
     await tx.insert(schema.hatimTeil).values(Array.from({ length: 30 }, (_, i) => ({ hatimId: h.id, cuz: i + 1 })));
+    await imVorgang?.(tx, h.id);
     return h.id;
   });
 }

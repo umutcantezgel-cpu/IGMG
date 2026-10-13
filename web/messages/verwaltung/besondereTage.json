@@ -1,0 +1,87 @@
+{
+  "besondereTage": {
+    "titel": "Besondere Tage",
+    "einleitung": "Kandil-Nächte, Bayram, Ramadan und weitere Tage für Kalender, Ramadan-Seite und iCal-Abo. Öffentlich gilt ein Tag erst als bestätigt, wenn die religiöse Prüfung ihn freigibt – bis dahin steht dort der berechnete Tag mit dem Hinweis „vorläufig“.",
+    "jahre": "Jahr wählen",
+    "jahr": "{jahr}",
+    "neu": "Eigenen Tag anlegen",
+    "neuTitel": "Besonderen Tag anlegen",
+    "zurueck": "Zurück zur Liste",
+    "angelegt": "Der Tag ist angelegt und wartet auf die Prüfung.",
+    "gespeichert": "Gespeichert.",
+    "gespeichertPruefung": "Gespeichert. Der Tag wartet jetzt auf die religiöse Prüfung.",
+    "vorschlaege": {
+      "titel": "Berechnete Vorschläge für {jahr}",
+      "text": "Diese Tage sind nach dem Umm-al-Qura-Kalender berechnet und noch nicht übernommen. Übernommene Tage stehen danach „zur Prüfung“ in der Liste; Datum, Titel und Beschreibung lassen sich korrigieren.",
+      "uebernehmen": "{anzahl, plural, one {# Vorschlag übernehmen} other {# Vorschläge übernehmen}}",
+      "keine": "Alle berechneten Tage für {jahr} sind übernommen."
+    },
+    "leer": "Für {jahr} sind noch keine Tage eingetragen.",
+    "tabelle": "Besondere Tage {jahr}",
+    "spalte": {
+      "datum": "Datum",
+      "titel": "Titel",
+      "art": "Art",
+      "freigabe": "Freigabe",
+      "aktionen": "Aktionen"
+    },
+    "art": {
+      "kandil": "Kandil (Nacht)",
+      "bayram": "Bayram",
+      "ramadan_beginn": "Beginn des Ramadan",
+      "ramadan_ende": "Ende des Ramadan",
+      "asure": "Aşure",
+      "hicri_neujahr": "Islamisches Neujahr",
+      "sonstiges": "Sonstiger Tag"
+    },
+    "freigabe": {
+      "entwurf": "Entwurf",
+      "zur_pruefung": "Zur Prüfung",
+      "geprueft": "Bestätigt"
+    },
+    "quelle": {
+      "berechnet": "berechnet",
+      "bestaetigt": "vom Imam bestätigt"
+    },
+    "geprueftVon": "Bestätigt am {datum}",
+    "aktionBearbeiten": "Bearbeiten: {titel}",
+    "aktionBestaetigen": "Bestätigen: {titel}",
+    "bestaetigenKurz": "Bestätigen",
+    "entfernen": "Eintrag entfernen",
+    "entfernenText": "Danach gilt öffentlich wieder der berechnete Tag (vorläufig), falls es einen gibt.",
+    "formular": {
+      "abschnittTag": "Tag",
+      "abschnittText": "Titel und Beschreibung",
+      "abschnittUebersetzung": "Übersetzungen",
+      "abschnittFreigabe": "Religiöse Freigabe",
+      "art": "Art",
+      "datum": "Datum",
+      "datumHinweis": "Bei Nächten (Kandil, Kadir) der Tag, an dessen Abend die Nacht beginnt.",
+      "titel": "Titel",
+      "beschreibung": "Beschreibung",
+      "beschreibungHinweis": "Optional. Religiöse Erläuterungen schreibt und prüft nur der Imam bzw. die Hoca.",
+      "feldSprache": "{feld} ({sprache})",
+      "sprache": {
+        "Tr": "Türkisch",
+        "En": "Englisch"
+      },
+      "bestaetigen": "Datum und Text sind vom Imam bestätigt",
+      "bestaetigenHinweis": "Der Tag erscheint dann öffentlich ohne den Hinweis „vorläufig“. Jede spätere Änderung setzt die Freigabe zurück.",
+      "ohneFreigaberecht": "Die Freigabe erteilt die religiöse Prüfung (Imam/Hoca). Ihre Änderung setzt den Tag auf „zur Prüfung“.",
+      "speichern": "Speichern",
+      "anlegen": "Tag anlegen"
+    },
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "keinFreigaberecht": "Bestätigen darf nur die religiöse Prüfung.",
+      "nichtGefunden": "Diesen Eintrag gibt es nicht mehr.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "datum": "Bitte geben Sie ein gültiges Datum ein.",
+      "richtext": "Der Text konnte nicht gelesen werden.",
+      "link": "Dieser Link ist nicht erlaubt.",
+      "ungueltig": "Dieser Wert ist nicht gültig."
+    }
+  }
+}

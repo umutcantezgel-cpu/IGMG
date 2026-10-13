@@ -1,0 +1,81 @@
+{
+  "newsletter": {
+    "titel": "Newsletter",
+    "einleitung": "Ausgaben schreiben und an die bestätigten Empfänger versenden. Adressen sehen Sie hier nie – nur, wie viele Menschen ein Thema bestellt haben. Jede Mail enthält einen Abmeldelink.",
+    "neu": "Neue Ausgabe",
+    "neuTitel": "Neue Ausgabe schreiben",
+    "zurueck": "Zurück zum Newsletter",
+    "angelegt": "Die Ausgabe ist als Entwurf gespeichert.",
+    "gespeichert": "Gespeichert.",
+    "geloescht": "Der Entwurf wurde gelöscht.",
+    "empfaenger": {
+      "titel": "Empfänger",
+      "gesamt": "{anzahl, plural, =0 {Noch keine bestätigten Empfänger} one {# bestätigter Empfänger} other {# bestätigte Empfänger}}",
+      "thema": "{anzahl, plural, one {# Empfänger} other {# Empfänger}}",
+      "hinweis": "Gezählt werden nur bestätigte Anmeldungen. Unbestätigte Anmeldungen verfallen nach 48 Stunden."
+    },
+    "themen": {
+      "allgemein": "Allgemeine Nachrichten",
+      "veranstaltungen": "Veranstaltungen",
+      "bildung": "Bildung",
+      "ramadan": "Ramadan",
+      "alle": "Alle Themen"
+    },
+    "ausgaben": "Ausgaben",
+    "leer": "Noch keine Ausgabe geschrieben.",
+    "tabelle": "Newsletter-Ausgaben, neueste zuerst",
+    "spalte": {
+      "betreff": "Betreff",
+      "themen": "Themen",
+      "stand": "Stand",
+      "aktionen": "Aktionen"
+    },
+    "stand": {
+      "entwurf": "Entwurf",
+      "versendet": "Versendet am {datum} an {anzahl}"
+    },
+    "aktionBearbeiten": "Bearbeiten: {betreff}",
+    "aktionAnsehen": "Ansehen: {betreff}",
+    "formular": {
+      "abschnittInhalt": "Betreff und Inhalt",
+      "abschnittThemen": "Themen",
+      "abschnittUebersetzung": "Übersetzungen",
+      "uebersetzungHinweis": "Ohne Übersetzung erhalten Leserinnen und Leser dieser Sprache die deutsche Fassung.",
+      "betreff": "Betreff",
+      "inhalt": "Inhalt",
+      "inhaltHinweis": "Kurz und freundlich. Bilder werden in der E-Mail nicht angezeigt; Links bitte als ganze Adresse.",
+      "themen": "Themen",
+      "themenHinweis": "Nur Empfänger mit mindestens einem dieser Themen erhalten die Ausgabe. Ohne Auswahl geht sie an alle.",
+      "feldSprache": "{feld} ({sprache})",
+      "sprache": {
+        "Tr": "Türkisch",
+        "En": "Englisch"
+      },
+      "speichern": "Entwurf speichern",
+      "anlegen": "Entwurf anlegen"
+    },
+    "versand": {
+      "titel": "Versenden",
+      "text": "Diese Ausgabe geht an {anzahl, plural, =0 {niemanden – für diese Themen gibt es noch keine bestätigten Empfänger} one {# Empfänger} other {# Empfänger}}. Der Versand läuft in Paketen und lässt sich nicht zurückholen.",
+      "bestaetigt": "Ich habe die Ausgabe in allen Sprachen geprüft",
+      "senden": "Jetzt versenden",
+      "erfolg": "{anzahl, plural, =0 {Die Ausgabe ist als versendet markiert – es gab keine Empfänger.} one {Die Ausgabe geht an # Empfänger hinaus.} other {Die Ausgabe geht an # Empfänger hinaus.}}",
+      "versendet": "Versendet am {datum} an {anzahl, plural, one {# Empfänger} other {# Empfänger}}. Versendete Ausgaben lassen sich nicht mehr ändern.",
+      "keinRecht": "Versenden darf, wer das Recht „Newsletter senden“ hat."
+    },
+    "vorschau": "Vorschau (Deutsch)",
+    "loeschen": "Entwurf löschen",
+    "fehler": {
+      "pruefen": "Bitte prüfen Sie die markierten Felder.",
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "nichtGefunden": "Diese Ausgabe gibt es nicht mehr.",
+      "schonVersendet": "Diese Ausgabe ist schon versendet.",
+      "bestaetigen": "Bitte bestätigen Sie, dass Sie die Ausgabe geprüft haben.",
+      "pflicht": "Bitte füllen Sie dieses Feld aus.",
+      "zuLang": "Der Text ist zu lang.",
+      "richtext": "Der Text konnte nicht gelesen werden.",
+      "link": "Dieser Link ist nicht erlaubt.",
+      "ungueltig": "Dieser Wert ist nicht gültig."
+    }
+  }
+}

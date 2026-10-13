@@ -1,1 +1,170 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "ramadan": {
+      "kennung": "Islamisches Jahr",
+      "titel": "Ramadan {jahr}",
+      "titelOhneJahr": "Ramadan",
+      "untertitel": "Imsakiye mit Imsak und Iftar für Wetzlar, die besonderen Nächte und die Hinweise der Gemeinde für den Fastenmonat.",
+      "metaBeschreibung": "Ramadan bei der IGMG Wetzlar: Imsakiye mit Imsak- und Iftar-Zeiten für Wetzlar zum Drucken, Kadir-Nacht, Bayram, Teravih und Fitre.",
+      "beginntVoraussichtlich": "Ramadan {jahr} beginnt voraussichtlich am {datum}.",
+      "endetVoraussichtlich": "Der letzte Fastentag ist voraussichtlich der {datum}.",
+      "vorlaeufig": "Vorläufig – berechnet, Bestätigung durch den Imam folgt.",
+      "laeuft": "Heute ist der {tag}. Tag des Ramadan.",
+      "keineVorschau": "Die Imsakiye für den kommenden Ramadan erscheint hier rechtzeitig vor dem ersten Fastentag.",
+      "kalenderLink": "Alle besonderen Tage im Kalender",
+      "bogen": {
+        "titel": "Fastenbogen",
+        "titelVorschau": "Fastenbogen – erster Fastentag",
+        "beschreibung": "Der Bogen reicht von Imsak bis Akşam, der Zeit des Iftar. Die Linie zeigt, wie weit der heutige Fastentag fortgeschritten ist.",
+        "imsak": "Imsak",
+        "iftar": "Iftar (Akşam)",
+        "zeile": "Fasten von {imsak} bis {iftar}",
+        "vorImsak": "Der Fastentag beginnt um {imsak}.",
+        "fastet": "Iftar heute um {iftar}.",
+        "nachIftar": "Der Fastentag ist vollendet. Nächster Imsak: {imsak}.",
+        "label": "Fastenbogen für {datum}: Imsak {imsak}, Iftar {iftar}."
+      },
+      "imsakiye": {
+        "titel": "Imsakiye {jahr}",
+        "untertitel": "Alle Tage des Ramadan für Wetzlar. Imsak und Iftar (Akşam) sind hervorgehoben.",
+        "vorschau": "Vorschau",
+        "tag": "Tag",
+        "datum": "Datum",
+        "imsak": "Imsak",
+        "iftar": "Iftar (Akşam)",
+        "berechnet": "berechnet",
+        "berechnetText": "Die Zeiten sind berechnet, solange die Gemeinde sie nicht bestätigt hat – wie auf der Seite Gebetszeiten.",
+        "drucken": "Imsakiye drucken",
+        "heute": "heute",
+        "kadir": "Kadir-Nacht",
+        "tabelle": "Imsakiye {jahr}: Gebetszeiten aller Ramadan-Tage für Wetzlar"
+      },
+      "naechte": {
+        "titel": "Besondere Nächte und Tage",
+        "nacht": "Die Nacht beginnt am Abend dieses Tages."
+      },
+      "gemeinde": {
+        "titel": "In der Gemeinde",
+        "teravihTitel": "Teravih",
+        "teravih": "[Teravih-Zeit – von der Gemeinde]",
+        "fitreTitel": "Fitre",
+        "fitre": "[Fitre-Betrag – vom Vorstand/Diyanet bestätigt]",
+        "iftarTitel": "Gemeinsames Iftar",
+        "iftar": "[Termine für das gemeinsame Iftar – von der Gemeinde]",
+        "spendenLink": "Spenden und Fitre überweisen"
+      }
+    }
+  },
+  "tr": {
+    "ramadan": {
+      "kennung": "Hicrî yıl",
+      "titel": "Ramazan {jahr}",
+      "titelOhneJahr": "Ramazan",
+      "untertitel": "Wetzlar için imsak ve iftar vakitleriyle imsakiye, mübarek geceler ve oruç ayı için cemaatimizden bilgiler.",
+      "metaBeschreibung": "IGMG Wetzlar’da Ramazan: Wetzlar için yazdırılabilir imsakiye, Kadir Gecesi, bayram, teravih ve fitre.",
+      "beginntVoraussichtlich": "{jahr} Ramazanı’nın {datum} tarihinde başlaması bekleniyor.",
+      "endetVoraussichtlich": "Son oruç gününün {datum} olması bekleniyor.",
+      "vorlaeufig": "Geçici – hesaplanmıştır, imamın onayı beklenmektedir.",
+      "laeuft": "Bugün Ramazan’ın {tag}. günü.",
+      "keineVorschau": "Gelecek Ramazan’ın imsakiyesi ilk oruç gününden önce burada yayımlanacak.",
+      "kalenderLink": "Tüm mübarek günler takvimde",
+      "bogen": {
+        "titel": "Oruç yayı",
+        "titelVorschau": "Oruç yayı – ilk oruç günü",
+        "beschreibung": "Yay, imsaktan iftar vakti olan akşama kadar uzanır. Çizgi, bugünkü oruç gününün ne kadar ilerlediğini gösterir.",
+        "imsak": "İmsak",
+        "iftar": "İftar (Akşam)",
+        "zeile": "Oruç {imsak} – {iftar}",
+        "vorImsak": "Oruç günü başlangıcı (imsak): {imsak}.",
+        "fastet": "Bugünkü iftar vakti: {iftar}.",
+        "nachIftar": "Bugünkü oruç tamamlandı. Sonraki imsak: {imsak}.",
+        "label": "{datum} için oruç yayı: imsak {imsak}, iftar {iftar}."
+      },
+      "imsakiye": {
+        "titel": "İmsakiye {jahr}",
+        "untertitel": "Wetzlar için Ramazan’ın bütün günleri. İmsak ve iftar (akşam) vakitleri vurgulanmıştır.",
+        "vorschau": "Ön izleme",
+        "tag": "Gün",
+        "datum": "Tarih",
+        "imsak": "İmsak",
+        "iftar": "İftar (Akşam)",
+        "berechnet": "hesaplanmış",
+        "berechnetText": "Vakitler, cemaat tarafından onaylanana kadar hesaplanmış değerlerdir – namaz vakitleri sayfasında olduğu gibi.",
+        "drucken": "İmsakiyeyi yazdır",
+        "heute": "bugün",
+        "kadir": "Kadir Gecesi",
+        "tabelle": "İmsakiye {jahr}: Wetzlar için Ramazan’ın bütün günlerinin vakitleri"
+      },
+      "naechte": {
+        "titel": "Mübarek gece ve günler",
+        "nacht": "Gece, bu günün akşamı başlar."
+      },
+      "gemeinde": {
+        "titel": "Cemaatimizde",
+        "teravihTitel": "Teravih",
+        "teravih": "[Teravih vakti – cemaat tarafından bildirilecek]",
+        "fitreTitel": "Fitre",
+        "fitre": "[Fitre miktarı – yönetim/Diyanet tarafından onaylanacak]",
+        "iftarTitel": "Ortak iftar",
+        "iftar": "[Ortak iftar tarihleri – cemaat tarafından bildirilecek]",
+        "spendenLink": "Bağış ve fitre gönder"
+      }
+    }
+  },
+  "en": {
+    "ramadan": {
+      "kennung": "Islamic year",
+      "titel": "Ramadan {jahr}",
+      "titelOhneJahr": "Ramadan",
+      "untertitel": "Imsakiye with imsak and iftar times for Wetzlar, the special nights and the community’s notes for the month of fasting.",
+      "metaBeschreibung": "Ramadan at IGMG Wetzlar: printable imsakiye with imsak and iftar times for Wetzlar, Night of Qadr, Eid, tarawih and fitra.",
+      "beginntVoraussichtlich": "Ramadan {jahr} is expected to begin on {datum}.",
+      "endetVoraussichtlich": "The last day of fasting is expected to be {datum}.",
+      "vorlaeufig": "Provisional – calculated, awaiting confirmation by the imam.",
+      "laeuft": "Today is day {tag} of Ramadan.",
+      "keineVorschau": "The imsakiye for the coming Ramadan will appear here in good time before the first day of fasting.",
+      "kalenderLink": "All special days in the calendar",
+      "bogen": {
+        "titel": "Fasting arc",
+        "titelVorschau": "Fasting arc – first day of fasting",
+        "beschreibung": "The arc runs from imsak to akşam, the time of iftar. The line shows how far today’s fast has progressed.",
+        "imsak": "Imsak",
+        "iftar": "Iftar (Akşam)",
+        "zeile": "Fasting from {imsak} to {iftar}",
+        "vorImsak": "The fast begins at {imsak}.",
+        "fastet": "Iftar today at {iftar}.",
+        "nachIftar": "Today’s fast is complete. Next imsak: {imsak}.",
+        "label": "Fasting arc for {datum}: imsak {imsak}, iftar {iftar}."
+      },
+      "imsakiye": {
+        "titel": "Imsakiye {jahr}",
+        "untertitel": "All days of Ramadan for Wetzlar. Imsak and iftar (akşam) are highlighted.",
+        "vorschau": "Preview",
+        "tag": "Day",
+        "datum": "Date",
+        "imsak": "Imsak",
+        "iftar": "Iftar (Akşam)",
+        "berechnet": "calculated",
+        "berechnetText": "The times are calculated until the community confirms them – just like on the prayer times page.",
+        "drucken": "Print imsakiye",
+        "heute": "today",
+        "kadir": "Night of Qadr",
+        "tabelle": "Imsakiye {jahr}: prayer times for every day of Ramadan in Wetzlar"
+      },
+      "naechte": {
+        "titel": "Special nights and days",
+        "nacht": "The night begins on the evening of this day."
+      },
+      "gemeinde": {
+        "titel": "In the community",
+        "teravihTitel": "Tarawih",
+        "teravih": "[Tarawih time – to be announced by the community]",
+        "fitreTitel": "Fitra",
+        "fitre": "[Fitra amount – to be confirmed by the board/Diyanet]",
+        "iftarTitel": "Community iftar",
+        "iftar": "[Community iftar dates – to be announced by the community]",
+        "spendenLink": "Donate and transfer fitra"
+      }
+    }
+  }
+}

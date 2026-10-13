@@ -1,1 +1,200 @@
-{ "de": {}, "tr": {}, "en": {} }
+{
+  "de": {
+    "kalender": {
+      "kennung": "Islamisches Jahr",
+      "titel": "Kalender",
+      "untertitel": "Die nächsten zwölf Monate mit Hidschri-Datum, den besonderen Tagen und Nächten und den Veranstaltungen der Gemeinde.",
+      "metaBeschreibung": "Kalender der IGMG Wetzlar: gregorianisches und Hidschri-Datum, Kandil-Nächte, Bayram und Ramadan, Veranstaltungen – auch als Kalender-Abo.",
+      "hinweisTitel": "Gut zu wissen",
+      "hinweis": "Die Hidschri-Daten sind nach dem Umm-al-Qura-Kalender berechnet und können um einen Tag abweichen. Besondere Tage gelten als vorläufig, bis der Imam sie bestätigt.",
+      "nachtHinweis": "Kandil-Nächte und die Kadir-Nacht beginnen am Abend des angegebenen Tages.",
+      "vorlaeufig": "vorläufig",
+      "vorlaeufigLang": "Vorläufig – berechnet, Bestätigung durch den Imam folgt.",
+      "bestaetigt": "bestätigt",
+      "drucken": "Kalender drucken",
+      "inhalt": "Monate",
+      "zumMonat": "Zu {monat}",
+      "besondereTitel": "Besondere Tage und Nächte",
+      "besondereEinleitung": "In den nächsten zwölf Monaten",
+      "besondereLeer": "In diesem Zeitraum sind keine besonderen Tage eingetragen.",
+      "dauer": "{anzahl, plural, one {# Tag} other {# Tage}}",
+      "beschreibungFolgt": "[Beschreibung – vom Imam, Freigabe ausstehend]",
+      "tage": {
+        "hicriNeujahr": "Islamisches Neujahr (Hicrî Yılbaşı)",
+        "asure": "Aşure-Tag",
+        "mevlid": "Mevlid Kandili",
+        "regaib": "Regaib Kandili",
+        "mirac": "Miraç Kandili",
+        "berat": "Berat Kandili",
+        "ramadanBeginn": "Beginn des Ramadan",
+        "kadir": "Kadir-Nacht (Kadir Gecesi)",
+        "ramazanBayrami": "Ramazan Bayramı",
+        "arefe": "Arefe-Tag",
+        "kurbanBayrami": "Kurban Bayramı"
+      },
+      "tabelle": "Kalender {monat}",
+      "hijriSpanne": "Hidschri: {monate}",
+      "heute": "heute",
+      "ramadan": "Ramadan",
+      "hijriTag": "Hidschri-Tag {tag}",
+      "legende": {
+        "titel": "Zeichen im Kalender",
+        "besonders": "Besonderer Tag oder besondere Nacht",
+        "veranstaltung": "Veranstaltung der Gemeinde",
+        "ramadan": "Tag im Ramadan",
+        "heute": "Heute",
+        "hijri": "Kleine Zahl: Tag im Hidschri-Monat"
+      },
+      "imMonat": {
+        "veranstaltungen": "Veranstaltungen",
+        "keine": "In diesem Monat sind keine besonderen Tage und keine Veranstaltungen eingetragen."
+      },
+      "ganztaegig": "ganztägig",
+      "regelmaessig": {
+        "titel": "Regelmäßige Termine",
+        "text": "Wöchentliche Termine wie Unterricht und Gesprächskreise stehen im Veranstaltungskalender.",
+        "link": "Zu den Veranstaltungen"
+      },
+      "abo": {
+        "titel": "Besondere Tage abonnieren",
+        "text": "Kandil-Nächte, Bayram und Ramadan als Kalender-Abo für Telefon und Computer. Vorläufige Tage sind im Termin gekennzeichnet und aktualisieren sich, sobald der Imam sie bestätigt.",
+        "abonnieren": "Abonnieren",
+        "datei": "Als Datei laden (.ics)"
+      },
+      "kalenderName": "IGMG Wetzlar – Besondere Tage",
+      "ramadanLink": "Zum Ramadan-Kalender (Imsakiye)"
+    }
+  },
+  "tr": {
+    "kalender": {
+      "kennung": "Hicrî yıl",
+      "titel": "Takvim",
+      "untertitel": "Önümüzdeki on iki ay: hicrî tarih, mübarek gün ve geceler ile cemaatimizin etkinlikleri.",
+      "metaBeschreibung": "IGMG Wetzlar takvimi: miladi ve hicrî tarih, kandiller, bayramlar ve Ramazan, etkinlikler – takvim aboneliği olarak da.",
+      "hinweisTitel": "Bilmekte fayda var",
+      "hinweis": "Hicrî tarihler Ümmü’l-Kurâ takvimine göre hesaplanmıştır ve bir gün farklı olabilir. Mübarek günler, imam tarafından onaylanana kadar geçicidir.",
+      "nachtHinweis": "Kandiller ve Kadir Gecesi, belirtilen günün akşamı başlar.",
+      "vorlaeufig": "geçici",
+      "vorlaeufigLang": "Geçici – hesaplanmıştır, imamın onayı beklenmektedir.",
+      "bestaetigt": "onaylandı",
+      "drucken": "Takvimi yazdır",
+      "inhalt": "Aylar",
+      "zumMonat": "{monat} ayına git",
+      "besondereTitel": "Mübarek gün ve geceler",
+      "besondereEinleitung": "Önümüzdeki on iki ay içinde",
+      "besondereLeer": "Bu dönemde kayıtlı mübarek gün bulunmuyor.",
+      "dauer": "{anzahl, plural, one {# gün} other {# gün}}",
+      "beschreibungFolgt": "[Açıklama – imam tarafından, onay bekleniyor]",
+      "tage": {
+        "hicriNeujahr": "Hicrî Yılbaşı",
+        "asure": "Aşure Günü",
+        "mevlid": "Mevlid Kandili",
+        "regaib": "Regaib Kandili",
+        "mirac": "Miraç Kandili",
+        "berat": "Berat Kandili",
+        "ramadanBeginn": "Ramazan’ın başlangıcı",
+        "kadir": "Kadir Gecesi",
+        "ramazanBayrami": "Ramazan Bayramı",
+        "arefe": "Arefe Günü",
+        "kurbanBayrami": "Kurban Bayramı"
+      },
+      "tabelle": "{monat} takvimi",
+      "hijriSpanne": "Hicrî: {monate}",
+      "heute": "bugün",
+      "ramadan": "Ramazan",
+      "hijriTag": "Hicrî gün {tag}",
+      "legende": {
+        "titel": "Takvimdeki işaretler",
+        "besonders": "Mübarek gün veya gece",
+        "veranstaltung": "Cemaat etkinliği",
+        "ramadan": "Ramazan günü",
+        "heute": "Bugün",
+        "hijri": "Küçük rakam: hicrî ayın günü"
+      },
+      "imMonat": {
+        "veranstaltungen": "Etkinlikler",
+        "keine": "Bu ay için kayıtlı mübarek gün veya etkinlik bulunmuyor."
+      },
+      "ganztaegig": "tüm gün",
+      "regelmaessig": {
+        "titel": "Düzenli etkinlikler",
+        "text": "Dersler ve sohbetler gibi haftalık etkinlikler etkinlik takviminde yer alıyor.",
+        "link": "Etkinliklere git"
+      },
+      "abo": {
+        "titel": "Mübarek günlere abone olun",
+        "text": "Kandiller, bayramlar ve Ramazan, telefon ve bilgisayar için takvim aboneliği olarak. Geçici günler etkinlikte işaretlidir ve imam onayladığında kendiliğinden güncellenir.",
+        "abonnieren": "Abone ol",
+        "datei": "Dosya olarak indir (.ics)"
+      },
+      "kalenderName": "IGMG Wetzlar – Mübarek Günler",
+      "ramadanLink": "Ramazan takvimine git (İmsakiye)"
+    }
+  },
+  "en": {
+    "kalender": {
+      "kennung": "Islamic year",
+      "titel": "Calendar",
+      "untertitel": "The next twelve months with the Hijri date, the special days and nights, and the community’s events.",
+      "metaBeschreibung": "Calendar of IGMG Wetzlar: Gregorian and Hijri dates, Kandil nights, Eid and Ramadan, events – also as a calendar subscription.",
+      "hinweisTitel": "Good to know",
+      "hinweis": "The Hijri dates are calculated using the Umm al-Qura calendar and may differ by one day. Special days are provisional until the imam confirms them.",
+      "nachtHinweis": "Kandil nights and the Night of Qadr begin on the evening of the day shown.",
+      "vorlaeufig": "provisional",
+      "vorlaeufigLang": "Provisional – calculated, awaiting confirmation by the imam.",
+      "bestaetigt": "confirmed",
+      "drucken": "Print calendar",
+      "inhalt": "Months",
+      "zumMonat": "Go to {monat}",
+      "besondereTitel": "Special days and nights",
+      "besondereEinleitung": "In the next twelve months",
+      "besondereLeer": "There are no special days in this period.",
+      "dauer": "{anzahl, plural, one {# day} other {# days}}",
+      "beschreibungFolgt": "[Description – by the imam, approval pending]",
+      "tage": {
+        "hicriNeujahr": "Islamic New Year (Hicrî Yılbaşı)",
+        "asure": "Day of Ashura (Aşure)",
+        "mevlid": "Mevlid Kandili",
+        "regaib": "Regaib Kandili",
+        "mirac": "Miraç Kandili",
+        "berat": "Berat Kandili",
+        "ramadanBeginn": "Start of Ramadan",
+        "kadir": "Night of Qadr (Kadir Gecesi)",
+        "ramazanBayrami": "Eid al-Fitr (Ramazan Bayramı)",
+        "arefe": "Day of Arafah (Arefe)",
+        "kurbanBayrami": "Eid al-Adha (Kurban Bayramı)"
+      },
+      "tabelle": "Calendar {monat}",
+      "hijriSpanne": "Hijri: {monate}",
+      "heute": "today",
+      "ramadan": "Ramadan",
+      "hijriTag": "Hijri day {tag}",
+      "legende": {
+        "titel": "Symbols in the calendar",
+        "besonders": "Special day or night",
+        "veranstaltung": "Community event",
+        "ramadan": "Day in Ramadan",
+        "heute": "Today",
+        "hijri": "Small number: day of the Hijri month"
+      },
+      "imMonat": {
+        "veranstaltungen": "Events",
+        "keine": "There are no special days or events this month."
+      },
+      "ganztaegig": "all day",
+      "regelmaessig": {
+        "titel": "Regular events",
+        "text": "Weekly events such as classes and study circles are listed in the events calendar.",
+        "link": "Go to events"
+      },
+      "abo": {
+        "titel": "Subscribe to special days",
+        "text": "Kandil nights, Eid and Ramadan as a calendar subscription for your phone and computer. Provisional days are marked in the entry and update automatically once the imam confirms them.",
+        "abonnieren": "Subscribe",
+        "datei": "Download as file (.ics)"
+      },
+      "kalenderName": "IGMG Wetzlar – Special Days",
+      "ramadanLink": "Go to the Ramadan calendar (Imsakiye)"
+    }
+  }
+}

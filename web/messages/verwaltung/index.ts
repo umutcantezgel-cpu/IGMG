@@ -28,6 +28,10 @@ import seiten from './seiten.json';
 import menues from './menues.json';
 import weiterleitungen from './weiterleitungen.json';
 import freigaben from './freigaben.json';
+import hatim from './hatim.json';
+import besondereTage from './besondereTage.json';
+import newsletter from './newsletter.json';
+import spenden from './spenden.json';
 
 type Teil = Record<string, unknown>;
 
@@ -56,4 +60,8 @@ export const VERWALTUNG: Record<string, Teil> = {
   menues,
   weiterleitungen,
   freigaben,
+  hatim,
+  besondereTage,
+  newsletter,
+  spenden,
 };

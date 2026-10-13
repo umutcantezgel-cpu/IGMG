@@ -65,7 +65,11 @@ export type AuditAktion =
   | 'chat.gemeldet'
   | 'chat.meldung_bearbeitet'
   | 'chat.notfallpause'
-  | 'chat.notfallpause_aufgehoben';
+  | 'chat.notfallpause_aufgehoben'
+  // Kür A (H-K01–H-K04): Namen der Übernehmenden einer Hatim ansehen, besonderen Tag bestätigen, Newsletter versenden
+  | 'hatim.namen_gelesen'
+  | 'besonderer_tag.bestaetigt'
+  | 'newsletter.versendet';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

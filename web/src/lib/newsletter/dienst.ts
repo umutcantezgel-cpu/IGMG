@@ -1,7 +1,7 @@
 import 'server-only';
 import { and, eq, isNotNull, isNull, lt, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
-import { hmac, sha256, verschluessele, zufallsToken } from '@/lib/krypto';
+import { gleich, hmac, sha256, verschluessele, zufallsToken } from '@/lib/krypto';
 
 /**
  * Newsletter mit Double-Opt-in (AUFTRAG 3.10, K-B): Die Adresse liegt verschlüsselt, eindeutig nur über einen HMAC.
@@ -69,9 +69,30 @@ export async function bestaetige(token: string): Promise<boolean> {
   return r.length > 0;
 }
 
-/** Abmeldung über das Token aus jeder Mail (bleibt gültig); löscht die Adresse sofort (Datensparsamkeit). */
+/**
+ * Abmelde-Token für jede Newsletter-Ausgabe: an die Anmeldung gebunden (HMAC über ihre ID), ohne ein weiteres Token
+ * in der Datenbank. Form „a“ + 32 Hex-Zeichen der ID + 32 Hex-Zeichen Signatur – passt zum Muster von `meldeAb`.
+ */
+export function abmeldeToken(aboId: string): string {
+  const roh = aboId.replace(/-/g, '').toLowerCase();
+  return `a${roh}${hmac(`newsletter-abmelden|${roh}`, 'RATE_GEHEIMNIS').slice(0, 32)}`;
+}
+
+const ABMELDE_TOKEN = /^a([0-9a-f]{32})([0-9a-f]{32})$/;
+
+/**
+ * Abmeldung über das Token aus jeder Mail (bleibt gültig): das Token der Anmeldung oder das signierte Abmelde-Token
+ * einer Ausgabe. Löscht die Adresse sofort (Datensparsamkeit).
+ */
 export async function meldeAb(token: string): Promise<boolean> {
   if (!/^[A-Za-z0-9_-]{20,100}$/.test(token)) return false;
+  const signiert = ABMELDE_TOKEN.exec(token);
+  if (signiert && gleich(token, abmeldeToken(signiert[1]))) {
+    const h = signiert[1];
+    const id = `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+    const r = await db.delete(schema.newsletterAbo).where(eq(schema.newsletterAbo.id, id)).returning({ id: schema.newsletterAbo.id });
+    return r.length > 0;
+  }
   const r = await db
     .delete(schema.newsletterAbo)
     .where(eq(schema.newsletterAbo.tokenHash, sha256(token)))
