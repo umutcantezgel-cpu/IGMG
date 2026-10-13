@@ -7,6 +7,8 @@ describe('Speicherprobe mit Zeitlimit', () => {
 
   it('Blob-Schnittstelle unerreichbar: Ergebnis nach dem Zeitlimit, nicht erst nach allen Wiederholungen', async () => {
     vi.stubEnv('VERCEL_BLOB_API_URL', 'http://127.0.0.1:9');
+    // Das SDK vorab laden: Gemessen wird das Zeitlimit der Anfrage, nicht der (unter Last langsame) erste Import
+    await import('@vercel/blob');
     const start = Date.now();
     const probe = await pruefeSpeicher({ SPEICHER: 'blob', BLOB_READ_WRITE_TOKEN: 'vercel_blob_rw_teststore_nurzumpruefen' });
     expect(probe).toMatchObject({ art: 'blob', erreichbar: false });
