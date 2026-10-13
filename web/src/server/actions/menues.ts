@@ -49,14 +49,21 @@ export async function speichereMenue(_vorher: MenueZustand, fd: FormData): Promi
   }
   const eintraege: Gespeichert[] =
     p.schluessel === 'kopf'
-      ? p.eintraege.map((g) => ({ titel: g.titel, ziel: '', kinder: g.kinder.map((k) => ({ titel: k.titel, ziel: k.ziel, beschreibung: k.beschreibung })) }))
+      ? p.eintraege.map((g) => ({
+          titel: g.titel,
+          ziel: '',
+          kinder: g.kinder.map((k) => ({ titel: k.titel, ziel: k.ziel, beschreibung: k.beschreibung })),
+        }))
       : p.eintraege.map((k) => ({ titel: k.titel, ziel: k.ziel, beschreibung: k.beschreibung }));
   const schluessel = p.schluessel;
   await db.transaction(async (tx) => {
     await tx
       .insert(schema.menue)
       .values({ schluessel, eintraege, aktualisiertVon: a.benutzerId })
-      .onConflictDoUpdate({ target: schema.menue.schluessel, set: { eintraege, aktualisiertVon: a.benutzerId, aktualisiertAm: new Date() } });
+      .onConflictDoUpdate({
+        target: schema.menue.schluessel,
+        set: { eintraege, aktualisiertVon: a.benutzerId, aktualisiertAm: new Date() },
+      });
     await schreibeRevision(tx, { inhaltTyp: 'menue', inhaltId: schluessel, inhalt: eintraege, erstelltVon: a.benutzerId });
     await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'menue', zielId: schluessel }, tx);
   });

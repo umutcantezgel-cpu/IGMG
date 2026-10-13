@@ -5,8 +5,8 @@ import {
   ArrowUp,
   BookOpenText,
   CalendarRange,
-  ChevronDown,
-  ChevronUp,
+  ChevronsDownUp,
+  ChevronsUpDown,
   Clock,
   Columns3,
   Contact,
@@ -82,6 +82,9 @@ function zusammenfassung(b: Block): string {
   }
 }
 
+/** Knöpfe im Kopf eines Bausteins: 48 px, unter 1024 px nur Symbol (Name über aria-label). */
+const KNOPF = 'min-h-12 min-w-12 px-3 max-lg:px-0';
+
 type Fokus = { id: string; ziel: 'oben' | 'unten' | 'kopf' } | { id: 'rueckgaengig'; ziel: 'knopf' } | null;
 
 export function BausteinListe({
@@ -110,29 +113,28 @@ export function BausteinListe({
   const [zu, setZu] = useState<ReadonlySet<string>>(new Set());
   const [ansage, setAnsage] = useState('');
   const [entfernt, setEntfernt] = useState<{ block: Block; index: number } | null>(null);
-  const [fokus, setFokus] = useState<Fokus>(null);
+  // Fokusziel nach dem nächsten Zeichnen (Element-ID); in Ereignissen gesetzt, im Effekt gelesen
+  const fokusZiel = useRef<string | null>(null);
   const [uebersetzungen, setUebersetzungen] = useState<ReadonlySet<string>>(new Set());
   const uebersetzungZeigen = (id: string) => uebersetzungen.has(id) || hatFehler(id, true);
-  const knoepfe = useRef(new Map<string, HTMLElement>());
   const hinzufuegenRef = useRef<HTMLButtonElement>(null);
   const anzahl = bloecke.length;
-
-  const ref = (schluessel: string) => (el: HTMLElement | null) => {
-    if (el) knoepfe.current.set(schluessel, el);
-    else knoepfe.current.delete(schluessel);
+  /** Element-ID eines Knopfs oder Kopfs („oben“, „unten“, „kopf“) bzw. des Rückgängig-Knopfs. */
+  const eid = (blockId: string, ziel: string) => `${basis}-${blockId}-${ziel}`;
+  const setFokus = (f: Fokus) => {
+    fokusZiel.current = f ? (f.id === 'rueckgaengig' ? eid('rueckgaengig', 'knopf') : eid(f.id, f.ziel)) : null;
   };
 
-  // Fokus nach dem Neuzeichnen setzen (das Element existiert erst dann an der neuen Stelle)
+  // Fokus nach dem Neuzeichnen setzen (das Element existiert erst dann an der neuen Stelle). Ist der Knopf jetzt
+  // gesperrt (oben/unten am Rand), bekommt der Kopf des Bausteins den Fokus.
   useEffect(() => {
-    if (!fokus) return;
-    const el =
-      fokus.id === 'rueckgaengig'
-        ? knoepfe.current.get('rueckgaengig')
-        : (knoepfe.current.get(`${fokus.id}:${fokus.ziel}`) as HTMLButtonElement | undefined);
-    if (el && !(el as HTMLButtonElement).disabled) el.focus();
-    else if (fokus.id !== 'rueckgaengig') knoepfe.current.get(`${fokus.id}:kopf`)?.focus();
-    setFokus(null);
-  }, [fokus, bloecke]);
+    const ziel = fokusZiel.current;
+    if (!ziel) return;
+    fokusZiel.current = null;
+    const el = document.getElementById(ziel) as HTMLButtonElement | null;
+    if (el && !el.disabled) el.focus();
+    else document.getElementById(ziel.replace(/-(oben|unten)$/, '-kopf'))?.focus();
+  }, [bloecke, entfernt]);
 
   const name = (b: Block, i: number) => t('bausteinName', { nr: i + 1, typ: t(`typ.${b.typ}.name`) });
 
@@ -206,17 +208,16 @@ export function BausteinListe({
               <li
                 key={b.id}
                 className={cn('rounded-lg border bg-weiss shadow-s1', fehler ? 'border-2 border-fehler' : 'border-linie')}
-                aria-labelledby={`${basis}-${b.id}-kopf`}
+                aria-labelledby={eid(b.id, 'kopf')}
               >
                 <div className="flex flex-wrap items-center gap-3 border-b border-linie px-4 py-3 md:px-5">
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
                     <Icon aria-hidden className="size-5" />
                   </span>
                   <h3
-                    id={`${basis}-${b.id}-kopf`}
-                    ref={ref(`${b.id}:kopf`)}
+                    id={eid(b.id, 'kopf')}
                     tabIndex={-1}
-                    className="flex min-w-0 flex-1 flex-col font-text text-18 leading-tight font-bold tracking-normal outline-none"
+                    className="flex min-w-0 flex-1 basis-48 flex-col font-text text-18 leading-tight font-bold tracking-normal outline-none"
                   >
                     <span>
                       <span className="text-tinte-2">{t('nummer', { nr: i + 1 })} · </span>
@@ -224,59 +225,72 @@ export function BausteinListe({
                     </span>
                     {kurz ? <span className="truncate text-16 font-normal text-tinte-2">{kurz}</span> : null}
                   </h3>
-                  {fehler ? <span className="rounded-pill bg-fehler-toenung px-3 py-0.5 text-16 font-bold text-fehler">{t('fehlerMarke')}</span> : null}
-                  <div className="flex gap-2">
+                  {fehler ? (
+                    <span className="rounded-pill bg-fehler-toenung px-3 py-0.5 text-16 font-bold text-fehler">{t('fehlerMarke')}</span>
+                  ) : null}
+                  <div className="flex flex-wrap gap-2">
                     <Button
-                      ref={ref(`${b.id}:oben`)}
+                      id={eid(b.id, 'oben')}
                       type="button"
                       variant="outline"
-                      size="icon"
+                      size="sm"
+                      className={KNOPF}
                       disabled={i === 0}
                       onClick={() => verschieben(i, -1)}
                       aria-label={t('nachObenName', { name: name(b, i) })}
-                      title={t('nachOben')}
                     >
                       <ArrowUp aria-hidden />
+                      <span className="max-lg:hidden">{t('nachOben')}</span>
                     </Button>
                     <Button
-                      ref={ref(`${b.id}:unten`)}
+                      id={eid(b.id, 'unten')}
                       type="button"
                       variant="outline"
-                      size="icon"
+                      size="sm"
+                      className={KNOPF}
                       disabled={i === anzahl - 1}
                       onClick={() => verschieben(i, 1)}
                       aria-label={t('nachUntenName', { name: name(b, i) })}
-                      title={t('nachUnten')}
                     >
                       <ArrowDown aria-hidden />
+                      <span className="max-lg:hidden">{t('nachUnten')}</span>
                     </Button>
                     <Button
                       type="button"
                       variant="outline"
-                      size="icon"
+                      size="sm"
+                      className={KNOPF}
                       aria-expanded={offen}
                       aria-controls={koerperId}
                       onClick={() => umschalten(b.id)}
                       aria-label={t(offen ? 'zuklappenName' : 'aufklappenName', { name: name(b, i) })}
-                      title={t(offen ? 'zuklappen' : 'aufklappen')}
                     >
-                      {offen ? <ChevronUp aria-hidden /> : <ChevronDown aria-hidden />}
+                      {offen ? <ChevronsDownUp aria-hidden /> : <ChevronsUpDown aria-hidden />}
+                      <span className="max-lg:hidden">{t(offen ? 'zuklappen' : 'aufklappen')}</span>
                     </Button>
                     <Button
                       type="button"
                       variant="outline"
-                      size="icon"
-                      className="hover:border-fehler hover:bg-fehler-toenung hover:text-fehler"
+                      size="sm"
+                      className={`${KNOPF} hover:border-fehler hover:bg-fehler-toenung hover:text-fehler`}
                       onClick={() => entfernen(i)}
                       aria-label={t('entfernenName', { name: name(b, i) })}
-                      title={t('entfernen')}
                     >
                       <Trash2 aria-hidden />
+                      <span className="max-lg:hidden">{t('entfernen')}</span>
                     </Button>
                   </div>
                 </div>
                 <div id={koerperId} hidden={!offen} className="flex flex-col gap-4 p-4 md:p-5">
-                  <BausteinFelder block={b} sprache="de" aendern={aendernFuer(b.id, setzeBloecke)} optionen={optionen} bildAuswahl={bildAuswahl} fid={fid} fehler={fe} />
+                  <BausteinFelder
+                    block={b}
+                    sprache="de"
+                    aendern={aendernFuer(b.id, setzeBloecke)}
+                    optionen={optionen}
+                    bildAuswahl={bildAuswahl}
+                    fid={fid}
+                    fehler={fe}
+                  />
                   {hatUebersetzbareTexte(b) ? (
                     <details
                       className="rounded-md border border-linie bg-papier px-4 py-3"
@@ -295,22 +309,22 @@ export function BausteinListe({
                       <p className="mt-1 text-16 text-tinte-2">{t('uebersetzungenHinweis')}</p>
                       {/* Erst beim Öffnen zeichnen: spart zwei Texteditoren je Baustein */}
                       {uebersetzungZeigen(b.id) ? (
-                      <div className="mt-4 grid gap-6 lg:grid-cols-2">
-                        {(['tr', 'en'] as const).map((s) => (
-                          <fieldset key={s} className="flex min-w-0 flex-col gap-4">
-                            <legend className="mb-2 font-bold">{t(`sprache.${s}`)}</legend>
-                            <BausteinFelder
-                              block={b}
-                              sprache={s}
-                              aendern={aendernFuer(b.id, setzeBloecke)}
-                              optionen={optionen}
-                              bildAuswahl={bildAuswahl}
-                              fid={fid}
-                              fehler={fe}
-                            />
-                          </fieldset>
-                        ))}
-                      </div>
+                        <div className="mt-4 grid gap-6 lg:grid-cols-2">
+                          {(['tr', 'en'] as const).map((s) => (
+                            <fieldset key={s} className="flex min-w-0 flex-col gap-4">
+                              <legend className="mb-2 font-bold">{t(`sprache.${s}`)}</legend>
+                              <BausteinFelder
+                                block={b}
+                                sprache={s}
+                                aendern={aendernFuer(b.id, setzeBloecke)}
+                                optionen={optionen}
+                                bildAuswahl={bildAuswahl}
+                                fid={fid}
+                                fehler={fe}
+                              />
+                            </fieldset>
+                          ))}
+                        </div>
                       ) : null}
                     </details>
                   ) : null}
@@ -324,7 +338,7 @@ export function BausteinListe({
       {entfernt ? (
         <div className="flex flex-wrap items-center gap-3 rounded-md border border-info bg-info-toenung px-4 py-2 text-info">
           <span className="font-bold">{t('entfernt', { typ: t(`typ.${entfernt.block.typ}.name`) })}</span>
-          <Button ref={ref('rueckgaengig')} type="button" variant="outline" size="sm" onClick={rueckgaengig}>
+          <Button id={eid('rueckgaengig', 'knopf')} type="button" variant="outline" size="sm" className="min-h-12" onClick={rueckgaengig}>
             <Undo2 aria-hidden />
             {t('rueckgaengig')}
           </Button>

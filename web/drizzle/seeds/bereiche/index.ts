@@ -4,6 +4,7 @@ import { seed as nachrichtenMehr } from './nachrichten-mehr';
 import { seed as organisationen } from './organisationen';
 import { seed as projekte } from './projekte';
 import { seed as rechtliches } from './rechtliches';
+import { seed as seiten } from './seiten';
 import type { BereichsSeed } from './typ';
 import { seed as ueberUns } from './ueber-uns';
 import { seed as vorstand } from './vorstand';
@@ -20,4 +21,5 @@ export const BEREICHS_SEEDS: { name: string; lauf: BereichsSeed }[] = [
   { name: 'korankurse', lauf: korankurse },
   { name: 'wissen', lauf: wissen },
   { name: 'rechtliches', lauf: rechtliches },
+  { name: 'seiten (CMS)', lauf: seiten },
 ];

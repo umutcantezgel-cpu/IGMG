@@ -76,7 +76,10 @@ export async function speichereWeiterleitung(_vorher: WeiterleitungZustand, fd: 
       await tx.update(w).set({ von: e.von, nach: e.nach, code: e.code }).where(eq(w.id, e.id));
       await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: 'weiterleitung', zielId: e.id }, tx);
     } else {
-      const [neu] = await tx.insert(w).values({ von: e.von, nach: e.nach, code: e.code, erstelltVon: a.benutzerId }).returning({ id: w.id });
+      const [neu] = await tx
+        .insert(w)
+        .values({ von: e.von, nach: e.nach, code: e.code, erstelltVon: a.benutzerId })
+        .returning({ id: w.id });
       await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.angelegt', zielTyp: 'weiterleitung', zielId: neu.id }, tx);
     }
   });

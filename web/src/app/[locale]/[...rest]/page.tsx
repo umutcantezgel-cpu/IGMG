@@ -21,6 +21,10 @@ export const ensureStatic = 'navigation';
  * der ersten Anfrage und bleiben statisch, bis sich `TAG.seiten` ändert.
  */
 export async function generateStaticParams({ params }: { params: { locale: string } }) {
+  // Entwicklungsserver mit PGlite: Next ruft generateStaticParams dort in einem eigenen Prozess auf; ein zweiter Öffner
+  // beschädigt das PGlite-Verzeichnis (src/lib/db). Diese Route trifft jede unbekannte Adresse – deshalb dort nur der
+  // Platzhalter, die Seiten entstehen bei Bedarf. Bau (eigene Kopie je Prozess) und Betrieb (PostgreSQL) laden die Slugs.
+  if (process.env.NODE_ENV === 'development' && !process.env.DATABASE_URL) return [{ rest: ['_'] }];
   const sprache = (routing.locales as readonly string[]).includes(params.locale) ? (params.locale as Locale) : 'de';
   const slugs = await ladeSeitenSlugs(sprache);
   return [...slugs.map((slug) => ({ rest: [slug] })), { rest: ['_'] }];

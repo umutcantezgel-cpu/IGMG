@@ -37,7 +37,10 @@ export default async function SeiteBearbeiten({ params, searchParams }: PageProp
   const hinweis = HINWEISE.find((h) => h === sp.hinweis);
   return (
     <>
-      <NextLink href="/verwaltung/seiten" className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4">
+      <NextLink
+        href="/verwaltung/seiten"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+      >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>
@@ -67,7 +70,9 @@ export default async function SeiteBearbeiten({ params, searchParams }: PageProp
           </div>
         }
       />
-      {sp.angelegt ? <Meldung art={hinweis === 'religioesePruefung' ? 'info' : 'erfolg'}>{hinweis ? t(`hinweis.${hinweis}`) : t('angelegt')}</Meldung> : null}
+      {sp.angelegt ? (
+        <Meldung art={hinweis === 'religioesePruefung' ? 'info' : 'erfolg'}>{hinweis ? t(`hinweis.${hinweis}`) : t('angelegt')}</Meldung>
+      ) : null}
       {sp.wiederhergestellt ? <Meldung art="erfolg">{t('wiederhergestellt')}</Meldung> : null}
       {z.imPapierkorbSeit ? <Meldung art="info">{t('imPapierkorb')}</Meldung> : null}
       {stand?.status === 'zur_pruefung' ? <Meldung art="info">{t('offenerAntrag', { art: t(`pruefArt.${stand.art}`) })}</Meldung> : null}

@@ -45,7 +45,8 @@ export function pruefeMenue(schluessel: unknown, roh: unknown): MenuePruefung {
   } catch {
     daten = undefined;
   }
-  if (daten === undefined || (typeof roh === 'string' && roh.length > 200_000)) return { ok: false, feldFehler: { eintraege: 'ungueltig' } };
+  if (daten === undefined || (typeof roh === 'string' && roh.length > 200_000))
+    return { ok: false, feldFehler: { eintraege: 'ungueltig' } };
   if (schluessel === 'kopf') {
     const p = kopfMenue.safeParse(daten);
     return p.success ? { ok: true, schluessel, eintraege: p.data } : { ok: false, feldFehler: fehlerKarte(p.error.issues) };

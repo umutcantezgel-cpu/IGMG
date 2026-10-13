@@ -2,6 +2,7 @@ import { and, eq, gt, isNull } from 'drizzle-orm';
 import { Eye } from 'lucide-react';
 import type { Metadata } from 'next';
 import NextLink from 'next/link';
+import { connection } from 'next/server';
 import { getTranslations } from 'next-intl/server';
 import { FreieSeiteInhalt } from '@/components/website/bloecke/FreieSeiteInhalt';
 import { hashVonToken, TOKEN_MUSTER } from '@/lib/cms/vorschau';
@@ -26,6 +27,8 @@ export default async function SeitenVorschau({ params, searchParams }: PageProps
   const [{ token }, sp] = await Promise.all([params, searchParams]);
   const sprache = SPRACHEN.find((s) => s === sp.sprache) ?? 'de';
   const t = await getTranslations('verwaltung.seiten');
+  // Je Anfrage: Ablaufzeit gegen die aktuelle Uhrzeit prüfen
+  await connection();
   const jetzt = new Date();
   const [eintrag] = TOKEN_MUSTER.test(token)
     ? await db

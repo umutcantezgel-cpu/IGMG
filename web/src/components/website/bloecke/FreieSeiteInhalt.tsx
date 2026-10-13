@@ -21,7 +21,10 @@ export async function FreieSeiteInhalt({
   /** In einer Verwaltungsseite (Fassung ansehen): Titel als h2 statt eigenem Seitenkopf mit h1. */
   eingebettet?: boolean;
 }) {
-  const [t, tk] = await Promise.all([getTranslations({ locale: sprache, namespace: 'bloecke' }), getTranslations({ locale: sprache, namespace: 'karten' })]);
+  const [t, tk] = await Promise.all([
+    getTranslations({ locale: sprache, namespace: 'bloecke' }),
+    getTranslations({ locale: sprache, namespace: 'karten' }),
+  ]);
   const titel = textMitSprache(seite.titel, sprache);
   const beschreibung = textMitSprache(seite.beschreibung, sprache);
   const stand = sprache === 'de' ? 100 : uebersetzungsstand(seite.titel, seite.beschreibung, seite.bloecke)[sprache];

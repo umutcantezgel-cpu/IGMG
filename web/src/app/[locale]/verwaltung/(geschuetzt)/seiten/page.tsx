@@ -49,7 +49,9 @@ export default async function SeitenVerwalten({ searchParams }: PageProps<'/[loc
         {z.anzeige === 'zur_pruefung' && z.pruefArt ? t('statusPruefung', { art: t(`pruefArt.${z.pruefArt}`) }) : t(`status.${z.anzeige}`)}
       </span>
       {z.anzeige === 'geplant' && z.veroeffentlichenAm ? (
-        <span className="text-16 text-tinte-2">{t('geplantAb', { datum: datumLang(z.veroeffentlichenAm, 'de'), zeit: uhrzeit(z.veroeffentlichenAm, 'de') })}</span>
+        <span className="text-16 text-tinte-2">
+          {t('geplantAb', { datum: datumLang(z.veroeffentlichenAm, 'de'), zeit: uhrzeit(z.veroeffentlichenAm, 'de') })}
+        </span>
       ) : null}
     </span>
   );
@@ -156,7 +158,12 @@ export default async function SeitenVerwalten({ searchParams }: PageProps<'/[loc
 
   return (
     <>
-      <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.inhalte')} einleitung={t('einleitung')} aktion={darfAnlegen && !leer ? anlegen : null} />
+      <VerwaltungsKopf
+        titel={t('titel')}
+        kennung={tg('gruppe.inhalte')}
+        einleitung={t('einleitung')}
+        aktion={darfAnlegen && !leer ? anlegen : null}
+      />
       <Ansichten
         label={t('ansichten')}
         eintraege={[

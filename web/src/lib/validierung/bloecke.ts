@@ -51,11 +51,9 @@ export const mehr = (max: number) => z.object({ de: pflicht(max), tr: uebersetzu
 
 /** Mehrsprachiger freiwilliger Text: alles leer erlaubt; Übersetzungen nur mit deutscher Fassung. */
 export const mehrOptional = (max: number) =>
-  z
-    .object({ de: z.string().trim().max(max, 'zuLang').default(''), tr: uebersetzung(max), en: uebersetzung(max) })
-    .superRefine((w, ctx) => {
-      if ((w.tr || w.en) && !w.de) ctx.addIssue({ code: 'custom', path: ['de'], message: 'pflicht' });
-    });
+  z.object({ de: z.string().trim().max(max, 'zuLang').default(''), tr: uebersetzung(max), en: uebersetzung(max) }).superRefine((w, ctx) => {
+    if ((w.tr || w.en) && !w.de) ctx.addIssue({ code: 'custom', path: ['de'], message: 'pflicht' });
+  });
 
 /** Rich-Text-Dokument (Tiptap-JSON); leere Dokumente gelten als „kein Text“. */
 const dokument = richtextSchema.nullable().transform((d) => (d && !istLeer(d) ? d : null));
@@ -69,11 +67,9 @@ const medienId = (meldung: string) => z.uuid(meldung);
 export const textBlock = z.object({
   typ: z.literal('text'),
   id: blockId,
-  inhalt: z
-    .object({ de: dokument, tr: dokumentOptional, en: dokumentOptional })
-    .superRefine((w, ctx) => {
-      if (!w.de) ctx.addIssue({ code: 'custom', path: ['de'], message: 'pflicht' });
-    }),
+  inhalt: z.object({ de: dokument, tr: dokumentOptional, en: dokumentOptional }).superRefine((w, ctx) => {
+    if (!w.de) ctx.addIssue({ code: 'custom', path: ['de'], message: 'pflicht' });
+  }),
 });
 
 export const bildBlock = z.object({
@@ -127,7 +123,7 @@ export const termineBlock = z.object({
   titel: mehrOptional(160),
   anzahl: anzahl.default(3),
   /** Nur Veranstaltungen dieser Organisation; leer = alle. */
-  organisation: z.union([z.literal(''), z.enum(ORGANISATION_KUERZEL, 'ungueltig')]).default(''),
+  organisation: z.union([z.literal(''), z.enum(ORGANISATION_KUERZEL)], 'ungueltig').default(''),
 });
 
 export const nachrichtenBlock = z.object({
@@ -224,7 +220,15 @@ export function neuerBlock(typ: BlockTyp, id = neueBlockId()): Block {
     case 'trenner':
       return { typ, id };
     case 'spalten':
-      return { typ, id, titel: leer(), spalten: [{ titel: leer(), text: leer() }, { titel: leer(), text: leer() }] };
+      return {
+        typ,
+        id,
+        titel: leer(),
+        spalten: [
+          { titel: leer(), text: leer() },
+          { titel: leer(), text: leer() },
+        ],
+      };
     case 'termine':
       return { typ, id, titel: leer(), anzahl: 3, organisation: '' };
     case 'nachrichten':

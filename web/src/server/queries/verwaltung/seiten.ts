@@ -18,7 +18,12 @@ function imBereich(organisationen: readonly OrganisationKuerzel[] | null) {
   return organisationen.length ? inArray(s.organisation, [...organisationen]) : sql`false`;
 }
 
-export type FreigabeStand = { art: 'redaktion' | 'religioes'; status: 'entwurf' | 'zur_pruefung' | 'geprueft'; am: Date; kommentar: string | null };
+export type FreigabeStand = {
+  art: 'redaktion' | 'religioes';
+  status: 'entwurf' | 'zur_pruefung' | 'geprueft';
+  am: Date;
+  kommentar: string | null;
+};
 
 /** Letzter Eintrag im Freigabe-Verlauf je Inhalt (redaktionell oder religiös). */
 export async function ladeFreigabeStaende(inhaltTyp: string, ids?: readonly string[]): Promise<Map<string, FreigabeStand>> {

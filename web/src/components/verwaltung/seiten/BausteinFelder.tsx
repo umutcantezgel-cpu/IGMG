@@ -159,9 +159,7 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
           fehler={fehler(`inhalt.${sprache}`)}
           startwert={(doc as JSONContent | null) ?? null}
           bildAuswahl={bildAuswahl}
-          aendern={(neu) =>
-            aendern((x) => (x.typ === 'text' ? { ...x, inhalt: { ...x.inhalt, [sprache]: neu as never } } : x))
-          }
+          aendern={(neu) => aendern((x) => (x.typ === 'text' ? { ...x, inhalt: { ...x.inhalt, [sprache]: neu as never } } : x))}
         />
       );
     }
@@ -329,10 +327,16 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
                       />
                     ) : null}
                   </div>
-                  {mtext(`eintraege.${i}.frage`, e.frage, (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, frage: w } : x))), t('feld.frage'), {
-                    pflicht: true,
-                    max: 300,
-                  })}
+                  {mtext(
+                    `eintraege.${i}.frage`,
+                    e.frage,
+                    (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, frage: w } : x))),
+                    t('feld.frage'),
+                    {
+                      pflicht: true,
+                      max: 300,
+                    },
+                  )}
                   {mtext(
                     `eintraege.${i}.antwort`,
                     e.antwort,
@@ -374,7 +378,9 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
               fehler={fehler('spalten')}
               wert={String(block.spalten.length)}
               aendern={(v) =>
-                setze((l) => (v === '3' ? [...l.slice(0, 3), ...(l.length < 3 ? [{ titel: { de: '' }, text: { de: '' } }] : [])] : l.slice(0, 2)))
+                setze((l) =>
+                  v === '3' ? [...l.slice(0, 3), ...(l.length < 3 ? [{ titel: { de: '' }, text: { de: '' } }] : [])] : l.slice(0, 2),
+                )
               }
               optionen={[
                 { wert: '2', label: t('feld.zweiSpalten') },
@@ -386,16 +392,28 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
             {block.spalten.map((s, i) => (
               <fieldset key={i} className="flex min-w-0 flex-col gap-3 rounded-md border border-linie bg-papier p-4">
                 <legend className="font-bold">{t('spalteNr', { nr: i + 1 })}</legend>
-                {mtext(`spalten.${i}.titel`, s.titel, (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, titel: w } : x))), t('feld.titelOptional'), {
-                  max: 120,
-                })}
-                {mtext(`spalten.${i}.text`, s.text, (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, text: w } : x))), t('feld.text'), {
-                  pflicht: true,
-                  bereich: true,
-                  zeilen: 6,
-                  max: 3000,
-                  hinweis: t('feld.absatzHinweis'),
-                })}
+                {mtext(
+                  `spalten.${i}.titel`,
+                  s.titel,
+                  (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, titel: w } : x))),
+                  t('feld.titelOptional'),
+                  {
+                    max: 120,
+                  },
+                )}
+                {mtext(
+                  `spalten.${i}.text`,
+                  s.text,
+                  (w) => setze((l) => l.map((x, k) => (k === i ? { ...x, text: w } : x))),
+                  t('feld.text'),
+                  {
+                    pflicht: true,
+                    bereich: true,
+                    zeilen: 6,
+                    max: 3000,
+                    hinweis: t('feld.absatzHinweis'),
+                  },
+                )}
               </fieldset>
             ))}
           </div>
@@ -426,7 +444,12 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
                   wert={block.organisation}
                   aendern={(v) =>
                     aendern((x) =>
-                      x.typ === 'termine' ? { ...x, organisation: (ORGANISATION_KUERZEL as readonly string[]).includes(v) ? (v as typeof x.organisation) : '' } : x,
+                      x.typ === 'termine'
+                        ? {
+                            ...x,
+                            organisation: (ORGANISATION_KUERZEL as readonly string[]).includes(v) ? (v as typeof x.organisation) : '',
+                          }
+                        : x,
                     )
                   }
                   optionen={[{ wert: '', label: t('feld.alleOrganisationen') }, ...optionen.organisationen.filter((o) => o.wert)]}
@@ -465,7 +488,10 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
               </p>
             )
           ) : null}
-          {mtext('titel', block.titel, (w) => aendern((x) => ({ ...x, titel: w }) as Block), t('feld.linktext'), { pflicht: true, max: 160 })}
+          {mtext('titel', block.titel, (w) => aendern((x) => ({ ...x, titel: w }) as Block), t('feld.linktext'), {
+            pflicht: true,
+            max: 160,
+          })}
           {mtext('beschreibung', block.beschreibung, (w) => aendern((x) => ({ ...x, beschreibung: w }) as Block), t('feld.beschreibung'), {
             max: 400,
           })}
@@ -485,7 +511,10 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
               pflicht={pflicht}
               wert={String(block.sure)}
               aendern={(v) => aendern((x) => (x.typ === 'vers' ? { ...x, sure: Number(v), von: 1, bis: 1 } : x))}
-              optionen={optionen.suren.map((s) => ({ wert: String(s.nr), label: t('sureOption', { nr: s.nr, name: s.name, anzahl: s.verseAnzahl }) }))}
+              optionen={optionen.suren.map((s) => ({
+                wert: String(s.nr),
+                label: t('sureOption', { nr: s.nr, name: s.name, anzahl: s.verseAnzahl }),
+              }))}
             />
           ) : (
             <ZahlFeld
@@ -627,7 +656,14 @@ function Vorschaubild({
         {bild ? (
           // Verwaltung: einfache Vorschau ohne Bildoptimierung (wie BildFeld)
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={bild.url} alt={bild.alt} width={bild.breite} height={bild.hoehe} loading="lazy" className="max-h-full max-w-full object-contain" />
+          <img
+            src={bild.url}
+            alt={bild.alt}
+            width={bild.breite}
+            height={bild.hoehe}
+            loading="lazy"
+            className="max-h-full max-w-full object-contain"
+          />
         ) : (
           <p className="text-center text-16 text-tinte-2">{unbekannt ? t('unbekannt') : t('keinBild')}</p>
         )}

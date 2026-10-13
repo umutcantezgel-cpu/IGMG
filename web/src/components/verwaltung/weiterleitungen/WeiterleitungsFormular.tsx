@@ -46,25 +46,45 @@ export function WeiterleitungsFormular({
       <input type="hidden" name="id" value={w.id} />
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
         <div className="min-w-0 flex-1">
-        <Rahmen
-          id={`${basis}-von`}
-          label={t('von')}
-          hinweis={t('vonHinweis')}
-          fehler={f('von')}
-          pflicht={tv('pflichtfeld')}
-          kinder={(aria) => <input {...aria} name="von" type="text" defaultValue={w.von} maxLength={300} placeholder="/alte-seite" className={eingabe} />}
-        />
+          <Rahmen
+            id={`${basis}-von`}
+            label={t('von')}
+            hinweis={t('vonHinweis')}
+            fehler={f('von')}
+            pflicht={tv('pflichtfeld')}
+            kinder={(aria) => (
+              <input
+                {...aria}
+                name="von"
+                type="text"
+                defaultValue={w.von}
+                maxLength={300}
+                placeholder={t('vonPlatzhalter')}
+                className={eingabe}
+              />
+            )}
+          />
         </div>
         <ArrowRight aria-hidden className="mt-11 hidden size-6 shrink-0 text-gruen-700 lg:block" />
         <div className="min-w-0 flex-1">
-        <Rahmen
-          id={`${basis}-nach`}
-          label={t('nach')}
-          hinweis={t('nachHinweis')}
-          fehler={f('nach')}
-          pflicht={tv('pflichtfeld')}
-          kinder={(aria) => <input {...aria} name="nach" type="text" defaultValue={w.nach} maxLength={300} placeholder="/unsere-moschee" className={eingabe} />}
-        />
+          <Rahmen
+            id={`${basis}-nach`}
+            label={t('nach')}
+            hinweis={t('nachHinweis')}
+            fehler={f('nach')}
+            pflicht={tv('pflichtfeld')}
+            kinder={(aria) => (
+              <input
+                {...aria}
+                name="nach"
+                type="text"
+                defaultValue={w.nach}
+                maxLength={300}
+                placeholder={t('nachPlatzhalter')}
+                className={eingabe}
+              />
+            )}
+          />
         </div>
       </div>
       <div className="max-w-md">

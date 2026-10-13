@@ -55,7 +55,10 @@ function Abschnitt({ nr, titel, hinweis, kinder }: { nr: number; titel: string; 
     <section aria-labelledby={`abschnitt-${nr}`} className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6">
       <div className="flex flex-col gap-1">
         <h2 id={`abschnitt-${nr}`} className="flex items-center gap-3 font-display text-24 font-semibold">
-          <span aria-hidden className="flex size-9 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-text text-18 font-bold text-weiss">
+          <span
+            aria-hidden
+            className="flex size-9 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-text text-18 font-bold text-weiss"
+          >
             {nr}
           </span>
           {titel}
@@ -135,7 +138,11 @@ export function SeitenFormular({
   const religioes = religioeseVerweise(bloecke).length > 0;
   const slugVorschlag = w.slugDe || slugAusTitel(w.titelDe || '');
 
-  const textFeld = (feld: keyof SeitenWerte, label: string, opt: { hinweis?: string; pflicht?: boolean; max?: number; lang?: string; platzhalter?: string } = {}) => (
+  const textFeld = (
+    feld: keyof SeitenWerte,
+    label: string,
+    opt: { hinweis?: string; pflicht?: boolean; max?: number; lang?: string; platzhalter?: string } = {},
+  ) => (
     <Rahmen
       id={id(feld)}
       label={label}
@@ -192,7 +199,9 @@ export function SeitenFormular({
     }
     const sprache = /(Tr|En)$/.exec(k)?.[1];
     const feld = k.replace(/(De|Tr|En)$/, '');
-    const name = ['titel', 'beschreibung', 'slug', 'organisation', 'status', 'veroeffentlichenAm'].includes(feld) ? tf(`feldname.${feld}`) : tf('feldname.bloecke');
+    const name = ['titel', 'beschreibung', 'slug', 'organisation', 'status', 'veroeffentlichenAm'].includes(feld)
+      ? tf(`feldname.${feld}`)
+      : tf('feldname.bloecke');
     return sprache ? `${name} (${tf(`sprache.${sprache.toLowerCase()}`)})` : name;
   };
   const fehlerListe = Object.keys(fehler ?? {});
@@ -247,9 +256,16 @@ export function SeitenFormular({
           kinder={
             <div className="grid gap-4 md:grid-cols-2">
               <div className="md:col-span-2">
-                {textFeld('titelDe', tf('titel'), { pflicht: true, max: 160, hinweis: tf('titelHinweis'), platzhalter: tf('titelPlatzhalter') })}
+                {textFeld('titelDe', tf('titel'), {
+                  pflicht: true,
+                  max: 160,
+                  hinweis: tf('titelHinweis'),
+                  platzhalter: tf('titelPlatzhalter'),
+                })}
               </div>
-              <div className="md:col-span-2">{bereichFeld('beschreibungDe', tf('beschreibung'), { hinweis: tf('beschreibungHinweis') })}</div>
+              <div className="md:col-span-2">
+                {bereichFeld('beschreibungDe', tf('beschreibung'), { hinweis: tf('beschreibungHinweis') })}
+              </div>
               <Rahmen
                 id={id('organisation')}
                 label={tf('organisation')}
@@ -279,9 +295,13 @@ export function SeitenFormular({
                         max: 160,
                         lang: s.toLowerCase(),
                       })}
-                      {bereichFeld(`beschreibung${s}`, tf('feldSprache', { feld: tf('beschreibung'), sprache: tf(`sprache.${s.toLowerCase()}`) }), {
-                        lang: s.toLowerCase(),
-                      })}
+                      {bereichFeld(
+                        `beschreibung${s}`,
+                        tf('feldSprache', { feld: tf('beschreibung'), sprache: tf(`sprache.${s.toLowerCase()}`) }),
+                        {
+                          lang: s.toLowerCase(),
+                        },
+                      )}
                     </fieldset>
                   ))}
                 </div>
@@ -347,21 +367,29 @@ export function SeitenFormular({
           titel={tf('abschnittVeroeffentlichung')}
           kinder={
             <div className="flex flex-col gap-4">
-              <fieldset id={id('status')} tabIndex={-1} className="flex flex-col gap-2 outline-none" aria-describedby={f('status') ? `${id('status')}-fehler` : undefined}>
+              <fieldset
+                id={id('status')}
+                tabIndex={-1}
+                className="flex flex-col gap-2 outline-none"
+                aria-describedby={f('status') ? `${id('status')}-fehler` : undefined}
+              >
                 <legend className="mb-2 font-bold">{tf('status')}</legend>
                 <div className="grid gap-3 md:grid-cols-3">
                   {statusOptionen.map((o) => {
                     const gewaehlt = w.status === o.wert;
+                    const Icon = o.icon;
                     return (
                       <label
                         key={o.wert}
+                        htmlFor={`${id('status')}-${o.wert}`}
                         className={cn(
                           'flex min-h-12 cursor-pointer items-start gap-3 rounded-md border p-4 transition-colors duration-(--dauer-rueckmeldung)',
-                          gewaehlt ? 'border-2 border-gruen-700 bg-gruen-50' : 'border-rand bg-weiss hover:bg-gruen-50',
+                          gewaehlt ? 'border-gruen-700 bg-gruen-50 ring-1 ring-gruen-700' : 'border-rand bg-weiss hover:bg-gruen-50',
                           o.aus && 'cursor-not-allowed opacity-70 hover:bg-weiss',
                         )}
                       >
                         <input
+                          id={`${id('status')}-${o.wert}`}
                           type="radio"
                           name="statusWahl"
                           value={o.wert}
@@ -370,11 +398,9 @@ export function SeitenFormular({
                           onChange={() => setze('status')(o.wert)}
                           className="mt-1 size-5 shrink-0 accent-gruen-700"
                         />
+                        <Icon aria-hidden className="mt-0.5 size-5 shrink-0 text-gruen-700" />
                         <span className="flex flex-col gap-1">
-                          <span className="flex items-center gap-2 font-bold">
-                            <o.icon aria-hidden className="size-5 text-gruen-700" />
-                            {o.titel}
-                          </span>
+                          <strong>{o.titel}</strong>
                           <span className="text-16 text-tinte-2">{o.hinweis}</span>
                         </span>
                       </label>
@@ -424,7 +450,7 @@ export function SeitenFormular({
 
       {!nurLesen ? <MedienWahlDialog ref={medienWahl} bilder={optionen.bilder} /> : null}
       {!nurLesen ? (
-        <div className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier/95 px-4 py-3 md:mx-0 md:rounded-lg md:border">
+        <div className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border">
           <Button type="submit" size="lg" disabled={laeuft}>
             <Save aria-hidden />
             {laeuft ? tf('speichert') : modus === 'neu' ? tf('erstellen') : tf('speichern')}

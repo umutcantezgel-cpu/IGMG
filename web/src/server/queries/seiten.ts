@@ -35,7 +35,11 @@ export type SeiteOeffentlich = {
 };
 
 function sichtbar(jetzt: Date) {
-  return and(eq(s.status, 'veroeffentlicht'), isNull(s.imPapierkorbSeit), or(isNull(s.veroeffentlichenAm), lte(s.veroeffentlichenAm, jetzt)));
+  return and(
+    eq(s.status, 'veroeffentlicht'),
+    isNull(s.imPapierkorbSeit),
+    or(isNull(s.veroeffentlichenAm), lte(s.veroeffentlichenAm, jetzt)),
+  );
 }
 
 /**
@@ -102,9 +106,12 @@ export async function ladeSeite(sprache: Locale, slug: string): Promise<SeitenTr
   const jetzt = new Date();
   await zeitplanLebensdauer(jetzt);
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) return null;
-  const bedingung =
-    sprache === 'de' ? eq(s.slugDe, slug) : or(eq(sprache === 'tr' ? s.slugTr : s.slugEn, slug), eq(s.slugDe, slug));
-  const zeilen = await db.select().from(s).where(and(sichtbar(jetzt), bedingung)).limit(5);
+  const bedingung = sprache === 'de' ? eq(s.slugDe, slug) : or(eq(sprache === 'tr' ? s.slugTr : s.slugEn, slug), eq(s.slugDe, slug));
+  const zeilen = await db
+    .select()
+    .from(s)
+    .where(and(sichtbar(jetzt), bedingung))
+    .limit(5);
   const eigen = sprache === 'de' ? undefined : zeilen.find((z) => (sprache === 'tr' ? z.slugTr : z.slugEn) === slug);
   const z = eigen ?? zeilen.find((x) => x.slugDe === slug);
   if (!z) return null;

@@ -15,7 +15,13 @@ export function TextBlockAnsicht({ b, sprache, bilder }: { b: BlockVon<'text'>; 
   if (!doc) return null;
   return (
     <BlockRahmen>
-      <RichText doc={doc} lang={!eigen && sprache !== 'de' ? 'de' : undefined} className="text-18 text-pretty" bilder={bilder} sprache={sprache} />
+      <RichText
+        doc={doc}
+        lang={!eigen && sprache !== 'de' ? 'de' : undefined}
+        className="text-18 text-pretty"
+        bilder={bilder}
+        sprache={sprache}
+      />
     </BlockRahmen>
   );
 }

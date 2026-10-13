@@ -14,11 +14,18 @@ export default async function NeueSeite() {
   const a = await verlangeSeitenRecht('seite.lesen');
   const filter = organisationsFilter(a.rollen, 'seite.bearbeiten');
   if (filter !== null && filter.length === 0) redirect('/verwaltung/kein-zugriff');
-  const [t, tg, optionen] = await Promise.all([getTranslations('verwaltung.seiten'), getTranslations('verwaltung.shell'), editorOptionen(a, undefined)]);
+  const [t, tg, optionen] = await Promise.all([
+    getTranslations('verwaltung.seiten'),
+    getTranslations('verwaltung.shell'),
+    editorOptionen(a, undefined),
+  ]);
   const startwerte = { ...NEUE_SEITE, organisation: optionen.organisationen[0]?.wert ?? '' };
   return (
     <>
-      <NextLink href="/verwaltung/seiten" className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4">
+      <NextLink
+        href="/verwaltung/seiten"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+      >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>

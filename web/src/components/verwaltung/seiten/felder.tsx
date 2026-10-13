@@ -149,7 +149,19 @@ export function ZahlFeld({
   );
 }
 
-export function SchalterFeld({ id, label, wert, aendern, hinweis }: { id: string; label: ReactNode; wert: boolean; aendern: (v: boolean) => void; hinweis?: ReactNode }) {
+export function SchalterFeld({
+  id,
+  label,
+  wert,
+  aendern,
+  hinweis,
+}: {
+  id: string;
+  label: ReactNode;
+  wert: boolean;
+  aendern: (v: boolean) => void;
+  hinweis?: ReactNode;
+}) {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="flex min-h-12 cursor-pointer items-center gap-3 font-bold">

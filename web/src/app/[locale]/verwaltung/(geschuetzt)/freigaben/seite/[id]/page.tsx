@@ -35,7 +35,10 @@ export default async function SeitePruefen({ params }: PageProps<'/[locale]/verw
     : false;
   return (
     <>
-      <NextLink href="/verwaltung/freigaben" className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4">
+      <NextLink
+        href="/verwaltung/freigaben"
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+      >
         <ArrowLeft aria-hidden className="size-5" />
         {t('zurueck')}
       </NextLink>

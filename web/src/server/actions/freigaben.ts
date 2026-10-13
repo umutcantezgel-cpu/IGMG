@@ -1,6 +1,7 @@
 'use server';
 
 import { and, desc, eq, isNull } from 'drizzle-orm';
+import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
@@ -16,7 +17,12 @@ import { FREIGABE_TYPEN, type ReligioeserTyp } from '@/server/queries/verwaltung
  * „bitte prüfen und veröffentlichen“); „Zurückweisen“ braucht einen Kommentar und lässt den Inhalt im Entwurf.
  * Jeder Schritt steht im Verlauf (`freigabe`) und im Audit (ohne Inhalte).
  */
-export type FreigabeZustand = { fehler?: string; feldFehler?: Record<string, string>; erledigt?: number; entscheidung?: 'freigeben' | 'zurueckweisen' };
+export type FreigabeZustand = {
+  fehler?: string;
+  feldFehler?: Record<string, string>;
+  erledigt?: number;
+  entscheidung?: 'freigeben' | 'zurueckweisen';
+};
 
 const eingabe = z
   .object({
@@ -26,7 +32,8 @@ const eingabe = z
     kommentar: z.string().trim().max(1000, 'zuLang').default(''),
   })
   .superRefine((e, ctx) => {
-    if (e.entscheidung === 'zurueckweisen' && !e.kommentar) ctx.addIssue({ code: 'custom', path: ['kommentar'], message: 'kommentarPflicht' });
+    if (e.entscheidung === 'zurueckweisen' && !e.kommentar)
+      ctx.addIssue({ code: 'custom', path: ['kommentar'], message: 'kommentarPflicht' });
   });
 
 const CACHE: Record<ReligioeserTyp, string> = {
@@ -57,7 +64,15 @@ async function setzeReligioesenStatus(
     case 'quran_wortbedeutung': {
       if (!uuid) return false;
       const t = schema.quranWortbedeutung;
-      return (await tx.update(t).set(werte).where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung'))).returning({ id: t.id })).length > 0;
+      return (
+        (
+          await tx
+            .update(t)
+            .set(werte)
+            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
+            .returning({ id: t.id })
+        ).length > 0
+      );
     }
     case 'quran_wortbedeutung_ort': {
       const [sure, vers, pos, sprache] = teile;
@@ -69,14 +84,30 @@ async function setzeReligioesenStatus(
           await tx
             .update(t)
             .set(werte)
-            .where(and(eq(t.sure, zahlen[0]), eq(t.vers, zahlen[1]), eq(t.pos, zahlen[2]), eq(t.sprache, sprache), eq(t.freigabe, 'zur_pruefung')))
+            .where(
+              and(
+                eq(t.sure, zahlen[0]),
+                eq(t.vers, zahlen[1]),
+                eq(t.pos, zahlen[2]),
+                eq(t.sprache, sprache),
+                eq(t.freigabe, 'zur_pruefung'),
+              ),
+            )
             .returning({ s: t.sure })
         ).length > 0
       );
     }
     case 'tajwid_regel': {
       const t = schema.tajwidRegel;
-      return (await tx.update(t).set(werte).where(and(eq(t.schluessel, id), eq(t.freigabe, 'zur_pruefung'))).returning({ s: t.schluessel })).length > 0;
+      return (
+        (
+          await tx
+            .update(t)
+            .set(werte)
+            .where(and(eq(t.schluessel, id), eq(t.freigabe, 'zur_pruefung')))
+            .returning({ s: t.schluessel })
+        ).length > 0
+      );
     }
     case 'hadith_uebersetzung': {
       const [sammlung, nummer, sprache] = teile;
@@ -95,12 +126,28 @@ async function setzeReligioesenStatus(
     case 'elifbe_lektion': {
       if (!uuid) return false;
       const t = schema.elifbeLektion;
-      return (await tx.update(t).set(werte).where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung'))).returning({ id: t.id })).length > 0;
+      return (
+        (
+          await tx
+            .update(t)
+            .set(werte)
+            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
+            .returning({ id: t.id })
+        ).length > 0
+      );
     }
     case 'besonderer_tag': {
       if (!uuid) return false;
       const t = schema.besondererTag;
-      return (await tx.update(t).set(werte).where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung'))).returning({ id: t.id })).length > 0;
+      return (
+        (
+          await tx
+            .update(t)
+            .set(werte)
+            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
+            .returning({ id: t.id })
+        ).length > 0
+      );
     }
   }
 }
@@ -131,7 +178,11 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
     const f = schema.freigabe;
     const s = schema.seite;
     if (!z.uuid().safeParse(e.inhaltId).success) return { fehler: 'nichtMehrOffen' };
-    const [seite] = await db.select({ id: s.id, organisation: s.organisation, status: s.status }).from(s).where(and(eq(s.id, e.inhaltId), isNull(s.imPapierkorbSeit))).limit(1);
+    const [seite] = await db
+      .select({ id: s.id, organisation: s.organisation, status: s.status })
+      .from(s)
+      .where(and(eq(s.id, e.inhaltId), isNull(s.imPapierkorbSeit)))
+      .limit(1);
     const [letzter] = await db
       .select({ art: f.art, status: f.status })
       .from(f)
@@ -140,23 +191,41 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
       .limit(1);
     if (!seite || letzter?.status !== 'zur_pruefung') return { fehler: 'nichtMehrOffen' };
     const recht =
-      letzter.art === 'religioes' ? darf(a.rollen, 'religioes.freigeben') : darf(a.rollen, 'seite.veroeffentlichen', { organisation: seite.organisation });
+      letzter.art === 'religioes'
+        ? darf(a.rollen, 'religioes.freigeben')
+        : darf(a.rollen, 'seite.veroeffentlichen', { organisation: seite.organisation });
     if (!recht) return { fehler: letzter.art === 'religioes' ? 'nurReligioesePruefung' : 'keinRecht' };
     await db.transaction(async (tx) => {
-      await tx.insert(f).values({ inhaltTyp: 'seite', inhaltId: seite.id, art: letzter.art, status: freigeben ? 'geprueft' : 'entwurf', von: a.benutzerId, kommentar });
+      await tx.insert(f).values({
+        inhaltTyp: 'seite',
+        inhaltId: seite.id,
+        art: letzter.art,
+        status: freigeben ? 'geprueft' : 'entwurf',
+        von: a.benutzerId,
+        kommentar,
+      });
       if (freigeben) {
         await tx.update(s).set({ status: 'veroeffentlicht', aktualisiertVon: a.benutzerId }).where(eq(s.id, seite.id));
-        await protokolliere({ benutzerId: a.benutzerId, aktion: 'freigabe.erteilt', zielTyp: 'seite', zielId: seite.id, details: { art: letzter.art } }, tx);
+        await protokolliere(
+          { benutzerId: a.benutzerId, aktion: 'freigabe.erteilt', zielTyp: 'seite', zielId: seite.id, details: { art: letzter.art } },
+          tx,
+        );
         if (seite.status !== 'veroeffentlicht')
           await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.veroeffentlicht', zielTyp: 'seite', zielId: seite.id }, tx);
       } else
         await protokolliere(
-          { benutzerId: a.benutzerId, aktion: 'freigabe.zurueckgewiesen', zielTyp: 'seite', zielId: seite.id, details: { art: letzter.art } },
+          {
+            benutzerId: a.benutzerId,
+            aktion: 'freigabe.zurueckgewiesen',
+            zielTyp: 'seite',
+            zielId: seite.id,
+            details: { art: letzter.art },
+          },
           tx,
         );
     });
     inhaltGeaendert(TAG.seiten, TAG.seite(seite.id));
-    return { erledigt: Date.now(), entscheidung: e.entscheidung };
+    redirect(`/verwaltung/freigaben?erledigt=${e.entscheidung}`);
   }
 
   // Religiöse Inhalte mit eigener Freigabespalte
@@ -165,16 +234,28 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
   const gefunden = await db.transaction(async (tx) => {
     const ok = await setzeReligioesenStatus(tx, typ, e.inhaltId, freigeben ? 'geprueft' : 'entwurf', a.benutzerId);
     if (!ok) return false;
-    await tx
-      .insert(schema.freigabe)
-      .values({ inhaltTyp: typ, inhaltId: e.inhaltId, art: 'religioes', status: freigeben ? 'geprueft' : 'entwurf', von: a.benutzerId, kommentar });
+    await tx.insert(schema.freigabe).values({
+      inhaltTyp: typ,
+      inhaltId: e.inhaltId,
+      art: 'religioes',
+      status: freigeben ? 'geprueft' : 'entwurf',
+      von: a.benutzerId,
+      kommentar,
+    });
     await protokolliere(
-      { benutzerId: a.benutzerId, aktion: freigeben ? 'freigabe.erteilt' : 'freigabe.zurueckgewiesen', zielTyp: typ, zielId: e.inhaltId, details: { art: 'religioes' } },
+      {
+        benutzerId: a.benutzerId,
+        aktion: freigeben ? 'freigabe.erteilt' : 'freigabe.zurueckgewiesen',
+        zielTyp: typ,
+        zielId: e.inhaltId,
+        details: { art: 'religioes' },
+      },
       tx,
     );
     return true;
   });
   if (!gefunden) return { fehler: 'nichtMehrOffen' };
   inhaltGeaendert(CACHE[typ]);
-  return { erledigt: Date.now(), entscheidung: e.entscheidung };
+  // Zurück zur Warteschlange mit Rückmeldung (der Inhalt steht dort nicht mehr)
+  redirect(`/verwaltung/freigaben?erledigt=${e.entscheidung}`);
 }

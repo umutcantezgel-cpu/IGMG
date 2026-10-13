@@ -42,7 +42,7 @@ export const seitenFelder = z
     slugDe: slugFeld,
     slugTr: slugFeld,
     slugEn: slugFeld,
-    organisation: z.union([z.literal(''), z.enum(ORGANISATION_KUERZEL, 'ungueltig')]).default(''),
+    organisation: z.union([z.literal(''), z.enum(ORGANISATION_KUERZEL)], 'ungueltig').default(''),
     status: z.enum(SEITEN_STATUS, 'ungueltig').default('entwurf'),
     /** Wanduhrzeit Europe/Berlin „JJJJ-MM-TTTHH:MM“; leer = sofort beim Veröffentlichen. */
     veroeffentlichenAm: text(16),

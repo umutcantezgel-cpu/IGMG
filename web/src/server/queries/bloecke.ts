@@ -98,7 +98,8 @@ export async function ladeHadith(sammlung: string, nummer: string): Promise<Hadi
     .where(and(eq(u.sammlungId, sammlung), eq(u.nummer, nummer), eq(u.freigabe, 'geprueft')));
   const uebersetzungen: HadithDaten['uebersetzungen'] = {};
   for (const t of texte)
-    if (t.sprache === 'de' || t.sprache === 'tr' || t.sprache === 'en') uebersetzungen[t.sprache] = { text: t.text, uebersetzer: t.uebersetzer };
+    if (t.sprache === 'de' || t.sprache === 'tr' || t.sprache === 'en')
+      uebersetzungen[t.sprache] = { text: t.text, uebersetzer: t.uebersetzer };
   return {
     sammlung,
     sammlungName: s.name,

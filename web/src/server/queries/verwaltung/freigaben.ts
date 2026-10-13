@@ -44,7 +44,10 @@ const GRENZE = 200;
 async function namen(ids: readonly (string | null | undefined)[]): Promise<Map<string, string>> {
   const eindeutig = [...new Set(ids.filter((id): id is string => Boolean(id)))];
   if (!eindeutig.length) return new Map();
-  const zeilen = await db.select({ id: schema.user.id, name: schema.user.name }).from(schema.user).where(inArray(schema.user.id, eindeutig));
+  const zeilen = await db
+    .select({ id: schema.user.id, name: schema.user.name })
+    .from(schema.user)
+    .where(inArray(schema.user.id, eindeutig));
   return new Map(zeilen.map((z) => [z.id, z.name]));
 }
 
@@ -108,7 +111,15 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
   const bt = schema.besondererTag;
   const [bedeutungen, orte, regeln, hadithe, lektionen, tage] = await Promise.all([
     db
-      .select({ id: wb.id, sprache: wb.sprache, bedeutung: wb.bedeutung, wurzel: wb.wurzel, anmerkung: wb.anmerkung, von: wb.verfasstVon, wort: schema.quranWortform.textAr })
+      .select({
+        id: wb.id,
+        sprache: wb.sprache,
+        bedeutung: wb.bedeutung,
+        wurzel: wb.wurzel,
+        anmerkung: wb.anmerkung,
+        von: wb.verfasstVon,
+        wort: schema.quranWortform.textAr,
+      })
       .from(wb)
       .innerJoin(schema.quranWortform, eq(schema.quranWortform.id, wb.formId))
       .where(eq(wb.freigabe, offen))
@@ -130,87 +141,75 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
   const name = (id: string | null) => (id ? (wer.get(id) ?? null) : null);
   const basis = { art: 'religioes' as const, eingereichtAm: null, organisation: null, text: null };
   return [
-    ...bedeutungen.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'quran_wortbedeutung',
-        inhaltId: z.id,
-        titel: z.wort,
-        angaben: [
-          { label: 'wort', wert: z.wort, lang: 'ar', dir: 'rtl' },
-          { label: 'sprache', wert: z.sprache },
-          { label: 'bedeutung', wert: z.bedeutung, lang: z.sprache },
-          ...(z.wurzel ? [{ label: 'wurzel', wert: z.wurzel, lang: 'ar', dir: 'rtl' as const }] : []),
-          ...(z.anmerkung ? [{ label: 'anmerkung', wert: z.anmerkung }] : []),
-        ],
-        eingereichtVon: name(z.von),
-      }),
-    ),
-    ...orte.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'quran_wortbedeutung_ort',
-        inhaltId: `${z.sure}|${z.vers}|${z.pos}|${z.sprache}`,
-        titel: `${z.sure}:${z.vers} · ${z.pos}`,
-        angaben: [
-          { label: 'stelle', wert: `${z.sure}:${z.vers} · ${z.pos}` },
-          { label: 'sprache', wert: z.sprache },
-          { label: 'bedeutung', wert: z.bedeutung, lang: z.sprache },
-        ],
-        eingereichtVon: name(z.verfasstVon),
-      }),
-    ),
-    ...regeln.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'tajwid_regel',
-        inhaltId: z.schluessel,
-        titel: z.name.de,
-        angaben: [{ label: 'schluessel', wert: z.schluessel }, ...(z.kurz?.de ? [{ label: 'kurz', wert: z.kurz.de }] : [])],
-        text: z.erklaerung?.de ?? null,
-        eingereichtVon: name(z.verfasstVon),
-      }),
-    ),
-    ...hadithe.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'hadith_uebersetzung',
-        inhaltId: `${z.sammlungId}|${z.nummer}|${z.sprache}`,
-        titel: `${z.sammlungId} ${z.nummer}`,
-        angaben: [
-          { label: 'sprache', wert: z.sprache },
-          { label: 'uebersetzung', wert: z.text, lang: z.sprache },
-          { label: 'uebersetzer', wert: z.uebersetzer },
-          { label: 'quelle', wert: `${z.quelle} · ${z.lizenz}` },
-        ],
-        eingereichtVon: name(z.verfasstVon),
-      }),
-    ),
-    ...lektionen.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'elifbe_lektion',
-        inhaltId: z.id,
-        titel: `${z.nr} · ${z.titel.de}`,
-        angaben: z.ziel?.de ? [{ label: 'ziel', wert: z.ziel.de }] : [],
-        text: z.inhalt?.de ?? null,
-        eingereichtVon: name(z.verfasstVon),
-      }),
-    ),
-    ...tage.map(
-      (z): FreigabeEintrag => ({
-        ...basis,
-        inhaltTyp: 'besonderer_tag',
-        inhaltId: z.id,
-        titel: z.titel.de,
-        angaben: [
-          { label: 'datum', wert: z.datum },
-          { label: 'tagArt', wert: z.art },
-        ],
-        text: z.beschreibung?.de ?? null,
-        eingereichtVon: name(z.verfasstVon),
-      }),
-    ),
+    ...bedeutungen.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'quran_wortbedeutung',
+      inhaltId: z.id,
+      titel: z.wort,
+      angaben: [
+        { label: 'wort', wert: z.wort, lang: 'ar', dir: 'rtl' },
+        { label: 'sprache', wert: z.sprache },
+        { label: 'bedeutung', wert: z.bedeutung, lang: z.sprache },
+        ...(z.wurzel ? [{ label: 'wurzel', wert: z.wurzel, lang: 'ar', dir: 'rtl' as const }] : []),
+        ...(z.anmerkung ? [{ label: 'anmerkung', wert: z.anmerkung }] : []),
+      ],
+      eingereichtVon: name(z.von),
+    })),
+    ...orte.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'quran_wortbedeutung_ort',
+      inhaltId: `${z.sure}|${z.vers}|${z.pos}|${z.sprache}`,
+      titel: `${z.sure}:${z.vers} · ${z.pos}`,
+      angaben: [
+        { label: 'stelle', wert: `${z.sure}:${z.vers} · ${z.pos}` },
+        { label: 'sprache', wert: z.sprache },
+        { label: 'bedeutung', wert: z.bedeutung, lang: z.sprache },
+      ],
+      eingereichtVon: name(z.verfasstVon),
+    })),
+    ...regeln.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'tajwid_regel',
+      inhaltId: z.schluessel,
+      titel: z.name.de,
+      angaben: [{ label: 'schluessel', wert: z.schluessel }, ...(z.kurz?.de ? [{ label: 'kurz', wert: z.kurz.de }] : [])],
+      text: z.erklaerung?.de ?? null,
+      eingereichtVon: name(z.verfasstVon),
+    })),
+    ...hadithe.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'hadith_uebersetzung',
+      inhaltId: `${z.sammlungId}|${z.nummer}|${z.sprache}`,
+      titel: `${z.sammlungId} ${z.nummer}`,
+      angaben: [
+        { label: 'sprache', wert: z.sprache },
+        { label: 'uebersetzung', wert: z.text, lang: z.sprache },
+        { label: 'uebersetzer', wert: z.uebersetzer },
+        { label: 'quelle', wert: `${z.quelle} · ${z.lizenz}` },
+      ],
+      eingereichtVon: name(z.verfasstVon),
+    })),
+    ...lektionen.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'elifbe_lektion',
+      inhaltId: z.id,
+      titel: `${z.nr} · ${z.titel.de}`,
+      angaben: z.ziel?.de ? [{ label: 'ziel', wert: z.ziel.de }] : [],
+      text: z.inhalt?.de ?? null,
+      eingereichtVon: name(z.verfasstVon),
+    })),
+    ...tage.map((z): FreigabeEintrag => ({
+      ...basis,
+      inhaltTyp: 'besonderer_tag',
+      inhaltId: z.id,
+      titel: z.titel.de,
+      angaben: [
+        { label: 'datum', wert: z.datum },
+        { label: 'tagArt', wert: z.art },
+      ],
+      text: z.beschreibung?.de ?? null,
+      eingereichtVon: name(z.verfasstVon),
+    })),
   ];
 }
 
@@ -257,9 +256,9 @@ export async function ladeVerlauf(grenze = 50): Promise<VerlaufZeile[]> {
   );
   const titel = seitenIds.length
     ? new Map(
-        (await db.select({ id: schema.seite.id, titel: schema.seite.titel }).from(schema.seite).where(inArray(schema.seite.id, seitenIds))).map(
-          (s) => [s.id, s.titel.de],
-        ),
+        (
+          await db.select({ id: schema.seite.id, titel: schema.seite.titel }).from(schema.seite).where(inArray(schema.seite.id, seitenIds))
+        ).map((s) => [s.id, s.titel.de]),
       )
     : new Map<string, string>();
   return zeilen.map((z) => ({ ...z, titel: z.inhaltTyp === 'seite' ? (titel.get(z.inhaltId) ?? null) : null }));

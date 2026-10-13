@@ -55,7 +55,12 @@ export default async function Weiterleitungen({ searchParams }: PageProps<'/[loc
         key={bearbeiten?.id ?? 'neu'}
         aktion={speichereWeiterleitung}
         modus={bearbeiten ? 'bearbeiten' : 'neu'}
-        startwerte={{ id: bearbeiten?.id ?? '', von: bearbeiten?.von ?? '', nach: bearbeiten?.nach ?? '', code: String(bearbeiten?.code ?? 308) }}
+        startwerte={{
+          id: bearbeiten?.id ?? '',
+          von: bearbeiten?.von ?? '',
+          nach: bearbeiten?.nach ?? '',
+          code: String(bearbeiten?.code ?? 308),
+        }}
       />
       <h2 className="font-display text-24 font-semibold">{t('liste')}</h2>
       {liste.length === 0 ? (

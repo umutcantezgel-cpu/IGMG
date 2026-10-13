@@ -23,7 +23,11 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
   const [{ id }, sp] = await Promise.all([params, searchParams]);
   const z = await ladeSeiteFuerVerwaltung(id, organisationsFilter(a.rollen, 'seite.bearbeiten'));
   if (!z) notFound();
-  const [t, tg, liste] = await Promise.all([getTranslations('verwaltung.seiten'), getTranslations('verwaltung.shell'), ladeRevisionen('seite', z.id)]);
+  const [t, tg, liste] = await Promise.all([
+    getTranslations('verwaltung.seiten'),
+    getTranslations('verwaltung.shell'),
+    ladeRevisionen('seite', z.id),
+  ]);
   const darfZurueck = darf(a.rollen, 'seite.bearbeiten', { organisation: z.organisation }) && !z.imPapierkorbSeit;
   const gewaehlt = typeof sp.r === 'string' ? await ladeRevision(sp.r) : null;
   const ansicht = gewaehlt && gewaehlt.inhaltTyp === 'seite' && gewaehlt.inhaltId === z.id ? gewaehlt : null;
@@ -32,7 +36,10 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
 
   return (
     <>
-      <NextLink href={`/verwaltung/seiten/${z.id}`} className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4">
+      <NextLink
+        href={`/verwaltung/seiten/${z.id}`}
+        className="inline-flex min-h-12 items-center gap-2 self-start font-bold underline underline-offset-4"
+      >
         <ArrowLeft aria-hidden className="size-5" />
         {t('revision.zurueck')}
       </NextLink>
@@ -60,7 +67,9 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
                   <tr key={r.id} className={`border-t border-linie align-middle ${ansicht?.id === r.id ? 'bg-gruen-50' : ''}`}>
                     <th scope="row" className="px-4 py-3 font-bold tabular-nums">
                       {zeit(r.erstelltAm)}
-                      {i === 0 ? <span className="ml-2 rounded-pill bg-gruen-50 px-3 py-0.5 text-16 text-gruen-800">{t('revision.aktuell')}</span> : null}
+                      {i === 0 ? (
+                        <span className="ml-2 rounded-pill bg-gruen-50 px-3 py-0.5 text-16 text-gruen-800">{t('revision.aktuell')}</span>
+                      ) : null}
                     </th>
                     <td className="px-4 py-3">{r.von ?? t('revision.unbekannt')}</td>
                     <td className="px-4 py-3 text-16 text-tinte-2">
@@ -69,8 +78,11 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex flex-wrap gap-2">
-                        <Button asChild variant="outline" size="sm">
-                          <NextLink href={`/verwaltung/seiten/${z.id}/revisionen?r=${r.id}#ansicht`} aria-label={t('revision.ansehen', { zeit: zeit(r.erstelltAm) })}>
+                        <Button asChild variant="outline" size="sm" className="min-h-12">
+                          <NextLink
+                            href={`/verwaltung/seiten/${z.id}/revisionen?r=${r.id}#ansicht`}
+                            aria-label={t('revision.ansehen', { zeit: zeit(r.erstelltAm) })}
+                          >
                             <Eye aria-hidden />
                             {t('revision.ansehenKurz')}
                           </NextLink>
@@ -78,7 +90,13 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
                         {darfZurueck && i > 0 ? (
                           <form action={revisionWiederherstellen}>
                             <input type="hidden" name="revisionId" value={r.id} />
-                            <Button type="submit" variant="secondary" size="sm" aria-label={t('revision.wiederherstellenName', { zeit: zeit(r.erstelltAm) })}>
+                            <Button
+                              type="submit"
+                              variant="secondary"
+                              size="sm"
+                              className="min-h-12"
+                              aria-label={t('revision.wiederherstellenName', { zeit: zeit(r.erstelltAm) })}
+                            >
                               <RotateCcw aria-hidden />
                               {t('revision.wiederherstellen')}
                             </Button>

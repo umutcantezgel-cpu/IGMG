@@ -144,7 +144,10 @@ export async function GebetszeitenAnsicht({ b, sprache }: { b: BlockVon<'gebetsz
   const k = kopf(b, sprache, tl('listeHeute'));
   const namen = Object.fromEntries(GEBETE.map((g) => [g, tl(g)])) as Record<Gebet, string>;
   // Nur gestern bis übermorgen an den Browser: genug für den Tageswechsel, wenig Daten
-  const i = Math.max(0, fenster.tage.findIndex((x) => x.datum === fenster.referenz));
+  const i = Math.max(
+    0,
+    fenster.tage.findIndex((x) => x.datum === fenster.referenz),
+  );
   const tage = fenster.tage.slice(Math.max(0, i - 1), i + 3).map(({ datum, imsak, gunes, ogle, ikindi, aksam, yatsi }) => ({
     datum,
     imsak,

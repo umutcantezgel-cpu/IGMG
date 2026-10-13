@@ -1,4 +1,4 @@
-import { BookOpenText, ExternalLink, FileText } from 'lucide-react';
+import { ArrowRight, BookOpenText, FileText } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { FreigabeEntscheidung } from '@/components/verwaltung/freigaben/FreigabeEntscheidung';
@@ -13,7 +13,11 @@ import { cn } from '@/lib/utils';
 import { entscheideFreigabe } from '@/server/actions/freigaben';
 import { ladeVerlauf, ladeWarteschlange, type FreigabeEintrag } from '@/server/queries/verwaltung/freigaben';
 
-const STATUS_FARBE = { entwurf: 'bg-sand text-tinte-2', zur_pruefung: 'bg-info-toenung text-info', geprueft: 'bg-gruen-50 text-gruen-800' } as const;
+const STATUS_FARBE = {
+  entwurf: 'bg-sand text-tinte-2',
+  zur_pruefung: 'bg-info-toenung text-info',
+  geprueft: 'bg-gruen-50 text-gruen-800',
+} as const;
 
 function darfEntscheiden(a: Angemeldet, e: FreigabeEintrag): boolean {
   if (e.art === 'religioes') return darf(a.rollen, 'religioes.freigeben');
@@ -26,8 +30,14 @@ function darfEntscheiden(a: Angemeldet, e: FreigabeEintrag): boolean {
  */
 export default async function Freigaben({ searchParams }: PageProps<'/[locale]/verwaltung/freigaben'>) {
   const a = await verlangeSeitenRecht('freigabe.lesen');
-  const verlauf = (await searchParams).ansicht === 'verlauf';
-  const [t, tg, offen] = await Promise.all([getTranslations('verwaltung.freigaben'), getTranslations('verwaltung.shell'), ladeWarteschlange()]);
+  const sp = await searchParams;
+  const verlauf = sp.ansicht === 'verlauf';
+  const erledigt = sp.erledigt === 'freigeben' || sp.erledigt === 'zurueckweisen' ? sp.erledigt : null;
+  const [t, tg, offen] = await Promise.all([
+    getTranslations('verwaltung.freigaben'),
+    getTranslations('verwaltung.shell'),
+    ladeWarteschlange(),
+  ]);
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
   const ansichten = (
     <Ansichten
@@ -90,13 +100,18 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
     <>
       <VerwaltungsKopf titel={t('titel')} kennung={tg('gruppe.inhalte')} einleitung={t('einleitung')} />
       {ansichten}
+      {erledigt ? <Meldung art="erfolg">{t(`erledigt.${erledigt}`)}</Meldung> : null}
       {offen.length === 0 ? <ListenLeer text={t('leer')} /> : null}
       {gruppen.map(({ art, eintraege }) =>
         eintraege.length ? (
           <section key={art} aria-labelledby={`gruppe-${art}`} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">
               <h2 id={`gruppe-${art}`} className="flex items-center gap-2 font-display text-24 font-semibold">
-                {art === 'religioes' ? <BookOpenText aria-hidden className="size-6 text-gruen-700" /> : <FileText aria-hidden className="size-6 text-gruen-700" />}
+                {art === 'religioes' ? (
+                  <BookOpenText aria-hidden className="size-6 text-gruen-700" />
+                ) : (
+                  <FileText aria-hidden className="size-6 text-gruen-700" />
+                )}
                 {t(`gruppe.${art}`)} <span className="text-tinte-2">({eintraege.length})</span>
               </h2>
               <p className="max-w-einleitung text-16 text-tinte-2">{t(`gruppeHinweis.${art}`)}</p>
@@ -105,11 +120,18 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
               {eintraege.map((e) => {
                 const darfEs = darfEntscheiden(a, e);
                 return (
-                  <li key={`${e.inhaltTyp}:${e.inhaltId}`} className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6">
+                  <li
+                    key={`${e.inhaltTyp}:${e.inhaltId}`}
+                    className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6"
+                  >
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div className="flex min-w-0 flex-col gap-1">
                         <span className={cn(PILLE, 'self-start bg-sand text-tinte-2')}>{t(`typ.${e.inhaltTyp}`)}</span>
-                        <h3 className="font-text text-20 font-bold tracking-normal" lang={e.inhaltTyp === 'quran_wortbedeutung' ? 'ar' : undefined} dir={e.inhaltTyp === 'quran_wortbedeutung' ? 'rtl' : undefined}>
+                        <h3
+                          className="font-text text-20 font-bold tracking-normal"
+                          lang={e.inhaltTyp === 'quran_wortbedeutung' ? 'ar' : undefined}
+                          dir={e.inhaltTyp === 'quran_wortbedeutung' ? 'rtl' : undefined}
+                        >
                           {e.titel}
                         </h3>
                         <p className="text-16 text-tinte-2">
@@ -129,7 +151,7 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                           className="inline-flex min-h-12 items-center gap-2 font-bold underline underline-offset-4"
                         >
                           {t('seiteAnsehen')}
-                          <ExternalLink aria-hidden className="size-4" />
+                          <ArrowRight aria-hidden className="size-4" />
                         </NextLink>
                       ) : null}
                     </div>
@@ -138,7 +160,11 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                         {e.angaben.map((g, i) => (
                           <div key={i} className="contents">
                             <dt className="font-bold text-tinte-2">{t(`angabe.${g.label}`)}</dt>
-                            <dd lang={g.lang} dir={g.dir} className={cn('whitespace-pre-line', g.dir === 'rtl' && 'font-arabic text-24 leading-loose')}>
+                            <dd
+                              lang={g.lang}
+                              dir={g.dir}
+                              className={cn('whitespace-pre-line', g.dir === 'rtl' && 'font-arabic text-24 leading-loose')}
+                            >
                               {g.wert}
                             </dd>
                           </div>

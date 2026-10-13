@@ -13,7 +13,7 @@ import { neuesVorschauToken, VORSCHAU_DAUER_MS } from '@/lib/cms/vorschau';
 import { db, schema } from '@/lib/db';
 import { bildIdsAus, ladeBilder } from '@/lib/medien/bild';
 import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
-import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
+import { darf, KeinRecht, organisationsFilter, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { gleicheVerweise, gueltigeBloecke, medienIdsAus, religioeseVerweise, seitenZieleAus, type Block } from '@/lib/validierung/bloecke';
 import { ausFormular, pruefeSeite, zuDatensatz, type SeitenStatus } from '@/lib/validierung/seite';
 import { ladeDateien } from '@/server/queries/seiten';
@@ -47,7 +47,9 @@ function aktualisiereCaches(id: string) {
 type Zeile = typeof s.$inferSelect;
 
 /** Momentaufnahme für die Revision (alle bearbeitbaren Felder). */
-function momentaufnahme(z: Pick<Zeile, 'titel' | 'beschreibung' | 'slugDe' | 'slugTr' | 'slugEn' | 'organisation' | 'status' | 'veroeffentlichenAm' | 'bloecke'>) {
+function momentaufnahme(
+  z: Pick<Zeile, 'titel' | 'beschreibung' | 'slugDe' | 'slugTr' | 'slugEn' | 'organisation' | 'status' | 'veroeffentlichenAm' | 'bloecke'>,
+) {
   return {
     titel: z.titel,
     beschreibung: z.beschreibung,
@@ -79,7 +81,12 @@ async function pruefeBausteinDaten(bloecke: readonly Block[]): Promise<Record<st
       )
     : new Set<string>();
   const suren = bloecke.some((b) => b.typ === 'vers')
-    ? new Map((await db.select({ nr: schema.quranSure.nr, anzahl: schema.quranSure.verseAnzahl }).from(schema.quranSure)).map((z) => [z.nr, z.anzahl]))
+    ? new Map(
+        (await db.select({ nr: schema.quranSure.nr, anzahl: schema.quranSure.verseAnzahl }).from(schema.quranSure)).map((z) => [
+          z.nr,
+          z.anzahl,
+        ]),
+      )
     : new Map<number, number>();
   for (const b of bloecke) {
     const k = (feld: string) => `block:${b.id}:${feld}`;
@@ -142,7 +149,8 @@ function entscheide(
   if (wunsch === 'veroeffentlicht') {
     if (verweiseUngeprueft && !darfReligioes)
       return { status: 'entwurf', freigabe: { art: 'religioes', status: 'zur_pruefung' }, hinweis: 'religioesePruefung' };
-    if (verweiseUngeprueft) return { status: 'veroeffentlicht', freigabe: { art: 'religioes', status: 'geprueft' }, hinweis: 'veroeffentlicht' };
+    if (verweiseUngeprueft)
+      return { status: 'veroeffentlicht', freigabe: { art: 'religioes', status: 'geprueft' }, hinweis: 'veroeffentlicht' };
     return {
       status: 'veroeffentlicht',
       freigabe: antragOffen ? { art: offen.art, status: 'geprueft' } : null,
@@ -150,7 +158,11 @@ function entscheide(
     };
   }
   if (wunsch === 'zur_pruefung')
-    return { status: 'entwurf', freigabe: { art: verweiseUngeprueft ? 'religioes' : 'redaktion', status: 'zur_pruefung' }, hinweis: 'zurPruefung' };
+    return {
+      status: 'entwurf',
+      freigabe: { art: verweiseUngeprueft ? 'religioes' : 'redaktion', status: 'zur_pruefung' },
+      hinweis: 'zurPruefung',
+    };
   return { status: 'entwurf', freigabe: antragOffen ? { art: offen.art, status: 'entwurf' } : null };
 }
 
@@ -162,6 +174,8 @@ export async function speichereSeite(_vorher: SeitenZustand, fd: FormData): Prom
   } catch {
     return { fehler: 'keinRecht' };
   }
+  // Nur lesen (z. B. Leitung): kein Speichern, unabhängig von der gewählten Organisation
+  if (organisationsFilter(a.rollen, 'seite.bearbeiten')?.length === 0) return { fehler: 'keinRecht' };
   const roh = ausFormular(fd);
   const p = pruefeSeite(roh);
   if (!p.ok) return { fehler: 'pruefen', feldFehler: p.feldFehler, werte: roh };
@@ -181,7 +195,7 @@ export async function speichereSeite(_vorher: SeitenZustand, fd: FormData): Prom
   const feldFehler: Record<string, string> = {};
   for (const sprache of slugKollisionen(d.slugs, await ladeAndereSlugs(alt?.id))) {
     const feld = sprache === 'de' || !d.slugs[sprache] ? 'slugDe' : sprache === 'tr' ? 'slugTr' : 'slugEn';
-    feldFehler[feld] = sprache === 'de' || d.slugs[sprache] ? 'slugVergeben' : 'slugVergebenSprache';
+    feldFehler[feld] ??= sprache === 'de' || d.slugs[sprache] ? 'slugVergeben' : 'slugVergebenSprache';
   }
   Object.assign(feldFehler, await pruefeBausteinDaten(d.bloecke));
   if (e.status === 'veroeffentlicht' && !darf(a.rollen, 'seite.veroeffentlichen', { organisation: d.organisation }))
@@ -227,11 +241,19 @@ export async function speichereSeite(_vorher: SeitenZustand, fd: FormData): Prom
       const fr = ent.freigabe;
       // Gleicher offener Antrag: kein zweiter Eintrag im Verlauf
       if (fr && !(fr.status === 'zur_pruefung' && offen?.status === 'zur_pruefung' && offen.art === fr.art)) {
-        await tx.insert(schema.freigabe).values({ inhaltTyp: INHALT_TYP, inhaltId: zielId, art: fr.art, status: fr.status, von: a.benutzerId });
+        await tx
+          .insert(schema.freigabe)
+          .values({ inhaltTyp: INHALT_TYP, inhaltId: zielId, art: fr.art, status: fr.status, von: a.benutzerId });
         if (fr.status === 'zur_pruefung')
-          await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.zur_pruefung', zielTyp: INHALT_TYP, zielId, details: { art: fr.art } }, tx);
+          await protokolliere(
+            { benutzerId: a.benutzerId, aktion: 'inhalt.zur_pruefung', zielTyp: INHALT_TYP, zielId, details: { art: fr.art } },
+            tx,
+          );
         if (fr.status === 'geprueft')
-          await protokolliere({ benutzerId: a.benutzerId, aktion: 'freigabe.erteilt', zielTyp: INHALT_TYP, zielId, details: { art: fr.art } }, tx);
+          await protokolliere(
+            { benutzerId: a.benutzerId, aktion: 'freigabe.erteilt', zielTyp: INHALT_TYP, zielId, details: { art: fr.art } },
+            tx,
+          );
       }
       if (ent.status === 'veroeffentlicht' && alt?.status !== 'veroeffentlicht')
         await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.veroeffentlicht', zielTyp: INHALT_TYP, zielId }, tx);
@@ -275,7 +297,8 @@ export async function seiteInPapierkorb(fd: FormData): Promise<void> {
       .set({ imPapierkorbSeit: new Date(), aktualisiertVon: a.benutzerId })
       .where(and(eq(s.id, zeile.id), isNull(s.imPapierkorbSeit)))
       .returning({ id: s.id });
-    if (geaendert.length) await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.papierkorb', zielTyp: INHALT_TYP, zielId: zeile.id }, tx);
+    if (geaendert.length)
+      await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.papierkorb', zielTyp: INHALT_TYP, zielId: zeile.id }, tx);
   });
   aktualisiereCaches(zeile.id);
   refresh();
@@ -357,12 +380,24 @@ export async function revisionWiederherstellen(fd: FormData): Promise<void> {
         .insert(schema.freigabe)
         .values({ inhaltTyp: INHALT_TYP, inhaltId: alt.id, art: ent.freigabe.art, status: 'zur_pruefung', von: a.benutzerId });
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'inhalt.zur_pruefung', zielTyp: INHALT_TYP, zielId: alt.id, details: { art: ent.freigabe.art } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'inhalt.zur_pruefung',
+          zielTyp: INHALT_TYP,
+          zielId: alt.id,
+          details: { art: ent.freigabe.art },
+        },
         tx,
       );
     }
     await protokolliere(
-      { benutzerId: a.benutzerId, aktion: 'inhalt.revision_wiederhergestellt', zielTyp: INHALT_TYP, zielId: alt.id, details: { revision: rev.id } },
+      {
+        benutzerId: a.benutzerId,
+        aktion: 'inhalt.revision_wiederhergestellt',
+        zielTyp: INHALT_TYP,
+        zielId: alt.id,
+        details: { revision: rev.id },
+      },
       tx,
     );
   });
@@ -387,7 +422,9 @@ export async function erzeugeVorschau(_vorher: VorschauZustand, fd: FormData): P
   const laeuftAb = new Date(jetzt.getTime() + VORSCHAU_DAUER_MS);
   await db.transaction(async (tx) => {
     await tx.delete(schema.vorschauToken).where(lt(schema.vorschauToken.laeuftAb, jetzt));
-    await tx.insert(schema.vorschauToken).values({ tokenHash: hash, inhaltTyp: INHALT_TYP, inhaltId: zeile.id, laeuftAb, erstelltVon: a.benutzerId });
+    await tx
+      .insert(schema.vorschauToken)
+      .values({ tokenHash: hash, inhaltTyp: INHALT_TYP, inhaltId: zeile.id, laeuftAb, erstelltVon: a.benutzerId });
     await protokolliere({ benutzerId: a.benutzerId, aktion: 'inhalt.vorschau_erstellt', zielTyp: INHALT_TYP, zielId: zeile.id }, tx);
   });
   return { url: `/verwaltung/vorschau/${token}`, gueltigBis: laeuftAb.toISOString() };

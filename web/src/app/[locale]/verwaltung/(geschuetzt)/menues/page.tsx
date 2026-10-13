@@ -73,7 +73,9 @@ export default async function Menues({ searchParams }: PageProps<'/[locale]/verw
         : await fussBestand();
   // Ziele des Bestands, die keine Option sind (z. B. Organisationsseiten), bleiben wählbar
   const bekannt = new Set([...ziele.seiten, ...ziele.bereiche].map((z) => z.wert));
-  const alleZiele = (schluessel === 'kopf' ? (start as MenueGruppeWerte[]).flatMap((g) => g.kinder) : (start as MenuePunktWerte[])).map((p) => p.ziel);
+  const alleZiele = (schluessel === 'kopf' ? (start as MenueGruppeWerte[]).flatMap((g) => g.kinder) : (start as MenuePunktWerte[])).map(
+    (p) => p.ziel,
+  );
   const zusatz = [...new Set(alleZiele.filter((z) => !bekannt.has(z)))].map((z) => ({ wert: z, label: z }));
   return (
     <>

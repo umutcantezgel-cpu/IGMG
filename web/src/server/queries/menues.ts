@@ -27,7 +27,11 @@ export function zielAdresse(ziel: string, sprache: Locale, seiten: Record<string
 }
 
 async function ladeRoh(schluessel: MenueSchluessel): Promise<unknown | null> {
-  const [z] = await db.select({ eintraege: schema.menue.eintraege }).from(schema.menue).where(eq(schema.menue.schluessel, schluessel)).limit(1);
+  const [z] = await db
+    .select({ eintraege: schema.menue.eintraege })
+    .from(schema.menue)
+    .where(eq(schema.menue.schluessel, schluessel))
+    .limit(1);
   return z ? z.eintraege : null;
 }
 
@@ -46,7 +50,15 @@ export async function ladeKopfMenue(sprache: Locale): Promise<MenueGruppeOeffent
         const href = zielAdresse(k.ziel, sprache, seiten);
         if (!href) return [];
         const t = waehle(k.titel, sprache);
-        return [{ titel: t.text, titelLang: t.rueckfall ? 'de' : undefined, beschreibung: waehle(k.beschreibung, sprache).text, href, ziel: k.ziel }];
+        return [
+          {
+            titel: t.text,
+            titelLang: t.rueckfall ? 'de' : undefined,
+            beschreibung: waehle(k.beschreibung, sprache).text,
+            href,
+            ziel: k.ziel,
+          },
+        ];
       });
       return { titel: titel.text, titelLang: titel.rueckfall ? 'de' : undefined, kinder };
     })
@@ -66,7 +78,9 @@ export async function ladeFussMenue(sprache: Locale): Promise<MenueLink[] | null
     const href = zielAdresse(k.ziel, sprache, seiten);
     if (!href) return [];
     const t = waehle(k.titel, sprache);
-    return [{ titel: t.text, titelLang: t.rueckfall ? 'de' : undefined, beschreibung: waehle(k.beschreibung, sprache).text, href, ziel: k.ziel }];
+    return [
+      { titel: t.text, titelLang: t.rueckfall ? 'de' : undefined, beschreibung: waehle(k.beschreibung, sprache).text, href, ziel: k.ziel },
+    ];
   });
   return links.length ? links : null;
 }

@@ -16,7 +16,8 @@ const ARABISCH = 'font-arabic text-30 leading-loose text-tinte md:text-36 md:lea
 
 export async function VersAnsicht({ b, sprache }: { b: BlockVon<'vers'>; sprache: Sprache }) {
   const [t, daten] = await Promise.all([getTranslations({ locale: sprache, namespace: 'bloecke' }), ladeVerse(b.sure, b.von, b.bis)]);
-  const stelle = b.von === b.bis ? t('versStelle', { sure: b.sure, vers: b.von }) : t('verseStelle', { sure: b.sure, von: b.von, bis: b.bis });
+  const stelle =
+    b.von === b.bis ? t('versStelle', { sure: b.sure, vers: b.von }) : t('verseStelle', { sure: b.sure, von: b.von, bis: b.bis });
   if (!daten)
     return (
       <BlockRahmen>
@@ -40,7 +41,10 @@ export async function VersAnsicht({ b, sprache }: { b: BlockVon<'vers'>; sprache
             <BookOpenText aria-hidden className="size-5 shrink-0" />
             {name ? t('sureName', { name }) : null} {stelle}
           </span>
-          <Link href={{ pathname: '/quran/[sure]', params: { sure: String(b.sure) } }} className="inline-flex min-h-12 items-center gap-1 text-16 font-bold text-gruen-700 underline underline-offset-4">
+          <Link
+            href={{ pathname: '/quran/[sure]', params: { sure: String(b.sure) } }}
+            className="inline-flex min-h-12 items-center gap-1 text-16 font-bold text-gruen-700 underline underline-offset-4"
+          >
             {t('imKoranLesen')}
             <ArrowRight aria-hidden className="size-4" />
           </Link>
@@ -49,7 +53,11 @@ export async function VersAnsicht({ b, sprache }: { b: BlockVon<'vers'>; sprache
           {daten.verse.map((v) => (
             <span key={v.nr}>
               {v.textAr}{' '}
-              <span lang={sprache} dir="ltr" className="inline-flex size-8 items-center justify-center rounded-pill border border-linie align-middle font-text text-16 font-bold text-gruen-800 tabular-nums">
+              <span
+                lang={sprache}
+                dir="ltr"
+                className="inline-flex size-8 items-center justify-center rounded-pill border border-linie align-middle font-text text-16 font-bold text-gruen-800 tabular-nums"
+              >
                 {v.nr}
               </span>{' '}
             </span>
