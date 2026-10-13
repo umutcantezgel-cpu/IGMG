@@ -1,0 +1,22 @@
+import { chromium } from 'playwright';
+const basis = process.argv[2] ?? 'http://127.0.0.1:3300';
+const [start, ziel] = [process.argv[3] ?? '/impressum', process.argv[4] ?? '/datenschutz'];
+const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const seite = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await seite.route(/2cf-1ar8micdv\.js/, async (route) => {
+  const antwort = await route.fetch();
+  let text = await antwort.text();
+  const a = 'for(cv={focusedElem:e,selectionRange:r},f$=!1,n=(0x13ffff00&n)===n,';
+  if (!text.includes(a)) console.log('ANKER FEHLT');
+  text = text.replace(a, 'for(cv={focusedElem:e,selectionRange:r},f$=!1,(window.__lanes=window.__lanes||[]).push([n.toString(2),location.pathname,[...document.querySelectorAll("h1")].filter(h=>h.offsetParent).map(h=>h.textContent.slice(0,20)).join("|"),performance.now()|0]),n=(0x13ffff00&n)===n,');
+  text = text.replace('function iH(e){(30===e.tag||0!=(0x2000000&e.subtreeFlags))&&(iU=!0)}', 'function iH(e){window.__iH=(window.__iH||[]);window.__iH.push([e.tag,!!(0x2000000&e.subtreeFlags)]);(30===e.tag||0!=(0x2000000&e.subtreeFlags))&&(iU=!0)}');
+  await route.fulfill({ response: antwort, body: text });
+});
+await seite.goto(basis + start, { waitUntil: 'networkidle' });
+await seite.evaluate(() => document.querySelectorAll('dialog[open]').forEach((d) => d.close()));
+await seite.waitForTimeout(1500);
+await seite.evaluate(() => { window.__lanes = []; window.__iH = []; });
+await seite.locator(`a[href="${ziel}"]:visible`).first().click();
+await seite.waitForTimeout(3000);
+console.log(JSON.stringify(await seite.evaluate(() => ({ url: location.pathname, lanes: window.__lanes, nachher: [...document.querySelectorAll("h1")].filter(h=>h.offsetParent).map(h=>h.textContent.slice(0,20)), iH: window.__iH }))));
+await browser.close();

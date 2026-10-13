@@ -1,5 +1,10 @@
 # Plan „Gemeinde-Plattform“ – IGMG Wetzlar von 0 auf 100 (Lauf über 7 Tage)
 
+> **Änderung 13.10. (Nutzer):** Kein Warten, keine Startprüfung, kein Anhalten. Der Plan wird **sofort** und ohne Unterbrechung von E0 bis E7 abgearbeitet.
+> - Die geplante Prüfung `trig_01SaGbiCUMd2FmSB9k1bQMfT` wird gelöscht.
+> - Prüfstufen sind Arbeitsschritte im Fluss, keine Haltepunkte. Was Menschen entscheiden müssen, läuft mit Standardannahme weiter (MENSCHEN).
+> - Gesichert auf `origin/claude/trusting-lovelace-6nfolz` (`_plan/GEMEINDE-PLATTFORM.md`, d30393d).
+
 ## Kontext
 - **Auftrag des Nutzers:** Die Web-App wird komplett zu Ende entwickelt und aufgewertet, mehr als verlangt, damit die Führung der Moschee begeistert ist. Im Einzelnen:
   - ganzer Koran digital: lesen, vorlesen lassen, Wort antippen → Bedeutung, Tajwid-Regeln in einer Seitenleiste
@@ -26,7 +31,7 @@
   - Konten für Schüler, Eltern, Lehrkräfte und Gemeindemitglieder.
   - Rezitation auf **beiden** Wegen: eigene Aufnahmen (Fatiha + Cüz 30 zuerst) und Erlaubnis eines bekannten Rezitators.
   - Web Push nur auf Wunsch der Person.
-  - Start **erst nach ABSCHLUSS des Vorlaufs**.
+  - Start **sofort** (Nutzer, 13.10.): kein Warten, kein Anhalten; der Vorlauf läuft parallel und wird per Merge von `main` aufgenommen.
 - **Recherche-Ergebnis Lizenzen:**
   - Offen nutzbar mit Namensnennung: Tanzil-Text (CC BY 3.0, unverändert), cpfair/quran-tajweed und quran-align (CC BY 4.0), Amiri Quran (OFL), adhan-js (MIT), Centrifugo (Apache-2.0), QuranEnc-Übersetzungen (unter 7 Bedingungen).
   - Schriftliche Erlaubnis nötig: KFGQPC-Schrift, Diyanet-Meal, fremde Rezitationen, deutsche/türkische Bukhari-Übersetzungen, Datenabzug von sunnah.com.
@@ -41,16 +46,16 @@
   Alles würdevoll, schnell, ohne Drittanbieter und mit religiöser Freigabe durch Menschen. Riskantes (Konten, Chat, Push) geht hinter **Funktionsschaltern** live, die in Produktion aus bleiben, bis Menschen freigeben.
 
 ## 0. Start und Standardannahmen
-1. **Startbedingung:**
-   - Per `send_later` alle 30 Minuten prüfen: `git fetch`, erste Zeile von `_werkstatt/STATUS.md` auf `origin/claude/blissful-edison-x3j16w` beginnt mit `ABSCHLUSS`, `main` enthält dessen Endstand, Produktion antwortet (curl).
-   - Vorher wird nichts geändert.
-2. **Arbeitsbranch:** `claude/trusting-lovelace-6nfolz` (Branch dieser Sitzung), per Fast-Forward auf das dann aktuelle `origin/main` gebracht.
-   - Push nach jeder Welle.
-   - `main` nur per Fast-Forward nach grünem Tor (L-E01) und mit sicheren Schaltern.
-3. **Werkstatt:**
-   - `git mv _werkstatt _archiv/lauf-gestaltung-2026-10`.
-   - Neuer `_werkstatt` mit AUFTRAG „Gemeinde-Plattform“ v1.0 (dieser Plan), KERN 3.0, PLAN, ABNAHME, MENSCHEN, ENTSCHEIDUNGEN (L2-E01 ff.).
-   - CLAUDE.md-Block mit dem neuen Branch.
+1. **Sofortstart, ohne Startbedingung.** Der Vorlauf (`claude/blissful-edison-x3j16w`, Endprüfung) läuft parallel weiter und wird **nicht** angefasst. Damit sich beide nicht stören:
+   - Mein Arbeitsbranch nimmt `origin/main` regelmäßig per Merge auf (nie Rebase oder Force): zu Beginn jeder Welle und vor jedem Fast-Forward. Konflikte löst der Orchestrator sofort, ohne anzuhalten.
+   - Die neue Werkstatt liegt **bis zum Ende des Vorlaufs** im eigenen Ordner `_gemeinde/` (AUFTRAG, KERN 3.0, PLAN, ABNAHME, MENSCHEN, ENTSCHEIDUNGEN, STATUS, PRUEFPUNKT, berichte, protokolle, werkzeuge). `_werkstatt/` des Vorlaufs bleibt unberührt und wird erst nach dessen ABSCHLUSS (spätestens in E7) nach `_archiv/lauf-gestaltung-2026-10` verschoben; seine Werkzeuge werden in `_gemeinde/werkzeuge` kopiert, nicht verschoben.
+   - `.vercelignore` bekommt `_gemeinde`.
+2. **Arbeitsbranch:** `claude/trusting-lovelace-6nfolz` (Branch dieser Sitzung; Plan-Commit d30393d bleibt), sofort mit `origin/main` zusammengeführt.
+   - Push nach jeder Welle und mindestens stündlich (ZWISCHENSTAND).
+   - `main` nur per Fast-Forward nach grünem Tor (L-E01), nie erzwungen, mit sicheren Schaltern. Vorher wird `origin/main` gemergt; ist `main` inzwischen weitergerückt, wird erneut gemergt und dann vorgespult.
+3. **Gedächtnis gegen Neustarts:**
+   - Der CLAUDE.md-Block für diesen Lauf steht **unter** dem Block des Vorlaufs: „Gemeinde-Plattform: `_gemeinde/AUFTRAG.md`, `STATUS.md`, `PRUEFPUNKT.md` lesen und dort fortsetzen; Branch `claude/trusting-lovelace-6nfolz`; nie anhalten.“
+   - Nach jedem Neustart der Sitzung geht es sofort an PRUEFPUNKT weiter, ohne Rückfrage.
    - Daten- und Rechtemodell sind ausdrücklich **erweiterbar**.
    - Unantastbar bleiben: Logos, Wortlaut der Rechtstexte, religiöse Quellenregeln, Logik der Moschee-Gebetszeiten (Änderung nur per ADR + Imam), Prüfungen des Cockpits.
 4. **Standardannahmen** (gelten, bis Menschen anders entscheiden; Eintrag in MENSCHEN):
@@ -287,7 +292,7 @@ Dazu eine Kiosk-Anleitung (Mini-PC oder Raspberry Pi, Chromium im Kiosk-Modus au
 - `/elifbe/buchstaben/[b]` (×29×3): **Schreibweg** B-17, vier Formen, Audio der Hoca, Artikulationsort, ähnliche Buchstaben, Beispielwörter nur als Verweis auf `quran_wort`.
 - `/elifbe/[lektion]`: berechnete Silbentafeln (Buchstabe × Haraka aus Codepunkten).
 - `/elifbe/ueben` (Lazy ≤ 10 KB): erkennen, zuordnen, hören, lesen, nachspuren.
-- **Glyphen:** Generator `_werkstatt/werkzeuge/elifbe-glyphen.mjs` (opentype.js nur im Werkzeugordner) erzeugt Amiri-Umrisse; die Mittellinien-Züge zeichnet Opus, die Hoca prüft.
+- **Glyphen:** Generator `_gemeinde/werkzeuge/elifbe-glyphen.mjs` (opentype.js nur im Werkzeugordner) erzeugt Amiri-Umrisse; die Mittellinien-Züge zeichnet Opus, die Hoca prüft.
 - **Fortschritt:** lokal, für Schüler synchronisiert.
 
 **3.5 Lernplattform:**
@@ -482,7 +487,7 @@ Dazu eine Kiosk-Anleitung (Mini-PC oder Raspberry Pi, Chromium im Kiosk-Modus au
 - **KI-Regel** (in jedem Briefing):
   - Kein Agent schreibt Verse, Hadithe, Bittgebete, religiöse arabische Texte, Übersetzungen, Wortbedeutungen oder Tajwid-/Fiqh-Erklärungen.
   - Arabisch nur aus importierten Dateien oder aus Codepunkten (Alphabet).
-  - Prüfwerkzeug `_werkstatt/werkzeuge/religion-pruefung.mjs`: arabische Schrift außerhalb von `web/daten/**` und der Alphabetdatei ergibt Rot in Prüfstufe A.
+  - Prüfwerkzeug `_gemeinde/werkzeuge/religion-pruefung.mjs`: arabische Schrift außerhalb von `web/daten/**` und der Alphabetdatei ergibt Rot in Prüfstufe A.
 
 ## 6. Ablauf (7 Tage)
 **Modelle:**
@@ -498,17 +503,17 @@ Dazu eine Kiosk-Anleitung (Mini-PC oder Raspberry Pi, Chromium im Kiosk-Modus au
 
 | Etappe | Inhalt (Kennung · Modell) | Tor |
 |---|---|---|
-| **E0 Start (Tag 1, ≈ 5 h)** | O-E0 Startbedingung, Branch, Archiv, AUFTRAG · H-E0-P01 Einrichtung + Ausgangswerte inkl. neuer Messrouten · H-E0-K01…K05 Kundschafter (Auth/Rechte, Verwaltung/CMS, Koran/Gebetszeiten/SW/JS, Bewegung je Route, Fundstellen „Moschee geplant“) · H-E0-B01 Datensätze laden + SHA + Lizenz, passende Tanzil-Variante, Aligner-Kandidaten · H-E0-K06 Vercel (Cron, Funktionsaufrufe, Blob-Range über Rewrite), Better Auth `username`/`emailVerification` | LAGEBILD v2, Funktionsliste F-01…F-60 |
+| **E0 Start (Tag 1, ≈ 5 h)** | O-E0 Sofortstart: Merge `origin/main`, `_gemeinde/` mit AUFTRAG/STATUS/PRUEFPUNKT, CLAUDE.md-Block, Trigger löschen · H-E0-P01 Einrichtung + Ausgangswerte inkl. neuer Messrouten · H-E0-K01…K05 Kundschafter (Auth/Rechte, Verwaltung/CMS, Koran/Gebetszeiten/SW/JS, Bewegung je Route, Fundstellen „Moschee geplant“) · H-E0-B01 Datensätze laden + SHA + Lizenz, passende Tanzil-Variante, Aligner-Kandidaten · H-E0-K06 Vercel (Cron, Funktionsaufrufe, Blob-Range über Rewrite), Better Auth `username`/`emailVerification` | LAGEBILD v2, Funktionsliste F-01…F-60 |
 | **E1 Fundament (Tag 1–2) – kritischer Pfad** | O-F01 KERN 3.0, ADR 0025–0037, PLAN, ABNAHME, L0 · O-F02 Datenmodell + Migrationen + Trigger · O-F03 Rechte (Matrix, Gruppen, Gemeinde, Sitzungsgrenzen, Admin-Ausschluss) + generierte Tests · O-F04 gemeinsame Dateien (Routing, Schalter, Header je Pfad, Proxy, SW-Gerüst) · H-F01 Koran-Bibliothek · H-F02 Import-Skripte + Daten · H-F03 Hadith-Import · H-I01 Moschee 2026 · H-R01 `/barrierefreiheit`, `/quellen` | – |
 | **E2 Referenzen (Tag 2)** | O-A01 Konten-Kern · O-A02 Mein-Bereich-Hülle · O-Q01 **Koran-Leser als Referenzansicht** · H-Q01 JSON-Routen · H-Q02 Übersicht/Cüz · H-V01 Audio-Speicher · H-T01 Konten-Tests | Stufe B, Sichtabnahme (frischer Opus, ≥ 8), **S1** Sicherheitsprüfung Auth, Fast-Forward `main` (`konten` aus) |
 | **E3 Lernen und Inhalte (Tag 3)** | O-L01 Aufnahme/Einwilligung/Kinderkonto · O-L02 Unterricht · O-E01 Elifbe-Kern (Glyphen, B-17, Übungen) · H-L01…L05 Verwaltung Lernen · H-L06 Eltern-Portal · H-L07 Schüler-Lernweg · H-D01 Hadith-Seiten · H-E01…E03 Elifbe-Seiten + `/lernen` · H-G01 „Mein Ort“ · H-T02 Tests | Stufe B, Sichtabnahme, Fast-Forward `main` (`lernplattform` aus) |
 | **E4 Gemeinschaft und Pflege (Tag 4)** | O-C01 Chat-Kern (S-01…S-18) · H-C01 Chat-Oberfläche · H-C02 Moderation/Kinderschutz · O-M01 CMS-Kern · H-M01…M06 CMS-Module · H-Q03/Q04 Wortbedeutungen, Tajwid, Ausgaben · O-Q02 Rezitations-Werkstatt · H-Q05/Q06 Rezitation Verwaltung + Import · O-P01 Push-Kern · H-P01 Push-Oberflächen · H-T03 Tests | Stufe B, **S2** (Chat, Rechte, Push), Kinderschutz-Liste belegt, Fast-Forward `main` (`chat`/`push` aus) |
 | **E5 Kür A und Bewegung (Tag 5)** | O-B01 B-26 + Morphs + Register · H-B01…B08 SVG-Programm je Route · H-K01 Hatim · H-K02 Ramadan · H-K03 Kalender · H-K04 GiroCode · O-K05 Anzeige-CMS · H-K06 Gemeinde im Blick · H-K07…K11 K-B nach Priorität | Stufe B, Sichtabnahme → Befundpakete, Fast-Forward `main` |
 | **E6 Betrieb und Härtung (Tag 6)** | O-S01 Kit für den lokalen Server · H-S01 Sicherung/Wiederherstellung/Kiosk · O-C02 Centrifugo-Signal · H-O01 Offline-Koran · H-X01/X02 Bestandslücken, Passkey · H-R02 Rechtsentwürfe · H-R03 Handbücher (Lehrkräfte, Eltern, Redaktion, Imam, Server), GO-LIVE, VERCEL-ENV · H-T04 tr/en-Entwürfe | Stufe B, **S3** vollständig, Datenfluss-Prüfung, `religion-pruefung` 0 |
-| **E7 Abschluss (Tag 7)** | Stufe C, Endprüfung (frischer Opus, Blindvergleich), BERICHT mit Galerie und Vorführpfad, MENSCHEN/GO-LIVE vollständig, letzter Fast-Forward `main` mit Produktionsschaltern, CLAUDE.md-Block entfernen, ABSCHLUSS | – |
+| **E7 Abschluss (Tag 7)** | Stufe C, Endprüfung (frischer Opus, Blindvergleich), BERICHT mit Galerie und Vorführpfad, MENSCHEN/GO-LIVE vollständig, `_werkstatt/` des Vorlaufs nach `_archiv/` (sobald dessen ABSCHLUSS vorliegt), letzter Fast-Forward `main` mit Produktionsschaltern, eigenen CLAUDE.md-Block entfernen, ABSCHLUSS | – |
 
 **Pfade:**
-- **Kritischer Pfad:** Startbedingung → Daten (H-E0-B01) → Schema (O-F02) → Rechte (O-F03) → Konten (O-A01) → Aufnahme/Einwilligung (O-L01) → Chat (O-C01) → S2/S3 → Stufe C.
+- **Kritischer Pfad:** Sofortstart → Daten (H-E0-B01) → Schema (O-F02) → Rechte (O-F03) → Konten (O-A01) → Aufnahme/Einwilligung (O-L01) → Chat (O-C01) → S2/S3 → Stufe C.
 - **Parallel:**
   - Koran (H-F01/F02 → O-Q01 → Hadith/Elifbe → Werkstatt)
   - CMS (O-M01 → Module → Anzeige)
