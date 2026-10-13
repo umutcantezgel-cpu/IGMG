@@ -3,11 +3,11 @@
  * übernommen: nur XML-Entitäten werden aufgelöst, nichts normalisiert, gekürzt oder umgebrochen.
  *
  * Erwartete Form (Tanzil „XML“): `<quran><sura index="1" name="…"><aya index="1" text="…" …/>…</sura>…</quran>`.
- * Weitere Attribute (z. B. `bismillah`) bleiben unberücksichtigt, bis die Gemeinde ihre Darstellung festlegt (M-036).
+ * Das Attribut `bismillah` (erster Vers der Suren 2–114 außer 9) wird unverändert als `basmala` übernommen.
  * Keine Abhängigkeit: Die Datei ist flach (Elemente mit Attributen, ohne gemischten Inhalt); unbekannte Formen werden
  * mit einer Fehlermeldung abgelehnt statt geraten.
  */
-export type TanzilSure = { nr: number; nameAr: string; verse: { nr: number; textAr: string }[] };
+export type TanzilSure = { nr: number; nameAr: string; verse: { nr: number; textAr: string }[]; basmala?: string };
 
 export class TanzilFehler extends Error {}
 
@@ -47,6 +47,7 @@ export function leseTanzil(xml: string): TanzilSure[] {
       const aa = attribute(a[1]);
       const nr = ganzzahl(aa.index, `Sure ${sure.nr}, Vers`);
       if (aa.text === undefined || aa.text === '') throw new TanzilFehler(`Sure ${sure.nr}, Vers ${nr}: Text fehlt`);
+      if (nr === 1 && aa.bismillah) sure.basmala = aa.bismillah;
       sure.verse.push({ nr, textAr: aa.text });
     }
     sure.verse.forEach((v, i) => {

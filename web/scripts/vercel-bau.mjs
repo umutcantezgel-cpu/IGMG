@@ -13,6 +13,8 @@ const lauf = (befehl, argumente, env = process.env) => execFileSync(befehl, argu
 if (process.env.DATABASE_URL) {
   console.log(`[bau] Datenbank vorhanden (${process.env.VERCEL_ENV ?? 'lokal'}): Migration unter Sperre, dann Bau.`);
   lauf('node', ['scripts/migriere-mit-sperre.mjs']);
+  // Inhaltsdaten (ADR 0025): idempotent über SHA-256 – schreibt nur, wenn sich eine Quelldatei geändert hat
+  lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts']);
   lauf('pnpm', ['exec', 'next', 'build']);
 } else {
   console.warn('[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017).');

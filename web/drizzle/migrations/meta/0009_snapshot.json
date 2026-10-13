@@ -1,6 +1,6 @@
 {
-  "id": "3b9e9c1a-7af0-4c77-9cde-e12720e4ad80",
-  "prevId": "a6cceeeb-2853-4b1f-8c9a-bf39ba62d001",
+  "id": "bc44bb40-8ec5-4aa3-a6cf-1cc05bb713de",
+  "prevId": "2eb95d39-c0ea-4b53-9108-182ed8ab8498",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -6881,6 +6881,12 @@
         },
         "nummer": {
           "name": "nummer",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sortierung": {
+          "name": "sortierung",
           "type": "integer",
           "primaryKey": false,
           "notNull": true
@@ -6951,7 +6957,7 @@
               "nulls": "last"
             },
             {
-              "expression": "nummer",
+              "expression": "sortierung",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
@@ -7025,7 +7031,7 @@
         },
         "nummer": {
           "name": "nummer",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
@@ -7212,7 +7218,7 @@
         },
         "nummer": {
           "name": "nummer",
-          "type": "integer",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },

@@ -421,7 +421,8 @@ CREATE TABLE "moderationsprotokoll" (
 --> statement-breakpoint
 CREATE TABLE "hadith" (
 	"sammlung_id" text NOT NULL,
-	"nummer" integer NOT NULL,
+	"nummer" text NOT NULL,
+	"sortierung" integer NOT NULL,
 	"arabische_nummer" text,
 	"buch_nr" smallint NOT NULL,
 	"im_buch_nr" integer,
@@ -436,7 +437,7 @@ CREATE TABLE "hadith" (
 CREATE TABLE "hadith_auswahl" (
 	"liste" text NOT NULL,
 	"sammlung_id" text NOT NULL,
-	"nummer" integer NOT NULL,
+	"nummer" text NOT NULL,
 	"reihenfolge" integer DEFAULT 0 NOT NULL,
 	CONSTRAINT "hadith_auswahl_liste_sammlung_id_nummer_pk" PRIMARY KEY("liste","sammlung_id","nummer")
 );
@@ -466,7 +467,7 @@ CREATE TABLE "hadith_sammlung" (
 --> statement-breakpoint
 CREATE TABLE "hadith_uebersetzung" (
 	"sammlung_id" text NOT NULL,
-	"nummer" integer NOT NULL,
+	"nummer" text NOT NULL,
 	"sprache" text NOT NULL,
 	"text" text NOT NULL,
 	"uebersetzer" text NOT NULL,
@@ -806,7 +807,7 @@ CREATE INDEX "chat_meldung_status_idx" ON "chat_meldung" USING btree ("status","
 CREATE INDEX "chat_nachricht_kanal_idx" ON "chat_nachricht" USING btree ("kanal_id","id");--> statement-breakpoint
 CREATE INDEX "chat_nachricht_zeit_idx" ON "chat_nachricht" USING btree ("erstellt_am");--> statement-breakpoint
 CREATE INDEX "moderationsprotokoll_kanal_idx" ON "moderationsprotokoll" USING btree ("kanal_id","zeitpunkt");--> statement-breakpoint
-CREATE INDEX "hadith_buch_idx" ON "hadith" USING btree ("sammlung_id","buch_nr","nummer");--> statement-breakpoint
+CREATE INDEX "hadith_buch_idx" ON "hadith" USING btree ("sammlung_id","buch_nr","sortierung");--> statement-breakpoint
 CREATE INDEX "hadith_suche_idx" ON "hadith" USING gin ("suche");--> statement-breakpoint
 CREATE INDEX "elifbe_fortschritt_benutzer_idx" ON "elifbe_fortschritt" USING btree ("benutzer_id");--> statement-breakpoint
 CREATE INDEX "elifbe_fortschritt_lernende_idx" ON "elifbe_fortschritt" USING btree ("lernende_id");--> statement-breakpoint

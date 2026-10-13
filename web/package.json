@@ -22,6 +22,7 @@
     "altcha:kopieren": "node scripts/altcha-kopieren.mjs",
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
     "quran:import": "tsx --env-file-if-exists=.env scripts/quran-import.ts",
+    "inhalte:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-import.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
     "startklar": "tsx --conditions=react-server --env-file-if-exists=.env scripts/startklar.ts",

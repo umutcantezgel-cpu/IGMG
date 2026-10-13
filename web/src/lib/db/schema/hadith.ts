@@ -41,8 +41,10 @@ export const hadith = pgTable(
     sammlungId: text()
       .notNull()
       .references(() => hadithSammlung.id, { onDelete: 'cascade' }),
-    /** Durchgehende Nummer der Quelle (Bezug „Sahih al-Bukhari n“). */
-    nummer: integer().notNull(),
+    /** Nummer der Quelle als Text (Bezug „Sahih al-Bukhari n“; Unternummern wie „402.2“). */
+    nummer: text().notNull(),
+    /** Sortierwert: Nummer × 10 (402.2 → 4022). */
+    sortierung: integer().notNull(),
     arabischeNummer: text(),
     buchNr: smallint().notNull(),
     imBuchNr: integer(),
@@ -55,7 +57,7 @@ export const hadith = pgTable(
   },
   (t) => [
     primaryKey({ columns: [t.sammlungId, t.nummer] }),
-    index('hadith_buch_idx').on(t.sammlungId, t.buchNr, t.nummer),
+    index('hadith_buch_idx').on(t.sammlungId, t.buchNr, t.sortierung),
     index('hadith_suche_idx').using('gin', t.suche),
   ],
 );
@@ -64,7 +66,7 @@ export const hadithUebersetzung = pgTable(
   'hadith_uebersetzung',
   {
     sammlungId: text().notNull(),
-    nummer: integer().notNull(),
+    nummer: text().notNull(),
     sprache: text().notNull(),
     text: text().notNull(),
     uebersetzer: text().notNull(),
@@ -81,7 +83,7 @@ export const hadithAuswahl = pgTable(
   {
     liste: text().notNull(),
     sammlungId: text().notNull(),
-    nummer: integer().notNull(),
+    nummer: text().notNull(),
     reihenfolge: integer().notNull().default(0),
   },
   (t) => [primaryKey({ columns: [t.liste, t.sammlungId, t.nummer] })],
