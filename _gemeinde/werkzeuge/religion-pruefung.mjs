@@ -12,7 +12,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const wurzel = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const ARABISCH = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻾]/u;
+const ARABISCH = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFE]/u;
 
 /** Erlaubte Orte mit Begründung. */
 const ERLAUBT = [
