@@ -4,7 +4,7 @@ import { bereicheFuer } from '@/components/mein-bereich/eintraege';
 import { BENUTZERNAME_MAX, pruefeBenutzername } from '@/lib/konto/benutzername';
 import { KONTO_EINWILLIGUNG_VERSION, leseTextVersion, textVersion } from '@/lib/konto/einwilligung';
 import { geraetAus } from '@/lib/konto/geraet';
-import { leseLesezeichen, ohneLesezeichen } from '@/lib/konto/lesezeichen';
+import { LESEZEICHEN_SCHLUESSEL, leseLesezeichen, leseWeiterlesen, ohneLesezeichen, WEITERLESEN_SCHLUESSEL } from '@/lib/konto/lesezeichen';
 import { passwortStaerke } from '@/lib/konto/passwort-staerke';
 import { anzeigenameAus, istKinderAdresse, sichererRuecksprung, synthetischeAdresse, vornameAus } from '@/lib/konto/regeln';
 import { istUnzustellbar } from '@/lib/mail/adresse';
@@ -88,7 +88,16 @@ describe('Anzeigename, Rücksprung, Gerät, Passwortstärke', () => {
     expect(sichererRuecksprung('/einladung/abc_DEF-123')).toBe('/einladung/abc_DEF-123');
     expect(sichererRuecksprung('/tr/davet/abc')).toBe('/tr/davet/abc');
     expect(sichererRuecksprung('/mein-bereich/konto')).toBe('/mein-bereich/konto');
-    for (const boese of ['//evil.example', 'https://evil.example/einladung/x', '/kontakt', '/einladung/../verwaltung', '/\\evil', '', 5, null]) {
+    for (const boese of [
+      '//evil.example',
+      'https://evil.example/einladung/x',
+      '/kontakt',
+      '/einladung/../verwaltung',
+      '/\\evil',
+      '',
+      5,
+      null,
+    ]) {
       expect(sichererRuecksprung(boese)).toBeNull();
     }
   });
@@ -98,12 +107,19 @@ describe('Anzeigename, Rücksprung, Gerät, Passwortstärke', () => {
       browser: 'Chrome',
       system: 'Windows',
     });
-    expect(geraetAus('Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1')).toEqual({
+    expect(
+      geraetAus('Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Version/18.0 Mobile/15E148 Safari/604.1'),
+    ).toEqual({
       browser: 'Safari',
       system: 'iOS',
     });
-    expect(geraetAus('Mozilla/5.0 (Android 14; Mobile; rv:131.0) Gecko/131.0 Firefox/131.0')).toEqual({ browser: 'Firefox', system: 'Android' });
-    expect(geraetAus('Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 Chrome/140.0 Safari/537.36 Edg/140.0')).toMatchObject({ browser: 'Edge' });
+    expect(geraetAus('Mozilla/5.0 (Android 14; Mobile; rv:131.0) Gecko/131.0 Firefox/131.0')).toEqual({
+      browser: 'Firefox',
+      system: 'Android',
+    });
+    expect(geraetAus('Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 Chrome/140.0 Safari/537.36 Edg/140.0')).toMatchObject({
+      browser: 'Edge',
+    });
     expect(geraetAus(null)).toEqual({ browser: null, system: null });
   });
 
@@ -116,19 +132,34 @@ describe('Anzeigename, Rücksprung, Gerät, Passwortstärke', () => {
   });
 });
 
-describe('Lesezeichen im Gerätespeicher (igmg.quran.lesezeichen)', () => {
-  it('prüft, sortiert (neueste zuerst) und entfernt', () => {
+describe('Lesezeichen im Gerätespeicher (Format des Koran-Lesers, igmg-quran-lesezeichen)', () => {
+  it('einzelnes Objekt wie vom Leser geschrieben (cuz und zeit optional)', () => {
+    expect(LESEZEICHEN_SCHLUESSEL).toBe('igmg-quran-lesezeichen');
+    expect(WEITERLESEN_SCHLUESSEL).toBe('igmg-quran-weiterlesen');
+    expect(leseLesezeichen(JSON.stringify({ sure: 36, vers: 1, cuz: 22, zeit: 1791900000000 }))).toEqual([
+      { sure: 36, vers: 1, cuz: 22, zeit: 1791900000000 },
+    ]);
+    expect(leseLesezeichen(JSON.stringify({ sure: 1, vers: 7, cuz: null }))).toHaveLength(1);
+    expect(leseWeiterlesen(JSON.stringify({ sure: 2, vers: 5 }))).toEqual({ sure: 2, vers: 5 });
+    expect(leseWeiterlesen(null)).toBeNull();
+  });
+
+  it('Liste: prüft, sortiert (neueste zuerst); Entfernen schreibt im Format des Lesers zurück', () => {
     const roh = JSON.stringify([
       { sure: 2, vers: 255, zeit: '2026-10-10T18:30:00Z' },
       { sure: 115, vers: 1, zeit: '2026-10-11T00:00:00Z' },
       { sure: 1, vers: 0, zeit: '2026-10-11T00:00:00Z' },
       { sure: 18, vers: 10, zeit: 1791900000000 },
       { sure: 3, vers: 1, zeit: 'kein Datum' },
+      { sure: 4, vers: 1, cuz: 31 },
       'Unsinn',
     ]);
     const liste = leseLesezeichen(roh);
     expect(liste.map((z) => `${z.sure}:${z.vers}`)).toEqual(['18:10', '2:255']);
-    expect(ohneLesezeichen(liste, liste[0])).toEqual([liste[1]]);
+    // Ein Eintrag bleibt → einzelnes Objekt; keiner → Schlüssel entfernen (null)
+    expect(JSON.parse(ohneLesezeichen(liste, liste[0])!)).toEqual(liste[1]);
+    expect(ohneLesezeichen([liste[0]], liste[0])).toBeNull();
+    expect(JSON.parse(ohneLesezeichen([...liste, { sure: 9, vers: 1, zeit: 1 }], liste[0])!)).toHaveLength(2);
     expect(leseLesezeichen('{kaputt')).toEqual([]);
     expect(leseLesezeichen('{"sure":1}')).toEqual([]);
     expect(leseLesezeichen(null)).toEqual([]);

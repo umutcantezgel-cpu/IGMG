@@ -127,7 +127,14 @@ describe('Registrierung → Bestätigung → Rolle', () => {
     const vorher = await kontoZu(email);
     const antwort = await aktionen.registrieren(
       {},
-      formular({ sprache: 'de', name: 'Jemand Anderes', email, passwort: 'Ganz-anderes-Passwort-99', einwilligung: 'ja', altcha: await altcha() }),
+      formular({
+        sprache: 'de',
+        name: 'Jemand Anderes',
+        email,
+        passwort: 'Ganz-anderes-Passwort-99',
+        einwilligung: 'ja',
+        altcha: await altcha(),
+      }),
     );
     expect(antwort).toEqual({ ok: true });
     await nachDerAntwort();
@@ -184,9 +191,13 @@ describe('Kinderkonto (ohne E-Mail) und Anmeldung per Benutzername', () => {
     lernendeId = await lernende('Testkind E.');
     const basis = { passwort: PASSWORT, elternBenutzerId: eltern.id, lernendeId };
     expect(await legeKinderkontoAn({ ...basis, benutzername: 'kind.test' })).toEqual({ ok: false, fehler: 'keineEinwilligung' });
-    await db
-      .insert(schema.kontoEinwilligung)
-      .values({ lernendeId, art: 'kinderkonto', textVersion: textVersion('test', 'Einwilligung'), erteiltVon: eltern.id, einvernehmenBestaetigt: true });
+    await db.insert(schema.kontoEinwilligung).values({
+      lernendeId,
+      art: 'kinderkonto',
+      textVersion: textVersion('test', 'Einwilligung'),
+      erteiltVon: eltern.id,
+      einvernehmenBestaetigt: true,
+    });
     expect(await legeKinderkontoAn({ ...basis, benutzername: 'abc' })).toEqual({ ok: false, fehler: 'kurz' });
     expect(await legeKinderkontoAn({ ...basis, benutzername: 'kind-test' })).toEqual({ ok: false, fehler: 'zeichen' });
     expect(await legeKinderkontoAn({ ...basis, benutzername: 'kind.test', passwort: 'kurz' })).toEqual({ ok: false, fehler: 'passwort' });
@@ -219,7 +230,10 @@ describe('Kinderkonto (ohne E-Mail) und Anmeldung per Benutzername', () => {
     await db
       .insert(schema.kontoEinwilligung)
       .values({ lernendeId: zweites, art: 'kinderkonto', textVersion: 'test', erteiltVon: eltern.id });
-    expect(await legeKinderkontoAn({ ...basis, lernendeId: zweites, benutzername: 'kind.test' })).toEqual({ ok: false, fehler: 'vergeben' });
+    expect(await legeKinderkontoAn({ ...basis, lernendeId: zweites, benutzername: 'kind.test' })).toEqual({
+      ok: false,
+      fehler: 'vergeben',
+    });
   });
 
   it('Anmeldung per Benutzername über die Server Action: falsch → keine Sitzung, richtig → Sitzung und Mein Bereich', async () => {
@@ -252,7 +266,9 @@ describe('Kinderkonto (ohne E-Mail) und Anmeldung per Benutzername', () => {
 
   it('Mail-Ausgang weist `.invalid` hart ab: nicht geplant, nie versendet, nicht wiederholt', async () => {
     const [u] = await db.select().from(schema.user).where(eq(schema.user.id, kindId));
-    expect(await planeKontoMail({ an: u.email, vorlage: 'konto-passwort', sprache: 'de', daten: { link: 'http://localhost/x' } })).toBe(false);
+    expect(await planeKontoMail({ an: u.email, vorlage: 'konto-passwort', sprache: 'de', daten: { link: 'http://localhost/x' } })).toBe(
+      false,
+    );
     // Eine trotzdem vorhandene Zeile (z. B. aus „Passwort vergessen“) wird endgültig abgelehnt
     const paket = verschluessele({ an: u.email, daten: { link: 'http://localhost/x' } });
     const [zeile] = await db
@@ -383,7 +399,9 @@ describe('Funktionsschalter `konten` aus', () => {
     const { default: KontoLayout } = await import('@/app/[locale]/(konto)/layout');
     await expect(KontoLayout({ children: null } as never)).rejects.toThrow('NEXT_NOT_FOUND');
     await expect(verlangeMeinBereich('de')).rejects.toThrow('NEXT_NOT_FOUND');
-    await expect(aktionen.kontoAnmelden({}, formular({ email: 'a@example.test', passwort: 'x' }))).rejects.toMatchObject({ name: 'KeinRecht' });
+    await expect(aktionen.kontoAnmelden({}, formular({ email: 'a@example.test', passwort: 'x' }))).rejects.toMatchObject({
+      name: 'KeinRecht',
+    });
     await expect(aktionen.registrieren({}, formular({}))).rejects.toMatchObject({ name: 'KeinRecht' });
     await expect(aktionen.kinderAnmelden({}, formular({}))).rejects.toMatchObject({ name: 'KeinRecht' });
     await expect(mein.datenExportieren()).rejects.toMatchObject({ name: 'KeinRecht' });

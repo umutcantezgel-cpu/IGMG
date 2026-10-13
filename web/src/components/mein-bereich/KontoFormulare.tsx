@@ -214,7 +214,7 @@ export function ZweiFaktorEinrichten() {
           {t('konto.zweiFaktor.ersatzTitel')}
         </h3>
         <Meldung art="info">{t('konto.zweiFaktor.ersatzHinweis')}</Meldung>
-        <ul className="grid grid-cols-[repeat(auto-fill,minmax(9.5rem,1fr))] gap-2 font-mono text-18">
+        <ul className="grid grid-cols-[repeat(auto-fill,minmax(8.25rem,1fr))] gap-2 font-mono text-16 sm:text-18">
           {totp.ersatzcodes.map((c) => (
             <li key={c} className="rounded-md bg-sand px-3 py-2.5 text-center tracking-wide">
               {c}

@@ -30,7 +30,5 @@ export const BEREICHE: readonly BereichEintrag[] = [
 
 /** Einträge, die ein Konto mit diesen Kontoarten sieht (Reihenfolge wie oben). */
 export function bereicheFuer(rollen: readonly GemeindeRolle[], istKind = false): BereichEintrag[] {
-  return BEREICHE.filter(
-    (b) => (b.rollen.length === 0 || b.rollen.some((r) => rollen.includes(r))) && !(istKind && b.ohneKind),
-  );
+  return BEREICHE.filter((b) => (b.rollen.length === 0 || b.rollen.some((r) => rollen.includes(r))) && !(istKind && b.ohneKind));
 }

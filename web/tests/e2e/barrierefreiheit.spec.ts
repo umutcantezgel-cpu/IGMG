@@ -67,6 +67,10 @@ const ROUTEN: Route[] = [
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
+  // Konto-Einstieg (ADR 0026; mit Funktion `konten` aus liefern sie die 404-Seite, die ebenso geprüft wird)
+  { name: 'Anmelden', pfad: { de: '/anmelden', tr: '/tr/giris', en: '/en/sign-in' } },
+  { name: 'Registrieren', pfad: { de: '/registrieren', tr: '/tr/kayit', en: '/en/register' } },
+  { name: 'Passwort vergessen', pfad: { de: '/passwort-vergessen', tr: '/tr/sifremi-unuttum', en: '/en/forgot-password' } },
 ];
 
 const SPRACHEN: Sprache[] = ['de', 'tr', 'en'];

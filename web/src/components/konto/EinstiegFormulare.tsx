@@ -162,6 +162,9 @@ export function PasswortVergessenFormular({ zurAnmeldung }: { zurAnmeldung: stri
         {t('passwortVergessen.absenden')}
       </Button>
       <p className="text-16 text-pretty text-tinte-2">{t('passwortVergessen.kinderHinweis')}</p>
+      <a href={zurAnmeldung} className="inline-flex min-h-12 items-center self-start border-t border-linie pt-3 font-bold">
+        {t('passwortVergessen.zurueck')}
+      </a>
     </form>
   );
 }

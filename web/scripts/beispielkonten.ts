@@ -55,7 +55,13 @@ async function loesche() {
         eq(schema.user.username, benutzername),
       ),
     );
-  if (alt.length) await db.delete(schema.user).where(inArray(schema.user.id, alt.map((u) => u.id)));
+  if (alt.length)
+    await db.delete(schema.user).where(
+      inArray(
+        schema.user.id,
+        alt.map((u) => u.id),
+      ),
+    );
   // Lernende des Beispielkinds (Anzeigename mit Präfix-Kennung) mit entfernen
   await db.delete(schema.lernende).where(like(schema.lernende.anzeigename, `Emre B.${praefix ? ` (${praefix})` : ''}`));
 }
