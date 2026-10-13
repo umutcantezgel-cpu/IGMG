@@ -1,6 +1,11 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
-- **Läuft:** Welle 1 in vier Arbeitsbäumen (Koran-Leser, Konten/Mein Bereich, Hadith/Quellen/Moschee 2026, Elifbe/Lernen). Ihre Branches nach Abschluss in `claude/trusting-lovelace-6nfolz` mergen.
-- **Orchestrator parallel:** H-G01 Gebetszeiten „Mein Ort“; danach Navigation (Menüpunkte Hadith, Elifbe, Lernen), Tor E2 (Typen, Lint, Unit, Integration, Build, E2E-Auswahl, S1-Sicherheitsprüfung), Fast-Forward `main`.
-- **Danach:** Welle 2 (E3/E4): Lernplattform, Chat, CMS, Push, Rezitations-Werkstatt.
-- **Wiederaufnahme nach Neustart:** Branch holen, `_gemeinde/STATUS.md` (Einrichtung), diese Datei; `git worktree list` und `git branch -a` zeigen die Paket-Branches (worktree-agent-*); fertige Branches mergen, fehlende Pakete neu starten (Briefing `_gemeinde/pakete/BRIEFING-GEMEINSAM.md`).
+- **Stand 13.10. 08:35 UTC:** Alle Pakete brachen um ≈ 06:00 UTC am Sitzungslimit ab; ihre Arbeit ist in den Arbeitsbäumen
+  als Commit „ZWISCHENSTAND …“ auf den Branches `worktree-agent-*` gesichert. Pakete wurden fortgesetzt (SendMessage):
+  Konten (adda99e), Koran-Leser (a4ada8d), Hadith/Quellen/Moschee (ad7cbf8), Elifbe (a1feebc), CMS (a24e520),
+  Recht/Handbücher (ae898de), Kür (aad315d).
+- **Orchestrator parallel:** Chat-Oberfläche (Komponente mit adaptivem Abruf), Unterricht-Actions/Komponenten (Anwesenheit),
+  danach Zusammenführen in der Reihenfolge Recht → Hadith → Elifbe → Koran → Konten → CMS → Kür, Migrationen neu nummerieren,
+  Navigation, Mein-Bereich-Anbindung, Startklar-Prüfungen, Tor E2, Fast-Forward `main`.
+- **Wiederaufnahme nach Neustart:** `git worktree list`; je Branch `worktree-agent-*` prüfen, ob ein Abschluss-Commit nach dem
+  ZWISCHENSTAND existiert; unfertige Pakete per SendMessage (Agent-ID aus Branchname) fortsetzen oder neu starten.
