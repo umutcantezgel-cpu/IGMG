@@ -1,11 +1,14 @@
 import { Building2, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
+import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
+import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { text } from '@/lib/i18n/inhalt';
 import { telefonHref } from '@/lib/telefon';
 import { heuteBerlin } from '@/lib/zeit/heute';
+import { ladeFussMenue } from '@/server/queries/menues';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { JetztGeoeffnet } from './fuss/JetztGeoeffnet';
 import { oeffnungszeitText } from './fuss/zeiten';
@@ -43,7 +46,7 @@ export async function Footer() {
   const [tb, tq] = await Promise.all([getTranslations('barrierefreiheit'), getTranslations('quellen')]);
   const kontakt = await ladeSeiteninhalt('kontakt');
   const telefon = telefonHref(kontakt.telefon);
-  const schnell: { label: string; ziel: Ziel }[] = [
+  const bestand: { label: string; ziel: Ziel }[] = [
     { label: t('qGebetszeiten'), ziel: '/gebetszeiten' },
     { label: t('qVeranstaltungen'), ziel: '/veranstaltungen' },
     { label: t('qBildung'), ziel: '/bildung/korankurse' },
@@ -51,6 +54,11 @@ export async function Footer() {
     { label: t('qKontakt'), ziel: '/kontakt' },
     { label: t('qUeberUns'), ziel: '/ueber-uns' },
   ];
+  // Schnellzugriff aus der Verwaltung (Fußmenü, ADR 0032), sonst der Bestand
+  const ausDb = await ladeFussMenue(sprache);
+  const schnell: { label: string; href: string; lang?: string }[] = ausDb
+    ? ausDb.map((m) => ({ label: m.titel, href: m.href, lang: m.titelLang }))
+    : bestand.map((s) => ({ label: s.label, href: pfadFuer(s.ziel, sprache) }));
   const sozial = [
     { netz: 'Facebook', url: kontakt.social.facebook, Icon: Facebook },
     { netz: 'Instagram', url: kontakt.social.instagram, Icon: Instagram },
@@ -139,11 +147,11 @@ export async function Footer() {
           {ueberschrift(t('schnellzugriff'))}
           {/* Zwei Spalten: sechs Ziele in drei Zeilen statt einer langen Liste (Höhe wie die Nachbarspalten) */}
           <ul className="grid grid-cols-2 gap-x-6">
-            {schnell.map((s) => (
-              <li key={s.label}>
-                <Link href={s.ziel} className={TEXTLINK}>
+            {schnell.map((s, i) => (
+              <li key={`${i}-${s.href}`}>
+                <NextLink href={s.href} lang={s.lang} className={TEXTLINK}>
                   {s.label}
-                </Link>
+                </NextLink>
               </li>
             ))}
           </ul>

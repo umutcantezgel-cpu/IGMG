@@ -12,6 +12,10 @@ export type ModulSchluessel =
   | 'neuigkeiten'
   | 'ankuendigungen'
   | 'seiteninhalte'
+  | 'seiten'
+  | 'menues'
+  | 'weiterleitungen'
+  | 'freigaben'
   | 'kurse'
   | 'gebetszeiten'
   | 'eingaenge'
@@ -85,6 +89,18 @@ export const MODULE: readonly Modul[] = [
     gebaut: true,
     gruppe: 'inhalte',
   },
+  // CMS (ADR 0032): freie Seiten, Menüs, Weiterleitungen, Freigaben
+  { schluessel: 'seiten', pfad: '/verwaltung/seiten', recht: 'seite.lesen', icon: 'seiten', gebaut: true, gruppe: 'inhalte' },
+  { schluessel: 'menues', pfad: '/verwaltung/menues', recht: 'menue.bearbeiten', icon: 'menues', gebaut: true, gruppe: 'inhalte' },
+  {
+    schluessel: 'weiterleitungen',
+    pfad: '/verwaltung/weiterleitungen',
+    recht: 'weiterleitung.bearbeiten',
+    icon: 'weiterleitungen',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
+  { schluessel: 'freigaben', pfad: '/verwaltung/freigaben', recht: 'freigabe.lesen', icon: 'freigaben', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true, gruppe: 'inhalte' },
   {
     schluessel: 'gebetszeiten',

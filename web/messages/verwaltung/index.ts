@@ -24,6 +24,10 @@ import einstellungen from './einstellungen.json';
 import medienwahl from './medienwahl.json';
 import kinderschutz from './kinderschutz.json';
 import gemeindeImBlick from './gemeindeImBlick.json';
+import seiten from './seiten.json';
+import menues from './menues.json';
+import weiterleitungen from './weiterleitungen.json';
+import freigaben from './freigaben.json';
 
 type Teil = Record<string, unknown>;
 
@@ -48,4 +52,8 @@ export const VERWALTUNG: Record<string, Teil> = {
   medienwahl,
   kinderschutz,
   gemeindeImBlick,
+  seiten,
+  menues,
+  weiterleitungen,
+  freigaben,
 };

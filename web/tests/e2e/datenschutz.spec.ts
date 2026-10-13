@@ -54,6 +54,7 @@ const ROUTEN = [
   },
   { id: 'impressum', seite: 'Impressum', de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' },
   { id: 'datenschutz', seite: 'Datenschutz', de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' },
+  { id: 'freieseite', seite: 'Freie Seite (Unsere Moschee)', de: '/unsere-moschee', tr: '/tr/camimiz', en: '/en/our-mosque' },
   { id: 'nichtgefunden', seite: 'Seite nicht gefunden', de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' },
   {
     id: 'voranmeldung',

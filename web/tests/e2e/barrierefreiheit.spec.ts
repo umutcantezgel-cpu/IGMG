@@ -70,6 +70,8 @@ const ROUTEN: Route[] = [
   },
   { name: 'Impressum', pfad: { de: '/impressum', tr: '/tr/kunye', en: '/en/imprint' } },
   { name: 'Datenschutz', pfad: { de: '/datenschutz', tr: '/tr/gizlilik', en: '/en/privacy' } },
+  // Freie Seite aus dem CMS (Beispielseite aus dem Seed, ADR 0032)
+  { name: 'Freie Seite (Unsere Moschee)', pfad: { de: '/unsere-moschee', tr: '/tr/camimiz', en: '/en/our-mosque' } },
   { name: 'Seite nicht gefunden', pfad: { de: '/gibt-es-nicht', tr: '/tr/gibt-es-nicht', en: '/en/gibt-es-nicht' } },
   // Gemeinde-Plattform H-D01/H-R01: Hadith (Buchseite je nach Schalter hadith_gesamt mit Inhalt oder 404), Quellen, Erklärung
   { name: 'Hadith', pfad: { de: '/hadith', tr: '/tr/hadis', en: '/en/hadith' } },
