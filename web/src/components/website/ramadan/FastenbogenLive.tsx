@@ -1,9 +1,10 @@
 'use client';
 
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import { minutenAus } from '@/lib/gebetszeiten/bogen';
 import { berlinerDatum, uhrzeitBerlin } from '@/lib/gebetszeiten/naechstes';
+import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 import { useNachRuhe } from '@/lib/zeit/useNachRuhe';
 
@@ -13,6 +14,7 @@ import { useNachRuhe } from '@/lib/zeit/useNachRuhe';
  * (`linie-zeichnet`, erst nach der Hydrierung zur Ruhe), dann tritt der Achtstern als Marke hervor. Reduzierte
  * Bewegung: Endzustand sofort. Keine Restzeit, keine hochzählenden Zahlen – nur die Uhrzeiten als Text.
  * `vorschau`: außerhalb des Ramadan statisch (kein Fortschritt). Texte mit einfachen Platzhaltern {imsak}/{iftar}.
+ * Startseite (H-B09): `className` für das Raster, `children` am Ende der Karte (Link zur Ramadan-Seite, Vorschau-Hinweis).
  */
 export type FastenTag = { datum: string; imsak: string; aksam: string };
 export type FastenbogenTexte = {
@@ -52,11 +54,15 @@ export function FastenbogenLive({
   referenz,
   vorschau = false,
   texte,
+  className,
+  children,
 }: {
   tage: FastenTag[];
   referenz: string;
   vorschau?: boolean;
   texte: FastenbogenTexte;
+  className?: string;
+  children?: ReactNode;
 }) {
   const jetztRoh = useJetzt();
   const ruhe = useNachRuhe(!vorschau && jetztRoh !== null);
@@ -83,7 +89,7 @@ export function FastenbogenLive({
           : '';
 
   return (
-    <figure className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6">
+    <figure className={klassen('flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 shadow-s1 md:p-6', className)}>
       <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <span className="font-display text-20 font-semibold text-gruen-800">{texte.titel}</span>
         <span className="text-16 text-tinte-2">{werte.datum}</span>
@@ -150,6 +156,7 @@ export function FastenbogenLive({
           {status}
         </p>
       )}
+      {children}
     </figure>
   );
 }

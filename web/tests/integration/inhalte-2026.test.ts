@@ -73,6 +73,20 @@ describe('Inhaltsmigration Stand 2026', () => {
     expect(await audits()).toHaveLength(2);
   });
 
+  it('Beispiel-Zeitleiste endet 2019 (ohne „Zukunft“): Eröffnung als letzte Station, mit Audit; zweiter Lauf ändert nichts', async () => {
+    await lege('ueber-uns', { zeitleiste: [station('[Test-Gründung]', 1), station('2019', 4)], werte: [] }, true);
+    expect(await wendeStand2026An(db)).toEqual({ projekte: 'fehlt', ueberUns: 'aktualisiert' });
+    const u = (await inhalt('ueber-uns')).inhalt as typeof ALT_UEBER_UNS;
+    expect(u.zeitleiste.map((e) => [e.kennzeichnung.de, e.reihenfolge])).toEqual([
+      ['[Test-Gründung]', 1],
+      ['2019', 4],
+      ['[Jahr – von der Gemeinde]', 5],
+    ]);
+    expect(await audits()).toHaveLength(1);
+    expect(await wendeStand2026An(db)).toEqual({ projekte: 'fehlt', ueberUns: 'unveraendert' });
+    expect(await audits()).toHaveLength(1);
+  });
+
   it('redaktionell gepflegte Inhalte (ist_beispiel = false) bleiben unberührt', async () => {
     await lege('projekte', ALT_PROJEKTE, false);
     await lege('ueber-uns', ALT_UEBER_UNS, false);

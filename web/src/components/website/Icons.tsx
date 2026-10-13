@@ -46,6 +46,23 @@ export function Stern8({ size = 14, ...rest }: IconProps) {
   return <Achtstern size={size} {...rest} />;
 }
 
+/**
+ * Nachtzeichen für Imsak und Yatsı (MN-27 „ersetzen“: keine Mondsichel, K-008): Stern über dem Horizont. Der große Stern
+ * sind die vier Spitzen des Achtsterns (Spitzen der gedrehten Quadrathälfte, Innenecken auf den Diagonalen), der kleine
+ * die gedrehte Hälfte selbst (Raute, als Fläche – so klein läse sich ein Umriss nicht). Horizont wie bei Lucide
+ * `Sunrise`/`Sunset` (M22 22H2), damit die sechs Tageszeiten eine Familie bleiben: 24-px-Raster, 2-px-Strich, runde Enden.
+ * Dekorativ (`aria-hidden` aus `Basis`); der Name des Gebets steht immer daneben.
+ */
+export function Nachtzeichen(props: IconProps) {
+  return (
+    <Basis {...props}>
+      <path d="M22 22H2" />
+      <path d="M10 5l1.4 5.6L17 12l-5.6 1.4L10 19l-1.4-5.6L3 12l5.6-1.4z" />
+      <path d="M18.5 3l2 2-2 2-2-2z" fill="currentColor" stroke="none" />
+    </Basis>
+  );
+}
+
 export function Facebook(props: IconProps) {
   return (
     <Basis {...props}>

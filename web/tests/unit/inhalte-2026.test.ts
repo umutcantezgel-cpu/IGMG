@@ -6,7 +6,8 @@ import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projek
 
 /**
  * Inhaltsstand 2026 (AUFTRAG 3.9, E0-K05): Seeds ohne Bauphase, Platzhalter statt unbelegter Fakten, und die reine
- * Umrechnung der Migration (idempotent, nur die Station „Zukunft“ wird ersetzt). Datenbankfälle: tests/integration.
+ * Umrechnung der Migration (idempotent: „Zukunft“ wird ersetzt, eine Zeitleiste ohne Eröffnung bekommt sie als letzte
+ * Station). Datenbankfälle: tests/integration.
  */
 const station = (de: string, reihenfolge: number) => ({
   kennzeichnung: { de },
@@ -73,9 +74,29 @@ describe('Migration (reine Umrechnung)', () => {
     expect(ueberUnsNeu(neu)).toBeNull();
   });
 
-  it('ohne Station „Zukunft“ oder bei ungültigem Inhalt: nichts zu tun', () => {
-    expect(ueberUnsNeu({ zeitleiste: [station('2019', 4)] })).toBeNull();
+  it('Zeitleiste endet 2019 (ohne „Zukunft“, ohne Eröffnung): Eröffnung wird als letzte Station angehängt (H-B09)', () => {
+    const alt = { zeitleiste: [station('2019', 4), station('1976', 1)], werte: [] };
+    const neu = ueberUnsNeu(alt);
+    expect(neu?.zeitleiste.map((e) => e.kennzeichnung.de)).toEqual(['2019', '1976', ZEITLEISTE_EROEFFNUNG.kennzeichnung.de]);
+    // Reihenfolge nach der bisher letzten Station: Die Seite sortiert danach, die Eröffnung steht also am Ende des Wegs
+    expect(neu?.zeitleiste[2]).toMatchObject({ titel: ZEITLEISTE_EROEFFNUNG.titel, reihenfolge: 5 });
+    const sortiert = [...(neu?.zeitleiste ?? [])].sort((a, b) => a.reihenfolge - b.reihenfolge);
+    expect(sortiert.at(-1)?.titel.de).toContain('Eröffnung der neuen Fatih-Moschee');
+    // idempotent: der zweite Lauf erkennt die Eröffnung
+    expect(ueberUnsNeu(neu)).toBeNull();
+  });
+
+  it('Eröffnung schon vorhanden, leere Zeitleiste oder ungültiger Inhalt: nichts zu tun', () => {
+    expect(ueberUnsNeu({ zeitleiste: [station('2019', 4), { ...ZEITLEISTE_EROEFFNUNG }] })).toBeNull();
+    expect(ueberUnsNeu({ zeitleiste: [] })).toBeNull();
     expect(ueberUnsNeu({ zeitleiste: 'kaputt' })).toBeNull();
+  });
+
+  it('Seed „ueber-uns“: die Eröffnung ist die letzte Station des Wegs (B-07 mit Eröffnung)', () => {
+    expect(ZEITLEISTE_EROEFFNUNG.reihenfolge).toBeGreaterThan(4);
+    expect(ZEITLEISTE_EROEFFNUNG.titel.de).toMatch(/^\[[^\]]+\] – Eröffnung der neuen Fatih-Moschee$/);
+    expect(ZEITLEISTE_EROEFFNUNG.titel.tr).toMatch(/^\[[^\]]+\]/);
+    expect(ZEITLEISTE_EROEFFNUNG.titel.en).toMatch(/^\[[^\]]+\]/);
   });
 
   it('stabil: gleiche Daten in anderer Schlüsselfolge ergeben denselben Text', () => {

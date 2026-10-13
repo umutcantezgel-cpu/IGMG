@@ -332,13 +332,13 @@ dialog.regel-leiste::backdrop {
   padding-bottom: calc(var(--spacing) * 40);
 }
 
-/* ---------- Cüz-Ring: Linie zeichnet sich einmal, Segmente treten gestaffelt auf ---------- */
+/* ---------- Cüz-Ring: Linie zeichnet sich einmal, Segmente treten in sechs Gruppen gestaffelt auf (K-007: ≤ 8 Schritte) ---------- */
 .cuz-segment {
   fill: var(--color-weiss);
   stroke: var(--color-gruen-100);
   stroke-width: 1;
   transition: fill var(--dauer-rueckmeldung) var(--ease-standard);
-  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * 30ms + 200ms) both;
+  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--gruppe) * var(--staffel) + 200ms) both;
 }
 /* Wechselnde Tönung wie eine Rosette: jeder zweite Cüz auf Grün-50 */
 .cuz-ring a:nth-of-type(even) .cuz-segment {
@@ -358,7 +358,7 @@ dialog.regel-leiste::backdrop {
   font-size: var(--text-16);
   font-weight: 700;
   pointer-events: none;
-  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--i) * 30ms + 400ms) both;
+  animation: einblenden var(--dauer-auftritt) var(--ease-eintritt) calc(var(--gruppe) * var(--staffel) + 400ms) both;
 }
 
 /* ---------- Bewegung reduziert: alles steht sofort im Endzustand ---------- */
