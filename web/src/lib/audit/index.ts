@@ -84,7 +84,11 @@ export type AuditAktion =
   | 'gemeindekonto.rollen_geaendert'
   | 'gemeindekonto.gesperrt'
   | 'gemeindekonto.entsperrt'
-  | 'gemeindekonto.geloescht';
+  | 'gemeindekonto.geloescht'
+  // Religiöse Freigabe (ADR 0030): Verwaltung „Koran & Hadith“
+  | 'religioes.eingereicht'
+  | 'religioes.freigegeben'
+  | 'religioes.zurueckgewiesen';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

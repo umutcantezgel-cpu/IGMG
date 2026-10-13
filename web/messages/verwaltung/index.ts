@@ -33,6 +33,7 @@ import besondereTage from './besondereTage.json';
 import newsletter from './newsletter.json';
 import spenden from './spenden.json';
 import lernen from './lernen.json';
+import koran from './koran.json';
 
 type Teil = Record<string, unknown>;
 
@@ -66,4 +67,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   newsletter,
   spenden,
   lernen,
+  koran,
 };

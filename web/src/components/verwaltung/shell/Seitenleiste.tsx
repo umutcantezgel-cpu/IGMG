@@ -3,6 +3,7 @@
 import {
   BadgeCheck,
   BookOpen,
+  BookText,
   Backpack,
   CalendarDays,
   CalendarHeart,
@@ -60,6 +61,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   tickets: Ticket,
   kinderschutz: ShieldAlert,
   gemeindeImBlick: ChartColumn,
+  koran: BookText,
   medien: Bild,
   benutzer: Users,
   gemeindeKonten: IdCard,
@@ -176,7 +178,7 @@ export function Seitenleiste({
   return (
     <aside
       className={cn(
-        'flex w-full flex-col self-start print:hidden verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4',
+        'flex w-full flex-col self-start verwaltung:sticky verwaltung:top-0 verwaltung:-mt-4 verwaltung:max-h-svh verwaltung:w-70 verwaltung:shrink-0 verwaltung:py-4 print:hidden',
         sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >

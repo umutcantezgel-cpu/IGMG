@@ -8,7 +8,7 @@ import type { Mehrsprachig, MehrsprachigRich } from '@/lib/db/schema/typen';
 import { medienUrl } from '@/lib/medien/bild';
 import { sichtbareAusgaben, type SichtbareAusgabe } from '@/lib/quran/ausgaben';
 import { teileMitVersatz, type SatzTeil } from '@/lib/quran/satz';
-import { REGEL_FAMILIE, type TajwidFamilie } from '@/lib/quran/tajwid';
+import { REGEL_FACHBEGRIFF, REGEL_FAMILIE, type TajwidFamilie } from '@/lib/quran/tajwid';
 
 /**
  * Koran-Leser (ADR 0009, 0025, 0029, 0030): alle Texte aus der importierten Quelle (Tanzil 1.1, `pnpm inhalte:import`).
@@ -200,7 +200,7 @@ export async function ladeUebersetzungstext(
   return { ausgabe, verse: zeilen.map((z) => [z.vers, z.text]) };
 }
 
-/** Tajwid-Regel für Seite, Seitenleiste und Wortkarte. Erklärung, Kurztext und Hörbeispiel nur mit Freigabe. */
+/** Tajwid-Regel für Seite, Seitenleiste und Wortkarte. Erklärung, Kurztext, Hörbeispiel und eigener Name nur mit Freigabe. */
 export type TajwidRegelDaten = {
   schluessel: string;
   familie: TajwidFamilie;
@@ -236,7 +236,8 @@ export async function ladeTajwidRegeln(): Promise<TajwidRegelDaten[]> {
       {
         schluessel: z.schluessel,
         familie,
-        name: z.name,
+        // Ein von der Lehrkraft geänderter Name erscheint erst nach der Prüfung; bis dahin der Fachbegriff aus dem Import
+        name: geprueft ? z.name : { de: REGEL_FACHBEGRIFF[z.schluessel] ?? z.name.de },
         kurz: geprueft ? (z.kurz ?? null) : null,
         erklaerung: geprueft ? (z.erklaerung ?? null) : null,
         hoerbeispiel: geprueft && z.hoerbeispiel ? medienUrl(z.hoerbeispiel) : null,

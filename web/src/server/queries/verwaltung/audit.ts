@@ -96,6 +96,9 @@ export const AKTION_SCHLUESSEL = {
   'gemeindekonto.gesperrt': 'gemeindekontoGesperrt',
   'gemeindekonto.entsperrt': 'gemeindekontoEntsperrt',
   'gemeindekonto.geloescht': 'gemeindekontoGeloescht',
+  'religioes.eingereicht': 'religioesEingereicht',
+  'religioes.freigegeben': 'religioesFreigegeben',
+  'religioes.zurueckgewiesen': 'religioesZurueckgewiesen',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

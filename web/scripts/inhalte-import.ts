@@ -12,7 +12,7 @@ import { eq, inArray, sql } from 'drizzle-orm';
 import { holeDb, schema } from '../src/lib/db';
 import { leseBukhari } from '../src/lib/hadith/import';
 import { leseMetadaten } from '../src/lib/quran/metadaten';
-import { bereinige, type TajwidSegment } from '../src/lib/quran/tajwid';
+import { bereinige, REGEL_FACHBEGRIFF, REGEL_FAMILIE, type TajwidSegment } from '../src/lib/quran/tajwid';
 import { leseTanzil } from '../src/lib/quran/tanzil';
 import { leseKopf, leseUebersetzung } from '../src/lib/quran/uebersetzung';
 import { woerter, zerlege, zusammensetzen } from '../src/lib/quran/woerter';
@@ -126,31 +126,18 @@ async function koran(tx: Db, rohText: Buffer, rohMeta: Buffer, rohTajwid: Buffer
   );
 }
 
-/** Tajwid-Regeln (Schlüssel und Fachbegriffe; Erklärungen verfasst die Lehrkraft, ADR 0030). */
+/** Tajwid-Regeln (Schlüssel und Fachbegriffe aus `REGEL_FACHBEGRIFF`; Erklärungen verfasst die Lehrkraft, ADR 0030). */
 async function tajwidRegeln(tx: Db) {
-  const regeln: [string, string, string][] = [
-    ['ghunnah', 'ghunna', 'Ghunna'],
-    ['idghaam_ghunnah', 'ghunna', 'Idgham mit Ghunna'],
-    ['idghaam_shafawi', 'ghunna', 'Idgham schafawi'],
-    ['ikhfa', 'ikhfa', 'Ikhfa'],
-    ['ikhfa_shafawi', 'ikhfa', 'Ikhfa schafawi'],
-    ['iqlab', 'iqlab', 'Iqlab'],
-    ['qalqalah', 'qalqala', 'Qalqala'],
-    ['madd_2', 'madd', 'Madd (2)'],
-    ['madd_246', 'madd', 'Madd (2, 4 oder 6)'],
-    ['madd_6', 'madd', 'Madd (6)'],
-    ['madd_munfasil', 'madd', 'Madd munfasil'],
-    ['madd_muttasil', 'madd', 'Madd muttasil'],
-    ['silent', 'stumm', 'Nicht gesprochen'],
-    ['hamzat_wasl', 'stumm', 'Hamzat al-Wasl'],
-    ['lam_shamsiyyah', 'stumm', 'Lam schamsiyya'],
-    ['idghaam_no_ghunnah', 'stumm', 'Idgham ohne Ghunna'],
-    ['idghaam_mutajanisayn', 'stumm', 'Idgham mutadschanisain'],
-    ['idghaam_mutaqaribayn', 'stumm', 'Idgham mutaqaribain'],
-  ];
   await tx
     .insert(schema.tajwidRegel)
-    .values(regeln.map(([schluessel, familie, name], i) => ({ schluessel, familie, name: { de: name }, sortierung: i })))
+    .values(
+      Object.entries(REGEL_FACHBEGRIFF).map(([schluessel, name], i) => ({
+        schluessel,
+        familie: REGEL_FAMILIE[schluessel],
+        name: { de: name },
+        sortierung: i,
+      })),
+    )
     .onConflictDoNothing({ target: schema.tajwidRegel.schluessel });
 }
 
@@ -177,10 +164,22 @@ async function ausgabe(tx: Db, a: (typeof AUSGABEN)[number], roh: Buffer, hash: 
     sha256: hash,
     abgerufenAm: new Date('2026-10-13T04:41:00Z'),
   };
+  // Die Freigabe gilt für die unverändert importierte Ausgabe (ADR 0030): Ändert sich die Datei (SHA-256), ist die
+  // Ausgabe wieder auszuschalten und neu freizugeben.
+  const unveraendert = sql`${schema.quranAusgabe.sha256} = excluded.sha256`;
   await tx
     .insert(schema.quranAusgabe)
     .values(werte)
-    .onConflictDoUpdate({ target: schema.quranAusgabe.id, set: { ...werte } });
+    .onConflictDoUpdate({
+      target: schema.quranAusgabe.id,
+      set: {
+        ...werte,
+        aktiv: sql`case when ${unveraendert} then ${schema.quranAusgabe.aktiv} else false end`,
+        standard: sql`case when ${unveraendert} then ${schema.quranAusgabe.standard} else false end`,
+        freigegebenVon: sql`case when ${unveraendert} then ${schema.quranAusgabe.freigegebenVon} else null end`,
+        freigegebenAm: sql`case when ${unveraendert} then ${schema.quranAusgabe.freigegebenAm} else null end`,
+      },
+    });
   await tx.delete(schema.quranUebersetzung).where(eq(schema.quranUebersetzung.ausgabeId, a.id));
   await inBloecken(verse, 1000, (block) => tx.insert(schema.quranUebersetzung).values(block.map((v) => ({ ausgabeId: a.id, ...v }))));
   console.log(`[inhalte] Ausgabe ${a.id}: ${verse.length} Verse`);
