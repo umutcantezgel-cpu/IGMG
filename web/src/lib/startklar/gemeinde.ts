@@ -1,7 +1,7 @@
 import { and, asc, count, eq, lt, ne, sql } from 'drizzle-orm';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
-import { entscheide, type Funktion, MIT_PERSONENDATEN } from '@/lib/funktionen-regeln';
+import { entscheide, type Funktion, IN_PRODUKTION_AN, MIT_PERSONENDATEN } from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
@@ -51,7 +51,10 @@ export function bewerteLauf(e: LokalEintrag | undefined, jetzt: Date, maxStunden
 export function eingeschaltet(env: Umgebung, einstellung: unknown): Funktion[] {
   const gelesen = funktionenEinstellung.safeParse(einstellung ?? {});
   const werte = gelesen.success ? gelesen.data : null;
-  return [...MIT_PERSONENDATEN, 'hadith_gesamt' as const].filter((f) => entscheide(f, env, werte));
+  // Von Menschen für die Produktion freigegebene Funktionen (IN_PRODUKTION_AN) zählen nicht als offener Vorbehalt
+  return [...MIT_PERSONENDATEN, 'hadith_gesamt' as const]
+    .filter((f) => !IN_PRODUKTION_AN.includes(f))
+    .filter((f) => entscheide(f, env, werte));
 }
 
 function groesse(bytes: number | undefined): string {

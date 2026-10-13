@@ -12,7 +12,8 @@ describe('Berechtigungen je Pfad (ADR 0028, ADR 0029)', () => {
   it('Standort nur auf den Gebetszeiten-Seiten, Mikrofon/Kamera nur in der Verwaltung', () => {
     for (const { source, erlaubt } of PFAD_BERECHTIGUNGEN) {
       if (erlaubt.includes('geolocation')) expect(source).toMatch(/gebetszeiten|namaz-vakitleri|prayer-times/);
-      if (erlaubt.includes('microphone') || erlaubt.includes('camera')) expect(source).toMatch(/verwaltung/);
+      if (erlaubt.includes('microphone')) expect(source).toMatch(/verwaltung\/rezitationen/);
+      expect(erlaubt).not.toContain('camera');
     }
     expect(permissionsPolicy(['geolocation'])).toContain('geolocation=(self)');
     expect(permissionsPolicy(['geolocation'])).toContain('microphone=()');

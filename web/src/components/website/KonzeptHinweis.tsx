@@ -15,7 +15,7 @@ const SCHLUESSEL = 'igmg-konzepthinweis-gesehen';
  * Dialog wäre das späteste große Element (LCP, K-12). Schließen ohne JavaScript über `<form method="dialog">`;
  * der Merker wird beim Schließen gesetzt. Öffentliche CSP erlaubt Inline-Skripte (ADR 0012).
  */
-const SOFORT = `(function(){var d=document.getElementById('konzepthinweis');if(!d||!d.showModal)return;try{if(localStorage.getItem('${SCHLUESSEL}')==='1')return}catch(e){}d.addEventListener('close',function(){try{localStorage.setItem('${SCHLUESSEL}','1')}catch(e){}});d.showModal()})()`;
+const SOFORT = `(function(){var d=document.getElementById('konzepthinweis');if(!d||!d.showModal)return;try{if(localStorage.getItem('${SCHLUESSEL}')==='1')return}catch(e){}d.addEventListener('close',function(){try{localStorage.setItem('${SCHLUESSEL}','1')}catch(e){}});d.showModal();var h=document.getElementById('hinweis-titel');if(h)h.focus()})()`;
 
 /**
  * Konzept-Hinweis (design/DisclaimerDialog.dc.html), zweisprachig DE/TR wie im Design. Erscheint einmal je Browser
@@ -24,6 +24,8 @@ const SOFORT = `(function(){var d=document.getElementById('konzepthinweis');if(!
  */
 export function KonzeptHinweis({ texte }: { texte: Texte }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  // Erster Fokus auf dem Titel: sonst scrollt der Dialog auf schmalen Bildschirmen zum Knopf und schneidet den Titel ab
+  const titelFokus = () => document.getElementById('hinweis-titel')?.focus();
   useEffect(() => {
     let gesehen = false;
     try {
@@ -31,8 +33,19 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
     } catch {
       gesehen = false;
     }
-    // Client-Navigation (Inline-Skript läuft dann nicht) oder Skript blockiert: hier öffnen
-    if (!gesehen && dialog.current && !dialog.current.open) dialog.current.showModal();
+    const d = dialog.current;
+    if (!d) return;
+    if (d.open && !d.matches(':modal')) {
+      // Beim Streaming (Suspense) verschiebt React den schon modal geöffneten Dialog im DOM – er verliert dabei die
+      // oberste Ebene und stünde offen unter der Fußzeile. Ohne `close` (setzte den Merker) wieder modal öffnen.
+      d.removeAttribute('open');
+      d.showModal();
+      titelFokus();
+    } else if (!gesehen && !d.open) {
+      // Client-Navigation (Inline-Skript läuft dann nicht) oder Skript blockiert: hier öffnen
+      d.showModal();
+      titelFokus();
+    }
   }, []);
   const schliessen = () => {
     try {
@@ -69,7 +82,7 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
         className="ohne-auftritt m-auto breite-dialog max-w-dialog rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
       >
         <div className="bg-warnung-toenung px-6 pt-6 pb-4">
-          <h2 id="hinweis-titel" className="flex items-start gap-3 text-24 leading-tight">
+          <h2 id="hinweis-titel" tabIndex={-1} className="flex items-start gap-3 text-24 leading-tight outline-none">
             <TriangleAlert aria-hidden className="mt-1 size-6 shrink-0 text-warnung" />
             <span>
               {texte.titelDe} / <span lang="tr">{texte.titelTr}</span>

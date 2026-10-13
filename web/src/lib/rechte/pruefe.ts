@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { cache } from 'react';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { darf, organisationsFilter, type Aktion, type RollenZuweisung, type Ziel } from './matrix';
 import { sitzungAbgelaufen } from './sitzung';
 
@@ -34,6 +35,8 @@ async function ladeRollen(benutzerId: string): Promise<RollenZuweisung[]> {
 
 /** Aktuelle Sitzung (je Anfrage einmal geladen). null = nicht angemeldet. */
 export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
+  // Beispielmodus ohne Datenbank (ADR 0019): niemand ist angemeldet
+  if (!datenbankVerfuegbar()) return null;
   const sitzung = await auth.api.getSession({ headers: await headers() });
   // Gesperrt (C12): bestehende Sitzungen werden beim Sperren gelöscht; das hier ist die zweite Sicherung
   if (!sitzung || sitzung.user.gesperrtAm) return null;

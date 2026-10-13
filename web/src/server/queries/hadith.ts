@@ -3,6 +3,7 @@ import { and, asc, count, eq, inArray, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { BUKHARI, TEIL_GROESSE, teilAnzahl, teilVon } from '@/lib/hadith/anzeige';
 
@@ -123,6 +124,7 @@ export async function ladeHadithUebersicht(): Promise<HadithUebersicht> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
+  if (!datenbankVerfuegbar()) return { sammlung: null, buecher: [], gesamt: 0, geprueft: { de: 0, tr: 0, en: 0 }, auswahlAnzahl: 0 }; // Beispielmodus ohne Datenbank (ADR 0019)
   const s = await sammlung();
   const leer = { de: 0, tr: 0, en: 0 };
   if (!s) return { sammlung: null, buecher: [], gesamt: 0, geprueft: leer, auswahlAnzahl: 0 };
@@ -157,6 +159,7 @@ export async function ladeHadithBuch(nr: number, teil = 1): Promise<HadithBuch |
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
+  if (!datenbankVerfuegbar()) return null; // Beispielmodus ohne Datenbank (ADR 0019)
   if (!Number.isInteger(nr) || nr < 1 || !Number.isInteger(teil) || teil < 1) return null;
   const s = await sammlung();
   if (!s) return null;
@@ -189,6 +192,7 @@ export async function ladeHadithAuswahl(liste: string = AUSWAHL): Promise<{ samm
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
+  if (!datenbankVerfuegbar()) return { sammlung: null, hadithe: [] }; // Beispielmodus ohne Datenbank (ADR 0019)
   const s = await sammlung();
   if (!s) return { sammlung: null, hadithe: [] };
   const zeilen = await db
@@ -212,6 +216,7 @@ export async function ladeHadithBuchTeile(): Promise<{ nr: number; teile: number
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   if (!(await sammlung())) return [];
   return (await buecher()).map((b) => ({ nr: b.nr, teile: teilAnzahl(b.anzahl) })).filter((b) => b.teile > 1);
 }
@@ -221,6 +226,7 @@ export async function ladeHadithBuchNummern(): Promise<number[]> {
   'use cache: remote';
   cacheLife('max');
   cacheTag(TAG.hadith);
+  if (!datenbankVerfuegbar()) return []; // Beispielmodus ohne Datenbank (ADR 0019)
   const zeilen = await db
     .select({ nr: schema.hadithBuch.nr })
     .from(schema.hadithBuch)
