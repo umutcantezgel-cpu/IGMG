@@ -42,6 +42,21 @@ async function warteAufSeite(ziel: string, alt: Element | undefined): Promise<vo
   await pause(32);
 }
 
+/** Tiefe eines Pfads ohne Sprachpräfix: „/tr/kuran/2“ → 2, „/“ → 0. */
+export function pfadTiefe(pfad: string): number {
+  return pfad
+    .split('/')
+    .filter(Boolean)
+    .filter((teil, i) => !(i === 0 && (teil === 'tr' || teil === 'en' || teil === 'de'))).length;
+}
+
+/** B-26: Richtung des Seitenwechsels – tiefer (von rechts), höher (von links), seitlich (Überblendung). */
+export function richtungZwischen(von: string, nach: string): 'tiefer' | 'hoeher' | 'seitlich' {
+  const a = pfadTiefe(von);
+  const b = pfadTiefe(nach);
+  return b > a ? 'tiefer' : b < a ? 'hoeher' : 'seitlich';
+}
+
 /**
  * Gemeinsame Elemente (O-13): Liegt der Link in einer Karte mit `data-morph-karte`, bekommen deren markierte Elemente
  * (`data-morph="titel"`, `"bild"`) jetzt den Namen, den die Detailseite fest trägt (`morphStil`, morph.ts).
@@ -67,6 +82,7 @@ function benenneKarte(link: Element): HTMLElement[] {
  * Gibt es gemeinsame Elemente (Karte → Detail), setzt der Baustein `data-uebergang='morph'` an `<html>`: Der Inhalt
  * blendet dann erst nach `dauer-wechsel` ein, Titel und Bild kommen zuerst an (K-007, B-05; gesamt 640 ms, C3, H-F08).
  * Nach dem Übergang steht das Kennzeichen nicht mehr an `<html>`.
+ * B-26 (Fortschreibung von B-05): `data-richtung` an `<html>` gibt dem Inhalt eine Richtung aus der Pfadtiefe.
  */
 export function SeitenUebergang() {
   const router = useRouter();
@@ -85,6 +101,8 @@ export function SeitenUebergang() {
       if (ziel === location.pathname + location.search) return;
       e.preventDefault();
       const markiert = benenneKarte(link);
+      // B-26: tiefer → neue Seite von rechts, höher → von links, seitlich → Überblendung; der Kopf steht
+      document.documentElement.dataset.richtung = richtungZwischen(location.pathname, url.pathname);
       if (markiert.length) {
         document.documentElement.dataset.uebergang = 'morph';
       } else {
@@ -104,6 +122,7 @@ export function SeitenUebergang() {
         }
         if (letzter === uebergang) {
           delete document.documentElement.dataset.uebergang;
+          delete document.documentElement.dataset.richtung;
           letzter = null;
         }
       });

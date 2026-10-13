@@ -38,3 +38,9 @@ und jeder Schritt vom ersten Buchstaben bis zum Hatim ist ein sichtbarer Weg –
 ## Datenfluss
 - Keine Drittanbieter-Anfragen auf öffentlichen Seiten. Standort nur im Browser (nie Koordinaten ins Netz).
 - Push nur nach Opt-in; Nutzlast ohne Inhalte und Namen.
+
+## Bewegungsregister (Fortschreibung, K-007)
+| ID | Bewegung | Umsetzung | Reduziert |
+|---|---|---|---|
+| B-21 | Ortswechsel „Mein Ort“: Zeiten blenden über, Qibla-Nadel dreht einmal | `MeinOrtRechner.tsx` (`blendet-ein`, `transition-transform duration-(--dauer-moment)`) | ohne Drehung |
+| B-26 | Seitenwechsel mit Richtung: tiefer → von rechts, höher → von links, seitlich → Überblendung; Kopf steht | `SeitenUebergang.tsx` (`data-richtung`), `globals.css` (`seite-von-rechts/links`) | kein Übergang |

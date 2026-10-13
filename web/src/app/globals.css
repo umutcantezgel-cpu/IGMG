@@ -434,6 +434,45 @@
 ::view-transition-new(.seite) {
   animation: var(--dauer-wechsel) var(--ease-eintritt) var(--dauer-rueckmeldung) both einblenden;
 }
+/* B-26 Seitenwechsel mit Richtung (SeitenUebergang setzt data-richtung aus der Pfadtiefe): tiefer → die neue Seite kommt
+   von rechts, höher → von links, seitlich bleibt die Überblendung. Kurzer Weg (2rem rein, 1rem raus), nur translate und
+   opacity; bei reduzierter Bewegung gibt es keinen Übergang (SeitenUebergang und Block unten). */
+html[data-richtung='tiefer']::view-transition-new(.seite) {
+  animation-name: seite-von-rechts;
+}
+html[data-richtung='tiefer']::view-transition-old(.seite) {
+  animation-name: seite-nach-links;
+}
+html[data-richtung='hoeher']::view-transition-new(.seite) {
+  animation-name: seite-von-links;
+}
+html[data-richtung='hoeher']::view-transition-old(.seite) {
+  animation-name: seite-nach-rechts;
+}
+@keyframes seite-von-rechts {
+  from {
+    opacity: 0;
+    translate: 2rem 0;
+  }
+}
+@keyframes seite-von-links {
+  from {
+    opacity: 0;
+    translate: -2rem 0;
+  }
+}
+@keyframes seite-nach-links {
+  to {
+    opacity: 0;
+    translate: -1rem 0;
+  }
+}
+@keyframes seite-nach-rechts {
+  to {
+    opacity: 0;
+    translate: 1rem 0;
+  }
+}
 /* B-05 Karte → Detail: Inhalt erst, wenn Titel und Bild stehen; gesamt dauer-auftritt (C3, H-F08). SeitenUebergang setzt
    data-uebergang='morph' nur, wenn gemeinsame Elemente benannt sind. */
 html[data-uebergang='morph']::view-transition-new(.seite) {
