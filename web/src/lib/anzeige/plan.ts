@@ -54,6 +54,28 @@ export function aktiveFolien(folien: readonly FolieZeitplan[], jetzt: Date): Fol
     .sort((a, b) => a.reihenfolge - b.reihenfolge || a.id.localeCompare(b.id));
 }
 
+/** Iqama-Uhrzeit je Gebet (HH:MM, Europe/Berlin); ohne Angabe in der Einstellung kein Eintrag (MN-14: ausgeblendet). */
+export function iqamaZeiten(datum: string, zeiten: Tageszeiten, e: AnzeigeEinstellungen): Partial<Record<Gebet, string>> {
+  const ergebnis: Partial<Record<Gebet, string>> = {};
+  for (const g of GEBETSZEITEN) {
+    const min = e.iqama[g];
+    if (min !== undefined) ergebnis[g] = hhmm(zeitpunkt(datum, zeiten[g]).getTime() + min * 60_000);
+  }
+  return ergebnis;
+}
+
+/**
+ * Ruhefenster eines Tages (B-25): vom Ezan bis Iqama + Ruhe (bzw. Ezan + Ruhe ohne Iqama). In diesen Fenstern zeigt
+ * die Anzeige keine Folien und blendet nichts über; Zeiten als Millisekunden seit 1970.
+ */
+export function ruheFenster(datum: string, zeiten: Tageszeiten, e: AnzeigeEinstellungen): { gebet: Gebet; von: number; bis: number }[] {
+  return GEBETSZEITEN.map((g) => {
+    const ezan = zeitpunkt(datum, zeiten[g]).getTime();
+    const min = e.iqama[g];
+    return { gebet: g, von: ezan, bis: ezan + (min !== undefined ? min + e.ruheNachIqamaMin : e.ruheOhneIqamaMin) * 60_000 };
+  });
+}
+
 export function anzeigeZustand(
   datum: string,
   zeiten: Tageszeiten,
@@ -62,12 +84,10 @@ export function anzeigeZustand(
   jetzt: Date,
 ): AnzeigeZustand {
   const t = jetzt.getTime();
-  for (const g of GEBETSZEITEN) {
-    const ezan = zeitpunkt(datum, zeiten[g]).getTime();
-    const iqamaMin = e.iqama[g];
-    const ende = ezan + (iqamaMin !== undefined ? (iqamaMin + e.ruheNachIqamaMin) * 60_000 : e.ruheOhneIqamaMin * 60_000);
-    if (t >= ezan && t < ende)
-      return { modus: 'ruhe', gebet: g, iqama: iqamaMin !== undefined ? hhmm(ezan + iqamaMin * 60_000) : null, bisMs: ende };
+  for (const f of ruheFenster(datum, zeiten, e)) {
+    const iqamaMin = e.iqama[f.gebet];
+    if (t >= f.von && t < f.bis)
+      return { modus: 'ruhe', gebet: f.gebet, iqama: iqamaMin !== undefined ? hhmm(f.von + iqamaMin * 60_000) : null, bisMs: f.bis };
   }
   if (e.freitag.aktiv && wochentagBerlin(jetzt) === 5) {
     const mittag = zeitpunkt(datum, zeiten.ogle).getTime();

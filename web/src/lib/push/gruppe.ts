@@ -3,6 +3,7 @@ import { and, eq, inArray, isNull, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { kindDarfPush, sendeAnAbo } from './abo';
+import { gueltigePushVersionen } from './einwilligung';
 import { vapidAusUmgebung } from './vapid';
 
 /**
@@ -68,6 +69,8 @@ export async function sendeGruppenPush(
           empfaenger.map((e) => e.id),
         ),
         sql`${art} = any(${schema.pushAbo.themen})`,
+        // D-17: nur mit Einwilligung zum aktuellen Wortlaut
+        inArray(schema.pushAbo.einwilligungVersion, gueltigePushVersionen()),
       ),
     );
   const lernend = new Set(empfaenger.filter((e) => e.lernend).map((e) => e.id));

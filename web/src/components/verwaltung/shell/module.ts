@@ -41,7 +41,9 @@ export type ModulSchluessel =
   // Lauf Gemeinde-Plattform, Kür A (H-K01–H-K04)
   | 'hatim'
   | 'besondereTage'
-  | 'newsletter';
+  | 'newsletter'
+  // Kür (O-K05): Bildschirm-Anzeige im Gebetsraum
+  | 'anzeige';
 export type ModulIcon = ModulSchluessel;
 export type ModulGruppe = 'inhalte' | 'kommunikation' | 'betrieb';
 
@@ -59,7 +61,7 @@ export type Modul = {
  * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
  * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
  */
-export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran'] as const;
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran', 'anzeige'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
@@ -180,6 +182,15 @@ export const MODULE: readonly Modul[] = [
     gruppe: 'inhalte',
   },
   { schluessel: 'hatim', pfad: '/verwaltung/hatim', recht: 'hatim.bearbeiten', icon: 'hatim', gebaut: true, gruppe: 'inhalte' },
+  // Anzeige im Gebetsraum (O-K05): Redaktion pflegt Folien; religiöse Prüfung gibt Vers- und Hadith-Folien frei
+  {
+    schluessel: 'anzeige',
+    pfad: '/verwaltung/anzeige',
+    recht: ['anzeige.bearbeiten', 'religioes.freigeben'],
+    icon: 'anzeige',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   {
     schluessel: 'eingaenge',
     pfad: '/verwaltung/eingaenge',

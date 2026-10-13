@@ -4,6 +4,7 @@ import { AnzeigeLive, type AnzeigeTexte } from '@/components/website/anzeige/Anz
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
+import { ladeAnzeige } from '@/server/queries/anzeige';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
 
 export const ensureStatic = 'navigation';
@@ -31,6 +32,15 @@ async function texte(locale: Locale): Promise<AnzeigeTexte> {
     'offline',
     'einheitStd',
     'einheitMin',
+    'folien',
+    'iqama',
+    'ruheTitel',
+    'ruheText',
+    'freitagTitel',
+    'freitagText',
+    'versQuelle',
+    'hadithQuelle',
+    'uebersetzung',
   ] as const;
   return {
     ...(Object.fromEntries(schluessel.map((k) => [k, t.raw(k) as string])) as Omit<AnzeigeTexte, 'namen' | 'arabisch'>),
@@ -42,10 +52,18 @@ async function texte(locale: Locale): Promise<AnzeigeTexte> {
 /**
  * Gebetszeiten-Anzeige für den Bildschirm in der Moschee (Blatt S03, K-08, Laufbuch D-12): eigene Vollbild-Ansicht
  * ohne Website-Rahmen. Deutsch und Türkisch wechseln sich wie im Design ab; Englisch bleibt englisch.
+ * Folien, Iqama und Freitagsmodus aus der Verwaltung › Anzeige (AUFTRAG 3.10) stecken statisch in der Seite
+ * (Tag `anzeige`); die Anzeige holt danach alle fünf Minuten `/api/anzeige` und läuft ohne Netz weiter.
  */
 export default async function AnzeigeSeite() {
   const sprache = (await getLocale()) as Locale;
-  const [fenster, de, tr, en] = await Promise.all([ladeGebetszeitenFenster(), texte('de'), texte('tr'), texte('en')]);
+  const [fenster, anzeige, de, tr, en] = await Promise.all([
+    ladeGebetszeitenFenster(),
+    ladeAnzeige(),
+    texte('de'),
+    texte('tr'),
+    texte('en'),
+  ]);
   return (
     <AnzeigeLive
       tage={fenster.tage}
@@ -53,6 +71,7 @@ export default async function AnzeigeSeite() {
       sprachen={sprache === 'en' ? ['en'] : sprache === 'tr' ? ['tr', 'de'] : ['de', 'tr']}
       berechnet={fenster.quelle === 'berechnet' && !fenster.bestaetigt}
       zurueckHref={pfadFuer('/gebetszeiten', sprache)}
+      anzeige={anzeige}
     />
   );
 }

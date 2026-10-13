@@ -172,6 +172,24 @@ export const quranUebersetzung = pgTable(
   (t) => [primaryKey({ columns: [t.ausgabeId, t.sure, t.vers] })],
 );
 
+/**
+ * Kuratierte Verslisten (K-A „Vers des Tages“): nur Verweise auf importierte Verse (Sure, Vers), Reihenfolge fest.
+ * Gepflegt nur von Personen mit `quran.bearbeiten` und `religioes.freigeben` (wie `hadith_auswahl`), jeder Schritt im
+ * Freigabe-Verlauf. Ohne Fremdschlüssel, damit ein erneuter Import die Liste nicht leert; geprüft wird beim Hinzufügen.
+ */
+export const quranVersAuswahl = pgTable(
+  'quran_vers_auswahl',
+  {
+    liste: text().notNull(),
+    sure: smallint().notNull(),
+    vers: smallint().notNull(),
+    reihenfolge: integer().notNull().default(0),
+    erstelltVon: text(),
+    erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.liste, t.sure, t.vers] })],
+);
+
 /** Tajwid-Regeln (Schlüssel aus cpfair/quran-tajweed); Erklärungen verfasst und gibt die Lehrkraft frei. */
 export const tajwidRegel = pgTable('tajwid_regel', {
   schluessel: text().primaryKey(),

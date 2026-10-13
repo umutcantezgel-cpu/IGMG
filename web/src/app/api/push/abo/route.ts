@@ -1,7 +1,7 @@
 import { after, connection } from 'next/server';
-import nachrichten from '../../../../../messages/bereiche/benachrichtigungen.json';
 import { funktionAn } from '@/lib/funktionen';
 import { entferneAbo, kindDarfPush, sendeAnAbo, speichereAbo } from '@/lib/push/abo';
+import { pushEinwilligungsText } from '@/lib/push/einwilligung';
 import { erlaubterEndpunkt } from '@/lib/push/senden';
 import { vapidAusUmgebung } from '@/lib/push/vapid';
 import { gueltigeAboSchluessel } from '@/lib/push/verschluesselung';
@@ -57,10 +57,9 @@ export async function POST(anfrage: Request) {
   if (konto?.istKind && !(await kindDarfPush(konto.benutzerId))) return antwort(403, { fehler: 'einwilligung' });
   // Chat und Unterricht nur mit Konto (Inhalte gehören zu einer Person); anonym bleiben Gebet und Ankündigung
   const themen = konto ? eingabe.data.themen : eingabe.data.themen.filter((t) => t === 'gebet' || t === 'ankuendigung');
-  // Kinder sehen den Wortlaut in Du-Form (Mein Bereich › Benachrichtigungen): Version aus genau diesem Text
-  const wortlaut = konto?.istKind
-    ? `${nachrichten.de.push.kind.einwilligung}|${nachrichten.tr.push.kind.einwilligung}|${nachrichten.en.push.kind.einwilligung}`
-    : `${nachrichten.de.push.einwilligung}|${nachrichten.tr.push.einwilligung}|${nachrichten.en.push.einwilligung}`;
+  // D-15: Version aus genau dem Text, den die Person gesehen hat – in der Sprache des Abos (die Seite sendet ihre
+  // Sprache mit); Kinder sehen den Wortlaut in Du-Form (Mein Bereich › Benachrichtigungen)
+  const wortlaut = pushEinwilligungsText(eingabe.data.sprache, Boolean(konto?.istKind));
   const ergebnis = await speichereAbo({ ...eingabe.data, themen }, konto?.benutzerId ?? null, wortlaut);
   if (ergebnis.neu) {
     after(async () => {

@@ -21,8 +21,14 @@ export const anzeigeFolie = pgTable(
     wochentage: smallint().array().notNull().default([]),
     reihenfolge: integer().notNull().default(0),
     status: inhaltStatusEnum().notNull().default('entwurf'),
+    /** Vers/Hadith: religiöse Freigabe mit Vier-Augen-Prinzip (ADR 0030); öffentlich nur „geprueft“. */
+    ...freigabeSpalten(),
     erstelltVon: text(),
     erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    aktualisiertAm: timestamp({ withTimezone: true })
+      .notNull()
+      .defaultNow()
+      .$onUpdate(() => new Date()),
   },
   (t) => [index('anzeige_folie_status_idx').on(t.status, t.reihenfolge)],
 );

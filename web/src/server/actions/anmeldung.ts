@@ -9,6 +9,7 @@ import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
+import { meldeSicherheitsaenderung } from '@/lib/konto/sicherheitsmail';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeAngemeldet } from '@/lib/rechte/pruefe';
 import { basisUrl } from '@/lib/seo/metadaten';
@@ -174,6 +175,11 @@ export async function zweiFaktorBestaetigen(vorher: FormularZustand, daten: Form
   // Better Auth ersetzt nur diese Sitzung; ältere (ohne Faktor entstandene) enden jetzt (N-1 der Prüfung S1)
   await db.delete(schema.session).where(and(eq(schema.session.userId, angemeldet.benutzerId), lt(schema.session.createdAt, beginn)));
   await protokolliere({ benutzerId: angemeldet.benutzerId, aktion: 'zwei_faktor.eingerichtet' });
+  // Sicherheitshinweis an die Kontoadresse (ohne Geheimnisse); Versand nach der Antwort
+  const benutzerId = angemeldet.benutzerId;
+  after(async () => {
+    if (await meldeSicherheitsaenderung(benutzerId, 'zwei_faktor').catch(() => false)) await versendeOffeneMails().catch(() => undefined);
+  });
   redirect('/verwaltung');
 }
 

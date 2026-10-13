@@ -35,6 +35,8 @@ import spenden from './spenden.json';
 import lernen from './lernen.json';
 import koran from './koran.json';
 import rezitationen from './rezitationen.json';
+import anzeige from './anzeige.json';
+import sicherheit from './sicherheit.json';
 
 type Teil = Record<string, unknown>;
 
@@ -70,4 +72,6 @@ export const VERWALTUNG: Record<string, Teil> = {
   lernen,
   koran,
   rezitationen,
+  anzeige,
+  sicherheit,
 };

@@ -33,6 +33,8 @@ export type AuditAktion =
   | 'konto.daten_exportiert'
   | 'konto.loeschantrag'
   | 'konto.kinderkonto_angelegt'
+  // DSFA D-16: Vorwarnung vor der Löschung eines inaktiven Kontos (Löschlauf, ohne Inhalte)
+  | 'konto.inaktiv_gewarnt'
   // Eltern: Einwilligungen für ihr Kind und Passwort des Kinderzugangs (Paket O-L02-UI/H-L06)
   | 'konto.einwilligung_erteilt'
   | 'konto.einwilligung_widerrufen'

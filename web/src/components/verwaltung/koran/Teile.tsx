@@ -36,6 +36,8 @@ const BEREICHE = [
   { schluessel: 'woerter', pfad: '/verwaltung/koran/woerter' },
   { schluessel: 'tajwid', pfad: '/verwaltung/koran/tajwid' },
   { schluessel: 'hadith', pfad: '/verwaltung/koran/hadith' },
+  // Kür K-A: Vers und Hadith des Tages (O-K05)
+  { schluessel: 'desTages', pfad: '/verwaltung/koran/des-tages' },
 ] as const;
 export type KoranBereich = (typeof BEREICHE)[number]['schluessel'];
 

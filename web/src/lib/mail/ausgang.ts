@@ -8,8 +8,16 @@ import { baueNewsletterMail, NEWSLETTER_EMPFAENGER, newsletterEmpfaenger } from 
 import { basisUrl } from '@/lib/seo/metadaten';
 import { BEREICHE } from '../../../messages/bereiche';
 import de from '../../../messages/de.json';
+import { VERWALTUNG } from '../../../messages/verwaltung';
 import { istUnzustellbar, MailUnzustellbar } from './adresse';
-import { istKontoVorlage, KONTO_MAIL_SCHLUESSEL, kontoSpracheAusLink, type KontoVorlage, type MailSprache } from './konto-vorlagen';
+import {
+  istKontoVorlage,
+  KONTO_MAIL_SCHLUESSEL,
+  kontoSpracheAusLink,
+  SICHERHEITS_VORLAGEN,
+  type KontoVorlage,
+  type MailSprache,
+} from './konto-vorlagen';
 import { versende } from './transport';
 import { benachrichtigungMail, bestaetigungMail, kontoMail } from './vorlagen';
 
@@ -71,7 +79,7 @@ async function kontoMailBauen(vorlage: KontoVorlage, sprache: MailSprache, inhal
   const t = uebersetzer(sprache, kontoNachrichten(sprache), `konto.mails.${KONTO_MAIL_SCHLUESSEL[vorlage]}`);
   return kontoMail(sprache, {
     betreff: t('betreff'),
-    text: t('text', { gueltigBis: inhalt.daten.gueltigBis ?? '' }),
+    text: t('text', { gueltigBis: inhalt.daten.gueltigBis ?? '', zeitpunkt: inhalt.daten.zeitpunkt ?? '' }),
     knopf: t('knopf'),
     hinweis: t('hinweis'),
     link: inhalt.daten.link ?? basisUrl(),
@@ -120,6 +128,18 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       knopf: t('passwort.knopf'),
       hinweis: t('passwort.hinweis'),
       link: inhalt.daten.link ?? `${basisUrl()}/verwaltung/anmelden`,
+    });
+  }
+  if (vorlage === SICHERHEITS_VORLAGEN.passkey || vorlage === SICHERHEITS_VORLAGEN.zwei_faktor) {
+    // Konto der Verwaltung: neuer Passkey bzw. Zwei-Faktor-Anmeldung eingerichtet – Zeitpunkt, keine Geheimnisse
+    const art = vorlage === SICHERHEITS_VORLAGEN.passkey ? 'passkey' : 'zweiFaktor';
+    const t = uebersetzer('de', { verwaltung: VERWALTUNG.sicherheit }, `verwaltung.sicherheit.mails.${art}`);
+    return benachrichtigungMail({
+      betreff: t('betreff'),
+      text: t('text', { zeitpunkt: inhalt.daten.zeitpunkt ?? '' }),
+      knopf: t('knopf'),
+      hinweis: t('hinweis'),
+      link: inhalt.daten.link ?? `${basisUrl()}/verwaltung/konto`,
     });
   }
   if (vorlage === 'einladung') {

@@ -6,6 +6,7 @@ import { Stern8 } from '@/components/website/Icons';
 import { JsonLd } from '@/components/website/JsonLd';
 import { NewsCard } from '@/components/website/NewsCard';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { DesTages } from '@/components/website/start/DesTages';
 import { Tagesbogen } from '@/components/website/start/Tagesbogen';
 import { UnsereMoschee } from '@/components/website/start/UnsereMoschee';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
@@ -14,6 +15,8 @@ import type { Locale } from '@/i18n/routing';
 import { moschee } from '@/lib/seo/jsonld';
 import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
+import { heuteBerlin } from '@/lib/zeit/heute';
+import { ladeDesTages } from '@/server/queries/des-tages';
 import { ladeNachrichten } from '@/server/queries/nachrichten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
@@ -33,7 +36,8 @@ const sekundaer =
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
  * im Ramadan der Fastenbogen B-20), „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, ruhig, ohne Bewegung),
- * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3).
+ * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3); darunter Vers und Hadith des Tages, sobald
+ * die religiöse Prüfung Einträge freigegeben hat.
  */
 export default async function Startseite() {
   const sprache = (await getLocale()) as Locale;
@@ -46,6 +50,8 @@ export default async function Startseite() {
   const aufmacher = nachrichten.find((n) => n.empfohlen) ?? nachrichten[0];
   const weitere = nachrichten.filter((n) => n !== aufmacher).slice(0, 3);
   const kontakt = await ladeSeiteninhalt('kontakt');
+  // Vers und Hadith des Tages (Kür K-A): nur mit mindestens einem freigegebenen Eintrag in den Listen „des Tages“
+  const desTages = await ladeDesTages((await heuteBerlin()).datum);
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
@@ -156,6 +162,7 @@ export default async function Startseite() {
           ) : null}
         </div>
       </section>
+      <DesTages daten={desTages} sprache={sprache} />
     </Seitenrahmen>
   );
 }

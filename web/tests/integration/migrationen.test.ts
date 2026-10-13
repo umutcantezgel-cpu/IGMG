@@ -8,8 +8,8 @@ afterAll(() => client.close());
 describe('Migrationen (K-05)', () => {
   it('legen alle Tabellen an', async () => {
     const r = await db.execute<{ n: number }>(sql`select count(*)::int as n from information_schema.tables where table_schema = 'public'`);
-    // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008)
-    expect(r.rows[0]?.n).toBe(96);
+    // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008), + quran_vers_auswahl (0012)
+    expect(r.rows[0]?.n).toBe(97);
   });
 
   it('Volltextspalten werden je Sprache erzeugt (ADR 0013)', async () => {

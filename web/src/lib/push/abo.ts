@@ -1,11 +1,12 @@
 import 'server-only';
-import { and, eq, isNull, lt, or, sql } from 'drizzle-orm';
+import { and, eq, inArray, isNull, lt, or, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import { berlinerDatum, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
 import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
-import { entschluessele, hmac, sha256, verschluessele } from '@/lib/krypto';
+import { entschluessele, hmac, verschluessele } from '@/lib/krypto';
 import { erinnerungFaellig, type PushAboEingabe } from '@/lib/validierung/push';
+import { einwilligungsVersion, gueltigePushVersionen } from './einwilligung';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
 import { sendePush, type PushNutzlast, type PushZiel } from './senden';
 import type { VapidSchluessel } from './vapid';
@@ -21,10 +22,8 @@ function endpointHmac(endpoint: string): string {
   return hmac(`push|${endpoint}`, 'RATE_GEHEIMNIS');
 }
 
-/** Version des Einwilligungstexts (SHA-256 über den angezeigten Wortlaut). */
-export function einwilligungsVersion(text: string): string {
-  return `push-${sha256(text).slice(0, 16)}`;
-}
+/** Version des Einwilligungstexts (SHA-256 über den angezeigten Wortlaut; D-15 je Sprache, `einwilligung.ts`). */
+export { einwilligungsVersion };
 
 export async function speichereAbo(
   e: PushAboEingabe,
@@ -142,10 +141,11 @@ export type TaktErgebnis = { gebetsErinnerungen: number; fehlgeschlagen: number;
 export async function fuehreTaktAus(vapid: VapidSchluessel, jetzt = new Date()): Promise<TaktErgebnis> {
   const fenster = await ladeGebetszeitenFenster();
   const jetztMs = jetzt.getTime();
+  // D-17: nur Abos, deren Einwilligung zum aktuellen Wortlaut passt (neue Textfassung → neue Einwilligung nötig)
   const abos = await db
     .select()
     .from(schema.pushAbo)
-    .where(sql`'gebet' = any(${schema.pushAbo.themen})`);
+    .where(and(sql`'gebet' = any(${schema.pushAbo.themen})`, inArray(schema.pushAbo.einwilligungVersion, gueltigePushVersionen())));
   let gesendet = 0;
   let fehlgeschlagen = 0;
   // Heute und morgen (Erinnerung vor Imsak kurz nach Mitternacht)

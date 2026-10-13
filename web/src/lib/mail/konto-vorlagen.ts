@@ -3,7 +3,18 @@
  * keine Namen, keine Rollen, keine Formulardaten. Texte unter `konto.mails.<art>` (messages/bereiche/konto.json).
  * Reine Funktionen und Typen (unit-getestet); das Rendern steht in `ausgang.ts`.
  */
-export const KONTO_VORLAGEN = ['konto-bestaetigen', 'konto-vorhanden', 'konto-einladung', 'konto-passwort'] as const;
+export const KONTO_VORLAGEN = [
+  'konto-bestaetigen',
+  'konto-vorhanden',
+  'konto-einladung',
+  'konto-passwort',
+  // DSFA D-16: Vorwarnung vor der Löschung inaktiver Konten (Kinderkonten: an die Eltern)
+  'konto-inaktiv',
+  'konto-inaktiv-kind',
+  // Sicherheitshinweis nach neuem Passkey bzw. neu eingerichteter Zwei-Faktor-Anmeldung (ohne Geheimnisse)
+  'konto-passkey',
+  'konto-zwei-faktor',
+] as const;
 export type KontoVorlage = (typeof KONTO_VORLAGEN)[number];
 export type MailSprache = 'de' | 'tr' | 'en';
 
@@ -17,7 +28,18 @@ export const KONTO_MAIL_SCHLUESSEL: Record<KontoVorlage, string> = {
   'konto-vorhanden': 'vorhanden',
   'konto-einladung': 'einladung',
   'konto-passwort': 'passwort',
+  'konto-inaktiv': 'inaktiv',
+  'konto-inaktiv-kind': 'inaktivKind',
+  'konto-passkey': 'passkey',
+  'konto-zwei-faktor': 'zweiFaktor',
 };
+
+/**
+ * Sicherheitshinweise für Konten der Verwaltung (Deutsch, Layout der Benachrichtigung): neuer Passkey bzw. neu
+ * eingerichtete Zwei-Faktor-Anmeldung. Texte unter `verwaltung.sicherheit.mails` (messages/verwaltung/sicherheit.json).
+ */
+export const SICHERHEITS_VORLAGEN = { passkey: 'sicherheit-passkey', zwei_faktor: 'sicherheit-zwei-faktor' } as const;
+export type SicherheitsArt = keyof typeof SICHERHEITS_VORLAGEN;
 
 /**
  * „Passwort vergessen“ nutzt für Verwaltung und Gemeinde denselben Better-Auth-Weg (Vorlage `passwort`). Welche Mail

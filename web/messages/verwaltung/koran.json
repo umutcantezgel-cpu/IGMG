@@ -10,7 +10,8 @@
       "ausgaben": "Ausgaben",
       "woerter": "Wortbedeutungen",
       "tajwid": "Tajwid",
-      "hadith": "Hadith"
+      "hadith": "Hadith",
+      "desTages": "Des Tages"
     },
     "status": {
       "entwurf": "Entwurf",
@@ -76,7 +77,10 @@
       "nummer": "Bitte eine Nummer wie „1“ oder „402.2“ eingeben.",
       "deFehlt": "Bitte zuerst den deutschen Text eintragen.",
       "richtext": "Der Text konnte nicht gelesen werden. Bitte erneut eingeben.",
-      "link": "Dieser Link ist nicht erlaubt."
+      "link": "Dieser Link ist nicht erlaubt.",
+      "stelle": "Bitte eine Stelle wie „2:255“ eingeben (Sure:Vers).",
+      "versUnbekannt": "Diesen Vers gibt es im Koran-Import nicht.",
+      "versVorhanden": "Dieser Vers steht schon in der Liste."
     },
     "uebersicht": {
       "kacheln": "Bereiche",
@@ -301,6 +305,25 @@
       "geprueft": "Geprüfte Übersetzung: {sprachen}",
       "keineUebersetzung": "Noch keine geprüfte Übersetzung",
       "nurLesen": "Ändern dürfen nur Personen, die Hadithe bearbeiten und religiös freigeben dürfen."
+    },
+    "desTages": {
+      "titel": "Vers und Hadith des Tages",
+      "einleitung": "Die Startseite zeigt nach Datum je einen Vers und einen Hadith aus diesen Listen – nur, wenn die Liste mindestens einen Eintrag hat. Die Listen enthalten nur Verweise auf importierte Texte; Übersetzungen erscheinen nur in freigegebener Fassung.",
+      "nurLesen": "Ändern dürfen nur Personen, die Verse bearbeiten und religiös freigeben dürfen.",
+      "heuteTitel": "Heute auf der Startseite",
+      "heuteText": "Die Auswahl wechselt um Mitternacht (Wetzlarer Zeit) und folgt der Reihenfolge der Liste.",
+      "keinEintrag": "nichts (Liste leer)",
+      "versTitel": "Vers des Tages",
+      "versText": "Verweise auf einzelne Verse (Sure:Vers). Der arabische Text kommt aus dem Tanzil-Import, die Übersetzung aus der freigegebenen Ausgabe der jeweiligen Sprache.",
+      "hadithTitel": "Hadith des Tages",
+      "hadithText": "Diese Liste pflegen Sie bei den Hadith-Listen. Übersetzungen erscheinen nur mit Freigabe „Geprüft“.",
+      "zuHadithListen": "Zu den Hadith-Listen",
+      "eintrag": "Sure {sure} · {stelle}",
+      "stelle": "Stelle (Sure:Vers)",
+      "stelleHinweis": "Zum Beispiel 2:255",
+      "hochAria": "Nach oben: Vers {stelle}",
+      "runterAria": "Nach unten: Vers {stelle}",
+      "entfernenAria": "Aus der Liste entfernen: Vers {stelle}"
     }
   }
 }
