@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 0/7 (E0 Start) · Welle 0 · Pflicht 0/≈70 · Kür 0 · Kriterien 0/21 · Ausnahmen 0 · Bestand grün (main b0bcc11) · Vercel grün · Nächster Schritt: Einrichtung + Kundschafter
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 1–2/7 · Welle 1 (4 Pakete parallel: Koran-Leser, Konten, Hadith+Quellen+Moschee 2026, Elifbe+Lernen) · Bestand grün · Nächster Schritt: Mein Ort, Wellen zusammenführen, Tor E2
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -9,3 +9,5 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 0/7 (E0 Start) · Wel
 
 ## Verlauf
 - 2026-10-13 04:2x UTC · Start nach Freigabe des Plans; Sofortstart ohne Warten (L2-E01); `_gemeinde/` angelegt, `origin/main` (b0bcc11, ABSCHLUSS Vorlauf) gemergt.
+- 2026-10-13 · E1: Datenmodell, Rechte, Schalter, Inhaltsimport (Koran 6236 Verse/77433 Wörter, Tajwid, 3 Übersetzungen, Bukhari 7580) fertig; KERN 3.0, MENSCHEN, ABNAHME, PLAN, Religion-Prüfung (grün).
+- 2026-10-13 · Welle 1 gestartet (Arbeitsbäume): O-Q01 Koran-Leser, O-A01/A02 Konten + Mein Bereich, H-D01/H-R01/H-I01 Hadith + Quellen + Moschee 2026, O-E01 Elifbe + /lernen.

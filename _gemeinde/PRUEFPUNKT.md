@@ -1,5 +1,6 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
-- **Nächster exakter Schritt:** E0 – Einrichtung (Node 24, pnpm install, Werkzeug-Abhängigkeiten) und Kundschafter H-E0-K01…K06 + Datensätze H-E0-B01 per Workflow (Haiku); danach LAGEBILD v2 und E1 (O-F01 KERN 3.0/ADRs, O-F02 Schema).
-- **Branch:** `claude/trusting-lovelace-6nfolz` (Merge von `origin/main` b0bcc11 enthalten).
-- **Wiederaufnahme:** Branch holen, `_gemeinde/STATUS.md` (Einrichtung) und diese Datei lesen, sofort fortsetzen.
+- **Läuft:** Welle 1 in vier Arbeitsbäumen (Koran-Leser, Konten/Mein Bereich, Hadith/Quellen/Moschee 2026, Elifbe/Lernen). Ihre Branches nach Abschluss in `claude/trusting-lovelace-6nfolz` mergen.
+- **Orchestrator parallel:** H-G01 Gebetszeiten „Mein Ort“; danach Navigation (Menüpunkte Hadith, Elifbe, Lernen), Tor E2 (Typen, Lint, Unit, Integration, Build, E2E-Auswahl, S1-Sicherheitsprüfung), Fast-Forward `main`.
+- **Danach:** Welle 2 (E3/E4): Lernplattform, Chat, CMS, Push, Rezitations-Werkstatt.
+- **Wiederaufnahme nach Neustart:** Branch holen, `_gemeinde/STATUS.md` (Einrichtung), diese Datei; `git worktree list` und `git branch -a` zeigen die Paket-Branches (worktree-agent-*); fertige Branches mergen, fehlende Pakete neu starten (Briefing `_gemeinde/pakete/BRIEFING-GEMEINSAM.md`).

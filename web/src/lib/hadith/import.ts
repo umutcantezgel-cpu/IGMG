@@ -37,7 +37,7 @@ export class HadithFehler extends Error {}
 /** Harakat (U+064B–U+065F), hochgestelltes Alef (U+0670), Koranzeichen (U+06D6–U+06ED) und Tatweel (U+0640) entfernen. */
 export function normalisiereArabisch(text: string): string {
   return text
-    .replace(/[ً-ٰٟۖ-ۭـ]/g, '')
+    .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }

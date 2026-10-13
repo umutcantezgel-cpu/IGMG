@@ -6,7 +6,7 @@
 export type Teil = { text: string; pos: number | null };
 
 /** Arabische Buchstaben (Grundbuchstaben inkl. Alef Wasla und erweiterter Block); keine Zeichen, Ziffern oder Marken. */
-const BUCHSTABE = /[ء-غف-يٱ-ۓۺ-ۼ]/u;
+const BUCHSTABE = /[\u0621-\u063A\u0641-\u064A\u0671-\u06D3\u06FA-\u06FC]/u;
 
 export function istWort(teil: string): boolean {
   return BUCHSTABE.test(teil);
