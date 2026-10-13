@@ -33,6 +33,10 @@ export type AuditAktion =
   | 'konto.daten_exportiert'
   | 'konto.loeschantrag'
   | 'konto.kinderkonto_angelegt'
+  // Eltern: Einwilligungen für ihr Kind und Passwort des Kinderzugangs (Paket O-L02-UI/H-L06)
+  | 'konto.einwilligung_erteilt'
+  | 'konto.einwilligung_widerrufen'
+  | 'konto.kinderpasswort_gesetzt'
   | 'inhalt.angelegt'
   | 'inhalt.geaendert'
   | 'inhalt.veroeffentlicht'

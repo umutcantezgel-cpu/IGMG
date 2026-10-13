@@ -58,26 +58,57 @@
         "kontoTextKind": "Du bleibst bis zu 12 Stunden angemeldet. Danach meldest du dich einfach neu an."
       },
       "kachel": {
-        "kinder": { "titel": "Meine Kinder", "text": "Termine, Anwesenheit und Fortschritt Ihrer Kinder." },
-        "unterricht": { "titel": "Unterricht", "text": "Ihre Gruppen und der Unterricht von heute." },
-        "anwesenheit": { "titel": "Anwesenheit", "text": "Anwesenheit auf einem Bildschirm erfassen." },
-        "lernweg": { "titel": "Mein Lernweg", "text": "Vom Elifbe bis zum Koran – Schritt für Schritt." },
-        "gruppe": { "titel": "Meine Gruppe", "text": "Termine und Aufgaben deiner Gruppe." },
+        "kinder": {
+          "titel": "Meine Kinder",
+          "text": "Termine, Anwesenheit und Fortschritt Ihrer Kinder."
+        },
+        "unterricht": {
+          "titel": "Unterricht",
+          "text": "Ihre Gruppen und der Unterricht von heute."
+        },
+        "anwesenheit": {
+          "titel": "Anwesenheit",
+          "text": "Anwesenheit auf einem Bildschirm erfassen."
+        },
+        "lernweg": {
+          "titel": "Mein Lernweg",
+          "text": "Sieh, wie weit du auf deinem Weg schon bist."
+        },
+        "gruppe": {
+          "titel": "Meine Gruppe",
+          "text": "Termine und Chat deiner Gruppe."
+        },
         "lesezeichen": {
           "titel": "Lesezeichen",
           "text": "Ihre gespeicherten Stellen im Koran.",
           "textKind": "Deine gespeicherten Stellen im Koran."
         },
-        "quran": { "titel": "Koran lesen", "text": "Alle Suren mit Übersetzung." },
-        "gebetszeiten": { "titel": "Gebetszeiten", "text": "Die Zeiten der Moschee in Wetzlar." },
-        "veranstaltungen": { "titel": "Veranstaltungen", "text": "Was in der Gemeinde ansteht." },
-        "benachrichtigungen": { "titel": "Benachrichtigungen", "text": "Erinnerungen und Neuigkeiten – folgen bald." },
+        "quran": {
+          "titel": "Koran lesen",
+          "text": "Alle Suren mit Übersetzung."
+        },
+        "gebetszeiten": {
+          "titel": "Gebetszeiten",
+          "text": "Die Zeiten der Moschee in Wetzlar."
+        },
+        "veranstaltungen": {
+          "titel": "Veranstaltungen",
+          "text": "Was in der Gemeinde ansteht."
+        },
+        "benachrichtigungen": {
+          "titel": "Benachrichtigungen",
+          "text": "Erinnerungen und Neuigkeiten – jedes Thema einzeln.",
+          "textKind": "Erinnerungen und Neues aus deiner Gruppe."
+        },
         "konto": {
           "titel": "Konto und Sicherheit",
           "text": "Profil, Passwort, zweiter Faktor und Ihre Daten.",
           "textKind": "Dein Passwort und deine Sprache."
         },
-        "verwaltung": { "titel": "Verwaltung", "text": "Zur Verwaltung der Website." }
+        "verwaltung": {
+          "titel": "Verwaltung",
+          "text": "Zur Verwaltung der Website."
+        }
       },
       "konto": {
         "titel": "Konto",
@@ -203,11 +234,25 @@
       "benachrichtigungen": {
         "titel": "Benachrichtigungen",
         "untertitel": "Erinnerungen und Neuigkeiten aus der Gemeinde.",
-        "hinweis": "Benachrichtigungen sind noch in Vorbereitung. Bis dahin schicken wir Ihnen keine Benachrichtigungen – auch keine Werbung.",
+        "untertitelKind": "Erinnerungen und Neues aus deiner Gruppe.",
         "bald": "bald verfügbar",
         "push": {
           "titel": "Mitteilungen aufs Gerät",
-          "text": "Später können Sie hier Erinnerungen an die Gebetszeiten, Ankündigungen und Hinweise zum Unterricht einschalten – jedes Thema einzeln."
+          "einleitung": "Wählen Sie, worüber Ihr Gerät Sie benachrichtigt – jedes Thema einzeln. Die Mitteilungen enthalten keine Namen und keine Nachrichteninhalte.",
+          "einleitungKind": "Such dir aus, worüber dein Gerät dich benachrichtigt. In den Mitteilungen stehen keine Namen und keine Nachrichten.",
+          "knopf": "Mitteilungen einrichten",
+          "nichtEingerichtet": "Mitteilungen aufs Gerät sind auf dieser Website noch nicht eingerichtet. Sie verpassen trotzdem nichts: Neues sehen Sie hier in Mein Bereich.",
+          "ios": "Tipp für iPhone und iPad: Mitteilungen funktionieren erst, wenn Sie die Seite über „Teilen“ → „Zum Home-Bildschirm“ hinzugefügt haben und sie über das neue Symbol öffnen.",
+          "iosKind": "Tipp für iPhone und iPad: Mitteilungen gehen erst, wenn du die Seite über „Teilen“ → „Zum Home-Bildschirm“ hinzufügst und sie über das neue Symbol öffnest."
+        },
+        "rueckfall": {
+          "titel": "Wenn keine Mitteilung ankommt",
+          "text": "Mitteilungen aufs Gerät sind ein Zusatz. Neues aus Ihrer Gruppe sehen Sie immer hier in Mein Bereich. Wichtiges schicken wir Ihnen zusätzlich per E-Mail – ohne Inhalte, nur mit einem kurzen Hinweis.",
+          "textKind": "Mitteilungen sind nur ein Zusatz. Neues aus deiner Gruppe siehst du immer hier in deinem Bereich."
+        },
+        "kindOhneFreigabe": {
+          "titel": "Noch nicht freigeschaltet",
+          "text": "Benachrichtigungen kannst du einschalten, sobald deine Eltern es erlaubt haben. Das geht in ihrem Bereich unter „Meine Kinder“."
         },
         "newsletter": {
           "titel": "Newsletter",
@@ -296,26 +341,57 @@
         "kontoTextKind": "En fazla 12 saat giriş yapmış kalırsın. Sonra yeniden giriş yapman yeterli."
       },
       "kachel": {
-        "kinder": { "titel": "Çocuklarım", "text": "Çocuklarınızın dersleri, devamı ve ilerlemesi." },
-        "unterricht": { "titel": "Derslerim", "text": "Gruplarınız ve bugünkü dersler." },
-        "anwesenheit": { "titel": "Yoklama", "text": "Yoklamayı tek bir ekranda alın." },
-        "lernweg": { "titel": "Öğrenme yolum", "text": "Elifbadan Kur’an’a – adım adım." },
-        "gruppe": { "titel": "Grubum", "text": "Grubunun dersleri ve ödevleri." },
+        "kinder": {
+          "titel": "Çocuklarım",
+          "text": "Çocuklarınızın dersleri, devamı ve ilerlemesi."
+        },
+        "unterricht": {
+          "titel": "Derslerim",
+          "text": "Gruplarınız ve bugünkü dersler."
+        },
+        "anwesenheit": {
+          "titel": "Yoklama",
+          "text": "Yoklamayı tek bir ekranda alın."
+        },
+        "lernweg": {
+          "titel": "Öğrenme yolum",
+          "text": "Yolunda ne kadar ilerlediğini gör."
+        },
+        "gruppe": {
+          "titel": "Grubum",
+          "text": "Grubunun ders günleri ve sohbeti."
+        },
         "lesezeichen": {
           "titel": "Yer imleri",
           "text": "Kur’an’da kaydettiğiniz yerler.",
           "textKind": "Kur’an’da kaydettiğin yerler."
         },
-        "quran": { "titel": "Kur’an oku", "text": "Tüm sureler mealleriyle." },
-        "gebetszeiten": { "titel": "Namaz vakitleri", "text": "Wetzlar’daki caminin vakitleri." },
-        "veranstaltungen": { "titel": "Etkinlikler", "text": "Cemaatte yaklaşan etkinlikler." },
-        "benachrichtigungen": { "titel": "Bildirimler", "text": "Hatırlatmalar ve haberler – yakında." },
+        "quran": {
+          "titel": "Kur’an oku",
+          "text": "Tüm sureler mealleriyle."
+        },
+        "gebetszeiten": {
+          "titel": "Namaz vakitleri",
+          "text": "Wetzlar’daki caminin vakitleri."
+        },
+        "veranstaltungen": {
+          "titel": "Etkinlikler",
+          "text": "Cemaatte yaklaşan etkinlikler."
+        },
+        "benachrichtigungen": {
+          "titel": "Bildirimler",
+          "text": "Hatırlatmalar ve haberler – her konu ayrı.",
+          "textKind": "Hatırlatmalar ve grubundan haberler."
+        },
         "konto": {
           "titel": "Hesap ve güvenlik",
           "text": "Profil, şifre, ikinci faktör ve verileriniz.",
           "textKind": "Şifren ve dilin."
         },
-        "verwaltung": { "titel": "Yönetim", "text": "Web sitesinin yönetimine git." }
+        "verwaltung": {
+          "titel": "Yönetim",
+          "text": "Web sitesinin yönetimine git."
+        }
       },
       "konto": {
         "titel": "Hesap",
@@ -441,11 +517,25 @@
       "benachrichtigungen": {
         "titel": "Bildirimler",
         "untertitel": "Cemaatten hatırlatmalar ve haberler.",
-        "hinweis": "Bildirimler henüz hazırlık aşamasında. O zamana kadar size hiçbir bildirim göndermiyoruz – reklam da göndermiyoruz.",
+        "untertitelKind": "Hatırlatmalar ve grubundan haberler.",
         "bald": "yakında",
         "push": {
-          "titel": "Cihaza bildirimler",
-          "text": "İleride burada namaz vakti hatırlatmalarını, duyuruları ve derslerle ilgili bilgileri – her konuyu ayrı ayrı – açabileceksiniz."
+          "titel": "Cihaza bildirim",
+          "einleitung": "Cihazınızın sizi hangi konularda bilgilendireceğini seçin – her konuyu ayrı ayrı. Bildirimlerde isim ve mesaj içeriği bulunmaz.",
+          "einleitungKind": "Cihazının seni hangi konularda bilgilendireceğini seç. Bildirimlerde isim ve mesaj bulunmaz.",
+          "knopf": "Bildirimleri ayarla",
+          "nichtEingerichtet": "Cihaza bildirimler bu sitede henüz kurulmadı. Yine de hiçbir şeyi kaçırmazsınız: Yenilikleri burada, Hesabım alanında görürsünüz.",
+          "ios": "iPhone ve iPad için ipucu: Bildirimler ancak sayfayı „Paylaş“ → „Ana Ekrana Ekle“ ile ekleyip yeni simgeden açtığınızda çalışır.",
+          "iosKind": "iPhone ve iPad için ipucu: Bildirimler ancak sayfayı „Paylaş“ → „Ana Ekrana Ekle“ ile ekleyip yeni simgeden açtığında çalışır."
+        },
+        "rueckfall": {
+          "titel": "Bildirim gelmezse",
+          "text": "Cihaza bildirimler bir ektir. Grubunuzdaki yenilikleri her zaman burada, Hesabım alanında görürsünüz. Önemli konuları ayrıca e-postayla bildiririz – içerik olmadan, yalnızca kısa bir uyarıyla.",
+          "textKind": "Bildirimler yalnızca bir ektir. Grubundaki yenilikleri her zaman burada, kendi alanında görürsün."
+        },
+        "kindOhneFreigabe": {
+          "titel": "Henüz açılmadı",
+          "text": "Annen veya baban izin verdiğinde bildirimleri açabilirsin. Bunu kendi alanlarında „Çocuklarım“ bölümünden yapabilirler."
         },
         "newsletter": {
           "titel": "Bülten",
@@ -534,26 +624,57 @@
         "kontoTextKind": "You stay signed in for up to 12 hours. After that, just sign in again."
       },
       "kachel": {
-        "kinder": { "titel": "My children", "text": "Your children’s classes, attendance and progress." },
-        "unterricht": { "titel": "Teaching", "text": "Your groups and today’s classes." },
-        "anwesenheit": { "titel": "Attendance", "text": "Take attendance on a single screen." },
-        "lernweg": { "titel": "My learning path", "text": "From the Arabic alphabet to the Quran – step by step." },
-        "gruppe": { "titel": "My group", "text": "Your group’s classes and tasks." },
+        "kinder": {
+          "titel": "My children",
+          "text": "Your children’s classes, attendance and progress."
+        },
+        "unterricht": {
+          "titel": "Teaching",
+          "text": "Your groups and today’s classes."
+        },
+        "anwesenheit": {
+          "titel": "Attendance",
+          "text": "Take attendance on a single screen."
+        },
+        "lernweg": {
+          "titel": "My learning path",
+          "text": "See how far you have come on your path."
+        },
+        "gruppe": {
+          "titel": "My group",
+          "text": "Your group’s lessons and chat."
+        },
         "lesezeichen": {
           "titel": "Bookmarks",
           "text": "The places you saved in the Quran.",
           "textKind": "The places you saved in the Quran."
         },
-        "quran": { "titel": "Read the Quran", "text": "All surahs with translation." },
-        "gebetszeiten": { "titel": "Prayer times", "text": "The mosque’s times in Wetzlar." },
-        "veranstaltungen": { "titel": "Events", "text": "What is coming up in the community." },
-        "benachrichtigungen": { "titel": "Notifications", "text": "Reminders and news – coming soon." },
+        "quran": {
+          "titel": "Read the Quran",
+          "text": "All surahs with translation."
+        },
+        "gebetszeiten": {
+          "titel": "Prayer times",
+          "text": "The mosque’s times in Wetzlar."
+        },
+        "veranstaltungen": {
+          "titel": "Events",
+          "text": "What is coming up in the community."
+        },
+        "benachrichtigungen": {
+          "titel": "Notifications",
+          "text": "Reminders and news – each topic separately.",
+          "textKind": "Reminders and news from your group."
+        },
         "konto": {
           "titel": "Account and security",
           "text": "Profile, password, second factor and your data.",
           "textKind": "Your password and language."
         },
-        "verwaltung": { "titel": "Administration", "text": "Go to the website administration." }
+        "verwaltung": {
+          "titel": "Administration",
+          "text": "Go to the website administration."
+        }
       },
       "konto": {
         "titel": "Account",
@@ -679,11 +800,25 @@
       "benachrichtigungen": {
         "titel": "Notifications",
         "untertitel": "Reminders and news from the community.",
-        "hinweis": "Notifications are still being prepared. Until then, we do not send you any notifications – and no advertising either.",
+        "untertitelKind": "Reminders and news from your group.",
         "bald": "coming soon",
         "push": {
           "titel": "Notifications on your device",
-          "text": "Later, you will be able to turn on reminders for prayer times, announcements and class updates here – each topic separately."
+          "einleitung": "Choose what your device notifies you about – each topic separately. Notifications contain no names and no message content.",
+          "einleitungKind": "Choose what your device tells you about. Notifications contain no names and no messages.",
+          "knopf": "Set up notifications",
+          "nichtEingerichtet": "Device notifications have not been set up on this website yet. You will not miss anything: you can see what is new here in My account.",
+          "ios": "Tip for iPhone and iPad: notifications only work once you have added the site via “Share” → “Add to Home Screen” and open it from the new icon.",
+          "iosKind": "Tip for iPhone and iPad: notifications only work once you add the site via “Share” → “Add to Home Screen” and open it from the new icon."
+        },
+        "rueckfall": {
+          "titel": "If no notification arrives",
+          "text": "Device notifications are an extra. You can always see what is new in your group here in My account. We also send you important matters by email – without content, just a short note.",
+          "textKind": "Notifications are just an extra. You can always see what is new in your group here in your area."
+        },
+        "kindOhneFreigabe": {
+          "titel": "Not unlocked yet",
+          "text": "You can switch on notifications as soon as your parents have allowed it. They can do this in their area under “My children”."
         },
         "newsletter": {
           "titel": "Newsletter",
