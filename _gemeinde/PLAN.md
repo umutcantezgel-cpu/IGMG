@@ -12,12 +12,18 @@
 | E2 | O-Q01, H-Q01, H-Q02 | Koran-Leser (Referenz), JSON-Routen, Übersicht/Cüz/Tajwid | in Arbeit | |
 | E2 | O-A01, O-A02, H-T01 | Konten-Kern, Mein Bereich, Tests | in Arbeit | |
 | E3 | O-E01, H-E01–E03 | Elifbe, Schreibweg B-17, Übungen, /lernen | in Arbeit | |
-| E3 | H-G01 | Gebetszeiten „Mein Ort“ | offen | |
-| E3 | O-L01, O-L02, H-L01–L07 | Lernplattform | offen | |
-| E4 | O-C01, H-C01/C02 | Chat mit Kinderschutz | offen | |
-| E4 | O-M01, H-M01–M06 | CMS | offen | |
+| E3 | H-G01 | Gebetszeiten „Mein Ort“ | fertig | f237396 |
+| E3 | O-L02 | Unterrichts-Kern (Termine, Anwesenheit, Fortschritt, Hifz, Fehlmeldung) | fertig | 5b0b9ca |
+| E3 | O-L01, H-L01–L07 | Aufnahme/Einwilligung, Oberflächen Lernplattform | offen | |
+| E4 | O-C01 | Chat-Kern mit Kinderschutz S-01…S-17 | fertig | dbd22c0 |
+| E4 | H-C01/C02 | Chat-Oberfläche, Moderation, Kinderschutz-Modul | offen | |
+| E4 | O-M01, H-M01–M04 | CMS (Blöcke, Seiten, Menüs, Weiterleitungen, Freigaben) | in Arbeit | |
 | E4 | O-Q02, H-Q03–Q06 | Wortbedeutungen/Tajwid-Pflege, Rezitations-Werkstatt | offen | |
-| E4 | O-P01, H-P01 | Web Push | offen | |
-| E5 | O-B01, H-B01–B08, H-K01–K11 | Bewegung, SVG je Route, Kür | offen | |
-| E6 | O-S01, H-S01, O-C02, H-O01, H-X01/X02, H-R02/R03 | Betrieb, Offline, Recht, Handbücher | offen | |
+| E4 | O-P01, H-P01 | Web Push (RFC 8291/8292, Abo, Takt, SW, Einstellungen) | fertig | 6212cd3 |
+| E5 | H-K01/K03/K04 (Kern) | Hatim, besondere Tage, GiroCode | fertig | 651f7a9, 06f447b |
+| E5 | O-B01, H-B01–B08, H-K01–K11 | Bewegung, SVG je Route, Kür-Oberflächen | offen | |
+| E6 | O-S01, H-S01 | Kit lokaler Server | fertig | bb8433d |
+| E6 | O-C02 | Echtzeit-Signal | fertig | 428da97 |
+| E6 | H-R02/R03 | Rechtsentwürfe, Handbücher | in Arbeit | |
+| E6 | H-O01, H-X01/X02 | Offline-Koran, Bestandslücken, Passkey | offen | |
 | E7 | – | Stufe C, Endprüfung, BERICHT, Archiv, ABSCHLUSS | offen | |
