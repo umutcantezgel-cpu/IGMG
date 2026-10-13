@@ -58,6 +58,10 @@ const ROUTEN: Route[] = [
     pfad: { de: '/organisationen/ana-teskilati', tr: '/tr/organizasyonlar/ana-teskilati', en: '/en/organizations/ana-teskilati' },
   },
   { name: 'Korankurse', pfad: { de: '/bildung/korankurse', tr: '/tr/egitim/kuran-kurslari', en: '/en/education/quran-courses' } },
+  { name: 'Quran', pfad: { de: '/quran', tr: '/tr/kuran', en: '/en/quran' } },
+  { name: 'Quran, Sure', pfad: { de: '/quran/36', tr: '/tr/kuran/36', en: '/en/quran/36' } },
+  { name: 'Quran, Cüz', pfad: { de: '/quran/cuz/30', tr: '/tr/kuran/cuz/30', en: '/en/quran/juz/30' } },
+  { name: 'Quran, Tajwid', pfad: { de: '/quran/tajwid', tr: '/tr/kuran/tecvid', en: '/en/quran/tajweed' } },
   { name: 'Gebetszeiten', pfad: { de: '/gebetszeiten', tr: '/tr/namaz-vakitleri', en: '/en/prayer-times' } },
   { name: 'Islamisches Wissen', pfad: { de: '/islamisches-wissen', tr: '/tr/islami-bilgiler', en: '/en/islamic-knowledge' } },
   {
