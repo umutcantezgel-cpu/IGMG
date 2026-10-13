@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · Tor E2 (Integration 1633 grün, Bau grün, Beispielmodus ohne 500) – E2E-Ersatzlauf läuft · Pakete: Bewegung/SVG, Anzeige-CMS + D-14…D-17 · Nächster Schritt: Fast-Forward main, Pakete mergen, Stufe B
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · main 2ee3e80 live (Bukhari gesamt, Beispielmodus ohne Fehler) · Läuft: Anzeige-CMS + D-14…D-17, Live-Prüfung · Nächster Schritt: Anzeige mergen, Tor, Fast-Forward, Sichtabnahme
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -15,3 +15,7 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–6/7 · Tor E2 (In
 - 2026-10-13 · Zusammengeführt: Recht/Handbücher, Hadith/Quellen/Moschee, Elifbe, Koran-Leser, Konten, CMS, Kür A, Verwaltung Lernen (0011), Koran-Verwaltung, Mein Bereich (Unterricht/Kinder/Chat/Push), Rezitations-Werkstatt. S1-Sicherheitsprüfung: alle Befunde behoben.
 - 2026-10-13 · Tor E2: Typen, Lint, Unit, Integration (1633), Sprachen, Religion 0, Wortlaut 0, Bau Produktion (1399 Seiten); Befund „Beispielmodus 500 bei unbekannten Adressen“ (auch live) behoben – 61 Adressen nur 200/404.
 - 2026-10-13 15:15 UTC · Gestartet: O-B01/H-B01…B08 Bewegung + SVG je Route; O-K05 Anzeige-CMS + D-14…D-17 + Mail bei Passkey/2FA + Vers/Hadith des Tages (Migration 0012).
+- 2026-10-13 16:00 UTC · Nutzer: „so viel live wie möglich“; Bukhari-Gesamt freigeschaltet (MN-06 entschieden). Live-Prüfung (4 Prüfer + Gegenprüfung) fand weiße Verwaltungs-/Konto-Seiten und 500er der Konto-APIs (auth stürzte ohne BETTER_AUTH_SECRET beim Import ab) – behoben.
+- 2026-10-13 18:20 UTC · Dritter Abbruch am Sitzungslimit; Pakete gesichert und fortgesetzt. Bewegung/SVG und Erzählansichten gemergt.
+- 2026-10-13 19:00 UTC · Fast-Forward `main` 8cbd2a6 → 2ee3e80, live `dpl_ErTf52ypPHU5hC21df6S2nGAMQh6`.
+
