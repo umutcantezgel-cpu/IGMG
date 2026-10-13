@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { cache } from 'react';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { darfInGruppe, type GruppenAktion, type GruppenKontext, type GruppenZiel, type LeitungsRolle } from './gruppen';
@@ -37,6 +38,8 @@ const ZWEI_FAKTOR_PFLICHT: ReadonlySet<GemeindeRolle> = new Set<GemeindeRolle>([
  * Grenze ihrer Kontoart (die Sitzung wird dann widerrufen).
  */
 export const ladeKonto = cache(async (): Promise<Konto | null> => {
+  // Beispielmodus ohne Datenbank (ADR 0019): niemand ist angemeldet
+  if (!datenbankVerfuegbar()) return null;
   const sitzung = await auth.api.getSession({ headers: await headers() });
   if (!sitzung || sitzung.user.gesperrtAm) return null;
   const benutzerId = sitzung.user.id;

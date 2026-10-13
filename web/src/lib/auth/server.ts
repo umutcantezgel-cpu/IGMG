@@ -5,18 +5,21 @@ import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { authOptionen } from './optionen';
 import { planePasswortMail, protokolliereZuruecksetzen } from './passwort';
 
 const imBau = process.env.NEXT_PHASE === 'phase-production-build';
-if (!process.env.BETTER_AUTH_SECRET && process.env.NODE_ENV === 'production' && !imBau) {
+// Im Beispielmodus ohne Datenbank (ADR 0019) gibt es keine Sitzungen: dann darf das Geheimnis fehlen – sonst stürzte
+// jedes Modul ab, das `auth` importiert (Verwaltung, Konto-Seiten, Konto-APIs: weiße Seite bzw. 500 auf Vercel)
+if (!process.env.BETTER_AUTH_SECRET && process.env.NODE_ENV === 'production' && !imBau && datenbankVerfuegbar()) {
   throw new Error('BETTER_AUTH_SECRET fehlt.');
 }
 
 /** Better Auth (Anmeldung, Sitzung, Zwei-Faktor, Passkey). Rechte: src/lib/rechte (ADR 0003). */
 export const auth = betterAuth({
   ...authOptionen,
-  // Ohne Geheimnis nur in Entwicklung und beim Bau: zufällig je Prozess (kein Geheimnis im Quelltext, G-03)
+  // Ohne Geheimnis nur in Entwicklung, beim Bau und im Beispielmodus: zufällig je Prozess (kein Geheimnis im Quelltext, G-03)
   secret: process.env.BETTER_AUTH_SECRET ?? randomBytes(32).toString('base64'),
   database: drizzleAdapter(db, { provider: 'pg', schema }),
   emailAndPassword: {
