@@ -1,6 +1,16 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
-import { cspOeffentlich, grundHeader, noindexHeader } from './src/lib/sicherheit/header';
+import {
+  KONTO_SEGMENTE,
+  PFAD_BERECHTIGUNGEN,
+  cspOeffentlich,
+  grundHeader,
+  noindexHeader,
+  permissionsPolicy,
+} from './src/lib/sicherheit/header';
+
+/** Pfade ohne statische CSP (bekommen die Nonce-CSP im Proxy): Verwaltung und Konto-Seiten, mit/ohne Sprachpräfix. */
+const CSP_AUSNAHMEN = ['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`).join('|');
 
 /**
  * Beispielmodus auf Vercel (Bau ohne DATABASE_URL, ADR 0019): Die Inhalte stammen aus der PGlite-Bau-Datenbank und
@@ -82,6 +92,11 @@ const nextConfig: NextConfig = {
     const noindex = noindexHeader();
     return [
       { source: '/:pfad*', headers: grundHeader() },
+      // Berechtigungen je Pfad (Standort nur Gebetszeiten, Mikrofon/Kamera nur Verwaltung)
+      ...PFAD_BERECHTIGUNGEN.map(({ source, erlaubt }) => ({
+        source,
+        headers: [{ key: 'Permissions-Policy', value: permissionsPolicy(erlaubt) }],
+      })),
       ...(noindex.length ? [{ source: '/:pfad*', headers: noindex }] : []),
       // Logos und Symbole (ADR 0023): Dateinamen ohne Versionsanteil → kein „immutable“, aber ein Tag Cache und eine
       // Woche „stale-while-revalidate“; ein neues Logo bekommt einen neuen Dateinamen (BETRIEB.md)
@@ -90,8 +105,8 @@ const nextConfig: NextConfig = {
         headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }],
       },
       {
-        // Öffentliche Seiten: statische CSP. Die Verwaltung bekommt ihre Nonce-CSP im Proxy.
-        source: '/:pfad((?!verwaltung|de/verwaltung|tr/verwaltung|en/verwaltung).*)',
+        // Öffentliche Seiten: statische CSP. Verwaltung und Konto-Seiten bekommen ihre Nonce-CSP im Proxy.
+        source: `/:pfad((?!${CSP_AUSNAHMEN}).*)`,
         headers: [{ key: 'Content-Security-Policy', value: cspOeffentlich() }],
       },
     ];

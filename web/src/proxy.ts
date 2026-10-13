@@ -1,12 +1,12 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
-import { cspVerwaltung } from './lib/sicherheit/header';
+import { cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
 
 const sprachRouting = createMiddleware(routing);
 
 /**
- * Proxy (Next.js 16): Sprachrouting (next-intl) und Schutzschicht der Verwaltung.
+ * Proxy (Next.js 16): Sprachrouting (next-intl) und Schutzschicht der Verwaltung und der Konto-Seiten.
  * Prüft KEINE Rechte – das macht jede Route und jede Server Action selbst (ADR 0003).
  */
 export default function proxy(request: NextRequest) {
@@ -18,7 +18,13 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(new URL(`${fremd[2]}${search}`, request.url), 308);
   }
 
-  if (pathname === '/verwaltung' || pathname.startsWith('/verwaltung/') || pathname === '/de/verwaltung' || pathname.startsWith('/de/verwaltung/')) {
+  const verwaltung =
+    pathname === '/verwaltung' ||
+    pathname.startsWith('/verwaltung/') ||
+    pathname === '/de/verwaltung' ||
+    pathname.startsWith('/de/verwaltung/');
+  // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR Kontoarten)
+  if (verwaltung || istKontoPfad(pathname)) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
     const csp = cspVerwaltung(nonce);
     // next-intl übernimmt die Request-Header in den Rewrite; Next.js liest die Nonce aus der CSP.

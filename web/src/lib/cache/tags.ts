@@ -19,6 +19,20 @@ export const TAG = {
   medien: 'medien',
   einstellungen: 'einstellungen',
   quran: 'quran',
+  // Lauf Gemeinde-Plattform
+  hadith: 'hadith',
+  elifbe: 'elifbe',
+  tajwid: 'tajwid',
+  seiten: 'seiten',
+  seite: (id: string) => `seite:${id}`,
+  menue: 'menue',
+  weiterleitungen: 'weiterleitungen',
+  anzeige: 'anzeige',
+  kalender: 'kalender',
+  hatim: 'hatim',
+  hatimVon: (id: string) => `hatim:${id}`,
+  rezitation: (id: string) => `rezitation:${id}`,
+  rezitationen: 'rezitationen',
 } as const;
 
 /** Tags, die beim Start verfallen (ADR 0017) – alle inhaltsbezogenen Listen-Tags. */
@@ -33,5 +47,15 @@ export const START_TAGS = [
   TAG.medien,
   TAG.einstellungen,
   TAG.quran,
+  TAG.hadith,
+  TAG.elifbe,
+  TAG.tajwid,
+  TAG.seiten,
+  TAG.menue,
+  TAG.weiterleitungen,
+  TAG.anzeige,
+  TAG.kalender,
+  TAG.hatim,
+  TAG.rezitationen,
   'seiteninhalt',
 ] as const;

@@ -38,7 +38,23 @@ export const allgemeineEinstellung = z.object({
 });
 export type AllgemeineEinstellung = z.infer<typeof allgemeineEinstellung>;
 
+/** Funktionsschalter (ADR Funktionsschalter): nur gesetzte Werte; Standard je Betriebsart in src/lib/funktionen.ts. */
+export const funktionenEinstellung = z.object({
+  konten: z.boolean().optional(),
+  lernplattform: z.boolean().optional(),
+  chat: z.boolean().optional(),
+  echtzeit: z.boolean().optional(),
+  push: z.boolean().optional(),
+  push_gebet: z.boolean().optional(),
+  hatim: z.boolean().optional(),
+  newsletter: z.boolean().optional(),
+  hadith_gesamt: z.boolean().optional(),
+  ramadan_vorschau: z.boolean().optional(),
+});
+export type FunktionenEinstellung = z.infer<typeof funktionenEinstellung>;
+
 export const EINSTELLUNG = {
   gebetszeiten: { schluessel: 'gebetszeiten', schema: gebetszeitenEinstellung },
   allgemein: { schluessel: 'allgemein', schema: allgemeineEinstellung },
+  funktionen: { schluessel: 'funktionen', schema: funktionenEinstellung },
 } as const;

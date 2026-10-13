@@ -49,6 +49,63 @@ export function cspVerwaltung(nonce: string): string {
   });
 }
 
+/** Geräte-Berechtigungen; standardmäßig alles gesperrt außer Bewegungssensoren (Qibla-Kompass, ADR 0012). */
+export type Berechtigung = 'camera' | 'microphone' | 'geolocation';
+
+export function permissionsPolicy(erlaubt: readonly Berechtigung[] = []): string {
+  const an = (b: Berechtigung) => (erlaubt.includes(b) ? '(self)' : '()');
+  return `camera=${an('camera')}, microphone=${an('microphone')}, geolocation=${an('geolocation')}, payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)`;
+}
+
+/**
+ * Berechtigungen je Pfad (ADR Mein Ort, ADR Audio): Standort nur auf den Gebetszeiten-Seiten (Berechnung im Browser,
+ * nie an den Server), Mikrofon und Kamera nur in der Verwaltung (Rezitations-Aufnahme, Einlass-Scan).
+ * In next.config.ts nach `grundHeader` eingetragen – spätere Regeln überschreiben frühere.
+ */
+export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly Berechtigung[] }[] = [
+  { source: '/gebetszeiten', erlaubt: ['geolocation'] },
+  { source: '/de/gebetszeiten', erlaubt: ['geolocation'] },
+  { source: '/tr/namaz-vakitleri', erlaubt: ['geolocation'] },
+  { source: '/en/prayer-times', erlaubt: ['geolocation'] },
+  { source: '/verwaltung/:pfad*', erlaubt: ['microphone', 'camera'] },
+  { source: '/de/verwaltung/:pfad*', erlaubt: ['microphone', 'camera'] },
+];
+
+/**
+ * Erste Pfadsegmente der Konto-Seiten (Anmeldung, Registrierung, Mein Bereich) in allen Sprachen. Diese Seiten sind
+ * dynamisch und bekommen im Proxy die strikte Nonce-CSP der Verwaltung, `noindex` und `no-store` (ADR Kontoarten).
+ */
+export const KONTO_SEGMENTE = [
+  'anmelden',
+  'registrieren',
+  'konto',
+  'einladung',
+  'passwort-vergessen',
+  'passwort-neu',
+  'mein-bereich',
+  'giris',
+  'kayit',
+  'hesap',
+  'davet',
+  'sifremi-unuttum',
+  'yeni-sifre',
+  'hesabim',
+  'sign-in',
+  'register',
+  'account',
+  'invitation',
+  'forgot-password',
+  'new-password',
+  'my-account',
+] as const;
+
+/** true, wenn der Pfad (mit oder ohne Sprachpräfix) eine Konto-Seite ist. */
+export function istKontoPfad(pfad: string): boolean {
+  const teile = pfad.split('/').filter(Boolean);
+  const erstes = teile[0] === 'de' || teile[0] === 'tr' || teile[0] === 'en' ? teile[1] : teile[0];
+  return erstes !== undefined && (KONTO_SEGMENTE as readonly string[]).includes(erstes);
+}
+
 /** Header für alle Antworten (ohne CSP). */
 export function grundHeader(): { key: string; value: string }[] {
   return [
@@ -56,11 +113,7 @@ export function grundHeader(): { key: string; value: string }[] {
     { key: 'X-Content-Type-Options', value: 'nosniff' },
     { key: 'X-Frame-Options', value: 'DENY' },
     { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
-    {
-      key: 'Permissions-Policy',
-      value:
-        'camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), accelerometer=(self), gyroscope=(self), magnetometer=(self)',
-    },
+    { key: 'Permissions-Policy', value: permissionsPolicy() },
     ...(istHttps ? [{ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' }] : []),
   ];
 }
