@@ -1,7 +1,8 @@
 'use client';
 
-import { CirclePause, Clock, Flag, Lock } from 'lucide-react';
+import { ChevronDown, CirclePause, Clock, Flag, Lock, Phone } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
+import { Achtstern } from '@/components/website/Icons';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
 import type { SchreibGrund } from '@/lib/chat/regeln';
 import { klassen } from '@/lib/klassen';
@@ -22,6 +23,8 @@ export type ChatTexte = {
   eingabe: string;
   /** Platzhalter des gesperrten Feldes */
   eingabeGesperrt: string;
+  /** Platzhalter des gesperrten Feldes, solange die Regeln nicht bestätigt sind (Grund „regelnFehlen“) */
+  eingabeRegeln: string;
   /** „Schreiben geht wieder ab 08:00 Uhr.“ – fertig mit der Öffnungszeit der Gruppe (Grund „geschlossen“) */
   wiederAb: string;
   senden: string;
@@ -39,11 +42,15 @@ export type ChatTexte = {
   meldenSenden: string;
   abbrechen: string;
   gemeldet: string;
+  /** Hilfehinweis ohne Nummer (GC-5); die Nummer folgt als Anruf-Link */
   hilfe: string;
+  /** „116 111“, für Erwachsene das Elterntelefon „0800 111 0 550“ – das Ziel `tel:` entsteht aus den Ziffern */
+  hilfeNummer: string;
   grund: Partial<Record<SchreibGrund | 'leer' | 'zuLang' | 'rate', string>>;
   fehler: string;
   regelnTitel: string;
-  regeln: string[];
+  /** Je Regel das Stichwort (immer sichtbar) und die Erläuterung (einklappbar); zusammen ergeben sie den Wortlaut der Regel */
+  regeln: { stichwort: string; text: string }[];
   regelnBestaetigen: string;
   moderation: { entfernen: string; stumm: string; pausieren: string; fortsetzen: string; begruendung: string };
 };
@@ -65,7 +72,8 @@ function abstand(letzteAktivitaet: number): number {
  * Moderierter Gruppen- bzw. Elternkanal (S-01…S-18): Abruf mit adaptivem Takt, optional Echtzeit-Signal (nur „es gibt
  * Neues“). Keine Lesebestätigungen, keine Online-Anzeige, Links nur als Text, Melden in zwei Schritten mit Hilfehinweis.
  * Gesperrt (Sichtabnahme GC-1): Hinweisband mit Symbol und Wiederöffnungszeit über dem sichtbar gesperrten Feld; auf dem
- * Telefon steht das Feld in voller Breite, „Senden“ darunter. „Melden“ (GC-2) steht leise neben der Zeitangabe.
+ * Telefon steht das Feld in voller Breite, „Senden“ darunter. „Melden“ (GC-2, GC-3) steht bei fremden Nachrichten immer
+ * rechts oben als ruhiger Umrissknopf; der Kartentitel steht nur für Hilfsmittel da (die Seite trägt ihn schon als H1).
  */
 export function ChatFenster({
   kanalId,
@@ -230,11 +238,12 @@ export function ChatFenster({
 
   return (
     <section aria-labelledby="chat-titel" className="flex min-h-0 flex-col rounded-lg border border-linie bg-weiss shadow-s1">
-      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-linie px-4 py-3 md:px-6">
-        <h2 id="chat-titel" className="text-24">
-          {texte.titel}
-        </h2>
-        {istLeitung ? (
+      {/* Titel nur für Hilfsmittel (Benennung des Abschnitts): sichtbar steht „Gruppenchat“ schon als H1 darüber */}
+      <h2 id="chat-titel" className="sr-only">
+        {texte.titel}
+      </h2>
+      {istLeitung ? (
+        <header className="flex justify-end border-b border-linie px-4 py-3 md:px-6">
           <button
             type="button"
             onClick={() => void pause(z.schreiben !== 'pausiert')}
@@ -242,8 +251,8 @@ export function ChatFenster({
           >
             {z.schreiben === 'pausiert' ? texte.moderation.fortsetzen : texte.moderation.pausieren}
           </button>
-        ) : null}
-      </header>
+        </header>
+      ) : null}
 
       {/* Verlauf: role="log" am scrollenden Rahmen, darin eine echte Liste (ein <ol role="log"> verliert die Listensemantik) */}
       <div
@@ -266,24 +275,33 @@ export function ChatFenster({
               )}
               style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
             >
-              <span className="flex flex-wrap items-center gap-x-2 text-16 text-tinte-2">
-                <span className="font-bold text-tinte">{n.eigen ? texte.du : n.name}</span>
-                {n.leitung ? <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{texte.lehrkraft}</span> : null}
-                <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
-                {/* Melden (GC-2): leise neben der Zeit; Klickziel 48 px, optisch eine Textzeile (der negative Rand ragt nur
-                  in die Abstände über und unter der Zeile) */}
-                {!n.eigen && n.text !== null ? (
+              {n.eigen || n.text === null ? (
+                <span className="flex flex-wrap items-center gap-x-2 text-16 text-tinte-2">
+                  <span className="font-bold text-tinte">{n.eigen ? texte.du : n.name}</span>
+                  {n.leitung ? <Plakette text={texte.lehrkraft} /> : null}
+                  <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
+                </span>
+              ) : (
+                /* Kopf fremder Nachrichten (GC-3): links Name, Plakette und Zeit (dürfen umbrechen), rechts immer „Melden“
+                   als ruhiger Umrissknopf (GC-2: keine Füllung, Schrift wie die Zeit). Die erste Zeile ist so hoch wie der
+                   Knopf, damit Name und Knopf auf einer Linie stehen – auch wenn die Zeit in die zweite Zeile rückt. */
+                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3">
+                  <span data-namenszeile className="flex min-w-0 flex-wrap items-center gap-x-2 text-16 text-tinte-2">
+                    <span className="inline-flex min-h-11 items-center font-bold text-tinte">{n.name}</span>
+                    {n.leitung ? <Plakette text={texte.lehrkraft} /> : null}
+                    <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
+                  </span>
                   <button
                     type="button"
                     onClick={() => setMelden(n)}
                     aria-label={texte.meldenAria.replace('{name}', n.name)}
-                    className="-my-3 inline-flex min-h-12 cursor-pointer items-center gap-1 px-1 text-16 text-tinte-2 underline-offset-4 transition duration-(--dauer-rueckmeldung) hover:text-tinte hover:underline"
+                    className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-rand px-3 text-16 whitespace-nowrap text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:border-tinte-2 hover:text-tinte"
                   >
-                    <Flag aria-hidden className="size-4" />
+                    <Flag aria-hidden className="size-4 shrink-0" />
                     {texte.melden}
                   </button>
-                ) : null}
-              </span>
+                </div>
+              )}
               <p
                 className={klassen(
                   'rounded-lg px-4 py-2.5 text-18 wrap-anywhere whitespace-pre-wrap',
@@ -311,14 +329,10 @@ export function ChatFenster({
 
       <div className="flex flex-col gap-2 border-t border-linie px-4 py-3 md:px-6">
         {z.schreiben === 'regelnFehlen' ? (
-          <div className="flex flex-col gap-3 rounded-md bg-papier p-4">
+          <div className="flex flex-col gap-2 rounded-md bg-papier p-4 max-sm:-mx-4 max-sm:rounded-none">
             <h3 className="text-20">{texte.regelnTitel}</h3>
-            <ul className="list-disc ps-6 text-18">
-              {texte.regeln.map((r) => (
-                <li key={r}>{r}</li>
-              ))}
-            </ul>
-            <p className="text-16 text-tinte-2">{texte.hilfe}</p>
+            <Regeln regeln={texte.regeln} />
+            <Hilfe text={texte.hilfe} nummer={texte.hilfeNummer} className="max-w-text" />
             <button
               type="button"
               onClick={() => void regelnOk()}
@@ -350,7 +364,7 @@ export function ChatFenster({
               }}
               disabled={gesperrt}
               rows={2}
-              placeholder={gesperrt ? texte.eingabeGesperrt : texte.eingabe}
+              placeholder={z.schreiben === 'regelnFehlen' ? texte.eingabeRegeln : gesperrt ? texte.eingabeGesperrt : texte.eingabe}
               aria-describedby={gesperrt ? undefined : 'chat-zeichen'}
               className="min-h-12 w-full resize-y rounded-md border-2 border-rand bg-weiss px-3 py-2 text-18 disabled:cursor-not-allowed disabled:resize-none disabled:border-dashed disabled:bg-sand disabled:text-tinte-2 disabled:placeholder:text-tinte-2"
             />
@@ -452,7 +466,7 @@ function MeldeDialog({
             className="rounded-md border-2 border-rand px-3 py-2"
           />
         </label>
-        <p className="text-16 text-tinte-2">{texte.hilfe}</p>
+        <Hilfe text={texte.hilfe} nummer={texte.hilfeNummer} />
         <div className="flex flex-wrap gap-3">
           <button type="submit" className="min-h-12 rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800">
             {texte.meldenSenden}
@@ -468,6 +482,58 @@ function MeldeDialog({
       </form>
     </dialog>
   );
+}
+
+/**
+ * Chat-Regeln kurz (GC-4): je Regel das Stichwort fett mit Achtstern als Aufzählungszeichen, die Erläuterung klappt auf
+ * (`details`, ohne JavaScript). Der Wortlaut bleibt unverändert: Stichwort und Erläuterung ergeben zusammen die Regel
+ * (lange erste Sätze sind am Satzglied geteilt, damit die Stichworte kurz bleiben – Regelblock bei 390 px um 600 px; die Zielgröße von 44 px je Regelzeile geht vor).
+ */
+function Regeln({ regeln }: { regeln: ChatTexte['regeln'] }) {
+  return (
+    <ul className="flex max-w-text flex-col text-16">
+      {regeln.map((r) => (
+        <li key={r.stichwort} data-regel>
+          <details className="group">
+            <summary className="flex min-h-11 cursor-pointer list-none items-start gap-2 py-2.5 font-bold text-tinte hover:text-gruen-800">
+              <Achtstern size={16} className="mt-1 shrink-0 text-gruen-700" />
+              <span className="min-w-0 flex-1">{r.stichwort}</span>
+              <ChevronDown
+                aria-hidden
+                className="mt-0.5 size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-wechsel) group-open:rotate-180 motion-reduce:transition-none"
+              />
+            </summary>
+            <p className="ps-6 pb-2 text-tinte-2">{r.text}</p>
+          </details>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * Hilfehinweis (GC-5) über „Ich habe die Regeln gelesen“ und im Melde-Dialog: Text in Zweitfarbe, die Nummer fett in
+ * Grundtextfarbe als Anruf-Link mit Telefonsymbol (Ziel mindestens 44 px hoch).
+ */
+function Hilfe({ text, nummer, className }: { text: string; nummer: string; className?: string }) {
+  return (
+    <p role="note" className={klassen('rounded-md border border-linie bg-weiss px-3 py-1 text-16 text-pretty text-tinte-2', className)}>
+      {/* Fließtext mit dem Link am Ende: Die Nummer folgt dem Text in derselben Zeile, solange sie passt */}
+      {text}{' '}
+      <a
+        href={`tel:${nummer.replace(/[^\d+]/g, '')}`}
+        className="inline-flex min-h-11 items-center gap-2 align-middle text-18 font-bold whitespace-nowrap text-tinte underline decoration-1 underline-offset-4 hover:text-tinte hover:decoration-2"
+      >
+        <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
+        {nummer}
+      </a>
+    </p>
+  );
+}
+
+/** Plakette „Lehrkraft“ im Nachrichtenkopf. */
+function Plakette({ text }: { text: string }) {
+  return <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{text}</span>;
 }
 
 /** Hinweisband über dem gesperrten Eingabefeld (GC-1): Symbol, Grund und – bei „geschlossen“ – die Wiederöffnungszeit. */

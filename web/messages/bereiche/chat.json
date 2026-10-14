@@ -4,14 +4,38 @@
       "titel": "Unsere Chat-Regeln",
       "einleitung": "Hier chattest du mit deiner Gruppe. Damit sich alle wohlfühlen und sicher sind, gibt es ein paar einfache Regeln. Lies sie in Ruhe durch.",
       "regeln": {
-        "r1": "Sei freundlich. Sag „Hallo“, hilf anderen und bedanke dich. So macht der Chat allen Spaß.",
-        "r2": "Verrate nichts Persönliches. Schreib nie deine Adresse, deine Telefonnummer, dein Passwort oder die Daten von anderen in den Chat.",
-        "r3": "Klick nicht auf Links von Fremden und mach nichts Gefährliches mit. Wenn dir etwas komisch vorkommt, sag es sofort einer Lehrkraft oder deinen Eltern.",
-        "r4": "Hier gibt es nur Text. Bilder, Videos und Dateien kannst du im Chat nicht schicken. Das ist Absicht – so bleiben alle sicher.",
-        "r5": "Hol dir Hilfe. Wenn dich etwas ärgert, ängstigt oder komisch ist, drück auf „Melden“ oder sprich mit deinen Eltern oder einer Lehrkraft. Du bekommst keinen Ärger, weil du Hilfe holst.",
-        "r6": "Deine Lehrkräfte lesen mit. Sie sind im Chat, um zu helfen und damit alle sicher sind.",
-        "r7": "Der Chat ist nur zu bestimmten Zeiten offen – meistens tagsüber bis zum Abend. Außerhalb dieser Zeiten kannst du nur lesen. Die Zeiten stehen im Chat.",
-        "r8": "Bleib respektvoll, auch bei Streit. Keine Beleidigungen, kein Auslachen, keine Drohungen. Alles, was du schreibst, können andere lesen. Nach einiger Zeit werden die Nachrichten automatisch gelöscht."
+        "r1": {
+          "stichwort": "Sei freundlich.",
+          "text": "Sag „Hallo“, hilf anderen und bedanke dich. So macht der Chat allen Spaß."
+        },
+        "r2": {
+          "stichwort": "Verrate nichts Persönliches.",
+          "text": "Schreib nie deine Adresse, deine Telefonnummer, dein Passwort oder die Daten von anderen in den Chat."
+        },
+        "r3": {
+          "stichwort": "Klick nicht auf Links von Fremden",
+          "text": "und mach nichts Gefährliches mit. Wenn dir etwas komisch vorkommt, sag es sofort einer Lehrkraft oder deinen Eltern."
+        },
+        "r4": {
+          "stichwort": "Hier gibt es nur Text.",
+          "text": "Bilder, Videos und Dateien kannst du im Chat nicht schicken. Das ist Absicht – so bleiben alle sicher."
+        },
+        "r5": {
+          "stichwort": "Hol dir Hilfe.",
+          "text": "Wenn dich etwas ärgert, ängstigt oder komisch ist, drück auf „Melden“ oder sprich mit deinen Eltern oder einer Lehrkraft. Du bekommst keinen Ärger, weil du Hilfe holst."
+        },
+        "r6": {
+          "stichwort": "Deine Lehrkräfte lesen mit.",
+          "text": "Sie sind im Chat, um zu helfen und damit alle sicher sind."
+        },
+        "r7": {
+          "stichwort": "Der Chat ist nur zu bestimmten Zeiten offen",
+          "text": "– meistens tagsüber bis zum Abend. Außerhalb dieser Zeiten kannst du nur lesen. Die Zeiten stehen im Chat."
+        },
+        "r8": {
+          "stichwort": "Bleib respektvoll, auch bei Streit.",
+          "text": "Keine Beleidigungen, kein Auslachen, keine Drohungen. Alles, was du schreibst, können andere lesen. Nach einiger Zeit werden die Nachrichten automatisch gelöscht."
+        }
       },
       "melden": "So meldest du etwas: Tippe bei der Nachricht auf „Melden“, sag kurz, was los ist, und bestätige. Deine Meldung geht an deine Lehrkräfte und an eine Person, die für den Schutz von Kindern zuständig ist. Sie schauen sich alles in Ruhe an und helfen.",
       "hilfe": "Du möchtest mit jemandem sprechen, der nicht zur Gruppe gehört? Die „Nummer gegen Kummer“ hilft dir: 116 111 – kostenlos, und du musst deinen Namen nicht sagen.",
@@ -19,11 +43,26 @@
       "erwachsen": {
         "einleitung": "Im Elternkanal schreiben die Lehrkräfte und die Eltern der Gruppe. Damit der Austausch für alle angenehm bleibt, gelten diese Regeln.",
         "regeln": {
-          "r1": "Bleiben Sie freundlich und sachlich – alle Eltern der Gruppe und die Lehrkräfte lesen mit.",
-          "r2": "Teilen Sie keine Gesundheitsangaben, Adressen oder Telefonnummern im Kanal. Persönliches besprechen Sie bitte direkt mit der Lehrkraft.",
-          "r3": "Es gibt nur Text: Bilder und Dateien lassen sich nicht senden, Links erscheinen als Text.",
-          "r4": "Kommt Ihnen etwas unangemessen vor, nutzen Sie „Melden“. Die Lehrkräfte und die Ansprechperson für Kinderschutz kümmern sich darum.",
-          "r5": "Der Kanal ist zu festen Zeiten offen, außerhalb können Sie lesen. Nachrichten werden nach spätestens 90 Tagen gelöscht."
+          "r1": {
+            "stichwort": "Bleiben Sie freundlich und sachlich",
+            "text": "– alle Eltern der Gruppe und die Lehrkräfte lesen mit."
+          },
+          "r2": {
+            "stichwort": "Teilen Sie keine Gesundheitsangaben, Adressen oder Telefonnummern im Kanal.",
+            "text": "Persönliches besprechen Sie bitte direkt mit der Lehrkraft."
+          },
+          "r3": {
+            "stichwort": "Es gibt nur Text:",
+            "text": "Bilder und Dateien lassen sich nicht senden, Links erscheinen als Text."
+          },
+          "r4": {
+            "stichwort": "Kommt Ihnen etwas unangemessen vor, nutzen Sie „Melden“.",
+            "text": "Die Lehrkräfte und die Ansprechperson für Kinderschutz kümmern sich darum."
+          },
+          "r5": {
+            "stichwort": "Der Kanal ist zu festen Zeiten offen, außerhalb können Sie lesen.",
+            "text": "Nachrichten werden nach spätestens 90 Tagen gelöscht."
+          }
         }
       }
     }
@@ -33,14 +72,38 @@
       "titel": "Sohbet kurallarımız",
       "einleitung": "Burada grubunla sohbet edersin. Herkesin kendini iyi ve güvende hissetmesi için birkaç basit kural var. Onları sakince oku.",
       "regeln": {
-        "r1": "Nazik ol. Merhaba de, başkalarına yardım et, teşekkür et. Böylece sohbet herkes için güzel olur.",
-        "r2": "Kişisel bilgilerini paylaşma. Sohbete asla adresini, telefon numaranı, şifreni ya da başkalarının bilgilerini yazma.",
-        "r3": "Yabancıların gönderdiği bağlantılara tıklama ve tehlikeli hiçbir şey yapma. Sana tuhaf gelen bir şey olursa hemen bir öğretmene ya da anne babana söyle.",
-        "r4": "Burada sadece yazı var. Sohbette fotoğraf, video veya dosya gönderemezsin. Bu bilerek böyle – herkes güvende kalsın diye.",
-        "r5": "Yardım iste. Bir şey seni kızdırıyor, korkutuyor ya da tuhaf geliyorsa „Bildir“ düğmesine bas veya anne babanla ya da bir öğretmenle konuş. Yardım istediğin için başın derde girmez.",
-        "r6": "Öğretmenlerin sohbeti okur. Onlar yardım etmek ve herkes güvende olsun diye sohbettedir.",
-        "r7": "Sohbet yalnızca belirli saatlerde açıktır – çoğunlukla gündüzden akşama kadar. Bu saatlerin dışında sadece okuyabilirsin. Saatleri sohbetin içinde görürsün.",
-        "r8": "Tartışırken bile saygılı kal. Hakaret yok, alay yok, tehdit yok. Yazdığın her şeyi başkaları okuyabilir. Mesajlar bir süre sonra kendiliğinden silinir."
+        "r1": {
+          "stichwort": "Nazik ol.",
+          "text": "Merhaba de, başkalarına yardım et, teşekkür et. Böylece sohbet herkes için güzel olur."
+        },
+        "r2": {
+          "stichwort": "Kişisel bilgilerini paylaşma.",
+          "text": "Sohbete asla adresini, telefon numaranı, şifreni ya da başkalarının bilgilerini yazma."
+        },
+        "r3": {
+          "stichwort": "Yabancıların gönderdiği bağlantılara tıklama",
+          "text": "ve tehlikeli hiçbir şey yapma. Sana tuhaf gelen bir şey olursa hemen bir öğretmene ya da anne babana söyle."
+        },
+        "r4": {
+          "stichwort": "Burada sadece yazı var.",
+          "text": "Sohbette fotoğraf, video veya dosya gönderemezsin. Bu bilerek böyle – herkes güvende kalsın diye."
+        },
+        "r5": {
+          "stichwort": "Yardım iste.",
+          "text": "Bir şey seni kızdırıyor, korkutuyor ya da tuhaf geliyorsa „Bildir“ düğmesine bas veya anne babanla ya da bir öğretmenle konuş. Yardım istediğin için başın derde girmez."
+        },
+        "r6": {
+          "stichwort": "Öğretmenlerin sohbeti okur.",
+          "text": "Onlar yardım etmek ve herkes güvende olsun diye sohbettedir."
+        },
+        "r7": {
+          "stichwort": "Sohbet yalnızca belirli saatlerde açıktır",
+          "text": "– çoğunlukla gündüzden akşama kadar. Bu saatlerin dışında sadece okuyabilirsin. Saatleri sohbetin içinde görürsün."
+        },
+        "r8": {
+          "stichwort": "Tartışırken bile saygılı kal.",
+          "text": "Hakaret yok, alay yok, tehdit yok. Yazdığın her şeyi başkaları okuyabilir. Mesajlar bir süre sonra kendiliğinden silinir."
+        }
       },
       "melden": "Bir şeyi şöyle bildirirsin: İlgili mesajın yanındaki „Bildir“e dokun, ne olduğunu kısaca söyle ve onayla. Bildirimin öğretmenlerine ve çocukların korunmasından sorumlu bir kişiye gider. Hepsini sakince inceler ve sana yardım ederler.",
       "hilfe": "Gruptan olmayan biriyle konuşmak mı istiyorsun? „Nummer gegen Kummer“ (Almanya'da çocuklar ve gençler için yardım hattı) sana yardım eder: 116 111 – ücretsiz, adını söylemek zorunda değilsin.",
@@ -48,11 +111,26 @@
       "erwachsen": {
         "einleitung": "Veli kanalında öğretmenler ve grubun velileri yazışır. Yazışmanın herkes için hoş kalması için bu kurallar geçerlidir.",
         "regeln": {
-          "r1": "Nazik ve nesnel kalın – grubun tüm velileri ve öğretmenler okur.",
-          "r2": "Kanalda sağlık bilgisi, adres veya telefon numarası paylaşmayın. Kişisel konuları lütfen doğrudan öğretmenle konuşun.",
-          "r3": "Yalnızca yazı vardır: Resim ve dosya gönderilemez, bağlantılar yazı olarak görünür.",
-          "r4": "Uygunsuz bulduğunuz bir şey olursa „Bildir“i kullanın. Öğretmenler ve çocuk koruma sorumlusu bununla ilgilenir.",
-          "r5": "Kanal belirli saatlerde açıktır, bunun dışında okuyabilirsiniz. Mesajlar en geç 90 gün sonra silinir."
+          "r1": {
+            "stichwort": "Nazik ve nesnel kalın",
+            "text": "– grubun tüm velileri ve öğretmenler okur."
+          },
+          "r2": {
+            "stichwort": "Kanalda sağlık bilgisi, adres veya telefon numarası paylaşmayın.",
+            "text": "Kişisel konuları lütfen doğrudan öğretmenle konuşun."
+          },
+          "r3": {
+            "stichwort": "Yalnızca yazı vardır:",
+            "text": "Resim ve dosya gönderilemez, bağlantılar yazı olarak görünür."
+          },
+          "r4": {
+            "stichwort": "Uygunsuz bulduğunuz bir şey olursa „Bildir“i kullanın.",
+            "text": "Öğretmenler ve çocuk koruma sorumlusu bununla ilgilenir."
+          },
+          "r5": {
+            "stichwort": "Kanal belirli saatlerde açıktır, bunun dışında okuyabilirsiniz.",
+            "text": "Mesajlar en geç 90 gün sonra silinir."
+          }
         }
       }
     }
@@ -62,14 +140,38 @@
       "titel": "Our chat rules",
       "einleitung": "This is where you chat with your group. A few simple rules help everyone feel good and stay safe. Take a moment to read them.",
       "regeln": {
-        "r1": "Be kind. Say hello, help others and say thank you. That makes the chat fun for everyone.",
-        "r2": "Keep personal things private. Never write your address, phone number, password or anyone else’s details in the chat.",
-        "r3": "Don’t click links from strangers and don’t do anything risky. If something feels odd, tell a teacher or your parents right away.",
-        "r4": "Text only. You can’t send pictures, videos or files in the chat. That’s on purpose – it keeps everyone safe.",
-        "r5": "Get help. If something upsets or scares you, or just feels strange, press “Report” or talk to your parents or a teacher. You won’t get in trouble for asking for help.",
-        "r6": "Your teachers read along. They are there to help and to make sure everyone is safe.",
-        "r7": "The chat is only open at certain times – mostly during the day until the evening. Outside those times you can only read. You can see the times in the chat.",
-        "r8": "Stay respectful, even when you disagree. No insults, no laughing at others, no threats. Everything you write can be read by others. Messages are deleted automatically after a while."
+        "r1": {
+          "stichwort": "Be kind.",
+          "text": "Say hello, help others and say thank you. That makes the chat fun for everyone."
+        },
+        "r2": {
+          "stichwort": "Keep personal things private.",
+          "text": "Never write your address, phone number, password or anyone else’s details in the chat."
+        },
+        "r3": {
+          "stichwort": "Don’t click links from strangers",
+          "text": "and don’t do anything risky. If something feels odd, tell a teacher or your parents right away."
+        },
+        "r4": {
+          "stichwort": "Text only.",
+          "text": "You can’t send pictures, videos or files in the chat. That’s on purpose – it keeps everyone safe."
+        },
+        "r5": {
+          "stichwort": "Get help.",
+          "text": "If something upsets or scares you, or just feels strange, press “Report” or talk to your parents or a teacher. You won’t get in trouble for asking for help."
+        },
+        "r6": {
+          "stichwort": "Your teachers read along.",
+          "text": "They are there to help and to make sure everyone is safe."
+        },
+        "r7": {
+          "stichwort": "The chat is only open at certain times",
+          "text": "– mostly during the day until the evening. Outside those times you can only read. You can see the times in the chat."
+        },
+        "r8": {
+          "stichwort": "Stay respectful, even when you disagree.",
+          "text": "No insults, no laughing at others, no threats. Everything you write can be read by others. Messages are deleted automatically after a while."
+        }
       },
       "melden": "How to report something: tap “Report” next to the message, say briefly what is wrong and confirm. Your report goes to your teachers and to a person who is responsible for child protection. They look into it calmly and help.",
       "hilfe": "Want to talk to someone outside the group? The “Nummer gegen Kummer” (a helpline for children and young people in Germany) can help: 116 111 – free of charge, and you don’t have to give your name.",
@@ -77,11 +179,26 @@
       "erwachsen": {
         "einleitung": "In the parents’ channel, the teachers and the group’s parents write to each other. These rules keep the exchange pleasant for everyone.",
         "regeln": {
-          "r1": "Please stay kind and factual – all parents of the group and the teachers read along.",
-          "r2": "Do not share health information, addresses or phone numbers in the channel. Please discuss personal matters directly with the teacher.",
-          "r3": "There is only text: pictures and files cannot be sent, links appear as text.",
-          "r4": "If something seems inappropriate, use “Report”. The teachers and the child protection contact will deal with it.",
-          "r5": "The channel is open at set times; outside them you can read. Messages are deleted after 90 days at the latest."
+          "r1": {
+            "stichwort": "Please stay kind and factual",
+            "text": "– all parents of the group and the teachers read along."
+          },
+          "r2": {
+            "stichwort": "Do not share health information, addresses or phone numbers in the channel.",
+            "text": "Please discuss personal matters directly with the teacher."
+          },
+          "r3": {
+            "stichwort": "There is only text:",
+            "text": "pictures and files cannot be sent, links appear as text."
+          },
+          "r4": {
+            "stichwort": "If something seems inappropriate, use “Report”.",
+            "text": "The teachers and the child protection contact will deal with it."
+          },
+          "r5": {
+            "stichwort": "The channel is open at set times; outside them you can read.",
+            "text": "Messages are deleted after 90 days at the latest."
+          }
         }
       }
     }
