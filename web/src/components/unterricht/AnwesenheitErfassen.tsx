@@ -18,16 +18,24 @@ export type AnwesenheitsTexte = {
 
 type Zeile = { lernendeId: string; name: string; status: AnwesenheitsStatus; fehlmeldung: boolean };
 const REIHE: AnwesenheitsStatus[] = ['anwesend', 'verspaetet', 'entschuldigt', 'fehlt'];
+/**
+ * Gewählter Status (Sichtabnahme A-1): immer gefüllt, je Status eine eigene Farbe, weiße Schrift mit mindestens 4,5:1
+ * (Grün 5,5 · Blau 7,2 · Braun 6,7 · Rot 6,6) und Häkchen – nie nur über die Farbe erkennbar.
+ */
 const FARBE: Record<AnwesenheitsStatus, string> = {
   anwesend: 'border-gruen-700 bg-gruen-700 text-weiss',
-  verspaetet: 'border-gruen-700 bg-gruen-50 text-gruen-800',
-  entschuldigt: 'border-rand bg-sand text-tinte',
-  fehlt: 'border-fehler bg-fehler-toenung text-fehler',
+  verspaetet: 'border-info bg-info text-weiss',
+  entschuldigt: 'border-warnung bg-warnung text-weiss',
+  fehlt: 'border-fehler bg-fehler text-weiss',
 };
+/** Nicht gewählt: Umriss mit Rand ≥ 3:1 (`rand` 3,65:1 auf Weiß). */
+const UMRISS = 'border-rand bg-weiss text-tinte hover:border-gruen-700 hover:bg-gruen-50';
 
 /**
  * Anwesenheit auf einem Bildschirm (B-23, Ziel 20 Sekunden): je Kind vier große Schalter, Fehlmeldungen der Eltern sind
  * vorbelegt. Ein Druck gibt sofort Rückmeldung (Häkchen zeichnet sich), gespeichert wird mit einem Knopf für alle.
+ * Die Schalter stehen in einem festen Raster (A-2): Telefon 2 × 2, ab 640 px vier gleiche Spalten, ab 1280 px neben dem
+ * Namen in fester Breite – so stehen sie in allen Zeilen spaltengleich, das Häkchen liegt innerhalb der Schalterbreite.
  */
 export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: string; zeilen: Zeile[]; texte: AnwesenheitsTexte }) {
   const [stand, setStand] = useState<Record<string, AnwesenheitsStatus>>(() =>
@@ -69,12 +77,12 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
       </button>
       <ul className="flex flex-col divide-y divide-linie rounded-lg border border-linie bg-weiss">
         {zeilen.map((z) => (
-          <li key={z.lernendeId} className="flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
-            <span className="flex flex-col">
+          <li key={z.lernendeId} className="flex flex-col gap-3 p-4 xl:flex-row xl:items-center xl:justify-between xl:gap-6">
+            <span className="flex min-w-0 flex-col">
               <span className="text-20 font-bold">{z.name}</span>
               {z.fehlmeldung ? <span className="text-16 text-tinte-2">{texte.fehlmeldung}</span> : null}
             </span>
-            <fieldset className="flex flex-wrap gap-2">
+            <fieldset className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:w-168 xl:shrink-0">
               <legend className="sr-only">{z.name}</legend>
               {REIHE.map((s) => {
                 const an = stand[z.lernendeId] === s;
@@ -82,8 +90,8 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
                   <label
                     key={s}
                     className={klassen(
-                      'inline-flex min-h-12 min-w-24 cursor-pointer items-center justify-center gap-2 rounded-md border-2 px-3 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98 has-focus-visible:outline-2 has-focus-visible:outline-gruen-950',
-                      an ? FARBE[s] : 'border-linie bg-weiss text-tinte-2 hover:border-gruen-700',
+                      'flex min-h-12 min-w-0 cursor-pointer items-center justify-center gap-1.5 rounded-md border-2 px-2 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) active:scale-98 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-gruen-950 motion-reduce:active:scale-100',
+                      an ? FARBE[s] : UMRISS,
                     )}
                   >
                     <input
@@ -95,7 +103,7 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
                       className="sr-only"
                     />
                     {an ? (
-                      <svg aria-hidden viewBox="0 0 24 24" className="size-5">
+                      <svg aria-hidden viewBox="0 0 24 24" className="size-5 shrink-0">
                         <path
                           d="M5 12.5l4.5 4.5L19 7.5"
                           fill="none"
