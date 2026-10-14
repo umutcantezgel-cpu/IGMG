@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["fra1"],
+  "ignoreCommand": "node scripts/vercel-ignore.mjs",
+  "crons": [
+    {
+      "path": "/api/wartung/loeschfristen",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/wartung/mail-ausgang",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}

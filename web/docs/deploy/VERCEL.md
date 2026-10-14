@@ -27,7 +27,7 @@ Bitte keine Geheimnisse in Chats, E-Mails, Screenshots oder ins Repository kopie
 
 | Abschnitt | Was                                                                     | Aufwand           | Wer                    |
 | --------- | ----------------------------------------------------------------------- | ----------------- | ---------------------- |
-| 0         | Nur bei neuem Projekt: importieren, Preset „Services“                   | 5 min + Bau       | Technik                |
+| 0         | Nur bei neuem Projekt: importieren, Deploy klicken                      | 5 min + Bau       | Technik                |
 | 1         | Projekt prüfen (Region, Node, Stammordner)                              | 3 min             | Technik                |
 | 2         | Datenbank in Frankfurt                                                  | 5 min             | Technik                |
 | 3         | Dateispeicher in Frankfurt                                              | 3 min             | Technik                |
@@ -58,39 +58,33 @@ Alle Code-Bausteine für den Livegang sind vorhanden (Stand 2026-10-11, Branch `
 | Startklar-Cockpit (`/verwaltung/startklar`) und `pnpm startklar`                                         | vorhanden                                                           | `web/src/lib/startklar/pruefungen.ts`                             |
 | `docs/deploy/VERCEL-ENV.md`                                                                              | vorhanden                                                           | ADR 0022                                                          |
 
-## 0. Neues Projekt importieren (5 Minuten, ein Klick zu prüfen)
+## 0. Neues Projekt importieren – Deploy klicken (5 Minuten)
 
 Gilt, wenn das Repository in Vercel neu angelegt wird (zweites Projekt, neues Team oder ein gelöschtes Projekt). Ein
-bestehendes Projekt prüfst du mit Abschnitt 1. **Erst importieren, wenn `main` den aktuellen Stand enthält** – Vercel
-baut beim Import den Produktionsbranch.
-
-**Weg 1 – im Dashboard:**
+bestehendes Projekt prüfst du mit Abschnitt 1. Vercel baut beim Import den Produktionsbranch `main`.
 
 1. **Ort:** Vercel › Add New › Project › das Repository `IGMG` auswählen › Import.
-2. **Root Directory** bleibt leer. Vercel liest `vercel.json` nur im Stamm des Repositorys; sie beschreibt die Web-App
-   als Service `web` (Ordner `web`, Next.js).
-3. **Framework Preset:** Steht dort nicht „Services“, „Services“ auswählen. Das ist der einzige Handgriff. Vercel kann
-   dieses Preset nicht selbst erkennen (es hat keine Erkennungsregeln), und es lässt sich auch nicht aus dem Repository
-   setzen: Neben `services` ist ein `framework` in `vercel.json` verboten. Laut Vercel-Anleitung
-   (https://vercel.com/kb/guide/vercel-services) baut ein Projekt nur mit diesem Preset als Services. Der Code der
-   Bau-CLI baut zwar schon allein wegen des `services`-Blocks so; verlass dich nicht darauf.
-4. Keine Build- oder Install-Befehle und keine Umgebungsvariablen eintragen. Vercel ruft in `web/` das Skript
-   `vercel-build` auf (`scripts/vercel-bau.mjs`).
-5. **Deploy** klicken. Der erste Bau dauert etwa 10–15 Minuten.
+2. **Nichts ändern, Deploy klicken.** Keine Umgebungsvariablen, keine Build- oder Install-Befehle. Der erste Bau dauert
+   etwa 10–15 Minuten.
 
-**Weg 2 – ohne Einstellung, per Kommandozeile** (im Stamm des Repositorys, angemeldet bei Vercel):
-`npx vercel@latest link --yes`. Die CLI legt das Projekt an, setzt das Preset „Services“ selbst (sie erkennt den
-`services`-Block) und verbindet das Git-Repository. Danach baut Vercel bei jedem Push auf `main`; für den ersten Bau
-Deployments › Create Deployment › Branch `main`. Die lokale Verknüpfung `.vercel/` ist in `/.gitignore` ausgeschlossen.
-Kein `vercel deploy` von Hand: Es lüde den lokalen Ordner hoch statt des Git-Stands.
+Das Repository ist für jeden Vorschlag der Import-Maske eingerichtet (geprüft mit `vercel build` der Vercel-CLI 64):
 
-**So erkennst du den Erfolg:** Im Bauprotokoll steht der Bau des Service `web` mit `[bau] WARNUNG: DATABASE_URL fehlt`
-und danach der Next-Bau mit rund 1866 Seiten; die Produktionsadresse zeigt die Startseite.
+| Was die Maske vorschlägt                            | Was gilt                                                                                                                     |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Root Directory leer, Preset „Services“ oder „Other“ | `/vercel.json`: Service `web` (Ordner `web`, Next.js), Region `fra1`, Crons, Ignore-Regel                                    |
+| Root Directory `web`, Preset „Next.js“              | `web/vercel.json`: dieselben Einstellungen (Next.js, Region `fra1`, Crons, Ignore-Regel); Vercels Erkennung findet nur `web` |
 
-**So erkennst du das falsche Preset:** Der Bau bricht ab mit `[vercel] Dieses Projekt baut als
-Vercel-Services-Projekt …`. Diese Meldung kommt vom Wächter `/package.json` im Stamm: Ohne Services-Preset würde Vercel
-sonst den Stamm als statische Dateien ausliefern (also den Quelltext unter `web/`), statt die App zu bauen. Abhilfe:
-Settings › Build and Deployment › Framework Preset = Services, dann Deployments › Redeploy.
+- `web/vercel.json` wird im Services-Modus nicht gelesen (geprüft: keine doppelten Crons). Beide Dateien müssen gleich
+  bleiben; das prüft `web/tests/unit/vercel-import.test.ts`.
+- Sicherung für den Fall, dass Vercel bei leerem Root Directory und „Other“ den `services`-Block nicht beachtet (so
+  beschreibt es die Vercel-Anleitung https://vercel.com/kb/guide/vercel-services; der Code der Bau-CLI baut trotzdem als
+  Services): Dann läuft der Wächter `/package.json` und bricht mit der Meldung „[vercel] Dieses Projekt baut als Vercel-Services-Projekt …“ ab, statt den Quelltext als Dateien auszuliefern. Abhilfe: Settings › Build and Deployment ›
+  Framework Preset = Services (oder Root Directory = `web`), dann Deployments › Redeploy.
+- Lege beim Import nur **ein** Projekt an. Andere Ordner mit `package.json` (z. B. `betrieb/lokal/spiegel`) gehören zum
+  lokalen Server und sind keine Vercel-Projekte.
+
+**So erkennst du den Erfolg:** Im Bauprotokoll steht `[bau] WARNUNG: DATABASE_URL fehlt` und danach der Next-Bau mit
+rund 1866 Seiten; die Produktionsadresse zeigt die Startseite.
 
 **Das passiert ohne Umgebungsvariablen:**
 
@@ -119,8 +113,8 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 
 - **Ort:** Team › Projekt `igmg` › Settings › General **[prüfen]**, Feld „Root Directory“.
 - **Aufwand:** 1 Minute.
-- **Regel:** Das Feld bleibt leer, weil Vercel `vercel.json` nur im Stamm des Repositorys liest (`web/docs/BETRIEB.md` § 9, erster Punkt).
-- **Das siehst du, wenn es geklappt hat:** Das Feld ist leer.
+- **Regel:** Leer (Services aus `/vercel.json`) oder `web` (Next.js mit `web/vercel.json`) – beides deployt gleich (Abschnitt 0). Ein vorhandenes Projekt nicht umstellen.
+- **Das siehst du, wenn es geklappt hat:** Das Feld ist leer oder steht auf `web`.
 
 **1.2 Region Frankfurt**
 

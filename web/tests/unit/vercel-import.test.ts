@@ -3,20 +3,27 @@ import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 /**
- * Import als neues Vercel-Projekt (Wunsch des Nutzers, 14.10.2026; docs/deploy/VERCEL.md Abschnitt 0): Root Directory
- * leer, Framework Preset „Services“. Die Bau-CLI (59.25/64.0) baut schon allein wegen des `services`-Blocks als Services;
- * laut Vercel-Anleitung braucht es zusätzlich das Preset, das sich nicht aus dem Repository setzen lässt. Fehlt es, fängt
- * der Wächter `/package.json` den Rückfall auf „Other“ ab (Bau bricht mit Anleitung ab, statt den Stamm statisch
- * auszuliefern). Diese Tests halten die Bedingungen fest.
+ * Import als neues Vercel-Projekt (Wunsch des Nutzers, 14.10.2026; docs/deploy/VERCEL.md Abschnitt 0): Jeder Weg, den die
+ * Import-Maske anbietet, deployt gleich – geprüft mit vercel CLI 64.0.2 (`vercel build`):
+ * - Root Directory leer, Preset „Services“ oder „Other“: Services-Bau aus `/vercel.json` (Service web). Die Bau-CLI baut
+ *   schon allein wegen des `services`-Blocks so; fällt Vercel laut KB doch auf „Other“ zurück, bricht der Wächter
+ *   `/package.json` mit Anleitung ab, statt den Stamm statisch auszuliefern. `web/vercel.json` wird dort nicht gelesen.
+ * - Root Directory `web` (Vercels Erkennung findet dort Next.js – getProjectPaths liefert nur „web“): `web/vercel.json`
+ *   gilt, mit denselben Einstellungen (Region, Crons, Ignore-Regel).
  */
 const WURZEL = resolve(__dirname, '../../..');
 const konfig = JSON.parse(readFileSync(join(WURZEL, 'vercel.json'), 'utf8')) as Record<string, unknown>;
 const dienste = konfig.services as Record<string, Record<string, unknown>>;
 
 describe('vercel.json für den Import', () => {
-  it('liegt in der Wurzel des Repositorys (Vercel liest sie nur dort) und nicht zusätzlich in web/', () => {
-    expect(existsSync(join(WURZEL, 'vercel.json'))).toBe(true);
-    expect(existsSync(join(WURZEL, 'web', 'vercel.json'))).toBe(false);
+  it('liegt im Stamm (Services) und gleichwertig in web/ (Import mit Root Directory web)', () => {
+    const web = JSON.parse(readFileSync(join(WURZEL, 'web', 'vercel.json'), 'utf8')) as Record<string, unknown>;
+    expect(web.framework).toBe('nextjs');
+    expect(web.regions).toEqual(konfig.regions);
+    expect(web.crons).toEqual(konfig.crons);
+    expect(web.ignoreCommand).toBe('node scripts/vercel-ignore.mjs');
+    expect(web).not.toHaveProperty('services');
+    expect(existsSync(join(WURZEL, 'web', 'scripts', 'vercel-ignore.mjs'))).toBe(true);
   });
 
   it('beschreibt die Web-App als Service mit Wurzel web und Next.js', () => {
