@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 05:30 UTC:** Sichtabnahme Runde 1 fertig (`berichte/sichtabnahme-1.md`, 11/19 abgenommen). Die 4
+  Befundpakete laufen in ihren Arbeitsbäumen (`agent-ac6673f9…` P1 Koran/Hadith/Elifbe/Lernen, `agent-ac281c5b…` P2
+  Startseite/Gebetszeiten/Projekte, `agent-a360d92e…` P3 Mein Bereich, `agent-a212ace6…` P4 Verwaltung), nach dem
+  Container-Neustart per Nachricht fortgesetzt; nach Neustart: Arbeitsbaum committen (ZWISCHENSTAND) und Agent per
+  SendMessage fortsetzen (keine neuen Arbeitsbäume – Platte knapp, ≈ 7 GB frei; alte gemergte Arbeitsbäume ≈ 25 GB darf
+  nur der Nutzer entfernen). Erledigt: `_werkstatt/` archiviert, GO-LIVE Abschnitt G, BERICHT-Entwurf.
+- **Danach:** Pakete mergen → Nachabnahme der 8 Ansichten (Vorschau-Server mit `pglite-sicht`, Beispielkonten, Admin
+  über `scratchpad/werkzeug/einladung-pglite.ts`) → Tor → Fast-Forward → Stufe C → BERICHT mit Galerie → ABSCHLUSS.
 - **Stand 13.10. 20:05 UTC:** `main` = c581594 live (`dpl_FC6GBM8cpj3WLm3KBQvU8d9i2xFB`): zusätzlich Anzeige-CMS (Migration
   0012), Vers/Hadith des Tages, D-14…D-17, Sicherheitsmail, Erzählansichten (Moschee eröffnet, Eröffnung in Über uns,
   Fastenbogen-Vorschau, Nachtzeichen), Brotkrumen-Kürzung, Konto-Einstiegsseiten prüfen den Schalter selbst. Tor: Bau
