@@ -11,6 +11,7 @@ import {
   type Befund,
   type Betriebsart,
   type UmgebungsWerte,
+  vercelProduktionsHost,
 } from '@/lib/umgebung';
 import { erzeugeWerte, GEHEIMNISSE, pruefeZielPfad, schreibeDatei } from '../../scripts/geheimnisse-erzeugen.mjs';
 
@@ -126,6 +127,26 @@ describe('oeffentlicheAdresse', () => {
     expect(oeffentlicheAdresse({ NODE_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'igmg-neu.vercel.app' })).toBe(
       'http://localhost:3000',
     );
+  });
+
+  it('übernimmt die Produktionsadresse nie in Vorschauen (Vercel setzt sie auch dort)', () => {
+    const vorschau = {
+      VERCEL: '1',
+      VERCEL_ENV: 'preview',
+      VERCEL_BRANCH_URL: 'igmg-neu-git-test.vercel.app',
+      VERCEL_PROJECT_PRODUCTION_URL: 'igmg-neu.vercel.app',
+    };
+    expect(oeffentlicheAdresse(vorschau)).toBe('https://igmg-neu-git-test.vercel.app');
+    // Vorschau mit erzwungener Produktions-Betriebsart: keine stille Übernahme der Produktionsdomain
+    expect(vercelProduktionsHost({ ...vorschau, SITE_MODE: 'produktion' })).toBeUndefined();
+    expect(oeffentlicheAdresse({ ...vorschau, SITE_MODE: 'produktion' })).toBe('http://localhost:3000');
+  });
+
+  it('meldet bei eigener Domain ohne APP_URL, dass APP_URL auf die Hauptdomain gehört', () => {
+    const env = { VERCEL: '1', VERCEL_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'igmg-wetzlar.de' };
+    const befund = pruefeUmgebung(env).befunde.find((b) => b.variable === 'APP_URL');
+    expect(befund?.schwere).toBe('warnung');
+    expect(befund?.meldung).toContain('Hauptdomain');
   });
 
   it('meldet fehlende APP_URL auf Vercel nur als Warnung, außerhalb als Fehler', () => {
@@ -302,8 +323,12 @@ describe('Adresse und Prüfregeln', () => {
     expect(befundeZu({ ...PRODUKTION, BETTER_AUTH_URL: 'https://anderes.example.test' }, 'BETTER_AUTH_URL', 'warnung')).toHaveLength(1);
   });
 
-  it('die Anmeldung in der Vorschau ohne Adresse ist eine Warnung', () => {
-    expect(befundeZu({ ...VORSCHAU, APP_URL: undefined }, 'BETTER_AUTH_URL', 'warnung')).toHaveLength(1);
+  it('die Anmeldung in der Vorschau ohne jede Adresse ist eine Warnung, mit Vercel-Adresse nicht', () => {
+    expect(
+      befundeZu({ ...VORSCHAU, APP_URL: undefined, VERCEL_BRANCH_URL: undefined, VERCEL_URL: undefined }, 'BETTER_AUTH_URL', 'warnung'),
+    ).toHaveLength(1);
+    // optionen.ts nimmt dann die Branch-Adresse (oeffentlicheAdresse) – kein Grund zur Warnung
+    expect(befundeZu({ ...VORSCHAU, APP_URL: undefined }, 'BETTER_AUTH_URL', 'warnung')).toHaveLength(0);
   });
 
   it('MAIL_ABSENDER mit Platzhalter-Domain ist in der Produktion ein Fehler', () => {

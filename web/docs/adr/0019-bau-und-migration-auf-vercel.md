@@ -52,7 +52,8 @@ Falsch, wenn ein Bau mit Migration fehlschlägt, nachdem die Migration angewende
 - **Entscheidung 2:** Nur im Beispielmodus setzt `next.config.ts` die Option `htmlLimitedBots` auf ein Muster, das auf keinen echten Bot passt. Bots bekommen dann dieselbe vorgerenderte Hülle wie Browser. Titel, Beschreibung und `og:*` stehen dort schon im `<head>`. Mit Datenbank gilt die Vorgabe von Next.
 - **Entscheidung 3:** Die OG-Bilder von Beiträgen und Veranstaltungen entstehen zur Laufzeit (ISR). Zur Laufzeit des Beispielmodus fragen sie die Datenbank gar nicht erst ab und zeigen das Standardbild (`inhaltOderStandard` in `lib/seo/og-bild.tsx`, Bedingung `datenbankVerfuegbar` in `lib/db/verfuegbar.ts`, dieselbe wie in `lib/db/index.ts`). Abfangen allein reichte nicht: Nach einer scheiternden `'use cache'`-Abfrage hing die Antwort in der Gegenprobe ohne Datenbank (0 % CPU, keine Antwort). Auf Vercel liefe sie bis zum Funktionslimit. Mit Datenbank, in Entwicklung und beim Bau wird normal geladen, und ein Fehler geht weiter.
 - **Bekannte Grenzen des Beispielmodus** (alle enden mit dem Anschluss der Datenbank, Runbook Abschnitt 4):
-  - Unbekannte Slugs von Beiträgen und Veranstaltungen zeigen eine Fehlerseite statt „nicht gefunden“, weil die Abfrage zur Laufzeit scheitert.
+  - ~~Unbekannte Slugs von Beiträgen und Veranstaltungen zeigen eine Fehlerseite~~ – behoben: Die Lader prüfen `datenbankVerfuegbar` und liefern „nicht gefunden“ (Stand 14.10.2026, gemessen im Lauf wie ein frischer Import).
   - Die Suche mit Begriff (`/suche?q=…`) braucht die Datenbank.
-  - POST-Anfragen ohne `Next-Action` auf eine Seite (z. B. ein Formular ohne JavaScript) enden mit 500.
-  - Alle Schreibwege (Formulare, Verwaltung) brauchen die Datenbank.
+  - ~~POST-Anfragen ohne `Next-Action` enden mit 500~~ – im Lauf vom 14.10.2026 nicht mehr nachstellbar.
+  - Alle Schreibwege (Formulare, Verwaltung) brauchen die Datenbank. `/api/altcha` antwortet ohne `ALTCHA_GEHEIMNIS` mit 503 statt 500.
+  - Kalender-Abos (`/api/ical/…`): Feiertage nur berechnet („vorläufig“), Veranstaltungen leer; der Einzeltermin als .ics wird auf vorgerenderten Seiten nicht angeboten (`ohneLaufzeitDatenbank` in `lib/db/verfuegbar.ts`). `/medien/…` antwortet mit 404.

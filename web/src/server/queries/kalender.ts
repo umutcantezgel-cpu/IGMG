@@ -3,6 +3,7 @@ import { and, eq, gte, lte } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { HOECHSTER_ABSTAND, oeffentlicheTage, type KalenderTag } from '@/lib/kalender/abgleich';
 import { besondereTage } from '@/lib/kalender/besondere-tage';
@@ -21,6 +22,8 @@ export async function ladeBesondereTage(von: string, bis: string): Promise<Kalen
   const jahre: number[] = [];
   for (let j = Number(von.slice(0, 4)); j <= Number(bis.slice(0, 4)); j++) jahre.push(j);
   const vorschlaege = jahre.flatMap((j) => besondereTage(j));
+  // Beispielmodus ohne Datenbank (ADR 0019): nur die berechneten Vorschläge (alle „vorläufig“) statt Absturz
+  if (!datenbankVerfuegbar()) return oeffentlicheTage(vorschlaege, []).filter((t) => t.datum >= von && t.datum <= bis);
   // Einträge etwas über den Rand hinaus laden, damit verschobene Tage am Rand ihren Vorschlag finden
   const zeilen = await db
     .select({

@@ -36,6 +36,7 @@ import { AnmeldeFormular } from '@/components/website/veranstaltungen/AnmeldeFor
 import { TeilenKnopf } from '@/components/website/veranstaltungen/TeilenKnopf';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
+import { ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { datumLang } from '@/lib/i18n/format';
 import { text } from '@/lib/i18n/inhalt';
 import { telefonHref } from '@/lib/telefon';
@@ -284,15 +285,18 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
                 </a>
               ) : null}
               <TeilenKnopf titel={titel.text} texte={{ teilen: t('teilen'), kopiert: t('kopiert'), fehler: t('teilenFehler') }} />
-              <a
-                href={`/api/ical/${sprache}/veranstaltung/${v.slug}`}
-                download={`${v.slug}.ics`}
-                className="inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-4.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98"
-              >
-                <CalendarPlus aria-hidden className="size-5" />
-                {t('merken')}
-                <span className="sr-only">: {t('merkenHinweis')}</span>
-              </a>
+              {/* Beispielmodus (ADR 0019): Die .ics-Route liest zur Laufzeit die Datenbank – ohne sie kein toter Knopf */}
+              {ohneLaufzeitDatenbank() ? null : (
+                <a
+                  href={`/api/ical/${sprache}/veranstaltung/${v.slug}`}
+                  download={`${v.slug}.ics`}
+                  className="inline-flex min-h-12 items-center gap-2 rounded-md border border-rand bg-weiss px-4.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98"
+                >
+                  <CalendarPlus aria-hidden className="size-5" />
+                  {t('merken')}
+                  <span className="sr-only">: {t('merkenHinweis')}</span>
+                </a>
+              )}
             </div>
           </>
         }

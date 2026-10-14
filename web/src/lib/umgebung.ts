@@ -827,11 +827,12 @@ function vercelHost(env: UmgebungsWerte): string | undefined {
 }
 
 /**
- * Produktionsadresse eines Vercel-Projekts ohne https:// (von Vercel gesetzt), nur in Produktion auf Vercel. Damit läuft
- * ein frisch importiertes Projekt ohne eingetragene APP_URL (Import ohne Handgriffe); die eigene Domain bleibt APP_URL.
+ * Produktionsadresse eines Vercel-Projekts ohne https:// (von Vercel gesetzt), nur im Produktions-Deployment auf Vercel
+ * (VERCEL_ENV=production – Vercel setzt die Variable auch in Vorschauen, die dürfen sie nie übernehmen). Damit läuft ein
+ * frisch importiertes Projekt ohne eingetragene APP_URL (Import ohne Handgriffe); die eigene Domain bleibt APP_URL.
  */
 export function vercelProduktionsHost(env: UmgebungsWerte): string | undefined {
-  if (betriebsart(env) !== 'produktion' || env.VERCEL !== '1') return undefined;
+  if (env.VERCEL !== '1' || gesetzt(env, 'VERCEL_ENV') !== 'production' || betriebsart(env) !== 'produktion') return undefined;
   return gesetzt(env, 'VERCEL_PROJECT_PRODUCTION_URL')?.replace(/\/+$/, '');
 }
 
@@ -860,11 +861,15 @@ function pruefeVariable(v: Variable, name: string, env: UmgebungsWerte, ba: Betr
   }
   if (wert === undefined) {
     // Frisch importiertes Vercel-Projekt: die Produktionsadresse kommt von Vercel – lauffähig, aber die Domain fehlt noch
-    if (name === 'APP_URL' && vercelProduktionsHost(env) !== undefined) {
+    const produktion = name === 'APP_URL' ? vercelProduktionsHost(env) : undefined;
+    if (produktion !== undefined) {
+      // Mit eigener Domain liefert Vercel die kürzeste – das kann eine nur weiterleitende sein; deshalb APP_URL setzen
       melde(
         name,
         'warnung',
-        `APP_URL fehlt; es gilt die Vercel-Adresse https://${vercelProduktionsHost(env)}. Für die eigene Domain APP_URL eintragen.`,
+        produktion.endsWith('.vercel.app')
+          ? `APP_URL fehlt; es gilt die Vercel-Adresse https://${produktion}. Für die eigene Domain APP_URL eintragen.`
+          : `APP_URL fehlt; es gilt https://${produktion} (von Vercel gewählt). APP_URL auf die Hauptdomain setzen und neu deployen.`,
       );
       return;
     }
@@ -934,12 +939,12 @@ function pruefeZusammenhaenge(env: UmgebungsWerte, ba: Betriebsart, melde: Melde
     }
   }
 
-  // Anmeldung: ohne Adresse zeigt sie auf localhost; mit abweichender Adresse warnen
-  if (ba === 'vorschau' && app === undefined && auth === undefined) {
+  // Anmeldung: Sie folgt oeffentlicheAdresse (lib/auth/optionen.ts); nur ohne jede Adresse zeigt sie auf localhost
+  if (ba === 'vorschau' && app === undefined && auth === undefined && vercelHost(env) === undefined) {
     melde(
       'BETTER_AUTH_URL',
       'warnung',
-      'Weder BETTER_AUTH_URL noch APP_URL gesetzt: Die Anmeldung zeigt dann auf localhost. Eine Adresse eintragen oder src/lib/auth/optionen.ts auf oeffentlicheAdresse umstellen.',
+      'Weder BETTER_AUTH_URL noch APP_URL gesetzt, und Vercel liefert keine Vorschau-Adresse: Die Anmeldung zeigt dann auf localhost. Eine Adresse eintragen.',
     );
   }
   if (betrieb && app !== undefined && auth !== undefined && urspr(app) !== urspr(auth)) {

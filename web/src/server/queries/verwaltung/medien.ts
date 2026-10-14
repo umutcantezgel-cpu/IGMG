@@ -3,6 +3,7 @@ import { and, desc, eq, isNotNull, isNull, like, or, sql } from 'drizzle-orm';
 import type { AnyPgColumn } from 'drizzle-orm/pg-core';
 import { z } from 'zod';
 import { db, schema } from '@/lib/db';
+import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 
 /**
  * Verwaltung „Medien“ (C11, V11, ADR 0007). Ohne Cache. Verwendung: Bild-Spalten von Veranstaltungen, Neuigkeiten und
@@ -39,6 +40,8 @@ export async function ladeMedium(id: string): Promise<MediumZeile | null> {
 }
 
 export async function ladeMediumNachSchluessel(schluessel: string): Promise<MediumZeile | null> {
+  // Beispielmodus ohne Datenbank (ADR 0019): unbekannt statt Absturz – die Route antwortet mit 404
+  if (!datenbankVerfuegbar()) return null;
   const [z0] = await db.select().from(m).where(eq(m.schluessel, schluessel)).limit(1);
   return z0 ?? null;
 }

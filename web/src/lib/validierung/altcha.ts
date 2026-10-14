@@ -12,6 +12,12 @@ import { sha256 } from '@/lib/krypto';
 const GUELTIG_MINUTEN = 10;
 const KOSTEN = 5_000;
 
+/** Ob ALTCHA eingerichtet ist (Geheimnis mit mindestens 32 Zeichen); im Beispielmodus ohne Geheimnisse nein. */
+export function altchaBereit(): boolean {
+  const g = process.env.ALTCHA_GEHEIMNIS;
+  return Boolean(g && g.length >= 32);
+}
+
 function geheimnisse(): { signatur: string; schluessel: string } {
   const g = process.env.ALTCHA_GEHEIMNIS;
   if (!g || g.length < 32) throw new Error('ALTCHA_GEHEIMNIS fehlt oder ist kürzer als 32 Zeichen.');

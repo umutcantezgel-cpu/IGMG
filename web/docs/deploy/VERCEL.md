@@ -116,7 +116,7 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 
 - **Ort:** Team › Projekt `igmg` › Settings › General **[prüfen]**, Feld „Node.js Version“.
 - **Aufwand:** 1 Minute.
-- **Regel:** Vercel unterstützt eine feste Version wie `24.x` (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). `web/package.json` legt `24.x` bereits fest (Zeile 114, Feld `engines`). Prüfe nur, dass das Feld in Vercel dazu passt.
+- **Regel:** Vercel unterstützt eine feste Version wie `24.x` (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). `web/package.json` legt `24.x` bereits fest (Feld `engines.node`). Prüfe nur, dass das Feld in Vercel dazu passt.
 - **Das siehst du, wenn es geklappt hat:** `24.x`.
 
 **1.4 Produktionsbranch ist `main`**
@@ -258,7 +258,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 - **Ort:** Deployments › Eintrag anklicken › Build Logs **[prüfen]**.
 - **Gute Zeile:** `[bau] Datenbank vorhanden (production)` bzw. `(preview)`, danach `[migration] Migrationen angewendet.` (ADR 0019, `web/scripts/vercel-bau.mjs`, `web/scripts/migriere-mit-sperre.mjs`). `vercel-build` zeigt auf dieses Skript (`web/package.json`, Zeile 8).
-- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview oder Production. Der Bau bleibt dann grün, und die Seite wird mit Beispielinhalten gebaut. In diesem Beispielmodus erneuert die Seite ihre Inhalte nicht (Cache-Profile dauerhaft, ADR 0019 Nachtrag): Datumsangaben wie „heute“ bleiben auf dem Stand des Baus, bis die Datenbank angeschlossen ist. Linkvorschauen (WhatsApp, Slack, Facebook) bekommen in diesem Modus die vorgerenderte Seite. OG-Bilder von Beiträgen und Veranstaltungen, die beim Bau nicht dabei waren, zeigen das Standardbild. Was ohne Datenbank nicht geht: unbekannte Beitrags- und Termin-Adressen (Fehlerseite statt „nicht gefunden“), Suche mit Begriff und alle Formulare (ADR 0019, Nachtrag 2026-10-12).
+- **Warnzeile:** `[bau] WARNUNG: DATABASE_URL fehlt` (`web/scripts/vercel-bau.mjs`). Ist sie sichtbar, fehlt die Datenbank-Variable im Bereich Preview oder Production. Der Bau bleibt dann grün, und die Seite wird mit Beispielinhalten gebaut. In diesem Beispielmodus erneuert die Seite ihre Inhalte nicht (Cache-Profile dauerhaft, ADR 0019 Nachtrag): Datumsangaben wie „heute“ bleiben auf dem Stand des Baus, bis die Datenbank angeschlossen ist. Linkvorschauen (WhatsApp, Slack, Facebook) bekommen in diesem Modus die vorgerenderte Seite. OG-Bilder von Beiträgen und Veranstaltungen, die beim Bau nicht dabei waren, zeigen das Standardbild. Was ohne Datenbank nicht geht: Suche mit Begriff, alle Formulare und die Verwaltung (zeigt „Verwaltung noch nicht eingerichtet“). Die Kalender-Abos liefern Feiertage nur berechnet („vorläufig“) und keine Veranstaltungen; den Knopf „Termin als .ics speichern“ gibt es erst mit Datenbank (ADR 0019, Nachträge).
 
 **5.3 Vercel-Schutz für die Vorschau**
 

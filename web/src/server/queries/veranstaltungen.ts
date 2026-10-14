@@ -83,6 +83,8 @@ export async function ladeVeranstaltungen(): Promise<VeranstaltungsDaten[]> {
   'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.veranstaltungen, TAG.medien);
+  // Beispielmodus ohne Datenbank (ADR 0019): leer statt Absturz (Abo-Feeds liefern einen leeren Kalender)
+  if (!datenbankVerfuegbar()) return [];
   const jetzt = new Date();
   const zeilen = await db.select().from(schema.veranstaltung).where(sichtbar);
   const bilder = await ladeBilder(zeilen.map((z) => z.bildId));
