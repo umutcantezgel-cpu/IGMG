@@ -1,5 +1,6 @@
 import { CircleAlert } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { MitPlatzhaltern } from '@/components/website/Platzhalter';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { type Sprache, waehle } from '@/lib/i18n/inhalt';
 import type { Baustein } from '@/lib/validierung/seiteninhalte/impressum';
@@ -10,19 +11,6 @@ import { Inhaltsverzeichnis, type InhaltsPunkt } from './Inhaltsverzeichnis';
  * Texte aus dem Seiteninhalt mit sichtbarem Rückfall auf Deutsch (K-02): fehlt die Sprache, steht der deutsche Text
  * mit lang="de" und dem Hinweis „Nur auf Deutsch verfügbar“. Platzhalter in eckigen Klammern (G-05) sind gestrichelt.
  */
-
-/** Platzhalter „[…]“ gestrichelt hervorheben, damit sie beim Prüfen auffallen (Design: gestrichelte Fläche). */
-function MitPlatzhaltern({ text }: { text: string }) {
-  return text.split(/(\[[^\]]*\])/).map((teil, i) =>
-    teil.startsWith('[') && teil.endsWith(']') ? (
-      <span key={i} className="rounded-sm border border-dashed border-rand px-1">
-        {teil}
-      </span>
-    ) : (
-      teil
-    ),
-  );
-}
 
 /** Sichtbarer Hinweis, dass ein Inhalt nur auf Deutsch vorliegt (Bestandstext „allgemein.nurDeutsch“). */
 function NurDeutsch({ text }: { text: string }) {
