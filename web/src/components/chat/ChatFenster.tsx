@@ -487,7 +487,7 @@ function MeldeDialog({
 /**
  * Chat-Regeln kurz (GC-4): je Regel das Stichwort fett mit Achtstern als Aufzählungszeichen, die Erläuterung klappt auf
  * (`details`, ohne JavaScript). Der Wortlaut bleibt unverändert: Stichwort und Erläuterung ergeben zusammen die Regel
- * (lange erste Sätze sind am Satzglied geteilt, damit die Stichworte kurz bleiben – Regelblock bei 390 px ≤ 600 px).
+ * (lange erste Sätze sind am Satzglied geteilt, damit die Stichworte kurz bleiben – Regelblock bei 390 px um 600 px; die Zielgröße von 44 px je Regelzeile geht vor).
  */
 function Regeln({ regeln }: { regeln: ChatTexte['regeln'] }) {
   return (
@@ -495,7 +495,7 @@ function Regeln({ regeln }: { regeln: ChatTexte['regeln'] }) {
       {regeln.map((r) => (
         <li key={r.stichwort} data-regel>
           <details className="group">
-            <summary className="flex min-h-10 cursor-pointer list-none items-start gap-2 py-2 font-bold text-tinte hover:text-gruen-800">
+            <summary className="flex min-h-11 cursor-pointer list-none items-start gap-2 py-2.5 font-bold text-tinte hover:text-gruen-800">
               <Achtstern size={16} className="mt-1 shrink-0 text-gruen-700" />
               <span className="min-w-0 flex-1">{r.stichwort}</span>
               <ChevronDown
