@@ -185,7 +185,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
       {/* Telefon: eine Reihe zum Wischen (Verlauf rechts, Endabstand, damit der letzte Eintrag ganz frei wird), ab md umbrechend */}
       <nav
         aria-label={t('sprung.label')}
-        className="relative -mx-4 -mt-4 overflow-x-auto [mask-image:linear-gradient(to_left,transparent,black_3rem)] px-4 md:mx-0 md:overflow-visible md:[mask-image:none] md:px-0 print:hidden"
+        className="relative -mx-4 -mt-4 overflow-x-auto [mask-image:linear-gradient(to_left,transparent,black_--spacing(12))] px-4 md:mx-0 md:overflow-visible md:mask-none md:px-0 print:hidden"
       >
         <ul className="flex gap-2 pe-12 md:flex-wrap md:pe-0">
           {sprung.map((z) => (
