@@ -98,7 +98,7 @@ export function QiblaZifferblatt({
         </div>
       </div>
       <span aria-hidden className="absolute top-1/2 left-1/2 size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-950" />
-      <span aria-hidden className="absolute bottom-9 left-1/2 -translate-x-1/2 text-20 leading-none font-bold text-gruen-800 tabular-nums">
+      <span aria-hidden className="absolute bottom-7 left-1/2 -translate-x-1/2 text-20 leading-none font-bold text-gruen-800 tabular-nums">
         {grad}
       </span>
     </div>

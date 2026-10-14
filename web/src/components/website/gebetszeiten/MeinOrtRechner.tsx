@@ -317,7 +317,7 @@ export function MeinOrtRechner({
                     {texte.spalteZeit}
                   </th>
                   {ergebnis.inBerlinerZeit ? (
-                    <th scope="col" className={`${ZELLE} py-2 text-end font-bold`}>
+                    <th scope="col" className={`${ZELLE} py-2 text-end font-bold whitespace-nowrap`}>
                       {texte.spalteUnterschied}
                     </th>
                   ) : null}
