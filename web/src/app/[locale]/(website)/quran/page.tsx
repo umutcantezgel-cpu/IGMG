@@ -1,6 +1,7 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { NachOben } from '@/components/website/NachOben';
 import { PageHeader } from '@/components/website/PageHeader';
 import { CuzRing } from '@/components/website/quran/CuzRing';
 import { SurenRaster } from '@/components/website/quran/SurenRaster';
@@ -19,14 +20,19 @@ import '@/components/website/quran/quran.css';
 
 export const ensureStatic = 'navigation';
 
+/** Farbfeld einer Tajwid-Familie: vier geschützte Leerzeichen, die Familienklasse zeichnet Farbe und Muster. */
+const FARBFELD = '\u00a0'.repeat(4);
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('quranSeite');
   return metadatenFuer({ pfad: '/quran', titel: t('titel'), beschreibung: t('untertitel') });
 }
 
 /**
- * Übersicht /quran (O-Q01, Erzählansicht): Cüz-Ring mit Liste der 30 Cüz, „Weiterlesen“ aus dem Gerät, Tajwid-Hinweis
- * und das Raster aller 114 Suren mit Suche im Browser. Kachel → Surenseite mit Morph des Medaillons.
+ * Übersicht /quran (O-Q01, Erzählansicht): zuerst alle 114 Suren mit Suche im Browser (Kachel → Surenseite mit Morph
+ * des Medaillons), daneben ab lg bzw. danach „Weiterlesen“ aus dem Gerät, Cüz-Ring mit Liste der 30 Cüz und der
+ * Tajwid-Hinweis. Bis lg führen Sprungmarken zu Weiterlesen und Cüz, auf langen Strecken „Nach oben“ (Sichtabnahme
+ * K-3, K-4).
  */
 export default async function QuranEinstieg() {
   const sprache = (await getLocale()) as Locale;
@@ -47,20 +53,88 @@ export default async function QuranEinstieg() {
           </div>
         </div>
       ) : (
-        <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-abschnitt px-4 py-abschnitt-klein md:px-8">
-          <div className="grid items-start gap-8 lg:grid-cols-12">
-            <section aria-labelledby="cuz-titel" className="flex flex-col gap-6 lg:col-span-7">
+        <>
+          {/* Erst die Auswahl aller Suren, daneben (ab lg) bzw. danach Weiterlesen, Cüz und Tajwid (Sichtabnahme K-3):
+              Reihenfolge im Dokument = Reihenfolge im Bild auf jeder Breite */}
+          <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-abschnitt-klein px-4 py-abschnitt-klein md:px-8 lg:grid-cols-12 lg:gap-8">
+            <section aria-labelledby="suren-titel" className="flex min-w-0 flex-col gap-6 lg:col-span-8">
               <div className="flex max-w-einleitung flex-col gap-2">
-                <h2 id="cuz-titel" className="text-display-2">
-                  {tu('cuzTitel')}
+                <h2 id="suren-titel" className="text-display-2">
+                  {tu('surenTitel')}
                 </h2>
-                <p className="text-18 leading-einleitung text-pretty text-tinte-2">{tu('cuzText')}</p>
+                <p className="text-18 leading-einleitung text-pretty text-tinte-2">{tu('surenText')}</p>
               </div>
-              <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
-                <div className="aspect-square w-full max-w-80 shrink-0">
+              {/* Sprungmarken bis lg: Weiterlesen und Cüz stehen dort nach der langen Liste */}
+              <nav aria-label={tu('sprungLabel')} className="flex flex-wrap gap-2 lg:hidden">
+                {[
+                  { ziel: '#weiterlesen', text: tu('weiterlesenTitel') },
+                  { ziel: '#cuz', text: tu('cuzTitel') },
+                ].map((s) => (
+                  <a
+                    key={s.ziel}
+                    href={s.ziel}
+                    className="inline-flex min-h-12 items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
+                  >
+                    {s.text}
+                    <ArrowDown aria-hidden className="size-5" />
+                  </a>
+                ))}
+              </nav>
+              <SurenSuche
+                texte={{
+                  label: tu('sucheLabel'),
+                  platzhalter: tu('suchePlatzhalter'),
+                  hilfe: tu('sucheHilfe'),
+                  keine: tu('trefferKeine'),
+                  treffer: tu.raw('treffer') as string,
+                }}
+              >
+                <SurenRaster suren={suren} />
+              </SurenSuche>
+            </section>
+
+            <div className="flex min-w-0 flex-col gap-abschnitt-klein lg:col-span-4 lg:gap-8">
+              <div id="weiterlesen" className="flex flex-col gap-4">
+                <Weiterlesen
+                  namen={suren.map((s) => s.umschrift)}
+                  pfadSure={pfadFuer({ pathname: '/quran/[sure]', params: { sure: '__s__' } }, sprache)}
+                  pfadCuz={pfadFuer({ pathname: '/quran/cuz/[nr]', params: { nr: '__n__' } }, sprache)}
+                  texte={{
+                    titel: tu('weiterlesenTitel'),
+                    stelle: tu.raw('weiterlesenStelle') as string,
+                    stelleCuz: tu.raw('weiterlesenCuz') as string,
+                    link: tu('weiterlesenLink'),
+                    lesezeichenTitel: tu('lesezeichenTitel'),
+                    lesezeichenLink: tu('lesezeichenLink'),
+                    leer: tu('weiterlesenLeer'),
+                    geraet: tu('geraetHinweis'),
+                  }}
+                />
+                <OfflineListe
+                  texte={{
+                    liste: t('offline.liste'),
+                    listeGroesse: t.raw('offline.listeGroesse') as string,
+                    listeEntfernen: t.raw('offline.listeEntfernen') as string,
+                  }}
+                />
+              </div>
+              <section id="cuz" aria-labelledby="cuz-titel" className="flex flex-col gap-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex max-w-einleitung flex-col gap-2">
+                    <h2 id="cuz-titel" className="text-display-2">
+                      {tu('cuzTitel')}
+                    </h2>
+                    <p className="text-18 leading-einleitung text-pretty text-tinte-2">{tu('cuzText')}</p>
+                  </div>
+                  {/* Telefon und Tablet: kleine Rosette als Schmuck neben der Überschrift, gewählt wird im Raster (K-4) */}
+                  <div className="size-16 shrink-0 lg:hidden">
+                    <CuzRing schmuck mitte={tu('cuzMitte')} eintraege={bereiche.map((b) => ({ nr: b.nr, href: '' }))} />
+                  </div>
+                </div>
+                <div className="mx-auto aspect-square w-full max-w-80 max-lg:hidden">
                   <CuzRing mitte={tu('cuzMitte')} eintraege={bereiche.map((b) => ({ nr: b.nr, href: pfadFuer(cuzZiel(b.nr), sprache) }))} />
                 </div>
-                <nav aria-label={tu('cuzListe')} className="w-full">
+                <nav aria-label={tu('cuzListe')}>
                   <ol className="grid grid-cols-6 gap-2">
                     {bereiche.map((b) => (
                       <li key={b.nr}>
@@ -76,40 +150,22 @@ export default async function QuranEinstieg() {
                     ))}
                   </ol>
                 </nav>
-              </div>
-            </section>
-            <div className="flex flex-col gap-4 lg:col-span-5">
-              <Weiterlesen
-                namen={suren.map((s) => s.umschrift)}
-                pfadSure={pfadFuer({ pathname: '/quran/[sure]', params: { sure: '__s__' } }, sprache)}
-                pfadCuz={pfadFuer({ pathname: '/quran/cuz/[nr]', params: { nr: '__n__' } }, sprache)}
-                texte={{
-                  titel: tu('weiterlesenTitel'),
-                  stelle: tu.raw('weiterlesenStelle') as string,
-                  stelleCuz: tu.raw('weiterlesenCuz') as string,
-                  link: tu('weiterlesenLink'),
-                  lesezeichenTitel: tu('lesezeichenTitel'),
-                  lesezeichenLink: tu('lesezeichenLink'),
-                  leer: tu('weiterlesenLeer'),
-                  geraet: tu('geraetHinweis'),
-                }}
-              />
-              <OfflineListe
-                texte={{
-                  liste: t('offline.liste'),
-                  listeGroesse: t.raw('offline.listeGroesse') as string,
-                  listeEntfernen: t.raw('offline.listeEntfernen') as string,
-                }}
-              />
+              </section>
               <section aria-labelledby="tajwid-titel" className="flex flex-col gap-3 rounded-lg border border-linie bg-sand p-6">
                 <h2 id="tajwid-titel" className="text-24">
                   {tu('tajwidTitel')}
                 </h2>
                 <p className="text-18 text-tinte-2">{tu('tajwidText')}</p>
-                <ul className="flex flex-wrap gap-x-4 gap-y-1 text-16">
+                <ul className="flex flex-wrap gap-x-5 gap-y-2 text-16">
                   {TAJWID_FAMILIEN.map((f) => (
                     <li key={f}>
-                      <span className={`tj tj-${f} muster-probe`}>{t(`familien.${f}`)}</span>
+                      {/* Farbfeld mit dem Muster der Familie, daneben der Name in ihrer Farbe (wie Wortkarte und Seitenleiste) */}
+                      <span className="inline-flex items-center gap-1.5">
+                        <span aria-hidden className={`tj tj-${f} tj-probe`}>
+                          {FARBFELD}
+                        </span>
+                        <span className={`tj tj-${f} bg-none font-bold no-underline`}>{t(`familien.${f}`)}</span>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -120,26 +176,8 @@ export default async function QuranEinstieg() {
               </section>
             </div>
           </div>
-
-          <section aria-labelledby="suren-titel" className="flex flex-col gap-6">
-            <div className="flex max-w-einleitung flex-col gap-2">
-              <h2 id="suren-titel" className="text-display-2">
-                {tu('surenTitel')}
-              </h2>
-              <p className="text-18 leading-einleitung text-pretty text-tinte-2">{tu('surenText')}</p>
-            </div>
-            <SurenSuche
-              texte={{
-                label: tu('sucheLabel'),
-                platzhalter: tu('suchePlatzhalter'),
-                keine: tu('trefferKeine'),
-                treffer: tu.raw('treffer') as string,
-              }}
-            >
-              <SurenRaster suren={suren} />
-            </SurenSuche>
-          </section>
-        </div>
+          <NachOben text={tu('nachOben')} />
+        </>
       )}
     </Seitenrahmen>
   );

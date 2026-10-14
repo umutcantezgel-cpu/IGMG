@@ -11,6 +11,9 @@ const TajwidLeiste = lazy(() => import('./TajwidLeiste'));
 const Player = lazy(() => import('./Player'));
 const OfflineSpeichern = lazy(() => import('./OfflineSpeichern'));
 
+/** Farbfeld einer Tajwid-Familie: vier geschützte Leerzeichen, die Familienklasse zeichnet Farbe und Muster. */
+const FARBFELD = '\u00a0'.repeat(4);
+
 export type WortZiel = { el: HTMLElement; sure: number; vers: number; pos: number };
 
 type Einstellungen = { modus?: Modus; tajwid?: 'an' | 'aus'; groesse?: number; ausgabe?: string | null };
@@ -341,7 +344,12 @@ export function QuranLeser(props: LeserProps) {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3">
               {TAJWID_FAMILIEN.map((f) => (
                 <li key={f} className="flex flex-wrap items-baseline gap-x-2 text-16">
-                  <span className={`tj tj-${f} muster-probe`}>{texte.familien[f]}</span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span aria-hidden className={`tj tj-${f} tj-probe`}>
+                      {FARBFELD}
+                    </span>
+                    <span className={`tj tj-${f} bg-none font-bold no-underline`}>{texte.familien[f]}</span>
+                  </span>
                   <span className="text-tinte-2">{texte.muster[f]}</span>
                 </li>
               ))}

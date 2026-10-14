@@ -8,6 +8,9 @@ function punkt(r: number, grad: number): string {
 }
 
 const AUSSEN = 152;
+/** Achtstern in der Mitte der kleinen Rosette (Quadrat und um 45° gedrehtes Quadrat, Umriss der Vereinigung). */
+const ACHTSTERN_MITTE =
+  'M160 104 176.4 120.4h23.2v23.2L216 160l-16.4 16.4v23.2h-23.2L160 216l-16.4-16.4h-23.2v-23.2L104 160l16.4-16.4v-23.2h23.2z';
 const INNEN = 102;
 const LUECKE = 1.2;
 /** K-007: höchstens 8 Elemente je Staffel. Die 30 Cüz treten als 6 Sechstel zu je 5 auf (6 Staffelschritte). */
@@ -32,9 +35,30 @@ function segment(i: number, n: number): string {
  * Cüz gestaffelt auf (`--gruppe`, Versatz `staffel`; K-007: ≤ 8 je Staffel, vorher 30 Einzelschritte); bei reduzierter
  * Bewegung steht der Ring sofort (Endzustand). Der Ring ist Zeigerbedienung und Bild zugleich:
  * Für Tastatur und Screenreader steht daneben die Liste der 30 Cüz (48-px-Ziele), deshalb ist er hier verborgen.
+ * `schmuck`: kleine Rosette neben der Überschrift (Telefon, Sichtabnahme K-4) – ohne Links, Zahlen und Mitte; die
+ * Auswahl trägt dort allein das Zahlenraster.
  */
-export function CuzRing({ eintraege, mitte }: { eintraege: { nr: number; href: string }[]; mitte: string }) {
+export function CuzRing({
+  eintraege,
+  mitte,
+  schmuck = false,
+}: {
+  eintraege: { nr: number; href: string }[];
+  mitte: string;
+  schmuck?: boolean;
+}) {
   const n = eintraege.length || 30;
+  if (schmuck) {
+    return (
+      <svg viewBox="0 0 320 320" aria-hidden="true" className="cuz-ring pointer-events-none size-full overflow-visible">
+        <circle cx="160" cy="160" r={AUSSEN + 6} className="fill-none stroke-gruen-700" strokeWidth={8} />
+        {eintraege.map((e, i) => (
+          <path key={e.nr} d={segment(i, n)} className="cuz-segment" style={{ '--gruppe': staffelGruppe(i, n) } as CSSProperties} />
+        ))}
+        <path d={ACHTSTERN_MITTE} className="fill-gruen-700" />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 320 320" aria-hidden="true" className="cuz-ring size-full overflow-visible">
       <path

@@ -7,12 +7,13 @@ import { passt } from '@/lib/quran/suche';
 /**
  * Surensuche der Übersicht (O-Q01): filtert die Kacheln im Browser nach Name (Umschrift oder arabisch) oder Nummer.
  * Die Kacheln stehen vollständig im HTML (ohne JavaScript alle sichtbar); das Suchfeld erscheint nur mit Skript.
+ * Kurzer Platzhalter, das ausführliche Beispiel als Hilfetext unter dem Feld (Sichtabnahme K-2).
  */
 export function SurenSuche({
   texte,
   children,
 }: {
-  texte: { label: string; platzhalter: string; keine: string; treffer: string };
+  texte: { label: string; platzhalter: string; hilfe: string; keine: string; treffer: string };
   children: ReactNode;
 }) {
   const huelle = useRef<HTMLDivElement>(null);
@@ -45,11 +46,15 @@ export function SurenSuche({
             value={eingabe}
             onChange={(e) => filtere(e.target.value)}
             placeholder={texte.platzhalter}
+            aria-describedby={`${id}-hilfe`}
             autoComplete="off"
             className="min-h-12 w-full rounded-pill border border-rand bg-weiss py-2 pr-4 pl-12 text-18"
           />
         </div>
-        <p role="status" className="min-h-6 text-16 text-tinte-2">
+        <p id={`${id}-hilfe`} className="text-16 text-tinte-2">
+          {texte.hilfe}
+        </p>
+        <p role="status" className="min-h-6 text-16 font-bold text-gruen-800 empty:min-h-0">
           {anzahl === null ? '' : anzahl === 0 ? texte.keine : texte.treffer.replace('{anzahl}', String(anzahl))}
         </p>
       </div>
