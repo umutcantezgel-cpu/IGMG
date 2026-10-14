@@ -27,6 +27,8 @@ export function PageHeader({
   titelLang,
   titelStil,
   untertitelLang,
+  titelHinweis,
+  titelZeichen,
 }: {
   titel: string;
   untertitel?: string;
@@ -51,6 +53,10 @@ export function PageHeader({
   titelLang?: string;
   titelStil?: CSSProperties;
   untertitelLang?: string;
+  /** Kleine Zeile direkt über dem Titel, siehe `Seitenkopf` */
+  titelHinweis?: string;
+  /** Zeichen vor dem Titel in derselben Zeile, siehe `Seitenkopf` */
+  titelZeichen?: ReactNode;
 }) {
   return (
     <Seitenkopf
@@ -69,6 +75,8 @@ export function PageHeader({
       titelLang={titelLang}
       titelStil={titelStil}
       untertitelLang={untertitelLang}
+      titelHinweis={titelHinweis}
+      titelZeichen={titelZeichen}
       vorn={
         logo ? (
           <span className={`flex shrink-0 rounded-lg border-2 bg-weiss p-2 ${akzent ?? ''}`}>

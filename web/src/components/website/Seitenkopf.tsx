@@ -6,7 +6,8 @@ import { Stern8 } from './Icons';
  * und ohne `cn` – so können ihn auch Client-Komponenten auf Routenebene (error.tsx, global-error.tsx) nutzen, ohne
  * dass jede Seite Bildkomponente und tailwind-merge mitlädt (K-12, FEHLERSTATISTIK A18). `PageHeader` baut darauf auf.
  * `oben` steht vor der Kennung in der Textspalte (Rückweg zur Liste); die übrigen Zusatzangaben gelten für den Titel
- * (Morph-Name, Sprache) und den Untertitel. Ohne Angabe entsteht das Markup wie bisher.
+ * (Morph-Name, Sprache) und den Untertitel. `titelHinweis` steht als kleine Zeile direkt über dem Titel, `titelZeichen`
+ * in derselben Zeile vor dem Titel (Hadith-Buch, Sichtabnahme H-3/H-4). Ohne Angabe entsteht das Markup wie bisher.
  */
 export function Seitenkopf({
   titel,
@@ -26,6 +27,8 @@ export function Seitenkopf({
   titelLang,
   titelStil,
   untertitelLang,
+  titelHinweis,
+  titelZeichen,
 }: {
   titel: string;
   untertitel?: string;
@@ -55,7 +58,16 @@ export function Seitenkopf({
   titelStil?: CSSProperties;
   /** Sprache des Untertitels */
   untertitelLang?: string;
+  /** Kleine Zeile direkt über dem Titel, z. B. woher der Titel stammt */
+  titelHinweis?: string;
+  /** Zeichen in derselben Zeile vor dem Titel (dekorativ), z. B. die Buchnummer im Achtstern */
+  titelZeichen?: ReactNode;
 }) {
+  const h1 = (
+    <h1 id={titelId} lang={titelLang} style={titelStil} className="text-display-1 text-balance">
+      {titel}
+    </h1>
+  );
   const mitBild = Boolean(bild);
   return (
     <section className={`border-b border-linie ${flaeche}`}>
@@ -81,9 +93,15 @@ export function Seitenkopf({
               <span>{kennung}</span>
             </span>
           ) : null}
-          <h1 id={titelId} lang={titelLang} style={titelStil} className="text-display-1 text-balance">
-            {titel}
-          </h1>
+          {titelHinweis ? <span className="-mb-2 text-16 text-tinte-2">{titelHinweis}</span> : null}
+          {titelZeichen ? (
+            <div className="flex min-w-0 items-center gap-4">
+              {titelZeichen}
+              {h1}
+            </div>
+          ) : (
+            h1
+          )}
           {untertitel ? (
             <p lang={untertitelLang} className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">
               {untertitel}

@@ -11,8 +11,8 @@ const ART = {
     stern: 'fill-sand stroke-gruen-700 transition duration-(--dauer-rueckmeldung) group-hover:fill-gruen-700',
     zahl: 'text-16 text-gruen-800 transition duration-(--dauer-rueckmeldung) group-hover:text-weiss',
   },
-  // Kopf der Buchseite: gefüllte Marke (Morph-Ziel der Kachel)
-  kopf: { rahmen: 'size-18 md:size-24', stern: 'fill-gruen-700 stroke-gruen-700', zahl: 'text-24 text-weiss md:text-30' },
+  // Kopf der Buchseite: gefüllte Marke in einer Zeile mit dem Titel (Morph-Ziel der Kachel, Sichtabnahme H-3)
+  kopf: { rahmen: 'size-16 md:size-20', stern: 'fill-gruen-700 stroke-gruen-700', zahl: 'text-20 text-weiss md:text-24' },
 } as const;
 
 /**
