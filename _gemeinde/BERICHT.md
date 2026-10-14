@@ -18,7 +18,7 @@
 3. Was Personendaten betrifft, ist eingebaut, aber ausgeschaltet, bis Vorstand und Datenschutz zugestimmt haben. Die
    Schritte dafür stehen der Reihe nach in `web/docs/GO-LIVE.md`, Abschnitt G.
 
-## Was du heute live siehst (igmg-five.vercel.app)
+## Was du heute live siehst (igmg-wetzlar.vercel.app)
 
 | Bereich | Adresse | Was es kann |
 |---|---|---|

@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 14:55 UTC – live:** Der Nutzer hat das Repo neu als Projekt `igmg-wetzlar` (Team tez1) importiert
+  (11:25 UTC, Stand 759965e → 500, weil der Start ohne `APP_URL` abbrach). Mit `main` = 942b385 ist
+  https://igmg-wetzlar.vercel.app live: 61 Adressen 200, 24 erwartete 404, 0 Fehler; Sitemap/canonical auf
+  igmg-wetzlar.vercel.app; Funktionen in fra1. Weitere Projekte des Nutzers in `uus-projects` (igmg-ldk, web, spiegel –
+  spiegel scheitert bei jedem Bau, Ursache nur im Vercel-Protokoll sichtbar). Deployment-Status ist über die öffentliche
+  GitHub-API lesbar (`/repos/umutcantezgel-cpu/IGMG/deployments`).
 - **Stand 14.10. 14:45 UTC:** `main` = 942b385 (Fast-Forward, Tor grün). Live erst nach Neu-Import durch den Nutzer
   (VERCEL.md §0: Add New › Project › Import, Root Directory leer, Preset „Services“ prüfen – oder `npx vercel@latest
   link --yes` im Stamm). Läuft: Sichtabnahme Runde 2 (`wf_18d601ae-373`, Juror 1 + Synthese). Danach: Bericht
