@@ -72,15 +72,19 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 | Lokaler Server (G5, MN-12) | Technik | Sicherung, Takt, Kiosk im Gebetsraum |
 | Moschee-Fakten: Eröffnungsdatum, Fotos, Kapazität (MN-08) | Vorstand | Platzhalter ersetzen |
 
-## Stand der Prüfungen (14.10.2026)
+## Stand der Prüfungen (14.10.2026, `main` 4115a5e)
 
-- Integration: 1680 Tests grün. Unit: 1395 Tests grün.
-- Bau: Produktion 1866 Seiten, Vorschau 2207 Seiten.
+- Unit: 1438 Tests grün. Integration: 1680 Tests grün.
+- Bau: Produktion wie ein frisch importiertes Vercel-Projekt (ohne `APP_URL`, ohne Datenbank) 1866 Seiten, Vorschau
+  2207 Seiten; Abruf von 1311 verlinkten Adressen ohne Serverfehler.
 - Prüfwerkzeuge: Sprachen vollständig (de/tr/en), Religion-Prüfung 0 Befunde, Wortlaut der Rechtstexte unverändert.
 - Sicherheitsprüfung S1: alle Befunde behoben.
-- Zwei Live-Prüfungen mit Gegenprüfung: keine Serverfehler mehr.
-- Sichtabnahme Runde 1: 11 von 19 Ansichten mit mindestens 8 von 10. Die übrigen werden gerade in vier Befundpaketen
-  verbessert (`_gemeinde/berichte/sichtabnahme-1.md`).
+- Live (https://igmg-wetzlar.vercel.app): 61 Adressen 200, 24 erwartete 404, keine Serverfehler; Funktionen in Frankfurt.
+- Vercel-Import: Jeder Vorschlag der Import-Maske (Root Directory leer oder `web`) deployt gleich
+  (`web/docs/deploy/VERCEL.md` Abschnitt 0).
+- Sichtabnahme Runde 2: 14 von 19 Ansichten mit mindestens 8 von 10 (Runde 1: 11). Die übrigen fünf (Hadith-Buch,
+  Projekte, Gruppenchat, Seiten-Editor, Bestandseditor) sind mit drei gegengeprüften Befundpaketen überarbeitet
+  (`_gemeinde/berichte/sichtabnahme-2.md`); die Nachbewertung steht aus.
 
 ## Galerie
 

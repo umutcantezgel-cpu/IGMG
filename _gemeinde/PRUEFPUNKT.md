@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 17:30 UTC:** `main` = 4115a5e (Fast-Forward, Tor grün: Unit 1438, Integration 1680, Bau wie frischer
+  Import 1866 + Vorschau 2207, Sweep 61/24 ohne Fehler). Darin: `web/vercel.json` (Import mit Root Directory `web`
+  gleichwertig, b5441c0) und die drei Befundpakete der Sichtabnahme Runde 2 (A Hadith/Projekte, B Gruppenchat,
+  C Seiten-Editor; je gegengeprüft, Mängel „mittel“ behoben). Vercel-Projekte des Nutzers: `igmg-wetzlar` (tez1, live)
+  und `igmg` (uus-projects, Root Directory web, geschützt); dazu alte `igmg-ldk`, `web`, `spiegel` (Löschen empfohlen).
+  Nächster Schritt: Nachbewertung der fünf Ansichten (Runde 3, Verfahren V-1/V-2), dann Stufe C, BERICHT mit Galerie,
+  ABSCHLUSS, CLAUDE.md-Block entfernen.
 - **Stand 14.10. 14:55 UTC – live:** Der Nutzer hat das Repo neu als Projekt `igmg-wetzlar` (Team tez1) importiert
   (11:25 UTC, Stand 759965e → 500, weil der Start ohne `APP_URL` abbrach). Mit `main` = 942b385 ist
   https://igmg-wetzlar.vercel.app live: 61 Adressen 200, 24 erwartete 404, 0 Fehler; Sitemap/canonical auf
