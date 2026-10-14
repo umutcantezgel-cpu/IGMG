@@ -12,6 +12,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { kindDarfPush } from '@/lib/push/abo';
 import { ladeGruppenKontext, type Konto } from '@/lib/rechte/gemeinde';
 import { bereicheFuer, type BereichFunktion, type BereichLage, type BereichSchluessel } from './eintraege';
+import { BereichLeiste } from './BereichLeiste';
 
 export const BEREICH_ICON: Record<BereichSchluessel, LucideIcon> = {
   start: House,
@@ -46,8 +47,9 @@ async function bereichLage(konto: Konto): Promise<BereichLage> {
 
 /**
  * Hülle von „Mein Bereich“ (ADR 0026): Kopf und Fuß der Website, Seitenkopf mit Kennung, darunter die Navigation je
- * Kontoart (ab 1024 px als Seitenleiste mit Kontokarte, darunter als waagerechte Reihe) und der Inhalt. Noch nicht
- * gebaute Bereiche stehen in der Seitenleiste als „bald verfügbar“ (ohne Link).
+ * Kontoart (ab 1024 px als Seitenleiste mit Kontokarte, darunter als waagerechte Reihe mit Randverlauf, Scroll-Snap und
+ * aktivem Eintrag im Blick – `BereichLeiste`) und der Inhalt. Noch nicht gebaute Bereiche stehen in der Seitenleiste als
+ * „bald verfügbar“ (ohne Link). Der Kopf zeigt das angemeldete Konto statt „Anmelden“ (X-1).
  */
 export async function MeinBereichRahmen({
   konto,
@@ -97,7 +99,7 @@ export async function MeinBereichRahmen({
               <span className="text-16 text-tinte-2">{kontoarten.join(' · ')}</span>
             </span>
           </div>
-          <nav aria-label={t('nav.label')} className="relative -mx-4 overflow-x-auto px-4 lg:mx-0 lg:overflow-visible lg:px-0">
+          <BereichLeiste label={t('nav.label')}>
             <ul className="flex gap-2 pb-1 lg:flex-col lg:gap-1 lg:pb-0">
               {eintraege.map((e) => {
                 const Icon = BEREICH_ICON[e.schluessel];
@@ -114,7 +116,7 @@ export async function MeinBereichRahmen({
                   );
                 }
                 return (
-                  <li key={e.schluessel} className="shrink-0">
+                  <li key={e.schluessel} className="shrink-0 snap-start">
                     <NextLink
                       href={pfadFuer(e.ziel, sprache)}
                       prefetch={false}
@@ -128,7 +130,7 @@ export async function MeinBereichRahmen({
                 );
               })}
               {konto.verwaltungsRollen.length ? (
-                <li className="shrink-0 lg:mt-2 lg:border-t lg:border-linie lg:pt-2">
+                <li className="shrink-0 snap-start lg:mt-2 lg:border-t lg:border-linie lg:pt-2">
                   <NextLink
                     href="/verwaltung"
                     prefetch={false}
@@ -140,7 +142,7 @@ export async function MeinBereichRahmen({
                 </li>
               ) : null}
             </ul>
-          </nav>
+          </BereichLeiste>
           <div className="hidden border-t border-linie pt-2 lg:block">
             <AbmeldenKnopf sprache={sprache} text={t('nav.abmelden')} variante="zeile" />
           </div>
