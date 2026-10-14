@@ -8,6 +8,7 @@ import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
 import { Klappe } from '@/components/verwaltung/Klappe';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { MedienWahlDialog, type MedienWahlHandle } from '@/components/verwaltung/medienwahl/MedienWahlDialog';
+import { hatPlatzhalter } from '@/components/verwaltung/seiteninhalte/hilfen';
 import { slugAusTitel } from '@/lib/cms/slugs';
 import { religioeseVerweise, type Block } from '@/lib/validierung/bloecke';
 import type { SeitenStatus } from '@/lib/validierung/seite';
@@ -81,35 +82,56 @@ function mitUmbruchstellen(adresse: string): ReactNode {
   ));
 }
 
+/** Abstand zwischen fokussiertem Feld und Speicherleiste bzw. Fensterrand (px). */
+const LEISTE_ABSTAND = 16;
+
 /**
- * Sichtbarkeit der Speicherleiste (SE-3): Im ersten Bildschirm liegt sie nicht über den Feldern; sie gleitet herein,
- * sobald man scrollt, an ihrem Platz am Formularende angekommen ist oder sie den Tastaturfokus hat. Solange die Seite
- * den Editor zeigt, hält `scroll-padding-bottom` fokussierte Felder oberhalb der Leiste (WCAG 2.4.11).
+ * Speicherleiste (SE-6, SB-4): klebt ab Seitenbeginn am unteren Rand, einzeilig und höchstens 64 px hoch. Damit sie
+ * kein fokussiertes Feld verdeckt (WCAG 2.4.11), hält `scroll-padding-bottom` = gemessene Leistenhöhe + 16 px die
+ * Felder beim Fokuswechsel oberhalb der Leiste. Der Texteditor ist dafür zu groß: Der Browser holt dort nur die
+ * Einfügemarke ins Bild. Deshalb rückt die Seite nach einem Tab-Schritt nach, bis das ganze Feld über der Leiste
+ * steht (höchstens so weit, dass sein Anfang sichtbar bleibt). Liefert den Callback-Ref für die Leiste.
  */
 function useSpeicherleiste() {
-  const [gescrollt, setGescrollt] = useState(false);
-  const [amEnde, setAmEnde] = useState(false);
-  // Marke direkt unter der Leiste (Callback-Ref): sichtbar = die Leiste steht an ihrem Platz am Formularende
-  const [ende, setEnde] = useState<HTMLDivElement | null>(null);
+  const [leiste, setLeiste] = useState<HTMLDivElement | null>(null);
   useEffect(() => {
-    const pruefe = () => setGescrollt(window.scrollY > 96);
-    pruefe();
-    window.addEventListener('scroll', pruefe, { passive: true });
+    if (!leiste) return;
     const html = document.documentElement;
     const vorher = html.style.scrollPaddingBottom;
-    html.style.scrollPaddingBottom = '6rem';
-    return () => {
-      window.removeEventListener('scroll', pruefe);
-      html.style.scrollPaddingBottom = vorher;
+    const setze = () => {
+      html.style.scrollPaddingBottom = `${Math.ceil(leiste.getBoundingClientRect().height) + LEISTE_ABSTAND}px`;
     };
-  }, []);
-  useEffect(() => {
-    if (!ende) return;
-    const beobachter = new IntersectionObserver(([e]) => setAmEnde(e.isIntersecting));
-    beobachter.observe(ende);
-    return () => beobachter.disconnect();
-  }, [ende]);
-  return [gescrollt || amEnde, setEnde] as const;
+    setze();
+    const beobachter = new ResizeObserver(setze);
+    beobachter.observe(leiste);
+
+    const formular = leiste.closest('form');
+    let perTab = false;
+    const taste = (e: KeyboardEvent) => {
+      if (e.key === 'Tab') perTab = true;
+    };
+    const fokus = (e: FocusEvent) => {
+      if (!perTab) return;
+      perTab = false;
+      const ziel = e.target;
+      if (!(ziel instanceof HTMLElement) || leiste.contains(ziel)) return;
+      // Erst nach dem eigenen Scrollen des Browsers messen
+      requestAnimationFrame(() => {
+        const feld = ziel.getBoundingClientRect();
+        const ueberstand = feld.bottom + LEISTE_ABSTAND - leiste.getBoundingClientRect().top;
+        if (ueberstand > 0) window.scrollBy({ top: Math.min(ueberstand, Math.max(0, feld.top - LEISTE_ABSTAND)) });
+      });
+    };
+    document.addEventListener('keydown', taste, true);
+    formular?.addEventListener('focusin', fokus);
+    return () => {
+      beobachter.disconnect();
+      html.style.scrollPaddingBottom = vorher;
+      document.removeEventListener('keydown', taste, true);
+      formular?.removeEventListener('focusin', fokus);
+    };
+  }, [leiste]);
+  return setLeiste;
 }
 
 /** Pfadteil eines Fehlerschlüssels → Beschriftungsschlüssel unter `baustein.feld` (für die Fehlerliste). */
@@ -164,7 +186,7 @@ export function SeitenFormular({
   const [w, setW] = useState<SeitenWerte>(startwerte);
   const [bloecke, setBloecke] = useState<Block[]>(startBloecke);
   const meldungRef = useRef<HTMLDivElement>(null);
-  const [leisteSichtbar, leisteEnde] = useSpeicherleiste();
+  const speicherleiste = useSpeicherleiste();
   const basis = useId();
   const id = useCallback((schluessel: string) => `${basis}-${schluessel.replace(/[^a-zA-Z0-9_-]/g, '-')}`, [basis]);
   const medienWahl = useRef<MedienWahlHandle>(null);
@@ -185,6 +207,21 @@ export function SeitenFormular({
     (s) => w[`titel${s}`].trim() && (!w.beschreibungDe.trim() || w[`beschreibung${s}`].trim()),
   ).length;
 
+  /**
+   * Platzhalter in eckigen Klammern im Wert (SB-5, G-05): gestrichelter Rand und ein Hinweis unter dem Feld wie im
+   * Seiteninhalte-Editor. Der Hinweis hängt über aria-describedby am Feld (er steht im Hinweis des Rahmens).
+   */
+  const mitPlatzhalter = (feld: keyof SeitenWerte, hinweis: string | undefined): ReactNode =>
+    hatPlatzhalter(w[feld]) ? (
+      <>
+        {hinweis ? <span className="block">{hinweis}</span> : null}
+        <span className="block font-bold text-warnung">{tf('platzhalterFeld')}</span>
+      </>
+    ) : (
+      hinweis
+    );
+  const platzhalterRand = (feld: keyof SeitenWerte) => hatPlatzhalter(w[feld]) && 'border-2 border-dashed border-warnung';
+
   const textFeld = (
     feld: keyof SeitenWerte,
     label: string,
@@ -193,7 +230,7 @@ export function SeitenFormular({
     <Rahmen
       id={id(feld)}
       label={label}
-      hinweis={opt.hinweis}
+      hinweis={mitPlatzhalter(feld, opt.hinweis)}
       fehler={f(feld)}
       pflicht={opt.pflicht ? pflicht : undefined}
       kinder={(aria) => (
@@ -205,7 +242,7 @@ export function SeitenFormular({
           maxLength={opt.max}
           placeholder={opt.platzhalter}
           onChange={(e) => setze(feld)(e.target.value)}
-          className={eingabe}
+          className={cn(eingabe, platzhalterRand(feld))}
         />
       )}
     />
@@ -215,7 +252,7 @@ export function SeitenFormular({
     <Rahmen
       id={id(feld)}
       label={label}
-      hinweis={opt.hinweis}
+      hinweis={mitPlatzhalter(feld, opt.hinweis)}
       fehler={f(feld)}
       kinder={(aria) => (
         <textarea
@@ -226,7 +263,7 @@ export function SeitenFormular({
           value={w[feld]}
           onChange={(e) => setze(feld)(e.target.value)}
           // Wächst mit dem Inhalt (mindestens zwei Zeilen), damit nichts im Feld verborgen bleibt
-          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5')}
+          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5', platzhalterRand(feld))}
         />
       )}
     />
@@ -499,28 +536,23 @@ export function SeitenFormular({
       </fieldset>
 
       {!nurLesen ? <MedienWahlDialog ref={medienWahl} bilder={optionen.bilder} /> : null}
+      {/* Eine Zeile (SE-3, SE-6): Knopf und Ziel des Speicherns; auf dem Telefon als Plakette, ab 768 px als Satz */}
       {!nurLesen ? (
-        <>
-          {/* Eine Zeile (SE-3): Knopf und Ziel des Speicherns; auf dem Telefon als Plakette, ab 768 px als Satz */}
-          <div
-            className={cn(
-              'sticky bottom-0 z-(--ebene-kopf) -mx-4 flex items-center gap-3 border-t border-linie bg-papier px-4 py-2 shadow-s2 transition-transform duration-(--dauer-wechsel) ease-(--ease-eintritt) motion-reduce:transition-none md:mx-0 md:rounded-lg md:border md:py-3',
-              !leisteSichtbar && 'translate-y-[calc(100%+1.5rem)] focus-within:translate-y-0',
-            )}
-          >
-            <Button type="submit" disabled={laeuft} className="max-sm:px-5">
-              <Save aria-hidden />
-              {laeuft ? tf('speichert') : modus === 'neu' ? tf('erstellen') : tf('speichern')}
-            </Button>
-            <p className="min-w-0 text-16 text-tinte-2">
-              <span className="max-md:sr-only">{tf(`speichernHinweis.${w.status}`)}</span>
-              <span aria-hidden className="rounded-pill bg-sand px-3 py-1 font-bold whitespace-nowrap text-tinte-2 md:hidden">
-                {t(`status.${w.status}`)}
-              </span>
-            </p>
-          </div>
-          <div ref={leisteEnde} aria-hidden className="-mt-6 h-px" />
-        </>
+        <div
+          ref={speicherleiste}
+          className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex items-center gap-3 border-t border-linie bg-papier px-4 py-1.5 shadow-s2 md:mx-0 md:rounded-lg md:border"
+        >
+          <Button type="submit" disabled={laeuft} className="max-sm:px-5">
+            <Save aria-hidden />
+            {laeuft ? tf('speichert') : modus === 'neu' ? tf('erstellen') : tf('speichern')}
+          </Button>
+          <p className="min-w-0 text-16 text-tinte-2">
+            <span className="max-md:sr-only">{tf(`speichernHinweis.${w.status}`)}</span>
+            <span aria-hidden className="rounded-pill bg-sand px-3 py-1 font-bold whitespace-nowrap text-tinte-2 md:hidden">
+              {t(`status.${w.status}`)}
+            </span>
+          </p>
+        </div>
       ) : null}
     </form>
   );

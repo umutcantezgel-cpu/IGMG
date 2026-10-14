@@ -5,6 +5,7 @@ import {
   ArrowUp,
   BookOpenText,
   CalendarRange,
+  ChevronDown,
   ChevronsDownUp,
   ChevronsUpDown,
   Clock,
@@ -36,8 +37,8 @@ import { BausteinFelder, hatUebersetzbareTexte } from './BausteinFelder';
 import type { EditorOptionen } from './typen';
 
 /**
- * Bausteinliste des Seiten-Editors (ADR 0032): Hinzufügen über eine Auswahl großer Kacheln, Verschieben mit den Knöpfen
- * „Nach oben“/„Nach unten“ (Tastatur, kein Ziehen nötig), Entfernen mit „Rückgängig“. Nach jeder Aktion bleibt der
+ * Bausteinliste des Seiten-Editors (ADR 0032): Hinzufügen über eine Auswahl großer Kacheln, Aufklappen über den Kopf,
+ * Verschieben mit den Knöpfen ↑ ↓ (Tastatur, kein Ziehen nötig), Entfernen mit „Rückgängig“. Nach jeder Aktion bleibt der
  * Fokus an einer sinnvollen Stelle und eine Live-Region sagt, was passiert ist (K-11).
  */
 export const BLOCK_ICON: Record<BlockTyp, LucideIcon> = {
@@ -134,8 +135,8 @@ function fertigeUebersetzungen(b: Block): number {
   return (['tr', 'en'] as const).filter((s) => nurBaustein[s] === 100).length;
 }
 
-/** Knöpfe im Kopf eines Bausteins: 48 px, unter 1024 px nur Symbol (Name über aria-label). */
-const KNOPF = 'min-h-12 min-w-12 px-3 max-lg:px-0';
+/** Symbolknöpfe im Kopf eines Bausteins (Name über aria-label, Tooltip über title): 48 px, ab 1024 px 44 px (K-11). */
+const KNOPF = 'size-12 min-h-12 lg:size-11 lg:min-h-11';
 
 type Fokus = { id: string; ziel: 'oben' | 'unten' | 'kopf' } | { id: 'rueckgaengig'; ziel: 'knopf' } | null;
 
@@ -277,74 +278,80 @@ export function BausteinListe({
                 className={cn('rounded-lg border bg-weiss shadow-s1', fehler ? 'border-2 border-fehler' : 'border-linie')}
                 aria-labelledby={eid(b.id, 'kopf')}
               >
-                <div className={cn('flex flex-wrap items-center gap-3 px-3 py-3 md:px-5', offen && 'border-b border-linie')}>
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
-                    <Icon aria-hidden className="size-5" />
-                  </span>
-                  <h3
-                    id={eid(b.id, 'kopf')}
-                    tabIndex={-1}
-                    className="flex min-w-0 flex-1 basis-48 flex-col font-text text-18 leading-tight font-bold tracking-normal outline-none"
-                  >
-                    <span>
-                      <span className="text-tinte-2">{t('nummer', { nr: i + 1 })} · </span>
-                      {t(`typ.${b.typ}.name`)}
-                    </span>
-                    {kurz ? <span className="truncate text-16 font-normal text-tinte-2">{kurz}</span> : null}
+                {/* Kopf (SE-5, SB-3): Der Titel selbst klappt auf und zu (Akkordeon, Chevron rechts); daneben nur noch
+                    ↑ ↓ als Symbolpaar und – abgesetzt und dauerhaft in Erdrot – der Papierkorb. Auf dem Telefon stehen die
+                    drei Knöpfe in eigener Zeile rechts unter dem Titel. */}
+                <div className={cn('flex flex-wrap items-center gap-x-3 gap-y-1 px-2 py-2 md:px-3', offen && 'border-b border-linie')}>
+                  <h3 className="flex min-w-0 flex-1 basis-60 font-text text-18 leading-tight font-bold tracking-normal">
+                    <button
+                      id={eid(b.id, 'kopf')}
+                      type="button"
+                      aria-expanded={offen}
+                      aria-controls={koerperId}
+                      onClick={() => umschalten(b.id)}
+                      className="flex min-h-14 w-full min-w-0 cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 text-left transition-colors duration-(--dauer-rueckmeldung) hover:bg-gruen-50 motion-reduce:transition-none"
+                    >
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
+                        <Icon aria-hidden className="size-5" />
+                      </span>
+                      <span className="flex min-w-0 flex-1 flex-col">
+                        <span>
+                          <span className="text-tinte-2">{t('nummer', { nr: i + 1 })} · </span>
+                          {t(`typ.${b.typ}.name`)}
+                        </span>
+                        {kurz ? <span className="truncate text-16 font-normal text-tinte-2">{kurz}</span> : null}
+                      </span>
+                      {fehler ? (
+                        <span className="shrink-0 rounded-pill bg-fehler-toenung px-3 py-0.5 text-16 font-bold text-fehler">
+                          {t('fehlerMarke')}
+                        </span>
+                      ) : null}
+                      <ChevronDown
+                        aria-hidden
+                        className={cn(
+                          'size-6 shrink-0 text-gruen-700 transition-transform duration-(--dauer-wechsel) motion-reduce:transition-none',
+                          offen && 'rotate-180',
+                        )}
+                      />
+                    </button>
                   </h3>
-                  {fehler ? (
-                    <span className="rounded-pill bg-fehler-toenung px-3 py-0.5 text-16 font-bold text-fehler">{t('fehlerMarke')}</span>
-                  ) : null}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="ml-auto flex shrink-0 items-center gap-1">
                     <Button
                       id={eid(b.id, 'oben')}
                       type="button"
                       variant="outline"
-                      size="sm"
+                      size="icon"
                       className={KNOPF}
                       disabled={i === 0}
                       onClick={() => verschieben(i, -1)}
+                      title={t('nachOben')}
                       aria-label={t('nachObenName', { name: name(b, i) })}
                     >
                       <ArrowUp aria-hidden />
-                      <span className="max-lg:hidden">{t('nachOben')}</span>
                     </Button>
                     <Button
                       id={eid(b.id, 'unten')}
                       type="button"
                       variant="outline"
-                      size="sm"
+                      size="icon"
                       className={KNOPF}
                       disabled={i === anzahl - 1}
                       onClick={() => verschieben(i, 1)}
+                      title={t('nachUnten')}
                       aria-label={t('nachUntenName', { name: name(b, i) })}
                     >
                       <ArrowDown aria-hidden />
-                      <span className="max-lg:hidden">{t('nachUnten')}</span>
                     </Button>
                     <Button
                       type="button"
                       variant="outline"
-                      size="sm"
-                      className={KNOPF}
-                      aria-expanded={offen}
-                      aria-controls={koerperId}
-                      onClick={() => umschalten(b.id)}
-                      aria-label={t(offen ? 'zuklappenName' : 'aufklappenName', { name: name(b, i) })}
-                    >
-                      {offen ? <ChevronsDownUp aria-hidden /> : <ChevronsUpDown aria-hidden />}
-                      <span className="max-lg:hidden">{t(offen ? 'zuklappen' : 'aufklappen')}</span>
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className={`${KNOPF} hover:border-fehler hover:bg-fehler-toenung hover:text-fehler`}
+                      size="icon"
+                      className={cn(KNOPF, 'ml-4 border-fehler text-fehler hover:bg-fehler-toenung hover:text-fehler')}
                       onClick={() => entfernen(i)}
+                      title={t('entfernen')}
                       aria-label={t('entfernenName', { name: name(b, i) })}
                     >
                       <Trash2 aria-hidden />
-                      <span className="max-lg:hidden">{t('entfernen')}</span>
                     </Button>
                   </div>
                 </div>
