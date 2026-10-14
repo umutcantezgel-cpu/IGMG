@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
+import { Klappe } from '@/components/verwaltung/Klappe';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { BildFeld } from '@/components/verwaltung/medienwahl/BildFeld';
 import { FOLIEN_ARTEN, istReligioes, type FolienArt } from '@/lib/anzeige/folien';
@@ -143,27 +144,28 @@ export function FolienFormular({
 
       <fieldset className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6">
         <legend className="float-left mb-2 w-full font-display text-24 font-semibold">{t('formular.abschnittArt')}</legend>
+        {/* Art-Karten (VA-1): oben ausgerichtet, feste Kopfzeile (Auswahl, Symbol, Titel), Beschreibung 12 px darunter */}
         <div className="clear-both grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {FOLIEN_ARTEN.map((a) => {
             const Symbol = SYMBOL[a];
             return (
               <label
                 key={a}
-                className="grid min-h-12 cursor-pointer grid-cols-[auto_1fr] items-start gap-x-3 gap-y-1 rounded-md border-2 border-linie bg-weiss p-4 has-checked:border-gruen-700 has-checked:bg-gruen-50"
+                className="flex min-h-12 cursor-pointer flex-col gap-3 rounded-md border-2 border-linie bg-weiss p-4 has-checked:border-gruen-700 has-checked:bg-gruen-50"
               >
-                <input
-                  type="radio"
-                  name="art"
-                  value={a}
-                  checked={art === a}
-                  onChange={() => setArt(a)}
-                  className="mt-1 size-5 shrink-0 accent-gruen-700"
-                />
-                <span className="inline-flex items-center gap-2 font-bold">
-                  <Symbol aria-hidden className="size-5 text-gruen-700" />
-                  {t(`art.${a}`)}
+                <span className="flex min-h-6 items-center gap-3">
+                  <input
+                    type="radio"
+                    name="art"
+                    value={a}
+                    checked={art === a}
+                    onChange={() => setArt(a)}
+                    className="size-5 shrink-0 accent-gruen-700"
+                  />
+                  <Symbol aria-hidden className="size-5 shrink-0 text-gruen-700" />
+                  <span className="font-bold">{t(`art.${a}`)}</span>
                 </span>
-                <span className="col-start-2 text-16 text-tinte-2">{t(`artText.${a}`)}</span>
+                <span className="pl-8 text-16 text-tinte-2">{t(`artText.${a}`)}</span>
               </label>
             );
           })}
@@ -198,13 +200,13 @@ export function FolienFormular({
       />
 
       {art === 'text' || art === 'bild' ? (
-        <details
+        <Klappe
+          titel={t('formular.abschnittUebersetzung')}
+          stand={t('formular.uebersetzungStand')}
+          kopfKlasse="font-display text-24 font-semibold"
           className="rounded-lg border border-linie bg-weiss p-5 md:p-6"
           open={fehlerListe.some((k) => /(Tr|En)$/.test(k)) || undefined}
         >
-          <summary className="flex min-h-12 cursor-pointer items-center font-display text-24 font-semibold">
-            {t('formular.abschnittUebersetzung')}
-          </summary>
           <div className="mt-4 grid gap-6 lg:grid-cols-2">
             {SPRACHEN.map((s) => (
               <fieldset key={s} className="flex flex-col gap-4">
@@ -214,7 +216,7 @@ export function FolienFormular({
               </fieldset>
             ))}
           </div>
-        </details>
+        </Klappe>
       ) : null}
 
       <Abschnitt

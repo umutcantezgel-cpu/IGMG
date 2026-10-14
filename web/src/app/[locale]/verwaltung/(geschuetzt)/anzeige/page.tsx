@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp, ExternalLink, Pencil, Plus, Settings } from 'lucide-react';
+import { ArrowDown, ArrowUp, ExternalLink, Eye, Pencil, Plus, Settings } from 'lucide-react';
 import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
@@ -57,15 +57,21 @@ export default async function AnzeigeVerwalten({ searchParams }: PageProps<'/[lo
     </Button>
   );
   const name = (f: FolieVerwaltung) => folienName(f, t);
+  // „Bearbeiten“ mit sichtbarem Text (SL-1); die Pfeile als Symbole mit Tooltip und vollem Namen
   const aktionen = (f: FolieVerwaltung, i: number) => (
-    <div className="flex flex-wrap justify-end gap-1">
+    <div className="flex flex-wrap items-center justify-end gap-2">
       {bearbeiten && i > 0 ? (
         <form action={verschiebeFolie}>
           <input type="hidden" name="id" value={f.id} />
           <input type="hidden" name="richtung" value="hoch" />
-          <Button type="submit" variant="outline" size="icon">
+          <Button
+            type="submit"
+            variant="outline"
+            size="icon"
+            title={t('aktion.hochKurz')}
+            aria-label={t('aktion.hoch', { titel: name(f) })}
+          >
             <ArrowUp aria-hidden />
-            <span className="sr-only">{t('aktion.hoch', { titel: name(f) })}</span>
           </Button>
         </form>
       ) : null}
@@ -73,16 +79,24 @@ export default async function AnzeigeVerwalten({ searchParams }: PageProps<'/[lo
         <form action={verschiebeFolie}>
           <input type="hidden" name="id" value={f.id} />
           <input type="hidden" name="richtung" value="runter" />
-          <Button type="submit" variant="outline" size="icon">
+          <Button
+            type="submit"
+            variant="outline"
+            size="icon"
+            title={t('aktion.runterKurz')}
+            aria-label={t('aktion.runter', { titel: name(f) })}
+          >
             <ArrowDown aria-hidden />
-            <span className="sr-only">{t('aktion.runter', { titel: name(f) })}</span>
           </Button>
         </form>
       ) : null}
-      <Button asChild variant="outline" size="icon">
-        <NextLink href={`/verwaltung/anzeige/${f.id}`}>
-          <Pencil aria-hidden />
-          <span className="sr-only">{t('aktion.bearbeiten', { titel: name(f) })}</span>
+      <Button asChild variant="outline">
+        <NextLink
+          href={`/verwaltung/anzeige/${f.id}`}
+          aria-label={t(bearbeiten ? 'aktion.bearbeiten' : 'aktion.ansehen', { titel: name(f) })}
+        >
+          {bearbeiten ? <Pencil aria-hidden /> : <Eye aria-hidden />}
+          {t(bearbeiten ? 'aktion.bearbeitenKurz' : 'aktion.ansehenKurz')}
         </NextLink>
       </Button>
     </div>
