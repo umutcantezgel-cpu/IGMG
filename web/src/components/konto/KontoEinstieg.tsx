@@ -17,6 +17,7 @@ export async function KontoEinstieg({
   untertitel,
   children,
   ohneEinordnung = false,
+  konto,
 }: {
   seite: string;
   sprachZiel: Ziel;
@@ -24,6 +25,8 @@ export async function KontoEinstieg({
   untertitel?: string;
   children: ReactNode;
   ohneEinordnung?: boolean;
+  /** Angemeldet (z. B. Pflicht-Einrichtung des zweiten Faktors): Kopf mit Kontoschaltfläche statt „Anmelden“. */
+  konto?: { anzeigename: string };
 }) {
   const t = await getTranslations('konto.einordnung');
   const punkte = [
@@ -46,7 +49,7 @@ export async function KontoEinstieg({
     </div>
   );
   return (
-    <KontoHuelle seite={seite} sprachZiel={sprachZiel}>
+    <KontoHuelle seite={seite} sprachZiel={sprachZiel} konto={konto}>
       <section className="border-b border-linie bg-sand">
         {ohneEinordnung ? (
           // Ohne Einordnung (Passwort, Pflicht-Faktor): eine mittige Spalte in Dialogbreite – Platz für QR und Ersatzcodes

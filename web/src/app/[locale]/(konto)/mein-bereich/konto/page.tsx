@@ -44,7 +44,13 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
   // Pflicht zum zweiten Faktor (Lehrkraft): nur die Einrichtung, ohne Navigation
   if (!k.zweiFaktorErfuellt && k.gemeindeRollen.includes('lehrkraft')) {
     return (
-      <KontoEinstieg seite="mein-bereich" sprachZiel="/mein-bereich/konto" titel={t('konto.pflicht.titel')} ohneEinordnung>
+      <KontoEinstieg
+        seite="mein-bereich"
+        sprachZiel="/mein-bereich/konto"
+        titel={t('konto.pflicht.titel')}
+        ohneEinordnung
+        konto={{ anzeigename: k.anzeigename }}
+      >
         <div className="flex flex-col gap-6">
           <Meldung art="info">{t('konto.pflicht.text')}</Meldung>
           <ZweiFaktorEinrichten />
