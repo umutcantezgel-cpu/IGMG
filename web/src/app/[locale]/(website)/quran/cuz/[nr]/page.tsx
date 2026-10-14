@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { Medaillon } from '@/components/website/quran/Medaillon';
 import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
-import { QuellenFuss, Quellenzeile } from '@/components/website/quran/Quellenzeile';
+import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
 import { QuranWeiter } from '@/components/website/quran/QuranWeiter';
 import { SurenKopf } from '@/components/website/quran/SurenKopf';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
@@ -66,6 +66,7 @@ async function Cuz({ params }: { params: Promise<{ locale: string; nr: string }>
       seite="quran"
       sprachZiel={ziel(nr)}
       pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: t('cuz.titel', { nr }) }]}
+      kompakteLeiste
     >
       <SurenKopf
         kennung={t('cuz.kennung', { nr })}
@@ -81,7 +82,6 @@ async function Cuz({ params }: { params: Promise<{ locale: string; nr: string }>
             })}
           </span>
         }
-        quelle={<Quellenzeile quelle={quelle} />}
       />
       <LeserRahmen sure={null} cuz={nr} ausgaben={ausgaben} ausgabe={ausgabe}>
         {cuz.abschnitte.map(({ sure, verse }) => {
@@ -131,7 +131,7 @@ async function Cuz({ params }: { params: Promise<{ locale: string; nr: string }>
             </section>
           );
         })}
-        <QuellenFuss ausgabe={ausgabe} />
+        <QuellenFuss ausgabe={ausgabe} quelle={quelle} />
         <QuranWeiter
           label={t('cuz.blaettern')}
           vorher={nr > 1 ? { ziel: ziel(nr - 1), text: t('cuz.navVorher'), name: t('cuz.titel', { nr: nr - 1 }) } : null}
