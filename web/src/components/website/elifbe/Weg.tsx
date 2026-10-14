@@ -14,6 +14,8 @@ export type WegStation = {
   linkText?: string;
   /** Zusatzzeile, z. B. Platzhalter. */
   hinweis?: string;
+  /** Plakette in der Fußzeile der Karte statt eines Links, z. B. „Folgt bald“ (Sichtabnahme L-1). */
+  plakette?: string;
   /** Zeichen in der Marke (Vorgabe: Nummer). */
   zeichen?: ReactNode;
   /** Arabischer Inhalt der Marke (dann `lang="ar"`). */
@@ -110,6 +112,11 @@ export function Weg({
                 </h3>
                 <p className={cn('text-pretty text-tinte-2', kompakt ? 'text-16' : 'text-18 leading-einleitung')}>{s.text}</p>
                 {s.hinweis ? <p className="text-16 text-tinte-2">{s.hinweis}</p> : null}
+                {s.plakette ? (
+                  <span className="mt-auto inline-flex min-h-12 items-center self-start">
+                    <span className="rounded-pill bg-sand px-3 py-1 text-16 font-bold text-tinte-2">{s.plakette}</span>
+                  </span>
+                ) : null}
                 {s.ziel && s.linkText ? (
                   <Link
                     href={s.ziel}

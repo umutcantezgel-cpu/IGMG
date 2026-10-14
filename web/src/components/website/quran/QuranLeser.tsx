@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Minus, Palette, Play, Plus, SlidersHorizontal, Volume2 } from 'lucide-react';
+import { Check, ChevronDown, Minus, Palette, Play, Plus, SlidersHorizontal, Volume2 } from 'lucide-react';
 import { lazy, Suspense, useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
 import { TAJWID_FAMILIEN } from '@/lib/quran/tajwid';
 import { fuelle, MODI, schreibe, SPEICHER, type LeserAusgabe, type LeserProps, type Modus } from './leser-typen';
@@ -10,6 +10,9 @@ const Wortkarte = lazy(() => import('./Wortkarte'));
 const TajwidLeiste = lazy(() => import('./TajwidLeiste'));
 const Player = lazy(() => import('./Player'));
 const OfflineSpeichern = lazy(() => import('./OfflineSpeichern'));
+
+/** Farbfeld einer Tajwid-Familie: vier geschützte Leerzeichen, die Familienklasse zeichnet Farbe und Muster. */
+const FARBFELD = '\u00a0'.repeat(4);
 
 export type WortZiel = { el: HTMLElement; sure: number; vers: number; pos: number };
 
@@ -114,6 +117,9 @@ export function QuranLeser(props: LeserProps) {
     const oeffne = (w: HTMLElement) => {
       const z = zielVon(w);
       if (!z) return;
+      // Auch beim Antippen: aria-expanded nur an einem Element mit Rolle (wie beim Erreichen per Tastatur)
+      w.setAttribute('role', 'button');
+      w.setAttribute('aria-haspopup', 'dialog');
       w.setAttribute('aria-expanded', 'true');
       setWort(z);
     };
@@ -240,6 +246,8 @@ export function QuranLeser(props: LeserProps) {
         >
           <Palette aria-hidden className="size-5" />
           {t.tajwid}
+          {/* Zustand nicht nur über die Farbe (WCAG 1.4.1): an = Häkchen */}
+          {tajwid ? <Check aria-hidden className="size-4" /> : null}
         </button>
         <span className="ml-auto" />
         {rezitationen.length ? (
@@ -339,7 +347,12 @@ export function QuranLeser(props: LeserProps) {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1 sm:grid-cols-3">
               {TAJWID_FAMILIEN.map((f) => (
                 <li key={f} className="flex flex-wrap items-baseline gap-x-2 text-16">
-                  <span className={`tj tj-${f} muster-probe`}>{texte.familien[f]}</span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span aria-hidden className={`tj tj-${f} tj-probe`}>
+                      {FARBFELD}
+                    </span>
+                    <span className={`tj tj-${f} bg-none font-bold no-underline`}>{texte.familien[f]}</span>
+                  </span>
                   <span className="text-tinte-2">{texte.muster[f]}</span>
                 </li>
               ))}

@@ -34,6 +34,7 @@
 .leser[data-tajwid='aus'] .wortkarte-wort .tj {
   color: inherit;
   text-decoration-line: none;
+  background-image: none;
 }
 /* Ohne JavaScript wirken die Werkzeuge nicht: dann nicht zeigen (der Text bleibt voll lesbar) */
 @media (scripting: none) {
@@ -184,14 +185,14 @@
 }
 
 /* ---------- Wortkarte (B-14): Popover am Wort, opacity + scale .96 → 1 vom Wort aus ---------- */
+/* Außen die Karte (ohne Überlauf, damit der Pfeil beim Andocken sichtbar bleibt), innen der scrollbare Inhalt */
 .wortkarte {
   position: fixed;
   inset: auto;
   margin: 0;
   width: min(22rem, calc(100vw - 2rem));
-  max-height: calc(100dvh - 2rem);
-  overflow: auto;
-  padding: calc(var(--spacing) * 5);
+  overflow: visible;
+  padding: 0;
   border: 1px solid var(--color-linie);
   border-radius: var(--radius-lg);
   background: var(--color-weiss);
@@ -216,8 +217,32 @@
     scale: 0.96;
   }
 }
+.wortkarte-inhalt {
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: calc(var(--spacing) * 5);
+  border-radius: inherit;
+}
 .wortkarte::backdrop {
   background: transparent;
+}
+/* Breit (Sichtabnahme W-4): Karte im freien Rand rechts neben der Lesespalte, Pfeil auf Höhe des Worts */
+.wortkarte[data-andock='rechts']::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--pfeil, 2rem) - calc(var(--spacing) * 2));
+  left: calc(var(--spacing) * -2 - 0.5px);
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  border-bottom: 1px solid var(--color-linie);
+  border-left: 1px solid var(--color-linie);
+  background: var(--color-weiss);
+  rotate: 45deg;
+}
+/* Griffleiste der Blätter (Wortkarte und Regel-Seitenleiste, W-2/T-4): nur auf dem Telefon */
+.blatt-griff {
+  display: none;
 }
 .wortkarte-wort {
   font-family: var(--font-quran);
@@ -225,14 +250,28 @@
   line-height: var(--text-arabisch-1--line-height);
   text-align: center;
 }
-/* Telefon: als Blatt am unteren Rand */
+/* Telefon: als Blatt am unteren Rand, höchstens 60 % hoch, mit Griffleiste und Scrim in Markengrün (W-2, W-6) */
 @media (max-width: 47.99rem) {
   .wortkarte {
     inset: auto 0 0 0 !important;
     width: 100%;
-    max-height: 75dvh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     transform-origin: bottom center;
+  }
+  .wortkarte-inhalt {
+    max-height: 60dvh;
+    padding-top: calc(var(--spacing) * 2);
+  }
+  .wortkarte::backdrop {
+    background: color-mix(in srgb, var(--color-gruen-950) 40%, transparent);
+  }
+  .blatt-griff {
+    display: block;
+    width: calc(var(--spacing) * 8);
+    height: var(--spacing);
+    margin: 0 auto calc(var(--spacing) * 2);
+    border-radius: var(--radius-pill);
+    background: var(--color-rand);
   }
   .wortkarte:not(:popover-open) {
     scale: 1;
@@ -272,8 +311,9 @@ dialog.regel-leiste {
 dialog.regel-leiste[open] {
   animation: regel-schublade var(--dauer-wechsel) var(--ease-eintritt) both;
 }
+/* Scrim wie beim Blatt der Wortkarte: Markengrün mit 40 % (T-4) */
 dialog.regel-leiste::backdrop {
-  background: color-mix(in srgb, var(--color-tinte) 16%, transparent);
+  background: color-mix(in srgb, var(--color-gruen-950) 40%, transparent);
 }
 @keyframes regel-schublade {
   from {
@@ -302,13 +342,17 @@ dialog.regel-leiste::backdrop {
   }
 }
 
-/* Beispiel der Regel in der Seitenleiste: groß, die Stelle der Regel getönt */
+/* Beispiel der Regel in der Seitenleiste: groß, die Stelle der Regel mit 2-px-Ring in der Familienfarbe (≥ 4,5:1 auf
+   Weiß), leicht getönt und mit dem Familienmuster (Sichtabnahme T-1) */
 .beispiel-wort {
   font-size: calc(var(--text-arabisch-1) * 1.6);
   line-height: 2;
 }
 .beispiel-wort .regel-markiert {
-  background-color: color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: var(--radius-sm);
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* ---------- Muster-Probe der Legende: Wort mit Familienfarbe und -linie ---------- */
@@ -316,6 +360,16 @@ dialog.regel-leiste::backdrop {
   display: inline-block;
   min-width: 2.5rem;
   font-weight: 700;
+}
+/* Farbfeld einer Familie vor Knopf- und Linktext (W-1, T-3): kurzes Stück Linie in Farbe und Muster der Familie, der
+   Text selbst bleibt Akzentgrün ohne Unterstreichung */
+.tj-probe {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.5em;
+  white-space: pre;
+  line-height: 1;
+  text-underline-offset: 0.3em;
 }
 
 /* ---------- Player am unteren Rand ---------- */

@@ -24,13 +24,15 @@ export async function Quellenzeile({ quelle }: { quelle: QuranQuelle }) {
 }
 
 /**
- * Quellen unter dem Text: Tajwid-Markierungen (CC BY 4.0, angepasst) und die gezeigte Übersetzung. Die Zeile der
+ * Quellen unter dem Text: optional der arabische Text (Tanzil, mit Link – die Surenseite führt ihn hier statt im Kopf,
+ * Sichtabnahme S-1), Tajwid-Markierungen (CC BY 4.0, angepasst) und die gezeigte Übersetzung. Die Zeile der
  * Übersetzung trägt `data-quelle-uebersetzung`, damit der Ausgabewechsel sie nachführt.
  */
-export async function QuellenFuss({ ausgabe }: { ausgabe: SichtbareAusgabe | null }) {
+export async function QuellenFuss({ ausgabe, quelle }: { ausgabe: SichtbareAusgabe | null; quelle?: QuranQuelle }) {
   const t = await getTranslations('quranSeite.quelle');
   return (
     <footer className="flex flex-col gap-1 text-16 text-tinte-2">
+      {quelle ? <Quellenzeile quelle={quelle} /> : null}
       <p data-quelle-uebersetzung hidden={!ausgabe}>
         {ausgabe ? t('uebersetzung', { titel: ausgabe.titel, uebersetzer: ausgabe.uebersetzer }) : null}
       </p>

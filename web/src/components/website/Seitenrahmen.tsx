@@ -33,6 +33,7 @@ const SEITE = { viewTransitionName: 'seite', viewTransitionClass: 'seite' } as C
  * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
  * Jede Seite übergibt Bereich, aktuelle Seite und ihr Sprachziel ausdrücklich – so bleibt das HTML statisch
  * (kein usePathname). Ausnahmen nach Laufbuch D-16: keine Breadcrumbs auf der Startseite, keine Leiste auf Gebetszeiten.
+ * `kompakteLeiste`: die Leiste als eine Zeile (Leseseiten wie `/quran/[sure]`, Sichtabnahme S-1).
  */
 export async function Seitenrahmen({
   bereich,
@@ -40,6 +41,7 @@ export async function Seitenrahmen({
   sprachZiel,
   pfad,
   ohneLeiste = false,
+  kompakteLeiste = false,
   children,
 }: {
   bereich: Bereich;
@@ -47,6 +49,8 @@ export async function Seitenrahmen({
   sprachZiel: SprachZiel;
   pfad?: PfadEintrag[];
   ohneLeiste?: boolean;
+  /** Leiste als eine Zeile „Nächstes Gebet · Zeit“ */
+  kompakteLeiste?: boolean;
   children: ReactNode;
 }) {
   const sprache = (await getLocale()) as Locale;
@@ -63,7 +67,7 @@ export async function Seitenrahmen({
         {t('zumInhalt')}
       </a>
       <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
-      {ohneLeiste ? null : <PrayerTimesBar />}
+      {ohneLeiste ? null : <PrayerTimesBar kompakt={kompakteLeiste} />}
       {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
       {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
       <main id="inhalt" tabIndex={-1} className="outline-none">

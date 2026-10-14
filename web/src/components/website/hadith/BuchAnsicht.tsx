@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { morphStil } from '@/components/website/morph';
+import { NachOben } from '@/components/website/NachOben';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
@@ -15,10 +16,12 @@ import { QuellenZeile } from './QuellenZeile';
 import { TeilNavigation } from './TeilNavigation';
 
 /**
- * Buchseite und Teilseiten von Sahih al-Bukhari (AUFTRAG 3.3): Kopf mit der Buchnummer im Achtstern (Morph-Ziel der
- * Kachel) und dem Titel der Quelle (Englisch), darunter die Hadithe dieses Teils in der Reihenfolge der Quelle.
- * Ab lg begleitet eine schmale Spalte den Lesetext (Umfang, Nummernbereich, Teile, Blättern, Quelle); auf dem Telefon
- * folgt sie der Liste. Lange Bücher stehen in Teilen zu je 100 Hadithen, Teil 1 ist die Buchseite.
+ * Buchseite und Teilseiten von Sahih al-Bukhari (AUFTRAG 3.3): Kopf mit Rückweg, Kennung, dem Hinweis auf den Titel der
+ * Quelle (Englisch) und dem Titel in einer Zeile mit der Buchnummer im Achtstern (Morph-Ziel der Kachel; Sichtabnahme
+ * H-3, H-4), darunter die Hadithe dieses Teils in der Reihenfolge der Quelle. Ab lg begleitet eine mitlaufende Spalte
+ * den Lesetext (Umfang, Nummernbereich, Teile, Blättern, Quelle); bis lg steht unter dem Kopf eine kompakte Leiste mit
+ * Umfang, Nummern und dem Weg weiter, die Spalte folgt der Liste (H-2). Auf langen Strecken führt „Nach oben“ zurück.
+ * Lange Bücher stehen in Teilen zu je 100 Hadithen, Teil 1 ist die Buchseite.
  */
 export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
   const sprache = (await getLocale()) as Locale;
@@ -28,6 +31,13 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
   const kennung = t('kennung', { nr: b.nr });
   const mitTeilen = teile > 1;
   const ziel = buchTeilZiel(b.nr, teil);
+  // Weg weiter für die kompakte Leiste: erst der nächste Teil dieses Buchs, sonst das nächste Buch
+  const weiter =
+    teil < teile
+      ? { href: buchTeilZiel(b.nr, teil + 1), text: t('weiter', { teil: teil + 1 }) }
+      : daten.naechstes
+        ? { href: { pathname: '/hadith/bukhari/[buch]' as const, params: { buch: String(daten.naechstes.nr) } }, text: t('naechstes') }
+        : null;
   return (
     <Seitenrahmen
       bereich="islam"
@@ -50,15 +60,43 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
           </Link>
         }
         kennung={`${name} · ${mitTeilen ? t('teilKennung', { nr: b.nr, teil, teile }) : kennung}`}
+        titelHinweis={t('titelHinweis')}
         titel={b.titelEn}
         titelLang="en"
         titelId="buch-titel"
         titelStil={morphStil(`hb-${b.nr}-titel`, 'text')}
-        untertitel={mitTeilen ? `${t('untertitel', { anzahl: b.anzahl })} ${t('teilHinweis', { teile })}` : t('untertitel', { anzahl: b.anzahl })}
-        zierde={<BuchStern nr={b.nr} art="kopf" stil={morphStil(`hb-${b.nr}-bild`)} />}
+        titelZeichen={<BuchStern nr={b.nr} art="kopf" stil={morphStil(`hb-${b.nr}-bild`)} />}
+        untertitel={
+          mitTeilen
+            ? `${t('untertitelKurz', { anzahl: b.anzahl })} ${t('teilHinweis', { teile })}`
+            : t('untertitelKurz', { anzahl: b.anzahl })
+        }
       />
       <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-10 px-4 pt-8 pb-abschnitt-klein md:px-8 md:pt-12 lg:grid-cols-3 lg:gap-12">
         <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
+          {/* Bis lg: Umfang, Nummern und der Weg weiter gleich unter dem Kopf (die Spalte folgt erst nach der Liste) */}
+          {hadithe.length ? (
+            <div className="flex min-h-14 flex-wrap items-center justify-between gap-x-3 rounded-lg border border-linie bg-weiss py-1 ps-4 pe-1 shadow-s1 lg:hidden">
+              <p className="text-16">
+                <span className="font-bold">{th('bukhari.anzahl', { anzahl: b.anzahl })}</span>
+                <span aria-hidden className="text-tinte-2">
+                  {' · '}
+                </span>
+                <span className="text-tinte-2 tabular-nums">
+                  {t('leisteNummern', { von: hadithe[0].nummer, bis: hadithe.at(-1)?.nummer ?? hadithe[0].nummer })}
+                </span>
+              </p>
+              {weiter ? (
+                <Link
+                  href={weiter.href}
+                  className="ms-auto inline-flex min-h-12 items-center gap-2 rounded-md px-2 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
+                >
+                  {weiter.text}
+                  <ArrowRight aria-hidden className="size-5" />
+                </Link>
+              ) : null}
+            </div>
+          ) : null}
           {hadithe.length ? (
             <HadithListe
               hadithe={hadithe}
@@ -98,6 +136,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
           <QuellenZeile />
         </aside>
       </div>
+      <NachOben text={t('nachOben')} />
     </Seitenrahmen>
   );
 }

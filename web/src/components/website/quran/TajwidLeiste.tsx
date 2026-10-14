@@ -1,13 +1,16 @@
 'use client';
 
 import type { JSONContent } from '@tiptap/core';
-import { X } from 'lucide-react';
+import { ArrowRight, ChevronRight, X } from 'lucide-react';
 import { Fragment, useEffect, useEffectEvent, useId, useRef, useState, type ReactNode } from 'react';
 import { abschnitte } from '@/lib/quran/tajwid';
 import type { WortDaten } from '@/server/queries/quran';
 import { ladeWoerter } from './daten';
 import { adresse, fuelle, type LeserTexte } from './leser-typen';
 import type { WortZiel } from './QuranLeser';
+
+/** Farbfeld einer Tajwid-Familie: vier geschützte Leerzeichen, die Familienklasse zeichnet Farbe und Muster. */
+const FARBFELD = '\u00a0'.repeat(4);
 
 /** Nur eigene Pfade und https-Links (Linkregel ADR 0006). */
 const erlaubt = (href: unknown): href is string => typeof href === 'string' && (/^\/(?!\/)/.test(href) || href.startsWith('https://'));
@@ -79,9 +82,10 @@ function bereichImWort(wort: HTMLElement, von: number, bis: number): Range | nul
 }
 
 /**
- * Regel-Seitenleiste (O-Q01, B-15): Schublade von rechts, auf dem Telefon Blatt von unten (natives <dialog>).
- * Regelname, Familie mit Farbe und Muster, freigegebene Erklärung oder Platzhalter, das Beispiel im Wort markiert –
- * zusätzlich im Vers über die CSS Custom Highlight API (Rückfall: Klasse am Wort) –, Hörbeispiel nur mit Freigabe.
+ * Regel-Seitenleiste (O-Q01, B-15): Schublade von rechts, auf dem Telefon Blatt von unten mit Griffleiste (natives
+ * <dialog>, Scrim in Markengrün). Regelname, Familie als Link mit Farbfeld (Farbe und Muster), das Beispiel im Wort mit
+ * Ring markiert und benannt – zusätzlich im Vers über die CSS Custom Highlight API (Rückfall: Klasse am Wort) –,
+ * freigegebene Erklärung oder Platzhalter, Hörbeispiel nur mit Freigabe; „Alle Tajwid-Regeln“ folgt direkt darunter.
  */
 export default function TajwidLeiste({
   schluessel,
@@ -172,7 +176,8 @@ export default function TajwidLeiste({
 
   return (
     <dialog ref={dialog} aria-labelledby={titelId} className="regel-leiste">
-      <div className="flex h-full flex-col gap-6 overflow-y-auto p-6">
+      <div className="flex h-full flex-col gap-6 overflow-y-auto p-6 max-md:pt-2">
+        <span aria-hidden className="blatt-griff -mb-4" />
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col gap-1">
             <span className="text-16 font-bold text-gruen-800">{l.kennung}</span>
@@ -191,9 +196,19 @@ export default function TajwidLeiste({
         </div>
 
         {regel ? (
-          <p className="flex flex-wrap items-baseline gap-x-2 text-16">
+          <p className="flex flex-wrap items-center gap-x-2 text-16">
             <span className="font-bold">{l.familie}:</span>
-            <span className={`tj tj-${regel.familie} muster-probe`}>{texte.familien[regel.familie]}</span>
+            {/* Familie als Link zur Tajwid-Seite: Akzentgrün ohne Unterstreichung, Farbfeld davor (Sichtabnahme T-3) */}
+            <a
+              href={`${pfadTajwid}#familie-${regel.familie}`}
+              className="inline-flex min-h-12 items-center gap-2 font-bold text-gruen-800 no-underline hover:text-gruen-950 hover:underline"
+            >
+              <span aria-hidden className={`tj tj-${regel.familie} tj-probe`}>
+                {FARBFELD}
+              </span>
+              {texte.familien[regel.familie]}
+              <ChevronRight aria-hidden className="size-5" />
+            </a>
             <span className="text-tinte-2">({texte.muster[regel.familie]})</span>
           </p>
         ) : null}
@@ -215,6 +230,7 @@ export default function TajwidLeiste({
               ),
             )}
           </p>
+          {regel ? <p className="text-16 text-tinte-2">{fuelle(l.markiert, { name })}</p> : null}
         </section>
 
         <section className="flex flex-col gap-2">
@@ -236,8 +252,9 @@ export default function TajwidLeiste({
           </section>
         ) : null}
 
-        <a href={`${pfadTajwid}#regel-${schluessel}`} className="mt-auto self-start text-16 font-bold">
+        <a href={`${pfadTajwid}#regel-${schluessel}`} className="inline-flex min-h-12 items-center gap-2 self-start text-16 font-bold">
           {l.alleRegeln}
+          <ArrowRight aria-hidden className="size-5" />
         </a>
       </div>
     </dialog>

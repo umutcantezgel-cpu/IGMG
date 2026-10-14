@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { morphStil } from '@/components/website/morph';
 import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
-import { QuellenFuss, Quellenzeile } from '@/components/website/quran/Quellenzeile';
+import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
 import { QuranWeiter } from '@/components/website/quran/QuranWeiter';
 import { SurenKopf } from '@/components/website/quran/SurenKopf';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
@@ -70,6 +70,7 @@ async function Sure({ params }: { params: Promise<{ locale: string; sure: string
       seite="quran"
       sprachZiel={{ pathname: '/quran/[sure]', params: { sure: String(nr) } }}
       pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: sure.umschrift }]}
+      kompakteLeiste
     >
       <SurenKopf
         kennung={t('sureNr', { nr })}
@@ -86,7 +87,6 @@ async function Sure({ params }: { params: Promise<{ locale: string; sure: string
             <span>{t('versAnzahl', { anzahl: sure.verseAnzahl })}</span>
           </>
         }
-        quelle={<Quellenzeile quelle={quelle} />}
       />
       <LeserRahmen sure={nr} cuz={null} ausgaben={ausgaben} ausgabe={ausgabe}>
         <article aria-labelledby="sure-titel" className="rounded-lg border border-linie bg-weiss px-4 py-4 shadow-s1 md:px-10 md:py-8">
@@ -103,7 +103,7 @@ async function Sure({ params }: { params: Promise<{ locale: string; sure: string
             dangerouslySetInnerHTML={{ __html: versListeHtml(nr, sure.verse, false, satzLaenge(sure.verse) <= VOLLSATZ_GRENZE) }}
           />
         </article>
-        <QuellenFuss ausgabe={ausgabe} />
+        <QuellenFuss ausgabe={ausgabe} quelle={quelle} />
         <QuranWeiter
           label={t('sure.blaettern')}
           vorher={

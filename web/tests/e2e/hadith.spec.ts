@@ -131,6 +131,42 @@ test('/tr/hadis/buhari/2: türkische Buchseite oder 404', async ({ page }) => {
   }
 });
 
+// Sichtabnahme Z-04, Paket 1 (H-1…H-4): Kopf, kompakte Leiste, mitlaufende Spalte und „Nach oben“
+test('Buchseite: Rückweg, Kennung, Titelhinweis und Achtstern mit Titel; Leiste bis lg; Nach oben nach dem Scrollen', async ({
+  page,
+}, info) => {
+  if ((await buecher(page, 'de')) === 0) test.skip(true, 'Gesamtsammlung nicht freigeschaltet');
+  await page.goto('/hadith/bukhari/2');
+  const h1 = page.getByRole('heading', { level: 1 });
+  const oben = async (l: ReturnType<typeof page.locator>) => (await l.boundingBox())?.y ?? 0;
+  const rueckweg = page.getByRole('link', { name: T.de.buch.zurueck });
+  const hinweis = page.getByText(T.de.buch.titelHinweis, { exact: true });
+  expect(await oben(rueckweg)).toBeLessThan(await oben(hinweis));
+  expect(await oben(hinweis)).toBeLessThan(await oben(h1));
+  // Achtstern und Titel in einer Zeile (die Marke steht links neben dem Titel, nicht darüber)
+  const zeile = await h1.evaluate((e) => {
+    const stern = e.parentElement?.querySelector('[data-morph], span[aria-hidden]')?.getBoundingClientRect();
+    const t = e.getBoundingClientRect();
+    return stern ? { mitte: Math.abs(stern.top + stern.height / 2 - (t.top + t.height / 2)), links: stern.right <= t.left } : null;
+  });
+  expect(zeile?.links).toBe(true);
+  expect(zeile?.mitte ?? 99).toBeLessThan(24);
+  if (info.project.name === 'telefon') {
+    await expect(
+      page.getByText(new RegExp(`^${T.de.buch.leisteNummern.replace('{von}', '\\d+').replace('{bis}', '\\d+')}$`)).first(),
+    ).toBeVisible();
+    await expect(page.getByRole('link', { name: T.de.buch.naechstes, exact: true })).toHaveAttribute('href', /\/hadith\/bukhari\/3$/);
+  } else {
+    // H-1: Die Begleitspalte läuft mit
+    await page.evaluate(() => window.scrollTo({ top: 5000, behavior: 'instant' }));
+    const spalte = page.getByRole('complementary', { name: T.de.buch.dieserBand });
+    await expect(spalte).toBeInViewport();
+  }
+  await page.evaluate(() => window.scrollTo({ top: 5000, behavior: 'instant' }));
+  await expect(page.getByRole('link', { name: T.de.buch.nachOben })).toBeVisible();
+  await ohneBefund(page);
+});
+
 test('Suche: Filter „Hadith“ nur mit freigeschalteter Sammlung; Nummernsuche führt zum Anker', async ({ page }) => {
   const sichtbar = (await buecher(page, 'de')) > 0;
   await page.goto(`${PFAD.de.suche}?q=Gebet`);

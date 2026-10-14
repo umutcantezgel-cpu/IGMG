@@ -18,7 +18,8 @@ const symbol = 'size-6 stroke-weiss';
 
 /**
  * Lern-Hub /lernen (Erzählansicht, B-24): der große Lernweg Elifbe → Tajwid → Koran → Hifz → Kurse. Kurze Erklärtexte
- * ohne religiöse Aussagen; Hifz ohne eigene Seite (Platzhalter bis zum Angebot der Gemeinde). Vollständig statisch.
+ * ohne religiöse Aussagen; Hifz ohne eigene Seite (Plakette „Folgt bald“ bis zum Angebot der Gemeinde). Vollständig
+ * statisch.
  */
 export default async function LernenSeite() {
   const t = await getTranslations('lernen');
@@ -53,7 +54,8 @@ export default async function LernenSeite() {
       kennung: station(4),
       titel: t('hifzTitel'),
       text: t('hifzText'),
-      hinweis: t('hifzHinweis'),
+      // Noch ohne eigenes Angebot: Plakette in der Fußzeile wie die Links der anderen Stationen (Sichtabnahme L-1)
+      plakette: t('bald'),
       zeichen: <BookHeart aria-hidden className={symbol} />,
     },
     {
