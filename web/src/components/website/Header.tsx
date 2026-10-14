@@ -1,11 +1,13 @@
-import { Search, User } from 'lucide-react';
+import { House, Search, User } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 import { Link } from '@/i18n/link';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { entscheide } from '@/lib/funktionen';
+import { KontoMenue } from './kopf/KontoMenue';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
 import { Sprachwahl, type SprachEintrag } from './kopf/Sprachwahl';
@@ -13,15 +15,42 @@ import { ladeKopfMenue } from '@/server/queries/menues';
 import { baueMenues, menuesAusDb, sprachAdresse, type Bereich, type SprachZiel } from './navigation';
 
 /**
+ * Angemeldetes Konto für den Kopf der Konto-Seiten (Sichtabnahme X-1). Nur `KontoHuelle` (dynamische Konto-Seiten)
+ * übergibt es; öffentliche Seiten rendern den Kopf ohne und bleiben statisch, ohne Sitzung (K-01).
+ */
+export type KopfKonto = {
+  initiale: string;
+  vorname: string;
+  /**
+   * Abmelden als Formular (Server Action, Zeilenform), gebaut von der Konto-Hülle: So hängt der Kopf öffentlicher Seiten
+   * nie an der Aktion und ihren Abhängigkeiten (Auth, Datenbank).
+   */
+  abmelden: ReactNode;
+};
+
+/**
  * Kopfzeile nach design/Header.dc.html (02.1): Logo, Hauptnavigation mit Untermenüs (ab 1240 px),
  * Sprachumschalter, „Anmelden“, darunter Menü-Button mit Schublade.
  * Öffentlich ohne Anmeldezustand (K-01: keine Cookies auf öffentlichen Seiten).
  * „Anmelden“ führt zur Konto-Anmeldung (ADR 0026), solange die Funktion `konten` an ist – sonst wie bisher zur
  * Verwaltung (ADR 0016). Der Kopf ist statisch: Entschieden wird zur Bauzeit allein aus der Umgebung (ADR 0035).
+ * Mit `konto` (nur Konto-Seiten) steht statt „Anmelden“ die Kontoschaltfläche mit „Mein Bereich“ und „Abmelden“ –
+ * am Desktop als Aufklapp-Menü, im Telefonmenü als Kontokarte.
  */
-export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; aktuell: string; sprachZiel: SprachZiel }) {
+export async function Header({
+  aktiv,
+  aktuell,
+  sprachZiel,
+  konto,
+}: {
+  aktiv: Bereich;
+  aktuell: string;
+  sprachZiel: SprachZiel;
+  konto?: KopfKonto;
+}) {
   const sprache = (await getLocale()) as Locale;
   const anmeldenHref = entscheide('konten', process.env, null) ? pfadFuer('/anmelden', sprache) : '/verwaltung/anmelden';
+  const meinBereichHref = pfadFuer('/mein-bereich', sprache);
   const t = await getTranslations('kopf');
   const ts = await getTranslations('sprachwahl');
   const tsu = await getTranslations('suche');
@@ -77,20 +106,64 @@ export async function Header({ aktiv, aktuell, sprachZiel }: { aktiv: Bereich; a
               texte={{ aendern: ts('aendern'), titel: ts('titel'), titelZweit: ts('titelZweit'), weitere: ts('weitere') }}
             />
           </div>
-          <NextLink
-            href={anmeldenHref}
-            prefetch={false}
-            className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 menu:inline-flex"
-          >
-            <User aria-hidden className="size-5" />
-            <span>{t('anmelden')}</span>
-          </NextLink>
+          {konto ? (
+            <div className="hidden menu:block">
+              <KontoMenue initiale={konto.initiale} vorname={konto.vorname} label={t('kontoMenue')}>
+                <div className="flex items-center gap-3 border-b border-linie px-3 pt-2 pb-3">
+                  <span
+                    aria-hidden
+                    className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-display text-20 leading-none text-weiss"
+                  >
+                    {konto.initiale}
+                  </span>
+                  <span className="flex min-w-0 flex-col">
+                    <span className="text-16 text-tinte-2">{t('angemeldetAls')}</span>
+                    <span className="truncate text-18 font-bold text-tinte">{konto.vorname}</span>
+                  </span>
+                </div>
+                <ul className="flex flex-col gap-1 pt-2">
+                  <li>
+                    <NextLink
+                      href={meinBereichHref}
+                      prefetch={false}
+                      className="flex min-h-12 items-center gap-3 rounded-md px-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-sand hover:text-tinte"
+                    >
+                      <House aria-hidden className="size-5 shrink-0" />
+                      {t('meinBereich')}
+                    </NextLink>
+                  </li>
+                  <li>{konto.abmelden}</li>
+                </ul>
+              </KontoMenue>
+            </div>
+          ) : (
+            <NextLink
+              href={anmeldenHref}
+              prefetch={false}
+              className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 menu:inline-flex"
+            >
+              <User aria-hidden className="size-5" />
+              <span>{t('anmelden')}</span>
+            </NextLink>
+          )}
           <MobilMenue
             menues={menues}
             startHref={pfadFuer('/', sprache)}
             gebetszeitenHref={pfadFuer('/gebetszeiten', sprache)}
             sucheHref={pfadFuer('/suche', sprache)}
             anmeldenHref={anmeldenHref}
+            konto={
+              konto
+                ? {
+                    initiale: konto.initiale,
+                    vorname: konto.vorname,
+                    meinBereichHref,
+                    angemeldetAls: t('angemeldetAls'),
+                    meinBereich: t('meinBereich'),
+                    abmelden: konto.abmelden,
+                  }
+                : undefined
+            }
             aktiv={aktiv}
             aktuell={aktuell}
             sprache={sprache}

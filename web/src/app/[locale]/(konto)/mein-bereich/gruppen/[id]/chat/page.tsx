@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 type Uebersetzer = Awaited<ReturnType<typeof getTranslations>>;
 
 /** Texte der Chat-Insel (kein next-intl im Browser): Kinder in Du-Form, Erwachsene in Sie-Form (`chatFenster.sie`). */
-function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean): ChatTexte {
+function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean, chatVon: string): ChatTexte {
   const w = (s: string) => (sie && t.has(`chatFenster.sie.${s}`) ? t(`chatFenster.sie.${s}`) : t(`chatFenster.${s}`));
   const gruende = [
     'keinRecht',
@@ -58,12 +58,15 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean): ChatTexte {
     leer: w('leer'),
     laedt: w('laedt'),
     eingabe: w('eingabe'),
+    eingabeGesperrt: w('eingabeGesperrt'),
+    wiederAb: t('chatFenster.wiederAb', { von: chatVon }),
     senden: w('senden'),
     zeichen: t.raw('chatFenster.zeichen') as string,
     entfernt: w('entfernt'),
     lehrkraft: w('lehrkraft'),
     du: w('du'),
     melden: w('melden'),
+    meldenAria: t.raw('chatFenster.meldenAria') as string,
     meldenTitel: w('meldenTitel'),
     meldenGrund: w('meldenGrund'),
     gruende: {
@@ -196,7 +199,7 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
       ) : (
         <ChatFenster
           kanalId={kanal.kanalId}
-          texte={chatTexte(t, wahl, sie)}
+          texte={chatTexte(t, wahl, sie, g.chatVon)}
           istLeitung={leitung}
           zeitformat={localeFuer(sprache)}
           echtzeit={echtzeitAusUmgebung() !== null && (await funktionAn('echtzeit'))}

@@ -38,7 +38,7 @@
         "fehlenTitel": "Kind fehlt",
         "fehlenText": "Melden Sie Ihr Kind ab, wenn es nicht kommen kann. Die Lehrkraft sieht die Abmeldung, wenn sie die Anwesenheit erfasst.",
         "fehlen": {
-          "datum": "Tag",
+          "datum": "Termin",
           "grund": "Grund",
           "gruende": {
             "krank": "krank",
@@ -48,9 +48,11 @@
           },
           "senden": "Abmelden",
           "gesendet": "Danke, die Abmeldung ist eingegangen.",
-          "fehler": "Das hat nicht geklappt. Bitte wählen Sie einen Tag zwischen heute und in 60 Tagen.",
+          "fehler": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal.",
           "gemeldetTitel": "Bereits abgemeldet",
-          "gemeldet": "{datum} – {grund}"
+          "gemeldet": "{datum} – {grund}",
+          "schonGemeldet": "schon abgemeldet",
+          "keinTermin": "Zurzeit gibt es keinen Termin, für den Sie Ihr Kind abmelden können."
         },
         "anwesenheitTitel": "Anwesenheit",
         "anwesenheitLeer": "Es ist noch keine Anwesenheit erfasst.",
@@ -169,7 +171,19 @@
           "eigene": "{name} ist 16 oder älter. Über Gruppenchat und Benachrichtigungen entscheidet Ihr Kind seit dem {datum} selbst; Ihre Einwilligung zählt dafür nicht mehr.",
           "nurKind": "Darüber entscheidet Ihr Kind jetzt selbst."
         },
-        "wortlaut": "Wortlaut der Einwilligung"
+        "wortlaut": "Wortlaut der Einwilligung",
+        "sprung": {
+          "label": "Auf dieser Seite",
+          "termin": "Nächster Termin",
+          "fehlen": "Kind fehlt",
+          "anwesenheit": "Anwesenheit",
+          "fortschritt": "Fortschritt",
+          "einwilligungen": "Einwilligungen",
+          "zugang": "Zugang",
+          "kanal": "Elternkanal"
+        },
+        "fortschrittJetzt": "Aktuelle Stufe",
+        "wortlautUndWiderruf": "Wortlaut und Widerruf"
       }
     },
     "lernweg": {
@@ -270,7 +284,7 @@
         "fehlenTitel": "Çocuğum gelemeyecek",
         "fehlenText": "Çocuğunuz derse gelemeyecekse burada bildirin. Öğretmen, yoklama alırken bildiriminizi görür.",
         "fehlen": {
-          "datum": "Gün",
+          "datum": "Ders",
           "grund": "Neden",
           "gruende": {
             "krank": "hasta",
@@ -280,9 +294,11 @@
           },
           "senden": "Bildir",
           "gesendet": "Teşekkürler, bildiriminiz alındı.",
-          "fehler": "Bu işlem olmadı. Lütfen bugünden itibaren 60 gün içinde bir gün seçin.",
+          "fehler": "Bu işlem olmadı. Lütfen tekrar deneyin.",
           "gemeldetTitel": "Bildirilen günler",
-          "gemeldet": "{datum} – {grund}"
+          "gemeldet": "{datum} – {grund}",
+          "schonGemeldet": "zaten bildirildi",
+          "keinTermin": "Şu an çocuğunuz için devamsızlık bildirebileceğiniz bir ders yok."
         },
         "anwesenheitTitel": "Devam durumu",
         "anwesenheitLeer": "Henüz yoklama kaydı yok.",
@@ -401,7 +417,19 @@
           "eigene": "{name} 16 yaşında veya daha büyük. Grup sohbeti ve bildirimler hakkında çocuğunuz {datum} tarihinden beri kendisi karar veriyor; bunun için sizin onayınız artık geçerli değil.",
           "nurKind": "Buna artık çocuğunuz kendisi karar veriyor."
         },
-        "wortlaut": "Onay metni"
+        "wortlaut": "Onay metni",
+        "sprung": {
+          "label": "Bu sayfada",
+          "termin": "Sıradaki ders",
+          "fehlen": "Devamsızlık bildir",
+          "anwesenheit": "Devam durumu",
+          "fortschritt": "İlerleme",
+          "einwilligungen": "Onaylar",
+          "zugang": "Erişim",
+          "kanal": "Veli kanalı"
+        },
+        "fortschrittJetzt": "Şu anki seviye",
+        "wortlautUndWiderruf": "Onay metni ve geri alma"
       }
     },
     "lernweg": {
@@ -502,7 +530,7 @@
         "fehlenTitel": "Child absent",
         "fehlenText": "Let us know if your child cannot come. The teacher sees your note when taking attendance.",
         "fehlen": {
-          "datum": "Day",
+          "datum": "Lesson",
           "grund": "Reason",
           "gruende": {
             "krank": "ill",
@@ -512,9 +540,11 @@
           },
           "senden": "Report absence",
           "gesendet": "Thank you, we have received your note.",
-          "fehler": "That did not work. Please choose a day between today and 60 days from now.",
+          "fehler": "That did not work. Please try again.",
           "gemeldetTitel": "Already reported",
-          "gemeldet": "{datum} – {grund}"
+          "gemeldet": "{datum} – {grund}",
+          "schonGemeldet": "already reported",
+          "keinTermin": "There is currently no lesson you can report your child absent for."
         },
         "anwesenheitTitel": "Attendance",
         "anwesenheitLeer": "No attendance has been recorded yet.",
@@ -633,7 +663,19 @@
           "eigene": "{name} is 16 or older. Since {datum} your child decides about the group chat and notifications themselves; your consent no longer counts for this.",
           "nurKind": "Your child now decides this themselves."
         },
-        "wortlaut": "Wording of the consent"
+        "wortlaut": "Wording of the consent",
+        "sprung": {
+          "label": "On this page",
+          "termin": "Next lesson",
+          "fehlen": "Child absent",
+          "anwesenheit": "Attendance",
+          "fortschritt": "Progress",
+          "einwilligungen": "Consents",
+          "zugang": "Access",
+          "kanal": "Parents' channel"
+        },
+        "fortschrittJetzt": "Current level",
+        "wortlautUndWiderruf": "Wording and withdrawal"
       }
     },
     "lernweg": {
