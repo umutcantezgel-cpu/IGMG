@@ -2,9 +2,10 @@
 
 import { BookOpenText, CircleCheck, Clock, FileText, Save, Send } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { useActionState, useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { Fragment, useActionState, useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
+import { Klappe } from '@/components/verwaltung/Klappe';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { MedienWahlDialog, type MedienWahlHandle } from '@/components/verwaltung/medienwahl/MedienWahlDialog';
 import { slugAusTitel } from '@/lib/cms/slugs';
@@ -52,7 +53,7 @@ const FELDER = Object.keys({
 
 function Abschnitt({ nr, titel, hinweis, kinder }: { nr: number; titel: string; hinweis?: string; kinder: ReactNode }) {
   return (
-    <section aria-labelledby={`abschnitt-${nr}`} className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6">
+    <section aria-labelledby={`abschnitt-${nr}`} className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6">
       <div className="flex flex-col gap-1">
         <h2 id={`abschnitt-${nr}`} className="flex items-center gap-3 font-display text-24 font-semibold">
           <span
@@ -68,6 +69,47 @@ function Abschnitt({ nr, titel, hinweis, kinder }: { nr: number; titel: string; 
       {kinder}
     </section>
   );
+}
+
+/** Adresse mit Umbruchstellen nur nach „/“ und „-“ (X-5): nie mitten in einem Wort. */
+function mitUmbruchstellen(adresse: string): ReactNode {
+  return adresse.split(/(?<=[/-])/).map((teil, i) => (
+    <Fragment key={i}>
+      {i > 0 ? <wbr /> : null}
+      {teil}
+    </Fragment>
+  ));
+}
+
+/**
+ * Sichtbarkeit der Speicherleiste (SE-3): Im ersten Bildschirm liegt sie nicht über den Feldern; sie gleitet herein,
+ * sobald man scrollt, an ihrem Platz am Formularende angekommen ist oder sie den Tastaturfokus hat. Solange die Seite
+ * den Editor zeigt, hält `scroll-padding-bottom` fokussierte Felder oberhalb der Leiste (WCAG 2.4.11).
+ */
+function useSpeicherleiste() {
+  const [gescrollt, setGescrollt] = useState(false);
+  const [amEnde, setAmEnde] = useState(false);
+  // Marke direkt unter der Leiste (Callback-Ref): sichtbar = die Leiste steht an ihrem Platz am Formularende
+  const [ende, setEnde] = useState<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const pruefe = () => setGescrollt(window.scrollY > 96);
+    pruefe();
+    window.addEventListener('scroll', pruefe, { passive: true });
+    const html = document.documentElement;
+    const vorher = html.style.scrollPaddingBottom;
+    html.style.scrollPaddingBottom = '6rem';
+    return () => {
+      window.removeEventListener('scroll', pruefe);
+      html.style.scrollPaddingBottom = vorher;
+    };
+  }, []);
+  useEffect(() => {
+    if (!ende) return;
+    const beobachter = new IntersectionObserver(([e]) => setAmEnde(e.isIntersecting));
+    beobachter.observe(ende);
+    return () => beobachter.disconnect();
+  }, [ende]);
+  return [gescrollt || amEnde, setEnde] as const;
 }
 
 /** Pfadteil eines Fehlerschlüssels → Beschriftungsschlüssel unter `baustein.feld` (für die Fehlerliste). */
@@ -122,6 +164,7 @@ export function SeitenFormular({
   const [w, setW] = useState<SeitenWerte>(startwerte);
   const [bloecke, setBloecke] = useState<Block[]>(startBloecke);
   const meldungRef = useRef<HTMLDivElement>(null);
+  const [leisteSichtbar, leisteEnde] = useSpeicherleiste();
   const basis = useId();
   const id = useCallback((schluessel: string) => `${basis}-${schluessel.replace(/[^a-zA-Z0-9_-]/g, '-')}`, [basis]);
   const medienWahl = useRef<MedienWahlHandle>(null);
@@ -137,6 +180,10 @@ export function SeitenFormular({
   const pflicht = tv('pflichtfeld');
   const religioes = religioeseVerweise(bloecke).length > 0;
   const slugVorschlag = w.slugDe || slugAusTitel(w.titelDe || '');
+  // Übersetzt ist eine Sprache, wenn Titel und (falls vorhanden) Kurzbeschreibung eine Fassung haben
+  const grunddatenUebersetzt = (['Tr', 'En'] as const).filter(
+    (s) => w[`titel${s}`].trim() && (!w.beschreibungDe.trim() || w[`beschreibung${s}`].trim()),
+  ).length;
 
   const textFeld = (
     feld: keyof SeitenWerte,
@@ -178,7 +225,8 @@ export function SeitenFormular({
           maxLength={300}
           value={w[feld]}
           onChange={(e) => setze(feld)(e.target.value)}
-          className={cn(eingabe, 'py-2.5')}
+          // Wächst mit dem Inhalt (mindestens zwei Zeilen), damit nichts im Feld verborgen bleibt
+          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5')}
         />
       )}
     />
@@ -281,13 +329,14 @@ export function SeitenFormular({
                   </select>
                 )}
               />
-              <details
-                className="rounded-md border border-linie bg-papier px-4 py-3 md:col-span-2"
+              <Klappe
+                titel={tf('abschnittUebersetzungen')}
+                stand={tb('uebersetzungStand', { anzahl: grunddatenUebersetzt })}
+                className="rounded-md border border-linie bg-papier px-3 py-1 sm:px-4 md:col-span-2"
                 open={fehlerListe.some((k) => /^(titel|beschreibung)(Tr|En)$/.test(k)) || undefined}
               >
-                <summary className="flex min-h-12 cursor-pointer items-center font-bold">{tf('abschnittUebersetzungen')}</summary>
-                <p className="mt-1 text-16 text-tinte-2">{tf('uebersetzungenHinweis')}</p>
-                <div className="mt-4 grid gap-6 lg:grid-cols-2">
+                <p className="text-16 text-tinte-2">{tf('uebersetzungenHinweis')}</p>
+                <div className="mt-4 mb-3 grid gap-6 lg:grid-cols-2">
                   {(['Tr', 'En'] as const).map((s) => (
                     <fieldset key={s} className="flex min-w-0 flex-col gap-4">
                       <legend className="mb-2 font-bold">{tf(`sprache.${s.toLowerCase()}`)}</legend>
@@ -305,7 +354,7 @@ export function SeitenFormular({
                     </fieldset>
                   ))}
                 </div>
-              </details>
+              </Klappe>
             </div>
           }
         />
@@ -329,6 +378,7 @@ export function SeitenFormular({
                 feldId={id}
                 fehlerText={(k) => (fehler?.[k] ? t(`fehler.${fehler[k]}`) : undefined)}
                 hatFehler={blockFehler}
+                startZu={modus === 'bearbeiten'}
               />
             </>
           }
@@ -352,8 +402,8 @@ export function SeitenFormular({
                       hinweis: s === 'De' ? tf('slugHinweis') : tf('slugUebersetzungHinweis'),
                       platzhalter: s === 'De' ? slugVorschlag : undefined,
                     })}
-                    <p className="text-16 break-all text-tinte-2">
-                      {tf('slugVorschau')} <span className="font-bold text-tinte">{adresse}</span>
+                    <p className="text-16 break-words text-tinte-2">
+                      {tf('slugVorschau')} <span className="font-bold hyphens-none text-tinte">{mitUmbruchstellen(adresse)}</span>
                     </p>
                   </div>
                 );
@@ -450,13 +500,27 @@ export function SeitenFormular({
 
       {!nurLesen ? <MedienWahlDialog ref={medienWahl} bilder={optionen.bilder} /> : null}
       {!nurLesen ? (
-        <div className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border">
-          <Button type="submit" size="lg" disabled={laeuft}>
-            <Save aria-hidden />
-            {laeuft ? tf('speichert') : modus === 'neu' ? tf('erstellen') : tf('speichern')}
-          </Button>
-          <p className="text-16 text-tinte-2">{tf(`speichernHinweis.${w.status}`)}</p>
-        </div>
+        <>
+          {/* Eine Zeile (SE-3): Knopf und Ziel des Speicherns; auf dem Telefon als Plakette, ab 768 px als Satz */}
+          <div
+            className={cn(
+              'sticky bottom-0 z-(--ebene-kopf) -mx-4 flex items-center gap-3 border-t border-linie bg-papier px-4 py-2 shadow-s2 transition-transform duration-(--dauer-wechsel) ease-(--ease-eintritt) motion-reduce:transition-none md:mx-0 md:rounded-lg md:border md:py-3',
+              !leisteSichtbar && 'translate-y-[calc(100%+1.5rem)] focus-within:translate-y-0',
+            )}
+          >
+            <Button type="submit" disabled={laeuft} className="max-sm:px-5">
+              <Save aria-hidden />
+              {laeuft ? tf('speichert') : modus === 'neu' ? tf('erstellen') : tf('speichern')}
+            </Button>
+            <p className="min-w-0 text-16 text-tinte-2">
+              <span className="max-md:sr-only">{tf(`speichernHinweis.${w.status}`)}</span>
+              <span aria-hidden className="rounded-pill bg-sand px-3 py-1 font-bold whitespace-nowrap text-tinte-2 md:hidden">
+                {t(`status.${w.status}`)}
+              </span>
+            </p>
+          </div>
+          <div ref={leisteEnde} aria-hidden className="-mt-6 h-px" />
+        </>
       ) : null}
     </form>
   );

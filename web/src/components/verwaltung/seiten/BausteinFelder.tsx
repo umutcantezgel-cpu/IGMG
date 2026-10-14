@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import type { BildAuswahl } from '@/components/verwaltung/richtext/typen';
+import { cn } from '@/lib/utils';
 import { ORGANISATION_KUERZEL } from '@/lib/rechte/matrix';
 import type { Block, BlockVon, MehrsprachigText } from '@/lib/validierung/bloecke';
 import { HADITH_SAMMLUNGEN, VERSE_MAX } from '@/lib/validierung/bloecke';
@@ -388,7 +389,8 @@ export function BausteinFelder({ block, sprache, aendern, optionen, bildAuswahl,
               ]}
             />
           ) : null}
-          <div className="grid gap-4 lg:grid-cols-2">
+          {/* So viele Spalten nebeneinander, wie der Baustein hat (SB-2): zwei ab 1024 px, drei ab 1280 px */}
+          <div className={cn('grid gap-4', block.spalten.length === 3 ? 'xl:grid-cols-3' : 'lg:grid-cols-2')}>
             {block.spalten.map((s, i) => (
               <fieldset key={i} className="flex min-w-0 flex-col gap-3 rounded-md border border-linie bg-papier p-4">
                 <legend className="font-bold">{t('spalteNr', { nr: i + 1 })}</legend>

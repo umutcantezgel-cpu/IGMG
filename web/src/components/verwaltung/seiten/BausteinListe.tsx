@@ -29,7 +29,8 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useId, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { BildAuswahl } from '@/components/verwaltung/richtext/typen';
-import { BLOCK_TYPEN, neuerBlock, type Block, type BlockTyp } from '@/lib/validierung/bloecke';
+import { Klappe } from '@/components/verwaltung/Klappe';
+import { BLOCK_TYPEN, neuerBlock, uebersetzungsstand, type Block, type BlockTyp } from '@/lib/validierung/bloecke';
 import { cn } from '@/lib/utils';
 import { BausteinFelder, hatUebersetzbareTexte } from './BausteinFelder';
 import type { EditorOptionen } from './typen';
@@ -56,22 +57,61 @@ export const BLOCK_ICON: Record<BlockTyp, LucideIcon> = {
   hadith: Quote,
 };
 
-/** Kurze Zusammenfassung eines Bausteins für den Kopf der Karte (z. B. der Titel). */
+/** Reiner Text eines Tiptap-Dokuments (für die einzeilige Vorschau), höchstens `max` Zeichen. */
+function textAus(knoten: unknown, max = 160): string {
+  const teile: string[] = [];
+  let laenge = 0;
+  const besuche = (k: unknown) => {
+    if (laenge >= max || !k || typeof k !== 'object') return;
+    const { text, content } = k as { text?: unknown; content?: unknown };
+    if (typeof text === 'string') {
+      teile.push(text);
+      laenge += text.length;
+    }
+    if (Array.isArray(content)) {
+      for (const c of content) {
+        besuche(c);
+        // Absätze und Listenpunkte durch Leerzeichen trennen
+        if (teile.length && !teile[teile.length - 1].endsWith(' ')) teile.push(' ');
+      }
+    }
+  };
+  besuche(knoten);
+  return teile.join('').replace(/\s+/g, ' ').trim().slice(0, max);
+}
+
+/** Einzeilige Vorschau eines Bausteins für den Kopf der Karte (Titel, Anfang des Textes oder die Stelle). */
 function zusammenfassung(b: Block): string {
   switch (b.typ) {
+    case 'text':
+      return textAus(b.inhalt.de);
     case 'aufruf':
       return b.titel.de;
     case 'bild':
-      return b.alt.de;
+      return b.unterschrift.de || b.alt.de;
     case 'download':
       return b.titel.de;
     case 'vers':
       return `${b.sure}:${b.von}${b.bis !== b.von ? `–${b.bis}` : ''}`;
     case 'hadith':
       return b.nummer;
-    case 'galerie':
     case 'faq':
+      return (
+        b.titel.de ||
+        b.eintraege
+          .map((e) => e.frage.de)
+          .filter(Boolean)
+          .join(' · ')
+      );
     case 'spalten':
+      return (
+        b.titel.de ||
+        b.spalten
+          .map((x) => x.titel.de)
+          .filter(Boolean)
+          .join(' · ')
+      );
+    case 'galerie':
     case 'termine':
     case 'nachrichten':
     case 'kontakt':
@@ -80,6 +120,18 @@ function zusammenfassung(b: Block): string {
     default:
       return '';
   }
+}
+
+/**
+ * Wie viele der beiden Übersetzungen (Türkisch, Englisch) sind für den Baustein vollständig? Ohne deutschen Text gibt
+ * es noch nichts zu übersetzen: dann 0 (`uebersetzungsstand` meldet für „keine Texte“ 100 %, ein deutscher Probetitel
+ * ohne Übersetzung macht diesen Fall erkennbar).
+ */
+function fertigeUebersetzungen(b: Block): number {
+  const nurBaustein = uebersetzungsstand({ de: '' }, null, [b]);
+  const mitProbe = uebersetzungsstand({ de: '-' }, null, [b]);
+  if (nurBaustein.tr === 100 && mitProbe.tr === 0) return 0;
+  return (['tr', 'en'] as const).filter((s) => nurBaustein[s] === 100).length;
 }
 
 /** Knöpfe im Kopf eines Bausteins: 48 px, unter 1024 px nur Symbol (Name über aria-label). */
@@ -95,6 +147,7 @@ export function BausteinListe({
   feldId,
   fehlerText,
   hatFehler,
+  startZu = false,
 }: {
   bloecke: Block[];
   setzeBloecke: (f: (alt: Block[]) => Block[]) => void;
@@ -106,11 +159,13 @@ export function BausteinListe({
   fehlerText: (schluessel: string) => string | undefined;
   /** Hat der Baustein (ID) Fehler? Optional nur in Türkisch/Englisch. */
   hatFehler: (id: string, nurUebersetzung?: boolean) => boolean;
+  /** Bestehende Seiten öffnen mit zugeklappten Bausteinen (SB-1); neu hinzugefügte stehen offen. */
+  startZu?: boolean;
 }) {
   const t = useTranslations('verwaltung.seiten.baustein');
   const basis = useId();
   const [auswahlOffen, setAuswahlOffen] = useState(false);
-  const [zu, setZu] = useState<ReadonlySet<string>>(new Set());
+  const [zu, setZu] = useState<ReadonlySet<string>>(() => new Set(startZu ? bloecke.map((b) => b.id) : []));
   const [ansage, setAnsage] = useState('');
   const [entfernt, setEntfernt] = useState<{ block: Block; index: number } | null>(null);
   // Fokusziel nach dem nächsten Zeichnen (Element-ID); in Ereignissen gesetzt, im Effekt gelesen
@@ -177,6 +232,12 @@ export function BausteinListe({
     setFokus({ id: b.id, ziel: 'kopf' });
   }
 
+  const alleZu = anzahl > 0 && bloecke.every((b) => zu.has(b.id));
+  function alleUmschalten() {
+    setZu(alleZu ? new Set() : new Set(bloecke.map((b) => b.id)));
+    setAnsage(t(alleZu ? 'alleAufgeklappt' : 'alleZugeklappt'));
+  }
+
   function umschalten(id: string) {
     setZu((alt) => {
       const neu = new Set(alt);
@@ -191,6 +252,12 @@ export function BausteinListe({
       <p role="status" aria-live="polite" className="sr-only">
         {ansage}
       </p>
+      {anzahl > 1 ? (
+        <Button type="button" variant="ghost" size="sm" className="min-h-12 self-end px-3" aria-expanded={!alleZu} onClick={alleUmschalten}>
+          {alleZu ? <ChevronsUpDown aria-hidden /> : <ChevronsDownUp aria-hidden />}
+          {t(alleZu ? 'alleAufklappen' : 'alleZuklappen')}
+        </Button>
+      ) : null}
       {anzahl === 0 ? (
         <p className="rounded-lg border border-dashed border-rand bg-papier px-5 py-8 text-center text-18 text-tinte-2">{t('keine')}</p>
       ) : (
@@ -210,7 +277,7 @@ export function BausteinListe({
                 className={cn('rounded-lg border bg-weiss shadow-s1', fehler ? 'border-2 border-fehler' : 'border-linie')}
                 aria-labelledby={eid(b.id, 'kopf')}
               >
-                <div className="flex flex-wrap items-center gap-3 border-b border-linie px-4 py-3 md:px-5">
+                <div className={cn('flex flex-wrap items-center gap-3 px-3 py-3 md:px-5', offen && 'border-b border-linie')}>
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
                     <Icon aria-hidden className="size-5" />
                   </span>
@@ -281,7 +348,7 @@ export function BausteinListe({
                     </Button>
                   </div>
                 </div>
-                <div id={koerperId} hidden={!offen} className="flex flex-col gap-4 p-4 md:p-5">
+                <div id={koerperId} hidden={!offen} className="flex flex-col gap-4 p-3 sm:p-4 md:p-5">
                   <BausteinFelder
                     block={b}
                     sprache="de"
@@ -292,8 +359,10 @@ export function BausteinListe({
                     fehler={fe}
                   />
                   {hatUebersetzbareTexte(b) ? (
-                    <details
-                      className="rounded-md border border-linie bg-papier px-4 py-3"
+                    <Klappe
+                      titel={t('uebersetzungen')}
+                      stand={t('uebersetzungStand', { anzahl: fertigeUebersetzungen(b) })}
+                      className="rounded-md border border-linie bg-papier px-3 py-1 sm:px-4"
                       open={uebersetzungZeigen(b.id)}
                       onToggle={(e) => {
                         const auf = e.currentTarget.open;
@@ -305,11 +374,10 @@ export function BausteinListe({
                         });
                       }}
                     >
-                      <summary className="flex min-h-12 cursor-pointer items-center font-bold">{t('uebersetzungen')}</summary>
-                      <p className="mt-1 text-16 text-tinte-2">{t('uebersetzungenHinweis')}</p>
+                      <p className="text-16 text-tinte-2">{t('uebersetzungenHinweis')}</p>
                       {/* Erst beim Öffnen zeichnen: spart zwei Texteditoren je Baustein */}
                       {uebersetzungZeigen(b.id) ? (
-                        <div className="mt-4 grid gap-6 lg:grid-cols-2">
+                        <div className="mt-4 mb-3 grid gap-6 lg:grid-cols-2">
                           {(['tr', 'en'] as const).map((s) => (
                             <fieldset key={s} className="flex min-w-0 flex-col gap-4">
                               <legend className="mb-2 font-bold">{t(`sprache.${s}`)}</legend>
@@ -326,7 +394,7 @@ export function BausteinListe({
                           ))}
                         </div>
                       ) : null}
-                    </details>
+                    </Klappe>
                   ) : null}
                 </div>
               </li>
