@@ -170,15 +170,16 @@ function Sprungleiste({
 }) {
   const kurz = abschnitte.every((a) => `${a.von}–${a.bis}`.length <= 5);
   return (
-    <nav aria-label={titel} className="flex flex-col gap-2">
+    <nav aria-label={titel} className="@container flex flex-col gap-2">
       <h2 className="font-text text-16 leading-snug font-bold tracking-normal text-tinte-2 lg:text-18 lg:text-tinte">{titel}</h2>
-      <ul className={kurz ? 'grid grid-cols-5 gap-2' : 'grid grid-cols-3 gap-2'}>
+      {/* Fünf Pillen erst ab 20rem Breite (Container): darunter und in schmalen Spalten (lg 1024–1130 px) drei – nie zweizeilig */}
+      <ul className={kurz ? 'grid grid-cols-3 gap-2 @xs:grid-cols-5' : 'grid grid-cols-3 gap-2'}>
         {abschnitte.map((a) => (
           <li key={a.anker} className="flex">
             <a
               href={`#${a.anker}`}
               aria-label={linkText(a)}
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-pill border border-linie bg-weiss px-1 text-16 font-bold text-gruen-800 tabular-nums no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-pill border border-linie bg-weiss px-1 text-16 font-bold whitespace-nowrap text-gruen-800 tabular-nums no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
             >
               {a.von}–{a.bis}
             </a>
