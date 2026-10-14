@@ -50,9 +50,8 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean, chatVon: string)
     'zuLang',
     'rate',
   ] as const;
-  const regeln = sie
-    ? (t.raw('chatRegeln.erwachsen.regeln') as Record<string, string>)
-    : (t.raw('chatRegeln.regeln') as Record<string, string>);
+  // Je Regel Stichwort und (einklappbare) Erläuterung, GC-4
+  const regeln = t.raw(sie ? 'chatRegeln.erwachsen.regeln' : 'chatRegeln.regeln') as Record<string, ChatTexte['regeln'][number]>;
   return {
     titel: t(art === 'gruppe' ? 'chatFenster.titelGruppe' : 'chatFenster.titelEltern'),
     leer: w('leer'),
@@ -82,6 +81,7 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean, chatVon: string)
     abbrechen: w('abbrechen'),
     gemeldet: w('gemeldet'),
     hilfe: w('hilfe'),
+    hilfeNummer: w('hilfeNummer'),
     grund: Object.fromEntries(gruende.map((g) => [g, w(`grund.${g}`)])),
     fehler: w('fehler'),
     regelnTitel: w('regelnTitel'),

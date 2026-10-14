@@ -1,7 +1,8 @@
 'use client';
 
-import { CirclePause, Clock, Flag, Lock } from 'lucide-react';
+import { ChevronDown, CirclePause, Clock, Flag, Lock, Phone } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
+import { Achtstern } from '@/components/website/Icons';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
 import type { SchreibGrund } from '@/lib/chat/regeln';
 import { klassen } from '@/lib/klassen';
@@ -41,11 +42,15 @@ export type ChatTexte = {
   meldenSenden: string;
   abbrechen: string;
   gemeldet: string;
+  /** Hilfehinweis ohne Nummer (GC-5); die Nummer folgt als Anruf-Link */
   hilfe: string;
+  /** „116 111“, für Erwachsene das Elterntelefon „0800 111 0 550“ – das Ziel `tel:` entsteht aus den Ziffern */
+  hilfeNummer: string;
   grund: Partial<Record<SchreibGrund | 'leer' | 'zuLang' | 'rate', string>>;
   fehler: string;
   regelnTitel: string;
-  regeln: string[];
+  /** Je Regel das Stichwort (immer sichtbar) und die Erläuterung (einklappbar); zusammen ergeben sie den Wortlaut der Regel */
+  regeln: { stichwort: string; text: string }[];
   regelnBestaetigen: string;
   moderation: { entfernen: string; stumm: string; pausieren: string; fortsetzen: string; begruendung: string };
 };
@@ -324,14 +329,10 @@ export function ChatFenster({
 
       <div className="flex flex-col gap-2 border-t border-linie px-4 py-3 md:px-6">
         {z.schreiben === 'regelnFehlen' ? (
-          <div className="flex flex-col gap-3 rounded-md bg-papier p-4">
+          <div className="flex flex-col gap-2 rounded-md bg-papier p-4 max-sm:-mx-4 max-sm:rounded-none">
             <h3 className="text-20">{texte.regelnTitel}</h3>
-            <ul className="list-disc ps-6 text-18">
-              {texte.regeln.map((r) => (
-                <li key={r}>{r}</li>
-              ))}
-            </ul>
-            <p className="text-16 text-tinte-2">{texte.hilfe}</p>
+            <Regeln regeln={texte.regeln} />
+            <Hilfe text={texte.hilfe} nummer={texte.hilfeNummer} className="max-w-text" />
             <button
               type="button"
               onClick={() => void regelnOk()}
@@ -363,9 +364,7 @@ export function ChatFenster({
               }}
               disabled={gesperrt}
               rows={2}
-              placeholder={
-                z.schreiben === 'regelnFehlen' ? texte.eingabeRegeln : gesperrt ? texte.eingabeGesperrt : texte.eingabe
-              }
+              placeholder={z.schreiben === 'regelnFehlen' ? texte.eingabeRegeln : gesperrt ? texte.eingabeGesperrt : texte.eingabe}
               aria-describedby={gesperrt ? undefined : 'chat-zeichen'}
               className="min-h-12 w-full resize-y rounded-md border-2 border-rand bg-weiss px-3 py-2 text-18 disabled:cursor-not-allowed disabled:resize-none disabled:border-dashed disabled:bg-sand disabled:text-tinte-2 disabled:placeholder:text-tinte-2"
             />
@@ -467,7 +466,7 @@ function MeldeDialog({
             className="rounded-md border-2 border-rand px-3 py-2"
           />
         </label>
-        <p className="text-16 text-tinte-2">{texte.hilfe}</p>
+        <Hilfe text={texte.hilfe} nummer={texte.hilfeNummer} />
         <div className="flex flex-wrap gap-3">
           <button type="submit" className="min-h-12 rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800">
             {texte.meldenSenden}
@@ -482,6 +481,53 @@ function MeldeDialog({
         </div>
       </form>
     </dialog>
+  );
+}
+
+/**
+ * Chat-Regeln kurz (GC-4): je Regel das Stichwort fett mit Achtstern als Aufzählungszeichen, die Erläuterung klappt auf
+ * (`details`, ohne JavaScript). Der Wortlaut bleibt unverändert: Stichwort und Erläuterung ergeben zusammen die Regel
+ * (lange erste Sätze sind am Satzglied geteilt, damit die Stichworte kurz bleiben – Regelblock bei 390 px ≤ 600 px).
+ */
+function Regeln({ regeln }: { regeln: ChatTexte['regeln'] }) {
+  return (
+    <ul className="flex max-w-text flex-col text-16">
+      {regeln.map((r) => (
+        <li key={r.stichwort} data-regel>
+          <details className="group">
+            <summary className="flex min-h-10 cursor-pointer list-none items-start gap-2 py-2 font-bold text-tinte hover:text-gruen-800">
+              <Achtstern size={16} className="mt-1 shrink-0 text-gruen-700" />
+              <span className="min-w-0 flex-1">{r.stichwort}</span>
+              <ChevronDown
+                aria-hidden
+                className="mt-0.5 size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-wechsel) group-open:rotate-180 motion-reduce:transition-none"
+              />
+            </summary>
+            <p className="ps-6 pb-2 text-tinte-2">{r.text}</p>
+          </details>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * Hilfehinweis (GC-5) über „Ich habe die Regeln gelesen“ und im Melde-Dialog: Text in Zweitfarbe, die Nummer fett in
+ * Grundtextfarbe als Anruf-Link mit Telefonsymbol (Ziel mindestens 44 px hoch).
+ */
+function Hilfe({ text, nummer, className }: { text: string; nummer: string; className?: string }) {
+  return (
+    <p role="note" className={klassen('rounded-md border border-linie bg-weiss px-3 py-1 text-16 text-pretty text-tinte-2', className)}>
+      {/* Fließtext mit dem Link am Ende: Die Nummer folgt dem Text in derselben Zeile, solange sie passt */}
+      {text}{' '}
+      <a
+        href={`tel:${nummer.replace(/[^\d+]/g, '')}`}
+        className="inline-flex min-h-11 items-center gap-2 align-middle text-18 font-bold whitespace-nowrap text-tinte underline decoration-1 underline-offset-4 hover:text-tinte hover:decoration-2"
+      >
+        <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
+        {nummer}
+      </a>
+    </p>
   );
 }
 
