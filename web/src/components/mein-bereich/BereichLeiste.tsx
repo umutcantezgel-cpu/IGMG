@@ -2,7 +2,10 @@
 
 import { type ReactNode, useEffect, useRef } from 'react';
 
-/** Breite des Randverlaufs; ein Eintrag gilt erst als ganz sichtbar, wenn er nicht darunter liegt. */
+/**
+ * Breite des Randverlaufs (3rem); ein Eintrag gilt erst als ganz sichtbar, wenn er nicht darunter liegt. Der Scroll-Snap
+ * hält links denselben Abstand (`scroll-px-12`), damit ein eingerasteter Eintrag nie im Verlauf steht.
+ */
 const VERLAUF = 48;
 
 /**
@@ -43,7 +46,7 @@ export function BereichLeiste({ label, children }: { label: string; children: Re
     <nav
       ref={nav}
       aria-label={label}
-      className="relative -mx-4 snap-x snap-mandatory scroll-px-4 overflow-x-auto px-4 data-links:[mask-image:linear-gradient(to_right,transparent,black_3rem)] data-rechts:[mask-image:linear-gradient(to_left,transparent,black_3rem)] data-links:data-rechts:[mask-image:linear-gradient(to_right,transparent,black_3rem,black_calc(100%-3rem),transparent)] lg:mx-0 lg:snap-none lg:overflow-visible lg:px-0"
+      className="relative -mx-4 snap-x snap-mandatory scroll-px-12 overflow-x-auto px-4 data-links:[mask-image:linear-gradient(to_right,transparent,black_3rem)] data-rechts:[mask-image:linear-gradient(to_left,transparent,black_3rem)] data-links:data-rechts:[mask-image:linear-gradient(to_right,transparent,black_3rem,black_calc(100%-3rem),transparent)] lg:mx-0 lg:snap-none lg:overflow-visible lg:px-0"
     >
       {children}
     </nav>

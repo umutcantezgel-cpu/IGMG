@@ -94,7 +94,7 @@ export function ChatFenster({
   /** Verweis auf den jüngsten Abruf, damit der Zeitgeber sich selbst neu planen kann. */
   const naechsterAbruf = useRef<() => void>(() => undefined);
   const zeitgeber = useRef<number | undefined>(undefined);
-  const liste = useRef<HTMLOListElement>(null);
+  const liste = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const uhr = new Intl.DateTimeFormat(zeitformat, { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
 
@@ -245,66 +245,69 @@ export function ChatFenster({
         ) : null}
       </header>
 
-      <ol
+      {/* Verlauf: role="log" am scrollenden Rahmen, darin eine echte Liste (ein <ol role="log"> verliert die Listensemantik) */}
+      <div
         ref={liste}
         role="log"
         aria-live="polite"
         aria-relevant="additions"
-        className="flex max-h-(--hoehe-chat) min-h-64 flex-col gap-3 overflow-y-auto px-4 py-4 md:px-6"
+        className="relative max-h-(--hoehe-chat) min-h-64 overflow-y-auto px-4 py-4 md:px-6"
       >
-        {!geladen ? <li className="text-tinte-2">{texte.laedt}</li> : null}
-        {geladen && !z.nachrichten.length ? <li className="text-tinte-2">{texte.leer}</li> : null}
-        {z.nachrichten.map((n) => (
-          <li
-            key={n.id}
-            className={klassen(
-              'flex max-w-text flex-col gap-1',
-              n.eigen ? 'items-end self-end' : 'self-start',
-              n.id >= neuAb && 'tritt-auf',
-            )}
-            style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
-          >
-            <span className="flex flex-wrap items-center gap-x-2 text-16 text-tinte-2">
-              <span className="font-bold text-tinte">{n.eigen ? texte.du : n.name}</span>
-              {n.leitung ? <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{texte.lehrkraft}</span> : null}
-              <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
-              {/* Melden (GC-2): leise neben der Zeit; Klickziel 48 px, optisch eine Textzeile (der negative Rand ragt nur
-                  in die Abstände über und unter der Zeile) */}
-              {!n.eigen && n.text !== null ? (
-                <button
-                  type="button"
-                  onClick={() => setMelden(n)}
-                  aria-label={texte.meldenAria.replace('{name}', n.name)}
-                  className="-my-3 inline-flex min-h-12 cursor-pointer items-center gap-1 px-1 text-16 text-tinte-2 underline-offset-4 transition duration-(--dauer-rueckmeldung) hover:text-tinte hover:underline"
-                >
-                  <Flag aria-hidden className="size-4" />
-                  {texte.melden}
-                </button>
-              ) : null}
-            </span>
-            <p
+        <ol className="flex flex-col gap-3">
+          {!geladen ? <li className="text-tinte-2">{texte.laedt}</li> : null}
+          {geladen && !z.nachrichten.length ? <li className="text-tinte-2">{texte.leer}</li> : null}
+          {z.nachrichten.map((n) => (
+            <li
+              key={n.id}
               className={klassen(
-                'rounded-lg px-4 py-2.5 text-18 wrap-anywhere whitespace-pre-wrap',
-                n.text === null ? 'bg-sand text-tinte-2 italic' : n.eigen ? 'bg-gruen-700 text-weiss' : 'bg-papier text-tinte',
+                'flex max-w-text flex-col gap-1',
+                n.eigen ? 'items-end self-end' : 'self-start',
+                n.id >= neuAb && 'tritt-auf',
               )}
+              style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
             >
-              {n.text ?? texte.entfernt}
-            </p>
-            {istLeitung && !n.eigen && n.text !== null ? (
-              <span className="flex gap-3">
-                <button type="button" onClick={() => void moderiere('entfernen', n)} className="min-h-11 text-16 font-bold text-fehler">
-                  {texte.moderation.entfernen}
-                </button>
-                {n.absender ? (
-                  <button type="button" onClick={() => void moderiere('stumm', n)} className="min-h-11 text-16 font-bold text-tinte-2">
-                    {texte.moderation.stumm}
+              <span className="flex flex-wrap items-center gap-x-2 text-16 text-tinte-2">
+                <span className="font-bold text-tinte">{n.eigen ? texte.du : n.name}</span>
+                {n.leitung ? <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{texte.lehrkraft}</span> : null}
+                <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
+                {/* Melden (GC-2): leise neben der Zeit; Klickziel 48 px, optisch eine Textzeile (der negative Rand ragt nur
+                  in die Abstände über und unter der Zeile) */}
+                {!n.eigen && n.text !== null ? (
+                  <button
+                    type="button"
+                    onClick={() => setMelden(n)}
+                    aria-label={texte.meldenAria.replace('{name}', n.name)}
+                    className="-my-3 inline-flex min-h-12 cursor-pointer items-center gap-1 px-1 text-16 text-tinte-2 underline-offset-4 transition duration-(--dauer-rueckmeldung) hover:text-tinte hover:underline"
+                  >
+                    <Flag aria-hidden className="size-4" />
+                    {texte.melden}
                   </button>
                 ) : null}
               </span>
-            ) : null}
-          </li>
-        ))}
-      </ol>
+              <p
+                className={klassen(
+                  'rounded-lg px-4 py-2.5 text-18 wrap-anywhere whitespace-pre-wrap',
+                  n.text === null ? 'bg-sand text-tinte-2 italic' : n.eigen ? 'bg-gruen-700 text-weiss' : 'bg-papier text-tinte',
+                )}
+              >
+                {n.text ?? texte.entfernt}
+              </p>
+              {istLeitung && !n.eigen && n.text !== null ? (
+                <span className="flex gap-3">
+                  <button type="button" onClick={() => void moderiere('entfernen', n)} className="min-h-11 text-16 font-bold text-fehler">
+                    {texte.moderation.entfernen}
+                  </button>
+                  {n.absender ? (
+                    <button type="button" onClick={() => void moderiere('stumm', n)} className="min-h-11 text-16 font-bold text-tinte-2">
+                      {texte.moderation.stumm}
+                    </button>
+                  ) : null}
+                </span>
+              ) : null}
+            </li>
+          ))}
+        </ol>
+      </div>
 
       <div className="flex flex-col gap-2 border-t border-linie px-4 py-3 md:px-6">
         {z.schreiben === 'regelnFehlen' ? (
