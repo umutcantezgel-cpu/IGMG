@@ -27,9 +27,12 @@ export const ensureStatic = 'navigation';
 /** Locale für Datum und Hidschri im Tagesbogen (wie in start/Tagesbogen.tsx). */
 const BOGEN_LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 
-/** Knopf „Vollbild“: steht im Kopf ab md und am Seitenende unter md (je eine Instanz, siehe unten). */
+/**
+ * Knopf „Vollbild“: eine Instanz im Kopf neben dem Datum, auf allen Breiten (Sichtabnahme Z-04, G-4; vorher stand er auf
+ * dem Telefon verwaist am Seitenende).
+ */
 const VOLLBILD =
-  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
+  'inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('gebetszeiten');
@@ -124,6 +127,7 @@ export default async function GebetszeitenSeitePage() {
           'unterschiedGleich',
           'naechstes',
           'qiblaTitel',
+          'qiblaNord',
           'merken',
           'vergessen',
           'gemerktHinweis',
@@ -141,6 +145,7 @@ export default async function GebetszeitenSeitePage() {
       | 'unterschiedMinus'
       | 'qiblaWert'
       | 'qiblaAria'
+      | 'qiblaGrad'
     >),
     zeitenFuer: to.raw('zeitenFuer'),
     entfernungMoschee: to.raw('entfernungMoschee'),
@@ -151,6 +156,7 @@ export default async function GebetszeitenSeitePage() {
     naehe: to.raw('naehe'),
     qiblaWert: to.raw('qiblaWert'),
     qiblaAria: to.raw('qiblaAria'),
+    qiblaGrad: to.raw('qiblaGrad'),
     namen,
   };
   const ortPanel = (
@@ -224,32 +230,36 @@ export default async function GebetszeitenSeitePage() {
   return (
     <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" ohneLeiste pfad={[{ label: tk('gebetszeiten') }]}>
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
-        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
-          <div className="flex min-w-0 flex-col gap-2">
-            <h1 className="text-display-1 text-pretty">{t('titel')}</h1>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-tinte-2">
-              <span className="inline-flex items-center gap-2">
-                <CalendarDays aria-hidden className="size-5" />
-                {datumText}
+        <div className="flex min-w-0 flex-col gap-2">
+          <h1 className="text-display-1 text-pretty">{t('titel')}</h1>
+          {/* Telefon: Datum und „Vollbild“ in der ersten Zeile, Ort und Hinweis darunter; ab md eine Zeile, „Vollbild“ rechts */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-tinte-2">
+            <span className="inline-flex items-center gap-2">
+              <CalendarDays aria-hidden className="size-5" />
+              {datumText}
+            </span>
+            {/* Kein Vorabruf: Die Anzeige ist für den Moschee-Bildschirm, ihr Code (≈ 16 kB) wäre sonst Ballast (K-12) */}
+            <Link
+              href="/gebetszeiten/anzeige"
+              prefetch={false}
+              aria-label={t('vollbildAria')}
+              className={`${VOLLBILD} ms-auto md:order-last`}
+            >
+              <Maximize aria-hidden className="size-5" />
+              {t('vollbild')}
+            </Link>
+            <span className="inline-flex items-center gap-2">
+              <MapPin aria-hidden className="size-5" />
+              <span className="sr-only">{t('standort')}:</span>
+              {tl('ort')}
+            </span>
+            {hinweisHeute ? (
+              <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
+                <Info aria-hidden className="size-4" />
+                {tl('berechnet')}
               </span>
-              <span className="inline-flex items-center gap-2">
-                <MapPin aria-hidden className="size-5" />
-                <span className="sr-only">{t('standort')}:</span>
-                {tl('ort')}
-              </span>
-              {hinweisHeute ? (
-                <span className="inline-flex items-center gap-1.5 rounded-pill bg-warnung-toenung px-2.5 py-0.5 text-16 font-bold text-warnung">
-                  <Info aria-hidden className="size-4" />
-                  {tl('berechnet')}
-                </span>
-              ) : null}
-            </div>
+            ) : null}
           </div>
-          {/* Kein Vorabruf: Die Anzeige ist für den Moschee-Bildschirm, ihr Code (≈ 16 kB) wäre sonst Ballast (K-12) */}
-          <Link href="/gebetszeiten/anzeige" prefetch={false} aria-label={t('vollbildAria')} className={`${VOLLBILD} max-md:hidden`}>
-            <Maximize aria-hidden className="size-5" />
-            {t('vollbild')}
-          </Link>
         </div>
         <GebetszeitenSeite
           tage={fenster.tage}
@@ -308,10 +318,6 @@ export default async function GebetszeitenSeitePage() {
             sprache={sprache}
           />
         ) : null}
-        <Link href="/gebetszeiten/anzeige" prefetch={false} aria-label={t('vollbildAria')} className={`${VOLLBILD} self-start md:hidden`}>
-          <Maximize aria-hidden className="size-5" />
-          {t('vollbild')}
-        </Link>
       </div>
     </Seitenrahmen>
   );

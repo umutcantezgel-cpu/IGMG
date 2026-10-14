@@ -16,6 +16,7 @@ import {
 import ORTE_ROH from '@/lib/gebetszeiten/orte.json';
 import { GEBETE, type Berechnungseinstellungen, type Gebet } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
+import { QiblaZifferblatt } from './QiblaKompassAnsicht';
 import { fuelle } from './zeiten';
 
 const ORTE = ORTE_ROH as unknown as OrtEintrag[];
@@ -23,6 +24,10 @@ const BERLIN = 'Europe/Berlin';
 /** Bis zu dieser Entfernung heißt der Standort „in der Nähe von …“. */
 const NAEHE_KM = 25;
 const UMGEBUNG_KM = 40;
+/** Raster aus Ortsauswahl und Ergebnis: links Auswahl bzw. Tabelle, ab lg rechts die Qibla (G-3: gleiche Breite). */
+const RASTER = 'grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]';
+/** Gleicher waagerechter Innenabstand für Kopf- und Datenzellen der Tabelle (G-3). */
+const ZELLE = 'px-2';
 
 export type MeinOrtTexte = {
   titel: string;
@@ -62,6 +67,10 @@ export type MeinOrtTexte = {
   qiblaTitel: string;
   qiblaWert: string;
   qiblaAria: string;
+  /** Beschriftung „Norden“ im Zifferblatt („N“, tr „K“) */
+  qiblaNord: string;
+  /** Gradzahl im Zifferblatt („{winkel}°“) */
+  qiblaGrad: string;
   merken: string;
   vergessen: string;
   gemerktHinweis: string;
@@ -248,34 +257,37 @@ export function MeinOrtRechner({
         </div>
       </div>
 
-      <div className="flex max-w-text flex-col gap-2">
-        <label htmlFor="mein-ort-liste" className="font-bold">
-          {texte.ortLabel}
-        </label>
-        <select
-          id="mein-ort-liste"
-          value={ort?.quelle === 'liste' || (ort?.quelle === 'gemerkt' && ORTE.some((o) => o[0] === ort.name)) ? ort.name : ''}
-          onChange={(e) => waehle(e.target.value)}
-          className="min-h-12 rounded-md border-2 border-rand bg-weiss px-3 text-18"
-        >
-          <option value="" disabled>
-            {texte.ortBitteWaehlen}
-          </option>
-          <optgroup label={texte.gruppeUmgebung}>
-            {wetzlarListe.umgebung.map((o) => (
-              <option key={o.name} value={o.name}>
-                {o.name}
-              </option>
-            ))}
-          </optgroup>
-          <optgroup label={texte.gruppeWeitere}>
-            {wetzlarListe.weitere.map((o) => (
-              <option key={o.name} value={o.name}>
-                {o.name}
-              </option>
-            ))}
-          </optgroup>
-        </select>
+      {/* G-3: Die Ortsauswahl steht im selben Raster wie das Ergebnis darunter und ist so breit wie die Tabelle */}
+      <div className={RASTER}>
+        <div className="flex min-w-0 flex-col gap-2">
+          <label htmlFor="mein-ort-liste" className="font-bold">
+            {texte.ortLabel}
+          </label>
+          <select
+            id="mein-ort-liste"
+            value={ort?.quelle === 'liste' || (ort?.quelle === 'gemerkt' && ORTE.some((o) => o[0] === ort.name)) ? ort.name : ''}
+            onChange={(e) => waehle(e.target.value)}
+            className="min-h-12 w-full rounded-md border-2 border-rand bg-weiss px-3 text-18"
+          >
+            <option value="" disabled>
+              {texte.ortBitteWaehlen}
+            </option>
+            <optgroup label={texte.gruppeUmgebung}>
+              {wetzlarListe.umgebung.map((o) => (
+                <option key={o.name} value={o.name}>
+                  {o.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label={texte.gruppeWeitere}>
+              {wetzlarListe.weitere.map((o) => (
+                <option key={o.name} value={o.name}>
+                  {o.name}
+                </option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
       </div>
 
       <p role="status" className={klassen('max-w-text text-16 leading-normal', statusText ? 'text-tinte' : 'sr-only')}>
@@ -283,11 +295,7 @@ export function MeinOrtRechner({
       </p>
 
       {ort && ergebnis ? (
-        <div
-          key={ort.name}
-          className="blendet-ein grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]"
-          style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
-        >
+        <div key={ort.name} className={`blendet-ein ${RASTER}`} style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}>
           <div className="flex min-w-0 flex-col gap-4">
             <div className="flex flex-col gap-1">
               <h3 className="text-24 text-pretty">{titel}</h3>
@@ -300,15 +308,16 @@ export function MeinOrtRechner({
             <table className="w-full border-collapse text-start">
               <caption className="sr-only">{titel}</caption>
               <thead>
+                {/* G-3: Kopf und Zellen mit gleichem Innenabstand (ZELLE), damit Spalten bündig stehen */}
                 <tr className="border-b border-linie text-16 text-tinte-2">
-                  <th scope="col" className="py-2 text-start font-bold">
+                  <th scope="col" className={`${ZELLE} py-2 text-start font-bold`}>
                     {texte.spalteGebet}
                   </th>
-                  <th scope="col" className="py-2 text-end font-bold">
+                  <th scope="col" className={`${ZELLE} py-2 text-end font-bold`}>
                     {texte.spalteZeit}
                   </th>
                   {ergebnis.inBerlinerZeit ? (
-                    <th scope="col" className="py-2 ps-4 text-end font-bold">
+                    <th scope="col" className={`${ZELLE} py-2 text-end font-bold`}>
                       {texte.spalteUnterschied}
                     </th>
                   ) : null}
@@ -319,7 +328,7 @@ export function MeinOrtRechner({
                   const ist = ergebnis.naechstes === g;
                   return (
                     <tr key={g} className={klassen('border-b border-linie last:border-b-0', ist && 'bg-gruen-50')}>
-                      <th scope="row" className="py-3 ps-2 text-start font-bold">
+                      <th scope="row" className={`${ZELLE} py-3 text-start font-bold`}>
                         <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
                           {texte.namen[g]}
                           {ist ? (
@@ -327,9 +336,9 @@ export function MeinOrtRechner({
                           ) : null}
                         </span>
                       </th>
-                      <td className="py-3 text-end text-24 font-bold tabular-nums">{ergebnis.eigen[g]}</td>
+                      <td className={`${ZELLE} py-3 text-end text-24 font-bold tabular-nums`}>{ergebnis.eigen[g]}</td>
                       {ergebnis.inBerlinerZeit ? (
-                        <td className="py-3 ps-4 pe-2 text-end text-16 whitespace-nowrap text-tinte-2 tabular-nums">
+                        <td className={`${ZELLE} py-3 text-end text-16 whitespace-nowrap text-tinte-2 tabular-nums`}>
                           <span aria-hidden>{unterschiedText(ergebnis.diff[g])}</span>
                           <span className="sr-only">
                             {ergebnis.diff[g] === 0
@@ -351,28 +360,15 @@ export function MeinOrtRechner({
 
           <div className="flex flex-col items-center gap-3">
             <h3 className="self-start text-24">{texte.qiblaTitel}</h3>
-            <div
-              role="img"
-              aria-label={fuelle(texte.qiblaAria, { winkel: zahl(ergebnis.qibla), ort: ort.name })}
-              className="relative size-56 rounded-full border-2 border-rand bg-papier"
-            >
-              <span aria-hidden className="absolute top-2 left-1/2 -translate-x-1/2 font-bold text-tinte">
-                N
-              </span>
-              <div
-                aria-hidden
-                className="absolute inset-0 transition-transform duration-(--dauer-moment) ease-(--ease-eintritt) motion-reduce:transition-none"
-                style={{ transform: `rotate(${nadelBereit ? ergebnis.qibla : 0}deg)` }}
-              >
-                <span className="absolute top-1/2 left-1/2 h-22 w-1 -translate-x-1/2 -translate-y-full rounded-sm bg-gruen-700" />
-                <span className="absolute top-5 left-1/2 size-3 -translate-x-1/2 rotate-45 bg-gruen-700" />
-              </div>
-              <span
-                aria-hidden
-                className="absolute top-1/2 left-1/2 size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-950"
-              />
-            </div>
-            <p className="text-20 font-bold text-gruen-800">{fuelle(texte.qiblaWert, { winkel: zahl(ergebnis.qibla) })}</p>
+            <QiblaZifferblatt
+              klein
+              nadelDreht
+              nadelWinkel={nadelBereit ? ergebnis.qibla : 0}
+              nord={texte.qiblaNord}
+              grad={fuelle(texte.qiblaGrad, { winkel: zahl(ergebnis.qibla) })}
+              aria={fuelle(texte.qiblaAria, { winkel: zahl(ergebnis.qibla), ort: ort.name })}
+            />
+            <p className="text-16 text-tinte-2">{fuelle(texte.qiblaWert, { winkel: zahl(ergebnis.qibla) })}</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 lg:col-span-2">

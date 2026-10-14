@@ -55,15 +55,22 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
         <Text feld={p.beschreibung} sprache={sprache} als="p" className="max-w-text text-18 leading-relaxed text-pretty" />
         {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
         <dl className="grid grid-cols-2 gap-3">
-          <Fakt Icon={Calendar} label={t('bezeichnungen.beginn')} wert={p.beginn === null ? t('platzhalter.gemeinde') : String(p.beginn)} />
+          <Fakt
+            Icon={Calendar}
+            label={t('bezeichnungen.beginn')}
+            platzhalter={p.beginn === null}
+            wert={p.beginn === null ? t('platzhalter.gemeinde') : String(p.beginn)}
+          />
           <Fakt
             Icon={Target}
             label={t('bezeichnungen.fertigstellung')}
+            platzhalter={p.fertigstellung === null}
             wert={p.fertigstellung === null ? t('platzhalter.gemeinde') : String(p.fertigstellung)}
           />
           <Fakt
             Icon={Users}
             label={t('bezeichnungen.kapazitaet')}
+            platzhalter={p.kapazitaet.wert === null}
             wert={
               p.kapazitaet.wert === null ? (
                 t('platzhalter.gemeinde')
@@ -77,6 +84,7 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
           <Fakt
             Icon={Ruler}
             label={t('bezeichnungen.flaeche')}
+            platzhalter={p.flaecheM2 === null}
             wert={p.flaecheM2 === null ? t('platzhalter.gemeinde') : `${zahl(p.flaecheM2, sprache)} ${t('einheiten.m2')}`}
           />
         </dl>
@@ -99,13 +107,27 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
   );
 }
 
-/** Kennzahl mit Symbol (Beginn, Fertigstellung, Kapazität, Fläche): Symbol links, Bezeichnung und Wert rechts. */
-function Fakt({ Icon, label, wert }: { Icon: LucideIcon; label: string; wert: ReactNode }) {
+/**
+ * Kennzahl mit Symbol (Beginn, Fertigstellung, Kapazität, Fläche): Symbol links, Bezeichnung und Wert rechts, 16 px
+ * Innenabstand. Sichtabnahme Z-04, PR-1: Ein Platzhalter der Gemeinde steht in 16 px, normal und grau (er ist kein Wert);
+ * ein echter Wert wächst mit der Kachel (18 bis 24 px, Container-Einheiten) und bricht notfalls überall um – so läuft auf
+ * dem Telefon nichts über die Kachel hinaus.
+ */
+function Fakt({ Icon, label, wert, platzhalter }: { Icon: LucideIcon; label: string; wert: ReactNode; platzhalter: boolean }) {
   return (
-    <div className="grid raster-symbol content-start items-start gap-x-3 rounded-lg bg-sand p-4">
+    <div className="@container grid raster-symbol content-start items-start gap-x-3 gap-y-0.5 rounded-lg bg-sand p-4">
       <Icon aria-hidden className="row-span-2 mt-0.5 size-6 shrink-0 text-gruen-700" />
       <dt className="text-16 leading-snug text-tinte-2">{label}</dt>
-      <dd className="text-24 font-bold hyphens-none">{wert}</dd>
+      <dd
+        className={cn(
+          'min-w-0 wrap-anywhere hyphens-none',
+          platzhalter
+            ? 'text-16 leading-snug font-normal text-tinte-2'
+            : 'text-[length:clamp(var(--text-18),12cqi,var(--text-24))] leading-tight font-bold',
+        )}
+      >
+        {wert}
+      </dd>
     </div>
   );
 }
