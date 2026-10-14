@@ -96,19 +96,21 @@ function Werkzeug({
   label,
   onKlick,
   mitText = false,
+  className,
 }: {
   eintrag: Eintrag;
   label: string;
   onKlick: () => void;
   /** Auch auf dem Telefon beschriftet (Felder „Absatzart“ und „…“). */
   mitText?: boolean;
+  className?: string;
 }) {
   const Icon = eintrag.icon;
   return (
     <Button
       type="button"
       variant="outline"
-      className={mitText ? knopfMitText : knopf}
+      className={cn(mitText ? knopfMitText : knopf, className)}
       aria-pressed={eintrag.aktiv}
       disabled={eintrag.aus}
       title={mitText ? undefined : label}
@@ -136,7 +138,9 @@ function artAus(zustand: WerkzeugZustand | null): Art {
  * Rückgängig und Wiederholen. Ohne `zustand` (Editor lädt noch) sind alle Knöpfe deaktiviert.
  * Unter 640 px (SE-4) eine feste Zeile ohne Wischen: „Absatzart“ zeigt die Art an der Auswahl als Kurzwort und
  * öffnet darunter die Wahl Text/Überschrift 2/Überschrift 3; dann Fett, (Kursiv, wenn Platz ist), Aufzählung, Link
- * und „…“ mit allen übrigen Befehlen als beschriftete Zeile darunter. Es ist immer nur eines der beiden Felder offen.
+ * und „…“ mit allen übrigen Befehlen darunter als Raster gleich breiter, beschrifteter Kacheln (SE-8, zwei Spalten,
+ * Symbol über dem Namen, damit auch „Nummerierung“ in die halbe Breite passt). Es ist immer nur eines der beiden
+ * Felder offen.
  */
 export function Werkzeugleiste({
   zustand,
@@ -249,14 +253,20 @@ export function Werkzeugleiste({
       <div
         id={`${basis}-mehr`}
         hidden={offen !== 'mehr'}
-        className="flex flex-wrap gap-2 border-t border-linie p-2 sm:hidden"
+        className="grid grid-cols-2 gap-2 border-t border-linie p-2 sm:hidden"
         onKeyDown={schliessenMitEscape}
       >
         {eintraege
           .filter((e) => e.telefon === 'mehr' || e.telefon === 'breit')
           .map((e) => (
             <span key={e.aktion} className={e.telefon === 'breit' ? 'contents @min-[21rem]:hidden' : 'contents'}>
-              <Werkzeug eintrag={e} label={t(e.aktion)} onKlick={ausfuehren(e.aktion)} mitText />
+              <Werkzeug
+                eintrag={e}
+                label={t(e.aktion)}
+                onKlick={ausfuehren(e.aktion)}
+                mitText
+                className="w-full flex-col gap-1 p-2 text-center whitespace-normal"
+              />
             </span>
           ))}
       </div>

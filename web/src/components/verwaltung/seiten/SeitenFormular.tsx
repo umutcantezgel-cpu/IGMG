@@ -536,7 +536,7 @@ export function SeitenFormular({
       </fieldset>
 
       {!nurLesen ? <MedienWahlDialog ref={medienWahl} bilder={optionen.bilder} /> : null}
-      {/* Eine Zeile (SE-3, SE-6): Knopf und Ziel des Speicherns; auf dem Telefon als Plakette, ab 768 px als Satz */}
+      {/* Eine Zeile (SE-3, SE-6, X-14): Knopf und Ziel des Speicherns; auf dem Telefon als kurzer Text, ab 768 px als Satz */}
       {!nurLesen ? (
         <div
           ref={speicherleiste}
@@ -548,8 +548,8 @@ export function SeitenFormular({
           </Button>
           <p className="min-w-0 text-16 text-tinte-2">
             <span className="max-md:sr-only">{tf(`speichernHinweis.${w.status}`)}</span>
-            <span aria-hidden className="rounded-pill bg-sand px-3 py-1 font-bold whitespace-nowrap text-tinte-2 md:hidden">
-              {t(`status.${w.status}`)}
+            <span aria-hidden className="md:hidden">
+              {tf(`speichernKurz.${w.status}`)}
             </span>
           </p>
         </div>
