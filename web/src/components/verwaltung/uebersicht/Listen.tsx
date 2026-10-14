@@ -1,8 +1,10 @@
 import { Calendar, Clock } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 import { KUERZEL_TON } from '@/components/verwaltung/organisationTon';
 import { KENNUNG } from '@/components/verwaltung/seiteninhalte-organisationen/bereiche';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
 import { datumLang, isoZeit, zeitspanne } from '@/lib/i18n/format';
+import { ORGANISATION_KUERZEL, type OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { cn } from '@/lib/utils';
 import type { KommendeVeranstaltung, LetzteNeuigkeit } from '@/server/queries/verwaltung/uebersicht';
 
@@ -31,12 +33,23 @@ function Leerzustand({ text }: { text: string }) {
   );
 }
 
+/** Kürzel-Plakette einer Organisation: sichtbar das Kürzel, Klartext als Tooltip und für Screenreader (VU-1). */
+function Kuerzel({ org, name }: { org: OrganisationKuerzel; name: string }) {
+  return (
+    <span title={name} className={cn('shrink-0 rounded-pill px-3 py-0.5 text-16 font-bold', KUERZEL_TON[org])}>
+      <span aria-hidden>{KENNUNG[org]}</span>
+      <span className="sr-only">{name}</span>
+    </span>
+  );
+}
+
 /**
  * Kurzlisten der Übersicht (design/Dashboard.dc.html, Blatt V01): „Aktuelle Neuigkeiten“ und „Kommende Veranstaltungen“.
  * Eine Liste erscheint nur mit dem Leserecht ihres Bereichs (`null` = kein Recht). Nur Titel, Datum und Status,
- * keine Personendaten; Einträge sind nicht anklickbar (wie im Design).
+ * keine Personendaten; Einträge sind nicht anklickbar (wie im Design). Unter den Veranstaltungen erklärt eine Legende
+ * die vorkommenden Organisations-Kürzel (VU-1), die sonst nur über die Farbe unterschieden würden.
  */
-export function Listen({
+export async function Listen({
   neuigkeiten,
   kommend,
   texte,
@@ -46,6 +59,9 @@ export function Listen({
   texte: ListenTexte;
 }) {
   if (neuigkeiten === null && kommend === null) return null;
+  const to = await getTranslations('verwaltung.uebersicht');
+  const orgName = (org: OrganisationKuerzel) => to(`organisation.${org}`);
+  const vorkommend = ORGANISATION_KUERZEL.filter((org) => kommend?.some((z) => z.organisation === org));
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {neuigkeiten !== null ? (
@@ -103,15 +119,24 @@ export function Listen({
                       </span>
                     </span>
                   </span>
-                  {z.organisation ? (
-                    <span className={cn('shrink-0 rounded-pill px-3 py-0.5 text-16 font-bold', KUERZEL_TON[z.organisation])}>
-                      {KENNUNG[z.organisation]}
-                    </span>
-                  ) : null}
+                  {z.organisation ? <Kuerzel org={z.organisation} name={orgName(z.organisation)} /> : null}
                 </li>
               ))}
             </ul>
           )}
+          {vorkommend.length ? (
+            <div className="mt-auto flex flex-col gap-2 border-t border-linie pt-3">
+              <p className="text-16 font-bold text-tinte-2">{to('kuerzelLegende')}</p>
+              <dl className="flex flex-wrap gap-x-5 gap-y-2 text-16 text-tinte-2">
+                {vorkommend.map((org) => (
+                  <div key={org} className="flex items-center gap-2">
+                    <dt className={cn('rounded-pill px-2.5 py-0.5 font-bold', KUERZEL_TON[org])}>{KENNUNG[org]}</dt>
+                    <dd>{orgName(org)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ) : null}
         </section>
       ) : null}
     </div>
