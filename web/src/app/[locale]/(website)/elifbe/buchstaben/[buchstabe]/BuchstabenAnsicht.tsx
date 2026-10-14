@@ -182,7 +182,7 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                       key={f}
                       lang="ar"
                       dir="rtl"
-                      className="border-l border-linie px-1 py-2 text-center buchstabe-riesig text-gruen-950 first:border-l-0 md:px-3 md:buchstabe-gross"
+                      className="border-l border-linie px-0.5 py-2 text-center text-[calc(var(--text-48)*4/3)] leading-loose text-gruen-950 first:border-l-0 md:px-3 md:buchstabe-gross"
                     >
                       {formMitAnschluss(b, f)}
                     </td>
@@ -306,7 +306,8 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                   {vorher.elifbe}
                 </span>
               </span>
-              <span lang="ar" dir="rtl" aria-hidden className="ms-auto text-36 text-gruen-950">
+              {/* ml statt ms: das Zeichen hat dir="rtl", „start“ wäre dort rechts */}
+              <span lang="ar" dir="rtl" aria-hidden className="ml-auto text-36 text-gruen-950">
                 {zeichen(vorher)}
               </span>
             </Link>

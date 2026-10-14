@@ -89,7 +89,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
               {weiter ? (
                 <Link
                   href={weiter.href}
-                  className="ms-auto inline-flex min-h-12 items-center gap-2 rounded-md px-3 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
+                  className="ms-auto inline-flex min-h-12 items-center gap-2 rounded-md px-2 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98"
                 >
                   {weiter.text}
                   <ArrowRight aria-hidden className="size-5" />
