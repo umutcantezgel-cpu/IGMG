@@ -3,10 +3,11 @@ import { join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 /**
- * Import ohne Handgriffe (Wunsch des Nutzers, 14.10.2026): Wer das Repository in Vercel als neues Projekt importiert,
- * lässt Root Directory leer und ändert nichts. Vercel baut im Services-Modus, sobald die Wurzel-`vercel.json` einen
- * `services`-Block hat (CLI 64: Services-Builder statt Erkennung, unabhängig vom Framework im Dashboard). Diese Tests
- * halten die Bedingungen dafür fest.
+ * Import als neues Vercel-Projekt (Wunsch des Nutzers, 14.10.2026; docs/deploy/VERCEL.md Abschnitt 0): Root Directory
+ * leer, Framework Preset „Services“. Die Bau-CLI (59.25/64.0) baut schon allein wegen des `services`-Blocks als Services;
+ * laut Vercel-Anleitung braucht es zusätzlich das Preset, das sich nicht aus dem Repository setzen lässt. Fehlt es, fängt
+ * der Wächter `/package.json` den Rückfall auf „Other“ ab (Bau bricht mit Anleitung ab, statt den Stamm statisch
+ * auszuliefern). Diese Tests halten die Bedingungen fest.
  */
 const WURZEL = resolve(__dirname, '../../..');
 const konfig = JSON.parse(readFileSync(join(WURZEL, 'vercel.json'), 'utf8')) as Record<string, unknown>;
@@ -26,6 +27,22 @@ describe('vercel.json für den Import', () => {
 
   it('leitet jede Anfrage an den Service weiter (sonst bekäme er keinen öffentlichen Verkehr)', () => {
     expect(konfig.rewrites).toEqual([{ source: '/(.*)', destination: { service: 'web' } }]);
+  });
+
+  it('hat im Stamm nur einen Wächter, der ohne Services-Preset mit Anleitung abbricht', () => {
+    const waechter = JSON.parse(readFileSync(join(WURZEL, 'package.json'), 'utf8')) as Record<string, unknown> & {
+      scripts: Record<string, string>;
+    };
+    expect(waechter.private).toBe(true);
+    for (const feld of ['dependencies', 'devDependencies', 'packageManager', 'workspaces', 'engines'])
+      expect(waechter).not.toHaveProperty(feld);
+    for (const skript of ['build', 'vercel-build']) {
+      expect(waechter.scripts[skript]).toContain('Framework Preset auf Services');
+      expect(waechter.scripts[skript]).toContain('process.exit(1)');
+    }
+    // Keine Lockfile im Stamm: Vercel soll dort nichts installieren
+    for (const datei of ['pnpm-lock.yaml', 'package-lock.json', 'yarn.lock', 'pnpm-workspace.yaml'])
+      expect(existsSync(join(WURZEL, datei))).toBe(false);
   });
 
   it('hat keine Bau- oder Laufzeitschlüssel auf oberster Ebene (im Services-Modus ungültig)', () => {

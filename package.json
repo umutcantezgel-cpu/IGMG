@@ -1,0 +1,9 @@
+{
+  "name": "igmg-wetzlar-wurzel",
+  "private": true,
+  "description": "Wächter (keine App): Die Web-App liegt in web/ und wird auf Vercel als Service gebaut (vercel.json). Läuft dieses Skript, steht das Framework Preset nicht auf „Services“.",
+  "scripts": {
+    "build": "node -e \"console.error('[vercel] Dieses Projekt baut als Vercel-Services-Projekt (vercel.json, Service web). Bitte in Vercel › Settings › Build and Deployment das Framework Preset auf Services stellen, Root Directory leer lassen und neu deployen. Anleitung: web/docs/deploy/VERCEL.md, Abschnitt 0.'); process.exit(1)\"",
+    "vercel-build": "node -e \"console.error('[vercel] Dieses Projekt baut als Vercel-Services-Projekt (vercel.json, Service web). Bitte in Vercel › Settings › Build and Deployment das Framework Preset auf Services stellen, Root Directory leer lassen und neu deployen. Anleitung: web/docs/deploy/VERCEL.md, Abschnitt 0.'); process.exit(1)\""
+  }
+}
