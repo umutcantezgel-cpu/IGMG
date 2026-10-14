@@ -10,6 +10,7 @@ import type { Gebet, GebetszeitTag } from '@/lib/gebetszeiten/typen';
 import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 import { useNachRuhe } from '@/lib/zeit/useNachRuhe';
+import { BESCHRIFTUNG_REIHE_REM, beschriftungsBreite, beschriftungsLagen } from './bogenwahl';
 
 export type TagesbogenTexte = {
   titel: string;
@@ -20,6 +21,11 @@ export type TagesbogenTexte = {
   locale: string;
   /** Kopfzeile je Kalendertag (Wochentag · Hidschri-Datum), auf dem Server berechnet (`tageszeilen`, H-L01) */
   tageszeilen?: Record<string, string>;
+  /**
+   * Beschriftung der Jetzt-Marke nach Yatsı („jetzt“, ST-4). Mit Text steht die Marke nach Yatsı rechts im Nachtbereich
+   * und der Achtstern am Imsak-Punkt entfällt; ohne Text (Gebetszeiten) bleibt es beim Stern am Imsak-Punkt.
+   */
+  jetzt?: string;
 };
 
 /** Lage im Zeichenfeld als Prozent der Breite bzw. Höhe (für HTML-Marken über der Zeichnung). */
@@ -85,6 +91,16 @@ export function TagesbogenLive({
   const minuten = jetzt ? minutenAus(uhrzeitBerlin(jetzt)) : null;
   const sonne = minuten !== null && bogen.anteil(minuten) > 0 && bogen.anteil(minuten) < 1 ? bogen.punktZu(minuten) : null;
   const bisX = minuten === null ? 0 : bogen.punktZu(minuten).x * (bogen.anteil(minuten) > 0 ? 1 : 0);
+  // ST-4: Nach Yatsı steht „jetzt“ rechts im Nachtbereich (am Ende des Tages), nicht am Imsak-Punkt links
+  const nachYatsi = Boolean(texte.jetzt) && minuten !== null && bogen.anteil(minuten) >= 1;
+  const yatsi = bogen.punkte[bogen.punkte.length - 1];
+  const nacht = nachYatsi ? { x: BOGEN.breite, y: (BOGEN.horizont + yatsi.y) / 2 } : null;
+  const beschriftung = beschriftungsLagen(
+    bogen.punkte.map((p) => p.x / BOGEN.breite),
+    bogen.punkte.map(
+      (p) => beschriftungsBreite(texte.namen[p.gebet], naechstes?.gebet === p.gebet && !naechstes.morgen) / BESCHRIFTUNG_REIHE_REM,
+    ),
+  );
   const datumText = jetzt ? (texte.tageszeilen?.[datum] ?? '') : '';
   const zusammenfassung = `${texte.titel}. ${texte.beschreibung}`;
 
@@ -135,6 +151,20 @@ export function TagesbogenLive({
             strokeLinecap="round"
             strokeDasharray="1 6"
           />
+          {/* Nach Yatsı: die Linie läuft gepunktet in die Nacht weiter bis zur Jetzt-Marke am rechten Rand */}
+          {nacht ? (
+            <line
+              x1={yatsi.x}
+              y1={yatsi.y}
+              x2={nacht.x}
+              y2={nacht.y}
+              vectorEffect="non-scaling-stroke"
+              className="stroke-gruen-700"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeDasharray="1 6"
+            />
+          ) : null}
         </svg>
 
         {/* Der vergangene Teil des Tages (Fläche und Linie) als eigene Ebene, sichtbar bis „jetzt“. B-06 enthüllt sie als
@@ -199,11 +229,49 @@ export function TagesbogenLive({
             }
           />
         ) : null}
+        {/* ST-4: Jetzt-Marke nach Yatsı rechts im Nachtbereich, mit Textlabel; tritt wie die Sonne am Ende der Enthüllung hervor */}
+        {nacht ? (
+          <>
+            <span
+              aria-hidden="true"
+              className={klassen(
+                'absolute size-4 -translate-x-1/2 -translate-y-1/2 rounded-pill bg-gruen-700 ring-6 ring-gruen-700/15',
+                !ruhig && 'marke-tritt-hervor',
+              )}
+              style={
+                {
+                  left: links(nacht.x),
+                  top: oben(nacht.y),
+                  '--verzoegerung': 'calc(var(--dauer-moment) - var(--dauer-wechsel))',
+                } as CSSProperties
+              }
+            />
+            <span
+              aria-hidden="true"
+              className={klassen(
+                'absolute -translate-x-full -translate-y-full text-16 leading-none font-bold whitespace-nowrap text-gruen-800',
+                !ruhig && 'marke-tritt-hervor',
+              )}
+              // Abstand über der Marke über `top`, nicht als Innenabstand: `marke-tritt-hervor` setzt transform-box: fill-box,
+              // dann bezieht translate sich auf den Inhaltskasten ohne Innenabstand
+              style={
+                {
+                  left: 'calc(100% + var(--spacing) * 2)',
+                  top: `calc(${oben(nacht.y)} - var(--spacing) * 4)`,
+                  '--verzoegerung': 'calc(var(--dauer-moment) - var(--dauer-wechsel))',
+                } as CSSProperties
+              }
+            >
+              {texte.jetzt}
+            </span>
+          </>
+        ) : null}
         {/* Marken als HTML über der Zeichnung: gleiche Größe auf jedem Gerät, Achtstern aus dem Formsystem */}
         {bogen.punkte.map((p) => {
           const erreicht = minuten !== null && minuten >= p.minuten;
-          // Nach Isha trägt der Imsak-Punkt den Stern: er markiert den Beginn des nächsten Tages wie nach Mitternacht
-          const ist = naechstes?.gebet === p.gebet;
+          // Nach Isha trägt der Imsak-Punkt den Stern (Beginn des nächsten Tages wie nach Mitternacht) – außer die Jetzt-Marke
+          // steht rechts im Nachtbereich (ST-4): Dann ist der Tag auf dem Bogen zu Ende, kein Gebet dieses Bogens folgt mehr
+          const ist = naechstes?.gebet === p.gebet && !nachYatsi;
           // H-E01: Der Ring bleibt auch am nächsten Gebet stehen; der Achtstern liegt darüber (36-px-Chip deckt den Ring ab),
           // damit der Ort nie ohne Marke ist.
           return (
@@ -255,21 +323,19 @@ export function TagesbogenLive({
       <ol
         aria-label={texte.listeHeute}
         aria-hidden={ruhig || undefined}
-        className={klassen('grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-27', ruhig && '@max-xl:hidden')}
+        className={klassen('grid grid-cols-3 gap-3 @xl:relative @xl:block @xl:h-12', ruhig && '@max-xl:hidden')}
       >
-        {bogen.punkte.map((p) => {
+        {bogen.punkte.map((p, i) => {
           const ist = naechstes?.gebet === p.gebet && !naechstes.morgen;
           return (
             <li
               key={p.gebet}
               aria-current={ist ? 'time' : undefined}
-              className={klassen(
-                'flex min-w-0 flex-col @xl:absolute @xl:left-(--links) @xl:-translate-x-1/2 @xl:items-center @xl:text-center @xl:whitespace-nowrap',
-                p.gebet === 'imsak' || p.gebet === 'yatsi' ? '@xl:top-15' : '@xl:top-0',
-              )}
-              style={{ '--links': links(p.x) } as CSSProperties}
+              className="flex min-w-0 flex-col @xl:absolute @xl:top-0 @xl:left-(--links) @xl:-translate-x-1/2 @xl:items-center @xl:text-center @xl:whitespace-nowrap"
+              style={{ '--links': `${beschriftung[i] * 100}%` } as CSSProperties}
             >
-              {/* Ab @xl enger gesetzt (Eintrag 42,5 px statt 50 px): die zweite Ebene hat so ≥ 16 px Abstand zur ersten; betonter Eintrag 44 px, Abstand zur zweiten Ebene ≥ 16 px */}
+              {/* ST-3: Ab @xl stehen alle sechs auf einer Grundlinie, so nah an ihrem Punkt wie der Platz erlaubt (beschriftungsLagen);
+                  Namen und Zeiten je in gleicher Größe, das nächste Gebet trägt Farbe und Achtstern */}
               <span
                 className={klassen(
                   'flex items-center gap-1 text-16 leading-snug font-bold wrap-anywhere @xl:relative @xl:block @xl:leading-tight',
@@ -291,8 +357,8 @@ export function TagesbogenLive({
               </span>
               <span
                 className={klassen(
-                  'leading-8 font-bold tabular-nums',
-                  ist ? 'text-24 text-gruen-800 @xl:leading-none' : 'text-18 text-tinte @xl:leading-tight',
+                  'leading-8 font-bold tabular-nums @xl:text-18 @xl:leading-tight',
+                  ist ? 'text-24 text-gruen-800' : 'text-18 text-tinte',
                 )}
               >
                 {heute[p.gebet]}

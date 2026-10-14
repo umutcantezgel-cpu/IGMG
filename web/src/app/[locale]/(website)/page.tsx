@@ -59,7 +59,7 @@ export default async function Startseite() {
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
-        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-8 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16 lg:gap-y-5">
+        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">
             <span className="inline-flex items-center gap-2 self-start text-16 font-bold text-gruen-800">
               <Stern8 className="size-4" />
@@ -69,7 +69,6 @@ export default async function Startseite() {
               {t('titel')}
             </h1>
           </div>
-          <Tagesbogen className="lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
             <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{t('untertitel')}</p>
             <div className="flex flex-wrap gap-3 pt-1">
@@ -86,6 +85,8 @@ export default async function Startseite() {
               </Link>
             </div>
           </div>
+          {/* Telefon (ST-2): Kennung, Titel, Einleitung und Knöpfe stehen zusammen, die Tageskarte folgt; ab lg rechts daneben */}
+          <Tagesbogen className="max-lg:mt-3 lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
         </div>
         <div aria-hidden className="h-5 achtstern-band" />
       </section>
