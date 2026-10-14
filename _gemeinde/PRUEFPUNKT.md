@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 14:45 UTC:** `main` = 942b385 (Fast-Forward, Tor grün). Live erst nach Neu-Import durch den Nutzer
+  (VERCEL.md §0: Add New › Project › Import, Root Directory leer, Preset „Services“ prüfen – oder `npx vercel@latest
+  link --yes` im Stamm). Läuft: Sichtabnahme Runde 2 (`wf_18d601ae-373`, Juror 1 + Synthese). Danach: Bericht
+  `berichte/sichtabnahme-2.md`, ggf. Befundpakete, Stufe C, BERICHT mit Galerie, ABSCHLUSS, CLAUDE.md-Block entfernen.
 - **Stand 14.10. 08:45 UTC:** `main` = 759965e (alle 4 Befundpakete, Tor grün). Seit dem Push liefert
   igmg-five.vercel.app `DEPLOYMENT_NOT_FOUND` (Projekt/Domain in Vercel vermutlich entfernt – nur der Nutzer sieht das).
   Nutzerauftrag: Repo als neues Vercel-Projekt importierbar ohne Handgriffe → e66ee4e (Start ohne `APP_URL` auf Vercel mit

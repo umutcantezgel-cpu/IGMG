@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–7/7 · main c581594 live (Anzeige, Erzählansichten, D-14…D-17) · Läuft: Sichtabnahme Z-04 · Nächster Schritt: Befundpakete, Stufe C, BERICHT
+STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 7/7 · main 942b385 (Import als neues Vercel-Projekt; live erst nach Neu-Import durch den Nutzer – igmg-five liefert DEPLOYMENT_NOT_FOUND) · Läuft: Sichtabnahme Runde 2 (Jury) · Nächster Schritt: Bericht Runde 2, Stufe C, BERICHT, ABSCHLUSS
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -19,3 +19,5 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 5–7/7 · main c5815
 - 2026-10-13 18:20 UTC · Dritter Abbruch am Sitzungslimit; Pakete gesichert und fortgesetzt. Bewegung/SVG und Erzählansichten gemergt.
 - 2026-10-13 19:00 UTC · Fast-Forward `main` 8cbd2a6 → 2ee3e80, live `dpl_ErTf52ypPHU5hC21df6S2nGAMQh6`.
 - 2026-10-13 20:00 UTC · Fast-Forward `main` 2ee3e80 → c581594, live `dpl_FC6GBM8cpj3WLm3KBQvU8d9i2xFB`; Sichtabnahme gestartet.
+- 2026-10-14 · Befundpakete P1–P4 der Sichtabnahme gemergt; Fast-Forward `main` → 759965e. Danach liefert igmg-five.vercel.app `DEPLOYMENT_NOT_FOUND` (Projekt in Vercel entfernt; nur der Nutzer sieht das).
+- 2026-10-14 · Nutzerauftrag „Repo als neues Vercel-Projekt importierbar, richtig erkannt und deployed“: e66ee4e (Start ohne `APP_URL` über `VERCEL_PROJECT_PRODUCTION_URL`), 628b981 (Beispielmodus wie frischer Import ohne 5xx: iCal, altcha, medien), b25086c (Speicherprobe), 942b385 (Wächter `/package.json`, Anleitung VERCEL.md §0). Prüfung als Workflow (4 Prüfer + Gegenprüfung) und Entwurf (3 Wege + Jury): Preset „Services“ lässt sich nicht aus dem Repo setzen; vercel CLI 64 baut auch mit „Other“ den Service, der Wächter fängt den KB-Fall ab. Tor: Bau wie frischer Import 1866 Seiten, Crawl 1311 Adressen ohne 5xx, Vorschau 2207, Unit 1429, Integration 1680, Sprachen, Religion 0. Fast-Forward `main` 759965e → 942b385.
