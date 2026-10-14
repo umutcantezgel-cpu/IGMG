@@ -33,7 +33,8 @@ test('Textfolie anlegen, sichtbar schalten, öffentlich über /api/anzeige; Eins
   await expect(page.getByRole('link', { name: `${t.formular.titel}: ${t.fehler.pflicht}` })).toBeVisible();
 
   const titel = `[Hinweis E2E ${Date.now()}]`;
-  await page.getByLabel(t.formular.titel, { exact: true }).fill(titel);
+  // Pflichtfeld: die Beschriftung trägt den Zusatz „(Pflichtfeld)“
+  await page.getByLabel(`${t.formular.titel} (Pflichtfeld)`, { exact: true }).fill(titel);
   await page.getByLabel(t.formular.text, { exact: true }).fill('[Text der Folie]');
   await page.getByRole('checkbox', { name: t.wochentagLang['5'] }).check();
   await page.getByRole('button', { name: t.formular.anlegen }).click();

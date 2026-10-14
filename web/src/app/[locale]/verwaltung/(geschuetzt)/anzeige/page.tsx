@@ -11,6 +11,7 @@ import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { aktiveFolien, anzeigeZustand } from '@/lib/anzeige/plan';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { uhrzeitNackt } from '@/lib/i18n/format';
+import { cn } from '@/lib/utils';
 import { verschiebeFolie } from '@/server/actions/anzeige';
 import { ladeAnzeige } from '@/server/queries/anzeige';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
@@ -170,7 +171,7 @@ export default async function AnzeigeVerwalten({ searchParams }: PageProps<'/[lo
             <thead className="bg-sand">
               <tr>
                 {(['reihenfolge', 'folie', 'zeitplan', 'stand', 'aktionen'] as const).map((s) => (
-                  <th key={s} scope="col" className="px-4 py-3 text-16 font-bold">
+                  <th key={s} scope="col" className={cn('px-4 py-3 text-16 font-bold', s === 'aktionen' && 'text-right')}>
                     {t(`spalte.${s}`)}
                   </th>
                 ))}

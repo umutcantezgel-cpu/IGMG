@@ -67,7 +67,7 @@ export default async function SeitenVerwalten({ searchParams }: PageProps<'/[loc
           <span aria-hidden className="h-2 w-20 overflow-hidden rounded-pill bg-sand">
             <span className="block h-full rounded-pill bg-gruen-700" style={{ width: `${z.uebersetzung[s]}%` }} />
           </span>
-          <span className="tabular-nums">{t('prozent', { wert: z.uebersetzung[s] })}</span>
+          <span className="whitespace-nowrap tabular-nums">{t('prozent', { wert: z.uebersetzung[s] })}</span>
           <span className="sr-only">{t(`sprache.${s}`)}</span>
         </span>
       ))}
@@ -204,7 +204,7 @@ export default async function SeitenVerwalten({ searchParams }: PageProps<'/[loc
                   </th>
                   <td className="px-4 py-3">{status(z)}</td>
                   <td className="px-4 py-3">{uebersetzung(z)}</td>
-                  <td className="px-4 py-3 tabular-nums">
+                  <td className="px-4 py-3 whitespace-nowrap tabular-nums">
                     {datumLang(papierkorb && z.imPapierkorbSeit ? z.imPapierkorbSeit : z.aktualisiertAm, 'de')}
                   </td>
                   <td className="px-4 py-3">

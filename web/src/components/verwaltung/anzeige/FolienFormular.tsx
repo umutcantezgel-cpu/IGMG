@@ -108,7 +108,8 @@ export function FolienFormular({
             rows={4}
             maxLength={400}
             defaultValue={wert(name)}
-            className={cn(eingabe, 'py-3 leading-normal')}
+            // Wächst mit dem Text (mindestens vier Zeilen), damit nichts im Feld verborgen bleibt
+            className={cn(eingabe, 'field-sizing-content min-h-[calc(4lh+1.5rem+0.125rem)] py-3 leading-normal')}
           />
         )}
       />
@@ -227,7 +228,7 @@ export function FolienFormular({
             {textFeld('bis', t('formular.bis'), { typ: 'datetime-local', hinweis: t('formular.zeitHinweis') })}
             <fieldset id={id('wochentage')} className="flex flex-col gap-2 md:col-span-2" aria-describedby={`${id('wochentage')}-hinweis`}>
               <legend className="mb-1 font-bold">{t('formular.wochentage')}</legend>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
                 {WOCHENTAGE.map((tag) => (
                   <label
                     key={tag}
