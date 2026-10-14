@@ -1,5 +1,6 @@
 'use client';
 
+import { CirclePause, Clock, Flag, Lock } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
 import type { SchreibGrund } from '@/lib/chat/regeln';
@@ -19,12 +20,18 @@ export type ChatTexte = {
   leer: string;
   laedt: string;
   eingabe: string;
+  /** Platzhalter des gesperrten Feldes */
+  eingabeGesperrt: string;
+  /** „Schreiben geht wieder ab 08:00 Uhr.“ – fertig mit der Öffnungszeit der Gruppe (Grund „geschlossen“) */
+  wiederAb: string;
   senden: string;
   zeichen: string;
   entfernt: string;
   lehrkraft: string;
   du: string;
   melden: string;
+  /** „Melden: Nachricht von {name}“ – sichtbarer Text vorn (WCAG 2.5.3) */
+  meldenAria: string;
   meldenTitel: string;
   meldenGrund: string;
   gruende: Record<'beleidigung' | 'bedrohung' | 'unangemessen' | 'spam' | 'sonstiges', string>;
@@ -44,6 +51,7 @@ export type ChatTexte = {
 type Zustand = { nachrichten: ChatNachricht[]; schreiben: SchreibGrund | null };
 
 const MAX = 500;
+
 const segmentierer = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new Intl.Segmenter('de', { granularity: 'grapheme' }) : null;
 const zaehle = (t: string) => (segmentierer ? [...segmentierer.segment(t)].length : t.length);
 
@@ -56,6 +64,8 @@ function abstand(letzteAktivitaet: number): number {
 /**
  * Moderierter Gruppen- bzw. Elternkanal (S-01…S-18): Abruf mit adaptivem Takt, optional Echtzeit-Signal (nur „es gibt
  * Neues“). Keine Lesebestätigungen, keine Online-Anzeige, Links nur als Text, Melden in zwei Schritten mit Hilfehinweis.
+ * Gesperrt (Sichtabnahme GC-1): Hinweisband mit Symbol und Wiederöffnungszeit über dem sichtbar gesperrten Feld; auf dem
+ * Telefon steht das Feld in voller Breite, „Senden“ darunter. „Melden“ (GC-2) steht leise neben der Zeitangabe.
  */
 export function ChatFenster({
   kanalId,
@@ -254,10 +264,23 @@ export function ChatFenster({
             )}
             style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
           >
-            <span className="flex items-center gap-2 text-16 text-tinte-2">
+            <span className="flex flex-wrap items-center gap-x-2 text-16 text-tinte-2">
               <span className="font-bold text-tinte">{n.eigen ? texte.du : n.name}</span>
               {n.leitung ? <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{texte.lehrkraft}</span> : null}
               <time dateTime={n.zeit}>{uhr.format(new Date(n.zeit))}</time>
+              {/* Melden (GC-2): leise neben der Zeit; Klickziel 48 px, optisch eine Textzeile (der negative Rand ragt nur
+                  in die Abstände über und unter der Zeile) */}
+              {!n.eigen && n.text !== null ? (
+                <button
+                  type="button"
+                  onClick={() => setMelden(n)}
+                  aria-label={texte.meldenAria.replace('{name}', n.name)}
+                  className="-my-3 inline-flex min-h-12 cursor-pointer items-center gap-1 px-1 text-16 text-tinte-2 underline-offset-4 transition duration-(--dauer-rueckmeldung) hover:text-tinte hover:underline"
+                >
+                  <Flag aria-hidden className="size-4" />
+                  {texte.melden}
+                </button>
+              ) : null}
             </span>
             <p
               className={klassen(
@@ -267,26 +290,15 @@ export function ChatFenster({
             >
               {n.text ?? texte.entfernt}
             </p>
-            {!n.eigen && n.text !== null ? (
+            {istLeitung && !n.eigen && n.text !== null ? (
               <span className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => setMelden(n)}
-                  className="min-h-11 text-16 font-bold text-gruen-800 underline-offset-4 hover:underline"
-                >
-                  {texte.melden}
+                <button type="button" onClick={() => void moderiere('entfernen', n)} className="min-h-11 text-16 font-bold text-fehler">
+                  {texte.moderation.entfernen}
                 </button>
-                {istLeitung ? (
-                  <>
-                    <button type="button" onClick={() => void moderiere('entfernen', n)} className="min-h-11 text-16 font-bold text-fehler">
-                      {texte.moderation.entfernen}
-                    </button>
-                    {n.absender ? (
-                      <button type="button" onClick={() => void moderiere('stumm', n)} className="min-h-11 text-16 font-bold text-tinte-2">
-                        {texte.moderation.stumm}
-                      </button>
-                    ) : null}
-                  </>
+                {n.absender ? (
+                  <button type="button" onClick={() => void moderiere('stumm', n)} className="min-h-11 text-16 font-bold text-tinte-2">
+                    {texte.moderation.stumm}
+                  </button>
                 ) : null}
               </span>
             ) : null}
@@ -313,18 +325,16 @@ export function ChatFenster({
             </button>
           </div>
         ) : gesperrt && z.schreiben ? (
-          <p role="status" className="text-16 text-tinte-2">
-            {texte.grund[z.schreiben] ?? ''}
-          </p>
+          <SperrBand grund={z.schreiben} text={texte.grund[z.schreiben] ?? ''} wiederAb={texte.wiederAb} />
         ) : null}
         <form
-          className="flex items-end gap-2"
+          className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5 sm:items-end"
           onSubmit={(e) => {
             e.preventDefault();
             void senden();
           }}
         >
-          <label className="flex min-w-0 flex-1 flex-col gap-1">
+          <label className="col-span-2 flex min-w-0 flex-col sm:col-span-1">
             <span className="sr-only">{texte.eingabe}</span>
             <textarea
               value={text}
@@ -337,23 +347,28 @@ export function ChatFenster({
               }}
               disabled={gesperrt}
               rows={2}
-              placeholder={texte.eingabe}
-              aria-describedby="chat-zeichen"
-              className="min-h-12 w-full resize-y rounded-md border-2 border-rand bg-weiss px-3 py-2 text-18 disabled:bg-sand"
+              placeholder={gesperrt ? texte.eingabeGesperrt : texte.eingabe}
+              aria-describedby={gesperrt ? undefined : 'chat-zeichen'}
+              className="min-h-12 w-full resize-y rounded-md border-2 border-rand bg-weiss px-3 py-2 text-18 disabled:cursor-not-allowed disabled:resize-none disabled:border-dashed disabled:bg-sand disabled:text-tinte-2 disabled:placeholder:text-tinte-2"
             />
-            <span id="chat-zeichen" className={klassen('text-16', zeichen > MAX ? 'font-bold text-fehler' : 'text-tinte-2')}>
-              {texte.zeichen.replace('{anzahl}', String(zeichen)).replace('{max}', String(MAX))}
-            </span>
           </label>
           <button
             type="submit"
             disabled={gesperrt || sendet || !text.trim() || zeichen > MAX}
-            className="mb-7 min-h-12 rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800 disabled:cursor-not-allowed disabled:opacity-50"
+            className="col-start-2 row-start-2 min-h-12 cursor-pointer rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800 disabled:cursor-not-allowed disabled:opacity-50 sm:row-start-1"
           >
             {texte.senden}
           </button>
+          {gesperrt ? null : (
+            <span
+              id="chat-zeichen"
+              className={klassen('col-start-1 row-start-2 text-16', zeichen > MAX ? 'font-bold text-fehler' : 'text-tinte-2')}
+            >
+              {texte.zeichen.replace('{anzahl}', String(zeichen)).replace('{max}', String(MAX))}
+            </span>
+          )}
         </form>
-        <p role="status" className="min-h-6 text-16 font-bold text-fehler">
+        <p role="status" className={klassen('min-h-6 text-16 font-bold', meldung === texte.gemeldet ? 'text-gruen-800' : 'text-fehler')}>
           {meldung}
         </p>
       </div>
@@ -449,5 +464,26 @@ function MeldeDialog({
         </div>
       </form>
     </dialog>
+  );
+}
+
+/** Hinweisband über dem gesperrten Eingabefeld (GC-1): Symbol, Grund und – bei „geschlossen“ – die Wiederöffnungszeit. */
+function SperrBand({ grund, text, wiederAb }: { grund: SchreibGrund; text: string; wiederAb: string }) {
+  // Uhr für Zeitfenster und Stummschaltung, Pause für Pausen, sonst Schloss
+  const klasse = 'mt-0.5 size-5 shrink-0 text-info';
+  return (
+    <div role="status" className="flex items-start gap-3 rounded-md bg-info-toenung px-4 py-3">
+      {grund === 'geschlossen' || grund === 'stumm' ? (
+        <Clock aria-hidden className={klasse} />
+      ) : grund === 'pausiert' || grund === 'notfallpause' ? (
+        <CirclePause aria-hidden className={klasse} />
+      ) : (
+        <Lock aria-hidden className={klasse} />
+      )}
+      <p className="flex flex-col text-16">
+        <span className="font-bold text-tinte">{text}</span>
+        {grund === 'geschlossen' ? <span className="text-tinte-2">{wiederAb}</span> : null}
+      </p>
+    </div>
   );
 }
