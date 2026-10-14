@@ -154,4 +154,9 @@ test('Übersicht: „Alle Suren“ mit Suche zuerst (vor 900 px), Sprungmarken, 
   await page.evaluate(() => window.scrollTo({ top: 3000, behavior: 'instant' }));
   await expect(nachOben).toBeVisible();
   await expect(nachOben).toHaveAttribute('href', '#inhalt');
+  // Unter sm nur ein runder Symbolknopf von 48 px, der Text bleibt der Name (Sichtabnahme Runde 3, HB-8)
+  if (info.project.name === 'telefon') {
+    const knopf = await nachOben.boundingBox();
+    expect([Math.round(knopf?.width ?? 0), Math.round(knopf?.height ?? 0)]).toEqual([48, 48]);
+  }
 });

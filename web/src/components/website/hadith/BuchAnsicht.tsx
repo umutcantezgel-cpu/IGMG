@@ -24,7 +24,9 @@ import { TeilNavigation } from './TeilNavigation';
  * Umfang, Nummern und dem Weg weiter, die Spalte folgt der Liste (H-2). Auf langen Strecken führt „Nach oben“ zurück.
  * Lange Bücher stehen in Teilen zu je 100 Hadithen, Teil 1 ist die Buchseite. Sichtabnahme Runde 2: Die Gebetsleiste
  * steht als eine Zeile (X-8); die Liste ist in Abschnitte zu je 10 gegliedert, die Sprungleiste führt zu ihnen – bis lg
- * in der kompakten Leiste unter dem Kopf, ab lg in der mitlaufenden Spalte (H-6).
+ * in der kompakten Leiste unter dem Kopf, ab lg in der mitlaufenden Spalte (H-6). Runde 3 (HB-8): Bis lg folgt der Liste
+ * mehr Abstand (mit dem Rasterabstand 88 px) als „Nach oben“ unten einnimmt (64 px, ab md 80 px) – das Ende der Liste
+ * lässt sich frei lesen.
  */
 export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
   const sprache = (await getLocale()) as Locale;
@@ -81,7 +83,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
         }
       />
       <div className="mx-auto grid max-w-(--container-inhalt) items-start gap-10 px-4 pt-8 pb-abschnitt-klein md:px-8 md:pt-12 lg:grid-cols-3 lg:gap-12">
-        <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
+        <div className="flex min-w-0 flex-col gap-6 max-lg:pb-12 lg:col-span-2">
           {/* Bis lg: Umfang, Nummern und der Weg weiter gleich unter dem Kopf (die Spalte folgt erst nach der Liste) */}
           {hadithe.length ? (
             <div className="flex flex-col rounded-lg border border-linie bg-weiss shadow-s1 lg:hidden">

@@ -204,6 +204,14 @@ test.describe('Projekte', () => {
       .evaluateAll((els) => Math.min(...els.map((e) => e.getBoundingClientRect().bottom)));
     expect((await h1.boundingBox())?.y ?? fenster).toBeLessThan(fenster);
     expect(oben).toBeLessThanOrEqual(fenster);
+    // Runde 3: „Fertiggestellt“ nur einmal, neben der Kennung (PF-6); Achtstern mit Haken vor dem Titel auch bei 390 (PF-7)
+    await expect(page.getByText(PR.status.fertiggestellt, { exact: true })).toHaveCount(1);
+    const marke = await h1.evaluate((e) => {
+      const z = e.parentElement?.querySelector('span[aria-hidden]')?.getBoundingClientRect();
+      return z ? { breite: z.width, links: z.right <= e.getBoundingClientRect().left } : null;
+    });
+    expect(marke?.links).toBe(true);
+    expect(marke?.breite ?? 0).toBeGreaterThanOrEqual(40);
     const stand = PR.meilenstein.stand.replace('{erledigt}', '6').replace('{gesamt}', '6');
     await expect(page.getByText(stand, { exact: true })).toBeVisible();
     const sichtbar = await page
