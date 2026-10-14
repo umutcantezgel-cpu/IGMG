@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, CirclePause, Clock, Flag, Lock, Phone } from 'lucide-react';
+import { ChevronDown, CircleAlert, CirclePause, Clock, Flag, Lock, Phone } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
@@ -37,6 +37,8 @@ export type ChatTexte = {
   meldenAria: string;
   meldenTitel: string;
   meldenGrund: string;
+  /** Fehlermeldung an der Gruppe, wenn beim Senden kein Grund gewählt ist (GM-2: nichts ist vorausgewählt) */
+  meldenGrundFehlt: string;
   gruende: Record<'beleidigung' | 'bedrohung' | 'unangemessen' | 'spam' | 'sonstiges', string>;
   meldenFreitext: string;
   meldenSenden: string;
@@ -73,7 +75,8 @@ function abstand(letzteAktivitaet: number): number {
  * Neues“). Keine Lesebestätigungen, keine Online-Anzeige, Links nur als Text, Melden in zwei Schritten mit Hilfehinweis.
  * Gesperrt (Sichtabnahme GC-1): Hinweisband mit Symbol und Wiederöffnungszeit über dem sichtbar gesperrten Feld; auf dem
  * Telefon steht das Feld in voller Breite, „Senden“ darunter. „Melden“ (GC-2, GC-3) steht bei fremden Nachrichten immer
- * rechts oben als ruhiger Umrissknopf; der Kartentitel steht nur für Hilfsmittel da (die Seite trägt ihn schon als H1).
+ * rechts oben als ruhiger Umrissknopf; fremde Nachrichten nehmen die volle Spaltenbreite (GC-6), damit der Knopf in jeder
+ * Nachricht an derselben Kante steht. Der Kartentitel steht nur für Hilfsmittel da (die Seite trägt ihn schon als H1).
  */
 export function ChatFenster({
   kanalId,
@@ -270,7 +273,7 @@ export function ChatFenster({
               key={n.id}
               className={klassen(
                 'flex max-w-text flex-col gap-1',
-                n.eigen ? 'items-end self-end' : 'self-start',
+                n.eigen ? 'items-end self-end' : 'w-full self-start',
                 n.id >= neuAb && 'tritt-auf',
               )}
               style={{ '--dauer': 'var(--dauer-wechsel)' } as CSSProperties}
@@ -369,10 +372,11 @@ export function ChatFenster({
               className="min-h-12 w-full resize-y rounded-md border-2 border-rand bg-weiss px-3 py-2 text-18 disabled:cursor-not-allowed disabled:resize-none disabled:border-dashed disabled:bg-sand disabled:text-tinte-2 disabled:placeholder:text-tinte-2"
             />
           </label>
+          {/* Gesperrt wie das Feld (GC-9): gestrichelt auf Sand statt halb durchsichtig; der Rand ist immer da, die Breite bleibt */}
           <button
             type="submit"
             disabled={gesperrt || sendet || !text.trim() || zeichen > MAX}
-            className="col-start-2 row-start-2 min-h-12 cursor-pointer rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800 disabled:cursor-not-allowed disabled:opacity-50 sm:row-start-1"
+            className="col-start-2 row-start-2 min-h-12 cursor-pointer rounded-md border-2 border-transparent bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800 disabled:cursor-not-allowed disabled:border-dashed disabled:border-rand disabled:bg-sand disabled:text-tinte-2 sm:row-start-1"
           >
             {texte.senden}
           </button>
@@ -417,44 +421,67 @@ function MeldeDialog({
   onSchliessen: () => void;
   onSenden: (grund: keyof ChatTexte['gruende'], freitext: string | null) => Promise<void>;
 }) {
-  const [grund, setGrund] = useState<keyof ChatTexte['gruende']>('unangemessen');
+  // GM-2: kein Grund vorausgewählt – fehlt die Wahl beim Senden, steht die Fehlermeldung an der Gruppe
+  const [grund, setGrund] = useState<keyof ChatTexte['gruende'] | null>(null);
+  const [grundFehlt, setGrundFehlt] = useState(false);
   const [freitext, setFreitext] = useState('');
+  const ersterGrund = useRef<HTMLInputElement>(null);
   useEffect(() => {
     ref.current?.showModal();
   }, [ref]);
   return (
+    // GM-1: wie die übrigen Dialoge 1 rem Abstand zum Fensterrand (`breite-dialog`), höchstens `max-w-dialog`
     <dialog
       ref={ref}
       onClose={onSchliessen}
       aria-labelledby="melden-titel"
-      className="m-auto max-w-dialog rounded-lg bg-papier p-6 shadow-s3 backdrop:bg-tinte/55"
+      className="m-auto breite-dialog max-w-dialog rounded-lg bg-papier p-6 shadow-s3 backdrop:bg-tinte/55"
     >
       <form
         method="dialog"
         className="flex flex-col gap-4"
         onSubmit={(e) => {
           e.preventDefault();
+          if (!grund) {
+            setGrundFehlt(true);
+            ersterGrund.current?.focus();
+            return;
+          }
           void onSenden(grund, freitext.trim() || null);
         }}
       >
         <h2 id="melden-titel" className="text-24">
           {texte.meldenTitel}
         </h2>
-        <fieldset className="flex flex-col gap-2">
+        <fieldset
+          aria-describedby={grundFehlt ? 'melden-grund-fehler' : undefined}
+          aria-invalid={grundFehlt || undefined}
+          className="flex flex-col gap-2"
+        >
           <legend className="mb-1 font-bold">{texte.meldenGrund}</legend>
-          {(Object.keys(texte.gruende) as (keyof ChatTexte['gruende'])[]).map((g) => (
+          {(Object.keys(texte.gruende) as (keyof ChatTexte['gruende'])[]).map((g, i) => (
             <label key={g} className="flex min-h-11 items-center gap-3">
               <input
+                ref={i === 0 ? ersterGrund : undefined}
                 type="radio"
                 name="grund"
                 value={g}
                 checked={grund === g}
-                onChange={() => setGrund(g)}
+                onChange={() => {
+                  setGrund(g);
+                  setGrundFehlt(false);
+                }}
                 className="size-5 accent-gruen-700"
               />
               {texte.gruende[g]}
             </label>
           ))}
+          {grundFehlt ? (
+            <p id="melden-grund-fehler" role="alert" className="flex items-start gap-1.5 text-16 font-bold text-fehler">
+              <CircleAlert aria-hidden className="mt-0.5 size-5 shrink-0" />
+              <span>{texte.meldenGrundFehlt}</span>
+            </p>
+          ) : null}
         </fieldset>
         <label className="flex flex-col gap-1">
           <span className="font-bold">{texte.meldenFreitext}</span>
@@ -467,7 +494,8 @@ function MeldeDialog({
           />
         </label>
         <Hilfe text={texte.hilfe} nummer={texte.hilfeNummer} />
-        <div className="flex flex-wrap gap-3">
+        {/* Im schmaleren Dialog (GM-1) passen beide Knöpfe auf dem Telefon nicht nebeneinander: dort untereinander in voller Breite */}
+        <div className="flex flex-wrap gap-3 max-sm:flex-col">
           <button type="submit" className="min-h-12 rounded-md bg-gruen-700 px-5 font-bold text-weiss hover:bg-gruen-800">
             {texte.meldenSenden}
           </button>
@@ -513,16 +541,16 @@ function Regeln({ regeln }: { regeln: ChatTexte['regeln'] }) {
 
 /**
  * Hilfehinweis (GC-5) über „Ich habe die Regeln gelesen“ und im Melde-Dialog: Text in Zweitfarbe, die Nummer fett in
- * Grundtextfarbe als Anruf-Link mit Telefonsymbol (Ziel mindestens 44 px hoch).
+ * Grundtextfarbe als Anruf-Link mit Telefonsymbol (Ziel mindestens 44 px hoch). Die Nummer steht als eigene Zeile unter
+ * dem Text (X-13), damit die hohe Zielfläche keine Textzeile aufweitet.
  */
 function Hilfe({ text, nummer, className }: { text: string; nummer: string; className?: string }) {
   return (
     <p role="note" className={klassen('rounded-md border border-linie bg-weiss px-3 py-1 text-16 text-pretty text-tinte-2', className)}>
-      {/* Fließtext mit dem Link am Ende: Die Nummer folgt dem Text in derselben Zeile, solange sie passt */}
       {text}{' '}
       <a
         href={`tel:${nummer.replace(/[^\d+]/g, '')}`}
-        className="inline-flex min-h-11 items-center gap-2 align-middle text-18 font-bold whitespace-nowrap text-tinte underline decoration-1 underline-offset-4 hover:text-tinte hover:decoration-2"
+        className="flex min-h-11 w-fit items-center gap-2 text-18 font-bold whitespace-nowrap text-tinte underline decoration-1 underline-offset-4 hover:text-tinte hover:decoration-2"
       >
         <Phone aria-hidden className="size-5 shrink-0 text-gruen-700" />
         {nummer}

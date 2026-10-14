@@ -69,6 +69,7 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean, chatVon: string)
     meldenAria: t.raw('chatFenster.meldenAria') as string,
     meldenTitel: w('meldenTitel'),
     meldenGrund: w('meldenGrund'),
+    meldenGrundFehlt: w('meldenGrundFehlt'),
     gruende: {
       beleidigung: t('chatFenster.gruende.beleidigung'),
       bedrohung: t('chatFenster.gruende.bedrohung'),
@@ -208,8 +209,9 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
       )}
 
       <aside aria-label={t('chatRegeln.titel')} className="flex flex-col gap-2 rounded-lg bg-sand px-5 py-4 text-16 text-tinte-2">
-        <p className="flex items-center gap-2 font-bold text-tinte">
-          <ShieldCheck aria-hidden className="size-5 text-gruen-700" />
+        {/* GC-11: Symbol an der ersten Zeile, schrumpft beim Umbruch nicht */}
+        <p className="flex items-start gap-2 font-bold text-tinte">
+          <ShieldCheck aria-hidden className="mt-0.5 size-5 shrink-0 text-gruen-700" />
           {ts('oeffnungszeiten', { von: g.chatVon, bis: g.chatBis })}
         </p>
         <p>{ts(`${sie ? 'sie' : 'du'}.datenschutz`)}</p>
