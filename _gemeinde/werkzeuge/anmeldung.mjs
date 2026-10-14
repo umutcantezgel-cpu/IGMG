@@ -82,7 +82,7 @@ async function serverLaeuft() {
 /** Legt eine Einladung direkt in der PGlite-Datenbank an (Tabelle einladung, siehe drizzle/migrations/0000_grundstock.sql). */
 async function einladen() {
   if (await serverLaeuft()) {
-    console.error(`Der Server läuft unter ${basis}. Erst stoppen: _werkstatt/werkzeuge/server-starten.sh stop`);
+    console.error(`Der Server läuft unter ${basis}. Erst stoppen: _gemeinde/werkzeuge/server-starten.sh stop`);
     process.exitCode = 1;
     return;
   }

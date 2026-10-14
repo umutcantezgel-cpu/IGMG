@@ -198,6 +198,6 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
 
 - **VERCEL.md** (`web/docs/deploy/VERCEL.md`): das Runbook, Schritt für Schritt.
 - **VERCEL-ENV.md** (`web/docs/deploy/VERCEL-ENV.md`): alle Umgebungsvariablen mit Pflicht je Betriebsart.
-- **MENSCHEN.md** (`_werkstatt/MENSCHEN.md`): alle offenen Entscheidungen und Aufgaben für Menschen.
+- **MENSCHEN.md** (`_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`): alle offenen Entscheidungen und Aufgaben für Menschen.
 - **BETRIEB.md** (`web/docs/BETRIEB.md`): Betrieb mit Docker und Betrieb auf Vercel (§ 9).
 - **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024.

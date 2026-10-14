@@ -5,8 +5,8 @@
 set -u
 S=${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad}
 export PATH=$S/node24/bin:$PATH
-W=/home/user/IGMG/_werkstatt/werkzeuge
-P=/home/user/IGMG/_werkstatt/protokolle
+W=/home/user/IGMG/_gemeinde/werkzeuge
+P=/home/user/IGMG/_gemeinde/protokolle
 RUNDEN=${1:-3}
 for r in $(seq 1 "$RUNDEN"); do
   for port in 3100 3500; do

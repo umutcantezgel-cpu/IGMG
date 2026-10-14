@@ -5,8 +5,8 @@
 set -u
 S=${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad}
 Q=$S/bilder/stufe-c
-Z=/home/user/IGMG/_werkstatt/bilder/abschluss
-W=/home/user/IGMG/_werkstatt/werkzeuge
+Z=/home/user/IGMG/_gemeinde/bilder/abschluss
+W=/home/user/IGMG/_gemeinde/werkzeuge
 for name in $(python3 -c "
 import json
 for r in json.load(open('$W/routen-hauptansichten.json')):

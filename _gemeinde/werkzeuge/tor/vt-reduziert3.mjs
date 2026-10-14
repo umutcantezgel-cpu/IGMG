@@ -1,7 +1,7 @@
 // E2-TOR2-PRUEFER: Seitenwechsel B-05 bei reduzierter Bewegung (prefers-reduced-motion: reduce).
 // Erwartung: startViewTransition wird nicht aufgerufen (vt=0), die Navigation gelingt trotzdem.
 // Umgebung: BASIS. Ausgabe: JSON auf stdout.
-import { basisAdresse, neuerKontext, oeffne, starteBrowser } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { basisAdresse, neuerKontext, oeffne, starteBrowser } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const BASIS = basisAdresse(process.env.BASIS ?? 'http://127.0.0.1:3400');
 const FAELLE = [

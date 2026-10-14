@@ -6,9 +6,9 @@ import { createRequire } from 'node:module';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { parseArgs } from 'node:util';
-import { GERAETE, basisAdresse, lesePfade, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { GERAETE, basisAdresse, lesePfade, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
-const req = createRequire('/home/user/IGMG/_werkstatt/werkzeuge/package.json');
+const req = createRequire('/home/user/IGMG/_gemeinde/werkzeuge/package.json');
 const { default: AxeBuilder } = await import(req.resolve('@axe-core/playwright'));
 
 const { values } = parseArgs({

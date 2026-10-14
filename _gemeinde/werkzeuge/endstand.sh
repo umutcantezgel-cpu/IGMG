@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Endstand-Messung (Stufe C am endgültigen Stand): Dev 3200 stoppen (Speicher), 3500 aus REV bauen, Stufe-C-Schritte
 # 1–3 und 5–11, bei ruhiger Last Schritt 12 (Lighthouse verschränkt) und INP-Paare, zuletzt die E2E-Suite (Port 3700,
-# Postgres, Mailpit). Protokolle: _werkstatt/protokolle/C-* (Stufe C) und C-endstand.log (Ablauf).
+# Postgres, Mailpit). Protokolle: _gemeinde/protokolle/C-* (Stufe C) und C-endstand.log (Ablauf).
 # Aufruf: bash endstand.sh REV [--ab teil]   Teile: bau, c1, c2, ruhe, e2e · OHNE_RUHE=1 überspringt Lighthouse und INP
 set -u
 REV=${1:?REV}
 AB=${3:-bau}
 S=${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad}
-W=/home/user/IGMG/_werkstatt/werkzeuge
-P=/home/user/IGMG/_werkstatt/protokolle
+W=/home/user/IGMG/_gemeinde/werkzeuge
+P=/home/user/IGMG/_gemeinde/protokolle
 LOG=$P/C-endstand.log
 export PATH=$S/node24/bin:$PATH COREPACK_ENABLE_DOWNLOAD_PROMPT=0 NEXT_TELEMETRY_DISABLED=1
 s() { echo "== $(date -u +%T) $* · Last $(cut -d' ' -f1 /proc/loadavg)" | tee -a "$LOG"; }

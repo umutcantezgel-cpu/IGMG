@@ -11,7 +11,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { parseArgs } from 'node:util';
-import { hilfeAusgeben, schreibeProtokoll, standardProtokoll } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { hilfeAusgeben, schreibeProtokoll, standardProtokoll } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 // E3-TOR: Wurzel = Worktree des Prüflings (93a0b3d), sonst der Live-Baum
 const WURZEL = process.env.WURZEL ?? '/home/user/IGMG'; const WEB = join(WURZEL, 'web');
 

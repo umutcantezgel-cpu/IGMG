@@ -4,7 +4,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { parseArgs } from 'node:util';
-import { basisAdresse, lesePfade, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { basisAdresse, lesePfade, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const { values } = parseArgs({ options: { routen: { type: 'string' }, basis: { type: 'string' }, protokoll: { type: 'string' } } });
 const BASIS = basisAdresse(values.basis ?? process.env.BASIS ?? 'http://127.0.0.1:3400');

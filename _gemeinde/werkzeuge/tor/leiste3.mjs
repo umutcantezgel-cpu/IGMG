@@ -9,7 +9,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { basisAdresse, neuerKontext, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { basisAdresse, neuerKontext, starteBrowser, vollerUrl } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const { values } = parseArgs({
   options: {

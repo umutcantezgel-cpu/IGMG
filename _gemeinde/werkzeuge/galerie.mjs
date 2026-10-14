@@ -1,9 +1,9 @@
-// Galerie (AUFTRAG Abschluss): eigenständige Vorher-Nachher-Seite `_werkstatt/bilder/galerie.html`.
+// Galerie (AUFTRAG Abschluss): eigenständige Vorher-Nachher-Seite `_gemeinde/bilder/galerie.html`.
 // Je Hauptansicht und Gerät zwei Spalten (vorher E0 · nachher Abschluss), Bildschirm für Bildschirm; dazu optionale
 // Zusatzstreifen (große Momente, Seitenwechsel) aus dem Abschlussordner. Ohne Skript, ohne fremde Quellen, Bilder lazy.
 // Aufruf: node galerie.mjs [--vorher bilder/e0] [--nachher bilder/abschluss] [--aus bilder/galerie.html]
 //         [--routen werkzeuge/routen-hauptansichten.json] [--titel "…"]
-// Pfade relativ zu _werkstatt; die Seite verweist relativ auf die Bilder (liegt im selben Ordner `bilder/`).
+// Pfade relativ zu _gemeinde; die Seite verweist relativ auf die Bilder (liegt im selben Ordner `bilder/`).
 import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';

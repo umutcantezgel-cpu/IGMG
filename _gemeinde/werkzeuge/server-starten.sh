@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Startet den eingefrorenen Produktions-Server (Ausgangsstand E0) auf Port 3100 mit PGlite zur Laufzeit.
-# Aufruf:  _werkstatt/werkzeuge/server-starten.sh [start|stop|status]
+# Aufruf:  _gemeinde/werkzeuge/server-starten.sh [start|stop|status]
 # Standard: start. Wartet bis zu 60 s auf /api/health und meldet dann PID und Adresse.
 # Umgebung (optional):
 #   SERVERORDNER  Ordner mit server.js (Standard: Scratchpad/basis-standalone, eingefroren aus .next/standalone)

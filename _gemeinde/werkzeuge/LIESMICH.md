@@ -1,6 +1,6 @@
 # Prüfwerkzeuge (E0) – Liesmich
 
-Dieser Ordner enthält die Werkzeuge, mit denen Prüfer Gestaltung, Zugänglichkeit, Leistung und Bewegung der Web-App messen. Du änderst mit ihnen nichts am Projekt. Sie schreiben nur Protokolle nach `_werkstatt/protokolle/` (Standard) und Bilder nach `SCRATCHPAD/bilder/` (außerhalb des Repos). Den Scratchpad-Pfad nennen alle Skripte; Vorgabe: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad`. Er lässt sich mit `SCRATCHPAD=…` ändern.
+Dieser Ordner enthält die Werkzeuge, mit denen Prüfer Gestaltung, Zugänglichkeit, Leistung und Bewegung der Web-App messen. Du änderst mit ihnen nichts am Projekt. Sie schreiben nur Protokolle nach `_gemeinde/protokolle/` (Standard) und Bilder nach `SCRATCHPAD/bilder/` (außerhalb des Repos). Den Scratchpad-Pfad nennen alle Skripte; Vorgabe: `/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad`. Er lässt sich mit `SCRATCHPAD=…` ändern.
 
 ## Einrichtung in 5 Schritten
 
@@ -20,19 +20,19 @@ Außerhalb von `web/` meldet corepack eine andere pnpm-Version. Maßgeblich ist 
 **2. Prüfwerkzeuge installieren, außerhalb des Repos**
 
 ```
-mkdir -p $S/werkzeuge-nm && cp _werkstatt/werkzeuge/package.json $S/werkzeuge-nm/
+mkdir -p $S/werkzeuge-nm && cp _gemeinde/werkzeuge/package.json $S/werkzeuge-nm/
 cd $S/werkzeuge-nm && PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --no-audit --no-fund
-cd /home/user/IGMG && ln -sfn $S/werkzeuge-nm/node_modules _werkstatt/werkzeuge/node_modules
+cd /home/user/IGMG && ln -sfn $S/werkzeuge-nm/node_modules _gemeinde/werkzeuge/node_modules
 ```
 
-Ergebnis: playwright 1.64.0, @axe-core/playwright 4.13.0, lighthouse 13.5.0 (Versionen aus `web/package.json` und `web/node_modules`). `_werkstatt/.gitignore` ignoriert den Symlink.
+Ergebnis: playwright 1.64.0, @axe-core/playwright 4.13.0, lighthouse 13.5.0 (Versionen aus `web/package.json` und `web/node_modules`). `_gemeinde/.gitignore` ignoriert den Symlink.
 
 **3. Browser prüfen**
 
 Chromium liegt unter `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` (Version 141). `playwright install` nicht ausführen. Andere Pfade setzt `CHROME_PATH=/pfad/zu/chrome`. Schnelltest:
 
 ```
-node _werkstatt/werkzeuge/einzelbild.mjs / --breite 390
+node _gemeinde/werkzeuge/einzelbild.mjs / --breite 390
 ```
 
 **4. Ausgangsstand bauen und einfrieren**
@@ -61,22 +61,22 @@ Der eingefrorene Stand gehört zum Commit, der beim Build auscheckt war (`git re
 **5. Server starten und prüfen**
 
 ```
-_werkstatt/werkzeuge/server-starten.sh start    # wartet auf /api/health, Standard: Port 3100
-_werkstatt/werkzeuge/server-starten.sh status
-_werkstatt/werkzeuge/server-starten.sh stop
+_gemeinde/werkzeuge/server-starten.sh start    # wartet auf /api/health, Standard: Port 3100
+_gemeinde/werkzeuge/server-starten.sh status
+_gemeinde/werkzeuge/server-starten.sh stop
 ```
 
 `$S/lokal.env` (außerhalb des Repos, Rechte 600) enthält die Laufzeitwerte: `NODE_ENV`, `PORT=3100`, `HOSTNAME=0.0.0.0`, `APP_URL`, `BETTER_AUTH_URL`, `BAU_PGLITE=1`, `PGLITE_VERZEICHNIS`, `DATABASE_URL=` (leer), `PROXY_VERTRAUEN=1`, `EINGANG_SCHLUESSEL_ID=1`, `SPEICHER=dateisystem`, `MEDIEN_VERZEICHNIS`, sowie die Geheimnisse `BETTER_AUTH_SECRET`, `ALTCHA_GEHEIMNIS`, `RATE_GEHEIMNIS`, `EINGANG_SCHLUESSEL` (32 Byte, Base64) und `WARTUNG_TOKEN`. Erzeugen mit `openssl rand -base64 32` (`WARTUNG_TOKEN`: `-base64 48`). Werte nie in den Bericht oder ins Repo.
 
 ## Werkzeuge
 
-Alle Skripte: `node _werkstatt/werkzeuge/<name>.mjs --hilfe`. Basisadresse: `--basis URL` oder `BASIS` (Standard `http://127.0.0.1:3100`). Protokolle: `--protokoll <basisname>` (schreibt `.json` und `.md`), Standard `_werkstatt/protokolle/werkzeug-<name>-<zeit>`. Befunde sind Daten und führen nicht zu Exit-Code 1. Exit-Code 1 bedeutet technischen Fehler oder HTTP-Fehler der Seite.
+Alle Skripte: `node _gemeinde/werkzeuge/<name>.mjs --hilfe`. Basisadresse: `--basis URL` oder `BASIS` (Standard `http://127.0.0.1:3100`). Protokolle: `--protokoll <basisname>` (schreibt `.json` und `.md`), Standard `_gemeinde/protokolle/werkzeug-<name>-<zeit>`. Befunde sind Daten und führen nicht zu Exit-Code 1. Exit-Code 1 bedeutet technischen Fehler oder HTTP-Fehler der Seite.
 
 Gemeinsame Schalter: Der Konzept-Hinweis (Modal beim ersten Besuch, `localStorage`) wird als „gesehen“ markiert, damit er Ansichten nicht überdeckt. `HINWEIS_ZEIGEN=1` lässt ihn stehen.
 
 | Werkzeug | Zweck | Beispiel |
 |---|---|---|
-| `einzelbild.mjs` | Ein Bild einer Seite, JPEG 70 (PNG mit `--png`), höchstens 1440 px breit | `node _werkstatt/werkzeuge/einzelbild.mjs / --breite 1440`<br>`node …/einzelbild.mjs /gebetszeiten --breite 390 --voll --aus /tmp/g.jpg` |
+| `einzelbild.mjs` | Ein Bild einer Seite, JPEG 70 (PNG mit `--png`), höchstens 1440 px breit | `node _gemeinde/werkzeuge/einzelbild.mjs / --breite 1440`<br>`node …/einzelbild.mjs /gebetszeiten --breite 390 --voll --aus /tmp/g.jpg` |
 | `bildsatz.mjs` | Je Route 390×844, 768×1024, 1440×900: ein Ausschnitt je Bildschirmhöhe (kein fullPage), Überlauf- und Textkürzungsprüfung | `node …/bildsatz.mjs --routen …/routen-hauptansichten.json --reduziert` |
 | `a11y.mjs` | axe mit wcag2a/aa, wcag21a/aa, wcag22aa; Zahl je Schwere | `node …/a11y.mjs --routen …/routen-tr.json --breite 390` |
 | `lighthouse.mjs` | Lighthouse mobil, je Lauf „devtools“ (maßgeblich) und „simulate“, Median aus `--laeufe` (Standard 3) | `node …/lighthouse.mjs --routen …/routen-hauptansichten.json --laeufe 3` |
@@ -93,11 +93,11 @@ Gemeinsame Schalter: Der Konzept-Hinweis (Modal beim ersten Besuch, `localStorag
 **Anmeldung in der Verwaltung** (PGlite, nur ein Prozess je Datenbank):
 
 ```
-_werkstatt/werkzeuge/server-starten.sh stop
-node _werkstatt/werkzeuge/anmeldung.mjs einladen          # Einladung in die Datenbank, Server gestoppt
-_werkstatt/werkzeuge/server-starten.sh start
-node _werkstatt/werkzeuge/anmeldung.mjs anmelden          # Passwort, TOTP, Anmeldung, storageState
-node _werkstatt/werkzeuge/einzelbild.mjs /verwaltung --zustand $S/verwaltung-state.json --breite 1440
+_gemeinde/werkzeuge/server-starten.sh stop
+node _gemeinde/werkzeuge/anmeldung.mjs einladen          # Einladung in die Datenbank, Server gestoppt
+_gemeinde/werkzeuge/server-starten.sh start
+node _gemeinde/werkzeuge/anmeldung.mjs anmelden          # Passwort, TOTP, Anmeldung, storageState
+node _gemeinde/werkzeuge/einzelbild.mjs /verwaltung --zustand $S/verwaltung-state.json --breite 1440
 ```
 
 Testkonto: `pruefer@example.test` (Rolle administration, nur Testdaten). Die Einladung ist 72 Stunden gültig; bei einem neuen Lauf eine neue Datenbank verwenden. `einladen` verweigert den Lauf, solange der Server läuft.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Stufe C (ABNAHME Z-01–Z-12): Endprüfung am Prüfling REV auf Server 127.0.0.1:3500 (Build über head/e4-bau.sh REV,
 # Worktree $SCRATCHPAD/bau-head). Vorlage: E3-Tor-Lauf (tor-e3/skripte/lauf-e3tor.sh). Alle schweren Schritte nacheinander.
-# Protokolle nach _werkstatt/protokolle/C-*, Bilder nach $SCRATCHPAD/bilder/stufe-c/, Prüfskripte in werkzeuge/ und werkzeuge/tor/.
+# Protokolle nach _gemeinde/protokolle/C-*, Bilder nach $SCRATCHPAD/bilder/stufe-c/, Prüfskripte in werkzeuge/ und werkzeuge/tor/.
 # Aufruf: bash stufe-c.sh REV [--ab SCHRITT] [--bis SCHRITT]   (SCHRITT 1 bis 12; 12 = Lighthouse verschränkt, LH_RUNDEN)
 # Sicherheit: nur lesende Abrufe und Formularprüfungen bis zur Serverprüfung (funktionsliste.mjs zählt POSTs);
 # keine echten Sendungen, keine Geheimnisse in Protokollen (lokal.env wird nie ausgegeben).
@@ -14,8 +14,8 @@ S=${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302
 export PATH=$S/node24/bin:$PATH COREPACK_ENABLE_DOWNLOAD_PROMPT=0 NEXT_TELEMETRY_DISABLED=1 VERCEL_TELEMETRY_DISABLED=1
 B=http://127.0.0.1:3500
 B0=http://127.0.0.1:3100
-P=/home/user/IGMG/_werkstatt/protokolle
-W=/home/user/IGMG/_werkstatt/werkzeuge
+P=/home/user/IGMG/_gemeinde/protokolle
+W=/home/user/IGMG/_gemeinde/werkzeuge
 K=$W/tor
 R=$W/routen-stufe-c.json
 RH=$W/routen-hauptansichten.json

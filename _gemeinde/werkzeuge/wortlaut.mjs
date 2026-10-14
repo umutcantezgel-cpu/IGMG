@@ -4,8 +4,8 @@
  * (Lauf „Gestaltung aufwerten und Vercel-startklar machen“, Kriterium Z-12, Rolle H-R01).
  *
  * Aufruf:
- *   node /home/user/IGMG/_werkstatt/werkzeuge/wortlaut.mjs --basis 9ebb4bc --stand HEAD \
- *     --protokoll /home/user/IGMG/_werkstatt/protokolle/H-R01-wortlaut
+ *   node /home/user/IGMG/_gemeinde/werkzeuge/wortlaut.mjs --basis 9ebb4bc --stand HEAD \
+ *     --protokoll /home/user/IGMG/_gemeinde/protokolle/H-R01-wortlaut
  * Schreibt nur <protokoll>.json und <protokoll>.md. Liest ausschließlich (git show, ls-tree, ls-files, grep;
  * Dateien im Arbeitsbaum nur bei --stand ARBEITSSTAND).
  * Exitcode 0: kein offener Befund „hoch“. Exitcode 2: mindestens ein offener Befund „hoch“.
@@ -755,7 +755,7 @@ const ausnahmenZeilen = [...AUSNAHMEN, ...BEKANNT_NICHT_RECHT].map((a) => `- **$
 
 const md = `# H-R01 · Wortlaut der Rechts- und Einwilligungstexte
 
-Stand des Protokolls: ${protokoll.erstellt} · Werkzeug: \`_werkstatt/werkzeuge/wortlaut.mjs\` (Version ${VERSION})
+Stand des Protokolls: ${protokoll.erstellt} · Werkzeug: \`_gemeinde/werkzeuge/wortlaut.mjs\` (Version ${VERSION})
 Basis: \`${BASIS}\` (${commitBasis.slice(0, 9)}) · Stand: \`${STAND}\` (${commitStand.slice(0, 9)})
 Arbeitsbaum unter web/ weicht von HEAD ab: ${webAbweichung ? 'JA' : 'nein'} · unversionierte Dateien unter web/: ${unversioniert}
 Wiederholbarkeit: Ergebnis-Hash \`${ergebnisHash.slice(0, 16)}\` (Vollwert in der JSON-Datei)

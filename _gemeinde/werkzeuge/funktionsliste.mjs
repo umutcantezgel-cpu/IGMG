@@ -18,7 +18,7 @@ import {
 } from './hilfen.mjs';
 
 const HILFE = `Aufruf: node funktionsliste.mjs [--basis URL] --protokoll <Pfad ohne Endung> [--bilder Ordner] [--nur F-01,F-06] [--zustand storageState.json]
-Beispiel: node funktionsliste.mjs --basis http://127.0.0.1:3100 --protokoll /home/user/IGMG/_werkstatt/protokolle/E0-PRUEFER-03-funktionsliste`;
+Beispiel: node funktionsliste.mjs --basis http://127.0.0.1:3100 --protokoll /home/user/IGMG/_gemeinde/protokolle/E0-PRUEFER-03-funktionsliste`;
 
 const { values } = parseArgs({
   options: {

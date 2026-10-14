@@ -15,7 +15,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { basisAdresse, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { basisAdresse, neuerKontext, oeffne, starteBrowser, vollerUrl } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const ZIELE = {
   b06: { pfad: '/', ausloeser: 'anim', anim: 'schiebefenster', ziel: '.bogen-enthuellt', scrollen: false, bildScrollen: true, register: 'B-06 Tagesbogen' },

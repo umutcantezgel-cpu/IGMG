@@ -13,7 +13,7 @@
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { BILDER, basisAdresse, dateiname, hilfeAusgeben, neuerKontext, oeffne, schreibeProtokoll, standardProtokoll, starteBrowser, vollerUrl } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { BILDER, basisAdresse, dateiname, hilfeAusgeben, neuerKontext, oeffne, schreibeProtokoll, standardProtokoll, starteBrowser, vollerUrl } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const HILFE = `Aufruf: node bewegung.mjs --route <pfad> [--dauer 2000] [--scrollen] [--basis URL] [--protokoll basisname]
 Beispiel: node bewegung.mjs --route / --dauer 2000`;

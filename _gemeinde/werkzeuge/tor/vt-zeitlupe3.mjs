@@ -7,7 +7,7 @@
 //           PROTOKOLL (Basisname für .json), BREITE (Standard 1440).
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { basisAdresse, neuerKontext, oeffne, starteBrowser } from '/home/user/IGMG/_werkstatt/werkzeuge/hilfen.mjs';
+import { basisAdresse, neuerKontext, oeffne, starteBrowser } from '/home/user/IGMG/_gemeinde/werkzeuge/hilfen.mjs';
 
 const BASIS = basisAdresse(process.env.BASIS ?? 'http://127.0.0.1:3400');
 const OUT = process.env.OUT;

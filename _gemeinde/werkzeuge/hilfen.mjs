@@ -92,7 +92,7 @@ export function median(zahlen) {
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 }
 
-/** Standardname für Protokolle: _werkstatt/protokolle/werkzeug-<name>-<zeit>. */
+/** Standardname für Protokolle: _gemeinde/protokolle/werkzeug-<name>-<zeit>. */
 export function standardProtokoll(werkzeug) {
   return join(PROTOKOLLE, `werkzeug-${werkzeug}-${zeitstempel()}`);
 }

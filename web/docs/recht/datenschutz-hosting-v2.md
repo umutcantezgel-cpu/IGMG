@@ -1,6 +1,6 @@
 # Datenschutzerklärung: Baustein „Hosting“, Version 2
 
-Stand: 11.10.2026. Zugehörig zu AUFTRAG V-11 und ML-11 in `_werkstatt/MENSCHEN.md`.
+Stand: 11.10.2026. Zugehörig zu AUFTRAG V-11 und ML-11 in `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`.
 
 > **Entwurf zur fachlichen Prüfung. Nicht veröffentlicht.** Dieser Baustein ist nicht in die Seeds (`web/drizzle/seeds/bereiche/rechtliches.ts`) und nicht in die Seite (`web/src/app/[locale]/(website)/datenschutz/page.tsx`) eingebaut. Der Wortlaut der bestehenden Rechtstexte bleibt unverändert (AUFTRAG G8, Leitplanke „Recht“). Alles in eckigen Klammern `[ ]` ist offen. Alles mit `[prüfen]` ist nicht belegt. Dies ist keine Rechtsberatung.
 

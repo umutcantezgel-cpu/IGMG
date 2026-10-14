@@ -6,8 +6,8 @@
 set -u
 REV=${1:?REV}
 S=${SCRATCHPAD:-/tmp/claude-0/-home-user-IGMG/6e3f84a1-4b22-5662-a7be-b2354f6302e9/scratchpad}
-W=/home/user/IGMG/_werkstatt/werkzeuge
-P=/home/user/IGMG/_werkstatt/protokolle
+W=/home/user/IGMG/_gemeinde/werkzeuge
+P=/home/user/IGMG/_gemeinde/protokolle
 LOG=$P/C3-nachmessung.log
 export PATH=$S/node24/bin:$PATH COREPACK_ENABLE_DOWNLOAD_PROMPT=0 NEXT_TELEMETRY_DISABLED=1
 s() { echo "== $(date -u +%T) $* · Last $(cut -d' ' -f1 /proc/loadavg)" | tee -a "$LOG"; }

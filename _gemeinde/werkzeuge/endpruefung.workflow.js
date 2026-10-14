@@ -5,7 +5,7 @@ export const meta = {
 }
 
 // args: { blind: '<ordner ansicht-NN/{390,1440}/{A,B}>', schluessel: { 'ansicht-01': { name, pfad, A: 'vorher'|'nachher', B } … },
-//         abnahme: '/home/user/IGMG/_werkstatt/ABNAHME.md', bewegung: '<ordner momente/seitenwechsel des Abschlusses>', stand: '<commit>' }
+//         abnahme: '/home/user/IGMG/_gemeinde/ABNAHME.md', bewegung: '<ordner momente/seitenwechsel des Abschlusses>', stand: '<commit>' }
 // Der Schlüssel steht nur in args (Skript), nie im Auftrag der Blindprüfer.
 const BLIND = args.blind
 const SCHLUESSEL = args.schluessel
@@ -103,12 +103,12 @@ if (fehlend.length) log(`Blindvergleich ohne Ergebnis für: ${fehlend.join(', ')
 phase('Endprüfer')
 const endPrompt = `Du bist der frische Endprüfer (Opus) des Laufs „Gestaltung aufwerten und Vercel-startklar machen“ für die Web-App der IGMG Wetzlar (Repo /home/user/IGMG, Stand ${args.stand}). Du führst KEINE Tests aus und änderst KEINE Dateien. Du prüfst Belege und Bildsätze.
 
-Auftrag (AUFTRAG Abschlussregel): Bestätige jedes Häkchen, jede AUSNAHME und jede UMGEBUNGSAUSNAHME in ${args.abnahme} gegen ihren Beleg. Lies dazu ABNAHME.md vollständig und öffne JEDEN genannten Belegpfad (Protokolle unter /home/user/IGMG/_werkstatt/protokolle/, Berichte unter /home/user/IGMG/_werkstatt/berichte/, Dateien im Repo, Bilder unter /home/user/IGMG/_werkstatt/bilder/). Ein Kriterium ist nur „bestätigt“, wenn der Beleg existiert, zum behaupteten Stand passt und das Ziel aus ABNAHME.md erfüllt. Fehlt ein Beleg oder widerspricht er, „nicht bestätigt“ mit Grund. Zahlen nachrechnen, wo sie im Beleg stehen.
+Auftrag (AUFTRAG Abschlussregel): Bestätige jedes Häkchen, jede AUSNAHME und jede UMGEBUNGSAUSNAHME in ${args.abnahme} gegen ihren Beleg. Lies dazu ABNAHME.md vollständig und öffne JEDEN genannten Belegpfad (Protokolle unter /home/user/IGMG/_gemeinde/protokolle/, Berichte unter /home/user/IGMG/_gemeinde/berichte/, Dateien im Repo, Bilder unter /home/user/IGMG/_gemeinde/bilder/). Ein Kriterium ist nur „bestätigt“, wenn der Beleg existiert, zum behaupteten Stand passt und das Ziel aus ABNAHME.md erfüllt. Fehlt ein Beleg oder widerspricht er, „nicht bestätigt“ mit Grund. Zahlen nachrechnen, wo sie im Beleg stehen.
 
 Für Z-04 liegt der Blindvergleich vor (unabhängige Prüfer, Schlüssel erst danach angewandt; Kategorien ohne Bewegung, Mittel aus fünf):
 ${JSON.stringify(aufgeloest, null, 1)}
-${fehlend.length ? `Ohne Blindergebnis: ${fehlend.join(', ')}\n` : ''}Ergänze die sechste Kategorie Bewegung je Hauptansicht aus den Bewegungsbelegen (${args.bewegung}, Protokolle C-momente-*, C-bewegung-*, C-vt-*). Ansichtswert = Mittel der sechs Kategorien. Die zwölfte Hauptansicht, das Startklar-Cockpit (/verwaltung/startklar), ist im Lauf neu entstanden und hat keinen Vorher-Stand; bewerte sie selbst aus dem Bildsatz /home/user/IGMG/_werkstatt/bilder/abschluss/verwaltung/startklar-390x844/, startklar-768x1024/ und startklar-1440x900/ (angemeldet, Bildschirm für Bildschirm) in allen sechs Kategorien (der Vergleich „vorgezogen“ entfällt dort). Z-04 verlangt: jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen. Rechne das nach und urteile.
-Z-10: prüfe BERICHT.md, KERN.md, MENSCHEN.md und die Anleitung zum Zusammenführen und Zurückrollen (in BERICHT.md) auf Vollständigkeit nach AUFTRAG (/home/user/IGMG/_werkstatt/AUFTRAG.md, Abschnitt Abschluss) und die Galerie /home/user/IGMG/_werkstatt/bilder/galerie.html.
+${fehlend.length ? `Ohne Blindergebnis: ${fehlend.join(', ')}\n` : ''}Ergänze die sechste Kategorie Bewegung je Hauptansicht aus den Bewegungsbelegen (${args.bewegung}, Protokolle C-momente-*, C-bewegung-*, C-vt-*). Ansichtswert = Mittel der sechs Kategorien. Die zwölfte Hauptansicht, das Startklar-Cockpit (/verwaltung/startklar), ist im Lauf neu entstanden und hat keinen Vorher-Stand; bewerte sie selbst aus dem Bildsatz /home/user/IGMG/_gemeinde/bilder/abschluss/verwaltung/startklar-390x844/, startklar-768x1024/ und startklar-1440x900/ (angemeldet, Bildschirm für Bildschirm) in allen sechs Kategorien (der Vergleich „vorgezogen“ entfällt dort). Z-04 verlangt: jede Hauptansicht ≥ 8, keine Kategorie < 7, Nachher überall vorgezogen. Rechne das nach und urteile.
+Z-10: prüfe BERICHT.md, KERN.md, MENSCHEN.md und die Anleitung zum Zusammenführen und Zurückrollen (in BERICHT.md) auf Vollständigkeit nach AUFTRAG (/home/user/IGMG/_gemeinde/AUFTRAG.md, Abschnitt Abschluss) und die Galerie /home/user/IGMG/_gemeinde/bilder/galerie.html.
 
 Antwort: je Kriterium (Z-01 bis Z-12, dann jede AUSNAHME und jede UMGEBUNGSAUSNAHME UA-01 …) eine Zeile im Format „Kennung · bestätigt|nicht bestätigt · Begründung · Belegpfad(e)“.`
 

@@ -16,8 +16,8 @@ const B = `${BASIS}/bildsatz`
 const R = `${BASIS}/bildsatz-reduziert`
 const VB = `${args.vorher}/bildsatz`
 const VN = args.vorherName
-const E0 = '/home/user/IGMG/_werkstatt/bilder/e0'
-const W = '/home/user/IGMG/_werkstatt'
+const E0 = '/home/user/IGMG/_gemeinde/bilder/e0'
+const W = '/home/user/IGMG/_gemeinde'
 const PX = args.praefix
 
 const RAHMEN = `Du bist ein frischer, unabhängiger Sichtprüfer (keine Vorgeschichte) im Lauf „Gestaltung aufwerten und Vercel-startklar machen“ für die Web-App der IGMG Wetzlar (Moscheegemeinde; vier Organisationen AT/KT/GT/KGT; Deutsch/Türkisch/Englisch). Du urteilst anhand von Bildern (mit dem Read-Werkzeug öffnen), Kern und Register – du änderst keine Dateien, startest keine Server, führst keine Tests aus.
@@ -108,7 +108,7 @@ const gueltig = ergebnisse.filter(Boolean)
 log(`${gueltig.length} von ${GRUPPEN.length} Gruppen bewertet und gegengeprüft`)
 const synthese = await agent(`Du führst die Sichtabnahme ${LAUF} der Web-App der IGMG Wetzlar zusammen (Repo /home/user/IGMG). Grundlage: Urteile von fünf unabhängigen Sichtprüfern und die Ergebnisse adversarialer Gegenprüfer (unten als JSON). Lies ${W}/pakete/REFERENZ.md und ${W}/KERN.md K-007 kurz zur Einordnung.
 Aufgaben:
-1. Tabelle aller Ansichten mit den sechs Werten und dem Ansichtswert (aus den Urteilen; nicht verändern), dazu das Gesamtmittel und je Ansicht der Vergleich zum vorigen Stand (Werte des vorigen Laufs stehen in ${args.vorherBericht ?? '/home/user/IGMG/_werkstatt/berichte/SICHTABNAHME-E3.md'}, Abschnitt 1).
+1. Tabelle aller Ansichten mit den sechs Werten und dem Ansichtswert (aus den Urteilen; nicht verändern), dazu das Gesamtmittel und je Ansicht der Vergleich zum vorigen Stand (Werte des vorigen Laufs stehen in ${args.vorherBericht ?? '/home/user/IGMG/_gemeinde/berichte/SICHTABNAHME-E3.md'}, Abschnitt 1).
 2. Endgültige Befundpakete ${PX}01, ${PX}02, … (nur für Ansichten unter 8 oder klare Mängel; sind alle Ansichten ≥ 8, darf die Liste leer sein): nur Pakete mit urteil „behalten“ oder „aendern“ (in der präzisierten Fassung) plus zusaetzlich_uebersehen, sofern plausibel. Entdoppeln (gleiche Ursache in mehreren Ansichten → ein übergreifendes Paket), priorisieren nach Wirkung (hoch zuerst, übergreifend vor einzeln), höchstens 14 Pakete. Je Paket: kennung, titel, ansichten, aenderung, abnahme, wirkung, schreibrechte (konkrete Dateien/Ordner unter web/src aus dateien_vermutlich; prüfe mit Glob, dass sie existieren), gemeinsame_dateien (z. B. globals.css, messages – die erledigt der Orchestrator), welle (1 oder 2: Pakete einer Welle müssen DISJUNKTE schreibrechte haben, damit bis zu vier Baumeister parallel arbeiten können).
 3. Verworfene Pakete kurz mit Grund (eine Zeile je Paket).
 4. Verstöße gegen Kern/Religion/UNANTASTBAR, falls genannt.

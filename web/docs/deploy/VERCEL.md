@@ -73,7 +73,7 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 - **Ort:** Team › Projekt `igmg` › Settings › Functions **[prüfen]**, Bereich „Function Region“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Die Funktionen sollen in `fra1` (Frankfurt) laufen (AUFTRAG V-01). Ohne Angabe nutzt Vercel die Standardregion `iad1` (Washington; AUFTRAG V-01; https://vercel.com/docs/llms-full.txt). Die Konfiguration beschreibt https://vercel.com/docs/functions/configuring-functions/region. Auf dem Hobby-Tarif ist jede einzelne Region erlaubt (https://vercel.com/docs/project-configuration/vercel-ts), also auch `fra1`.
-- **Offen:** Ob die Region im Services-Modus auch über `vercel.json` gilt, ist nicht geklärt **[prüfen]** (`_werkstatt/berichte/E0-KUNDSCHAFTER-06.md`, offene Frage 2). Im Repository steht `"regions": ["fra1"]` bereits in `/vercel.json` (Zeile 3).
+- **Offen:** Ob die Region im Services-Modus auch über `vercel.json` gilt, ist nicht geklärt **[prüfen]** (`_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md`, offene Frage 2). Im Repository steht `"regions": ["fra1"]` bereits in `/vercel.json` (Zeile 3).
 - **Das siehst du, wenn es geklappt hat:** „fra1“ bzw. Frankfurt steht als Funktionsregion.
 
 **1.3 Node-Version festlegen**
@@ -87,7 +87,7 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 
 - **Ort:** Team › Projekt `igmg` › Settings › Git **[prüfen]**, Feld „Production Branch“.
 - **Aufwand:** 1 Minute.
-- **Regel:** Jeder Stand auf `main` wird zur Produktion (`_werkstatt/ENTSCHEIDUNGEN.md` L-E01).
+- **Regel:** Jeder Stand auf `main` wird zur Produktion (`_archiv/lauf-gestaltung-2026-10/ENTSCHEIDUNGEN.md` L-E01).
 - **Das siehst du, wenn es geklappt hat:** Dort steht `main`.
 
 ## 2. Datenbank in Frankfurt (5 Minuten)
@@ -228,7 +228,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 - **Was es ist:** Vercel Authentication schützt die Vorschau. Wer die Adresse öffnet, muss sich bei Vercel anmelden (https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication).
 - **Ort:** Team › Projekt `igmg` › Settings › Deployment Protection **[prüfen]**.
-- **Stand:** Der Schutz ist im Projekt aktiv. Die Projektabfrage vom 11.10.2026 zeigt `ssoProtection` als eingeschaltet (`_werkstatt/berichte/E0-KUNDSCHAFTER-06.md`, Abschnitt 4).
+- **Stand:** Der Schutz ist im Projekt aktiv. Die Projektabfrage vom 11.10.2026 zeigt `ssoProtection` als eingeschaltet (`_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md`, Abschnitt 4).
 - **Tarif:** Ob der Schutz auf allen Tarifen zur Verfügung steht, ist **nicht belegt [prüfen]**. AUFTRAG V-09 sagt „alle Tarife“.
 - **Prüfpunkt:** Die Vorschau-Adresse im privaten Fenster öffnen. Es erscheint eine Vercel-Anmeldung, bevor die Seite kommt.
 
@@ -304,7 +304,7 @@ Was sie bedeuten:
 - **Was:** Die öffentlichen Inhalte (Gebetszeiten, Veranstaltungen, Nachrichten, Kurse, Seiteninhalte und weitere) liegen im Cache. Die Abfragen in `web/src/server/queries/` nutzen `'use cache: remote'` (20 Stellen). Die Suche (`web/src/server/queries/suche.ts`) und die Heute-Anzeige (`web/src/lib/zeit/heute.ts`) bleiben bei `'use cache'`. Laut ADR 0024 legt Vercel die Einträge im Runtime Cache ab; die Vercel-Doku dazu habe ich **nicht gegengeprüft [prüfen]**.
 - **Warum:** Mit `'use cache'` hält jede Instanz einen eigenen Speicher. Eine Änderung in der Verwaltung wäre dann nicht sofort auf allen Instanzen sichtbar (ADR 0024, Kontext).
 - **Ungültig machen:** Die Verwaltung ruft `updateTag` bzw. `revalidateTag` auf (`web/src/lib/cache/aktualisieren.ts`). Die Tags stehen in `web/src/lib/cache/tags.ts`.
-- **Kosten und Grenzen:** Ob der Runtime Cache im gewählten Tarif Kosten oder Grenzen hat, ist **nicht geprüft [prüfen]**. Die Tarif-Entscheidung steht in ML-09 (`_werkstatt/MENSCHEN.md`). Werden die Grenzen zu eng, geht es zurück auf `'use cache'` mit kurzer Laufzeit (ADR 0024, Umkehrprobe).
+- **Kosten und Grenzen:** Ob der Runtime Cache im gewählten Tarif Kosten oder Grenzen hat, ist **nicht geprüft [prüfen]**. Die Tarif-Entscheidung steht in ML-09 (`_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`). Werden die Grenzen zu eng, geht es zurück auf `'use cache'` mit kurzer Laufzeit (ADR 0024, Umkehrprobe).
 - **Prüfpunkt:** Ein Termin wird in der Verwaltung geändert und erscheint danach auf der öffentlichen Seite. Den Nachweis über mehrere Instanzen gibt es nur mit Datenbank in der Vorschau (ADR 0024, Folgen).
 
 ## 9. Wiederkehrende Aufgaben (Crons)
@@ -314,7 +314,7 @@ Was sie bedeuten:
 - **Wann:** Vercel ruft die Crons nur in der Produktion auf (https://vercel.com/docs/cron-jobs/quickstart). Die Vorschau hat keine Crons (ADR 0021, Folgen).
 - **Absicherung:** Vercel sendet `Authorization: Bearer <CRON_SECRET>`. Die App prüft diesen Wert (https://vercel.com/docs/cron-jobs/manage-cron-jobs; `web/src/lib/wartung/zugang.ts` Zeilen 19–23).
 - **Zeitplan:** In `/vercel.json` (Repository-Wurzel) unter `crons`, in UTC: Löschfristen um 01:00 UTC (`0 1 * * *`), Mail-Ausgang um 02:00 UTC (`0 2 * * *`) (ADR 0021; `web/docs/BETRIEB.md` § 9).
-- **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].** Der Tarif gehört zu ML-09 in `_werkstatt/MENSCHEN.md`.
+- **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].** Der Tarif gehört zu ML-09 in `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`.
 - **Stand:** Eingetragen (`/vercel.json`, Zeilen 12–15).
 - **Prüfen:** Team › Projekt `igmg` › Cron Jobs **[prüfen]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
 
@@ -323,7 +323,7 @@ Was sie bedeuten:
 **Voraussetzungen:**
 
 - Die Vorschau ist grün (Abschnitt 5.2), und die Schnellprüfung aus Abschnitt 11 ist durch.
-- Lokal ist `pnpm check` grün, und der Bau wie auf Vercel läuft ohne Fehler (AUFTRAG V-02; `_werkstatt/ENTSCHEIDUNGEN.md` L-E01).
+- Lokal ist `pnpm check` grün, und der Bau wie auf Vercel läuft ohne Fehler (AUFTRAG V-02; `_archiv/lauf-gestaltung-2026-10/ENTSCHEIDUNGEN.md` L-E01).
 
 **Ablauf:**
 
@@ -338,7 +338,7 @@ Was sie bedeuten:
 
 Die volle Abnahme mit Unterschrift steht in `web/docs/GO-LIVE.md`, Punkt E2 (30 Minuten).
 
-Die zwölf Hauptansichten (`_werkstatt/KERN.md` Zeile 87). Öffne sie auf dem Handy und auf dem Computer. Die Adressen gelten ohne Sprachkürzel, denn Deutsch ist die Standardsprache (`web/src/i18n/routing.ts` Zeilen 11–13).
+Die zwölf Hauptansichten (`_archiv/lauf-gestaltung-2026-10/KERN.md` Zeile 87). Öffne sie auf dem Handy und auf dem Computer. Die Adressen gelten ohne Sprachkürzel, denn Deutsch ist die Standardsprache (`web/src/i18n/routing.ts` Zeilen 11–13).
 
 | Seite                | Adresse (Platzhalter)           | Das siehst du, wenn es geklappt hat                                               |
 | -------------------- | ------------------------------- | --------------------------------------------------------------------------------- |
@@ -416,7 +416,7 @@ Zusätzlich prüfen:
 | Was du siehst                                                                                  | Wahrscheinliche Ursache                                                                                                                                 | Was du tust                                                                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bauprotokoll zeigt „[bau] WARNUNG: DATABASE_URL fehlt“ (der Bau bleibt grün)                   | Die Datenbank-Variable fehlt im Bereich Preview oder Production                                                                                         | Die Seite zeigt Beispielinhalte. Abschnitt 4 prüfen, Technik informieren                                                                                                                       |
-| Build rot, Meldung zu einem unbekannten Schlüssel (z. B. „services“)                           | Der Schlüssel in `vercel.json` passt nicht zur Vercel-Doku **[prüfen]**                                                                                 | Technik informieren. Offene Frage laut `_werkstatt/berichte/E0-KUNDSCHAFTER-06.md` (Frage 2)                                                                                                   |
+| Build rot, Meldung zu einem unbekannten Schlüssel (z. B. „services“)                           | Der Schlüssel in `vercel.json` passt nicht zur Vercel-Doku **[prüfen]**                                                                                 | Technik informieren. Offene Frage laut `_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md` (Frage 2)                                                                                                   |
 | Seite zeigt Fehlermeldung nach dem Start                                                       | Eine Variable fehlt oder ist falsch                                                                                                                     | Technik informieren. Die Startprüfung schreibt den Namen ins Funktionsprotokoll (`[start] NAME: …`, `web/src/instrumentation.ts`)                                                              |
 | Bestätigungsmail kommt nicht                                                                   | `SMTP_HOST` fehlt oder der Anbieter lehnt ab                                                                                                            | Die Mail bleibt im Mail-Ausgang. Sie wird bei der nächsten Anfrage mit Versand oder im täglichen Lauf erneut versucht, höchstens sechsmal (`web/src/lib/mail/ausgang.ts`). Technik informieren |
 | `/api/health` antwortet mit Fehler 503                                                         | Datenbank nicht erreichbar                                                                                                                              | Neon-Status prüfen, Technik informieren (`web/src/app/api/health/route.ts`)                                                                                                                    |

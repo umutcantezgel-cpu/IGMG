@@ -6,7 +6,7 @@
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { parseArgs } from 'node:util';
-import { chromium } from '/home/user/IGMG/_werkstatt/werkzeuge/node_modules/playwright/index.mjs';
+import { chromium } from '/home/user/IGMG/_gemeinde/werkzeuge/node_modules/playwright/index.mjs';
 
 const { values } = parseArgs({
   options: {
