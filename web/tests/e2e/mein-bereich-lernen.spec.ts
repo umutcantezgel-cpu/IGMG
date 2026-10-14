@@ -146,15 +146,22 @@ test('Eltern: Kind fehlt melden → erscheint als abgemeldet; fremde Kinder und 
   await expect(page.getByRole('heading', { level: 1, name: lp.kinder.emre.name })).toBeVisible();
 
   const fehlen = page.getByRole('region', { name: d.detail.fehlenTitel });
-  const morgen = tag(1);
-  await fehlen.getByLabel(d.detail.fehlen.datum).fill(morgen);
+  // EK-1: die nächsten Termine als Radiogruppe (deutsches Datum vom Server, kein natives Datumsfeld mehr)
+  const termine = fehlen.getByRole('group', { name: d.detail.fehlen.datum });
+  await expect(fehlen.locator('input[type=date]')).toHaveCount(0);
+  const kurz = new Intl.DateTimeFormat('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'UTC' });
+  const wahl = termine.getByRole('radio').nth(1);
+  const tagWahl = (await wahl.getAttribute('value')) ?? '';
+  expect(tagWahl >= tag(0)).toBe(true);
+  const datum = kurz.format(new Date(`${tagWahl}T12:00:00Z`));
+  await expect(termine.getByText(datum, { exact: true })).toBeVisible();
+  await wahl.check();
   await fehlen.getByText(d.detail.fehlen.gruende.familie, { exact: true }).click();
   await fehlen.getByRole('button', { name: d.detail.fehlen.senden }).click();
   await expect(fehlen.getByRole('status').filter({ hasText: d.detail.fehlen.gesendet })).toBeVisible();
-  const datum = new Intl.DateTimeFormat('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'UTC' }).format(
-    new Date(`${morgen}T12:00:00Z`),
-  );
   await expect(fehlen.getByText(`${datum} – ${d.detail.fehlen.gruende.familie}`)).toBeVisible();
+  // Der gemeldete Termin ist danach gesperrt
+  await expect(termine.locator(`input[value="${tagWahl}"]`)).toBeDisabled();
 
   // Gruppenisolation: fremdes Kind 404, Lehrkraft-Seiten führen zurück nach Mein Bereich
   expect((await page.request.get(`/mein-bereich/kinder/${randomUUID()}`)).status()).toBe(404);

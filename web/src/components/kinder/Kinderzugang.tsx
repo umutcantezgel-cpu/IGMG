@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useEffect, useRef, useState } from 'react';
+import { Fragment, useActionState, useEffect, useRef, useState } from 'react';
 import { klassen } from '@/lib/klassen';
 import { passwortVorschlag } from '@/lib/lernen/ansicht';
 import { kinderPasswortSetzen, kinderzugangAnlegen, type ZugangZustand } from '@/server/actions/kinder';
@@ -52,6 +52,20 @@ function vorschlag(): string {
   return passwortVorschlag(crypto.getRandomValues(new Uint8Array(12)));
 }
 
+/**
+ * Anmeldeadresse für die Karte (Sichtabnahme X-5): ohne „https://“, Umbruch nur nach „/“ und „?“ – nie mitten im Wort.
+ * Der Host bleibt stehen: Auf der gedruckten Karte muss das Kind die Seite finden.
+ */
+function adresseZeile(adresse: string) {
+  const teile = adresse.replace(/^https?:\/\//, '').split(/(?<=[/?])/);
+  return teile.map((t, i) => (
+    <Fragment key={i}>
+      {i ? <wbr /> : null}
+      {t}
+    </Fragment>
+  ));
+}
+
 /** Passwortfeld mit „Passwort vorschlagen“ (Zufall im Browser, drei Vierergruppen). Sichtbar, damit es abgeschrieben werden kann. */
 function PasswortFeld({ id, label, hilfe, knopf }: { id: string; label: string; hilfe: string; knopf: string }) {
   const [wert, setWert] = useState('');
@@ -79,7 +93,7 @@ function PasswortFeld({ id, label, hilfe, knopf }: { id: string; label: string; 
         <button
           type="button"
           onClick={() => setWert(vorschlag())}
-          className={klassen(KNOPF, 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50')}
+          className={klassen(KNOPF, 'shrink-0 border-2 border-gruen-700 bg-weiss whitespace-nowrap text-gruen-800 hover:bg-gruen-50')}
         >
           {knopf}
         </button>
@@ -202,7 +216,7 @@ export function Kinderzugang({
         </div>
         <dl className="grid gap-3 sm:grid-cols-3 sm:gap-x-6">
           <dt className="text-16 font-bold text-tinte-2">{texte.anmeldung}</dt>
-          <dd className="font-mono text-18 break-all sm:col-span-2">{adresse}</dd>
+          <dd className="text-18 font-bold wrap-break-word sm:col-span-2">{adresseZeile(adresse)}</dd>
           <dt className="text-16 font-bold text-tinte-2">{texte.benutzername}</dt>
           <dd className="font-mono text-20 font-bold sm:col-span-2">{name}</dd>
           <dt className="text-16 font-bold text-tinte-2">{texte.passwortZeile}</dt>
