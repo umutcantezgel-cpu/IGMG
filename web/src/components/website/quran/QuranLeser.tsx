@@ -117,6 +117,9 @@ export function QuranLeser(props: LeserProps) {
     const oeffne = (w: HTMLElement) => {
       const z = zielVon(w);
       if (!z) return;
+      // Auch beim Antippen: aria-expanded nur an einem Element mit Rolle (wie beim Erreichen per Tastatur)
+      w.setAttribute('role', 'button');
+      w.setAttribute('aria-haspopup', 'dialog');
       w.setAttribute('aria-expanded', 'true');
       setWort(z);
     };
