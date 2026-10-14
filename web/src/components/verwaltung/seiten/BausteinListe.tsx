@@ -278,9 +278,9 @@ export function BausteinListe({
                 className={cn('rounded-lg border bg-weiss shadow-s1', fehler ? 'border-2 border-fehler' : 'border-linie')}
                 aria-labelledby={eid(b.id, 'kopf')}
               >
-                {/* Kopf (SE-5, SB-3): Der Titel selbst klappt auf und zu (Akkordeon, Chevron rechts); daneben nur noch
-                    ↑ ↓ als Symbolpaar und – abgesetzt und dauerhaft in Erdrot – der Papierkorb. Auf dem Telefon stehen die
-                    drei Knöpfe in eigener Zeile rechts unter dem Titel. */}
+                {/* Kopf (SE-5, SB-3, SB-6): Der Titel selbst klappt auf und zu (Akkordeon, Chevron rechts); daneben nur
+                    noch ↑ ↓ als Symbolpaar und abgesetzt der Papierkorb – ruhig wie die Pfeile, Erdrot erst bei Zeiger
+                    oder Tastaturfokus. Auf dem Telefon stehen die drei Knöpfe in eigener Zeile rechts unter dem Titel. */}
                 <div className={cn('flex flex-wrap items-center gap-x-3 gap-y-1 px-2 py-2 md:px-3', offen && 'border-b border-linie')}>
                   <h3 className="flex min-w-0 flex-1 basis-60 font-text text-18 leading-tight font-bold tracking-normal">
                     <button
@@ -346,7 +346,10 @@ export function BausteinListe({
                       type="button"
                       variant="outline"
                       size="icon"
-                      className={cn(KNOPF, 'ml-4 border-fehler text-fehler hover:bg-fehler-toenung hover:text-fehler')}
+                      className={cn(
+                        KNOPF,
+                        'ml-4 border-rand text-tinte-2 hover:border-fehler hover:bg-fehler-toenung hover:text-fehler focus-visible:border-fehler focus-visible:bg-fehler-toenung focus-visible:text-fehler',
+                      )}
                       onClick={() => entfernen(i)}
                       title={t('entfernen')}
                       aria-label={t('entfernenName', { name: name(b, i) })}
