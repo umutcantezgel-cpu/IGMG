@@ -25,8 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * mit der Spendenkarte. Redaktionelle Inhalte kommen aus dem Seiteninhalt „projekte“, feste Überschriften
  * und Schaltflächen aus messages/bereiche/projekte.json. Keine Formulare, keine Anfragen an Dritte (K-14).
  * Sichtabnahme Runde 2 (PR-4): Ist das Projekt fertiggestellt, trägt der Kopf die Kernbotschaft „{Name} ist eröffnet“
- * mit dem gefüllten Achtstern samt Haken (dieselbe Marke wie der erreichte letzte Meilenstein, B-08; unter 640 px ohne
- * Marke, damit der Name nicht am Bindestrich bricht); der allgemeine Titel wird zur Unterzeile. Ein Name, der nur Platzhalter ist, bleibt aus dem Titel (G-05). Gebetsleiste als eine Zeile (X-8).
+ * mit dem gefüllten Achtstern samt Haken (dieselbe Marke wie der erreichte letzte Meilenstein, B-08; Runde 3, PF-7:
+ * auch auf dem Telefon, bis md 40 px); der allgemeine Titel wird zur Unterzeile. Ein Name, der nur Platzhalter ist, bleibt aus dem Titel (G-05). Gebetsleiste als eine Zeile (X-8).
  */
 export default async function ProjekteSeite() {
   const sprache = (await getLocale()) as Locale;
@@ -42,12 +42,9 @@ export default async function ProjekteSeite() {
           titel={t('kopf.titelFertig', { name })}
           untertitel={t('kopf.titel')}
           titelZeichen={
-            <span
-              aria-hidden
-              className="relative inline-flex size-12 shrink-0 items-center justify-center text-gruen-700 max-sm:hidden md:size-16"
-            >
+            <span aria-hidden className="relative inline-flex size-10 shrink-0 items-center justify-center text-gruen-700 md:size-16">
               <Achtstern viewBox="3.5 3.5 17 17" className="absolute inset-0 size-full" />
-              <Check className="relative size-6 text-weiss md:size-8" strokeWidth={3} />
+              <Check className="relative size-5 text-weiss md:size-8" strokeWidth={3} />
             </span>
           }
         />

@@ -24,6 +24,7 @@ const STATUS_STIL: Record<ProjektStatus, { Icon: LucideIcon; klasse: string }> =
  * Sichtabnahme Runde 2: Die Statusplakette steht auch neben der Kennung (PR-4; die im Bild ist dann nur Bild). Bei
  * „fertiggestellt“ trägt der Seitenkopf den Namen, der Abschnittstitel heißt dann „Das Projekt“. Unter lg steht der
  * Text vor dem Bild. Platzhalter der Gemeinde „[…]“ sind als solche gekennzeichnet (PR-3, `data-platzhalter`).
+ * Runde 3 (PF-6): Bei „fertiggestellt“ entfällt die Plakette im Bild – der Stand steht neben der Kennung und im Kopf.
  */
 export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
@@ -47,7 +48,11 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
       <div className="relative min-h-70 min-w-0 md:min-h-115 lg:col-span-7">
         {/* Das ganze Bild ist ein Platzhalter der Gemeinde (Foto folgt) */}
         <div data-platzhalter className="absolute inset-0">
-          <Bildplatzhalter beschriftung={t('3d.text', { name })} className="size-full rounded-lg border border-linie pb-32 md:pb-0" />
+          {/* Unten Platz für die Etiketten (bis md zweizeilig, bei „fertiggestellt“ nur das Ortsetikett) */}
+          <Bildplatzhalter
+            beschriftung={t('3d.text', { name })}
+            className={cn('size-full rounded-lg border border-linie md:pb-0', fertig ? 'pb-16' : 'pb-32')}
+          />
         </div>
         <div className="absolute inset-x-4 bottom-4 flex flex-wrap items-center justify-between gap-2">
           <span
@@ -59,9 +64,11 @@ export async function Bauprojekt({ inhalt, sprache }: { inhalt: ProjekteInhalt; 
           >
             <Text feld={p.ort} sprache={sprache} platzhalter={!ortNurPlatzhalter} />
           </span>
-          <span aria-hidden className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
-            {statusPlakette}
-          </span>
+          {fertig ? null : (
+            <span aria-hidden className={cn('inline-flex items-center gap-1.5 rounded-pill border px-3 py-0.5 text-16 font-bold', klasse)}>
+              {statusPlakette}
+            </span>
+          )}
         </div>
       </div>
       <div className="flex min-w-0 flex-col justify-center gap-4 max-lg:order-first lg:col-span-5">

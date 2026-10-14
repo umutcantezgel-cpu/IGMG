@@ -168,7 +168,21 @@ test('Buchseite: Rückweg, Kennung, Titelhinweis und Achtstern mit Titel; Leiste
     await expect(spalte).toBeInViewport();
   }
   await page.evaluate(() => window.scrollTo({ top: 5000, behavior: 'instant' }));
-  await expect(page.getByRole('link', { name: T.de.buch.nachOben })).toBeVisible();
+  const nachOben = page.getByRole('link', { name: T.de.buch.nachOben });
+  await expect(nachOben).toBeVisible();
+  if (info.project.name === 'telefon') {
+    // Runde 3 (HB-8): unter sm ein runder Symbolknopf; nach der Liste mehr Abstand, als der Knopf unten einnimmt
+    const knopf = await nachOben.boundingBox();
+    expect([Math.round(knopf?.width ?? 0), Math.round(knopf?.height ?? 0)]).toEqual([48, 48]);
+    const fenster = page.viewportSize()?.height ?? 0;
+    const zone = fenster - (knopf?.y ?? 0);
+    const abstand = await page.getByRole('complementary', { name: T.de.buch.dieserBand }).evaluate((spalte) => {
+      const liste = spalte.previousElementSibling as HTMLElement;
+      const ende = Math.max(...[...liste.children].map((k) => k.getBoundingClientRect().bottom));
+      return spalte.getBoundingClientRect().top - ende;
+    });
+    expect(abstand).toBeGreaterThanOrEqual(zone);
+  }
   await ohneBefund(page);
 });
 
