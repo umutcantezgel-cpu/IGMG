@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 08:45 UTC:** `main` = 759965e (alle 4 Befundpakete, Tor grün). Seit dem Push liefert
+  igmg-five.vercel.app `DEPLOYMENT_NOT_FOUND` (Projekt/Domain in Vercel vermutlich entfernt – nur der Nutzer sieht das).
+  Nutzerauftrag: Repo als neues Vercel-Projekt importierbar ohne Handgriffe → e66ee4e (Start ohne `APP_URL` auf Vercel mit
+  `VERCEL_PROJECT_PRODUCTION_URL`, `tests/unit/vercel-import.test.ts`, VERCEL.md Abschnitt 0). Tor dafür: check,
+  Integration, Sprachen (laufen), dann Bau wie frischer Import (`scratchpad/env-import.sh`: `VERCEL=1`,
+  `VERCEL_ENV=production`, ohne `APP_URL`/`SITE_MODE`) + Sweep → Fast-Forward `main`. Sichtabnahme Runde 2
+  (`wf_18d601ae-373`) läuft gegen den Vorschau-Server 3100 aus `web/.next` – Bau erst nach den Fotografen.
 - **Stand 14.10. 05:30 UTC:** Sichtabnahme Runde 1 fertig (`berichte/sichtabnahme-1.md`, 11/19 abgenommen). Die 4
   Befundpakete laufen in ihren Arbeitsbäumen (`agent-ac6673f9…` P1 Koran/Hadith/Elifbe/Lernen, `agent-ac281c5b…` P2
   Startseite/Gebetszeiten/Projekte, `agent-a360d92e…` P3 Mein Bereich, `agent-a212ace6…` P4 Verwaltung), nach dem
