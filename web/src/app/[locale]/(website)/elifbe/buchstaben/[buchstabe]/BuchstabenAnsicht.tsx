@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, BookOpen, Volume2 } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import type { CSSProperties, ReactNode } from 'react';
 import type { Ziel } from '@/components/website/navigation';
 import { Buchstabenkarte } from '@/components/website/elifbe/Buchstabenraster';
 import { Schreibweg } from '@/components/website/elifbe/Schreibweg';
@@ -9,7 +10,7 @@ import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
-import { BUCHSTABEN, type Buchstabe, buchstabeFuer, FORM_ARTEN, formen, HARAKAT, hex, zeichen } from '@/lib/elifbe/alphabet';
+import { BUCHSTABEN, type Buchstabe, buchstabeFuer, FORM_ARTEN, type FormArt, HARAKAT, hex, TATWEEL, zeichen } from '@/lib/elifbe/alphabet';
 import { erlaubt, silbe } from '@/lib/elifbe/silben';
 import { ladeBeispielwoerter, ladeElifbeAudio } from '@/server/queries/elifbe';
 
@@ -17,7 +18,30 @@ import { ladeBeispielwoerter, ladeElifbeAudio } from '@/server/queries/elifbe';
  * Buchstabenseite: großer Schreibweg (B-17, Morph-Ziel der Buchstabenkarte), Steckbrief, vier Formen, Lesezeichen,
  * leicht verwechselbare Buchstaben, Beispielwörter aus dem Koran (nur Verweise auf `quran_wort`, ohne Bedeutung) und
  * Blättern. Fachbegriffe und Platzhalter bis zur Prüfung durch die Hoca (MN-07).
+ * Sichtabnahme E-1…E-3: die vier Formen groß mit Tatweel (U+0640) als heller Anschlusslinie, das Verwechslungsraster
+ * ohne Lücke (so viele Spalten wie Karten, auf dem Telefon zentrierte Dreierreihen) und „Nächster Buchstabe“ mit dem
+ * Pfeil immer rechts.
  */
+
+/** Anschlusslinie (Tatweel, aus dem Codepunkt) in hellem Grau: zeigt, wo der Buchstabe an seine Nachbarn anschließt. */
+const ANSCHLUSS = String.fromCodePoint(TATWEEL);
+
+/** Form mit sichtbarem Anschluss: rechts (im Text davor) bei Mitte/Ende, links (danach) bei Anfang/Mitte. */
+function formMitAnschluss(b: Buchstabe, f: FormArt): ReactNode {
+  const rechts = b.verbindetRechts && (f === 'mitte' || f === 'ende');
+  const links = b.verbindetLinks && (f === 'anfang' || f === 'mitte');
+  const linie = <span className="text-rand">{ANSCHLUSS}</span>;
+  return (
+    <>
+      {rechts ? linie : null}
+      {zeichen(b)}
+      {links ? linie : null}
+    </>
+  );
+}
+/** Kartenbreite im Verwechslungsraster: auf dem Telefon drei je Reihe (zwei Lücken à 12 px), ab md bestimmt das Raster. */
+const KARTE_BREITE = 'w-[calc((100%-var(--spacing)*6)/3)] md:w-auto';
+
 export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('elifbe');
@@ -29,7 +53,6 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
   const sprachZiel: Ziel = { pathname: '/elifbe/buchstaben/[buchstabe]', params: { buchstabe: b.slug } };
   const vorher = BUCHSTABEN[b.nr - 2];
   const naechster = BUCHSTABEN[b.nr];
-  const form = formen(b);
   const harakat = HARAKAT.filter((h) => erlaubt(b, h.schluessel)).map((h) => ({ h, s: silbe(b, h.schluessel) }));
   const aehnlich = b.aehnlich.map(buchstabeFuer).filter((x): x is Buchstabe => Boolean(x));
   const punkte =
@@ -159,9 +182,9 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                       key={f}
                       lang="ar"
                       dir="rtl"
-                      className="border-l border-linie px-3 py-2 text-center text-display-1 leading-loose text-gruen-950 first:border-l-0"
+                      className="border-l border-linie px-1 py-2 text-center buchstabe-riesig text-gruen-950 first:border-l-0 md:px-3 md:buchstabe-gross"
                     >
-                      {form[f]}
+                      {formMitAnschluss(b, f)}
                     </td>
                   ))}
                 </tr>
@@ -204,21 +227,26 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
               </h2>
               <p className="text-18 leading-einleitung text-pretty text-tinte-2">{t('buchstabe.aehnlichText')}</p>
             </div>
-            <ul dir="rtl" className="grid grid-cols-3 gap-3 font-text leading-normal sm:grid-cols-4 md:grid-cols-6 md:gap-4">
-              <li
-                dir="ltr"
-                aria-hidden
-                className="flex flex-col items-center justify-end rounded-lg border-2 border-gruen-700 bg-gruen-50 px-2 pt-8 pb-3"
-              >
-                <span lang="ar" dir="rtl" className="text-48 leading-loose text-gruen-950">
-                  {zeichen(b)}
-                </span>
-                <span lang={nameLang} className="text-18 font-bold">
-                  {name}
+            {/* Telefon: zentrierte Dreierreihen; ab md so viele Spalten wie Karten – keine leere Zelle (E-2) */}
+            <ul
+              dir="rtl"
+              style={{ '--spalten': `repeat(${aehnlich.length + 1}, minmax(0, 1fr))` } as CSSProperties}
+              className="flex flex-wrap justify-center gap-3 font-text leading-normal md:grid md:grid-cols-(--spalten) md:gap-4"
+            >
+              {/* Dieser Buchstabe: gleich aufgebaut wie die Karten daneben, markiert durch Rahmen und Fläche statt Höhe */}
+              <li dir="ltr" aria-hidden className={KARTE_BREITE}>
+                <span className="flex h-full flex-col items-center justify-between rounded-lg border border-gruen-700 bg-gruen-50 px-2 pt-2 pb-3 ring-1 ring-gruen-700 ring-inset">
+                  <span className="self-start text-16 font-bold text-gruen-800 tabular-nums">{b.nr}</span>
+                  <span lang="ar" dir="rtl" className="block text-48 leading-loose text-gruen-950">
+                    {zeichen(b)}
+                  </span>
+                  <span lang={nameLang} className="text-18 leading-tight font-bold">
+                    {name}
+                  </span>
                 </span>
               </li>
               {aehnlich.map((x) => (
-                <li key={x.slug} dir="ltr">
+                <li key={x.slug} dir="ltr" className={`${KARTE_BREITE} [&>a]:h-full`}>
                   <Buchstabenkarte b={x} sprache={sprache} label={t('raster.karte', { name: x.elifbe, nr: x.nr })} />
                 </li>
               ))}
@@ -244,7 +272,7 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                     key={`${w.sure}-${w.vers}-${w.pos}`}
                     className="flex flex-col items-center gap-3 rounded-lg border border-linie bg-weiss p-5 text-center shadow-s1"
                   >
-                    <span lang="ar" dir="rtl" className="text-display-1 leading-loose text-gruen-950">
+                    <span lang="ar" dir="rtl" className="buchstabe-riesig text-gruen-950 md:buchstabe-gross">
                       {w.textAr}
                     </span>
                     <span className="text-16 text-tinte-2">{t('buchstabe.wort', { pos: w.pos })}</span>
@@ -288,18 +316,19 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
           {naechster ? (
             <Link
               href={{ pathname: '/elifbe/buchstaben/[buchstabe]', params: { buchstabe: naechster.slug } }}
-              className="flex min-h-12 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline shadow-s1 hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte sm:flex-row-reverse sm:text-right"
+              className="flex min-h-12 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline shadow-s1 hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte"
             >
-              <ArrowRight aria-hidden className="size-5 shrink-0 text-gruen-700" />
-              <span className="flex flex-col">
+              {/* Spiegelbild von „Vorheriger Buchstabe“: Zeichen links, Text rechtsbündig, Pfeil immer rechts (E-3) */}
+              <span lang="ar" dir="rtl" aria-hidden className="text-36 text-gruen-950">
+                {zeichen(naechster)}
+              </span>
+              <span className="ms-auto flex flex-col text-right">
                 <span className="text-16 text-tinte-2">{t('buchstabe.weiter')}</span>
                 <span lang={nameLang} className="font-bold">
                   {naechster.elifbe}
                 </span>
               </span>
-              <span lang="ar" dir="rtl" aria-hidden className="ms-auto text-36 text-gruen-950 sm:ms-0 sm:me-auto">
-                {zeichen(naechster)}
-              </span>
+              <ArrowRight aria-hidden className="size-5 shrink-0 text-gruen-700" />
             </Link>
           ) : null}
         </nav>
