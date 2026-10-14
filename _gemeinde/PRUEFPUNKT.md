@@ -1,5 +1,10 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 14.10. 19:40 UTC:** `main` = 75cad0a (Feinschliff Runde 3 gemergt; Tor grün: Unit 1438, Integration 1680,
+  Bau wie frischer Import 1866 + Vorschau 2207, Sweep 61/24). Sichtabnahme Runde 3: alle 19 Ansichten ≥ 8 → Z-04 erfüllt
+  (`berichte/sichtabnahme-3.md`). Entscheidungen L2-E04 (Vercel-Import) und L2-E05 (Null der Textschrift). Läuft: Stufe C
+  (Workflow `wf_2c143eb4-fb9`: Konten → Umbau auf Import-Bau → Öffentlich → Endprüfer). Danach: ABNAHME.md mit Belegen,
+  Protokolle nach `_gemeinde/protokolle/C-*`, BERICHT mit Galerie, ABSCHLUSS, CLAUDE.md-Block entfernen, letzter FF.
 - **Stand 14.10. 17:30 UTC:** `main` = 4115a5e (Fast-Forward, Tor grün: Unit 1438, Integration 1680, Bau wie frischer
   Import 1866 + Vorschau 2207, Sweep 61/24 ohne Fehler). Darin: `web/vercel.json` (Import mit Root Directory `web`
   gleichwertig, b5441c0) und die drei Befundpakete der Sichtabnahme Runde 2 (A Hadith/Projekte, B Gruppenchat,
