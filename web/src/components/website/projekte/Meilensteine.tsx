@@ -13,7 +13,7 @@ type Meilenstein = ProjekteInhalt['meilensteine'][number];
 
 /**
  * Zuletzt erledigter Meilenstein (-1, wenn keiner erledigt ist) und der nächste offene (-1, wenn alle erledigt sind).
- * Gemeinsam für Linie und Karten, damit Achtstern und Linie dieselbe Marke meinen.
+ * Gemeinsam für Linie und Zeilen, damit Achtstern und Linie dieselbe Marke meinen.
  */
 function marken(liste: Meilenstein[]): { zuletzt: number; naechster: number } {
   const zuletzt = liste.reduce((bis, m, i) => (m.erledigt ? i : bis), -1);
@@ -22,8 +22,8 @@ function marken(liste: Meilenstein[]): { zuletzt: number; naechster: number } {
 }
 
 /**
- * Projektmeilensteine (Design Projects.dc.html D:72–86, Sprungziel #meilensteine): Karten in der Reihenfolge der Liste,
- * Status „Abgeschlossen“ oder „Geplant“ je Karte. Darüber die Meilensteinlinie (großer Moment B-08): Stand als Satz, die
+ * Projektmeilensteine (Design Projects.dc.html D:72–86, Sprungziel #meilensteine): Zeilen in der Reihenfolge der Liste,
+ * Status „Abgeschlossen“ oder „Geplant“ je Zeile. Darüber die Meilensteinlinie (großer Moment B-08): Stand als Satz, die
  * Linie reicht bis zum letzten erledigten Meilenstein und wächst beim ersten Sichtbarwerden. Ohne Einträge ein Platzhalter.
  * Kennung „Baufortschritt“ mit Achtstern über dem Titel (Referenz: Seitenkopf).
  */
@@ -57,9 +57,10 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
         />
       ) : null}
       {liste.length > 0 ? (
-        <ol className="grid gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+        // PR-2: alle Meilensteine als gleich gebaute Zeilen, getrennt durch eine feine 1-px-Linie
+        <ol className="divide-y divide-linie overflow-hidden rounded-lg border border-linie bg-weiss">
           {liste.map((m, i) => (
-            <Karte
+            <Zeile
               key={i}
               m={m}
               sprache={sprache}
@@ -78,7 +79,7 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
 
 /**
  * Meilensteinlinie: gestrichelte Strecke über alle Meilensteine, durchgezogen bis zum letzten erledigten. Die Marken
- * sind Bild (aria-hidden); den Stand trägt der Satz darüber, die Einzelheiten tragen die Karten darunter. Der nächste
+ * sind Bild (aria-hidden); den Stand trägt der Satz darüber, die Einzelheiten tragen die Zeilen darunter. Der nächste
  * offene Meilenstein trägt einen gefüllten Achtstern (wie „nächstes Gebet“), erledigte einen Haken, übrige eine Ziffer.
  */
 function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprache; stand: string }) {
@@ -160,10 +161,12 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
 }
 
 /**
- * Eine Karte: Marke (Haken, Ziffer oder nächster Achtstern – dieselbe Marke wie auf der Linie), Titel, Datum und Status
- * als Text (nicht nur Farbe), Beschreibung.
+ * Eine Zeile (Sichtabnahme Z-04, PR-2; vorher Karten mit wechselndem Aufbau): Marke (Haken, Ziffer oder Achtstern –
+ * dieselbe Marke wie auf der Linie), Titel und Beschreibung, dazu Datum und Status als Text (nicht nur Farbe); ab md
+ * stehen Datum und Status rechts. Alle Zeilen sind gleich gebaut; hervorgehoben ist nur die Marke: Der nächste offene
+ * Meilenstein – oder, wenn alles erledigt ist, der letzte (B-08: „Eröffnung“) – trägt den gefüllten Achtstern.
  */
-function Karte({
+function Zeile({
   m,
   sprache,
   bezeichnung,
@@ -178,14 +181,7 @@ function Karte({
   hervorgehoben: boolean;
 }) {
   return (
-    <li
-      className={cn(
-        'flex gap-4',
-        hervorgehoben
-          ? 'rounded-lg border border-linie bg-weiss p-5 shadow-s1'
-          : cn('border-t-2 px-5 pt-5', m.erledigt ? 'border-gruen-700' : 'border-linie'),
-      )}
-    >
+    <li className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 px-5 py-5 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-6 md:px-8">
       <span
         aria-hidden
         className={cn(
@@ -210,22 +206,22 @@ function Karte({
           nummer
         )}
       </span>
-      <div className="flex min-w-0 flex-col gap-1.5">
+      <div className="flex min-w-0 flex-col gap-1">
         <Text feld={m.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold" />
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-          <span className="text-16 text-tinte-2 tabular-nums">
-            <Text feld={m.datum} sprache={sprache} />
-          </span>
-          <span
-            className={cn(
-              'inline-flex rounded-pill px-2.5 text-16 font-bold',
-              m.erledigt ? 'bg-gruen-50 text-gruen-800' : 'border border-dashed border-rand bg-weiss text-tinte-2',
-            )}
-          >
-            {m.erledigt ? bezeichnung.abgeschlossen : bezeichnung.geplant}
-          </span>
-        </div>
         <Text feld={m.beschreibung} sprache={sprache} als="p" className="text-16 text-tinte-2" />
+      </div>
+      <div className="col-start-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:col-start-3 md:row-start-1 md:mt-0.5 md:justify-end">
+        <span className="text-16 text-tinte-2 tabular-nums">
+          <Text feld={m.datum} sprache={sprache} />
+        </span>
+        <span
+          className={cn(
+            'inline-flex rounded-pill px-2.5 text-16 font-bold',
+            m.erledigt ? 'bg-gruen-50 text-gruen-800' : 'border border-dashed border-rand bg-weiss text-tinte-2',
+          )}
+        >
+          {m.erledigt ? bezeichnung.abgeschlossen : bezeichnung.geplant}
+        </span>
       </div>
     </li>
   );

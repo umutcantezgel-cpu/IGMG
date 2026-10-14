@@ -47,6 +47,7 @@ export async function Tagesbogen({ className }: { className?: string }) {
         namen,
         listeHeute: tl('listeHeute'),
         alle: tl('alle'),
+        jetzt: t('bogenJetzt'),
         locale: LOCALE[sprache],
         tageszeilen: tageszeilen(daten, LOCALE[sprache]),
       }}

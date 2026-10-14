@@ -17,7 +17,7 @@ import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeDesTages } from '@/server/queries/des-tages';
-import { ladeNachrichten } from '@/server/queries/nachrichten';
+import { ladeNachrichten, waehleAufmacher } from '@/server/queries/nachrichten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
@@ -47,16 +47,19 @@ export default async function Startseite() {
   // Volle Reihen im Dreierraster: sechs, sonst drei (bei fünf Terminen bliebe am Desktop eine Lücke)
   const veranstaltungen = kommende.slice(0, kommende.length >= 6 ? 6 : 3);
   const nachrichten = await ladeNachrichten();
-  const aufmacher = nachrichten.find((n) => n.empfohlen) ?? nachrichten[0];
+  // „Heute“ aus dem gecachten Datum (statische Seite, keine laufende Uhr im Vorrendern)
+  const heute = (await heuteBerlin()).datum;
+  // Aufmacher (ST-1): eine Empfehlung zählt nur innerhalb der Frist, sonst steht der neueste Beitrag oben
+  const aufmacher = waehleAufmacher(nachrichten, heute);
   const weitere = nachrichten.filter((n) => n !== aufmacher).slice(0, 3);
   const kontakt = await ladeSeiteninhalt('kontakt');
   // Vers und Hadith des Tages (Kür K-A): nur mit mindestens einem freigegebenen Eintrag in den Listen „des Tages“
-  const desTages = await ladeDesTages((await heuteBerlin()).datum);
+  const desTages = await ladeDesTages(heute);
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
       <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
-        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-8 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16 lg:gap-y-5">
+        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">
             <span className="inline-flex items-center gap-2 self-start text-16 font-bold text-gruen-800">
               <Stern8 className="size-4" />
@@ -66,7 +69,6 @@ export default async function Startseite() {
               {t('titel')}
             </h1>
           </div>
-          <Tagesbogen className="lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
           <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
             <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{t('untertitel')}</p>
             <div className="flex flex-wrap gap-3 pt-1">
@@ -83,6 +85,8 @@ export default async function Startseite() {
               </Link>
             </div>
           </div>
+          {/* Telefon (ST-2): Kennung, Titel, Einleitung und Knöpfe stehen zusammen, die Tageskarte folgt; ab lg rechts daneben */}
+          <Tagesbogen className="max-lg:mt-3 lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
         </div>
         <div aria-hidden className="h-5 achtstern-band" />
       </section>

@@ -17,7 +17,9 @@ export const BEISPIEL_NACHRICHTEN: SeedNachricht[] = [
     kategorie: 'neuigkeiten',
     wichtig: true,
     veroeffentlicht: '2025-07-20T10:00',
-    empfohlen: true,
+    // Von Hand angepasst (Sichtabnahme Z-04, ST-1): Die Bestandsmeldung von 2025 ist keine Empfehlung mehr, sonst stünde
+    // sie mit „Wichtig“ als veralteter Aufmacher über neueren Beiträgen. Aufmacher regelt `waehleAufmacher` (Frist 30 Tage).
+    empfohlen: false,
     lesezeit: 2,
     quelle: 'bestand/src/app/components/NewsSection.tsx:11-20',
   },
