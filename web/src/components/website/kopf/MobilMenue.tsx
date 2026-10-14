@@ -1,9 +1,9 @@
 'use client';
 
-import { Check, ChevronDown, ChevronUp, LogIn, Menu, X } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, House, LogIn, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { type CSSProperties, type KeyboardEvent, useRef, useState } from 'react';
+import { type CSSProperties, type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
 import type { Locale } from '@/i18n/routing';
 import type { Bereich, Menue } from '../navigation';
 import type { SprachEintrag } from './Sprachwahl';
@@ -23,12 +23,23 @@ type Texte = {
   aktuelleSeite: string;
 };
 
+/** Angemeldetes Konto (nur Konto-Seiten, X-1): Texte, Adresse und das Abmelden-Formular kommen fertig vom Server. */
+type MobilKonto = {
+  initiale: string;
+  vorname: string;
+  meinBereichHref: string;
+  angemeldetAls: string;
+  meinBereich: string;
+  abmelden: ReactNode;
+};
+
 /**
  * Telefonmenü (unter 1240 px) nach design/Header.dc.html: Schublade von rechts als natives <dialog>.
  * Escape und inerter Seitenkörper kommen vom Browser (modaler Dialog); Tab und Umschalt+Tab laufen im Menü im Kreis
  * (F-18: ohne das verlässt der Fokus nach dem letzten Ziel das Dokument); Schließen gibt den Fokus an den Menü-Knopf
  * zurück. Öffnen (B-03 Schublade, K-07): die Fläche kommt 24 px von rechts, danach treten die vier Gruppen gestaffelt
  * auf; Aufklapper mit `tritt-auf`; Schließen ohne Animation. Bereiche sind Überschriften (h3) mit Aufklapp-Knopf.
+ * Mit `konto` (Konto-Seiten) steht oben eine Kontokarte („Angemeldet als …“, Mein Bereich, Abmelden) statt „Anmelden“ unten.
  */
 export function MobilMenue({
   menues,
@@ -36,6 +47,7 @@ export function MobilMenue({
   gebetszeitenHref,
   sucheHref,
   anmeldenHref,
+  konto,
   aktiv,
   aktuell,
   sprache,
@@ -49,6 +61,7 @@ export function MobilMenue({
   sucheHref: string;
   /** Konto-Anmeldung (Funktion `konten` an) oder Verwaltungsanmeldung */
   anmeldenHref: string;
+  konto?: MobilKonto;
   aktiv: Bereich;
   aktuell: string;
   sprache: Locale;
@@ -138,6 +151,36 @@ export function MobilMenue({
             </button>
           </div>
           <div className="flex flex-1 flex-col gap-6 overflow-y-auto px-6 pt-4 pb-8">
+            {konto ? (
+              <div className="schublade-gruppe flex flex-col rounded-lg border border-linie p-2" style={gruppe(0)}>
+                <div className="flex items-center gap-3 border-b border-linie px-3 pt-2 pb-3">
+                  <span
+                    aria-hidden
+                    className="flex size-12 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-display text-24 leading-none text-weiss"
+                  >
+                    {konto.initiale}
+                  </span>
+                  <span className="flex min-w-0 flex-col">
+                    <span className="text-16 text-tinte-2">{konto.angemeldetAls}</span>
+                    <span className="truncate text-20 font-bold text-tinte">{konto.vorname}</span>
+                  </span>
+                </div>
+                <ul className="flex flex-col gap-1 pt-2">
+                  <li>
+                    <NextLink
+                      href={konto.meinBereichHref}
+                      prefetch={false}
+                      onClick={schliessen}
+                      className="flex min-h-12 items-center gap-3 rounded-md px-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-sand hover:text-tinte"
+                    >
+                      <House aria-hidden className="size-5 shrink-0" />
+                      {konto.meinBereich}
+                    </NextLink>
+                  </li>
+                  <li>{konto.abmelden}</li>
+                </ul>
+              </div>
+            ) : null}
             <div role="group" aria-labelledby="mobil-sprache" className="schublade-gruppe flex flex-col gap-2" style={gruppe(0)}>
               <span id="mobil-sprache" className="text-16 font-bold text-gruen-800">
                 {texte.spracheGruppe}
@@ -253,15 +296,17 @@ export function MobilMenue({
                 })}
               </ul>
             </nav>
-            <NextLink
-              href={anmeldenHref}
-              prefetch={false}
-              style={gruppe(3)}
-              className="schublade-gruppe inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
-            >
-              <LogIn aria-hidden className="size-5" />
-              {texte.anmelden}
-            </NextLink>
+            {konto ? null : (
+              <NextLink
+                href={anmeldenHref}
+                prefetch={false}
+                style={gruppe(3)}
+                className="schublade-gruppe inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
+              >
+                <LogIn aria-hidden className="size-5" />
+                {texte.anmelden}
+              </NextLink>
+            )}
           </div>
         </div>
       </dialog>

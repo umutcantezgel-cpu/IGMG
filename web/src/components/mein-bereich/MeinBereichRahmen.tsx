@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import type { ReactNode } from 'react';
 import { AbmeldenKnopf } from '@/components/konto/AbmeldenKnopf';
 import { PageHeader } from '@/components/website/PageHeader';
-import { KontoHuelle } from '@/components/konto/KontoHuelle';
+import { KontoHuelle, kopfName } from '@/components/konto/KontoHuelle';
 import type { PfadEintrag } from '@/components/website/Breadcrumbs';
 import { pfadFuer, type Ziel } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
@@ -78,10 +78,10 @@ export async function MeinBereichRahmen({
     ...konto.gemeindeRollen.map((r) => t(`kontoart.${r}`)),
     ...(konto.verwaltungsRollen.length ? [t('kontoart.verwaltung')] : []),
   ];
-  const initial = Array.from(konto.anzeigename.trim())[0]?.toLocaleUpperCase(sprache) ?? '';
+  const initial = kopfName(konto.anzeigename, sprache).initiale;
 
   return (
-    <KontoHuelle seite="mein-bereich" sprachZiel={sprachZiel} pfad={pfad}>
+    <KontoHuelle seite="mein-bereich" sprachZiel={sprachZiel} pfad={pfad} konto={konto}>
       <PageHeader kennung={t('kennung')} titel={titel} untertitel={untertitel} />
       <div className="mx-auto grid max-w-(--container-inhalt) gap-8 px-4 pt-6 pb-abschnitt md:px-8 md:pt-10 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-12 print:block">
         <aside className="flex min-w-0 flex-col gap-4 lg:sticky lg:top-6 lg:self-start print:hidden">
