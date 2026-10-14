@@ -26,7 +26,7 @@ export default async function ProjekteSeite() {
   const t = await getTranslations('projekte');
   const inhalt = await ladeSeiteninhalt('projekte');
   return (
-    <Seitenrahmen bereich="moschee" seite="projekte" sprachZiel="/projekte" pfad={[{ label: t('kopf.eyebrow') }]}>
+    <Seitenrahmen bereich="moschee" seite="projekte" sprachZiel="/projekte" kompakteLeiste pfad={[{ label: t('kopf.eyebrow') }]}>
       <PageHeader kennung={t('kopf.eyebrow')} titel={t('kopf.titel')} untertitel={t('kopf.untertitel')} />
       {/* Erzählfolge (O-11): das Vorhaben → der Stand (Meilensteinlinie, B-08) → was es braucht → Aufruf */}
       <section aria-label={t('kopf.titel')} className="bg-papier">

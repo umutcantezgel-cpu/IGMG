@@ -43,6 +43,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
       bereich="islam"
       seite="hadith"
       sprachZiel={ziel}
+      kompakteLeiste
       pfad={[
         { label: th('breadcrumb'), ziel: '/hadith' },
         { label: name, ziel: '/hadith/bukhari' },
