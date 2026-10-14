@@ -826,12 +826,26 @@ function vercelHost(env: UmgebungsWerte): string | undefined {
   return host?.replace(/\/+$/, '');
 }
 
-/** Öffentliche Adresse ohne abschließenden Schrägstrich. Vorschau ohne APP_URL: Vercel-Adresse; sonst localhost. */
+/**
+ * Produktionsadresse eines Vercel-Projekts ohne https:// (von Vercel gesetzt), nur in Produktion auf Vercel. Damit läuft
+ * ein frisch importiertes Projekt ohne eingetragene APP_URL (Import ohne Handgriffe); die eigene Domain bleibt APP_URL.
+ */
+export function vercelProduktionsHost(env: UmgebungsWerte): string | undefined {
+  if (betriebsart(env) !== 'produktion' || env.VERCEL !== '1') return undefined;
+  return gesetzt(env, 'VERCEL_PROJECT_PRODUCTION_URL')?.replace(/\/+$/, '');
+}
+
+/**
+ * Öffentliche Adresse ohne abschließenden Schrägstrich: APP_URL; sonst auf Vercel in der Vorschau die Branch-Adresse und in
+ * der Produktion die Produktionsadresse des Projekts; sonst localhost.
+ */
 export function oeffentlicheAdresse(env: UmgebungsWerte): string {
   const adresse = gesetzt(env, 'APP_URL');
   if (adresse !== undefined) return adresse.replace(/\/+$/, '');
   const host = vercelHost(env);
   if (host !== undefined && betriebsart(env) === 'vorschau') return `https://${host}`;
+  const produktion = vercelProduktionsHost(env);
+  if (produktion !== undefined) return `https://${produktion}`;
   return 'http://localhost:3000';
 }
 
@@ -845,6 +859,15 @@ function pruefeVariable(v: Variable, name: string, env: UmgebungsWerte, ba: Betr
     return;
   }
   if (wert === undefined) {
+    // Frisch importiertes Vercel-Projekt: die Produktionsadresse kommt von Vercel – lauffähig, aber die Domain fehlt noch
+    if (name === 'APP_URL' && vercelProduktionsHost(env) !== undefined) {
+      melde(
+        name,
+        'warnung',
+        `APP_URL fehlt; es gilt die Vercel-Adresse https://${vercelProduktionsHost(env)}. Für die eigene Domain APP_URL eintragen.`,
+      );
+      return;
+    }
     if (v.pflicht[ba]) melde(name, 'fehler', `${name} fehlt (Betriebsart ${ba}). ${v.abhilfe}`);
     return;
   }

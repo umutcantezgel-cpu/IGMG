@@ -118,6 +118,23 @@ describe('oeffentlicheAdresse', () => {
     expect(oeffentlicheAdresse({})).toBe('http://localhost:3000');
   });
 
+  it('nutzt in der Produktion auf Vercel ohne APP_URL die Produktionsadresse des Projekts (frischer Import)', () => {
+    const vercel = { VERCEL: '1', VERCEL_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'igmg-neu.vercel.app' };
+    expect(oeffentlicheAdresse(vercel)).toBe('https://igmg-neu.vercel.app');
+    expect(oeffentlicheAdresse({ ...vercel, APP_URL: 'https://www.example.test' })).toBe('https://www.example.test');
+    // Außerhalb von Vercel (Docker) bleibt es bei localhost – dort ist APP_URL Pflicht
+    expect(oeffentlicheAdresse({ NODE_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'igmg-neu.vercel.app' })).toBe(
+      'http://localhost:3000',
+    );
+  });
+
+  it('meldet fehlende APP_URL auf Vercel nur als Warnung, außerhalb als Fehler', () => {
+    const vercel = { VERCEL: '1', VERCEL_ENV: 'production', VERCEL_PROJECT_PRODUCTION_URL: 'igmg-neu.vercel.app' };
+    const befund = (env: Record<string, string>) => pruefeUmgebung(env).befunde.find((b) => b.variable === 'APP_URL');
+    expect(befund(vercel)?.schwere).toBe('warnung');
+    expect(befund({ NODE_ENV: 'production', SITE_MODE: 'produktion' })?.schwere).toBe('fehler');
+  });
+
   it('nimmt APP_URL vor allem anderen', () => {
     expect(oeffentlicheAdresse({ VERCEL_ENV: 'preview', VERCEL_URL: 'igmg-abc.vercel.app', APP_URL: 'https://www.example.test' })).toBe(
       'https://www.example.test',

@@ -1,11 +1,12 @@
-import { pruefeUmgebung } from './lib/umgebung';
+import { pruefeUmgebung, vercelProduktionsHost } from './lib/umgebung';
 
 /**
  * Start des Servers (K-19): Die gemeinsame Umgebungsprüfung (lib/umgebung.ts, ADR 0022) meldet Fehlendes verständlich;
  * nur eine fehlende öffentliche Adresse in Produktion bricht den Start ab (Links in Mails und kanonische Adressen
- * zeigten sonst auf localhost, Tor B/C SP-B B11). Im Docker-Betrieb (MIGRATION_BEIM_START=1) werden die Migrationen
- * angewendet, danach (CACHE_ERNEUERN_BEIM_START=1) verfallen die beim Bau erzeugten Inhalte (ADR 0017). Auf Vercel
- * migriert der Bau (ADR 0019); Selbstaufrufe über 127.0.0.1 und Migrationen beim Kaltstart entfallen dort.
+ * zeigten sonst auf localhost, Tor B/C SP-B B11) – außer auf Vercel, das die Produktionsadresse des Projekts selbst liefert.
+ * Im Docker-Betrieb (MIGRATION_BEIM_START=1) werden die Migrationen angewendet, danach (CACHE_ERNEUERN_BEIM_START=1)
+ * verfallen die beim Bau erzeugten Inhalte (ADR 0017). Auf Vercel migriert der Bau (ADR 0019); Selbstaufrufe über
+ * 127.0.0.1 und Migrationen beim Kaltstart entfallen dort.
  */
 export async function register() {
   if (process.env.NEXT_RUNTIME !== 'nodejs') return;
@@ -16,7 +17,8 @@ export async function register() {
       if (b.schwere === 'fehler') console.error(zeile);
       else if (b.schwere === 'warnung') console.warn(zeile);
     }
-    if (betriebsart === 'produktion' && !process.env.APP_URL)
+    // Auf Vercel gilt ohne APP_URL die Produktionsadresse des Projekts (frischer Import läuft ohne Eintrag)
+    if (betriebsart === 'produktion' && !process.env.APP_URL && !vercelProduktionsHost(process.env))
       throw new Error('[start] APP_URL fehlt (öffentliche Adresse, z. B. https://<domain>; docs/deploy/VERCEL-ENV.md).');
   }
   const aufVercel = process.env.VERCEL === '1';

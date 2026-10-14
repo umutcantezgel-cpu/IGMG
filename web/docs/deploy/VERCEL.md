@@ -27,6 +27,7 @@ Bitte keine Geheimnisse in Chats, E-Mails, Screenshots oder ins Repository kopie
 
 | Abschnitt | Was                                                                     | Aufwand           | Wer                    |
 | --------- | ----------------------------------------------------------------------- | ----------------- | ---------------------- |
+| 0         | Nur bei neuem Projekt: Repository importieren, nichts ändern            | 5 min + Bau       | Technik                |
 | 1         | Projekt prüfen (Region, Node, Stammordner)                              | 3 min             | Technik                |
 | 2         | Datenbank in Frankfurt                                                  | 5 min             | Technik                |
 | 3         | Dateispeicher in Frankfurt                                              | 3 min             | Technik                |
@@ -57,9 +58,44 @@ Alle Code-Bausteine für den Livegang sind vorhanden (Stand 2026-10-11, Branch `
 | Startklar-Cockpit (`/verwaltung/startklar`) und `pnpm startklar`                                         | vorhanden                                                           | `web/src/lib/startklar/pruefungen.ts`                             |
 | `docs/deploy/VERCEL-ENV.md`                                                                              | vorhanden                                                           | ADR 0022                                                          |
 
+## 0. Neues Projekt importieren – ohne Handgriffe (5 Minuten)
+
+Gilt, wenn das Repository in Vercel neu angelegt wird (zweites Projekt, neues Team oder ein gelöschtes Projekt). Ein
+bestehendes Projekt prüfst du mit Abschnitt 1.
+
+1. **Ort:** Vercel › Add New › Project › das Repository `IGMG` auswählen › Import.
+2. **Nichts ändern:**
+   - „Root Directory“ bleibt leer. Vercel liest `vercel.json` nur im Stamm des Repositorys.
+   - Das Feld für das Framework darf stehen bleiben, wie Vercel es vorschlägt. Die `vercel.json` im Stamm beschreibt die
+     Web-App als Service `web` (Ordner `web`, Next.js). Ein `services`-Block schaltet Vercel in den Services-Modus; die
+     Einstellung im Dashboard wird dann nicht benutzt.
+   - Keine Build- oder Install-Befehle eintragen. Vercel ruft in `web/` das Skript `vercel-build` auf
+     (`scripts/vercel-bau.mjs`).
+   - Keine Umgebungsvariablen nötig.
+3. **Deploy** klicken. Der erste Bau dauert etwa 10–15 Minuten.
+
+**Das passiert ohne Umgebungsvariablen:**
+
+- Der Bau läuft gegen die PGlite-Bau-Datenbank mit Beispielinhalten (Beispielmodus, ADR 0017). Das Bauprotokoll zeigt
+  dazu eine Warnung; das ist erwartet.
+- Die Website nutzt als öffentliche Adresse die Produktionsadresse des Projekts (`VERCEL_PROJECT_PRODUCTION_URL`, z. B.
+  `https://<projekt>.vercel.app`), bis `APP_URL` gesetzt ist. Das Startprotokoll meldet das als Warnung, nicht als Fehler.
+- Öffentlich gehen Quran, Hadith, Elifbe, Gebetszeiten, Kalender, Ramadan und die übrigen Inhaltsseiten. `/verwaltung`
+  zeigt „Verwaltung noch nicht eingerichtet“; Konten, Lernplattform, Chat und Push antworten mit „nicht gefunden“.
+
+**Danach in dieser Reihenfolge:**
+
+1. Abschnitt 1 (Region, Node-Version, Produktionsbranch `main`).
+2. Abschnitte 2–4 (Datenbank, Dateispeicher, Geheimnisse), dann neu deployen.
+3. Abschnitt 6 (Domain) und `APP_URL` auf die eigene Domain setzen.
+4. `web/docs/GO-LIVE.md`, Abschnitt G (Gemeinde-Plattform freischalten).
+
+**Abgesichert durch:** `web/tests/unit/vercel-import.test.ts` (Lage und Form der `vercel.json`, Bau-Skript,
+`.vercelignore`) und `web/tests/unit/umgebung.test.ts` (Adresse ohne `APP_URL`).
+
 ## 1. Projekt prüfen (3 Minuten)
 
-Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nicht neu anlegen. Prüfe nur die Einstellungen.
+Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nicht neu anlegen. Prüfe nur die Einstellungen. Ein neu angelegtes Projekt richtest du zuerst nach Abschnitt 0 ein.
 
 **1.1 Stammordner leer lassen**
 
@@ -416,7 +452,7 @@ Zusätzlich prüfen:
 | Was du siehst                                                                                  | Wahrscheinliche Ursache                                                                                                                                 | Was du tust                                                                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bauprotokoll zeigt „[bau] WARNUNG: DATABASE_URL fehlt“ (der Bau bleibt grün)                   | Die Datenbank-Variable fehlt im Bereich Preview oder Production                                                                                         | Die Seite zeigt Beispielinhalte. Abschnitt 4 prüfen, Technik informieren                                                                                                                       |
-| Build rot, Meldung zu einem unbekannten Schlüssel (z. B. „services“)                           | Der Schlüssel in `vercel.json` passt nicht zur Vercel-Doku **[prüfen]**                                                                                 | Technik informieren. Offene Frage laut `_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md` (Frage 2)                                                                                                   |
+| Build rot, Meldung zu einem unbekannten Schlüssel (z. B. „services“)                           | Der Schlüssel in `vercel.json` passt nicht zur Vercel-Doku **[prüfen]**                                                                                 | Technik informieren. Offene Frage laut `_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md` (Frage 2)                                                                              |
 | Seite zeigt Fehlermeldung nach dem Start                                                       | Eine Variable fehlt oder ist falsch                                                                                                                     | Technik informieren. Die Startprüfung schreibt den Namen ins Funktionsprotokoll (`[start] NAME: …`, `web/src/instrumentation.ts`)                                                              |
 | Bestätigungsmail kommt nicht                                                                   | `SMTP_HOST` fehlt oder der Anbieter lehnt ab                                                                                                            | Die Mail bleibt im Mail-Ausgang. Sie wird bei der nächsten Anfrage mit Versand oder im täglichen Lauf erneut versucht, höchstens sechsmal (`web/src/lib/mail/ausgang.ts`). Technik informieren |
 | `/api/health` antwortet mit Fehler 503                                                         | Datenbank nicht erreichbar                                                                                                                              | Neon-Status prüfen, Technik informieren (`web/src/app/api/health/route.ts`)                                                                                                                    |
