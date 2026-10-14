@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, Minus, Palette, Play, Plus, SlidersHorizontal, Volume2 } from 'lucide-react';
+import { Check, ChevronDown, Minus, Palette, Play, Plus, SlidersHorizontal, Volume2 } from 'lucide-react';
 import { lazy, Suspense, useEffect, useId, useRef, useState, useSyncExternalStore } from 'react';
 import { TAJWID_FAMILIEN } from '@/lib/quran/tajwid';
 import { fuelle, MODI, schreibe, SPEICHER, type LeserAusgabe, type LeserProps, type Modus } from './leser-typen';
@@ -240,6 +240,8 @@ export function QuranLeser(props: LeserProps) {
         >
           <Palette aria-hidden className="size-5" />
           {t.tajwid}
+          {/* Zustand nicht nur über die Farbe (WCAG 1.4.1): an = Häkchen */}
+          {tajwid ? <Check aria-hidden className="size-4" /> : null}
         </button>
         <span className="ml-auto" />
         {rezitationen.length ? (

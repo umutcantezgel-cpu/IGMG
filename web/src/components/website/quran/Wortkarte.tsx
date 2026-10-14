@@ -1,11 +1,14 @@
 'use client';
 
-import { Bookmark, X } from 'lucide-react';
+import { Bookmark, ChevronRight, X } from 'lucide-react';
 import { useEffect, useEffectEvent, useId, useLayoutEffect, useRef, useState } from 'react';
 import type { WortDaten } from '@/server/queries/quran';
 import { ladeWoerter } from './daten';
 import { adresse, fuelle, type LeserTexte } from './leser-typen';
 import type { WortZiel } from './QuranLeser';
+
+/** Farbfeld einer Tajwid-Familie: vier geschützte Leerzeichen, die Familienklasse zeichnet Farbe und Muster. */
+const FARBFELD = '\u00a0'.repeat(4);
 
 /** Regeln, deren Segmente das Wort berühren, in der Reihenfolge ihres ersten Auftretens. */
 export function regelnImWort(daten: WortDaten, vers: number, pos: number): string[] {
@@ -20,18 +23,53 @@ export function regelnImWort(daten: WortDaten, vers: number, pos: number): strin
   return regeln;
 }
 
+/** Abstand der Karte zum Fensterrand und zur Lesespalte (px). */
+const RAND = 16;
+/** Höhe der klebenden Werkzeugleiste über dem Text, die ein Wort beim Heranholen nicht verdecken soll (px). */
+const LEISTE = 80;
+
 /**
- * Karte am Wort platzieren (Telefon: Blatt unten, per CSS); Ursprung der Skalierung ist das Wort (B-14). Passt sie
- * beim Öffnen weder unter noch über das Wort, rückt die Seite das Wort nach oben, statt es zu verdecken.
+ * Karte am Wort platzieren; Ursprung der Skalierung ist das Wort (B-14).
+ * - Telefon: Blatt unten (per CSS). Beim Öffnen holt die Seite das Wort über das Blatt (Sichtabnahme W-3).
+ * - Breit mit freiem Rand neben der Lesespalte: Die Karte dockt rechts neben der Spalte an, mit Pfeil auf Höhe des
+ *   Worts, und verdeckt keinen Text (W-4).
+ * - Sonst am Wort: darunter oder darüber; passt beides nicht, rückt die Seite das Wort nach oben.
  */
 function platziere(karte: HTMLElement, wort: HTMLElement, oeffnen = false) {
   if (window.matchMedia('(max-width: 47.99rem)').matches) {
     karte.style.removeProperty('top');
     karte.style.removeProperty('left');
+    delete karte.dataset.andock;
+    if (oeffnen) {
+      // Wort zwischen Werkzeugleiste und Blatt holen (wie scrollIntoView „nearest“ mit Blatthöhe als scroll-margin-bottom;
+      // Chromium wertet den Rand bei „nearest“ nicht aus). Absolutes Ziel: stimmt auch während eines laufenden Scrollens.
+      const r = wort.getBoundingClientRect();
+      const frei = window.innerHeight - karte.offsetHeight - RAND;
+      const delta = r.bottom > frei ? r.bottom - frei : r.top < LEISTE ? r.top - LEISTE : 0;
+      if (delta) {
+        const ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: window.scrollY + delta, behavior: ruhig ? 'instant' : 'smooth' });
+      }
+    }
     return;
   }
-  const rand = 16;
+  const rand = RAND;
   const h = karte.offsetHeight;
+  const b = karte.offsetWidth;
+  const spalte = wort.closest('article')?.getBoundingClientRect();
+  if (spalte && window.innerWidth - spalte.right - 2 * rand >= b) {
+    const r = wort.getBoundingClientRect();
+    const mitte = r.top + r.height / 2;
+    const oben = Math.min(Math.max(mitte - 48, rand), window.innerHeight - h - rand);
+    const pfeil = Math.min(Math.max(mitte - oben, 24), h - 24);
+    karte.dataset.andock = 'rechts';
+    karte.style.left = `${spalte.right + rand}px`;
+    karte.style.top = `${oben}px`;
+    karte.style.setProperty('--pfeil', `${pfeil}px`);
+    karte.style.setProperty('--ursprung', `0 ${pfeil}px`);
+    return;
+  }
+  delete karte.dataset.andock;
   let r = wort.getBoundingClientRect();
   const passtUnten = r.bottom + 8 + h <= window.innerHeight - rand;
   const passtOben = r.top - 8 - h >= rand;
@@ -40,7 +78,6 @@ function platziere(karte: HTMLElement, wort: HTMLElement, oeffnen = false) {
     r = wort.getBoundingClientRect();
   }
   const unten = r.bottom + 8 + h <= window.innerHeight - rand || r.top - 8 - h < rand;
-  const b = karte.offsetWidth;
   const links = Math.min(Math.max(r.left + r.width / 2 - b / 2, rand), window.innerWidth - b - rand);
   const oben = unten ? r.bottom + 8 : r.top - 8 - h;
   karte.style.left = `${links}px`;
@@ -122,91 +159,97 @@ export default function Wortkarte({
       ? regelnImWort(daten, ziel.vers, ziel.pos).flatMap((s) => daten.regeln.filter((r) => r.schluessel === s))
       : [];
   const kleinerKnopf =
-    'inline-flex min-h-12 items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 active:scale-98';
+    'inline-flex min-h-12 items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98';
 
   return (
     <div ref={karte} popover="auto" role="dialog" aria-labelledby={titelId} tabIndex={-1} className="wortkarte outline-none">
-      <div className="flex items-start justify-between gap-3">
-        <h2 id={titelId} className="pt-2 font-text text-16 font-bold text-tinte-2">
-          {fuelle(w.titel, { pos: ziel.pos, vers: ziel.vers })}
-        </h2>
-        <button
-          type="button"
-          aria-label={w.schliessen}
-          onClick={() => karte.current?.hidePopover()}
-          className="-mt-2 -mr-2 inline-flex size-12 shrink-0 items-center justify-center rounded-pill text-tinte-2 hover:bg-sand"
-        >
-          <X aria-hidden className="size-5" />
-        </button>
-      </div>
-      {/* Das Wort mit seinen Tajwid-Abschnitten: dasselbe HTML wie im Vers (aus der eigenen Seite) */}
-      <p lang="ar" dir="rtl" className="wortkarte-wort" dangerouslySetInnerHTML={{ __html: ziel.el.innerHTML }} />
-      <p className="text-center text-16 text-tinte-2">{fuelle(w.stelle, { sure: ziel.sure, vers: ziel.vers, pos: ziel.pos })}</p>
+      <div className="wortkarte-inhalt">
+        <span aria-hidden className="blatt-griff" />
+        <div className="flex items-start justify-between gap-3">
+          <h2 id={titelId} className="pt-2 font-text text-16 font-bold text-tinte-2">
+            {fuelle(w.titel, { pos: ziel.pos, vers: ziel.vers })}
+          </h2>
+          <button
+            type="button"
+            aria-label={w.schliessen}
+            onClick={() => karte.current?.hidePopover()}
+            className="-mt-2 -mr-2 inline-flex size-12 shrink-0 items-center justify-center rounded-pill text-tinte-2 hover:bg-sand"
+          >
+            <X aria-hidden className="size-5" />
+          </button>
+        </div>
+        {/* Das Wort mit seinen Tajwid-Abschnitten: dasselbe HTML wie im Vers (aus der eigenen Seite) */}
+        <p lang="ar" dir="rtl" className="wortkarte-wort" dangerouslySetInnerHTML={{ __html: ziel.el.innerHTML }} />
+        <p className="text-center text-16 text-tinte-2">{fuelle(w.stelle, { sure: ziel.sure, vers: ziel.vers, pos: ziel.pos })}</p>
 
-      <div className="mt-4 flex flex-col gap-4 border-t border-linie pt-4">
-        {daten === null ? (
-          <p role="status" className="text-16 text-tinte-2">
-            {w.laden}
-          </p>
-        ) : daten === 'fehler' ? (
-          <p role="alert" className="text-16 text-fehler">
-            {w.fehler}
-          </p>
-        ) : (
-          <>
-            {vorkommen > 0 ? (
-              <p className="text-16">{vorkommen === 1 ? w.vorkommenEinmal : fuelle(w.vorkommen, { anzahl: vorkommen })}</p>
-            ) : null}
-            <section className="flex flex-col gap-1">
-              <h3 className="font-text text-16 font-bold">{w.bedeutung}</h3>
-              {ort || bedeutung ? (
-                <>
-                  <p className="text-18">{ort ?? bedeutung?.b}</p>
-                  {bedeutung?.wurzel ? (
-                    <p className="text-16 text-tinte-2">
-                      {w.wurzel}:{' '}
-                      <span lang="ar" dir="rtl" className="font-quran">
-                        {bedeutung.wurzel}
-                      </span>
-                    </p>
-                  ) : null}
-                </>
-              ) : (
-                <p className="text-16 text-tinte-2">{w.keineBedeutung}</p>
-              )}
-            </section>
-            <section className="flex flex-col gap-2">
-              <h3 className="font-text text-16 font-bold">{w.regeln}</h3>
-              {regeln.length ? (
-                <ul className="flex flex-wrap gap-2">
-                  {regeln.map((r) => {
-                    const name = r.name[sprache as 'de'] ?? r.name.de;
-                    return (
-                      <li key={r.schluessel}>
-                        <button
-                          type="button"
-                          onClick={() => onRegel(r.schluessel)}
-                          aria-label={fuelle(w.regelOeffnen, { name })}
-                          className={kleinerKnopf}
-                        >
-                          <span lang={r.name[sprache as 'de'] ? undefined : 'de'} className={`tj tj-${r.familie} muster-probe`}>
-                            {name}
-                          </span>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p className="text-16 text-tinte-2">{w.keineRegeln}</p>
-              )}
-            </section>
-          </>
-        )}
-        <button type="button" onClick={onLesezeichen} className={`${kleinerKnopf} self-start`}>
-          <Bookmark aria-hidden className="size-5 text-gruen-700" />
-          {fuelle(texte.leser.lesezeichen, { nr: ziel.vers })}
-        </button>
+        <div className="mt-4 flex flex-col gap-4 border-t border-linie pt-4">
+          {daten === null ? (
+            <p role="status" className="text-16 text-tinte-2">
+              {w.laden}
+            </p>
+          ) : daten === 'fehler' ? (
+            <p role="alert" className="text-16 text-fehler">
+              {w.fehler}
+            </p>
+          ) : (
+            <>
+              {vorkommen > 0 ? (
+                <p className="text-16">{vorkommen === 1 ? w.vorkommenEinmal : fuelle(w.vorkommen, { anzahl: vorkommen })}</p>
+              ) : null}
+              <section className="flex flex-col gap-1">
+                <h3 className="font-text text-16 font-bold">{w.bedeutung}</h3>
+                {ort || bedeutung ? (
+                  <>
+                    <p className="text-18">{ort ?? bedeutung?.b}</p>
+                    {bedeutung?.wurzel ? (
+                      <p className="text-16 text-tinte-2">
+                        {w.wurzel}:{' '}
+                        <span lang="ar" dir="rtl" className="font-quran">
+                          {bedeutung.wurzel}
+                        </span>
+                      </p>
+                    ) : null}
+                  </>
+                ) : (
+                  <p className="text-16 text-tinte-2">{w.keineBedeutung}</p>
+                )}
+              </section>
+              <section className="flex flex-col gap-2">
+                <h3 className="font-text text-16 font-bold">{w.regeln}</h3>
+                {regeln.length ? (
+                  <ul className="flex flex-wrap gap-2">
+                    {regeln.map((r) => {
+                      const name = r.name[sprache as 'de'] ?? r.name.de;
+                      return (
+                        <li key={r.schluessel}>
+                          {/* Text in Akzentgrün ohne Unterstreichung, die Familie als Farbfeld davor (Sichtabnahme W-1) */}
+                          <button
+                            type="button"
+                            onClick={() => onRegel(r.schluessel)}
+                            aria-label={fuelle(w.regelOeffnen, { name })}
+                            className={`${kleinerKnopf} pr-3 text-gruen-800`}
+                          >
+                            <span aria-hidden className={`tj tj-${r.familie} tj-probe`}>
+                              {FARBFELD}
+                            </span>
+                            <span lang={r.name[sprache as 'de'] ? undefined : 'de'}>{name}</span>
+                            <ChevronRight aria-hidden className="size-5" />
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <p className="text-16 text-tinte-2">{w.keineRegeln}</p>
+                )}
+              </section>
+            </>
+          )}
+          <button type="button" onClick={onLesezeichen} className={`${kleinerKnopf} self-start text-tinte`}>
+            <Bookmark aria-hidden className="size-5 text-gruen-700" />
+            {fuelle(texte.leser.lesezeichen, { nr: ziel.vers })}
+          </button>
+        </div>
       </div>
     </div>
   );

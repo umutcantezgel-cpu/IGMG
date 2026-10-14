@@ -858,9 +858,15 @@ html[data-uebergang='morph']::view-transition-new(.seite) {
     text-decoration-style: solid;
     text-decoration-thickness: 0.12em;
   }
+  /* Nicht gesprochen: eigenes Muster statt Unterstreichung (Sichtabnahme S-2) – ein kurzer Strich mittig unter der
+     Glyphe (currentColor, 5,12:1 auf Papier); die fünf Linienstile der übrigen Familien bleiben eindeutig */
   .tj-stumm {
     color: var(--color-tajwid-stumm);
-    text-decoration-style: solid;
+    text-decoration-line: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 0.5em max(2px, 0.07em);
+    background-position: 50% 100%;
   }
 }
 
