@@ -12,6 +12,7 @@ import { Spenden } from './Spenden';
  * mit Dank und zwei Knöpfen – „Kontakt aufnehmen“ führt zu /kontakt, „Jetzt spenden“ springt zur Bankverbindung. Auf dem
  * Telefon und Tablet steht der Aufruf auf dem Papier, die Spendenkarte liegt frei darunter (H-C05). Ab lg liegen Aufruf und
  * Spendenkarte nebeneinander auf einer hellen Fläche; die Spendenkarte ist weiß mit Rand und Schatten.
+ * Platzhalter der Gemeinde „[…]“ sind gekennzeichnet (Sichtabnahme Runde 2, PR-3).
  */
 export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
@@ -28,11 +29,11 @@ export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhal
           <div aria-hidden className="h-1.5 bg-gruen-700 lg:hidden" />
           <div className="flex flex-col gap-4 p-6 md:p-12 lg:p-0">
             <h2 id="unterstuetzen-titel" className="text-display-2">
-              <Text feld={u.titel} sprache={sprache} />
+              <Text feld={u.titel} sprache={sprache} platzhalter />
             </h2>
             {rueckfall ? <p className="text-16 text-tinte-2">{tAllg('nurDeutsch')}</p> : null}
-            <Text feld={u.text} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" />
-            <Text feld={u.dank} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty text-tinte-2" />
+            <Text feld={u.text} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty" platzhalter />
+            <Text feld={u.dank} sprache={sprache} als="p" className="max-w-(--container-text) text-pretty text-tinte-2" platzhalter />
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/kontakt"

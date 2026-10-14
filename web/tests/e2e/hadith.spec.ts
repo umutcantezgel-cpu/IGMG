@@ -104,7 +104,12 @@ test('Bücherseite und Buch 1 folgen dem Schalter hadith_gesamt', async ({ page 
   const erste = page.locator('article#h-1');
   await expect(erste.getByRole('heading', { level: 2 })).toContainText('Sahih al-Bukhari 1');
   await expect(erste.locator('p[lang="ar"][dir="rtl"]')).toBeVisible();
-  await expect(erste.getByText(T.de.buch.uebersetzungInArbeit)).toBeVisible();
+  // H-7 (Sichtabnahme Runde 2): ohne geprüfte Übersetzung in der Liste steht der Hinweis einmal darüber, nicht im Kartenfuß
+  const ohneUebersetzung = (await page.getByText(T.de.buch.uebersetzungVon.replace(' {uebersetzer}', '')).count()) === 0;
+  if (ohneUebersetzung) {
+    await expect(page.getByRole('note').filter({ hasText: T.de.buch.uebersetzungInArbeit })).toBeVisible();
+    await expect(erste.getByText(T.de.buch.uebersetzungInArbeit)).toHaveCount(0);
+  }
   await expect(page.getByRole('navigation', { name: T.de.buch.blaettern })).toHaveCount(1);
   await ohneBefund(page);
 });
@@ -126,7 +131,7 @@ test('/tr/hadis/buhari/2: türkische Buchseite oder 404', async ({ page }) => {
   const antwort = await page.goto('/tr/hadis/buhari/2');
   expect(antwort?.status()).toBe(sichtbar ? 200 : 404);
   if (sichtbar) {
-    await expect(page.locator('article[id^="h-"]').first().getByRole('heading', { level: 2 })).toContainText('Sahîh-i Buhârî');
+    await expect(page.locator('article[id^="h-"]').first().getByRole('heading')).toContainText('Sahîh-i Buhârî');
     await expect(page.getByText(T.tr.buch.uebersetzungInArbeit).first()).toBeVisible();
   }
 });
@@ -164,6 +169,29 @@ test('Buchseite: Rückweg, Kennung, Titelhinweis und Achtstern mit Titel; Leiste
   }
   await page.evaluate(() => window.scrollTo({ top: 5000, behavior: 'instant' }));
   await expect(page.getByRole('link', { name: T.de.buch.nachOben })).toBeVisible();
+  await ohneBefund(page);
+});
+
+// Sichtabnahme Runde 2 (H-6, H-7): Abschnitte zu je 10 mit Sprungleiste, „Übersetzung in Arbeit“ höchstens einmal
+test('Buch 2: Sprungleiste zu den Abschnitten, jedes Ziel vorhanden; Übersetzungshinweis einmal', async ({ page }, info) => {
+  if ((await buecher(page, 'de')) === 0) test.skip(true, 'Gesamtsammlung nicht freigeschaltet');
+  await page.goto('/hadith/bukhari/2');
+  const leiste = page.getByRole('navigation', { name: T.de.buch.sprungTitel, exact: true });
+  await expect(leiste).toHaveCount(1);
+  const ziele = await leiste.getByRole('link').evaluateAll((as) => as.map((a) => a.getAttribute('href') ?? ''));
+  expect(ziele.length).toBeGreaterThanOrEqual(5);
+  for (const z of ziele) expect(await page.evaluate((id) => document.getElementById(id) !== null, z.slice(1))).toBe(true);
+  // Sprung: der Abschnitt steht danach am oberen Rand
+  await leiste.getByRole('link').nth(2).click();
+  await expect(page).toHaveURL(new RegExp(`${ziele[2]}$`));
+  await expect(page.locator(ziele[2])).toBeInViewport();
+  if (info.project.name === 'telefon') {
+    // Leiste oder erste Karte beginnt im ersten Bildschirm (X-8: kompakte Gebetsleiste)
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    expect((await leiste.boundingBox())?.y ?? 9999).toBeLessThan(page.viewportSize()?.height ?? 0);
+  }
+  const ohneUebersetzung = (await page.getByText(T.de.buch.uebersetzungVon.replace(' {uebersetzer}', '')).count()) === 0;
+  if (ohneUebersetzung) await expect(page.getByText(T.de.buch.uebersetzungInArbeit, { exact: true })).toHaveCount(1);
   await ohneBefund(page);
 });
 

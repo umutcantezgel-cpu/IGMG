@@ -3,8 +3,9 @@ import type { CSSProperties } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { ErstesSichtbarwerden } from '@/components/website/ErstesSichtbarwerden';
 import { Achtstern, Stern8 } from '@/components/website/Icons';
+import { istNurPlatzhalter, MitPlatzhaltern } from '@/components/website/Platzhalter';
 import { Text } from '@/components/website/Text';
-import type { Sprache } from '@/lib/i18n/inhalt';
+import { waehle, type Sprache } from '@/lib/i18n/inhalt';
 import { cn } from '@/lib/utils';
 import type { ProjekteInhalt } from '@/lib/validierung/seiteninhalte/projekte';
 import { brauchtRueckfall } from './hilfen';
@@ -26,12 +27,15 @@ function marken(liste: Meilenstein[]): { zuletzt: number; naechster: number } {
  * Status „Abgeschlossen“ oder „Geplant“ je Zeile. Darüber die Meilensteinlinie (großer Moment B-08): Stand als Satz, die
  * Linie reicht bis zum letzten erledigten Meilenstein und wächst beim ersten Sichtbarwerden. Ohne Einträge ein Platzhalter.
  * Kennung „Baufortschritt“ mit Achtstern über dem Titel (Referenz: Seitenkopf).
+ * Sichtabnahme Runde 2: Sind alle Meilensteine erledigt, sagt der Stand „6 von 6“ schon alles – „Abgeschlossen“ steht
+ * dann nur noch für Screenreader in jeder Zeile (PR-5; die Haken sind Bild). Platzhalter „[…]“ sind gekennzeichnet (PR-3).
  */
 export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt; sprache: Sprache }) {
   const t = await getTranslations('projekte');
   const tAllg = await getTranslations('allgemein');
   const liste = inhalt.meilensteine;
   const { naechster } = marken(liste);
+  const alleErledigt = liste.length > 0 && liste.every((m) => m.erledigt);
   const rueckfall = brauchtRueckfall(
     sprache,
     liste.flatMap((m) => [m.titel, m.beschreibung, m.datum]),
@@ -67,11 +71,14 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
               bezeichnung={bezeichnung}
               nummer={i + 1}
               hervorgehoben={i === naechster || (naechster < 0 && i === liste.length - 1)}
+              alleErledigt={alleErledigt}
             />
           ))}
         </ol>
       ) : (
-        <p className="text-18 text-tinte-2">{t('platzhalter.gemeinde')}</p>
+        <p className="text-18 text-tinte-2">
+          <MitPlatzhaltern text={t('platzhalter.gemeinde')} />
+        </p>
       )}
     </section>
   );
@@ -81,6 +88,7 @@ export async function Meilensteine({ inhalt, sprache }: { inhalt: ProjekteInhalt
  * Meilensteinlinie: gestrichelte Strecke über alle Meilensteine, durchgezogen bis zum letzten erledigten. Die Marken
  * sind Bild (aria-hidden); den Stand trägt der Satz darüber, die Einzelheiten tragen die Zeilen darunter. Der nächste
  * offene Meilenstein trägt einen gefüllten Achtstern (wie „nächstes Gebet“), erledigte einen Haken, übrige eine Ziffer.
+ * Die Datumszeile lässt reine Platzhalter wie „[Datum]“ weg (Sichtabnahme Runde 2, PR-3): Die Zeilen darunter nennen sie.
  */
 function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprache; stand: string }) {
   const { zuletzt, naechster } = marken(liste);
@@ -136,24 +144,26 @@ function Linie({ liste, sprache, stand }: { liste: Meilenstein[]; sprache: Sprac
       </div>
       {liste.length <= 6 ? (
         <ol aria-hidden className="relative mx-4 hidden h-6 lg:block">
-          {liste.map((m, i) => (
-            <li
-              key={i}
-              className={cn(
-                'absolute top-0 text-16 whitespace-nowrap text-tinte-2 tabular-nums',
-                liste.length === 1
-                  ? '-translate-x-1/2'
-                  : i === 0
-                    ? '-ml-4'
-                    : i === liste.length - 1
-                      ? 'ml-4 -translate-x-full'
-                      : '-translate-x-1/2',
-              )}
-              style={{ left: `${lage(i) * 100}%` }}
-            >
-              <Text feld={m.datum} sprache={sprache} />
-            </li>
-          ))}
+          {liste.map((m, i) =>
+            istNurPlatzhalter(waehle(m.datum, sprache).text) ? null : (
+              <li
+                key={i}
+                className={cn(
+                  'absolute top-0 text-16 whitespace-nowrap text-tinte-2 tabular-nums',
+                  liste.length === 1
+                    ? '-translate-x-1/2'
+                    : i === 0
+                      ? '-ml-4'
+                      : i === liste.length - 1
+                        ? 'ml-4 -translate-x-full'
+                        : '-translate-x-1/2',
+                )}
+                style={{ left: `${lage(i) * 100}%` }}
+              >
+                <Text feld={m.datum} sprache={sprache} platzhalter />
+              </li>
+            ),
+          )}
         </ol>
       ) : null}
     </ErstesSichtbarwerden>
@@ -172,6 +182,7 @@ function Zeile({
   bezeichnung,
   nummer,
   hervorgehoben,
+  alleErledigt,
 }: {
   m: Meilenstein;
   sprache: Sprache;
@@ -179,6 +190,8 @@ function Zeile({
   nummer: number;
   /** Nächster offener Meilenstein – oder, wenn alles erledigt ist, der letzte (B-08: „Eröffnung“) */
   hervorgehoben: boolean;
+  /** Alle Meilensteine erledigt: der Status steht nur für Screenreader (PR-5) */
+  alleErledigt: boolean;
 }) {
   return (
     <li className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 px-5 py-5 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-6 md:px-8">
@@ -207,21 +220,25 @@ function Zeile({
         )}
       </span>
       <div className="flex min-w-0 flex-col gap-1">
-        <Text feld={m.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold" />
-        <Text feld={m.beschreibung} sprache={sprache} als="p" className="text-16 text-tinte-2" />
+        <Text feld={m.titel} sprache={sprache} als="h3" className="font-text text-20 leading-snug font-bold" platzhalter />
+        <Text feld={m.beschreibung} sprache={sprache} als="p" className="text-16 text-tinte-2" platzhalter />
       </div>
       <div className="col-start-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 md:col-start-3 md:row-start-1 md:mt-0.5 md:justify-end">
         <span className="text-16 text-tinte-2 tabular-nums">
-          <Text feld={m.datum} sprache={sprache} />
+          <Text feld={m.datum} sprache={sprache} platzhalter />
         </span>
-        <span
-          className={cn(
-            'inline-flex rounded-pill px-2.5 text-16 font-bold',
-            m.erledigt ? 'bg-gruen-50 text-gruen-800' : 'border border-dashed border-rand bg-weiss text-tinte-2',
-          )}
-        >
-          {m.erledigt ? bezeichnung.abgeschlossen : bezeichnung.geplant}
-        </span>
+        {m.erledigt && alleErledigt ? (
+          <span className="sr-only">{bezeichnung.abgeschlossen}</span>
+        ) : (
+          <span
+            className={cn(
+              'inline-flex rounded-pill px-2.5 text-16 font-bold',
+              m.erledigt ? 'bg-gruen-50 text-gruen-800' : 'border border-dashed border-rand bg-weiss text-tinte-2',
+            )}
+          >
+            {m.erledigt ? bezeichnung.abgeschlossen : bezeichnung.geplant}
+          </span>
+        )}
       </div>
     </li>
   );

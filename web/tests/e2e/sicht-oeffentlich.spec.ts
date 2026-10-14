@@ -11,7 +11,9 @@ import de from '../../messages/de.json';
  *   rechts die Marke „jetzt“ (ST-4).
  * - Gebetszeiten: Reiterleiste einzeilig, aktiver Reiter im Blick (G-1), genau ein „Vollbild“ im Kopf (G-4), Ortsauswahl
  *   so breit wie die Tabelle und Spalten bündig (G-3), Zifferblatt mit Gradzahl (G-2).
- * - Projekte: kein Text läuft über eine Kennzahl-Kachel hinaus (PR-1), Meilensteine als gleich gebaute Zeilen (PR-2).
+ * - Projekte: kein Text läuft über eine Kennzahl-Kachel hinaus (PR-1), Meilensteine als gleich gebaute Zeilen (PR-2);
+ *   Runde 2: Platzhalter gekennzeichnet (PR-3), Name und Status im ersten Bildschirm (PR-4), bei allen erledigten
+ *   Meilensteinen kein sichtbares „Abgeschlossen“ (PR-5).
  * Texte aus messages, Inhalte aus den Seeds.
  */
 const START = de.start;
@@ -173,6 +175,42 @@ test.describe('Projekte', () => {
         }).length,
     );
     expect(ueber).toBe(0);
+  });
+
+  test('Platzhalter „[…]“ im Inhalt nur gekennzeichnet (PR-3)', async ({ page }) => {
+    await page.goto('/projekte');
+    const frei = await page.locator('main').evaluate((main) => {
+      const funde: string[] = [];
+      const gang = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
+      for (let n = gang.nextNode(); n; n = gang.nextNode()) {
+        const eltern = n.parentElement;
+        if (!eltern || eltern.closest('script, style, template, [data-platzhalter]')) continue;
+        if (/\[[^\]]+\]/.test(n.textContent ?? '')) funde.push(n.textContent ?? '');
+      }
+      return funde;
+    });
+    expect(frei).toEqual([]);
+    await expect(page.locator('main [data-platzhalter]').first()).toBeVisible();
+  });
+
+  test('fertiggestellt: Name und Status im ersten Bildschirm, „Abgeschlossen“ nur für Screenreader (PR-4, PR-5)', async ({ page }) => {
+    await page.goto('/projekte');
+    const h1 = page.getByRole('heading', { level: 1 });
+    await expect(h1).toHaveText(PR.kopf.titelFertig.replace('{name}', 'Neue Fatih-Moschee'));
+    await expect(page.getByRole('heading', { level: 2, name: PR.bezeichnungen.dasProjekt, exact: true })).toBeVisible();
+    const fenster = page.viewportSize()?.height ?? 0;
+    const oben = await page
+      .getByText(PR.status.fertiggestellt, { exact: true })
+      .evaluateAll((els) => Math.min(...els.map((e) => e.getBoundingClientRect().bottom)));
+    expect((await h1.boundingBox())?.y ?? fenster).toBeLessThan(fenster);
+    expect(oben).toBeLessThanOrEqual(fenster);
+    const stand = PR.meilenstein.stand.replace('{erledigt}', '6').replace('{gesamt}', '6');
+    await expect(page.getByText(stand, { exact: true })).toBeVisible();
+    const sichtbar = await page
+      .getByText(PR.meilenstein.abgeschlossen, { exact: true })
+      .evaluateAll((els) => els.filter((e) => e.getBoundingClientRect().width > 1 && e.getBoundingClientRect().height > 1).length);
+    expect(sichtbar).toBe(0);
+    await expect(page.getByText(PR.meilenstein.abgeschlossen, { exact: true })).toHaveCount(6);
   });
 
   test('Meilensteine: alle Zeilen gleich gebaut, Titel bündig (PR-2)', async ({ page }) => {
