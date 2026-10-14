@@ -62,13 +62,19 @@ describe('Tajwid-Farben (globals.css): Kontrast ≥ 4,5:1 auf Papier, Weiß und 
     }
   });
 
-  it('jede Familie hat ein eigenes Unterstreichungsmuster (nicht nur Farbe, WCAG 1.4.1)', () => {
+  it('jede Familie hat ein eigenes Muster (nicht nur Farbe, WCAG 1.4.1)', () => {
+    // Linienstil (+ Dicke) der Unterstreichung; „Nicht gesprochen“ hat statt einer Linie einen kurzen Strich mittig unter
+    // der Glyphe (Hintergrundbild in currentColor, Sichtabnahme S-2)
     const muster = TAJWID_FAMILIEN.map((f) => {
       const regel = new RegExp(`\\.tj-${f} \\{([^}]*)\\}`).exec(CSS)?.[1] ?? '';
+      const strich = /background-image:\s*linear-gradient\(currentColor, currentColor\)/.test(regel);
+      if (strich) return `strich|${/background-size:\s*([^;]+);/.exec(regel)?.[1]}|${/text-decoration-line:\s*(\w+)/.exec(regel)?.[1]}`;
       return `${/text-decoration-style:\s*(\w+)/.exec(regel)?.[1]}|${/text-decoration-thickness:\s*([\d.]+em)/.exec(regel)?.[1] ?? 'grund'}`;
     });
-    expect(muster.every((m) => !m.startsWith('undefined'))).toBe(true);
+    expect(muster.every((m) => !m.startsWith('undefined') && !m.includes('|undefined'))).toBe(true);
     expect(new Set(muster).size).toBe(TAJWID_FAMILIEN.length);
+    // Der Strich ersetzt die Unterstreichung, er kommt nicht zusätzlich dazu
+    expect(muster.find((m) => m.startsWith('strich'))).toMatch(/\|none$/);
   });
 });
 

@@ -107,3 +107,51 @@ test('statische Wortdaten: JSON ohne Cookies, nur geprüfte Bedeutungen', async 
   expect(daten.regeln.length).toBeGreaterThan(0);
   expect((await request.get('/api/quran/115/woerter')).status()).toBe(404);
 });
+
+// Sichtabnahme Z-04, Paket 1 (S-1, K-1…K-4): messbare Kriterien der Nachaufnahme
+test('Surenseite: kompakte Gebetsleiste in einer Zeile, Quellenzeile unter den Versen, Vers 1 im ersten Bild (S-1)', async ({ page }) => {
+  await page.goto('/quran/1');
+  const leiste = page.getByRole('complementary', { name: 'Aktuelle Gebetszeiten' });
+  await expect(leiste).toBeVisible();
+  expect((await leiste.boundingBox())?.height ?? 0).toBeLessThanOrEqual(49);
+  // Lizenz und Link auf tanzil.net stehen im Quellenblock unter dem Text, nicht im Kopf
+  await expect(page.locator('footer').filter({ has: page.getByRole('link', { name: 'tanzil.net' }) })).toHaveCount(1);
+  await expect(page.locator('section:has(#sure-titel)').getByRole('link', { name: 'tanzil.net' })).toHaveCount(0);
+  const unten = await page.locator('#v1 .vers-ar').evaluate((e) => e.getBoundingClientRect().bottom);
+  expect(unten).toBeLessThanOrEqual(page.viewportSize()?.height ?? 0);
+});
+
+test('Übersicht: „Alle Suren“ mit Suche zuerst (vor 900 px), Sprungmarken, Rosette ohne Links, Nach oben (K-1…K-4)', async ({
+  page,
+}, info) => {
+  await page.goto('/quran');
+  const oben = await page.locator('#suren-titel').evaluate((e) => e.getBoundingClientRect().top + window.scrollY);
+  expect(oben).toBeLessThan(900);
+  await expect(page.getByRole('searchbox', { name: T.de.uebersicht.sucheLabel })).toHaveAttribute(
+    'placeholder',
+    T.de.uebersicht.suchePlatzhalter,
+  );
+  await expect(page.getByText(T.de.uebersicht.sucheHilfe)).toBeVisible();
+  // Dreistellige Nummern: größeres Medaillon in fester Spalte, der Name steht bündig mit den zweistelligen (K-1)
+  const abstand = (nr: string) =>
+    page.locator(`li[data-nr="${nr}"] a`).evaluate((a) => {
+      const titel = a.querySelector('[data-morph="titel"]');
+      return Math.round((titel?.getBoundingClientRect().left ?? 0) - a.getBoundingClientRect().left);
+    });
+  expect(await abstand('100')).toBe(await abstand('99'));
+  if (info.project.name === 'telefon') {
+    const sprung = page.getByRole('navigation', { name: T.de.uebersicht.sprungLabel });
+    await expect(sprung.getByRole('link', { name: T.de.uebersicht.cuzTitel })).toHaveAttribute('href', '#cuz');
+    await expect(page.locator('.cuz-rosette')).toBeVisible();
+    await expect(page.locator('.cuz-rosette a')).toHaveCount(0);
+    await expect(page.locator('.cuz-ring')).toBeHidden();
+    // Kompakte Zeilen von etwa 56 px
+    expect((await page.locator('li[data-nr="1"] a').boundingBox())?.height ?? 0).toBeLessThanOrEqual(60);
+  }
+  // „Nach oben“ erscheint erst nach dem Scrollen und führt zum Inhaltsanfang
+  const nachOben = page.getByRole('link', { name: T.de.uebersicht.nachOben });
+  await expect(nachOben).toBeHidden();
+  await page.evaluate(() => window.scrollTo({ top: 3000, behavior: 'instant' }));
+  await expect(nachOben).toBeVisible();
+  await expect(nachOben).toHaveAttribute('href', '#inhalt');
+});

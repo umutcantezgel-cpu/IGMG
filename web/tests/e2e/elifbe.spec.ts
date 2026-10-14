@@ -147,6 +147,50 @@ test('/lernen: Lernweg mit fünf Stationen und Weg zum Elifbe', async ({ page })
   await expect(page.getByRole('heading', { level: 1, name: T.titel })).toBeVisible();
 });
 
+// Sichtabnahme Z-04, Paket 1 (L-1, E-1…E-3): messbare Kriterien der Nachaufnahme
+test('/lernen: Hifz ohne Link, mit Plakette „Folgt bald“ in Kartentextgröße (L-1)', async ({ page }) => {
+  await page.goto('/lernen');
+  const hifz = page.getByRole('list', { name: lernen.de.lernen.wegTitel }).getByRole('listitem').nth(3);
+  await expect(hifz.getByRole('link')).toHaveCount(0);
+  const plakette = hifz.getByText(lernen.de.lernen.bald, { exact: true });
+  await expect(plakette).toBeVisible();
+  expect(parseFloat(await plakette.evaluate((e) => getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(16);
+});
+
+test('Buchstabenseite: Formen groß mit Tatweel, Verwechslungsraster ohne leere Zelle, Pfeil zum nächsten immer rechts', async ({
+  page,
+}) => {
+  await page.goto('/elifbe/buchstaben/be');
+  // E-1: mindestens 64 px; Mitte mit Anschluss auf beiden Seiten (U+0640 aus dem Codepunkt)
+  const zellen = page.locator('section[aria-labelledby="formen-titel"] td');
+  await expect(zellen).toHaveCount(4);
+  expect(parseFloat(await zellen.nth(2).evaluate((e) => getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(64);
+  expect([...((await zellen.nth(2).textContent()) ?? '')].filter((z) => z.codePointAt(0) === 0x0640)).toHaveLength(2);
+  // E-2: alle Karten gleich hoch; keine Reihe mit Lücke (Reihen voll oder mittig)
+  const karten = await page
+    .locator('section[aria-labelledby="aehnlich-titel"] ul > li')
+    .evaluateAll((lis) =>
+      lis
+        .map((li) => li.getBoundingClientRect())
+        .map((r) => ({ oben: Math.round(r.top), hoehe: Math.round(r.height), l: r.left, r: r.right })),
+    );
+  expect(new Set(karten.map((k) => k.hoehe)).size).toBe(1);
+  const liste = await page.locator('section[aria-labelledby="aehnlich-titel"] ul').evaluate((u) => u.getBoundingClientRect());
+  for (const oben of new Set(karten.map((k) => k.oben))) {
+    const reihe = karten.filter((k) => k.oben === oben);
+    const links = Math.min(...reihe.map((k) => k.l)) - liste.left;
+    const rechts = liste.right - Math.max(...reihe.map((k) => k.r));
+    expect(Math.abs(links - rechts)).toBeLessThanOrEqual(2);
+  }
+  // E-3: im Link „Nächster Buchstabe“ steht der Pfeil rechts vom Text
+  const weiter = page.getByRole('link', { name: new RegExp(T.buchstabe.weiter) });
+  const [pfeil, text] = await Promise.all([
+    weiter.locator('svg').evaluate((e) => e.getBoundingClientRect().left),
+    weiter.getByText(T.buchstabe.weiter).evaluate((e) => e.getBoundingClientRect().right),
+  ]);
+  expect(pfeil).toBeGreaterThan(text);
+});
+
 test('Buchstabenseiten: 29 statische Seiten mit Blättern; unbekannter Buchstabe 404', async ({ page }) => {
   await page.goto('/tr/elifba/harfler/cim');
   await expect(page.getByRole('heading', { level: 1, name: 'Cim' })).toBeVisible();

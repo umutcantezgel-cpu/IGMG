@@ -39,8 +39,15 @@ function formMitAnschluss(b: Buchstabe, f: FormArt): ReactNode {
     </>
   );
 }
-/** Kartenbreite im Verwechslungsraster: auf dem Telefon drei je Reihe (zwei Lücken à 12 px), ab md bestimmt das Raster. */
-const KARTE_BREITE = 'w-[calc((100%-var(--spacing)*6)/3)] md:w-auto';
+/**
+ * Verwechslungsraster bis md: drei Karten je Reihe (sechs Spalten, je Karte zwei); eine unvollständige letzte Reihe steht
+ * mittig – bei zwei Karten ab Spalte 2, bei einer ab Spalte 3. Ab md so viele Spalten wie Karten (E-2).
+ */
+function rasterzelle(i: number, anzahl: number): string {
+  const start =
+    anzahl % 3 === 2 && i === anzahl - 2 ? 'max-md:col-start-2' : anzahl % 3 === 1 && i === anzahl - 1 ? 'max-md:col-start-3' : '';
+  return `col-span-2 md:col-span-1 ${start}`;
+}
 
 export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
   const sprache = (await getLocale()) as Locale;
@@ -227,14 +234,14 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
               </h2>
               <p className="text-18 leading-einleitung text-pretty text-tinte-2">{t('buchstabe.aehnlichText')}</p>
             </div>
-            {/* Telefon: zentrierte Dreierreihen; ab md so viele Spalten wie Karten – keine leere Zelle (E-2) */}
+            {/* Telefon: Dreierreihen, die letzte mittig; ab md so viele Spalten wie Karten – keine leere Zelle (E-2) */}
             <ul
               dir="rtl"
               style={{ '--spalten': `repeat(${aehnlich.length + 1}, minmax(0, 1fr))` } as CSSProperties}
-              className="flex flex-wrap justify-center gap-3 font-text leading-normal md:grid md:grid-cols-(--spalten) md:gap-4"
+              className="grid grid-cols-6 gap-3 font-text leading-normal md:grid-cols-(--spalten) md:gap-4"
             >
               {/* Dieser Buchstabe: gleich aufgebaut wie die Karten daneben, markiert durch Rahmen und Fläche statt Höhe */}
-              <li dir="ltr" aria-hidden className={KARTE_BREITE}>
+              <li dir="ltr" aria-hidden className={rasterzelle(0, aehnlich.length + 1)}>
                 <span className="flex h-full flex-col items-center justify-between rounded-lg border border-gruen-700 bg-gruen-50 px-2 pt-2 pb-3 ring-1 ring-gruen-700 ring-inset">
                   <span className="self-start text-16 font-bold text-gruen-800 tabular-nums">{b.nr}</span>
                   <span lang="ar" dir="rtl" className="block text-48 leading-loose text-gruen-950">
@@ -245,8 +252,8 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                   </span>
                 </span>
               </li>
-              {aehnlich.map((x) => (
-                <li key={x.slug} dir="ltr" className={`${KARTE_BREITE} [&>a]:h-full`}>
+              {aehnlich.map((x, i) => (
+                <li key={x.slug} dir="ltr" className={`*:h-full ${rasterzelle(i + 1, aehnlich.length + 1)}`}>
                   <Buchstabenkarte b={x} sprache={sprache} label={t('raster.karte', { name: x.elifbe, nr: x.nr })} />
                 </li>
               ))}

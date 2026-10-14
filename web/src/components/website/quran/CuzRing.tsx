@@ -50,10 +50,11 @@ export function CuzRing({
   const n = eintraege.length || 30;
   if (schmuck) {
     return (
-      <svg viewBox="0 0 320 320" aria-hidden="true" className="cuz-ring pointer-events-none size-full overflow-visible">
+      // Eigene Klassen (nicht .cuz-ring/.cuz-segment): ruhig, ohne Staffel, und nicht als zweiter Ring gezählt
+      <svg viewBox="0 0 320 320" aria-hidden="true" className="cuz-rosette pointer-events-none size-full overflow-visible">
         <circle cx="160" cy="160" r={AUSSEN + 6} className="fill-none stroke-gruen-700" strokeWidth={8} />
         {eintraege.map((e, i) => (
-          <path key={e.nr} d={segment(i, n)} className="cuz-segment" style={{ '--gruppe': staffelGruppe(i, n) } as CSSProperties} />
+          <path key={e.nr} d={segment(i, n)} className={i % 2 ? 'fill-gruen-100' : 'fill-gruen-50'} />
         ))}
         <path d={ACHTSTERN_MITTE} className="fill-gruen-700" />
       </svg>

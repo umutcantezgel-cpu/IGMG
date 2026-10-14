@@ -163,3 +163,65 @@ test('Übersicht: Surensuche filtert im Browser, Cüz-Liste führt zum Cüz', as
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(fuelle(T.cuz.titel, { nr: 30 }));
   await expect(page.locator('ol[data-sure]')).toHaveCount(37);
 });
+
+// Sichtabnahme Z-04, Paket 1 (W-1…W-4, T-1…T-4): messbare Kriterien der Nachaufnahme
+test('Wortkarte: Regelknopf in Akzentgrün mit Farbfeld; breit angedockt ohne verdeckten Vers, Telefon Wort über dem Blatt', async ({
+  page,
+}, info) => {
+  await page.goto('/quran/1');
+  await leserBereit(page);
+  await page.locator('#v1 [data-w="2"]').click();
+  const karte = page.getByRole('dialog', { name: fuelle(T.wortkarte.titel, { pos: 2, vers: 1 }) });
+  const regel = karte.getByRole('button', { name: new RegExp(T.wortkarte.regelOeffnen.replace('{name}', '.+')) }).first();
+  await expect(regel).toBeVisible();
+  await expect(regel.locator('.tj-probe')).toHaveCount(1);
+  expect(await regel.evaluate((e) => getComputedStyle(e).textDecorationLine)).toBe('none');
+  await page.waitForTimeout(800);
+  if (info.project.name === 'desktop') {
+    await expect(karte).toHaveAttribute('data-andock', 'rechts');
+    const ueberdeckt = await page.evaluate(() => {
+      const k = document.querySelector('.wortkarte')!.getBoundingClientRect();
+      return [...document.querySelectorAll('.vers-ar, .vers-ue')].some((e) =>
+        [...e.getClientRects()].some((r) => r.right > k.left && r.left < k.right && r.bottom > k.top && r.top < k.bottom),
+      );
+    });
+    expect(ueberdeckt).toBe(false);
+  } else {
+    const { wort, blatt, hoehe } = await page.evaluate(() => ({
+      wort: document.querySelector('#v1 [data-w="2"]')!.getBoundingClientRect(),
+      blatt: document.querySelector('.wortkarte')!.getBoundingClientRect().top,
+      hoehe: window.innerHeight,
+    }));
+    expect(wort.top).toBeGreaterThanOrEqual(0);
+    expect(wort.bottom).toBeLessThanOrEqual(blatt);
+    expect(hoehe - blatt).toBeLessThanOrEqual(hoehe * 0.6 + 1);
+  }
+});
+
+test('Tajwid-Seitenleiste: Markierung mit 2-px-Ring, „Markiert: …“, Familie als Link, „Alle Tajwid-Regeln“ dicht darunter', async ({
+  page,
+}) => {
+  await page.goto('/quran/1');
+  await leserBereit(page);
+  await page.locator('#v1 [data-w="2"]').click();
+  const karte = page.getByRole('dialog', { name: fuelle(T.wortkarte.titel, { pos: 2, vers: 1 }) });
+  await karte
+    .getByRole('button', { name: new RegExp(T.wortkarte.regelOeffnen.replace('{name}', '.+')) })
+    .first()
+    .click();
+  const leiste = page.locator('dialog.regel-leiste[open]');
+  const markiert = leiste.locator('.beispiel-wort .regel-markiert').first();
+  await expect(markiert).toBeVisible();
+  expect(await markiert.evaluate((e) => getComputedStyle(e).outlineWidth)).toBe('2px');
+  await expect(leiste.getByText(new RegExp(`^${T.tajwidLeiste.markiert.replace('{name}', '.+')}$`))).toBeVisible();
+  await expect(leiste.getByRole('link', { name: new RegExp(Object.values(T.familien).join('|')) }).first()).toHaveAttribute(
+    'href',
+    /\/quran\/tajwid#familie-/,
+  );
+  const abstand = await leiste.evaluate((d) => {
+    const alle = [...d.querySelectorAll('a')].at(-1)!.getBoundingClientRect().top;
+    const sektionen = [...d.querySelectorAll('section')];
+    return alle - sektionen.at(-1)!.getBoundingClientRect().bottom;
+  });
+  expect(abstand).toBeLessThanOrEqual(25);
+});
