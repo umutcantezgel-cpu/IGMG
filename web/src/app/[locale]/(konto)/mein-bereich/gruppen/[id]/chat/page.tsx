@@ -59,6 +59,7 @@ function chatTexte(t: Uebersetzer, art: KanalArt, sie: boolean, chatVon: string)
     laedt: w('laedt'),
     eingabe: w('eingabe'),
     eingabeGesperrt: w('eingabeGesperrt'),
+    eingabeRegeln: w('eingabeRegeln'),
     wiederAb: t('chatFenster.wiederAb', { von: chatVon }),
     senden: w('senden'),
     zeichen: t.raw('chatFenster.zeichen') as string,
