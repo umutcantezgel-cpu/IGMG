@@ -10,7 +10,7 @@ Stand: 12.10.2026 (Abschluss des Gestaltungs- und Vercel-Laufs). Diese Liste sag
 - **Das siehst du, wenn es geklappt hat:** Der Prüfpunkt.
 - **[Code fehlt]:** Dieser Punkt braucht noch Arbeit im Programm. Er ist ein Hindernis für den Livegang.
 
-Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D lassen sich parallel erledigen.
+Die Reihenfolge ist: A, dann B, dann C, dann D, dann E; danach G (Gemeinde-Plattform). Einige Punkte in C und D lassen sich parallel erledigen.
 
 ## A. Zugänge und Konten
 
@@ -194,10 +194,62 @@ Die Reihenfolge ist: A, dann B, dann C, dann D, dann E. Einige Punkte in C und D
   - **Wer:** Vorstand entscheidet, Technik setzt um.
   - **Das siehst du, wenn es geklappt hat:** Wer in der ersten Ladesekunde tippt, verliert keine Eingabe mehr.
 
+## G. Gemeinde-Plattform freischalten (Lauf vom 13.10.2026)
+
+Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist live im **Beispielmodus**: Alle öffentlichen Seiten laufen ohne Datenbank, die Verwaltung zeigt „Verwaltung noch nicht eingerichtet“, Konten und alles mit Personendaten sind aus. Die folgenden Schritte schalten Stück für Stück frei. Die offenen Entscheidungen dazu stehen in `_gemeinde/MENSCHEN.md` (MN-xx).
+
+- [ ] **G1 · Datenbank anbinden (Beispielmodus endet)**
+  - **Ort:** VERCEL.md, Abschnitt 2 (Neon, Region Frankfurt), dann Vercel › Projekt › Settings › Environment Variables.
+  - **Aufwand:** 30 Minuten.
+  - **Wer:** Technik.
+  - **Schritte:** `DATABASE_URL` für Production setzen. Geheimnisse mit `pnpm geheimnisse:erzeugen` erzeugen und eintragen (mindestens `BETTER_AUTH_SECRET`, `EINGANG_SCHLUESSEL`, `EINGANG_SCHLUESSEL_ID`, `RATE_GEHEIMNIS`, `ALTCHA_GEHEIMNIS`, `CRON_SECRET`, `WARTUNG_TOKEN`; Liste in VERCEL-ENV.md). Neu bauen lassen: Der Vercel-Bau spielt die Migrationen 0000–0012 unter Sperre ein und importiert Koran, Tajwid, Übersetzungen und Bukhari. Die Beispielinhalte einmal mit `pnpm db:seed` gegen die neue Datenbank anlegen (VERCEL.md, Abschnitt 2).
+  - **Das siehst du, wenn es geklappt hat:** `/verwaltung/anmelden` zeigt das Anmeldeformular, und das Startklar-Cockpit (`/verwaltung/startklar`) führt die Prüfungen zur Datenbankverbindung und zu den Migrationen als erfüllt.
+
+- [ ] **G2 · Erste Verwaltungskonten mit Zwei-Faktor**
+  - **Ort:** Kommandozeile mit `DATABASE_URL` der Produktion: `pnpm verwaltung:einladen --email <adresse> --name "<Name>" --rolle administration`.
+  - **Aufwand:** 15 Minuten je Konto.
+  - **Wer:** Vorstand benennt, Technik lädt ein.
+  - **Danach:** Imam und Hoca mit Rolle `religioese_pruefung` (MN-20, MN-24: mindestens zwei Personen, Vier-Augen-Prinzip), zwei Personen mit Rolle `kinderschutz` (MN-23, nur durch ein Konto mit Rolle `leitung` vergeben), Leitung mit Rolle `leitung`.
+  - **Das siehst du, wenn es geklappt hat:** Die Personen melden sich mit Passwort und Code aus der Authenticator-App an.
+
+- [ ] **G3 · Religiöse Inhalte prüfen und freigeben**
+  - **Ort:** Verwaltung › Koran (Ausgaben, Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen, Vers/Hadith des Tages), Verwaltung › Anzeige (Vers- und Hadith-Folien).
+  - **Aufwand:** laufend (MN-02, MN-04, MN-05, MN-06, MN-07).
+  - **Wer:** Imam und Hoca.
+  - **Das siehst du, wenn es geklappt hat:** Freigegebene Übersetzungen, Wortbedeutungen und Regeltexte erscheinen öffentlich; alles andere zeigt den Hinweis „Freigabe ausstehend“.
+
+- [ ] **G4 · Funktionen mit Personendaten einschalten – in dieser Reihenfolge**
+  - **Ort:** Vercel › Environment Variables (Production): `FUNKTION_<NAME>=an`, danach neu bereitstellen. Ohne Eintrag gilt in Produktion „aus“; `FUNKTION_<NAME>=aus` schaltet sofort wieder ab.
+  - **Reihenfolge und Voraussetzungen:**
+    1. `KONTEN` – Datenschutzerklärung v2 und Einwilligungstexte geprüft (MN-11).
+    2. `LERNPLATTFORM` – DSFA bestätigt, Lehrkräfte eingeladen, Gruppen mit zwei Erwachsenen angelegt (MN-11, MN-16).
+    3. `CHAT` – Schutzkonzept, Ansprechpersonen und Kinderschutz-Rollen (MN-10, MN-23); das Startklar-Cockpit sperrt sonst.
+    4. `PUSH` (und `PUSH_GEBET`) – VAPID-Schlüssel gesetzt (`VAPID_PRIVAT`, `VAPID_KONTAKT`, siehe VERCEL-ENV.md), Push-Themen und Drittlandgrundlage bestätigt (MN-17).
+    5. `HATIM`, `NEWSLETTER` – nach G1 jederzeit; Newsletter mit Mailanbieter (A4).
+    6. `ECHTZEIT` – nur mit lokalem Server und öffentlicher Adresse (G5).
+  - **Wer:** Vorstand entscheidet je Schritt, Technik schaltet.
+  - **Das siehst du, wenn es geklappt hat:** Das Startklar-Cockpit führt die Funktion ohne offenen Vorbehalt; die Seiten (z. B. `/anmelden`, `/hatim`) erscheinen und stehen im Menü.
+
+- [ ] **G5 · Lokaler Server der Moschee (Sicherung, Takt, Kiosk)**
+  - **Ort:** `betrieb/lokal/LIESMICH.md` (Docker Compose: Sicherung, Medienspiegel, Takt, Überwachung, Kiosk, optional Echtzeit).
+  - **Aufwand:** 3–4 Stunden (MN-12, MN-18, MN-22).
+  - **Wer:** Technik.
+  - **Das siehst du, wenn es geklappt hat:** Das Startklar-Cockpit zeigt Sicherung, Takt und Überwachung grün; der Bildschirm im Gebetsraum zeigt `/gebetszeiten/anzeige`.
+
+- [ ] **G6 · Rezitation des Imams (Fatiha und Cüz 30)**
+  - **Ort:** Verwaltung › Koran › Rezitationen (Aufnahme oder Upload, Abgleich je Sure); optional `AUDIO_BLOB_READ_WRITE_TOKEN` für einen öffentlichen Audio-Speicher.
+  - **Aufwand:** 2–4 Stunden Aufnahme, 2–3 Stunden Abgleich (MN-03).
+  - **Wer:** Imam bzw. Hafız, Technik hilft beim Abgleich.
+  - **Das siehst du, wenn es geklappt hat:** Nach hinterlegter Vereinbarung und Freigabe spielt der Player auf `/quran/1` die Rezitation mit Vers- und Worthervorhebung.
+
+- [ ] **G7 · Bukhari-Gesamtsammlung bestätigen**
+  - **Stand:** Seit 13.10.2026 öffentlich an (Entscheidung des Nutzers, MN-06); die Rechtsprüfung der Datenquelle bleibt empfohlen.
+  - **Abschalten:** `FUNKTION_HADITH_GESAMT=aus`, danach neu bereitstellen (die Bücher antworten dann mit 404, Auswahl und Übersicht bleiben).
+
 ## Verweise
 
 - **VERCEL.md** (`web/docs/deploy/VERCEL.md`): das Runbook, Schritt für Schritt.
 - **VERCEL-ENV.md** (`web/docs/deploy/VERCEL-ENV.md`): alle Umgebungsvariablen mit Pflicht je Betriebsart.
-- **MENSCHEN.md** (`_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`): alle offenen Entscheidungen und Aufgaben für Menschen.
+- **MENSCHEN.md** (`_gemeinde/MENSCHEN.md` für die Gemeinde-Plattform, `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md` für den Vorlauf): alle offenen Entscheidungen und Aufgaben für Menschen.
 - **BETRIEB.md** (`web/docs/BETRIEB.md`): Betrieb mit Docker und Betrieb auf Vercel (§ 9).
 - **Entscheidungen** (`web/docs/adr/`): ADR 0017 bis 0024.
