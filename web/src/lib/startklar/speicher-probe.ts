@@ -15,13 +15,24 @@ const ZEITLIMIT_MS = 4000;
 
 /**
  * Führt die Anfrage mit Abbruch nach dem Zeitlimit aus. Der Abbruch beendet die Anfrage selbst (auch die eingebauten
- * Wiederholungen von Vercel Blob), damit `pnpm startklar` nicht im Hintergrund weiterläuft.
+ * Wiederholungen von Vercel Blob), damit `pnpm startklar` nicht im Hintergrund weiterläuft. Das Ergebnis kommt genau
+ * nach dem Zeitlimit: Vercel Blob bemerkt den Abbruch erst beim nächsten Versuch nach seiner Wartezeit (gemessen
+ * 5,7 s statt 4 s, unter Last über 10 s) – deshalb das Rennen gegen die Uhr.
  */
 async function mitZeitlimit<T>(anfrage: (signal: AbortSignal) => Promise<T>): Promise<T> {
   const abbruch = new AbortController();
-  const uhr = setTimeout(() => abbruch.abort(), ZEITLIMIT_MS);
+  let uhr: ReturnType<typeof setTimeout> | undefined;
+  const zeitlimit = new Promise<never>((_, ablehnen) => {
+    uhr = setTimeout(() => {
+      abbruch.abort();
+      ablehnen(Object.assign(new Error('Zeitlimit'), { name: 'Zeitlimit' }));
+    }, ZEITLIMIT_MS);
+  });
+  const lauf = anfrage(abbruch.signal);
+  // Nach dem Zeitlimit endet die Anfrage beim nächsten Versuch des SDK; ihr Fehler ist dann ohne Belang
+  lauf.catch(() => undefined);
   try {
-    return await anfrage(abbruch.signal);
+    return await Promise.race([lauf, zeitlimit]);
   } catch (e) {
     if (abbruch.signal.aborted) throw Object.assign(new Error('Zeitlimit'), { name: 'Zeitlimit' });
     throw e;
