@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { expect as basisExpect, test, type Page } from '@playwright/test';
 import * as OTPAuth from 'otpauth';
 import kinderTexte from '../../messages/bereiche/kinder.json';
+import deTexte from '../../messages/de.json';
 import kontoTexte from '../../messages/bereiche/konto.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../messages/bereiche/unterricht.json';
@@ -26,6 +27,7 @@ const k = kontoTexte.de.konto;
 const m = meinTexte.de.meinBereich;
 const u = unterrichtTexte.de.unterricht;
 const d = kinderTexte.de.kinder;
+const kopf = deTexte.kopf;
 
 type Zugaenge = {
   lehrkraft: { email: string; passwort: string };
@@ -145,12 +147,24 @@ test('Eltern: Kind fehlt melden → erscheint als abgemeldet; fremde Kinder und 
   await page.getByRole('link', { name: d.karte.oeffnenAria.replace('{name}', lp.kinder.emre.name) }).click();
   await expect(page.getByRole('heading', { level: 1, name: lp.kinder.emre.name })).toBeVisible();
 
+  // Sichtabnahme X-1: Konto-Seiten zeigen im Kopf das Konto statt „Anmelden“ (Menü mit Mein Bereich und Abmelden)
+  const kopfzeile = page.locator('header');
+  await expect(kopfzeile.getByRole('link', { name: kopf.anmelden, exact: true })).toHaveCount(0);
+  const kontoKnopf = kopfzeile.getByRole('button', { name: new RegExp(`: ${kopf.kontoMenue}$`) });
+  await kontoKnopf.click();
+  await expect(kontoKnopf).toHaveAttribute('aria-expanded', 'true');
+  await expect(kopfzeile.getByRole('link', { name: kopf.meinBereich, exact: true })).toBeVisible();
+  await expect(kopfzeile.getByRole('button', { name: kopf.abmelden, exact: true })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(kontoKnopf).toHaveAttribute('aria-expanded', 'false');
+  await expect(kontoKnopf).toBeFocused();
+
   const fehlen = page.getByRole('region', { name: d.detail.fehlenTitel });
   // EK-1: die nächsten Termine als Radiogruppe (deutsches Datum vom Server, kein natives Datumsfeld mehr)
   const termine = fehlen.getByRole('group', { name: d.detail.fehlen.datum });
   await expect(fehlen.locator('input[type=date]')).toHaveCount(0);
   const kurz = new Intl.DateTimeFormat('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'UTC' });
-  const wahl = termine.getByRole('radio').nth(1);
+  const wahl = termine.getByRole('radio', { disabled: false }).nth(1);
   const tagWahl = (await wahl.getAttribute('value')) ?? '';
   expect(tagWahl >= tag(0)).toBe(true);
   const datum = kurz.format(new Date(`${tagWahl}T12:00:00Z`));
@@ -162,6 +176,11 @@ test('Eltern: Kind fehlt melden → erscheint als abgemeldet; fremde Kinder und 
   await expect(fehlen.getByText(`${datum} – ${d.detail.fehlen.gruende.familie}`)).toBeVisible();
   // Der gemeldete Termin ist danach gesperrt
   await expect(termine.locator(`input[value="${tagWahl}"]`)).toBeDisabled();
+
+  // Öffentliche Seiten bleiben statisch und ohne Sitzung (K-01): dort steht weiter „Anmelden“, kein Kontoknopf
+  await page.goto('/gebetszeiten');
+  await expect(page.locator('header').getByRole('link', { name: kopf.anmelden, exact: true })).toBeVisible();
+  await expect(page.locator('header').getByRole('button', { name: new RegExp(`: ${kopf.kontoMenue}$`) })).toHaveCount(0);
 
   // Gruppenisolation: fremdes Kind 404, Lehrkraft-Seiten führen zurück nach Mein Bereich
   expect((await page.request.get(`/mein-bereich/kinder/${randomUUID()}`)).status()).toBe(404);
