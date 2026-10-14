@@ -8,6 +8,7 @@ import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
 import { Klappe } from '@/components/verwaltung/Klappe';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { MedienWahlDialog, type MedienWahlHandle } from '@/components/verwaltung/medienwahl/MedienWahlDialog';
+import { hatPlatzhalter } from '@/components/verwaltung/seiteninhalte/hilfen';
 import { slugAusTitel } from '@/lib/cms/slugs';
 import { religioeseVerweise, type Block } from '@/lib/validierung/bloecke';
 import type { SeitenStatus } from '@/lib/validierung/seite';
@@ -206,6 +207,21 @@ export function SeitenFormular({
     (s) => w[`titel${s}`].trim() && (!w.beschreibungDe.trim() || w[`beschreibung${s}`].trim()),
   ).length;
 
+  /**
+   * Platzhalter in eckigen Klammern im Wert (SB-5, G-05): gestrichelter Rand und ein Hinweis unter dem Feld wie im
+   * Seiteninhalte-Editor. Der Hinweis hängt über aria-describedby am Feld (er steht im Hinweis des Rahmens).
+   */
+  const mitPlatzhalter = (feld: keyof SeitenWerte, hinweis: string | undefined): ReactNode =>
+    hatPlatzhalter(w[feld]) ? (
+      <>
+        {hinweis ? <span className="block">{hinweis}</span> : null}
+        <span className="block font-bold text-warnung">{tf('platzhalterFeld')}</span>
+      </>
+    ) : (
+      hinweis
+    );
+  const platzhalterRand = (feld: keyof SeitenWerte) => hatPlatzhalter(w[feld]) && 'border-2 border-dashed border-warnung';
+
   const textFeld = (
     feld: keyof SeitenWerte,
     label: string,
@@ -214,7 +230,7 @@ export function SeitenFormular({
     <Rahmen
       id={id(feld)}
       label={label}
-      hinweis={opt.hinweis}
+      hinweis={mitPlatzhalter(feld, opt.hinweis)}
       fehler={f(feld)}
       pflicht={opt.pflicht ? pflicht : undefined}
       kinder={(aria) => (
@@ -226,7 +242,7 @@ export function SeitenFormular({
           maxLength={opt.max}
           placeholder={opt.platzhalter}
           onChange={(e) => setze(feld)(e.target.value)}
-          className={eingabe}
+          className={cn(eingabe, platzhalterRand(feld))}
         />
       )}
     />
@@ -236,7 +252,7 @@ export function SeitenFormular({
     <Rahmen
       id={id(feld)}
       label={label}
-      hinweis={opt.hinweis}
+      hinweis={mitPlatzhalter(feld, opt.hinweis)}
       fehler={f(feld)}
       kinder={(aria) => (
         <textarea
@@ -247,7 +263,7 @@ export function SeitenFormular({
           value={w[feld]}
           onChange={(e) => setze(feld)(e.target.value)}
           // Wächst mit dem Inhalt (mindestens zwei Zeilen), damit nichts im Feld verborgen bleibt
-          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5')}
+          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5', platzhalterRand(feld))}
         />
       )}
     />
