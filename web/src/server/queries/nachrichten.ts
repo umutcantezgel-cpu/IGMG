@@ -70,8 +70,28 @@ export async function ladeNachrichten(): Promise<NachrichtDaten[]> {
   'use cache: remote';
   cacheLife('hours');
   cacheTag(TAG.nachrichten, TAG.medien);
+  // Beispielmodus ohne Datenbank (ADR 0019): nie abstürzen – die Seiten zeigen dann keine Beiträge
+  if (!datenbankVerfuegbar()) return [];
   const zeilen = await db.select().from(schema.nachricht).where(sichtbarInListen()).orderBy(desc(schema.nachricht.veroeffentlichtAm));
   return mitBildern(zeilen);
+}
+
+/** Wie lange „empfohlen“ einen Beitrag zum Aufmacher der Startseite macht (Sichtabnahme Z-04, ST-1). */
+export const EMPFEHLUNG_FRIST_TAGE = 30;
+
+/**
+ * Aufmacher der Startseite: der neueste empfohlene Beitrag, dessen Veröffentlichung höchstens `fristTage` vor `heute`
+ * liegt; sonst der neueste Beitrag. So bleibt keine alte Empfehlung über Monate oben stehen (ST-1). `nachrichten` ist
+ * nach Datum absteigend sortiert (`ladeNachrichten`), `heute` der Kalendertag „JJJJ-MM-TT“ in Europe/Berlin
+ * (`heuteBerlin`, gecacht – im Vorrendern keine laufende Uhr). Reine Funktion.
+ */
+export function waehleAufmacher<T extends Pick<NachrichtDaten, 'empfohlen' | 'veroeffentlichtAm'>>(
+  nachrichten: readonly T[],
+  heute: string,
+  fristTage: number = EMPFEHLUNG_FRIST_TAGE,
+): T | undefined {
+  const grenze = Date.parse(`${heute}T00:00:00Z`) - fristTage * 24 * 60 * 60 * 1000;
+  return nachrichten.find((n) => n.empfohlen && Date.parse(n.veroeffentlichtAm) >= grenze) ?? nachrichten[0];
 }
 
 export async function ladeNachricht(slug: string): Promise<NachrichtDetail | null> {

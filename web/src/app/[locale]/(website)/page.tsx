@@ -17,7 +17,7 @@ import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
 import { cn } from '@/lib/utils';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeDesTages } from '@/server/queries/des-tages';
-import { ladeNachrichten } from '@/server/queries/nachrichten';
+import { ladeNachrichten, waehleAufmacher } from '@/server/queries/nachrichten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
@@ -47,11 +47,14 @@ export default async function Startseite() {
   // Volle Reihen im Dreierraster: sechs, sonst drei (bei fünf Terminen bliebe am Desktop eine Lücke)
   const veranstaltungen = kommende.slice(0, kommende.length >= 6 ? 6 : 3);
   const nachrichten = await ladeNachrichten();
-  const aufmacher = nachrichten.find((n) => n.empfohlen) ?? nachrichten[0];
+  // „Heute“ aus dem gecachten Datum (statische Seite, keine laufende Uhr im Vorrendern)
+  const heute = (await heuteBerlin()).datum;
+  // Aufmacher (ST-1): eine Empfehlung zählt nur innerhalb der Frist, sonst steht der neueste Beitrag oben
+  const aufmacher = waehleAufmacher(nachrichten, heute);
   const weitere = nachrichten.filter((n) => n !== aufmacher).slice(0, 3);
   const kontakt = await ladeSeiteninhalt('kontakt');
   // Vers und Hadith des Tages (Kür K-A): nur mit mindestens einem freigegebenen Eintrag in den Listen „des Tages“
-  const desTages = await ladeDesTages((await heuteBerlin()).datum);
+  const desTages = await ladeDesTages(heute);
   return (
     <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
       <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
