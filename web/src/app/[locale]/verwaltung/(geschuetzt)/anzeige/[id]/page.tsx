@@ -3,12 +3,13 @@ import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
+import { FolieLoeschen } from '@/components/verwaltung/anzeige/FolieLoeschen';
 import { FolienFormular } from '@/components/verwaltung/anzeige/FolienFormular';
 import { FreigabeFormular } from '@/components/verwaltung/anzeige/FreigabeFormular';
 import { KARTE } from '@/components/verwaltung/anzeige/stil';
 import { folienName, FolienStand, zeitplanText } from '@/components/verwaltung/anzeige/Teile';
 import { verlangeAnzeigeZugang } from '@/components/verwaltung/anzeige/zugang';
-import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/LoeschenBestaetigen';
+import { Klappe } from '@/components/verwaltung/Klappe';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { FolienAnsicht } from '@/components/website/anzeige/FolienAnsicht';
@@ -70,25 +71,28 @@ export default async function FolieBearbeiten({ params, searchParams }: PageProp
           {t('detail.zustandTitel')}
         </h2>
         <FolienStand f={f} t={t} />
-        <p className="text-16 text-tinte-2">
-          {f.status === 'entwurf'
-            ? t('detail.entwurfText')
-            : religioes && f.freigabe !== 'geprueft'
-              ? t('detail.wartetText')
-              : t('detail.sichtbarText')}{' '}
-          {zeitplanText(f, t, jetzt)}
-        </p>
+        <div className="flex flex-col gap-1 text-16">
+          <p className="text-tinte-2">
+            {f.status === 'entwurf'
+              ? t('detail.entwurfText')
+              : religioes && f.freigabe !== 'geprueft'
+                ? t('detail.wartetText')
+                : t('detail.sichtbarText')}
+          </p>
+          {/* Zeitplan in eigener Zeile (VA-3) */}
+          <p>{t.rich('detail.zeitplanZeile', { zeitplan: zeitplanText(f, t, jetzt), b: (c) => <strong>{c}</strong> })}</p>
+        </div>
         {bearbeiten ? (
-          <div className="flex flex-wrap items-center gap-3">
+          // Hauptschritt links, Löschen beschriftet und deutlich abgesetzt rechts (VA-2: mindestens 24 px Abstand)
+          <div className="flex flex-wrap items-center justify-between gap-6">
             {f.status === 'entwurf' ? schritt('veroeffentlichen', 'default') : schritt('zurueckziehen', 'outline')}
-            <LoeschenBestaetigen
+            <FolieLoeschen
               id={f.id}
               aktion={loescheFolie}
               texte={{
                 ausloeser: t('aktion.loeschen'),
                 titel: t('aktion.loeschenTitel'),
                 text: t('aktion.loeschenText'),
-                bestaetigen: t('aktion.loeschen'),
                 abbrechen: t('aktion.abbrechen'),
               }}
             />
@@ -116,8 +120,7 @@ export default async function FolieBearbeiten({ params, searchParams }: PageProp
             darfPruefen={pruefen}
             eigen={f.verfasstVon === a.benutzerId}
           />
-          <details className="text-16">
-            <summary className="flex min-h-12 cursor-pointer items-center font-bold">{t('detail.verlauf')}</summary>
+          <Klappe titel={t('detail.verlauf')} stand={t('detail.verlaufAnzahl', { anzahl: verlauf.length })} className="text-16">
             {verlauf.length ? (
               <ol className="flex flex-col gap-1 pl-1">
                 {verlauf.map((v, i) => (
@@ -130,7 +133,7 @@ export default async function FolieBearbeiten({ params, searchParams }: PageProp
             ) : (
               <p className="text-tinte-2">{t('detail.verlaufLeer')}</p>
             )}
-          </details>
+          </Klappe>
         </section>
       ) : null}
 

@@ -69,7 +69,8 @@ export function BereichFeld({
           value={wert}
           maxLength={max}
           onChange={(e) => aendern(e.target.value)}
-          className={cn(eingabe, 'py-2.5')}
+          // Wächst mit dem Inhalt, mindestens drei Zeilen (SB-1); ohne field-sizing gilt `rows`
+          className={cn(eingabe, 'field-sizing-content min-h-[calc(3lh+1.25rem+0.125rem)] py-2.5')}
         />
       )}
     />

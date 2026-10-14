@@ -1,5 +1,6 @@
 import { CalendarDays, Inbox, Mail, Megaphone, Newspaper, Ticket } from 'lucide-react';
 import NextLink from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import { HANDLUNGS_MODULE } from '@/components/verwaltung/shell/module';
 import { cn } from '@/lib/utils';
 import type { KennzahlModul } from './sichtbarkeit';
@@ -18,9 +19,12 @@ export type KennzahlKachel = { schluessel: KennzahlModul; pfad: string; label: s
 /**
  * Kennzahl-Kacheln der Übersicht (design/Dashboard.dc.html, Blatt V01): je Modul ein Link zum Modul mit Bezeichnung,
  * Zahl und kurzem Hinweis. Ab 768 px ein Raster aus Kacheln, auf dem Telefon eine Liste mit Trennlinien (eine Karte).
- * Handlungsmodule mit offener Arbeit (Zahl > 0) tragen eine grüne Kante; Zahl 0 steht grau und klein.
+ * Handlungsmodule mit offener Arbeit (Zahl > 0) tragen eine grüne Kante; ohne Wert steht grau „keine“.
+ * Zahlen in der Titelschrift (X-6): Die Textschrift Atkinson Hyperlegible Next hat eine durchgestrichene Null ohne
+ * Feature `zero` zum Abschalten – groß gesetzt las sie sich wie „Ø“. Die Titelschrift setzt die Null ohne Strich.
  */
-export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; titel: string }) {
+export async function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; titel: string }) {
+  const t = await getTranslations('verwaltung.uebersicht');
   const handlung = (k: KennzahlKachel) => (HANDLUNGS_MODULE as readonly string[]).includes(k.schluessel) && k.wert > 0;
   return (
     <section aria-label={titel} className="md:overflow-hidden md:rounded-lg md:border md:border-linie md:bg-weiss">
@@ -44,9 +48,9 @@ export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; tite
                   {k.label}
                 </span>
                 {k.wert > 0 ? (
-                  <strong className="text-48 leading-none font-bold text-tinte tabular-nums">{k.wert}</strong>
+                  <strong className="font-display text-48 leading-12 font-semibold text-tinte tabular-nums">{k.wert}</strong>
                 ) : (
-                  <strong className="text-30 leading-12 font-bold text-tinte-3 tabular-nums">{k.wert}</strong>
+                  <strong className="font-display text-30 leading-12 font-semibold text-tinte-3">{t('keine')}</strong>
                 )}
                 <span className="text-16 text-tinte-2">{k.hinweis}</span>
               </NextLink>
@@ -72,9 +76,9 @@ export function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]; tite
                   <span className="text-16 text-tinte-2">{k.hinweis}</span>
                 </span>
                 {k.wert > 0 ? (
-                  <strong className="text-30 font-bold tabular-nums">{k.wert}</strong>
+                  <strong className="font-display text-30 font-semibold tabular-nums">{k.wert}</strong>
                 ) : (
-                  <strong className="text-30 font-bold text-tinte-3 tabular-nums">{k.wert}</strong>
+                  <strong className="font-display text-20 font-semibold text-tinte-3">{t('keine')}</strong>
                 )}
               </NextLink>
             </li>

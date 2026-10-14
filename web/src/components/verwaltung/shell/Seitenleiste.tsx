@@ -36,7 +36,7 @@ import {
   UsersRound,
   type LucideIcon,
 } from 'lucide-react';
-import { useDeferredValue, useEffect, useRef } from 'react';
+import { useDeferredValue, useEffect, useRef, useState } from 'react';
 import NextLink from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -110,6 +110,25 @@ export function Seitenleiste({
   // INP: Der Knopf zeigt den neuen Zustand sofort; die Navigation erscheint im nächsten, unterbrechbaren Durchlauf.
   const sichtbar = useDeferredValue(offen);
   const navRef = useRef<HTMLDivElement>(null);
+  // Randverlauf oben/unten, solange dort weitere Einträge liegen (X-3): die Leiste wirkt sonst unten abgeschnitten
+  const [rand, setRand] = useState({ oben: false, unten: false });
+  useEffect(() => {
+    const k = navRef.current;
+    if (!k) return;
+    const pruefe = () =>
+      setRand((alt) => {
+        const neu = { oben: k.scrollTop > 2, unten: k.scrollTop + k.clientHeight < k.scrollHeight - 2 };
+        return neu.oben === alt.oben && neu.unten === alt.unten ? alt : neu;
+      });
+    pruefe();
+    k.addEventListener('scroll', pruefe, { passive: true });
+    const beobachter = new ResizeObserver(pruefe);
+    beobachter.observe(k);
+    return () => {
+      k.removeEventListener('scroll', pruefe);
+      beobachter.disconnect();
+    };
+  }, []);
   const aktiv = (p: string) => (p === '/verwaltung' ? pfad === p : pfad === p || pfad.startsWith(`${p}/`));
   // Ab 900 px scrollt die Leiste bei kurzen Fenstern. Liegt der aktive Eintrag außerhalb, rückt er ohne Bewegung in die Mitte.
   useEffect(() => {
@@ -186,28 +205,44 @@ export function Seitenleiste({
         sichtbar ? 'tritt-auf' : 'max-verwaltung:hidden',
       )}
     >
-      <div
-        ref={navRef}
-        className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 verwaltung:min-h-0 verwaltung:overflow-y-auto verwaltung:overscroll-contain"
-      >
-        {/* Geöffnet tritt die Navigation mit B-03 auf (nur unter 900 px sichtbar); geschlossen bleibt sie ohne Bewegung. */}
-        <nav id="verwaltung-navigation" aria-label={texte.navName}>
-          <ul className="flex flex-col gap-1 verwaltung:gap-0">
-            {uebersicht.map(zeile)}
-            {gruppen.length === 0 ? zurWebsite : null}
-          </ul>
-          {gruppen.map(({ gruppe, liste }, index) => (
-            <div key={gruppe} className="mt-3 border-t border-linie pt-3 verwaltung:mt-2 verwaltung:pt-2">
-              <span id={`nav-gruppe-${gruppe}`} className="block px-3.5 pb-1 text-16 font-bold text-tinte-2 verwaltung:pb-0">
-                {texte.gruppe[gruppe]}
-              </span>
-              <ul aria-labelledby={`nav-gruppe-${gruppe}`} className="flex flex-col gap-1 verwaltung:gap-0">
-                {liste.map(zeile)}
-                {index === letzteGruppe ? zurWebsite : null}
-              </ul>
-            </div>
-          ))}
-        </nav>
+      <div className="relative flex flex-col verwaltung:min-h-0">
+        <div
+          aria-hidden
+          className={cn(
+            'pointer-events-none absolute inset-x-px top-px z-10 h-6 rounded-t-lg bg-linear-to-b from-weiss to-transparent transition-opacity duration-(--dauer-rueckmeldung) motion-reduce:transition-none',
+            rand.oben ? 'opacity-100' : 'opacity-0',
+          )}
+        />
+        <div
+          aria-hidden
+          className={cn(
+            'pointer-events-none absolute inset-x-px bottom-px z-10 h-16 rounded-b-lg bg-linear-to-t from-weiss via-weiss/85 to-transparent transition-opacity duration-(--dauer-rueckmeldung) motion-reduce:transition-none',
+            rand.unten ? 'opacity-100' : 'opacity-0',
+          )}
+        />
+        <div
+          ref={navRef}
+          className="flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 verwaltung:min-h-0 verwaltung:overflow-y-auto verwaltung:overscroll-contain"
+        >
+          {/* Geöffnet tritt die Navigation mit B-03 auf (nur unter 900 px sichtbar); geschlossen bleibt sie ohne Bewegung. */}
+          <nav id="verwaltung-navigation" aria-label={texte.navName}>
+            <ul className="flex flex-col gap-1 verwaltung:gap-0">
+              {uebersicht.map(zeile)}
+              {gruppen.length === 0 ? zurWebsite : null}
+            </ul>
+            {gruppen.map(({ gruppe, liste }, index) => (
+              <div key={gruppe} className="mt-3 border-t border-linie pt-3 verwaltung:mt-2 verwaltung:pt-2">
+                <span id={`nav-gruppe-${gruppe}`} className="block px-3.5 pb-1 text-16 font-bold text-tinte-2 verwaltung:pb-0">
+                  {texte.gruppe[gruppe]}
+                </span>
+                <ul aria-labelledby={`nav-gruppe-${gruppe}`} className="flex flex-col gap-1 verwaltung:gap-0">
+                  {liste.map(zeile)}
+                  {index === letzteGruppe ? zurWebsite : null}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </div>
       </div>
     </aside>
   );

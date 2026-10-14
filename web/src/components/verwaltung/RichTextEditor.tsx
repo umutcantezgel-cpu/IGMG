@@ -23,7 +23,7 @@ function Ladeflaeche() {
   const t = useTranslations('verwaltung.editor');
   return (
     <div aria-busy="true">
-      <div className="min-h-28 rounded-t-md border-b border-linie bg-papier" />
+      <div className="min-h-16 rounded-t-md border-b border-linie bg-papier sm:min-h-28" />
       <p className="min-h-64 px-4 py-3 text-16 text-tinte-2">{t('laedt')}</p>
     </div>
   );
