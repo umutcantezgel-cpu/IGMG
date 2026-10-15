@@ -13,10 +13,12 @@ import { pruefeSuchIndex, SUCHINDEX_DATEI, type SuchIndex } from '@/lib/suche/ti
 const geladen = new Map<string, Promise<SuchIndex | null>>();
 
 export function ladeSuchIndex(): Promise<SuchIndex | null> {
-  const pfad = process.env.SUCHINDEX_DATEI || join(process.cwd(), SUCHINDEX_DATEI);
+  // turbopackIgnore: Der Pfad ist zur Bauzeit nicht bekannt; ohne den Hinweis verfolgte Turbopack das ganze Projekt in die
+  // Funktion. Mitgenommen wird genau die Datei über `outputFileTracingIncludes` (next.config.ts).
+  const pfad = process.env.SUCHINDEX_DATEI || join(/*turbopackIgnore: true*/ process.cwd(), SUCHINDEX_DATEI);
   let index = geladen.get(pfad);
   if (!index) {
-    index = readFile(pfad, 'utf8')
+    index = readFile(/*turbopackIgnore: true*/ pfad, 'utf8')
       .then((text) => pruefeSuchIndex(JSON.parse(text)))
       .catch(() => null);
     geladen.set(pfad, index);
