@@ -457,7 +457,7 @@ Zusätzlich prüfen:
 ## 14. Tarif und Konten
 
 - Die Frage nach dem Tarif (Hobby oder kostenpflichtig) und den Konten entscheidet der Vorstand. Die Empfehlung dazu soll in **MENSCHEN.md** stehen (AUFTRAG V-12).
-- **Stand:** In MENSCHEN.md steht die Empfehlung als **ML-09** (Pro, mit Begründung). Die Entscheidung liegt beim Vorstand.
+- **Stand:** Die Empfehlung steht als **ML-09** (Pro, mit Begründung) in der MENSCHEN-Liste des Vorlaufs: `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md` (bis 14.10.2026 `_werkstatt/MENSCHEN.md`). Laut `_gemeinde/MENSCHEN.md` (Kopf) gilt die Liste des Vorlaufs weiter. Die Entscheidung liegt beim Vorstand.
 
 ## 15. Wenn etwas nicht klappt
 

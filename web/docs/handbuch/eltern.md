@@ -2,7 +2,7 @@
 
 Für Eltern und Sorgeberechtigte von Kindern in den Kursen der Gemeinde. Die Schritte sind kurz und brauchen kein Technikwissen.
 
-**Stand:** 13.10.2026. Die Bildschirme von „Mein Bereich“ für Eltern entstehen noch. Dieses Handbuch beschreibt den **geplanten Ablauf** (AUFTRAG §3.5) und trägt die Marke **[Bildschirmfoto folgt]**. Die Funktionen sind zuerst **ausgeschaltet** und gehen erst auf, wenn die Gemeinde sie freigibt (Datenschutz-Folgenabschätzung, Schutzkonzept, Einwilligungstexte).
+**Stand:** 15.10.2026. Die Bildschirme von „Mein Bereich“ für Eltern sind gebaut; dieses Handbuch beschreibt sie so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Die Funktionen sind zuerst **ausgeschaltet** und gehen erst auf, wenn die Gemeinde sie freigibt (Datenschutz-Folgenabschätzung, Schutzkonzept, Einwilligungstexte).
 
 ## 1. Was Sie hier tun können
 
@@ -29,13 +29,13 @@ Ihre Anmeldung bleibt bis zu **30 Tage** gültig. Danach melden Sie sich neu an.
 
 ## 3. Ihr Kind sehen: „Meine Kinder“
 
-Unter „Mein Bereich“ → „Meine Kinder“ wählen Sie Ihr Kind. Dort sehen Sie: [Bildschirmfoto folgt]
+Unter „Mein Bereich“ → „Meine Kinder“ tippen Sie bei Ihrem Kind auf „Ansehen“. Dort sehen Sie: [Bildschirmfoto folgt]
 
-- die **Gruppe**, Ort und Zeiten,
-- die **nächsten Termine**,
-- die **Anwesenheit** der letzten Termine (anwesend, fehlt, entschuldigt, verspätet),
-- den **Lernfortschritt** je Stufe und die **Hifz-Einträge**,
-- Ihre **Fehlmeldungen**.
+- den **nächsten Termin** der Gruppe mit Ort und die Termine danach,
+- die **Anwesenheit** der letzten erfassten Termine (anwesend, verspätet, entschuldigt, gefehlt),
+- den **Fortschritt** je Lehrplan und Stufe und die **Hifz-Einträge**,
+- Ihre **Abmeldungen** („Bereits abgemeldet“),
+- die **Einwilligungen**, den **Zugang für Ihr Kind** und den Weg zum **Elternkanal**.
 
 Es gibt keine Ranglisten und keinen Vergleich mit anderen Kindern.
 
@@ -43,38 +43,38 @@ Es gibt keine Ranglisten und keinen Vergleich mit anderen Kindern.
 
 Für Kinder unter 16 Jahren brauchen wir Ihre Einwilligung. Es sind **vier getrennte Entscheidungen**. Jede hat ihren **eigenen Haken**, keiner ist vorangekreuzt. [Bildschirmfoto folgt]
 
-| Einwilligung | Wofür | Wenn Sie **nicht** zustimmen |
-| --- | --- | --- |
-| **Lernplattform** | Anwesenheit, Fortschritt und Hifz Ihres Kindes digital führen. Dazu gehören Angaben, die auf religiöse Bildung hinweisen. Darum fragen wir **ausdrücklich** | Ihr Kind lernt trotzdem mit. [Bildung bestätigt: Die Anwesenheit wird dann auf Papier geführt] |
-| **Kinderzugang** | Ihr Kind bekommt einen Zugang (Benutzername und Passwort, keine E-Mail) | Ihr Kind hat keinen eigenen Zugang. Sie sehen alles in Ihrem Konto |
-| **Gruppenchat** | Ihr Kind darf im moderierten Gruppenchat schreiben | Ihr Kind kann im Chat nicht schreiben |
-| **Push für das Kind** | Ihr Kind bekommt Benachrichtigungen aufs Gerät | Keine Benachrichtigungen |
+| Einwilligung                        | Wofür                                                                                                                                                                               | Wenn Sie **nicht** zustimmen                                                                   |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Lernplattform**                   | Gruppe, Termine, Anwesenheit, Abmeldungen und Fortschritt Ihres Kindes digital führen. Dazu gehören Angaben, die auf religiöse Bildung hinweisen. Darum fragen wir **ausdrücklich** | Ihr Kind lernt trotzdem mit. [Bildung bestätigt: Die Anwesenheit wird dann auf Papier geführt] |
+| **Eigener Zugang für Ihr Kind**     | Ihr Kind bekommt einen Zugang (Benutzername und Passwort, keine E-Mail)                                                                                                             | Ihr Kind hat keinen eigenen Zugang. Sie sehen alles in Ihrem Konto                             |
+| **Gruppenchat**                     | Ihr Kind darf im moderierten Gruppenchat schreiben                                                                                                                                  | Ihr Kind kann im Chat nicht schreiben                                                          |
+| **Benachrichtigungen für Ihr Kind** | Ihr Kind darf auf seinem Gerät Benachrichtigungen einschalten                                                                                                                       | Keine Benachrichtigungen                                                                       |
 
 **Bei jeder Einwilligung** bestätigen Sie zusätzlich: **„Ich bin sorgeberechtigt und handle im Einvernehmen mit der zweiten sorgeberechtigten Person.“** Sprechen Sie das also vorher mit der anderen sorgeberechtigten Person ab.
 
-**Widerrufen** können Sie jederzeit: „Mein Bereich“ → „Meine Kinder“ → „Einwilligungen“ → bei der Einwilligung auf „Widerrufen“. Das ist so einfach wie das Zustimmen.
+**Widerrufen** können Sie jederzeit: „Mein Bereich“ → „Meine Kinder“ → Ihr Kind → Abschnitt „Einwilligungen“ → bei der Einwilligung auf „Widerrufen“. Das ist so einfach wie das Zustimmen.
 
-- Beim **Gruppenchat** wirkt der Widerruf **sofort**: Ihr Kind kann danach nicht mehr schreiben.
-- Die anderen Widerrufe wirken ab sofort für die Zukunft. Was bis dahin geschah, bleibt rechtmäßig.
+- Jeder Widerruf wirkt **sofort**. Beim **Gruppenchat** sieht Ihr Kind den Chat danach nicht mehr; beim **eigenen Zugang** wird der Zugang Ihres Kindes gelöscht (Anwesenheit und Fortschritt bleiben erhalten).
+- Was bis zum Widerruf geschah, bleibt rechtmäßig.
 
 Die Einwilligung ist **freiwillig**. Die Teilnahme am Unterricht hängt davon nicht ab.
 
 ## 5. Zugang für Ihr Kind anlegen und verwalten
 
-Nur wenn Sie „Kinderzugang“ eingewilligt haben.
+Nur wenn Sie „Eigener Zugang für Ihr Kind“ eingewilligt haben.
 
-1. „Meine Kinder“ → Ihr Kind → „Zugang für mein Kind“. [Bildschirmfoto folgt]
-2. Wählen Sie einen **Benutzernamen** (4 bis 32 Zeichen). Nehmen Sie **nicht** den echten Namen und nichts Persönliches, zum Beispiel ein Tier und eine Zahl.
-3. Legen Sie ein **Passwort** fest (mindestens 12 Zeichen).
+1. „Meine Kinder“ → Ihr Kind → Abschnitt „Zugang für Ihr Kind“. [Bildschirmfoto folgt]
+2. Wählen Sie einen **Benutzernamen** (4 bis 32 Zeichen: Kleinbuchstaben, Ziffern, Punkt oder Unterstrich). Nehmen Sie **nicht** den echten Namen und nichts Persönliches, zum Beispiel ein Tier und eine Zahl.
+3. Legen Sie ein **Passwort** fest (mindestens 12 Zeichen) oder tippen Sie auf „Passwort vorschlagen“. Dann „Zugang anlegen“.
 4. Geben Sie Ihrem Kind Benutzername und Passwort **persönlich**, nicht per Nachricht.
 
-**So meldet sich Ihr Kind an:** Oben auf der Website „Anmelden“ → Anmeldung für Kinder → Benutzername und Passwort. Die Anmeldung gilt **12 Stunden**, danach meldet sich Ihr Kind neu an.
+**So meldet sich Ihr Kind an:** Oben auf der Website „Anmelden“ → Reiter „Kinderzugang“ → Benutzername und Passwort. Die Anmeldung gilt **12 Stunden**, danach meldet sich Ihr Kind neu an.
 
-**Kind hat das Passwort vergessen:** „Meine Kinder“ → Ihr Kind → „Passwort zurücksetzen“. Sie vergeben ein neues Passwort. Das Kind kann das nicht selbst, das ist so gewollt.
+**Kind hat das Passwort vergessen:** „Meine Kinder“ → Ihr Kind → „Passwort vergessen?“ → „Neues Passwort setzen“. Alle Anmeldungen Ihres Kindes enden dann. Das Kind kann das nicht selbst, das ist so gewollt.
 
-**Zugangskarte** zum Ausdrucken: [geplant, nicht sicher; Bildschirmfoto folgt].
+**Zugangskarte:** Nach dem Anlegen zeigt die Seite eine Zugangskarte zum Ausdrucken („Zugangskarte drucken“) oder Abschreiben. Das Passwort steht nur direkt nach dem Anlegen darauf; danach zeigt die Plattform es nicht mehr an. [Bildschirmfoto folgt]
 
-**Zugang löschen:** Kinderzugänge löschen Sie **über die Gemeinde** (E-Mail an [E-Mail-Adresse]). Der Zugang wird auch gelöscht, wenn Ihr Kind alle Gruppen verlassen hat.
+**Zugang löschen:** Widerrufen Sie die Einwilligung „Eigener Zugang für Ihr Kind“ (siehe 4). Der Zugang wird sofort gelöscht; Anwesenheit und Fortschritt bleiben erhalten.
 
 **Tipps für zu Hause:**
 
@@ -82,12 +82,12 @@ Nur wenn Sie „Kinderzugang“ eingewilligt haben.
 - Auf **gemeinsamen Geräten** immer „Abmelden“ tippen.
 - Sprechen Sie mit Ihrem Kind über die **Chat-Regeln** (siehe 8).
 
-## 6. Fehlmeldung: Ihr Kind kann nicht kommen
+## 6. Abmeldung: Ihr Kind kann nicht kommen
 
-1. „Meine Kinder“ → Ihr Kind → „Fehlmeldung“. [Bildschirmfoto folgt]
-2. Wählen Sie das **Datum**. Möglich ist heute und bis zu **60 Tage im Voraus**.
-3. Wählen Sie einen **Grund**: krank, Familie, Schule oder sonstiges. Schreiben Sie keine Krankheiten oder Diagnosen auf.
-4. Tippen Sie auf „Senden“.
+1. „Meine Kinder“ → Ihr Kind → Abschnitt „Kind fehlt“. [Bildschirmfoto folgt]
+2. Wählen Sie den **Termin**. Möglich sind die anstehenden Termine der Gruppe, heute und bis zu **60 Tage im Voraus**.
+3. Wählen Sie einen **Grund**: krank, familiäre Gründe, Schule oder anderer Grund. Ein Freitext ist nicht vorgesehen; schreiben Sie keine Krankheiten oder Diagnosen auf.
+4. Tippen Sie auf „Abmelden“.
 
 Die Lehrkraft sieht dann am Unterrichtstag Ihr Kind schon als **„entschuldigt“**. Ändert sich etwas, sagen Sie der Lehrkraft Bescheid.
 
@@ -102,7 +102,7 @@ Der **Elternkanal** ist ein moderierter Chat für die Eltern der Gruppe und die 
 - Nachrichten werden nach 90 Tagen gelöscht.
 - Etwas Unpassendes? Tippen Sie auf „Melden“. Die Lehrkräfte und die Ansprechperson Kinderschutz kümmern sich darum.
 
-**Benachrichtigung:** Bei neuen Nachrichten kann Sie eine E-Mail oder eine Push-Nachricht erinnern. Beide enthalten **nie** den Inhalt.
+**Benachrichtigung:** Haben Sie unter „Mein Bereich“ → „Benachrichtigungen“ das Thema „Neue Nachrichten in meiner Gruppe oder im Elternkanal“ gewählt, kommt bei neuen Nachrichten eine Push-Nachricht – **nie** mit dem Inhalt, höchstens eine je 10 Minuten. Eine Erinnerung per E-Mail gibt es nicht.
 
 ## 8. Der Chat Ihres Kindes
 
@@ -119,25 +119,25 @@ Der **Gruppenchat** gehört den Kindern und den Lehrkräften. **Sie können ihn 
 
 ## 9. Benachrichtigungen (Push) für Sie
 
-Freiwillig, unter „Mein Bereich“ → „Benachrichtigungen“. Sie wählen die Themen (zum Beispiel Gebetszeiten, Ankündigungen, Neuigkeiten aus der Gruppe). Die Nachrichten enthalten nie Namen oder Inhalte. Auf iPhone und iPad müssen Sie die Seite zuerst zum Home-Bildschirm hinzufügen.
+Freiwillig, unter „Mein Bereich“ → „Benachrichtigungen“. Sie wählen die Themen: Gebetszeiten, wichtige Ankündigungen der Moschee, neue Nachrichten in Ihrer Gruppe oder im Elternkanal, Neuigkeiten aus dem Unterricht. Die Nachrichten enthalten nie Namen oder Inhalte. Auf iPhone und iPad müssen Sie die Seite zuerst zum Home-Bildschirm hinzufügen. Die Benachrichtigungen gibt es erst, wenn die Gemeinde sie einschaltet.
 
 ## 10. Ihre Rechte
 
-- **Auskunft und Export:** „Mein Bereich“ → „Konto“ → Daten abrufen.
-- **Löschen:** „Mein Bereich“ → „Konto“ → „Löschung beantragen“. Wir löschen innerhalb von **30 Tagen**. Für Ihr Kind schreiben Sie an [E-Mail-Adresse].
+- **Auskunft und Export:** „Mein Bereich“ → „Konto“ → „Meine Daten“ → „Daten herunterladen“.
+- **Löschen:** „Mein Bereich“ → „Konto“ → „Konto löschen“ → „Löschung beantragen“. Die Seite nennt danach den Tag, an dem das Konto spätestens gelöscht wird. Für den Zugang Ihres Kindes siehe 5; für alle anderen Daten Ihres Kindes schreiben Sie an [E-Mail-Adresse].
 - **Widerruf** jeder Einwilligung: siehe 4.
 - **Fragen zum Datenschutz:** [Datenschutzbeauftragte/r – Angaben von der Gemeinde].
 
 ## 11. Wenn Ihr Kind 16 wird
 
-Mit dem **16. Geburtstag** entscheidet Ihr Kind selbst. Es bekommt eine eigene Einwilligung für Lernplattform und Chat und hat **30 Tage** Zeit dafür. Bis dahin gelten Ihre Einwilligungen weiter [Folge, wenn sie ausbleibt: noch offen]. [Bildung entscheidet, ob Sie weiter Anwesenheit und Fortschritt sehen.]
+Mit dem **16. Geburtstag** entscheidet Ihr Kind über **Gruppenchat** und **Benachrichtigungen** selbst. Ihre Einwilligungen dafür gelten noch **30 Tage** weiter; die Seite Ihres Kindes nennt das Datum. Danach zählt nur noch die Zustimmung Ihres Kindes – es erteilt sie selbst in seinem Bereich. [Bildung entscheidet, ob Sie weiter Anwesenheit und Fortschritt sehen.]
 
 ## 12. Hilfe
 
-| Frage | Wer |
-| --- | --- |
-| Konto, Passwort, Einladung | Bildung [E-Mail, Telefon] |
-| Etwas im Chat macht Sorge | Ansprechperson Kinderschutz [Name, Telefon] |
-| Technik funktioniert nicht | Technik [E-Mail] |
-| Ihr Kind möchte mit jemandem sprechen | Nummer gegen Kummer **116 111**, kostenlos |
-| Datenschutz | [Datenschutzbeauftragte/r – Angaben von der Gemeinde] |
+| Frage                                 | Wer                                                   |
+| ------------------------------------- | ----------------------------------------------------- |
+| Konto, Passwort, Einladung            | Bildung [E-Mail, Telefon]                             |
+| Etwas im Chat macht Sorge             | Ansprechperson Kinderschutz [Name, Telefon]           |
+| Technik funktioniert nicht            | Technik [E-Mail]                                      |
+| Ihr Kind möchte mit jemandem sprechen | Nummer gegen Kummer **116 111**, kostenlos            |
+| Datenschutz                           | [Datenschutzbeauftragte/r – Angaben von der Gemeinde] |

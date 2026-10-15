@@ -1,6 +1,6 @@
 # MENSCHEN – Gemeinde-Plattform (was nur Menschen entscheiden oder tun können)
 
-Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stand. Die Liste des Vorlaufs (`_werkstatt/MENSCHEN.md`,
+Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stand. Die Liste des Vorlaufs (`_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`, bis 14.10.2026 `_werkstatt/MENSCHEN.md`;
 `_lauf/MENSCHEN.md` M-001…M-098, ML-…) gilt weiter. Alles hier läuft mit der Standardannahme weiter (L2-E01, kein Warten).
 
 | ID | Aufgabe | Wer | Aufwand | Standard bis zur Antwort | Stand |
