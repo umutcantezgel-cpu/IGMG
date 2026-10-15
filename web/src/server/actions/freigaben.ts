@@ -9,6 +9,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { darf, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { vierAugenErfuellt } from '@/lib/religioes/freigabe';
+import { gueltigeBloecke, religioeseVerweise } from '@/lib/validierung/bloecke';
 import { FREIGABE_TYPEN, type ReligioeserTyp } from '@/server/queries/verwaltung/freigaben';
 
 /**
@@ -143,7 +144,7 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
     const s = schema.seite;
     if (!z.uuid().safeParse(e.inhaltId).success) return { fehler: 'nichtMehrOffen' };
     const [seite] = await db
-      .select({ id: s.id, organisation: s.organisation, status: s.status })
+      .select({ id: s.id, organisation: s.organisation, status: s.status, bloecke: s.bloecke })
       .from(s)
       .where(and(eq(s.id, e.inhaltId), isNull(s.imPapierkorbSeit)))
       .limit(1);
@@ -159,6 +160,25 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
         ? darf(a.rollen, 'religioes.freigeben')
         : darf(a.rollen, 'seite.veroeffentlichen', { organisation: seite.organisation });
     if (!recht) return { fehler: letzter.art === 'religioes' ? 'nurReligioesePruefung' : 'keinRecht' };
+    // S2/S3: Ein Redaktionsantrag deckt keine Verse oder Hadithe. Hat der aktuelle Stand (noch nicht veröffentlichte)
+    // religiöse Verweise, wird der Antrag zur religiösen Prüfung statt veröffentlicht.
+    if (
+      freigeben &&
+      letzter.art === 'redaktion' &&
+      seite.status !== 'veroeffentlicht' &&
+      religioeseVerweise(gueltigeBloecke(seite.bloecke)).length
+    ) {
+      await db.transaction(async (tx) => {
+        await tx
+          .insert(f)
+          .values({ inhaltTyp: 'seite', inhaltId: seite.id, art: 'religioes', status: 'zur_pruefung', von: a.benutzerId, kommentar });
+        await protokolliere(
+          { benutzerId: a.benutzerId, aktion: 'inhalt.zur_pruefung', zielTyp: 'seite', zielId: seite.id, details: { art: 'religioes' } },
+          tx,
+        );
+      });
+      return { fehler: 'religioesePruefungNoetig' };
+    }
     await db.transaction(async (tx) => {
       await tx.insert(f).values({
         inhaltTyp: 'seite',

@@ -1,5 +1,5 @@
-import { and, eq } from 'drizzle-orm';
-import { afterAll, describe, expect, it } from 'vitest';
+import { and, desc, eq } from 'drizzle-orm';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { schema } from '@/lib/db';
 import { angemeldetAls, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
 
@@ -11,7 +11,25 @@ import { angemeldetAls, formular, verwaltungsUmgebung } from './hilfen/verwaltun
  */
 const { client, db } = await verwaltungsUmgebung();
 const { entscheideFreigabe } = await import('@/server/actions/freigaben');
+const { speichereSeite, revisionWiederherstellen } = await import('@/server/actions/seiten');
 afterAll(() => client.close());
+
+beforeAll(async () => {
+  // Platzhalter-Vers (kein religiöser Text), damit ein Vers-Baustein gültig ist
+  await db.insert(schema.quranQuelle).values({
+    id: 'tanzil',
+    bezeichnung: '[Quelle]',
+    url: 'https://example.test',
+    version: 'test',
+    sha256: '0'.repeat(64),
+    lizenz: '[Lizenz]',
+  });
+  await db.insert(schema.quranSure).values({ nr: 1, nameAr: '[Sure 1]', verseAnzahl: 2, quelleId: 'tanzil', nameUmschrift: '[Sure Eins]' });
+  await db.insert(schema.quranVers).values([
+    { sure: 1, vers: 1, textAr: '[a]' },
+    { sure: 1, vers: 2, textAr: '[a]' },
+  ]);
+});
 
 async function weiterleitung(aufruf: Promise<unknown>): Promise<{ ziel?: string; wert?: unknown }> {
   try {
@@ -71,5 +89,69 @@ describe('Vier-Augen-Prinzip über „Freigaben“', () => {
     expect(r).toEqual({ ziel: '/verwaltung/freigaben?erledigt=zurueckweisen' });
     const [z] = await db.select().from(schema.tajwidRegel).where(eq(schema.tajwidRegel.schluessel, 's2-zurueck'));
     expect(z.freigabe).toBe('entwurf');
+  });
+});
+
+describe('Seite: Redaktionsantrag deckt keine ungeprüften Verse (S2b, Revision wiederherstellen)', () => {
+  const vers = JSON.stringify([{ typ: 'vers', id: 'versblock1', sure: 1, von: 1, bis: 2, uebersetzung: true }]);
+  const text = JSON.stringify([
+    {
+      typ: 'text',
+      id: 'textblock1',
+      inhalt: { de: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Hallo' }] }] } },
+    },
+  ]);
+  const verlauf = (id: string) =>
+    db
+      .select({ art: schema.freigabe.art, status: schema.freigabe.status })
+      .from(schema.freigabe)
+      .where(and(eq(schema.freigabe.inhaltTyp, 'seite'), eq(schema.freigabe.inhaltId, id)))
+      .orderBy(desc(schema.freigabe.am), desc(schema.freigabe.id));
+
+  it('Wiederherstellen einer Fassung mit Vers zieht den offenen Redaktionsantrag zurück; Freigeben veröffentlicht nichts', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const anlage = await weiterleitung(
+      speichereSeite({}, formular({ titelDe: 'S2b', slugDe: 's2b-revision', status: 'entwurf', bloecke: vers })),
+    );
+    const id = /seiten\/([0-9a-f-]{36})/.exec(anlage.ziel ?? '')![1];
+    const [r1] = await db
+      .select()
+      .from(schema.revision)
+      .where(and(eq(schema.revision.inhaltTyp, 'seite'), eq(schema.revision.inhaltId, id)))
+      .orderBy(desc(schema.revision.erstelltAm))
+      .limit(1);
+    expect(
+      await speichereSeite({}, formular({ id, titelDe: 'S2b', slugDe: 's2b-revision', status: 'zur_pruefung', bloecke: text })),
+    ).toMatchObject({
+      hinweis: 'zurPruefung',
+    });
+    expect((await verlauf(id))[0]).toEqual({ art: 'redaktion', status: 'zur_pruefung' });
+    await weiterleitung(revisionWiederherstellen(formular({ revisionId: r1.id })));
+    expect((await verlauf(id))[0]).toEqual({ art: 'redaktion', status: 'entwurf' });
+    expect(await weiterleitung(entscheideFreigabe({}, formular({ inhaltTyp: 'seite', inhaltId: id, entscheidung: 'freigeben' })))).toEqual({
+      wert: { fehler: 'nichtMehrOffen' },
+    });
+    const [seite] = await db.select().from(schema.seite).where(eq(schema.seite.id, id));
+    expect(seite.status).toBe('entwurf');
+  });
+
+  it('offener Redaktionsantrag, aber der aktuelle Stand hat einen Vers: Antrag geht in die religiöse Prüfung', async () => {
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const anlage = await weiterleitung(
+      speichereSeite({}, formular({ titelDe: 'S2b', slugDe: 's2b-wettlauf', status: 'zur_pruefung', bloecke: text })),
+    );
+    const id = /seiten\/([0-9a-f-]{36})/.exec(anlage.ziel ?? '')![1];
+    expect((await verlauf(id))[0]).toEqual({ art: 'redaktion', status: 'zur_pruefung' });
+    // Inhalt ändert sich zwischen Antrag und Entscheidung (z. B. ein älterer Weg ohne Rückzug)
+    await db
+      .update(schema.seite)
+      .set({ bloecke: JSON.parse(vers) })
+      .where(eq(schema.seite.id, id));
+    expect(await weiterleitung(entscheideFreigabe({}, formular({ inhaltTyp: 'seite', inhaltId: id, entscheidung: 'freigeben' })))).toEqual({
+      wert: { fehler: 'religioesePruefungNoetig' },
+    });
+    expect((await verlauf(id))[0]).toEqual({ art: 'religioes', status: 'zur_pruefung' });
+    const [seite] = await db.select().from(schema.seite).where(eq(schema.seite.id, id));
+    expect(seite.status).toBe('entwurf');
   });
 });

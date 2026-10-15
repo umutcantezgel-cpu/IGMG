@@ -13,7 +13,8 @@ const uuid = z.string().uuid();
 const status = z.enum(['anwesend', 'fehlt', 'entschuldigt', 'verspaetet']);
 
 async function kontext() {
-  if (!(await funktionAn('lernplattform'))) throw new KeinGruppenRecht();
+  // S3: ohne den Schalter `konten` auch keine Lern-Aktionen (Notbremse wirkt auf jede Sitzung)
+  if (!(await funktionAn('lernplattform')) || !(await funktionAn('konten'))) throw new KeinGruppenRecht();
   const konto = await verlangeKontoRecht();
   return ladeGruppenKontext(konto.benutzerId);
 }

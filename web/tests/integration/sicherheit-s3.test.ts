@@ -16,6 +16,7 @@ const { client, db } = await kontoUmgebung();
 const { auth } = await import('@/lib/auth/server');
 const anmeldung = await import('@/server/actions/anmeldung');
 const { beendeSitzungen } = await import('@/lib/konto/loeschen');
+const { db: appDb } = await import('@/lib/db');
 afterAll(() => client.close());
 
 const PASSWORT = 'Ein-langes-Testpasswort-2026';
@@ -74,7 +75,7 @@ describe('S3: Passwort-Links nur gehasht in der Datenbank', () => {
     await anmeldung.passwortVergessen({}, formular({ email: k.email }));
     await nachDerAntwort();
     expect(await resetZeilen(k.id)).toHaveLength(1);
-    await beendeSitzungen(db, [k.id]);
+    await beendeSitzungen(appDb, [k.id]);
     expect(await db.select().from(schema.verification).where(like(schema.verification.identifier, 'reset-password:%'))).not.toContainEqual(
       expect.objectContaining({ value: k.id }),
     );

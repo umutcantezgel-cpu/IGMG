@@ -31,6 +31,7 @@ function werkzeuge(): { bin: string; protokoll: string; melden: string } {
 function sichern(ziel: string, w: ReturnType<typeof werkzeuge>, env: Record<string, string> = {}) {
   return spawnSync('sh', [join(KIT, 'sicherung/sichern.sh')], {
     env: {
+      ...process.env,
       PATH: `${w.bin}:${process.env.PATH}`,
       SICHERUNG_DATABASE_URL: 'postgresql://platzhalter',
       AGE_EMPFAENGER: 'age1platzhalter',

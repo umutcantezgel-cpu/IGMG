@@ -297,3 +297,21 @@ describe('S2a-7: Die Leitung entfernt eigene Nachrichten nicht selbst', () => {
     expect(await dienst.entferneNachricht(await k(g.aufsicht.id), id, 'auf Bitte entfernt')).toBeNull();
   });
 });
+
+describe('S3: Schalter „konten“ aus beendet auch Chat- und Lern-Actions bestehender Sitzungen', () => {
+  it('Senden, Melden und Anwesenheit werden abgewiesen', async () => {
+    const g = await gruppeMitLeitung('Schalter');
+    const unterrichtAktionen = await import('@/server/actions/unterricht');
+    process.env.FUNKTION_KONTEN = 'aus';
+    try {
+      als(g.kind);
+      expect(await chatAktionen.sendeChatNachricht(g.kanal.gruppe, 'Hallo')).toEqual({ ok: false, grund: 'kanalAus' });
+      await expect(chatAktionen.meldeChatNachricht({ nachrichtId: 1, grund: 'spam', freitext: null })).rejects.toThrow('KEIN_RECHT');
+      als(g.hoca);
+      expect(await unterrichtAktionen.speichereAnwesenheit({ terminId: randomUUID(), eintraege: [] })).toEqual({ ok: false });
+    } finally {
+      delete process.env.FUNKTION_KONTEN;
+    }
+    expect(await db.select().from(schema.chatNachricht).where(eq(schema.chatNachricht.kanalId, g.kanal.gruppe))).toHaveLength(0);
+  });
+});

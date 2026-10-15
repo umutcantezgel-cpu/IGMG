@@ -41,13 +41,14 @@ async function chatAn(): Promise<boolean> {
 
 /** Konto mit Faktor und eingeschaltetem Chat (N-2 der Sicherheitsprüfung S1: auch Moderation und Melden). */
 async function kontext() {
-  if (!(await chatAn())) throw new KeinRecht();
+  // S3: ohne den Schalter `konten` auch kein Chat (Notbremse wirkt auf jede Sitzung)
+  if (!(await chatAn()) || !(await funktionAn('konten'))) throw new KeinRecht();
   const konto = await verlangeKontoRecht();
   return { konto, kontext: await ladeGruppenKontext(konto.benutzerId) };
 }
 
 export async function sendeChatNachricht(kanalId: string, text: string) {
-  if (!(await chatAn())) return { ok: false as const, grund: 'kanalAus' as const };
+  if (!(await chatAn()) || !(await funktionAn('konten'))) return { ok: false as const, grund: 'kanalAus' as const };
   const { kontext: k } = await kontext();
   if (!uuid.safeParse(kanalId).success || typeof text !== 'string' || text.length > 4000)
     return { ok: false as const, grund: 'keinRecht' as const };

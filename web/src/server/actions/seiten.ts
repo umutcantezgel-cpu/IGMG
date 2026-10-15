@@ -375,6 +375,12 @@ export async function revisionWiederherstellen(fd: FormData): Promise<void> {
       erstelltVon: a.benutzerId,
       kommentar: 'wiederhergestellt',
     });
+    // S2/S3: Wie beim Speichern zieht eine geänderte Fassung einen offenen Antrag zurück (Eintrag „entwurf“) – sonst gälte
+    // ein Redaktionsantrag für einen Stand ohne Vers/Hadith auch für die wiederhergestellte Fassung mit Vers/Hadith
+    if (ent.freigabe?.status === 'entwurf' && offen?.status === 'zur_pruefung')
+      await tx
+        .insert(schema.freigabe)
+        .values({ inhaltTyp: INHALT_TYP, inhaltId: alt.id, art: offen.art, status: 'entwurf', von: a.benutzerId });
     if (ent.freigabe?.status === 'zur_pruefung' && !(offen?.status === 'zur_pruefung' && offen.art === ent.freigabe.art)) {
       await tx
         .insert(schema.freigabe)
