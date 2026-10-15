@@ -35,6 +35,11 @@
 - Umgebungsausnahme: Centrifugo ohne öffentliche Adresse wird in der Vorschau nicht geprüft.
 
 ## Umsetzung (13.10.2026)
+
 - Pflichtweg Abruf: `GET /api/mein/chat/<kanal>?nach=<id>` (`src/lib/chat/dienst.ts`).
 - Signal: `src/lib/echtzeit/{konfig,centrifugo}.ts`, Tokens über `GET /api/mein/echtzeit?kanal=<id>`, Publish nach dem
   Senden (`after()`), `wss://` nur in der CSP der Konto-Seiten (`src/proxy.ts`). Server: `betrieb/lokal` Profil `echtzeit`.
+- Server-Kit (15.10.2026, Nacharbeit Stufe C, Z-20): `betrieb/lokal/echtzeit/centrifugo.json` trägt den Namensraum `chat`
+  (Kanäle `chat:<kanal-id>` wie `kanalName`); Abonnieren nur mit Abo-Token, alle `allow_*` aus, ohne Anwesenheit und
+  Verlauf. Vorher wies Centrifugo jedes Abo mit „102 unknown channel“ ab. Prüfung: `tests/unit/echtzeit.test.ts` (Datei)
+  und `betrieb/lokal/echtzeit/pruefen.mjs` (laufender Centrifugo; am 15.10. gegen v6.5.1 lokal 8/8 bestanden).
