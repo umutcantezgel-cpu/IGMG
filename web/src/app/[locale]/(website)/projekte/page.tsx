@@ -4,7 +4,7 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Achtstern } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { istNurPlatzhalter } from '@/components/website/Platzhalter';
-import { Grundrahmen } from '@/components/website/Grundrahmen';
+import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { textMitSprache } from '@/components/website/Text';
 import { Bauprojekt } from '@/components/website/projekte/Bauprojekt';
@@ -36,7 +36,7 @@ export default async function ProjekteSeite() {
   const name = textMitSprache(inhalt.projekt.name, sprache).text;
   const eroeffnet = inhalt.projekt.status === 'fertiggestellt' && name !== '' && !istNurPlatzhalter(name);
   return (
-    <Grundrahmen
+    <Seitenrahmen
       bereich="moschee"
       seite="projekte"
       sprachZiel="/projekte"
@@ -74,6 +74,6 @@ export default async function ProjekteSeite() {
           <Unterstuetzen inhalt={inhalt} sprache={sprache} />
         </div>
       </div>
-    </Grundrahmen>
+    </Seitenrahmen>
   );
 }

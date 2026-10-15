@@ -10,7 +10,7 @@ import { QiblaPanel } from '@/components/website/gebetszeiten/QiblaPanel';
 import { datumMitJahr, folgemonat, METHODEN_ANZEIGE, monatsname } from '@/components/website/gebetszeiten/zeiten';
 import { PushStart } from '@/components/website/push/PushStart';
 import type { PushTexte } from '@/components/website/push/PushEinstellungen';
-import { Grundrahmen } from '@/components/website/Grundrahmen';
+import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { funktionAn } from '@/lib/funktionen';
 import { vapidAusUmgebung } from '@/lib/push/vapid';
 import { Link } from '@/i18n/link';
@@ -228,7 +228,7 @@ export default async function GebetszeitenSeitePage() {
   );
 
   return (
-    <Grundrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" pfad={[{ label: tk('gebetszeiten') }]}>
+    <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" leiste={null} pfad={[{ label: tk('gebetszeiten') }]}>
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
         <div className="flex min-w-0 flex-col gap-2">
           <h1 className="text-display-1 text-pretty">{t('titel')}</h1>
@@ -319,6 +319,6 @@ export default async function GebetszeitenSeitePage() {
           />
         ) : null}
       </div>
-    </Grundrahmen>
+    </Seitenrahmen>
   );
 }

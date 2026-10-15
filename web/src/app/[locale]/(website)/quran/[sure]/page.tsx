@@ -6,7 +6,7 @@ import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
 import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
 import { QuranWeiter } from '@/components/website/quran/QuranWeiter';
 import { SurenKopf } from '@/components/website/quran/SurenKopf';
-import { Grundrahmen } from '@/components/website/Grundrahmen';
+import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { ausgabeFuer } from '@/lib/quran/ausgaben';
 import { satzLaenge, versListeHtml, VOLLSATZ_GRENZE } from '@/lib/quran/satz';
@@ -62,7 +62,7 @@ export default async function QuranSurePage({ params }: { params: Promise<{ loca
   const mitBasmala = Boolean(sure.basmala) && nr !== 1 && nr !== 9;
 
   return (
-    <Grundrahmen
+    <Seitenrahmen
       bereich="islam"
       seite="quran"
       sprachZiel={{ pathname: '/quran/[sure]', params: { sure: String(nr) } }}
@@ -123,6 +123,6 @@ export default async function QuranSurePage({ params }: { params: Promise<{ loca
           }
         />
       </LeserRahmen>
-    </Grundrahmen>
+    </Seitenrahmen>
   );
 }
