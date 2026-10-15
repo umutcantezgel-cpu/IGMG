@@ -176,6 +176,14 @@ export default async function Freigaben({ searchParams }: PageProps<'/[locale]/v
                         <RichText doc={e.text} />
                       </div>
                     ) : null}
+                    {e.textUebersetzungen?.map((u) => (
+                      <section key={u.sprache} aria-label={t('angabe.textSprache', { sprache: t(`sprachname.${u.sprache}`) })}>
+                        <p className="mb-2 font-bold text-tinte-2">{t('angabe.textSprache', { sprache: t(`sprachname.${u.sprache}`) })}</p>
+                        <div lang={u.sprache} className="rounded-md border border-linie bg-papier p-4">
+                          <RichText doc={u.doc} />
+                        </div>
+                      </section>
+                    ))}
                     {darfEs ? (
                       <FreigabeEntscheidung aktion={entscheideFreigabe} inhaltTyp={e.inhaltTyp} inhaltId={e.inhaltId} titel={e.titel} />
                     ) : (

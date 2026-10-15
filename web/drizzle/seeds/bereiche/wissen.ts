@@ -1,5 +1,6 @@
 import { wissenInhalt } from '../../../src/components/website/wissen/inhalt';
 import { schema } from '../../../src/lib/db';
+import { BESTAND_VERMERK } from '../../../src/lib/validierung/wissen';
 import type { BereichsSeed } from './typ';
 
 /**
@@ -8,6 +9,9 @@ import type { BereichsSeed } from './typ';
  * wissen_thema; Artikel, Videos und Experten als Seiteninhalt „wissen“ (istBeispiel). Personennamen, Autorennamen
  * und Institutionen sind Platzhalter (G-04, G-05). Nur der Sachtext „Allah“ ist ausgeschrieben; die übrigen Artikel
  * zeigen den Beispieltext der Oberfläche. Videoquellen fehlen: keine Adressen, keine Einbettung (K-14).
+ *
+ * Religiöse Freigabe (F-40, ADR 0030): Die Themen sind der Bestand vor der Freigabepflicht und bleiben öffentlich – wie
+ * Migration 0015 für bestehende Datenbanken: „geprüft“ ohne prüfende Person, mit Vermerk im Freigabe-Verlauf.
  */
 
 const THEMEN_QUELLE = 'design/IslamicKnowledge.dc.html:136; bestand/IslamicKnowledge.tsx:47–60 (de), 74–87 (tr), 101–114 (en)';
@@ -39,6 +43,7 @@ const THEMEN: ThemaQuelle[] = [
 const themenZeilen = THEMEN.map((t): typeof schema.wissenThema.$inferInsert => ({
   slug: t.slug,
   status: 'veroeffentlicht',
+  freigabe: 'geprueft',
   istBeispiel: false,
   quelle: THEMEN_QUELLE,
   // Pflichtspalte ohne Vorgabe im Design (keine Gruppen erkennbar): einheitlicher Wert, MENSCHEN führt die Frage.
@@ -238,6 +243,16 @@ export const seed: BereichsSeed = async (db) => {
     .values(themenZeilen)
     .onConflictDoNothing({ target: schema.wissenThema.slug })
     .returning({ id: schema.wissenThema.id });
+  if (themen.length)
+    await db.insert(schema.freigabe).values(
+      themen.map((t) => ({
+        inhaltTyp: 'wissen_thema',
+        inhaltId: t.id,
+        art: 'religioes' as const,
+        status: 'geprueft' as const,
+        kommentar: BESTAND_VERMERK,
+      })),
+    );
   const inhalte = await db
     .insert(schema.seiteninhalt)
     .values({ bereich: 'wissen', inhalt: INHALT, istBeispiel: true, quelle: INHALT_QUELLE })

@@ -45,6 +45,7 @@ const CACHE: Record<ReligioeserTyp, string> = {
   hadith_uebersetzung: TAG.hadith,
   elifbe_lektion: TAG.elifbe,
   besonderer_tag: TAG.kalender,
+  wissen_thema: TAG.wissen,
 };
 
 type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
@@ -56,7 +57,8 @@ type FreigabeTabelle =
   | typeof schema.tajwidRegel
   | typeof schema.hadithUebersetzung
   | typeof schema.elifbeLektion
-  | typeof schema.besondererTag;
+  | typeof schema.besondererTag
+  | typeof schema.wissenThema;
 
 /** Zeile eines religiösen Inhalts aus Typ und Kennung (uuid bzw. `a|b|c`); null bei ungültiger Kennung. */
 function zielZeile(typ: ReligioeserTyp, id: string): { t: FreigabeTabelle; wo: SQL } | null {
@@ -84,6 +86,8 @@ function zielZeile(typ: ReligioeserTyp, id: string): { t: FreigabeTabelle; wo: S
       return uuid ? { t: schema.elifbeLektion, wo: eq(schema.elifbeLektion.id, id) } : null;
     case 'besonderer_tag':
       return uuid ? { t: schema.besondererTag, wo: eq(schema.besondererTag.id, id) } : null;
+    case 'wissen_thema':
+      return uuid ? { t: schema.wissenThema, wo: eq(schema.wissenThema.id, id) } : null;
   }
 }
 

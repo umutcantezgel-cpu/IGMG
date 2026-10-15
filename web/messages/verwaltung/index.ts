@@ -37,6 +37,8 @@ import koran from './koran.json';
 import rezitationen from './rezitationen.json';
 import anzeige from './anzeige.json';
 import sicherheit from './sicherheit.json';
+import startseite from './startseite.json';
+import wissen from './wissen.json';
 
 type Teil = Record<string, unknown>;
 
@@ -74,4 +76,6 @@ export const VERWALTUNG: Record<string, Teil> = {
   rezitationen,
   anzeige,
   sicherheit,
+  startseite,
+  wissen,
 };

@@ -1,0 +1,72 @@
+{
+  "startseite": {
+    "titel": "Startseite",
+    "einleitung": "Legen Sie fest, in welcher Reihenfolge die Abschnitte der Startseite erscheinen und welche angezeigt werden. Der Kopf mit dem Tagesbogen steht immer oben.",
+    "standardAktiv": "Die Startseite zeigt zurzeit die Standardreihenfolge. Sie steht hier schon zum Ändern bereit – mit „Reihenfolge speichern“ übernehmen Sie Ihre Fassung.",
+    "eigenesAktiv": "Die Startseite zeigt Ihre gespeicherte Reihenfolge (zuletzt geändert am {datum} von {name}).",
+    "eigenesAktivOhneName": "Die Startseite zeigt Ihre gespeicherte Reihenfolge (zuletzt geändert am {datum}).",
+    "ansehen": "Startseite ansehen",
+    "zurueckgesetzt": "Die Standardreihenfolge gilt wieder.",
+    "wiederhergestellt": "Die frühere Fassung gilt wieder.",
+    "fest": {
+      "titel": "Kopf mit Tagesbogen",
+      "beschreibung": "Begrüßung, die beiden Knöpfe und der Tagesbogen mit den Gebetszeiten.",
+      "marke": "Steht fest oben"
+    },
+    "abschnitt": {
+      "moschee": {
+        "titel": "Unsere neue Moschee",
+        "beschreibung": "Bild und kurzer Text zur neuen Moschee mit Verweisen auf das Projekt und die Geschichte."
+      },
+      "veranstaltungen": {
+        "titel": "Veranstaltungen",
+        "beschreibung": "Die nächsten Termine aus „Veranstaltungen“ (drei, ab sechs Terminen sechs)."
+      },
+      "neuigkeiten": {
+        "titel": "Neuigkeiten",
+        "beschreibung": "Ein Aufmacher und drei weitere Beiträge aus „Neuigkeiten“."
+      },
+      "desTages": {
+        "titel": "Vers und Hadith des Tages",
+        "beschreibung": "Erscheint nur, wenn die religiöse Prüfung Einträge für die Listen „des Tages“ freigegeben hat."
+      }
+    },
+    "editor": {
+      "nachOben": "Nach oben: {name}",
+      "nachUnten": "Nach unten: {name}",
+      "verschoben": "{name} steht jetzt an Stelle {nr} von {anzahl}.",
+      "stelle": "Stelle {nr} von {anzahl}",
+      "sichtbar": "Anzeigen",
+      "eingeblendet": "{name} wird angezeigt.",
+      "ausgeblendet": "{name} wird ausgeblendet.",
+      "ausgeblendetMarke": "Ausgeblendet",
+      "speichern": "Reihenfolge speichern",
+      "speichert": "Wird gespeichert …",
+      "gespeichert": "Gespeichert. Die Startseite zeigt jetzt diese Reihenfolge.",
+      "ungespeichert": "Es gibt ungespeicherte Änderungen.",
+      "hinweis": "Nach dem Speichern gilt die Reihenfolge sofort auf der Startseite (alle Sprachen).",
+      "fehler": {
+        "keinRecht": "Dafür fehlt Ihnen das Recht.",
+        "pruefen": "Die Reihenfolge ist unvollständig. Bitte laden Sie die Seite neu und versuchen Sie es noch einmal."
+      }
+    },
+    "zuruecksetzen": "Standardreihenfolge wiederherstellen",
+    "zuruecksetzenText": "Entfernt Ihre gespeicherte Reihenfolge. Die Startseite zeigt danach wieder alle Abschnitte in der Standardreihenfolge. Frühere Fassungen bleiben in der Liste erhalten.",
+    "verlauf": {
+      "titel": "Frühere Fassungen",
+      "einleitung": "Jedes Speichern legt eine Fassung an; die letzten zehn stehen hier. Mit „Zurückholen“ gilt eine frühere Fassung wieder.",
+      "leer": "Noch keine gespeicherten Fassungen.",
+      "spalteZeit": "Gespeichert am",
+      "spalteVon": "Von",
+      "spalteReihenfolge": "Reihenfolge",
+      "spalteAktionen": "Aktionen",
+      "aktuell": "aktuell",
+      "unbekannt": "unbekannt",
+      "ausgeblendet": "ausgeblendet",
+      "standardVermerk": "Standard wiederhergestellt",
+      "wiederhergestelltVermerk": "Frühere Fassung zurückgeholt",
+      "zurueckholen": "Zurückholen",
+      "zurueckholenName": "Fassung vom {zeit} zurückholen"
+    }
+  }
+}

@@ -22,7 +22,8 @@
       "tajwid_regel": "Tajwid-Regel",
       "hadith_uebersetzung": "Hadith-Übersetzung",
       "elifbe_lektion": "Elifbe-Lektion",
-      "besonderer_tag": "Besonderer Tag"
+      "besonderer_tag": "Besonderer Tag",
+      "wissen_thema": "Wissensthema"
     },
     "angabe": {
       "adresse": "Adresse",
@@ -42,7 +43,13 @@
       "quelle": "Quelle und Lizenz",
       "ziel": "Lernziel",
       "datum": "Datum",
-      "tagArt": "Art"
+      "tagArt": "Art",
+      "titel_tr": "Titel (Türkisch)",
+      "titel_en": "Titel (Englisch)",
+      "kurztext_de": "Kurztext",
+      "kurztext_tr": "Kurztext (Türkisch)",
+      "kurztext_en": "Kurztext (Englisch)",
+      "textSprache": "Einführung ({sprache})"
     },
     "eingereicht": "Eingereicht von {name} am {datum}",
     "eingereichtOhneName": "Eingereicht am {datum}",
@@ -88,6 +95,10 @@
       "kommentarPflicht": "Bitte schreiben Sie kurz, was geändert werden soll.",
       "zuLang": "Der Kommentar ist zu lang (höchstens 1000 Zeichen).",
       "ungueltig": "Diese Angabe ist ungültig."
+    },
+    "sprachname": {
+      "tr": "Türkisch",
+      "en": "Englisch"
     }
   }
 }

@@ -106,8 +106,9 @@ export async function religioeseFreigabeLage(db: Datenbank, jetzt: Date): Promis
   const el = schema.elifbeLektion;
   const bt = schema.besondererTag;
   const af = schema.anzeigeFolie;
+  const wt = schema.wissenThema;
   const seitenIds = [...eingereicht.keys()].filter((k) => k.startsWith('seite|')).map((k) => k.slice('seite|'.length));
-  const [bedeutungen, orte, regeln, hadithe, lektionen, tage, folien, seiten] = await Promise.all([
+  const [bedeutungen, orte, regeln, hadithe, lektionen, tage, folien, themen, seiten] = await Promise.all([
     db.select({ id: wb.id, geaendert: wb.aktualisiertAm }).from(wb).where(eq(wb.freigabe, offen)),
     db.select({ sure: wbo.sure, vers: wbo.vers, pos: wbo.pos, sprache: wbo.sprache }).from(wbo).where(eq(wbo.freigabe, offen)),
     db.select({ id: tr.schluessel }).from(tr).where(eq(tr.freigabe, offen)),
@@ -115,6 +116,10 @@ export async function religioeseFreigabeLage(db: Datenbank, jetzt: Date): Promis
     db.select({ id: el.id }).from(el).where(eq(el.freigabe, offen)),
     db.select({ id: bt.id }).from(bt).where(eq(bt.freigabe, offen)),
     db.select({ id: af.id, geaendert: af.aktualisiertAm }).from(af).where(eq(af.freigabe, offen)),
+    db
+      .select({ id: wt.id, geaendert: wt.aktualisiertAm })
+      .from(wt)
+      .where(and(eq(wt.freigabe, offen), isNull(wt.imPapierkorbSeit))),
     seitenIds.length
       ? db
           .select({ id: schema.seite.id })
@@ -130,6 +135,7 @@ export async function religioeseFreigabeLage(db: Datenbank, jetzt: Date): Promis
     ...lektionen.map((z) => ({ schluessel: `elifbe_lektion|${z.id}` })),
     ...tage.map((z) => ({ schluessel: `besonderer_tag|${z.id}` })),
     ...folien.map((z) => ({ schluessel: `anzeige_folie|${z.id}`, geaendert: z.geaendert })),
+    ...themen.map((z) => ({ schluessel: `wissen_thema|${z.id}`, geaendert: z.geaendert })),
     ...seiten.map((z) => ({ schluessel: `seite|${z.id}` })),
   ];
   const grenze = jetzt.getTime() - FREIGABE_STAU_TAGE * 24 * STUNDE;

@@ -33,6 +33,8 @@ export const TAG = {
   hatimVon: (id: string) => `hatim:${id}`,
   rezitation: (id: string) => `rezitation:${id}`,
   rezitationen: 'rezitationen',
+  /** Reihenfolge und Sichtbarkeit der Startseiten-Abschnitte (F-40) */
+  startseite: 'startseite',
 } as const;
 
 /** Tags, die beim Start verfallen (ADR 0017) – alle inhaltsbezogenen Listen-Tags. */
@@ -57,5 +59,6 @@ export const START_TAGS = [
   TAG.kalender,
   TAG.hatim,
   TAG.rezitationen,
+  TAG.startseite,
   'seiteninhalt',
 ] as const;
