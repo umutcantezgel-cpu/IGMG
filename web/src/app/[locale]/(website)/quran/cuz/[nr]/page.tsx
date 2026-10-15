@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 import { Medaillon } from '@/components/website/quran/Medaillon';
 import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
 import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
@@ -38,16 +37,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-/** Cüz /quran/cuz/[nr] (O-Q01): die Verse eines Cüz über Surengrenzen hinweg im selben Leser. */
-export default function QuranCuzPage({ params }: { params: Promise<{ locale: string; nr: string }> }) {
-  return (
-    <Suspense fallback={null}>
-      <Cuz params={params} />
-    </Suspense>
-  );
-}
-
-async function Cuz({ params }: { params: Promise<{ locale: string; nr: string }> }) {
+/**
+ * Cüz /quran/cuz/[nr] (O-Q01): die Verse eines Cüz über Surengrenzen hinweg im selben Leser. Wie die Surenseite ohne
+ * umschließendes `<Suspense>` (Abweichung von MUSTER 1, Begründung dort): alle 30 Cüz sind vorgerendert.
+ */
+export default async function QuranCuzPage({ params }: { params: Promise<{ locale: string; nr: string }> }) {
   const nr = nummer((await params).nr);
   const sprache = await getLocale();
   const t = await getTranslations('quranSeite');
