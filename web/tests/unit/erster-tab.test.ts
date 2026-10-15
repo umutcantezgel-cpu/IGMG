@@ -23,12 +23,15 @@ const ziel = (name: string, { tabIndex = 0, gesperrt = false, sichtbar = true, i
   checkVisibility: () => sichtbar,
 });
 
+/** Element im Dokument (`imDialog`: innerhalb eines `<dialog>`, etwa im Konzept-Hinweis). */
+const knoten = (imDialog = false) => ({ closest: (s: string) => (s === 'dialog' && imDialog ? {} : null) });
+
 function umgebung({ hash = '', fokus = false, modal = false, ziele = [] as Ziel[] } = {}) {
   const hoerer = new Map<string, (e?: unknown) => void>();
   const body = {};
-  const dokument = {
+  const dokument: { body: object; activeElement: object } & Record<string, unknown> = {
     body,
-    activeElement: fokus ? { name: 'fokus' } : body,
+    activeElement: fokus ? knoten() : body,
     addEventListener: vi.fn((typ: string, fn: (e?: unknown) => void, capture: boolean) => {
       expect(capture).toBe(true);
       hoerer.set(typ, fn);
@@ -101,8 +104,12 @@ describe('Erster Tab ohne Dokumentsuche', () => {
     expect(mitFokus.hoerer.size).toBe(0);
 
     const mitZeiger = umgebung({ ziele: liste() });
-    mitZeiger.hoerer.get('pointerdown')?.();
+    mitZeiger.hoerer.get('pointerdown')?.({ target: knoten() });
     expect(mitZeiger.hoerer.size).toBe(0);
+
+    const mitFokusEreignis = umgebung({ ziele: liste() });
+    mitFokusEreignis.hoerer.get('focusin')?.({ target: knoten() });
+    expect(mitFokusEreignis.hoerer.size).toBe(0);
 
     const mitAnker = umgebung({ hash: '#v255', ziele: liste() });
     expect(mitAnker.hoerer.size).toBe(0);
@@ -115,5 +122,28 @@ describe('Erster Tab ohne Dokumentsuche', () => {
     hoerer.get('keydown')?.(e);
     expect(e.preventDefault).not.toHaveBeenCalled();
     expect(ziele.some((z) => z.focus.mock.calls.length)).toBe(false);
+  });
+
+  it('Konzept-Hinweis beim Erstbesuch: Fokus und Zeiger im Dialog zählen nicht, nach dem Schließen gilt der erste Tab', () => {
+    const ziele = liste();
+    const { hoerer, dokument } = umgebung({ modal: true, ziele });
+    // Das Skript des Hinweises fokussiert den Titel, der Knopf wird angetippt: kein Startpunkt auf der Seite
+    hoerer.get('focusin')?.({ target: knoten(true) });
+    hoerer.get('pointerdown')?.({ target: knoten(true) });
+    expect([...hoerer.keys()].sort()).toEqual(['focusin', 'keydown', 'pointerdown']);
+    // Tab im offenen Dialog: Browser bleibt zuständig, das Skript bleibt
+    dokument.activeElement = knoten(true);
+    const imDialog = taste();
+    hoerer.get('keydown')?.(imDialog);
+    expect(imDialog.preventDefault).not.toHaveBeenCalled();
+    expect(hoerer.size).toBe(3);
+    // Nach dem Schließen: Fokus auf dem Dokument, kein modaler Dialog mehr → erstes Ziel wie der Browser
+    dokument.activeElement = dokument.body;
+    dokument.querySelector = () => null;
+    const danach = taste();
+    hoerer.get('keydown')?.(danach);
+    expect(danach.preventDefault).toHaveBeenCalled();
+    expect(ziele.filter((z) => z.focus.mock.calls.length).map((z) => z.name)).toEqual(['sprunglink']);
+    expect(hoerer.size).toBe(0);
   });
 });
