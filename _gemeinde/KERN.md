@@ -29,6 +29,11 @@ und jeder Schritt vom ersten Buchstaben bis zum Hatim ist ein sichtbarer Weg –
 - Neue Tokens nur als Skalen: `--font-quran`, `--text-arabisch-1/2/3`, `--color-tajwid-*` (≥ 4,5:1, mit Unterstreichungsmuster),
   `--container-lesen`, `--ebene-player`.
 - Formensprache: Achtstern, 24-px-Raster, 2-px-Strich; keine Mondsichel, keine Kuppel, keine generierten Moscheebilder, kein 3D.
+- Strukturwerte ohne eigenes Token (Rasterschablonen, Auslauf-Masken, Mindesthöhe in Zeilen, Container-Schwelle) stehen als
+  `@utility` bzw. `@custom-variant` in `globals.css`, Maße aus der Abstandsskala (Stufe C, N2: `raster-aktion`,
+  `raster-symbol-aktion`, `raster-drei-zwei`, `raster-seitenleiste`, `raster-formularspalte`, `raster-kleinkacheln`,
+  `min-h-zeilen-*`, `auslauf-*`, `buchstabe-form`, `kennzahl-fliessend`, `transition-strich`, `leiste-breit:`). Keine
+  Klammerwerte in Klassen; `freie-werte.mjs` über die seit b702c7c geänderten Dateien: 0 offen.
 - Bewegung: nur CSS, jede mit reduzierter Variante; Register B-01…B-27 (AUFTRAG §4). Keine hochzählenden Zahlen, keine Ranglisten.
 
 ## Leistung
