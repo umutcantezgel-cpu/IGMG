@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 import { BuchAnsicht } from '@/components/website/hadith/BuchAnsicht';
 import { funktionAn } from '@/lib/funktionen';
 import { buchNummer } from '@/lib/hadith/anzeige';
@@ -39,16 +38,13 @@ export async function generateMetadata({ params }: Parameter): Promise<Metadata>
   });
 }
 
-/** Buchseite /hadith/bukhari/[buch] = Teil 1 (AUFTRAG 3.3). URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). */
-export default function HadithBuchSeite({ params }: Parameter) {
-  return (
-    <Suspense fallback={null}>
-      <HadithBuch params={params} />
-    </Suspense>
-  );
-}
-
-async function HadithBuch({ params }: Parameter) {
+/**
+ * Buchseite /hadith/bukhari/[buch] = Teil 1 (AUFTRAG 3.3). Wie der Koran-Leser ohne umschließendes `<Suspense>`
+ * (Abweichung von MUSTER 1, Z-08, N1): Alle Bücher sind vorgerendert (generateStaticParams, `ensureStatic =
+ * 'navigation'`), andere Werte enden in notFound(). In einem Suspense-Rahmen lieferte React die ganze Seite ausgelagert
+ * (`<div hidden>` mit `$RC`) und deckte sie gedrosselt auf (LCP).
+ */
+export default async function HadithBuchSeite({ params }: Parameter) {
   const { buch } = await params;
   const daten = await lade(buch);
   if (!daten) notFound();

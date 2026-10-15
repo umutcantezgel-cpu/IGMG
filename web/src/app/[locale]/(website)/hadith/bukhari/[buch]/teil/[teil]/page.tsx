@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 import { BuchAnsicht } from '@/components/website/hadith/BuchAnsicht';
 import { funktionAn } from '@/lib/funktionen';
 import { buchNummer, teilNummer } from '@/lib/hadith/anzeige';
@@ -18,9 +17,7 @@ type Parameter = { params: Promise<{ locale: string; buch: string; teil: string 
  */
 export async function generateStaticParams() {
   const buecher = (await funktionAn('hadith_gesamt')) ? await ladeHadithBuchTeile() : [];
-  const parameter = buecher.flatMap((b) =>
-    Array.from({ length: b.teile - 1 }, (_, i) => ({ buch: String(b.nr), teil: String(i + 2) })),
-  );
+  const parameter = buecher.flatMap((b) => Array.from({ length: b.teile - 1 }, (_, i) => ({ buch: String(b.nr), teil: String(i + 2) })));
   return parameter.length ? parameter : [{ buch: '_', teil: '_' }];
 }
 
@@ -43,16 +40,11 @@ export async function generateMetadata({ params }: Parameter): Promise<Metadata>
   });
 }
 
-/** Teilseite /hadith/bukhari/[buch]/teil/[teil] (AUFTRAG 3.3). URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). */
-export default function HadithBuchTeilSeite({ params }: Parameter) {
-  return (
-    <Suspense fallback={null}>
-      <HadithBuchTeil params={params} />
-    </Suspense>
-  );
-}
-
-async function HadithBuchTeil({ params }: Parameter) {
+/**
+ * Teilseite /hadith/bukhari/[buch]/teil/[teil] (AUFTRAG 3.3). Wie die Buchseite ohne umschließendes `<Suspense>`
+ * (Abweichung von MUSTER 1, Begründung dort): alle Teile sind vorgerendert.
+ */
+export default async function HadithBuchTeilSeite({ params }: Parameter) {
   const { buch, teil } = await params;
   const daten = await lade(buch, teil);
   if (!daten) notFound();
