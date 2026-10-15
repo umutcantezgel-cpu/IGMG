@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 15.10. 10:30 UTC:** `main` = d10295f (Religion-Prüfung wieder grün: arabische Zitate in zwei Protokollen
+  ersetzt). Nacharbeit: N2 fertig (89e4c43), N3 fertig (c812fc7), N1 mit ZWISCHENSTAND 691fd66; Fortsetzungs-Workflow
+  `wf_8a45301c-16c` läuft (N1 fertigstellen, Gegenprüfung N1–N3, S2/S3 mit Behebung N4 in `agent-a2e7dbaf…`). Nach
+  Abbruch: offene Arbeitsbäume als ZWISCHENSTAND committen, Workflow mit `resumeFromRunId` fortsetzen.
 - **Stand 15.10. 05:40 UTC:** Stufe C gelaufen (`berichte/stufe-c.md`, `ABNAHME.md`: 7 erfüllt, 2 AUSNAHME, 12 teilweise),
   `main` = b241611 (nur Unterlagen seit 75cad0a). Läuft: Nacharbeit-Workflow `wf_1e893666-097` (N1 Leistung in
   `agent-ac6673f9…`, N2 Zugänglichkeit/Bewegung/Werte in `agent-a360d92e…`, N3 Funktion/Unterlagen in `agent-a212ace6…`,
