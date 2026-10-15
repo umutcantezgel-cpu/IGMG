@@ -69,9 +69,9 @@ Skript `skripte/tast-koran.mjs`, Ergebnis in `ergebnisse/tast-koran.json`. Gast,
 | Schritt | 1440 | 390 |
 |---|---|---|
 | Tab vom Seitenanfang bis Vers 1 (`p.vers-ar`) | 16 Tabs, Weg über Sprunglink, Kopf und Leiste. Fokusring: `outline none → solid 2px rgb(14,57,41)` | 9 Tabs, Ring gleich |
-| ← (erstes Wort, rechtsläufig) | `span[role=button]` „بِسْمِ“ (w 1), Ring 2px | gleich |
-| ← ← | Wort 3 „ٱلرَّحْمَٰنِ“ | gleich |
-| → | Wort 2 „ٱللَّهِ“ | gleich |
+| ← (erstes Wort, rechtsläufig) | `span[role=button]` [Wort 1 von Vers 1, arabisch] (w 1), Ring 2px | gleich |
+| ← ← | Wort 3 [arabisch] | gleich |
+| → | Wort 2 [arabisch] | gleich |
 | Ende / Pos1 | Wort 4 / Wort 1 | gleich |
 | ←, dann Enter | Wortkarte offen: `popover`, `role=dialog`, Titel „Wort 2 in Vers 1“, Fokus in der Karte, `aria-expanded=true` am Wort | gleich |
 | Tab | „Schließen“ in der Karte, Ring sichtbar | gleich |
