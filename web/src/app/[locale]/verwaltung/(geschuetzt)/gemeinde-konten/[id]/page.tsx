@@ -20,7 +20,16 @@ import {
 import { ladeGemeindeKontoAnsicht } from '@/server/queries/verwaltung/gemeinde-konten';
 
 const MELDUNGEN = ['rollen', 'gesperrt', 'entsperrt'] as const;
-const FEHLER = ['selbst', 'verwaltungskonto', 'administration', 'kindRollen', 'unbekannt', 'fristLaeuft', 'nichtGefunden'] as const;
+const FEHLER = [
+  'selbst',
+  'verwaltungskonto',
+  'administration',
+  'kindRollen',
+  'unbekannt',
+  'fristLaeuft',
+  'nichtGefunden',
+  'elternBezug',
+] as const;
 const zeitpunkt = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
 
 /**

@@ -152,6 +152,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
         'vergeben',
         'passwort',
         'keinElternteil',
+        'unbestaetigt',
         'keineEinwilligung',
         'bereitsKonto',
         'keinZugang',

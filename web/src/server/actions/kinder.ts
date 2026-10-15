@@ -42,14 +42,15 @@ async function elternKontext() {
 }
 
 /**
- * Eltern-Kind-Bezug dieses Kontos: null ohne Bezug, sonst mit Sorgerecht, dem Konto des Kindes (falls vorhanden) und ob
- * es ein Kinderzugang ist (`kindIstKind`, angelegt von den Eltern). Ein eigenes Konto (Einladung „Schüler ab 16“) ist
- * keiner – dessen Passwort und Bestand gehören allein der Person (D-11, S2/S3).
+ * Eltern-Kind-Bezug dieses Kontos: null ohne Bezug, sonst mit Sorgerecht, Bestätigung (`bestaetigtAm`, N4), dem Konto des
+ * Kindes (falls vorhanden) und ob es ein Kinderzugang ist (`kindIstKind`, angelegt von den Eltern). Ein eigenes Konto
+ * (Einladung „Schüler ab 16“) ist keiner – dessen Passwort und Bestand gehören allein der Person (D-11, S2/S3).
  */
 async function bezug(elternId: string, lernendeId: string) {
   const [b] = await db
     .select({
       sorgeberechtigt: schema.elternKind.sorgeberechtigt,
+      bestaetigtAm: schema.elternKind.bestaetigtAm,
       kindBenutzerId: schema.lernende.benutzerId,
       kindIstKind: schema.kontoProfil.istKind,
       sechzehnAm: schema.lernende.sechzehnAm,
@@ -212,6 +213,8 @@ export async function kinderzugangAnlegen(_vorher: ZugangZustand, fd: FormData):
   if (!p.success) return { fehler: 'unbekannt' };
   const b = await bezug(konto.benutzerId, p.data.lernendeId);
   if (!b || !b.sorgeberechtigt) return { fehler: 'keinElternteil' };
+  // N4: Ein neu eingetragener, noch unbestätigter Eltern-Kind-Bezug legt keinen Kinderzugang an
+  if (!b.bestaetigtAm) return { fehler: 'unbestaetigt' };
   if (!(await pruefeRate('kinderzugang', konto.benutzerId, GRENZE)).erlaubt) return { fehler: 'zuViele' };
   const r = await legeKinderkontoAn({
     benutzername: p.data.benutzername,
@@ -230,7 +233,7 @@ const passwortSchema = z.object({ lernendeId: uuid, passwort: z.string().min(PAS
 /**
  * Passwort des Kinderzugangs neu setzen (Eltern mit Sorgerecht); alle Sitzungen des Kindes enden sofort. Nur für
  * Kinderzugänge (von Eltern angelegt) und nur, solange die Eltern noch entscheiden (D-11) – nie für das eigene Konto
- * einer/eines Jugendlichen (S2/S3).
+ * einer/eines Jugendlichen (S2/S3) und nie über einen unbestätigten Eltern-Kind-Bezug (N4).
  */
 export async function kinderPasswortSetzen(_vorher: ZugangZustand, fd: FormData): Promise<ZugangZustand> {
   const { konto } = await elternKontext();
@@ -238,6 +241,7 @@ export async function kinderPasswortSetzen(_vorher: ZugangZustand, fd: FormData)
   if (!p.success) return { fehler: 'passwort' };
   const b = await bezug(konto.benutzerId, p.data.lernendeId);
   if (!b || !b.sorgeberechtigt) return { fehler: 'keinElternteil' };
+  if (!b.bestaetigtAm) return { fehler: 'unbestaetigt' };
   if (!b.kindBenutzerId) return { fehler: 'keinZugang' };
   if (b.eigenesKonto || einwilligungsLage(b.sechzehnAm, berlinerDatum(new Date())) === 'eigene') return { fehler: 'eigenesKonto' };
   if (!(await pruefeRate('kinderzugang', konto.benutzerId, GRENZE)).erlaubt) return { fehler: 'zuViele' };

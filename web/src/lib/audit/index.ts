@@ -13,11 +13,20 @@ export type AuditAktion =
   | 'einladung.erstellt'
   | 'einladung.angenommen'
   | 'einladung.widerrufen'
+  // Nacharbeit N4: Eltern-Einladung an eine Adresse außerhalb der Voranmeldung (Vier-Augen-Prinzip)
+  | 'einladung.freigabe_noetig'
+  | 'einladung.freigegeben'
+  | 'einladung.abgelehnt'
   | 'benutzer.rollen_geaendert'
   // Vier-Augen-Prinzip für Schutzrollen (leitung, kinderschutz; S2/S3)
   | 'benutzer.rolle_beantragt'
   | 'benutzer.rolle_bestaetigt'
   | 'benutzer.rolle_abgelehnt'
+  // Nacharbeit N4: Start (erste Leitung) und Entzug von Schutzrollen (auch religiöse Prüfung) im Vier-Augen-Prinzip
+  | 'benutzer.leitung_start'
+  | 'benutzer.rolle_entzug_beantragt'
+  | 'benutzer.rolle_entzogen'
+  | 'benutzer.rolle_entzug_abgelehnt'
   | 'benutzer.gesperrt'
   | 'benutzer.entsperrt'
   | 'benutzer.zwei_faktor_zurueckgesetzt'
@@ -89,8 +98,10 @@ export type AuditAktion =
   | 'lernende.aufgenommen'
   | 'lernende.gelesen'
   | 'lernende.geaendert'
-  // S2/S3: Eltern-Kind-Bezug durch die Verwaltung beendet
+  // S2/S3: Eltern-Kind-Bezug beendet – seit N4 nur auf Antrag der Verwaltung und mit Bestätigung durch eine zweite Person
+  | 'lernende.elternbezug_beenden_beantragt'
   | 'lernende.elternbezug_beendet'
+  | 'lernende.elternbezug_beenden_abgelehnt'
   | 'lehrplan.geaendert'
   | 'gemeindekonto.gelesen'
   | 'gemeindekonto.rollen_geaendert'

@@ -226,9 +226,13 @@ export default async function GemeindeKonten({ searchParams }: PageProps<'/[loca
                     <span className={pilleNeutral}>{t(`rolle.${e.art}` as never)}</span>
                     {e.lernende ? <span>{t('einladungen.fuer', { name: e.lernende })}</span> : null}
                   </span>
-                  <span className={e.abgelaufen ? 'text-16 font-bold text-fehler' : 'text-16 text-tinte-2'}>
-                    {e.abgelaufen ? t('einladungen.abgelaufen') : t('einladungen.gueltigBis', { datum: zeitpunkt(e.laeuftAb) })}
-                  </span>
+                  {e.wartet ? (
+                    <span className="text-16 font-bold text-warnung">{t('einladungen.wartet')}</span>
+                  ) : (
+                    <span className={e.abgelaufen ? 'text-16 font-bold text-fehler' : 'text-16 text-tinte-2'}>
+                      {e.abgelaufen ? t('einladungen.abgelaufen') : t('einladungen.gueltigBis', { datum: zeitpunkt(e.laeuftAb) })}
+                    </span>
+                  )}
                 </span>
                 {bearbeiten ? (
                   <form action={gemeindeEinladungWiderrufen}>

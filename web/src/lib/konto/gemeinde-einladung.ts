@@ -19,6 +19,10 @@ import { pfadFuer } from '@/i18n/navigation';
  *
  * Idempotent: Gibt es für dieselbe Adresse, Kontoart und Lernende schon eine offene, gültige Einladung, entsteht keine
  * zweite (`neu: false`, ohne Link – der Klartext-Token ist nicht mehr bekannt).
+ *
+ * Mit `freigabeNoetig` (Eltern-Einladung an eine Adresse außerhalb der Voranmeldung, Nacharbeit N4) entsteht die
+ * Einladung ohne gültigen Link und ohne Mail; beides erst bei der Freigabe durch eine zweite Person
+ * (`src/lib/konto/eltern-freigabe.ts`).
  */
 export type GemeindeEinladungArt = 'eltern' | 'lehrkraft' | 'schueler';
 
@@ -30,9 +34,30 @@ export type GemeindeEinladung = {
   gueltigTage: number;
   sprache: MailSprache;
   erstelltVon: string;
+  /** Erst nach Freigabe durch eine zweite Person verschicken (N4). */
+  freigabeNoetig?: boolean;
 };
 
-export type EinladungErgebnis = { id: string; neu: true; link: string } | { id: string; neu: false };
+/** `link: null` = Einladung wartet auf Freigabe (noch kein gültiger Link). */
+export type EinladungErgebnis = { id: string; neu: true; link: string | null } | { id: string; neu: false };
+
+/** Link und Mail „konto-einladung“ zu einem Klartext-Token planen (in der Transaktion des Aufrufers). */
+export async function planeEinladungsMail(
+  tx: Pick<Transaktion, 'insert'>,
+  o: { email: string; token: string; laeuftAb: Date; sprache: MailSprache },
+): Promise<string> {
+  const link = `${basisUrl()}${pfadFuer({ pathname: '/einladung/[token]', params: { token: o.token } }, o.sprache)}`;
+  await planeKontoMail(
+    {
+      an: o.email,
+      vorlage: 'konto-einladung',
+      sprache: o.sprache,
+      daten: { link, gueltigBis: `${datumLang(o.laeuftAb, o.sprache)}, ${uhrzeit(o.laeuftAb, o.sprache)}` },
+    },
+    tx,
+  );
+  return link;
+}
 
 /** Offene, gültige Einladung derselben Adresse, Kontoart und Lernenden (oder null). */
 export async function offeneEinladung(
@@ -62,9 +87,10 @@ export async function erstelleGemeindeEinladung(tx: Transaktion, o: GemeindeEinl
   const email = o.email.trim().toLowerCase();
   const vorhanden = await offeneEinladung({ email, art: o.art, lernendeId: o.lernendeId }, tx);
   if (vorhanden) return { id: vorhanden, neu: false };
+  // Wartet die Einladung auf Freigabe, ist ihr Token unbekannt (verworfen) – der Link entsteht erst bei der Freigabe
   const token = zufallsToken();
+  const freigabe = o.freigabeNoetig === true;
   const laeuftAb = new Date(Date.now() + o.gueltigTage * 86_400_000);
-  const link = `${basisUrl()}${pfadFuer({ pathname: '/einladung/[token]', params: { token } }, o.sprache)}`;
   const [neu] = await tx
     .insert(schema.einladung)
     .values({
@@ -76,24 +102,18 @@ export async function erstelleGemeindeEinladung(tx: Transaktion, o: GemeindeEinl
       tokenHash: sha256(token),
       laeuftAb,
       erstelltVon: o.erstelltVon,
+      freigabeNoetig: freigabe,
+      sprache: o.sprache,
     })
     .returning({ id: schema.einladung.id });
-  await planeKontoMail(
-    {
-      an: email,
-      vorlage: 'konto-einladung',
-      sprache: o.sprache,
-      daten: { link, gueltigBis: `${datumLang(laeuftAb, o.sprache)}, ${uhrzeit(laeuftAb, o.sprache)}` },
-    },
-    tx,
-  );
+  const link = freigabe ? null : await planeEinladungsMail(tx, { email, token, laeuftAb, sprache: o.sprache });
   await protokolliere(
     {
       benutzerId: o.erstelltVon,
       aktion: 'einladung.erstellt',
       zielTyp: 'einladung',
       zielId: neu.id,
-      details: { gemeindeRolle: o.art, mitLernende: o.lernendeId !== null },
+      details: { gemeindeRolle: o.art, mitLernende: o.lernendeId !== null, freigabeNoetig: freigabe },
     },
     tx,
   );

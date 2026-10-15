@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { check, index, jsonb, pgTable, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
+import { boolean, check, index, jsonb, pgTable, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
 import { user } from './auth';
 import { lernende } from './lernen';
 import { gemeindeRolleEnum, organisationEnum, rolleEnum } from './typen';
@@ -49,14 +49,26 @@ export const einladung = pgTable(
     widerrufenAm: timestamp({ withTimezone: true }),
     erstelltVon: text(),
     erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    /**
+     * Vier-Augen-Prinzip für Eltern-Einladungen mit Kindbezug (Nacharbeit N4, S2b-4): Stammt die Adresse nicht aus der
+     * Voranmeldung des Kindes, geht die Einladung erst hinaus, wenn eine zweite Person (Leitung oder Kinderschutz, ohne
+     * Administration, nicht die einladende) bestätigt. Bis dahin gilt kein Link (der Token entsteht erst bei der Freigabe).
+     */
+    freigabeNoetig: boolean().notNull().default(false),
+    freigegebenVon: text(),
+    freigegebenAm: timestamp({ withTimezone: true }),
+    /** Sprache der Einladungsmail (für den Versand erst bei der Freigabe). */
+    sprache: text(),
   },
   (t) => [index('einladung_email_idx').on(t.email)],
 );
 
 /**
- * Offene Vergabe einer Schutzrolle (`leitung`, `kinderschutz`) – Vier-Augen-Prinzip (M-2 der Sicherheitsprüfung S1,
- * S2/S3): Die Administration beantragt, eine zweite Person mit `leitung` oder `kinderschutz` (ohne Administration, nicht
- * die beantragende und nicht die betroffene Person) bestätigt. Erst dann entsteht die Zeile in `rolle_zuweisung`.
+ * Offene Vergabe oder offener Entzug einer Schutzrolle – Vier-Augen-Prinzip (M-2 der Sicherheitsprüfung S1, S2/S3,
+ * Nacharbeit N4): Die Administration beantragt, eine zweite Person mit `leitung` oder `kinderschutz` (ohne
+ * Administration, nicht die beantragende und nicht die betroffene Person) bestätigt. Erst dann entsteht (Vergabe) bzw.
+ * verschwindet (Entzug) die Zeile in `rolle_zuweisung`. Vergabe nur für `leitung`/`kinderschutz`; Entzug zusätzlich für
+ * `religioese_pruefung`.
  */
 export const rollenAntrag = pgTable(
   'rollen_antrag',
@@ -66,11 +78,16 @@ export const rollenAntrag = pgTable(
       .notNull()
       .references(() => user.id, { onDelete: 'cascade' }),
     rolle: rolleEnum().notNull(),
+    art: text().$type<'vergabe' | 'entzug'>().notNull().default('vergabe'),
     beantragtVon: text(),
     beantragtAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [
     unique('rollen_antrag_eindeutig').on(t.benutzerId, t.rolle),
-    check('rollen_antrag_schutzrolle', sql`${t.rolle} in ('leitung', 'kinderschutz')`),
+    check('rollen_antrag_art', sql`${t.art} in ('vergabe', 'entzug')`),
+    check(
+      'rollen_antrag_schutzrolle',
+      sql`${t.rolle} in ('leitung', 'kinderschutz') or (${t.art} = 'entzug' and ${t.rolle} = 'religioese_pruefung')`,
+    ),
   ],
 );

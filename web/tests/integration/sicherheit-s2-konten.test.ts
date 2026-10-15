@@ -11,7 +11,8 @@ import { kontoUmgebung, nachher, umleitung } from './hilfen/konto';
  * - S2a-4 Administration macht sich nicht selbst zur Lehrkraft, Aufsicht, zum Elternteil oder zur/zum Lernenden
  * - S2b-2 Eltern übernehmen oder löschen nicht das eigene Konto einer/eines Jugendlichen (D-11)
  * - S2b-4 Eltern-Einladung mit Kindbezug: kein Link an die Verwaltung, Hinweise an Schutzrollen und bisherige Eltern,
- *   Bezug lässt sich beenden
+ *   Bezug lässt sich beenden (seit N4: Adresse außerhalb der Voranmeldung und Beenden nur mit zweiter Person, weitere
+ *   Fälle in sicherheit-n4-vier-augen.test.ts)
  * - S2b-3 Schutzrollen leitung/kinderschutz nur im Vier-Augen-Prinzip (M-2 aus S1 nicht mehr umgehbar)
  * - S2a-6 (D-11 Übergang) und S2b-8 (Kinderzugang-Löschung über loescheGemeindeKonto)
  * Testdaten fiktiv (G-04).
@@ -192,14 +193,30 @@ describe('S2a-4: Administration wird nicht Lehrkraft, Aufsicht oder Elternteil',
 describe('S2b-4: Eltern-Einladung mit Kindbezug', () => {
   let kindId: string;
   let mutter: Person;
+  let vorstand: Person;
+  const zweitesElternteil = `${randomUUID().slice(0, 8)}@example.test`;
   beforeAll(async () => {
-    kindId = await lernende('Kind Einladung', '2032-04-01');
     mutter = await person('Mutter Bestand', { gemeinde: ['gemeinde', 'eltern'] });
+    vorstand = await person('Vorstand Eltern', { verwaltung: [{ rolle: 'leitung' }] });
+    // Lerndatensatz mit beiden Eltern laut Voranmeldung (Adressen aus der Voranmeldung brauchen keine Freigabe, N4)
+    const v = verschluessele({
+      vorname: 'Kind',
+      nachname: 'Einladung',
+      eltern: [
+        { name: 'Mutter', email: mutter.email },
+        { name: 'Zweites Elternteil', email: zweitesElternteil },
+      ],
+    });
+    const [z] = await db
+      .insert(schema.lernende)
+      .values({ datenVerschluesselt: v.daten, schluesselId: v.schluesselId, anzeigename: 'Kind E.', sechzehnAm: '2032-04-01' })
+      .returning({ id: schema.lernende.id });
+    kindId = z.id;
     await db.insert(schema.elternKind).values({ elternId: mutter.id, lernendeId: kindId, bestaetigtAm: new Date() });
   });
 
   it('kein Link an die Verwaltung; Hinweis an Leitung und Kinderschutz; bisherige Eltern erfahren vom neuen Bezug', async () => {
-    const email = `${randomUUID().slice(0, 8)}@example.test`;
+    const email = zweitesElternteil;
     const vorher = await mailStand();
     als(bildung);
     const r = await gemeindeKonten.gemeindeEinladen(
@@ -230,14 +247,21 @@ describe('S2b-4: Eltern-Einladung mit Kindbezug', () => {
     expect(anMutter.map((m) => m.an)).toEqual([mutter.email]);
   });
 
-  it('die Verwaltung beendet einen Eltern-Kind-Bezug gezielt', async () => {
+  it('die Verwaltung beendet einen Eltern-Kind-Bezug gezielt – auf Antrag, mit Bestätigung durch eine zweite Person (N4)', async () => {
     const alle = await db.select().from(schema.elternKind).where(eq(schema.elternKind.lernendeId, kindId));
     expect(alle).toHaveLength(2);
     const zweit = alle.find((e) => e.elternId !== mutter.id)!;
     als(bildung);
     expect(await umleitung(gemeindeKonten.elternBezugBeenden(formular({ lernendeId: kindId, elternId: zweit.elternId })))).toContain(
-      'meldung=elternBeendet',
+      'meldung=elternBeendenBeantragt',
     );
+    expect(await db.select().from(schema.elternKind).where(eq(schema.elternKind.lernendeId, kindId))).toHaveLength(2);
+    als(vorstand);
+    expect(
+      await umleitung(
+        benutzer.rollenAntragEntscheiden(formular({ art: 'bezug', id: kindId, konto: zweit.elternId, entscheidung: 'bestaetigen' })),
+      ),
+    ).toContain('rollenantrag=bezugBeendet');
     expect((await db.select().from(schema.elternKind).where(eq(schema.elternKind.lernendeId, kindId))).map((e) => e.elternId)).toEqual([
       mutter.id,
     ]);
@@ -368,13 +392,17 @@ describe('S2b-3: Schutzrollen nur im Vier-Augen-Prinzip (M-2)', () => {
   });
 
   it('Start: die erste Leitung wirkt sofort, jede weitere Schutzrolle wartet auf Bestätigung', async () => {
+    // Frische Installation: keine Leitung und noch nie eine (kein Start-Merker, N4)
     await db.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.rolle, 'leitung'));
+    await db.delete(schema.einstellung).where(eq(schema.einstellung.schluessel, schutzrollen.START_MERKER));
     leitung = await person('Vorstand Eins');
     als(admin);
     expect(await benutzer.rollenSpeichern({}, formular({ id: leitung.id, rollen: ['leitung'] }))).toEqual({ ok: true });
     expect(
       (await db.select().from(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, leitung.id))).map((z) => z.rolle),
     ).toEqual(['leitung']);
+    // Der Start ist damit dauerhaft vorbei
+    expect(await db.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, schutzrollen.START_MERKER))).toHaveLength(1);
     const zweit = await person('Zweite Leitung');
     expect(await benutzer.rollenSpeichern({}, formular({ id: zweit.id, rollen: ['leitung'] }))).toEqual({
       ok: true,

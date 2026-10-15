@@ -6,6 +6,7 @@ import { db, schema, type Transaktion } from '@/lib/db';
 import { vergibVerwaltungsrollen } from '@/lib/rechte/schutzrollen';
 import type { Locale } from '@/i18n/routing';
 import { ladeGueltigeEinladung } from '@/server/queries/einladung';
+import { elternEinladungVertraut, stelleZurFreigabe } from './eltern-freigabe';
 import { anzeigenameAus } from './regeln';
 import { meldeAnSorgeberechtigte } from './sicherheitsmail';
 
@@ -19,25 +20,27 @@ import { meldeAnSorgeberechtigte } from './sicherheitsmail';
  */
 export type Einladung = NonNullable<Awaited<ReturnType<typeof ladeGueltigeEinladung>>>;
 
-async function vergibRollen(tx: Transaktion, e: Einladung, benutzerId: string): Promise<void> {
+async function vergibRollen(tx: Transaktion, e: Einladung, benutzerId: string, vertraut: boolean): Promise<void> {
   // Schutzrollen (leitung, kinderschutz) nur über das Vier-Augen-Prinzip (S2/S3)
   await vergibVerwaltungsrollen(tx, benutzerId, e.rollen, e.erstelltVon);
   for (const rolle of e.gemeindeRollen) {
     await tx.insert(schema.gemeindeRolle).values({ benutzerId, rolle, erstelltVon: e.erstelltVon }).onConflictDoNothing();
   }
-  await verknuepfeLernende(tx, e, benutzerId);
+  await verknuepfeLernende(tx, e, benutzerId, vertraut);
 }
 
 /**
- * Bezug auf Lernende (Aufnahme aus einer Voranmeldung, O-L01): Eltern bekommen den Eltern-Kind-Bezug (bestätigt mit
- * der Annahme über den Link aus der Mail), Schüler ab 16 ihr Konto am Lerndatensatz – nur, wenn dieser noch keins hat.
+ * Bezug auf Lernende (Aufnahme aus einer Voranmeldung, O-L01): Eltern bekommen den Eltern-Kind-Bezug, Schüler ab 16 ihr
+ * Konto am Lerndatensatz – nur, wenn dieser noch keins hat. Bestätigt ist der Eltern-Kind-Bezug nur, wenn die Adresse
+ * aus der Voranmeldung stammt oder eine zweite Person die Einladung freigegeben hat (N4) – sonst bleibt er unbestätigt
+ * (kein Kinderzugang, kein Kinderpasswort). Die Annahme selbst lässt unbestätigte Eltern-Einladungen gar nicht erst zu.
  */
-async function verknuepfeLernende(tx: Transaktion, e: Einladung, benutzerId: string): Promise<void> {
+async function verknuepfeLernende(tx: Transaktion, e: Einladung, benutzerId: string, vertraut: boolean): Promise<void> {
   if (!e.lernendeId) return;
   if (e.gemeindeRollen.includes('eltern')) {
     const neu = await tx
       .insert(schema.elternKind)
-      .values({ elternId: benutzerId, lernendeId: e.lernendeId, bestaetigtAm: new Date() })
+      .values({ elternId: benutzerId, lernendeId: e.lernendeId, bestaetigtAm: vertraut ? new Date() : null })
       .onConflictDoNothing()
       .returning({ id: schema.elternKind.elternId });
     // S2/S3: Die schon eingetragenen sorgeberechtigten Eltern erfahren von jedem neuen Elternkonto (ohne Namen)
@@ -93,9 +96,16 @@ export async function nimmEinladungAn(o: {
   passwort: string;
   sprache: Locale;
   einwilligung: string;
-}): Promise<{ ok: true; benutzerId: string } | { ok: false; fehler: 'ungueltig' | 'vorhanden' | 'allgemein' }> {
+}): Promise<{ ok: true; benutzerId: string } | { ok: false; fehler: 'ungueltig' | 'vorhanden' | 'allgemein' | 'freigabe' }> {
   const e = await ladeGueltigeEinladung(o.token);
   if (!e) return { ok: false, fehler: 'ungueltig' };
+  // N4: Eltern-Einladung mit Kindbezug an eine Adresse außerhalb der Voranmeldung ohne Freigabe (ältere Einladungen) →
+  // erst die zweite Person; danach kommt eine neue Mail
+  const vertraut = await elternEinladungVertraut(e);
+  if (!vertraut) {
+    await stelleZurFreigabe(e.id);
+    return { ok: false, fehler: 'freigabe' };
+  }
   if (await kontoZurAdresse(e.email)) return { ok: false, fehler: 'vorhanden' };
   if (!(await beanspruche(e.id))) return { ok: false, fehler: 'ungueltig' };
   let benutzerId: string;
@@ -110,7 +120,7 @@ export async function nimmEinladungAn(o: {
     await db.transaction(async (tx) => {
       // Die Adresse ist durch den Link aus der Einladungsmail nachgewiesen
       await tx.update(schema.user).set({ emailVerified: true }).where(eq(schema.user.id, benutzerId));
-      await vergibRollen(tx, e, benutzerId);
+      await vergibRollen(tx, e, benutzerId, vertraut);
       await tx
         .insert(schema.kontoProfil)
         .values({ benutzerId, anzeigename: anzeigenameAus(e.name), sprache: o.sprache })
@@ -136,7 +146,7 @@ export async function uebernimmEinladung(o: {
   token: string;
   benutzerId: string;
   email: string;
-}): Promise<{ ok: true } | { ok: false; fehler: 'ungueltig' | 'andereAdresse' | 'administration' }> {
+}): Promise<{ ok: true } | { ok: false; fehler: 'ungueltig' | 'andereAdresse' | 'administration' | 'freigabe' }> {
   const e = await ladeGueltigeEinladung(o.token);
   if (!e) return { ok: false, fehler: 'ungueltig' };
   if (e.email.trim().toLowerCase() !== o.email.trim().toLowerCase()) return { ok: false, fehler: 'andereAdresse' };
@@ -144,9 +154,14 @@ export async function uebernimmEinladung(o: {
   // sonst läse die Administration über die Gemeinde-Rolle Chats und Kinderdaten
   if (e.gemeindeRollen.some((r) => r !== 'gemeinde') && (await hatAdministration(o.benutzerId)))
     return { ok: false, fehler: 'administration' };
+  const vertraut = await elternEinladungVertraut(e);
+  if (!vertraut) {
+    await stelleZurFreigabe(e.id);
+    return { ok: false, fehler: 'freigabe' };
+  }
   if (!(await beanspruche(e.id))) return { ok: false, fehler: 'ungueltig' };
   await db.transaction(async (tx) => {
-    await vergibRollen(tx, e, o.benutzerId);
+    await vergibRollen(tx, e, o.benutzerId, vertraut);
     await protokolliere({ benutzerId: o.benutzerId, aktion: 'einladung.angenommen', zielTyp: 'einladung', zielId: e.id }, tx);
   });
   return { ok: true };

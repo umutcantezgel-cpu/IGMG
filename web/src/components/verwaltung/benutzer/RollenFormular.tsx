@@ -9,7 +9,10 @@ import { rollenSpeichern, type BenutzerZustand } from '@/server/actions/benutzer
 import { RollenFelder } from './RollenFelder';
 import { useRollenTexte } from './texte';
 
-/** Rollen eines Kontos ändern (C12): Schutzregeln (eigene/letzte Administration) prüft der Server. */
+/**
+ * Rollen eines Kontos ändern (C12): Schutzregeln (eigene/letzte Administration, Vier-Augen-Prinzip für Vergabe und Entzug
+ * der Schutzrollen) prüft der Server.
+ */
 export function RollenFormular({ id, rollen }: { id: string; rollen: RollenZuweisung[] }) {
   const t = useTranslations('verwaltung.benutzer');
   const rollenTexte = useRollenTexte();
@@ -32,8 +35,15 @@ export function RollenFormular({ id, rollen }: { id: string; rollen: RollenZuwei
             {t(`fehler.${z.fehler}` as never)}
           </Meldung>
         ) : z.ok ? (
-          <Meldung art={z.beantragt?.length ? 'info' : 'erfolg'} fokus>
-            {t(z.beantragt?.length ? 'formular.rollenBeantragt' : 'formular.rollenGespeichert')}
+          <Meldung art={z.beantragt?.length || z.entzugBeantragt?.length ? 'info' : 'erfolg'} fokus>
+            {t(
+              z.beantragt?.length
+                ? 'formular.rollenBeantragt'
+                : z.entzugBeantragt?.length
+                  ? 'formular.entzugBeantragt'
+                  : 'formular.rollenGespeichert',
+            )}
+            {z.beantragt?.length && z.entzugBeantragt?.length ? ` ${t('formular.entzugBeantragt')}` : null}
           </Meldung>
         ) : null}
       </div>

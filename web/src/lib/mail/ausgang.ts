@@ -109,8 +109,13 @@ export async function planeHinweis(
       | 'kanal_fortgesetzt'
       | 'rollenantrag'
       | 'rolle_vergeben'
+      | 'rollenentzug'
+      | 'rolle_entzogen'
+      | 'schutzrolle_gesperrt'
       | 'leitungszuweisung'
       | 'elternbezug'
+      | 'elterneinladung'
+      | 'elternbezug_beenden'
       | 'elternbezug_beendet'
       | 'schuelerkonto';
     pfad: string;
@@ -121,6 +126,23 @@ export async function planeHinweis(
   await tx
     .insert(schema.mailAusgang)
     .values({ vorlage: 'hinweis', sprache: 'de', datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
+}
+
+/**
+ * Hinweis an die betroffene Person eines Verwaltungskontos (Nacharbeit N4, Vorlage „betroffen“, Deutsch): Entzug einer
+ * Schutzrolle beantragt bzw. vollzogen, Konto mit Schutzrolle gesperrt. Nur die Art des Vorgangs und die Rolle, keine
+ * Namen. Geht an die Kontoadresse – auch eines gesperrten Kontos (die Person soll davon erfahren).
+ */
+export async function planeBetroffenenHinweis(
+  o: { an: string; art: 'rollenentzug' | 'rolle_entzogen' | 'gesperrt'; rolle?: string },
+  tx: Pick<typeof db, 'insert'> = db,
+): Promise<boolean> {
+  if (istUnzustellbar(o.an)) return false;
+  const paket = verschluessele({ an: o.an, daten: { art: o.art, rolle: o.rolle ?? '' } });
+  await tx
+    .insert(schema.mailAusgang)
+    .values({ vorlage: 'betroffen', sprache: 'de', datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
+  return true;
 }
 
 /**
@@ -200,6 +222,20 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       knopf: t('hinweis.knopf'),
       hinweis: t('hinweis.hinweis'),
       link: `${basisUrl()}${/^\/verwaltung\//.test(inhalt.daten.pfad ?? '') ? inhalt.daten.pfad : '/verwaltung'}`,
+    });
+  }
+  if (vorlage === 'betroffen') {
+    // Hinweis an die betroffene Person (N4): Art des Vorgangs und Rolle, keine Namen
+    const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
+    const tr = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.rollen');
+    const rolle = (ROLLEN as readonly string[]).includes(inhalt.daten.rolle ?? '') ? tr(inhalt.daten.rolle) : '';
+    const art = t(`betroffenArt.${inhalt.daten.art}`, { rolle });
+    return benachrichtigungMail({
+      betreff: t('betroffen.betreff', { art }),
+      text: t('betroffen.text', { art }),
+      knopf: t('betroffen.knopf'),
+      hinweis: t('betroffen.hinweis'),
+      link: `${basisUrl()}/verwaltung/konto`,
     });
   }
   if (vorlage === 'benachrichtigung') {

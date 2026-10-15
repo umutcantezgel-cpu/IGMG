@@ -5,12 +5,19 @@
   - `c38977e` Chat und Kinderschutz (S2a-1, -2, -3, -5, -7, -8)
   - `2759a4a` Konten, Schutzrollen, Freigaben, Passwort-Links, Sicherung (S2a-4, -6; S2b-1 … -4, -6; S3-1 … -4)
   - `c56bc6e` generierte Rechte-Matrix der Gemeinde-Plattform, Seitenfreigabe, Schalter `konten` (S2b-5, S3-3)
+  - Nachtrag nach der Gegenprüfung der Behebung: Commit „Nacharbeit Stufe C, N4: Mangel der Gegenprüfung behoben – …“
+    (Abschnitt 2.2; M-2/S2b-3 Start-Ausnahme, S2b-4 Zweitadresse und stilles Entfernen der Eltern)
 - Migration `0013_sicherheit_s2_s3` (Tabelle `rollen_antrag`; Spalten `chat_kanal.kinderschutz_pause`,
   `chat_meldung.gemeldete_person`, `chat_meldung.gegen_leitung`; Bestandsdaten nachgetragen, archivierte Gruppen
-  nachträglich geschlossen).
+  nachträglich geschlossen) und `0014_vier_augen_n4` (`rollen_antrag.art` Vergabe/Entzug, auch für
+  `religioese_pruefung`; `einladung.freigabe_noetig`, `freigegeben_von`, `freigegeben_am`, `sprache`;
+  `eltern_kind.beenden_beantragt_von`, `beenden_beantragt_am`; Start-Merker `einstellung` „schutzrollen_start“ für
+  Installationen mit Leitung).
 - **Urteil:** Alle 11 gegengeprüften Befunde ab „mittel“ (darunter 3× „hoch“) sind behoben und durch Regressionstests
-  belegt. Von den 11 Befunden „niedrig“ ohne Gegenprüfung sind 6 behoben, 1 teilweise, 4 offen (Restrisiken unten).
-  **Offen hoch/kritisch: 0.**
+  belegt. Die Gegenprüfung der Behebung fand zwei Umgehungen (M-2/S2b-3 über die Start-Ausnahme; S2b-4 über eine eigene
+  Zweitadresse und das stille Entfernen der Mutter); beide sind behoben und mit den Wegen des Prüfers als
+  Regressionstests belegt (Abschnitt 2.2). Von den 11 Befunden „niedrig“ ohne Gegenprüfung sind 6 behoben, 1 teilweise,
+  4 offen (Restrisiken unten). **Offen hoch/kritisch: 0.**
 
 ---
 
@@ -37,9 +44,9 @@ Schwere: Prüfer → Gegenprüfung. „Test“ nennt den Regressionstest im Repo
 | S2a-4 | Administration (auch Bildung) macht sich zur Lehrkraft/Aufsicht/zum Elternteil | mittel → **mittel** | echt | behoben (Rest: Zweitkonto, s. 4) | `2759a4a` | `sicherheit-s2-konten.test.ts` „S2a-4“ |
 | S2a-3 | Ratengrenze S-13 mit parallelen Anfragen überschreitbar | mittel → **mittel** | echt | behoben | `c38977e` | `sicherheit-s2-chat.test.ts` „S2a-3“ (40 parallel → 10) |
 | S2b-2 | Elternteil übernimmt/löscht eigenes Konto einer/eines Jugendlichen ab 16 | hoch → **hoch** | echt | behoben | `2759a4a` | `sicherheit-s2-konten.test.ts` „S2b-2“ |
-| S2b-4 | Bildung macht sich per Eltern-Einladung zum sorgeberechtigten Elternteil | mittel → **mittel** | echt | behoben (Rest: Zweitadresse, s. 4) | `2759a4a` | `sicherheit-s2-konten.test.ts` „S2b-4“ |
+| S2b-4 | Bildung macht sich per Eltern-Einladung zum sorgeberechtigten Elternteil | mittel → **mittel** | echt | behoben; nach Gegenprüfung auch über Zweitadresse und stilles Entfernen der Eltern (2.2) | `2759a4a`, N4-Nachtrag | `sicherheit-s2-konten.test.ts` „S2b-4“; `sicherheit-n4-vier-augen.test.ts` „(B)“ |
 | S2b-1 | Vier-Augen-Prinzip über die Warteschlange „Freigaben“ umgehbar | mittel → **mittel** | echt | behoben | `2759a4a` | `sicherheit-s2-freigabe.test.ts` |
-| S2b-3 | M-2 umgehbar: Administration gibt sich `leitung`, vergibt `kinderschutz` | mittel → **mittel** | echt | behoben (Vier-Augen) | `2759a4a` | `sicherheit-s2-konten.test.ts` „S2b-3“; `verwaltung-benutzer.test.ts` (M-2); `rechte-matrix.test.ts` (`rollenAntragEntscheiden`) |
+| S2b-3 | M-2 umgehbar: Administration gibt sich `leitung`, vergibt `kinderschutz` | mittel → **mittel** | echt | behoben (Vier-Augen); nach Gegenprüfung auch über Entzug/Löschen der Leitung und Start-Ausnahme (2.2) | `2759a4a`, N4-Nachtrag | `sicherheit-s2-konten.test.ts` „S2b-3“; `sicherheit-n4-vier-augen.test.ts` „(A)“; `verwaltung-benutzer.test.ts` (M-2); `rechte-matrix.test.ts` (`rollenAntragEntscheiden`) |
 | S3-1 | Passwort-Reset-Token im Klartext; Leserolle reicht zur Kontoübernahme | mittel → **mittel** | echt | behoben | `2759a4a` | `sicherheit-s3.test.ts` |
 | S3-2 | Sicherung meldet „ok“ trotz Fehlschlag, Rotation löscht gute Sicherungen; Spiegel lädt private Blobs nie | mittel → **mittel** | echt | behoben | `2759a4a` | `tests/unit/betrieb-sicherung.test.ts` |
 | S2a-6 | D-11 Übergang: Eltern heben den Widerruf der/des Jugendlichen auf | niedrig | – | behoben | `2759a4a` | `sicherheit-s2-konten.test.ts` „S2a-6“; `mein-bereich-lernen.test.ts` (Übergang) |
@@ -109,6 +116,12 @@ Rolle Leitung oder Kinderschutz, ohne Administration, weder beantragend noch bet
 Bestätigen/Ablehnen auf „Gemeinde im Blick“ und „Kinderschutz“ (`rollenAntragEntscheiden`); „Benutzer und Rollen“ zeigt
 offene Anträge. Jeder Antrag und jede Vergabe geht als Hinweis an Leitung und Kinderschutz; Audit mit neuen Aktionen.
 
+Nachtrag N4 zu S2a-4/S2b-4: Seit der Gegenprüfung (2.2) gehen Eltern-Einladungen an Adressen außerhalb der
+Voranmeldung erst nach Freigabe durch eine zweite Person hinaus, und „Eltern-Kind-Bezug beenden“ ist nur noch ein Antrag.
+
+Nachtrag N4 zu S2b-3: Auch der Entzug von Leitung, Kinderschutz und religiöser Prüfung bei anderen Konten braucht die
+zweite Person; die Start-Ausnahme gilt nur, solange noch nie eine Leitung wirksam war (dauerhafter Merker), siehe 2.2.
+
 **S2b-1 Vier-Augen in „Freigaben“.** `entscheideFreigabe` liest vor dem Freigeben `verfasstVon` der Zielzeile
 (gemeinsamer Zielselektor für alle sechs religiösen Inhaltsarten) und lehnt mit `vierAugen` ab; dieselbe Bedingung steht
 im UPDATE (kein Wettlauf). Gilt damit auch für Elifbe-Lektionen und besondere Tage über die Warteschlange.
@@ -135,6 +148,67 @@ meldet dann „fehler“.
 Centrifugo nur `CENTRIFUGO_*`); `WARTUNG_TOKEN` geht per Standardeingabe an curl, das SMTP-Passwort nicht mehr als
 Argument; `.env.beispiel` nennt das Blob-Token richtig (lesen und schreiben).
 
+### 2.2 Gegenprüfung der Behebung: zwei Umgehungen, behoben (Nachtrag N4)
+
+Die Gegenprüfung der Behebung (Wegwerf-Nachstellung des Prüfers im Scratchpad, `n4-pruef/m2-start.test.ts`) fand zwei
+Wege, auf denen die Behebung von S2b-3 und S2b-4 nicht wirkte. Beide Wege laufen jetzt als Regressionstests in
+`tests/integration/sicherheit-n4-vier-augen.test.ts` (13 Fälle); die Nachstellung des Prüfers scheitert an allen drei
+Stellen (Leitung des Vorstands bleibt, Drittkonto ohne Kinderschutz; keine Einladungsmail an die Zweitadresse).
+
+**(A) M-2/S2b-3 über die Start-Ausnahme.** Weg: Die Administration entzog allen Leitungskonten die Rolle (Rollen
+speichern oder Konto löschen, ohne Bestätigung und ohne Mail); danach galt „es gibt keine Leitung“ wieder als Start, eine
+Leitung für ein Zweitkonto wirkte sofort und bestätigte Kinderschutz für ein Drittkonto. Behebung
+(`src/lib/rechte/schutzrollen.ts`, `src/server/actions/benutzer.ts`):
+- **Dauerhafter Start-Merker** `einstellung` „schutzrollen_start“: gesetzt, sobald die erste Leitung über die
+  Start-Ausnahme wirkt, eine Leitung bestätigt wird oder eine Leitung aus dem Bestand angetroffen wird (Migration für
+  vorhandene Installationen, sonst beim nächsten Vorgang unter der Sperre). Die Start-Ausnahme gilt nur ohne Merker und
+  ohne Leitung – eine entzogene Leitung bringt sie nie zurück. Kein Formular schreibt oder löscht diesen Schlüssel.
+- **Entzug nur im Vier-Augen-Prinzip:** Fallen `leitung`, `kinderschutz` oder `religioese_pruefung` bei einem anderen
+  Konto weg, entsteht ein Antrag (`rollen_antrag.art = 'entzug'`); die Rolle bleibt bis zur Bestätigung durch eine
+  zweite Person (Leitung oder Kinderschutz, ohne Administration, weder beantragend noch betroffen) wirksam. Wird die
+  Rolle wieder gewählt, verfällt der Antrag. Eigene Rollen gibt man sofort ab; vor dem Start wirkt der Entzug sofort
+  (es gibt noch niemanden, der bestätigen könnte). Leitung/Kinderschutz mit offenem Entzug bekommt keine Administration
+  dazu (`entzugVorAdministration`).
+- **Löschen erst nach dem Entzug:** `kontoLoeschen` lehnt Konten mit diesen Rollen ab (`fehler=schutzrolle`), geprüft in
+  der Transaktion.
+- **Mails:** Beim Antrag und beim vollzogenen Entzug eine Mail an die betroffene Person (neue Verwaltungsvorlage
+  `betroffen`: Art und Rolle, keine Namen) und ein Hinweis an Leitung und Kinderschutz (`rollenentzug`,
+  `rolle_entzogen`). Die Sperre eines Kontos mit Schutzrolle bleibt der Notweg, meldet sich aber ebenso
+  (`betroffen`/`gesperrt`, Hinweis `schutzrolle_gesperrt`).
+- Bestätigen/Ablehnen auf „Gemeinde im Blick“ und „Kinderschutz“ (Abschnitt „Bestätigen (Vier-Augen-Prinzip)“,
+  Vergabe und Entzug getrennt beschriftet); „Benutzer und Rollen“ zeigt offene Entzüge. Audit:
+  `benutzer.leitung_start`, `benutzer.rolle_entzug_beantragt`, `benutzer.rolle_entzogen`,
+  `benutzer.rolle_entzug_abgelehnt`.
+
+**(B) S2b-4 über eine eigene Zweitadresse; stilles Entfernen der Mutter.** Weg: Bildung lud eine eigene Zweitadresse
+als Elternteil mit Kindbezug ein, nahm an und setzte das Kinderpasswort; vorher entfernte `elternBezugBeenden` die echte
+Mutter ohne Mail und ohne Bestätigung. Behebung (`src/lib/konto/eltern-freigabe.ts`, `gemeinde-konten.ts`,
+`src/lib/konto/einladung.ts`, `kinder.ts`, `kinderkonto.ts`):
+- **Eltern-Einladung außerhalb der Voranmeldung wartet:** Stammt die Adresse nicht aus den Eltern-Adressen der
+  Voranmeldung des Kindes (verschlüsselter Lerndatensatz, Groß-/Kleinschreibung egal), entsteht die Einladung ohne
+  gültigen Link und ohne Mail (`einladung.freigabe_noetig`); Hinweis `elterneinladung` an Leitung und Kinderschutz.
+  Erst wenn eine zweite Person (Leitung oder Kinderschutz, ohne Administration, nicht die einladende und nicht die
+  eingeladene Adresse) bestätigt, entstehen neuer Token und Mail in der gewählten Sprache; Ablehnen widerruft.
+  `ladeGueltigeEinladung` lässt wartende Einladungen nicht zu. Adressen aus der Voranmeldung (auch die Aufnahme) gehen
+  wie bisher sofort hinaus.
+- **Annahme prüft erneut:** Eine ältere Eltern-Einladung (vor N4) an eine fremde Adresse wird beim Annehmen (neues Konto
+  oder Übernahme) zur Freigabe zurückgestellt (`freigabe`, Text de/tr/en); der alte Link gilt dann nicht mehr.
+- **Bezug beenden nur auf Antrag:** `elternBezugBeenden` vermerkt nur den Antrag (`eltern_kind.beenden_beantragt_*`),
+  schreibt dem Elternkonto in seiner Sprache (`konto-elternbezug-beenden`) und gibt Leitung und Kinderschutz einen
+  Hinweis. Erst die Bestätigung durch eine zweite Person (nicht die beantragende, nicht das Elternkonto) beendet den
+  Bezug, mit Mail an das Elternkonto (`konto-elternbezug-beendet`); Ablehnen nimmt den Antrag zurück. Die Kontoart
+  Eltern lässt sich einem Konto nicht mehr still nehmen, solange es mit Kindern verknüpft ist (`fehler=elternBezug`).
+- **Unbestätigter Bezug:** Kinderzugang anlegen (`kinderzugangAnlegen`, `legeKinderkontoAn`) und Kinderpasswort setzen
+  verlangen einen bestätigten Eltern-Kind-Bezug (`bestaetigtAm`); bestätigt ist er nur nach Annahme einer Einladung an
+  eine Adresse aus der Voranmeldung oder nach Freigabe (`unbestaetigt`, Text de/tr/en).
+- Verwaltung: Lernende › Eltern zeigt „Wartet auf Bestätigung“, „Beenden beantragt“, „Noch nicht bestätigt“;
+  Gemeinde-Konten zeigt wartende Einladungen. Audit: `einladung.freigabe_noetig`, `einladung.freigegeben`,
+  `einladung.abgelehnt`, `lernende.elternbezug_beenden_beantragt`, `lernende.elternbezug_beenden_abgelehnt`.
+
+Die Entscheidungen laufen über die bestehende Action `rollenAntragEntscheiden` (Feld `art`: `rolle`, `einladung`,
+`bezug`) – dieselbe Rechteprüfung wie bisher (`verwaltung.betreten`, dann Leitung oder Kinderschutz ohne
+Administration, weder beantragend noch betroffen); die Rechte-Matrix-Tests bleiben unverändert gültig.
+
 ## 3 Weitere Aufgaben des Pakets
 
 - **Rechte-Matrix (Z-13-Lücke):** `tests/integration/verwaltung/rechte-matrix-gemeinde.test.ts` – generiert für die 17
@@ -152,15 +226,25 @@ Argument; `.env.beispiel` nennt das Blob-Token richtig (lesen und schreiben).
 
 ## 4 Restrisiken
 
-1. **Zweitkonten (S2a-4, S2b-4, S2b-3):** Wer Administration oder Bildung hat, kann weiterhin eine eigene Zweitadresse
-   einladen (Lehrkraft-Einladungen ohne Kindbezug geben den Link zurück) und dieses Konto als Aufsicht zuweisen bzw. als
-   Elternteil einladen. Das ist technisch nicht von einer echten Person zu unterscheiden. Gemildert durch: Hinweis-Mails an
-   alle Konten mit Leitung und Kinderschutz bei jeder Leitungszuweisung und Einladung mit Kindbezug, Mail an die
-   bisherigen Eltern, Sichtbarkeit der Leitung in der Gruppe, Audit, gezieltes Beenden eines Eltern-Kind-Bezugs. Ein
-   Vier-Augen-Prinzip für Eltern-Einladungen (Abgleich mit den Adressen der Voranmeldung) ist nicht umgesetzt.
-2. **Start der Schutzrollen:** Solange es keine Leitung gibt, wirkt die erste vergebene Leitung sofort. Danach braucht jede
-   Schutzrolle eine zweite Person. Bestehende Konten, die schon Administration und Leitung zugleich haben, bestätigen
-   nichts; beim nächsten Speichern ihrer Rollen verlangt die Oberfläche die Trennung.
+1. **Zweitkonten (S2a-4, S2b-3):** Wer Administration oder Bildung hat, kann weiterhin eine eigene Zweitadresse als
+   Lehrkraft einladen (ohne Kindbezug gibt es den Link zurück) und dieses Konto als Aufsicht zuweisen; ebenso eine
+   Einladung „Schüler ab 16“ an eine eigene Adresse (die Voranmeldung kennt keine Adresse der/des Jugendlichen). Das ist
+   technisch nicht von einer echten Person zu unterscheiden. Gemildert durch: Hinweis-Mails an alle Konten mit Leitung
+   und Kinderschutz bei jeder Leitungszuweisung und jeder Einladung mit Kindbezug, Sichtbarkeit der Leitung in der
+   Gruppe, Audit. Eltern-Einladungen an Adressen außerhalb der Voranmeldung und das Beenden eines Eltern-Kind-Bezugs
+   brauchen seit N4 eine zweite Person (2.2). Rest: Eine Voranmeldung, die Bildung selbst über das öffentliche Formular
+   einreicht und aufnimmt, ist ein neuer Lerndatensatz mit „eigenen“ Eltern-Adressen – ihr Zugang beschränkt sich auf
+   die Gruppe, der Bildung diesen Datensatz zuordnet (Hinweis an die Schutzrollen nur bei Einladungen über die
+   Verwaltung, nicht bei der Aufnahme).
+2. **Start der Schutzrollen:** Solange noch nie eine Leitung wirksam war, wirkt die erste vergebene Leitung sofort;
+   danach (dauerhafter Merker) braucht jede Vergabe und jeder Entzug eine zweite Person. Gibt es niemanden mehr, der
+   bestätigen kann (alle Leitungen und Kinderschutzkonten gesperrt oder per Entzug entfernt), bleiben neue Schutzrollen
+   unbestätigt – Wiederherstellung dann nur über die Datenbank (Betrieb, MENSCHEN). Bestehende Konten, die schon
+   Administration und Leitung zugleich haben, bestätigen nichts; beim nächsten Speichern ihrer Rollen verlangt die
+   Oberfläche die Trennung (der Entzug der Leitung wartet dann auf die zweite Person). Die Sperre eines Kontos mit
+   Schutzrolle bleibt ohne Bestätigung möglich (Notweg), meldet sich aber bei der Person und den Schutzrollen.
+   Ende-zu-Ende-Tests, die ein Konto mit `leitung` per Einladung anlegen, brauchen eine frische Datenbank (sonst wartet
+   die Rolle auf Bestätigung).
 3. **Freigaben-Warteschlange:** zeigt eigene Einträge weiter mit „Freigeben“; der Server lehnt mit Hinweis ab.
 4. **S2a-7:** Die Leitung entfernt eigene Nachrichten nicht mehr; eine Aufbewahrung entfernter Texte für kinderschutz
    (D-03 „außer bei Meldung“) ist nicht umgesetzt – andere Leitungspersonen entfernen weiter sofort.
@@ -172,7 +256,9 @@ Argument; `.env.beispiel` nennt das Blob-Token richtig (lesen und schreiben).
    Alle betroffenen Funktionen mit Personendaten sind in der Produktion per Schalter aus.
 7. **Sicherung ohne Docker geprüft:** Die Skripte laufen im Unit-Test mit Platzhaltern für `pg_dump`/`age`; ein Lauf mit
    echtem Postgres und age im Gemeindehaus steht aus (LIESMICH Schritte 6–8).
-8. **Übersetzungen:** neue tr/en-Texte sind Entwürfe und in `web/messages/neu-uebersetzt.json` gemeldet (Prüfung K-02).
+8. **Übersetzungen:** neue tr/en-Texte sind Entwürfe und in `web/messages/neu-uebersetzt.json` gemeldet (Prüfung K-02),
+   auch die N4-Texte (`konto.einladung.freigabe`, `konto.mails.elternbezugBeenden.*`, `konto.mails.elternbezugBeendet.*`,
+   `kinder.detail.zugang.fehler.unbestaetigt`).
 
 ## 5 Prüfungen
 
@@ -186,4 +272,11 @@ Argument; `.env.beispiel` nennt das Blob-Token richtig (lesen und schreiben).
 | `pnpm sprachen:pruefen` | grün (2951 Schlüssel de/tr/en; 4064 Verwaltung) |
 | `node _gemeinde/werkzeuge/religion-pruefung.mjs` (Haupt-Checkout und Arbeitsbaum) | grün (5317 bzw. 5331 Dateien) |
 | `docker compose config --quiet` (beide Profile, Kopie mit `.env.beispiel`) | rc 0 |
+| **Nachtrag N4 (Gegenprüfung):** `pnpm typen`; `eslint` und `prettier --check` der geänderten Dateien | grün |
+| N4: `sicherheit-n4-vier-augen` (neu, 13 Fälle: Weg des Prüfers zu M-2 und S2b-4, Entzug, Merker, Sperre, Freigabe, Altbestand, Bezug beenden, unbestätigter Bezug, Mailversand) | grün |
+| N4: betroffene Integrationstests (`sicherheit-s2-konten`, `konten`, `mein-bereich-lernen`, `verwaltung-benutzer`, `gemeinde-konten`, `verwaltung-aufnahme`, `lernkette`, `datenschutz-konten`, `gruppen-wahrheitstafel`, `verwaltung/rechte-matrix`, `verwaltung/rechte-matrix-gemeinde`, `verwaltung-lernen`) | grün; Fixtures auf bestätigte Bezüge umgestellt, S2b-4-Fälle auf Freigabe bzw. Antrag |
+| N4: `vitest run --project unit` | 96 Dateien, 1445 grün + 3 erwartet fehlgeschlagen |
+| N4: `vitest run --project integration` (vollständig, 1497 s) | 67 Dateien grün, 1 übersprungen; 2630 Tests grün, 2 erwartet fehlgeschlagen, 4 übersprungen |
+| N4: Nachstellung des Prüfers (`n4-pruef/m2-start.test.ts`) gegen den neuen Stand | alle drei Angriffe scheitern |
+| N4: `pnpm sprachen:pruefen`; `node _gemeinde/werkzeuge/religion-pruefung.mjs` | grün |
 | `sh -n`, `dash -n`, `bash -n` der Kit-Skripte; `node --check spiegel.mjs` | ok |

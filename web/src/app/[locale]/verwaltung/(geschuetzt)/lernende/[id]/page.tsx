@@ -28,7 +28,7 @@ import { setzeLernendeStatus } from '@/server/actions/lernende';
 import { ladeGruppenAuswahl } from '@/server/queries/verwaltung/gruppen';
 import { ladeLernendeDetail } from '@/server/queries/verwaltung/lernende';
 
-const MELDUNGEN = ['status', 'mitglied', 'mitgliedEntfernt', 'widerrufen', 'elternBeendet'] as const;
+const MELDUNGEN = ['status', 'mitglied', 'mitgliedEntfernt', 'widerrufen', 'elternBeendet', 'elternBeendenBeantragt'] as const;
 const zeitpunkt = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
 
 /**
@@ -145,11 +145,14 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                         {e.sorgeberechtigt ? <span className={pilleGut}>{t('detail.sorgeberechtigt')}</span> : null}
                         {e.bestaetigtAm ? (
                           <span className={pilleNeutral}>{t('detail.bestaetigtAm', { datum: datumLang(e.bestaetigtAm, 'de') })}</span>
-                        ) : null}
+                        ) : (
+                          <span className={pilleWarnung}>{t('detail.unbestaetigt')}</span>
+                        )}
+                        {e.beendenBeantragtAm ? <span className={pilleWarnung}>{t('detail.beendenBeantragt')}</span> : null}
                         {e.gesperrt ? <span className={pilleFehler}>{t('detail.gesperrt')}</span> : null}
                       </span>
                     </span>
-                    {einladen ? (
+                    {einladen && !e.beendenBeantragtAm ? (
                       <form action={elternBezugBeenden}>
                         <input type="hidden" name="lernendeId" value={l.id} />
                         <input type="hidden" name="elternId" value={e.benutzerId} />
@@ -181,7 +184,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                                 ? pilleGut
                                 : e.stand === 'offen'
                                   ? pilleNeutral
-                                  : e.stand === 'abgelaufen'
+                                  : e.stand === 'abgelaufen' || e.stand === 'wartet'
                                     ? pilleWarnung
                                     : pilleFehler
                             }
@@ -193,7 +196,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                           ) : null}
                         </span>
                       </span>
-                      {e.stand === 'offen' && einladen ? (
+                      {(e.stand === 'offen' || e.stand === 'wartet') && einladen ? (
                         <form action={gemeindeEinladungWiderrufen}>
                           <input type="hidden" name="id" value={e.id} />
                           <input type="hidden" name="lernende" value={l.id} />

@@ -14,11 +14,11 @@ import { synthetischeAdresse } from './regeln';
  *
  * KEINE Server Action: Aufrufer (Eltern-Bereich, Verwaltung) prüfen vorher selbst, dass `elternBenutzerId` die
  * angemeldete Person ist (`verlangeKontoRecht(['eltern'])`) bzw. die Verwaltung das Recht hat. Hier wird zusätzlich
- * geprüft: Eltern-Kind-Bezug vorhanden, gültige (nicht widerrufene) Einwilligung „kinderkonto“ dieses Elternteils
+ * geprüft: Eltern-Kind-Bezug vorhanden und bestätigt, gültige (nicht widerrufene) Einwilligung „kinderkonto“ dieses Elternteils
  * (S-03), Lernende ohne eigenes Konto, Benutzername gültig und frei.
  */
 export type KinderkontoFehler =
-  BenutzernameFehler | 'vergeben' | 'passwort' | 'keinElternteil' | 'keineEinwilligung' | 'bereitsKonto' | 'unbekannt';
+  BenutzernameFehler | 'vergeben' | 'passwort' | 'keinElternteil' | 'unbestaetigt' | 'keineEinwilligung' | 'bereitsKonto' | 'unbekannt';
 
 /** Ist der Benutzername frei? Nur serverseitig (kein offener Endpunkt, keine Aufzählung über HTTP). */
 export async function benutzernameFrei(benutzername: string): Promise<boolean> {
@@ -40,12 +40,18 @@ export async function legeKinderkontoAn(o: {
   if (o.passwort.length < PASSWORT_MIN || o.passwort.length > 128) return { ok: false, fehler: 'passwort' };
 
   const [bezug] = await db
-    .select({ anzeigename: schema.lernende.anzeigename, benutzerId: schema.lernende.benutzerId })
+    .select({
+      anzeigename: schema.lernende.anzeigename,
+      benutzerId: schema.lernende.benutzerId,
+      bestaetigtAm: schema.elternKind.bestaetigtAm,
+    })
     .from(schema.elternKind)
     .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
     .where(and(eq(schema.elternKind.elternId, o.elternBenutzerId), eq(schema.elternKind.lernendeId, o.lernendeId)))
     .limit(1);
   if (!bezug) return { ok: false, fehler: 'keinElternteil' };
+  // N4: nur über einen bestätigten Eltern-Kind-Bezug (Voranmeldung oder Freigabe durch eine zweite Person)
+  if (!bezug.bestaetigtAm) return { ok: false, fehler: 'unbestaetigt' };
   if (bezug.benutzerId) return { ok: false, fehler: 'bereitsKonto' };
 
   const [einwilligung] = await db

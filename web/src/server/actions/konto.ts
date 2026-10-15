@@ -349,7 +349,13 @@ export async function gemeindeEinladungAnnehmen(_vorher: KontoZustand, daten: Fo
   if (!r.ok)
     return {
       fehler:
-        r.fehler === 'ungueltig' ? 'einladung.ungueltig' : r.fehler === 'vorhanden' ? 'einladung.vorhanden' : 'einladung.fehlerAllgemein',
+        r.fehler === 'ungueltig'
+          ? 'einladung.ungueltig'
+          : r.fehler === 'vorhanden'
+            ? 'einladung.vorhanden'
+            : r.fehler === 'freigabe'
+              ? 'einladung.freigabe'
+              : 'einladung.fehlerAllgemein',
     };
   redirect(pfadFuer({ pathname: '/anmelden', query: { hinweis: 'eingeladen' } }, sprache));
 }
@@ -369,7 +375,9 @@ export async function gemeindeEinladungUebernehmen(_vorher: KontoZustand, daten:
           ? 'einladung.andereAdresse'
           : r.fehler === 'administration'
             ? 'einladung.administration'
-            : 'einladung.ungueltig',
+            : r.fehler === 'freigabe'
+              ? 'einladung.freigabe'
+              : 'einladung.ungueltig',
     };
   redirect(pfadFuer('/mein-bereich', sprache));
 }

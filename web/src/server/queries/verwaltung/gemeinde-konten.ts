@@ -225,6 +225,8 @@ export type GemeindeEinladungZeile = {
   lernende: string | null;
   laeuftAb: Date;
   abgelaufen: boolean;
+  /** Wartet auf die Freigabe durch eine zweite Person (Eltern-Einladung außerhalb der Voranmeldung, N4) */
+  wartet: boolean;
 };
 
 /** Offene Einladungen in Gemeinde-Konten (nur Gemeinde-Rollen, ohne Verwaltungsrollen). */
@@ -238,6 +240,8 @@ export async function ladeOffeneGemeindeEinladungen(): Promise<GemeindeEinladung
       gemeindeRollen: e.gemeindeRollen,
       lernende: schema.lernende.anzeigename,
       laeuftAb: e.laeuftAb,
+      freigabeNoetig: e.freigabeNoetig,
+      freigegebenAm: e.freigegebenAm,
     })
     .from(e)
     .leftJoin(schema.lernende, eq(schema.lernende.id, e.lernendeId))
@@ -259,5 +263,6 @@ export async function ladeOffeneGemeindeEinladungen(): Promise<GemeindeEinladung
     lernende: z.lernende,
     laeuftAb: z.laeuftAb,
     abgelaufen: z.laeuftAb.getTime() <= jetzt,
+    wartet: z.freigabeNoetig && !z.freigegebenAm,
   }));
 }

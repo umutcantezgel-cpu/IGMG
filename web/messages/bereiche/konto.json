@@ -162,6 +162,7 @@
         "uebernehmen": "Einladung annehmen",
         "andereAdresse": "Sie sind mit einem anderen Konto angemeldet. Diese Einladung gilt für eine andere E-Mail-Adresse – bitte melden Sie sich zuerst ab.",
         "administration": "Konten mit der Rolle Administration nehmen diese Einladung nicht an. Bitte nutzen Sie ein eigenes Gemeinde-Konto ohne Verwaltungsrolle.",
+        "freigabe": "Diese Einladung muss noch eine zweite Person der Gemeinde bestätigen. Danach bekommen Sie eine neue E-Mail mit einem neuen Link.",
         "fehlerPasswort": "Das Passwort braucht mindestens 12 Zeichen.",
         "fehlerGleich": "Die beiden Passwörter stimmen nicht überein.",
         "fehlerEinwilligung": "Bitte stimmen Sie der Datenschutzerklärung zu.",
@@ -246,6 +247,18 @@
           "text": "Für den Zugang Ihres Kindes bei der IGMG Wetzlar wurde am {zeitpunkt} von einem anderen Elternkonto ein neues Passwort gesetzt.",
           "knopf": "Bereich „Kinder“ ansehen",
           "hinweis": "Wissen Sie davon nichts? Dann setzen Sie bitte selbst ein neues Passwort und schreiben Sie der Bildungsabteilung. Diese E-Mail enthält kein Passwort."
+        },
+        "elternbezugBeenden": {
+          "betreff": "Eltern-Kind-Bezug: Beenden beantragt",
+          "text": "Bei der IGMG Wetzlar wurde am {zeitpunkt} beantragt, Ihren Bezug als Elternteil zu einem Kind zu beenden. Wirksam wird das erst, wenn eine zweite Person aus Vorstand oder Kinderschutz zustimmt.",
+          "knopf": "Bereich „Kinder“ ansehen",
+          "hinweis": "Wissen Sie davon nichts oder stimmt das nicht? Dann schreiben Sie bitte sofort dem Vorstand. Diese E-Mail enthält keine Namen."
+        },
+        "elternbezugBeendet": {
+          "betreff": "Eltern-Kind-Bezug beendet",
+          "text": "Bei der IGMG Wetzlar wurde am {zeitpunkt} Ihr Bezug als Elternteil zu einem Kind beendet. Ihr Konto bleibt bestehen; das Kind erscheint dort nicht mehr.",
+          "knopf": "Bereich „Kinder“ ansehen",
+          "hinweis": "Wissen Sie davon nichts oder stimmt das nicht? Dann schreiben Sie bitte sofort dem Vorstand. Diese E-Mail enthält keine Namen."
         }
       }
     }
@@ -413,6 +426,7 @@
         "uebernehmen": "Daveti kabul et",
         "andereAdresse": "Başka bir hesapla giriş yaptınız. Bu davet farklı bir e-posta adresi içindir – lütfen önce çıkış yapın.",
         "administration": "Yönetim rolüne sahip hesaplar bu daveti kabul edemez. Lütfen yönetim rolü olmayan ayrı bir cemaat hesabı kullanın.",
+        "freigabe": "Bu davetin cemaatten ikinci bir kişi tarafından onaylanması gerekiyor. Ardından yeni bir bağlantı içeren yeni bir e-posta alacaksınız.",
         "fehlerPasswort": "Şifre en az 12 karakter olmalıdır.",
         "fehlerGleich": "İki şifre birbiriyle aynı değil.",
         "fehlerEinwilligung": "Lütfen gizlilik bildirimini onaylayın.",
@@ -497,6 +511,18 @@
           "text": "IGMG Wetzlar’da çocuğunuzun erişimi için {zeitpunkt} tarihinde başka bir veli hesabı tarafından yeni bir şifre belirlendi.",
           "knopf": "„Çocuklar“ bölümünü görüntüle",
           "hinweis": "Bundan haberiniz yok mu? Lütfen kendiniz yeni bir şifre belirleyin ve eğitim birimine yazın. Bu e-posta şifre içermez."
+        },
+        "elternbezugBeenden": {
+          "betreff": "Veli-çocuk bağlantısı: sonlandırma talep edildi",
+          "text": "IGMG Wetzlar’da {zeitpunkt} tarihinde bir çocukla olan veli bağlantınızın sonlandırılması talep edildi. Bu, ancak yönetim kurulundan veya çocuk koruma görevlisinden ikinci bir kişi onaylarsa geçerli olur.",
+          "knopf": "„Çocuklar“ bölümünü görüntüle",
+          "hinweis": "Bundan haberiniz yok mu ya da bu doğru değil mi? Lütfen hemen yönetim kuruluna yazın. Bu e-posta isim içermez."
+        },
+        "elternbezugBeendet": {
+          "betreff": "Veli-çocuk bağlantısı sonlandırıldı",
+          "text": "IGMG Wetzlar’da {zeitpunkt} tarihinde bir çocukla olan veli bağlantınız sonlandırıldı. Hesabınız devam ediyor; çocuk artık orada görünmüyor.",
+          "knopf": "„Çocuklar“ bölümünü görüntüle",
+          "hinweis": "Bundan haberiniz yok mu ya da bu doğru değil mi? Lütfen hemen yönetim kuruluna yazın. Bu e-posta isim içermez."
         }
       }
     }
@@ -664,6 +690,7 @@
         "uebernehmen": "Accept invitation",
         "andereAdresse": "You are signed in with another account. This invitation is for a different email address – please sign out first.",
         "administration": "Accounts with the administration role cannot accept this invitation. Please use a separate community account without an administration role.",
+        "freigabe": "This invitation still needs to be confirmed by a second person from the community. You will then receive a new email with a new link.",
         "fehlerPasswort": "The password needs at least 12 characters.",
         "fehlerGleich": "The two passwords do not match.",
         "fehlerEinwilligung": "Please agree to the privacy policy.",
@@ -748,6 +775,18 @@
           "text": "On {zeitpunkt}, another parent account set a new password for your child’s access at IGMG Wetzlar.",
           "knopf": "View “Children”",
           "hinweis": "Don’t know anything about this? Please set a new password yourself and write to the education team. This email contains no password."
+        },
+        "elternbezugBeenden": {
+          "betreff": "Parent–child link: removal requested",
+          "text": "On {zeitpunkt}, a request was made at IGMG Wetzlar to end your link as a parent to a child. It only takes effect once a second person from the board or child protection agrees.",
+          "knopf": "View “Children”",
+          "hinweis": "Don’t know anything about this, or is it wrong? Please write to the board straight away. This email contains no names."
+        },
+        "elternbezugBeendet": {
+          "betreff": "Parent–child link ended",
+          "text": "On {zeitpunkt}, your link as a parent to a child was ended at IGMG Wetzlar. Your account remains; the child no longer appears in it.",
+          "knopf": "View “Children”",
+          "hinweis": "Don’t know anything about this, or is it wrong? Please write to the board straight away. This email contains no names."
         }
       }
     }

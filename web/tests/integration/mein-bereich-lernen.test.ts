@@ -131,12 +131,14 @@ beforeAll(async () => {
     { gruppeId: gruppeA, lernendeId: l.jugend2, seit: tagPlus(heute, -30) },
     { gruppeId: gruppeB, lernendeId: l.fremd, seit: tagPlus(heute, -30) },
   ]);
+  // Bestätigte Eltern-Kind-Bezüge (wie nach der Annahme einer Einladung aus der Voranmeldung; N4)
+  const bestaetigtAm = new Date();
   await db.insert(schema.elternKind).values([
-    { elternId: p.elternE.id, lernendeId: l.kind1 },
-    { elternId: p.elternE.id, lernendeId: l.kind2 },
-    { elternId: p.elternE.id, lernendeId: l.jugend },
-    { elternId: p.elternE.id, lernendeId: l.jugend2 },
-    { elternId: p.elternF.id, lernendeId: l.fremd },
+    { elternId: p.elternE.id, lernendeId: l.kind1, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.kind2, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.jugend, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.jugend2, bestaetigtAm },
+    { elternId: p.elternF.id, lernendeId: l.fremd, bestaetigtAm },
   ]);
   // Kinderzugang für Kind 1 (Einwilligung „kinderkonto“ von E, über die Eltern-Aktion)
   als(p.elternE);

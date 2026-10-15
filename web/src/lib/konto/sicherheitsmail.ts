@@ -96,3 +96,36 @@ export async function meldeAnSorgeberechtigte(
   }
   return geplant;
 }
+
+/**
+ * Hinweis an ein Elternkonto selbst (Nacharbeit N4): Das Beenden seines Eltern-Kind-Bezugs ist beantragt bzw. vollzogen.
+ * Nur Art und Zeitpunkt, keine Namen; in der Sprache der Person; nie an `.invalid`-Adressen. In der Transaktion des
+ * Aufrufers. Rückgabe: true, wenn eine Mail geplant wurde.
+ */
+export async function meldeAnElternkonto(
+  tx: Pick<Transaktion, 'select' | 'insert'>,
+  elternId: string,
+  art: 'beenden' | 'beendet',
+  jetzt = new Date(),
+): Promise<boolean> {
+  const [konto] = await tx
+    .select({ email: schema.user.email, sprache: schema.kontoProfil.sprache })
+    .from(schema.user)
+    .leftJoin(schema.kontoProfil, eq(schema.kontoProfil.benutzerId, schema.user.id))
+    .where(eq(schema.user.id, elternId))
+    .limit(1);
+  if (!konto) return false;
+  const sprache: MailSprache = konto.sprache === 'tr' || konto.sprache === 'en' ? konto.sprache : 'de';
+  return planeKontoMail(
+    {
+      an: konto.email,
+      vorlage: art === 'beenden' ? 'konto-elternbezug-beenden' : 'konto-elternbezug-beendet',
+      sprache,
+      daten: {
+        zeitpunkt: `${datumLang(jetzt, sprache)}, ${uhrzeit(jetzt, sprache)}`,
+        link: `${basisUrl()}${pfadFuer('/mein-bereich/kinder', sprache)}`,
+      },
+    },
+    tx,
+  );
+}

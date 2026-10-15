@@ -14,7 +14,20 @@ import { sha256, verschluessele, zufallsToken } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { mitAdministrationsSchutz } from '@/lib/rechte/administration';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
-import { entscheideAntrag, istSchutzrolle, schutzrollenRegel, SCHUTZROLLEN, vergibVerwaltungsrollen } from '@/lib/rechte/schutzrollen';
+import { entscheideBezugEnde, entscheideEinladung } from '@/lib/konto/eltern-freigabe';
+import {
+  ENTZUG_GESCHUETZT,
+  entscheideAntrag,
+  entziehVerwaltungsrollen,
+  istEntzugGeschuetzt,
+  istSchutzrolle,
+  meldeSperreSchutzrolle,
+  schutzrollenGestartet,
+  schutzrollenRegel,
+  SCHUTZROLLEN,
+  vergibVerwaltungsrollen,
+  type EntzugErgebnis,
+} from '@/lib/rechte/schutzrollen';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { clientAdresse } from '@/lib/sicherheit/ip';
 import { alsZuweisungen, einladungSchema, passwortSchema, rollenSchema } from '@/lib/validierung/benutzer';
@@ -37,6 +50,8 @@ export type BenutzerZustand = {
   ok?: boolean;
   /** Schutzrollen, die erst nach Bestätigung durch eine zweite Person wirksam werden (S2/S3) */
   beantragt?: string[];
+  /** Geschützte Rollen, deren Entzug erst nach Bestätigung durch eine zweite Person wirkt (N4) – bis dahin wirksam */
+  entzugBeantragt?: string[];
 };
 
 function feldFehler(fehler: z.ZodError): Record<string, string> {
@@ -139,8 +154,9 @@ const hat = (rollen: { rolle: string }[], rolle: string) => rollen.some((r) => r
  * Rollen speichern. Schutzrollen `leitung` und `kinderschutz` (S-11, ADR 0026; M-2 der Sicherheitsprüfung S1, S2/S3):
  * nie zusammen mit `administration`, nie an sich selbst, und neu vergeben erst wirksam, wenn eine zweite Person mit
  * Leitung oder Kinderschutz bestätigt (`src/lib/rechte/schutzrollen.ts`) – sonst gäbe sich die Administration über
- * „leitung“ den Weg zu Chat-Inhalten selbst frei. Jede Vergabe steht im Audit und geht als Hinweis an Leitung und
- * Kinderschutz.
+ * „leitung“ den Weg zu Chat-Inhalten selbst frei. Ebenso der Entzug von Leitung, Kinderschutz und religiöser Prüfung bei
+ * anderen Konten (N4): beantragt, bis zur Bestätigung weiter wirksam, Mail an die betroffene Person. Jede Vergabe und
+ * jeder Entzug steht im Audit und geht als Hinweis an Leitung und Kinderschutz.
  */
 export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): Promise<BenutzerZustand> {
   const a = await verlangeRecht('benutzer.bearbeiten');
@@ -155,10 +171,27 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };
   }
+  // N4: Geschützte Rollen, die wegfallen sollen. Bei anderen Konten bleibt Leitung/Kinderschutz bis zur Bestätigung des
+  // Entzugs wirksam – dann darf das Konto nicht zugleich Administration bekommen (S-11)
+  const entzug = ENTZUG_GESCHUETZT.filter((r) => hat(konto.rollen, r) && !hat(neu, r));
+  if (
+    !selbst &&
+    istAdministration(neu) &&
+    !istAdministration(konto.rollen) &&
+    entzug.some((r) => istSchutzrolle(r)) &&
+    (await schutzrollenGestartet())
+  )
+    return { fehler: 'entzugVorAdministration', werte: roh };
   let beantragt: string[] = [];
+  let entzogen: EntzugErgebnis = { beantragt: [], entzogen: [] };
   const gespeichert = await mitAdministrationsSchutz(async (tx) => {
-    // Bisher wirksame Rollen bleiben ohne neuen Antrag wirksam; neue Schutzrollen werden beantragt
-    const bleibt = neu.filter((z) => !istSchutzrolle(z.rolle) || hat(konto.rollen, z.rolle));
+    entzogen = await entziehVerwaltungsrollen(tx, konto.id, entzug, a.benutzerId);
+    // Bisher wirksame Rollen bleiben ohne neuen Antrag wirksam; neue Schutzrollen werden beantragt; Rollen mit offenem
+    // Entzug bleiben bis zur Bestätigung wirksam
+    const bleibt = [
+      ...neu.filter((z) => !istSchutzrolle(z.rolle) || hat(konto.rollen, z.rolle)),
+      ...entzogen.beantragt.map((rolle) => ({ rolle, organisation: null })),
+    ];
     const neueSchutzrollen = neu.filter((z) => istSchutzrolle(z.rolle) && !hat(konto.rollen, z.rolle));
     await tx.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, konto.id));
     if (bleibt.length)
@@ -167,12 +200,29 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
         .values(
           bleibt.map((z) => ({ benutzerId: konto.id, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: a.benutzerId })),
         );
-    // Nicht mehr gewählte Schutzrollen: offene Anträge verfallen
+    // Nicht mehr gewählte Schutzrollen: offene Vergabe-Anträge verfallen; wieder gewählte Rollen: offener Entzug verfällt
     const weg = SCHUTZROLLEN.filter((r) => !hat(neu, r));
     if (weg.length)
       await tx
         .delete(schema.rollenAntrag)
-        .where(and(eq(schema.rollenAntrag.benutzerId, konto.id), inArray(schema.rollenAntrag.rolle, weg)));
+        .where(
+          and(
+            eq(schema.rollenAntrag.benutzerId, konto.id),
+            eq(schema.rollenAntrag.art, 'vergabe'),
+            inArray(schema.rollenAntrag.rolle, weg),
+          ),
+        );
+    const wieder = ENTZUG_GESCHUETZT.filter((r) => hat(neu, r));
+    if (wieder.length)
+      await tx
+        .delete(schema.rollenAntrag)
+        .where(
+          and(
+            eq(schema.rollenAntrag.benutzerId, konto.id),
+            eq(schema.rollenAntrag.art, 'entzug'),
+            inArray(schema.rollenAntrag.rolle, wieder),
+          ),
+        );
     beantragt = await vergibVerwaltungsrollen(tx, konto.id, neueSchutzrollen, a.benutzerId);
     await protokolliere(
       {
@@ -182,12 +232,15 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
         zielId: konto.id,
         details: {
           vorher: konto.rollen.map((r) => (r.organisation ? `${r.rolle}:${r.organisation}` : r.rolle)).join(','),
-          // Wirksame Rollen; beantragte Schutzrollen stehen getrennt (eigener Audit-Eintrag „rolle_beantragt“)
-          nachher: neu
-            .filter((r) => !beantragt.includes(r.rolle))
+          // Wirksame Rollen; beantragte Schutzrollen und beantragte Entzüge stehen getrennt (eigene Audit-Einträge)
+          nachher: [
+            ...neu.filter((r) => !beantragt.includes(r.rolle)),
+            ...entzogen.beantragt.map((rolle) => ({ rolle, organisation: null })),
+          ]
             .map((r) => (r.organisation ? `${r.rolle}:${r.organisation}` : r.rolle))
             .join(','),
           ...(beantragt.length ? { beantragt: beantragt.join(',') } : {}),
+          ...(entzogen.beantragt.length ? { entzugBeantragt: entzogen.beantragt.join(',') } : {}),
         },
       },
       tx,
@@ -196,30 +249,54 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
   if (!gespeichert) return { fehler: 'letzteAdministration', werte: roh };
   after(() => versendeOffeneMails().catch(() => undefined));
   refresh();
-  return beantragt.length ? { ok: true, beantragt } : { ok: true };
+  return {
+    ok: true,
+    ...(beantragt.length ? { beantragt } : {}),
+    ...(entzogen.beantragt.length ? { entzugBeantragt: [...entzogen.beantragt] } : {}),
+  };
 }
 
 /**
- * Antrag auf eine Schutzrolle bestätigen oder ablehnen – nur eine zweite Person mit wirksamer Rolle Leitung oder
- * Kinderschutz, ohne Administration, weder die beantragende noch die betroffene Person (S2/S3). Formular in
- * „Gemeinde im Blick“ und „Kinderschutz“.
+ * Vier-Augen-Antrag bestätigen oder ablehnen – nur eine zweite Person mit wirksamer Rolle Leitung oder Kinderschutz,
+ * ohne Administration, weder die beantragende noch die betroffene Person (S2/S3, N4). Arten: `rolle` (Vergabe oder
+ * Entzug einer Schutzrolle), `einladung` (Eltern-Einladung an eine Adresse außerhalb der Voranmeldung), `bezug`
+ * (Eltern-Kind-Bezug beenden; `id` = Lernende, `konto` = Elternkonto). Formular in „Gemeinde im Blick“ und „Kinderschutz“.
  */
 export async function rollenAntragEntscheiden(fd: FormData): Promise<void> {
   const a = await verlangeRecht('verwaltung.betreten');
   const p = z
     .object({
+      art: z.enum(['rolle', 'einladung', 'bezug']).catch('rolle'),
       id: z.uuid(),
+      konto: z.string().min(1).max(100).optional(),
       entscheidung: z.enum(['bestaetigen', 'ablehnen']),
       zurueck: z.enum(['/verwaltung/gemeinde-im-blick', '/verwaltung/kinderschutz']).catch('/verwaltung/gemeinde-im-blick'),
     })
-    .safeParse({ id: fd.get('id'), entscheidung: fd.get('entscheidung'), zurueck: fd.get('zurueck') ?? undefined });
+    .safeParse({
+      art: fd.get('art') ?? undefined,
+      id: fd.get('id'),
+      konto: fd.get('konto') ?? undefined,
+      entscheidung: fd.get('entscheidung'),
+      zurueck: fd.get('zurueck') ?? undefined,
+    });
   if (!p.success) throw new KeinRecht();
-  const fehler = await entscheideAntrag(a, p.data.id, p.data.entscheidung === 'bestaetigen');
+  const bestaetigen = p.data.entscheidung === 'bestaetigen';
+  let fehler: Awaited<ReturnType<typeof entscheideAntrag>>;
+  let erfolg: string;
+  if (p.data.art === 'einladung') {
+    fehler = await entscheideEinladung(a, p.data.id, bestaetigen);
+    erfolg = bestaetigen ? 'einladungBestaetigt' : 'einladungAbgelehnt';
+  } else if (p.data.art === 'bezug') {
+    if (!p.data.konto) throw new KeinRecht();
+    fehler = await entscheideBezugEnde(a, p.data.id, p.data.konto, bestaetigen);
+    erfolg = bestaetigen ? 'bezugBeendet' : 'bezugAbgelehnt';
+  } else {
+    fehler = await entscheideAntrag(a, p.data.id, bestaetigen);
+    erfolg = bestaetigen ? 'bestaetigt' : 'abgelehnt';
+  }
   if (fehler === 'keinRecht') throw new KeinRecht();
   after(() => versendeOffeneMails().catch(() => undefined));
-  redirect(
-    `${p.data.zurueck}?${fehler ? `rollenantrag=${fehler}` : `rollenantrag=${p.data.entscheidung === 'bestaetigen' ? 'bestaetigt' : 'abgelehnt'}`}#rollenantraege`,
-  );
+  redirect(`${p.data.zurueck}?rollenantrag=${fehler ?? erfolg}#rollenantraege`);
 }
 
 /** Konto sperren (C12): Sitzungen enden sofort, Anmeldung wird verweigert; nicht das eigene, nicht die letzte Administration. */
@@ -237,7 +314,10 @@ export async function kontoSperren(fd: FormData): Promise<void> {
       .delete(schema.verification)
       .where(and(like(schema.verification.identifier, 'reset-password:%'), eq(schema.verification.value, konto.id)));
     await protokolliere({ benutzerId: a.benutzerId, aktion: 'benutzer.gesperrt', zielTyp: 'benutzer', zielId: konto.id }, tx);
+    // N4: Sperre eines Kontos mit Schutzrolle (Notweg) – die Person sowie Leitung und Kinderschutz erfahren davon
+    await meldeSperreSchutzrolle(tx, konto.id, konto.rollen);
   });
+  after(() => versendeOffeneMails().catch(() => undefined));
   if (!gesperrt) redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
   redirect(`/verwaltung/benutzer/${konto.id}?meldung=gesperrt`);
 }
@@ -270,17 +350,34 @@ export async function zweiFaktorZuruecksetzen(fd: FormData): Promise<void> {
   redirect(`/verwaltung/benutzer/${konto.id}?meldung=zweiFaktor`);
 }
 
-/** Konto endgültig löschen (K-05, G-07): Konto, Sitzungen, Anmeldedaten, Zwei-Faktor, Passkeys und Rollen (Kaskade). */
+class SchutzrolleVorhanden extends Error {}
+
+/**
+ * Konto endgültig löschen (K-05, G-07): Konto, Sitzungen, Anmeldedaten, Zwei-Faktor, Passkeys und Rollen (Kaskade).
+ * N4: Ein Konto mit Leitung, Kinderschutz oder religiöser Prüfung erst nach dem bestätigten Entzug dieser Rollen (sonst
+ * wäre Löschen der Weg am Vier-Augen-Prinzip vorbei) – geprüft in der Transaktion.
+ */
 export async function kontoLoeschen(fd: FormData): Promise<void> {
   const a = await verlangeRecht('benutzer.bearbeiten');
   const { konto, selbst } = await zielKonto(fd, a);
   if (selbst) redirect(`/verwaltung/benutzer/${konto.id}?fehler=selbst`);
   if (istAdministration(konto.rollen) && (await zaehleAdministration(konto.id)) === 0)
     redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
-  const geloescht = await mitAdministrationsSchutz(async (tx) => {
-    await tx.delete(schema.user).where(eq(schema.user.id, konto.id));
-    await protokolliere({ benutzerId: a.benutzerId, aktion: 'benutzer.geloescht', zielTyp: 'benutzer', zielId: konto.id }, tx);
-  });
+  let geloescht = false;
+  try {
+    geloescht = await mitAdministrationsSchutz(async (tx) => {
+      const rollen = await tx
+        .select({ rolle: schema.rolleZuweisung.rolle })
+        .from(schema.rolleZuweisung)
+        .where(eq(schema.rolleZuweisung.benutzerId, konto.id));
+      if (rollen.some((r) => istEntzugGeschuetzt(r.rolle)) && (await schutzrollenGestartet(tx))) throw new SchutzrolleVorhanden();
+      await tx.delete(schema.user).where(eq(schema.user.id, konto.id));
+      await protokolliere({ benutzerId: a.benutzerId, aktion: 'benutzer.geloescht', zielTyp: 'benutzer', zielId: konto.id }, tx);
+    });
+  } catch (e) {
+    if (e instanceof SchutzrolleVorhanden) redirect(`/verwaltung/benutzer/${konto.id}?fehler=schutzrolle`);
+    throw e;
+  }
   if (!geloescht) redirect(`/verwaltung/benutzer/${konto.id}?fehler=letzteAdministration`);
   redirect('/verwaltung/benutzer?meldung=geloescht');
 }

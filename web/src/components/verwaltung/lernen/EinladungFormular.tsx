@@ -41,7 +41,12 @@ export function EinladungFormular({
   }, [z]);
 
   return (
-    <form action={absenden} className="flex flex-col gap-5" noValidate key={z.ok ? `ok-${z.link ?? 'vorhanden'}` : 'offen'}>
+    <form
+      action={absenden}
+      className="flex flex-col gap-5"
+      noValidate
+      key={z.ok ? `ok-${z.link ?? (z.wartet ? 'wartet' : 'vorhanden')}` : 'offen'}
+    >
       <div ref={ref} tabIndex={-1} className="outline-none">
         {z.fehler ? (
           <Meldung art="fehler">
@@ -60,6 +65,8 @@ export function EinladungFormular({
           </Meldung>
         ) : z.ok && z.vorhanden ? (
           <Meldung art="info">{t('einladen.vorhanden')}</Meldung>
+        ) : z.ok && z.wartet ? (
+          <Meldung art="info">{t('einladen.wartet')}</Meldung>
         ) : z.ok ? (
           <Meldung art="erfolg">
             <p>{t('einladen.verschickt')}</p>
