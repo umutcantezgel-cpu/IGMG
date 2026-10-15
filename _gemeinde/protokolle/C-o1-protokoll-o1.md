@@ -200,7 +200,7 @@ wurden **57.965 Textknoten mit arabischen Zeichen** in **61.212 Zeilenfragmenten
    2,0 (`web/src/components/website/hadith/HadithListe.tsx` Z. 72). Das Token `--text-arabisch-*` aus AUFTRAG §4
    (2,1–2,3) nutzt er nicht. Es gibt weder Beschneidung noch sichtbare Berührung, das Abstandsmaß ist aber das
    knappste von allen.
-2. **Koranwort auf der Elifbe-Seite.** „Im Koran entdecken“ auf `/elifbe/buchstaben/be` zeigt das Koranwort بِهِۦ in
+2. **Koranwort auf der Elifbe-Seite.** „Im Koran entdecken“ auf `/elifbe/buchstaben/be` zeigt das Koranwort [Koranwort, arabisch] in
    `schriftArabisch` (Amiri) statt Amiri Quran. Das kleine Ya (U+06E6) steht dadurch als eigene Glyphe links neben dem
    Wort. Nichts ist abgeschnitten; es ist eine typografische Beobachtung (Bild `nah/be-koran-390-umfeld.png`).
 3. **Deutsche Inhalte auf tr-Seiten.** Die tr-Oberfläche ist vollständig türkisch, einzelne Inhalte bleiben aber
