@@ -124,7 +124,8 @@ describe('Konzept-Hinweis: Markup vom Server', () => {
     expect(html).toContain('<button type="submit"');
   });
 
-  it('enthält das Inline-Skript unverändert', () => {
+  it('enthält das Inline-Skript unverändert, direkt hinter dem Dialog (öffnet vor dem ersten Bild, nicht erst am Ende)', () => {
     expect(html).toContain(`<script>${SOFORT}</script>`);
+    expect(html).toContain(`</dialog><script>${SOFORT}</script>`);
   });
 });
