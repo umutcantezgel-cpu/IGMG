@@ -160,9 +160,15 @@ export type NummernTreffer = {
   rang: number;
 };
 
-/** „Bukhari 7“, „402.2“ … (dieselbe Erkennung wie die Volltextsuche, `hadithNummerAus`) → Buch und Teil aus dem Index. */
+/** „Hadith 7“, „Hadis 7“, „Hadith Nr. 7“: Vorsatz vor der Nummer (nur hier; die Volltextsuche bleibt unverändert). */
+const HADITH_VORSATZ = /^\s*(?:hadith|hadis|hadîs)\s+(?:(?:nr|no)\.?\s*)?(?=\d)/i;
+
+/**
+ * „Bukhari 7“, „402.2“ … (dieselbe Erkennung wie die Volltextsuche, `hadithNummerAus`), dazu „Hadith 7“ → Buch und
+ * Teil aus dem Index.
+ */
 export function sucheHadithNummer(index: SuchIndex, begriff: string): NummernTreffer[] {
-  const nummer = hadithNummerAus(begriff);
+  const nummer = hadithNummerAus(begriff.replace(HADITH_VORSATZ, ''));
   if (!nummer || !index.hadith) return [];
   for (const [buchNr, liste] of index.hadith.buecher) {
     const position = liste.findIndex(([n]) => n === nummer);

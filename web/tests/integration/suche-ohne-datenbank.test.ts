@@ -181,6 +181,9 @@ describe('sucheFuerSeite: ohne Laufzeit-Datenbank (Beispielmodus)', () => {
     const hinten = buch4[100];
     const n = await sucheFuerSeite({ begriff: `Bukhari ${hinten.nummer}`, sprache: 'de', hadithAn: true, nurHadith: true });
     expect(n).toMatchObject({ modus: 'titel', titel: [], hadith: [{ nummer: hinten.nummer, buchNr: 4, teil: 2 }] });
+    // „Hadith n“ führt ohne Datenbank zur selben Stelle
+    const h = await sucheFuerSeite({ begriff: `Hadith ${hinten.nummer}`, sprache: 'de', hadithAn: true, nurHadith: true });
+    expect(h).toMatchObject({ modus: 'titel', hadith: [{ nummer: hinten.nummer, buchNr: 4, teil: 2 }] });
     // dieselbe Stelle wie die Volltextsuche mit Datenbank
     vi.unstubAllEnvs();
     const mitDb = await sucheHadith(hinten.nummer);

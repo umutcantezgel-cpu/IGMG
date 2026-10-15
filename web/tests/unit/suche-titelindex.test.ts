@@ -115,6 +115,14 @@ describe('sucheHadithNummer', () => {
     expect(sucheHadithNummer(index(), '140')[0]?.imBuchNr).toBeNull();
   });
 
+  it('„Hadith n“, „Hadis n“ und „Hadith Nr. n“ wie die reine Nummer; Wörter ohne Nummer nicht', () => {
+    for (const eingabe of ['Hadith 2', 'hadis 2', 'Hadith Nr. 2', 'HADITH no 2']) {
+      expect(sucheHadithNummer(index(), eingabe).map((t) => [t.nummer, t.buchNr])).toEqual([['2', 1]]);
+    }
+    expect(sucheHadithNummer(index(), 'Hadith')).toEqual([]);
+    expect(sucheHadithNummer(index(), 'Hadith über das Gebet')).toEqual([]);
+  });
+
   it('ohne Nummer oder ohne Hadith-Daten im Index: nichts', () => {
     expect(sucheHadithNummer(index(), 'Gebet')).toEqual([]);
     expect(sucheHadithNummer(index({ hadith: null }), 'Bukhari 1')).toEqual([]);
