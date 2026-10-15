@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { sql } from 'drizzle-orm';
 import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
-import { schema } from '@/lib/db';
+import { schema, type Datenbank } from '@/lib/db';
 import { leseBukhari } from '@/lib/hadith/import';
 import { leseMetadaten } from '@/lib/quran/metadaten';
 import { verwaltungsUmgebung } from './hilfen/verwaltung';
@@ -16,7 +16,9 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
  * Arabische Namen und Texte nur aus web/daten; alle übrigen Testdaten fiktiv.
  */
 const { client, db } = await verwaltungsUmgebung();
-const { baueSuchIndex } = await import('@/lib/suche/titelindex-bau');
+const { baueSuchIndex: baue } = await import('@/lib/suche/titelindex-bau');
+/** Die Test-Datenbank (PGlite) hat denselben Abfrage-Aufbau wie `Datenbank` (PostgreSQL), nur andere Ergebnistypen. */
+const baueSuchIndex = (d: typeof db, o: { hadith: boolean }) => baue(d as unknown as Datenbank, o);
 const { pruefeSuchIndex } = await import('@/lib/suche/titelindex');
 const { suche, sucheHadith, sucheFuerSeite } = await import('@/server/queries/suche');
 const ordner = mkdtempSync(join(tmpdir(), 'igmg-suchindex-'));
@@ -64,7 +66,7 @@ await db.insert(schema.hadithSammlung).values({
 });
 await db
   .insert(schema.hadithBuch)
-  .values(quelle.buecher.filter((b) => b.nr <= 4).map((b) => ({ sammlungId: 'bukhari', nr: b.nr, titel: { en: b.titelEn }, hadithVon: b.hadithVon, hadithBis: b.hadithBis })));
+  .values(quelle.buecher.filter((b) => b.nr <= 4).map((b) => ({ sammlungId: 'bukhari', nr: b.nr, titel: { de: '', en: b.titelEn }, hadithVon: b.hadithVon, hadithBis: b.hadithBis })));
 const hadithe = quelle.hadithe.filter((h) => h.buchNr <= 4);
 await db.insert(schema.hadith).values(hadithe.map((h) => ({ sammlungId: 'bukhari', ...h })));
 await db.execute(sql`update hadith set suche = to_tsvector('simple', text_normalisiert)`);
