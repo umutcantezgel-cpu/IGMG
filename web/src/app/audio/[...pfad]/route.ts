@@ -8,8 +8,8 @@ import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
 /**
  * Auslieferung der Rezitationen (ADR 0029) unter `/audio/<rezitation>/<sure>-<vers>-<hash>.<endung>` mit Byte-Bereichen
  * (Springen an Versanfänge). Nur Dateien mit Eintrag in `quran_audio`; Dateien einer nicht aktiven Rezitation nur für
- * die Werkstatt (`rezitation.bearbeiten`), sonst 404. Mit öffentlichem Audio-Speicher übernimmt im Betrieb der Rewrite
- * `/audio/*` in `vercel.json`; diese Route ist dann der Rückfall. Gleicher Ursprung: die CSP bleibt `'self'`.
+ * die Werkstatt (`rezitation.bearbeiten`), sonst 404. Auch mit öffentlichem Audio-Speicher liefert diese Route aus; ein
+ * Rewrite in `vercel.json` würde die Prüfung umgehen (L2-E06, ADR 0029 Nr. 1). Gleicher Ursprung: die CSP bleibt `'self'`.
  */
 export async function GET(anfrage: Request, { params }: RouteContext<'/audio/[...pfad]'>) {
   await connection();
