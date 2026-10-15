@@ -32,7 +32,13 @@ describe('ordnungAus (Rückfall)', () => {
     ['leere Liste', []],
     ['Zeichenkette', 'moschee,neuigkeiten'],
     ['unbekannter Abschnitt', [{ schluessel: 'kopf', sichtbar: true }]],
-    ['doppelter Abschnitt', [{ schluessel: 'moschee', sichtbar: true }, { schluessel: 'moschee', sichtbar: false }]],
+    [
+      'doppelter Abschnitt',
+      [
+        { schluessel: 'moschee', sichtbar: true },
+        { schluessel: 'moschee', sichtbar: false },
+      ],
+    ],
     ['sichtbar fehlt', [{ schluessel: 'moschee' }]],
     ['sichtbar kein Wahrheitswert', [{ schluessel: 'moschee', sichtbar: 'ja' }]],
     ['zusätzliches Feld', [{ schluessel: 'moschee', sichtbar: true, farbe: 'rot' }]],

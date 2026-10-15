@@ -43,7 +43,10 @@ describe('wissenSchema', () => {
 
   it('Rich-Text: leerer Editor gilt als kein Inhalt, kaputtes JSON ist ein Fehler', () => {
     expect(wissenSchema.parse({ ...basis, inhaltDe: '' }).inhaltDe).toBeNull();
-    expect(wissenSchema.safeParse({ ...basis, inhaltDe: '{kaputt' }).error?.issues[0]).toMatchObject({ path: ['inhaltDe'], message: 'richtext' });
+    expect(wissenSchema.safeParse({ ...basis, inhaltDe: '{kaputt' }).error?.issues[0]).toMatchObject({
+      path: ['inhaltDe'],
+      message: 'richtext',
+    });
   });
 });
 

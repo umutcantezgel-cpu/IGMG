@@ -7,7 +7,7 @@ import { anmelden, ausgang, type Ausgang, erlaubt, formular, momentaufnahme, PER
 
 /**
  * Generierte Rechte-Matrix für die Verwaltungs-Actions des Laufs „Gemeinde-Plattform“ (seit b702c7c; Stufe C k2: bisher
- * nur handgeschriebene Negativtests). 17 Action-Dateien × alle Personengruppen (auch Leitung, religiöse Prüfung und
+ * nur handgeschriebene Negativtests). 19 Action-Dateien (seit F-40 mit Startseite und Islamisches Wissen) × alle Personengruppen (auch Leitung, religiöse Prüfung und
  * Kinderschutz) × jede exportierte Action.
  *
  * Je Action steht hier die Matrix-Prüfung, die sie laut Code als ERSTES ausführt (`verlangeRecht(<aktion>)`), dazu
@@ -70,8 +70,10 @@ const MODULE = {
   newsletter: () => import('@/server/actions/newsletter'),
   rezitationen: () => import('@/server/actions/rezitationen'),
   seiten: () => import('@/server/actions/seiten'),
+  startseite: () => import('@/server/actions/startseite'),
   tagesvers: () => import('@/server/actions/tagesvers'),
   weiterleitungen: () => import('@/server/actions/weiterleitungen'),
+  wissen: () => import('@/server/actions/wissen'),
 } as const;
 type Datei = keyof typeof MODULE;
 
@@ -112,6 +114,7 @@ const TABELLEN: PgTable[] = [
   schema.quranVersAuswahl,
   schema.quranRezitation,
   schema.newsletterAusgabe,
+  schema.wissenThema,
 ];
 
 type Fall = {
@@ -203,6 +206,20 @@ const FAELLE: Fall[] = [
   }),
   ...f('tagesvers', ['versHinzufuegen', 'versEntfernen', 'versVerschieben'], ['quran.bearbeiten', 'religioes.freigeben']),
   ...f('weiterleitungen', ['speichereWeiterleitung', 'loescheWeiterleitung'], ['weiterleitung.bearbeiten']),
+  // F-40: Startseiten-Abschnitte (Redaktion, Administration) und Islamisches Wissen (zusätzlich religiöse Prüfung)
+  ...f('startseite', ['speichereStartseite', 'startseiteZuruecksetzen', 'startseiteRevisionWiederherstellen'], ['startseite.bearbeiten']),
+  ...f(
+    'wissen',
+    [
+      'speichereWissensThema',
+      'speichereWissensReihenfolge',
+      'wissensThemaInPapierkorb',
+      'wissensThemaWiederherstellen',
+      'wissensThemaEndgueltigLoeschen',
+      'wissensRevisionWiederherstellen',
+    ],
+    ['wissen.bearbeiten'],
+  ),
 ];
 
 /** Rückgaben, die eine Abweisung aus Rechtegründen bedeuten. */
