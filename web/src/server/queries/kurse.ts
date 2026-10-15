@@ -66,6 +66,7 @@ export async function kurseFuerVoranmeldung(): Promise<VoranmeldeKurs[]> {
  * die Voranmeldung ohne Kurs). Gespeichert wird sie als `eingang.bezug_id`.
  */
 export async function kursIdFuerVoranmeldung(slug: unknown): Promise<string | null> {
-  if (typeof slug !== 'string' || !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug) || slug.length > 120) return null;
+  // Erst die Länge, dann ein Muster ohne verschachtelte Wiederholung (öffentliche Eingabe); geprüft wird gegen die Kursliste
+  if (typeof slug !== 'string' || slug.length > 120 || !/^[a-z0-9][a-z0-9-]*$/.test(slug)) return null;
   return (await kurseFuerVoranmeldung()).find((k) => k.slug === slug)?.id ?? null;
 }
