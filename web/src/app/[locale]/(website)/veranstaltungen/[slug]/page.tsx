@@ -15,7 +15,7 @@ import {
   Users,
 } from 'lucide-react';
 import type { JSONContent } from '@tiptap/core';
-import Image from 'next/image';
+import { Bild } from '@/components/website/Bild';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -200,7 +200,7 @@ async function Veranstaltung({ params }: { params: Promise<{ locale: string; slu
         // Mit Organisation steht das Logo (20 px) vor der Kennung; ohne Organisation bleibt der Achtstern
         kennungZeichen={
           v.organisation ? (
-            <Image src={LOGOS[v.organisation]} alt="" width={40} height={40} className="size-5 shrink-0 rounded-sm border border-linie" />
+            <Bild src={LOGOS[v.organisation]} alt="" width={40} height={40} className="size-5 shrink-0 rounded-sm border border-linie" />
           ) : undefined
         }
         kennungFarbe={v.organisation ? ORG_TEXT[v.organisation] : undefined}

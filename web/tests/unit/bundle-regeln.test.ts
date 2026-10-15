@@ -43,6 +43,13 @@ describe('Client-Code öffentlicher Seiten', () => {
     },
   );
 
+  it('kein next/image-Element in öffentlichem Code: Bild (Server) bzw. fertige img-Attribute statt Client-Komponente (Z-08)', () => {
+    const alle = OEFFENTLICH.flatMap(dateien);
+    expect(
+      alle.filter((p) => /import Image from 'next\/image'/.test(readFileSync(p, 'utf8'))).map((p) => p.slice(WURZEL.length + 1)),
+    ).toEqual([]);
+  });
+
   it('nur eine Fehlergrenze (global-error.tsx), sie importiert keine gemeinsamen Seitenbausteine', () => {
     expect(() => statSync(join(WURZEL, 'app', '[locale]', 'error.tsx'))).toThrow();
     const s = readFileSync(join(WURZEL, 'app', 'global-error.tsx'), 'utf8');

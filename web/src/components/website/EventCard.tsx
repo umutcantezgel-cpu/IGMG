@@ -1,5 +1,5 @@
 import { ArrowRight, Calendar, Clock, MapPin, Users } from 'lucide-react';
-import Image from 'next/image';
+import { Bild } from './Bild';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import { datumLang, zeitspanne } from '@/lib/i18n/format';
@@ -233,7 +233,7 @@ export async function EventCard({
           </h3>
           {org ? (
             <div className="flex items-center gap-2 text-16 leading-snug text-tinte-2">
-              <Image
+              <Bild
                 src={org.logo}
                 alt=""
                 width={24}

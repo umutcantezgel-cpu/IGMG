@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Bild } from './Bild';
 import type { CSSProperties, ReactNode } from 'react';
 import { Seitenkopf } from './Seitenkopf';
 
@@ -80,7 +80,7 @@ export function PageHeader({
       vorn={
         logo ? (
           <span className={`flex shrink-0 rounded-lg border-2 bg-weiss p-2 ${akzent ?? ''}`}>
-            <Image src={logo} alt={logoAlt} width={40} height={40} className="size-10" />
+            <Bild src={logo} alt={logoAlt} width={40} height={40} className="size-10" />
           </span>
         ) : null
       }

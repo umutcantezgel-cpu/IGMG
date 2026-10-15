@@ -1,5 +1,5 @@
 import { Building2, Mail, MapPin, Phone } from 'lucide-react';
-import Image from 'next/image';
+import { Bild } from './Bild';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
@@ -78,7 +78,7 @@ export async function Footer() {
       <div className="mx-auto grid max-w-(--container-inhalt) grid-cols-1 gap-x-8 gap-y-10 px-4 pt-abschnitt-klein pb-8 md:grid-cols-2 md:px-8 md:pb-12 menu:grid-cols-3">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt={t('logoAlt')} width={40} height={40} className="size-10 rounded-sm" />
+            <Bild src="/bilder/logos/logo-igmg-wetzlar.png" alt={t('logoAlt')} width={40} height={40} className="size-10 rounded-sm" />
             <span className="font-display text-24 leading-tight font-semibold">IGMG Wetzlar</span>
           </div>
           <p className="text-16 leading-relaxed text-gruen-100">{t('beschreibung')}</p>

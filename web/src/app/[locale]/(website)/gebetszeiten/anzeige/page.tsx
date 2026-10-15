@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { AnzeigeLive, type AnzeigeTexte } from '@/components/website/anzeige/AnzeigeLive';
+import { Bild } from '@/components/website/Bild';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -72,6 +73,7 @@ export default async function AnzeigeSeite() {
       berechnet={fenster.quelle === 'berechnet' && !fenster.bestaetigt}
       zurueckHref={pfadFuer('/gebetszeiten', sprache)}
       anzeige={anzeige}
+      logo={<Bild src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" preload />}
     />
   );
 }

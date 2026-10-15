@@ -1,5 +1,6 @@
 import { pfadFuer, type Ziel } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
+import type { BildAttribute } from './Bild';
 
 /**
  * Navigationsstruktur (Header, Telefonmenü) nach design/Header.dc.html und Laufbuch D-04/D-07.
@@ -7,8 +8,18 @@ import type { Locale } from '@/i18n/routing';
  */
 export type { Ziel };
 
-/** Menüpunkt; `href` ist die fertige lokalisierte Adresse (für Client-Komponenten). */
-export type MenuePunkt = { schluessel: string; label: string; beschreibung: string; href: string; logo?: string };
+/**
+ * Menüpunkt; `href` ist die fertige lokalisierte Adresse (für Client-Komponenten). `logoBild`: die img-Attribute des
+ * Logos, auf dem Server berechnet (Header.tsx), damit die Menüs kein next/image laden.
+ */
+export type MenuePunkt = {
+  schluessel: string;
+  label: string;
+  beschreibung: string;
+  href: string;
+  logo?: string;
+  logoBild?: BildAttribute;
+};
 export type Menue = { schluessel: Bereich; label: string; punkte: MenuePunkt[] };
 /** Bereich der Hauptnavigation; Gruppen eines Menüs aus der Verwaltung ohne Gegenstück im Bestand heißen `db-<n>`. */
 export type Bereich = 'startseite' | 'moschee' | 'islam' | 'organisationen' | 'bildung' | 'keiner' | `db-${number}`;

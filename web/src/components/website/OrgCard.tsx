@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { Bild } from './Bild';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/link';
 import type { OrganisationSlug } from '@/i18n/routing';
@@ -71,7 +71,7 @@ export async function OrgCard({ org, desc }: { org: OrgKuerzel; desc?: string })
       <div aria-hidden className={cn('h-1.5', stil.band)} />
       <div className={cn('flex flex-1 flex-col gap-3 p-6', stil.tint)}>
         <span className={cn('flex self-start rounded-lg border-2 bg-weiss p-1.5', stil.rahmen)}>
-          <Image src={stil.logo} alt="" width={40} height={40} className="size-10" />
+          <Bild src={stil.logo} alt="" width={40} height={40} className="size-10" />
         </span>
         <h3 className="text-24 leading-tight text-balance break-words">
           <Link

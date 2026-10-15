@@ -1,5 +1,4 @@
-import { House, Search, User } from 'lucide-react';
-import Image from 'next/image';
+import { Search, User } from 'lucide-react';
 import NextLink from 'next/link';
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
@@ -7,7 +6,7 @@ import { Link } from '@/i18n/link';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import { entscheide } from '@/lib/funktionen';
-import { KontoMenue } from './kopf/KontoMenue';
+import { Bild, bildAttribute } from './Bild';
 import { KopfMenues } from './kopf/KopfMenues';
 import { MobilMenue } from './kopf/MobilMenue';
 import { Sprachwahl, type SprachEintrag } from './kopf/Sprachwahl';
@@ -26,6 +25,11 @@ export type KopfKonto = {
    * nie an der Aktion und ihren Abhängigkeiten (Auth, Datenbank).
    */
   abmelden: ReactNode;
+  /**
+   * Kontomenü am Desktop (`KontoKopfMenue`), ebenfalls von der Konto-Hülle gebaut: Der Kopf öffentlicher Seiten lädt
+   * dessen Client-Code nicht mit (Z-08).
+   */
+  menue: ReactNode;
 };
 
 /**
@@ -61,7 +65,11 @@ export async function Header({
   );
   // Menü aus der Verwaltung (ADR 0032), sonst der Bestand
   const ausDb = await ladeKopfMenue(sprache);
-  const menues = ausDb ? menuesAusDb(ausDb, bestand) : bestand;
+  // Logos der Menüpunkte als fertige img-Attribute: Die Menüs sind Client-Komponenten und brauchen so kein next/image (Z-08)
+  const menues = (ausDb ? menuesAusDb(ausDb, bestand) : bestand).map((m) => ({
+    ...m,
+    punkte: m.punkte.map(({ logo, ...p }) => (logo ? { ...p, logoBild: bildAttribute({ src: logo, alt: '', width: 32, height: 32 }) } : p)),
+  }));
   const sprachen: SprachEintrag[] = (['de', 'tr', 'en'] as const).map((code) => ({
     code,
     kurz: code.toUpperCase(),
@@ -76,7 +84,7 @@ export async function Header({
           aria-label={t('logoLabel')}
           className="flex min-h-12 shrink-0 items-center gap-3 rounded-md py-1 pr-2 text-gruen-800 no-underline hover:text-gruen-800"
         >
-          <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" priority />
+          <Bild src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" preload />
           <span className="font-display text-20 leading-none font-semibold whitespace-nowrap">IGMG Wetzlar</span>
         </Link>
         <KopfMenues
@@ -107,35 +115,7 @@ export async function Header({
             />
           </div>
           {konto ? (
-            <div className="hidden menu:block">
-              <KontoMenue initiale={konto.initiale} vorname={konto.vorname} label={t('kontoMenue')}>
-                <div className="flex items-center gap-3 border-b border-linie px-3 pt-2 pb-3">
-                  <span
-                    aria-hidden
-                    className="flex size-10 shrink-0 items-center justify-center rounded-pill bg-gruen-700 font-display text-20 leading-none text-weiss"
-                  >
-                    {konto.initiale}
-                  </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span className="text-16 text-tinte-2">{t('angemeldetAls')}</span>
-                    <span className="truncate text-18 font-bold text-tinte">{konto.vorname}</span>
-                  </span>
-                </div>
-                <ul className="flex flex-col gap-1 pt-2">
-                  <li>
-                    <NextLink
-                      href={meinBereichHref}
-                      prefetch={false}
-                      className="flex min-h-12 items-center gap-3 rounded-md px-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-sand hover:text-tinte"
-                    >
-                      <House aria-hidden className="size-5 shrink-0" />
-                      {t('meinBereich')}
-                    </NextLink>
-                  </li>
-                  <li>{konto.abmelden}</li>
-                </ul>
-              </KontoMenue>
-            </div>
+            <div className="hidden menu:block">{konto.menue}</div>
           ) : (
             <NextLink
               href={anmeldenHref}

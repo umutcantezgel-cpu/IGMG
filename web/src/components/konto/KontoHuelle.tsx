@@ -4,6 +4,7 @@ import { AbmeldenKnopf } from '@/components/konto/AbmeldenKnopf';
 import { Breadcrumbs, type PfadEintrag } from '@/components/website/Breadcrumbs';
 import { Footer } from '@/components/website/Footer';
 import { Header, type KopfKonto } from '@/components/website/Header';
+import { KontoKopfMenue } from '@/components/website/kopf/KontoKopfMenue';
 import type { Ziel } from '@/i18n/navigation';
 
 /** Initiale und Vorname aus dem Anzeigenamen („Emre B.“ → „E“, „Emre“). */
@@ -36,11 +37,10 @@ export async function KontoHuelle({
   children: ReactNode;
 }) {
   const [t, sprache] = await Promise.all([getTranslations('kopf'), getLocale()]);
-  const kopfKonto: KopfKonto | undefined = konto
-    ? {
-        ...kopfName(konto.anzeigename, sprache),
-        abmelden: <AbmeldenKnopf sprache={sprache} text={t('abmelden')} variante="zeile" />,
-      }
+  const name = konto ? kopfName(konto.anzeigename, sprache) : null;
+  const abmelden = <AbmeldenKnopf sprache={sprache} text={t('abmelden')} variante="zeile" />;
+  const kopfKonto: KopfKonto | undefined = name
+    ? { ...name, abmelden, menue: <KontoKopfMenue initiale={name.initiale} vorname={name.vorname} abmelden={abmelden} /> }
     : undefined;
   return (
     <>
