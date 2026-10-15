@@ -26,7 +26,8 @@ for (const s of SPRACHEN) {
     const feld = page.getByRole('searchbox', { name: t.feld });
     await feld.fill(s.wort);
     await feld.press('Enter');
-    await expect(page).toHaveURL(new RegExp(`\\?q=${s.wort}$`));
+    // Mit Bereichsfilter (Hadith, Gemeinde-Plattform) schickt das GET-Formular die gewählte Option „alle“ mit
+    await expect(page).toHaveURL(new RegExp(`\\?q=${s.wort}(&bereich=alle)?$`));
     const liste = page.getByRole('main').getByRole('listitem');
     await expect(liste.first()).toBeVisible();
     await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toContainText(s.wort);

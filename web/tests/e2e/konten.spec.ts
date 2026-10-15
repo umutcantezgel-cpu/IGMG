@@ -85,7 +85,8 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   await page.getByLabel(k.felder.name).fill('Testperson Eins');
   await page.getByLabel(k.felder.email).fill(email);
   await page.getByLabel(k.felder.passwortNeu, { exact: true }).fill(PASSWORT);
-  await page.getByRole('checkbox').check();
+  // Nur die Einwilligung: Das ALTCHA-Widget bringt nach der ersten Eingabe ein eigenes Kontrollkästchen mit
+  await page.locator('#registrieren-einwilligung').check();
   await expect(page.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 30_000 });
   await page.getByRole('button', { name: k.registrieren.absenden }).click();
   await expect(page.getByRole('heading', { name: k.registrieren.erfolgTitel })).toBeVisible();
