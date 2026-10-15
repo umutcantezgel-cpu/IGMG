@@ -80,8 +80,9 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 - Sichtabnahme in drei Runden mit je drei unabhängigen Juroren: alle 19 Ansichten im Median ≥ 8, keine Kategorie < 7.
 - Zugänglichkeit: axe ohne ernste/kritische Befunde auf 44 öffentlichen Routen (3 Breiten) und 7 Konto-Routen.
 - Datenfluss: 0 Anfragen an fremde Server, Koordinaten nie im Netz, Standortzugriff nur auf den Gebetszeiten-Seiten.
-- Stufe C (frischer Endprüfer): 7 Kriterien erfüllt, 2 Umgebungsausnahmen mit Ersatz, 12 teilweise
-  (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c.md`).
+- Stufe C (frischer Endprüfer) auf 75cad0a: 7 erfüllt, 2 Umgebungsausnahmen, 12 teilweise; nach der Nacharbeit N1–N4
+  (Leistung, Zugänglichkeit/Bewegung/Werte, Funktion/Unterlagen, Sicherheitsprüfung S2/S3) Nachprüfung auf 033ea6f:
+  **12 erfüllt, 2 Umgebungsausnahmen, 7 teilweise** (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c-nachpruefung.md`).
 
 ## Urteil des Endprüfers (wörtlich)
 
