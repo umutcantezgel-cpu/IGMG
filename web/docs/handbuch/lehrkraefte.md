@@ -2,7 +2,7 @@
 
 Für alle, die in der Gemeinde unterrichten oder die Gruppe beaufsichtigen. Du brauchst kein Technikwissen. Die Schritte sind kurz.
 
-**Stand:** 13.10.2026. Die Rechenkerne (Termine, Anwesenheit, Fortschritt, Hifz, Chat-Regeln) sind gebaut und getestet. Die **Bildschirme** in „Mein Bereich“ entstehen noch. Wo das so ist, beschreibt dieses Handbuch den **geplanten Ablauf** (AUFTRAG §3.5) und trägt die Marke **[Bildschirmfoto folgt]**. Schaltflächen stehen in „Anführungszeichen“; die endgültigen Namen können leicht abweichen.
+**Stand:** 15.10.2026. Die Bildschirme in „Mein Bereich“ → „Unterricht“ (Übersicht, Gruppe, Anwesenheit, Fortschritt mit Hifz, Moderation) und der Chat sind gebaut; dieses Handbuch beschreibt sie so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Schaltflächen stehen in „Anführungszeichen“.
 
 **Wichtig vorab:** Der Chat und die Lernplattform sind in der Produktion zuerst **aus**. Du bekommst Zugang, wenn die Gemeinde beides einschaltet. Vorher gibt es Schutzkonzept, Führungszeugnis und Schulung (siehe `web/docs/recht/entwuerfe/schutzkonzept-geruest.md`).
 
@@ -25,48 +25,50 @@ Für alle, die in der Gemeinde unterrichten oder die Gruppe beaufsichtigen. Du b
    4. Es erscheinen **10 Ersatzcodes**. Schreibe sie auf Papier und bewahre sie sicher auf. Nicht fotografieren, nicht im Telefon speichern.
 4. Ab jetzt: Oben auf der Website „Anmelden“ → E-Mail und Passwort → Code aus der App.
 
-**Telefon verloren oder Code geht nicht?** Nimm einen Ersatzcode. Sind alle weg: Ruf die Bildung an ([Telefon – Bildung]). Sie setzt die Zwei-Faktor-Anmeldung zurück; du richtest sie neu ein.
+**Telefon verloren oder Code geht nicht?** Nimm einen Ersatzcode. Sind alle weg: Ruf die Bildung an ([Telefon – Bildung]). Die Administration setzt die Zwei-Faktor-Anmeldung zurück (Verwaltung › Benutzer, „Zwei-Faktor zurücksetzen“) [prüfen: Weg für Konten ohne Verwaltungsrolle]; du richtest sie neu ein.
 
-## 3. Der Startbildschirm „Heute“
+## 3. Der Startbildschirm „Unterricht“
 
 Unter „Mein Bereich“ → „Unterricht“ siehst du:
 
-- die **Termine von heute** und der nächsten Tage,
-- deine **Gruppen**,
-- Hinweise, zum Beispiel neue Fehlmeldungen von Eltern. [Bildschirmfoto folgt]
+- **Heute:** die Termine von heute mit „Anwesenheit erfassen“,
+- **Die nächsten Tage:** die Termine der nächsten sechs Tage,
+- **Ihre Gruppen:** mit Zahl der Lernenden und der **offenen Meldungen**; „Gruppe öffnen“. [Bildschirmfoto folgt]
 
-Die Termine einer Gruppe entstehen **automatisch** nach dem Stundenplan der Gruppe (für die nächsten 8 Wochen). Du musst sie nicht anlegen.
+In der Gruppe siehst du die Lernenden (mit Abmeldungen der Eltern: „Abgemeldet für …“), die Leitung, die nächsten und die letzten Termine sowie die Werkzeuge Fortschritt, Moderation, Gruppenchat und Elternkanal.
+
+Die Termine legt die **Bildungsabteilung** als Serie nach dem Stundenplan der Gruppe an (Standard: die nächsten 8 Wochen). Du musst sie nicht anlegen.
 
 ## 4. Anwesenheit in 20 Sekunden
 
 So geht es:
 
-1. Tippe bei „Heute“ auf den **Termin**. [Bildschirmfoto folgt]
-2. Du siehst **eine Liste** der Kinder mit **großen Schaltern**. Alle Kinder stehen schon auf **„anwesend“**.
-3. Kinder, die von den Eltern **abgemeldet** wurden, stehen schon auf **„entschuldigt“**. Du musst nichts tun.
-4. Tippe nur bei **Ausnahmen**: „fehlt“ oder „verspätet“.
-5. Tippe auf **„Speichern“**. Fertig.
+1. Tippe bei „Heute“ auf **„Anwesenheit erfassen“** (oder in der Gruppe beim Termin auf „Anwesenheit“). [Bildschirmfoto folgt]
+2. Du siehst **eine Liste** der Kinder mit **großen Schaltern**: „Da“, „Später“, „Entschuldigt“, „Fehlt“. „Alle da“ setzt alle auf „Da“.
+3. Kinder, die von den Eltern **abgemeldet** wurden, stehen schon auf **„Entschuldigt“** („Von den Eltern abgemeldet“). Du musst nichts tun.
+4. Tippe nur bei **Ausnahmen**: „Fehlt“ oder „Später“.
+5. Tippe auf **„Anwesenheit speichern“**. Fertig.
 
-| Status | Bedeutung |
-| --- | --- |
-| anwesend | Kind war da |
-| verspätet | Kind kam später (zählt als anwesend) |
-| entschuldigt | Eltern haben vorher abgemeldet |
-| fehlt | Kind war nicht da, ohne Abmeldung |
+| Status       | Bedeutung                            |
+| ------------ | ------------------------------------ |
+| anwesend     | Kind war da                          |
+| verspätet    | Kind kam später (zählt als anwesend) |
+| entschuldigt | Eltern haben vorher abgemeldet       |
+| fehlt        | Kind war nicht da, ohne Abmeldung    |
 
-**Notiz (freiwillig):** Du kannst zu einem Kind eine kurze Notiz schreiben (höchstens 500 Zeichen). Sie wird verschlüsselt gespeichert. Schreibe **keine Diagnosen** und nichts Privates über die Familie.
+**Notizen** zu einzelnen Kindern gibt es auf diesem Bildschirm nicht. Schreibe Beobachtungen nicht in andere Felder; Diagnosen und Privates über die Familie gehören nicht in die Plattform.
 
-**Später ändern:** Öffne den Termin noch einmal und ändere den Status. Das ist erlaubt.
+**Später ändern:** Öffne den Termin noch einmal („Anwesenheit ansehen“) und ändere den Status. Das ist erlaubt.
 
-**Termin fällt aus:** Tippe auf „Termin ausfallen lassen“. **Thema:** Trage ein kurzes Thema ein (höchstens 200 Zeichen), wenn du willst.
+**Termin fällt aus:** In der Gruppe beim Termin auf „Ausfallen lassen“ tippen; „Findet doch statt“ nimmt es zurück. Ein Thema je Termin trägst du hier nicht ein.
 
 **Wer darf das?** Lehrkräfte **und Aufsichten** der Gruppe.
 
 ## 5. Fortschritt je Stufe
 
-1. Wähle die **Gruppe** und die **Kursart** (zum Beispiel Elifbe, Koran lesen, Tajwid, Ilmihal, Hifz). [Bildschirmfoto folgt]
-2. Du siehst eine Tabelle: Kinder in den Zeilen, **Stufen** des Lehrplans in den Spalten.
-3. Tippe in das Feld eines Kindes und wähle: **begonnen**, **sicher** oder **abgeschlossen**. Mit „leer“ nimmst du den Eintrag zurück.
+1. Öffne die **Gruppe** → „Fortschritt“ und wähle den **Lehrplan** (Elifbe, Koran, Tecvid, Ilmihal, Hifz). [Bildschirmfoto folgt]
+2. Du siehst ein Raster: Kinder in den Zeilen, **Stufen** des Lehrplans in den Spalten.
+3. Tippe auf das Feld eines Kindes: Der Stand schaltet weiter – offen → begonnen → sicher → abgeschlossen → offen. Jede Änderung wird **sofort** gespeichert.
 4. Das Datum und dein Name werden automatisch gespeichert.
 
 **Gut zu wissen:**
@@ -77,18 +79,18 @@ So geht es:
 
 ## 6. Hifz
 
-1. Öffne die Gruppe, wähle das Kind, tippe auf „Hifz eintragen“. [Bildschirmfoto folgt]
-2. Wähle die **Sure**, gib **von Vers** und **bis Vers** ein.
-3. Wähle optional eine **Bewertung von 1 bis 5**.
-4. Tippe auf „Speichern“.
+1. Öffne die Gruppe → „Fortschritt“ → Abschnitt „Hifz eintragen“ und wähle das Kind („Lernende/r“). [Bildschirmfoto folgt]
+2. Wähle die **Sure**, gib **Von Vers** und **Bis Vers** ein.
+3. Wähle freiwillig eine **Bewertung von 1 bis 5**.
+4. Tippe auf „Eintragen“.
 
 Die Plattform **prüft Sure und Verse** gegen den Koran. Stimmt die Versnummer nicht (zu groß, „bis“ kleiner als „von“), kommt eine Meldung, und es wird nichts gespeichert. Die Plattform schreibt oder erklärt dabei keinen religiösen Text.
 
 Die Bewertung ist eine Hilfe für dich und die Eltern, kein Wettbewerb.
 
-## 7. Elternbrief
+## 7. Mitteilungen an die Eltern
 
-Mit „Elternbrief“ schickst du eine Mitteilung an die Eltern deiner Gruppe. Sie erscheint im **Elternkanal** und löst eine E-Mail **ohne Inhalt** aus („Es gibt etwas Neues“). [Bildschirmfoto folgt] Schreibe keine Namen anderer Kinder hinein.
+Einen eigenen „Elternbrief“ gibt es nicht. Mitteilungen an die Eltern deiner Gruppe schreibst du im **Elternkanal** (Gruppe → „Elternkanal“). Eltern, die Benachrichtigungen eingeschaltet haben, bekommen einen Hinweis **ohne Inhalt** (Push); eine E-Mail geht nicht hinaus. Schreibe keine Namen anderer Kinder hinein.
 
 ## 8. Chat und Moderation
 
@@ -98,14 +100,14 @@ Mit „Elternbrief“ schickst du eine Mitteilung an die Eltern deiner Gruppe. S
 
 **Öffnungszeiten:** Standard 08 bis 20 Uhr. Außerhalb darfst du schreiben, die Kinder nicht. Schreibe außerhalb der Zeiten nur in Ausnahmefällen und sprich sie mit den Eltern ab.
 
-**So moderierst du** (am Chat-Bildschirm der Gruppe: „Mein Bereich“ → „Unterricht“ → Gruppe → „Moderation“): [Bildschirmfoto folgt]
+**So moderierst du** – direkt im Chat (Gruppe → „Gruppenchat“ bzw. „Elternkanal“) oder auf dem Bildschirm „Moderation“ der Gruppe: [Bildschirmfoto folgt]
 
-| Maßnahme | So geht es | Wichtig |
-| --- | --- | --- |
-| Nachricht entfernen | Bei der Nachricht auf „Entfernen“ tippen, **Grund** eintragen (3 bis 300 Zeichen) | Die Nachricht ist dann ein grauer Platzhalter |
-| Kind stummschalten | Kind wählen, **Minuten** angeben, **Grund** eintragen | Mit 0 Minuten hebst du es auf; höchstens 30 Tage |
-| Kanal pausieren | „Kanal pausieren“, **Grund** eintragen | Niemand außer der Leitung kann schreiben; „Fortsetzen“ hebt es auf |
-| Kind aus der Gruppe nehmen | über die Bildung | Mit Grund; sprich vorher mit den Eltern |
+| Maßnahme                   | So geht es                                                                                      | Wichtig                                                                              |
+| -------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Nachricht entfernen        | Im Chat bei der Nachricht „Entfernen“ tippen und den **Grund** eingeben (mindestens 3 Zeichen)  | Die Nachricht erscheint dann als „Diese Nachricht wurde von der Lehrkraft entfernt.“ |
+| Absender stummschalten     | Im Chat bei der Nachricht „30 Min. stumm“; bei einer Meldung unter „Moderation“ auch 24 Stunden | Immer mit Grund                                                                      |
+| Kanal pausieren            | Im Chat „Chat pausieren“ oder unter „Moderation“ „Kanal pausieren“, mit **Grund**               | Niemand außer der Leitung kann schreiben; „fortsetzen“ hebt es auf                   |
+| Kind aus der Gruppe nehmen | Unter „Moderation“ bei einer Meldung: „Lernende/n aus der Gruppe entfernen“, mit Grund          | Sprich vorher mit den Eltern und der Bildung                                         |
 
 **Immer mit Grund.** Jede Maßnahme steht in einem unveränderlichen Protokoll. Sage dem Kind freundlich, was passiert ist und warum.
 
@@ -115,17 +117,17 @@ Mit „Elternbrief“ schickst du eine Mitteilung an die Eltern deiner Gruppe. S
 
 Ein Kind oder ein Elternteil kann eine Nachricht **melden**. Dann:
 
-1. Du bekommst eine **E-Mail ohne Inhalt**: „Es gibt eine Meldung.“ Die Ansprechperson Kinderschutz bekommt sie auch.
-2. Öffne den Link zur **Moderation** der Gruppe. [Bildschirmfoto folgt]
+1. Du bekommst eine **E-Mail ohne Inhalt** mit einem Link. Die Ansprechperson Kinderschutz bekommt sie auch. Betrifft die Meldung deine eigene Nachricht, bekommst du keine Mail und siehst die Meldung nicht – sie geht direkt an die Ansprechperson Kinderschutz.
+2. Öffne den Link zur **Moderation** der Gruppe (oder Gruppe → „Moderation“) und tippe bei der Meldung auf „Ansehen und bearbeiten“. [Bildschirmfoto folgt]
 3. Lies die Meldung: den **Grund** (zum Beispiel Beleidigung, Bedrohung, Unangemessenes, Spam, Sonstiges), den **Freitext** und den **Kontext** (die gemeldete Nachricht und bis zu 10 Nachrichten davor und danach).
 4. **Jede Einsicht wird protokolliert.** Sieh nur nach, wenn es nötig ist.
 5. Handle nach der Stufe (Kurzfassung):
    - **Streit oder Beleidigung unter Kindern:** Nachricht entfernen, mit den Kindern sprechen, Eltern informieren.
    - **Ernster Fall (Mobbing, Drohung):** gib ihn an die **Ansprechperson Kinderschutz** ab ([Name, Telefon]).
    - **Verdacht auf Gewalt, Missbrauch oder Gefährdung:** **sofort** die Ansprechperson anrufen. Nicht selbst nachforschen, niemanden zur Rede stellen, keine Screenshots. Sag dem Kind **nicht**, dass du es geheim hältst.
-6. Abschließen kann die Meldung die **Ansprechperson Kinderschutz** [prüfen: Oberfläche].
+6. Wähle eine **Maßnahme** (Nachricht entfernen, 30 Minuten oder 24 Stunden stummschalten, Lernende/n aus der Gruppe entfernen, „In Bearbeitung“ oder „Ohne weitere Maßnahme abschließen“), schreibe den **Grund** und tippe auf „Ausführen“. Mit „Meldung damit abschließen“ ist die Meldung erledigt. Die Ansprechperson Kinderschutz sieht und bearbeitet alle Meldungen zusätzlich in der Verwaltung.
 
-**Betrifft die Meldung dich oder eine Kollegin oder einen Kollegen?** Rufe **direkt** die Ansprechperson an ([Telefon]). Die automatische Mail erreicht im Moment alle Leitungspersonen der Gruppe; das wird noch angepasst.
+**Betrifft die Meldung eine Kollegin oder einen Kollegen?** Rufe **direkt** die Ansprechperson an ([Telefon]). Die gemeldete Person selbst bekommt keine Mail.
 
 ## 10. Notfall-Pause anfragen
 
@@ -138,7 +140,8 @@ Die **Notfall-Pause** sperrt **alle** Chats sofort. Du setzt sie nicht selbst, d
 1. **Zuerst** pausierst du deinen eigenen Kanal (siehe 8). Das wirkt sofort.
 2. **Dann** rufst du an: Ansprechperson Kinderschutz [Telefon] oder Technik [Telefon]. Sag kurz, was los ist. Schreibe keine Namen in E-Mails.
 3. Die Ansprechperson (Rolle Kinderschutz) setzt die Notfall-Pause mit Grund.
-4. [geplant: Knopf „Notfall-Pause anfragen“ im Moderationsbildschirm; [Bildschirmfoto folgt]]
+
+Einen Knopf zum Anfragen gibt es nicht; der Anruf ist der Weg.
 
 Die Notfall-Pause wird wieder aufgehoben, wenn der Vorfall geklärt ist. Die Eltern werden informiert.
 
@@ -152,13 +155,13 @@ Die Notfall-Pause wird wieder aufgehoben, wenn der Vorfall geklärt ist. Die Elt
 
 ## 12. Wenn etwas nicht klappt
 
-| Problem | Was du tust |
-| --- | --- |
-| Passwort vergessen | „Passwort vergessen“ auf der Anmeldeseite; Link per E-Mail |
-| Zwei-Faktor-Code geht nicht | Ersatzcode nehmen; sonst Bildung anrufen |
-| Ein Kind fehlt in der Liste | Bildung fragen: Ist es in der Gruppe eingetragen und aktiv? |
-| Du siehst eine Gruppe nicht | Bildung fragen: Bist du als Leitung eingetragen? |
-| Chat ist zu | Prüfe, ob die Gruppe zwei erwachsene Leitungen hat; sonst Bildung fragen |
-| Seite zeigt Fehler | Seite neu laden; sonst Technik ([Telefon, E-Mail]) |
+| Problem                     | Was du tust                                                              |
+| --------------------------- | ------------------------------------------------------------------------ |
+| Passwort vergessen          | „Passwort vergessen“ auf der Anmeldeseite; Link per E-Mail               |
+| Zwei-Faktor-Code geht nicht | Ersatzcode nehmen; sonst Bildung anrufen                                 |
+| Ein Kind fehlt in der Liste | Bildung fragen: Ist es in der Gruppe eingetragen und aktiv?              |
+| Du siehst eine Gruppe nicht | Bildung fragen: Bist du als Leitung eingetragen?                         |
+| Chat ist zu                 | Prüfe, ob die Gruppe zwei erwachsene Leitungen hat; sonst Bildung fragen |
+| Seite zeigt Fehler          | Seite neu laden; sonst Technik ([Telefon, E-Mail])                       |
 
 **Kontakte:** Bildung [Name, Telefon] · Ansprechperson Kinderschutz [Name, Telefon] · Technik [Name, Telefon].

@@ -9,8 +9,9 @@ import { pruefeSchluessel, speicher } from '@/lib/storage';
  * Ablage der Rezitations-Audiodateien (ADR 0029). Schlüssel `audio/<rezitation>/<sure>-<vers>-<hash>.<endung>` (unveränderlich,
  * Inhalts-Hash); die Datenbank speichert die Adresse `/<schlüssel>`, die der Player direkt abspielt.
  *
- * - Vercel Blob mit `AUDIO_BLOB_READ_WRITE_TOKEN`: öffentlicher Speicher „audio“ (fra1). Ausgeliefert über den Rewrite
- *   `/audio/*` in `vercel.json` (CSP bleibt `'self'`); ohne Rewrite reicht die Route `/audio/[...pfad]` durch.
+ * - Vercel Blob mit `AUDIO_BLOB_READ_WRITE_TOKEN`: öffentlicher Speicher „audio“ (fra1). Ausgeliefert immer über die Route
+ *   `/audio/[...pfad]` (CSP bleibt `'self'`, Byte-Bereiche werden durchgereicht); kein Rewrite in `vercel.json`, damit
+ *   Dateien nicht aktiver Rezitationen nur die Werkstatt erreichen (`_gemeinde/ENTSCHEIDUNGEN.md` L2-E06).
  * - Sonst der allgemeine Speicher (`speicher()`: Dateisystem lokal/Docker, S3, privater Blob) über dieselbe Route.
  *   Im Dateisystem mit echten Byte-Bereichen (Range), sonst als ganze Datei.
  */

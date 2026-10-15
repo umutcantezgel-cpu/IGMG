@@ -560,6 +560,39 @@ const AUSNAHMEN = [
         String(e.datei).endsWith('src/server/queries/konto.ts') ||
         (String(e.datei).endsWith('drizzle/seeds/daten/nachrichten.ts') && String(e.text_jetzt ?? '').startsWith('AUFTRAG 3.9'))),
   },
+  // Nacharbeit Stufe C (N3, Z-12): neue Hinweistexte der neuen Module nach Tor E2; Liste aus
+  // _gemeinde/protokolle/C-k2-protokoll-k2.md (Z-12) und C-k2-wortlaut-b702c7c-75cad0a.md. Kein bestehender Text geändert.
+  {
+    id: 'G-06',
+    grund:
+      'Neue Schlüssel der neuen Verwaltungsmodule (Lernen, Seiten, Anzeige, Koran, Rezitationen, Menüs, Hatim, Besondere Tage, Newsletter, Spenden, Weiterleitungen, Freigaben, Kinderschutz, Gemeinde im Blick, Sicherheitsmails an Verwaltungskonten; Audit-Bezeichnungen; Hinweis zur Benachrichtigung bei Ankündigungen). Feldhinweise, Statusnamen und Rückmeldungen der nur deutschen Verwaltung (ADR 0016); das Werkzeug greift sie wegen Wörtern wie „Hinweis“, „Entwurf“, „speichern“ oder „Einwilligung“ auf. Sie sind keine Rechts- oder Einwilligungstexte für Besucherinnen und Besucher; die Einwilligungstexte der Plattform stehen in den Bereichsdateien (G-03) und in docs/recht/entwuerfe (G-01).',
+    passt: (e) =>
+      e.gruppe === 'M' &&
+      e.status === 'neu' &&
+      (/messages\/verwaltung\/(lernen|seiten|anzeige|koran|rezitationen|menues|hatim|besondereTage|newsletter|spenden|weiterleitungen|freigaben|kinderschutz|gemeindeImBlick|sicherheit)\.json$/.test(String(e.datei)) ||
+        (String(e.datei).endsWith('messages/verwaltung/audit.json') && /^audit\.aktion\./.test(e.schluessel)) ||
+        (String(e.datei).endsWith('messages/verwaltung/ankuendigungen.json') && e.schluessel === 'ankuendigungen.formular.statusHinweis')),
+  },
+  {
+    id: 'G-07',
+    grund:
+      'Neue Beschriftungen öffentlicher Funktionen ohne Rechtsinhalt: „bloecke.nurDeutsch“ der CMS-Seiten (wortgleich mit dem Bestandstext „allgemein.nurDeutsch“), „start.fasten.vorschauHinweis“ (Vorschau des Fastenbogens auf der Startseite) und die interne Grundangabe „Konto gelöscht“ im Moderationsprotokoll (src/lib/konto/loeschen.ts).',
+    passt: (e) =>
+      e.status === 'neu' &&
+      ((e.gruppe === 'M' && String(e.datei).endsWith('messages/bereiche/seiten.json') && /^(de|tr|en)\.bloecke\.nurDeutsch$/.test(e.schluessel)) ||
+        (e.gruppe === 'M' && /messages\/(de|tr|en)\.json$/.test(String(e.datei)) && e.schluessel === 'start.fasten.vorschauHinweis') ||
+        (String(e.datei).endsWith('src/lib/konto/loeschen.ts') && e.text_jetzt === 'Konto gelöscht')),
+  },
+  {
+    id: 'G-08',
+    grund:
+      'Verarbeitungsverzeichnis, Abschnitt Mailanbieter: nur Tabellenschreibweise (wie G-02) und der Verweis auf die archivierte MENSCHEN-Datei (`_werkstatt/MENSCHEN.md` → `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`, Archivierung 14.10.2026). Ohne Leerzeichen, Striche und Spaltenstriche und mit dem neuen Pfad ist der Text gleich (geprüft je Eintrag).',
+    passt: (e) => {
+      const kern = (t) => String(t ?? '').replace(/[\s|\-]/g, '');
+      const umgezogen = String(e.text_vorher ?? '').replaceAll('_werkstatt/MENSCHEN.md', '_archiv/lauf-gestaltung-2026-10/MENSCHEN.md');
+      return e.status === 'geaendert' && String(e.datei).endsWith('docs/recht/VERARBEITUNGSVERZEICHNIS.md') && kern(umgezogen) === kern(e.text_jetzt) && kern(e.text_jetzt) !== '';
+    },
+  },
 ];
 
 /** Bekannte erlaubte Schlüssel ohne Rechtsbezug (Vorgabe der Koordination): kennzeichnen, ohne Befund. */

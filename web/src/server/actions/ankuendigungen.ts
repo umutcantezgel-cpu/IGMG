@@ -3,17 +3,21 @@
 import { and, eq, isNotNull, isNull } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import { sendeAnkuendigungsPush } from '@/lib/push/ankuendigung';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { ankuendigungSchema, ausFormular, zuDatensatz } from '@/lib/validierung/ankuendigung';
 
 /**
  * Verwaltung „Ankündigungen“ (V04, E-033). Reihenfolge je Action: Recht (Sitzung, 2FA) → Eingabe prüfen →
- * Organisationsrecht am alten UND neuen Ziel → Speichern → Audit → `inhaltGeaendert` (sofort öffentlich).
+ * Organisationsrecht am alten UND neuen Ziel → Speichern → Audit → `inhaltGeaendert` (sofort öffentlich). Beim ersten
+ * Veröffentlichen folgt nach der Antwort die Benachrichtigung „Ankündigung“ (ADR 0034; Recht `push.ankuendigung`, Schalter
+ * `push`, Regeln in `src/lib/push/ankuendigung.ts`).
  * Fehler sind Schlüssel unter `verwaltung.ankuendigungen.fehler`; Antworten nennen keine Interna (S4).
  */
 export type SpeicherZustand = {
@@ -88,6 +92,10 @@ export async function speichereAnkuendigung(_vorher: SpeicherZustand, fd: FormDa
     return neu.id;
   });
   inhaltGeaendert(TAG.ankuendigungen);
+  // Benachrichtigung nur beim Wechsel auf „veröffentlicht“ – und nur mit Recht; Prüfung von Sichtbarkeit, Schalter und
+  // Abos nach der Antwort (eine spätere Sichtbarkeit übernimmt der Minutentakt)
+  if (daten.status === 'veroeffentlicht' && vorher?.status !== 'veroeffentlicht' && darf(a.rollen, 'push.ankuendigung'))
+    after(() => sendeAnkuendigungsPush(zielId).catch(() => 0));
   if (!vorher) redirect(`/verwaltung/ankuendigungen/${zielId}?angelegt=1`);
   return { gespeichert: Date.now() };
 }

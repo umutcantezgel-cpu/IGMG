@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // Prüfwerkzeug E0 (E0-PRUEFER-03): Funktionsliste F-01 … F-24 (LAGEBILD §3) gegen einen Stand.
+// F-25 … F-60 (Funktionskatalog der Gemeinde-Plattform) belegen die Suiten: _gemeinde/berichte/funktionsliste-gemeinde.md.
 // Aufruf: node funktionsliste.mjs [--basis URL] --protokoll <Pfad ohne Endung> [--bilder <Ordner>]
 //         [--nur F-01,F-06] [--zustand <storageState.json>]
 //   --basis      Standard http://127.0.0.1:3100 (oder ENV BASIS)
@@ -200,7 +201,14 @@ F['F-02'] = async (s, b, breite) => {
     const anzahl = await leiste.count();
     const info = { status, leisten: anzahl };
     let ok = status === 200 && anzahl === 1;
-    if (ok && breite < 768) {
+    // Kompakte Leiste (eine Zeile, z. B. /projekte, /quran/[sure]; Sichtabnahme S-1/X-8) hat keinen Aufklappknopf:
+    // dann zählt der Link „Alle Gebetszeiten“ direkt (C-k3-funktionsliste-3100.md, F-02 bei 390 px)
+    const kompakt = ok && breite < 768 && (await sichtbar(s.locator(`${LEISTE} button[aria-controls="leiste-alle"]`)).count()) === 0;
+    if (kompakt) {
+      info.kompakt = true;
+      info.href = await sichtbar(leiste.getByRole('link', { name: 'Alle Gebetszeiten' })).first().getAttribute('href').catch(() => null);
+      ok = info.href === '/gebetszeiten';
+    } else if (ok && breite < 768) {
       const knopf = s.locator('aside[aria-label="Aktuelle Gebetszeiten"] button[aria-controls="leiste-alle"]');
       info.vorher = await sichtbar(knopf).getAttribute('aria-expanded');
       await sichtbar(knopf).click();
@@ -224,23 +232,35 @@ F['F-03'] = async (s, b, breite) => {
   b.pruefe('keine Leiste auf /gebetszeiten', (await s.locator(LEISTE).count()) === 0, 'aside-Zahl 0');
   const tabs = s.getByRole('tab');
   const namen = await tabs.allInnerTexts();
-  b.pruefe('vier Tabs', namen.length === 4, namen);
+  // Seit der Pflichtfunktion „Mein Ort“ (H-G01) fünf Tabs; Erwartung nachgeführt nach C-k3-funktionsliste-3100.md (F-03)
+  const TABS = ['Heute', 'Mein Ort', 'Monatlich', 'Qibla', 'Einstellungen'];
+  b.pruefe('fünf Tabs (Heute, Mein Ort, Monatlich, Qibla, Einstellungen)', namen.join('|') === TABS.join('|'), namen);
   const aktive = () => s.evaluate(() => [...document.querySelectorAll('[role=tab]')].filter((t) => t.getAttribute('aria-selected') === 'true').map((t) => t.textContent.trim()));
   await s.getByRole('tab', { name: 'Heute' }).focus();
   await s.keyboard.press('ArrowRight');
   const nachPfeil = await aktive();
+  await s.keyboard.press('ArrowRight');
+  const nachPfeil2 = await aktive();
   await s.keyboard.press('End');
   const nachEnde = await aktive();
   await s.keyboard.press('Home');
   const nachPos1 = await aktive();
-  b.pruefe('Tabs per Tastatur (Pfeil rechts, Ende, Pos1)', nachPfeil[0] === 'Monatlich' && nachEnde[0] === 'Einstellungen' && nachPos1[0] === 'Heute', { nachPfeil, nachEnde, nachPos1 });
+  b.pruefe(
+    'Tabs per Tastatur (Pfeil rechts ×2, Ende, Pos1)',
+    nachPfeil[0] === 'Mein Ort' && nachPfeil2[0] === 'Monatlich' && nachEnde[0] === 'Einstellungen' && nachPos1[0] === 'Heute',
+    { nachPfeil, nachPfeil2, nachEnde, nachPos1 },
+  );
   await s.getByRole('tab', { name: 'Monatlich' }).click();
+  // Der Tab lädt seinen Teil nach (Lazy-Chunk): auf die sichtbare Überschrift warten statt sofort zu zählen
+  await sichtbar(s.locator('table caption')).first().waitFor({ timeout: 8000 }).catch(() => {});
   const captions = await s.evaluate(() => [...document.querySelectorAll('table caption')].filter((c) => c.getClientRects().length > 0).map((c) => c.textContent.trim()));
   b.messwert('Monatlich: sichtbare Tabellenüberschriften', captions);
   b.pruefe('Monatstabelle mit Überschrift „Gebetszeiten“', captions.length >= 1 && /Gebetszeiten/.test(captions[0]), captions[0] ?? 'keine');
   b.nichtPruefbar('Monat wechselt', 'Im Bestand gibt es kein Bedienelement für einen Monatswechsel; die Tabelle zeigt den laufenden Monat (Messwert oben). OFFENE FRAGE: Was „Monat wechselt“ genau prüfen soll.');
   b.belege.push(await foto(s, 'F-03-monat', breite));
   await s.getByRole('tab', { name: 'Qibla' }).click();
+  // Kompass kommt ebenfalls nachgeladen (bei 1440 px erst nach dem Chunk, C-k3 „kompassSofort 0, kompassSpaeter 1“)
+  await sichtbar(s.locator('main [role="img"]')).first().waitFor({ timeout: 8000 }).catch(() => {});
   const kompass = await sichtbar(s.locator('main [role="img"]')).count();
   b.pruefe('Qibla-Kompass sichtbar', kompass >= 1, kompass);
   b.belege.push(await foto(s, 'F-03-qibla', breite));
@@ -344,8 +364,10 @@ F['F-07'] = async (s, b, breite) => {
 F['F-08'] = async (s, b, breite) => {
   const seiten = [
     ['/ueber-uns', 'Über uns'],
-    // H-B11 (Sichtabnahme E3) hat die deutsche Schreibweise des Titels berichtigt; beide Fassungen gelten als erfüllt
-    ['/projekte', ['Gemeinsam Glauben, Gemeinsam Wachsen', 'Gemeinsam glauben, gemeinsam wachsen']],
+    // H-B11 (Sichtabnahme E3) hat die deutsche Schreibweise des Titels berichtigt; beide Fassungen gelten als erfüllt.
+    // Ist das Projekt fertiggestellt, trägt der Kopf „{Name} ist eröffnet“ und der allgemeine Titel wird zur Unterzeile
+    // (Z-21, Sichtabnahme PR-4; C-k3-funktionsliste-3100.md, F-08) – auch das ist erfüllt.
+    ['/projekte', ['Gemeinsam Glauben, Gemeinsam Wachsen', 'Gemeinsam glauben, gemeinsam wachsen', / ist eröffnet$/]],
     ['/vorstand', 'Unser Vorstand'],
     ['/igmg', 'IGMG - Islamische Gemeinschaft Millî Görüş'],
   ];
@@ -353,7 +375,7 @@ F['F-08'] = async (s, b, breite) => {
     const status = await besuche(s, pfad, 250);
     const h1 = await h1Text(s);
     const zeichen = await s.evaluate(() => document.querySelector('main')?.innerText.length ?? 0);
-    const passt = Array.isArray(erwartet) ? erwartet.includes(h1) : h1 === erwartet;
+    const passt = (Array.isArray(erwartet) ? erwartet : [erwartet]).some((e) => (e instanceof RegExp ? e.test(h1) : h1 === e));
     b.pruefe(`${pfad}: 200, H1, Inhalt`, status === 200 && passt && zeichen > 200, { status, h1, zeichen });
   }
   await besuche(s, '/igmg', 250);

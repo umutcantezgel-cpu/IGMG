@@ -1,6 +1,6 @@
 # KERN 3.0 – Gemeinde-Plattform
 
-Gilt zusätzlich zu `_werkstatt/KERN.md` (K-001…K-0xx des Vorlaufs) und `web/docs/MUSTER.md`. Bei Widerspruch gilt dieser Kern.
+Gilt zusätzlich zu `_archiv/lauf-gestaltung-2026-10/KERN.md` (K-001…K-0xx des Vorlaufs, bis 14.10.2026 `_werkstatt/KERN.md`) und `web/docs/MUSTER.md`. Bei Widerspruch gilt dieser Kern.
 
 ## Leitidee (K-001 v3)
 „Die Website lebt im Takt des Tages und im Weg des Lernens: Die sechs Gebetszeiten geben den Tag vor, der Achtstern die Ordnung,
@@ -65,7 +65,7 @@ Pfade unter `web/src/components/` (Website: `website/…`). Alle Bewegung ist re
 | B-22 | Neue Nachricht im Gruppenchat: opacity + translateY 8 px, nicht beim ersten Laden | `chat/ChatFenster.tsx` (`tritt-auf` ab `neuAb`) | nur opacity (`einblenden`) |
 | B-23 | Anwesenheit: Druck-Rückmeldung, Häkchen zeichnet sich | `unterricht/AnwesenheitErfassen.tsx` (`druck`, Häkchen `linie-zeichnet` mit `--dauer: dauer-wechsel`) | Häkchen steht sofort, Druck nur Farbe |
 | B-24 | Lernweg: Linie zeichnet sich von Station zu Station, Station tritt hervor, wenn die Linie sie erreicht | `website/elifbe/Weg.tsx` (`/elifbe`, `/lernen`: `lernweg-welle`, `lernweg-abschnitt`, `lernweg-station`), `mein-bereich/Lernweg.tsx` (Schüler-Start, Linie bis zur aktuellen Station), `website/korankurse/KursWeg.tsx` (Kurs-Lernweg `/bildung/korankurse`, ab md `lernweg-abschnitt-quer`) | Endzustand |
-| B-25 | Anzeige-Folien: Überblendung; im Gebetsfenster keine Folien | noch nicht im Code (Paket O-K05 Anzeige-CMS) | – |
+| B-25 | Anzeige-Folien: Überblendung; im Gebetsfenster keine Folien | `website/anzeige/AnzeigeLive.tsx` (Folie mit `blendet-ein`, Dauer `DAUER_FOLIE`; im Gebetsfenster Ezan bis Iqama + Ruhe und im Freitagsmodus keine Folien, nur ein stiller Hinweis), `FolienAnsicht.tsx`; Ruhezeit `src/lib/anzeige/einstellung.ts` | Folie wechselt sofort |
 | B-26 | Seitenwechsel mit Richtung: tiefer → von rechts, höher → von links, seitlich → Überblendung; Kopf steht | `SeitenUebergang.tsx` (`data-richtung`), `globals.css` (`seite-von-rechts/links`) | kein Übergang |
 | B-27 | Offline speichern: Ring nach echten Bytes (oder Dateien, wenn die Größe offen ist) | `website/quran/OfflineSpeichern.tsx` (`stroke-dashoffset`, `dauer-rueckmeldung`) | ohne Übergang (`motion-reduce:transition-none`) |
 
