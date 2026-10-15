@@ -9,6 +9,7 @@ import { protokolliere } from '@/lib/audit';
 import { bearbeiteMeldung, entferneMitglied, entferneNachricht, ladeKanal, setzeKanalPause, stummschalten } from '@/lib/chat/dienst';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
+import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { sendeGruppenPush } from '@/lib/push/gruppe';
 import { verlangeKontenAktion } from '@/lib/konto/zugang';
 import { MASSNAHMEN } from '@/lib/lernen/ansicht';
@@ -134,7 +135,7 @@ export async function moderiereMeldung(fd: FormData): Promise<void> {
 
 const pauseSchema = z.object({ gruppeId: uuid, kanalId: uuid, pause: z.enum(['1', '0']), grund: z.string().trim().min(3).max(300) });
 
-/** Kanal der Gruppe pausieren oder fortsetzen (S-09, mit Grund). */
+/** Kanal der Gruppe pausieren oder fortsetzen (S-09, mit Grund; eine Pause der Rolle kinderschutz bleibt, D-02). */
 export async function kanalPauseSetzen(fd: FormData): Promise<void> {
   const sprache = spracheSchema.parse(fd.get('sprache')) as Locale;
   const { kontext } = await lehrkraftKontext(true);
@@ -145,6 +146,8 @@ export async function kanalPauseSetzen(fd: FormData): Promise<void> {
   const kanal = await ladeKanal(p.data.kanalId);
   if (!kanal || kanal.gruppeId !== gruppeId.data) throw new KeinRecht();
   const fehler = await setzeKanalPause(kontext, kanal, p.data.pause === '1', p.data.grund);
+  // Fortsetzen meldet der Dienst der Rolle kinderschutz (Mail-Ausgang); Versand nach der Antwort
+  if (!fehler && p.data.pause === '0') after(() => versendeOffeneMails().catch(() => undefined));
   redirect(
     moderationsZiel(
       gruppeId.data,

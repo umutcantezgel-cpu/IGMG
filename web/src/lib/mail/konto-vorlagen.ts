@@ -14,6 +14,12 @@ export const KONTO_VORLAGEN = [
   // Sicherheitshinweis nach neuem Passkey bzw. neu eingerichteter Zwei-Faktor-Anmeldung (ohne Geheimnisse)
   'konto-passkey',
   'konto-zwei-faktor',
+  // S2/S3: an die übrigen sorgeberechtigten Eltern – neuer Eltern-Kind-Bezug bzw. neues Passwort des Kinderzugangs
+  'konto-elternbezug',
+  'konto-kinderpasswort',
+  // Nacharbeit N4: an das Elternkonto selbst – Beenden seines Eltern-Kind-Bezugs beantragt bzw. vollzogen
+  'konto-elternbezug-beenden',
+  'konto-elternbezug-beendet',
 ] as const;
 export type KontoVorlage = (typeof KONTO_VORLAGEN)[number];
 export type MailSprache = 'de' | 'tr' | 'en';
@@ -32,6 +38,10 @@ export const KONTO_MAIL_SCHLUESSEL: Record<KontoVorlage, string> = {
   'konto-inaktiv-kind': 'inaktivKind',
   'konto-passkey': 'passkey',
   'konto-zwei-faktor': 'zweiFaktor',
+  'konto-elternbezug': 'elternbezug',
+  'konto-kinderpasswort': 'kinderpasswort',
+  'konto-elternbezug-beenden': 'elternbezugBeenden',
+  'konto-elternbezug-beendet': 'elternbezugBeendet',
 };
 
 /**

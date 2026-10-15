@@ -2,6 +2,7 @@ import { Printer } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { DruckKnopf } from '@/components/website/gebetszeiten/DruckKnopf';
+import { RollenAntraege } from '@/components/verwaltung/benutzer/RollenAntraege';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { type Kennzahl, ladeKennzahlen } from '@/lib/leitung/kennzahlen';
 import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -13,11 +14,12 @@ const KARTE = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-6 s
 /**
  * Verwaltung › Gemeinde im Blick (AUFTRAG 3.10, H-K06): Kennzahlen ohne Personendaten für die Leitung, Werte 1–4 als
  * „< 5“, Anwesenheitsquote erst ab 20 Einträgen. Statisches SVG-Diagramm, keine hochzählenden Zahlen; druckbar als
- * Monatsbericht. Recht `leitung.lesen`.
+ * Monatsbericht. Recht `leitung.lesen`. Darüber: offene Anträge auf Schutzrollen zur Bestätigung (S2/S3).
  */
 export default async function GemeindeImBlick({ searchParams }: PageProps<'/[locale]/verwaltung/gemeinde-im-blick'>) {
-  await verlangeSeitenRecht('leitung.lesen');
-  const roh = Number((await searchParams).tage);
+  const a = await verlangeSeitenRecht('leitung.lesen');
+  const sp = await searchParams;
+  const roh = Number(sp.tage);
   const tage = ZEITRAEUME.find((z) => z === roh) ?? 30;
   const [t, k] = await Promise.all([getTranslations('verwaltung.gemeindeImBlick'), ladeKennzahlen(tage)]);
   const wert = (z: Kennzahl | undefined) => (z === undefined ? 0 : z === '< 5' ? t('kleinerFuenf') : z.toLocaleString('de-DE'));
@@ -46,6 +48,8 @@ export default async function GemeindeImBlick({ searchParams }: PageProps<'/[loc
           </DruckKnopf>
         }
       />
+      {/* Vier-Augen-Prinzip für Schutzrollen (S2/S3): nur für Leitung bzw. Kinderschutz ohne Administration */}
+      <RollenAntraege angemeldet={a} zurueck="/verwaltung/gemeinde-im-blick" meldung={sp.rollenantrag} />
       <form method="get" className="flex flex-wrap items-end gap-3 print:hidden">
         <label className="flex flex-col gap-1.5 font-bold">
           {t('zeitraum')}

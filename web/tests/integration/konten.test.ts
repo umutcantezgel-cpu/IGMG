@@ -237,7 +237,8 @@ describe('Kinderkonto (ohne E-Mail) und Anmeldung per Benutzername', () => {
       .insert(schema.lernende)
       .values({ datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId, anzeigename })
       .returning({ id: schema.lernende.id });
-    await db.insert(schema.elternKind).values({ elternId: eltern.id, lernendeId: l.id });
+    // Bestätigter Eltern-Kind-Bezug (wie nach der Annahme einer Einladung aus der Voranmeldung; N4)
+    await db.insert(schema.elternKind).values({ elternId: eltern.id, lernendeId: l.id, bestaetigtAm: new Date() });
     return l.id;
   }
 

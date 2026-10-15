@@ -9,10 +9,12 @@ import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
+import { hatAdministration } from '@/lib/konto/einladung';
+import { beantrageBezugEnde, stammtAusVoranmeldung } from '@/lib/konto/eltern-freigabe';
 import { erstelleGemeindeEinladung } from '@/lib/konto/gemeinde-einladung';
 import { beendeSitzungen, loescheGemeindeKonto } from '@/lib/konto/loeschen';
 import { istMindestens16, loeschZustand, pruefeGemeindeRollen } from '@/lib/lernen/verwaltung';
-import { versendeOffeneMails } from '@/lib/mail/ausgang';
+import { planeHinweis, SCHUTZROLLEN_EMPFAENGER, versendeOffeneMails } from '@/lib/mail/ausgang';
 import { darf, KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { gemeindeEinladungSchema, gemeindeRollenSchema } from '@/lib/validierung/lernen';
 import { ladeGemeindeKonto, type KontoDetail } from '@/server/queries/verwaltung/gemeinde-konten';
@@ -31,6 +33,8 @@ export type KontenZustand = {
   ok?: boolean;
   /** true, wenn schon eine offene Einladung bestand (keine zweite verschickt) */
   vorhanden?: boolean;
+  /** true, wenn die Einladung auf die Freigabe durch eine zweite Person wartet (Adresse nicht aus der Voranmeldung, N4) */
+  wartet?: boolean;
 };
 
 async function verlange(): Promise<Angemeldet> {
@@ -58,6 +62,19 @@ export async function gemeindeRollenSpeichern(fd: FormData): Promise<void> {
   const r = pruefeGemeindeRollen(p.data.rollen, konto.istKind);
   if (!r.ok) redirect(zumKonto(konto.id, `fehler=${r.fehler}`));
   const neu = r.rollen;
+  // NIE_PER_ADMINISTRATION (S2/S3): Konten mit der Rolle Administration bekommen keine Kontoart mit Zugang zu Gruppen,
+  // Chats oder Kinderdaten
+  if (neu.some((x) => x !== 'gemeinde') && (await hatAdministration(konto.id))) redirect(zumKonto(konto.id, 'fehler=administration'));
+  // N4: Die Kontoart Eltern verliert ein Konto nicht still, solange es mit Kindern verknüpft ist – erst die Bezüge über das
+  // Vier-Augen-Prinzip beenden (Lernende › Eltern)
+  if (konto.rollen.includes('eltern') && !neu.includes('eltern')) {
+    const [kind] = await db
+      .select({ id: schema.elternKind.lernendeId })
+      .from(schema.elternKind)
+      .where(eq(schema.elternKind.elternId, konto.id))
+      .limit(1);
+    if (kind) redirect(zumKonto(konto.id, 'fehler=elternBezug'));
+  }
   await db.transaction(async (tx) => {
     if (neu.length)
       await tx
@@ -150,6 +167,18 @@ export async function gemeindeEinladen(_vorher: KontenZustand, fd: FormData): Pr
     return { fehler: 'pruefen', feldFehler, werte };
   }
   const e = p.data;
+  // S2/S3: Nie an die eigene Adresse und nie an ein Konto mit der Rolle Administration (NIE_PER_ADMINISTRATION) – sonst
+  // machte sich die Verwaltung selbst zur Lehrkraft, zum Elternteil oder zur/zum Lernenden
+  if (e.email === a.email.trim().toLowerCase()) return { fehler: 'pruefen', feldFehler: { email: 'eigeneAdresse' }, werte };
+  const [ziel] = await db
+    .select({ id: schema.user.id })
+    .from(schema.user)
+    .where(sql`lower(${schema.user.email}) = ${e.email}`)
+    .limit(1);
+  if (ziel && (await hatAdministration(ziel.id))) return { fehler: 'pruefen', feldFehler: { email: 'administration' }, werte };
+  // N4: Eltern-Einladung mit Kindbezug an eine Adresse, die nicht aus der Voranmeldung des Kindes stammt → erst nach
+  // Freigabe durch eine zweite Person (Leitung oder Kinderschutz); bis dahin kein Link und keine Mail
+  let freigabe = false;
   if (e.lernendeId) {
     if (!darf(a.rollen, 'lernende.lesen')) return { fehler: 'keinRecht', werte };
     const [l] = await db
@@ -162,6 +191,7 @@ export async function gemeindeEinladen(_vorher: KontenZustand, fd: FormData): Pr
         return { fehler: 'pruefen', feldFehler: { lernendeId: 'unter16' }, werte };
       if (l.benutzerId) return { fehler: 'pruefen', feldFehler: { lernendeId: 'hatKonto' }, werte };
     }
+    if (e.art === 'eltern') freigabe = !(await stammtAusVoranmeldung(e.lernendeId, e.email));
   }
   // Kinderkonten haben keine E-Mail; die synthetischen Adressen sind keine Einladungsziele
   const [kind] = await db
@@ -171,8 +201,8 @@ export async function gemeindeEinladen(_vorher: KontenZustand, fd: FormData): Pr
     .where(and(sql`lower(${schema.user.email}) = ${e.email}`, eq(schema.kontoProfil.istKind, true)))
     .limit(1);
   if (kind) return { fehler: 'pruefen', feldFehler: { email: 'email' }, werte };
-  const r = await db.transaction((tx) =>
-    erstelleGemeindeEinladung(tx, {
+  const r = await db.transaction(async (tx) => {
+    const ergebnis = await erstelleGemeindeEinladung(tx, {
       name: e.name,
       email: e.email,
       art: e.art,
@@ -180,12 +210,27 @@ export async function gemeindeEinladen(_vorher: KontenZustand, fd: FormData): Pr
       gueltigTage: e.gueltigTage,
       sprache: sprache.data,
       erstelltVon: a.benutzerId,
-    }),
-  );
+      freigabeNoetig: freigabe,
+    });
+    // S2/S3: Einladungen mit Bezug auf ein Kind erfahren Leitung und Kinderschutz (ohne Namen); wartende (N4) mit der
+    // Bitte um Bestätigung
+    if (ergebnis.neu && e.lernendeId)
+      await planeHinweis(
+        {
+          an: SCHUTZROLLEN_EMPFAENGER,
+          art: e.art === 'schueler' ? 'schuelerkonto' : freigabe ? 'elterneinladung' : 'elternbezug',
+          pfad: freigabe ? '/verwaltung/gemeinde-im-blick' : `/verwaltung/lernende/${e.lernendeId}`,
+        },
+        tx,
+      );
+    return ergebnis;
+  });
   if (!r.neu) return { ok: true, vorhanden: true };
   after(() => versendeOffeneMails());
   refresh();
-  return { ok: true, link: r.link };
+  if (freigabe) return { ok: true, wartet: true };
+  // S2/S3: Mit Bezug auf ein Kind geht der Link nur per E-Mail an die eingeladene Adresse – nie an die Verwaltung
+  return e.lernendeId || !r.link ? { ok: true } : { ok: true, link: r.link };
 }
 
 /** Offene Gemeinde-Einladung widerrufen (nur reine Gemeinde-Einladungen; Verwaltungseinladungen in „Benutzer“). */
@@ -212,4 +257,25 @@ export async function gemeindeEinladungWiderrufen(fd: FormData): Promise<void> {
       ? `/verwaltung/lernende/${zurueck.data}?meldung=widerrufen#eltern`
       : '/verwaltung/gemeinde-konten?meldung=widerrufen#einladungen',
   );
+}
+
+const bezugSchema = z.object({ lernendeId: z.uuid(), elternId: z.string().min(1).max(100) });
+
+/**
+ * Eltern-Kind-Bezug beenden – beantragen (S2/S3, Nacharbeit N4): wenn ein Bezug nicht stimmt oder das Sorgerecht fehlt.
+ * Wirksam erst, wenn eine zweite Person (Leitung oder Kinderschutz, ohne Administration, nicht die beantragende) in
+ * „Gemeinde im Blick“ oder „Kinderschutz“ bestätigt (`src/lib/konto/eltern-freigabe.ts`) – sonst entfernte die
+ * Verwaltung die echten Eltern still. Das Elternkonto erfährt vom Antrag (Mail in seiner Sprache), Leitung und
+ * Kinderschutz bekommen einen Hinweis ohne Namen; im Audit steht der Vorgang mit beiden Kennungen. Danach bleibt das
+ * Elternkonto bestehen, sieht das Kind aber nicht mehr.
+ */
+export async function elternBezugBeenden(fd: FormData): Promise<void> {
+  const a = await verlange();
+  if (!darf(a.rollen, 'lernende.lesen')) throw new KeinRecht();
+  const p = bezugSchema.safeParse({ lernendeId: fd.get('lernendeId'), elternId: fd.get('elternId') });
+  if (!p.success) throw new KeinRecht();
+  const r = await beantrageBezugEnde(a.benutzerId, p.data.lernendeId, p.data.elternId);
+  if (r === 'nichtGefunden') throw new KeinRecht();
+  after(() => versendeOffeneMails().catch(() => undefined));
+  redirect(`/verwaltung/lernende/${p.data.lernendeId}?meldung=elternBeendenBeantragt#eltern`);
 }

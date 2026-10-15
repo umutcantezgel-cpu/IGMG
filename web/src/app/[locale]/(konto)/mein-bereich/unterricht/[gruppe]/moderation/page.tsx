@@ -44,8 +44,8 @@ function moeglich(m: MeldungKurz): Massnahme[] {
 }
 
 /**
- * Lehrkraft › Moderation (S-07…S-11): Kanäle pausieren/fortsetzen und offene Meldungen der Gruppe bearbeiten – immer mit
- * Grund, jede Maßnahme im Moderationsprotokoll. Den Verlauf um eine Meldung (±10 Nachrichten) lädt erst die Einzelansicht
+ * Lehrkraft › Moderation (S-07…S-11): Kanäle pausieren/fortsetzen (nicht nach einer Pause der Rolle kinderschutz) und
+ * offene Meldungen der Gruppe bearbeiten – immer mit Grund, jede Maßnahme im Moderationsprotokoll. Den Verlauf um eine Meldung (±10 Nachrichten) lädt erst die Einzelansicht
  * (`?meldung=`), jede Einsicht wird protokolliert. Nur Gruppenleitung; nie Meldungen über eigene Nachrichten (D-02).
  * Funktioniert ohne JavaScript (Formulare mit Server Actions).
  */
@@ -113,7 +113,9 @@ export default async function ModerationSeite({
                     <span className="text-18 font-bold">{tm(`kanal.${kanal.art}`)}</span>
                     <Pille ton={kanal.status === 'aktiv' ? 'gruen' : 'warnung'}>{tm(`kanalStatus.${kanal.status}`)}</Pille>
                   </div>
-                  {kanal.status !== 'archiviert' ? (
+                  {kanal.kinderschutzPause ? (
+                    <p className="max-w-text text-16 text-tinte-2">{tm('kinderschutzPause')}</p>
+                  ) : kanal.status !== 'archiviert' ? (
                     <form action={kanalPauseSetzen} className="flex flex-col gap-2 sm:flex-row sm:items-end">
                       <input type="hidden" name="sprache" value={sprache} />
                       <input type="hidden" name="gruppeId" value={gruppeId} />

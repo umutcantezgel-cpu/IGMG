@@ -4,19 +4,19 @@ Der Server im Gemeindehaus **hilft** der Website, er ersetzt sie nicht. Die Webs
 der lokale Server aus, läuft alles Wichtige weiter: Gebetszeiten, Koran, Anmeldung, Chat (dann per Abruf statt Echtzeit).
 Das Startklar-Cockpit zeigt den Zustand (Sicherung, Probe, Spiegel; gelb, wenn eine Meldung älter als 2 Tage ist).
 
-| Dienst                 | Aufgabe                                                                                                                            | Wann                                      |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| `takt`                 | stößt Push (Gebetserinnerungen, Ankündigungen mit späterem Beginn), Mail-Ausgang und Löschfristen an                               | jede Minute / alle 5 Min. / täglich 03:17 |
-| `sicherung`            | Datenbank sichern (`pg_dump`, mit `age` verschlüsselt), 30 Tage aufheben                                                           | täglich 02:43                             |
-| `sicherung` (Probe)    | Sicherung unversehrt (Prüfsumme, age-Kopf) und frischer Abzug in eine Wegwerf-Datenbank einspielbar – ohne privaten Schlüssel      | am 1. des Monats 04:13                    |
-| `medien-spiegel`       | Bilder, PDFs und Audio aus Vercel Blob spiegeln, mit Prüfsummen; in Blob gelöschte Dateien nach 30 Tagen auch im Spiegel entfernen | täglich 01:37                             |
-| `ueberwachung`         | Website-Gesundheit prüfen, Mail an die Technik nach 15 Min. Ausfall                                                                | alle 5 Min.                               |
-| `centrifugo` + `caddy` | Echtzeit-Signal für den Gruppenchat (nur „es gibt Neues“, nie Inhalte)                                                             | Profil `echtzeit`                         |
+| Dienst                 | Aufgabe                                                                                                                                                                                                | Wann                                      |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- |
+| `takt`                 | stößt Push (Gebetserinnerungen, Ankündigungen mit späterem Beginn), Mail-Ausgang und Löschfristen an                                                                                                   | jede Minute / alle 5 Min. / täglich 03:17 |
+| `sicherung`            | Datenbank sichern (`pg_dump`, mit `age` verschlüsselt); „ok“ nur, wenn jeder Schritt gelingt und die Datei nicht leer ist; die 30 neuesten gültigen Sicherungen bleiben                                | täglich 02:43                             |
+| `sicherung` (Probe)    | Sicherung unversehrt (Prüfsumme, age-Kopf) und frischer Abzug in eine Wegwerf-Datenbank einspielbar – ohne privaten Schlüssel                                                                          | am 1. des Monats 04:13                    |
+| `medien-spiegel`       | Bilder, PDFs und Audio aus dem privaten Vercel-Blob-Speicher (mit Token) spiegeln, mit Prüfsummen; Fehlschläge meldet er als Fehler; in Blob gelöschte Dateien nach 30 Tagen auch im Spiegel entfernen | täglich 01:37                             |
+| `ueberwachung`         | Website-Gesundheit prüfen, Mail an die Technik nach 15 Min. Ausfall                                                                                                                                    | alle 5 Min.                               |
+| `centrifugo` + `caddy` | Echtzeit-Signal für den Gruppenchat (nur „es gibt Neues“, nie Inhalte)                                                                                                                                 | Profil `echtzeit`                         |
 
 ## Was du brauchst (MENSCHEN MN-12)
 
 - Rechner mit Docker (Mini-PC oder Raspberry Pi 5 mit SSD), 2 GB RAM, 64 GB Speicher, dauerhaft am Netz.
-- Für die Sicherung: eine **Leserolle** in Neon (nur `SELECT`), siehe `web/docs/BETRIEB.md`.
+- Für die Sicherung: eine **Leserolle** in Neon (nur `SELECT`), siehe `web/docs/BETRIEB.md` Abschnitt 6a.
 - Ein **age-Schlüsselpaar**, erzeugt **auf dem Rechner des Vorstands**: `age-keygen -o vorstand.key`. Den öffentlichen
   Teil (`age1…`) in `.env` als `AGE_EMPFAENGER`; den privaten Teil sicher beim Vorstand verwahren (Passwortmanager,
   Papierkopie im Tresor). Der private Schlüssel kommt **nie** auf diesen Server (DSFA D-08).
@@ -25,7 +25,8 @@ Das Startklar-Cockpit zeigt den Zustand (Sicherung, Probe, Spiegel; gelb, wenn e
 ## Einrichtung (≈ 3 Stunden)
 
 1. Repository holen: `git clone … && cd IGMG/betrieb/lokal`
-2. `cp .env.beispiel .env`, Werte eintragen (Abschnitte in der Datei). `chmod 600 .env`.
+2. `cp .env.beispiel .env`, Werte eintragen (Abschnitte in der Datei). `chmod 600 .env`. Jeder Dienst bekommt daraus nur
+   seine eigenen Werte (`docker-compose.yml`, `environment`).
 3. Kein Schlüsselordner nötig: Der Server verschlüsselt nur (öffentlicher Schlüssel aus `.env`).
 4. Prüfen: `docker compose config` (zeigt die fertige Konfiguration, ohne Fehler).
 5. Starten: `docker compose up -d --build`. Protokolle: `docker compose logs -f takt sicherung`.

@@ -43,9 +43,9 @@
       "organisationsredaktion": "Inhalte der gewählten Organisationen",
       "bildung": "Kurse und Schüler-Voranmeldungen",
       "mitgliederverwaltung": "Mitgliedsanfragen",
-      "leitung": "Vorstand: Übersicht „Gemeinde im Blick“ lesen, nichts ändern",
+      "leitung": "Vorstand: Übersicht „Gemeinde im Blick“ lesen, Schutzrollen bestätigen; wird erst wirksam, wenn eine zweite Person zustimmt",
       "religioese_pruefung": "Imam/Hoca: religiöse Inhalte verfassen und freigeben",
-      "kinderschutz": "Meldungen aus Gruppenchats, Moderationsprotokoll, Notfall-Pause"
+      "kinderschutz": "Meldungen aus Gruppenchats, Moderationsprotokoll, Notfall-Pause; wird erst wirksam, wenn eine zweite Person zustimmt"
     },
     "organisationen": {
       "at": "Ana Teşkilatı",
@@ -73,7 +73,9 @@
       "link": "Einladungslink",
       "weitere": "Weitere Person einladen",
       "rollenSpeichern": "Rollen speichern",
-      "rollenGespeichert": "Die Rollen wurden gespeichert. Sie gelten ab der nächsten Seite, die die Person aufruft."
+      "rollenGespeichert": "Die Rollen wurden gespeichert. Sie gelten ab der nächsten Seite, die die Person aufruft.",
+      "rollenBeantragt": "Gespeichert. Die Rolle Leitung oder Kinderschutz wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip).",
+      "entzugBeantragt": "Gespeichert. Der Entzug der Rolle Leitung, Kinderschutz oder religiöse Prüfung wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip). Bis dahin bleibt die Rolle wirksam; die Person ist informiert."
     },
     "detail": {
       "zurueck": "Zur Liste",
@@ -123,7 +125,11 @@
       "passwortFalsch": "Das Passwort ist nicht richtig.",
       "kinderschutzSelbst": "Die Rolle Kinderschutz kann sich niemand selbst geben.",
       "kinderschutzLeitung": "Die Rolle Kinderschutz vergibt nur der Vorstand (Rolle Leitung) – Vier-Augen-Prinzip.",
-      "kinderschutzAdministration": "Kinderschutz und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben."
+      "kinderschutzAdministration": "Kinderschutz und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben.",
+      "leitungSelbst": "Die Rolle Leitung kann sich niemand selbst geben.",
+      "leitungAdministration": "Leitung und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben.",
+      "entzugVorAdministration": "Leitung oder Kinderschutz bleibt wirksam, bis eine zweite Person den Entzug bestätigt. Erst danach kann das Konto die Rolle Administration bekommen.",
+      "schutzrolle": "Dieses Konto hat die Rolle Leitung, Kinderschutz oder religiöse Prüfung. Entziehen Sie die Rolle zuerst – das bestätigt eine zweite Person; danach lässt sich das Konto löschen."
     },
     "konto": {
       "titel": "Mein Konto",
@@ -152,6 +158,42 @@
     "status": {
       "aktiv": "Aktiv",
       "gesperrt": "Gesperrt"
+    },
+    "antraege": {
+      "titel": "Bestätigen (Vier-Augen-Prinzip)",
+      "text": "Diese Änderungen werden erst wirksam, wenn eine zweite Person zustimmt: Vergabe und Entzug der Rollen Leitung, Kinderschutz und religiöse Prüfung, Eltern-Einladungen an Adressen außerhalb der Voranmeldung und das Beenden eines Eltern-Kind-Bezugs. Bitte nur bestätigen, was mit dem Vorstand abgesprochen ist.",
+      "rollenTitel": "Rollen",
+      "rolle": "Rolle: {rolle}",
+      "rolleEntzug": "Entzug der Rolle: {rolle}",
+      "beantragtVon": "Beantragt von {name} am {datum}",
+      "beantragtOhneName": "Beantragt am {datum}",
+      "bestaetigen": "Bestätigen",
+      "ablehnen": "Ablehnen",
+      "bestaetigenLabel": "Rolle {rolle} für {name} bestätigen",
+      "ablehnenLabel": "Rolle {rolle} für {name} ablehnen",
+      "entzugBestaetigenLabel": "Entzug der Rolle {rolle} für {name} bestätigen",
+      "entzugAblehnenLabel": "Entzug der Rolle {rolle} für {name} ablehnen",
+      "einladungenTitel": "Eltern-Einladungen",
+      "einladungenText": "Die Adresse stammt nicht aus der Voranmeldung des Kindes. Bitte nur bestätigen, wenn Sie sich vergewissert haben – zum Beispiel bei den bisherigen Eltern –, dass die Person sorgeberechtigt ist. Erst dann geht die Einladung hinaus.",
+      "elternteilVon": "Elternteil von {kind}",
+      "einladungBestaetigenLabel": "Eltern-Einladung für {name} bestätigen",
+      "einladungAblehnenLabel": "Eltern-Einladung für {name} ablehnen",
+      "bezuegeTitel": "Eltern-Kind-Bezug beenden",
+      "bezuegeText": "Die Verwaltung möchte diesen Eltern-Kind-Bezug beenden; das Elternkonto ist informiert. Bitte nur bestätigen, wenn der Bezug nicht stimmt oder das Sorgerecht fehlt.",
+      "bezugBestaetigenLabel": "Beenden des Eltern-Kind-Bezugs von {name} bestätigen",
+      "bezugAblehnenLabel": "Beenden des Eltern-Kind-Bezugs von {name} ablehnen",
+      "offen": "Wartet auf Bestätigung: {rollen}",
+      "offenEntzug": "Entzug wartet auf Bestätigung (bis dahin wirksam): {rollen}",
+      "meldung": {
+        "bestaetigt": "Bestätigt. Die Änderung der Rolle ist jetzt wirksam.",
+        "abgelehnt": "Der Antrag ist abgelehnt.",
+        "einladungBestaetigt": "Bestätigt. Die Einladung ist per E-Mail unterwegs.",
+        "einladungAbgelehnt": "Abgelehnt. Die Einladung ist widerrufen.",
+        "bezugBeendet": "Bestätigt. Der Eltern-Kind-Bezug ist beendet; das Elternkonto ist informiert.",
+        "bezugAbgelehnt": "Abgelehnt. Der Eltern-Kind-Bezug bleibt bestehen.",
+        "nichtGefunden": "Diesen Antrag gibt es nicht mehr.",
+        "administration": "Das Konto hat inzwischen die Rolle Administration – beides zusammen geht nicht. Bitte lehnen Sie den Antrag ab."
+      }
     }
   }
 }

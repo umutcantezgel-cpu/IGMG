@@ -8,12 +8,13 @@ import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/Loe
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
+import { antraegeVon } from '@/lib/rechte/schutzrollen';
 import { Button } from '@/components/ui/button';
 import { kontoEntsperren, kontoLoeschen, kontoSperren, zweiFaktorZuruecksetzen } from '@/server/actions/benutzer';
 import { ladeBenutzerAnsicht } from '@/server/queries/verwaltung/benutzer';
 
 const karte = 'flex flex-col gap-4 rounded-lg border border-linie bg-weiss p-5 md:p-6';
-const FEHLER = ['selbst', 'letzteAdministration'] as const;
+const FEHLER = ['selbst', 'letzteAdministration', 'schutzrolle'] as const;
 
 /** Verwaltung › Benutzer › Konto (C12): Rollen, Zwei-Faktor zurücksetzen, endgültig löschen. */
 export default async function KontoBearbeiten({ params, searchParams }: PageProps<'/[locale]/verwaltung/benutzer/[id]'>) {
@@ -26,7 +27,13 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
   const selbst = konto.id === a.benutzerId;
   const fehler = FEHLER.find((f) => f === sp.fehler);
   const meldung = (['zweiFaktor', 'gesperrt', 'entsperrt'] as const).find((m) => m === sp.meldung);
-  const tg = await getTranslations('verwaltung.shell');
+  const [tg, tr, offen] = await Promise.all([
+    getTranslations('verwaltung.shell'),
+    getTranslations('verwaltung.rollen'),
+    antraegeVon(konto.id),
+  ]);
+  const vergabe = offen.filter((x) => x.art === 'vergabe');
+  const entzug = offen.filter((x) => x.art === 'entzug');
   return (
     <>
       <NextLink href="/verwaltung/benutzer" className="inline-flex min-h-11 items-center gap-2 self-start font-bold">
@@ -49,6 +56,12 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
         <h2 id="konto-rollen" className="text-24">
           {t('detail.rollenTitel')}
         </h2>
+        {vergabe.length ? (
+          <Meldung art="info">{t('antraege.offen', { rollen: vergabe.map((r) => tr(r.rolle)).join(', ') })}</Meldung>
+        ) : null}
+        {entzug.length ? (
+          <Meldung art="info">{t('antraege.offenEntzug', { rollen: entzug.map((r) => tr(r.rolle)).join(', ') })}</Meldung>
+        ) : null}
         {bearbeiten ? <RollenFormular id={konto.id} rollen={konto.rollen} /> : <p>{konto.rollen.map((r) => r.rolle).join(', ')}</p>}
       </section>
       {bearbeiten && !selbst ? (

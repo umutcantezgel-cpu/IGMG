@@ -22,13 +22,13 @@ import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { leseTextVersion } from '@/lib/konto/einwilligung';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
-import { gemeindeEinladen, gemeindeEinladungWiderrufen } from '@/server/actions/gemeinde-konten';
+import { elternBezugBeenden, gemeindeEinladen, gemeindeEinladungWiderrufen } from '@/server/actions/gemeinde-konten';
 import { mitgliedEntfernen, mitgliedHinzufuegen } from '@/server/actions/gruppen';
 import { setzeLernendeStatus } from '@/server/actions/lernende';
 import { ladeGruppenAuswahl } from '@/server/queries/verwaltung/gruppen';
 import { ladeLernendeDetail } from '@/server/queries/verwaltung/lernende';
 
-const MELDUNGEN = ['status', 'mitglied', 'mitgliedEntfernt', 'widerrufen'] as const;
+const MELDUNGEN = ['status', 'mitglied', 'mitgliedEntfernt', 'widerrufen', 'elternBeendet', 'elternBeendenBeantragt'] as const;
 const zeitpunkt = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
 
 /**
@@ -137,22 +137,37 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
             {l.eltern.length ? (
               <ul className="flex flex-col divide-y divide-linie">
                 {l.eltern.map((e) => (
-                  <li key={e.benutzerId} className="flex flex-col gap-1 py-3">
-                    <span className="font-bold">{e.name}</span>
-                    <span className="text-16 break-all text-tinte-2">{e.email}</span>
-                    <span className="flex flex-wrap gap-1.5">
-                      {e.sorgeberechtigt ? <span className={pilleGut}>{t('detail.sorgeberechtigt')}</span> : null}
-                      {e.bestaetigtAm ? (
-                        <span className={pilleNeutral}>{t('detail.bestaetigtAm', { datum: datumLang(e.bestaetigtAm, 'de') })}</span>
-                      ) : null}
-                      {e.gesperrt ? <span className={pilleFehler}>{t('detail.gesperrt')}</span> : null}
+                  <li key={e.benutzerId} className="flex flex-wrap items-center justify-between gap-3 py-3">
+                    <span className="flex min-w-0 flex-col gap-1">
+                      <span className="font-bold">{e.name}</span>
+                      <span className="text-16 break-all text-tinte-2">{e.email}</span>
+                      <span className="flex flex-wrap gap-1.5">
+                        {e.sorgeberechtigt ? <span className={pilleGut}>{t('detail.sorgeberechtigt')}</span> : null}
+                        {e.bestaetigtAm ? (
+                          <span className={pilleNeutral}>{t('detail.bestaetigtAm', { datum: datumLang(e.bestaetigtAm, 'de') })}</span>
+                        ) : (
+                          <span className={pilleWarnung}>{t('detail.unbestaetigt')}</span>
+                        )}
+                        {e.beendenBeantragtAm ? <span className={pilleWarnung}>{t('detail.beendenBeantragt')}</span> : null}
+                        {e.gesperrt ? <span className={pilleFehler}>{t('detail.gesperrt')}</span> : null}
+                      </span>
                     </span>
+                    {einladen && !e.beendenBeantragtAm ? (
+                      <form action={elternBezugBeenden}>
+                        <input type="hidden" name="lernendeId" value={l.id} />
+                        <input type="hidden" name="elternId" value={e.benutzerId} />
+                        <Button type="submit" variant="outline" size="sm" aria-label={t('detail.bezugBeendenLabel', { name: e.name })}>
+                          {t('detail.bezugBeenden')}
+                        </Button>
+                      </form>
+                    ) : null}
                   </li>
                 ))}
               </ul>
             ) : (
               <p>{t('detail.keineEltern')}</p>
             )}
+            {einladen && l.eltern.length ? <p className="text-16 text-tinte-2">{t('detail.bezugBeendenHinweis')}</p> : null}
             {l.einladungen.length ? (
               <>
                 <h3 className="font-text text-20 font-bold tracking-normal">{t('detail.einladungen')}</h3>
@@ -169,7 +184,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                                 ? pilleGut
                                 : e.stand === 'offen'
                                   ? pilleNeutral
-                                  : e.stand === 'abgelaufen'
+                                  : e.stand === 'abgelaufen' || e.stand === 'wartet'
                                     ? pilleWarnung
                                     : pilleFehler
                             }
@@ -181,7 +196,7 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
                           ) : null}
                         </span>
                       </span>
-                      {e.stand === 'offen' && einladen ? (
+                      {(e.stand === 'offen' || e.stand === 'wartet') && einladen ? (
                         <form action={gemeindeEinladungWiderrufen}>
                           <input type="hidden" name="id" value={e.id} />
                           <input type="hidden" name="lernende" value={l.id} />

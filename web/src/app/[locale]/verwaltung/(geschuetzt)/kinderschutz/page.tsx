@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { GrundFormular } from '@/components/verwaltung/kinderschutz/GrundFormular';
 import { ListenKarte, ListenLeer, TabellenRahmen } from '@/components/verwaltung/TabellenRahmen';
+import { RollenAntraege } from '@/components/verwaltung/benutzer/RollenAntraege';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { datumKurz, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
@@ -26,7 +27,8 @@ const FILTER = ['offen_alle', 'alle', 'erledigt'] as const;
  */
 export default async function KinderschutzSeite({ searchParams }: PageProps<'/[locale]/verwaltung/kinderschutz'>) {
   const a = await verlangeSeitenRecht('meldung.chat.lesen');
-  const roh = (await searchParams).ansicht;
+  const sp = await searchParams;
+  const roh = sp.ansicht;
   const ansicht = FILTER.find((f) => f === roh) ?? 'offen_alle';
   const [t, lage, zeilen] = await Promise.all([
     getTranslations('verwaltung.kinderschutz'),
@@ -62,6 +64,9 @@ export default async function KinderschutzSeite({ searchParams }: PageProps<'/[l
           </Button>
         }
       />
+
+      {/* Vier-Augen-Prinzip für Schutzrollen (S2/S3) */}
+      <RollenAntraege angemeldet={a} zurueck="/verwaltung/kinderschutz" meldung={sp.rollenantrag} />
 
       <section aria-labelledby="ks-lage" className="grid gap-4 lg:grid-cols-2">
         <div className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-6 shadow-s1">

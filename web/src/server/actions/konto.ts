@@ -349,7 +349,13 @@ export async function gemeindeEinladungAnnehmen(_vorher: KontoZustand, daten: Fo
   if (!r.ok)
     return {
       fehler:
-        r.fehler === 'ungueltig' ? 'einladung.ungueltig' : r.fehler === 'vorhanden' ? 'einladung.vorhanden' : 'einladung.fehlerAllgemein',
+        r.fehler === 'ungueltig'
+          ? 'einladung.ungueltig'
+          : r.fehler === 'vorhanden'
+            ? 'einladung.vorhanden'
+            : r.fehler === 'freigabe'
+              ? 'einladung.freigabe'
+              : 'einladung.fehlerAllgemein',
     };
   redirect(pfadFuer({ pathname: '/anmelden', query: { hinweis: 'eingeladen' } }, sprache));
 }
@@ -362,7 +368,17 @@ export async function gemeindeEinladungUebernehmen(_vorher: KontoZustand, daten:
   if (!k) redirect(pfadFuer('/anmelden', sprache));
   if (await begrenzt('einladung', k.email)) return { fehler: 'anmelden.zuViele' };
   const r = await uebernimmEinladung({ token: String(daten.get('token') ?? '').slice(0, 100), benutzerId: k.benutzerId, email: k.email });
-  if (!r.ok) return { fehler: r.fehler === 'andereAdresse' ? 'einladung.andereAdresse' : 'einladung.ungueltig' };
+  if (!r.ok)
+    return {
+      fehler:
+        r.fehler === 'andereAdresse'
+          ? 'einladung.andereAdresse'
+          : r.fehler === 'administration'
+            ? 'einladung.administration'
+            : r.fehler === 'freigabe'
+              ? 'einladung.freigabe'
+              : 'einladung.ungueltig',
+    };
   redirect(pfadFuer('/mein-bereich', sprache));
 }
 

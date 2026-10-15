@@ -131,12 +131,14 @@ beforeAll(async () => {
     { gruppeId: gruppeA, lernendeId: l.jugend2, seit: tagPlus(heute, -30) },
     { gruppeId: gruppeB, lernendeId: l.fremd, seit: tagPlus(heute, -30) },
   ]);
+  // Bestätigte Eltern-Kind-Bezüge (wie nach der Annahme einer Einladung aus der Voranmeldung; N4)
+  const bestaetigtAm = new Date();
   await db.insert(schema.elternKind).values([
-    { elternId: p.elternE.id, lernendeId: l.kind1 },
-    { elternId: p.elternE.id, lernendeId: l.kind2 },
-    { elternId: p.elternE.id, lernendeId: l.jugend },
-    { elternId: p.elternE.id, lernendeId: l.jugend2 },
-    { elternId: p.elternF.id, lernendeId: l.fremd },
+    { elternId: p.elternE.id, lernendeId: l.kind1, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.kind2, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.jugend, bestaetigtAm },
+    { elternId: p.elternE.id, lernendeId: l.jugend2, bestaetigtAm },
+    { elternId: p.elternF.id, lernendeId: l.fremd, bestaetigtAm },
   ]);
   // Kinderzugang für Kind 1 (Einwilligung „kinderkonto“ von E, über die Eltern-Aktion)
   als(p.elternE);
@@ -204,8 +206,10 @@ describe('Gruppenisolation der Abfragen', () => {
     const m = await chat.meldeNachricht(await ladeGruppenKontext(kind1.id), n.id, 'unangemessen', null);
     expect(m.ok).toBe(true);
     expect(await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.lehrkraftA.id))).toEqual([]);
-    const fuerAufsicht = await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.aufsichtA.id));
-    expect(fuerAufsicht?.map((x) => [x.absenderIstLeitung, x.absenderLernendeId])).toEqual([[true, null]]);
+    // S2/S3: Meldungen gegen die Leitung sieht auch die übrige Leitung nicht – nur die Rolle kinderschutz
+    expect(await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.aufsichtA.id))).toEqual([]);
+    const [gespeichert] = await db.select().from(schema.chatMeldung).where(eq(schema.chatMeldung.nachrichtId, n.id));
+    expect(gespeichert).toMatchObject({ gemeldetePerson: p.lehrkraftA.id, gegenLeitung: true });
   });
 });
 
@@ -397,11 +401,17 @@ describe('Ab 16 entscheidet die Person selbst (D-11)', () => {
 
   it('im Übergang: Eltern-Widerruf nimmt die eigene Zustimmung nicht zurück; unter 16 keine eigene Zustimmung', async () => {
     als(p.elternE);
-    await umleitung(
-      kinderAktionen.einwilligungAendern(
-        formular({ sprache: 'de', lernendeId: l.jugend2, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+    // S2/S3: Im Übergang erteilen Eltern nichts Neues mehr – die Einwilligung der Eltern stammt aus der Zeit vor dem 16.
+    expect(
+      await umleitung(
+        kinderAktionen.einwilligungAendern(
+          formular({ sprache: 'de', lernendeId: l.jugend2, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+        ),
       ),
-    );
+    ).toContain('fehler=nurKind');
+    await db
+      .insert(schema.kontoEinwilligung)
+      .values({ lernendeId: l.jugend2, art: 'gruppenchat', textVersion: 'v1', erteiltVon: p.elternE.id, einvernehmenBestaetigt: true });
     als(p.jugend2);
     expect((await gruppe.eigeneEinwilligungen(await ladeGruppenKontext(p.jugend2.id), heute))?.lage).toBe('uebergang');
     await umleitung(schuelerAktionen.eigeneEinwilligungAendern(formular({ sprache: 'de', art: 'gruppenchat', aktion: 'erteilen' })));
@@ -522,7 +532,15 @@ describe('Push an eine Gruppe (ADR 0034, S-16)', () => {
         formular({ sprache: 'de', lernendeId: l.kind1, art: 'push_kind', aktion: 'erteilen', einvernehmen: 'ja' }),
       ),
     );
-    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 11 * 60_000)).toBe(1);
+    // S2/S3: Chat-Push an das Kind zusätzlich nur mit Einwilligung „Gruppenchat“ (hier noch widerrufen)
+    expect(await aktiv(l.kind1, 'gruppenchat')).toHaveLength(0);
+    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 11 * 60_000)).toBe(0);
+    await umleitung(
+      kinderAktionen.einwilligungAendern(
+        formular({ sprache: 'de', lernendeId: l.kind1, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+      ),
+    );
+    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 21 * 60_000)).toBe(1);
     // Unterricht: Eltern der Gruppe mit Thema „unterricht“, nicht Eltern anderer Gruppen
     gesendet.length = 0;
     expect(await sendeGruppenPush(gruppeA, 'unterricht', { schueler: true, eltern: true }, '/y', null, jetzt)).toBe(1);

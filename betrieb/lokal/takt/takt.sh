@@ -3,8 +3,10 @@
 # Fehler bleiben im Protokoll (docker compose logs takt); die Website arbeitet auch ohne diesen Takt weiter.
 set -u
 : "${APP_URL:?APP_URL fehlt}" "${WARTUNG_TOKEN:?WARTUNG_TOKEN fehlt}"
+# Das Token geht über die Standardeingabe an curl, nie als Argument (sonst stünde es in der Prozessliste, S3)
 rufe() {
-  curl -fsS -m 50 -X POST -H "Authorization: Bearer ${WARTUNG_TOKEN}" "${APP_URL}$1" >/dev/null 2>&1 || echo "$(date -Iseconds) Fehler: $1"
+  printf 'Authorization: Bearer %s\n' "${WARTUNG_TOKEN}" | curl -fsS -m 50 -X POST -H @- "${APP_URL}$1" >/dev/null 2>&1 \
+    || echo "$(date -Iseconds) Fehler: $1"
 }
 while true; do
   rufe /api/wartung/takt

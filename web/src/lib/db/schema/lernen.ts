@@ -61,7 +61,14 @@ export const elternKind = pgTable(
       .notNull()
       .references(() => lernende.id, { onDelete: 'cascade' }),
     sorgeberechtigt: boolean().notNull().default(true),
+    /** Bestätigt: Annahme einer Einladung an eine Adresse aus der Voranmeldung oder nach Freigabe durch eine zweite Person. */
     bestaetigtAm: timestamp({ withTimezone: true }),
+    /**
+     * Beenden beantragt (Nacharbeit N4, S2b-4): Die Verwaltung beantragt, eine zweite Person (Leitung oder Kinderschutz)
+     * bestätigt; bis dahin bleibt der Bezug. Das Elternkonto erfährt vom Antrag und vom Beenden.
+     */
+    beendenBeantragtVon: text(),
+    beendenBeantragtAm: timestamp({ withTimezone: true }),
   },
   (t) => [primaryKey({ columns: [t.elternId, t.lernendeId] }), index('eltern_kind_lernende_idx').on(t.lernendeId)],
 );

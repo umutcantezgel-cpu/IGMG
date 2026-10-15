@@ -14,6 +14,19 @@ import { oeffentlicheAdresse } from '../umgebung';
 const appUrl = process.env.BETTER_AUTH_URL || oeffentlicheAdresse(process.env);
 const istHttps = appUrl.startsWith('https://');
 
+/**
+ * Kennungen in `verification` nur als SHA-256 (S3): Ein Passwort-Link (`reset-password:<token>`) und andere Einmal-Werte
+ * stehen nicht im Klartext in der Datenbank – wer nur lesen kann (Leserolle der Sicherung, ein Abzug), übernimmt damit
+ * kein Konto. Das Präfix bis zum ersten Doppelpunkt bleibt lesbar, damit Sperren und Löschen die Links eines Kontos
+ * weiter gezielt verwerfen (`reset-password:%`). Web Crypto: läuft in Node und überall sonst.
+ */
+export async function verifikationsKennung(kennung: string): Promise<string> {
+  const ende = kennung.indexOf(':');
+  const praefix = ende >= 0 ? kennung.slice(0, ende + 1) : '';
+  const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(kennung)));
+  return `${praefix}${Buffer.from(hash).toString('base64url')}`;
+}
+
 export const authOptionen = {
   appName: 'IGMG Wetzlar Verwaltung',
   baseURL: appUrl,
@@ -51,6 +64,7 @@ export const authOptionen = {
     // vergessen“ laufen über Server Actions mit eigener Begrenzung (HMAC der Adresse vom vertrauten Proxy)
     ipAddress: { disableIpTracking: true },
   },
+  verification: { storeIdentifier: { hash: verifikationsKennung } },
   user: {
     deleteUser: { enabled: false },
     // Gesperrte Konten (C12): Zeitpunkt der Sperre, nur serverseitig gesetzt; Anmeldung und Sitzung werden verweigert

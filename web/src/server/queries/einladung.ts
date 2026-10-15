@@ -1,11 +1,12 @@
 import 'server-only';
-import { and, eq, gt, isNull } from 'drizzle-orm';
+import { and, eq, gt, isNotNull, isNull, or } from 'drizzle-orm';
 import { connection } from 'next/server';
 import { db, schema } from '@/lib/db';
 import { sha256 } from '@/lib/krypto';
 
 /**
- * Lädt eine gültige (nicht abgelaufene, nicht angenommene, nicht widerrufene) Einladung.
+ * Lädt eine gültige (nicht abgelaufene, nicht angenommene, nicht widerrufene) Einladung. Wartet sie auf die Freigabe
+ * durch eine zweite Person (Eltern-Einladung außerhalb der Voranmeldung, Nacharbeit N4), gilt sie noch nicht.
  * Bewusst KEINE Server Action (nicht vom Client aufrufbar). Liest die aktuelle Zeit → je Anfrage.
  */
 export async function ladeGueltigeEinladung(token: string) {
@@ -21,6 +22,7 @@ export async function ladeGueltigeEinladung(token: string) {
       lernendeId: schema.einladung.lernendeId,
       laeuftAb: schema.einladung.laeuftAb,
       erstelltVon: schema.einladung.erstelltVon,
+      freigegebenAm: schema.einladung.freigegebenAm,
     })
     .from(schema.einladung)
     .where(
@@ -29,6 +31,7 @@ export async function ladeGueltigeEinladung(token: string) {
         isNull(schema.einladung.angenommenAm),
         isNull(schema.einladung.widerrufenAm),
         gt(schema.einladung.laeuftAb, new Date()),
+        or(eq(schema.einladung.freigabeNoetig, false), isNotNull(schema.einladung.freigegebenAm)),
       ),
     )
     .limit(1);

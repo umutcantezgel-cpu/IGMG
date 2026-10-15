@@ -1,7 +1,7 @@
 import 'server-only';
-import { eq } from 'drizzle-orm';
+import { and, eq, notInArray } from 'drizzle-orm';
 import { pfadFuer } from '@/i18n/navigation';
-import { db, schema } from '@/lib/db';
+import { db, schema, type Transaktion } from '@/lib/db';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { verschluessele } from '@/lib/krypto';
 import { istUnzustellbar } from '@/lib/mail/adresse';
@@ -50,4 +50,82 @@ export async function meldeSicherheitsaenderung(benutzerId: string, art: Sicherh
       link: `${basisUrl()}${pfadFuer('/mein-bereich/konto', sprache)}`,
     },
   });
+}
+
+/**
+ * Hinweis an die übrigen sorgeberechtigten Eltern eines Kindes (S2/S3): ein weiteres Konto wurde als Elternteil
+ * eingetragen bzw. ein anderes Elternkonto hat das Passwort des Kinderzugangs neu gesetzt. Nur Art und Zeitpunkt, keine
+ * Namen, kein Passwort; in der Sprache der Empfängerin; nie an `.invalid`-Adressen. In der Transaktion des Aufrufers.
+ * Rückgabe: Zahl der geplanten Mails.
+ */
+export async function meldeAnSorgeberechtigte(
+  tx: Pick<Transaktion, 'select' | 'insert'>,
+  lernendeId: string,
+  ausser: readonly string[],
+  art: 'elternbezug' | 'kinderpasswort',
+  jetzt = new Date(),
+): Promise<number> {
+  const eltern = await tx
+    .select({ email: schema.user.email, sprache: schema.kontoProfil.sprache })
+    .from(schema.elternKind)
+    .innerJoin(schema.user, eq(schema.user.id, schema.elternKind.elternId))
+    .leftJoin(schema.kontoProfil, eq(schema.kontoProfil.benutzerId, schema.user.id))
+    .where(
+      and(
+        eq(schema.elternKind.lernendeId, lernendeId),
+        eq(schema.elternKind.sorgeberechtigt, true),
+        ausser.length ? notInArray(schema.elternKind.elternId, [...ausser]) : undefined,
+      ),
+    );
+  let geplant = 0;
+  for (const e of eltern) {
+    const sprache: MailSprache = e.sprache === 'tr' || e.sprache === 'en' ? e.sprache : 'de';
+    const ok = await planeKontoMail(
+      {
+        an: e.email,
+        vorlage: art === 'elternbezug' ? 'konto-elternbezug' : 'konto-kinderpasswort',
+        sprache,
+        daten: {
+          zeitpunkt: `${datumLang(jetzt, sprache)}, ${uhrzeit(jetzt, sprache)}`,
+          link: `${basisUrl()}${pfadFuer('/mein-bereich/kinder', sprache)}`,
+        },
+      },
+      tx,
+    );
+    if (ok) geplant++;
+  }
+  return geplant;
+}
+
+/**
+ * Hinweis an ein Elternkonto selbst (Nacharbeit N4): Das Beenden seines Eltern-Kind-Bezugs ist beantragt bzw. vollzogen.
+ * Nur Art und Zeitpunkt, keine Namen; in der Sprache der Person; nie an `.invalid`-Adressen. In der Transaktion des
+ * Aufrufers. Rückgabe: true, wenn eine Mail geplant wurde.
+ */
+export async function meldeAnElternkonto(
+  tx: Pick<Transaktion, 'select' | 'insert'>,
+  elternId: string,
+  art: 'beenden' | 'beendet',
+  jetzt = new Date(),
+): Promise<boolean> {
+  const [konto] = await tx
+    .select({ email: schema.user.email, sprache: schema.kontoProfil.sprache })
+    .from(schema.user)
+    .leftJoin(schema.kontoProfil, eq(schema.kontoProfil.benutzerId, schema.user.id))
+    .where(eq(schema.user.id, elternId))
+    .limit(1);
+  if (!konto) return false;
+  const sprache: MailSprache = konto.sprache === 'tr' || konto.sprache === 'en' ? konto.sprache : 'de';
+  return planeKontoMail(
+    {
+      an: konto.email,
+      vorlage: art === 'beenden' ? 'konto-elternbezug-beenden' : 'konto-elternbezug-beendet',
+      sprache,
+      daten: {
+        zeitpunkt: `${datumLang(jetzt, sprache)}, ${uhrzeit(jetzt, sprache)}`,
+        link: `${basisUrl()}${pfadFuer('/mein-bereich/kinder', sprache)}`,
+      },
+    },
+    tx,
+  );
 }

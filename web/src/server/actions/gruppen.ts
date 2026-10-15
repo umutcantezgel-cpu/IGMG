@@ -1,14 +1,17 @@
 'use server';
 
-import { and, eq, isNull } from 'drizzle-orm';
+import { and, eq, isNull, sql } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
-import { db, schema } from '@/lib/db';
+import { db, schema, type Transaktion } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
+import { hatAdministration } from '@/lib/konto/einladung';
 import { erzeugeTermine } from '@/lib/lernen/dienst';
+import { planeHinweis, SCHUTZROLLEN_EMPFAENGER, versendeOffeneMails } from '@/lib/mail/ausgang';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { gruppeAusFormular, gruppeDatensatz, gruppeSchema, leitungSchema, mitgliedSchema, termineSchema } from '@/lib/validierung/lernen';
 import { istLehrkraft } from '@/server/queries/verwaltung/gruppen';
@@ -76,6 +79,7 @@ export async function speichereGruppe(_vorher: GruppenZustand, fd: FormData): Pr
     const id = e.id;
     const geaendert = await db.transaction(async (tx) => {
       const z = await tx.update(schema.gruppe).set(daten).where(eq(schema.gruppe.id, id)).returning({ id: schema.gruppe.id });
+      if (z.length) await archivFolgen(tx, id, daten.status);
       if (z.length)
         await protokolliere(
           {
@@ -105,6 +109,29 @@ export async function speichereGruppe(_vorher: GruppenZustand, fd: FormData): Pr
   redirect(`/verwaltung/gruppen/${neu}?meldung=angelegt`);
 }
 
+/**
+ * Folgen des Archivierens (S2/S3): Beide Kanäle der Gruppe werden archiviert und laufende Mitgliedschaften enden heute –
+ * kein unbeaufsichtigter Kanal, nachdem die Leitung mit dem Archivieren ihren Zugang verliert. Wird die Gruppe wieder
+ * aktiv, öffnen sich die Kanäle wieder (eine Pause der Rolle kinderschutz bleibt bestehen); Mitglieder ordnet die
+ * Verwaltung neu zu.
+ */
+async function archivFolgen(tx: Transaktion, gruppeId: string, status: 'aktiv' | 'archiviert'): Promise<void> {
+  if (status === 'archiviert') {
+    await tx.update(schema.chatKanal).set({ status: 'archiviert' }).where(eq(schema.chatKanal.gruppeId, gruppeId));
+    await tx
+      .update(schema.gruppenMitglied)
+      .set({ bis: berlinerDatum(new Date()) })
+      .where(and(eq(schema.gruppenMitglied.gruppeId, gruppeId), isNull(schema.gruppenMitglied.bis)));
+    return;
+  }
+  await tx
+    .update(schema.chatKanal)
+    .set({
+      status: sql`case when ${schema.chatKanal.kinderschutzPause} then 'pausiert'::chat_kanal_status else 'aktiv'::chat_kanal_status end`,
+    })
+    .where(and(eq(schema.chatKanal.gruppeId, gruppeId), eq(schema.chatKanal.status, 'archiviert')));
+}
+
 async function gruppeVorhanden(id: string): Promise<boolean> {
   const [g] = await db.select({ id: schema.gruppe.id }).from(schema.gruppe).where(eq(schema.gruppe.id, id));
   return Boolean(g);
@@ -112,12 +139,18 @@ async function gruppeVorhanden(id: string): Promise<boolean> {
 
 const zurGruppe = (id: string, query: string) => `/verwaltung/gruppen/${id}?${query}`;
 
-/** Leitung zuweisen (Lehrkraft oder Aufsicht); nur Konten mit der Gemeinde-Rolle `lehrkraft`. */
+/**
+ * Leitung zuweisen (Lehrkraft oder Aufsicht); nur Konten mit der Gemeinde-Rolle `lehrkraft`. Nie das eigene Konto und nie
+ * ein Konto mit der Rolle Administration (NIE_PER_ADMINISTRATION, S2/S3: die Leitung liest Gruppen- und Elternkanal).
+ * Jede Zuweisung erfahren Leitung und Kinderschutz per Hinweis-Mail ohne Namen.
+ */
 export async function leitungZuweisen(fd: FormData): Promise<void> {
   const a = await verlange();
   const p = leitungSchema.safeParse({ gruppeId: fd.get('gruppeId'), benutzerId: fd.get('benutzerId'), rolle: fd.get('rolle') });
   if (!p.success) throw new KeinRecht();
   if (!(await gruppeVorhanden(p.data.gruppeId))) throw new KeinRecht();
+  if (p.data.benutzerId === a.benutzerId) redirect(zurGruppe(p.data.gruppeId, 'fehler=leitungSelbst#leitung'));
+  if (await hatAdministration(p.data.benutzerId)) redirect(zurGruppe(p.data.gruppeId, 'fehler=leitungAdministration#leitung'));
   if (!(await istLehrkraft(p.data.benutzerId))) redirect(zurGruppe(p.data.gruppeId, 'fehler=keineLehrkraft#leitung'));
   await db.transaction(async (tx) => {
     await tx
@@ -137,7 +170,9 @@ export async function leitungZuweisen(fd: FormData): Promise<void> {
       },
       tx,
     );
+    await planeHinweis({ an: SCHUTZROLLEN_EMPFAENGER, art: 'leitungszuweisung', pfad: `/verwaltung/gruppen/${p.data.gruppeId}` }, tx);
   });
+  after(() => versendeOffeneMails().catch(() => undefined));
   redirect(zurGruppe(p.data.gruppeId, 'meldung=leitung#leitung'));
 }
 

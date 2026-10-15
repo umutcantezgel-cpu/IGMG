@@ -111,8 +111,12 @@ export async function verlangeKontoRecht(rollen?: readonly GemeindeRolle[]): Pro
   return k;
 }
 
-/** Lädt die Gruppenbezüge eines Kontos (nur aktive Gruppen und laufende Mitgliedschaften). */
+/**
+ * Lädt die Gruppenbezüge eines Kontos: nur aktive Gruppen und laufende Mitgliedschaften – für Leitung, eigene Gruppen
+ * und Gruppen der Kinder gleichermaßen (S2/S3: in einer archivierten Gruppe liest und schreibt niemand mehr).
+ */
 export const ladeGruppenKontext = cache(async (benutzerId: string): Promise<GruppenKontext> => {
+  const aktiveGruppe = and(eq(schema.gruppe.id, schema.gruppenMitglied.gruppeId), eq(schema.gruppe.status, 'aktiv'));
   const [leitung, eigen, kinder] = await Promise.all([
     db
       .select({ gruppeId: schema.gruppenLeitung.gruppeId, rolle: schema.gruppenLeitung.rolle })
@@ -120,31 +124,33 @@ export const ladeGruppenKontext = cache(async (benutzerId: string): Promise<Grup
       .innerJoin(schema.gruppe, eq(schema.gruppe.id, schema.gruppenLeitung.gruppeId))
       .where(and(eq(schema.gruppenLeitung.benutzerId, benutzerId), eq(schema.gruppe.status, 'aktiv'))),
     db
-      .select({ lernendeId: schema.lernende.id, gruppeId: schema.gruppenMitglied.gruppeId })
+      .select({ lernendeId: schema.lernende.id, gruppeId: schema.gruppenMitglied.gruppeId, gruppeAktiv: schema.gruppe.id })
       .from(schema.lernende)
       .leftJoin(schema.gruppenMitglied, and(eq(schema.gruppenMitglied.lernendeId, schema.lernende.id), isNull(schema.gruppenMitglied.bis)))
+      .leftJoin(schema.gruppe, aktiveGruppe)
       .where(and(eq(schema.lernende.benutzerId, benutzerId), eq(schema.lernende.status, 'aktiv'))),
     db
-      .select({ lernendeId: schema.elternKind.lernendeId, gruppeId: schema.gruppenMitglied.gruppeId })
+      .select({ lernendeId: schema.elternKind.lernendeId, gruppeId: schema.gruppenMitglied.gruppeId, gruppeAktiv: schema.gruppe.id })
       .from(schema.elternKind)
       .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
       .leftJoin(
         schema.gruppenMitglied,
         and(eq(schema.gruppenMitglied.lernendeId, schema.elternKind.lernendeId), isNull(schema.gruppenMitglied.bis)),
       )
+      .leftJoin(schema.gruppe, aktiveGruppe)
       .where(eq(schema.elternKind.elternId, benutzerId)),
   ]);
   const kinderMap = new Map<string, Set<string>>();
   for (const z of kinder) {
     const s = kinderMap.get(z.lernendeId) ?? new Set<string>();
-    if (z.gruppeId) s.add(z.gruppeId);
+    if (z.gruppeId && z.gruppeAktiv) s.add(z.gruppeId);
     kinderMap.set(z.lernendeId, s);
   }
   return {
     benutzerId,
     leitung: new Map(leitung.map((z) => [z.gruppeId, z.rolle as LeitungsRolle])),
     eigeneLernendeId: eigen[0]?.lernendeId ?? null,
-    eigeneGruppen: new Set(eigen.flatMap((z) => (z.gruppeId ? [z.gruppeId] : []))),
+    eigeneGruppen: new Set(eigen.flatMap((z) => (z.gruppeId && z.gruppeAktiv ? [z.gruppeId] : []))),
     kinder: kinderMap,
   };
 });

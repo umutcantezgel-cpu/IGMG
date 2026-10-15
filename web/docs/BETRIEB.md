@@ -88,6 +88,30 @@ Die App erwartet einen Reverse-Proxy (z. B. Caddy oder nginx) für HTTPS. Für d
 - `EINGANG_SCHLUESSEL` separat und sicher aufbewahren (siehe Abschnitt 3).
 - Wiederherstellung testen (mindestens einmal je Quartal).
 
+## 6a Sicherung über den lokalen Server: Leserolle (S3)
+
+Der lokale Helfer-Server (`betrieb/lokal`, ADR 0036) sichert die Neon-Datenbank mit einer **eigenen Rolle nur zum
+Lesen** – nie mit dem Zugang aus `DATABASE_URL` der Website.
+
+```sql
+-- in Neon (SQL-Editor), als Eigentümer der Datenbank; Name und Passwort frei wählen (Passwort zufällig, mind. 32 Zeichen)
+CREATE ROLE igmg_sicherung LOGIN PASSWORD '<zufällig>';
+GRANT CONNECT ON DATABASE <datenbank> TO igmg_sicherung;
+GRANT USAGE ON SCHEMA public, drizzle TO igmg_sicherung;
+GRANT SELECT ON ALL TABLES IN SCHEMA public, drizzle TO igmg_sicherung;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO igmg_sicherung;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicherung;
+```
+
+- `pg_dump` braucht SELECT auf alle Tabellen. Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
+  `ratenbegrenzung`, `rate_limit`) sichert `sichern.sh` nur als Struktur, ohne Inhalt.
+- Einmal-Links (Passwort vergessen, Bestätigungen) stehen in `verification` nur als SHA-256 – wer die Leserolle kennt,
+  kann damit kein Konto übernehmen. Sitzungs-Cookies sind mit `BETTER_AUTH_SECRET` signiert, das nur bei Vercel liegt.
+- Die Zugangsdaten bekommt nur der Dienst `sicherung` (`docker-compose.yml` reicht jedem Dienst nur seine eigenen Werte
+  aus `.env` durch); `.env` mit `chmod 600` schützen. Passwort der Rolle nach einem Wechsel im Gemeindehaus erneuern.
+- „Sicherung ok“ im Cockpit heißt: `pg_dump`, `gzip` und `age` sind gelungen und die Datei hat die Mindestgröße. Behalten
+  werden die 30 neuesten gültigen Sicherungen (`SICHERUNG_TAGE`); Fehlschläge zählen nicht mit.
+
 ## 7 Aktualisierungen
 
 - Next.js-Sicherheitsupdates zeitnah einspielen (`pnpm view next version`, Paket-Update, `pnpm build`, Tests, neues Image).

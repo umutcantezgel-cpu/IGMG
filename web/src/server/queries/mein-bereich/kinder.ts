@@ -124,18 +124,26 @@ export async function einwilligungenDesKindes(lernendeId: string, kontext: Grupp
 
 export type Kinderzugang = { benutzername: string | null; gesperrt: boolean } | null;
 
-/** Kinderzugang (Benutzername) eines eigenen Kindes; null ohne Zugang. Nie die synthetische Adresse. */
+/**
+ * Kinderzugang (Benutzername) eines eigenen Kindes; null ohne Zugang. Nie die synthetische Adresse. Nur Kinderzugänge
+ * (`konto_profil.ist_kind`): Das eigene Konto einer/eines Jugendlichen (Einladung ab 16) ist kein Kinderzugang und gehört
+ * nicht in die Hand der Eltern (D-11, S2/S3).
+ */
 export async function kinderzugang(lernendeId: string, kontext: GruppenKontext): Promise<Kinderzugang> {
   if (!kontext.kinder.has(lernendeId)) return null;
   const [z] = await db
     .select({ benutzername: schema.user.username, gesperrtAm: schema.user.gesperrtAm })
     .from(schema.lernende)
     .innerJoin(schema.user, eq(schema.user.id, schema.lernende.benutzerId))
+    .innerJoin(schema.kontoProfil, and(eq(schema.kontoProfil.benutzerId, schema.user.id), eq(schema.kontoProfil.istKind, true)))
     .where(eq(schema.lernende.id, lernendeId));
   return z ? { benutzername: z.benutzername ?? null, gesperrt: z.gesperrtAm !== null } : null;
 }
 
-/** Name und Status eines eigenen Kindes (Kopf der Detailseite); null für fremde Kinder. */
+/**
+ * Name und Status eines eigenen Kindes (Kopf der Detailseite); null für fremde Kinder. `eigenesKonto`: Die/der Lernende
+ * hat ein eigenes Konto (kein Kinderzugang der Eltern).
+ */
 export async function kindKopf(lernendeId: string, kontext: GruppenKontext) {
   if (!kontext.kinder.has(lernendeId)) return null;
   const [k] = await db
@@ -144,8 +152,13 @@ export async function kindKopf(lernendeId: string, kontext: GruppenKontext) {
       name: schema.lernende.anzeigename,
       status: schema.lernende.status,
       sechzehnAm: schema.lernende.sechzehnAm,
+      benutzerId: schema.lernende.benutzerId,
+      istKind: schema.kontoProfil.istKind,
     })
     .from(schema.lernende)
+    .leftJoin(schema.kontoProfil, eq(schema.kontoProfil.benutzerId, schema.lernende.benutzerId))
     .where(eq(schema.lernende.id, lernendeId));
-  return k ?? null;
+  if (!k) return null;
+  const { benutzerId, istKind, ...rest } = k;
+  return { ...rest, eigenesKonto: benutzerId !== null && istKind !== true };
 }

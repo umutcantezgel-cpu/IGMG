@@ -85,7 +85,7 @@ export async function ladeLernendeListe(filter: LernendeFilter): Promise<Lernend
   }));
 }
 
-export type EinladungsStand = 'offen' | 'angenommen' | 'abgelaufen' | 'widerrufen';
+export type EinladungsStand = 'offen' | 'wartet' | 'angenommen' | 'abgelaufen' | 'widerrufen';
 
 export type LernendeDetail = {
   id: string;
@@ -99,7 +99,16 @@ export type LernendeDetail = {
   loeschenAb: Date | null;
   daten: LernendeDaten;
   gruppen: { id: string; name: string; seit: string }[];
-  eltern: { benutzerId: string; name: string; email: string; sorgeberechtigt: boolean; bestaetigtAm: Date | null; gesperrt: boolean }[];
+  eltern: {
+    benutzerId: string;
+    name: string;
+    email: string;
+    sorgeberechtigt: boolean;
+    bestaetigtAm: Date | null;
+    /** Beenden beantragt (wartet auf die zweite Person, N4) */
+    beendenBeantragtAm: Date | null;
+    gesperrt: boolean;
+  }[];
   einladungen: { id: string; name: string; email: string; art: string; laeuftAb: Date; stand: EinladungsStand; erstelltAm: Date }[];
   einwilligungen: {
     id: string;
@@ -120,9 +129,14 @@ export type LernendeDetail = {
   } | null;
 };
 
-function einladungsStand(e: { angenommenAm: Date | null; widerrufenAm: Date | null; laeuftAb: Date }, jetzt: number): EinladungsStand {
+function einladungsStand(
+  e: { angenommenAm: Date | null; widerrufenAm: Date | null; laeuftAb: Date; freigabeNoetig?: boolean; freigegebenAm?: Date | null },
+  jetzt: number,
+): EinladungsStand {
   if (e.angenommenAm) return 'angenommen';
   if (e.widerrufenAm) return 'widerrufen';
+  // N4: wartet auf die Freigabe durch eine zweite Person (noch kein Link verschickt)
+  if (e.freigabeNoetig && !e.freigegebenAm) return 'wartet';
   return e.laeuftAb.getTime() <= jetzt ? 'abgelaufen' : 'offen';
 }
 
@@ -156,6 +170,7 @@ export async function ladeLernendeDetail(id: string, leser: Angemeldet): Promise
         email: schema.user.email,
         sorgeberechtigt: schema.elternKind.sorgeberechtigt,
         bestaetigtAm: schema.elternKind.bestaetigtAm,
+        beendenBeantragtAm: schema.elternKind.beendenBeantragtAm,
         gesperrtAm: schema.user.gesperrtAm,
       })
       .from(schema.elternKind)
@@ -172,6 +187,8 @@ export async function ladeLernendeDetail(id: string, leser: Angemeldet): Promise
         angenommenAm: schema.einladung.angenommenAm,
         widerrufenAm: schema.einladung.widerrufenAm,
         erstelltAm: schema.einladung.erstelltAm,
+        freigabeNoetig: schema.einladung.freigabeNoetig,
+        freigegebenAm: schema.einladung.freigegebenAm,
       })
       .from(schema.einladung)
       .where(eq(schema.einladung.lernendeId, id))

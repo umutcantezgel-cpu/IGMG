@@ -1,9 +1,10 @@
 import 'server-only';
-import { and, asc, count, desc, eq, gt, gte, inArray, isNull, lt, lte, sql } from 'drizzle-orm';
+import { and, asc, count, desc, eq, gt, gte, inArray, isNull, lt, lte, ne, sql } from 'drizzle-orm';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { uhrzeitBerlin, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { entschluessele, verschluessele } from '@/lib/krypto';
+import { planeHinweis } from '@/lib/mail/ausgang';
 import { darfInGruppe, type GruppenAktion, type GruppenKontext } from '@/lib/rechte/gruppen';
 import { KETTEN_ANFANG, kettenHash } from './hashkette';
 import {
@@ -35,7 +36,10 @@ export type KanalLage = {
   kanalId: string;
   gruppeId: string;
   art: KanalArt;
+  /** Archivierte Gruppe → Kanal gilt als archiviert (S2/S3), auch wenn die Kanalzeile noch „aktiv“ trägt. */
   status: 'aktiv' | 'pausiert' | 'archiviert';
+  /** Pause durch die Rolle kinderschutz: Die Gruppenleitung hebt sie nicht auf (D-02, S2/S3). */
+  kinderschutzPause: boolean;
   chatModus: 'aus' | 'nur_lehrkraft' | 'offen';
   chatVon: string;
   chatBis: string;
@@ -51,6 +55,8 @@ export async function ladeKanal(kanalId: string): Promise<KanalLage | null> {
       gruppeId: schema.chatKanal.gruppeId,
       art: schema.chatKanal.art,
       status: schema.chatKanal.status,
+      kinderschutzPause: schema.chatKanal.kinderschutzPause,
+      gruppeStatus: schema.gruppe.status,
       chatModus: schema.gruppe.chatModus,
       chatVon: schema.gruppe.chatVon,
       chatBis: schema.gruppe.chatBis,
@@ -60,13 +66,15 @@ export async function ladeKanal(kanalId: string): Promise<KanalLage | null> {
     .innerJoin(schema.gruppe, eq(schema.gruppe.id, schema.chatKanal.gruppeId))
     .where(eq(schema.chatKanal.id, kanalId));
   if (!k) return null;
+  const { gruppeStatus, ...kanal } = k;
   // S-02: nur Erwachsene mit nicht gesperrtem Konto zählen (N-3 der Sicherheitsprüfung S1)
   const [{ zahl }] = await db
     .select({ zahl: count() })
     .from(schema.gruppenLeitung)
     .innerJoin(schema.user, eq(schema.user.id, schema.gruppenLeitung.benutzerId))
     .where(and(eq(schema.gruppenLeitung.gruppeId, k.gruppeId), isNull(schema.user.gesperrtAm)));
-  return { ...k, erwachsene: zahl };
+  // S2/S3: In einer archivierten Gruppe ist der Kanal zu – niemand schreibt dort mehr, auch nicht über die Action
+  return { ...kanal, status: gruppeStatus === 'archiviert' ? 'archiviert' : kanal.status, erwachsene: zahl };
 }
 
 /** Kanäle einer Gruppe; legt fehlende an (je Gruppe genau ein Gruppen- und ein Elternkanal, S-01). */
@@ -240,19 +248,17 @@ export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext,
 
 export type SendeErgebnis = { ok: true; id: number } | { ok: false; grund: SchreibGrund | TextFehler | 'rate' };
 
-/** S-13: 10 je Minute, 200 je Tag (über alle Kanäle der Person). */
-async function rateUeberschritten(benutzerId: string): Promise<boolean> {
-  const [minute, tag] = await Promise.all([
-    db
-      .select({ zahl: count() })
-      .from(schema.chatNachricht)
-      .where(and(eq(schema.chatNachricht.absenderId, benutzerId), gte(schema.chatNachricht.erstelltAm, sql`now() - interval '1 minute'`))),
-    db
-      .select({ zahl: count() })
-      .from(schema.chatNachricht)
-      .where(and(eq(schema.chatNachricht.absenderId, benutzerId), gte(schema.chatNachricht.erstelltAm, sql`now() - interval '1 day'`))),
-  ]);
-  return minute[0].zahl >= RATE_MINUTE || tag[0].zahl >= RATE_TAG;
+/** S-13: 10 je Minute, 200 je Tag (über alle Kanäle der Person). Zählt in der Transaktion des Einfügens. */
+async function rateUeberschritten(tx: Transaktion, benutzerId: string): Promise<boolean> {
+  const [minute] = await tx
+    .select({ zahl: count() })
+    .from(schema.chatNachricht)
+    .where(and(eq(schema.chatNachricht.absenderId, benutzerId), gte(schema.chatNachricht.erstelltAm, sql`now() - interval '1 minute'`)));
+  const [tag] = await tx
+    .select({ zahl: count() })
+    .from(schema.chatNachricht)
+    .where(and(eq(schema.chatNachricht.absenderId, benutzerId), gte(schema.chatNachricht.erstelltAm, sql`now() - interval '1 day'`)));
+  return minute.zahl >= RATE_MINUTE || tag.zahl >= RATE_TAG;
 }
 
 export async function sendeNachricht(kanal: KanalLage, kontext: GruppenKontext, roh: string): Promise<SendeErgebnis> {
@@ -261,13 +267,18 @@ export async function sendeNachricht(kanal: KanalLage, kontext: GruppenKontext, 
   const text = bereinigeText(roh);
   const fehler = pruefeText(text);
   if (fehler) return { ok: false, grund: fehler };
-  if (await rateUeberschritten(kontext.benutzerId)) return { ok: false, grund: 'rate' };
   const { daten, schluesselId } = verschluessele(text);
-  const [z] = await db
-    .insert(schema.chatNachricht)
-    .values({ kanalId: kanal.kanalId, absenderId: kontext.benutzerId, textVerschluesselt: daten, schluesselId })
-    .returning({ id: schema.chatNachricht.id });
-  return { ok: true, id: z.id };
+  // S-13 (S2/S3): Zählen und Einfügen unter einer Sperre je Person – parallele Anfragen warten aufeinander, statt alle
+  // vor dem ersten Einfügen zu zählen (check-then-insert)
+  return db.transaction(async (tx): Promise<SendeErgebnis> => {
+    await tx.execute(sql`select pg_advisory_xact_lock(hashtext(${`igmg:chat-rate:${kontext.benutzerId}`}))`);
+    if (await rateUeberschritten(tx, kontext.benutzerId)) return { ok: false, grund: 'rate' };
+    const [z] = await tx
+      .insert(schema.chatNachricht)
+      .values({ kanalId: kanal.kanalId, absenderId: kontext.benutzerId, textVerschluesselt: daten, schluesselId })
+      .returning({ id: schema.chatNachricht.id });
+    return { ok: true, id: z.id };
+  });
 }
 
 export async function bestaetigeRegeln(benutzerId: string): Promise<void> {
@@ -298,17 +309,22 @@ function grundGueltig(grund: string): string | null {
   return g.length >= 3 ? g : null;
 }
 
-/** S-09: Nachricht entfernen (nur Gruppenleitung, mit Grund). */
+/**
+ * S-09: Nachricht entfernen (nur Gruppenleitung, mit Grund). Eigene Nachrichten entfernt die Leitung nicht selbst
+ * (S2/S3, „senden und löschen“): Das übernimmt eine andere Person der Leitung oder die Rolle kinderschutz – so bleibt
+ * eine grenzüberschreitende Nachricht bis zu einer Meldung erhalten (D-03).
+ */
 export async function entferneNachricht(kontext: GruppenKontext, nachrichtId: number, grund: string): Promise<ModerationsFehler | null> {
   const g = grundGueltig(grund);
   if (!g) return 'grundFehlt';
   const [n] = await db
-    .select({ kanalId: schema.chatNachricht.kanalId, gruppeId: schema.chatKanal.gruppeId })
+    .select({ kanalId: schema.chatNachricht.kanalId, gruppeId: schema.chatKanal.gruppeId, absenderId: schema.chatNachricht.absenderId })
     .from(schema.chatNachricht)
     .innerJoin(schema.chatKanal, eq(schema.chatKanal.id, schema.chatNachricht.kanalId))
     .where(eq(schema.chatNachricht.id, nachrichtId));
   if (!n) return 'nichtGefunden';
   if (!darfInGruppe(kontext, 'chat.moderieren', n.gruppeId)) return 'keinRecht';
+  if (n.absenderId === kontext.benutzerId) return 'keinRecht';
   await entferne(n.kanalId, nachrichtId, kontext.benutzerId, g);
   return null;
 }
@@ -356,10 +372,11 @@ export async function pausiereAlsKinderschutz(
   const g = grundGueltig(grund);
   if (!g) return 'grundFehlt';
   const r = await db.transaction(async (tx) => {
+    // Archivierte Kanäle bleiben archiviert; die Pause merkt sich, dass kinderschutz sie gesetzt hat (S2/S3)
     const z = await tx
       .update(schema.chatKanal)
-      .set({ status: pause ? 'pausiert' : 'aktiv' })
-      .where(eq(schema.chatKanal.id, kanalId))
+      .set({ status: pause ? 'pausiert' : 'aktiv', kinderschutzPause: pause })
+      .where(and(eq(schema.chatKanal.id, kanalId), ne(schema.chatKanal.status, 'archiviert')))
       .returning({ id: schema.chatKanal.id });
     if (z.length)
       await protokolliereModeration(tx, { kanalId, nachrichtId: null, akteurId, aktion: pause ? 'pausiert' : 'fortgesetzt', grund: g });
@@ -441,7 +458,11 @@ export async function stummschalten(
   return null;
 }
 
-/** S-09: Kanal pausieren oder fortsetzen. */
+/**
+ * S-09: Kanal pausieren oder fortsetzen (Gruppenleitung). Eine Pause der Rolle kinderschutz hebt die Leitung nicht auf
+ * und überschreibt sie nicht (D-02, S2/S3). Jedes Fortsetzen durch die Leitung erfährt kinderschutz per Mail (ohne
+ * Inhalt; Versand über den Mail-Ausgang).
+ */
 export async function setzeKanalPause(
   kontext: GruppenKontext,
   kanal: KanalLage,
@@ -451,11 +472,21 @@ export async function setzeKanalPause(
   const g = grundGueltig(grund);
   if (!g) return 'grundFehlt';
   if (!darfInGruppe(kontext, 'chat.moderieren', kanal.gruppeId)) return 'keinRecht';
-  await db.transaction(async (tx) => {
-    await tx
+  if (kanal.status === 'archiviert') return 'keinRecht';
+  return db.transaction(async (tx): Promise<ModerationsFehler | null> => {
+    // Frisch in der Transaktion: Hat kinderschutz inzwischen pausiert, bleibt die Pause
+    const z = await tx
       .update(schema.chatKanal)
       .set({ status: pause ? 'pausiert' : 'aktiv' })
-      .where(eq(schema.chatKanal.id, kanal.kanalId));
+      .where(
+        and(
+          eq(schema.chatKanal.id, kanal.kanalId),
+          eq(schema.chatKanal.kinderschutzPause, false),
+          ne(schema.chatKanal.status, 'archiviert'),
+        ),
+      )
+      .returning({ id: schema.chatKanal.id });
+    if (!z.length) return 'keinRecht';
     await protokolliereModeration(tx, {
       kanalId: kanal.kanalId,
       nachrichtId: null,
@@ -463,8 +494,9 @@ export async function setzeKanalPause(
       aktion: pause ? 'pausiert' : 'fortgesetzt',
       grund: g,
     });
+    if (!pause) await planeHinweis({ an: 'recht:meldung.chat.bearbeiten', art: 'kanal_fortgesetzt', pfad: '/verwaltung/kinderschutz' }, tx);
+    return null;
   });
-  return null;
 }
 
 /** S-07/S-08: Nachricht melden. Kontext (±10) wird verschlüsselt gesichert; Benachrichtigung ohne Inhalt. */
@@ -514,11 +546,23 @@ export async function meldeNachricht(
   }));
   const k = verschluessele(ausschnitt);
   const f = freitext ? verschluessele(bereinigeText(freitext).slice(0, 1000)) : null;
+  // D-02 (S2/S3): Gemeldete Person und ob sie zur Leitung gehört, bleiben an der Meldung – auch wenn die Nachricht später
+  // gelöscht wird. Meldungen gegen die Leitung (oder über Unbekannte) sieht nur die Rolle kinderschutz.
+  const gegenLeitung = n.absenderId
+    ? (
+        await db
+          .select({ id: schema.gruppenLeitung.benutzerId })
+          .from(schema.gruppenLeitung)
+          .where(and(eq(schema.gruppenLeitung.gruppeId, n.gruppeId), eq(schema.gruppenLeitung.benutzerId, n.absenderId)))
+      ).length > 0
+    : false;
   const [m] = await db
     .insert(schema.chatMeldung)
     .values({
       kanalId: n.kanalId,
       nachrichtId,
+      gemeldetePerson: n.absenderId,
+      gegenLeitung,
       gemeldetVon: kontext.benutzerId,
       grund,
       freitextVerschluesselt: f?.daten ?? null,
