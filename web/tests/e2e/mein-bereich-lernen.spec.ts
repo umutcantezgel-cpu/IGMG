@@ -3,6 +3,7 @@ import { randomBytes, randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { expect as basisExpect, test, type Page } from '@playwright/test';
 import * as OTPAuth from 'otpauth';
+import chatTexte from '../../messages/bereiche/chat-fenster.json';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import deTexte from '../../messages/de.json';
 import kontoTexte from '../../messages/bereiche/konto.json';
@@ -27,6 +28,7 @@ const k = kontoTexte.de.konto;
 const m = meinTexte.de.meinBereich;
 const u = unterrichtTexte.de.unterricht;
 const d = kinderTexte.de.kinder;
+const c = chatTexte.de.chatFenster;
 const kopf = deTexte.kopf;
 
 type Zugaenge = {
@@ -124,14 +126,36 @@ test('Lehrkraft: Heute → Anwesenheit auf einem Bildschirm, Abmeldung vorbelegt
   await yunus.getByText(status.fehlt, { exact: true }).click();
   await expect(yunus.getByRole('radio', { name: status.fehlt })).toBeChecked();
   await expect(page.getByText(u.anwesenheit.erfassen.zaehler.replace('{anwesend}', '1').replace('{gesamt}', '3'))).toBeVisible();
-  await page.getByRole('button', { name: u.anwesenheit.erfassen.speichern }).click();
+  // Speichern per Tastatur (Z-07 F-2, WCAG 2.4.3): Der Fokus bleibt auf dem Knopf statt auf <body>, „Gespeichert.“ kommt
+  // über role=status
+  const speichern = page.getByRole('button', { name: u.anwesenheit.erfassen.speichern });
+  await speichern.focus();
+  await page.keyboard.press('Enter');
   await expect(page.getByRole('status').filter({ hasText: u.anwesenheit.erfassen.gespeichert })).toBeVisible();
+  await expect(speichern).toBeFocused();
 
   // Gespeichert: nach dem Neuladen steht „fehlt“ (erfasst) statt der Vorbelegung
   await page.reload();
   await expect(page.getByRole('group', { name: lp.kinder.yunus.name }).getByRole('radio', { name: status.fehlt })).toBeChecked();
   await page.goto(`/mein-bereich/unterricht/${lp.gruppeId}`);
   await expect(page.getByText(u.gruppe.erfasst.replace('{anzahl}', '3')).first()).toBeVisible();
+
+  // Gruppenchat (nur mit Funktion „chat“): Die Leitung schreibt auch außerhalb der Chatzeiten. Senden über den Knopf per
+  // Tastatur – danach steht der Fokus im leeren Feld, nicht auf <body> (Z-07 F-1, WCAG 2.4.3)
+  const chatAdresse = `/mein-bereich/gruppen/${lp.gruppeId}/chat`;
+  if ((await page.request.get(chatAdresse)).status() === 200) {
+    await page.goto(chatAdresse);
+    const feld = page.getByRole('textbox', { name: c.eingabe });
+    await expect(feld).toBeEnabled();
+    const probe = `Tastaturprobe ${randomBytes(3).toString('hex')}`;
+    await feld.fill(probe);
+    await page.keyboard.press('Tab');
+    await expect(page.getByRole('button', { name: c.senden, exact: true })).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('log').getByText(probe)).toBeVisible();
+    await expect(feld).toBeFocused();
+    await expect(feld).toHaveValue('');
+  }
 
   expect(fehler.filter((f) => /Content Security Policy|Refused to/.test(f))).toEqual([]);
 });
