@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 15.10. 05:40 UTC:** Stufe C gelaufen (`berichte/stufe-c.md`, `ABNAHME.md`: 7 erfüllt, 2 AUSNAHME, 12 teilweise),
+  `main` = b241611 (nur Unterlagen seit 75cad0a). Läuft: Nacharbeit-Workflow `wf_1e893666-097` (N1 Leistung in
+  `agent-ac6673f9…`, N2 Zugänglichkeit/Bewegung/Werte in `agent-a360d92e…`, N3 Funktion/Unterlagen in `agent-a212ace6…`,
+  N4 Sicherheit S2/S3 in `agent-a2e7dbaf…`). Nach Abbruch: Workflow mit `resumeFromRunId` fortsetzen; fertige Branches
+  mergen → Tor → FF → betroffene Stufe-C-Prüfungen erneut (o3, k1, o2 Z-03/Z-05, k2 Wortlaut, Z-13) → ABNAHME nachführen →
+  ABSCHLUSS, CLAUDE.md-Block entfernen.
 - **Stand 14.10. 19:40 UTC:** `main` = 75cad0a (Feinschliff Runde 3 gemergt; Tor grün: Unit 1438, Integration 1680,
   Bau wie frischer Import 1866 + Vorschau 2207, Sweep 61/24). Sichtabnahme Runde 3: alle 19 Ansichten ≥ 8 → Z-04 erfüllt
   (`berichte/sichtabnahme-3.md`). Entscheidungen L2-E04 (Vercel-Import) und L2-E05 (Null der Textschrift). Läuft: Stufe C
