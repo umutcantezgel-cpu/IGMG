@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 15.10. 19:15 UTC:** Stufe-C-Nachprüfung auf 033ea6f: 12 erfüllt, 2 AUSNAHME, 7 teilweise
+  (`berichte/stufe-c-nachpruefung.md`, ABNAHME nachgeführt; `main` = 06fcf03). Wortlaut G-06 erweitert → rc=0 (9757df3).
+  Läuft: Workflow „nacharbeit-2“ `wf_68b411e9-63f` (Skript unter `~/.claude/projects/-home-user-IGMG-web/…/workflows/scripts/`):
+  P1 F-40 Startseite/Wissen (`agent-a212ace6…`, Migration 0015), P2 F-38 Push-Rückfall + F-44 (`agent-a2e7dbaf…`, ggf. 0016),
+  P3 Kleinigkeiten + Z-08 erster Tab Hadith + Player-E2E + Matrix (`agent-ac6673f9…`), P4 echte E2E ohne Docker
+  (PostgreSQL 16 aus /usr/lib/postgresql/16/bin + Mailpit `scratchpad/mailpit`, `scratchpad/e2e-echt/`) + Wiederherstellungsprobe
+  (`agent-a360d92e…`). Node 24: `scratchpad/node24/bin` vor PATH. Nach Abbruch: Arbeitsbäume als ZWISCHENSTAND committen,
+  Workflow mit `resumeFromRunId` fortsetzen. Danach: mergen (Migrationen fortlaufend), Tor, echte E2E auf dem Merge-Stand,
+  FF `main`, Stufe-C-Nachprüfung 2 (frischer Endprüfer), ABNAHME/BERICHT, ABSCHLUSS, CLAUDE.md-Block entfernen.
 - **Stand 15.10. 17:40 UTC:** `main` = 033ea6f – Nacharbeit N1–N4 gemergt (alle Gegenprüfungen frei, Restmängel in zweiter
   Runde behoben). Tor: Unit 1488, Integration 2638, Sprachen, Religion, Bau wie frischer Import 1866 (Sweep 61/24, Crawl 1311
   ohne Fehler), Vorschau 2207. Läuft: Stufe-C-Nachprüfung `wf_a9e24335-d06` (Konten → Umbau → Öffentlich → Endprüfer).
