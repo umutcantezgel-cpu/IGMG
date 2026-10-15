@@ -1,7 +1,9 @@
 import 'server-only';
 import { and, eq, gt, inArray, isNotNull, isNull, lte, or, sql } from 'drizzle-orm';
+import { revalidateTag } from 'next/cache';
 import { pfadFuer } from '@/i18n/navigation';
 import { routing, type Locale } from '@/i18n/routing';
+import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { darf } from '@/lib/rechte/matrix';
@@ -111,6 +113,13 @@ export async function sendeAnkuendigungsPush(ankuendigungId: string, jetzt = new
 /**
  * Minutentakt: Ankündigungen mit späterem Beginn, deren Sichtbarkeit in den letzten zwei Stunden begonnen hat. Ein Takt,
  * der kurz aussetzt, holt nach; Doppelversand verhindert der Einmal-Schlüssel. Den Schalter `push` prüft der Aufrufer.
+ *
+ * Vor dem Versand verfällt der Cache-Tag `ankuendigungen` sofort (`expire: 0`, keine veralteten Daten): Der Block auf
+ * `/nachrichten` hält sonst den Stand vor dem Beginn bis zu einer Stunde (`cacheLife('hours')`), und wer die Mitteilung
+ * antippt, sähe die Ankündigung nicht. Das geschieht in jedem Takt des Nachholfensters, nicht nur im ersten: Ein
+ * Seitenaufbau, der den Stand vor dem Beginn gelesen hat und erst danach fertig wird, hält sich so höchstens eine
+ * Minute (wie der Nachlauf in `inhaltGeaendert`, FEHLERSTATISTIK F-002). Nur aus einem Route Handler aufrufen
+ * (`revalidateTag`; `updateTag` gibt es nur in Server Actions).
  */
 export async function sendeFaelligeAnkuendigungen(vapid: VapidSchluessel, jetzt = new Date()): Promise<number> {
   const a = schema.ankuendigung;
@@ -126,6 +135,8 @@ export async function sendeFaelligeAnkuendigungen(vapid: VapidSchluessel, jetzt 
         or(isNull(a.laeuftAb), gt(a.laeuftAb, jetzt)),
       ),
     );
+  if (!faellig.length) return 0;
+  revalidateTag(TAG.ankuendigungen, { expire: 0 });
   let gesendet = 0;
   for (const z of faellig) gesendet += await versende(z, vapid, jetzt);
   return gesendet;

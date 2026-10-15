@@ -9,13 +9,14 @@ import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/
  * Push zum Thema „Ankündigung“ (ADR 0034 Nr. 3, Z-01): Beim Veröffentlichen geht genau eine Benachrichtigung an jedes Abo
  * mit diesem Thema – ohne Inhalt und ohne Namen, mit dem Pfad der Nachrichtenseite in der Sprache des Abos. Nicht bei
  * Entwurf, nicht ohne Recht `push.ankuendigung`, nicht bei ausgeschaltetem Schalter `push`, Kinder nur mit Einwilligung.
- * Ankündigungen mit späterem Beginn sendet der Minutentakt. Der Push-Dienst ist eine Attrappe (`sendePush`).
+ * Ankündigungen mit späterem Beginn sendet der Minutentakt; vorher verfällt der Cache-Tag `ankuendigungen` sofort.
+ * Der Push-Dienst ist eine Attrappe (`sendePush`); sie merkt sich, welche Tags beim Senden schon verfallen waren.
  */
-const gesendet: { nutzlast: Record<string, unknown>; thema?: string }[] = [];
+const gesendet: { nutzlast: Record<string, unknown>; thema?: string; verfallenVorher: string[] }[] = [];
 vi.mock('@/lib/push/senden', async (original) => ({
   ...(await original<typeof import('@/lib/push/senden')>()),
   sendePush: async (_ziel: unknown, nutzlast: Record<string, unknown>, _vapid: unknown, optionen: { thema?: string } = {}) => {
-    gesendet.push({ nutzlast, thema: optionen.thema });
+    gesendet.push({ nutzlast, thema: optionen.thema, verfallenVorher: [...aufrufe.revalidateTag] });
     return { ok: true, status: 201, entfernen: false };
   },
 }));
@@ -217,5 +218,45 @@ describe('Push „Ankündigung“ mit späterem Beginn (Minutentakt)', () => {
     }
     process.env.FUNKTION_PUSH = 'aus';
     expect(await (await takt.POST(mit())).json()).toEqual({ aus: true });
+  });
+
+  it('Takt mit fälliger Ankündigung: Cache-Tag „ankuendigungen“ verfällt sofort und vor dem Versand (N3)', async () => {
+    const mit = () =>
+      new Request('https://example.test/api/wartung/takt', { method: 'POST', headers: { authorization: `Bearer ${WARTUNG}` } });
+    await abo(['ankuendigung']);
+    await angemeldetAls([{ rolle: 'redaktion' }]);
+    const morgen = new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString('sv-SE', { timeZone: 'Europe/Berlin' });
+    const id = await anlegen(eingabe('Push Cache', { sichtbarAbDatum: morgen, sichtbarAbZeit: '10:00' }));
+    // Was das Speichern selbst verfallen lässt (`inhaltGeaendert`), gehört nicht zum Takt
+    aufrufe.nachher.length = 0;
+    aufrufe.revalidateTag.length = 0;
+    aufrufe.revalidateProfil.length = 0;
+    process.env.FUNKTION_PUSH_GEBET = 'aus';
+    try {
+      // Vor dem Beginn: nichts fällig, nichts verfällt
+      expect(await (await takt.POST(mit())).json()).toMatchObject({ ankuendigungen: 0 });
+      expect(aufrufe.revalidateTag).toEqual([]);
+      expect(gesendet).toHaveLength(0);
+
+      // Beginn liegt eine Minute zurück: Tag verfällt sofort (kein veralteter Stand), erst danach geht der Push hinaus
+      await db
+        .update(schema.ankuendigung)
+        .set({ sichtbarAb: new Date(Date.now() - 60_000) })
+        .where(eq(schema.ankuendigung.id, id));
+      expect(await (await takt.POST(mit())).json()).toMatchObject({ ankuendigungen: 1 });
+      expect(aufrufe.revalidateTag).toEqual(['ankuendigungen']);
+      expect(aufrufe.revalidateProfil).toEqual([{ expire: 0 }]);
+      expect(gesendet).toHaveLength(1);
+      expect(gesendet[0].verfallenVorher).toEqual(['ankuendigungen']);
+
+      // Folgetakt im Nachholfenster: kein zweiter Push, der Tag verfällt erneut (ein verspäteter Seitenaufbau hält
+      // sich höchstens eine Minute)
+      expect(await (await takt.POST(mit())).json()).toMatchObject({ ankuendigungen: 0 });
+      expect(gesendet).toHaveLength(1);
+      expect(aufrufe.revalidateTag).toEqual(['ankuendigungen', 'ankuendigungen']);
+    } finally {
+      delete process.env.FUNKTION_PUSH_GEBET;
+      await db.update(schema.ankuendigung).set({ status: 'entwurf' }).where(eq(schema.ankuendigung.id, id));
+    }
   });
 });

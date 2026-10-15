@@ -9,8 +9,9 @@ import { cronErlaubt, wartungErlaubt } from '@/lib/wartung/zugang';
 
 /**
  * Minutentakt (ADR 0034, MN-18): fällige Gebetserinnerungen (Schalter `push_gebet`) und Ankündigungen, deren
- * Sichtbarkeit gerade begonnen hat (Schalter `push`). Aufruf jede Minute vom lokalen Server (`POST`,
- * `Authorization: Bearer <WARTUNG_TOKEN>`) oder – nach Entscheidung – von Vercel Cron (`GET`, CRON_SECRET).
+ * Sichtbarkeit gerade begonnen hat (Schalter `push`; der Cache-Tag `ankuendigungen` verfällt vorher sofort). Aufruf
+ * jede Minute vom lokalen Server (`POST`, `Authorization: Bearer <WARTUNG_TOKEN>`) oder – nach Entscheidung – von
+ * Vercel Cron (`GET`, CRON_SECRET).
  * Idempotent (Einmal-Schlüssel je Abo und Gebet bzw. Ankündigung); die Sperre verhindert parallele Läufe. Jeder
  * berechtigte Aufruf hinterlässt ein Lebenszeichen für das Startklar-Cockpit (Takt läuft), auch wenn Push aus ist.
  */

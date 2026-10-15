@@ -12,6 +12,8 @@ import { testDatenbank } from './db';
 export const aufrufe = {
   updateTag: [] as string[],
   revalidateTag: [] as string[],
+  /** Zweites Argument je `revalidateTag`-Aufruf, in derselben Reihenfolge (z. B. `{ expire: 0 }` für sofortigen Verfall) */
+  revalidateProfil: [] as unknown[],
   refresh: 0,
   nachher: [] as (() => unknown)[],
 };
@@ -23,7 +25,10 @@ let sitzung: {
 
 vi.mock('next/cache', () => ({
   updateTag: (t: string) => aufrufe.updateTag.push(t),
-  revalidateTag: (t: string) => aufrufe.revalidateTag.push(t),
+  revalidateTag: (t: string, profil?: unknown) => {
+    aufrufe.revalidateTag.push(t);
+    aufrufe.revalidateProfil.push(profil);
+  },
   refresh: () => {
     aufrufe.refresh++;
   },
@@ -63,6 +68,7 @@ export async function verwaltungsUmgebung() {
 export async function angemeldetAls(rollen: RollenZuweisung[] | null, zweiFaktor = true): Promise<string | null> {
   aufrufe.updateTag.length = 0;
   aufrufe.revalidateTag.length = 0;
+  aufrufe.revalidateProfil.length = 0;
   aufrufe.refresh = 0;
   aufrufe.nachher.length = 0;
   if (rollen === null) {
