@@ -3,12 +3,15 @@
 import { and, eq, isNull, sql } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
+import { hatAdministration } from '@/lib/konto/einladung';
 import { erzeugeTermine } from '@/lib/lernen/dienst';
+import { planeHinweis, SCHUTZROLLEN_EMPFAENGER, versendeOffeneMails } from '@/lib/mail/ausgang';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
 import { gruppeAusFormular, gruppeDatensatz, gruppeSchema, leitungSchema, mitgliedSchema, termineSchema } from '@/lib/validierung/lernen';
 import { istLehrkraft } from '@/server/queries/verwaltung/gruppen';
@@ -136,12 +139,18 @@ async function gruppeVorhanden(id: string): Promise<boolean> {
 
 const zurGruppe = (id: string, query: string) => `/verwaltung/gruppen/${id}?${query}`;
 
-/** Leitung zuweisen (Lehrkraft oder Aufsicht); nur Konten mit der Gemeinde-Rolle `lehrkraft`. */
+/**
+ * Leitung zuweisen (Lehrkraft oder Aufsicht); nur Konten mit der Gemeinde-Rolle `lehrkraft`. Nie das eigene Konto und nie
+ * ein Konto mit der Rolle Administration (NIE_PER_ADMINISTRATION, S2/S3: die Leitung liest Gruppen- und Elternkanal).
+ * Jede Zuweisung erfahren Leitung und Kinderschutz per Hinweis-Mail ohne Namen.
+ */
 export async function leitungZuweisen(fd: FormData): Promise<void> {
   const a = await verlange();
   const p = leitungSchema.safeParse({ gruppeId: fd.get('gruppeId'), benutzerId: fd.get('benutzerId'), rolle: fd.get('rolle') });
   if (!p.success) throw new KeinRecht();
   if (!(await gruppeVorhanden(p.data.gruppeId))) throw new KeinRecht();
+  if (p.data.benutzerId === a.benutzerId) redirect(zurGruppe(p.data.gruppeId, 'fehler=leitungSelbst#leitung'));
+  if (await hatAdministration(p.data.benutzerId)) redirect(zurGruppe(p.data.gruppeId, 'fehler=leitungAdministration#leitung'));
   if (!(await istLehrkraft(p.data.benutzerId))) redirect(zurGruppe(p.data.gruppeId, 'fehler=keineLehrkraft#leitung'));
   await db.transaction(async (tx) => {
     await tx
@@ -161,7 +170,9 @@ export async function leitungZuweisen(fd: FormData): Promise<void> {
       },
       tx,
     );
+    await planeHinweis({ an: SCHUTZROLLEN_EMPFAENGER, art: 'leitungszuweisung', pfad: `/verwaltung/gruppen/${p.data.gruppeId}` }, tx);
   });
+  after(() => versendeOffeneMails().catch(() => undefined));
   redirect(zurGruppe(p.data.gruppeId, 'meldung=leitung#leitung'));
 }
 

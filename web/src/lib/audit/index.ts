@@ -14,6 +14,10 @@ export type AuditAktion =
   | 'einladung.angenommen'
   | 'einladung.widerrufen'
   | 'benutzer.rollen_geaendert'
+  // Vier-Augen-Prinzip für Schutzrollen (leitung, kinderschutz; S2/S3)
+  | 'benutzer.rolle_beantragt'
+  | 'benutzer.rolle_bestaetigt'
+  | 'benutzer.rolle_abgelehnt'
   | 'benutzer.gesperrt'
   | 'benutzer.entsperrt'
   | 'benutzer.zwei_faktor_zurueckgesetzt'
@@ -85,6 +89,8 @@ export type AuditAktion =
   | 'lernende.aufgenommen'
   | 'lernende.gelesen'
   | 'lernende.geaendert'
+  // S2/S3: Eltern-Kind-Bezug durch die Verwaltung beendet
+  | 'lernende.elternbezug_beendet'
   | 'lehrplan.geaendert'
   | 'gemeindekonto.gelesen'
   | 'gemeindekonto.rollen_geaendert'

@@ -1089,6 +1089,57 @@ describe('Organisationsgrenze der Tickets (dokumentierte Regel über die Matrix 
   });
 });
 
+/**
+ * Aktionen mit einer Regel über die Matrix hinaus: `rollenAntragEntscheiden` (Vier-Augen-Prinzip für Schutzrollen,
+ * S2/S3) verlangt `verwaltung.betreten` und zusätzlich eine wirksame Rolle Leitung oder Kinderschutz ohne Administration,
+ * nicht die beantragende und nicht die betroffene Person. Keine Personengruppe der Liste erfüllt das – alle werden
+ * abgewiesen; die zweite Person (Leitung) ist zugelassen. Weitere Fälle: tests/integration/sicherheit-s2-konten.test.ts.
+ */
+const SONDERREGEL_AKTIONEN = ['benutzer.rollenAntragEntscheiden'];
+
+describe('benutzer.rollenAntragEntscheiden (Vier-Augen-Prinzip, Regel über die Matrix hinaus)', () => {
+  async function antrag(): Promise<string> {
+    const ziel = await benutzerDirekt(db);
+    const [a] = await db
+      .insert(schema.rollenAntrag)
+      .values({ benutzerId: ziel, rolle: 'kinderschutz', beantragtVon: null })
+      .returning({ id: schema.rollenAntrag.id });
+    return a.id;
+  }
+  const zustand = () => momentaufnahme(db, [schema.rollenAntrag, schema.rolleZuweisung, schema.auditEintrag]);
+
+  for (const p of PERSONEN) {
+    it(`${p.name}: abgewiesen`, async () => {
+      const id = await antrag();
+      await anmelden(p);
+      const vorher = await zustand();
+      const e = await ausgang(async () =>
+        (await ladeAktionen()).benutzer.rollenAntragEntscheiden(formular({ id, entscheidung: 'bestaetigen' })),
+      );
+      pruefeAbweisung(e, 'werfen');
+      expect(await zustand(), 'Der Datenbestand hat sich bei der Abweisung verändert').toBe(vorher);
+    });
+  }
+
+  it('Leitung als zweite Person: zugelassen, die Rolle wird wirksam', async () => {
+    const id = await antrag();
+    const [{ benutzerId }] = await db
+      .select({ benutzerId: schema.rollenAntrag.benutzerId })
+      .from(schema.rollenAntrag)
+      .where(eq(schema.rollenAntrag.id, id));
+    await anmelden({ name: 'Leitung', rollen: [{ rolle: 'leitung' }], zweiFaktor: true });
+    const e = await ausgang(async () =>
+      (await ladeAktionen()).benutzer.rollenAntragEntscheiden(formular({ id, entscheidung: 'bestaetigen' })),
+    );
+    expect(e.weiter).toBe('/verwaltung/gemeinde-im-blick?rollenantrag=bestaetigt#rollenantraege');
+    const rollen = await db
+      .select({ rolle: schema.rolleZuweisung.rolle })
+      .from(schema.rolleZuweisung)
+      .where(and(eq(schema.rolleZuweisung.benutzerId, benutzerId), eq(schema.rolleZuweisung.rolle, 'kinderschutz')));
+    expect(rollen).toHaveLength(1);
+  });
+});
+
 describe('Vollständigkeit: jede exportierte Server Action ist erfasst', () => {
   it('stimmt mit den Fällen der Matrix und der Anmeldung überein', async () => {
     const a = await ladeAktionen();
@@ -1113,7 +1164,7 @@ describe('Vollständigkeit: jede exportierte Server Action ist erfasst', () => {
       ...funktionen('benutzer', a.benutzer),
       ...funktionen('anmeldung', a.anmeldung),
     ].sort();
-    const erfasst = [...new Set([...FAELLE.map((f) => `${f.datei}.${f.aktion}`), ...ANMELDUNG_AKTIONEN])].sort();
+    const erfasst = [...new Set([...FAELLE.map((f) => `${f.datei}.${f.aktion}`), ...ANMELDUNG_AKTIONEN, ...SONDERREGEL_AKTIONEN])].sort();
     expect(erfasst).toEqual(exportiert);
   });
 });

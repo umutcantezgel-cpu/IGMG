@@ -3,11 +3,12 @@
 #   docker compose up -d                    Sicherung, Probe, Takt, Überwachung, Medienspiegel
 #   docker compose --profile echtzeit up -d zusätzlich Centrifugo + Caddy (nur mit öffentlicher Adresse, MN-12)
 # Werte stehen in .env (Vorlage .env.beispiel); nie ins Repository.
+# S3 (Sicherheitsprüfung): Jeder Dienst bekommt nur seine eigenen Werte (Compose liest .env nur zum Einsetzen) – das
+# internetseitige Caddy und Centrifugo sehen weder den Datenbankzugang der Sicherung noch das Blob-Token oder SMTP.
 name: igmg-lokal
 
 x-standard: &standard
   restart: unless-stopped
-  env_file: .env
   logging:
     driver: json-file
     options: { max-size: '5m', max-file: '3' }
@@ -17,6 +18,9 @@ services:
     <<: *standard
     image: curlimages/curl:8.17.0
     entrypoint: ['/bin/sh', '/takt/takt.sh']
+    environment:
+      APP_URL: ${APP_URL:-}
+      WARTUNG_TOKEN: ${WARTUNG_TOKEN:-}
     volumes:
       - ./takt:/takt:ro
 
@@ -24,6 +28,12 @@ services:
     <<: *standard
     build: ./sicherung
     command: ['/sicherung/zeitplan.sh']
+    environment:
+      APP_URL: ${APP_URL:-}
+      WARTUNG_TOKEN: ${WARTUNG_TOKEN:-}
+      SICHERUNG_DATABASE_URL: ${SICHERUNG_DATABASE_URL:-}
+      AGE_EMPFAENGER: ${AGE_EMPFAENGER:-}
+      SICHERUNG_TAGE: ${SICHERUNG_TAGE:-30}
     volumes:
       - ./sicherung:/sicherung:ro
       - sicherungen:/daten
@@ -32,12 +42,24 @@ services:
   medien-spiegel:
     <<: *standard
     build: ./spiegel
+    environment:
+      APP_URL: ${APP_URL:-}
+      WARTUNG_TOKEN: ${WARTUNG_TOKEN:-}
+      BLOB_READ_WRITE_TOKEN: ${BLOB_READ_WRITE_TOKEN:-}
     volumes:
       - spiegel:/daten
 
   ueberwachung:
     <<: *standard
     build: ./ueberwachung
+    environment:
+      APP_URL: ${APP_URL:-}
+      TECHNIK_MAIL: ${TECHNIK_MAIL:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      MAIL_ABSENDER: ${MAIL_ABSENDER:-}
     volumes:
       - ./ueberwachung:/ueberwachung:ro
 
@@ -46,6 +68,10 @@ services:
     profiles: [echtzeit]
     image: centrifugo/centrifugo:v6.5.1
     command: ['centrifugo', '--config', '/centrifugo/config.json']
+    environment:
+      CENTRIFUGO_CLIENT_TOKEN_HMAC_SECRET_KEY: ${CENTRIFUGO_CLIENT_TOKEN_HMAC_SECRET_KEY:-}
+      CENTRIFUGO_HTTP_API_KEY: ${CENTRIFUGO_HTTP_API_KEY:-}
+      CENTRIFUGO_CLIENT_ALLOWED_ORIGINS: ${CENTRIFUGO_CLIENT_ALLOWED_ORIGINS:-}
     volumes:
       - ./echtzeit/centrifugo.json:/centrifugo/config.json:ro
     expose: ['8000']
@@ -55,6 +81,8 @@ services:
     profiles: [echtzeit]
     image: caddy:2.10.2-alpine
     ports: ['80:80', '443:443']
+    environment:
+      ECHTZEIT_DOMAIN: ${ECHTZEIT_DOMAIN:-}
     volumes:
       - ./echtzeit/Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy-daten:/data

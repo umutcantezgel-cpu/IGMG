@@ -32,8 +32,8 @@ export function RollenFormular({ id, rollen }: { id: string; rollen: RollenZuwei
             {t(`fehler.${z.fehler}` as never)}
           </Meldung>
         ) : z.ok ? (
-          <Meldung art="erfolg" fokus>
-            {t('formular.rollenGespeichert')}
+          <Meldung art={z.beantragt?.length ? 'info' : 'erfolg'} fokus>
+            {t(z.beantragt?.length ? 'formular.rollenBeantragt' : 'formular.rollenGespeichert')}
           </Meldung>
         ) : null}
       </div>

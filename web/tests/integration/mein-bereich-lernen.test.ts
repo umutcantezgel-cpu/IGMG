@@ -399,11 +399,17 @@ describe('Ab 16 entscheidet die Person selbst (D-11)', () => {
 
   it('im Übergang: Eltern-Widerruf nimmt die eigene Zustimmung nicht zurück; unter 16 keine eigene Zustimmung', async () => {
     als(p.elternE);
-    await umleitung(
-      kinderAktionen.einwilligungAendern(
-        formular({ sprache: 'de', lernendeId: l.jugend2, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+    // S2/S3: Im Übergang erteilen Eltern nichts Neues mehr – die Einwilligung der Eltern stammt aus der Zeit vor dem 16.
+    expect(
+      await umleitung(
+        kinderAktionen.einwilligungAendern(
+          formular({ sprache: 'de', lernendeId: l.jugend2, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+        ),
       ),
-    );
+    ).toContain('fehler=nurKind');
+    await db
+      .insert(schema.kontoEinwilligung)
+      .values({ lernendeId: l.jugend2, art: 'gruppenchat', textVersion: 'v1', erteiltVon: p.elternE.id, einvernehmenBestaetigt: true });
     als(p.jugend2);
     expect((await gruppe.eigeneEinwilligungen(await ladeGruppenKontext(p.jugend2.id), heute))?.lage).toBe('uebergang');
     await umleitung(schuelerAktionen.eigeneEinwilligungAendern(formular({ sprache: 'de', art: 'gruppenchat', aktion: 'erteilen' })));

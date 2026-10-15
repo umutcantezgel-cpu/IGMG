@@ -43,9 +43,9 @@
       "organisationsredaktion": "Inhalte der gewählten Organisationen",
       "bildung": "Kurse und Schüler-Voranmeldungen",
       "mitgliederverwaltung": "Mitgliedsanfragen",
-      "leitung": "Vorstand: Übersicht „Gemeinde im Blick“ lesen, nichts ändern",
+      "leitung": "Vorstand: Übersicht „Gemeinde im Blick“ lesen, Schutzrollen bestätigen; wird erst wirksam, wenn eine zweite Person zustimmt",
       "religioese_pruefung": "Imam/Hoca: religiöse Inhalte verfassen und freigeben",
-      "kinderschutz": "Meldungen aus Gruppenchats, Moderationsprotokoll, Notfall-Pause"
+      "kinderschutz": "Meldungen aus Gruppenchats, Moderationsprotokoll, Notfall-Pause; wird erst wirksam, wenn eine zweite Person zustimmt"
     },
     "organisationen": {
       "at": "Ana Teşkilatı",
@@ -73,7 +73,8 @@
       "link": "Einladungslink",
       "weitere": "Weitere Person einladen",
       "rollenSpeichern": "Rollen speichern",
-      "rollenGespeichert": "Die Rollen wurden gespeichert. Sie gelten ab der nächsten Seite, die die Person aufruft."
+      "rollenGespeichert": "Die Rollen wurden gespeichert. Sie gelten ab der nächsten Seite, die die Person aufruft.",
+      "rollenBeantragt": "Gespeichert. Die Rolle Leitung oder Kinderschutz wird erst wirksam, wenn eine zweite Person mit der Rolle Leitung oder Kinderschutz zustimmt (Vier-Augen-Prinzip)."
     },
     "detail": {
       "zurueck": "Zur Liste",
@@ -123,7 +124,9 @@
       "passwortFalsch": "Das Passwort ist nicht richtig.",
       "kinderschutzSelbst": "Die Rolle Kinderschutz kann sich niemand selbst geben.",
       "kinderschutzLeitung": "Die Rolle Kinderschutz vergibt nur der Vorstand (Rolle Leitung) – Vier-Augen-Prinzip.",
-      "kinderschutzAdministration": "Kinderschutz und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben."
+      "kinderschutzAdministration": "Kinderschutz und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben.",
+      "leitungSelbst": "Die Rolle Leitung kann sich niemand selbst geben.",
+      "leitungAdministration": "Leitung und Administration gehören in getrennte Hände: Ein Konto kann nicht beide Rollen haben."
     },
     "konto": {
       "titel": "Mein Konto",
@@ -152,6 +155,24 @@
     "status": {
       "aktiv": "Aktiv",
       "gesperrt": "Gesperrt"
+    },
+    "antraege": {
+      "titel": "Rollen bestätigen",
+      "text": "Die Rollen Leitung und Kinderschutz werden erst wirksam, wenn eine zweite Person zustimmt (Vier-Augen-Prinzip). Bitte nur bestätigen, was mit dem Vorstand abgesprochen ist.",
+      "rolle": "Rolle: {rolle}",
+      "beantragtVon": "Beantragt von {name} am {datum}",
+      "beantragtOhneName": "Beantragt am {datum}",
+      "bestaetigen": "Bestätigen",
+      "ablehnen": "Ablehnen",
+      "bestaetigenLabel": "Rolle {rolle} für {name} bestätigen",
+      "ablehnenLabel": "Rolle {rolle} für {name} ablehnen",
+      "offen": "Wartet auf Bestätigung: {rollen}",
+      "meldung": {
+        "bestaetigt": "Die Rolle ist bestätigt und jetzt wirksam.",
+        "abgelehnt": "Der Antrag ist abgelehnt.",
+        "nichtGefunden": "Diesen Antrag gibt es nicht mehr.",
+        "administration": "Das Konto hat inzwischen die Rolle Administration – beides zusammen geht nicht. Bitte lehnen Sie den Antrag ab."
+      }
     }
   }
 }

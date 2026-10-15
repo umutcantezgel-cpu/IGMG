@@ -154,18 +154,25 @@ describe('Rollen, Zwei-Faktor, Löschen', () => {
     expect(await rollenVon(admin)).toEqual([{ rolle: 'administration', organisation: null }]);
   });
 
-  it('M-2 (S1): Kinderschutz nie selbst, nie mit Administration, sonst nur durch die Leitung vergeben', async () => {
+  it('M-2 (S1, S2/S3): Schutzrollen nie selbst, nie mit Administration, sonst erst nach Bestätigung durch eine zweite Person', async () => {
     const ziel = await fremdesKonto([{ rolle: 'redaktion' }]);
     const admin = (await angemeldetAls([{ rolle: 'administration' }]))!;
     const selbst = formular({ id: admin, rollen: 'administration' });
     selbst.append('rollen', 'kinderschutz');
     expect((await actions.rollenSpeichern({}, selbst)).fehler).toBe('kinderschutzAdministration');
-    expect((await actions.rollenSpeichern({}, formular({ id: ziel, rollen: 'kinderschutz' }))).fehler).toBe('kinderschutzLeitung');
-    expect(await rollenVon(ziel)).toEqual([{ rolle: 'redaktion', organisation: null }]);
-    const vorstand = (await angemeldetAls([{ rolle: 'administration' }, { rolle: 'leitung' }]))!;
-    expect((await actions.rollenSpeichern({}, formular({ id: vorstand, rollen: 'leitung' }))).fehler).toBe('eigeneAdministration');
-    expect(await actions.rollenSpeichern({}, formular({ id: ziel, rollen: 'kinderschutz' }))).toEqual({ ok: true });
-    expect(await rollenVon(ziel)).toEqual([{ rolle: 'kinderschutz', organisation: null }]);
+    const leitung = formular({ id: admin, rollen: 'administration' });
+    leitung.append('rollen', 'leitung');
+    expect((await actions.rollenSpeichern({}, leitung)).fehler).toBe('leitungAdministration');
+    expect(await rollenVon(admin)).toEqual([{ rolle: 'administration', organisation: null }]);
+    // Vergabe an ein anderes Konto: nur beantragt, nicht wirksam (Bestätigung: tests/integration/sicherheit-s2-konten.test.ts)
+    expect(await actions.rollenSpeichern({}, formular({ id: ziel, rollen: 'kinderschutz' }))).toEqual({
+      ok: true,
+      beantragt: ['kinderschutz'],
+    });
+    expect(await rollenVon(ziel)).toEqual([]);
+    expect((await db.select().from(schema.rollenAntrag).where(eq(schema.rollenAntrag.benutzerId, ziel))).map((z) => z.rolle)).toEqual([
+      'kinderschutz',
+    ]);
   });
 
   it('ohne benutzer.bearbeiten: KeinRecht', async () => {

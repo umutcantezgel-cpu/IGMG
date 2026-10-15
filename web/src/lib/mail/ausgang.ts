@@ -103,7 +103,18 @@ async function kontoMailBauen(vorlage: KontoVorlage, sprache: MailSprache, inhal
  * `recht:meldung.chat.bearbeiten` (kinderschutz) oder `SCHUTZROLLEN_EMPFAENGER` (Leitung und Kinderschutz).
  */
 export async function planeHinweis(
-  o: { an: string; art: 'kanal_fortgesetzt' | 'rollenantrag' | 'rolle_vergeben' | 'leitungszuweisung' | 'elternbezug'; pfad: string },
+  o: {
+    an: string;
+    art:
+      | 'kanal_fortgesetzt'
+      | 'rollenantrag'
+      | 'rolle_vergeben'
+      | 'leitungszuweisung'
+      | 'elternbezug'
+      | 'elternbezug_beendet'
+      | 'schuelerkonto';
+    pfad: string;
+  },
   tx: Pick<typeof db, 'insert'> = db,
 ): Promise<void> {
   const paket = verschluessele({ an: o.an, daten: { art: o.art, pfad: o.pfad } });

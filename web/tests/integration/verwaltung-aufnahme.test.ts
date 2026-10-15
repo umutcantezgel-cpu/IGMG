@@ -269,12 +269,16 @@ describe('Einladung „Schüler ab 16“', () => {
       feldFehler: { lernendeId: 'unter16' },
     });
     const r = await kontenAktionen.gemeindeEinladen({}, fd(alt.id));
-    expect(r).toMatchObject({ ok: true });
-    expect(r.link).toMatch(/\/einladung\/[A-Za-z0-9_-]{40,}$/);
+    // S2/S3: Mit Bezug auf Lernende geht der Link nur per Mail an die eingeladene Adresse, nie an die Verwaltung
+    expect(r).toEqual({ ok: true });
     expect(await kontenAktionen.gemeindeEinladen({}, fd(alt.id))).toEqual({ ok: true, vorhanden: true });
 
     api.getSession = echteSitzung;
-    const token = r.link!.split('/').at(-1)!;
+    const mail = (await db.select().from(schema.mailAusgang).where(eq(schema.mailAusgang.vorlage, 'konto-einladung')))
+      .map((m) => entschluessele<{ an: string; daten: { link: string } }>(m.datenVerschluesselt, m.schluesselId))
+      .find((m) => m.an === email)!;
+    expect(mail.daten.link).toMatch(/\/einladung\/[A-Za-z0-9_-]{40,}$/);
+    const token = mail.daten.link.split('/').at(-1)!;
     await umleitung(
       kontoAktionen.gemeindeEinladungAnnehmen({}, formular({ token, passwort: PASSWORT, wiederholung: PASSWORT, einwilligung: 'ja' })),
     );

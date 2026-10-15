@@ -8,6 +8,7 @@ import { LoeschenBestaetigen } from '@/components/verwaltung/veranstaltungen/Loe
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
+import { antraegeVon } from '@/lib/rechte/schutzrollen';
 import { Button } from '@/components/ui/button';
 import { kontoEntsperren, kontoLoeschen, kontoSperren, zweiFaktorZuruecksetzen } from '@/server/actions/benutzer';
 import { ladeBenutzerAnsicht } from '@/server/queries/verwaltung/benutzer';
@@ -26,7 +27,11 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
   const selbst = konto.id === a.benutzerId;
   const fehler = FEHLER.find((f) => f === sp.fehler);
   const meldung = (['zweiFaktor', 'gesperrt', 'entsperrt'] as const).find((m) => m === sp.meldung);
-  const tg = await getTranslations('verwaltung.shell');
+  const [tg, tr, offen] = await Promise.all([
+    getTranslations('verwaltung.shell'),
+    getTranslations('verwaltung.rollen'),
+    antraegeVon(konto.id),
+  ]);
   return (
     <>
       <NextLink href="/verwaltung/benutzer" className="inline-flex min-h-11 items-center gap-2 self-start font-bold">
@@ -49,6 +54,7 @@ export default async function KontoBearbeiten({ params, searchParams }: PageProp
         <h2 id="konto-rollen" className="text-24">
           {t('detail.rollenTitel')}
         </h2>
+        {offen.length ? <Meldung art="info">{t('antraege.offen', { rollen: offen.map((r) => tr(r)).join(', ') })}</Meldung> : null}
         {bearbeiten ? <RollenFormular id={konto.id} rollen={konto.rollen} /> : <p>{konto.rollen.map((r) => r.rolle).join(', ')}</p>}
       </section>
       {bearbeiten && !selbst ? (

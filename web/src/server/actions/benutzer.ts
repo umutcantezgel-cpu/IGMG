@@ -1,6 +1,6 @@
 'use server';
 
-import { and, eq, like } from 'drizzle-orm';
+import { and, eq, inArray, like } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
@@ -14,6 +14,7 @@ import { sha256, verschluessele, zufallsToken } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { mitAdministrationsSchutz } from '@/lib/rechte/administration';
 import { KeinRecht, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
+import { entscheideAntrag, istSchutzrolle, schutzrollenRegel, SCHUTZROLLEN, vergibVerwaltungsrollen } from '@/lib/rechte/schutzrollen';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { clientAdresse } from '@/lib/sicherheit/ip';
 import { alsZuweisungen, einladungSchema, passwortSchema, rollenSchema } from '@/lib/validierung/benutzer';
@@ -34,6 +35,8 @@ export type BenutzerZustand = {
   link?: string;
   ersatzcodes?: string[];
   ok?: boolean;
+  /** Schutzrollen, die erst nach Bestätigung durch eine zweite Person wirksam werden (S2/S3) */
+  beantragt?: string[];
 };
 
 function feldFehler(fehler: z.ZodError): Record<string, string> {
@@ -66,7 +69,8 @@ export async function einladen(_vorher: BenutzerZustand, fd: FormData): Promise<
   };
   const p = einladungSchema.safeParse(roh);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte };
-  const schutz = kinderschutzVergabe(a, [], alsZuweisungen(p.data), false);
+  // Schutzrollen (leitung, kinderschutz): nie mit Administration; wirksam erst nach Bestätigung (bei der Annahme beantragt)
+  const schutz = schutzrollenRegel([], alsZuweisungen(p.data), false);
   if (schutz) return { fehler: schutz, werte };
   const belegt = await emailBelegt(p.data.email);
   if (belegt) return { fehler: 'pruefen', feldFehler: { email: belegt === 'konto' ? 'emailKonto' : 'emailEingeladen' }, werte };
@@ -132,19 +136,12 @@ const istAdministration = (rollen: { rolle: string }[]) => rollen.some((r) => r.
 const hat = (rollen: { rolle: string }[], rolle: string) => rollen.some((r) => r.rolle === rolle);
 
 /**
- * Rolle `kinderschutz` (S-11, ADR 0026, M-2 der Sicherheitsprüfung S1): Chat-Inhalte sind nie über „Administration darf
- * alles“ erreichbar – also darf die Administration sich diese Rolle auch nicht selbst geben. Vergabe nur durch den
- * Vorstand (Rolle `leitung`), nie an sich selbst und nie zusammen mit `administration`. Jede Vergabe steht im Audit.
+ * Rollen speichern. Schutzrollen `leitung` und `kinderschutz` (S-11, ADR 0026; M-2 der Sicherheitsprüfung S1, S2/S3):
+ * nie zusammen mit `administration`, nie an sich selbst, und neu vergeben erst wirksam, wenn eine zweite Person mit
+ * Leitung oder Kinderschutz bestätigt (`src/lib/rechte/schutzrollen.ts`) – sonst gäbe sich die Administration über
+ * „leitung“ den Weg zu Chat-Inhalten selbst frei. Jede Vergabe steht im Audit und geht als Hinweis an Leitung und
+ * Kinderschutz.
  */
-function kinderschutzVergabe(a: Angemeldet, vorher: { rolle: string }[], neu: { rolle: string }[], selbst: boolean): string | null {
-  if (!hat(neu, 'kinderschutz')) return null;
-  if (hat(neu, 'administration')) return 'kinderschutzAdministration';
-  if (hat(vorher, 'kinderschutz')) return null;
-  if (selbst) return 'kinderschutzSelbst';
-  if (!hat(a.rollen, 'leitung')) return 'kinderschutzLeitung';
-  return null;
-}
-
 export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): Promise<BenutzerZustand> {
   const a = await verlangeRecht('benutzer.bearbeiten');
   const { konto, selbst } = await zielKonto(fd, a);
@@ -152,17 +149,31 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
   const p = rollenSchema.safeParse(roh);
   if (!p.success) return { fehler: 'pruefen', feldFehler: feldFehler(p.error), werte: roh };
   const neu = alsZuweisungen(p.data);
-  const schutz = kinderschutzVergabe(a, konto.rollen, neu, selbst);
+  const schutz = schutzrollenRegel(konto.rollen, neu, selbst);
   if (schutz) return { fehler: schutz, werte: roh };
   if (istAdministration(konto.rollen) && !istAdministration(neu)) {
     if (selbst) return { fehler: 'eigeneAdministration', werte: roh };
     if ((await zaehleAdministration(konto.id)) === 0) return { fehler: 'letzteAdministration', werte: roh };
   }
+  let beantragt: string[] = [];
   const gespeichert = await mitAdministrationsSchutz(async (tx) => {
+    // Bisher wirksame Rollen bleiben ohne neuen Antrag wirksam; neue Schutzrollen werden beantragt
+    const bleibt = neu.filter((z) => !istSchutzrolle(z.rolle) || hat(konto.rollen, z.rolle));
+    const neueSchutzrollen = neu.filter((z) => istSchutzrolle(z.rolle) && !hat(konto.rollen, z.rolle));
     await tx.delete(schema.rolleZuweisung).where(eq(schema.rolleZuweisung.benutzerId, konto.id));
-    await tx
-      .insert(schema.rolleZuweisung)
-      .values(neu.map((z) => ({ benutzerId: konto.id, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: a.benutzerId })));
+    if (bleibt.length)
+      await tx
+        .insert(schema.rolleZuweisung)
+        .values(
+          bleibt.map((z) => ({ benutzerId: konto.id, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: a.benutzerId })),
+        );
+    // Nicht mehr gewählte Schutzrollen: offene Anträge verfallen
+    const weg = SCHUTZROLLEN.filter((r) => !hat(neu, r));
+    if (weg.length)
+      await tx
+        .delete(schema.rollenAntrag)
+        .where(and(eq(schema.rollenAntrag.benutzerId, konto.id), inArray(schema.rollenAntrag.rolle, weg)));
+    beantragt = await vergibVerwaltungsrollen(tx, konto.id, neueSchutzrollen, a.benutzerId);
     await protokolliere(
       {
         benutzerId: a.benutzerId,
@@ -178,8 +189,32 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
     );
   });
   if (!gespeichert) return { fehler: 'letzteAdministration', werte: roh };
+  after(() => versendeOffeneMails().catch(() => undefined));
   refresh();
-  return { ok: true };
+  return beantragt.length ? { ok: true, beantragt } : { ok: true };
+}
+
+/**
+ * Antrag auf eine Schutzrolle bestätigen oder ablehnen – nur eine zweite Person mit wirksamer Rolle Leitung oder
+ * Kinderschutz, ohne Administration, weder die beantragende noch die betroffene Person (S2/S3). Formular in
+ * „Gemeinde im Blick“ und „Kinderschutz“.
+ */
+export async function rollenAntragEntscheiden(fd: FormData): Promise<void> {
+  const a = await verlangeRecht('verwaltung.betreten');
+  const p = z
+    .object({
+      id: z.uuid(),
+      entscheidung: z.enum(['bestaetigen', 'ablehnen']),
+      zurueck: z.enum(['/verwaltung/gemeinde-im-blick', '/verwaltung/kinderschutz']).catch('/verwaltung/gemeinde-im-blick'),
+    })
+    .safeParse({ id: fd.get('id'), entscheidung: fd.get('entscheidung'), zurueck: fd.get('zurueck') ?? undefined });
+  if (!p.success) throw new KeinRecht();
+  const fehler = await entscheideAntrag(a, p.data.id, p.data.entscheidung === 'bestaetigen');
+  if (fehler === 'keinRecht') throw new KeinRecht();
+  after(() => versendeOffeneMails().catch(() => undefined));
+  redirect(
+    `${p.data.zurueck}?${fehler ? `rollenantrag=${fehler}` : `rollenantrag=${p.data.entscheidung === 'bestaetigen' ? 'bestaetigt' : 'abgelehnt'}`}#rollenantraege`,
+  );
 }
 
 /** Konto sperren (C12): Sitzungen enden sofort, Anmeldung wird verweigert; nicht das eigene, nicht die letzte Administration. */

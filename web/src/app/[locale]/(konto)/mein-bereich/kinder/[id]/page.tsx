@@ -155,6 +155,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
         'keineEinwilligung',
         'bereitsKonto',
         'keinZugang',
+        'eigenesKonto',
         'zuViele',
         'unbekannt',
       ].map((f) => [f, zt(`fehler.${f}`)]),
@@ -362,20 +363,29 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
               const titel = t(`einwilligung.${e.art}.titel`);
               const hier = rueckmeldungArt === e.art;
               const zugangLoeschen = e.art === 'kinderkonto' && zugang !== null;
-              const nurKind = sechzehn.lage === 'eigene' && (e.art === 'gruppenchat' || e.art === 'push_kind');
+              // D-11: ab 16 erteilen Eltern für Chat und Push nichts Neues mehr (im Übergang nur noch widerrufen, S2/S3);
+              // ein eigenes Konto der/des Jugendlichen ist kein Kinderzugang
+              const selbstbestimmt = e.art === 'gruppenchat' || e.art === 'push_kind';
+              const eigenesKonto = e.art === 'kinderkonto' && kopf.eigenesKonto;
+              const nurKind =
+                eigenesKonto || (selbstbestimmt && (sechzehn.lage === 'eigene' || (sechzehn.lage === 'uebergang' && !e.aktiv)));
               const fehler =
-                hier && typeof sp.fehler === 'string' && ['einvernehmen', 'bestaetigen', 'sorgerecht', 'nurKind'].includes(sp.fehler)
+                hier &&
+                typeof sp.fehler === 'string' &&
+                ['einvernehmen', 'bestaetigen', 'sorgerecht', 'nurKind', 'eigenesKonto', 'allgemein'].includes(sp.fehler)
                   ? sp.fehler
                   : null;
               const ok = hier && typeof sp.ok === 'string' && ['erteilt', 'widerrufen'].includes(sp.ok) ? sp.ok : null;
               const zugeklappt = e.aktiv || nurKind;
-              const stand = nurKind
-                ? t('sechzehn.nurKind')
-                : e.aktiv && e.erteiltAm
-                  ? t('erteiltAm', { datum: datumLang.format(e.erteiltAm), von: t(e.durchMich ? 'durchSie' : 'durchAndere') })
-                  : e.widerrufenAm
-                    ? t('widerrufenAm', { datum: datumLang.format(e.widerrufenAm) })
-                    : null;
+              const stand = eigenesKonto
+                ? t('eigenesKonto')
+                : nurKind
+                  ? t('sechzehn.nurKind')
+                  : e.aktiv && e.erteiltAm
+                    ? t('erteiltAm', { datum: datumLang.format(e.erteiltAm), von: t(e.durchMich ? 'durchSie' : 'durchAndere') })
+                    : e.widerrufenAm
+                      ? t('widerrufenAm', { datum: datumLang.format(e.widerrufenAm) })
+                      : null;
               const formular = nurKind ? null : (
                 <form action={einwilligungAendern} className="flex max-w-text flex-col gap-3">
                   <input type="hidden" name="sprache" value={sprache} />
@@ -430,7 +440,15 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
                       )}
                     </div>
                     {ok ? <Meldung art="erfolg">{t(`ok.${ok}`)}</Meldung> : null}
-                    {fehler ? <Meldung art="fehler">{fehler === 'nurKind' ? t('sechzehn.nurKind') : t(`fehler.${fehler}`)}</Meldung> : null}
+                    {fehler ? (
+                      <Meldung art="fehler">
+                        {fehler === 'nurKind'
+                          ? t('sechzehn.nurKind')
+                          : fehler === 'eigenesKonto'
+                            ? t('eigenesKonto')
+                            : t(`fehler.${fehler}`)}
+                      </Meldung>
+                    ) : null}
                     {zugeklappt ? (
                       <details open={fehler ? true : undefined} className="group border-t border-gruen-100 text-16">
                         <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-3 font-bold text-gruen-800">
@@ -465,7 +483,9 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
       </div>
 
       <Abschnitt id="zugang" Icon={KeyRound} titel={t('zugangTitel')} text={t('zugangText')}>
-        {zugang || kinderkontoAktiv ? (
+        {kopf.eigenesKonto ? (
+          <LeerHinweis text={t('eigenesKonto')} />
+        ) : zugang || kinderkontoAktiv ? (
           <Kinderzugang
             lernendeId={id}
             sprache={sprache}

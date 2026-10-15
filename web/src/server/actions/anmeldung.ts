@@ -7,9 +7,11 @@ import { redirect } from 'next/navigation';
 import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
+import { vergibVerwaltungsrollen } from '@/lib/rechte/schutzrollen';
 import { auth } from '@/lib/auth/server';
 import { db, schema } from '@/lib/db';
 import { meldeSicherheitsaenderung } from '@/lib/konto/sicherheitsmail';
+import { istUnzustellbar } from '@/lib/mail/adresse';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeAngemeldet } from '@/lib/rechte/pruefe';
 import { basisUrl } from '@/lib/seo/metadaten';
@@ -83,6 +85,33 @@ async function unbestaetigtOhneRolle(email: string): Promise<boolean> {
   return !r && !g;
 }
 
+/**
+ * Konto der Verwaltung? (S3) Verwaltungs-Anmeldung, -Passwortlink und -Zwei-Faktor gelten nur für Konten mit
+ * Verwaltungsrolle oder offenem Antrag auf eine Schutzrolle. Gemeinde- und Kinderkonten melden sich unter /anmelden an –
+ * nur dort wirkt der Schalter `konten`; synthetische Kinderadressen (`.invalid`) nie.
+ */
+async function verwaltungsKontoId(benutzerId: string): Promise<boolean> {
+  const [r] = await db
+    .select({ id: schema.rolleZuweisung.id })
+    .from(schema.rolleZuweisung)
+    .where(eq(schema.rolleZuweisung.benutzerId, benutzerId))
+    .limit(1);
+  if (r) return true;
+  const [a] = await db
+    .select({ id: schema.rollenAntrag.id })
+    .from(schema.rollenAntrag)
+    .where(eq(schema.rollenAntrag.benutzerId, benutzerId))
+    .limit(1);
+  return Boolean(a);
+}
+
+async function verwaltungsKonto(email: string): Promise<boolean> {
+  const adresse = email.trim().toLowerCase();
+  if (istUnzustellbar(adresse)) return false;
+  const [u] = await db.select({ id: schema.user.id }).from(schema.user).where(eq(schema.user.email, adresse)).limit(1);
+  return u ? verwaltungsKontoId(u.id) : false;
+}
+
 export async function anmelden(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
   const eingabe = anmeldeSchema.safeParse({ email: daten.get('email'), passwort: daten.get('passwort') });
   const email = String(daten.get('email') ?? '');
@@ -93,6 +122,11 @@ export async function anmelden(_vorher: FormularZustand, daten: FormData): Promi
   }
   if (await unbestaetigtOhneRolle(eingabe.data.email)) {
     await protokolliere({ benutzerId: null, aktion: 'anmeldung.fehlgeschlagen', details: { grund: 'unbestaetigt' } });
+    return { fehler: 'anmelden.fehler', werte: { email } };
+  }
+  // S3: Gemeinde- und Kinderkonten bekommen hier keine Sitzung (am Schalter `konten` und am Kinder-Login vorbei)
+  if (!(await verwaltungsKonto(eingabe.data.email))) {
+    await protokolliere({ benutzerId: null, aktion: 'anmeldung.fehlgeschlagen', details: { grund: 'keinVerwaltungskonto' } });
     return { fehler: 'anmelden.fehler', werte: { email } };
   }
   let ergebnis: unknown;
@@ -144,7 +178,7 @@ export async function zweiFaktorPruefen(_vorher: FormularZustand, daten: FormDat
 
 export async function zweiFaktorStarten(_vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
   const angemeldet = await ladeAngemeldet();
-  if (!angemeldet) redirect('/verwaltung/anmelden');
+  if (!angemeldet || !(await verwaltungsKontoId(angemeldet.benutzerId))) redirect('/verwaltung/anmelden');
   const p = z.object({ passwort: z.string().min(1).max(128) }).safeParse({ passwort: daten.get('passwort') });
   if (!p.success) return { feldFehler: { passwort: 'zweiFaktorEinrichten.fehlerPasswort' } };
   const passwort = p.data.passwort;
@@ -162,7 +196,7 @@ export async function zweiFaktorStarten(_vorher: FormularZustand, daten: FormDat
 
 export async function zweiFaktorBestaetigen(vorher: FormularZustand, daten: FormData): Promise<FormularZustand> {
   const angemeldet = await ladeAngemeldet();
-  if (!angemeldet) redirect('/verwaltung/anmelden');
+  if (!angemeldet || !(await verwaltungsKontoId(angemeldet.benutzerId))) redirect('/verwaltung/anmelden');
   const eingabe = codeSchema.safeParse({ code: String(daten.get('code') ?? '').replace(/\s+/g, '') });
   if (!eingabe.success) return { ...vorher, feldFehler: { code: 'zweiFaktorEinrichten.fehlerCode' } };
   if (await begrenzt('zwei-faktor-einrichten', angemeldet.email)) return { ...vorher, fehler: 'anmelden.zuViele' };
@@ -222,11 +256,8 @@ export async function einladungAnnehmen(_vorher: FormularZustand, daten: FormDat
     const r = await auth.api.signUpEmail({ body: { email: einladung.email, password: eingabe.data.passwort, name: einladung.name } });
     await db.transaction(async (tx) => {
       await tx.update(schema.user).set({ emailVerified: true }).where(eq(schema.user.id, r.user.id));
-      for (const z of einladung.rollen) {
-        await tx
-          .insert(schema.rolleZuweisung)
-          .values({ benutzerId: r.user.id, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: einladung.erstelltVon });
-      }
+      // Schutzrollen (leitung, kinderschutz) werden beantragt und erst nach Bestätigung durch eine zweite Person wirksam
+      await vergibVerwaltungsrollen(tx, r.user.id, einladung.rollen, einladung.erstelltVon);
       // Gemeinde-Rollen (Mein Bereich, ADR 0026), falls die Einladung welche trägt
       for (const rolle of einladung.gemeindeRollen) {
         await tx
@@ -257,6 +288,8 @@ export async function passwortVergessen(_vorher: FormularZustand, daten: FormDat
   // Eintrag und plant die Mail, für unbekannte nicht – die Antwortzeit verriete sonst, ob es das Konto gibt.
   const email = eingabe.data.email;
   after(async () => {
+    // S3: Links der Verwaltung nur für Konten der Verwaltung, nie für Kinderadressen (`.invalid`) – die Antwort bleibt gleich
+    if (!(await verwaltungsKonto(email))) return;
     try {
       await auth.api.requestPasswordReset({ body: { email, redirectTo: `${basisUrl()}/verwaltung/passwort-neu` } });
     } catch {

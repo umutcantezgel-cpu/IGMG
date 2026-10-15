@@ -1,6 +1,6 @@
 'use server';
 
-import { and, desc, eq, isNull } from 'drizzle-orm';
+import { and, desc, eq, isNull, ne, or, type SQL } from 'drizzle-orm';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
@@ -8,6 +8,7 @@ import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { darf, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
+import { vierAugenErfuellt } from '@/lib/religioes/freigabe';
 import { FREIGABE_TYPEN, type ReligioeserTyp } from '@/server/queries/verwaltung/freigaben';
 
 /**
@@ -47,8 +48,48 @@ const CACHE: Record<ReligioeserTyp, string> = {
 
 type Tx = Parameters<Parameters<typeof db.transaction>[0]>[0];
 
+/** Tabellen religiöser Inhalte mit eigener Freigabespalte (`freigabeSpalten`: freigabe, verfasstVon, geprüft …). */
+type FreigabeTabelle =
+  | typeof schema.quranWortbedeutung
+  | typeof schema.quranWortbedeutungOrt
+  | typeof schema.tajwidRegel
+  | typeof schema.hadithUebersetzung
+  | typeof schema.elifbeLektion
+  | typeof schema.besondererTag;
+
+/** Zeile eines religiösen Inhalts aus Typ und Kennung (uuid bzw. `a|b|c`); null bei ungültiger Kennung. */
+function zielZeile(typ: ReligioeserTyp, id: string): { t: FreigabeTabelle; wo: SQL } | null {
+  const uuid = z.uuid().safeParse(id).success;
+  const teile = id.split('|');
+  switch (typ) {
+    case 'quran_wortbedeutung':
+      return uuid ? { t: schema.quranWortbedeutung, wo: eq(schema.quranWortbedeutung.id, id) } : null;
+    case 'quran_wortbedeutung_ort': {
+      const [sure, vers, pos, sprache] = teile;
+      const zahlen = [sure, vers, pos].map(Number);
+      if (teile.length !== 4 || !zahlen.every(Number.isInteger) || !sprache) return null;
+      const t = schema.quranWortbedeutungOrt;
+      return { t, wo: and(eq(t.sure, zahlen[0]), eq(t.vers, zahlen[1]), eq(t.pos, zahlen[2]), eq(t.sprache, sprache))! };
+    }
+    case 'tajwid_regel':
+      return { t: schema.tajwidRegel, wo: eq(schema.tajwidRegel.schluessel, id) };
+    case 'hadith_uebersetzung': {
+      const [sammlung, nummer, sprache] = teile;
+      if (teile.length !== 3) return null;
+      const t = schema.hadithUebersetzung;
+      return { t, wo: and(eq(t.sammlungId, sammlung), eq(t.nummer, nummer), eq(t.sprache, sprache))! };
+    }
+    case 'elifbe_lektion':
+      return uuid ? { t: schema.elifbeLektion, wo: eq(schema.elifbeLektion.id, id) } : null;
+    case 'besonderer_tag':
+      return uuid ? { t: schema.besondererTag, wo: eq(schema.besondererTag.id, id) } : null;
+  }
+}
+
 /**
- * Status in der Tabelle des religiösen Inhalts setzen – nur, solange er „zur_pruefung“ steht. Ergebnis: Zeile gefunden.
+ * Status in der Tabelle des religiösen Inhalts setzen – nur, solange er „zur_pruefung“ steht. Freigeben nur im
+ * Vier-Augen-Prinzip (ADR 0030, MN-24; S2/S3): Wer den Inhalt zuletzt verfasst oder geändert hat, gibt ihn nicht selbst
+ * frei – dieselbe Regel wie in „Koran & Hadith“ (`statusSetzen`) und der Anzeige (`folienFreigabe`).
  */
 async function setzeReligioesenStatus(
   tx: Tx,
@@ -56,100 +97,23 @@ async function setzeReligioesenStatus(
   id: string,
   neu: 'geprueft' | 'entwurf',
   benutzerId: string,
-): Promise<boolean> {
+): Promise<'ok' | 'nichtGefunden' | 'vierAugen'> {
+  const ziel = zielZeile(typ, id);
+  if (!ziel) return 'nichtGefunden';
+  const { t, wo } = ziel;
+  const offen = and(wo, eq(t.freigabe, 'zur_pruefung'));
+  const [stand] = await tx.select({ verfasstVon: t.verfasstVon }).from(t).where(offen).limit(1);
+  if (!stand) return 'nichtGefunden';
+  if (neu === 'geprueft' && !vierAugenErfuellt(stand.verfasstVon, benutzerId)) return 'vierAugen';
   const werte = neu === 'geprueft' ? { freigabe: neu, geprueftVon: benutzerId, geprueftAm: new Date() } : { freigabe: neu };
-  const uuid = z.uuid().safeParse(id).success;
-  const teile = id.split('|');
-  switch (typ) {
-    case 'quran_wortbedeutung': {
-      if (!uuid) return false;
-      const t = schema.quranWortbedeutung;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
-            .returning({ id: t.id })
-        ).length > 0
-      );
-    }
-    case 'quran_wortbedeutung_ort': {
-      const [sure, vers, pos, sprache] = teile;
-      const zahlen = [sure, vers, pos].map(Number);
-      if (teile.length !== 4 || !zahlen.every(Number.isInteger) || !sprache) return false;
-      const t = schema.quranWortbedeutungOrt;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(
-              and(
-                eq(t.sure, zahlen[0]),
-                eq(t.vers, zahlen[1]),
-                eq(t.pos, zahlen[2]),
-                eq(t.sprache, sprache),
-                eq(t.freigabe, 'zur_pruefung'),
-              ),
-            )
-            .returning({ s: t.sure })
-        ).length > 0
-      );
-    }
-    case 'tajwid_regel': {
-      const t = schema.tajwidRegel;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(and(eq(t.schluessel, id), eq(t.freigabe, 'zur_pruefung')))
-            .returning({ s: t.schluessel })
-        ).length > 0
-      );
-    }
-    case 'hadith_uebersetzung': {
-      const [sammlung, nummer, sprache] = teile;
-      if (teile.length !== 3) return false;
-      const t = schema.hadithUebersetzung;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(and(eq(t.sammlungId, sammlung), eq(t.nummer, nummer), eq(t.sprache, sprache), eq(t.freigabe, 'zur_pruefung')))
-            .returning({ n: t.nummer })
-        ).length > 0
-      );
-    }
-    case 'elifbe_lektion': {
-      if (!uuid) return false;
-      const t = schema.elifbeLektion;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
-            .returning({ id: t.id })
-        ).length > 0
-      );
-    }
-    case 'besonderer_tag': {
-      if (!uuid) return false;
-      const t = schema.besondererTag;
-      return (
-        (
-          await tx
-            .update(t)
-            .set(werte)
-            .where(and(eq(t.id, id), eq(t.freigabe, 'zur_pruefung')))
-            .returning({ id: t.id })
-        ).length > 0
-      );
-    }
-  }
+  // Dieselbe Bedingung im UPDATE: Hat sich der Inhalt seitdem geändert (neue verfassende Person), greift sie erneut
+  const bedingung = neu === 'geprueft' ? and(offen, or(isNull(t.verfasstVon), ne(t.verfasstVon, benutzerId))) : offen;
+  const geaendert = await tx
+    .update(t as typeof schema.quranWortbedeutung)
+    .set(werte)
+    .where(bedingung)
+    .returning({ freigabe: t.freigabe });
+  return geaendert.length ? 'ok' : 'nichtGefunden';
 }
 
 export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData): Promise<FreigabeZustand> {
@@ -231,9 +195,9 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
   // Religiöse Inhalte mit eigener Freigabespalte
   if (!darf(a.rollen, 'religioes.freigeben')) return { fehler: 'nurReligioesePruefung' };
   const typ = e.inhaltTyp;
-  const gefunden = await db.transaction(async (tx) => {
-    const ok = await setzeReligioesenStatus(tx, typ, e.inhaltId, freigeben ? 'geprueft' : 'entwurf', a.benutzerId);
-    if (!ok) return false;
+  const ergebnis = await db.transaction(async (tx) => {
+    const r = await setzeReligioesenStatus(tx, typ, e.inhaltId, freigeben ? 'geprueft' : 'entwurf', a.benutzerId);
+    if (r !== 'ok') return r;
     await tx.insert(schema.freigabe).values({
       inhaltTyp: typ,
       inhaltId: e.inhaltId,
@@ -252,9 +216,10 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
       },
       tx,
     );
-    return true;
+    return 'ok' as const;
   });
-  if (!gefunden) return { fehler: 'nichtMehrOffen' };
+  if (ergebnis === 'vierAugen') return { fehler: 'vierAugen' };
+  if (ergebnis !== 'ok') return { fehler: 'nichtMehrOffen' };
   inhaltGeaendert(CACHE[typ]);
   // Zurück zur Warteschlange mit Rückmeldung (der Inhalt steht dort nicht mehr)
   redirect(`/verwaltung/freigaben?erledigt=${e.entscheidung}`);

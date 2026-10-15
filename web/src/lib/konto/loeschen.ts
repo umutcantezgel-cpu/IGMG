@@ -16,7 +16,7 @@ import { KINDER_DOMAIN } from './regeln';
  *
  * Konten mit Verwaltungsrollen löscht nur „Benutzer und Rollen“ (Schutz der letzten Administration) – hier nie.
  */
-export type LoeschAnlass = 'verwaltung' | 'frist' | 'unbestaetigt' | 'inaktiv';
+export type LoeschAnlass = 'verwaltung' | 'frist' | 'unbestaetigt' | 'inaktiv' | 'einwilligung';
 export type LoeschErgebnis = { ok: true; nachrichten: number } | { ok: false; fehler: 'nichtGefunden' | 'verwaltungskonto' };
 
 const KONTO_LOESCH_GRUND = 'Konto gelöscht';

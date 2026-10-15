@@ -5,7 +5,7 @@ fehler=0
 gemeldet=0
 mail() {
   printf 'To: %s\nFrom: %s\nSubject: %s\n\n%s\n' "$TECHNIK_MAIL" "$MAIL_ABSENDER" "$1" "$2" |
-    msmtp --host="$SMTP_HOST" --port="${SMTP_PORT:-587}" --tls=on --auth=on --user="$SMTP_USER" --passwordeval="printf %s \"$SMTP_PASS\"" \
+    msmtp --host="$SMTP_HOST" --port="${SMTP_PORT:-587}" --tls=on --auth=on --user="$SMTP_USER" --passwordeval='printf %s "$SMTP_PASS"' \
       --from="$MAIL_ABSENDER" "$TECHNIK_MAIL" || echo "$(date -Iseconds) Mail fehlgeschlagen"
 }
 while true; do

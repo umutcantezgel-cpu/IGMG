@@ -177,6 +177,8 @@
       "chatFenster": "Der Chat ist höchstens von 08:00 bis 20:00 Uhr geöffnet, und der Beginn liegt vor dem Ende.",
       "mindestalter": "Bitte ein Alter von 10 bis 18 Jahren eingeben.",
       "keineLehrkraft": "Dieses Konto hat nicht die Kontoart Lehrkraft oder ist gesperrt.",
+      "leitungSelbst": "Ihr eigenes Konto weisen Sie keiner Gruppe zu – das übernimmt eine andere Person der Bildungsabteilung.",
+      "leitungAdministration": "Konten mit der Rolle Administration leiten keine Gruppen: Die Administration liest keine Chats.",
       "zeitraum": "Bitte einen gültigen Zeitraum angeben: Das Ende liegt nicht vor dem Beginn.",
       "zeitraumZuLang": "Bitte höchstens ein Jahr auf einmal anlegen."
     }
@@ -222,7 +224,8 @@
       "status": "Der Status ist gespeichert.",
       "mitglied": "Die Gruppe ist zugeordnet.",
       "mitgliedEntfernt": "Die Mitgliedschaft endet heute.",
-      "widerrufen": "Die Einladung ist widerrufen. Der Link funktioniert nicht mehr."
+      "widerrufen": "Die Einladung ist widerrufen. Der Link funktioniert nicht mehr.",
+      "elternBeendet": "Der Eltern-Kind-Bezug ist beendet. Dieses Elternkonto sieht das Kind nicht mehr und steuert nichts mehr für es."
     },
     "einwilligungArt": {
       "lernplattform": "Lernplattform",
@@ -263,6 +266,9 @@
       "bestaetigtAm": "Verknüpft am {datum}",
       "gesperrt": "Konto gesperrt",
       "keineEltern": "Noch kein Elternkonto verknüpft. Die Verknüpfung entsteht, wenn ein Elternteil die Einladung annimmt.",
+      "bezugBeenden": "Bezug beenden",
+      "bezugBeendenLabel": "Eltern-Kind-Bezug von {name} beenden",
+      "bezugBeendenHinweis": "Beenden, wenn der Bezug nicht stimmt oder das Sorgerecht fehlt. Das Konto selbst bleibt; Leitung und Kinderschutz erfahren davon.",
       "einladungen": "Einladungen",
       "einladungStand": {
         "offen": "Offen",
@@ -453,6 +459,8 @@
       "verwaltungskonto": "Dieses Konto hat Verwaltungsrollen. Sperren und Löschen nur unter „Benutzer und Rollen“.",
       "kindRollen": "Ein Kinderzugang hat nur die Kontoart Schüler.",
       "unbekannt": "Unbekannte Kontoart.",
+      "eigeneAdresse": "An Ihre eigene Adresse laden Sie hier nicht ein – das übernimmt eine andere Person.",
+      "administration": "Konten mit der Rolle Administration bekommen keine Kontoart Eltern, Lehrkraft oder Schüler: Die Administration sieht keine Chats und keine Kinderdaten.",
       "fristLaeuft": "Die Frist des Löschantrags läuft noch.",
       "nichtGefunden": "Dieses Konto gibt es nicht mehr."
     },

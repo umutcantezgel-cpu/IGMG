@@ -4,12 +4,18 @@
 #  2. Ein frischer Abzug derselben Datenbank (pg_dump, nur lesen – wie die tägliche Sicherung) lässt sich in eine
 #     Wegwerf-Datenbank einspielen; Erfolg heißt: Tabellen vorhanden. Danach wird alles gelöscht.
 # Das Entschlüsseln prüft der Vorstand vierteljährlich mit seinem eigenen Schlüssel (LIESMICH, „Wiederherstellen“).
+#  3. (S3) Die neueste Sicherung ist nicht leer: Mindestgröße und mindestens halb so groß wie die vorige – ein
+#     abgebrochener Abzug fiele sonst erst beim Wiederherstellen auf.
 set -eu
 : "${SICHERUNG_DATABASE_URL:?fehlt}"
+MINDEST="${SICHERUNG_MINDESTGROESSE:-4096}"
 neueste=$(ls -1t /daten/igmg-*.sql.gz.age 2>/dev/null | head -n 1 || true)
+vorige=$(ls -1t /daten/igmg-*.sql.gz.age 2>/dev/null | sed -n 2p || true)
 if [ -z "$neueste" ] || ! sha256sum -c "$neueste.sha256" >/dev/null 2>&1 \
-  || [ "$(head -c 21 "$neueste")" != "age-encryption.org/v1" ]; then
-  /bin/sh /sicherung/melden.sh probe fehler 0; echo "Probe FEHLER: keine unversehrte Sicherung" >&2; exit 0
+  || [ "$(head -c 21 "$neueste")" != "age-encryption.org/v1" ] \
+  || [ "$(stat -c %s "$neueste")" -lt "$MINDEST" ] \
+  || { [ -n "$vorige" ] && [ "$(($(stat -c %s "$neueste") * 2))" -lt "$(stat -c %s "$vorige")" ]; }; then
+  /bin/sh /sicherung/melden.sh probe fehler 0; echo "Probe FEHLER: keine unversehrte, vollständige Sicherung" >&2; exit 0
 fi
 export PGDATA=/tmp/probe PGPORT=55432
 rm -rf "$PGDATA"; mkdir -p "$PGDATA"; chown postgres "$PGDATA"

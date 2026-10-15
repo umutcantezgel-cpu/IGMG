@@ -26,7 +26,7 @@ import {
 import { ladeGruppe, ladeKursAuswahl, ladeLeitungsAuswahl, ladeMitgliedsAuswahl } from '@/server/queries/verwaltung/gruppen';
 
 const MELDUNGEN = ['angelegt', 'leitung', 'leitungEntfernt', 'mitglied', 'mitgliedEntfernt', 'termine'] as const;
-const FEHLER = ['keineLehrkraft', 'zeitraum', 'zeitraumZuLang'] as const;
+const FEHLER = ['keineLehrkraft', 'leitungSelbst', 'leitungAdministration', 'zeitraum', 'zeitraumZuLang'] as const;
 
 /**
  * Verwaltung › Gruppe (H-L01): Lage des Chats (S-02), Leitung (Lehrkraft/Aufsicht), Mitglieder, Terminserie und Angaben.

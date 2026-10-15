@@ -3,9 +3,11 @@ import { and, eq, isNull } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { auth } from '@/lib/auth/server';
 import { db, schema, type Transaktion } from '@/lib/db';
+import { vergibVerwaltungsrollen } from '@/lib/rechte/schutzrollen';
 import type { Locale } from '@/i18n/routing';
 import { ladeGueltigeEinladung } from '@/server/queries/einladung';
 import { anzeigenameAus } from './regeln';
+import { meldeAnSorgeberechtigte } from './sicherheitsmail';
 
 /**
  * Einladungen in Gemeinde-Konten (ADR 0026, AUFTRAG 2.2): Eltern, Lehrkräfte und Schüler ≥ 16 bekommen eine Einladung
@@ -18,12 +20,8 @@ import { anzeigenameAus } from './regeln';
 export type Einladung = NonNullable<Awaited<ReturnType<typeof ladeGueltigeEinladung>>>;
 
 async function vergibRollen(tx: Transaktion, e: Einladung, benutzerId: string): Promise<void> {
-  for (const z of e.rollen) {
-    await tx
-      .insert(schema.rolleZuweisung)
-      .values({ benutzerId, rolle: z.rolle, organisation: z.organisation ?? null, erstelltVon: e.erstelltVon })
-      .onConflictDoNothing();
-  }
+  // Schutzrollen (leitung, kinderschutz) nur über das Vier-Augen-Prinzip (S2/S3)
+  await vergibVerwaltungsrollen(tx, benutzerId, e.rollen, e.erstelltVon);
   for (const rolle of e.gemeindeRollen) {
     await tx.insert(schema.gemeindeRolle).values({ benutzerId, rolle, erstelltVon: e.erstelltVon }).onConflictDoNothing();
   }
@@ -36,11 +34,15 @@ async function vergibRollen(tx: Transaktion, e: Einladung, benutzerId: string): 
  */
 async function verknuepfeLernende(tx: Transaktion, e: Einladung, benutzerId: string): Promise<void> {
   if (!e.lernendeId) return;
-  if (e.gemeindeRollen.includes('eltern'))
-    await tx
+  if (e.gemeindeRollen.includes('eltern')) {
+    const neu = await tx
       .insert(schema.elternKind)
       .values({ elternId: benutzerId, lernendeId: e.lernendeId, bestaetigtAm: new Date() })
-      .onConflictDoNothing();
+      .onConflictDoNothing()
+      .returning({ id: schema.elternKind.elternId });
+    // S2/S3: Die schon eingetragenen sorgeberechtigten Eltern erfahren von jedem neuen Elternkonto (ohne Namen)
+    if (neu.length) await meldeAnSorgeberechtigte(tx, e.lernendeId, [benutzerId], 'elternbezug');
+  }
   if (e.gemeindeRollen.includes('schueler')) {
     // Ein Konto gehört zu höchstens einem Lerndatensatz (eindeutig)
     const [eigen] = await tx
@@ -54,6 +56,16 @@ async function verknuepfeLernende(tx: Transaktion, e: Einladung, benutzerId: str
         .set({ benutzerId })
         .where(and(eq(schema.lernende.id, e.lernendeId), isNull(schema.lernende.benutzerId)));
   }
+}
+
+/** Hat das Konto die Verwaltungsrolle `administration`? */
+export async function hatAdministration(benutzerId: string): Promise<boolean> {
+  const [z] = await db
+    .select({ id: schema.rolleZuweisung.id })
+    .from(schema.rolleZuweisung)
+    .where(and(eq(schema.rolleZuweisung.benutzerId, benutzerId), eq(schema.rolleZuweisung.rolle, 'administration')))
+    .limit(1);
+  return Boolean(z);
 }
 
 async function beanspruche(id: string): Promise<boolean> {
@@ -124,10 +136,14 @@ export async function uebernimmEinladung(o: {
   token: string;
   benutzerId: string;
   email: string;
-}): Promise<{ ok: true } | { ok: false; fehler: 'ungueltig' | 'andereAdresse' }> {
+}): Promise<{ ok: true } | { ok: false; fehler: 'ungueltig' | 'andereAdresse' | 'administration' }> {
   const e = await ladeGueltigeEinladung(o.token);
   if (!e) return { ok: false, fehler: 'ungueltig' };
   if (e.email.trim().toLowerCase() !== o.email.trim().toLowerCase()) return { ok: false, fehler: 'andereAdresse' };
+  // NIE_PER_ADMINISTRATION (S2/S3): Ein Konto mit der Rolle Administration wird nicht Elternteil, Lehrkraft oder Schüler –
+  // sonst läse die Administration über die Gemeinde-Rolle Chats und Kinderdaten
+  if (e.gemeindeRollen.some((r) => r !== 'gemeinde') && (await hatAdministration(o.benutzerId)))
+    return { ok: false, fehler: 'administration' };
   if (!(await beanspruche(e.id))) return { ok: false, fehler: 'ungueltig' };
   await db.transaction(async (tx) => {
     await vergibRollen(tx, e, o.benutzerId);
