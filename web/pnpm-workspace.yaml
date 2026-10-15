@@ -9,3 +9,5 @@ allowBuilds:
   better-sqlite3: false
   "@prisma/engines": false
   prisma: false
+patchedDependencies:
+  next@16.4.0: patches/next@16.4.0.patch

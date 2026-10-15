@@ -8,6 +8,8 @@ WORKDIR /app
 
 FROM basis AS abhaengigkeiten
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# Patches (pnpm patchedDependencies, z. B. next: doppelte Kopfzeilen im Standalone-Betrieb) vor der Installation
+COPY patches ./patches
 RUN pnpm install --frozen-lockfile
 
 FROM basis AS bau
