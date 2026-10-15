@@ -1,4 +1,4 @@
-import { and, asc, count, eq, lt, ne, sql } from 'drizzle-orm';
+import { and, asc, count, desc, eq, inArray, isNull, lt, ne, sql } from 'drizzle-orm';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
 import { entscheide, type Funktion, IN_PRODUKTION_AN, MIT_PERSONENDATEN } from '@/lib/funktionen-regeln';
@@ -9,7 +9,8 @@ import type { Pruefung } from './pruefungen';
 /**
  * Startklar-Prüfungen der Gemeinde-Plattform (PLAN 2.8/2.9, ABNAHME Z-12, Z-20): Funktionsschalter in der Produktion,
  * Push-Schlüssel, Kinderschutz (S-02 zwei Erwachsene, S-10 Hash-Kette), Takt und lokaler Helfer-Server (Sicherung,
- * Wiederherstellungsprobe, Medienspiegel) und die Pflegepflicht der Koran-Übersetzungen (QuranEnc, 90 Tage).
+ * Wiederherstellungsprobe, Medienspiegel), die Pflegepflicht der Koran-Übersetzungen (QuranEnc, 90 Tage) und der Stau
+ * offener religiöser Freigaben (ADR 0030, länger als 14 Tage „zur Prüfung“).
  * Prüfungen dürfen erweitert, nie abgeschwächt werden.
  */
 type Umgebung = Readonly<Record<string, string | undefined>>;
@@ -75,6 +76,76 @@ async function einstellungWert(db: Datenbank, schluessel: string): Promise<unkno
     .where(eq(schema.einstellung.schluessel, schluessel))
     .limit(1);
   return z?.wert ?? null;
+}
+
+/** Ab so vielen Tagen „zur Prüfung“ gilt ein religiöser Inhalt als liegen geblieben (Cockpit-Warnung). */
+export const FREIGABE_STAU_TAGE = 14;
+
+export type FreigabeLage = { offen: number; alt: number; ohneDatum: number; aeltesteSeit: Date | null };
+
+/**
+ * Religiöse Freigaben (ADR 0030): Was steht „zur Prüfung“, und seit wann? Maßgeblich ist der Stand in der Tabelle des
+ * Inhalts (wie die Warteschlange unter Verwaltung › Freigaben) und bei freien Seiten der letzte Verlaufseintrag. Das
+ * Datum der Einreichung kommt aus dem Freigabe-Verlauf (`freigabe`), sonst aus `aktualisiertAm`; Einträge ohne beides
+ * (z. B. berechnete besondere Tage) zählen als offen, aber nie als liegen geblieben.
+ */
+export async function religioeseFreigabeLage(db: Datenbank, jetzt: Date): Promise<FreigabeLage> {
+  const offen = 'zur_pruefung' as const;
+  const f = schema.freigabe;
+  const letzte = await db
+    .selectDistinctOn([f.inhaltTyp, f.inhaltId], { typ: f.inhaltTyp, id: f.inhaltId, art: f.art, status: f.status, am: f.am })
+    .from(f)
+    .orderBy(f.inhaltTyp, f.inhaltId, desc(f.am), desc(f.id));
+  const eingereicht = new Map<string, Date>(
+    letzte.filter((z) => z.art === 'religioes' && z.status === offen).map((z) => [`${z.typ}|${z.id}`, z.am]),
+  );
+  const wb = schema.quranWortbedeutung;
+  const wbo = schema.quranWortbedeutungOrt;
+  const tr = schema.tajwidRegel;
+  const hu = schema.hadithUebersetzung;
+  const el = schema.elifbeLektion;
+  const bt = schema.besondererTag;
+  const af = schema.anzeigeFolie;
+  const seitenIds = [...eingereicht.keys()].filter((k) => k.startsWith('seite|')).map((k) => k.slice('seite|'.length));
+  const [bedeutungen, orte, regeln, hadithe, lektionen, tage, folien, seiten] = await Promise.all([
+    db.select({ id: wb.id, geaendert: wb.aktualisiertAm }).from(wb).where(eq(wb.freigabe, offen)),
+    db.select({ sure: wbo.sure, vers: wbo.vers, pos: wbo.pos, sprache: wbo.sprache }).from(wbo).where(eq(wbo.freigabe, offen)),
+    db.select({ id: tr.schluessel }).from(tr).where(eq(tr.freigabe, offen)),
+    db.select({ sammlung: hu.sammlungId, nummer: hu.nummer, sprache: hu.sprache }).from(hu).where(eq(hu.freigabe, offen)),
+    db.select({ id: el.id }).from(el).where(eq(el.freigabe, offen)),
+    db.select({ id: bt.id }).from(bt).where(eq(bt.freigabe, offen)),
+    db.select({ id: af.id, geaendert: af.aktualisiertAm }).from(af).where(eq(af.freigabe, offen)),
+    seitenIds.length
+      ? db
+          .select({ id: schema.seite.id })
+          .from(schema.seite)
+          .where(and(inArray(schema.seite.id, seitenIds), isNull(schema.seite.imPapierkorbSeit)))
+      : Promise.resolve([] as { id: string }[]),
+  ]);
+  const eintraege: { schluessel: string; geaendert?: Date }[] = [
+    ...bedeutungen.map((z) => ({ schluessel: `quran_wortbedeutung|${z.id}`, geaendert: z.geaendert })),
+    ...orte.map((z) => ({ schluessel: `quran_wortbedeutung_ort|${z.sure}|${z.vers}|${z.pos}|${z.sprache}` })),
+    ...regeln.map((z) => ({ schluessel: `tajwid_regel|${z.id}` })),
+    ...hadithe.map((z) => ({ schluessel: `hadith_uebersetzung|${z.sammlung}|${z.nummer}|${z.sprache}` })),
+    ...lektionen.map((z) => ({ schluessel: `elifbe_lektion|${z.id}` })),
+    ...tage.map((z) => ({ schluessel: `besonderer_tag|${z.id}` })),
+    ...folien.map((z) => ({ schluessel: `anzeige_folie|${z.id}`, geaendert: z.geaendert })),
+    ...seiten.map((z) => ({ schluessel: `seite|${z.id}` })),
+  ];
+  const grenze = jetzt.getTime() - FREIGABE_STAU_TAGE * 24 * STUNDE;
+  let alt = 0;
+  let ohneDatum = 0;
+  let aeltesteSeit: Date | null = null;
+  for (const e of eintraege) {
+    const seit = eingereicht.get(e.schluessel) ?? e.geaendert ?? null;
+    if (!seit) {
+      ohneDatum++;
+      continue;
+    }
+    if (seit.getTime() < grenze) alt++;
+    if (!aeltesteSeit || seit < aeltesteSeit) aeltesteSeit = seit;
+  }
+  return { offen: eintraege.length, alt, ohneDatum, aeltesteSeit };
 }
 
 export async function gemeindePruefen(
@@ -236,6 +307,23 @@ export async function gemeindePruefen(
       aufwand: zustand === 'fehlt' ? '3–4 h (Einrichtung)' : '15 min',
     });
   }
+
+  // ADR 0030: Stau offener religiöser Freigaben – ohne Imam/Hoca (MN-20, MN-24) bleibt öffentlich nur der Platzhalter
+  const freigaben = await religioeseFreigabeLage(db, jetzt);
+  neu({
+    id: 'gemeinde.freigaben',
+    bereich: 'gemeinde',
+    titel: 'Religiöse Freigaben',
+    status: freigaben.alt > 0 ? 'warnung' : 'ok',
+    meldung:
+      freigaben.alt > 0
+        ? `${freigaben.alt === 1 ? 'Ein religiöser Inhalt wartet' : `${freigaben.alt} religiöse Inhalte warten`} seit mehr als ${FREIGABE_STAU_TAGE} Tagen auf die Prüfung (ältester seit ${zeitText(freigaben.aeltesteSeit?.toISOString())}; insgesamt ${freigaben.offen} offen). Öffentlich bleibt bis dahin der Platzhalter.`
+        : freigaben.offen > 0
+          ? `${freigaben.offen === 1 ? 'Ein religiöser Inhalt wartet' : `${freigaben.offen} religiöse Inhalte warten`} auf die Prüfung, keiner länger als ${FREIGABE_STAU_TAGE} Tage.`
+          : 'Kein religiöser Inhalt wartet auf die Prüfung.',
+    ort: 'Verwaltung › Freigaben (Rolle „religiöse Prüfung“, MENSCHEN MN-20, MN-24)',
+    aufwand: '30 min',
+  });
 
   // QuranEnc-Bedingung: Übersetzungen regelmäßig auf neue Versionen prüfen (90 Tage)
   const grenze = new Date(jetzt.getTime() - 90 * 24 * STUNDE);

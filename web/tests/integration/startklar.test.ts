@@ -462,6 +462,69 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     await db.execute(sql`delete from gruppe where id = ${g.id}`);
   });
 
+  it('ADR 0030: Stau offener religiöser Freigaben – länger als 14 Tage „zur Prüfung“ ergibt eine Warnung', async () => {
+    // pruefe() rechnet mit jetzt = 2026-10-11T12:00Z
+    const vor20Tagen = new Date('2026-09-21T12:00:00Z');
+    const vor3Tagen = new Date('2026-10-08T12:00:00Z');
+    expect(befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben')).toMatchObject({
+      status: 'ok',
+      meldung: 'Kein religiöser Inhalt wartet auf die Prüfung.',
+    });
+
+    // Offen, aber ohne Einreichungsdatum (berechneter besonderer Tag) bzw. frisch eingereicht: noch kein Stau
+    const [tag] = await db
+      .insert(schema.besondererTag)
+      .values({ art: 'kandil', datum: '2026-12-01', titel: { de: '[Tag]' }, freigabe: 'zur_pruefung' })
+      .returning({ id: schema.besondererTag.id });
+    await db
+      .insert(schema.tajwidRegel)
+      .values({ schluessel: 'test_regel', familie: 'test', name: { de: '[Regel]' }, freigabe: 'zur_pruefung' });
+    await db
+      .insert(schema.freigabe)
+      .values({ inhaltTyp: 'tajwid_regel', inhaltId: 'test_regel', art: 'religioes', status: 'zur_pruefung', am: vor3Tagen });
+    let e = befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben');
+    expect(e.status).toBe('ok');
+    expect(e.meldung).toContain('2 religiöse Inhalte warten auf die Prüfung, keiner länger als 14 Tage');
+
+    // Ein älterer Verlaufseintrag ändert nichts: maßgeblich ist die jüngste Einreichung (vor 3 Tagen)
+    await db
+      .insert(schema.freigabe)
+      .values({ inhaltTyp: 'tajwid_regel', inhaltId: 'test_regel', art: 'religioes', status: 'zur_pruefung', am: vor20Tagen });
+    expect(befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben').status).toBe('ok');
+
+    // Folie mit Vers seit 20 Tagen ohne Verlauf (Rückfall: aktualisiertAm) und freie Seite mit religiösem Antrag vor 20 Tagen
+    const [folie] = await db
+      .insert(schema.anzeigeFolie)
+      .values({ art: 'vers', inhalt: { sure: 1, vers: 1 }, freigabe: 'zur_pruefung', aktualisiertAm: vor20Tagen })
+      .returning({ id: schema.anzeigeFolie.id });
+    const [seite] = await db
+      .insert(schema.seite)
+      .values({ slugDe: 'test-stau', titel: { de: '[Seite]' } })
+      .returning({ id: schema.seite.id });
+    await db
+      .insert(schema.freigabe)
+      .values({ inhaltTyp: 'seite', inhaltId: seite.id, art: 'religioes', status: 'zur_pruefung', am: vor20Tagen });
+    e = befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben');
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('2 religiöse Inhalte warten seit mehr als 14 Tagen auf die Prüfung');
+    expect(e.meldung).toContain('insgesamt 4 offen');
+    expect(e.ort).toContain('Verwaltung › Freigaben');
+
+    // Entschieden: Folie geprüft, Seite zurückgewiesen (neuer Verlaufseintrag) → kein Stau mehr
+    await db
+      .update(schema.anzeigeFolie)
+      .set({ freigabe: 'geprueft' })
+      .where(sql`${schema.anzeigeFolie.id} = ${folie.id}`);
+    await db.insert(schema.freigabe).values({ inhaltTyp: 'seite', inhaltId: seite.id, art: 'religioes', status: 'entwurf', am: vor3Tagen });
+    expect(befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben').status).toBe('ok');
+
+    await db.execute(sql`delete from freigabe where inhalt_id in ('test_regel', ${seite.id})`);
+    await db.execute(sql`delete from tajwid_regel where schluessel = 'test_regel'`);
+    await db.execute(sql`delete from besonderer_tag where id = ${tag.id}`);
+    await db.execute(sql`delete from anzeige_folie where id = ${folie.id}`);
+    await db.execute(sql`delete from seite where id = ${seite.id}`);
+  });
+
   it('S-10: unveränderte Hash-Kette ok, eine eingeschobene Zeile mit falschem Hash ergibt einen Fehler', async () => {
     const { kettenHash, KETTEN_ANFANG } = await import('@/lib/chat/hashkette');
     const zeitpunkt = new Date('2026-10-10T10:00:00.000Z');
