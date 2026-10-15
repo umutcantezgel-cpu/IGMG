@@ -81,7 +81,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
 const GRUPPEN: readonly ModulGruppe[] = ['inhalte', 'kommunikation', 'betrieb'];
 
 const EINTRAG =
-  'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 verwaltung:min-h-11';
+  'flex min-h-12 items-center gap-3 rounded-md border-l-4 px-3.5 font-bold no-underline transition duration-(--dauer-rueckmeldung) druck verwaltung:min-h-11';
 
 export type SeitenleistenEintrag = {
   schluessel: string;

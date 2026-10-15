@@ -8,7 +8,7 @@ import type { Locale } from '@/i18n/routing';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
 
 const SEKUNDAER =
-  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 hover:bg-gruen-50 hover:text-gruen-800';
+  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) druck hover:bg-gruen-50 hover:text-gruen-800';
 const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4';
 
 /**

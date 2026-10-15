@@ -111,7 +111,7 @@ export function GebetszeitenTabs({
           onKeyDown={tastatur}
           onScroll={pruefeRand}
           className={klassen(
-            'relative flex snap-x snap-proximity scroll-px-1 [scrollbar-width:none] gap-1 overflow-x-auto overscroll-x-contain p-1',
+            'relative flex snap-x snap-proximity scroll-px-1 scrollbar-none gap-1 overflow-x-auto overscroll-x-contain p-1',
             rand.links && rand.rechts ? 'mask-x-from-85%' : rand.rechts ? 'mask-r-from-85%' : rand.links ? 'mask-l-from-85%' : undefined,
           )}
         >
@@ -131,7 +131,7 @@ export function GebetszeitenTabs({
                 tabIndex={on ? 0 : -1}
                 onClick={() => zeige(s)}
                 className={klassen(
-                  'relative inline-flex min-h-12 shrink-0 cursor-pointer snap-start items-center gap-2 rounded-md px-4.5 text-18 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) active:scale-98',
+                  'relative inline-flex min-h-12 shrink-0 druck cursor-pointer snap-start items-center gap-2 rounded-md px-4.5 text-18 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung)',
                   on ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
                 )}
               >

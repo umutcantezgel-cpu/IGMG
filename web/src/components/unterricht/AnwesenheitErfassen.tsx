@@ -46,6 +46,7 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
   const anwesend = Object.values(stand).filter((s) => s === 'anwesend' || s === 'verspaetet').length;
 
   async function speichern() {
+    if (sendet) return;
     setSendet(true);
     setMeldung(null);
     const r = await speichereAnwesenheit({
@@ -90,7 +91,7 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
                   <label
                     key={s}
                     className={klassen(
-                      'flex min-h-12 min-w-0 cursor-pointer items-center justify-center gap-1.5 rounded-md border-2 px-2 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) active:scale-98 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-gruen-950 motion-reduce:active:scale-100',
+                      'flex min-h-12 min-w-0 druck cursor-pointer items-center justify-center gap-1.5 rounded-md border-2 px-2 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-gruen-950',
                       an ? FARBE[s] : UMRISS,
                     )}
                   >
@@ -124,11 +125,13 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
         ))}
       </ul>
       <div className="flex flex-wrap items-center gap-4">
+        {/* Gesperrt nur über aria-disabled (Z-07 F-2, WCAG 2.4.3): Ein `disabled` nähme dem gedrückten Knopf den Fokus, er
+            fiele auf <body>. So bleibt der Fokus auf dem Knopf, und „Gespeichert.“ wird über role=status angesagt. */}
         <button
           type="button"
           onClick={() => void speichern()}
-          disabled={sendet}
-          className="min-h-12 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss hover:bg-gruen-800 disabled:opacity-60"
+          aria-disabled={sendet || undefined}
+          className="min-h-12 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss hover:bg-gruen-800 aria-disabled:cursor-wait aria-disabled:opacity-60"
         >
           {texte.speichern}
         </button>

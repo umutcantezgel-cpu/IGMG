@@ -55,7 +55,7 @@ export function Weiterlesen({ texte, namen, pfadSure, pfadCuz }: { texte: Texte;
   const zeile = (s: Stelle) =>
     s.cuz ? fuelle(texte.stelleCuz, { cuz: s.cuz, sure: s.sure, vers: s.vers }) : fuelle(texte.stelle, { sure: s.sure, vers: s.vers });
   const knopf =
-    'inline-flex min-h-12 items-center gap-2 self-start rounded-pill bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
+    'inline-flex min-h-12 items-center gap-2 self-start rounded-pill bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck';
 
   return (
     <section

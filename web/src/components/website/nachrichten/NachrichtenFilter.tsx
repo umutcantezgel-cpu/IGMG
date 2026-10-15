@@ -59,7 +59,7 @@ export function NachrichtenFilter({
                 aria-pressed={an}
                 onClick={() => waehle(k.schluessel)}
                 className={klassen(
-                  'relative inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-pill px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
+                  'relative inline-flex min-h-12 druck cursor-pointer items-center gap-1.5 rounded-pill px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung)',
                   an
                     ? 'border-2 border-gruen-700 bg-gruen-700 text-weiss'
                     : 'border border-rand bg-weiss text-tinte hover:border-gruen-700',
@@ -100,7 +100,7 @@ export function NachrichtenFilter({
               <button
                 type="button"
                 onClick={() => waehle('alle')}
-                className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+                className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
               >
                 {texte.alle}
               </button>

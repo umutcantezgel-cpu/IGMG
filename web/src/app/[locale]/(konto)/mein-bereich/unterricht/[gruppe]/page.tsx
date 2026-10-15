@@ -186,7 +186,7 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
                 <Link
                   href={ziel}
                   prefetch={false}
-                  className="group flex w-full items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98 motion-reduce:active:scale-100"
+                  className="group flex w-full druck items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2"
                 >
                   <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-700">
                     <Icon aria-hidden className="size-6" />
@@ -202,7 +202,7 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
                   </span>
                   <ArrowRight
                     aria-hidden
-                    className="size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+                    className="size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
                   />
                 </Link>
               </li>

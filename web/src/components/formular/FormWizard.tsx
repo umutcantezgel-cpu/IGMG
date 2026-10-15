@@ -186,7 +186,7 @@ export async function FormWizard({
               type="submit"
               name="richtung"
               value="zurueck"
-              className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 sm:w-auto"
+              className="inline-flex min-h-12 w-full druck cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 sm:w-auto"
             >
               <ArrowLeft aria-hidden className="size-5" />
               {t('wizard.zurueck')}

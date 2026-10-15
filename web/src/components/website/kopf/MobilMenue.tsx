@@ -118,7 +118,7 @@ export function MobilMenue({
         aria-haspopup="dialog"
         aria-label={texte.menueOeffnen}
         onClick={oeffnen}
-        className="inline-flex min-h-12 shrink-0 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-3 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+        className="inline-flex min-h-12 shrink-0 druck cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-3 text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
       >
         {/* px-3 statt px-4: bei 320 px passen Logo, Name und Knopf sonst nicht in die Zeile (Querscrollen 9 px, Sichtabnahme E4) */}
         <Menu aria-hidden className="size-6" />
@@ -145,7 +145,7 @@ export function MobilMenue({
               type="button"
               aria-label={texte.menueSchliessen}
               onClick={schliessen}
-              className="flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+              className="flex size-12 shrink-0 druck cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
             >
               <X aria-hidden className="size-6" />
             </button>
@@ -196,7 +196,7 @@ export function MobilMenue({
                       lang={s.code}
                       hrefLang={s.code}
                       aria-current={an ? 'true' : undefined}
-                      className={`flex min-h-14 flex-col items-center justify-center rounded-md border-2 px-1 py-1.5 text-16 leading-tight font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 motion-reduce:active:scale-100 ${an ? 'border-gruen-700 bg-gruen-50 text-gruen-800' : 'border-rand bg-weiss hover:bg-gruen-50'}`}
+                      className={`flex min-h-14 druck flex-col items-center justify-center rounded-md border-2 px-1 py-1.5 text-16 leading-tight font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) ${an ? 'border-gruen-700 bg-gruen-50 text-gruen-800' : 'border-rand bg-weiss hover:bg-gruen-50'}`}
                     >
                       <span>{s.kurz}</span>
                       <span className="font-normal">{s.name}</span>
@@ -301,7 +301,7 @@ export function MobilMenue({
                 href={anmeldenHref}
                 prefetch={false}
                 style={gruppe(3)}
-                className="schublade-gruppe inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
+                className="schublade-gruppe inline-flex min-h-12 druck items-center justify-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800"
               >
                 <LogIn aria-hidden className="size-5" />
                 {texte.anmelden}

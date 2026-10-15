@@ -163,7 +163,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                 aria-pressed={an}
                 onClick={() => setThema(an ? null : th.schluessel)}
                 className={klassen(
-                  'flex min-h-16 cursor-pointer items-center justify-between gap-2 rounded-lg px-4 py-3 text-left text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:shadow-s2 active:scale-98',
+                  'flex min-h-16 druck cursor-pointer items-center justify-between gap-2 rounded-lg px-4 py-3 text-left text-18 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:shadow-s2',
                   an ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
@@ -181,7 +181,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
             <button
               type="button"
               onClick={() => setThema(null)}
-              className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+              className="inline-flex min-h-12 druck items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
             >
               <X aria-hidden className="size-4" />
               {texte.filterEntfernen}
@@ -214,7 +214,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
                 onClick={() => setReiter(r)}
                 onKeyDown={(e) => reiterTaste(e, i)}
                 className={klassen(
-                  'relative inline-flex min-h-12 items-center gap-2 rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
+                  'relative inline-flex min-h-12 druck items-center gap-2 rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung)',
                   ist ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
                 )}
               >
@@ -313,7 +313,7 @@ export function WissenInsel({ sprache, texte, themen, artikel, videos, experten 
               type="button"
               aria-label={texte.schliessen}
               onClick={schliesse}
-              className="absolute top-3 right-3 inline-flex size-12 items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+              className="absolute top-3 right-3 inline-flex size-12 druck items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
             >
               <X aria-hidden className="size-6" />
             </button>

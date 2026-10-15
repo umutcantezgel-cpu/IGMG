@@ -44,7 +44,7 @@ export function KontoMenue({
         aria-controls={id}
         aria-label={`${vorname}: ${label}`}
         onClick={() => setOffen((o) => !o)}
-        className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-gruen-700 bg-weiss py-1 pr-3 pl-1.5 text-18 font-bold whitespace-nowrap text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+        className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border border-gruen-700 bg-weiss py-1 pr-3 pl-1.5 text-18 font-bold whitespace-nowrap text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
       >
         <span
           aria-hidden

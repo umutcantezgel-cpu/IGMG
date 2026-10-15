@@ -23,7 +23,7 @@ import { KENNUNG, KUERZEL_ALLE, type Kuerzel, MEHR_LINK, STIL, SYMBOL } from './
 const ANZAHL = 3;
 
 const KNOPF =
-  'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
+  'inline-flex min-h-12 items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck';
 
 export type OrganizationPageProps = {
   /** Organisation (Enum at | kt | gt | kgt, D-06). Unbekannte Adressen prüft die Seite vorher (notFound). */

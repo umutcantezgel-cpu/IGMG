@@ -38,7 +38,7 @@ export function BewegungsVorschau({
         type="button"
         aria-label={`${beschriftung}: ${name}`}
         onClick={() => setAmZiel((an) => !an)}
-        className="inline-flex min-h-12 items-center rounded-pill border border-rand bg-weiss px-5 font-bold text-tinte transition-colors duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
+        className="inline-flex min-h-12 druck items-center rounded-pill border border-rand bg-weiss px-5 font-bold text-tinte transition-colors duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
       >
         {beschriftung}
       </button>

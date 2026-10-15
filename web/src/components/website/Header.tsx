@@ -94,7 +94,7 @@ export async function Header({
           <Link
             href="/suche"
             prefetch={false}
-            className="hidden size-12 items-center justify-center rounded-md text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 sm:inline-flex"
+            className="hidden size-12 druck items-center justify-center rounded-md text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 sm:inline-flex"
           >
             <Search aria-hidden className="size-6" />
             <span className="sr-only">{tsu('kopfLink')}</span>
@@ -140,7 +140,7 @@ export async function Header({
             <NextLink
               href={anmeldenHref}
               prefetch={false}
-              className="hidden min-h-12 items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 menu:inline-flex"
+              className="hidden min-h-12 druck items-center gap-2 rounded-md border border-gruen-700 bg-weiss px-4 text-18 font-bold whitespace-nowrap text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 menu:inline-flex"
             >
               <User aria-hidden className="size-5" />
               <span>{t('anmelden')}</span>

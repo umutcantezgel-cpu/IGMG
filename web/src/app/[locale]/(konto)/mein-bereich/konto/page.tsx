@@ -82,7 +82,7 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
       {s.faktor === 'eingerichtet' ? <Meldung art="erfolg">{t('konto.zweiFaktor.eingerichtet')}</Meldung> : null}
 
       <Abschnitt id="profil" Icon={UserRound} titel={t('konto.profil.titel')}>
-        <dl className="mb-6 grid gap-x-6 gap-y-2 rounded-md bg-sand px-4 py-3 text-16 sm:grid-cols-[auto_minmax(0,1fr)]">
+        <dl className="mb-6 grid gap-x-6 gap-y-2 rounded-md bg-sand px-4 py-3 text-16 sm:raster-symbol">
           {details.email ? (
             <>
               <dt className="font-bold">{t('konto.profil.email')}</dt>
@@ -151,7 +151,7 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
                           <button
                             type="submit"
                             aria-label={t('konto.passkeys.entfernenLabel', { name })}
-                            className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md px-3 font-bold text-fehler transition duration-(--dauer-rueckmeldung) hover:bg-fehler-toenung active:scale-98"
+                            className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md px-3 font-bold text-fehler transition duration-(--dauer-rueckmeldung) hover:bg-fehler-toenung"
                           >
                             <X aria-hidden className="size-5" />
                             {t('konto.passkeys.entfernen')}
@@ -197,7 +197,7 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
                     <button
                       type="submit"
                       aria-label={t('konto.sitzungen.beendenLabel', { geraet })}
-                      className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:bg-sand active:scale-98"
+                      className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:bg-sand"
                     >
                       {t('konto.sitzungen.beenden')}
                     </button>
@@ -212,7 +212,7 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
             <input type="hidden" name="sprache" value={sprache} />
             <button
               type="submit"
-              className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+              className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
             >
               {t('konto.sitzungen.alleAnderen')}
             </button>

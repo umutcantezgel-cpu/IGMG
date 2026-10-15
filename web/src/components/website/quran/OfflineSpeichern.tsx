@@ -31,7 +31,7 @@ function Ring({ anteil, beschriftung }: { anteil: number; beschriftung: string }
         strokeLinecap="round"
         strokeDasharray={UMFANG}
         strokeDashoffset={UMFANG * (1 - anteil)}
-        className="stroke-gruen-700 transition-[stroke-dashoffset] duration-(--dauer-rueckmeldung) motion-reduce:transition-none"
+        className="stroke-gruen-700 transition-strich duration-(--dauer-rueckmeldung) motion-reduce:transition-none"
       />
     </svg>
   );
@@ -109,7 +109,7 @@ export default function OfflineSpeichern({
       : fortschritt.fertig / Math.max(1, fortschritt.dateien)
     : 0;
   const knopf =
-    'inline-flex min-h-12 items-center gap-2 rounded-pill border px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98';
+    'inline-flex min-h-12 items-center gap-2 rounded-pill border px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) druck';
 
   return (
     <div className="flex flex-col gap-3">

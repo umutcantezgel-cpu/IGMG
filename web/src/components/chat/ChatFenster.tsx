@@ -60,6 +60,8 @@ export type ChatTexte = {
 type Zustand = { nachrichten: ChatNachricht[]; schreiben: SchreibGrund | null };
 
 const MAX = 500;
+/** Ablehnungen, nach denen weiter geschrieben werden kann (Fokus bleibt im Feld); alle übrigen Gründe sperren das Feld. */
+const HINWEIS_ZUM_TEXT: ReadonlySet<string> = new Set(['leer', 'zuLang', 'rate']);
 
 const segmentierer = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new Intl.Segmenter('de', { granularity: 'grapheme' }) : null;
 const zaehle = (t: string) => (segmentierer ? [...segmentierer.segment(t)].length : t.length);
@@ -107,6 +109,11 @@ export function ChatFenster({
   const zeitgeber = useRef<number | undefined>(undefined);
   const liste = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const feld = useRef<HTMLTextAreaElement>(null);
+  const meldungRef = useRef<HTMLParagraphElement>(null);
+  const sperrBand = useRef<HTMLDivElement>(null);
+  /** Nach „Regeln bestätigen“ verschwindet der Knopf (Z-07): Fokus danach ins Feld bzw. auf den Grund der Sperre. */
+  const fokusNachRegeln = useRef(false);
   const uhr = new Intl.DateTimeFormat(zeitformat, { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
 
   const abrufen = useCallback(async () => {
@@ -199,18 +206,28 @@ export function ChatFenster({
   async function senden() {
     const inhalt = text.trim();
     if (!inhalt || sendet) return;
+    // Fokus halten (Z-07 F-1, WCAG 2.4.3): Der Knopf „Senden“ wird gleich gesperrt (während des Sendens, danach wegen des
+    // leeren Feldes) und verlöre den Fokus an <body>. Der Fokus geht deshalb vorher ins Feld – dorthin, wo es weitergeht.
+    feld.current?.focus();
     setSendet(true);
     setMeldung(null);
     const r = await sendeChatNachricht(kanalId, inhalt).catch(() => null);
     setSendet(false);
     if (!r) return setMeldung(texte.fehler);
-    if (!r.ok) return setMeldung(texte.grund[r.grund] ?? texte.fehler);
+    if (!r.ok) {
+      setMeldung(texte.grund[r.grund] ?? texte.fehler);
+      // Hinweise zum Text (leer, zu lang, zu schnell): Der Fokus bleibt im Feld. Sperrt dagegen der Kanal (Zeitfenster,
+      // Pause …), wird das Feld mit dem nächsten Abruf gesperrt – der Fokus steht dann schon auf der Meldung mit dem Grund.
+      if (!HINWEIS_ZUM_TEXT.has(r.grund)) meldungRef.current?.focus();
+      return;
+    }
     setText('');
     aktivitaet.current = Date.now();
     void abrufen();
   }
 
   async function regelnOk() {
+    fokusNachRegeln.current = true;
     await bestaetigeChatRegeln().catch(() => null);
     void abrufen();
   }
@@ -238,6 +255,12 @@ export function ChatFenster({
 
   const gesperrt = z.schreiben !== 'ok';
   const zeichen = zaehle(text);
+
+  useEffect(() => {
+    if (!fokusNachRegeln.current || z.schreiben === null || z.schreiben === 'regelnFehlen') return;
+    fokusNachRegeln.current = false;
+    (gesperrt ? sperrBand.current : feld.current)?.focus();
+  }, [z.schreiben, gesperrt]);
 
   return (
     <section aria-labelledby="chat-titel" className="flex min-h-0 flex-col rounded-lg border border-linie bg-weiss shadow-s1">
@@ -288,7 +311,7 @@ export function ChatFenster({
                 /* Kopf fremder Nachrichten (GC-3): links Name, Plakette und Zeit (dürfen umbrechen), rechts immer „Melden“
                    als ruhiger Umrissknopf (GC-2: keine Füllung, Schrift wie die Zeit). Die erste Zeile ist so hoch wie der
                    Knopf, damit Name und Knopf auf einer Linie stehen – auch wenn die Zeit in die zweite Zeile rückt. */
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3">
+                <div className="grid raster-aktion items-start gap-x-3">
                   <span data-namenszeile className="flex min-w-0 flex-wrap items-center gap-x-2 text-16 text-tinte-2">
                     <span className="inline-flex min-h-11 items-center font-bold text-tinte">{n.name}</span>
                     {n.leitung ? <Plakette text={texte.lehrkraft} /> : null}
@@ -345,10 +368,10 @@ export function ChatFenster({
             </button>
           </div>
         ) : gesperrt && z.schreiben ? (
-          <SperrBand grund={z.schreiben} text={texte.grund[z.schreiben] ?? ''} wiederAb={texte.wiederAb} />
+          <SperrBand ref={sperrBand} grund={z.schreiben} text={texte.grund[z.schreiben] ?? ''} wiederAb={texte.wiederAb} />
         ) : null}
         <form
-          className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5 sm:items-end"
+          className="grid raster-aktion items-center gap-x-2 gap-y-1.5 sm:items-end"
           onSubmit={(e) => {
             e.preventDefault();
             void senden();
@@ -357,6 +380,7 @@ export function ChatFenster({
           <label className="col-span-2 flex min-w-0 flex-col sm:col-span-1">
             <span className="sr-only">{texte.eingabe}</span>
             <textarea
+              ref={feld}
               value={text}
               onChange={(e) => setText(e.currentTarget.value)}
               onKeyDown={(e) => {
@@ -389,7 +413,12 @@ export function ChatFenster({
             </span>
           )}
         </form>
-        <p role="status" className={klassen('min-h-6 text-16 font-bold', meldung === texte.gemeldet ? 'text-gruen-800' : 'text-fehler')}>
+        <p
+          ref={meldungRef}
+          role="status"
+          tabIndex={-1}
+          className={klassen('min-h-6 text-16 font-bold', meldung === texte.gemeldet ? 'text-gruen-800' : 'text-fehler')}
+        >
           {meldung}
         </p>
       </div>
@@ -565,11 +594,21 @@ function Plakette({ text }: { text: string }) {
 }
 
 /** Hinweisband über dem gesperrten Eingabefeld (GC-1): Symbol, Grund und – bei „geschlossen“ – die Wiederöffnungszeit. */
-function SperrBand({ grund, text, wiederAb }: { grund: SchreibGrund; text: string; wiederAb: string }) {
+function SperrBand({
+  ref,
+  grund,
+  text,
+  wiederAb,
+}: {
+  ref?: RefObject<HTMLDivElement | null>;
+  grund: SchreibGrund;
+  text: string;
+  wiederAb: string;
+}) {
   // Uhr für Zeitfenster und Stummschaltung, Pause für Pausen, sonst Schloss
   const klasse = 'mt-0.5 size-5 shrink-0 text-info';
   return (
-    <div role="status" className="flex items-start gap-3 rounded-md bg-info-toenung px-4 py-3">
+    <div ref={ref} role="status" tabIndex={-1} className="flex items-start gap-3 rounded-md bg-info-toenung px-4 py-3">
       {grund === 'geschlossen' || grund === 'stumm' ? (
         <Clock aria-hidden className={klasse} />
       ) : grund === 'pausiert' || grund === 'notfallpause' ? (

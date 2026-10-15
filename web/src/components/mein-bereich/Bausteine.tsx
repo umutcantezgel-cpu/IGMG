@@ -10,11 +10,11 @@ import { cn } from '@/lib/utils';
  * Achtstern-Zustandsgrafik, Pillen und die Klassen der Knöpfe (≥ 48 px, Druck-Rückmeldung B-01, reduziert ohne).
  */
 export const KNOPF_PRIMAER =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 disabled:cursor-wait disabled:opacity-60 motion-reduce:active:scale-100';
+  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck disabled:cursor-wait disabled:opacity-60';
 export const KNOPF_SEKUNDAER =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 disabled:opacity-60 motion-reduce:active:scale-100';
+  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 druck disabled:opacity-60';
 export const KNOPF_LEISE =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100';
+  'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md border border-rand bg-weiss px-4 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-gruen-800 druck';
 export const FELD = 'min-h-12 w-full rounded-md border-2 border-rand bg-weiss px-3 text-18';
 
 export function ZurueckLink({ ziel, text }: { ziel: Ziel; text: string }) {

@@ -151,7 +151,7 @@ export default async function UnterrichtSeite() {
                     href={{ pathname: '/mein-bereich/unterricht/[gruppe]', params: { gruppe: g.id } }}
                     prefetch={false}
                     aria-label={t('gruppen.oeffnenAria', { gruppe: n })}
-                    className="group flex w-full flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98 motion-reduce:active:scale-100"
+                    className="group flex w-full druck flex-col gap-3 rounded-lg border border-linie bg-weiss p-5 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2"
                   >
                     <span className="flex items-start justify-between gap-3">
                       <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-700">
@@ -159,7 +159,7 @@ export default async function UnterrichtSeite() {
                       </span>
                       <ArrowRight
                         aria-hidden
-                        className="mt-3 size-5 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+                        className="mt-3 size-5 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
                       />
                     </span>
                     <span className="text-20 font-bold">{n}</span>

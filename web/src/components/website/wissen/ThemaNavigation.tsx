@@ -34,7 +34,7 @@ export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen,
                 href={{ pathname: '/islamisches-wissen/[thema]', params: { thema: th.schluessel } }}
                 aria-current={ist ? 'page' : undefined}
                 className={cn(
-                  'flex min-h-16 items-center justify-between gap-2 rounded-lg px-4 py-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 active:scale-98',
+                  'flex min-h-16 druck items-center justify-between gap-2 rounded-lg px-4 py-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2',
                   ist ? 'border-2 border-gruen-700 bg-gruen-50' : 'border border-linie bg-weiss',
                 )}
               >
@@ -52,7 +52,7 @@ export function ThemaNavigation({ titel, gefiltertNach, filterEntfernen, themen,
         <Link
           href="/islamisches-wissen"
           aria-label={`${filterEntfernen}: ${aktuell.label.text}`}
-          className="inline-flex min-h-12 items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98"
+          className="inline-flex min-h-12 druck items-center gap-1.5 rounded-md border border-rand bg-weiss px-3.5 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte"
         >
           <X aria-hidden className="size-4" />
           {filterEntfernen}

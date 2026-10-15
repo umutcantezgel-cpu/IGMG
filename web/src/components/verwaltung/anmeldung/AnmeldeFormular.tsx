@@ -52,7 +52,7 @@ export function AnmeldeFormular() {
           onClick={() => setSichtbar((s) => !s)}
           aria-label={sichtbar ? t('anmelden.passwortVerbergen') : t('anmelden.passwortAnzeigen')}
           aria-pressed={sichtbar}
-          className="absolute right-0 bottom-0 flex size-12 cursor-pointer items-center justify-center rounded-md text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:text-tinte active:scale-98"
+          className="absolute right-0 bottom-0 flex size-12 druck cursor-pointer items-center justify-center rounded-md text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:text-tinte"
         >
           {sichtbar ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
         </button>

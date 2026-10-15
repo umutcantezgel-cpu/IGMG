@@ -164,9 +164,7 @@ function Fakt({ Icon, label, wert, platzhalter }: { Icon: LucideIcon; label: str
         data-platzhalter={platzhalter || undefined}
         className={cn(
           'min-w-0 wrap-anywhere hyphens-none',
-          platzhalter
-            ? 'text-16 leading-snug font-normal text-tinte-2'
-            : 'text-[length:clamp(var(--text-18),12cqi,var(--text-24))] leading-tight font-bold',
+          platzhalter ? 'text-16 leading-snug font-normal text-tinte-2' : 'kennzahl-fliessend leading-tight font-bold',
         )}
       >
         {wert}

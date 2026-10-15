@@ -102,12 +102,12 @@ export default async function KinderSeite() {
                   href={{ pathname: '/mein-bereich/kinder/[id]', params: { id: kind.id } }}
                   prefetch={false}
                   aria-label={t('karte.oeffnenAria', { name: kind.name })}
-                  className="group mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 motion-reduce:active:scale-100"
+                  className="group mt-auto inline-flex min-h-12 druck items-center gap-2 self-start rounded-md bg-gruen-700 px-5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss"
                 >
                   {t('karte.oeffnen')}
                   <ArrowRight
                     aria-hidden
-                    className="size-5 transition-transform duration-(--dauer-rueckmeldung) group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+                    className="size-5 transition-transform duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
                   />
                 </Link>
               </article>

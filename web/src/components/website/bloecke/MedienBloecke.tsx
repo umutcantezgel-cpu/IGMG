@@ -97,7 +97,7 @@ export async function DownloadAnsicht({ b, sprache, dateien }: { b: BlockVon<'do
           href={datei.url}
           download={datei.dateiname ?? true}
           aria-label={`${t('herunterladen')}: ${titel.text}`}
-          className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 sm:w-auto"
+          className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 sm:w-auto"
         >
           <Download aria-hidden className="size-5" />
           {t('herunterladen')}

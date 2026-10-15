@@ -263,7 +263,7 @@ export function SeitenFormular({
           value={w[feld]}
           onChange={(e) => setze(feld)(e.target.value)}
           // Wächst mit dem Inhalt (mindestens zwei Zeilen), damit nichts im Feld verborgen bleibt
-          className={cn(eingabe, 'field-sizing-content min-h-[calc(2lh+1.25rem+0.125rem)] py-2.5', platzhalterRand(feld))}
+          className={cn(eingabe, 'field-sizing-content min-h-zeilen-2 py-2.5', platzhalterRand(feld))}
         />
       )}
     />

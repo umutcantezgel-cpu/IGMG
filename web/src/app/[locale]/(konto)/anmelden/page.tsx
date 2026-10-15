@@ -114,7 +114,7 @@ function WahlKachel({ href, Icon, titel, text }: { href: string; Icon: typeof La
       <NextLink
         href={href}
         prefetch={false}
-        className="group flex min-h-20 items-center gap-4 rounded-lg border border-rand bg-weiss p-4 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98 motion-reduce:active:scale-100"
+        className="group flex min-h-20 druck items-center gap-4 rounded-lg border border-rand bg-weiss p-4 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte"
       >
         <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-700 group-hover:bg-weiss">
           <Icon aria-hidden className="size-6" />

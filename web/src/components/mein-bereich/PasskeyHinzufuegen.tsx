@@ -48,7 +48,7 @@ export function PasskeyHinzufuegen({ standardName }: { standardName: string }) {
         type="submit"
         variant="secondary"
         disabled={laeuft}
-        className="self-start transition duration-(--dauer-rueckmeldung) active:scale-98 disabled:cursor-wait"
+        className="druck self-start transition duration-(--dauer-rueckmeldung) disabled:cursor-wait"
       >
         {laeuft ? <LadeStern /> : <Fingerprint aria-hidden />}
         {laeuft ? t('konto.passkeys.laeuft') : t('konto.passkeys.hinzufuegen')}

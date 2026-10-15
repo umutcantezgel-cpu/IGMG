@@ -194,7 +194,7 @@ function Zeile({
   alleErledigt: boolean;
 }) {
   return (
-    <li className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 px-5 py-5 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-6 md:px-8">
+    <li className="grid raster-symbol gap-x-4 gap-y-2 px-5 py-5 md:raster-symbol-aktion md:gap-x-6 md:px-8">
       <span
         aria-hidden
         className={cn(

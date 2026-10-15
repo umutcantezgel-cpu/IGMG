@@ -25,7 +25,7 @@ const BERLIN = 'Europe/Berlin';
 const NAEHE_KM = 25;
 const UMGEBUNG_KM = 40;
 /** Raster aus Ortsauswahl und Ergebnis: links Auswahl bzw. Tabelle, ab lg rechts die Qibla (G-3: gleiche Breite). */
-const RASTER = 'grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]';
+const RASTER = 'grid gap-8 lg:raster-drei-zwei';
 /** Gleicher waagerechter Innenabstand für Kopf- und Datenzellen der Tabelle (G-3). */
 const ZELLE = 'px-2';
 
@@ -249,7 +249,7 @@ export function MeinOrtRechner({
           <button
             type="button"
             onClick={ermitteln}
-            className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-4 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+            className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-4 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
           >
             {symbole.gps}
             <span>{texte.standortVerwenden}</span>

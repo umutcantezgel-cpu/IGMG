@@ -161,6 +161,53 @@
 @utility raster-stammdaten-kurz {
   grid-template-columns: minmax(0, 9rem) minmax(0, 1fr);
 }
+/* Kleine Kacheln ab 132 px (33 Schritte), je so viele Spalten wie passen: dritte Stufe nach raster-karten und
+   raster-kacheln (Ersatzcodes der Zwei-Faktor-Einrichtung) */
+@utility raster-kleinkacheln {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, --spacing(33)), 1fr));
+}
+/* Zweispaltige Schablonen (Stufe C, Z-03): Inhalt füllt, die Spalte daneben ist so breit wie nötig (Kopf mit Knopf,
+   Eingabe mit „Senden“) – Gegenstück zu raster-symbol; mit Symbol links und Aktion rechts als raster-symbol-aktion */
+@utility raster-aktion {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+@utility raster-symbol-aktion {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+/* Haupt- und Nebenspalte im Verhältnis 3 : 2 (Mein Ort: Ortswahl und Tabelle | Qibla) */
+@utility raster-drei-zwei {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+}
+/* Seitenleiste (272 px = 68 Schritte) neben dem Inhalt: Mein Bereich ab lg */
+@utility raster-seitenleiste {
+  grid-template-columns: --spacing(68) minmax(0, 1fr);
+}
+/* Text neben einer Formularkarte (Anmelden, Registrieren ab lg): die Karte höchstens 480 px (120 Schritte), der Text füllt */
+@utility raster-formularspalte {
+  grid-template-columns: minmax(0, 1fr) minmax(0, --spacing(120));
+}
+
+/* Mehrzeiliges Feld, das mit dem Text wächst (field-sizing: content; dann wirkt `rows` nicht mehr): Mindesthöhe von
+   N Zeilen samt Innenabstand py-2.5 und 1-px-Rand oben und unten – min-h-zeilen-2 … min-h-zeilen-4 */
+@utility min-h-zeilen-* {
+  min-height: calc(--value(integer) * 1lh + --spacing(5) + 2px);
+}
+
+/* Wischreihe am Telefon: Der Rand, hinter dem noch Einträge liegen, läuft über 48 px (12 Schritte) aus – rechts, links
+   oder auf beiden Seiten */
+@utility auslauf-rechts {
+  mask-image: linear-gradient(to left, transparent, black --spacing(12));
+}
+@utility auslauf-links {
+  mask-image: linear-gradient(to right, transparent, black --spacing(12));
+}
+@utility auslauf-beidseitig {
+  mask-image: linear-gradient(to right, transparent, black --spacing(12), black calc(100% - --spacing(12)), transparent);
+}
+
+/* Werkzeugleiste des Editors (@container): ab 336 px Breite passt „Kursiv“ noch in die Zeile –
+   Absatzart 64 px + 5 × 48 px + 5 × 4 px Abstand + 8 px Rand = 332 px */
+@custom-variant leiste-breit (@container (width >= 21rem));
 
 /* Elifbe (B-17/B-18): große arabische Einzelbuchstaben, fließend 56 → 80 px bzw. 72 → 112 px zwischen 390 und 1440 px;
    die Zeilenhöhe lässt Lesezeichen und tiefen Bögen Raum (Harakat nie abgeschnitten) */
@@ -171,6 +218,16 @@
 @utility buchstabe-riesig {
   font-size: clamp(4.5rem, 3.571rem + 3.81vw, 7rem);
   line-height: 2;
+}
+/* Formen-Tafel am Telefon (vier Formen nebeneinander): fest 64 px (4/3 × text-48), Zeilenhöhe 2; ab md buchstabe-gross */
+@utility buchstabe-form {
+  font-size: calc(var(--text-48) * 4 / 3);
+  line-height: 2;
+}
+
+/* Kennzahl in einer Kachel (Bauprojekt): wächst mit der Kachelbreite (Container-Einheit) stufenlos von text-18 bis text-24 */
+@utility kennzahl-fliessend {
+  font-size: clamp(var(--text-18), 12cqi, var(--text-24));
 }
 
 /* Dialoge halten auf jeder Breite 1 rem Abstand zum Fensterrand (Breite und Höhe) */
@@ -364,6 +421,25 @@
     font-family: var(--font-arabic);
     line-height: 2;
   }
+}
+
+/*
+ * B-01 Druck-Rückmeldung (Kern K-007): gedrückt auf 98 %, weich über `transition` am Element. Nur ohne Wunsch nach
+ * reduzierter Bewegung – reduziert bleibt allein die Farbe. Ersetzt die Skalierung über die active-Variante, deren
+ * Rücknahme für reduzierte Bewegung an 115 von 146 Stellen fehlte (Stufe C, Z-05); tests/unit/bewegung-regeln verbietet sie.
+ */
+@utility druck {
+  @media (prefers-reduced-motion: no-preference) {
+    &:active {
+      scale: 98%;
+    }
+  }
+}
+/* B-27: Fortschrittsring gleitet über stroke-dashoffset (Dauer über duration-… am Element, reduziert ohne Übergang) */
+@utility transition-strich {
+  transition-property: stroke-dashoffset;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
 }
 
 /*

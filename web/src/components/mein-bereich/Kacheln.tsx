@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 export type Kachel = { schluessel: string; Icon: LucideIcon; titel: string; text: string; href: string | null };
 
 const PFEIL =
-  'size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0';
+  'size-5 shrink-0 text-gruen-700 transition-transform duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1 motion-reduce:transition-none';
 
 /**
  * Kacheln der Startseite von „Mein Bereich“: Link-Karten (ganze Fläche klickbar, ≥ 48 px) oder – für noch nicht
@@ -24,7 +24,7 @@ export function Kacheln({ titel, kacheln, bald }: { titel: string; kacheln: Kach
               <NextLink
                 href={href}
                 prefetch={false}
-                className="group flex w-full items-start gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98 motion-reduce:active:scale-100 sm:flex-col sm:gap-3 sm:p-5"
+                className="group flex w-full druck items-start gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 sm:flex-col sm:gap-3 sm:p-5"
               >
                 <span className="flex shrink-0 items-center justify-between gap-3 sm:w-full">
                   <span className="flex size-12 items-center justify-center rounded-md bg-gruen-50 text-gruen-700">

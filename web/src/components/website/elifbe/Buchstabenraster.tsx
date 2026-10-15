@@ -14,7 +14,7 @@ export function Buchstabenkarte({ b, sprache, label, gross = false }: { b: Buchs
       aria-label={label}
       data-morph-karte={`b-${b.slug}`}
       className={cn(
-        'group relative flex flex-col items-center justify-between rounded-lg border border-linie bg-weiss px-2 pt-2 pb-3 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte active:scale-98',
+        'group relative flex druck flex-col items-center justify-between rounded-lg border border-linie bg-weiss px-2 pt-2 pb-3 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte',
       )}
     >
       <span aria-hidden className="self-start text-16 font-bold text-tinte-3 tabular-nums">

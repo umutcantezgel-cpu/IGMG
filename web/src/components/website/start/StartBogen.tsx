@@ -89,7 +89,7 @@ export function StartBogen({
       <button
         type="button"
         onClick={() => setGewaehlt((g) => !g)}
-        className="inline-flex min-h-12 items-center gap-2 self-start rounded-md px-2 text-16 font-bold text-gruen-700 underline underline-offset-4 transition-colors duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+        className="inline-flex min-h-12 druck items-center gap-2 self-start rounded-md px-2 text-16 font-bold text-gruen-700 underline underline-offset-4 transition-colors duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
       >
         {gewaehlt ? fasten.zurueck : fasten.zeigen}
       </button>

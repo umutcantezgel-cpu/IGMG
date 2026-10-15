@@ -64,7 +64,7 @@ export function KopfMenues({
                 aria-expanded={ist}
                 aria-controls={`menue-${m.schluessel}`}
                 onClick={() => setOffen(ist ? null : m.schluessel)}
-                className={`relative inline-flex min-h-12 cursor-pointer items-center gap-1 rounded-md px-3 text-18 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100 ${ist ? 'bg-gruen-50 text-gruen-800' : markiert ? 'text-gruen-800' : 'text-tinte'}`}
+                className={`relative inline-flex min-h-12 druck cursor-pointer items-center gap-1 rounded-md px-3 text-18 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 ${ist ? 'bg-gruen-50 text-gruen-800' : markiert ? 'text-gruen-800' : 'text-tinte'}`}
               >
                 <span>{m.label}</span>
                 {ist ? <ChevronUp aria-hidden className="size-4" /> : <ChevronDown aria-hidden className="size-4" />}

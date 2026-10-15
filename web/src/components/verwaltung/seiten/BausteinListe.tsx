@@ -459,7 +459,7 @@ export function BausteinListe({
                   <button
                     type="button"
                     onClick={() => hinzufuegen(typ)}
-                    className="flex h-full min-h-20 w-full cursor-pointer items-start gap-3 rounded-md border border-rand bg-weiss p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+                    className="flex h-full min-h-20 w-full druck cursor-pointer items-start gap-3 rounded-md border border-rand bg-weiss p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
                   >
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gruen-50 text-gruen-800">
                       <Icon aria-hidden className="size-5" />

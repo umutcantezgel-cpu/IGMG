@@ -46,7 +46,7 @@ export async function NichtGefundenInhalt() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="flex min-h-14 items-center gap-3 rounded-md border border-linie bg-weiss px-4 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
+                  className="flex min-h-14 druck items-center gap-3 rounded-md border border-linie bg-weiss px-4 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
                 >
                   <Icon aria-hidden className="size-5 shrink-0 text-gruen-700" />
                   {text}

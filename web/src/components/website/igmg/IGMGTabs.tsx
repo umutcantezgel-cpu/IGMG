@@ -76,7 +76,7 @@ export function IGMGTabs({ reiter, standard, beschriftung }: { reiter: Reiter[];
               onClick={() => zeige(r.schluessel)}
               onKeyDown={(e) => tastenDruck(e, i)}
               className={klassen(
-                'relative inline-flex min-h-12 cursor-pointer items-center rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
+                'relative inline-flex min-h-12 druck cursor-pointer items-center rounded-md px-4.5 text-18 font-bold transition duration-(--dauer-rueckmeldung)',
                 ist ? 'bg-weiss text-gruen-800 shadow-s1' : 'text-tinte hover:text-gruen-800',
               )}
             >

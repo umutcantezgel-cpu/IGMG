@@ -55,7 +55,7 @@ export function PasswortFeld({
           aria-label={sichtbar ? t('felder.passwortVerbergen') : t('felder.passwortAnzeigen')}
           aria-pressed={sichtbar}
           aria-controls={id}
-          className="absolute top-7.5 right-0 flex size-12 cursor-pointer items-center justify-center rounded-md text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:text-tinte active:scale-98 motion-reduce:active:scale-100"
+          className="absolute top-7.5 right-0 flex size-12 druck cursor-pointer items-center justify-center rounded-md text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:text-tinte"
         >
           {sichtbar ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
         </button>

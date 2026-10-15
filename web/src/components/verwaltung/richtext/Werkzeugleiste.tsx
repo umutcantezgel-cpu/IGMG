@@ -86,7 +86,7 @@ type Eintrag = { aktion: WerkzeugAktion; icon: LucideIcon; aktiv?: boolean; aus?
  */
 const IN_ZEILE: Record<Telefon, string> = {
   zeile: 'contents',
-  breit: 'contents max-sm:hidden max-sm:@min-[21rem]:contents',
+  breit: 'contents max-sm:hidden max-sm:leiste-breit:contents',
   art: 'contents max-sm:hidden',
   mehr: 'contents max-sm:hidden',
 };
@@ -191,10 +191,7 @@ export function Werkzeugleiste({
           ref={artKnopf}
           type="button"
           variant="outline"
-          className={cn(
-            'min-h-12 min-w-12 flex-1 flex-col gap-0 px-1.5 text-16 sm:hidden @min-[18rem]:flex-row @min-[18rem]:gap-0.5',
-            knopfOffen,
-          )}
+          className={cn('min-h-12 min-w-12 flex-1 flex-col gap-0 px-1.5 text-16 sm:hidden @2xs:flex-row @2xs:gap-0.5', knopfOffen)}
           aria-expanded={offen === 'art'}
           aria-controls={`${basis}-art`}
           title={t('absatzartName', { kurz: t(`kurz.${art}`), art: t(`art.${art}`) })}
@@ -259,7 +256,7 @@ export function Werkzeugleiste({
         {eintraege
           .filter((e) => e.telefon === 'mehr' || e.telefon === 'breit')
           .map((e) => (
-            <span key={e.aktion} className={e.telefon === 'breit' ? 'contents @min-[21rem]:hidden' : 'contents'}>
+            <span key={e.aktion} className={e.telefon === 'breit' ? 'contents leiste-breit:hidden' : 'contents'}>
               <Werkzeug
                 eintrag={e}
                 label={t(e.aktion)}

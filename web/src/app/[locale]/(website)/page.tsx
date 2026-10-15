@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const sekundaer =
-  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) active:scale-98 hover:bg-gruen-50 hover:text-gruen-800';
+  'inline-flex min-h-12 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) druck hover:bg-gruen-50 hover:text-gruen-800';
 
 /**
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
@@ -74,7 +74,7 @@ export default async function Startseite() {
             <div className="flex flex-wrap gap-3 pt-1">
               <Link
                 href="/mitglied-werden"
-                className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 max-md:w-full max-md:justify-center"
+                className="inline-flex min-h-12 druck items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss max-md:w-full max-md:justify-center"
               >
                 <span>{t('beitreten')}</span>
                 <ArrowRight aria-hidden className="size-5" />

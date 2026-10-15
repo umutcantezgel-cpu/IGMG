@@ -8,7 +8,7 @@ import { klassen } from '@/lib/klassen';
 /**
  * Absende-Knopf mit Ladezustand (useFormStatus). Im FormWizard auch „Weiter“ (`symbol="weiter"`, `name="richtung"`).
  * Während des Sendens steht der Lade-Achtstern (B-12) vor dem Text, das Symbol weicht ihm. Rückmeldung: Farbe und
- * Druck `active:scale-98` (B-01). `className` wird angehängt (FormWizard: Breite auf dem Telefon volle Breite).
+ * Druck über `druck` (B-01, reduziert nur Farbe). `className` wird angehängt (FormWizard: Breite auf dem Telefon volle Breite).
  */
 export function SendenKnopf({
   texte,
@@ -33,7 +33,7 @@ export function SendenKnopf({
       value={wert}
       disabled={pending}
       className={klassen(
-        'inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98 disabled:cursor-wait disabled:opacity-80',
+        'inline-flex min-h-12 druck cursor-pointer items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 disabled:cursor-wait disabled:opacity-80',
         className,
       )}
     >

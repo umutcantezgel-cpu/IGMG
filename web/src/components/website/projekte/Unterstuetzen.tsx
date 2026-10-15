@@ -38,7 +38,7 @@ export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhal
               <Link
                 href="/kontakt"
                 aria-label={t('linkKontext', { sichtbar: t('unterstuetzen.knopf'), titel })}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 sm:w-auto"
+                className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-lg bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss sm:w-auto"
               >
                 <Users aria-hidden className="size-5 shrink-0" />
                 {t('unterstuetzen.knopf')}
@@ -46,7 +46,7 @@ export async function Unterstuetzen({ inhalt, sprache }: { inhalt: ProjekteInhal
               <Link
                 href={{ pathname: '/projekte', hash: 'spendenkonto' }}
                 aria-label={t('linkKontext', { sichtbar: t('spenden.jetzt'), titel: spendenTitel })}
-                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 sm:w-auto"
+                className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-lg border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 sm:w-auto"
               >
                 <Heart aria-hidden className="size-5 shrink-0" />
                 {t('spenden.jetzt')}

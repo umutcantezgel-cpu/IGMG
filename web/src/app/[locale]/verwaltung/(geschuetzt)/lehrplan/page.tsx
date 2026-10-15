@@ -114,7 +114,7 @@ export default async function LehrplanVerwalten({ searchParams }: PageProps<'/[l
                           </Button>
                         </form>
                         <details className="group min-w-0 md:w-96">
-                          <summary className="inline-flex min-h-12 cursor-pointer list-none items-center rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-50 [&::-webkit-details-marker]:hidden">
+                          <summary className="inline-flex min-h-12 cursor-pointer list-none items-center rounded-md border border-rand bg-weiss px-4 font-bold hover:bg-gruen-50">
                             {t('umbenennen')}
                             <span className="sr-only">: {s.titel.de}</span>
                           </summary>

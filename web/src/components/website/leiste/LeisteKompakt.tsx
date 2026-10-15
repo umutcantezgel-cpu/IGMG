@@ -67,7 +67,7 @@ export function LeisteKompakt({
         <Link
           href={alleHref}
           aria-label={texte.alle}
-          className="inline-flex min-h-12 min-w-12 shrink-0 items-center justify-center gap-2 rounded-md font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 md:px-3"
+          className="inline-flex min-h-12 min-w-12 shrink-0 druck items-center justify-center gap-2 rounded-md font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss md:px-3"
         >
           <span aria-hidden className="max-md:hidden">
             {texte.alle}

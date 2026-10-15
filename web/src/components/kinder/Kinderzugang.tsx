@@ -36,7 +36,7 @@ type Ergebnis = ZugangZustand & { passwort?: string };
 
 const FELD = 'min-h-12 w-full rounded-md border-2 border-rand bg-weiss px-3 font-mono text-18 tracking-wide';
 const KNOPF =
-  'inline-flex min-h-12 cursor-pointer items-center justify-center rounded-md px-5 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98 disabled:cursor-wait disabled:opacity-60 motion-reduce:active:scale-100';
+  'inline-flex min-h-12 cursor-pointer items-center justify-center rounded-md px-5 font-bold transition duration-(--dauer-rueckmeldung) druck disabled:cursor-wait disabled:opacity-60';
 
 /** Ergebnis um das eben gesetzte Passwort ergänzen – nur im Browser, aus dem eigenen Formular. */
 function mitPasswort(aktion: (v: ZugangZustand, fd: FormData) => Promise<ZugangZustand>) {

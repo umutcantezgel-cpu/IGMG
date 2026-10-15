@@ -29,6 +29,11 @@ und jeder Schritt vom ersten Buchstaben bis zum Hatim ist ein sichtbarer Weg –
 - Neue Tokens nur als Skalen: `--font-quran`, `--text-arabisch-1/2/3`, `--color-tajwid-*` (≥ 4,5:1, mit Unterstreichungsmuster),
   `--container-lesen`, `--ebene-player`.
 - Formensprache: Achtstern, 24-px-Raster, 2-px-Strich; keine Mondsichel, keine Kuppel, keine generierten Moscheebilder, kein 3D.
+- Strukturwerte ohne eigenes Token (Rasterschablonen, Auslauf-Masken, Mindesthöhe in Zeilen, Container-Schwelle) stehen als
+  `@utility` bzw. `@custom-variant` in `globals.css`, Maße aus der Abstandsskala (Stufe C, N2: `raster-aktion`,
+  `raster-symbol-aktion`, `raster-drei-zwei`, `raster-seitenleiste`, `raster-formularspalte`, `raster-kleinkacheln`,
+  `min-h-zeilen-*`, `auslauf-*`, `buchstabe-form`, `kennzahl-fliessend`, `transition-strich`, `leiste-breit:`). Keine
+  Klammerwerte in Klassen; `freie-werte.mjs` über die seit b702c7c geänderten Dateien: 0 offen.
 - Bewegung: nur CSS, jede mit reduzierter Variante; Register B-01…B-27 (AUFTRAG §4). Keine hochzählenden Zahlen, keine Ranglisten.
 
 ## Leistung
@@ -45,6 +50,7 @@ Pfade unter `web/src/components/` (Website: `website/…`). Alle Bewegung ist re
 
 | ID | Bewegung | Umsetzung | Reduziert |
 |---|---|---|---|
+| B-01 | Fortschreibung Druck-Rückmeldung (Stufe C, Z-05): gedrückt 98 %, weich über `transition`; Hover-Pfeile rücken 4 px nach rechts | Utility `druck` in `globals.css` (Skalierung nur in `@media (prefers-reduced-motion: no-preference)`) statt `active:scale-98` an 146 Stellen; Pfeile `motion-safe:group-hover:translate-x-1`; Regeltest `tests/unit/bewegung-regeln.test.ts` verbietet `active:scale-*` und Größe/Lage auf Hover, Fokus oder Druck ohne `motion-safe:` | nur Farbe, keine Größen- oder Lageänderung |
 | B-07 | Fortschreibung Weg der Gemeinde (Über uns, „B-07 mit Eröffnung“, H-B09): Die letzte Station ist das Ziel des Wegs (heute „Eröffnung der neuen Fatih-Moschee“) – tiefgrüne Marke mit hellem Achtstern-Hof (außerhalb des Layouts), Karte grün gerahmt; jede Station tritt hervor, wenn die Linie sie erreicht (Punkt mit `--i` + 0,5 = Ende des Abschnitts davor). Fehlt die Eröffnung in einem Beispielstand (Zeitleiste endet 2019), hängt `pnpm inhalte:2026` sie an | `website/ueber-uns/Zeitleiste.tsx` (`weg-punkt`, `weg-linie`), Auslöser `ErstesSichtbarwerden`; `lib/inhalt/stand-2026.ts` (`ueberUnsNeu`) | Endzustand |
 | B-08 | Fortschreibung Meilensteinlinie: Ist alles erledigt, endet die Linie in der gefüllten Marke „Eröffnung“ (Achtstern mit Haken) | `website/projekte/Meilensteine.tsx` (`meilenstein-fortschritt`, `meilenstein-erreicht` mit `--anteil: 1` am Ziel), Auslöser `ErstesSichtbarwerden` | Endzustand |
 | B-13 | Mitlesen: Vers getönt per opacity, Wort sofort hervorgehoben; Folgen-Scroll nur mit Schalter „Mitlesen folgen“, 2,5 s Ruhe nach eigenem Scrollen | `website/quran/Player.tsx` (CSS Custom Highlight `quran-wort`, Rückfall `.wort-aktiv`), `quran.css` (`.vers::before`, `dauer-wechsel`) | Tönung ohne Übergang, Scrollen `behavior: auto` |
@@ -57,7 +63,7 @@ Pfade unter `web/src/components/` (Website: `website/…`). Alle Bewegung ist re
 | B-20 | Fastenbogen (Ramadan-Variante von B-06): Linie bis „jetzt“ nach der Ruhe, dann Achtstern. Startseite: im Ramadan statt des Tagesbogens (Vorführpfad Station 1); außerhalb nur mit Schalter `ramadan_vorschau` auf Knopfdruck, als Vorschau mit den Zeiten von heute | `website/ramadan/FastenbogenLive.tsx` (`useNachRuhe`, `linie-zeichnet`, `marke-tritt-hervor`) auf `/ramadan` und der Startseite: `website/start/StartBogen.tsx` (Client, wählt nach dem Browserdatum über `bogenwahl.ts`), Ramadan-Tage des Fensters rechnet der Server (`start/ramadan-fenster.ts`, Hidschri `islamic-umalqura`) – ohne Cookies/Header, ohne islamischen Kalender im Browser | Endzustand |
 | B-21 | Ortswechsel „Mein Ort“: Zeiten blenden über, Qibla-Nadel dreht einmal | `MeinOrtRechner.tsx` (`blendet-ein`, `transition-transform duration-(--dauer-moment)`) | ohne Drehung |
 | B-22 | Neue Nachricht im Gruppenchat: opacity + translateY 8 px, nicht beim ersten Laden | `chat/ChatFenster.tsx` (`tritt-auf` ab `neuAb`) | nur opacity (`einblenden`) |
-| B-23 | Anwesenheit: Druck-Rückmeldung, Häkchen zeichnet sich | `unterricht/AnwesenheitErfassen.tsx` (`active:scale-98`, Häkchen `linie-zeichnet` mit `--dauer: dauer-wechsel`) | Häkchen steht sofort |
+| B-23 | Anwesenheit: Druck-Rückmeldung, Häkchen zeichnet sich | `unterricht/AnwesenheitErfassen.tsx` (`druck`, Häkchen `linie-zeichnet` mit `--dauer: dauer-wechsel`) | Häkchen steht sofort, Druck nur Farbe |
 | B-24 | Lernweg: Linie zeichnet sich von Station zu Station, Station tritt hervor, wenn die Linie sie erreicht | `website/elifbe/Weg.tsx` (`/elifbe`, `/lernen`: `lernweg-welle`, `lernweg-abschnitt`, `lernweg-station`), `mein-bereich/Lernweg.tsx` (Schüler-Start, Linie bis zur aktuellen Station), `website/korankurse/KursWeg.tsx` (Kurs-Lernweg `/bildung/korankurse`, ab md `lernweg-abschnitt-quer`) | Endzustand |
 | B-25 | Anzeige-Folien: Überblendung; im Gebetsfenster keine Folien | noch nicht im Code (Paket O-K05 Anzeige-CMS) | – |
 | B-26 | Seitenwechsel mit Richtung: tiefer → von rechts, höher → von links, seitlich → Überblendung; Kopf steht | `SeitenUebergang.tsx` (`data-richtung`), `globals.css` (`seite-von-rechts/links`) | kein Übergang |

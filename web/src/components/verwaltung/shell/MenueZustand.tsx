@@ -45,7 +45,7 @@ export function MenueKnopf({ texte }: { texte: { oeffnen: string; schliessen: st
       aria-expanded={offen}
       aria-controls="verwaltung-navigation"
       onClick={() => setOffen((o) => !o)}
-      className="inline-flex size-12 shrink-0 cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 verwaltung:hidden"
+      className="inline-flex size-12 shrink-0 druck cursor-pointer items-center justify-center rounded-md border border-rand bg-weiss transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 verwaltung:hidden"
     >
       {offen ? <X aria-hidden className="size-6" /> : <Menu aria-hidden className="size-6" />}
       <span className="sr-only">{offen ? texte.schliessen : texte.oeffnen}</span>

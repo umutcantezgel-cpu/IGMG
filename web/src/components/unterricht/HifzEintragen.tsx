@@ -130,7 +130,7 @@ export function HifzEintragen({
         <button
           type="submit"
           disabled={sendet}
-          className="inline-flex min-h-12 cursor-pointer items-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98 disabled:cursor-wait disabled:opacity-60 motion-reduce:active:scale-100"
+          className="inline-flex min-h-12 druck cursor-pointer items-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 disabled:cursor-wait disabled:opacity-60"
         >
           {texte.speichern}
         </button>

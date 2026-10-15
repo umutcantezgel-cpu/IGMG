@@ -60,7 +60,7 @@ export function OfflineListe({ texte }: { texte: Texte }) {
                   setWeg((w) => [...w, pfad]);
                 })
               }
-              className="inline-flex size-12 shrink-0 items-center justify-center rounded-pill border border-rand bg-weiss text-tinte transition duration-(--dauer-rueckmeldung) hover:border-fehler active:scale-98"
+              className="inline-flex size-12 shrink-0 druck items-center justify-center rounded-pill border border-rand bg-weiss text-tinte transition duration-(--dauer-rueckmeldung) hover:border-fehler"
             >
               <Trash2 aria-hidden className="size-5" />
             </button>

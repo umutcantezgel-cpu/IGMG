@@ -213,7 +213,7 @@ export function QuranLeser(props: LeserProps) {
   };
 
   const knopf =
-    'inline-flex min-h-12 items-center gap-2 rounded-pill px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98';
+    'inline-flex min-h-12 items-center gap-2 rounded-pill px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) druck';
 
   return (
     <div

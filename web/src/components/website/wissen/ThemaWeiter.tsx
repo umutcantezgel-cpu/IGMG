@@ -12,7 +12,7 @@ export async function ThemaWeiter({ vorher, naechster }: { vorher: ThemaAnzeige 
   if (!vorher && !naechster) return null;
   const t = await getTranslations('wissenThema');
   const linkKlasse =
-    'flex min-h-16 min-w-0 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 active:scale-98';
+    'flex min-h-16 min-w-0 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-18 font-bold text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 druck';
   return (
     <nav aria-label={t('weitereThemen')} className="grid gap-3 border-t border-linie pt-8 md:grid-cols-2">
       {vorher ? (
