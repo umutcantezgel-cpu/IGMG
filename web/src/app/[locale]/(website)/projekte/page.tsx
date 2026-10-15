@@ -5,6 +5,7 @@ import { Achtstern } from '@/components/website/Icons';
 import { PageHeader } from '@/components/website/PageHeader';
 import { istNurPlatzhalter } from '@/components/website/Platzhalter';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { textMitSprache } from '@/components/website/Text';
 import { Bauprojekt } from '@/components/website/projekte/Bauprojekt';
 import { Meilensteine } from '@/components/website/projekte/Meilensteine';
@@ -35,7 +36,13 @@ export default async function ProjekteSeite() {
   const name = textMitSprache(inhalt.projekt.name, sprache).text;
   const eroeffnet = inhalt.projekt.status === 'fertiggestellt' && name !== '' && !istNurPlatzhalter(name);
   return (
-    <Seitenrahmen bereich="moschee" seite="projekte" sprachZiel="/projekte" kompakteLeiste pfad={[{ label: t('kopf.eyebrow') }]}>
+    <Seitenrahmen
+      bereich="moschee"
+      seite="projekte"
+      sprachZiel="/projekte"
+      leiste={<PrayerTimesBarKompakt />}
+      pfad={[{ label: t('kopf.eyebrow') }]}
+    >
       {eroeffnet ? (
         <PageHeader
           kennung={t('kopf.eyebrow')}

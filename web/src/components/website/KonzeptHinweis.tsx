@@ -1,60 +1,29 @@
-'use client';
-
 import { Info, TriangleAlert } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { KonzeptHinweisOeffner } from './KonzeptHinweisOeffner';
+import { KONZEPTHINWEIS_GESEHEN } from './konzepthinweis-merker';
 
 type Texte = Record<
   'titelDe' | 'titelTr' | 'textDe' | 'textTr' | 'blockDe' | 'blockTr' | 'knopfDe' | 'knopfTr' | 'einmalDe' | 'einmalTr',
   string
 > & { punkteDe: string[]; punkteTr: string[] };
 
-const SCHLUESSEL = 'igmg-konzepthinweis-gesehen';
-
 /**
  * Öffnet den Hinweis schon beim ersten Zeichnen (vor der Hydrierung): Ein erst nach der Hydrierung eingeblendeter
- * Dialog wäre das späteste große Element (LCP, K-12). Schließen ohne JavaScript über `<form method="dialog">`;
- * der Merker wird beim Schließen gesetzt. Öffentliche CSP erlaubt Inline-Skripte (ADR 0012).
+ * Dialog wäre das späteste große Element (LCP, K-12). Steht der Hinweis in einem Suspense-Inhalt, den React ausgelagert
+ * streamt (`<div hidden id="S:…">`, später an seinen Platz verschoben), öffnet das Skript ihn erst nach dem Verschieben:
+ * Ein vorher geöffneter Dialog verlöre beim Verschieben die oberste Ebene (Modalität) und erschiene erst nach der
+ * Hydrierung erneut (Z-08, Hadith und Elifbe). Schließen ohne JavaScript über `<form method="dialog">`; der Merker wird
+ * bei jedem Schließen gesetzt (Knopf und Escape lösen `close` aus). Öffentliche CSP erlaubt Inline-Skripte (ADR 0012).
  */
-const SOFORT = `(function(){var d=document.getElementById('konzepthinweis');if(!d||!d.showModal)return;try{if(localStorage.getItem('${SCHLUESSEL}')==='1')return}catch(e){}d.addEventListener('close',function(){try{localStorage.setItem('${SCHLUESSEL}','1')}catch(e){}});d.showModal();var h=document.getElementById('hinweis-titel');if(h)h.focus()})()`;
+export const SOFORT = `(function(){var d=document.getElementById('konzepthinweis');if(!d||!d.showModal)return;try{if(localStorage.getItem('${KONZEPTHINWEIS_GESEHEN}')==='1')return}catch(e){}d.addEventListener('close',function(){try{localStorage.setItem('${KONZEPTHINWEIS_GESEHEN}','1')}catch(e){}});function z(){if(d.open)return;d.showModal();var h=document.getElementById('hinweis-titel');if(h)h.focus()}function p(){return d.isConnected&&!d.closest('[hidden]')}if(p())return z();var m=new MutationObserver(function(){if(d.open)m.disconnect();else if(p()){m.disconnect();z()}});m.observe(document.documentElement,{childList:true,subtree:true})})()`;
 
 /**
  * Konzept-Hinweis (design/DisclaimerDialog.dc.html), zweisprachig DE/TR wie im Design. Erscheint einmal je Browser
  * (localStorage, kein Cookie), nur solange in der Verwaltung eingeschaltet (Einstellung „konzepthinweis“).
- * Texte wörtlich aus dem Bestand – fachliche Prüfung MENSCHEN M-034.
+ * Texte wörtlich aus dem Bestand – fachliche Prüfung MENSCHEN M-034. Das Markup kommt vom Server (kein Client-JavaScript
+ * für Texte und Symbole, Z-08); nur `KonzeptHinweisOeffner` läuft im Browser (Client-Navigation, Rückfall).
  */
 export function KonzeptHinweis({ texte }: { texte: Texte }) {
-  const dialog = useRef<HTMLDialogElement>(null);
-  // Erster Fokus auf dem Titel: sonst scrollt der Dialog auf schmalen Bildschirmen zum Knopf und schneidet den Titel ab
-  const titelFokus = () => document.getElementById('hinweis-titel')?.focus();
-  useEffect(() => {
-    let gesehen = false;
-    try {
-      gesehen = window.localStorage.getItem(SCHLUESSEL) === '1';
-    } catch {
-      gesehen = false;
-    }
-    const d = dialog.current;
-    if (!d) return;
-    if (d.open && !d.matches(':modal')) {
-      // Beim Streaming (Suspense) verschiebt React den schon modal geöffneten Dialog im DOM – er verliert dabei die
-      // oberste Ebene und stünde offen unter der Fußzeile. Ohne `close` (setzte den Merker) wieder modal öffnen.
-      d.removeAttribute('open');
-      d.showModal();
-      titelFokus();
-    } else if (!gesehen && !d.open) {
-      // Client-Navigation (Inline-Skript läuft dann nicht) oder Skript blockiert: hier öffnen
-      d.showModal();
-      titelFokus();
-    }
-  }, []);
-  const schliessen = () => {
-    try {
-      window.localStorage.setItem(SCHLUESSEL, '1');
-    } catch {
-      /* Speicher nicht verfügbar – Hinweis erscheint dann erneut */
-    }
-    dialog.current?.close();
-  };
   const block = (lang: 'de' | 'tr', titel: string, punkte: string[]) => (
     <div lang={lang} className="flex-1 rounded-lg border border-linie bg-weiss p-4">
       <h3 className="flex items-center gap-2 font-text text-16 font-bold tracking-normal text-info">
@@ -74,11 +43,9 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
       <dialog
         id="konzepthinweis"
         suppressHydrationWarning
-        ref={dialog}
         role="alertdialog"
         aria-labelledby="hinweis-titel"
         aria-describedby="hinweis-text"
-        onCancel={schliessen}
         className="ohne-auftritt m-auto breite-dialog max-w-dialog rounded-lg bg-papier p-0 text-tinte shadow-s3 backdrop:bg-tinte/55"
       >
         <div className="bg-warnung-toenung px-6 pt-6 pb-4">
@@ -102,7 +69,6 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
           <form method="dialog" className="contents">
             <button
               type="submit"
-              onClick={schliessen}
               className="inline-flex min-h-12 cursor-pointer items-center rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss hover:bg-gruen-800"
             >
               {texte.knopfDe} / <span lang="tr">&nbsp;{texte.knopfTr}</span>
@@ -115,6 +81,7 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
       </dialog>
       {/* festes Skript ohne Nutzereingaben (SOFORT) */}
       <script dangerouslySetInnerHTML={{ __html: SOFORT }} />
+      <KonzeptHinweisOeffner />
     </>
   );
 }

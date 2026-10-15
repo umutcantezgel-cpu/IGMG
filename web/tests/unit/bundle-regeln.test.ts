@@ -43,6 +43,30 @@ describe('Client-Code öffentlicher Seiten', () => {
     },
   );
 
+  it('kein next/image-Element in öffentlichem Code: Bild (Server) bzw. fertige img-Attribute statt Client-Komponente (Z-08)', () => {
+    const alle = OEFFENTLICH.flatMap(dateien);
+    expect(
+      alle.filter((p) => /import Image from 'next\/image'/.test(readFileSync(p, 'utf8'))).map((p) => p.slice(WURZEL.length + 1)),
+    ).toEqual([]);
+  });
+
+  it('kompakte Leiste als eigenes Modul nur der Leseseiten, vom Server ohne Suspense; volle Leiste im Seitenrahmen (Z-08)', () => {
+    // nur Laufzeit-Importe zählen (`import type` entfällt beim Kompilieren)
+    const importe = (...teile: string[]) =>
+      readFileSync(join(WURZEL, ...teile), 'utf8')
+        .split('\n')
+        .filter((z) => z.startsWith('import ') && !z.startsWith('import type '))
+        .join('\n');
+    // not-found zeigt die volle Leiste und jede Seite lädt dessen Client-Code: im Seitenrahmen jeder Seite derselbe Graph
+    expect(importe('components', 'website', 'Seitenrahmen.tsx')).toMatch(/from '\.\/PrayerTimesBar'/);
+    expect(importe('components', 'website', 'Seitenrahmen.tsx')).not.toMatch(/Kompakt|leiste\//);
+    expect(importe('components', 'website', 'PrayerTimesBar.tsx')).not.toMatch(/LeisteKompakt/);
+    expect(importe('components', 'website', 'PrayerTimesBarKompakt.tsx')).not.toMatch(/LeisteLive/);
+    expect(importe('components', 'website', 'leiste', 'leiste-daten.ts')).not.toMatch(/LeisteLive|LeisteKompakt/);
+    // Kein lazy/Suspense um eine Leiste: React striche sie sonst ausgelagert (<template id="B:…">, $RC) – Sprung beim Aufdecken
+    for (const p of dateien(join(WURZEL, 'components', 'website', 'leiste'))) expect(readFileSync(p, 'utf8')).not.toMatch(/\blazy\(/);
+  });
+
   it('nur eine Fehlergrenze (global-error.tsx), sie importiert keine gemeinsamen Seitenbausteine', () => {
     expect(() => statSync(join(WURZEL, 'app', '[locale]', 'error.tsx'))).toThrow();
     const s = readFileSync(join(WURZEL, 'app', 'global-error.tsx'), 'utf8');

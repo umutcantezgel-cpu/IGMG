@@ -32,25 +32,26 @@ const SEITE = { viewTransitionName: 'seite', viewTransitionClass: 'seite' } as C
 /**
  * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
  * Jede Seite übergibt Bereich, aktuelle Seite und ihr Sprachziel ausdrücklich – so bleibt das HTML statisch
- * (kein usePathname). Ausnahmen nach Laufbuch D-16: keine Breadcrumbs auf der Startseite, keine Leiste auf Gebetszeiten.
- * `kompakteLeiste`: die Leiste als eine Zeile (Leseseiten wie `/quran/[sure]`, Sichtabnahme S-1).
+ * (kein usePathname). `leiste`: Standard ist die volle PrayerTimesBar; Gebetszeiten ohne Leiste (`null`, Laufbuch D-16),
+ * Leseseiten mit `<PrayerTimesBarKompakt />` (eine Zeile, Sichtabnahme S-1). Die volle Leiste bleibt im Modulgraph
+ * jeder Seite: not-found zeigt sie, und dessen Client-Code lädt jede Seite mit – fehlte sie einer Seite, teilte
+ * Turbopack den gemeinsamen Chunk auf und die Seite lüde dieselben Module doppelt (Z-08). Die kompakte Form ist ein
+ * eigenes Modul nur der Leseseiten, vom Server ohne Suspense (kein ausgelagert gestreamter Inhalt).
  */
 export async function Seitenrahmen({
   bereich,
   seite,
   sprachZiel,
   pfad,
-  ohneLeiste = false,
-  kompakteLeiste = false,
+  leiste = <PrayerTimesBar />,
   children,
 }: {
   bereich: Bereich;
   seite: string;
   sprachZiel: SprachZiel;
   pfad?: PfadEintrag[];
-  ohneLeiste?: boolean;
-  /** Leiste als eine Zeile „Nächstes Gebet · Zeit“ */
-  kompakteLeiste?: boolean;
+  /** Gebetszeitenleiste unter dem Kopf; `null`: keine Leiste */
+  leiste?: ReactNode;
   children: ReactNode;
 }) {
   const sprache = (await getLocale()) as Locale;
@@ -60,25 +61,10 @@ export async function Seitenrahmen({
   const { konzepthinweis } = await ladeEinstellung('allgemein');
   return (
     <>
-      <a
-        href="#inhalt"
-        className="sr-only z-(--ebene-sprung) rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
-      >
-        {t('zumInhalt')}
-      </a>
-      <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
-      {ohneLeiste ? null : <PrayerTimesBar kompakt={kompakteLeiste} />}
-      {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
-      {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
-      <main id="inhalt" tabIndex={-1} className="outline-none">
-        {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css). Den
-            Übergang startet SeitenUebergang; versteckte Seiten (Activity) sind nicht gerendert und nehmen nicht teil. */}
-        <div data-seite style={SEITE}>
-          {children}
-        </div>
-      </main>
-      <Footer />
-      <SeitenUebergang />
+      {/* Konzept-Hinweis vor dem Sprunglink: Nach dem Schließen (ohne vorherigen Fokus) setzt der Browser die
+          Tab-Reihenfolge am Dialog fort – so am Seitenanfang beim Sprunglink statt hinter der Fußzeile (Z-08). Sein
+          Skript steht direkt hinter dem Dialog: Am Ende des Gerüsts zeichnete der Browser die Seite bei schneller
+          Verbindung schon vor dem Öffnen (N1, Messung: erstes Bild 272 ms, showModal 442 ms auf /). */}
       {konzepthinweis ? (
         <KonzeptHinweis
           texte={{
@@ -97,6 +83,25 @@ export async function Seitenrahmen({
           }}
         />
       ) : null}
+      <a
+        href="#inhalt"
+        className="sr-only z-(--ebene-sprung) rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
+      >
+        {t('zumInhalt')}
+      </a>
+      <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
+      {leiste}
+      {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
+      {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
+      <main id="inhalt" tabIndex={-1} className="outline-none">
+        {/* B-05 Seitenwechsel: Kopf und Leiste stehen, der Inhalt blendet über (Klasse „seite“ in globals.css). Den
+            Übergang startet SeitenUebergang; versteckte Seiten (Activity) sind nicht gerendert und nehmen nicht teil. */}
+        <div data-seite style={SEITE}>
+          {children}
+        </div>
+      </main>
+      <Footer />
+      <SeitenUebergang />
     </>
   );
 }

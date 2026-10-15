@@ -1,5 +1,5 @@
 import { MapPin } from 'lucide-react';
-import Image from 'next/image';
+import { Bild } from '../Bild';
 import { Achtstern } from '@/components/website/Icons';
 import { Text, textMitSprache } from '@/components/website/Text';
 import type { Sprache } from '@/lib/i18n/inhalt';
@@ -74,7 +74,7 @@ export function Zeitleiste({ eintraege, sprache }: { eintraege: Eintrag[]; sprac
                 </div>
                 {e.bild ? (
                   <div className="relative h-28 overflow-hidden rounded-md border border-linie md:h-36 md:w-60 md:shrink-0">
-                    <Image src={e.bild} alt={bild.text} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
+                    <Bild src={e.bild} alt={bild.text} fill sizes="(min-width: 768px) 240px, 100vw" className="object-cover" />
                   </div>
                 ) : (
                   <Bildflaeche beschriftung={bild.text} lang={bild.lang} className="h-28 md:h-36 md:w-60 md:shrink-0" />

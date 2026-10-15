@@ -238,6 +238,21 @@
   max-height: calc(100dvh - 2rem);
 }
 
+/* Feld so breit wie sein Muster (Z-08): Das Attribut data-muster (z. B. „88:88 Uhr“ in tabellarischen Ziffern) steht
+   unsichtbar im selben Rasterfeld wie der Inhalt. Platzhalter „––:––“ und spätere Uhrzeit sind so gleich breit, nach der
+   Hydrierung wechselt nur der Text. Das Muster wird nie gezeigt (Attribut, visibility: hidden, nicht in der Hilfstechnik). */
+@utility breite-nach-muster {
+  display: inline-grid;
+  &::before {
+    content: attr(data-muster);
+    visibility: hidden;
+    grid-area: 1 / 1;
+  }
+  & > * {
+    grid-area: 1 / 1;
+  }
+}
+
 /* Beschriftete Streifen-Fläche statt Foto (M-018) */
 /* Symbol links, Text rechts (Kennzahlen mit Symbol): Spalte so breit wie das Symbol, Rest für den Text. */
 @utility raster-symbol {

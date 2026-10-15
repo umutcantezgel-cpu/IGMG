@@ -8,7 +8,7 @@ import { GEBETE, type Gebet, type GebetszeitTag } from '@/lib/gebetszeiten/typen
 import { klassen } from '@/lib/klassen';
 import { useJetzt } from '@/lib/zeit/useJetzt';
 import { GebetszeitenTabs, type TabSchluessel } from './GebetszeitenTabs';
-import { fuelle, restzeitText } from './zeiten';
+import { fuelle, naechstesSchluessel, restzeitText, ZEIT_BREITE, ZEIT_PLATZHALTER } from './zeiten';
 import { GEBET_ZEICHEN } from './zeichen';
 
 /** Fertig übersetzte Texte aus messages; Platzhalter wie {name} füllt die Komponente (K-12). */
@@ -51,8 +51,9 @@ export type GebetszeitenSeiteProps = {
 /**
  * Gebetszeiten im Browser (Blatt S02): oben das nächste Gebet mit Restzeit, im Tab Heute der Tagesbogen (ruhig, B-10)
  * neben einer Tafel mit den sechs Zeiten. Uhrzeit, nächstes Gebet und Restzeit rechnet der Browser aus den
- * zwischengespeicherten Tageszeiten (K-08). Bis zur Hydrierung steht ein Platzhalter „–“, und die Tafel zeigt alle
- * Zeiten grün, damit nichts springt (K-12, kein CLS).
+ * zwischengespeicherten Tageszeiten (K-08). Bis zur Hydrierung stehen Platzhalter („–“, die Uhrzeit als „––:––“ in ihrer
+ * Größe), und die Tafel zeigt alle Zeiten grün, damit nichts springt (K-12, kein CLS). Danach wechseln dieselben Elemente
+ * nur ihren Text (Z-08: kein neues, später gezeichnetes LCP-Element beim Wiederbesuch).
  */
 export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }: GebetszeitenSeiteProps) {
   const jetzt = useJetzt();
@@ -89,7 +90,7 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }:
       ? fuelle(texte.naechstesMorgen, { name: texte.namen[naechstes.gebet] })
       : texte.namen[naechstes.gebet]
     : '–';
-  const naechsteZeit = naechstes && zeitTag ? fuelle(texte.uhr, { zeit: zeitTag[naechstes.gebet] }) : '–';
+  const naechsteZeit = fuelle(texte.uhr, { zeit: naechstes && zeitTag ? zeitTag[naechstes.gebet] : ZEIT_PLATZHALTER });
   const verbleibt = naechstes ? restzeitText(naechstes.restMs, { stunden: texte.restStunden, minuten: texte.restMinuten }) : '–';
   // Ohne alleHref zeigt der Tagesbogen keinen Link; das Pflichtfeld bleibt leer.
   const bogenTexte: TagesbogenTexte = {
@@ -108,9 +109,10 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }:
         aria-labelledby="gz-naechstes"
         className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 rounded-lg bg-gruen-950 p-5 text-weiss md:p-8"
       >
-        {/* Name, Zeit und Restzeit gehören zu einem Gebet: Bei jedem echten Wechsel blenden sie neu ein (B-10) */}
+        {/* Name, Zeit und Restzeit gehören zu einem Gebet: Bei jedem echten Wechsel blenden sie neu ein (B-10). Der erste
+            Wert nach der Hydrierung hängt nichts neu ein, er ersetzt nur die Platzhalter (Z-08, naechstesSchluessel). */}
         <div
-          key={wechsel ?? 'ohne'}
+          key={naechstesSchluessel(wechsel, gewechselt)}
           className={klassen(
             'flex min-w-0 flex-col gap-1 lg:w-full lg:flex-row lg:items-end lg:justify-between lg:gap-8',
             gewechselt && 'blendet-ein',
@@ -126,7 +128,14 @@ export function GebetszeitenSeite({ tage, referenz, texte, panels, tabSymbole }:
           </h2>
           {/* Ab lg steht die Zeit rechts neben dem Namen: die dunkle Fläche trägt eine Zeile statt eines leeren Viertels */}
           <div className="flex flex-col gap-1 lg:items-end">
-            <span className="text-48 font-bold tabular-nums md:text-anzeige-64">{naechsteZeit}</span>
+            {/* Z-08: Das Feld ist schon im statischen HTML so breit wie jede Uhrzeit (Muster in tabellarischen Ziffern);
+                Platzhalter und Zeit wechseln nur den Text des inneren Elements – kein Layoutsprung, kein neues Element. */}
+            <span
+              data-muster={fuelle(texte.uhr, { zeit: ZEIT_BREITE })}
+              className="breite-nach-muster text-48 font-bold tabular-nums md:text-anzeige-64"
+            >
+              <span>{naechsteZeit}</span>
+            </span>
             <span className="text-20 font-bold">{fuelle(texte.verbleibt, { zeit: verbleibt })}</span>
           </div>
         </div>

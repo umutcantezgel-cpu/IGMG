@@ -40,8 +40,17 @@ export async function starteBrowser(zusatz = {}) {
   return chromium.launch({ ...(exe ? { executablePath: exe } : {}), ...zusatz });
 }
 
+/**
+ * Browser mit eigenem Profilordner: Der persistente Kontext ist der Standardkontext, den auch Lighthouse über CDP nutzt –
+ * dort gesetzter Speicher (z. B. der Merker des Konzept-Hinweises) gilt für dessen Messungen.
+ */
+export async function starteProfilBrowser(profil, zusatz = {}) {
+  const exe = chromePfad();
+  return chromium.launchPersistentContext(profil, { ...(exe ? { executablePath: exe } : {}), ...zusatz });
+}
+
 /** Schlüssel des Konzept-Hinweises (web/src/components/website/KonzeptHinweis.tsx, localStorage). */
-const KONZEPTHINWEIS = 'igmg-konzepthinweis-gesehen';
+export const KONZEPTHINWEIS = 'igmg-konzepthinweis-gesehen';
 
 /**
  * Neuer Browser-Kontext. Der Konzept-Hinweis (Modal beim ersten Besuch) wird als „gesehen“ markiert, damit er die

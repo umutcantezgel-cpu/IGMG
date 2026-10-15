@@ -1,7 +1,6 @@
 'use client';
 
 import { Check, ChevronDown, ChevronUp, House, LogIn, Menu, X } from 'lucide-react';
-import Image from 'next/image';
 import NextLink from 'next/link';
 import { type CSSProperties, type KeyboardEvent, type ReactNode, useRef, useState } from 'react';
 import type { Locale } from '@/i18n/routing';
@@ -275,14 +274,10 @@ export function MobilMenue({
                                 aria-current={istAktuell ? 'page' : undefined}
                                 className={`flex min-h-12 items-center gap-3 rounded-md px-3 py-2 text-18 no-underline transition duration-(--dauer-rueckmeldung) ${istAktuell ? 'bg-weiss font-bold text-gruen-800 shadow-s1' : 'text-tinte hover:bg-weiss'}`}
                               >
-                                {p.logo ? (
-                                  <Image
-                                    src={p.logo}
-                                    alt=""
-                                    width={32}
-                                    height={32}
-                                    className="size-8 shrink-0 rounded-sm border border-linie"
-                                  />
+                                {p.logoBild ? (
+                                  // Attribute wie next/image, auf dem Server berechnet (Header.tsx): kein Bild-JavaScript
+                                  // eslint-disable-next-line @next/next/no-img-element
+                                  <img {...p.logoBild} alt="" className="size-8 shrink-0 rounded-sm border border-linie" />
                                 ) : null}
                                 <span className="flex-1">{p.label}</span>
                                 {haken(istAktuell)}

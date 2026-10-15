@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 import { morphStil } from '@/components/website/morph';
 import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
 import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
 import { QuranWeiter } from '@/components/website/quran/QuranWeiter';
 import { SurenKopf } from '@/components/website/quran/SurenKopf';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { ausgabeFuer } from '@/lib/quran/ausgaben';
 import { satzLaenge, versListeHtml, VOLLSATZ_GRENZE } from '@/lib/quran/satz';
 import { metadatenFuer } from '@/lib/seo/metadaten';
@@ -39,16 +39,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-/** Surenseite /quran/[sure] (O-Q01). URL-Daten nur innerhalb von Suspense lesen (MUSTER 1). */
-export default function QuranSurePage({ params }: { params: Promise<{ locale: string; sure: string }> }) {
-  return (
-    <Suspense fallback={null}>
-      <Sure params={params} />
-    </Suspense>
-  );
-}
-
-async function Sure({ params }: { params: Promise<{ locale: string; sure: string }> }) {
+/**
+ * Surenseite /quran/[sure] (O-Q01). Abweichung von MUSTER 1 (Z-08, N1): `params` ohne umschließendes `<Suspense>`. Alle
+ * 114 Suren sind vorgerendert (generateStaticParams, `ensureStatic = 'navigation'`), andere Werte enden in notFound().
+ * In einem Suspense-Rahmen lieferte React die ganze Seite ausgelagert (`<div hidden>` mit `$RC`) und deckte sie wegen
+ * seiner Aufdeck-Drosselung erst 300 ms nach dem ersten Bild bzw. ab 2,3 s auf – im Labor LCP knapp über 2,5 s.
+ */
+export default async function QuranSurePage({ params }: { params: Promise<{ locale: string; sure: string }> }) {
   const nr = nummer((await params).sure);
   const sprache = await getLocale();
   const t = await getTranslations('quranSeite');
@@ -70,7 +67,7 @@ async function Sure({ params }: { params: Promise<{ locale: string; sure: string
       seite="quran"
       sprachZiel={{ pathname: '/quran/[sure]', params: { sure: String(nr) } }}
       pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: sure.umschrift }]}
-      kompakteLeiste
+      leiste={<PrayerTimesBarKompakt />}
     >
       <SurenKopf
         kennung={t('sureNr', { nr })}

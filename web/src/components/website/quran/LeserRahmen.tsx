@@ -5,6 +5,7 @@ import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import type { SichtbareAusgabe } from '@/lib/quran/ausgaben';
 import { ladeRezitationen } from '@/server/queries/quran';
+import { ERSTER_TAB } from './erster-tab';
 import type { LeserTexte } from './leser-typen';
 import { QuranLeser } from './QuranLeser';
 import './quran.css';
@@ -56,7 +57,8 @@ export async function LeserRahmen({
   }));
   return (
     <div className={`leser ${schriftQuran.variable}`} data-modus="beide" data-tajwid="an" data-groesse="2" suppressHydrationWarning>
-      <script dangerouslySetInnerHTML={{ __html: EINSTELLUNGEN_VORAB }} />
+      {/* feste Skripte ohne Nutzereingaben: gespeicherte Ansicht vor dem ersten Zeichnen, erster Tab ohne Dokumentsuche (Z-08) */}
+      <script dangerouslySetInnerHTML={{ __html: `${EINSTELLUNGEN_VORAB};${ERSTER_TAB}` }} />
       <QuranLeser
         sprache={sprache}
         sure={sure}

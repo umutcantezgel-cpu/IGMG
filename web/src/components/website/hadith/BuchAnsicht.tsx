@@ -4,6 +4,7 @@ import { morphStil } from '@/components/website/morph';
 import { NachOben } from '@/components/website/NachOben';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { buchTeilZiel } from '@/lib/hadith/anzeige';
@@ -52,7 +53,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
       bereich="islam"
       seite="hadith"
       sprachZiel={ziel}
-      kompakteLeiste
+      leiste={<PrayerTimesBarKompakt />}
       pfad={[
         { label: th('breadcrumb'), ziel: '/hadith' },
         { label: name, ziel: '/hadith/bukhari' },

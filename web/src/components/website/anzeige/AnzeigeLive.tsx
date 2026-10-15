@@ -1,9 +1,8 @@
 'use client';
 
 import { X } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { type CSSProperties, useEffect, useState } from 'react';
+import { type CSSProperties, type ReactNode, useEffect, useState } from 'react';
 import type { AnzeigeDaten } from '@/lib/anzeige/folien';
 import { anzeigeZustand, iqamaZeiten } from '@/lib/anzeige/plan';
 import { berlinerDatum, naechstesGebet, restzeit, zeitpunkt } from '@/lib/gebetszeiten/naechstes';
@@ -71,6 +70,7 @@ export function AnzeigeLive({
   berechnet,
   zurueckHref,
   anzeige,
+  logo,
 }: {
   tage: GebetszeitTag[];
   texte: Record<Sprache, AnzeigeTexte>;
@@ -78,6 +78,8 @@ export function AnzeigeLive({
   berechnet: boolean;
   zurueckHref: string;
   anzeige: AnzeigeDaten;
+  /** Logo als fertiges Bild vom Server (`Bild`): kein next/image-JavaScript im Browser (Z-08) */
+  logo: ReactNode;
 }) {
   const [jetzt, setJetzt] = useState<Date | null>(null);
   const [index, setIndex] = useState(0);
@@ -184,9 +186,7 @@ export function AnzeigeLive({
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-gruen-800 px-4 py-4 @3xl:px-8 @5xl:py-6 @7xl:px-12">
         {/* Telefon: Name und Ort fest zweizeilig – ein schriftbreitenabhängiger Umbruch würde beim Schrifttausch springen (CLS) */}
         <div className="flex items-center gap-4">
-          <span className="flex shrink-0 rounded-md bg-weiss p-1">
-            <Image src="/bilder/logos/logo-igmg-wetzlar.png" alt="" width={40} height={40} className="size-10" priority />
-          </span>
+          <span className="flex shrink-0 rounded-md bg-weiss p-1">{logo}</span>
           <div className="flex flex-col md:flex-row md:items-center md:gap-4">
             <h1 className="text-24 leading-tight whitespace-nowrap @5xl:text-30 @7xl:text-36">IGMG Wetzlar</h1>
             <span aria-hidden className="hidden text-gruen-100 md:inline">

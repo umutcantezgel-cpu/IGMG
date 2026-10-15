@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { Bild } from '../Bild';
 import { Stern8 } from '@/components/website/Icons';
 import { Link } from '@/i18n/link';
 import { cn } from '@/lib/utils';
@@ -37,7 +37,7 @@ export function OrgKarte({
       <div aria-hidden className={cn('h-1.5', s.band)} />
       <div className={cn('flex flex-1 flex-col gap-3 p-6', s.tint)}>
         <span className={cn('flex self-start rounded-lg border-2 bg-weiss p-1.5', s.akzent)}>
-          <Image src={s.logo} alt="" width={40} height={40} className="size-10" />
+          <Bild src={s.logo} alt="" width={40} height={40} className="size-10" />
         </span>
         <h3 className="text-24 leading-tight">
           {aktuell ? (

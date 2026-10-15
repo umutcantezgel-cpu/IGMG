@@ -1,0 +1,537 @@
+{
+  "werkzeug": "lighthouse",
+  "zeit": "2026-10-15-14-32",
+  "basis": "http://127.0.0.1:3221",
+  "besuch": "Wiederbesuch (Merker des Konzept-Hinweises gesetzt, leerer HTTP-Cache)",
+  "laeufe": 3,
+  "wiederholungen": 0,
+  "schwellen": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 95,
+    "seo": 95,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 200,
+    "jsKb": 180
+  },
+  "routen": [
+    {
+      "name": "Start",
+      "pfad": "/",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1919,
+          "cls": 0.001,
+          "tbtMs": 313,
+          "jsKb": 174.8,
+          "lcpElement": "section.border-b > div.mx-auto > div.flex > p.max-w-text",
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2494
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1871,
+          "cls": 0.001,
+          "tbtMs": 448,
+          "jsKb": 174.8,
+          "lcpElement": "section.border-b > div.mx-auto > div.flex > p.max-w-text",
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2496
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2033,
+          "cls": 0.001,
+          "tbtMs": 361,
+          "jsKb": 174.8,
+          "lcpElement": "section.border-b > div.mx-auto > div.flex > p.max-w-text",
+          "simuliert": {
+            "performance": 93,
+            "lcpMs": 2527
+          }
+        }
+      ],
+      "median": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 1919,
+        "cls": 0.001,
+        "tbtMs": 361,
+        "jsKb": 174.8,
+        "simuliertPerformance": 96,
+        "simuliertLcpMs": 2496
+      },
+      "spanneLeistung": [
+        87,
+        91
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Quran Sure 1",
+      "pfad": "/quran/1",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 80,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2667,
+          "cls": 0,
+          "tbtMs": 543,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 2811
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2270,
+          "cls": 0,
+          "tbtMs": 410,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3499
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 86,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2305,
+          "cls": 0,
+          "tbtMs": 384,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 98,
+            "lcpMs": 2124
+          }
+        }
+      ],
+      "median": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 2305,
+        "cls": 0,
+        "tbtMs": 410,
+        "jsKb": 173.6,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 2811
+      },
+      "spanneLeistung": [
+        80,
+        86
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Quran Sure 2 (Al-Baqara)",
+      "pfad": "/quran/2",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2180,
+          "cls": 0,
+          "tbtMs": 382,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3192
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 82,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2226,
+          "cls": 0,
+          "tbtMs": 557,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3803
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 85,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 2255,
+          "cls": 0,
+          "tbtMs": 436,
+          "jsKb": 173.6,
+          "lcpElement": "div > div.leser > div.mx-auto > p.rounded-lg",
+          "simuliert": {
+            "performance": 86,
+            "lcpMs": 3783
+          }
+        }
+      ],
+      "median": {
+        "performance": 85,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 2226,
+        "cls": 0,
+        "tbtMs": 436,
+        "jsKb": 173.6,
+        "simuliertPerformance": 86,
+        "simuliertLcpMs": 3783
+      },
+      "spanneLeistung": [
+        82,
+        87
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Hadith Bukhari Buch 1",
+      "pfad": "/hadith/bukhari/1",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1803,
+          "cls": 0,
+          "tbtMs": 330,
+          "jsKb": 170.1,
+          "lcpElement": "div.flex > div.flex > p.flex > span.text-tinte-2",
+          "simuliert": {
+            "performance": 87,
+            "lcpMs": 3818
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1875,
+          "cls": 0,
+          "tbtMs": 375,
+          "jsKb": 170.1,
+          "lcpElement": "div.flex > div.flex > p.flex > span.text-tinte-2",
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3253
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1828,
+          "cls": 0,
+          "tbtMs": 454,
+          "jsKb": 170.1,
+          "lcpElement": "div.flex > div.flex > p.flex > span.text-tinte-2",
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3254
+          }
+        }
+      ],
+      "median": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 1828,
+        "cls": 0,
+        "tbtMs": 375,
+        "jsKb": 170.1,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 3254
+      },
+      "spanneLeistung": [
+        87,
+        91
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Elifbe Buchstabe Be",
+      "pfad": "/elifbe/buchstaben/be",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 84,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1887,
+          "cls": 0,
+          "tbtMs": 569,
+          "jsKb": 168.6,
+          "lcpElement": "div.grid > section.flex > div.flex > p.text-18",
+          "simuliert": {
+            "performance": 97,
+            "lcpMs": 2349
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1871,
+          "cls": 0,
+          "tbtMs": 448,
+          "jsKb": 168.6,
+          "lcpElement": "div.grid > section.flex > div.flex > p.text-18",
+          "simuliert": {
+            "performance": 88,
+            "lcpMs": 3681
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1829,
+          "cls": 0,
+          "tbtMs": 387,
+          "jsKb": 168.6,
+          "lcpElement": "div.grid > section.flex > div.flex > p.text-18",
+          "simuliert": {
+            "performance": 92,
+            "lcpMs": 3185
+          }
+        }
+      ],
+      "median": {
+        "performance": 87,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 1871,
+        "cls": 0,
+        "tbtMs": 448,
+        "jsKb": 168.6,
+        "simuliertPerformance": 92,
+        "simuliertLcpMs": 3185
+      },
+      "spanneLeistung": [
+        84,
+        89
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    },
+    {
+      "name": "Lernen",
+      "pfad": "/lernen",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 92,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1834,
+          "cls": 0,
+          "tbtMs": 288,
+          "jsKb": 166.3,
+          "lcpElement": "div.mx-auto > section.flex > div.flex > p.text-20",
+          "simuliert": {
+            "performance": 96,
+            "lcpMs": 2492
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1886,
+          "cls": 0,
+          "tbtMs": 368,
+          "jsKb": 166.3,
+          "lcpElement": "div.mx-auto > section.flex > div.flex > p.text-20",
+          "simuliert": {
+            "performance": 93,
+            "lcpMs": 2496
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 91,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1830,
+          "cls": 0,
+          "tbtMs": 334,
+          "jsKb": 166.3,
+          "lcpElement": "div.mx-auto > section.flex > div.flex > p.text-20",
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2417
+          }
+        }
+      ],
+      "median": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 1834,
+        "cls": 0,
+        "tbtMs": 334,
+        "jsKb": 166.3,
+        "simuliertPerformance": 94,
+        "simuliertLcpMs": 2492
+      },
+      "spanneLeistung": [
+        89,
+        92
+      ],
+      "verfehlt": [
+        "TBT"
+      ]
+    },
+    {
+      "name": "Gebetszeiten",
+      "pfad": "/gebetszeiten",
+      "laeufe": [
+        {
+          "lauf": 1,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1972,
+          "cls": 0,
+          "tbtMs": 435,
+          "jsKb": 179.4,
+          "lcpElement": "div.flex > div.flex > span.breite-nach-muster > span",
+          "simuliert": {
+            "performance": 91,
+            "lcpMs": 3388
+          }
+        },
+        {
+          "lauf": 2,
+          "performance": 87,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1889,
+          "cls": 0,
+          "tbtMs": 447,
+          "jsKb": 179.4,
+          "lcpElement": "div.flex > div.flex > span.breite-nach-muster > span",
+          "simuliert": {
+            "performance": 90,
+            "lcpMs": 3397
+          }
+        },
+        {
+          "lauf": 3,
+          "performance": 89,
+          "accessibility": 100,
+          "best-practices": 96,
+          "seo": 100,
+          "lcpMs": 1934,
+          "cls": 0,
+          "tbtMs": 376,
+          "jsKb": 179.4,
+          "lcpElement": "div.flex > div.flex > span.breite-nach-muster > span",
+          "simuliert": {
+            "performance": 94,
+            "lcpMs": 2718
+          }
+        }
+      ],
+      "median": {
+        "performance": 87,
+        "accessibility": 100,
+        "best-practices": 96,
+        "seo": 100,
+        "lcpMs": 1934,
+        "cls": 0,
+        "tbtMs": 435,
+        "jsKb": 179.4,
+        "simuliertPerformance": 91,
+        "simuliertLcpMs": 3388
+      },
+      "spanneLeistung": [
+        87,
+        89
+      ],
+      "verfehlt": [
+        "Performance",
+        "TBT"
+      ]
+    }
+  ]
+}

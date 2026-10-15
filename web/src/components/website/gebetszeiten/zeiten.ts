@@ -12,6 +12,25 @@ export function fuelle(vorlage: string, werte: Record<string, string>): string {
   return Object.entries(werte).reduce((text, [schluessel, wert]) => text.split(`{${schluessel}}`).join(wert), vorlage);
 }
 
+/** Platzhalter der Uhrzeit „HH:MM“ bis zur Hydrierung (Z-08): gleicher Aufbau wie die Zeit, zeigt keine Uhrzeit. */
+export const ZEIT_PLATZHALTER = '––:––';
+
+/**
+ * Breitenmuster der Uhrzeit für `breite-nach-muster` (globals.css, Z-08): In tabellarischen Ziffern ist jede Zeit „HH:MM“
+ * so breit wie dieses Muster, der Platzhalter steht damit schon im statischen HTML in der Größe der Zeit. Keine gültige
+ * Uhrzeit, und es wird nie gezeigt (unsichtbar, nur als Attribut im HTML).
+ */
+export const ZEIT_BREITE = '88:88';
+
+/**
+ * Schlüssel des Blocks „nächstes Gebet“ (B-10, Z-08): Bis zum ersten echten Wechsel bleibt er gleich. So ersetzt der
+ * erste Wert nach der Hydrierung nur die Texte der Elemente aus dem statischen HTML; ein neu eingehängtes Element wäre
+ * ein später, größerer LCP-Kandidat. Erst ein echter Wechsel hängt den Block neu ein, damit die Einblendung neu startet.
+ */
+export function naechstesSchluessel(wechsel: string | null, gewechselt: boolean): string {
+  return gewechselt && wechsel !== null ? wechsel : 'erster';
+}
+
 /** Kalendertag „JJJJ-MM-TT“ als „Di., 23. Jan. 2024“ (Format des Designs, Europe/Berlin). */
 export function datumMitJahr(datum: string, sprache: Sprache): string {
   return new Intl.DateTimeFormat(LOCALE[sprache], {

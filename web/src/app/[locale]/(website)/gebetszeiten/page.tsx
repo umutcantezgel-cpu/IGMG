@@ -228,7 +228,7 @@ export default async function GebetszeitenSeitePage() {
   );
 
   return (
-    <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" ohneLeiste pfad={[{ label: tk('gebetszeiten') }]}>
+    <Seitenrahmen bereich="islam" seite="gebetszeiten" sprachZiel="/gebetszeiten" leiste={null} pfad={[{ label: tk('gebetszeiten') }]}>
       <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 pt-6 pb-12 md:px-8 md:pt-12 md:pb-24">
         <div className="flex min-w-0 flex-col gap-2">
           <h1 className="text-display-1 text-pretty">{t('titel')}</h1>

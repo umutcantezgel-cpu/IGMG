@@ -67,6 +67,9 @@ const nextConfig: NextConfig = {
     // globals.css aus dem Zwischenspeicher, während die Klassen frisch eingelesen wurden (Tokens und Keyframes fehlten).
     // Vercel stellt `.next/cache` zwischen Deployments wieder her; deterministische Builds gehen vor Bauzeit.
     turbopackFileSystemCacheForBuild: false,
+    // Z-08 (N1): Gemeinsame Chunks (Leiste, Seitenwechsel), die auch not-found lädt, nicht in die Chunks jeder Seite
+    // mischen – sonst lädt jede Seite sie doppelt. Vorgabe 200000 (ungepackte Bytes).
+    turbopackChunking: { maxMergeChunkSize: 30000 },
   },
   images: {
     // Medien kommen ausschließlich aus der eigenen Herkunft (ADR 0007).
