@@ -21,7 +21,7 @@ export default async function KeinZugangSeite() {
   const [t, konten] = await Promise.all([getTranslations('verwaltung.keinZugang'), funktionAn('konten')]);
   return (
     <AnmeldeRahmen titel={t('titel')} untertitel={t('text')}>
-      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <div className="flex flex-wrap items-center gap-3">
         {konten ? (
           <NextLink
             href={pfadFuer('/mein-bereich', 'de')}
