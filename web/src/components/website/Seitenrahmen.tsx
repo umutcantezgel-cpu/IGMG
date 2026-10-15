@@ -8,7 +8,7 @@ import { Breadcrumbs, type PfadEintrag } from './Breadcrumbs';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { JsonLd } from './JsonLd';
-import { KonzeptHinweis } from './KonzeptHinweis';
+import { KonzeptHinweis, KonzeptHinweisSkript } from './KonzeptHinweis';
 import type { Bereich, SprachZiel } from './navigation';
 import { PrayerTimesBar } from './PrayerTimesBar';
 import { SeitenUebergang } from './SeitenUebergang';
@@ -61,7 +61,8 @@ export async function Seitenrahmen({
   return (
     <>
       {/* Konzept-Hinweis vor dem Sprunglink: Nach dem Schließen (ohne vorherigen Fokus) setzt der Browser die
-          Tab-Reihenfolge am Dialog fort – so am Seitenanfang beim Sprunglink statt hinter der Fußzeile (Z-08) */}
+          Tab-Reihenfolge am Dialog fort – so am Seitenanfang beim Sprunglink statt hinter der Fußzeile (Z-08). Sein
+          Skript steht am Ende (KonzeptHinweisSkript), damit es das Einlesen der Seite nicht vorher anhält. */}
       {konzepthinweis ? (
         <KonzeptHinweis
           texte={{
@@ -99,6 +100,7 @@ export async function Seitenrahmen({
       </main>
       <Footer />
       <SeitenUebergang />
+      {konzepthinweis ? <KonzeptHinweisSkript /> : null}
     </>
   );
 }

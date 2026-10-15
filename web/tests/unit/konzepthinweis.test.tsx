@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it, vi } from 'vitest';
-import { KonzeptHinweis, SOFORT } from '@/components/website/KonzeptHinweis';
+import { KonzeptHinweis, KonzeptHinweisSkript, SOFORT } from '@/components/website/KonzeptHinweis';
 import { KONZEPTHINWEIS_GESEHEN } from '@/components/website/konzepthinweis-merker';
 
 /**
@@ -124,7 +124,8 @@ describe('Konzept-Hinweis: Markup vom Server', () => {
     expect(html).toContain('<button type="submit"');
   });
 
-  it('enthält das Inline-Skript unverändert', () => {
-    expect(html).toContain(`<script>${SOFORT}</script>`);
+  it('Dialog ohne Skript; das Skript (klassisch, inline) kommt getrennt ans Ende des Gerüsts', () => {
+    expect(html).not.toContain('<script');
+    expect(renderToStaticMarkup(<KonzeptHinweisSkript />)).toBe(`<script>${SOFORT}</script>`);
   });
 });

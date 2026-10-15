@@ -4,8 +4,8 @@ import type { Locale } from '@/i18n/routing';
 import { GEBETE, type Gebet } from '@/lib/gebetszeiten/typen';
 import { datumszeilen } from '@/lib/zeit/datumszeilen';
 import { ladeGebetszeitenFenster } from '@/server/queries/gebetszeiten';
-import { LeisteKompakt } from './leiste/LeisteKompakt';
-import { LeisteLive, type LeisteTexte } from './leiste/LeisteLive';
+import { Leiste } from './leiste/Leiste';
+import type { LeisteTexte } from './leiste/LeisteLive';
 
 const LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en-GB' };
 
@@ -18,7 +18,6 @@ export async function PrayerTimesBar({ kompakt = false }: { kompakt?: boolean } 
   const t = await getTranslations('leiste');
   const fenster = await ladeGebetszeitenFenster();
   const namen = Object.fromEntries(GEBETE.map((g) => [g, t(g)])) as Record<Gebet, string>;
-  const Leiste = kompakt ? LeisteKompakt : LeisteLive;
   const texte: LeisteTexte = {
     label: t('label'),
     ort: t('ort'),
@@ -39,5 +38,7 @@ export async function PrayerTimesBar({ kompakt = false }: { kompakt?: boolean } 
       LOCALE[sprache],
     ),
   };
-  return <Leiste tage={fenster.tage} referenz={fenster.referenz} alleHref={pfadFuer('/gebetszeiten', sprache)} texte={texte} />;
+  return (
+    <Leiste kompakt={kompakt} tage={fenster.tage} referenz={fenster.referenz} alleHref={pfadFuer('/gebetszeiten', sprache)} texte={texte} />
+  );
 }
