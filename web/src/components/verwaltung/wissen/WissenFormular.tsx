@@ -14,6 +14,8 @@ type Aktion = (vorher: WissenZustand, fd: FormData) => Promise<WissenZustand>;
 type Texte = { De: JSONContent | null; Tr: JSONContent | null; En: JSONContent | null };
 type Freigabe = 'entwurf' | 'zur_pruefung' | 'geprueft';
 const SPRACHEN = ['Tr', 'En'] as const;
+/** Lange Knopftexte brechen auf dem Telefon um (390 px: „Speichern und zur Prüfung geben“ passt nicht in eine Zeile). */
+const UMBRUCH = 'py-2.5 text-left whitespace-normal max-md:w-full';
 
 function Abschnitt({ titel, kinder }: { titel: string; kinder: ReactNode }) {
   return (
@@ -208,12 +210,17 @@ export function WissenFormular({
                 : t('formular.hinweisEntwurf')}
         </p>
         <div className="flex flex-wrap gap-3">
-          <Button type="submit" disabled={laeuft} variant={stand === null || stand === 'entwurf' ? 'secondary' : 'default'}>
+          <Button
+            type="submit"
+            disabled={laeuft}
+            variant={stand === null || stand === 'entwurf' ? 'secondary' : 'default'}
+            className={UMBRUCH}
+          >
             <Save aria-hidden />
             {neu ? t('formular.anlegen') : t('formular.speichern')}
           </Button>
           {stand === null || stand === 'entwurf' ? (
-            <Button type="submit" name="einreichen" value="ja" disabled={laeuft}>
+            <Button type="submit" name="einreichen" value="ja" disabled={laeuft} className={UMBRUCH}>
               <Send aria-hidden />
               {t('formular.einreichen')}
             </Button>

@@ -565,11 +565,11 @@ const AUSNAHMEN = [
   {
     id: 'G-06',
     grund:
-      'Neue Schlüssel der neuen Verwaltungsmodule (Lernen, Seiten, Anzeige, Koran, Rezitationen, Menüs, Hatim, Besondere Tage, Newsletter, Spenden, Weiterleitungen, Freigaben, Kinderschutz, Gemeinde im Blick, Sicherheitsmails an Verwaltungskonten; Hinweis-Mails der Vier-Augen-Vorgänge an Leitung, Kinderschutz und Betroffene; Audit-Bezeichnungen; Hinweis zur Benachrichtigung bei Ankündigungen). Feldhinweise, Statusnamen und Rückmeldungen der nur deutschen Verwaltung (ADR 0016); das Werkzeug greift sie wegen Wörtern wie „Hinweis“, „Entwurf“, „speichern“ oder „Einwilligung“ auf. Sie sind keine Rechts- oder Einwilligungstexte für Besucherinnen und Besucher; die Einwilligungstexte der Plattform stehen in den Bereichsdateien (G-03) und in docs/recht/entwuerfe (G-01).',
+      'Neue Schlüssel der neuen Verwaltungsmodule (Lernen, Seiten, Anzeige, Koran, Rezitationen, Menüs, Hatim, Besondere Tage, Newsletter, Spenden, Weiterleitungen, Freigaben, Kinderschutz, Gemeinde im Blick, Startseite und Islamisches Wissen (F-40, Nacharbeit 2), Sicherheitsmails an Verwaltungskonten; Hinweis-Mails der Vier-Augen-Vorgänge an Leitung, Kinderschutz und Betroffene; Audit-Bezeichnungen; Hinweis zur Benachrichtigung bei Ankündigungen). Feldhinweise, Statusnamen und Rückmeldungen der nur deutschen Verwaltung (ADR 0016); das Werkzeug greift sie wegen Wörtern wie „Hinweis“, „Entwurf“, „speichern“ oder „Einwilligung“ auf. Sie sind keine Rechts- oder Einwilligungstexte für Besucherinnen und Besucher; die Einwilligungstexte der Plattform stehen in den Bereichsdateien (G-03) und in docs/recht/entwuerfe (G-01).',
     passt: (e) =>
       e.gruppe === 'M' &&
       e.status === 'neu' &&
-      (/messages\/verwaltung\/(lernen|seiten|anzeige|koran|rezitationen|menues|hatim|besondereTage|newsletter|spenden|weiterleitungen|freigaben|kinderschutz|gemeindeImBlick|sicherheit)\.json$/.test(String(e.datei)) ||
+      (/messages\/verwaltung\/(lernen|seiten|anzeige|koran|rezitationen|menues|hatim|besondereTage|newsletter|spenden|weiterleitungen|freigaben|kinderschutz|gemeindeImBlick|sicherheit|startseite|wissen)\.json$/.test(String(e.datei)) ||
         (String(e.datei).endsWith('messages/verwaltung/audit.json') && /^audit\.aktion\./.test(e.schluessel)) ||
         (String(e.datei).endsWith('messages/verwaltung/ankuendigungen.json') && e.schluessel === 'ankuendigungen.formular.statusHinweis') ||
         // N4 (Vier-Augen, S2/S3): Hinweis-Mails der Verwaltung an Leitung/Kinderschutz und an betroffene Verwaltungskonten –
