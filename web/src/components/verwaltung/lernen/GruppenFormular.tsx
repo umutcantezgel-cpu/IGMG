@@ -116,7 +116,9 @@ export function GruppenFormular({
       hinweis={hinweis}
       fehler={fehler(name)}
       kinder={(aria) => (
-        <select {...aria} name={name} defaultValue={text(name)} className={eingabe}>
+        // key: React setzt das Formular nach jeder Aktion auf die Startwerte zurück, übernimmt bei <select> aber keinen
+        // geänderten defaultValue – ohne Neuaufbau stünde nach einem Fehler wieder der alte Wert (z. B. „Chat aus“, P4)
+        <select key={text(name)} {...aria} name={name} defaultValue={text(name)} className={eingabe}>
           {optionen.map((o) => (
             <option key={o.wert} value={o.wert}>
               {o.label}

@@ -4,7 +4,6 @@ import { db, schema, type Transaktion } from '@/lib/db';
 import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { uhrzeitBerlin, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { entschluessele, verschluessele } from '@/lib/krypto';
-import { planeHinweis } from '@/lib/mail/ausgang';
 import { darfInGruppe, type GruppenAktion, type GruppenKontext } from '@/lib/rechte/gruppen';
 import { KETTEN_ANFANG, kettenHash } from './hashkette';
 import {
@@ -494,7 +493,12 @@ export async function setzeKanalPause(
       aktion: pause ? 'pausiert' : 'fortgesetzt',
       grund: g,
     });
-    if (!pause) await planeHinweis({ an: 'recht:meldung.chat.bearbeiten', art: 'kanal_fortgesetzt', pfad: '/verwaltung/kinderschutz' }, tx);
+    if (!pause) {
+      // Mail-Ausgang erst hier laden (P4): Er bindet next-intl ein, dessen Einstieg unter `react-server` außerhalb von Next
+      // nicht lädt – sonst brechen Skripte wie scripts/beispielkonten.ts (E2E, Vorführung), die den Chat-Dienst nutzen.
+      const { planeHinweis } = await import('@/lib/mail/ausgang');
+      await planeHinweis({ an: 'recht:meldung.chat.bearbeiten', art: 'kanal_fortgesetzt', pfad: '/verwaltung/kinderschutz' }, tx);
+    }
     return null;
   });
 }

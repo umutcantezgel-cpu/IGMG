@@ -142,10 +142,12 @@ export function QiblaKompassAnsicht({
     <div className="flex w-full flex-col items-center gap-4">
       <QiblaZifferblatt nadelWinkel={winkel} kurs={kurs} nord={texte.dialNord} grad={texte.winkelKurz} aria={texte.dialAria} />
       {knopfZeigen ? (
+        // Ohne onKnopf (Vorschau vom Server, bis der Kompass geladen ist) ist der Knopf gesperrt: Ein Druck in dieser
+        // Zeit ginge sonst ohne Wirkung verloren (P4, E2E „Qibla“ auf dem Telefon)
         <button
           type="button"
           onClick={onKnopf}
-          disabled={knopfGesperrt}
+          disabled={knopfGesperrt || !onKnopf}
           className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 disabled:cursor-wait disabled:opacity-60"
         >
           {symbol}
