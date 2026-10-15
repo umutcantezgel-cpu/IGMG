@@ -1,7 +1,7 @@
 # BERICHT – Lauf „Gemeinde-Plattform“
 
-> **Entwurf vom 14.10.2026.** Er wird nach der Schlussprüfung (Stufe C) mit Galerie und Stand der Kriterien Z-01…Z-21
-> abgeschlossen.
+> **Stand 15.10.2026** (`main` = 75cad0a). Stufe C ist gelaufen; das Urteil des Endprüfers steht unten wörtlich, der Stand
+> je Kriterium in `_gemeinde/ABNAHME.md`. Nacharbeit zu den Lücken läuft und wird hier nachgeführt.
 
 ## Ergebnis in drei Sätzen
 
@@ -72,19 +72,26 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 | Lokaler Server (G5, MN-12) | Technik | Sicherung, Takt, Kiosk im Gebetsraum |
 | Moschee-Fakten: Eröffnungsdatum, Fotos, Kapazität (MN-08) | Vorstand | Platzhalter ersetzen |
 
-## Stand der Prüfungen (14.10.2026, `main` 4115a5e)
+## Stand der Prüfungen (15.10.2026, `main` 75cad0a)
 
-- Unit: 1438 Tests grün. Integration: 1680 Tests grün.
-- Bau: Produktion wie ein frisch importiertes Vercel-Projekt (ohne `APP_URL`, ohne Datenbank) 1866 Seiten, Vorschau
-  2207 Seiten; Abruf von 1311 verlinkten Adressen ohne Serverfehler.
-- Prüfwerkzeuge: Sprachen vollständig (de/tr/en), Religion-Prüfung 0 Befunde, Wortlaut der Rechtstexte unverändert.
-- Sicherheitsprüfung S1: alle Befunde behoben.
-- Live (https://igmg-wetzlar.vercel.app): 61 Adressen 200, 24 erwartete 404, keine Serverfehler; Funktionen in Frankfurt.
-- Vercel-Import: Jeder Vorschlag der Import-Maske (Root Directory leer oder `web`) deployt gleich
-  (`web/docs/deploy/VERCEL.md` Abschnitt 0).
-- Sichtabnahme Runde 2: 14 von 19 Ansichten mit mindestens 8 von 10 (Runde 1: 11). Die übrigen fünf (Hadith-Buch,
-  Projekte, Gruppenchat, Seiten-Editor, Bestandseditor) sind mit drei gegengeprüften Befundpaketen überarbeitet
-  (`_gemeinde/berichte/sichtabnahme-2.md`); die Nachbewertung steht aus.
+- Unit 1438, Integration 1680 grün; Bau wie ein frisch importiertes Vercel-Projekt 1866 Seiten, Vorschau 2207 Seiten;
+  1311 verlinkte Adressen ohne Serverfehler; live https://igmg-wetzlar.vercel.app (Funktionen in Frankfurt).
+- Sprachen vollständig, Religion-Prüfung 0 Befunde, Koran-Text per SHA-256 und 6236 Versen nachgerechnet.
+- Sichtabnahme in drei Runden mit je drei unabhängigen Juroren: alle 19 Ansichten im Median ≥ 8, keine Kategorie < 7.
+- Zugänglichkeit: axe ohne ernste/kritische Befunde auf 44 öffentlichen Routen (3 Breiten) und 7 Konto-Routen.
+- Datenfluss: 0 Anfragen an fremde Server, Koordinaten nie im Netz, Standortzugriff nur auf den Gebetszeiten-Seiten.
+- Stufe C (frischer Endprüfer): 7 Kriterien erfüllt, 2 Umgebungsausnahmen mit Ersatz, 12 teilweise
+  (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c.md`).
+
+## Urteil des Endprüfers (wörtlich)
+
+> Die öffentliche Website auf 75cad0a ist fertig für die Öffentlichkeit. Koran, Hadith, Elifbe, Gebetszeiten mit „Mein Ort“ und die Moschee-2026-Seiten sind live, in drei Sprachen, bei axe ohne Befund und ohne Datenabfluss. Die religiösen Inhalte sind sauber abgesichert; das habe ich selbst nachgeprüft (SHA, Religion-Prüfung, 49 grüne Koran-E2E).
+>
+> Der Plattformteil ist gebaut und auf Integrationsebene breit getestet: Konten, Lernplattform, Chat mit Kinderschutz, CMS und Anzeige. Er lief aber nie Ende zu Ende in einer echten Umgebung mit Datenbank, und die geplanten Sicherheitsprüfungen S2 und S3 haben nicht stattgefunden. Er muss deshalb ausgeschaltet bleiben, bis S2/S3, die E2E-Läufe und die Freigaben aus MENSCHEN.md vorliegen.
+>
+> Formal ist der Lauf nicht vollständig abgenommen: 7 Kriterien erfüllt, 2 als Umgebungsausnahme mit Ersatz, 12 teilweise. Am schwersten wiegen das verfehlte LCP auf 4 von 7 Messrouten, die nicht gelieferte Ankündigungs-Mitteilung, das wirkungslose Echtzeit-Signal im Server-Kit und Übergabepapiere, die auf main noch Entwurf bzw. veraltet sind.
+>
+> Ehrlich gegenüber der Gemeinde ist diese Übergabe: „Öffentliche Website fertig; Gemeinde-Plattform vorbereitet, aber noch nicht freigabereif.“
 
 ## Galerie
 
