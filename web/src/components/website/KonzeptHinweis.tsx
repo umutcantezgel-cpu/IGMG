@@ -39,7 +39,7 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
   );
   return (
     <>
-      {/* Das Skript SOFORT (KonzeptHinweisSkript) öffnet den Dialog vor der Hydrierung (Attribut `open`) – der Unterschied ist gewollt. Ohne Auftritt (B-03), weil er beim Laden erscheint (LCP) */}
+      {/* Das Skript SOFORT öffnet den Dialog vor der Hydrierung (Attribut `open`) – der Unterschied ist gewollt. Ohne Auftritt (B-03), weil er beim Laden erscheint (LCP) */}
       <dialog
         id="konzepthinweis"
         suppressHydrationWarning
@@ -79,18 +79,6 @@ export function KonzeptHinweis({ texte }: { texte: Texte }) {
           </p>
         </div>
       </dialog>
-    </>
-  );
-}
-
-/**
- * Skript und Öffner des Konzept-Hinweises – am Ende des Seitengerüsts, getrennt vom Dialog am Anfang: Ein klassisches
- * Inline-Skript wartet auf das CSS und hält bis dahin das Einlesen der Seite an; am Ende steht davor schon die ganze
- * Seite im Dokument (wie bisher), und der Dialog öffnet trotzdem vor dem ersten Zeichnen.
- */
-export function KonzeptHinweisSkript() {
-  return (
-    <>
       {/* festes Skript ohne Nutzereingaben (SOFORT) */}
       <script dangerouslySetInnerHTML={{ __html: SOFORT }} />
       <KonzeptHinweisOeffner />
