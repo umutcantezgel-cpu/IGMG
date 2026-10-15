@@ -1,6 +1,6 @@
 # Vercel: Vom Entwurf zum Livegang in etwa 30 Minuten
 
-Stand: 11.10.2026. Zielgruppe: du aus dem Technik-Team und du aus dem Vorstand, der die Abnahme macht.
+Stand: 15.10.2026. Zielgruppe: du aus dem Technik-Team und du aus dem Vorstand, der die Abnahme macht.
 
 Dieses Dokument führt dich Schritt für Schritt von der fertigen Vorschau bis zur öffentlichen Seite unter deiner Domain. Die Summe der Zeitschätzungen liegt bei rund 35 bis 40 Minuten. Das Ziel laut Auftrag sind 30 Minuten (AUFTRAG V-13). Dazu kommen Wartezeiten, vor allem für die DNS-Einträge (Abschnitte 6 und 7).
 
@@ -8,7 +8,7 @@ Dieses Dokument führt dich Schritt für Schritt von der fertigen Vorschau bis z
 
 Du brauchst:
 
-- ein Konto im Vercel-Team, das das Projekt `igmg` verwaltet,
+- ein Konto im Vercel-Team, das das Projekt `igmg-wetzlar` verwaltet,
 - Zugriff auf das GitHub-Repository,
 - Zugang zur Verwaltung deiner Domain (dort, wo die Domain registriert ist),
 - einen Passwortmanager für die Geheimnisse aus Abschnitt 4,
@@ -18,7 +18,7 @@ Bitte keine Geheimnisse in Chats, E-Mails, Screenshots oder ins Repository kopie
 
 ## So liest du dieses Dokument
 
-- **Ort:** Wo du klickst. Die Angabe „Team › Projekt › Settings › …“ meint: im Vercel-Dashboard zuerst das Team wählen, dann das Projekt `igmg`, dann im Menü „Settings“ den genannten Punkt.
+- **Ort:** Wo du klickst. Die Angabe „Team › Projekt › Settings › …“ meint: im Vercel-Dashboard zuerst das Team wählen, dann das Projekt `igmg-wetzlar`, dann im Menü „Settings“ den genannten Punkt.
 - **[prüfen]:** Diese Angabe konnte ich nicht gegen die Vercel-Dokumentation belegen. Bitte beim ersten Durchgang am Bildschirm bestätigen, nicht raten. Das gilt für alle Menüpfade, weil die Vercel-Doku für sie keine Fundstelle lieferte.
 - **Belege:** Verweise wie `web/docs/BETRIEB.md` § 9 zeigen auf den Ort im Repository. Vercel-Angaben haben die Dokumentations-Adresse dabei.
 - **Prüfpunkt:** „Das siehst du, wenn es geklappt hat.“
@@ -43,7 +43,7 @@ Die Zeiten sind Schätzungen **[prüfen: beim ersten Durchgang messen]**.
 
 ## Stand: Was im Code schon da ist
 
-Alle Code-Bausteine für den Livegang sind vorhanden (Stand 2026-10-11, Branch `claude/blissful-edison-x3j16w`). Was bleibt, sind die Schritte in diesem Runbook – Konten, Werte, Domain.
+Alle Code-Bausteine für den Livegang sind vorhanden (Stand 15.10.2026, Branch `main`). Was bleibt, sind die Schritte in diesem Runbook – Konten, Werte, Domain.
 
 | Baustein                                                                                                 | Stand                                                               | Beleg                                                             |
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -107,18 +107,18 @@ Bau-Skript, `.vercelignore`) und `web/tests/unit/umgebung.test.ts` (Adresse ohne
 
 ## 1. Projekt prüfen (3 Minuten)
 
-Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nicht neu anlegen. Prüfe nur die Einstellungen. Ein neu angelegtes Projekt richtest du zuerst nach Abschnitt 0 ein.
+Das Projekt `igmg-wetzlar` (live unter https://igmg-wetzlar.vercel.app) ist bereits als Services-Projekt importiert. Du musst es nicht neu anlegen. Prüfe nur die Einstellungen. Ein neu angelegtes Projekt richtest du zuerst nach Abschnitt 0 ein.
 
 **1.1 Stammordner leer lassen**
 
-- **Ort:** Team › Projekt `igmg` › Settings › General **[prüfen]**, Feld „Root Directory“.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › General **[prüfen]**, Feld „Root Directory“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Leer (Services aus `/vercel.json`) oder `web` (Next.js mit `web/vercel.json`) – beides deployt gleich (Abschnitt 0). Ein vorhandenes Projekt nicht umstellen.
 - **Das siehst du, wenn es geklappt hat:** Das Feld ist leer oder steht auf `web`.
 
 **1.2 Region Frankfurt**
 
-- **Ort:** Team › Projekt `igmg` › Settings › Functions **[prüfen]**, Bereich „Function Region“.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › Functions **[prüfen]**, Bereich „Function Region“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Die Funktionen sollen in `fra1` (Frankfurt) laufen (AUFTRAG V-01). Ohne Angabe nutzt Vercel die Standardregion `iad1` (Washington; AUFTRAG V-01; https://vercel.com/docs/llms-full.txt). Die Konfiguration beschreibt https://vercel.com/docs/functions/configuring-functions/region. Auf dem Hobby-Tarif ist jede einzelne Region erlaubt (https://vercel.com/docs/project-configuration/vercel-ts), also auch `fra1`.
 - **Offen:** Ob die Region im Services-Modus auch über `vercel.json` gilt, ist nicht geklärt **[prüfen]** (`_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md`, offene Frage 2). Im Repository steht `"regions": ["fra1"]` bereits in `/vercel.json` (Zeile 3).
@@ -126,14 +126,14 @@ Das Projekt `igmg` ist bereits als Services-Projekt importiert. Du musst es nich
 
 **1.3 Node-Version festlegen**
 
-- **Ort:** Team › Projekt `igmg` › Settings › General **[prüfen]**, Feld „Node.js Version“.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › General **[prüfen]**, Feld „Node.js Version“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Vercel unterstützt eine feste Version wie `24.x` (https://vercel.com/docs/functions/runtimes/node-js/node-js-versions). `web/package.json` legt `24.x` bereits fest (Feld `engines.node`). Prüfe nur, dass das Feld in Vercel dazu passt.
 - **Das siehst du, wenn es geklappt hat:** `24.x`.
 
 **1.4 Produktionsbranch ist `main`**
 
-- **Ort:** Team › Projekt `igmg` › Settings › Git **[prüfen]**, Feld „Production Branch“.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › Git **[prüfen]**, Feld „Production Branch“.
 - **Aufwand:** 1 Minute.
 - **Regel:** Jeder Stand auf `main` wird zur Produktion (`_archiv/lauf-gestaltung-2026-10/ENTSCHEIDUNGEN.md` L-E01).
 - **Das siehst du, wenn es geklappt hat:** Dort steht `main`.
@@ -144,7 +144,7 @@ Die Datenbank ist PostgreSQL. Wir nutzen Neon über den Vercel Marketplace. Der 
 
 **2.1 Neon installieren**
 
-- **Ort:** Team › Projekt `igmg` › Storage **[prüfen]**, dann „Marketplace“ bzw. „Create Database“, Anbieter „Neon“ **[prüfen]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Storage **[prüfen]**, dann „Marketplace“ bzw. „Create Database“, Anbieter „Neon“ **[prüfen]**.
 - **Alternative auf der Kommandozeile:** `vercel install neon` (https://vercel.com/docs/cli/install).
 - **Aufwand:** 2 Minuten.
 - **Regel:** Die Datenbank liegt in Frankfurt, Region `aws-eu-central-1` (ADR 0018, Weg 1). **Die Region ist in der Vercel-Doku nicht belegt [prüfen]**: Wähle sie im Dialog und lies sie im Neon-Dashboard nach.
@@ -175,7 +175,7 @@ Hochgeladene Bilder brauchen einen Speicher, der nicht auf der Festplatte des Se
 
 **3.1 Blob-Speicher anlegen**
 
-- **Ort:** Team › Projekt `igmg` › Storage **[prüfen]**, dann „Blob“ bzw. „Create Blob Store“ **[prüfen]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Storage **[prüfen]**, dann „Blob“ bzw. „Create Blob Store“ **[prüfen]**.
 - **Alternative auf der Kommandozeile:** `vercel blob create-store <name> --access private --region fra1` **[prüfen: `fra1` ist für Blob nicht belegt]**. Die Vercel-Doku nennt als Standardregion `iad1` (https://vercel.com/docs/cli/blob).
 - **Zugriff:** privat (`private`). Das schreibt ADR 0020 vor, und die CLI verlangt diese Angabe.
 - **Aufwand:** 3 Minuten.
@@ -204,7 +204,7 @@ Umgebungsvariablen sind Einstellungen, die Vercel dem Programm mitgibt, zum Beis
 
 **4.1 Wo du sie einträgst**
 
-- **Ort:** Team › Projekt `igmg` › Settings › Environment Variables **[prüfen]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › Environment Variables **[prüfen]**.
 - **Aufwand:** 4 Minuten für die Liste, dazu die Geheimnisse aus Abschnitt 4.3.
 - **Sensible Werte:** Setze bei Geheimnissen die Option „Sensitive“ **[prüfen: Menüname]**. Vercel zeigt sensible Werte danach nicht mehr an. Diese Option gibt es nur für Production und Preview, nicht für Development (https://vercel.com/docs/cli/env).
 
@@ -263,7 +263,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 **5.1 Vorschau entsteht**
 
 - **Regel:** Ein Stand auf dem Arbeitsbranch erzeugt eine Vorschau mit eigener Adresse. Das setzt die Git-Verbindung des Projekts voraus **[prüfen: Git-Integration aktiv]**.
-- **Ort:** Team › Projekt `igmg` › Deployments **[prüfen]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Deployments **[prüfen]**.
 - **Prüfpunkt:** Der Eintrag steht unter „Preview“ und hat den Status „Ready“ **[prüfen: Statusbezeichnung]**.
 
 **5.2 Build-Protokoll lesen**
@@ -275,7 +275,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 **5.3 Vercel-Schutz für die Vorschau**
 
 - **Was es ist:** Vercel Authentication schützt die Vorschau. Wer die Adresse öffnet, muss sich bei Vercel anmelden (https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication).
-- **Ort:** Team › Projekt `igmg` › Settings › Deployment Protection **[prüfen]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › Deployment Protection **[prüfen]**.
 - **Stand:** Der Schutz ist im Projekt aktiv. Die Projektabfrage vom 11.10.2026 zeigt `ssoProtection` als eingeschaltet (`_archiv/lauf-gestaltung-2026-10/berichte/E0-KUNDSCHAFTER-06.md`, Abschnitt 4).
 - **Tarif:** Ob der Schutz auf allen Tarifen zur Verfügung steht, ist **nicht belegt [prüfen]**. AUFTRAG V-09 sagt „alle Tarife“.
 - **Prüfpunkt:** Die Vorschau-Adresse im privaten Fenster öffnen. Es erscheint eine Vercel-Anmeldung, bevor die Seite kommt.
@@ -297,7 +297,7 @@ Die Variablen `VERCEL`, `VERCEL_ENV`, `VERCEL_URL`, `VERCEL_BRANCH_URL` und `VER
 
 **6.1 Domain im Projekt eintragen**
 
-- **Ort:** Team › Projekt `igmg` › Settings › Domains **[prüfen]** › „Add“.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Settings › Domains **[prüfen]** › „Add“.
 - **Eintrag:** `[deine-domain.de]`. Ob zusätzlich `www.[deine-domain.de]` eingetragen wird und wie die Weiterleitung läuft, entscheidet der Vorstand **[prüfen: Weiterleitung in Vercel]**.
 - **Aufwand:** 1 Minute.
 
@@ -364,7 +364,7 @@ Was sie bedeuten:
 - **Zeitplan:** In `/vercel.json` (Repository-Wurzel) unter `crons`, in UTC: Löschfristen um 01:00 UTC (`0 1 * * *`), Mail-Ausgang um 02:00 UTC (`0 2 * * *`) (ADR 0021; `web/docs/BETRIEB.md` § 9).
 - **Hobby-Tarif:** Der Auftrag sagt „einmal am Tag, irgendwann in der angegebenen Stunde“ (AUFTRAG V-06). **Die Vercel-Doku für diese Frequenz habe ich nicht gefunden [prüfen].** Der Tarif gehört zu ML-09 in `_archiv/lauf-gestaltung-2026-10/MENSCHEN.md`.
 - **Stand:** Eingetragen (`/vercel.json`, Zeilen 12–15).
-- **Prüfen:** Team › Projekt `igmg` › Cron Jobs **[prüfen]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
+- **Prüfen:** Team › Projekt `igmg-wetzlar` › Cron Jobs **[prüfen]**, oder auf der Kommandozeile `vercel crons ls` (https://vercel.com/docs/cli/crons). `vercel crons run <Pfad>` funktioniert nur, wenn schon eine Produktion mit dem Cron existiert.
 
 ## 10. Zusammenführen auf `main`
 
@@ -379,7 +379,7 @@ Was sie bedeuten:
 2. Du führst ihn mit „Merge“ zusammen. Das muss ohne Erzwingen gehen, also als Fast-Forward. Erzwungene Pushes auf `main` sind verboten (L-E01).
 3. Der Stand auf `main` startet ein Produktions-Deployment **(L-E01)**.
 
-- **Prüfpunkt:** Team › Projekt `igmg` › Deployments: Der neueste Eintrag steht unter „Production“ und ist „Ready“ **[prüfen: Statusbezeichnung]**.
+- **Prüfpunkt:** Team › Projekt `igmg-wetzlar` › Deployments: Der neueste Eintrag steht unter „Production“ und ist „Ready“ **[prüfen: Statusbezeichnung]**.
 - **Cache erneuern** (nur, wenn das Bauprotokoll `[bau] WARNUNG: DATABASE_URL fehlt` zeigt, der Bau also mit Beispielinhalten lief): `curl -fsS -X POST -H "Authorization: Bearer $WARTUNG_TOKEN" https://[deine-domain.de]/api/wartung/cache-erneuern` (`web/src/app/api/wartung/cache-erneuern/route.ts`). Läuft der Bau gegen die echte Datenbank, entfällt der Schritt (ADR 0019, Ziel). **Die Technik entscheidet im Einzelfall.**
 
 ## 11. Schnellprüfung der Hauptseiten (5 Minuten, Vorstand)
@@ -414,7 +414,7 @@ Zusätzlich prüfen:
 
 **Der schnelle Weg: Instant Rollback**
 
-- **Ort:** Team › Projekt `igmg` › Deployments › die letzte gute Produktion › Menü „…“ › „Instant Rollback“ **[prüfen: Menüname]**.
+- **Ort:** Team › Projekt `igmg-wetzlar` › Deployments › die letzte gute Produktion › Menü „…“ › „Instant Rollback“ **[prüfen: Menüname]**.
 - **Einschränkung auf Hobby:** Auf diesem Tarif geht nur der Rückgriff auf das unmittelbar vorige Produktions-Deployment (https://vercel.com/docs/cli/rollback). Für einen älteren Stand bleibt auf Hobby der Weg über einen Revert-Commit (L-E01). **[prüfen: ob auf Hobby ein Promote älterer Stände möglich ist]**
 - **Auf der Kommandozeile:** `vercel rollback <Adresse-oder-ID>`. Ein Rückgriff auf ältere Stände per Adresse ist in der Doku für Pro und Enterprise beschrieben **[prüfen: auf Hobby]** (https://vercel.com/docs/deployments/rollback-production-deployment).
 - **Prüfpunkt:** `https://[deine-domain.de]` zeigt wieder den alten Stand.

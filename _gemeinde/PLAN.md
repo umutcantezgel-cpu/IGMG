@@ -34,5 +34,10 @@
 | E7 | L2-E04 | Vercel-Import ohne Handgriffe (beide `vercel.json`, Wächter im Stamm) | fertig | e66ee4e, 628b981, 942b385, b5441c0 |
 | E7 | Sichtabnahme Z-04 | Runde 1 und Befundpakete 1–4, Runde 2, Feinschliff Runde 3 | fertig | ea80fee, f1b951f, b799038, a95ec09, 008cb48; daef8f6, 49622d7, 4115a5e; 4ba5a9b, d4f53e3, 75cad0a |
 | E7 | Stufe C | Endprüfung Z-01…Z-21 (Urteil `berichte/stufe-c.md`), Galerie | fertig | b241611, 39f03da |
-| E7 | N3 | Nacharbeit Stufe C: Push „Ankündigung“, Centrifugo-Namensraum, L2-E06 Audio, Wortlaut-Ausnahmen, Cockpit „Religiöse Freigaben“, Handbücher, Funktionsliste | fertig | 439e1d4, 88c40f3, c92dce5, 22640a0, eef0cfb und Abschluss-Commit „Nacharbeit Stufe C, N3“ |
-| E7 | – | weitere Nacharbeit Stufe C (N1, N2, N4), BERICHT, ABSCHLUSS | in Arbeit | |
+| E7 | N3 | Nacharbeit Stufe C: Push „Ankündigung“, Centrifugo-Namensraum, L2-E06 Audio, Wortlaut-Ausnahmen, Cockpit „Religiöse Freigaben“, Handbücher, Funktionsliste | fertig | 439e1d4, 88c40f3, c92dce5, 22640a0, eef0cfb, c812fc7, 7a61f0a, bfb3546; Merge 539ae90 |
+| E7 | N2 | Nacharbeit Stufe C: Fokus nach Senden/Speichern, Druck nur ohne reduzierte Bewegung, 0 freie Werte | fertig | 89e4c43; Merge a0a73f3 |
+| E7 | N4 | Nacharbeit Stufe C: Sicherheitsprüfung S2/S3, 11 Befunde behoben, Vier-Augen für Schutzrollen und Eltern-Bezüge, Rechte-Matrix, Gruppen-Wahrheitstafel, Lernkette | fertig | 2504b1d, 9cf309d; Merge 69ad49c |
+| E7 | N1 | Nacharbeit Stufe C: Leistung (LCP ≤ 2,5 s auf 7 Routen, JS < 180 kB, erster Tab /quran/2) | fertig | 65b51b0, cbc2ff1; Merge 033ea6f |
+| E7 | Stufe C (2) | Nachprüfung auf 033ea6f: 12 erfüllt, 2 AUSNAHME, 7 teilweise (`berichte/stufe-c-nachpruefung.md`) | fertig | 06fcf03 |
+| E7 | Nacharbeit 2 | F-40 Startseite/Wissen, F-38 Push-Rückfall, F-44 Voranmeldung ↔ Kurs, erster Tab Hadith, Suche ohne Datenbank, Player-E2E, echte E2E ohne Docker, Wiederherstellungsprobe, Unterlagen nach N4 | in Arbeit | 9757df3 (Wortlaut G-06) |
+| E7 | – | Stufe-C-Nachprüfung 2, BERICHT, ABSCHLUSS | offen | |

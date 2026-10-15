@@ -202,14 +202,18 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
   - **Ort:** VERCEL.md, Abschnitt 2 (Neon, Region Frankfurt), dann Vercel › Projekt › Settings › Environment Variables.
   - **Aufwand:** 30 Minuten.
   - **Wer:** Technik.
-  - **Schritte:** `DATABASE_URL` für Production setzen. Geheimnisse mit `pnpm geheimnisse:erzeugen` erzeugen und eintragen (mindestens `BETTER_AUTH_SECRET`, `EINGANG_SCHLUESSEL`, `EINGANG_SCHLUESSEL_ID`, `RATE_GEHEIMNIS`, `ALTCHA_GEHEIMNIS`, `CRON_SECRET`, `WARTUNG_TOKEN`; Liste in VERCEL-ENV.md). Neu bauen lassen: Der Vercel-Bau spielt die Migrationen 0000–0012 unter Sperre ein und importiert Koran, Tajwid, Übersetzungen und Bukhari. Die Beispielinhalte einmal mit `pnpm db:seed` gegen die neue Datenbank anlegen (VERCEL.md, Abschnitt 2).
+  - **Schritte:** `DATABASE_URL` für Production setzen. Geheimnisse mit `pnpm geheimnisse:erzeugen` erzeugen und eintragen (mindestens `BETTER_AUTH_SECRET`, `EINGANG_SCHLUESSEL`, `EINGANG_SCHLUESSEL_ID`, `RATE_GEHEIMNIS`, `ALTCHA_GEHEIMNIS`, `CRON_SECRET`, `WARTUNG_TOKEN`; Liste in VERCEL-ENV.md). Neu bauen lassen: Der Vercel-Bau spielt alle Migrationen aus `drizzle/meta/_journal.json` (bei der Übergabe 0000 bis mindestens 0014) unter Sperre ein und importiert Koran, Tajwid, Übersetzungen und Bukhari. Die Beispielinhalte einmal mit `pnpm db:seed` gegen die neue Datenbank anlegen (VERCEL.md, Abschnitt 2).
   - **Das siehst du, wenn es geklappt hat:** `/verwaltung/anmelden` zeigt das Anmeldeformular, und das Startklar-Cockpit (`/verwaltung/startklar`) führt die Prüfungen zur Datenbankverbindung und zu den Migrationen als erfüllt.
 
 - [ ] **G2 · Erste Verwaltungskonten mit Zwei-Faktor**
   - **Ort:** Kommandozeile mit `DATABASE_URL` der Produktion: `pnpm verwaltung:einladen --email <adresse> --name "<Name>" --rolle administration`.
   - **Aufwand:** 15 Minuten je Konto.
   - **Wer:** Vorstand benennt, Technik lädt ein.
-  - **Danach:** Imam und Hoca mit Rolle `religioese_pruefung` (MN-20, MN-24: mindestens zwei Personen, Vier-Augen-Prinzip), zwei Personen mit Rolle `kinderschutz` (MN-23, nur durch ein Konto mit Rolle `leitung` vergeben), Leitung mit Rolle `leitung`.
+  - **Danach, in dieser Reihenfolge (Vier-Augen-Prinzip, `src/lib/rechte/schutzrollen.ts`):**
+    1. **Leitung zuerst.** Die erste Person mit Rolle `leitung` wird sofort wirksam (Start-Ausnahme). Sie gilt nur, solange noch nie eine Leitung wirksam war – auch wenn diese Leitung später wieder entfernt wird, kommt die Ausnahme nicht zurück. Einladen per `pnpm verwaltung:einladen … --rolle leitung` oder unter Verwaltung › Benutzer und Rollen.
+    2. **Kinderschutz (MN-23, zwei Personen) und jede weitere Leitung:** Die Administration lädt ein oder vergibt die Rolle; das ergibt nur einen **Antrag**. Wirksam wird die Rolle erst, wenn eine **zweite Person** mit Rolle `leitung` oder `kinderschutz` zustimmt – ohne Administration im eigenen Konto, nicht die beantragende und nicht die betroffene Person. Bestätigt wird im Kasten „Bestätigen (Vier-Augen-Prinzip)“ unter Verwaltung › Gemeinde im Blick (Leitung) bzw. Verwaltung › Kinderschutz.
+    3. **Religiöse Prüfung:** Imam und Hoca mit Rolle `religioese_pruefung` (MN-20, MN-24: mindestens zwei Personen; niemand gibt frei, was er selbst verfasst hat).
+    - Der **Entzug** von `leitung`, `kinderschutz` und `religioese_pruefung` braucht ebenfalls die zweite Person; bis dahin bleibt die Rolle wirksam. Schutzrollen nie zusammen mit `administration` in einem Konto und nie an sich selbst. Jede Vergabe und jeder Antrag geht als Hinweis ohne Namen an alle Konten mit Leitung oder Kinderschutz.
   - **Das siehst du, wenn es geklappt hat:** Die Personen melden sich mit Passwort und Code aus der Authenticator-App an.
 
 - [ ] **G3 · Religiöse Inhalte prüfen und freigeben**
