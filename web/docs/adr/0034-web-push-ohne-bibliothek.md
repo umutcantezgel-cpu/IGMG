@@ -52,3 +52,10 @@
   (Nachholfenster 2 h); nur mit Recht `push.ankuendigung` der Person, die zuletzt gespeichert hat, Schalter `push` und
   VAPID; Kinder nur mit „Push für das Kind“; Nutzlast `{ art: 'ankuendigung', pfad: '/nachrichten' }` in der Sprache des
   Abos; idempotent über `push_versand` (`ankuendigung|<abo>|<ankündigung>`). Test `tests/integration/push-ankuendigung.test.ts`.
+- Späterer Beginn zweiphasig (15.10.2026, N3): Ein Takt lässt den Cache-Tag `ankuendigungen` sofort verfallen
+  (`revalidateTag(…, { expire: 0 })`, frühestens 10 s nach dem Beginn) und setzt die Marke
+  `ankuendigung-verfall|<ankündigung>|<beginn>` in `push_versand`; gesendet wird erst in einem späteren Takt, frühestens
+  30 s nach der Marke. Grund: Next 16.4 wendet `revalidateTag` im Route Handler erst nach dessen Rückkehr an
+  (`finalizeResponse` → `resolvePendingRevalidations`); in einem einzigen Takt hätten die ersten Empfänger die Mitteilung
+  schon, während `/nachrichten` noch den Stand vor dem Beginn ausliefert. Ein Verfall kurz vor Ende des Nachholfensters
+  wird bis zu 10 Minuten danach noch versendet.

@@ -14,6 +14,13 @@ export const aufrufe = {
   revalidateTag: [] as string[],
   /** Zweites Argument je `revalidateTag`-Aufruf, in derselben Reihenfolge (z. B. `{ expire: 0 }` für sofortigen Verfall) */
   revalidateProfil: [] as unknown[],
+  /**
+   * Wie Next 16.4 im Route Handler: `revalidateTag` vermerkt den Tag nur (`pendingRevalidatedTags`, spec-extension/
+   * revalidate.js); angewendet wird er erst nach der Rückkehr des Handlers (app-route/module.js `finalizeResponse` →
+   * `resolvePendingRevalidations`). `ausstehend` = vermerkt, `verfallen` = angewendet (über {@link alsRouteHandler}).
+   */
+  ausstehend: [] as string[],
+  verfallen: [] as string[],
   refresh: 0,
   nachher: [] as (() => unknown)[],
 };
@@ -28,6 +35,7 @@ vi.mock('next/cache', () => ({
   revalidateTag: (t: string, profil?: unknown) => {
     aufrufe.revalidateTag.push(t);
     aufrufe.revalidateProfil.push(profil);
+    aufrufe.ausstehend.push(t);
   },
   refresh: () => {
     aufrufe.refresh++;
@@ -69,6 +77,8 @@ export async function angemeldetAls(rollen: RollenZuweisung[] | null, zweiFaktor
   aufrufe.updateTag.length = 0;
   aufrufe.revalidateTag.length = 0;
   aufrufe.revalidateProfil.length = 0;
+  aufrufe.ausstehend.length = 0;
+  aufrufe.verfallen.length = 0;
   aufrufe.refresh = 0;
   aufrufe.nachher.length = 0;
   if (rollen === null) {
@@ -94,6 +104,18 @@ export async function angemeldetAls(rollen: RollenZuweisung[] | null, zweiFaktor
     session: { id: `sitzung-${id}`, createdAt: new Date() },
   };
   return id;
+}
+
+/**
+ * Ruft einen Route Handler so auf, wie Next ihn ausführt: Was der Handler mit `revalidateTag` vermerkt, wird erst
+ * angewendet (`aufrufe.verfallen`), nachdem er seine Antwort zurückgegeben hat – nicht schon beim Aufruf. Vermerke aus
+ * anderen Aufrufen (eigene Anfrage in Next) bleiben unberührt.
+ */
+export async function alsRouteHandler(handler: () => Promise<Response>): Promise<Response> {
+  const vorher = aufrufe.ausstehend.length;
+  const antwort = await handler();
+  aufrufe.verfallen.push(...aufrufe.ausstehend.splice(vorher));
+  return antwort;
 }
 
 /** Formulardaten aus einem Objekt (Listen als Mehrfachfelder). */

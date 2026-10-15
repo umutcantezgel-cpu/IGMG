@@ -44,8 +44,8 @@ export async function sichtbareAnkuendigungen(jetzt: Date): Promise<Ankuendigung
 
 /**
  * Block „Ankündigungen“ der Nachrichtenseite: Cache-Tag `ankuendigungen`, Ablauf stündlich. Eine Änderung in der
- * Verwaltung verfällt den Cache sofort über `inhaltGeaendert`; ein späterer Beginn über den Minutentakt vor dem
- * Ankündigungs-Push (`sendeFaelligeAnkuendigungen`, nur mit Schalter `push`); sonst wirken Beginn und Ende einer
+ * Verwaltung verfällt den Cache sofort über `inhaltGeaendert`; ein späterer Beginn über den Minutentakt, einen Takt vor
+ * dem Ankündigungs-Push (`sendeFaelligeAnkuendigungen`, nur mit Schalter `push`); sonst wirken Beginn und Ende einer
  * Laufzeit spätestens nach einer Stunde.
  */
 export async function ladeAnkuendigungen(): Promise<AnkuendigungDaten[]> {

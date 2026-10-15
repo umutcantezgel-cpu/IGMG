@@ -42,7 +42,7 @@ Die Rolle bestimmt, was du siehst. **Redaktion** darf Nachrichten, Veranstaltung
 
 **Veranstaltungen** und **Ankündigungen** funktionieren ähnlich (Verwaltung → „Veranstaltungen“, „Ankündigungen“).
 
-**Benachrichtigung bei Ankündigungen:** Ist Web Push in der Gemeinde eingeschaltet, geht beim **ersten Veröffentlichen** einer Ankündigung ein Hinweis **ohne Inhalt** („Neue Ankündigung der Moschee“) an alle, die Ankündigungen abonniert haben. Hat die Ankündigung einen späteren Beginn („Sichtbar ab“), geht der Hinweis erst dann hinaus – dafür muss der Takt des lokalen Servers laufen. Auslösen können **Redaktion** und **Administration**; die Organisationsredaktion veröffentlicht ohne Hinweis. Erneutes Veröffentlichen derselben Ankündigung innerhalb von drei Tagen sendet nicht noch einmal.
+**Benachrichtigung bei Ankündigungen:** Ist Web Push in der Gemeinde eingeschaltet, geht beim **ersten Veröffentlichen** einer Ankündigung ein Hinweis **ohne Inhalt** („Neue Ankündigung der Moschee“) an alle, die Ankündigungen abonniert haben. Hat die Ankündigung einen späteren Beginn („Sichtbar ab“), geht der Hinweis erst dann hinaus, und zwar ein bis zwei Minuten danach: Zuerst wird die Nachrichtenseite aufgefrischt, damit die Ankündigung dort schon steht, wenn jemand den Hinweis antippt. Dafür muss der Takt des lokalen Servers laufen. Auslösen können **Redaktion** und **Administration**; die Organisationsredaktion veröffentlicht ohne Hinweis. Erneutes Veröffentlichen derselben Ankündigung innerhalb von drei Tagen sendet nicht noch einmal.
 
 ## 4. Seiten bauen mit Bausteinen
 

@@ -16,7 +16,8 @@ import { vapidAusUmgebung, type VapidSchluessel } from './vapid';
  * Abo mit diesem Thema genau eine Benachrichtigung. Die Nutzlast trägt nur Art und Pfad (`/nachrichten` in der Sprache des
  * Abos); Titel und Text setzt der Service Worker aus `/api/push/texte/<sprache>` – kein Inhalt, kein Name (S-16).
  *
- * - Auslöser: das Veröffentlichen in der Verwaltung (`after()`), bei späterem Beginn der Minutentakt (Nachholfenster 2 h).
+ * - Auslöser: das Veröffentlichen in der Verwaltung (`after()`), bei späterem Beginn der Minutentakt (Nachholfenster 2 h,
+ *   zweiphasig: erst verfällt der Cache der Nachrichtenseite, gesendet wird frühestens im nächsten Takt).
  * - Recht: Wer die Ankündigung zuletzt gespeichert hat, braucht `push.ankuendigung` (Redaktion, Administration); eine
  *   Organisationsredaktion veröffentlicht ohne Benachrichtigung.
  * - Nur mit Schalter `push` und VAPID-Schlüssel; Kinder nur mit Einwilligung „Push für das Kind“ (D-07, D-11); nur Abos mit
@@ -26,6 +27,19 @@ import { vapidAusUmgebung, type VapidSchluessel } from './vapid';
  */
 const NACHHOLEN_MS = 2 * 60 * 60 * 1000;
 const THEMA = 'ankuendigung';
+
+/**
+ * Zweiphasiger Versand im Minutentakt (siehe `sendeFaelligeAnkuendigungen`):
+ * - Abstand Beginn → Verfall: länger als jeder Seitenaufbau, der den Stand vor dem Beginn gelesen hat (doppelt so lang
+ *   wie der Nachlauf in `inhaltGeaendert`, FEHLERSTATISTIK F-002).
+ * - Abstand Verfall → Versand: Next wendet `revalidateTag` erst nach der Rückkehr des Route Handlers an; ein halber Takt
+ *   liegt weit hinter dem Abschluss der Antwort und vor dem nächsten Takt.
+ * - Nachlauf: Ein Verfall kurz vor dem Ende des Nachholfensters wird auch danach noch versendet, selbst wenn einzelne
+ *   Takte ausfallen.
+ */
+const VERFALL_NACH_BEGINN_MS = 10_000;
+const VERSAND_NACH_VERFALL_MS = 30_000;
+const VERSAND_NACHLAUF_MS = 10 * 60 * 1000;
 
 type Ankuendigung = typeof schema.ankuendigung.$inferSelect;
 
@@ -111,17 +125,31 @@ export async function sendeAnkuendigungsPush(ankuendigungId: string, jetzt = new
 }
 
 /**
+ * Marke „Cache verfallen am“ in `push_versand` je Ankündigung und Beginn (`gesendetAm` = Zeitpunkt des Verfalls). Der
+ * Beginn gehört zum Schlüssel: Verschiebt die Redaktion den Beginn, braucht der neue Beginn einen eigenen Verfall. Die
+ * Marke verfällt wie die Einmal-Schlüssel nach drei Tagen (`raeumePushAuf`).
+ */
+function verfallsMarke(a: Pick<Ankuendigung, 'id' | 'sichtbarAb'>): string {
+  return `${THEMA}-verfall|${a.id}|${a.sichtbarAb?.getTime() ?? 0}`;
+}
+
+/**
  * Minutentakt: Ankündigungen mit späterem Beginn, deren Sichtbarkeit in den letzten zwei Stunden begonnen hat. Ein Takt,
  * der kurz aussetzt, holt nach; Doppelversand verhindert der Einmal-Schlüssel. Den Schalter `push` prüft der Aufrufer.
+ * Nur aus einem Route Handler aufrufen (`revalidateTag`; `updateTag` gibt es nur in Server Actions).
  *
- * Vor dem Versand verfällt der Cache-Tag `ankuendigungen` sofort (`expire: 0`, keine veralteten Daten): Der Block auf
- * `/nachrichten` hält sonst den Stand vor dem Beginn bis zu einer Stunde (`cacheLife('hours')`), und wer die Mitteilung
- * antippt, sähe die Ankündigung nicht. Das geschieht in jedem Takt des Nachholfensters, nicht nur im ersten: Ein
- * Seitenaufbau, der den Stand vor dem Beginn gelesen hat und erst danach fertig wird, hält sich so höchstens eine
- * Minute (wie der Nachlauf in `inhaltGeaendert`, FEHLERSTATISTIK F-002). Nur aus einem Route Handler aufrufen
- * (`revalidateTag`; `updateTag` gibt es nur in Server Actions).
+ * Zweiphasig, damit wer die Mitteilung antippt, die Ankündigung auf `/nachrichten` schon sieht: Der Block dort hält
+ * sonst den Stand vor dem Beginn bis zu einer Stunde (`cacheLife('hours')`).
+ * 1. Verfall: frühestens {@link VERFALL_NACH_BEGINN_MS} nach dem Beginn lässt ein Takt den Cache-Tag `ankuendigungen`
+ *    sofort verfallen (`expire: 0`) und setzt die Marke ({@link verfallsMarke}) mit dem Zeitpunkt am Ende seiner Arbeit.
+ *    Next vermerkt `revalidateTag` im Route Handler nur und wendet es nach der Rückkehr des Handlers an
+ *    (`finalizeResponse` → `resolvePendingRevalidations`); in diesem Takt wird deshalb für diese Ankündigung nicht gesendet.
+ * 2. Versand: erst ein späterer Takt, frühestens {@link VERSAND_NACH_VERFALL_MS} nach der Marke – dann ist die Antwort
+ *    des verfallenden Takts abgeschlossen und der Verfall angewendet. Fällt ein Takt aus, sendet der nächste; die Marke
+ *    bleibt bestehen.
  */
 export async function sendeFaelligeAnkuendigungen(vapid: VapidSchluessel, jetzt = new Date()): Promise<number> {
+  const start = Date.now();
   const a = schema.ankuendigung;
   const faellig = await db
     .select()
@@ -130,14 +158,40 @@ export async function sendeFaelligeAnkuendigungen(vapid: VapidSchluessel, jetzt 
       and(
         eq(a.status, 'veroeffentlicht'),
         isNull(a.imPapierkorbSeit),
-        gt(a.sichtbarAb, new Date(jetzt.getTime() - NACHHOLEN_MS)),
+        gt(a.sichtbarAb, new Date(jetzt.getTime() - NACHHOLEN_MS - VERSAND_NACHLAUF_MS)),
         lte(a.sichtbarAb, jetzt),
         or(isNull(a.laeuftAb), gt(a.laeuftAb, jetzt)),
       ),
     );
   if (!faellig.length) return 0;
-  revalidateTag(TAG.ankuendigungen, { expire: 0 });
+  const v = schema.pushVersand;
+  const marken = new Map(
+    (
+      await db
+        .select()
+        .from(v)
+        .where(inArray(v.schluessel, faellig.map(verfallsMarke)))
+    ).map((m) => [m.schluessel, m.gesendetAm]),
+  );
   let gesendet = 0;
-  for (const z of faellig) gesendet += await versende(z, vapid, jetzt);
+  const ohneVerfall: Ankuendigung[] = [];
+  for (const z of faellig) {
+    const verfallenAm = marken.get(verfallsMarke(z));
+    const beginn = z.sichtbarAb?.getTime() ?? 0;
+    if (verfallenAm) {
+      if (verfallenAm.getTime() <= jetzt.getTime() - VERSAND_NACH_VERFALL_MS) gesendet += await versende(z, vapid, jetzt);
+    } else if (beginn <= jetzt.getTime() - VERFALL_NACH_BEGINN_MS && beginn > jetzt.getTime() - NACHHOLEN_MS) {
+      ohneVerfall.push(z);
+    }
+  }
+  if (ohneVerfall.length) {
+    revalidateTag(TAG.ankuendigungen, { expire: 0 });
+    // Ende dieses Takts auf der Uhr von `jetzt`: Ein Versand anderer Ankündigungen oben verlängert den Takt
+    const verfallenAm = new Date(jetzt.getTime() + (Date.now() - start));
+    await db
+      .insert(v)
+      .values(ohneVerfall.map((z) => ({ schluessel: verfallsMarke(z), gesendetAm: verfallenAm })))
+      .onConflictDoNothing();
+  }
   return gesendet;
 }
