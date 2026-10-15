@@ -78,7 +78,7 @@ Gemeinsame Schalter: Der Konzept-Hinweis (Modal beim ersten Besuch, `localStorag
 |---|---|---|
 | `einzelbild.mjs` | Ein Bild einer Seite, JPEG 70 (PNG mit `--png`), höchstens 1440 px breit | `node _gemeinde/werkzeuge/einzelbild.mjs / --breite 1440`<br>`node …/einzelbild.mjs /gebetszeiten --breite 390 --voll --aus /tmp/g.jpg` |
 | `bildsatz.mjs` | Je Route 390×844, 768×1024, 1440×900: ein Ausschnitt je Bildschirmhöhe (kein fullPage), Überlauf- und Textkürzungsprüfung | `node …/bildsatz.mjs --routen …/routen-hauptansichten.json --reduziert` |
-| `a11y.mjs` | axe mit wcag2a/aa, wcag21a/aa, wcag22aa; Zahl je Schwere | `node …/a11y.mjs --routen …/routen-tr.json --breite 390` |
+| `a11y.mjs` | axe mit wcag2a/aa, wcag21a/aa, wcag22aa; Zahl je Schwere. Zeigt eine Route die Fehlerseite (nicht gefunden, Fehlergrenze, auch bei HTTP 200) oder HTTP ≥ 400, zählt sie als FEHLER statt 0/0 (Exit-Code 1); absichtliche Fehlerseiten-Routen tragen `"fehlerseite": true` | `node …/a11y.mjs --routen …/routen-tr.json --breite 390` |
 | `lighthouse.mjs` | Lighthouse mobil, je Lauf „devtools“ (maßgeblich) und „simulate“, Median aus `--laeufe` (Standard 3), LCP-Element je Lauf; `--wiederbesuch`: Merker des Konzept-Hinweises gesetzt, leerer HTTP-Cache (ohne: Erstbesuch) | `node …/lighthouse.mjs --routen …/routen-hauptansichten.json --laeufe 3 [--wiederbesuch]` |
 | `bewegung.mjs` | Reduzierte Bewegung, fünf Einzelbilder, Bildrate unter CPU 4× | `node …/bewegung.mjs --route /veranstaltungen --dauer 2000 [--scrollen]` |
 | `freie-werte.mjs` | Tailwind-Klammerwerte, Hex-Farben, Farbfunktionen, px-Literale in Style-Objekten | `node …/freie-werte.mjs` (alle `web/src`)<br>`node …/freie-werte.mjs --seit 9ebb4bc` |
