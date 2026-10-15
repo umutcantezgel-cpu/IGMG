@@ -52,6 +52,8 @@ export type AuditAktion =
   | 'konto.einwilligung_erteilt'
   | 'konto.einwilligung_widerrufen'
   | 'konto.kinderpasswort_gesetzt'
+  // F-38 (ADR 0034 Nr. 6): tägliche Mail-Zusammenfassung ohne Inhalte bestellt, geändert oder abbestellt
+  | 'konto.zusammenfassung_geaendert'
   | 'inhalt.angelegt'
   | 'inhalt.geaendert'
   | 'inhalt.veroeffentlicht'
@@ -95,6 +97,8 @@ export type AuditAktion =
   | 'gruppe.leitung'
   | 'gruppe.mitglieder'
   | 'gruppe.termine'
+  // Lehrkraft: Termin fällt aus bzw. findet wieder statt (Grundlage für „Neues aus dem Unterricht“, F-38)
+  | 'unterricht.termin_geaendert'
   | 'lernende.aufgenommen'
   | 'lernende.gelesen'
   | 'lernende.geaendert'

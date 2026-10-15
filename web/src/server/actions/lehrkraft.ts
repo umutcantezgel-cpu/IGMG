@@ -40,7 +40,8 @@ const ausfallSchema = z.object({ terminId: uuid, ausgefallen: z.enum(['1', '0'])
 
 /**
  * Termin ausfallen lassen oder wieder stattfinden lassen (Leitung der Gruppe); die Seite rendert neu. Schüler und Eltern
- * mit dem Thema „Unterricht“ bekommen danach einen Push ohne Inhalt (ADR 0034).
+ * mit dem Thema „Unterricht“ bekommen danach einen Push ohne Inhalt (ADR 0034); der Audit-Eintrag ist zugleich die Quelle
+ * für Mail-Zusammenfassung und Hinweis in Mein Bereich (Rückfall, F-38).
  */
 export async function terminAusfallSetzen(fd: FormData): Promise<void> {
   const { konto, kontext } = await lehrkraftKontext();
@@ -56,6 +57,15 @@ export async function terminAusfallSetzen(fd: FormData): Promise<void> {
     .select({ gruppeId: schema.unterrichtstermin.gruppeId })
     .from(schema.unterrichtstermin)
     .where(eq(schema.unterrichtstermin.id, p.data.terminId));
+  // Grundlage für „Neues aus dem Unterricht“ in der Mail-Zusammenfassung und im Hinweis (F-38): nur IDs, keine Inhalte
+  if (t)
+    await protokolliere({
+      benutzerId: konto.benutzerId,
+      aktion: 'unterricht.termin_geaendert',
+      zielTyp: 'gruppe',
+      zielId: t.gruppeId,
+      details: { termin: p.data.terminId, ausgefallen: p.data.ausgefallen === '1' },
+    });
   if (t)
     after(() =>
       sendeGruppenPush(

@@ -5,6 +5,12 @@ import { db, schema } from '@/lib/db';
 import { entschluessele, verschluessele } from '@/lib/krypto';
 import { AKTIONEN, EINGANG_AKTION, MATRIX, ROLLEN, type Aktion, type OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { baueNewsletterMail, NEWSLETTER_EMPFAENGER, newsletterEmpfaenger } from '@/lib/newsletter/mails';
+import {
+  baueZusammenfassungsMail,
+  ZUSAMMENFASSUNG_EMPFAENGER,
+  ZUSAMMENFASSUNG_VORLAGE,
+  zusammenfassungEmpfaenger,
+} from '@/lib/push/zusammenfassung-mail';
 import { basisUrl } from '@/lib/seo/metadaten';
 import { BEREICHE } from '../../../messages/bereiche';
 import de from '../../../messages/de.json';
@@ -41,6 +47,8 @@ export const SCHUTZROLLEN_EMPFAENGER = 'schutzrollen:';
 async function empfaenger(an: string): Promise<string[]> {
   // Newsletter (AUFTRAG 3.10): Adresse erst beim Versand und nur bei bestätigter Anmeldung
   if (an.startsWith(NEWSLETTER_EMPFAENGER)) return newsletterEmpfaenger(an.slice(NEWSLETTER_EMPFAENGER.length));
+  // Tägliche Zusammenfassung (F-38): Adresse erst beim Versand und nur, solange sie bestellt und zustellbar ist
+  if (an.startsWith(ZUSAMMENFASSUNG_EMPFAENGER)) return zusammenfassungEmpfaenger(an.slice(ZUSAMMENFASSUNG_EMPFAENGER.length));
   if (an === SCHUTZROLLEN_EMPFAENGER) {
     const zeilen = await db
       .selectDistinct({ email: schema.user.email })
@@ -173,6 +181,8 @@ async function kontaktZeile(): Promise<{ adresse: string; email: string }> {
 
 async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt, eingangId: string | null) {
   if (istKontoVorlage(vorlage)) return kontoMailBauen(vorlage, sprache, inhalt);
+  // Tägliche Zusammenfassung (ADR 0034 Nr. 6): nur Bereich und Anzahl, keine Namen, keine Inhalte
+  if (vorlage === ZUSAMMENFASSUNG_VORLAGE) return baueZusammenfassungsMail(sprache, inhalt.daten);
   const newsletter = await baueNewsletterMail(vorlage, sprache, inhalt.daten);
   if (newsletter) return newsletter;
   if (vorlage === 'passwort') {

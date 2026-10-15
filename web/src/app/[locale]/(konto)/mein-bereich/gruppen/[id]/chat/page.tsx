@@ -146,6 +146,7 @@ export default async function ChatSeite({ params, searchParams }: PageProps<'/[l
         ...(wahl === 'eltern' ? { query: { kanal: wahl } } : {}),
       }}
       zwischen={[{ label: tu('meta.gruppe'), ziel: { pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } } }]}
+      ohneKanal={kanal.kanalId}
     >
       <ZurueckLink ziel={{ pathname: '/mein-bereich/gruppen/[id]', params: { id: g.id } }} text={ts('zurGruppe')} />
       {erlaubt.length > 1 ? (

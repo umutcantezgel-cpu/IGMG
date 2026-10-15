@@ -62,8 +62,11 @@ export function ankuendigungsPfad(sprache: string): string {
   return pfadFuer('/nachrichten', s);
 }
 
-/** Darf die Person, die zuletzt gespeichert hat, eine Benachrichtigung auslösen? Gesperrte Konten nie. */
-async function darfBenachrichtigen(benutzerId: string | null): Promise<boolean> {
+/**
+ * Darf die Person, die zuletzt gespeichert hat, eine Benachrichtigung auslösen? Gesperrte Konten nie. Gilt auch für die
+ * Mail-Zusammenfassung und den Hinweis in Mein Bereich (Rückfall, ADR 0034 Nr. 6).
+ */
+export async function darfBenachrichtigen(benutzerId: string | null): Promise<boolean> {
   if (!benutzerId) return false;
   const [person] = await db.select({ gesperrtAm: schema.user.gesperrtAm }).from(schema.user).where(eq(schema.user.id, benutzerId)).limit(1);
   if (!person || person.gesperrtAm) return false;
