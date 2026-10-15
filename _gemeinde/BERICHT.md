@@ -88,4 +88,17 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 
 ## Galerie
 
-[folgt nach der Nachabnahme]
+Aufnahmen aus der Sichtabnahme (Vorschau mit Beispieldaten, 14.10.2026), Handy 390 px und Desktop 1440 px. Namen und
+Gruppen sind erfundene Beispielkonten; Angaben in eckigen Klammern sind Platzhalter für die Gemeinde.
+
+| | |
+|---|---|
+| ![Startseite, Desktop](galerie/01-startseite-1440.jpg) Startseite mit Tagesbogen | ![Startseite, Handy](galerie/02-startseite-390.jpg) Startseite auf dem Handy |
+| ![Surenansicht](galerie/03-surenansicht-1440.jpg) Sure Al-Fatiha mit Tajwid-Farben | ![Wortkarte](galerie/04-surenansicht-wortkarte-390.jpg) Wortkarte auf dem Handy |
+| ![Tajwid-Leiste](galerie/05-surenansicht-tajwid-leiste-1440.jpg) Tajwid-Regel in der Seitenleiste | ![Koran-Übersicht](galerie/06-koran-uebersicht-1440.jpg) Koran-Übersicht mit Cüz-Ring |
+| ![Hadith-Buch](galerie/07-hadith-buch-1440.jpg) Sahih al-Bukhari, Buch 2 | ![Hadith-Buch, Handy](galerie/08-hadith-buch-390.jpg) Sprungleiste auf dem Handy |
+| ![Elifbe](galerie/09-elifbe-buchstabe-390.jpg) Elifbe: Buchstabe Be mit Schreibweg | ![Lernen](galerie/10-lernen-hub-1440.jpg) Lernweg von Elifbe bis Hifz |
+| ![Mein Ort](galerie/11-gebetszeiten-mein-ort-390.jpg) Gebetszeiten „Mein Ort“ mit Qibla | ![Projekte](galerie/12-projekte-fertiggestellt-1440.jpg) Die neue Moschee ist eröffnet |
+| ![Schüler](galerie/13-schueler-start-390.jpg) Mein Bereich eines Kindes | ![Eltern](galerie/14-eltern-kind-390.jpg) Eltern: Termin, Anwesenheit, Fortschritt |
+| ![Anwesenheit](galerie/15-anwesenheit-390.jpg) Lehrkraft: Anwesenheit in Sekunden | ![Gruppenchat](galerie/16-gruppenchat-390.jpg) Moderierter Gruppenchat |
+| ![Seiten-Editor](galerie/17-seiten-editor-1440.jpg) Verwaltung: Seiten mit Bausteinen | ![Anzeige](galerie/18-verwaltung-anzeige-1440.jpg) Verwaltung: Folien für die Anzeige |
