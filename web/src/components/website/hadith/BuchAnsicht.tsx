@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { ERSTER_TAB } from '@/components/website/erster-tab';
 import { morphStil } from '@/components/website/morph';
 import { NachOben } from '@/components/website/NachOben';
 import { PageHeader } from '@/components/website/PageHeader';
@@ -27,7 +28,7 @@ import { TeilNavigation } from './TeilNavigation';
  * steht als eine Zeile (X-8); die Liste ist in Abschnitte zu je 10 gegliedert, die Sprungleiste führt zu ihnen – bis lg
  * in der kompakten Leiste unter dem Kopf, ab lg in der mitlaufenden Spalte (H-6). Runde 3 (HB-8): Bis lg folgt der Liste
  * mehr Abstand (mit dem Rasterabstand 88 px) als „Nach oben“ unten einnimmt (64 px, ab md 80 px) – das Ende der Liste
- * lässt sich frei lesen.
+ * lässt sich frei lesen. Den ersten Tab übernimmt wie im Koran-Leser ein kleines Inline-Skript (`ERSTER_TAB`, Z-08).
  */
 export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
   const sprache = (await getLocale()) as Locale;
@@ -60,6 +61,8 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
         ...(teil > 1 ? [{ label: kennung, ziel: buchTeilZiel(b.nr, 1) }, { label: t('teil', { teil }) }] : [{ label: kennung }]),
       ]}
     >
+      {/* Festes Skript ohne Nutzereingaben: erster Tab ohne Dokumentsuche durch die Karten mit content-visibility (Z-08) */}
+      <script dangerouslySetInnerHTML={{ __html: ERSTER_TAB }} />
       <PageHeader
         oben={
           <Link

@@ -1,10 +1,11 @@
 /**
- * Erster Tab auf den Leseseiten (Z-08). Jeder Vers trägt `content-visibility: auto` (quran.css), damit lange Suren
- * schnell zeichnen. Ohne Startpunkt der Fokus-Navigation (noch kein Fokus, kein Klick, kein Anker in der Adresse) sucht
- * Chromium beim ersten Tab das ganze Dokument nach dem nächsten Ziel ab und erzwingt dabei für jeden nicht gezeichneten
- * Vers Stil und Layout einzeln: Al-Baqara (286 Verse) stand so bei CPU 4× rund 6–7 s still. Gemessen in N1: Ohne
- * `tabindex` an den Versen bleibt es gleich teuer, ohne `content-visibility` fällt es weg, kostet dann aber beim Laden
- * Sekunden an langen Aufgaben.
+ * Erster Tab auf den Leseseiten (Z-08): Koran-Leser (LeserRahmen) sowie Buch- und Teilseiten der Hadith-Sammlung
+ * (BuchAnsicht). Jeder Vers (quran.css) und jede Hadith-Karte (HadithListe) trägt `content-visibility: auto`, damit lange
+ * Suren und Bücher schnell zeichnen. Ohne Startpunkt der Fokus-Navigation (noch kein Fokus, kein Klick, kein Anker in der
+ * Adresse) sucht Chromium beim ersten Tab das ganze Dokument nach dem nächsten Ziel ab und erzwingt dabei für jeden nicht
+ * gezeichneten Vers bzw. jede Karte Stil und Layout einzeln: Al-Baqara (286 Verse) stand so bei CPU 4× rund 6–7 s still,
+ * eine Hadith-Seite mit 100 Karten rund 1 s (Endprüfung Stufe C). Gemessen in N1: Ohne `tabindex` an den Versen bleibt es
+ * gleich teuer, ohne `content-visibility` fällt es weg, kostet dann aber beim Laden Sekunden an langen Aufgaben.
  *
  * Deshalb übernimmt dieses Skript nur genau diesen ersten Tab: Es fokussiert das erste (mit Umschalt das letzte)
  * erreichbare Element in Dokumentreihenfolge – dasselbe Ziel wie der Browser (das erste ist der Sprunglink) – und

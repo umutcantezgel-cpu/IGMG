@@ -1,11 +1,11 @@
 import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import { schriftQuran } from '@/app/schriften-quran';
+import { ERSTER_TAB } from '@/components/website/erster-tab';
 import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
 import type { SichtbareAusgabe } from '@/lib/quran/ausgaben';
 import { ladeRezitationen } from '@/server/queries/quran';
-import { ERSTER_TAB } from './erster-tab';
 import type { LeserTexte } from './leser-typen';
 import { QuranLeser } from './QuranLeser';
 import './quran.css';
