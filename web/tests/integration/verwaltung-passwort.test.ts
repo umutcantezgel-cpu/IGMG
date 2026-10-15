@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import { eq } from 'drizzle-orm';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import { schema } from '@/lib/db';
@@ -25,6 +26,10 @@ describe('Passwort vergessen', () => {
     expect((await actions.passwortVergessen({}, formular({ email: 'keine' }))).feldFehler).toEqual({
       email: 'passwortVergessen.fehlerEmail',
     });
+    // S3: Der Link wird nur für Konten der Verwaltung angefordert
+    const id = randomUUID();
+    await db.insert(schema.user).values({ id, name: 'Testperson Eins', email: 'testperson.eins@example.test', emailVerified: true });
+    await db.insert(schema.rolleZuweisung).values({ benutzerId: id, rolle: 'redaktion' });
     let aufruf: unknown = null;
     api.requestPasswordReset = async (o) => {
       aufruf = o;
@@ -38,11 +43,18 @@ describe('Passwort vergessen', () => {
     expect(aufruf).toMatchObject({
       body: { email: 'testperson.eins@example.test', redirectTo: expect.stringMatching(/\/verwaltung\/passwort-neu$/) },
     });
+    // Scheitert Better Auth, bleibt es bei derselben Antwort; ohne Verwaltungskonto wird gar nichts angefordert
+    let fehlversuche = 0;
     api.requestPasswordReset = async () => {
+      fehlversuche++;
       throw new Error('kaputt');
     };
-    expect(await actions.passwortVergessen({}, formular({ email: 'unbekannt@example.test' }))).toEqual({ ok: true });
+    expect(await actions.passwortVergessen({}, formular({ email: 'testperson.eins@example.test' }))).toEqual({ ok: true });
     await expect(aufrufe.nachher[1]()).resolves.toBeUndefined();
+    expect(fehlversuche).toBe(1);
+    expect(await actions.passwortVergessen({}, formular({ email: 'unbekannt@example.test' }))).toEqual({ ok: true });
+    await expect(aufrufe.nachher[2]()).resolves.toBeUndefined();
+    expect(fehlversuche).toBe(1);
   });
 
   it('Link-Mail: verschlüsselt im Ausgang für aktive Konten, keine für gesperrte', async () => {

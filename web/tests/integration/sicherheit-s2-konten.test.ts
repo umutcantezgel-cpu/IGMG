@@ -440,3 +440,15 @@ describe('S2b-3: Schutzrollen nur im Vier-Augen-Prinzip (M-2)', () => {
     ).toEqual(['redaktion']);
   });
 });
+
+describe('Neue Mails (Hinweis an Schutzrollen, Elternbezug, Kinderpasswort) lassen sich bauen und versenden', () => {
+  it('alle geplanten Mails gehen ohne Fehler hinaus (Datei-Transport)', async () => {
+    const { versendeOffeneMails } = await import('@/lib/mail/ausgang');
+    const vorlagen = new Set((await db.select().from(schema.mailAusgang)).map((m) => m.vorlage));
+    for (const v of ['hinweis', 'konto-elternbezug', 'konto-kinderpasswort']) expect(vorlagen.has(v), v).toBe(true);
+    const r = await versendeOffeneMails(500);
+    expect(r.fehler).toBe(0);
+    const offen = (await db.select().from(schema.mailAusgang)).filter((m) => !m.gesendetAm);
+    expect(offen.map((m) => m.vorlage)).toEqual([]);
+  });
+});

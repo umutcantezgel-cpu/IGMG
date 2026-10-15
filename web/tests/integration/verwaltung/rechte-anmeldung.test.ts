@@ -82,8 +82,15 @@ const EINRICHTUNG: { aktion: string; aufruf: (a: Aktionen) => Promise<unknown>; 
 /** Sitzungen ohne zweiten Faktor: die Einrichtung ist genau dafür da (K-06 „Einrichtung ist Pflicht“). */
 const OHNE_ZWEITEN_FAKTOR: Person[] = [
   { name: 'Redaktion ohne zweiten Faktor', rollen: [{ rolle: 'redaktion' }], zweiFaktor: false },
-  { name: 'ohne Rolle und ohne zweiten Faktor', rollen: [], zweiFaktor: false },
+  { name: 'Administration ohne zweiten Faktor', rollen: [{ rolle: 'administration' }], zweiFaktor: false },
 ];
+
+/**
+ * S3: Die Einrichtung unter /verwaltung gilt nur für Konten der Verwaltung (Rolle oder offener Antrag auf eine
+ * Schutzrolle). Ein Konto ohne jede Verwaltungsrolle (z. B. Gemeinde-Konto) richtet den zweiten Faktor im eigenen
+ * Bereich ein und wird hier zur Anmeldung geschickt.
+ */
+const OHNE_VERWALTUNGSROLLE: Person = { name: 'ohne Rolle und ohne zweiten Faktor', rollen: [], zweiFaktor: false };
 
 describe('Zwei-Faktor-Einrichtung', () => {
   for (const f of EINRICHTUNG) {
@@ -102,6 +109,12 @@ describe('Zwei-Faktor-Einrichtung', () => {
         expect(a.wert).toMatchObject(f.erwartet);
       });
     }
+
+    it(`${f.aktion} · ${OHNE_VERWALTUNGSROLLE.name}: Weiterleitung zur Anmeldung (S3)`, async () => {
+      await anmelden(OHNE_VERWALTUNGSROLLE);
+      const a = await ausgang(async () => f.aufruf(await ladeAktionen()));
+      expect(a.weiter, 'Ohne Verwaltungsrolle keine Einrichtung unter /verwaltung').toBe('/verwaltung/anmelden');
+    });
   }
 });
 

@@ -182,7 +182,12 @@ export async function rollenSpeichern(_vorher: BenutzerZustand, fd: FormData): P
         zielId: konto.id,
         details: {
           vorher: konto.rollen.map((r) => (r.organisation ? `${r.rolle}:${r.organisation}` : r.rolle)).join(','),
-          nachher: neu.map((r) => (r.organisation ? `${r.rolle}:${r.organisation}` : r.rolle)).join(','),
+          // Wirksame Rollen; beantragte Schutzrollen stehen getrennt (eigener Audit-Eintrag „rolle_beantragt“)
+          nachher: neu
+            .filter((r) => !beantragt.includes(r.rolle))
+            .map((r) => (r.organisation ? `${r.rolle}:${r.organisation}` : r.rolle))
+            .join(','),
+          ...(beantragt.length ? { beantragt: beantragt.join(',') } : {}),
         },
       },
       tx,
