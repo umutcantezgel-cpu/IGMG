@@ -43,3 +43,7 @@
   (Kanäle `chat:<kanal-id>` wie `kanalName`); Abonnieren nur mit Abo-Token, alle `allow_*` aus, ohne Anwesenheit und
   Verlauf. Vorher wies Centrifugo jedes Abo mit „102 unknown channel“ ab. Prüfung: `tests/unit/echtzeit.test.ts` (Datei)
   und `betrieb/lokal/echtzeit/pruefen.mjs` (laufender Centrifugo; am 15.10. gegen v6.5.1 lokal 8/8 bestanden).
+- Hinweis „Neues“ in Mein Bereich (15.10.2026, Nacharbeit 2, F-38, ADR 0034 Nr. 6): derselbe Abruf-Gedanke für die
+  Übersicht (`src/lib/echtzeit/takt.ts`: `chatAbstand` unverändert, `uebersichtAbstand` 30/60 s) über
+  `GET /api/mein/neues`; das Signal abonniert dort alle lesbaren Kanäle über eine Verbindung (`src/lib/echtzeit/signal.ts`,
+  auch vom Chat genutzt). Fällt das Signal aus, fragt der Browser neue Tokens höchstens alle 5 Minuten an.

@@ -39,6 +39,12 @@ In der Gruppe siehst du die Lernenden (mit Abmeldungen der Eltern: „Abgemeldet
 
 Die Termine legt die **Bildungsabteilung** als Serie nach dem Stundenplan der Gruppe an (Standard: die nächsten 8 Wochen). Du musst sie nicht anlegen.
 
+**Fällt ein Termin aus** („Ausfallen lassen“), erfahren es Schüler und Eltern: mit Mitteilung aufs Gerät, wenn sie das Thema „Unterricht“ gewählt haben, und in ihrer täglichen **Zusammenfassung per E-Mail**, wenn sie diese bestellt haben – dort steht nur „Aus einer Ihrer Gruppen gibt es Neues zum Unterricht“, kein Datum, kein Name.
+
+**Neues in „Mein Bereich“:** Solange du „Mein Bereich“ geöffnet hast, erscheint unten ein kurzer Hinweis, wenn in deinen Gruppen neue Nachrichten oder Neuigkeiten aus dem Unterricht eingehen (nur Anzahl, mit Link). Deine eigenen Nachrichten und Änderungen zählen nicht. Unter „Benachrichtigungen“ kannst du ihn zusätzlich als Mitteilung des Browsers einschalten und eine **Zusammenfassung per E-Mail** (täglich, ohne Inhalte) bestellen.
+
+**Voranmeldungen mit Kurs:** Melden Eltern ihr Kind über „Für diesen Kurs voranmelden“ an, sieht die Bildungsabteilung den Kurs in der Voranmeldung und bei der Aufnahme ist die Gruppe dieses Kurses schon vorbelegt.
+
 ## 4. Anwesenheit in 20 Sekunden
 
 So geht es:
@@ -90,7 +96,7 @@ Die Bewertung ist eine Hilfe für dich und die Eltern, kein Wettbewerb.
 
 ## 7. Mitteilungen an die Eltern
 
-Einen eigenen „Elternbrief“ gibt es nicht. Mitteilungen an die Eltern deiner Gruppe schreibst du im **Elternkanal** (Gruppe → „Elternkanal“). Eltern, die Benachrichtigungen eingeschaltet haben, bekommen einen Hinweis **ohne Inhalt** (Push); eine E-Mail geht nicht hinaus. Schreibe keine Namen anderer Kinder hinein.
+Einen eigenen „Elternbrief“ gibt es nicht. Mitteilungen an die Eltern deiner Gruppe schreibst du im **Elternkanal** (Gruppe → „Elternkanal“). Eltern, die Benachrichtigungen eingeschaltet haben, bekommen einen Hinweis **ohne Inhalt** (Push). Eltern, die die **Zusammenfassung per E-Mail** bestellt haben, erfahren höchstens einmal am Tag, dass es in ihrer Gruppe neue Nachrichten gibt – ohne Text und ohne Namen; deine Nachricht selbst geht nie per E-Mail hinaus. Schreibe keine Namen anderer Kinder hinein.
 
 ## 8. Chat und Moderation
 

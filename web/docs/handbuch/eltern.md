@@ -17,7 +17,7 @@ Sie sehen **nur Ihr eigenes Kind**. Andere Eltern und Kinder sehen Ihre Angaben 
 
 ## 2. Das Konto anlegen
 
-1. Nach der Aufnahme der Voranmeldung bekommen Sie eine **E-Mail mit einer Einladung**. [Bildschirmfoto folgt]
+1. Nach der Aufnahme der Voranmeldung bekommen Sie eine **E-Mail mit einer Einladung**. [Bildschirmfoto folgt] (Tipp für die Voranmeldung: Unter „Bildung“ → „Korankurse“ führt „Für diesen Kurs voranmelden“ in der Karte des Kurses direkt zum Formular; oben steht dann der gewählte Kurs.)
 2. Tippen Sie auf den **Link** in der E-Mail.
 3. Legen Sie ein **Passwort** fest: mindestens **12 Zeichen**. Ein Satz aus mehreren Wörtern ist gut zu merken und sicher.
 4. Bestätigen Sie Ihre E-Mail-Adresse (der Link in der E-Mail tut das).
@@ -102,7 +102,7 @@ Der **Elternkanal** ist ein moderierter Chat für die Eltern der Gruppe und die 
 - Nachrichten werden nach 90 Tagen gelöscht.
 - Etwas Unpassendes? Tippen Sie auf „Melden“. Die Lehrkräfte und die Ansprechperson Kinderschutz kümmern sich darum.
 
-**Benachrichtigung:** Haben Sie unter „Mein Bereich“ → „Benachrichtigungen“ das Thema „Neue Nachrichten in meiner Gruppe oder im Elternkanal“ gewählt, kommt bei neuen Nachrichten eine Push-Nachricht – **nie** mit dem Inhalt, höchstens eine je 10 Minuten. Eine Erinnerung per E-Mail gibt es nicht.
+**Benachrichtigung:** Haben Sie unter „Mein Bereich“ → „Benachrichtigungen“ das Thema „Neue Nachrichten in meiner Gruppe oder im Elternkanal“ gewählt, kommt bei neuen Nachrichten eine Push-Nachricht – **nie** mit dem Inhalt, höchstens eine je 10 Minuten. Statt oder zusätzlich dazu können Sie dort eine **Zusammenfassung per E-Mail** bestellen (einmal am Tag, nur wenn es Neues gibt, ohne Inhalte – siehe 9). Ist „Mein Bereich“ gerade offen, erscheint unten ein kurzer Hinweis.
 
 ## 8. Der Chat Ihres Kindes
 
@@ -120,6 +120,17 @@ Der **Gruppenchat** gehört den Kindern und den Lehrkräften. **Sie können ihn 
 ## 9. Benachrichtigungen (Push) für Sie
 
 Freiwillig, unter „Mein Bereich“ → „Benachrichtigungen“. Sie wählen die Themen: Gebetszeiten, wichtige Ankündigungen der Moschee, neue Nachrichten in Ihrer Gruppe oder im Elternkanal, Neuigkeiten aus dem Unterricht. Die Nachrichten enthalten nie Namen oder Inhalte. Auf iPhone und iPad müssen Sie die Seite zuerst zum Home-Bildschirm hinzufügen. Die Benachrichtigungen gibt es erst, wenn die Gemeinde sie einschaltet.
+
+**Zusammenfassung per E-Mail (Rückfall).** Kommen Mitteilungen aufs Gerät nicht an oder möchten Sie keine, bestellen Sie im Abschnitt „Zusammenfassung per E-Mail“ eine tägliche E-Mail. [Bildschirmfoto folgt]
+
+1. Häkchen bei den Themen setzen: wichtige Ankündigungen der Moschee, neue Nachrichten in Ihrer Gruppe oder im Elternkanal, Neuigkeiten aus dem Unterricht (Gebetszeiten gibt es hier nicht).
+2. „Auswahl speichern“ tippen. Oben im Abschnitt steht dann „bestellt“.
+3. Die E-Mail kommt **höchstens einmal am Tag** und nur, wenn es seit der letzten Neues gibt. Sie nennt nur den Bereich und die Anzahl, zum Beispiel „In 2 Ihrer Gruppen gibt es neue Nachrichten“ – **keine Namen, keine Titel, keine Inhalte**. Lesen können Sie alles in „Mein Bereich“.
+4. **Abbestellen:** alle Häkchen entfernen und speichern – oder in der E-Mail auf „Abbestellen oder Themen ändern“ tippen.
+
+Die Zusammenfassung geht an die **bestätigte** E-Mail-Adresse Ihres Kontos. Kinderzugänge bekommen keine.
+
+**Hinweis in „Mein Bereich“.** Solange „Mein Bereich“ geöffnet ist, erscheint unten ein kurzer Hinweis, wenn es Neues gibt (zum Beispiel „Neue Nachrichten in einer Gruppe“) – mit Link, ohne Inhalte. Mit dem Kreuz schließen Sie ihn. Unter „Hinweis in Mein Bereich“ können Sie ihn auf diesem Gerät zusätzlich als **Mitteilung des Browsers** zeigen lassen; der Browser fragt dann einmal um Erlaubnis.
 
 ## 10. Ihre Rechte
 
