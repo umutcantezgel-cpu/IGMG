@@ -60,6 +60,26 @@ export async function Seitenrahmen({
   const { konzepthinweis } = await ladeEinstellung('allgemein');
   return (
     <>
+      {/* Konzept-Hinweis vor dem Sprunglink: Nach dem Schließen (ohne vorherigen Fokus) setzt der Browser die
+          Tab-Reihenfolge am Dialog fort – so am Seitenanfang beim Sprunglink statt hinter der Fußzeile (Z-08) */}
+      {konzepthinweis ? (
+        <KonzeptHinweis
+          texte={{
+            titelDe: th('titelDe'),
+            titelTr: th('titelTr'),
+            textDe: th('textDe'),
+            textTr: th('textTr'),
+            blockDe: th('blockDe'),
+            blockTr: th('blockTr'),
+            knopfDe: th('knopfDe'),
+            knopfTr: th('knopfTr'),
+            einmalDe: th('einmalDe'),
+            einmalTr: th('einmalTr'),
+            punkteDe: [th('de1'), th('de2'), th('de3'), th('de4')],
+            punkteTr: [th('tr1'), th('tr2'), th('tr3'), th('tr4')],
+          }}
+        />
+      ) : null}
       <a
         href="#inhalt"
         className="sr-only z-(--ebene-sprung) rounded-md bg-gruen-950 px-4 py-3 font-bold text-weiss focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:text-weiss"
@@ -79,24 +99,6 @@ export async function Seitenrahmen({
       </main>
       <Footer />
       <SeitenUebergang />
-      {konzepthinweis ? (
-        <KonzeptHinweis
-          texte={{
-            titelDe: th('titelDe'),
-            titelTr: th('titelTr'),
-            textDe: th('textDe'),
-            textTr: th('textTr'),
-            blockDe: th('blockDe'),
-            blockTr: th('blockTr'),
-            knopfDe: th('knopfDe'),
-            knopfTr: th('knopfTr'),
-            einmalDe: th('einmalDe'),
-            einmalTr: th('einmalTr'),
-            punkteDe: [th('de1'), th('de2'), th('de3'), th('de4')],
-            punkteTr: [th('tr1'), th('tr2'), th('tr3'), th('tr4')],
-          }}
-        />
-      ) : null}
     </>
   );
 }
