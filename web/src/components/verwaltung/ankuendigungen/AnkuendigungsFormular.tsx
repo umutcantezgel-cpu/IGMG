@@ -240,10 +240,15 @@ export function AnkuendigungsFormular({
 
         <Abschnitt
           titel={t('formular.abschnittVeroeffentlichung')}
-          kinder={auswahl('status', t('formular.status'), [
-            { wert: 'entwurf', label: t('status.entwurf') },
-            { wert: 'veroeffentlicht', label: t('status.veroeffentlicht') },
-          ])}
+          kinder={auswahl(
+            'status',
+            t('formular.status'),
+            [
+              { wert: 'entwurf', label: t('status.entwurf') },
+              { wert: 'veroeffentlicht', label: t('status.veroeffentlicht') },
+            ],
+            t('formular.statusHinweis'),
+          )}
         />
       </fieldset>
 

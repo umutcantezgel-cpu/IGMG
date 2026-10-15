@@ -477,11 +477,16 @@ describe('Verwaltung › Ankündigungen › Eingabe, Link und Laufzeit', () => {
 });
 
 describe('Verwaltung › Ankündigungen › Cache', () => {
-  it('Anlegen ruft updateTag mit ankuendigungen auf und plant genau eine Nachlauf-Invalidierung', async () => {
+  it('Anlegen ruft updateTag mit ankuendigungen auf und plant genau eine Nachlauf-Invalidierung (Veröffentlichen: dazu die Benachrichtigung)', async () => {
     await alsRedaktion();
-    await anlegen(eingabe('V04 Cache anlegen'));
+    await anlegen(eingabe('V04 Cache anlegen', { status: 'entwurf' }));
     expect(aufrufe.updateTag).toEqual(['ankuendigungen']);
     expect(aufrufe.nachher).toHaveLength(1);
+    // ADR 0034: Beim Veröffentlichen folgt nach der Antwort zusätzlich der Push „Ankündigung“ (push-ankuendigung.test.ts)
+    await alsRedaktion();
+    await anlegen(eingabe('V04 Cache veröffentlichen'));
+    expect(aufrufe.updateTag).toEqual(['ankuendigungen']);
+    expect(aufrufe.nachher).toHaveLength(2);
   });
 
   it('Papierkorb und Wiederherstellen rufen updateTag mit ankuendigungen auf', async () => {

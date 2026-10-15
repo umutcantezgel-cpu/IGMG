@@ -41,8 +41,14 @@
 - Datenschutz: Der Opt-in-Text und die Datenschutzerklärung nennen die Push-Dienste (Plan §5).
 
 ## Umsetzung (13.10.2026)
+
 - `src/lib/push/{verschluesselung,vapid,senden,abo}.ts`; RFC-8291-Anhang-A-Vektoren in `tests/unit/push.test.ts` (alle Zwischenwerte gleich).
 - Abweichung: Es gibt nur `VAPID_PRIVAT` (geheim, erzeugbar) und `VAPID_KONTAKT`; der öffentliche Schlüssel wird aus dem
   privaten berechnet. So kann kein Paar auseinanderlaufen.
 - Abo-API `/api/push/abo` (gleiche Herkunft, Ratenbegrenzung, nur bekannte Push-Dienste), Takt `/api/wartung/takt`
   (idempotent über `push_versand`), Wortlaut im Service Worker aus `/api/push/texte/<sprache>`.
+- Thema „Ankündigung“ (15.10.2026, Nacharbeit Stufe C, Z-01): `src/lib/push/ankuendigung.ts`. Beim ersten Veröffentlichen
+  einer sichtbaren Ankündigung (`after()` in `src/server/actions/ankuendigungen.ts`), bei späterem Beginn im Minutentakt
+  (Nachholfenster 2 h); nur mit Recht `push.ankuendigung` der Person, die zuletzt gespeichert hat, Schalter `push` und
+  VAPID; Kinder nur mit „Push für das Kind“; Nutzlast `{ art: 'ankuendigung', pfad: '/nachrichten' }` in der Sprache des
+  Abos; idempotent über `push_versand` (`ankuendigung|<abo>|<ankündigung>`). Test `tests/integration/push-ankuendigung.test.ts`.
