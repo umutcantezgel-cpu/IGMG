@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 15.10. 17:40 UTC:** `main` = 033ea6f – Nacharbeit N1–N4 gemergt (alle Gegenprüfungen frei, Restmängel in zweiter
+  Runde behoben). Tor: Unit 1488, Integration 2638, Sprachen, Religion, Bau wie frischer Import 1866 (Sweep 61/24, Crawl 1311
+  ohne Fehler), Vorschau 2207. Läuft: Stufe-C-Nachprüfung `wf_a9e24335-d06` (Konten → Umbau → Öffentlich → Endprüfer).
+  Danach: ABNAHME/BERICHT nachführen, ABSCHLUSS, CLAUDE.md-Block entfernen, letzter FF.
 - **Stand 15.10. 10:30 UTC:** `main` = d10295f (Religion-Prüfung wieder grün: arabische Zitate in zwei Protokollen
   ersetzt). Nacharbeit: N2 fertig (89e4c43), N3 fertig (c812fc7), N1 mit ZWISCHENSTAND 691fd66; Fortsetzungs-Workflow
   `wf_8a45301c-16c` läuft (N1 fertigstellen, Gegenprüfung N1–N3, S2/S3 mit Behebung N4 in `agent-a2e7dbaf…`). Nach
