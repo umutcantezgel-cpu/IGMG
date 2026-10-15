@@ -40,7 +40,11 @@ for (const s of SPRACHEN) {
 test('ohne Treffer: Hinweis; Seite nicht indexiert', async ({ page }) => {
   const t = suche.de.suche;
   await page.goto('/suche?q=xyzunbekannt');
-  await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toHaveText(t.keine.replace('{begriff}', 'xyzunbekannt'));
+  // Mit Datenbank „Keine Treffer“; ohne (Beispielmodus, Titel-Index) der Hinweis auf die Titel-Suche
+  const texte = [t.keine, t.statisch.keine].map((x) => x.replace('{begriff}', 'xyzunbekannt'));
+  await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toHaveText(
+    new RegExp(`^(?:${texte.map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})$`),
+  );
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 });
 

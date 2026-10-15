@@ -6,6 +6,8 @@ import { db } from '@/lib/db';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { BUKHARI, enthaeltArabisch, hadithNummerAus, suchAusschnitt, teilVon, type Ausschnitt } from '@/lib/hadith/anzeige';
 import { normalisiereArabisch } from '@/lib/hadith/import';
+import { sucheHadithNummer, sucheTitel, type FesteSeite, type TitelTreffer } from '@/lib/suche/titelindex';
+import { ladeSuchIndex } from './suchindex';
 
 /**
  * Volltextsuche (ADR 0013, D-S1): PostgreSQL-tsvector je Sprache (generierte Spalten `suche_de|tr|en` aus `klartext`),
@@ -132,4 +134,47 @@ export async function sucheHadith(begriff: string): Promise<HadithTreffer[]> {
     ausschnitt: suchAusschnitt(z.text_ar, nummer ? '' : normalisiert),
     rang: Number(z.rang),
   }));
+}
+
+/**
+ * Ergebnis der Seite /suche je Betriebsart (Endprüfung Stufe C: ohne Datenbank stand live immer „Keine Treffer“):
+ * - `datenbank`: Volltext und Hadith-Suche wie bisher (`suche`, `sucheHadith`) – unverändert, sobald eine Datenbank da ist;
+ * - `titel`: ohne Laufzeit-Datenbank die Titel aus dem beim Bau erzeugten Index (`titelindex.ts`) und die Nummernsuche
+ *   der Hadithe – ehrlich als Titel-Suche ausgewiesen;
+ * - `ohne`: weder Datenbank noch Index – die Seite sagt, dass die Suche hier noch nicht läuft.
+ * `hadithFilter`: Ob der Filter „Hadith“ Ergebnisse liefern kann (Schalter an und – ohne Datenbank – Nummern im Index).
+ */
+export type SuchErgebnis =
+  | { modus: 'datenbank'; hadithFilter: boolean; treffer: SuchTreffer[]; hadith: HadithTreffer[] }
+  | { modus: 'titel'; hadithFilter: boolean; titel: TitelTreffer[]; hadith: HadithTreffer[] }
+  | { modus: 'ohne'; hadithFilter: false };
+
+export async function sucheFuerSeite(eingabe: {
+  begriff: string;
+  sprache: Sprache;
+  /** Schalter `hadith_gesamt` */
+  hadithAn: boolean;
+  /** Filter „Hadith“ gewählt */
+  nurHadith: boolean;
+  /** Feste Seiten aus dem Menü (nur ohne Datenbank; mit Datenbank sucht der Volltext wie bisher) */
+  feste?: () => FesteSeite[] | Promise<FesteSeite[]>;
+}): Promise<SuchErgebnis> {
+  const { begriff, sprache, hadithAn } = eingabe;
+  if (datenbankVerfuegbar()) {
+    const nurHadith = hadithAn && eingabe.nurHadith;
+    const [treffer, hadith] =
+      begriff.length >= 2 ? await Promise.all([nurHadith ? [] : suche(begriff, sprache), hadithAn ? sucheHadith(begriff) : []]) : [[], []];
+    return { modus: 'datenbank', hadithFilter: hadithAn, treffer, hadith };
+  }
+  const index = await ladeSuchIndex();
+  if (!index) return { modus: 'ohne', hadithFilter: false };
+  const hadithFilter = hadithAn && index.hadith !== null;
+  const nurHadith = hadithFilter && eingabe.nurHadith;
+  if (begriff.length < 2) return { modus: 'titel', hadithFilter, titel: [], hadith: [] };
+  return {
+    modus: 'titel',
+    hadithFilter,
+    titel: nurHadith ? [] : sucheTitel(index, begriff, sprache, (await eingabe.feste?.()) ?? []),
+    hadith: hadithFilter ? sucheHadithNummer(index, begriff) : [],
+  };
 }

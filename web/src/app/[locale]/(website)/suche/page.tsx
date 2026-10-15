@@ -2,16 +2,19 @@ import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { HadithTrefferliste } from '@/components/website/hadith/HadithTrefferliste';
+import { baueMenues } from '@/components/website/navigation';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { SucheFormular } from '@/components/website/suche/SucheFormular';
 import { SucheLeer } from '@/components/website/suche/SucheLeer';
+import { TitelTrefferliste } from '@/components/website/suche/TitelTrefferliste';
 import { Trefferliste } from '@/components/website/suche/Trefferliste';
 import { Link } from '@/i18n/link';
+import { pfadFuer } from '@/i18n/navigation';
 import type { Locale } from '@/i18n/routing';
-import { funktionAn } from '@/lib/funktionen';
+import { entscheide, funktionAn } from '@/lib/funktionen';
 import { metadatenFuer } from '@/lib/seo/metadaten';
-import { bereinigeSuche, suche, sucheHadith } from '@/server/queries/suche';
+import { bereinigeSuche, sucheFuerSeite } from '@/server/queries/suche';
 
 // Die Suche rendert je Anfrage und blockierend, ohne Suspense: Gestreamte Treffer setzt React erst per Skript an ihren
 // Platz – ohne JavaScript bliebe der Platzhalter stehen. Das GET-Formular lädt die Seite ohnehin neu; die Treffer selbst
@@ -34,6 +37,9 @@ const sekundaer =
 /**
  * Formular, dann Treffer je Bereich oder ein Leerzustand (kein Begriff / keine Treffer). Mit Schalter `hadith_gesamt`
  * kommen der Filter „Hadith“ (Feld `bereich`) und die Gruppe „Hadith“ dazu (AUFTRAG 3.3); „Hadith“ sucht nur dort.
+ * Ohne Laufzeit-Datenbank (Beispielmodus) sucht die Seite in den Titeln aus dem Bau-Index und nach Hadith-Nummern und
+ * sagt das; ohne Index steht statt „Keine Treffer“ ein Hinweis (`sucheFuerSeite`). Den Filter „Hadith“ gibt es nur, wenn
+ * er Ergebnisse liefern kann.
  */
 async function Ergebnisse({
   searchParams,
@@ -42,24 +48,46 @@ async function Ergebnisse({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
   sprache: Locale;
 }) {
-  const [sp, t, ts, th, hadithAn] = await Promise.all([
+  const [sp, t, ts, th, tk, hadithAn] = await Promise.all([
     searchParams,
     getTranslations('suche'),
     getTranslations('start'),
     getTranslations('hadith.suche'),
+    getTranslations('kopf'),
     funktionAn('hadith_gesamt'),
   ]);
   const begriff = bereinigeSuche(Array.isArray(sp.q) ? sp.q[0] : sp.q);
-  const nurHadith = hadithAn && (Array.isArray(sp.bereich) ? sp.bereich[0] : sp.bereich) === 'hadith';
-  const [treffer, hadithTreffer] =
-    begriff.length >= 2 ? await Promise.all([nurHadith ? [] : suche(begriff, sprache), hadithAn ? sucheHadith(begriff) : []]) : [[], []];
-  const anzahl = treffer.length + hadithTreffer.length;
+  const bereich = Array.isArray(sp.bereich) ? sp.bereich[0] : sp.bereich;
+  const ergebnis = await sucheFuerSeite({
+    begriff,
+    sprache,
+    hadithAn,
+    nurHadith: bereich === 'hadith',
+    // Feste Seiten wie im Kopfmenü (Schalter aus der Umgebung wie Header.tsx, öffentliche Seiten lesen keine Einstellung)
+    feste: () =>
+      baueMenues(
+        (k) => tk(k),
+        (ziel) => pfadFuer(ziel, sprache),
+        { hatim: entscheide('hatim', process.env, null), newsletter: entscheide('newsletter', process.env, null) },
+      ).flatMap((m) => m.punkte.map((p) => ({ titel: p.label, href: p.href }))),
+  });
+  const nurHadith = ergebnis.hadithFilter && bereich === 'hadith';
+  const titelModus = ergebnis.modus === 'titel';
+  const treffer = ergebnis.modus === 'datenbank' ? ergebnis.treffer : [];
+  const titel = ergebnis.modus === 'titel' ? ergebnis.titel : [];
+  const hadithTreffer = ergebnis.modus === 'ohne' ? [] : ergebnis.hadith;
+  const anzahl = treffer.length + titel.length + hadithTreffer.length;
+  const ueberschrift = (
+    <h2 id="suche-ergebnisse" aria-live="polite" className="text-display-2 text-balance">
+      {t('ergebnisse', { anzahl, begriff })}
+    </h2>
+  );
   return (
     <>
       <SucheFormular
         begriff={begriff}
         filter={
-          hadithAn
+          ergebnis.hadithFilter
             ? {
                 legende: th('filter'),
                 aktiv: nurHadith ? 'hadith' : 'alle',
@@ -67,25 +95,33 @@ async function Ergebnisse({
                   { wert: 'alle', label: th('alle') },
                   { wert: 'hadith', label: th('hadith') },
                 ],
-                hinweis: th('hinweis'),
+                hinweis: titelModus ? th('hinweisNummer') : th('hinweis'),
               }
             : undefined
         }
       />
-      {begriff.length < 2 ? (
+      {ergebnis.modus === 'ohne' ? (
+        <SucheLeer status={begriff.length >= 2} text={t('statisch.nichtVerfuegbar')} />
+      ) : begriff.length < 2 ? (
         <SucheLeer text={t('leer')} />
       ) : anzahl ? (
         <section aria-labelledby="suche-ergebnisse" className="flex flex-col gap-10">
-          <h2 id="suche-ergebnisse" aria-live="polite" className="text-display-2 text-balance">
-            {t('ergebnisse', { anzahl, begriff })}
-          </h2>
+          {titelModus && !nurHadith ? (
+            <div className="flex flex-col gap-3">
+              {ueberschrift}
+              <p className="max-w-text text-pretty text-tinte-2">{t('statisch.hinweis')}</p>
+            </div>
+          ) : (
+            ueberschrift
+          )}
           {treffer.length ? <Trefferliste treffer={treffer} /> : null}
+          {titel.length ? <TitelTrefferliste treffer={titel} /> : null}
           {hadithTreffer.length ? <HadithTrefferliste treffer={hadithTreffer} /> : null}
         </section>
       ) : (
         <SucheLeer
           status
-          text={t('keine', { begriff })}
+          text={titelModus ? t(nurHadith ? 'statisch.keineHadith' : 'statisch.keine', { begriff }) : t('keine', { begriff })}
           kinder={
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:justify-center">
               <Link href="/veranstaltungen" className={sekundaer}>
