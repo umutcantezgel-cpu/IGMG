@@ -24,7 +24,7 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
           <Link
             href="/kontakt"
             aria-label={kontakt.label}
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 sm:w-auto"
+            className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss sm:w-auto"
           >
             <Mail aria-hidden className="size-5" />
             {kontakt.text}
@@ -32,7 +32,7 @@ export function Aufruf({ titel, text, kontakt, mehr }: { titel: string; text: st
           <Link
             href="/vorstand"
             aria-label={mehr.label}
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 sm:w-auto"
+            className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 sm:w-auto"
           >
             {mehr.text}
             <ArrowRight aria-hidden className="size-5" />

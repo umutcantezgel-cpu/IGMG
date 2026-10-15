@@ -50,7 +50,7 @@ export default async function KoranSeite() {
           {t('uebersicht.oeffnen')}
           <ArrowRight
             aria-hidden
-            className="size-5 transition-transform duration-(--dauer-rueckmeldung) group-hover:translate-x-1 motion-reduce:transition-none"
+            className="size-5 transition-transform duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
           />
         </span>
       </NextLink>

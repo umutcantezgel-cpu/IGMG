@@ -9,11 +9,11 @@ export const KARTE =
 
 /** Umrissknopf „Weiterlesen“ und „Mehr erfahren“ (2 px Rand, daher px-5.5 wie im Knopf der Startseite). */
 export const UMRISS =
-  'mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98';
+  'mt-auto inline-flex min-h-12 items-center gap-2 self-start rounded-md border-2 border-gruen-700 bg-weiss px-5.5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 druck';
 
 /** Voller Knopf in Grün: „Video ansehen“ und „Artikel anzeigen“. */
 export const VOLL =
-  'inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98';
+  'inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 druck';
 
 /** Kennzeichen des Themas auf einer Karte und im Dialog. */
 export const THEMA_TAG = 'inline-flex rounded-pill bg-gruen-50 px-3 py-0.5 font-bold text-gruen-800';

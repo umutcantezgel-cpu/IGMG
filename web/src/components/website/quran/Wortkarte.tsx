@@ -159,7 +159,7 @@ export default function Wortkarte({
       ? regelnImWort(daten, ziel.vers, ziel.pos).flatMap((s) => daten.regeln.filter((r) => r.schluessel === s))
       : [];
   const kleinerKnopf =
-    'inline-flex min-h-12 items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98';
+    'inline-flex min-h-12 items-center gap-2 rounded-pill border border-rand bg-weiss px-4 text-16 font-bold transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 druck';
 
   return (
     <div ref={karte} popover="auto" role="dialog" aria-labelledby={titelId} tabIndex={-1} className="wortkarte outline-none">

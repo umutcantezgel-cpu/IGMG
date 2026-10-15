@@ -17,7 +17,7 @@ export async function BuchKacheln({ buecher }: { buecher: HadithBuchKurz[] }) {
           <Link
             href={{ pathname: '/hadith/bukhari/[buch]', params: { buch: String(b.nr) } }}
             data-morph-karte={`hb-${b.nr}`}
-            className="group flex h-full min-h-16 items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98"
+            className="group flex h-full min-h-16 druck items-center gap-4 rounded-lg border border-linie bg-weiss p-4 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2"
           >
             <BuchStern nr={b.nr} art="kachel" morph="bild" />
             <span className="flex min-w-0 flex-col gap-1">

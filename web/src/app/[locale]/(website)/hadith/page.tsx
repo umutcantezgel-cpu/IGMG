@@ -51,12 +51,12 @@ function Weg({
   return (
     <Link
       href={ziel}
-      className="group flex h-full items-start gap-4 rounded-lg border border-linie bg-weiss p-6 no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2 active:scale-98"
+      className="group flex h-full druck items-start gap-4 rounded-lg border border-linie bg-weiss p-6 no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:shadow-s2"
     >
       {kern}
       <ArrowRight
         aria-hidden
-        className="mt-1 size-5 shrink-0 text-gruen-700 transition duration-(--dauer-rueckmeldung) group-hover:translate-x-1"
+        className="mt-1 size-5 shrink-0 text-gruen-700 transition duration-(--dauer-rueckmeldung) motion-safe:group-hover:translate-x-1"
       />
     </Link>
   );

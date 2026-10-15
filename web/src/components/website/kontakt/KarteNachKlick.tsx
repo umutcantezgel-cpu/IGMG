@@ -49,7 +49,7 @@ export function KarteNachKlick({
             <button
               type="button"
               onClick={() => setGeladen(true)}
-              className="inline-flex min-h-12 items-center justify-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98"
+              className="inline-flex min-h-12 druck items-center justify-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800"
             >
               {texte.laden}
             </button>

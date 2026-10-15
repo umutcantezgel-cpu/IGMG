@@ -32,7 +32,7 @@ const BOGEN_LOCALE: Record<Locale, string> = { de: 'de-DE', tr: 'tr-TR', en: 'en
  * dem Telefon verwaist am Seitenende).
  */
 const VOLLBILD =
-  'inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
+  'inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 druck';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('gebetszeiten');

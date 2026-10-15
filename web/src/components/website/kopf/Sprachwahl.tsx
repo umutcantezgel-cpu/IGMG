@@ -41,7 +41,7 @@ export function Sprachwahl({
         aria-label={texte.aendern}
         title={texte.aendern}
         onClick={() => setOffen((o) => !o)}
-        className="inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-md border border-rand bg-weiss px-3 text-16 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98 motion-reduce:active:scale-100"
+        className="inline-flex min-h-12 druck cursor-pointer items-center gap-1.5 rounded-md border border-rand bg-weiss px-3 text-16 font-bold text-tinte transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
       >
         <Globe aria-hidden className="size-5" />
         <span>{kurz}</span>

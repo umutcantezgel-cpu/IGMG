@@ -145,7 +145,7 @@ export function FortschrittErfassen({
                           naechster: name(naechsterFortschritt(wert)),
                         })}
                         className={klassen(
-                          'inline-flex min-h-12 min-w-12 cursor-pointer items-center justify-center rounded-md border transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 active:scale-98 motion-reduce:active:scale-100',
+                          'inline-flex min-h-12 min-w-12 druck cursor-pointer items-center justify-center rounded-md border transition duration-(--dauer-rueckmeldung) hover:border-gruen-700',
                           wert === 'abgeschlossen' ? 'border-gruen-700 bg-gruen-50' : 'border-linie bg-weiss',
                         )}
                       >

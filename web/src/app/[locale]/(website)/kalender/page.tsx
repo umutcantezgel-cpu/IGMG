@@ -22,7 +22,7 @@ import { ladeBesondereTage, ladeKalenderTermine } from '@/server/queries/kalende
 export const ensureStatic = 'navigation';
 
 const KNOPF =
-  'inline-flex min-h-12 items-center justify-center rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98';
+  'inline-flex min-h-12 items-center justify-center rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck';
 const TEXTLINK = 'inline-flex min-h-12 items-center gap-2 font-bold text-gruen-700 underline underline-offset-4';
 
 export async function generateMetadata(): Promise<Metadata> {

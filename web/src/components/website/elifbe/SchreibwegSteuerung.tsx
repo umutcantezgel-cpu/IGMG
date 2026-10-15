@@ -70,7 +70,7 @@ export function SchreibwegSteuerung({ ziel, texte }: { ziel: string; texte: { no
           <button
             type="button"
             onClick={nochmal}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill bg-gruen-700 px-5 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98 motion-reduce:hidden"
+            className="inline-flex min-h-12 druck items-center gap-2 rounded-pill bg-gruen-700 px-5 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 motion-reduce:hidden"
           >
             <svg
               aria-hidden
@@ -89,7 +89,7 @@ export function SchreibwegSteuerung({ ziel, texte }: { ziel: string; texte: { no
             type="button"
             aria-pressed={pfeile}
             onClick={umschalten}
-            className="inline-flex min-h-12 items-center gap-2 rounded-pill border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 aria-pressed:bg-gruen-50"
+            className="inline-flex min-h-12 druck items-center gap-2 rounded-pill border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 aria-pressed:bg-gruen-50"
           >
             <svg
               aria-hidden

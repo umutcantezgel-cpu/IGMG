@@ -146,7 +146,7 @@ export function QiblaKompassAnsicht({
           type="button"
           onClick={onKnopf}
           disabled={knopfGesperrt}
-          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 disabled:cursor-wait disabled:opacity-60"
+          className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 disabled:cursor-wait disabled:opacity-60"
         >
           {symbol}
           <span>{knopfText}</span>

@@ -121,7 +121,7 @@ export function Uebungen({
           <button
             type="button"
             onClick={neueRunde}
-            className="min-h-12 rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800 active:scale-98"
+            className="min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800"
           >
             {texte.nochEineRunde}
           </button>
@@ -220,7 +220,7 @@ export function Uebungen({
           ref={weiterKnopf}
           type="button"
           onClick={weiter}
-          className="min-h-12 self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800 active:scale-98"
+          className="min-h-12 druck self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800"
         >
           {texte.weiter}
         </button>

@@ -195,7 +195,7 @@ export function LeisteLive({
         </ul>
         <Link
           href={alleHref}
-          className="order-2 ml-auto inline-flex min-h-12 shrink-0 items-center gap-2 rounded-md border border-gruen-100 px-4 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 menu:order-3"
+          className="order-2 ml-auto inline-flex min-h-12 shrink-0 druck items-center gap-2 rounded-md border border-gruen-100 px-4 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss menu:order-3"
         >
           <span>{texte.alle}</span>
           <ArrowRight aria-hidden className="size-5" />
@@ -234,7 +234,7 @@ export function LeisteLive({
             aria-expanded={aufgeklappt}
             aria-controls="leiste-alle"
             onClick={() => setAufgeklappt((a) => !a)}
-            className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 border-t border-linie text-18 font-bold text-gruen-800 -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+            className="flex min-h-12 w-full druck cursor-pointer items-center justify-center gap-2 border-t border-linie text-18 font-bold text-gruen-800 -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
           >
             <span>{aufgeklappt ? texte.ausblenden : texte.anzeigen}</span>
             {aufgeklappt ? <ChevronUp aria-hidden className="size-5" /> : <ChevronDown aria-hidden className="size-5" />}
@@ -246,7 +246,7 @@ export function LeisteLive({
           </ul>
           <Link
             href={alleHref}
-            className="flex min-h-12 items-center justify-center gap-2 rounded-md bg-weiss font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:text-gruen-950 active:scale-98"
+            className="flex min-h-12 druck items-center justify-center gap-2 rounded-md bg-weiss font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:text-gruen-950"
           >
             <span>{texte.alle}</span>
             <ArrowRight aria-hidden className="size-5" />

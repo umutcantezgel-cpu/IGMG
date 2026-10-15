@@ -25,7 +25,7 @@ import {
  * Formulare in „Mein Bereich › Konto“ (ADR 0026). Fehler als Schlüssel unter `meinBereich`, Erfolg als Meldung mit
  * Fokus. Knöpfe ≥ 48 px, Rückmeldung über Farbe und Druck (B-01).
  */
-const KNOPF = 'transition duration-(--dauer-rueckmeldung) active:scale-98 disabled:cursor-wait motion-reduce:active:scale-100';
+const KNOPF = 'transition duration-(--dauer-rueckmeldung) druck disabled:cursor-wait';
 
 function useMeldungsFokus(zustand: MeinZustand, id: string) {
   useEffect(() => {

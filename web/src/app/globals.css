@@ -367,6 +367,19 @@
 }
 
 /*
+ * B-01 Druck-Rückmeldung (Kern K-007): gedrückt auf 98 %, weich über `transition` am Element. Nur ohne Wunsch nach
+ * reduzierter Bewegung – reduziert bleibt allein die Farbe (statt `active:scale-98` mit `motion-reduce:active:scale-100`,
+ * das an 115 von 146 Stellen fehlte; Stufe C, Z-05). `active:scale-98` ist im Quelltext verboten (tests/unit/bewegung-regeln).
+ */
+@utility druck {
+  @media (prefers-reduced-motion: no-preference) {
+    &:active {
+      scale: 98%;
+    }
+  }
+}
+
+/*
  * Bewegungssystem (Kern K-007). Nur transform/translate/scale, opacity und stroke-dashoffset; der Ausgangszustand
  * ohne JavaScript ist immer der sichtbare Endzustand. Jede Animation steht im Register (B-01 … B-12).
  */

@@ -16,4 +16,4 @@ export const UEBERSCHRIFT = 'font-text text-20 leading-snug font-bold tracking-n
 
 /** Umrandete Schaltfläche (Design: Google Maps), Mindesthöhe 48 px nach K-11; Rückmeldung nach B-01. */
 export const KNOPF_RAHMEN =
-  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 active:scale-98';
+  'inline-flex min-h-12 items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-800 druck';

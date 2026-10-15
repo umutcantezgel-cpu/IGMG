@@ -27,9 +27,9 @@ const MAILLINK =
   'inline-flex min-h-12 items-center gap-2.5 self-start text-weiss underline decoration-gruen-100 underline-offset-3 transition duration-(--dauer-rueckmeldung) hover:text-gruen-100 hover:decoration-2 outline-weiss';
 const KONTAKTZEILE = 'flex min-h-12 items-center gap-2.5 text-gruen-50';
 const ANFRAGEN =
-  'inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 active:scale-98 outline-weiss';
+  'inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 druck outline-weiss';
 const SOZIAL =
-  'flex size-12 items-center justify-center rounded-md border border-gruen-100 text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 outline-weiss';
+  'flex size-12 items-center justify-center rounded-md border border-gruen-100 text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss druck outline-weiss';
 const SOZIAL_PLATZHALTER = 'flex size-12 items-center justify-center rounded-md border border-gruen-100 text-weiss';
 
 /**

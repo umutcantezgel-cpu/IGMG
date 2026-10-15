@@ -4,7 +4,7 @@ import { Link } from '@/i18n/link';
 import type { HadithBuchKurz } from '@/server/queries/hadith';
 
 const LINK =
-  'flex min-h-16 min-w-0 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 active:scale-98';
+  'flex min-h-16 min-w-0 items-center gap-3 rounded-lg border border-linie bg-weiss px-4 py-3 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-tinte hover:shadow-s2 druck';
 
 /**
  * Blättern zwischen den Büchern (Muster QuranWeiter): voriges und nächstes Buch mit Nummer und Titel der Quelle.

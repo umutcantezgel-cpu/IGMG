@@ -51,7 +51,7 @@ export function VeranstaltungsFilter({
         aria-pressed={an}
         onClick={() => waehle(schluessel)}
         className={klassen(
-          'inline-flex min-h-12 cursor-pointer items-center gap-1.5 rounded-pill px-4 text-18 font-bold transition duration-(--dauer-rueckmeldung) active:scale-98',
+          'inline-flex min-h-12 druck cursor-pointer items-center gap-1.5 rounded-pill px-4 text-18 font-bold transition duration-(--dauer-rueckmeldung)',
           an ? 'border-2 border-gruen-700 bg-gruen-700 text-weiss' : 'border border-rand bg-weiss text-tinte hover:bg-gruen-50',
         )}
       >
@@ -77,7 +77,7 @@ export function VeranstaltungsFilter({
               alleKnopf.current?.focus();
               waehle('alle');
             }}
-            className="inline-flex min-h-12 cursor-pointer items-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98"
+            className="inline-flex min-h-12 druck cursor-pointer items-center rounded-md bg-gruen-700 px-6 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800"
           >
             {texte.alle}
           </button>

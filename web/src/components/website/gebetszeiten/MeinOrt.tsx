@@ -73,7 +73,7 @@ export function MeinOrt({
         <button
           type="button"
           onClick={() => setStart({ art: 'gps' })}
-          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md bg-gruen-700 px-5 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98"
+          className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md bg-gruen-700 px-5 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800"
         >
           {symbole.gps}
           <span>{texte.standortVerwenden}</span>
@@ -81,7 +81,7 @@ export function MeinOrt({
         <button
           type="button"
           onClick={() => setStart({ art: 'liste' })}
-          className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98"
+          className="inline-flex min-h-12 druck cursor-pointer items-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50"
         >
           {symbole.liste}
           <span>{texte.ortWaehlen}</span>

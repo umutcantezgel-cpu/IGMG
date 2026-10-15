@@ -69,7 +69,7 @@ export function LesezeichenListe({ sureLink, quranLink, namen }: { sureLink: str
       {weiter ? (
         <a
           href={ziel(weiter)}
-          className="flex min-h-12 items-center gap-4 rounded-lg border border-gruen-700 bg-gruen-50 px-4 py-3 text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-weiss hover:text-gruen-800 active:scale-98 motion-reduce:active:scale-100"
+          className="flex min-h-12 druck items-center gap-4 rounded-lg border border-gruen-700 bg-gruen-50 px-4 py-3 text-gruen-800 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-weiss hover:text-gruen-800"
         >
           <BookOpenCheck aria-hidden className="size-6 shrink-0" />
           <span className="flex min-w-0 flex-col">
@@ -119,7 +119,7 @@ export function LesezeichenListe({ sureLink, quranLink, namen }: { sureLink: str
                   type="button"
                   onClick={() => entfernen(z)}
                   aria-label={t('entfernenLabel', { eintrag: titel })}
-                  className="inline-flex min-h-12 min-w-12 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md font-bold text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:bg-sand hover:text-tinte active:scale-98 sm:px-3"
+                  className="inline-flex min-h-12 min-w-12 shrink-0 druck cursor-pointer items-center justify-center gap-2 rounded-md font-bold text-tinte-2 transition duration-(--dauer-rueckmeldung) hover:bg-sand hover:text-tinte sm:px-3"
                 >
                   <X aria-hidden className="size-5" />
                   <span className="max-sm:sr-only">{t('entfernen')}</span>

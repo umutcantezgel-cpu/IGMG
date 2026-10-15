@@ -20,7 +20,7 @@ export async function SurenRaster({ suren }: { suren: SureKurz[] }) {
             href={{ pathname: '/quran/[sure]', params: { sure: String(s.nr) } }}
             prefetch={false}
             data-morph-karte={`s-${s.nr}`}
-            className="group grid h-full min-h-14 raster-symbol items-center gap-x-3 rounded-lg border border-linie bg-weiss py-1 pr-4 pl-3 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 active:scale-98 md:min-h-20 md:py-3"
+            className="group grid h-full min-h-14 druck raster-symbol items-center gap-x-3 rounded-lg border border-linie bg-weiss py-1 pr-4 pl-3 text-tinte no-underline shadow-s1 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte hover:shadow-s2 md:min-h-20 md:py-3"
           >
             {/* Feste Spalte (48 px): Medaillons 100–114 sind 4 px größer, der Text steht trotzdem bündig */}
             <span className="row-span-2 flex w-12 justify-center">

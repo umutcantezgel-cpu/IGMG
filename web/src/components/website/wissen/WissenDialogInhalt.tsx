@@ -49,7 +49,7 @@ export function ArtikelInhalt({
                 type="button"
                 aria-label={`${texte.weiterlesen}: ${s.titel.text}`}
                 onClick={() => onWechsel(s.schluessel)}
-                className="flex w-full flex-col gap-1 rounded-lg border border-linie p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 active:scale-98"
+                className="flex w-full druck flex-col gap-1 rounded-lg border border-linie p-3 text-left transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50"
               >
                 <span lang={s.titel.lang} className="font-bold">
                   {s.titel.text}

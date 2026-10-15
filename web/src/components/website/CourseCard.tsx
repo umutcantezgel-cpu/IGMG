@@ -162,7 +162,7 @@ export async function CourseCard({
               aria-label={t('linkName', { aktion: aktionText, titel })}
               className={cn(
                 // Ganze Karte klickbar über den Pseudo-Bereich (wie EventCard); Rückmeldung B-01
-                'flex min-h-12 items-center justify-center gap-2 rounded-md px-5 font-bold no-underline transition duration-(--dauer-rueckmeldung) after:absolute after:inset-0 after:content-[""] active:scale-98',
+                'flex min-h-12 druck items-center justify-center gap-2 rounded-md px-5 font-bold no-underline transition duration-(--dauer-rueckmeldung) after:absolute after:inset-0 after:content-[""]',
                 zustand === 'register'
                   ? 'bg-gruen-700 text-weiss hover:bg-gruen-800 hover:text-weiss'
                   : 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50 hover:text-gruen-800',

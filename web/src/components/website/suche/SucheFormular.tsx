@@ -33,7 +33,7 @@ export async function SucheFormular({ begriff, filter }: { begriff: string; filt
         />
         <button
           type="submit"
-          className="inline-flex min-h-12 items-center gap-2 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 active:scale-98"
+          className="inline-flex min-h-12 druck items-center gap-2 rounded-md bg-gruen-700 px-6 text-18 font-bold text-weiss transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800"
         >
           <Search aria-hidden="true" className="size-5" />
           {t('absenden')}

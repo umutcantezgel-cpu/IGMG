@@ -281,7 +281,7 @@ export async function EventCard({
               <Link
                 href={{ ...ziel, hash: 'anmeldung' }}
                 aria-label={`${t('anmelden')}: ${titel.text}`}
-                className="relative inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-gruen-700 px-4.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98"
+                className="relative inline-flex min-h-12 druck items-center justify-center gap-2 rounded-md bg-gruen-700 px-4.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss"
               >
                 <span>{t('anmelden')}</span>
               </Link>

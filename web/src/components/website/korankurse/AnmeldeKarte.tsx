@@ -51,7 +51,7 @@ export async function AnmeldeKarte({
                   <li key={kurs.id}>
                     <Link
                       href={ziel}
-                      className="flex min-h-14 items-center justify-between gap-3 rounded-md border border-linie bg-weiss px-4 py-2 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte active:scale-98"
+                      className="flex min-h-14 druck items-center justify-between gap-3 rounded-md border border-linie bg-weiss px-4 py-2 text-tinte no-underline transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:text-tinte"
                     >
                       <span className="flex flex-col leading-tight">
                         <Text feld={kurs.titel} sprache={sprache} als="strong" />
@@ -94,7 +94,7 @@ export async function AnmeldeKarte({
           </div>
           <Link
             href="/kontakt"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-5.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss active:scale-98 sm:w-auto"
+            className="inline-flex min-h-12 w-full druck items-center justify-center gap-2 self-start rounded-md bg-gruen-700 px-5.5 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss sm:w-auto"
           >
             {t('kontaktKnopf')}
             <ArrowRight aria-hidden className="size-5" />

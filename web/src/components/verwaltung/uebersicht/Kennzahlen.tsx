@@ -39,7 +39,7 @@ export async function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]
               <NextLink
                 href={k.pfad}
                 className={cn(
-                  'flex h-full min-h-12 flex-col items-start gap-2 p-5 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
+                  'flex h-full min-h-12 druck flex-col items-start gap-2 p-5 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte',
                   handlung(k) && 'border-l-4 border-l-gruen-700',
                 )}
               >
@@ -66,7 +66,7 @@ export async function Kennzahlen({ kacheln, titel }: { kacheln: KennzahlKachel[]
               <NextLink
                 href={k.pfad}
                 className={cn(
-                  'flex min-h-14 items-center gap-3 px-4 py-2 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte active:scale-98',
+                  'flex min-h-14 druck items-center gap-3 px-4 py-2 text-tinte no-underline -outline-offset-4 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-tinte',
                   handlung(k) && 'border-l-4 border-l-gruen-700',
                 )}
               >

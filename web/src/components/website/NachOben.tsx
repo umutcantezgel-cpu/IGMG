@@ -32,7 +32,7 @@ export function NachOben({ text }: { text: string }) {
     <a
       href="#inhalt"
       className={klassen(
-        'fixed right-4 bottom-4 z-(--ebene-kopf) inline-flex min-h-12 items-center justify-center gap-2 rounded-pill border border-rand bg-weiss px-4 font-bold text-gruen-800 no-underline shadow-s2 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 active:scale-98 max-sm:size-12 max-sm:px-0 md:right-8 md:bottom-8',
+        'fixed right-4 bottom-4 z-(--ebene-kopf) inline-flex min-h-12 druck items-center justify-center gap-2 rounded-pill border border-rand bg-weiss px-4 font-bold text-gruen-800 no-underline shadow-s2 transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50 hover:text-gruen-800 max-sm:size-12 max-sm:px-0 md:right-8 md:bottom-8',
         !sichtbar && 'invisible',
       )}
     >

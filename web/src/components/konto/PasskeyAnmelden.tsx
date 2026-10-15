@@ -47,7 +47,7 @@ export function PasskeyAnmelden({ sprache, weiter }: { sprache: string; weiter: 
         type="button"
         onClick={anmelden}
         disabled={laeuft}
-        className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-6 text-18 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 active:scale-98 disabled:cursor-wait disabled:opacity-80 motion-reduce:active:scale-100"
+        className="inline-flex min-h-12 w-full druck cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-gruen-700 bg-weiss px-6 text-18 font-bold text-gruen-800 transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 disabled:cursor-wait disabled:opacity-80"
       >
         {laeuft ? <LadeStern /> : <Fingerprint aria-hidden className="size-5" />}
         {laeuft ? t('passkey.laeuft') : t('passkey.knopf')}

@@ -81,7 +81,7 @@ export function UebenStart({ daten, texte }: { daten: UebenDaten; texte: UebenTe
             <button
               type="button"
               onClick={() => setArten(w.arten)}
-              className={`flex size-full min-h-24 items-center gap-4 rounded-lg border-2 p-5 text-left transition duration-(--dauer-rueckmeldung) active:scale-98 ${
+              className={`flex size-full min-h-24 druck items-center gap-4 rounded-lg border-2 p-5 text-left transition duration-(--dauer-rueckmeldung) ${
                 i === 0
                   ? 'border-gruen-700 bg-gruen-700 text-weiss hover:bg-gruen-800'
                   : 'border-linie bg-weiss text-tinte shadow-s1 hover:border-gruen-700 hover:bg-gruen-50'

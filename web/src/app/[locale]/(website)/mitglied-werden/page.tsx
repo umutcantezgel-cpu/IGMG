@@ -107,7 +107,7 @@ export default async function MitgliedWerdenSeite() {
               </span>
               <Link
                 href="/kontakt"
-                className="mt-1 inline-flex min-h-12 items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950 active:scale-98"
+                className="mt-1 inline-flex min-h-12 druck items-center gap-2 self-start rounded-md bg-weiss px-5 font-bold text-gruen-950 no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-50 hover:text-gruen-950"
               >
                 <MessageSquare aria-hidden="true" className="size-5" />
                 {t('fragen.nachricht')}

@@ -91,7 +91,7 @@ export function AnwesenheitErfassen({ terminId, zeilen, texte }: { terminId: str
                   <label
                     key={s}
                     className={klassen(
-                      'flex min-h-12 min-w-0 cursor-pointer items-center justify-center gap-1.5 rounded-md border-2 px-2 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) active:scale-98 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-gruen-950 motion-reduce:active:scale-100',
+                      'flex min-h-12 min-w-0 druck cursor-pointer items-center justify-center gap-1.5 rounded-md border-2 px-2 font-bold whitespace-nowrap transition duration-(--dauer-rueckmeldung) has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-gruen-950',
                       an ? FARBE[s] : UMRISS,
                     )}
                   >
