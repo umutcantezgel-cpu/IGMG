@@ -27,7 +27,7 @@ export function ReihenfolgeEditor({
 }: {
   aktion: Aktion;
   eintraege: ReihenfolgeEintrag[];
-  /** Namensraum mit den Schlüsseln nachOben, nachUnten, verschoben, stelle, speichern, speichert, gespeichert, ungespeichert, hinweis, fehler.* (und sichtbar, eingeblendet, ausgeblendet, ausgeblendetMarke) */
+  /** Namensraum mit den Schlüsseln nachOben, nachUnten, verschoben, stelle, speichern, speichert, gespeichert, ungespeichert, hinweis, fehler.* (und sichtbar, sichtbarName, eingeblendet, ausgeblendet, ausgeblendetMarke) */
   namensraum: string;
   mitSichtbarkeit?: boolean;
   /** Fester erster Eintrag (nicht verschiebbar), z. B. der Kopf der Startseite. */
@@ -154,12 +154,10 @@ export function ReihenfolgeEditor({
                     type="checkbox"
                     checked={sichtbar}
                     onChange={(ev) => schalte(i, ev.target.checked)}
+                    aria-label={t('sichtbarName', { name: e.titel })}
                     className="size-5.5 shrink-0 accent-gruen-700"
                   />
-                  <span>
-                    {t('sichtbar')}
-                    <span className="sr-only">: {e.titel}</span>
-                  </span>
+                  <span>{t('sichtbar')}</span>
                 </label>
               ) : null}
               <div className="flex gap-2">

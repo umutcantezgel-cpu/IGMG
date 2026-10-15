@@ -203,7 +203,9 @@ export function WissenFormular({
             ? t('formular.hinweisGeprueft')
             : stand === 'zur_pruefung'
               ? t('formular.hinweisPruefung')
-              : t('formular.hinweisEntwurf')}
+              : neu
+                ? t('formular.hinweisNeu')
+                : t('formular.hinweisEntwurf')}
         </p>
         <div className="flex flex-wrap gap-3">
           <Button type="submit" disabled={laeuft} variant={stand === null || stand === 'entwurf' ? 'secondary' : 'default'}>

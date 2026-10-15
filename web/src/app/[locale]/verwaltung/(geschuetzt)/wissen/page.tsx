@@ -68,8 +68,12 @@ export default async function WissenVerwalten({ searchParams }: PageProps<'/[loc
   const uebersetzung = (z: WissenListenZeile) => (
     <span className="flex flex-col gap-0.5 text-16 tabular-nums">
       {(['tr', 'en'] as const).map((s) => (
-        <span key={s}>
-          {t('uebersetzungZeile', { sprache: t(`uebersetzungSprache.${s}`), anzahl: z.uebersetzung[s], gesamt: z.uebersetzung.gesamt })}
+        <span key={s} className="whitespace-nowrap">
+          <span aria-hidden className="inline-block w-8 font-bold">
+            {s.toUpperCase()}
+          </span>
+          <span className="sr-only">{t(`uebersetzungSprache.${s}`)}: </span>
+          {t('uebersetzungKurz', { anzahl: z.uebersetzung[s], gesamt: z.uebersetzung.gesamt })}
         </span>
       ))}
     </span>
