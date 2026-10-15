@@ -12,8 +12,9 @@ import { SUCHINDEX_VERSION, type IndexEintrag, type SuchIndex } from './titelind
  */
 export async function baueSuchIndex(db: Datenbank, optionen: { hadith: boolean; jetzt?: Date }): Promise<SuchIndex> {
   const jetzt = optionen.jetzt ?? new Date();
-  const sichtbar = <T extends typeof schema.nachricht | typeof schema.veranstaltung | typeof schema.wissenThema | typeof schema.seite>(t: T) =>
-    and(eq(t.status, 'veroeffentlicht'), isNull(t.imPapierkorbSeit));
+  const sichtbar = <T extends typeof schema.nachricht | typeof schema.veranstaltung | typeof schema.wissenThema | typeof schema.seite>(
+    t: T,
+  ) => and(eq(t.status, 'veroeffentlicht'), isNull(t.imPapierkorbSeit));
 
   const [nachrichten, veranstaltungen, wissen, seiten, suren] = await Promise.all([
     db
@@ -33,7 +34,12 @@ export async function baueSuchIndex(db: Datenbank, optionen: { hadith: boolean; 
       .from(schema.seite)
       .where(and(sichtbar(schema.seite), or(isNull(schema.seite.veroeffentlichenAm), lte(schema.seite.veroeffentlichenAm, jetzt)))),
     db
-      .select({ nr: schema.quranSure.nr, umschrift: schema.quranSure.nameUmschrift, nameAr: schema.quranSure.nameAr, name: schema.quranSure.name })
+      .select({
+        nr: schema.quranSure.nr,
+        umschrift: schema.quranSure.nameUmschrift,
+        nameAr: schema.quranSure.nameAr,
+        name: schema.quranSure.name,
+      })
       .from(schema.quranSure)
       .orderBy(asc(schema.quranSure.nr)),
   ]);

@@ -41,7 +41,9 @@ function adresse(z: TitelTreffer, sprache: Locale): string {
 export async function TitelTrefferliste({ treffer }: { treffer: TitelTreffer[] }) {
   const sprache = (await getLocale()) as Locale;
   const [t, tq, th] = await Promise.all([getTranslations('suche'), getTranslations('quranSeite'), getTranslations('hadith')]);
-  const gruppen = TITEL_ARTEN.map((art) => ({ art, eintraege: treffer.filter((z) => z.art === art) })).filter((g) => g.eintraege.length > 0);
+  const gruppen = TITEL_ARTEN.map((art) => ({ art, eintraege: treffer.filter((z) => z.art === art) })).filter(
+    (g) => g.eintraege.length > 0,
+  );
   const kennung = (z: TitelTreffer) =>
     z.art === 'sure'
       ? tq('sureNr', { nr: z.nr ?? 0 })

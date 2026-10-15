@@ -24,7 +24,13 @@ function index(teil: Partial<SuchIndex> = {}): SuchIndex {
     ],
     hadith: {
       buecher: [
-        [1, [['1', 1], ['2', 2]]],
+        [
+          1,
+          [
+            ['1', 1],
+            ['2', 2],
+          ],
+        ],
         [4, Array.from({ length: 120 }, (_, i) => [String(135 + i), i === 5 ? 0 : i + 1] as [string, number])],
       ],
     },

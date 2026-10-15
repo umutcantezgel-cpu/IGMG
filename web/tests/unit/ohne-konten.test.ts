@@ -65,17 +65,24 @@ describe('nichtGefundenZiel: Fangroute der Sprache', () => {
 describe('Proxy: Konto-Seiten ohne Konten', () => {
   const anfrage = (pfad: string) => new NextRequest(new URL(pfad, 'https://igmg.test'));
 
-  it.each(['/anmelden', '/registrieren', '/mein-bereich', '/tr/giris', '/tr/kayit', '/tr/hesabim', '/en/sign-in', '/en/register', '/en/my-account'])(
-    'ohne Datenbank: %s → 404-Seite der Sprache, öffentliche CSP, nicht zwischenspeichern',
-    (pfad) => {
-      ohneDatenbank();
-      const antwort = proxy(anfrage(pfad));
-      expect(antwort.headers.get('x-middleware-rewrite')).toBe(`https://igmg.test${nichtGefundenZiel(pfad)}`);
-      expect(antwort.headers.get('Content-Security-Policy')).toBe(cspOeffentlich());
-      expect(antwort.headers.get('Cache-Control')).toBe('private, no-store');
-      expect(antwort.headers.get('X-Robots-Tag')).toBe('noindex, nofollow');
-    },
-  );
+  it.each([
+    '/anmelden',
+    '/registrieren',
+    '/mein-bereich',
+    '/tr/giris',
+    '/tr/kayit',
+    '/tr/hesabim',
+    '/en/sign-in',
+    '/en/register',
+    '/en/my-account',
+  ])('ohne Datenbank: %s → 404-Seite der Sprache, öffentliche CSP, nicht zwischenspeichern', (pfad) => {
+    ohneDatenbank();
+    const antwort = proxy(anfrage(pfad));
+    expect(antwort.headers.get('x-middleware-rewrite')).toBe(`https://igmg.test${nichtGefundenZiel(pfad)}`);
+    expect(antwort.headers.get('Content-Security-Policy')).toBe(cspOeffentlich());
+    expect(antwort.headers.get('Cache-Control')).toBe('private, no-store');
+    expect(antwort.headers.get('X-Robots-Tag')).toBe('noindex, nofollow');
+  });
 
   it('mit Datenbank und ohne Schalter in der Umgebung: unverändert (Nonce-CSP, Seite entscheidet)', () => {
     ohneDatenbank();

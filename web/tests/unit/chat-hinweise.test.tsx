@@ -66,7 +66,13 @@ describe('Chat: genau eine Live-Region, kein Text doppelt', () => {
 
   it('jeder Zustand: genau eine Live-Region; jede Meldung höchstens einmal', () => {
     for (const schreiben of [null, ...GRUENDE])
-      for (const meldung of [null, c.gemeldet, c.fehler, c.grund.zuLang, schreiben ? (c.grund as Record<string, string>)[schreiben] : null]) {
+      for (const meldung of [
+        null,
+        c.gemeldet,
+        c.fehler,
+        c.grund.zuLang,
+        schreiben ? (c.grund as Record<string, string>)[schreiben] : null,
+      ]) {
         const html = markup(schreiben, meldung ?? null);
         expect(anzahl(html, 'role="status"'), `${schreiben} / ${meldung}`).toBe(1);
         if (meldung) expect(anzahl(html, meldung), `${schreiben} / ${meldung}`).toBe(1);

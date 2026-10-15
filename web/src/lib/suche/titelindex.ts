@@ -140,13 +140,25 @@ export function sucheTitel(index: SuchIndex, begriff: string, sprache: Locale, f
     treffer.push({ t: k.t, vorn: formen.some((f) => f.startsWith(q)) });
   }
   return treffer
-    .sort((a, b) => Number(b.vorn) - Number(a.vorn) || TITEL_ARTEN.indexOf(a.t.art) - TITEL_ARTEN.indexOf(b.t.art) || a.t.titel.localeCompare(b.t.titel, sprache))
+    .sort(
+      (a, b) =>
+        Number(b.vorn) - Number(a.vorn) ||
+        TITEL_ARTEN.indexOf(a.t.art) - TITEL_ARTEN.indexOf(b.t.art) ||
+        a.t.titel.localeCompare(b.t.titel, sprache),
+    )
     .slice(0, TITEL_MAX)
     .map((x) => x.t);
 }
 
 /** Treffer der Nummernsuche wie `HadithTreffer` aus `suche.ts` (ohne Ausschnitt: der Index enthält keinen Hadithtext). */
-export type NummernTreffer = { nummer: string; buchNr: number; imBuchNr: number | null; teil: number; ausschnitt: Ausschnitt; rang: number };
+export type NummernTreffer = {
+  nummer: string;
+  buchNr: number;
+  imBuchNr: number | null;
+  teil: number;
+  ausschnitt: Ausschnitt;
+  rang: number;
+};
 
 /** „Bukhari 7“, „402.2“ … (dieselbe Erkennung wie die Volltextsuche, `hadithNummerAus`) → Buch und Teil aus dem Index. */
 export function sucheHadithNummer(index: SuchIndex, begriff: string): NummernTreffer[] {

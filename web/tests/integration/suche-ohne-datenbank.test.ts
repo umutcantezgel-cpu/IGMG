@@ -33,9 +33,21 @@ afterEach(() => {
 const gestern = new Date(Date.now() - 86_400_000);
 const morgen = new Date(Date.now() + 86_400_000);
 await db.insert(schema.nachricht).values([
-  { slug: 'gebetsraum-renoviert', titel: { de: 'Gebetsraum renoviert' }, klartext: { de: 'Neue Teppiche.' }, status: 'veroeffentlicht', veroeffentlichtAm: gestern },
+  {
+    slug: 'gebetsraum-renoviert',
+    titel: { de: 'Gebetsraum renoviert' },
+    klartext: { de: 'Neue Teppiche.' },
+    status: 'veroeffentlicht',
+    veroeffentlichtAm: gestern,
+  },
   { slug: 'entwurf-gebet', titel: { de: 'Entwurf Gebet' }, status: 'entwurf' },
-  { slug: 'papierkorb-gebet', titel: { de: 'Alt Gebet' }, status: 'veroeffentlicht', veroeffentlichtAm: gestern, imPapierkorbSeit: new Date() },
+  {
+    slug: 'papierkorb-gebet',
+    titel: { de: 'Alt Gebet' },
+    status: 'veroeffentlicht',
+    veroeffentlichtAm: gestern,
+    imPapierkorbSeit: new Date(),
+  },
   { slug: 'geplant-gebet', titel: { de: 'Geplant Gebet' }, status: 'veroeffentlicht', veroeffentlichtAm: morgen },
 ]);
 await db.insert(schema.wissenThema).values([
@@ -49,7 +61,16 @@ await db.insert(schema.seite).values([
 ]);
 // Suren 1 und 2 aus den Tanzil-Metadaten (web/daten)
 const meta = leseMetadaten(readFileSync(join(import.meta.dirname, '../../daten/tanzil/quran-data.xml'), 'utf8')).suren.slice(0, 2);
-await db.insert(schema.quranQuelle).values({ id: 'tanzil', bezeichnung: '[Quelle]', url: 'https://example.test', version: 'test', sha256: '0'.repeat(64), lizenz: '[Lizenz]' });
+await db
+  .insert(schema.quranQuelle)
+  .values({
+    id: 'tanzil',
+    bezeichnung: '[Quelle]',
+    url: 'https://example.test',
+    version: 'test',
+    sha256: '0'.repeat(64),
+    lizenz: '[Lizenz]',
+  });
 await db
   .insert(schema.quranSure)
   .values(meta.map((m) => ({ nr: m.nr, nameAr: m.nameAr, verseAnzahl: m.verse, quelleId: 'tanzil', nameUmschrift: m.umschrift })));
@@ -66,7 +87,11 @@ await db.insert(schema.hadithSammlung).values({
 });
 await db
   .insert(schema.hadithBuch)
-  .values(quelle.buecher.filter((b) => b.nr <= 4).map((b) => ({ sammlungId: 'bukhari', nr: b.nr, titel: { de: '', en: b.titelEn }, hadithVon: b.hadithVon, hadithBis: b.hadithBis })));
+  .values(
+    quelle.buecher
+      .filter((b) => b.nr <= 4)
+      .map((b) => ({ sammlungId: 'bukhari', nr: b.nr, titel: { de: '', en: b.titelEn }, hadithVon: b.hadithVon, hadithBis: b.hadithBis })),
+  );
 const hadithe = quelle.hadithe.filter((h) => h.buchNr <= 4);
 await db.insert(schema.hadith).values(hadithe.map((h) => ({ sammlungId: 'bukhari', ...h })));
 await db.execute(sql`update hadith set suche = to_tsvector('simple', text_normalisiert)`);
@@ -76,7 +101,8 @@ describe('Titel-Index aus der Bau-Datenbank', () => {
   it('nur Veröffentlichtes, nicht im Papierkorb, nicht vor dem Datum; keine Texte', async () => {
     const index = await baueSuchIndex(db, { hadith: true });
     expect(pruefeSuchIndex(JSON.parse(JSON.stringify(index)))).not.toBeNull();
-    const titel = (art: string) => index.eintraege.filter((e) => e.art === art).map((e) => ('slug' in e ? e.slug : 'slugs' in e ? e.slugs.de : e.nr));
+    const titel = (art: string) =>
+      index.eintraege.filter((e) => e.art === art).map((e) => ('slug' in e ? e.slug : 'slugs' in e ? e.slugs.de : e.nr));
     expect(titel('nachricht')).toEqual(['gebetsraum-renoviert']);
     expect(titel('wissen')).toEqual(['gebet']);
     expect(titel('seite')).toEqual(['jugendraum']);
@@ -104,7 +130,13 @@ describe('sucheFuerSeite: mit Datenbank unverändert', () => {
     const datei = join(ordner, 'mit-db.json');
     writeFileSync(datei, JSON.stringify(await baueSuchIndex(db, { hadith: true })));
     vi.stubEnv('SUCHINDEX_DATEI', datei);
-    const e = await sucheFuerSeite({ begriff: 'Gebet', sprache: 'de', hadithAn: true, nurHadith: false, feste: () => [{ titel: 'Gebetszeiten', href: '/gebetszeiten' }] });
+    const e = await sucheFuerSeite({
+      begriff: 'Gebet',
+      sprache: 'de',
+      hadithAn: true,
+      nurHadith: false,
+      feste: () => [{ titel: 'Gebetszeiten', href: '/gebetszeiten' }],
+    });
     expect(e.modus).toBe('datenbank');
     if (e.modus !== 'datenbank') return;
     expect(e).toEqual({ modus: 'datenbank', hadithFilter: true, treffer: await suche('Gebet', 'de'), hadith: await sucheHadith('Gebet') });

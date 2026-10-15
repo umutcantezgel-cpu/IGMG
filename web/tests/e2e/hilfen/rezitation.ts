@@ -50,6 +50,9 @@ export function entferneTestRezitation(r: { id: string; vorhanden: boolean }): v
 export async function erneuereCaches(basis: string): Promise<void> {
   const token = process.env.WARTUNG_TOKEN;
   if (!token) return;
-  const antwort = await fetch(new URL('/api/wartung/cache-erneuern', basis), { method: 'POST', headers: { authorization: `Bearer ${token}` } });
+  const antwort = await fetch(new URL('/api/wartung/cache-erneuern', basis), {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}` },
+  });
   if (!antwort.ok) throw new Error(`Cache-Erneuerung abgelehnt: HTTP ${antwort.status} (WARTUNG_TOKEN prüfen)`);
 }

@@ -86,7 +86,8 @@ const PERSONEN: Person[] = [
 
 // Soll nach ADR 0026 (Konto-Seite): Pflicht zum zweiten Faktor für Lehrkräfte und Verwaltungsrollen
 const faktorOk = (p: Person) => p.zweiFaktor || (p.verwaltung.length === 0 && !p.gemeinde.includes('lehrkraft'));
-const kontoRecht = (p: Person, arten?: GemeindeRolle[]) => p.sitzung && faktorOk(p) && (!arten || arten.some((a) => p.gemeinde.includes(a)));
+const kontoRecht = (p: Person, arten?: GemeindeRolle[]) =>
+  p.sitzung && faktorOk(p) && (!arten || arten.some((a) => p.gemeinde.includes(a)));
 const mitRolle = (p: Person) => p.gemeinde.length > 0 || p.verwaltung.length > 0;
 
 type Soll = (p: Person) => boolean;
@@ -295,7 +296,8 @@ for (const fall of FAELLE) {
           else expect(abgewiesen(ergebnis), `Zugelassen erwartet, erhalten: ${JSON.stringify(ergebnis)}`).toBe(false);
         } else {
           expect(abgewiesen(ergebnis), `Abweisung erwartet, erhalten: ${JSON.stringify(ergebnis)}`).toBe(true);
-          if (fall.spion !== undefined && p.sitzung) expect(protokoll[0], 'Konto-Prüfung der Action').toEqual({ rollen: fall.spion, ok: false });
+          if (fall.spion !== undefined && p.sitzung)
+            expect(protokoll[0], 'Konto-Prüfung der Action').toEqual({ rollen: fall.spion, ok: false });
           expect(await momentaufnahme(db, TABELLEN), 'Der Datenbestand hat sich bei der Abweisung verändert').toBe(vorher);
         }
       });
@@ -380,7 +382,11 @@ describe('Vollständigkeit', () => {
     const wurzel = join(import.meta.dirname, '..', '..', 'src', 'server', 'actions');
     const dateien = readdirSync(wurzel, { recursive: true, withFileTypes: true })
       .filter((d) => d.isFile() && /\.tsx?$/.test(d.name))
-      .map((d) => join(d.parentPath, d.name).slice(wurzel.length + 1).replace(/\.tsx?$/, ''))
+      .map((d) =>
+        join(d.parentPath, d.name)
+          .slice(wurzel.length + 1)
+          .replace(/\.tsx?$/, ''),
+      )
       .sort();
     const zugeordnet = Object.values(ZUORDNUNG).flat();
     expect(new Set(zugeordnet).size, 'eine Datei steht in zwei Matrizen').toBe(zugeordnet.length);

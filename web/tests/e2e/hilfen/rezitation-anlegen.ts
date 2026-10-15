@@ -79,7 +79,17 @@ function kodiere(wav: Buffer): Buffer {
       ['libmp3lame', 'ton.mp3'],
     ] as const) {
       try {
-        execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', join(ordner, 'ton.wav'), '-c:a', codec, join(ordner, datei)]);
+        execFileSync('ffmpeg', [
+          '-hide_banner',
+          '-loglevel',
+          'error',
+          '-y',
+          '-i',
+          join(ordner, 'ton.wav'),
+          '-c:a',
+          codec,
+          join(ordner, datei),
+        ]);
         return readFileSync(join(ordner, datei));
       } catch {
         // nächster Codec
@@ -123,7 +133,10 @@ async function entfernen(db: ReturnType<typeof holeDb>, id: string) {
   if (r.vereinbarungMediumId) {
     const [m] = await db.select().from(schema.medium).where(eq(schema.medium.id, r.vereinbarungMediumId)).limit(1);
     await db.delete(schema.medium).where(eq(schema.medium.id, r.vereinbarungMediumId));
-    if (m) await speicher().loesche(m.schluessel).catch(() => undefined);
+    if (m)
+      await speicher()
+        .loesche(m.schluessel)
+        .catch(() => undefined);
   }
 }
 
@@ -151,7 +164,13 @@ async function main() {
   await speicher().schreibe(schluessel, pdf, 'application/pdf');
   const [medium] = await db
     .insert(schema.medium)
-    .values({ schluessel, typ: 'application/pdf', groesse: pdf.length, alt: { de: '[Test-Vereinbarung]' }, dateiname: 'test-vereinbarung.pdf' })
+    .values({
+      schluessel,
+      typ: 'application/pdf',
+      groesse: pdf.length,
+      alt: { de: '[Test-Vereinbarung]' },
+      dateiname: 'test-vereinbarung.pdf',
+    })
     .returning({ id: schema.medium.id });
   await db.insert(schema.quranRezitation).values({ id, name, rezitator, art: 'eigen', lizenz, vereinbarungMediumId: medium.id });
   // Testton ablegen (wie die Werkstatt): eine Datei je Sure, danach Vers- und Wortzeiten
@@ -159,11 +178,21 @@ async function main() {
   const ablage = await legeAudioAb({ rezitationId: id, sure, roh, dauerMs: s.verse * VERS_MS });
   await db
     .insert(schema.quranVerszeit)
-    .values(Array.from({ length: s.verse }, (_, i) => ({ rezitationId: id, sure, vers: i + 1, startMs: i * VERS_MS, endeMs: (i + 1) * VERS_MS })));
+    .values(
+      Array.from({ length: s.verse }, (_, i) => ({ rezitationId: id, sure, vers: i + 1, startMs: i * VERS_MS, endeMs: (i + 1) * VERS_MS })),
+    );
   const woerter = await db
     .select({ vers: schema.quranWort.vers, pos: schema.quranWort.pos })
     .from(schema.quranWort)
-    .where(and(eq(schema.quranWort.sure, sure), inArray(schema.quranWort.vers, Array.from({ length: s.verse }, (_, i) => i + 1))));
+    .where(
+      and(
+        eq(schema.quranWort.sure, sure),
+        inArray(
+          schema.quranWort.vers,
+          Array.from({ length: s.verse }, (_, i) => i + 1),
+        ),
+      ),
+    );
   const jeVers = new Map<number, number[]>();
   for (const w of woerter) jeVers.set(w.vers, [...(jeVers.get(w.vers) ?? []), w.pos]);
   const wortzeiten = [...jeVers.entries()].flatMap(([vers, positionen]) => {
@@ -184,8 +213,21 @@ async function main() {
   if (wortzeiten.length) await db.insert(schema.quranWortzeit).values(wortzeiten);
   await db.update(schema.quranRezitation).set({ aktiv: true }).where(eq(schema.quranRezitation.id, id));
 
-  const ergebnis = { id, sure, verse: s.verse, versMs: VERS_MS, tonMs: TON_MS, name, rezitator, lizenz, audio: ablage.pfad, mime: ablage.mime };
-  console.log(values.json ? JSON.stringify(ergebnis) : `Angelegt: ${id} (Sure ${sure}, ${s.verse} Verse, ${ablage.mime}, ${ablage.bytes} Bytes)`);
+  const ergebnis = {
+    id,
+    sure,
+    verse: s.verse,
+    versMs: VERS_MS,
+    tonMs: TON_MS,
+    name,
+    rezitator,
+    lizenz,
+    audio: ablage.pfad,
+    mime: ablage.mime,
+  };
+  console.log(
+    values.json ? JSON.stringify(ergebnis) : `Angelegt: ${id} (Sure ${sure}, ${s.verse} Verse, ${ablage.mime}, ${ablage.bytes} Bytes)`,
+  );
 }
 
 main().then(

@@ -120,7 +120,9 @@ test('Abspielen: Quellenzeile, Vers- und Wort-Hervorhebung, Hervorhebung wandert
   expect(quelle).toBe(r.audio);
   // Wort im Takt hervorgehoben (CSS Custom Highlight API, sonst Klasse am Wort)
   await expect
-    .poll(() => page.evaluate(() => ('highlights' in CSS ? CSS.highlights.has('quran-wort') : document.querySelector('.wort-aktiv') !== null)))
+    .poll(() =>
+      page.evaluate(() => ('highlights' in CSS ? CSS.highlights.has('quran-wort') : document.querySelector('.wort-aktiv') !== null)),
+    )
     .toBe(true);
   // Hervorhebung wandert: Vers 2 aktiv, Vers 1 nicht mehr
   await expect(vers(page, 2)).toHaveAttribute('data-aktiv', '', { timeout: r.versMs * 2 + 5000 });
@@ -208,6 +210,9 @@ test('390 px: Player ohne Überlauf, Bedienelemente mindestens 44 px; axe ohne B
     expect(box?.height ?? 0, `Höhe von ${await ziel.evaluate((e) => e.outerHTML.slice(0, 80))}`).toBeGreaterThanOrEqual(44);
   }
   await p.getByRole('button', { name: P.pause, exact: true }).click();
-  const axe = await new AxeBuilder({ page }).include('section.player').withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa']).analyze();
+  const axe = await new AxeBuilder({ page })
+    .include('section.player')
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
+    .analyze();
   expect(axe.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`)).toEqual([]);
 });
