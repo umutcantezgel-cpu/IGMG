@@ -10,7 +10,6 @@ import { Header } from './Header';
 import { JsonLd } from './JsonLd';
 import { KonzeptHinweis, KonzeptHinweisSkript } from './KonzeptHinweis';
 import type { Bereich, SprachZiel } from './navigation';
-import { PrayerTimesBar } from './PrayerTimesBar';
 import { SeitenUebergang } from './SeitenUebergang';
 
 /**
@@ -29,29 +28,31 @@ function brotkrumenEintraege(pfad: PfadEintrag[], sprache: Locale, startseite: s
 /** Name und Klasse des Inhalts im Seitenwechsel (B-05, L-E10). */
 const SEITE = { viewTransitionName: 'seite', viewTransitionClass: 'seite' } as CSSProperties;
 
-/**
- * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, PrayerTimesBar, Breadcrumbs, Inhalt, Footer.
- * Jede Seite übergibt Bereich, aktuelle Seite und ihr Sprachziel ausdrücklich – so bleibt das HTML statisch
- * (kein usePathname). Ausnahmen nach Laufbuch D-16: keine Breadcrumbs auf der Startseite, keine Leiste auf Gebetszeiten.
- * `kompakteLeiste`: die Leiste als eine Zeile (Leseseiten wie `/quran/[sure]`, Sichtabnahme S-1).
- */
-export async function Seitenrahmen({
-  bereich,
-  seite,
-  sprachZiel,
-  pfad,
-  ohneLeiste = false,
-  kompakteLeiste = false,
-  children,
-}: {
+export type GrundrahmenProps = {
   bereich: Bereich;
   seite: string;
   sprachZiel: SprachZiel;
   pfad?: PfadEintrag[];
-  ohneLeiste?: boolean;
-  /** Leiste als eine Zeile „Nächstes Gebet · Zeit“ */
-  kompakteLeiste?: boolean;
   children: ReactNode;
+};
+
+/**
+ * Rahmen jeder öffentlichen Seite (MUSTER „Seite“): Sprunglink, Header, Leiste, Breadcrumbs, Inhalt, Footer.
+ * Jede Seite übergibt Bereich, aktuelle Seite und ihr Sprachziel ausdrücklich – so bleibt das HTML statisch
+ * (kein usePathname). Die Leiste kommt als Element: Der Grundrahmen bindet keine Leiste ein, damit jede Seite nur das
+ * JavaScript der Leiste mitbringt, die sie zeigt (Z-08). Üblich ist `Seitenrahmen` (volle PrayerTimesBar); direkt
+ * nutzen den Grundrahmen nur Gebetszeiten (keine Leiste, Laufbuch D-16) und die Leseseiten (`PrayerTimesBarKompakt`).
+ */
+export async function Grundrahmen({
+  bereich,
+  seite,
+  sprachZiel,
+  pfad,
+  leiste,
+  children,
+}: GrundrahmenProps & {
+  /** Gebetszeitenleiste unter dem Kopf (PrayerTimesBar bzw. PrayerTimesBarKompakt); ohne: keine Leiste */
+  leiste?: ReactNode;
 }) {
   const sprache = (await getLocale()) as Locale;
   const t = await getTranslations('kopf');
@@ -88,7 +89,7 @@ export async function Seitenrahmen({
         {t('zumInhalt')}
       </a>
       <Header aktiv={bereich} aktuell={seite} sprachZiel={sprachZiel} />
-      {ohneLeiste ? null : <PrayerTimesBar kompakt={kompakteLeiste} />}
+      {leiste}
       {pfad && pfad.length > 0 ? <Breadcrumbs pfad={pfad} /> : null}
       {pfad && pfad.length > 0 ? <JsonLd daten={brotkrumen(brotkrumenEintraege(pfad, sprache, tp('startseite')))} /> : null}
       <main id="inhalt" tabIndex={-1} className="outline-none">

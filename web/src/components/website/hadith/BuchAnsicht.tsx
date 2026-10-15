@@ -3,7 +3,8 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { morphStil } from '@/components/website/morph';
 import { NachOben } from '@/components/website/NachOben';
 import { PageHeader } from '@/components/website/PageHeader';
-import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { Grundrahmen } from '@/components/website/Grundrahmen';
+import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { buchTeilZiel } from '@/lib/hadith/anzeige';
@@ -48,11 +49,11 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
         ? { href: { pathname: '/hadith/bukhari/[buch]' as const, params: { buch: String(daten.naechstes.nr) } }, text: t('naechstes') }
         : null;
   return (
-    <Seitenrahmen
+    <Grundrahmen
       bereich="islam"
       seite="hadith"
       sprachZiel={ziel}
-      kompakteLeiste
+      leiste={<PrayerTimesBarKompakt />}
       pfad={[
         { label: th('breadcrumb'), ziel: '/hadith' },
         { label: name, ziel: '/hadith/bukhari' },
@@ -152,7 +153,7 @@ export async function BuchAnsicht({ daten }: { daten: HadithBuch }) {
         </aside>
       </div>
       <NachOben text={t('nachOben')} />
-    </Seitenrahmen>
+    </Grundrahmen>
   );
 }
 

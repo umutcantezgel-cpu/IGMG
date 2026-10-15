@@ -50,6 +50,23 @@ describe('Client-Code öffentlicher Seiten', () => {
     ).toEqual([]);
   });
 
+  it('Grundrahmen ohne Leiste, jede Leistenform ein eigenes Modul: keine Seite lädt eine Leiste, die sie nicht zeigt (Z-08)', () => {
+    // nur Laufzeit-Importe zählen (`import type` entfällt beim Kompilieren)
+    const importe = (...teile: string[]) =>
+      readFileSync(join(WURZEL, ...teile), 'utf8')
+        .split('\n')
+        .filter((z) => z.startsWith('import ') && !z.startsWith('import type '))
+        .join('\n');
+    expect(importe('components', 'website', 'Grundrahmen.tsx')).not.toMatch(/PrayerTimesBar|leiste\//);
+    expect(importe('components', 'website', 'PrayerTimesBar.tsx')).not.toMatch(/LeisteKompakt/);
+    expect(importe('components', 'website', 'PrayerTimesBarKompakt.tsx')).not.toMatch(/LeisteLive/);
+    expect(importe('components', 'website', 'leiste', 'leiste-daten.ts')).not.toMatch(/LeisteLive|LeisteKompakt/);
+    // Gebetszeiten zeigt keine Leiste (Laufbuch D-16) und bindet deshalb weder Seitenrahmen noch eine Leiste ein
+    expect(importe('app', '[locale]', '(website)', 'gebetszeiten', 'page.tsx')).not.toMatch(/Seitenrahmen|PrayerTimesBar|leiste\//);
+    // Die kompakte Leiste kommt vom Server ohne Suspense: kein ausgelagert gestreamter Inhalt, kein Sprung beim Aufdecken
+    for (const p of dateien(join(WURZEL, 'components', 'website', 'leiste'))) expect(readFileSync(p, 'utf8')).not.toMatch(/\blazy\(/);
+  });
+
   it('nur eine Fehlergrenze (global-error.tsx), sie importiert keine gemeinsamen Seitenbausteine', () => {
     expect(() => statSync(join(WURZEL, 'app', '[locale]', 'error.tsx'))).toThrow();
     const s = readFileSync(join(WURZEL, 'app', 'global-error.tsx'), 'utf8');

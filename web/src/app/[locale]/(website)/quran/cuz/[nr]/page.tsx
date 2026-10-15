@@ -6,7 +6,8 @@ import { LeserRahmen } from '@/components/website/quran/LeserRahmen';
 import { QuellenFuss } from '@/components/website/quran/Quellenzeile';
 import { QuranWeiter } from '@/components/website/quran/QuranWeiter';
 import { SurenKopf } from '@/components/website/quran/SurenKopf';
-import { Seitenrahmen } from '@/components/website/Seitenrahmen';
+import { Grundrahmen } from '@/components/website/Grundrahmen';
+import { PrayerTimesBarKompakt } from '@/components/website/PrayerTimesBarKompakt';
 import { Link } from '@/i18n/link';
 import { ausgabeFuer } from '@/lib/quran/ausgaben';
 import { versListeHtml } from '@/lib/quran/satz';
@@ -55,12 +56,12 @@ export default async function QuranCuzPage({ params }: { params: Promise<{ local
   const ziel = (n: number) => ({ pathname: '/quran/cuz/[nr]', params: { nr: String(n) } }) as const;
 
   return (
-    <Seitenrahmen
+    <Grundrahmen
       bereich="islam"
       seite="quran"
       sprachZiel={ziel(nr)}
       pfad={[{ label: t('breadcrumb'), ziel: '/quran' }, { label: t('cuz.titel', { nr }) }]}
-      kompakteLeiste
+      leiste={<PrayerTimesBarKompakt />}
     >
       <SurenKopf
         kennung={t('cuz.kennung', { nr })}
@@ -132,6 +133,6 @@ export default async function QuranCuzPage({ params }: { params: Promise<{ local
           naechste={nr < bereiche.length ? { ziel: ziel(nr + 1), text: t('cuz.navNaechste'), name: t('cuz.titel', { nr: nr + 1 }) } : null}
         />
       </LeserRahmen>
-    </Seitenrahmen>
+    </Grundrahmen>
   );
 }
