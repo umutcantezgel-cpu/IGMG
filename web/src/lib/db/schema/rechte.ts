@@ -52,3 +52,25 @@ export const einladung = pgTable(
   },
   (t) => [index('einladung_email_idx').on(t.email)],
 );
+
+/**
+ * Offene Vergabe einer Schutzrolle (`leitung`, `kinderschutz`) – Vier-Augen-Prinzip (M-2 der Sicherheitsprüfung S1,
+ * S2/S3): Die Administration beantragt, eine zweite Person mit `leitung` oder `kinderschutz` (ohne Administration, nicht
+ * die beantragende und nicht die betroffene Person) bestätigt. Erst dann entsteht die Zeile in `rolle_zuweisung`.
+ */
+export const rollenAntrag = pgTable(
+  'rollen_antrag',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    benutzerId: text()
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    rolle: rolleEnum().notNull(),
+    beantragtVon: text(),
+    beantragtAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    unique('rollen_antrag_eindeutig').on(t.benutzerId, t.rolle),
+    check('rollen_antrag_schutzrolle', sql`${t.rolle} in ('leitung', 'kinderschutz')`),
+  ],
+);

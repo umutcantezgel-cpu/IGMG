@@ -204,8 +204,10 @@ describe('Gruppenisolation der Abfragen', () => {
     const m = await chat.meldeNachricht(await ladeGruppenKontext(kind1.id), n.id, 'unangemessen', null);
     expect(m.ok).toBe(true);
     expect(await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.lehrkraftA.id))).toEqual([]);
-    const fuerAufsicht = await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.aufsichtA.id));
-    expect(fuerAufsicht?.map((x) => [x.absenderIstLeitung, x.absenderLernendeId])).toEqual([[true, null]]);
+    // S2/S3: Meldungen gegen die Leitung sieht auch die übrige Leitung nicht – nur die Rolle kinderschutz
+    expect(await unterricht.offeneMeldungen(gruppeA, await ladeGruppenKontext(p.aufsichtA.id))).toEqual([]);
+    const [gespeichert] = await db.select().from(schema.chatMeldung).where(eq(schema.chatMeldung.nachrichtId, n.id));
+    expect(gespeichert).toMatchObject({ gemeldetePerson: p.lehrkraftA.id, gegenLeitung: true });
   });
 });
 
@@ -522,7 +524,15 @@ describe('Push an eine Gruppe (ADR 0034, S-16)', () => {
         formular({ sprache: 'de', lernendeId: l.kind1, art: 'push_kind', aktion: 'erteilen', einvernehmen: 'ja' }),
       ),
     );
-    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 11 * 60_000)).toBe(1);
+    // S2/S3: Chat-Push an das Kind zusätzlich nur mit Einwilligung „Gruppenchat“ (hier noch widerrufen)
+    expect(await aktiv(l.kind1, 'gruppenchat')).toHaveLength(0);
+    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 11 * 60_000)).toBe(0);
+    await umleitung(
+      kinderAktionen.einwilligungAendern(
+        formular({ sprache: 'de', lernendeId: l.kind1, art: 'gruppenchat', aktion: 'erteilen', einvernehmen: 'ja' }),
+      ),
+    );
+    expect(await sendeGruppenPush(gruppeA, 'chat', { schueler: true, eltern: false }, '/x', p.lehrkraftA.id, jetzt + 21 * 60_000)).toBe(1);
     // Unterricht: Eltern der Gruppe mit Thema „unterricht“, nicht Eltern anderer Gruppen
     gesendet.length = 0;
     expect(await sendeGruppenPush(gruppeA, 'unterricht', { schueler: true, eltern: true }, '/y', null, jetzt)).toBe(1);

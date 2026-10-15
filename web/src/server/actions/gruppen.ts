@@ -1,11 +1,11 @@
 'use server';
 
-import { and, eq, isNull } from 'drizzle-orm';
+import { and, eq, isNull, sql } from 'drizzle-orm';
 import { refresh } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
-import { db, schema } from '@/lib/db';
+import { db, schema, type Transaktion } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { erzeugeTermine } from '@/lib/lernen/dienst';
@@ -76,6 +76,7 @@ export async function speichereGruppe(_vorher: GruppenZustand, fd: FormData): Pr
     const id = e.id;
     const geaendert = await db.transaction(async (tx) => {
       const z = await tx.update(schema.gruppe).set(daten).where(eq(schema.gruppe.id, id)).returning({ id: schema.gruppe.id });
+      if (z.length) await archivFolgen(tx, id, daten.status);
       if (z.length)
         await protokolliere(
           {
@@ -103,6 +104,29 @@ export async function speichereGruppe(_vorher: GruppenZustand, fd: FormData): Pr
     return g.id;
   });
   redirect(`/verwaltung/gruppen/${neu}?meldung=angelegt`);
+}
+
+/**
+ * Folgen des Archivierens (S2/S3): Beide Kanäle der Gruppe werden archiviert und laufende Mitgliedschaften enden heute –
+ * kein unbeaufsichtigter Kanal, nachdem die Leitung mit dem Archivieren ihren Zugang verliert. Wird die Gruppe wieder
+ * aktiv, öffnen sich die Kanäle wieder (eine Pause der Rolle kinderschutz bleibt bestehen); Mitglieder ordnet die
+ * Verwaltung neu zu.
+ */
+async function archivFolgen(tx: Transaktion, gruppeId: string, status: 'aktiv' | 'archiviert'): Promise<void> {
+  if (status === 'archiviert') {
+    await tx.update(schema.chatKanal).set({ status: 'archiviert' }).where(eq(schema.chatKanal.gruppeId, gruppeId));
+    await tx
+      .update(schema.gruppenMitglied)
+      .set({ bis: berlinerDatum(new Date()) })
+      .where(and(eq(schema.gruppenMitglied.gruppeId, gruppeId), isNull(schema.gruppenMitglied.bis)));
+    return;
+  }
+  await tx
+    .update(schema.chatKanal)
+    .set({
+      status: sql`case when ${schema.chatKanal.kinderschutzPause} then 'pausiert'::chat_kanal_status else 'aktiv'::chat_kanal_status end`,
+    })
+    .where(and(eq(schema.chatKanal.gruppeId, gruppeId), eq(schema.chatKanal.status, 'archiviert')));
 }
 
 async function gruppeVorhanden(id: string): Promise<boolean> {

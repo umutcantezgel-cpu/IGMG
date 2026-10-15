@@ -1,4 +1,17 @@
-import { bigint, bigserial, index, pgEnum, pgTable, primaryKey, smallint, text, timestamp, unique, uuid } from 'drizzle-orm/pg-core';
+import {
+  bigint,
+  bigserial,
+  boolean,
+  index,
+  pgEnum,
+  pgTable,
+  primaryKey,
+  smallint,
+  text,
+  timestamp,
+  unique,
+  uuid,
+} from 'drizzle-orm/pg-core';
 import { user } from './auth';
 import { gruppe } from './lernen';
 import { bytea } from './typen';
@@ -19,6 +32,11 @@ export const chatKanal = pgTable(
       .references(() => gruppe.id, { onDelete: 'cascade' }),
     art: chatKanalArtEnum().notNull(),
     status: chatKanalStatusEnum().notNull().default('aktiv'),
+    /**
+     * Pause durch die Rolle kinderschutz (D-02, S2/S3): Nur kinderschutz hebt sie wieder auf – die Gruppenleitung nicht,
+     * denn die Pause richtet sich oft gegen jemanden aus der Leitung.
+     */
+    kinderschutzPause: boolean().notNull().default(false),
     erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [unique('chat_kanal_eindeutig').on(t.gruppeId, t.art)],
@@ -100,6 +118,12 @@ export const chatMeldung = pgTable(
     kanalId: uuid().references(() => chatKanal.id, { onDelete: 'set null' }),
     nachrichtId: bigint({ mode: 'number' }),
     gemeldetVon: text().references(() => user.id, { onDelete: 'set null' }),
+    /**
+     * Absender der gemeldeten Nachricht zum Zeitpunkt der Meldung (D-02, S2/S3): bleibt auch, wenn der Löschlauf die
+     * Nachricht entfernt. Unbekannt (null) oder `gegenLeitung` → die Meldung sieht nur die Rolle kinderschutz.
+     */
+    gemeldetePerson: text().references(() => user.id, { onDelete: 'set null' }),
+    gegenLeitung: boolean().notNull().default(false),
     grund: chatMeldungGrundEnum().notNull(),
     freitextVerschluesselt: bytea(),
     kontextVerschluesselt: bytea().notNull(),

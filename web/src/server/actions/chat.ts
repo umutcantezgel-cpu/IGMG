@@ -132,6 +132,8 @@ export async function pausiereKanal(kanalId: string, pause: boolean, begruendung
   const kanal = await ladeKanal(kanalId);
   if (!kanal) return { fehler: 'nichtGefunden' as const };
   const fehler = await setzeKanalPause(k, kanal, pause, begruendung);
+  // Fortsetzen meldet der Dienst der Rolle kinderschutz (Mail-Ausgang); Versand nach der Antwort
+  if (!fehler && !pause) after(() => versendeOffeneMails().catch(() => undefined));
   return fehler ? { fehler } : { ok: true as const };
 }
 

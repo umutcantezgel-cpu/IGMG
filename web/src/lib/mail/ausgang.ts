@@ -33,10 +33,22 @@ export const MAX_VERSUCHE = 6;
 /**
  * Empfänger „rolle:<art>[:<organisation>]“ (Leserecht der Eingangsart) oder „recht:<aktion>[:<organisation>]“
  * (z. B. `recht:ticket.bearbeiten` für Meldungen, E-037) → E-Mail-Adressen aller zuständigen, nicht gesperrten Konten.
+ * „schutzrollen:“ → alle Konten mit der Rolle `leitung` oder `kinderschutz` (Hinweise zu Schutzrollen, S2/S3) – nicht
+ * die Administration, die solche Vorgänge selbst auslöst.
  */
+export const SCHUTZROLLEN_EMPFAENGER = 'schutzrollen:';
+
 async function empfaenger(an: string): Promise<string[]> {
   // Newsletter (AUFTRAG 3.10): Adresse erst beim Versand und nur bei bestätigter Anmeldung
   if (an.startsWith(NEWSLETTER_EMPFAENGER)) return newsletterEmpfaenger(an.slice(NEWSLETTER_EMPFAENGER.length));
+  if (an === SCHUTZROLLEN_EMPFAENGER) {
+    const zeilen = await db
+      .selectDistinct({ email: schema.user.email })
+      .from(schema.rolleZuweisung)
+      .innerJoin(schema.user, eq(schema.user.id, schema.rolleZuweisung.benutzerId))
+      .where(and(inArray(schema.rolleZuweisung.rolle, ['leitung', 'kinderschutz']), isNull(schema.user.gesperrtAm)));
+    return zeilen.map((z) => z.email);
+  }
   if (!an.startsWith('rolle:') && !an.startsWith('recht:')) return [an];
   const [art, schluessel, organisation] = an.split(':') as ['rolle' | 'recht', string, OrganisationKuerzel | undefined];
   const aktion: Aktion | undefined =
@@ -84,6 +96,20 @@ async function kontoMailBauen(vorlage: KontoVorlage, sprache: MailSprache, inhal
     hinweis: t('hinweis'),
     link: inhalt.daten.link ?? basisUrl(),
   });
+}
+
+/**
+ * Hinweis zur Kenntnis (Vorlage „hinweis“, ohne Namen und Inhalte) in der Transaktion des Aufrufers planen – an
+ * `recht:meldung.chat.bearbeiten` (kinderschutz) oder `SCHUTZROLLEN_EMPFAENGER` (Leitung und Kinderschutz).
+ */
+export async function planeHinweis(
+  o: { an: string; art: 'kanal_fortgesetzt' | 'rollenantrag' | 'rolle_vergeben' | 'leitungszuweisung' | 'elternbezug'; pfad: string },
+  tx: Pick<typeof db, 'insert'> = db,
+): Promise<void> {
+  const paket = verschluessele({ an: o.an, daten: { art: o.art, pfad: o.pfad } });
+  await tx
+    .insert(schema.mailAusgang)
+    .values({ vorlage: 'hinweis', sprache: 'de', datenVerschluesselt: paket.daten, schluesselId: paket.schluesselId });
 }
 
 /**
@@ -151,6 +177,18 @@ async function baue(vorlage: string, sprache: 'de' | 'tr' | 'en', inhalt: Inhalt
       knopf: t('einladung.knopf'),
       hinweis: t('einladung.hinweis'),
       link: inhalt.daten.link ?? `${basisUrl()}/verwaltung/anmelden`,
+    });
+  }
+  if (vorlage === 'hinweis') {
+    // Hinweis zur Kenntnis an Leitung/Kinderschutz (S2/S3): nur die Art des Vorgangs, keine Namen, keine Inhalte
+    const t = uebersetzer('de', { verwaltung: de.verwaltung }, 'verwaltung.mails');
+    const art = t(`art.${inhalt.daten.art}`);
+    return benachrichtigungMail({
+      betreff: t('hinweis.betreff', { art }),
+      text: t('hinweis.text', { art }),
+      knopf: t('hinweis.knopf'),
+      hinweis: t('hinweis.hinweis'),
+      link: `${basisUrl()}${/^\/verwaltung\//.test(inhalt.daten.pfad ?? '') ? inhalt.daten.pfad : '/verwaltung'}`,
     });
   }
   if (vorlage === 'benachrichtigung') {
