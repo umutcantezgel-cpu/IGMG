@@ -111,7 +111,7 @@ export function GebetszeitenTabs({
           onKeyDown={tastatur}
           onScroll={pruefeRand}
           className={klassen(
-            'relative flex snap-x snap-proximity scroll-px-1 [scrollbar-width:none] gap-1 overflow-x-auto overscroll-x-contain p-1',
+            'relative flex snap-x snap-proximity scroll-px-1 scrollbar-none gap-1 overflow-x-auto overscroll-x-contain p-1',
             rand.links && rand.rechts ? 'mask-x-from-85%' : rand.rechts ? 'mask-r-from-85%' : rand.links ? 'mask-l-from-85%' : undefined,
           )}
         >

@@ -5,8 +5,8 @@ import { describe, expect, it } from 'vitest';
 /**
  * Bewegungsregister B-01 (Kern K-007, Stufe C Z-05): Bei reduzierter Bewegung gibt es keine Größen- oder Lageänderung auf
  * Hover und Druck – die Rückmeldung bleibt allein die Farbe. Die Druck-Skalierung kommt nur aus der Utility `druck`
- * (globals.css, nur bei `prefers-reduced-motion: no-preference`); `active:scale-98` und Hover-Verschiebungen ohne
- * `motion-safe:` sind im Quelltext verboten.
+ * (globals.css, nur bei `prefers-reduced-motion: no-preference`); Skalieren über die active-Variante und Verschieben auf
+ * Hover ohne `motion-safe:` sind im Quelltext verboten.
  */
 const WURZEL = join(import.meta.dirname, '..', '..', 'src');
 const CSS = readFileSync(join(WURZEL, 'app', 'globals.css'), 'utf8');
@@ -39,7 +39,7 @@ describe('B-01 Druck-Rückmeldung und reduzierte Bewegung', () => {
     expect(funde((t) => t === 'druck').length).toBeGreaterThan(100);
   });
 
-  it('kein `active:scale-*` im Quelltext – stattdessen die Utility `druck`', () => {
+  it('keine Skalierung über die active-Variante im Quelltext – stattdessen die Utility `druck`', () => {
     expect(funde((t) => /(?:^|:)active:scale-/.test(t))).toEqual([]);
   });
 

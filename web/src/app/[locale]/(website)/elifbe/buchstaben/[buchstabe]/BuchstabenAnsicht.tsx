@@ -189,7 +189,7 @@ export async function BuchstabenAnsicht({ b }: { b: Buchstabe }) {
                       key={f}
                       lang="ar"
                       dir="rtl"
-                      className="border-l border-linie px-0.5 py-2 text-center text-[calc(var(--text-48)*4/3)] leading-loose text-gruen-950 first:border-l-0 md:px-3 md:buchstabe-gross"
+                      className="border-l border-linie px-0.5 py-2 text-center buchstabe-form text-gruen-950 first:border-l-0 md:px-3 md:buchstabe-gross"
                     >
                       {formMitAnschluss(b, f)}
                     </td>

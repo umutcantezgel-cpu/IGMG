@@ -46,7 +46,7 @@ export function BereichLeiste({ label, children }: { label: string; children: Re
     <nav
       ref={nav}
       aria-label={label}
-      className="relative -mx-4 snap-x snap-mandatory scroll-px-12 overflow-x-auto px-4 data-links:[mask-image:linear-gradient(to_right,transparent,black_--spacing(12))] data-rechts:[mask-image:linear-gradient(to_left,transparent,black_--spacing(12))] data-links:data-rechts:[mask-image:linear-gradient(to_right,transparent,black_--spacing(12),black_calc(100%-(--spacing(12))),transparent)] lg:mx-0 lg:snap-none lg:overflow-visible lg:px-0"
+      className="relative -mx-4 snap-x snap-mandatory scroll-px-12 overflow-x-auto px-4 data-links:auslauf-links data-rechts:auslauf-rechts data-links:data-rechts:auslauf-beidseitig lg:mx-0 lg:snap-none lg:overflow-visible lg:px-0"
     >
       {children}
     </nav>

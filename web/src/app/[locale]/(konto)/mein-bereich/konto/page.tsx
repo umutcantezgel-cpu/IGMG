@@ -82,7 +82,7 @@ export default async function KontoSeite({ searchParams }: PageProps<'/[locale]/
       {s.faktor === 'eingerichtet' ? <Meldung art="erfolg">{t('konto.zweiFaktor.eingerichtet')}</Meldung> : null}
 
       <Abschnitt id="profil" Icon={UserRound} titel={t('konto.profil.titel')}>
-        <dl className="mb-6 grid gap-x-6 gap-y-2 rounded-md bg-sand px-4 py-3 text-16 sm:grid-cols-[auto_minmax(0,1fr)]">
+        <dl className="mb-6 grid gap-x-6 gap-y-2 rounded-md bg-sand px-4 py-3 text-16 sm:raster-symbol">
           {details.email ? (
             <>
               <dt className="font-bold">{t('konto.profil.email')}</dt>

@@ -311,7 +311,7 @@ export function ChatFenster({
                 /* Kopf fremder Nachrichten (GC-3): links Name, Plakette und Zeit (dürfen umbrechen), rechts immer „Melden“
                    als ruhiger Umrissknopf (GC-2: keine Füllung, Schrift wie die Zeit). Die erste Zeile ist so hoch wie der
                    Knopf, damit Name und Knopf auf einer Linie stehen – auch wenn die Zeit in die zweite Zeile rückt. */
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-3">
+                <div className="grid raster-aktion items-start gap-x-3">
                   <span data-namenszeile className="flex min-w-0 flex-wrap items-center gap-x-2 text-16 text-tinte-2">
                     <span className="inline-flex min-h-11 items-center font-bold text-tinte">{n.name}</span>
                     {n.leitung ? <Plakette text={texte.lehrkraft} /> : null}
@@ -371,7 +371,7 @@ export function ChatFenster({
           <SperrBand ref={sperrBand} grund={z.schreiben} text={texte.grund[z.schreiben] ?? ''} wiederAb={texte.wiederAb} />
         ) : null}
         <form
-          className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5 sm:items-end"
+          className="grid raster-aktion items-center gap-x-2 gap-y-1.5 sm:items-end"
           onSubmit={(e) => {
             e.preventDefault();
             void senden();

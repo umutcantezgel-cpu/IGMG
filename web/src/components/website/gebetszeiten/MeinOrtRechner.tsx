@@ -25,7 +25,7 @@ const BERLIN = 'Europe/Berlin';
 const NAEHE_KM = 25;
 const UMGEBUNG_KM = 40;
 /** Raster aus Ortsauswahl und Ergebnis: links Auswahl bzw. Tabelle, ab lg rechts die Qibla (G-3: gleiche Breite). */
-const RASTER = 'grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]';
+const RASTER = 'grid gap-8 lg:raster-drei-zwei';
 /** Gleicher waagerechter Innenabstand für Kopf- und Datenzellen der Tabelle (G-3). */
 const ZELLE = 'px-2';
 

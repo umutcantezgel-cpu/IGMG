@@ -45,7 +45,7 @@ export default async function DesTagesSeite() {
         <h2 id="des-tages-heute" className="text-24 font-bold">
           {t('desTages.heuteTitel')}
         </h2>
-        <dl className="grid gap-x-6 gap-y-2 text-16 sm:grid-cols-[auto_1fr]">
+        <dl className="grid gap-x-6 gap-y-2 text-16 sm:raster-symbol">
           <dt className="font-bold">{t('desTages.versTitel')}</dt>
           <dd>{auswahl.vers ? name(auswahl.vers) : t('desTages.keinEintrag')}</dd>
           <dt className="font-bold">{t('desTages.hadithTitel')}</dt>

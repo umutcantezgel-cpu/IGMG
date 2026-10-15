@@ -194,7 +194,7 @@ export function ZweiFaktorEinrichten() {
   }
   return (
     <div className="flex flex-col gap-8">
-      <div className="grid gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:items-start">
+      <div className="grid gap-6 md:raster-symbol md:items-start">
         <div className="self-start rounded-lg border border-linie bg-weiss p-3 shadow-s1">
           <QrCode text={totp.uri} titel={t('konto.zweiFaktor.qrAlt')} groesse={200} />
         </div>
@@ -214,7 +214,7 @@ export function ZweiFaktorEinrichten() {
           {t('konto.zweiFaktor.ersatzTitel')}
         </h3>
         <Meldung art="info">{t('konto.zweiFaktor.ersatzHinweis')}</Meldung>
-        <ul className="grid grid-cols-[repeat(auto-fill,minmax(8.25rem,1fr))] gap-2 font-mono text-16 sm:text-18">
+        <ul className="grid raster-kleinkacheln gap-2 font-mono text-16 sm:text-18">
           {totp.ersatzcodes.map((c) => (
             <li key={c} className="rounded-md bg-sand px-3 py-2.5 text-center tracking-wide">
               {c}

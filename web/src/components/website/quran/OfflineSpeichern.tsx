@@ -31,7 +31,7 @@ function Ring({ anteil, beschriftung }: { anteil: number; beschriftung: string }
         strokeLinecap="round"
         strokeDasharray={UMFANG}
         strokeDashoffset={UMFANG * (1 - anteil)}
-        className="stroke-gruen-700 transition-[stroke-dashoffset] duration-(--dauer-rueckmeldung) motion-reduce:transition-none"
+        className="stroke-gruen-700 transition-strich duration-(--dauer-rueckmeldung) motion-reduce:transition-none"
       />
     </svg>
   );

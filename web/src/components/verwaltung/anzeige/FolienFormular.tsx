@@ -109,7 +109,7 @@ export function FolienFormular({
             maxLength={400}
             defaultValue={wert(name)}
             // Wächst mit dem Text (mindestens vier Zeilen), damit nichts im Feld verborgen bleibt
-            className={cn(eingabe, 'field-sizing-content min-h-[calc(4lh+1.5rem+0.125rem)] py-3 leading-normal')}
+            className={cn(eingabe, 'field-sizing-content min-h-zeilen-4 py-2.5 leading-normal')}
           />
         )}
       />

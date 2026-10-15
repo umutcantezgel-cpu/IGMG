@@ -58,7 +58,7 @@ export async function KontoEinstieg({
             {karte}
           </div>
         ) : (
-          <div className="mx-auto grid max-w-(--container-inhalt) gap-10 px-4 pt-8 pb-12 md:px-8 md:pt-14 md:pb-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:gap-16 lg:pt-20 lg:pb-24">
+          <div className="mx-auto grid max-w-(--container-inhalt) gap-10 px-4 pt-8 pb-12 md:px-8 md:pt-14 md:pb-16 lg:raster-formularspalte lg:gap-16 lg:pt-20 lg:pb-24">
             <div className="flex flex-col gap-5 max-lg:order-2 lg:sticky lg:top-8 lg:self-start lg:pt-4">
               {kennung}
               <p className="max-w-seitenkopf font-display text-display-2 text-balance text-tinte">{t('titel')}</p>
