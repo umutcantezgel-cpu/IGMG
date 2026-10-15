@@ -61,16 +61,14 @@ await db.insert(schema.seite).values([
 ]);
 // Suren 1 und 2 aus den Tanzil-Metadaten (web/daten)
 const meta = leseMetadaten(readFileSync(join(import.meta.dirname, '../../daten/tanzil/quran-data.xml'), 'utf8')).suren.slice(0, 2);
-await db
-  .insert(schema.quranQuelle)
-  .values({
-    id: 'tanzil',
-    bezeichnung: '[Quelle]',
-    url: 'https://example.test',
-    version: 'test',
-    sha256: '0'.repeat(64),
-    lizenz: '[Lizenz]',
-  });
+await db.insert(schema.quranQuelle).values({
+  id: 'tanzil',
+  bezeichnung: '[Quelle]',
+  url: 'https://example.test',
+  version: 'test',
+  sha256: '0'.repeat(64),
+  lizenz: '[Lizenz]',
+});
 await db
   .insert(schema.quranSure)
   .values(meta.map((m) => ({ nr: m.nr, nameAr: m.nameAr, verseAnzahl: m.verse, quelleId: 'tanzil', nameUmschrift: m.umschrift })));
