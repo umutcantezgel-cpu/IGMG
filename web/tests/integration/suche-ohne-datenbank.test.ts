@@ -15,6 +15,12 @@ import { verwaltungsUmgebung } from './hilfen/verwaltung';
  * auch wenn eine Index-Datei daliegt – und ohne Datenbank im Index; ohne Index meldet sie „ohne“ statt „Keine Treffer“.
  * Arabische Namen und Texte nur aus web/daten; alle übrigen Testdaten fiktiv.
  */
+/** Index-Datei dieses Tests: die Seite liest sonst `.suchindex.json` im Projektstamm (`ladeSuchIndex`). */
+const indexDatei = vi.hoisted(() => ({ pfad: '' }));
+vi.mock('@/server/queries/suchindex', async (original) => {
+  const echt = await original<typeof import('@/server/queries/suchindex')>();
+  return { ...echt, ladeSuchIndex: () => echt.ladeSuchIndexAus(indexDatei.pfad) };
+});
 const { client, db } = await verwaltungsUmgebung();
 const { baueSuchIndex: baue } = await import('@/lib/suche/titelindex-bau');
 /** Die Test-Datenbank (PGlite) hat denselben Abfrage-Aufbau wie `Datenbank` (PostgreSQL), nur andere Ergebnistypen. */
@@ -127,7 +133,7 @@ describe('sucheFuerSeite: mit Datenbank unverändert', () => {
   it('Volltext und Hadith-Suche wie bisher, auch wenn eine Index-Datei daliegt', async () => {
     const datei = join(ordner, 'mit-db.json');
     writeFileSync(datei, JSON.stringify(await baueSuchIndex(db, { hadith: true })));
-    vi.stubEnv('SUCHINDEX_DATEI', datei);
+    indexDatei.pfad = datei;
     const e = await sucheFuerSeite({
       begriff: 'Gebet',
       sprache: 'de',
@@ -157,7 +163,7 @@ describe('sucheFuerSeite: ohne Laufzeit-Datenbank (Beispielmodus)', () => {
     vi.stubEnv('NODE_ENV', 'production');
     vi.stubEnv('DATABASE_URL', '');
     vi.stubEnv('BAU_PGLITE', '');
-    vi.stubEnv('SUCHINDEX_DATEI', datei);
+    indexDatei.pfad = datei;
   }
 
   it('Titel aus dem Index, feste Seiten, Nummernsuche zum Hadith mit Teil', async () => {
