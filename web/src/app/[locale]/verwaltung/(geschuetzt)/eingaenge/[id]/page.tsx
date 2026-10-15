@@ -73,6 +73,13 @@ export default async function EingangDetail({ params, searchParams }: PageProps<
               {t('detail.angaben')}
             </h2>
             <dl className="grid gap-x-6 gap-y-3 sm:raster-stammdaten">
+              {/* Voranmeldung über „Für diesen Kurs voranmelden“ (F-44): der Kurs steht als Bezug, nicht in den Formulardaten */}
+              {d.kursId && d.bezugTitel ? (
+                <div className="contents">
+                  <dt className="font-bold">{t('detail.kurs')}</dt>
+                  <dd className="break-words">{d.bezugTitel}</dd>
+                </div>
+              ) : null}
               {angaben.map(([k, w]) => (
                 <div key={k} className="contents">
                   <dt className="font-bold">{beschriftung(k)}</dt>
@@ -111,6 +118,7 @@ export default async function EingangDetail({ params, searchParams }: PageProps<
               einladungen={typeof sp.einladungen === 'string' ? sp.einladungen : undefined}
               kontenAn={kontenAn}
               lernendeSehen={darf(a.rollen, 'lernende.lesen')}
+              kurs={d.kursId && d.bezugTitel ? { id: d.kursId, titel: d.bezugTitel } : null}
             />
           ) : null}
           {bearbeiten ? (

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   chatFensterGueltig,
   chatLage,
+  gruppeFuerKurs,
   istDatum,
   istMindestens16,
   lernendeAusVoranmeldung,
@@ -94,6 +95,20 @@ describe('Lehrplan sortieren', () => {
 });
 
 describe('Aufnahme aus der Voranmeldung (O-L01)', () => {
+  it('belegt die erste aktive Gruppe des gewünschten Kurses vor (F-44); ohne Kurs oder Gruppe keine', () => {
+    const gruppen = [
+      { id: 'g-a', kursId: null },
+      { id: 'g-b', kursId: 'k-1' },
+      { id: 'g-c', kursId: 'k-1' },
+      { id: 'g-d', kursId: 'k-2' },
+    ];
+    expect(gruppeFuerKurs(gruppen, 'k-1')).toBe('g-b');
+    expect(gruppeFuerKurs(gruppen, 'k-2')).toBe('g-d');
+    expect(gruppeFuerKurs(gruppen, 'k-3')).toBeNull();
+    expect(gruppeFuerKurs(gruppen, null)).toBeNull();
+    expect(gruppeFuerKurs([], 'k-1')).toBeNull();
+  });
+
   const eingang = {
     sprache: 'tr',
     klasse: 'grundkurs',

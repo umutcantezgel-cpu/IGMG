@@ -56,7 +56,10 @@ test('Kurs anlegen, auf den Korankursen sehen, ändern, Papierkorb und endgülti
   await oeffentlichBis(page, '/bildung/korankurse', () =>
     expect(page.getByRole('heading', { level: 3, name: titel })).toBeVisible({ timeout: 1000 }),
   );
-  await expect(page.getByRole('link', { name: `Zur Voranmeldung: ${titel}`, exact: true })).toBeVisible();
+  // F-44: Die Karte übergibt den Kurs an die Voranmeldung
+  const voranmelden = page.getByRole('link', { name: `Für diesen Kurs voranmelden: ${titel}`, exact: true });
+  await expect(voranmelden).toBeVisible();
+  await expect(voranmelden).toHaveAttribute('href', /\/bildung\/voranmeldung\?kurs=[a-z0-9-]+$/);
 
   // Ändern: neuer Titel → öffentlich sofort sichtbar
   await page.goto('/verwaltung/kurse');

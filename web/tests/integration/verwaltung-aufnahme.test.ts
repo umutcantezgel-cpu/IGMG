@@ -16,6 +16,9 @@ const lernendeAktionen = await import('@/server/actions/lernende');
 const kontenAktionen = await import('@/server/actions/gemeinde-konten');
 const kontoAktionen = await import('@/server/actions/konto');
 const { nimmVoranmeldungAuf } = await import('@/lib/lernen/aufnahme');
+const eingaenge = await import('@/server/queries/verwaltung/eingaenge');
+const { ladeGruppenAuswahl } = await import('@/server/queries/verwaltung/gruppen');
+const { gruppeFuerKurs } = await import('@/lib/lernen/verwaltung');
 const { auth } = await import('@/lib/auth/server');
 afterAll(() => client.close());
 
@@ -53,7 +56,7 @@ function alsSitzung(u: { id: string; name: string; email: string }) {
   });
 }
 
-async function voranmeldung(werte: Record<string, string> = {}): Promise<string> {
+async function voranmeldung(werte: Record<string, string> = {}, bezugId: string | null = null): Promise<string> {
   const daten = {
     sprache: 'tr',
     klasse: 'grundkurs',
@@ -79,7 +82,7 @@ async function voranmeldung(werte: Record<string, string> = {}): Promise<string>
   const p = verschluessele(daten);
   const [e] = await db
     .insert(schema.eingang)
-    .values({ art: 'voranmeldung', sprache: daten.sprache, datenVerschluesselt: p.daten, schluesselId: p.schluesselId })
+    .values({ art: 'voranmeldung', sprache: daten.sprache, bezugId, datenVerschluesselt: p.daten, schluesselId: p.schluesselId })
     .returning({ id: schema.eingang.id });
   return e.id;
 }
@@ -125,7 +128,8 @@ describe('Aufnehmen (O-L01)', () => {
       geburtsdatum: '2015-04-02',
     });
     const [e] = await db.select().from(schema.eingang).where(eq(schema.eingang.id, eingangId));
-    expect(e).toMatchObject({ bezugId: l.id, status: 'in_bearbeitung' });
+    // Verknüpft über lernende.eingang_id; der Bezug bleibt der (hier fehlende) gewünschte Kurs (F-44)
+    expect(e).toMatchObject({ bezugId: null, status: 'in_bearbeitung' });
     expect(await db.select().from(schema.gruppenMitglied).where(eq(schema.gruppenMitglied.lernendeId, l.id))).toHaveLength(1);
     const [einladung] = await einladungenZu(l.id);
     expect(einladung).toMatchObject({ name: 'Testperson Mutter', gemeindeRollen: ['gemeinde', 'eltern'], rollen: [], angenommenAm: null });
@@ -144,6 +148,41 @@ describe('Aufnehmen (O-L01)', () => {
     expect(await lernendeZu(eingangId)).toHaveLength(1);
     expect(await einladungenZu(l.id)).toHaveLength(1);
     expect(await db.select().from(schema.gruppenMitglied).where(eq(schema.gruppenMitglied.lernendeId, l.id))).toHaveLength(1);
+  });
+
+  it('F-44: Voranmeldung mit Kurs – Eingang und Aufnahme zeigen den Kurs, die Gruppe des Kurses ist vorbelegt, der Bezug bleibt', async () => {
+    const akteur = await alsVerwaltung(['bildung']);
+    const [k] = await db
+      .insert(schema.kurs)
+      .values({ slug: `elifbe-${randomUUID().slice(0, 6)}`, titel: { de: 'Elifbe für Kinder' }, status: 'veroeffentlicht' })
+      .returning({ id: schema.kurs.id });
+    const [g] = await db
+      .insert(schema.gruppe)
+      .values({ name: { de: 'Elifbe [Samstag]' }, kursId: k.id, wochentage: [6] })
+      .returning({ id: schema.gruppe.id });
+    const eingangId = await voranmeldung({}, k.id);
+    const a = {
+      benutzerId: akteur,
+      name: 'Testperson Verwaltung',
+      email: 'x@example.test',
+      rollen: [{ rolle: 'bildung' as const, organisation: null }],
+      zweiFaktorErfuellt: true,
+    };
+    // Eingang: Kurs als Bezug (Kopfzeile, Liste, Detail)
+    expect(await eingaenge.ladeEingangKopf(eingangId, a)).toMatchObject({ kursId: k.id, bezugTitel: 'Elifbe für Kinder' });
+    const liste = await eingaenge.ladeEingangsListe({ art: 'voranmeldung', seite: 1 }, a);
+    expect(liste.zeilen.find((z) => z.id === eingangId)).toMatchObject({ kursId: k.id, bezugTitel: 'Elifbe für Kinder' });
+    // Aufnahme: Gruppe des Kurses vorbelegt
+    expect(gruppeFuerKurs(await ladeGruppenAuswahl(), k.id)).toBe(g.id);
+    // Aufnehmen mit der vorbelegten Gruppe: Mitgliedschaft, Bezug zum Kurs bleibt
+    await umleitung(lernendeAktionen.aufnehmen(formular({ id: eingangId, gruppeId: g.id })));
+    const [l] = await lernendeZu(eingangId);
+    expect(await db.select().from(schema.gruppenMitglied).where(eq(schema.gruppenMitglied.lernendeId, l.id))).toHaveLength(1);
+    const [e] = await db.select().from(schema.eingang).where(eq(schema.eingang.id, eingangId));
+    expect(e).toMatchObject({ bezugId: k.id, status: 'in_bearbeitung' });
+    // Ein Eingang ohne passenden Kurs (gelöscht) zeigt keinen Kurs
+    const ohne = await voranmeldung({}, randomUUID());
+    expect(await eingaenge.ladeEingangKopf(ohne, a)).toMatchObject({ kursId: null, bezugTitel: null });
   });
 
   it('gleichzeitige Aufnahme desselben Eingangs: genau eine Lernende, genau eine Einladung', async () => {

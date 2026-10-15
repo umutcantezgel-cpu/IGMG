@@ -14,7 +14,8 @@ import type { KursDaten } from '@/server/queries/kurse';
  * stehen außerhalb des Links, nur die Nummer bzw. Adresse ist der Link.
  * H-C07: Ab lg zwei Hälften mit feiner Trennlinie; links Anmeldung, rechts Kontakt.
  * H-F01: Die Karte ist hell (gruen-50 mit gruen-700-Band), weil sie unmittelbar vor dem Fuß steht (ENTSCHEIDUNGEN L-E15).
- * Kurszeilen sind weiße Flächen mit Rand; Symbole und Links in Grün, Fließtext in Tinte.
+ * Kurszeilen sind weiße Flächen mit Rand; Symbole und Links in Grün, Fließtext in Tinte. Die Voranmeldung übergibt den
+ * Kurs (F-44, `zielFuer`).
  */
 export async function AnmeldeKarte({
   kurse,
@@ -28,7 +29,7 @@ export async function AnmeldeKarte({
   const t = await getTranslations('korankurse');
   const tk = await getTranslations('kurskarte');
   const offen = kurse.flatMap((kurs) => {
-    const ziel = zielFuer(kurs.anmeldeweg);
+    const ziel = zielFuer(kurs.anmeldeweg, kurs.slug);
     return ziel ? [{ kurs, ziel }] : [];
   });
   const telefonZiel = telefonHref(kontakt.telefon);

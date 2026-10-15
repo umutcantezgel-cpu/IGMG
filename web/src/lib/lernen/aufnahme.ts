@@ -11,8 +11,8 @@ import { lernendeAusVoranmeldung } from './verwaltung';
 /**
  * Aufnahme aus einer Voranmeldung (O-L01, AUFTRAG 3.5): legt die Lernende an (Personendaten verschlüsselt, im Klartext
  * nur Vorname + Initial und der Tag des 16. Geburtstags), ordnet sie optional einer Gruppe zu und lädt die Eltern mit
- * Bezug auf die Lernende ein (beim Annehmen entsteht `eltern_kind`). Verknüpft über `eingang.bezug_id` und
- * `lernende.eingang_id` (eindeutig).
+ * Bezug auf die Lernende ein (beim Annehmen entsteht `eltern_kind`). Verknüpft über `lernende.eingang_id` (eindeutig);
+ * `eingang.bezug_id` bleibt der gewünschte Kurs der Voranmeldung (F-44) und wird hier nicht überschrieben.
  *
  * Idempotent: Ein zweiter Aufruf (Doppelklick, zwei Personen gleichzeitig) findet die vorhandene Lernende und legt
  * weder eine zweite Lernende noch weitere Einladungen an – die Eindeutigkeit von `lernende.eingang_id` sichert das
@@ -90,7 +90,7 @@ export async function nimmVoranmeldungAuf(o: AufnahmeOptionen): Promise<Aufnahme
     }
     await tx
       .update(schema.eingang)
-      .set({ bezugId: neu.id, status: e.status === 'neu' ? 'in_bearbeitung' : e.status, bearbeitetVon: o.akteurId })
+      .set({ status: e.status === 'neu' ? 'in_bearbeitung' : e.status, bearbeitetVon: o.akteurId })
       .where(eq(schema.eingang.id, e.id));
     if (e.status === 'neu')
       await protokolliere(
