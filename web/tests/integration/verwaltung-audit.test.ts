@@ -33,9 +33,9 @@ describe('Verwaltung › Audit-Log › Recht (Kriterium 1)', () => {
     await expect(verlangeSeitenRecht('audit.lesen')).rejects.toMatchObject({ ziel: '/verwaltung/zwei-faktor' });
   });
 
-  it('angemeldet ohne Rolle: Umleitung zur Anmeldung mit Hinweis', async () => {
+  it('angemeldet ohne Rolle: Umleitung auf „Kein Zugang zur Verwaltung“', async () => {
     await angemeldetAls([]);
-    await expect(verlangeSeitenRecht('audit.lesen')).rejects.toMatchObject({ ziel: '/verwaltung/anmelden?keine-rolle=1' });
+    await expect(verlangeSeitenRecht('audit.lesen')).rejects.toMatchObject({ ziel: '/verwaltung/kein-zugang' });
   });
 
   it('Administration darf lesen', async () => {

@@ -8,6 +8,8 @@ import { ladeAngemeldet } from '@/lib/rechte/pruefe';
 export default async function ZweiFaktorEinrichtenSeite() {
   const a = await ladeAngemeldet();
   if (!a) redirect('/verwaltung/anmelden');
+  // Ohne Verwaltungsrolle nützt die Einrichtung hier nichts (verlangeSitzung)
+  if (a.rollen.length === 0) redirect('/verwaltung/kein-zugang');
   if (a.zweiFaktorErfuellt) redirect('/verwaltung');
   const t = await getTranslations('verwaltung.zweiFaktorEinrichten');
   return (

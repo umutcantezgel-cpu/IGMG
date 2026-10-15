@@ -59,14 +59,16 @@ export const ladeAngemeldet = cache(async (): Promise<Angemeldet | null> => {
 });
 
 /**
- * Für Verwaltungsseiten: verlangt Anmeldung und erfüllten zweiten Faktor, sonst Umleitung.
+ * Für Verwaltungsseiten: verlangt Anmeldung, eine Verwaltungsrolle und erfüllten zweiten Faktor, sonst Umleitung.
+ * Die Rolle zuerst: Ein Gemeinde-Konto ohne Verwaltungsrolle (ohne Pflicht zum zweiten Faktor) landet auf der Seite
+ * „Kein Zugang zur Verwaltung“ – nicht bei „Zwei-Faktor einrichten“, das ihm nichts nützt (Endprüfung Stufe C).
  * Für Server Actions `verlangeRecht` verwenden (wirft statt umzuleiten).
  */
 export async function verlangeSitzung(): Promise<Angemeldet> {
   const a = await ladeAngemeldet();
   if (!a) redirect('/verwaltung/anmelden');
+  if (a.rollen.length === 0) redirect('/verwaltung/kein-zugang');
   if (!a.zweiFaktorErfuellt) redirect('/verwaltung/zwei-faktor');
-  if (a.rollen.length === 0) redirect('/verwaltung/anmelden?keine-rolle=1');
   return a;
 }
 
