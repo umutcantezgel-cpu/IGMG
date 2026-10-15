@@ -44,7 +44,7 @@ Die Rolle bestimmt, was du siehst. **Redaktion** darf Nachrichten, Veranstaltung
 
 **Benachrichtigung bei Ankündigungen:** Ist Web Push in der Gemeinde eingeschaltet, geht beim **ersten Veröffentlichen** einer Ankündigung ein Hinweis **ohne Inhalt** („Neue Ankündigung der Moschee“) an alle, die Ankündigungen abonniert haben. Hat die Ankündigung einen späteren Beginn („Sichtbar ab“), geht der Hinweis erst dann hinaus – dafür muss der Takt des lokalen Servers laufen. Auslösen können **Redaktion** und **Administration**; die Organisationsredaktion veröffentlicht ohne Hinweis. Erneutes Veröffentlichen derselben Ankündigung innerhalb von drei Tagen sendet nicht noch einmal.
 
-## 4. Seiten bauen mit Blöcken (neu)
+## 4. Seiten bauen mit Bausteinen
 
 Mit dem Seiten-Editor baust du freie Seiten aus **Bausteinen**, zum Beispiel „Moscheeführung“ oder „Ramadan-Hinweise“, ohne Entwickler. [Bildschirmfoto folgt]
 
@@ -108,10 +108,10 @@ Keine Schleifen: Leitet die neue Adresse wieder zurück, lehnt die Plattform die
 
 Es gibt **zwei Arten** der Freigabe:
 
-| Art              | Wofür                                                                                                                                                                                                             | Wer gibt frei                                      |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| **Redaktionell** | Seiten, Nachrichten, Texte der Gemeinde                                                                                                                                                                           | eine zweite Person der Redaktion [Wer? – Vorstand] |
-| **Religiös**     | Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen, besondere Tage, Vers- und Hadith-Listen, Folien mit Vers oder Hadith, Seiten mit Vers- oder Hadith-Bausteinen; Elifbe-Lektionen, wenn sie zur Prüfung stehen | **nur** die Rolle „religiöse Prüfung“ (Imam, Hoca) |
+| Art              | Wofür                                                                                                                                                                                                             | Wer gibt frei                                                         |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Redaktionell** | freie Seiten, die zur Prüfung gegeben wurden (Nachrichten, Veranstaltungen und Ankündigungen haben keinen Prüfschritt)                                                                                            | eine zweite Person, die Seiten veröffentlichen darf [Wer? – Vorstand] |
+| **Religiös**     | Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen, besondere Tage, Vers- und Hadith-Listen, Folien mit Vers oder Hadith, Seiten mit Vers- oder Hadith-Bausteinen; Elifbe-Lektionen, wenn sie zur Prüfung stehen | **nur** die Rolle „religiöse Prüfung“ (Imam, Hoca)                    |
 
 Der Weg: **Entwurf → zur Prüfung → geprüft**. Eine Änderung an einem geprüften Eintrag setzt die Freigabe zurück. **Öffentlich** ist nur, was **geprüft** ist. Für **Elifbe-Lektionen** und die Texte unter **„Islamisches Wissen“** gibt es in der Verwaltung keine Bearbeitung.
 

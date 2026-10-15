@@ -34,5 +34,5 @@
 | E7 | L2-E04 | Vercel-Import ohne Handgriffe (beide `vercel.json`, Wächter im Stamm) | fertig | e66ee4e, 628b981, 942b385, b5441c0 |
 | E7 | Sichtabnahme Z-04 | Runde 1 und Befundpakete 1–4, Runde 2, Feinschliff Runde 3 | fertig | ea80fee, f1b951f, b799038, a95ec09, 008cb48; daef8f6, 49622d7, 4115a5e; 4ba5a9b, d4f53e3, 75cad0a |
 | E7 | Stufe C | Endprüfung Z-01…Z-21 (Urteil `berichte/stufe-c.md`), Galerie | fertig | b241611, 39f03da |
-| E7 | N3 | Nacharbeit Stufe C: Push „Ankündigung“, Centrifugo-Namensraum, L2-E06 Audio, Wortlaut-Ausnahmen, Cockpit „Religiöse Freigaben“, Handbücher, Funktionsliste | fertig | 439e1d4, 88c40f3, c92dce5, 22640a0 und Abschluss-Commit „Nacharbeit Stufe C, N3“ |
+| E7 | N3 | Nacharbeit Stufe C: Push „Ankündigung“, Centrifugo-Namensraum, L2-E06 Audio, Wortlaut-Ausnahmen, Cockpit „Religiöse Freigaben“, Handbücher, Funktionsliste | fertig | 439e1d4, 88c40f3, c92dce5, 22640a0, eef0cfb und Abschluss-Commit „Nacharbeit Stufe C, N3“ |
 | E7 | – | weitere Nacharbeit Stufe C (N1, N2, N4), BERICHT, ABSCHLUSS | in Arbeit | |
