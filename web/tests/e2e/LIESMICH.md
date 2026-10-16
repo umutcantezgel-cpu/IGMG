@@ -5,7 +5,8 @@ mailpit` plus `pnpm test:e2e` (docs/BETRIEB.md 8). Alle Befehle im Ordner `web/`
 
 ## 1 Dienste
 
-- **PostgreSQL** (17 wie im Image; 16 geht mit Abschnitt 1a), Port 5432, Rolle und Datenbank wie in `.env.example`:
+- **PostgreSQL** (17 wie im Image; 16 geht für die Tests mit Abschnitt 1a), Port 5432, Rolle und Datenbank wie in
+  `.env.example`:
 
   ```sh
   sudo -u postgres initdb -D <datenordner> -E UTF8 --locale=C.UTF-8 --auth-local=peer --auth-host=scram-sha-256
@@ -33,6 +34,11 @@ node tests/e2e/hilfen/vorlage-pg16.mjs postgres://igmg:igmg-lokal@127.0.0.1:5432
 ```
 
 Danach erbt jede neue Datenbank (auch `igmg_e2e`) die Migrationen 0000–0012; `drizzle-kit` spielt den Rest ein.
+Datenbanken für Wiederherstellungen in diesem Cluster deshalb mit `TEMPLATE template0` anlegen (Abschnitt 3).
+
+**Nur für Tests.** Produktion (Neon), Vorschau-Zweige und jeder eigene Server laufen mit **PostgreSQL 17** – nicht älter
+(sonst bricht schon das erste Migrieren ab), nicht neuer als `pg_dump` im Sicherungs-Image (`postgres:17.6-alpine`):
+docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
 
 ## 2 App
 
@@ -55,18 +61,31 @@ Danach erbt jede neue Datenbank (auch `igmg_e2e`) die Migrationen 0000–0012; `
    erwarteten Namen (`chromium-<rev>`, `chromium_headless_shell-<rev>`, siehe `playwright-core/browsers.json`) als
    Verweise auf die vorhandenen Browser anlegen und `PLAYWRIGHT_BROWSERS_PATH` darauf setzen.
 
-Hinweise: Kinder schreiben im Gruppenchat nur im Chatfenster der Gruppe (08–20 Uhr, S-05);
-`zugaenglichkeit-gemeinde.spec.ts` prüft außerhalb davon den gesperrten Zustand und überspringt das Senden mit Begründung.
+Hinweise:
+
+- Kinder schreiben im Gruppenchat nur im Chatfenster der Gruppe (08–20 Uhr Berliner Zeit, S-05). `chat.spec.ts`,
+  `zugaenglichkeit-gemeinde.spec.ts` und `lernkette.spec.ts` prüfen außerhalb davon den gesperrten Zustand und
+  überspringen das Senden des Kindes bzw. die Regeln-Bestätigung mit Begründung – den vollen Lauf daher zwischen 08 und
+  19 Uhr starten.
+- ALTCHA rechnet im Browser (Proof-of-Work); die Tests warten bis 60 s (`hilfen/altcha.ts`). Auf 4 Kernen ohne Fremdlast
+  dauert eine Lösung 1–9 s; laufen nebenher Bauten, deutlich länger.
+- Mit Cache Components antworten Seiten als Stream mit 200; ein `notFound()` mitten im Stream bleibt bei 200 mit
+  `noindex` (Next-Doku „Streaming“, Abschnitt Status codes). Die Specs prüfen deshalb, was der Browser zeigt
+  („Seite nicht gefunden“, `noindex`), nicht den Statuscode.
 
 ## 3 Wiederherstellungsprobe (`betrieb/lokal/sicherung`)
 
 Die Skripte erwarten die Pfade des Containers. Ohne sie zu ändern:
 
-1. Leserolle wie docs/BETRIEB.md 6a anlegen, Wegwerf-Schlüssel `age-keygen -o schluessel.txt`.
+1. Leserolle wie docs/BETRIEB.md 6a anlegen (mit SELECT auf die Sequenzen in `public` **und** `drizzle`, sonst bricht
+   `pg_dump` ab), Wegwerf-Schlüssel `age-keygen -o schluessel.txt`.
 2. Vorübergehend `/daten` (leerer Ordner), `/sicherung` → `betrieb/lokal/sicherung` und – falls `initdb`/`pg_ctl` nicht
    im PATH des Benutzers `postgres` liegen – Verweise in `/usr/local/bin` anlegen.
 3. `SICHERUNG_DATABASE_URL=<Leserolle> AGE_EMPFAENGER=<age1…> WARTUNG_TOKEN=<aus .env> APP_URL=<laufende App> sh /sicherung/sichern.sh`
    → „Sicherung ok“; danach `sh /sicherung/probe.sh` → „Probe ok“ (mit `sh -x` steht die Tabellenzahl im Protokoll).
 4. Entschlüsseln wie LIESMICH „Wiederherstellen im Ernstfall“ (`age -d … | gunzip | psql`) in eine leere Datenbank
    (`CREATE DATABASE … TEMPLATE template0` – bei PostgreSQL 16 nicht aus der Vorlage aus 1a).
-5. Danach alles wieder entfernen (`/daten`, `/sicherung`, die Verweise, Schlüssel, Leserolle).
+5. Fehlerfall: die neueste Sicherung abschneiden (`head -c 2000`), leeren (0 Bytes, Prüfsumme neu) oder entfernen →
+   `probe.sh` meldet „Probe FEHLER: keine unversehrte, vollständige Sicherung“, das Cockpit zeigt die Probe als Fehler
+   (`melden.sh` → `/api/wartung/lokal-meldung`, gespeichert in `einstellung.lokaler_server`).
+6. Danach alles wieder entfernen (`/daten`, `/sicherung`, die Verweise, Schlüssel, Leserolle).

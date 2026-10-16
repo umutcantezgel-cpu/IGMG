@@ -104,6 +104,9 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicheru
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO igmg_sicherung;
 ```
 
+- PostgreSQL-Version: Neon und jeder eigene Server mit **17** (wie `postgres:17-alpine` in `docker-compose.yml`). 16 bricht
+  beim ersten Migrieren einer frischen Datenbank ab (Migrationen 0013/0014, VERCEL.md 2.1); eine höhere Hauptversion
+  kann `pg_dump` 17 aus dem Sicherungs-Image (`postgres:17.6-alpine`) nicht sichern – dann zuerst das Image anheben.
 - `pg_dump` braucht SELECT auf alle Tabellen und Sequenzen – auch auf `drizzle.__drizzle_migrations_id_seq`; ohne sie
   bricht die Sicherung mit „permission denied for sequence“ ab (Wiederherstellungsprobe P4, Nacharbeit 2). Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
   `ratenbegrenzung`, `rate_limit`) sichert `sichern.sh` nur als Struktur, ohne Inhalt.
