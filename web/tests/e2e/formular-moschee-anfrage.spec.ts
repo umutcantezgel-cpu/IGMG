@@ -3,6 +3,7 @@ import { randomBytes } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import formulare from '../../messages/bereiche/formulare.json';
 import bereich from '../../messages/bereiche/moschee-anfrage.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -89,7 +90,7 @@ test('Webseite-Anfrage in drei Schritten bis zur Bestätigung', async ({ page },
   await feld(m.feld.budget).selectOption({ value: 'b2' });
   await feld(m.feld.timeline).selectOption({ value: 't1' });
   await form.getByRole('checkbox', { name: beschriftung(m.feld.einwilligung) }).check();
-  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await form.getByRole('button', { name: m.absenden, exact: true }).click();
 
   const erfolg = page.getByRole('status').filter({ hasText: m.erfolg.titel });

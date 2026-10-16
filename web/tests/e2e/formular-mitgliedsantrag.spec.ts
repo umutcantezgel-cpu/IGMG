@@ -3,6 +3,7 @@ import { randomBytes } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import formulare from '../../messages/bereiche/formulare.json';
 import bereich from '../../messages/bereiche/mitglied.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -93,7 +94,7 @@ test('Mitgliedsantrag in drei Schritten bis zur Bestätigung', async ({ page }) 
   // Zweiter Versuch ohne Neuladen: Angaben ergänzen, ALTCHA lösen, absenden
   await form.getByLabel(feld(m.motivation.label)).fill('Testmotivation');
   await form.getByRole('checkbox', { name: feld(m.einwilligung.datenschutz) }).check();
-  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await form.getByRole('button', { name: m.absenden }).click();
 
   const erfolg = page.getByRole('status').filter({ hasText: m.erfolg.titel });

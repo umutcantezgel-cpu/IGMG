@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import de from '../../messages/de.json';
 import formulare from '../../messages/bereiche/formulare.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -30,7 +31,7 @@ async function anmelden(page: Page, name: string, email: string) {
   await formular.getByLabel(/^E-Mail-Adresse/).fill(email);
   await formular.getByRole('checkbox', { name: /^Ich willige ein/ }).check();
   // ALTCHA lädt erst bei der ersten Interaktion und löst die Aufgabe dann selbst (auto: onload)
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: f.senden }).click();
   await expect(page.getByText(f.erfolg)).toBeVisible();
 }
@@ -76,7 +77,7 @@ test('Anmeldung mit ALTCHA: Bestätigung und Benachrichtigung in Mailpit, Plätz
   // Absenden ohne Pflichtangaben → Zusammenfassung, Feldfehler
   const formular = page.locator('#anmeldung form');
   await formular.getByLabel(/^Name/).fill('Testperson Drei');
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: f.senden }).click();
   const zusammenfassung = page.getByRole('alert').filter({ hasText: formulare.de.formulare.zusammenfassung });
   await expect(zusammenfassung).toBeVisible();

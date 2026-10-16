@@ -7,10 +7,11 @@ import kontoTexte from '../../messages/bereiche/konto.json';
 import unterrichtTexte from '../../messages/bereiche/unterricht.json';
 import voranmeldung from '../../messages/bereiche/voranmeldung.json';
 import lernenTexte from '../../messages/verwaltung/lernen.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { beispielkonten, emailAnmelden, kindAnmelden, leitungAnmelden } from './hilfen/gemeinde';
 import { angemeldetesKonto, eigeneAbsenderAdresse } from './hilfen/konto';
 
-/** ALTCHA löst unter Last bis ≈40 s (vitest.config.mts), Mails gehen nach der Antwort – großzügig warten. */
+/** Mails gehen nach der Antwort – großzügig warten (ALTCHA: hilfen/altcha.ts). */
 const expect = basisExpect.configure({ timeout: 20_000 });
 
 /**
@@ -102,7 +103,7 @@ test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind s
   await form.getByLabel(new RegExp(`^${v.feld.ausgefuelltVon}`)).fill('Testperson Mutter');
   await form.getByRole('checkbox', { name: new RegExp(`^${v.einwilligung.kontakt}`) }).check();
   await form.getByRole('checkbox', { name: new RegExp(`^${v.einwilligung.datenschutz.slice(0, 30)}`) }).check();
-  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 60_000 });
+  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await form.getByRole('button', { name: v.absenden }).click();
   await expect(oeffentlich.getByRole('status').filter({ hasText: v.erfolg.titel })).toBeVisible();
   await oeffentlich.context().close();
@@ -164,19 +165,27 @@ test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind s
   await kindAnmelden(kind, { benutzername, passwort: PASSWORT });
   await expect(kind.getByRole('heading', { level: 1, name: new RegExp(`^Willkommen, ${vorname}`, 'i') })).toBeVisible();
   await expect(kind.getByText(lp.gruppe, { exact: true }).first()).toBeVisible();
-  // Gruppenchat: Ein frischer Zugang bestätigt zuerst die Regeln – per Tastatur; danach steht der Fokus im Feld bzw.
-  // außerhalb des Chatfensters (08–20 Uhr, S-05) auf dem Grund (Z-07, ChatFenster „fokusNachRegeln“)
+  // Gruppenchat: Ein frischer Zugang bestätigt zuerst die Regeln – per Tastatur; danach steht der Fokus im Feld
+  // (Z-07, ChatFenster „fokusNachRegeln“). Außerhalb des Chatfensters (08–20 Uhr, S-05) geht „geschlossen“ den fehlenden
+  // Regeln vor (schreibGrund in lib/chat/regeln.ts): Dann gibt es noch nichts zu bestätigen, die Kette läuft weiter.
   await kind.goto(`/mein-bereich/gruppen/${lp.gruppeId}/chat`);
   await expect(kind.getByRole('log').getByText(c.laedt)).toHaveCount(0);
   const regeln = kind.getByRole('button', { name: c.regelnBestaetigen });
-  await regeln.focus();
-  await kind.keyboard.press('Enter');
-  await expect(regeln).toHaveCount(0);
   const feld = kind.getByRole('textbox', { name: c.eingabe });
   const geschlossen = kind.getByText(c.grund.geschlossen);
-  await expect(feld.or(geschlossen).first()).toBeVisible();
-  if (await geschlossen.isVisible()) await expect(kind.locator(':focus')).toContainText(c.grund.geschlossen);
-  else await expect(feld).toBeFocused();
+  await expect(regeln.or(geschlossen).first()).toBeVisible();
+  if (await geschlossen.isVisible()) {
+    await expect(feld).toBeDisabled();
+    test.info().annotations.push({
+      type: 'grenze',
+      description: 'Chatfenster geschlossen (Kinder schreiben 08–20 Uhr, S-05) – Regeln-Bestätigung per Tastatur nicht prüfbar',
+    });
+  } else {
+    await regeln.focus();
+    await kind.keyboard.press('Enter');
+    await expect(regeln).toHaveCount(0);
+    await expect(feld).toBeFocused();
+  }
   await kind.context().close();
 
   // 6 Lehrkraft: „Heute“ → Anwesenheit; das neue Kind steht in der Liste, „anwesend“ speichern

@@ -5,6 +5,7 @@ import * as OTPAuth from 'otpauth';
 import kontoTexte from '../../messages/bereiche/konto.json';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { eigeneAbsenderAdresse } from './hilfen/konto';
 
 /**
@@ -87,7 +88,7 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   await page.getByLabel(k.felder.passwortNeu, { exact: true }).fill(PASSWORT);
   // Nur die Einwilligung: Das ALTCHA-Widget bringt nach der ersten Eingabe ein eigenes Kontrollkästchen mit
   await page.locator('#registrieren-einwilligung').check();
-  await expect(page.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 30_000 });
+  await expect(page.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await page.getByRole('button', { name: k.registrieren.absenden }).click();
   await expect(page.getByRole('heading', { name: k.registrieren.erfolgTitel })).toBeVisible();
 
