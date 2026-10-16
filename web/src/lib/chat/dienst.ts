@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, count, desc, eq, gt, gte, inArray, isNull, lt, lte, ne, sql } from 'drizzle-orm';
+import { and, asc, count, desc, eq, gt, gte, inArray, isNotNull, isNull, lt, lte, ne, sql } from 'drizzle-orm';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { einwilligungGilt, einwilligungsLage } from '@/lib/konto/sechzehn';
 import { uhrzeitBerlin, berlinerDatum } from '@/lib/gebetszeiten/naechstes';
@@ -186,19 +186,30 @@ export type ChatNachricht = {
 
 export type AbrufErgebnis = {
   nachrichten: ChatNachricht[];
+  /** S-09: IDs entfernter Nachrichten zwischen `abId` und `nachId` – der Browser zeigt sie schon und setzt den Platzhalter. */
+  entfernt: number[];
   schreiben: SchreibGrund;
   regelnVersion: string;
 };
 
-/** Nachrichten nach `nachId` (aufsteigend, höchstens 50; ohne `nachId` die letzten 50). Keine Lesebestätigungen (S-14). */
-export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext, nachId?: number): Promise<AbrufErgebnis | null> {
+/**
+ * Nachrichten nach `nachId` (aufsteigend, höchstens 50; ohne `nachId` die letzten 50). Keine Lesebestätigungen (S-14).
+ * Mit `abId` (erste Nachricht, die der Browser zeigt) zusätzlich die seither entfernten Nachrichten bis `nachId` (S-09):
+ * Der Abruf liefert sonst nur Neues, und eine entfernte Nachricht bliebe in offenen Fenstern bis zum Neuladen stehen.
+ */
+export async function ladeNachrichten(
+  kanal: KanalLage,
+  kontext: GruppenKontext,
+  nachId?: number,
+  abId?: number,
+): Promise<AbrufErgebnis | null> {
   if (!darfInGruppe(kontext, leseAktion(kanal.art), kanal.gruppeId)) return null;
   // S-03/S-17/D-01: Ohne (oder nach widerrufener) Einwilligung und während der Notfall-Pause sehen Kinder und Eltern
   // keine Nachrichten – nur den Grund, auch außerhalb der Öffnungszeiten oder bei Pause. Die Leitung liest weiter.
   const daten = await lageDaten(kanal, kontext, new Date());
   const lesen = leseGrund(daten);
   if (lesen === 'keinRecht') return null;
-  if (lesen !== 'ok') return { nachrichten: [], schreiben: lesen, regelnVersion: REGELN_VERSION };
+  if (lesen !== 'ok') return { nachrichten: [], entfernt: [], schreiben: lesen, regelnVersion: REGELN_VERSION };
   const lage = schreibGrund(daten);
   const basis = db
     .select({
@@ -221,6 +232,24 @@ export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext,
           .orderBy(asc(schema.chatNachricht.id))
           .limit(50)
       : (await basis.where(eq(schema.chatNachricht.kanalId, kanal.kanalId)).orderBy(desc(schema.chatNachricht.id)).limit(50)).reverse();
+  const entfernt =
+    nachId !== undefined && abId !== undefined && abId <= nachId
+      ? (
+          await db
+            .select({ id: schema.chatNachricht.id })
+            .from(schema.chatNachricht)
+            .where(
+              and(
+                eq(schema.chatNachricht.kanalId, kanal.kanalId),
+                gte(schema.chatNachricht.id, abId),
+                lte(schema.chatNachricht.id, nachId),
+                isNotNull(schema.chatNachricht.entferntAm),
+              ),
+            )
+            .orderBy(desc(schema.chatNachricht.id))
+            .limit(500)
+        ).map((z) => z.id)
+      : [];
   const leitung = new Set(
     (
       await db
@@ -240,6 +269,7 @@ export async function ladeNachrichten(kanal: KanalLage, kontext: GruppenKontext,
       zeit: z.zeit.toISOString(),
       leitung: z.absenderId !== null && leitung.has(z.absenderId),
     })),
+    entfernt,
     schreiben: lage,
     regelnVersion: REGELN_VERSION,
   };

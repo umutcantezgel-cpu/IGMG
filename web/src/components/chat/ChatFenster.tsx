@@ -102,6 +102,8 @@ export function ChatFenster({
   const [melden, setMelden] = useState<ChatNachricht | null>(null);
   const [neuAb, setNeuAb] = useState<number>(Number.MAX_SAFE_INTEGER);
   const letzteId = useRef<number | undefined>(undefined);
+  /** Erste angezeigte Nachricht: Der Abruf meldet ab hier entfernte Nachrichten (S-09), damit der Platzhalter erscheint. */
+  const ersteId = useRef<number | undefined>(undefined);
   /** Zeitpunkt der letzten Aktivität (eigene oder fremde Nachricht); 0 = noch keine, gesetzt beim ersten Abruf. */
   const aktivitaet = useRef(0);
   /** Verweis auf den jüngsten Abruf, damit der Zeitgeber sich selbst neu planen kann. */
@@ -120,7 +122,8 @@ export function ChatFenster({
     window.clearTimeout(zeitgeber.current);
     if (document.hidden) return;
     try {
-      const nach = letzteId.current !== undefined ? `?nach=${letzteId.current}` : '';
+      const nach =
+        letzteId.current !== undefined ? `?nach=${letzteId.current}${ersteId.current !== undefined ? `&ab=${ersteId.current}` : ''}` : '';
       const antwort = await fetch(`/api/mein/chat/${kanalId}${nach}`, { cache: 'no-store' });
       if (antwort.status === 401 || antwort.status === 404) {
         setMeldung(texte.fehler);
@@ -131,13 +134,17 @@ export function ChatFenster({
         const erstes = letzteId.current === undefined;
         if (daten.nachrichten.length) {
           letzteId.current = daten.nachrichten.at(-1)!.id;
+          if (erstes || ersteId.current === undefined) ersteId.current = daten.nachrichten[0].id;
           if (!erstes) aktivitaet.current = Date.now();
         }
-        // Zwei Abrufe können sich überholen (Sichtbarkeit, Signal, Neustart des Effekts): nur unbekannte Nachrichten anhängen
+        const entfernt = new Set(daten.entfernt ?? []);
+        // Zwei Abrufe können sich überholen (Sichtbarkeit, Signal, Neustart des Effekts): nur unbekannte Nachrichten anhängen.
+        // Inzwischen entfernte Nachrichten (S-09) bekommen den Platzhalter, auch wenn sie schon angezeigt werden.
         setZ((alt) => {
           const bekannt = new Set(alt.nachrichten.map((n) => n.id));
+          const liste = erstes ? daten.nachrichten : [...alt.nachrichten, ...daten.nachrichten.filter((n) => !bekannt.has(n.id))];
           return {
-            nachrichten: erstes ? daten.nachrichten : [...alt.nachrichten, ...daten.nachrichten.filter((n) => !bekannt.has(n.id))],
+            nachrichten: entfernt.size ? liste.map((n) => (entfernt.has(n.id) && n.text !== null ? { ...n, text: null } : n)) : liste,
             schreiben: daten.schreiben,
           };
         });
@@ -243,6 +250,7 @@ export function ChatFenster({
           : null;
     setMeldung(r && 'ok' in r ? null : texte.fehler);
     letzteId.current = undefined;
+    ersteId.current = undefined;
     void abrufen();
   }
 

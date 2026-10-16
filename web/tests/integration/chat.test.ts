@@ -254,10 +254,24 @@ describe('Moderation und Meldung (S-07…S-11, S-17)', () => {
   });
 
   it('S-09: Entfernen hinterlässt Platzhalter', async () => {
+    // Das Kind hat den Verlauf schon geladen (offenes Fenster) …
+    const vorher = (await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind)))!;
+    const ab = vorher.nachrichten[0].id;
+    const bis = vorher.nachrichten.at(-1)!.id;
+    expect(vorher.nachrichten.find((n) => n.id === nachrichtId)?.text).not.toBeNull();
     expect(await dienst.entferneNachricht(await k(ids.kind2), nachrichtId, 'nicht erlaubt')).toBe('keinRecht');
     expect(await dienst.entferneNachricht(await k(ids.hoca1), nachrichtId, 'Beleidigung entfernt')).toBeNull();
     const r = (await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind)))!;
     expect(r.nachrichten.find((n) => n.id === nachrichtId)?.text).toBeNull();
+    // … und erfährt es beim nächsten Abruf, obwohl nichts Neues kam (E2E chat.spec: Platzhalter ohne Neuladen, P4)
+    const abruf = (await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind), bis, ab))!;
+    expect(abruf.nachrichten).toEqual([]);
+    expect(abruf.entfernt).toContain(nachrichtId);
+    // Nur im angezeigten Bereich und nur mit `ab`
+    expect((await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind), bis))!.entfernt).toEqual([]);
+    expect((await dienst.ladeNachrichten(await lage('gruppe'), await k(ids.kind), bis, nachrichtId + 1))!.entfernt).not.toContain(
+      nachrichtId,
+    );
   });
 
   it('S-17: Notfall-Pause sperrt alle Kanäle sofort, auch für die Leitung', async () => {
