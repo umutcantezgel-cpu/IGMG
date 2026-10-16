@@ -21,7 +21,7 @@
    - Unterricht
 4. **Nutzlast** ohne Inhalt und ohne Namen. Die Texte kommen aus `push-texte/[sprache].json`. Der Handler liegt in `public/sw.js`.
 5. **Versand** über `/api/wartung/takt` (`CRON_SECRET`). Der Takt ist idempotent über die Tabelle `push_versand` mit Einmal-Schlüssel. Angestoßen wird er vom lokalen Server. Vercel Pro nur nach Entscheidung der Menschen (V4, MN-18).
-6. **Rückfall:** Mail-Zusammenfassung ohne Inhalt und In-Seite-`Notification`.
+6. **Rückfall:** Mail-Zusammenfassung ohne Inhalt und In-Seite-`Notification` – umgesetzt 15.10.2026 (Nacharbeit 2, F-38; siehe Umsetzung).
 7. **Recht und Pflege:** Der Opt-in-Text nennt die Push-Dienste. Ein Hinweis für iOS verlangt, die Seite erst zum Home-Bildschirm hinzuzufügen. Inaktive Abos werden nach 12 Monaten gelöscht.
 8. **Daten:** `push_abo` (Endpunkt verschlüsselt, Themen, Einwilligungsversion) und `push_versand`.
 
@@ -59,3 +59,23 @@
   (`finalizeResponse` → `resolvePendingRevalidations`); in einem einzigen Takt hätten die ersten Empfänger die Mitteilung
   schon, während `/nachrichten` noch den Stand vor dem Beginn ausliefert. Ein Verfall kurz vor Ende des Nachholfensters
   wird bis zu 10 Minuten danach noch versendet.
+- Rückfall Nr. 6 (15.10.2026, Nacharbeit 2, F-38) – **umgesetzt**:
+  - **Mail-Zusammenfassung ohne Inhalt:** In Mein Bereich › Benachrichtigungen je Thema bestellbar (Ankündigung; Chat und
+    Elternkanal, Unterricht nur mit Gruppe und Schaltern `chat`/`lernplattform`; nie Gebet). Nur Konten mit bestätigter,
+    zustellbarer Adresse (nie `.invalid`), nie Kinderkonten, Lernende ab 16 nur mit Einwilligung in Benachrichtigungen;
+    Schalter `push` und `konten`. Tabelle `mail_zusammenfassung` (Migration `0016_mail_zusammenfassung`: Themen, Zählbeginn,
+    letzter Versand; Kaskade beim Konto). Planung im täglichen Cron `/api/wartung/mail-ausgang` (vor dem Versand; Vercel
+    02:00 UTC): je Konto höchstens eine Mail je Berliner Tag und nur bei Neuem seit dem letzten Versand bzw. dem Bestellen;
+    Reservierung und Ausgangszeile in einer Transaktion (idempotent). Empfänger `zusammenfassung:<Konto>` – die Adresse
+    ermittelt erst der Versand und prüft dabei alles erneut. Mail (`src/lib/mail/vorlagen/zusammenfassung.tsx`, Texte
+    `konto.mails.zusammenfassung`) nennt nur Bereich und Anzahl („In 2 Ihrer Gruppen gibt es neue Nachrichten“), Knopf zu
+    Mein Bereich, Link zu den Einstellungen (abbestellen). Gezählt wird nur, was die Person sehen darf
+    (`src/lib/push/neues.ts`: Chat nach `leseLage`, Unterricht aus Audit `unterricht.termin_geaendert` und neuen
+    Aufgaben, Ankündigungen ab der ersten Veröffentlichung und nur mit Recht `push.ankuendigung` wie beim Push).
+  - **In-Seite-Hinweis:** `GET /api/mein/neues` (erster Abruf nur der Stand; danach Anzahl je Bereich; optional Tokens
+    für das Echtzeit-Signal aller lesbaren Kanäle) und die Insel `NeuesHinweis` in jeder Seite von Mein Bereich:
+    ruhiger adaptiver Abruf (`uebersichtAbstand`, 30/60 s, Pause bei verborgenem Tab), sofort bei Signal; Hinweis
+    `role="status"` mit Links, Auftritt wie B-22 (`tritt-auf`). Die `Notification` des Browsers nur, wenn die Person sie
+    unter „Hinweis in Mein Bereich“ auf dem Gerät eingeschaltet hat (Erlaubnis nur nach Klick, Merker
+    `igmg-mitteilung-mein-bereich`) und das Fenster nicht im Fokus ist.
+  - Tests: `tests/integration/push-zusammenfassung.test.ts`, `tests/unit/push-rueckfall.test.ts`.

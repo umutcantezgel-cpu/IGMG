@@ -204,12 +204,12 @@ export async function ladeKursAuswahl(): Promise<{ id: string; titel: string }[]
   return zeilen.map((k) => ({ id: k.id, titel: k.titel.de }));
 }
 
-/** Aktive Gruppen für Auswahllisten (Aufnahme, Lernende). */
-export async function ladeGruppenAuswahl(): Promise<{ id: string; name: string }[]> {
+/** Aktive Gruppen für Auswahllisten (Aufnahme, Lernende); mit Kurs, damit die Aufnahme die passende Gruppe vorbelegt (F-44). */
+export async function ladeGruppenAuswahl(): Promise<{ id: string; name: string; kursId: string | null }[]> {
   const zeilen = await db
-    .select({ id: g.id, name: g.name })
+    .select({ id: g.id, name: g.name, kursId: g.kursId })
     .from(g)
     .where(eq(g.status, 'aktiv'))
     .orderBy(asc(sql`${g.name}->>'de'`));
-  return zeilen.map((x) => ({ id: x.id, name: x.name.de }));
+  return zeilen.map((x) => ({ id: x.id, name: x.name.de, kursId: x.kursId }));
 }

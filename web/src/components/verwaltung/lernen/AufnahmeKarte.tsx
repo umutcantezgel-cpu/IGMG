@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { gruppeFuerKurs } from '@/lib/lernen/verwaltung';
 import { aufnehmen } from '@/server/actions/lernende';
 import { ladeGruppenAuswahl } from '@/server/queries/verwaltung/gruppen';
 import { ladeAufnahme } from '@/server/queries/verwaltung/lernende';
@@ -13,6 +14,8 @@ const MELDUNGEN = ['angelegt', 'vorhanden', 'keineVoranmeldung', 'datenFehlen', 
 /**
  * „Aufnehmen“ bei einer Voranmeldung (O-L01): legt die Lernende an, ordnet sie optional einer Gruppe zu und lädt die
  * Eltern ein. Nach der Aufnahme zeigt die Karte den Stand (ohne doppeltes Anlegen). Die Seite prüft Recht und Schalter.
+ * Kam die Voranmeldung über „Für diesen Kurs voranmelden“ (F-44), nennt die Karte den Kurs und belegt die erste aktive
+ * Gruppe dieses Kurses vor; ohne passende Gruppe bleibt „später zuordnen“ mit einem Hinweis.
  */
 export async function AufnahmeKarte({
   eingangId,
@@ -21,8 +24,11 @@ export async function AufnahmeKarte({
   einladungen,
   kontenAn,
   lernendeSehen,
+  kurs = null,
 }: {
   eingangId: string;
+  /** Gewünschter Kurs der Voranmeldung (`eingang.bezug_id`), falls es ihn gibt. */
+  kurs?: { id: string; titel: string } | null;
   daten: Record<string, unknown>;
   meldung?: string;
   einladungen?: string;
@@ -37,6 +43,7 @@ export async function AufnahmeKarte({
     .map((n) => ({ n, name: String(daten[`eltern${n}Name`] ?? '').trim(), email: String(daten[`eltern${n}Email`] ?? '').trim() }))
     .filter((e) => e.name && e.email);
   const zaehle = (s: string) => stand?.einladungen.filter((e) => e.stand === s).length ?? 0;
+  const vorbelegt = gruppeFuerKurs(gruppen, kurs?.id) ?? '';
   return (
     <section id="aufnahme" aria-labelledby="aufnahme-titel" className={karte}>
       <h2 id="aufnahme-titel" className="text-24">
@@ -49,6 +56,7 @@ export async function AufnahmeKarte({
       ) : m ? (
         <Meldung art="fehler">{t(`meldung.${m}`)}</Meldung>
       ) : null}
+      {kurs ? <p className="font-bold">{t('kurs', { titel: kurs.titel })}</p> : null}
       {stand ? (
         <>
           <p>{t('aufgenommenAls', { name: stand.anzeigename })}</p>
@@ -68,7 +76,12 @@ export async function AufnahmeKarte({
           <p className="text-16 text-tinte-2">{t('text')}</p>
           <label className="flex min-w-0 flex-col gap-1 font-bold">
             {t('gruppe')}
-            <select name="gruppeId" defaultValue="" className={feldKlein}>
+            <select
+              name="gruppeId"
+              defaultValue={vorbelegt}
+              className={feldKlein}
+              aria-describedby={kurs ? 'aufnahme-gruppe-hinweis' : undefined}
+            >
               <option value="">{t('spaeterZuordnen')}</option>
               {gruppen.map((g) => (
                 <option key={g.id} value={g.id}>
@@ -77,6 +90,11 @@ export async function AufnahmeKarte({
               ))}
             </select>
           </label>
+          {kurs ? (
+            <p id="aufnahme-gruppe-hinweis" className="text-16 text-tinte-2">
+              {vorbelegt ? t('gruppeVorbelegt') : t('keineGruppeZumKurs')}
+            </p>
+          ) : null}
           {kontenAn ? (
             eltern.length ? (
               <fieldset className="flex flex-col gap-2">

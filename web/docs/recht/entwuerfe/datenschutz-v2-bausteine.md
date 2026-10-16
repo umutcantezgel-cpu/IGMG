@@ -169,6 +169,10 @@ Wird ein Konto gesperrt, enden alle Sitzungen sofort.
 
 **Rückfall.** Wenn Push nicht verfügbar ist, kann die Gemeinde stattdessen eine kurze E-Mail-Zusammenfassung ohne Inhalte senden oder Sie in der Seite erinnern.
 
+**Zusammenfassung per E-Mail.** Mit einem Konto können Sie unter „Mein Bereich“ → „Benachrichtigungen“ zusätzlich zu den Benachrichtigungen aufs Gerät oder statt ihrer eine **Zusammenfassung per E-Mail** bestellen, je Thema: wichtige Ankündigungen der Moschee, neue Nachrichten in Ihrer Gruppe oder im Elternkanal, Neuigkeiten aus dem Unterricht (nicht für Gebetszeiten). Sie kommt **höchstens einmal am Tag** und nur, wenn es seit der letzten Zusammenfassung Neues gibt. Die E-Mail nennt **nur den Bereich und die Anzahl**, zum Beispiel „In 2 Ihrer Gruppen gibt es neue Nachrichten“ – keine Namen, keine Titel, keine Inhalte – und enthält einen Link zu den Einstellungen, über den Sie sie abbestellen oder die Themen ändern. Gezählt wird nur, was Sie in „Mein Bereich“ selbst sehen dürfen. Wir speichern dafür die gewählten Themen, den Zeitpunkt der Bestellung und den Zeitpunkt der letzten Zusammenfassung; die Mail geht an die **bestätigte** E-Mail-Adresse Ihres Kontos. Kinderzugänge bekommen keine Zusammenfassung; Jugendliche ab 16 mit eigenem Konto nur mit ihrer Zustimmung zu den Benachrichtigungen. Rechtsgrundlage: [prüfen: Art. 6 Abs. 1 lit. b DSGVO (vom Konto gewünschte Funktion) oder lit. a (Einwilligung durch das Bestellen)]. Speicherdauer: bis Sie abbestellen oder das Konto gelöscht wird. Empfänger: der E-Mail-Dienstleister ([SMTP-Anbieter – Angaben von der Gemeinde]).
+
+**Hinweis in Mein Bereich.** Solange Sie „Mein Bereich“ geöffnet haben, fragt Ihr Browser in Abständen beim Server nach, ob es Neues gibt, und zeigt dann unten einen kurzen Hinweis – nur Bereich und Anzahl, ohne Inhalte. Dafür speichern wir nichts zusätzlich. Auf Wunsch zeigt Ihr Browser den Hinweis zusätzlich als **Mitteilung des Browsers**: Er fragt erst nach Ihrem Klick um Erlaubnis, und die Einstellung bleibt nur auf Ihrem Gerät (`igmg-mitteilung-mein-bereich`, Baustein 12). Diese Mitteilung läuft über keinen Push-Dienst.
+
 **iPhone und iPad.** Dort funktioniert Push erst, wenn Sie die Seite zum Home-Bildschirm hinzufügen und von dort öffnen.
 
 ### Hinweise für die Prüfung
@@ -180,6 +184,11 @@ Wird ein Konto gesperrt, enden alle Sitzungen sofort.
 - **Befund 3:** „Push für das Kind nur mit Elternfreigabe“ (ADR 0034) ist im Abo-Weg dieses Standes nicht erzwungen: `route.ts` unterscheidet nur „mit/ohne Konto“, nicht „Kinderkonto“. Vor Einschalten von `push` zu ergänzen (DSFA D-07).
 - Die Kontaktadresse (`VAPID_KONTAKT`) geht in jedem Aufruf an den Push-Dienst (Feld `sub` im VAPID-Token). Eine allgemeine Funktionsadresse verwenden, keine persönliche.
 - Aufräumen der Abos läuft im Minutentakt (`/api/wartung/takt`), nicht im Löschlauf. Fällt der Takt aus, bleiben Abos länger.
+
+- **Rückfall (ADR 0034 Nr. 6, F-38), Belege:** Tabelle `mail_zusammenfassung` (Migration `0016_mail_zusammenfassung`; Themen, Zählbeginn, letzter Versand; Kaskade beim Löschen des Kontos); `web/src/lib/push/{rueckfall,neues,zusammenfassung,zusammenfassung-mail}.ts`; Mail-Vorlage `web/src/lib/mail/vorlagen/zusammenfassung.tsx`; Planung im täglichen Cron `/api/wartung/mail-ausgang`; die Adresse ermittelt erst der Versand (Empfänger `zusammenfassung:<Konto>` im verschlüsselten Mail-Ausgang). Ausgeschlossen: Kinderkonten, unbestätigte und `.invalid`-Adressen, gesperrte Konten, Schalter `push` aus. Tests `web/tests/integration/push-zusammenfassung.test.ts`, `web/tests/unit/push-rueckfall.test.ts`.
+- Die Zählung „Unterricht“ nutzt Audit-Einträge (`unterricht.termin_geaendert`, nur IDs) und neue Aufgaben; „Ankündigung“ die erste Veröffentlichung laut Audit (`inhalt.veroeffentlicht`). Die Frist des Audit-Logs (365 Tage) gilt unverändert.
+- Der Datenexport (Art. 15/20) enthält die Auswahl (`zusammenfassungPerMail`). `[prüfen: Rechtsgrundlage der Zusammenfassung – Vertrag/Funktion des Kontos oder Einwilligung; bei Einwilligung Text und Version wie beim Push festhalten]`.
+- Hinweis in Mein Bereich: Abruf `/api/mein/neues` (nur mit Sitzung, nie zwischengespeichert, Antwort nur Anzahlen), Insel `web/src/components/mein-bereich/NeuesHinweis.tsx`; Mitteilung des Browsers nur nach Klick (`Notification.requestPermission`) und nur bei nicht fokussiertem Fenster.
 
 ## 6. Newsletter (Double-Opt-in)
 
@@ -304,6 +313,7 @@ Die öffentlichen Seiten setzen **keine Cookies**. Zur Bedienung speichert die W
 | `igmg-quran-weiterlesen` | zuletzt gelesene Stelle (Sure, Vers) | beim Lesen | „Weiterlesen“ |
 | `igmg-elifbe-fortschritt` | gelöste Übungen je Buchstabe | beim Üben | Fortschritt im Elifbe |
 | `igmg-quran-offline` | Liste der offline gespeicherten Koranseiten (Adresse, Titel, Größe, Datum) | nur nach „Offline speichern“ | Übersicht und Entfernen der gespeicherten Seiten |
+| `igmg-mitteilung-mein-bereich` | `an` | nur nach „Auch als Mitteilung des Browsers zeigen“ und Erlaubnis des Browsers | Hinweis in Mein Bereich zusätzlich als Mitteilung des Browsers |
 | Browser-Vorrat `igmg-koran-v1` (Cache Storage) | Koranseite, Wort- und Übersetzungsdaten, Programmteile, auf Wunsch Rezitation – keine Personendaten | nur nach „Offline speichern“ | Lesen ohne Netz; „Vom Gerät entfernen“ löscht ihn |
 | Leser-Einstellungen | Lesemodus, Schriftgröße, Tajwid an/aus, gewählte Ausgabe, zuletzt gelesene Stelle | wenn Sie sie ändern bzw. lesen | Einstellungen und „Weiterlesen“ |
 | Übungsstand (Elifbe) | geübte Buchstaben | beim Üben | Fortschritt auf diesem Gerät |
@@ -314,7 +324,7 @@ Außerdem hält der **Service Worker** (`/sw.js`) öffentliche Seiten der Gebets
 
 ### Hinweise für die Prüfung
 
-- **Schlüsselnamen (vereinheitlicht 13.10.2026):** alle mit Präfix `igmg-` (geprüft in `web/tests/e2e/datenschutz.spec.ts`): `igmg-konzepthinweis-gesehen`, `igmg-gebetszeiten-ort`, `igmg-push-auswahl`, `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser schreibt, Mein Bereich liest), `igmg-quran-offline`, `igmg-elifbe-fortschritt`. Vor der Veröffentlichung gegen den Code prüfen.
+- **Schlüsselnamen (vereinheitlicht 13.10.2026):** alle mit Präfix `igmg-` (geprüft in `web/tests/e2e/datenschutz.spec.ts`): `igmg-konzepthinweis-gesehen`, `igmg-gebetszeiten-ort`, `igmg-push-auswahl`, `igmg-quran-einstellungen`, `igmg-quran-weiterlesen`, `igmg-quran-lesezeichen` (Koran-Leser schreibt, Mein Bereich liest), `igmg-quran-offline`, `igmg-elifbe-fortschritt`, `igmg-mitteilung-mein-bereich` (F-38). Vor der Veröffentlichung gegen den Code prüfen.
 - Cookies der Anmeldung: siehe Baustein 2.
 - Service Worker: `web/public/sw.js` (Kopfkommentar: nie vorhalten: Verwaltung, API, Medien-Uploads, Server Actions).
 

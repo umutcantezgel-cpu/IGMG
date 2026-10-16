@@ -152,6 +152,18 @@ export function lernendeAusVoranmeldung(daten: Record<string, unknown>): {
 }
 
 /** Ist die Person am Stichtag mindestens 16? (Tag des 16. Geburtstags liegt nicht nach heute.) */
+/**
+ * Vorbelegte Gruppe bei der Aufnahme einer Voranmeldung mit gewünschtem Kurs (F-44): die erste aktive Gruppe dieses Kurses
+ * in der Reihenfolge der Auswahlliste; ohne Kurs oder ohne passende Gruppe keine („später zuordnen“).
+ */
+export function gruppeFuerKurs(
+  gruppen: readonly { id: string; kursId: string | null }[],
+  kursId: string | null | undefined,
+): string | null {
+  if (!kursId) return null;
+  return gruppen.find((g) => g.kursId === kursId)?.id ?? null;
+}
+
 export function istMindestens16(sechzehnAm: string | null, heute: string): boolean {
   return sechzehnAm !== null && sechzehnAm <= heute;
 }

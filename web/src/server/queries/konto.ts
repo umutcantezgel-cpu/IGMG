@@ -115,7 +115,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     .where(eq(schema.user.id, benutzerId))
     .limit(1);
   if (!u) return {};
-  const [profil, gemeinde, verwaltung, einwilligungen, sitzungen, passkeys, eigeneLernende, kinder, protokoll, antraege] =
+  const [profil, gemeinde, verwaltung, einwilligungen, sitzungen, passkeys, eigeneLernende, kinder, protokoll, antraege, zusammenfassung] =
     await Promise.all([
       db.select().from(schema.kontoProfil).where(eq(schema.kontoProfil.benutzerId, benutzerId)),
       db
@@ -179,6 +179,16 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
         })
         .from(schema.ticket)
         .where(and(eq(schema.ticket.erstelltVon, benutzerId), inArray(schema.ticket.kategorie, ['loeschantrag']))),
+      // Mail-Zusammenfassung (F-38): gewählte Themen, Zählbeginn, letzter Versand
+      db
+        .select({
+          themen: schema.mailZusammenfassung.themen,
+          seit: schema.mailZusammenfassung.seit,
+          letzterVersand: schema.mailZusammenfassung.letzterVersand,
+          bestelltAm: schema.mailZusammenfassung.erstelltAm,
+        })
+        .from(schema.mailZusammenfassung)
+        .where(eq(schema.mailZusammenfassung.benutzerId, benutzerId)),
     ]);
   const lernendeExport = (l: typeof schema.lernende.$inferSelect) => ({
     anzeigename: l.anzeigename,
@@ -212,6 +222,7 @@ export async function exportiereKontodaten(benutzerId: string): Promise<Record<s
     kinder: kinder.map((k) => ({ ...lernendeExport(k.lernende), sorgeberechtigt: k.sorgeberechtigt, bestaetigtAm: k.bestaetigtAm })),
     protokoll,
     antraege,
+    zusammenfassungPerMail: zusammenfassung[0] ?? null,
   };
 }
 

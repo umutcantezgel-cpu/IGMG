@@ -9,6 +9,7 @@ import { verarbeiteFormular, type GeplanteMail } from '@/lib/formulare/verarbeit
 import { schrittMitFehler, wizardSchritt } from '@/lib/formulare/wizard';
 import { datumOhneWochentag } from '@/lib/i18n/format';
 import { VORANMELDUNG_SCHRITTE, voranmeldungSchema } from '@/lib/validierung/formulare/voranmeldung';
+import { kursIdFuerVoranmeldung } from '@/server/queries/kurse';
 
 type Sprache = 'de' | 'tr' | 'en';
 
@@ -16,6 +17,8 @@ type Sprache = 'de' | 'tr' | 'en';
  * Schüler-Voranmeldung (B05, ADR 0005, E-028). Schritte 1–3: nur prüfen und den nächsten Schritt rendern
  * (kein Speichern, keine Ratenbegrenzung, kein ALTCHA). Letzter Schritt: `verarbeiteFormular` mit zwei
  * Einwilligungen; Bestätigung an Elternteil 1, Benachrichtigung an die zuständigen Rollen (ohne Formulardaten).
+ * Gewünschter Kurs (F-44): das versteckte Feld `kurs` (Kurskennung aus „Für diesen Kurs voranmelden“) wird nur für
+ * erlaubte Kurse übernommen und als `eingang.bezug_id` gespeichert – nicht in den verschlüsselten Formulardaten.
  */
 export async function sendeVoranmeldung(_vorher: FormularAntwort | null, fd: FormData): Promise<FormularAntwort> {
   await zurueckOhneSkript();
@@ -29,12 +32,16 @@ export async function sendeVoranmeldung(_vorher: FormularAntwort | null, fd: For
       ansicht: <VoranmeldungFormular sprache={sprache} schritt={stand.schritt} werte={stand.werte} ergebnis={stand.ergebnis} />,
     };
   }
-  const t = await getTranslations({ locale: sprache, namespace: 'voranmeldung' });
+  const [t, kursId] = await Promise.all([
+    getTranslations({ locale: sprache, namespace: 'voranmeldung' }),
+    kursIdFuerVoranmeldung(fd.get('kurs')),
+  ]);
   const ergebnis = await verarbeiteFormular({
     art: 'voranmeldung',
     fd,
     schema: voranmeldungSchema,
     sprache,
+    bezugId: () => kursId,
     einwilligungen: () => [
       { schluessel: 'voranmeldung.einwilligung.kontakt', text: t('einwilligung.kontakt') },
       { schluessel: 'voranmeldung.einwilligung.datenschutz', text: t('einwilligung.datenschutz') },

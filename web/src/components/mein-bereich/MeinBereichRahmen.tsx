@@ -11,8 +11,9 @@ import type { Locale } from '@/i18n/routing';
 import { funktionAn } from '@/lib/funktionen';
 import { kindDarfPush } from '@/lib/push/abo';
 import { ladeGruppenKontext, type Konto } from '@/lib/rechte/gemeinde';
-import { bereicheFuer, type BereichFunktion, type BereichLage, type BereichSchluessel } from './eintraege';
+import { bereicheFuer, type BereichEintrag, type BereichFunktion, type BereichLage, type BereichSchluessel } from './eintraege';
 import { BereichLeiste } from './BereichLeiste';
+import { NeuesHinweis } from './NeuesHinweis';
 
 export const BEREICH_ICON: Record<BereichSchluessel, LucideIcon> = {
   start: House,
@@ -45,6 +46,14 @@ async function bereichLage(konto: Konto): Promise<BereichLage> {
   };
 }
 
+/** Ziel der Gruppen-Hinweise (F-38): Unterricht (Lehrkraft), Kinder (Eltern), eigene Gruppe (Schüler), sonst die Übersicht. */
+function gruppenZiel(eintraege: BereichEintrag[], sprache: Locale): string {
+  const e = (['unterricht', 'kinder', 'gruppe'] as const)
+    .map((s) => eintraege.find((x) => x.schluessel === s && x.gebaut && x.ziel))
+    .find(Boolean);
+  return pfadFuer(e?.ziel ?? '/mein-bereich', sprache);
+}
+
 /**
  * Hülle von „Mein Bereich“ (ADR 0026): Kopf und Fuß der Website, Seitenkopf mit Kennung, darunter die Navigation je
  * Kontoart (ab 1024 px als Seitenleiste mit Kontokarte, darunter als waagerechte Reihe mit Randverlauf, Scroll-Snap und
@@ -58,6 +67,7 @@ export async function MeinBereichRahmen({
   untertitel,
   sprachZiel,
   zwischen = [],
+  ohneKanal,
   children,
 }: {
   konto: Konto;
@@ -67,6 +77,8 @@ export async function MeinBereichRahmen({
   sprachZiel: Ziel;
   /** Brotkrumen zwischen „Mein Bereich“ und dieser Seite (tiefere Seiten, z. B. Unterricht › Gruppe). */
   zwischen?: PfadEintrag[];
+  /** Chat-Seite: Kanal, den die Person gerade liest – der Hinweis „Neues“ zählt ihn nicht mit (F-38). */
+  ohneKanal?: string;
   children: ReactNode;
 }) {
   const sprache = (await getLocale()) as Locale;
@@ -81,6 +93,9 @@ export async function MeinBereichRahmen({
     ...(konto.verwaltungsRollen.length ? [t('kontoart.verwaltung')] : []),
   ];
   const initial = kopfName(konto.anzeigename, sprache).initiale;
+  const tn = await getTranslations('meinBereich.neues');
+  const gruppen = gruppenZiel(eintraege, sprache);
+  const zeile = (thema: 'chat' | 'unterricht' | 'ankuendigung') => ({ eins: tn(`${thema}.eins`), mehr: tn.raw(`${thema}.mehr`) as string });
 
   return (
     <KontoHuelle seite="mein-bereich" sprachZiel={sprachZiel} pfad={pfad} konto={konto}>
@@ -154,6 +169,19 @@ export async function MeinBereichRahmen({
           </div>
         </div>
       </div>
+      {/* Rückfall für Benachrichtigungen (ADR 0034 Nr. 6): Hinweis „Neues“, solange die Seite sichtbar ist */}
+      <NeuesHinweis
+        texte={{
+          titel: konto.istKind ? tn('titelKind') : tn('titel'),
+          schliessen: tn('schliessen'),
+          chat: zeile('chat'),
+          unterricht: zeile('unterricht'),
+          ankuendigung: zeile('ankuendigung'),
+        }}
+        ziele={{ chat: gruppen, unterricht: gruppen, ankuendigung: pfadFuer('/nachrichten', sprache) }}
+        sprache={sprache}
+        ohneKanal={ohneKanal}
+      />
     </KontoHuelle>
   );
 }

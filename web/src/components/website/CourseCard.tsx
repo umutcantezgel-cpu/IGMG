@@ -18,10 +18,12 @@ type StatusZeichen = ComponentType<{ className?: string; 'aria-hidden'?: boolean
 
 /**
  * Lokales Ziel je Anmeldeweg (design/CourseCard.dc.html Z38, Blatt C09): Voranmeldung bzw. Kontakt › Anfahrt.
- * Geschlossen hat kein Ziel; die Aktion ist dann eine deaktivierte Schaltfläche.
+ * Geschlossen hat kein Ziel; die Aktion ist dann eine deaktivierte Schaltfläche. Mit `slug` übergibt die Voranmeldung den
+ * Kurs (`?kurs=<slug>`, F-44): Die statische Formularseite liest ihn erst im Browser, der Server prüft ihn beim Absenden.
  */
-export function zielFuer(anmeldeweg: Anmeldeweg): Ziel | null {
-  if (anmeldeweg === 'register') return { pathname: '/bildung/voranmeldung' };
+export function zielFuer(anmeldeweg: Anmeldeweg, slug?: string): Ziel | null {
+  if (anmeldeweg === 'register')
+    return slug ? { pathname: '/bildung/voranmeldung', query: { kurs: slug } } : { pathname: '/bildung/voranmeldung' };
   if (anmeldeweg === 'join') return { pathname: '/kontakt', hash: 'karte' };
   return null;
 }
@@ -68,7 +70,7 @@ export async function CourseCard({
   const t = await getTranslations('kurskarte');
   const titel = textMitSprache(kurs.titel, sprache).text;
   const zustand = kurs.anmeldeweg;
-  const ziel = zielFuer(zustand);
+  const ziel = zielFuer(zustand, kurs.slug);
   // Grün nur bei der Voranmeldung (Handlung); Teilnahme und geschlossen sind neutral (H-E11, K-010)
   const status: { text: string; klasse: string; Icon: StatusZeichen } =
     zustand === 'closed'
@@ -76,7 +78,8 @@ export async function CourseCard({
       : zustand === 'register'
         ? { text: t('statusVoranmeldung'), klasse: 'border border-gruen-700 bg-weiss text-gruen-800', Icon: Stern8 }
         : { text: t('statusKeineAnmeldung'), klasse: 'border border-linie bg-sand text-tinte-2', Icon: CircleCheck };
-  const aktionText = zustand === 'register' ? t('aktionVoranmeldung') : zustand === 'join' ? t('aktionTeilnahme') : t('aktionGesperrt');
+  // F-44: Die Voranmeldung aus der Karte übergibt den Kurs („Für diesen Kurs voranmelden“)
+  const aktionText = zustand === 'register' ? t('aktionKursVoranmeldung') : zustand === 'join' ? t('aktionTeilnahme') : t('aktionGesperrt');
   const AktionIcon = zustand === 'join' ? MapPin : ArrowRight;
   const StatusIcon = status.Icon;
 

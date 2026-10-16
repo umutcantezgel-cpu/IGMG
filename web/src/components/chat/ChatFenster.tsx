@@ -4,6 +4,8 @@ import { ChevronDown, CircleAlert, CirclePause, Clock, Flag, Lock, Phone } from 
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
+import { verbindeSignal } from '@/lib/echtzeit/signal';
+import { chatAbstand } from '@/lib/echtzeit/takt';
 import type { SchreibGrund } from '@/lib/chat/regeln';
 import { klassen } from '@/lib/klassen';
 import {
@@ -66,10 +68,9 @@ const HINWEIS_ZUM_TEXT: ReadonlySet<string> = new Set(['leer', 'zuLang', 'rate']
 const segmentierer = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new Intl.Segmenter('de', { granularity: 'grapheme' }) : null;
 const zaehle = (t: string) => (segmentierer ? [...segmentierer.segment(t)].length : t.length);
 
-/** Abruf-Takt (ADR 0027): 4 s nach Aktivität, dann 15 s, nach 5 Minuten Ruhe 30 s; verborgener Tab: Pause. */
+/** Abruf-Takt (ADR 0027, `chatAbstand`): 4 s nach Aktivität, dann 15 s, nach 5 Minuten Ruhe 30 s; verborgener Tab: Pause. */
 function abstand(letzteAktivitaet: number): number {
-  const ruhe = Date.now() - letzteAktivitaet;
-  return ruhe < 60_000 ? 4_000 : ruhe < 300_000 ? 15_000 : 30_000;
+  return chatAbstand(Date.now() - letzteAktivitaet);
 }
 
 /**
@@ -174,27 +175,17 @@ export function ChatFenster({
   // Echtzeit-Signal (K-A, ADR 0027): nur „Kanal hat Neues“ → sofort abrufen. Ohne Konfiguration 404 → nur Abruf.
   useEffect(() => {
     if (!echtzeit) return;
-    let ws: WebSocket | null = null;
+    let trennen: (() => void) | null = null;
     let aus = false;
     (async () => {
       const antwort = await fetch(`/api/mein/echtzeit?kanal=${kanalId}`, { cache: 'no-store' }).catch(() => null);
       if (!antwort?.ok || aus) return;
       const t = (await antwort.json()) as { url: string; kanal: string; verbindung: string; abo: string };
-      ws = new WebSocket(t.url);
-      ws.onopen = () => {
-        ws?.send(JSON.stringify({ id: 1, connect: { token: t.verbindung } }));
-        ws?.send(JSON.stringify({ id: 2, subscribe: { channel: t.kanal, token: t.abo } }));
-      };
-      ws.onmessage = (e) => {
-        for (const zeile of String(e.data).split('\n')) {
-          if (zeile === '{}') ws?.send('{}');
-          else if (zeile.includes('"push"')) void abrufen();
-        }
-      };
+      trennen = verbindeSignal({ url: t.url, verbindung: t.verbindung, abos: [{ kanal: t.kanal, abo: t.abo }] }, () => void abrufen());
     })();
     return () => {
       aus = true;
-      ws?.close();
+      trennen?.();
     };
   }, [kanalId, abrufen, echtzeit]);
 

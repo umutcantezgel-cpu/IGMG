@@ -10,13 +10,17 @@ import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 
 /**
  * Verwaltung „Eingänge“ (C08, V08, ADR 0005, G-07). Ohne Cache (Verwaltung ist dynamisch).
- * Datensparsam: Die Liste zeigt keine Personendaten (nur Art, Status, Datum, Bezug). Erst das Detail entschlüsselt –
+ * Datensparsam: Die Liste zeigt keine Personendaten (nur Art, Status, Datum, Bezug – bei Anmeldungen die Veranstaltung,
+ * bei Voranmeldungen der gewünschte Kurs, F-44). Erst das Detail entschlüsselt –
  * und jeder Abruf schreibt `eingang.gelesen` ins Audit-Log. Die Organisationsredaktion sieht Anmeldungen nur zu
  * Veranstaltungen ihrer Organisation.
  */
 export const SEITENGROESSE = 50;
 const e = schema.eingang;
 const v = schema.veranstaltung;
+/** Gewünschter Kurs einer Voranmeldung (F-44): `eingang.bezug_id` → `kurs.id`. */
+const k = schema.kurs;
+const kursBezug = and(eq(e.art, 'voranmeldung'), eq(k.id, e.bezugId));
 
 /** Welche Arten darf die Person lesen? Für Anmeldungen zusätzlich die Organisationen (null = alle). */
 export function sichtbarkeit(a: Angemeldet): { arten: EingangArt[]; anmeldungOrgs: OrganisationKuerzel[] | null } {
@@ -61,6 +65,8 @@ export type EingangZeile = {
   erstelltAm: Date;
   loeschenAb: Date | null;
   bezugTitel: string | null;
+  /** Voranmeldung: gewünschter Kurs (nur, wenn es ihn noch gibt). */
+  kursId: string | null;
   organisation: OrganisationKuerzel | null;
 };
 
@@ -86,9 +92,12 @@ export async function ladeEingangsListe(filter: ListenFilter, a: Angemeldet): Pr
         loeschenAb: e.loeschenAb,
         titel: v.titel,
         organisation: v.organisation,
+        kursId: k.id,
+        kursTitel: k.titel,
       })
       .from(e)
       .leftJoin(v, and(eq(e.art, 'veranstaltungsanmeldung'), eq(v.id, e.bezugId)))
+      .leftJoin(k, kursBezug)
       .where(bedingung)
       .orderBy(desc(e.erstelltAm))
       .limit(SEITENGROESSE)
@@ -109,7 +118,8 @@ export async function ladeEingangsListe(filter: ListenFilter, a: Angemeldet): Pr
       anzahl: z.anzahl,
       erstelltAm: z.erstelltAm,
       loeschenAb: z.loeschenAb,
-      bezugTitel: z.titel?.de ?? null,
+      bezugTitel: z.titel?.de ?? z.kursTitel?.de ?? null,
+      kursId: z.kursId ?? null,
       organisation: z.organisation ?? null,
     })),
   };
@@ -147,13 +157,22 @@ export async function ladeEingangKopf(id: string, a: Angemeldet): Promise<Eingan
       loeschenAb: e.loeschenAb,
       titel: v.titel,
       organisation: v.organisation,
+      kursId: k.id,
+      kursTitel: k.titel,
     })
     .from(e)
     .leftJoin(v, and(eq(e.art, 'veranstaltungsanmeldung'), eq(v.id, e.bezugId)))
+    .leftJoin(k, kursBezug)
     .where(and(eq(e.id, id), sichtbarBedingung(a)))
     .limit(1);
   if (!z0) return null;
-  return { ...z0, bezugTitel: z0.titel?.de ?? null, organisation: z0.organisation ?? null };
+  const { titel, kursTitel, ...rest } = z0;
+  return {
+    ...rest,
+    bezugTitel: titel?.de ?? kursTitel?.de ?? null,
+    kursId: z0.kursId ?? null,
+    organisation: z0.organisation ?? null,
+  };
 }
 
 /**
@@ -218,9 +237,11 @@ export async function ladeFuerExport(filter: Omit<ListenFilter, 'seite'> & { id?
       daten: e.datenVerschluesselt,
       schluesselId: e.schluesselId,
       titel: v.titel,
+      kursTitel: k.titel,
     })
     .from(e)
     .leftJoin(v, and(eq(e.art, 'veranstaltungsanmeldung'), eq(v.id, e.bezugId)))
+    .leftJoin(k, kursBezug)
     .where(
       and(
         sichtbarBedingung(a),
@@ -241,7 +262,7 @@ export async function ladeFuerExport(filter: Omit<ListenFilter, 'seite'> & { id?
     status: z.status,
     sprache: z.sprache,
     erstelltAm: z.erstelltAm.toISOString(),
-    bezug: z.titel?.de ?? '',
+    bezug: z.titel?.de ?? z.kursTitel?.de ?? '',
     daten: entschluessele<Record<string, unknown>>(z.daten, z.schluesselId),
   }));
 }

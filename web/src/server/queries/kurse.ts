@@ -53,3 +53,20 @@ export async function ladeKurse(): Promise<KursDaten[]> {
     bild: (z.bildId && bilder[z.bildId]) || null,
   }));
 }
+
+/** Kurs, für den eine Voranmeldung erlaubt ist (F-44): veröffentlicht, nicht im Papierkorb, Anmeldeweg „Voranmeldung“. */
+export type VoranmeldeKurs = { id: string; slug: string; titel: Mehrsprachig };
+
+export async function kurseFuerVoranmeldung(): Promise<VoranmeldeKurs[]> {
+  return (await ladeKurse()).filter((k) => k.anmeldeweg === 'register').map((k) => ({ id: k.id, slug: k.slug, titel: k.titel }));
+}
+
+/**
+ * Kurs-ID zur Kurskennung aus der Voranmeldung (`?kurs=<slug>`, F-44) – nur für erlaubte Kurse, sonst `null` (dann bleibt
+ * die Voranmeldung ohne Kurs). Gespeichert wird sie als `eingang.bezug_id`.
+ */
+export async function kursIdFuerVoranmeldung(slug: unknown): Promise<string | null> {
+  // Erst die Länge, dann ein Muster ohne verschachtelte Wiederholung (öffentliche Eingabe); geprüft wird gegen die Kursliste
+  if (typeof slug !== 'string' || slug.length > 120 || !/^[a-z0-9][a-z0-9-]*$/.test(slug)) return null;
+  return (await kurseFuerVoranmeldung()).find((k) => k.slug === slug)?.id ?? null;
+}

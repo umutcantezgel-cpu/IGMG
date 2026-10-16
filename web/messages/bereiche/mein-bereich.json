@@ -259,6 +259,39 @@
         "newsletter": {
           "titel": "Newsletter",
           "text": "Später können Sie hier den Newsletter der Gemeinde bestellen und wieder abbestellen."
+        },
+        "zusammenfassung": {
+          "titel": "Zusammenfassung per E-Mail",
+          "text": "Einmal am Tag eine kurze E-Mail, wenn es Neues gibt – auch ohne Mitteilungen aufs Gerät. Sie nennt nur den Bereich und die Anzahl, zum Beispiel „In 2 Ihrer Gruppen gibt es neue Nachrichten“: keine Namen, keine Titel, keine Inhalte.",
+          "legende": "Zusammenfassung per E-Mail (täglich, ohne Inhalte)",
+          "themen": {
+            "ankuendigung": "Wichtige Ankündigungen der Moschee",
+            "chat": "Neue Nachrichten in meiner Gruppe oder im Elternkanal",
+            "unterricht": "Neuigkeiten aus dem Unterricht"
+          },
+          "adresse": "Die E-Mail geht an die bestätigte Adresse Ihres Kontos. Zum Abbestellen alle Häkchen entfernen und speichern.",
+          "speichern": "Auswahl speichern",
+          "bestellt": "bestellt",
+          "nichtBestellt": "nicht bestellt",
+          "meldung": {
+            "gespeichert": "Ihre Auswahl ist gespeichert. Die nächste Zusammenfassung kommt, sobald es Neues gibt – höchstens einmal am Tag.",
+            "aus": "Die Zusammenfassung ist abbestellt."
+          },
+          "nichtMoeglich": {
+            "adresse": "Eine Zusammenfassung per E-Mail gibt es nur mit einer bestätigten E-Mail-Adresse. Ihr Konto hat keine bestätigte Adresse.",
+            "einwilligung": "Eine Zusammenfassung per E-Mail gibt es erst, wenn Sie den Benachrichtigungen zugestimmt haben (Startseite, „Meine Einwilligungen“)."
+          }
+        },
+        "imBrowser": {
+          "titel": "Hinweis in Mein Bereich",
+          "text": "Solange Mein Bereich geöffnet ist, erscheint unten ein kurzer Hinweis, wenn es Neues gibt – ohne Inhalte. Auf Wunsch zeigt Ihr Browser ihn zusätzlich als Mitteilung, auch wenn gerade ein anderes Fenster vorn ist.",
+          "textKind": "Solange dein Bereich offen ist, erscheint unten ein kurzer Hinweis, wenn es Neues gibt. Auf Wunsch zeigt dein Browser ihn zusätzlich als Mitteilung.",
+          "einschalten": "Auch als Mitteilung des Browsers zeigen",
+          "ausschalten": "Mitteilung des Browsers ausschalten",
+          "an": "Auf diesem Gerät eingeschaltet: Der Hinweis erscheint auch als Mitteilung des Browsers.",
+          "aus": "Auf diesem Gerät aus: Der Hinweis erscheint nur in der Seite.",
+          "verweigert": "Der Browser hat Mitteilungen für diese Seite blockiert. Das lässt sich in den Website-Einstellungen des Browsers ändern; der Hinweis in der Seite bleibt.",
+          "nicht": "Dieser Browser kann keine Mitteilungen anzeigen. Der Hinweis erscheint weiter in der Seite."
         }
       },
       "lesezeichen": {
@@ -281,6 +314,23 @@
           "hinweis": "Der Abgleich ist noch nicht freigeschaltet. Bis dahin bleiben Ihre Lesezeichen nur auf diesem Gerät.",
           "bald": "bald verfügbar"
         }
+      },
+      "neues": {
+        "titel": "Neu in Ihrem Bereich",
+        "titelKind": "Neu in deinem Bereich",
+        "chat": {
+          "eins": "Neue Nachrichten in einer Gruppe",
+          "mehr": "Neue Nachrichten in {anzahl} Gruppen"
+        },
+        "unterricht": {
+          "eins": "Neues aus dem Unterricht in einer Gruppe",
+          "mehr": "Neues aus dem Unterricht in {anzahl} Gruppen"
+        },
+        "ankuendigung": {
+          "eins": "Eine neue Ankündigung der Moschee",
+          "mehr": "{anzahl} neue Ankündigungen der Moschee"
+        },
+        "schliessen": "Hinweis schließen"
       }
     }
   },
@@ -544,6 +594,39 @@
         "newsletter": {
           "titel": "Bülten",
           "text": "İleride burada cemaatin bültenine abone olabilecek ve aboneliği iptal edebileceksiniz."
+        },
+        "zusammenfassung": {
+          "titel": "E-posta ile özet",
+          "text": "Yeni bir şey olduğunda günde bir kez kısa bir e-posta – cihaza bildirim olmadan da. E-posta yalnızca alanı ve sayıyı belirtir, örneğin „2 grubunuzda yeni mesajlar var“: isim, başlık veya içerik yoktur.",
+          "legende": "E-posta ile özet (günlük, içeriksiz)",
+          "themen": {
+            "ankuendigung": "Camiden önemli duyurular",
+            "chat": "Grubumda veya veli kanalında yeni mesajlar",
+            "unterricht": "Dersten haberler"
+          },
+          "adresse": "E-posta, hesabınızın onaylanmış adresine gider. Aboneliği bitirmek için tüm işaretleri kaldırıp kaydedin.",
+          "speichern": "Seçimi kaydet",
+          "bestellt": "abone",
+          "nichtBestellt": "abone değil",
+          "meldung": {
+            "gespeichert": "Seçiminiz kaydedildi. Bir sonraki özet, yeni bir şey olduğunda gelir – günde en fazla bir kez.",
+            "aus": "Özet aboneliği bitirildi."
+          },
+          "nichtMoeglich": {
+            "adresse": "E-posta ile özet yalnızca onaylanmış bir e-posta adresiyle mümkündür. Hesabınızın onaylanmış bir adresi yok.",
+            "einwilligung": "E-posta ile özet, bildirimlere onay verdikten sonra mümkündür (Genel bakış, „Onaylarım“)."
+          }
+        },
+        "imBrowser": {
+          "titel": "Hesabım alanında uyarı",
+          "text": "Hesabım açık olduğu sürece yeni bir şey olduğunda altta kısa bir uyarı görünür – içerik olmadan. İsterseniz tarayıcınız bunu ayrıca bildirim olarak da gösterir, başka bir pencere öndeyken bile.",
+          "textKind": "Alanın açık olduğu sürece yeni bir şey olduğunda altta kısa bir uyarı görünür. İstersen tarayıcın bunu ayrıca bildirim olarak da gösterir.",
+          "einschalten": "Tarayıcı bildirimi olarak da göster",
+          "ausschalten": "Tarayıcı bildirimini kapat",
+          "an": "Bu cihazda açık: Uyarı tarayıcı bildirimi olarak da görünür.",
+          "aus": "Bu cihazda kapalı: Uyarı yalnızca sayfada görünür.",
+          "verweigert": "Tarayıcı bu site için bildirimleri engelledi. Bunu tarayıcının site ayarlarından değiştirebilirsiniz; sayfadaki uyarı kalır.",
+          "nicht": "Bu tarayıcı bildirim gösteremez. Uyarı sayfada görünmeye devam eder."
         }
       },
       "lesezeichen": {
@@ -566,6 +649,23 @@
           "hinweis": "Eşitleme henüz açılmadı. O zamana kadar yer imleriniz yalnızca bu cihazda kalır.",
           "bald": "yakında"
         }
+      },
+      "neues": {
+        "titel": "Hesabınızda yenilik var",
+        "titelKind": "Alanında yenilik var",
+        "chat": {
+          "eins": "Bir grupta yeni mesajlar",
+          "mehr": "{anzahl} grupta yeni mesajlar"
+        },
+        "unterricht": {
+          "eins": "Bir grupta dersten haberler",
+          "mehr": "{anzahl} grupta dersten haberler"
+        },
+        "ankuendigung": {
+          "eins": "Camiden yeni bir duyuru",
+          "mehr": "Camiden {anzahl} yeni duyuru"
+        },
+        "schliessen": "Uyarıyı kapat"
       }
     }
   },
@@ -829,6 +929,39 @@
         "newsletter": {
           "titel": "Newsletter",
           "text": "Later, you will be able to subscribe to and unsubscribe from the community newsletter here."
+        },
+        "zusammenfassung": {
+          "titel": "Summary by email",
+          "text": "A short email once a day when there is something new – even without notifications on your device. It only names the area and the number, for example “There are new messages in 2 of your groups”: no names, no titles, no content.",
+          "legende": "Summary by email (daily, without content)",
+          "themen": {
+            "ankuendigung": "Important announcements from the mosque",
+            "chat": "New messages in my group or the parents’ channel",
+            "unterricht": "News from class"
+          },
+          "adresse": "The email goes to the confirmed address of your account. To unsubscribe, remove all ticks and save.",
+          "speichern": "Save selection",
+          "bestellt": "subscribed",
+          "nichtBestellt": "not subscribed",
+          "meldung": {
+            "gespeichert": "Your selection has been saved. The next summary arrives as soon as there is something new – at most once a day.",
+            "aus": "You have unsubscribed from the summary."
+          },
+          "nichtMoeglich": {
+            "adresse": "A summary by email is only available with a confirmed email address. Your account has no confirmed address.",
+            "einwilligung": "A summary by email is only available once you have agreed to notifications (Overview, “My consents”)."
+          }
+        },
+        "imBrowser": {
+          "titel": "Note in My account",
+          "text": "While My account is open, a short note appears at the bottom when there is something new – without content. If you like, your browser can also show it as a notification, even when another window is in front.",
+          "textKind": "While your area is open, a short note appears at the bottom when there is something new. If you like, your browser can also show it as a notification.",
+          "einschalten": "Also show as a browser notification",
+          "ausschalten": "Switch off browser notification",
+          "an": "On for this device: the note also appears as a browser notification.",
+          "aus": "Off for this device: the note only appears on the page.",
+          "verweigert": "The browser has blocked notifications for this site. You can change this in the browser’s site settings; the note on the page remains.",
+          "nicht": "This browser cannot show notifications. The note still appears on the page."
         }
       },
       "lesezeichen": {
@@ -851,6 +984,23 @@
           "hinweis": "Syncing is not enabled yet. Until then, your bookmarks stay on this device only.",
           "bald": "coming soon"
         }
+      },
+      "neues": {
+        "titel": "New in your account",
+        "titelKind": "New in your area",
+        "chat": {
+          "eins": "New messages in one group",
+          "mehr": "New messages in {anzahl} groups"
+        },
+        "unterricht": {
+          "eins": "News from class in one group",
+          "mehr": "News from class in {anzahl} groups"
+        },
+        "ankuendigung": {
+          "eins": "A new announcement from the mosque",
+          "mehr": "{anzahl} new announcements from the mosque"
+        },
+        "schliessen": "Close note"
       }
     }
   }
