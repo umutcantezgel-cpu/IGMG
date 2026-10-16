@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronDown, CircleAlert, CirclePause, Clock, Flag, Lock, Phone } from 'lucide-react';
+import { ChevronDown, CircleAlert, Flag, Phone } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type RefObject } from 'react';
 import { Achtstern } from '@/components/website/Icons';
 import type { AbrufErgebnis, ChatNachricht } from '@/lib/chat/dienst';
@@ -16,6 +16,8 @@ import {
   schalteStumm,
   sendeChatNachricht,
 } from '@/server/actions/chat';
+import { hinweisLage, istSperrGrund, nachAblehnung } from './hinweise';
+import { SperrBand } from './SperrBand';
 
 /** Fertig übersetzte Texte (kein next-intl im Browser, MUSTER §4). */
 export type ChatTexte = {
@@ -62,9 +64,6 @@ export type ChatTexte = {
 type Zustand = { nachrichten: ChatNachricht[]; schreiben: SchreibGrund | null };
 
 const MAX = 500;
-/** Ablehnungen, nach denen weiter geschrieben werden kann (Fokus bleibt im Feld); alle übrigen Gründe sperren das Feld. */
-const HINWEIS_ZUM_TEXT: ReadonlySet<string> = new Set(['leer', 'zuLang', 'rate']);
-
 const segmentierer = typeof Intl !== 'undefined' && 'Segmenter' in Intl ? new Intl.Segmenter('de', { granularity: 'grapheme' }) : null;
 const zaehle = (t: string) => (segmentierer ? [...segmentierer.segment(t)].length : t.length);
 
@@ -115,6 +114,8 @@ export function ChatFenster({
   const sperrBand = useRef<HTMLDivElement>(null);
   /** Nach „Regeln bestätigen“ verschwindet der Knopf (Z-07): Fokus danach ins Feld bzw. auf den Grund der Sperre. */
   const fokusNachRegeln = useRef(false);
+  /** Senden abgelehnt, weil der Kanal sperrt: Fokus auf das Hinweisband, sobald es steht. */
+  const fokusAufSperre = useRef(false);
   const uhr = new Intl.DateTimeFormat(zeitformat, { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
 
   const abrufen = useCallback(async () => {
@@ -206,10 +207,19 @@ export function ChatFenster({
     setSendet(false);
     if (!r) return setMeldung(texte.fehler);
     if (!r.ok) {
+      const folge = nachAblehnung(r.grund);
+      // Hinweise zum Text (leer, zu lang, zu schnell): Meldung in der Statuszeile, der Fokus bleibt im Feld
+      if (folge.art === 'hinweis') return setMeldung(texte.grund[r.grund] ?? texte.fehler);
+      if (istSperrGrund(folge.grund)) {
+        // Kanal sperrt (Zeitfenster, Pause …): Feld gleich sperren; den Grund nennt allein das Hinweisband, das den Fokus
+        // bekommt (Effekt unten) – der nächste Abruf bestätigt den Zustand vom Server
+        fokusAufSperre.current = true;
+        setZ((alt) => ({ ...alt, schreiben: folge.grund }));
+        return;
+      }
+      // Regeln fehlen: Der Kasten mit den Regeln erscheint mit dem nächsten Abruf; der Grund steht in der Statuszeile
       setMeldung(texte.grund[r.grund] ?? texte.fehler);
-      // Hinweise zum Text (leer, zu lang, zu schnell): Der Fokus bleibt im Feld. Sperrt dagegen der Kanal (Zeitfenster,
-      // Pause …), wird das Feld mit dem nächsten Abruf gesperrt – der Fokus steht dann schon auf der Meldung mit dem Grund.
-      if (!HINWEIS_ZUM_TEXT.has(r.grund)) meldungRef.current?.focus();
+      meldungRef.current?.focus();
       return;
     }
     setText('');
@@ -246,12 +256,19 @@ export function ChatFenster({
 
   const gesperrt = z.schreiben !== 'ok';
   const zeichen = zaehle(text);
+  const lage = hinweisLage(z.schreiben, meldung, texte);
 
   useEffect(() => {
     if (!fokusNachRegeln.current || z.schreiben === null || z.schreiben === 'regelnFehlen') return;
     fokusNachRegeln.current = false;
     (gesperrt ? sperrBand.current : feld.current)?.focus();
   }, [z.schreiben, gesperrt]);
+
+  useEffect(() => {
+    if (!fokusAufSperre.current || !istSperrGrund(z.schreiben)) return;
+    fokusAufSperre.current = false;
+    sperrBand.current?.focus();
+  }, [z.schreiben]);
 
   return (
     <section aria-labelledby="chat-titel" className="flex min-h-0 flex-col rounded-lg border border-linie bg-weiss shadow-s1">
@@ -358,8 +375,8 @@ export function ChatFenster({
               {texte.regelnBestaetigen}
             </button>
           </div>
-        ) : gesperrt && z.schreiben ? (
-          <SperrBand ref={sperrBand} grund={z.schreiben} text={texte.grund[z.schreiben] ?? ''} wiederAb={texte.wiederAb} />
+        ) : lage.band ? (
+          <SperrBand ref={sperrBand} {...lage.band} wiederAb={texte.wiederAb} />
         ) : null}
         <form
           className="grid raster-aktion items-center gap-x-2 gap-y-1.5 sm:items-end"
@@ -404,13 +421,14 @@ export function ChatFenster({
             </span>
           )}
         </form>
+        {/* Statuszeile: Live-Region nur, solange kein Hinweisband steht (dann meldet das Band, hinweisLage) */}
         <p
           ref={meldungRef}
-          role="status"
+          role={lage.band ? undefined : 'status'}
           tabIndex={-1}
           className={klassen('min-h-6 text-16 font-bold', meldung === texte.gemeldet ? 'text-gruen-800' : 'text-fehler')}
         >
-          {meldung}
+          {lage.status}
         </p>
       </div>
 
@@ -582,35 +600,4 @@ function Hilfe({ text, nummer, className }: { text: string; nummer: string; clas
 /** Plakette „Lehrkraft“ im Nachrichtenkopf. */
 function Plakette({ text }: { text: string }) {
   return <span className="rounded-pill bg-gruen-50 px-2 text-16 text-gruen-800">{text}</span>;
-}
-
-/** Hinweisband über dem gesperrten Eingabefeld (GC-1): Symbol, Grund und – bei „geschlossen“ – die Wiederöffnungszeit. */
-function SperrBand({
-  ref,
-  grund,
-  text,
-  wiederAb,
-}: {
-  ref?: RefObject<HTMLDivElement | null>;
-  grund: SchreibGrund;
-  text: string;
-  wiederAb: string;
-}) {
-  // Uhr für Zeitfenster und Stummschaltung, Pause für Pausen, sonst Schloss
-  const klasse = 'mt-0.5 size-5 shrink-0 text-info';
-  return (
-    <div ref={ref} role="status" tabIndex={-1} className="flex items-start gap-3 rounded-md bg-info-toenung px-4 py-3">
-      {grund === 'geschlossen' || grund === 'stumm' ? (
-        <Clock aria-hidden className={klasse} />
-      ) : grund === 'pausiert' || grund === 'notfallpause' ? (
-        <CirclePause aria-hidden className={klasse} />
-      ) : (
-        <Lock aria-hidden className={klasse} />
-      )}
-      <p className="flex flex-col text-16">
-        <span className="font-bold text-tinte">{text}</span>
-        {grund === 'geschlossen' ? <span className="text-tinte-2">{wiederAb}</span> : null}
-      </p>
-    </div>
-  );
 }

@@ -5,7 +5,7 @@ import quran from '../../messages/bereiche/quran.json';
 /**
  * E2E Koran-Leser (O-Q01, H-Q01, H-Q02): Wortkarte per Tastatur (ein Tab-Halt je Vers, Pfeiltasten, Eingabe),
  * Tajwid-Seitenleiste aus der Wortkarte, Lesemodus und Tajwid-Schalter mit Speicherung im Gerät, Nachsatz der langen
- * Sure 2, Surensuche, ruhiger Hinweis ohne Rezitation, axe in den offenen Zuständen.
+ * Sure 2, Surensuche, axe in den offenen Zuständen (ohne Rezitation und Player: quran-player.spec.ts).
  * Voraussetzung: Die E2E-Datenbank enthält den Inhaltsimport (pnpm inhalte:import, wie die Bau-Datenbank).
  * Texte aus messages/bereiche/quran.json; Selektoren über Rollen, Beschriftungen und die Satz-Klassen.
  */
@@ -138,13 +138,8 @@ test('Sure 2 (lang): schlichter Text im HTML, Wörter und Tajwid nach dem Laden;
   await expect(page.locator('.vers-ar .tj').first()).toBeAttached();
 });
 
-test('ohne aktive Rezitation: ruhiger Hinweis statt Abspiel-Knopf', async ({ page }, info) => {
-  await page.goto('/quran/36');
-  await leserBereit(page);
-  await expect(page.getByRole('button', { name: T.leser.abspielen, exact: true })).toHaveCount(0);
-  if (info.project.name === 'telefon') await page.getByRole('button', { name: T.leser.ansicht }).click();
-  await expect(page.getByText(T.leser.rezitationFolgt).filter({ visible: true })).toBeVisible();
-});
+// „Ohne aktive Rezitation: ruhiger Hinweis statt Abspiel-Knopf“ steht jetzt in quran-player.spec.ts vor dem Anlegen der
+// Test-Rezitation (seriell): Eine aktive Rezitation gilt für die ganze Website, ein paralleler Lauf hier sähe sie sonst.
 
 test('Übersicht: Surensuche filtert im Browser, Cüz-Liste führt zum Cüz', async ({ page }) => {
   await page.goto('/quran');

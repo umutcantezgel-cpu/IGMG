@@ -2,7 +2,8 @@ import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
 import { echtzeitUrsprung } from './lib/echtzeit/konfig';
-import { cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
+import { kontenSicherAus, nichtGefundenZiel } from './lib/konto/ohne-konten';
+import { cspOeffentlich, cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
 
 const sprachRouting = createMiddleware(routing);
 
@@ -24,6 +25,15 @@ export default function proxy(request: NextRequest) {
     pathname.startsWith('/verwaltung/') ||
     pathname === '/de/verwaltung' ||
     pathname.startsWith('/de/verwaltung/');
+  // Konto-Seiten ohne Konten: echtes 404 (statt Status 200 mit Nicht-gefunden-Inhalt), öffentliche CSP wie jede 404-Seite
+  if (istKontoPfad(pathname) && kontenSicherAus()) {
+    const antwort = NextResponse.rewrite(new URL(nichtGefundenZiel(pathname), request.url));
+    antwort.headers.set('Content-Security-Policy', cspOeffentlich());
+    antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    antwort.headers.set('Cache-Control', 'private, no-store');
+    return antwort;
+  }
+
   // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR 0026)
   if (verwaltung || istKontoPfad(pathname)) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');

@@ -1,5 +1,7 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
-import { ERSTER_TAB } from '@/components/website/quran/erster-tab';
+import { ERSTER_TAB } from '@/components/website/erster-tab';
 
 /**
  * Erster Tab auf den Leseseiten (Z-08): Ohne Startpunkt der Fokus-Navigation übernimmt das Inline-Skript den ersten
@@ -115,5 +117,22 @@ describe('Erster Tab ohne Dokumentsuche', () => {
     hoerer.get('keydown')?.(e);
     expect(e.preventDefault).not.toHaveBeenCalled();
     expect(ziele.some((z) => z.focus.mock.calls.length)).toBe(false);
+  });
+});
+
+/**
+ * Eingebunden in jede Leseansicht mit `content-visibility: auto` (Endprüfung Stufe C, eigene Nachprüfung 1): Koran-Leser
+ * (Verse) und Buch- bzw. Teilseiten der Hadith-Sammlung (je bis zu 100 Karten; vorher rund 1 s für den ersten Tab).
+ */
+describe('Erster Tab: eingebunden in die Leseansichten', () => {
+  const KOMPONENTEN = join(import.meta.dirname, '..', '..', 'src', 'components', 'website');
+  it.each(['quran/LeserRahmen.tsx', 'hadith/BuchAnsicht.tsx'])('%s setzt das Skript inline', (datei) => {
+    const code = readFileSync(join(KOMPONENTEN, datei), 'utf8');
+    expect(code).toMatch(/^import \{ ERSTER_TAB \} from '@\/components\/website\/erster-tab';$/m);
+    expect(code).toMatch(/<script dangerouslySetInnerHTML=\{\{ __html: [^\n]*ERSTER_TAB/);
+  });
+
+  it('die Hadith-Karten tragen weiter content-visibility (sonst wäre das Skript unnötig)', () => {
+    expect(readFileSync(join(KOMPONENTEN, 'hadith/HadithListe.tsx'), 'utf8')).toMatch(/contentVisibility: 'auto'/);
   });
 });

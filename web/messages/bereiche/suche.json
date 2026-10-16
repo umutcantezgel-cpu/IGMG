@@ -19,7 +19,16 @@
       "gruppen": {
         "nachricht": "Neuigkeiten",
         "veranstaltung": "Veranstaltungen",
-        "wissen": "Islamisches Wissen"
+        "wissen": "Islamisches Wissen",
+        "seite": "Seiten",
+        "sure": "Suren",
+        "hadithBuch": "Hadith-Bücher"
+      },
+      "statisch": {
+        "hinweis": "Gefunden werden derzeit die Titel von Seiten, Suren, Hadith-Büchern, Themen aus „Islamisches Wissen“, Neuigkeiten und Veranstaltungen. Die Suche im ganzen Text kommt hinzu, sobald die Datenbank der Gemeinde verbunden ist.",
+        "keine": "Kein Titel enthält „{begriff}“. Die Suche im ganzen Text kommt hinzu, sobald die Datenbank der Gemeinde verbunden ist.",
+        "keineHadith": "Für „{begriff}“ gibt es hier keinen Hadith. Hadithe finden Sie hier über ihre Nummer, z. B. „Bukhari 1“ oder „402.2“.",
+        "nichtVerfuegbar": "Die Suche ist hier noch nicht verfügbar. Sie kommt hinzu, sobald die Datenbank der Gemeinde verbunden ist."
       }
     }
   },
@@ -43,7 +52,16 @@
       "gruppen": {
         "nachricht": "Haberler",
         "veranstaltung": "Etkinlikler",
-        "wissen": "İslami Bilgiler"
+        "wissen": "İslami Bilgiler",
+        "seite": "Sayfalar",
+        "sure": "Sureler",
+        "hadithBuch": "Hadis kitapları"
+      },
+      "statisch": {
+        "hinweis": "Şu anda sayfaların, surelerin, hadis kitaplarının, İslami bilgi konularının, haberlerin ve etkinliklerin başlıkları aranır. Tam metin araması, cemaatin veri tabanı bağlandığında eklenecektir.",
+        "keine": "„{begriff}“ hiçbir başlıkta geçmiyor. Tam metin araması, cemaatin veri tabanı bağlandığında eklenecektir.",
+        "keineHadith": "„{begriff}“ için burada hadis yok. Hadisleri burada numarasıyla bulabilirsiniz, örneğin „Buhari 1“ ya da „402.2“.",
+        "nichtVerfuegbar": "Arama burada henüz kullanılamıyor. Cemaatin veri tabanı bağlandığında eklenecektir."
       }
     }
   },
@@ -67,7 +85,16 @@
       "gruppen": {
         "nachricht": "News",
         "veranstaltung": "Events",
-        "wissen": "Islamic Knowledge"
+        "wissen": "Islamic Knowledge",
+        "seite": "Pages",
+        "sure": "Surahs",
+        "hadithBuch": "Hadith books"
+      },
+      "statisch": {
+        "hinweis": "For now the search covers the titles of pages, surahs, hadith books, Islamic knowledge topics, news and events. Full-text search will be added once the community’s database is connected.",
+        "keine": "No title contains “{begriff}”. Full-text search will be added once the community’s database is connected.",
+        "keineHadith": "There is no hadith for “{begriff}” here. You can find hadiths here by their number, e.g. “Bukhari 1” or “402.2”.",
+        "nichtVerfuegbar": "Search is not available here yet. It will be added once the community’s database is connected."
       }
     }
   }

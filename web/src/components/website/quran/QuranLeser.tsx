@@ -251,13 +251,15 @@ export function QuranLeser(props: LeserProps) {
         </button>
         <span className="ml-auto" />
         {rezitationen.length ? (
+          // Unter sm nur das Symbol (Name bleibt „Abspielen“): mit Ansicht und Tajwid passte die Leiste bei 390 px sonst
+          // nicht in die Breite (Player-E2E, Z-16)
           <button
             type="button"
             onClick={() => setSpielt(leiste.current?.closest<HTMLElement>('.leser') ?? null)}
             className={`${knopf} bg-gruen-700 text-weiss hover:bg-gruen-800`}
           >
             <Play aria-hidden className="size-5" />
-            {t.abspielen}
+            <span className="max-sm:sr-only">{t.abspielen}</span>
           </button>
         ) : (
           <span className="inline-flex items-center gap-2 text-16 text-tinte-2 max-md:hidden">

@@ -596,6 +596,14 @@ const AUSNAHMEN = [
       return e.status === 'geaendert' && String(e.datei).endsWith('docs/recht/VERARBEITUNGSVERZEICHNIS.md') && kern(umgezogen) === kern(e.text_jetzt) && kern(e.text_jetzt) !== '';
     },
   },
+  // Nacharbeit 2, P3 (Suche ohne Laufzeit-Datenbank, Stufe-C-Nachprüfung §2): neuer Hinweis über der Trefferliste.
+  {
+    id: 'G-09',
+    grund:
+      'Neuer Schlüssel „suche.statisch.hinweis“ (de/tr/en) der öffentlichen Suche ohne Laufzeit-Datenbank: sagt, dass derzeit nur Titel von Seiten, Suren, Hadith-Büchern, Neuigkeiten und Veranstaltungen gefunden werden und die Volltextsuche mit der Datenbank hinzukommt. Reiner Bedienhinweis ohne Rechtsinhalt; das Werkzeug greift ihn nur wegen „hinweis“ im Schlüssel auf. Kein bestehender Text geändert.',
+    passt: (e) =>
+      e.gruppe === 'M' && e.status === 'neu' && String(e.datei).endsWith('messages/bereiche/suche.json') && /^(de|tr|en)\.suche\.statisch\.hinweis$/.test(e.schluessel),
+  },
 ];
 
 /** Bekannte erlaubte Schlüssel ohne Rechtsbezug (Vorgabe der Koordination): kennzeichnen, ohne Befund. */

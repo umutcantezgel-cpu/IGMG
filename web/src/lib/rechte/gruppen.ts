@@ -1,7 +1,10 @@
 /**
  * Gruppenrechte der Lernplattform (ADR 0026). Reine Daten und Funktionen – ohne Datenbank, vollständig
- * unit-testbar. Den Kontext lädt `ladeGruppenKontext` (gemeinde.ts); jede Action ruft zuerst `verlangeGruppenRecht`.
- * Schüler sehen nur sich selbst, Eltern nur ihr Kind, Lehrkräfte und Aufsicht nur ihre Gruppen.
+ * unit-testbar. Den Kontext lädt `ladeGruppenKontext` (gemeinde.ts). Jede Konto-Action prüft zuerst Schalter, Sitzung
+ * und zweiten Faktor (`verlangeKontoRecht`, ggf. mit Kontoart), lädt dann den Kontext und prüft das Gruppenrecht mit
+ * `darfInGruppe` – in der Action selbst (lehrkraft.ts) oder im Dienst, den sie aufruft (lib/chat/dienst.ts,
+ * lib/lernen/dienst.ts). `verlangeGruppenRecht` (gemeinde.ts) bündelt beide Schritte; die Wahrheitstafel prüft darüber den
+ * ganzen Weg gegen die Datenbank. Schüler sehen nur sich selbst, Eltern nur ihr Kind, Lehrkräfte und Aufsicht nur ihre Gruppen.
  */
 
 export const GRUPPEN_AKTIONEN = [

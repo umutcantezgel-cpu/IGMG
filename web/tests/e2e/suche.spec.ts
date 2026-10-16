@@ -26,7 +26,8 @@ for (const s of SPRACHEN) {
     const feld = page.getByRole('searchbox', { name: t.feld });
     await feld.fill(s.wort);
     await feld.press('Enter');
-    await expect(page).toHaveURL(new RegExp(`\\?q=${s.wort}$`));
+    // Mit freigeschalteter Hadith-Sammlung schickt das Formular den Bereichsfilter mit (`bereich=alle`)
+    await expect(page).toHaveURL(new RegExp(`\\?q=${s.wort}(?:&bereich=alle)?$`));
     const liste = page.getByRole('main').getByRole('listitem');
     await expect(liste.first()).toBeVisible();
     await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toContainText(s.wort);
@@ -40,7 +41,11 @@ for (const s of SPRACHEN) {
 test('ohne Treffer: Hinweis; Seite nicht indexiert', async ({ page }) => {
   const t = suche.de.suche;
   await page.goto('/suche?q=xyzunbekannt');
-  await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toHaveText(t.keine.replace('{begriff}', 'xyzunbekannt'));
+  // Mit Datenbank „Keine Treffer“; ohne (Beispielmodus, Titel-Index) der Hinweis auf die Titel-Suche
+  const texte = [t.keine, t.statisch.keine].map((x) => x.replace('{begriff}', 'xyzunbekannt'));
+  await expect(page.getByRole('main').getByRole('heading', { level: 2 })).toHaveText(
+    new RegExp(`^(?:${texte.map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})$`),
+  );
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
 });
 

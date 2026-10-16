@@ -4,18 +4,13 @@ import { after } from 'next/server';
 import { z } from 'zod';
 import { protokolliere } from '@/lib/audit';
 import {
-  bearbeiteMeldung,
   bestaetigeRegeln,
-  entferneAlsKinderschutz,
-  entferneMitglied,
   entferneNachricht,
   ladeKanal,
   leitungsAdressen,
   meldeNachricht,
-  pausiereAlsKinderschutz,
   sendeNachricht,
   setzeKanalPause,
-  setzeNotfallpause,
   stummschalten,
 } from '@/lib/chat/dienst';
 import { db, schema } from '@/lib/db';
@@ -25,12 +20,15 @@ import { verschluessele } from '@/lib/krypto';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { sendeGruppenPush } from '@/lib/push/gruppe';
 import { ladeGruppenKontext, verlangeKontoRecht } from '@/lib/rechte/gemeinde';
-import { KeinRecht, verlangeRecht } from '@/lib/rechte/pruefe';
+import { KeinRecht } from '@/lib/rechte/pruefe';
 import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
 
 /**
- * Server Actions des Gruppenchats (S-01…S-18). Reihenfolge wie MUSTER §5: Konto/Recht zuerst, dann Eingabe prüfen,
- * dann Dienst (der das Gruppenrecht erneut prüft). Rückgaben ohne Texte anderer Personen.
+ * Server Actions des Gruppenchats (S-01…S-18) für „Mein Bereich“. Reihenfolge wie MUSTER §5: Konto/Recht zuerst, dann
+ * Eingabe prüfen, dann Dienst (der das Gruppenrecht erneut prüft). Rückgaben ohne Texte anderer Personen.
+ * Die Kinderschutz-Werkzeuge der Verwaltung (Meldung bearbeiten, Notfallpause, als Kinderschutz entfernen oder
+ * pausieren) stehen in `kinderschutz.ts`, Moderation der Gruppenleitung in `lehrkraft.ts` (P3: die ungenutzten
+ * Doppel hier sind entfernt, Endprüfung Stufe C).
  */
 const uuid = z.string().uuid();
 const nachrichtId = z.number().int().positive();
@@ -135,46 +133,5 @@ export async function pausiereKanal(kanalId: string, pause: boolean, begruendung
   const fehler = await setzeKanalPause(k, kanal, pause, begruendung);
   // Fortsetzen meldet der Dienst der Rolle kinderschutz (Mail-Ausgang); Versand nach der Antwort
   if (!fehler && !pause) after(() => versendeOffeneMails().catch(() => undefined));
-  return fehler ? { fehler } : { ok: true as const };
-}
-
-/** Verwaltung, Rolle kinderschutz (nie über „Administration darf alles“, NIE_PER_ADMINISTRATION). */
-export async function bearbeiteChatMeldung(meldungId: string, status: 'in_bearbeitung' | 'erledigt', begruendung: string) {
-  const a = await verlangeRecht('meldung.chat.bearbeiten');
-  if (!uuid.safeParse(meldungId).success || !grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
-  const fehler = await bearbeiteMeldung(meldungId, a.benutzerId, status, begruendung);
-  if (!fehler)
-    await protokolliere({ benutzerId: a.benutzerId, aktion: 'chat.meldung_bearbeitet', zielTyp: 'chat_meldung', zielId: meldungId });
-  return fehler ? { fehler } : { ok: true as const };
-}
-
-export async function schalteNotfallpause(an: boolean, begruendung: string) {
-  const a = await verlangeRecht('chat.notfallpause');
-  if (!grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
-  const fehler = await setzeNotfallpause(a.benutzerId, an, begruendung);
-  if (!fehler) await protokolliere({ benutzerId: a.benutzerId, aktion: an ? 'chat.notfallpause' : 'chat.notfallpause_aufgehoben' });
-  return fehler ? { fehler } : { ok: true as const };
-}
-
-export async function entferneGruppenmitglied(gruppeId: string, lernendeId: string, begruendung: string) {
-  const { kontext: k } = await kontext();
-  if (!uuid.safeParse(gruppeId).success || !uuid.safeParse(lernendeId).success || !grund.safeParse(begruendung).success)
-    return { fehler: 'grundFehlt' as const };
-  const fehler = await entferneMitglied(k, gruppeId, lernendeId, begruendung);
-  return fehler ? { fehler } : { ok: true as const };
-}
-
-/** Kinderschutz (Verwaltung): entfernen und pausieren auch ohne Gruppenleitung, z. B. bei Meldungen gegen eine Lehrkraft. */
-export async function entferneAlsKinderschutzAction(nachrichtId: number, begruendung: string) {
-  const a = await verlangeRecht('meldung.chat.bearbeiten');
-  if (!Number.isInteger(nachrichtId) || nachrichtId < 1 || !grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
-  const fehler = await entferneAlsKinderschutz(a.benutzerId, nachrichtId, begruendung);
-  return fehler ? { fehler } : { ok: true as const };
-}
-
-export async function pausiereAlsKinderschutzAction(kanalId: string, pause: boolean, begruendung: string) {
-  const a = await verlangeRecht('meldung.chat.bearbeiten');
-  if (!uuid.safeParse(kanalId).success || !grund.safeParse(begruendung).success) return { fehler: 'grundFehlt' as const };
-  const fehler = await pausiereAlsKinderschutz(a.benutzerId, kanalId, pause, begruendung);
   return fehler ? { fehler } : { ok: true as const };
 }

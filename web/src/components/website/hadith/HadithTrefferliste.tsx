@@ -5,7 +5,8 @@ import type { HadithTreffer } from '@/server/queries/suche';
 
 /**
  * Gruppe „Hadith“ der Suche (Muster Trefferliste): Bezug als Link zur Stelle im Buch oder Buchteil (`#h-<nummer>`), darunter der
- * Ausschnitt aus dem unveränderten arabischen Text mit markierten Trefferwörtern. Die ganze Karte ist klickbar.
+ * Ausschnitt aus dem unveränderten arabischen Text mit markierten Trefferwörtern (ohne Datenbank nur Bezug und Stelle aus dem
+ * Titel-Index). Die ganze Karte ist klickbar.
  */
 export async function HadithTrefferliste({ treffer }: { treffer: HadithTreffer[] }) {
   const [t, ts, tb] = await Promise.all([getTranslations('hadith'), getTranslations('suche'), getTranslations('hadith.buch')]);
@@ -36,19 +37,22 @@ export async function HadithTrefferliste({ treffer }: { treffer: HadithTreffer[]
                 <p className="text-16 text-tinte-2">
                   {s.hadith === null ? tb('stelleBuch', { buch: s.buch }) : tb('stelle', { buch: s.buch, hadith: s.hadith })}
                 </p>
-                <p lang="ar" dir="rtl" className="text-20 leading-loose text-tinte-2">
-                  {z.ausschnitt.vorn ? '… ' : null}
-                  {z.ausschnitt.teile.map((teil, i) =>
-                    teil.treffer ? (
-                      <mark key={i} className="rounded-sm bg-warnung-toenung px-0.5 text-tinte">
-                        {teil.text}
-                      </mark>
-                    ) : (
-                      teil.text
-                    ),
-                  )}
-                  {z.ausschnitt.hinten ? ' …' : null}
-                </p>
+                {/* Ohne Datenbank kennt die Nummernsuche nur Buch und Stelle (Titel-Index) – dann ohne Ausschnitt */}
+                {z.ausschnitt.teile.length ? (
+                  <p lang="ar" dir="rtl" className="text-20 leading-loose text-tinte-2">
+                    {z.ausschnitt.vorn ? '… ' : null}
+                    {z.ausschnitt.teile.map((teil, i) =>
+                      teil.treffer ? (
+                        <mark key={i} className="rounded-sm bg-warnung-toenung px-0.5 text-tinte">
+                          {teil.text}
+                        </mark>
+                      ) : (
+                        teil.text
+                      ),
+                    )}
+                    {z.ausschnitt.hinten ? ' …' : null}
+                  </p>
+                ) : null}
               </article>
             </li>
           );

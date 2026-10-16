@@ -9,6 +9,8 @@ import { join } from 'node:path';
 
 const wurzel = join(import.meta.dirname, '..');
 const lauf = (befehl, argumente, env = process.env) => execFileSync(befehl, argumente, { cwd: wurzel, env, stdio: 'inherit' });
+// Titel-Index der Suche (nur ohne Laufzeit-Datenbank, unten): kein alter Stand aus einem früheren Bau
+rmSync(join(wurzel, '.suchindex.json'), { force: true });
 
 if (process.env.DATABASE_URL) {
   console.log(`[bau] Datenbank vorhanden (${process.env.VERCEL_ENV ?? 'lokal'}): Migration unter Sperre, dann Bau.`);
@@ -20,13 +22,11 @@ if (process.env.DATABASE_URL) {
   console.warn('[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017).');
   console.warn('[bau] Ohne Datenbank laufen Formulare, Verwaltung und Anmeldung nicht. Runbook: docs/deploy/VERCEL.md.');
   lauf('pnpm', ['db:bau-vorbereiten']);
+  const bauDb = { ...process.env, BAU_PGLITE: '1', PGLITE_VERZEICHNIS: join(wurzel, '.pglite-bau'), DATABASE_URL: '' };
+  // Suche ohne Datenbank: Titel und Hadith-Nummern aus der Bau-Datenbank (src/lib/suche/titelindex.ts)
+  lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/suchindex.ts'], bauDb);
   try {
-    lauf('pnpm', ['exec', 'next', 'build'], {
-      ...process.env,
-      BAU_PGLITE: '1',
-      PGLITE_VERZEICHNIS: join(wurzel, '.pglite-bau'),
-      DATABASE_URL: '',
-    });
+    lauf('pnpm', ['exec', 'next', 'build'], bauDb);
   } finally {
     // Kopien der Bau-Datenbank je Worker-Prozess (src/lib/db/index.ts) entfernen
     rmSync(join(tmpdir(), 'igmg-pglite-bau'), { recursive: true, force: true });
