@@ -43,3 +43,7 @@
   (Kanäle `chat:<kanal-id>` wie `kanalName`); Abonnieren nur mit Abo-Token, alle `allow_*` aus, ohne Anwesenheit und
   Verlauf. Vorher wies Centrifugo jedes Abo mit „102 unknown channel“ ab. Prüfung: `tests/unit/echtzeit.test.ts` (Datei)
   und `betrieb/lokal/echtzeit/pruefen.mjs` (laufender Centrifugo; am 15.10. gegen v6.5.1 lokal 8/8 bestanden).
+- Entfernte Nachrichten (16.10.2026, Nacharbeit 2, P4): Der Abruf trägt zusätzlich `ab=<erste angezeigte ID>` und liefert
+  `entfernt` – die IDs der seither entfernten Nachrichten bis `nach`. Vorher erreichte das Entfernen (S-09) offene
+  Fenster nicht, weil der Abruf nur Neues liefert; gefunden im E2E-Lauf mit zwei Browsern (`tests/e2e/chat.spec.ts`),
+  Prüfung `tests/integration/chat.test.ts` („S-09: Entfernen hinterlässt Platzhalter“).

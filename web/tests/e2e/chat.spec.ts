@@ -52,7 +52,8 @@ test('Leitung und Kind in zwei Browsern: Nachricht kommt an, Melden; im Chatfens
     await chatOeffnen(leitung, lp.gruppeId);
     await chatOeffnen(kind, lp.gruppeId);
 
-    // Kind bestätigt die Regeln (S-15) – die Beispielkonten haben sie schon bestätigt (Beispielnachrichten)
+    // Kind bestätigt die Regeln (S-15), falls sie offen sind – den Knopf gibt es nur im Chatfenster (außerhalb geht
+    // „geschlossen“ vor, schreibGrund) und nur bis zur ersten Bestätigung
     const regeln = kind.getByRole('button', { name: c.regelnBestaetigen });
     if (await regeln.count()) {
       await regeln.click();

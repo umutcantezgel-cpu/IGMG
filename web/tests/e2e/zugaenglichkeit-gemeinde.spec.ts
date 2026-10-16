@@ -112,8 +112,8 @@ test('Kind: Gruppenchat – Regeln bestätigen und Senden per Tastatur, Fokus im
 
   await page.goto(`/mein-bereich/gruppen/${lp.gruppeId}/chat`);
   await chatGeladen(page);
-  // Regeln per Tastatur bestätigen, falls noch offen (die Beispielkonten haben sie schon bestätigt; einen frischen
-  // Kinderzugang prüft lernkette.spec.ts): danach steht der Fokus im Feld bzw. – wenn der Chat zu ist – auf dem Grund
+  // Regeln per Tastatur bestätigen, falls sie offen sind: Den Knopf gibt es nur im Chatfenster (außerhalb geht
+  // „geschlossen“ den fehlenden Regeln vor, schreibGrund) und nur bis zur ersten Bestätigung. Danach Fokus im Feld.
   const regeln = page.getByRole('button', { name: c.regelnBestaetigen });
   const mitRegeln = (await regeln.count()) > 0;
   if (mitRegeln) {
