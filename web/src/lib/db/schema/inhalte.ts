@@ -1,7 +1,7 @@
 import { sql } from 'drizzle-orm';
 import { boolean, date, index, integer, jsonb, pgEnum, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { medium } from './medien';
-import { inhaltSpalten, organisationEnum, tsvector, type Mehrsprachig, type MehrsprachigRich } from './typen';
+import { freigabeSpalten, inhaltSpalten, organisationEnum, tsvector, type Mehrsprachig, type MehrsprachigRich } from './typen';
 
 /** Volltextspalten je Sprache aus einer Klartext-Hilfsspalte `klartext` (jsonb {de,tr,en}) – ADR 0013. */
 const suchSpalten = () => ({
@@ -161,11 +161,16 @@ export const kurs = pgTable('kurs', {
   bildId: uuid().references(() => medium.id, { onDelete: 'set null' }),
 });
 
-/** Themen „Islamisches Wissen“. */
+/**
+ * Themen „Islamisches Wissen“. Religiöse Freigabe (ADR 0030, F-40): öffentlich nur `status = veroeffentlicht` UND
+ * `freigabe = geprueft`. Der Bestand vor F-40 gilt per Migration 0015 als geprüft (ohne prüfende Person, Vermerk im
+ * Freigabe-Verlauf); jede inhaltliche Änderung setzt auf „zur Prüfung“ zurück.
+ */
 export const wissenThema = pgTable(
   'wissen_thema',
   {
     ...inhaltSpalten(),
+    ...freigabeSpalten(),
     slug: text().notNull().unique(),
     kategorie: text().notNull(),
     titel: jsonb().$type<Mehrsprachig>().notNull(),

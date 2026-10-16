@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { getLocale, getTranslations } from 'next-intl/server';
+import { Fragment, type ReactNode } from 'react';
 import { EventCard } from '@/components/website/EventCard';
 import { Stern8 } from '@/components/website/Icons';
 import { JsonLd } from '@/components/website/JsonLd';
@@ -14,11 +15,13 @@ import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { moschee } from '@/lib/seo/jsonld';
 import { adresse, metadatenFuer } from '@/lib/seo/metadaten';
+import { sichtbareAbschnitte, type StartseitenAbschnitt } from '@/lib/startseite/abschnitte';
 import { cn } from '@/lib/utils';
 import { heuteBerlin } from '@/lib/zeit/heute';
 import { ladeDesTages } from '@/server/queries/des-tages';
 import { ladeNachrichten, waehleAufmacher } from '@/server/queries/nachrichten';
 import { ladeSeiteninhalt } from '@/server/queries/seiteninhalte';
+import { ladeStartseitenOrdnung } from '@/server/queries/startseite';
 import { ladeVeranstaltungen } from '@/server/queries/veranstaltungen';
 
 export const ensureStatic = 'navigation';
@@ -37,7 +40,9 @@ const sekundaer =
  * Startseite (design/Home.dc.html, Blatt S01): Hero mit Tagesbogen (großer Moment B-06, ersetzt den Foto-Platzhalter;
  * im Ramadan der Fastenbogen B-20), „Unsere neue Moschee – eröffnet“ (Vorführpfad Station 1, ruhig, ohne Bewegung),
  * kommende Veranstaltungen (6 oder 3, volle Reihen), Neuigkeiten (1 + 3); darunter Vers und Hadith des Tages, sobald
- * die religiöse Prüfung Einträge freigegeben hat.
+ * die religiöse Prüfung Einträge freigegeben hat. Der Kopf mit Tagesbogen steht fest oben; Reihenfolge und Sichtbarkeit
+ * der übrigen Abschnitte pflegt die Redaktion unter Verwaltung › Startseite (F-40). Ohne Datenbank oder ohne gültige
+ * Einstellung gilt die Reihenfolge des Bestands (Rückfall in `ladeStartseitenOrdnung`).
  */
 export default async function Startseite() {
   const sprache = (await getLocale()) as Locale;
@@ -55,44 +60,11 @@ export default async function Startseite() {
   const kontakt = await ladeSeiteninhalt('kontakt');
   // Vers und Hadith des Tages (Kür K-A): nur mit mindestens einem freigegebenen Eintrag in den Listen „des Tages“
   const desTages = await ladeDesTages(heute);
-  return (
-    <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
-      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
-      <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
-        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
-          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">
-            <span className="inline-flex items-center gap-2 self-start text-16 font-bold text-gruen-800">
-              <Stern8 className="size-4" />
-              {t('willkommen')}
-            </span>
-            <h1 id="hero-titel" className="text-display-1 text-gruen-800">
-              {t('titel')}
-            </h1>
-          </div>
-          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
-            <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{t('untertitel')}</p>
-            <div className="flex flex-wrap gap-3 pt-1">
-              <Link
-                href="/mitglied-werden"
-                className="inline-flex min-h-12 druck items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss max-md:w-full max-md:justify-center"
-              >
-                <span>{t('beitreten')}</span>
-                <ArrowRight aria-hidden className="size-5" />
-              </Link>
-              <Link href="/ueber-uns" className={cn(sekundaer, 'max-md:w-full max-md:justify-center')}>
-                <span>{tk('ueberUns')}</span>
-                <ArrowRight aria-hidden className="size-5" />
-              </Link>
-            </div>
-          </div>
-          {/* Telefon (ST-2): Kennung, Titel, Einleitung und Knöpfe stehen zusammen, die Tageskarte folgt; ab lg rechts daneben */}
-          <Tagesbogen className="max-lg:mt-3 lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
-        </div>
-        <div aria-hidden className="h-5 achtstern-band" />
-      </section>
-
-      <UnsereMoschee sprache={sprache} />
-
+  const ordnung = await ladeStartseitenOrdnung();
+  // Abschnitte unter dem Kopf (F-40): Reihenfolge und Sichtbarkeit aus der Verwaltung, sonst wie im Bestand
+  const abschnitte: Record<StartseitenAbschnitt, ReactNode> = {
+    moschee: <UnsereMoschee sprache={sprache} />,
+    veranstaltungen: (
       <section aria-labelledby="veranstaltungen-titel" className="border-b border-linie bg-sand">
         <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
@@ -131,7 +103,8 @@ export default async function Startseite() {
           )}
         </div>
       </section>
-
+    ),
+    neuigkeiten: (
       <section aria-labelledby="neuigkeiten-titel" className="bg-papier">
         <div className="mx-auto flex max-w-(--container-inhalt) flex-col gap-8 px-4 py-abschnitt md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
@@ -166,7 +139,47 @@ export default async function Startseite() {
           ) : null}
         </div>
       </section>
-      <DesTages daten={desTages} sprache={sprache} />
+    ),
+    desTages: <DesTages daten={desTages} sprache={sprache} />,
+  };
+  return (
+    <Seitenrahmen bereich="startseite" seite="startseite" sprachZiel="/">
+      <JsonLd daten={moschee({ url: adresse('/', 'de'), kontakt })} />
+      <section aria-labelledby="hero-titel" className="border-b border-linie bg-papier">
+        <div className="mx-auto grid max-w-(--container-inhalt) items-center gap-5 px-4 py-abschnitt-klein md:px-8 lg:grid-cols-11 lg:gap-x-16">
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:self-end">
+            <span className="inline-flex items-center gap-2 self-start text-16 font-bold text-gruen-800">
+              <Stern8 className="size-4" />
+              {t('willkommen')}
+            </span>
+            <h1 id="hero-titel" className="text-display-1 text-gruen-800">
+              {t('titel')}
+            </h1>
+          </div>
+          <div className="flex flex-col gap-5 lg:col-span-5 lg:col-start-1 lg:row-start-2 lg:self-start">
+            <p className="max-w-text text-20 leading-einleitung text-pretty text-tinte-2">{t('untertitel')}</p>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <Link
+                href="/mitglied-werden"
+                className="inline-flex min-h-12 druck items-center gap-2 rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline transition duration-(--dauer-rueckmeldung) hover:bg-gruen-800 hover:text-weiss max-md:w-full max-md:justify-center"
+              >
+                <span>{t('beitreten')}</span>
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+              <Link href="/ueber-uns" className={cn(sekundaer, 'max-md:w-full max-md:justify-center')}>
+                <span>{tk('ueberUns')}</span>
+                <ArrowRight aria-hidden className="size-5" />
+              </Link>
+            </div>
+          </div>
+          {/* Telefon (ST-2): Kennung, Titel, Einleitung und Knöpfe stehen zusammen, die Tageskarte folgt; ab lg rechts daneben */}
+          <Tagesbogen className="max-lg:mt-3 lg:col-span-6 lg:col-start-6 lg:row-span-2 lg:row-start-1" />
+        </div>
+        <div aria-hidden className="h-5 achtstern-band" />
+      </section>
+      {sichtbareAbschnitte(ordnung).map((a) => (
+        <Fragment key={a}>{abschnitte[a]}</Fragment>
+      ))}
     </Seitenrahmen>
   );
 }

@@ -68,8 +68,16 @@ async function leerePapierkorb(jetzt: Date): Promise<number> {
   const n = schema.nachricht;
   const a = schema.ankuendigung;
   const k = schema.kurs;
+  const w = schema.wissenThema;
   return db.transaction(async (tx) => {
+    // Wissensthemen (F-40) mit ihren Revisionen und dem Freigabe-Verlauf
+    const themen = (await tx.delete(w).where(lt(w.imPapierkorbSeit, grenze)).returning({ id: w.id })).map((z) => z.id);
+    if (themen.length) {
+      await tx.delete(schema.revision).where(and(eq(schema.revision.inhaltTyp, 'wissen_thema'), inArray(schema.revision.inhaltId, themen)));
+      await tx.delete(schema.freigabe).where(and(eq(schema.freigabe.inhaltTyp, 'wissen_thema'), inArray(schema.freigabe.inhaltId, themen)));
+    }
     const geloescht = [
+      ...themen.map((id) => ({ id, typ: 'wissen_thema' })),
       ...(await tx.delete(v).where(lt(v.imPapierkorbSeit, grenze)).returning({ id: v.id })).map((z) => ({ ...z, typ: 'veranstaltung' })),
       ...(await tx.delete(n).where(lt(n.imPapierkorbSeit, grenze)).returning({ id: n.id })).map((z) => ({ ...z, typ: 'nachricht' })),
       ...(await tx.delete(a).where(lt(a.imPapierkorbSeit, grenze)).returning({ id: a.id })).map((z) => ({ ...z, typ: 'ankuendigung' })),

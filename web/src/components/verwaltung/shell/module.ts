@@ -17,7 +17,9 @@ export type ModulSchluessel =
   | 'seiteninhalte'
   | 'seiten'
   | 'menues'
+  | 'startseite'
   | 'weiterleitungen'
+  | 'wissen'
   | 'freigaben'
   | 'kurse'
   | 'gruppen'
@@ -108,6 +110,15 @@ export const MODULE: readonly Modul[] = [
   // CMS (ADR 0032): freie Seiten, Menüs, Weiterleitungen, Freigaben
   { schluessel: 'seiten', pfad: '/verwaltung/seiten', recht: 'seite.lesen', icon: 'seiten', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'menues', pfad: '/verwaltung/menues', recht: 'menue.bearbeiten', icon: 'menues', gebaut: true, gruppe: 'inhalte' },
+  // F-40: Reihenfolge und Sichtbarkeit der Startseiten-Abschnitte
+  {
+    schluessel: 'startseite',
+    pfad: '/verwaltung/startseite',
+    recht: 'startseite.bearbeiten',
+    icon: 'startseite',
+    gebaut: true,
+    gruppe: 'inhalte',
+  },
   {
     schluessel: 'weiterleitungen',
     pfad: '/verwaltung/weiterleitungen',
@@ -116,6 +127,8 @@ export const MODULE: readonly Modul[] = [
     gebaut: true,
     gruppe: 'inhalte',
   },
+  // F-40: Themen „Islamisches Wissen“ pflegen; öffentlich erst nach der religiösen Freigabe (ADR 0030)
+  { schluessel: 'wissen', pfad: '/verwaltung/wissen', recht: 'wissen.bearbeiten', icon: 'wissen', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'freigaben', pfad: '/verwaltung/freigaben', recht: 'freigabe.lesen', icon: 'freigaben', gebaut: true, gruppe: 'inhalte' },
   { schluessel: 'kurse', pfad: '/verwaltung/kurse', recht: 'kurs.lesen', icon: 'kurse', gebaut: true, gruppe: 'inhalte' },
   // Lernplattform (H-L01…L03): nur mit eingeschaltetem Schalter `lernplattform`

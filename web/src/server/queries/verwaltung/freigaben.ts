@@ -1,6 +1,6 @@
 import 'server-only';
 import type { JSONContent } from '@tiptap/core';
-import { and, desc, eq, inArray, isNull } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, isNull } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { OrganisationKuerzel } from '@/lib/rechte/matrix';
 import { gueltigeBloecke } from '@/lib/validierung/bloecke';
@@ -8,7 +8,8 @@ import { gueltigeBloecke } from '@/lib/validierung/bloecke';
 /**
  * Freigaben (ADR 0030, ADR 0032): Warteschlange aller Inhalte „zur Prüfung“ – freie Seiten (Antrag im Verlauf
  * `freigabe`, redaktionell oder religiös) und religiöse Inhalte mit eigener Freigabespalte (Wortbedeutungen,
- * Tajwid-Regeln, Hadith-Übersetzungen, Elifbe-Lektionen, besondere Tage). Ungecacht; Aufrufer prüfen `freigabe.lesen`.
+ * Tajwid-Regeln, Hadith-Übersetzungen, Elifbe-Lektionen, besondere Tage, Wissensthemen). Ungecacht; Aufrufer prüfen
+ * `freigabe.lesen`.
  * Die Texte stammen von Menschen bzw. aus importierten Quellen und werden hier nur angezeigt.
  */
 export const RELIGIOESE_TYPEN = [
@@ -18,6 +19,7 @@ export const RELIGIOESE_TYPEN = [
   'hadith_uebersetzung',
   'elifbe_lektion',
   'besonderer_tag',
+  'wissen_thema',
 ] as const;
 export type ReligioeserTyp = (typeof RELIGIOESE_TYPEN)[number];
 export type FreigabeTyp = 'seite' | ReligioeserTyp;
@@ -34,6 +36,8 @@ export type FreigabeEintrag = {
   angaben: FreigabeAngabe[];
   /** Ausführlicher Text (Tiptap-JSON) zum Lesen vor der Entscheidung. */
   text: JSONContent | null;
+  /** Übersetzungen des ausführlichen Texts (Wissensthemen: Einführung auf Türkisch und Englisch). */
+  textUebersetzungen?: { sprache: 'tr' | 'en'; doc: JSONContent }[];
   eingereichtAm: Date | null;
   eingereichtVon: string | null;
   organisation: OrganisationKuerzel | null;
@@ -109,7 +113,8 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
   const hu = schema.hadithUebersetzung;
   const el = schema.elifbeLektion;
   const bt = schema.besondererTag;
-  const [bedeutungen, orte, regeln, hadithe, lektionen, tage] = await Promise.all([
+  const wt = schema.wissenThema;
+  const [bedeutungen, orte, regeln, hadithe, lektionen, tage, themen] = await Promise.all([
     db
       .select({
         id: wb.id,
@@ -129,6 +134,12 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
     db.select().from(hu).where(eq(hu.freigabe, offen)).limit(GRENZE),
     db.select().from(el).where(eq(el.freigabe, offen)).limit(GRENZE),
     db.select().from(bt).where(eq(bt.freigabe, offen)).limit(GRENZE),
+    db
+      .select()
+      .from(wt)
+      .where(and(eq(wt.freigabe, offen), isNull(wt.imPapierkorbSeit)))
+      .orderBy(asc(wt.sortierung), asc(wt.slug))
+      .limit(GRENZE),
   ]);
   const wer = await namen([
     ...bedeutungen.map((z) => z.von),
@@ -137,6 +148,7 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
     ...hadithe.map((z) => z.verfasstVon),
     ...lektionen.map((z) => z.verfasstVon),
     ...tage.map((z) => z.verfasstVon),
+    ...themen.map((z) => z.verfasstVon),
   ]);
   const name = (id: string | null) => (id ? (wer.get(id) ?? null) : null);
   const basis = { art: 'religioes' as const, eingereichtAm: null, organisation: null, text: null };
@@ -210,6 +222,24 @@ async function offeneReligioese(): Promise<FreigabeEintrag[]> {
       text: z.beschreibung?.de ?? null,
       eingereichtVon: name(z.verfasstVon),
     })),
+    ...themen.map((z): FreigabeEintrag => {
+      // Alle Sprachen zum Lesen: Titel und Kurztext je Sprache, die Einführung als Text je Sprache
+      const sprachen = ['de', 'tr', 'en'] as const;
+      return {
+        ...basis,
+        inhaltTyp: 'wissen_thema',
+        inhaltId: z.id,
+        titel: z.titel.de,
+        angaben: [
+          { label: 'adresse', wert: `/islamisches-wissen/${z.slug}` },
+          ...sprachen.flatMap((s) => (s !== 'de' && z.titel[s] ? [{ label: `titel_${s}`, wert: z.titel[s], lang: s }] : [])),
+          ...sprachen.flatMap((s) => (z.kurztext?.[s] ? [{ label: `kurztext_${s}`, wert: z.kurztext[s], lang: s }] : [])),
+        ],
+        text: z.inhalt?.de ?? null,
+        textUebersetzungen: (['tr', 'en'] as const).flatMap((s) => (z.inhalt?.[s] ? [{ sprache: s, doc: z.inhalt[s] }] : [])),
+        eingereichtVon: name(z.verfasstVon),
+      };
+    }),
   ];
 }
 
@@ -233,7 +263,7 @@ export type VerlaufZeile = {
   kommentar: string | null;
 };
 
-/** Letzte Einträge des Freigabe-Verlaufs (neueste zuerst); Titel nur für freie Seiten. */
+/** Letzte Einträge des Freigabe-Verlaufs (neueste zuerst); Titel für freie Seiten und Wissensthemen. */
 export async function ladeVerlauf(grenze = 50): Promise<VerlaufZeile[]> {
   const f = schema.freigabe;
   const zeilen = await db
@@ -251,15 +281,24 @@ export async function ladeVerlauf(grenze = 50): Promise<VerlaufZeile[]> {
     .leftJoin(schema.user, eq(schema.user.id, f.von))
     .orderBy(desc(f.am), desc(f.id))
     .limit(grenze);
-  const seitenIds = [...new Set(zeilen.filter((z) => z.inhaltTyp === 'seite').map((z) => z.inhaltId))].filter((id) =>
-    /^[0-9a-f-]{36}$/.test(id),
-  );
-  const titel = seitenIds.length
-    ? new Map(
-        (
-          await db.select({ id: schema.seite.id, titel: schema.seite.titel }).from(schema.seite).where(inArray(schema.seite.id, seitenIds))
-        ).map((s) => [s.id, s.titel.de]),
-      )
-    : new Map<string, string>();
-  return zeilen.map((z) => ({ ...z, titel: z.inhaltTyp === 'seite' ? (titel.get(z.inhaltId) ?? null) : null }));
+  const ids = (typ: string) =>
+    [...new Set(zeilen.filter((z) => z.inhaltTyp === typ).map((z) => z.inhaltId))].filter((id) => /^[0-9a-f-]{36}$/.test(id));
+  const seitenIds = ids('seite');
+  const themenIds = ids('wissen_thema');
+  const [seiten, themen] = await Promise.all([
+    seitenIds.length
+      ? db.select({ id: schema.seite.id, titel: schema.seite.titel }).from(schema.seite).where(inArray(schema.seite.id, seitenIds))
+      : Promise.resolve([]),
+    themenIds.length
+      ? db
+          .select({ id: schema.wissenThema.id, titel: schema.wissenThema.titel })
+          .from(schema.wissenThema)
+          .where(inArray(schema.wissenThema.id, themenIds))
+      : Promise.resolve([]),
+  ]);
+  const titel = new Map<string, string>([...seiten, ...themen].map((s) => [s.id, s.titel.de]));
+  return zeilen.map((z) => ({
+    ...z,
+    titel: z.inhaltTyp === 'seite' || z.inhaltTyp === 'wissen_thema' ? (titel.get(z.inhaltId) ?? null) : null,
+  }));
 }

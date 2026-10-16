@@ -101,12 +101,17 @@ test('Seite anlegen und veröffentlichen, Menüeintrag und Weiterleitung erschei
   expect(konsole.filter((f) => /Content Security Policy|Refused to/.test(f))).toEqual([]);
 });
 
-test('Ohne Anmeldung: Seiten, Menüs, Weiterleitungen und Freigaben leiten zur Anmeldung; Vorschau ohne gültigen Link', async ({ page }) => {
+test('Ohne Anmeldung: Seiten, Menüs, Startseite, Weiterleitungen, Wissen und Freigaben leiten zur Anmeldung; Vorschau ohne gültigen Link', async ({
+  page,
+}) => {
   for (const pfad of [
     '/verwaltung/seiten',
     '/verwaltung/seiten/neu',
     '/verwaltung/menues',
+    '/verwaltung/startseite',
     '/verwaltung/weiterleitungen',
+    '/verwaltung/wissen',
+    '/verwaltung/wissen/neu',
     '/verwaltung/freigaben',
   ]) {
     await page.goto(pfad);

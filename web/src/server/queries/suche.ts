@@ -73,7 +73,7 @@ export async function suche(begriff: string, sprache: Sprache): Promise<SuchTref
     union all
     ${teil('veranstaltung', 'veranstaltung', sprache, frage, veroeffentlicht('veranstaltung'), muster)}
     union all
-    ${teil('wissen', 'wissen_thema', sprache, frage, veroeffentlicht('wissen_thema'), muster)}
+    ${teil('wissen', 'wissen_thema', sprache, frage, sql`${veroeffentlicht('wissen_thema')} and wissen_thema.freigabe = 'geprueft'`, muster)}
   ) as treffer order by rang desc, titel asc limit 30`;
   const ergebnis = await db.execute<{ art: SuchArt; slug: string; titel: string; ausschnitt: string; rang: number | string }>(anfrage);
   const zeilen =

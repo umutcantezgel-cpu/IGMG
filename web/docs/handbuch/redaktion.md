@@ -2,7 +2,7 @@
 
 Für alle, die auf der Website der Gemeinde Nachrichten, Seiten, Menüs und die Anzeige im Gebetsraum pflegen. Du brauchst kein Technikwissen. Die Schritte sind kurz.
 
-**Stand:** 15.10.2026. **Nachrichten, Veranstaltungen, Ankündigungen, Medien, Seiten mit Bausteinen, Menüs, Weiterleitungen, Freigaben und Anzeige-Folien** gibt es in der Verwaltung; dieses Handbuch beschreibt die Bildschirme so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**). Eine Verwaltung für die **Abschnitte der Startseite** und für **Islamisches Wissen** gibt es nicht (siehe 5 und 7).
+**Stand:** 15.10.2026. **Nachrichten, Veranstaltungen, Ankündigungen, Medien, Seiten mit Bausteinen, Menüs, Startseite, Islamisches Wissen, Weiterleitungen, Freigaben und Anzeige-Folien** gibt es in der Verwaltung; dieses Handbuch beschreibt die Bildschirme so, wie sie sind. Bildschirmfotos folgen (Marke **[Bildschirmfoto folgt]**).
 
 ## 1. Das Wichtigste vorab
 
@@ -88,10 +88,25 @@ Einen Baustein „Karte“ gibt es nicht.
 
 Enthält die Seite Vers- oder Hadith-Blöcke, ist zusätzlich die **religiöse Freigabe** nötig (siehe 7).
 
-## 5. Menüs und Startseite
+## 5. Menüs, Startseite und Islamisches Wissen
 
 - **Menüs:** Verwaltung → **„Menüs“**. Wähle das Menü: **Hauptmenü (Kopf)** aus Gruppen (höchstens 6 Gruppen mit je 12 Einträgen) oder **Schnellzugriff (Fuß)** (höchstens 12 Einträge). „Gruppe hinzufügen“, „Eintrag hinzufügen“; die Reihenfolge änderst du mit „Nach oben“ und „Nach unten“. Jeder Eintrag zeigt auf eine Seite der Website. [Bildschirmfoto folgt] Gibt es kein Menü in der Datenbank, nutzt die Website das feste Standardmenü.
-- **Startseite:** Die Abschnitte der Startseite und ihre Reihenfolge sind fest; einen Bildschirm „Startseite“ gibt es in der Verwaltung nicht. Was dort erscheint, steuerst du über die Inhalte selbst: Bei den Nachrichten macht „Empfohlen“ einen Beitrag bis zu 30 Tage nach der Veröffentlichung zum Aufmacher (sonst steht der neueste oben); dazu kommen die nächsten Veranstaltungen und die Seiteninhalte.
+- **Startseite:** Verwaltung → **„Startseite“**. [Bildschirmfoto folgt] Oben steht immer der **Kopf mit dem Tagesbogen**; er lässt sich nicht verschieben. Darunter legst du die Reihenfolge der Abschnitte fest: **Unsere neue Moschee**, **Veranstaltungen**, **Neuigkeiten** und **Vers und Hadith des Tages** (dieser erscheint nur, wenn die religiöse Prüfung Einträge freigegeben hat).
+  1. Verschiebe einen Abschnitt mit **„Nach oben“** und **„Nach unten“** (geht auch mit der Tastatur: Tab bis zum Knopf, dann Enter; der Bildschirmleser sagt die neue Stelle an).
+  2. Nimm den Haken bei **„Anzeigen“** weg, wenn ein Abschnitt vorübergehend nicht erscheinen soll.
+  3. Tippe auf **„Reihenfolge speichern“**. Die Startseite zeigt die neue Reihenfolge sofort, in allen Sprachen.
+  4. **Frühere Fassungen:** Die letzten zehn Fassungen stehen darunter; mit „Zurückholen“ gilt eine wieder. **„Standardreihenfolge wiederherstellen“** entfernt deine Reihenfolge; dann gilt wieder die Standardreihenfolge (alle Abschnitte wie oben genannt). Dieselbe Standardreihenfolge gilt, solange die Website ohne Datenbank läuft.
+
+  Was **in** den Abschnitten steht, steuerst du über die Inhalte selbst: Bei den Nachrichten macht „Empfohlen“ einen Beitrag bis zu 30 Tage nach der Veröffentlichung zum Aufmacher (sonst steht der neueste oben); dazu kommen die nächsten Veranstaltungen und die Seiteninhalte.
+
+- **Islamisches Wissen:** Verwaltung → **„Islamisches Wissen“**. [Bildschirmfoto folgt] Hier stehen die Themen der Seite „Islamisches Wissen“ mit dem Stand der religiösen Prüfung, ob sie öffentlich sind, und dem Übersetzungsstand (zum Beispiel „TR 1 von 3“).
+  1. **„Neues Thema“**: Adresse (Kurzname, zum Beispiel „testthema“; lässt sich später nicht ändern), Titel, Kurztext und Einführung, unter „Übersetzungen“ Türkisch und Englisch.
+  2. **Religiöse Texte schreibst du nicht** (siehe 1). Ein Thema wird erst öffentlich, wenn die religiöse Prüfung es freigegeben hat: „Speichern und zur Prüfung geben“ legt es dem Imam oder der Hoca vor (siehe 7).
+  3. **Jede Änderung** an Titel, Kurztext oder Einführung eines geprüften Themas geht zurück in die Prüfung; bis zur Freigabe ist das Thema **nicht öffentlich**.
+  4. **„Auf der Website zeigen, sobald es geprüft ist“**: ohne Haken bleibt ein Thema verborgen, auch wenn es geprüft ist (keine Prüfung nötig).
+  5. **Reihenfolge:** Ansicht „Reihenfolge“, „Nach oben“ und „Nach unten“, dann „Reihenfolge speichern“. Das ist keine inhaltliche Änderung.
+  6. **Frühere Fassungen** beim Thema; **Papierkorb** (30 Tage), endgültig löschen nur aus dem Papierkorb und nach einer Rückfrage.
+  7. Themen mit dem Vermerk **„Bestand, nicht einzeln geprüft“** stammen von der bisherigen Website und bleiben öffentlich, bis jemand sie ändert.
 
 ## 6. Weiterleitungen
 
@@ -108,12 +123,12 @@ Keine Schleifen: Leitet die neue Adresse wieder zurück, lehnt die Plattform die
 
 Es gibt **zwei Arten** der Freigabe:
 
-| Art              | Wofür                                                                                                                                                                                                             | Wer gibt frei                                                         |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| **Redaktionell** | freie Seiten, die zur Prüfung gegeben wurden (Nachrichten, Veranstaltungen und Ankündigungen haben keinen Prüfschritt)                                                                                            | eine zweite Person, die Seiten veröffentlichen darf [Wer? – Vorstand] |
-| **Religiös**     | Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen, besondere Tage, Vers- und Hadith-Listen, Folien mit Vers oder Hadith, Seiten mit Vers- oder Hadith-Bausteinen; Elifbe-Lektionen, wenn sie zur Prüfung stehen | **nur** die Rolle „religiöse Prüfung“ (Imam, Hoca)                    |
+| Art              | Wofür                                                                                                                                                                                                                                                | Wer gibt frei                                                         |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Redaktionell** | freie Seiten, die zur Prüfung gegeben wurden (Nachrichten, Veranstaltungen und Ankündigungen haben keinen Prüfschritt)                                                                                                                               | eine zweite Person, die Seiten veröffentlichen darf [Wer? – Vorstand] |
+| **Religiös**     | Wortbedeutungen, Tajwid-Texte, Hadith-Übersetzungen, besondere Tage, Vers- und Hadith-Listen, Folien mit Vers oder Hadith, Seiten mit Vers- oder Hadith-Bausteinen, Themen unter „Islamisches Wissen“; Elifbe-Lektionen, wenn sie zur Prüfung stehen | **nur** die Rolle „religiöse Prüfung“ (Imam, Hoca)                    |
 
-Der Weg: **Entwurf → zur Prüfung → geprüft**. Eine Änderung an einem geprüften Eintrag setzt die Freigabe zurück. **Öffentlich** ist nur, was **geprüft** ist. Für **Elifbe-Lektionen** und die Texte unter **„Islamisches Wissen“** gibt es in der Verwaltung keine Bearbeitung.
+Der Weg: **Entwurf → zur Prüfung → geprüft**. Eine Änderung an einem geprüften Eintrag setzt die Freigabe zurück. **Öffentlich** ist nur, was **geprüft** ist. Für **Elifbe-Lektionen** gibt es in der Verwaltung keine Bearbeitung. In der Warteschlange „Freigaben“ gibt eine **zweite Person** frei: Wer einen Inhalt verfasst oder zuletzt geändert hat, kann ihn dort nicht selbst freigeben (Vier-Augen-Prinzip).
 
 Unter Verwaltung → **„Freigaben“** siehst du, was wartet, und den Verlauf. Zur Prüfung gibst du einen Inhalt dort, wo du ihn bearbeitest (zum Beispiel bei Seiten „Zur Prüfung geben“). Redaktionelle Freigaben für Seiten erteilt, wer Seiten veröffentlichen darf; die religiöse Freigabe erteilst du **nicht**. [Bildschirmfoto folgt]
 

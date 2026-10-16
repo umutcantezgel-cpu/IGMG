@@ -33,13 +33,25 @@ await db.insert(schema.nachricht).values([
     veroeffentlichtAm: new Date(Date.now() + 86_400_000),
   },
 ]);
-await db.insert(schema.wissenThema).values({
-  slug: 'gebet',
-  kategorie: 'gebet',
-  titel: { de: 'Das Gebet' },
-  klartext: { de: 'Fünf tägliche Gebete und der Teppich als Gebetsplatz.' },
-  status: 'veroeffentlicht',
-});
+await db.insert(schema.wissenThema).values([
+  {
+    slug: 'gebet',
+    kategorie: 'gebet',
+    titel: { de: 'Das Gebet' },
+    klartext: { de: 'Fünf tägliche Gebete und der Teppich als Gebetsplatz.' },
+    status: 'veroeffentlicht',
+    freigabe: 'geprueft',
+  },
+  // F-40: öffentlich nur religiös geprüfte Wissensthemen – „zur Prüfung“ erscheint in der Suche nicht
+  {
+    slug: 'testthema-teppich',
+    kategorie: 'thema',
+    titel: { de: 'Testthema Teppich' },
+    klartext: { de: 'Testthema Teppich' },
+    status: 'veroeffentlicht',
+    freigabe: 'zur_pruefung',
+  },
+]);
 
 describe('Suche', () => {
   it('findet veröffentlichte Inhalte (Stammformen, deutsch), nie Entwürfe, Papierkorb oder Geplantes', async () => {

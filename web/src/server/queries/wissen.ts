@@ -19,8 +19,15 @@ export type WissensThema = {
   aktualisiertAm: string;
 };
 
-/** Sichtbar für Besucher: veröffentlicht und nicht im Papierkorb (MUSTER 2, K-05). */
-const sichtbar = and(eq(schema.wissenThema.status, 'veroeffentlicht'), isNull(schema.wissenThema.imPapierkorbSeit));
+/**
+ * Sichtbar für Besucher: veröffentlicht, religiös geprüft (ADR 0030, F-40 – öffentlich ist nur „geprüft“) und nicht im
+ * Papierkorb (MUSTER 2, K-05).
+ */
+const sichtbar = and(
+  eq(schema.wissenThema.status, 'veroeffentlicht'),
+  eq(schema.wissenThema.freigabe, 'geprueft'),
+  isNull(schema.wissenThema.imPapierkorbSeit),
+);
 
 function zuThema(z: typeof schema.wissenThema.$inferSelect): WissensThema {
   return {
