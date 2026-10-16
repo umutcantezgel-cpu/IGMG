@@ -25,7 +25,9 @@ export default function proxy(request: NextRequest) {
     pathname.startsWith('/verwaltung/') ||
     pathname === '/de/verwaltung' ||
     pathname.startsWith('/de/verwaltung/');
-  // Konto-Seiten ohne Konten: echtes 404 (statt Status 200 mit Nicht-gefunden-Inhalt), öffentliche CSP wie jede 404-Seite
+  // Konto-Seiten ohne Konten: echtes 404 (statt Status 200 mit Nicht-gefunden-Inhalt), öffentliche CSP wie jede 404-Seite.
+  // Nur, was die Umgebung entscheidet (keine Datenbank, `FUNKTION_KONTEN=aus`); aus per Einstellung oder Standard der
+  // Produktion bleibt es beim Soft-404 des Layouts (200 + noindex) – Grenze und Betriebsweg in `ohne-konten.ts`.
   if (istKontoPfad(pathname) && kontenSicherAus()) {
     const antwort = NextResponse.rewrite(new URL(nichtGefundenZiel(pathname), request.url));
     antwort.headers.set('Content-Security-Policy', cspOeffentlich());

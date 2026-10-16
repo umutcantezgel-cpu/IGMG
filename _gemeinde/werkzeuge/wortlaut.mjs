@@ -600,9 +600,21 @@ const AUSNAHMEN = [
   {
     id: 'G-09',
     grund:
-      'Neuer Schlüssel „suche.statisch.hinweis“ (de/tr/en) der öffentlichen Suche ohne Laufzeit-Datenbank: sagt, dass derzeit nur Titel von Seiten, Suren, Hadith-Büchern, Neuigkeiten und Veranstaltungen gefunden werden und die Volltextsuche mit der Datenbank hinzukommt. Reiner Bedienhinweis ohne Rechtsinhalt; das Werkzeug greift ihn nur wegen „hinweis“ im Schlüssel auf. Kein bestehender Text geändert.',
+      'Neuer Schlüssel „suche.statisch.hinweis“ (de/tr/en) der öffentlichen Suche ohne Laufzeit-Datenbank: sagt, dass derzeit nur Titel von Seiten, Suren, Hadith-Büchern, Themen aus „Islamisches Wissen“, Neuigkeiten und Veranstaltungen gefunden werden und die Volltextsuche mit der Datenbank hinzukommt. Reiner Bedienhinweis ohne Rechtsinhalt; das Werkzeug greift ihn nur wegen „hinweis“ im Schlüssel auf. Kein bestehender Text geändert.',
     passt: (e) =>
       e.gruppe === 'M' && e.status === 'neu' && String(e.datei).endsWith('messages/bereiche/suche.json') && /^(de|tr|en)\.suche\.statisch\.hinweis$/.test(e.schluessel),
+  },
+  // Nacharbeit 2, Feinschliff nach den Gegenprüfungen (P2, F-44): Feldhinweis der Kursverwaltung an die neue Beschriftung angepasst.
+  {
+    id: 'G-10',
+    grund:
+      'Geänderter Feldhinweis „kurse.formular.verfuegbarkeitHinweis“ der nur deutschen Verwaltung (ADR 0016): nennt die Beschriftung der Schaltfläche auf der Kurskarte, seit F-44 „Für diesen Kurs voranmelden“ statt „Zur Voranmeldung“. Reiner Bedienhinweis ohne Rechtsinhalt; das Werkzeug greift ihn nur wegen „Hinweis“ im Schlüssel auf.',
+    passt: (e) =>
+      e.gruppe === 'M' &&
+      e.status === 'geaendert' &&
+      String(e.datei).endsWith('messages/verwaltung/kurse.json') &&
+      e.schluessel === 'kurse.formular.verfuegbarkeitHinweis' &&
+      String(e.text_jetzt ?? '').includes('„Für diesen Kurs voranmelden“'),
   },
 ];
 

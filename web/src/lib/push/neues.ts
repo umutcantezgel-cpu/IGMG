@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, eq, gt, inArray, isNull, lte, min, ne, or } from 'drizzle-orm';
+import { and, eq, gt, inArray, isNull, lte, min, ne, or, sql } from 'drizzle-orm';
 import { ladeKanal, leseLage } from '@/lib/chat/dienst';
 import { db, schema } from '@/lib/db';
 import { funktionAn } from '@/lib/funktionen';
@@ -117,8 +117,15 @@ async function zaehleUnterricht(kontext: GruppenKontext, seit: Date): Promise<nu
 
 async function zaehleAnkuendigungen(seit: Date, jetzt: Date): Promise<number> {
   const v = schema.ankuendigung;
-  const sichtbar = await db
-    .select({ id: v.id, sichtbarAb: v.sichtbarAb, erstelltAm: v.erstelltAm, aktualisiertVon: v.aktualisiertVon })
+  const a = schema.auditEintrag;
+  // Beginn der Sichtbarkeit: das Spätere aus erster Veröffentlichung (Audit, sonst Anlage) und „sichtbar ab“. Neu ist,
+  // was nach `seit` begonnen hat – gefiltert in der Datenbank (max(x, y) > seit ⇔ x > seit oder y > seit).
+  const ersteVeroeffentlichung = db
+    .select({ am: min(a.zeitpunkt) })
+    .from(a)
+    .where(and(eq(a.aktion, 'inhalt.veroeffentlicht'), eq(a.zielTyp, 'ankuendigung'), eq(a.zielId, sql`${v.id}::text`)));
+  const neu = await db
+    .select({ aktualisiertVon: v.aktualisiertVon })
     .from(v)
     .where(
       and(
@@ -126,34 +133,12 @@ async function zaehleAnkuendigungen(seit: Date, jetzt: Date): Promise<number> {
         isNull(v.imPapierkorbSeit),
         or(isNull(v.sichtbarAb), lte(v.sichtbarAb, jetzt)),
         or(isNull(v.laeuftAb), gt(v.laeuftAb, jetzt)),
+        or(gt(v.sichtbarAb, seit), gt(sql`coalesce((${ersteVeroeffentlichung}), ${v.erstelltAm})`, seit)),
       ),
     );
-  if (!sichtbar.length) return 0;
-  const a = schema.auditEintrag;
-  const erste = new Map(
-    (
-      await db
-        .select({ id: a.zielId, am: min(a.zeitpunkt) })
-        .from(a)
-        .where(
-          and(
-            eq(a.aktion, 'inhalt.veroeffentlicht'),
-            eq(a.zielTyp, 'ankuendigung'),
-            inArray(
-              a.zielId,
-              sichtbar.map((z) => z.id),
-            ),
-          ),
-        )
-        .groupBy(a.zielId)
-    ).map((z) => [z.id, z.am]),
-  );
   const darf = new Map<string, boolean>();
   let anzahl = 0;
-  for (const z of sichtbar) {
-    const veroeffentlicht = erste.get(z.id) ?? z.erstelltAm;
-    const beginn = Math.max(veroeffentlicht.getTime(), z.sichtbarAb?.getTime() ?? 0);
-    if (beginn <= seit.getTime()) continue;
+  for (const z of neu) {
     const wer = z.aktualisiertVon ?? '';
     if (!darf.has(wer)) darf.set(wer, await darfBenachrichtigen(z.aktualisiertVon));
     if (darf.get(wer)) anzahl++;

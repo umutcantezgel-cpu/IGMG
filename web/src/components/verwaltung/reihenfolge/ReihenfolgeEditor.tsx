@@ -17,6 +17,8 @@ type Aktion = (vorher: ReihenfolgeZustand, fd: FormData) => Promise<ReihenfolgeZ
  * Fokus bleibt am verschobenen Knopf (am Rand wechselt er auf den Gegenknopf), eine Live-Region sagt die neue Stelle
  * an. Kein Ziehen nötig. Optional je Eintrag „anzeigen“ (Startseite). Gespeichert wird erst mit „Speichern“: Die Liste
  * geht als JSON (Feld `ordnung`) an die Action, die sie erneut prüft. Texte aus dem Namensraum des Moduls.
+ * Überschriften: Die Seite trägt die h1, der Editor eine h2 (nur für Screenreader) über der Liste, die Einträge h3 – so
+ * springt die Folge nicht von h1 auf h3 (axe „heading-order“).
  */
 export function ReihenfolgeEditor({
   aktion,
@@ -27,7 +29,7 @@ export function ReihenfolgeEditor({
 }: {
   aktion: Aktion;
   eintraege: ReihenfolgeEintrag[];
-  /** Namensraum mit den Schlüsseln nachOben, nachUnten, verschoben, stelle, speichern, speichert, gespeichert, ungespeichert, hinweis, fehler.* (und sichtbar, sichtbarName, eingeblendet, ausgeblendet, ausgeblendetMarke) */
+  /** Namensraum mit den Schlüsseln ueberschrift, nachOben, nachUnten, verschoben, stelle, speichern, speichert, gespeichert, ungespeichert, hinweis, fehler.* (und sichtbar, sichtbarName, eingeblendet, ausgeblendet, ausgeblendetMarke) */
   namensraum: string;
   mitSichtbarkeit?: boolean;
   /** Fester erster Eintrag (nicht verschiebbar), z. B. der Kopf der Startseite. */
@@ -44,6 +46,7 @@ export function ReihenfolgeEditor({
   const basis = useId();
   const fokusZiel = useRef<string | null>(null);
   const meldungRef = useRef<HTMLDivElement>(null);
+  const leisteRef = useRef<HTMLDivElement>(null);
   const versatz = fest ? 1 : 0;
   const anzahl = liste.length + versatz;
   const kid = (schluessel: string, knopf: 'oben' | 'unten') => `${basis}-${schluessel}-${knopf}`;
@@ -51,6 +54,24 @@ export function ReihenfolgeEditor({
   useEffect(() => {
     if (zustand.fehler || zustand.gespeichert) meldungRef.current?.focus();
   }, [zustand]);
+  // Klebende Speicherleiste (WCAG 2.4.11): Solange der Editor steht, hält `scroll-padding-bottom` des Dokuments jedes
+  // fokussierte Element oberhalb der Leiste (gemessene Höhe plus Abstand) – wie die Speicherleiste im Seiten-Editor.
+  useEffect(() => {
+    const leiste = leisteRef.current;
+    if (!leiste) return;
+    const html = document.documentElement;
+    const vorher = html.style.scrollPaddingBottom;
+    const setze = () => {
+      html.style.scrollPaddingBottom = `calc(${Math.ceil(leiste.getBoundingClientRect().height)}px + var(--spacing) * 4)`;
+    };
+    setze();
+    const beobachter = new ResizeObserver(setze);
+    beobachter.observe(leiste);
+    return () => {
+      beobachter.disconnect();
+      html.style.scrollPaddingBottom = vorher;
+    };
+  }, []);
   useEffect(() => {
     const ziel = fokusZiel.current;
     if (!ziel) return;
@@ -94,7 +115,10 @@ export function ReihenfolgeEditor({
         ) : null}
       </div>
       <input type="hidden" name="ordnung" value={JSON.stringify(wert)} />
-      <ol className="flex flex-col gap-3">
+      <h2 id={`${basis}-titel`} className="sr-only">
+        {t('ueberschrift')}
+      </h2>
+      <ol aria-labelledby={`${basis}-titel`} className="flex flex-col gap-3">
         {fest ? (
           <li className="flex flex-wrap items-center gap-x-5 gap-y-3 rounded-lg border border-dashed border-rand bg-sand p-4 md:p-5">
             <span
@@ -188,7 +212,10 @@ export function ReihenfolgeEditor({
           );
         })}
       </ol>
-      <div className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border">
+      <div
+        ref={leisteRef}
+        className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border"
+      >
         <Button type="submit" size="lg" disabled={laeuft}>
           <Save aria-hidden />
           {laeuft ? t('speichert') : t('speichern')}

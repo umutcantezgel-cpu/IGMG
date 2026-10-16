@@ -87,7 +87,8 @@ function zielZeile(typ: ReligioeserTyp, id: string): { t: FreigabeTabelle; wo: S
     case 'besonderer_tag':
       return uuid ? { t: schema.besondererTag, wo: eq(schema.besondererTag.id, id) } : null;
     case 'wissen_thema':
-      return uuid ? { t: schema.wissenThema, wo: eq(schema.wissenThema.id, id) } : null;
+      // Im Papierkorb nicht entscheidbar (steht auch nicht in der Warteschlange) – erst nach dem Wiederherstellen
+      return uuid ? { t: schema.wissenThema, wo: and(eq(schema.wissenThema.id, id), isNull(schema.wissenThema.imPapierkorbSeit))! } : null;
   }
 }
 

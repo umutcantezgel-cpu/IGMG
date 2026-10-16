@@ -16,11 +16,18 @@ import { wissensRevisionWiederherstellen } from '@/server/actions/wissen';
 import { ladeRevision, ladeRevisionen } from '@/server/queries/verwaltung/seiten';
 import { ladeWissensThemaVerwaltung } from '@/server/queries/verwaltung/wissen';
 
-type Fassung = { titel?: { de?: string }; kurztext?: { de?: string } | null; inhalt?: { de?: JSONContent } | null };
+const SPRACHEN = ['de', 'tr', 'en'] as const;
+type Sprache = (typeof SPRACHEN)[number];
+type Fassung = {
+  titel?: Partial<Record<Sprache, string>>;
+  kurztext?: Partial<Record<Sprache, string>> | null;
+  inhalt?: Partial<Record<Sprache, JSONContent>> | null;
+};
 
 /**
  * Verwaltung › Islamisches Wissen › Thema › Frühere Fassungen (F-40): die letzten 30 Revisionen; jede lässt sich lesen
- * (deutsche Fassung) und zurückholen. Zurückholen ist eine inhaltliche Änderung und geht in die religiöse Prüfung.
+ * (alle Sprachen, je mit `lang`) und zurückholen. Zurückholen übernimmt alle Sprachen der Fassung, ist eine inhaltliche
+ * Änderung und geht in die religiöse Prüfung.
  */
 export default async function WissenRevisionen({ params, searchParams }: PageProps<'/[locale]/verwaltung/wissen/[id]/revisionen'>) {
   await verlangeSeitenRecht('wissen.bearbeiten');
@@ -103,11 +110,31 @@ export default async function WissenRevisionen({ params, searchParams }: PagePro
             {t('revision.ansichtTitel', { zeit: zeit(ansicht.erstelltAm) })}
           </h2>
           <Meldung art="info">{t('revision.ansichtHinweis')}</Meldung>
-          <div className="flex flex-col gap-3 rounded-lg border border-linie bg-papier p-5 md:p-6">
-            <p className="font-display text-24 font-semibold">{fassung.titel?.de}</p>
-            {fassung.kurztext?.de ? <p className="text-18 text-tinte-2">{fassung.kurztext.de}</p> : null}
-            {fassung.inhalt?.de ? <RichText doc={fassung.inhalt.de} /> : null}
-          </div>
+          {SPRACHEN.map((s) => {
+            const titel = fassung.titel?.[s];
+            const kurztext = fassung.kurztext?.[s];
+            const doc = fassung.inhalt?.[s];
+            return (
+              <section
+                key={s}
+                aria-labelledby={`ansicht-${s}`}
+                className="flex flex-col gap-3 rounded-lg border border-linie bg-papier p-5 md:p-6"
+              >
+                <h3 id={`ansicht-${s}`} className="text-16 font-bold tracking-normal text-tinte-2">
+                  {t(`revision.sprache.${s}`)}
+                </h3>
+                {titel || kurztext || doc ? (
+                  <div lang={s} className="flex flex-col gap-3">
+                    {titel ? <p className="font-display text-24 font-semibold">{titel}</p> : null}
+                    {kurztext ? <p className="text-18 text-tinte-2">{kurztext}</p> : null}
+                    {doc ? <RichText doc={doc} /> : null}
+                  </div>
+                ) : (
+                  <p className="text-16 text-tinte-2">{t('revision.spracheLeer')}</p>
+                )}
+              </section>
+            );
+          })}
         </section>
       ) : null}
     </>

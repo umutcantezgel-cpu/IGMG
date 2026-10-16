@@ -117,6 +117,7 @@
       "ungueltig": "Diese Angabe ist ungültig."
     },
     "editor": {
+      "ueberschrift": "Reihenfolge der Themen",
       "nachOben": "Nach oben: {name}",
       "nachUnten": "Nach unten: {name}",
       "verschoben": "{name} steht jetzt an Stelle {nr} von {anzahl}.",
@@ -149,7 +150,13 @@
       "zurueckholen": "Zurückholen",
       "zurueckholenName": "Fassung vom {zeit} zurückholen",
       "ansichtTitel": "Fassung vom {zeit}",
-      "ansichtHinweis": "Nur zum Lesen. Die Fassung gilt erst nach „Zurückholen“ und der religiösen Prüfung."
+      "ansichtHinweis": "Nur zum Lesen. „Zurückholen“ übernimmt alle Sprachen dieser Fassung; sie gilt erst nach der religiösen Prüfung.",
+      "sprache": {
+        "de": "Deutsch",
+        "tr": "Türkisch",
+        "en": "Englisch"
+      },
+      "spracheLeer": "In dieser Fassung ohne Text in dieser Sprache. Nach „Zurückholen“ bleibt die Sprache leer."
     }
   }
 }

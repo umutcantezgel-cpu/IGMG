@@ -4,6 +4,7 @@ import chatTexte from '../../messages/bereiche/chat-fenster.json';
 import formulare from '../../messages/bereiche/formulare.json';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import kontoTexte from '../../messages/bereiche/konto.json';
+import meinBereichTexte from '../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../messages/bereiche/unterricht.json';
 import voranmeldung from '../../messages/bereiche/voranmeldung.json';
 import lernenTexte from '../../messages/verwaltung/lernen.json';
@@ -29,6 +30,7 @@ const d = kinderTexte.de.kinder;
 const u = unterrichtTexte.de.unterricht;
 const a = lernenTexte.aufnahme;
 const c = chatTexte.de.chatFenster;
+const mb = meinBereichTexte.de.meinBereich;
 const PASSWORT = 'Lernkette-Testpasswort-2026';
 
 /** Nur Buchstaben (Namensfelder der Voranmeldung): eindeutiger Vorname je Lauf. */
@@ -163,7 +165,7 @@ test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind s
   // 5 Kind: anmelden, die Gruppe steht auf der Startseite
   const kind = await neueSeite(browser, baseURL);
   await kindAnmelden(kind, { benutzername, passwort: PASSWORT });
-  await expect(kind.getByRole('heading', { level: 1, name: new RegExp(`^Willkommen, ${vorname}`, 'i') })).toBeVisible();
+  await expect(kind.getByRole('heading', { level: 1, name: mb.start.titel.replace('{vorname}', vorname) })).toBeVisible();
   await expect(kind.getByText(lp.gruppe, { exact: true }).first()).toBeVisible();
   // Gruppenchat: Ein frischer Zugang bestätigt zuerst die Regeln – per Tastatur; danach steht der Fokus im Feld
   // (Z-07, ChatFenster „fokusNachRegeln“). Außerhalb des Chatfensters (08–20 Uhr, S-05) geht „geschlossen“ den fehlenden

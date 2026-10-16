@@ -10,8 +10,9 @@ import { ZUSAMMENFASSUNG_EMPFAENGER, ZUSAMMENFASSUNG_VORLAGE, zusammenfassungsLa
 
 /**
  * Tägliche Mail-Zusammenfassung ohne Inhalte (ADR 0034 Nr. 6, F-38): Auswahl je Konto und Thema in Mein Bereich, Planung
- * im täglichen Cron des Mail-Ausgangs (`/api/wartung/mail-ausgang`). Je Konto höchstens eine Mail je Berliner Tag und nur,
- * wenn seit dem letzten Versand (bzw. seit dem Bestellen) etwas Neues da ist. Idempotent: Die Reservierung
+ * in jedem Lauf des Mail-Ausgangs (`/api/wartung/mail-ausgang`: Vercel täglich 02:00 UTC, lokaler Takt alle 5 Minuten).
+ * Je Konto höchstens eine Mail je Berliner Tag und nur, wenn seit dem letzten Versand (bzw. seit dem Bestellen) etwas
+ * Neues da ist – im lokalen Takt also beim ersten Lauf eines Berliner Tages mit Neuem. Idempotent: Die Reservierung
  * (`letzter_versand`, `seit`) und die Zeile im Mail-Ausgang entstehen in einer Transaktion und nur, wenn die Zeile noch
  * den gelesenen Stand hat – ein zweiter Lauf am selben Tag plant nichts.
  */

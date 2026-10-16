@@ -64,9 +64,16 @@
     Elternkanal, Unterricht nur mit Gruppe und Schaltern `chat`/`lernplattform`; nie Gebet). Nur Konten mit bestätigter,
     zustellbarer Adresse (nie `.invalid`), nie Kinderkonten, Lernende ab 16 nur mit Einwilligung in Benachrichtigungen;
     Schalter `push` und `konten`. Tabelle `mail_zusammenfassung` (Migration `0016_mail_zusammenfassung`: Themen, Zählbeginn,
-    letzter Versand; Kaskade beim Konto). Planung im täglichen Cron `/api/wartung/mail-ausgang` (vor dem Versand; Vercel
-    02:00 UTC): je Konto höchstens eine Mail je Berliner Tag und nur bei Neuem seit dem letzten Versand bzw. dem Bestellen;
-    Reservierung und Ausgangszeile in einer Transaktion (idempotent). Empfänger `zusammenfassung:<Konto>` – die Adresse
+    letzter Versand; Kaskade beim Konto). Planung im Lauf des Mail-Ausgangs `/api/wartung/mail-ausgang` (vor dem
+    Versand): je Konto höchstens eine Mail je Berliner Tag und nur bei Neuem seit dem letzten Versand bzw. dem Bestellen;
+    Reservierung und Ausgangszeile in einer Transaktion (idempotent). **Zeitpunkt:** Auf Vercel läuft der Cron täglich um
+    02:00 UTC (03:00 bzw. 04:00 Uhr in Berlin). Der lokale Takt (`betrieb/lokal/takt/takt.sh`) ruft dieselbe Route alle
+    5 Minuten auf; die Mail geht dann beim ersten Lauf eines Berliner Tages hinaus, an dem es Neues gibt – im
+    Dauerbetrieb kurz nach Mitternacht (Neues vom Vortag), nach einem ruhigen Tag oder nach dem Bestellen auch tagsüber,
+    sobald etwas Neues da ist. **Grenze:** Je Lauf gehen höchstens 20 + 80 Mails hinaus (`ZUSAMMENFASSUNGEN_JE_LAUF`).
+    Ein Rest wartet mit nur dem täglichen Vercel-Lauf bis zum nächsten Tag; dann plant derselbe Lauf schon die neue
+    Zusammenfassung, und die Person bekommt an diesem Tag zwei. Bei der Größe der Gemeinde nicht zu erwarten, daher
+    bewusst nicht abgefangen; mit dem lokalen Takt geht der Rest wenige Minuten später hinaus. Empfänger `zusammenfassung:<Konto>` – die Adresse
     ermittelt erst der Versand und prüft dabei alles erneut. Mail (`src/lib/mail/vorlagen/zusammenfassung.tsx`, Texte
     `konto.mails.zusammenfassung`) nennt nur Bereich und Anzahl („In 2 Ihrer Gruppen gibt es neue Nachrichten“), Knopf zu
     Mein Bereich, Link zu den Einstellungen (abbestellen). Gezählt wird nur, was die Person sehen darf

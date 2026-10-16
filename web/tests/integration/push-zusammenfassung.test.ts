@@ -240,6 +240,51 @@ describe('Zählung nach Leserechten', () => {
     await db.insert(schema.rolleZuweisung).values({ benutzerId: p.redaktion.id, rolle: 'redaktion' });
     await db.delete(schema.ankuendigung);
   });
+
+  it('Ankündigung: Beginn = erste Veröffentlichung laut Audit (sonst Anlage) bzw. späteres „sichtbar ab“', async () => {
+    const jetzt = Date.now();
+    const seit = new Date(jetzt - STUNDE);
+    const alt = new Date(jetzt - 2 * TAG);
+    const vor = (ms: number) => new Date(jetzt - ms);
+    const basis = { titel: { de: 'Titel der Ankündigung' }, inhalt: { de: 'Text' }, status: 'veroeffentlicht' as const };
+    const zeilen = await db
+      .insert(schema.ankuendigung)
+      .values([
+        // 0: alt angelegt, erst nach dem Zählbeginn veröffentlicht → zählt
+        { ...basis, aktualisiertVon: p.redaktion.id, erstelltAm: alt },
+        // 1: früh veröffentlicht, später erneut gespeichert und veröffentlicht → zählt nicht (erste Veröffentlichung zählt)
+        { ...basis, aktualisiertVon: p.redaktion.id, erstelltAm: alt },
+        // 2: alt, „sichtbar ab“ nach dem Zählbeginn und schon erreicht → zählt
+        { ...basis, aktualisiertVon: p.redaktion.id, erstelltAm: alt, sichtbarAb: vor(30 * 60 * 1000) },
+        // 3: alt, „sichtbar ab“ vor dem Zählbeginn → zählt nicht
+        { ...basis, aktualisiertVon: p.redaktion.id, erstelltAm: alt, sichtbarAb: vor(3 * STUNDE) },
+        // 4: eben angelegt, laut Audit aber längst veröffentlicht → zählt nicht (Audit geht der Anlage vor)
+        { ...basis, aktualisiertVon: p.redaktion.id },
+        // 5: nach dem Zählbeginn veröffentlicht, aber schon abgelaufen → zählt nicht
+        { ...basis, aktualisiertVon: p.redaktion.id, erstelltAm: alt, laeuftAb: vor(60 * 1000) },
+        // 6: eben angelegt, ohne Audit → zählt (Anlage)
+        { ...basis, aktualisiertVon: p.redaktion.id },
+      ])
+      .returning({ id: schema.ankuendigung.id });
+    const veroeffentlicht = (i: number, zeitpunkt: Date) => ({
+      aktion: 'inhalt.veroeffentlicht',
+      zielTyp: 'ankuendigung',
+      zielId: zeilen[i].id,
+      benutzerId: p.redaktion.id,
+      zeitpunkt,
+    });
+    await db
+      .insert(schema.auditEintrag)
+      .values([
+        veroeffentlicht(0, vor(10 * 60 * 1000)),
+        veroeffentlicht(1, alt),
+        veroeffentlicht(1, vor(5 * 60 * 1000)),
+        veroeffentlicht(4, alt),
+        veroeffentlicht(5, vor(10 * 60 * 1000)),
+      ]);
+    expect((await zaehleNeues(p.gemeinde.id, seit, ['ankuendigung'], { jetzt: new Date(jetzt) })).ankuendigung).toBe(3);
+    await db.delete(schema.ankuendigung);
+  });
 });
 
 describe('Tägliche Planung und Versand', () => {
@@ -388,5 +433,29 @@ describe('Abruf für den Hinweis in Mein Bereich (/api/mein/neues)', () => {
     expect(text).not.toContain('Geheim');
     // Offener Kanal zählt nicht
     expect((await (await abruf(`?seit=${stand.stand}&ohne=${kanal.eltern}`)).json()).neu.chat).toBe(0);
+  });
+
+  it('Echtzeit-Signal: Tokens der lesbaren Kanäle, ohne den offenen Kanal (dessen Nachrichten zählen nicht)', async () => {
+    const umgebung: Record<string, string> = {
+      FUNKTION_ECHTZEIT: 'an',
+      ECHTZEIT_URL: 'wss://echtzeit.example.test/connection/websocket',
+      ECHTZEIT_GEHEIMNIS: 'echtzeit-geheimnis-fuer-den-test-0123456789',
+      ECHTZEIT_API_URL: 'https://echtzeit.example.test/api',
+      ECHTZEIT_API_SCHLUESSEL: 'echtzeit-schluessel-test',
+    };
+    const vorher = Object.fromEntries(Object.keys(umgebung).map((k) => [k, process.env[k]]));
+    Object.assign(process.env, umgebung);
+    try {
+      als(p.eltern);
+      const kanaele = async (q: string) =>
+        ((await (await abruf(q)).json()) as { echtzeit: { abos: { kanal: string }[] } | null }).echtzeit?.abos.map((a) => a.kanal) ?? [];
+      expect(await kanaele('?signal=1')).toContain(`chat:${kanal.eltern}`);
+      expect(await kanaele(`?signal=1&ohne=${kanal.eltern}`)).not.toContain(`chat:${kanal.eltern}`);
+    } finally {
+      for (const [k, w] of Object.entries(vorher)) {
+        if (w === undefined) delete process.env[k];
+        else process.env[k] = w;
+      }
+    }
   });
 });

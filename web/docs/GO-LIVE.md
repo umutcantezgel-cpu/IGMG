@@ -224,6 +224,7 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
 
 - [ ] **G4 · Funktionen mit Personendaten einschalten – in dieser Reihenfolge**
   - **Ort:** Vercel › Environment Variables (Production): `FUNKTION_<NAME>=an`, danach neu bereitstellen. Ohne Eintrag gilt in Produktion „aus“; `FUNKTION_<NAME>=aus` schaltet sofort wieder ab.
+  - **Bis zur Freigabe von `KONTEN`:** `FUNKTION_KONTEN=aus` ausdrücklich setzen. Dann antworten die Konto-Seiten (z. B. `/anmelden`, `/registrieren`, `/mein-bereich`, alle Sprachen) mit echtem 404. Ohne Eintrag (oder nur per Einstellung ausgeschaltet) zeigen sie zwar „Seite nicht gefunden“ mit `noindex`, aber mit Status 200 (Soft-404; der Proxy liest keine Datenbank, `src/lib/konto/ohne-konten.ts`).
   - **Reihenfolge und Voraussetzungen:**
     1. `KONTEN` – Datenschutzerklärung v2 und Einwilligungstexte geprüft (MN-11).
     2. `LERNPLATTFORM` – DSFA bestätigt, Lehrkräfte eingeladen, Gruppen mit zwei Erwachsenen angelegt (MN-11, MN-16).

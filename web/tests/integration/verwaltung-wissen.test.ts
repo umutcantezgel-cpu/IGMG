@@ -316,6 +316,14 @@ describe('Reihenfolge, Papierkorb, endgültig löschen', () => {
     });
     expect((await ladeWissensListe()).map((z) => z.id)).toEqual(umgekehrt);
     expect(aufrufe.updateTag).toContain('wissen');
+    // Dieselbe Reihenfolge noch einmal: gespeichert, aber kein Verfall des Caches und kein Audit-Eintrag
+    aufrufe.updateTag.length = 0;
+    const auditVorher = (await db.select().from(schema.auditEintrag)).length;
+    expect(await aktionen.speichereWissensReihenfolge({}, formular({ ordnung: JSON.stringify(umgekehrt) }))).toEqual({
+      gespeichert: expect.any(Number),
+    });
+    expect(aufrufe.updateTag).toEqual([]);
+    expect(await db.select().from(schema.auditEintrag)).toHaveLength(auditVorher);
     const slugs = await sichtbareSlugs();
     expect(slugs[0]).toBe('testthema-vier-augen');
     // Reihenfolge ist keine inhaltliche Änderung: Freigaben bleiben
@@ -346,6 +354,22 @@ describe('Reihenfolge, Papierkorb, endgültig löschen', () => {
     expect(await db.select().from(schema.freigabe).where(eq(schema.freigabe.inhaltId, z.id))).toEqual([]);
     const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.zielId, z.id));
     expect(audit.map((a) => a.aktion)).toContain('inhalt.geloescht');
+  });
+
+  it('im Papierkorb keine Entscheidung der religiösen Prüfung (gefälschtes Formular); nach dem Wiederherstellen wieder', async () => {
+    await angemeldetAls(PRUEFUNG);
+    const id = await anlegen({ slug: 'testthema-papierkorb-pruefung', titelDe: 'Testthema Papierkorb', einreichen: 'ja' });
+    await aktionen.wissensThemaInPapierkorb(formular({ id }));
+    await angemeldetAls(PRUEFUNG);
+    expect(await freigeben(id)).toEqual({ wert: { fehler: 'nichtMehrOffen' } });
+    expect(await freigeben(id, 'zurueckweisen', 'Bitte überarbeiten')).toEqual({ wert: { fehler: 'nichtMehrOffen' } });
+    expect(await thema(id)).toMatchObject({ freigabe: 'zur_pruefung', geprueftVon: null });
+    // Im Prüfverlauf nur der Antrag, keine Entscheidung
+    const verlauf = await db.select().from(schema.freigabe).where(eq(schema.freigabe.inhaltId, id));
+    expect(verlauf.map((f) => f.status)).toEqual(['zur_pruefung']);
+    await aktionen.wissensThemaWiederherstellen(formular({ id }));
+    expect(await freigeben(id)).toEqual({ ziel: '/verwaltung/freigaben?erledigt=freigeben' });
+    expect((await thema(id)).freigabe).toBe('geprueft');
   });
 
   it('Löschlauf: nach 30 Tagen im Papierkorb endgültig gelöscht (mit Revisionen)', async () => {

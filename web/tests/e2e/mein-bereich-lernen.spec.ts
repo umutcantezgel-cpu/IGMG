@@ -65,8 +65,11 @@ const passwort = (p: string | null) => p ?? process.env.BEISPIEL_PASSWORT ?? '';
 
 /**
  * Fremde oder erfundene Adresse: die Seite „nicht gefunden“ ohne Daten, mit noindex (kein Unterschied zu „gibt es nicht“).
- * Mit Cache Components beginnen Seitenantworten als Stream mit 200; ein notFound() der Seite ergibt dann 200 statt 404
- * (Next-Doku loading.md „Status codes“, Soft-404 – offen aus der Endprüfung, P4). Geprüft wird, was der Browser zeigt.
+ * Status 200 oder 404 ist dokumentiertes Verhalten von Next, kein veralteter Test: Mit Cache Components beginnen
+ * Seitenantworten als Stream mit 200; ein notFound() aus dynamischen Daten kommt erst danach und ergibt dann ein Soft-404
+ * (Next-Doku loading.md „Status codes“: 200 und `noindex`). Der Schutz gegen fremde IDs (IDOR) bleibt geprüft: sichtbare
+ * Seite „nicht gefunden“ (Text aus messages), keine Daten, noindex. Offener Punkt (Endprüfung Stufe C, Soft-404): Sobald
+ * diese Seiten echtes 404 liefern, wieder auf 404 verschärfen.
  */
 async function nichtGefunden(page: Page, pfad: string) {
   const seite = await page.context().newPage();

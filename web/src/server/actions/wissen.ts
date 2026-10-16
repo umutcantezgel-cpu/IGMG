@@ -160,7 +160,10 @@ export async function speichereWissensThema(_vorher: WissenZustand, fd: FormData
   return { gespeichert: Date.now(), freigabe: neu };
 }
 
-/** Reihenfolge der Themen (Feld `ordnung`: JSON-Liste aller Themen-IDs außerhalb des Papierkorbs). Keine inhaltliche Änderung. */
+/**
+ * Reihenfolge der Themen (Feld `ordnung`: JSON-Liste aller Themen-IDs außerhalb des Papierkorbs). Keine inhaltliche
+ * Änderung. Cache und Audit nur, wenn sich eine Stelle wirklich geändert hat.
+ */
 export async function speichereWissensReihenfolge(_vorher: ReihenfolgeZustand, fd: FormData): Promise<ReihenfolgeZustand> {
   let a: Angemeldet;
   try {
@@ -178,10 +181,10 @@ export async function speichereWissensReihenfolge(_vorher: ReihenfolgeZustand, f
   const p = z.array(z.uuid()).max(500).safeParse(liste);
   if (!p.success || new Set(p.data).size !== p.data.length) return { fehler: 'pruefen' };
   const ids = p.data;
-  const ok = await db.transaction(async (tx) => {
+  const anzahl = await db.transaction(async (tx) => {
     const vorhanden = await tx.select({ id: t.id, sortierung: t.sortierung }).from(t).where(isNull(t.imPapierkorbSeit));
     // Nur eine vollständige Liste gilt (sonst hat sich der Bestand inzwischen geändert)
-    if (vorhanden.length !== ids.length || !vorhanden.every((z) => ids.includes(z.id))) return false;
+    if (vorhanden.length !== ids.length || !vorhanden.every((z) => ids.includes(z.id))) return null;
     const alt = new Map(vorhanden.map((z) => [z.id, z.sortierung]));
     let geaendert = 0;
     for (const [i, id] of ids.entries()) {
@@ -197,11 +200,13 @@ export async function speichereWissensReihenfolge(_vorher: ReihenfolgeZustand, f
         { benutzerId: a.benutzerId, aktion: 'inhalt.geaendert', zielTyp: INHALT_TYP, details: { reihenfolge: true, anzahl: geaendert } },
         tx,
       );
-    return true;
+    return geaendert;
   });
-  if (!ok) return { fehler: 'veraltet' };
-  inhaltGeaendert(TAG.wissen);
-  refresh();
+  if (anzahl === null) return { fehler: 'veraltet' };
+  if (anzahl) {
+    inhaltGeaendert(TAG.wissen);
+    refresh();
+  }
   return { gespeichert: Date.now() };
 }
 

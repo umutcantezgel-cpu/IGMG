@@ -12,8 +12,9 @@ import { ladeGruppenKontext, ladeKontoMitFaktor } from '@/lib/rechte/gemeinde';
  * - Ohne `seit`: nur der Stand (Zeit des Servers) – beim ersten Laden erscheint kein Hinweis.
  * - Mit `seit`: die Anzahl je Bereich seither (Ankündigung, Gruppen mit neuen Nachrichten, Gruppen mit Neuem aus dem
  *   Unterricht) – nur, was die Person sehen darf; keine Namen, keine Titel, keine Inhalte (`zaehleNeues`).
- * - Mit `signal=1`: Tokens für das Echtzeit-Signal der lesbaren Kanäle (höchstens 12), nur mit den Schaltern `echtzeit`,
- *   `chat`, `lernplattform` und einer Konfiguration; sonst `null` – der Browser bleibt beim Abruf (ADR 0027).
+ * - Mit `signal=1`: Tokens für das Echtzeit-Signal der lesbaren Kanäle (höchstens 12; ohne den offenen Kanal `ohne`,
+ *   dessen Nachrichten nichts zählen), nur mit den Schaltern `echtzeit`, `chat`, `lernplattform` und einer
+ *   Konfiguration; sonst `null` – der Browser bleibt beim Abruf (ADR 0027).
  * Nur mit Sitzung, Kontoart und – wo Pflicht – zweitem Faktor; nie zwischengespeichert.
  */
 const KOPF = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' };
@@ -28,6 +29,7 @@ export async function GET(anfrage: Request) {
   const jetzt = new Date();
   const seit = seitAusAbruf(p.get('seit'), jetzt.getTime());
   const ohne = p.get('ohne');
+  const ohneKanal = ohne && /^[0-9a-f-]{36}$/i.test(ohne) ? ohne : null;
   const kontext = await ladeGruppenKontext(konto.benutzerId);
   const neu =
     seit === null
@@ -35,12 +37,13 @@ export async function GET(anfrage: Request) {
       : await zaehleNeues(konto.benutzerId, new Date(seit), ZUSAMMENFASSUNG_THEMEN, {
           jetzt,
           kontext,
-          ohneKanal: ohne && /^[0-9a-f-]{36}$/i.test(ohne) ? ohne : null,
+          ohneKanal,
         });
   let echtzeit: SignalTokens | null = null;
   const konfig = p.get('signal') === '1' ? echtzeitAusUmgebung() : null;
   if (konfig && (await funktionAn('echtzeit')) && (await funktionAn('chat')) && (await funktionAn('lernplattform'))) {
     const tokens = (await lesbareKanaele(kontext, jetzt))
+      .filter((k) => k.kanalId !== ohneKanal)
       .slice(0, HOECHSTENS_KANAELE)
       .map((k) => echtzeitTokens(konfig, konto.benutzerId, k.kanalId));
     if (tokens.length)
