@@ -76,7 +76,7 @@ Hinweise:
   Antwortkopf `x-nextjs-postponed: 1`). Status 200 und Kopfzeilen gehen mit der statischen Hülle hinaus, bevor Sitzung
   und Daten gelesen sind. Ein Fehler beim Rendern erscheint danach als Fehlergrenze „Ein Fehler ist aufgetreten“ – mit
   HTTP 200 (Next-Doku `node_modules/next/dist/docs/01-app/02-guides/streaming.md`, „Error handling mid-stream“ und
-  „The HTTP contract“; `03-api-reference/03-file-conventions/loading.md`, „Status codes“). Auch die Weiterleitung ohne
+  „The HTTP contract“; `01-app/03-api-reference/03-file-conventions/loading.md`, „Status codes“). Auch die Weiterleitung ohne
   Anmeldung kommt im Stream (`NEXT_REDIRECT`), nicht als 307 (Nacharbeit 3, gemessen am Standalone-Bau). Ein Absturz
   fällt deshalb nur am sichtbaren Inhalt auf, nicht am Statuscode – Specs prüfen Überschriften und Inhalte.
 

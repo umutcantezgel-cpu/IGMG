@@ -101,6 +101,18 @@ describe('Seiten: Rechte, Revisionen, Veröffentlichung', () => {
     expect(await auditAktionen(id)).toContain('inhalt.revision_wiederhergestellt');
   });
 
+  it('beschädigte Fassung zurückholen (JSON null, Text, Liste): Abweisung statt Absturz, Seite unverändert', async () => {
+    await alsRedaktion();
+    const id = await anlegen({ titelDe: 'CMS Kaputt', slugDe: 'cms-kaputt' });
+    const [r] = await revisionen(id);
+    // JSON null (nicht SQL NULL – die Spalte ist NOT NULL), Text und Liste
+    for (const kaputt of [sql`'null'::jsonb`, 'Text', [1, 2]]) {
+      await db.update(schema.revision).set({ inhalt: kaputt }).where(eq(schema.revision.id, r.id));
+      await expect(revisionWiederherstellen(formular({ revisionId: r.id }))).rejects.toThrow('KEIN_RECHT');
+    }
+    expect((await zeile(id)).titel.de).toBe('CMS Kaputt');
+  });
+
   it('Liste „Frühere Fassungen“ (Z-18): Titel und Zahl der Bausteine je Fassung; andere Formen ergeben null statt Absturz', async () => {
     await alsRedaktion();
     const id = await anlegen({ titelDe: 'CMS Liste', slugDe: 'cms-liste' });

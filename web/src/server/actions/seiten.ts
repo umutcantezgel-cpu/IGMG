@@ -352,7 +352,13 @@ export async function revisionWiederherstellen(fd: FormData): Promise<void> {
   if (!rev || rev.inhaltTyp !== INHALT_TYP) throw new KeinRecht();
   const [alt] = await db.select().from(s).where(eq(s.id, rev.inhaltId)).limit(1);
   if (!alt || alt.imPapierkorbSeit || !darf(a.rollen, 'seite.bearbeiten', { organisation: alt.organisation })) throw new KeinRecht();
-  const inhalt = rev.inhalt as { titel?: unknown; beschreibung?: unknown; bloecke?: unknown };
+  // Beschädigte Momentaufnahme (JSON null, Text, Liste) wie eine ungültige Fassung behandeln, nicht abstürzen (Nacharbeit 3)
+  const roh: unknown = rev.inhalt;
+  const inhalt = (roh && typeof roh === 'object' && !Array.isArray(roh) ? roh : {}) as {
+    titel?: unknown;
+    beschreibung?: unknown;
+    bloecke?: unknown;
+  };
   const titel = z.object({ de: z.string().min(1), tr: z.string().optional(), en: z.string().optional() }).safeParse(inhalt.titel);
   const beschreibung = z
     .object({ de: z.string(), tr: z.string().optional(), en: z.string().optional() })
