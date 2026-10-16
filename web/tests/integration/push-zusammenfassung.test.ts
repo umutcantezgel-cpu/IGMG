@@ -14,7 +14,8 @@ import { formular, kontoUmgebung, nachher, umleitung } from './hilfen/konto';
  * - Planung im täglichen Cron: nur bei Neuem, höchstens einmal je Berliner Tag (idempotent), nur was die Person sehen darf.
  * - Gerenderte Mail nennt nur Bereich und Anzahl: keine Namen, keine Gruppennamen, keine Titel, keine Inhalte.
  * - Schalter `push` (und `chat`, `lernplattform`) aus → nichts; Empfänger wird erst beim Versand ermittelt.
- * - Abruf `/api/mein/neues` für den Hinweis in Mein Bereich (erster Abruf nur Stand, offener Kanal zählt nicht).
+ * - Abruf `/api/mein/neues` für den Hinweis in Mein Bereich (erster Abruf nur Stand, offener Kanal zählt nicht; ein
+ *   fremder Kanal in `ohne` liefert weder Zählung noch Token).
  * Der Mail-Transport ist eine Attrappe. Testdaten fiktiv (G-04).
  */
 const versendet: { an: string; betreff: string; html: string; text: string }[] = [];
@@ -451,6 +452,46 @@ describe('Abruf für den Hinweis in Mein Bereich (/api/mein/neues)', () => {
         ((await (await abruf(q)).json()) as { echtzeit: { abos: { kanal: string }[] } | null }).echtzeit?.abos.map((a) => a.kanal) ?? [];
       expect(await kanaele('?signal=1')).toContain(`chat:${kanal.eltern}`);
       expect(await kanaele(`?signal=1&ohne=${kanal.eltern}`)).not.toContain(`chat:${kanal.eltern}`);
+    } finally {
+      for (const [k, w] of Object.entries(vorher)) {
+        if (w === undefined) delete process.env[k];
+        else process.env[k] = w;
+      }
+    }
+  });
+
+  it('Fremder Kanal in `ohne` (Kanal einer Gruppe, zu der das Konto nicht gehört): weder Zählung noch Token', async () => {
+    const umgebung: Record<string, string> = {
+      FUNKTION_ECHTZEIT: 'an',
+      ECHTZEIT_URL: 'wss://echtzeit.example.test/connection/websocket',
+      ECHTZEIT_GEHEIMNIS: 'echtzeit-geheimnis-fuer-den-test-0123456789',
+      ECHTZEIT_API_URL: 'https://echtzeit.example.test/api',
+      ECHTZEIT_API_SCHLUESSEL: 'echtzeit-schluessel-test',
+    };
+    const vorher = Object.fromEntries(Object.keys(umgebung).map((k) => [k, process.env[k]]));
+    Object.assign(process.env, umgebung);
+    try {
+      // Neues in beiden Kanälen der Gruppe – lesen dürfen es nur Eltern bzw. Kind, nicht das Gemeindekonto
+      const seit = Date.now();
+      await nachricht(kanal.eltern, p.lehrkraft.id, GEHEIM, new Date(seit + 1));
+      await nachricht(kanal.gruppe, p.lehrkraft.id, 'Nur für die Kindergruppe', new Date(seit + 1));
+      als(p.gemeinde);
+      for (const fremd of [kanal.eltern, kanal.gruppe]) {
+        const antwort = await abruf(`?seit=${seit}&ohne=${fremd}&signal=1`);
+        expect(antwort.status).toBe(200);
+        const text = await antwort.text();
+        expect(JSON.parse(text)).toEqual({ stand: expect.any(Number), neu: { ankuendigung: 0, chat: 0, unterricht: 0 }, echtzeit: null });
+        expect(text).not.toContain(fremd);
+        expect(text).not.toContain('Geheim');
+      }
+      // Gegenprobe: Eltern mit dem fremden Kinderkanal in `ohne` – ihr eigener Kanal zählt weiter, ein Token nur für ihn
+      als(p.eltern);
+      const eltern = (await (await abruf(`?seit=${seit}&ohne=${kanal.gruppe}&signal=1`)).json()) as {
+        neu: { chat: number };
+        echtzeit: { abos: { kanal: string }[] } | null;
+      };
+      expect(eltern.neu.chat).toBe(1);
+      expect(eltern.echtzeit?.abos.map((a) => a.kanal)).toEqual([`chat:${kanal.eltern}`]);
     } finally {
       for (const [k, w] of Object.entries(vorher)) {
         if (w === undefined) delete process.env[k];

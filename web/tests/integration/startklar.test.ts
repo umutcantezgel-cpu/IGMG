@@ -525,6 +525,56 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     await db.execute(sql`delete from seite where id = ${seite.id}`);
   });
 
+  it('F-40: Wissensthemen „zur Prüfung“ zählen mit (Rückfall aktualisiertAm, sonst jüngste Einreichung), Papierkorb nicht', async () => {
+    // pruefe() rechnet mit jetzt = 2026-10-11T12:00Z; die zwölf Bestandsthemen aus Migration 0015 sind „geprüft“
+    const vor20Tagen = new Date('2026-09-21T12:00:00Z');
+    const vor3Tagen = new Date('2026-10-08T12:00:00Z');
+    const freigaben = async () => befund(await pruefe(produktionsUmgebung()), 'gemeinde.freigaben');
+    expect((await freigaben()).status).toBe('ok');
+
+    // Seit 20 Tagen „zur Prüfung“ ohne Verlauf: Rückfall auf aktualisiertAm → Stau
+    const [thema] = await db
+      .insert(schema.wissenThema)
+      .values({ slug: 'startklar-stau', kategorie: 'test', titel: { de: '[Thema]' }, freigabe: 'zur_pruefung', aktualisiertAm: vor20Tagen })
+      .returning({ id: schema.wissenThema.id });
+    let e = await freigaben();
+    expect(e.status).toBe('warnung');
+    expect(e.meldung).toContain('Ein religiöser Inhalt wartet seit mehr als 14 Tagen auf die Prüfung');
+    expect(e.meldung).toContain('insgesamt 1 offen');
+
+    // Im Papierkorb zählt ein offenes Thema nicht
+    const [papierkorb] = await db
+      .insert(schema.wissenThema)
+      .values({
+        slug: 'startklar-papierkorb',
+        kategorie: 'test',
+        titel: { de: '[Thema im Papierkorb]' },
+        freigabe: 'zur_pruefung',
+        aktualisiertAm: vor20Tagen,
+        imPapierkorbSeit: vor3Tagen,
+      })
+      .returning({ id: schema.wissenThema.id });
+    expect((await freigaben()).meldung).toContain('insgesamt 1 offen');
+
+    // Erneut eingereicht vor 3 Tagen: maßgeblich ist die jüngste Einreichung → offen, aber kein Stau
+    await db
+      .insert(schema.freigabe)
+      .values({ inhaltTyp: 'wissen_thema', inhaltId: thema.id, art: 'religioes', status: 'zur_pruefung', am: vor3Tagen });
+    e = await freigaben();
+    expect(e.status).toBe('ok');
+    expect(e.meldung).toBe('Ein religiöser Inhalt wartet auf die Prüfung, keiner länger als 14 Tage.');
+
+    // Geprüft → nichts offen
+    await db
+      .update(schema.wissenThema)
+      .set({ freigabe: 'geprueft' })
+      .where(sql`${schema.wissenThema.id} = ${thema.id}`);
+    expect((await freigaben()).meldung).toBe('Kein religiöser Inhalt wartet auf die Prüfung.');
+
+    await db.execute(sql`delete from freigabe where inhalt_id = ${thema.id}`);
+    await db.execute(sql`delete from wissen_thema where id in (${thema.id}, ${papierkorb.id})`);
+  });
+
   it('S-10: unveränderte Hash-Kette ok, eine eingeschobene Zeile mit falschem Hash ergibt einen Fehler', async () => {
     const { kettenHash, KETTEN_ANFANG } = await import('@/lib/chat/hashkette');
     const zeitpunkt = new Date('2026-10-10T10:00:00.000Z');

@@ -20,7 +20,9 @@ const expect = basisExpect.configure({ timeout: 20_000 });
  * Oberflächen: Voranmeldung (öffentliches Formular, ALTCHA) → Bildung nimmt sie in der Verwaltung in die Beispielgruppe
  * auf und lädt Elternteil 1 ein → Eltern nehmen die Einladung aus der Mail (Mailpit) an, melden sich an, willigen in den
  * eigenen Zugang ein und legen ihn an → das Kind meldet sich an und sieht seine Gruppe → die Lehrkraft erfasst die
- * Anwesenheit „Heute“ → die Eltern sehen sie. Getrennte Browser-Kontexte je Person, Testdaten fiktiv (G-04). Nur Desktop.
+ * Anwesenheit „Heute“ und setzt per Tastatur den Fortschritt (Stufe 1: begonnen → sicher) → die Eltern sehen beides →
+ * das Kind sieht die Station in seinem Lernweg (Schritt 7 von lernkette.test.ts). Getrennte Browser-Kontexte je Person,
+ * Testdaten fiktiv (G-04). Nur Desktop.
  */
 const MAILPIT = process.env.MAILPIT_URL ?? 'http://127.0.0.1:8025';
 const v = voranmeldung.de.voranmeldung;
@@ -72,7 +74,7 @@ test.beforeEach(async ({ request }, info) => {
   test.skip((await request.get('/anmelden')).status() === 404, 'Funktion „konten“ ist aus – Server mit FUNKTION_KONTEN=an starten');
 });
 
-test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind sieht Gruppe → Anwesenheit → Eltern sehen sie', async ({
+test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind sieht Gruppe → Anwesenheit und Fortschritt → Eltern und Kind sehen sie', async ({
   browser,
   baseURL,
 }) => {
@@ -200,11 +202,50 @@ test('Voranmeldung → Aufnahme → Eltern-Einladung → Kinderzugang → Kind s
   await expect(zeile.getByRole('radio', { name: u.anwesenheit.erfassen.status.anwesend })).toBeChecked();
   await lehrkraft.getByRole('button', { name: u.anwesenheit.erfassen.speichern }).click();
   await expect(lehrkraft.getByRole('status').filter({ hasText: u.anwesenheit.erfassen.gespeichert })).toBeVisible();
+  // 6b Lehrkraft: Fortschritt – Stufe 1 des neuen Kindes per Tastatur zweimal weiterschalten (offen → begonnen → sicher)
+  await lehrkraft.goto(`/mein-bereich/unterricht/${lp.gruppeId}/fortschritt`);
+  const ft = u.fortschritt;
+  await expect(lehrkraft.getByRole('heading', { level: 1, name: ft.titel })).toBeVisible();
+  const stufe1 = ft.stufe.replace('{nr}', '1');
+  const zelle = (status: string, naechster: string) =>
+    lehrkraft.getByRole('button', {
+      name: ft.zelleAria
+        .replace('{name}', anzeigename)
+        .replace('{stufe}', stufe1)
+        .replace('{status}', status)
+        .replace('{naechster}', naechster),
+      exact: true,
+    });
+  const gespeichert = (status: string) =>
+    lehrkraft.getByText(ft.gespeichert.replace('{name}', anzeigename).replace('{stufe}', stufe1).replace('{status}', status), {
+      exact: true,
+    });
+  await zelle(ft.status.offen, ft.status.begonnen).focus();
+  await lehrkraft.keyboard.press('Enter');
+  await expect(gespeichert(ft.status.begonnen)).toBeVisible();
+  await zelle(ft.status.begonnen, ft.status.sicher).focus();
+  await lehrkraft.keyboard.press('Enter');
+  await expect(gespeichert(ft.status.sicher)).toBeVisible();
+  await lehrkraft.reload();
+  await expect(zelle(ft.status.sicher, ft.status.abgeschlossen)).toBeVisible();
   await lehrkraft.context().close();
 
-  // 7 Eltern sehen die erfasste Anwesenheit beim Kind
+  // 7 Eltern sehen die erfasste Anwesenheit beim Kind …
   await eltern.reload();
   const anwesenheit = eltern.locator('#anwesenheit');
   await expect(anwesenheit.getByText(d.detail.status.anwesend, { exact: true }).first()).toBeVisible();
+  // … und den Fortschritt: Stufe 1 „sicher“
+  const fortschritt = eltern.locator('#fortschritt');
+  await expect(fortschritt.getByText(d.detail.fortschrittLeer)).toHaveCount(0);
+  await expect(fortschritt.getByText(d.detail.fortschrittStatus.sicher, { exact: true }).filter({ visible: true }).first()).toBeVisible();
   await eltern.context().close();
+
+  // 8 Kind sieht seinen Lernweg mit der Station der Stufe 1 als „sicher“
+  const kind2 = await neueSeite(browser, baseURL);
+  await kindAnmelden(kind2, { benutzername, passwort: PASSWORT });
+  const lw = kinderTexte.de.lernweg;
+  const weg = kind2.locator('#lernweg');
+  await expect(weg.getByText(lw.leer)).toHaveCount(0);
+  await expect(weg.getByText(lw.status.sicher, { exact: true }).filter({ visible: true }).first()).toBeVisible();
+  await kind2.context().close();
 });
