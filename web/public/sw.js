@@ -8,12 +8,15 @@
  *   (Seite, Wort- und Übersetzungsdaten, Schriften und Programmteile, auf Wunsch Rezitation). Er überlebt neue
  *   Versionen dieses Workers; nur die Person entfernt ihn. Koran-Daten und Audio: Netz zuerst, ohne Netz der Vorrat –
  *   Audio auch mit Bereichsanfragen (206), damit Vor- und Zurückspulen offline geht.
+ * - Lern-App (ADR 0037 Nr. 8): Ihre Vorräte `igmg-lernapp-*` gehören dem eigenen Worker `/lern-app/sw.js` (Scope
+ *   `/lern-app/`) und überleben neue Versionen dieses Workers.
  */
 const VERSION = 'igmg-v1';
 const SEITEN = `${VERSION}-seiten`;
 const DATEIEN = `${VERSION}-dateien`;
 const OFFLINE = ['/offline', '/tr/offline', '/en/offline'];
 const KORAN = 'igmg-koran-v1';
+const LERNAPP = 'igmg-lernapp-';
 const VORHALTEN = [/^\/(tr\/|en\/)?(gebetszeiten|namaz-vakitleri|prayer-times)(\/(anzeige|ekran|display))?\/?$/, /^\/(tr|en)?\/?$/];
 
 self.addEventListener('install', (e) => {
@@ -29,7 +32,9 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches
       .keys()
-      .then((namen) => Promise.all(namen.filter((n) => !n.startsWith(VERSION) && n !== KORAN).map((n) => caches.delete(n))))
+      .then((namen) =>
+        Promise.all(namen.filter((n) => !n.startsWith(VERSION) && n !== KORAN && !n.startsWith(LERNAPP)).map((n) => caches.delete(n))),
+      )
       .then(() => self.clients.claim()),
   );
 });
