@@ -1,5 +1,10 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 16.10. 13:35 UTC:** Stufe-C-Nachprüfung 2 (90a8e37): 19 erfüllt, 2 teilweise (Z-07, Z-18). Nacharbeit 3 (bb57055…35ffc00,
+  a59ce95) behebt beides; Gegenprüfung: Z-07 und Z-18 erfüllt (eigene Nachstellung am Server). Tor grün: Unit 1584,
+  Integration 3269, E2E 991/0, Import 1887 (Sweep ohne 5xx, Crawl 1315), Vorschau 2228. Nächster Schritt: Fast-Forward `main`,
+  Produktion prüfen, frischer Endprüfer bestätigt Z-07/Z-18 (Abschlussurteil), dann ABNAHME/BERICHT/ABSCHLUSS,
+  CLAUDE.md-Block ersetzen (neuer Lauf „Lern-App“, Plan genehmigt 16.10., `_lernapp/` in L0).
 - **Stand 16.10. 09:05 UTC:** Nacharbeit 2 zusammengeführt (P1 41e5985, P2 4325608 mit 0016 neu erzeugt, P3 05e3a31, P4 9c7e9f0,
   Feinschliff 731e838/d5b2b76; alle Gegenprüfungen frei). Tor grün: Unit 1582, Integration 3265, E2E mit PostgreSQL/Mailpit
   983 grün/0 rot, Sprachen, Religion, Wortlaut rc=0, Bau wie frischer Import 1887 (Sweep ohne 5xx, Crawl 1315 ohne Fehler,
