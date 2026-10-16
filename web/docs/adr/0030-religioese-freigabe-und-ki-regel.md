@@ -1,6 +1,7 @@
 # ADR 0030 – Religiöse Freigabe und KI-Regel
 
 - Status: angenommen (umgesetzt 13.10.2026) (Lauf Gemeinde-Plattform) · Bezug: Plan „Gemeinde-Plattform“ §5 (Religiöse Freigabe, KI-Regel), §1 („bewusst abgelehnt“), §7 (Z-15, Risiko „Religiöser Fehler“), MN-06, MN-20
+- Fortgeschrieben 16.10.2026 (Lauf „Lern-App“): Nr. 4 (KI-Regel) für die Lern-App fortgeschrieben durch ADR 0040 („KI-Regel 2“, Nutzerentscheidung L3-E01: KI-Entwurf mit Quellenangabe, zwei Freigaben); für die übrige Website gilt Nr. 4 unverändert.
 
 ## Kontext
 

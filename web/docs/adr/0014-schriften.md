@@ -1,6 +1,7 @@
 # ADR 0014 – Schriften selbst gehostet
 
 - Status: angenommen · 2026-10-11 · P1 · Bezug: K-04, K-11, K-12, K-14, G-09, Laufbuch D-02
+- Fortgeschrieben 16.10.2026 (Lauf „Lern-App“): Schrift der arabischen Oberfläche der Lern-App nach ADR 0044 (Noto Sans Arabic nur dort).
 
 ## Ziel
 

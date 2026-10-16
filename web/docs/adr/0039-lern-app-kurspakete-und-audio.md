@@ -1,0 +1,71 @@
+# ADR 0039 – Lern-App: Kurspakete und Lern-Audio (Hash-Adressen, Bündel, Blob, Route)
+
+- Status: vorgeschlagen (16.10.2026) (Lauf Lern-App); Nr. 7 folgt der Nutzerentscheidung „Sprachinhalte“ (kein Koran- oder Hadith-Text in der Sprachausgabe, Audio später durch Aufnahmen ersetzbar; L3-E03); „nur Sprachkurse“ ist Standard bis zur Antwort (L3-E10) · Bezug: Plan „Lern-App“ Kontext (Widersprüche „Sprachausgabe“, „Verfeinerung“ Audio), §2.3, §3.1; `_lernapp/PLAN.md` §3.10, §5.4, §6.8; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §2; Spikes S4, S5 · baut auf ADR 0029 (Audio-Auslieferung über eine Route, L2-E06) auf; ADR 0029 und ADR 0030 bleiben für Rezitationen unberührt
+
+## Kontext
+
+- Einheiten müssen offline spielbar sein (ADR 0038). Die Inhalte sind groß: je Zielsprache 72 Einheiten; je Richtung ≈ 2,5 MB gz Paketdaten; Audio für alle drei Zielsprachen ≈ 100.000 Clips, ≈ 0,8 GB (Opus 24 kbit/s).
+- Öffentlich darf nur erscheinen, was die Prüfregeln freigeben (ADR 0040, ADR 0041). Eine Freigabe muss sofort wirken.
+- Der Vercel-Bau soll ≤ 15 min bleiben. Audio und Sprachausgabe gehören nicht in den Bau.
+- Jede Auslieferung über eine Funktion kostet. Unveränderliche Adressen kann das CDN vorhalten.
+- Die Lerninhalte stehen unter CC BY-SA 4.0 (ADR 0045). Namensnennungen müssen auch offline erreichbar sein, technische Schutzmaßnahmen sind unzulässig.
+- Die Sprachausgabe-Programme (piper1-gpl, espeak-ng) stehen unter GPL-3.0 und dürfen nicht ausgeliefert werden (ADR 0045).
+
+## Entscheidung
+
+1. **Paketbau** aus der Datenbank (`web/src/lib/lernapp/paket/bauen.ts`): kanonisches JSON je Richtung und Einheit.
+   - Inhalt: Lektionen und Aufgaben mit Texten in Ziel- und Ausgangssprache, angenommene Alternativen, Tokens, Lemma-Angaben, Tipps, Symbolpfade, Audio-Verweise (Bündel, Versatz, Länge) sowie **Quelle und Lizenz je Eintrag**.
+   - Nur ausgelieferte Einträge: Sprache nach ADR 0041; Wissensbausteine, Sprachkurs-Einträge mit `religionsbezug` und Koran-Bedeutungen nur mit zwei Freigaben (ADR 0040 Nr. 5).
+   - Adresse = SHA-256 des kanonischen JSON. Eine Einheit unter einem Hash ändert sich nie.
+2. **Routen:**
+   - `/lern-app/pakete/[kurs]`: Kursverzeichnis (Version, Einheiten-Hashes, Größen) mit `'use cache'`, `cacheTag(TAG.lernappKurs(id))`, `cacheLife('max')`. Jede Freigabe und Veröffentlichung ruft `updateTag`; die Kursversion steigt.
+   - `/lern-app/pakete/[kurs]/[einheit]/[hash]`: Einheitenpaket, `public, max-age=31536000, immutable`. Erzeugt bei Bedarf, danach aus Cache bzw. CDN. Nur im Beispielmodus ohne Laufzeit-Datenbank rendert der Bau alle Einheiten vor (≈ 450 Ausgaben).
+3. **Audio-Bündel `.lpa`** (`paket/buendel.ts`) je Zielsprache und Einheit; beide Richtungen derselben Zielsprache teilen es.
+   - Aufbau: kleiner Kopf (Kennung, Version, Index aus textHash, Versatz, Länge, Format), danach die Einzeldateien hintereinander.
+   - Der Client schneidet mit `Blob.slice` und spielt über eine Objekt-URL. „Langsam“ ist `playbackRate = 0.75` mit `preservesPitch`, ohne zweite Datei.
+4. **Ablage und Auslieferung:**
+   - öffentlicher Vercel-Blob-Speicher `lernapp` in fra1, Pfade mit Inhalts-Hash
+   - Auslieferung über `/lern-app/audio/[...pfad]` nach dem Muster `liefereAudio` (`web/src/lib/audio/speicher.ts`): Byte-Bereiche 200/206/416, `public, max-age=31536000, immutable`
+   - Rückfall nur bei Bedarf (Kosten, Messung): Blob-Adresse in `media-src`, und zwar nur für `/lern-app` (wie ADR 0029 Nr. 1)
+   - Wie das Kursverzeichnis und die Bündel am günstigsten ausgeliefert werden (Route mit Strom, statisch, Blob direkt), misst Spike S5.
+5. **Format:** WebM/Opus, 24 kbit/s, mono; Lautheit nach EBU R128 normalisiert, Stille gekürzt. Ein AAC-Rückfall kommt nur, wenn der Gerätetest es verlangt (Spike S4, O-6, LM-07).
+6. **Erzeugung** (Werkzeug `_lernapp/werkzeuge/tts/`):
+   1. `pnpm lernapp:audio-liste <sprache>` schreibt nur fehlende Einträge (textHash, Text, Stimme).
+   2. Die Sprachausgabe läuft lokal oder auf dem lokalen Server: nie im Vercel-Bau, nie in einer Vercel-Funktion, nie im Browser. Stimmen nach ADR 0045; Aussprache-Überschreibungen aus `web/inhalte/lernapp/aussprache/<sprache>.json`.
+   3. Normalisieren, kodieren, Bündel bauen, in den Blob-Speicher laden; lokal höchstens ≈ 300 MB je Sprache zwischenlagern, danach löschen.
+   4. Commit von `web/inhalte/lernapp/audio-manifest/<sprache>.json` (textHash → Bündel, Versatz, Dauer, Stimme, SHA-256).
+   5. Stichprobe per Spracherkennung (Wortfehlerquote mit Schwelle); Ausreißer werden neu erzeugt oder aufgenommen.
+   - Stimme in `lernapp_audio.stimme`: `tts:<modell>@<sha>` oder `mensch:<sprecherId>`.
+7. **Was vertont wird:** nur Inhalte der Sprachkurse und der Schrift-Vorkurse (Lemmata, Sätze, Dialog- und Geschichtenzeilen, Hörübungen) ohne Kennzeichen `religionsbezug` (L3-E10).
+   - **Nie vertont:** Koran, Hadith, Bittgebete, Einträge mit `religionsbezug` (in jeder Sprache), der Wissenskurs `islam` (ohne Audio) und der Koran-Arabisch-Pfad.
+   - Koran-Arabisch nutzt nur Wortzeiten (`quran_wortzeit`) freigegebener Rezitationen (ADR 0029), nie Sprachausgabe.
+   - Durchgesetzt durch einen Test (kein Audio-Eintrag zu `religionsbezug`, `islam`, `koran`) und den Religionswächter (ADR 0040).
+8. **Menschliche Aufnahmen** ersetzen die Sprachausgabe je textHash (Audio-Studio `/verwaltung/lernapp/audio`, Bausteine der Rezitations-Werkstatt).
+   - Eine Vereinbarung mit der sprechenden Person ist Pflicht (ADR 0029 Nr. 4). Soll die Aufnahme eine eigene Stimme trainieren, schließt die Vereinbarung die KI-Sprachsynthese ausdrücklich ein (ADR 0045).
+   - Bevorzugt für den arabischen Kern A1/A2.
+   - Fremde Aufnahmen (Tatoeba, Wikimedia Commons) nur nach ADR 0045.
+9. **Namensnennung:** Stimme und Datenquelle je Clip stehen im Paket und auf `/lern-app/[ui]/quellen`. Synthetische Stimmen sind als „Sprachausgabe“ gekennzeichnet; ein Wasserzeichen des Modells wird dort offengelegt.
+10. **Keine Schutzmaßnahmen:** Pakete und Bündel sind unverschlüsselt (CC BY-SA 4.0, L0-E02).
+11. **Ohne Blob-Speicher** (Beispielmodus, E2E): kleine synthetische Testbündel aus Tönen, nie Rezitationen. Sonst zeigen Hörübungen „Audio folgt“ und werden übersprungen.
+12. **Offline:** Caches `igmg-lernapp-pakete` (Verzeichnis „Netz zuerst“, Einheiten „Vorrat zuerst“) und `igmg-lernapp-audio` (Vorrat zuerst). Automatisch gespeichert werden die aktuelle und die nächste Einheit; bewusst „Stufe offline speichern“ mit dem Ring nach Bytes (B-27, Muster `OfflineSpeichern.tsx`).
+
+## Alternativen
+
+- Ein JSON je Kurs: verworfen. Zu groß für das Offline-Speichern einzelner Stufen, und jede Freigabe änderte die ganze Datei.
+- Eine Datei je Clip: verworfen. ≈ 100.000 Dateien und Anfragen, viele Funktionsaufrufe.
+- Audio im Repository: verworfen (Größe, Bauzeit).
+- Gemeinsamer Blob-Speicher `audio` mit den Rezitationen (Plan §2.3): nicht gewählt. Rezitationen haben eigene Rechte und Prüfungen (nicht aktive Rezitationen nur für die Werkstatt, L2-E06); Lern-Audio ist öffentlich und unveränderlich. Getrennte Speicher halten Rechte und Kosten auseinander.
+- Sprachausgabe im Browser: verworfen. Die Programme phonemisieren mit espeak-ng (GPL-3.0); Auslieferung würde GPL-Code verteilen. Dazu kämen Größe und schwankende Qualität.
+- Sprachausgabe zur Laufzeit auf dem Server: verworfen (Kosten, Lizenz, keine Prüfung vor der Auslieferung).
+- Pakete nur im Bau vorrendern: verworfen. Bauzeit und Freigaben wirken erst beim nächsten Bau.
+
+## Folgen
+
+- Tests:
+  - Unit: `paket-hash`, `buendel` (Kopf, Index, Schnitt).
+  - Integration: Pakete enthalten nur Ausgeliefertes; Freigabe löst `updateTag` aus; Byte-Bereiche der Audio-Route.
+  - Test „nie vertont“ nach Nr. 7.
+- Kosten: Blob-Speicher `lernapp` gesamt ≈ 1,1–1,3 GB einschließlich Modelle (falls im Blob, ADR 0042); Kosten und Datenverkehr beobachten (LM-15).
+- Plattenbudget lokal: Audio geht direkt in den Blob-Speicher, keine Vollablage im Arbeitsbaum.
+- Abnahme: Z-L15 (Audio für 100 % der Zielinhalte, Lautheit normiert), Z-L03 (Koran-Pfad ohne Sprachausgabe), Z-L16 (Bau ≤ 15 min).
+- OFFENE FRAGE: Für Arabisch kann die Zielvorgabe „Audio für 100 % der Zielinhalte“ erst mit einer freigegebenen Stimme oder mit Aufnahmen erfüllt werden (ADR 0045, L0-E06). Bis dahin gilt „Audio folgt“.
