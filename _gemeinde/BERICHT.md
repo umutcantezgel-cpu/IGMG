@@ -1,7 +1,8 @@
 # BERICHT – Lauf „Gemeinde-Plattform“
 
-> **Stand 15.10.2026** (`main` = 75cad0a). Stufe C ist gelaufen; das Urteil des Endprüfers steht unten wörtlich, der Stand
-> je Kriterium in `_gemeinde/ABNAHME.md`. Nacharbeit zu den Lücken läuft und wird hier nachgeführt.
+> **Stand 16.10.2026** (`main` = 90a8e37). Stufe C mit zwei Nachprüfungen: zuletzt **19 von 21 Kriterien erfüllt, 2 teilweise
+> (Z-07, Z-18)** (`berichte/stufe-c-nachpruefung-2.md`, Stand je Kriterium in `_gemeinde/ABNAHME.md`). Die zwei gefundenen
+> Fehler werden in der Nacharbeit 3 behoben und hier nachgeführt.
 
 ## Ergebnis in drei Sätzen
 
@@ -82,7 +83,9 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 - Datenfluss: 0 Anfragen an fremde Server, Koordinaten nie im Netz, Standortzugriff nur auf den Gebetszeiten-Seiten.
 - Stufe C (frischer Endprüfer) auf 75cad0a: 7 erfüllt, 2 Umgebungsausnahmen, 12 teilweise; nach der Nacharbeit N1–N4
   (Leistung, Zugänglichkeit/Bewegung/Werte, Funktion/Unterlagen, Sicherheitsprüfung S2/S3) Nachprüfung auf 033ea6f:
-  **12 erfüllt, 2 Umgebungsausnahmen, 7 teilweise** (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c-nachpruefung.md`).
+  **12 erfüllt, 2 Umgebungsausnahmen, 7 teilweise** (`_gemeinde/berichte/stufe-c-nachpruefung.md`); nach der Nacharbeit 2
+  (F-38/F-40/F-44, Suche ohne Datenbank, echte E2E ohne Docker 983 grün/0 rot, Wiederherstellungsprobe) zweite Nachprüfung auf
+  90a8e37: **19 erfüllt, 2 teilweise** (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c-nachpruefung-2.md`).
 
 ## Urteil des Endprüfers (wörtlich)
 

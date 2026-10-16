@@ -39,5 +39,7 @@
 | E7 | N4 | Nacharbeit Stufe C: Sicherheitsprüfung S2/S3, 11 Befunde behoben, Vier-Augen für Schutzrollen und Eltern-Bezüge, Rechte-Matrix, Gruppen-Wahrheitstafel, Lernkette | fertig | 2504b1d, 9cf309d; Merge 69ad49c |
 | E7 | N1 | Nacharbeit Stufe C: Leistung (LCP ≤ 2,5 s auf 7 Routen, JS < 180 kB, erster Tab /quran/2) | fertig | 65b51b0, cbc2ff1; Merge 033ea6f |
 | E7 | Stufe C (2) | Nachprüfung auf 033ea6f: 12 erfüllt, 2 AUSNAHME, 7 teilweise (`berichte/stufe-c-nachpruefung.md`) | fertig | 06fcf03 |
-| E7 | Nacharbeit 2 | F-40 Startseite/Wissen, F-38 Push-Rückfall, F-44 Voranmeldung ↔ Kurs, erster Tab Hadith, Suche ohne Datenbank, Player-E2E, echte E2E ohne Docker, Wiederherstellungsprobe, Unterlagen nach N4 | in Arbeit | 9757df3 (Wortlaut G-06) |
-| E7 | – | Stufe-C-Nachprüfung 2, BERICHT, ABSCHLUSS | offen | |
+| E7 | Nacharbeit 2 | F-40 Startseite/Wissen, F-38 Push-Rückfall, F-44 Voranmeldung ↔ Kurs, erster Tab Hadith, Suche ohne Datenbank, Player-E2E, echte E2E ohne Docker, Wiederherstellungsprobe, Unterlagen nach N4 | fertig | 9757df3, 2c11368; Merges 41e5985, 4325608, 05e3a31, 9c7e9f0; Feinschliff 731e838, d5b2b76; `main` 90a8e37 |
+| E7 | Stufe C (3) | Nachprüfung 2 auf 90a8e37: 19 erfüllt, 2 teilweise (`berichte/stufe-c-nachpruefung-2.md`) | fertig | (dieser Commit) |
+| E7 | Nacharbeit 3 | Seiten-Revisionen, Fokus im Reihenfolge-Editor (Z-18, Z-07), Kleinigkeiten, Unterlagen | in Arbeit | |
+| E7 | – | BERICHT, ABSCHLUSS | offen | |
