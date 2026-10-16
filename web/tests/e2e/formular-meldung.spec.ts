@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 import formulare from '../../messages/bereiche/formulare.json';
 import meldung from '../../messages/bereiche/meldung.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -65,7 +66,7 @@ test('Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket i
 
   // Absenden mit fehlenden Angaben → Zusammenfassung mit Fokus, Feldfehler, Eingaben bleiben erhalten
   await vorname.fill('Testperson Drei');
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: f.senden, exact: true }).click();
   const zusammenfassung = page.getByRole('alert').filter({ hasText: fo.zusammenfassung });
   await expect(zusammenfassung).toBeVisible();
@@ -94,7 +95,7 @@ test('Meldung: Fehler mit Sprungverweis, zweiter Versuch ohne Neuladen, Ticket i
   await formular.getByRole('radio', { name: 'E-Mail', exact: true }).check();
   await formular.getByRole('textbox', { name: /^E-Mail/ }).fill(person);
   await formular.getByRole('checkbox', { name: /^Ich willige ein/ }).check();
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: f.senden, exact: true }).click();
   await expect(page.getByRole('heading', { level: 2, name: f.erfolg.titel, exact: true })).toBeVisible();
   await expect(page.getByText(f.erfolg.mitBestaetigung)).toBeVisible();

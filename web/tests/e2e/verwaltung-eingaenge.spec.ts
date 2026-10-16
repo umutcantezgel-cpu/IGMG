@@ -3,6 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import formulare from '../../messages/bereiche/formulare.json';
 import eingaenge from '../../messages/verwaltung/eingaenge.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -34,7 +35,7 @@ test('Eingänge: Kontaktanfrage ansehen, abschließen, Notiz, Export und endgül
   await formular.getByLabel(/^E-Mail/).fill(`testperson.${randomBytes(4).toString('hex')}@example.test`);
   await formular.getByLabel(/^Nachricht/).fill('Testnachricht für die Eingänge.');
   await formular.getByRole('checkbox', { name: /^Ich willige ein/ }).check();
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: fo.senden }).click();
   await expect(page.getByText(fo.erfolg)).toBeVisible();
 

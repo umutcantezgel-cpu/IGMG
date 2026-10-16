@@ -99,11 +99,16 @@ CREATE ROLE igmg_sicherung LOGIN PASSWORD '<zufällig>';
 GRANT CONNECT ON DATABASE <datenbank> TO igmg_sicherung;
 GRANT USAGE ON SCHEMA public, drizzle TO igmg_sicherung;
 GRANT SELECT ON ALL TABLES IN SCHEMA public, drizzle TO igmg_sicherung;
-GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO igmg_sicherung;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public, drizzle TO igmg_sicherung;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicherung;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO igmg_sicherung;
 ```
 
-- `pg_dump` braucht SELECT auf alle Tabellen. Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
+- PostgreSQL-Version: Neon und jeder eigene Server mit **17** (wie `postgres:17-alpine` in `docker-compose.yml`). 16 bricht
+  beim ersten Migrieren einer frischen Datenbank ab (Migrationen 0013/0014, VERCEL.md 2.1); eine höhere Hauptversion
+  kann `pg_dump` 17 aus dem Sicherungs-Image (`postgres:17.6-alpine`) nicht sichern – dann zuerst das Image anheben.
+- `pg_dump` braucht SELECT auf alle Tabellen und Sequenzen – auch auf `drizzle.__drizzle_migrations_id_seq`; ohne sie
+  bricht die Sicherung mit „permission denied for sequence“ ab (Wiederherstellungsprobe P4, Nacharbeit 2). Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
   `ratenbegrenzung`, `rate_limit`) sichert `sichern.sh` nur als Struktur, ohne Inhalt.
 - Einmal-Links (Passwort vergessen, Bestätigungen) stehen in `verification` nur als SHA-256 – wer die Leserolle kennt,
   kann damit kein Konto übernehmen. Sitzungs-Cookies sind mit `BETTER_AUTH_SECRET` signiert, das nur bei Vercel liegt.
@@ -117,12 +122,20 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicheru
 - Next.js-Sicherheitsupdates zeitnah einspielen (`pnpm view next version`, Paket-Update, `pnpm build`, Tests, neues Image).
 - `pnpm audit --prod` vor jeder Aktualisierung des Images.
 - Nach einem Update von `altcha`: `pnpm altcha:kopieren` (Worker unter `public/altcha/`, sonst schlägt `pnpm check` fehl).
+- **Patch an Next.js 16.4.0** (`patches/next@16.4.0.patch`, eingetragen in `pnpm-workspace.yaml` › `patchedDependencies`,
+  Nacharbeit 2, P4): Beim frischen Rendern einer Seite (Cache-MISS unter `next start`/standalone/Docker) hängte Next
+  Kopfzeilen wie `location` und `link` doppelt an; eine Weiterleitung der CMS-Fangroute führte so auf „/ziel, /ziel“
+  (404). Der Patch überspringt nur Werte, die schon gleich gesetzt sind; Vercel ist nicht betroffen, schadet aber nicht.
+  `tests/unit/next-patch.test.ts` prüft, dass die installierte Fassung den Patch trägt. **Bei jedem Next-Update:** prüfen,
+  ob der Fehler in der neuen Fassung behoben ist; dann Patch und Eintrag entfernen, sonst den Patch neu erzeugen
+  (`pnpm patch next`, `pnpm patch-commit`).
 
 ## 8 Entwicklung und Tests (für Entwickelnde)
 
 - Dienste: `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit-Oberfläche 127.0.0.1:8025).
 - `pnpm dev` (Port 3000), `pnpm check`, `pnpm test:integration` (PGlite je Testdatei), `pnpm test:e2e` (eigene Datenbank `igmg_e2e`, wird je Lauf frisch angelegt), `pnpm messen` (Lighthouse mobil gegen einen laufenden Produktionsserver auf Port 3100).
 - Standalone-Server lokal: `pnpm build && PORT=3100 pnpm start:standalone` (setzt `HOSTNAME=0.0.0.0`, E-015).
+- Ohne Docker (PostgreSQL und Mailpit als Programme, auch PostgreSQL 16): `tests/e2e/LIESMICH.md` – E2E-Lauf und Wiederherstellungsprobe (`betrieb/lokal/sicherung/probe.sh`).
 
 ## 9 Betrieb auf Vercel (Services)
 

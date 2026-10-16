@@ -36,6 +36,8 @@ test('Bereiche, Tajwid-Text einreichen, Vier-Augen-Freigabe durch eine zweite Pe
   const bearbeiten = page.getByRole('link', { name: /^Texte bearbeiten: / }).filter({ visible: true });
   test.skip((await bearbeiten.count()) === 0, 'Ohne importierte Tajwid-Regeln (E2E-Datenbank ohne Inhaltsimport)');
   await bearbeiten.first().click();
+  // Erst nach dem Seitenwechsel lesen: click() wartet nicht auf die Navigation (sonst stünde hier die Liste, P4)
+  await expect(page).toHaveURL(/\/verwaltung\/koran\/tajwid\/[^/?#]+$/);
   const adresse = page.url();
   await page.getByLabel('Kurztext (Deutsch)', { exact: true }).fill('[Kurztext E2E]');
   await page.getByRole('button', { name: 'Speichern und zur Prüfung geben' }).click();

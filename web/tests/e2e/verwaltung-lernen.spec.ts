@@ -40,6 +40,8 @@ test('Gruppe anlegen, Chat-Lage (S-02), Termine; Lehrplan; Lehrkraft einladen un
   await page.getByRole('button', { name: g.anlegen }).click();
   await expect(page.getByRole('alert').filter({ hasText: g.fehler.pruefen })).toBeVisible();
   await expect(page.getByLabel(g.formular.chatMindestalter, { exact: true })).toHaveAttribute('aria-invalid', 'true');
+  // Auswahlfelder behalten nach dem Fehler den gewählten Wert (P4: sonst stand wieder „Chat aus“)
+  await expect(page.getByLabel(g.formular.chatModus, { exact: true })).toHaveValue('offen');
   await page.getByLabel(g.formular.chatMindestalter, { exact: true }).fill('10');
   await page.getByRole('button', { name: g.anlegen }).click();
   await expect(page).toHaveURL(/\/verwaltung\/gruppen\/[0-9a-f-]{36}\?meldung=angelegt$/);

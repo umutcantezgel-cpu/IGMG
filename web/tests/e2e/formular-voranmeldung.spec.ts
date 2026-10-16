@@ -3,6 +3,7 @@ import { randomBytes } from 'node:crypto';
 import { expect, test } from '@playwright/test';
 import formulare from '../../messages/bereiche/formulare.json';
 import bereich from '../../messages/bereiche/voranmeldung.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -88,7 +89,7 @@ test('Voranmeldung in vier Schritten bis zur Bestätigung', async ({ page }) => 
   await form.getByLabel(new RegExp(`^${v.feld.ausgefuelltVon}`)).fill('Testperson Sechs');
   await form.getByRole('checkbox', { name: new RegExp(`^${v.einwilligung.kontakt}`) }).check();
   await form.getByRole('checkbox', { name: new RegExp(`^${v.einwilligung.datenschutz.slice(0, 30)}`) }).check();
-  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 20_000 });
+  await expect(form.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await form.getByRole('button', { name: v.absenden }).click();
 
   const erfolg = page.getByRole('status').filter({ hasText: v.erfolg.titel });

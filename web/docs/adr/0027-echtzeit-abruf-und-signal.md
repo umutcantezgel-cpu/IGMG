@@ -47,3 +47,7 @@
   Übersicht (`src/lib/echtzeit/takt.ts`: `chatAbstand` unverändert, `uebersichtAbstand` 30/60 s) über
   `GET /api/mein/neues`; das Signal abonniert dort alle lesbaren Kanäle über eine Verbindung (`src/lib/echtzeit/signal.ts`,
   auch vom Chat genutzt). Fällt das Signal aus, fragt der Browser neue Tokens höchstens alle 5 Minuten an.
+- Entfernte Nachrichten (16.10.2026, Nacharbeit 2, P4): Der Abruf trägt zusätzlich `ab=<erste angezeigte ID>` und liefert
+  `entfernt` – die IDs der seither entfernten Nachrichten bis `nach`. Vorher erreichte das Entfernen (S-09) offene
+  Fenster nicht, weil der Abruf nur Neues liefert; gefunden im E2E-Lauf mit zwei Browsern (`tests/e2e/chat.spec.ts`),
+  Prüfung `tests/integration/chat.test.ts` („S-09: Entfernen hinterlässt Platzhalter“).

@@ -5,6 +5,7 @@ import * as OTPAuth from 'otpauth';
 import kontoTexte from '../../messages/bereiche/konto.json';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { eigeneAbsenderAdresse } from './hilfen/konto';
 
 /**
@@ -85,8 +86,9 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   await page.getByLabel(k.felder.name).fill('Testperson Eins');
   await page.getByLabel(k.felder.email).fill(email);
   await page.getByLabel(k.felder.passwortNeu, { exact: true }).fill(PASSWORT);
-  await page.getByRole('checkbox').check();
-  await expect(page.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 30_000 });
+  // Nur die Einwilligung: Das ALTCHA-Widget bringt nach der ersten Eingabe ein eigenes Kontrollkästchen mit
+  await page.locator('#registrieren-einwilligung').check();
+  await expect(page.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await page.getByRole('button', { name: k.registrieren.absenden }).click();
   await expect(page.getByRole('heading', { name: k.registrieren.erfolgTitel })).toBeVisible();
 
@@ -109,6 +111,8 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   await expect(page.getByRole('alert').filter({ hasText: /\S/ })).toContainText(k.anmelden.unbestaetigt);
 
   await page.goto(new URL(link).pathname + new URL(link).search);
+  // Seit S1 H-2 bestätigt nur, wer das Passwort der Registrierung kennt (vorbelegte Registrierungen)
+  await page.getByLabel(k.bestaetigen.passwort, { exact: true }).fill(PASSWORT);
   await page.getByRole('button', { name: k.bestaetigen.absenden }).click();
   await expect(page).toHaveURL(/\/anmelden\?hinweis=bestaetigt$/);
   await expect(page.getByText(k.hinweis.bestaetigt)).toBeVisible();

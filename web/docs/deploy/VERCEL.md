@@ -149,6 +149,7 @@ Die Datenbank ist PostgreSQL. Wir nutzen Neon über den Vercel Marketplace. Der 
 - **Aufwand:** 2 Minuten.
 - **Regel:** Die Datenbank liegt in Frankfurt, Region `aws-eu-central-1` (ADR 0018, Weg 1). **Die Region ist in der Vercel-Doku nicht belegt [prüfen]**: Wähle sie im Dialog und lies sie im Neon-Dashboard nach.
 - **Das siehst du, wenn es geklappt hat:** Die Datenbank ist im Projekt unter Storage aufgeführt, und die Region in Neon zeigt Frankfurt **[prüfen]**.
+- **Regel: PostgreSQL 17.** Beim Anlegen die Version 17 wählen und im Neon-Dashboard nachlesen (Docker-Image `postgres:17-alpine`, Sicherungs-Image `postgres:17.6-alpine`). Nicht älter: Der Bau spielt alle offenen Migrationen in einer Transaktion ein, und ab 0013 nutzen sie Werte des Typs `rolle`, die 0008 in derselben Transaktion ergänzt – PostgreSQL 16 bricht auf einer frischen Datenbank mit „unsafe use of new value … of enum type rolle“ ab (erlaubt erst ab 17, Release Notes 17, E.12.3.3; nachgestellt in Nacharbeit 2, P4). Nicht neuer, solange das Sicherungs-Image auf 17 steht: `pg_dump` sichert keinen Server mit höherer Hauptversion (`web/docs/BETRIEB.md` 6a).
 
 **2.2 Vorschau-Zweige anlegen lassen**
 

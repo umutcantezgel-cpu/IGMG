@@ -7,6 +7,7 @@ import kalender from '../../messages/bereiche/kalender.json';
 import newsletter from '../../messages/bereiche/newsletter.json';
 import ramadan from '../../messages/bereiche/ramadan.json';
 import spenden from '../../messages/bereiche/spenden.json';
+import { ALTCHA_MS } from './hilfen/altcha';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
@@ -183,7 +184,7 @@ test('Newsletter: Fehler mit Zusammenfassung, Erfolg ohne Auskunft; Meldung aus 
   await expect(page.getByRole('heading', { level: 1, name: n.titel, exact: true })).toBeVisible();
   const formular = page.locator('#anmelden form');
   await formular.getByLabel(/^E-Mail-Adresse/).fill('kein-at-zeichen');
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 30_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: n.senden }).click();
   const zusammenfassung = page.getByRole('alert').filter({ hasText: fo.zusammenfassung });
   await expect(zusammenfassung).toBeFocused();
@@ -193,7 +194,7 @@ test('Newsletter: Fehler mit Zusammenfassung, Erfolg ohne Auskunft; Meldung aus 
   await formular.getByLabel(/^E-Mail-Adresse/).fill(`testperson.${randomBytes(4).toString('hex')}@example.test`);
   await formular.getByRole('checkbox', { name: new RegExp(n.thema.ramadan) }).check();
   await formular.getByRole('checkbox', { name: /^Ich möchte den Newsletter/ }).check();
-  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: 30_000 });
+  await expect(formular.locator('input[name="altcha"]')).not.toHaveValue('', { timeout: ALTCHA_MS });
   await formular.getByRole('button', { name: n.senden }).click();
   await expect(page.getByRole('heading', { level: 2, name: n.erfolgTitel })).toBeVisible();
 
