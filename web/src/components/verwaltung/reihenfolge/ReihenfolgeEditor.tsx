@@ -6,6 +6,7 @@ import { useActionState, useEffect, useId, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { PILLE } from '@/components/verwaltung/seiten/Ansichten';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { fokussiereSichtbar, useLeistenAbstand } from '@/components/verwaltung/speicherleiste';
 import { cn } from '@/lib/utils';
 import type { ReihenfolgeZustand } from './typen';
 
@@ -14,9 +15,10 @@ type Aktion = (vorher: ReihenfolgeZustand, fd: FormData) => Promise<ReihenfolgeZ
 
 /**
  * Reihenfolge per Tastatur (F-40; Muster wie der Menü-Editor): „Nach oben“ und „Nach unten“ je Eintrag (48 px), der
- * Fokus bleibt am verschobenen Knopf (am Rand wechselt er auf den Gegenknopf), eine Live-Region sagt die neue Stelle
- * an. Kein Ziehen nötig. Optional je Eintrag „anzeigen“ (Startseite). Gespeichert wird erst mit „Speichern“: Die Liste
- * geht als JSON (Feld `ordnung`) an die Action, die sie erneut prüft. Texte aus dem Namensraum des Moduls.
+ * Fokus bleibt am verschobenen Knopf (am Rand wechselt er auf den Gegenknopf) und der Knopf bleibt über der klebenden
+ * Speicherleiste im Bild (`speicherleiste.ts`, WCAG 2.4.11), eine Live-Region sagt die neue Stelle an. Kein Ziehen
+ * nötig. Optional je Eintrag „anzeigen“ (Startseite). Gespeichert wird erst mit „Speichern“: Die Liste geht als JSON
+ * (Feld `ordnung`) an die Action, die sie erneut prüft. Texte aus dem Namensraum des Moduls.
  * Überschriften: Die Seite trägt die h1, der Editor eine h2 (nur für Screenreader) über der Liste, die Einträge h3 – so
  * springt die Folge nicht von h1 auf h3 (axe „heading-order“).
  */
@@ -54,31 +56,19 @@ export function ReihenfolgeEditor({
   useEffect(() => {
     if (zustand.fehler || zustand.gespeichert) meldungRef.current?.focus();
   }, [zustand]);
-  // Klebende Speicherleiste (WCAG 2.4.11): Solange der Editor steht, hält `scroll-padding-bottom` des Dokuments jedes
-  // fokussierte Element oberhalb der Leiste (gemessene Höhe plus Abstand) – wie die Speicherleiste im Seiten-Editor.
-  useEffect(() => {
-    const leiste = leisteRef.current;
-    if (!leiste) return;
-    const html = document.documentElement;
-    const vorher = html.style.scrollPaddingBottom;
-    const setze = () => {
-      html.style.scrollPaddingBottom = `calc(${Math.ceil(leiste.getBoundingClientRect().height)}px + var(--spacing) * 4)`;
-    };
-    setze();
-    const beobachter = new ResizeObserver(setze);
-    beobachter.observe(leiste);
-    return () => {
-      beobachter.disconnect();
-      html.style.scrollPaddingBottom = vorher;
-    };
-  }, []);
+  // Klebende Speicherleiste (WCAG 2.4.11): `scroll-padding-bottom` hält fokussierte Elemente über der Leiste
+  useLeistenAbstand(leisteRef);
+  // Nach dem Verschieben: Fokus am Knopf (am Rand auf dem Gegenknopf) und Knopf ganz ins Bild, über der Leiste
   useEffect(() => {
     const ziel = fokusZiel.current;
     if (!ziel) return;
     fokusZiel.current = null;
     const el = document.getElementById(ziel) as HTMLButtonElement | null;
-    if (el && !el.disabled) el.focus();
-    else document.getElementById(ziel.endsWith('-oben') ? ziel.replace(/-oben$/, '-unten') : ziel.replace(/-unten$/, '-oben'))?.focus();
+    fokussiereSichtbar(
+      el && !el.disabled
+        ? el
+        : document.getElementById(ziel.endsWith('-oben') ? ziel.replace(/-oben$/, '-unten') : ziel.replace(/-unten$/, '-oben')),
+    );
   }, [liste]);
 
   const bewege = (i: number, richtung: -1 | 1) => {

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useActionState, useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
+import { fokussiereSichtbar, useLeistenAbstand } from '@/components/verwaltung/speicherleiste';
 import { AuswahlFeld, TextFeld } from '@/components/verwaltung/seiten/felder';
 import type { ZielGruppen } from '@/components/verwaltung/seiten/typen';
 import { neueBlockId, type MehrsprachigText } from '@/lib/validierung/bloecke';
@@ -37,7 +38,8 @@ const mitUid = (p: MenuePunktWerte, k: number, g = 0): MenuePunktWerte => ({ ...
 
 /**
  * Menü-Editor (ADR 0032): Kopfmenü mit Gruppen und Einträgen, Fußmenü als Liste. Reihenfolge mit „Nach oben“ und
- * „Nach unten“ (Tastatur), Fokus bleibt am verschobenen Knopf, eine Live-Region sagt die neue Position an.
+ * „Nach unten“ (Tastatur), Fokus bleibt am verschobenen Knopf und über der klebenden Speicherleiste im Bild
+ * (`speicherleiste.ts`, WCAG 2.4.11), eine Live-Region sagt die neue Position an.
  * Die Einträge gehen als JSON an die Action, die mit demselben Schema prüft (`pruefeMenue`).
  */
 export function MenueEditor({
@@ -73,6 +75,7 @@ export function MenueEditor({
   // Fokusziel nach dem nächsten Zeichnen (Element-ID); in Ereignissen gesetzt, im Effekt gelesen
   const fokusZiel = useRef<string | null>(null);
   const meldungRef = useRef<HTMLDivElement>(null);
+  const leisteRef = useRef<HTMLDivElement>(null);
   const basis = useId();
   const kopf = schluessel === 'kopf';
   const fehler = zustand.feldFehler ?? {};
@@ -80,13 +83,19 @@ export function MenueEditor({
   useEffect(() => {
     if (zustand.fehler || zustand.gespeichert) meldungRef.current?.focus();
   }, [zustand]);
+  // Klebende Speicherleiste (WCAG 2.4.11): `scroll-padding-bottom` hält fokussierte Elemente über der Leiste
+  useLeistenAbstand(leisteRef);
+  // Nach dem Verschieben: Fokus am Knopf (am Rand auf dem Gegenknopf) und Knopf ganz ins Bild, über der Leiste
   useEffect(() => {
     const ziel = fokusZiel.current;
     if (!ziel) return;
     fokusZiel.current = null;
     const el = document.getElementById(ziel) as HTMLButtonElement | null;
-    if (el && !el.disabled) el.focus();
-    else document.getElementById(ziel.endsWith('-oben') ? ziel.replace(/-oben$/, '-unten') : ziel.replace(/-unten$/, '-oben'))?.focus();
+    fokussiereSichtbar(
+      el && !el.disabled
+        ? el
+        : document.getElementById(ziel.endsWith('-oben') ? ziel.replace(/-oben$/, '-unten') : ziel.replace(/-unten$/, '-oben')),
+    );
   }, [gruppen]);
 
   /** Element-ID eines Reihenknopfs („g:1:oben“, „p:0:2:unten“). */
@@ -419,7 +428,10 @@ export function MenueEditor({
           {t('gruppeHinzufuegen')}
         </Button>
       ) : null}
-      <div className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border">
+      <div
+        ref={leisteRef}
+        className="sticky bottom-0 z-(--ebene-kopf) -mx-4 flex flex-wrap items-center gap-3 border-t border-linie bg-papier px-4 py-3 shadow-s2 md:mx-0 md:rounded-lg md:border"
+      >
         <Button type="submit" size="lg" disabled={laeuft}>
           <Save aria-hidden />
           {laeuft ? t('speichert') : t('speichern')}

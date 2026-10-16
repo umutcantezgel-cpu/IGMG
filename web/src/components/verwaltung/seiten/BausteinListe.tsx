@@ -31,6 +31,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import type { BildAuswahl } from '@/components/verwaltung/richtext/typen';
 import { Klappe } from '@/components/verwaltung/Klappe';
+import { fokussiereSichtbar } from '@/components/verwaltung/speicherleiste';
 import { BLOCK_TYPEN, neuerBlock, uebersetzungsstand, type Block, type BlockTyp } from '@/lib/validierung/bloecke';
 import { cn } from '@/lib/utils';
 import { BausteinFelder, hatUebersetzbareTexte } from './BausteinFelder';
@@ -181,15 +182,15 @@ export function BausteinListe({
     fokusZiel.current = f ? (f.id === 'rueckgaengig' ? eid('rueckgaengig', 'knopf') : eid(f.id, f.ziel)) : null;
   };
 
-  // Fokus nach dem Neuzeichnen setzen (das Element existiert erst dann an der neuen Stelle). Ist der Knopf jetzt
-  // gesperrt (oben/unten am Rand), bekommt der Kopf des Bausteins den Fokus.
+  // Fokus nach dem Neuzeichnen setzen (das Element existiert erst dann an der neuen Stelle) und ganz ins Bild holen,
+  // über der Speicherleiste des Formulars (WCAG 2.4.11, `speicherleiste.ts`). Ist der Knopf jetzt gesperrt (oben/unten
+  // am Rand), bekommt der Kopf des Bausteins den Fokus.
   useEffect(() => {
     const ziel = fokusZiel.current;
     if (!ziel) return;
     fokusZiel.current = null;
     const el = document.getElementById(ziel) as HTMLButtonElement | null;
-    if (el && !el.disabled) el.focus();
-    else document.getElementById(ziel.replace(/-(oben|unten)$/, '-kopf'))?.focus();
+    fokussiereSichtbar(el && !el.disabled ? el : document.getElementById(ziel.replace(/-(oben|unten)$/, '-kopf')));
   }, [bloecke, entfernt]);
 
   const name = (b: Block, i: number) => t('bausteinName', { nr: i + 1, typ: t(`typ.${b.typ}.name`) });

@@ -1,8 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl';
 import type { ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ReihenfolgeEditor } from '@/components/verwaltung/reihenfolge/ReihenfolgeEditor';
+import { fokussiereSichtbar } from '@/components/verwaltung/speicherleiste';
 import startseite from '../../messages/verwaltung/startseite.json';
 import wissen from '../../messages/verwaltung/wissen.json';
 
@@ -59,5 +60,28 @@ describe('ReihenfolgeEditor: Überschriftenfolge', () => {
     );
     expect(ebenen(html)).toEqual([2, 3, 3]);
     expect(html).toContain(`>${wissen.wissen.editor.ueberschrift}</h2>`);
+  });
+});
+
+describe('fokussiereSichtbar (WCAG 2.4.11, Stufe-C-Nachprüfung 2 Z-07)', () => {
+  afterEach(() => vi.unstubAllGlobals());
+  const knopf = () => ({ focus: vi.fn(), scrollIntoView: vi.fn() });
+  const bewegung = (reduziert: boolean) =>
+    vi.stubGlobal('window', { matchMedia: (q: string) => ({ matches: reduziert && q === '(prefers-reduced-motion: reduce)' }) });
+
+  it('setzt den Fokus ohne Sprung und holt den Knopf mit „nearest“ ins Bild (achtet auf scroll-padding der Leiste)', () => {
+    bewegung(false);
+    const k = knopf();
+    expect(fokussiereSichtbar(k as unknown as HTMLElement)).toBe(true);
+    expect(k.focus).toHaveBeenCalledWith({ preventScroll: true });
+    expect(k.scrollIntoView).toHaveBeenCalledWith({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+  });
+
+  it('bei reduzierter Bewegung ohne weiches Scrollen; ohne Element nichts', () => {
+    bewegung(true);
+    const k = knopf();
+    fokussiereSichtbar(k as unknown as HTMLElement);
+    expect(k.scrollIntoView).toHaveBeenCalledWith({ block: 'nearest', inline: 'nearest', behavior: 'auto' });
+    expect(fokussiereSichtbar(null)).toBe(false);
   });
 });
