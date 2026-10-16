@@ -8,7 +8,7 @@ import proxy from '@/proxy';
  * Soft-404 der Konto-Seiten (Endprüfung Stufe C): Ohne Laufzeit-Datenbank bzw. mit `FUNKTION_KONTEN=aus` antwortete
  * /anmelden mit Status 200 und Nicht-gefunden-Inhalt, weil die teilweise vorgerenderte Seite den Status vor dem
  * `notFound()` im Layout festlegt. Der Proxy schreibt solche Anfragen jetzt auf die vorgerenderte 404-Seite der
- * Sprache um (echter Status 404, nachgewiesen gegen `next start` in scratchpad/na2-p3/soft404.log).
+ * Sprache um. Den echten Status 404 gegen `next start` ohne Datenbank prüft `tests/e2e/konten-ohne-datenbank.spec.ts`.
  */
 afterEach(() => {
   vi.unstubAllEnvs();
