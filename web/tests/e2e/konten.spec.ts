@@ -110,6 +110,8 @@ test('Gemeinde: registrieren → Adresse bestätigen (Mail) → anmelden → Mei
   await expect(page.getByRole('alert').filter({ hasText: /\S/ })).toContainText(k.anmelden.unbestaetigt);
 
   await page.goto(new URL(link).pathname + new URL(link).search);
+  // Seit S1 H-2 bestätigt nur, wer das Passwort der Registrierung kennt (vorbelegte Registrierungen)
+  await page.getByLabel(k.bestaetigen.passwort, { exact: true }).fill(PASSWORT);
   await page.getByRole('button', { name: k.bestaetigen.absenden }).click();
   await expect(page).toHaveURL(/\/anmelden\?hinweis=bestaetigt$/);
   await expect(page.getByText(k.hinweis.bestaetigt)).toBeVisible();

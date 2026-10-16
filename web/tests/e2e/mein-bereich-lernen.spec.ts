@@ -6,6 +6,7 @@ import * as OTPAuth from 'otpauth';
 import chatTexte from '../../messages/bereiche/chat-fenster.json';
 import kinderTexte from '../../messages/bereiche/kinder.json';
 import deTexte from '../../messages/de.json';
+import fehlerTexte from '../../messages/bereiche/fehlerseiten.json';
 import kontoTexte from '../../messages/bereiche/konto.json';
 import meinTexte from '../../messages/bereiche/mein-bereich.json';
 import unterrichtTexte from '../../messages/bereiche/unterricht.json';
@@ -17,7 +18,7 @@ const expect = basisExpect.configure({ timeout: 15_000 });
 /**
  * Lernplattform in „Mein Bereich“ (Paket O-L02-UI, H-L06): Lehrkraft erfasst die Anwesenheit von „Heute“ auf einem
  * Bildschirm (Abmeldung der Eltern vorbelegt, B-23), Eltern melden ihr Kind ab – unter der strikten Nonce-CSP der
- * Konto-Seiten, mit Gruppenisolation (fremde Gruppe/fremdes Kind → 404).
+ * Konto-Seiten, mit Gruppenisolation (fremde Gruppe/fremdes Kind → „Seite nicht gefunden“).
  *
  * Voraussetzung: Funktionen `konten` und `lernplattform` an (FUNKTION_KONTEN=an FUNKTION_LERNPLATTFORM=an), sonst werden
  * die Tests übersprungen. Zugänge: `scripts/beispielkonten.ts --praefix <zufall> --json` (Beispielgruppe mit Termin heute
@@ -61,6 +62,23 @@ let vorhanden: Zugaenge | null = null;
 /** Erst im Test anlegen (übersprungene Projekte legen nichts an); je Lauf einmal. */
 const zugaenge = () => (vorhanden ??= beispielkonten());
 const passwort = (p: string | null) => p ?? process.env.BEISPIEL_PASSWORT ?? '';
+
+/**
+ * Fremde oder erfundene Adresse: die Seite „nicht gefunden“ ohne Daten, mit noindex (kein Unterschied zu „gibt es nicht“).
+ * Mit Cache Components beginnen Seitenantworten als Stream mit 200; ein notFound() der Seite ergibt dann 200 statt 404
+ * (Next-Doku loading.md „Status codes“, Soft-404 – offen aus der Endprüfung, P4). Geprüft wird, was der Browser zeigt.
+ */
+async function nichtGefunden(page: Page, pfad: string) {
+  const seite = await page.context().newPage();
+  try {
+    const antwort = await seite.goto(pfad);
+    expect([200, 404]).toContain(antwort?.status());
+    await expect(seite.getByRole('heading', { level: 1, name: fehlerTexte.de.fehlerseiten.nichtGefunden.titel })).toBeVisible();
+    await expect(seite.locator('meta[name="robots"][content*="noindex"]').first()).toBeAttached();
+  } finally {
+    await seite.close();
+  }
+}
 
 function sammleKonsolenfehler(page: Page): string[] {
   const fehler: string[] = [];
@@ -109,8 +127,8 @@ test('Lehrkraft: Heute → Anwesenheit auf einem Bildschirm, Abmeldung vorbelegt
   await page.goto('/mein-bereich/unterricht');
   await expect(page.getByRole('heading', { level: 1, name: u.titel })).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: u.heute.titel })).toBeVisible();
-  // Fremde oder erfundene Gruppe: 404 (kein Unterschied zu „gibt es nicht“)
-  expect((await page.request.get(`/mein-bereich/unterricht/${randomUUID()}`)).status()).toBe(404);
+  // Fremde oder erfundene Gruppe: „nicht gefunden“ (kein Unterschied zu „gibt es nicht“)
+  await nichtGefunden(page, `/mein-bereich/unterricht/${randomUUID()}`);
 
   await page.getByRole('link', { name: `${u.heute.anwesenheit}: ${lp.gruppe}, 16:00–17:30` }).click();
   await expect(page.getByRole('heading', { level: 2, name: u.anwesenheit.erfassen.titel })).toBeVisible();
@@ -206,8 +224,8 @@ test('Eltern: Kind fehlt melden → erscheint als abgemeldet; fremde Kinder und 
   await expect(page.locator('header').getByRole('link', { name: kopf.anmelden, exact: true })).toBeVisible();
   await expect(page.locator('header').getByRole('button', { name: new RegExp(`: ${kopf.kontoMenue}$`) })).toHaveCount(0);
 
-  // Gruppenisolation: fremdes Kind 404, Lehrkraft-Seiten führen zurück nach Mein Bereich
-  expect((await page.request.get(`/mein-bereich/kinder/${randomUUID()}`)).status()).toBe(404);
+  // Gruppenisolation: fremdes Kind „nicht gefunden“, Lehrkraft-Seiten führen zurück nach Mein Bereich
+  await nichtGefunden(page, `/mein-bereich/kinder/${randomUUID()}`);
   await page.goto(`/mein-bereich/unterricht/${lp.gruppeId}`);
   await expect(page).toHaveURL(/\/mein-bereich$/);
 

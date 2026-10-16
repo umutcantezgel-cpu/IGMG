@@ -14,9 +14,15 @@ export async function eigeneAbsenderAdresse(page: Page) {
 
 /**
  * Legt per Einladung ein Testkonto an, richtet TOTP ein und meldet es an (G-04: nur Testdaten).
+ * `nachAnlegen` läuft nach dem Annehmen der Einladung und vor der ersten Anmeldung (z. B. Testdaten zur Rolle).
  * Ergebnis: angemeldete Seite auf /verwaltung.
  */
-export async function angemeldetesKonto(page: Page, rolle = 'administration', organisation?: string) {
+export async function angemeldetesKonto(
+  page: Page,
+  rolle = 'administration',
+  organisation?: string,
+  nachAnlegen?: (email: string) => Promise<void>,
+) {
   await eigeneAbsenderAdresse(page);
   const { email, token } = erzeugeEinladung(rolle, organisation);
   await page.goto(`/verwaltung/einladung/${token}`);
@@ -24,6 +30,7 @@ export async function angemeldetesKonto(page: Page, rolle = 'administration', or
   await page.getByLabel('Passwort wiederholen').filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Konto anlegen' }).click();
   await expect(page).toHaveURL(/\/verwaltung\/anmelden\?eingeladen=1$/);
+  if (nachAnlegen) await nachAnlegen(email);
   await page.getByLabel('E-Mail').filter({ visible: true }).fill(email);
   await page.getByLabel('Passwort', { exact: true }).filter({ visible: true }).fill(TESTPASSWORT);
   await page.getByRole('button', { name: 'Anmelden' }).click();

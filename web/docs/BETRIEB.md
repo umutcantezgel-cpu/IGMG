@@ -123,6 +123,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicheru
 - Dienste: `docker compose --profile entwicklung up -d db mailpit` (PostgreSQL 127.0.0.1:5432, Mailpit-Oberfläche 127.0.0.1:8025).
 - `pnpm dev` (Port 3000), `pnpm check`, `pnpm test:integration` (PGlite je Testdatei), `pnpm test:e2e` (eigene Datenbank `igmg_e2e`, wird je Lauf frisch angelegt), `pnpm messen` (Lighthouse mobil gegen einen laufenden Produktionsserver auf Port 3100).
 - Standalone-Server lokal: `pnpm build && PORT=3100 pnpm start:standalone` (setzt `HOSTNAME=0.0.0.0`, E-015).
+- Ohne Docker (PostgreSQL und Mailpit als Programme, auch PostgreSQL 16): `tests/e2e/LIESMICH.md` – E2E-Lauf und Wiederherstellungsprobe (`betrieb/lokal/sicherung/probe.sh`).
 
 ## 9 Betrieb auf Vercel (Services)
 
