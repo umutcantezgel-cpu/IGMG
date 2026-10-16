@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 16.10. 09:05 UTC:** Nacharbeit 2 zusammengeführt (P1 41e5985, P2 4325608 mit 0016 neu erzeugt, P3 05e3a31, P4 9c7e9f0,
+  Feinschliff 731e838/d5b2b76; alle Gegenprüfungen frei). Tor grün: Unit 1582, Integration 3265, E2E mit PostgreSQL/Mailpit
+  983 grün/0 rot, Sprachen, Religion, Wortlaut rc=0, Bau wie frischer Import 1887 (Sweep ohne 5xx, Crawl 1315 ohne Fehler,
+  Konto-Seiten 404), Vorschau 2228; Vercel-Preview 9c7e9f0 in beiden Projekten success. Nächster Schritt: Fast-Forward `main`,
+  Produktion prüfen, dann Stufe-C-Nachprüfung 2 (`scratchpad/stufe-c3.js`, args {scratchpad, stand}), ABNAHME/BERICHT,
+  ABSCHLUSS, CLAUDE.md-Block entfernen.
 - **Stand 16.10. 00:00 UTC:** Nacharbeit 2 brach am Sitzungslimit ab. P1 fertig 9089a8b (F-40, Migration 0015), P2 fertig
   d193c8a (F-38/F-44, Migration 0016 → beim Merge neu erzeugen), P3 ZWISCHENSTAND c7341a3, P4 ZWISCHENSTAND 29b9c7d (echte E2E
   Lauf 2: 967 grün, 10 rot; Patch next@16.4.0; Probe offen). Umgebung: `scratchpad/e2e-echt/start.sh` (PostgreSQL 16 unter
