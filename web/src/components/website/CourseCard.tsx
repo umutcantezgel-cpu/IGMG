@@ -157,7 +157,9 @@ export async function CourseCard({
             </ul>
           </div>
         ) : null}
-        {/* In der vollbreiten letzten Karte (768–1279 px) bleibt der Knopf so breit wie in den schmalen Karten */}
+        {/* In der vollbreiten letzten Karte (768–1279 px) bleibt der Knopf so breit wie in den schmalen Karten. Bricht die
+            Beschriftung um (390 px: „Für diesen Kurs voranmelden“), steht sie mittig in zwei ausgewogenen, engen Zeilen –
+            der Knopf bleibt 48 px hoch wie die einzeiligen. */}
         <div className="mt-auto pt-2 md:max-w-sm">
           {ziel ? (
             <Link
@@ -165,7 +167,7 @@ export async function CourseCard({
               aria-label={t('linkName', { aktion: aktionText, titel })}
               className={cn(
                 // Ganze Karte klickbar über den Pseudo-Bereich (wie EventCard); Rückmeldung B-01
-                'flex min-h-12 druck items-center justify-center gap-2 rounded-md px-5 font-bold no-underline transition duration-(--dauer-rueckmeldung) after:absolute after:inset-0 after:content-[""]',
+                'flex min-h-12 druck items-center justify-center gap-2 rounded-md px-5 text-center leading-tight font-bold text-balance no-underline transition duration-(--dauer-rueckmeldung) after:absolute after:inset-0 after:content-[""]',
                 zustand === 'register'
                   ? 'bg-gruen-700 text-weiss hover:bg-gruen-800 hover:text-weiss'
                   : 'border-2 border-gruen-700 bg-weiss text-gruen-800 hover:bg-gruen-50 hover:text-gruen-800',
@@ -178,7 +180,7 @@ export async function CourseCard({
             <button
               type="button"
               disabled
-              className="flex min-h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-md border border-dashed border-rand bg-sand px-5 font-bold text-tinte-2"
+              className="flex min-h-12 w-full cursor-not-allowed items-center justify-center gap-2 rounded-md border border-dashed border-rand bg-sand px-5 text-center leading-tight font-bold text-balance text-tinte-2"
             >
               <CircleX aria-hidden className="size-5" />
               {aktionText}

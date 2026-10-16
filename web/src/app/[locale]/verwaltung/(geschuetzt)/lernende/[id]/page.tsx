@@ -21,6 +21,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { datumLang, uhrzeit } from '@/lib/i18n/format';
 import { leseTextVersion } from '@/lib/konto/einwilligung';
+import { istDatum } from '@/lib/lernen/verwaltung';
 import { darf, verlangeSeitenRecht } from '@/lib/rechte/pruefe';
 import { elternBezugBeenden, gemeindeEinladen, gemeindeEinladungWiderrufen } from '@/server/actions/gemeinde-konten';
 import { mitgliedEntfernen, mitgliedHinzufuegen } from '@/server/actions/gruppen';
@@ -61,7 +62,12 @@ export default async function LernendeAnsehen({ params, searchParams }: PageProp
     [t('detail.nachname'), d.nachname],
     [
       t('detail.geburtsdatum'),
-      d.geburtsdatum ? `${datumLang(alsTag(d.geburtsdatum), 'de')}${alter !== null ? ` (${t('alter', { alter })})` : ''}` : leer,
+      // Nur ein gültiger Kalendertag wird formatiert; ein anderer gespeicherter Wert zeigt „unbekannt“ statt abzustürzen
+      d.geburtsdatum
+        ? istDatum(d.geburtsdatum)
+          ? `${datumLang(alsTag(d.geburtsdatum), 'de')}${alter !== null ? ` (${t('alter', { alter })})` : ''}`
+          : t('detail.datumUnbekannt')
+        : leer,
     ],
     [
       t('detail.geschlecht'),

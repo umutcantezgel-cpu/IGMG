@@ -104,11 +104,16 @@ async function erwachsen(art: string, name: string, rollen: Rolle[]) {
   return { email, id, passwort: pw };
 }
 
-/** Lerndatensatz (Personendaten verschlüsselt, fiktiv); vorhandene bleiben. */
+/**
+ * Lerndatensatz (Personendaten verschlüsselt, fiktiv); vorhandene bleiben. Das fiktive Geburtsdatum ist ein gültiger
+ * Kalendertag genau 16 Jahre vor `sechzehnAm` (wie `sechzehnAus` bei der Aufnahme) – ein Platzhaltertext ließ die
+ * Detailansicht in der Verwaltung abstürzen (Stufe-C-Nachprüfung 2).
+ */
 async function lernende(anzeigename: string, vorname: string, sechzehnAm: string): Promise<{ id: string; neu: boolean }> {
   const [vorhanden] = await db.select({ id: schema.lernende.id }).from(schema.lernende).where(eq(schema.lernende.anzeigename, anzeigename));
   if (vorhanden) return { id: vorhanden.id, neu: false };
-  const paket = verschluessele({ vorname, nachname: 'Beispiel', geburtsdatum: '[fiktiv]' });
+  const geburtsdatum = `${Number(sechzehnAm.slice(0, 4)) - 16}${sechzehnAm.slice(4)}`;
+  const paket = verschluessele({ vorname, nachname: 'Beispiel', geburtsdatum });
   const [z] = await db
     .insert(schema.lernende)
     .values({
