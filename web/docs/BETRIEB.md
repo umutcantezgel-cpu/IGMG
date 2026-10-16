@@ -99,11 +99,13 @@ CREATE ROLE igmg_sicherung LOGIN PASSWORD '<zufällig>';
 GRANT CONNECT ON DATABASE <datenbank> TO igmg_sicherung;
 GRANT USAGE ON SCHEMA public, drizzle TO igmg_sicherung;
 GRANT SELECT ON ALL TABLES IN SCHEMA public, drizzle TO igmg_sicherung;
-GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO igmg_sicherung;
+GRANT SELECT ON ALL SEQUENCES IN SCHEMA public, drizzle TO igmg_sicherung;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO igmg_sicherung;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON SEQUENCES TO igmg_sicherung;
 ```
 
-- `pg_dump` braucht SELECT auf alle Tabellen. Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
+- `pg_dump` braucht SELECT auf alle Tabellen und Sequenzen – auch auf `drizzle.__drizzle_migrations_id_seq`; ohne sie
+  bricht die Sicherung mit „permission denied for sequence“ ab (Wiederherstellungsprobe P4, Nacharbeit 2). Sitzungen, Einmal-Links und Ratenzähler (`session`, `verification`,
   `ratenbegrenzung`, `rate_limit`) sichert `sichern.sh` nur als Struktur, ohne Inhalt.
 - Einmal-Links (Passwort vergessen, Bestätigungen) stehen in `verification` nur als SHA-256 – wer die Leserolle kennt,
   kann damit kein Konto übernehmen. Sitzungs-Cookies sind mit `BETTER_AUTH_SECRET` signiert, das nur bei Vercel liegt.
