@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **Stand 16.10. 00:00 UTC:** Nacharbeit 2 brach am Sitzungslimit ab. P1 fertig 9089a8b (F-40, Migration 0015), P2 fertig
+  d193c8a (F-38/F-44, Migration 0016 → beim Merge neu erzeugen), P3 ZWISCHENSTAND c7341a3, P4 ZWISCHENSTAND 29b9c7d (echte E2E
+  Lauf 2: 967 grün, 10 rot; Patch next@16.4.0; Probe offen). Umgebung: `scratchpad/e2e-echt/start.sh` (PostgreSQL 16 unter
+  /var/lib/postgresql/igmg-e2e-echt, Mailpit). Läuft: Fortsetzungs-Workflow (P3/P4 fertigstellen, Gegenprüfung P1–P4). Danach
+  Merge P1→P2(0016 neu)→P3→P4, `pnpm install --frozen-lockfile`, Tor inkl. voller E2E, Preview-Deployments `success`, FF,
+  Stufe-C-Nachprüfung 2, ABSCHLUSS. Neu für die Unterlagen: Neon/Server mit PostgreSQL ≥ 17 (0013/0014 scheitern auf 16).
 - **Stand 15.10. 19:15 UTC:** Stufe-C-Nachprüfung auf 033ea6f: 12 erfüllt, 2 AUSNAHME, 7 teilweise
   (`berichte/stufe-c-nachpruefung.md`, ABNAHME nachgeführt; `main` = 06fcf03). Wortlaut G-06 erweitert → rc=0 (9757df3).
   Läuft: Workflow „nacharbeit-2“ `wf_68b411e9-63f` (Skript unter `~/.claude/projects/-home-user-IGMG-web/…/workflows/scripts/`):
