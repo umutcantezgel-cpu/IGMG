@@ -1,5 +1,14 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 16.10.2026 19:05 UTC:** Branch ddf3f38 (gepusht; `main` = e9aab6e). Erledigt seit 18:45: Belege S1/S6, S4, S5, S7
+  committet; Abhängigkeiten nach PLAN §12 gepinnt (8ba44d9, 1bff4d9: ts-fsrs, idb, fastest-levenshtein, noto-sans-arabic,
+  fast-check, fake-indexeddb); Spike-Entscheidungen S1/S4/S5/S6/S7 als „Fortschreibung“ in ADR 0037/0038/0039/0044/0045,
+  KERN §9 Budgets (eigener Anteil über Next-Grundstock; Spieler-Route ≤ 210 KB). Läuft: `wf_6a33ebb6-16f` (S2, S3, S8,
+  Recht, Gegenprüfung). **Danach:** Belege S2/S3/S8 + Rechtsentwürfe committen; ihre Entscheidungen in ADR 0042/0045/0040
+  übernehmen; Gegenprüfungsmängel beheben; ADR-Status „angenommen“; Tor L0 (Religion, Wortlaut, Unit); FF `main`; dann
+  PostgreSQL/Mailpit starten (`scratchpad/e2e-echt/start.sh`) und L1 per Workflow
+  `scratchpad/lernapp-l1.workflow.js` (Arbeitsbäume A = `agent-a212ace6…`, B = `agent-ac6673f9…`; Bau nur unter
+  `flock scratchpad/bau.lock`).
 - **Stand 16.10.2026 18:45 UTC:** `main` = e9aab6e. Workflow `wf_6a33ebb6-16f` brach am Sitzungslimit ab: fertig sind S1+S6
   (Code im Arbeitsbaum `agent-a212ace6…`, ZWISCHENSTAND b7cc3ad/072c65a), S4, S5 und S7; Belege dazu in `_lernapp/belege/`
   committet. Läuft: Fortsetzung desselben Workflows per `resumeFromRunId` (S2 Whisper, S3 Stimmen, S8 Quellen lokal,
