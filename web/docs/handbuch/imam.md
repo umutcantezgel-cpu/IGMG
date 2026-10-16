@@ -60,7 +60,7 @@ Die Warteschlange finden Sie unter Verwaltung → **„Freigaben“**. [Bildschi
 
 ### 4.1 Islamisches Wissen
 
-Unter Verwaltung → **„Islamisches Wissen“** stehen die Themen der Seite „Islamisches Wissen“. [Bildschirmfoto folgt] Pflegen dürfen sie die Redaktion und Sie (Rolle „religiöse Prüfung“); freigeben dürfen nur Sie – und nur unter **„Freigaben“**.
+Unter Verwaltung → **„Islamisches Wissen“** stehen die Themen der Seite „Islamisches Wissen“. [Bildschirmfoto folgt] Pflegen dürfen sie die Redaktion und Sie (Rolle „religiöse Prüfung“). **Freigeben** darf, wer das Recht zur religiösen Freigabe hat: Sie mit der Rolle „religiöse Prüfung“ – und technisch auch die **Administration**, weil sie in der Verwaltung alle Rechte hat (außer den Chat-Meldungen). Für beide gilt das Vier-Augen-Prinzip: Wer ein Thema zuletzt verfasst oder geändert hat, kann es nicht selbst freigeben. Freigegeben wird nur unter **„Freigaben“**. Vereinbaren Sie mit dem Vorstand, dass religiöse Inhalte nur Imam oder Hoca freigeben (MENSCHEN MN-20, MN-24).
 
 1. **„Neues Thema“**: Adresse (Kurzname, zum Beispiel „testthema“; später nicht mehr änderbar), **Titel**, **Kurztext** und **Einführung** auf Deutsch, unter „Übersetzungen“ Türkisch und Englisch. Der **Übersetzungsstand** steht beim Thema („Türkisch: 2 von 3“).
 2. **„Speichern“** behält einen Entwurf. **„Speichern und zur Prüfung geben“** legt das Thema in die Warteschlange „Freigaben“. Dort sehen Sie Titel, Kurztext und Einführung in **allen Sprachen**.
@@ -69,7 +69,7 @@ Unter Verwaltung → **„Islamisches Wissen“** stehen die Themen der Seite �
 5. Beim **Zurückweisen** steht Ihr Kommentar beim Thema („Rückmeldung der Prüfung“), damit die verfassende Person weiß, was zu ändern ist.
 6. **Frühere Fassungen** lassen sich ansehen und zurückholen; das gilt als Änderung und geht wieder in die Prüfung. Gelöscht wird ein Thema nur aus dem **Papierkorb** und nach einer Rückfrage.
 
-**Bestand:** Die zwölf Themen, die vor dieser Verwaltung schon auf der Website standen, bleiben öffentlich. Sie sind als „geprüft“ übernommen, aber **ohne Prüfperson** und mit dem Vermerk „Bestand, nicht einzeln geprüft“ (auch im Verlauf unter „Freigaben“). Bitte sehen Sie sie durch; wenn Sie etwas ändern wollen, ändern Sie es – das Thema geht dann wie jede Änderung an eine zweite Person.
+**Bestand:** Die zwölf Themen, die vor dieser Verwaltung schon auf der Website standen, bleiben öffentlich. Sie sind als „geprüft“ übernommen, aber **ohne Prüfperson** und mit dem Vermerk „Bestand, nicht einzeln geprüft“ (auch im Verlauf unter „Freigaben“). Bitte sehen Sie sie durch und bestätigen Sie den Bestand (MENSCHEN MN-28); wenn Sie etwas ändern wollen, ändern Sie es – das Thema geht dann wie jede Änderung an eine zweite Person.
 
 **Übersetzungsausgaben** (Aufgabe MN-02): Übergangsweise sind importiert, aber **nicht aktiv**: Bubenheim (de), Diyanet (tr) und Sahih (en) von Tanzil. Für Diyanet und Saheeh International liegen die Rechte bei den Herausgebern. Entscheiden Sie mit dem Irşad, welche Ausgabe die Gemeinde zeigt, und **aktivieren** Sie nur diese. Die Quelle und die Lizenz stehen danach unter `/quellen`.
 
