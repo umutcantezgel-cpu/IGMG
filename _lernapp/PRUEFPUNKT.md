@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 16.10.2026 15:15 UTC:** `main` = 5a41a56 (Werkstatt + ADR 0037–0045). Läuft: Workflow „lernapp-l0-spikes“
+  `wf_6a33ebb6-16f` (S1+S6 Code im Arbeitsbaum `agent-a212ace6…`, S4/S5 Recherche, S2 Whisper, S7 Sprachdaten, S3 Stimmen, S8
+  Quellen lokal, Rechtsentwürfe; danach Gegenprüfung). Nach Abbruch: Arbeitsbaum als ZWISCHENSTAND committen, Workflow mit
+  `resumeFromRunId` fortsetzen. Danach: Belege committen, Entscheidungen in die ADRs, Tor L0, FF `main`, L1.
 - **Stand 16.10.2026 15:05 UTC – L0 Grundlagen läuft.** `main` = f2dc1a1 (ABSCHLUSS Gemeinde-Plattform, 21/21).
   - **Erledigt in L0:** Werkstatt `_lernapp/` übernommen (AUFTRAG, KERN 4.0, PLAN, ABNAHME Z-L01…Z-L22, MENSCHEN LM-01…LM-36,
     ENTSCHEIDUNGEN L3-E01…L3-E12, STATUS); Berichte `berichte/plan-2026-10-16.md`, `plan-verfeinerung-2026-10-16.md`,
