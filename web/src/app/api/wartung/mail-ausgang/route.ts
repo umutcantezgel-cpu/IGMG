@@ -15,7 +15,7 @@ const MAIL_JE_LAUF = 20;
  * damit der Lauf kurz bleibt. Was nicht hinausgeht, versendet der nächste Lauf (der Empfänger wird dann neu geprüft).
  * Bewusste Grenze (ADR 0034 Nr. 6): Mit nur dem täglichen Vercel-Lauf wartet ein Rest über 100 Mails (20 + 80) bis zum
  * nächsten Tag; dieser Lauf plant dann für dieselbe Person schon die neue Zusammenfassung, sie bekommt an dem Tag zwei.
- * Für die Größe der Gemeinde nicht zu erwarten; mit dem lokalen Takt (alle 5 Minuten) geht der Rest sofort hinaus.
+ * Für die Größe der Gemeinde nicht zu erwarten; mit dem lokalen Takt (alle 5 Minuten) geht der Rest in den Folgeläufen hinaus – je Lauf höchstens MAIL_JE_LAUF, geteilt mit den übrigen offenen Mails.
  */
 const ZUSAMMENFASSUNGEN_JE_LAUF = 80;
 

@@ -124,11 +124,26 @@ export default async function WissenRevisionen({ params, searchParams }: PagePro
                   {t(`revision.sprache.${s}`)}
                 </h3>
                 {titel || kurztext || doc ? (
-                  <div lang={s} className="flex flex-col gap-3">
-                    {titel ? <p className="font-display text-24 font-semibold">{titel}</p> : null}
-                    {kurztext ? <p className="text-18 text-tinte-2">{kurztext}</p> : null}
-                    {doc ? <RichText doc={doc} /> : null}
-                  </div>
+                  <>
+                    <div lang={s} className="flex flex-col gap-3">
+                      {titel ? <p className="font-display text-24 font-semibold">{titel}</p> : null}
+                      {kurztext ? <p className="text-18 text-tinte-2">{kurztext}</p> : null}
+                      {doc ? <RichText doc={doc} /> : null}
+                    </div>
+                    {!titel || !kurztext || !doc ? (
+                      <p className="text-16 text-tinte-2">
+                        {t('revision.spracheTeilweise', {
+                          felder: [
+                            !titel && t('revision.feld.titel'),
+                            !kurztext && t('revision.feld.kurztext'),
+                            !doc && t('revision.feld.einfuehrung'),
+                          ]
+                            .filter(Boolean)
+                            .join(', '),
+                        })}
+                      </p>
+                    ) : null}
+                  </>
                 ) : (
                   <p className="text-16 text-tinte-2">{t('revision.spracheLeer')}</p>
                 )}
