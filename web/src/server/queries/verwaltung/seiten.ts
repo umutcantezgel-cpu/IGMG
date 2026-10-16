@@ -115,12 +115,34 @@ export async function ladeAndereSlugs(ohneId?: string): Promise<SeitenSlugs[]> {
   return zeilen;
 }
 
-export type RevisionsZeile = { id: string; erstelltAm: Date; von: string | null; kommentar: string | null };
+/**
+ * Eine Zeile der Liste „Frühere Fassungen“. `titelDe` und `bausteine` liest die Datenbank aus der Momentaufnahme – nur
+ * wenn sie die erwartete Form haben, sonst `null` (alte oder fremde Fassungen lassen die Liste nicht abstürzen, Z-18).
+ */
+export type RevisionsZeile = {
+  id: string;
+  erstelltAm: Date;
+  von: string | null;
+  kommentar: string | null;
+  titelDe: string | null;
+  bausteine: number | null;
+};
 
 export async function ladeRevisionen(inhaltTyp: string, inhaltId: string): Promise<RevisionsZeile[]> {
   const r = schema.revision;
   return db
-    .select({ id: r.id, erstelltAm: r.erstelltAm, von: schema.user.name, kommentar: r.kommentar })
+    .select({
+      id: r.id,
+      erstelltAm: r.erstelltAm,
+      von: schema.user.name,
+      kommentar: r.kommentar,
+      titelDe: sql<
+        string | null
+      >`case when jsonb_typeof(${r.inhalt} -> 'titel' -> 'de') = 'string' then ${r.inhalt} -> 'titel' ->> 'de' end`,
+      bausteine: sql<
+        number | null
+      >`case when jsonb_typeof(${r.inhalt} -> 'bloecke') = 'array' then jsonb_array_length(${r.inhalt} -> 'bloecke') end`,
+    })
     .from(r)
     .leftJoin(schema.user, eq(schema.user.id, r.erstelltVon))
     .where(and(eq(r.inhaltTyp, inhaltTyp), eq(r.inhaltId, inhaltId)))

@@ -14,9 +14,22 @@ import { revisionWiederherstellen } from '@/server/actions/seiten';
 import { seiteMitMedien } from '@/server/queries/seiten';
 import { ladeRevision, ladeRevisionen, ladeSeiteFuerVerwaltung } from '@/server/queries/verwaltung/seiten';
 
+type Momentaufnahme = { titel?: unknown; beschreibung?: unknown; bloecke?: unknown };
+
+/** Momentaufnahme einer Fassung als Objekt; alles andere (alte oder beschädigte Fassung) ergibt `{}` statt eines Absturzes. */
+const inhaltVon = (inhalt: unknown): Momentaufnahme =>
+  inhalt !== null && typeof inhalt === 'object' && !Array.isArray(inhalt) ? (inhalt as Momentaufnahme) : {};
+
+/** Mehrsprachiger Text mit deutschem Wortlaut, sonst null. */
+function mehrsprachig<T extends { de: string }>(wert: unknown): T | null {
+  return wert !== null && typeof wert === 'object' && typeof (wert as { de?: unknown }).de === 'string' ? (wert as T) : null;
+}
+
 /**
  * Verwaltung › Seite › Frühere Fassungen (ADR 0032): die letzten 30 Revisionen mit Zeit und Person; jede lässt sich
- * ansehen (gerenderte Bausteine) und zurückholen. Die neueste ist die aktuelle Fassung.
+ * ansehen (gerenderte Bausteine) und zurückholen. Die neueste ist die aktuelle Fassung. Titel und Zahl der Bausteine je
+ * Zeile kommen aus der Liste (`ladeRevisionen`), die gewählte Fassung aus `ladeRevision` (Z-18: früher las jede nicht
+ * angesehene Zeile `null` und die Seite stürzte ab, sobald es eine Fassung gab).
  */
 export default async function SeitenRevisionen({ params, searchParams }: PageProps<'/[locale]/verwaltung/seiten/[id]/revisionen'>) {
   const a = await verlangeSeitenRecht('seite.lesen');
@@ -32,7 +45,7 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
   const gewaehlt = typeof sp.r === 'string' ? await ladeRevision(sp.r) : null;
   const ansicht = gewaehlt && gewaehlt.inhaltTyp === 'seite' && gewaehlt.inhaltId === z.id ? gewaehlt : null;
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
-  const inhaltVon = (inhalt: unknown) => inhalt as { titel?: { de?: string }; beschreibung?: unknown; bloecke?: unknown };
+  const fassung = ansicht ? inhaltVon(ansicht.inhalt) : null;
 
   return (
     <>
@@ -61,57 +74,55 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
               </tr>
             </thead>
             <tbody>
-              {liste.map((r, i) => {
-                const inhalt = inhaltVon(ansicht?.id === r.id ? ansicht.inhalt : null);
-                return (
-                  <tr key={r.id} className={`border-t border-linie align-middle ${ansicht?.id === r.id ? 'bg-gruen-50' : ''}`}>
-                    <th scope="row" className="px-4 py-3 font-bold tabular-nums">
-                      {zeit(r.erstelltAm)}
-                      {i === 0 ? (
-                        <span className="ml-2 rounded-pill bg-gruen-50 px-3 py-0.5 text-16 text-gruen-800">{t('revision.aktuell')}</span>
-                      ) : null}
-                    </th>
-                    <td className="px-4 py-3">{r.von ?? t('revision.unbekannt')}</td>
-                    <td className="px-4 py-3 text-16 text-tinte-2">
-                      {r.kommentar === 'wiederhergestellt' ? t('revision.wiederhergestelltVermerk') : null}
-                      {inhalt.titel?.de ? <span className="block">{inhalt.titel.de}</span> : null}
-                    </td>
-                    <td className="px-4 py-3">
-                      <div className="flex flex-wrap gap-2">
-                        <Button asChild variant="outline" size="sm" className="min-h-12">
-                          <NextLink
-                            href={`/verwaltung/seiten/${z.id}/revisionen?r=${r.id}#ansicht`}
-                            aria-label={t('revision.ansehen', { zeit: zeit(r.erstelltAm) })}
+              {liste.map((r, i) => (
+                <tr key={r.id} className={`border-t border-linie align-middle ${ansicht?.id === r.id ? 'bg-gruen-50' : ''}`}>
+                  <th scope="row" className="px-4 py-3 font-bold tabular-nums">
+                    {zeit(r.erstelltAm)}
+                    {i === 0 ? (
+                      <span className="ml-2 rounded-pill bg-gruen-50 px-3 py-0.5 text-16 text-gruen-800">{t('revision.aktuell')}</span>
+                    ) : null}
+                  </th>
+                  <td className="px-4 py-3">{r.von ?? t('revision.unbekannt')}</td>
+                  <td className="px-4 py-3 text-16 text-tinte-2">
+                    {r.kommentar === 'wiederhergestellt' ? <span className="block">{t('revision.wiederhergestelltVermerk')}</span> : null}
+                    {r.titelDe ? <span className="block font-bold text-tinte">{r.titelDe}</span> : null}
+                    {r.bausteine !== null ? <span className="block">{t('revision.bausteine', { anzahl: r.bausteine })}</span> : null}
+                  </td>
+                  <td className="px-4 py-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Button asChild variant="outline" size="sm" className="min-h-12">
+                        <NextLink
+                          href={`/verwaltung/seiten/${z.id}/revisionen?r=${r.id}#ansicht`}
+                          aria-label={t('revision.ansehen', { zeit: zeit(r.erstelltAm) })}
+                        >
+                          <Eye aria-hidden />
+                          {t('revision.ansehenKurz')}
+                        </NextLink>
+                      </Button>
+                      {darfZurueck && i > 0 ? (
+                        <form action={revisionWiederherstellen}>
+                          <input type="hidden" name="revisionId" value={r.id} />
+                          <Button
+                            type="submit"
+                            variant="secondary"
+                            size="sm"
+                            className="min-h-12"
+                            aria-label={t('revision.wiederherstellenName', { zeit: zeit(r.erstelltAm) })}
                           >
-                            <Eye aria-hidden />
-                            {t('revision.ansehenKurz')}
-                          </NextLink>
-                        </Button>
-                        {darfZurueck && i > 0 ? (
-                          <form action={revisionWiederherstellen}>
-                            <input type="hidden" name="revisionId" value={r.id} />
-                            <Button
-                              type="submit"
-                              variant="secondary"
-                              size="sm"
-                              className="min-h-12"
-                              aria-label={t('revision.wiederherstellenName', { zeit: zeit(r.erstelltAm) })}
-                            >
-                              <RotateCcw aria-hidden />
-                              {t('revision.wiederherstellen')}
-                            </Button>
-                          </form>
-                        ) : null}
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
+                            <RotateCcw aria-hidden />
+                            {t('revision.wiederherstellen')}
+                          </Button>
+                        </form>
+                      ) : null}
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </TabellenRahmen>
       )}
-      {ansicht ? (
+      {ansicht && fassung ? (
         <section id="ansicht" aria-labelledby="ansicht-titel" className="flex flex-col gap-3">
           <h2 id="ansicht-titel" className="font-display text-24 font-semibold">
             {t('revision.ansichtTitel', { zeit: zeit(ansicht.erstelltAm) })}
@@ -123,9 +134,9 @@ export default async function SeitenRevisionen({ params, searchParams }: PagePro
               sprache="de"
               seite={await seiteMitMedien({
                 ...z,
-                titel: (inhaltVon(ansicht.inhalt).titel as typeof z.titel | undefined) ?? z.titel,
-                beschreibung: (inhaltVon(ansicht.inhalt).beschreibung as typeof z.beschreibung | undefined) ?? null,
-                bloecke: gueltigeBloecke(inhaltVon(ansicht.inhalt).bloecke),
+                titel: mehrsprachig<typeof z.titel>(fassung.titel) ?? z.titel,
+                beschreibung: mehrsprachig<NonNullable<typeof z.beschreibung>>(fassung.beschreibung),
+                bloecke: gueltigeBloecke(fassung.bloecke),
               })}
             />
           </div>

@@ -18,10 +18,18 @@ import { ladeWissensThemaVerwaltung } from '@/server/queries/verwaltung/wissen';
 
 const SPRACHEN = ['de', 'tr', 'en'] as const;
 type Sprache = (typeof SPRACHEN)[number];
-type Fassung = {
-  titel?: Partial<Record<Sprache, string>>;
-  kurztext?: Partial<Record<Sprache, string>> | null;
-  inhalt?: Partial<Record<Sprache, JSONContent>> | null;
+type Fassung = { titel?: unknown; kurztext?: unknown; inhalt?: unknown };
+
+/** Wert eines Felds in einer Sprache: nur Text bzw. ein Tiptap-Dokument zählt, alles andere gilt als fehlend (Z-18). */
+const objekt = (w: unknown): Record<string, unknown> | null =>
+  w !== null && typeof w === 'object' && !Array.isArray(w) ? (w as Record<string, unknown>) : null;
+const textIn = (feld: unknown, s: Sprache) => {
+  const w = objekt(feld)?.[s];
+  return typeof w === 'string' && w ? w : null;
+};
+const dokumentIn = (feld: unknown, s: Sprache) => {
+  const w = objekt(objekt(feld)?.[s]);
+  return w && w.type === 'doc' ? (w as JSONContent) : null;
 };
 
 /**
@@ -43,7 +51,8 @@ export default async function WissenRevisionen({ params, searchParams }: PagePro
   const ansicht = gewaehlt && gewaehlt.inhaltTyp === 'wissen_thema' && gewaehlt.inhaltId === z.id ? gewaehlt : null;
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
   const darfZurueck = !z.imPapierkorbSeit;
-  const fassung = ansicht ? (ansicht.inhalt as Fassung) : null;
+  // Alte oder beschädigte Fassungen (kein Objekt) zeigen die Hinweise „fehlt“ statt abzustürzen
+  const fassung: Fassung | null = ansicht ? (objekt(ansicht.inhalt) ?? {}) : null;
 
   return (
     <>
@@ -111,9 +120,9 @@ export default async function WissenRevisionen({ params, searchParams }: PagePro
           </h2>
           <Meldung art="info">{t('revision.ansichtHinweis')}</Meldung>
           {SPRACHEN.map((s) => {
-            const titel = fassung.titel?.[s];
-            const kurztext = fassung.kurztext?.[s];
-            const doc = fassung.inhalt?.[s];
+            const titel = textIn(fassung.titel, s);
+            const kurztext = textIn(fassung.kurztext, s);
+            const doc = dokumentIn(fassung.inhalt, s);
             return (
               <section
                 key={s}

@@ -72,6 +72,13 @@ Hinweise:
 - Mit Cache Components antworten Seiten als Stream mit 200; ein `notFound()` mitten im Stream bleibt bei 200 mit
   `noindex` (Next-Doku „Streaming“, Abschnitt Status codes). Die Specs prüfen deshalb, was der Browser zeigt
   („Seite nicht gefunden“, `noindex`), nicht den Statuscode.
+- Dasselbe gilt für Fehler und Weiterleitungen in der Verwaltung: Ihre Seiten sind teilweise vorgerendert (◐ im Bau,
+  Antwortkopf `x-nextjs-postponed: 1`). Status 200 und Kopfzeilen gehen mit der statischen Hülle hinaus, bevor Sitzung
+  und Daten gelesen sind. Ein Fehler beim Rendern erscheint danach als Fehlergrenze „Ein Fehler ist aufgetreten“ – mit
+  HTTP 200 (Next-Doku `node_modules/next/dist/docs/01-app/02-guides/streaming.md`, „Error handling mid-stream“ und
+  „The HTTP contract“; `03-api-reference/03-file-conventions/loading.md`, „Status codes“). Auch die Weiterleitung ohne
+  Anmeldung kommt im Stream (`NEXT_REDIRECT`), nicht als 307 (Nacharbeit 3, gemessen am Standalone-Bau). Ein Absturz
+  fällt deshalb nur am sichtbaren Inhalt auf, nicht am Statuscode – Specs prüfen Überschriften und Inhalte.
 
 ## 3 Wiederherstellungsprobe (`betrieb/lokal/sicherung`)
 

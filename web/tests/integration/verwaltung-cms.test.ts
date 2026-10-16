@@ -1,4 +1,4 @@
-import { and, eq } from 'drizzle-orm';
+import { and, eq, sql } from 'drizzle-orm';
 import { afterAll, describe, expect, it } from 'vitest';
 import { schema } from '@/lib/db';
 import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
@@ -16,7 +16,7 @@ const { speichereMenue, menueZuruecksetzen } = await import('@/server/actions/me
 const { entscheideFreigabe } = await import('@/server/actions/freigaben');
 const { ladeSeite, ladeWeiterleitung } = await import('@/server/queries/seiten');
 const { ladeFussMenue, ladeKopfMenue } = await import('@/server/queries/menues');
-const { ladeSeitenListe } = await import('@/server/queries/verwaltung/seiten');
+const { ladeRevisionen, ladeSeitenListe } = await import('@/server/queries/verwaltung/seiten');
 const { ladeWarteschlange } = await import('@/server/queries/verwaltung/freigaben');
 const { REVISIONEN_JE_INHALT } = await import('@/lib/cms/revision');
 const { hashVonToken } = await import('@/lib/cms/vorschau');
@@ -99,6 +99,27 @@ describe('Seiten: Rechte, Revisionen, Veröffentlichung', () => {
     expect((await zeile(id)).titel.de).toBe('CMS Alt');
     expect(await revisionen(id)).toHaveLength(3);
     expect(await auditAktionen(id)).toContain('inhalt.revision_wiederhergestellt');
+  });
+
+  it('Liste „Frühere Fassungen“ (Z-18): Titel und Zahl der Bausteine je Fassung; andere Formen ergeben null statt Absturz', async () => {
+    await alsRedaktion();
+    const id = await anlegen({ titelDe: 'CMS Liste', slugDe: 'cms-liste' });
+    expect(
+      await speichereSeite(
+        {},
+        formular({ id, titelDe: 'CMS Liste 2', bloecke: bloecke(textBlock('einleitung', 'A'), textBlock('zweiter', 'B')) }),
+      ),
+    ).toMatchObject({ gespeichert: expect.any(Number) });
+    // Fremde bzw. alte Momentaufnahmen: kein Objekt, Titel ohne Deutsch, Bausteine kein Array
+    for (const inhalt of [sql`'null'::jsonb`, 'Text', [1, 2], { titel: { tr: 'Başlık' }, bloecke: { a: 1 } }, { titel: { de: 7 } }])
+      await db.insert(schema.revision).values({ inhaltTyp: 'seite', inhaltId: id, inhalt, erstelltAm: new Date('2026-01-01T00:00:00Z') });
+    const liste = await ladeRevisionen('seite', id);
+    expect(liste).toHaveLength(7);
+    expect(liste.slice(0, 2).map((r) => [r.titelDe, r.bausteine])).toEqual([
+      ['CMS Liste 2', 2],
+      ['CMS Liste', 1],
+    ]);
+    expect(liste.slice(2).map((r) => [r.titelDe, r.bausteine])).toEqual(Array.from({ length: 5 }, () => [null, null]));
   });
 
   it('Veröffentlichen macht die Seite öffentlich (je Sprache mit Rückfall und eigenem Slug), Papierkorb nimmt sie weg', async () => {

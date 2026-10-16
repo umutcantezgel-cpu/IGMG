@@ -1,12 +1,33 @@
 import { randomBytes } from 'node:crypto';
+import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
+import seitenTexte from '../../messages/verwaltung/seiten.json';
 import { angemeldetesKonto } from './hilfen/konto';
 
 /**
- * CMS (ADR 0032): Seite im Editor anlegen und veröffentlichen → öffentlich unter ihrer Adresse; Menüeintrag im Fuß
- * (Schnellzugriff) → erscheint auf der Website; Weiterleitung alte → neue Adresse. Nur Desktop (Anmelde-Ratenlimit).
- * Am Ende wird das Standardmenü wiederhergestellt, damit andere Prüfungen den Bestand sehen.
+ * CMS (ADR 0032): Seite im Editor anlegen und veröffentlichen → öffentlich unter ihrer Adresse; zweite Fassung
+ * speichern, „Frühere Fassungen“ öffnen, die erste ansehen und zurückholen → öffentlich wieder die erste (Z-18);
+ * Menüeintrag im Fuß (Schnellzugriff) → erscheint auf der Website; Weiterleitung alte → neue Adresse. Nur Desktop
+ * (Anmelde-Ratenlimit). Am Ende wird das Standardmenü wiederhergestellt, damit andere Prüfungen den Bestand sehen.
  */
+const st = seitenTexte.seiten;
+const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
+
+/** ICU-Mehrzahl „other“ eines Texts mit Zahl, z. B. „{anzahl, plural, one {# Baustein} other {# Bausteine}}“ → „2 Bausteine“. */
+const mehrzahl = (text: string, n: number) => (/other \{([^}]*)\}/.exec(text)?.[1] ?? text).replace('#', String(n));
+
+/** axe (WCAG 2.2 AA) auf der geladenen Seite: Regel und erste Ziele je Befund, erwartet keiner. */
+async function axeBefunde(page: Page): Promise<string[]> {
+  const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+  return ergebnis.violations.map(
+    (v) =>
+      `${v.id} (${v.impact}): ${v.nodes
+        .slice(0, 3)
+        .map((n) => n.target.join(' '))
+        .join(' ; ')}`,
+  );
+}
+
 async function oeffentlichBis(page: Page, pfad: string, pruefe: () => Promise<void>) {
   await expect(async () => {
     await page.goto(pfad);
@@ -51,6 +72,7 @@ test('Seite anlegen und veröffentlichen, Menüeintrag und Weiterleitung erschei
   await page.getByText('Veröffentlichen', { exact: true }).click();
   await page.getByRole('button', { name: 'Seite anlegen', exact: true }).click();
   await expect(page).toHaveURL(/\/verwaltung\/seiten\/[0-9a-f-]{36}\?angelegt=1/);
+  const id = /\/verwaltung\/seiten\/([0-9a-f-]{36})/.exec(page.url())?.[1] ?? '';
   await expect(
     page.getByText('Gespeichert und veröffentlicht. Die Seite ist jetzt auf der Website zu sehen.', { exact: true }),
   ).toBeVisible();
@@ -60,6 +82,64 @@ test('Seite anlegen und veröffentlichen, Menüeintrag und Weiterleitung erschei
     await expect(page.getByText(absatz)).toBeVisible({ timeout: 1000 });
     await expect(page.getByText('Fiktive Frage?')).toBeVisible({ timeout: 1000 });
   });
+
+  // Zweite Fassung: Titel ändern und veröffentlicht speichern → öffentlich der neue Titel
+  const titel2 = `Zweite Fassung ${hex}`;
+  await page.goto(`/verwaltung/seiten/${id}`);
+  // Bausteine sind beim Bearbeiten zugeklappt; aufgeklappt = Formular ist hydriert (erneut klicken, falls noch nicht)
+  const frage = page.getByLabel('Frage (Pflichtfeld)');
+  await expect(async () => {
+    if (!(await frage.isVisible())) await page.getByRole('button', { name: /^1 · / }).click();
+    await expect(frage).toBeVisible({ timeout: 1000 });
+  }).toPass({ timeout: 15_000, intervals: [500, 1000, 2000] });
+  await page.getByLabel(`${st.formular.titel} (Pflichtfeld)`).fill(titel2);
+  await page.getByRole('button', { name: st.formular.speichern, exact: true }).click();
+  await expect(
+    page
+      .getByText(st.hinweis.veroeffentlicht, { exact: true })
+      .or(page.getByText(st.gespeichert, { exact: true }))
+      .first(),
+  ).toBeVisible();
+  await oeffentlichBis(page, `/${slug}`, async () => {
+    await expect(page.getByRole('heading', { level: 1, name: titel2 })).toBeVisible({ timeout: 1000 });
+  });
+
+  // Frühere Fassungen (Z-18): Liste mit Titel und Bausteinen je Fassung, die erste ansehen und zurückholen
+  await page.goto(`/verwaltung/seiten/${id}`);
+  await page.getByRole('link', { name: st.revisionen, exact: true }).click();
+  await expect(page).toHaveURL(new RegExp(`/verwaltung/seiten/${id}/revisionen$`));
+  const revisionen = page.url();
+  await expect(page.getByRole('heading', { level: 1, name: st.revision.titel })).toBeVisible();
+  const zeilen = page.locator('table tbody tr');
+  await expect(zeilen).toHaveCount(2);
+  await expect(zeilen.nth(0)).toContainText(titel2);
+  await expect(zeilen.nth(0)).toContainText(st.revision.aktuell);
+  const erste = zeilen.nth(1);
+  await expect(erste).toContainText(titel);
+  await expect(erste).toContainText(mehrzahl(st.revision.bausteine, 2));
+  expect(await axeBefunde(page), 'axe auf „Frühere Fassungen“').toEqual([]);
+  await erste.getByRole('link', { name: /^Ansehen: Fassung vom / }).click();
+  await expect(page).toHaveURL(/\/revisionen\?r=[0-9a-f-]{36}#ansicht$/);
+  const ansicht = page.locator('#ansicht');
+  await expect(ansicht.getByRole('heading', { level: 2, name: /^Fassung vom / })).toBeVisible();
+  await expect(ansicht.getByRole('heading', { level: 2, name: titel, exact: true })).toBeVisible();
+  await expect(ansicht.getByText(absatz)).toBeVisible();
+  expect(await axeBefunde(page), 'axe auf „Frühere Fassungen“ mit angesehener Fassung').toEqual([]);
+  await page
+    .locator('table tbody tr')
+    .nth(1)
+    .getByRole('button', { name: /^Zurückholen: Fassung vom / })
+    .click();
+  await expect(page.getByText(st.wiederhergestellt, { exact: true })).toBeVisible();
+  await oeffentlichBis(page, `/${slug}`, async () => {
+    await expect(page.getByRole('heading', { level: 1, name: titel })).toBeVisible({ timeout: 1000 });
+    await expect(page.getByText(absatz)).toBeVisible({ timeout: 1000 });
+  });
+  // Die zurückgeholte Fassung ist jetzt die aktuelle (dritte) und trägt den Vermerk
+  await page.goto(revisionen);
+  await expect(zeilen).toHaveCount(3);
+  await expect(zeilen.nth(0)).toContainText(titel);
+  await expect(zeilen.nth(0)).toContainText(st.revision.wiederhergestelltVermerk);
 
   // Menüeintrag im Schnellzugriff (Fuß) auf die neue Seite
   await page.goto('/verwaltung/menues?menue=fuss');
