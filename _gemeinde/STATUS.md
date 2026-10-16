@@ -1,4 +1,4 @@
-STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 7/7 · main 942b385 live auf https://igmg-wetzlar.vercel.app (Neu-Import des Nutzers) · Läuft: Sichtabnahme Runde 2 (Jury) · Nächster Schritt: Bericht Runde 2, Stufe C, BERICHT, ABSCHLUSS
+STATUS · Branch claude/trusting-lovelace-6nfolz · **ABGESCHLOSSEN 16.10.2026** · main e68f658 live auf https://igmg-wetzlar.vercel.app · Abschlussurteil 21/21 erfüllt (`berichte/stufe-c-abschluss.md`, `ABSCHLUSS.md`) · Nächster Lauf: „Lern-App“ in `_lernapp/`
 
 # STATUS – Lauf „Gemeinde-Plattform“
 
@@ -22,3 +22,6 @@ STATUS · Branch claude/trusting-lovelace-6nfolz · Etappe 7/7 · main 942b385 l
 - 2026-10-14 · Befundpakete P1–P4 der Sichtabnahme gemergt; Fast-Forward `main` → 759965e. Danach liefert igmg-five.vercel.app `DEPLOYMENT_NOT_FOUND` (Projekt in Vercel entfernt; nur der Nutzer sieht das).
 - 2026-10-14 · Nutzerauftrag „Repo als neues Vercel-Projekt importierbar, richtig erkannt und deployed“: e66ee4e (Start ohne `APP_URL` über `VERCEL_PROJECT_PRODUCTION_URL`), 628b981 (Beispielmodus wie frischer Import ohne 5xx: iCal, altcha, medien), b25086c (Speicherprobe), 942b385 (Wächter `/package.json`, Anleitung VERCEL.md §0). Prüfung als Workflow (4 Prüfer + Gegenprüfung) und Entwurf (3 Wege + Jury): Preset „Services“ lässt sich nicht aus dem Repo setzen; vercel CLI 64 baut auch mit „Other“ den Service, der Wächter fängt den KB-Fall ab. Tor: Bau wie frischer Import 1866 Seiten, Crawl 1311 Adressen ohne 5xx, Vorschau 2207, Unit 1429, Integration 1680, Sprachen, Religion 0. Fast-Forward `main` 759965e → 942b385.
 - 2026-10-14 14:50 UTC · Neues Vercel-Projekt `igmg-wetzlar` des Nutzers: erster Bau (759965e) lieferte 500 (Start ohne `APP_URL`); nach dem Fast-Forward auf 942b385 live und fehlerfrei (Sweep 61×200/24×404, Funktionen fra1).
+- 2026-10-15/16 · Nacharbeit N1–N4 (Leistung, Zugänglichkeit, Funktion, Sicherheit S2/S3) → Nachprüfung 033ea6f 12/2/7; Nacharbeit 2 (F-38/F-40/F-44, Suche ohne Datenbank, echte E2E ohne Docker, Wiederherstellungsprobe) → Nachprüfung 90a8e37 19/0/2; Nacharbeit 3 (Seiten-Revisionen, Fokus Reihenfolge-Editor) → Abschlussurteil e68f658 **21/21**.
+- 2026-10-16 · Tor zuletzt: Unit 1584, Integration 3269, E2E 991/0, Import 1887, Vorschau 2228; Produktion e68f658 `success`.
+- 2026-10-16 · Nutzer genehmigt Plan „Lern-App“ (DE/TR/AR alle Richtungen A1–C1, hanefitisches Wissen auf Deutsch) → neuer Lauf `_lernapp/`.

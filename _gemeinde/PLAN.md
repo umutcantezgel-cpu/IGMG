@@ -40,6 +40,6 @@
 | E7 | N1 | Nacharbeit Stufe C: Leistung (LCP ≤ 2,5 s auf 7 Routen, JS < 180 kB, erster Tab /quran/2) | fertig | 65b51b0, cbc2ff1; Merge 033ea6f |
 | E7 | Stufe C (2) | Nachprüfung auf 033ea6f: 12 erfüllt, 2 AUSNAHME, 7 teilweise (`berichte/stufe-c-nachpruefung.md`) | fertig | 06fcf03 |
 | E7 | Nacharbeit 2 | F-40 Startseite/Wissen, F-38 Push-Rückfall, F-44 Voranmeldung ↔ Kurs, erster Tab Hadith, Suche ohne Datenbank, Player-E2E, echte E2E ohne Docker, Wiederherstellungsprobe, Unterlagen nach N4 | fertig | 9757df3, 2c11368; Merges 41e5985, 4325608, 05e3a31, 9c7e9f0; Feinschliff 731e838, d5b2b76; `main` 90a8e37 |
-| E7 | Stufe C (3) | Nachprüfung 2 auf 90a8e37: 19 erfüllt, 2 teilweise (`berichte/stufe-c-nachpruefung-2.md`) | fertig | (dieser Commit) |
+| E7 | Stufe C (3) | Nachprüfung 2 auf 90a8e37: 19 erfüllt, 2 teilweise (`berichte/stufe-c-nachpruefung-2.md`) | fertig | 69a5d0e |
 | E7 | Nacharbeit 3 | Seiten-Revisionen, Fokus im Reihenfolge-Editor (Z-18, Z-07), Kleinigkeiten, Unterlagen | fertig | bb57055, d1ea9c4, 432fb3b, 1acab0c, 35ffc00, a59ce95 |
-| E7 | – | BERICHT, ABSCHLUSS | offen | |
+| E7 | Abschluss | Abschlussurteil auf e68f658: 21/21 erfüllt (`berichte/stufe-c-abschluss.md`), ABNAHME, BERICHT, ABSCHLUSS | fertig | (dieser Commit) |

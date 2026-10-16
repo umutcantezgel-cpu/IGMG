@@ -1,5 +1,8 @@
 # PRÜFPUNKT – Gemeinde-Plattform
 
+- **ABGESCHLOSSEN 16.10.2026 14:10 UTC:** Abschlussurteil auf `main` = e68f658: **21/21 erfüllt**
+  (`berichte/stufe-c-abschluss.md`). ABNAHME, BERICHT, ABSCHLUSS nachgeführt. Dieser Lauf ist beendet; hier nichts mehr
+  fortsetzen. Der Nutzer hat am 16.10. den Plan „Lern-App“ genehmigt; er läuft als neuer Lauf in `_lernapp/` (L0).
 - **Stand 16.10. 13:35 UTC:** Stufe-C-Nachprüfung 2 (90a8e37): 19 erfüllt, 2 teilweise (Z-07, Z-18). Nacharbeit 3 (bb57055…35ffc00,
   a59ce95) behebt beides; Gegenprüfung: Z-07 und Z-18 erfüllt (eigene Nachstellung am Server). Tor grün: Unit 1584,
   Integration 3269, E2E 991/0, Import 1887 (Sweep ohne 5xx, Crawl 1315), Vorschau 2228. Nächster Schritt: Fast-Forward `main`,

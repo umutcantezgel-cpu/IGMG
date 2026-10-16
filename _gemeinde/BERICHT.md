@@ -1,8 +1,7 @@
 # BERICHT – Lauf „Gemeinde-Plattform“
 
-> **Stand 16.10.2026** (`main` = 90a8e37). Stufe C mit zwei Nachprüfungen: zuletzt **19 von 21 Kriterien erfüllt, 2 teilweise
-> (Z-07, Z-18)** (`berichte/stufe-c-nachpruefung-2.md`, Stand je Kriterium in `_gemeinde/ABNAHME.md`). Die zwei gefundenen
-> Fehler werden in der Nacharbeit 3 behoben und hier nachgeführt.
+> **Stand 16.10.2026** (`main` = e68f658). **Abgeschlossen:** Stufe C mit drei Nachprüfungen – zuletzt **alle 21 Kriterien
+> erfüllt** (`berichte/stufe-c-abschluss.md`, Stand je Kriterium in `_gemeinde/ABNAHME.md`, Abschluss in `_gemeinde/ABSCHLUSS.md`).
 
 ## Ergebnis in drei Sätzen
 
@@ -73,10 +72,11 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
 | Lokaler Server (G5, MN-12) | Technik | Sicherung, Takt, Kiosk im Gebetsraum |
 | Moschee-Fakten: Eröffnungsdatum, Fotos, Kapazität (MN-08) | Vorstand | Platzhalter ersetzen |
 
-## Stand der Prüfungen (15.10.2026, `main` 75cad0a)
+## Stand der Prüfungen (16.10.2026, `main` e68f658)
 
-- Unit 1438, Integration 1680 grün; Bau wie ein frisch importiertes Vercel-Projekt 1866 Seiten, Vorschau 2207 Seiten;
-  1311 verlinkte Adressen ohne Serverfehler; live https://igmg-wetzlar.vercel.app (Funktionen in Frankfurt).
+- Unit 1584, Integration 3269 grün; **E2E mit echter Datenbank (PostgreSQL + Mailpit) 991 grün, 0 rot**; Bau wie ein frisch
+  importiertes Vercel-Projekt 1887 Seiten, Vorschau 2228 Seiten; 1315 verlinkte Adressen ohne Serverfehler; live
+  https://igmg-wetzlar.vercel.app (Funktionen in Frankfurt); Wiederherstellungsprobe der Sicherung echt durchgeführt.
 - Sprachen vollständig, Religion-Prüfung 0 Befunde, Koran-Text per SHA-256 und 6236 Versen nachgerechnet.
 - Sichtabnahme in drei Runden mit je drei unabhängigen Juroren: alle 19 Ansichten im Median ≥ 8, keine Kategorie < 7.
 - Zugänglichkeit: axe ohne ernste/kritische Befunde auf 44 öffentlichen Routen (3 Breiten) und 7 Konto-Routen.
@@ -85,9 +85,17 @@ Die Reihenfolge steht in `web/docs/GO-LIVE.md`, Abschnitt G, die Entscheidungen 
   (Leistung, Zugänglichkeit/Bewegung/Werte, Funktion/Unterlagen, Sicherheitsprüfung S2/S3) Nachprüfung auf 033ea6f:
   **12 erfüllt, 2 Umgebungsausnahmen, 7 teilweise** (`_gemeinde/berichte/stufe-c-nachpruefung.md`); nach der Nacharbeit 2
   (F-38/F-40/F-44, Suche ohne Datenbank, echte E2E ohne Docker 983 grün/0 rot, Wiederherstellungsprobe) zweite Nachprüfung auf
-  90a8e37: **19 erfüllt, 2 teilweise** (`_gemeinde/ABNAHME.md`, `_gemeinde/berichte/stufe-c-nachpruefung-2.md`).
+  90a8e37: **19 erfüllt, 2 teilweise** (`_gemeinde/berichte/stufe-c-nachpruefung-2.md`); nach der Nacharbeit 3 (Seiten-Revisionen,
+  Fokus im Reihenfolge-Editor) **Abschlussurteil auf e68f658: alle 21 Kriterien erfüllt** (`_gemeinde/ABNAHME.md`,
+  `_gemeinde/berichte/stufe-c-abschluss.md`).
 
 ## Urteil des Endprüfers (wörtlich)
+
+**Abschlussurteil, Stand e68f658 (16.10.2026):**
+
+> Die Nacharbeit 3 hat beide Restfehler der Nachprüfung 2 behoben, mit Tests im Repository. Ich habe das unabhängig am echten Server bestätigt: „Frühere Fassungen“ lässt sich öffnen, ansehen und zurückholen, und der Fokus im Reihenfolge-Editor bleibt bei 390 px vollständig über der Speicherleiste, jeweils mit axe 0. Damit sind alle 21 Kriterien erfüllt. Tor, Wortlaut, Religionsprüfung und die Live-Produktion auf e68f658 zeigen keinen Rückschritt; offen sind nur zwei niedrige Feinheiten bei beschädigten oder minutengleichen Fassungen und das Nachführen von ABNAHME und BERICHT. Ehrlich lautet die Übergabe: Die öffentliche Website ist fertig und live; die Gemeinde-Plattform ist gebaut, geprüft und echt Ende-zu-Ende getestet. Freigabereif ist sie, sobald MN-00 und die Freigaben aus MENSCHEN.md erledigt sind.
+
+**Erstes Urteil, Stand 75cad0a (15.10.2026)** – zum Vergleich, was seither geschlossen wurde:
 
 > Die öffentliche Website auf 75cad0a ist fertig für die Öffentlichkeit. Koran, Hadith, Elifbe, Gebetszeiten mit „Mein Ort“ und die Moschee-2026-Seiten sind live, in drei Sprachen, bei axe ohne Befund und ohne Datenabfluss. Die religiösen Inhalte sind sauber abgesichert; das habe ich selbst nachgeprüft (SHA, Religion-Prüfung, 49 grüne Koran-E2E).
 >
