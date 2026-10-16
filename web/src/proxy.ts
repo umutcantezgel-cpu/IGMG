@@ -8,11 +8,41 @@ import { cspOeffentlich, cspVerwaltung, istKontoPfad } from './lib/sicherheit/he
 const sprachRouting = createMiddleware(routing);
 
 /**
+ * Lern-App (ADR 0037 Nr. 1 und 3): eigener Bereich `/lern-app/[ui]` außerhalb von next-intl.
+ * - `/lern-app` → 308 `/lern-app/de`; Links aus der Website `/(de|tr|en)/lern-app…` → 308 `/lern-app/(de|tr)…` (für en gibt
+ *   es keine Oberfläche, also de; eine Oberflächensprache im Rest bleibt erhalten); `/lern-app/en…` → 308 `/lern-app/de…`.
+ * - Andere unbekannte Oberflächensprache: intern auf die Fangroute `/lern-app/de/…` (404 im Layout der Lern-App). Sonst
+ *   träfe `[locale]/[...rest]` die Adresse (Sprache „lern-app“, leere 404-Seite; Spike L0-S1).
+ * - Alles Übrige unter `/lern-app/` läuft ohne next-intl durch. `null`: kein Pfad der Lern-App.
+ */
+type LernAppWeg = { art: 'weiter' | 'intern'; ziel: string } | { art: 'durch' } | null;
+function lernAppWeg(pfad: string): LernAppWeg {
+  if (pfad === '/lern-app' || pfad === '/lern-app/') return { art: 'weiter', ziel: '/lern-app/de' };
+  const fremd = pfad.match(/^\/(de|tr|en)\/lern-app(\/.*)?$/);
+  if (fremd) {
+    const rest = fremd[2] === '/' ? '' : (fremd[2] ?? '');
+    if (/^\/(de|tr|ar)(\/|$)/.test(rest)) return { art: 'weiter', ziel: `/lern-app${rest}` };
+    return { art: 'weiter', ziel: `/lern-app/${fremd[1] === 'tr' ? 'tr' : 'de'}${rest}` };
+  }
+  if (!pfad.startsWith('/lern-app/')) return null;
+  const [, ui = '', rest = ''] = pfad.match(/^\/lern-app\/([^/]*)(\/.*)?$/) ?? [];
+  if (ui === 'de' || ui === 'tr' || ui === 'ar') return { art: 'durch' };
+  if (ui === 'en') return { art: 'weiter', ziel: `/lern-app/de${rest}` };
+  return { art: 'intern', ziel: `/lern-app/de/${ui}${rest}` };
+}
+
+/**
  * Proxy (Next.js 16): Sprachrouting (next-intl) und Schutzschicht der Verwaltung und der Konto-Seiten.
  * Prüft KEINE Rechte – das macht jede Route und jede Server Action selbst (ADR 0003).
  */
 export default function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+
+  // Lern-App vor allen übrigen Regeln: weder Sprachrouting noch Konto-Regeln (ADR 0037 Nr. 3)
+  const lernApp = lernAppWeg(pathname);
+  if (lernApp?.art === 'durch') return NextResponse.next();
+  if (lernApp?.art === 'weiter') return NextResponse.redirect(new URL(`${lernApp.ziel}${search}`, request.url), 308);
+  if (lernApp?.art === 'intern') return NextResponse.rewrite(new URL(lernApp.ziel, request.url));
 
   // Verwaltung ist nur deutsch (ADR 0016): /tr/verwaltung… und /en/verwaltung… → /verwaltung…
   const fremd = pathname.match(/^\/(tr|en)(\/verwaltung(?:\/.*)?)$/);

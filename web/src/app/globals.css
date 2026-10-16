@@ -431,8 +431,10 @@
   :is([data-slot='dialog-overlay'], [data-slot='dialog-content'], [data-slot='dropdown-menu-content'])[data-state='closed'] {
     animation: ausblenden var(--dauer-rueckmeldung) var(--ease-austritt) both;
   }
-  [lang='ar'],
-  [dir='rtl'] {
+  /* Arabischer Inhalt in Amiri. Nicht für die Oberfläche der Lern-App (`data-oberflaeche` am Wurzel-Layout, ADR 0044
+     Nr. 4); `:where` hält die Spezifität wie zuvor (0,1,0), die Website bleibt unverändert. */
+  [lang='ar']:not(:where([data-oberflaeche])),
+  [dir='rtl']:not(:where([data-oberflaeche])) {
     font-family: var(--font-arabic);
     line-height: 2;
   }
