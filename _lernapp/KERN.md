@@ -217,11 +217,15 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
 - axe: 0 ernste und kritische Befunde auf allen Lern-App-Routen × 3 Sprachen × 2 Breiten. Prüfung mit Screenreadern: LM-19.
 
 ## 9. Budgets
+Fortgeschrieben am 16.10.2026 nach Spike S1: Der Next/React-Grundstock allein sind ≈ 128 KB gz (Seite `/lern-app/de` des
+Spikes ≈ 136 KB, modern, ohne `noModule`-Polyfill). Die Budgets gelten deshalb als **Lern-App-eigener Anteil über dem
+Grundstock** plus einer Gesamtgrenze je Route (Messweise `web/scripts/messen.mjs`, `jsKb`).
+
 | Teil | Budget (gz) | Laden |
 |---|---|---|
-| Hülle (Rahmen, Kopf, Inseln) | ≤ 120 KB | statisch |
-| Start, Lernpfad, Fortschritt | ≤ 150 KB je Route | statisch; Insel für den lokalen Stand |
-| Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 180 KB | erst in der Lektion |
+| Hülle (Rahmen, Kopf, Inseln) | eigener Anteil ≤ 20 KB | statisch |
+| Start, Lernpfad, Fortschritt | eigener Anteil ≤ 30 KB, Route gesamt ≤ 180 KB (wie die Website) | statisch; Insel für den lokalen Stand |
+| Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 210 KB (Ausnahme mit Grund: Spielerkern, Abgleich, FSRS, lokale Datenbank) | erst in der Lektion |
 | je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten, vorab für die nächste Aufgabe |
 | arabische Bildschirmtastatur | ≤ 10 KB | erst bei arabischem Freitext |
 | Sprechmodul (Worker, transformers.js, ORT-WASM, Whisper-base q8 ≈ 77 MB) | außerhalb des Routenbudgets | nur nach Klick, Größe vorher angezeigt, Gerätecheck |

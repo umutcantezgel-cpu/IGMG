@@ -23,6 +23,13 @@
 6. **Ziffern:** östlich-arabisch über `Intl.NumberFormat('ar-u-nu-arab')`, umschaltbar auf westliche Ziffern (O-5, LM-18).
 7. **Namensnennung:** „Noto Sans Arabic – Copyright 2022 The Noto Project Authors (https://github.com/notofonts/arabic), SIL Open Font License 1.1“ auf `/lern-app/[ui]/quellen`, auf `/quellen` und im Lizenzverzeichnis, mit OFL-Volltext.
 
+## Fortschreibung durch Spike S1 (16.10.2026, Beleg `_lernapp/belege/S1-S6-wurzel-layout-und-sw.md`)
+
+1. **Nr. 4, Eingrenzung als Teilbaum:** `:is([lang='ar'], [dir='rtl']):not(:where([data-oberflaeche], [data-oberflaeche] *))`. Die bisherige Form wirkte nur auf `<html>`; innere Bedienelemente mit `lang="ar"` blieben in Amiri mit Zeilenhöhe 2 – im Widerspruch zu Nr. 2. Kursinhalt bekommt Amiri ausdrücklich über `--font-arabic` bzw. `text-arabisch-1/2/3` (KERN §7). `:where` hält die Spezifität; die Website ist gemessen unverändert.
+2. **Nr. 2, Vorladen:** `next/font` setzt die Vorlade-Kopfzeilen je Route, nicht je Sprache; ein gemeinsames Layout würde Noto auch in de und tr vorladen. Daher `preload: false` für beide Schnitte; in L1-03 Lighthouse auf `/lern-app/ar` messen (CLS ≤ 0,1, LCP). Nur bei Verfehlen den 400er vorladen oder eine eigene `@font-face` mit `ReactDOM.preload` nur bei `ui === 'ar'`.
+3. **Größen:** 400: 48 840 B, 700: 50 228 B (Teilmenge `arabic`, WOFF2).
+4. **Ziffern (Nr. 6, O-5):** `ar` allein ergibt westliche Ziffern. Der Formatierer setzt ausdrücklich `ar-u-nu-arab` und für den Schalter `ar-u-nu-latn`.
+
 ## Alternativen
 
 - Amiri auch für die Oberfläche: nicht gewählt. Eine Naskh-Schrift mit Zeilenhöhe 2 passt zu Lesetext, nicht zu dichten Bedienelementen; Amiri bleibt damit klar dem Inhalt zugeordnet.

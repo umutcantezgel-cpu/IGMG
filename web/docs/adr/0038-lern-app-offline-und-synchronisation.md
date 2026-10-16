@@ -60,6 +60,12 @@
     - Löschung 12 Monate nach der letzten Aktivität und mit dem Konto (Löschlauf `web/src/lib/loeschen/gemeinde.ts`); Export nach Art. 20.
     - Kinderkonten gleichen nur mit der Einwilligung `lernapp` ab, die die Eltern erteilen.
 
+## Fortschreibung durch Spike S6 (16.10.2026, Beleg `_lernapp/belege/S1-S6-wurzel-layout-und-sw.md`)
+
+1. **Nr. 1 bestätigt:** `idb` trägt zusammengesetzte Schlüssel und Indizes, `put` ist idempotent, der Stand bleibt über Neuladen erhalten. Version exakt 8.0.3, ab 20.10.2026 8.0.4 (L0-E10).
+2. IndexedDB gilt je Ursprung, nicht je Scope des Service Workers. Der Name `igmg-lernapp` trennt die Lern-App sauber von der Website.
+3. **Tests:** Unit-Tests der lokalen Datenhaltung mit `fake-indexeddb` (Apache-2.0, nur Entwicklung). E2E für Offline: siehe ADR 0037, Fortschreibung Nr. 7.
+
 ## Alternativen
 
 - „Bestwert gewinnt“ und „jüngstes `last_review` gewinnt“ (Plan §2.4): verworfen. Lernen zwei Geräte offline, gehen Bewertungen eines Geräts verloren, und der Kartenstand hängt von der Reihenfolge des Abgleichs ab.

@@ -59,6 +59,18 @@
    - `/lernen` bekommt die Stationen „Sprachen lernen“ und „Wissen üben“ als einfache Links `<a href="/lern-app/…">`. `Link` aus `@/i18n/link` kennt nur Pfade aus `routing.pathnames`.
    - Die Verwaltung der Lern-App liegt unter `/verwaltung/lernapp/**` und bleibt deutsch (ADR 0016). Einzige Ausnahme ist die Prüfoberfläche Sprache (ADR 0041).
 
+## Fortschreibung durch Spike S1 (16.10.2026, Beleg `_lernapp/belege/S1-S6-wurzel-layout-und-sw.md`)
+
+Gilt vor Nr. 1–9, wo es abweicht.
+
+1. **Nr. 2, statische Parameter:** `dynamicParams = false` bricht den Bau unter Cache Components. Stattdessen gilt `unstable_paramMatching = { ui: 'not-found' }` mit Prüfung im Layout, der Proxy-Weiche für unbekannte Oberflächensprachen und einer festen Fangroute `[ui]/[...rest]` (Suspense, `ensureStatic = 'navigation'`). Ohne Fangroute trifft `[locale]/[...rest]` unbekannte Lern-App-Adressen. Ein E2E-Test („`/lern-app/xx` und `/lern-app/de/xyz` → 404 mit `html[lang][dir]` der Lern-App“) macht eine Änderung der unstabilen API bei einem Next-Update sichtbar.
+2. **Nr. 2, bestätigt:** Das statische Segment `lern-app` hat Vorrang vor `[locale]`; der Bau ist unter Cache Components grün; `app/manifest.ts` wird nicht zusätzlich verlinkt.
+3. **Nr. 1/3, Proxy:** zusätzlich `/de/lern-app…` → 308 in einem Sprung (sonst zwei Sprünge über next-intl) und `/lern-app/en…` → `/lern-app/de…`. Eine Oberflächensprache im Rest bleibt erhalten (`/tr/lern-app/ar` → `/lern-app/ar`).
+4. **Nr. 5, Texte:** In der Lern-App wird `next-intl/server` (`getTranslations`) nie genutzt: `request.ts` liest `locale()`, das unter `/lern-app` fehlt, und ruft dann `notFound()`. Nur `createTranslator` mit ausdrücklicher Sprache; Regeltest.
+5. **Nr. 8, Manifest:** **eine** `id` `/lern-app/` für alle drei Sprachen (eine installierte App); `start_url` ist die Sprache bei der Installation; statische Route mit `s-maxage=31536000`. Der Name bleibt beim Vorstand (Platzhalter `[IGMG Lernen]`, `[IGMG Öğren]`, für ar ein Platzhalter in eckigen Klammern); kein Agent setzt den arabischen Namen.
+6. **Nr. 8, Root-Service-Worker:** Das Behalten von `igmg-lernapp-*` ist zwingend (die Gegenprobe löscht sonst alle Lern-App-Caches). Zusätzlich lässt der Root-SW `/lern-app/**` ganz durch, damit beim ersten Besuch ohne Netz nicht die Offline-Seite der Website erscheint.
+7. **Risiken für S-L1:** `ensureStatic = 'navigation'` speichert jede neue unbekannte Adresse (wie `[locale]/[...rest]` der Website); Pfade mit Punkt gehen am Proxy vorbei (gering). E2E-Tests für Offline schneiden Anfragen auf Kontext- oder Seitenebene ab oder beenden den Server – `context.setOffline` erfasst die Anfragen des Service Workers nicht.
+
 ## Alternativen
 
 - `ar` als vierte Sprache in next-intl: verworfen. Das ändert Routing, Proxy, Header, Service Worker und 1.887 vorgerenderte Seiten, und die Website soll de/tr/en bleiben (Nutzerentscheidung).
