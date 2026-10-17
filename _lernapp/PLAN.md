@@ -146,7 +146,7 @@ ausgeblendet). UI-Sprache und Ausgangssprache sind getrennte Einstellungen; Stan
 
 ### 3.2 Wurzel-Layout, Proxy und Header
 
-**Wurzel-Layout** `web/src/app/lern-app/[ui]/layout.tsx`: `generateStaticParams` de/tr/ar, `dynamicParams = false`;
+**Wurzel-Layout** `web/src/app/lern-app/[ui]/layout.tsx`: `generateStaticParams` de/tr/ar mit `unstable_paramMatching` und fester Fangroute `[ui]/[...rest]` (ADR 0037, Fortschreibung S1; `dynamicParams = false` bricht den Bau);
 `<html lang dir>`; Schriften (ADR 0044); Anmeldung von `/lern-app/sw.js`; `metadata.manifest`; eigene `not-found.tsx` und
 `error.tsx`. Spike S1 belegt den Vorrang vor `[locale]`, den Bau unter Cache Components und dass `app/manifest.ts` nicht
 zusätzlich verlinkt wird.
@@ -162,10 +162,11 @@ if (pathname.startsWith('/lern-app/')) return NextResponse.next();      // kein 
 ```
 
 **Header** (`web/src/lib/sicherheit/header.ts` + `web/next.config.ts`, ADR 0042 Nr. 9):
-- `cspLernApp()`: öffentliche CSP plus `script-src 'wasm-unsafe-eval'`, `worker-src 'self' blob:`, `media-src 'self' blob:`;
+- `cspLernApp()`: öffentliche CSP plus `script-src 'wasm-unsafe-eval'`, `worker-src 'self'`, `media-src 'self' blob:`; dazu
+  COOP `same-origin` und COEP `require-corp` für ganz `/lern-app/:pfad*` (ADR 0042, Fortschreibung S2);
   Regel `/lern-app/:pfad*` nach der öffentlichen Regel; `CSP_AUSNAHMEN` um `lern-app` ergänzen.
 - `Permissions-Policy: microphone=(self)` nur für `…/ueben`, `…/wiederholen` und `/verwaltung/lernapp/audio/:pfad*`.
-- COOP/COEP nur bei messbarem Gewinn in Spike S2.
+- COOP/COEP: Gewinn in Spike S2 belegt (1,4–1,8× mit Threads) – für ganz `/lern-app` gesetzt (siehe oben).
 
 ### 3.3 Texte der Oberfläche
 
@@ -209,9 +210,9 @@ if (pathname.startsWith('/lern-app/')) return NextResponse.next();      // kein 
 
 | Teil | Budget (gz) | Laden |
 |---|---|---|
-| Hülle (Rahmen, Kopf, Inseln) | ≤ 120 KB | statisch |
-| Start, Lernpfad, Fortschritt | ≤ 150 KB je Route | statisch; Insel für den lokalen Stand |
-| Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 180 KB | erst in der Lektion |
+| Hülle (Rahmen, Kopf, Inseln) | eigener Anteil ≤ 20 KB über dem Next/React-Grundstock (≈ 128 KB) | statisch |
+| Start, Lernpfad, Fortschritt | eigener Anteil ≤ 30 KB, Route gesamt ≤ 180 KB | statisch; Insel für den lokalen Stand |
+| Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 210 KB (KERN §9, Fortschreibung S1) | erst in der Lektion |
 | je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten, vorab für die nächste Aufgabe |
 | arabische Bildschirmtastatur | ≤ 10 KB | erst bei arabischem Freitext |
 | Sprechmodul (Worker, transformers.js, ORT-WASM, whisper-base q8 ≈ 77 MB) | außerhalb des Routenbudgets | nur nach Klick, Größe vorher angezeigt, Gerätecheck |
@@ -315,8 +316,8 @@ Gruppenrechte der Lehrkräfte in `web/src/lib/rechte/gruppen.ts`.
   `updateTag`. Einheiten bei Bedarf; nur im Beispielmodus alle vorgerendert (≈ 450 Ausgaben).
 - Bündel `.lpa` (`paket/buendel.ts`) je Zielsprache und Einheit: Kopf mit Index, danach die Clips; Abspielen über `Blob.slice`;
   „langsam“ = `playbackRate 0.75` mit `preservesPitch`.
-- Blob `lernapp` (fra1), Route `/lern-app/audio/…` nach `liefereAudio` (200/206/416, `immutable`); Rückfall Blob-Adresse in
-  `media-src` nur für `/lern-app`.
+- Blob `lernapp` (fra1), Route `/lern-app/audio/…` nach `liefereAudio` (200/206/416, `immutable`); Rückfall bei Kosten: externer Rewrite
+  (ADR 0039, Fortschreibung Nr. 6; die Blob-Adresse in `media-src` entfällt).
 - Ohne Blob (Beispielmodus, E2E): synthetische Testbündel aus Tönen, nie Rezitationen; sonst „Audio folgt“.
 - Keine technischen Schutzmaßnahmen (CC BY-SA 4.0).
 
@@ -866,7 +867,7 @@ mit Produktionsschaltern, `sprachen:pruefen`, Regeltests) · **S** an L1, L5, L8
 | L1-S | S | Sicherheitsprüfung S-L1 (Proxy, CSP, Sync, Rechte, Einwilligung) | `_lernapp/berichte/s-l1.md` |
 
 **Tor L1:** Unit (Abgleich ≥ 450 Fälle, Eigenschaftstests); Integration (Import, Pakete, Sync); E2E (Offline-Lektion, zwei
-Geräte); Spieler-Route ≤ 180 KB, Hülle ≤ 120 KB; axe 0 in 3 Sprachen; Bau beider Betriebsarten grün; S-L1 ohne hoch/kritisch.
+Geräte); Budgets nach KERN §9 (Hülle eigener Anteil ≤ 20 KB, Spieler-Route gesamt ≤ 210 KB); axe 0 in 3 Sprachen; Bau beider Betriebsarten grün; S-L1 ohne hoch/kritisch.
 
 ### L2 Übungstypen (4–5 Tage)
 
