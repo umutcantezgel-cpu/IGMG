@@ -1,7 +1,15 @@
 import { and, asc, count, desc, eq, inArray, isNull, lt, ne, sql } from 'drizzle-orm';
 import type { Datenbank } from '@/lib/db';
 import * as schema from '@/lib/db/schema';
-import { entscheide, type Funktion, IN_PRODUKTION_AN, MIT_PERSONENDATEN } from '@/lib/funktionen-regeln';
+import {
+  entscheideWirksam,
+  fehlendeVoraussetzungen,
+  FUNKTIONEN,
+  type Funktion,
+  IN_PRODUKTION_AN,
+  MIT_PERSONENDATEN,
+  umgebungsSchalter,
+} from '@/lib/funktionen-regeln';
 import { pruefeKette } from '@/lib/chat/hashkette';
 import { funktionenEinstellung } from '@/lib/validierung/einstellungen';
 import type { Pruefung } from './pruefungen';
@@ -28,6 +36,15 @@ const NAMEN: Record<Funktion, string> = {
   newsletter: 'Newsletter',
   hadith_gesamt: 'Bukhari-Gesamtsammlung',
   ramadan_vorschau: 'Ramadan-Vorschau',
+  lernapp: 'Lern-App',
+  lernapp_ungeprueft: 'Lern-App: Einheiten vor der Muttersprachler-Stichprobe (mit Hinweis)',
+  lernapp_sprechen: 'Lern-App: Sprechübungen im Browser',
+  lernapp_meldungen: 'Lern-App: anonyme Fehlermeldungen',
+  lernapp_sync: 'Lern-App: Abgleich mit dem Konto',
+  lernapp_gruppen: 'Lern-App: Gruppen, Zuweisungen und Schreibkorrektur',
+  lernapp_rangliste: 'Lern-App: Bestenliste in Gruppe oder Familie (ab 16)',
+  lernapp_statistik: 'Lern-App: anonyme Nutzungsstatistik',
+  push_lernapp: 'Lern-App: Erinnerung per Web Push',
 };
 const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
   konten: 'Datenschutz v2 (MN-11)',
@@ -39,6 +56,11 @@ const VORAUSSETZUNG: Partial<Record<Funktion, string>> = {
   hatim: 'Datenschutz v2 (MN-11)',
   newsletter: 'Datenschutz v2 und Double-Opt-in-Text (MN-11)',
   hadith_gesamt: 'Rechtsfreigabe der Hadith-Quelle (MN-06)',
+  lernapp_sync: 'DSFA-Nachtrag Lern-App und Einwilligungstext „lernapp“ (LM-08)',
+  lernapp_gruppen: 'DSFA-Nachtrag Lern-App (LM-08)',
+  lernapp_rangliste: 'Entscheidung zur Bestenliste ab 16 (LM-10) und DSFA-Nachtrag zu R-08 (LM-08)',
+  lernapp_statistik: 'Entscheidung der Datenschutzbeauftragten (KERN 4.0 §6)',
+  push_lernapp: 'wie Web Push: Push-Themen und Drittland-Hinweis (MN-11, MN-17), neutraler Text ohne Serienbezug',
 };
 
 /** Zustand eines gemeldeten Laufs: fehlt, fehlgeschlagen, zu alt oder in Ordnung. */
@@ -48,14 +70,32 @@ export function bewerteLauf(e: LokalEintrag | undefined, jetzt: Date, maxStunden
   return jetzt.getTime() - Date.parse(e.zeit) > maxStunden * STUNDE ? 'alt' : 'ok';
 }
 
-/** Schalter mit Personendaten (oder Rechtsvorbehalt), die eingeschaltet sind. */
-export function eingeschaltet(env: Umgebung, einstellung: unknown): Funktion[] {
+function leseSchalter(einstellung: unknown) {
   const gelesen = funktionenEinstellung.safeParse(einstellung ?? {});
-  const werte = gelesen.success ? gelesen.data : null;
+  return gelesen.success ? gelesen.data : null;
+}
+
+/** Schalter mit Personendaten (oder Rechtsvorbehalt), die eingeschaltet sind und wirken (Sperren beachtet). */
+export function eingeschaltet(env: Umgebung, einstellung: unknown): Funktion[] {
+  const werte = leseSchalter(einstellung);
   // Von Menschen für die Produktion freigegebene Funktionen (IN_PRODUKTION_AN) zählen nicht als offener Vorbehalt
   return [...MIT_PERSONENDATEN, 'hadith_gesamt' as const]
     .filter((f) => !IN_PRODUKTION_AN.includes(f))
-    .filter((f) => entscheide(f, env, werte));
+    .filter((f) => entscheideWirksam(f, env, werte));
+}
+
+/**
+ * Ausdrücklich (Umgebung oder Einstellung) eingeschaltete Schalter, die eine Sperre zurückhält (KERN 4.0 §6), mit den
+ * fehlenden Voraussetzungen. Schalter, die nur ihr Standard einschaltet (z. B. `lernapp_ungeprueft` in der Produktion,
+ * solange `lernapp` aus ist), sind kein Befund.
+ */
+export function gesperrteSchalter(env: Umgebung, einstellung: unknown): { schalter: Funktion; fehlt: Funktion[] }[] {
+  const werte = leseSchalter(einstellung);
+  const ausdruecklich = (f: Funktion) =>
+    umgebungsSchalter(f, env) === true || (umgebungsSchalter(f, env) === undefined && werte?.[f] === true);
+  return FUNKTIONEN.filter(ausdruecklich)
+    .map((schalter) => ({ schalter, fehlt: fehlendeVoraussetzungen(schalter, env, werte) }))
+    .filter((z) => z.fehlt.length);
 }
 
 function groesse(bytes: number | undefined): string {
@@ -161,7 +201,8 @@ export async function gemeindePruefen(
   jetzt: Date,
   neu: (p: Pruefung) => void,
 ): Promise<void> {
-  const an = eingeschaltet(env, await einstellungWert(db, 'funktionen'));
+  const schalterWert = await einstellungWert(db, 'funktionen');
+  const an = eingeschaltet(env, schalterWert);
   const ist = (f: Funktion) => an.includes(f);
 
   // Schalter: in der Produktion nur nach Freigabe durch Menschen
@@ -172,7 +213,8 @@ export async function gemeindePruefen(
           bereich: 'gemeinde',
           titel: 'Funktionsschalter',
           status: 'ok',
-          meldung: 'Alle Funktionen mit Personendaten sind aus (Konten, Lernplattform, Chat, Push, Hatim, Newsletter).',
+          meldung:
+            'Alle Funktionen mit Personendaten sind aus (Konten, Lernplattform, Chat, Push, Hatim, Newsletter, Abgleich und Gruppen der Lern-App).',
         }
       : {
           id: 'gemeinde.schalter',
@@ -187,8 +229,23 @@ export async function gemeindePruefen(
         },
   );
 
-  // Push: ohne VAPID-Schlüssel kein Versand
-  if (ist('push')) {
+  // Sperren der Lern-App-Schalter (KERN 4.0 §6): an, aber ohne wirksame Voraussetzung – der Schalter bleibt wirkungslos
+  const gesperrt = gesperrteSchalter(env, schalterWert);
+  if (gesperrt.length)
+    neu({
+      id: 'gemeinde.schalter-sperren',
+      bereich: 'gemeinde',
+      titel: 'Gesperrte Schalter',
+      status: produktion ? 'warnung' : 'hinweis',
+      meldung: `Eingeschaltet, aber gesperrt: ${gesperrt
+        .map((z) => `${NAMEN[z.schalter]} (braucht ${z.fehlt.map((f) => NAMEN[f]).join(', ')})`)
+        .join('; ')}. Erst die Voraussetzung einschalten oder den Schalter ausschalten.`,
+      ort: 'Umgebung FUNKTION_<NAME>=an|aus (docs/deploy/VERCEL-ENV.md) oder Einstellung „funktionen“',
+      aufwand: '5 min je Schalter',
+    });
+
+  // Push (auch die Lern-Erinnerung `push_lernapp`): ohne VAPID-Schlüssel kein Versand
+  if (ist('push') || ist('push_lernapp')) {
     const vapid = Boolean(env.VAPID_PRIVAT?.trim());
     neu({
       id: 'gemeinde.push-schluessel',

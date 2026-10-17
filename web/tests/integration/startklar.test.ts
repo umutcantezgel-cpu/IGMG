@@ -447,6 +447,33 @@ describe('Gemeinde-Plattform (PLAN 2.8/2.9, Z-12, Z-20)', () => {
     expect(befund(spaeter, 'gemeinde.takt').status).toBe('warnung');
   });
 
+  it('Lern-App (KERN 4.0 §6): Produktion ohne Angaben ohne Befund; gesperrte Schalter melden, Abgleich als Vorbehalt', async () => {
+    const ohne = await pruefe(produktionsUmgebung());
+    expect(befund(ohne, 'gemeinde.schalter').status).toBe('ok');
+    // lernapp_ungeprueft und lernapp_meldungen sind in der Produktion an, wirken aber ohne lernapp nicht – kein Befund
+    expect(pg(ohne).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
+
+    const gesperrt = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP_SYNC: 'an', FUNKTION_LERNAPP_RANGLISTE: 'an' }));
+    const sperren = befund(gesperrt, 'gemeinde.schalter-sperren');
+    expect(sperren.status).toBe('warnung');
+    expect(sperren.meldung).toContain('Lern-App: Abgleich mit dem Konto (braucht Lern-App, Konten)');
+    expect(sperren.meldung).toContain('Bestenliste');
+    // Gesperrt heißt wirkungslos: kein offener Vorbehalt für Personendaten
+    expect(befund(gesperrt, 'gemeinde.schalter').status).toBe('ok');
+
+    const an = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP: 'an', FUNKTION_LERNAPP_SYNC: 'an', FUNKTION_KONTEN: 'an' }));
+    expect(pg(an).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
+    expect(befund(an, 'gemeinde.schalter').status).toBe('manuell');
+    expect(befund(an, 'gemeinde.schalter').meldung).toContain('LM-08');
+
+    // Lern-Erinnerung wie Push: ohne VAPID-Schlüssel ein Fehler
+    const erinnerung = await pruefe(produktionsUmgebung({ FUNKTION_LERNAPP: 'an', FUNKTION_PUSH: 'an', FUNKTION_PUSH_LERNAPP: 'an' }));
+    expect(befund(erinnerung, 'gemeinde.push-schluessel').status).toBe('fehler');
+
+    const vorschau = await pruefe(vorschauUmgebung());
+    expect(pg(vorschau).map((p) => p.id)).not.toContain('gemeinde.schalter-sperren');
+  });
+
   it('S-02: Gruppe mit Chat und nur einer Leitungsperson ergibt eine Warnung', async () => {
     await db
       .insert(schema.user)

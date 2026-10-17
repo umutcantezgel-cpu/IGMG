@@ -16,14 +16,26 @@ export const FUNKTIONEN = [
   'newsletter',
   'hadith_gesamt',
   'ramadan_vorschau',
+  // Lauf Lern-App (ADR 0035, KERN 4.0 §6): ausgeschaltet heißt 404 und die Links verschwinden
+  'lernapp',
+  'lernapp_ungeprueft',
+  'lernapp_sprechen',
+  'lernapp_meldungen',
+  'lernapp_sync',
+  'lernapp_gruppen',
+  'lernapp_rangliste',
+  'lernapp_statistik',
+  'push_lernapp',
 ] as const satisfies readonly (keyof FunktionenEinstellung)[];
 export type Funktion = (typeof FUNKTIONEN)[number];
 
 /**
  * Ohne Personendaten und für die Produktion freigegeben – dort standardmäßig an. `hadith_gesamt`: Entscheidung des
  * Nutzers vom 13.10.2026 (gemeinfreie Quelle, Restrisiko der offenen Rechtsprüfung MN-06 trägt die Gemeinde).
+ * Lern-App (KERN 4.0 §6): `lernapp_ungeprueft` (Hinweis statt Sperre, ADR 0041 Nr. 8) und `lernapp_meldungen` (anonym,
+ * nur Kategorien). Sie wirken erst, wenn `lernapp` selbst an ist (`VORAUSSETZUNGEN`); `lernapp` bleibt bis zur Abnahme aus.
  */
-export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt'];
+export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt', 'lernapp_ungeprueft', 'lernapp_meldungen'];
 
 /** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus – außer `IN_PRODUKTION_AN`. */
 export function standardFuer(env: UmgebungsWerte, f?: Funktion): boolean {
@@ -48,7 +60,10 @@ export function entscheide(f: Funktion, env: UmgebungsWerte, einstellung: Funkti
   return standardFuer(env, f);
 }
 
-/** Funktionen mit Personendaten: in der Produktion erst nach Freigabe durch Menschen (MN-10, MN-11, MN-17). */
+/**
+ * Funktionen mit Personendaten: in der Produktion erst nach Freigabe durch Menschen (MN-10, MN-11, MN-17; Lern-App LM-08,
+ * LM-10). `lernapp_statistik` zählt dazu (IP-Adresse grenzwertig, Entscheidung der DSB).
+ */
 export const MIT_PERSONENDATEN = [
   'konten',
   'lernplattform',
@@ -58,4 +73,46 @@ export const MIT_PERSONENDATEN = [
   'push_gebet',
   'hatim',
   'newsletter',
+  'lernapp_sync',
+  'lernapp_gruppen',
+  'lernapp_rangliste',
+  'lernapp_statistik',
+  'push_lernapp',
 ] as const satisfies readonly Funktion[];
+
+/**
+ * Sperren (KERN 4.0 §6, „Sperre im Cockpit“): Ein Schalter wirkt nur, wenn alle seine Voraussetzungen wirken. Jeder
+ * Schalter der Lern-App braucht `lernapp`; der Abgleich braucht Konten, Gruppen die Lernplattform, die Bestenliste die
+ * Gruppen, die Lern-Erinnerung den Web-Push. Das Cockpit meldet Schalter, die an sind, aber gesperrt bleiben.
+ */
+export const VORAUSSETZUNGEN: Partial<Record<Funktion, readonly Funktion[]>> = {
+  lernapp_ungeprueft: ['lernapp'],
+  lernapp_sprechen: ['lernapp'],
+  lernapp_meldungen: ['lernapp'],
+  lernapp_sync: ['lernapp', 'konten'],
+  lernapp_gruppen: ['lernapp', 'lernplattform'],
+  lernapp_rangliste: ['lernapp', 'lernapp_gruppen'],
+  lernapp_statistik: ['lernapp'],
+  push_lernapp: ['lernapp', 'push'],
+};
+
+/**
+ * Wirksamer Schalter (unit-testbar): selbst an (`entscheide`) und alle Voraussetzungen wirksam, rekursiv. Für Schalter
+ * ohne Voraussetzungen gleich `entscheide`.
+ */
+export function entscheideWirksam(
+  f: Funktion,
+  env: UmgebungsWerte,
+  einstellung: FunktionenEinstellung | null,
+  besucht: ReadonlySet<Funktion> = new Set(),
+): boolean {
+  if (besucht.has(f) || !entscheide(f, env, einstellung)) return false;
+  const weiter = new Set([...besucht, f]);
+  return (VORAUSSETZUNGEN[f] ?? []).every((v) => entscheideWirksam(v, env, einstellung, weiter));
+}
+
+/** Voraussetzungen, die einem eingeschalteten Schalter fehlen (leer, wenn er wirkt oder aus ist). */
+export function fehlendeVoraussetzungen(f: Funktion, env: UmgebungsWerte, einstellung: FunktionenEinstellung | null): Funktion[] {
+  if (!entscheide(f, env, einstellung)) return [];
+  return (VORAUSSETZUNGEN[f] ?? []).filter((v) => !entscheideWirksam(v, env, einstellung));
+}

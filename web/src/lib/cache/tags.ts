@@ -35,6 +35,14 @@ export const TAG = {
   rezitationen: 'rezitationen',
   /** Reihenfolge und Sichtbarkeit der Startseiten-Abschnitte (F-40) */
   startseite: 'startseite',
+  // Lauf Lern-App (ADR 0039 Nr. 2, KERN 4.0 §2.3): Kursverzeichnis und Pakete tragen beide Tags; jede Freigabe,
+  // Veröffentlichung und jedes Zurückziehen ruft `updateTag(TAG.lernappKurs(id))`, der Import `updateTag(TAG.lernapp)`.
+  lernapp: 'lernapp',
+  /**
+   * je Kurs der Datenbank (`de`, `tr`, `ar`, `islam`, `koran`). Gleiche Schreibweise wie der CDN-Tag `Vercel-Cache-Tag`
+   * der Paket-Routen (ADR 0039, Fortschreibung S5 Nr. 7) – deshalb Bindestrich statt Doppelpunkt.
+   */
+  lernappKurs: (id: string) => `lernapp-kurs-${id}`,
 } as const;
 
 /** Tags, die beim Start verfallen (ADR 0017) – alle inhaltsbezogenen Listen-Tags. */
@@ -60,5 +68,6 @@ export const START_TAGS = [
   TAG.hatim,
   TAG.rezitationen,
   TAG.startseite,
+  TAG.lernapp,
   'seiteninhalt',
 ] as const;

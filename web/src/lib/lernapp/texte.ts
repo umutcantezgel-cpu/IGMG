@@ -2,22 +2,10 @@ import { createTranslator } from 'next-intl';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
+import type { Oberflaeche } from './kurse';
 
-/**
- * Oberflächensprachen der Lern-App (ADR 0037 Nr. 1, L3-E08). Getrennt von `routing.locales` der Website (de/tr/en):
- * `ar` kommt nie in next-intl-Routing.
- */
-export const OBERFLAECHEN = ['de', 'tr', 'ar'] as const;
-export type Oberflaeche = (typeof OBERFLAECHEN)[number];
-
-export function istOberflaeche(wert: unknown): wert is Oberflaeche {
-  return typeof wert === 'string' && (OBERFLAECHEN as readonly string[]).includes(wert);
-}
-
-/** Schreibrichtung der Oberfläche: Arabisch vollständig von rechts nach links (ADR 0037 Nr. 6). */
-export function richtung(ui: Oberflaeche): 'ltr' | 'rtl' {
-  return ui === 'ar' ? 'rtl' : 'ltr';
-}
+/** Oberflächensprachen und Richtung kommen aus `kurse.ts` (L1-01); hier nur weitergereicht. */
+export { OBERFLAECHEN, istOberflaeche, richtung, type Oberflaeche } from './kurse';
 
 const NACHRICHTEN: Record<Oberflaeche, typeof de> = { de, tr, ar };
 

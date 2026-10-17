@@ -33,6 +33,9 @@ export const rolleEnum = pgEnum('rolle', [
   'leitung',
   'religioese_pruefung',
   'kinderschutz',
+  // Lauf Lern-App (ADR 0041 Nr. 1): Sprachprüfung je eigener Sprache (`lernapp_pruefer_sprache`). Eigene Migration 0017,
+  // die nur den Wert ergänzt – kein späteres Migrationsskript nutzt ihn als Literal (PostgreSQL 16, e2e/LIESMICH 1a).
+  'sprachpruefung',
 ]);
 
 /** Kontoarten in „Mein Bereich“ (ADR 0026), getrennt von den Verwaltungsrollen. */

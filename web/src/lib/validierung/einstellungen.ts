@@ -50,6 +50,16 @@ export const funktionenEinstellung = z.object({
   newsletter: z.boolean().optional(),
   hadith_gesamt: z.boolean().optional(),
   ramadan_vorschau: z.boolean().optional(),
+  // Lauf Lern-App (KERN 4.0 §6)
+  lernapp: z.boolean().optional(),
+  lernapp_ungeprueft: z.boolean().optional(),
+  lernapp_sprechen: z.boolean().optional(),
+  lernapp_meldungen: z.boolean().optional(),
+  lernapp_sync: z.boolean().optional(),
+  lernapp_gruppen: z.boolean().optional(),
+  lernapp_rangliste: z.boolean().optional(),
+  lernapp_statistik: z.boolean().optional(),
+  push_lernapp: z.boolean().optional(),
 });
 export type FunktionenEinstellung = z.infer<typeof funktionenEinstellung>;
 
