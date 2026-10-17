@@ -38,6 +38,22 @@ export function cspOeffentlich(): string {
   });
 }
 
+/**
+ * CSP der Lern-App (ADR 0042 Nr. 9 mit Fortschreibung S2 Nr. 3, KERN 4.0 §6): die öffentliche CSP plus
+ * `'wasm-unsafe-eval'` (Whisper/ONNX im Worker), `worker-src 'self'` ohne `blob:` und `media-src 'self' blob:` (eigene
+ * Aufnahme und Scheiben der Lern-Audio-Bündel abspielen). Kein `blob:` in `script-src`, kein `'unsafe-eval'` in der
+ * Produktion. Nur unter `/lern-app` (außer der Anmeldung, die die Nonce-CSP im Proxy bekommt); die Website bleibt unverändert.
+ */
+export function cspLernApp(): string {
+  return richtlinie({
+    ...gemeinsam,
+    'script-src': ["'self'", "'unsafe-inline'", "'wasm-unsafe-eval'", ...(istEntwicklung ? ["'unsafe-eval'"] : [])],
+    'style-src': ["'self'", "'unsafe-inline'"],
+    'worker-src': ["'self'"],
+    'media-src': ["'self'", 'blob:'],
+  });
+}
+
 /** Strikte CSP der Verwaltung mit Nonce (Verwaltung wird ohnehin je Anfrage gerendert). Mit Vercel Blob darf der
  * Browser große PDF-Dateien direkt zur Blob-Schnittstelle laden (ADR 0020, V-05) – nur in der Verwaltung.
  * `weitereVerbindungen`: z. B. der Echtzeit-Server (wss://) nur für Mein Bereich (ADR 0027). */
@@ -61,9 +77,11 @@ export function permissionsPolicy(erlaubt: readonly Berechtigung[] = []): string
 
 /**
  * Berechtigungen je Pfad (ADR 0028, ADR 0029): Standort nur auf den Gebetszeiten-Seiten (Berechnung im Browser,
- * nie an den Server), Mikrofon nur in der Rezitations-Werkstatt der Verwaltung (Aufnahme, ADR 0029); Kamera nirgends
- * (kein Einlass-Scan gebaut – bei Bedarf hier nur für dessen Pfad freigeben).
- * In next.config.ts nach `grundHeader` eingetragen – spätere Regeln überschreiben frühere.
+ * nie an den Server), Mikrofon nur in der Rezitations-Werkstatt der Verwaltung (Aufnahme, ADR 0029) und in der Lern-App
+ * auf den Übungs- und Wiederholungsseiten sowie im Audio-Studio der Verwaltung (ADR 0042 Nr. 9; die Aufnahme verlässt das
+ * Gerät nie). Kamera nirgends (kein Einlass-Scan gebaut – bei Bedarf hier nur für dessen Pfad freigeben).
+ * In next.config.ts nach `grundHeader` eingetragen – spätere Regeln überschreiben frühere. Die Berechtigung gilt je
+ * Dokument: Links auf `…/ueben` und `…/wiederholen` laden die Seite deshalb neu (kein clientseitiger Wechsel).
  */
 export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly Berechtigung[] }[] = [
   { source: '/gebetszeiten', erlaubt: ['geolocation'] },
@@ -72,7 +90,46 @@ export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly B
   { source: '/en/prayer-times', erlaubt: ['geolocation'] },
   { source: '/verwaltung/rezitationen/:pfad*', erlaubt: ['microphone'] },
   { source: '/de/verwaltung/rezitationen/:pfad*', erlaubt: ['microphone'] },
+  { source: '/lern-app/:ui/:kurs/ueben', erlaubt: ['microphone'] },
+  { source: '/lern-app/:ui/:kurs/wiederholen', erlaubt: ['microphone'] },
+  { source: '/verwaltung/lernapp/audio/:pfad*', erlaubt: ['microphone'] },
+  { source: '/de/verwaltung/lernapp/audio/:pfad*', erlaubt: ['microphone'] },
 ];
+
+/**
+ * Kopfzeilen-Regeln der Lern-App für next.config.ts (ADR 0042 Fortschreibung S2 Nr. 3, ADR 0039 und 0042 Fortschreibung
+ * S5, ADR 0037 Fortschreibung S1). Reihenfolge wie eingetragen; spätere Regeln überschreiben frühere.
+ * - Ganz `/lern-app/…`: `Cross-Origin-Opener-Policy: same-origin` und `Cross-Origin-Embedder-Policy: require-corp`
+ *   (Threads für Whisper; nur Übungsseiten reichen nicht, weil ein clientseitiger Wechsel kein isoliertes Dokument erzeugt).
+ *   Voraussetzung: nur eigener Ursprung; der Service Worker der Lern-App speichert Originalantworten samt Kopfzeilen.
+ * - CSP `cspLernApp()` für alles unter `/lern-app/` außer `/lern-app/(de|tr|ar)/anmelden…` (Nonce-CSP im Proxy).
+ * - Modelle (statisch unter `public/lern-app/modelle/`): ein Jahr unveränderlich, `nosniff`.
+ * - Service Worker `/lern-app/sw.js`: immer neu prüfen (`no-cache`); `Service-Worker-Allowed` ist nicht nötig, weil der
+ *   Scope `/lern-app/` dem Ordner der Datei entspricht.
+ */
+export function lernAppHeaderRegeln(): { source: string; headers: { key: string; value: string }[] }[] {
+  return [
+    {
+      source: '/lern-app/:pfad*',
+      headers: [
+        { key: 'Cross-Origin-Opener-Policy', value: 'same-origin' },
+        { key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' },
+      ],
+    },
+    {
+      source: '/lern-app/:pfad((?!(?:de|tr|ar)/anmelden(?:/|$)).*)',
+      headers: [{ key: 'Content-Security-Policy', value: cspLernApp() }],
+    },
+    {
+      source: '/lern-app/modelle/:pfad*',
+      headers: [
+        { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        { key: 'X-Content-Type-Options', value: 'nosniff' },
+      ],
+    },
+    { source: '/lern-app/sw.js', headers: [{ key: 'Cache-Control', value: 'no-cache' }] },
+  ];
+}
 
 /**
  * Erste Pfadsegmente der Konto-Seiten (Anmeldung, Registrierung, Mein Bereich) in allen Sprachen. Diese Seiten sind

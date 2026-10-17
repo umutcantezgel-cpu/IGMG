@@ -67,6 +67,10 @@
   --font-display: var(--schrift-titel), Georgia, serif;
   --font-arabic: var(--schrift-arabisch), serif;
   --font-quran: schriftQuran, var(--schrift-arabisch), serif;
+  /* Lern-App (ADR 0044): Oberflächenschrift Arabisch, Noto Sans Arabic 400/700 mit `unicode-range` für den arabischen Block,
+     ohne Vorladen; `--schrift-arabisch-ui` setzt nur das Wurzel-Layout der Lern-App (next/font/local). Latein fällt auf
+     die Textschrift zurück. Kursinhalt bleibt in `--font-arabic`, der Koran in `--font-quran`. */
+  --font-arabisch-ui: var(--schrift-arabisch-ui), var(--schrift-text), system-ui, sans-serif;
   --text-16: 1rem;
   --text-16--line-height: 1.5;
   --text-18: 1.125rem;
@@ -203,6 +207,39 @@
 }
 @utility auslauf-beidseitig {
   mask-image: linear-gradient(to right, transparent, black --spacing(12), black calc(100% - --spacing(12)), transparent);
+}
+
+/* Lern-App (KERN 4.0 §7, ADR 0037 Nr. 6): logische Gegenstücke für Rechts-nach-links. Wischreihe läuft am Anfang bzw.
+   am Ende der Zeile über 48 px aus – in `dir="rtl"` gespiegelt (Verläufe kennen keine logischen Richtungen). */
+@utility auslauf-anfang {
+  mask-image: linear-gradient(to right, transparent, black --spacing(12));
+  &:where(:dir(rtl), [dir='rtl'], [dir='rtl'] *) {
+    mask-image: linear-gradient(to left, transparent, black --spacing(12));
+  }
+}
+@utility auslauf-ende {
+  mask-image: linear-gradient(to left, transparent, black --spacing(12));
+  &:where(:dir(rtl), [dir='rtl'], [dir='rtl'] *) {
+    mask-image: linear-gradient(to right, transparent, black --spacing(12));
+  }
+}
+/* Wortbank und Antwortzeile (B-31): Kacheln umbrechen in Leserichtung; mindestens eine Kachelzeile hoch (Ziel 44 px plus
+   Abstand), damit die leere Antwortzeile nicht zusammenfällt */
+@utility raster-wortbank {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: --spacing(2);
+  min-block-size: calc(--spacing(11) + --spacing(4));
+}
+/* Lektionsleiste (B-28): Füllung skaliert von `inline-start` aus nach dem Anteil `--anteil` (0…1); der Übergang sitzt
+   am Element (motion-safe), reduziert ohne Übergang */
+@utility lern-leiste {
+  transform-origin: left center;
+  scale: var(--anteil, 0) 1;
+  &:where(:dir(rtl), [dir='rtl'], [dir='rtl'] *) {
+    transform-origin: right center;
+  }
 }
 
 /* Werkzeugleiste des Editors (@container): ab 336 px Breite passt „Kursiv“ noch in die Zeile –
@@ -431,12 +468,20 @@
   :is([data-slot='dialog-overlay'], [data-slot='dialog-content'], [data-slot='dropdown-menu-content'])[data-state='closed'] {
     animation: ausblenden var(--dauer-rueckmeldung) var(--ease-austritt) both;
   }
-  /* Arabischer Inhalt in Amiri. Nicht für die Oberfläche der Lern-App (`data-oberflaeche` am Wurzel-Layout, ADR 0044
-     Nr. 4); `:where` hält die Spezifität wie zuvor (0,1,0), die Website bleibt unverändert. */
-  [lang='ar']:not(:where([data-oberflaeche])),
-  [dir='rtl']:not(:where([data-oberflaeche])) {
+  /* Arabischer Inhalt in Amiri. Nicht für die Oberfläche der Lern-App (`data-oberflaeche` am Wurzel-Layout und alles
+     darin, ADR 0044 Nr. 4 mit Fortschreibung S1): Kursinhalt bekommt Amiri dort ausdrücklich über `--font-arabic` bzw.
+     `text-arabisch-1/2/3`. `:where` hält die Spezifität wie zuvor (0,1,0); die Website bleibt unverändert. */
+  :is([lang='ar'], [dir='rtl']):not(:where([data-oberflaeche], [data-oberflaeche] *)) {
     font-family: var(--font-arabic);
     line-height: 2;
+  }
+  /* Lern-App (ADR 0044 Nr. 2): In der arabischen Oberfläche ist Noto Sans Arabic die Textschrift; in der deutschen und
+     türkischen dient sie als Rückfall, damit arabische Bedienwörter (z. B. Kursnamen) in derselben Schriftfamilie stehen. */
+  [data-oberflaeche] {
+    --font-text: var(--schrift-text), var(--schrift-arabisch-ui), 'Source Sans 3', system-ui, sans-serif;
+  }
+  [data-oberflaeche][lang='ar'] {
+    --font-text: var(--font-arabisch-ui);
   }
 }
 

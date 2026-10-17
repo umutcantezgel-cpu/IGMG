@@ -165,7 +165,7 @@ export type SchriftToken = {
   /** Klasse, die die Schriftfamilie setzt */
   klasse: string;
   /** Schlüssel unter `styleguide.typografie.schriftVerwendung` und `schriftMuster` */
-  schluessel: 'text' | 'display' | 'arabisch' | 'quran';
+  schluessel: 'text' | 'display' | 'arabisch' | 'quran' | 'arabischUi';
 };
 
 export const SCHRIFTEN: readonly SchriftToken[] = [
@@ -173,6 +173,13 @@ export const SCHRIFTEN: readonly SchriftToken[] = [
   { name: '--font-display', wert: 'var(--schrift-titel), Georgia, serif', klasse: 'font-display', schluessel: 'display' },
   { name: '--font-arabic', wert: 'var(--schrift-arabisch), serif', klasse: 'font-arabic', schluessel: 'arabisch' },
   { name: '--font-quran', wert: 'schriftQuran, var(--schrift-arabisch), serif', klasse: 'font-quran', schluessel: 'quran' },
+  // Lern-App (ADR 0044): nur im Wurzel-Layout der Lern-App geladen; hier erscheint der Rückfall
+  {
+    name: '--font-arabisch-ui',
+    wert: 'var(--schrift-arabisch-ui), var(--schrift-text), system-ui, sans-serif',
+    klasse: 'font-arabisch-ui',
+    schluessel: 'arabischUi',
+  },
 ];
 
 /** Basis aller Abstände: ein Schritt des Rasters. */

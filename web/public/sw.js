@@ -8,8 +8,9 @@
  *   (Seite, Wort- und Übersetzungsdaten, Schriften und Programmteile, auf Wunsch Rezitation). Er überlebt neue
  *   Versionen dieses Workers; nur die Person entfernt ihn. Koran-Daten und Audio: Netz zuerst, ohne Netz der Vorrat –
  *   Audio auch mit Bereichsanfragen (206), damit Vor- und Zurückspulen offline geht.
- * - Lern-App (ADR 0037 Nr. 8): Ihre Vorräte `igmg-lernapp-*` gehören dem eigenen Worker `/lern-app/sw.js` (Scope
- *   `/lern-app/`) und überleben neue Versionen dieses Workers.
+ * - Lern-App (ADR 0037 Nr. 8, Fortschreibung S1 Nr. 6): Ihre Vorräte `igmg-lernapp-*` gehören dem eigenen Worker
+ *   `/lern-app/sw.js` (Scope `/lern-app/`) und überleben neue Versionen dieses Workers. Anfragen unter `/lern-app` lässt
+ *   dieser Worker ganz durch – auch beim allerersten Besuch ohne Netz erscheint dort nie die Offline-Seite der Website.
  */
 const VERSION = 'igmg-v1';
 const SEITEN = `${VERSION}-seiten`;
@@ -50,6 +51,8 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(anfrage.url);
   if (url.origin !== self.location.origin) return;
   const pfad = url.pathname;
+  // Lern-App: eigener Worker, eigene Vorräte – hier nichts beantworten und nichts vorhalten
+  if (pfad === '/lern-app' || pfad.startsWith('/lern-app/')) return;
   // Gespeicherte Koran-Daten: Netz zuerst (gespeicherte Fassung dabei auffrischen), ohne Netz der Vorrat
   if (pfad.startsWith('/api/quran/')) {
     e.respondWith(

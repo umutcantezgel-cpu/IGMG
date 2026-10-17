@@ -2,33 +2,47 @@ import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 import { routing } from './i18n/routing';
 import { echtzeitUrsprung } from './lib/echtzeit/konfig';
+import { umgebungsSchalter } from './lib/funktionen-regeln';
 import { kontenSicherAus, nichtGefundenZiel } from './lib/konto/ohne-konten';
-import { cspOeffentlich, cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
+import { istOberflaeche, type Oberflaeche, STANDARD_OBERFLAECHE } from './lib/lernapp/kurse';
+import { cspLernApp, cspOeffentlich, cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
 
 const sprachRouting = createMiddleware(routing);
 
 /**
- * Lern-App (ADR 0037 Nr. 1 und 3): eigener Bereich `/lern-app/[ui]` außerhalb von next-intl.
- * - `/lern-app` → 308 `/lern-app/de`; Links aus der Website `/(de|tr|en)/lern-app…` → 308 `/lern-app/(de|tr)…` (für en gibt
- *   es keine Oberfläche, also de; eine Oberflächensprache im Rest bleibt erhalten); `/lern-app/en…` → 308 `/lern-app/de…`.
+ * Lern-App (ADR 0037 Nr. 1 und 3, Fortschreibung S1): eigener Bereich `/lern-app/[ui]` außerhalb von next-intl.
+ * - `/lern-app` → 308 `/lern-app/de`; Links aus der Website `/(de|tr|en)/lern-app…` → 308 `/lern-app/(de|tr)…` in einem
+ *   Sprung (für en gibt es keine Oberfläche, also de; eine Oberflächensprache im Rest bleibt erhalten); `/lern-app/en…`
+ *   → 308 `/lern-app/de…`.
  * - Andere unbekannte Oberflächensprache: intern auf die Fangroute `/lern-app/de/…` (404 im Layout der Lern-App). Sonst
  *   träfe `[locale]/[...rest]` die Adresse (Sprache „lern-app“, leere 404-Seite; Spike L0-S1).
+ * - `/lern-app/(de|tr|ar)/anmelden…`: dynamisch mit Nonce-CSP, `noindex`, `no-store` wie die Konto-Seiten (ADR 0037 Nr. 4).
  * - Alles Übrige unter `/lern-app/` läuft ohne next-intl durch. `null`: kein Pfad der Lern-App.
+ * Pakete, Audio und Modelle (`/lern-app/(pakete|audio|modelle)/…`) erreichen den Proxy nicht (Matcher, ADR 0039 S5 Nr. 7).
  */
-type LernAppWeg = { art: 'weiter' | 'intern'; ziel: string } | { art: 'durch' } | null;
+type LernAppWeg = { art: 'weiter' | 'intern'; ziel: string } | { art: 'durch' } | { art: 'anmelden'; ui: Oberflaeche } | null;
 function lernAppWeg(pfad: string): LernAppWeg {
-  if (pfad === '/lern-app' || pfad === '/lern-app/') return { art: 'weiter', ziel: '/lern-app/de' };
+  if (pfad === '/lern-app' || pfad === '/lern-app/') return { art: 'weiter', ziel: `/lern-app/${STANDARD_OBERFLAECHE}` };
   const fremd = pfad.match(/^\/(de|tr|en)\/lern-app(\/.*)?$/);
   if (fremd) {
     const rest = fremd[2] === '/' ? '' : (fremd[2] ?? '');
     if (/^\/(de|tr|ar)(\/|$)/.test(rest)) return { art: 'weiter', ziel: `/lern-app${rest}` };
-    return { art: 'weiter', ziel: `/lern-app/${fremd[1] === 'tr' ? 'tr' : 'de'}${rest}` };
+    if (/^\/en(\/|$)/.test(rest)) return { art: 'weiter', ziel: `/lern-app/${STANDARD_OBERFLAECHE}${rest.slice(3)}` };
+    return { art: 'weiter', ziel: `/lern-app/${fremd[1] === 'tr' ? 'tr' : STANDARD_OBERFLAECHE}${rest}` };
   }
   if (!pfad.startsWith('/lern-app/')) return null;
   const [, ui = '', rest = ''] = pfad.match(/^\/lern-app\/([^/]*)(\/.*)?$/) ?? [];
-  if (ui === 'de' || ui === 'tr' || ui === 'ar') return { art: 'durch' };
-  if (ui === 'en') return { art: 'weiter', ziel: `/lern-app/de${rest}` };
-  return { art: 'intern', ziel: `/lern-app/de/${ui}${rest}` };
+  if (istOberflaeche(ui)) return /^\/anmelden(\/|$)/.test(rest) ? { art: 'anmelden', ui } : { art: 'durch' };
+  if (ui === 'en') return { art: 'weiter', ziel: `/lern-app/${STANDARD_OBERFLAECHE}${rest}` };
+  return { art: 'intern', ziel: `/lern-app/${STANDARD_OBERFLAECHE}/${ui}${rest}` };
+}
+
+/** Kopfzeilen der dynamischen Seiten (Verwaltung, Konto-Seiten, Anmeldung der Lern-App): kein Index, kein Speichern. */
+function dynamischeKopfzeilen(antwort: NextResponse, csp: string): NextResponse {
+  antwort.headers.set('Content-Security-Policy', csp);
+  antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  antwort.headers.set('Cache-Control', 'private, no-store');
+  return antwort;
 }
 
 /**
@@ -40,9 +54,28 @@ export default function proxy(request: NextRequest) {
 
   // Lern-App vor allen übrigen Regeln: weder Sprachrouting noch Konto-Regeln (ADR 0037 Nr. 3)
   const lernApp = lernAppWeg(pathname);
-  if (lernApp?.art === 'durch') return NextResponse.next();
   if (lernApp?.art === 'weiter') return NextResponse.redirect(new URL(`${lernApp.ziel}${search}`, request.url), 308);
   if (lernApp?.art === 'intern') return NextResponse.rewrite(new URL(lernApp.ziel, request.url));
+  if (lernApp) {
+    // Ausgeschaltet heißt 404 (ADR 0035): echt nur, wenn die Umgebung entscheidet (wie `kontenSicherAus`); sonst
+    // entscheiden die Seiten. Die Anmeldung ohne Konten ebenso. Ziel ist die Fangroute mit Platzhalter `_`.
+    const ui = lernApp.art === 'anmelden' ? lernApp.ui : (pathname.split('/')[2] as Oberflaeche);
+    const aus = umgebungsSchalter('lernapp', process.env) === false || (lernApp.art === 'anmelden' && kontenSicherAus());
+    if (aus) {
+      const antwort = NextResponse.rewrite(new URL(`/lern-app/${ui}/_`, request.url));
+      antwort.headers.set('Content-Security-Policy', cspLernApp());
+      antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
+      return antwort;
+    }
+    if (lernApp.art === 'durch') return NextResponse.next();
+    // Anmeldung im Scope der PWA (O-7): Nonce-CSP wie die Konto-Seiten; Next liest die Nonce aus der Anfrage-CSP
+    const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
+    const csp = cspVerwaltung(nonce);
+    const kopf = new Headers(request.headers);
+    kopf.set('x-nonce', nonce);
+    kopf.set('Content-Security-Policy', csp);
+    return dynamischeKopfzeilen(NextResponse.next({ request: { headers: kopf } }), csp);
+  }
 
   // Verwaltung ist nur deutsch (ADR 0016): /tr/verwaltung… und /en/verwaltung… → /verwaltung…
   const fremd = pathname.match(/^\/(tr|en)(\/verwaltung(?:\/.*)?)$/);
@@ -59,11 +92,7 @@ export default function proxy(request: NextRequest) {
   // Nur, was die Umgebung entscheidet (keine Datenbank, `FUNKTION_KONTEN=aus`); aus per Einstellung oder Standard der
   // Produktion bleibt es beim Soft-404 des Layouts (200 + noindex) – Grenze und Betriebsweg in `ohne-konten.ts`.
   if (istKontoPfad(pathname) && kontenSicherAus()) {
-    const antwort = NextResponse.rewrite(new URL(nichtGefundenZiel(pathname), request.url));
-    antwort.headers.set('Content-Security-Policy', cspOeffentlich());
-    antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
-    antwort.headers.set('Cache-Control', 'private, no-store');
-    return antwort;
+    return dynamischeKopfzeilen(NextResponse.rewrite(new URL(nichtGefundenZiel(pathname), request.url)), cspOeffentlich());
   }
 
   // Konto-Seiten (Anmeldung, Mein Bereich) schützt dieselbe Nonce-CSP wie die Verwaltung (ADR 0026)
@@ -75,17 +104,14 @@ export default function proxy(request: NextRequest) {
     // next-intl übernimmt die Request-Header in den Rewrite; Next.js liest die Nonce aus der CSP.
     request.headers.set('x-nonce', nonce);
     request.headers.set('Content-Security-Policy', csp);
-    const antwort = sprachRouting(request);
-    antwort.headers.set('Content-Security-Policy', csp);
-    antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
-    antwort.headers.set('Cache-Control', 'private, no-store');
-    return antwort;
+    return dynamischeKopfzeilen(sprachRouting(request), csp);
   }
 
   return sprachRouting(request);
 }
 
 export const config = {
-  // Keine API-Routen, keine Next-Interna, keine Medien, keine Dateien mit Endung.
-  matcher: ['/((?!api|_next|_vercel|medien|.*\\..*).*)'],
+  // Keine API-Routen, keine Next-Interna, keine Medien, keine Dateien mit Endung; keine Pakete, Audio-Bündel und Modelle
+  // der Lern-App (unveränderliche Auslieferung ohne Proxy, sonst doppelter Fast Origin Transfer – ADR 0039 S5 Nr. 7).
+  matcher: ['/((?!api|_next|_vercel|medien|lern-app/(?:pakete|audio|modelle)(?:/|$)|.*\\..*).*)'],
 };
