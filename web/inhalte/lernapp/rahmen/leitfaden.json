@@ -1,0 +1,3606 @@
+{
+  "id": "inhaltsleitfaden-sprachkurse",
+  "version": "0.1.0",
+  "stand": "2026-10-16",
+  "status": "entwurf_gilt_als_standard",
+  "freigabe": {
+    "kennung": "LM-09",
+    "wer": "Hoca / Vorstand; Formelliste: zwei Personen mit `religioese_pruefung` (zwei Freigaben)",
+    "standard_bis_zur_antwort": "Dieser Entwurf gilt; Alltagsformeln in Sprachkursen gesperrt; offene Fragen laufen mit ihrem Standard",
+    "lesbare_fassung": "_lernapp/lehrplan/INHALTSLEITFADEN.md"
+  },
+  "geltung": {
+    "kurse": [
+      "tr-aus-de",
+      "ar-aus-de",
+      "de-aus-tr",
+      "ar-aus-tr",
+      "de-aus-ar",
+      "tr-aus-ar"
+    ],
+    "inhalte": "Zieltexte, Übersetzungen, Glossen, Tipps, Dialoge, Geschichten, Lesetexte, Einstufungsaufgaben, Bildkarten-Motive, übernommene Tatoeba- und Wiktionary-Einträge",
+    "nicht": [
+      "islam",
+      "koran"
+    ],
+    "nicht_grund": "Wissenskurs und Koran-Arabisch folgen KERN 4.0 §2 und eigenen Regeln"
+  },
+  "bezug": [
+    "_lernapp/KERN.md §2 (KI-Regel 2), §3 (Religionswächter), §4 (keine Sprachausgabe mit Religionsbezug), §5 (Kinderschutz), §7 (Bildkarten-Stil)",
+    "_lernapp/PLAN.md §4 (bild_wort), §5.1, §6.1–§6.4 (Inhaltsleitfaden als Prüfer: Befund → Mensch)",
+    "_lernapp/MENSCHEN.md LM-02, LM-09, LM-34, LM-35, LM-36",
+    "web/docs/adr/0040 (KI-Regel 2), 0041 (Sprachprüfung, Nr. 4: anstößig = kritischer Fehler), 0045 (Nr. 4 Tatoeba-Filter, Nr. 8 GER, Nr. 9 Bildkarten)",
+    "_lernapp/belege/S7-sprachdaten.md §3.3 (Inhaltsindikator), §4 S7-E3, S7-E5, R5, R6"
+  ],
+  "ki_regel_2": "Keine Koranverse, Hadithe, Bittgebete oder anderen religiösen Texte (weder arabisch noch übersetzt), keine Koran-Wortbedeutungen, keine Fiqh-Aussagen. Sprachkurse sind ohne Religionsbezug; religiöse Formeln nur aus der von zwei Gelehrten freigegebenen Liste, bis dahin nur als markierter Kandidat `religionsbezug`, nie als Lernziel. Arabische Schrift ist in dieser Datei verboten; Arabisch nur in Umschrift.",
+  "begruendungen_art": "Alle Begründungen sind redaktionell (Lebenswelt der Familien, Kinderschutz, Lernziel Alltag, Verlässlichkeit für die Gemeinde). Sie sind keine religiöse oder rechtliche Bewertung; diese nehmen die Prüfenden vor (LM-09).",
+  "grundsaetze": [
+    {
+      "id": "G-01",
+      "titel": "Würde",
+      "regel": "Lernende und Figuren werden respektvoll dargestellt. Fehler und Missgeschicke ohne Spott, keine Bloßstellung, kein Auslachen."
+    },
+    {
+      "id": "G-02",
+      "titel": "Familientauglich",
+      "regel": "Jeder Inhalt kann in der Familie gemeinsam gelernt werden. A1–B1 sind kindgeeignet (Abschnitt kinder), B2–C1 behandeln Erwachsenenthemen sachlich."
+    },
+    {
+      "id": "G-03",
+      "titel": "Alltagsnah",
+      "regel": "Situationen aus dem Leben in Deutschland (Schule, Arbeit, Behörden, Arzt, Wohnen, Familie, Nachbarschaft) und aus dem Alltag der Zielsprache (Besuch bei Verwandten, Reise, Einkauf). Herkunftsländer neutral und ohne Politik."
+    },
+    {
+      "id": "G-04",
+      "titel": "Ohne Herabsetzung von Gruppen",
+      "regel": "Keine Stereotype oder Witze über Nationen, Herkunft, Religionen, Geschlechter, Alter, Behinderung, Aussehen oder soziale Lage. Dialekte und Akzente werden nicht lächerlich gemacht. Keine Wertung anderer Religionen."
+    },
+    {
+      "id": "G-05",
+      "titel": "Ohne Politik",
+      "regel": "Keine Parteien, Politikerinnen und Politiker, Wahlkampf, Wahlempfehlungen, Konflikte, Grenzfragen, Flaggen als Bekenntnis. Staatskunde (Institutionen, Grundrechte, Verfahren) nur sachlich ab B1 (OF-10)."
+    },
+    {
+      "id": "G-06",
+      "titel": "Ohne Marken und echte Personen",
+      "regel": "Gattungsbegriffe statt Marken (Messenger, Suchmaschine, Videoplattform, Limonade, Sportschuh). Keine Prominenten, keine echten Sportvereine, Firmen, Schulen, Praxen oder Geschäfte. Städte und Länder sind erlaubt, Adressen und Einrichtungen sind erfunden und allgemein (das Bürgeramt, die Bäckerei)."
+    },
+    {
+      "id": "G-07",
+      "titel": "Keine Werbung und keine Spendenaufrufe",
+      "regel": "Keine Werbung, Spendenaufrufe, Mitgliederwerbung oder Förderhinweise, auch nicht in Beispielsätzen (L0-E17, LM-35). Ehrenamt ist ein Thema, aber nie ein Aufruf."
+    },
+    {
+      "id": "G-08",
+      "titel": "Keine externen Links",
+      "regel": "Keine URLs, QR-Codes, echten E-Mail-Adressen oder Telefonnummern in Lektionen (KERN §5). Beispieladressen nur mit der reservierten Domain example.org, nicht verlinkt; Telefonnummern erkennbar erfunden. Notrufnummern 110 und 112 sind erlaubt."
+    },
+    {
+      "id": "G-09",
+      "titel": "Rollenbilder vielfältig und respektvoll",
+      "regel": "Frauen und Männer in allen Berufen; Väter kochen und erziehen, Mütter arbeiten im Beruf oder zu Hause, beides ohne Wertung; Großeltern sind aktiv; Menschen mit Behinderung kommen selbstverständlich vor. Begegnungen zwischen Frauen und Männern sind sachlich (Schule, Arbeit, Arzt, Behörde, Nachbarschaft), ohne romantischen Unterton außerhalb der Ehe. Kleidung wird nicht gewertet."
+    },
+    {
+      "id": "G-10",
+      "titel": "Namen",
+      "regel": "Figuren tragen Vornamen aus der Namensliste (Abschnitt namen), in allen Kursen aus allen drei Sprachräumen gemischt. Familiennamen nur für die förmliche Anrede ab A2 aus der Familiennamenliste. Keine Namen realer Gemeindemitglieder, keine Kombination, die erkennbar auf eine Person zielt."
+    },
+    {
+      "id": "G-11",
+      "titel": "Religion ist kein Lernthema",
+      "regel": "Moschee, Gebet, Fasten und Feste erscheinen höchstens als markierte Kandidaten `religionsbezug` (Abschnitt religionsbezug) mit zwei religiösen Freigaben; Formeln sind gesperrt bis zur Freigabe der Liste (LM-09)."
+    },
+    {
+      "id": "G-12",
+      "titel": "Ernste Themen ruhig",
+      "regel": "Krankheit, Tod, Unfall, Flucht und Trennung nur sachlich, ohne Einzelheiten, mit der Perspektive Hilfe (Arzt, Notruf, Beratung, Familie). Unter B1 nur leichte Fälle (Erkältung, Arzttermin, verlorener Schlüssel)."
+    },
+    {
+      "id": "G-13",
+      "titel": "Höfliche, natürliche Sprache",
+      "regel": "Du und Sie passend zur Situation; keine Schimpfwörter, keine Ironie unter B2, kein Gottesname als Ausruf. Umgangssprache erst ab B1 und gekennzeichnet."
+    },
+    {
+      "id": "G-14",
+      "titel": "Übernommene Sätze",
+      "regel": "Tatoeba- und Wiktionary-Einträge nur nach Standardfilter (S7-E3: negative Bewertung, Wartungs-Tag, Koran- oder Hadith-4-Gramm, Inhaltsindikator, Religion, Länge) und nach diesem Leitfaden; Treffer werden standardmäßig ausgeschlossen, nicht umgeschrieben."
+    }
+  ],
+  "umschrift": {
+    "norm": "DIN 31635, vereinfacht: ohne Kasusendungen, Artikel al- wie gesprochen angeglichen",
+    "beispiele": [
+      "kitāb",
+      "madrasa",
+      "ʿarabiyya"
+    ],
+    "din_zu_wiktionary": {
+      "ʿ": "ʕ",
+      "ʾ": "ʔ",
+      "ǧ": "j",
+      "ḫ": "ḵ",
+      "ġ": "ḡ"
+    },
+    "hinweis": "Die Umschrift ist Planungs- und Prüfschrift. Kursinhalte stehen in arabischer Schrift nur in web/inhalte/lernapp/{sprache,uebersetzung,aussprache}/** (KERN §3)."
+  },
+  "pruefung": {
+    "zweck": "Tabu-Lexikon für `pnpm lernapp:pruefen`, Prüfung „Inhaltsleitfaden (Tabu-Lexikon, LM-09)“ (PLAN §6.4: Befund → Mensch)",
+    "normalisierung": {
+      "de": "NFC; casefold (ß → ss); Bindestrich trennt zusätzlich in Teilwörter, das ganze Token bleibt ebenfalls erhalten",
+      "tr": "NFC; I → ı, İ → i, dann klein (toLocaleLowerCase('tr')); Zirkumflex entfernen (â → a, î → i, û → u); Apostroph vor Endungen entfernen",
+      "ar": "wie der Religionswächter (KERN §3, ADR 0045 Fortschreibung Nr. 6): ohne Harakat, Tatweel und Koranzeichen; Alif-Formen → Alif, Alif maqṣūra → Yāʾ, Tāʾ marbūṭa → Hāʾ; Klitika wa-, fa-, bi-, li-, ka-, al- und Pronomen-Suffixe abtrennen"
+    },
+    "arten": {
+      "teil": "Form steht irgendwo im Token (für Komposita, z. B. Rotwein)",
+      "anfang": "Token beginnt mit der Form (für Endungen, z. B. domuzlar)",
+      "wort": "Token ist genau die Form",
+      "phrase": "Wortfolge im Satz nach Normalisierung"
+    },
+    "ausnahmen": "Ein Token, das eine Ausnahme enthält, löst in dieser Kategorie keinen Treffer aus. `phrase_ausnahmen` werden vor der Prüfung aus dem Satz entfernt.",
+    "kontext": "Ist `kontext` gesetzt, zählt ein Treffer nur, wenn im selben Satz ein Kontextwort (Art anfang) vorkommt.",
+    "arabisch": "Diese Datei enthält keine arabische Schrift. Das Werkzeug bildet jede Umschrift über `umschrift.din_zu_wiktionary` auf das Feld `rom` in web/daten/kaikki ab (Wortanfang ohne Hamza wie bei DIN zusätzlich mit ʔ, Nisba -ī auch als -iyy) und nimmt nur Seitentitel und Plural der gefundenen Einträge als Muster, keine Stammformen (sonst trifft z. B. der Elativ von ḥabīb jedes „ich mag“). Muster vergleicht es nach Abtrennen der Klitika als ganzes Wort; als Wortanfang erst ab fünf Buchstaben. Die Muster entstehen zur Laufzeit und werden nie in diese Datei geschrieben. Ohne Harakat zusammenfallende Wörter stehen in `mehrdeutig`; ihre Treffer sind nur Hinweise. Umschriften ohne Eintrag im Kernauszug (Liste `messung.arabisch_umschrift.nicht_gefunden`) ergänzt das Werkzeug aus den vollen kaikki-Auszügen; was dort fehlt, bleibt für die Sprachprüfung (LM-01).",
+    "register_aus_kaikki": "Wörter mit Register vulgar, offensive, derogatory, slur, pejorative, ethnic oder sexual im Feld `mk` gelten automatisch als Treffer der Kategorie `fluchen_schimpfwoerter` bzw. `sexualitaet` (S7 §3.7: de 417, tr 96, ar 36 Einträge im Kernauszug).",
+    "ergebnis": {
+      "verboten": "Befund schwer → Mensch; Vorschlag für L3: Eintrag bleibt `menschlich_klaeren`, bis die Redaktion entscheidet",
+      "nur_sachlich": "Befund → Mensch, wenn die Stufe unter `ab_stufe` liegt, die Einheit kindgeeignet ist oder der Satz die Sache als Normalität zeigt; sonst Hinweis",
+      "offene_frage": "wie die Regel im Feld `standard`"
+    },
+    "grenzen": "Stichwortindikator mit Fehlalarmen und Lücken (S7 R5). Endgültig entscheiden KI-Gegenprüfung (Phase G), Redaktion und Muttersprachler-Stichprobe (ADR 0041 Nr. 4: „anstößig“ ist ein kritischer Fehler)."
+  },
+  "namen": {
+    "regeln": [
+      "Dialoge und Geschichten nutzen nur Vornamen aus dieser Liste; jede Einheit mischt die drei Sprachräume (z. B. Elif, Jan und Ḫālid im Deutschkurs).",
+      "Familiennamen nur für die förmliche Anrede ab A2 (Frau Becker, Herr Yılmaz, Frau al-Ḥaddād), nie zusammen mit einem Vornamen derselben Figur in einer Weise, die eine reale Person nahelegt.",
+      "Weibliche und männliche Figuren etwa gleich oft; alle Generationen (Kinder, Jugendliche, Eltern, Ältere).",
+      "Keine Namen realer Gemeindemitglieder; meldet die Redaktion einen Treffer, wird der Name in der betroffenen Einheit ersetzt (OF-09).",
+      "Arabische Namen erscheinen in den Kursinhalten in arabischer Schrift aus der Umschrift dieser Liste; Schreibweise prüft die Sprachstichprobe.",
+      "Nicht verwendet werden: Namen von Propheten, Namen und Beinamen des Propheten Muḥammad, Namen seiner Familie und der vier ersten Kalifen, Engelnamen, Maria/Maryam, Ableitungen von Christus, Gottesnamen und mit ʿAbd- gebildete Namen, Namen von Suren, heiligen Stätten oder religiösen Begriffen, Namen, die ein Wort des Tabu-Lexikons sind. Grund: Dialogfiguren erleben Alltagsmissgeschicke, und der Religionswächter soll keine Fehlalarme auslösen (OF-09)."
+    ],
+    "vornamen": {
+      "de": {
+        "weiblich": [
+          "Anna",
+          "Lena",
+          "Sophie",
+          "Laura",
+          "Julia",
+          "Lea",
+          "Emma",
+          "Mia",
+          "Clara",
+          "Paula",
+          "Greta",
+          "Ida",
+          "Frieda",
+          "Katharina",
+          "Sabine",
+          "Petra",
+          "Monika",
+          "Ursula",
+          "Birgit",
+          "Heike",
+          "Karin",
+          "Susanne",
+          "Andrea",
+          "Nina",
+          "Jana",
+          "Helene"
+        ],
+        "maennlich": [
+          "Jan",
+          "Felix",
+          "Max",
+          "Paul",
+          "Leon",
+          "Finn",
+          "Tim",
+          "Tom",
+          "Moritz",
+          "Ben",
+          "Erik",
+          "Lars",
+          "Jens",
+          "Uwe",
+          "Stefan",
+          "Thomas",
+          "Andreas",
+          "Frank",
+          "Jürgen",
+          "Dieter",
+          "Wolfgang",
+          "Bernd",
+          "Oliver",
+          "Florian",
+          "Karl",
+          "Anton",
+          "Emil",
+          "Konrad"
+        ]
+      },
+      "tr": {
+        "weiblich": [
+          "Elif",
+          "Büşra",
+          "Beren",
+          "Selin",
+          "Gamze",
+          "Damla",
+          "Duru",
+          "Ceren",
+          "Defne",
+          "Ela",
+          "Sude",
+          "Yağmur",
+          "Eylül",
+          "Nehir",
+          "Ayla",
+          "Gül",
+          "Derya",
+          "Özge",
+          "Pınar",
+          "Ebru",
+          "Cansu",
+          "İpek",
+          "Aslı",
+          "Seda",
+          "Begüm",
+          "Nilay",
+          "Dilek",
+          "Sevim"
+        ],
+        "maennlich": [
+          "Emre",
+          "Can",
+          "Mert",
+          "Kerem",
+          "Efe",
+          "Berk",
+          "Arda",
+          "Kaan",
+          "Umut",
+          "Barış",
+          "Onur",
+          "Serkan",
+          "Tolga",
+          "Cem",
+          "Alper",
+          "Oğuz",
+          "Murat",
+          "Selim",
+          "Yiğit",
+          "Hakan",
+          "Selçuk",
+          "Erkan",
+          "Sinan",
+          "Levent",
+          "Çınar",
+          "Ege",
+          "Aras",
+          "Metin",
+          "Erdem",
+          "Gökhan",
+          "Orhan",
+          "Enes"
+        ]
+      },
+      "ar": {
+        "umschrift": "DIN 31635 vereinfacht",
+        "weiblich": [
+          "Laylā",
+          "Salmā",
+          "Hind",
+          "Rīm",
+          "Ranā",
+          "Dīma",
+          "Lamā",
+          "Nadā",
+          "Samar",
+          "Lubnā",
+          "Hāla",
+          "Dāliya",
+          "Yāsmīn",
+          "Rašā",
+          "Sawsan",
+          "Nisrīn",
+          "Ġāda",
+          "Warda",
+          "Samīra",
+          "Nādiya",
+          "Amal",
+          "Rahaf",
+          "Tālā",
+          "Ǧanā",
+          "Šahd"
+        ],
+        "maennlich": [
+          "Ḫālid",
+          "Saʿīd",
+          "Samīr",
+          "Rāmī",
+          "Kamāl",
+          "Ǧamāl",
+          "Fādī",
+          "Ziyād",
+          "Bāsil",
+          "Hišām",
+          "Wāʾil",
+          "Ḥāzim",
+          "ʿĀdil",
+          "Yazan",
+          "Layṯ",
+          "Sāmī",
+          "Ġassān",
+          "Nizār",
+          "Murād",
+          "Ayman",
+          "Fāris",
+          "Rāʾid",
+          "Qays",
+          "Bassām",
+          "Iyād",
+          "Anas",
+          "ʿAmmār"
+        ]
+      }
+    },
+    "familiennamen": {
+      "de": [
+        "Becker",
+        "Schneider",
+        "Fischer",
+        "Wagner",
+        "Hoffmann",
+        "Koch",
+        "Klein",
+        "Neumann",
+        "Schulz",
+        "Krüger",
+        "Braun",
+        "Zimmermann",
+        "Hartmann",
+        "Lange"
+      ],
+      "tr": [
+        "Yılmaz",
+        "Kaya",
+        "Demir",
+        "Şahin",
+        "Çelik",
+        "Yıldız",
+        "Aydın",
+        "Öztürk",
+        "Arslan",
+        "Doğan",
+        "Çetin",
+        "Koç",
+        "Polat",
+        "Aksoy"
+      ],
+      "ar": [
+        "al-Ḥaddād",
+        "an-Naǧǧār",
+        "al-Ḫayyāṭ",
+        "aṣ-Ṣabbāġ",
+        "al-ʿAṭṭār",
+        "al-Ḥalabī",
+        "aš-Šāmī",
+        "as-Saʿdī",
+        "al-Ǧazāʾirī",
+        "al-Baġdādī",
+        "Manṣūr",
+        "ʿAwwād"
+      ]
+    },
+    "ausgeschlossen_beispiele": {
+      "religioese_bindung": [
+        "Muḥammad",
+        "Aḥmad",
+        "Muṣṭafā",
+        "Ibrāhīm",
+        "Yūsuf",
+        "Mūsā",
+        "ʿĪsā",
+        "Maryam",
+        "Fāṭima",
+        "ʿĀʾiša",
+        "Ḫadīǧa",
+        "Zaynab",
+        "Āmina",
+        "ʿAlī",
+        "Ḥasan",
+        "Ḥusayn",
+        "ʿUmar",
+        "ʿUṯmān",
+        "Ḥamza",
+        "ʿAbdallāh",
+        "Yāsīn",
+        "Ṭāhā",
+        "Īmān",
+        "Nūr",
+        "Ahmet",
+        "Mustafa",
+        "Fatma",
+        "Ayşe",
+        "Hatice",
+        "Zeynep",
+        "Emine",
+        "Ali",
+        "Hüseyin",
+        "Ömer",
+        "Osman",
+        "Kadir",
+        "Kerim",
+        "Furkan",
+        "Esra",
+        "Merve",
+        "Tuğba",
+        "Ecrin",
+        "Burak",
+        "Halil",
+        "Bilal",
+        "Maria",
+        "Marie",
+        "Eva",
+        "Adam",
+        "Noah",
+        "Josef",
+        "David",
+        "Jonas",
+        "Elias",
+        "Johannes",
+        "Hans",
+        "Jakob",
+        "Daniel",
+        "Michael",
+        "Gabriel",
+        "Christian",
+        "Gottfried"
+      ],
+      "tabu_oder_fehlalarm": [
+        "Savaş",
+        "Faiz",
+        "Burcu",
+        "Aşkın",
+        "Ḥabīb",
+        "Ḫalīl",
+        "Nabīl"
+      ]
+    }
+  },
+  "tabu": {
+    "regelarten": {
+      "verboten": "kommt nicht vor, auch nicht sachlich (Ausnahmen nur, wo die Kategorie sie ausdrücklich nennt)",
+      "nur_sachlich": "nie als Normalität; sachlich erst ab `ab_stufe` und nur in den Kontexten `sachlich_in`",
+      "offene_frage": "Menschen entscheiden (LM-09); bis dahin gilt `standard`"
+    },
+    "kategorien": [
+      {
+        "id": "alkohol_rauschmittel",
+        "titel": "Alkohol, Tabak und andere Rauschmittel",
+        "regel": "nur_sachlich",
+        "ab_stufe": "B1",
+        "sachlich_in": [
+          "Gesundheit und Vorbeugung (Sucht, Beratung)",
+          "Verkehr (Promillegrenze, Verbot am Steuer)",
+          "Hinweisschilder und Verbote (Rauchverbot, Jugendschutz)"
+        ],
+        "nie": "Figuren trinken, rauchen oder kiffen nicht; keine Kneipe, Bar oder Party mit Alkohol; kein Anstoßen; keine Getränkekarte mit Alkohol",
+        "kinder": "unter B1 nie; in kindgeeigneten Einheiten höchstens Rauchverbot als Schild",
+        "begruendung": "Kommt laut KERN §5 nicht als Alltagsnormalität vor; Rücksicht auf die Lebenspraxis der Familien und Kinderschutz. Vorbeugung ist für Jugendliche und Eltern nützlich.",
+        "hinweise": [
+          "Alkoholfreie Getränke (Tee, Saft, Wasser, Ayran, Limonade) sind die Normalität aller Essensszenen.",
+          "„Weintrauben“, „weinen“, „probieren“, „getrunken“ (Tee) und „Rauchmelder“ sind keine Treffer."
+        ],
+        "offene_frage": "OF-11",
+        "formen": {
+          "de": {
+            "teil": [
+              "alkohol",
+              "wein",
+              "bier",
+              "schnaps",
+              "likör",
+              "whisk",
+              "wodka",
+              "champagner",
+              "prosecco",
+              "cocktail",
+              "betrunken",
+              "angetrunken",
+              "trunkenheit",
+              "besoffen",
+              "kneipe",
+              "brauerei",
+              "promille",
+              "zigarette",
+              "zigarre",
+              "shisha",
+              "wasserpfeife",
+              "haschisch",
+              "marihuana",
+              "cannabis",
+              "kokain"
+            ],
+            "anfang": [
+              "sekt",
+              "droge",
+              "kiff",
+              "heroin",
+              "tabak",
+              "rauche",
+              "raucht",
+              "rauchst",
+              "geraucht",
+              "nichtraucher"
+            ],
+            "wort": [
+              "prost",
+              "joint",
+              "rausch"
+            ],
+            "ausnahmen": [
+              "probier",
+              "weinen",
+              "weint",
+              "weinst",
+              "weinte",
+              "weinend",
+              "weinerl",
+              "beweint",
+              "weintraube",
+              "weinrot",
+              "schwein",
+              "sektor",
+              "sekte",
+              "drogerie",
+              "drogist"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "alkol",
+              "bira",
+              "şarap",
+              "şarab",
+              "rakı",
+              "viski",
+              "votka",
+              "şampanya",
+              "kokteyl",
+              "likör",
+              "içki",
+              "sarhoş",
+              "meyhane",
+              "uyuşturucu",
+              "esrar",
+              "eroin",
+              "kokain",
+              "sigara",
+              "tütün",
+              "puro",
+              "nargile"
+            ],
+            "ausnahmen": [
+              "biraz",
+              "birader",
+              "birarada",
+              "rakım",
+              "esrareng",
+              "esrarlı"
+            ],
+            "phrase_ausnahmen": [
+              "sigara böreği"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "ḫamr",
+              "nabīḏ",
+              "bīra",
+              "kuḥūl",
+              "sakrān",
+              "muskir",
+              "ḫammāra",
+              "wiskī",
+              "fūdkā",
+              "muḫaddir",
+              "kūkāyīn",
+              "hīrūyīn",
+              "sīǧāra",
+              "tadḫīn",
+              "tibġ",
+              "šīša",
+              "narǧīla"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "sukr",
+                "faellt_zusammen_mit": "sukkar (Zucker)"
+              },
+              {
+                "umschrift": "ḥašīš",
+                "faellt_zusammen_mit": "ḥašīš (Gras, Kräuter)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "schwein",
+        "titel": "Schwein und Schweineprodukte",
+        "regel": "nur_sachlich",
+        "ab_stufe": "A2",
+        "sachlich_in": [
+          "Zutatenliste und Etikett lesen (Einkaufen)",
+          "Nachfrage beim Einkauf oder im Restaurant"
+        ],
+        "nie": "keine Gerichte mit Schweinefleisch, die Figuren essen oder empfehlen; Schwein nicht als Haustier oder Kuscheltier; keine Bildkarte",
+        "kinder": "ab A2 nur im Satzmuster „Ist da … drin?“ / „Das ist ohne …“",
+        "begruendung": "Kommt laut KERN §5 nicht als Alltagsnormalität vor. Etiketten zu verstehen ist für viele Familien eine echte Alltagsaufgabe.",
+        "hinweise": [
+          "Fleischgerichte nennen die Fleischart ausdrücklich (Rind, Lamm, Hähnchen, Pute, Fisch).",
+          "Gerichte, die meist aus Schweinefleisch sind (Eisbein, Bratwurst ohne Angabe), meiden.",
+          "„Meerschweinchen“ ist kein Treffer; ob Haustiere vorkommen, regelt OF-03 nur für den Hund.",
+          "Das Wort „halal/helal“ ist ein Kandidat `religionsbezug` (OF-13)."
+        ],
+        "offene_frage": "OF-13",
+        "formen": {
+          "de": {
+            "teil": [
+              "schwein",
+              "ferkel",
+              "schinken",
+              "eisbein"
+            ],
+            "anfang": [
+              "speck"
+            ],
+            "wort": [
+              "sau",
+              "säue"
+            ],
+            "ausnahmen": [
+              "meerschwein",
+              "speckstein"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "domuz",
+              "jambon"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "ḫinzīr"
+            ]
+          }
+        }
+      },
+      {
+        "id": "gluecksspiel",
+        "titel": "Glücksspiel und Wetten",
+        "regel": "nur_sachlich",
+        "ab_stufe": "B2",
+        "sachlich_in": [
+          "Sucht und Vorbeugung",
+          "Verbraucherschutz"
+        ],
+        "nie": "keine Lotterie, kein Rubbellos, keine Sportwette, kein Gewinnspiel mit Einsatz; kein „Ich wette …“ als Redewendung unter B2",
+        "kinder": "nie",
+        "begruendung": "Kein Alltagsnutzen, der das Thema in den Stufen A1–B1 rechtfertigt; Rücksicht auf die Familien und Kinderschutz.",
+        "hinweise": [
+          "Spiele und Wettbewerbe ohne Einsatz (Fußballspiel, Quiz, Wettlauf) sind erlaubt.",
+          "Würfel- und Brettspiele: OF-04."
+        ],
+        "offene_frage": null,
+        "formen": {
+          "de": {
+            "teil": [
+              "glücksspiel",
+              "casino",
+              "kasino",
+              "roulette",
+              "spielautomat",
+              "spielhalle",
+              "spielbank",
+              "rubbellos",
+              "jackpot",
+              "sportwette",
+              "wettbüro",
+              "lotterie"
+            ],
+            "anfang": [
+              "lotto",
+              "poker"
+            ],
+            "wort": [
+              "wette",
+              "wetten",
+              "wettest",
+              "wettet",
+              "gewettet"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "kumar",
+              "piyango",
+              "bahis",
+              "iddaa",
+              "rulet",
+              "poker"
+            ],
+            "phrase": [
+              "kazı kazan",
+              "şans oyunu",
+              "şans oyunları"
+            ],
+            "phrase_ausnahmen": [
+              "bahis konusu"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "qimār",
+              "maysir",
+              "yānaṣīb",
+              "murāhana",
+              "rihān",
+              "kāzīnū"
+            ],
+            "hinweis": "maysir ist zugleich ein Religionsbegriff; ein Treffer verlangt immer die Durchsicht durch Menschen."
+          }
+        }
+      },
+      {
+        "id": "musik_tanz",
+        "titel": "Musik und Tanz als Freizeitnormalität",
+        "regel": "offene_frage",
+        "standard": "Kein Lernthema. Keine Lieder, Instrumente, Konzerte, Bands, Tanzkurse, Partys mit Musik oder Diskos. Das Wort „Musik“ (müzik, mūsīqā) nur passiv ab B2, wenn ein Sachtext es braucht. Hobbys ohne Musik (Abschnitt themen). Karneval und Fasching nicht als Fest.",
+        "kinder": "nie als Thema",
+        "begruendung": "LM-09 nennt Musik ausdrücklich als Tabu-Kandidaten. Die Bewertung von Musik ist Sache der Prüfenden; bis zur Antwort gilt die vorsichtige Lösung.",
+        "hinweise": [
+          "Stundenpläne kommen ohne das Fach Musik aus (Deutsch, Mathematik, Sport, Kunst, Biologie, Erdkunde); Frage in OF-01.",
+          "Hochzeiten und Familienfeste ja, aber ohne Musik und Tanz (OF-02).",
+          "Lieder und Reime als Merkhilfe entfallen; Merkhilfen sind Sprechverse ohne Melodie."
+        ],
+        "offene_frage": "OF-01",
+        "formen": {
+          "de": {
+            "teil": [
+              "musik",
+              "party",
+              "blockflöte"
+            ],
+            "anfang": [
+              "musiz",
+              "konzert",
+              "tanz",
+              "tänz",
+              "disko",
+              "disco",
+              "lied",
+              "sänger",
+              "gitarre",
+              "klavier",
+              "geige",
+              "schlagzeug",
+              "trompete",
+              "flöte",
+              "rapper",
+              "melodie",
+              "karneval",
+              "fasching",
+              "fastnacht"
+            ],
+            "wort": [
+              "singen",
+              "singt",
+              "singst",
+              "singe",
+              "sang",
+              "gesungen",
+              "rap",
+              "song",
+              "songs"
+            ],
+            "ausnahmen": [
+              "konzertiert"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "müzik",
+              "şarkı",
+              "dans",
+              "konser",
+              "gitar",
+              "piyano",
+              "keman",
+              "davul",
+              "flüt",
+              "melodi",
+              "disko",
+              "halay"
+            ],
+            "wort": [
+              "türkü",
+              "türküler",
+              "türküyü",
+              "türküsü",
+              "rap",
+              "rapçi"
+            ],
+            "ausnahmen": [
+              "konserv"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "mūsīqā",
+              "ġināʾ",
+              "uġniya",
+              "raqṣ",
+              "rāqiṣ",
+              "ġītār",
+              "biyānū",
+              "ṭabl",
+              "muġannī",
+              "mūsīqār"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "ʿūd",
+                "faellt_zusammen_mit": "ʿūd (Holz, Stock)"
+              },
+              {
+                "umschrift": "kamān",
+                "faellt_zusammen_mit": "umgangssprachlich auch „auch“"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "beziehungen",
+        "titel": "Beziehungen außerhalb der Ehe, Dating, Flirt",
+        "regel": "verboten",
+        "erlaubt_stattdessen": "Ehe, Verlobung, Hochzeit, Familie, Freundschaft (Freundin unter Mädchen, Freund unter Jungen, Klassenkameradinnen und -kameraden sachlich)",
+        "kinder": "nie",
+        "begruendung": "Familienbild der Gemeinde; Kinderschutz. Freundschaft und Familie decken alle Lernziele der Stufen ab.",
+        "hinweise": [
+          "„Freund/Freundin“ nur eindeutig als Freundschaft; Phrasen wie „fester Freund“ sind Treffer.",
+          "Küsse nur in der Familie (Eltern und Kinder, Großeltern); Treffer gehen an Menschen.",
+          "Türkisch „Sevgili …,“ als Anrede am Briefanfang ist erlaubt; „kız arkadaşım“ unter Mädchen bedeutet Freundin – Treffer prüft ein Mensch.",
+          "Handkuss bei Älteren (elini öpmek) ist kein Treffer.",
+          "Valentinstag kommt nicht vor."
+        ],
+        "offene_frage": "OF-16",
+        "formen": {
+          "de": {
+            "teil": [
+              "verliebt",
+              "verlieben",
+              "flirt",
+              "dating",
+              "affäre",
+              "liebhaber",
+              "liebschaft",
+              "lebensgefährt",
+              "partnerbörse",
+              "partnersuche",
+              "romant",
+              "valentinstag",
+              "seitensprung"
+            ],
+            "anfang": [
+              "küss",
+              "kuss",
+              "geliebte"
+            ],
+            "wort": [
+              "date",
+              "dates",
+              "exfreund",
+              "exfreundin"
+            ],
+            "phrase": [
+              "fester freund",
+              "feste freundin",
+              "mit seiner freundin",
+              "mit ihrem freund",
+              "ex-freund",
+              "ex-freundin"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "flört",
+              "aşık",
+              "aşk",
+              "öp",
+              "metres"
+            ],
+            "ausnahmen": [
+              "aşkolsun"
+            ],
+            "wort": [
+              "sevgili",
+              "sevgilisi",
+              "sevgilim",
+              "sevgilin"
+            ],
+            "phrase": [
+              "erkek arkadaş",
+              "kız arkadaş",
+              "sevgililer günü",
+              "çıkma teklif"
+            ],
+            "phrase_ausnahmen": [
+              "elini öp",
+              "el öp",
+              "ellerini öp"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "ʿišq",
+              "ʿāšiq",
+              "ġarām",
+              "muwāʿada",
+              "ġazal"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "qubla",
+                "faellt_zusammen_mit": "qibla (Gebetsrichtung, Religionsbegriff); nach der Normalisierung (Tāʾ marbūṭa → Hāʾ) gleich qablahu (vor ihm)"
+              },
+              {
+                "umschrift": "ġazal",
+                "faellt_zusammen_mit": "ġazl (Garn) und ġazāl (Gazelle)"
+              },
+              {
+                "umschrift": "ḥabīb",
+                "faellt_zusammen_mit": "Vorname; liebevolle Anrede in der Familie; Stammformen fallen mit uḥibbu (ich mag) zusammen"
+              },
+              {
+                "umschrift": "ḫalīl",
+                "faellt_zusammen_mit": "Vorname"
+              },
+              {
+                "umschrift": "ġarām",
+                "faellt_zusammen_mit": "ġrām (Gramm, Gewichtseinheit)"
+              }
+            ],
+            "hinweis": "qubla, ḥabīb und ḫalīl stehen nur in `mehrdeutig`: ihre Treffer sind Hinweise, keine Befunde."
+          }
+        }
+      },
+      {
+        "id": "sexualitaet",
+        "titel": "Sexualität",
+        "regel": "verboten",
+        "nicht_betroffen": "Schwangerschaft und Geburt als Familienereignis (ab A2), Vorsorge beim Arzt sachlich (ab B1)",
+        "kinder": "nie",
+        "begruendung": "Kein Thema eines allgemeinen Sprachkurses für Familien; Kinderschutz.",
+        "hinweise": [
+          "„Geschlecht“ im Formular (männlich/weiblich, cinsiyet) ist kein Treffer.",
+          "Sexuelle Orientierung ist kein Thema, wird aber nie abwertend erwähnt (G-04)."
+        ],
+        "offene_frage": null,
+        "formen": {
+          "de": {
+            "teil": [
+              "sexu",
+              "erotik",
+              "erotisch",
+              "porno",
+              "prostitu",
+              "bordell",
+              "vergewaltig",
+              "kondom",
+              "verhütung",
+              "splitternackt"
+            ],
+            "anfang": [
+              "sex",
+              "intim",
+              "nackt"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "seks",
+              "cinsel",
+              "erotik",
+              "porno",
+              "çıplak",
+              "fuhuş",
+              "genelev",
+              "tecavüz",
+              "prezervatif",
+              "seviş"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "ǧinsī",
+              "ibāḥiyya",
+              "iġtiṣāb",
+              "ʿāhira",
+              "ʿurī"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "ǧins",
+                "faellt_zusammen_mit": "ǧins (Gattung, Art, Geschlecht im Formular); ǧinsiyya (Staatsangehörigkeit)"
+              }
+            ],
+            "hinweis": "zinā ist zugleich Religionsbegriff und gehört in das Formel-Lexikon des Wächters (KERN §3 a)."
+          }
+        }
+      },
+      {
+        "id": "gewalt_waffen",
+        "titel": "Gewalt und Waffen",
+        "regel": "nur_sachlich",
+        "ab_stufe": "B1",
+        "sachlich_in": [
+          "Nachrichten in ruhigem Ton",
+          "Polizei, Notruf, Hilfe holen",
+          "Unfall und Erste Hilfe",
+          "Geschichte ohne Einzelheiten von Kampf und Tod"
+        ],
+        "nie": "keine Schilderung von Verletzung, Tötung oder Folter; keine Waffe als Spielzeug oder Hobby; keine Verherrlichung; keine Kriegsspiele",
+        "kinder": "unter B1 nur Hilfe holen (Notruf 110/112, Polizei hilft, Streit friedlich lösen)",
+        "begruendung": "Kinderschutz; Rücksicht auf Familien mit Fluchterfahrung. Sicherheit und Hilfe sind nützliche Alltagssprache.",
+        "hinweise": [
+          "Küchenmesser, Werkzeug und Sport (Fechten ausgenommen) sind keine Treffer.",
+          "„kriegen“ (bekommen) und „Waffel“ sind keine Treffer.",
+          "Streit unter Geschwistern oder in der Schule darf vorkommen, wenn er friedlich gelöst wird."
+        ],
+        "offene_frage": "OF-18",
+        "formen": {
+          "de": {
+            "teil": [
+              "mord",
+              "umbring",
+              "erschieß",
+              "erschoss",
+              "erstech",
+              "erstoch",
+              "waffe",
+              "pistole",
+              "krieg",
+              "terror",
+              "vergewaltig",
+              "schlägerei",
+              "prügel",
+              "entführ",
+              "attentat",
+              "massaker",
+              "folter"
+            ],
+            "anfang": [
+              "töt",
+              "gewehr",
+              "bombe",
+              "leiche",
+              "geisel"
+            ],
+            "ausnahmen": [
+              "waffel",
+              "kriegen",
+              "kriegst",
+              "kriegt",
+              "gekriegt"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "öldür",
+              "cinayet",
+              "katil",
+              "silah",
+              "tabanca",
+              "tüfek",
+              "bomba",
+              "terör",
+              "intihar",
+              "ceset",
+              "işkence",
+              "rehine",
+              "katliam"
+            ],
+            "hinweis": "savaş (Krieg) ist zugleich Vorname und Wort für „Kampf gegen …“; Treffer nur über `phrase`.",
+            "phrase": [
+              "savaş çık",
+              "savaşta",
+              "savaşın"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "qatl",
+              "qātil",
+              "silāḥ",
+              "musaddas",
+              "bunduqiyya",
+              "qunbula",
+              "ḥarb",
+              "irhāb",
+              "intiḥār",
+              "ǧuṯṯa",
+              "taʿḏīb",
+              "iġtiyāl",
+              "maḏbaḥa"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "ḥarb",
+                "faellt_zusammen_mit": "Teil von Komposita (Sachtexte Geschichte ab B1 erlaubt)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "aberglaube",
+        "titel": "Aberglaube, Wahrsagen, Horoskop, Magie",
+        "regel": "verboten",
+        "kinder": "nie",
+        "begruendung": "Widerspricht dem Selbstverständnis der Gemeinde; ist zudem kein Lernziel. Weit verbreitete Bräuche (Nazar-Perle, Kaffeesatzlesen, Glücksbringer, Halloween) kommen deshalb ausdrücklich nicht vor.",
+        "hinweise": [
+          "„zauberhaft“ (reizend), „Hexenschuss“ (Rückenschmerz) und „Muskat“ (Gewürz) sind keine Treffer.",
+          "Märchen mit Zauberei und Hexen entfallen; Geschichten sind realistisch.",
+          "„Glück haben“, „viel Glück“ (iyi şanslar, ḥaẓẓ saʿīd) sind erlaubt."
+        ],
+        "offene_frage": null,
+        "formen": {
+          "de": {
+            "teil": [
+              "horoskop",
+              "sternzeichen",
+              "wahrsag",
+              "hellseh",
+              "tarot",
+              "kaffeesatz",
+              "glücksbringer",
+              "talisman",
+              "amulett",
+              "astrolog",
+              "orakel",
+              "gespenst",
+              "halloween",
+              "unglückszahl"
+            ],
+            "anfang": [
+              "hexe",
+              "zauber",
+              "magie",
+              "magisch",
+              "spuk"
+            ],
+            "phrase": [
+              "freitag der 13",
+              "toi toi toi",
+              "auf holz klopfen",
+              "schwarze katze bringt"
+            ],
+            "ausnahmen": [
+              "hexenschuss",
+              "zauberhaft"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "falcı",
+              "astroloji",
+              "medyum",
+              "muska",
+              "büyücü",
+              "cadı",
+              "uğursuz",
+              "tılsım",
+              "hayalet",
+              "nazarlık"
+            ],
+            "wort": [
+              "fal",
+              "falı",
+              "fala",
+              "falına",
+              "falını",
+              "burç",
+              "burcu",
+              "burcun",
+              "burcum",
+              "burçlar",
+              "burcunu"
+            ],
+            "phrase": [
+              "nazar boncu",
+              "nazar değ",
+              "kahve falı",
+              "el falı",
+              "büyü yap"
+            ],
+            "ausnahmen": [
+              "muskat"
+            ],
+            "hinweis": "burç heißt auch „Turm“ einer Burg; nazar allein auch „Blick“."
+          },
+          "ar": {
+            "umschrift": [
+              "siḥr",
+              "sāḥir",
+              "kāhin",
+              "ʿarrāf",
+              "tanǧīm",
+              "munaǧǧim",
+              "tamīma",
+              "šaʿwaḏa",
+              "ʿafrīt",
+              "šabaḥ"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "siḥr",
+                "faellt_zusammen_mit": "saḥar (Morgendämmerung), Religionsbegriff suḥūr"
+              },
+              {
+                "umschrift": "burǧ",
+                "faellt_zusammen_mit": "burǧ (Turm)"
+              },
+              {
+                "umschrift": "kāhin",
+                "faellt_zusammen_mit": "kāhin (Priester)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "zinsgeschaefte",
+        "titel": "Zinsgeschäfte als Normalität",
+        "regel": "nur_sachlich",
+        "ab_stufe": "B2",
+        "sachlich_in": [
+          "Bank und Vertrag (Begriffe verstehen)",
+          "Verbraucherschutz und Schuldnerberatung",
+          "Behördenpost"
+        ],
+        "nie": "keine Figur nimmt einen Kredit mit Zinsen auf oder legt Geld auf Zinsen an; keine Empfehlung von Finanzprodukten",
+        "kinder": "nie; Taschengeld, Sparen in der Spardose und Preise vergleichen sind erlaubt",
+        "begruendung": "Kommt nicht als Normalität vor; Rücksicht auf die Familien. Begriffe aus Vertrag und Bank verstehen ist ab B2 ein echter Alltagsbedarf.",
+        "hinweise": [
+          "Konto, Überweisung, Bankkarte, Rechnung, Miete und Ratenzahlung ohne Zinsen sind erlaubt (Bank und Post ab A2).",
+          "„Kreditkarte“ als Zahlungsmittel ist kein Treffer (OF-12).",
+          "Arabisch fāʾida heißt auch „Nutzen“; Treffer nur über die Phrase."
+        ],
+        "offene_frage": "OF-12",
+        "formen": {
+          "de": {
+            "teil": [
+              "kredit",
+              "darlehen",
+              "hypothek",
+              "tagesgeld",
+              "festgeld",
+              "rendite",
+              "ratenkredit",
+              "kreditzins",
+              "leitzins",
+              "sparzins",
+              "hypothekenzins"
+            ],
+            "anfang": [
+              "zins",
+              "dispo"
+            ],
+            "ausnahmen": [
+              "kreditkarte"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "faiz",
+              "kredi",
+              "ipotek",
+              "mevduat",
+              "tefeci"
+            ],
+            "phrase_ausnahmen": [
+              "kredi kartı"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "ribā",
+              "rahn ʿaqārī"
+            ],
+            "phrase": [
+              "saʿr al-fāʾida",
+              "fāʾida ʿalā l-qarḍ"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "fāʾida",
+                "faellt_zusammen_mit": "fāʾida (Nutzen, Vorteil)"
+              }
+            ],
+            "hinweis": "ribā ist zugleich Religionsbegriff (Formel-Lexikon des Wächters)."
+          }
+        }
+      },
+      {
+        "id": "hund_im_haus",
+        "titel": "Hund im Haus als Normalität",
+        "regel": "offene_frage",
+        "standard": "Kein Hund als Haustier in Wohnung oder Haus. Hund draußen sachlich ab A2 (Leinenpflicht im Park, Blindenhund, Polizeihund, „Ich habe Angst vor Hunden“). Haustiere in Dialogen: Katze, Wellensittich, Fische, Schildkröte.",
+        "kinder": "wie Standard",
+        "begruendung": "LM-09 als Frage; Rücksicht auf die Haltung vieler Familien. Bildkarten zeigen ohnehin keine Tiere (Abschnitt bildkarten).",
+        "hinweise": [
+          "„hundert“ und „Jahrhundert“ sind keine Treffer; Treffer zählen nur mit Kontextwort im selben Satz.",
+          "Türkisch „köpek balığı“ (Hai) ist kein Treffer."
+        ],
+        "offene_frage": "OF-03",
+        "formen": {
+          "de": {
+            "anfang": [
+              "hund",
+              "welpe",
+              "gassi"
+            ],
+            "ausnahmen": [
+              "hundert"
+            ],
+            "kontext": [
+              "wohnung",
+              "zimmer",
+              "bett",
+              "sofa",
+              "haus",
+              "kuschel",
+              "streichel",
+              "haustier",
+              "küss",
+              "spielt mit",
+              "unser",
+              "mein",
+              "dein"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "köpek",
+              "köpeğ",
+              "enik"
+            ],
+            "phrase_ausnahmen": [
+              "köpek balı"
+            ],
+            "kontext": [
+              "ev",
+              "oda",
+              "yatak",
+              "kanepe",
+              "sev",
+              "evcil",
+              "bizim",
+              "benim"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "kalb",
+              "ǧarw"
+            ],
+            "kontext_umschrift": [
+              "bayt",
+              "šaqqa",
+              "ġurfa",
+              "sarīr",
+              "ḥayawān alīf"
+            ]
+          }
+        }
+      },
+      {
+        "id": "kleidung_koerper",
+        "titel": "Anstößige Kleidung und Körperbeschreibung",
+        "regel": "verboten",
+        "erlaubt_stattdessen": "Kleidung neutral (Jacke, Hose, Rock, Kleid, Hemd, Schuhe, Mantel, Mütze, Schal); Körperteile von Kopf bis Fuß ohne Intimbereich; Beschwerden beim Arzt sachlich",
+        "kinder": "nie",
+        "begruendung": "Würde und Kinderschutz; keine Bewertung von Körpern, kein Schönheitsdruck.",
+        "hinweise": [
+          "Keine Bewertung von Aussehen (dick, hässlich, sexy, „zu kurz“); Personen werden über Kleidung, Haarfarbe oder Größe neutral beschrieben.",
+          "Keine Diät- und Gewichtsziele für Kinder.",
+          "Kopftuch als Kleidungsstück: OF-08.",
+          "„Mayonnaise“ ist kein Treffer."
+        ],
+        "offene_frage": "OF-08",
+        "formen": {
+          "de": {
+            "teil": [
+              "bikini",
+              "minirock",
+              "bauchfrei",
+              "dessous",
+              "reizwäsche",
+              "busen",
+              "oben-ohne"
+            ],
+            "anfang": [
+              "sexy",
+              "freizügig"
+            ],
+            "wort": [
+              "hintern"
+            ],
+            "phrase": [
+              "oben ohne"
+            ],
+            "ausnahmen": [
+              "freizügigkeit"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "bikini",
+              "mayo",
+              "dekolte",
+              "seksi"
+            ],
+            "phrase": [
+              "mini etek",
+              "iç çamaşır"
+            ],
+            "ausnahmen": [
+              "mayonez"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "bīkīnī"
+            ],
+            "phrase": [
+              "malābis dāḫiliyya"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "muṯīr",
+                "faellt_zusammen_mit": "muṯīr (spannend, aufregend)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "fluchen_schimpfwoerter",
+        "titel": "Fluchen und Schimpfwörter",
+        "regel": "verboten",
+        "kinder": "nie",
+        "begruendung": "Würde und Kinderschutz; ADR 0041 Nr. 4 zählt „anstößig“ als kritischen Fehler. Auch der Gottesname als Ausruf oder Fluch kommt nicht vor.",
+        "hinweise": [
+          "Hauptquelle ist das Register in web/daten/kaikki (`mk`: vulgar, offensive, derogatory, slur, pejorative, ethnic); die Liste hier ergänzt nur häufige Fälle.",
+          "Milde Wörter (blöd, dumm) gehen als Hinweis an Menschen; Figuren lösen Ärger mit Worten wie „Schade!“, „Ach nein!“, „Tüh!“ (tr: „Eyvah!“, „Off!“).",
+          "„Mist“ (Dünger) ist im Sachtext Landwirtschaft erlaubt; „Marsch“ und „Flucht“ sind keine Treffer."
+        ],
+        "offene_frage": null,
+        "formen": {
+          "de": {
+            "teil": [
+              "scheiß",
+              "scheiss",
+              "arschloch",
+              "schlampe",
+              "bastard",
+              "wichser",
+              "hurensohn"
+            ],
+            "anfang": [
+              "arsch",
+              "verdammt",
+              "verflucht",
+              "idiot",
+              "blöd",
+              "dumm",
+              "depp",
+              "trottel",
+              "kacke",
+              "hure"
+            ],
+            "wort": [
+              "mist",
+              "fluchen",
+              "fluche",
+              "fluchst",
+              "geflucht"
+            ],
+            "phrase": [
+              "oh gott",
+              "mein gott",
+              "gott verdammt",
+              "halt die klappe",
+              "halt die fresse"
+            ],
+            "hinweis": "Die Verbform „er flucht“ ist gleich geschrieben wie das Nomen „Flucht“ und steht deshalb nicht in der Liste; die KI-Gegenprüfung achtet darauf."
+          },
+          "tr": {
+            "anfang": [
+              "salak",
+              "aptal",
+              "gerizekalı",
+              "kahrolsun",
+              "lanet",
+              "şerefsiz",
+              "siktir",
+              "kahpe",
+              "pislik"
+            ],
+            "wort": [
+              "lan"
+            ],
+            "phrase": [
+              "allah kahretsin",
+              "allah belanı"
+            ]
+          },
+          "ar": {
+            "umschrift": [
+              "laʿana",
+              "malʿūn",
+              "ġabiyy",
+              "aḥmaq"
+            ],
+            "hinweis": "Gottesname in Flüchen fällt zugleich unter den Wächter (KERN §3 a)."
+          }
+        }
+      },
+      {
+        "id": "politik",
+        "titel": "Politik",
+        "regel": "verboten",
+        "ausnahme": "Staatskunde sachlich ab B1 (Institutionen, Grundrechte, Wahl als Verfahren, Gemeinde, Gericht), ohne Parteien, Personen und Streitfragen – OF-10",
+        "kinder": "nie Parteien oder Konflikte; Klassensprecherwahl in der Schule ist erlaubt",
+        "begruendung": "Die Lern-App dient allen Familien der Gemeinde; Parteinahme und Konflikte spalten. Staatskunde ist für Einbürgerung und Behörden nützlich.",
+        "hinweise": [
+          "Keine Flaggen, Landkarten mit Grenzen oder Hymnen.",
+          "Herkunftsländer kommen als Reiseziel und Familienort vor, nie mit Konflikt oder Regierung.",
+          "Flucht und Migration nur sachlich (Ankommen, Behörden, Sprache), ohne Kriegsschilderung (OF-18).",
+          "„Vertragspartei“ (B2 Vertrag) und Turkish „parti“ als Feier gehen als Hinweis an Menschen."
+        ],
+        "offene_frage": "OF-10",
+        "formen": {
+          "de": {
+            "teil": [
+              "partei",
+              "wahlkampf",
+              "wahlplakat",
+              "politiker",
+              "parteitag",
+              "regierungschef",
+              "putsch"
+            ],
+            "wort": [
+              "cdu",
+              "csu",
+              "spd",
+              "fdp",
+              "afd",
+              "bsw"
+            ],
+            "ausnahmen": [
+              "vertragspartei"
+            ]
+          },
+          "tr": {
+            "anfang": [
+              "parti",
+              "siyas",
+              "milletvekil",
+              "miting",
+              "darbe"
+            ],
+            "wort": [
+              "akp",
+              "chp",
+              "mhp",
+              "hdp"
+            ],
+            "phrase": [
+              "seçim kampanyası",
+              "iyi parti",
+              "dem parti"
+            ],
+            "phrase_ausnahmen": [
+              "doğum günü parti"
+            ],
+            "hinweis": "seçim heißt auch „Wahl, Auswahl“ (seçim yap), darbe auch „Schlag, Stoß“; seçim deshalb nur als Phrase, darbe als Hinweis an Menschen."
+          },
+          "ar": {
+            "umschrift": [
+              "siyāsa",
+              "siyāsī",
+              "intiḫābāt",
+              "muẓāhara",
+              "inqilāb",
+              "barlamān"
+            ],
+            "mehrdeutig": [
+              {
+                "umschrift": "ḥizb",
+                "faellt_zusammen_mit": "ḥizb (Abschnitt der Koranlesung, Religionsbegriff)"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "themen": [
+    {
+      "id": "begruessung_vorstellung",
+      "titel": "Begrüßung und Vorstellung",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Name, Herkunft, Sprachen, Wohnort. Nur weltliche Grüße (Guten Tag, Merhaba, marḥaban); religiöse Grußformeln sind gesperrte Kandidaten.",
+      "wortfeld": {
+        "de": [
+          "Name",
+          "Land",
+          "Sprache"
+        ],
+        "tr": [
+          "ad",
+          "ülke",
+          "dil"
+        ],
+        "ar": [
+          "ism",
+          "balad",
+          "luġa"
+        ]
+      }
+    },
+    {
+      "id": "familie",
+      "titel": "Familie und Verwandte",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Eltern, Geschwister, Großeltern, Tanten und Onkel (Türkisch und Arabisch unterscheiden mütterliche und väterliche Seite). Ehe und Hochzeit ja; Trennung erst ab B2 sachlich.",
+      "wortfeld": {
+        "de": [
+          "Mutter",
+          "Bruder",
+          "Großvater"
+        ],
+        "tr": [
+          "anne",
+          "kardeş",
+          "dede"
+        ],
+        "ar": [
+          "umm",
+          "aḫ",
+          "ǧadd"
+        ]
+      }
+    },
+    {
+      "id": "zeit_datum",
+      "titel": "Zahlen, Uhrzeit, Datum",
+      "stufen": [
+        "A1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Wochentage, Monate, Jahreszeiten, Termine. Geburtstag als Datum ja (OF-07). Gregorianischer Kalender; islamische Monatsnamen sind Kandidaten `religionsbezug`.",
+      "wortfeld": {
+        "de": [
+          "Uhr",
+          "Woche",
+          "Monat"
+        ],
+        "tr": [
+          "saat",
+          "hafta",
+          "ay"
+        ],
+        "ar": [
+          "sāʿa",
+          "usbūʿ",
+          "šahr"
+        ]
+      }
+    },
+    {
+      "id": "wetter",
+      "titel": "Wetter und Jahreszeiten",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Wetterbericht, Kleidung zum Wetter. Mond auf Bildkarten nur als Vollmond (keine Mondsichel, KERN 3.0).",
+      "wortfeld": {
+        "de": [
+          "Regen",
+          "Sonne",
+          "Winter"
+        ],
+        "tr": [
+          "yağmur",
+          "güneş",
+          "kış"
+        ],
+        "ar": [
+          "maṭar",
+          "šams",
+          "šitāʾ"
+        ]
+      }
+    },
+    {
+      "id": "wohnen",
+      "titel": "Wohnen",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Zimmer, Möbel, Hausarbeit (alle Familienmitglieder helfen). Ab B2 Mietvertrag, Nebenkosten, Mietrecht sachlich.",
+      "wortfeld": {
+        "de": [
+          "Wohnung",
+          "Küche",
+          "Miete"
+        ],
+        "tr": [
+          "ev",
+          "mutfak",
+          "kira"
+        ],
+        "ar": [
+          "šaqqa",
+          "maṭbaḫ",
+          "īǧār"
+        ]
+      }
+    },
+    {
+      "id": "einkaufen",
+      "titel": "Einkaufen und Preise",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Laden, Markt, Preise, Mengen, Rückgabe. Keine Marken und Ladenketten. Zutatenliste lesen ab A2 (Regel schwein).",
+      "wortfeld": {
+        "de": [
+          "Preis",
+          "Kasse",
+          "Tüte"
+        ],
+        "tr": [
+          "fiyat",
+          "kasa",
+          "poşet"
+        ],
+        "ar": [
+          "siʿr",
+          "sūq",
+          "kīs"
+        ]
+      }
+    },
+    {
+      "id": "essen_trinken",
+      "titel": "Essen und Trinken (halal-neutral)",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Obst, Gemüse, Brot, Reis, Hülsenfrüchte, Milchprodukte, Fisch, Hähnchen, Lamm, Rind; Getränke Wasser, Tee, Saft, Ayran, Milch. Fleischart immer nennen. Kein Alkohol, kein Schwein, keine Halal-Kennzeichnung (OF-13), kein Tischgebet. Gerichte aus allen drei Küchen gleichwertig.",
+      "wortfeld": {
+        "de": [
+          "Brot",
+          "Reis",
+          "Linsen"
+        ],
+        "tr": [
+          "ekmek",
+          "pilav",
+          "mercimek"
+        ],
+        "ar": [
+          "ḫubz",
+          "ruzz",
+          "ʿadas"
+        ]
+      }
+    },
+    {
+      "id": "kleidung",
+      "titel": "Kleidung",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Neutral und ohne Wertung (Regel kleidung_koerper). Kopftuch als Kleidungsstück: OF-08.",
+      "wortfeld": {
+        "de": [
+          "Jacke",
+          "Schuhe",
+          "Mantel"
+        ],
+        "tr": [
+          "ceket",
+          "ayakkabı",
+          "palto"
+        ],
+        "ar": [
+          "sutra",
+          "ḥiḏāʾ",
+          "miʿṭaf"
+        ]
+      }
+    },
+    {
+      "id": "gesundheit",
+      "titel": "Körper und Gesundheit",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Körperteile von Kopf bis Fuß ohne Intimbereich, Beschwerden, Arzttermin, Apotheke, Notruf. Ab B1 Vorbeugung (auch Sucht, Regel alkohol_rauschmittel), ab B2 Krankenversicherung und Pflege.",
+      "wortfeld": {
+        "de": [
+          "Kopf",
+          "Arzt",
+          "Apotheke"
+        ],
+        "tr": [
+          "baş",
+          "doktor",
+          "eczane"
+        ],
+        "ar": [
+          "raʾs",
+          "ṭabīb",
+          "ṣaydaliyya"
+        ]
+      }
+    },
+    {
+      "id": "schule",
+      "titel": "Schule und Lernen",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Schulsachen, Fächer (ohne Musik, OF-01), Hausaufgaben, Pause, Elterngespräch, Zeugnis. Lehrerinnen und Lehrer respektvoll; Mitschülerinnen und Mitschüler aller Herkunft.",
+      "wortfeld": {
+        "de": [
+          "Heft",
+          "Lehrerin",
+          "Pause"
+        ],
+        "tr": [
+          "defter",
+          "öğretmen",
+          "teneffüs"
+        ],
+        "ar": [
+          "daftar",
+          "muʿallima",
+          "istirāḥa"
+        ]
+      }
+    },
+    {
+      "id": "arbeit_berufe",
+      "titel": "Arbeit und Berufe",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Berufe für Frauen und Männer gleichermaßen (G-09). Ab B1 Bewerbung und Praktikum, ab B2 Arbeitsvertrag, Kündigung, Arbeitsrecht sachlich.",
+      "wortfeld": {
+        "de": [
+          "Beruf",
+          "Werkstatt",
+          "Kollegin"
+        ],
+        "tr": [
+          "meslek",
+          "atölye",
+          "işçi"
+        ],
+        "ar": [
+          "mihna",
+          "warša",
+          "zamīla"
+        ]
+      }
+    },
+    {
+      "id": "verkehr",
+      "titel": "Verkehr und Unterwegssein",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Bus, Bahn, Fahrrad, Schulweg, Fahrkarte, Führerschein (B1). Verkehrsregeln sachlich.",
+      "wortfeld": {
+        "de": [
+          "Bus",
+          "Fahrkarte",
+          "Bahnhof"
+        ],
+        "tr": [
+          "otobüs",
+          "bilet",
+          "istasyon"
+        ],
+        "ar": [
+          "ḥāfila",
+          "taḏkira",
+          "maḥaṭṭa"
+        ]
+      }
+    },
+    {
+      "id": "behoerden",
+      "titel": "Behörden und Formulare",
+      "stufen": [
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Anmeldung, Ausweis, Formulare, Termine, Bescheide. Einrichtungen allgemein benannt (das Bürgeramt). Aufenthalt und Einbürgerung sachlich, ohne Politik.",
+      "wortfeld": {
+        "de": [
+          "Formular",
+          "Termin",
+          "Ausweis"
+        ],
+        "tr": [
+          "form",
+          "randevu",
+          "kimlik"
+        ],
+        "ar": [
+          "istimāra",
+          "mawʿid",
+          "hawiyya"
+        ]
+      }
+    },
+    {
+      "id": "bank_post",
+      "titel": "Bank und Post",
+      "stufen": [
+        "A2",
+        "B1",
+        "B2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Konto, Überweisung, Paket, Brief. Zinsen und Kredite erst ab B2 sachlich (Regel zinsgeschaefte).",
+      "wortfeld": {
+        "de": [
+          "Konto",
+          "Brief",
+          "Paket"
+        ],
+        "tr": [
+          "hesap",
+          "mektup",
+          "paket"
+        ],
+        "ar": [
+          "ḥisāb",
+          "risāla",
+          "ṭard"
+        ]
+      }
+    },
+    {
+      "id": "stadt_orientierung",
+      "titel": "Stadt und Orientierung",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Wege, Gebäude, Plätze (Bäckerei, Bibliothek, Rathaus, Park). Gotteshäuser als Gebäude nur als Kandidaten `religionsbezug` (OF-06).",
+      "wortfeld": {
+        "de": [
+          "Straße",
+          "Brücke",
+          "Rathaus"
+        ],
+        "tr": [
+          "sokak",
+          "köprü",
+          "belediye"
+        ],
+        "ar": [
+          "šāriʿ",
+          "ǧisr",
+          "baladiyya"
+        ]
+      }
+    },
+    {
+      "id": "natur_umwelt",
+      "titel": "Natur und Umwelt",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Pflanzen, Landschaften, Mülltrennung, Energie sparen. Klima ab B1 sachlich, ohne Parteien.",
+      "wortfeld": {
+        "de": [
+          "Baum",
+          "Fluss",
+          "Müll"
+        ],
+        "tr": [
+          "ağaç",
+          "nehir",
+          "çöp"
+        ],
+        "ar": [
+          "šaǧara",
+          "nahr",
+          "qumāma"
+        ]
+      }
+    },
+    {
+      "id": "tiere",
+      "titel": "Tiere",
+      "stufen": [
+        "A1",
+        "A2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Wortschatz ohne Bildkarten (Text und Hören, Abschnitt bildkarten). Bauernhof und Wildtiere ohne Schwein; Haustiere nach OF-03.",
+      "wortfeld": {
+        "de": [
+          "Katze",
+          "Schaf",
+          "Vogel"
+        ],
+        "tr": [
+          "kedi",
+          "koyun",
+          "kuş"
+        ],
+        "ar": [
+          "qiṭṭa",
+          "ḫarūf",
+          "ṭāʾir"
+        ]
+      }
+    },
+    {
+      "id": "sport",
+      "titel": "Sport",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Fußball, Schwimmen, Radfahren, Laufen, Basketball. Keine echten Vereine oder Sportler. Sportkleidung neutral.",
+      "wortfeld": {
+        "de": [
+          "Ball",
+          "Mannschaft",
+          "Schwimmbad"
+        ],
+        "tr": [
+          "top",
+          "takım",
+          "havuz"
+        ],
+        "ar": [
+          "kura",
+          "farīq",
+          "masbaḥ"
+        ]
+      }
+    },
+    {
+      "id": "hobbys",
+      "titel": "Hobbys und Freizeit (ohne Musik)",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Lesen, Wandern, Kochen, Backen, Gärtnern, Malen (Landschaften, Muster), Basteln, Handarbeit, Fotografieren in der Natur, Ausflüge, Schach und Puzzle (Würfelspiele OF-04). Keine Musik, kein Tanz, keine Partys.",
+      "wortfeld": {
+        "de": [
+          "Buch",
+          "Garten",
+          "Ausflug"
+        ],
+        "tr": [
+          "kitap",
+          "bahçe",
+          "gezi"
+        ],
+        "ar": [
+          "kitāb",
+          "ḥadīqa",
+          "nuzha"
+        ]
+      }
+    },
+    {
+      "id": "medien",
+      "titel": "Medien und Digitales (sachlich)",
+      "stufen": [
+        "A2",
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Handy, Nachrichten, E-Mail, Passwort, Bildschirmzeit, Sicherheit im Netz. Keine Marken (Messenger, Videoplattform). Kinder treffen keine Fremden im Netz und haben keine Geheimnisse vor den Eltern.",
+      "wortfeld": {
+        "de": [
+          "Handy",
+          "Nachricht",
+          "Passwort"
+        ],
+        "tr": [
+          "telefon",
+          "mesaj",
+          "şifre"
+        ],
+        "ar": [
+          "hātif",
+          "ḫabar",
+          "ḥāsūb"
+        ]
+      }
+    },
+    {
+      "id": "reisen",
+      "titel": "Reisen und Besuch",
+      "stufen": [
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Bahn, Flughafen, Unterkunft, Besuch bei Verwandten in Deutschland, der Türkei und arabischen Ländern – gleichwertig und ohne Politik. Pilgerfahrt nur als Kandidat R-12.",
+      "wortfeld": {
+        "de": [
+          "Koffer",
+          "Flughafen",
+          "Reise"
+        ],
+        "tr": [
+          "bavul",
+          "havalimanı",
+          "yolculuk"
+        ],
+        "ar": [
+          "ḥaqība",
+          "maṭār",
+          "safar"
+        ]
+      }
+    },
+    {
+      "id": "nachbarschaft",
+      "titel": "Nachbarschaft",
+      "stufen": [
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Hausordnung, Hilfe im Alltag, Ruhezeiten, Einladung zum Tee, Paket annehmen.",
+      "wortfeld": {
+        "de": [
+          "Nachbarin",
+          "Treppe",
+          "Hilfe"
+        ],
+        "tr": [
+          "komşu",
+          "merdiven",
+          "yardım"
+        ],
+        "ar": [
+          "ǧāra",
+          "daraǧ",
+          "musāʿada"
+        ]
+      }
+    },
+    {
+      "id": "ehrenamt",
+      "titel": "Ehrenamt",
+      "stufen": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Verein, Feuerwehr, Nachhilfe, Lebensmittelausgabe, Sporttraining. Nie als Aufruf oder Spendenbitte (G-07). Ehrenamt in der Moschee nur als Kandidat `religionsbezug`.",
+      "wortfeld": {
+        "de": [
+          "Verein",
+          "Feuerwehr",
+          "Nachhilfe"
+        ],
+        "tr": [
+          "dernek",
+          "itfaiye",
+          "gönüllü"
+        ],
+        "ar": [
+          "ǧamʿiyya",
+          "mutaṭawwiʿ",
+          "taṭawwuʿ"
+        ]
+      }
+    },
+    {
+      "id": "feste_feiern",
+      "titel": "Familienfeste",
+      "stufen": [
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Hochzeit, Geburt, Einzug, Zeugnis, Besuch mit Geschenk – ohne Musik, Tanz und Alkohol. Geburtstag OF-07; religiöse Feste nur Kandidaten (OF-06); Feiertage anderer Religionen OF-05.",
+      "wortfeld": {
+        "de": [
+          "Hochzeit",
+          "Geschenk",
+          "Gast"
+        ],
+        "tr": [
+          "düğün",
+          "hediye",
+          "misafir"
+        ],
+        "ar": [
+          "ʿurs",
+          "hadiyya",
+          "ḍayf"
+        ]
+      }
+    },
+    {
+      "id": "gefuehle_freundschaft",
+      "titel": "Gefühle und Freundschaft",
+      "stufen": [
+        "A1",
+        "A2",
+        "B1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Gefühle benennen, trösten, Streit friedlich lösen, sich entschuldigen. Freundschaft nach Regel beziehungen. Gefühle ohne Smiley-Bildkarten.",
+      "wortfeld": {
+        "de": [
+          "froh",
+          "traurig",
+          "Freundin"
+        ],
+        "tr": [
+          "mutlu",
+          "üzgün",
+          "arkadaş"
+        ],
+        "ar": [
+          "saʿīd",
+          "ḥazīn",
+          "ṣadīq"
+        ]
+      }
+    },
+    {
+      "id": "ausbildung_bewerbung",
+      "titel": "Ausbildung und Bewerbung",
+      "stufen": [
+        "B1",
+        "B2"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Lebenslauf, Praktikum, Vorstellungsgespräch, Ausbildung, Studium.",
+      "wortfeld": {
+        "de": [
+          "Lebenslauf",
+          "Praktikum",
+          "Bewerbung"
+        ],
+        "tr": [
+          "özgeçmiş",
+          "staj",
+          "başvuru"
+        ],
+        "ar": [
+          "tadrīb",
+          "ṭalab",
+          "muqābala"
+        ]
+      }
+    },
+    {
+      "id": "vertraege_recht",
+      "titel": "Verträge und Rechte",
+      "stufen": [
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": false,
+      "hinweise": "Mietvertrag, Arbeitsvertrag, Versicherung, Verbraucherrechte, Fristen – sachlich, ohne Empfehlung. Zinsen nach Regel zinsgeschaefte.",
+      "wortfeld": {
+        "de": [
+          "Vertrag",
+          "Kündigung",
+          "Versicherung"
+        ],
+        "tr": [
+          "sözleşme",
+          "fesih",
+          "sigorta"
+        ],
+        "ar": [
+          "ʿaqd",
+          "fasḫ",
+          "taʾmīn"
+        ]
+      }
+    },
+    {
+      "id": "gesellschaft",
+      "titel": "Zusammenleben",
+      "stufen": [
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": false,
+      "hinweise": "Generationen, Mehrsprachigkeit, Inklusion, Rücksicht, Ehrenamt. Ohne Parteien und Streitfragen; Vielfalt ohne Wertung.",
+      "wortfeld": {
+        "de": [
+          "Generation",
+          "Rücksicht",
+          "Mehrsprachigkeit"
+        ],
+        "tr": [
+          "kuşak",
+          "saygı",
+          "hoşgörü"
+        ],
+        "ar": [
+          "ǧīl",
+          "iḥtirām",
+          "taʿāyuš"
+        ]
+      }
+    },
+    {
+      "id": "wissenschaft_technik",
+      "titel": "Wissenschaft und Technik",
+      "stufen": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Erfindungen, Medizin, Energie, Raumfahrt, Rechnen und Programmieren – sachlich.",
+      "wortfeld": {
+        "de": [
+          "Forschung",
+          "Energie",
+          "Erfindung"
+        ],
+        "tr": [
+          "araştırma",
+          "enerji",
+          "buluş"
+        ],
+        "ar": [
+          "baḥṯ",
+          "ṭāqa",
+          "iḫtirāʿ"
+        ]
+      }
+    },
+    {
+      "id": "geschichte_kultur",
+      "titel": "Geschichte und Kultur",
+      "stufen": [
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": false,
+      "hinweise": "Bauwerke, Handwerk, Alltagsgeschichte, Literatur, Sprichwörter, Museen. Kriege nur als Zeitangabe ohne Einzelheiten; Religionsgeschichte ist kein Thema der Sprachkurse.",
+      "wortfeld": {
+        "de": [
+          "Museum",
+          "Handwerk",
+          "Sprichwort"
+        ],
+        "tr": [
+          "müze",
+          "zanaat",
+          "atasözü"
+        ],
+        "ar": [
+          "matḥaf",
+          "ḥirfa",
+          "maṯal"
+        ]
+      }
+    },
+    {
+      "id": "staatskunde",
+      "titel": "Staat und Gemeinde (sachlich)",
+      "stufen": [
+        "B1",
+        "B2",
+        "C1"
+      ],
+      "kindgeeignet": true,
+      "hinweise": "Nur nach OF-10: Grundrechte, Gericht, Gemeinde, Wahl als Verfahren – ohne Parteien, Personen, Streitfragen.",
+      "wortfeld": {
+        "de": [
+          "Gesetz",
+          "Gericht",
+          "Gemeinde"
+        ],
+        "tr": [
+          "yasa",
+          "mahkeme",
+          "belediye"
+        ],
+        "ar": [
+          "qānūn",
+          "maḥkama",
+          "baladiyya"
+        ]
+      }
+    }
+  ],
+  "religionsbezug": {
+    "grundsatz": "Religion ist in den Sprachkursen kein Lernthema (KERN §2.1 Nr. 1). Moschee, Gebet, Fasten und Feste kommen höchstens als Orte und Ereignisse des Alltags vor, und nur als markierte Kandidaten.",
+    "regeln": [
+      "Jeder Eintrag mit einem Begriff aus `orte_ereignisse` oder `formeln` trägt `religionsbezug: true`.",
+      "Markierte Einträge brauchen zwei religiöse Freigaben zum aktuellen Inhalts-Hash (KERN §2.3, ADR 0040 Nr. 5); bis dahin sind sie nicht sichtbar, auch nicht über `lernapp_ungeprueft`. Die Sprachstichprobe ersetzt diese Freigaben nie (ADR 0041 Nr. 11).",
+      "Markierte Einträge bekommen keine Sprachausgabe (KERN §4).",
+      "Markierte Einträge sind nie Lernziel: keine Pflichtaufgabe, kein Prüfstein, nicht in der Einstufung, nicht im Lemma-Budget; eine Lektion muss ohne sie vollständig sein.",
+      "Keine Glaubensinhalte, keine Begründungen, keine Regeln der Religionsausübung, keine Wertung anderer Religionen; nur die Sache als Ort oder Termin („Am Freitag geht der Vater zur Moschee“ ist ein Kandidat, eine Erklärung des Gebets nicht).",
+      "Keine Koran- oder Hadithwörter als Wortschatz, keine Verse, Hadithe oder Bittgebete in Sätzen (KERN §2.2 Nr. 9); der Wächter prüft Koran- und Hadith-4-Gramme (KERN §3 b/c).",
+      "Übernommene Tatoeba-Sätze mit Religionsbezug werden standardmäßig ausgeschlossen (S7-E3); kaikki-Einträge mit Thema Religion sind Kandidaten für das Formel-Lexikon des Wächters (S7-E5)."
+    ],
+    "orte_ereignisse": [
+      {
+        "id": "R-01",
+        "art": "Ort",
+        "de": "Moschee",
+        "tr": "cami",
+        "ar": "masǧid",
+        "ab_stufe": "A2",
+        "hinweis": "als Ort im Stadtplan oder Treffpunkt"
+      },
+      {
+        "id": "R-02",
+        "art": "Ort",
+        "de": "Kirche, Synagoge",
+        "tr": "kilise, sinagog",
+        "ar": "kanīsa, kanīs",
+        "ab_stufe": "A2",
+        "hinweis": "gleich behandelt wie R-01 (OF-06)"
+      },
+      {
+        "id": "R-03",
+        "art": "Ereignis",
+        "de": "Gebet, Freitagsgebet",
+        "tr": "namaz, cuma namazı",
+        "ar": "ṣalāh, ṣalāt al-ǧumʿa",
+        "ab_stufe": "A2",
+        "hinweis": "nur als Termin im Tagesablauf"
+      },
+      {
+        "id": "R-04",
+        "art": "Zeit",
+        "de": "Ramadan, Fasten",
+        "tr": "ramazan, oruç",
+        "ar": "ramaḍān, ṣawm",
+        "ab_stufe": "A2",
+        "hinweis": "nur als Zeitraum oder Tagesablauf"
+      },
+      {
+        "id": "R-05",
+        "art": "Ereignis",
+        "de": "Fastenbrechen",
+        "tr": "iftar, sahur",
+        "ar": "ifṭār, suḥūr",
+        "ab_stufe": "A2",
+        "hinweis": "als Familienessen und Einladung"
+      },
+      {
+        "id": "R-06",
+        "art": "Fest",
+        "de": "Ramadanfest, Opferfest",
+        "tr": "Ramazan Bayramı, Kurban Bayramı",
+        "ar": "ʿīd al-fiṭr, ʿīd al-aḍḥā",
+        "ab_stufe": "A2",
+        "hinweis": "als Familienfest, Besuch, Geschenk"
+      },
+      {
+        "id": "R-07",
+        "art": "Fest",
+        "de": "Kandil-Nacht",
+        "tr": "kandil",
+        "ar": null,
+        "ab_stufe": "B1",
+        "hinweis": "nur Türkisch"
+      },
+      {
+        "id": "R-08",
+        "art": "Kalender",
+        "de": "Weihnachten, Ostern, Pfingsten",
+        "tr": "Noel, Paskalya",
+        "ar": "ʿīd al-mīlād, ʿīd al-fiṣḥ",
+        "ab_stufe": "A2",
+        "hinweis": "Ferien- und Feiertagsnamen in Deutschland (OF-05); ʿīd al-mīlād heißt auch „Geburtstag“"
+      },
+      {
+        "id": "R-09",
+        "art": "Speise",
+        "de": "halal",
+        "tr": "helal",
+        "ar": "ḥalāl",
+        "ab_stufe": "A2",
+        "hinweis": "Kennzeichnung beim Einkauf (OF-13); tr „helal olsun“ ist eine Formel (F-tr-12)"
+      },
+      {
+        "id": "R-10",
+        "art": "Beruf",
+        "de": "Imam, Pfarrer",
+        "tr": "imam, hoca",
+        "ar": "imām",
+        "ab_stufe": "A2",
+        "hinweis": "nur als Beruf in einer Berufsliste; tr hoca heißt auch allgemein „Lehrer“"
+      },
+      {
+        "id": "R-11",
+        "art": "Unterricht",
+        "de": "Koranunterricht",
+        "tr": "Kuran kursu",
+        "ar": null,
+        "ab_stufe": "A2",
+        "hinweis": "nur als Wochentermin von Kindern; kein Inhalt"
+      },
+      {
+        "id": "R-12",
+        "art": "Reise",
+        "de": "Pilgerfahrt",
+        "tr": "hac, umre",
+        "ar": "ḥaǧǧ, ʿumra",
+        "ab_stufe": "B1",
+        "hinweis": "nur als Familienereignis (Abschied, Rückkehr, Besuch)"
+      },
+      {
+        "id": "R-13",
+        "art": "Kalender",
+        "de": "islamische Monatsnamen",
+        "tr": "hicri aylar",
+        "ar": "aš-šuhūr al-hiǧriyya",
+        "ab_stufe": "B1",
+        "hinweis": "nur als Kalenderangabe"
+      }
+    ],
+    "formeln": {
+      "status": "gesperrt",
+      "religionsbezug": true,
+      "sprachausgabe": false,
+      "freigabe": "Liste als Ganzes mit zwei Freigaben (zwei Personen mit `religioese_pruefung`, LM-09, KERN §2.3); jede Änderung setzt zurück",
+      "form": "Nur Begriffe: arabisch die üblichen Namen der Formeln in Umschrift, türkisch und deutsch die festen Ausdrücke in Lateinschrift. Kein arabischer Wortlaut, keine Übersetzung; „anlass“ beschreibt nur die Gebrauchssituation. Die arabischen Einträge des Wächter-Lexikons schreibt kein Agent (KERN §3 a).",
+      "liste": [
+        {
+          "id": "F-ar-01",
+          "sprache": "ar",
+          "begriff": "Salām (Gruß und Erwiderung)",
+          "art": "Gruß",
+          "anlass": "Begegnung und Abschied",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-02",
+          "sprache": "ar",
+          "begriff": "Basmala, nur Kurzform",
+          "art": "Beginn",
+          "anlass": "vor dem Essen oder dem Beginn einer Arbeit",
+          "vorschlag": "prüfen; die vollständige Form fällt voraussichtlich unter das Koran-N-Gramm und ist dann ausgeschlossen"
+        },
+        {
+          "id": "F-ar-03",
+          "sprache": "ar",
+          "begriff": "Ḥamdala",
+          "art": "Dank",
+          "anlass": "Antwort auf die Frage nach dem Befinden; nach dem Essen",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-04",
+          "sprache": "ar",
+          "begriff": "Inšāʾallāh",
+          "art": "Zukunft",
+          "anlass": "Pläne und Verabredungen",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-05",
+          "sprache": "ar",
+          "begriff": "Māšāʾallāh",
+          "art": "Bewunderung",
+          "anlass": "Lob für Kinder, Arbeit, Erfolg",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-06",
+          "sprache": "ar",
+          "begriff": "Bārakallāh",
+          "art": "Segenswunsch",
+          "anlass": "Dank und Glückwunsch",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-07",
+          "sprache": "ar",
+          "begriff": "Ǧazākallāh",
+          "art": "Dank",
+          "anlass": "Dank für eine Hilfe",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-08",
+          "sprache": "ar",
+          "begriff": "Tasbīḥ (Subḥānallāh)",
+          "art": "Staunen",
+          "anlass": "Staunen über Natur oder Ereignis",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-ar-09",
+          "sprache": "ar",
+          "begriff": "Istiġfār",
+          "art": "Abwehr, Bescheidenheit",
+          "anlass": "nach einem Fehler; Zurückweisen eines Lobes",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-ar-10",
+          "sprache": "ar",
+          "begriff": "Tašmīt",
+          "art": "Wunsch",
+          "anlass": "wenn jemand niest",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-11",
+          "sprache": "ar",
+          "begriff": "Taʿziya-Formel",
+          "art": "Beileid",
+          "anlass": "Trauerfall",
+          "vorschlag": "prüfen, erst ab B1"
+        },
+        {
+          "id": "F-ar-12",
+          "sprache": "ar",
+          "begriff": "ʿĪd-Gruß",
+          "art": "Festgruß",
+          "anlass": "Ramadanfest und Opferfest",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-13",
+          "sprache": "ar",
+          "begriff": "Ramaḍān-Gruß",
+          "art": "Festgruß",
+          "anlass": "Beginn des Ramadan",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-ar-14",
+          "sprache": "ar",
+          "begriff": "Ǧumʿa-Gruß",
+          "art": "Gruß",
+          "anlass": "Freitag",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-ar-15",
+          "sprache": "ar",
+          "begriff": "Takbīr",
+          "art": "Ausruf",
+          "anlass": "Freude, Fest",
+          "vorschlag": "nicht aufnehmen"
+        },
+        {
+          "id": "F-ar-16",
+          "sprache": "ar",
+          "begriff": "Ḥawqala",
+          "art": "Ausruf",
+          "anlass": "Schwierigkeit, Unglück",
+          "vorschlag": "nicht aufnehmen (lange Formel, Wächter-N-Gramm wahrscheinlich)"
+        },
+        {
+          "id": "F-ar-17",
+          "sprache": "ar",
+          "begriff": "Qasam (Schwurformel)",
+          "art": "Schwur",
+          "anlass": "Beteuerung im Gespräch",
+          "vorschlag": "nicht aufnehmen"
+        },
+        {
+          "id": "F-tr-01",
+          "sprache": "tr",
+          "begriff": "selamün aleyküm / aleyküm selam",
+          "art": "Gruß",
+          "anlass": "Begegnung",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-02",
+          "sprache": "tr",
+          "begriff": "bismillah",
+          "art": "Beginn",
+          "anlass": "vor dem Essen oder einer Arbeit",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-03",
+          "sprache": "tr",
+          "begriff": "elhamdülillah, çok şükür, Allah'a şükür",
+          "art": "Dank",
+          "anlass": "Antwort auf die Frage nach dem Befinden",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-04",
+          "sprache": "tr",
+          "begriff": "inşallah",
+          "art": "Zukunft",
+          "anlass": "Pläne und Verabredungen",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-05",
+          "sprache": "tr",
+          "begriff": "maşallah",
+          "art": "Bewunderung",
+          "anlass": "Lob für Kinder, Arbeit, Erfolg",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-06",
+          "sprache": "tr",
+          "begriff": "Allah razı olsun",
+          "art": "Dank",
+          "anlass": "Dank für eine Hilfe",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-07",
+          "sprache": "tr",
+          "begriff": "Allahaısmarladık",
+          "art": "Abschied",
+          "anlass": "beim Gehen, vor allem Ältere",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-08",
+          "sprache": "tr",
+          "begriff": "Allah'a emanet ol",
+          "art": "Abschied",
+          "anlass": "Verabschiedung vor einer Reise",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-tr-09",
+          "sprache": "tr",
+          "begriff": "Allah rahmet eylesin",
+          "art": "Beileid",
+          "anlass": "Trauerfall",
+          "vorschlag": "prüfen, erst ab B1"
+        },
+        {
+          "id": "F-tr-10",
+          "sprache": "tr",
+          "begriff": "hayırlı cumalar",
+          "art": "Gruß",
+          "anlass": "Freitag",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-tr-11",
+          "sprache": "tr",
+          "begriff": "bayramınız mübarek olsun, iyi bayramlar, hayırlı ramazanlar, kandiliniz mübarek olsun",
+          "art": "Festgruß",
+          "anlass": "religiöse Feste und Zeiten",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-12",
+          "sprache": "tr",
+          "begriff": "helal olsun, hakkını helal et",
+          "art": "Lob, Bitte",
+          "anlass": "Lob für eine Leistung; Abschied",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-13",
+          "sprache": "tr",
+          "begriff": "estağfurullah",
+          "art": "Höflichkeit",
+          "anlass": "Zurückweisen eines Lobes oder einer Entschuldigung",
+          "vorschlag": "prüfen"
+        },
+        {
+          "id": "F-tr-14",
+          "sprache": "tr",
+          "begriff": "Allah korusun, Allah kolaylık versin",
+          "art": "Wunsch",
+          "anlass": "Sorge, schwere Arbeit",
+          "vorschlag": "eher nicht"
+        },
+        {
+          "id": "F-tr-15",
+          "sprache": "tr",
+          "begriff": "vallahi, billahi",
+          "art": "Schwur",
+          "anlass": "Beteuerung im Gespräch",
+          "vorschlag": "nicht aufnehmen"
+        },
+        {
+          "id": "F-de-01",
+          "sprache": "de",
+          "begriff": "Gott sei Dank",
+          "art": "Dank, Erleichterung",
+          "anlass": "Erleichterung",
+          "vorschlag": "eher nicht (weltlich: „zum Glück“)"
+        },
+        {
+          "id": "F-de-02",
+          "sprache": "de",
+          "begriff": "Grüß Gott",
+          "art": "Gruß",
+          "anlass": "regional in Süddeutschland",
+          "vorschlag": "nur passiv ab B2 (regionale Varianten)"
+        },
+        {
+          "id": "F-de-03",
+          "sprache": "de",
+          "begriff": "um Gottes willen, Gott behüte",
+          "art": "Ausruf",
+          "anlass": "Schreck",
+          "vorschlag": "nicht aufnehmen"
+        },
+        {
+          "id": "F-de-04",
+          "sprache": "de",
+          "begriff": "Frohe Weihnachten, Frohe Ostern",
+          "art": "Festgruß",
+          "anlass": "christliche Feste in Deutschland",
+          "vorschlag": "nach OF-05"
+        },
+        {
+          "id": "F-de-05",
+          "sprache": "de",
+          "begriff": "inschallah (Lehnwort)",
+          "art": "Zukunft",
+          "anlass": "Jugendsprache",
+          "vorschlag": "nicht aufnehmen"
+        }
+      ],
+      "nicht_aufgenommen": [
+        {
+          "begriff": "Šahāda",
+          "grund": "Bekenntnisformel; nie in Sprachkursen"
+        },
+        {
+          "begriff": "Taʿawwuḏ",
+          "grund": "gehört zur Rezitation; nie in Sprachkursen"
+        },
+        {
+          "begriff": "Istirǧāʿ",
+          "grund": "Koranwortlaut (KERN §2.2 Nr. 9)"
+        },
+        {
+          "begriff": "Taṣliya",
+          "grund": "Eulogie nach dem Prophetennamen; der Prophetenname kommt in Sprachkursen nicht vor"
+        }
+      ]
+    },
+    "weltliche_alternativen": {
+      "hinweis": "Sofort erlaubt, ohne Markierung; sie tragen die Lernziele, solange die Formeln gesperrt sind.",
+      "de": [
+        "Guten Tag",
+        "Hallo",
+        "Auf Wiedersehen",
+        "Tschüss",
+        "Danke",
+        "Gesundheit!",
+        "Guten Appetit",
+        "Gute Besserung",
+        "Herzlichen Glückwunsch",
+        "Mein Beileid",
+        "zum Glück",
+        "hoffentlich"
+      ],
+      "tr": [
+        "Merhaba",
+        "Günaydın",
+        "İyi günler",
+        "Hoşça kal",
+        "Güle güle",
+        "Teşekkürler",
+        "Afiyet olsun",
+        "Geçmiş olsun",
+        "Kolay gelsin",
+        "Tebrikler",
+        "Başınız sağ olsun",
+        "umarım"
+      ],
+      "ar": [
+        "marḥaban",
+        "ahlan",
+        "ṣabāḥ al-ḫayr",
+        "masāʾ al-ḫayr",
+        "maʿa s-salāma",
+        "šukran",
+        "ʿafwan",
+        "bi-l-hanāʾ wa-š-šifāʾ",
+        "šifāʾan ʿāǧilan",
+        "mabrūk",
+        "aḥarr at-taʿāzī"
+      ]
+    }
+  },
+  "bildkarten": {
+    "regel": "Nur Gegenstände und Symbole; keine Menschen- und Tierdarstellungen, keine Fotos, keine Gesichter (KERN §5, L0-E16, O-4). Die Motivliste gibt die Redaktion frei (LM-34).",
+    "verboten": [
+      "Menschen, auch Strichfiguren, Silhouetten, Piktogramm-Figuren und Körperteile (Hand, Auge, Fuß)",
+      "Tiere, auch stilisiert",
+      "Fotos",
+      "Gesichter, auch Smileys, Emojis mit Gesicht, Sonne oder Mond mit Gesicht",
+      "religiöse Symbole und Gebäude (Kreuz, Mondsichel, Stern als Bekenntnis, Moschee, Kirche, Kaaba)",
+      "Flaggen, Wappen, Landkarten mit Grenzen",
+      "Marken, Logos, Geldscheine mit Porträt",
+      "Gegenstände der Tabu-Kategorien: Weinglas, Bierflasche, Zigarette, Shisha, Spielkarten und Würfel (bis OF-04), Waffen, Musikinstrumente, Tierkreiszeichen, Nazar-Perle, Wurst ohne Angabe",
+      "Mondsichel auch als Wettersymbol (KERN 3.0 Gestaltung); Mond nur als Kreis",
+      "rotes Kreuz als Krankenhaus-Symbol; stattdessen „H“-Schild oder Arztkoffer ohne Kreuz"
+    ],
+    "erlaubt": [
+      "Gegenstände des Alltags",
+      "Lebensmittel, Getränke und Pflanzen",
+      "Fahrzeuge",
+      "Gebäude ohne religiösen Bezug",
+      "Wettersymbole ohne Gesicht",
+      "Zahlen, Uhren, Kalender",
+      "Verkehrszeichen und Piktogramme ohne Figur"
+    ],
+    "ohne_bild": "Wörter ohne zulässiges Motiv (Personen, Berufe, Tiere, Gefühle, Körperteile, Abstrakta) werden mit Text und Hören geübt (`auswahl`, `hoeren_waehlen`, `paare`), nicht mit `bild_wort`.",
+    "stil": "KERN §7: Linien-Symbole im 24-px-Raster (Lucide ISC, Tabler Icons MIT) oder OpenMoji 17.0.0 (CC BY-SA 4.0) nach Motivliste; Entscheidung in L2 (PLAN L2-01).",
+    "alt_text": "erst nach der Antwort (PLAN §4)",
+    "pruefung": "web/inhalte/lernapp/symbole/symbole.json trägt je Motiv `motiv`, `quelle`, `lizenz` und `freigegeben`; ein Motiv ohne Freigabe der Redaktion blockiert den Import.",
+    "motivliste_vorschlag": {
+      "status": "Vorschlag für LM-34",
+      "wohnen": [
+        "Haus",
+        "Tür",
+        "Fenster",
+        "Schlüssel",
+        "Tisch",
+        "Stuhl",
+        "Bett",
+        "Lampe",
+        "Sofa",
+        "Schrank",
+        "Kühlschrank",
+        "Herd",
+        "Waschmaschine",
+        "Teppich"
+      ],
+      "schule": [
+        "Buch",
+        "Heft",
+        "Bleistift",
+        "Kugelschreiber",
+        "Schere",
+        "Lineal",
+        "Schultasche",
+        "Tafel",
+        "Taschenrechner",
+        "Globus ohne Grenzlinien"
+      ],
+      "essen": [
+        "Brot",
+        "Apfel",
+        "Banane",
+        "Tomate",
+        "Gurke",
+        "Karotte",
+        "Zwiebel",
+        "Kartoffel",
+        "Schale Reis",
+        "Käse",
+        "Ei",
+        "Milch",
+        "Teeglas",
+        "Teekanne",
+        "Wasserglas",
+        "Saftflasche",
+        "Teller",
+        "Löffel",
+        "Gabel",
+        "Topf"
+      ],
+      "kleidung": [
+        "Jacke",
+        "Hose",
+        "Kleid",
+        "Hemd",
+        "Schuhe",
+        "Mütze",
+        "Schal",
+        "Handschuhe",
+        "Regenschirm"
+      ],
+      "verkehr": [
+        "Bus",
+        "Zug",
+        "Straßenbahn",
+        "Fahrrad",
+        "Auto",
+        "Flugzeug",
+        "Schiff",
+        "Ampel",
+        "Haltestellenschild",
+        "Fahrkarte"
+      ],
+      "natur_wetter": [
+        "Sonne",
+        "Wolke",
+        "Regen",
+        "Schneeflocke",
+        "Blitz",
+        "Wind",
+        "Baum",
+        "Blume",
+        "Blatt",
+        "Berg",
+        "Welle",
+        "Mond als Kreis"
+      ],
+      "zeit": [
+        "Uhr",
+        "Wecker",
+        "Kalender",
+        "Sanduhr"
+      ],
+      "gesundheit": [
+        "Thermometer",
+        "Pflaster",
+        "Tablettenschachtel",
+        "Arztkoffer",
+        "Krankenwagen",
+        "Zahnbürste",
+        "Seife"
+      ],
+      "arbeit": [
+        "Hammer",
+        "Schraubenzieher",
+        "Laptop",
+        "Telefon",
+        "Briefumschlag",
+        "Paket",
+        "Ordner",
+        "Werkzeugkasten"
+      ],
+      "einkaufen": [
+        "Einkaufswagen",
+        "Tüte",
+        "Geldbörse",
+        "Münze",
+        "Bankkarte",
+        "Kasse",
+        "Preisschild"
+      ],
+      "freizeit": [
+        "Ball",
+        "Fußballtor",
+        "Fahrradhelm",
+        "Rucksack",
+        "Zelt",
+        "Kamera",
+        "Puzzleteil",
+        "Pinsel",
+        "Gießkanne"
+      ],
+      "stadt": [
+        "Rathaus allgemein",
+        "Brücke",
+        "Sitzbank",
+        "Briefkasten",
+        "Krankenhaus-Schild „H“"
+      ]
+    }
+  },
+  "kinder": {
+    "grenze": "Kinder sind unter 16 (KERN §5); Zielgruppe der Kurse ab etwa 10 Jahren.",
+    "stufen": {
+      "A1": "kindgeeignet",
+      "A2": "kindgeeignet",
+      "B1": "kindgeeignet",
+      "B2": "Erwachsenenthemen sachlich",
+      "C1": "Erwachsenenthemen sachlich"
+    },
+    "kennzeichnung": "Feld `kindgeeignet` je Einheit: A1–B1 immer true (Pflicht, Prüfer blockiert sonst); B2–C1 standardmäßig false, true nur, wenn alle Einträge die Kinderregeln erfüllen. Wie die App B2/C1 für Kinderkonten zeigt, entscheidet L7 (OF-15).",
+    "kinderregeln": [
+      "Nichts, was Angst macht: keine Verletzten, Gewalt, Katastrophen oder Krankheiten im Detail.",
+      "Keine Geheimnisse vor den Eltern, keine Treffen mit Fremden, keine Kontakte zu Unbekannten im Netz.",
+      "Keine Mutproben und nichts zum gefährlichen Nachahmen (Feuer, Medikamente, Straße, Strom).",
+      "Keine Bewertung von Körper, Gewicht oder Aussehen; keine Diäten.",
+      "Kein Konsumdruck („alle haben …“), keine Marken.",
+      "Erwachsene verhalten sich vorbildlich und respektvoll; Konflikte enden friedlich.",
+      "Keine Liebesbeziehungen, auch nicht unter Jugendlichen.",
+      "Krankheit und Abschied nur leicht und mit Trost; Tod und Trauer erst ab B1 und ohne Einzelheiten (OF-17).",
+      "Keine Ironie und kein Sarkasmus unter B2.",
+      "In kindgeeigneten Einheiten gilt „nur sachlich“ nur für Vorbeugung, Sicherheit und Hilfe (Gesundheit, Verkehr, Notruf, Etikett lesen) – nie mit Beschreibung von Konsum oder Tat."
+    ],
+    "erwachsenenthemen_ab_B2": [
+      "Arbeitsvertrag, Kündigung, Arbeitsrecht",
+      "Mietvertrag, Mietrecht, Nebenkostenabrechnung",
+      "Versicherung, Steuern, Rente",
+      "Verbraucherrechte, Kredit und Zinsen sachlich",
+      "Pflege von Angehörigen",
+      "Trennung und Sorgerecht sachlich (OF-17)",
+      "Gericht und Behördenverfahren",
+      "Nachrichten über Unfälle und Kriminalität in ruhigem Ton"
+    ]
+  },
+  "offene_fragen": [
+    {
+      "id": "OF-01",
+      "frage": "Darf Musik vorkommen? Reicht das Wort „Musik“ passiv ab B2? Darf das Schulfach Musik im Stundenplan stehen?",
+      "standard": "Kein Lernthema; Wort „Musik“ nur passiv ab B2; Stundenpläne ohne Musik; Audio ohne Musik und Jingles; Rückmeldetöne als kurze Signaltöne ohne Melodie (Vorschlag für L2).",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-02",
+      "frage": "Dürfen Hochzeiten und Familienfeste mit Musik oder Volkstanz (Halay) beschrieben werden?",
+      "standard": "Feste ja, ohne Musik und Tanz.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-03",
+      "frage": "Darf ein Hund als Haustier im Haus vorkommen?",
+      "standard": "Nein; Hund nur draußen sachlich ab A2; Haustiere: Katze, Wellensittich, Fische, Schildkröte.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-04",
+      "frage": "Welche Spiele als Freizeit: Schach, Tavla, Würfel- und Kartenspiele?",
+      "standard": "Schach, Puzzle und Brettspiele ohne Würfel ja; Tavla, Würfel und Spielkarten nicht.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-05",
+      "frage": "Wie mit Feiertagen anderer Religionen und weltlichen Bräuchen umgehen (Weihnachts- und Osterferien, Karneval, Halloween, Valentinstag, Silvester)?",
+      "standard": "Ferien heißen Sommer-, Herbst-, Winter- und Frühjahrsferien; christliche Festnamen nur als Kandidaten R-08; Karneval, Halloween, Valentinstag und Silvesterfeiern kommen nicht vor; Neujahr als Datum ja.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-06",
+      "frage": "Sollen Gotteshäuser und religiöse Ereignisse (R-01…R-13) als Alltagsorte überhaupt in Sprachkursen vorkommen, und für alle Religionen gleich?",
+      "standard": "Ja, nur als markierte Kandidaten mit zwei Freigaben; bis dahin unsichtbar; jede Lektion ist ohne sie vollständig.",
+      "wer": "zwei Personen mit `religioese_pruefung` (LM-03, LM-09)"
+    },
+    {
+      "id": "OF-07",
+      "frage": "Geburtstag: nur als Datum und Glückwunsch, oder auch als Feier?",
+      "standard": "Datum und Glückwunsch ja; keine Geburtstagsfeier als Szene.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-08",
+      "frage": "Kopftuch als Kleidungsstück im Wortschatz; Kleidung beim Schwimmen",
+      "standard": "Kopftuch als neutrales Kleidungswort ohne Wertung und ohne religiöse Begründung, nicht markiert; Figuren mit und ohne Kopftuch gleichwertig; Schwimmen ohne Beschreibung der Badekleidung.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-09",
+      "frage": "Namensliste: Ist der Ausschluss religiös gebundener Namen richtig? Wie werden Namen realer Gemeindemitglieder vermieden?",
+      "standard": "Liste wie im Entwurf; die Redaktion meldet Treffer ohne Personendaten an Agenten, betroffene Namen werden ersetzt.",
+      "wer": "Redaktion / Vorstand"
+    },
+    {
+      "id": "OF-10",
+      "frage": "Staatskunde (Grundrechte, Gericht, Gemeinde, Wahl als Verfahren) sachlich ab B1?",
+      "standard": "Ja, ohne Parteien, Personen und Streitfragen.",
+      "wer": "Vorstand"
+    },
+    {
+      "id": "OF-11",
+      "frage": "Alkohol und Rauchen als Vokabel nur sachlich ab B1 (Gesundheit, Vorbeugung, Verkehr)?",
+      "standard": "Ja; nie als Normalität.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-12",
+      "frage": "Zinsen, Kredite und Versicherungen sachlich ab B2; Kreditkarte als Zahlungsmittel ab A2?",
+      "standard": "Ja; keine Figur nimmt Zinskredite auf, keine Empfehlungen.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-13",
+      "frage": "Schwein als Vokabel beim Etikettlesen ab A2; Wort „halal/helal“ beim Einkauf?",
+      "standard": "Schwein nur sachlich ab A2 im Satzmuster Etikett/Nachfrage; „halal/helal“ nur als Kandidat R-09.",
+      "wer": "Hoca / Vorstand (LM-09); R-09 mit zwei Freigaben"
+    },
+    {
+      "id": "OF-14",
+      "frage": "Welche Formeln (F-ar, F-tr, F-de) werden freigegeben, ab welcher Stufe und in welchen Richtungen (z. B. arabische Formeln im Deutschkurs für Arabischsprachige)?",
+      "standard": "Alle gesperrt; weltliche Alternativen tragen die Lernziele.",
+      "wer": "zwei Personen mit `religioese_pruefung` (LM-09)"
+    },
+    {
+      "id": "OF-15",
+      "frage": "Sollen Kinderkonten B2/C1-Einheiten sehen?",
+      "standard": "Ja, mit Hinweis „für Erwachsene“; Entscheidung über eine Sperre in L7.",
+      "wer": "Vorstand / Bildung"
+    },
+    {
+      "id": "OF-16",
+      "frage": "Freundschaften zwischen Mädchen und Jungen in Kinderdialogen",
+      "standard": "Gemischte Klassen und Gruppen sachlich; enge Freundschaften in Dialogen unter Mädchen bzw. unter Jungen.",
+      "wer": "Hoca / Vorstand (LM-09)"
+    },
+    {
+      "id": "OF-17",
+      "frage": "Ab welcher Stufe Tod und Trauer, Trennung und Sorgerecht?",
+      "standard": "Krankheit leicht ab A1; Tod und Trauer ab B1 ohne Einzelheiten; Trennung und Sorgerecht ab B2 sachlich.",
+      "wer": "Bildung / Vorstand"
+    },
+    {
+      "id": "OF-18",
+      "frage": "Wie über Flucht, Krieg und Herkunftsländer sprechen?",
+      "standard": "Flucht und Migration nur sachlich (Ankommen, Behörden, Sprache); keine Kriegsschilderung, keine Konfliktparteien; Herkunftsländer als Reiseziel und Familienort.",
+      "wer": "Vorstand / Bildung"
+    }
+  ],
+  "messung": {
+    "stand": "2026-10-16",
+    "werkzeug": "Messskript im Scratchpad des Orchestrators (l3-leitfaden/messen.py, python3 -I), Übernahme nach _lernapp/werkzeuge/ in L3; Daten: S7-Auszüge (Beleg S7 §3.7: wordfreq 3.1.1 Top 50.000, Tatoeba-Satzauszug vom 10.10.2026, kaikki-Kernauszug top-20000)",
+    "namen": {
+      "de": {
+        "weiblich": 26,
+        "maennlich": 28
+      },
+      "tr": {
+        "weiblich": 28,
+        "maennlich": 32
+      },
+      "ar": {
+        "weiblich": 25,
+        "maennlich": 27
+      },
+      "familiennamen": {
+        "de": 14,
+        "tr": 14,
+        "ar": 12
+      },
+      "kollisionen_mit_tabu": 0,
+      "doppelte": 0
+    },
+    "haeufigkeit": {
+      "de_top5000": {
+        "alkohol_rauschmittel": 5,
+        "schwein": 0,
+        "gluecksspiel": 2,
+        "musik_tanz": 16,
+        "beziehungen": 3,
+        "sexualitaet": 4,
+        "gewalt_waffen": 12,
+        "aberglaube": 0,
+        "zinsgeschaefte": 2,
+        "hund_im_haus": 2,
+        "kleidung_koerper": 1,
+        "fluchen_schimpfwoerter": 12,
+        "politik": 9
+      },
+      "de_top20000": {
+        "alkohol_rauschmittel": 46,
+        "schwein": 8,
+        "gluecksspiel": 7,
+        "musik_tanz": 49,
+        "beziehungen": 22,
+        "sexualitaet": 31,
+        "gewalt_waffen": 67,
+        "aberglaube": 11,
+        "zinsgeschaefte": 7,
+        "hund_im_haus": 5,
+        "kleidung_koerper": 5,
+        "fluchen_schimpfwoerter": 37,
+        "politik": 18
+      },
+      "tr_top5000": {
+        "alkohol_rauschmittel": 7,
+        "schwein": 0,
+        "gluecksspiel": 1,
+        "musik_tanz": 10,
+        "beziehungen": 9,
+        "sexualitaet": 6,
+        "gewalt_waffen": 16,
+        "aberglaube": 1,
+        "zinsgeschaefte": 2,
+        "hund_im_haus": 2,
+        "kleidung_koerper": 1,
+        "fluchen_schimpfwoerter": 5,
+        "politik": 14
+      },
+      "tr_top20000": {
+        "alkohol_rauschmittel": 20,
+        "schwein": 1,
+        "gluecksspiel": 5,
+        "musik_tanz": 38,
+        "beziehungen": 21,
+        "sexualitaet": 15,
+        "gewalt_waffen": 69,
+        "aberglaube": 7,
+        "zinsgeschaefte": 3,
+        "hund_im_haus": 7,
+        "kleidung_koerper": 3,
+        "fluchen_schimpfwoerter": 14,
+        "politik": 37
+      },
+      "ar_top5000": {
+        "gewalt_waffen": 17,
+        "alkohol_rauschmittel": 4,
+        "politik": 17,
+        "sexualitaet": 2,
+        "hund_im_haus": 7,
+        "musik_tanz": 3,
+        "aberglaube": 2
+      }
+    },
+    "tatoeba": {
+      "deu": {
+        "saetze": 23106,
+        "mit_treffer": 774,
+        "je_kategorie": {
+          "fluchen_schimpfwoerter": 83,
+          "gewalt_waffen": 101,
+          "sexualitaet": 17,
+          "musik_tanz": 267,
+          "alkohol_rauschmittel": 161,
+          "aberglaube": 19,
+          "beziehungen": 72,
+          "hund_im_haus": 25,
+          "schwein": 12,
+          "gluecksspiel": 7,
+          "zinsgeschaefte": 2,
+          "politik": 14,
+          "kleidung_koerper": 1
+        }
+      },
+      "tur": {
+        "saetze": 22586,
+        "mit_treffer": 858,
+        "je_kategorie": {
+          "hund_im_haus": 26,
+          "alkohol_rauschmittel": 153,
+          "zinsgeschaefte": 4,
+          "sexualitaet": 17,
+          "musik_tanz": 238,
+          "gewalt_waffen": 92,
+          "aberglaube": 23,
+          "fluchen_schimpfwoerter": 68,
+          "beziehungen": 183,
+          "schwein": 10,
+          "politik": 51,
+          "kleidung_koerper": 2
+        }
+      },
+      "ara": {
+        "saetze": 4649,
+        "mit_treffer": 120,
+        "je_kategorie": {
+          "musik_tanz": 18,
+          "hund_im_haus": 28,
+          "gewalt_waffen": 17,
+          "alkohol_rauschmittel": 30,
+          "politik": 9,
+          "fluchen_schimpfwoerter": 8,
+          "schwein": 2,
+          "sexualitaet": 3,
+          "aberglaube": 6,
+          "gluecksspiel": 1
+        }
+      }
+    },
+    "arabisch_umschrift": {
+      "einzelwoerter_je_gruppe": {
+        "tabu": 81,
+        "mehrdeutig": 17,
+        "kontext": 4,
+        "thema": 93
+      },
+      "in_kaikki_gefunden_je_gruppe": {
+        "tabu": 52,
+        "mehrdeutig": 17,
+        "kontext": 4,
+        "thema": 88
+      },
+      "nicht_gefunden": [
+        "tabu:alkohol_rauschmittel muskir",
+        "tabu:alkohol_rauschmittel wiskī",
+        "tabu:alkohol_rauschmittel fūdkā",
+        "tabu:alkohol_rauschmittel kūkāyīn",
+        "tabu:alkohol_rauschmittel hīrūyīn",
+        "tabu:alkohol_rauschmittel sīǧāra",
+        "tabu:alkohol_rauschmittel šīša",
+        "tabu:alkohol_rauschmittel narǧīla",
+        "tabu:gluecksspiel maysir",
+        "tabu:gluecksspiel yānaṣīb",
+        "tabu:gluecksspiel murāhana",
+        "tabu:gluecksspiel rihān",
+        "tabu:gluecksspiel kāzīnū",
+        "tabu:musik_tanz uġniya",
+        "tabu:musik_tanz ġītār",
+        "tabu:musik_tanz ṭabl",
+        "tabu:musik_tanz mūsīqār",
+        "tabu:beziehungen muwāʿada",
+        "tabu:sexualitaet ʿurī",
+        "tabu:gewalt_waffen taʿḏīb",
+        "tabu:aberglaube ʿarrāf",
+        "tabu:aberglaube tanǧīm",
+        "tabu:aberglaube tamīma",
+        "tabu:aberglaube šaʿwaḏa",
+        "tabu:aberglaube ʿafrīt",
+        "tabu:zinsgeschaefte ribā",
+        "tabu:kleidung_koerper bīkīnī",
+        "tabu:fluchen_schimpfwoerter laʿana",
+        "tabu:fluchen_schimpfwoerter malʿūn",
+        "thema:kleidung miʿṭaf",
+        "thema:tiere ḫarūf",
+        "thema:ehrenamt mutaṭawwiʿ",
+        "thema:ehrenamt taṭawwuʿ",
+        "thema:vertraege_recht fasḫ"
+      ]
+    },
+    "lexikon_umfang": {
+      "alkohol_rauschmittel": {
+        "de": 38,
+        "tr": 21,
+        "ar": 17,
+        "ar_mehrdeutig": 2
+      },
+      "schwein": {
+        "de": 7,
+        "tr": 2,
+        "ar": 1,
+        "ar_mehrdeutig": 0
+      },
+      "gluecksspiel": {
+        "de": 19,
+        "tr": 9,
+        "ar": 6,
+        "ar_mehrdeutig": 0
+      },
+      "musik_tanz": {
+        "de": 31,
+        "tr": 18,
+        "ar": 10,
+        "ar_mehrdeutig": 2
+      },
+      "beziehungen": {
+        "de": 26,
+        "tr": 13,
+        "ar": 5,
+        "ar_mehrdeutig": 5
+      },
+      "sexualitaet": {
+        "de": 13,
+        "tr": 10,
+        "ar": 5,
+        "ar_mehrdeutig": 1
+      },
+      "gewalt_waffen": {
+        "de": 22,
+        "tr": 16,
+        "ar": 13,
+        "ar_mehrdeutig": 1
+      },
+      "aberglaube": {
+        "de": 23,
+        "tr": 26,
+        "ar": 10,
+        "ar_mehrdeutig": 3
+      },
+      "zinsgeschaefte": {
+        "de": 13,
+        "tr": 5,
+        "ar": 4,
+        "ar_mehrdeutig": 1
+      },
+      "hund_im_haus": {
+        "de": 3,
+        "tr": 3,
+        "ar": 2,
+        "ar_mehrdeutig": 0
+      },
+      "kleidung_koerper": {
+        "de": 11,
+        "tr": 6,
+        "ar": 2,
+        "ar_mehrdeutig": 1
+      },
+      "fluchen_schimpfwoerter": {
+        "de": 27,
+        "tr": 12,
+        "ar": 4,
+        "ar_mehrdeutig": 0
+      },
+      "politik": {
+        "de": 13,
+        "tr": 12,
+        "ar": 6,
+        "ar_mehrdeutig": 1
+      }
+    },
+    "formel_kandidaten": {
+      "ar": 17,
+      "tr": 15,
+      "de": 5
+    },
+    "orte_ereignisse": 13,
+    "themen": 31,
+    "offene_fragen": 18,
+    "lesart": "Treffer sind Stichwort-Indikatoren mit Fehlalarmen (z. B. Tatoeba-Sätze über Musik oder Hunde); sie zeigen den Umfang der Durchsicht, nicht die Zahl der Verstöße. Arabisch: nur eindeutige Umschriften, Muster aus Seitentitel und Plural im Kernauszug."
+  }
+}
