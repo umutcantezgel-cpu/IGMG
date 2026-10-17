@@ -1,0 +1,65 @@
+{
+  "spieler": {
+    "fortschritt": "Fortschritt der Lektion",
+    "aufgabeVon": "Aufgabe {nr, number} von {anzahl, number}",
+    "nochEinmal": "Noch einmal zum Üben",
+    "laedt": "Aufgabe wird geladen …",
+    "ladefehler": "Die Aufgabe konnte nicht geladen werden. Bitte prüfe die Verbindung.",
+    "erneut": "Erneut versuchen",
+    "pruefen": "Prüfen",
+    "weiter": "Weiter",
+    "richtig": "Richtig!",
+    "tippfehler": "Fast richtig – das zählt.",
+    "falsch": "Noch nicht ganz.",
+    "loesung": "Richtige Lösung:",
+    "spaeter": "Diese Aufgabe kommt am Ende noch einmal.",
+    "hinweis": {
+      "leer": "Wähle oder schreibe zuerst eine Antwort.",
+      "tippfehler": "Achte auf die Schreibweise.",
+      "leerzeichen": "Achte auf die Leerzeichen.",
+      "apostroph": "Achte auf den Apostroph.",
+      "grossschreibung": "Nomen schreibt man im Deutschen groß.",
+      "eszett": "Hier schreibt man „ß“.",
+      "umlaut": "Hier steht ein Umlaut: ä, ö oder ü.",
+      "sonderzeichen": "Achte auf die türkischen Buchstaben ç, ğ, ı, ö, ş und ü.",
+      "alifMaqsura": "Achte auf das Alif maqsura am Wortende.",
+      "taMarbuta": "Achte auf das Taa marbuta am Wortende.",
+      "harakat": "Achte auf die Vokal- und Hamzazeichen."
+    },
+    "fertigTitel": "Lektion geschafft",
+    "fertigText": "{richtig, number} von {gesamt, number} Aufgaben im ersten Versuch richtig.",
+    "xp": "{n, number} XP",
+    "zurueck": "Zum Lernpfad",
+    "leer": "In dieser Lektion gibt es hier noch keine Aufgaben zum Üben."
+  },
+  "aufgaben": {
+    "auswahl": {
+      "waehleUebersetzung": "Wähle die richtige Übersetzung.",
+      "waehleWort": "Welches Wort passt?",
+      "waehleBedeutung": "Was bedeutet das?",
+      "waehleAntwort": "Wähle die richtige Antwort.",
+      "optionen": "Antworten",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}."
+    },
+    "wortbank": {
+      "uebersetze": "Übersetze den Satz.",
+      "schreibeGehoertes": "Schreibe, was du hörst.",
+      "antwort": "Deine Antwort",
+      "antwortLeer": "Noch keine Wörter gewählt.",
+      "bank": "Wörter",
+      "hinzufuegen": "{wort} hinzufügen",
+      "entfernen": "{wort} entfernen",
+      "tasten": "Pfeiltasten wählen ein Wort. Enter legt es in die Antwort, Entfernen nimmt es wieder heraus, Alt mit Pfeiltaste verschiebt es."
+    },
+    "paare": {
+      "findePaare": "Finde die Paare.",
+      "links": "Wörter",
+      "rechts": "Bedeutungen",
+      "gewaehlt": "{text} ist ausgewählt. Wähle jetzt das passende Gegenstück.",
+      "gefunden": "Gefunden: {links} – {rechts}",
+      "keinPaar": "{links} und {rechts} gehören nicht zusammen.",
+      "fertig": "Alle Paare gefunden.",
+      "tasten": "Wähle mit Enter ein Wort und dann sein Gegenstück. Pfeiltasten wechseln innerhalb einer Liste."
+    }
+  }
+}

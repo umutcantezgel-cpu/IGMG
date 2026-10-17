@@ -36,8 +36,8 @@ export const SchluesselSchema = z
   .max(160)
   .regex(/^[a-z0-9][a-z0-9._:-]*$/i);
 
-const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-export const GeraetSchema = z.string().regex(UUID, { message: 'Gerät als UUID' });
+/** UUID nach RFC 9562 (crypto.randomUUID ergibt Version 4). */
+export const GeraetSchema = z.uuid({ message: 'Gerät als UUID' });
 
 export const STUFEN = ['a1', 'a2', 'b1', 'b2', 'c1'] as const;
 
