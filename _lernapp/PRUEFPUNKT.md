@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 17.10.2026 09:30 UTC:** Branch a312562 (S2 in ADR 0042: COOP/COEP für ganz `/lern-app`, `worker-src 'self'`
+  ohne `blob:`, Modelle statisch, Arabisch ohne automatische Rückmeldung mit base). Laufen parallel: `wf_6a33ebb6-16f` (S3, S8,
+  Recht, Gegenprüfung), `wf_422b0a15-ec2` (Rahmen → Kontrast → Lektorat) und **L1** `wf_b140f343-3db`
+  (`scratchpad/lernapp-l1.workflow.js`; Arbeitsbäume A = `agent-a212ace6…` Fundament → Oberfläche → Zusammenführung,
+  B = `agent-ac6673f9…` Engine → Pakete/Sync; Bau unter `flock scratchpad/bau.lock`; PostgreSQL + Mailpit laufen). Nach
+  Abbruch: Arbeitsbäume als ZWISCHENSTAND committen, alle drei per `resumeFromRunId` fortsetzen.
 - **Stand 17.10.2026 09:10 UTC:** Beide Workflows brachen am 16.10. abends am Sitzungslimit ab. Gesichert: Beleg S2 (Whisper),
   Inhaltsleitfaden (`_lernapp/lehrplan/INHALTSLEITFADEN.md`, `web/inhalte/lernapp/rahmen/leitfaden.json`). Läuft: Fortsetzung
   `wf_6a33ebb6-16f` (S3, S8, Recht, Gegenprüfung) und `wf_422b0a15-ec2` (Rahmen de/tr/ar → Kontrast → Lektorat) per
