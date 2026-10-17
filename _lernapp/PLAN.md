@@ -162,10 +162,11 @@ if (pathname.startsWith('/lern-app/')) return NextResponse.next();      // kein 
 ```
 
 **Header** (`web/src/lib/sicherheit/header.ts` + `web/next.config.ts`, ADR 0042 Nr. 9):
-- `cspLernApp()`: öffentliche CSP plus `script-src 'wasm-unsafe-eval'`, `worker-src 'self' blob:`, `media-src 'self' blob:`;
+- `cspLernApp()`: öffentliche CSP plus `script-src 'wasm-unsafe-eval'`, `worker-src 'self'`, `media-src 'self' blob:`; dazu
+  COOP `same-origin` und COEP `require-corp` für ganz `/lern-app/:pfad*` (ADR 0042, Fortschreibung S2);
   Regel `/lern-app/:pfad*` nach der öffentlichen Regel; `CSP_AUSNAHMEN` um `lern-app` ergänzen.
 - `Permissions-Policy: microphone=(self)` nur für `…/ueben`, `…/wiederholen` und `/verwaltung/lernapp/audio/:pfad*`.
-- COOP/COEP nur bei messbarem Gewinn in Spike S2.
+- COOP/COEP: Gewinn in Spike S2 belegt (1,4–1,8× mit Threads) – für ganz `/lern-app` gesetzt (siehe oben).
 
 ### 3.3 Texte der Oberfläche
 
