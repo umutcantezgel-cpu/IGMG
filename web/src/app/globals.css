@@ -69,8 +69,9 @@
   --font-quran: schriftQuran, var(--schrift-arabisch), serif;
   /* Lern-App (ADR 0044): Oberflächenschrift Arabisch, Noto Sans Arabic 400/700 mit `unicode-range` für den arabischen Block,
      ohne Vorladen; `--schrift-arabisch-ui` setzt nur das Wurzel-Layout der Lern-App (next/font/local). Latein fällt auf
-     die Textschrift zurück. Kursinhalt bleibt in `--font-arabic`, der Koran in `--font-quran`. */
-  --font-arabisch-ui: var(--schrift-arabisch-ui), var(--schrift-text), system-ui, sans-serif;
+     die Textschrift zurück. Kursinhalt bleibt in `--font-arabic`, der Koran in `--font-quran`. Der Rückfall in `var()`
+     hält den Stapel gültig, solange die Variable nicht gesetzt ist. */
+  --font-arabisch-ui: var(--schrift-arabisch-ui, system-ui), var(--schrift-text), system-ui, sans-serif;
   --text-16: 1rem;
   --text-16--line-height: 1.5;
   --text-18: 1.125rem;
@@ -478,7 +479,7 @@
   /* Lern-App (ADR 0044 Nr. 2): In der arabischen Oberfläche ist Noto Sans Arabic die Textschrift; in der deutschen und
      türkischen dient sie als Rückfall, damit arabische Bedienwörter (z. B. Kursnamen) in derselben Schriftfamilie stehen. */
   [data-oberflaeche] {
-    --font-text: var(--schrift-text), var(--schrift-arabisch-ui), 'Source Sans 3', system-ui, sans-serif;
+    --font-text: var(--schrift-text), var(--schrift-arabisch-ui, system-ui), 'Source Sans 3', system-ui, sans-serif;
   }
   [data-oberflaeche][lang='ar'] {
     --font-text: var(--font-arabisch-ui);

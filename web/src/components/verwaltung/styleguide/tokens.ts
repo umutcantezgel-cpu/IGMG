@@ -176,7 +176,7 @@ export const SCHRIFTEN: readonly SchriftToken[] = [
   // Lern-App (ADR 0044): nur im Wurzel-Layout der Lern-App geladen; hier erscheint der Rückfall
   {
     name: '--font-arabisch-ui',
-    wert: 'var(--schrift-arabisch-ui), var(--schrift-text), system-ui, sans-serif',
+    wert: 'var(--schrift-arabisch-ui, system-ui), var(--schrift-text), system-ui, sans-serif',
     klasse: 'font-arabisch-ui',
     schluessel: 'arabischUi',
   },
