@@ -7,7 +7,8 @@ import type { Kartenstand } from '../bewertung';
 /**
  * Wiederholungsrunde (PLAN §4 „Kartenwahl“, ADR 0038 Nr. 3): Aus den gewählten Karten (`waehleKarten`, fällige zuerst)
  * entsteht eine Lektion der Art `wiederholung` aus den Aufgaben der Einheitenpakete, die diese Karten bewerten. Die Übungsart
- * folgt der Stabilität: erkennen → Auswahl und Paare, Wortbank → Wortbank (Produktion folgt mit den L2-Typen). Rein.
+ * folgt der Stabilität: erkennen → Auswahl, Paare, Bild und Hören; Wortbank → Wortbank, Satzbau, Lücke; Produktion →
+ * Freitext, Diktat, Lücke, Formen. Rein.
  */
 
 /** Einheit einer Karte (`tr-aus-de:tr.a1.e01.w001` → `tr.a1.e01`). */
@@ -24,9 +25,14 @@ export const kartenDer = (a: Aufgabe): string[] => [
 ];
 
 const VORRANG: Record<ReturnType<typeof uebungsStufe>, Aufgabe['typ'][]> = {
-  erkennen: ['auswahl', 'paare', 'wortbank'],
-  wortbank: ['wortbank', 'auswahl', 'paare'],
-  produktion: ['wortbank', 'auswahl', 'paare'],
+  erkennen: ['auswahl', 'paare', 'bild_wort', 'hoeren_waehlen', 'minimalpaare', 'wortbank', 'harakat'],
+  wortbank: ['wortbank', 'satzbau', 'luecke', 'auswahl', 'paare', 'bild_wort', 'hoeren_waehlen'],
+  produktion: ['frei', 'hoeren_schreiben', 'luecke', 'formen', 'wortbank', 'satzbau', 'auswahl', 'paare'],
+};
+/** Rang eines Typs in der Stufe; Typen ohne Eintrag kommen zuletzt. */
+const rang = (liste: readonly Aufgabe['typ'][], typ: Aufgabe['typ']) => {
+  const i = liste.indexOf(typ);
+  return i < 0 ? liste.length : i;
 };
 
 /**
@@ -56,7 +62,7 @@ export function baueWiederholung(
     const vorrang = VORRANG[uebungsStufe(stand)];
     const passende = (kandidaten.get(stand.karte) ?? [])
       .filter((a) => !gewaehlt.some((g) => g.schluessel === a.schluessel))
-      .sort((a, b) => vorrang.indexOf(a.typ) - vorrang.indexOf(b.typ));
+      .sort((a, b) => rang(vorrang, a.typ) - rang(vorrang, b.typ));
     const a = passende[0];
     if (!a) continue;
     gewaehlt.push(a);

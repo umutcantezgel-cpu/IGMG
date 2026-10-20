@@ -1,6 +1,6 @@
 'use client';
 
-import { type KeyboardEvent, type ReactNode, useId, useRef } from 'react';
+import { Fragment, type KeyboardEvent, type ReactNode, useId, useRef } from 'react';
 import type { Inhalt } from '@/lib/lernapp/aufgaben/grundlagen';
 import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
@@ -87,33 +87,36 @@ export function Optionsgruppe({
                   : 'border-rand bg-weiss hover:border-gruen-700';
           const text = beschreibung?.(i);
           return (
-            <label key={i} className="block cursor-pointer">
-              <input
-                type="radio"
-                name={`${id}-wahl`}
-                value={i}
-                checked={gewaehlt}
-                aria-describedby={text ? `${id}-b${i}` : undefined}
-                onChange={() => setzeWahl(i)}
-                className="peer sr-only"
-              />
-              <span
-                className={`flex min-h-14 items-center gap-3 rounded-lg border-2 px-4 py-2 transition-colors duration-(--dauer-rueckmeldung) peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gruen-950 ${gross ? 'text-30' : 'text-20'} ${zustand}`}
-              >
+            <Fragment key={i}>
+              <label className="block cursor-pointer">
+                <input
+                  type="radio"
+                  name={`${id}-wahl`}
+                  value={i}
+                  checked={gewaehlt}
+                  aria-describedby={text ? `${id}-b${i}` : undefined}
+                  onChange={() => setzeWahl(i)}
+                  className="peer sr-only"
+                />
                 <span
-                  aria-hidden
-                  className="inline-flex size-8 shrink-0 items-center justify-center rounded-sm border border-rand bg-weiss text-16 font-bold"
+                  className={`flex min-h-14 items-center gap-3 rounded-lg border-2 px-4 py-2 transition-colors duration-(--dauer-rueckmeldung) peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gruen-950 ${gross ? 'text-30' : 'text-20'} ${zustand}`}
                 >
-                  {zahl(pos + 1, ui, ziffern)}
+                  <span
+                    aria-hidden
+                    className="inline-flex size-8 shrink-0 items-center justify-center rounded-sm border border-rand bg-weiss text-16 font-bold"
+                  >
+                    {zahl(pos + 1, ui, ziffern)}
+                  </span>
+                  <InhaltText inhalt={option} gross={gross} />
                 </span>
-                <InhaltText inhalt={option} gross={gross} />
-              </span>
+              </label>
+              {/* außerhalb des Labels: Beschreibung, nicht Teil des Namens */}
               {text ? (
                 <span id={`${id}-b${i}`} className="sr-only">
                   {text}
                 </span>
               ) : null}
-            </label>
+            </Fragment>
           );
         })}
       </div>
