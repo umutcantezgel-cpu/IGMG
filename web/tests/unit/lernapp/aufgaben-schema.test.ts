@@ -71,6 +71,11 @@ describe('Schema', () => {
       'satzbau',
       'formen',
       'harakat',
+      'wahr_falsch',
+      'zuordnen',
+      'reihenfolge',
+      'fallfrage',
+      'koran_wort',
     ]);
     expect(istImplementiert('auswahl')).toBe(true);
     expect(istImplementiert('frei')).toBe(true);
@@ -91,14 +96,24 @@ describe('Schema', () => {
     ['Paare mit gleichem Text', { ...paare, paare: [paare.paare[0], paare.paare[0]] }],
     ['nur ein Paar', { ...paare, paare: [paare.paare[0]] }],
     [
-      'Koran-Wort ohne Verweis',
-      { typ: 'koran_wort', schluessel: 'k1', art: 'bedeutung', verweis: 'Text', optionen: ['b1', 'b2'], richtig: 0 },
+      'Koran-Wort ohne Stelle Sure:Vers:Wort',
+      {
+        typ: 'koran_wort',
+        schluessel: 'k1',
+        anweisung: 'waehleBedeutung',
+        wort: { stelle: 'Text', text: '[Wortform]', sprache: 'ar' },
+        optionen: [
+          { kennung: 'b1', text: '[Bedeutung 1]', sprache: 'de' },
+          { kennung: 'b2', text: '[Bedeutung 2]', sprache: 'de' },
+        ],
+        richtig: 0,
+      },
     ],
   ])('weist ab: %s', (_n, aufgabe) => {
     expect(AufgabeSchema.safeParse(aufgabe).success).toBe(false);
   });
 
-  it('Gerüst-Typen sind mit Pflichtfeldern gültig', () => {
+  it('Typen aus L2-01 und L2-03 sind mit Pflichtfeldern gültig', () => {
     expect(
       AufgabeSchema.safeParse({
         typ: 'frei',
@@ -112,7 +127,9 @@ describe('Schema', () => {
       AufgabeSchema.safeParse({
         typ: 'wahr_falsch',
         schluessel: 'w1',
-        aussage: { text: '[Aussage]', sprache: 'de' },
+        anweisung: 'stimmtDas',
+        sprache: 'de',
+        aussage: '[Aussage]',
         wahr: true,
         begruendung: '[Begründung]',
       }).success,
@@ -121,9 +138,12 @@ describe('Schema', () => {
       AufgabeSchema.safeParse({
         typ: 'koran_wort',
         schluessel: 'k1',
-        art: 'bedeutung',
-        verweis: '1:2:3',
-        optionen: ['b1', 'b2'],
+        anweisung: 'waehleBedeutung',
+        wort: { stelle: '0:0:1', text: '[Wortform]', sprache: 'ar' },
+        optionen: [
+          { kennung: 'b1', text: '[Bedeutung 1]', sprache: 'de' },
+          { kennung: 'b2', text: '[Bedeutung 2]', sprache: 'de' },
+        ],
         richtig: 0,
       }).success,
     ).toBe(true);

@@ -29,6 +29,11 @@ export const AUFGABEN_LADER: { [T in ImplementierterTyp]: () => Promise<Aufgaben
   satzbau: () => import('./Satzbau'),
   formen: () => import('./Formen'),
   harakat: () => import('./Harakat'),
+  wahr_falsch: () => import('./WahrFalsch'),
+  zuordnen: () => import('./Zuordnen'),
+  reihenfolge: () => import('./Reihenfolge'),
+  fallfrage: () => import('./Fallfrage'),
+  koran_wort: () => import('./KoranWort'),
 };
 
 const BEWERTER: Partial<Record<AufgabenTyp, Bewerter>> = {};

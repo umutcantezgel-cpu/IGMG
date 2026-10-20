@@ -109,6 +109,11 @@ describe('Spieler', () => {
       'satzbau',
       'formen',
       'harakat',
+      'wahr_falsch',
+      'zuordnen',
+      'reihenfolge',
+      'fallfrage',
+      'koran_wort',
     ]);
     expect((await AUFGABEN_LADER.auswahl()).default).toBe(Auswahl);
     expect((await AUFGABEN_LADER.wortbank()).default).toBe(Wortbank);

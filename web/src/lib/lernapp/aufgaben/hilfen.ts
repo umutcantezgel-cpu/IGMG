@@ -1,11 +1,37 @@
 import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
-import type { Antwort, Aufgabe } from './schema';
+import type { Antwort, Aufgabe, AufgabenTyp } from './schema';
 
 /**
  * Gemeinsame Hilfen der Übungstypen ohne Zod (PLAN §4, KERN 4.0 §9): Typen der Auswertung, Karten-Urteile, Wahl nach
  * Index, Hörtypen. Eigenes Modul, damit Spieler, Engine und die Übungs-Chunks (Bewertung in `auswertung/`) nichts von den
  * Schemas laden müssen; die Schemas stehen in `schema.ts`, `grundlagen.ts` und den Typ-Dateien (`<typ>.ts`).
  */
+
+/**
+ * Spielbar (Bewertung und Anzeige vorhanden): L1, L2-01 und L2-03. Hier ohne Zod, damit Engine und Spieler die Liste
+ * kennen, ohne die Schemas zu laden (KERN 4.0 §9, TBT); `schema.ts` reicht sie weiter.
+ */
+export const IMPLEMENTIERT = [
+  'auswahl',
+  'wortbank',
+  'paare',
+  'bild_wort',
+  'frei',
+  'hoeren_waehlen',
+  'hoeren_schreiben',
+  'minimalpaare',
+  'luecke',
+  'satzbau',
+  'formen',
+  'harakat',
+  'wahr_falsch',
+  'zuordnen',
+  'reihenfolge',
+  'fallfrage',
+  'koran_wort',
+] as const satisfies readonly AufgabenTyp[];
+export type ImplementierterTyp = (typeof IMPLEMENTIERT)[number];
+export const istImplementiert = (typ: AufgabenTyp): typ is ImplementierterTyp => (IMPLEMENTIERT as readonly string[]).includes(typ);
 
 export type KartenUrteil = { karte: string; urteil: Urteil };
 

@@ -3,6 +3,7 @@ import { LEKTIONS_ARTEN } from '../engine/xp';
 import { SchluesselSchema } from '../ereignisse/typen';
 import * as z from '../z';
 import { type BildWortAntwort, BildWortSchema } from './bild_wort';
+import { type FallfrageAntwort, FallfrageSchema } from './fallfrage';
 import { type FormenAntwort, FormenSchema } from './formen';
 import { type FreiAntwort, FreiSchema } from './frei';
 import {
@@ -20,18 +21,25 @@ import {
   text,
 } from './grundlagen';
 import { type HarakatAntwort, HarakatSchema } from './harakat';
+import type { ImplementierterTyp } from './hilfen';
 import { type HoerenSchreibenAntwort, HoerenSchreibenSchema } from './hoeren_schreiben';
 import { type HoerenWaehlenAntwort, HoerenWaehlenSchema } from './hoeren_waehlen';
+import { type KoranWortAntwort, KoranWortSchema } from './koran_wort';
 import { type LueckeAntwort, LueckeSchema } from './luecke';
 import { type MinimalpaareAntwort, MinimalpaareSchema } from './minimalpaare';
+import { type ReihenfolgeAntwort, ReihenfolgeSchema } from './reihenfolge';
 import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
+import { type WahrFalschAntwort, WahrFalschSchema } from './wahr_falsch';
+import { type ZuordnenAntwort, ZuordnenSchema } from './zuordnen';
 
 /**
  * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4 als Gerüst:
  * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts); L2-01 `bild_wort`, `frei`,
  * `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen` und `harakat` – je Typ eine Datei mit
  * der Zod-Nutzlast (`<typ>.ts`, gemeinsame Bausteine in `grundlagen.ts`) und eine ohne Zod mit Bewertung und reinen
- * Hilfen (`auswertung/<typ>.ts`, nur in den Übungs-Chunks geladen; gemeinsame Hilfen in `hilfen.ts`).
+ * Hilfen (`auswertung/<typ>.ts`, nur in den Übungs-Chunks geladen; gemeinsame Hilfen in `hilfen.ts`). L2-03 ergänzt den
+ * Wissenskurs (`wahr_falsch`, `zuordnen`, `reihenfolge`, `fallfrage`; gemeinsame Felder in `wissen.ts`) und `koran_wort` nach
+ * demselben Muster; ihre Sichtbarkeit entscheidet nur `freigabe.ts` (zwei Freigaben).
  *
  * ## Lektionsformat (Eingabe des Spielers `<Spieler lektion={…} />`)
  *
@@ -69,7 +77,16 @@ import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
  */
 
 export { AudioSchema, type Inhalt, InhaltSchema, SpracheSchema } from './grundlagen';
-export { type Auswertung, type Bewerter, type BewertungsKontext, type KartenUrteil, kartenMit } from './hilfen';
+export {
+  type Auswertung,
+  type Bewerter,
+  type BewertungsKontext,
+  IMPLEMENTIERT,
+  type ImplementierterTyp,
+  istImplementiert,
+  type KartenUrteil,
+  kartenMit,
+} from './hilfen';
 
 // ——— L1: implementiert ———
 
@@ -134,7 +151,18 @@ export const L2_TYPEN = {
   harakat: HarakatSchema,
 } as const;
 
-// ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2-02/L2-03) ———
+// ——— L2-03: Wissenskurs und Koran-Arabisch (je Typ eine Datei; sichtbar nur mit zwei Freigaben, `freigabe.ts`) ———
+
+/** Übungstypen aus L2-03 mit eigener Datei (Nutzlast; Bewertung und Hilfen in `auswertung/`). */
+export const WISSEN_TYPEN = {
+  wahr_falsch: WahrFalschSchema,
+  zuordnen: ZuordnenSchema,
+  reihenfolge: ReihenfolgeSchema,
+  fallfrage: FallfrageSchema,
+  koran_wort: KoranWortSchema,
+} as const;
+
+// ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2-02) ———
 
 const MitAudio = z.extend(InhaltSchema, { audio: AudioSchema });
 const Frage = z.strictObject({ frage: InhaltSchema, optionen: Optionen, richtig: ab(0) }).check(z.superRefine(mitOptionen));
@@ -202,31 +230,6 @@ export const GERUEST = {
     muster: InhaltSchema,
     woerter: z.optional(z.strictObject({ min: ab(0), max: ab(1) })),
   }),
-  /** Koran-Arabisch: nur Verweise (`sure:vers:wort`) und freigegebene Bedeutungen über Kennungen – kein Text (ADR 0040). */
-  koran_wort: z.strictObject({
-    ...basis,
-    typ: z.literal('koran_wort'),
-    art: z.enum(['bedeutung', 'wurzel']),
-    verweis: z.string().check(z.regex(/^\d{1,3}:\d{1,3}:\d{1,3}$/)),
-    optionen: liste(SchluesselSchema, 2, 6),
-    richtig: ab(0),
-  }),
-  // Wissenskurs (nur Deutsch; jede Aufgabe aus einer Aussage, zwei Freigaben)
-  wahr_falsch: z.strictObject({
-    ...basis,
-    typ: z.literal('wahr_falsch'),
-    aussage: InhaltSchema,
-    wahr: z.boolean(),
-    begruendung: roh(1000),
-  }),
-  zuordnen: z.strictObject({
-    ...basis,
-    typ: z.literal('zuordnen'),
-    kategorien: liste(roh(80), 2, 6),
-    eintraege: liste(z.strictObject({ text: roh(300), kategorie: ab(0) }), 2, 12),
-  }),
-  reihenfolge: z.strictObject({ ...basis, typ: z.literal('reihenfolge'), schritte: liste(roh(300), 2, 12) }),
-  fallfrage: z.strictObject({ ...basis, typ: z.literal('fallfrage'), fall: InhaltSchema, optionen: Optionen, richtig: ab(0) }),
 } as const;
 
 export const AufgabeSchema = z.discriminatedUnion('typ', [
@@ -234,6 +237,7 @@ export const AufgabeSchema = z.discriminatedUnion('typ', [
   WortbankSchema,
   PaareSchema,
   ...Object.values(L2_TYPEN),
+  ...Object.values(WISSEN_TYPEN),
   ...Object.values(GERUEST),
 ]);
 
@@ -245,25 +249,14 @@ export type WortbankAufgabe = AufgabeVon<'wortbank'>;
 export type PaareAufgabe = AufgabeVon<'paare'>;
 
 /** Alle Typen aus PLAN §4 (einschließlich Wissenskurs). */
-export const AUFGABEN_TYPEN = ['auswahl', 'wortbank', 'paare', ...Object.keys(L2_TYPEN), ...Object.keys(GERUEST)] as AufgabenTyp[];
-
-/** Spielbar (Bewertung und Anzeige vorhanden): L1 und L2-01. */
-export const IMPLEMENTIERT = [
+export const AUFGABEN_TYPEN = [
   'auswahl',
   'wortbank',
   'paare',
-  'bild_wort',
-  'frei',
-  'hoeren_waehlen',
-  'hoeren_schreiben',
-  'minimalpaare',
-  'luecke',
-  'satzbau',
-  'formen',
-  'harakat',
-] as const satisfies readonly AufgabenTyp[];
-export type ImplementierterTyp = (typeof IMPLEMENTIERT)[number];
-export const istImplementiert = (typ: AufgabenTyp): typ is ImplementierterTyp => (IMPLEMENTIERT as readonly string[]).includes(typ);
+  ...Object.keys(L2_TYPEN),
+  ...Object.keys(WISSEN_TYPEN),
+  ...Object.keys(GERUEST),
+] as AufgabenTyp[];
 
 export const LektionSchema = z
   .strictObject({
@@ -298,5 +291,10 @@ export type Antwort =
   | LueckeAntwort
   | SatzbauAntwort
   | FormenAntwort
-  | HarakatAntwort;
+  | HarakatAntwort
+  | WahrFalschAntwort
+  | ZuordnenAntwort
+  | ReihenfolgeAntwort
+  | FallfrageAntwort
+  | KoranWortAntwort;
 export type AntwortVon<T extends ImplementierterTyp> = Extract<Antwort, { typ: T }>;

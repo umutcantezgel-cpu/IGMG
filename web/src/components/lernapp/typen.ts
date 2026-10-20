@@ -93,6 +93,31 @@ export type SpielerTexte = {
       /** Namen der arabischen Buchstaben und Zeichen nach Codepunkt (`u0628`) */
       zeichen: Record<string, string>;
     };
+    /** Wissenskurs (L2-03): gemeinsam für Begründung und Quellenzeile */
+    wissen: { begruendung: string; quelle: string; quelleZeigen: string };
+    wahr_falsch: {
+      stimmtDas: string;
+      stimmt: string;
+      stimmtNicht: string;
+      aussage: string;
+      optionen: string;
+      tasten: string;
+      ergebnisWahr: string;
+      ergebnisFalsch: string;
+    };
+    zuordnen: { ordneZu: string; kategorien: string; tasten: string; passt: string; gehoertZu: string };
+    reihenfolge: {
+      ordne: string;
+      liste: string;
+      hoch: string;
+      runter: string;
+      verschoben: string;
+      tasten: string;
+      passt: string;
+      gehoertAn: string;
+    };
+    fallfrage: { waehleAntwort: string; fall: string; hinweis: string; optionen: string; tasten: string };
+    koran_wort: { waehleBedeutung: string; waehleWurzel: string; wort: string; stelle: string; optionen: string; tasten: string };
   };
   /** Sonderzeichenleiste und arabische Bildschirmtastatur */
   tastatur: TastaturTexte;

@@ -35,6 +35,26 @@
     "datei": "src/components/lernapp/aufgaben/Harakat.tsx",
     "text": "rounded-lg bg-sand px-4 py-4 text-20"
   },
+  "wahr_falsch": {
+    "datei": "src/components/lernapp/aufgaben/WahrFalsch.tsx",
+    "text": "flex flex-col gap-2 rounded-lg bg-sand px-4 py-5"
+  },
+  "zuordnen": {
+    "datei": "src/components/lernapp/aufgaben/Zuordnen.tsx",
+    "text": "flex flex-col gap-3 rounded-lg border-2 border-linie bg-weiss p-4"
+  },
+  "reihenfolge": {
+    "datei": "src/components/lernapp/aufgaben/Reihenfolge.tsx",
+    "text": "druck inline-flex size-11 items-center justify-center rounded-md border-2 border-rand bg-weiss hover:border-gruen-700"
+  },
+  "fallfrage": {
+    "datei": "src/components/lernapp/aufgaben/Fallfrage.tsx",
+    "text": "flex flex-col gap-3 rounded-lg bg-sand px-4 py-5"
+  },
+  "koran_wort": {
+    "datei": "src/components/lernapp/aufgaben/KoranWort.tsx",
+    "text": "flex flex-col items-center gap-2 rounded-lg bg-sand px-4 py-6"
+  },
   "optionsgruppe": {
     "datei": "src/components/lernapp/aufgaben/Optionsgruppe.tsx",
     "text": "inline-flex size-8 shrink-0 items-center justify-center rounded-sm border border-rand bg-weiss text-16 font-bold"
@@ -58,5 +78,9 @@
   "arabischeTastatur": {
     "datei": "src/components/lernapp/tastatur/ArabischeTastatur.tsx",
     "text": "flex flex-col gap-3 rounded-lg border border-linie bg-sand p-3"
+  },
+  "erklaerung": {
+    "datei": "src/components/lernapp/aufgaben/Erklaerung.tsx",
+    "text": "cursor-pointer py-2.5 font-bold"
   }
 }

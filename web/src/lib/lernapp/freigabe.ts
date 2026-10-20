@@ -173,6 +173,36 @@ export function wissenSichtbar(status: Status, b: ReligioeserBaustein, pruefunge
   return status !== 'gesperrt' && religioesGeprueft(b, pruefungen);
 }
 
+/** Ein Baustein mit religiöser Freigabe samt Stand und Prüfungen (Paketbau, Verwaltung, Tests). */
+export type FreigabeBaustein = { status: Status; baustein: ReligioeserBaustein; pruefungen: readonly Pruefung[] };
+
+const sichtbar = (b: FreigabeBaustein) => wissenSichtbar(b.status, b.baustein, b.pruefungen);
+
+/**
+ * Aufgabe des Wissenskurses (L2-03: `wahr_falsch`, `zuordnen`, `reihenfolge`, `fallfrage`; ebenso `auswahl` und `luecke` im
+ * Wissenskurs): sichtbar nur, wenn sie selbst geprüft ist **und** jede Aussage, aus der sie entsteht – mindestens eine
+ * (ADR 0040 Nr. 2.2: Quizfragen nur aus Aussagen; Nr. 5: zwei Freigaben je Baustein, auch für die Quizfrage).
+ */
+export function wissensAufgabeSichtbar(aufgabe: FreigabeBaustein, aussagen: readonly FreigabeBaustein[]): boolean {
+  return aussagen.length > 0 && sichtbar(aufgabe) && aussagen.every(sichtbar);
+}
+
+/**
+ * Freigabelage einer Aufgabe `koran_wort` (ADR 0040 Nr. 5 „Koran-Arabisch“, LM-13, LM-31): Bedeutungen kommen aus
+ * `quran_wortbedeutung` und brauchen je zwei Freigaben zum aktuellen Stand – auch die Ablenker, denn sie werden ebenso
+ * gezeigt. Wurzeln kommen aus der eigenen Wurzeltabelle, die als Ganze zwei Freigaben braucht. Die Wortform selbst stammt
+ * aus den gepinnten Daten (`web/daten`) und hat keine eigene Freigabe.
+ */
+export type KoranWortFreigabe =
+  | { anweisung: 'waehleBedeutung'; bedeutungen: readonly FreigabeBaustein[] }
+  | { anweisung: 'waehleWurzel'; wurzeltabelle: FreigabeBaustein | null };
+
+/** Aufgabe `koran_wort`: sichtbar nur mit allen Freigaben nach `KoranWortFreigabe` (mindestens zwei Bedeutungen). */
+export function koranWortSichtbar(f: KoranWortFreigabe): boolean {
+  if (f.anweisung === 'waehleWurzel') return f.wurzeltabelle !== null && sichtbar(f.wurzeltabelle);
+  return f.bedeutungen.length >= 2 && f.bedeutungen.every(sichtbar);
+}
+
 /**
  * Annahmeregel der Stichprobe (ADR 0041 Nr. 5): 0 kritische und höchstens 2 leichte Fehler je 20 geprüfte Einträge,
  * anteilig gerechnet (ganzzahlig: leicht × 20 ≤ 2 × geprüft). Ohne geprüfte Einträge kein Urteil.

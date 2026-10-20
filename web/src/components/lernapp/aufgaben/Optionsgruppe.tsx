@@ -4,10 +4,11 @@ import { Fragment, type KeyboardEvent, type ReactNode, useId, useRef } from 'rea
 import type { Inhalt } from '@/lib/lernapp/aufgaben/grundlagen';
 import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
-import type { UiSprache } from '../typen';
+import { richtung, type UiSprache } from '../typen';
 
 /**
- * Radiogruppe der Übungstypen mit Wahl (PLAN §4: `bild_wort`, `hoeren_waehlen`, `minimalpaare`, `luecke`, `harakat`) nach
+ * Radiogruppe der Übungstypen mit Wahl (PLAN §4: `bild_wort`, `hoeren_waehlen`, `minimalpaare`, `luecke`, `harakat`; L2-03:
+ * `wahr_falsch`, `zuordnen` je Eintrag, `fallfrage`, `koran_wort`) nach
  * dem Muster von `Auswahl.tsx`: echte Optionsfelder (Pfeiltasten folgen der Schreibrichtung), Ziffern 1–n wählen direkt,
  * Enter prüft. Nach dem Prüfen: richtige Option grün, gewählte andere in Fehlerfarbe, Rest gedämpft – Farbe nie allein (das
  * Rückmeldeblatt sagt es in Worten).
@@ -26,6 +27,8 @@ export function Optionsgruppe({
   gross = false,
   beschreibung,
   kopf,
+  legendeSprache,
+  alsText = false,
 }: {
   legende: string;
   /** Tastenhinweis mit `{n}` */
@@ -45,6 +48,10 @@ export function Optionsgruppe({
   beschreibung?: (i: number) => string;
   /** Inhalt über den Optionen (Vorgabe, Bild, Abspieler) */
   kopf?: ReactNode;
+  /** Sprache der Legende, wenn sie Inhalt ist (z. B. ein Eintrag beim Zuordnen) – `lang`/`dir` */
+  legendeSprache?: UiSprache;
+  /** Optionen sind Texte der Oberfläche („stimmt“, „stimmt nicht“): ohne eigene Sprache und Kursschrift */
+  alsText?: boolean;
 }) {
   const id = useId();
   const gruppe = useRef<HTMLDivElement>(null);
@@ -64,7 +71,9 @@ export function Optionsgruppe({
 
   return (
     <fieldset className="flex flex-col gap-5" disabled={gesperrt} aria-describedby={`${id}-tasten`}>
-      <legend className="sr-only">{legende}</legend>
+      <legend className="sr-only" lang={legendeSprache} dir={legendeSprache ? richtung(legendeSprache) : undefined}>
+        {legende}
+      </legend>
       {kopf}
       <p id={`${id}-tasten`} className="sr-only">
         {formatiere(tasten, { n: reihe.length }, ui, ziffern)}
@@ -107,7 +116,7 @@ export function Optionsgruppe({
                   >
                     {zahl(pos + 1, ui, ziffern)}
                   </span>
-                  <InhaltText inhalt={option} gross={gross} />
+                  {alsText ? <span>{option.text}</span> : <InhaltText inhalt={option} gross={gross} />}
                 </span>
               </label>
               {/* außerhalb des Labels: Beschreibung, nicht Teil des Namens */}

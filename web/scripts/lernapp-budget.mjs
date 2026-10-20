@@ -55,9 +55,30 @@ const TYP_ERKENNUNG = {
   satzbau: { alle: ['wortbank'] },
   formen: { alle: ['formen'], bausteine: TEXT },
   harakat: { alle: ['harakat'], bausteine: ['optionsgruppe'] },
+  // L2-03: Wissenskurs und Koran-Arabisch (Begründung und Quellenzeile aus dem Baustein `Erklaerung`)
+  wahr_falsch: { alle: ['wahr_falsch'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  zuordnen: { alle: ['zuordnen'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  reihenfolge: { alle: ['reihenfolge'], bausteine: ['erklaerung'] },
+  fallfrage: { alle: ['fallfrage'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  koran_wort: { alle: ['koran_wort'], bausteine: ['optionsgruppe'] },
 };
 /** Texte, die eine Datei einem Typ-Chunk zuordnen (eigene Komponenten und der Abspieler der Hörtypen). */
-const TYP_TEXTE = ['auswahl', 'paare', 'wortbank', 'bild_wort', 'frei', 'luecke', 'formen', 'harakat', 'abspieler'];
+const TYP_TEXTE = [
+  'auswahl',
+  'paare',
+  'wortbank',
+  'bild_wort',
+  'frei',
+  'luecke',
+  'formen',
+  'harakat',
+  'abspieler',
+  'wahr_falsch',
+  'zuordnen',
+  'reihenfolge',
+  'fallfrage',
+  'koran_wort',
+];
 
 const BUDGET = {
   huelleEigen: 20,
