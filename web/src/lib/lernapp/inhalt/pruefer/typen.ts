@@ -3,8 +3,8 @@ import { ARABISCH } from '../../waechter/kern.mjs';
 /**
  * Befunde der automatischen Prüfer (PLAN §6.4, `pnpm lernapp:pruefen`).
  *
- * - `blockierend`: Tor L3 verlangt 0 (Ausgang 1). Schema, Dubletten, Lizenz und Ausschlüsse, Wortschatz, Satzlänge,
- *   Vokalisierung, Kindereignung, Religionswächter, Auszugs-Prüfsummen.
+ * - `blockierend`: Tor L3 verlangt 0 (Ausgang 1). Schema, Dubletten, Abgleich-Selbsttest, Lizenz und Ausschlüsse, Wortschatz,
+ *   Satzlänge, Vokalisierung, Kindereignung, Religionswächter, Auszugs-Prüfsummen.
  * - `mensch`: geht an Menschen (`menschlich_klaeren`), blockiert nicht: Inhaltsleitfaden (Tabu-Lexikon, LM-09),
  *   Religionsbezug-Kandidaten. Der Eintrag bleibt bis zur Entscheidung der Redaktion im Status `entwurf`.
  * - `warnung`: Hinweis (z. B. mehrdeutige arabische Tabu-Treffer, Vorgriff innerhalb der Stufe, Abdeckung einer
@@ -16,6 +16,7 @@ import { ARABISCH } from '../../waechter/kern.mjs';
 export const PRUEFER = [
   'schema',
   'dubletten',
+  'abgleich',
   'lizenz',
   'ausschluss',
   'wortschatz',
@@ -29,7 +30,6 @@ export const PRUEFER = [
   'religion',
   'daten',
   'symbole',
-  'audio',
 ] as const;
 export type PrueferName = (typeof PRUEFER)[number];
 

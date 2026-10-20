@@ -4,6 +4,7 @@ import { ladeWaechter, pruefeReligion, type Waechter } from '../religion';
 import type { InhaltDatei } from '../schema';
 import { hatTrenner, lexikonTreffer, vierGrammStrom, vierGrammTreffer, woerter } from '../../waechter/kern.mjs';
 import { type AbdeckungZeile, pruefeAbdeckung } from './abdeckung';
+import { pruefeAbgleich } from './abgleich';
 import { pruefeAusschluesse } from './ausschluss';
 import { type Inhalte, leseInhalte } from './dateien';
 import { pruefeAuszuege, pruefeKaikkiOhneBeispiele, standardDaten } from './daten';
@@ -140,7 +141,7 @@ export function pruefeInhalte(quellen: readonly ImportQuelle[], optionen: PruefO
   if (web) befunde.push(...pruefeAusschluesse(web).liste);
 
   // 4. Sprache: Dubletten, Wortschatz, Satzlänge, Budget, Vokalisierung, Abdeckung, Kinder, Bildkarten
-  befunde.push(...pruefeDubletten(inhalte).liste);
+  befunde.push(...pruefeDubletten(inhalte).liste, ...pruefeAbgleich(inhalte).liste);
   const w = pruefeWortschatz(inhalte, { daten, namen: namenAus(inhalte) });
   befunde.push(...w.wortschatz.liste, ...w.satzlaenge.liste, ...w.lemmabudget.liste);
   befunde.push(...pruefeVokalisierung(inhalte).liste);

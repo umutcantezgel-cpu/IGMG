@@ -171,6 +171,33 @@ describe('Dubletten', () => {
   });
 });
 
+describe('Abgleich-Selbsttest', () => {
+  it('Ablenker mit gleicher Übersetzung, Wortbank-Ablenker aus der Lösung und doppelte Alternativen sind blockierend', () => {
+    const quellen = geaendert('de', (d) => {
+      // l01.a03: Wortbank „Ich trinke Wasser.“ mit dem Ablenker „Wasser“
+      (d.lektionen[0]!.aufgaben as Record<string, unknown>[])[2]!.ablenker = ['Wasser'];
+    }).map((q) => {
+      if (!q.pfad.includes('uebersetzung/de-aus-tr/')) return q;
+      const u = JSON.parse(q.text) as { eintraege: { bezug: string; text: string; alternativen?: string[] }[] };
+      // w002 (Ablenker in l01.a01) bekommt dieselbe Übersetzung wie das Ziel w001; s0002 eine doppelte Alternative
+      const w001 = u.eintraege.find((e) => e.bezug.endsWith('.w001'))!;
+      u.eintraege.find((e) => e.bezug.endsWith('.w002'))!.text = w001.text;
+      const s0002 = u.eintraege.find((e) => e.bezug.endsWith('.s0002'))!;
+      s0002.alternativen = [`${s0002.text} `.trim().toUpperCase()];
+      return { pfad: q.pfad, text: JSON.stringify(u) };
+    });
+    const zeilen = von(pruefe(quellen), 'abgleich').map(befundZeile);
+    expect(zeilen).toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/de\.a1\.e01\.s0002@de-aus-tr: Alternative 1 gleich dem Haupttext/),
+        expect.stringMatching(/de\.a1\.e01\.l01\.a01: Ablenker mit gleicher Übersetzung wie das Ziel \(de-aus-tr\)/),
+        expect.stringMatching(/de\.a1\.e01\.l01\.a02: Paare: gleiche Übersetzung zu de\.a1\.e01\.w001 \(de-aus-tr\)/),
+        expect.stringMatching(/de\.a1\.e01\.l01\.a03: Wortbank: Ablenker ist ein Wort der Lösung/),
+      ]),
+    );
+  });
+});
+
 describe('Arabisch: Vokalisierung vollständig', () => {
   it('voll vokalisierte Sätze des Testkurses haben keine Lücken; Pausa am Wortende ist nur ein Hinweis', () => {
     expect(vokalLuecken('\u0627\u0644\u0652\u0628\u064E\u064A\u0652\u062A\u064F \u0643\u064E\u0628\u0650\u064A\u0631\u064C.')).toEqual([]);
