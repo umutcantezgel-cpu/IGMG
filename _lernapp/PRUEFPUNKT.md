@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 22:50 UTC – Tor L1 grün, FF `main`.** check, Import-Bau + Sweep + Crawl (0 × 5xx), E2E Website 1.007 grün,
+  Lern-App 53 grün (mit `FUNKTION_LERNAPP=an`, `FUNKTION_LERNAPP_SYNC=an` in der E2E-.env – ohne sie ist die Lern-App im
+  Produktionsbau absichtlich aus), Vorschau-Bau 2.394 Seiten, Preview `success`. Wortlaut-Ausnahme L-01 (neue Lern-App-Texte).
+  Läuft: L2 + L3-02 `wf_aa43196a-88f`.
 - **Stand 20.10.2026 21:35 UTC:** L1 fertig geprüft (Gegenprüfung Runde 2 frei, S-L1 ohne hoch/kritisch; 4 niedrige Reste) und in
   den Branch gemergt (06651b3, gepusht 092786a). **Tor L1 läuft:** `scratchpad/tor-l1-teil1.sh` (check, Sprachen, Religion,
   Wortlaut, Import-Bau + Sweep + Crawl; Integration lief voll in L1 auf demselben Code), danach `scratchpad/tor-l1-teil2.sh`

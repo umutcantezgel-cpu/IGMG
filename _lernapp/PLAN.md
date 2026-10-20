@@ -1068,7 +1068,7 @@ L0-E01…L0-E19 und der Plan-Aufgaben ML-01…ML-06 steht dort.
 | Etappe | Stand | Tor | Commit | Bemerkung |
 |---|---|---|---|---|
 | L0 Grundlagen | fertig | grün 20.10.2026 (8 Belege, Gegenprüfung frei, Religion und Wortlaut rc=0) | d1a754e | ADR 0037–0045 angenommen mit Fortschreibungen; Stimmen tr/ar „Audio folgt“ (L3-E10a) |
-| L1 Kern | fertig, Tor läuft | Gegenprüfung frei, S-L1 ohne hoch/kritisch | 06651b3 (Merge) | Budgets: Hülle 2,7 KB eigen, Spieler-Route 194 KB; 53 E2E grün |
+| L1 Kern | fertig | grün 20.10.2026: check (2.937 Unit), Import-Bau + Crawl 1.315 Adressen ohne 5xx, E2E Website 1.007 + Lern-App 53 grün, Vorschau-Bau; Gegenprüfung frei, S-L1 ohne hoch/kritisch | 06651b3 (Merge), Tor 46a5d31 | Budgets: Hülle 2,7 KB eigen, Spieler-Route 194 KB; 53 E2E grün |
 | L2 Übungstypen | | | | |
 | L3 Pipeline + A1 | L3-01 fertig (20.10.2026) | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
 | L4 A2–B1 | | | | |
