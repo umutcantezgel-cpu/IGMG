@@ -51,7 +51,13 @@ docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
    FUNKTION_CHAT=an
    FUNKTION_HATIM=an
    FUNKTION_NEWSLETTER=an
+   FUNKTION_LERNAPP=an        # Lern-App (ADR 0035, in der Produktion bis zur Abnahme aus): tests/e2e/lernapp/*.spec.ts
    ```
+
+   Eigene Datenbank oder eigener Port für parallele Läufe: `E2E_DATABASE_URL` (Name muss auf `_e2e` enden, z. B.
+   `igmg_lernapp_a_e2e`, sonst bricht `scripts/e2e-datenbank.mjs` ab) und `E2E_PORT` (dann `APP_URL`/`BETTER_AUTH_URL`
+   setzt `playwright.config.ts`). `tests/e2e/lernapp/rahmen.spec.ts` legt mit `LERNAPP_BILDER=<ordner>` zusätzlich
+   Bildschirmfotos von Start und Einstellungen in de/tr/ar bei 390 und 1440 px ab.
 
 2. Entwicklungsdatenbank füllen und bauen: `pnpm db:migrate && pnpm db:seed && pnpm inhalte:import && pnpm build`
    (standalone; die Schalter gelten auch beim Bau, weil Seiten vorgerendert werden).

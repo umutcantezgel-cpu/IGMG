@@ -222,5 +222,6 @@ describe('ganzes Werkzeug', () => {
     const dauer = Date.now() - start;
     expect(`${lauf.stdout}${lauf.stderr}`).toMatch(/Religion-Prüfung (grün|ROT)/);
     expect(dauer).toBeLessThan(30_000);
-  });
+    // Die Grenze von 30 s prüft die Zeile oben; Vitest selbst bricht erst nach 60 s ab (sonst nach 5 s, unter Plattenlast)
+  }, 60_000);
 });
