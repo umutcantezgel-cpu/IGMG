@@ -12,6 +12,7 @@
 //   Typ-Chunk; mehrere passende Dateien sind Chunks verschiedener Typen gleicher Bauart, gezählt wird die größte) plus
 //   jede Datei mit einem Baustein des Typs, die zu keinem Typ gehört (falls ein Baustein als eigener Chunk ausgelagert ist).
 // - arabische Bildschirmtastatur ≤ 10 KB (eigener Chunk, erst bei arabischem Freitext).
+// - Wiederholen (ohne Karten) und Einstufung (vor dem Start) auf einem neuen Gerät: gesamt ≤ 210 KB und ohne Zod (L2-04).
 // Exit 1, wenn ein Budget verfehlt ist.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -32,7 +33,12 @@ const ROUTEN = {
   fortschritt: { pfad: '/lern-app/de/fortschritt' },
   spieler: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01', warte: 'main input[type="radio"]' },
   spielerWortbank: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l02', warte: 'main [role="toolbar"]' },
+  // L2-04: neues Gerät – ohne Karten bzw. vor „Test beginnen“ darf kein Zod laden (TBT der Spieler-Routen)
+  wiederholen: { pfad: '/lern-app/de/tr-aus-de/wiederholen', warte: '#wiederholen-sitzung p' },
+  einstufung: { pfad: '/lern-app/de/tr-aus-de/einstufung', warte: '#einstufung-test button' },
 };
+/** zod/mini trägt den Namen seines Grundtyps als Zeichenkette – Kennzeichen „Zod geladen“. */
+const ZOD_MARKE = '$ZodType';
 
 /** Erkennungstexte der Komponenten (lange Klassenketten, je genau eine Quelldatei; geprüft in tests/unit/lernapp/bundle-regeln). */
 const ERKENNUNG = JSON.parse(readFileSync(join(import.meta.dirname, 'lernapp-budget-erkennung.json'), 'utf8'));
@@ -90,6 +96,8 @@ const BUDGET = {
   fortschrittEigen: 30,
   spielerGesamt: 210,
   spielerZusaetzlich: 60,
+  wiederholenGesamt: 210,
+  einstufungGesamt: 210,
   uebungstyp: 15,
   arabischeTastatur: 10,
 };
@@ -98,6 +106,7 @@ async function skripte(browser, { pfad, warte }) {
   const context = await browser.newContext({ serviceWorkers: 'block' });
   const page = await context.newPage();
   const dateien = new Map();
+  dateien.zod = new Set();
   const offen = [];
   page.on('response', (r) => {
     const url = new URL(r.url());
@@ -105,7 +114,10 @@ async function skripte(browser, { pfad, warte }) {
     offen.push(
       r
         .body()
-        .then((b) => dateien.set(url.pathname, gzipSync(b, { level: 9 }).length))
+        .then((b) => {
+          dateien.set(url.pathname, gzipSync(b, { level: 9 }).length);
+          if (b.includes(ZOD_MARKE)) dateien.zod.add(url.pathname);
+        })
         .catch(() => undefined),
     );
   });
@@ -177,6 +189,8 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
+  wiederholenGesamt: kb(summe(gemessen.wiederholen)),
+  einstufungGesamt: kb(summe(gemessen.einstufung)),
   uebungstyp: Object.fromEntries(Object.entries(uebungstypen).map(([t, { gz }]) => [t, kb(gz)])),
   arabischeTastatur: kb(typen.arabischeTastatur.gz),
   spielerChunk: kb(typen.spieler.gz),
@@ -192,6 +206,8 @@ for (const [k, grenze] of Object.entries(BUDGET)) {
   } else if (werte[k] > grenze) verfehlt.push(`${k}: ${werte[k]} KB > ${grenze}`);
 }
 if (!werte.spielerChunk) verfehlt.push('Spieler-Chunk nicht gefunden (Erkennungstext)');
+for (const r of ['wiederholen', 'einstufung'])
+  if (gemessen[r].zod.size) verfehlt.push(`${r}: Zod schon beim Laden (${[...gemessen[r].zod].join(', ')})`);
 
 const zeilen = [
   `Lern-App JS-Budgets (gz -9, ${basis})`,
@@ -202,6 +218,8 @@ const zeilen = [
   `Fortschritt /lern-app/de/fortschritt: gesamt ${werte.fortschrittGesamt} KB (≤ ${BUDGET.fortschrittGesamt}), eigener Anteil ${werte.fortschrittEigen} KB (≤ ${BUDGET.fortschrittEigen})`,
   `Spieler-Route (Lektion 1, erste Aufgabe): gesamt ${werte.spielerGesamt} KB (≤ ${BUDGET.spielerGesamt}), zusätzlich zur Hülle ${werte.spielerZusaetzlich} KB (≤ ${BUDGET.spielerZusaetzlich})`,
   `Spieler-Route (Lektion 2, Wortbank zuerst): gesamt ${werte.spielerWortbankGesamt} KB`,
+  `Wiederholen ohne Karten: gesamt ${werte.wiederholenGesamt} KB (≤ ${BUDGET.wiederholenGesamt}), Zod: ${gemessen.wiederholen.zod.size ? 'ja' : 'nein'}`,
+  `Einstufung vor dem Start: gesamt ${werte.einstufungGesamt} KB (≤ ${BUDGET.einstufungGesamt}), Zod: ${gemessen.einstufung.zod.size ? 'ja' : 'nein'}`,
   `Spieler-Chunk: ${werte.spielerChunk} KB · Übungstypen: ${Object.entries(werte.uebungstyp)
     .map(([t, v]) => `${t} ${v} KB`)
     .join(', ')} (je ≤ ${BUDGET.uebungstyp})`,
