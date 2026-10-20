@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 19:15 UTC:** L3-01 fast fertig (e2ddb83): Leitfaden, Rahmen de/tr/ar, Kontrast alle 6 Richtungen; Lektorat de
+  und ar freigegeben. Läuft: Lektorat tr `wf_51cc17de-642` (zweimal am Inhaltsfilter gescheitert, jetzt ohne Tabu-Lexikon) und L1
+  `wf_84111110-109`. Offene niedrige Lektoratspunkte (de: Einwohnerantrag, „Gemeinde“ als Kommune; ar: Wochentag-Wortfeld, ayy,
+  Plural-Hinweiswort, Monatsnamenreihe) gehen in die Entwurfsphase L3-07 bzw. LM-02.
 - **Automatische Fortsetzung (Nutzer 20.10.2026: „ja“):** stündlicher Routine-Trigger `trig_01RDCdCmysfNvQyECcSRCERP`
   („Lern-App: automatisch weitermachen“, Minute 2) weckt diese Sitzung nach Limit oder Neustart. Am Ende des Laufs (ABSCHLUSS)
   oder auf Wunsch des Nutzers löschen (`delete_trigger`).
