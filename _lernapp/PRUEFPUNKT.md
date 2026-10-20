@@ -1,5 +1,10 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 19:45 UTC:** L3-01 fertig (95d4d24), L3-04 fertig (0b29073: Sprachdaten gepinnt). Läuft: L1
+  `wf_84111110-109`. **Für L3-02 vormerken:** `lernapp:pruefen` mit Auszugs-SHA-Prüfung vor jedem Lauf, „kein examples/ref in
+  web/daten/kaikki“, N-Gramm-Wächter (b/c) mit den 38 Tatoeba-IDs aus `web/daten/tatoeba/QUELLE.md` als Positivproben,
+  Import-Ausschluss dieser Sätze; CAMeL-Schritt ZIP → Top 50.000 als Skript nachziehen. Volle kaikki-Auszüge (116 MB) bleiben
+  bis L5 im Scratchpad.
 - **Stand 20.10.2026 19:15 UTC:** L3-01 fast fertig (e2ddb83): Leitfaden, Rahmen de/tr/ar, Kontrast alle 6 Richtungen; Lektorat de
   und ar freigegeben. Läuft: Lektorat tr `wf_51cc17de-642` (zweimal am Inhaltsfilter gescheitert, jetzt ohne Tabu-Lexikon) und L1
   `wf_84111110-109`. Offene niedrige Lektoratspunkte (de: Einwohnerantrag, „Gemeinde“ als Kommune; ar: Wochentag-Wortfeld, ayy,
