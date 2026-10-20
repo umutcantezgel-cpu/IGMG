@@ -18,21 +18,23 @@
 - M-3 vor dem ersten Import echter Inhalte (L3-07) beheben; passt zu L3-02 („Prüfer, Wächter-Tests“).
 - N-1 bis N-6 bei Gelegenheit, spätestens bis S-L2 (L5).
 
-| Nr. | Schwere | Kurzfassung | Ort |
-|---|---|---|---|
-| M-1 | mittel | Abgleich ohne Kontobindung auf dem Server: Lernstände zweier Konten vermischen sich auf geteilten Geräten | `web/src/lib/lernapp/oberflaeche/abgleich.ts:48`, `web/src/lib/lernapp/lokal/sync.ts:161-166, 221-272`, `web/src/lib/lernapp/sync/protokoll.ts:43-48` |
-| M-2 | mittel | Unbegrenztes Wachstum je Konto und vollständiges Nachspielen je Anfrage (Speicher-, Rechen- und Kostenlast) | `web/src/lib/lernapp/sync/server.ts:232-249, 292-330, 401-436` |
-| M-3 | mittel | Religionswächter umgehbar; Formel-Lexikon (KERN §3 a) fehlt; `religionsbezug` kommt allein aus der Datei | `_gemeinde/werkzeuge/religion-pruefung.mjs:53, 185-205`, `web/src/lib/lernapp/inhalt/import.ts:204, 251, 460, 515` |
-| N-1 | niedrig | `/lern-app/anmelden` (und andere Seitennamen als „Oberflächensprache“) erreicht über den internen Rewrite echte Seiten, die Anmeldung ohne Nonce-CSP | `web/src/proxy.ts:37, 58` |
-| N-2 | niedrig | Randpfade ohne jede CSP (`/(de\|tr\|en)/lern-app/…` und `…/anmelden/…` mit Punkt im Pfad) | `web/next.config.ts:17`, `web/src/lib/sicherheit/header.ts:120`, `web/src/proxy.ts:112` |
-| N-3 | niedrig | Jahres-Kopien im CDN überdauern „Schalter aus“ und das Zurückziehen bei Audio | `…/pakete/[kurs]/[einheit]/[hash]/route.ts:31`, `…/audio/[...pfad]/route.ts:39` |
-| N-4 | niedrig | 206-Teilantworten tragen den Jahres-Kopf für das CDN | `web/src/app/lern-app/audio/[...pfad]/route.ts:30-42` |
-| N-5 | niedrig | Service Worker folgt `/_next/static/../`-Verweisen aus HTML und kann so beliebige eigene GET-Antworten vorhalten | `web/public/lern-app/sw.js:82-90, 110` |
-| N-6 | niedrig | Rolle `sprachpruefung` erhält die Grundrechte der Verwaltung (Tickets, Postfach, Mediathek) | `web/src/lib/rechte/matrix.ts:283` |
+| Nr. | Schwere | Kurzfassung | Ort | Stand |
+|---|---|---|---|---|
+| M-1 | mittel | Abgleich ohne Kontobindung auf dem Server: Lernstände zweier Konten vermischen sich auf geteilten Geräten | `web/src/lib/lernapp/oberflaeche/abgleich.ts:48`, `web/src/lib/lernapp/lokal/sync.ts:161-166, 221-272`, `web/src/lib/lernapp/sync/protokoll.ts:43-48` | behoben in `8d60fe8, 6f62263` |
+| M-2 | mittel | Unbegrenztes Wachstum je Konto und vollständiges Nachspielen je Anfrage (Speicher-, Rechen- und Kostenlast) | `web/src/lib/lernapp/sync/server.ts:232-249, 292-330, 401-436` | behoben in `8d60fe8` |
+| M-3 | mittel | Religionswächter umgehbar; Formel-Lexikon (KERN §3 a) fehlt; `religionsbezug` kommt allein aus der Datei | `_gemeinde/werkzeuge/religion-pruefung.mjs:53, 185-205`, `web/src/lib/lernapp/inhalt/import.ts:204, 251, 460, 515` | behoben in `18726ba` |
+| N-1 | niedrig | `/lern-app/anmelden` (und andere Seitennamen als „Oberflächensprache“) erreicht über den internen Rewrite echte Seiten, die Anmeldung ohne Nonce-CSP | `web/src/proxy.ts:37, 58` | behoben in `d31a4ce` |
+| N-2 | niedrig | Randpfade ohne jede CSP (`/(de\|tr\|en)/lern-app/…` und `…/anmelden/…` mit Punkt im Pfad) | `web/next.config.ts:17`, `web/src/lib/sicherheit/header.ts:120`, `web/src/proxy.ts:112` | behoben in `d31a4ce` |
+| N-3 | niedrig | Jahres-Kopien im CDN überdauern „Schalter aus“ und das Zurückziehen bei Audio | `…/pakete/[kurs]/[einheit]/[hash]/route.ts:31`, `…/audio/[...pfad]/route.ts:39` | behoben in `324cfc4` |
+| N-4 | niedrig | 206-Teilantworten tragen den Jahres-Kopf für das CDN | `web/src/app/lern-app/audio/[...pfad]/route.ts:30-42` | behoben in `324cfc4` |
+| N-5 | niedrig | Service Worker folgt `/_next/static/../`-Verweisen aus HTML und kann so beliebige eigene GET-Antworten vorhalten | `web/public/lern-app/sw.js:82-90, 110` | behoben in `324cfc4` |
+| N-6 | niedrig | Rolle `sprachpruefung` erhält die Grundrechte der Verwaltung (Tickets, Postfach, Mediathek) | `web/src/lib/rechte/matrix.ts:283` | behoben in `324cfc4` |
 
 ---
 
 ## M-1 (mittel) – Abgleich ohne Kontobindung auf dem Server
+
+**Stand (20.10.2026):** behoben in `8d60fe8` (Kontobindung: Pflichtfeld `konto`, 409 `konto` ohne Schreiben, Planer ruht, Bindungsfrage in den Einstellungen; Sitzungsprüfung je Seitenaufruf vor dem ersten Abgleich) und `6f62263` (nach einem Nein fragt die nächste Handlung erneut). Belege: Integration `lernapp-sync.test.ts` (409 ohne Zeile, geteiltes Gerät mit Kontowechsel, Planer nach 409), Unit `abgleich-oberflaeche.test.ts`, E2E `zwei-geraete.spec.ts` grün.
 
 **Ort:** `web/src/lib/lernapp/oberflaeche/abgleich.ts:41-50` (`beimOeffnen` kehrt ohne Sitzungsprüfung zurück, wenn der
 letzte Abgleich jünger als 60 s ist), `web/src/lib/lernapp/lokal/sync.ts:221-272` (`nachHandlung` gleicht ab, ohne das
@@ -66,6 +68,8 @@ Geräten im normalen Gebrauch auf.
 
 ## M-2 (mittel) – Unbegrenztes Wachstum je Konto, vollständiges Nachspielen je Anfrage
 
+**Stand (20.10.2026):** behoben in `8d60fe8`: `GRENZEN` je Konto (200.000 Ereignisse, 20.000 je 24 h, 50 Geräte → 429 `grenze` ohne Schreiben), Folgenummer höchstens 50.000 über der höchsten des Geräts (sonst `abgelehnt`), `statement_timeout` 15 s; Lerntage nur aus den Ereignissen der berührten Tage, Zuweisungen nur aus den Lektionen der offenen Zuweisungen. Belege: Integration `lernapp-sync.test.ts` (Geräte-, Gesamt- und 24-h-Grenze, Folgenummer, gezielte = volle Ableitung). Ohne neuen Index (Migration bleibt dem Orchestrator); die Abfragen laufen über `(benutzer_id, id)` und sind durch die Gesamtgrenze beschränkt. Zählung im Cockpit: offen (L3-06), bis dahin `console.warn` ohne Personenbezug.
+
 **Ort:** `web/src/lib/lernapp/sync/server.ts:232-249` (`erneuereTage` lädt alle Lektions-, XP-, Ziel- und Pause-Ereignisse
 des Kontos), `:171-183` (`erneuereKarten` lädt alle Bewertungen der betroffenen Karten), `:292-330` (Einfügen ohne
 Obergrenze je Konto), `:423-436` (`vermerkeZuweisungen` lädt alle Lektions-Ereignisse), `protokoll.ts:30-36`,
@@ -90,6 +94,8 @@ nicht ausnutzbar (Schalter aus, Einwilligung nicht erteilbar) – latent.
 - Integrationstest: Grenze greift, andere Konten bleiben unberührt.
 
 ## M-3 (mittel) – Religionswächter umgehbar, Formel-Lexikon fehlt
+
+**Stand (20.10.2026):** behoben in `18726ba`: Kern `web/src/lib/lernapp/waechter/kern.mjs` für Werkzeug, Import und `lernapp:pruefen` (auch im Vercel-Bau); Normalisierung ohne Format- und kombinierende Zeichen (U+00AD, U+034F u. a.), U+2028/2029 und Homoglyphen; aufgelöst werden Codepunkte, HTML-Entitäten, `fromCharCode`/`fromCodePoint` und Prozent-Kodierung; Wissenskurs, Koran-Pfad und Textdateien der Werkstatt auch verschleiert Rot; 4-Gramme über Zeilen und Felder; Formel-Lexikon (arabisch nur als Verweise in den Tanzil-Text, deutsch/türkisch als Startliste) „fail closed“ im Import und in `lernapp:pruefen`, in `ar.json` immer Rot; Übersetzungen erben `religionsbezug`. Belege: Unit `religion-waechter.test.ts` (jede Umgehung der Tabelle oben), `religion-inhalt.test.ts` (Kennzeichen, Import-Abbruch). Offen: Bestätigung und Ergänzung des Lexikons durch die religiöse Prüfung bzw. Redaktion (LM-09); Aufruf aus den Eingaben der Verwaltung, sobald es sie gibt (L3-06).
 
 **Ort:** `_gemeinde/werkzeuge/religion-pruefung.mjs:53` (Liste unsichtbarer Zeichen), `:185-205` (`pruefeDatei`: zeilenweise,
 in Nie-Pfaden nur rohe Schrift rot), `web/src/lib/lernapp/inhalt/import.ts:204, 251, 460, 515` (`religionsbezug ?? false`
@@ -140,6 +146,8 @@ entsteht mit dem KI-Entwurf der Inhalte ab L3.
 
 ## N-1 (niedrig) – Interner Rewrite trifft echte Seiten, Anmeldung ohne Nonce-CSP
 
+**Stand (20.10.2026):** behoben in `d31a4ce`: unbekanntes erstes Segment immer auf `/lern-app/de/_` (404 der Fangroute, `noindex`, `no-store`, CSP der Lern-App). Belege: Unit `proxy.test.ts` (u. a. `/lern-app/anmelden`, `/lern-app/einstellungen`, `/lern-app/tr-aus-de`), E2E `regression.spec.ts` grün.
+
 **Ort:** `web/src/proxy.ts:37` (`intern` → `/lern-app/de/<ui><rest>`), `:58` (Rewrite ohne Kopfzeilen),
 `web/src/lib/sicherheit/header.ts:120`.
 
@@ -159,6 +167,8 @@ gefunden). Die Seite selbst prüft `lernapp` und `konten`; der Service Worker h�
 
 ## N-2 (niedrig) – Randpfade ohne jede CSP
 
+**Stand (20.10.2026):** behoben in `d31a4ce`: `CSP_AUSNAHMEN` führt `lern-app` nur ohne Sprachpräfix; Ausschluss der Lern-App-CSP nur für die Anmeldung ohne Punkt im Pfad. Beleg: Unit `kopfzeilen-pfade.test.ts` (`/de/lern-app/x.y` → öffentliche CSP, `/lern-app/de/anmelden/x.y` → CSP der Lern-App).
+
 **Ort:** `web/next.config.ts:17`, `web/src/lib/sicherheit/header.ts:120`, `web/src/proxy.ts:112`.
 
 **Nachweis (aus Matcher und Regeln abgeleitet, nicht im Bau gemessen):** `CSP_AUSNAHMEN` nimmt auch
@@ -171,6 +181,8 @@ Content-Security-Policy.
 `(de|tr|ar)/anmelden(?:/[^.]*)?$` begrenzen; Fälle in `tests/unit/kopfzeilen-pfade.test.ts` ergänzen.
 
 ## N-3 (niedrig) – Jahres-Kopien im CDN überdauern Schalter und Zurückziehen
+
+**Stand (20.10.2026):** behoben in `324cfc4`: CDN-Tags der Pakete `lernapp,lernapp-kurs-<id>,einstellungen`, der Audio-Bündel zusätzlich `lernapp`, `lernapp-kurs-<sprache>`, `einstellungen`; Verzeichnis und Pakete im Daten-Cache mit `einstellungen`. Beleg: Integration `lernapp-pakete.test.ts`. Offen: Neubau eines Bündels ohne zurückgezogenen Clip (Audio-Kette L3-05) und der Nachweis MISS/404 im Vorschau-Bautest (S5 B2/B5).
 
 **Ort:** `web/src/app/lern-app/pakete/[kurs]/[einheit]/[hash]/route.ts:27-33`,
 `web/src/app/lern-app/audio/[...pfad]/route.ts:30-42`, `web/src/server/actions/startklar.ts:63`,
@@ -189,6 +201,8 @@ oder den Tag `lernapp-audio-<sprache>` leeren; Nachtrag im Bautest: nach Zurück
 
 ## N-4 (niedrig) – 206-Teilantworten mit Jahres-Kopf für das CDN
 
+**Stand (20.10.2026):** behoben in `324cfc4`: 206 mit `Vercel-CDN-Cache-Control: no-store`, ohne Tag. Beleg: Integration `lernapp-pakete.test.ts` (Dateisystem und Blob). Offen: B5 im Vorschau-Bautest.
+
 **Ort:** `web/src/app/lern-app/audio/[...pfad]/route.ts:30-42`.
 
 **Nachweis:** Für 200 **und** 206 setzt `kopfzeilen` `public, max-age=31536000, immutable` und
@@ -201,6 +215,8 @@ ganze Bündel mit 200 liefern; B5 im Vorschau-Bautest ausführen.
 
 ## N-5 (niedrig) – Service Worker folgt `/_next/static/../`-Verweisen
 
+**Stand (20.10.2026):** behoben in `324cfc4`: Der Worker holt nur Programmteile unter `/_next/static/` ohne `..` (auch kodiert) und ohne Backslash. Beleg: Unit `lernapp-sw.test.ts` (Verweise auf `/api/lernapp/sitzung` und die Anmeldung werden weder geholt noch vorgehalten; ohne die Behebung rot).
+
 **Ort:** `web/public/lern-app/sw.js:110` (Muster ohne Schutz vor `..`), `:82-90` (`dateiHolen` → `vorhalten`).
 
 **Nachweis:** Das Muster `/\/_next\/static\/[^"'\s)\\]+/g` trifft auch `/_next/static/../../api/lernapp/sitzung`;
@@ -212,6 +228,8 @@ Lern-App-Seite (z. B. ein Titel aus den Inhaltsdateien), also Redaktion bzw. Pip
 beginnt und der Rohtext kein `..` enthält; Unit-Test in `tests/unit/lernapp/lernapp-sw.test.ts`.
 
 ## N-6 (niedrig) – Rolle `sprachpruefung` mit Grundrechten der Verwaltung
+
+**Stand (20.10.2026):** behoben in `324cfc4`: `sprachpruefung` nur `verwaltung.betreten`, `lernapp.lesen`, `lernapp.sprache.pruefen`. Belege: Unit `matrix.test.ts`, `matrix-negativ.test.ts`; Integration `verwaltung/rechte-matrix.test.ts` grün.
 
 **Ort:** `web/src/lib/rechte/matrix.ts:283` (`[...GRUNDRECHTE, 'lernapp.lesen', 'lernapp.sprache.pruefen']`).
 
@@ -293,3 +311,15 @@ direkt in die Prüfoberfläche); Negativtest in `tests/unit/rechte/matrix-negati
 
 Dieser Bericht enthält keine arabische Schrift, keine religiösen Texte, Formeln oder Übersetzungen. Die Wächter-Probe las
 vier Wörter aus den gepinnten Daten nur im Arbeitsspeicher und gab ausschließlich Befundzahlen aus.
+
+
+## Nachtrag: Behebung (20.10.2026)
+
+Alle Befunde M-1 bis M-3 und N-1 bis N-6 sind im Arbeitsbaum `agent-a212ace6efc9226bb` behoben (Stand je Befund oben). Commits
+auf dem Zweig `worktree-agent-a212ace6efc9226bb`, älteste zuerst: `61732c5` (Sitzungszweig hineingemergt, Löschkonzept §3.7),
+`8d60fe8` (M-1, M-2), `18726ba` (M-3), `d31a4ce` (N-1, N-2), `324cfc4` (N-3 bis N-6), `bc0768b` (niedrige Punkte der
+Gegenprüfung), `6f62263` (Nacharbeit M-1, Bau-Kennung, E2E-Probe).
+
+Hinweise H-1 bis H-6 bleiben Vormerkungen: H-1 (Einwilligung `lernapp` mit Oberfläche, Löschung nach Widerruf) vor dem
+Einschalten von `lernapp_sync` in L7; H-6 teilweise – die Einstellungen sichern den Lernstand jetzt als Datei, „Profil von
+diesem Gerät löschen“ folgt in L7. Der Bericht enthält weiterhin keine arabische Schrift.
