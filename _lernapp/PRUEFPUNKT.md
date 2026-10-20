@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 16:45 UTC:** `main` = 685439b (Tor L0). L1: Fundament fertig (1c54bc6), Engine fertig; ZWISCHENSTÄNDE
+  8bff270 (L1-03 Oberfläche, ungeprüft) und b007831 (L1-05 nach 509392a/daf34a1). Laufen: L1 `wf_84111110-109` (A1/B1 aus
+  `scratchpad/l1/{a1,b1}-ergebnis.json`, A2/B2 mit Fortsetzungs-Vorspann, dann Zusammenführung, Gegenprüfung ∥ S-L1) und
+  Rahmen-Rest `wf_c8ce5c1d-a27` (Kontrast tr/ar, Lektorat de/tr/ar; Lektorat zitiert keine Tabu-Wörter wegen Inhaltsfilter).
 - **Stand 20.10.2026 14:10 UTC – Tor L0 grün, `main` = 685439b (FF).** ADR 0037–0045 angenommen mit Fortschreibungen;
   L3-E10a (tr/ar „Audio folgt“). Laufen: L1 `wf_6a6cc605-b14`, Rahmen `wf_422b0a15-ec2` (ar, Kontrast, Lektorat). Danach: Rahmen
   prüfen und committen; L1 mergen, volles Tor einmal, FF; dann L2 + L3-02 ff. (Nutzer 20.10.: keine unnötigen Tests/Schleifen –
