@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 14:10 UTC – Tor L0 grün, `main` = 685439b (FF).** ADR 0037–0045 angenommen mit Fortschreibungen;
+  L3-E10a (tr/ar „Audio folgt“). Laufen: L1 `wf_6a6cc605-b14`, Rahmen `wf_422b0a15-ec2` (ar, Kontrast, Lektorat). Danach: Rahmen
+  prüfen und committen; L1 mergen, volles Tor einmal, FF; dann L2 + L3-02 ff. (Nutzer 20.10.: keine unnötigen Tests/Schleifen –
+  Agenten testen nur Betroffenes, volle Suiten einmal im Tor.)
 - **Stand 20.10.2026 13:00 UTC:** Branch 09b094d. Platte nach Aufräumen von S3 (Chatterbox-Gewichte, Venv) 7,6 GB frei;
   PostgreSQL + Mailpit laufen. Laufen: `wf_7b96226b-f3b` (L0-Rest: S3-Beleg ∥ Recht → Gegenprüfung,
   `scratchpad/lernapp-l0-rest.workflow.js`), `wf_422b0a15-ec2` (Rahmen ab ar), `wf_6a6cc605-b14` (L1 mit
