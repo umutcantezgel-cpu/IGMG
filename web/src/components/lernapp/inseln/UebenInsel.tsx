@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { Component, lazy, type ReactNode, Suspense, useEffect, useRef, useState } from 'react';
+import { Component, lazy, type ReactNode, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
@@ -100,7 +100,8 @@ export function UebenInsel({
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
-      .then((neu) => aktiv && setZ(neu));
+      // Spieler und erste Aufgabe in Zeitscheiben zeichnen (Übergang): kein langer Block auf dem Hauptfaden (TBT, KERN 4.0 §9)
+      .then((neu) => aktiv && startTransition(() => setZ(neu)));
     void beimOeffnen().catch(() => undefined);
     return () => {
       aktiv = false;

@@ -1,6 +1,6 @@
 'use client';
 
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { waehleKarten } from '@/lib/lernapp/engine/kartenwahl';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
@@ -93,7 +93,8 @@ export function WiederholenInsel({
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
-      .then((neu) => aktiv && setZ(neu));
+      // Spieler und erste Aufgabe in Zeitscheiben zeichnen (Übergang): kein langer Block auf dem Hauptfaden (TBT, KERN 4.0 §9)
+      .then((neu) => aktiv && startTransition(() => setZ(neu)));
     void beimOeffnen().catch(() => undefined);
     return () => {
       aktiv = false;
