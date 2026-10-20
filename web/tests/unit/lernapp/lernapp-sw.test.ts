@@ -14,7 +14,7 @@ const URSPRUNG = 'https://igmg.test';
 type Hoerer = (e: Record<string, unknown>) => void;
 type Vorrat = Map<string, Response>;
 
-function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>, netz = true } = {}) {
+function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>, netz = true, zusatz = '' } = {}) {
   const hoerer = new Map<string, Hoerer>();
   const speicher = new Map<string, Vorrat>(
     Object.entries(vorraete).map(([n, urls]) => [n, new Map(urls.map((u) => [u, new Response(`alt ${u}`)]))]),
@@ -52,7 +52,7 @@ function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>,
     abgerufen.push(u);
     if (!netz) throw new TypeError('offline');
     const pfad = new URL(u).pathname;
-    const html = `<html><script src="/_next/static/chunks/a.js"></script><link href="/_next/static/css/b.css"/>${pfad}</html>`;
+    const html = `<html><script src="/_next/static/chunks/a.js"></script><link href="/_next/static/css/b.css"/>${pfad}${zusatz}</html>`;
     // a.js lädt einen Chunk nach (wie Turbopack: Verweis „static/chunks/<name>.js“), dieser einen weiteren
     const js: Record<string, string> = {
       '/_next/static/chunks/a.js': 'e.l("static/chunks/spieler.js")',
@@ -209,6 +209,20 @@ describe('Service Worker der Lern-App', () => {
     const unbekannt = ladeWorker({ bau: 'b4' });
     await unbekannt.warte('message', { art: 'schale', ui: 'en' });
     expect(unbekannt.inhalt('igmg-lernapp-schale-vb4')).toEqual([]);
+  });
+
+  it('Verweise mit „..“ (auch kodiert) aus dem HTML holt der Worker nie: keine API-Antwort in der Hülle (S-L1 N-5)', async () => {
+    const zusatz = [
+      '<img src="/_next/static/../../api/lernapp/sitzung">',
+      '<img src="/_next/static/%2e%2e/%2e%2e/api/lernapp/sitzung">',
+      '<img src="/_next/static/..%2f..%2fapi/lernapp/sync">',
+      '<img src="/_next/static/chunks/../../../lern-app/de/anmelden">',
+    ].join('');
+    const w = ladeWorker({ bau: 'b6', zusatz });
+    await w.warte('message', { art: 'schale', ui: 'de' });
+    expect(w.abgerufen.filter((u) => u.includes('..') || /%2e|%2f/i.test(u) || u.includes('/api/') || u.includes('anmelden'))).toEqual([]);
+    expect(w.inhalt('igmg-lernapp-schale-vb6').filter((p) => !p.startsWith('/_next/static/') && !p.startsWith('/lern-app/de'))).toEqual([]);
+    expect(w.inhalt('igmg-lernapp-schale-vb6')).toContain('/_next/static/chunks/a.js');
   });
 
   it('Seiten eines Kurses nach „Einheit offline speichern“: nur Lern-App-Seiten (nie die Anmeldung), Antwort über den Kanal', async () => {

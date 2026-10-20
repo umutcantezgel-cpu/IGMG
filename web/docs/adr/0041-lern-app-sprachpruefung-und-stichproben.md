@@ -45,6 +45,12 @@
 11. **Abgrenzung:** Einträge mit `religionsbezug` brauchen zwei Freigaben der religiösen Prüfung (ADR 0040 Nr. 5). Die Sprachstichprobe und der Schalter `lernapp_ungeprueft` ersetzen diese Freigaben nie.
 12. **Rahmenpläne** je Sprache nimmt eine Prüfperson ab (LM-02). Bis dahin gilt der Entwurf.
 
+## Fortschreibung nach der Sicherheitsprüfung S-L1 (20.10.2026, `_lernapp/berichte/s-l1.md` N-6)
+
+1. Die Rolle `sprachpruefung` hat nur `verwaltung.betreten`, `lernapp.lesen` und `lernapp.sprache.pruefen` – keine Grundrechte
+   der Verwaltung (Übersicht, Postfach, Tickets, Mediathek, Styleguide). Ihr Einstieg ist die Prüfoberfläche (L3-06); bis
+   dahin führt `/verwaltung` auf „kein Zugriff“.
+
 ## Alternativen
 
 - Vollprüfung aller Einträge durch Menschen: verworfen (nicht leistbar bei ≈ 78.000 Zielsätzen und ≈ 156.000 Übersetzungen).

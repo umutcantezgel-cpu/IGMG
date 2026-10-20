@@ -72,14 +72,30 @@ function netzZuerst(anfrage, name, schluessel) {
     .catch(() => caches.match(schluessel, { cacheName: name }).then((vorrat) => vorrat || Promise.reject(new Error('offline'))));
 }
 
+/**
+ * Nur echte Programmteile unter `/_next/static/`: ohne `..` (auch nicht kodiert) und ohne Backslash. Sonst holte ein Verweis
+ * wie `/_next/static/../../api/…` aus dem HTML beliebige eigene GET-Antworten in die Hülle (S-L1 N-5).
+ */
+function istProgrammteil(datei) {
+  if (typeof datei !== 'string' || /\.\.|%2e|%2f|%5c|\\/i.test(datei)) return false;
+  try {
+    const u = new URL(datei, self.location.origin);
+    return u.origin === self.location.origin && u.pathname.startsWith('/_next/static/');
+  } catch {
+    return false;
+  }
+}
+
 /** Programmteile, auf die ein Programmteil verweist (nachgeladene Chunks: `static/chunks/<name>.js`). */
 const CHUNK_VERWEIS = /(?:\/_next\/)?static\/chunks\/[A-Za-z0-9_.~-]+\.js/g;
-const chunkVerweise = (text) => [...new Set(text.match(CHUNK_VERWEIS) || [])].map((t) => (t.startsWith('/_next/') ? t : `/_next/${t}`));
+const chunkVerweise = (text) =>
+  [...new Set(text.match(CHUNK_VERWEIS) || [])].map((t) => (t.startsWith('/_next/') ? t : `/_next/${t}`)).filter(istProgrammteil);
 /** Obergrenze der Programmteile je Bitte */
 const GRENZE_DATEIEN = 300;
 
 /** Eine Datei aus der Hülle oder aus dem Netz (dann vorgehalten); `null` ohne beides. */
 function dateiHolen(c, datei) {
+  if (!istProgrammteil(datei)) return Promise.resolve(null);
   return c.match(datei).then(
     (da) =>
       da ||
@@ -107,7 +123,7 @@ function halteSeitenVor(pfade, tief = false) {
                 return c.put(pfad, antwort.clone()).then(() => antwort.text());
               })
           )
-            .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])])
+            .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])].filter(istProgrammteil))
             .catch(() => []),
         ),
       ),

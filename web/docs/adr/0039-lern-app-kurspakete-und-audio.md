@@ -64,6 +64,18 @@ Gilt vor Nr. 1–12, wo es abweicht.
 9. **Speicher und Tarif:** Blob `lernapp` ≈ 0,8 GB (nur Audio; Modelle nach ADR 0042 statisch). Lern-App-Audio in der Produktion erst nach der Tarifentscheidung (LM-15): Im Hobby-Tarif reicht 1 GB Blob nicht, Überschreitungen sperren den Blob-Zugriff bis zu 30 Tage. Erwartete Kosten der Auslieferung im Pro-Tarif ≈ 1–13 $/Monat.
 10. **Tests:** Unit `buendel` (Index, Schnitt, Typ, ≤ 16 MB); E2E im Chromium: ein Clip normal und langsam bis `ended`, Rückfallweg mit erzwungenem `MediaError`. Die echte Safari-Prüfung ist UMGEBUNGSAUSNAHME mit Ersatzbeleg (Sonde S4 und Protokoll LM-07).
 
+## Fortschreibung nach der Sicherheitsprüfung S-L1 (20.10.2026, `_lernapp/berichte/s-l1.md` N-3, N-4)
+
+1. **CDN-Tags:** Einheitenpakete tragen `lernapp`, `lernapp-kurs-<id>` und `einstellungen`; Audio-Bündel zusätzlich zu
+   `lernapp-audio(-<sprache>)` auch `lernapp`, `lernapp-kurs-<sprache>` und `einstellungen`. Ein Schalterwechsel in der Datenbank
+   (`updateTag(TAG.einstellungen)`) und jedes Zurückziehen (`updateTag(TAG.lernappKurs(id))`) leeren so auch die Jahreskopien
+   im CDN; Verzeichnis und Pakete im Daten-Cache von Next tragen `einstellungen` ebenso. Ein Schalter über die Umgebung wirkt
+   ohnehin erst mit einer neuen Bereitstellung.
+2. **Zurückgezogener Clip:** Das Paket verweist sofort nicht mehr darauf. Aus dem Bündel verschwindet er erst mit dessen
+   Neubau (neuer Hash, neue Adresse) in der Audio-Kette (L3-05); das alte Bündel wird dann im Blob gelöscht.
+3. **Teilantworten (206)** hält das CDN nie vor (`Vercel-CDN-Cache-Control: no-store`, ohne Tag). 416 hält niemand vor.
+4. **Offen:** Nachweis im Vorschau-Bautest (S5, B2/B5): nach Zurückziehen bzw. Abschalten MISS und 404, Bereichsanfrage MISS.
+
 ## Alternativen
 
 - Ein JSON je Kurs: verworfen. Zu groß für das Offline-Speichern einzelner Stufen, und jede Freigabe änderte die ganze Datei.

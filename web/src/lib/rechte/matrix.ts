@@ -279,8 +279,12 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'moderationsprotokoll.lesen',
     'chat.notfallpause',
   ]),
-  /** Sprachprüfung (ADR 0041): liest die Lern-App und prüft Sprache – nur in den eigenen Sprachen (`darfSprachePruefen`). */
-  sprachpruefung: new Set<Aktion>([...GRUNDRECHTE, 'lernapp.lesen', 'lernapp.sprache.pruefen']),
+  /**
+   * Sprachprüfung (ADR 0041 Nr. 1): betritt die Verwaltung nur für die Prüfoberfläche, liest die Lern-App und prüft Sprache –
+   * nur in den eigenen Sprachen (`darfSprachePruefen`). Ohne die Grundrechte (Übersicht, Postfach, Tickets, Mediathek,
+   * Styleguide): Prüfende sind oft Ehrenamtliche von außen (S-L1 N-6).
+   */
+  sprachpruefung: new Set<Aktion>(['verwaltung.betreten', 'lernapp.lesen', 'lernapp.sprache.pruefen']),
 };
 
 /** Ziel einer Aktion: Bei organisationsgebundenen Inhalten die Organisation des Inhalts (null = allgemein). */

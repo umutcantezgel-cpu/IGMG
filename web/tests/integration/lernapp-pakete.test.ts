@@ -281,7 +281,8 @@ describe('Routen', () => {
     const { antwort, hash } = await paket('ar-aus-tr');
     expect(antwort.headers.get('cache-control')).toBe('public, max-age=31536000, immutable');
     expect(antwort.headers.get('vercel-cdn-cache-control')).toBe('max-age=31536000');
-    expect(antwort.headers.get('vercel-cache-tag')).toBe('lernapp,lernapp-kurs-ar');
+    // Kurs-Tag (Zurückziehen) und `einstellungen` (Schalter): keine Jahreskopie überdauert sie (S-L1 N-3)
+    expect(antwort.headers.get('vercel-cache-tag')).toBe('lernapp,lernapp-kurs-ar,einstellungen');
     expect(antwort.headers.get('x-content-type-options')).toBe('nosniff');
     expect((await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'ar-aus-tr', einheit: 'ar.a1.e01', hash: '0'.repeat(64) }))).status).toBe(
       404,
@@ -315,7 +316,7 @@ describe('Audio-Route', () => {
     expect(r.headers.get('content-length')).toBe(String(bytes.length));
     expect(r.headers.get('cache-control')).toBe('public, max-age=31536000, immutable');
     expect(r.headers.get('vercel-cdn-cache-control')).toBe('max-age=31536000');
-    expect(r.headers.get('vercel-cache-tag')).toBe('lernapp-audio,lernapp-audio-tr');
+    expect(r.headers.get('vercel-cache-tag')).toBe('lernapp-audio,lernapp-audio-tr,lernapp,lernapp-kurs-tr,einstellungen');
     expect(r.headers.get('accept-ranges')).toBe('bytes');
     expect(r.headers.get('set-cookie')).toBeNull();
     expect(r.headers.get('vary')).toBeNull();
@@ -326,6 +327,9 @@ describe('Audio-Route', () => {
     const teil = await audioRoute.GET(anfrage('/', { range: 'bytes=0-99' }), kontext({ pfad: ['de', datei] }));
     expect(teil.status).toBe(206);
     expect(teil.headers.get('content-range')).toMatch(/^bytes 0-99\/\d+$/);
+    // Teilantworten hält das CDN nie vor (S-L1 N-4)
+    expect(teil.headers.get('vercel-cdn-cache-control')).toBe('no-store');
+    expect(teil.headers.get('vercel-cache-tag')).toBeNull();
     expect((await teil.arrayBuffer()).byteLength).toBe(100);
     const daneben = await audioRoute.GET(anfrage('/', { range: 'bytes=99999999-' }), kontext({ pfad: ['de', datei] }));
     expect(daneben.status).toBe(416);
@@ -355,10 +359,11 @@ describe('Audio-Route', () => {
     const r = await audioRoute.GET(anfrage('/', { range: 'bytes=0-9' }), kontext({ pfad: ['tr', datei] }));
     expect(r.status).toBe(206);
     expect(r.headers.get('content-range')).toBe('bytes 0-9/50');
+    expect(r.headers.get('vercel-cdn-cache-control')).toBe('no-store');
     expect(abrufe).toEqual([{ url: `https://lernapp.example.test/lernapp/audio/tr/${datei}`, range: 'bytes=0-9' }]);
     const ganz = await audioRoute.GET(anfrage('/'), kontext({ pfad: ['tr', datei] }));
     expect(ganz.status).toBe(200);
-    expect(ganz.headers.get('vercel-cache-tag')).toBe('lernapp-audio,lernapp-audio-tr');
+    expect(ganz.headers.get('vercel-cache-tag')).toBe('lernapp-audio,lernapp-audio-tr,lernapp,lernapp-kurs-tr,einstellungen');
     expect(abrufe).toHaveLength(2);
     // Pfad mit gültiger Form, den es im Blob nicht gibt („fehlt“ lässt die Attrappe 404 antworten)
     process.env.LERNAPP_BLOB_BASIS = 'https://fehlt.example.test';

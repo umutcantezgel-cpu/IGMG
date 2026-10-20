@@ -143,6 +143,13 @@ describe('Rollen und ihre Fachbereiche (K-06)', () => {
   it('Sprachprüfung (Lern-App) sieht weder Inhalte der Website noch Eingänge, Personen, Freigaben oder Lern-App-Redaktion', () => {
     expect(
       erlaubteVerbote({ rolle: 'sprachpruefung' }, [
+        // keine Grundrechte der Verwaltung (S-L1 N-6): weder Tickets noch Postfach, Mediathek, Übersicht oder Styleguide
+        'ticket.lesen',
+        'ticket.anlegen',
+        'postfach.nutzen',
+        'medium.lesen',
+        'uebersicht.lesen',
+        'styleguide.lesen',
         'veranstaltung.bearbeiten',
         'nachricht.bearbeiten',
         'seiteninhalt.bearbeiten',

@@ -380,11 +380,14 @@ export async function verzeichnisVon(kurs: KursSlug, ungeprueftZeigen: boolean):
   });
 }
 
-/** Kursverzeichnis als JSON (gecacht); null, wenn die Lern-App aus ist. */
+/**
+ * Kursverzeichnis als JSON (gecacht); null, wenn die Lern-App aus ist. Der Tag `einstellungen` lässt den Eintrag verfallen,
+ * sobald ein Schalter (`lernapp`, `lernapp_ungeprueft`) in der Datenbank wechselt (S-L1 N-3).
+ */
 export async function ladeVerzeichnisJson(kurs: KursSlug): Promise<string | null> {
   'use cache: remote';
   cacheLife('max');
-  cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)));
+  cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)), TAG.einstellungen);
   if (!(await funktionAn('lernapp')) || !datenbankVerfuegbar()) return null;
   return JSON.stringify(await verzeichnisVon(kurs, await funktionAn('lernapp_ungeprueft')));
 }
@@ -393,7 +396,7 @@ export async function ladeVerzeichnisJson(kurs: KursSlug): Promise<string | null
 export async function ladeEinheitJson(kurs: RichtungId, einheit: string): Promise<{ hash: string; json: string } | null> {
   'use cache: remote';
   cacheLife('max');
-  cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)));
+  cacheTag(TAG.lernapp, TAG.lernappKurs(kursVonSlug(kurs)), TAG.einstellungen);
   if (!(await funktionAn('lernapp')) || !datenbankVerfuegbar()) return null;
   const [r] = await baueRichtung(kurs, await funktionAn('lernapp_ungeprueft'), einheit);
   return r ? { hash: r.hash, json: r.json } : null;

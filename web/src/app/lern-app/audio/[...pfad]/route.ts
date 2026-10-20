@@ -4,14 +4,19 @@ import { join } from 'node:path';
 import { Readable } from 'node:stream';
 import { connection } from 'next/server';
 import { leseBereich } from '@/lib/audio/bereich';
+import { TAG } from '@/lib/cache/tags';
 import { funktionAn } from '@/lib/funktionen';
 import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buendel';
 
 /**
  * Audio-Bündel `.lpa` der Lern-App (ADR 0039 Nr. 4, Fortschreibung S5 Nr. 5, Weg A2) unter
  * `/lern-app/audio/<sprache>/<einheit>-<sha16>.lpa`, nach dem Muster `liefereAudio` mit fünf Änderungen:
- * 1. `Cache-Control: public, max-age=31536000, immutable` plus `Vercel-CDN-Cache-Control` und
- *    `Vercel-Cache-Tag: lernapp-audio,lernapp-audio-<sprache>` – das CDN hält die Antwort vor.
+ * 1. `Cache-Control: public, max-age=31536000, immutable` plus `Vercel-CDN-Cache-Control` und `Vercel-Cache-Tag` – das CDN
+ *    hält ganze Antworten (200) vor. Tags: `lernapp-audio`, `lernapp-audio-<sprache>`, `lernapp` (Import),
+ *    `lernapp-kurs-<sprache>` (Zurückziehen im Kurs der Zielsprache) und `einstellungen` (Schalter `lernapp`), damit keine
+ *    Jahreskopie das Abschalten oder Zurückziehen überdauert (S-L1 N-3). Ein zurückgezogener Clip verschwindet aus dem
+ *    Bündel erst mit dessen Neubau in der Audio-Kette (neue Adresse, L3-05); bis dahin verweist kein Paket mehr darauf.
+ *    Teilantworten (206) hält das CDN nie vor (`Vercel-CDN-Cache-Control: no-store`, S-L1 N-4), 416 niemand.
  * 2. Kein `head()` je Anfrage: Die Adresse entsteht aus der festen Basis `LERNAPP_BLOB_BASIS` (öffentlicher Speicher
  *    `lernapp`) und dem geprüften Schlüssel `lernapp/audio/<sprache>/<datei>`; Blob-404 → 404.
  * 3. Der Antwortkörper ist ein Strom, nie gepuffert (4,5-MB-Grenze der Funktionsantworten).
@@ -26,7 +31,14 @@ import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buen
 const TESTAUDIO = join(process.cwd(), 'drizzle', 'seeds', 'lernapp-testaudio');
 const NICHT_DA = { status: 404, headers: { 'Cache-Control': 'no-store' } };
 
-/** Kopfzeilen der Antwort; nur ganze und Teil-Antworten sind unveränderlich, 416 wird nicht vorgehalten. */
+/** CDN-Tags eines Bündels (siehe oben). */
+const cdnTags = (sprache: string) =>
+  ['lernapp-audio', `lernapp-audio-${sprache}`, TAG.lernapp, TAG.lernappKurs(sprache), TAG.einstellungen].join(',');
+
+/**
+ * Kopfzeilen der Antwort: Nur ganze Antworten (200) sind für Browser und CDN unveränderlich. Eine Teilantwort (206) darf der
+ * Browser behalten, das CDN nie – sonst bekämen alle ein abgeschnittenes Bündel; 416 wird nicht vorgehalten.
+ */
 function kopfzeilen(sprache: string, quelle: Headers | Record<string, string>, status: number): Headers {
   const h = new Headers({
     'Content-Type': 'application/octet-stream',
@@ -34,11 +46,13 @@ function kopfzeilen(sprache: string, quelle: Headers | Record<string, string>, s
     'Accept-Ranges': 'bytes',
     ...(status === 416
       ? { 'Cache-Control': 'no-store' }
-      : {
-          'Cache-Control': 'public, max-age=31536000, immutable',
-          'Vercel-CDN-Cache-Control': 'max-age=31536000',
-          'Vercel-Cache-Tag': `lernapp-audio,lernapp-audio-${sprache}`,
-        }),
+      : status === 206
+        ? { 'Cache-Control': 'public, max-age=31536000, immutable', 'Vercel-CDN-Cache-Control': 'no-store' }
+        : {
+            'Cache-Control': 'public, max-age=31536000, immutable',
+            'Vercel-CDN-Cache-Control': 'max-age=31536000',
+            'Vercel-Cache-Tag': cdnTags(sprache),
+          }),
   });
   const q = quelle instanceof Headers ? quelle : new Headers(quelle);
   for (const k of ['content-length', 'content-range']) {

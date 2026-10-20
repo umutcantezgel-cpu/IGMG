@@ -119,18 +119,8 @@ describe('Rechte der Lern-App (PLAN §3.9, ADR 0040 Nr. 5, ADR 0041)', () => {
     expect(wer('lernapp.lesen')).toEqual(['administration', 'bildung', 'leitung', 'religioese_pruefung', 'sprachpruefung']);
   });
 
-  it('Sprachprüfung hat nur Grundrechte und die beiden Lern-App-Rechte', () => {
-    const erwartet = [
-      'verwaltung.betreten',
-      'uebersicht.lesen',
-      'postfach.nutzen',
-      'ticket.lesen',
-      'ticket.anlegen',
-      'styleguide.lesen',
-      'medium.lesen',
-      'lernapp.lesen',
-      'lernapp.sprache.pruefen',
-    ];
+  it('Sprachprüfung betritt die Verwaltung nur mit den beiden Lern-App-Rechten – ohne Grundrechte (S-L1 N-6)', () => {
+    const erwartet = ['verwaltung.betreten', 'lernapp.lesen', 'lernapp.sprache.pruefen'];
     expect([...MATRIX.sprachpruefung].sort()).toEqual(erwartet.sort());
   });
 
