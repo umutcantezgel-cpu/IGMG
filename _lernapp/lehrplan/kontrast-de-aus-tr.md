@@ -88,7 +88,7 @@ Türkische Sonderbuchstaben buchstabiert man im Deutschen beschreibend: „s mit
 
 | Bereich | Deutsch | Türkisch | Folge beim Hören und Sprechen | Übung |
 |---|---|---|---|---|
-| Vokallänge | Länge unterscheidet Wörter (Miete – Mitte) | Länge nur in Lehnwörtern | Paare werden überhört | §1.3 |
+| Vokallänge | Länge unterscheidet Wörter (Miete – Mitte) | Länge vor allem in Lehnwörtern (kâtip, saat) und als Dehnung durch ğ (dağ); in Erbwörtern kaum bedeutungsunterscheidend | Paare werden überhört | §1.3 |
 | Unbetonte Endungen | -e als Murmellaut, -er fast wie a | volle Vokale | „Lehrer“ mit vollem e und r | bitte – bitten – bitter |
 | ä | offenes e | e (offen nur als Aussprachevariante) | eher ein Schreib- als ein Hörproblem (§1.1) | Hände, Äpfel |
 | ö, ü | wie im Türkischen | ö, ü | Vertraut | schön, Tür |
@@ -136,8 +136,8 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`de.rahmen.json`, 123 ID
 | Kontrast | Türkisch | Deutsch | Folge für die Tipps |
 |---|---|---|---|
 | Wortstellung | Subjekt – Objekt – Verb; Verb am Ende | Verb auf Platz 2 im Hauptsatz, am Ende im Nebensatz; Satzklammer | Nebensätze fallen leicht, Hauptsätze schwer. |
-| Artikel und Genus | keine | drei Genera; der Artikel zeigt Genus, Zahl und Fall | Hauptquelle von Fehlern von A1 bis C1. |
-| Fälle | Endungen am Nomen, sechs Fälle (dazu Orts- und Herkunftsfall) | vier Fälle, sichtbar am Artikel; Ort und Herkunft mit Präpositionen | Die türkischen Namen der Fälle führen in die Irre (-e, §5.2). |
+| Artikel und Genus | kein Genus, kein bestimmter Artikel; „bir“ zeigt nur Unbestimmtheit | drei Genera; der Artikel zeigt Genus, Zahl und Fall | Hauptquelle von Fehlern von A1 bis C1. |
+| Fälle | Endungen am Nomen, sechs Fälle, darunter Orts- und Herkunftsfall (-de, -den) | vier Fälle, sichtbar am Artikel; Ort und Herkunft mit Präpositionen | Die türkischen Namen der Fälle führen in die Irre (-e, §5.2). |
 | Endung oder Wort | Besitz, Kopula, Können, Müssen, Passiv, Kausativ als Endung | eigene Wörter (mein, ist, kann, muss, wird, lässt) | Grundmuster der Tipps: „Endung → Wort“. |
 | Attribut | Partizip vor dem Nomen | Relativsatz nach dem Nomen; Partizipialattribut davor | Relativsatz schwer (B1), Partizipialattribut leicht (B2). |
 | Pronomen | kann fehlen; „o“ ohne Genus | Pflicht; er, sie, es | früh üben (A1-e01) |
@@ -149,10 +149,10 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`de.rahmen.json`, 123 ID
 | `de.g.sein-pronomen` (A1-e01) | „sein“ ist im Türkischen eine Endung (öğrenciyim) oder fehlt; „o“ steht für er, sie und es. | „Das Zimmer hell.“ · „Elif ist neu. Er ist nett.“ | bin, bist, ist sind eigene Wörter, wie die Endungen -im, -sin, -dir. Aus „o“ wird er (Mann), sie (Frau) oder das Pronomen nach dem Artikel. |
 | `de.g.praesens-regel` (A1-e01) | Die Endung zeigt im Türkischen die Person, das Pronomen kann fehlen; im Deutschen steht es immer. | „Wohne in Wetzlar.“ · „Komme aus der Türkei.“ | Im Deutschen braucht der Satz das Pronomen, auch wenn die Endung die Person schon zeigt: Ich wohne in Wetzlar. |
 | `de.g.fragen` (A1-e01) | Ja/Nein-Fragen bildet das Türkische mit „mi“ ohne Umstellung; das Fragewort steht meist vor dem Verb in der Satzmitte. | „Du kommst aus der Türkei?“ (nur mit Stimme) · „Du wohnst wo?“ | Wo im Türkischen „mi“ steht, wandert im Deutschen das Verb an den Anfang: Kommst du …? Das Fragewort steht vorn, das Verb direkt danach. |
-| `de.g.artikel-genus` (A1-e02) | Das Türkische hat weder Artikel noch Genus. der, die, das ist ganz neu und lässt sich nur teilweise vorhersagen (Verteilung der häufigsten Nomen: ≈ 42 % die, ≈ 39 % der, ≈ 19 % das). | Artikel fehlt („Das ist Mutter von Jan“) · „die“ für alles · falsches Genus | Nomen immer mit Artikel lernen (Farbe oder Symbol je Genus). Sichere Endungen: -ung, -heit, -keit, -schaft fast immer „die“. |
+| `de.g.artikel-genus` (A1-e02) | Das Türkische hat kein Genus und keinen bestimmten Artikel; „bir“ zeigt nur Unbestimmtheit. der, die, das ist ganz neu und lässt sich nur teilweise vorhersagen (Verteilung der häufigsten Nomen: ≈ 42 % die, ≈ 39 % der, ≈ 19 % das). | Artikel fehlt („Das ist Mutter von Jan“) · „die“ für alles · falsches Genus | Nomen immer mit Artikel lernen (Farbe oder Symbol je Genus). Sichere Endungen: -ung, -heit, -keit, -schaft fast immer „die“. |
 | `de.g.possessiv-nom` (A1-e02) | Besitz steht im Türkischen als Endung am Nomen (annem, evimiz); „onun“ gilt für er und sie. | „mein Mutter“ · „Elif und sein Bruder“ | annem = meine Mutter: Aus der Endung wird ein Wort vor dem Nomen. Ob sein oder ihr, entscheidet die Person, der etwas gehört; die Endung richtet sich nach dem Ding. |
 | `de.g.haben` (A1-e02) | Das Türkische hat kein Verb „haben“; Besitz heißt „… var/yok“. In Tatoeba-Paaren mit var/yok steht im Deutschen 782-mal „haben“, 163-mal „es gibt“. | „Es gibt zwei Schwestern.“ (gemeint: Ich habe …) · „Ich habe nicht Zeit.“ | „Benim … var“ heißt fast immer „Ich habe …“; „es gibt“ nur, wenn etwas irgendwo vorhanden ist. „… yok“ wird oft zu „keine/keinen“. |
-| `de.g.unbest-artikel-negation` (A1-e03) | „bir“ ist ein Zahlwort ohne Genus; Nomen verneint das Türkische mit „değil“ oder „yok“. | „ein Lampe“ · „Hier ist nicht Lampe.“ | bir wird zu ein oder eine, je nach Artikel. Fehlt etwas („yok“), sagt man im Deutschen meist „kein“: Hier ist keine Lampe. |
+| `de.g.unbest-artikel-negation` (A1-e03) | „bir“ ist Zahlwort und unbestimmter Artikel zugleich, aber ohne Genus; Nomen verneint das Türkische mit „değil“ oder „yok“. | „ein Lampe“ · „Hier ist nicht Lampe.“ | bir wird zu ein oder eine, je nach Artikel. Fehlt etwas („yok“), sagt man im Deutschen meist „kein“: Hier ist keine Lampe. |
 | `de.g.plural` (A1-e03) | Der türkische Plural ist immer -ler/-lar; nach Zahlwörtern steht der Singular (iki sandalye). | „zwei Stuhl“ · „drei Kind“ · „die Stuhls“ | Nach jeder Zahl ab zwei steht im Deutschen der Plural: zwei Stühle. Plural mit dem Nomen lernen; im Plural heißt der Artikel immer „die“. |
 | `de.g.adjektiv-praedikativ` (A1-e03) | Das Türkische braucht kein eigenes Verb (Oda aydınlık); „çok“ deckt sehr und zu viel ab. | „Das Zimmer hell.“ · „Der Schrank ist sehr groß.“ (gemeint: zu groß) | Nach „ist“ bleibt das Adjektiv ohne Endung. sehr = çok, zu = fazla (mehr als gut ist). |
 | `de.g.zeitangaben` (A1-e04) | Türkisch zählt die halbe Stunde dazu (yedi buçuk), Deutsch zur nächsten Stunde (halb acht = 7:30). um, am, im entsprechen alle der Endung -de/-da. | „halb sieben“ für 7:30 · „in Montag“ · „um Juli“ | halb acht = yedi buçuk: Im Deutschen nennt man die Stunde, die kommt. um + Uhrzeit, am + Tag, im + Monat. |
@@ -183,7 +183,7 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`de.rahmen.json`, 123 ID
 | `de.g.perfekt-sein` (A2-e02) | Die Wahl zwischen haben und sein hat kein türkisches Gegenstück; dazu besondere Partizipien. | „Ich habe nach Gießen gefahren.“ · „geaufsteht“ · „getrainiert“ | Bewegung von A nach B und Veränderung → sein. Trennbar: auf-ge-standen; -ieren ohne ge-: trainiert. |
 | `de.g.dativ-praep` (A2-e02) | Türkisch nutzt Endungen und Postpositionen nach dem Nomen (otobüsle, okuldan sonra); Deutsch Präpositionen davor, hier mit Dativ. | „mit der Bus“ · „nach die Schule“ · „seit ein Jahr“ | -(y)le → mit, -den → aus/von, -den sonra → nach: alle mit dem/der/den. Die Präposition steht vorn. |
 | `de.g.dativ-objekt` (A2-e03) | Der Empfänger steht im Türkischen mit -(y)e (anneme veriyorum) – das passt zum deutschen Dativobjekt. | „Elif schenkt ihre Oma Blumen.“ | Wem? = tr -e: anneannesine → ihrer Oma. Person im Dativ, Sache im Akkusativ. |
-| `de.g.dativ-pronomen` (A2-e03) | Einige Verben verlangen im Deutschen den Dativ; „yardım etmek“ verlangt -e wie helfen den Dativ. | „Kannst du mich helfen?“ · „Die Tasse gefällt mich.“ | bana yardım et → Hilf mir. hoşuma gidiyor → gefällt mir. Merkhilfe: tr -e → Dativ. |
+| `de.g.dativ-pronomen` (A2-e03) | Einige Verben verlangen im Deutschen den Dativ; „yardım etmek“ verlangt -e wie helfen den Dativ. | „Kannst du mich helfen?“ · „Die Tasse gefällt mich.“ | bana yardım et → Hilf mir. hoşuma gidiyor → gefällt mir. Merkhilfe: tr -e bei der Person (wem?) → Dativ; -e als Richtung (wohin?) entspricht dagegen dem Akkusativ (A2-e04). |
 | `de.g.wechselpraep` (A2-e04) | Die Unterscheidung Lage/Richtung kennt das Türkische (-de/-e). Falle: Die Endung -e heißt in Grammatiken oft „Dativ“, entspricht hier aber dem deutschen Akkusativ. | „Wir stellen den Schrank an der Wand.“ · „Das Buch liegt auf den Tisch.“ | duvarda (wo?) → an der Wand (Dativ); duvara (wohin?) → an die Wand (Akkusativ). Merksatz: -de → Dativ, -e → Akkusativ. |
 | `de.g.positionsverben` (A2-e04) | „koymak“ deckt stellen, legen und setzen ab; die Lage (stehen, liegen) unterscheidet das Türkische kaum. | „Ich stelle das Handy auf den Tisch.“ (flach: legen) · „Das Buch steht auf dem Tisch.“ (liegt) | koymak hat im Deutschen vier Wörter: stellen (aufrecht), legen (flach), hängen, setzen. Dazu die Lagen stehen, liegen, hängen, sitzen. |
 | `de.g.nebensatz-weil` (A2-e05) | Verb am Ende ist vertraut; begründet wird im Türkischen aber oft mit „çünkü“ und normaler Wortstellung oder mit „-diği için“. | „…, weil ich habe Fieber.“ | çünkü → denn (Verb auf Platz 2); -diği için → weil (Verb ans Ende, wie im Türkischen). |
@@ -220,9 +220,9 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`de.rahmen.json`, 123 ID
 | `de.g.lassen` (B1-e04) | Vertraut: Die türkische Endung -dir/-t (yaptırmak) entspricht „lassen“. | „Wir lassen reparieren die Heizung.“ | tamir ettirmek → reparieren lassen; der Infinitiv steht vor „lassen“ am Ende. |
 | `de.g.relativsatz-nom-akk` (B1-e05) | Türkische Relativsätze sind Partizipien vor dem Nomen ohne Relativpronomen (bildiğim mesaj); deutsche stehen dahinter, mit der/die/das. | „Das ist eine Nachricht, ich nicht kenne.“ · „Der Link, der du bekommen hast“ | Aus dem Partizip wird ein Satz hinter dem Nomen: gelen mesaj → die Nachricht, die kommt. Das Pronomen richtet sich nach Genus und Rolle. |
 | `de.g.indirekte-frage` (B1-e05) | Indirekte Fragen sind im Türkischen nominal (gelip gelmeyeceğini) oder ein angehängter Fragesatz. | „Weißt du, ist die Nachricht echt?“ | Ja/Nein-Frage im Nebensatz → ob + Verb am Ende: Weißt du, ob die Nachricht echt ist? |
-| `de.g.relativsatz-dat-praep` (B1-e06) | Im Partizip steckt die Präposition als Endung (yardım ettiğim dernek); im Deutschen steht sie vor dem Relativpronomen. | „der Verein, dem ich helfe in“ · „wo“ für alles | Präposition nach vorn: der Verein, in dem ich helfe. „wo“ nur für Orte. |
+| `de.g.relativsatz-dat-praep` (B1-e06) | Im türkischen Partizipsatz fällt die Fallendung des Bezugsworts weg (okula gidiyorum → gittiğim okul; derneğe yardım ediyorum → yardım ettiğim dernek); Postpositionen bleiben im Partizipsatz stehen (içinde yaşadığım ev). Im Deutschen zeigt das Relativpronomen den Fall, eine Präposition steht davor. | „die Schule, die ich gehe“ · „der Verein, der ich helfe“ · „wo“ für alles | Fall und Präposition kommen vom Verb: in die Schule gehen → die Schule, in die ich gehe; im Verein helfen → der Verein, in dem ich helfe. „wo“ nur für Orte. |
 | `de.g.um-zu-damit` (B1-e06) | Vertraut: Türkisch trennt gleiches Subjekt (-mek için) und anderes Subjekt (-sın diye, -mesi için). | „Ich gehe zur Feuerwehr, für anderen helfen.“ | -mek için → um … zu; -sın diye → damit (Verb am Ende). |
-| `de.g.futur-1` (B1-e07) | Die türkische Zukunft (-ecek) ist Pflicht; Deutsch nutzt meist Präsens mit Zeitangabe. | „Morgen werde ich zur Schule gehen.“ (für eine Routine) | -ecek wird im Deutschen oft Präsens: Morgen gehe ich … „werden“ für Pläne, Versprechen und Vermutungen. |
+| `de.g.futur-1` (B1-e07) | Für Zukünftiges nutzt das Türkische oft -ecek, für feste Pläne auch -iyor (Yarın gidiyorum); Deutsch nutzt meist Präsens mit Zeitangabe. | „Morgen werde ich zur Schule gehen.“ (für eine Routine) | -ecek wird im Deutschen oft Präsens – wie -iyor bei festen Plänen: Morgen gehe ich … „werden“ für Pläne, Versprechen und Vermutungen. |
 | `de.g.konzessiv` (B1-e07) | „-mesine rağmen“ ist eine Nominalform; Deutsch hat obwohl (Verb am Ende) und trotzdem (Verb auf Platz 2). | „Obwohl sie ist erst ein Jahr hier, …“ · „Trotz sie ist krank, …“ | -mesine rağmen → obwohl + Verb am Ende; trotz nur mit Nomen (trotz des Regens). |
 | `de.g.plusquamperfekt` (B1-e08) | Vertraut: -mişti ist die türkische Vorvergangenheit (gitmişti = war gegangen). | „Nachdem wir gewartet haben, fiel der Flug aus.“ | -mişti → hatte/war + Partizip. Nach „nachdem“ eine Zeitstufe zurück. |
 | `de.g.modalpartikeln` (B1-e08) | Türkische Partikeln (ya, da, hani) wirken ähnlich, aber nicht 1:1. Sehr nah: „bir“ macht Bitten weich (Bir bakar mısın?). | Partikeln fehlen, Bitten klingen hart · Partikel an falscher Stelle | Bir bak! → Schau mal! „doch“ lädt ein (Komm doch mit!), „ja“ zeigt Staunen (Das ist ja toll!). |
@@ -393,7 +393,7 @@ Grob 15 % der häufigen deutschen Nomen mit türkischer Übersetzung sind ähnli
 | -tät | -ite | Universität – üniversite, Qualität – kalite, Aktivität – aktivite | die (9 von 9) |
 | -ie | -i | Energie – enerji, Kategorie – kategori, Theorie – teori, Strategie – strateji | die (31 von 31) |
 | -ik | -ik | Technik – teknik, Statistik – istatistik, Mathematik – matematik | die (16 von 17) |
-| -ment | -man | Dokument – doküman, Element – element | das (10 von 10) |
+| -ment | -man, teils -ment | Dokument – doküman, Element – element | das (10 von 10) |
 | -or | -ör | Motor – motor, Professor – profesör, Direktor – direktör | der (13 von 14) |
 | -ismus | -izm | Tourismus – turizm | der (4 von 4) |
 | -ur | -ür | Kultur – kültür | meist die (12 von 18) |
@@ -510,7 +510,7 @@ Die Hinweise beschreiben deutsche Gewohnheiten; sie bewerten keine Herkunft (Lei
 
 | Bestandteil | Deutsch | Türkisch | Tipp |
 |---|---|---|---|
-| förmliche Anrede | Sehr geehrte Frau Hoffmann, / Sehr geehrter Herr Kaya, | Sayın Hoffmann, / Sayın Petra Hoffmann, | Sayın + Name → Sehr geehrte/r + Frau/Herr + Familienname |
+| förmliche Anrede | Sehr geehrte Frau Hoffmann, / Sehr geehrter Herr Kaya, | Sayın Hoffmann, / Sayın + Vor- und Familienname, | Sayın + Name → Sehr geehrte/r + Frau/Herr + Familienname |
 | Empfänger unbekannt | Sehr geehrte Damen und Herren, | Sayın Yetkili, | – |
 | halbförmlich | Liebe Frau Schneider, / Hallo Frau Schneider, | Değerli …, / Merhaba …, | Hallo + Familienname nur in E-Mails |
 | nach der Anrede | Komma, dann klein weiter | Komma, dann groß | „…, ich schreibe Ihnen, weil …“ |
@@ -535,7 +535,7 @@ Die Hinweise beschreiben deutsche Gewohnheiten; sie bewerten keine Herkunft (Lei
 | Schulnoten | 1 (sehr gut) bis 6 (ungenügend) | die höchste Zahl ist die beste | umgekehrt (B1-e07) |
 | Schulweg | Grundschule 4 Jahre, danach in Hessen u. a. Gymnasium, Realschule, Hauptschule, Gesamtschule | 4 + 4 + 4 (ilkokul, ortaokul, lise) | Die Wahl der Schulform fällt nach Klasse 4. |
 | Notruf | 112 (Feuerwehr, Rettung), 110 (Polizei) | 112 | Vertraut bei 112 |
-| Telefon | Man meldet sich mit dem eigenen Namen. | Alo? Efendim? | „Hier ist Derya Yılmaz.“ |
+| Telefon | Man meldet sich mit dem eigenen Namen. | Alo? Efendim? | „Yılmaz, guten Tag.“ |
 | Ordinalzahl | 3. = dritte | 3. = üçüncü | Vertraut |
 
 ### 4.7 Religiöse Formeln (gesperrt)
@@ -576,7 +576,7 @@ Für viele Alltagssituationen gibt es im Türkischen auch religiöse Formeln (Gr
 | yönelme hali (-e) | Richtung: deutsch Dativ (Empfänger) oder Akkusativ (nach Wechselpräposition) | Falle, §2 `de.g.wechselpraep` |
 | bulunma hali (-de) | Ort: deutsch meist Dativ | – |
 | ayrılma hali (-den) | Herkunft: deutsch aus/von + Dativ; beim Vergleich „als“ | – |
-| tamlayan (-in) | Genitiv | Reihenfolge umgekehrt |
+| ilgi hâli (-in); in der Tamlama: tamlayan | Genitiv | Reihenfolge umgekehrt |
 | tekil, çoğul | Singular, Plural | – |
 | geçmiş zaman | Vergangenheit | – |
 | edilgen | Passiv | – |
@@ -863,7 +863,7 @@ Im Türkisch, das in Deutschland gesprochen wird, sind deutsche Wörter verbreit
 | 241 | de.b2.e07 | Wortstellung bei je … desto | `de.g.je-desto` |
 | 242 | de.b2.e08 | karar vermek → eine Entscheidung treffen | `de.g.funktionsverbgefuege` |
 | 243 | de.b2.e08 | başvuru yapmak → einen Antrag stellen | `de.g.funktionsverbgefuege` |
-| 244 | de.b2.e08 | lisans ist der Bachelor, nicht die Lizenz | §3.1 |
+| 244 | de.b2.e08 | lisans: Bachelor oder Lizenz – im Lebenslauf heißt es Bachelor | §3.1 |
 | 245 | de.b2.e08 | vize: Visum, nicht Zwischenprüfung | §3.1 |
 | 246 | de.b2.e09 | Wetzlar'da geliştirilen mercek → die in Wetzlar entwickelte Linse | `de.g.partizipialattribut` |
 | 247 | de.b2.e09 | kaufen – verkaufen: Präfixe ändern die Bedeutung | `de.g.wortbildung-verben` |
@@ -964,6 +964,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Automatische Prüfungen des Generators:**
   - alle 123 Grammatik-IDs des Rahmenplans genau einmal in §2
   - jeder Tipp auf einem gültigen Einheiten-Schlüssel; jede Einheit mit Tipp; Grammatik-Bezug nie vor seiner Einführung
-  - Tabu-Lexikon des Leitfadens (de, tr, ar-Umschrift): 0 echte Treffer; Fehlalarme: „bier“ (de, Alkohol) in buchstabieren; Ausnahme fehlt im Leitfaden (3); „parti“ (tr, Politik) in Partizip und Partikel (39)
+  - Tabu-Lexikon des Leitfadens (de, tr, ar-Umschrift): 0 echte Treffer; Fehlalarme: Teilwort-Treffer der Kategorie `alkohol_rauschmittel` (de) in „buchstabieren“, Ausnahme fehlt im Leitfaden (3); Teilwort-Treffer der Kategorie `politik` (tr) in „Partizip“ und „Partikel“ (39)
   - 0 arabische Zeichen (U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF, U+FB50–U+FDFF, U+FE70–U+FEFF)
 - **Menschliche Prüfung:** Stichprobe der Muttersprachler (LM-01) mit den Punkten aus §8; Abnahme zusammen mit dem Rahmenplan (LM-02).
+- **Lektorat (20.10.2026, frischer KI-Lauf):** berichtigt: Relativsatz mit Präposition (Fallendung fällt im türkischen Partizipsatz weg), Futur (-ecek nicht Pflicht, -iyor für Pläne), Tipp 244 (lisans heißt auch Lizenz), Vokallänge (Dehnung durch ğ), Zahl der Fälle, Artikel (bir als unbestimmter Artikel), Merkhilfe zu -e, Fachwort ilgi hâli, Zeile -ment; Beispiele ohne Vor- und Familiennamen einer Figur; Prüfvermerk zum Tabu-Lexikon nennt nur noch Kategorien.

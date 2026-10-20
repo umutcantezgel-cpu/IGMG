@@ -273,7 +273,7 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`de.rahmen.json`, 123 ID
 | `de.g.wortbildung-c1` (C1-e06) | Iḍāfa-Ketten stellen den Kern vorn (hadr al-mawādd al-ġiḏāʾiyya); das deutsche Kompositum hinten. | Bedeutung vertauscht | Lebensmittel-verschwendung = hadr al-mawādd al-ġiḏāʾiyya: Reihenfolge umkehren. |
 | `de.g.verbalisierung` (C1-e07) | Vertraut: Behördenarabisch ist ebenso nominal (baʿda istilām ṭalabikum). | Kasus und Präposition beim Auflösen falsch | Nach Eingang Ihres Antrags → Sobald Ihr Antrag eingegangen ist. |
 | `de.g.partizipialkonstruktion` (C1-e08) | Vertraut: Der ḥāl beschreibt einen Zustand mit Partizip (waṣala mutʿaban). | „Von der Reise erschöpft, er schlief ein.“ | Der ḥāl entspricht oft dem deutschen Partizip: Von der Reise erschöpft, schlief er sofort ein (Verb direkt danach). |
-| `de.g.idiomatik` (C1-e08) | Redewendungen lassen sich nicht wörtlich übertragen; manche Sprichwörter haben ein Gegenstück. | arabische Wendungen wörtlich übersetzt | Vergleichen statt übersetzen: man ǧadda waǧada ≈ Ohne Fleiß kein Preis; al-ʿilmu fī ṣ-ṣiġari ka-n-naqši ʿalā l-ḥaǧar ≈ Was Hänschen nicht lernt … |
+| `de.g.idiomatik` (C1-e08) | Redewendungen lassen sich nicht wörtlich übertragen; manche Sprichwörter haben ein Gegenstück. | arabische Wendungen wörtlich übersetzt | Vergleichen statt übersetzen: man ǧadda waǧada ≈ Ohne Fleiß kein Preis. Nur weltliche Sprichwörter ohne religiöse Herkunft oder Zuschreibung (KI-Regel 2, KD-ar-13). |
 | `de.g.negation-c1` (C1-e09) | Vertraut: bi-l-kād (kaum), laysa ġayra muhimm (nicht unwichtig). | „Kaum niemand kannte das.“ | bi-l-kād → kaum (ohne zweite Verneinung); laysa ġayra muhimm → nicht unwichtig. |
 | `de.g.textkohaesion` (C1-e10) | Arabische Texte verbinden oft mit wa, fa, ṯumma zu langen Ketten; deutsche Texte nutzen kürzere Sätze und Überleitungen. | lange „und“-Ketten · Absatz ohne Überleitung | Statt „wa“ am Satzanfang deutsche Überleitungen: Außerdem, Daher, Vor diesem Hintergrund – danach Verb auf Platz 2. |
 | `de.g.verkuerzung` (C1-e10) | Kein besonderer Kontrast; Notizen nutzen im Deutschen den Infinitiv am Ende. | Imperativ oder volle Sätze statt Notizform | Material bis Freitag bestellen: Artikel und Hilfsverben fallen weg, Infinitiv am Ende. |
@@ -512,7 +512,7 @@ Die Hinweise beschreiben deutsche Gewohnheiten; sie bewerten keine Herkunft (Lei
 | Schulnoten | 1 (sehr gut) bis 6 (ungenügend) | oft Prozent- oder Punkteskalen (zu prüfen je Land) | Die 1 ist die beste (B1-e07). |
 | Schulweg | Grundschule 4 Jahre, danach in Hessen u. a. Gymnasium, Realschule, Hauptschule, Gesamtschule; Ausbildung im Betrieb und in der Berufsschule | verschieden | Die Wahl der Schulform fällt nach Klasse 4. |
 | Notruf | 112 (Feuerwehr, Rettung), 110 (Polizei) | verschieden | A1-e11 |
-| Telefon | Man meldet sich mit dem eigenen Namen. | alū? naʿam? | „Hier ist Anna Becker.“ |
+| Telefon | Man meldet sich mit dem eigenen Namen. | alū? naʿam? | „Becker, guten Tag.“ |
 
 ### 4.7 Religiöse Formeln (gesperrt)
 
@@ -938,6 +938,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 | KD-ar-10 | wohl ≈ ʿalā mā yabdū (C1) | Formulierung durch Muttersprachler bestätigen | LM-01 |
 | KD-ar-11 | Schreibweise arabischer Namen im deutschen Zieltext | nach RF-03 (verbreitete Schreibweise ohne Diakritika) | LM-02, LM-09 |
 | KD-ar-12 | Typische Fehler sind Erfahrungswerte, nicht gemessen. | Die Muttersprachler-Stichprobe und Meldungen aus der App (ADR 0041 Nr. 9) schärfen sie nach. | L3, LM-01 |
+| KD-ar-13 | Sprichwörter in Tipps (`de.g.idiomatik`): Manche verbreiteten Sprüche werden auch als religiöse Überlieferung zitiert. | nur Sprichwörter ohne religiöse Herkunft oder Zuschreibung; im Zweifel weglassen (KI-Regel 2) | Redaktion, LM-09 |
 
 ## 9 Herkunft und Prüfungen
 
@@ -946,6 +947,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Automatische Prüfungen des Generators:**
   - alle 123 Grammatik-IDs des Rahmenplans genau einmal in §2
   - jeder Tipp auf einem gültigen Einheiten-Schlüssel; jede Einheit mit Tipp; Grammatik-Bezug nie vor seiner Einführung
-  - Tabu-Lexikon des Leitfadens (de, tr, ar-Umschrift): 0 echte Treffer; Fehlalarme: „bier“ (de, Alkohol) in buchstabieren; Ausnahme fehlt im Leitfaden (2); „lan“ (tr, Fluchen) als arabische Verneinungspartikel lan bzw. Wortrest der Umschrift (2); „parti“ (tr, Politik) in Partizip und Partikel (29)
+  - Tabu-Lexikon des Leitfadens (de, tr, ar-Umschrift): 0 echte Treffer; Fehlalarme: Teilwort-Treffer der Kategorie `alkohol_rauschmittel` (de) in „buchstabieren“, Ausnahme fehlt im Leitfaden (2); Treffer der Kategorie `fluchen_schimpfwoerter` (tr) durch eine arabische Verneinungspartikel in Umschrift bzw. Wortreste der Umschrift (2); Teilwort-Treffer der Kategorie `politik` (tr) in „Partizip“ und „Partikel“ (29)
   - 0 arabische Zeichen (U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF, U+FB50–U+FDFF, U+FE70–U+FEFF)
 - **Menschliche Prüfung:** Stichprobe der Muttersprachler (LM-01) mit den Punkten aus §8; Abnahme zusammen mit dem Rahmenplan (LM-02).
+- **Lektorat (20.10.2026, frischer KI-Lauf):** Ein Sprichwort, das auch als religiöse Überlieferung zitiert wird, aus `de.g.idiomatik` entfernt (KD-ar-13); Telefonbeispiel ohne Vor- und Familiennamen einer Figur; Prüfvermerk zum Tabu-Lexikon nennt nur noch Kategorien.
