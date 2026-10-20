@@ -66,6 +66,19 @@
 2. IndexedDB gilt je Ursprung, nicht je Scope des Service Workers. Der Name `igmg-lernapp` trennt die Lern-App sauber von der Website.
 3. **Tests:** Unit-Tests der lokalen Datenhaltung mit `fake-indexeddb` (Apache-2.0, nur Entwicklung). E2E für Offline: siehe ADR 0037, Fortschreibung Nr. 7.
 
+## Fortschreibung nach der Sicherheitsprüfung S-L1 (20.10.2026, `_lernapp/berichte/s-l1.md` M-1, M-2)
+
+1. **Kontobindung auf dem Server:** Die Anfrage nennt das Konto, an das das Profil gebunden ist (`konto`). Weicht es vom
+   Konto der Sitzung ab, antwortet `/api/lernapp/sync` mit 409 `konto` und schreibt nichts. Der Client ruht dann und zeigt in
+   den Einstellungen die Bindungsfrage. Zusätzlich prüft die Oberfläche die Sitzung einmal je Seitenaufruf vor dem ersten
+   Abgleich, auch vor dem ersten Abgleich nach einer Handlung (die Sperre von 60 s gilt nur noch für den Abgleich selbst).
+2. **Grenzen je Konto** (`GRENZEN` in `src/lib/lernapp/sync/protokoll.ts`): höchstens 200.000 gespeicherte Ereignisse,
+   20.000 neue in 24 Stunden und 50 Geräte; darüber 429 `grenze` ohne zu schreiben. Eine Folgenummer mehr als 50.000 über der
+   höchsten gespeicherten ihres Geräts wird abgelehnt.
+3. **Kein Nachspielen des ganzen Protokolls:** Die Lerntage werden nur aus den Ereignissen der berührten Tage abgeleitet
+   (Lektionen und XP dieser Tage, das letzte Tagesziel davor und die Ziele im Bereich, Pausen der berührten Jahre). Erledigte
+   Zuweisungen lesen nur die Lektionen der offenen Zuweisungen. Die Abgleich-Transaktion hat `statement_timeout` 15 s.
+
 ## Alternativen
 
 - „Bestwert gewinnt“ und „jüngstes `last_review` gewinnt“ (Plan §2.4): verworfen. Lernen zwei Geräte offline, gehen Bewertungen eines Geräts verloren, und der Kartenstand hängt von der Reihenfolge des Abgleichs ab.

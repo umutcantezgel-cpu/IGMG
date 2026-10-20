@@ -34,3 +34,10 @@
 - Z-20: Produktionsschalter sind sicher. `startklar` prüft sie vor jedem Fast-Forward.
 - Risiko: ein falsch gesetzter Schalter in der Produktion. Abwehr: Negativtests und die Sicherheitsprüfung S1 bis S3, die Befunde „hoch“ oder „kritisch“ blockieren den Fast-Forward.
 - Die Rechte-Matrix (ADR 0026) und die Schalter greifen zusammen: Eine Funktion ohne Recht und ohne Schalter ist nicht erreichbar.
+
+## Fortschreibung Lern-App (L1-01, 20.10.2026; KERN 4.0 §6, ADR 0038, 0041, 0042, 0043)
+
+1. **Nr. 2, neue Schalter:** `lernapp`, `lernapp_ungeprueft`, `lernapp_sprechen`, `lernapp_meldungen`, `lernapp_sync`, `lernapp_gruppen`, `lernapp_rangliste`, `lernapp_statistik`, `push_lernapp` (`src/lib/funktionen-regeln.ts`, Einstellung `funktionen`, Umgebung `FUNKTION_<NAME>`).
+2. **Nr. 3, Produktion:** `lernapp` bleibt aus bis zur Abnahme der Lern-App. `lernapp_ungeprueft` (Hinweis statt Sperre, ADR 0041 Nr. 8) und `lernapp_meldungen` (anonym, nur Kategorien) stehen in `IN_PRODUKTION_AN`; sie wirken erst mit `lernapp`. `lernapp_sync`, `lernapp_gruppen`, `lernapp_rangliste`, `lernapp_statistik` und `push_lernapp` zählen zu `MIT_PERSONENDATEN`.
+3. **Nr. 4, Sperren:** `VORAUSSETZUNGEN` je Schalter; `funktionAn` fragt `entscheideWirksam` (selbst an und alle Voraussetzungen wirksam). Jeder Lern-App-Schalter braucht `lernapp`; dazu `lernapp_sync` → `konten`, `lernapp_gruppen` → `lernplattform`, `lernapp_rangliste` → `lernapp_gruppen`, `push_lernapp` → `push` (VAPID wie `push`). Das Cockpit meldet ausdrücklich eingeschaltete, aber gesperrte Schalter („Gesperrte Schalter“, in der Produktion als Warnung).
+4. **Nr. 5:** Ausgeschaltet heißt auch in der Lern-App 404. Entscheidet die Umgebung (`FUNKTION_LERNAPP=aus`), antwortet schon der Proxy mit der 404-Seite der Lern-App; sonst entscheiden die Seiten.

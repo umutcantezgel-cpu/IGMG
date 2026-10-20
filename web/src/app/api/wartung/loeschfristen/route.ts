@@ -28,7 +28,7 @@ async function laufe(): Promise<Response> {
     const push = await raeumePushAuf();
     // Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-14, D-16): Lernende nach Austritt (Einwilligungsnachweis bleibt
     // bis zur Verjährung), offene Meldungen nach Höchstfrist, Moderationsprotokoll nach 3 Jahren, nicht zustellbare
-    // Mails, Audit-Protokoll, inaktive Konten
+    // Mails, Audit-Protokoll, inaktive Konten; Lern-App (Lernstand und Schreibabgaben nach 12 Monaten)
     const gemeinde = await gemeindeLoeschlauf();
     // Newsletter (Double-Opt-in): nicht bestätigte Anmeldungen nach 48 h löschen
     const newsletter = await raeumeNewsletterAuf();
@@ -53,6 +53,11 @@ async function laufe(): Promise<Response> {
       geloeschteEinwilligungsnachweise: gemeinde.nachweise,
       vorgewarnteInaktiveKonten: gemeinde.inaktivGewarnt,
       geloeschteInaktiveKonten: gemeinde.inaktivGeloescht,
+      // Lern-App (KERN 4.0 §6): Lernstände nach 12 Monaten ohne Aktivität, Schreibabgaben nach 12 Monaten, Bewertungen
+      // älter als 12 Monate in den Kartenstand verdichtet
+      geloeschteLernappProfile: gemeinde.lernappProfile,
+      geloeschteLernappAbgaben: gemeinde.lernappAbgaben,
+      verdichteteLernappBewertungen: gemeinde.lernappVerdichtet,
       geloeschteNewsletterAnmeldungen: newsletter,
       // Gemeinde-Konten: Löschanträge nach Frist (Art. 17) und unbestätigte Registrierungen nach 7 Tagen (H-L05)
       ...(await kontenLoeschlauf()),

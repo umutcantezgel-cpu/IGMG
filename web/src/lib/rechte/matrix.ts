@@ -1,3 +1,5 @@
+import type { Sprache } from '@/lib/lernapp/kurse';
+
 /**
  * Rechte-Matrix (K-06, ADR 0003). Reine Daten und Funktionen – ohne Datenbank, vollständig unit-testbar.
  * Jede Server Action und jede Verwaltungsroute ruft `verlangeRecht(aktion, ziel)` (pruefe.ts) auf.
@@ -12,6 +14,8 @@ export const ROLLEN = [
   'leitung',
   'religioese_pruefung',
   'kinderschutz',
+  // Lauf Lern-App (ADR 0041 Nr. 1): muttersprachliche Prüfung je eigener Sprache
+  'sprachpruefung',
 ] as const;
 export type Rolle = (typeof ROLLEN)[number];
 
@@ -99,6 +103,14 @@ export const AKTIONEN = [
   'chat.notfallpause',
   'leitung.lesen',
   'funktion.schalten',
+  // Lauf Lern-App (PLAN §3.9, ADR 0040 Nr. 5, ADR 0041)
+  'lernapp.lesen',
+  'lernapp.bearbeiten',
+  'lernapp.veroeffentlichen',
+  'lernapp.sprache.pruefen',
+  'lernapp.religioes.pruefen',
+  'lernapp.audio.bearbeiten',
+  'lernapp.statistik.lesen',
 ] as const;
 export type Aktion = (typeof AKTIONEN)[number];
 
@@ -120,11 +132,13 @@ const ORGANISATIONSGEBUNDEN: ReadonlySet<Aktion> = new Set<Aktion>([
 /**
  * Kinderschutz (ADR 0026, S-11): Chat-Meldungen und Moderationsprotokoll sind NICHT über
  * „Administration darf alles“ erreichbar, sondern nur mit der Rolle `kinderschutz` (jeder Zugriff im Audit).
+ * Lern-App (ADR 0040 Nr. 5): Die Administration ersetzt keine religiöse Prüfung – nur die Rolle `religioese_pruefung`.
  */
 export const NIE_PER_ADMINISTRATION: ReadonlySet<Aktion> = new Set<Aktion>([
   'meldung.chat.lesen',
   'meldung.chat.bearbeiten',
   'moderationsprotokoll.lesen',
+  'lernapp.religioes.pruefen',
 ]);
 
 const GRUNDRECHTE: Aktion[] = [
@@ -213,6 +227,12 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'gemeindekonto.bearbeiten',
     'elifbe.bearbeiten',
     'freigabe.lesen',
+    // Lern-App: Redaktion der Kurse, Veröffentlichen, Audio-Studio, Statistik ohne Personenbezug (PLAN §3.9)
+    'lernapp.lesen',
+    'lernapp.bearbeiten',
+    'lernapp.veroeffentlichen',
+    'lernapp.audio.bearbeiten',
+    'lernapp.statistik.lesen',
   ]),
   mitgliederverwaltung: new Set<Aktion>([
     ...GRUNDRECHTE,
@@ -232,6 +252,8 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'seite.lesen',
     'freigabe.lesen',
     'newsletter.lesen',
+    'lernapp.lesen',
+    'lernapp.statistik.lesen',
   ]),
   /** Imam/Hoca: verfasst religiöse Inhalte und gibt sie frei (ADR 0030). */
   religioese_pruefung: new Set<Aktion>([
@@ -245,6 +267,9 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'wissen.bearbeiten',
     'kalender.bearbeiten',
     'medium.hochladen',
+    // Lern-App: zwei Freigaben je Baustein, Prüfende bearbeiten nicht selbst (ADR 0040 Nr. 5)
+    'lernapp.lesen',
+    'lernapp.religioes.pruefen',
   ]),
   /** Kinderschutz: Meldungen aus Chats, Moderationsprotokoll, Notfall-Pause (S-08, S-10, S-11, S-17). */
   kinderschutz: new Set<Aktion>([
@@ -254,6 +279,12 @@ export const MATRIX: Record<Rolle, ReadonlySet<Aktion>> = {
     'moderationsprotokoll.lesen',
     'chat.notfallpause',
   ]),
+  /**
+   * Sprachprüfung (ADR 0041 Nr. 1): betritt die Verwaltung nur für die Prüfoberfläche, liest die Lern-App und prüft Sprache –
+   * nur in den eigenen Sprachen (`darfSprachePruefen`). Ohne die Grundrechte (Übersicht, Postfach, Tickets, Mediathek,
+   * Styleguide): Prüfende sind oft Ehrenamtliche von außen (S-L1 N-6).
+   */
+  sprachpruefung: new Set<Aktion>(['verwaltung.betreten', 'lernapp.lesen', 'lernapp.sprache.pruefen']),
 };
 
 /** Ziel einer Aktion: Bei organisationsgebundenen Inhalten die Organisation des Inhalts (null = allgemein). */
@@ -287,6 +318,14 @@ export function organisationsFilter(rollen: readonly RollenZuweisung[], aktion: 
   return rollen
     .filter((z) => z.rolle === 'organisationsredaktion' && z.organisation && rechteVon(z.rolle)?.has(aktion))
     .map((z) => z.organisation as OrganisationKuerzel);
+}
+
+/**
+ * Sprachprüfung der Lern-App (ADR 0041 Nr. 1): Das Recht `lernapp.sprache.pruefen` gilt nur für die eigenen Sprachen der
+ * Person (`lernapp_pruefer_sprache`) – auch für die Administration, die sonst alles darf.
+ */
+export function darfSprachePruefen(rollen: readonly RollenZuweisung[], sprachen: readonly Sprache[], sprache: Sprache): boolean {
+  return darf(rollen, 'lernapp.sprache.pruefen') && sprachen.includes(sprache);
 }
 
 /** Eingangsart → Aktionen (ADR 0005). */

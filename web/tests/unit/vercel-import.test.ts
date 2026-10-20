@@ -82,6 +82,9 @@ describe('vercel.json für den Import', () => {
       .map((z) => z.trim())
       .filter((z) => z && !z.startsWith('#'));
     expect(ignoriert).toEqual(expect.arrayContaining(['_archiv', '_gemeinde', '_lauf']));
-    expect(ignoriert.some((z) => z === 'web' || z.startsWith('web/') || z === '*')).toBe(false);
+    // Einzige Ausnahme in web/: die Roh-Sprachdaten der Lern-App, nur für lernapp:pruefen und die lokale Inhaltserzeugung,
+    // nicht für Bau und Vorschau (ADR 0045, Fortschreibung S7 Nr. 2)
+    const ROHDATEN = new Set(['web/daten/tatoeba', 'web/daten/kaikki', 'web/daten/haeufigkeit']);
+    expect(ignoriert.some((z) => z === 'web' || (z.startsWith('web/') && !ROHDATEN.has(z)) || z === '*')).toBe(false);
   });
 });

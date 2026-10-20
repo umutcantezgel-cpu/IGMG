@@ -3,20 +3,31 @@
 // Zwei Läufe je Route (E-026): „devtools“ (angewandte Drosselung: 150 ms RTT, 1,6 Mbit/s, CPU ×4 – maßgeblich gegen
 // localhost) und „simulate“ (Lighthouse-Standard; gegen localhost systematisch zu pessimistisch, weil im
 // ungedrosselten Trace alle Anfragen vor dem ersten Zeichnen starten). Bewertet wird devtools, berichtet beides.
-// Ergebnis: _lauf/release/belege/lighthouse/<zeitstempel>/ergebnis.md (G-01: nur _lauf/release/ beschreibbar) (+ volle Berichte lokal). Exit 1, wenn eine Schwelle verfehlt ist.
+// Ergebnis: _lauf/release/belege/lighthouse/<zeitstempel>/ergebnis.md (G-01: nur _lauf/release/ beschreibbar) (+ volle Berichte lokal);
+// mit MESSEN_ZIEL=<ordner> dorthin (z. B. Scratchpad im Tor). Exit 1, wenn eine Schwelle verfehlt ist.
+// Lern-App (KERN 4.0 §9, PLAN §13 „Leistung“): Messrouten /lern-app/de, /lern-app/ar/de-aus-ar und
+// /lern-app/tr/de-aus-tr/ueben?l=… (Testkurs); JS-Grenze je Route (Start/Lernpfad 180 kB, Spieler-Route 210 kB); Übungsseiten
+// sind `noindex` (Hülle ohne eigenen Inhalt), dort zählt SEO nicht.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from '@playwright/test';
 import lighthouse from 'lighthouse';
 
 const SCHWELLEN = { performance: 90, accessibility: 100, 'best-practices': 95, seo: 95, lcpMs: 2500, cls: 0.1, tbtMs: 200, jsKb: 180 };
+/** Lern-App: Spieler-Route gesamt ≤ 210 kB (KERN 4.0 §9, Fortschreibung S1); Übungsseiten ohne SEO-Wertung (noindex). */
+const LERNAPP_SPIELER = /^\/lern-app\/(de|tr|ar)\/[a-z-]+\/(ueben|wiederholen)(\?|$)/;
+const jsGrenze = (pfad) => (LERNAPP_SPIELER.test(pfad) ? 210 : SCHWELLEN.jsKb);
+const mitSeo = (pfad) => !LERNAPP_SPIELER.test(pfad);
+const LERNAPP_ROUTEN = ['/lern-app/de', '/lern-app/ar/de-aus-ar', '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01'];
 const [basis = 'http://localhost:3100', ...pfadeArg] = process.argv.slice(2);
 
 async function standardPfade() {
   const liste = await (await fetch(`${basis}/veranstaltungen`)).text();
   const detail = /href="(\/veranstaltungen\/[a-z0-9-]+)"/.exec(liste)?.[1];
   // Messrouten laut PLAN L8; noch nicht gebaute Seiten (404) werden übersprungen und genannt
-  const kandidaten = ['/', '/gebetszeiten', '/veranstaltungen', detail, '/nachrichten', '/bildung/voranmeldung'].filter(Boolean);
+  const kandidaten = ['/', '/gebetszeiten', '/veranstaltungen', detail, '/nachrichten', '/bildung/voranmeldung', ...LERNAPP_ROUTEN].filter(
+    Boolean,
+  );
   const vorhanden = [];
   for (const p of kandidaten) {
     const s = (await fetch(`${basis}${p}`)).status;
@@ -28,7 +39,9 @@ async function standardPfade() {
 
 const pfade = pfadeArg.length ? pfadeArg : await standardPfade();
 const zeit = new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-');
-const ziel = join(import.meta.dirname, '..', '..', '_lauf', 'release', 'belege', 'lighthouse', zeit);
+const ziel = process.env.MESSEN_ZIEL
+  ? join(process.env.MESSEN_ZIEL, zeit)
+  : join(import.meta.dirname, '..', '..', '_lauf', 'release', 'belege', 'lighthouse', zeit);
 mkdirSync(ziel, { recursive: true });
 
 const port = 9300 + Math.floor(Math.random() * 400);
@@ -47,7 +60,7 @@ try {
       lcpMs: Math.round(simuliert.lhr.audits['largest-contentful-paint']?.numericValue ?? NaN),
     };
     const lhr = ergebnis.lhr;
-    const name = pfad === '/' ? 'start' : pfad.replace(/^\//, '').replaceAll('/', '_');
+    const name = pfad === '/' ? 'start' : pfad.replace(/^\//, '').replace(/[/?=]/g, '_');
     writeFileSync(join(ziel, `${name}.report.json`), ergebnis.report);
     const kat = Object.fromEntries(Object.entries(lhr.categories).map(([k, v]) => [k, Math.round((v.score ?? 0) * 100)]));
     const a = lhr.audits;
@@ -65,11 +78,11 @@ try {
       w.performance < SCHWELLEN.performance && 'Performance',
       w.accessibility < SCHWELLEN.accessibility && 'Barrierefreiheit',
       w['best-practices'] < SCHWELLEN['best-practices'] && 'Best Practices',
-      w.seo < SCHWELLEN.seo && 'SEO',
+      mitSeo(pfad) && w.seo < SCHWELLEN.seo && 'SEO',
       w.lcpMs > SCHWELLEN.lcpMs && 'LCP',
       w.cls > SCHWELLEN.cls && 'CLS',
       w.tbtMs > SCHWELLEN.tbtMs && 'TBT',
-      w.jsKb > SCHWELLEN.jsKb && 'JS',
+      w.jsKb > jsGrenze(pfad) && 'JS',
     ].filter(Boolean);
     if (fehler.length) verfehlt++;
     // Nicht bestandene Prüfungen der Kategorien (für Reparaturen)

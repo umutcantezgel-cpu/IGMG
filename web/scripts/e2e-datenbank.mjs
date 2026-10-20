@@ -43,6 +43,12 @@ async function main() {
     env,
     stdio: ['ignore', 'ignore', 'inherit'],
   });
+  // Lern-App: Inhalte und der Testkurs mit synthetischen Tönen (E2E der Lektion, ADR 0039 Nr. 11)
+  execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts', '--testkurs'], {
+    cwd: wurzel,
+    env,
+    stdio: ['ignore', 'ignore', 'inherit'],
+  });
   console.log(`E2E-Datenbank ${name} frisch angelegt, migriert, geseedet und mit Inhaltsdaten befüllt.`);
 }
 

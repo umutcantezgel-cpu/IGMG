@@ -1,3 +1,5 @@
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { sql } from 'drizzle-orm';
 import { afterAll, describe, expect, it } from 'vitest';
 import { testDatenbank } from './hilfen/db';
@@ -9,8 +11,57 @@ describe('Migrationen (K-05)', () => {
   it('legen alle Tabellen an', async () => {
     const r = await db.execute<{ n: number }>(sql`select count(*)::int as n from information_schema.tables where table_schema = 'public'`);
     // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008), + quran_vers_auswahl (0012),
-    // + rollen_antrag (0013, Vier-Augen-Prinzip für Schutzrollen), + mail_zusammenfassung (0016, F-38)
-    expect(r.rows[0]?.n).toBe(99);
+    // + rollen_antrag (0013, Vier-Augen-Prinzip für Schutzrollen), + mail_zusammenfassung (0016, F-38),
+    // + 20 Inhaltstabellen (0018) und 6 Nutzungstabellen (0019) der Lern-App
+    expect(r.rows[0]?.n).toBe(125);
+  });
+
+  it('Lern-App: 0017 ergänzt nur Enum-Werte, spätere Migrationen nutzen sie nicht als Literal (PostgreSQL 16)', async () => {
+    const ordner = join(import.meta.dirname, '../../drizzle/migrations');
+    const ohneKommentar = (datei: string) =>
+      readFileSync(join(ordner, datei), 'utf8')
+        .split('\n')
+        .filter((z) => !z.startsWith('--') || z.startsWith('--> statement-breakpoint'))
+        .join('\n');
+    const anweisungen = ohneKommentar('0017_lernapp_rolle.sql')
+      .split('--> statement-breakpoint')
+      .map((a) => a.trim())
+      .filter(Boolean);
+    expect(anweisungen).toEqual([
+      `ALTER TYPE "public"."rolle" ADD VALUE 'sprachpruefung';`,
+      `ALTER TYPE "public"."konto_einwilligung_art" ADD VALUE 'lernapp';`,
+    ]);
+    const spaeter = readdirSync(ordner).filter((d) => /^\d{4}_.*\.sql$/.test(d) && d.slice(0, 4) > '0017');
+    expect(spaeter.length).toBeGreaterThanOrEqual(2);
+    for (const datei of spaeter) expect(ohneKommentar(datei), datei).not.toMatch(/'sprachpruefung'|'lernapp'/);
+    const rollen = await db.execute<{ w: string }>(sql`select unnest(enum_range(null::rolle))::text as w`);
+    expect(rollen.rows.map((z) => z.w)).toContain('sprachpruefung');
+    const arten = await db.execute<{ w: string }>(sql`select unnest(enum_range(null::konto_einwilligung_art))::text as w`);
+    expect(arten.rows.map((z) => z.w)).toContain('lernapp');
+  });
+
+  it('Lern-App: Übersetzung und Beleg haben genau einen Bezug; Sprecher nur mit Vereinbarung', async () => {
+    await db.execute(sql`insert into lernapp_kurs (id, art, zielsprache) values ('tr', 'sprache', 'tr')`);
+    const [satz] = (
+      await db.execute<{ id: string }>(
+        sql`insert into lernapp_satz (kurs_id, schluessel, text, stufe, quelle, lizenz, inhalt_hash) values ('tr', 'tr.a1.e01.s0001', '[Satz]', 'a1', 'redaktion', 'CC BY-SA 4.0', ${'e'.repeat(64)}) returning id`,
+      )
+    ).rows;
+    await expect(
+      db.execute(
+        sql`insert into lernapp_uebersetzung (sprache, text, quelle, lizenz, inhalt_hash) values ('de', '[Satz]', 'redaktion', 'CC BY-SA 4.0', 'x')`,
+      ),
+    ).rejects.toThrow();
+    await db.execute(
+      sql`insert into lernapp_uebersetzung (satz_id, sprache, text, quelle, lizenz, inhalt_hash) values (${satz.id}, 'de', '[Satz]', 'redaktion', 'CC BY-SA 4.0', 'x')`,
+    );
+    // je Richtung (Ausgangssprache) genau eine Übersetzung
+    await expect(
+      db.execute(
+        sql`insert into lernapp_uebersetzung (satz_id, sprache, text, quelle, lizenz, inhalt_hash) values (${satz.id}, 'de', '[Satz 2]', 'redaktion', 'CC BY-SA 4.0', 'y')`,
+      ),
+    ).rejects.toThrow();
+    await expect(db.execute(sql`insert into lernapp_sprecher (name) values ('[Sprecherin]')`)).rejects.toThrow();
   });
 
   it('Volltextspalten werden je Sprache erzeugt (ADR 0013)', async () => {

@@ -11,6 +11,11 @@ export type WegStation = {
   text: string;
   /** Ohne Ziel steht die Station ohne Link (z. B. „Folgt bald“). */
   ziel?: Ziel;
+  /**
+   * Adresse außerhalb der Website-Pfade (z. B. die Lern-App `/lern-app/…`, ADR 0037 Nr. 9) als einfacher Link `<a>`
+   * statt `ziel`: `Link` aus `@/i18n/link` kennt nur Pfade aus `routing.pathnames`.
+   */
+  adresse?: string;
   linkText?: string;
   /** Zusatzzeile, z. B. Platzhalter. */
   hinweis?: string;
@@ -94,7 +99,9 @@ export function Weg({
                 className={cn(
                   'relative flex h-full flex-col rounded-lg border border-linie bg-weiss shadow-s1',
                   kompakt ? 'gap-1 px-4 py-3' : 'gap-2 p-5',
-                  s.ziel && !s.linkText && 'transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50',
+                  (s.ziel || s.adresse) &&
+                    !s.linkText &&
+                    'transition duration-(--dauer-rueckmeldung) hover:border-gruen-700 hover:bg-gruen-50',
                 )}
               >
                 <span className="text-16 font-bold text-gruen-800">{s.kennung}</span>
@@ -106,6 +113,13 @@ export function Weg({
                     >
                       {s.titel}
                     </Link>
+                  ) : s.adresse && !s.linkText ? (
+                    <a
+                      href={s.adresse}
+                      className="text-tinte no-underline after:absolute after:inset-0 after:rounded-lg hover:text-gruen-800"
+                    >
+                      {s.titel}
+                    </a>
                   ) : (
                     s.titel
                   )}
@@ -126,6 +140,15 @@ export function Weg({
                     {s.linkText}
                     <ArrowRight aria-hidden className="size-5" />
                   </Link>
+                ) : s.adresse && s.linkText ? (
+                  <a
+                    href={s.adresse}
+                    aria-label={`${s.linkText}: ${s.titel}`}
+                    className="mt-auto inline-flex min-h-12 items-center gap-2 self-start font-bold underline-offset-4 hover:underline"
+                  >
+                    {s.linkText}
+                    <ArrowRight aria-hidden className="size-5" />
+                  </a>
                 ) : null}
               </div>
             </div>

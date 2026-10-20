@@ -140,6 +140,42 @@ describe('Rollen und ihre Fachbereiche (K-06)', () => {
     ).toEqual([]);
   });
 
+  it('Sprachprüfung (Lern-App) sieht weder Inhalte der Website noch Eingänge, Personen, Freigaben oder Lern-App-Redaktion', () => {
+    expect(
+      erlaubteVerbote({ rolle: 'sprachpruefung' }, [
+        // keine Grundrechte der Verwaltung (S-L1 N-6): weder Tickets noch Postfach, Mediathek, Übersicht oder Styleguide
+        'ticket.lesen',
+        'ticket.anlegen',
+        'postfach.nutzen',
+        'medium.lesen',
+        'uebersicht.lesen',
+        'styleguide.lesen',
+        'veranstaltung.bearbeiten',
+        'nachricht.bearbeiten',
+        'seiteninhalt.bearbeiten',
+        'kurs.lesen',
+        'gruppe.lesen',
+        'lernende.lesen',
+        'eingang.voranmeldung.lesen',
+        'eingang.kontakt.lesen',
+        'gemeindekonto.lesen',
+        'freigabe.lesen',
+        'religioes.freigeben',
+        'meldung.chat.lesen',
+        'medium.hochladen',
+        'lernapp.bearbeiten',
+        'lernapp.veroeffentlichen',
+        'lernapp.religioes.pruefen',
+        'lernapp.audio.bearbeiten',
+        'lernapp.statistik.lesen',
+        'benutzer.einladen',
+        'audit.lesen',
+        'einstellung.bearbeiten',
+        'funktion.schalten',
+      ]),
+    ).toEqual([]);
+  });
+
   it('Benutzerverwaltung und Audit-Log sind nur der Administration vorbehalten', () => {
     for (const rolle of ROLLEN) {
       const erwartet = rolle === 'administration';

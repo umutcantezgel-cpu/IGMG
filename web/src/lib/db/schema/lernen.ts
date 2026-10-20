@@ -246,9 +246,18 @@ export const hifzEintrag = pgTable(
   (t) => [index('hifz_lernende_idx').on(t.lernendeId)],
 );
 
-export type AufgabeBezug = { art: 'quran'; sure: number; von: number; bis: number } | { art: 'elifbe'; lektion: string } | { art: 'frei' };
+/**
+ * Bezug einer Hausaufgabe. `lernapp` (L3-E05, ADR 0038 Nr. 5): Zuweisung eines Kurses der Lern-App, optional eingegrenzt auf
+ * eine Einheit bzw. Lektion. `kurs` ist der Kurs-Slug aus `web/src/lib/lernapp/kurse.ts` (`tr-aus-de` …, `islam`, `koran`),
+ * `einheit`/`lektion` die stabilen Schlüssel (`ar.a1.e03`, `ar.a1.e03.l02`); geprüft mit `pruefeLernappBezug`.
+ */
+export type AufgabeBezug =
+  | { art: 'quran'; sure: number; von: number; bis: number }
+  | { art: 'elifbe'; lektion: string }
+  | { art: 'lernapp'; kurs: string; einheit?: string; lektion?: string }
+  | { art: 'frei' };
 
-/** Hausaufgaben je Gruppe (Kür K-B), optional mit Bezug zum Koran-Leser oder einer Elifbe-Lektion. */
+/** Hausaufgaben je Gruppe (Kür K-B), optional mit Bezug zum Koran-Leser, einer Elifbe-Lektion oder der Lern-App. */
 export const aufgabe = pgTable(
   'aufgabe',
   {

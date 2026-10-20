@@ -1,14 +1,16 @@
 import 'server-only';
-import { and, desc, inArray, isNotNull, isNull, like, lt, lte, ne, sql } from 'drizzle-orm';
+import { and, desc, inArray, isNotNull, isNull, like, lt, lte, ne, or, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import { protokolliereModeration } from '@/lib/chat/dienst';
 import { inaktiveKontenLauf } from '@/lib/konto/inaktiv';
 import { KINDER_DOMAIN } from '@/lib/konto/regeln';
+import { verdichteLernapp } from '@/lib/lernapp/sync/verdichten';
 import { MAX_VERSUCHE } from '@/lib/mail/ausgang';
-import { nachweisFrist } from './fristen';
+import { nachweisFrist, plusMonate } from './fristen';
 
 /**
- * Löschfristen der Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-14, D-16; Löschkonzept). Läuft im täglichen
+ * Löschfristen der Gemeinde-Plattform (DSFA D-04, D-05, D-10, D-13, D-14, D-16; Löschkonzept) und der Lern-App (KERN 4.0
+ * §6; das Verdichten alter Ereignisse in den Kartenstand gehört zum Abgleich, L1-05). Läuft im täglichen
  * Löschlauf (`/api/wartung/loeschfristen`), idempotent. Die Fristen sind Vorschläge der DSFA, bis Vorstand und DSB
  * entscheiden (MENSCHEN MN-11); Änderung nur hier und im Löschkonzept.
  */
@@ -25,6 +27,12 @@ export const GEMEINDE_FRISTEN = {
   nachweisJahre: 3,
   /** D-16: Gemeinde-Konten ohne Anmeldung 24 Monate, Vorwarnung 30 Tage vorher (`src/lib/konto/inaktiv.ts`). */
   inaktivMonate: 24,
+  /**
+   * Lern-App (KERN 4.0 §6, ADR 0038 Nr. 10): Lernstand auf dem Server 12 Monate nach der letzten Aktivität (Profil mit
+   * Ereignissen, Karten und Lerntagen); Schreibabgaben 12 Monate nach der Abgabe. Vorschlag bis zum DSFA-Nachtrag (LM-08).
+   */
+  lernappInaktivMonate: 12,
+  lernappAbgabeMonate: 12,
 } as const;
 
 /** Einstellung mit dem Hash des zuletzt gelöschten Protokolleintrags: Anfang der Kette für die Prüfung (S-10). */
@@ -44,6 +52,11 @@ export type GemeindeLoeschErgebnis = {
   /** D-16: Vorwarnungen an inaktive Konten bzw. gelöschte inaktive Konten */
   inaktivGewarnt: number;
   inaktivGeloescht: number;
+  /** Lern-App: Lernstände ohne Aktivität seit 12 Monaten bzw. Schreibabgaben älter als 12 Monate */
+  lernappProfile: number;
+  lernappAbgaben: number;
+  /** Lern-App: Bewertungen älter als 12 Monate, in den Kartenstand verdichtet und gelöscht (Löschkonzept L-39) */
+  lernappVerdichtet: number;
 };
 
 export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLoeschErgebnis> {
@@ -147,6 +160,24 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
   // D-16: inaktive Gemeinde-Konten (24 Monate ohne Anmeldung, Vorwarnung 30 Tage vorher; Kinderkonten über die Eltern)
   const inaktiv = await inaktiveKontenLauf(jetzt);
 
+  // Lern-App (Löschkonzept L-38): Lernstand nach 12 Monaten ohne Abgleich – Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel
+  const lernappProfile = await db
+    .delete(schema.lernappProfil)
+    .where(lte(schema.lernappProfil.zuletztAktivAm, plusMonate(jetzt, -GEMEINDE_FRISTEN.lernappInaktivMonate)))
+    .returning({ id: schema.lernappProfil.benutzerId });
+  // Lern-App (Löschkonzept L-40): Schreibabgaben nach Ablauf (`loeschenAb`, gesetzt bei der Abgabe) – spätestens 12 Monate nach der Abgabe
+  const lernappAbgaben = await db
+    .delete(schema.lernappSchreibabgabe)
+    .where(
+      or(
+        lte(schema.lernappSchreibabgabe.loeschenAb, jetzt),
+        lte(schema.lernappSchreibabgabe.eingereichtAm, plusMonate(jetzt, -GEMEINDE_FRISTEN.lernappAbgabeMonate)),
+      ),
+    )
+    .returning({ id: schema.lernappSchreibabgabe.id });
+  // Lern-App: Bewertungen älter als 12 Monate in den Kartenstand verdichten (ADR 0038 Nr. 10, Löschkonzept L-39)
+  const verdichtet = await verdichteLernapp(jetzt);
+
   return {
     lernende: lernende.length,
     kinderkonten: kinderkonten.length,
@@ -157,5 +188,8 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     nachweise: nachweise.length,
     inaktivGewarnt: inaktiv.gewarnt,
     inaktivGeloescht: inaktiv.geloescht,
+    lernappProfile: lernappProfile.length,
+    lernappAbgaben: lernappAbgaben.length,
+    lernappVerdichtet: verdichtet.ereignisse,
   };
 }

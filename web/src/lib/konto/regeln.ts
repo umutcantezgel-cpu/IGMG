@@ -1,3 +1,4 @@
+import { istLernAppZiel } from '@/lib/lernapp/adressen';
 import { istKontoPfad } from '@/lib/sicherheit/header';
 
 /**
@@ -37,13 +38,14 @@ export function vornameAus(anzeigename: string): string {
 }
 
 /**
- * Rücksprung nach der Anmeldung (`?weiter=`): nur relative Pfade der eigenen Konto-Seiten (Einladung, Mein Bereich),
- * keine fremden Ziele (offene Weiterleitung). Ergebnis ist der geprüfte Pfad oder null.
+ * Rücksprung nach der Anmeldung (`?weiter=`): nur relative Pfade der eigenen Konto-Seiten (Einladung, Mein Bereich) und
+ * der Lern-App (Anmeldung im Scope der PWA, ADR 0037 Nr. 4; nie die Anmeldung selbst), keine fremden Ziele (offene
+ * Weiterleitung). Ergebnis ist der geprüfte Pfad oder null.
  */
 export function sichererRuecksprung(wert: unknown): string | null {
   if (typeof wert !== 'string' || wert.length > 300) return null;
   if (!/^\/[A-Za-z0-9\-._~/?=&%]*$/.test(wert) || wert.startsWith('//')) return null;
   const pfad = wert.split('?')[0];
-  if (pfad.includes('..') || !istKontoPfad(pfad)) return null;
+  if (pfad.includes('..') || !(istKontoPfad(pfad) || istLernAppZiel(pfad))) return null;
   return wert;
 }

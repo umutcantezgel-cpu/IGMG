@@ -5,12 +5,17 @@ import {
   PFAD_BERECHTIGUNGEN,
   cspOeffentlich,
   grundHeader,
+  lernAppHeaderRegeln,
   noindexHeader,
   permissionsPolicy,
 } from './src/lib/sicherheit/header';
 
-/** Pfade ohne statische CSP (bekommen die Nonce-CSP im Proxy): Verwaltung und Konto-Seiten, mit/ohne Sprachpräfix. */
-const CSP_AUSNAHMEN = ['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`).join('|');
+/**
+ * Pfade ohne öffentliche CSP: Verwaltung und Konto-Seiten (Nonce-CSP im Proxy), mit/ohne Sprachpräfix, und die Lern-App
+ * nur ohne Sprachpräfix (eigene CSP aus `lernAppHeaderRegeln`, ADR 0042 Nr. 9). `/(de|tr|en)/lern-app/…` leitet der Proxy
+ * weiter; erreicht ihn ein solcher Pfad nicht (Punkt im Pfad), gilt die öffentliche CSP – nie gar keine (S-L1 N-2).
+ */
+const CSP_AUSNAHMEN = [...['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`), 'lern-app(?:/|$)'].join('|');
 
 /**
  * Beispielmodus auf Vercel (Bau ohne DATABASE_URL, ADR 0019): Die Inhalte stammen aus der PGlite-Bau-Datenbank und
@@ -59,6 +64,8 @@ const nextConfig: NextConfig = {
       ]),
     ),
     '/**/suche': ['.suchindex.json'],
+    // Lern-App ohne Blob-Speicher (Beispielmodus, E2E): synthetische Testbündel aus dem Dateisystem (ADR 0039 Nr. 11)
+    '/lern-app/audio/**': ['drizzle/seeds/lernapp-testaudio/**/*.lpa'],
   },
   experimental: {
     agentFeedback: false,
@@ -116,6 +123,8 @@ const nextConfig: NextConfig = {
         source: `/:pfad((?!${CSP_AUSNAHMEN}).*)`,
         headers: [{ key: 'Content-Security-Policy', value: cspOeffentlich() }],
       },
+      // Lern-App: COOP/COEP, eigene CSP, Modelle und Service Worker (nach der öffentlichen Regel)
+      ...lernAppHeaderRegeln(),
     ];
   },
 };
