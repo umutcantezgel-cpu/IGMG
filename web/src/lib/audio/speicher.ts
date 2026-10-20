@@ -4,6 +4,9 @@ import { stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { Readable } from 'node:stream';
 import { pruefeSchluessel, speicher } from '@/lib/storage';
+import { leseBereich } from './bereich';
+
+export { leseBereich };
 
 /**
  * Ablage der Rezitations-Audiodateien (ADR 0029). Schlüssel `audio/<rezitation>/<sure>-<vers>-<hash>.<endung>` (unveränderlich,
@@ -68,25 +71,6 @@ export async function loescheAudio(schluessel: string): Promise<void> {
   if (!token) return speicher().loesche(schluessel);
   const { del } = await import('@vercel/blob');
   await del(pruefeSchluessel(schluessel), { token });
-}
-
-/** Byte-Bereich aus `Range: bytes=a-b` (nur ein Bereich); null = ganze Datei, 'ungueltig' = 416. */
-export function leseBereich(kopf: string | null, groesse: number): { start: number; ende: number } | null | 'ungueltig' {
-  if (!kopf) return null;
-  const m = /^bytes=(\d*)-(\d*)$/.exec(kopf.trim());
-  if (!m || (m[1] === '' && m[2] === '')) return 'ungueltig';
-  let start: number;
-  let ende: number;
-  if (m[1] === '') {
-    // Suffix: die letzten n Byte
-    start = Math.max(0, groesse - Number(m[2]));
-    ende = groesse - 1;
-  } else {
-    start = Number(m[1]);
-    ende = m[2] === '' ? groesse - 1 : Math.min(Number(m[2]), groesse - 1);
-  }
-  if (start >= groesse || start > ende) return 'ungueltig';
-  return { start, ende };
 }
 
 /**

@@ -103,13 +103,21 @@ describe('Lern-App: Texte nur mit createTranslator', () => {
 
 describe('Übungstypen nur per import()', () => {
   const AUFGABEN = join(WURZEL, 'components', 'lernapp', 'aufgaben');
-  it('kein statischer Import aus components/lernapp/aufgaben von außerhalb des Ordners', () => {
+  const LADER = join(AUFGABEN, 'lader.ts');
+  it('der Lader enthält nur import() und Typ-Importe', () => {
+    const { statisch, dynamisch } = importe(readFileSync(LADER, 'utf8'));
+    expect(statisch).toEqual([]);
+    expect(dynamisch.length).toBeGreaterThanOrEqual(3);
+  });
+
+  it('kein statischer Import aus components/lernapp/aufgaben von außerhalb des Ordners (außer dem Lader)', () => {
     const funde = dateien(WURZEL)
       .filter((p) => !p.startsWith(AUFGABEN))
       .flatMap((p) =>
         importe(readFileSync(p, 'utf8'))
           .statisch.filter((z) => {
             const ziel = aufloesen(p, z);
+            if (ziel === LADER) return false;
             return (ziel ?? z).includes(`${join('components', 'lernapp', 'aufgaben')}`) || /lernapp\/aufgaben(\/|$)/.test(z);
           })
           .map((z) => `${kurz(p)} → ${z}`),

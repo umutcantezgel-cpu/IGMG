@@ -17,6 +17,8 @@ if (process.env.DATABASE_URL) {
   lauf('node', ['scripts/migriere-mit-sperre.mjs']);
   // Inhaltsdaten (ADR 0025): idempotent über SHA-256 – schreibt nur, wenn sich eine Quelldatei geändert hat
   lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts']);
+  // Lern-App-Inhalte (PLAN §6.6): idempotent über SHA-256 je Datei und inhaltHash je Eintrag; ohne Testkurs
+  lauf('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts']);
   lauf('pnpm', ['exec', 'next', 'build']);
 } else {
   console.warn('[bau] WARNUNG: DATABASE_URL fehlt – Bau mit Beispielinhalten aus einer PGlite-Bau-Datenbank (ADR 0017).');

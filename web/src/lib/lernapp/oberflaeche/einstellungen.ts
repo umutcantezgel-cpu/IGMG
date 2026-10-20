@@ -50,7 +50,7 @@ export type Einstellungen = {
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   ausgang: null,
   tagesziel: { art: 'xp', wert: 10 },
-  ziffern: 'arab',
+  ziffern: 'oestlich',
   hoeren: true,
   sprechen: true,
 };
@@ -62,7 +62,7 @@ export function pruefeEinstellungen(roh: unknown): Einstellungen {
   return {
     ausgang: istSprache(e.ausgang) ? e.ausgang : null,
     tagesziel: ziel ?? STANDARD_EINSTELLUNGEN.tagesziel,
-    ziffern: e.ziffern === 'latn' ? 'latn' : 'arab',
+    ziffern: e.ziffern === 'westlich' || e.ziffern === 'latn' ? 'westlich' : 'oestlich',
     hoeren: typeof e.hoeren === 'boolean' ? e.hoeren : true,
     sprechen: typeof e.sprechen === 'boolean' ? e.sprechen : true,
   };

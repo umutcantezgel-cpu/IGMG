@@ -89,6 +89,7 @@ describe('Löschlauf der Gemeinde-Plattform', () => {
       inaktivGeloescht: 0,
       lernappProfile: 0,
       lernappAbgaben: 0,
+      lernappVerdichtet: 0,
     });
 
     const rest = (await db.select({ id: schema.lernende.id }).from(schema.lernende)).map((z) => z.id);
@@ -121,6 +122,7 @@ describe('Löschlauf der Gemeinde-Plattform', () => {
       inaktivGeloescht: 0,
       lernappProfile: 0,
       lernappAbgaben: 0,
+      lernappVerdichtet: 0,
     });
   });
 

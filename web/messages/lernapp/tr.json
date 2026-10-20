@@ -206,5 +206,68 @@
       "passkeyAbgebrochen": "Passkey ile giriş iptal edildi.",
       "passkeyVerwaltung": "Cemaatte görevi olan hesaplar e-posta, şifre ve kodla giriş yapar."
     }
+  },
+  "spieler": {
+    "fortschritt": "Dersin ilerlemesi",
+    "aufgabeVon": "Görev {nr, number} / {anzahl, number}",
+    "nochEinmal": "Alıştırma için bir kez daha",
+    "laedt": "Görev yükleniyor …",
+    "ladefehler": "Görev yüklenemedi. Lütfen bağlantını kontrol et.",
+    "erneut": "Tekrar dene",
+    "pruefen": "Kontrol et",
+    "weiter": "Devam",
+    "richtig": "Doğru!",
+    "tippfehler": "Neredeyse doğru – bu da sayılır.",
+    "falsch": "Henüz tam değil.",
+    "loesung": "Doğru cevap:",
+    "spaeter": "Bu görev sonda bir kez daha gelecek.",
+    "hinweis": {
+      "leer": "Önce bir cevap seç ya da yaz.",
+      "tippfehler": "Yazılışa dikkat et.",
+      "leerzeichen": "Boşluklara dikkat et.",
+      "apostroph": "Kesme işaretine dikkat et.",
+      "grossschreibung": "Almancada isimler büyük harfle başlar.",
+      "eszett": "Burada „ß“ yazılır.",
+      "umlaut": "Burada ä, ö veya ü yazılır.",
+      "sonderzeichen": "Türkçe harflere dikkat et: ç, ğ, ı, ö, ş ve ü.",
+      "alifMaqsura": "Kelime sonundaki elif-i maksûreye dikkat et.",
+      "taMarbuta": "Kelime sonundaki tâ-i merbûtaya dikkat et.",
+      "harakat": "Hareke ve hemze işaretlerine dikkat et."
+    },
+    "fertigTitel": "Ders tamamlandı",
+    "fertigText": "{gesamt, number} görevden {richtig, number} tanesi ilk denemede doğru.",
+    "xp": "{n, number} XP",
+    "zurueck": "Öğrenme yoluna dön",
+    "leer": "Bu derste burada çalışılacak görev henüz yok."
+  },
+  "aufgaben": {
+    "auswahl": {
+      "waehleUebersetzung": "Doğru çeviriyi seç.",
+      "waehleWort": "Hangi kelime uyuyor?",
+      "waehleBedeutung": "Bunun anlamı ne?",
+      "waehleAntwort": "Doğru cevabı seç.",
+      "optionen": "Cevaplar",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç."
+    },
+    "wortbank": {
+      "uebersetze": "Cümleyi çevir.",
+      "schreibeGehoertes": "Duyduğunu yaz.",
+      "antwort": "Cevabın",
+      "antwortLeer": "Henüz kelime seçilmedi.",
+      "bank": "Kelimeler",
+      "hinzufuegen": "{wort} ekle",
+      "entfernen": "{wort} çıkar",
+      "tasten": "Ok tuşlarıyla bir kelime seç. Enter ile cevaba ekle, Sil tuşuyla geri çıkar, Alt ve ok tuşuyla yerini değiştir."
+    },
+    "paare": {
+      "findePaare": "Eşleri bul.",
+      "links": "Kelimeler",
+      "rechts": "Anlamlar",
+      "gewaehlt": "{text} seçildi. Şimdi eşini seç.",
+      "gefunden": "Bulundu: {links} – {rechts}",
+      "keinPaar": "{links} ile {rechts} birbirine ait değil.",
+      "fertig": "Bütün eşler bulundu.",
+      "tasten": "Enter ile bir kelime, sonra eşini seç. Ok tuşları bir liste içinde gezinir."
+    }
   }
 }

@@ -53,9 +53,11 @@ async function laufe(): Promise<Response> {
       geloeschteEinwilligungsnachweise: gemeinde.nachweise,
       vorgewarnteInaktiveKonten: gemeinde.inaktivGewarnt,
       geloeschteInaktiveKonten: gemeinde.inaktivGeloescht,
-      // Lern-App (KERN 4.0 §6): Lernstände nach 12 Monaten ohne Aktivität, Schreibabgaben nach 12 Monaten
+      // Lern-App (KERN 4.0 §6): Lernstände nach 12 Monaten ohne Aktivität, Schreibabgaben nach 12 Monaten, Bewertungen
+      // älter als 12 Monate in den Kartenstand verdichtet
       geloeschteLernappProfile: gemeinde.lernappProfile,
       geloeschteLernappAbgaben: gemeinde.lernappAbgaben,
+      verdichteteLernappBewertungen: gemeinde.lernappVerdichtet,
       geloeschteNewsletterAnmeldungen: newsletter,
       // Gemeinde-Konten: Löschanträge nach Frist (Art. 17) und unbestätigte Registrierungen nach 7 Tagen (H-L05)
       ...(await kontenLoeschlauf()),

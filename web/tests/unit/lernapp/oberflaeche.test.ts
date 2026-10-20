@@ -71,7 +71,7 @@ describe('Einstellungen auf dem Gerät', () => {
     expect(STANDARD_EINSTELLUNGEN).toEqual({
       ausgang: null,
       tagesziel: { art: 'xp', wert: 10 },
-      ziffern: 'arab',
+      ziffern: 'oestlich',
       hoeren: true,
       sprechen: true,
     });
@@ -91,7 +91,7 @@ describe('Einstellungen auf dem Gerät', () => {
         sprechen: false,
         fremd: 1,
       }),
-    ).toEqual({ ausgang: 'ar', tagesziel: { art: 'lektionen', wert: 2 }, ziffern: 'latn', hoeren: false, sprechen: false });
+    ).toEqual({ ausgang: 'ar', tagesziel: { art: 'lektionen', wert: 2 }, ziffern: 'westlich', hoeren: false, sprechen: false });
     expect(pruefeEinstellungen({ ausgang: 'en', tagesziel: { art: 'xp', wert: 999 }, ziffern: 'x', hoeren: 'ja' })).toEqual(
       STANDARD_EINSTELLUNGEN,
     );

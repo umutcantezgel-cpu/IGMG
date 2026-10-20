@@ -134,7 +134,7 @@ export function EinstellungenFormular({
 
       {ui === 'ar' ? (
         <Gruppe id="ziffern" titel={texte.ziffern} text={texte.ziffernText}>
-          {(['arab', 'latn'] as const).map((z) => (
+          {(['oestlich', 'westlich'] as const).map((z) => (
             <label key={z} className={ZEILE}>
               <input
                 type="radio"
@@ -145,7 +145,7 @@ export function EinstellungenFormular({
                 onChange={() => aendern({ ziffern: z })}
               />
               <span>
-                {z === 'arab' ? texte.ziffernArab : texte.ziffernLatn}{' '}
+                {z === 'oestlich' ? texte.ziffernArab : texte.ziffernLatn}{' '}
                 <span className="text-tinte-2 tabular-nums">({new Intl.NumberFormat(zahlSprache(z)).format(123)})</span>
               </span>
             </label>

@@ -1,77 +1,78 @@
 /**
- * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3): `{name}`, `{n, number}` und
- * `{n, plural, =0 {…} one {…} other {…}}` mit `#`, verschachtelt. Arabisch kennt zero/one/two/few/many/other
- * (`Intl.PluralRules`). Im Client der Lern-App gibt es kein next-intl (KERN 4.0 §9); der Unit-Test `lernapp/format`
- * vergleicht jede Nachricht aus `messages/lernapp/*.json` mit `createTranslator`. Apostroph wie ICU: `''` ist ein
- * Apostroph, sonst steht er für sich (Texte der Lern-App setzen keine Klammern in Anführung).
+ * Kleiner ICU-Teilformatierer für den Client der Lern-App (ADR 0037 Nr. 5, PLAN §3.3; < 1 KB gz): `{name}`,
+ * `{n, number}`, `{n, plural, =0 {…} one {…} other {…}}` mit `#` und `{x, select, … other {…}}`, verschachtelt. Wie
+ * intl-messageformat schreibt `{n}` die Zahl unverändert; Ziffern der Oberfläche nur über `{n, number}` und `#`. Plural
+ * über `Intl.PluralRules` (Arabisch: zero, one, two, few, many, other). Apostroph-Regel wie ICU („'{'“, „''“).
+ * Ziffern der arabischen Oberfläche östlich-arabisch, umschaltbar auf westliche (O-5). Im Client der Lern-App gibt es
+ * kein next-intl; der Unit-Test vergleicht mit `createTranslator`.
  */
-import type { Oberflaeche } from './kurse';
 
-export type Werte = Record<string, string | number>;
-/** Ziffern der arabischen Oberfläche: östlich-arabisch (Standard, O-5) oder westlich (LM-18). */
-export type Ziffern = 'arab' | 'latn';
+export type Ziffern = 'oestlich' | 'westlich';
+export type Werte = Readonly<Record<string, string | number>>;
 
-/** Sprachkennung für `Intl` und `createTranslator`: in `ar` mit ausdrücklichem Zahlensystem (ADR 0044 Fortschreibung Nr. 4). */
-export function intlSprache(ui: Oberflaeche, ziffern: Ziffern = 'arab'): string {
-  return ui === 'ar' ? `ar-u-nu-${ziffern}` : ui;
-}
+/** Sprachkennung für Intl: Arabisch mit gewähltem Zahlensystem. */
+export const intlSprache = (sprache: string, ziffern: Ziffern = 'oestlich'): string =>
+  sprache === 'ar' ? `ar-u-nu-${ziffern === 'westlich' ? 'latn' : 'arab'}` : sprache;
 
-/** Index der schließenden Klammer zur öffnenden an `start`. */
-function ende(text: string, start: number): number {
-  let tiefe = 0;
-  for (let i = start; i < text.length; i++) {
-    if (text[i] === '{') tiefe++;
-    else if (text[i] === '}' && --tiefe === 0) return i;
+const zahlIn = (n: number, loc: string) => new Intl.NumberFormat(loc).format(n);
+
+/** Zahl in der Schreibweise der Oberfläche. */
+export const zahl = (n: number, sprache: string, ziffern?: Ziffern): string => zahlIn(n, intlSprache(sprache, ziffern));
+
+/** Position der schließenden Klammer zur `{` an `i`. */
+function ende(t: string, i: number): number {
+  for (let tiefe = 0; i < t.length; i++) {
+    if (t[i] === '{') tiefe++;
+    else if (t[i] === '}' && !--tiefe) return i;
   }
-  return text.length;
+  return t.length;
 }
 
-function zahl(wert: number, sprache: string): string {
-  return new Intl.NumberFormat(sprache).format(wert);
-}
-
-/** Zweige eines Plurals: `=0 {…} one {…} other {…}` → Liste aus Auswahl und Text. */
-function zweige(rest: string): [string, string][] {
-  const aus: [string, string][] = [];
-  let i = 0;
-  while (i < rest.length) {
-    const auf = rest.indexOf('{', i);
-    if (auf < 0) break;
-    const zu = ende(rest, auf);
-    aus.push([rest.slice(i, auf).trim(), rest.slice(auf + 1, zu)]);
-    i = zu + 1;
+/** Zweige `schluessel {text}` eines plural/select. */
+function zweige(r: string): Map<string, string> {
+  const m = new Map<string, string>();
+  for (let i = 0, k: number; (k = r.indexOf('{', i)) >= 0;) {
+    const e = ende(r, k);
+    m.set(r.slice(i, k).trim(), r.slice(k + 1, e));
+    i = e + 1;
   }
-  return aus;
+  return m;
 }
 
-function argument(inhalt: string, werte: Werte, sprache: string): string {
-  const [name, art = '', ...teile] = inhalt.split(',');
-  const wert = werte[name.trim()];
-  const typ = art.trim();
-  if (typ === 'number') return zahl(Number(wert), sprache);
-  if (typ !== 'plural') return String(wert ?? '');
-  const n = Number(wert);
-  const liste = zweige(teile.join(','));
-  const genau = liste.find(([k]) => k === `=${n}`);
-  const kategorie = new Intl.PluralRules(sprache).select(n);
-  const zweig = genau ?? liste.find(([k]) => k === kategorie) ?? liste.find(([k]) => k === 'other');
-  return zweig ? formatiere(zweig[1], werte, sprache, zahl(n, sprache)) : '';
-}
-
-/** Formatiert eine Nachricht; `raute` ersetzt `#` innerhalb eines Pluralzweigs (nicht in verschachtelten Argumenten). */
-export function formatiere(nachricht: string, werte: Werte = {}, sprache = 'de', raute?: string): string {
+function teile(t: string, w: Werte, loc: string, nr?: number): string {
   let aus = '';
-  for (let i = 0; i < nachricht.length; i++) {
-    const z = nachricht[i];
-    if (z === '{') {
-      const zu = ende(nachricht, i);
-      aus += argument(nachricht.slice(i + 1, zu), werte, sprache);
-      i = zu;
-    } else if (z === '#' && raute !== undefined) aus += raute;
-    else if (z === "'" && nachricht[i + 1] === "'") {
-      aus += "'";
-      i++;
-    } else aus += z;
+  for (let i = 0; i < t.length; i++) {
+    const c = t[i];
+    if (c === "'" && /[{}#|']/.test(t[i + 1] ?? '')) {
+      if (t[i + 1] === "'") {
+        aus += "'";
+        i++;
+        continue;
+      }
+      const j = t.indexOf("'", i + 1);
+      aus += t.slice(i + 1, j < 0 ? t.length : j);
+      i = j < 0 ? t.length : j;
+    } else if (c === '#' && nr !== undefined) aus += zahlIn(nr, loc);
+    else if (c !== '{') aus += c;
+    else {
+      const e = ende(t, i);
+      const [, name = '', art, rest = ''] = /^\s*(\w+)\s*(?:,\s*(\w+)\s*,?([\s\S]*))?$/.exec(t.slice(i + 1, e)) ?? [];
+      const wert = w[name];
+      if (art === 'plural') {
+        const n = Number(wert);
+        const z = zweige(rest);
+        aus += teile(z.get(`=${n}`) ?? z.get(new Intl.PluralRules(loc).select(n)) ?? z.get('other') ?? '', w, loc, n);
+      } else if (art === 'select') {
+        const z = zweige(rest);
+        aus += teile(z.get(String(wert)) ?? z.get('other') ?? '', w, loc, nr);
+      } else aus += art === 'number' ? zahlIn(Number(wert), loc) : String(wert ?? '');
+      i = e;
+    }
   }
   return aus;
+}
+
+/** Vorlage aus `messages/lernapp/<sprache>.json` mit Werten füllen. */
+export function formatiere(vorlage: string, werte: Werte = {}, sprache = 'de', ziffern: Ziffern = 'oestlich'): string {
+  return teile(vorlage, werte, intlSprache(sprache, ziffern));
 }

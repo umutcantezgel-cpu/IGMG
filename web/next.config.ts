@@ -63,6 +63,8 @@ const nextConfig: NextConfig = {
       ]),
     ),
     '/**/suche': ['.suchindex.json'],
+    // Lern-App ohne Blob-Speicher (Beispielmodus, E2E): synthetische Testbündel aus dem Dateisystem (ADR 0039 Nr. 11)
+    '/lern-app/audio/**': ['drizzle/seeds/lernapp-testaudio/**/*.lpa'],
   },
   experimental: {
     agentFeedback: false,
