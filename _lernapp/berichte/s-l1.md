@@ -318,7 +318,12 @@ vier Wörter aus den gepinnten Daten nur im Arbeitsspeicher und gab ausschließl
 Alle Befunde M-1 bis M-3 und N-1 bis N-6 sind im Arbeitsbaum `agent-a212ace6efc9226bb` behoben (Stand je Befund oben). Commits
 auf dem Zweig `worktree-agent-a212ace6efc9226bb`, älteste zuerst: `61732c5` (Sitzungszweig hineingemergt, Löschkonzept §3.7),
 `8d60fe8` (M-1, M-2), `18726ba` (M-3), `d31a4ce` (N-1, N-2), `324cfc4` (N-3 bis N-6), `bc0768b` (niedrige Punkte der
-Gegenprüfung), `6f62263` (Nacharbeit M-1, Bau-Kennung, E2E-Probe).
+Gegenprüfung), `6f62263` (Nacharbeit M-1, Bau-Kennung, E2E-Probe), `a4b75ec` (E2E „Datei sichern und einlesen“, Bau ohne
+Datei-Tracing der Bau-Kennung), `1641418` (Regeltest `.vercelignore` nach dem Merge, Abschluss).
+
+Nachweis am Bau `a4b75ec` (Produktionsmodus gegen die eigene E2E-Datenbank auf PostgreSQL 16, Port 3221): alle Lern-App-E2E
+53 grün, 0 rot, 13 absichtlich übersprungen – darunter `regression.spec.ts` (crossOriginIsolated, Update des Root-Workers,
+Datei sichern/einlesen, N-1) und `zwei-geraete.spec.ts` (M-1). Bau-Warnungen nur die fünf bekannten in `/audio`.
 
 Hinweise H-1 bis H-6 bleiben Vormerkungen: H-1 (Einwilligung `lernapp` mit Oberfläche, Löschung nach Widerruf) vor dem
 Einschalten von `lernapp_sync` in L7; H-6 teilweise – die Einstellungen sichern den Lernstand jetzt als Datei, „Profil von
