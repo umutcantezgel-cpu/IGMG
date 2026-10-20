@@ -27,6 +27,9 @@
  *               dazu der Byte-Bereich der Datei. `sha256` = SHA-256 der Rohbytes der Passage (mit Markup),
  *               `sha256Text` = SHA-256 des bereinigten Texts (ohne Markup, UTF-8).
  *   Kapitel   = Überschrift bis zur nächsten Überschrift gleicher oder höherer Ebene.
+ *   Seite     = Band und Seite der Druckvorlage nach den OpenITI-Seitenmarken `PageV<band>P<seite>`. Die Marke steht am
+ *               Seitenende (Text vor der Marke gehört zu dieser Seite). Angabe `V01P079`; ±1 Seite möglich, am Druck prüfen.
+ *               Text nach der letzten Marke hat keine Seite (`null`).
  */
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
@@ -34,7 +37,7 @@ import { basename, dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
-export const WERKZEUG = { name: 'openiti-passagen', version: '1.0.0' };
+export const WERKZEUG = { name: 'openiti-passagen', version: '1.1.0' };
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Buckwalter-Umschrift ↔ Arabisch (nur Codepunkte, keine arabische Schrift im Quelltext)
@@ -109,9 +112,11 @@ export function umschrift(text) {
         w = w.slice(2);
       }
       let aus = '';
-      [...w].forEach((z, i) => {
+      const zeichen = [...w];
+      zeichen.forEach((z, i) => {
         const cp = z.codePointAt(0);
         if (cp === 0x0627 && i === 0) aus += 'a';
+        else if (cp === 0x0629 && i > 0 && zeichen[i - 1] === '\u{627}') aus += 'h'; // -āh statt -āa
         else aus += UMSCHRIFT[cp] ?? z;
       });
       return vorne + aus;
@@ -304,9 +309,15 @@ export function ebeneAusTitel(titel) {
 
 const KOPF_ENDE = '#META#Header#End#';
 const MEILENSTEIN = /(?<![A-Za-z])ms(\d+)(?![A-Za-z0-9])/g;
+const SEITENMARKE = /PageV(\d+)P(\d+)/g;
+// HTML-Reste der Shamela-Abzüge (z. B. Seitenkopf-Matn in Kommentarwerken); ein Meilenstein kann mitten im Tag stehen,
+// dann ist das Tag an der Passagengrenze abgeschnitten (Rest am Ende bzw. Attributrest am Anfang).
+const HTML_TAG = /<\/?[A-Za-z][A-Za-z0-9-]*(?:\s[^<>\n]*)?(?:>|$)/gm;
+const HTML_ATTRIBUTREST = /^[ \t]*(?:[A-Za-z-]+="[^"\n]*"[ \t]*)+\/?>/gm;
+const MARKUP_ZEICHEN = /PageV\d+P\d+|(?<![A-Za-z])ms\d+(?![A-Za-z0-9])|@[A-Z][A-Z0-9_]*@?|AUTO|~~|#+|\|+|<\/?[A-Za-z][A-Za-z0-9-]*(?:\s[^<>\n]*)?>?|[A-Za-z-]+="[^"\n]*"\/?>?/g;
 const UEBERSCHRIFT = /^(?:###|#) (\|+)(\d*)[ \t]*(.*)$/;
 const ABSATZNUMMER = /^# (\d{1,4})[ \t]/;
-const MARKUP_ANFANG = /(?:\s+|~~|#+|\|+|PageV\d+P\d+|ms\d+|@[A-Z][A-Z0-9_]*@?|AUTO|\$|[\d\p{P}\p{S}]+)*/uy;
+const MARKUP_ANFANG = /(?:\s+|~~|#+|\|+|PageV\d+P\d+|ms\d+|@[A-Z][A-Z0-9_]*@?|AUTO|\$|<\/?[A-Za-z][A-Za-z0-9-]*(?:\s[^<>\n]*)?>?|[A-Za-z-]+="[^"\n]*"\/?>?|[\d\p{P}\p{S}]+)*/uy;
 
 /** Bereinigt einen Titel: Markup, „AUTO n -“, eckige Klammern und JK-Endnummer entfernen. */
 export function titelBereinigen(roh, nummeriert = false) {
@@ -328,6 +339,8 @@ export function bereinige(roh) {
     .replace(/PageV\d+P\d+/g, ' ')
     .replace(MEILENSTEIN, ' ')
     .replace(/@[A-Z][A-Z0-9_]*@?/g, ' ')
+    .replace(HTML_TAG, ' ')
+    .replace(HTML_ATTRIBUTREST, ' ')
     .split('\n')
     .map((zeile) =>
       zeile
@@ -349,8 +362,8 @@ export function zaehleWoerter(bereinigt) {
 }
 
 /**
- * Liest Kopf, Überschriften, Absatznummern und Meilensteine.
- * @returns {{ rumpfAnfang:number, ueberschriften:object[], absatznummern:object[], meilensteine:object[] }}
+ * Liest Kopf, Überschriften, Absatznummern, Meilensteine und Seitenmarken.
+ * @returns {{ rumpfAnfang:number, ueberschriften:object[], absatznummern:object[], meilensteine:object[], seiten:object[] }}
  */
 export function lies(text) {
   const k = text.indexOf(KOPF_ENDE);
@@ -379,7 +392,29 @@ export function lies(text) {
   const meilensteine = [];
   MEILENSTEIN.lastIndex = rumpfAnfang;
   for (let m; (m = MEILENSTEIN.exec(text)); ) meilensteine.push({ nummer: Number(m[1]), von: m.index, bis: m.index + m[0].length });
-  return { rumpfAnfang, ueberschriften, absatznummern, meilensteine };
+  const seiten = [];
+  SEITENMARKE.lastIndex = rumpfAnfang;
+  for (let m; (m = SEITENMARKE.exec(text)); ) seiten.push({ von: m.index, marke: `V${m[1]}P${m[2]}` });
+  return { rumpfAnfang, ueberschriften, absatznummern, meilensteine, seiten };
+}
+
+/** Seite (Marke am Seitenende) für eine Zeichenposition: erste Seitenmarke ab `pos`, sonst `null`. */
+export function seiteAn(seiten, pos) {
+  let lo = 0;
+  let hi = seiten.length;
+  while (lo < hi) {
+    const mitte = (lo + hi) >> 1;
+    if (seiten[mitte].von < pos) lo = mitte + 1;
+    else hi = mitte;
+  }
+  return lo < seiten.length ? seiten[lo].marke : null;
+}
+
+/** Position des letzten Inhaltszeichens (Buchstabe außerhalb von Markup) im Bereich [von, bis), sonst `von`. */
+function letztesInhaltszeichen(text, von, bis) {
+  const maskiert = text.slice(von, bis).replace(MARKUP_ZEICHEN, (m) => ' '.repeat(m.length));
+  for (let i = maskiert.length - 1; i >= 0; i--) if (/\p{L}/u.test(maskiert[i])) return von + i;
+  return von;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -603,6 +638,7 @@ export function erzeugeIndex(text, { werk, uri = null, standardThema = null, kor
     MARKUP_ANFANG.lastIndex = 0;
     MARKUP_ANFANG.exec(scheibe);
     const inhaltAb = p.von + Math.min(MARKUP_ANFANG.lastIndex, Math.max(0, scheibe.length - 1));
+    const inhaltBis = Math.max(inhaltAb, letztesInhaltszeichen(text, p.von, p.bis));
     const amAnfang = kapitelAn(kapitel, nachId, inhaltAb);
     const innen = kapitel.filter((k) => k.von > inhaltAb && k.von < p.bis);
     const beteiligt = [amAnfang, ...innen].filter(Boolean);
@@ -614,6 +650,8 @@ export function erzeugeIndex(text, { werk, uri = null, standardThema = null, kor
       bis: p.bis,
       byteVon: bytes.get(p.von),
       byteBis: bytes.get(p.bis),
+      seiteVon: seiteAn(gelesen.seiten, inhaltAb),
+      seiteBis: seiteAn(gelesen.seiten, inhaltBis),
       woerter: zaehleWoerter(sauber),
       koranMarken: (scheibe.match(/@QB@/g) ?? []).length,
       sha256: sha256(Buffer.from(scheibe, 'utf8')),
@@ -644,6 +682,7 @@ export function erzeugeIndex(text, { werk, uri = null, standardThema = null, kor
     k.msVon = a ? a.ms : null;
     k.msBis = b ? b.ms : null;
     k.passagen = a && b ? b.ms - a.ms + 1 : 0;
+    k.seite = seiteAn(gelesen.seiten, k.von);
     k.woerterEigen = zaehleWoerter(bereinige(text.slice(k.von, k.eigenesBis)));
   }
 
@@ -674,6 +713,8 @@ export function erzeugeIndex(text, { werk, uri = null, standardThema = null, kor
     gliederung: art,
     standardThema,
     meilensteine: ms.length,
+    seitenmarken: gelesen.seiten.length,
+    seitenHinweis: 'Seite = Band/Seite der Druckvorlage nach OpenITI-Marke PageV..P.. (Marke am Seitenende); ±1 Seite möglich, am Druck prüfen',
     woerter: woerterGesamt,
     woerterVorErstemKapitel: vorKapitel,
     kapitelJeEbene: ebenen,
@@ -718,18 +759,18 @@ function tsv(zeilen) {
 
 export function passagenTsv(index) {
   return tsv([
-    ['kennung', 'ms', 'zeichen_von', 'zeichen_bis', 'byte_von', 'byte_bis', 'woerter', 'koran_marken', 'sha256', 'kapitel', 'kapitelpfad_umschrift', 'thema', 'themen'],
-    ...index.passagen.map((p) => [p.kennung, p.ms, p.von, p.bis, p.byteVon, p.byteBis, p.woerter, p.koranMarken, p.sha256, p.kapitel, p.kapitelpfadUmschrift, p.thema, p.themen.join(',')]),
+    ['kennung', 'ms', 'zeichen_von', 'zeichen_bis', 'byte_von', 'byte_bis', 'woerter', 'koran_marken', 'sha256', 'kapitel', 'kapitelpfad_umschrift', 'thema', 'themen', 'seite_von', 'seite_bis'],
+    ...index.passagen.map((p) => [p.kennung, p.ms, p.von, p.bis, p.byteVon, p.byteBis, p.woerter, p.koranMarken, p.sha256, p.kapitel, p.kapitelpfadUmschrift, p.thema, p.themen.join(','), p.seiteVon, p.seiteBis]),
   ]);
 }
 
 export function zuordnungTsv(index) {
   const name = Object.fromEntries(THEMEN.map((t) => [t.id, t.umschrift]));
   return tsv([
-    ['kapitel', 'ebene', 'ebene_quelle', 'zeile', 'titel_umschrift', 'thema', 'thema_umschrift', 'unterthema', 'nebenthemen', 'herkunft', 'regeln', 'ms_von', 'ms_bis', 'passagen', 'woerter_eigen'],
+    ['kapitel', 'ebene', 'ebene_quelle', 'zeile', 'titel_umschrift', 'thema', 'thema_umschrift', 'unterthema', 'nebenthemen', 'herkunft', 'regeln', 'ms_von', 'ms_bis', 'passagen', 'woerter_eigen', 'seite'],
     ...index.kapitel.map((k) => [
       k.id, k.ebene, k.ebeneQuelle, k.zeile, k.titelUmschrift, k.thema ?? '-', k.thema ? name[k.thema] : '-', k.unterthema ?? '',
-      k.nebenthemen.join(','), k.herkunft ?? '-', k.regeln.join(' | '), k.msVon, k.msBis, k.passagen, k.woerterEigen,
+      k.nebenthemen.join(','), k.herkunft ?? '-', k.regeln.join(' | '), k.msVon, k.msBis, k.passagen, k.woerterEigen, k.seite,
     ]),
   ]);
 }
