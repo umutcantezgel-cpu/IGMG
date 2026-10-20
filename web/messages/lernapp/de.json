@@ -7,18 +7,204 @@
   "sprache": {
     "eigenname": "Deutsch"
   },
-  "start": {
-    "titel": "Willkommen in der Lern-App",
-    "hinweis": "Hier entsteht die Lern-App. Diese Seite ist ein technischer Platzhalter.",
-    "sprachwahl": "Sprache der Oberfläche"
+  "rahmen": {
+    "zumInhalt": "Zum Inhalt springen",
+    "navigation": "Bereiche der Lern-App",
+    "start": "Start",
+    "fortschritt": "Fortschritt",
+    "wortschatz": "Wortschatz",
+    "einstellungen": "Einstellungen",
+    "fussNavigation": "Weitere Seiten",
+    "quellen": "Quellen und Lizenzen",
+    "datenschutz": "Datenschutz",
+    "impressum": "Impressum",
+    "website": "Website der Gemeinde",
+    "anmelden": "Anmelden",
+    "sprachwahl": "Sprache der Oberfläche",
+    "geraet": "Ohne Konto bleibt dein Fortschritt auf diesem Gerät. Keine Werbung, keine Tracker."
   },
-  "probe": {
-    "titel": "Technische Probe: Mengenangaben",
-    "einheiten": "{n, plural, =0 {Keine Einheit} one {# Einheit} other {# Einheiten}}"
+  "start": {
+    "titel": "Lernen in kleinen Schritten",
+    "einleitung": "Sprachen und Wissen – ruhig, ohne Druck und auch ohne Netz. Fang dort an, wo du gerade stehst."
+  },
+  "heute": {
+    "titel": "Heute",
+    "tagesziel": "Tagesziel",
+    "zielXp": "{erreicht, number} von {ziel, number} XP",
+    "zielLektionen": "{erreicht, number} von {ziel, plural, one {# Lektion} other {# Lektionen}}",
+    "keinZiel": "Kein Tagesziel – du lernst in deinem Tempo.",
+    "zielErreicht": "Tagesziel erreicht. Schön, dass du da bist.",
+    "zielAendern": "Tagesziel ändern",
+    "weiter": "Weiter lernen",
+    "weiterText": "Mach dort weiter, wo du aufgehört hast.",
+    "nochNichts": "Auf diesem Gerät hast du noch nicht gelernt. Wähle unten einen Kurs, um anzufangen.",
+    "faellig": "{n, plural, =0 {Keine Wiederholung fällig} one {# Wiederholung fällig} other {# Wiederholungen fällig}}",
+    "wiederholen": "Jetzt wiederholen"
+  },
+  "kurse": {
+    "sprachenTitel": "Sprachen lernen",
+    "sprachenText": "Wähle die Sprache, die du lernen möchtest. Erklärungen und Übersetzungen kommen in deiner Ausgangssprache.",
+    "andere": "Mit einer anderen Ausgangssprache lernen",
+    "wissenTitel": "Weitere Kurse",
+    "wissenText": "Religiöse Inhalte erscheinen erst, wenn zwei Gelehrte der Gemeinde sie geprüft haben.",
+    "stufen": "Stufen A1 bis C1",
+    "eigeneStufen": "Grundstufe, Aufbaustufe, Vertiefung",
+    "aufDeutsch": "Inhalt auf Deutsch",
+    "oeffnen": "Kurs öffnen",
+    "ziel": {
+      "de": "Deutsch",
+      "tr": "Türkisch",
+      "ar": "Arabisch"
+    },
+    "fuer": {
+      "de": "für Deutschsprachige",
+      "tr": "für Türkischsprachige",
+      "ar": "für Arabischsprachige"
+    },
+    "islamTitel": "Islamisches Wissen",
+    "islamText": "Nach hanefitischer Lehre, mit einer Quelle zu jeder Aussage.",
+    "koranTitel": "Koran-Arabisch verstehen",
+    "koranText": "Häufige Wörter des Korans und ihre Wurzeln – Bedeutungen erst nach Prüfung."
+  },
+  "lernpfad": {
+    "alleKurse": "Alle Kurse",
+    "einheiten": "Lernpfad",
+    "leer": "Die Einheiten dieses Kurses werden gerade vorbereitet. Schau bald wieder vorbei.",
+    "aufDeutsch": "Die Inhalte dieses Kurses sind auf Deutsch.",
+    "pruefHinweis": "Jede Lektion erscheint erst, wenn zwei Gelehrte der Gemeinde sie geprüft haben. Zu jeder Aussage steht die Quelle.",
+    "koranHinweis": "Bedeutungen erscheinen erst nach Prüfung. Zu hören sind nur freigegebene Rezitationen, nie eine Computerstimme.",
+    "einstufung": "Einstufungstest",
+    "einstufungText": "Du kannst schon etwas? Finde heraus, wo du einsteigst.",
+    "wiederholen": "Wiederholen",
+    "wiederholenText": "Was fällig ist, kommt in einer kurzen Runde noch einmal."
+  },
+  "ueben": {
+    "titel": "Üben",
+    "ohneLektion": "Wähle im Lernpfad eine Lektion aus, um zu üben.",
+    "laedt": "Die Lektion wird vorbereitet …",
+    "nichtVerfuegbar": "Diese Lektion ist auf diesem Gerät noch nicht verfügbar.",
+    "zumLernpfad": "Zum Lernpfad"
+  },
+  "wiederholen": {
+    "titel": "Wiederholen",
+    "text": "Hier kommen die Wörter und Sätze, die du bald vergessen würdest – in kleinen Runden.",
+    "leer": "Gerade ist nichts zu wiederholen. Komm später gern wieder."
+  },
+  "einstufung": {
+    "titel": "Einstufungstest",
+    "text": "Rund {anzahl, number} Aufgaben ohne Zeitdruck. Danach schlagen wir dir vor, wo du einsteigst.",
+    "bald": "Der Einstufungstest für diesen Kurs wird gerade vorbereitet."
+  },
+  "tipps": {
+    "titel": "Grammatik-Tipps",
+    "ohneEinheit": "Wähle im Lernpfad eine Einheit aus, um ihre Tipps zu lesen.",
+    "leer": "Für diese Einheit gibt es noch keine Tipps."
+  },
+  "fortschritt": {
+    "titel": "Fortschritt",
+    "einleitung": "Was du gelernt hast, Tag für Tag – nur für dich, auf diesem Gerät.",
+    "leer": "Noch kein Fortschritt auf diesem Gerät. Nach deiner ersten Lektion steht er hier."
+  },
+  "wortschatz": {
+    "titel": "Wortschatz",
+    "einleitung": "Alle Wörter, die du schon kennengelernt hast.",
+    "leer": "Noch keine Wörter auf diesem Gerät. Nach deiner ersten Lektion stehen sie hier."
+  },
+  "einstellungen": {
+    "titel": "Einstellungen",
+    "einleitung": "Alles bleibt auf diesem Gerät gespeichert.",
+    "oberflaeche": "Sprache der Oberfläche",
+    "oberflaecheText": "In dieser Sprache erscheinen Knöpfe, Hinweise und Erklärungen.",
+    "ausgang": "Ausgangssprache",
+    "ausgangText": "Aus dieser Sprache lernst du. Ihre Sprachkurse stehen auf der Startseite zuerst.",
+    "ausgangWieOberflaeche": "Wie die Oberfläche",
+    "tagesziel": "Tagesziel",
+    "tageszielText": "Ein Ziel hilft beim Dranbleiben. Wenn du es nicht erreichst, passiert nichts.",
+    "zielKeins": "Kein Tagesziel",
+    "zielXp": "{n, number} XP am Tag",
+    "zielLektionen": "{n, plural, one {# Lektion am Tag} other {# Lektionen am Tag}}",
+    "ziffern": "Ziffern",
+    "ziffernText": "So erscheinen Zahlen in der arabischen Oberfläche.",
+    "ziffernArab": "Östlich-arabische Ziffern",
+    "ziffernLatn": "Westliche Ziffern",
+    "uebungen": "Übungen",
+    "hoeren": "Hörübungen",
+    "hoerenText": "Wenn du gerade nicht hören kannst, schalte sie aus. Sie werden dann übersprungen.",
+    "sprechen": "Sprechübungen",
+    "sprechenText": "Deine Aufnahme verlässt das Gerät nie. Ausgeschaltet werden Sprechübungen übersprungen.",
+    "bewegung": "Bewegung",
+    "bewegungText": "Die Lern-App folgt deinem Gerät: Ist dort „Bewegung reduzieren“ eingeschaltet, bleiben Übergänge aus.",
+    "gespeichert": "Gespeichert.",
+    "nichtGespeichert": "Auf diesem Gerät kann gerade nichts gespeichert werden.",
+    "daten": "Deine Daten",
+    "datenText": "Ohne Konto bleibt alles auf diesem Gerät. Die Lern-App setzt keine Cookies und nutzt keine Tracker."
+  },
+  "quellen": {
+    "titel": "Quellen und Lizenzen",
+    "einleitung": "Die Lern-App beruht auf freier Software und freien Schriften. Hier steht, von wem sie stammen und unter welcher Lizenz sie stehen. Diese Seite ist auch ohne Netz lesbar.",
+    "inhalteTitel": "Lerninhalte",
+    "inhalteText": "Die Lerninhalte stehen unter der Lizenz CC BY-SA 4.0. Quelle und Namensnennung stehen bei jedem Eintrag im Kurs.",
+    "softwareTitel": "Programmbibliotheken",
+    "schriftenTitel": "Schriften",
+    "lizenz": "Lizenz",
+    "version": "Version",
+    "urheber": "Urheber",
+    "adresse": "Projekt",
+    "lizenztext": "Lizenztext zu {name}"
+  },
+  "fehler": {
+    "titel": "Etwas ist schiefgelaufen",
+    "text": "Die Seite konnte nicht geladen werden. Dein Fortschritt auf diesem Gerät bleibt erhalten.",
+    "nochmal": "Erneut versuchen",
+    "start": "Zum Start der Lern-App"
   },
   "nichtGefunden": {
     "titel": "Seite nicht gefunden",
     "text": "Diese Seite gibt es in der Lern-App nicht.",
     "zurueck": "Zum Start der Lern-App"
+  },
+  "anmelden": {
+    "titel": "Anmelden",
+    "einleitung": "Mit einem Konto der Gemeinde kannst du deinen Fortschritt auf mehreren Geräten nutzen. Ohne Konto funktioniert die Lern-App genauso.",
+    "reiter": "Art der Anmeldung",
+    "reiterEmail": "E-Mail",
+    "reiterKind": "Kinderzugang",
+    "email": "E-Mail-Adresse",
+    "passwort": "Passwort",
+    "benutzername": "Benutzername",
+    "zeigen": "Passwort anzeigen",
+    "absenden": "Anmelden",
+    "laeuft": "Wird geprüft …",
+    "kindText": "Kinder melden sich mit dem Benutzernamen an, den ihre Eltern bekommen haben.",
+    "kindVergessen": "Benutzername oder Passwort vergessen? Frag deine Eltern oder deine Lehrkraft.",
+    "oder": "oder",
+    "passkey": "Mit Passkey anmelden",
+    "passwortVergessen": "Passwort vergessen?",
+    "keinKonto": "Noch kein Konto?",
+    "registrieren": "Konto anlegen",
+    "zweiFaktorTitel": "Bestätigungscode",
+    "zweiFaktorText": "Gib den sechsstelligen Code aus deiner Authenticator-App ein.",
+    "code": "Code aus der App",
+    "ersatzcode": "Ersatzcode",
+    "ersatzVerwenden": "Ersatzcode verwenden",
+    "appVerwenden": "Code aus der App verwenden",
+    "bestaetigen": "Bestätigen",
+    "neuAnmelden": "Neu anmelden",
+    "angemeldet": "Du bist angemeldet",
+    "angemeldetAls": "Angemeldet als {name}.",
+    "weiter": "Weiter zur Lern-App",
+    "abmelden": "Abmelden",
+    "abgemeldet": "Du hast dich abgemeldet.",
+    "fehler": {
+      "anmelden": "E-Mail-Adresse oder Passwort stimmt nicht.",
+      "zuViele": "Zu viele Versuche. Bitte warte ein paar Minuten und versuche es dann noch einmal.",
+      "unbestaetigt": "Bitte bestätige zuerst deine E-Mail-Adresse. Den Link dazu haben wir dir per E-Mail geschickt.",
+      "kind": "Benutzername oder Passwort stimmt nicht.",
+      "code": "Der Code stimmt nicht. Bitte versuche es noch einmal.",
+      "abgelaufen": "Die Anmeldung ist abgelaufen. Bitte melde dich neu an.",
+      "passkey": "Die Anmeldung mit Passkey hat nicht geklappt.",
+      "passkeyAbgebrochen": "Die Anmeldung mit Passkey wurde abgebrochen.",
+      "passkeyVerwaltung": "Konten mit Aufgaben in der Gemeinde melden sich mit E-Mail, Passwort und Code an."
+    }
   }
 }

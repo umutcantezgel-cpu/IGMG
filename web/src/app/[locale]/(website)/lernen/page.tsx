@@ -1,10 +1,12 @@
-import { BookHeart, BookOpen, Highlighter, PenLine, Users } from 'lucide-react';
+import { BookHeart, BookOpen, BookOpenCheck, Highlighter, Languages, PenLine, Users } from 'lucide-react';
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Weg, type WegStation } from '@/components/website/elifbe/Weg';
 import { PageHeader } from '@/components/website/PageHeader';
 import { Seitenrahmen } from '@/components/website/Seitenrahmen';
 import { Link } from '@/i18n/link';
+import type { Locale } from '@/i18n/routing';
+import { funktionAn } from '@/lib/funktionen';
 import { metadatenFuer } from '@/lib/seo/metadaten';
 
 export const ensureStatic = 'navigation';
@@ -18,11 +20,15 @@ const symbol = 'size-6 stroke-weiss';
 
 /**
  * Lern-Hub /lernen (Erzählansicht, B-24): der große Lernweg Elifbe → Tajwid → Koran → Hifz → Kurse. Kurze Erklärtexte
- * ohne religiöse Aussagen; Hifz ohne eigene Seite (Plakette „Folgt bald“ bis zum Angebot der Gemeinde). Vollständig
- * statisch.
+ * ohne religiöse Aussagen; Hifz ohne eigene Seite (Plakette „Folgt bald“ bis zum Angebot der Gemeinde). Darunter die
+ * Stationen der Lern-App „Sprachen lernen“ und „Wissen üben“ als einfache Links (ADR 0037 Nr. 9) in der passenden
+ * Oberflächensprache (tr → tr, de und en → de); nur mit Schalter `lernapp` (aus: die Stationen verschwinden).
+ * Vollständig statisch.
  */
 export default async function LernenSeite() {
   const t = await getTranslations('lernen');
+  const sprache = (await getLocale()) as Locale;
+  const lernApp = (await funktionAn('lernapp')) ? `/lern-app/${sprache === 'tr' ? 'tr' : 'de'}` : null;
   const tk = await getTranslations('kopf');
   const station = (nr: number) => t('station', { nr });
   const stationen: WegStation[] = [
@@ -80,6 +86,37 @@ export default async function LernenSeite() {
           </div>
           <Weg stationen={stationen} waagerecht beschriftung={t('wegTitel')} />
         </section>
+        {lernApp ? (
+          <section aria-labelledby="lern-app" className="flex flex-col gap-8">
+            <div className="flex max-w-einleitung flex-col gap-3">
+              <h2 id="lern-app" className="text-display-2">
+                {t('lernApp.titel')}
+              </h2>
+              <p className="text-20 leading-einleitung text-pretty text-tinte-2">{t('lernApp.text')}</p>
+            </div>
+            <Weg
+              beschriftung={t('lernApp.titel')}
+              stationen={[
+                {
+                  kennung: t('lernApp.kennung'),
+                  titel: t('lernApp.sprachenTitel'),
+                  text: t('lernApp.sprachenText'),
+                  adresse: lernApp,
+                  linkText: t('lernApp.sprachenLink'),
+                  zeichen: <Languages aria-hidden className={symbol} />,
+                },
+                {
+                  kennung: t('lernApp.kennung'),
+                  titel: t('lernApp.wissenTitel'),
+                  text: t('lernApp.wissenText'),
+                  adresse: `${lernApp}/islam`,
+                  linkText: t('lernApp.wissenLink'),
+                  zeichen: <BookOpenCheck aria-hidden className={symbol} />,
+                },
+              ]}
+            />
+          </section>
+        ) : null}
         <section aria-labelledby="begleitung" className="flex flex-col items-start gap-4 rounded-lg bg-sand p-6 md:p-10">
           <h2 id="begleitung" className="text-display-2">
             {t('begleitungTitel')}

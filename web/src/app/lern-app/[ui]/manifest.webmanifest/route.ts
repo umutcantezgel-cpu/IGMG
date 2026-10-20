@@ -1,14 +1,17 @@
-import { OBERFLAECHEN, istOberflaeche, lernTexte, richtung } from '@/lib/lernapp/texte';
+import { LERNAPP_FARBE } from '@/lib/lernapp/farben';
+import { OBERFLAECHEN, istOberflaeche, richtung } from '@/lib/lernapp/kurse';
+import { lernTexte } from '@/lib/lernapp/texte';
 
 export function generateStaticParams() {
   return OBERFLAECHEN.map((sprache) => ({ ui: sprache }));
 }
 
 /**
- * Web-App-Manifest der Lern-App je Oberflächensprache (ADR 0037 Nr. 8): eigene `id` und eigener `scope` `/lern-app/`,
- * getrennt vom Manifest der Website (`app/manifest.ts`, Scope `/`). Gleiche `id` für alle Sprachen: eine installierte
- * App, die in der Sprache startet, in der sie installiert wurde. Name und Symbole sind Platzhalter (OFFENE FRAGE
- * ADR 0037, Symbole aus dem Achtstern folgen). Statisch beim Bau erzeugt.
+ * Web-App-Manifest der Lern-App je Oberflächensprache (ADR 0037 Nr. 8 mit Fortschreibung S1 Nr. 5): eine `id`
+ * `/lern-app/` für alle drei Sprachen (eine installierte App, die in der Sprache startet, in der sie installiert wurde),
+ * `scope` `/lern-app/`, getrennt vom Manifest der Website (`app/manifest.ts`, Scope `/`). Name als Platzhalter, bis der
+ * Vorstand entscheidet (OFFENE FRAGE ADR 0037); Symbole aus dem Achtstern (`scripts/lernapp-symbole.mjs`). Statisch beim
+ * Bau erzeugt, ein Jahr im CDN (`s-maxage`); ein neuer Bau ersetzt es.
  */
 export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app/[ui]/manifest.webmanifest'>) {
   const { ui } = await params;
@@ -24,13 +27,15 @@ export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app
     start_url: `/lern-app/${ui}`,
     scope: '/lern-app/',
     display: 'standalone',
-    background_color: '#fcfaf6',
-    theme_color: '#065f46',
+    background_color: LERNAPP_FARBE.papier,
+    theme_color: LERNAPP_FARBE.gruen,
     icons: [
-      { src: '/symbole/symbol-192.png', sizes: '192x192', type: 'image/png' },
-      { src: '/symbole/symbol-512.png', sizes: '512x512', type: 'image/png' },
-      { src: '/symbole/symbol-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+      { src: '/lern-app/symbole/symbol-192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/lern-app/symbole/symbol-512.png', sizes: '512x512', type: 'image/png' },
+      { src: '/lern-app/symbole/symbol-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
     ],
   };
-  return new Response(JSON.stringify(manifest), { headers: { 'Content-Type': 'application/manifest+json; charset=utf-8' } });
+  return new Response(JSON.stringify(manifest), {
+    headers: { 'Content-Type': 'application/manifest+json; charset=utf-8', 'Cache-Control': 's-maxage=31536000' },
+  });
 }

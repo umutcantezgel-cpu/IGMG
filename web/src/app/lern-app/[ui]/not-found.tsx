@@ -1,21 +1,31 @@
-import { ui } from 'next/root-params';
-import { istOberflaeche, lernTexte } from '@/lib/lernapp/texte';
+import { Rahmen } from '@/components/lernapp/Rahmen';
+import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
+import { lernAdresse } from '@/lib/lernapp/adressen';
+import { oberflaeche } from '@/lib/lernapp/seite';
+import { lernTexte } from '@/lib/lernapp/texte';
 
 /**
- * Nicht gefunden innerhalb der Lern-App (ADR 0037 Nr. 2): in der Oberflächensprache, im Wurzel-Layout der Lern-App
- * (`lang`, `dir`). Greift, wenn `notFound()` innerhalb von `[ui]` ausgelöst wird.
+ * Nicht gefunden innerhalb der Lern-App (ADR 0037 Nr. 2): eigene Gestalt im Rahmen der Lern-App, in der
+ * Oberflächensprache und im Wurzel-Layout der Lern-App (`lang`, `dir`). Greift für `notFound()` in jeder Seite unter
+ * `[ui]`, auch für die Fangroute `[ui]/[...rest]` und den abgeschalteten Schalter `lernapp`.
  */
 export default async function LernAppNichtGefunden() {
-  const wert = await ui();
-  const sprache = istOberflaeche(wert) ? wert : 'de';
-  const t = lernTexte(sprache);
+  const ui = await oberflaeche();
+  const t = lernTexte(ui);
   return (
-    <main id="inhalt" className="mx-auto flex max-w-(--container-inhalt) flex-col items-start gap-4 px-4 py-abschnitt md:px-8">
-      <h1 className="text-display-1">{t('nichtGefunden.titel')}</h1>
-      <p className="max-w-text text-20 leading-einleitung text-tinte-2">{t('nichtGefunden.text')}</p>
-      <a href={`/lern-app/${sprache}`} className="inline-flex min-h-6 items-center underline underline-offset-4">
-        {t('nichtGefunden.zurueck')}
-      </a>
-    </main>
+    <Rahmen ui={ui} bereich={null} pfad="">
+      <Seitenkopf
+        titel={t('nichtGefunden.titel')}
+        einleitung={t('nichtGefunden.text')}
+        zusatz={
+          <a
+            href={lernAdresse(ui)}
+            className="mt-2 inline-flex min-h-12 items-center rounded-md bg-gruen-700 px-6 font-bold text-weiss no-underline hover:bg-gruen-800 hover:text-weiss"
+          >
+            {t('nichtGefunden.zurueck')}
+          </a>
+        }
+      />
+    </Rahmen>
   );
 }

@@ -18,6 +18,7 @@ import { PASSWORT_MIN } from '@/lib/konto/passwort-staerke';
 import { istKinderAdresse, sichererRuecksprung } from '@/lib/konto/regeln';
 import { bestaetigeKonto, legeRegistrierungAn } from '@/lib/konto/registrierung';
 import { verlangeKontenAktion, zielNachAnmeldung } from '@/lib/konto/zugang';
+import { lernAdresse, oberflaecheVon } from '@/lib/lernapp/adressen';
 import { istUnzustellbar } from '@/lib/mail/adresse';
 import { versendeOffeneMails } from '@/lib/mail/ausgang';
 import { ladeKonto } from '@/lib/rechte/gemeinde';
@@ -47,6 +48,16 @@ export type KontoZustand = {
 const spracheSchema = z.enum(['de', 'tr', 'en']);
 const sprachAus = (fd: FormData): Locale => spracheSchema.catch('de').parse(fd.get('sprache'));
 const weiterAus = (fd: FormData): string | null => sichererRuecksprung(fd.get('weiter'));
+
+/**
+ * Zweiter Faktor auf der Anmeldeseite, von der die Anmeldung kam: Website (`/anmelden`) oder Lern-App
+ * (`/lern-app/<ui>/anmelden`, ADR 0037 Nr. 4 – eine installierte PWA hat eine eigene Cookie-Ablage und bleibt im Scope).
+ */
+function zweiFaktorZiel(sprache: Locale, weiter: string | null): string {
+  const lernApp = weiter ? oberflaecheVon(weiter) : null;
+  if (lernApp && weiter) return `${lernAdresse(lernApp, 'anmelden')}?${new URLSearchParams({ schritt: 'zwei-faktor', weiter })}`;
+  return pfadFuer({ pathname: '/anmelden', query: { schritt: 'zwei-faktor', ...(weiter ? { weiter } : {}) } }, sprache);
+}
 
 const GRENZE_IP: Grenze = { max: 10, fensterSekunden: 600 };
 const GRENZE_KONTO: Grenze = { max: 8, fensterSekunden: 900 };
@@ -101,7 +112,7 @@ export async function kontoAnmelden(_vorher: KontoZustand, daten: FormData): Pro
   }
   const weiter = weiterAus(daten);
   if (ergebnis && typeof ergebnis === 'object' && 'twoFactorRedirect' in ergebnis && ergebnis.twoFactorRedirect) {
-    redirect(pfadFuer({ pathname: '/anmelden', query: { schritt: 'zwei-faktor', ...(weiter ? { weiter } : {}) } }, sprache));
+    redirect(zweiFaktorZiel(sprache, weiter));
   }
   const benutzer = benutzerAus(ergebnis);
   if (!benutzer) return { fehler: 'anmelden.fehler', werte: { email } };
@@ -116,7 +127,10 @@ export async function kontoAnmelden(_vorher: KontoZustand, daten: FormData): Pro
 
 const kinderSchema = z.object({ benutzername: z.string().min(1).max(64), passwort: z.string().min(1).max(128) });
 
-/** Kinderzugang: Benutzername + Passwort, nur über diese Action (HTTP-Endpunkt gesperrt), Rate je Konto und IP. */
+/**
+ * Kinderzugang: Benutzername + Passwort, nur über diese Action (HTTP-Endpunkt gesperrt), Rate je Konto und IP. Danach
+ * Mein Bereich oder der geprüfte Rücksprung (Anmeldung in der Lern-App).
+ */
 export async function kinderAnmelden(_vorher: KontoZustand, daten: FormData): Promise<KontoZustand> {
   await verlangeKontenAktion();
   const sprache = sprachAus(daten);
@@ -138,7 +152,7 @@ export async function kinderAnmelden(_vorher: KontoZustand, daten: FormData): Pr
   const benutzer = benutzerAus(ergebnis);
   if (!benutzer) return { fehler: 'kinder.fehler', werte: { benutzername: name.wert } };
   await protokolliere({ benutzerId: benutzer.id, aktion: 'anmeldung.erfolg', details: { zweiFaktor: false, weg: 'kind' } });
-  redirect(pfadFuer('/mein-bereich', sprache));
+  redirect(weiterAus(daten) ?? pfadFuer('/mein-bereich', sprache));
 }
 
 const codeSchema = z.object({ code: z.string().regex(/^\d{6}$/) });
@@ -448,7 +462,9 @@ export async function kontoAbmelden(daten: FormData): Promise<void> {
   const k = await ladeKonto();
   await auth.api.signOut({ headers: await headers() }).catch(() => undefined);
   if (k) await protokolliere({ benutzerId: k.benutzerId, aktion: 'abmeldung' });
-  redirect(
-    (await funktionAn('konten')) ? pfadFuer({ pathname: '/anmelden', query: { hinweis: 'abgemeldet' } }, sprache) : pfadFuer('/', sprache),
-  );
+  const konten = await funktionAn('konten');
+  // Aus der Lern-App: zurück in ihren Scope (Anmeldeseite mit Hinweis bzw. Start der Lern-App), ADR 0037 Nr. 4
+  const lernApp = oberflaecheVon(weiterAus(daten) ?? '');
+  if (lernApp) redirect(konten ? `${lernAdresse(lernApp, 'anmelden')}?hinweis=abgemeldet` : lernAdresse(lernApp));
+  redirect(konten ? pfadFuer({ pathname: '/anmelden', query: { hinweis: 'abgemeldet' } }, sprache) : pfadFuer('/', sprache));
 }

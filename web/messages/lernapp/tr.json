@@ -7,18 +7,204 @@
   "sprache": {
     "eigenname": "Türkçe"
   },
-  "start": {
-    "titel": "Öğrenme uygulamasına hoş geldiniz",
-    "hinweis": "Öğrenme uygulaması burada hazırlanıyor. Bu sayfa teknik bir yer tutucudur.",
-    "sprachwahl": "Arayüz dili"
+  "rahmen": {
+    "zumInhalt": "İçeriğe geç",
+    "navigation": "Öğrenme uygulamasının bölümleri",
+    "start": "Başlangıç",
+    "fortschritt": "İlerleme",
+    "wortschatz": "Kelimeler",
+    "einstellungen": "Ayarlar",
+    "fussNavigation": "Diğer sayfalar",
+    "quellen": "Kaynaklar ve lisanslar",
+    "datenschutz": "Gizlilik",
+    "impressum": "Künye",
+    "website": "Cemaatin web sitesi",
+    "anmelden": "Giriş yap",
+    "sprachwahl": "Arayüz dili",
+    "geraet": "Hesap olmadan ilerlemen bu cihazda kalır. Reklam yok, izleyici yok."
   },
-  "probe": {
-    "titel": "Teknik deneme: miktar ifadeleri",
-    "einheiten": "{n, plural, =0 {Ünite yok} one {# ünite} other {# ünite}}"
+  "start": {
+    "titel": "Küçük adımlarla öğren",
+    "einleitung": "Diller ve bilgi – sakin, baskı olmadan ve internetsiz de. Şu an neredeysen oradan başla."
+  },
+  "heute": {
+    "titel": "Bugün",
+    "tagesziel": "Günlük hedef",
+    "zielXp": "{erreicht, number} / {ziel, number} XP",
+    "zielLektionen": "{erreicht, number} / {ziel, plural, one {# ders} other {# ders}}",
+    "keinZiel": "Günlük hedef yok – kendi hızında öğreniyorsun.",
+    "zielErreicht": "Günlük hedefe ulaştın. Burada olman ne güzel.",
+    "zielAendern": "Günlük hedefi değiştir",
+    "weiter": "Öğrenmeye devam et",
+    "weiterText": "Kaldığın yerden devam et.",
+    "nochNichts": "Bu cihazda henüz öğrenmedin. Başlamak için aşağıdan bir kurs seç.",
+    "faellig": "{n, plural, =0 {Tekrar edilecek bir şey yok} one {# tekrar bekliyor} other {# tekrar bekliyor}}",
+    "wiederholen": "Şimdi tekrar et"
+  },
+  "kurse": {
+    "sprachenTitel": "Dil öğren",
+    "sprachenText": "Öğrenmek istediğin dili seç. Açıklamalar ve çeviriler ana dilinde gelir.",
+    "andere": "Başka bir ana dille öğren",
+    "wissenTitel": "Diğer kurslar",
+    "wissenText": "Dinî içerikler, cemaatin iki âlimi tarafından incelendikten sonra görünür.",
+    "stufen": "A1'den C1'e seviyeler",
+    "eigeneStufen": "Temel, orta ve ileri seviye",
+    "aufDeutsch": "İçerik Almanca",
+    "oeffnen": "Kursu aç",
+    "ziel": {
+      "de": "Almanca",
+      "tr": "Türkçe",
+      "ar": "Arapça"
+    },
+    "fuer": {
+      "de": "Almanca konuşanlar için",
+      "tr": "Türkçe konuşanlar için",
+      "ar": "Arapça konuşanlar için"
+    },
+    "islamTitel": "İslami bilgi",
+    "islamText": "Hanefi mezhebine göre, her ifade için bir kaynakla.",
+    "koranTitel": "Kur'an Arapçasını anlamak",
+    "koranText": "Kur'an'da sık geçen kelimeler ve kökleri – anlamlar ancak incelemeden sonra."
+  },
+  "lernpfad": {
+    "alleKurse": "Tüm kurslar",
+    "einheiten": "Öğrenme yolu",
+    "leer": "Bu kursun üniteleri şu an hazırlanıyor. Yakında tekrar bak.",
+    "aufDeutsch": "Bu kursun içerikleri Almancadır.",
+    "pruefHinweis": "Her ders, cemaatin iki âlimi tarafından incelendikten sonra görünür. Her ifadenin yanında kaynağı yazar.",
+    "koranHinweis": "Anlamlar ancak incelemeden sonra görünür. Sadece onaylanmış kıraatler dinlenir, asla bilgisayar sesi değil.",
+    "einstufung": "Seviye testi",
+    "einstufungText": "Biraz biliyor musun? Nereden başlayacağını öğren.",
+    "wiederholen": "Tekrar et",
+    "wiederholenText": "Zamanı gelenler kısa bir turda yeniden gelir."
+  },
+  "ueben": {
+    "titel": "Alıştırma",
+    "ohneLektion": "Alıştırma yapmak için öğrenme yolundan bir ders seç.",
+    "laedt": "Ders hazırlanıyor …",
+    "nichtVerfuegbar": "Bu ders bu cihazda henüz kullanılamıyor.",
+    "zumLernpfad": "Öğrenme yoluna"
+  },
+  "wiederholen": {
+    "titel": "Tekrar et",
+    "text": "Burada yakında unutacağın kelimeler ve cümleler küçük turlar hâlinde gelir.",
+    "leer": "Şu an tekrar edilecek bir şey yok. Sonra yine gel."
+  },
+  "einstufung": {
+    "titel": "Seviye testi",
+    "text": "Zaman baskısı olmadan yaklaşık {anzahl, number} soru. Ardından sana nereden başlayabileceğini öneririz.",
+    "bald": "Bu kursun seviye testi şu an hazırlanıyor."
+  },
+  "tipps": {
+    "titel": "Dil bilgisi ipuçları",
+    "ohneEinheit": "İpuçlarını okumak için öğrenme yolundan bir ünite seç.",
+    "leer": "Bu ünite için henüz ipucu yok."
+  },
+  "fortschritt": {
+    "titel": "İlerleme",
+    "einleitung": "Gün gün öğrendiklerin – sadece senin için, bu cihazda.",
+    "leer": "Bu cihazda henüz ilerleme yok. İlk dersinden sonra burada görünür."
+  },
+  "wortschatz": {
+    "titel": "Kelimeler",
+    "einleitung": "Şimdiye kadar tanıştığın bütün kelimeler.",
+    "leer": "Bu cihazda henüz kelime yok. İlk dersinden sonra burada görünür."
+  },
+  "einstellungen": {
+    "titel": "Ayarlar",
+    "einleitung": "Her şey bu cihazda kaydedilir.",
+    "oberflaeche": "Arayüz dili",
+    "oberflaecheText": "Düğmeler, uyarılar ve açıklamalar bu dilde görünür.",
+    "ausgang": "Ana dil",
+    "ausgangText": "Bu dilden öğreniyorsun. Bu dilin kursları başlangıç sayfasında önce gelir.",
+    "ausgangWieOberflaeche": "Arayüz dili ile aynı",
+    "tagesziel": "Günlük hedef",
+    "tageszielText": "Bir hedef devam etmene yardım eder. Ulaşamazsan hiçbir şey olmaz.",
+    "zielKeins": "Günlük hedef yok",
+    "zielXp": "Günde {n, number} XP",
+    "zielLektionen": "{n, plural, one {Günde # ders} other {Günde # ders}}",
+    "ziffern": "Rakamlar",
+    "ziffernText": "Arapça arayüzde sayılar böyle görünür.",
+    "ziffernArab": "Doğu Arap rakamları",
+    "ziffernLatn": "Batı rakamları",
+    "uebungen": "Alıştırmalar",
+    "hoeren": "Dinleme alıştırmaları",
+    "hoerenText": "Şu an dinleyemiyorsan kapat. O zaman atlanırlar.",
+    "sprechen": "Konuşma alıştırmaları",
+    "sprechenText": "Ses kaydın asla cihazdan çıkmaz. Kapalıysa konuşma alıştırmaları atlanır.",
+    "bewegung": "Hareket",
+    "bewegungText": "Öğrenme uygulaması cihazına uyar: Orada „hareketi azalt“ açıksa geçişler olmaz.",
+    "gespeichert": "Kaydedildi.",
+    "nichtGespeichert": "Bu cihazda şu an bir şey kaydedilemiyor.",
+    "daten": "Verilerin",
+    "datenText": "Hesap olmadan her şey bu cihazda kalır. Öğrenme uygulaması çerez kullanmaz ve izleyici kullanmaz."
+  },
+  "quellen": {
+    "titel": "Kaynaklar ve lisanslar",
+    "einleitung": "Öğrenme uygulaması özgür yazılıma ve özgür yazı tiplerine dayanır. Burada kimden geldikleri ve hangi lisansla kullanıldıkları yazar. Bu sayfa internetsiz de okunabilir.",
+    "inhalteTitel": "Öğrenme içerikleri",
+    "inhalteText": "Öğrenme içerikleri CC BY-SA 4.0 lisansıyla sunulur. Kaynak ve atıf, kurstaki her kaydın yanında yazar.",
+    "softwareTitel": "Program kütüphaneleri",
+    "schriftenTitel": "Yazı tipleri",
+    "lizenz": "Lisans",
+    "version": "Sürüm",
+    "urheber": "Hak sahibi",
+    "adresse": "Proje",
+    "lizenztext": "{name} lisans metni"
+  },
+  "fehler": {
+    "titel": "Bir şeyler ters gitti",
+    "text": "Sayfa yüklenemedi. Bu cihazdaki ilerlemen korunuyor.",
+    "nochmal": "Tekrar dene",
+    "start": "Öğrenme uygulamasının başına"
   },
   "nichtGefunden": {
     "titel": "Sayfa bulunamadı",
     "text": "Öğrenme uygulamasında böyle bir sayfa yok.",
-    "zurueck": "Öğrenme uygulamasının başlangıcına"
+    "zurueck": "Öğrenme uygulamasının başına"
+  },
+  "anmelden": {
+    "titel": "Giriş yap",
+    "einleitung": "Cemaat hesabınla ilerlemeni birden fazla cihazda kullanabilirsin. Öğrenme uygulaması hesap olmadan da aynı şekilde çalışır.",
+    "reiter": "Giriş türü",
+    "reiterEmail": "E-posta",
+    "reiterKind": "Çocuk girişi",
+    "email": "E-posta adresi",
+    "passwort": "Şifre",
+    "benutzername": "Kullanıcı adı",
+    "zeigen": "Şifreyi göster",
+    "absenden": "Giriş yap",
+    "laeuft": "Kontrol ediliyor …",
+    "kindText": "Çocuklar, ebeveynlerinin aldığı kullanıcı adıyla giriş yapar.",
+    "kindVergessen": "Kullanıcı adını veya şifreni mi unuttun? Ebeveynlerine veya öğretmenine sor.",
+    "oder": "veya",
+    "passkey": "Passkey ile giriş yap",
+    "passwortVergessen": "Şifreni mi unuttun?",
+    "keinKonto": "Henüz hesabın yok mu?",
+    "registrieren": "Hesap oluştur",
+    "zweiFaktorTitel": "Onay kodu",
+    "zweiFaktorText": "Doğrulama uygulamandaki altı haneli kodu gir.",
+    "code": "Uygulamadaki kod",
+    "ersatzcode": "Yedek kod",
+    "ersatzVerwenden": "Yedek kod kullan",
+    "appVerwenden": "Uygulamadaki kodu kullan",
+    "bestaetigen": "Onayla",
+    "neuAnmelden": "Yeniden giriş yap",
+    "angemeldet": "Giriş yaptın",
+    "angemeldetAls": "{name} olarak giriş yapıldı.",
+    "weiter": "Öğrenme uygulamasına devam et",
+    "abmelden": "Çıkış yap",
+    "abgemeldet": "Çıkış yaptın.",
+    "fehler": {
+      "anmelden": "E-posta adresi veya şifre doğru değil.",
+      "zuViele": "Çok fazla deneme yapıldı. Lütfen birkaç dakika bekle ve sonra tekrar dene.",
+      "unbestaetigt": "Lütfen önce e-posta adresini onayla. Onay bağlantısını sana e-posta ile gönderdik.",
+      "kind": "Kullanıcı adı veya şifre doğru değil.",
+      "code": "Kod doğru değil. Lütfen tekrar dene.",
+      "abgelaufen": "Girişin süresi doldu. Lütfen yeniden giriş yap.",
+      "passkey": "Passkey ile giriş olmadı.",
+      "passkeyAbgebrochen": "Passkey ile giriş iptal edildi.",
+      "passkeyVerwaltung": "Cemaatte görevi olan hesaplar e-posta, şifre ve kodla giriş yapar."
+    }
   }
 }
