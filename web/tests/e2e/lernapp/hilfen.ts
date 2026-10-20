@@ -115,6 +115,10 @@ async function wortbank(page: Page, art: Bedienung, woerter: string[]) {
       await kachel(w).focus();
       await page.keyboard.press('Enter');
     }
+    // Die Kachel steht in der Antwort; der Fokus wandert erst im nächsten Bild (requestAnimationFrame) zur nächsten Kachel –
+    // abwarten, sonst landet „Enter“ unter Last auf der Kachel, die der Spieler gerade fokussiert.
+    await expect(kachel(w)).toHaveCount(0);
+    await page.evaluate(() => new Promise<void>((fertig) => requestAnimationFrame(() => requestAnimationFrame(() => fertig()))));
   }
   const pruefen = page.getByRole('button', { name: t.pruefen, exact: true });
   if (art === 'tippen') await pruefen.tap();

@@ -6,9 +6,8 @@ import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
-import { haengeAn } from '@/lib/lernapp/lokal/ausgang';
 import type { Profil, Speicher } from '@/lib/lernapp/lokal/db';
-import { ladePaket, ladeVerzeichnis, paketImVorrat } from '@/lib/lernapp/lokal/pakete';
+import { ladeVerzeichnis, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
@@ -17,7 +16,14 @@ import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
 import type { SpielerTexte } from '../typen';
 
 /** Spieler als eigener Chunk (KERN 4.0 §9: erst in der Lektion); Übungstypen lädt er selbst per `import()`. */
-const Spieler = lazy(() => import('../Spieler').then((m) => ({ default: m.Spieler })));
+const ladeSpieler = () => import('../Spieler');
+const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
+/**
+ * Was erst die Lektion braucht – volle Prüfung des Pakets (Zod) und der Ausgang der Ereignisse – als eigener Chunk, beim
+ * Öffnen parallel zu Gerät, Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT).
+ */
+const ladeLektionsteile = () => Promise.all([import('@/lib/lernapp/lokal/pakete'), import('@/lib/lernapp/lokal/ausgang')]);
+type Ausgang = Awaited<ReturnType<typeof ladeLektionsteile>>[1];
 
 export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
 
@@ -32,7 +38,16 @@ export class SpielerGrenze extends Component<{ ersatz: ReactNode; children: Reac
   }
 }
 
-type Bereit = { art: 'bereit'; sp: Speicher; profil: Profil; v: Verzeichnis; paket: Paket; lektion: Lektion; ziffern: Ziffern };
+type Bereit = {
+  art: 'bereit';
+  sp: Speicher;
+  profil: Profil;
+  v: Verzeichnis;
+  paket: Paket;
+  lektion: Lektion;
+  ziffern: Ziffern;
+  haengeAn: Ausgang['haengeAn'];
+};
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
 
 /**
@@ -64,7 +79,13 @@ export function UebenInsel({
     let aktiv = true;
     async function laden(): Promise<Zustand> {
       if (!l) return { art: 'ohne' };
-      const [{ sp, profil }, e, v] = await Promise.all([geraet(ui), einstellungsSpeicher(ui).laden(), ladeVerzeichnis(kurs)]);
+      void ladeSpieler().catch(() => undefined);
+      const [{ sp, profil }, e, v, [{ ladePaket }, { haengeAn }]] = await Promise.all([
+        geraet(ui),
+        einstellungsSpeicher(ui).laden(),
+        ladeVerzeichnis(kurs),
+        ladeLektionsteile(),
+      ]);
       const einheit = v && v.kurs === kurs ? v.einheiten.find((x) => x.schluessel === einheitDerLektion(v, l)) : undefined;
       const paket = v && einheit ? await ladePaket(sp, kurs, einheit) : null;
       const lektion = paket?.lektionen.find((x) => x.schluessel === l);
@@ -73,7 +94,7 @@ export function UebenInsel({
       // die nächste Einheit automatisch speichern (nicht abwarten)
       const naechste = naechsteEinheit(v, einheit.schluessel);
       if (naechste) void ladePaket(sp, kurs, naechste).catch(() => null);
-      return { art: 'bereit', sp, profil, v, paket, lektion, ziffern: e.ziffern };
+      return { art: 'bereit', sp, profil, v, paket, lektion, ziffern: e.ziffern, haengeAn };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -99,7 +120,7 @@ export function UebenInsel({
     );
   }
 
-  const { sp, profil, v, paket, lektion } = z;
+  const { sp, profil, v, paket, lektion, haengeAn } = z;
   const melde = (e: EreignisEntwurf) => {
     kette.current = kette.current.then(() => haengeAn(sp, profil, e)).catch(() => undefined);
   };
@@ -109,7 +130,7 @@ export function UebenInsel({
     const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
     await leiteNeuAb(sp, profil.id, heute());
     const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
-    const folgePaket = folgeEinheit ? await paketImVorrat(kurs, folgeEinheit) : null;
+    const folgePaket = folgeEinheit ? await paketKopfImVorrat(kurs, folgeEinheit) : null;
     const weiter = naechsteLektion(paket, lektion.schluessel, folgePaket);
     await merkeWeiter(
       sp,

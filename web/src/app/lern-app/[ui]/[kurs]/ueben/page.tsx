@@ -29,7 +29,11 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
   const lernpfad = { adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') };
   return (
     <Rahmen ui={ui} bereich={null} pfad={`${kurs}/ueben`}>
-      <Seitenkopf zurueck={{ adresse: lernpfad.adresse, text: kursTitel(ui, kurs) }} titel={t('ueben.titel')} />
+      <Seitenkopf
+        zurueck={{ adresse: lernpfad.adresse, text: kursTitel(ui, kurs) }}
+        titel={t('ueben.titel')}
+        einleitung={t('ueben.text')}
+      />
       {/* Platz für den Spieler (eine Bildschirmhöhe), damit der Fuß beim Laden nicht springt (CLS) */}
       <div className="min-h-svh">
         <Suspense fallback={<p className="text-18 text-tinte-2">{t('ueben.laedt')}</p>}>
