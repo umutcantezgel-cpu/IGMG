@@ -111,6 +111,9 @@ describe('Anmeldung im Scope (Nonce-CSP, noindex, no-store wie die Konto-Seiten)
     const antwort = proxy(anfrage('/lern-app/tr/anmelden'));
     expect(antwort.headers.get('x-middleware-rewrite')).toBe(`${BASIS}/lern-app/tr/_`);
     expect(antwort.headers.get('X-Robots-Tag')).toBe('noindex, nofollow');
+    // wie die 404 der Konto-Seiten: nicht vorhalten
+    expect(antwort.headers.get('Cache-Control')).toBe('private, no-store');
+    expect(antwort.headers.get('Content-Security-Policy')).toBe(cspLernApp());
     vi.stubEnv('DATABASE_URL', 'postgres://test.invalid/igmg');
     vi.stubEnv('FUNKTION_KONTEN', 'aus');
     expect(proxy(anfrage('/lern-app/ar/anmelden')).headers.get('x-middleware-rewrite')).toBe(`${BASIS}/lern-app/ar/_`);
@@ -130,6 +133,8 @@ describe('Schalter lernapp aus der Umgebung (ausgeschaltet heißt 404, ADR 0035)
       const antwort = proxy(anfrage(pfad));
       expect(antwort.headers.get('x-middleware-rewrite'), pfad).toBe(`${BASIS}${ziel}`);
       expect(antwort.headers.get('Content-Security-Policy'), pfad).toBe(cspLernApp());
+      expect(antwort.headers.get('X-Robots-Tag'), pfad).toBe('noindex, nofollow');
+      expect(antwort.headers.get('Cache-Control'), pfad).toBe('private, no-store');
     }
     // Weiterleitungen bleiben (sie zeigen danach auf die 404)
     expect(proxy(anfrage('/lern-app')).status).toBe(308);

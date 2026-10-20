@@ -58,15 +58,11 @@ export default function proxy(request: NextRequest) {
   if (lernApp?.art === 'intern') return NextResponse.rewrite(new URL(lernApp.ziel, request.url));
   if (lernApp) {
     // Ausgeschaltet heißt 404 (ADR 0035): echt nur, wenn die Umgebung entscheidet (wie `kontenSicherAus`); sonst
-    // entscheiden die Seiten. Die Anmeldung ohne Konten ebenso. Ziel ist die Fangroute mit Platzhalter `_`.
+    // entscheiden die Seiten. Die Anmeldung ohne Konten ebenso. Ziel ist die Fangroute mit Platzhalter `_`; Kopfzeilen wie
+    // die 404 der Konto-Seiten (noindex, no-store – kein Vorhalten der 404 unter der eigentlichen Adresse), CSP der Lern-App.
     const ui = lernApp.art === 'anmelden' ? lernApp.ui : (pathname.split('/')[2] as Oberflaeche);
     const aus = umgebungsSchalter('lernapp', process.env) === false || (lernApp.art === 'anmelden' && kontenSicherAus());
-    if (aus) {
-      const antwort = NextResponse.rewrite(new URL(`/lern-app/${ui}/_`, request.url));
-      antwort.headers.set('Content-Security-Policy', cspLernApp());
-      antwort.headers.set('X-Robots-Tag', 'noindex, nofollow');
-      return antwort;
-    }
+    if (aus) return dynamischeKopfzeilen(NextResponse.rewrite(new URL(`/lern-app/${ui}/_`, request.url)), cspLernApp());
     if (lernApp.art === 'durch') return NextResponse.next();
     // Anmeldung im Scope der PWA (O-7): Nonce-CSP wie die Konto-Seiten; Next liest die Nonce aus der Anfrage-CSP
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
