@@ -5,6 +5,9 @@
 // - KEIN Religionsbezug, keine Formeln, keine Koran- oder Hadith-Wörter (KI-Regel 2, KERN 4.0 §2). Sätze mit höchstens drei
 //   Wörtern (kein 4-Gramm möglich, KERN 4.0 §3 b/c).
 // - Arabisch nur als Codepunkt-Escapes (KERN 4.0 §3: arabische Schrift nicht in Code-Dateien).
+// - L2-02: Lektion l03 mit je einer Aufgabe der Typen dialog, geschichte, lesen_fragen, grammatik_tipp, schrift_* (je Zielsprache
+//   ihr Vorkurs-Typ; Arabisch auch Nachspuren), sprechen und schreiben. Die Sätze dafür (`SAETZE_L2`) haben keine Töne
+//   (die Testbündel bleiben unverändert), außer sie wiederholen Sätze aus `TEXTE`.
 // - Audio: synthetische Töne in `drizzle/seeds/lernapp-testaudio/<sprache>/<einheit>-<sha16>.lpa` (erzeugt mit
 //   `pnpm exec tsx scripts/lernapp/testaudio.ts`, ffmpeg nur lokal), Stimme `test:ton` – nie Rezitationen.
 import { readdirSync, readFileSync } from 'node:fs';
@@ -57,6 +60,50 @@ export const TEXTE: Record<Sprache, Woerter> = {
   },
 };
 
+/** Sätze der Lektion l03 (L2-02): Gruß, Frage, Antwort, Frage zur Geschichte, Schreibaufgabe – höchstens drei Wörter. */
+type SaetzeL2 = { s0004: string; s0005: string; s0006: string; s0007: string; s0008: string };
+export const SAETZE_L2: Record<Sprache, SaetzeL2> = {
+  de: { s0004: 'Guten Morgen!', s0005: 'Wie geht es?', s0006: 'Danke, gut.', s0007: 'Was ist neu?', s0008: 'Schreibe über Wasser.' },
+  tr: { s0004: 'Günaydın!', s0005: 'Nasılsın?', s0006: 'İyiyim, teşekkürler.', s0007: 'Ne yeni?', s0008: 'Su hakkında yaz.' },
+  ar: {
+    s0004: '\u0635\u064E\u0628\u064E\u0627\u062D\u064F \u0627\u0644\u0652\u062E\u064E\u064A\u0652\u0631\u0650!',
+    s0005: '\u0643\u064E\u064A\u0652\u0641\u064E \u062D\u064E\u0627\u0644\u064F\u0643\u064E\u061F',
+    s0006: '\u0628\u0650\u062E\u064E\u064A\u0652\u0631\u064D\u060C \u0634\u064F\u0643\u0652\u0631\u064B\u0627.',
+    s0007: '\u0645\u064E\u0627 \u0627\u0644\u0652\u062C\u064E\u062F\u0650\u064A\u062F\u064F\u061F',
+    s0008: '\u0627\u064F\u0643\u0652\u062A\u064F\u0628\u0652 \u0639\u064E\u0646\u0650 \u0627\u0644\u0652\u0645\u064E\u0627\u0621\u0650.',
+  },
+};
+
+/** Schrift-Vorkurs je Zielsprache (L2-02): Lateinschrift für de, türkische Buchstaben für tr, arabische Buchstaben für ar. */
+function schriftAufgaben(kurs: Sprache, k: (x: string) => string) {
+  if (kurs === 'de')
+    return [
+      {
+        schluessel: k('l03.a05'),
+        typ: 'schrift_latein' as const,
+        anweisung: 'waehleBuchstabe' as const,
+        vorgabe: 'H_us',
+        optionen: ['a', 'ä', 'o'],
+        richtig: 0,
+      },
+    ];
+  if (kurs === 'tr')
+    return [
+      {
+        schluessel: k('l03.a05'),
+        typ: 'schrift_tr' as const,
+        anweisung: 'grossKlein' as const,
+        vorgabe: 'ş',
+        optionen: ['Ş', 'S', 'Ç'],
+        richtig: 0,
+      },
+    ];
+  return [
+    { schluessel: k('l03.a05'), typ: 'schrift_ar' as const, art: 'erkennen' as const, ziel: 'be', ablenker: ['te', 'se'] },
+    { schluessel: k('l03.a06'), typ: 'schrift_ar' as const, art: 'nachspuren' as const, ziel: 'elif' },
+  ];
+}
+
 /** Weitere angenommene Fassungen (Wortbank in die Sprache, Übersetzung in die Ausgangssprache). */
 const ALTERNATIVEN: Partial<Record<Sprache, Partial<Record<keyof Woerter, string[]>>>> = {
   tr: { s0001: ['Ben su içiyorum.'], s0002: ['Ev büyüktür.'] },
@@ -85,7 +132,15 @@ export function sprachDatei(kurs: Sprache): SprachEinheitDatei {
       quelle: QUELLE,
       lizenz: LIZENZ,
     })),
-    saetze: (['s0001', 's0002', 's0003'] as const).map((s) => ({ schluessel: k(s), text: t[s], quelle: QUELLE, lizenz: LIZENZ })),
+    saetze: [
+      ...(['s0001', 's0002', 's0003'] as const).map((s) => ({ schluessel: k(s), text: t[s], quelle: QUELLE, lizenz: LIZENZ })),
+      ...(Object.keys(SAETZE_L2[kurs]) as (keyof SaetzeL2)[]).map((s) => ({
+        schluessel: k(s),
+        text: SAETZE_L2[kurs][s],
+        quelle: QUELLE,
+        lizenz: LIZENZ,
+      })),
+    ],
     lektionen: [
       {
         schluessel: k('l01'),
@@ -116,14 +171,58 @@ export function sprachDatei(kurs: Sprache): SprachEinheitDatei {
           { schluessel: k('l02.a03'), typ: 'auswahl', anweisung: 'waehleUebersetzung', ziel: k('w003'), ablenker: [k('w004')] },
         ],
       },
+      {
+        schluessel: k('l03'),
+        art: 'lektion',
+        ziel: { de: 'Weitere Übungen', tr: 'Diğer alıştırmalar' },
+        aufgaben: [
+          {
+            schluessel: k('l03.a01'),
+            typ: 'dialog',
+            zeilen: [
+              { sprecher: 'a', satz: k('s0004') },
+              { sprecher: 'b', satz: k('s0005') },
+            ],
+            antwort: k('s0006'),
+            ablenker: [k('s0002'), k('s0003')],
+          },
+          {
+            schluessel: k('l03.a02'),
+            typ: 'geschichte',
+            zeilen: [{ satz: k('s0001') }, { sprecher: 'a', satz: k('s0004') }, { satz: k('s0003') }],
+            fragen: [{ nach: 2, frage: k('s0007'), antwort: k('w004'), ablenker: [k('w003')] }],
+          },
+          {
+            schluessel: k('l03.a03'),
+            typ: 'lesen_fragen',
+            absaetze: [k('s0002'), k('s0003')],
+            glossen: [k('w003'), k('w004')],
+            fragen: [
+              { art: 'rfn', aussage: k('s0002'), richtig: 'richtig' },
+              { art: 'auswahl', frage: k('s0007'), antwort: k('w004'), ablenker: [k('w003')] },
+            ],
+          },
+          { schluessel: k('l03.a04'), typ: 'grammatik_tipp', tipp: 't01' },
+          ...schriftAufgaben(kurs, k),
+          { schluessel: k('l03.a07'), typ: 'sprechen', satz: k('s0001') },
+          {
+            schluessel: k('l03.a08'),
+            typ: 'schreiben',
+            aufgabe: k('s0008'),
+            woerter: { min: 2, max: 30 },
+            pflichtwoerter: [t.w001],
+            muster: [k('s0001')],
+          },
+        ],
+      },
     ],
   };
 }
 
 export function uebersetzungDatei(ziel: Sprache, ausgang: Sprache): UebersetzungDatei {
   const e = einheitVon(ziel);
-  const t = TEXTE[ausgang];
-  const schluessel = Object.keys(t) as (keyof Woerter)[];
+  const t: Record<string, string> = { ...TEXTE[ausgang], ...SAETZE_L2[ausgang] };
+  const schluessel = Object.keys(t);
   return {
     format: 'igmg-lernapp-uebersetzung',
     version: 1,
@@ -133,7 +232,7 @@ export function uebersetzungDatei(ziel: Sprache, ausgang: Sprache): Uebersetzung
     eintraege: schluessel.map((s) => ({
       bezug: `${e}.${s}`,
       text: t[s],
-      ...(ALTERNATIVEN[ausgang]?.[s] ? { alternativen: ALTERNATIVEN[ausgang][s] } : {}),
+      ...(ALTERNATIVEN[ausgang]?.[s as keyof Woerter] ? { alternativen: ALTERNATIVEN[ausgang][s as keyof Woerter] } : {}),
       quelle: QUELLE,
       lizenz: LIZENZ,
     })),
@@ -147,7 +246,12 @@ export function uebersetzungDatei(ziel: Sprache, ausgang: Sprache): Uebersetzung
               titel: ausgang === 'de' ? '[Testtipp]' : '[Test ipucu]',
               inhalt: {
                 type: 'doc',
-                content: [{ type: 'paragraph', content: [{ type: 'text', text: ausgang === 'de' ? '[Tipp folgt]' : '[İpucu gelecek]' }] }],
+                content: [
+                  { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: ausgang === 'de' ? '[Regel]' : '[Kural]' }] },
+                  { type: 'paragraph', content: [{ type: 'text', text: ausgang === 'de' ? '[Tipp folgt]' : '[İpucu gelecek]' }] },
+                  // Zitatblock = Beispiel in der Zielsprache (Übungstyp grammatik_tipp, paket/bauen.ts tippAbschnitte)
+                  { type: 'blockquote', content: [{ type: 'paragraph', content: [{ type: 'text', text: TEXTE[ziel].s0001 }] }] },
+                ],
               },
               quelle: QUELLE,
             },

@@ -22,6 +22,7 @@ import { BUCHSTABEN, formMoeglich, SILBEN_ARTEN, schriftOptionen, silbeMoeglich 
 import { ohneTonLoesbar } from '@/lib/lernapp/aufgaben/schrift_wahl';
 import { pruefe, starte, ueberspringe, weiter, zusammenfassung } from '@/lib/lernapp/engine/sitzung';
 import { EreignisEntwurfSchema } from '@/lib/lernapp/ereignisse/typen';
+import { tippAbschnitte } from '@/lib/lernapp/paket/bauen';
 import { ABGABE_AKTIV, bereiteAbgabe } from '@/lib/lernapp/schreiben/abgabe';
 import de from '../../../messages/lernapp/de.json';
 import {
@@ -196,6 +197,29 @@ describe('Bewertung je Typ (rein)', () => {
   it('sprechen: Selbstbewertung – „noch üben“ kommt wieder, sonst angenommen', () => {
     expect(bewerte(SPRECHEN as Aufgabe, { typ: 'sprechen', selbst: 'nochmal' })).toMatchObject({ urteil: 'falsch', selbst: 'nochmal' });
     expect(bewerte(SPRECHEN as Aufgabe, { typ: 'sprechen', selbst: 'gut' })).toMatchObject({ urteil: 'richtig', selbst: 'gut' });
+  });
+});
+
+describe('Paketbau: Tipp als Karte', () => {
+  it('Überschriften beginnen Abschnitte, Absätze und Listen werden Text, Zitatblöcke Beispiele der Zielsprache', () => {
+    const doc = {
+      type: 'doc' as const,
+      content: [
+        { type: 'paragraph', content: [{ type: 'text', text: 'Einleitung' }] },
+        { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'Regel' }] },
+        { type: 'paragraph', content: [{ type: 'text', text: 'Satz ' }, { type: 'hardBreak' }, { type: 'text', text: 'zwei' }] },
+        {
+          type: 'bulletList',
+          content: [{ type: 'listItem', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Punkt' }] }] }],
+        },
+        { type: 'blockquote', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Ev büyük.' }] }] },
+        { type: 'heading', attrs: { level: 3 }, content: [{ type: 'text', text: 'Leer' }] },
+      ],
+    };
+    expect(tippAbschnitte(doc, 'tr')).toEqual([
+      { absaetze: ['Einleitung'] },
+      { ueberschrift: 'Regel', absaetze: ['Satz zwei', 'Punkt'], beispiele: [{ ziel: { text: 'Ev büyük.', sprache: 'tr' } }] },
+    ]);
   });
 });
 

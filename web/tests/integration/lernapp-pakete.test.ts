@@ -69,19 +69,80 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
       expect(v).toMatchObject({ kurs, zielsprache: kurs.slice(0, 2), ausgangssprache: kurs.slice(-2) });
       expect(v.einheiten).toHaveLength(1);
       const e = v.einheiten[0]!;
-      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.e01`, stufe: 'a1', lektionen: 2, hinweis: true });
+      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.e01`, stufe: 'a1', lektionen: 3, hinweis: true });
       expect(e.audio).toEqual([
         { adresse: expect.stringMatching(new RegExp(`^/lern-app/audio/${kurs.slice(0, 2)}/`)), bytes: expect.any(Number) },
       ]);
       const { paket: p } = await paket(kurs);
       expect(kanonisch(p)).toBe(JSON.stringify(JSON.parse(kanonisch(p))));
-      expect(aufgabenSchluessel(p)).toHaveLength(7);
+      expect(aufgabenSchluessel(p).filter((k) => !k.includes('.l03.'))).toHaveLength(7);
+      // L2-02: je ein Übungstyp in l03; der Tipp nur, wo es einen gibt (Ausgangssprache de/tr), Schrift je Zielsprache
+      const ziel = kurs.slice(0, 2);
+      const typen = p.lektionen.find((l) => l.schluessel.endsWith('.l03'))!.aufgaben.map((a) => a.typ);
+      expect(typen).toEqual([
+        'dialog',
+        'geschichte',
+        'lesen_fragen',
+        ...(kurs.endsWith('-ar') ? [] : ['grammatik_tipp']),
+        ...(ziel === 'de' ? ['schrift_latein'] : ziel === 'tr' ? ['schrift_tr'] : ['schrift_ar', 'schrift_ar']),
+        'sprechen',
+        'schreiben',
+      ]);
     }
+  });
+
+  it('L2-02: Aufgaben aus den Vorlagen – Zieltexte mit Übersetzung, Optionen der Zielsprache, Karten je Richtung, Tipp als Karte', async () => {
+    const { paket: p } = await paket('tr-aus-de');
+    const l03 = p.lektionen.find((l) => l.schluessel === 'tr-aus-de.a1.e01.l03')!;
+    const [dialog, geschichte, lesen, tipp, schrift, sprechen, schreiben] = l03.aufgaben;
+    expect(dialog).toMatchObject({
+      typ: 'dialog',
+      karten: ['tr-aus-de:tr.a1.e01.s0006'],
+      verlauf: [
+        { sprecher: 'a', zeile: { text: 'Günaydın!', sprache: 'tr' }, uebersetzung: { text: 'Guten Morgen!', sprache: 'de' } },
+        { sprecher: 'b', zeile: { text: 'Nasılsın?', sprache: 'tr' } },
+      ],
+      optionen: [{ text: 'İyiyim, teşekkürler.' }, { text: 'Ev büyük.' }, { text: 'Kitap yeni.' }],
+      richtig: 0,
+    });
+    expect(geschichte).toMatchObject({ typ: 'geschichte', fragen: [{ nach: 2, karte: 'tr-aus-de:tr.a1.e01.w004', richtig: 0 }] });
+    expect(lesen).toMatchObject({
+      typ: 'lesen_fragen',
+      glossen: [{ wort: 'ev', glosse: { text: 'Haus', sprache: 'de' } }, { wort: 'kitap' }],
+    });
+    expect(tipp).toMatchObject({
+      typ: 'grammatik_tipp',
+      sprache: 'de',
+      titel: '[Testtipp]',
+      abschnitte: [{ ueberschrift: '[Regel]', absaetze: ['[Tipp folgt]'], beispiele: [{ ziel: { text: 'Su içiyorum.', sprache: 'tr' } }] }],
+    });
+    expect(schrift).toMatchObject({
+      typ: 'schrift_tr',
+      vorgabe: { text: 'ş', sprache: 'tr' },
+      optionen: [{ text: 'Ş' }, { text: 'S' }, { text: 'Ç' }],
+    });
+    expect(sprechen).toMatchObject({
+      typ: 'sprechen',
+      karten: ['tr-aus-de:tr.a1.e01.s0001'],
+      vorgabe: { text: 'Su içiyorum.', sprache: 'tr' },
+    });
+    expect(schreiben).toMatchObject({
+      typ: 'schreiben',
+      woerter: { min: 2, max: 30 },
+      pflichtwoerter: ['su'],
+      muster: [{ text: 'Su içiyorum.' }],
+    });
+    // Arabisch: Buchstaben über Schlüssel (keine Wörter), Nachspuren ohne Ablenker
+    const ar = (await paket('ar-aus-de')).paket.lektionen.find((l) => l.schluessel.endsWith('.l03'))!.aufgaben;
+    expect(ar.filter((a) => a.typ === 'schrift_ar')).toEqual([
+      { typ: 'schrift_ar', schluessel: 'ar.a1.e01.l03.a05', art: 'erkennen', ziel: 'be', ablenker: ['te', 'se'] },
+      { typ: 'schrift_ar', schluessel: 'ar.a1.e01.l03.a06', art: 'nachspuren', ziel: 'elif' },
+    ]);
   });
 
   it('Lektionen, Aufgaben, Karten je Richtung, Audio nur an Zieltexten, Herkunft je Eintrag, Tipps der Ausgangssprache', async () => {
     const { paket: p } = await paket('tr-aus-de');
-    expect(p.lektionen.map((l) => l.schluessel)).toEqual(['tr-aus-de.a1.e01.l01', 'tr-aus-de.a1.e01.l02']);
+    expect(p.lektionen.map((l) => l.schluessel)).toEqual(['tr-aus-de.a1.e01.l01', 'tr-aus-de.a1.e01.l02', 'tr-aus-de.a1.e01.l03']);
     expect(p.lektionen[0]).toMatchObject({ kurs: 'tr-aus-de', zielsprache: 'tr', ausgangssprache: 'de', titel: 'Erste Wörter' });
     const [a01, a02, a03] = p.lektionen[0]!.aufgaben;
     expect(a01).toMatchObject({ typ: 'auswahl', karten: ['tr-aus-de:tr.a1.e01.w001'], vorgabe: { text: 'su', sprache: 'tr' }, richtig: 0 });
@@ -154,8 +215,12 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     const v = await verzeichnis('tr-aus-de');
     expect(v.einheiten).toHaveLength(1);
     expect(v.einheiten[0]?.hinweis).toBe(false);
-    // tr-aus-ar hat noch ungeprüfte Übersetzungen ins Arabische → ohne Schalter nichts spielbar
-    expect((await verzeichnis('tr-aus-ar')).einheiten).toEqual([]);
+    // tr-aus-ar hat noch ungeprüfte Übersetzungen ins Arabische → ohne Schalter nur die Aufgaben aus L2-02, die keine
+    // Übersetzung brauchen (Übersetzungen dort nur als Hilfe; Glossen fallen weg; einen Tipp gibt es aus dem Arabischen nicht)
+    expect((await verzeichnis('tr-aus-ar')).einheiten.map((e) => e.lektionen)).toEqual([1]);
+    const nurZiel = (await paket('tr-aus-ar')).paket.lektionen.flatMap((l) => l.aufgaben);
+    expect(nurZiel.map((a) => a.typ)).toEqual(['dialog', 'geschichte', 'lesen_fragen', 'schrift_tr', 'sprechen', 'schreiben']);
+    expect(JSON.stringify(nurZiel)).not.toMatch(/"sprache":"ar"/);
     delete process.env.FUNKTION_LERNAPP_UNGEPRUEFT;
     expect((await verzeichnis('tr-aus-ar')).einheiten[0]?.hinweis).toBe(true);
     await setzeStatus(schema.lernappSatz, 'tr.%', 'automatisch_geprueft');
@@ -258,7 +323,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     expect(aufrufe.updateTag).toEqual(['lernapp-kurs-de']);
     const v = await verzeichnis('de-aus-ar');
     expect(v.stand).toBe(stand + 1);
-    expect(v.einheiten[0]?.lektionen).toBe(1);
+    expect(v.einheiten[0]?.lektionen).toBe(2);
     const alt = await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'de-aus-ar', einheit: 'de.a1.e01', hash: vorher.hash }));
     expect(alt.status).toBe(404);
     expect(await zieheZurueck('uebersetzung', 'de.a1.e01.w004@ar')).toBe(true);

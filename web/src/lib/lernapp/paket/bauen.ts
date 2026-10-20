@@ -238,8 +238,150 @@ class Werkbank {
     return p.data;
   }
 
+  /** Optionen in der Zielsprache aus Antwort und Ablenkern (ohne doppelte Texte; Antwort zuerst), oder null. */
+  private zielOptionen(antwort: string, ablenker: readonly string[]): Inhalt[] | null {
+    const a = this.zielInhalt(antwort);
+    if (!a) return null;
+    const texte = new Set([vergleichsform(a.text)]);
+    const optionen = [a];
+    for (const s of ablenker) {
+      const b = this.zielInhalt(s);
+      if (b && !texte.has(vergleichsform(b.text))) {
+        texte.add(vergleichsform(b.text));
+        optionen.push(b);
+      }
+    }
+    return optionen.length >= 2 ? optionen : null;
+  }
+
+  /** Zieltext mit optionaler Übersetzung (aufklappbar). */
+  private zeile(schluessel: string): { zeile: Inhalt; uebersetzung?: Inhalt } | null {
+    const zeile = this.zielInhalt(schluessel);
+    if (!zeile) return null;
+    const u = this.ausgangInhalt(schluessel);
+    return { zeile, ...(u ? { uebersetzung: u } : {}) };
+  }
+
+  /** Aufgaben der Typen aus L2-02 (PLAN §4, §4.2–§4.4); `undefined` für andere Typen. */
+  private ausVorlageL2(v: AufgabeVorlage): unknown {
+    const r = this.e.richtung;
+    const k = (s: string) => kartenSchluessel(r, s);
+    switch (v.typ) {
+      case 'dialog': {
+        const verlauf = v.zeilen.map((z) => {
+          const x = this.zeile(z.satz);
+          return x ? { sprecher: z.sprecher, ...x } : null;
+        });
+        const optionen = this.zielOptionen(v.antwort, v.ablenker);
+        if (verlauf.some((x) => !x) || !optionen) return null;
+        return { typ: 'dialog', schluessel: v.schluessel, karten: [k(v.antwort)], verlauf, optionen, richtig: 0 };
+      }
+      case 'geschichte': {
+        const zeilen = v.zeilen.map((z) => {
+          const x = this.zeile(z.satz);
+          return x ? { ...(z.sprecher ? { sprecher: z.sprecher } : {}), ...x } : null;
+        });
+        if (zeilen.some((x) => !x)) return null;
+        const fragen = [];
+        for (const f of v.fragen) {
+          const frage = this.zielInhalt(f.frage);
+          const optionen = this.zielOptionen(f.antwort, f.ablenker);
+          if (!frage || !optionen) return null;
+          fragen.push({ nach: f.nach, frage, optionen, richtig: 0, karte: k(f.antwort) });
+        }
+        const titel = v.titel ? this.zielInhalt(v.titel) : null;
+        return { typ: 'geschichte', schluessel: v.schluessel, ...(titel ? { titel } : {}), zeilen, fragen };
+      }
+      case 'lesen_fragen': {
+        const text = v.absaetze.map((a) => this.zielInhalt(a));
+        if (text.some((x) => !x)) return null;
+        const glossen = v.glossen.flatMap((g) => {
+          const b = this.beide(g);
+          return b ? [{ wort: b.ziel.text, glosse: b.ausgang }] : [];
+        });
+        const fragen = [];
+        for (const f of v.fragen) {
+          if (f.art === 'rfn') {
+            const aussage = this.zielInhalt(f.aussage);
+            if (!aussage) return null;
+            fragen.push({ art: 'rfn', aussage, richtig: f.richtig });
+          } else {
+            const frage = this.zielInhalt(f.frage);
+            const optionen = this.zielOptionen(f.antwort, f.ablenker);
+            if (!frage || !optionen) return null;
+            fragen.push({ art: 'auswahl', frage, optionen, richtig: 0 });
+          }
+        }
+        const titel = v.titel ? this.zielInhalt(v.titel) : null;
+        return {
+          typ: 'lesen_fragen',
+          schluessel: v.schluessel,
+          ...(titel ? { titel } : {}),
+          text,
+          ...(glossen.length ? { glossen } : {}),
+          fragen,
+        };
+      }
+      case 'grammatik_tipp': {
+        const t = this.e.tipps.find((x) => x.schluessel === `${this.e.einheit.schluessel}.${this.ausgang}.${v.tipp}`);
+        if (!t || !this.sichtbar(t, t.schluessel)) return null;
+        const abschnitte = tippAbschnitte(t.inhalt, this.ziel);
+        const titel = t.titel ?? abschnitte[0]?.ueberschrift;
+        if (!titel || !abschnitte.length) return null;
+        return { typ: 'grammatik_tipp', schluessel: v.schluessel, sprache: this.ausgang, titel, abschnitte };
+      }
+      case 'schrift_ar':
+        return { ...v };
+      case 'schrift_tr':
+      case 'schrift_latein': {
+        const inhalt = (text: string) => ({ text, sprache: this.ziel });
+        const hoeren = v.hoeren ? this.zielInhalt(v.hoeren) : null;
+        if (!v.vorgabe && !hoeren?.audio) return null;
+        return {
+          typ: v.typ,
+          schluessel: v.schluessel,
+          anweisung: v.anweisung,
+          ...(v.vorgabe ? { vorgabe: inhalt(v.vorgabe) } : {}),
+          ...(hoeren?.audio ? { hoeren } : {}),
+          optionen: v.optionen.map(inhalt),
+          richtig: v.richtig,
+        };
+      }
+      case 'sprechen': {
+        const x = this.zeile(v.satz);
+        if (!x) return null;
+        return {
+          typ: 'sprechen',
+          schluessel: v.schluessel,
+          karten: [k(v.satz)],
+          vorgabe: x.zeile,
+          ...(x.uebersetzung ? { uebersetzung: x.uebersetzung } : {}),
+        };
+      }
+      case 'schreiben': {
+        const x = this.zeile(v.aufgabe);
+        const muster = v.muster.map((m) => this.zielInhalt(m));
+        if (!x || muster.some((m) => !m)) return null;
+        return {
+          typ: 'schreiben',
+          schluessel: v.schluessel,
+          karten: [k(v.aufgabe)],
+          aufgabe: x.zeile,
+          ...(x.uebersetzung ? { uebersetzung: x.uebersetzung } : {}),
+          woerter: v.woerter,
+          ...(v.pflichtwoerter ? { pflichtwoerter: v.pflichtwoerter } : {}),
+          muster,
+        };
+      }
+      default:
+        return undefined;
+    }
+  }
+
   private ausVorlage(v: AufgabeVorlage): unknown {
     const r = this.e.richtung;
+    const l2 = this.ausVorlageL2(v);
+    if (l2 !== undefined) return l2;
     if (v.typ === 'auswahl') {
       const z = this.beide(v.ziel);
       if (!z) return null;
@@ -309,6 +451,7 @@ class Werkbank {
         kacheln: kacheln.slice(0, 24),
       };
     }
+    if (v.typ !== 'paare') return null;
     const links = new Set<string>();
     const rechts = new Set<string>();
     const paare = [];
@@ -325,6 +468,53 @@ class Werkbank {
     if (paare.length < 2) return null;
     return { typ: 'paare', schluessel: v.schluessel, anweisung: 'findePaare', paare };
   }
+}
+
+type TiptapKnoten = { type?: string; text?: string; attrs?: { level?: number }; content?: TiptapKnoten[] };
+type Abschnitt = { ueberschrift?: string; absaetze: string[]; beispiele?: { ziel: Inhalt }[] };
+
+/** Text eines Tiptap-Knotens (Zeilenumbrüche als Leerzeichen). */
+function tiptapText(k: TiptapKnoten): string {
+  if (k.type === 'text') return k.text ?? '';
+  if (k.type === 'hardBreak') return ' ';
+  return (k.content ?? []).map(tiptapText).join('').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Tipp (Tiptap, ADR 0006) als Karte des Übungstyps `grammatik_tipp`: Überschriften beginnen Abschnitte, Absätze und
+ * Listenpunkte werden Text, Zitatblöcke Beispiele in der Zielsprache.
+ */
+export function tippAbschnitte(doc: { type: 'doc' } & Record<string, unknown>, ziel: Sprache): Abschnitt[] {
+  const abschnitte: Abschnitt[] = [];
+  const aktuell = (): Abschnitt => {
+    if (!abschnitte.length) abschnitte.push({ absaetze: [] });
+    return abschnitte[abschnitte.length - 1]!;
+  };
+  for (const k of ((doc as TiptapKnoten).content ?? []) as TiptapKnoten[]) {
+    if (k.type === 'heading') {
+      const ueberschrift = tiptapText(k);
+      if (ueberschrift) abschnitte.push({ ueberschrift, absaetze: [] });
+    } else if (k.type === 'blockquote') {
+      const a = aktuell();
+      for (const p of k.content ?? []) {
+        const text = tiptapText(p);
+        if (text) (a.beispiele ??= []).push({ ziel: { text, sprache: ziel } });
+      }
+    } else if (k.type === 'bulletList' || k.type === 'orderedList') {
+      for (const punkt of k.content ?? []) {
+        const text = tiptapText(punkt);
+        if (text) aktuell().absaetze.push(text);
+      }
+    } else {
+      const text = tiptapText(k);
+      if (text) aktuell().absaetze.push(text);
+    }
+  }
+  // Ein Abschnitt braucht Text (Schema des Spielers); höchstens 10 Absätze und 10 Beispiele, 12 Abschnitte
+  return abschnitte
+    .filter((a) => a.absaetze.length > 0)
+    .slice(0, 12)
+    .map((a) => ({ ...a, absaetze: a.absaetze.slice(0, 10), ...(a.beispiele ? { beispiele: a.beispiele.slice(0, 10) } : {}) }));
 }
 
 /**

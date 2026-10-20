@@ -458,9 +458,12 @@ describe('Schreiben und Lesen', () => {
     await sync(g, [lektion(g, 1, vor(20), 'tr-aus-de.a1.e01.l01')]);
     expect(await erledigt()).toEqual([zurLektion]);
     await sync(g, [lektion(g, 2, vor(10), 'tr-aus-de.a1.e01.l02')]);
+    // die Einheit hat drei Lektionen (l03: Übungstypen aus L2-02)
+    expect(await erledigt()).toEqual([zurLektion]);
+    await sync(g, [lektion(g, 3, vor(8), 'tr-aus-de.a1.e01.l03')]);
     expect(await erledigt()).toEqual([zurLektion, zurEinheit].sort());
     // erneut: idempotent; Kurs ohne Einheit und andere Richtung bleiben offen
-    await sync(g, [lektion(g, 3, vor(5), 'tr-aus-de.a1.e01.l02')]);
+    await sync(g, [lektion(g, 4, vor(5), 'tr-aus-de.a1.e01.l02')]);
     expect(await erledigt()).toEqual([zurLektion, zurEinheit].sort());
     expect(await erledigt()).not.toContain(zumKurs);
     expect(await erledigt()).not.toContain(andereRichtung);

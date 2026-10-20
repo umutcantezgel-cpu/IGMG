@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { SchriftArSchema } from '../aufgaben/schrift_ar';
 import { RICHTUNGEN, SPRACH_STUFEN, SPRACHEN, istSchluesselVon, zerlegeRichtung, type RichtungId, type Sprache } from '../kurse';
 
 /**
@@ -11,8 +12,9 @@ import { RICHTUNGEN, SPRACH_STUFEN, SPRACHEN, istSchluesselVon, zerlegeRichtung,
  *   Glossen in die Ausgangssprache (mit angenommenen Alternativen) und die Tipps der Richtung.
  *
  * Aufgaben stehen als **Vorlage** im Inhalt (Verweise auf Lemma- und Satzschlüssel); der Paketbau (paket/bauen.ts) macht
- * daraus je Richtung die Aufgaben des Spielers (aufgaben/schema.ts). L1 kennt `auswahl`, `wortbank` und `paare`; L2 ergänzt
- * die übrigen Typen aus PLAN §4 hier und im Paketbau.
+ * daraus je Richtung die Aufgaben des Spielers (aufgaben/schema.ts). L1 kennt `auswahl`, `wortbank` und `paare`; L2-02 ergänzt
+ * `dialog`, `geschichte`, `lesen_fragen`, `grammatik_tipp`, `schrift_ar`, `schrift_tr`, `schrift_latein`, `sprechen` und
+ * `schreiben`; die übrigen Typen aus PLAN §4 folgen hier und im Paketbau.
  *
  * Schlüssel (stabil, `kurse.ts` `istSchluesselVon`): Einheit `<kurs>.<stufe>.eNN`; alles der Einheit beginnt mit dem
  * Einheitenschlüssel (`….w001` Lemma, `….s0001` Satz, `….l01` Lektion, `….l01.a01` Aufgabe, `….<ausgang>.t01` Tipp).
@@ -115,8 +117,155 @@ export const PaareVorlageSchema = z.strictObject({
   typ: z.literal('paare'),
   lemmata: z.array(Verweis).min(2).max(6),
 });
-export const AufgabeVorlageSchema = z.discriminatedUnion('typ', [AuswahlVorlageSchema, WortbankVorlageSchema, PaareVorlageSchema]);
+
+// ——— L2-02 (PLAN §4, §4.2–§4.4) ———
+
+const Verweise = (min: number, max: number) => z.array(Verweis).min(min).max(max);
+
+/** Gespräch: Zeilen der Personen a/b als Sätze, danach die passende Antwort (Satz) mit Ablenkern (Sätze). */
+export const DialogVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('dialog'),
+  zeilen: z
+    .array(z.strictObject({ sprecher: z.enum(['a', 'b']), satz: Verweis }))
+    .min(1)
+    .max(20),
+  antwort: Verweis,
+  ablenker: Verweise(1, 5),
+});
+
+/** Frage mit Auswahl: Frage (Satz), richtige Antwort und Ablenker (Lemmata oder Sätze) in der Zielsprache. */
+const AuswahlFrageVorlage = { frage: Verweis, antwort: Verweis, ablenker: Verweise(1, 5) };
+
+/** Geschichte: Zeilen (Sätze, optional mit Person), eingestreute Fragen nach der Zeile `nach`. */
+export const GeschichteVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('geschichte'),
+  titel: Verweis.optional(),
+  zeilen: z
+    .array(z.strictObject({ sprecher: z.enum(['a', 'b', 'c']).optional(), satz: Verweis }))
+    .min(1)
+    .max(60),
+  fragen: z
+    .array(z.strictObject({ nach: z.int().min(0).max(59), ...AuswahlFrageVorlage }))
+    .max(10)
+    .default([]),
+});
+
+/** Lesetext (Absätze als Sätze), Glossen (Lemmata mit Übersetzung) und Fragen (Auswahl oder richtig/falsch/nicht im Text). */
+export const LesenFragenVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('lesen_fragen'),
+  titel: Verweis.optional(),
+  absaetze: Verweise(1, 40),
+  glossen: Verweise(0, 200).default([]),
+  fragen: z
+    .array(
+      z.discriminatedUnion('art', [
+        z.strictObject({ art: z.literal('auswahl'), ...AuswahlFrageVorlage }),
+        z.strictObject({ art: z.literal('rfn'), aussage: Verweis, richtig: z.enum(['richtig', 'falsch', 'nicht_im_text']) }),
+      ]),
+    )
+    .min(1)
+    .max(10),
+});
+
+/**
+ * Grammatik-Tipp im Lektionsfluss: verweist auf einen Tipp der Übersetzungsdatei (`<einheit>.<ausgang>.<tipp>`, je Richtung
+ * eigener Text). Überschriften des Tiptap-Dokuments werden Abschnitte, Absätze Text, Zitatblöcke Beispiele in der Zielsprache.
+ */
+export const GrammatikTippVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('grammatik_tipp'),
+  tipp: z.string().regex(/^t\d{2}$/, { message: 'tipp: tNN' }),
+});
+
+/** Schrift-Vorkurs Arabisch: Buchstaben über Schlüssel (`lib/elifbe/alphabet.ts`), keine Wörter; geprüft wie im Spieler. */
+export const SchriftArVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('schrift_ar'),
+  art: z.enum(['erkennen', 'zuordnen', 'lesen', 'nachspuren']),
+  ziel: z.string().regex(/^[a-z]+$/),
+  ablenker: z
+    .array(z.string().regex(/^[a-z]+$/))
+    .min(1)
+    .max(5)
+    .optional(),
+  form: z.enum(['anfang', 'mitte', 'ende']).optional(),
+  vokal: z
+    .string()
+    .regex(/^[a-z-]+$/)
+    .optional(),
+});
+
+/** Schrift-Vorkurse Lateinschrift: kurze Zeichenketten der Zielsprache, optional ein Hörbeispiel (Lemma/Satz mit Audio). */
+const schriftWahlVorlage = <T extends 'schrift_tr' | 'schrift_latein'>(typ: T) =>
+  z.strictObject({
+    schluessel: Schluessel,
+    typ: z.literal(typ),
+    anweisung: z.enum(['waehleBuchstabe', 'waehleWort', 'grossKlein']),
+    vorgabe: Text(60).optional(),
+    hoeren: Verweis.optional(),
+    optionen: z.array(Text(60)).min(2).max(6),
+    richtig: z.int().min(0).max(5),
+  });
+export const SchriftTrVorlageSchema = schriftWahlVorlage('schrift_tr');
+export const SchriftLateinVorlageSchema = schriftWahlVorlage('schrift_latein');
+
+/** Sprechübung: ein Satz der Zielsprache (mit Übersetzung, wo es eine gibt). */
+export const SprechenVorlageSchema = z.strictObject({ schluessel: Schluessel, typ: z.literal('sprechen'), satz: Verweis });
+
+/** Schreibübung (B1–C1): Aufgabe (Satz), Wortzahl, Pflichtwörter, 1–2 Musterantworten (Sätze). */
+export const SchreibenVorlageSchema = z.strictObject({
+  schluessel: Schluessel,
+  typ: z.literal('schreiben'),
+  aufgabe: Verweis,
+  woerter: z.strictObject({ min: z.int().min(1).max(600), max: z.int().min(1).max(600) }),
+  pflichtwoerter: z.array(Text(60)).min(1).max(10).optional(),
+  muster: Verweise(1, 2),
+});
+
+export const AufgabeVorlageSchema = z.discriminatedUnion('typ', [
+  AuswahlVorlageSchema,
+  WortbankVorlageSchema,
+  PaareVorlageSchema,
+  DialogVorlageSchema,
+  GeschichteVorlageSchema,
+  LesenFragenVorlageSchema,
+  GrammatikTippVorlageSchema,
+  SchriftArVorlageSchema,
+  SchriftTrVorlageSchema,
+  SchriftLateinVorlageSchema,
+  SprechenVorlageSchema,
+  SchreibenVorlageSchema,
+]);
 export type AufgabeVorlage = z.infer<typeof AufgabeVorlageSchema>;
+
+/** Prüfungen der L2-02-Vorlagen über das Schema hinaus (Reihenfolge, Bereiche, Ablenker, Schrift wie im Spieler). */
+export function pruefeVorlageL2(a: AufgabeVorlage): string[] {
+  const fehler: string[] = [];
+  const ablenkerOk = (ziel: string, ablenker: readonly string[]) => new Set([ziel, ...ablenker]).size === ablenker.length + 1;
+  if (a.typ === 'dialog' && !ablenkerOk(a.antwort, a.ablenker)) fehler.push('Ablenker doppelt oder gleich der Antwort');
+  if (a.typ === 'geschichte')
+    a.fragen.forEach((f, k) => {
+      if (f.nach >= a.zeilen.length) fehler.push(`Frage ${k + 1} nach dem Ende`);
+      if (k > 0 && a.fragen[k - 1]!.nach > f.nach) fehler.push(`Frage ${k + 1} nicht in Reihenfolge`);
+      if (!ablenkerOk(f.antwort, f.ablenker)) fehler.push(`Frage ${k + 1}: Ablenker doppelt oder gleich der Antwort`);
+    });
+  if (a.typ === 'lesen_fragen')
+    a.fragen.forEach((f, k) => {
+      if (f.art === 'auswahl' && !ablenkerOk(f.antwort, f.ablenker))
+        fehler.push(`Frage ${k + 1}: Ablenker doppelt oder gleich der Antwort`);
+    });
+  if ((a.typ === 'schrift_tr' || a.typ === 'schrift_latein') && (a.richtig >= a.optionen.length || (!a.vorgabe && !a.hoeren)))
+    fehler.push('richtig außerhalb der Optionen oder weder Vorgabe noch Hörbeispiel');
+  if (a.typ === 'schreiben' && a.woerter.max < a.woerter.min) fehler.push('Wortzahl: min ≤ max');
+  if (a.typ === 'schrift_ar') {
+    const r = SchriftArSchema.safeParse(a);
+    if (!r.success) fehler.push(...r.error.issues.map((x) => `schrift_ar: ${x.message}`));
+  }
+  return fehler;
+}
 
 export const LEKTION_ARTEN = ['lektion', 'geschichte', 'wiederholung', 'pruefstein', 'schrift', 'schreiben', 'sprechen'] as const;
 
@@ -130,9 +279,39 @@ export const LektionVorlageSchema = z.strictObject({
 
 /** Verweise einer Aufgaben-Vorlage auf Lemmata bzw. Sätze. */
 export function verweiseVon(a: AufgabeVorlage): string[] {
-  if (a.typ === 'auswahl') return [a.ziel, ...a.ablenker];
-  if (a.typ === 'wortbank') return [a.satz];
-  return [...a.lemmata];
+  switch (a.typ) {
+    case 'auswahl':
+      return [a.ziel, ...a.ablenker];
+    case 'wortbank':
+      return [a.satz];
+    case 'paare':
+      return [...a.lemmata];
+    case 'dialog':
+      return [...a.zeilen.map((z) => z.satz), a.antwort, ...a.ablenker];
+    case 'geschichte':
+      return [
+        ...(a.titel ? [a.titel] : []),
+        ...a.zeilen.map((z) => z.satz),
+        ...a.fragen.flatMap((f) => [f.frage, f.antwort, ...f.ablenker]),
+      ];
+    case 'lesen_fragen':
+      return [
+        ...(a.titel ? [a.titel] : []),
+        ...a.absaetze,
+        ...a.glossen,
+        ...a.fragen.flatMap((f) => (f.art === 'auswahl' ? [f.frage, f.antwort, ...f.ablenker] : [f.aussage])),
+      ];
+    case 'schrift_tr':
+    case 'schrift_latein':
+      return a.hoeren ? [a.hoeren] : [];
+    case 'sprechen':
+      return [a.satz];
+    case 'schreiben':
+      return [a.aufgabe, ...a.muster];
+    case 'grammatik_tipp':
+    case 'schrift_ar':
+      return [];
+  }
 }
 
 const StatusSchema = z.enum(['entwurf', 'automatisch_geprueft']).default('entwurf');
@@ -212,6 +391,7 @@ export const SprachEinheitDateiSchema = z
           ctx.addIssue({ code: 'custom', message: 'Paare doppelt', path: ['lektionen', i, 'aufgaben', j] });
         if (a.typ === 'wortbank' && a.nach === 'ausgang' && (a.alternativen?.length || a.ablenker?.length))
           ctx.addIssue({ code: 'custom', message: 'alternativen/ablenker nur bei nach: ziel', path: ['lektionen', i, 'aufgaben', j] });
+        for (const fehler of pruefeVorlageL2(a)) ctx.addIssue({ code: 'custom', message: fehler, path: ['lektionen', i, 'aufgaben', j] });
       });
     });
     const alle = [
