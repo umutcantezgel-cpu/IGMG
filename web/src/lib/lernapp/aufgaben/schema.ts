@@ -30,7 +30,8 @@ import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
  * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4 als Gerüst:
  * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts); L2-01 `bild_wort`, `frei`,
  * `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen` und `harakat` – je Typ eine Datei mit
- * Zod-Nutzlast, Bewertung und reinen Hilfen (`<typ>.ts`); gemeinsame Bausteine in `grundlagen.ts`.
+ * der Zod-Nutzlast (`<typ>.ts`, gemeinsame Bausteine in `grundlagen.ts`) und eine ohne Zod mit Bewertung und reinen
+ * Hilfen (`auswertung/<typ>.ts`, nur in den Übungs-Chunks geladen; gemeinsame Hilfen in `hilfen.ts`).
  *
  * ## Lektionsformat (Eingabe des Spielers `<Spieler lektion={…} />`)
  *
@@ -67,16 +68,8 @@ import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
  * - Quelle, Lizenz und Namensnennung je Eintrag stehen im Einheitenpaket (ADR 0039 Nr. 9), nicht in der Lektion.
  */
 
-export {
-  AudioSchema,
-  type Auswertung,
-  type BewertungsKontext,
-  type Inhalt,
-  InhaltSchema,
-  type KartenUrteil,
-  kartenMit,
-  SpracheSchema,
-} from './grundlagen';
+export { AudioSchema, type Inhalt, InhaltSchema, SpracheSchema } from './grundlagen';
+export { type Auswertung, type Bewerter, type BewertungsKontext, type KartenUrteil, kartenMit } from './hilfen';
 
 // ——— L1: implementiert ———
 
@@ -128,7 +121,7 @@ export const PaareSchema = z
 
 // ——— L2-01: implementiert (je Typ eine Datei) ———
 
-/** Übungstypen aus L2-01 mit eigener Datei (Nutzlast, Bewertung, Hilfen). */
+/** Übungstypen aus L2-01 mit eigener Datei (Nutzlast; Bewertung und Hilfen in `auswertung/`). */
 export const L2_TYPEN = {
   bild_wort: BildWortSchema,
   frei: FreiSchema,

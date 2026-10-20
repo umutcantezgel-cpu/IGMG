@@ -1,25 +1,29 @@
 import { bewerteAuswahl } from './auswahl';
-import { bewerteBildWort } from './bild_wort';
-import { bewerteFormen } from './formen';
-import { bewerteFrei } from './frei';
-import { bewerteHarakat } from './harakat';
-import { bewerteHoerenSchreiben } from './hoeren_schreiben';
-import { bewerteHoerenWaehlen } from './hoeren_waehlen';
-import { bewerteLuecke } from './luecke';
-import { bewerteMinimalpaare } from './minimalpaare';
+import { bewerteBildWort } from './auswertung/bild_wort';
+import { bewerteFormen } from './auswertung/formen';
+import { bewerteFrei } from './auswertung/frei';
+import { bewerteHarakat } from './auswertung/harakat';
+import { bewerteHoerenSchreiben } from './auswertung/hoeren_schreiben';
+import { bewerteHoerenWaehlen } from './auswertung/hoeren_waehlen';
+import { bewerteLuecke } from './auswertung/luecke';
+import { bewerteMinimalpaare } from './auswertung/minimalpaare';
+import { bewerteSatzbau } from './auswertung/satzbau';
+import type { Auswertung, BewertungsKontext } from './hilfen';
 import { bewertePaare } from './paare';
-import { bewerteSatzbau } from './satzbau';
-import { type Antwort, type AntwortVon, type Aufgabe, type Auswertung, type BewertungsKontext, istImplementiert } from './schema';
+import { type Antwort, type AntwortVon, type Aufgabe, istImplementiert } from './schema';
 import { bewerteWortbank } from './wortbank';
 
 /**
  * Bewertung einer Aufgabe (PLAN §4): Urteil richtig/tippfehler/falsch mit Hinweis-Schlüsseln, die anzuzeigende Lösung
  * und je Wiederholungskarte ein Urteil (für die Noten in srs.ts). Implementiert: L1 (`auswahl`, `wortbank`, `paare`) und
  * L2-01 (`bild_wort`, `frei`, `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen`,
- * `harakat`); die übrigen Typen folgen in L2-02/L2-03.
+ * `harakat`; Bewertung in `auswertung/<typ>.ts`); die übrigen Typen folgen in L2-02/L2-03.
+ *
+ * Alle Typen in einem Modul – für Tests und Server. Der Spieler lädt es nicht: Er nimmt die Bewertung aus dem Chunk des
+ * Übungstyps (`components/lernapp/aufgaben/lader.ts`, KERN 4.0 §9), die Engine bekommt sie als `Bewerter`.
  */
 
-export type { Auswertung, BewertungsKontext, KartenUrteil } from './schema';
+export type { Auswertung, Bewerter, BewertungsKontext, KartenUrteil } from './hilfen';
 
 export function bewerte(aufgabe: Aufgabe, antwort: Antwort, kontext: BewertungsKontext = {}): Auswertung {
   if (!istImplementiert(aufgabe.typ)) throw new Error(`Übungstyp „${aufgabe.typ}“ folgt in L2`);

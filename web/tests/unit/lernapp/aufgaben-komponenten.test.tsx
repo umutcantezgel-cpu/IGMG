@@ -10,6 +10,7 @@ import HoerenWaehlen from '@/components/lernapp/aufgaben/HoerenWaehlen';
 import Luecke from '@/components/lernapp/aufgaben/Luecke';
 import Minimalpaare from '@/components/lernapp/aufgaben/Minimalpaare';
 import Satzbau from '@/components/lernapp/aufgaben/Satzbau';
+import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from '@/components/lernapp/aufgaben/lader';
 import ArabischeTastatur from '@/components/lernapp/tastatur/ArabischeTastatur';
 import type { AufgabenProps, SpielerTexte } from '@/components/lernapp/typen';
 import type { AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
@@ -59,10 +60,7 @@ const bild: AufgabeVon<'bild_wort'> = {
   anweisung: 'waehleWort',
   bild: {
     symbol: 'haus',
-    elemente: [
-      { art: 'path', d: 'M3 10 12 3l9 7v11H3z' },
-      { art: 'rect', x: 9, y: 12, width: 6, height: 9 },
-    ],
+    pfade: ['M3 10 12 3l9 7v11H3z', 'M9 12h6v9h-6z'],
   },
   optionen: [T('ev'), T('kitap'), T('su')],
   richtig: 0,
@@ -76,7 +74,7 @@ describe('bild_wort', () => {
     expect(h).not.toContain('Haus');
     expect(h).toMatch(/<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"/);
     expect(h).toContain('<path d="M3 10 12 3l9 7v11H3z"></path>');
-    expect(h).toContain('<rect x="9" y="12" width="6" height="9"></rect>');
+    expect(h).toContain('<path d="M9 12h6v9h-6z"></path>');
     expect(anzahl(h, /type="radio"/g)).toBe(3);
     expect(h).toContain('Wähle mit den Pfeiltasten oder den Ziffern 1 bis 3.');
   });
@@ -271,6 +269,19 @@ describe('satzbau, formen, harakat', () => {
     expect(h).toContain('Kaf Fatha, Ta Fatha, Alif, Ba');
     expect(anzahl(h, /<input type="radio"[^>]*aria-describedby=/g)).toBe(2);
     expect(h).toContain('Bedeutung: <bdi lang="de" dir="ltr" class="font-bold">Buch</bdi>');
+  });
+});
+
+describe('Lader der Übungstypen', () => {
+  it('jedes Modul bringt seine Bewertung mit; ladeTyp merkt sie sich für die Engine', async () => {
+    expect(bewerterFuer('frei')).toBeUndefined();
+    const m = await ladeTyp('frei');
+    expect(typeof m.default).toBe('function');
+    expect(bewerterFuer('frei')).toBe(m.bewerte);
+    for (const t of Object.keys(AUFGABEN_LADER) as ImplementierterTyp[]) {
+      const modul = await AUFGABEN_LADER[t]();
+      expect(typeof modul.bewerte, t).toBe('function');
+    }
   });
 });
 

@@ -1,11 +1,14 @@
 'use client';
 
 import { useId, useMemo, useState } from 'react';
-import { lueckeReihenfolge } from '@/lib/lernapp/aufgaben/luecke';
+import { lueckeReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/luecke';
 import { richtung, type AufgabenProps } from '../typen';
 import { Optionsgruppe } from './Optionsgruppe';
 import { feldKlasse, useSchreibmarke } from './Texteingabe';
 import { Zeichenhilfe } from './Zeichenhilfe';
+
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteLuecke as bewerte } from '@/lib/lernapp/aufgaben/auswertung/luecke';
 
 /**
  * Übungstyp `luecke` (Lückentext, PLAN §4): Der Satz steht mit `lang`/`dir` seiner Sprache. Mit Optionen zeigt die Lücke

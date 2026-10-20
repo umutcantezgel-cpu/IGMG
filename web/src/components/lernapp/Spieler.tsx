@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { HOER_TYPEN, istHoerTyp } from '@/lib/lernapp/aufgaben/hoeren_waehlen';
+import { hatAudio, HOER_TYPEN, istHoerTyp, type MitHoeren } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Antwort, Aufgabe, AufgabenTyp, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
 import {
   aktuell,
@@ -28,7 +28,7 @@ import {
 } from '@/lib/lernapp/engine/sitzung';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
-import { AUFGABEN_LADER } from './aufgaben/lader';
+import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
 import { Rueckmeldung } from './Rueckmeldung';
 import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
@@ -36,7 +36,8 @@ import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
 /**
  * Lektionsspieler (PLAN §4, KERN §7–§9): spielt eine Lektion als reinen Zustandsautomaten (engine/sitzung.ts) und meldet
  * jedes Ereignis über `onEreignis` (Gerät, Nummer, Zeit und Lerntag ergänzt der Ausgang, lokal/ausgang.ts). Übungstypen
- * laden als eigene Chunks per `import()` (aufgaben/lader.ts), der nächste wird vorab geholt. Texte kommen als Prop aus
+ * laden als eigene Chunks per `import()` (aufgaben/lader.ts), der nächste wird vorab geholt; jeder Chunk bringt seine
+ * Bewertung mit (`bewerterFuer`), die Route enthält keine. Texte kommen als Prop aus
  * `messages/lernapp/<ui>.json` (Namensräume `spieler` und `aufgaben`) und werden mit `format.ts` gefüllt.
  *
  * ```tsx
@@ -68,7 +69,7 @@ const erzeugeKomponenten = (): Komponenten =>
   Object.fromEntries(
     (Object.keys(AUFGABEN_LADER) as ImplementierterTyp[]).map((t) => [
       t,
-      lazy(AUFGABEN_LADER[t] as () => Promise<{ default: ComponentType }>),
+      lazy(() => ladeTyp(t) as unknown as Promise<{ default: ComponentType }>),
     ]),
   ) as unknown as Komponenten;
 
@@ -83,56 +84,28 @@ class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, {
   }
 }
 
+/** Anweisung ohne eigenes Feld: ein fester Text je Typ (`aufgaben.<typ>.<anweisung>`). */
+const ANWEISUNG: Partial<Record<AufgabenTyp, string>> = {
+  frei: 'uebersetze',
+  hoeren_schreiben: 'schreibeGehoertes',
+  minimalpaare: 'waehleGehoertes',
+  luecke: 'ergaenze',
+  satzbau: 'ordne',
+  formen: 'ergaenze',
+};
+
 function anweisung(a: Aufgabe, t: SpielerTexte['aufgaben']): string {
-  switch (a.typ) {
-    case 'auswahl':
-      return t.auswahl[a.anweisung];
-    case 'wortbank':
-      return t.wortbank[a.anweisung];
-    case 'paare':
-      return t.paare[a.anweisung];
-    case 'bild_wort':
-      return t.bild_wort[a.anweisung];
-    case 'frei':
-      return t.frei[a.anweisung ?? 'uebersetze'];
-    case 'hoeren_waehlen':
-      return t.hoeren_waehlen[a.anweisung];
-    case 'hoeren_schreiben':
-      return t.hoeren_schreiben.schreibeGehoertes;
-    case 'minimalpaare':
-      return t.minimalpaare.waehleGehoertes;
-    case 'luecke':
-      return t.luecke.ergaenze;
-    case 'satzbau':
-      return t.satzbau.ordne;
-    case 'formen':
-      return t.formen.ergaenze;
-    case 'harakat':
-      return t.harakat[a.anweisung];
-    default:
-      return '';
-  }
+  const k = ('anweisung' in a && a.anweisung) || ANWEISUNG[a.typ] || '';
+  return (t as unknown as Partial<Record<string, Record<string, string>>>)[a.typ]?.[k] ?? '';
 }
 
-function loesungSprache(a: Aufgabe): UiSprache | null {
-  switch (a.typ) {
-    case 'auswahl':
-    case 'bild_wort':
-    case 'hoeren_waehlen':
-    case 'minimalpaare':
-    case 'harakat':
-      return a.optionen[a.richtig]?.sprache ?? null;
-    case 'wortbank':
-    case 'frei':
-    case 'hoeren_schreiben':
-    case 'luecke':
-    case 'satzbau':
-    case 'formen':
-      return a.sprache;
-    default:
-      return null;
-  }
-}
+/** Sprache der Lösung: Antwortsprache oder Sprache der richtigen Option. */
+const loesungSprache = (a: Aufgabe): UiSprache | null =>
+  'sprache' in a
+    ? a.sprache
+    : 'richtig' in a && 'optionen' in a
+      ? ((a.optionen[a.richtig] as { sprache?: UiSprache } | undefined)?.sprache ?? null)
+      : null;
 
 const KNOPF = 'min-h-12 druck rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800';
 
@@ -161,17 +134,19 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
     else titel.current?.focus();
   }, [s.phase, s.pos]);
 
-  // nächsten Übungstyp vorab laden (eigener Chunk, KERN §9)
+  // nächsten Übungstyp vorab laden (eigener Chunk mit Bewertung, KERN §9)
   useEffect(() => {
     const naechste = s.aufgaben[s.reihe[s.pos + 1] ?? -1];
-    if (naechste && naechste.typ in AUFGABEN_LADER) void AUFGABEN_LADER[naechste.typ as ImplementierterTyp]().catch(() => undefined);
+    if (naechste && naechste.typ in AUFGABEN_LADER) void ladeTyp(naechste.typ as ImplementierterTyp).catch(() => undefined);
   }, [s.aufgaben, s.reihe, s.pos]);
 
   const sende = (ereignisse: EreignisEntwurf[]) => ereignisse.forEach((e) => onEreignis(e));
 
   function gibAb(x: Antwort) {
-    if (s.phase !== 'frage') return;
-    const r = pruefe(s, x);
+    // die Bewertung kommt mit dem Chunk des Typs; ohne geladene Komponente gibt es keine Antwort
+    const bewerte = a && bewerterFuer(a.aufgabe.typ);
+    if (s.phase !== 'frage' || !bewerte) return;
+    const r = pruefe(s, x, bewerte);
     setS(r.sitzung);
     setMeldung('');
     sende(r.ereignisse);
@@ -239,7 +214,7 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
   const stand = f(texte.spieler.aufgabeVon, { nr: a.index + 1, anzahl: s.aufgaben.length });
   const auswertung = s.phase === 'rueckmeldung' ? s.letzte : null;
   // nur überspringen: Hörübung ohne Clip („Audio folgt“) oder Wiedergabe auf dem Gerät nicht möglich (meldet die Übung)
-  const ohneAudio = istHoerTyp(aufgabe.typ) && !(aufgabe as { hoeren?: { audio?: unknown } }).hoeren?.audio;
+  const ohneAudio = istHoerTyp(aufgabe.typ) && !hatAudio(aufgabe as MitHoeren);
   const nurWeiter = ohneAudio || nurWeiterBei === s.pos;
 
   return (

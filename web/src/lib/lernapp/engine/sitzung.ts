@@ -1,6 +1,6 @@
 import { angenommen, bereiteLexikon, type Lexikon, type Urteil } from '../abgleich';
-import { bewerte } from '../aufgaben/bewerte';
-import { type Antwort, type Aufgabe, type AufgabenTyp, type Auswertung, istImplementiert, type Lektion } from '../aufgaben/schema';
+import type { Auswertung, Bewerter } from '../aufgaben/hilfen';
+import { type Antwort, type Aufgabe, type AufgabenTyp, istImplementiert, type Lektion } from '../aufgaben/schema';
 import type { EreignisEntwurf } from '../ereignisse/typen';
 import { noteAus } from '../bewertung';
 import { xpFuer } from './xp';
@@ -20,6 +20,8 @@ import { xpFuer } from './xp';
  *   gespielte Aufgabe keine Ereignisse.
  * - Die Funktionen geben neue Zustände und die zu speichernden Ereignis-Entwürfe zurück; Gerät, Nummer, Zeit und
  *   Lerntag ergänzt der Ausgang (lokal/ausgang.ts).
+ * - Die Bewertung kommt vom Aufrufer (`pruefe(s, antwort, bewerte)`): der Spieler nimmt die des geladenen Übungs-Chunks,
+ *   damit keine Bewertung eines Typs in der Route liegt (KERN 4.0 §9); Tests nehmen `aufgaben/bewerte.ts`.
  */
 
 export const WEITERE_VERSUCHE = 2;
@@ -76,8 +78,8 @@ export function aktuell(s: Sitzung): { index: number; aufgabe: Aufgabe; wiederho
   return { index, aufgabe, wiederholung: s.reihe.indexOf(index) < s.pos };
 }
 
-/** Antwort prüfen (nur in der Phase „frage“). */
-export function pruefe(s: Sitzung, antwort: Antwort): Schritt {
+/** Antwort mit der Bewertung des Übungstyps prüfen (nur in der Phase „frage“). */
+export function pruefe(s: Sitzung, antwort: Antwort, bewerte: Bewerter): Schritt {
   const a = aktuell(s);
   if (!a || s.phase !== 'frage') return { sitzung: s, ereignisse: [] };
   const auswertung = bewerte(a.aufgabe, antwort, { lexikon: s.lexikon });

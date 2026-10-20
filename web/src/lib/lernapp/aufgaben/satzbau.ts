@@ -1,12 +1,12 @@
-import { gleicheAb, normalisiere, type Sprache } from '../abgleich';
-import { satzAus, zerlege } from '../abgleich/tokens';
-import { gemischteIndizes } from '../engine/zufall';
+import { normalisiere, type Sprache } from '../abgleich';
+import { zerlege } from '../abgleich/tokens';
 import * as z from '../z';
-import { type Auswertung, basis, InhaltSchema, kartenMit, liste, Loesungen, SpracheSchema, text } from './grundlagen';
+import { basis, InhaltSchema, liste, Loesungen, SpracheSchema, text } from './grundlagen';
 
 /**
  * Übungstyp `satzbau` (Satz ordnen, PLAN §4): Alle Wörter eines Satzes liegen als Kacheln bereit, ohne Ablenker; die
- * Reihenfolge wird gegen alle angenommenen Fassungen abgeglichen (ohne Tippfehler-Toleranz, wie die Wortbank). Jede Fassung
+ * Reihenfolge wird gegen alle angenommenen Fassungen abgeglichen (ohne Tippfehler-Toleranz, wie die Wortbank;
+ * `auswertung/satzbau.ts`). Jede Fassung
  * besteht genau aus den Kacheln. Bedienung wie `wortbank` (Werkzeugleiste mit wanderndem Tabindex, Antwortzeile als Liste).
  */
 
@@ -39,13 +39,3 @@ export const SatzbauSchema = z
 
 export type SatzbauAufgabe = z.infer<typeof SatzbauSchema>;
 export type SatzbauAntwort = { typ: 'satzbau'; kacheln: number[] };
-
-/** Anzeigereihenfolge der Kacheln (nie die Reihenfolge des Satzes). */
-export const satzbauReihenfolge = (a: Pick<SatzbauAufgabe, 'kacheln' | 'schluessel'>): number[] =>
-  gemischteIndizes(a.kacheln.length, a.schluessel);
-
-export function bewerteSatzbau(a: SatzbauAufgabe, antwort: SatzbauAntwort): Auswertung {
-  const satz = satzAus(antwort.kacheln.map((i) => a.kacheln[i] ?? ''));
-  const e = gleicheAb(satz, a.loesungen, a.sprache, { toleranz: false });
-  return { urteil: e.urteil, hinweise: e.hinweise, loesung: e.loesung, karten: kartenMit(a.karten, e.urteil) };
-}

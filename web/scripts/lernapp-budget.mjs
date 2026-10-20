@@ -7,8 +7,10 @@
 // - Start `/lern-app/de`, Lernpfad `/lern-app/ar/de-aus-ar`, Fortschritt `/lern-app/de/fortschritt`: gesamt ≤ 180 KB,
 //   eigener Anteil ≤ 30 KB.
 // - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB.
-// - je Übungstyp ≤ 15 KB: die Dateien mit den Erkennungstexten der Komponente und der gemeinsamen Bausteine, die der Typ
-//   nachlädt (`TYP_MODULE`; Klassen, aus `.next/static/chunks`), jede Datei einmal gezählt.
+// - je Übungstyp ≤ 15 KB: der Chunk des Typs (`TYP_ERKENNUNG`: Datei aus `.next/static/chunks`, in der alle
+//   Erkennungstexte des Typs stehen – Turbopack legt die gemeinsamen Bausteine wie Optionsgruppe oder Texteingabe in jeden
+//   Typ-Chunk; mehrere passende Dateien sind Chunks verschiedener Typen gleicher Bauart, gezählt wird die größte) plus
+//   jede Datei mit einem Baustein des Typs, die zu keinem Typ gehört (falls ein Baustein als eigener Chunk ausgelagert ist).
 // - arabische Bildschirmtastatur ≤ 10 KB (eigener Chunk, erst bei arabischem Freitext).
 // Exit 1, wenn ein Budget verfehlt ist.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -35,22 +37,27 @@ const ROUTEN = {
 /** Erkennungstexte der Komponenten (lange Klassenketten, je genau eine Quelldatei; geprüft in tests/unit/lernapp/bundle-regeln). */
 const ERKENNUNG = JSON.parse(readFileSync(join(import.meta.dirname, 'lernapp-budget-erkennung.json'), 'utf8'));
 
-/** Module je Übungstyp (Erkennungstexte): eigene Komponente und gemeinsame Bausteine aus `aufgaben/` bzw. `tastatur/`. */
+/**
+ * Erkennung je Übungstyp: `alle` stehen in der Datei des Typ-Chunks (eigene Komponente bzw. Bauart: Hören + Wahl,
+ * Hören + Eingabe), `bausteine` sind gemeinsame Bausteine, die der Typ nachlädt.
+ */
 const TEXT = ['texteingabe', 'zeichenhilfe', 'sonderzeichen'];
-const TYP_MODULE = {
-  auswahl: ['auswahl'],
-  paare: ['paare'],
-  wortbank: ['wortbank'],
-  bild_wort: ['bild_wort', 'optionsgruppe'],
-  frei: ['frei', ...TEXT],
-  hoeren_waehlen: ['abspieler', 'optionsgruppe'],
-  hoeren_schreiben: ['abspieler', ...TEXT],
-  minimalpaare: ['abspieler', 'optionsgruppe'],
-  luecke: ['luecke', 'optionsgruppe', ...TEXT],
-  satzbau: ['wortbank'],
-  formen: ['formen', ...TEXT],
-  harakat: ['harakat', 'optionsgruppe'],
+const TYP_ERKENNUNG = {
+  auswahl: { alle: ['auswahl'] },
+  paare: { alle: ['paare'] },
+  wortbank: { alle: ['wortbank'] },
+  bild_wort: { alle: ['bild_wort'], bausteine: ['optionsgruppe'] },
+  frei: { alle: ['frei'], bausteine: TEXT },
+  hoeren_waehlen: { alle: ['abspieler', 'optionsgruppe'] },
+  hoeren_schreiben: { alle: ['abspieler', 'texteingabe'], bausteine: TEXT },
+  minimalpaare: { alle: ['abspieler', 'optionsgruppe'] },
+  luecke: { alle: ['luecke'], bausteine: ['optionsgruppe', ...TEXT] },
+  satzbau: { alle: ['wortbank'] },
+  formen: { alle: ['formen'], bausteine: TEXT },
+  harakat: { alle: ['harakat'], bausteine: ['optionsgruppe'] },
 };
+/** Texte, die eine Datei einem Typ-Chunk zuordnen (eigene Komponenten und der Abspieler der Hörtypen). */
+const TYP_TEXTE = ['auswahl', 'paare', 'wortbank', 'bild_wort', 'frei', 'luecke', 'formen', 'harakat', 'abspieler'];
 
 const BUDGET = {
   huelleEigen: 20,
@@ -117,14 +124,24 @@ const grundstockBytes = summe(gemessen.huelle, (d) => grundstock.has(d));
 
 // Übungstypen und Spieler: Dateien mit dem Erkennungstext im Bauergebnis
 const ordner = join(import.meta.dirname, '..', '.next', 'static', 'chunks');
+const inhalt = new Map(chunkDateien(ordner).map((p) => [p.slice(ordner.length), readFileSync(p, 'utf8')]));
+const gzVon = (d) => gzipSync(readFileSync(join(ordner, d)), { level: 9 }).length;
 const typen = {};
 for (const [name, { text }] of Object.entries(ERKENNUNG)) {
-  const treffer = chunkDateien(ordner).filter((p) => readFileSync(p, 'utf8').includes(text));
-  typen[name] = {
-    dateien: treffer.map((p) => p.slice(ordner.length)),
-    gz: treffer.reduce((s, p) => s + gzipSync(readFileSync(p), { level: 9 }).length, 0),
-  };
+  const treffer = [...inhalt].filter(([, t]) => t.includes(text)).map(([d]) => d);
+  typen[name] = { dateien: treffer, gz: treffer.reduce((s, d) => s + gzVon(d), 0) };
 }
+const hat = (d, name) => typen[name].dateien.includes(d);
+
+/** Chunk eines Übungstyps (größte passende Datei) und ausgelagerte Bausteine; 0 = nicht gefunden. */
+function typChunk({ alle, bausteine = [] }) {
+  const eigene = [...inhalt.keys()].filter((d) => alle.every((n) => hat(d, n)));
+  if (!eigene.length) return { gz: 0, dateien: [] };
+  const groesste = eigene.map((d) => [d, gzVon(d)]).sort((a, b) => b[1] - a[1])[0];
+  const ausgelagert = [...new Set(bausteine.flatMap((n) => typen[n].dateien))].filter((d) => !TYP_TEXTE.some((n) => hat(d, n)));
+  return { gz: groesste[1] + ausgelagert.reduce((s, d) => s + gzVon(d), 0), dateien: [groesste[0], ...ausgelagert] };
+}
+const uebungstypen = Object.fromEntries(Object.entries(TYP_ERKENNUNG).map(([t, e]) => [t, typChunk(e)]));
 
 const werte = {
   grundstock: kb(grundstockBytes),
@@ -139,14 +156,7 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
-  uebungstyp: Object.fromEntries(
-    Object.entries(TYP_MODULE).map(([t, module]) => {
-      const dateien = new Set(module.flatMap((m) => typen[m].dateien));
-      // jede Datei einmal; ohne Treffer 0 (nicht gefunden)
-      const gz = [...dateien].reduce((s, d) => s + gzipSync(readFileSync(join(ordner, d)), { level: 9 }).length, 0);
-      return [t, module.every((m) => typen[m].dateien.length) ? kb(gz) : 0];
-    }),
-  ),
+  uebungstyp: Object.fromEntries(Object.entries(uebungstypen).map(([t, { gz }]) => [t, kb(gz)])),
   arabischeTastatur: kb(typen.arabischeTastatur.gz),
   spielerChunk: kb(typen.spieler.gz),
 };
@@ -178,5 +188,6 @@ const zeilen = [
   verfehlt.length ? `VERFEHLT: ${verfehlt.join(' · ')}` : 'Alle Budgets eingehalten.',
 ];
 console.log(zeilen.join('\n'));
-if (aus) writeFileSync(aus, JSON.stringify({ basis, werte, budget: BUDGET, typen, verfehlt, grundstock: [...grundstock] }, null, 2));
+if (aus)
+  writeFileSync(aus, JSON.stringify({ basis, werte, budget: BUDGET, typen, uebungstypen, verfehlt, grundstock: [...grundstock] }, null, 2));
 process.exit(verfehlt.length ? 1 : 0);

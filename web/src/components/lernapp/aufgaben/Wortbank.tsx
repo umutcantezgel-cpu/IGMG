@@ -7,6 +7,9 @@ import { InhaltText } from '../InhaltText';
 import { naechsterIndex, verschiebeRichtung } from '../tastatur';
 import { type AufgabenProps, richtung } from '../typen';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteWortbank as bewerte } from '@/lib/lernapp/aufgaben/wortbank';
+
 const KACHEL = 'min-h-11 min-w-11 rounded-md border-2 px-3 py-1 text-20';
 
 /**

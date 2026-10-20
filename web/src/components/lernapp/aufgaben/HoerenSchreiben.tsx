@@ -5,6 +5,9 @@ import type { AufgabenProps } from '../typen';
 import { Abspieler } from './Abspieler';
 import { Texteingabe } from './Texteingabe';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteHoerenSchreiben as bewerte } from '@/lib/lernapp/aufgaben/auswertung/hoeren_schreiben';
+
 /**
  * Übungstyp `hoeren_schreiben` (Diktat, PLAN §4): Abspieler, darunter das Antwortfeld wie bei `frei`; nach der Antwort die
  * Abschrift. Ohne Clip oder ohne Wiedergabe nur „Weiter ohne Hören“.

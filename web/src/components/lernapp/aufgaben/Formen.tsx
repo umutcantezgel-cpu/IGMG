@@ -1,13 +1,16 @@
 'use client';
 
 import { useId, useMemo, useRef, useState } from 'react';
-import { pruefeZellen } from '@/lib/lernapp/aufgaben/formen';
-import { ANTWORT_MAX } from '@/lib/lernapp/aufgaben/grundlagen';
+import { pruefeZellen } from '@/lib/lernapp/aufgaben/auswertung/formen';
+import { ANTWORT_MAX } from '@/lib/lernapp/aufgaben/hilfen';
 import { einfuegen, type Feldstand, loesche } from '../tastatur/einfuegen';
 import { InhaltText } from '../InhaltText';
 import { richtung, type AufgabenProps } from '../typen';
 import { feldKlasse } from './Texteingabe';
 import { Zeichenhilfe } from './Zeichenhilfe';
+
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteFormen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/formen';
 
 /**
  * Übungstyp `formen` (Konjugation, Endungen; PLAN §4): Tabelle mit Zeilen- und Spaltenköpfen (`th` mit `scope`); offene

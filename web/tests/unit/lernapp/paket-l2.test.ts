@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { AufgabeSchema } from '@/lib/lernapp/aufgaben/schema';
 import { hauptVerweis, verweiseVon, vorlageTexte, AufgabeVorlageSchema, SprachEinheitDateiSchema } from '@/lib/lernapp/inhalt/schema';
 import { type BauAufgabe, type BauEingabe, type BauEintrag, type BauUebersetzung, baueEinheit, lueckeIn } from '@/lib/lernapp/paket/bauen';
-import { SYMBOLE, symbolBild, symbolFehler } from '@/lib/lernapp/symbole';
+import { alsPfad, SYMBOLE, symbolBild, symbolFehler } from '@/lib/lernapp/symbole';
 import { ar } from './hilfen/buckwalter';
 
 /**
@@ -233,7 +233,7 @@ describe('Paketbau der Typen aus L2-01', () => {
     const [bild, freiZiel, freiAusgang, hw, hs, mp, lw, sb, fo] = aufgaben as never as Record<string, never>[];
     expect(bild).toMatchObject({
       karten: ['tr-aus-de:tr.a1.e01.w003'],
-      bild: { symbol: 'haus', elemente: SYMBOLE.get('haus')!.elemente },
+      bild: { symbol: 'haus', pfade: SYMBOLE.get('haus')!.elemente.map(alsPfad) },
       optionen: [
         { text: 'ev', sprache: 'tr' },
         { text: 'kitap', sprache: 'tr' },
@@ -326,7 +326,10 @@ describe('Register der Bildkarten', () => {
     const verboten =
       /user|person|baby|smile|face|frown|laugh|angry|eye|hand|footprint|bird|cat|dog|fish|rabbit|snail|turtle|bug|squirrel|church|moon|cross|star|heart|skull|wine|beer|cigarette|dice|spade|club|sword|gun|crosshair|guitar|drum|piano|music|flag|map/;
     for (const e of SYMBOLE.values()) expect(verboten.test(e.quelle), e.quelle).toBe(false);
-    expect(symbolBild('haus')).toEqual({ symbol: 'haus', elemente: SYMBOLE.get('haus')!.elemente });
+    expect(symbolBild('haus')).toEqual({ symbol: 'haus', pfade: SYMBOLE.get('haus')!.elemente.map(alsPfad) });
+    // Lucide liefert auch Kreise, Rechtecke und Linien; im Paket stehen nur Pfade
+    expect(SYMBOLE.get('uhr')!.elemente.some((e) => e.art === 'circle')).toBe(true);
+    expect(symbolBild('uhr')!.pfade.every((d) => /^M/.test(d))).toBe(true);
     expect(symbolBild('gibt-es-nicht')).toBeNull();
     expect(symbolFehler('haus', 'test:lernapp-testkurs')).toBeNull();
     expect(symbolFehler('haus', 'ki:lauf-1')).toMatch(/ohne Freigabe/);

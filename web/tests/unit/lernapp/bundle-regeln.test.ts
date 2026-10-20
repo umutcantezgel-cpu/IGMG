@@ -129,6 +129,38 @@ describe('Übungstypen nur per import()', () => {
   });
 });
 
+describe('Bewertung nur in den Übungs-Chunks (KERN 4.0 §9)', () => {
+  const AUFGABEN_LIB = join(WURZEL, 'lib', 'lernapp', 'aufgaben');
+  /** Module mit Bewertung oder Anzeige-Hilfen eines Typs (gehören in den Chunk des Typs, nicht in die Route). */
+  const istBewertung = (p: string) =>
+    p.startsWith(join(AUFGABEN_LIB, 'auswertung')) ||
+    ['bewerte.ts', 'auswahl.ts', 'wortbank.ts', 'paare.ts'].some((n) => p === join(AUFGABEN_LIB, n));
+
+  it.each(['Spieler.tsx', join('inseln', 'UebenInsel.tsx'), join('inseln', 'WiederholenInsel.tsx')])(
+    '%s lädt statisch keine Bewertung',
+    (datei) => {
+      const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
+      expect(graph.size).toBeGreaterThan(3);
+      expect([...graph.keys()].filter(istBewertung).map(kurz)).toEqual([]);
+    },
+  );
+
+  it('die Nutzlast-Dateien der Typen (Zod) importieren keine Bewertung', () => {
+    const nutzlast = readdirSync(AUFGABEN_LIB)
+      .filter((n) => n.endsWith('.ts'))
+      .map((n) => join(AUFGABEN_LIB, n))
+      .filter((p) => !istBewertung(p));
+    expect(nutzlast.length).toBeGreaterThan(10);
+    const funde = nutzlast.flatMap((p) =>
+      importe(readFileSync(p, 'utf8'))
+        .statisch.map((z) => aufloesen(p, z))
+        .filter((z): z is string => z !== null && istBewertung(z))
+        .map((z) => `${kurz(p)} → ${kurz(z)}`),
+    );
+    expect(funde).toEqual([]);
+  });
+});
+
 describe('Sprachmodell nur im Worker', () => {
   it('@huggingface/transformers nur in *.worker.ts', () => {
     const funde = dateien(WURZEL).filter(

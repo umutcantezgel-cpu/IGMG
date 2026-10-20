@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import { hoerenReihenfolge } from '@/lib/lernapp/aufgaben/hoeren_waehlen';
+import { hoerenReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/hoeren_waehlen';
 import type { AufgabenProps } from '../typen';
 import { Abspieler } from './Abspieler';
 import { Optionsgruppe } from './Optionsgruppe';

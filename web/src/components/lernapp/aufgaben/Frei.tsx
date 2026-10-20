@@ -5,6 +5,9 @@ import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
 import { Texteingabe } from './Texteingabe';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteFrei as bewerte } from '@/lib/lernapp/aufgaben/auswertung/frei';
+
 /**
  * Übungstyp `frei` (PLAN §4): Vorgabe in ihrer Sprache, darunter das Antwortfeld mit `lang`/`dir` der Antwortsprache und
  * der Zeichenhilfe (Sonderzeichen de/tr, arabische Bildschirmtastatur). Enter prüft; toleranter Abgleich.

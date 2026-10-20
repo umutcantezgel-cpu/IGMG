@@ -1,7 +1,7 @@
 'use client';
 
 import { type SyntheticEvent, useState } from 'react';
-import { ANTWORT_MAX } from '@/lib/lernapp/aufgaben/grundlagen';
+import { ANTWORT_MAX } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Sprache } from '@/lib/lernapp/kurse';
 import { einfuegen, type Feldstand, loesche } from '../tastatur/einfuegen';

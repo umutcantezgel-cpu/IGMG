@@ -1,13 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { bewerte } from '@/lib/lernapp/aufgaben/bewerte';
-import { BildWortSchema, bildWortReihenfolge } from '@/lib/lernapp/aufgaben/bild_wort';
-import { bewerteFormen, pruefeZellen, zellenKopf } from '@/lib/lernapp/aufgaben/formen';
-import { beschreibe, bewerteHarakat, zeichenFolge, zeichenSchluessel } from '@/lib/lernapp/aufgaben/harakat';
-import { HOER_TYPEN, hatAudio, istHoerTyp } from '@/lib/lernapp/aufgaben/hoeren_waehlen';
-import { bewerteLuecke, satzMit } from '@/lib/lernapp/aufgaben/luecke';
+import { bildWortReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/bild_wort';
+import { bewerteFormen, pruefeZellen, zellenKopf } from '@/lib/lernapp/aufgaben/auswertung/formen';
+import { beschreibe, bewerteHarakat, zeichenFolge, zeichenSchluessel } from '@/lib/lernapp/aufgaben/auswertung/harakat';
+import { bewerteLuecke, satzMit } from '@/lib/lernapp/aufgaben/auswertung/luecke';
+import { BildWortSchema } from '@/lib/lernapp/aufgaben/bild_wort';
+import { HOER_TYPEN, hatAudio, istHoerTyp } from '@/lib/lernapp/aufgaben/hilfen';
 import { AufgabeSchema, type AufgabeVon, IMPLEMENTIERT, istImplementiert } from '@/lib/lernapp/aufgaben/schema';
 import { bereiteLexikon } from '@/lib/lernapp/abgleich';
 import { einfuegen, loesche, SONDERZEICHEN } from '@/components/lernapp/tastatur/einfuegen';
+import { alsPfad, type SymbolElement, SymbolElementSchema } from '@/lib/lernapp/symbole';
 import { ar } from './hilfen/buckwalter';
 
 /**
@@ -25,10 +27,7 @@ const BILD: AufgabeVon<'bild_wort'> = {
   anweisung: 'waehleWort',
   bild: {
     symbol: 'haus',
-    elemente: [
-      { art: 'path', d: 'M3 10 12 3l9 7v11H3z' },
-      { art: 'circle', cx: 12, cy: 14, r: 2 },
-    ],
+    pfade: ['M3 10 12 3l9 7v11H3z', 'M10 14a2 2 0 1 0 4 0a2 2 0 1 0-4 0'],
   },
   optionen: [T('ev'), T('kitap'), T('su')],
   richtig: 0,
@@ -135,9 +134,9 @@ describe('Schemas der Typen aus L2-01', () => {
   });
 
   it.each([
-    ['Bild mit Element, das es nicht gibt', { ...BILD, bild: { symbol: 'haus', elemente: [{ art: 'image', href: 'x' }] } }],
-    ['Bild mit Text in den Pfaddaten', { ...BILD, bild: { symbol: 'haus', elemente: [{ art: 'path', d: '<script>' }] } }],
-    ['Bild mit Zahl außerhalb des Rasters', { ...BILD, bild: { symbol: 'haus', elemente: [{ art: 'circle', cx: 1e9, cy: 1, r: 1 }] } }],
+    ['Bild mit Element statt Pfad', { ...BILD, bild: { symbol: 'haus', pfade: [{ art: 'image', href: 'x' }] } }],
+    ['Bild mit Text in den Pfaddaten', { ...BILD, bild: { symbol: 'haus', pfade: ['<script>'] } }],
+    ['Bild ohne Pfad', { ...BILD, bild: { symbol: 'haus', pfade: [] } }],
     ['Bild mit großem Motivnamen', { ...BILD, bild: { ...BILD.bild, symbol: 'Haus' } }],
     ['Bild: richtig außerhalb', { ...BILD, richtig: 3 }],
     ['Frei ohne Lösung', { ...FREI, loesungen: [] }],
@@ -280,16 +279,31 @@ describe('Hilfen', () => {
     expect(SONDERZEICHEN).toEqual({ de: ['ä', 'ö', 'ü', 'ß'], tr: ['ç', 'ğ', 'ı', 'İ', 'ö', 'ş', 'ü'] });
   });
 
-  it('Bild-Schema: alle Grundformen erlaubt', () => {
-    const elemente = [
+  it('Bild-Schema: Pfade aus allen Grundformen des Registers sind gültig', () => {
+    const elemente: SymbolElement[] = [
       { art: 'path', d: 'M1 1h2v2z' },
       { art: 'circle', cx: 12, cy: 12, r: 10 },
       { art: 'ellipse', cx: 12, cy: 12, rx: 4, ry: 2 },
       { art: 'rect', x: 2, y: 2, width: 20, height: 20, rx: 2 },
+      { art: 'rect', x: 9, y: 12, width: 6, height: 9 },
       { art: 'line', x1: 1, y1: 1, x2: 2, y2: 2 },
       { art: 'polyline', points: '1 1 2 2' },
       { art: 'polygon', points: '1,1 2,2 3,1' },
     ];
-    expect(BildWortSchema.safeParse({ ...BILD, bild: { symbol: 'probe', elemente } }).success).toBe(true);
+    const pfade = elemente.map(alsPfad);
+    expect(pfade).toEqual([
+      'M1 1h2v2z',
+      'M2 12a10 10 0 1 0 20 0a10 10 0 1 0 -20 0',
+      'M8 12a4 2 0 1 0 8 0a4 2 0 1 0 -8 0',
+      'M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2z',
+      'M9 12h6v9h-6z',
+      'M1 1L2 2',
+      'M1 1L2 2',
+      'M1 1L2 2L3 1z',
+    ]);
+    expect(BildWortSchema.safeParse({ ...BILD, bild: { symbol: 'probe', pfade } }).success).toBe(true);
+    // ungültige Grundformen weist schon das Register ab
+    expect(SymbolElementSchema.safeParse({ art: 'circle', cx: 1e9, cy: 1, r: 1 }).success).toBe(false);
+    expect(SymbolElementSchema.safeParse({ art: 'image', href: 'x' }).success).toBe(false);
   });
 });

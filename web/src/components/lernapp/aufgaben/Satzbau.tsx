@@ -4,6 +4,9 @@ import type { AufgabeVon } from '@/lib/lernapp/aufgaben/schema';
 import type { AufgabenProps } from '../typen';
 import Wortbank from './Wortbank';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteSatzbau as bewerte } from '@/lib/lernapp/aufgaben/auswertung/satzbau';
+
 /**
  * Übungstyp `satzbau` (Satz ordnen, PLAN §4): Bedienung wie `wortbank` (Werkzeugleiste mit wanderndem Tabindex,
  * Antwortzeile als Liste, Alt + Pfeil verschiebt; B-31), nur ohne Ablenker – alle Wörter gehören in den Satz. Die

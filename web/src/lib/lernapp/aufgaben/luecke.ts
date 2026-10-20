@@ -1,13 +1,11 @@
 import { normalisiere } from '../abgleich';
-import { gemischteIndizes } from '../engine/zufall';
 import * as z from '../z';
-import { textAuswertung } from './frei';
-import { type Auswertung, basis, type BewertungsKontext, InhaltSchema, Loesungen, roh, SpracheSchema } from './grundlagen';
+import { basis, InhaltSchema, Loesungen, roh, SpracheSchema } from './grundlagen';
 
 /**
  * Übungstyp `luecke` (Lückentext, PLAN §4): Ein Satz mit einer Lücke (`vor` … `nach`). Mit `optionen` wird gewählt
  * (Radiogruppe; Abgleich ohne Tippfehler-Toleranz, die Optionen sind fertig geschrieben), sonst getippt (beschriftetes Feld,
- * toleranter Abgleich wie `frei`). Die Lösung im Rückmeldeblatt ist der ganze Satz.
+ * toleranter Abgleich wie `frei`; `auswertung/luecke.ts`). Die Lösung im Rückmeldeblatt ist der ganze Satz.
  */
 
 export const LueckeSchema = z
@@ -39,18 +37,3 @@ export const LueckeSchema = z
 
 export type LueckeAufgabe = z.infer<typeof LueckeSchema>;
 export type LueckeAntwort = { typ: 'luecke'; wahl: number } | { typ: 'luecke'; text: string };
-
-/** Anzeigereihenfolge der Optionen. */
-export const lueckeReihenfolge = (a: Pick<LueckeAufgabe, 'optionen' | 'schluessel'>): number[] =>
-  gemischteIndizes(a.optionen?.length ?? 0, a.schluessel);
-
-/** Satz mit gefüllter Lücke (Leerraum an den Rändern zusammengefasst). */
-export const satzMit = (a: Pick<LueckeAufgabe, 'vor' | 'nach'>, wort: string): string =>
-  `${a.vor}${wort}${a.nach}`.replace(/\s+/g, ' ').trim();
-
-export function bewerteLuecke(a: LueckeAufgabe, antwort: LueckeAntwort, kontext: BewertungsKontext = {}): Auswertung {
-  const gewaehlt = 'wahl' in antwort;
-  const eingabe = gewaehlt ? (a.optionen?.[antwort.wahl] ?? '') : antwort.text;
-  const e = textAuswertung(eingabe, a.loesungen, a.sprache, a.karten, kontext, { toleranz: !gewaehlt });
-  return { ...e, loesung: e.loesung === null ? null : satzMit(a, e.loesung) };
-}

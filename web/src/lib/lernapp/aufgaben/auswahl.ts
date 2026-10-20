@@ -1,5 +1,6 @@
 import { gemischteIndizes } from '../engine/zufall';
-import { type AntwortVon, type Auswertung, type AuswahlAufgabe, kartenMit } from './schema';
+import { type Auswertung, kartenMit } from './hilfen';
+import type { AntwortVon, AuswahlAufgabe } from './schema';
 
 /**
  * Übungstyp `auswahl` (PLAN §4): eine richtige Option; Bewertung nach Index. Anzeige als Radiogruppe (Pfeiltasten,

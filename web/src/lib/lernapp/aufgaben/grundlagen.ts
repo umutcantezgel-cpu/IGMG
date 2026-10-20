@@ -1,4 +1,3 @@
-import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
 import { SPRACHEN } from '../kurse';
 import { SchluesselSchema } from '../ereignisse/typen';
 import * as z from '../z';
@@ -6,7 +5,8 @@ import * as z from '../z';
 /**
  * Bausteine der Aufgaben-Schemas (PLAN §4), gemeinsam für `schema.ts` und die Nutzlasten je Übungstyp
  * (`bild_wort.ts`, `frei.ts`, …). Eigenes Modul, damit die Typ-Dateien ihre Schemas bauen können, ohne `schema.ts`
- * zur Laufzeit zu importieren (`schema.ts` setzt aus ihnen die Union zusammen). `schema.ts` reicht alles weiter.
+ * zur Laufzeit zu importieren (`schema.ts` setzt aus ihnen die Union zusammen). Bewertung und Anzeige-Hilfen ohne Zod
+ * stehen in `hilfen.ts` und `auswertung/` (eigene Übungs-Chunks, KERN 4.0 §9).
  */
 
 export const SpracheSchema = z.enum(SPRACHEN);
@@ -53,31 +53,3 @@ export function mitOptionen<T extends { optionen: { text: string }[]; richtig: n
   if (a.richtig >= a.optionen.length) ctx.addIssue({ code: 'custom', message: 'richtig außerhalb der Optionen', path: ['richtig'] });
   if (!eindeutig(a.optionen.map((o) => o.text))) ctx.addIssue({ code: 'custom', message: 'Optionen doppelt', path: ['optionen'] });
 }
-
-export type KartenUrteil = { karte: string; urteil: Urteil };
-
-export type Auswertung = {
-  urteil: Urteil;
-  hinweise: HinweisSchluessel[];
-  /** richtige Lösung zur Anzeige (bei `tippfehler` und `falsch`; bei `richtig` die getroffene Lösung) */
-  loesung: string | null;
-  karten: KartenUrteil[];
-};
-
-export type BewertungsKontext = { lexikon?: Lexikon };
-
-/** Alle Karten einer Aufgabe mit demselben Urteil. */
-export const kartenMit = (karten: readonly string[] | undefined, urteil: Urteil): KartenUrteil[] =>
-  (karten ?? []).map((karte) => ({ karte, urteil }));
-
-/** Auswertung einer Wahl nach Index (auswahl, bild_wort, hoeren_waehlen, minimalpaare). */
-export function nachIndex(
-  a: { optionen: readonly { text: string }[]; richtig: number; karten?: readonly string[] },
-  wahl: number,
-): Auswertung {
-  const urteil = wahl === a.richtig ? 'richtig' : 'falsch';
-  return { urteil, hinweise: [], loesung: a.optionen[a.richtig]?.text ?? null, karten: kartenMit(a.karten, urteil) };
-}
-
-/** Höchstlänge einer getippten Antwort (Eingabefeld und Bewertung). */
-export const ANTWORT_MAX = 600;

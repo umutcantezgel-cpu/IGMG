@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { bewerte } from '@/lib/lernapp/aufgaben/bewerte';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { faelligeAnzahl, schwaeche, uebungsStufe, waehleKarten } from '@/lib/lernapp/engine/kartenwahl';
 import {
@@ -57,7 +58,7 @@ function spiele(s: Sitzung, antworten: (typ: keyof typeof RICHTIG, nr: number) =
     const a = aktuell(s)!;
     const typ = a.aufgabe.typ as keyof typeof RICHTIG;
     reihe.push(`${typ}${a.wiederholung ? '*' : ''}`);
-    const p = pruefe(s, (antworten(typ, nr++) === 'richtig' ? RICHTIG : FALSCH)[typ] as never);
+    const p = pruefe(s, (antworten(typ, nr++) === 'richtig' ? RICHTIG : FALSCH)[typ] as never, bewerte);
     ereignisse.push(...p.ereignisse);
     const w = weiter(p.sitzung);
     ereignisse.push(...w.ereignisse);
@@ -118,15 +119,27 @@ describe('Sitzung', () => {
   it('Phasen: prüfen nur bei „frage“, weiter nur bei „rueckmeldung“; Fortschritt wächst', () => {
     let s = starte(LEKTION);
     expect(weiter(s).sitzung).toBe(s);
-    const p = pruefe(s, RICHTIG.auswahl);
+    const p = pruefe(s, RICHTIG.auswahl, bewerte);
     s = p.sitzung;
     expect(s.phase).toBe('rueckmeldung');
     expect(s.letzte).toMatchObject({ urteil: 'richtig', loesung: 'su' });
-    expect(pruefe(s, RICHTIG.auswahl).sitzung).toBe(s);
+    expect(pruefe(s, RICHTIG.auswahl, bewerte).sitzung).toBe(s);
     expect(fortschritt(s)).toBeCloseTo(1 / 4);
     s = weiter(s).sitzung;
     expect(s.phase).toBe('frage');
     expect(s.letzte).toBeNull();
+  });
+
+  it('die Bewertung kommt vom Aufrufer (Chunk des Übungstyps), mit dem Lexikon der Lektion als Kontext', () => {
+    const s = starte({ ...LEKTION, lexikon: ['su'] });
+    const aufrufe: unknown[] = [];
+    const p = pruefe(s, RICHTIG.auswahl, (aufgabe, antwort, kontext) => {
+      aufrufe.push([aufgabe.typ, antwort.typ, kontext?.lexikon !== undefined]);
+      return { urteil: 'falsch', hinweise: [], loesung: 'x', karten: [] };
+    });
+    expect(aufrufe).toEqual([['auswahl', 'auswahl', true]]);
+    expect(p.sitzung.letzte).toEqual({ urteil: 'falsch', hinweise: [], loesung: 'x', karten: [] });
+    expect(p.sitzung.reihe.at(-1)).toBe(0);
   });
 
   it('Tippfehler zählen als angenommen; Lektion ohne spielbare Aufgabe ist sofort fertig', () => {
@@ -152,7 +165,7 @@ describe('Sitzung', () => {
     expect(t.sitzung.reihe).toEqual([0, 1, 2]);
     expect(aktuell(t.sitzung)?.aufgabe.typ).toBe('paare');
     // zu Ende spielen: Lektion zählt nur die gespielte Aufgabe
-    const p = pruefe(t.sitzung, RICHTIG.paare as never);
+    const p = pruefe(t.sitzung, RICHTIG.paare as never, bewerte);
     const w = weiter(p.sitzung);
     expect(w.sitzung.phase).toBe('fertig');
     expect(w.ereignisse[0]).toMatchObject({ art: 'lektion', daten: { richtig: 1, gesamt: 1 } });
@@ -161,7 +174,7 @@ describe('Sitzung', () => {
 
   it('überspringen nur vor dem ersten Versuch; alles übersprungen ergibt keine Ereignisse', () => {
     const s = starte(LEKTION);
-    const p = pruefe(s, FALSCH.auswahl);
+    const p = pruefe(s, FALSCH.auswahl, bewerte);
     expect(ueberspringe(p.sitzung).sitzung).toBe(p.sitzung);
     let x = starte(LEKTION);
     const ereignisse: EreignisEntwurf[] = [];

@@ -1,10 +1,11 @@
 import { normalisiere } from '../abgleich';
 import * as z from '../z';
-import { ab, type Auswertung, basis, InhaltSchema, liste, mitOptionen, nachIndex } from './grundlagen';
+import { ab, basis, InhaltSchema, liste, mitOptionen } from './grundlagen';
 
 /**
  * Übungstyp `minimalpaare` (PLAN §4): Ein Wort hören und unter fast gleichen Wörtern das gehörte wählen (tr ı/i, ü/u;
- * ar ṣād/sīn, ḥāʾ/hāʾ; de lang/kurz). Bedienung wie `hoeren_waehlen`; Bewertung nach Index. Der gehörte Text ist die
+ * ar ṣād/sīn, ḥāʾ/hāʾ; de lang/kurz). Bedienung wie `hoeren_waehlen`; Bewertung nach Index (`auswertung/minimalpaare.ts`).
+ * Der gehörte Text ist die
  * richtige Option; die Optionen tragen sonst keinen Hinweis (keine Übersetzung, die das Paar verraten würde).
  */
 
@@ -30,5 +31,3 @@ export const MinimalpaareSchema = z
 
 export type MinimalpaareAufgabe = z.infer<typeof MinimalpaareSchema>;
 export type MinimalpaareAntwort = { typ: 'minimalpaare'; wahl: number };
-
-export const bewerteMinimalpaare = (a: MinimalpaareAufgabe, antwort: MinimalpaareAntwort): Auswertung => nachIndex(a, antwort.wahl);

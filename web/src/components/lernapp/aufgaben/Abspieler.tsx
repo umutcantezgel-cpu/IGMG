@@ -3,7 +3,7 @@
 import { Volume2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import type { Inhalt } from '@/lib/lernapp/aufgaben/grundlagen';
-import { HOER_TYPEN } from '@/lib/lernapp/aufgaben/hoeren_waehlen';
+import { HOER_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import { hoerenUnmoeglich, spiele, stoppe } from '@/lib/lernapp/oberflaeche/audio';
 import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
