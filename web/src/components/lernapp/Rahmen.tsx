@@ -9,10 +9,11 @@ import { LernStern } from './Zeichen';
 
 export type Bereich = 'start' | 'fortschritt' | 'wortschatz' | 'einstellungen';
 
+/** Bereiche im Kopf; `spiegeln`: gerichtetes Zeichen (steigende Säulen), in `rtl` gespiegelt (KERN 4.0 §7). */
 const NAV = [
-  { bereich: 'start', pfad: '', Zeichen: House },
-  { bereich: 'fortschritt', pfad: 'fortschritt', Zeichen: ChartNoAxesColumnIncreasing },
-  { bereich: 'wortschatz', pfad: 'wortschatz', Zeichen: Library },
+  { bereich: 'start', pfad: '', Zeichen: House, spiegeln: false },
+  { bereich: 'fortschritt', pfad: 'fortschritt', Zeichen: ChartNoAxesColumnIncreasing, spiegeln: true },
+  { bereich: 'wortschatz', pfad: 'wortschatz', Zeichen: Library, spiegeln: false },
 ] as const;
 
 /** Website-Seite in der passenden Sprache: tr bleibt tr, ar und de führen auf die deutsche Fassung. */
@@ -68,14 +69,14 @@ export async function Rahmen({
           </a>
           <nav aria-label={t('rahmen.navigation')} className="order-last w-full md:order-none md:w-auto md:flex-1">
             <ul className="grid grid-cols-3 md:flex md:gap-1">
-              {NAV.map(({ bereich: b, pfad: p, Zeichen }) => (
+              {NAV.map(({ bereich: b, pfad: p, Zeichen, spiegeln }) => (
                 <li key={b}>
                   <a
                     href={lernAdresse(ui, p)}
                     aria-current={bereich === b ? 'page' : undefined}
                     className={`flex min-h-14 flex-col items-center justify-center gap-1 border-b-2 px-2 text-16 font-bold no-underline hover:text-gruen-800 md:min-h-11 md:flex-row md:gap-2 md:rounded-md md:border-b-0 md:px-3 ${bereich === b ? 'border-gruen-700 text-gruen-800 md:bg-gruen-50' : 'border-transparent text-tinte-2'}`}
                   >
-                    <Zeichen aria-hidden className="size-5 shrink-0" />
+                    <Zeichen aria-hidden className={`size-5 shrink-0 ${spiegeln ? 'rtl:-scale-x-100' : ''}`} />
                     {t(`rahmen.${b}`)}
                   </a>
                 </li>

@@ -269,7 +269,9 @@ test.describe('Anmeldung im Scope der Lern-App', () => {
     await page.getByLabel(de.anmelden.email).fill(konten.gemeinde.email);
     await page.locator('#anmelden-passwort').fill(passwort(konten.gemeinde.passwort));
     await page.getByRole('button', { name: de.anmelden.absenden, exact: true }).first().click();
-    await expect(page).toHaveURL(/\/lern-app\/de\/einstellungen$/);
+    // Pfad prüfen, nicht das Ende der Adresse: die Anmeldeseite selbst endet auf `?weiter=/lern-app/de/einstellungen`
+    await expect(page).toHaveURL((url) => url.pathname === '/lern-app/de/einstellungen');
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.einstellungen.titel);
     await page.goto('/lern-app/de/anmelden');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.anmelden.angemeldet);
     await page.getByRole('button', { name: de.anmelden.abmelden }).click();
@@ -285,7 +287,7 @@ test.describe('Anmeldung im Scope der Lern-App', () => {
     await page.getByLabel(tr.anmelden.benutzername).fill(konten.kind.benutzername);
     await page.locator('#kind-passwort').fill(passwort(konten.kind.passwort));
     await page.locator('#bereich-kind').getByRole('button', { name: tr.anmelden.absenden, exact: true }).click();
-    await expect(page).toHaveURL(/\/lern-app\/tr$/);
+    await expect(page).toHaveURL((url) => url.pathname === '/lern-app/tr');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(tr.start.titel);
   });
 

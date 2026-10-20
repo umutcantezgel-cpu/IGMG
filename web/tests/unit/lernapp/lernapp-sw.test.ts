@@ -193,6 +193,14 @@ describe('Service Worker der Lern-App', () => {
       '/lern-app/ar/quellen',
       '/lern-app/ar/wortschatz',
     ]);
+    // Jede Seite bittet bei jedem Laden darum: Vorhandenes wird nicht erneut geholt
+    const vorher = w.abgerufen.length;
+    await w.warte('message', { art: 'schale', ui: 'ar' });
+    expect(w.abgerufen.length).toBe(vorher);
+    // Fehlt eine Seite (z. B. vom Browser geräumt), wird nur sie geholt
+    w.speicher.get('igmg-lernapp-schale-vb3')?.delete(`${URSPRUNG}/lern-app/ar/quellen`);
+    await w.warte('message', { art: 'schale', ui: 'ar' });
+    expect(w.abgerufen.slice(vorher)).toEqual([`${URSPRUNG}/lern-app/ar/quellen`]);
     const unbekannt = ladeWorker({ bau: 'b4' });
     await unbekannt.warte('message', { art: 'schale', ui: 'en' });
     expect(unbekannt.inhalt('igmg-lernapp-schale-vb4')).toEqual([]);

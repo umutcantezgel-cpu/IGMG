@@ -71,22 +71,30 @@ function netzZuerst(anfrage, name, schluessel) {
     .catch(() => caches.match(schluessel, { cacheName: name }).then((vorrat) => vorrat || Promise.reject(new Error('offline'))));
 }
 
-/** Hülle einer Oberflächensprache vorhalten: die Seiten und die Programmteile, die sie laden. */
+/**
+ * Hülle einer Oberflächensprache vorhalten: die Seiten und die Programmteile, die sie laden. Jede Seite bittet bei jedem
+ * Laden darum; geholt wird nur, was in der Hülle dieses Baus noch fehlt (die Seiten sind statisch je Bau, aufgefrischt
+ * werden sie beim Besuch „Netz zuerst“) – kein Datenverbrauch bei jedem Seitenwechsel.
+ */
 function halteSchaleVor(ui) {
   if (!OBERFLAECHEN.includes(ui)) return Promise.resolve();
   return caches.open(SCHALE).then((c) =>
     Promise.all(
       SCHALEN_SEITEN.map((rest) => {
         const pfad = `/lern-app/${ui}${rest}`;
-        return fetch(pfad, { credentials: 'same-origin' })
-          .then((antwort) => {
-            if (!antwort.ok || antwort.redirected) return [];
-            return c
-              .put(pfad, antwort.clone())
-              .then(() => antwort.text())
-              .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])]);
-          })
-          .catch(() => []);
+        return c.match(pfad).then((da) =>
+          da
+            ? []
+            : fetch(pfad, { credentials: 'same-origin' })
+                .then((antwort) => {
+                  if (!antwort.ok || antwort.redirected) return [];
+                  return c
+                    .put(pfad, antwort.clone())
+                    .then(() => antwort.text())
+                    .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])]);
+                })
+                .catch(() => []),
+        );
       }),
     ).then((listen) => {
       const dateien = [...new Set(listen.flat())].slice(0, 200);

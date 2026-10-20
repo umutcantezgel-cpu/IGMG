@@ -43,7 +43,7 @@ function Gruppe({ id, titel, text, children }: { id: string; titel: string; text
       aria-describedby={text ? `${id}-text` : undefined}
       className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-5"
     >
-      <legend className="px-1 font-display text-24">{titel}</legend>
+      <legend className="float-start w-full font-display text-24">{titel}</legend>
       {text ? (
         <p id={`${id}-text`} className="text-16 text-tinte-2">
           {text}
