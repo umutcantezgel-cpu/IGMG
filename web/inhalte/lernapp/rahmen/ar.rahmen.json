@@ -13,7 +13,7 @@
       "id": "ar.g.personalpron",
       "stufe": "a1",
       "titel": "Personalpronomen",
-      "kurz": "anā, anta, anti, huwa, hiya, naḥnu, antum, hum. anta und anti unterscheiden, ob man einen Mann oder eine Frau anspricht. Dual und weibliche Mehrzahl folgen in B1.",
+      "kurz": "anā, anta, anti, huwa, hiya, naḥnu, antum, hum. anta und anti unterscheiden, ob man einen Mann oder eine Frau anspricht. Dual und weibliche Mehrzahl folgen in B1 (ar.g.dual).",
       "beispiele": [
         "anā Laylā.",
         "man anta?",
@@ -606,7 +606,7 @@
       "id": "ar.g.praep_suffix",
       "stufe": "a2",
       "titel": "Präpositionen mit Endungen",
-      "kurz": "Endungen an Präpositionen: lī, laka, lahu, lahā; ʿalayya, ʿalayhi; minnī, minhu; maʿī, maʿahu; ilayhi, fīhi. Nach -i und -ī wird -hu zu -hi.",
+      "kurz": "Endungen an Präpositionen: lī, laka, lahu, lahā; ʿalayya, ʿalayhi; minnī, minhu; maʿī, maʿahu; ilayhi, fīhi. Nach -i, -ī und -ay wird -hu zu -hi.",
       "beispiele": [
         "mā bika? – ʿindī ṣudāʿ.",
         "katabtu lahu risāla.",
@@ -855,7 +855,7 @@
       "id": "ar.g.ortsnomen",
       "stufe": "b1",
       "titel": "Orts- und Werkzeugnomen",
-      "kurz": "Orte nach mafʿal/mafʿila (maktab, maṭbaḫ, maktaba), Werkzeuge nach mifʿāl, mifʿal, mifʿala (miftāḥ, milʿaqa, miknasa).",
+      "kurz": "Orte nach mafʿal, mafʿil oder mafʿala (maktab, maṭbaḫ, maktaba), Werkzeuge nach mifʿāl, mifʿal, mifʿala (miftāḥ, milʿaqa, miknasa).",
       "beispiele": [
         "maṭbaḫ, malʿab, maktaba",
         "miftāḥ, milʿaqa",
@@ -868,12 +868,12 @@
     {
       "id": "ar.g.dual",
       "stufe": "b1",
-      "titel": "Dual",
-      "kurz": "Für genau zwei: Nomen auf -āni (Genitiv und Akkusativ -ayni), Pronomen humā und antumā, Verben auf -ā bzw. -āni.",
+      "titel": "Dual und weibliche Mehrzahl",
+      "kurz": "Für genau zwei: Nomen auf -āni (Genitiv und Akkusativ -ayni), Pronomen humā und antumā, Verben auf -ā bzw. -āni. Dazu die weibliche Mehrzahl für Gruppen nur aus Frauen oder Mädchen: hunna, antunna und Verben auf -na (katabna, yaktubna).",
       "beispiele": [
         "ḥaǧaznā ġurfatayni.",
         "humā ṭālibatāni.",
-        "baqīnā yawmayni fī Tūnis."
+        "hunna yaktubna baṭāqāt min Tūnis."
       ],
       "voraus": [
         "ar.g.plural_gesund",
@@ -971,7 +971,7 @@
       "id": "ar.g.stamm10",
       "stufe": "b1",
       "titel": "Verbstamm X (istafʿala)",
-      "kurz": "Vorsilbe ista-, oft „für sich nehmen, erbitten, für etwas halten“: istaʿmala (benutzen), istaqbala (empfangen), istaʿlama (sich erkundigen). Stamm IX (nur Farben, iḥmarra) wird erkannt, nicht geübt.",
+      "kurz": "Vorsilbe ista-, oft „für sich nehmen, erbitten, für etwas halten“: istaʿmala (benutzen), istaqbala (empfangen), istaʿlama (sich erkundigen). Stamm IX (Farben und körperliche Merkmale, iḥmarra) wird erkannt, nicht geübt.",
       "beispiele": [
         "astaʿmil kalimat sirr qawiyya.",
         "istaqbalnā ḍuyūfan.",
@@ -5008,7 +5008,7 @@
       "saetze": 5200,
       "kannBeschreibungen": [
         "Ich kann von Erinnerungen, Erfahrungen und Plänen zusammenhängend erzählen und meine Meinung kurz begründen.",
-        "Ich kann in Schule, Wohnung, Praktikum und Behörde die meisten Situationen sprachlich bewältigen.",
+        "Ich kann mich in Schule, Wohnung, Praktikum und auf dem Amt sprachlich zurechtfinden und kleine Probleme selbst klären.",
         "Ich kann wiedergeben, was andere gesagt haben, und gezielt nachfragen.",
         "Ich kann neue Wörter über Wurzel und Verbstamm erschließen und im Wörterbuch finden.",
         "Ich kann Sachtexte, Briefe und einfache Berichte zu vertrauten Themen verstehen.",
@@ -6497,9 +6497,9 @@
       "lemmaBudget": 2000,
       "saetze": 8000,
       "kannBeschreibungen": [
-        "Ich kann lange, anspruchsvolle Texte aus Presse, Verwaltung, Wissenschaft und Literatur verstehen und ihre Absicht erkennen.",
-        "Ich kann mich spontan und fließend in Fuṣḥā äußern, auch in Diskussionen und Präsentationen.",
-        "Ich kann komplexe Sachverhalte klar gegliedert darstellen und begründet argumentieren.",
+        "Ich kann Zeitungsartikel, Bescheide, Fachaufsätze und Erzählungen auch über mehrere Seiten lesen und erkennen, was ihre Verfasser erreichen wollen.",
+        "Ich kann in Diskussionen, Präsentationen und Beratungsgesprächen frei auf Fuṣḥā sprechen und auch auf unerwartete Fragen sofort eingehen.",
+        "Ich kann einen verwickelten Sachverhalt Schritt für Schritt aufbauen, Argumente gewichten und daraus Schlüsse ziehen.",
         "Ich kann Register unterscheiden und regionale Umgangssprachen an ihren Merkmalen erkennen.",
         "Ich kann Texte zusammenfassen, umformulieren und kommentieren.",
         "Ich kann weltliche Redewendungen und Sprichwörter verstehen und passend verwenden."
