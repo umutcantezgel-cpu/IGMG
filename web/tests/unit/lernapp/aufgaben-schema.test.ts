@@ -57,7 +57,20 @@ describe('Schema', () => {
         'fallfrage',
       ]),
     );
-    expect(IMPLEMENTIERT).toEqual(['auswahl', 'wortbank', 'paare']);
+    expect(IMPLEMENTIERT).toEqual([
+      'auswahl',
+      'wortbank',
+      'paare',
+      'dialog',
+      'geschichte',
+      'lesen_fragen',
+      'grammatik_tipp',
+      'schrift_ar',
+      'schrift_tr',
+      'schrift_latein',
+      'sprechen',
+      'schreiben',
+    ]);
     expect(istImplementiert('auswahl')).toBe(true);
     expect(istImplementiert('frei')).toBe(false);
   });

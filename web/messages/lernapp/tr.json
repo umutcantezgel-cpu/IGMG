@@ -341,5 +341,224 @@
       "konto": "Şu anda bu öğrenme profilinin bağlı olduğu hesaptan farklı bir hesap açık. Bu yüzden eşitleme yapılmıyor.",
       "grenze": "Bugün zaten çok fazla eşitleme yapıldı. Kalanı daha sonra eşitlenir."
     }
+  },
+  "aufgaben2": {
+    "gemeinsam": {
+      "person": {
+        "a": "A kişisi",
+        "b": "B kişisi",
+        "c": "C kişisi"
+      },
+      "uebersetzung": "Çeviriyi göster",
+      "tasten": "Ok tuşlarıyla veya 1 ile {n, number} arasındaki rakamlarla seç.",
+      "antworten": "Cevaplar",
+      "richtigeAntwort": "doğru",
+      "deineAntwort": "senin seçimin",
+      "anhoeren": "Dinle",
+      "langsam": "Yavaş dinle",
+      "audioFehler": "Ses çalınamadı."
+    },
+    "dialog": {
+      "anweisung": "Uygun cevabı seç.",
+      "verlauf": "Konuşma",
+      "antworten": "Olası cevaplar",
+      "duAntwortest": "{person} olarak cevap veriyorsun."
+    },
+    "geschichte": {
+      "anweisung": "Hikâyeyi oku.",
+      "weiterLesen": "Okumaya devam et",
+      "frage": "Soru",
+      "fragePruefen": "Cevabı kontrol et",
+      "richtig": "Doğru!",
+      "falsch": "Henüz tam değil. Doğrusu: {loesung}",
+      "fertig": "Hikâyenin sonu.",
+      "abschliessen": "Hikâyeyi bitir"
+    },
+    "lesenFragen": {
+      "anweisung": "Metni oku ve soruları cevapla.",
+      "text": "Okuma metni",
+      "fragen": "Metinle ilgili sorular",
+      "frageNr": "Soru {nr, number}",
+      "wortTipp": "Anlamını görmek için altı çizili bir kelimeye dokun.",
+      "glosseZu": "{wort} kelimesinin anlamı",
+      "glosseSchliessen": "Kapat",
+      "rfn": {
+        "richtig": "Doğru",
+        "falsch": "Yanlış",
+        "nicht_im_text": "Metinde yok"
+      },
+      "offen": "Önce bütün soruları cevapla, sonra kontrol edebilirsin.",
+      "ergebnisRichtig": "Doğru cevapladın.",
+      "ergebnisFalsch": "Henüz tam değil. Doğrusu: {loesung}"
+    },
+    "grammatikTipp": {
+      "anweisung": "İpucu",
+      "beispiele": "Örnekler",
+      "verstanden": "Anladım – devam"
+    },
+    "schriftAr": {
+      "erkennen": "Bu harfin adı ne?",
+      "zuordnen": "Burada hangi harf var?",
+      "lesen": "Bu hece nasıl okunur?",
+      "nachspuren": "Harfin üzerinden geç.",
+      "zeichen": "Arap harfi",
+      "form": {
+        "anfang": "kelime başında",
+        "mitte": "kelime ortasında",
+        "ende": "kelime sonunda"
+      },
+      "formZeichen": "Arap harfi, {form}",
+      "silbe": "Arapça hece",
+      "zugNr": "{anzahl, number} çizgiden {nr, number}. çizgi: yeşil noktadan başlayarak üzerinden geç.",
+      "nochmal": "Az kaldı – çizginin üzerinden yeşil noktadan başlayarak bir kez daha geç.",
+      "geschafft": "Başardın!",
+      "papier": "Harfi kâğıda yazdım",
+      "zeichenfeld": "{name} için çizim alanı",
+      "laedt": "Yazılış yolu yükleniyor …",
+      "vorschlag": "Yazılış yolu bir öneridir; öğretmen henüz kontrol ediyor.",
+      "namen": {
+        "elif": "Elif",
+        "be": "Be",
+        "te": "Te",
+        "se": "Se",
+        "cim": "Cim",
+        "ha": "Ha",
+        "hi": "Hı",
+        "dal": "Dal",
+        "zel": "Zel",
+        "ra": "Ra",
+        "ze": "Ze",
+        "sin": "Sin",
+        "shin": "Şın",
+        "sad": "Sad",
+        "dad": "Dad",
+        "ti": "Tı",
+        "zi": "Zı",
+        "ayin": "Ayın",
+        "gayin": "Gayın",
+        "fe": "Fe",
+        "kaf": "Kaf",
+        "kef": "Kef",
+        "lam": "Lam",
+        "mim": "Mim",
+        "nun": "Nun",
+        "vav": "Vav",
+        "he": "He",
+        "ye": "Ye",
+        "hemze": "Hemze"
+      }
+    },
+    "schriftWahl": {
+      "waehleBuchstabe": "Hangi harf uygun?",
+      "waehleWort": "Bu harf hangi kelimede geçiyor?",
+      "grossKlein": "Aynı harfin büyük ya da küçük yazılışını seç."
+    }
+  },
+  "sprechen": {
+    "anweisung": "Cümleyi yüksek sesle söyle.",
+    "ziel": "Bu cümle",
+    "vorlage": "Cümleyi dinle",
+    "aufnehmen": "Kaydet",
+    "stopp": "Kaydı bitir",
+    "nochmal": "Yeniden kaydet",
+    "laeuft": "Kayıt sürüyor",
+    "beendet": "Kayıt bitti.",
+    "eigeneAufnahme": "Senin kaydın",
+    "zuLeise": "Neredeyse hiç konuşma duyamadık. Biraz daha yüksek sesle ya da mikrofona daha yakın konuş ve yeniden kaydet.",
+    "keinMikrofon": "Mikrofon burada kullanılamıyor. Cümleyi yüksek sesle söyle ve kendini değerlendir.",
+    "kannNicht": "Şu anda konuşamıyorum",
+    "gut": "İyi anlaşılıyor.",
+    "teilweise": "Kısmen anlaşıldı – kaydınla karşılaştır.",
+    "nichtVerstanden": "Anlaşılamadı, lütfen bir kez daha dene.",
+    "erkannt": "tanındı",
+    "unsicher": "tam tanınmadı",
+    "wortListe": "Cümlenin kelimeleri",
+    "hinweisMarkierung": "İşaretler yalnızca konuşma tanımanın hangi kelimeleri kesin olarak tanıdığını gösterir. Bir not değildir.",
+    "selbstVergleich": "Kaydını dinle ve cümleyle karşılaştır.",
+    "selbstFrage": "Nasıl geçti?",
+    "selbst": {
+      "nochmal": "Daha çalışmalıyım",
+      "schwer": "İdare eder",
+      "gut": "İyi"
+    },
+    "erkennen": "Konuşma kontrolü",
+    "laden": "Konuşma kontrolünü yükle (≈ {mb, number} MB)",
+    "ladenText": "Konuşma kontrolü yalnızca bu cihazda çalışır. Bir kez yüklenir ve kayıtlı kalır. Kaydın cihazdan hiç çıkmaz.",
+    "ohne": "Konuşma kontrolü olmadan çalış",
+    "laedt": "Konuşma kontrolü yükleniyor: % {prozent, number}",
+    "probe": "Konuşma kontrolü kısa bir denemeden geçiyor …",
+    "bereit": "Konuşma kontrolü hazır.",
+    "langsam": "Kontrol bu cihazda yaklaşık {s, number} saniye sürüyor.",
+    "rueckfall": "Konuşma kontrolü bu cihazda güvenilir çalışmıyor. Kendi kaydınla çalışıyorsun.",
+    "pruefung": "Bir dakika …",
+    "fehler": "Konuşma kontrolü şu anda çalışmadı. Kaydını kendin karşılaştır.",
+    "nichtVerfuegbar": "Konuşma kontrolü bu cihazda kullanılamıyor. Kendi kaydınla çalışıyorsun.",
+    "arabisch": "Arapça için henüz otomatik geri bildirim yok. Kaydını kendin karşılaştır.",
+    "geraet": {
+      "worker": "Tarayıcı kontrolü arka planda çalıştıramıyor.",
+      "wasm": "Tarayıcıda gerekli bir hesaplama işlevi eksik (SIMD ile WebAssembly).",
+      "mikrofon": "Mikrofon kullanılamıyor.",
+      "aufnahme": "Tarayıcı kayıt yapamıyor.",
+      "audio": "Tarayıcı sesi uygun biçimde dönüştüremiyor.",
+      "vorrat": "Tarayıcı dosyaları kalıcı olarak saklayamıyor.",
+      "platz": "Cihazda yeterli boş alan yok (en az 200 MB).",
+      "speicher": "Cihazın çalışma belleği yetersiz (en az 4 GB).",
+      "speicherUnbekannt": "Bu cihazın ne kadar çalışma belleği olduğu bilinmiyor. Kontrol yaklaşık 1,5 GB gerektirir.",
+      "ohneThreads": "Kontrol burada biraz daha yavaş çalışır."
+    }
+  },
+  "schreiben": {
+    "anweisung": "Kısa bir metin yaz.",
+    "aufgabe": "Görev",
+    "text": "Senin metnin",
+    "woerter": "{n, plural, one {# kelime} other {# kelime}} – hedef: {min, number} ile {max, number} kelime arası",
+    "pflichtwoerter": "Bu kelimeler geçmeli:",
+    "pruefen": "Metni kontrol et",
+    "lokal": "Metnin bu cihazda kalır.",
+    "zuKurz": "Metnin henüz biraz kısa.",
+    "zuLang": "Metnin biraz uzun.",
+    "laengePasst": "Uzunluk uygun.",
+    "pflichtDa": "geçiyor",
+    "pflichtFehlt": "henüz yok",
+    "muster": "Örnek cevap",
+    "musterN": "Örnek cevap {nr, number}",
+    "pruefliste": {
+      "titel": "Kontrol listesi",
+      "einleitung": "Metnini örnek cevapla karşılaştır. Şu anda nerede duruyorsun?",
+      "aufgabe": {
+        "titel": "Görev",
+        "s0": "Metnim göreve henüz pek uymuyor.",
+        "s1": "Görevin bazı noktaları henüz eksik.",
+        "s2": "Görev neredeyse tamamen yerine getirildi.",
+        "s3": "Görevin bütün noktaları yerine getirildi."
+      },
+      "zusammenhang": {
+        "titel": "Bütünlük",
+        "s0": "Cümleler henüz tek tek yan yana duruyor.",
+        "s1": "Bazı cümleler birbirine bağlı.",
+        "s2": "Metnin çoğunlukla bir ana çizgisi var.",
+        "s3": "Metin iyi bağlanmış ve kolay okunuyor."
+      },
+      "wortschatz": {
+        "titel": "Kelime bilgisi",
+        "s0": "Henüz birçok kelime eksik.",
+        "s1": "Basit kelimeler kullanıyorum; bazıları tam uymuyor.",
+        "s2": "Kelimeler çoğunlukla uygun.",
+        "s3": "Uygun ve çeşitli kelimeler seçiyorum."
+      },
+      "grammatik": {
+        "titel": "Dil bilgisi",
+        "s0": "Birçok cümlede henüz hata var.",
+        "s1": "Basit cümleler çoğunlukla doğru.",
+        "s2": "Cümlelerin çoğu doğru.",
+        "s3": "Uzun cümleler de doğru."
+      }
+    },
+    "selbstFrage": "Metninden ne kadar memnunsun?",
+    "selbst": {
+      "nochmal": "Daha çalışmalıyım",
+      "schwer": "İdare eder",
+      "gut": "İyi"
+    }
   }
 }

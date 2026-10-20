@@ -13,7 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
-import type { SpielerTexte } from '../typen';
+import type { SpielerOptionen, SpielerTexte } from '../typen';
 
 /** Spieler als eigener Chunk (KERN 4.0 §9: erst in der Lektion); Übungstypen lädt er selbst per `import()`. */
 const ladeSpieler = () => import('../Spieler');
@@ -46,6 +46,7 @@ type Bereit = {
   paket: Paket;
   lektion: Lektion;
   ziffern: Ziffern;
+  optionen: Omit<SpielerOptionen, 'spracherkennung'>;
   haengeAn: Ausgang['haengeAn'];
 };
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
@@ -62,12 +63,15 @@ export function UebenInsel({
   texte,
   spielerTexte,
   lernpfad,
+  spracherkennung = false,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
   texte: UebenTexte;
   spielerTexte: SpielerTexte;
   lernpfad: { adresse: string; text: string };
+  /** Schalter `lernapp_sprechen` (Spracherkennung im Browser) */
+  spracherkennung?: boolean;
 }) {
   const l = useSearchParams().get('l');
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
@@ -94,7 +98,17 @@ export function UebenInsel({
       // die nächste Einheit automatisch speichern (nicht abwarten)
       const naechste = naechsteEinheit(v, einheit.schluessel);
       if (naechste) void ladePaket(sp, kurs, naechste).catch(() => null);
-      return { art: 'bereit', sp, profil, v, paket, lektion, ziffern: e.ziffern, haengeAn };
+      return {
+        art: 'bereit',
+        sp,
+        profil,
+        v,
+        paket,
+        lektion,
+        ziffern: e.ziffern,
+        optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
+        haengeAn,
+      };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -161,6 +175,7 @@ export function UebenInsel({
           onEreignis={melde}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
+          optionen={{ ...z.optionen, spracherkennung }}
         />
       </Suspense>
     </SpielerGrenze>

@@ -2,6 +2,7 @@ import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
 import type { AntwortVon, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
+import type de from '../../../messages/lernapp/de.json';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
@@ -12,7 +13,17 @@ import type { Oberflaeche } from '@/lib/lernapp/kurse';
 export type UiSprache = Oberflaeche;
 export { richtung } from '@/lib/lernapp/kurse';
 
-export type SpielerTexte = {
+/** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
+export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
+
+/**
+ * Einstellungen, die der Spieler beachtet (KERN 4.0 §8, ADR 0042 Nr. 8/12): „Hörübungen aus“, „Sprechübungen aus“ (beide aus
+ * den Einstellungen des Profils) und der Schalter `lernapp_sprechen` (Spracherkennung im Browser; aus → nur Selbstvergleich).
+ */
+export type SpielerOptionen = { hoeren: boolean; sprechen: boolean; spracherkennung: boolean };
+export const STANDARD_OPTIONEN: SpielerOptionen = { hoeren: true, sprechen: true, spracherkennung: false };
+
+export type SpielerTexte = WeitereTexte & {
   spieler: {
     fortschritt: string;
     aufgabeVon: string;
@@ -84,4 +95,9 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   gibAb: (antwort: AntwortVon<T>) => void;
   /** Text für die eine Live-Region des Bildschirms (im Rückmeldeblatt) */
   melde: (text: string) => void;
+  /** Texte der Übungstypen aus L2-02 */
+  weitere: WeitereTexte;
+  /** ohne Wertung weiter (gelesener Tipp, „Ich kann gerade nicht sprechen/hören“) */
+  ueberspringe: () => void;
+  optionen: SpielerOptionen;
 };

@@ -14,7 +14,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { frischAbgeleitet, heute, meldeStand, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { baueWiederholung, einheitDerKarte } from '@/lib/lernapp/oberflaeche/wiederholung';
 import type { Paket } from '@/lib/lernapp/paket/typen';
-import type { SpielerTexte } from '../typen';
+import type { SpielerOptionen, SpielerTexte } from '../typen';
 import { SpielerGrenze } from './UebenInsel';
 
 const Spieler = lazy(() => import('../Spieler').then((m) => ({ default: m.Spieler })));
@@ -25,7 +25,7 @@ type Zustand =
   | { art: 'laedt' }
   | { art: 'leer' }
   | { art: 'fehlt' }
-  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern };
+  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern; optionen: Omit<SpielerOptionen, 'spracherkennung'> };
 
 /**
  * Wiederholen (PLAN §3.1, §4; ADR 0038 Nr. 3): Kartenwahl aus dem lokalen Stand des Kurses (fällige zuerst, dann schwache;
@@ -38,12 +38,15 @@ export function WiederholenInsel({
   texte,
   spielerTexte,
   lernpfad,
+  spracherkennung = false,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
   texte: WiederholenTexte;
   spielerTexte: SpielerTexte;
   lernpfad: { adresse: string; text: string };
+  /** Schalter `lernapp_sprechen` (Spracherkennung im Browser) */
+  spracherkennung?: boolean;
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const kette = useRef<Promise<unknown>>(Promise.resolve());
@@ -70,7 +73,7 @@ export function WiederholenInsel({
       const lektion = baueWiederholung(kurs, gewaehlt, pakete);
       if (!lektion) return { art: 'fehlt' };
       const e = await einstellungsSpeicher(ui).laden();
-      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern };
+      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern, optionen: { hoeren: e.hoeren, sprechen: e.sprechen } };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -120,6 +123,7 @@ export function WiederholenInsel({
           onEreignis={melde}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
+          optionen={{ ...z.optionen, spracherkennung }}
         />
       </Suspense>
     </SpielerGrenze>

@@ -341,5 +341,224 @@
       "konto": "Gerade ist ein anderes Konto angemeldet als das, mit dem dieses Lernprofil verbunden ist. Deshalb wird nichts abgeglichen.",
       "grenze": "Heute wurde schon sehr viel abgeglichen. Der Rest folgt später."
     }
+  },
+  "aufgaben2": {
+    "gemeinsam": {
+      "person": {
+        "a": "Person A",
+        "b": "Person B",
+        "c": "Person C"
+      },
+      "uebersetzung": "Übersetzung zeigen",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}.",
+      "antworten": "Antworten",
+      "richtigeAntwort": "richtig",
+      "deineAntwort": "deine Wahl",
+      "anhoeren": "Anhören",
+      "langsam": "Langsam anhören",
+      "audioFehler": "Das Audio konnte nicht abgespielt werden."
+    },
+    "dialog": {
+      "anweisung": "Wähle die passende Antwort.",
+      "verlauf": "Gespräch",
+      "antworten": "Mögliche Antworten",
+      "duAntwortest": "Du antwortest als {person}."
+    },
+    "geschichte": {
+      "anweisung": "Lies die Geschichte.",
+      "weiterLesen": "Weiter lesen",
+      "frage": "Frage",
+      "fragePruefen": "Antwort prüfen",
+      "richtig": "Richtig!",
+      "falsch": "Noch nicht ganz. Richtig ist: {loesung}",
+      "fertig": "Ende der Geschichte.",
+      "abschliessen": "Geschichte abschließen"
+    },
+    "lesenFragen": {
+      "anweisung": "Lies den Text und beantworte die Fragen.",
+      "text": "Lesetext",
+      "fragen": "Fragen zum Text",
+      "frageNr": "Frage {nr, number}",
+      "wortTipp": "Tippe ein unterstrichenes Wort an, um seine Bedeutung zu sehen.",
+      "glosseZu": "Bedeutung von {wort}",
+      "glosseSchliessen": "Schließen",
+      "rfn": {
+        "richtig": "Richtig",
+        "falsch": "Falsch",
+        "nicht_im_text": "Steht nicht im Text"
+      },
+      "offen": "Beantworte zuerst alle Fragen, dann kannst du prüfen.",
+      "ergebnisRichtig": "Richtig beantwortet.",
+      "ergebnisFalsch": "Noch nicht ganz. Richtig ist: {loesung}"
+    },
+    "grammatikTipp": {
+      "anweisung": "Tipp",
+      "beispiele": "Beispiele",
+      "verstanden": "Verstanden – weiter"
+    },
+    "schriftAr": {
+      "erkennen": "Wie heißt dieser Buchstabe?",
+      "zuordnen": "Welcher Buchstabe steht hier?",
+      "lesen": "Wie liest man diese Silbe?",
+      "nachspuren": "Spure den Buchstaben nach.",
+      "zeichen": "Arabischer Buchstabe",
+      "form": {
+        "anfang": "am Wortanfang",
+        "mitte": "in der Wortmitte",
+        "ende": "am Wortende"
+      },
+      "formZeichen": "Arabischer Buchstabe {form}",
+      "silbe": "Arabische Silbe",
+      "zugNr": "Zug {nr, number} von {anzahl, number}: Spure vom grünen Punkt aus nach.",
+      "nochmal": "Fast – spure den Zug noch einmal vom grünen Punkt aus.",
+      "geschafft": "Geschafft!",
+      "papier": "Ich habe ihn auf Papier geschrieben",
+      "zeichenfeld": "Zeichenfeld für {name}",
+      "laedt": "Der Schreibweg wird geladen …",
+      "vorschlag": "Der Schreibweg ist ein Vorschlag; die Lehrkraft prüft ihn noch.",
+      "namen": {
+        "elif": "Alif",
+        "be": "Bā",
+        "te": "Tā",
+        "se": "Thā",
+        "cim": "Dschīm",
+        "ha": "Ḥā",
+        "hi": "Chā",
+        "dal": "Dāl",
+        "zel": "Dhāl",
+        "ra": "Rā",
+        "ze": "Zāy",
+        "sin": "Sīn",
+        "shin": "Schīn",
+        "sad": "Ṣād",
+        "dad": "Ḍād",
+        "ti": "Ṭā",
+        "zi": "Ẓā",
+        "ayin": "ʿAin",
+        "gayin": "Ghain",
+        "fe": "Fā",
+        "kaf": "Qāf",
+        "kef": "Kāf",
+        "lam": "Lām",
+        "mim": "Mīm",
+        "nun": "Nūn",
+        "vav": "Wāw",
+        "he": "Hā",
+        "ye": "Yā",
+        "hemze": "Hamza"
+      }
+    },
+    "schriftWahl": {
+      "waehleBuchstabe": "Welcher Buchstabe passt?",
+      "waehleWort": "In welchem Wort steht dieser Buchstabe?",
+      "grossKlein": "Wähle denselben Buchstaben in der anderen Schreibweise."
+    }
+  },
+  "sprechen": {
+    "anweisung": "Sprich den Satz laut.",
+    "ziel": "Dieser Satz",
+    "vorlage": "Satz anhören",
+    "aufnehmen": "Aufnehmen",
+    "stopp": "Aufnahme beenden",
+    "nochmal": "Noch einmal aufnehmen",
+    "laeuft": "Aufnahme läuft",
+    "beendet": "Aufnahme beendet.",
+    "eigeneAufnahme": "Deine Aufnahme",
+    "zuLeise": "Wir haben kaum Sprache gehört. Sprich etwas lauter oder näher am Mikrofon und nimm noch einmal auf.",
+    "keinMikrofon": "Das Mikrofon ist hier nicht verfügbar. Sprich den Satz laut und bewerte dich selbst.",
+    "kannNicht": "Ich kann gerade nicht sprechen",
+    "gut": "Gut verständlich.",
+    "teilweise": "Teilweise verstanden – vergleiche mit deiner Aufnahme.",
+    "nichtVerstanden": "Nicht verstanden, bitte noch einmal.",
+    "erkannt": "erkannt",
+    "unsicher": "nicht sicher erkannt",
+    "wortListe": "Wörter des Satzes",
+    "hinweisMarkierung": "Die Markierung zeigt nur, welche Wörter die Spracherkennung sicher erkannt hat. Sie ist keine Note.",
+    "selbstVergleich": "Hör dir deine Aufnahme an und vergleiche sie mit dem Satz.",
+    "selbstFrage": "Wie ging es dir?",
+    "selbst": {
+      "nochmal": "Noch üben",
+      "schwer": "Ging so",
+      "gut": "Gut"
+    },
+    "erkennen": "Sprachprüfung",
+    "laden": "Sprachprüfung laden (≈ {mb, number} MB)",
+    "ladenText": "Die Sprachprüfung läuft nur auf diesem Gerät. Sie wird einmal geladen und bleibt gespeichert. Deine Aufnahme verlässt das Gerät nie.",
+    "ohne": "Ohne Sprachprüfung üben",
+    "laedt": "Sprachprüfung wird geladen: {prozent, number} %",
+    "probe": "Kurzer Probelauf der Sprachprüfung …",
+    "bereit": "Die Sprachprüfung ist bereit.",
+    "langsam": "Die Prüfung dauert auf diesem Gerät etwa {s, number} Sekunden.",
+    "rueckfall": "Die Sprachprüfung läuft auf diesem Gerät nicht zuverlässig. Du übst mit deiner eigenen Aufnahme.",
+    "pruefung": "Einen Moment …",
+    "fehler": "Die Sprachprüfung hat gerade nicht geklappt. Vergleiche deine Aufnahme selbst.",
+    "nichtVerfuegbar": "Die Sprachprüfung ist auf diesem Gerät nicht verfügbar. Du übst mit deiner eigenen Aufnahme.",
+    "arabisch": "Für Arabisch gibt es noch keine automatische Rückmeldung. Vergleiche deine Aufnahme selbst.",
+    "geraet": {
+      "worker": "Der Browser kann die Prüfung nicht im Hintergrund ausführen.",
+      "wasm": "Dem Browser fehlt eine nötige Rechenfunktion (WebAssembly mit SIMD).",
+      "mikrofon": "Ein Mikrofon ist nicht verfügbar.",
+      "aufnahme": "Der Browser kann keine Aufnahmen machen.",
+      "audio": "Der Browser kann Audio nicht passend umrechnen.",
+      "vorrat": "Der Browser kann die Dateien nicht dauerhaft speichern.",
+      "platz": "Auf dem Gerät ist zu wenig Speicherplatz frei (mindestens 200 MB).",
+      "speicher": "Das Gerät hat zu wenig Arbeitsspeicher (mindestens 4 GB).",
+      "speicherUnbekannt": "Wie viel Arbeitsspeicher dieses Gerät hat, ist nicht bekannt. Die Prüfung braucht etwa 1,5 GB.",
+      "ohneThreads": "Die Prüfung läuft hier etwas langsamer."
+    }
+  },
+  "schreiben": {
+    "anweisung": "Schreibe einen kurzen Text.",
+    "aufgabe": "Aufgabe",
+    "text": "Dein Text",
+    "woerter": "{n, plural, one {# Wort} other {# Wörter}} – Ziel: {min, number} bis {max, number} Wörter",
+    "pflichtwoerter": "Diese Wörter sollen vorkommen:",
+    "pruefen": "Text prüfen",
+    "lokal": "Dein Text bleibt auf diesem Gerät.",
+    "zuKurz": "Dein Text ist noch etwas kurz.",
+    "zuLang": "Dein Text ist etwas lang.",
+    "laengePasst": "Die Länge passt.",
+    "pflichtDa": "kommt vor",
+    "pflichtFehlt": "fehlt noch",
+    "muster": "Musterantwort",
+    "musterN": "Musterantwort {nr, number}",
+    "pruefliste": {
+      "titel": "Prüfliste",
+      "einleitung": "Vergleiche deinen Text mit der Musterantwort. Wo stehst du gerade?",
+      "aufgabe": {
+        "titel": "Aufgabe",
+        "s0": "Mein Text passt noch kaum zur Aufgabe.",
+        "s1": "Einige Punkte der Aufgabe fehlen noch.",
+        "s2": "Die Aufgabe ist fast ganz erfüllt.",
+        "s3": "Alle Punkte der Aufgabe sind erfüllt."
+      },
+      "zusammenhang": {
+        "titel": "Zusammenhang",
+        "s0": "Die Sätze stehen noch einzeln nebeneinander.",
+        "s1": "Einige Sätze sind miteinander verbunden.",
+        "s2": "Der Text hat meistens einen roten Faden.",
+        "s3": "Der Text ist gut verbunden und leicht zu lesen."
+      },
+      "wortschatz": {
+        "titel": "Wortschatz",
+        "s0": "Mir fehlen noch viele Wörter.",
+        "s1": "Ich nutze einfache Wörter; manche passen nicht ganz.",
+        "s2": "Die Wörter passen meistens.",
+        "s3": "Ich wähle passende und abwechslungsreiche Wörter."
+      },
+      "grammatik": {
+        "titel": "Grammatik",
+        "s0": "Viele Sätze haben noch Fehler.",
+        "s1": "Einfache Sätze sind meistens richtig.",
+        "s2": "Die meisten Sätze sind richtig.",
+        "s3": "Auch längere Sätze sind richtig."
+      }
+    },
+    "selbstFrage": "Wie zufrieden bist du mit deinem Text?",
+    "selbst": {
+      "nochmal": "Noch üben",
+      "schwer": "Ging so",
+      "gut": "Gut"
+    }
   }
 }

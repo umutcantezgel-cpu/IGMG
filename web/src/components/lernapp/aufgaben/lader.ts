@@ -12,4 +12,14 @@ export const AUFGABEN_LADER: { [T in ImplementierterTyp]: () => Promise<Aufgaben
   auswahl: () => import('./Auswahl'),
   wortbank: () => import('./Wortbank'),
   paare: () => import('./Paare'),
+  dialog: () => import('./Dialog'),
+  geschichte: () => import('./Geschichte'),
+  lesen_fragen: () => import('./LesenFragen'),
+  grammatik_tipp: () => import('./GrammatikTipp'),
+  schrift_ar: () => import('./SchriftAr'),
+  // ein Chunk für beide Lateinschrift-Vorkurse (gleicher Aufbau)
+  schrift_tr: () => import('./SchriftWahl') as Promise<AufgabenModul<'schrift_tr'>>,
+  schrift_latein: () => import('./SchriftWahl') as Promise<AufgabenModul<'schrift_latein'>>,
+  sprechen: () => import('../sprechen/Sprechen'),
+  schreiben: () => import('../schreiben/Schreiben'),
 };

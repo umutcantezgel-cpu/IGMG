@@ -56,7 +56,8 @@ const TITEL_ARABISCH = { '--font-display': 'var(--font-arabisch-ui)' } as CSSPro
 
 /**
  * Wurzel-Layout der Lern-App (ADR 0037 Nr. 2) außerhalb von `[locale]`: Oberflächensprache aus dem Root-Parameter
- * `[ui]` (next/root-params, statisch), `<html lang dir>`; `data-oberflaeche` nimmt die Oberfläche aus der globalen
+ * `[ui]` (next/root-params, statisch), `<html lang dir>`; `data-bau` nennt die Bau-Kennung (Adresse des Workers der
+ * Sprechübung, `?v=`, ADR 0042 Fortschreibung S5); `data-oberflaeche` nimmt die Oberfläche aus der globalen
  * Arabisch-Regel in `globals.css` heraus (ADR 0044 Nr. 4). Schriften wie die Website, dazu Noto Sans Arabic als
  * `--schrift-arabisch-ui`. Eigener Service Worker (Scope `/lern-app/`), Texte der Fehlerseite für `error.tsx`. Ist der
  * Schalter `lernapp` aus, rendert hier nur noch die 404 – ohne Anmeldung des Service Workers und ohne Manifest (ADR 0035:
@@ -71,6 +72,7 @@ export default async function LernAppLayout({ children }: LayoutProps<'/lern-app
       lang={sprache}
       dir={richtung(sprache)}
       data-oberflaeche="lernapp"
+      data-bau={bauKennung()}
       className={`${schriftKlassen} ${schriftArabischUi.variable}`}
       style={sprache === 'ar' ? TITEL_ARABISCH : undefined}
     >
