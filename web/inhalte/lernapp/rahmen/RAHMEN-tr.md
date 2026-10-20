@@ -58,7 +58,7 @@ Religion ist kein Lernthema (Leitfaden §4). Grüße und Wünsche werden mit den
 ### A1 – 600 neue Lemmata, 2.400 Sätze
 
 - Ich kann mich, meine Familie und meinen Alltag in kurzen Sätzen vorstellen.
-- Ich kann in vertrauten Situationen wie Schule, Markt, Arztpraxis und Familie einfache Fragen stellen und beantworten, wenn langsam und deutlich gesprochen wird.
+- Ich kann in der Schule, auf dem Markt, beim Kinderarzt und in der Familie kurze Fragen stellen und auf Fragen nach Name, Alter, Wohnort und Befinden antworten.
 - Ich kann Zahlen, Preise, Uhrzeiten und Wochentage verstehen und nennen.
 - Ich kann kurze Hinweise, Listen und Nachrichten mit bekannten Wörtern lesen.
 - Ich kann sagen, wo etwas ist, wohin ich gehe und was ich gerade mache.
@@ -75,25 +75,25 @@ Religion ist kein Lernthema (Leitfaden §4). Grüße und Wünsche werden mit den
 
 ### B1 – 1.300 neue Lemmata, 5.200 Sätze
 
-- Ich kann zusammenhängend über Erinnerungen, Erfahrungen, Wünsche und Pläne sprechen und meine Meinung kurz begründen.
-- Ich kann die meisten Situationen in Schule, Arbeit, Wohnung und Behörde sprachlich bewältigen.
+- Ich kann Erlebnisse aus Familie, Schule und Reisen in der richtigen Reihenfolge erzählen, von meinen Vorhaben berichten und sagen, warum sie mir wichtig sind.
+- Ich kann beim Elternabend, am Arbeitsplatz, mit Nachbarn und am Behördenschalter mein Anliegen vortragen und kleine Probleme selbst klären.
 - Ich kann wiedergeben, was andere gesagt haben, und indirekt nachfragen.
 - Ich kann Bedingungen, Gründe, Zeitfolgen und Absichten ausdrücken.
-- Ich kann klar aufgebaute Sachtexte, Briefe und Meldungen zu vertrauten Themen verstehen.
-- Ich kann persönliche Briefe, E-Mails und kurze Berichte schreiben.
+- Ich kann Elternbriefe, Wohnungsanzeigen, Rezepte und kurze Zeitungsmeldungen lesen und anderen erklären, worum es geht.
+- Ich kann einer Freundin einen Brief schreiben, Lehrkräften oder Vermietern eine E-Mail schicken und kurz über ein Ereignis berichten.
 
 ### B2 – 1.700 neue Lemmata, 6.800 Sätze
 
-- Ich kann Nachrichten, Sachtexte und amtliche Schreiben auch zu weniger vertrauten Themen im Wesentlichen verstehen.
+- Ich kann Nachrichten, Ratgebertexte und amtliche Schreiben zu Arbeit, Gesundheit, Wohnen und Umwelt lesen und das Wichtigste mit eigenen Worten wiedergeben.
 - Ich kann Gehörtes und Gelesenes nach Quelle und Gewissheit einordnen und sachlich wiedergeben.
 - Ich kann in Ausbildung, Beruf und Verwaltung Anliegen begründet vortragen, verhandeln und reklamieren.
-- Ich kann Vor- und Nachteile abwägen und eine Entscheidung begründen.
+- Ich kann zwei Angebote, Wohnungen oder Berufswege miteinander vergleichen und begründen, wofür ich mich entscheide.
 - Ich kann längere Gespräche über Familie, Arbeit und Gemeinde führen und dabei auf Einwände eingehen.
 - Ich kann formelle Schreiben wie Anschreiben, Widerspruch und Reklamation klar gegliedert verfassen.
 
 ### C1 – 2.000 neue Lemmata, 8.000 Sätze
 
-- Ich kann lange, dichte Texte aus Verwaltung, Recht, Wissenschaft und Presse selbstständig erschließen.
+- Ich kann Bescheide, Verträge, Fachartikel und Kommentare über mehrere Seiten lesen und die entscheidenden Aussagen, Bedingungen und Fristen herausarbeiten.
 - Ich kann bewusst zwischen Umgangssprache, Standardsprache und Amtsstil wechseln.
 - Ich kann Redewendungen und Sprichwörter verstehen und sparsam selbst verwenden.
 - Ich kann präsentieren, moderieren, argumentieren und diplomatisch widersprechen.
@@ -126,6 +126,7 @@ Jede Einheit hat acht Stationen: fünf Lektionen, eine Geschichte (Dialog), eine
 - ein Laut – ein Buchstabe; Betonung meist auf der letzten Silbe, Ausnahmen bei vielen Ortsnamen (Ankara, İzmir)
 - Zirkumflex (â, î, û) nur in wenigen Lehnwörtern; wird erkannt, im Abgleich tolerant behandelt
 - für Arabischsprachige vorher: Lateinschrift-Grundlagen aus dem Vorkurs des Deutschkurses, de.v.l01–de.v.l06 (aus de.v.l03 gelten nur ö und ü, ä und ß gibt es im Türkischen nicht); Kontrast-Tipp: Türkisch schreibt jeden Vokal aus
+- deutsche Schreibregeln aus dem Vorkurs Deutsch gelten hier nicht: Nomen klein (ev, okul); v nie wie f (var), s immer stimmlos, z nie wie ts; keine Buchstabenverbindungen wie sch, ch, ei, ie, ck, tz, denn sch und tsch haben eigene Buchstaben (ş, ç); h immer gesprochen, nie Dehnungszeichen; Doppelkonsonanten lang gesprochen, nicht Zeichen für einen kurzen Vokal (elli – eli)
 - Übungstypen: schrift_tr, minimalpaare, hoeren_waehlen; Sonderzeichenleiste für Freitext
 
 ### tr.v.l02 – Vokalharmonie als Hörbild (für: de, ar)
@@ -135,7 +136,7 @@ Jede Einheit hat acht Stationen: fünf Lektionen, eine Geschichte (Dialog), eine
 - helle Vokale (e, i, ö, ü) und dunkle Vokale (a, ı, o, u) nach Klangfarbe sortieren
 - zweifache Harmonie hören: evler – okullar, evde – okulda
 - vierfache Harmonie hören: evim – kızım – gözüm – okulum
-- Wörter, die aus der Reihe fallen (saat, kitap, otobüs): erst hören, Erklärung folgt in A1
+- Wörter mit gemischten Vokalen (kitap, otobüs): die Endung folgt trotzdem dem letzten Vokal (kitaplar, otobüsler); Ausnahmen wie saat – saatler erst hören, Erklärung folgt in A1
 - Angleichung hören: parkta, kitapta; kitabı, çocuğu
 - ohne Grammatikbegriffe; nur Hören, Nachsprechen und Zuordnen
 - für Herkunftssprachler: Einstufung kann den Vorkurs überspringen; Schwerpunkt dann auf Schreibung
@@ -194,7 +195,7 @@ PLAN §6.2 legt die Folge fest: Vokalharmonie, Fälle, Possessiv, -iyor, var/yok
 | `tr.g.idi` | War/hatte: -(y)di am Nomen, vardı/yoktu | Vergangenheit von Nominalsätzen und von var/yok. | Dün evdeydim. / Hava çok güzeldi. / Bisikletim yoktu. | a2.e01 | a2.e07, a2.e11 | di, var_yok |
 | `tr.g.uhrzeit_genau` | Genaue Uhrzeit und Datum | Minuten mit geçiyor/var bzw. geçe/kala; Datum mit Tag, Monat, Jahr. | Saat üçü çeyrek geçiyor. / Beşe on var. / 16 Ekim 2026 | a2.e02 | a2.e08 | uhrzeit |
 | `tr.g.ordinal` | Ordnungs- und Verteilungszahlen | -(i)nci für Ordnungszahlen, -(ş)er für „je“; yarım und buçuk. | birinci kat / üçüncü sınıf / ikişer elma | a2.e02 | a2.e14 | zahlen |
-| `tr.g.anrede` | Höfliche Anrede | Siz-Form, Vorname + Hanım/Bey, Familienname mit Bay/Bayan; efendim als höfliche Rückfrage. | Ayla Hanım, buyurun. / Murat Bey geldi mi? / Efendim? | a2.e02 | a2.e04, a2.e14, c1.e04 | personalpron |
+| `tr.g.anrede` | Höfliche Anrede | Siz-Form, Vorname + Hanım/Bey (im Alltag auch Familienname + Hanım/Bey: Becker Hanım), Bay/Bayan + Familienname in Briefen und Formularen; efendim als höfliche Rückfrage. | Ayla Hanım, buyurun. / Murat Bey geldi mi? / Efendim? | a2.e02 | a2.e04, a2.e14, c1.e04 | personalpron |
 | `tr.g.ecek` | Zukunft -(y)ecek | Pläne und Vorhersagen; Weichwerden vor Vokal (geleceğim). | Yarın dedemi arayacağım. / Yağmur yağacak mı? / Gelmeyecekler. | a2.e03 | a2.e08, a2.e12, a2.e13, b1.e04 | konsonant |
 | `tr.g.optativ` | Vorschlag: -(y)elim, -(y)eyim | Vorschläge und Angebote in der 1. Person: Gidelim mi? Bakayım. | Parka gidelim mi? / Ben yardım edeyim. / Biraz dinlenelim. | a2.e03 | a2.e04, a2.e11, b1.e04 | ecek |
 | `tr.g.aorist` | Breite Zeit (Aorist) | Gewohnheiten und allgemeine Aussagen mit -r/-er/-ir; Verneinung -mez/-maz. | Her sabah çay içerim. / Kedi süt sever. / Kahve içmem. | a2.e04 | a2.e06, a2.e09, b1.e02 | iyor |
@@ -255,7 +256,7 @@ PLAN §6.2 legt die Folge fest: Vokalharmonie, Fälle, Possessiv, -iyor, var/yok
 | `tr.g.reflexiv_reziprok` | Reflexiv- und Reziprokstämme | -in für Handlungen an sich selbst (giyinmek, yıkanmak), -iş für Gegenseitigkeit (görüşmek, yardımlaşmak). | Dedem kendi kendine giyiniyor. / Yarın görüşelim. / Komşular yardımlaşır. | b2.e04 | b2.e10, b2.e16 | passiv |
 | `tr.g.modal_vermutung` | Vermutung: -ebilir, -miş olmalı, -iyor olabilir | Grade der Wahrscheinlichkeit mit Modalformen und olmak. | Yolda kalmış olmalılar. / Şu an çalışıyor olabilir. / Bu ilaç yan etki yapabilir. | b2.e04 | b2.e05, b2.e09, b2.e16, c1.e07 | ebil, meli_lazim, olmak_werden |
 | `tr.g.konzessiv` | Einräumung: -se de, -mesine rağmen, -diği halde | Obwohl/auch wenn mit Nominal- und Bedingungsformen. | Yorgun olmasına rağmen yardım etti. / Geç kalsak da gideceğiz. / Anlattığım halde dinlemedi. | b2.e05 | b2.e06, b2.e13, b2.e16, c1.e07 | mesi_nominal, bedingung_se |
-| `tr.g.kausal_formal` | Begründung im Schriftstil | -mesi nedeniyle, -den dolayı, -diğinden, sayesinde und yüzünden mit ihrer Wertung. | Bakım çalışması nedeniyle / Yoğun kar yüzünden / Komşuların sayesinde | b2.e06 | b2.e07, b2.e13, b2.e16, c1.e02 | kausal_dik, mesi_nominal |
+| `tr.g.kausal_formal` | Begründung im Schriftstil | -mesi nedeniyle, -den dolayı, -diğinden, sayesinde und yüzünden mit ihrer Wertung. | Bakım çalışması nedeniyle / Yoğun kar yüzünden / Komşular sayesinde | b2.e06 | b2.e07, b2.e13, b2.e16, c1.e02 | kausal_dik, mesi_nominal |
 | `tr.g.bedingung_formal` | Bedingungen in Schreiben und Regeln | -diği takdirde, -mek şartıyla, -mediği sürece, -dikçe in Amts- und Vertragssprache. | Belge eksik olduğu takdirde / İzin alınmadığı sürece / Süresi içinde başvurmak şartıyla | b2.e06 | b2.e08, b2.e11, b2.e16, c1.e02 … | bedingung_se, partizip_dik |
 | `tr.g.wortbildung2` | Wortbildung bei Verben und Adjektiven | -leş, -len, -laş (Werden), -sel/-sal, -msı/-ımsı, -ce/-ca (Art, Sprache) zum Erschließen neuer Wörter. | yeşillenmek, güzelleşmek / çevresel, bilimsel / yeşilimsi, ekşimsi | b2.e07 | b2.e16, c1.e06 | wortbildung1 |
 | `tr.g.final_formal` | Absicht und Zweck im Schriftstil | -mek üzere, -sin diye, -mesi için, amacıyla. | Ödeme yapmak üzere bankaya gitti. / Herkes duysun diye yüksek sesle okudu. / Masrafları azaltmak amacıyla | b2.e08 | b2.e10, b2.e16, c1.e09 | mek_icin, mesi_nominal, diye |
@@ -1164,7 +1165,7 @@ Textabdeckung: Anteil laufender Wörter (wordfreq / FrequencyWords), die bei 80 
 
 ### 7.4 Satzvorrat und Wortfelder
 
-- **Tatoeba (tur):** 22.564 Sätze ohne negative Bewertung, davon 21.330 mit höchstens acht Wörtern. Nur Wörter aus dem simulierten Wortschatz (80 % nach Häufigkeit, ohne Tabu- und Religionstreffer) enthalten bis A1 1.448, bis A2 4.294 und bis B1 7.167 Sätze (vor Qualitäts- und Leitfadenfilter). Der Bedarf von 2.400 A1-Sätzen wird also überwiegend durch KI-Sätze gedeckt (PLAN §6.3); Tatoeba-Sätze kommen nur nach Standardfilter S7-E3 und Leitfaden dazu, mit Namensnennung je Satz. Für `tr-aus-ar` gibt es nur 2.409 direkte Paare tr–ar.
+- **Tatoeba (tur):** 22.564 Sätze ohne negative Bewertung, davon 21.330 mit höchstens acht Wörtern. Nur Wörter aus dem simulierten Wortschatz (80 % nach Häufigkeit, ohne Tabu- und Religionstreffer) enthalten bis A1 1.448, bis A2 4.294 und bis B1 7.167 Sätze (vor Qualitäts- und Leitfadenfilter). Der Bedarf von 2.400 A1-Sätzen wird also überwiegend durch KI-Sätze gedeckt (PLAN §6.3); Tatoeba-Sätze kommen nur nach Standardfilter S7-E3 und Leitfaden dazu, mit Namensnennung je Satz. Für `tr-aus-ar` gibt es nur 2.408 direkte Paare tr–ar.
 - **Wortfelder:** 155 Wortfelder mit je vier bis sieben Beispielen. Die Beispiele sind Richtungsangaben für den Entwurf, keine Lemmaliste. Rang der Beispiele in wordfreq (Stufe der ersten Nutzung):
 
 | Stufe | Beispiele | in Top-1.000 | in Top-2.000 | in Top-5.000 | in Top-50.000 | nicht gefunden |

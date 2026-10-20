@@ -74,6 +74,13 @@ Türkisch wird seit 1928 in Lateinschrift geschrieben, vorher in arabischer Schr
 - Die arabische Schrift kennt keine Großbuchstaben. Im Türkischen beginnen Satz, Namen, Länder, Städte und Sprachen groß (Türkiye, İzmir, Arapça); Nomen sind sonst klein (ev, okul).
 - Das Paar i/İ und ı/I: Das große İ hat einen Punkt, das große I keinen. Auf Telefonen mit arabischer oder deutscher Tastatur fehlen Buchstaben; in der App ergänzt die Sonderzeichenleiste sie.
 
+**Was aus dem Vorkurs Deutsch nicht gilt.** Wer die Lateinschrift im Vorkurs des Deutschkurses gelernt hat (`de.v.l01`–`de.v.l06`), kennt deutsche Regeln, die im Türkischen nicht gelten (RAHMEN-tr §4, `tr.v.l01`):
+- Nomen werden klein geschrieben (ev, okul), nicht groß.
+- v klingt nie wie f (var), s ist immer stimmlos, z nie wie ts; das deutsche j schreibt man y (yol), das türkische j ist ein stimmhaftes „sch“ (garaj).
+- Keine Buchstabenverbindungen wie sch, ch, ei, ie, ck oder tz: sch und tsch haben eigene Buchstaben (ş, ç).
+- h wird immer gesprochen und ist nie Dehnungszeichen.
+- Doppelkonsonanten werden lang gesprochen (elli – eli) und zeigen keinen kurzen Vokal an.
+
 **Schreibregeln, die oft verwechselt werden** (Material für Tipps ab A1):
 
 | Fall | Regel | Beispiel | typischer Fehler |
@@ -242,7 +249,7 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`tr.rahmen.json`, 109 ID
 | `tr.g.konverb_ip` (B1-e04) | Arabisch reiht konjugierte Verben mit wa- oder fa-; Türkisch hängt -(y)ip an und setzt Zeit und Person nur ans letzte Verb. | „Kalkıp ve pencereyi açtı.“ · „Kalktım ve açtım“ in jedem Satz | qāma wa-fataḥa n-nāfiḏa = Kalkıp pencereyi açtı: wa fällt weg, die Endung steht nur am Schluss. |
 | `tr.g.konverb_erek_meden` (B1-e05) | Vertraut: Der Ḥāl (ǧāʾa māšiyan) entspricht -(y)erek, dūna an entspricht -meden. | „Yürümek geldi.“ · „Düşünmek olmadan“ (wie dūna tafkīr) | ǧāʾa māšiyan = Yürüyerek geldi. dūna an yufakkira = düşünmeden. |
 | `tr.g.bedingung_se` (B1-e06) | iḏā und in stehen am Satzanfang; Türkisch hängt -se an das Verb des Nebensatzes. eğer ersetzt die Endung nicht. | „Eğer yağmur yağar, evde kalırız.“ (Endung fehlt) · „Yağmur yağacak, evde kalırız.“ (Bedingung als Aussage) | iḏā amṭarat = Yağmur yağarsa evde kalırız. In ist ebenfalls -se: Vaktin varsa gel. |
-| `tr.g.konverb_ince` (B1-e07) | ʿindamā und lammā werden zur Endung -(y)ince; ne zaman ist nur das Fragewort matā. | „Ne zaman eve geliyorum, ararım.“ · „Zaman eve geldim …“ | ʿindamā aṣilu ilā l-bayt = Eve gelince ararım. |
+| `tr.g.konverb_ince` (B1-e07) | ʿindamā und lammā werden zur Endung -(y)ince; ne zaman fragt wie matā „wann?“ und leitet allein keinen Nebensatz ein (mit -se heißt es „immer wenn“: Ne zaman gelsem …). | „Ne zaman eve geliyorum, ararım.“ · „Zaman eve geldim …“ | ʿindamā aṣilu ilā l-bayt = Eve gelince ararım. |
 | `tr.g.temporal_dik` (B1-e07) | qabla an und baʿda an werden zu Verbformen mit Verhältniswort; „bevor“ sieht verneint aus. | „Yattıktan önce“ · „Önce yatmak“ (wie qabla n-nawm) | baʿda an akala = yedikten sonra; qabla an yanāma = yatmadan önce – -meden ist hier keine Verneinung. |
 | `tr.g.nominal_dik` (B1-e08) | anna-Sätze werden zu Nomen mit Besitzendung und Fall; die Besitzendung übernimmt das Pronomen hinter anna. | „Biliyorum ki o hasta.“ (umgangssprachlich) · „Hasta olduğu biliyorum.“ (Akkusativ fehlt) | aʿlamu annahu marīḍ = Hasta olduğunu biliyorum: -u entspricht dem -hu, -nu ist der Akkusativ. |
 | `tr.g.soru_dolayli` (B1-e08) | Arabisch lässt den Fragesatz nach dem Verb folgen (lā adrī ayna huwa); Türkisch stellt ihn als Nomen davor. „ob“ (hal) = -ip -mediğini. | „Bilmiyorum nerede o.“ · „Bilmiyorum hal geliyor.“ | lā adrī ayna huwa = Nerede olduğunu bilmiyorum. lā adrī hal yaʾtī = Gelip gelmediğini bilmiyorum. |
@@ -268,7 +275,7 @@ Die Tabellen folgen der Grammatikfolge des Rahmenplans (`tr.rahmen.json`, 109 ID
 | `tr.g.reflexiv_reziprok` (B2-e04) | Vertraut: Stamm VI (tafāʿala) zeigt Gegenseitigkeit wie -iş; Stamm V und VIII oft das Reflexive wie -in. | „Görüyoruz.“ für „Wir treffen uns“ | taʿāwana = yardımlaşmak, taqābala = görüşmek; iġtasala = yıkanmak. |
 | `tr.g.modal_vermutung` (B2-e04) | rubbamā, qad + Muḍāriʿ und lā budda anna haben türkische Verbformen: -ebilir, -iyor olabilir, -miş olmalı. | „Yolda kalmalılar.“ (heißt: sie sollten unterwegs bleiben) | qad yakūnu yaʿmalu = Çalışıyor olabilir. lā budda annahum taʾaḫḫarū = Yolda kalmış olmalılar. |
 | `tr.g.konzessiv` (B2-e05) | Vertraut: rağmen ist raġma. Es steht aber hinten, mit Dativ; „auch wenn“ = -se de. | „Rağmen yorgun, yardım etti.“ (wie raġma taʿabihi vorn) | raġma taʿabihi = yorgunluğuna rağmen; ʿalā r-raġmi min annahu kāna mutʿaban = yorgun olmasına rağmen. |
-| `tr.g.kausal_formal` (B2-e06) | bi-faḍl entspricht sayesinde (positiv), bi-sabab bei Schlechtem yüzünden; neutral und amtlich nedeniyle. | „Kar sayesinde okul kapalı.“ | bi-faḍli l-ǧīrān = komşuların sayesinde; bi-sababi ṯ-ṯulūǧ = yoğun kar yüzünden. |
+| `tr.g.kausal_formal` (B2-e06) | bi-faḍl entspricht sayesinde (positiv), bi-sabab bei Schlechtem yüzünden; neutral und amtlich nedeniyle. | „Kar sayesinde okul kapalı.“ | bi-faḍli l-ǧīrān = komşular sayesinde; bi-sababi ṯ-ṯulūǧ = yoğun kar yüzünden. |
 | `tr.g.bedingung_formal` (B2-e06) | Vertraut: şart ist šarṭ. bi-šarṭi an = -mek şartıyla, fī ḥāli = -diği takdirde, mā lam = -mediği sürece. | „şartı ki …“ · Baustein vorn wie bi-šarṭi an | bi-šarṭi an tuqaddima ṭ-ṭalab = süresi içinde başvurmak şartıyla: Der Baustein steht am Ende. |
 | `tr.g.wortbildung2` (B2-e07) | Die arabische Nisba -ī heißt bei türkischen Wörtern meist -sel/-sal; „werden“ ist -leş/-len. | „bilimî“ (Nisba an ein türkisches Wort) · „yeşilce“ für „grünlich“ | ʿilmī = bilimsel (bei Lehnwörtern auch ilmî), bīʾī = çevresel. güzelleşmek = schöner werden. |
 | `tr.g.final_formal` (B2-e08) | bi-hadaf und min aǧli stehen vorn; amacıyla und -mek üzere stehen am Ende des Zweck-Teils. | „Amacıyla masrafları azaltmak“ (wie bi-hadafi taqlīl …) | bi-hadafi taqlīli n-nafaqāt = masrafları azaltmak amacıyla. |
@@ -311,7 +318,7 @@ Viele Lehnwörter haben im Türkischen eine andere oder engere Bedeutung als im 
 |---|---|---|---|---|---|---|
 | hayır | nein (in festen Wendungen auch „Gutes“) | ḫayr | das Gute; gut | lā | teilweise | A1-e01 |
 | memnun | zufrieden, erfreut (Memnun oldum = Freut mich) | mamnūn | dankbar, verbunden | masrūr, saʿīd | teilweise | A1-e01 |
-| memleket | Heimat, Heimatort | mamlaka | Königreich | waṭan, balad | falsch | A1-e01 |
+| memleket | Heimat, Heimatort; gehoben auch Land, Staat | mamlaka | Königreich | waṭan, balad | teilweise | A1-e01 |
 | sınıf | Schulklasse, Klassenzimmer; auch Klasse im Sinn von Rang (birinci sınıf) | ṣinf | Sorte, Art, Kategorie | ṣaff | teilweise | A1-e02 |
 | tahta | Holz; Tafel | taḥta | unter | ḫašab; sabbūra | Klang | A1-e02 |
 | ömür | Lebenszeit (nach dem Alter fragt man mit yaş) | ʿumr | Lebensalter, Alter; Lebenszeit | ʿumr, ḥayāt | teilweise | A1-e03 |
@@ -574,7 +581,7 @@ Moderne Wörter hat das Türkische oft aus dem Französischen übernommen, das A
 | doktor | duktūr, ṭabīb | Anrede Doktor Bey, Doktor Hanım (§4.2) |
 | banka | bank, maṣrif | Vertraut |
 | salata, patates | salaṭa, baṭāṭis | Vertraut |
-| domates | ṭamāṭim (Ägypten), banadūra (Levante) | anderes Wort |
+| domates | ṭamāṭim (Ägypten), banadūra (Levante) | ähnlich wie ṭamāṭim; banadūra ist ein anderes Wort |
 | portakal, muz | burtuqāl, mawz | Vertraut |
 | kebap, köfte, baklava | kabāb, kufta, baqlāwa | gleiche Gerichte, gleiche Namen |
 | otobüs | bāṣ; ūtūbīs (Ägypten) | – |
@@ -876,7 +883,7 @@ Erfahrungswerte, noch nicht gemessen (KT-ar-10). Tipps behandeln Familiensprache
 | 052 | tr.a1.e07 | kitap – kitabı: Das b kommt zurück | `tr.g.konsonant` |
 | 053 | tr.a1.e07 | çay und šāy: ç ist nicht š | §1.3 |
 | 054 | tr.a1.e07 | Obst und Gemüse mit bekannten Namen: muz, portakal, patlıcan | §3.2 |
-| 055 | tr.a1.e07 | domates und patates: andere Namen als im Arabischen | §3.3 |
+| 055 | tr.a1.e07 | domates wie ṭamāṭim, patates wie baṭāṭis (in der Levante: banadūra) | §3.3 |
 | 056 | tr.a1.e08 | ilā wird -e: okula | `tr.g.dativ` |
 | 057 | tr.a1.e08 | min wird -den: Türkiye'den | `tr.g.ablativ` |
 | 058 | tr.a1.e08 | otobüse binmek: -e, wo rakiba ein direktes Objekt hat | `tr.g.dativ` |
