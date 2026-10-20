@@ -6,9 +6,8 @@ import { waehleKarten } from '@/lib/lernapp/engine/kartenwahl';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
-import { haengeAn } from '@/lib/lernapp/lokal/ausgang';
 import { type Profil, profilBereich, type Speicher } from '@/lib/lernapp/lokal/db';
-import { ladePaket, ladeVerzeichnis } from '@/lib/lernapp/lokal/pakete';
+import { ladeVerzeichnis } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { frischAbgeleitet, heute, meldeStand, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
@@ -17,7 +16,14 @@ import type { Paket } from '@/lib/lernapp/paket/typen';
 import type { SpielerTexte } from '../typen';
 import { SpielerGrenze } from './UebenInsel';
 
-const Spieler = lazy(() => import('../Spieler').then((m) => ({ default: m.Spieler })));
+const ladeSpieler = () => import('../Spieler');
+const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
+/**
+ * Was erst die Wiederholung braucht – volle Prüfung der Pakete (Zod) und der Ausgang der Ereignisse – als eigener Chunk,
+ * nur geladen, wenn es Karten zu wiederholen gibt (TBT der Route, KERN 4.0 §9): Ohne fällige Karten lädt die Seite kein Zod.
+ */
+const ladeTeile = () => Promise.all([import('@/lib/lernapp/lokal/pakete'), import('@/lib/lernapp/lokal/ausgang')]);
+type Ausgang = Awaited<ReturnType<typeof ladeTeile>>[1];
 
 export type WiederholenTexte = { leer: string; laedt: string; nichtVerfuegbar: string };
 
@@ -25,12 +31,21 @@ type Zustand =
   | { art: 'laedt' }
   | { art: 'leer' }
   | { art: 'fehlt' }
-  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern; hoeren: boolean };
+  | {
+      art: 'bereit';
+      sp: Speicher;
+      profil: Profil;
+      lektion: Lektion;
+      ziffern: Ziffern;
+      hoeren: boolean;
+      haengeAn: Ausgang['haengeAn'];
+    };
 
 /**
  * Wiederholen (PLAN §3.1, §4; ADR 0038 Nr. 3): Kartenwahl aus dem lokalen Stand des Kurses (fällige zuerst, dann schwache;
  * `waehleKarten`), Aufgaben dazu aus den Einheitenpaketen (`baueWiederholung`), gespielt mit dem Spieler als Lektion der Art
- * `wiederholung` (XP: 1 je 2 Karten). Ohne Karten ein freundlicher Leerzustand, ohne Druck.
+ * `wiederholung` (XP: 1 je 2 Karten). Ohne Karten ein freundlicher Leerzustand, ohne Druck. Zod, Ausgang und Spieler
+ * kommen erst, wenn Karten gewählt sind (eigene Chunks).
  */
 export function WiederholenInsel({
   ui,
@@ -59,18 +74,22 @@ export function WiederholenInsel({
       const karten = (await sp.alle('karten', profilBereich(p.id))).filter((k) => k.karte.startsWith(`${kurs}:`));
       const gewaehlt = waehleKarten(karten, { jetzt: new Date() });
       if (!gewaehlt.length) return { art: 'leer' };
-      const v = await ladeVerzeichnis(kurs);
+      void ladeSpieler().catch(() => undefined);
+      const [v, [{ ladePaket }, { haengeAn }], e] = await Promise.all([
+        ladeVerzeichnis(kurs),
+        ladeTeile(),
+        einstellungsSpeicher(ui).laden(),
+      ]);
       const noetig = new Set(gewaehlt.map((k) => einheitDerKarte(k.karte)));
       const pakete: Paket[] = [];
-      for (const e of v?.kurs === kurs ? v.einheiten : []) {
-        if (!noetig.has(e.schluessel)) continue;
-        const paket = await ladePaket(sp, kurs, e);
+      for (const einheit of v?.kurs === kurs ? v.einheiten : []) {
+        if (!noetig.has(einheit.schluessel)) continue;
+        const paket = await ladePaket(sp, kurs, einheit);
         if (paket) pakete.push(paket);
       }
       const lektion = baueWiederholung(kurs, gewaehlt, pakete);
       if (!lektion) return { art: 'fehlt' };
-      const e = await einstellungsSpeicher(ui).laden();
-      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern, hoeren: e.hoeren };
+      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern, hoeren: e.hoeren, haengeAn };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -96,7 +115,7 @@ export function WiederholenInsel({
   if (z.art === 'leer') return kasten(texte.leer, true);
   if (z.art === 'fehlt') return kasten(texte.nichtVerfuegbar, true);
 
-  const { sp, profil, lektion } = z;
+  const { sp, profil, lektion, haengeAn } = z;
   const melde = (e: EreignisEntwurf) => {
     kette.current = kette.current.then(() => haengeAn(sp, profil, e)).catch(() => undefined);
   };

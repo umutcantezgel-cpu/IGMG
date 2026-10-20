@@ -8,7 +8,8 @@ import type { Kartenstand } from '../bewertung';
  * Wiederholungsrunde (PLAN §4 „Kartenwahl“, ADR 0038 Nr. 3): Aus den gewählten Karten (`waehleKarten`, fällige zuerst)
  * entsteht eine Lektion der Art `wiederholung` aus den Aufgaben der Einheitenpakete, die diese Karten bewerten. Die Übungsart
  * folgt der Stabilität: erkennen → Auswahl, Paare, Bild und Hören; Wortbank → Wortbank, Satzbau, Lücke; Produktion →
- * Freitext, Diktat, Lücke, Formen. Rein.
+ * Freitext, Diktat, Lücke, Formen. Im Wissenskurs und im Koran-Pfad entsprechend: erst erkennen (koran_wort,
+ * wahr_falsch, fallfrage), dann ordnen (zuordnen, reihenfolge). Rein.
  */
 
 /** Einheit einer Karte (`tr-aus-de:tr.a1.e01.w001` → `tr.a1.e01`). */
@@ -25,9 +26,21 @@ export const kartenDer = (a: Aufgabe): string[] => [
 ];
 
 const VORRANG: Record<ReturnType<typeof uebungsStufe>, Aufgabe['typ'][]> = {
-  erkennen: ['auswahl', 'paare', 'bild_wort', 'hoeren_waehlen', 'minimalpaare', 'wortbank', 'harakat'],
-  wortbank: ['wortbank', 'satzbau', 'luecke', 'auswahl', 'paare', 'bild_wort', 'hoeren_waehlen'],
-  produktion: ['frei', 'hoeren_schreiben', 'luecke', 'formen', 'wortbank', 'satzbau', 'auswahl', 'paare'],
+  erkennen: [
+    'auswahl',
+    'paare',
+    'bild_wort',
+    'hoeren_waehlen',
+    'minimalpaare',
+    'wortbank',
+    'harakat',
+    'koran_wort',
+    'wahr_falsch',
+    'fallfrage',
+    'zuordnen',
+  ],
+  wortbank: ['wortbank', 'satzbau', 'luecke', 'auswahl', 'paare', 'bild_wort', 'hoeren_waehlen', 'zuordnen', 'reihenfolge', 'wahr_falsch'],
+  produktion: ['frei', 'hoeren_schreiben', 'luecke', 'formen', 'wortbank', 'satzbau', 'auswahl', 'paare', 'reihenfolge', 'fallfrage'],
 };
 /** Rang eines Typs in der Stufe; Typen ohne Eintrag kommen zuletzt. */
 const rang = (liste: readonly Aufgabe['typ'][], typ: Aufgabe['typ']) => {

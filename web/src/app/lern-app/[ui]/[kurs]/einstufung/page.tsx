@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { EinstufungInsel } from '@/components/lernapp/inseln/EinstufungInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { kursTitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
-import { lernTexte } from '@/lib/lernapp/texte';
+import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
 
 export const ensureStatic = 'navigation';
 
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
 }
 
 /**
- * Einstufungstest (PLAN §3.1, ADR 0043 Nr. 6: 20 Aufgaben, adaptiv, lokal): statische Hülle. Die Zusammenführung hängt
- * in `#einstufung-test` den Test ein (L2-04, `engine/einstufung.ts`).
+ * Einstufungstest (PLAN §3.1, ADR 0043 Nr. 6: 20 Aufgaben, adaptiv, lokal): statische Hülle ohne Cookies und Kopfzeilen.
+ * Die Insel lädt erst nach „Test beginnen“ den Test, die Pakete der nötigen Stufe und die Übungs-Chunks
+ * (`engine/einstufung.ts`); das Ergebnis bleibt als Ereignis `einstufung` auf dem Gerät.
  */
 export default async function Einstufung({ params }: PageProps<'/lern-app/[ui]/[kurs]/einstufung'>) {
   await verlangeLernApp();
@@ -38,8 +40,18 @@ export default async function Einstufung({ params }: PageProps<'/lern-app/[ui]/[
         titel={t('einstufung.titel')}
         einleitung={t('einstufung.text', { anzahl: AUFGABEN })}
       />
-      <section id="einstufung-test" aria-label={t('einstufung.titel')} className="rounded-lg border border-linie bg-weiss p-5 md:p-8">
-        <p className="text-18 text-tinte-2">{t('einstufung.bald')}</p>
+      {/* Platz für den Test (eine Bildschirmhöhe), damit der Fuß beim Laden nicht springt (CLS) */}
+      <section id="einstufung-test" aria-label={t('einstufung.titel')} className="min-h-svh">
+        <EinstufungInsel
+          ui={ui}
+          kurs={kurs}
+          adresse={lernAdresse(ui, kurs)}
+          texte={rohTexte(ui, 'einstufung')}
+          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben'), tastatur: rohTexte(ui, 'tastatur') }}
+          stufenNamen={rohTexte(ui, 'lernpfad').stufe}
+          einheitText={rohTexte(ui, 'lernpfad').einheit}
+          lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}
+        />
       </section>
     </Rahmen>
   );

@@ -136,14 +136,17 @@ describe('Bewertung nur in den Übungs-Chunks (KERN 4.0 §9)', () => {
     p.startsWith(join(AUFGABEN_LIB, 'auswertung')) ||
     ['bewerte.ts', 'auswahl.ts', 'wortbank.ts', 'paare.ts'].some((n) => p === join(AUFGABEN_LIB, n));
 
-  it.each(['Spieler.tsx', join('inseln', 'UebenInsel.tsx'), join('inseln', 'WiederholenInsel.tsx')])(
-    '%s lädt statisch keine Bewertung',
-    (datei) => {
-      const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
-      expect(graph.size).toBeGreaterThan(3);
-      expect([...graph.keys()].filter(istBewertung).map(kurz)).toEqual([]);
-    },
-  );
+  it.each([
+    'Spieler.tsx',
+    'Einstufung.tsx',
+    join('inseln', 'UebenInsel.tsx'),
+    join('inseln', 'WiederholenInsel.tsx'),
+    join('inseln', 'EinstufungInsel.tsx'),
+  ])('%s lädt statisch keine Bewertung', (datei) => {
+    const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
+    expect(graph.size).toBeGreaterThan(3);
+    expect([...graph.keys()].filter(istBewertung).map(kurz)).toEqual([]);
+  });
 
   it('die Nutzlast-Dateien der Typen (Zod) importieren keine Bewertung', () => {
     const nutzlast = readdirSync(AUFGABEN_LIB)
@@ -158,6 +161,25 @@ describe('Bewertung nur in den Übungs-Chunks (KERN 4.0 §9)', () => {
         .map((z) => `${kurz(p)} → ${kurz(z)}`),
     );
     expect(funde).toEqual([]);
+  });
+});
+
+describe('Zod erst bei Bedarf (TBT der Spieler-Routen, Befund der L1-Gegenprüfung)', () => {
+  const Z = join(WURZEL, 'lib', 'lernapp', 'z.ts');
+  it.each([
+    'Spieler.tsx',
+    'Einstufung.tsx',
+    join('inseln', 'UebenInsel.tsx'),
+    join('inseln', 'WiederholenInsel.tsx'),
+    join('inseln', 'EinstufungInsel.tsx'),
+  ])('%s lädt Zod nicht statisch (Paketprüfung und Ausgang nur per import())', (datei) => {
+    const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
+    expect(graph.size).toBeGreaterThan(3);
+    expect(graph.has(Z)).toBe(false);
+  });
+
+  it('die Prüfung greift: der Paket-Lader zieht Zod', () => {
+    expect(clientGraph(join(WURZEL, 'lib', 'lernapp', 'lokal', 'pakete.ts')).has(Z)).toBe(true);
   });
 });
 
