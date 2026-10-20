@@ -362,3 +362,106 @@ describe('Audio-Route', () => {
     expect((await audioRoute.GET(anfrage('/'), kontext({ pfad: ['tr', datei] }))).status).toBe(404);
   });
 });
+
+/** Cache Storage im Arbeitsspeicher (wie im Browser: nur ganze 200-Antworten, Schlüssel = Adresse). */
+function vorratImSpeicher(): CacheStorage & { inhalt: Map<string, Map<string, Response>> } {
+  const inhalt = new Map<string, Map<string, Response>>();
+  const schluessel = (r: RequestInfo | URL) => (typeof r === 'string' ? r : r instanceof URL ? r.pathname : new URL(r.url).pathname);
+  return {
+    inhalt,
+    async open(name: string) {
+      const c = inhalt.get(name) ?? new Map<string, Response>();
+      inhalt.set(name, c);
+      return {
+        async match(r: RequestInfo | URL) {
+          return c.get(schluessel(r))?.clone();
+        },
+        async put(r: RequestInfo | URL, antwort: Response) {
+          if (antwort.status !== 200) throw new TypeError('nur 200');
+          c.set(schluessel(r), antwort.clone());
+        },
+        async delete(r: RequestInfo | URL) {
+          return c.delete(schluessel(r));
+        },
+      } as unknown as Cache;
+    },
+  } as unknown as CacheStorage & { inhalt: Map<string, Map<string, Response>> };
+}
+
+describe('Client: Pakete und Bündel auf dem Gerät (lokal/pakete.ts)', async () => {
+  const lokal = await import('@/lib/lernapp/lokal/pakete');
+  const { arbeitsspeicher } = await import('@/lib/lernapp/lokal/db');
+  const { textHash } = await import('@/lib/lernapp/paket/hash');
+  const { schneideClip } = await import('@/lib/lernapp/paket/buendel');
+
+  /** Abruf gegen die Route Handler; `abrufe` zählt die Netzanfragen. */
+  function routenAbruf(manipuliert = false) {
+    const abrufe: string[] = [];
+    const abruf = async (adresse: string, init?: RequestInit) => {
+      abrufe.push(adresse);
+      expect(new Headers(init?.headers).get('range')).toBeNull();
+      const teile = adresse.split('/').filter(Boolean);
+      if (teile[1] === 'audio') return audioRoute.GET(anfrage(adresse), kontext({ pfad: teile.slice(2) }));
+      if (teile.length === 3) return verzeichnisRoute.GET(anfrage(adresse), kontext({ kurs: teile[2] }));
+      const r = await einheitRoute.GET(anfrage(adresse), kontext({ kurs: teile[2], einheit: teile[3], hash: teile[4] }));
+      return manipuliert && r.ok ? new Response((await r.text()).replace('"lizenz"', '"lizenz" '), { status: 200 }) : r;
+    };
+    return { abruf, abrufe };
+  }
+
+  it('Verzeichnis Netz zuerst, Paket mit Hash-Prüfung in den Vorrat, offline aus dem Vorrat; manipulierte Bytes verworfen', async () => {
+    const sp = arbeitsspeicher();
+    const vorrat = vorratImSpeicher();
+    const { abruf, abrufe } = routenAbruf();
+    const v = await lokal.ladeVerzeichnis('tr-aus-de', { abruf, vorrat });
+    expect(v?.einheiten).toHaveLength(1);
+    const e = v!.einheiten[0]!;
+    const p = await lokal.ladePaket(sp, 'tr-aus-de', e, { abruf, vorrat });
+    expect(p?.einheit.schluessel).toBe('tr.a1.e01');
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ hash: e.hash, bytes: e.bytes, offline: false });
+    // offline: kein Netz, Verzeichnis und Paket aus dem Vorrat
+    const offline = async () => {
+      throw new TypeError('offline');
+    };
+    expect(await lokal.ladeVerzeichnis('tr-aus-de', { abruf: offline, vorrat })).toEqual(v);
+    expect(await lokal.ladePaket(sp, 'tr-aus-de', e, { abruf: offline, vorrat })).toEqual(p);
+    expect(abrufe).toHaveLength(2);
+    // Bytes, die nicht zum Hash passen, werden nicht gespeichert
+    const leer = vorratImSpeicher();
+    expect(await lokal.ladePaket(arbeitsspeicher(), 'tr-aus-de', e, { abruf: routenAbruf(true).abruf, vorrat: leer })).toBeNull();
+    expect(leer.inhalt.get(lokal.VORRAT_PAKETE)?.size ?? 0).toBe(0);
+    // ohne Cache Storage geht es weiter (nur ohne Vorrat)
+    expect(await lokal.ladePaket(arbeitsspeicher(), 'tr-aus-de', e, { abruf, vorrat: null })).toEqual(p);
+  });
+
+  it('Bündel ganz ohne Range, Clip per Blob.slice; offline speichern mit Ring nach Bytes; Aufräumen nach neuem Hash', async () => {
+    const sp = arbeitsspeicher();
+    const vorrat = vorratImSpeicher();
+    const { abruf } = routenAbruf();
+    const v = (await lokal.ladeVerzeichnis('tr-aus-de', { abruf, vorrat }))!;
+    const e = v.einheiten[0]!;
+    const fortschritt: number[] = [];
+    const r = await lokal.speichereOffline(sp, 'tr-aus-de', v.einheiten, { abruf, vorrat, fortschritt: (g) => fortschritt.push(g) });
+    expect(r).toMatchObject({ einheiten: 1, fehlgeschlagen: [], bytes: e.bytes + e.audio[0]!.bytes });
+    expect(fortschritt.at(-1)).toBe(r.bytes);
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toMatchObject({ offline: true });
+
+    const p = (await lokal.paketImVorrat('tr-aus-de', e, { vorrat }))!;
+    const buendel = (await lokal.ladeBuendel(e.audio[0]!.adresse, { abruf: async () => Response.error(), vorrat }))!;
+    expect(buendel.size).toBe(e.audio[0]!.bytes);
+    const kopf = await lokal.buendelKopf(buendel);
+    const text = Object.values(p.eintraege).find((x) => x.sprache === 'tr' && x.stimme)!.text;
+    const clip = (await lokal.clipAus(buendel, textHash(text), kopf))!;
+    const c = kopf.clips.find((x) => x.textHash === textHash(text))!;
+    expect(clip.type).toBe('audio/webm');
+    expect(clip.size).toBe(c.laenge);
+    expect(new Uint8Array(await clip.arrayBuffer())).toEqual(new Uint8Array(await schneideClip(buendel, c).arrayBuffer()));
+    expect(await lokal.clipAus(buendel, '0'.repeat(64), kopf)).toBeNull();
+
+    // Neuer Stand im Verzeichnis: der alte Eintrag verlässt Vorrat und Speicher; offline gespeicherte Einheiten neu laden
+    const neu = { ...v, einheiten: [{ ...e, hash: 'f'.repeat(64) }] };
+    expect(await lokal.raeumeAuf(sp, neu, { vorrat })).toEqual(neu.einheiten);
+    expect(await sp.lies('pakete', ['tr-aus-de', 'tr.a1.e01'])).toBeUndefined();
+    expect(await lokal.paketImVorrat('tr-aus-de', e, { vorrat })).toBeNull();
+  });
+});

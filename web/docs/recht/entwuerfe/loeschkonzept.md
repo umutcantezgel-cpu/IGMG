@@ -104,7 +104,7 @@ Spalte „Stand“: **umgesetzt** = im Code; **Vorschlag** = nicht beschlossen, 
 | Nr. | Datenart | Frist | Auslöser | Technische Umsetzung | Stand |
 | --- | --- | --- | --- | --- | --- |
 | L-37 | Lernstand mit Konto (Profil, Ereignisprotokoll, Kartenstand, Lerntage; Art. 9, weil der Wissenskurs auf die Religion schließen lässt) | **12 Monate** nach der letzten Aktivität (Abgleich); mit dem Konto sofort | Zeit seit `lernapp_profil.zuletzt_aktiv_am`; Kontolöschung | Löschlauf `gemeindeLoeschlauf` (`src/lib/loeschen/gemeinde.ts`): Profil löschen, Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel; Konto löschen kaskadiert | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
-| L-38 | Ereignisse älter als 12 Monate | in den Kartenstand verdichtet, danach gelöscht | Zeit | Abgleich (L1-05, `lernapp_karte.basis`) | geplant (L1-05) |
+| L-38 | Bewertungen (Ereignisse `bewertung`) älter als 12 Monate | in den Kartenstand verdichtet (`lernapp_karte.basis`), danach gelöscht; übrige Ereignisarten bis L-37 | Zeit | Löschlauf `verdichteLernapp` (`src/lib/lernapp/sync/verdichten.ts`) | umgesetzt (L1-05) |
 | L-39 | Schreibabgaben (Text und Kommentar der Lehrkraft verschlüsselt) | **12 Monate** nach der Abgabe; mit dem Konto sofort | Abgabe (`lernapp_schreibabgabe.loeschen_ab`) | Löschlauf `gemeindeLoeschlauf` | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
 | L-40 | Meldungen aus der Lern-App (Aufgabenschlüssel, Kategorie; Antwort nur ab 16 und nur auf Wunsch) | ohne Personenbezug; [Frist – Vorschlag 12 Monate nach Erledigung] | Erledigung | – | Vorschlag |
 | L-41 | Lernstand ohne Konto (IndexedDB `igmg-lernapp`, Pakete und Audio im Gerät) | beim Gerät der Person; Export und Import als Datei | Person löscht Websitedaten | – | beschlossen |

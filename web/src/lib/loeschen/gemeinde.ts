@@ -4,6 +4,7 @@ import { db, schema } from '@/lib/db';
 import { protokolliereModeration } from '@/lib/chat/dienst';
 import { inaktiveKontenLauf } from '@/lib/konto/inaktiv';
 import { KINDER_DOMAIN } from '@/lib/konto/regeln';
+import { verdichteLernapp } from '@/lib/lernapp/sync/verdichten';
 import { MAX_VERSUCHE } from '@/lib/mail/ausgang';
 import { nachweisFrist, plusMonate } from './fristen';
 
@@ -54,6 +55,8 @@ export type GemeindeLoeschErgebnis = {
   /** Lern-App: Lernstände ohne Aktivität seit 12 Monaten bzw. Schreibabgaben älter als 12 Monate */
   lernappProfile: number;
   lernappAbgaben: number;
+  /** Lern-App: Bewertungen älter als 12 Monate, in den Kartenstand verdichtet und gelöscht (L-38) */
+  lernappVerdichtet: number;
 };
 
 export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLoeschErgebnis> {
@@ -172,6 +175,8 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
       ),
     )
     .returning({ id: schema.lernappSchreibabgabe.id });
+  // Lern-App: Bewertungen älter als 12 Monate in den Kartenstand verdichten (ADR 0038 Nr. 10, L-38)
+  const verdichtet = await verdichteLernapp(jetzt);
 
   return {
     lernende: lernende.length,
@@ -185,5 +190,6 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
     inaktivGeloescht: inaktiv.geloescht,
     lernappProfile: lernappProfile.length,
     lernappAbgaben: lernappAbgaben.length,
+    lernappVerdichtet: verdichtet.ereignisse,
   };
 }

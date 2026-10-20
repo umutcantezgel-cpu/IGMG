@@ -50,10 +50,18 @@ export type AbzeichenEintrag = { profil: string; abzeichen: string; am: string }
 export type EinstellungsEintrag = { profil: string; schluessel: string; wert: unknown; am: string; geraet: string };
 export type PaketEintrag = { kurs: string; einheit: string; hash: string; bytes: number; offline: boolean; geladen: string };
 /**
- * Abgleich je Profil (L1-05, lokal/sync.ts): Zeiger des Servers, letzter Abgleich und verdichtete Kartenstände des Servers
- * (Bewertungen älter als 12 Monate, ADR 0038 Nr. 10), die die Ableitung als Basis nutzt.
+ * Abgleich je Profil (L1-05, lokal/sync.ts): Zeiger des Servers, letzter Abgleich, Anlage des Lernstands auf dem Server
+ * (`angelegt`; ändert sie sich, sendet das Gerät alles neu) und verdichtete Kartenstände des Servers (Bewertungen älter als
+ * 12 Monate, ADR 0038 Nr. 10) mit ihrem Stand, die die Ableitung als Basis nutzt.
  */
-export type SyncEintrag = { profil: string; zeiger: string | null; zuletzt: string | null; basen?: Record<string, KartenBasis> };
+export type SyncEintrag = {
+  profil: string;
+  zeiger: string | null;
+  zuletzt: string | null;
+  angelegt?: string | null;
+  basisStand?: string | null;
+  basen?: Record<string, KartenBasis>;
+};
 
 export interface LernappDB extends DBSchema {
   profile: { key: string; value: Profil };

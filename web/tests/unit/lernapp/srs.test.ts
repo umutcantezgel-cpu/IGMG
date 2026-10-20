@@ -5,6 +5,7 @@ import {
   FSRS_PARAMETER,
   FSRS_PARAMETERVERSION,
   istFaellig,
+  type KartenBasis,
   type KartenBewertung,
   NOTEN,
   noteAus,
@@ -146,5 +147,37 @@ describe('Nachspielen', () => {
         for (const s of x.values()) expect(Date.parse(s.faellig)).toBeGreaterThanOrEqual(Date.parse(s.zuletzt!));
       }),
     );
+  });
+
+  it('Eigenschaft: Verdichtung (Basis bis zur Grenze + Rest) ergibt denselben Stand wie alle Bewertungen (ADR 0038 Nr. 10)', () => {
+    fc.assert(
+      fc.property(
+        fc.array(bewertung, { minLength: 1, maxLength: 25 }),
+        fc.date({ min: new Date('2026-01-01T00:00:00Z'), max: new Date('2027-01-01T00:00:00Z'), noInvalidDate: true }),
+        (liste, grenzeDatum) => {
+          const grenze = grenzeDatum.toISOString();
+          const alle = spieleNach(liste);
+          const basen = new Map<string, KartenBasis>();
+          for (const karte of new Set(liste.map((x) => x.karte))) {
+            const alt = liste.filter((x) => x.karte === karte && Date.parse(x.am) <= Date.parse(grenze));
+            // über JSON wie in `lernapp_karte.basis` (jsonb) bzw. der Sync-Antwort
+            const stand = spieleKarteNach(karte, alt);
+            if (stand) basen.set(karte, JSON.parse(JSON.stringify({ stand, bis: grenze })) as KartenBasis);
+          }
+          const rest = liste.filter((x) => Date.parse(x.am) > Date.parse(grenze));
+          expect(spieleNach(rest, basen)).toEqual(alle);
+        },
+      ),
+    );
+  });
+
+  it('Basis: ältere Bewertungen als die Grenze zählen nicht mehr; ohne neue Bewertung bleibt die Basis', () => {
+    const basis: KartenBasis = {
+      stand: spieleKarteNach('k', [b('k', 'gut', '2026-01-01T10:00:00.000Z')])!,
+      bis: '2026-02-01T00:00:00.000Z',
+    };
+    expect(spieleKarteNach('k', [], basis)).toEqual(basis.stand);
+    expect(spieleKarteNach('k', [b('k', 'nochmal', '2026-01-15T10:00:00.000Z', G2, 9)], basis)).toEqual(basis.stand);
+    expect(spieleKarteNach('k', [b('k', 'nochmal', '2026-02-02T10:00:00.000Z', G2, 9)], basis)?.wiederholungen).toBe(2);
   });
 });
