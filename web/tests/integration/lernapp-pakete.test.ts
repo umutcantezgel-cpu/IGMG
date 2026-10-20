@@ -207,6 +207,9 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     expect(a01.typ === 'auswahl' && a01.optionen.map((o) => o.text)).toEqual(['Wasser', 'Haus']);
     const paare = ohne.lektionen[0]!.aufgaben[1]!;
     expect(paare.typ === 'paare' && paare.paare.map((x) => x.links.text)).toEqual(['su', 'ev', 'kitap']);
+    // Wortbank-Ablenker kommen nie aus der Übersetzung eines verborgenen Zieleintrags (Gegenprüfung L1)
+    const zurueck = ohne.lektionen[1]!.aufgaben[0]!;
+    expect(zurueck.typ === 'wortbank' && zurueck.kacheln.map((k) => k.toLocaleLowerCase('de'))).not.toContain('brot');
 
     // Eine Freigabe genügt nicht; die Administration ersetzt keine Prüfung
     const person = async (rolle: 'religioese_pruefung' | 'administration') => {

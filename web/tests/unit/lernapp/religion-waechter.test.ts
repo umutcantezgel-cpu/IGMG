@@ -23,6 +23,9 @@ type Werkzeug = {
   vierGrammTreffer: (t: string, i: Index) => Treffer;
   loeseCodepunkte: (t: string) => string;
   pruefeDatei: (pfad: string, inhalt: string, holeIndex: () => Index) => string[];
+  ladeLexikon: (wurzel?: string) => { arabisch: { name: string }[]; latein: { name: string }[] };
+  lexikonTreffer: (t: string, l: ReturnType<Werkzeug['ladeLexikon']>) => { name: string } | null;
+  LEXIKON_VERWEISE: readonly unknown[];
 };
 const w = (await import(pathToFileURL(WERKZEUG).href)) as Werkzeug;
 
@@ -178,7 +181,8 @@ describe('Dateien: Erlaubnis nur mit Wächter, Wissen/Koran-Pfad/Komponenten/Wer
     ]) {
       expect(w.pruefeDatei(pfad, NEUTRAL.map((s) => `  "x": "${s}",`).join('\n'), hole), pfad).toEqual([]);
       // Fundstelle: eine Stelle mit diesem Wortlaut (bei Wiederholungen im Koran nicht unbedingt die Probe selbst)
-      const befunde = w.pruefeDatei(pfad, `{\n${koranZeile(PROBEN[0])}\n}`, hole);
+      // (in ar.json kann zusätzlich das Formel-Lexikon treffen, z. B. bei der Basmala)
+      const befunde = w.pruefeDatei(pfad, `{\n${koranZeile(PROBEN[0])}\n}`, hole).filter((x) => x.includes('4-Gramm'));
       expect(befunde, pfad).toHaveLength(1);
       expect(befunde[0], pfad).toMatch(new RegExp(`^${pfad.replace(/\./g, '\\.')}:2: Koran-4-Gramm \\(Sure \\d+:\\d+\\)$`));
     }
@@ -211,6 +215,132 @@ describe('Dateien: Erlaubnis nur mit Wächter, Wissen/Koran-Pfad/Komponenten/Wer
       ...w.pruefeDatei('web/messages/lernapp/ar.json', koranZeile(PROBEN[4]), hole),
     ];
     expect(befunde).toHaveLength(2);
+    expect(befunde.join('\n')).not.toMatch(w.ARABISCH);
+  });
+});
+
+describe('S-L1 M-3: Umgehungen des Wächters', () => {
+  const zeichen = (n: number) => String.fromCharCode(n);
+  const SHY = zeichen(0xad);
+  const CGJ = zeichen(0x34f);
+  const probe = ohneZeichen(PROBEN[6].text);
+  const vier = probe.split(' ');
+  /** Ein Zeichen in die Mitte jedes Worts setzen (zerreißt die Wörter ohne Normalisierung). */
+  const mitZeichen = (z: string) => vier.map((x) => `${x.slice(0, 1)}${z}${x.slice(1)}`).join(' ');
+  const SPRACHE = 'web/inhalte/lernapp/sprache/ar/a1/e01.json';
+
+  it('Codepunkte eines neutralen Worts im Wissenskurs, im Koran-Pfad und in Textdateien der Werkstatt sind Rot', () => {
+    const neutral = alsCodepunkte(NEUTRAL[0]!.split(' ')[0]!);
+    for (const pfad of ['web/inhalte/lernapp/islam/probe.json', 'web/inhalte/lernapp/koran/pfad.json', '_lernapp/probe.md'])
+      expect(w.pruefeDatei(pfad, `{ "x": "${neutral}" }`, hole), pfad).toHaveLength(1);
+    // Werkzeuge der Werkstatt dürfen Zeichenbereiche als Codepunkte tragen (nur ohne 4-Gramm)
+    expect(w.pruefeDatei('_lernapp/werkzeuge/x.mjs', `const b = /[${alsCodepunkte(NEUTRAL[0]!.slice(0, 2))}]/;`, hole)).toEqual([]);
+  });
+
+  it('vier Wörter auf zwei Zeilen bzw. in zwei Feldern (Dialog) sind Rot', () => {
+    const zwei = `{\n  "a": "${vier.slice(0, 2).join(' ')}",\n  "b": "${vier.slice(2).join(' ')}"\n}`;
+    expect(w.pruefeDatei(SPRACHE, zwei, hole)).toHaveLength(1);
+    const dialog = `[\n  { "sprecher": "a",\n    "text": "${vier.slice(0, 3).join(' ')}" },\n  { "sprecher": "b",\n    "text": "${vier[3]}" }\n]`;
+    expect(w.pruefeDatei(SPRACHE, dialog, hole)).toEqual([
+      expect.stringMatching(new RegExp(`^${SPRACHE.replace(/\./g, '\\.')}:3: Koran-4-Gramm`)),
+    ]);
+  });
+
+  it('weicher Trennstrich, U+034F, Zeilentrenner und Homoglyphen im Wort umgehen den Wächter nicht', () => {
+    expect(w.vierGrammTreffer(mitZeichen(SHY), index)?.korpus).toBe('koran');
+    expect(w.vierGrammTreffer(mitZeichen(CGJ), index)?.korpus).toBe('koran');
+    expect(w.vierGrammTreffer(mitZeichen(zeichen(0x2028)), index)?.korpus).toBe('koran');
+    expect(w.pruefeDatei(SPRACHE, `"x": "${mitZeichen(SHY)}"`, hole)).toHaveLength(1);
+    const mitHa = PROBEN.map((p) => ohneZeichen(p.text)).find((t) => t.includes(zeichen(0x647)));
+    expect(mitHa).toBeDefined();
+    for (const ersatz of [0x6c1, 0x6be, 0x6d5])
+      expect(w.vierGrammTreffer(mitHa!.replaceAll(zeichen(0x647), zeichen(ersatz)), index)?.korpus).toBe('koran');
+  });
+
+  it('HTML-Entitäten, fromCharCode/fromCodePoint und Prozent-Kodierung in Code sind Rot', () => {
+    const cps = [...probe].map((c) => c.codePointAt(0)!);
+    const entitaeten = cps.map((n) => (n === 32 ? ' ' : `&#x${n.toString(16)};`)).join('');
+    const dezimal = cps.map((n) => (n === 32 ? ' ' : `&#${n};`)).join('');
+    expect(w.pruefeDatei('web/src/components/lernapp/Kopf.tsx', `<p>${entitaeten}</p>`, hole)).toHaveLength(1);
+    expect(w.pruefeDatei('web/src/lib/lernapp/x.ts', `const s = '${dezimal}';`, hole)).toHaveLength(1);
+    expect(w.pruefeDatei('web/src/lib/lernapp/x.ts', `const s = String.fromCharCode(${cps.join(', ')});`, hole)).toHaveLength(1);
+    expect(
+      w.pruefeDatei(
+        'web/src/lib/lernapp/x.ts',
+        `const s = String.fromCodePoint(${cps.map((n) => `0x${n.toString(16)}`).join(',')});`,
+        hole,
+      ),
+    ).toHaveLength(1);
+    expect(w.pruefeDatei('web/src/lib/lernapp/x.ts', `const u = '/suche?q=${encodeURIComponent(probe)}';`, hole)).toHaveLength(1);
+    // neutrale Codepunkte in Komponenten bleiben erlaubt (z. B. Bildschirmtastatur)
+    const neutral = [...NEUTRAL[1]!].map((c) => c.codePointAt(0)!);
+    expect(w.pruefeDatei('web/src/components/lernapp/Tastatur.tsx', `const s = String.fromCharCode(${neutral.join(', ')});`, hole)).toEqual(
+      [],
+    );
+  });
+});
+
+describe('S-L1 M-3: Formel-Lexikon (KERN 4.0 §3 a)', () => {
+  const lexikon = w.ladeLexikon(WURZEL);
+  /** Wörter einer Stelle aus dem Tanzil-Text in vereinfachter Schreibung (wie aus dem Gedächtnis). */
+  const stelle = (ref: string, von: number, bis: number) =>
+    vereinfacht(
+      VERSE.find((v) => v.stelle === ref)!
+        .text.split(/\s+/)
+        .slice(von - 1, bis)
+        .join(' '),
+    );
+
+  it('löst alle Verweise in den Tanzil-Text auf; arabische Formeln treffen auch mit Vorsilbe, neutrale Sätze nie', () => {
+    expect(lexikon.arabisch.length).toBe(w.LEXIKON_VERWEISE.length);
+    for (const [ref, von, bis] of [
+      ['1:2', 1, 2],
+      ['2:70', 14, 16],
+      ['18:39', 6, 8],
+      ['23:91', 23, 24],
+      ['29:45', 18, 19],
+      ['6:54', 7, 8],
+    ] as const)
+      expect(w.lexikonTreffer(`${NEUTRAL[2]} ${stelle(ref, von, bis)}`, lexikon), ref).not.toBeNull();
+    const name = stelle('1:1', 2, 2);
+    expect(w.lexikonTreffer(`${zeichen(0x648)}${name}`, lexikon)?.name).toBe('Gottesname');
+    expect(w.lexikonTreffer(alsCodepunkte(name), lexikon)?.name).toBe('Gottesname');
+    for (const satz of NEUTRAL) expect(w.lexikonTreffer(satz, lexikon)).toBeNull();
+    function zeichen(n: number) {
+      return String.fromCharCode(n);
+    }
+  });
+
+  it('deutsche und türkische Begriffe treffen, Alltagswörter nicht', () => {
+    for (const t of [
+      'Das Gebet am Abend',
+      'Wir beten.',
+      'die Moschee',
+      'Inschallah!',
+      'Camiye gidiyoruz.',
+      'İMAM',
+      'Ramazan ayı',
+      'oruç tutmak',
+      `Ko${String.fromCharCode(0xad)}ran`,
+    ])
+      expect(w.lexikonTreffer(t, lexikon), t).not.toBeNull();
+    for (const t of [
+      'Ich habe ihn gebeten.',
+      'Rote Bete',
+      'iki saat süren toplantı',
+      'şirketi kuran kişi',
+      'Hocamız geldi.',
+      'duvar',
+      'Sureti',
+      'hacim',
+      'Das Wetter ist schön.',
+    ])
+      expect(w.lexikonTreffer(t, lexikon), t).toBeNull();
+  });
+
+  it('in der Oberfläche ar.json ist ein Lexikon-Treffer Rot; Meldungen ohne arabische Schrift', () => {
+    const befunde = w.pruefeDatei('web/messages/lernapp/ar.json', `{\n  "x": "${stelle('1:2', 1, 2)}"\n}`, hole);
+    expect(befunde).toEqual(['web/messages/lernapp/ar.json:2: Formel-Lexikon (Hamdala) – in der Oberfläche nie erlaubt']);
     expect(befunde.join('\n')).not.toMatch(w.ARABISCH);
   });
 });

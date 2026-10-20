@@ -289,10 +289,12 @@ class Werkbank {
       const loesungen = [z.u.text, ...z.u.alternativen];
       const kacheln = [...zerlege(z.u.text)];
       const vorhanden = new Set(kacheln.map(vergleichsform));
-      // Ablenker aus anderen sichtbaren Übersetzungen der Einheit, deterministisch je Aufgabe
+      // Ablenker aus anderen sichtbaren Übersetzungen der Einheit, deterministisch je Aufgabe – nur, wenn auch ihr Zieleintrag
+      // sichtbar ist (sonst kämen Wörter eines verborgenen Eintrags, z. B. mit Religionsbezug ohne Freigaben, ins Paket)
       const kandidaten = new Set<string>();
       for (const [bezug, u] of this.e.uebersetzungen) {
-        if (bezug === v.satz || sicht(u, this.o) === 'verborgen') continue;
+        const ziel = this.e.eintraege.get(bezug);
+        if (bezug === v.satz || !ziel || sicht(ziel, this.o) === 'verborgen' || sicht(u, this.o) === 'verborgen') continue;
         for (const w of zerlege(u.text)) if (!vorhanden.has(vergleichsform(w))) kandidaten.add(w);
       }
       kacheln.push(...stabilSortiert([...kandidaten], v.schluessel).slice(0, 3));

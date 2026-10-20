@@ -1,10 +1,12 @@
 // Prüfgerüst der Lern-App-Inhalte (PLAN §6.4, Tor L3 „lernapp:pruefen 0“): Schema und Ablageort je Datei, eindeutige
 // Schlüssel, Dubletten (gleicher Text), Herkunft (Quelle, Lizenz aus der erlaubten Liste, Namensnennung), Verweise der
-// Übersetzungen. Weitere Prüfer (Wortschatz, Satzlänge, Vokalisierung, Wächter, Lizenzbericht) ergänzt L3-02.
+// Übersetzungen, Religionswächter (Formel-Lexikon mit Kennzeichen, Koran- und Hadith-4-Gramme; S-L1 M-3). Weitere Prüfer
+// (Wortschatz, Satzlänge, Vokalisierung, Lizenzbericht) ergänzt L3-02.
 // Aufruf: pnpm lernapp:pruefen [--testkurs]   (Ausgang 1 bei blockierenden Befunden)
 import { parseArgs } from 'node:util';
 import { testkursQuellen } from '../../drizzle/seeds/lernapp-test';
 import { type ImportQuelle, ImportFehler, leseDateien } from '../../src/lib/lernapp/inhalt/import';
+import { pruefeReligion } from '../../src/lib/lernapp/inhalt/religion';
 import { erwarteterPfad } from '../../src/lib/lernapp/inhalt/schema';
 import { inhaltsdateien } from './inhaltsdateien';
 
@@ -24,6 +26,7 @@ export function pruefe(quellen: readonly ImportQuelle[], { pfadePruefen = true }
     }
     throw e;
   }
+  bericht.befunde.push(...pruefeReligion(dateien));
   const zielSchluessel = new Set<string>();
   const texte = new Map<string, string>();
   for (const { pfad, datei } of dateien) {

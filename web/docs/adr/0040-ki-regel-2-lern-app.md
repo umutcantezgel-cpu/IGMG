@@ -71,6 +71,28 @@
 2. **Nr. 5, Prüfoberfläche:** Prüfende sehen die Fundstelle mit Band und Seite, keinen arabischen Text, bis LM-04 entschieden ist.
 3. Quellenkreis und Abdeckung: ADR 0045, Fortschreibung S3/S8 Nr. 7.
 
+## Fortschreibung nach der Sicherheitsprüfung S-L1 (20.10.2026, `_lernapp/berichte/s-l1.md` M-3)
+
+1. **Ein Kern für alle Prüfstellen:** `web/src/lib/lernapp/waechter/kern.mjs` (reines JavaScript, ohne arabische Schrift) nutzen
+   das Werkzeug `_gemeinde/werkzeuge/religion-pruefung.mjs`, der Import und `pnpm lernapp:pruefen`
+   (`web/src/lib/lernapp/inhalt/religion.ts`). So greift der Wächter auch im Vercel-Bau, in dem `_gemeinde/` fehlt; die
+   Eingaben der Verwaltung (L3-06) rufen dasselbe Modul.
+2. **Verschleierung:** Die Normalisierung entfernt alle Format- und kombinierenden Zeichen (u. a. U+00AD, U+034F, U+180E) sowie
+   U+2028/U+2029 und vereinheitlicht Ha-, Ya- und Kaf-Formen. Aufgelöst werden Codepunkt-Folgen, HTML-Entitäten,
+   `fromCharCode`/`fromCodePoint` und Prozent-Kodierung. Im Wissenskurs, im Koran-Pfad und in Textdateien der Werkstatt ist
+   auch verschleierte arabische Schrift Rot.
+3. **4-Gramme über Zeilen und Felder:** Der Abgleich läuft über den Wortstrom der ganzen Datei bzw. über alle Texte einer
+   Inhaltsdatei (Sätze einer Lektion, Dialogzeilen).
+4. **Formel-Lexikon (KERN 4.0 §3 a) „fail closed“:** Ein Treffer verlangt `religionsbezug: true`; sonst bricht der Import ab
+   und `lernapp:pruefen` meldet einen Befund. Texte ohne Kennzeichen (Thema, Kann-Beschreibung, Lektionsziel) und die
+   Oberfläche `ar.json` dürfen nie treffen. Eine Übersetzung erbt das Kennzeichen ihres Zieleintrags.
+   - Arabische Einträge sind nur Verweise in den Tanzil-Text (Sure:Vers, Wörter); sie werden zur Laufzeit aus `web/daten`
+     aufgelöst. Startliste: Basmala, Gottesname, Hamdala, inschallah, maschallah, subhanallah, Takbir, Friedensgruß, Sure.
+     Die Eulogie fängt der Hadith-4-Gramm-Abgleich.
+   - Deutsche und türkische Begriffe stehen als Startliste mit ausdrücklichen Endungen in `kern.mjs`.
+   - Bestätigen und ergänzen: religiöse Prüfung bzw. Redaktion (LM-09). Danach liegt die geprüfte Liste gepinnt in
+     `web/daten/` (Ordnername: Entscheidung der Menschen).
+
 ## Alternativen
 
 - ADR 0030 unverändert, also kein KI-Entwurf im Wissenskurs: verworfen durch die Nutzerentscheidung. ≈ 1.400 Aussagen von Hand wären im Lauf nicht zu schaffen.

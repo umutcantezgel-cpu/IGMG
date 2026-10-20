@@ -7,6 +7,7 @@ import { zerlege } from '../abgleich/tokens';
 import type { Status } from '../freigabe';
 import { type KursId, RICHTUNGEN, SPRACH_STUFEN, type Sprache, zerlegeRichtung } from '../kurse';
 import { inhaltHash, sha256Hex } from '../paket/hash';
+import { ladeWaechter, pruefeReligion } from './religion';
 import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type UebersetzungDatei, verweiseVon } from './schema';
 
 /**
@@ -24,7 +25,9 @@ import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type Uebe
  * - Jede Änderung erhöht `lernapp_kurs.version` des Kurses. Caches verfallen beim Start (`TAG.lernapp` in `START_TAGS`)
  *   bzw. durch den Bau, der den Import vor `next build` ausführt.
  *
- * Läuft in einer Transaktion; Verweise auf unbekannte Lemmata oder Sätze brechen alles ab.
+ * Läuft in einer Transaktion; Verweise auf unbekannte Lemmata oder Sätze brechen alles ab. Vorher prüft der
+ * Religionswächter alle Dateien (`religion.ts`: Formel-Lexikon mit Kennzeichen, Koran- und Hadith-4-Gramme) – ein Befund
+ * bricht den Import ab, auch im Vercel-Bau (S-L1 M-3). Eine Übersetzung übernimmt `religionsbezug` ihres Zieleintrags.
  */
 
 export type ImportQuelle = { pfad: string; text: string };
@@ -413,19 +416,29 @@ async function importiereUebersetzung(l: Lauf, d: UebersetzungDatei, pfad: strin
   const [lemmata, saetze] = await Promise.all([
     bezuege.length
       ? tx
-          .select({ id: schema.lernappLemma.id, schluessel: schema.lernappLemma.schluessel })
+          .select({
+            id: schema.lernappLemma.id,
+            schluessel: schema.lernappLemma.schluessel,
+            religionsbezug: schema.lernappLemma.religionsbezug,
+          })
           .from(schema.lernappLemma)
           .where(inArray(schema.lernappLemma.schluessel, bezuege))
       : [],
     bezuege.length
       ? tx
-          .select({ id: schema.lernappSatz.id, schluessel: schema.lernappSatz.schluessel })
+          .select({
+            id: schema.lernappSatz.id,
+            schluessel: schema.lernappSatz.schluessel,
+            religionsbezug: schema.lernappSatz.religionsbezug,
+          })
           .from(schema.lernappSatz)
           .where(inArray(schema.lernappSatz.schluessel, bezuege))
       : [],
   ]);
   const lemmaId = new Map(lemmata.map((z) => [z.schluessel, z.id]));
   const satzId = new Map(saetze.map((z) => [z.schluessel, z.id]));
+  /** Kennzeichen des Zieleintrags: Die Übersetzung erbt es (S-L1, Gegenprüfung: Ablenker aus verborgenen Einträgen). */
+  const zielBezug = new Map([...lemmata, ...saetze].map((z) => [z.schluessel, z.religionsbezug]));
   const unbekannt = bezuege.filter((b) => !lemmaId.has(b) && !satzId.has(b));
   if (unbekannt.length) throw new ImportFehler(unbekannt.map((b) => `${pfad}: Bezug ${b} unbekannt`));
 
@@ -457,7 +470,7 @@ async function importiereUebersetzung(l: Lauf, d: UebersetzungDatei, pfad: strin
       sprache: ausgang,
       text: u.text,
       alternativen: u.alternativen ?? [],
-      religionsbezug: u.religionsbezug ?? false,
+      religionsbezug: (u.religionsbezug ?? false) || (zielBezug.get(u.bezug) ?? false),
       quelle: u.quelle,
       lizenz: u.lizenz,
       namensnennung: u.namensnennung ?? null,
@@ -667,6 +680,8 @@ export async function importiereLernapp(
   }: { erzwingen?: boolean; standSchluessel?: string; jetzt?: Date } = {},
 ): Promise<ImportBericht> {
   const dateien = leseDateien(quellen);
+  const religion = pruefeReligion(dateien, ladeWaechter());
+  if (religion.length) throw new ImportFehler(religion);
   return db.transaction(async (tx) => {
     const [z] = await tx.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, standSchluessel));
     const alt = (z?.wert as Stand | undefined) ?? { dateien: {}, konflikte: [], am: '' };
