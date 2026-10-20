@@ -55,7 +55,7 @@ export type GemeindeLoeschErgebnis = {
   /** Lern-App: Lernstände ohne Aktivität seit 12 Monaten bzw. Schreibabgaben älter als 12 Monate */
   lernappProfile: number;
   lernappAbgaben: number;
-  /** Lern-App: Bewertungen älter als 12 Monate, in den Kartenstand verdichtet und gelöscht (L-38) */
+  /** Lern-App: Bewertungen älter als 12 Monate, in den Kartenstand verdichtet und gelöscht (Löschkonzept L-39) */
   lernappVerdichtet: number;
 };
 
@@ -160,12 +160,12 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
   // D-16: inaktive Gemeinde-Konten (24 Monate ohne Anmeldung, Vorwarnung 30 Tage vorher; Kinderkonten über die Eltern)
   const inaktiv = await inaktiveKontenLauf(jetzt);
 
-  // Lern-App: Lernstand nach 12 Monaten ohne Abgleich – Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel
+  // Lern-App (Löschkonzept L-38): Lernstand nach 12 Monaten ohne Abgleich – Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel
   const lernappProfile = await db
     .delete(schema.lernappProfil)
     .where(lte(schema.lernappProfil.zuletztAktivAm, plusMonate(jetzt, -GEMEINDE_FRISTEN.lernappInaktivMonate)))
     .returning({ id: schema.lernappProfil.benutzerId });
-  // Lern-App: Schreibabgaben nach Ablauf (`loeschenAb`, gesetzt bei der Abgabe) – spätestens 12 Monate nach der Abgabe
+  // Lern-App (Löschkonzept L-40): Schreibabgaben nach Ablauf (`loeschenAb`, gesetzt bei der Abgabe) – spätestens 12 Monate nach der Abgabe
   const lernappAbgaben = await db
     .delete(schema.lernappSchreibabgabe)
     .where(
@@ -175,7 +175,7 @@ export async function gemeindeLoeschlauf(jetzt = new Date()): Promise<GemeindeLo
       ),
     )
     .returning({ id: schema.lernappSchreibabgabe.id });
-  // Lern-App: Bewertungen älter als 12 Monate in den Kartenstand verdichten (ADR 0038 Nr. 10, L-38)
+  // Lern-App: Bewertungen älter als 12 Monate in den Kartenstand verdichten (ADR 0038 Nr. 10, Löschkonzept L-39)
   const verdichtet = await verdichteLernapp(jetzt);
 
   return {

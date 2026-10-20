@@ -1,5 +1,25 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 19:45 UTC:** L3-01 fertig (95d4d24), L3-04 fertig (0b29073: Sprachdaten gepinnt). Läuft: L1
+  `wf_84111110-109`. **Für L3-02 vormerken:** `lernapp:pruefen` mit Auszugs-SHA-Prüfung vor jedem Lauf, „kein examples/ref in
+  web/daten/kaikki“, N-Gramm-Wächter (b/c) mit den 38 Tatoeba-IDs aus `web/daten/tatoeba/QUELLE.md` als Positivproben,
+  Import-Ausschluss dieser Sätze; CAMeL-Schritt ZIP → Top 50.000 als Skript nachziehen. Volle kaikki-Auszüge (116 MB) bleiben
+  bis L5 im Scratchpad.
+- **Stand 20.10.2026 19:15 UTC:** L3-01 fast fertig (e2ddb83): Leitfaden, Rahmen de/tr/ar, Kontrast alle 6 Richtungen; Lektorat de
+  und ar freigegeben. Läuft: Lektorat tr `wf_51cc17de-642` (zweimal am Inhaltsfilter gescheitert, jetzt ohne Tabu-Lexikon) und L1
+  `wf_84111110-109`. Offene niedrige Lektoratspunkte (de: Einwohnerantrag, „Gemeinde“ als Kommune; ar: Wochentag-Wortfeld, ayy,
+  Plural-Hinweiswort, Monatsnamenreihe) gehen in die Entwurfsphase L3-07 bzw. LM-02.
+- **Automatische Fortsetzung (Nutzer 20.10.2026: „ja“):** stündlicher Routine-Trigger `trig_01RDCdCmysfNvQyECcSRCERP`
+  („Lern-App: automatisch weitermachen“, Minute 2) weckt diese Sitzung nach Limit oder Neustart. Am Ende des Laufs (ABSCHLUSS)
+  oder auf Wunsch des Nutzers löschen (`delete_trigger`).
+- **Stand 20.10.2026 16:45 UTC:** `main` = 685439b (Tor L0). L1: Fundament fertig (1c54bc6), Engine fertig; ZWISCHENSTÄNDE
+  8bff270 (L1-03 Oberfläche, ungeprüft) und b007831 (L1-05 nach 509392a/daf34a1). Laufen: L1 `wf_84111110-109` (A1/B1 aus
+  `scratchpad/l1/{a1,b1}-ergebnis.json`, A2/B2 mit Fortsetzungs-Vorspann, dann Zusammenführung, Gegenprüfung ∥ S-L1) und
+  Rahmen-Rest `wf_c8ce5c1d-a27` (Kontrast tr/ar, Lektorat de/tr/ar; Lektorat zitiert keine Tabu-Wörter wegen Inhaltsfilter).
+- **Stand 20.10.2026 14:10 UTC – Tor L0 grün, `main` = 685439b (FF).** ADR 0037–0045 angenommen mit Fortschreibungen;
+  L3-E10a (tr/ar „Audio folgt“). Laufen: L1 `wf_6a6cc605-b14`, Rahmen `wf_422b0a15-ec2` (ar, Kontrast, Lektorat). Danach: Rahmen
+  prüfen und committen; L1 mergen, volles Tor einmal, FF; dann L2 + L3-02 ff. (Nutzer 20.10.: keine unnötigen Tests/Schleifen –
+  Agenten testen nur Betroffenes, volle Suiten einmal im Tor.)
 - **Stand 20.10.2026 13:00 UTC:** Branch 09b094d. Platte nach Aufräumen von S3 (Chatterbox-Gewichte, Venv) 7,6 GB frei;
   PostgreSQL + Mailpit laufen. Laufen: `wf_7b96226b-f3b` (L0-Rest: S3-Beleg ∥ Recht → Gegenprüfung,
   `scratchpad/lernapp-l0-rest.workflow.js`), `wf_422b0a15-ec2` (Rahmen ab ar), `wf_6a6cc605-b14` (L1 mit

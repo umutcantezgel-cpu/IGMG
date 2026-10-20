@@ -120,8 +120,13 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
   freigegebener Rezitationen (`quran_wortzeit`).
 - **Stimmen nur mit freier Kette** aus Daten, Basismodell und Gewichten (L0-E03); Wahl je Sprache in L3-E10:
   - de: Coqui-VITS Thorsten
-  - tr: Übergang Coqui tr glow-tts, Ziel eigene Aufnahmen
-  - ar: eigene Stimme auf ClArTTS; bis dahin Chatterbox nur nach bestandenem Vokalisierungstest, sonst ohne Sprachausgabe
+  - tr: Ziel eigene Aufnahmen (LM-26 a, vorgezogen). Der Übergang Coqui tr glow-tts ist zurückgestellt, bis die Rechte am
+    eingebetteten Datensatz „Talent_TR_Male“ schriftlich bestätigt sind (LM-24, Spike S3); Chatterbox ist kein Übergang
+    (Abbrüche, I/İ-Fehler, ≈ 21 Tage CPU). Bis dahin „Audio folgt“.
+  - ar: eigene Stimme auf ClArTTS (GPU, LM-26) oder menschliche Aufnahmen des A1/A2-Kerns; Chatterbox hat den
+    Vokalisierungstest nicht bestanden (S3). Bis dahin „Audio folgt“. Bestehenskriterium einer ar-Stimme: Minimalpaar-Abstand
+    im Median ≥ 1,2, Schadda-Form ≥ 1,1-mal so lang, keine Abbrüche, Hörprobe der Lehrkraft ≥ 95 % richtig.
+  - de: Erzeugung über den eigenen ONNX-Export (4 Prozesse × 1 Thread, Echtzeitfaktor ≈ 0,33, ≈ 8 h je Sprache).
   - Von den Piper-Stimmen ist nur de_DE-mls-medium zulässig.
 - **Engines** (piper1-gpl, espeak-ng, Coqui) laufen nur lokal beim Erzeugen; nie im Browser, nie im Vercel-Bau.
 - **Format:** Opus 24 kbit/s mono, Lautheit normiert (EBU R128). Bündel `.lpa` je Zielsprache und Einheit im Blob
@@ -197,7 +202,7 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
   - Vokalisierter Kursinhalt: `--font-arabic` (Amiri) mit `--text-arabisch-1/2/3`; Harakat werden nie abgeschnitten.
   - `--font-quran` bleibt dem Koran vorbehalten.
   - Die globale Regel für `[lang='ar']` und `[dir='rtl']` in `globals.css` (Amiri, Zeilenhöhe 2) gilt nicht mehr für die
-    Oberfläche der Lern-App (`[lang='ar']:not([data-oberflaeche])`, ADR 0044 Nr. 4); auf der Website bleibt sie wirksam.
+    Oberfläche der Lern-App (Teilbaum-Form `:is([lang='ar'],[dir='rtl']):not(:where([data-oberflaeche],[data-oberflaeche] *))`, ADR 0044 Fortschreibung Nr. 1); auf der Website bleibt sie wirksam.
 - **Werkzeugklassen:** neu `auslauf-anfang`, `auslauf-ende`, `raster-wortbank`, `lern-leiste` als `@utility`. Keine freien
   Werte (`freie-werte.mjs`: 0).
 - **Ziffern und Plural:** In der arabischen Oberfläche östlich-arabische Ziffern, umschaltbar (O-5/LM-18). Arabische
@@ -237,7 +242,7 @@ Grundstock** plus einer Gesamtgrenze je Route (Messweise `web/scripts/messen.mjs
 - **Bau:** Der Vercel-Bau bleibt ≤ 15 min. Audio und Modelle entstehen nie im Bau; Einheitenpakete werden nur im
   Beispielmodus vorgerendert.
 - **Speicher:**
-  - Blob `lernapp` ≈ 1,1–1,3 GB (Kosten: LM-15).
+  - Blob `lernapp` ≈ 0,93 GB, nur Audio (≈ 310 MB je Sprache; Modelle statisch nach ADR 0042; Kosten: LM-15).
   - Offline je Stufe und Richtung A1 ≈ 25 MB bis C1 ≈ 90 MB; `navigator.storage.persist()` erst beim bewussten Speichern.
   - Platte der Arbeitsumgebung: Budget laut `PLAN.md` §15.
 

@@ -436,7 +436,10 @@ Die Vorschläge gelten als Standard bis zur Antwort. Religiöse Entscheidungen b
      erst mit der Prüfung der Aussagen.
 9. **ADR 0045, Werkzeug-Ablage:**
    - Werkzeug und Probe unter `_lernapp/werkzeuge/quellen/` versionieren; beide sind frei von arabischer Schrift.
-   - Den Unit-Test in den Tor-Lauf L0/L6 aufnehmen (`node --test _lernapp/werkzeuge/quellen/`).
+   - Den Unit-Test in den Tor-Lauf L0/L6 aufnehmen (`node --test _lernapp/werkzeuge/quellen/openiti-passagen.test.mjs`).
+     *Berichtigt in der Gegenprüfung vom 20.10.2026:* Mit dem Verzeichnis als Argument (`node --test
+     _lernapp/werkzeuge/quellen/`) bricht Node 24.21.0 mit `MODULE_NOT_FOUND` ab, der Lauf ist rot; die Testdatei selbst ist
+     grün (28/28).
    - OpenITI-Dateien und Index nie versionieren. Das Werkzeug erzwingt das für Ein- und Ausgabe.
 
 ## 5. Risiken

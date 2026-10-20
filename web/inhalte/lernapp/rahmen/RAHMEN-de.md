@@ -34,7 +34,7 @@ Erwachsenenthemen (Arbeitsrecht, Verträge, Pflege, Gericht, Finanzen) folgen ab
 
 ### 2.2 Figuren, die mitwachsen
 
-Alle Namen stammen aus der Namensliste des Leitfadens (§1.1); jede Einheit mischt die drei Sprachräume. Familiennamen erscheinen erst ab A2 (förmliche Anrede).
+Alle Namen stammen aus der Namensliste des Leitfadens (§1.1); jede Einheit mischt die drei Sprachräume. Familiennamen erscheinen erst ab A2 (förmliche Anrede). Die Tabelle verbindet Vor- und Familiennamen nur für die Planung; im Kursinhalt stehen sie bei einer Figur nie zusammen (Leitfaden §1.1).
 
 | Familie oder Rolle | Personen | Entwicklung im Kurs |
 |---|---|---|
@@ -93,7 +93,7 @@ Die Folge aus PLAN §6.2 ist verbindlich und hier verfeinert: A1 Artikel und Gen
 
 Gründe für die Feinordnung:
 - **Präsens ab der ersten Einheit:** Ohne Verben kann man sich nicht vorstellen; deshalb beginnen „sein“ und das regelmäßige Präsens in A1-e01. Die übrigen Punkte folgen der Reihenfolge aus PLAN §6.2.
-- **Artikel und Genus zuerst (A1-e02):** Das Türkische kennt weder Artikel noch Genus; das Arabische hat zwei Genera und einen unveränderlichen Artikel. Nomen werden deshalb von Anfang an mit Artikel gelernt.
+- **Artikel und Genus zuerst (A1-e02):** Das Türkische kennt kein Genus und keinen bestimmten Artikel (bir zeigt nur Unbestimmtheit, ohne Genus); das Arabische hat zwei Genera und einen unveränderlichen Artikel. Nomen werden deshalb von Anfang an mit Artikel gelernt.
 - **„sein“ in der ersten Einheit:** Im arabischen Nominalsatz fehlt im Präsens eine Kopula, im Türkischen steht sie als Endung. Sätze wie „Ich bin Elif“ werden darum zuerst geübt.
 - **Verb an Position 2 früh (A1-e04):** Das Türkische stellt das Verb ans Ende, das Arabische oft an den Anfang. Die Satzklammer wird über Modalverben (A1-e07) eingeführt, bevor trennbare Verben (A1-e12) sie fordern.
 - **Akkusativ vor Dativ:** Der Dativ kommt in A1 nur als feste Wendung vor (Mir geht es gut) und wird in A2 über Präpositionen (mit dem Bus) eingeführt, dann als Objekt.
@@ -563,7 +563,7 @@ Sechs Lektionen für Arabischsprachige vor A1 (PLAN §5.1: „6 Latein“), dazu
 
 | Schlüssel | Titel | für | Ziel | Inhalt |
 |---|---|---|---|---|
-| de.v.l01 | Das lateinische Alphabet | ar | Ich kann die 26 Buchstaben des lateinischen Alphabets erkennen, ihre Namen sagen und von links nach rechts lesen. | 26 Buchstaben in Druckschrift, Schreib- und Leserichtung von links nach rechts; Buchstabennamen (a, be, ce …) und ihr häufigster Laut; Formen, die leicht verwechselt werden: b/d, p/q, n/u, m/w, i/j; Ziffern 0–9 in europäischer Form; Hörübung: Buchstaben erkennen; Schreibübung: Buchstaben nachspuren |
+| de.v.l01 | Das lateinische Alphabet | ar | Ich kann die 26 Buchstaben des lateinischen Alphabets erkennen, ihre Namen sagen und von links nach rechts lesen. | 26 Buchstaben in Druckschrift, Schreib- und Leserichtung von links nach rechts; Buchstabennamen (a, be, ze …) und ihr häufigster Laut; Formen, die leicht verwechselt werden: b/d, p/q, n/u, m/w, i/j; Ziffern 0–9 in europäischer Form; Hörübung: Buchstaben erkennen; Schreibübung: Buchstaben nachspuren |
 | de.v.l02 | Groß und klein | ar | Ich kann Groß- und Kleinbuchstaben einander zuordnen und weiß, wann man im Deutschen großschreibt. | Groß- und Kleinbuchstaben als Paare (A/a, B/b …); Großschreibung am Satzanfang, bei Namen und bei allen Nomen; Wörter in Groß- und Kleinschreibung wiedererkennen (TEE, Tee, tee); Hinweis: Die arabische Schrift kennt keine Großbuchstaben, die lateinische schon |
 | de.v.l03 | Umlaute und ß | ar | Ich kann ä, ö, ü und ß lesen, aussprechen und von a, o, u und s unterscheiden. | ä, ö, ü mit Punkten; Aussprache und Hörunterschied zu a, o, u; ß nach langem Vokal und Doppellaut, ss nach kurzem Vokal (Straße, Wasser); Ersatzschreibung ae, oe, ue, ss auf Tastaturen ohne Umlaute; Minimalpaare: schon/schön, Mutter/Mütter |
 | de.v.l04 | Vokale: e und i, o und u | ar | Ich kann die Vokale e und i sowie o und u beim Hören und Lesen sicher unterscheiden. | Fünf Vokalbuchstaben, lange und kurze Vokale (Doppelbuchstaben, ie, Dehnungs-h); Minimalpaare e/i: liegen/legen, wieder/weder, Mieter/Meter; Minimalpaare o/u: Ohr/Uhr, Tor/Tour, Kohle/Kuhle; Hinweis: Im Arabischen gibt es drei Vokalqualitäten, im Deutschen deutlich mehr |
@@ -592,7 +592,7 @@ Sätze stehen im JSON nur je Stufe. Gleichmäßig verteilt sind das A1 200, A2 �
 - Keine Einheit ohne Grammatik und Wortfeld, jedes Wortfeld benutzt: ja
 - Thema jeder Einheit im Leitfaden und für die Stufe vorgesehen; A1–B1 kindgeeignet; nicht kindgeeignete Themen nie als kindgeeignet markiert: ja
 - Alle Vornamen und Familiennamen aus der Namensliste, keine ausgeschlossenen Namen, keine Familiennamen in A1: ja
-- Tabu-Lexikon des Leitfadens (de) über alle Texte des JSON: 0 Treffer; dazu 6 Fehlalarme durch „buchstabieren“ (enthält „bier“, die Ausnahme fehlt im Leitfaden, §9.3).
+- Tabu-Lexikon des Leitfadens (de) über alle Texte des JSON: 0 Treffer; dazu 6 Fehlalarme durch „buchstabieren“ (Teilwort-Treffer der Kategorie `alkohol_rauschmittel`; die Ausnahme fehlt im Leitfaden, §9.3).
 - Arabische Schrift (U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF, U+FB50–U+FDFF, U+FE70–U+FEFF) in beiden Dateien: 0.
 
 ## 9 Abdeckung der Häufigkeitslisten
@@ -626,7 +626,7 @@ Mit 600 Lemmata deckt A1 damit die Kernliste fast vollständig ab und hat etwa 1
 - **Registermarken aus kaikki:** Die Marke `mk` auf Eintragsebene trifft Alltagswörter, weil schon eine einzige Bedeutung mit Register reicht: machen, Mensch, nichts, Person, Verein, Apotheke, Kartoffel, Katze. Zählt man je Bedeutung (Treffer erst, wenn mindestens die Hälfte der Glossen anstößig markiert ist), bleiben nur echte Fälle. Vorschlag für `lernapp:pruefen` und Leitfaden §2.4 (RF-10).
 - **Religionsthema aus kaikki:** `thema:religion` steht auch bei leben, Welt, Vater, Gemeinde, Himmel, Wort. Es taugt nur als Hinweis, nicht als Ausschluss; für die Messung wurde eine Handliste religiöser Begriffe benutzt.
 - **Formen:** Der Kernauszug enthält nur Stammformen. Für die Wortschatzprüfung (Token-Lemma eingeführt ≤ Einheit, PLAN §6.4) braucht das Werkzeug zusätzlich Endungsregeln oder die vollen Formtabellen.
-- **Tabu-Lexikon:** „buchstabieren“ (A1-Wortschatz) trifft die Form „bier“ der Kategorie Alkohol; im Leitfaden fehlt die Ausnahme „buchstabier“. Vorschlag: Ausnahme ergänzen.
+- **Tabu-Lexikon:** „buchstabieren“ (A1-Wortschatz) löst einen Teilwort-Treffer der Kategorie `alkohol_rauschmittel` aus; im Leitfaden fehlt die Ausnahme „buchstabier“. Vorschlag: Ausnahme ergänzen.
 - **Faltung:** wordfreq schreibt ß als ss und alles klein; Nomen und Verben gleicher Form (Essen/essen) fallen zusammen.
 
 ## 10 Kandidaten mit Religionsbezug
@@ -653,7 +653,7 @@ Die ausführlichen Kontrastdokumente entstehen je Richtung (`_lernapp/lehrplan/k
 |---|---|---|
 | Schrift | Lateinschrift bekannt; neu: ä, ß, Großschreibung der Nomen, z = ts, sch/tsch statt ş/ç (Vorkurs l07) | Lateinschrift neu, Leserichtung, Groß- und Kleinbuchstaben (Vorkurs l01–l06) |
 | Laute | Konsonantenhäufungen am Wortanfang (Straße, Spiel), e/ä | e/i, o/u, p/b, f/v/w, Umlaute |
-| Artikel und Genus | keine Artikel, kein Genus: Artikel von Anfang an mitlernen | zwei Genera, unveränderlicher Artikel: Genus weicht oft ab |
+| Artikel und Genus | kein Genus, kein bestimmter Artikel (bir ohne Genus): Artikel von Anfang an mitlernen | zwei Genera, unveränderlicher Artikel: Genus weicht oft ab |
 | Verbstellung | Verb am Satzende vertraut (Nebensatz), neu: Verb an Position 2 | Verb oft am Satzanfang: V2, Satzklammer und Endstellung neu |
 | Kopula | „sein“ als Endung, im Deutschen eigenes Verb | im Präsens keine Kopula: „sein“ früh üben |
 | Kasus | Kasusendungen am Nomen; im Deutschen am Artikel, dazu Präpositionen statt Nachstellungen | Kasus in der Hochsprache vorhanden, aber anders markiert; vier Fälle am Artikel |
@@ -691,6 +691,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - Entwurf: KI-Lauf `ki:l3-rahmen` (Feld `quelle`).
 - Messung und Generator liegen im Scratchpad unter `l3-rahmen-de/` (`lemmata.py`, `bereinigt.py`, `machbarkeit.py`, `bauen.py`, Inhaltsdaten `daten_*.py`), alle mit `python3 -I`. Die Übernahme nach `_lernapp/werkzeuge/` ist für L3 vorgeschlagen.
 - Gelesen wurden nur die S7-Auszüge (Häufigkeit, kaikki-Kern, Tatoeba). In die Dateien gelangen davon nur Zahlen und deutsche Wortbeispiele.
+- Lektorat (20.10.2026, frischer KI-Lauf): Zahlen, Struktur, Grammatikfolge und Voraussetzungen ohne Befund. Berichtigt: drei Grammatikbeispiele (um Hilfe bitten; Redewiedergabe nach „wie … betont“ im Indikativ, daher Beispiel mit Konjunktiv I ohne „wie“; je nachdem, ob), Lesetext B2-e12 kindgerecht (Übung der Jugendfeuerwehr statt Katastrophenschutz), Figur Thomas ohne Familiennamen (Leitfaden §1.1), Aussage zum türkischen Artikel (bir), Buchstabenname ze im Vorkurs, Prüfvermerke zum Tabu-Lexikon nur mit Kategorien.
 
 ## Anhang: Einheiten im Einzelnen
 
@@ -943,7 +944,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Thema:** Arbeit und Berufe · **Budget:** 65 · **Kind:** ja · **Kandidaten:** R-10
 - **Kann:** Ich kann sagen, welchen Beruf ich lernen möchte und warum. · Ich kann einen Beruf mit seinen Aufgaben und Arbeitszeiten beschreiben.
 - **Sprechhandlungen:** Wünsche äußern, begründen, Berufe beschreiben, nachfragen
-- **Geschichte und Dialog:** 1) Geschichte: Am Projekttag „Berufe“ stellen Eltern ihre Arbeit vor: Ranā ist Ingenieurin, Ḫālid Elektriker, Thomas Becker arbeitet im Büro und kocht abends für die Familie; Elif will Tierärztin werden, Yazan Erzieher. 2) Dialog: Emre fragt Herrn Neumann, wie er früher Elektriker geworden ist.
+- **Geschichte und Dialog:** 1) Geschichte: Am Projekttag „Berufe“ stellen Eltern ihre Arbeit vor: Ranā ist Ingenieurin, Ḫālid Elektriker, Jans Vater Thomas arbeitet im Büro und kocht abends für die Familie; Elif will Tierärztin werden, Yazan Erzieher. 2) Dialog: Emre fragt Herrn Neumann, wie er früher Elektriker geworden ist.
 - **Lesen:** Steckbriefe aus der Schülerzeitung: Traumberufe von vier Jugendlichen.
 - **Sprechen:** 1) Sagen, was man werden möchte und warum. 2) Einen Beruf mit seinen Aufgaben beschreiben.
 - **Schreiben:** Einen kurzen Text über den eigenen Wunschberuf schreiben (40–50 Wörter).
@@ -995,7 +996,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Thema:** Wohnen · **Budget:** 80 · **Kind:** ja
 - **Kann:** Ich kann einen Schaden in der Wohnung beschreiben und eine Reparatur veranlassen. · Ich kann Mitteilungen der Hausverwaltung verstehen und darauf reagieren.
 - **Sprechhandlungen:** einen Schaden melden, einen Termin vereinbaren, Abläufe beschreiben, sich beschweren
-- **Geschichte und Dialog:** 1) Geschichte: Im Winter fällt bei Familie an-Naǧǧār die Heizung aus; Ranā ruft die Hausverwaltung an, Hausmeister Herr Kaya kommt vorbei, und am nächsten Tag wird die Heizung repariert. 2) Dialog: Thomas Becker lässt sein Fahrrad in einer Werkstatt reparieren und fragt nach Kosten und Dauer.
+- **Geschichte und Dialog:** 1) Geschichte: Im Winter fällt bei Familie an-Naǧǧār die Heizung aus; Ranā ruft die Hausverwaltung an, Hausmeister Herr Kaya kommt vorbei, und am nächsten Tag wird die Heizung repariert. 2) Dialog: Jans Vater Thomas lässt sein Fahrrad in einer Werkstatt reparieren und fragt nach Kosten und Dauer.
 - **Lesen:** 1) Aushang der Hausverwaltung: Wartung der Heizungen, Termine und Hinweise. 2) Ratgebertext: Kleine Reparaturen im Haushalt – was man selbst machen kann und wann man Hilfe holt.
 - **Sprechen:** 1) Am Telefon einen Schaden melden und einen Termin vereinbaren. 2) Beschreiben, was in der Wohnung gemacht wird (Die Wand wird gestrichen …).
 - **Schreiben:** Eine E-Mail an die Hausverwaltung mit einer Schadensmeldung schreiben (80–100 Wörter).
@@ -1238,7 +1239,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Kann:** Ich kann ein Projekt im Ehrenamt planen, Aufgaben verteilen und Ergebnisse vorstellen. · Ich kann Texte der Vereinsarbeit wie Protokolle und Berichte verstehen und verfassen.
 - **Sprechhandlungen:** planen, Aufgaben verteilen, Absprachen treffen, Ergebnisse vorstellen
 - **Geschichte und Dialog:** 1) Geschichte: Jan und Yazan organisieren bei der Jugendfeuerwehr einen Erste-Hilfe-Kurs für Kinder; bis zum Herbst werden sie zwanzig Kinder ausgebildet haben. 2) Dialog: Beim Treffen im Nachbarschaftszentrum erklärt Opa Kamāl den neuen Freiwilligen, was zu tun ist.
-- **Lesen:** 1) Protokoll einer Vereinssitzung (erfunden). 2) Bericht über Jugendliche im Katastrophenschutz (ruhiger Ton, ohne Einzelheiten). 3) Leitfaden: Wie man ein Projekt plant.
+- **Lesen:** 1) Protokoll einer Vereinssitzung (erfunden). 2) Bericht über eine Übung der Jugendfeuerwehr (ruhiger Ton). 3) Leitfaden: Wie man ein Projekt plant.
 - **Sprechen:** 1) Ein Projekt vorstellen: Ziel, Ablauf, Aufgaben. 2) In einer Sitzung Aufgaben verteilen und Absprachen festhalten.
 - **Schreiben:** 1) Ein Protokoll einer Sitzung schreiben (150–180 Wörter). 2) Einen Projektbericht für die Vereinszeitung schreiben (150–180 Wörter).
 
@@ -1267,7 +1268,7 @@ Alle laufen mit ihrem Standard weiter (L3-E12, kein Warten).
 - **Thema:** Arbeit und Berufe · **Budget:** 105 · **Kind:** ja
 - **Kann:** Ich kann Vor- und Nachteile digitaler Arbeitsformen erörtern. · Ich kann mich an Videokonferenzen aktiv beteiligen und Ergebnisse festhalten.
 - **Sprechhandlungen:** einen Punkt vorstellen, diskutieren, Ergebnisse festhalten, Regeln vereinbaren
-- **Geschichte und Dialog:** 1) Geschichte: Thomas Becker arbeitet zwei Tage pro Woche zu Hause; statt ins Büro zu fahren, ist er nachmittags für die Kinder da, doch ohne klare Regeln verschwimmen Arbeit und Freizeit. 2) Dialog: Ranā leitet eine Videokonferenz mit Kolleginnen aus drei Ländern.
+- **Geschichte und Dialog:** 1) Geschichte: Jans Vater Thomas arbeitet zwei Tage pro Woche zu Hause; statt ins Büro zu fahren, ist er nachmittags für die Kinder da, doch ohne klare Regeln verschwimmen Arbeit und Freizeit. 2) Dialog: Ranā leitet eine Videokonferenz mit Kolleginnen aus drei Ländern.
 - **Lesen:** 1) Studie in Kurzform: Arbeit von zu Hause und Familie. 2) Leitfaden für gute Videokonferenzen. 3) Kommentar: Ist ständige Erreichbarkeit ein Problem?
 - **Sprechen:** 1) In einer Videokonferenz einen Tagesordnungspunkt vorstellen und Rückfragen beantworten. 2) Über Regeln für die Arbeit von zu Hause diskutieren.
 - **Schreiben:** 1) Die Zusammenfassung einer Besprechung als E-Mail schreiben (120–150 Wörter). 2) Einen Erörterungstext zur Arbeit von zu Hause schreiben (180–200 Wörter).

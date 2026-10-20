@@ -443,7 +443,7 @@
       "id": "tr.g.anrede",
       "stufe": "a2",
       "titel": "Höfliche Anrede",
-      "kurz": "Siz-Form, Vorname + Hanım/Bey, Familienname mit Bay/Bayan; efendim als höfliche Rückfrage.",
+      "kurz": "Siz-Form, Vorname + Hanım/Bey (im Alltag auch Familienname + Hanım/Bey: Becker Hanım), Bay/Bayan + Familienname in Briefen und Formularen; efendim als höfliche Rückfrage.",
       "beispiele": [
         "Ayla Hanım, buyurun.",
         "Murat Bey geldi mi?",
@@ -1186,7 +1186,7 @@
       "beispiele": [
         "Bakım çalışması nedeniyle",
         "Yoğun kar yüzünden",
-        "Komşuların sayesinde"
+        "Komşular sayesinde"
       ],
       "voraus": [
         "tr.g.kausal_dik",
@@ -3313,6 +3313,7 @@
         "ein Laut – ein Buchstabe; Betonung meist auf der letzten Silbe, Ausnahmen bei vielen Ortsnamen (Ankara, İzmir)",
         "Zirkumflex (â, î, û) nur in wenigen Lehnwörtern; wird erkannt, im Abgleich tolerant behandelt",
         "für Arabischsprachige vorher: Lateinschrift-Grundlagen aus dem Vorkurs des Deutschkurses, de.v.l01–de.v.l06 (aus de.v.l03 gelten nur ö und ü, ä und ß gibt es im Türkischen nicht); Kontrast-Tipp: Türkisch schreibt jeden Vokal aus",
+        "deutsche Schreibregeln aus dem Vorkurs Deutsch gelten hier nicht: Nomen klein (ev, okul); v nie wie f (var), s immer stimmlos, z nie wie ts; keine Buchstabenverbindungen wie sch, ch, ei, ie, ck, tz, denn sch und tsch haben eigene Buchstaben (ş, ç); h immer gesprochen, nie Dehnungszeichen; Doppelkonsonanten lang gesprochen, nicht Zeichen für einen kurzen Vokal (elli – eli)",
         "Übungstypen: schrift_tr, minimalpaare, hoeren_waehlen; Sonderzeichenleiste für Freitext"
       ],
       "fuer": [
@@ -3328,7 +3329,7 @@
         "helle Vokale (e, i, ö, ü) und dunkle Vokale (a, ı, o, u) nach Klangfarbe sortieren",
         "zweifache Harmonie hören: evler – okullar, evde – okulda",
         "vierfache Harmonie hören: evim – kızım – gözüm – okulum",
-        "Wörter, die aus der Reihe fallen (saat, kitap, otobüs): erst hören, Erklärung folgt in A1",
+        "Wörter mit gemischten Vokalen (kitap, otobüs): die Endung folgt trotzdem dem letzten Vokal (kitaplar, otobüsler); Ausnahmen wie saat – saatler erst hören, Erklärung folgt in A1",
         "Angleichung hören: parkta, kitapta; kitabı, çocuğu",
         "ohne Grammatikbegriffe; nur Hören, Nachsprechen und Zuordnen",
         "für Herkunftssprachler: Einstufung kann den Vorkurs überspringen; Schwerpunkt dann auf Schreibung"
@@ -3346,7 +3347,7 @@
       "saetze": 2400,
       "kannBeschreibungen": [
         "Ich kann mich, meine Familie und meinen Alltag in kurzen Sätzen vorstellen.",
-        "Ich kann in vertrauten Situationen wie Schule, Markt, Arztpraxis und Familie einfache Fragen stellen und beantworten, wenn langsam und deutlich gesprochen wird.",
+        "Ich kann in der Schule, auf dem Markt, beim Kinderarzt und in der Familie kurze Fragen stellen und auf Fragen nach Name, Alter, Wohnort und Befinden antworten.",
         "Ich kann Zahlen, Preise, Uhrzeiten und Wochentage verstehen und nennen.",
         "Ich kann kurze Hinweise, Listen und Nachrichten mit bekannten Wörtern lesen.",
         "Ich kann sagen, wo etwas ist, wohin ich gehe und was ich gerade mache.",
@@ -4576,12 +4577,12 @@
       "lemmaBudget": 1300,
       "saetze": 5200,
       "kannBeschreibungen": [
-        "Ich kann zusammenhängend über Erinnerungen, Erfahrungen, Wünsche und Pläne sprechen und meine Meinung kurz begründen.",
-        "Ich kann die meisten Situationen in Schule, Arbeit, Wohnung und Behörde sprachlich bewältigen.",
+        "Ich kann Erlebnisse aus Familie, Schule und Reisen in der richtigen Reihenfolge erzählen, von meinen Vorhaben berichten und sagen, warum sie mir wichtig sind.",
+        "Ich kann beim Elternabend, am Arbeitsplatz, mit Nachbarn und am Behördenschalter mein Anliegen vortragen und kleine Probleme selbst klären.",
         "Ich kann wiedergeben, was andere gesagt haben, und indirekt nachfragen.",
         "Ich kann Bedingungen, Gründe, Zeitfolgen und Absichten ausdrücken.",
-        "Ich kann klar aufgebaute Sachtexte, Briefe und Meldungen zu vertrauten Themen verstehen.",
-        "Ich kann persönliche Briefe, E-Mails und kurze Berichte schreiben."
+        "Ich kann Elternbriefe, Wohnungsanzeigen, Rezepte und kurze Zeitungsmeldungen lesen und anderen erklären, worum es geht.",
+        "Ich kann einer Freundin einen Brief schreiben, Lehrkräften oder Vermietern eine E-Mail schicken und kurz über ein Ereignis berichten."
       ],
       "abdeckungZiel": "Kumuliert: Top-1.000 ≥ 95 %, Top-2.000 ≥ 88 % (von 1387), Top-5.000 ≥ 60 % (von 2898). Simulation (70 % nach Häufigkeit): 100 / 100 / 68 %. Textabdeckung (Hinweis): ≈ 78 % bzw. ≈ 84 %.",
       "einheiten": [
@@ -5311,10 +5312,10 @@
       "lemmaBudget": 1700,
       "saetze": 6800,
       "kannBeschreibungen": [
-        "Ich kann Nachrichten, Sachtexte und amtliche Schreiben auch zu weniger vertrauten Themen im Wesentlichen verstehen.",
+        "Ich kann Nachrichten, Ratgebertexte und amtliche Schreiben zu Arbeit, Gesundheit, Wohnen und Umwelt lesen und das Wichtigste mit eigenen Worten wiedergeben.",
         "Ich kann Gehörtes und Gelesenes nach Quelle und Gewissheit einordnen und sachlich wiedergeben.",
         "Ich kann in Ausbildung, Beruf und Verwaltung Anliegen begründet vortragen, verhandeln und reklamieren.",
-        "Ich kann Vor- und Nachteile abwägen und eine Entscheidung begründen.",
+        "Ich kann zwei Angebote, Wohnungen oder Berufswege miteinander vergleichen und begründen, wofür ich mich entscheide.",
         "Ich kann längere Gespräche über Familie, Arbeit und Gemeinde führen und dabei auf Einwände eingehen.",
         "Ich kann formelle Schreiben wie Anschreiben, Widerspruch und Reklamation klar gegliedert verfassen."
       ],
@@ -6044,7 +6045,7 @@
       "lemmaBudget": 2000,
       "saetze": 8000,
       "kannBeschreibungen": [
-        "Ich kann lange, dichte Texte aus Verwaltung, Recht, Wissenschaft und Presse selbstständig erschließen.",
+        "Ich kann Bescheide, Verträge, Fachartikel und Kommentare über mehrere Seiten lesen und die entscheidenden Aussagen, Bedingungen und Fristen herausarbeiten.",
         "Ich kann bewusst zwischen Umgangssprache, Standardsprache und Amtsstil wechseln.",
         "Ich kann Redewendungen und Sprichwörter verstehen und sparsam selbst verwenden.",
         "Ich kann präsentieren, moderieren, argumentieren und diplomatisch widersprechen.",

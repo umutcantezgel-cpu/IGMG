@@ -1,6 +1,6 @@
 # ADR 0041 – Lern-App: Sprachprüfung und Stichproben (Rolle `sprachpruefung`, Annahmeregel)
 
-- Status: vorgeschlagen (16.10.2026) (Lauf Lern-App); der Grundsatz „Muttersprachler prüfen stichprobenweise“ ist Nutzerentscheidung „Sprachinhalte“ (L3-E03) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“ Freigabe, Rolle), §2.7, §3.2, §6 (ML-02, ML-03); `_lernapp/PLAN.md` §3.9, §6.3–6.6, §7.1–7.2, §18 (O-1, O-3); `_lernapp/AUFTRAG.md` §5.4 · schreibt ADR 0016 für ein Modul fort (Prüfoberfläche dreisprachig)
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: vorgeschlagen (16.10.2026) (Lauf Lern-App); der Grundsatz „Muttersprachler prüfen stichprobenweise“ ist Nutzerentscheidung „Sprachinhalte“ (L3-E03) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“ Freigabe, Rolle), §2.7, §3.2, §6 (ML-02, ML-03); `_lernapp/PLAN.md` §3.9, §6.3–6.6, §7.1–7.2, §18 (O-1, O-3); `_lernapp/AUFTRAG.md` §5.4 · schreibt ADR 0016 für ein Modul fort (Prüfoberfläche dreisprachig)
 
 ## Kontext
 

@@ -496,7 +496,7 @@ stützen sich bis dahin auf die übrigen Werke.
 | Bündel je Einheit | 216 | A1 ≈ 1,5 MB … C1 ≈ 6 MB |
 | Kurspaket je Richtung | 72 Einheiten | ≈ 35 KB gz je Einheit → ≈ 2,5 MB gz je Richtung |
 | Whisper + ORT-WASM | base q8 ≈ 77 MB; small q8 ≈ 249 MB (nur nach Test); ORT 14–28 MB je Datei | ≈ 0,1–0,4 GB |
-| **Blob `lernapp` gesamt** | | ≈ 1,1–1,3 GB (LM-15) |
+| **Blob `lernapp` gesamt** | | ≈ 0,93 GB, nur Audio (S3: ≈ 310 MB je Sprache; Modelle statisch, ADR 0042) (LM-15) |
 | Offline auf dem Gerät | eine Stufe | A1 ≈ 25 MB … C1 ≈ 90 MB je Richtung |
 
 **Erzeugung der Sprachausgabe:** lokal oder auf dem lokalen Server, nie im Vercel-Bau. Echtzeitfaktor der gewählten Stimmen
@@ -670,7 +670,7 @@ kikiri-turkish, Community-Stimmen ohne belegte Datenherkunft, `de_DE-eva_k`/`-ra
 3. Lautheit EBU R128, Stille kürzen, Opus 24 kbit/s mono (opus-tools bzw. ffmpeg, lokal).
 4. `.lpa` je Einheit bauen, in Blob `lernapp` laden, lokale Kopie löschen.
 5. Commit `audio-manifest/<sprache>.json` (Stimme mit Modell und SHA bzw. `mensch:<id>`).
-6. Stichprobe per Rückerkennung (Wortfehlerquote, Schwelle `[in S3 festlegen]`); Ausreißer neu erzeugen oder aufnehmen.
+6. Prüfkette nach S3: alle Clips physisch (Netto-Dauer ≥ 0,25 s, 2–8 Silben/s, Rand-Stille ≤ 0,3 s, kein Clipping, −23 ± 1 LUFS); de-Sätze ≥ 4 Wörter per whisper-base: Trefferanteil ≥ 0,75 gut, 0,6–0,75 einmal neu erzeugen, < 0,6 hören; Lemma-Clips ohne Rückerkennung; Schwellen tr/ar erst mit eigener Stimme; Ausreißer neu erzeugen oder aufnehmen.
 
 **Nie vertont:** Koran, Hadith, Bittgebete, Einträge mit `religionsbezug`, Wissenskurs, Koran-Arabisch-Pfad (Test + Wächter).
 **Namensnennung** je Stimme in App und `/quellen`; synthetische Stimmen als „Sprachausgabe“ gekennzeichnet; Chatterbox:
@@ -1067,10 +1067,10 @@ L0-E01…L0-E19 und der Plan-Aufgaben ML-01…ML-06 steht dort.
 
 | Etappe | Stand | Tor | Commit | Bemerkung |
 |---|---|---|---|---|
-| L0 Grundlagen | | | | |
+| L0 Grundlagen | fertig | grün 20.10.2026 (8 Belege, Gegenprüfung frei, Religion und Wortlaut rc=0) | d1a754e | ADR 0037–0045 angenommen mit Fortschreibungen; Stimmen tr/ar „Audio folgt“ (L3-E10a) |
 | L1 Kern | | | | |
 | L2 Übungstypen | | | | |
-| L3 Pipeline + A1 | | | | |
+| L3 Pipeline + A1 | L3-01 fertig (20.10.2026) | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
 | L4 A2–B1 | | | | |
 | L5 B2–C1 | | | | |
 | L6 Wissen + Koran-Arabisch | | | | |

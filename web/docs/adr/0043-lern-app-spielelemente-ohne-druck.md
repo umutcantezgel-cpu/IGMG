@@ -1,6 +1,6 @@
 # ADR 0043 – Lern-App: Spielelemente ohne Druck
 
-- Status: angenommen im Kern (Nutzerentscheidung „Spielerisches“ vom 16.10.2026, L3-E02) (Lauf Lern-App); Werte und Texte vorgeschlagen · Bezug: Plan „Lern-App“ Kontext (Widerspruch „Spielerisches“), §1, §2.5; `_lernapp/PLAN.md` §8, §10, §11; AUFTRAG Gemeinde-Plattform §1 („Bewusst abgelehnt“); KERN 3.0 „Gestaltung“; DSFA Lernplattform R-08 (`web/docs/recht/entwuerfe/dsfa-lernplattform.md`) · Ausnahme von „keine Ranglisten“ (KERN 3.0, AUFTRAG) für die Lern-App per Nutzerentscheidung
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: angenommen im Kern (Nutzerentscheidung „Spielerisches“ vom 16.10.2026, L3-E02) (Lauf Lern-App); Werte und Texte vorgeschlagen · Bezug: Plan „Lern-App“ Kontext (Widerspruch „Spielerisches“), §1, §2.5; `_lernapp/PLAN.md` §8, §10, §11; AUFTRAG Gemeinde-Plattform §1 („Bewusst abgelehnt“); KERN 3.0 „Gestaltung“; DSFA Lernplattform R-08 (`web/docs/recht/entwuerfe/dsfa-lernplattform.md`) · Ausnahme von „keine Ranglisten“ (KERN 3.0, AUFTRAG) für die Lern-App per Nutzerentscheidung
 
 ## Kontext
 

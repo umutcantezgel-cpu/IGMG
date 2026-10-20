@@ -99,15 +99,43 @@ Spalte „Stand“: **umgesetzt** = im Code; **Vorschlag** = nicht beschlossen, 
 | L-35 | Container-Protokolle des lokalen Servers (keine Personendaten) | 3 Dateien à 5 MB je Dienst (Rotation) | Größe | Docker `json-file`, `max-size`, `max-file` | umgesetzt |
 | L-36 | Gerätespeicher (localStorage, Cache des Service Workers) | beim Gerät der Person; kein Zugriff der Gemeinde | Person löscht Websitedaten | – | beschlossen |
 
-### 3.7 Lern-App (Lauf Lern-App, KERN 4.0 §6; DSFA-Nachtrag LM-08)
+### 3.7 Lern-App
+
+Ergänzung vom 20.10.2026 (Lauf „Lern-App“, Etappe L0), **Entwurf**. Grundlage: `_lernapp/KERN.md` §6 (12 Monate nach der letzten Aktivität, kaskadierend mit dem Konto; Schreibabgaben nach 12 Monaten; ältere Ereignisse werden verdichtet), ADR 0038 Nr. 10, ADR 0042 Nr. 11, `dsfa-lernapp.md`, `einwilligung-lernapp.md`, `vereinbarung-sprecher-lernapp.md`. Der Code der Lern-App entsteht ab Etappe L1; „geplant“ heißt: Frist festgelegt, Routine noch nicht gebaut; „umgesetzt“ nennt die Etappe, in der die Routine entstand (Stand L1 vom 20.10.2026). Ohne Konto speichert die Gemeinde keine Daten der Lernenden; alles liegt auf dem Gerät (L-37).
 
 | Nr. | Datenart | Frist | Auslöser | Technische Umsetzung | Stand |
 | --- | --- | --- | --- | --- | --- |
-| L-37 | Lernstand mit Konto (Profil, Ereignisprotokoll, Kartenstand, Lerntage; Art. 9, weil der Wissenskurs auf die Religion schließen lässt) | **12 Monate** nach der letzten Aktivität (Abgleich); mit dem Konto sofort | Zeit seit `lernapp_profil.zuletzt_aktiv_am`; Kontolöschung | Löschlauf `gemeindeLoeschlauf` (`src/lib/loeschen/gemeinde.ts`): Profil löschen, Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel; Konto löschen kaskadiert | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
-| L-38 | Bewertungen (Ereignisse `bewertung`) älter als 12 Monate | in den Kartenstand verdichtet (`lernapp_karte.basis`), danach gelöscht; übrige Ereignisarten bis L-37 | Zeit | Löschlauf `verdichteLernapp` (`src/lib/lernapp/sync/verdichten.ts`) | umgesetzt (L1-05) |
-| L-39 | Schreibabgaben (Text und Kommentar der Lehrkraft verschlüsselt) | **12 Monate** nach der Abgabe; mit dem Konto sofort | Abgabe (`lernapp_schreibabgabe.loeschen_ab`) | Löschlauf `gemeindeLoeschlauf` | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
-| L-40 | Meldungen aus der Lern-App (Aufgabenschlüssel, Kategorie; Antwort nur ab 16 und nur auf Wunsch) | ohne Personenbezug; [Frist – Vorschlag 12 Monate nach Erledigung] | Erledigung | – | Vorschlag |
-| L-41 | Lernstand ohne Konto (IndexedDB `igmg-lernapp`, Pakete und Audio im Gerät) | beim Gerät der Person; Export und Import als Datei | Person löscht Websitedaten | – | beschlossen |
+| L-37 | Gerätespeicher der Lern-App: IndexedDB `igmg-lernapp` (Profile, Ereignisse, Kartenstand, Einstellungen), Caches `igmg-lernapp-*` (Hülle, Pakete, Audio, Whisper-Modelle) | beim Gerät der Person; kein Zugriff der Gemeinde | Person löscht in der App oder im Browser | „Lokale Daten löschen“ und Export als Datei in den Einstellungen; beim Abmelden die Frage, ob der Lernstand auf dem Gerät gelöscht werden soll [Vorschlag, D-L12] | beschlossen (kein Zugriff) / Vorschlag (Knöpfe) |
+| L-38 | Lernstand mit Konto: `lernapp_profil`, `lernapp_ereignis`, `lernapp_karte`, `lernapp_tag` | **12 Monate** nach der letzten Aktivität in der Lern-App; mit dem Konto; nach Widerruf der Einwilligung `lernapp` binnen [Frist – Vorschlag 30 Tage] | letzte Aktivität (`zuletztAktivAm`), Kontolöschung, Widerruf | Löschlauf `gemeindeLoeschlauf` (`src/lib/loeschen/gemeinde.ts`): Profil löschen, Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel; Kontolöschung kaskadiert | Frist nach KERN 4.0 §6 / umgesetzt (L1-01: 12 Monate und Kontolöschung) / Löschung nach Widerruf geplant (L7, mit der Einwilligungsoberfläche) |
+| L-39 | Einzelne Ereignisse älter als 12 Monate | Bewertungen werden in den Kartenstand verdichtet (`lernapp_karte.basis`), danach gelöscht; die übrigen Ereignisarten (Lektion, XP, Ziel, Pause) bleiben bis L-38, weil Serie und Abzeichen aus ihnen abgeleitet werden | Alter | Löschlauf `verdichteLernapp` (`src/lib/lernapp/sync/verdichten.ts`) unter der Sperre des Abgleichs (ADR 0038 Nr. 10) | umgesetzt (L1-05) |
+| L-40 | Schreibabgaben (Text und Kommentar verschlüsselt, Bewertung nach Prüfliste) | **12 Monate** nach der Abgabe; mit dem Konto; nach Widerruf von `lernapp` [mit L-38 – Entscheidung DSB] | Abgabe (`loeschenAb`), Kontolöschung, Widerruf | Löschlauf `gemeindeLoeschlauf` (`lernapp_schreibabgabe.loeschen_ab`, spätestens 12 Monate nach `eingereicht_am`); Kaskade mit dem Konto | Frist nach KERN 4.0 §6 / Löschlauf umgesetzt (L1-01) / Abgabe selbst und Widerruf geplant (L5/L7) |
+| L-41 | Zuweisungen der Lehrkraft (`aufgabe` mit Bezug `lernapp`) und Erledigt-Vermerke | wie L-29; zusätzlich [Frist – Vorschlag 12 Monate nach Ende der Gruppe] | Kontolöschung, Gruppenende | Kaskade bzw. Löschlauf | Vorschlag |
+| L-42 | Zustimmung zur Bestenliste; Anzeige der Wochen-XP | Zustimmung bis zur Rücknahme, Nachweis wie L-15; Wochenwerte werden aus den Ereignissen berechnet und **nicht** als Verlauf gespeichert | Rücknahme, Kontolöschung | Ableitung aus L-38 | Vorschlag |
+| L-43 | Einwilligungsnachweis `lernapp` (Art, Textversion, Sprache, Zeit, erteilende Person) | wie L-15 | Widerruf, Löschung | wie L-15 (`src/lib/loeschen/fristen.ts`) | Verfahren wie Bestand |
+| L-44 | Anonyme Meldungen (`lernapp_meldung`: Aufgabenschlüssel, Kategorie, Zeitpunkt, Status) | kein Personenbezug; [Frist – Vorschlag 12 Monate nach Erledigung] | Erledigung | Löschlauf | Vorschlag |
+| L-45 | Feld „eigene Antwort“ einer Meldung (nur angemeldet ab 16, ohne Kontobezug gespeichert) | bei Erledigung der Meldung, spätestens [12 Monate] nach Eingang | Erledigung, Zeit | Löschlauf setzt das Feld leer | Vorschlag (D-L07) |
+| L-46 | ALTCHA-Lösungen und Ratenfenster von Meldung und Abgleich | wie L-05 | Ablauf | wie L-05 | Verfahren wie Bestand |
+| L-47 | Statistik ohne Personenbezug (`lernapp_statistik_tag`: Tagessummen je Kurs, Bereich, Kennzahl); anonyme Telemetrie (`lernapp_statistik`) | Summen: [Frist – Vorschlag 3 Jahre]; Telemetrie: [Entscheidung D-L08, Vorschlag: nicht einschalten] | Zeit | Löschlauf | Vorschlag |
+| L-48 | Push-Abos mit Thema `lernapp` | wie L-27 | wie L-27 | wie L-27 | Verfahren wie Bestand |
+| L-49 | Prüfungen der Inhalte (`lernapp_pruefung`, `lernapp_stichprobe`, Verlauf in `freigabe`) mit Kennung der prüfenden Person | solange der geprüfte Stand ausgeliefert wird, danach [Frist – Vorschlag 3 Jahre]; bei Löschung des Kontos der prüfenden Person Kennung pseudonymisieren statt löschen | Ablösung des Stands, Kontolöschung | Löschlauf | Vorschlag (D-L10) |
+| L-50 | Aufnahmen von Sprecherinnen und Sprechern (Clips, Bündel im Blob `lernapp`, Einträge im Audio-Manifest); Rohaufnahmen einer Sitzung | Aufnahmen bis Widerruf oder Ende der Vereinbarung, dann Entfernung binnen [Frist – Vorschlag 14 Tage]; Rohaufnahmen nach Schnitt und Freigabe, spätestens [3 Monate] nach der Sitzung | Widerruf, Kündigung, Zeit | Bündel neu bauen, Dateien im Blob löschen; Medienspiegel L-32 (Hand), Sicherungen L-33; Kopien Dritter unter CC BY-SA 4.0 nicht rückholbar | Verfahren (Hand) / Vorschlag |
+| L-51 | Eintrag der sprechenden Person (`lernapp_sprecher`: Name oder Pseudonym) und unterschriebene Vereinbarung (Scan) | bis [Frist – Vorschlag 3 Jahre] nach dem Ende der Vereinbarung (Nachweis) | Ende der Vereinbarung | Medium und Eintrag löschen | Vorschlag |
+| L-52 | Synthetische Stimme (Modul B): Trainingsdaten, Referenzaufnahme, Stimmmodell mit Zwischenständen, nur lokal | bei Widerruf von Modul B oder der ganzen Vereinbarung binnen [Frist – Vorschlag 14 Tage]; erzeugte Clips wie L-50 | Widerruf, Kündigung | Löschung auf den Rechnern der Gemeinde mit Datum im Fallprotokoll | Verfahren (Hand) / Vorschlag |
+| L-53 | Sprachaufnahmen der Lernenden bei Sprechübungen | werden **nie** übertragen; [Vorschlag: nur im Arbeitsspeicher bis zum Ende der Übung, keine Ablage im Gerätespeicher] | Ende der Übung | Worker im Browser (ADR 0042) | beschlossen (KERN 4.0 §6) / Vorschlag (D-L12) |
+
+**Widerruf in der Lern-App (Ergänzung zu §4 Nr. 7).**
+
+| Einwilligung | Wirkung |
+| --- | --- |
+| `lernapp` (Erwachsene, Eltern, ab 16) | Abgleich endet sofort; Lernstand auf dem Server binnen [30 Tagen] gelöscht (L-38); Schreibabgaben nach Entscheidung (L-40); lokaler Stand bleibt (L-37) |
+| Zustimmung zur Bestenliste | Person verschwindet sofort aus der Liste (L-42) |
+| Push mit Thema `lernapp` | Abo wird gelöscht (L-48) |
+| Sprecher-Vereinbarung, Modul A | Aufnahmen binnen [14 Tagen] aus der Lern-App (L-50) |
+| Sprecher-Vereinbarung, Modul B | Stimmmodell und Trainingsdaten binnen [14 Tagen] gelöscht, erzeugte Clips entfernt (L-52) |
+
+**Löschen auf Antrag.** Die Löschung eines Kontos nach §4 umfasst L-38 bis L-42 (Kaskade). Meldungen (L-44) und Statistik (L-47) haben keinen Kontobezug und sind davon nicht betroffen.
+
+**Lücken (Lern-App).** Löschung auf dem Server nach Widerruf von `lernapp` (L-38, L-40; Technik, L7 mit der Einwilligungsoberfläche); Löschlauf für L-41, L-44, L-45 und L-47 (Technik, L7); Knöpfe „Lokale Daten löschen“ und Export als Datei (L-37: Export und Import in den Einstellungen umgesetzt in L1, „Lokale Daten löschen“ L7); Frist nach Widerruf und Umgang mit offenen Schreibabgaben (DSB); Prüfprotokolle (D-L10); Rohaufnahmen und Stimmmodell (Verfahren der Technik); Verschwinden widerrufener Aufnahmen auf den Geräten der Lernenden (Service Worker der Lern-App, L1).
 
 ## 4. Löschen auf Antrag (Art. 17) und Auskunft (Art. 15)
 

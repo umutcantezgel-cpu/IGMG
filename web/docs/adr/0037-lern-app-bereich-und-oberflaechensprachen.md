@@ -1,6 +1,6 @@
 # ADR 0037 – Lern-App: eigener Bereich, Wurzel-Layout, Oberflächensprachen de/tr/ar und RTL
 
-- Status: angenommen im Kern (Nutzerentscheidungen vom 16.10.2026 „Platzierung“ und „Oberfläche“, L3-E05, L3-E08); Nr. 1–9 in der Ausgestaltung vorgeschlagen, Bestätigung durch Spike S1 im L0-Tor (Lauf Lern-App) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“, Adresse) und §2.1; `_lernapp/PLAN.md` §1 (Befunde 1–7), §3.1–3.5; Adresse L3-E11 · ändert das Website-Routing (ADR 0016, K-02) nicht
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: angenommen im Kern (Nutzerentscheidungen vom 16.10.2026 „Platzierung“ und „Oberfläche“, L3-E05, L3-E08); Nr. 1–9 in der Ausgestaltung vorgeschlagen, Bestätigung durch Spike S1 im L0-Tor (Lauf Lern-App) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“, Adresse) und §2.1; `_lernapp/PLAN.md` §1 (Befunde 1–7), §3.1–3.5; Adresse L3-E11 · ändert das Website-Routing (ADR 0016, K-02) nicht
 
 ## Kontext
 
@@ -66,9 +66,9 @@ Gilt vor Nr. 1–9, wo es abweicht.
 1. **Nr. 2, statische Parameter:** `dynamicParams = false` bricht den Bau unter Cache Components. Stattdessen gilt `unstable_paramMatching = { ui: 'not-found' }` mit Prüfung im Layout, der Proxy-Weiche für unbekannte Oberflächensprachen und einer festen Fangroute `[ui]/[...rest]` (Suspense, `ensureStatic = 'navigation'`). Ohne Fangroute trifft `[locale]/[...rest]` unbekannte Lern-App-Adressen. Ein E2E-Test („`/lern-app/xx` und `/lern-app/de/xyz` → 404 mit `html[lang][dir]` der Lern-App“) macht eine Änderung der unstabilen API bei einem Next-Update sichtbar.
 2. **Nr. 2, bestätigt:** Das statische Segment `lern-app` hat Vorrang vor `[locale]`; der Bau ist unter Cache Components grün; `app/manifest.ts` wird nicht zusätzlich verlinkt.
 3. **Nr. 1/3, Proxy:** zusätzlich `/de/lern-app…` → 308 in einem Sprung (sonst zwei Sprünge über next-intl) und `/lern-app/en…` → `/lern-app/de…`. Eine Oberflächensprache im Rest bleibt erhalten (`/tr/lern-app/ar` → `/lern-app/ar`).
-4. **Nr. 5, Texte:** In der Lern-App wird `next-intl/server` (`getTranslations`) nie genutzt: `request.ts` liest `locale()`, das unter `/lern-app` fehlt, und ruft dann `notFound()`. Nur `createTranslator` mit ausdrücklicher Sprache; Regeltest.
+4. **Nr. 5, Texte:** In der Lern-App wird `next-intl/server` (`getTranslations`) nie genutzt: `request.ts` liest `locale()`, das unter `/lern-app` fehlt, und ruft dann `notFound()` (aus dem Code abgeleitet, nicht ausgeführt). Nur `createTranslator` mit ausdrücklicher Sprache; Regeltest.
 5. **Nr. 8, Manifest:** **eine** `id` `/lern-app/` für alle drei Sprachen (eine installierte App); `start_url` ist die Sprache bei der Installation; statische Route mit `s-maxage=31536000`. Der Name bleibt beim Vorstand (Platzhalter `[IGMG Lernen]`, `[IGMG Öğren]`, für ar ein Platzhalter in eckigen Klammern); kein Agent setzt den arabischen Namen.
-6. **Nr. 8, Root-Service-Worker:** Das Behalten von `igmg-lernapp-*` ist zwingend (die Gegenprobe löscht sonst alle Lern-App-Caches). Zusätzlich lässt der Root-SW `/lern-app/**` ganz durch, damit beim ersten Besuch ohne Netz nicht die Offline-Seite der Website erscheint.
+6. **Nr. 8, Root-Service-Worker:** Das Behalten von `igmg-lernapp-*` ist zwingend (die Gegenprobe löscht sonst alle Lern-App-Caches). Zusätzlich lässt der Root-SW `/lern-app/**` ganz durch (Entscheidung des Orchestrators; im Spike nur als Option benannt), damit beim ersten Besuch ohne Netz nicht die Offline-Seite der Website erscheint.
 7. **Risiken für S-L1:** `ensureStatic = 'navigation'` speichert jede neue unbekannte Adresse (wie `[locale]/[...rest]` der Website); Pfade mit Punkt gehen am Proxy vorbei (gering). E2E-Tests für Offline schneiden Anfragen auf Kontext- oder Seitenebene ab oder beenden den Server – `context.setOffline` erfasst die Anfragen des Service Workers nicht.
 
 ## Alternativen

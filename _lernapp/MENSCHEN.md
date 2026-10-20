@@ -25,7 +25,7 @@ Format: Kennung · Aufgabe · Wer · Aufwand · Standard bis zur Antwort · Stan
 | LM-12 | Lizenz der Lerninhalte CC BY-SA 4.0 bestätigen (L0-E02) und die Namensnennung (Tatoeba je Satz, kaikki/Wiktionary, Häufigkeitslisten, OpenMoji, Stimmen und Trainingsdaten) in der App und auf `/quellen` | Vorstand / Recht | 30 min | CC BY-SA 4.0 für Wortschatz-Datenbank und eigene Texte, ohne technische Schutzmaßnahmen; Quellenangaben offline im Paket | offen |
 | LM-13 | (a) Bedeutungen der häufigsten 500–1.000 Koran-Wortformen verfassen und freigeben (MN-05; Arbeitsliste aus der Pipeline). (b) Reicht für die Anzeige im Lern-App-Pfad der Status `geprueft` nach ADR 0030, oder bleibt es bei zwei Freigaben wie im Wissenskurs (genehmigter Plan §3.1, O-11)? | (a) Hoca; (b) Imam / Vorstand | (a) 25–50 h; (b) 5 min | (a) Pfad zeigt nur Wortformen, deren Bedeutung zwei Freigaben hat; (b) zwei Freigaben zum aktuellen Stand (genehmigter Plan §3.1) | offen |
 | LM-14 | Lehrkräfte schulen (zuweisen, Stand der Gruppe, Schreibabgaben korrigieren) | Bildung | 1 h | Handbuch Lehrkräfte | offen |
-| LM-15 | Blob-Speicher `lernapp` verbinden; Kosten und Datenverkehr beobachten (≈ 1,1–1,3 GB) | Technik | 20 min | Audio nur im Testkurs (synthetische Töne); Hörübungen „Audio folgt“ | offen |
+| LM-15 | Blob-Speicher `lernapp` verbinden; Kosten und Datenverkehr beobachten (≈ 0,93 GB, nur Audio) | Technik | 20 min | Audio nur im Testkurs (synthetische Töne); Hörübungen „Audio folgt“ | offen |
 | LM-16 | Bittgebete: Ḥiṣn al-Muslim ist geschützt (Original und Übersetzungen, L0-E13). Soll eine eigene Sammlung aus Koran und Hadith-Primärquellen mit eigener Übersetzung entstehen, und wer erstellt und prüft sie? Auswahl und Übersetzung sind Arbeit von Menschen, der arabische Wortlaut kommt nur aus gepinnten Dateien in `web/daten/**` (ADR 0040 Nr. 3) | Imam / Hoca / Recht | `[Aufwand schätzen]` | eigene Sammlung ist der Weg (L0-E13); bis sie von Menschen erstellt ist und zwei Freigaben hat, zeigen Lektionen nur Bittgebete aus dem Koran per Verweis | offen |
 | LM-17 | Kindgerechter Pfad im Wissenskurs (O-9) | Hoca | `[Aufwand schätzen]` | Kennzeichnung „für Kinder geeignet“ je Lektion; eigener Pfad später | offen |
 | LM-18 | Ziffern in der arabischen Oberfläche östlich oder westlich (O-5) | Vorstand | 5 min | östlich-arabisch, umschaltbar | offen |
@@ -74,3 +74,15 @@ Entscheidungen des Orchestrators.
 - Lizenz der Leipzig Corpora Collection, TS Corpus Word List, Zargan: nicht verwendet bis zur Klärung.
 - EU-Datenbankrecht am Quranic Arabic Corpus: gegenstandslos, solange LM-31 bei der eigenen Tabelle bleibt.
 - Herkunft der Chatterbox-Trainingsdaten: in LM-24 und LM-25 berücksichtigt.
+
+**Nachträge Tor L0 (20.10.2026):**
+- LM-23 erledigt (Thorsten-Kette an der Quelle bestätigt, S3).
+- LM-24 erweitert: schriftliche Bestätigung der Rechte am Datensatz „Talent_TR_Male“ bei Fatih Akademi anfragen; bis dahin
+  Türkisch „Audio folgt“ (L3-E10a).
+- LM-26 a vorgezogen (türkische Aufnahmen); Lizenzform der Aufnahmen nach D-L11 (Vorlage `vereinbarung-sprecher-lernapp.md`).
+- LM-06: Hörabnahme Thorsten mit 20 Sätzen + 10 Wörtern aus `scratchpad/l0/S3/hoerproben` (Diphthonge, pf).
+- LM-08: Entwürfe `web/docs/recht/entwuerfe/{dsfa-lernapp,einwilligung-lernapp,vereinbarung-sprecher-lernapp}.md` und
+  `loeschkonzept.md` §3.7; offene Fragen D-L01…D-L15 an DSB/Recht.
+- LM-33 erweitert: Marāqī al-Falāḥ zurückgestellt (in der OpenITI-Ḥāshiya nicht enthalten); Siyar und Koran-/Hadith-Grundwissen
+  bis zur Quellenklärung zurückgestellt (23 von 28 Einheiten belegbar).
+- LM-09: offene Fragen OF-01…OF-18 des Inhaltsleitfadens (`_lernapp/lehrplan/INHALTSLEITFADEN.md` §7), jeweils mit Standard.

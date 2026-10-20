@@ -5,7 +5,7 @@ import { plusMonate } from '@/lib/loeschen/fristen';
 import { type KartenBasis, type KartenBewertung, type Kartenstand, type Note, spieleKarteNach } from '../srs';
 
 /**
- * Verdichtung im Löschlauf (ADR 0038 Nr. 10, KERN 4.0 §6, Löschkonzept L-38): Bewertungen, deren Zeit `am` älter als
+ * Verdichtung im Löschlauf (ADR 0038 Nr. 10, KERN 4.0 §6, Löschkonzept L-39): Bewertungen, deren Zeit `am` älter als
  * 12 Monate ist, werden je Karte in den Kartenstand gefaltet (`lernapp_karte.basis`, `basisBis` = Grenze) und danach
  * gelöscht. Nachgespielt wird künftig nur, was nach der Grenze liegt – auf dem Server (`sync/server.ts`) wie auf dem Gerät
  * (`leiteAb` mit `basen` aus der Sync-Antwort). Weil `zuKarte(ausKarte(c))` die Karte genau wiederherstellt, ändert die
