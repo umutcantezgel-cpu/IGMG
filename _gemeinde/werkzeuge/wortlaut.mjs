@@ -539,6 +539,11 @@ const AUSNAHMEN = [
     },
   },
   {
+    id: 'L-01',
+    grund: 'Lauf Lern-App (ADR 0037, ADR 0040): neue Bedien- und Hinweistexte der Lern-App in `messages/lernapp/{de,tr,ar}.json` und die Entwurfsliste `entwurf.json` (z. B. „Gespeichert.“, Hinweise des Antwortabgleichs, Verweise „Datenschutz“/„Impressum“ auf die bestehenden Seiten). Kein bestehender Rechtstext geändert; der Einwilligungstext `lernapp` liegt als Entwurf in docs/recht/entwuerfe (LM-08) und wird erst mit Freigabe eingespielt.',
+    passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /messages\/lernapp\/(de|tr|ar|entwurf)\.json$/.test(String(e.datei)),
+  },
+  {
     id: 'G-03',
     grund: 'Neue Schlüssel der Gemeinde-Plattform für neue Funktionen (Konten, Mein Bereich, Push-Einwilligung, Chat, Mein Ort, Koran, Hadith, Elifbe, Lernen, Quellen, Barrierefreiheit): Einwilligungs- und Datenschutzhinweise der neuen Funktionen, versioniert über den Text-Hash (src/lib/konto/einwilligung.ts). Kein bestehender Text geändert; die Funktionen sind in der Produktion aus, bis MN-11 freigibt.',
     passt: (e) =>
