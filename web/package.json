@@ -23,6 +23,8 @@
     "verwaltung:einladen": "tsx --env-file-if-exists=.env scripts/einladen.ts",
     "quran:import": "tsx --env-file-if-exists=.env scripts/quran-import.ts",
     "inhalte:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-import.ts",
+    "lernapp:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/import.ts",
+    "lernapp:pruefen": "tsx --conditions=react-server scripts/lernapp/pruefen.ts",
     "inhalte:2026": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-2026.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",

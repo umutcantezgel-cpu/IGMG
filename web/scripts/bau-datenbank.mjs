@@ -12,4 +12,13 @@ execFileSync('pnpm', ['exec', 'drizzle-kit', 'migrate'], { cwd: wurzel, env, std
 execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'drizzle/seeds/index.ts'], { cwd: wurzel, env, stdio: 'inherit' });
 // Inhaltsdaten (Koran, Übersetzungen, Hadith) aus web/daten (ADR 0025): Vorschau und Beispielmodus zeigen sie vollständig
 execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/inhalte-import.ts'], { cwd: wurzel, env, stdio: 'inherit' });
+// Lern-App-Inhalte (PLAN §6.6) und im Beispielmodus auf Vercel (bzw. mit LERNAPP_TESTKURS=1) der Testkurs mit synthetischen
+// Tönen (ADR 0039 Nr. 11): Der Bau ohne Datenbank liefert ihn aus. Docker-Bauten (ohne VERCEL) bekommen ihn nicht – dort
+// liest die Laufzeit die echte Datenbank.
+const testkurs = process.env.VERCEL === '1' || process.env.LERNAPP_TESTKURS === '1';
+execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts', ...(testkurs ? ['--testkurs'] : [])], {
+  cwd: wurzel,
+  env,
+  stdio: 'inherit',
+});
 console.log('Bau-Datenbank bereit:', verzeichnis);
