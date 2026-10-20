@@ -1070,7 +1070,7 @@ L0-E01…L0-E19 und der Plan-Aufgaben ML-01…ML-06 steht dort.
 | L0 Grundlagen | fertig | grün 20.10.2026 (8 Belege, Gegenprüfung frei, Religion und Wortlaut rc=0) | d1a754e | ADR 0037–0045 angenommen mit Fortschreibungen; Stimmen tr/ar „Audio folgt“ (L3-E10a) |
 | L1 Kern | | | | |
 | L2 Übungstypen | | | | |
-| L3 Pipeline + A1 | L3-01 fertig (20.10.2026) | Lektorat de/tr/ar frei | [L3-01] | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
+| L3 Pipeline + A1 | L3-01 fertig (20.10.2026) | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
 | L4 A2–B1 | | | | |
 | L5 B2–C1 | | | | |
 | L6 Wissen + Koran-Arabisch | | | | |
