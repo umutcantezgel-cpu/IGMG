@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 21:35 UTC:** L1 fertig geprüft (Gegenprüfung Runde 2 frei, S-L1 ohne hoch/kritisch; 4 niedrige Reste) und in
+  den Branch gemergt (06651b3, gepusht 092786a). **Tor L1 läuft:** `scratchpad/tor-l1-teil1.sh` (check, Sprachen, Religion,
+  Wortlaut, Import-Bau + Sweep + Crawl; Integration lief voll in L1 auf demselben Code), danach `scratchpad/tor-l1-teil2.sh`
+  (voller E2E, Vorschau-Bau; unter `flock bau.lock`); Ergebnis in `scratchpad/tor-l1.log`. Danach Preview `success` → FF `main`.
+  **Parallel gestartet:** L2 + L3-02 `wf_aa43196a-88f` (`scratchpad/lernapp-l2.workflow.js`; A: L2-01 → L2-03/04, B: L2-02 →
+  L3-02; dann Zusammenführung, Gegenprüfung).
 - **Stand 20.10.2026 19:45 UTC:** L3-01 fertig (95d4d24), L3-04 fertig (0b29073: Sprachdaten gepinnt). Läuft: L1
   `wf_84111110-109`. **Für L3-02 vormerken:** `lernapp:pruefen` mit Auszugs-SHA-Prüfung vor jedem Lauf, „kein examples/ref in
   web/daten/kaikki“, N-Gramm-Wächter (b/c) mit den 38 Tatoeba-IDs aus `web/daten/tatoeba/QUELLE.md` als Positivproben,
