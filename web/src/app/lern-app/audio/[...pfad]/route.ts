@@ -3,7 +3,7 @@ import { stat } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Readable } from 'node:stream';
 import { connection } from 'next/server';
-import { leseBereich } from '@/lib/audio/speicher';
+import { leseBereich } from '@/lib/audio/bereich';
 import { funktionAn } from '@/lib/funktionen';
 import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buendel';
 
