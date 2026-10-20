@@ -2,7 +2,7 @@ import { type DBSchema, type IDBPDatabase, openDB } from 'idb';
 import type { LektionsStand, TagesStand } from '../ereignisse/ableiten';
 import type { Ereignis } from '../ereignisse/typen';
 import type { Sprache } from '../kurse';
-import type { Kartenstand } from '../srs';
+import type { KartenBasis, Kartenstand } from '../srs';
 
 /**
  * Lokale Datenbank der Lern-App (ADR 0038 Nr. 1, Fortschreibung S6): IndexedDB `igmg-lernapp` über `idb` (ISC),
@@ -49,7 +49,11 @@ export type TagesEintrag = TagesStand & { profil: string };
 export type AbzeichenEintrag = { profil: string; abzeichen: string; am: string };
 export type EinstellungsEintrag = { profil: string; schluessel: string; wert: unknown; am: string; geraet: string };
 export type PaketEintrag = { kurs: string; einheit: string; hash: string; bytes: number; offline: boolean; geladen: string };
-export type SyncEintrag = { profil: string; zeiger: string | null; zuletzt: string | null };
+/**
+ * Abgleich je Profil (L1-05, lokal/sync.ts): Zeiger des Servers, letzter Abgleich und verdichtete Kartenstände des Servers
+ * (Bewertungen älter als 12 Monate, ADR 0038 Nr. 10), die die Ableitung als Basis nutzt.
+ */
+export type SyncEintrag = { profil: string; zeiger: string | null; zuletzt: string | null; basen?: Record<string, KartenBasis> };
 
 export interface LernappDB extends DBSchema {
   profile: { key: string; value: Profil };

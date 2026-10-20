@@ -1,4 +1,4 @@
-import { type KartenBewertung, type Kartenstand, spieleNach } from '../srs';
+import { type KartenBasis, type KartenBewertung, type Kartenstand, spieleNach } from '../srs';
 import { berechneSerie, ruhetageAus, type SerienStand } from './serie';
 import {
   EINSTELLUNG_WERTE,
@@ -93,8 +93,11 @@ function erreicht(ziel: Tagesziel, xp: number, lektionen: number): boolean | nul
   return ziel.art === 'xp' ? xp >= ziel.wert : lektionen >= ziel.wert;
 }
 
-/** Alle Zustände aus den Ereignissen; `heute` ist der Lerntag des Geräts (serie.ts `lerntagVon`). */
-export function leiteAb(ereignisse: readonly Ereignis[], heute: string): Ableitung {
+/**
+ * Alle Zustände aus den Ereignissen; `heute` ist der Lerntag des Geräts (serie.ts `lerntagVon`). `basen`: verdichtete
+ * Kartenstände vom Server (ADR 0038 Nr. 10), auf die nur jüngere Bewertungen nachgespielt werden.
+ */
+export function leiteAb(ereignisse: readonly Ereignis[], heute: string, { basen }: { basen?: ReadonlyMap<string, KartenBasis> } = {}): Ableitung {
   const sortiert = vereinige(ereignisse);
 
   const lektionen = new Map<string, LektionsStand>();
@@ -149,7 +152,7 @@ export function leiteAb(ereignisse: readonly Ereignis[], heute: string): Ableitu
 
   return {
     version: ABLEITUNGS_VERSION,
-    karten: spieleNach(kartenBewertungen(sortiert)),
+    karten: spieleNach(kartenBewertungen(sortiert), basen),
     lektionen,
     einstellungen,
     einstufungen,

@@ -112,7 +112,8 @@ export const brauchtNeuableitung = (p: Pick<Profil, 'ableitungsVersion'>): boole
  */
 export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): Promise<Ableitung> {
   const alle = await ereignisse(sp, profil);
-  const a = leiteAb(alle, heute);
+  const basen = (await sp.lies('sync', profil))?.basen;
+  const a = leiteAb(alle, heute, basen ? { basen: new Map(Object.entries(basen)) } : {});
   const bereich = profilBereich(profil);
   await sp.loescheBereich('karten', bereich);
   await sp.loescheBereich('lektionen', bereich);

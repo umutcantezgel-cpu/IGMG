@@ -131,27 +131,36 @@ export function zuKarte(s: Kartenstand): Card {
   };
 }
 
-/** Eine Karte aus ihren Bewertungen nachspielen (Reihenfolge nach `vergleicheBewertungen`). */
-export function spieleKarteNach(karte: string, bewertungen: readonly KartenBewertung[]): Kartenstand | null {
-  const sortiert = bewertungen.filter((b) => b.karte === karte).sort(vergleicheBewertungen);
+/**
+ * Verdichteter Stand einer Karte (ADR 0038 Nr. 10, Löschlauf): Bewertungen bis einschließlich `bis` sind in `stand`
+ * gefaltet und gelöscht; nachgespielt wird nur, was danach kam. Weil `zuKarte(ausKarte(c))` die Karte genau wiederherstellt,
+ * ergibt Basis + Rest denselben Stand wie das Nachspielen aller Bewertungen.
+ */
+export type KartenBasis = { stand: Kartenstand; bis: string };
+
+/** Eine Karte aus ihren Bewertungen nachspielen (Reihenfolge nach `vergleicheBewertungen`), optional ab einer Basis. */
+export function spieleKarteNach(karte: string, bewertungen: readonly KartenBewertung[], basis?: KartenBasis | null): Kartenstand | null {
+  const ab = basis ? ms(basis.bis) : Number.NEGATIVE_INFINITY;
+  const sortiert = bewertungen.filter((b) => b.karte === karte && ms(b.am) > ab).sort(vergleicheBewertungen);
   const erste = sortiert[0];
-  if (!erste) return null;
-  let c: Card = createEmptyCard(new Date(erste.am));
+  if (!erste) return basis ? basis.stand : null;
+  let c: Card = basis ? zuKarte(basis.stand) : createEmptyCard(new Date(erste.am));
   for (const b of sortiert) c = planer.next(c, new Date(b.am), RATING[b.note]).card;
   return ausKarte(karte, c, sortiert.at(-1)?.note ?? null);
 }
 
-/** Alle Karten aus allen Bewertungen nachspielen. Ergebnis nach Kartenschlüssel sortiert. */
-export function spieleNach(bewertungen: readonly KartenBewertung[]): Map<string, Kartenstand> {
+/** Alle Karten aus allen Bewertungen (und verdichteten Basen) nachspielen. Ergebnis nach Kartenschlüssel sortiert. */
+export function spieleNach(bewertungen: readonly KartenBewertung[], basen?: ReadonlyMap<string, KartenBasis>): Map<string, Kartenstand> {
   const jeKarte = new Map<string, KartenBewertung[]>();
   for (const b of bewertungen) {
     const liste = jeKarte.get(b.karte);
     if (liste) liste.push(b);
     else jeKarte.set(b.karte, [b]);
   }
+  for (const k of basen?.keys() ?? []) if (!jeKarte.has(k)) jeKarte.set(k, []);
   const ergebnis = new Map<string, Kartenstand>();
   for (const karte of [...jeKarte.keys()].sort()) {
-    const stand = spieleKarteNach(karte, jeKarte.get(karte) ?? []);
+    const stand = spieleKarteNach(karte, jeKarte.get(karte) ?? [], basen?.get(karte));
     if (stand) ergebnis.set(karte, stand);
   }
   return ergebnis;
