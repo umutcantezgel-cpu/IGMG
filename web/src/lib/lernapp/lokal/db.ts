@@ -2,7 +2,8 @@ import { type DBSchema, type IDBPDatabase, openDB } from 'idb';
 import type { LektionsStand, TagesStand } from '../ereignisse/ableiten';
 import type { Ereignis } from '../ereignisse/typen';
 import type { Sprache } from '../kurse';
-import type { KartenBasis, Kartenstand } from '../srs';
+import type { Kartenstand } from '../bewertung';
+import type { KartenBasis } from '../srs';
 
 /**
  * Lokale Datenbank der Lern-App (ADR 0038 Nr. 1, Fortschreibung S6): IndexedDB `igmg-lernapp` über `idb` (ISC),

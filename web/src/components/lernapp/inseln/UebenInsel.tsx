@@ -6,7 +6,7 @@ import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
-import { haengeAn, leiteNeuAb } from '@/lib/lernapp/lokal/ausgang';
+import { haengeAn } from '@/lib/lernapp/lokal/ausgang';
 import type { Profil, Speicher } from '@/lib/lernapp/lokal/db';
 import { ladePaket, ladeVerzeichnis, paketImVorrat } from '@/lib/lernapp/lokal/pakete';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
@@ -105,6 +105,8 @@ export function UebenInsel({
   };
   const fertig = async () => {
     await kette.current;
+    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
+    const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
     await leiteNeuAb(sp, profil.id, heute());
     const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
     const folgePaket = folgeEinheit ? await paketImVorrat(kurs, folgeEinheit) : null;

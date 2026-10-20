@@ -72,42 +72,61 @@ function netzZuerst(anfrage, name, schluessel) {
     .catch(() => caches.match(schluessel, { cacheName: name }).then((vorrat) => vorrat || Promise.reject(new Error('offline'))));
 }
 
+/** Programmteile, auf die ein Programmteil verweist (nachgeladene Chunks: `static/chunks/<name>.js`). */
+const CHUNK_VERWEIS = /(?:\/_next\/)?static\/chunks\/[A-Za-z0-9_.~-]+\.js/g;
+const chunkVerweise = (text) => [...new Set(text.match(CHUNK_VERWEIS) || [])].map((t) => (t.startsWith('/_next/') ? t : `/_next/${t}`));
+/** Obergrenze der Programmteile je Bitte */
+const GRENZE_DATEIEN = 300;
+
+/** Eine Datei aus der Hülle oder aus dem Netz (dann vorgehalten); `null` ohne beides. */
+function dateiHolen(c, datei) {
+  return c.match(datei).then(
+    (da) =>
+      da ||
+      fetch(datei)
+        .then((antwort) => vorhalten(SCHALE, datei, antwort).then(() => (antwort.ok ? c.match(datei) : null)))
+        .catch(() => null),
+  );
+}
+
 /**
  * Seiten der Lern-App vorhalten: die Seiten und die Programmteile, die sie laden. Geholt wird nur, was in der Hülle dieses
  * Baus noch fehlt (die Seiten sind statisch je Bau, aufgefrischt werden sie beim Besuch „Netz zuerst“) – kein
- * Datenverbrauch bei jedem Seitenwechsel.
+ * Datenverbrauch bei jedem Seitenwechsel. `tief`: auch die nachgeladenen Programmteile (Spieler, Übungstypen, lokale
+ * Datenbank), auf die die Programmteile der Seiten verweisen – damit eine Übung ohne Netz startet.
  */
-function halteSeitenVor(pfade) {
+function halteSeitenVor(pfade, tief = false) {
   return caches.open(SCHALE).then((c) =>
     Promise.all(
       pfade.map((pfad) =>
         c.match(pfad).then((da) =>
-          da
-            ? []
-            : fetch(pfad, { credentials: 'same-origin' })
-                .then((antwort) => {
-                  if (!antwort.ok || antwort.redirected) return [];
-                  return c
-                    .put(pfad, antwort.clone())
-                    .then(() => antwort.text())
-                    .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])]);
-                })
-                .catch(() => []),
+          (da
+            ? da.clone().text()
+            : fetch(pfad, { credentials: 'same-origin' }).then((antwort) => {
+                if (!antwort.ok || antwort.redirected) return '';
+                return c.put(pfad, antwort.clone()).then(() => antwort.text());
+              })
+          )
+            .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])])
+            .catch(() => []),
         ),
       ),
     ).then((listen) => {
-      const dateien = [...new Set(listen.flat())].slice(0, 200);
-      return Promise.all(
-        dateien.map((datei) =>
-          c.match(datei).then(
-            (da) =>
-              da ||
-              fetch(datei)
-                .then((antwort) => vorhalten(SCHALE, datei, antwort))
-                .catch(() => undefined),
+      const gesehen = new Set();
+      const offen = [...new Set(listen.flat())];
+      const naechste = () => {
+        const runde = offen.splice(0).filter((d) => !gesehen.has(d) && gesehen.size < GRENZE_DATEIEN);
+        if (!runde.length) return Promise.resolve();
+        for (const d of runde) gesehen.add(d);
+        return Promise.all(
+          runde.map((datei) =>
+            dateiHolen(c, datei).then((antwort) =>
+              tief && antwort && datei.endsWith('.js') ? antwort.text().then((text) => offen.push(...chunkVerweise(text))) : undefined,
+            ),
           ),
-        ),
-      );
+        ).then(naechste);
+      };
+      return naechste();
     }),
   );
 }
@@ -120,13 +139,14 @@ function halteSchaleVor(ui) {
 
 /**
  * Seiten eines Kurses für den Start ohne Netz (nach „Einheit offline speichern“, ADR 0039 Nr. 12): nur Seiten der Lern-App
- * (nie die Anmeldung), höchstens zehn je Bitte. Die Antwort über den Kanal sagt der Seite, dass alles vorgehalten ist.
+ * (nie die Anmeldung), höchstens zehn je Bitte, samt nachgeladenen Programmteilen. Die Antwort über den Kanal sagt der
+ * Seite, dass alles vorgehalten ist.
  */
 function halteKursVor(pfade) {
   const gueltig = (Array.isArray(pfade) ? pfade : [])
     .filter((p) => typeof p === 'string' && istSeitePfad(p) && !istAnmeldung(p))
     .slice(0, 10);
-  return halteSeitenVor(gueltig);
+  return halteSeitenVor(gueltig, true);
 }
 
 self.addEventListener('install', (e) => {

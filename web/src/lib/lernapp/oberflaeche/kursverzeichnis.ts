@@ -1,6 +1,6 @@
 import type { Lektion } from '../aufgaben/schema';
 import type { Oberflaeche, Sprache, Stufe } from '../kurse';
-import type { Paket, Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
+import type { Verzeichnis, VerzeichnisEinheit } from '../paket/typen';
 
 /**
  * Lernpfad aus dem Kursverzeichnis (PLAN §3.1, §3.10; ADR 0039): Abschnitte (Stufen) → Einheiten (Stationen) → Lektionen.
@@ -35,6 +35,9 @@ export function themaVon(
   return null;
 }
 
+/** Was der Lernpfad aus einem Paket liest (volles `Paket` oder nur sein Kopf aus `lokal/vorrat.ts`). */
+export type PaketInhalt = { lektionen: readonly Pick<Lektion, 'schluessel' | 'titel' | 'art'>[]; tipps: readonly unknown[] };
+
 export type LektionsEintrag = Pick<Lektion, 'schluessel' | 'titel' | 'art'> & { erledigt: boolean };
 
 export type Station = {
@@ -54,7 +57,7 @@ export type Station = {
 export type Abschnitt = { stufe: Stufe; stationen: Station[] };
 
 /** Stationen nach Stufen; `erledigt` sind die geschafften Lektionen (Speicher `lektionen`), `pakete` die geladenen Pakete. */
-export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete: ReadonlyMap<string, Paket>): Abschnitt[] {
+export function abschnitte(v: Verzeichnis, erledigt: ReadonlySet<string>, pakete: ReadonlyMap<string, PaketInhalt>): Abschnitt[] {
   let aktuellGesetzt = false;
   const liste: Abschnitt[] = [];
   v.einheiten.forEach((einheit, i) => {
@@ -87,7 +90,11 @@ export function aktuelleUndNaechste(v: Verzeichnis, erledigt: ReadonlySet<string
 }
 
 /** Die Lektion nach `lektion` in ihrer Einheit, sonst die erste der nächsten Einheit (falls deren Paket bekannt ist). */
-export function naechsteLektion(paket: Paket, lektion: string, naechstesPaket: Paket | null): Pick<Lektion, 'schluessel' | 'titel'> | null {
+export function naechsteLektion(
+  paket: Pick<PaketInhalt, 'lektionen'>,
+  lektion: string,
+  naechstesPaket: Pick<PaketInhalt, 'lektionen'> | null,
+): Pick<Lektion, 'schluessel' | 'titel'> | null {
   const i = paket.lektionen.findIndex((l) => l.schluessel === lektion);
   const nach = i >= 0 ? paket.lektionen[i + 1] : undefined;
   const ziel = nach ?? naechstesPaket?.lektionen[0];

@@ -5,12 +5,12 @@ import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import { formatiere, zahl, type Ziffern } from '@/lib/lernapp/format';
 import { richtung, type KursSlug, type Oberflaeche, type Stufe } from '@/lib/lernapp/kurse';
 import { profilBereich, type PaketEintrag } from '@/lib/lernapp/lokal/db';
-import { ladePaket, ladeVerzeichnis, paketImVorrat } from '@/lib/lernapp/lokal/pakete';
+import { ladePaketKopf, ladeVerzeichnis, type PaketKopf, paketKopfImVorrat } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { STAND_GEAENDERT, speicher, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { type Abschnitt, abschnitte, aktuelleUndNaechste, type Station, themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
-import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
+import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
 import { OfflineEinheit, type OfflineTexte } from '../OfflineEinheit';
 import { LernStern } from '../Zeichen';
 
@@ -30,9 +30,7 @@ export type LernpfadTexte = OfflineTexte & {
 };
 
 type Zustand =
-  | { art: 'laedt' }
-  | { art: 'leer' }
-  | { art: 'bereit'; v: Verzeichnis; abschnitte: Abschnitt[]; offline: Map<string, PaketEintrag>; pakete: ReadonlyMap<string, Paket> };
+  { art: 'laedt' } | { art: 'leer' } | { art: 'bereit'; v: Verzeichnis; abschnitte: Abschnitt[]; offline: Map<string, PaketEintrag> };
 
 /**
  * Lernpfad eines Kurses (PLAN §3.1, B-24, ADR 0039 Nr. 12): Abschnitte (Stufen) → Einheiten als Stationen an der Linie →
@@ -55,7 +53,7 @@ export function LernpfadInsel({
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const [ziffern, setZiffern] = useState<Ziffern>('oestlich');
   const [fehlt, setFehlt] = useState<ReadonlySet<string>>(new Set());
-  const pakete = useRef(new Map<string, Paket>());
+  const pakete = useRef(new Map<string, PaketKopf>());
 
   useEffect(() => {
     let aktiv = true;
@@ -72,17 +70,17 @@ export function LernpfadInsel({
       await Promise.all(
         v.einheiten.map(async (e) => {
           if (pakete.current.get(e.schluessel)?.einheit.schluessel === e.schluessel) return;
-          const p = await paketImVorrat(kurs, e);
+          const p = await paketKopfImVorrat(kurs, e);
           if (p) pakete.current.set(e.schluessel, p);
         }),
       );
       for (const e of aktuelleUndNaechste(v, erledigt))
         if (!pakete.current.has(e.schluessel)) {
-          const p = await ladePaket(sp, kurs, e);
+          const p = await ladePaketKopf(sp, kurs, e);
           if (p) pakete.current.set(e.schluessel, p);
         }
       const offline = new Map((await sp.alle('pakete', [[kurs], [kurs, []]])).map((e) => [e.einheit, e]));
-      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline, pakete: new Map(pakete.current) });
+      if (aktiv) setZ({ art: 'bereit', v, abschnitte: abschnitte(v, erledigt, pakete.current), offline });
     }
     const neu = () => void laden().catch(() => aktiv && setZ((alt) => (alt.art === 'laedt' ? { art: 'leer' } : alt)));
     neu();
@@ -105,7 +103,7 @@ export function LernpfadInsel({
 
   async function zeigeLektionen(s: Station) {
     const sp = await speicher();
-    const p = await ladePaket(sp, kurs, s.einheit);
+    const p = await ladePaketKopf(sp, kurs, s.einheit);
     if (p) {
       pakete.current.set(s.einheit.schluessel, p);
       window.dispatchEvent(new Event(STAND_GEAENDERT));
@@ -122,7 +120,6 @@ export function LernpfadInsel({
           <ol className="relative flex flex-col" style={{ '--n': Math.max(1, gesamt - 1) } as CSSProperties}>
             {a.stationen.map((s, i) => {
               const thema = themaVon(s.einheit, ui, z.v.ausgangssprache);
-              const paket = z.pakete.get(s.einheit.schluessel) ?? null;
               const eintrag = z.offline.get(s.einheit.schluessel);
               const kennung = f(texte.einheit, { n: s.nummer });
               return (
@@ -218,7 +215,6 @@ export function LernpfadInsel({
                         ziffern={ziffern}
                         kurs={kurs}
                         einheit={s.einheit}
-                        paket={paket}
                         gespeichert={Boolean(eintrag?.offline && eintrag.hash === s.einheit.hash)}
                         texte={texte}
                       />

@@ -147,7 +147,7 @@ export function einstellungsSpeicher(ui: Oberflaeche): EinstellungsSpeicher {
     const entwuerfe = einstellungsEreignisse(alt, neu);
     const { sp, profil } = await geraet(ui);
     if (entwuerfe.length) {
-      const { haengeAlleAn, leiteNeuAb } = await import('../lokal/ausgang');
+      const [{ haengeAlleAn }, { leiteNeuAb }] = await Promise.all([import('../lokal/ausgang'), import('../lokal/ableitung')]);
       await haengeAlleAn(sp, profil, entwuerfe);
       await leiteNeuAb(sp, profil.id, heute());
       if (profil.benutzerId) void import('./abgleich').then((a) => a.nachHandlung());

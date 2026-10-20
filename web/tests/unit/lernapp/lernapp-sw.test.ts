@@ -53,7 +53,12 @@ function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>,
     if (!netz) throw new TypeError('offline');
     const pfad = new URL(u).pathname;
     const html = `<html><script src="/_next/static/chunks/a.js"></script><link href="/_next/static/css/b.css"/>${pfad}</html>`;
-    const antwort = new Response(pfad.startsWith('/_next/') ? 'datei' : html, { status: 200 });
+    // a.js lädt einen Chunk nach (wie Turbopack: Verweis „static/chunks/<name>.js“), dieser einen weiteren
+    const js: Record<string, string> = {
+      '/_next/static/chunks/a.js': 'e.l("static/chunks/spieler.js")',
+      '/_next/static/chunks/spieler.js': 'e.l("static/chunks/auswahl.js");e.l("static/chunks/a.js")',
+    };
+    const antwort = new Response(pfad.startsWith('/_next/') ? (js[pfad] ?? 'datei') : html, { status: 200 });
     Object.defineProperty(antwort, 'type', { value: 'basic' });
     return antwort;
   };
@@ -224,8 +229,11 @@ describe('Service Worker der Lern-App', () => {
       },
       [{ postMessage: (d) => antworten.push(d) }],
     );
+    // samt nachgeladenen Programmteilen (Spieler, Übungstypen), damit die Übung ohne Netz startet
     expect(w.inhalt('igmg-lernapp-schale-vb5')).toEqual([
       '/_next/static/chunks/a.js',
+      '/_next/static/chunks/auswahl.js',
+      '/_next/static/chunks/spieler.js',
       '/_next/static/css/b.css',
       '/lern-app/de/tr-aus-de',
       '/lern-app/de/tr-aus-de/ueben',

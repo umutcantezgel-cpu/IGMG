@@ -7,10 +7,10 @@ import {
   ausstehende,
   brauchtNeuableitung,
   ereignisse,
-  leiteNeuAb,
   markiereSynchron,
   uebernimm,
 } from '@/lib/lernapp/lokal/ausgang';
+import { leiteNeuAb } from '@/lib/lernapp/lokal/ableitung';
 import {
   arbeitsspeicher,
   DB_NAME,

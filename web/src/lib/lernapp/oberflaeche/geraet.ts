@@ -53,7 +53,7 @@ export const heute = (jetzt = new Date()): string => lerntagVon(jetzt);
 export async function frischAbgeleitet(sp: Speicher, profil: Profil): Promise<Profil> {
   if (profil.ableitungsVersion === ABLEITUNGS_VERSION) return profil;
   if (!(await sp.alle('ereignisse', profilBereich(profil.id))).length) return profil;
-  const { leiteNeuAb } = await import('../lokal/ausgang');
+  const { leiteNeuAb } = await import('../lokal/ableitung');
   await leiteNeuAb(sp, profil.id, heute());
   return (await sp.lies('profile', profil.id)) ?? profil;
 }

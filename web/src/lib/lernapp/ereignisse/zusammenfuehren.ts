@@ -1,4 +1,4 @@
-import { vergleicheBewertungen } from '../srs';
+import { vergleicheBewertungen } from '../bewertung';
 import type { Ereignis } from './typen';
 
 /**

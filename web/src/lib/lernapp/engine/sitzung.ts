@@ -2,7 +2,7 @@ import { angenommen, bereiteLexikon, type Lexikon, type Urteil } from '../abglei
 import { bewerte } from '../aufgaben/bewerte';
 import { type Antwort, type Aufgabe, type Auswertung, istImplementiert, type Lektion } from '../aufgaben/schema';
 import type { EreignisEntwurf } from '../ereignisse/typen';
-import { noteAus } from '../srs';
+import { noteAus } from '../bewertung';
 import { xpFuer } from './xp';
 
 /**

@@ -10,7 +10,8 @@ import {
   SyncAntwortSchema,
   type SyncFehler,
 } from '../sync/protokoll';
-import { ausstehende, leiteNeuAb, markiereSynchron, uebernimm } from './ausgang';
+import { leiteNeuAb } from './ableitung';
+import { ausstehende, markiereSynchron, uebernimm } from './ausgang';
 import { type GespeichertesEreignis, type Profil, profilBereich, type Speicher, type SyncEintrag } from './db';
 import { aendereProfil, legeProfilAn } from './profile';
 

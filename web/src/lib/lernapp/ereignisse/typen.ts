@@ -1,6 +1,6 @@
 import { OBERFLAECHEN, SPRACHEN } from '../kurse';
 import { LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
-import { NOTEN } from '../srs';
+import { NOTEN } from '../bewertung';
 import * as z from '../z';
 
 /**

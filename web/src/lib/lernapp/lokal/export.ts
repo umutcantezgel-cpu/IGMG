@@ -2,7 +2,8 @@ import { SPRACHEN } from '../kurse';
 import * as z from '../z';
 import type { Ableitung } from '../ereignisse/ableiten';
 import { EreignisSchema } from '../ereignisse/typen';
-import { ereignisse, leiteNeuAb, uebernimm } from './ausgang';
+import { leiteNeuAb } from './ableitung';
+import { ereignisse, uebernimm } from './ausgang';
 import type { Profil, Speicher } from './db';
 import { legeProfilAn } from './profile';
 

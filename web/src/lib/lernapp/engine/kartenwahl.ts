@@ -1,4 +1,4 @@
-import { istFaellig, type Kartenstand } from '../srs';
+import { istFaellig, type Kartenstand } from '../bewertung';
 
 /**
  * Kartenwahl für „Wiederholen“ (PLAN §4, ADR 0038 Nr. 3): zuerst die fälligen Karten (am längsten überfällige zuerst),

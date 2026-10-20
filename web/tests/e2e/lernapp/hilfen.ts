@@ -24,8 +24,14 @@ export const PAARE: [string, string][] = [
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
-/** axe (WCAG 2.2 AA); gezählt werden ernste und kritische Befunde, als lesbare Zeilen. */
+/**
+ * axe (WCAG 2.2 AA); gezählt werden ernste und kritische Befunde, als lesbare Zeilen. Vorher laufen alle Übergänge aus
+ * (Einblenden des Rückmeldeblatts): mitten im Übergang misst axe halbe Deckkraft als Kontrast.
+ */
 export async function ernsteBefunde(page: Page, kennzeichen: string): Promise<string[]> {
+  await page.waitForFunction(() =>
+    document.getAnimations().every((a) => a.playState !== 'running' || a.effect?.getTiming().iterations === Infinity),
+  );
   const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
   return ergebnis.violations
     .filter((v) => v.impact === 'serious' || v.impact === 'critical')

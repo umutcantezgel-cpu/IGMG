@@ -1,5 +1,19 @@
 import { type Card, createEmptyCard, fsrs, type FSRSParameters, generatorParameters, type Grade, Rating, State } from 'ts-fsrs';
-import type { Urteil } from './abgleich';
+import { type KartenBewertung, type Kartenstand, type KartenZustand, type Note, vergleicheBewertungen } from './bewertung';
+
+/** FSRS-freie Teile stehen in `bewertung.ts` (Noten, Reihenfolge, Kartenstand, Fälligkeit); hier weitergereicht. */
+export {
+  istFaellig,
+  type KartenBewertung,
+  type Kartenstand,
+  type KartenZustand,
+  type Note,
+  NOTEN,
+  noteAus,
+  noteAusSelbstbewertung,
+  SELBSTBEWERTUNG,
+  vergleicheBewertungen,
+} from './bewertung';
 
 /**
  * Wiederholung nach Vergessenskurve (ADR 0038 Nr. 3, PLAN §3.8): `ts-fsrs` 5.4.2, deterministisch.
@@ -34,28 +48,8 @@ export const FSRS_PARAMETER: Readonly<FSRSParameters> = Object.freeze(
 
 const planer = fsrs(FSRS_PARAMETER);
 
-export type Note = 'nochmal' | 'schwer' | 'gut';
-export const NOTEN: readonly Note[] = ['nochmal', 'schwer', 'gut'];
 const RATING: Record<Note, Grade> = { nochmal: Rating.Again, schwer: Rating.Hard, gut: Rating.Good };
 
-/** Note aus dem Urteil des Abgleichs (bzw. einer Übung): erster Versuch, ggf. mit genutzter Hilfe. */
-export function noteAus(urteil: Urteil, { hilfe = false }: { hilfe?: boolean } = {}): Note {
-  if (urteil === 'falsch') return 'nochmal';
-  return urteil === 'tippfehler' || hilfe ? 'schwer' : 'gut';
-}
-
-/** Übungstypen mit Selbstbewertung (ADR 0042: Sprechen und Schreiben). */
-export const SELBSTBEWERTUNG: ReadonlySet<string> = new Set(['sprechen', 'schreiben']);
-
-/** Selbstbewertung gilt nur für Sprechen und Schreiben; sonst `null` (die Note kommt aus der Bewertung der Übung). */
-export function noteAusSelbstbewertung(typ: string, note: Note): Note | null {
-  return SELBSTBEWERTUNG.has(typ) ? note : null;
-}
-
-/** Eine Bewertung einer Karte (Lemma oder Satz), wie sie aus den Ereignissen kommt. */
-export type KartenBewertung = { karte: string; note: Note; am: string; geraet: string; seq: number };
-
-export type KartenZustand = 'neu' | 'lernen' | 'wiederholen' | 'neu_lernen';
 const ZUSTAND: Record<State, KartenZustand> = {
   [State.New]: 'neu',
   [State.Learning]: 'lernen',
@@ -69,33 +63,7 @@ const STATE: Record<KartenZustand, State> = {
   neu_lernen: State.Relearning,
 };
 
-/** Kartenstand, als JSON speicherbar (IndexedDB `karten`, Server `lernapp_karte`). */
-export type Kartenstand = {
-  karte: string;
-  /** ISO-Zeitpunkt der nächsten Fälligkeit. */
-  faellig: string;
-  stabilitaet: number;
-  schwierigkeit: number;
-  tageVergangen: number;
-  tageGeplant: number;
-  lernschritt: number;
-  wiederholungen: number;
-  fehler: number;
-  zustand: KartenZustand;
-  zuletzt: string | null;
-  letzteNote: Note | null;
-  parameterversion: string;
-};
-
 const ms = (iso: string) => Date.parse(iso);
-
-/** Reihenfolge der Bewertungen: Zeit, dann Gerät, dann laufende Nummer (ADR 0038 Nr. 3). */
-export function vergleicheBewertungen(
-  a: Pick<KartenBewertung, 'am' | 'geraet' | 'seq'>,
-  b: Pick<KartenBewertung, 'am' | 'geraet' | 'seq'>,
-): number {
-  return ms(a.am) - ms(b.am) || (a.geraet < b.geraet ? -1 : a.geraet > b.geraet ? 1 : 0) || a.seq - b.seq;
-}
 
 function ausKarte(karte: string, c: Card, letzteNote: Note | null): Kartenstand {
   return {
@@ -164,9 +132,4 @@ export function spieleNach(bewertungen: readonly KartenBewertung[], basen?: Read
     if (stand) ergebnis.set(karte, stand);
   }
   return ergebnis;
-}
-
-/** Fällig, wenn der Fälligkeitszeitpunkt erreicht ist. */
-export function istFaellig(stand: Pick<Kartenstand, 'faellig'>, jetzt: Date): boolean {
-  return ms(stand.faellig) <= jetzt.getTime();
 }

@@ -30,15 +30,18 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
   return (
     <Rahmen ui={ui} bereich={null} pfad={`${kurs}/ueben`}>
       <Seitenkopf zurueck={{ adresse: lernpfad.adresse, text: kursTitel(ui, kurs) }} titel={t('ueben.titel')} />
-      <Suspense fallback={<p className="text-18 text-tinte-2">{t('ueben.laedt')}</p>}>
-        <UebenInsel
-          ui={ui}
-          kurs={kurs}
-          texte={rohTexte(ui, 'ueben')}
-          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
-          lernpfad={lernpfad}
-        />
-      </Suspense>
+      {/* Platz für den Spieler (eine Bildschirmhöhe), damit der Fuß beim Laden nicht springt (CLS) */}
+      <div className="min-h-svh">
+        <Suspense fallback={<p className="text-18 text-tinte-2">{t('ueben.laedt')}</p>}>
+          <UebenInsel
+            ui={ui}
+            kurs={kurs}
+            texte={rohTexte(ui, 'ueben')}
+            spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+            lernpfad={lernpfad}
+          />
+        </Suspense>
+      </div>
     </Rahmen>
   );
 }

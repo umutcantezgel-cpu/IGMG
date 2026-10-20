@@ -4,7 +4,8 @@ import { LektionSchema } from '@/lib/lernapp/aufgaben/schema';
 import { TAGESZIEL_STANDARD } from '@/lib/lernapp/ereignisse/typen';
 import { ABLEITUNGS_VERSION } from '@/lib/lernapp/ereignisse/ableiten';
 import { ABLEITUNGS_VERSION as VERSION_KLEIN } from '@/lib/lernapp/ereignisse/version';
-import { haengeAlleAn, leiteNeuAb } from '@/lib/lernapp/lokal/ausgang';
+import { leiteNeuAb } from '@/lib/lernapp/lokal/ableitung';
+import { haengeAlleAn } from '@/lib/lernapp/lokal/ausgang';
 import { aktivesProfil } from '@/lib/lernapp/lokal/profile';
 import {
   EINSTELLUNGEN_SCHLUESSEL,
@@ -25,7 +26,8 @@ import {
 } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import { ladeStartStand, LEERER_START_STAND } from '@/lib/lernapp/oberflaeche/stand';
 import { baueWiederholung, einheitDerKarte, kartenDer } from '@/lib/lernapp/oberflaeche/wiederholung';
-import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
+import { istPaketKopf, istVerzeichnis } from '@/lib/lernapp/lokal/vorrat';
+import { type Paket, PaketSchema, type Verzeichnis, VerzeichnisSchema } from '@/lib/lernapp/paket/typen';
 import type { Kartenstand } from '@/lib/lernapp/srs';
 import { LEKTION } from './hilfen/lektion';
 
@@ -283,5 +285,57 @@ describe('Wiederholungsrunde aus Karten und Paketen', () => {
     expect(LektionSchema.safeParse(lektion).success).toBe(true);
     expect(baueWiederholung('tr-aus-de', [stand('tr-aus-de:gibt.es.nicht', 1)], [mitKarten])).toBeNull();
     expect(baueWiederholung('tr-aus-de', [stand('tr-aus-de:tr.a1.l0001', 1)], [])).toBeNull();
+  });
+});
+
+describe('Vorrat ohne Zod (Lernpfad im Budget): gleiche Entscheidung wie die Schemas', () => {
+  const e = VERZEICHNIS.einheiten[0]!;
+  const abweichungen: unknown[] = [
+    VERZEICHNIS,
+    { ...VERZEICHNIS, ausgangssprache: null },
+    { ...VERZEICHNIS, einheiten: [] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, symbol: 'stern', audio: [{ adresse: '/lern-app/audio/tr/a.lpa', bytes: 10 }] }] },
+    { ...VERZEICHNIS, fremd: 1 },
+    { ...VERZEICHNIS, format: 'igmg-lernapp-paket' },
+    { ...VERZEICHNIS, version: 2 },
+    { ...VERZEICHNIS, kurs: 'xx' },
+    { ...VERZEICHNIS, kursId: 'tr-aus-de' },
+    { ...VERZEICHNIS, ausgangssprache: 'en' },
+    { ...VERZEICHNIS, stand: -1 },
+    { ...VERZEICHNIS, stand: 1.5 },
+    { ...VERZEICHNIS, einheiten: [{ ...e, hash: 'A'.repeat(64) }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, stufe: 'z9' }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, bytes: 0 }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, lektionen: 0 }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, thema: { de: 'x', en: 'y' } }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, symbol: 3 }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, extra: true }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, audio: [{ adresse: '/fremd/a.lpa', bytes: 10 }] }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, audio: [{ adresse: '/lern-app/audio/tr/a.lpa', bytes: 0 }] }] },
+    { ...VERZEICHNIS, einheiten: [{ ...e, hinweis: 'ja' }] },
+    null,
+    [],
+    'verzeichnis',
+  ];
+
+  it.each(abweichungen.map((v, i) => [i, v]))('Verzeichnis %i', (_i, v) => {
+    expect(istVerzeichnis(v)).toBe(VerzeichnisSchema.safeParse(v).success);
+  });
+
+  it('Paketkopf: jedes gültige Paket hat einen gültigen Kopf; Fehler im Kopf verwirft beide', () => {
+    const p = paketVon('tr.a1.e01', ['tr-aus-de.a1.e01.l01']);
+    expect(PaketSchema.safeParse(p).success).toBe(true);
+    expect(istPaketKopf(p)).toBe(true);
+    for (const falsch of [
+      { ...p, format: 'igmg-lernapp-verzeichnis' },
+      { ...p, kurs: 'tr' },
+      { ...p, lektionen: [] },
+      { ...p, lizenz: 'CC-BY-4.0' },
+      { ...p, einheit: { ...p.einheit, stufe: 'z9' } },
+      { ...p, audio: [{ adresse: '/fremd', bytes: 1 }] },
+    ]) {
+      expect(PaketSchema.safeParse(falsch).success).toBe(false);
+      expect(istPaketKopf(falsch)).toBe(false);
+    }
   });
 });

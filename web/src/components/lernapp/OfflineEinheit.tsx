@@ -4,10 +4,10 @@ import { CircleCheck, Download } from 'lucide-react';
 import { useState } from 'react';
 import { formatiere, intlSprache, type Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
-import { speichereOffline } from '@/lib/lernapp/lokal/pakete';
+import { speichereOffline } from '@/lib/lernapp/lokal/vorrat';
 import { meldeStand, speicher } from '@/lib/lernapp/oberflaeche/geraet';
-import type { Paket, VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
-import { bereiteOfflineVor, typenDer } from './offline';
+import type { VerzeichnisEinheit } from '@/lib/lernapp/paket/typen';
+import { bereiteOfflineVor } from './offline';
 
 export type OfflineTexte = {
   offline: string;
@@ -54,8 +54,8 @@ export const einheitBytes = (e: Pick<VerzeichnisEinheit, 'bytes' | 'audio'>): nu
 
 /**
  * „Einheit offline speichern“ (ADR 0039 Nr. 12, ADR 0038 Nr. 9): Paket und Töne in den Vorrat, als bewusst gespeichert
- * markiert; erst hier bittet die App um dauerhaften Speicher (`navigator.storage.persist()`). Danach Spieler, Übungstypen
- * und Seiten des Kurses für den Start ohne Netz (`bereiteOfflineVor`). Fortschritt als Ring nach Bytes, Ergebnis in einer
+ * markiert; erst hier bittet die App um dauerhaften Speicher (`navigator.storage.persist()`). Danach die Seiten des Kurses
+ * samt Programmteilen für den Start ohne Netz (`bereiteOfflineVor`). Fortschritt als Ring nach Bytes, Ergebnis in einer
  * Live-Region.
  */
 export function OfflineEinheit({
@@ -63,7 +63,6 @@ export function OfflineEinheit({
   ziffern,
   kurs,
   einheit,
-  paket,
   gespeichert,
   texte,
 }: {
@@ -71,7 +70,6 @@ export function OfflineEinheit({
   ziffern: Ziffern;
   kurs: KursSlug;
   einheit: VerzeichnisEinheit;
-  paket: Paket | null;
   /** schon bewusst offline gespeichert (Speicher `pakete`, gleicher Hash) */
   gespeichert: boolean;
   texte: OfflineTexte;
@@ -91,7 +89,7 @@ export function OfflineEinheit({
     try {
       const sp = await speicher();
       const e = await speichereOffline(sp, kurs, [einheit], { fortschritt: (geladen, alle) => setLaeuft({ geladen, gesamt: alle }) });
-      await bereiteOfflineVor(ui, kurs, paket ? typenDer(paket) : ['auswahl', 'wortbank', 'paare']);
+      await bereiteOfflineVor(ui, kurs);
       if (e.fehlgeschlagen.length) setMeldung(texte.offlineFehler);
       else {
         setFertig(true);

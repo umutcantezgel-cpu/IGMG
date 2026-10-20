@@ -2,7 +2,7 @@ import type { Aufgabe, Lektion } from '../aufgaben/schema';
 import { uebungsStufe, WIEDERHOLUNG_ANZAHL } from '../engine/kartenwahl';
 import type { KursSlug } from '../kurse';
 import type { Paket } from '../paket/typen';
-import type { Kartenstand } from '../srs';
+import type { Kartenstand } from '../bewertung';
 
 /**
  * Wiederholungsrunde (PLAN §4 „Kartenwahl“, ADR 0038 Nr. 3): Aus den gewählten Karten (`waehleKarten`, fällige zuerst)

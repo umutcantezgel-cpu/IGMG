@@ -36,7 +36,8 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
         titel={t('wiederholen.titel')}
         einleitung={t('wiederholen.text')}
       />
-      <section id="wiederholen-sitzung" aria-label={t('wiederholen.titel')}>
+      {/* Platz für den Spieler (eine Bildschirmhöhe), damit der Fuß beim Laden nicht springt (CLS) */}
+      <section id="wiederholen-sitzung" aria-label={t('wiederholen.titel')} className="min-h-svh">
         <WiederholenInsel
           ui={ui}
           kurs={kurs}
