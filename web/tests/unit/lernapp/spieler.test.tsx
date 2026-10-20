@@ -299,11 +299,12 @@ describe('Texte messages/lernapp (Namensräume spieler und aufgaben)', () => {
     }
   });
 
-  it('Entwurfsliste nennt alle Schlüssel für tr und ar; ar vorläufig deutsch', () => {
+  it('Entwurfsliste nennt alle Schlüssel für tr und ar; ar in arabischer Schrift (außer der Einheit XP)', () => {
     const alle = dePaare.map(([k]) => k);
     expect(entwurf.tr).toEqual(expect.arrayContaining(alle));
     expect(entwurf.ar).toEqual(expect.arrayContaining(alle));
-    expect(eigene(ar)).toEqual(eigene(de));
+    const arabisch = /[\u0600-\u06FF]/;
+    for (const [k, v] of flach(eigene(ar))) expect(arabisch.test(v), k).toBe(k !== 'spieler.xp');
   });
 
   it('sanfter Wortlaut: keine Schuld- oder Verlustwörter', () => {
