@@ -14,5 +14,37 @@
   "wortbank": {
     "datei": "src/components/lernapp/aufgaben/Wortbank.tsx",
     "text": "min-h-11 min-w-11 rounded-md border-2 px-3 py-1 text-20"
+  },
+  "dialog": {
+    "datei": "src/components/lernapp/aufgaben/Dialog.tsx",
+    "text": "flex flex-col gap-2 rounded-lg border border-linie p-4"
+  },
+  "geschichte": {
+    "datei": "src/components/lernapp/aufgaben/Geschichte.tsx",
+    "text": "flex flex-col gap-3 rounded-lg border-2 border-linie bg-weiss p-4 outline-none"
+  },
+  "lesen_fragen": {
+    "datei": "src/components/lernapp/aufgaben/LesenFragen.tsx",
+    "text": "inline cursor-pointer rounded-sm py-2 underline decoration-gruen-700 decoration-dotted decoration-2 underline-offset-4"
+  },
+  "grammatik_tipp": {
+    "datei": "src/components/lernapp/aufgaben/GrammatikTipp.tsx",
+    "text": "flex flex-col gap-5 rounded-lg border-2 border-gruen-700 bg-weiss p-5 md:p-8"
+  },
+  "schrift_ar": {
+    "datei": "src/components/lernapp/aufgaben/SchriftAr.tsx",
+    "text": "flex justify-center rounded-lg bg-sand px-4 py-2"
+  },
+  "schrift_wahl": {
+    "datei": "src/components/lernapp/aufgaben/SchriftWahl.tsx",
+    "text": "flex flex-col items-center gap-3 rounded-lg bg-sand px-4 py-6"
+  },
+  "sprechen": {
+    "datei": "src/components/lernapp/sprechen/Sprechen.tsx",
+    "text": "flex flex-col gap-3 rounded-lg border-2 border-linie p-4"
+  },
+  "schreiben": {
+    "datei": "src/components/lernapp/schreiben/Schreiben.tsx",
+    "text": "flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-2 hover:bg-sand"
   }
 }

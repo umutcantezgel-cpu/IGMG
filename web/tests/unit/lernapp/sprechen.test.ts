@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { mikrofonErlaubtHier } from '@/components/lernapp/sprechen/aufnahme';
 import {
@@ -220,6 +222,26 @@ describe('Dateien vom eigenen Ursprung', () => {
       arbeiterAdresse('abc'),
     ])
       expect(a).toMatch(/^\/lern-app\/modelle\//);
+  });
+
+  it('QUELLE.md (Bauschritt mit SHA-Prüfung) nennt genau diese Dateien und Größen; Versionen exakt gepinnt', () => {
+    const web = join(import.meta.dirname, '../../..');
+    const quelle = readFileSync(join(web, 'daten/lernapp-modelle/QUELLE.md'), 'utf8');
+    const zeilen = [...quelle.matchAll(/^\| `([^`]+)` +\| `([^`]+)` +\| (\d+) +\| `([0-9a-f]{64})` +\|$/gm)].map((m) => ({
+      ziel: m[2]!,
+      bytes: Number(m[3]),
+    }));
+    expect(zeilen).toEqual([
+      ...MODELL_DATEIEN.map((d) => ({ ziel: `public${modellAdresse(d.pfad)}`, bytes: d.bytes })),
+      { ziel: `public${ortAdresse(ORT.wasm)}`, bytes: ORT.wasmBytes },
+      { ziel: `public${ortAdresse(ORT.mjs)}`, bytes: expect.any(Number) as number },
+    ]);
+    expect(quelle).toContain(MODELL.commit);
+    const paket = JSON.parse(readFileSync(join(web, 'package.json'), 'utf8')) as { dependencies: Record<string, string> };
+    expect(paket.dependencies['@huggingface/transformers']).toBe('4.3.0');
+    const sperre = readFileSync(join(web, 'pnpm-lock.yaml'), 'utf8');
+    expect(sperre).toContain(`onnxruntime-web@${ORT.version}:`);
+    expect(sperre).not.toContain('onnxruntime-node@');
   });
 
   it('Worker-Adresse trägt nur eine bereinigte Bau-Kennung', () => {

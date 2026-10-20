@@ -28,10 +28,10 @@ export const MODELL = {
 
 /** Modell- und Konfigurationsdateien (Pfad im Modellordner, Bytes; die SHA-256 stehen in `web/daten/lernapp-modelle/QUELLE.md`). */
 export const MODELL_DATEIEN: readonly { pfad: string; bytes: number }[] = [
-  { pfad: 'config.json', bytes: 2_249 },
-  { pfad: 'generation_config.json', bytes: 3_830 },
+  { pfad: 'config.json', bytes: 2_248 },
+  { pfad: 'generation_config.json', bytes: 3_776 },
   { pfad: 'preprocessor_config.json', bytes: 339 },
-  { pfad: 'tokenizer.json', bytes: 2_480_617 },
+  { pfad: 'tokenizer.json', bytes: 2_480_466 },
   { pfad: 'tokenizer_config.json', bytes: 282_683 },
   { pfad: 'onnx/encoder_model_quantized.onnx', bytes: 23_200_850 },
   { pfad: 'onnx/decoder_model_merged_quantized.onnx', bytes: 53_707_539 },
@@ -53,8 +53,8 @@ export const modellAdresse = (pfad: string): string => `${MODELLE_BASIS}${MODELL
 export const arbeiterAdresse = (bau: string): string =>
   `${MODELLE_BASIS}sprechen/whisper.worker.mjs?v=${encodeURIComponent(bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || 'lokal')}`;
 
-/** Ungefähre Größe des Workers (transformers.js gebündelt) für die Anzeige. */
-export const ARBEITER_BYTES = 600_000;
+/** Ungefähre Größe des Workers (transformers.js gebündelt, ≈ 690 KB) und der ORT-`.mjs` für die Anzeige. */
+export const ARBEITER_BYTES = 700_000;
 
 /** Gesamtgröße des Sprechmoduls (≈ 95 MB, KERN 4.0 §9). */
 export const GESAMT_BYTES = MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES;

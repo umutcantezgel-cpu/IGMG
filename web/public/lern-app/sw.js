@@ -9,7 +9,9 @@
  * - `igmg-lernapp-pakete`: Kursverzeichnis `/lern-app/pakete/<kurs>` Netz zuerst, Einheiten `…/<kurs>/<einheit>/<hash>`
  *   Vorrat zuerst (unveränderlich, ADR 0039).
  * - `igmg-lernapp-audio`: Bündel `/lern-app/audio/…`, Vorrat zuerst; Bereichsanfragen gehen ans Netz.
- * - `igmg-lernapp-modelle`: Whisper und ORT `/lern-app/modelle/…`, Vorrat zuerst (ADR 0042).
+ * - `igmg-lernapp-modelle`: Whisper und ORT `/lern-app/modelle/…`, Vorrat zuerst (ADR 0042); als Originalantwort samt
+ *   Kopfzeilen (COEP). Den Worker der Sprechübung (`…/modelle/sprechen/…?v=<bau>`) gibt es je Bau neu: Beim Vorhalten
+ *   fallen ältere Fassungen derselben Datei weg.
  * Seiten: Netz zuerst, gelungene Antworten in die Hülle – unter dem Pfad ohne Suchteil (`ignoreSearch`, z. B.
  * `…/ueben?l=…`); ohne Netz die vorgehaltene Seite, sonst der Start der Oberflächensprache.
  * Nie vorgehalten: /api/**, /lern-app/<ui>/anmelden, RSC-Abrufe, alles außer GET, fremde Ursprünge.
@@ -46,8 +48,19 @@ function vorhalten(name, schluessel, antwort) {
   const kopie = antwort.clone();
   return caches
     .open(name)
-    .then((c) => c.put(schluessel, kopie))
+    .then((c) => c.put(schluessel, kopie).then(() => (name === MODELLE ? alteFassungenWeg(c, schluessel) : undefined)))
     .then(() => (name === SCHALE ? begrenze(SCHALE) : undefined));
+}
+
+/** Worker der Sprechübung: andere Fassungen (anderer Suchteil `?v=`) derselben Datei aus dem Vorrat nehmen. */
+function alteFassungenWeg(c, schluessel) {
+  const neu = new URL(typeof schluessel === 'string' ? schluessel : schluessel.url, self.location.origin);
+  if (!neu.pathname.startsWith('/lern-app/modelle/sprechen/')) return Promise.resolve();
+  return c
+    .keys()
+    .then((alle) =>
+      Promise.all(alle.filter((k) => new URL(k.url).pathname === neu.pathname && k.url !== neu.href).map((k) => c.delete(k))),
+    );
 }
 
 /** Vorrat zuerst, sonst Netz (und vorhalten). */

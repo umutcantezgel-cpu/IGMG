@@ -7,7 +7,8 @@
 // - Start `/lern-app/de`, Lernpfad `/lern-app/ar/de-aus-ar`, Fortschritt `/lern-app/de/fortschritt`: gesamt ≤ 180 KB,
 //   eigener Anteil ≤ 30 KB.
 // - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB.
-// - je Übungstyp ≤ 15 KB: die Datei mit dem Erkennungstext der Komponente (Klassen, aus `.next/static/chunks`).
+// - je Übungstyp ≤ 15 KB: die Datei mit dem Erkennungstext der Komponente (Klassen, aus `.next/static/chunks`); alle
+//   Einträge von `lernapp-budget-erkennung.json` außer `spieler` (schrift_tr und schrift_latein teilen `schrift_wahl`).
 // Exit 1, wenn ein Budget verfehlt ist.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -119,7 +120,11 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
-  uebungstyp: Object.fromEntries(['auswahl', 'paare', 'wortbank'].map((t) => [t, kb(typen[t].gz)])),
+  uebungstyp: Object.fromEntries(
+    Object.keys(ERKENNUNG)
+      .filter((t) => t !== 'spieler')
+      .map((t) => [t, kb(typen[t].gz)]),
+  ),
   spielerChunk: kb(typen.spieler.gz),
 };
 

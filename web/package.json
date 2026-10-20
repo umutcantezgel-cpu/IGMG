@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/lernapp-modelle.mjs",
     "build": "next build",
     "vercel-build": "node scripts/vercel-bau.mjs",
     "start": "next start",
@@ -25,6 +26,7 @@
     "inhalte:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-import.ts",
     "lernapp:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/import.ts",
     "lernapp:pruefen": "tsx --conditions=react-server scripts/lernapp/pruefen.ts",
+    "lernapp:modelle": "node scripts/lernapp-modelle.mjs",
     "inhalte:2026": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-2026.ts",
     "geheimnisse:pruefen": "node scripts/geheimnis-pruefung.mjs --alles",
     "geheimnisse:erzeugen": "node scripts/geheimnisse-erzeugen.mjs",
