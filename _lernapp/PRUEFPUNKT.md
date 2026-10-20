@@ -1,5 +1,10 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 12:45 UTC:** Alle drei Workflows brachen am 17.10. am Sitzungslimit ab; danach Neustart des Workers.
+  Gesichert: Beleg S8 + Werkzeug openiti-passagen 1.1.0 (28 Tests grün), Rahmenpläne de/tr (Entwurf vor Lektorat; je 72
+  Einheiten, Budgets stimmen). L1-Stand: Engine B1 fertig (`agent-ac6673f9…`), Fundament A1 committet bis 12831cc ohne
+  Schlussprüfungen. Weiter: neue Läufe nur für offene Agenten (L0-Rest: S3-Beleg, Recht, Gegenprüfung; Rahmen-Resume ab ar;
+  L1 mit `args.b1Datei` und `args.fortsetzungA1`), siehe Plan „Fortsetzung 17.10., 19:30“.
 - **Stand 17.10.2026 09:30 UTC:** Branch a312562 (S2 in ADR 0042: COOP/COEP für ganz `/lern-app`, `worker-src 'self'`
   ohne `blob:`, Modelle statisch, Arabisch ohne automatische Rückmeldung mit base). Laufen parallel: `wf_6a33ebb6-16f` (S3, S8,
   Recht, Gegenprüfung), `wf_422b0a15-ec2` (Rahmen → Kontrast → Lektorat) und **L1** `wf_b140f343-3db`

@@ -76,6 +76,7 @@ describe('Umschrift und Normalisierung', () => {
   test('lesbare Umschrift mit Artikel und Konjunktion', () => {
     assert.equal(umschrift(ar('ktAb AlThArp')), 'ktāb al-ṭhāra');
     assert.equal(umschrift(ar('AlzrwE wAlvmAr')), 'al-zrwʿ wa-l-thmār');
+    assert.equal(umschrift(ar('ktAb AlSlAp')), 'ktāb al-ṣlāh', 'Ta marbuta nach Alif als -āh');
     assert.ok(!ARABISCH.test(umschrift(ar('bAb Altym~um'))));
   });
 });
@@ -185,6 +186,16 @@ describe('Passagen-Index am synthetischen mARkdown', () => {
     for (const p of index.passagen) assert.ok(!ARABISCH.test(p.kapitelpfadUmschrift));
   });
 
+  test('Band und Seite nach Seitenmarke (Marke am Seitenende)', () => {
+    const [p1, p2, p3] = index.passagen;
+    assert.equal(index.seitenmarken, 1);
+    assert.deepEqual([p1.seiteVon, p1.seiteBis], ['V01P002', 'V01P002']);
+    assert.deepEqual([p2.seiteVon, p2.seiteBis], ['V01P002', null], 'Text nach der letzten Marke hat keine Seite');
+    assert.deepEqual([p3.seiteVon, p3.seiteBis], [null, null]);
+    assert.equal(index.kapitel[0].seite, 'V01P002');
+    assert.equal(index.kapitel[1].seite, null);
+  });
+
   test('bereinige entfernt das OpenITI-Markup', () => {
     const sauber = bereinige(text.slice(index.passagen[0].von, index.passagen[1].bis));
     for (const muster of [/ms\d/, /PageV/, /~~/, /^#/m, /@Q[BE]@/, /AUTO/, /\|/]) assert.doesNotMatch(sauber, muster);
@@ -232,6 +243,25 @@ describe('Sonderfälle', () => {
     assert.throws(() => erzeugeIndex('x', { werk: 'q', standardThema: 'fatwa' }));
   });
 
+  test('Seitenbereich: Marke direkt vor dem Meilenstein zählt nicht zur Folgeseite', () => {
+    const index = erzeugeIndex('#META#Header#End#\n# a b PageV01P001 c ms1 d e PageV01P002 ms2 f PageV02P003\n', { werk: 's' });
+    assert.deepEqual(index.passagen.map((p) => [p.kennung, p.seiteVon, p.seiteBis]), [
+      ['s.ms0001', 'V01P001', 'V01P002'],
+      ['s.ms0002', 'V01P002', 'V01P002'],
+      ['s.ms0003', 'V02P003', 'V02P003'],
+    ]);
+  });
+
+  test('Shamela-HTML (Seitenkopf-Matn) wird entfernt, auch wenn ein Meilenstein im Tag steht', () => {
+    const t =
+      '#META#Header#End#\n# PageV01P001\n# <span class="matn">\n# kopf1 kopf2\n' +
+      '# </span><span class="matn-hr"> </span>text1 text2 <span ms1 class="matn"> kopf3\n# </span>text3 ms2\n';
+    const index = erzeugeIndex(t, { werk: 'h' });
+    assert.deepEqual(index.passagen.map((p) => p.kennung), ['h.ms0001', 'h.ms0002']);
+    for (const p of index.passagen) assert.doesNotMatch(bereinige(t.slice(p.von, p.bis)), /span|class|matn|[<>="]/);
+    assert.deepEqual(index.passagen.map((p) => p.woerter), [4, 2]);
+  });
+
   test('doppelte Meilensteine bekommen eindeutige Kennungen und eine Warnung', () => {
     const index = erzeugeIndex('#META#Header#End#\n# a ms1 b ms1 c ms2\n', { werk: 'd' });
     assert.deepEqual(index.passagen.map((p) => p.kennung), ['d.ms0001', 'd.ms0001-2', 'd.ms0002']);
@@ -260,7 +290,10 @@ describe('Kommandozeile und Ablageschutz', () => {
     for (const endung of ['passagen.json', 'passagen.tsv', 'zuordnung.tsv']) assert.ok(existsSync(join(tmp, 'index', `probe.${endung}`)));
     const zuordnung = readFileSync(join(tmp, 'index', 'probe.zuordnung.tsv'), 'utf8');
     assert.ok(!ARABISCH.test(zuordnung), 'Zuordnungstabelle nur in Umschrift');
-    assert.ok(!ARABISCH.test(readFileSync(join(tmp, 'index', 'probe.passagen.tsv'), 'utf8')));
+    const passagenTsv = readFileSync(join(tmp, 'index', 'probe.passagen.tsv'), 'utf8');
+    assert.ok(!ARABISCH.test(passagenTsv));
+    assert.match(passagenTsv.split('\n')[0], /\tseite_von\tseite_bis$/);
+    assert.match(passagenTsv.split('\n')[1], /^probe\.ms0001\t.*\tV01P002\tV01P002$/);
   });
 
   test('index verweigert Ausgabe im Repository und falsche SHA-256', () => {
