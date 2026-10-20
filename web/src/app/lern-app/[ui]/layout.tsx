@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { CSSProperties } from 'react';
 import { FehlerTexteAnbieter } from '@/components/lernapp/FehlerTexte';
 import { ServiceWorkerAnmeldung } from '@/components/lernapp/ServiceWorkerAnmeldung';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { bauKennung } from '@/lib/lernapp/bau';
 import { LERNAPP_FARBE } from '@/lib/lernapp/farben';
@@ -27,12 +28,14 @@ export const unstable_paramMatching = { ui: 'not-found' } as const;
 export async function generateMetadata(): Promise<Metadata> {
   const sprache = await oberflaeche();
   const t = lernTexte(sprache);
+  // Schalter `lernapp` aus: kein Manifest (die Seite ist ein 404, nichts zum Installieren; ADR 0035)
+  const an = await funktionAn('lernapp');
   return {
     metadataBase: new URL(oeffentlicheAdresse(process.env)),
     title: { default: t('meta.name'), template: `%s · ${t('meta.name')}` },
     description: t('meta.beschreibung'),
     applicationName: t('meta.name'),
-    manifest: `/lern-app/${sprache}/manifest.webmanifest`,
+    ...(an ? { manifest: `/lern-app/${sprache}/manifest.webmanifest` } : {}),
     icons: { icon: '/lern-app/symbole/symbol-192.png', apple: '/lern-app/symbole/apple-touch-icon.png' },
     appleWebApp: { capable: true, title: t('meta.kurzname'), statusBarStyle: 'default' },
   };
@@ -55,11 +58,14 @@ const TITEL_ARABISCH = { '--font-display': 'var(--font-arabisch-ui)' } as CSSPro
  * Wurzel-Layout der Lern-App (ADR 0037 Nr. 2) außerhalb von `[locale]`: Oberflächensprache aus dem Root-Parameter
  * `[ui]` (next/root-params, statisch), `<html lang dir>`; `data-oberflaeche` nimmt die Oberfläche aus der globalen
  * Arabisch-Regel in `globals.css` heraus (ADR 0044 Nr. 4). Schriften wie die Website, dazu Noto Sans Arabic als
- * `--schrift-arabisch-ui`. Eigener Service Worker (Scope `/lern-app/`), Texte der Fehlerseite für `error.tsx`.
+ * `--schrift-arabisch-ui`. Eigener Service Worker (Scope `/lern-app/`), Texte der Fehlerseite für `error.tsx`. Ist der
+ * Schalter `lernapp` aus, rendert hier nur noch die 404 – ohne Anmeldung des Service Workers und ohne Manifest (ADR 0035:
+ * „aus heißt 404“, Gegenprüfung L1).
  */
 export default async function LernAppLayout({ children }: LayoutProps<'/lern-app/[ui]'>) {
   const sprache = await oberflaeche();
   const t = lernTexte(sprache);
+  const an = await funktionAn('lernapp');
   return (
     <html
       lang={sprache}
@@ -80,7 +86,7 @@ export default async function LernAppLayout({ children }: LayoutProps<'/lern-app
         >
           {children}
         </FehlerTexteAnbieter>
-        <ServiceWorkerAnmeldung ui={sprache} bau={bauKennung()} />
+        {an ? <ServiceWorkerAnmeldung ui={sprache} bau={bauKennung()} /> : null}
       </body>
     </html>
   );

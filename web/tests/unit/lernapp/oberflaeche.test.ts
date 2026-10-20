@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { sichererRuecksprung } from '@/lib/konto/regeln';
@@ -107,10 +108,25 @@ describe('Einstellungen auf dem Gerät', () => {
 
 describe('Bau-Kennung der Hülle', () => {
   it('aus der Commit-Kennung des Baus, sonst Bereitstellung, sonst „lokal“; nur a–z0–9, höchstens 12 Zeichen', () => {
-    expect(bauKennung({ VERCEL_GIT_COMMIT_SHA: 'A1B2c3d4e5f6a7b8' })).toBe('a1b2c3d4e5f6');
-    expect(bauKennung({ VERCEL_DEPLOYMENT_ID: 'dpl_X9y8' })).toBe('dplx9y8');
-    expect(bauKennung({})).toBe('lokal');
-    expect(bauKennung({ VERCEL_GIT_COMMIT_SHA: '../--' })).toBe('lokal');
+    const ohneBau = join(tmpdir(), 'igmg-ohne-bau');
+    expect(bauKennung({ VERCEL_GIT_COMMIT_SHA: 'A1B2c3d4e5f6a7b8' }, ohneBau)).toBe('a1b2c3d4e5f6');
+    expect(bauKennung({ VERCEL_DEPLOYMENT_ID: 'dpl_X9y8' }, ohneBau)).toBe('dplx9y8');
+    expect(bauKennung({ BAU_KENNUNG: 'Docker-42' }, ohneBau)).toBe('docker42');
+    expect(bauKennung({}, ohneBau)).toBe('lokal');
+    expect(bauKennung({ VERCEL_GIT_COMMIT_SHA: '../--' }, ohneBau)).toBe('lokal');
+    // Ohne Vercel und ohne BAU_KENNUNG: Hash des Bau-Manifests – jeder Bau mit anderen Programmteilen hat eine neue Hülle
+    const bau = mkdtempSync(join(tmpdir(), 'igmg-bau-'));
+    writeFileSync(join(bau, 'BUILD_ID'), 'zufall-1');
+    const ausId = bauKennung({}, bau);
+    expect(ausId).toMatch(/^[0-9a-f]{12}$/);
+    writeFileSync(join(bau, 'build-manifest.json'), '{"a":"/_next/static/chunks/a-1.js"}');
+    const eins = bauKennung({}, bau);
+    expect(eins).toMatch(/^[0-9a-f]{12}$/);
+    expect(eins).not.toBe(ausId);
+    expect(bauKennung({}, bau)).toBe(eins);
+    writeFileSync(join(bau, 'build-manifest.json'), '{"a":"/_next/static/chunks/a-2.js"}');
+    expect(bauKennung({}, bau)).not.toBe(eins);
+    rmSync(bau, { recursive: true, force: true });
   });
 });
 

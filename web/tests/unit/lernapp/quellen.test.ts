@@ -21,6 +21,7 @@ describe('Quellen der Lern-App', () => {
       idb: 'idb',
       'ts-fsrs': 'ts-fsrs',
       'fastest-levenshtein': 'fastest-levenshtein',
+      zod: 'zod',
     };
     for (const b of BIBLIOTHEKEN) {
       const p = paket(zuPaket[b.id]);
@@ -43,6 +44,25 @@ describe('Quellen der Lern-App', () => {
       expect(normal(readFileSync(join(WEB, lizenz), 'utf8')), s.id).toContain(normal(s.urheber));
     }
     expect(SCHRIFTEN.map((s) => s.id)).toEqual(['atkinson-hyperlegible-next', 'noto-sans-arabic', 'amiri', 'igmg-wetzlar-titel']);
+  });
+
+  it('jede Bibliothek, die Client-Code der Lern-App importiert, steht in der Liste', () => {
+    const ids = new Set(BIBLIOTHEKEN.map((b) => b.id));
+    // Pakete des Client-Codes (Komponenten und die im Browser laufenden Module unter lib/lernapp) → Eintrag der Liste
+    const imClient: Record<string, string> = {
+      react: 'react',
+      'react-dom': 'react',
+      next: 'next',
+      'lucide-react': 'lucide-react',
+      idb: 'idb',
+      'ts-fsrs': 'ts-fsrs',
+      'fastest-levenshtein': 'fastest-levenshtein',
+      zod: 'zod',
+    };
+    for (const id of Object.values(imClient)) expect(ids.has(id), id).toBe(true);
+    expect(normal(readFileSync(join(WEB, 'node_modules', 'zod', 'LICENSE'), 'utf8'))).toContain(
+      normal(BIBLIOTHEKEN.find((b) => b.id === 'zod')!.urheber),
+    );
   });
 
   it('Lizenztexte gleich den Lizenzdateien', () => {

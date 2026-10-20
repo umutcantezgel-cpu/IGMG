@@ -144,7 +144,7 @@
   },
   "einstellungen": {
     "titel": "Ayarlar",
-    "einleitung": "Her şey bu cihazda kaydedilir.",
+    "einleitung": "Ayarların bu cihaz için geçerlidir.",
     "oberflaeche": "Arayüz dili",
     "oberflaecheText": "Düğmeler, uyarılar ve açıklamalar bu dilde görünür.",
     "ausgang": "Ana dil",
@@ -169,7 +169,17 @@
     "gespeichert": "Kaydedildi.",
     "nichtGespeichert": "Bu cihazda şu an bir şey kaydedilemiyor.",
     "daten": "Verilerin",
-    "datenText": "Hesap olmadan her şey bu cihazda kalır. Öğrenme uygulaması çerez kullanmaz ve izleyici kullanmaz."
+    "datenText": "Hesap olmadan her şey bu cihazda kalır. Öğrenme uygulaması çerez kullanmaz ve izleyici kullanmaz.",
+    "sichern": "Dosya olarak kaydet",
+    "sichernText": "Öğrenme durumunu bir dosyaya kaydet, örneğin yeni bir cihaz için. Dosyada hesap bilgisi yoktur.",
+    "einlesen": "Dosyayı içe aktar",
+    "einlesenText": "Kaydedilmiş dosya bu cihazdaki öğrenme durumuyla birleştirilir. Mevcut olanlar korunur.",
+    "gesichert": "Dosya kaydedildi.",
+    "nichtsZuSichern": "Bu cihazda henüz kayıtlı bir öğrenme durumu yok.",
+    "eingelesen": "{n, plural, one {# kayıt eklendi.} other {# kayıt eklendi.}}",
+    "fehlerGross": "Dosya çok büyük.",
+    "fehlerFormat": "Bu dosya öğrenme uygulamasının bir yedeği değil.",
+    "nurSitzung": "Bu pencerede hiçbir şey kalıcı olarak kaydedilmez, örneğin gizli bir pencerede. Pencereyi kapatınca öğrenme durumun kalmaz. Önce dosya olarak kaydet."
   },
   "quellen": {
     "titel": "Kaynaklar ve lisanslar",

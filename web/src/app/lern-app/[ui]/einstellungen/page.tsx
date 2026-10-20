@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { DatenInsel } from '@/components/lernapp/inseln/DatenInsel';
 import { EinstellungenFormular } from '@/components/lernapp/inseln/EinstellungenFormular';
 import { KontoInsel } from '@/components/lernapp/inseln/KontoInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
@@ -20,7 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
  * Einstellungen (PLAN §3.1, ADR 0037 Nr. 7): Oberflächensprache als Links auf dieselbe Seite in der anderen Sprache
  * (statisch), Ausgangssprache, Tagesziel, Ziffern (nur `ar`), Hör- und Sprechübungen als Insel mit Speicher auf dem
  * Gerät; reduzierte Bewegung folgt dem System (nur Hinweis). Mit Schalter `lernapp_sync` zusätzlich „Konto und Abgleich“
- * (Insel; ohne Klick keine Anfrage). Statisch, ohne Cookies.
+ * (Insel; ohne Klick keine Anfrage). „Deine Daten“: Lernstand als Datei sichern und einlesen (Art. 20 DSGVO) und der
+ * Hinweis, wenn das Gerät nichts dauerhaft speichern kann (Insel). Statisch, ohne Cookies.
  */
 export default async function Einstellungen() {
   await verlangeLernApp();
@@ -70,6 +72,7 @@ export default async function Einstellungen() {
             {t('einstellungen.daten')}
           </h2>
           <p className="text-16 text-tinte-2">{t('einstellungen.datenText')}</p>
+          <DatenInsel ui={ui} texte={rohTexte(ui, 'einstellungen')} />
         </section>
       </div>
     </Rahmen>

@@ -1,3 +1,4 @@
+import { funktionAn } from '@/lib/funktionen';
 import { LERNAPP_FARBE } from '@/lib/lernapp/farben';
 import { OBERFLAECHEN, istOberflaeche, richtung } from '@/lib/lernapp/kurse';
 import { lernTexte } from '@/lib/lernapp/texte';
@@ -11,11 +12,12 @@ export function generateStaticParams() {
  * `/lern-app/` für alle drei Sprachen (eine installierte App, die in der Sprache startet, in der sie installiert wurde),
  * `scope` `/lern-app/`, getrennt vom Manifest der Website (`app/manifest.ts`, Scope `/`). Name als Platzhalter, bis der
  * Vorstand entscheidet (OFFENE FRAGE ADR 0037); Symbole aus dem Achtstern (`scripts/lernapp-symbole.mjs`). Statisch beim
- * Bau erzeugt, ein Jahr im CDN (`s-maxage`); ein neuer Bau ersetzt es.
+ * Bau erzeugt, ein Jahr im CDN (`s-maxage`); ein neuer Bau ersetzt es. Schalter `lernapp` aus → 404 (ADR 0035).
  */
 export async function GET(_anfrage: Request, { params }: RouteContext<'/lern-app/[ui]/manifest.webmanifest'>) {
   const { ui } = await params;
-  if (!istOberflaeche(ui)) return new Response(null, { status: 404 });
+  if (!istOberflaeche(ui) || !(await funktionAn('lernapp')))
+    return new Response(null, { status: 404, headers: { 'Cache-Control': 'no-store' } });
   const t = lernTexte(ui);
   const manifest = {
     id: '/lern-app/',

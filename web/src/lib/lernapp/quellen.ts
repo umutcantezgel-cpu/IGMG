@@ -65,6 +65,15 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     adresse: 'https://github.com/ka-weihe/fastest-levenshtein',
     lizenz: 'MIT',
   },
+  {
+    // Schemas der Aufgaben, Ereignisse, Pakete und des Exports laufen auch im Browser (`lib/lernapp/z.ts`, Gegenprüfung L1)
+    id: 'zod',
+    name: 'Zod',
+    version: '4.6.5',
+    urheber: 'Copyright (c) 2025 Colin McDonnell',
+    adresse: 'https://zod.dev',
+    lizenz: 'MIT',
+  },
 ];
 
 export const SCHRIFTEN: readonly LernQuelle[] = [
