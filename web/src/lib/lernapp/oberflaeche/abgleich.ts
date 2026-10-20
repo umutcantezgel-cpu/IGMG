@@ -35,9 +35,18 @@ function planerHolen(): Promise<Abgleich> {
 
 let sitzung: Promise<boolean> | null = null;
 
-/** Sitzung einmal je Seitenaufruf prüfen (vor dem ersten Abgleich, auch vor dem ersten `nachHandlung`). */
+/**
+ * Sitzung einmal je Seitenaufruf prüfen (vor dem ersten Abgleich, auch vor dem ersten `nachHandlung`). Nur ein Ja gilt für
+ * den Rest des Aufrufs; nach einem Nein (offline, anderes Konto, Einwilligung fehlt) fragt die nächste Handlung erneut –
+ * sonst bliebe ein offline begonnener Aufruf ohne Abgleich, bis die Seite neu lädt.
+ */
 function sitzungEinmal(): Promise<boolean> {
-  sitzung ??= planerHolen().then((p) => p.pruefeSitzung());
+  sitzung ??= planerHolen()
+    .then((p) => p.pruefeSitzung())
+    .then((ok) => {
+      if (!ok) sitzung = null;
+      return ok;
+    });
   return sitzung;
 }
 

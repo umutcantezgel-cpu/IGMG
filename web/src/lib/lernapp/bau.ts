@@ -13,7 +13,9 @@ import { join } from 'node:path';
  *    Inhalts-Hashes; fehlt es, die `BUILD_ID`): So bekommt auch dort jeder Bau mit geändertem Programm eine neue Hülle,
  *    statt dass `…-schale-vlokal` nur wächst (Gegenprüfung L1);
  * 3. sonst „lokal“ (Tests, Entwicklung).
- * Nur Kleinbuchstaben und Ziffern, höchstens 12 Zeichen (der Worker prüft dasselbe Muster). Nur auf dem Server (Layout).
+ * Nur Kleinbuchstaben und Ziffern, höchstens 12 Zeichen (der Worker prüft dasselbe Muster). Nur auf dem Server (Layout,
+ * beim Bau vorgerendert); das Lesen ist vom Datei-Tracing ausgenommen (`turbopackIgnore`), sonst nähme der Bau das ganze
+ * Projekt in die Server-Ausgabe.
  */
 export function bauKennung(env: Readonly<Record<string, string | undefined>> = process.env, ordner = join(process.cwd(), '.next')): string {
   const bereinigt = (roh: string) =>
@@ -26,7 +28,7 @@ export function bauKennung(env: Readonly<Record<string, string | undefined>> = p
   for (const datei of ['build-manifest.json', 'app-build-manifest.json', 'BUILD_ID']) {
     try {
       return createHash('sha256')
-        .update(readFileSync(join(ordner, datei)))
+        .update(readFileSync(/*turbopackIgnore: true*/ join(ordner, datei)))
         .digest('hex')
         .slice(0, 12);
     } catch {

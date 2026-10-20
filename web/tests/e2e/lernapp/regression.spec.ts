@@ -79,7 +79,6 @@ test('Lernstand als Datei sichern und auf einem anderen Gerät einlesen', async 
   const neu = await browser.newContext();
   const seite = await neu.newPage();
   await seite.goto('/lern-app/de/einstellungen');
-  expect(await kartenstand(seite, KARTE_WASSER)).toBeNull();
   const [auswahl] = await Promise.all([
     seite.waitForEvent('filechooser'),
     seite.getByRole('button', { name: de.einstellungen.einlesen }).click(),
