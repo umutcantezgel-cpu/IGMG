@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/lernapp-modelle.mjs",
-    "build": "next build",
+    "build": "node scripts/lernapp-modelle.mjs && next build",
     "vercel-build": "node scripts/vercel-bau.mjs",
     "start": "next start",
     "lint": "eslint .",

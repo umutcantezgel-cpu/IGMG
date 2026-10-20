@@ -4,7 +4,7 @@ Herkunft, Prüfsummen und Lizenzen der Dateien, die die Sprechübung vom eigenen
 S2/S5 Nr. 4–8, KERN 4.0 §1 und §9, PLAN §4.2). Genau **10 Dateien** unter `/lern-app/modelle/`, zusammen ≈ 95 MB; sie
 werden nur nach dem Knopf „Sprachprüfung laden“ geholt und bleiben im Vorrat `igmg-lernapp-modelle` des Lern-App-SW.
 
-Der Bauschritt `web/scripts/lernapp-modelle.mjs` (`pnpm lernapp:modelle`, auch `prebuild` und `scripts/vercel-bau.mjs`)
+Der Bauschritt `web/scripts/lernapp-modelle.mjs` (`pnpm lernapp:modelle`, auch in `pnpm build` und `scripts/vercel-bau.mjs`)
 liest die Tabelle unten, prüft jede Datei gegen ihre SHA-256 und bricht bei einer Abweichung ab:
 
 - Modelldateien liegen im Repository (`web/public/lern-app/modelle/whisper-base-64da572/`) und werden nur geprüft.

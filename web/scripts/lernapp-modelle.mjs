@@ -6,7 +6,8 @@
 //    (dist/transformers.min.js) nach public/lern-app/modelle/sprechen/whisper.worker.mjs – mit E2E_ATTRAPPEN=1 stattdessen
 //    die Attrappe (whisper-attrappe.worker.ts, nur Testbau; in der Produktion verweigert).
 // 4. Genau 10 Dateien unter public/lern-app/modelle/.
-// Aufruf: pnpm lernapp:modelle (auch prebuild und scripts/vercel-bau.mjs). Exit 1 bei jeder Abweichung.
+// Aufruf: pnpm lernapp:modelle (auch in `pnpm build` und scripts/vercel-bau.mjs; pnpm führt `prebuild` nicht aus).
+// Exit 1 bei jeder Abweichung.
 import { createHash } from 'node:crypto';
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, realpathSync, rmSync, statSync } from 'node:fs';
 import { createRequire } from 'node:module';
