@@ -2,13 +2,13 @@ import { connection } from 'next/server';
 import { datenbankVerfuegbar } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
 import { hatZugang } from '@/lib/konto/zugang';
-import { BREMSE, HOECHSTENS_BYTES, SyncAnfrageSchema, type SyncFehler } from '@/lib/lernapp/sync/protokoll';
+import { BREMSE, GRENZEN, HOECHSTENS_BYTES, SyncAnfrageSchema, type SyncFehler } from '@/lib/lernapp/sync/protokoll';
 import { gleicheKontoAb, gleicherUrsprung, lernappEinwilligung, vermerkeZuweisungen } from '@/lib/lernapp/sync/server';
 import { ladeKontoMitFaktor } from '@/lib/rechte/gemeinde';
 import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
 
 /**
- * Abgleich der Lern-App (ADR 0038 Nr. 5–7, PLAN §3.8): `POST /api/lernapp/sync` mit `{ geraet, cursor, ereignisse, basis? }`
+ * Abgleich der Lern-App (ADR 0038 Nr. 5–7, PLAN §3.8): `POST /api/lernapp/sync` mit `{ konto, geraet, cursor, ereignisse, basis? }`
  * (Format in `src/lib/lernapp/sync/protokoll.ts`). Reihenfolge der Prüfungen:
  * 1. Datenbank und Schalter `lernapp_sync` (setzt `lernapp` und `konten` voraus) – sonst 404 ohne Körper.
  * 2. Gleicher Ursprung (Fetch-Metadaten bzw. `Origin`) – sonst 403 `ursprung`.
@@ -16,6 +16,9 @@ import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
  * 4. Einwilligung `lernapp` (Art. 9 DSGVO), bei Kindern von den Eltern – sonst 403 `einwilligung` bzw. `eltern`.
  * 5. Bremse 30 Anfragen je Minute und Konto – sonst 429 `bremse`.
  * 6. JSON ≤ 256 KB, Zod (Hülle streng, Ereignisse einzeln) – sonst 413 `zuGross`, 415/400 `anfrage` bzw. 400 `pruefen`.
+ * 7. Das Profil ist an das Konto der Sitzung gebunden (`konto`) – sonst 409 `konto`, nichts wird geschrieben (S-L1 M-1:
+ *    Kontowechsel auf einem geteilten Gerät oder in einem zweiten Tab vermischt sonst Lernstände zweier Konten).
+ * 8. Grenzen je Konto (`GRENZEN`: Ereignisse gesamt, je 24 Stunden, Geräte) – sonst 429 `grenze`, nichts wird geschrieben.
  * Danach schreibt `gleicheKontoAb` idempotent und antwortet mit den fremden Ereignissen nach dem Zeiger. Nie
  * zwischengespeichert; der Service Worker der Lern-App hält `/api/**` ohnehin nie vor.
  */
@@ -71,10 +74,16 @@ export async function POST(anfrage: Request) {
   if (!roh.ok) return antwort(roh.status, roh.fehler);
   const p = SyncAnfrageSchema.safeParse(roh.wert);
   if (!p.success) return antwort(400, 'pruefen');
+  if (p.data.konto !== konto.benutzerId) return antwort(409, 'konto');
 
   const jetzt = new Date();
-  const { antwort: ergebnis, neue } = await gleicheKontoAb(konto.benutzerId, p.data, jetzt);
+  const ergebnis = await gleicheKontoAb(konto.benutzerId, p.data, jetzt);
+  if (ergebnis.grenze) {
+    console.warn(`[lernapp-sync] Grenze je Konto erreicht: ${ergebnis.grenze}`);
+    return antwort(429, 'grenze', { 'Retry-After': String(GRENZEN.wartenSekunden) });
+  }
   // Zuweisungen der Lehrkraft nur mit Schalter `lernapp_gruppen` (Personendaten für die Gruppe)
-  if (neue.some((e) => e.art === 'lektion') && (await funktionAn('lernapp_gruppen'))) await vermerkeZuweisungen(konto.benutzerId, jetzt);
-  return Response.json(ergebnis, { headers: KOPF });
+  if (ergebnis.neue.some((e) => e.art === 'lektion') && (await funktionAn('lernapp_gruppen')))
+    await vermerkeZuweisungen(konto.benutzerId, jetzt);
+  return Response.json(ergebnis.antwort, { headers: KOPF });
 }

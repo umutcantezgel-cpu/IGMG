@@ -26,7 +26,10 @@ export type KontoTexte = {
   nein: string;
   anderesKonto: string;
   neuesProfil: string;
-  grund: Record<'aus' | 'netz' | 'antwort' | 'anmeldung' | 'einwilligung' | 'eltern' | 'bremse' | 'nichtGebunden', string>;
+  grund: Record<
+    'aus' | 'netz' | 'antwort' | 'anmeldung' | 'einwilligung' | 'eltern' | 'bremse' | 'nichtGebunden' | 'konto' | 'grenze',
+    string
+  >;
 };
 
 /** Text zu einem Grund, warum kein Abgleich stattfand (Codes aus `lokal/sync.ts`). */
@@ -47,6 +50,10 @@ export function grundText(grund: SyncGrund | 'sitzung', t: KontoTexte['grund']):
       return t.bremse;
     case 'nichtGebunden':
       return t.nichtGebunden;
+    case 'konto':
+      return t.konto;
+    case 'grenze':
+      return t.grenze;
     default:
       return t.antwort;
   }
@@ -84,10 +91,15 @@ export function KontoInsel({ ui, texte }: { ui: Oberflaeche; texte: KontoTexte }
   const gleicheAb = useCallback(
     async (profil: Profil) => {
       const { sp } = await vorhandenesProfil();
-      const { synchronisiere } = await import('@/lib/lernapp/lokal/sync');
+      const { synchronisiere, ladeSitzung } = await import('@/lib/lernapp/lokal/sync');
       const e: SyncErgebnis = await synchronisiere(sp, profil);
       setMeldung(e.ok ? texte.fertig : grundText(e.grund, texte.grund));
       if (e.ok) meldeStand();
+      // Die Sitzung gehört zu einem anderen Konto als das Profil (S-L1 M-1): Bindungsfrage statt Abgleich
+      if (!e.ok && e.grund === 'konto') {
+        const s = await ladeSitzung();
+        if (s?.angemeldet) return setLage({ art: 'anderesKonto', konto: s.konto });
+      }
       setLage({ art: 'verbunden', zuletzt: (await sp.lies('sync', profil.id))?.zuletzt ?? null });
     },
     [texte],

@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, eq, gt, gte, inArray, isNotNull, isNull, max, ne, or, sql } from 'drizzle-orm';
+import { and, asc, desc, eq, gt, gte, inArray, isNotNull, isNull, lt, lte, max, ne, or, sql } from 'drizzle-orm';
 import { db, schema, type Transaktion } from '@/lib/db';
 import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { einwilligungsLage, type EinwilligungsLage } from '@/lib/konto/sechzehn';
@@ -9,25 +9,30 @@ import { heuteStand, leiteAb } from '../ereignisse/ableiten';
 import { addiereTage, klemmeEreignis, lerntagVon } from '../ereignisse/serie';
 import { type Ereignis, EreignisSchema, GeraetSchema, istArt } from '../ereignisse/typen';
 import { ereignisSchluessel, vereinige } from '../ereignisse/zusammenfuehren';
-import { istRichtung, pruefeLernappBezug } from '../kurse';
-import { lektionAusPaket } from '../paket/bauen';
+import { istRichtung, pruefeLernappBezug, zerlegeRichtung } from '../kurse';
+import { lektionAusPaket, lektionImPaket } from '../paket/bauen';
 import { type KartenBasis, type KartenBewertung, type Kartenstand, type Note, spieleKarteNach } from '../srs';
-import { type EinwilligungsStand, HOECHSTENS_FREMDE, type SyncAnfrage, type SyncAntwort } from './protokoll';
+import { type EinwilligungsStand, GRENZEN, HOECHSTENS_FREMDE, type SyncAnfrage, type SyncAntwort } from './protokoll';
 
 /**
  * Abgleich auf dem Server (ADR 0038 Nr. 5–7 und 10, KERN 4.0 §5/§6). Die Route `/api/lernapp/sync` prüft vorher Schalter,
  * Ursprung, Sitzung, Einwilligung und Bremse; hier geschieht das Schreiben und Lesen eines Kontos:
  *
  * 1. Ereignisse einzeln mit Zod prüfen, Uhrzeit klemmen (Empfang + 5 min, Lerntag), innerhalb der Anfrage vereinigen.
- * 2. In einer Transaktion unter einer Sperre je Konto: Lernprofil anlegen bzw. `zuletztAktivAm` setzen, Ereignisse mit
+ * 2. In einer Transaktion unter einer Sperre je Konto (mit `statement_timeout`): Grenzen je Konto prüfen (`GRENZEN`, sonst
+ *    `grenze` ohne zu schreiben), Lernprofil anlegen bzw. `zuletztAktivAm` setzen, Ereignisse mit
  *    `ON CONFLICT DO NOTHING` schreiben, Kartenstand der betroffenen Karten mit **derselben** reinen Funktion wie auf dem Gerät
- *    nachspielen (`srs.ts`, ab der verdichteten Basis), Lerntage (`lernapp_tag`) neu ableiten, fremde Ereignisse nach dem
+ *    nachspielen (`srs.ts`, ab der verdichteten Basis), die berührten Lerntage (`lernapp_tag`) aus den Ereignissen genau
+ *    dieser Tage neu ableiten (nie das ganze Protokoll, S-L1 M-2), fremde Ereignisse nach dem
  *    Zeiger lesen. Die Sperre hält alle Schreiber eines Kontos hintereinander – so überspringt der Zeiger nie ein Ereignis,
  *    das eine parallele Transaktion noch nicht festgeschrieben hat.
- * 3. Danach (außerhalb der Transaktion): erledigte Zuweisungen der Lehrkraft vermerken (`aufgabe_erledigt`).
+ * 3. Danach (außerhalb der Transaktion): erledigte Zuweisungen der Lehrkraft vermerken (`aufgabe_erledigt`), nur aus den
+ *    Lektions-Ereignissen der offenen Zuweisungen.
  */
 
 const sperre = (benutzerId: string) => sql`select pg_advisory_xact_lock(hashtext(${`igmg:lernapp-sync:${benutzerId}`}))`;
+/** Obergrenze je Anweisung in der Abgleich-Transaktion (S-L1 M-2); die Funktion endet so vor ihrer eigenen Zeitgrenze. */
+const ZEITGRENZE = sql.raw(`set local statement_timeout = '15s'`);
 
 /** Nur vom eigenen Ursprung: `Sec-Fetch-Site: same-origin`; ohne Fetch-Metadaten muss `Origin` (falls gesendet) zum Host passen. */
 export function gleicherUrsprung(h: Headers): boolean {
@@ -226,37 +231,68 @@ export async function erneuereKarten(tx: Transaktion, benutzerId: string, karten
 
 // ——— Lerntage (für die Gruppenwoche, ADR 0043) ———
 
-const TAG_ARTEN = ['lektion', 'xp', 'tagesziel', 'pause'] as const;
-
-/** Lerntage, die neue Ereignisse berühren, aus allen Lektions-, XP-, Ziel- und Pause-Ereignissen neu ableiten. */
+/**
+ * Lerntage, die neue Ereignisse berühren, neu ableiten (S-L1 M-2: nie das ganze Protokoll). Gelesen werden nur:
+ * - Lektionen und XP der berührten Tage,
+ * - das zuletzt gesetzte Tagesziel vor dem ersten berührten Tag und alle Tagesziele im Bereich (`leiteAb` nimmt je Tag das
+ *   letzte Ziel nach Zeit mit `tag` ≤ Tag; ein früheres, das vor dem Bereich liegt, kann nie gewinnen),
+ * - die Pausen der berührten Kalenderjahre (`ruhetageAus` zählt höchstens 30 Ruhetage je Jahr).
+ * Ein neues Tagesziel wirkt ab seinem Tag: Dann gehören alle schon bekannten Lerntage ab dort dazu.
+ */
 export async function erneuereTage(tx: Transaktion, benutzerId: string, neue: readonly Ereignis[], jetzt: Date): Promise<void> {
   const betroffen = new Set<string>();
   for (const e of neue) {
     if (e.art === 'bewertung' || e.art === 'lektion' || e.art === 'xp') betroffen.add(e.tag);
     if (e.art === 'pause') for (let t = e.daten.von; t <= e.daten.bis; t = addiereTage(t, 1)) betroffen.add(t);
   }
-  const ziele = neue.filter(istArt('tagesziel')).map((e) => e.tag);
-  if (!betroffen.size && !ziele.length) return;
+  const ziele = neue
+    .filter(istArt('tagesziel'))
+    .map((e) => e.tag)
+    .sort();
+  if (ziele.length)
+    for (const t of await tx
+      .select({ tag: schema.lernappTag.tag })
+      .from(schema.lernappTag)
+      .where(and(eq(schema.lernappTag.benutzerId, benutzerId), gte(schema.lernappTag.tag, ziele[0]!))))
+      betroffen.add(t.tag);
+  if (!betroffen.size) return;
 
-  const zeilen = await tx
+  const E = schema.lernappEreignis;
+  const tage = [...betroffen].sort();
+  const erster = tage[0]!;
+  const letzter = tage.at(-1)!;
+  const konto = eq(E.benutzerId, benutzerId);
+  const lernen = await tx
     .select(ereignisSpalten)
-    .from(schema.lernappEreignis)
-    .where(and(eq(schema.lernappEreignis.benutzerId, benutzerId), inArray(schema.lernappEreignis.art, [...TAG_ARTEN])));
-  const liste = zeilen.flatMap((z) => {
+    .from(E)
+    .where(and(konto, inArray(E.art, ['lektion', 'xp']), inArray(E.tag, tage)));
+  const zielVorher = await tx
+    .select(ereignisSpalten)
+    .from(E)
+    .where(and(konto, eq(E.art, 'tagesziel'), lt(E.tag, erster)))
+    .orderBy(desc(E.am), desc(E.geraet), desc(E.seq))
+    .limit(1);
+  const zieleImBereich = await tx
+    .select(ereignisSpalten)
+    .from(E)
+    .where(and(konto, eq(E.art, 'tagesziel'), gte(E.tag, erster), lte(E.tag, letzter)));
+  const pausen = await tx
+    .select(ereignisSpalten)
+    .from(E)
+    .where(
+      and(
+        konto,
+        eq(E.art, 'pause'),
+        sql`${E.daten}->>'bis' >= ${`${erster.slice(0, 4)}-01-01`}`,
+        sql`${E.daten}->>'von' <= ${`${letzter.slice(0, 4)}-12-31`}`,
+      ),
+    );
+  const liste = [...lernen, ...zielVorher, ...zieleImBereich, ...pausen].flatMap((z) => {
     const p = EreignisSchema.safeParse(alsEreignis(z));
     return p.success ? [p.data] : [];
   });
   const a = leiteAb(liste, lerntagVon(jetzt, 'UTC'));
-  if (ziele.length) {
-    const ab = ziele.sort()[0]!;
-    for (const t of a.tage.keys()) if (t >= ab) betroffen.add(t);
-    for (const t of await tx
-      .select({ tag: schema.lernappTag.tag })
-      .from(schema.lernappTag)
-      .where(and(eq(schema.lernappTag.benutzerId, benutzerId), gte(schema.lernappTag.tag, ab))))
-      betroffen.add(t.tag);
-  }
-  const werte = [...betroffen].sort().map((tag) => {
+  const werte = tage.map((tag) => {
     const s = heuteStand(a, tag);
     return {
       benutzerId,
@@ -281,20 +317,80 @@ export async function erneuereTage(tx: Transaktion, benutzerId: string, neue: re
     });
 }
 
+// ——— Grenzen je Konto (S-L1 M-2) ———
+
+export type GrenzeArt = 'gesamt' | 'jeTag' | 'geraete';
+export type Grenzen = { gesamt: number; jeTag: number; geraete: number; seqAbstand: number };
+
+/**
+ * Prüft die Grenzen je Konto für die geprüften Ereignisse einer Anfrage (unter der Sperre des Kontos). Ergebnis: die
+ * überschrittene Grenze (dann wird nichts geschrieben) bzw. `null` und die Ereignisse, deren Folgenummer zu weit über der
+ * höchsten gespeicherten ihres Geräts liegt (`abgelehnt`).
+ */
+export async function pruefeGrenzen(
+  tx: Transaktion,
+  benutzerId: string,
+  ereignisse: readonly Ereignis[],
+  jetzt: Date,
+  grenzen: Grenzen = GRENZEN,
+): Promise<{ grenze: GrenzeArt | null; zuWeit: Ereignis[] }> {
+  if (!ereignisse.length) return { grenze: null, zuWeit: [] };
+  const E = schema.lernappEreignis;
+  const [z] = await tx
+    .select({
+      gesamt: sql<number>`count(*)::int`,
+      jeTag: sql<number>`(count(*) filter (where ${E.empfangenAm} > ${new Date(jetzt.getTime() - 86_400_000).toISOString()}::timestamptz))::int`,
+      geraete: sql<number>`count(distinct ${E.geraet})::int`,
+    })
+    .from(E)
+    .where(eq(E.benutzerId, benutzerId));
+  const geraete = [...new Set(ereignisse.map((e) => e.geraet))];
+  const hoechste = new Map(
+    (
+      await tx
+        .select({ geraet: E.geraet, seq: max(E.seq) })
+        .from(E)
+        .where(and(eq(E.benutzerId, benutzerId), inArray(E.geraet, geraete)))
+        .groupBy(E.geraet)
+    ).map((h) => [h.geraet, h.seq ?? -1]),
+  );
+  const n = ereignisse.length;
+  const neueGeraete = geraete.filter((g) => !hoechste.has(g)).length;
+  let grenze: GrenzeArt | null = null;
+  if (Number(z?.gesamt ?? 0) + n > grenzen.gesamt) grenze = 'gesamt';
+  else if (Number(z?.jeTag ?? 0) + n > grenzen.jeTag) grenze = 'jeTag';
+  else if (Number(z?.geraete ?? 0) + neueGeraete > grenzen.geraete) grenze = 'geraete';
+  const zuWeit = ereignisse.filter((e) => e.seq > (hoechste.get(e.geraet) ?? -1) + grenzen.seqAbstand);
+  return { grenze, zuWeit };
+}
+
 // ——— Abgleich ———
 
-export type AbgleichErgebnis = { antwort: SyncAntwort; neue: Ereignis[] };
+export type AbgleichErgebnis = { antwort: SyncAntwort; neue: Ereignis[]; grenze?: undefined } | { grenze: GrenzeArt };
 
 /**
  * Ein Abgleich eines Kontos (nach allen Prüfungen der Route). Idempotent: Dieselbe Anfrage noch einmal schreibt nichts
  * und liefert dieselben fremden Ereignisse.
  */
-export async function gleicheKontoAb(benutzerId: string, anfrage: SyncAnfrage, jetzt = new Date()): Promise<AbgleichErgebnis> {
+export async function gleicheKontoAb(
+  benutzerId: string,
+  anfrage: SyncAnfrage,
+  jetzt = new Date(),
+  grenzen: Grenzen = GRENZEN,
+): Promise<AbgleichErgebnis> {
   const geprueft = pruefeEreignisse(anfrage.ereignisse, jetzt);
   const vonCursor = anfrage.cursor === null ? 0 : Number(anfrage.cursor);
 
-  return db.transaction(async (tx) => {
+  return db.transaction(async (tx): Promise<AbgleichErgebnis> => {
     await tx.execute(sperre(benutzerId));
+    await tx.execute(ZEITGRENZE);
+    const { grenze, zuWeit } = await pruefeGrenzen(tx, benutzerId, geprueft.ereignisse, jetzt, grenzen);
+    if (grenze) return { grenze };
+    if (zuWeit.length) {
+      const weg = new Set(zuWeit.map(ereignisSchluessel));
+      geprueft.ereignisse = geprueft.ereignisse.filter((e) => !weg.has(ereignisSchluessel(e)));
+      geprueft.abgelehnt.push(...zuWeit.map((e) => ({ geraet: e.geraet, seq: e.seq })));
+    }
     const [profil] = await tx
       .insert(schema.lernappProfil)
       .values({ benutzerId, zuletztAktivAm: jetzt })
@@ -420,38 +516,48 @@ export async function vermerkeZuweisungen(benutzerId: string, jetzt = new Date()
     );
   if (!offen.length) return 0;
 
+  // Je offene Zuweisung die nötigen Lektionen (Schlüssel der Datenbank); gelesen werden nur deren Ereignisse (S-L1 M-2)
+  const noetig: { aufgabeId: string; lernendeId: string; kurs: string; lektionen: string[] }[] = [];
+  const paketFormen = new Set<string>();
+  for (const o of offen) {
+    const b = pruefeLernappBezug(o.bezug);
+    if (!b?.einheit || !istRichtung(b.kurs)) continue;
+    let lektionen: string[] = [];
+    if (b.lektion) lektionen = [b.lektion];
+    else {
+      const paket = await ladeEinheitJson(b.kurs, b.einheit);
+      const imPaket = paket ? (JSON.parse(paket.json) as { lektionen: { schluessel: string }[] }).lektionen : [];
+      const schluessel = imPaket.map((l) => lektionAusPaket(l.schluessel)?.schluessel ?? null);
+      if (!schluessel.length || schluessel.some((x) => x === null)) continue;
+      lektionen = schluessel as string[];
+    }
+    const ziel = zerlegeRichtung(b.kurs).ziel;
+    for (const l of lektionen) paketFormen.add(lektionImPaket(b.kurs, ziel, l));
+    noetig.push({ aufgabeId: o.aufgabeId, lernendeId: o.lernendeId, kurs: b.kurs, lektionen });
+  }
+  if (!noetig.length) return 0;
+
+  const lektionAusdruck = sql<string>`${schema.lernappEreignis.daten}->>'lektion'`;
   const erledigt = new Set(
     (
       await db
-        .select({
-          kurs: sql<string>`${schema.lernappEreignis.daten}->>'kurs'`,
-          lektion: sql<string>`${schema.lernappEreignis.daten}->>'lektion'`,
-        })
+        .selectDistinct({ kurs: sql<string>`${schema.lernappEreignis.daten}->>'kurs'`, lektion: lektionAusdruck })
         .from(schema.lernappEreignis)
-        .where(and(eq(schema.lernappEreignis.benutzerId, benutzerId), eq(schema.lernappEreignis.art, 'lektion')))
+        .where(
+          and(
+            eq(schema.lernappEreignis.benutzerId, benutzerId),
+            eq(schema.lernappEreignis.art, 'lektion'),
+            inArray(lektionAusdruck, [...paketFormen]),
+          ),
+        )
     ).flatMap((z) => {
       const l = lektionAusPaket(z.lektion);
       return l ? [`${z.kurs}|${l.schluessel}`] : [];
     }),
   );
-  const werte: { aufgabeId: string; lernendeId: string; erledigtAm: Date }[] = [];
-  for (const o of offen) {
-    const b = pruefeLernappBezug(o.bezug);
-    if (!b?.einheit) continue;
-    let fertig = false;
-    if (b.lektion) fertig = erledigt.has(`${b.kurs}|${b.lektion}`);
-    else if (istRichtung(b.kurs)) {
-      const paket = await ladeEinheitJson(b.kurs, b.einheit);
-      const lektionen = paket ? (JSON.parse(paket.json) as { lektionen: { schluessel: string }[] }).lektionen : [];
-      fertig =
-        lektionen.length > 0 &&
-        lektionen.every((l) => {
-          const s = lektionAusPaket(l.schluessel);
-          return s !== null && erledigt.has(`${b.kurs}|${s.schluessel}`);
-        });
-    }
-    if (fertig) werte.push({ aufgabeId: o.aufgabeId, lernendeId: o.lernendeId, erledigtAm: jetzt });
-  }
+  const werte = noetig
+    .filter((n) => n.lektionen.every((l) => erledigt.has(`${n.kurs}|${l}`)))
+    .map((n) => ({ aufgabeId: n.aufgabeId, lernendeId: n.lernendeId, erledigtAm: jetzt }));
   if (!werte.length) return 0;
   const neu = await db
     .insert(schema.aufgabeErledigt)

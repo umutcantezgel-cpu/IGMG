@@ -130,7 +130,13 @@ export async function synchronisiere(
     runden++;
     let paket = await ausstehende(sp, profil.id, HOECHSTENS_EREIGNISSE);
     const koerper = (liste: typeof paket) =>
-      JSON.stringify({ geraet: profil.geraet, cursor: stand.zeiger, ereignisse: liste, basis: stand.basisStand ?? null });
+      JSON.stringify({
+        konto: profil.benutzerId,
+        geraet: profil.geraet,
+        cursor: stand.zeiger,
+        ereignisse: liste,
+        basis: stand.basisStand ?? null,
+      });
     let text = koerper(paket);
     while (bytes(text) > HOECHSTENS_BYTES && paket.length > 1) {
       paket = paket.slice(0, Math.ceil(paket.length / 2));
@@ -203,6 +209,13 @@ export type Abgleich = {
   nachHandlung(): void;
   /** Beim Öffnen der App: Sitzung prüfen, dann sofort abgleichen. */
   beimOeffnen(): Promise<SyncErgebnis | null>;
+  /**
+   * Nur die Sitzung prüfen: Passt sie zum gebundenen Konto des Profils und ist die Einwilligung erteilt? Sonst ruht der Abgleich
+   * (auch `nachHandlung`). Die Oberfläche ruft das je Seitenaufruf vor dem ersten Abgleich (S-L1 M-1).
+   */
+  pruefeSitzung(): Promise<boolean>;
+  /** Sofort abgleichen, wenn der Abgleich nicht ruht (ohne erneute Sitzungsprüfung). */
+  abgleichen(): Promise<SyncErgebnis | null>;
   beenden(): void;
 };
 
@@ -214,9 +227,13 @@ export type AbgleichOptionen = SyncOptionen & {
   beiErgebnis?: (e: SyncErgebnis) => void;
 };
 
+/** Gründe, nach denen der Abgleich bis zum nächsten Öffnen ruht. */
+const RUHT_NACH: readonly SyncGrund[] = ['aus', 'anmeldung', 'einwilligung', 'eltern', 'konto', 'grenze'];
+
 /**
  * Plant den Abgleich eines Profils mit Konto. Nie zwei Abgleiche zugleich: Kommt während eines Laufs eine Handlung, folgt
- * genau ein weiterer Lauf. Nach `aus`, `anmeldung`, `einwilligung` oder `eltern` ruht der Abgleich bis zum nächsten Öffnen.
+ * genau ein weiterer Lauf. Nach `aus`, `anmeldung`, `einwilligung`, `eltern`, `konto` (Sitzung gehört zu einem anderen Konto)
+ * oder `grenze` ruht der Abgleich bis zum nächsten Öffnen.
  */
 export function erzeugeAbgleich({ speicher, profil, verzoegerungMs = 4000, beiErgebnis, ...optionen }: AbgleichOptionen): Abgleich {
   let zeitgeber: ReturnType<typeof setTimeout> | null = null;
@@ -237,7 +254,7 @@ export function erzeugeAbgleich({ speicher, profil, verzoegerungMs = 4000, beiEr
         const p = await profil();
         if (!p?.benutzerId || ruht || beendet) break;
         ergebnis = await synchronisiere(speicher, p, optionen);
-        if (!ergebnis.ok && ['aus', 'anmeldung', 'einwilligung', 'eltern'].includes(ergebnis.grund)) ruht = true;
+        if (!ergebnis.ok && RUHT_NACH.includes(ergebnis.grund)) ruht = true;
         beiErgebnis?.(ergebnis);
       } while (nochmal && !beendet);
       return ergebnis;
@@ -249,6 +266,15 @@ export function erzeugeAbgleich({ speicher, profil, verzoegerungMs = 4000, beiEr
     }
   };
 
+  const pruefeSitzung = async (): Promise<boolean> => {
+    if (beendet) return false;
+    const p = await profil();
+    if (!p?.benutzerId) return false;
+    const s = await ladeSitzung(optionen.abruf);
+    ruht = !s || !s.angemeldet || s.konto !== p.benutzerId || s.einwilligung !== 'erteilt';
+    return !ruht;
+  };
+
   return {
     nachHandlung() {
       if (beendet || ruht) return;
@@ -258,17 +284,13 @@ export function erzeugeAbgleich({ speicher, profil, verzoegerungMs = 4000, beiEr
         void lauf();
       }, verzoegerungMs);
     },
-    async beimOeffnen() {
-      if (beendet) return null;
-      const p = await profil();
-      if (!p?.benutzerId) return null;
-      const s = await ladeSitzung(optionen.abruf);
-      if (!s || !s.angemeldet || s.konto !== p.benutzerId || s.einwilligung !== 'erteilt') {
-        ruht = true;
-        return null;
-      }
-      ruht = false;
+    pruefeSitzung,
+    async abgleichen() {
+      if (beendet || ruht) return null;
       return lauf();
+    },
+    async beimOeffnen() {
+      return (await pruefeSitzung()) ? lauf() : null;
     },
     beenden() {
       beendet = true;

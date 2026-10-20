@@ -8,7 +8,10 @@ import { haengeAn } from '@/lib/lernapp/lokal/ausgang';
 import { arbeitsspeicher, type Profil, profilBereich, type Speicher } from '@/lib/lernapp/lokal/db';
 import { aktivesProfil, aendereProfil, legeProfilAn } from '@/lib/lernapp/lokal/profile';
 import type { Abruf } from '@/lib/lernapp/lokal/sync';
-import { SITZUNG_ADRESSE, SYNC_ADRESSE, SyncAntwortSchema } from '@/lib/lernapp/sync/protokoll';
+import { leiteAb, heuteStand } from '@/lib/lernapp/ereignisse/ableiten';
+import { lerntagVon } from '@/lib/lernapp/ereignisse/serie';
+import { EreignisSchema } from '@/lib/lernapp/ereignisse/typen';
+import { GRENZEN, SITZUNG_ADRESSE, SYNC_ADRESSE, SyncAntwortSchema } from '@/lib/lernapp/sync/protokoll';
 import { spieleKarteNach, type Note } from '@/lib/lernapp/srs';
 import { kontoUmgebung } from './hilfen/konto';
 
@@ -24,6 +27,7 @@ const syncRoute = await import('@/app/api/lernapp/sync/route');
 const sitzungRoute = await import('@/app/api/lernapp/sitzung/route');
 const { synchronisiere, bindungFuer, beantworteUebernahme, erzeugeAbgleich, ladeSitzung } = await import('@/lib/lernapp/lokal/sync');
 const { verdichteLernapp } = await import('@/lib/lernapp/sync/verdichten');
+const { gleicheKontoAb, alsEreignis } = await import('@/lib/lernapp/sync/server');
 const { lernappTestkurs } = await import('../../drizzle/seeds/lernapp-test');
 afterAll(() => client.close());
 
@@ -35,7 +39,10 @@ afterEach(() => {
 });
 
 const api = auth.api as unknown as Record<string, unknown>;
+/** Konto der aktuellen Sitzung; `sende` trägt es als `konto` in die Anfrage ein, wenn der Körper keins nennt. */
+let angemeldet: string | null = null;
 function als(id: string | null) {
+  angemeldet = id;
   api.getSession = async () =>
     id
       ? {
@@ -87,11 +94,15 @@ function lektion(geraet: string, seq: number, am: Date, schluessel: string): Ere
 
 const KOPF = { 'content-type': 'application/json', 'sec-fetch-site': 'same-origin', host: 'example.test' };
 async function sende(koerper: unknown, kopf: Record<string, string> = {}): Promise<Response> {
+  const mitKonto =
+    koerper && typeof koerper === 'object' && !Array.isArray(koerper) && !('konto' in koerper) && angemeldet
+      ? { konto: angemeldet, ...koerper }
+      : koerper;
   return syncRoute.POST(
     new Request(`https://example.test${SYNC_ADRESSE}`, {
       method: 'POST',
       headers: { ...KOPF, ...kopf },
-      body: typeof koerper === 'string' ? koerper : JSON.stringify(koerper),
+      body: typeof mitKonto === 'string' ? mitKonto : JSON.stringify(mitKonto),
     }),
   );
 }
@@ -170,7 +181,7 @@ describe('Schalter, Ursprung, Anmeldung, Einwilligung', () => {
         new Request(`https://example.test${SYNC_ADRESSE}`, {
           method: 'POST',
           headers: { 'content-type': 'application/json', host: 'example.test', origin },
-          body: JSON.stringify(leer),
+          body: JSON.stringify({ konto: angemeldet, ...leer }),
         }),
       );
     expect((await ohneMetadaten('https://fremd.example')).status).toBe(403);
@@ -257,6 +268,8 @@ describe('Schalter, Ursprung, Anmeldung, Einwilligung', () => {
       { geraet: 'kein-geraet', cursor: null, ereignisse: [] },
       { geraet: g, cursor: '-1', ereignisse: [] },
       { geraet: g, cursor: null, ereignisse: [], fremd: 1 },
+      { konto: undefined, geraet: g, cursor: null, ereignisse: [] },
+      { konto: '', geraet: g, cursor: null, ereignisse: [] },
       { geraet: g, cursor: null, ereignisse: Array.from({ length: 501 }, (_, i) => xp(g, i, vor(10))) },
     ]) {
       const r = await sende(huelle);
@@ -606,5 +619,191 @@ describe('Client (lokal/sync.ts)', () => {
     expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, id))).toHaveLength(3);
     expect(Object.keys(await serverKarten(id))).toEqual(Object.keys(vorher));
     expect(await lokaleKarten(d.sp, d.profil.id)).toEqual(await serverKarten(id));
+  });
+});
+
+describe('S-L1 M-1: Abgleich nur für das gebundene Konto', () => {
+  it('Anfrage für ein anderes Konto als die Sitzung → 409 „konto“; nichts wird geschrieben, kein Lernstand angelegt', async () => {
+    const a = await konto();
+    const b = await konto();
+    als(b);
+    const g = randomUUID();
+    const r = await sende({ konto: a, geraet: g, cursor: null, ereignisse: [xp(g, 0, vor(5))] });
+    expect(r.status).toBe(409);
+    expect(r.headers.get('cache-control')).toContain('no-store');
+    expect(await r.json()).toEqual({ fehler: 'konto' });
+    for (const id of [a, b]) {
+      expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, id))).toHaveLength(0);
+      expect(await db.select().from(schema.lernappProfil).where(eq(schema.lernappProfil.benutzerId, id))).toHaveLength(0);
+    }
+  });
+
+  it('geteiltes Gerät: Profil an A, danach Sitzung B – kein Abgleich in das Konto B, der Planer ruht; zurück bei A geht es weiter', async () => {
+    const a = await konto();
+    const b = await konto();
+    als(a);
+    const d = await geraet(a);
+    await haengeAn(d.sp, d.profil, entwurf('gut'), { jetzt: vor(10) });
+    expect(await synchronisiere(d.sp, d.profil, { abruf })).toMatchObject({ ok: true, gesendet: 1 });
+    // Kontowechsel (z. B. das Kind meldet sich an), ohne dass die Seite die Sitzung neu geprüft hat
+    als(b);
+    await haengeAn(d.sp, d.profil, entwurf('schwer'), { jetzt: vor(5) });
+    expect(await synchronisiere(d.sp, d.profil, { abruf })).toMatchObject({ ok: false, grund: 'konto', gesendet: 0 });
+    expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, b))).toHaveLength(0);
+    expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, a))).toHaveLength(1);
+    // Planer: Die Sitzungsprüfung je Seitenaufruf sagt nein; danach senden weder nachHandlung noch abgleichen
+    let posts = 0;
+    const zaehlend: Abruf = async (adresse, init) => {
+      if (adresse === SYNC_ADRESSE) posts++;
+      return abruf(adresse, init);
+    };
+    const planer = erzeugeAbgleich({ speicher: d.sp, profil: () => d.profil, abruf: zaehlend, verzoegerungMs: 0 });
+    expect(await planer.pruefeSitzung()).toBe(false);
+    planer.nachHandlung();
+    expect(await planer.abgleichen()).toBeNull();
+    expect(posts).toBe(0);
+    planer.beenden();
+    // derselbe Planer ruht auch nach einer 409 aus einem Lauf (Wechsel nach der Prüfung, z. B. im zweiten Tab)
+    als(a);
+    const planer2 = erzeugeAbgleich({ speicher: d.sp, profil: () => d.profil, abruf: zaehlend, verzoegerungMs: 0 });
+    expect(await planer2.pruefeSitzung()).toBe(true);
+    als(b);
+    expect(await planer2.abgleichen()).toMatchObject({ ok: false, grund: 'konto' });
+    expect(await planer2.abgleichen()).toBeNull();
+    planer2.beenden();
+    // zurück bei A: der ausstehende Stand geht an A
+    als(a);
+    expect(await synchronisiere(d.sp, d.profil, { abruf })).toMatchObject({ ok: true, gesendet: 1 });
+    expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, a))).toHaveLength(2);
+    expect(await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, b))).toHaveLength(0);
+  });
+});
+
+describe('S-L1 M-2: Grenzen je Konto und gezielte Ableitung', () => {
+  const zeile = (benutzerId: string, e: Ereignis) => ({
+    benutzerId,
+    geraet: e.geraet,
+    seq: e.seq,
+    am: new Date(e.am),
+    tag: e.tag,
+    art: e.art,
+    daten: e.daten as Record<string, unknown>,
+  });
+  const anzahl = async (benutzerId: string) =>
+    (await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, benutzerId))).length;
+
+  it('Geräte: über GRENZEN.geraete → 429 „grenze“ mit Retry-After, nichts geschrieben; bekannte Geräte und Lesen gehen weiter', async () => {
+    const id = await konto();
+    als(id);
+    await db.insert(schema.lernappProfil).values({ benutzerId: id, zuletztAktivAm: new Date() });
+    const bekannt = Array.from({ length: GRENZEN.geraete }, () => randomUUID());
+    await db.insert(schema.lernappEreignis).values(bekannt.map((g) => zeile(id, xp(g, 0, vor(10)))));
+    const g = randomUUID();
+    const r = await sende({ geraet: g, cursor: null, ereignisse: [xp(g, 0, vor(5))] });
+    expect(r.status).toBe(429);
+    expect(r.headers.get('retry-after')).toBe(String(GRENZEN.wartenSekunden));
+    expect(await r.json()).toEqual({ fehler: 'grenze' });
+    expect(await anzahl(id)).toBe(GRENZEN.geraete);
+    expect((await sync(bekannt[0]!, [xp(bekannt[0]!, 1, vor(4))])).angenommen).toBe(1);
+    expect((await sync(g, [])).ereignisse.length).toBeGreaterThan(0);
+    // ein anderes Konto bleibt frei
+    als(await konto());
+    expect((await sync(g, [xp(g, 0, vor(5))])).angenommen).toBe(1);
+  });
+
+  it('gesamt und je 24 Stunden: die Grenze greift ohne zu schreiben; nach 24 Stunden ist wieder Platz', async () => {
+    const id = await konto();
+    const g = randomUUID();
+    const klein = { gesamt: 1000, jeTag: 5, geraete: 50, seqAbstand: 50_000 };
+    const anfrage = (ereignisse: Ereignis[]) => ({ konto: id, geraet: g, cursor: null, ereignisse });
+    const jetzt = new Date();
+    expect(await gleicheKontoAb(id, anfrage([0, 1, 2].map((i) => xp(g, i, vor(10)))), jetzt, klein)).toMatchObject({
+      antwort: { angenommen: 3 },
+    });
+    expect(await gleicheKontoAb(id, anfrage([3, 4, 5].map((i) => xp(g, i, vor(9)))), jetzt, klein)).toEqual({ grenze: 'jeTag' });
+    expect(await anzahl(id)).toBe(3);
+    const morgen = new Date(jetzt.getTime() + 86_400_000 + 60_000);
+    expect(await gleicheKontoAb(id, anfrage([3, 4, 5].map((i) => xp(g, i, vor(9)))), morgen, klein)).toMatchObject({
+      antwort: { angenommen: 3 },
+    });
+    expect(await gleicheKontoAb(id, anfrage([xp(g, 6, vor(8))]), morgen, { ...klein, gesamt: 6 })).toEqual({ grenze: 'gesamt' });
+    expect(await anzahl(id)).toBe(6);
+  });
+
+  it('Folgenummer: mehr als GRENZEN.seqAbstand über der höchsten gespeicherten des Geräts → abgelehnt', async () => {
+    const id = await konto();
+    als(id);
+    const g = randomUUID();
+    const a = await sync(g, [xp(g, 0, vor(10)), xp(g, GRENZEN.seqAbstand, vor(9)), xp(g, GRENZEN.seqAbstand + 1, vor(8))]);
+    expect(a.angenommen).toBe(1);
+    expect(a.abgelehnt).toEqual([
+      { geraet: g, seq: GRENZEN.seqAbstand },
+      { geraet: g, seq: GRENZEN.seqAbstand + 1 },
+    ]);
+    // ab der gespeicherten Nummer 0 ist seqAbstand erlaubt
+    expect((await sync(g, [xp(g, GRENZEN.seqAbstand, vor(7))], a.cursor)).angenommen).toBe(1);
+  });
+
+  it('Lerntage aus den Ereignissen genau dieser Tage = volle Ableitung (Tagesziele im Verlauf, Pausen über den Jahreswechsel)', async () => {
+    const id = await konto();
+    als(id);
+    const g = randomUUID();
+    const h = randomUUID();
+    const am = vor(30).toISOString();
+    const e = (geraet: string, seq: number, tag: string, art: Ereignis['art'], daten: unknown) =>
+      ({ geraet, seq, am, tag, art, daten }) as Ereignis;
+    const lektionAm = (geraet: string, seq: number, tag: string) =>
+      e(geraet, seq, tag, 'lektion', { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.e01.l01', art: 'lektion', richtig: 3, gesamt: 4 });
+    const runden: Ereignis[][] = [
+      [
+        lektionAm(g, 0, '2025-12-27'),
+        e(g, 1, '2025-12-27', 'xp', { menge: 10, grund: 'lektion' }),
+        e(g, 2, '2025-12-29', 'xp', { menge: 15, grund: 'lektion' }),
+      ],
+      [
+        e(g, 3, '2025-12-28', 'tagesziel', { ziel: { art: 'xp', wert: 20 } }),
+        e(g, 4, '2025-12-30', 'pause', { von: '2025-12-30', bis: '2026-01-03' }),
+      ],
+      [
+        lektionAm(h, 0, '2026-01-02'),
+        e(h, 1, '2026-01-02', 'xp', { menge: 20, grund: 'lektion' }),
+        e(h, 2, '2026-01-04', 'xp', { menge: 5, grund: 'lektion' }),
+      ],
+      [
+        e(h, 3, '2025-12-26', 'tagesziel', { ziel: { art: 'kein' } }),
+        e(g, 5, '2026-01-05', 'tagesziel', { ziel: { art: 'lektionen', wert: 1 } }),
+      ],
+      [lektionAm(g, 6, '2026-01-06'), e(g, 7, '2025-12-31', 'xp', { menge: 15, grund: 'lektion' })],
+    ];
+    for (const runde of runden) await sync(runde[0]!.geraet, runde);
+
+    const alle = (await db.select().from(schema.lernappEreignis).where(eq(schema.lernappEreignis.benutzerId, id))).map((z) =>
+      EreignisSchema.parse(alsEreignis(z)),
+    );
+    const voll = leiteAb(alle, lerntagVon(new Date(), 'UTC'));
+    const tage = await db.select().from(schema.lernappTag).where(eq(schema.lernappTag.benutzerId, id));
+    expect(tage.map((t) => t.tag).sort()).toEqual([
+      '2025-12-27',
+      '2025-12-29',
+      '2025-12-30',
+      '2025-12-31',
+      '2026-01-01',
+      '2026-01-02',
+      '2026-01-03',
+      '2026-01-04',
+      '2026-01-06',
+    ]);
+    for (const t of tage) {
+      const s = heuteStand(voll, t.tag);
+      expect({ tag: t.tag, xp: t.xp, lektionen: t.lektionen, pause: t.pause, ziel: t.zielErreicht }).toEqual({
+        tag: t.tag,
+        xp: s.xp,
+        lektionen: s.lektionen,
+        pause: voll.ruhetage.has(t.tag),
+        ziel: s.erreicht === true,
+      });
+    }
+    expect(tage.find((t) => t.tag === '2026-01-01')).toMatchObject({ pause: true });
+    expect(tage.find((t) => t.tag === '2025-12-29')).toMatchObject({ xp: 15, zielErreicht: false });
   });
 });
