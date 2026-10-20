@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 20.10.2026 13:00 UTC:** Branch 09b094d. Platte nach Aufräumen von S3 (Chatterbox-Gewichte, Venv) 7,6 GB frei;
+  PostgreSQL + Mailpit laufen. Laufen: `wf_7b96226b-f3b` (L0-Rest: S3-Beleg ∥ Recht → Gegenprüfung,
+  `scratchpad/lernapp-l0-rest.workflow.js`), `wf_422b0a15-ec2` (Rahmen ab ar), `wf_6a6cc605-b14` (L1 mit
+  `fortsetzungA1` + `b1` aus `scratchpad/l1/b1-ergebnis.json`). Ergebnisse früherer L0-Spikes: `scratchpad/l0/ergebnisse.json`.
 - **Stand 20.10.2026 12:45 UTC:** Alle drei Workflows brachen am 17.10. am Sitzungslimit ab; danach Neustart des Workers.
   Gesichert: Beleg S8 + Werkzeug openiti-passagen 1.1.0 (28 Tests grün), Rahmenpläne de/tr (Entwurf vor Lektorat; je 72
   Einheiten, Budgets stimmen). L1-Stand: Engine B1 fertig (`agent-ac6673f9…`), Fundament A1 committet bis 12831cc ohne
