@@ -41,7 +41,7 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
             ui={ui}
             kurs={kurs}
             texte={rohTexte(ui, 'ueben')}
-            spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+            spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben'), tastatur: rohTexte(ui, 'tastatur') }}
             lernpfad={lernpfad}
           />
         </Suspense>

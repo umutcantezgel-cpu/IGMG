@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { baueIndex, baueLexikon, lexikonTreffer, vierGrammStrom, woerter } from '../waechter/kern.mjs';
-import type { InhaltDatei } from './schema';
+import { hauptVerweis, type InhaltDatei, vorlageTexte } from './schema';
 
 /**
  * Religionswächter für Inhaltsdateien (KERN 4.0 §3, ADR 0040 Nr. 6; S-L1 M-3) – „fail closed“ im Import und in
@@ -9,8 +9,8 @@ import type { InhaltDatei } from './schema';
  *
  * - **Formel-Lexikon (a):** Ein Treffer (arabisch aus den Verweisen in den Tanzil-Text, deutsch/türkisch aus der Startliste,
  *   `waechter/kern.mjs`) verlangt `religionsbezug: true` am Eintrag. Texte ohne eigenes Kennzeichen (Thema, Kann-Beschreibung,
- *   Lektionsziel) dürfen nie treffen. Eine Übersetzung erbt das Kennzeichen ihres Zieleintrags, Wortbank-Fassungen das ihres
- *   Satzes.
+ *   Lektionsziel) dürfen nie treffen. Eine Übersetzung erbt das Kennzeichen ihres Zieleintrags, die eigenen Texte einer
+ *   Aufgaben-Vorlage (Wortbank-Fassungen, Ablenker, Varianten, Formentabellen) das ihres Hauptverweises.
  * - **Koran- und Hadith-4-Gramm (b, c):** Folgen aus 4 Wörtern sind immer Rot – über alle Texte einer Datei hinweg (Sätze
  *   einer Lektion, Dialogzeilen), nicht nur innerhalb eines Felds. Ausnahmen erst mit der geprüften Formelliste (LM-09).
  *
@@ -62,15 +62,10 @@ export function texteVon(datei: InhaltDatei, bezug: ReadonlyMap<string, boolean>
       ),
       ...d.lektionen.flatMap((l) => [
         ...lernTexte(`${l.schluessel}.ziel`, l.ziel),
-        ...l.aufgaben.flatMap((a) =>
-          a.typ === 'wortbank'
-            ? [...(a.alternativen ?? []), ...(a.ablenker ?? [])].map((text) => ({
-                ort: a.schluessel,
-                text,
-                religionsbezug: bezug.get(a.satz) ?? false,
-              }))
-            : [],
-        ),
+        ...l.aufgaben.flatMap((a) => {
+          const haupt = hauptVerweis(a);
+          return vorlageTexte(a).map((text) => ({ ort: a.schluessel, text, religionsbezug: haupt ? (bezug.get(haupt) ?? false) : false }));
+        }),
       ]),
     ];
   }

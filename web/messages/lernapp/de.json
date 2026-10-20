@@ -310,7 +310,129 @@
       "keinPaar": "{links} und {rechts} gehören nicht zusammen.",
       "fertig": "Alle Paare gefunden.",
       "tasten": "Wähle mit Enter ein Wort und dann sein Gegenstück. Pfeiltasten wechseln innerhalb einer Liste."
+    },
+    "bild_wort": {
+      "waehleWort": "Welches Wort passt zum Bild?",
+      "bild": "Bildübung: Das Bild zeigt das gesuchte Wort.",
+      "beschreibung": "Bild: {text}",
+      "optionen": "Wörter",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}."
+    },
+    "frei": {
+      "uebersetze": "Schreibe die Übersetzung.",
+      "antworte": "Schreibe deine Antwort.",
+      "eingabe": "Deine Antwort"
+    },
+    "hoeren": {
+      "anhoeren": "Anhören",
+      "langsam": "Langsam anhören",
+      "spielt": "Wird abgespielt …",
+      "nichtHoeren": "Ich kann gerade nicht hören",
+      "uebersprungen": "Die Hörübungen dieser Lektion werden übersprungen.",
+      "audioFolgt": "Audio folgt",
+      "audioFolgtText": "Für diese Übung gibt es noch keine Aufnahme. Sie wird übersprungen.",
+      "nichtMoeglich": "Hören ist auf diesem Gerät nicht möglich. Die Übung wird übersprungen.",
+      "keinNetz": "Die Aufnahme konnte nicht geladen werden. Bitte prüfe die Verbindung.",
+      "ueberspringen": "Weiter ohne Hören",
+      "abschrift": "Abschrift:"
+    },
+    "hoeren_waehlen": {
+      "waehleGehoertes": "Was hörst du?",
+      "waehleBedeutung": "Was bedeutet das Gehörte?",
+      "optionen": "Antworten",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}."
+    },
+    "hoeren_schreiben": {
+      "schreibeGehoertes": "Schreibe, was du hörst.",
+      "eingabe": "Gehörter Text"
+    },
+    "minimalpaare": {
+      "waehleGehoertes": "Welches Wort hörst du?",
+      "optionen": "Wörter",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}."
+    },
+    "luecke": {
+      "ergaenze": "Ergänze die Lücke.",
+      "luecke": "Lücke",
+      "optionen": "Wörter für die Lücke",
+      "hilfe": "Bedeutung:",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}."
+    },
+    "satzbau": {
+      "ordne": "Bringe die Wörter in die richtige Reihenfolge."
+    },
+    "formen": {
+      "ergaenze": "Ergänze die Formen.",
+      "tabelle": "Formen",
+      "richtigeForm": "Richtig:"
+    },
+    "harakat": {
+      "waehleVokalisierung": "Welche Schreibung ist richtig vokalisiert?",
+      "optionen": "Schreibungen",
+      "bedeutung": "Bedeutung:",
+      "tasten": "Wähle mit den Pfeiltasten oder den Ziffern 1 bis {n, number}. Jede Schreibung wird mit den Namen ihrer Zeichen vorgelesen.",
+      "zeichen": {
+        "u0621": "Hamza",
+        "u0622": "Alif mit Madda",
+        "u0623": "Alif mit Hamza oben",
+        "u0624": "Waw mit Hamza",
+        "u0625": "Alif mit Hamza unten",
+        "u0626": "Ya mit Hamza",
+        "u0627": "Alif",
+        "u0628": "Ba",
+        "u0629": "Taa marbuta",
+        "u062A": "Ta",
+        "u062B": "Tha",
+        "u062C": "Dschim",
+        "u062D": "Ḥa",
+        "u062E": "Cha",
+        "u062F": "Dal",
+        "u0630": "Dhal",
+        "u0631": "Ra",
+        "u0632": "Zay",
+        "u0633": "Sin",
+        "u0634": "Schin",
+        "u0635": "Ṣad",
+        "u0636": "Ḍad",
+        "u0637": "Ṭa",
+        "u0638": "Ẓa",
+        "u0639": "ʿAin",
+        "u063A": "Ghain",
+        "u0641": "Fa",
+        "u0642": "Qaf",
+        "u0643": "Kaf",
+        "u0644": "Lam",
+        "u0645": "Mim",
+        "u0646": "Nun",
+        "u0647": "Ha",
+        "u0648": "Waw",
+        "u0649": "Alif maqsura",
+        "u064A": "Ya",
+        "u0671": "Alif wasla",
+        "u064B": "Tanwin Fatha",
+        "u064C": "Tanwin Damma",
+        "u064D": "Tanwin Kasra",
+        "u064E": "Fatha",
+        "u064F": "Damma",
+        "u0650": "Kasra",
+        "u0651": "Schadda",
+        "u0652": "Sukun",
+        "u0653": "Madda",
+        "u0654": "Hamza oben",
+        "u0655": "Hamza unten",
+        "u0670": "kleines Alif"
+      }
     }
+  },
+  "tastatur": {
+    "sonderzeichen": "Sonderzeichen",
+    "einfuegen": "{zeichen} einfügen",
+    "arabisch": "Arabische Tastatur",
+    "buchstaben": "Arabische Buchstaben",
+    "vokalzeichen": "Vokalzeichen",
+    "leerzeichen": "Leerzeichen",
+    "loeschen": "Zeichen löschen",
+    "tasten": "Pfeiltasten wählen eine Taste, Enter fügt das Zeichen ein."
   },
   "konto": {
     "titel": "Konto und Abgleich",

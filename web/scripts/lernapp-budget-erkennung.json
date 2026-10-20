@@ -14,5 +14,49 @@
   "wortbank": {
     "datei": "src/components/lernapp/aufgaben/Wortbank.tsx",
     "text": "min-h-11 min-w-11 rounded-md border-2 px-3 py-1 text-20"
+  },
+  "bild_wort": {
+    "datei": "src/components/lernapp/aufgaben/BildWort.tsx",
+    "text": "flex flex-col items-center gap-3 rounded-lg bg-sand px-4 py-6"
+  },
+  "frei": {
+    "datei": "src/components/lernapp/aufgaben/Frei.tsx",
+    "text": "rounded-lg bg-sand px-4 py-5 text-24"
+  },
+  "luecke": {
+    "datei": "src/components/lernapp/aufgaben/Luecke.tsx",
+    "text": "mx-1 inline-block min-w-24 border-b-2 px-2 text-center font-bold"
+  },
+  "formen": {
+    "datei": "src/components/lernapp/aufgaben/Formen.tsx",
+    "text": "border border-linie bg-sand p-2 text-start text-18"
+  },
+  "harakat": {
+    "datei": "src/components/lernapp/aufgaben/Harakat.tsx",
+    "text": "rounded-lg bg-sand px-4 py-4 text-20"
+  },
+  "optionsgruppe": {
+    "datei": "src/components/lernapp/aufgaben/Optionsgruppe.tsx",
+    "text": "inline-flex size-8 shrink-0 items-center justify-center rounded-sm border border-rand bg-weiss text-16 font-bold"
+  },
+  "abspieler": {
+    "datei": "src/components/lernapp/aufgaben/Abspieler.tsx",
+    "text": "druck inline-flex min-h-12 items-center gap-2 rounded-pill border-2 border-gruen-700 px-5 font-bold disabled:border-linie disabled:text-tinte-3"
+  },
+  "texteingabe": {
+    "datei": "src/components/lernapp/aufgaben/Texteingabe.tsx",
+    "text": "min-h-12 rounded-md border-2 bg-weiss px-3 py-1 "
+  },
+  "zeichenhilfe": {
+    "datei": "src/components/lernapp/aufgaben/Zeichenhilfe.tsx",
+    "text": "min-h-11 druck rounded-pill border-2 border-gruen-700 bg-weiss px-5 font-bold text-gruen-800 hover:bg-gruen-50"
+  },
+  "sonderzeichen": {
+    "datei": "src/components/lernapp/tastatur/Sonderzeichen.tsx",
+    "text": "min-h-11 min-w-11 druck rounded-md border-2 border-rand bg-weiss px-2 text-20 hover:border-gruen-700 disabled:text-tinte-3"
+  },
+  "arabischeTastatur": {
+    "datei": "src/components/lernapp/tastatur/ArabischeTastatur.tsx",
+    "text": "flex flex-col gap-3 rounded-lg border border-linie bg-sand p-3"
   }
 }

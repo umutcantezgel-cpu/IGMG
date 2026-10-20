@@ -111,9 +111,12 @@ export default function Wortbank({
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="rounded-lg bg-sand px-4 py-4 text-24">
-        <InhaltText inhalt={aufgabe.vorgabe} />
-      </p>
+      {/* ohne Vorgabe nur bei `satzbau` (Satzbau.tsx nutzt diese Bedienung) */}
+      {aufgabe.vorgabe ? (
+        <p className="rounded-lg bg-sand px-4 py-4 text-24">
+          <InhaltText inhalt={aufgabe.vorgabe} />
+        </p>
+      ) : null}
       <p id={`${id}-tasten`} className="sr-only">
         {t.tasten}
       </p>

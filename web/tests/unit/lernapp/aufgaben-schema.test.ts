@@ -17,7 +17,8 @@ import { gemischteIndizes, mische, saatAus } from '@/lib/lernapp/engine/zufall';
 import { LEKTION } from './hilfen/lektion';
 
 /**
- * Aufgaben-Schema (PLAN §4, ADR 0039): Zod-Union über alle Übungstypen, L1 implementiert auswahl, wortbank und paare.
+ * Aufgaben-Schema (PLAN §4, ADR 0039): Zod-Union über alle Übungstypen, L1 implementiert auswahl, wortbank und paare
+ * (die Typen aus L2-01 prüft aufgaben-l2.test.ts).
  */
 const [auswahl, wortbank, paare] = LEKTION.aufgaben as [AuswahlAufgabe, WortbankAufgabe, PaareAufgabe];
 
@@ -57,9 +58,23 @@ describe('Schema', () => {
         'fallfrage',
       ]),
     );
-    expect(IMPLEMENTIERT).toEqual(['auswahl', 'wortbank', 'paare']);
+    expect(IMPLEMENTIERT).toEqual([
+      'auswahl',
+      'wortbank',
+      'paare',
+      'bild_wort',
+      'frei',
+      'hoeren_waehlen',
+      'hoeren_schreiben',
+      'minimalpaare',
+      'luecke',
+      'satzbau',
+      'formen',
+      'harakat',
+    ]);
     expect(istImplementiert('auswahl')).toBe(true);
-    expect(istImplementiert('frei')).toBe(false);
+    expect(istImplementiert('frei')).toBe(true);
+    expect(istImplementiert('dialog')).toBe(false);
   });
 
   it.each([
@@ -177,9 +192,20 @@ describe('Bewertung', () => {
     expect(bewertePaare(paare, { typ: 'paare', versuche: [[0, 0]] }).urteil).toBe('falsch');
   });
 
-  it('bewerte: verteilt nach Typ, L2-Typen und falsche Antwortart sind Programmfehler', () => {
+  it('bewerte: verteilt nach Typ, noch nicht umgesetzte Typen und falsche Antwortart sind Programmfehler', () => {
     expect(bewerte(auswahl, { typ: 'auswahl', wahl: 0 }).urteil).toBe('richtig');
-    expect(() => bewerte(LEKTION.aufgaben[3]!, { typ: 'auswahl', wahl: 0 })).toThrow(/L2/);
+    expect(bewerte(LEKTION.aufgaben[3]!, { typ: 'frei', text: 'ekmek' }).urteil).toBe('richtig');
+    const dialog = AufgabeSchema.parse({
+      typ: 'dialog',
+      schluessel: 'd1',
+      verlauf: [{ sprecher: 'A', zeile: { text: 'Ekmek.', sprache: 'tr' } }],
+      optionen: [
+        { text: 'Ekmek.', sprache: 'tr' },
+        { text: 'Su.', sprache: 'tr' },
+      ],
+      richtig: 0,
+    });
+    expect(() => bewerte(dialog, { typ: 'auswahl', wahl: 0 })).toThrow(/L2/);
     expect(() => bewerte(auswahl, { typ: 'wortbank', kacheln: [] })).toThrow();
   });
 });

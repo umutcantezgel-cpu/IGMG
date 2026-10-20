@@ -12,4 +12,13 @@ export const AUFGABEN_LADER: { [T in ImplementierterTyp]: () => Promise<Aufgaben
   auswahl: () => import('./Auswahl'),
   wortbank: () => import('./Wortbank'),
   paare: () => import('./Paare'),
+  bild_wort: () => import('./BildWort'),
+  frei: () => import('./Frei'),
+  hoeren_waehlen: () => import('./HoerenWaehlen'),
+  hoeren_schreiben: () => import('./HoerenSchreiben'),
+  minimalpaare: () => import('./Minimalpaare'),
+  luecke: () => import('./Luecke'),
+  satzbau: () => import('./Satzbau'),
+  formen: () => import('./Formen'),
+  harakat: () => import('./Harakat'),
 };

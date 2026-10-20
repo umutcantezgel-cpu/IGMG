@@ -1,13 +1,27 @@
 'use client';
 
-import { Component, type ComponentType, type FormEvent, lazy, type ReactNode, Suspense, useEffect, useId, useRef, useState } from 'react';
-import type { Antwort, Aufgabe, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
+import {
+  Component,
+  type ComponentType,
+  type FormEvent,
+  lazy,
+  type ReactNode,
+  Suspense,
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+} from 'react';
+import { HOER_TYPEN, istHoerTyp } from '@/lib/lernapp/aufgaben/hoeren_waehlen';
+import type { Antwort, Aufgabe, AufgabenTyp, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
 import {
   aktuell,
   fortschritt,
   pruefe,
   type Sitzung,
   starte,
+  ueberspringe,
   weiter,
   type Zusammenfassung,
   zusammenfassung,
@@ -29,8 +43,10 @@ import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
  * <Spieler lektion={lektion} texte={{ spieler, aufgaben }} sprache="de" onEreignis={(e) => haengeAn(sp, profil, e)} />
  * ```
  *
- * Lektionsformat: `aufgaben/schema.ts` (`LektionSchema`, passend zum Einheitenpaket nach ADR 0039). In L1 spielbar:
- * `auswahl`, `wortbank`, `paare`; andere Typen werden übersprungen.
+ * Lektionsformat: `aufgaben/schema.ts` (`LektionSchema`, passend zum Einheitenpaket nach ADR 0039). Spielbar sind die
+ * Typen aus `IMPLEMENTIERT` (L1 und L2-01); andere werden übersprungen. Hörübungen fallen mit `hoeren={false}`
+ * („Hörübungen aus“) schon beim Start weg; ohne Audio oder nach „Ich kann gerade nicht hören“ überspringt sie die Übung
+ * selbst (`ueberspringe`, ohne Bewertung). Texte zusätzlich aus dem Namensraum `tastatur`.
  */
 export type SpielerProps = {
   lektion: Lektion;
@@ -43,14 +59,18 @@ export type SpielerProps = {
   onFertig?: (zusammenfassung: Zusammenfassung) => void;
   /** Ziel „Zum Lernpfad“ am Ende */
   zurueckHref?: string;
+  /** Hörübungen an (Einstellung „Hörübungen aus“, KERN 4.0 §8) */
+  hoeren?: boolean;
 };
 
 type Komponenten = { [T in ImplementierterTyp]: ComponentType<AufgabenProps<T>> };
-const erzeugeKomponenten = (): Komponenten => ({
-  auswahl: lazy(AUFGABEN_LADER.auswahl),
-  wortbank: lazy(AUFGABEN_LADER.wortbank),
-  paare: lazy(AUFGABEN_LADER.paare),
-});
+const erzeugeKomponenten = (): Komponenten =>
+  Object.fromEntries(
+    (Object.keys(AUFGABEN_LADER) as ImplementierterTyp[]).map((t) => [
+      t,
+      lazy(AUFGABEN_LADER[t] as () => Promise<{ default: ComponentType }>),
+    ]),
+  ) as unknown as Komponenten;
 
 /** Fängt einen fehlgeschlagenen Chunk-Abruf (z. B. ohne Netz) und bietet „Erneut versuchen“. */
 class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, { fehler: boolean }> {
@@ -64,23 +84,63 @@ class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, {
 }
 
 function anweisung(a: Aufgabe, t: SpielerTexte['aufgaben']): string {
-  if (a.typ === 'auswahl') return t.auswahl[a.anweisung];
-  if (a.typ === 'wortbank') return t.wortbank[a.anweisung];
-  if (a.typ === 'paare') return t.paare[a.anweisung];
-  return '';
+  switch (a.typ) {
+    case 'auswahl':
+      return t.auswahl[a.anweisung];
+    case 'wortbank':
+      return t.wortbank[a.anweisung];
+    case 'paare':
+      return t.paare[a.anweisung];
+    case 'bild_wort':
+      return t.bild_wort[a.anweisung];
+    case 'frei':
+      return t.frei[a.anweisung ?? 'uebersetze'];
+    case 'hoeren_waehlen':
+      return t.hoeren_waehlen[a.anweisung];
+    case 'hoeren_schreiben':
+      return t.hoeren_schreiben.schreibeGehoertes;
+    case 'minimalpaare':
+      return t.minimalpaare.waehleGehoertes;
+    case 'luecke':
+      return t.luecke.ergaenze;
+    case 'satzbau':
+      return t.satzbau.ordne;
+    case 'formen':
+      return t.formen.ergaenze;
+    case 'harakat':
+      return t.harakat[a.anweisung];
+    default:
+      return '';
+  }
 }
 
 function loesungSprache(a: Aufgabe): UiSprache | null {
-  if (a.typ === 'auswahl') return a.optionen[a.richtig]?.sprache ?? null;
-  if (a.typ === 'wortbank') return a.sprache;
-  return null;
+  switch (a.typ) {
+    case 'auswahl':
+    case 'bild_wort':
+    case 'hoeren_waehlen':
+    case 'minimalpaare':
+    case 'harakat':
+      return a.optionen[a.richtig]?.sprache ?? null;
+    case 'wortbank':
+    case 'frei':
+    case 'hoeren_schreiben':
+    case 'luecke':
+    case 'satzbau':
+    case 'formen':
+      return a.sprache;
+    default:
+      return null;
+  }
 }
 
 const KNOPF = 'min-h-12 druck rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800';
 
-export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreignis, onFertig, zurueckHref }: SpielerProps) {
+export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreignis, onFertig, zurueckHref, hoeren = true }: SpielerProps) {
   const id = useId();
-  const [s, setS] = useState<Sitzung>(() => starte(lektion));
+  const [s, setS] = useState<Sitzung>(() => starte(lektion, { ohne: hoeren ? [] : HOER_TYPEN }));
+  // Aufgabe, die sich nur überspringen lässt (Hörübung ohne Audio): kein „Prüfen“
+  const [nurWeiterBei, setNurWeiterBei] = useState<number | null>(null);
   const [antwort, setAntwort] = useState<Antwort | null>(null);
   const [meldung, setMeldung] = useState('');
   const [komponenten, setKomponenten] = useState(erzeugeKomponenten);
@@ -131,6 +191,19 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
     if (r.sitzung.phase === 'fertig') onFertig?.(zusammenfassung(r.sitzung));
   }
 
+  const pos = s.pos;
+  const nurUeberspringen = useCallback((ja: boolean) => setNurWeiterBei((alt) => (ja ? pos : alt === pos ? null : alt)), [pos]);
+
+  function ueberspringeAufgabe({ typen, meldung }: { typen?: readonly AufgabenTyp[]; meldung?: string } = {}) {
+    if (s.phase !== 'frage') return;
+    const r = ueberspringe(s, { typen });
+    setS(r.sitzung);
+    setAntwort(null);
+    setMeldung(meldung ?? '');
+    sende(r.ereignisse);
+    if (r.sitzung.phase === 'fertig') onFertig?.(zusammenfassung(r.sitzung));
+  }
+
   function erneutLaden() {
     setKomponenten(erzeugeKomponenten());
     setLadeVersuch((n) => n + 1);
@@ -165,12 +238,15 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
   const Uebung = komponenten[aufgabe.typ as ImplementierterTyp] as ComponentType<AufgabenProps<ImplementierterTyp>>;
   const stand = f(texte.spieler.aufgabeVon, { nr: a.index + 1, anzahl: s.aufgaben.length });
   const auswertung = s.phase === 'rueckmeldung' ? s.letzte : null;
+  // nur überspringen: Hörübung ohne Clip („Audio folgt“) oder Wiedergabe auf dem Gerät nicht möglich (meldet die Übung)
+  const ohneAudio = istHoerTyp(aufgabe.typ) && !(aufgabe as { hoeren?: { audio?: unknown } }).hoeren?.audio;
+  const nurWeiter = ohneAudio || nurWeiterBei === s.pos;
 
   return (
     <section aria-labelledby={`${id}-titel`} className="flex flex-col gap-5">
       <Fortschrittsleiste anteil={fortschritt(s)} beschriftung={texte.spieler.fortschritt} wertText={stand} />
       <p className="text-16 font-bold text-gruen-800">{a.wiederholung ? texte.spieler.nochEinmal : stand}</p>
-      <form onSubmit={absenden} noValidate className="flex flex-col gap-5">
+      <form onSubmit={absenden} noValidate data-aufgabe={aufgabe.typ} className="flex flex-col gap-5">
         <h2 id={`${id}-titel`} ref={titel} tabIndex={-1} className="text-24 font-bold outline-none">
           {anweisung(aufgabe, texte.aufgaben)}
         </h2>
@@ -198,10 +274,13 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
               setzeAntwort={setAntwort}
               gibAb={gibAb}
               melde={setMeldung}
+              tastatur={texte.tastatur}
+              ueberspringe={ueberspringeAufgabe}
+              nurUeberspringen={nurUeberspringen}
             />
           </Suspense>
         </Ladegrenze>
-        {aufgabe.typ !== 'paare' && s.phase === 'frage' ? (
+        {aufgabe.typ !== 'paare' && s.phase === 'frage' && !nurWeiter ? (
           <button type="submit" disabled={!antwort} className={`${KNOPF} self-end disabled:bg-linie disabled:text-tinte-2`}>
             {texte.spieler.pruefen}
           </button>

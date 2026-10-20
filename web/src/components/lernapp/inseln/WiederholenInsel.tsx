@@ -25,7 +25,7 @@ type Zustand =
   | { art: 'laedt' }
   | { art: 'leer' }
   | { art: 'fehlt' }
-  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern };
+  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern; hoeren: boolean };
 
 /**
  * Wiederholen (PLAN §3.1, §4; ADR 0038 Nr. 3): Kartenwahl aus dem lokalen Stand des Kurses (fällige zuerst, dann schwache;
@@ -70,7 +70,7 @@ export function WiederholenInsel({
       const lektion = baueWiederholung(kurs, gewaehlt, pakete);
       if (!lektion) return { art: 'fehlt' };
       const e = await einstellungsSpeicher(ui).laden();
-      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern };
+      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern, hoeren: e.hoeren };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -117,6 +117,7 @@ export function WiederholenInsel({
           texte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
+          hoeren={z.hoeren}
           onEreignis={melde}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}

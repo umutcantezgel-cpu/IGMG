@@ -38,16 +38,20 @@ describe('Testkurs', () => {
     expect(await anzahl('lernapp_kurs', sql`aktiv`)).toBe(3);
     expect(await anzahl('lernapp_richtung', sql`aktiv`)).toBe(6);
     expect(await anzahl('lernapp_einheit')).toBe(3);
-    expect(await anzahl('lernapp_lektion')).toBe(6);
-    expect(await anzahl('lernapp_aufgabe')).toBe(21);
-    expect(await anzahl('lernapp_lemma')).toBe(12);
-    expect(await anzahl('lernapp_satz')).toBe(9);
-    expect(await anzahl('lernapp_uebersetzung')).toBe(6 * 7);
+    expect(await anzahl('lernapp_lektion')).toBe(9);
+    // l01/l02 je 7 Aufgaben; l03 je eine Aufgabe der Typen aus L2-01 (de, tr 9; ar mit harakat 10)
+    expect(await anzahl('lernapp_aufgabe')).toBe(21 + 28);
+    expect(await anzahl('lernapp_lemma')).toBe(21);
+    expect(await anzahl('lernapp_satz')).toBe(12);
+    expect(await anzahl('lernapp_uebersetzung')).toBe(6 * 9);
     expect(await anzahl('lernapp_tipp')).toBe(4);
-    expect(clips).toBe(21);
-    expect(await anzahl('lernapp_audio', sql`stimme = 'test:ton'`)).toBe(21);
+    // je Sprache 10 Clips: alle Texte außer s0004 (Hörübung „Audio folgt“) und die zwei Minimalpaar-Wörter
+    expect(clips).toBe(30);
+    expect(await anzahl('lernapp_audio', sql`stimme = 'test:ton'`)).toBe(30);
     // Alles mit dem Stand der Datei, Herkunft und Lizenz je Eintrag, KI-/Test-Herkunft als Verfasser
-    expect(await anzahl('lernapp_satz', sql`status = 'automatisch_geprueft' and lizenz = 'CC-BY-SA-4.0' and quelle like 'test:%'`)).toBe(9);
+    expect(await anzahl('lernapp_satz', sql`status = 'automatisch_geprueft' and lizenz = 'CC-BY-SA-4.0' and quelle like 'test:%'`)).toBe(
+      12,
+    );
     expect((await satz('tr.a1.e01.s0001')).verfasstVon).toBe('test:lernapp-testkurs');
     expect((await satz('tr.a1.e01.s0001')).inhaltHash).toMatch(/^[0-9a-f]{64}$/);
     expect(await anzahl('lernapp_satz', sql`religionsbezug`)).toBe(0);
@@ -122,7 +126,7 @@ describe('Änderungen', () => {
     const b = await importiereLernapp(
       appDb,
       mitDe((d) => {
-        d.lektionen = d.lektionen.slice(0, 1);
+        d.lektionen = d.lektionen.filter((l) => !l.schluessel.endsWith('.l02'));
       }),
       { ...QUELLE, erzwingen: true },
     );
@@ -138,7 +142,7 @@ describe('Änderungen', () => {
         'lernapp_uebersetzung',
         sql`sprache = 'de' and status = 'gesperrt' and (satz_id in (select id from lernapp_satz where kurs_id = 'tr') or lemma_id in (select id from lernapp_lemma where kurs_id = 'tr'))`,
       ),
-    ).toBe(7);
+    ).toBe(9);
     expect(await anzahl('lernapp_tipp', sql`schluessel = 'tr.a1.e01.de.t01' and status = 'gesperrt'`)).toBe(1);
     expect(c.kurse).toEqual(['ar', 'tr']);
   });

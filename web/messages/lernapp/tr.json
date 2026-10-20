@@ -310,7 +310,129 @@
       "keinPaar": "{links} ile {rechts} birbirine ait değil.",
       "fertig": "Bütün eşler bulundu.",
       "tasten": "Enter ile bir kelime, sonra eşini seç. Ok tuşları bir liste içinde gezinir."
+    },
+    "bild_wort": {
+      "waehleWort": "Resme hangi kelime uyuyor?",
+      "bild": "Resimli alıştırma: Resim aranan kelimeyi gösteriyor.",
+      "beschreibung": "Resim: {text}",
+      "optionen": "Kelimeler",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç."
+    },
+    "frei": {
+      "uebersetze": "Çeviriyi yaz.",
+      "antworte": "Cevabını yaz.",
+      "eingabe": "Cevabın"
+    },
+    "hoeren": {
+      "anhoeren": "Dinle",
+      "langsam": "Yavaş dinle",
+      "spielt": "Çalınıyor …",
+      "nichtHoeren": "Şu an dinleyemiyorum",
+      "uebersprungen": "Bu dersin dinleme alıştırmaları atlanıyor.",
+      "audioFolgt": "Ses kaydı gelecek",
+      "audioFolgtText": "Bu alıştırmanın henüz ses kaydı yok. Alıştırma atlanıyor.",
+      "nichtMoeglich": "Bu cihazda dinleme mümkün değil. Alıştırma atlanıyor.",
+      "keinNetz": "Ses kaydı yüklenemedi. Lütfen bağlantını kontrol et.",
+      "ueberspringen": "Dinlemeden devam et",
+      "abschrift": "Yazılı hâli:"
+    },
+    "hoeren_waehlen": {
+      "waehleGehoertes": "Ne duyuyorsun?",
+      "waehleBedeutung": "Duyduğunun anlamı ne?",
+      "optionen": "Cevaplar",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç."
+    },
+    "hoeren_schreiben": {
+      "schreibeGehoertes": "Duyduğunu yaz.",
+      "eingabe": "Duyduğun metin"
+    },
+    "minimalpaare": {
+      "waehleGehoertes": "Hangi kelimeyi duyuyorsun?",
+      "optionen": "Kelimeler",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç."
+    },
+    "luecke": {
+      "ergaenze": "Boşluğu doldur.",
+      "luecke": "Boşluk",
+      "optionen": "Boşluk için kelimeler",
+      "hilfe": "Anlamı:",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç."
+    },
+    "satzbau": {
+      "ordne": "Kelimeleri doğru sıraya koy."
+    },
+    "formen": {
+      "ergaenze": "Biçimleri tamamla.",
+      "tabelle": "Biçimler",
+      "richtigeForm": "Doğrusu:"
+    },
+    "harakat": {
+      "waehleVokalisierung": "Hangi yazılışın harekeleri doğru?",
+      "optionen": "Yazılışlar",
+      "bedeutung": "Anlamı:",
+      "tasten": "Ok tuşlarıyla ya da 1 ile {n, number} arasındaki rakamlarla seç. Her yazılış, işaretlerinin adlarıyla okunur.",
+      "zeichen": {
+        "u0621": "Hemze",
+        "u0622": "Medli elif",
+        "u0623": "Üstünde hemze olan elif",
+        "u0624": "Hemzeli vav",
+        "u0625": "Altında hemze olan elif",
+        "u0626": "Hemzeli ye",
+        "u0627": "Elif",
+        "u0628": "Be",
+        "u0629": "Yuvarlak te",
+        "u062A": "Te",
+        "u062B": "Se",
+        "u062C": "Cim",
+        "u062D": "Ha",
+        "u062E": "Hı",
+        "u062F": "Dal",
+        "u0630": "Zel",
+        "u0631": "Ra",
+        "u0632": "Ze",
+        "u0633": "Sin",
+        "u0634": "Şın",
+        "u0635": "Sad",
+        "u0636": "Dad",
+        "u0637": "Tı",
+        "u0638": "Zı",
+        "u0639": "Ayın",
+        "u063A": "Ğayın",
+        "u0641": "Fe",
+        "u0642": "Kaf",
+        "u0643": "Kef",
+        "u0644": "Lâm",
+        "u0645": "Mim",
+        "u0646": "Nun",
+        "u0647": "He",
+        "u0648": "Vav",
+        "u0649": "Elif-i maksure",
+        "u064A": "Ye",
+        "u0671": "Vasla elifi",
+        "u064B": "İki üstün",
+        "u064C": "İki ötre",
+        "u064D": "İki esre",
+        "u064E": "Üstün",
+        "u064F": "Ötre",
+        "u0650": "Esre",
+        "u0651": "Şedde",
+        "u0652": "Cezm",
+        "u0653": "Med",
+        "u0654": "Üstte hemze",
+        "u0655": "Altta hemze",
+        "u0670": "Dik üstün"
+      }
     }
+  },
+  "tastatur": {
+    "sonderzeichen": "Özel karakterler",
+    "einfuegen": "{zeichen} ekle",
+    "arabisch": "Arapça klavye",
+    "buchstaben": "Arap harfleri",
+    "vokalzeichen": "Harekeler",
+    "leerzeichen": "Boşluk",
+    "loeschen": "Karakteri sil",
+    "tasten": "Ok tuşlarıyla bir tuş seç, Enter karakteri ekler."
   },
   "konto": {
     "titel": "Hesap ve eşitleme",

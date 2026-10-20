@@ -1,0 +1,83 @@
+import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
+import { SPRACHEN } from '../kurse';
+import { SchluesselSchema } from '../ereignisse/typen';
+import * as z from '../z';
+
+/**
+ * Bausteine der Aufgaben-Schemas (PLAN §4), gemeinsam für `schema.ts` und die Nutzlasten je Übungstyp
+ * (`bild_wort.ts`, `frei.ts`, …). Eigenes Modul, damit die Typ-Dateien ihre Schemas bauen können, ohne `schema.ts`
+ * zur Laufzeit zu importieren (`schema.ts` setzt aus ihnen die Union zusammen). `schema.ts` reicht alles weiter.
+ */
+
+export const SpracheSchema = z.enum(SPRACHEN);
+
+/** Verweis auf einen Clip im Audio-Bündel (ADR 0039 Nr. 3, Fortschreibung S4/S5). */
+export const AudioSchema = z.strictObject({
+  buendel: z.string().check(z.minLength(1), z.maxLength(200)),
+  versatz: z.int().check(z.minimum(0)),
+  laenge: z.int().check(z.minimum(1), z.maximum(16_777_216)),
+  dauerMs: z.optional(z.int().check(z.minimum(1))),
+});
+
+/** Text mit Länge (getrimmt, dann geprüft). */
+export const text = (max: number, min = 1) => z.string().check(z.trim(), z.minLength(min), z.maxLength(max));
+/** Ungetrimmter Text mit Länge. */
+export const roh = (max: number, min = 1) => z.string().check(z.minLength(min), z.maxLength(max));
+/** Liste mit Länge. */
+export const liste = <T extends z.ZodMiniType>(e: T, min: number, max: number) => z.array(e).check(z.minLength(min), z.maxLength(max));
+/** Ganzzahl ≥ min. */
+export const ab = (min: number) => z.int().check(z.minimum(min));
+
+/** Ein Text mit Sprache (und optional Audio). */
+export const InhaltSchema = z.strictObject({
+  text: text(600),
+  sprache: SpracheSchema,
+  audio: z.optional(AudioSchema),
+});
+export type Inhalt = z.infer<typeof InhaltSchema>;
+
+/** Felder jeder Aufgabe: Schlüssel und die Wiederholungskarten, die sie bewertet. */
+export const basis = {
+  schluessel: SchluesselSchema,
+  karten: z.optional(z.array(SchluesselSchema).check(z.maxLength(12))),
+};
+
+export const Loesungen = liste(text(600), 1, 30);
+export const Optionen = liste(InhaltSchema, 2, 6);
+
+/** Texte verschieden (ohne Groß/Klein, getrimmt). */
+export const eindeutig = (texte: readonly string[]) => new Set(texte.map((t) => t.trim().toLocaleLowerCase())).size === texte.length;
+
+/** Index der richtigen Option liegt im Bereich, Optionen sind verschieden. */
+export function mitOptionen<T extends { optionen: { text: string }[]; richtig: number }>(a: T, ctx: z.RefinementCtx<T>) {
+  if (a.richtig >= a.optionen.length) ctx.addIssue({ code: 'custom', message: 'richtig außerhalb der Optionen', path: ['richtig'] });
+  if (!eindeutig(a.optionen.map((o) => o.text))) ctx.addIssue({ code: 'custom', message: 'Optionen doppelt', path: ['optionen'] });
+}
+
+export type KartenUrteil = { karte: string; urteil: Urteil };
+
+export type Auswertung = {
+  urteil: Urteil;
+  hinweise: HinweisSchluessel[];
+  /** richtige Lösung zur Anzeige (bei `tippfehler` und `falsch`; bei `richtig` die getroffene Lösung) */
+  loesung: string | null;
+  karten: KartenUrteil[];
+};
+
+export type BewertungsKontext = { lexikon?: Lexikon };
+
+/** Alle Karten einer Aufgabe mit demselben Urteil. */
+export const kartenMit = (karten: readonly string[] | undefined, urteil: Urteil): KartenUrteil[] =>
+  (karten ?? []).map((karte) => ({ karte, urteil }));
+
+/** Auswertung einer Wahl nach Index (auswahl, bild_wort, hoeren_waehlen, minimalpaare). */
+export function nachIndex(
+  a: { optionen: readonly { text: string }[]; richtig: number; karten?: readonly string[] },
+  wahl: number,
+): Auswertung {
+  const urteil = wahl === a.richtig ? 'richtig' : 'falsch';
+  return { urteil, hinweise: [], loesung: a.optionen[a.richtig]?.text ?? null, karten: kartenMit(a.karten, urteil) };
+}
+
+/** Höchstlänge einer getippten Antwort (Eingabefeld und Bewertung). */
+export const ANTWORT_MAX = 600;

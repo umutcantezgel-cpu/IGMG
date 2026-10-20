@@ -42,7 +42,7 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
           ui={ui}
           kurs={kurs}
           texte={rohTexte(ui, 'wiederholen')}
-          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben'), tastatur: rohTexte(ui, 'tastatur') }}
           lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}
         />
       </section>

@@ -1,11 +1,12 @@
 import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
-import type { AntwortVon, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
+import type { AntwortVon, AufgabenTyp, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
- * (Namensräume `spieler` und `aufgaben`) und werden mit `format.ts` gefüllt – kein next-intl im Client (ADR 0037).
+ * (Namensräume `spieler`, `aufgaben` und `tastatur`) und werden mit `format.ts` gefüllt – kein next-intl im Client
+ * (ADR 0037).
  */
 
 /** Oberflächen- bzw. Inhaltssprache; Typ und Schreibrichtung aus `kurse.ts` (eine Quelle für alle Pakete). */
@@ -63,7 +64,49 @@ export type SpielerTexte = {
       fertig: string;
       tasten: string;
     };
+    bild_wort: { waehleWort: string; bild: string; beschreibung: string; optionen: string; tasten: string };
+    frei: { uebersetze: string; antworte: string; eingabe: string };
+    hoeren: {
+      anhoeren: string;
+      langsam: string;
+      spielt: string;
+      nichtHoeren: string;
+      uebersprungen: string;
+      audioFolgt: string;
+      audioFolgtText: string;
+      nichtMoeglich: string;
+      keinNetz: string;
+      ueberspringen: string;
+      abschrift: string;
+    };
+    hoeren_waehlen: { waehleGehoertes: string; waehleBedeutung: string; optionen: string; tasten: string };
+    hoeren_schreiben: { schreibeGehoertes: string; eingabe: string };
+    minimalpaare: { waehleGehoertes: string; optionen: string; tasten: string };
+    luecke: { ergaenze: string; luecke: string; optionen: string; hilfe: string; tasten: string };
+    satzbau: { ordne: string };
+    formen: { ergaenze: string; tabelle: string; richtigeForm: string };
+    harakat: {
+      waehleVokalisierung: string;
+      optionen: string;
+      bedeutung: string;
+      tasten: string;
+      /** Namen der arabischen Buchstaben und Zeichen nach Codepunkt (`u0628`) */
+      zeichen: Record<string, string>;
+    };
   };
+  /** Sonderzeichenleiste und arabische Bildschirmtastatur */
+  tastatur: TastaturTexte;
+};
+
+export type TastaturTexte = {
+  sonderzeichen: string;
+  einfuegen: string;
+  arabisch: string;
+  buchstaben: string;
+  vokalzeichen: string;
+  leerzeichen: string;
+  loeschen: string;
+  tasten: string;
 };
 
 /** Props jeder Übungskomponente (eigener Chunk je Typ, `aufgaben/lader.ts`). */
@@ -84,4 +127,13 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   gibAb: (antwort: AntwortVon<T>) => void;
   /** Text für die eine Live-Region des Bildschirms (im Rückmeldeblatt) */
   melde: (text: string) => void;
+  /** Texte der Sonderzeichenleiste und der arabischen Tastatur */
+  tastatur: TastaturTexte;
+  /**
+   * Aufgabe ohne Bewertung überspringen (Hörübung ohne Audio, Hören auf dem Gerät nicht möglich); mit `typen` auch alle
+   * späteren Aufgaben dieser Typen („Ich kann gerade nicht hören“). Meldung `meldung` in der Live-Region.
+   */
+  ueberspringe: (o?: { typen?: readonly AufgabenTyp[]; meldung?: string }) => void;
+  /** Die Aufgabe lässt sich nur überspringen (der Spieler blendet „Prüfen“ aus). */
+  nurUeberspringen: (ja: boolean) => void;
 };

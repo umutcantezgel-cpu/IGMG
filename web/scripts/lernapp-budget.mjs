@@ -7,7 +7,9 @@
 // - Start `/lern-app/de`, Lernpfad `/lern-app/ar/de-aus-ar`, Fortschritt `/lern-app/de/fortschritt`: gesamt ≤ 180 KB,
 //   eigener Anteil ≤ 30 KB.
 // - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB.
-// - je Übungstyp ≤ 15 KB: die Datei mit dem Erkennungstext der Komponente (Klassen, aus `.next/static/chunks`).
+// - je Übungstyp ≤ 15 KB: die Dateien mit den Erkennungstexten der Komponente und der gemeinsamen Bausteine, die der Typ
+//   nachlädt (`TYP_MODULE`; Klassen, aus `.next/static/chunks`), jede Datei einmal gezählt.
+// - arabische Bildschirmtastatur ≤ 10 KB (eigener Chunk, erst bei arabischem Freitext).
 // Exit 1, wenn ein Budget verfehlt ist.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -33,6 +35,23 @@ const ROUTEN = {
 /** Erkennungstexte der Komponenten (lange Klassenketten, je genau eine Quelldatei; geprüft in tests/unit/lernapp/bundle-regeln). */
 const ERKENNUNG = JSON.parse(readFileSync(join(import.meta.dirname, 'lernapp-budget-erkennung.json'), 'utf8'));
 
+/** Module je Übungstyp (Erkennungstexte): eigene Komponente und gemeinsame Bausteine aus `aufgaben/` bzw. `tastatur/`. */
+const TEXT = ['texteingabe', 'zeichenhilfe', 'sonderzeichen'];
+const TYP_MODULE = {
+  auswahl: ['auswahl'],
+  paare: ['paare'],
+  wortbank: ['wortbank'],
+  bild_wort: ['bild_wort', 'optionsgruppe'],
+  frei: ['frei', ...TEXT],
+  hoeren_waehlen: ['abspieler', 'optionsgruppe'],
+  hoeren_schreiben: ['abspieler', ...TEXT],
+  minimalpaare: ['abspieler', 'optionsgruppe'],
+  luecke: ['luecke', 'optionsgruppe', ...TEXT],
+  satzbau: ['wortbank'],
+  formen: ['formen', ...TEXT],
+  harakat: ['harakat', 'optionsgruppe'],
+};
+
 const BUDGET = {
   huelleEigen: 20,
   startGesamt: 180,
@@ -44,6 +63,7 @@ const BUDGET = {
   spielerGesamt: 210,
   spielerZusaetzlich: 60,
   uebungstyp: 15,
+  arabischeTastatur: 10,
 };
 
 async function skripte(browser, { pfad, warte }) {
@@ -119,7 +139,15 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
-  uebungstyp: Object.fromEntries(['auswahl', 'paare', 'wortbank'].map((t) => [t, kb(typen[t].gz)])),
+  uebungstyp: Object.fromEntries(
+    Object.entries(TYP_MODULE).map(([t, module]) => {
+      const dateien = new Set(module.flatMap((m) => typen[m].dateien));
+      // jede Datei einmal; ohne Treffer 0 (nicht gefunden)
+      const gz = [...dateien].reduce((s, d) => s + gzipSync(readFileSync(join(ordner, d)), { level: 9 }).length, 0);
+      return [t, module.every((m) => typen[m].dateien.length) ? kb(gz) : 0];
+    }),
+  ),
+  arabischeTastatur: kb(typen.arabischeTastatur.gz),
   spielerChunk: kb(typen.spieler.gz),
 };
 
@@ -128,6 +156,8 @@ for (const [k, grenze] of Object.entries(BUDGET)) {
   if (k === 'uebungstyp') {
     for (const [t, v] of Object.entries(werte.uebungstyp))
       if (!v || v > grenze) verfehlt.push(`Übungstyp ${t}: ${v} KB (≤ ${grenze}, 0 = nicht gefunden)`);
+  } else if (k === 'arabischeTastatur') {
+    if (!werte[k] || werte[k] > grenze) verfehlt.push(`arabische Tastatur: ${werte[k]} KB (≤ ${grenze}, 0 = nicht gefunden)`);
   } else if (werte[k] > grenze) verfehlt.push(`${k}: ${werte[k]} KB > ${grenze}`);
 }
 if (!werte.spielerChunk) verfehlt.push('Spieler-Chunk nicht gefunden (Erkennungstext)');
@@ -144,6 +174,7 @@ const zeilen = [
   `Spieler-Chunk: ${werte.spielerChunk} KB · Übungstypen: ${Object.entries(werte.uebungstyp)
     .map(([t, v]) => `${t} ${v} KB`)
     .join(', ')} (je ≤ ${BUDGET.uebungstyp})`,
+  `Arabische Bildschirmtastatur: ${werte.arabischeTastatur} KB (≤ ${BUDGET.arabischeTastatur})`,
   verfehlt.length ? `VERFEHLT: ${verfehlt.join(' · ')}` : 'Alle Budgets eingehalten.',
 ];
 console.log(zeilen.join('\n'));

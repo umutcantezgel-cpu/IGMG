@@ -69,19 +69,20 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
       expect(v).toMatchObject({ kurs, zielsprache: kurs.slice(0, 2), ausgangssprache: kurs.slice(-2) });
       expect(v.einheiten).toHaveLength(1);
       const e = v.einheiten[0]!;
-      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.e01`, stufe: 'a1', lektionen: 2, hinweis: true });
+      expect(e).toMatchObject({ schluessel: `${kurs.slice(0, 2)}.a1.e01`, stufe: 'a1', lektionen: 3, hinweis: true });
       expect(e.audio).toEqual([
         { adresse: expect.stringMatching(new RegExp(`^/lern-app/audio/${kurs.slice(0, 2)}/`)), bytes: expect.any(Number) },
       ]);
       const { paket: p } = await paket(kurs);
       expect(kanonisch(p)).toBe(JSON.stringify(JSON.parse(kanonisch(p))));
-      expect(aufgabenSchluessel(p)).toHaveLength(7);
+      // l01/l02: 7 Aufgaben; l03: je eine Aufgabe der Typen aus L2-01 (Zielsprache ar mit harakat)
+      expect(aufgabenSchluessel(p)).toHaveLength(kurs.startsWith('ar') ? 17 : 16);
     }
   });
 
   it('Lektionen, Aufgaben, Karten je Richtung, Audio nur an Zieltexten, Herkunft je Eintrag, Tipps der Ausgangssprache', async () => {
     const { paket: p } = await paket('tr-aus-de');
-    expect(p.lektionen.map((l) => l.schluessel)).toEqual(['tr-aus-de.a1.e01.l01', 'tr-aus-de.a1.e01.l02']);
+    expect(p.lektionen.map((l) => l.schluessel)).toEqual(['tr-aus-de.a1.e01.l01', 'tr-aus-de.a1.e01.l02', 'tr-aus-de.a1.e01.l03']);
     expect(p.lektionen[0]).toMatchObject({ kurs: 'tr-aus-de', zielsprache: 'tr', ausgangssprache: 'de', titel: 'Erste Wörter' });
     const [a01, a02, a03] = p.lektionen[0]!.aufgaben;
     expect(a01).toMatchObject({ typ: 'auswahl', karten: ['tr-aus-de:tr.a1.e01.w001'], vorgabe: { text: 'su', sprache: 'tr' }, richtig: 0 });
@@ -122,6 +123,44 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     expect(p.lizenz).toBe('CC-BY-SA-4.0');
   });
 
+  it('Lektion l03: je eine Aufgabe der Typen aus L2-01, Bildkarte aus dem Register, Hörübung ohne Ton ohne audio', async () => {
+    const { paket: p } = await paket('tr-aus-de');
+    const l03 = p.lektionen[2]!;
+    expect(l03.aufgaben.map((a) => a.typ)).toEqual([
+      'bild_wort',
+      'frei',
+      'hoeren_waehlen',
+      'hoeren_waehlen',
+      'hoeren_schreiben',
+      'minimalpaare',
+      'luecke',
+      'satzbau',
+      'formen',
+    ]);
+    const [bild, frei, ohneTon, mitTon, diktat, paar, luecke, satzbau, formen] = l03.aufgaben;
+    expect(bild).toMatchObject({
+      typ: 'bild_wort',
+      bild: { symbol: 'haus' },
+      optionen: [{ text: 'ev' }, { text: 'kitap' }, { text: 'su' }],
+    });
+    expect(frei).toMatchObject({ vorgabe: { text: 'Brot', sprache: 'de' }, sprache: 'tr', loesungen: ['ekmek'] });
+    expect(ohneTon?.typ === 'hoeren_waehlen' && ohneTon.hoeren).toEqual({ text: 'Ekmek taze.', sprache: 'tr' });
+    expect(mitTon?.typ === 'hoeren_waehlen' && mitTon.hoeren.audio?.buendel).toMatch(/^\/lern-app\/audio\/tr\//);
+    expect(diktat).toMatchObject({ hoeren: { text: 'kitap' }, loesungen: ['kitap'] });
+    expect(paar).toMatchObject({ hoeren: { text: 'üç' }, optionen: [{ text: 'üç' }, { text: 'uç' }] });
+    expect(luecke).toMatchObject({
+      vor: 'Su ',
+      nach: '.',
+      optionen: ['içiyorum', 'içiyorsun', 'içiyor'],
+      hilfe: { text: 'Ich trinke Wasser.' },
+    });
+    expect(satzbau).toMatchObject({ kacheln: ['Ev', 'büyük'], vorgabe: { text: 'Das Haus ist groß.' } });
+    expect(formen).toMatchObject({ titel: { text: 'içmek' }, zeilen: ['ben', 'sen', 'o'], zellen: [{ vorgabe: true }, {}, {}] });
+    const ar = (await paket('ar-aus-de')).paket.lektionen[2]!.aufgaben;
+    expect(ar.map((a) => a.typ).at(-1)).toBe('harakat');
+    expect(ar.find((a) => a.typ === 'luecke')).not.toHaveProperty('optionen');
+  });
+
   it('Schalter lernapp_ungeprueft aus: nur veröffentlichte Einträge; veröffentlicht ohne Hinweis', async () => {
     process.env.FUNKTION_LERNAPP_UNGEPRUEFT = 'aus';
     expect((await verzeichnis('tr-aus-de')).einheiten).toEqual([]);
@@ -154,8 +193,16 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     const v = await verzeichnis('tr-aus-de');
     expect(v.einheiten).toHaveLength(1);
     expect(v.einheiten[0]?.hinweis).toBe(false);
-    // tr-aus-ar hat noch ungeprüfte Übersetzungen ins Arabische → ohne Schalter nichts spielbar
-    expect((await verzeichnis('tr-aus-ar')).einheiten).toEqual([]);
+    // tr-aus-ar hat noch ungeprüfte Übersetzungen ins Arabische → ohne Schalter nur Aufgaben ohne Übersetzung (aus l03)
+    const ohneUebersetzung = await verzeichnis('tr-aus-ar');
+    expect(ohneUebersetzung.einheiten.map((e) => e.lektionen)).toEqual([1]);
+    expect(aufgabenSchluessel((await paket('tr-aus-ar')).paket)).toEqual([
+      'tr.a1.e01.l03.a05',
+      'tr.a1.e01.l03.a06',
+      'tr.a1.e01.l03.a07',
+      'tr.a1.e01.l03.a08',
+      'tr.a1.e01.l03.a09',
+    ]);
     delete process.env.FUNKTION_LERNAPP_UNGEPRUEFT;
     expect((await verzeichnis('tr-aus-ar')).einheiten[0]?.hinweis).toBe(true);
     await setzeStatus(schema.lernappSatz, 'tr.%', 'automatisch_geprueft');
@@ -258,7 +305,7 @@ describe('Kursverzeichnis und Einheitenpaket', () => {
     expect(aufrufe.updateTag).toEqual(['lernapp-kurs-de']);
     const v = await verzeichnis('de-aus-ar');
     expect(v.stand).toBe(stand + 1);
-    expect(v.einheiten[0]?.lektionen).toBe(1);
+    expect(v.einheiten[0]?.lektionen).toBe(2);
     const alt = await einheitRoute.GET(anfrage('/'), kontext({ kurs: 'de-aus-ar', einheit: 'de.a1.e01', hash: vorher.hash }));
     expect(alt.status).toBe(404);
     expect(await zieheZurueck('uebersetzung', 'de.a1.e01.w004@ar')).toBe(true);

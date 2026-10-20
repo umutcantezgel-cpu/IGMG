@@ -206,7 +206,25 @@ describe('Budget-Messung (scripts/lernapp-budget.mjs)', () => {
       string,
       { datei: string; text: string }
     >;
-    expect(Object.keys(erkennung).sort()).toEqual(['auswahl', 'paare', 'spieler', 'wortbank']);
+    expect(Object.keys(erkennung).sort()).toEqual(
+      [
+        'abspieler',
+        'arabischeTastatur',
+        'auswahl',
+        'bild_wort',
+        'formen',
+        'frei',
+        'harakat',
+        'luecke',
+        'optionsgruppe',
+        'paare',
+        'sonderzeichen',
+        'spieler',
+        'texteingabe',
+        'wortbank',
+        'zeichenhilfe',
+      ].sort(),
+    );
     const alle = dateien(WURZEL).filter((p) => p.endsWith('.tsx') || p.endsWith('.ts'));
     for (const [name, { datei, text }] of Object.entries(erkennung)) {
       const treffer = alle.filter((p) => readFileSync(p, 'utf8').includes(text)).map((p) => relative(join(WURZEL, '..'), p));

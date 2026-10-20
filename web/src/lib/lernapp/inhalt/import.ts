@@ -8,6 +8,7 @@ import type { Status } from '../freigabe';
 import { type KursId, RICHTUNGEN, SPRACH_STUFEN, type Sprache, zerlegeRichtung } from '../kurse';
 import { inhaltHash, sha256Hex } from '../paket/hash';
 import { ladeWaechter, pruefeReligion } from './religion';
+import { symbolFehler } from '../symbole';
 import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type UebersetzungDatei, verweiseVon } from './schema';
 
 /**
@@ -643,6 +644,12 @@ export function leseDateien(quellen: readonly ImportQuelle[]): { pfad: string; s
       fehler.push(...p.fehler.map((f) => `${q.pfad}: ${f}`));
       continue;
     }
+    // Bildkarten: nur Motive aus dem Register, ohne Freigabe der Redaktion nur im Testkurs (Inhaltsleitfaden §5, LM-34)
+    if (p.datei.art === 'sprache')
+      for (const l of p.datei.daten.lemmata) {
+        const f = l.symbol ? symbolFehler(l.symbol, l.quelle) : null;
+        if (f) fehler.push(`${q.pfad}: ${l.schluessel}: ${f}`);
+      }
     ergebnis.push({ pfad: q.pfad, sha: sha256Hex(q.text), datei: p.datei });
   }
   // Schlüssel sind über alle Dateien eindeutig (Einheiten, Lemmata, Sätze, Lektionen, Aufgaben)

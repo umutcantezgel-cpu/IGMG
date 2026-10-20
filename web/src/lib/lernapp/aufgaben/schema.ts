@@ -1,13 +1,36 @@
-import { SPRACHEN } from '../kurse';
-import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
 import { fehlendeKacheln } from '../abgleich/tokens';
 import { LEKTIONS_ARTEN } from '../engine/xp';
 import { SchluesselSchema } from '../ereignisse/typen';
 import * as z from '../z';
+import { type BildWortAntwort, BildWortSchema } from './bild_wort';
+import { type FormenAntwort, FormenSchema } from './formen';
+import { type FreiAntwort, FreiSchema } from './frei';
+import {
+  ab,
+  AudioSchema,
+  basis,
+  eindeutig,
+  InhaltSchema,
+  liste,
+  Loesungen,
+  mitOptionen,
+  Optionen,
+  roh,
+  SpracheSchema,
+  text,
+} from './grundlagen';
+import { type HarakatAntwort, HarakatSchema } from './harakat';
+import { type HoerenSchreibenAntwort, HoerenSchreibenSchema } from './hoeren_schreiben';
+import { type HoerenWaehlenAntwort, HoerenWaehlenSchema } from './hoeren_waehlen';
+import { type LueckeAntwort, LueckeSchema } from './luecke';
+import { type MinimalpaareAntwort, MinimalpaareSchema } from './minimalpaare';
+import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
 
 /**
  * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4 als Gerüst:
- * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts), L2 die übrigen.
+ * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts); L2-01 `bild_wort`, `frei`,
+ * `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen` und `harakat` – je Typ eine Datei mit
+ * Zod-Nutzlast, Bewertung und reinen Hilfen (`<typ>.ts`); gemeinsame Bausteine in `grundlagen.ts`.
  *
  * ## Lektionsformat (Eingabe des Spielers `<Spieler lektion={…} />`)
  *
@@ -44,48 +67,16 @@ import * as z from '../z';
  * - Quelle, Lizenz und Namensnennung je Eintrag stehen im Einheitenpaket (ADR 0039 Nr. 9), nicht in der Lektion.
  */
 
-export const SpracheSchema = z.enum(SPRACHEN);
-
-/** Verweis auf einen Clip im Audio-Bündel (ADR 0039 Nr. 3, Fortschreibung S4/S5). */
-export const AudioSchema = z.strictObject({
-  buendel: z.string().check(z.minLength(1), z.maxLength(200)),
-  versatz: z.int().check(z.minimum(0)),
-  laenge: z.int().check(z.minimum(1), z.maximum(16_777_216)),
-  dauerMs: z.optional(z.int().check(z.minimum(1))),
-});
-
-/** Text mit Länge (getrimmt, dann geprüft). */
-const text = (max: number, min = 1) => z.string().check(z.trim(), z.minLength(min), z.maxLength(max));
-/** Ungetrimmter Text mit Länge. */
-const roh = (max: number, min = 1) => z.string().check(z.minLength(min), z.maxLength(max));
-/** Liste mit Länge. */
-const liste = <T extends z.ZodMiniType>(e: T, min: number, max: number) => z.array(e).check(z.minLength(min), z.maxLength(max));
-/** Ganzzahl ≥ min. */
-const ab = (min: number) => z.int().check(z.minimum(min));
-
-/** Ein Text mit Sprache (und optional Audio). */
-export const InhaltSchema = z.strictObject({
-  text: text(600),
-  sprache: SpracheSchema,
-  audio: z.optional(AudioSchema),
-});
-export type Inhalt = z.infer<typeof InhaltSchema>;
-
-const basis = {
-  schluessel: SchluesselSchema,
-  karten: z.optional(z.array(SchluesselSchema).check(z.maxLength(12))),
-};
-
-const Loesungen = liste(text(600), 1, 30);
-const Optionen = liste(InhaltSchema, 2, 6);
-
-const eindeutig = (texte: readonly string[]) => new Set(texte.map((t) => t.trim().toLocaleLowerCase())).size === texte.length;
-
-/** Index der richtigen Option liegt im Bereich, Optionen sind verschieden. */
-function mitOptionen<T extends { optionen: { text: string }[]; richtig: number }>(a: T, ctx: z.RefinementCtx<T>) {
-  if (a.richtig >= a.optionen.length) ctx.addIssue({ code: 'custom', message: 'richtig außerhalb der Optionen', path: ['richtig'] });
-  if (!eindeutig(a.optionen.map((o) => o.text))) ctx.addIssue({ code: 'custom', message: 'Optionen doppelt', path: ['optionen'] });
-}
+export {
+  AudioSchema,
+  type Auswertung,
+  type BewertungsKontext,
+  type Inhalt,
+  InhaltSchema,
+  type KartenUrteil,
+  kartenMit,
+  SpracheSchema,
+} from './grundlagen';
 
 // ——— L1: implementiert ———
 
@@ -135,62 +126,27 @@ export const PaareSchema = z
     }),
   );
 
-// ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2) ———
+// ——— L2-01: implementiert (je Typ eine Datei) ———
+
+/** Übungstypen aus L2-01 mit eigener Datei (Nutzlast, Bewertung, Hilfen). */
+export const L2_TYPEN = {
+  bild_wort: BildWortSchema,
+  frei: FreiSchema,
+  hoeren_waehlen: HoerenWaehlenSchema,
+  hoeren_schreiben: HoerenSchreibenSchema,
+  minimalpaare: MinimalpaareSchema,
+  luecke: LueckeSchema,
+  satzbau: SatzbauSchema,
+  formen: FormenSchema,
+  harakat: HarakatSchema,
+} as const;
+
+// ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2-02/L2-03) ———
 
 const MitAudio = z.extend(InhaltSchema, { audio: AudioSchema });
 const Frage = z.strictObject({ frage: InhaltSchema, optionen: Optionen, richtig: ab(0) }).check(z.superRefine(mitOptionen));
 
 export const GERUEST = {
-  bild_wort: z.strictObject({
-    ...basis,
-    typ: z.literal('bild_wort'),
-    symbol: roh(200),
-    optionen: Optionen,
-    richtig: ab(0),
-  }),
-  frei: z.strictObject({ ...basis, typ: z.literal('frei'), vorgabe: InhaltSchema, sprache: SpracheSchema, loesungen: Loesungen }),
-  hoeren_waehlen: z.strictObject({
-    ...basis,
-    typ: z.literal('hoeren_waehlen'),
-    hoeren: MitAudio,
-    optionen: Optionen,
-    richtig: ab(0),
-  }),
-  hoeren_schreiben: z.strictObject({
-    ...basis,
-    typ: z.literal('hoeren_schreiben'),
-    hoeren: MitAudio,
-    sprache: SpracheSchema,
-    loesungen: Loesungen,
-  }),
-  minimalpaare: z.strictObject({ ...basis, typ: z.literal('minimalpaare'), hoeren: MitAudio, optionen: Optionen, richtig: ab(0) }),
-  luecke: z.strictObject({
-    ...basis,
-    typ: z.literal('luecke'),
-    vor: roh(600, 0),
-    nach: roh(600, 0),
-    sprache: SpracheSchema,
-    optionen: z.optional(z.array(roh(60)).check(z.maxLength(6))),
-    loesungen: Loesungen,
-  }),
-  satzbau: z.strictObject({
-    ...basis,
-    typ: z.literal('satzbau'),
-    sprache: SpracheSchema,
-    kacheln: liste(roh(60), 2, 24),
-    loesungen: Loesungen,
-  }),
-  formen: z.strictObject({
-    ...basis,
-    typ: z.literal('formen'),
-    sprache: SpracheSchema,
-    zeilen: liste(roh(60), 1, 12),
-    spalten: liste(roh(60), 1, 8),
-    zellen: z
-      .array(z.strictObject({ zeile: ab(0), spalte: ab(0), loesungen: Loesungen, vorgabe: z.optional(z.boolean()) }))
-      .check(z.minLength(1)),
-  }),
-  harakat: z.strictObject({ ...basis, typ: z.literal('harakat'), optionen: Optionen, richtig: ab(0) }),
   dialog: z.strictObject({
     ...basis,
     typ: z.literal('dialog'),
@@ -280,7 +236,13 @@ export const GERUEST = {
   fallfrage: z.strictObject({ ...basis, typ: z.literal('fallfrage'), fall: InhaltSchema, optionen: Optionen, richtig: ab(0) }),
 } as const;
 
-export const AufgabeSchema = z.discriminatedUnion('typ', [AuswahlSchema, WortbankSchema, PaareSchema, ...Object.values(GERUEST)]);
+export const AufgabeSchema = z.discriminatedUnion('typ', [
+  AuswahlSchema,
+  WortbankSchema,
+  PaareSchema,
+  ...Object.values(L2_TYPEN),
+  ...Object.values(GERUEST),
+]);
 
 export type Aufgabe = z.infer<typeof AufgabeSchema>;
 export type AufgabenTyp = Aufgabe['typ'];
@@ -290,10 +252,23 @@ export type WortbankAufgabe = AufgabeVon<'wortbank'>;
 export type PaareAufgabe = AufgabeVon<'paare'>;
 
 /** Alle Typen aus PLAN §4 (einschließlich Wissenskurs). */
-export const AUFGABEN_TYPEN = ['auswahl', 'wortbank', 'paare', ...Object.keys(GERUEST)] as AufgabenTyp[];
+export const AUFGABEN_TYPEN = ['auswahl', 'wortbank', 'paare', ...Object.keys(L2_TYPEN), ...Object.keys(GERUEST)] as AufgabenTyp[];
 
-/** In L1 spielbar (Bewertung und Anzeige vorhanden). */
-export const IMPLEMENTIERT = ['auswahl', 'wortbank', 'paare'] as const satisfies readonly AufgabenTyp[];
+/** Spielbar (Bewertung und Anzeige vorhanden): L1 und L2-01. */
+export const IMPLEMENTIERT = [
+  'auswahl',
+  'wortbank',
+  'paare',
+  'bild_wort',
+  'frei',
+  'hoeren_waehlen',
+  'hoeren_schreiben',
+  'minimalpaare',
+  'luecke',
+  'satzbau',
+  'formen',
+  'harakat',
+] as const satisfies readonly AufgabenTyp[];
 export type ImplementierterTyp = (typeof IMPLEMENTIERT)[number];
 export const istImplementiert = (typ: AufgabenTyp): typ is ImplementierterTyp => (IMPLEMENTIERT as readonly string[]).includes(typ);
 
@@ -321,21 +296,14 @@ export type Lektion = z.infer<typeof LektionSchema>;
 export type Antwort =
   | { typ: 'auswahl'; wahl: number }
   | { typ: 'wortbank'; kacheln: number[] }
-  | { typ: 'paare'; versuche: Array<readonly [links: number, rechts: number]> };
+  | { typ: 'paare'; versuche: Array<readonly [links: number, rechts: number]> }
+  | BildWortAntwort
+  | FreiAntwort
+  | HoerenWaehlenAntwort
+  | HoerenSchreibenAntwort
+  | MinimalpaareAntwort
+  | LueckeAntwort
+  | SatzbauAntwort
+  | FormenAntwort
+  | HarakatAntwort;
 export type AntwortVon<T extends ImplementierterTyp> = Extract<Antwort, { typ: T }>;
-
-export type KartenUrteil = { karte: string; urteil: Urteil };
-
-export type Auswertung = {
-  urteil: Urteil;
-  hinweise: HinweisSchluessel[];
-  /** richtige Lösung zur Anzeige (bei `tippfehler` und `falsch`; bei `richtig` die getroffene Lösung) */
-  loesung: string | null;
-  karten: KartenUrteil[];
-};
-
-export type BewertungsKontext = { lexikon?: Lexikon };
-
-/** Alle Karten einer Aufgabe mit demselben Urteil. */
-export const kartenMit = (karten: readonly string[] | undefined, urteil: Urteil): KartenUrteil[] =>
-  (karten ?? []).map((karte) => ({ karte, urteil }));

@@ -46,6 +46,8 @@ type Bereit = {
   paket: Paket;
   lektion: Lektion;
   ziffern: Ziffern;
+  /** Einstellung „Hörübungen aus“ (KERN 4.0 §8) */
+  hoeren: boolean;
   haengeAn: Ausgang['haengeAn'];
 };
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
@@ -94,7 +96,7 @@ export function UebenInsel({
       // die nächste Einheit automatisch speichern (nicht abwarten)
       const naechste = naechsteEinheit(v, einheit.schluessel);
       if (naechste) void ladePaket(sp, kurs, naechste).catch(() => null);
-      return { art: 'bereit', sp, profil, v, paket, lektion, ziffern: e.ziffern, haengeAn };
+      return { art: 'bereit', sp, profil, v, paket, lektion, ziffern: e.ziffern, hoeren: e.hoeren, haengeAn };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
@@ -158,6 +160,7 @@ export function UebenInsel({
           texte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
+          hoeren={z.hoeren}
           onEreignis={melde}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
