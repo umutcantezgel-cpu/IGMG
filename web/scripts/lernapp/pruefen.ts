@@ -1,68 +1,62 @@
-// Prüfgerüst der Lern-App-Inhalte (PLAN §6.4, Tor L3 „lernapp:pruefen 0“): Schema und Ablageort je Datei, eindeutige
-// Schlüssel, Dubletten (gleicher Text), Herkunft (Quelle, Lizenz aus der erlaubten Liste, Namensnennung), Verweise der
-// Übersetzungen, Religionswächter (Formel-Lexikon mit Kennzeichen, Koran- und Hadith-4-Gramme; S-L1 M-3). Weitere Prüfer
-// (Wortschatz, Satzlänge, Vokalisierung, Lizenzbericht) ergänzt L3-02.
-// Aufruf: pnpm lernapp:pruefen [--testkurs]   (Ausgang 1 bei blockierenden Befunden)
+// Automatische Prüfer der Lern-App-Inhalte (PLAN §6.4, Tor L3 „lernapp:pruefen 0“; Module in src/lib/lernapp/inhalt/pruefer/):
+// Auszugs-Prüfsummen (Abbruch bei Abweichung), Schema und Ablage, eindeutige Schlüssel, Dubletten, Lizenz und Herkunft,
+// Ausschlüsse, Stufen-Wortschatz, Satzlänge, Lemma-Budget, Abdeckung des Rahmenplans, Vokalisierung (ar), kindgeeignet,
+// Bildkarten, Religionswächter, Religionsbezug und Inhaltsleitfaden (Tabu-Lexikon → menschlich_klaeren).
+// Ausgaben ohne arabische Schrift und ohne Wörter des Tabu-Lexikons (nur Kategorie-IDs).
+// Aufruf: pnpm lernapp:pruefen [--testkurs] [--json <datei>] [--alle-warnungen]
+//   --testkurs   prüft den festen Testkurs (drizzle/seeds/lernapp-test.ts) zusammen mit Rahmenplänen und Leitfaden
+//   --json       schreibt den vollständigen Bericht (für die Workflows, L3-03)
+// Ausgang 1 bei blockierenden Befunden; Befunde für Menschen und Warnungen blockieren nicht.
+import { writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { testkursQuellen } from '../../drizzle/seeds/lernapp-test';
-import { type ImportQuelle, ImportFehler, leseDateien } from '../../src/lib/lernapp/inhalt/import';
-import { pruefeReligion } from '../../src/lib/lernapp/inhalt/religion';
-import { erwarteterPfad } from '../../src/lib/lernapp/inhalt/schema';
-import { inhaltsdateien } from './inhaltsdateien';
+import { befundZeile, blockierende, menschlich, type PruefBericht, pruefeInhalte, warnungen } from '../../src/lib/lernapp/inhalt/pruefer';
+import { PRUEFER } from '../../src/lib/lernapp/inhalt/pruefer/typen';
+import { alleInhaltsdateien, inhaltsdateien, INHALT_WURZEL } from './inhaltsdateien';
 
-const { values } = parseArgs({ options: { testkurs: { type: 'boolean', default: false } } });
-
-export type PruefBericht = { dateien: number; eintraege: number; befunde: string[]; warnungen: string[] };
-
-export function pruefe(quellen: readonly ImportQuelle[], { pfadePruefen = true } = {}): PruefBericht {
-  const bericht: PruefBericht = { dateien: quellen.length, eintraege: 0, befunde: [], warnungen: [] };
-  let dateien: ReturnType<typeof leseDateien>;
-  try {
-    dateien = leseDateien(quellen);
-  } catch (e) {
-    if (e instanceof ImportFehler) {
-      bericht.befunde.push(...e.fehler);
-      return bericht;
-    }
-    throw e;
-  }
-  bericht.befunde.push(...pruefeReligion(dateien));
-  const zielSchluessel = new Set<string>();
-  const texte = new Map<string, string>();
-  for (const { pfad, datei } of dateien) {
-    if (pfadePruefen && pfad !== erwarteterPfad(datei)) bericht.befunde.push(`${pfad}: gehört nach ${erwarteterPfad(datei)}`);
-    if (datei.art !== 'sprache') continue;
-    const d = datei.daten;
-    for (const x of [
-      ...d.lemmata.map((l) => ({ s: l.schluessel, t: l.lemma, art: 'lemma' })),
-      ...d.saetze.map((s) => ({ s: s.schluessel, t: s.text, art: 'satz' })),
-    ]) {
-      zielSchluessel.add(x.s);
-      bericht.eintraege++;
-      const k = `${d.kurs}|${x.art}|${x.t.normalize('NFC').toLocaleLowerCase()}`;
-      const vorher = texte.get(k);
-      if (vorher) bericht.befunde.push(`${pfad}: Dublette ${x.s} = ${vorher}`);
-      else texte.set(k, x.s);
-    }
-  }
-  for (const { pfad, datei } of dateien) {
-    if (datei.art !== 'uebersetzung') continue;
-    bericht.eintraege += datei.daten.eintraege.length;
-    for (const e of datei.daten.eintraege)
-      if (!zielSchluessel.has(e.bezug))
-        bericht.warnungen.push(`${pfad}: Bezug ${e.bezug} nicht in den geprüften Dateien (nur in der Datenbank?)`);
-  }
-  return bericht;
+/** Bericht als Textzeilen (ohne arabische Schrift). */
+export function berichtZeilen(b: PruefBericht, { alleWarnungen = false } = {}): string[] {
+  const zeilen: string[] = [];
+  const block = blockierende(b);
+  const mensch = menschlich(b);
+  const warn = warnungen(b);
+  for (const x of block) zeilen.push(`BEFUND [${x.pruefer}] ${befundZeile(x)}`);
+  for (const x of mensch) zeilen.push(`MENSCH [${x.pruefer}] ${befundZeile(x)}`);
+  for (const x of alleWarnungen ? warn : warn.slice(0, 50)) zeilen.push(`Warnung [${x.pruefer}] ${befundZeile(x)}`);
+  if (!alleWarnungen && warn.length > 50) zeilen.push(`… ${warn.length - 50} weitere Warnungen (--alle-warnungen)`);
+  for (const a of b.abdeckung)
+    zeilen.push(
+      `Abdeckung ${a.kurs}.${a.stufe}: Einheiten ${a.einheiten}/${a.einheitenRahmen}, Lemmata ${a.lemmata}/${a.budget} (${(100 * a.anteil).toFixed(1)} %)${a.vollstaendig ? '' : ', Stufe unvollständig'}`,
+    );
+  const jePruefer = PRUEFER.map((p) => {
+    const n = (s: string) => b.befunde.filter((x) => x.pruefer === p && x.schwere === s).length;
+    return `${p} ${n('blockierend')}/${n('mensch')}/${n('warnung')}`;
+  });
+  zeilen.push(`Prüfer (blockierend/Mensch/Warnung): ${jePruefer.join(', ')}`);
+  zeilen.push(
+    `Lern-App-Prüfung${b.abgebrochen ? ' ABGEBROCHEN (Auszüge verändert)' : ''}: ${b.dateien} Dateien, ${b.eintraege} Einträge, ` +
+      `${block.length} blockierend, ${mensch.length} menschlich_klaeren, ${warn.length} Warnungen, ${(b.dauerMs / 1000).toFixed(1)} s; ` +
+      `Quelle und Lizenz je Eintrag: ${block.some((x) => x.pruefer === 'lizenz' || x.pruefer === 'schema') ? 'siehe Befunde' : '100 %'}.`,
+  );
+  return zeilen;
 }
 
 if (process.argv[1]?.endsWith('pruefen.ts')) {
-  const quellen = values.testkurs ? testkursQuellen() : inhaltsdateien();
-  const b = pruefe(quellen, { pfadePruefen: !values.testkurs });
-  for (const w of b.warnungen) console.warn(`Warnung: ${w}`);
-  for (const f of b.befunde) console.error(`Befund: ${f}`);
-  console.log(
-    `Lern-App-Prüfung: ${b.dateien} Dateien, ${b.eintraege} Einträge, ${b.befunde.length} Befunde, ${b.warnungen.length} Warnungen; ` +
-      `Quelle und Lizenz je Eintrag: ${b.befunde.length ? 'siehe Befunde' : '100 %'}.`,
-  );
-  process.exit(b.befunde.length ? 1 : 0);
+  const { values } = parseArgs({
+    options: {
+      testkurs: { type: 'boolean', default: false },
+      json: { type: 'string' },
+      'alle-warnungen': { type: 'boolean', default: false },
+    },
+  });
+  const bericht = values.testkurs
+    ? pruefeInhalte(testkursQuellen(), {
+        praefix: 'testkurs/',
+        pfadePruefen: false,
+        zusatz: inhaltsdateien(INHALT_WURZEL, ['rahmen']),
+      })
+    : pruefeInhalte(alleInhaltsdateien());
+  if (values.json) writeFileSync(values.json, `${JSON.stringify(bericht, null, 2)}\n`);
+  for (const z of berichtZeilen(bericht, { alleWarnungen: values['alle-warnungen'] })) console.log(z);
+  process.exit(blockierende(bericht).length ? 1 : 0);
 }
