@@ -4,7 +4,7 @@ import type { Ableitung } from '../ereignisse/ableiten';
 import { EreignisSchema } from '../ereignisse/typen';
 import { ereignisse, leiteNeuAb, uebernimm } from './ausgang';
 import type { Profil, Speicher } from './db';
-import { legeProfilAn, ProfilNameSchema } from './profile';
+import { legeProfilAn } from './profile';
 
 /**
  * Export und Import als JSON-Datei (ADR 0038 Nr. 8): Sicherung ohne Konto, Gerätewechsel und Datenübertragbarkeit nach
@@ -20,6 +20,8 @@ export const EXPORT_VERSION = 1;
 export const EXPORT_HOECHSTENS = 25_000_000;
 
 const Sprache = z.enum(SPRACHEN);
+/** Name eines Profils (wie `pruefeProfilName` in profile.ts): getrimmt, 1–40 Zeichen. */
+export const ProfilNameSchema = z.string().check(z.trim(), z.minLength(1), z.maxLength(40));
 
 export const ExportSchema = z.strictObject({
   format: z.literal(EXPORT_FORMAT),

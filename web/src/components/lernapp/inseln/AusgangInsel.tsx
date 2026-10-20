@@ -11,11 +11,13 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
  */
 export function AusgangInsel({ ui }: { ui: Oberflaeche }) {
   useEffect(() => {
-    void einstellungsSpeicher.laden().then((e) => {
-      if (!e.ausgang || e.ausgang === ui) return;
-      const gruppe = document.getElementById(`kurse-aus-${e.ausgang}`);
-      if (gruppe instanceof HTMLDetailsElement) gruppe.open = true;
-    });
+    void einstellungsSpeicher(ui)
+      .laden()
+      .then((e) => {
+        if (!e.ausgang || e.ausgang === ui) return;
+        const gruppe = document.getElementById(`kurse-aus-${e.ausgang}`);
+        if (gruppe instanceof HTMLDetailsElement) gruppe.open = true;
+      });
   }, [ui]);
   return null;
 }

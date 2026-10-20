@@ -56,7 +56,8 @@ export const EINSTELLUNG_WERTE = {
   ziffern: z.enum(['oestlich', 'westlich']),
   hoerenAus: z.boolean(),
   sprechenAus: z.boolean(),
-  ausgangssprache: z.enum(SPRACHEN),
+  /** `null` = wie die Oberfläche (ADR 0037 Nr. 7) */
+  ausgangssprache: z.nullable(z.enum(SPRACHEN)),
   oberflaeche: z.enum(OBERFLAECHEN),
 } as const;
 
@@ -65,7 +66,7 @@ export type Einstellungen = {
   ziffern: 'oestlich' | 'westlich';
   hoerenAus: boolean;
   sprechenAus: boolean;
-  ausgangssprache?: 'de' | 'tr' | 'ar';
+  ausgangssprache?: 'de' | 'tr' | 'ar' | null;
   oberflaeche?: 'de' | 'tr' | 'ar';
 };
 

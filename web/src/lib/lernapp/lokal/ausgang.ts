@@ -107,7 +107,8 @@ export async function uebernimm(
 export const brauchtNeuableitung = (p: Pick<Profil, 'ableitungsVersion'>): boolean => p.ableitungsVersion !== ABLEITUNGS_VERSION;
 
 /**
- * Abgeleitete Speicher eines Profils aus dem Protokoll neu schreiben (Karten, Lektionen, Tage, Einstellungen) und die
+ * Abgeleitete Speicher eines Profils aus dem Protokoll neu schreiben (Karten, Lektionen, Tage, Einstellungen samt
+ * aktuellem Tagesziel unter dem Schlüssel `tagesziel`) und die
  * Ableitungsversion am Profil vermerken. `heute` ist der Lerntag des Geräts.
  */
 export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): Promise<Ableitung> {
@@ -137,6 +138,9 @@ export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): P
     if (schema?.safeParse(e.daten.wert).success)
       sieger.set(e.daten.schluessel, { profil, schluessel: e.daten.schluessel, wert: e.daten.wert, am: e.am, geraet: e.geraet });
   }
+  // Tagesziel (eigene Ereignisart) steht als Schlüssel `tagesziel` daneben: Inseln lesen es ohne Ableitung
+  const ziel = alle.filter(istArt('tagesziel')).at(-1);
+  if (ziel) sieger.set('tagesziel', { profil, schluessel: 'tagesziel', wert: ziel.daten.ziel, am: ziel.am, geraet: ziel.geraet });
   await sp.loescheBereich('einstellungen', bereich);
   await sp.schreibe('einstellungen', [...sieger.values()]);
   if (await sp.lies('profile', profil)) await aendereProfil(sp, profil, { ableitungsVersion: a.version });

@@ -76,9 +76,9 @@ function ladeWorker({ bau = 'abc123', vorraete = {} as Record<string, string[]>,
     });
     return antwort as Promise<Response> | null;
   };
-  const warte = (art: string, daten?: unknown) => {
+  const warte = (art: string, daten?: unknown, ports: { postMessage: (d: unknown) => void }[] = []) => {
     let p: Promise<unknown> = Promise.resolve();
-    hoerer.get(art)!({ data: daten, waitUntil: (x: Promise<unknown>) => (p = x) });
+    hoerer.get(art)!({ data: daten, ports, waitUntil: (x: Promise<unknown>) => (p = x) });
     return p;
   };
   const inhalt = (name: string) => [...(speicher.get(name)?.keys() ?? [])].map((u) => u.slice(URSPRUNG.length)).sort();
@@ -204,5 +204,38 @@ describe('Service Worker der Lern-App', () => {
     const unbekannt = ladeWorker({ bau: 'b4' });
     await unbekannt.warte('message', { art: 'schale', ui: 'en' });
     expect(unbekannt.inhalt('igmg-lernapp-schale-vb4')).toEqual([]);
+  });
+
+  it('Seiten eines Kurses nach „Einheit offline speichern“: nur Lern-App-Seiten (nie die Anmeldung), Antwort über den Kanal', async () => {
+    const w = ladeWorker({ bau: 'b5' });
+    const antworten: unknown[] = [];
+    await w.warte(
+      'message',
+      {
+        art: 'seiten',
+        pfade: [
+          '/lern-app/de/tr-aus-de',
+          '/lern-app/de/tr-aus-de/ueben',
+          '/lern-app/de/anmelden',
+          '/verwaltung',
+          'https://fremd.test/x',
+          7,
+        ],
+      },
+      [{ postMessage: (d) => antworten.push(d) }],
+    );
+    expect(w.inhalt('igmg-lernapp-schale-vb5')).toEqual([
+      '/_next/static/chunks/a.js',
+      '/_next/static/css/b.css',
+      '/lern-app/de/tr-aus-de',
+      '/lern-app/de/tr-aus-de/ueben',
+    ]);
+    expect(antworten).toEqual([{ fertig: true }]);
+    // ohne Liste: nichts geholt, trotzdem Antwort
+    const leer = ladeWorker({ bau: 'b6' });
+    const nachher: unknown[] = [];
+    await leer.warte('message', { art: 'seiten' }, [{ postMessage: (d) => nachher.push(d) }]);
+    expect(leer.inhalt('igmg-lernapp-schale-vb6')).toEqual([]);
+    expect(nachher).toEqual([{ fertig: true }]);
   });
 });

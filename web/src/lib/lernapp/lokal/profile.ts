@@ -1,5 +1,4 @@
-import { SPRACHEN } from '../kurse';
-import * as z from '../z';
+import { istSprache } from '../kurse';
 import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprache } from './db';
 
 /**
@@ -8,8 +7,17 @@ import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprach
  * `einstellungen`. Löschen entfernt alle Daten des Profils auf dem Gerät.
  */
 
-export const ProfilNameSchema = z.string().check(z.trim(), z.minLength(1), z.maxLength(40));
-const SpracheSchema = z.enum(SPRACHEN);
+/** Name eines Profils: getrimmt, 1–40 Zeichen (ohne Zod, damit Inseln der Startseite klein bleiben, KERN 4.0 §9). */
+export function pruefeProfilName(name: string): string {
+  const n = String(name).trim();
+  if (n.length < 1 || n.length > 40) throw new RangeError('Profilname: 1–40 Zeichen');
+  return n;
+}
+
+function pruefeSprache(s: unknown): Sprache {
+  if (!istSprache(s)) throw new RangeError('Sprache: de, tr oder ar');
+  return s;
+}
 
 const GERAET = '';
 const AKTIV = 'aktivesProfil';
@@ -39,9 +47,9 @@ export async function legeProfilAn(
 ): Promise<Profil> {
   const profil: Profil = {
     id,
-    name: ProfilNameSchema.parse(angaben.name),
-    oberflaeche: SpracheSchema.parse(angaben.oberflaeche),
-    ...(angaben.ausgangssprache ? { ausgangssprache: SpracheSchema.parse(angaben.ausgangssprache) } : {}),
+    name: pruefeProfilName(angaben.name),
+    oberflaeche: pruefeSprache(angaben.oberflaeche),
+    ...(angaben.ausgangssprache ? { ausgangssprache: pruefeSprache(angaben.ausgangssprache) } : {}),
     geraet,
     angelegt: jetzt.toISOString(),
   };
@@ -77,8 +85,8 @@ export async function aendereProfil(
   const neu: Profil = {
     ...alt,
     ...aenderung,
-    ...(aenderung.name !== undefined ? { name: ProfilNameSchema.parse(aenderung.name) } : {}),
-    ...(aenderung.oberflaeche !== undefined ? { oberflaeche: SpracheSchema.parse(aenderung.oberflaeche) } : {}),
+    ...(aenderung.name !== undefined ? { name: pruefeProfilName(aenderung.name) } : {}),
+    ...(aenderung.oberflaeche !== undefined ? { oberflaeche: pruefeSprache(aenderung.oberflaeche) } : {}),
   };
   await sp.schreibe('profile', [neu]);
   return neu;

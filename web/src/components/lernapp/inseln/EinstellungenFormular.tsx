@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { formatiere, intlSprache, type Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche, Sprache } from '@/lib/lernapp/kurse';
 import {
@@ -11,6 +11,7 @@ import {
   zielSchluessel,
   type Einstellungen,
 } from '@/lib/lernapp/oberflaeche/einstellungen';
+import { STAND_GEAENDERT } from '@/lib/lernapp/oberflaeche/geraet';
 
 export type EinstellungenTexte = {
   ausgang: string;
@@ -58,7 +59,8 @@ function Gruppe({ id, titel, text, children }: { id: string; titel: string; text
  * Einstellungen auf dem Gerät (PLAN §3.1, ADR 0037 Nr. 7, ADR 0043 Nr. 2, KERN 4.0 §7–§8): Ausgangssprache, Tagesziel,
  * Ziffern (nur in der arabischen Oberfläche), Hör- und Sprechübungen. Jede Änderung wird sofort gespeichert (kein
  * Absenden, kein Kontextwechsel – WCAG 3.2.2) und in einer Live-Region bestätigt. Formular ohne JavaScript bleibt
- * lesbar; gespeichert wird nur im Browser (Gerätespeicher, kein Netz).
+ * lesbar; gespeichert wird im Protokoll des Profils auf dem Gerät (Ereignis `einstellung` bzw. `tagesziel`, kein Netz;
+ * mit gebundenem Konto gleicht der Abgleich sie ab).
  */
 export function EinstellungenFormular({
   ui,
@@ -72,21 +74,30 @@ export function EinstellungenFormular({
 }) {
   const [e, setE] = useState<Einstellungen>(STANDARD_EINSTELLUNGEN);
   const [meldung, setMeldung] = useState('');
+  const speicher = useMemo(() => einstellungsSpeicher(ui), [ui]);
   useEffect(() => {
-    void einstellungsSpeicher.laden().then(setE);
-  }, []);
+    let aktiv = true;
+    const laden = () => void speicher.laden().then((neu) => aktiv && setE(neu));
+    laden();
+    // ein Abgleich kann Einstellungen eines anderen Geräts bringen
+    window.addEventListener(STAND_GEAENDERT, laden);
+    return () => {
+      aktiv = false;
+      window.removeEventListener(STAND_GEAENDERT, laden);
+    };
+  }, [speicher]);
 
   const aendern = (teil: Partial<Einstellungen>) => {
     const neu = { ...e, ...teil };
     setE(neu);
-    void einstellungsSpeicher.speichern(neu).then((ok) => setMeldung(ok ? texte.gespeichert : texte.nichtGespeichert));
+    void speicher.speichern(neu).then((ok) => setMeldung(ok ? texte.gespeichert : texte.nichtGespeichert));
   };
 
   const zahlSprache = (z: Ziffern = e.ziffern) => intlSprache(ui, z);
   const zielText = (schluessel: string) => {
     const ziel = zielAus(schluessel);
-    if (!ziel || ziel.art === 'keins') return texte.zielKeins;
-    return formatiere(ziel.art === 'xp' ? texte.zielXp : texte.zielLektionen, { n: ziel.wert }, zahlSprache());
+    if (!ziel || ziel.art === 'kein') return texte.zielKeins;
+    return formatiere(ziel.art === 'xp' ? texte.zielXp : texte.zielLektionen, { n: ziel.wert }, ui, e.ziffern);
   };
 
   return (

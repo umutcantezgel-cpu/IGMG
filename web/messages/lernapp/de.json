@@ -76,7 +76,34 @@
     "einstufung": "Einstufungstest",
     "einstufungText": "Du kannst schon etwas? Finde heraus, wo du einsteigst.",
     "wiederholen": "Wiederholen",
-    "wiederholenText": "Was fällig ist, kommt in einer kurzen Runde noch einmal."
+    "wiederholenText": "Was fällig ist, kommt in einer kurzen Runde noch einmal.",
+    "laedt": "Der Lernpfad wird geladen …",
+    "stufe": {
+      "a1": "A1",
+      "a2": "A2",
+      "b1": "B1",
+      "b2": "B2",
+      "c1": "C1",
+      "grund": "Grundstufe",
+      "aufbau": "Aufbaustufe",
+      "vertiefung": "Vertiefung"
+    },
+    "einheit": "Einheit {n, number}",
+    "fortschritt": "Geschafft: {erledigt, number} von {gesamt, number}",
+    "lektion": "Lektion {n, number}",
+    "geschafft": "geschafft",
+    "aktuell": "Hier geht es weiter",
+    "lektionenZeigen": "Lektionen zeigen",
+    "nichtGeladen": "Ohne Verbindung ist diese Einheit noch nicht auf dem Gerät.",
+    "tipps": "Grammatik-Tipps",
+    "ungeprueft": "Noch nicht von Muttersprachlern geprüft.",
+    "offline": "Einheit offline speichern",
+    "offlineText": "Speichert die Einheit samt Tönen auf diesem Gerät ({mb} MB). Dann kannst du sie auch ohne Verbindung üben.",
+    "offlineLaeuft": "Wird gespeichert … {mb} MB",
+    "offlineFortschritt": "Speichern der Einheit",
+    "offlineFertig": "Offline gespeichert ({mb} MB).",
+    "offlineFehler": "Nicht alles konnte gespeichert werden. Versuche es mit Verbindung noch einmal.",
+    "offlineNichtMoeglich": "Dieser Browser kann Einheiten nicht offline speichern."
   },
   "ueben": {
     "titel": "Üben",
@@ -88,7 +115,9 @@
   "wiederholen": {
     "titel": "Wiederholen",
     "text": "Hier kommen die Wörter und Sätze, die du bald vergessen würdest – in kleinen Runden.",
-    "leer": "Gerade ist nichts zu wiederholen. Komm später gern wieder."
+    "leer": "Gerade ist nichts zu wiederholen. Komm später gern wieder.",
+    "laedt": "Die Wiederholung wird vorbereitet …",
+    "nichtVerfuegbar": "Die Aufgaben dazu sind ohne Verbindung noch nicht auf diesem Gerät."
   },
   "einstufung": {
     "titel": "Einstufungstest",
@@ -98,7 +127,9 @@
   "tipps": {
     "titel": "Grammatik-Tipps",
     "ohneEinheit": "Wähle im Lernpfad eine Einheit aus, um ihre Tipps zu lesen.",
-    "leer": "Für diese Einheit gibt es noch keine Tipps."
+    "leer": "Für diese Einheit gibt es noch keine Tipps.",
+    "laedt": "Die Tipps werden geladen …",
+    "nichtVerfuegbar": "Ohne Verbindung sind die Tipps dieser Einheit noch nicht auf dem Gerät."
   },
   "fortschritt": {
     "titel": "Fortschritt",
@@ -268,6 +299,34 @@
       "keinPaar": "{links} und {rechts} gehören nicht zusammen.",
       "fertig": "Alle Paare gefunden.",
       "tasten": "Wähle mit Enter ein Wort und dann sein Gegenstück. Pfeiltasten wechseln innerhalb einer Liste."
+    }
+  },
+  "konto": {
+    "titel": "Konto und Abgleich",
+    "text": "Mit einem Konto kannst du deinen Lernstand auf mehreren Geräten abgleichen. Ohne Konto bleibt alles auf diesem Gerät.",
+    "verbinden": "Mit meinem Konto verbinden",
+    "anmeldenText": "Melde dich an, um deinen Lernstand mit deinem Konto abzugleichen.",
+    "anmelden": "Anmelden",
+    "verbunden": "Dieses Gerät gleicht deinen Lernstand mit deinem Konto ab.",
+    "zuletzt": "Zuletzt abgeglichen: {zeit}",
+    "jetzt": "Jetzt abgleichen",
+    "laeuft": "Wird abgeglichen …",
+    "fertig": "Abgeglichen.",
+    "frage": "Lokalen Fortschritt in dein Konto übernehmen?",
+    "frageText": "Auf diesem Gerät hast du schon gelernt. Du kannst diesen Fortschritt in dein Konto übernehmen oder mit dem Konto neu beginnen – dann bleibt der bisherige Stand nur auf diesem Gerät.",
+    "ja": "Ja, übernehmen",
+    "nein": "Nein, neu beginnen",
+    "anderesKonto": "Dieses Lernprofil gehört zu einem anderen Konto.",
+    "neuesProfil": "Neues Lernprofil für dieses Konto anlegen",
+    "grund": {
+      "aus": "Der Abgleich ist gerade nicht verfügbar.",
+      "netz": "Keine Verbindung. Der Abgleich folgt, sobald du wieder online bist.",
+      "antwort": "Der Abgleich hat nicht geklappt. Versuche es später noch einmal.",
+      "anmeldung": "Du bist nicht angemeldet. Melde dich an, um abzugleichen.",
+      "einwilligung": "Für den Abgleich fehlt noch deine Einwilligung „Lern-App“ im Konto.",
+      "eltern": "Für den Abgleich braucht es die Einwilligung deiner Eltern.",
+      "bremse": "Gerade wurde oft abgeglichen. Versuche es in einer Minute noch einmal.",
+      "nichtGebunden": "Dieses Gerät ist noch mit keinem Konto verbunden."
     }
   }
 }

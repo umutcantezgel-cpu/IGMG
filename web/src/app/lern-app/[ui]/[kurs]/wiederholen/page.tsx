@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
+import { WiederholenInsel } from '@/components/lernapp/inseln/WiederholenInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { kursTitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
-import { lernTexte } from '@/lib/lernapp/texte';
+import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
 
 export const ensureStatic = 'navigation';
 
@@ -20,9 +21,8 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
 }
 
 /**
- * Wiederholen (PLAN §3.1, FSRS-Sitzung): statische Hülle mit dem leeren Stand. Die Zusammenführung hängt in
- * `#wiederholen-sitzung` den Spieler mit den fälligen Karten aus der lokalen Datenbank ein (L2-04). Mikrofon ist hier
- * erlaubt (PFAD_BERECHTIGUNGEN).
+ * Wiederholen (PLAN §3.1, FSRS-Sitzung): statische Hülle; die Insel wählt die Karten aus dem lokalen Stand (fällige
+ * zuerst) und spielt sie mit dem Spieler. Mikrofon ist hier erlaubt (PFAD_BERECHTIGUNGEN).
  */
 export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/[kurs]/wiederholen'>) {
   await verlangeLernApp();
@@ -36,8 +36,14 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
         titel={t('wiederholen.titel')}
         einleitung={t('wiederholen.text')}
       />
-      <section id="wiederholen-sitzung" aria-label={t('wiederholen.titel')} className="rounded-lg border border-linie bg-weiss p-5 md:p-8">
-        <p className="text-18 text-tinte-2">{t('wiederholen.leer')}</p>
+      <section id="wiederholen-sitzung" aria-label={t('wiederholen.titel')}>
+        <WiederholenInsel
+          ui={ui}
+          kurs={kurs}
+          texte={rohTexte(ui, 'wiederholen')}
+          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+          lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}
+        />
       </section>
     </Rahmen>
   );

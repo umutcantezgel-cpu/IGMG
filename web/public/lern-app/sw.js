@@ -4,7 +4,8 @@
  * Vorräte nur mit dem Präfix `igmg-lernapp-` (der Root-Worker behält sie beim Aktivieren):
  * - `igmg-lernapp-schale-v<bau>`: Hülle – Seiten der Lern-App und /_next/static/** (Vorrat zuerst). `<bau>` ist die
  *   Bau-Kennung aus der Anmeldung (`/lern-app/sw.js?v=<bau>`): Ein neuer Bau ist ein neuer Worker, sein Aktivieren löscht
- *   die Hülle des vorigen Baus. Auf Bitte der Seite (`{ art: 'schale', ui }`) hält er die Hülle der Oberflächensprache vor.
+ *   die Hülle des vorigen Baus. Auf Bitte der Seite (`{ art: 'schale', ui }`) hält er die Hülle der Oberflächensprache vor,
+ *   nach „Einheit offline speichern“ (`{ art: 'seiten', pfade }`) die Seiten des Kurses samt Programmteilen.
  * - `igmg-lernapp-pakete`: Kursverzeichnis `/lern-app/pakete/<kurs>` Netz zuerst, Einheiten `…/<kurs>/<einheit>/<hash>`
  *   Vorrat zuerst (unveränderlich, ADR 0039).
  * - `igmg-lernapp-audio`: Bündel `/lern-app/audio/…`, Vorrat zuerst; Bereichsanfragen gehen ans Netz.
@@ -72,17 +73,15 @@ function netzZuerst(anfrage, name, schluessel) {
 }
 
 /**
- * Hülle einer Oberflächensprache vorhalten: die Seiten und die Programmteile, die sie laden. Jede Seite bittet bei jedem
- * Laden darum; geholt wird nur, was in der Hülle dieses Baus noch fehlt (die Seiten sind statisch je Bau, aufgefrischt
- * werden sie beim Besuch „Netz zuerst“) – kein Datenverbrauch bei jedem Seitenwechsel.
+ * Seiten der Lern-App vorhalten: die Seiten und die Programmteile, die sie laden. Geholt wird nur, was in der Hülle dieses
+ * Baus noch fehlt (die Seiten sind statisch je Bau, aufgefrischt werden sie beim Besuch „Netz zuerst“) – kein
+ * Datenverbrauch bei jedem Seitenwechsel.
  */
-function halteSchaleVor(ui) {
-  if (!OBERFLAECHEN.includes(ui)) return Promise.resolve();
+function halteSeitenVor(pfade) {
   return caches.open(SCHALE).then((c) =>
     Promise.all(
-      SCHALEN_SEITEN.map((rest) => {
-        const pfad = `/lern-app/${ui}${rest}`;
-        return c.match(pfad).then((da) =>
+      pfade.map((pfad) =>
+        c.match(pfad).then((da) =>
           da
             ? []
             : fetch(pfad, { credentials: 'same-origin' })
@@ -94,8 +93,8 @@ function halteSchaleVor(ui) {
                     .then((html) => [...new Set(html.match(/\/_next\/static\/[^"'\s)\\]+/g) || [])]);
                 })
                 .catch(() => []),
-        );
-      }),
+        ),
+      ),
     ).then((listen) => {
       const dateien = [...new Set(listen.flat())].slice(0, 200);
       return Promise.all(
@@ -111,6 +110,23 @@ function halteSchaleVor(ui) {
       );
     }),
   );
+}
+
+/** Hülle einer Oberflächensprache (Start, Fortschritt, Wortschatz, Einstellungen, Quellen); jede Seite bittet beim Laden darum. */
+function halteSchaleVor(ui) {
+  if (!OBERFLAECHEN.includes(ui)) return Promise.resolve();
+  return halteSeitenVor(SCHALEN_SEITEN.map((rest) => `/lern-app/${ui}${rest}`));
+}
+
+/**
+ * Seiten eines Kurses für den Start ohne Netz (nach „Einheit offline speichern“, ADR 0039 Nr. 12): nur Seiten der Lern-App
+ * (nie die Anmeldung), höchstens zehn je Bitte. Die Antwort über den Kanal sagt der Seite, dass alles vorgehalten ist.
+ */
+function halteKursVor(pfade) {
+  const gueltig = (Array.isArray(pfade) ? pfade : [])
+    .filter((p) => typeof p === 'string' && istSeitePfad(p) && !istAnmeldung(p))
+    .slice(0, 10);
+  return halteSeitenVor(gueltig);
 }
 
 self.addEventListener('install', (e) => {
@@ -130,7 +146,9 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('message', (e) => {
   const daten = e.data || {};
-  if (daten.art === 'schale') e.waitUntil(halteSchaleVor(String(daten.ui)));
+  const antworte = () => e.ports && e.ports[0] && e.ports[0].postMessage({ fertig: true });
+  if (daten.art === 'schale') e.waitUntil(halteSchaleVor(String(daten.ui)).then(antworte));
+  else if (daten.art === 'seiten') e.waitUntil(halteKursVor(daten.pfade).then(antworte, antworte));
 });
 
 self.addEventListener('fetch', (e) => {

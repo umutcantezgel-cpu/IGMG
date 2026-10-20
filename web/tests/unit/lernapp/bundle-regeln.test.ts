@@ -121,7 +121,7 @@ describe('Übungstypen nur per import()', () => {
           .statisch.filter((z) => {
             const ziel = aufloesen(p, z);
             if (ziel === LADER) return false;
-            return (ziel ?? z).includes(`${join('components', 'lernapp', 'aufgaben')}`) || /lernapp\/aufgaben(\/|$)/.test(z);
+            return (ziel ?? z).includes(`${join('components', 'lernapp', 'aufgaben')}`) || /components\/lernapp\/aufgaben(\/|$)/.test(z);
           })
           .map((z) => `${kurz(p)} → ${z}`),
       );

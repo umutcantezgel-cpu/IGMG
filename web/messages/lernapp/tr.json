@@ -76,7 +76,34 @@
     "einstufung": "Seviye testi",
     "einstufungText": "Biraz biliyor musun? Nereden başlayacağını öğren.",
     "wiederholen": "Tekrar et",
-    "wiederholenText": "Zamanı gelenler kısa bir turda yeniden gelir."
+    "wiederholenText": "Zamanı gelenler kısa bir turda yeniden gelir.",
+    "laedt": "Öğrenme yolu yükleniyor …",
+    "stufe": {
+      "a1": "A1",
+      "a2": "A2",
+      "b1": "B1",
+      "b2": "B2",
+      "c1": "C1",
+      "grund": "Temel seviye",
+      "aufbau": "Gelişim seviyesi",
+      "vertiefung": "Derinleşme"
+    },
+    "einheit": "Ünite {n, number}",
+    "fortschritt": "Tamamlanan: {erledigt, number} / {gesamt, number}",
+    "lektion": "Ders {n, number}",
+    "geschafft": "tamamlandı",
+    "aktuell": "Buradan devam",
+    "lektionenZeigen": "Dersleri göster",
+    "nichtGeladen": "Bu ünite bağlantı olmadan henüz cihazda yok.",
+    "tipps": "Dil bilgisi ipuçları",
+    "ungeprueft": "Henüz anadili konuşanlarca kontrol edilmedi.",
+    "offline": "Üniteyi çevrimdışı kaydet",
+    "offlineText": "Üniteyi sesleriyle birlikte bu cihaza kaydeder ({mb} MB). Böylece bağlantı olmadan da çalışabilirsin.",
+    "offlineLaeuft": "Kaydediliyor … {mb} MB",
+    "offlineFortschritt": "Ünite kaydediliyor",
+    "offlineFertig": "Çevrimdışı kaydedildi ({mb} MB).",
+    "offlineFehler": "Her şey kaydedilemedi. Bağlantı varken tekrar dene.",
+    "offlineNichtMoeglich": "Bu tarayıcı üniteleri çevrimdışı kaydedemiyor."
   },
   "ueben": {
     "titel": "Alıştırma",
@@ -88,7 +115,9 @@
   "wiederholen": {
     "titel": "Tekrar et",
     "text": "Burada yakında unutacağın kelimeler ve cümleler küçük turlar hâlinde gelir.",
-    "leer": "Şu an tekrar edilecek bir şey yok. Sonra yine gel."
+    "leer": "Şu an tekrar edilecek bir şey yok. Sonra yine gel.",
+    "laedt": "Tekrar hazırlanıyor …",
+    "nichtVerfuegbar": "Bunun alıştırmaları bağlantı olmadan henüz bu cihazda yok."
   },
   "einstufung": {
     "titel": "Seviye testi",
@@ -98,7 +127,9 @@
   "tipps": {
     "titel": "Dil bilgisi ipuçları",
     "ohneEinheit": "İpuçlarını okumak için öğrenme yolundan bir ünite seç.",
-    "leer": "Bu ünite için henüz ipucu yok."
+    "leer": "Bu ünite için henüz ipucu yok.",
+    "laedt": "İpuçları yükleniyor …",
+    "nichtVerfuegbar": "Bu ünitenin ipuçları bağlantı olmadan henüz cihazda yok."
   },
   "fortschritt": {
     "titel": "İlerleme",
@@ -268,6 +299,34 @@
       "keinPaar": "{links} ile {rechts} birbirine ait değil.",
       "fertig": "Bütün eşler bulundu.",
       "tasten": "Enter ile bir kelime, sonra eşini seç. Ok tuşları bir liste içinde gezinir."
+    }
+  },
+  "konto": {
+    "titel": "Hesap ve eşitleme",
+    "text": "Bir hesapla öğrenme durumunu birden fazla cihazda eşitleyebilirsin. Hesap olmadan her şey bu cihazda kalır.",
+    "verbinden": "Hesabımla bağla",
+    "anmeldenText": "Öğrenme durumunu hesabınla eşitlemek için giriş yap.",
+    "anmelden": "Giriş yap",
+    "verbunden": "Bu cihaz öğrenme durumunu hesabınla eşitliyor.",
+    "zuletzt": "Son eşitleme: {zeit}",
+    "jetzt": "Şimdi eşitle",
+    "laeuft": "Eşitleniyor …",
+    "fertig": "Eşitlendi.",
+    "frage": "Bu cihazdaki ilerleme hesabına aktarılsın mı?",
+    "frageText": "Bu cihazda daha önce öğrendin. Bu ilerlemeyi hesabına aktarabilir ya da hesapla yeniden başlayabilirsin – o zaman önceki durum yalnızca bu cihazda kalır.",
+    "ja": "Evet, aktar",
+    "nein": "Hayır, yeniden başla",
+    "anderesKonto": "Bu öğrenme profili başka bir hesaba ait.",
+    "neuesProfil": "Bu hesap için yeni bir öğrenme profili oluştur",
+    "grund": {
+      "aus": "Eşitleme şu anda kullanılamıyor.",
+      "netz": "Bağlantı yok. Tekrar çevrimiçi olduğunda eşitleme yapılır.",
+      "antwort": "Eşitleme olmadı. Daha sonra tekrar dene.",
+      "anmeldung": "Giriş yapmamışsın. Eşitlemek için giriş yap.",
+      "einwilligung": "Eşitleme için hesabında „Öğrenme uygulaması“ onayın henüz yok.",
+      "eltern": "Eşitleme için anne babanın onayı gerekiyor.",
+      "bremse": "Az önce sık eşitleme yapıldı. Bir dakika sonra tekrar dene.",
+      "nichtGebunden": "Bu cihaz henüz bir hesaba bağlı değil."
     }
   }
 }

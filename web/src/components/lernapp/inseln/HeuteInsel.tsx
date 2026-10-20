@@ -2,15 +2,17 @@
 
 import { CalendarCheck, RotateCcw, Sparkles } from 'lucide-react';
 import { useEffect, useState, type CSSProperties } from 'react';
-import { formatiere, intlSprache } from '@/lib/lernapp/format';
+import { formatiere } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
+import { beimOeffnen } from '@/lib/lernapp/oberflaeche/abgleich';
 import {
   einstellungsSpeicher,
   EINSTELLUNGEN_SCHLUESSEL,
   STANDARD_EINSTELLUNGEN,
   type Einstellungen,
 } from '@/lib/lernapp/oberflaeche/einstellungen';
-import { LEERER_START_STAND, ladeStartStand, STANDARD_PROFIL, type StartStand } from '@/lib/lernapp/oberflaeche/stand';
+import { STAND_GEAENDERT } from '@/lib/lernapp/oberflaeche/geraet';
+import { LEERER_START_STAND, ladeStartStand, type StartStand } from '@/lib/lernapp/oberflaeche/stand';
 
 export type HeuteTexte = {
   titel: string;
@@ -29,9 +31,10 @@ export type HeuteTexte = {
 
 /**
  * Insel „Heute“ auf der Startseite (PLAN §3.1, ADR 0043): Tagesziel, „Weiter lernen“ und fällige Wiederholungen aus
- * dem Stand auf dem Gerät (`ladeStartStand`, bis zur Zusammenführung leer). Der Server rendert den Zustand eines neuen
- * Geräts; im Browser kommen Einstellungen und Stand dazu, ohne dass sich der Aufbau verschiebt. Zahlen stehen
- * statisch (keine hochzählenden Zahlen, KERN 4.0 §1); kein Druck: Ein verfehltes Ziel hat keine Folge.
+ * dem Stand auf dem Gerät (`ladeStartStand`: abgeleitete Speicher der lokalen Datenbank). Der Server rendert den Zustand
+ * eines neuen Geräts; im Browser kommen Einstellungen und Stand dazu, ohne dass sich der Aufbau verschiebt. Zahlen stehen
+ * statisch (keine hochzählenden Zahlen, KERN 4.0 §1); kein Druck: Ein verfehltes Ziel hat keine Folge. Mit gebundenem
+ * Konto gleicht die Insel beim Öffnen ab (`beimOeffnen`, ohne Konto keine Anfrage).
  */
 export function HeuteInsel({
   ui,
@@ -50,25 +53,30 @@ export function HeuteInsel({
 
   useEffect(() => {
     let aktiv = true;
+    const speicher = einstellungsSpeicher(ui);
     const laden = () =>
-      Promise.all([einstellungsSpeicher.laden(), ladeStartStand(STANDARD_PROFIL)]).then(([e, s]) => {
-        if (!aktiv) return;
-        setEinstellungen(e);
-        setStand(s);
-      });
+      Promise.all([speicher.laden(), ladeStartStand()])
+        .then(([e, s]) => {
+          if (!aktiv) return;
+          setEinstellungen(e);
+          setStand(s);
+        })
+        .catch(() => undefined);
     void laden();
+    void beimOeffnen().catch(() => undefined);
     window.addEventListener(EINSTELLUNGEN_SCHLUESSEL, laden);
+    window.addEventListener(STAND_GEAENDERT, laden);
     return () => {
       aktiv = false;
       window.removeEventListener(EINSTELLUNGEN_SCHLUESSEL, laden);
+      window.removeEventListener(STAND_GEAENDERT, laden);
     };
-  }, []);
+  }, [ui]);
 
-  const sprache = intlSprache(ui, einstellungen.ziffern);
-  const f = (text: string, werte: Record<string, number> = {}) => formatiere(text, werte, sprache);
+  const f = (text: string, werte: Record<string, number> = {}) => formatiere(text, werte, ui, einstellungen.ziffern);
   const ziel = einstellungen.tagesziel;
   const erreicht = ziel.art === 'xp' ? stand.heute.xp : ziel.art === 'lektionen' ? stand.heute.lektionen : 0;
-  const anteil = ziel.art === 'keins' ? 0 : Math.min(1, erreicht / ziel.wert);
+  const anteil = ziel.art === 'kein' ? 0 : Math.min(1, erreicht / ziel.wert);
   const faellig = stand.faellig.filter((f) => f.anzahl > 0 && adressen.kurs[f.kurs]);
 
   return (
@@ -89,7 +97,7 @@ export function HeuteInsel({
             {texte.zielAendern}
           </a>
         </div>
-        {ziel.art === 'keins' ? (
+        {ziel.art === 'kein' ? (
           <p className="text-16 text-tinte-2">{texte.keinZiel}</p>
         ) : (
           <>

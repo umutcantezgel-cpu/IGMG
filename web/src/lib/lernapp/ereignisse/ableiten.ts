@@ -10,6 +10,7 @@ import {
   TAGESZIEL_STANDARD,
   type Tagesziel,
 } from './typen';
+import { ABLEITUNGS_VERSION } from './version';
 import { vereinige } from './zusammenfuehren';
 
 /**
@@ -24,7 +25,7 @@ import { vereinige } from './zusammenfuehren';
  * | XP, Tagesziel | Summe der `xp`-Ereignisse je Lerntag; Ziel des Tages = letztes Tagesziel mit `tag` ≤ Tag |
  * | Serie | Lerntage mit Pausen und Ruhetagen (serie.ts) |
  */
-export const ABLEITUNGS_VERSION = 1;
+export { ABLEITUNGS_VERSION };
 
 export type LektionsStand = {
   lektion: string;

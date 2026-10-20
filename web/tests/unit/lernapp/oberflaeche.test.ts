@@ -13,7 +13,8 @@ import {
   zielAus,
   zielSchluessel,
 } from '@/lib/lernapp/oberflaeche/einstellungen';
-import { LEERER_START_STAND, ladeStartStand, STANDARD_PROFIL } from '@/lib/lernapp/oberflaeche/stand';
+import { LEERER_START_STAND } from '@/lib/lernapp/oberflaeche/stand';
+import { TAGESZIEL_STANDARD } from '@/lib/lernapp/ereignisse/typen';
 
 /**
  * Bausteine der Oberfläche (L1-03): Adressen und Rücksprung nach der Anmeldung (ADR 0037 Nr. 4), Einstellungen auf dem
@@ -53,7 +54,7 @@ describe('Adressen der Lern-App', () => {
 describe('Einstellungen auf dem Gerät', () => {
   it('Tagesziele nach ADR 0043 Nr. 2, Kurzform hin und zurück', () => {
     expect(TAGESZIELE.map(zielSchluessel)).toEqual([
-      'keins',
+      'kein',
       'xp-10',
       'xp-20',
       'xp-30',
@@ -67,10 +68,11 @@ describe('Einstellungen auf dem Gerät', () => {
     expect(zielAus(undefined)).toBeNull();
   });
 
-  it('Standard: Ausgang wie Oberfläche, kleines Tagesziel, östlich-arabische Ziffern, Hören und Sprechen an', () => {
+  it('Standard: Ausgang wie Oberfläche, kleines Tagesziel (wie die Ableitung), östlich-arabische Ziffern, Hören und Sprechen an', () => {
+    expect(STANDARD_EINSTELLUNGEN.tagesziel).toEqual(TAGESZIEL_STANDARD);
     expect(STANDARD_EINSTELLUNGEN).toEqual({
       ausgang: null,
-      tagesziel: { art: 'xp', wert: 10 },
+      tagesziel: { art: 'lektionen', wert: 1 },
       ziffern: 'oestlich',
       hoeren: true,
       sprechen: true,
@@ -95,11 +97,10 @@ describe('Einstellungen auf dem Gerät', () => {
     expect(pruefeEinstellungen({ ausgang: 'en', tagesziel: { art: 'xp', wert: 999 }, ziffern: 'x', hoeren: 'ja' })).toEqual(
       STANDARD_EINSTELLUNGEN,
     );
-    expect(pruefeEinstellungen({ tagesziel: { art: 'keins' } }).tagesziel).toEqual({ art: 'keins' });
+    expect(pruefeEinstellungen({ tagesziel: { art: 'keins' } }).tagesziel).toEqual({ art: 'kein' });
   });
 
-  it('Startstand bis zur Zusammenführung: leer', async () => {
-    expect(await ladeStartStand(STANDARD_PROFIL)).toEqual(LEERER_START_STAND);
+  it('Startstand eines neuen Geräts: leer', () => {
     expect(LEERER_START_STAND).toEqual({ begonnen: false, heute: { xp: 0, lektionen: 0 }, weiter: null, faellig: [] });
   });
 });

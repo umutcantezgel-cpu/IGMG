@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { EinstellungenFormular } from '@/components/lernapp/inseln/EinstellungenFormular';
+import { KontoInsel } from '@/components/lernapp/inseln/KontoInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { OBERFLAECHEN, richtung, SPRACHEN } from '@/lib/lernapp/kurse';
 import { lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
@@ -17,12 +19,14 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Einstellungen (PLAN §3.1, ADR 0037 Nr. 7): Oberflächensprache als Links auf dieselbe Seite in der anderen Sprache
  * (statisch), Ausgangssprache, Tagesziel, Ziffern (nur `ar`), Hör- und Sprechübungen als Insel mit Speicher auf dem
- * Gerät; reduzierte Bewegung folgt dem System (nur Hinweis). Statisch, ohne Cookies.
+ * Gerät; reduzierte Bewegung folgt dem System (nur Hinweis). Mit Schalter `lernapp_sync` zusätzlich „Konto und Abgleich“
+ * (Insel; ohne Klick keine Anfrage). Statisch, ohne Cookies.
  */
 export default async function Einstellungen() {
   await verlangeLernApp();
   const ui = await oberflaeche();
   const t = lernTexte(ui);
+  const abgleich = await funktionAn('lernapp_sync');
   return (
     <Rahmen ui={ui} bereich="einstellungen" pfad="einstellungen">
       <Seitenkopf titel={t('einstellungen.titel')} einleitung={t('einstellungen.einleitung')} />
@@ -54,6 +58,7 @@ export default async function Einstellungen() {
           texte={rohTexte(ui, 'einstellungen')}
           sprachen={SPRACHEN.map((s) => ({ sprache: s, eigenname: lernTexte(s)('sprache.eigenname'), dir: richtung(s) }))}
         />
+        {abgleich ? <KontoInsel ui={ui} texte={rohTexte(ui, 'konto')} /> : null}
         <section aria-labelledby="bewegung" className="flex flex-col gap-2">
           <h2 id="bewegung" className="text-24">
             {t('einstellungen.bewegung')}

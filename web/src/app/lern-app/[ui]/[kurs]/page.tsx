@@ -8,7 +8,7 @@ import { lernAdresse } from '@/lib/lernapp/adressen';
 import { istRichtung, richtung, zerlegeRichtung } from '@/lib/lernapp/kurse';
 import { kursTitel, kursUntertitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
-import { lernTexte } from '@/lib/lernapp/texte';
+import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
 
 export const ensureStatic = 'navigation';
 
@@ -21,7 +21,8 @@ export async function generateMetadata({ params }: PageProps<'/lern-app/[ui]/[ku
 /**
  * Lernpfad eines Kurses (PLAN §3.1, AUFTRAG §6 Stationen 2, 4, 6, 7): statische Hülle mit Titel, Hinweisen (Wissen auf
  * Deutsch und nur mit zwei Prüfungen, Koran-Arabisch nur geprüfte Bedeutungen und keine Computerstimme), Wegen zu
- * Einstufung und Wiederholung und der Insel für die Stationen (`LernpfadInsel`, Daten aus dem Kursverzeichnis).
+ * Einstufung und Wiederholung und der Insel für die Stationen (`LernpfadInsel`: Kursverzeichnis, Pakete und lokaler Stand;
+ * Einheit offline speichern).
  */
 export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[kurs]'>) {
   await verlangeLernApp();
@@ -103,7 +104,7 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
           <h2 id="lernpfad" className="text-display-2">
             {t('lernpfad.einheiten')}
           </h2>
-          <LernpfadInsel kurs={kurs} adresse={lernAdresse(ui, kurs)} leer={t('lernpfad.leer')} />
+          <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
         </section>
       </div>
     </Rahmen>
