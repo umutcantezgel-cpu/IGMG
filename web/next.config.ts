@@ -12,9 +12,10 @@ import {
 
 /**
  * Pfade ohne öffentliche CSP: Verwaltung und Konto-Seiten (Nonce-CSP im Proxy), mit/ohne Sprachpräfix, und die Lern-App
- * (eigene CSP aus `lernAppHeaderRegeln`, ADR 0042 Nr. 9).
+ * nur ohne Sprachpräfix (eigene CSP aus `lernAppHeaderRegeln`, ADR 0042 Nr. 9). `/(de|tr|en)/lern-app/…` leitet der Proxy
+ * weiter; erreicht ihn ein solcher Pfad nicht (Punkt im Pfad), gilt die öffentliche CSP – nie gar keine (S-L1 N-2).
  */
-const CSP_AUSNAHMEN = ['verwaltung', ...KONTO_SEGMENTE, 'lern-app'].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`).join('|');
+const CSP_AUSNAHMEN = [...['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`), 'lern-app(?:/|$)'].join('|');
 
 /**
  * Beispielmodus auf Vercel (Bau ohne DATABASE_URL, ADR 0019): Die Inhalte stammen aus der PGlite-Bau-Datenbank und

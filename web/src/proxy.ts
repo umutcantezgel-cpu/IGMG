@@ -14,13 +14,16 @@ const sprachRouting = createMiddleware(routing);
  * - `/lern-app` → 308 `/lern-app/de`; Links aus der Website `/(de|tr|en)/lern-app…` → 308 `/lern-app/(de|tr)…` in einem
  *   Sprung (für en gibt es keine Oberfläche, also de; eine Oberflächensprache im Rest bleibt erhalten); `/lern-app/en…`
  *   → 308 `/lern-app/de…`.
- * - Andere unbekannte Oberflächensprache: intern auf die Fangroute `/lern-app/de/…` (404 im Layout der Lern-App). Sonst
- *   träfe `[locale]/[...rest]` die Adresse (Sprache „lern-app“, leere 404-Seite; Spike L0-S1).
+ * - Andere unbekannte Oberflächensprache: intern auf den festen Platzhalter `/lern-app/de/_` der Fangroute (404 im Layout
+ *   der Lern-App, `noindex`, `no-store`). Sonst träfe `[locale]/[...rest]` die Adresse (Sprache „lern-app“, leere
+ *   404-Seite; Spike L0-S1). Nie auf `/lern-app/de/<segment>…`: Sonst lieferten `/lern-app/anmelden`,
+ *   `/lern-app/einstellungen` oder `/lern-app/tr-aus-de` echte Seiten unter fremder Adresse, die Anmeldung ohne Nonce-CSP
+ *   (S-L1 N-1).
  * - `/lern-app/(de|tr|ar)/anmelden…`: dynamisch mit Nonce-CSP, `noindex`, `no-store` wie die Konto-Seiten (ADR 0037 Nr. 4).
  * - Alles Übrige unter `/lern-app/` läuft ohne next-intl durch. `null`: kein Pfad der Lern-App.
  * Pakete, Audio und Modelle (`/lern-app/(pakete|audio|modelle)/…`) erreichen den Proxy nicht (Matcher, ADR 0039 S5 Nr. 7).
  */
-type LernAppWeg = { art: 'weiter' | 'intern'; ziel: string } | { art: 'durch' } | { art: 'anmelden'; ui: Oberflaeche } | null;
+type LernAppWeg = { art: 'weiter'; ziel: string } | { art: 'unbekannt' } | { art: 'durch' } | { art: 'anmelden'; ui: Oberflaeche } | null;
 function lernAppWeg(pfad: string): LernAppWeg {
   if (pfad === '/lern-app' || pfad === '/lern-app/') return { art: 'weiter', ziel: `/lern-app/${STANDARD_OBERFLAECHE}` };
   const fremd = pfad.match(/^\/(de|tr|en)\/lern-app(\/.*)?$/);
@@ -34,7 +37,7 @@ function lernAppWeg(pfad: string): LernAppWeg {
   const [, ui = '', rest = ''] = pfad.match(/^\/lern-app\/([^/]*)(\/.*)?$/) ?? [];
   if (istOberflaeche(ui)) return /^\/anmelden(\/|$)/.test(rest) ? { art: 'anmelden', ui } : { art: 'durch' };
   if (ui === 'en') return { art: 'weiter', ziel: `/lern-app/${STANDARD_OBERFLAECHE}${rest}` };
-  return { art: 'intern', ziel: `/lern-app/${STANDARD_OBERFLAECHE}/${ui}${rest}` };
+  return { art: 'unbekannt' };
 }
 
 /** Kopfzeilen der dynamischen Seiten (Verwaltung, Konto-Seiten, Anmeldung der Lern-App): kein Index, kein Speichern. */
@@ -55,7 +58,8 @@ export default function proxy(request: NextRequest) {
   // Lern-App vor allen übrigen Regeln: weder Sprachrouting noch Konto-Regeln (ADR 0037 Nr. 3)
   const lernApp = lernAppWeg(pathname);
   if (lernApp?.art === 'weiter') return NextResponse.redirect(new URL(`${lernApp.ziel}${search}`, request.url), 308);
-  if (lernApp?.art === 'intern') return NextResponse.rewrite(new URL(lernApp.ziel, request.url));
+  if (lernApp?.art === 'unbekannt')
+    return dynamischeKopfzeilen(NextResponse.rewrite(new URL(`/lern-app/${STANDARD_OBERFLAECHE}/_`, request.url)), cspLernApp());
   if (lernApp) {
     // Ausgeschaltet heißt 404 (ADR 0035): echt nur, wenn die Umgebung entscheidet (wie `kontenSicherAus`); sonst
     // entscheiden die Seiten. Die Anmeldung ohne Konten ebenso. Ziel ist die Fangroute mit Platzhalter `_`; Kopfzeilen wie

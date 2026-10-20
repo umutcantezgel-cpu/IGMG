@@ -50,13 +50,23 @@ describe('Weiterleitungen (308, ein Sprung)', () => {
 
 describe('unbekannte Oberflächensprache → 404 der Lern-App', () => {
   it.each([
-    ['/lern-app/xx', '/lern-app/de/xx'],
-    ['/lern-app/xx/yy', '/lern-app/de/xx/yy'],
-    ['/lern-app/arabisch/tr-aus-ar', '/lern-app/de/arabisch/tr-aus-ar'],
-  ])('%s → intern %s (Fangroute)', (von, nach) => {
+    '/lern-app/xx',
+    '/lern-app/xx/yy',
+    '/lern-app/arabisch/tr-aus-ar',
+    // Seitennamen an der Stelle der Oberflächensprache treffen nie echte Seiten (S-L1 N-1)
+    '/lern-app/anmelden',
+    '/lern-app/anmelden/zwei-faktor',
+    '/lern-app/einstellungen',
+    '/lern-app/tr-aus-de',
+    '/lern-app/tr-aus-de/ueben',
+    '/lern-app/_',
+  ])('%s → intern der feste Platzhalter /lern-app/de/_ (Fangroute), noindex, no-store, CSP der Lern-App', (von) => {
     const antwort = proxy(anfrage(von));
-    expect(antwort.headers.get('x-middleware-rewrite')).toBe(`${BASIS}${nach}`);
+    expect(antwort.headers.get('x-middleware-rewrite')).toBe(`${BASIS}/lern-app/de/_`);
     expect(antwort.headers.get('location')).toBeNull();
+    expect(antwort.headers.get('X-Robots-Tag')).toBe('noindex, nofollow');
+    expect(antwort.headers.get('Cache-Control')).toBe('private, no-store');
+    expect(antwort.headers.get('Content-Security-Policy')).toBe(cspLernApp());
   });
 });
 

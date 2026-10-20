@@ -84,6 +84,18 @@ describe('Kopfzeilen der Lern-App (ADR 0042 Nr. 9, Fortschreibung S2/S5; KERN 4.
     expect((await kopfzeilenFuer('/lern-app/de/anmelden-hilfe'))['content-security-policy']).toBe(cspLernApp());
   });
 
+  it('Randpfade mit Punkt (erreichen den Proxy nicht) antworten nie ohne CSP (S-L1 N-2)', async () => {
+    // unter der Anmeldung: CSP der Lern-App statt gar keiner
+    for (const pfad of ['/lern-app/de/anmelden/x.y', '/lern-app/tr/anmelden.json', '/lern-app/ar/anmelden/zwei-faktor/a.b'])
+      expect((await kopfzeilenFuer(pfad))['content-security-policy'], pfad).toBe(cspLernApp());
+    // Links der Website mit Sprachpräfix: öffentliche CSP, wenn der Proxy sie nicht weiterleitet
+    for (const pfad of ['/de/lern-app/x.y', '/tr/lern-app/de/a.b', '/en/lern-app.json', '/de/lern-app'])
+      expect((await kopfzeilenFuer(pfad))['content-security-policy'], pfad).toBe(cspOeffentlich());
+    // Verwaltung und Konto-Seiten bleiben ausgenommen (Nonce-CSP im Proxy), mit und ohne Sprachpräfix
+    for (const pfad of ['/verwaltung', '/de/verwaltung/x', '/anmelden', '/tr/giris'])
+      expect((await kopfzeilenFuer(pfad))['content-security-policy'], pfad).toBeUndefined();
+  });
+
   it('Mikrofon nur auf …/ueben und …/wiederholen sowie im Audio-Studio der Verwaltung', async () => {
     const mit = [
       '/lern-app/de/tr-aus-de/ueben',

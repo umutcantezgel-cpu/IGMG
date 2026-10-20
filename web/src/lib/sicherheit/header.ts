@@ -102,7 +102,8 @@ export const PFAD_BERECHTIGUNGEN: readonly { source: string; erlaubt: readonly B
  * - Ganz `/lern-app/…`: `Cross-Origin-Opener-Policy: same-origin` und `Cross-Origin-Embedder-Policy: require-corp`
  *   (Threads für Whisper; nur Übungsseiten reichen nicht, weil ein clientseitiger Wechsel kein isoliertes Dokument erzeugt).
  *   Voraussetzung: nur eigener Ursprung; der Service Worker der Lern-App speichert Originalantworten samt Kopfzeilen.
- * - CSP `cspLernApp()` für alles unter `/lern-app/` außer `/lern-app/(de|tr|ar)/anmelden…` (Nonce-CSP im Proxy).
+ * - CSP `cspLernApp()` für alles unter `/lern-app/` außer `/lern-app/(de|tr|ar)/anmelden…` ohne Punkt im Pfad (Nonce-CSP im
+ *   Proxy). Pfade mit Punkt erreichen den Proxy nicht und behalten deshalb die CSP der Lern-App (S-L1 N-2).
  * - Modelle (statisch unter `public/lern-app/modelle/`): ein Jahr unveränderlich, `nosniff`.
  * - Service Worker `/lern-app/sw.js`: immer neu prüfen (`no-cache`); `Service-Worker-Allowed` ist nicht nötig, weil der
  *   Scope `/lern-app/` dem Ordner der Datei entspricht.
@@ -117,7 +118,7 @@ export function lernAppHeaderRegeln(): { source: string; headers: { key: string;
       ],
     },
     {
-      source: '/lern-app/:pfad((?!(?:de|tr|ar)/anmelden(?:/|$)).*)',
+      source: '/lern-app/:pfad((?!(?:de|tr|ar)/anmelden(?:/[^.]*)?$).*)',
       headers: [{ key: 'Content-Security-Policy', value: cspLernApp() }],
     },
     {
