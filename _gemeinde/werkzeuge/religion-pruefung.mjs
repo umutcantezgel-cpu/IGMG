@@ -21,7 +21,9 @@
  *   (`web/src/lib/lernapp/inhalt/religion.ts`).
  * Nie erlaubt bleiben `web/inhalte/lernapp/{islam,koran}/**`, Komponenten und die Werkstatt; im Wissenskurs, im Koran-Pfad und
  * in der Werkstatt ist auch verschleierte arabische Schrift Rot. Codepunkt-Folgen in Code außerhalb der Daten und Tests
- * dürfen keine 4-Wort-Folge ergeben.
+ * dürfen keine 4-Wort-Folge ergeben. In Daten- und Textdateien außerhalb der Erlaubnisse (z. B. `web/inhalte/lernapp/rahmen/`)
+ * zählen Codepunkte und Entitäten als arabische Schrift, weil sie beim Lesen zu Schrift werden (Restbefund L1, L3-02).
+ * Zeilen- und Absatztrenner (U+2028/U+2029) trennen Wörter; mitten im Wort zählt zusätzlich die Lesart ohne sie.
  *
  * Aufruf: node _gemeinde/werkzeuge/religion-pruefung.mjs   (Ausgang 1 bei Befund; Ausgabe ohne arabische Schrift)
  * Als Modul (Unit-Test `web/tests/unit/lernapp/religion-waechter.test.ts`): normalisiere, woerter, baueIndex, ladeIndex,
@@ -35,6 +37,7 @@ import {
   ARABISCH,
   baueIndex,
   baueLexikon,
+  hatTrenner,
   koranVarianten,
   LEXIKON_LATEIN,
   LEXIKON_VERWEISE,
@@ -146,6 +149,13 @@ const standardLexikon = () => (lexikonCache ??= ladeLexikon());
 const VERSCHLEIERT = /\\u|&#|fromC|%[dD][89a-fA-F]/;
 
 /**
+ * Daten- und Textdateien: Codepunkt-Folgen und Entitäten werden beim Lesen (JSON, Markdown, HTML, XML) zu Schrift. Außerhalb
+ * der Erlaubnisse zählen sie deshalb wie arabische Schrift (Restbefund L1: z. B. `web/inhalte/lernapp/rahmen/*.json`).
+ */
+export const DATENDATEI =
+  /\.(json|jsonl|md|mdx|txt|tsv|csv|ya?ml|xml|html?|svg)$/i;
+
+/**
  * Prüft eine Datei (Pfad relativ zur Wurzel). `holeIndex` bzw. `holeLexikon` liefern Index und Lexikon erst bei Bedarf.
  * Ergebnis: Befunde als Text ohne arabische Schrift (`pfad:zeile: Grund`).
  */
@@ -161,6 +171,8 @@ export function pruefeDatei(
   const befunde = [];
   /** normalisierte Wörter der ganzen Datei mit Zeilennummer (für 4-Gramme über Zeilen und Felder hinweg) */
   const strom = [];
+  /** Treffer einzelner Zeilen in der Lesart ohne Zeilen- und Absatztrenner */
+  const zeilenTreffer = [];
   inhalt.split("\n").forEach((zeile, i) => {
     const ort = `${pfad}:${i + 1}`;
     const roh = ARABISCH.test(zeile);
@@ -178,7 +190,18 @@ export function pruefeDatei(
       );
       return;
     }
+    if (!erlaubt && !nie && DATENDATEI.test(pfad)) {
+      befunde.push(
+        `${ort}: arabische Schrift als Codepunkte bzw. Entitäten in einer Datendatei außerhalb der Erlaubnisse`,
+      );
+      return;
+    }
     for (const w of woerter(geloest)) strom.push([w, i + 1]);
+    // Trenner mitten im Wort: die Lesart ohne Trenner zusätzlich je Zeile prüfen
+    if (hatTrenner(geloest)) {
+      const t = vierGrammTreffer(geloest, holeIndex());
+      if (t) zeilenTreffer.push({ ...t, ort: i + 1 });
+    }
     if (erlaubt?.[2]?.lexikon) {
       const t = lexikonTreffer(geloest, holeLexikon());
       if (t)
@@ -187,9 +210,12 @@ export function pruefeDatei(
         );
     }
   });
-  if (strom.length >= 4) {
+  if (strom.length >= 4 || zeilenTreffer.length) {
     const gemeldet = new Set();
-    for (const t of vierGrammStrom(strom, holeIndex())) {
+    for (const t of [
+      ...(strom.length >= 4 ? vierGrammStrom(strom, holeIndex()) : []),
+      ...zeilenTreffer,
+    ]) {
       if (gemeldet.has(t.ort)) continue;
       gemeldet.add(t.ort);
       befunde.push(
