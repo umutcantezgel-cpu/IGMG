@@ -1,6 +1,6 @@
 # ADR 0038 – Lern-App: Offline zuerst und Synchronisation (Ereignisprotokoll, FSRS-Nachspielen)
 
-- Status: vorgeschlagen (16.10.2026) (Lauf Lern-App); Nr. 1 folgt der Nutzerentscheidung „Platzierung“ (ohne Konto voll nutzbar, Fortschritt auf dem Gerät, offline; L3-E05) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“, Synchronisation), §1, §2.4; `_lernapp/PLAN.md` §3.7–3.9, §11, §13; Spike S6 · ersetzt die Zusammenführungsregel aus Plan §2.4 („Bestwert gewinnt, jüngstes `last_review` gewinnt“)
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: vorgeschlagen (16.10.2026) (Lauf Lern-App); Nr. 1 folgt der Nutzerentscheidung „Platzierung“ (ohne Konto voll nutzbar, Fortschritt auf dem Gerät, offline; L3-E05) · Bezug: Plan „Lern-App“ Kontext („Verfeinerung“, Synchronisation), §1, §2.4; `_lernapp/PLAN.md` §3.7–3.9, §11, §13; Spike S6 · ersetzt die Zusammenführungsregel aus Plan §2.4 („Bestwert gewinnt, jüngstes `last_review` gewinnt“)
 
 ## Kontext
 

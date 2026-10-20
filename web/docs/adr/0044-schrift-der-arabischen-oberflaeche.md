@@ -1,6 +1,6 @@
 # ADR 0044 – Schrift der arabischen Oberfläche (Noto Sans Arabic)
 
-- Status: vorgeschlagen (16.10.2026) (Lauf Lern-App); Lizenz geprüft im Lizenzbefund L0 · Bezug: Plan „Lern-App“ Kontext („Was fehlt“: Regel `[dir=rtl]`), §2.1; `_lernapp/PLAN.md` §3.4; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §1.3, §2 („Schrift“) · schreibt ADR 0014 fort (vierte Schrift, gleicher Weg)
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: vorgeschlagen (16.10.2026) (Lauf Lern-App); Lizenz geprüft im Lizenzbefund L0 · Bezug: Plan „Lern-App“ Kontext („Was fehlt“: Regel `[dir=rtl]`), §2.1; `_lernapp/PLAN.md` §3.4; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §1.3, §2 („Schrift“) · schreibt ADR 0014 fort (vierte Schrift, gleicher Weg)
 
 ## Kontext
 

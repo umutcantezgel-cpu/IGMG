@@ -1,6 +1,6 @@
 # ADR 0039 – Lern-App: Kurspakete und Lern-Audio (Hash-Adressen, Bündel, Blob, Route)
 
-- Status: vorgeschlagen (16.10.2026) (Lauf Lern-App); Nr. 7 folgt der Nutzerentscheidung „Sprachinhalte“ (kein Koran- oder Hadith-Text in der Sprachausgabe, Audio später durch Aufnahmen ersetzbar; L3-E03); „nur Sprachkurse“ ist Standard bis zur Antwort (L3-E10) · Bezug: Plan „Lern-App“ Kontext (Widersprüche „Sprachausgabe“, „Verfeinerung“ Audio), §2.3, §3.1; `_lernapp/PLAN.md` §3.10, §5.4, §6.8; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §2; Spikes S4, S5 · baut auf ADR 0029 (Audio-Auslieferung über eine Route, L2-E06) auf; ADR 0029 und ADR 0030 bleiben für Rezitationen unberührt
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: vorgeschlagen (16.10.2026) (Lauf Lern-App); Nr. 7 folgt der Nutzerentscheidung „Sprachinhalte“ (kein Koran- oder Hadith-Text in der Sprachausgabe, Audio später durch Aufnahmen ersetzbar; L3-E03); „nur Sprachkurse“ ist Standard bis zur Antwort (L3-E10) · Bezug: Plan „Lern-App“ Kontext (Widersprüche „Sprachausgabe“, „Verfeinerung“ Audio), §2.3, §3.1; `_lernapp/PLAN.md` §3.10, §5.4, §6.8; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §2; Spikes S4, S5 · baut auf ADR 0029 (Audio-Auslieferung über eine Route, L2-E06) auf; ADR 0029 und ADR 0030 bleiben für Rezitationen unberührt
 
 ## Kontext
 
@@ -83,4 +83,4 @@ Gilt vor Nr. 1–12, wo es abweicht.
 - Kosten: Blob-Speicher `lernapp` gesamt ≈ 1,1–1,3 GB einschließlich Modelle (falls im Blob, ADR 0042); Kosten und Datenverkehr beobachten (LM-15).
 - Plattenbudget lokal: Audio geht direkt in den Blob-Speicher, keine Vollablage im Arbeitsbaum.
 - Abnahme: Z-L15 (Audio für 100 % der Zielinhalte, Lautheit normiert), Z-L03 (Koran-Pfad ohne Sprachausgabe), Z-L16 (Bau ≤ 15 min).
-- OFFENE FRAGE: Für Arabisch kann die Zielvorgabe „Audio für 100 % der Zielinhalte“ erst mit einer freigegebenen Stimme oder mit Aufnahmen erfüllt werden (ADR 0045, L0-E06). Bis dahin gilt „Audio folgt“.
+- OFFENE FRAGE (nach S3 auch für Türkisch, ADR 0045 Fortschreibung S3/S8 Nr. 2): Für Arabisch kann die Zielvorgabe „Audio für 100 % der Zielinhalte“ erst mit einer freigegebenen Stimme oder mit Aufnahmen erfüllt werden (ADR 0045, L0-E06). Bis dahin gilt „Audio folgt“.

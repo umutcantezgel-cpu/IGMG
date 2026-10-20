@@ -1,6 +1,6 @@
 # ADR 0040 – KI-Regel 2: KI-Entwürfe in der Lern-App (Fortschreibung von ADR 0030 Nr. 4)
 
-- Status: angenommen im Kern (Nutzerentscheidungen vom 16.10.2026 „Fiqh-Inhalte“, „Sprachinhalte“, „Arabisch“; L3-E01, L3-E03, L3-E07: KI-Entwurf mit Quellenangabe je Aussage, zwei Freigaben, Arabisch nur mit freigegebenen Bedeutungen) (Lauf Lern-App); Verbotsliste und Freigaberegeln im Einzelnen sind Standard bis zur Antwort (L3-E09); Nr. 6: Schwellen nach dem genehmigten Plan §3.4, Pfade vorgeschlagen · Bezug: Plan „Lern-App“ Kontext (Widersprüche „KI-Regel“, „KI-Übersetzungen“; „Verfeinerung“ KI-Regel 2, Freigabe), §2.3, §3.3, §3.4; `_lernapp/PLAN.md` §3.9 (Status je Baustein), §6.4, §6.7; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §1.4, §2 · **schreibt ADR 0030 Nr. 4 für die Lern-App fort** und präzisiert ADR 0030 Nr. 8; ADR 0030 Nr. 1–3 und 5–7 gelten weiter, für Bausteine des Wissenskurses verschärft durch Nr. 5 (zwei Freigaben statt einer)
+- Status: **angenommen im Tor L0 (20.10.2026)** mit den Abschnitten „Fortschreibung …“ (Orchestrator nach L3-E12; Gegenprüfung L0 ohne Mangel hoch/mittel) · vorher: angenommen im Kern (Nutzerentscheidungen vom 16.10.2026 „Fiqh-Inhalte“, „Sprachinhalte“, „Arabisch“; L3-E01, L3-E03, L3-E07: KI-Entwurf mit Quellenangabe je Aussage, zwei Freigaben, Arabisch nur mit freigegebenen Bedeutungen) (Lauf Lern-App); Verbotsliste und Freigaberegeln im Einzelnen sind Standard bis zur Antwort (L3-E09); Nr. 6: Schwellen nach dem genehmigten Plan §3.4, Pfade vorgeschlagen · Bezug: Plan „Lern-App“ Kontext (Widersprüche „KI-Regel“, „KI-Übersetzungen“; „Verfeinerung“ KI-Regel 2, Freigabe), §2.3, §3.3, §3.4; `_lernapp/PLAN.md` §3.9 (Status je Baustein), §6.4, §6.7; Lizenzbericht `_lernapp/berichte/lizenzen-l0.md` §1.4, §2 · **schreibt ADR 0030 Nr. 4 für die Lern-App fort** und präzisiert ADR 0030 Nr. 8; ADR 0030 Nr. 1–3 und 5–7 gelten weiter, für Bausteine des Wissenskurses verschärft durch Nr. 5 (zwei Freigaben statt einer)
 
 ## Kontext
 
@@ -64,6 +64,12 @@
      - Eingaben: `web/daten/tanzil`, `web/daten/hadith`. Ausnahmen nur über die Liste erlaubter Alltagsformeln mit zwei Freigaben (Nr. 5).
    - Arabische Einträge in Formel-Lexikon und Formel-Liste schreibt kein Agent. Sie stammen aus `web/daten/**` oder von der religiösen Prüfung und liegen gepinnt in `web/daten/` `[Ordnername festlegen]`.
 7. **Herkunft:** Jeder KI-Eintrag trägt `quelle: 'ki:<lauf>/<modell>/<promptVersion>'`. Von Menschen korrigierte Einträge sind eingefroren (`menschlichGeprueft`). Ein neuer KI-Import überschreibt sie nicht, sondern legt einen Konflikt an.
+
+## Fortschreibung durch Spike S8 (20.10.2026, Beleg `_lernapp/belege/S8-quellen-lokal.md`)
+
+1. **Nr. 4, Belegform:** `werk`, `kapitel` in Umschrift, `ausgabe`, Band/Seite der Vorlage (±1), `passage` (Kennung `werk.msNNNN` aus dem Passagen-Index), `fundstelle` als OpenITI-URI mit Meilenstein, `passageSha256Text`. Der Zitatbereich bezieht sich auf den bereinigten Passagentext; den Prüfer `beleg-pruefe` baut L6.
+2. **Nr. 5, Prüfoberfläche:** Prüfende sehen die Fundstelle mit Band und Seite, keinen arabischen Text, bis LM-04 entschieden ist.
+3. Quellenkreis und Abdeckung: ADR 0045, Fortschreibung S3/S8 Nr. 7.
 
 ## Alternativen
 

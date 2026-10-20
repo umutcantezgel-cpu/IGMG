@@ -263,3 +263,11 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
   - Vom Nutzer bestätigt: ohne Anhalten, Tor je Etappe, höchstens 2 Bau-Agenten, Branch und Fast-Forward (Plan „Lern-App“
     vom 16.10.2026; L2-E01/L2-E02 vom 13.10.2026).
   - Standard bis zur Antwort: bis zu 6 Inhalts-Agenten, die Liste der gemeinsamen Dateien und die Plattenregeln.
+
+## L3-E10a · 2026-10-20 · Orchestrator · Stimmen nach Spike S3 (Fortschreibung von L3-E10)
+- **de:** Coqui-VITS Thorsten über eigenen ONNX-Export (Echtzeitfaktor ≈ 0,33); Piper de_DE-mls nicht verwendet.
+- **tr:** glow-tts zurückgestellt (Datensatz „Talent_TR_Male“ ohne belegte Rechte, LM-24); Chatterbox kein Übergang;
+  „Audio folgt“ bis eigene Aufnahmen (LM-26 a, vorgezogen) oder schriftliche Bestätigung der Rechte.
+- **ar:** Chatterbox hat den Vokalisierungstest nicht bestanden; „Audio folgt“ bis eigene ClArTTS-Stimme oder Aufnahmen.
+- **Folgen:** Hörübungen tr/ar werden bis dahin übersprungen (KERN §4 „Ohne Audio“); Z-L15 kann für tr/ar nur mit Aufnahmen
+  erfüllt werden (AUSNAHME mit Grund, ADR 0039 OFFENE FRAGE). Beleg `belege/S3-stimmen.md`; ADR 0045 Fortschreibung S3/S8.
