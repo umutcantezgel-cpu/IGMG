@@ -28,7 +28,7 @@ export function bauKennung(env: Readonly<Record<string, string | undefined>> = p
   for (const datei of ['build-manifest.json', 'app-build-manifest.json', 'BUILD_ID']) {
     try {
       return createHash('sha256')
-        .update(readFileSync(/*turbopackIgnore: true*/ join(ordner, datei)))
+        .update(readFileSync(/*turbopackIgnore: true*/ join(/*turbopackIgnore: true*/ ordner, datei)))
         .digest('hex')
         .slice(0, 12);
     } catch {

@@ -70,7 +70,10 @@ test('Lernstand als Datei sichern und auf einem anderen Gerät einlesen', async 
   expect(download.suggestedFilename()).toMatch(/^igmg-lernapp-\d{4}-\d{2}-\d{2}\.json$/);
   const pfad = info.outputPath('sicherung.json');
   await download.saveAs(pfad);
-  const datei = JSON.parse(readFileSync(pfad, 'utf8')) as { format: string; ereignisse: unknown[]; profil: Record<string, unknown> };
+  const inhalt = readFileSync(pfad);
+  const datei = JSON.parse(inhalt.toString('utf8')) as { format: string; ereignisse: unknown[]; profil: Record<string, unknown> };
+  // als Puffer übergeben: Den Pfad (mit Umlaut im Ordnernamen des Tests) liest Chromium hier nicht – die Auswahl bliebe leer
+  const sicherung = { name: download.suggestedFilename(), mimeType: 'application/json', buffer: inhalt };
   expect(datei.format).toBe('igmg-lernapp-export');
   expect(datei.ereignisse.length).toBeGreaterThan(3);
   expect(JSON.stringify(datei)).not.toMatch(/benutzerId|konto/);
@@ -83,7 +86,7 @@ test('Lernstand als Datei sichern und auf einem anderen Gerät einlesen', async 
     seite.waitForEvent('filechooser'),
     seite.getByRole('button', { name: de.einstellungen.einlesen }).click(),
   ]);
-  await auswahl.setFiles(pfad);
+  await auswahl.setFiles(sicherung);
   await expect(seite.getByText(formatiere(de.einstellungen.eingelesen, { n: datei.ereignisse.length }, 'de'), { exact: true })).toBeVisible(
     {
       timeout: 30_000,
@@ -95,7 +98,7 @@ test('Lernstand als Datei sichern und auf einem anderen Gerät einlesen', async 
     seite.waitForEvent('filechooser'),
     seite.getByRole('button', { name: de.einstellungen.einlesen }).click(),
   ]);
-  await nochmal.setFiles(pfad);
+  await nochmal.setFiles(sicherung);
   await expect(seite.getByText(formatiere(de.einstellungen.eingelesen, { n: 0 }, 'de'), { exact: true })).toBeVisible();
   // eine fremde Datei wird abgelehnt
   const [fremd] = await Promise.all([
