@@ -90,13 +90,22 @@ export function pruefeWortschatz(
     const raenge = vergleichsRaenge(kurs, daten);
     const grundformen = kaikkiGrundformen(kurs, daten);
 
-    /** Frühestes Lemma zu einem Wort (direkt, über Grundform-Kandidaten oder kaikki), sonst null. */
-    const lemmaVon = (form: string): LemmaOrt | null => {
+    const fruehestes = (schluessel: Iterable<string>): LemmaOrt | null => {
+      let bestes: LemmaOrt | null = null;
+      for (const k of schluessel) for (const o of lemmata.get(k) ?? []) if (!bestes || o.ordnung < bestes.ordnung) bestes = o;
+      return bestes;
+    };
+    /**
+     * Frühestes Lemma zu einem Wort: `sicher`, wenn das Wort selbst Lemma oder Form des Kurses ist; sonst über
+     * Grundform-Kandidaten (Endungen, Klitika, Wortanfänge) oder die Grundformen im kaikki-Kernauszug.
+     */
+    const lemmaVon = (form: string): (LemmaOrt & { sicher: boolean }) | null => {
+      const exakt = fruehestes([form]);
+      if (exakt) return { ...exakt, sicher: true };
       const kandidaten = new Set(grundformKandidaten(form, kurs));
       for (const k of [...kandidaten]) for (const g of grundformen.get(k) ?? []) kandidaten.add(g);
-      let bestes: LemmaOrt | null = null;
-      for (const k of kandidaten) for (const o of lemmata.get(k) ?? []) if (!bestes || o.ordnung < bestes.ordnung) bestes = o;
-      return bestes;
+      const geschaetzt = fruehestes(kandidaten);
+      return geschaetzt ? { ...geschaetzt, sicher: false } : null;
     };
     const rangVon = (form: string): number => {
       let bester = Infinity;
@@ -129,7 +138,8 @@ export function pruefeWortschatz(
           const lemma = lemmaVon(form);
           let istUeber = false;
           if (lemma) {
-            if (lemma.stufe > stufenIndex(d.stufe)) istUeber = true;
+            // geschätzte Grundform einer höheren Stufe zählt nur, wenn das Wort auch selten ist
+            if (lemma.stufe > stufenIndex(d.stufe)) istUeber = lemma.sicher || rangVon(form) > schwelle;
             else if (lemma.ordnung > ordnung) vorgriffe.add(s.schluessel);
           } else if (rangVon(form) > schwelle) istUeber = true;
           if (istUeber) {

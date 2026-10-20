@@ -118,7 +118,11 @@ function pruefeTatoeba(b: Befunde, e: Eintrag, id: number, satz: TatoebaSatz | u
   const nennung = e.namensnennung ?? '';
   const person = satz.benutzer ?? 'Tatoeba-Mitwirkende';
   if (!nennung.includes(`#${id}`) || !nennung.includes(person))
-    b.blockierend(e.datei, `Namensnennung „Satz #${id} von ${person}“ fehlt (ADR 0045 Fortschreibung S7 Nr. 7)`, e.ort);
+    b.blockierend(
+      e.datei,
+      `Namensnennung „Satz #${id} von <${satz.benutzer ? 'Benutzername laut Auszug' : 'Tatoeba-Mitwirkende'}>“ fehlt (ADR 0045 Fortschreibung S7 Nr. 7)`,
+      e.ort,
+    );
   if (e.text !== undefined && !textGleich(e.text, satz.text)) {
     const vokalisiert = e.sprache === 'ar' && arabischeWoerter(e.text).join(' ') === arabischeWoerter(satz.text).join(' ');
     const vermerk = vokalisiert ? /bearbeitet \(vokalisiert\)/ : /bearbeitet/;

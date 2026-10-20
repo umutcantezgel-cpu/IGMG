@@ -85,6 +85,23 @@ describe('Satzlänge, Wortschatz, Lemma-Budget, Abdeckung', () => {
     expect(von(b, 'wortschatz').map(befundZeile)).toEqual([expect.stringMatching(/de\.a1\.e01: .* über A1 \(2 von \d+; erlaubt ≤ 5 %\)/)]);
   });
 
+  it('ein Lemma einer späteren Einheit derselben Stufe ist ein Vorgriff (Warnung), kein Wort über der Stufe', () => {
+    const quellen = geaendert('de', (d) => (d.saetze[0]!.text = 'Kernspintomografie ist neu.'));
+    const zweite = quellen
+      .filter((q) => q.pfad.includes('sprache/de/'))
+      .map((q) => {
+        const d = JSON.parse(q.text.replaceAll('de.a1.e01', 'de.a1.e02')) as Json;
+        d.einheit.reihenfolge = 2;
+        d.lemmata[0]!.lemma = 'Kernspintomografie';
+        return { pfad: 'testkurs/sprache/de/a1/de.a1.e02.json', text: JSON.stringify(d) };
+      });
+    const b = pruefe([...quellen, ...zweite]);
+    expect(von(b, 'wortschatz').map(befundZeile)).toEqual([]);
+    expect(von(b, 'wortschatz', 'warnung').map(befundZeile)).toEqual([
+      expect.stringMatching(/de\.a1\.e01: Vorgriff auf Lemmata späterer Einheiten in de\.a1\.e01\.s0001/),
+    ]);
+  });
+
   it('Lemma-Budget der Einheit aus dem Rahmenplan', () => {
     const b = pruefe(
       geaendert('de', (d) => {

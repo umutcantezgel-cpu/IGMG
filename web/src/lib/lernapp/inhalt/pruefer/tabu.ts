@@ -109,7 +109,8 @@ const leer = (): ArMuster => ({ ganz: new Set(), anfang: [] });
 function romVarianten(umschrift: string, tabelle: Record<string, string>): string[] {
   let r = umschrift.normalize('NFC').toLowerCase();
   for (const [din, wikt] of Object.entries(tabelle)) r = r.split(din.toLowerCase()).join(wikt);
-  r = r.replace(/^(?:al-|l-)/, '');
+  // Artikel, auch angeglichen (aš-, an-, …) und nach Vokal (l-)
+  r = r.replace(/^(?:a[lšṣṭḍẓṯḏnrstdz]-|l-)/u, '');
   const varianten = new Set([r]);
   if (/^[aiuāīū]/.test(r)) varianten.add(`ʔ${r}`);
   for (const v of [...varianten]) if (v.endsWith('ī')) varianten.add(`${v.slice(0, -1)}iyy`);

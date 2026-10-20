@@ -45,7 +45,7 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
     for (const wort of u.split(/\s+/).filter(Boolean)) {
       let r = wort.normalize('NFC').toLowerCase();
       for (const [din, wikt] of Object.entries(tabelle)) r = r.split(din.toLowerCase()).join(wikt);
-      r = r.replace(/^(?:al-|l-|aš-|ad-|an-|ar-|as-|at-|aṣ-|aḍ-|aṭ-|aẓ-|az-|aṯ-|aḏ-)/, '');
+      r = r.replace(/^(?:a[lšṣṭḍẓṯḏnrstdz]-|l-)/u, '');
       const varianten = [r, `ʔ${r}`, r.replace(/ī$/, 'iyy')];
       const muster = new Set(varianten.flatMap((v) => rom.get(v) ?? []).filter((m) => m.length >= 2));
       if (!muster.size) return null;
@@ -77,14 +77,10 @@ function begriffe(leitfaden: Leitfaden, daten: string): Begriff[] {
 
 const passt = (token: string, wort: string) => token === wort || (wort.length >= 4 && token.startsWith(wort));
 
-function trifft(b: Begriff, text: string, sprache: Sprache): boolean {
-  const tokens = tabuWoerter(text, sprache);
+/** Trifft der Begriff die Wörter eines Texts? `kandidaten`: je Wort die arabischen Lesarten ohne Klitika (nur ar). */
+function trifft(b: Begriff, tokens: readonly string[], sprache: Sprache, kandidaten: readonly string[][]): boolean {
   if (sprache === 'ar')
-    return b.ar.some((folge) =>
-      tokens.some((_, i) =>
-        folge.every((m, j) => tokens[i + j] !== undefined && arabischeKandidaten(tokens[i + j]!).some((k) => m.has(k))),
-      ),
-    );
+    return b.ar.some((folge) => tokens.some((_, i) => folge.every((m, j) => kandidaten[i + j]?.some((k) => m.has(k)) ?? false)));
   return (b.latein[sprache] ?? []).some(
     (folge) => folge.length > 0 && tokens.some((_, i) => folge.every((w, j) => tokens[i + j] !== undefined && passt(tokens[i + j]!, w))),
   );
@@ -107,8 +103,10 @@ export function pruefeReligionsbezug(inhalte: Inhalte, texte: readonly TextEintr
     const liste = begriffe(leitfaden, daten);
     const gemeldet = new Set<string>();
     for (const t of texte) {
+      const tokens = tabuWoerter(t.text, t.sprache);
+      const kandidaten = t.sprache === 'ar' ? tokens.map(arabischeKandidaten) : [];
       for (const begriff of liste) {
-        if (!trifft(begriff, t.text, t.sprache)) continue;
+        if (!trifft(begriff, tokens, t.sprache, kandidaten)) continue;
         const k = `${t.datei}|${t.ort}|${begriff.id}`;
         if (gemeldet.has(k)) continue;
         gemeldet.add(k);
