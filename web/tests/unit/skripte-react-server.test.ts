@@ -19,6 +19,7 @@ const SKRIPTE = [
   'drizzle/seeds/index.ts',
   'scripts/lernapp/import.ts',
   'scripts/lernapp/pruefen.ts',
+  'scripts/lernapp/schemas.ts',
 ];
 
 /** Eigene Module (relative Pfade) eines Skripts als absolute Pfade. */

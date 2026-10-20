@@ -123,7 +123,7 @@ export function sprachDatei(kurs: Sprache): SprachEinheitDatei {
     status: 'automatisch_geprueft',
     kurs,
     stufe: 'a1',
-    einheit: { schluessel: e, reihenfolge: 1, thema: THEMA },
+    einheit: { schluessel: e, reihenfolge: 1, thema: THEMA, kinderGeeignet: true },
     lemmata: (['w001', 'w002', 'w003', 'w004'] as const).map((w, i) => ({
       schluessel: k(w),
       lemma: t[w],

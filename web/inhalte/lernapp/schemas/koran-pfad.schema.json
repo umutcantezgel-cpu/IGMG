@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Koran-Arabisch-Pfad (koran/pfad.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-koran-pfad" },
+    "version": { "type": "number", "const": 1 },
+    "kurs": { "type": "string", "const": "koran" },
+    "einheiten": {
+      "maxItems": 60,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schluessel": { "type": "string", "maxLength": 120 },
+          "stufe": { "type": "string", "enum": ["grund", "aufbau", "vertiefung"] },
+          "reihenfolge": { "type": "integer", "minimum": 1, "maximum": 999 },
+          "thema": {
+            "type": "object",
+            "properties": {
+              "de": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "tr": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "ar": { "type": "string", "minLength": 1, "maxLength": 300 }
+            },
+            "additionalProperties": false
+          },
+          "lektionen": {
+            "minItems": 1,
+            "maxItems": 20,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "schluessel": { "type": "string", "maxLength": 120 },
+                "wortformen": {
+                  "minItems": 1,
+                  "maxItems": 60,
+                  "type": "array",
+                  "items": { "type": "string", "pattern": "^\\d{1,3}:\\d{1,3}:\\d{1,3}$" }
+                },
+                "aufgaben": {
+                  "default": [],
+                  "maxItems": 40,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "schluessel": { "type": "string", "maxLength": 120 },
+                      "typ": { "type": "string", "const": "koran_wort" },
+                      "art": { "type": "string", "enum": ["bedeutung", "wortform", "wurzel"] },
+                      "wortform": { "type": "string", "pattern": "^\\d{1,3}:\\d{1,3}:\\d{1,3}$" },
+                      "ablenker": {
+                        "minItems": 1,
+                        "maxItems": 5,
+                        "type": "array",
+                        "items": { "type": "string", "pattern": "^\\d{1,3}:\\d{1,3}:\\d{1,3}$" }
+                      }
+                    },
+                    "required": ["schluessel", "typ", "art", "wortform", "ablenker"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": ["schluessel", "wortformen"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["schluessel", "stufe", "reihenfolge", "thema", "lektionen"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "kurs", "einheiten"],
+  "additionalProperties": false
+}
