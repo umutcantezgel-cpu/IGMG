@@ -1,12 +1,12 @@
-import { z } from 'zod';
 import { SPRACHEN } from '../kurse';
 import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
 import { fehlendeKacheln } from '../abgleich/tokens';
 import { LEKTIONS_ARTEN } from '../engine/xp';
 import { SchluesselSchema } from '../ereignisse/typen';
+import * as z from '../z';
 
 /**
- * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union über alle Übungstypen aus §4 als Gerüst:
+ * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4 als Gerüst:
  * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts), L2 die übrigen.
  *
  * ## Lektionsformat (Eingabe des Spielers `<Spieler lektion={…} />`)
@@ -48,32 +48,41 @@ export const SpracheSchema = z.enum(SPRACHEN);
 
 /** Verweis auf einen Clip im Audio-Bündel (ADR 0039 Nr. 3, Fortschreibung S4/S5). */
 export const AudioSchema = z.strictObject({
-  buendel: z.string().min(1).max(200),
-  versatz: z.int().min(0),
-  laenge: z.int().min(1).max(16_777_216),
-  dauerMs: z.int().min(1).optional(),
+  buendel: z.string().check(z.minLength(1), z.maxLength(200)),
+  versatz: z.int().check(z.minimum(0)),
+  laenge: z.int().check(z.minimum(1), z.maximum(16_777_216)),
+  dauerMs: z.optional(z.int().check(z.minimum(1))),
 });
+
+/** Text mit Länge (getrimmt, dann geprüft). */
+const text = (max: number, min = 1) => z.string().check(z.trim(), z.minLength(min), z.maxLength(max));
+/** Ungetrimmter Text mit Länge. */
+const roh = (max: number, min = 1) => z.string().check(z.minLength(min), z.maxLength(max));
+/** Liste mit Länge. */
+const liste = <T extends z.ZodMiniType>(e: T, min: number, max: number) => z.array(e).check(z.minLength(min), z.maxLength(max));
+/** Ganzzahl ≥ min. */
+const ab = (min: number) => z.int().check(z.minimum(min));
 
 /** Ein Text mit Sprache (und optional Audio). */
 export const InhaltSchema = z.strictObject({
-  text: z.string().trim().min(1).max(600),
+  text: text(600),
   sprache: SpracheSchema,
-  audio: AudioSchema.optional(),
+  audio: z.optional(AudioSchema),
 });
 export type Inhalt = z.infer<typeof InhaltSchema>;
 
 const basis = {
   schluessel: SchluesselSchema,
-  karten: z.array(SchluesselSchema).max(12).optional(),
+  karten: z.optional(z.array(SchluesselSchema).check(z.maxLength(12))),
 };
 
-const Loesungen = z.array(z.string().trim().min(1).max(600)).min(1).max(30);
-const Optionen = z.array(InhaltSchema).min(2).max(6);
+const Loesungen = liste(text(600), 1, 30);
+const Optionen = liste(InhaltSchema, 2, 6);
 
 const eindeutig = (texte: readonly string[]) => new Set(texte.map((t) => t.trim().toLocaleLowerCase())).size === texte.length;
 
 /** Index der richtigen Option liegt im Bereich, Optionen sind verschieden. */
-function mitOptionen<T extends { optionen: { text: string }[]; richtig: number }>(a: T, ctx: z.RefinementCtx) {
+function mitOptionen<T extends { optionen: { text: string }[]; richtig: number }>(a: T, ctx: z.RefinementCtx<T>) {
   if (a.richtig >= a.optionen.length) ctx.addIssue({ code: 'custom', message: 'richtig außerhalb der Optionen', path: ['richtig'] });
   if (!eindeutig(a.optionen.map((o) => o.text))) ctx.addIssue({ code: 'custom', message: 'Optionen doppelt', path: ['optionen'] });
 }
@@ -85,11 +94,11 @@ export const AuswahlSchema = z
     ...basis,
     typ: z.literal('auswahl'),
     anweisung: z.enum(['waehleUebersetzung', 'waehleWort', 'waehleBedeutung', 'waehleAntwort']),
-    vorgabe: InhaltSchema.optional(),
+    vorgabe: z.optional(InhaltSchema),
     optionen: Optionen,
-    richtig: z.int().min(0),
+    richtig: ab(0),
   })
-  .superRefine(mitOptionen);
+  .check(z.superRefine(mitOptionen));
 
 export const WortbankSchema = z
   .strictObject({
@@ -101,39 +110,43 @@ export const WortbankSchema = z
     sprache: SpracheSchema,
     loesungen: Loesungen,
     /** Kacheltexte: die Wörter der Hauptlösung und Ablenker (Reihenfolge des Inhalts, gemischt wird in der Anzeige) */
-    kacheln: z.array(z.string().trim().min(1).max(60)).min(2).max(24),
+    kacheln: liste(text(60), 2, 24),
   })
-  .superRefine((a, ctx) => {
-    const fehlt = fehlendeKacheln(a.loesungen[0] ?? '', a.kacheln, a.sprache);
-    if (fehlt.length) ctx.addIssue({ code: 'custom', message: `Kacheln fehlen: ${fehlt.join(' ')}`, path: ['kacheln'] });
-  });
+  .check(
+    z.superRefine((a, ctx) => {
+      const fehlt = fehlendeKacheln(a.loesungen[0] ?? '', a.kacheln, a.sprache);
+      if (fehlt.length) ctx.addIssue({ code: 'custom', message: `Kacheln fehlen: ${fehlt.join(' ')}`, path: ['kacheln'] });
+    }),
+  );
 
-export const PaarSchema = z.strictObject({ links: InhaltSchema, rechts: InhaltSchema, karte: SchluesselSchema.optional() });
+export const PaarSchema = z.strictObject({ links: InhaltSchema, rechts: InhaltSchema, karte: z.optional(SchluesselSchema) });
 
 export const PaareSchema = z
   .strictObject({
     ...basis,
     typ: z.literal('paare'),
     anweisung: z.enum(['findePaare']),
-    paare: z.array(PaarSchema).min(2).max(6),
+    paare: liste(PaarSchema, 2, 6),
   })
-  .superRefine((a, ctx) => {
-    if (!eindeutig(a.paare.map((p) => p.links.text)) || !eindeutig(a.paare.map((p) => p.rechts.text)))
-      ctx.addIssue({ code: 'custom', message: 'Paare mit gleichem Text', path: ['paare'] });
-  });
+  .check(
+    z.superRefine((a, ctx) => {
+      if (!eindeutig(a.paare.map((p) => p.links.text)) || !eindeutig(a.paare.map((p) => p.rechts.text)))
+        ctx.addIssue({ code: 'custom', message: 'Paare mit gleichem Text', path: ['paare'] });
+    }),
+  );
 
 // ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2) ———
 
-const MitAudio = InhaltSchema.extend({ audio: AudioSchema });
-const Frage = z.strictObject({ frage: InhaltSchema, optionen: Optionen, richtig: z.int().min(0) }).superRefine(mitOptionen);
+const MitAudio = z.extend(InhaltSchema, { audio: AudioSchema });
+const Frage = z.strictObject({ frage: InhaltSchema, optionen: Optionen, richtig: ab(0) }).check(z.superRefine(mitOptionen));
 
 export const GERUEST = {
   bild_wort: z.strictObject({
     ...basis,
     typ: z.literal('bild_wort'),
-    symbol: z.string().min(1).max(200),
+    symbol: roh(200),
     optionen: Optionen,
-    richtig: z.int().min(0),
+    richtig: ab(0),
   }),
   frei: z.strictObject({ ...basis, typ: z.literal('frei'), vorgabe: InhaltSchema, sprache: SpracheSchema, loesungen: Loesungen }),
   hoeren_waehlen: z.strictObject({
@@ -141,7 +154,7 @@ export const GERUEST = {
     typ: z.literal('hoeren_waehlen'),
     hoeren: MitAudio,
     optionen: Optionen,
-    richtig: z.int().min(0),
+    richtig: ab(0),
   }),
   hoeren_schreiben: z.strictObject({
     ...basis,
@@ -150,110 +163,104 @@ export const GERUEST = {
     sprache: SpracheSchema,
     loesungen: Loesungen,
   }),
-  minimalpaare: z.strictObject({ ...basis, typ: z.literal('minimalpaare'), hoeren: MitAudio, optionen: Optionen, richtig: z.int().min(0) }),
+  minimalpaare: z.strictObject({ ...basis, typ: z.literal('minimalpaare'), hoeren: MitAudio, optionen: Optionen, richtig: ab(0) }),
   luecke: z.strictObject({
     ...basis,
     typ: z.literal('luecke'),
-    vor: z.string().max(600),
-    nach: z.string().max(600),
+    vor: roh(600, 0),
+    nach: roh(600, 0),
     sprache: SpracheSchema,
-    optionen: z.array(z.string().min(1).max(60)).max(6).optional(),
+    optionen: z.optional(z.array(roh(60)).check(z.maxLength(6))),
     loesungen: Loesungen,
   }),
   satzbau: z.strictObject({
     ...basis,
     typ: z.literal('satzbau'),
     sprache: SpracheSchema,
-    kacheln: z.array(z.string().min(1).max(60)).min(2).max(24),
+    kacheln: liste(roh(60), 2, 24),
     loesungen: Loesungen,
   }),
   formen: z.strictObject({
     ...basis,
     typ: z.literal('formen'),
     sprache: SpracheSchema,
-    zeilen: z.array(z.string().min(1).max(60)).min(1).max(12),
-    spalten: z.array(z.string().min(1).max(60)).min(1).max(8),
+    zeilen: liste(roh(60), 1, 12),
+    spalten: liste(roh(60), 1, 8),
     zellen: z
-      .array(z.strictObject({ zeile: z.int().min(0), spalte: z.int().min(0), loesungen: Loesungen, vorgabe: z.boolean().optional() }))
-      .min(1),
+      .array(z.strictObject({ zeile: ab(0), spalte: ab(0), loesungen: Loesungen, vorgabe: z.optional(z.boolean()) }))
+      .check(z.minLength(1)),
   }),
-  harakat: z.strictObject({ ...basis, typ: z.literal('harakat'), optionen: Optionen, richtig: z.int().min(0) }),
+  harakat: z.strictObject({ ...basis, typ: z.literal('harakat'), optionen: Optionen, richtig: ab(0) }),
   dialog: z.strictObject({
     ...basis,
     typ: z.literal('dialog'),
-    verlauf: z
-      .array(z.strictObject({ sprecher: z.string().min(1).max(40), zeile: InhaltSchema }))
-      .min(1)
-      .max(20),
+    verlauf: liste(z.strictObject({ sprecher: roh(40), zeile: InhaltSchema }), 1, 20),
     optionen: Optionen,
-    richtig: z.int().min(0),
+    richtig: ab(0),
   }),
   geschichte: z.strictObject({
     ...basis,
     typ: z.literal('geschichte'),
-    zeilen: z
-      .array(z.strictObject({ sprecher: z.string().max(40).optional(), zeile: InhaltSchema }))
-      .min(1)
-      .max(60),
-    fragen: z.array(Frage).max(10),
+    zeilen: liste(z.strictObject({ sprecher: z.optional(roh(40, 0)), zeile: InhaltSchema }), 1, 60),
+    fragen: z.array(Frage).check(z.maxLength(10)),
   }),
   lesen_fragen: z.strictObject({
     ...basis,
     typ: z.literal('lesen_fragen'),
-    text: z.array(InhaltSchema).min(1).max(40),
-    fragen: z.array(Frage).min(1).max(10),
+    text: liste(InhaltSchema, 1, 40),
+    fragen: liste(Frage, 1, 10),
   }),
   grammatik_tipp: z.strictObject({
     ...basis,
     typ: z.literal('grammatik_tipp'),
-    titel: z.string().min(1).max(200),
+    titel: roh(200),
     abschnitte: z
       .array(
         z.strictObject({
-          ueberschrift: z.string().max(200).optional(),
-          text: z.string().min(1).max(2000),
-          beispiele: z.array(InhaltSchema).max(10).optional(),
+          ueberschrift: z.optional(roh(200, 0)),
+          text: roh(2000),
+          beispiele: z.optional(z.array(InhaltSchema).check(z.maxLength(10))),
         }),
       )
-      .min(1),
+      .check(z.minLength(1)),
   }),
   schrift_ar: z.strictObject({
     ...basis,
     typ: z.literal('schrift_ar'),
     art: z.enum(['erkennen', 'zuordnen', 'lesen', 'nachspuren']),
-    ziel: z.string().regex(/^[a-z]+$/),
+    ziel: z.string().check(z.regex(/^[a-z]+$/)),
   }),
   schrift_tr: z.strictObject({
     ...basis,
     typ: z.literal('schrift_tr'),
     optionen: Optionen,
-    richtig: z.int().min(0),
-    hoeren: MitAudio.optional(),
+    richtig: ab(0),
+    hoeren: z.optional(MitAudio),
   }),
   schrift_latein: z.strictObject({
     ...basis,
     typ: z.literal('schrift_latein'),
     optionen: Optionen,
-    richtig: z.int().min(0),
-    hoeren: MitAudio.optional(),
+    richtig: ab(0),
+    hoeren: z.optional(MitAudio),
   }),
   sprechen: z.strictObject({ ...basis, typ: z.literal('sprechen'), vorgabe: InhaltSchema, loesungen: Loesungen }),
   schreiben: z.strictObject({
     ...basis,
     typ: z.literal('schreiben'),
     aufgabe: InhaltSchema,
-    pruefliste: z.array(z.string().min(1).max(200)).min(1).max(12),
+    pruefliste: liste(roh(200), 1, 12),
     muster: InhaltSchema,
-    woerter: z.strictObject({ min: z.int().min(0), max: z.int().min(1) }).optional(),
+    woerter: z.optional(z.strictObject({ min: ab(0), max: ab(1) })),
   }),
   /** Koran-Arabisch: nur Verweise (`sure:vers:wort`) und freigegebene Bedeutungen über Kennungen – kein Text (ADR 0040). */
   koran_wort: z.strictObject({
     ...basis,
     typ: z.literal('koran_wort'),
     art: z.enum(['bedeutung', 'wurzel']),
-    verweis: z.string().regex(/^\d{1,3}:\d{1,3}:\d{1,3}$/),
-    optionen: z.array(SchluesselSchema).min(2).max(6),
-    richtig: z.int().min(0),
+    verweis: z.string().check(z.regex(/^\d{1,3}:\d{1,3}:\d{1,3}$/)),
+    optionen: liste(SchluesselSchema, 2, 6),
+    richtig: ab(0),
   }),
   // Wissenskurs (nur Deutsch; jede Aufgabe aus einer Aussage, zwei Freigaben)
   wahr_falsch: z.strictObject({
@@ -261,19 +268,16 @@ export const GERUEST = {
     typ: z.literal('wahr_falsch'),
     aussage: InhaltSchema,
     wahr: z.boolean(),
-    begruendung: z.string().min(1).max(1000),
+    begruendung: roh(1000),
   }),
   zuordnen: z.strictObject({
     ...basis,
     typ: z.literal('zuordnen'),
-    kategorien: z.array(z.string().min(1).max(80)).min(2).max(6),
-    eintraege: z
-      .array(z.strictObject({ text: z.string().min(1).max(300), kategorie: z.int().min(0) }))
-      .min(2)
-      .max(12),
+    kategorien: liste(roh(80), 2, 6),
+    eintraege: liste(z.strictObject({ text: roh(300), kategorie: ab(0) }), 2, 12),
   }),
-  reihenfolge: z.strictObject({ ...basis, typ: z.literal('reihenfolge'), schritte: z.array(z.string().min(1).max(300)).min(2).max(12) }),
-  fallfrage: z.strictObject({ ...basis, typ: z.literal('fallfrage'), fall: InhaltSchema, optionen: Optionen, richtig: z.int().min(0) }),
+  reihenfolge: z.strictObject({ ...basis, typ: z.literal('reihenfolge'), schritte: liste(roh(300), 2, 12) }),
+  fallfrage: z.strictObject({ ...basis, typ: z.literal('fallfrage'), fall: InhaltSchema, optionen: Optionen, richtig: ab(0) }),
 } as const;
 
 export const AufgabeSchema = z.discriminatedUnion('typ', [AuswahlSchema, WortbankSchema, PaareSchema, ...Object.values(GERUEST)]);
@@ -300,14 +304,16 @@ export const LektionSchema = z
     art: z.enum(LEKTIONS_ARTEN),
     zielsprache: SpracheSchema,
     ausgangssprache: SpracheSchema,
-    titel: z.string().max(200).optional(),
-    aufgaben: z.array(AufgabeSchema).min(1).max(40),
-    lexikon: z.array(z.string().min(1).max(80)).max(10_000).optional(),
+    titel: z.optional(roh(200, 0)),
+    aufgaben: liste(AufgabeSchema, 1, 40),
+    lexikon: z.optional(z.array(roh(80)).check(z.maxLength(10_000))),
   })
-  .superRefine((l, ctx) => {
-    if (new Set(l.aufgaben.map((a) => a.schluessel)).size !== l.aufgaben.length)
-      ctx.addIssue({ code: 'custom', message: 'Aufgabenschlüssel doppelt', path: ['aufgaben'] });
-  });
+  .check(
+    z.superRefine((l, ctx) => {
+      if (new Set(l.aufgaben.map((a) => a.schluessel)).size !== l.aufgaben.length)
+        ctx.addIssue({ code: 'custom', message: 'Aufgabenschlüssel doppelt', path: ['aufgaben'] });
+    }),
+  );
 
 export type Lektion = z.infer<typeof LektionSchema>;
 

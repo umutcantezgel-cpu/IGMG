@@ -1,6 +1,6 @@
-import { z } from 'zod';
 import { EreignisSchema, GeraetSchema } from '../ereignisse/typen';
 import type { Ereignis } from '../ereignisse/typen';
+import * as z from '../z';
 
 /**
  * Protokoll des Abgleichs (ADR 0038 Nr. 5–7 und 10, PLAN §3.8): gemeinsam für Server (`/api/lernapp/sync`,
@@ -36,20 +36,22 @@ export const HOECHSTENS_FREMDE = 2000;
 export const BREMSE = { max: 30, fensterSekunden: 60 } as const;
 
 /** Zeiger des Servers: fortlaufende Kennung als Dezimaltext (höchstens 15 Stellen, damit sie als Zahl exakt bleibt). */
-export const CursorSchema = z.string().regex(/^(0|[1-9]\d{0,14})$/);
+export const CursorSchema = z.string().check(z.regex(/^(0|[1-9]\d{0,14})$/));
+const Zeit = () => z.iso.datetime({ offset: true });
+const Anzahl = () => z.int().check(z.minimum(0));
 
 export const SyncAnfrageSchema = z.strictObject({
   geraet: GeraetSchema,
-  cursor: CursorSchema.nullable(),
-  ereignisse: z.array(z.unknown()).max(HOECHSTENS_EREIGNISSE),
-  basis: z.iso.datetime({ offset: true }).nullable().optional(),
+  cursor: z.nullable(CursorSchema),
+  ereignisse: z.array(z.unknown()).check(z.maxLength(HOECHSTENS_EREIGNISSE)),
+  basis: z.optional(z.nullable(Zeit())),
 });
 export type SyncAnfrage = z.infer<typeof SyncAnfrageSchema>;
 
 /** Kartenstand, wie ihn `srs.ts` erzeugt (für verdichtete Basen auf dem Draht). */
 export const KartenstandSchema = z.strictObject({
-  karte: z.string().min(1).max(200),
-  faellig: z.iso.datetime({ offset: true }),
+  karte: z.string().check(z.minLength(1), z.maxLength(200)),
+  faellig: Zeit(),
   stabilitaet: z.number(),
   schwierigkeit: z.number(),
   tageVergangen: z.number(),
@@ -58,27 +60,27 @@ export const KartenstandSchema = z.strictObject({
   wiederholungen: z.number(),
   fehler: z.number(),
   zustand: z.enum(['neu', 'lernen', 'wiederholen', 'neu_lernen']),
-  zuletzt: z.iso.datetime({ offset: true }).nullable(),
-  letzteNote: z.enum(['nochmal', 'schwer', 'gut']).nullable(),
+  zuletzt: z.nullable(Zeit()),
+  letzteNote: z.nullable(z.enum(['nochmal', 'schwer', 'gut'])),
   /** FSRS-Parameterversion (`srs.ts` `FSRS_PARAMETERVERSION`); eine neue Version heißt Neuberechnung */
-  parameterversion: z.string().min(1).max(80),
+  parameterversion: z.string().check(z.minLength(1), z.maxLength(80)),
 });
 
-export const KartenBasisSchema = z.strictObject({ stand: KartenstandSchema, bis: z.iso.datetime({ offset: true }) });
+export const KartenBasisSchema = z.strictObject({ stand: KartenstandSchema, bis: Zeit() });
 
-const SchluesselPaar = z.strictObject({ geraet: GeraetSchema, seq: z.int().min(0) });
+const SchluesselPaar = z.strictObject({ geraet: GeraetSchema, seq: Anzahl() });
 
 export const SyncAntwortSchema = z.strictObject({
   cursor: CursorSchema,
   mehr: z.boolean(),
-  ereignisse: z.array(z.unknown()).max(HOECHSTENS_FREMDE),
-  angenommen: z.int().min(0),
-  doppelt: z.int().min(0),
+  ereignisse: z.array(z.unknown()).check(z.maxLength(HOECHSTENS_FREMDE)),
+  angenommen: Anzahl(),
+  doppelt: Anzahl(),
   abgelehnt: z.array(SchluesselPaar),
   geklemmt: z.array(EreignisSchema),
-  angelegt: z.iso.datetime({ offset: true }),
-  basisStand: z.iso.datetime({ offset: true }).nullable(),
-  basen: z.record(z.string(), KartenBasisSchema).optional(),
+  angelegt: Zeit(),
+  basisStand: z.nullable(Zeit()),
+  basen: z.optional(z.record(z.string(), KartenBasisSchema)),
 });
 export type SyncAntwort = Omit<z.infer<typeof SyncAntwortSchema>, 'ereignisse' | 'geklemmt'> & {
   ereignisse: Ereignis[];
@@ -95,6 +97,10 @@ export type EinwilligungsStand = 'erteilt' | 'fehlt' | 'eltern';
 /** Antwort von `GET /api/lernapp/sitzung` (404 heißt: Abgleich aus). */
 export const SitzungAntwortSchema = z.discriminatedUnion('angemeldet', [
   z.strictObject({ angemeldet: z.literal(false) }),
-  z.strictObject({ angemeldet: z.literal(true), konto: z.string().min(1).max(200), einwilligung: z.enum(['erteilt', 'fehlt', 'eltern']) }),
+  z.strictObject({
+    angemeldet: z.literal(true),
+    konto: z.string().check(z.minLength(1), z.maxLength(200)),
+    einwilligung: z.enum(['erteilt', 'fehlt', 'eltern']),
+  }),
 ]);
 export type SitzungAntwort = z.infer<typeof SitzungAntwortSchema>;

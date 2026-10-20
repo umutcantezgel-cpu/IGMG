@@ -1,5 +1,5 @@
-import { z } from 'zod';
 import { SPRACHEN } from '../kurse';
+import * as z from '../z';
 import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprache } from './db';
 
 /**
@@ -8,7 +8,7 @@ import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprach
  * `einstellungen`. Löschen entfernt alle Daten des Profils auf dem Gerät.
  */
 
-export const ProfilNameSchema = z.string().trim().min(1).max(40);
+export const ProfilNameSchema = z.string().check(z.trim(), z.minLength(1), z.maxLength(40));
 const SpracheSchema = z.enum(SPRACHEN);
 
 const GERAET = '';

@@ -1,7 +1,7 @@
-import { z } from 'zod';
 import { OBERFLAECHEN, SPRACHEN } from '../kurse';
 import { LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
 import { NOTEN } from '../srs';
+import * as z from '../z';
 
 /**
  * Ereignisprotokoll der Lern-App (ADR 0038 Nr. 2, PLAN §3.8): die einzige Wahrheit über den Fortschritt, nur anhängen.
@@ -28,17 +28,13 @@ export function istGueltigerTag(tag: string): boolean {
   return d.getUTCFullYear() === j && d.getUTCMonth() === m - 1 && d.getUTCDate() === t;
 }
 
-export const TagSchema = z.string().refine(istGueltigerTag, { message: 'Lerntag JJJJ-MM-TT' });
+export const TagSchema = z.string().check(z.refine(istGueltigerTag, 'Lerntag JJJJ-MM-TT'));
 
 /** Stabile Schlüssel aus dem Inhalt (z. B. `tr-aus-de`, `tr.a1.e03.l0042`, `tr-aus-de.a1.e01.l02`). */
-export const SchluesselSchema = z
-  .string()
-  .min(1)
-  .max(160)
-  .regex(/^[a-z0-9][a-z0-9._:-]*$/i);
+export const SchluesselSchema = z.string().check(z.minLength(1), z.maxLength(160), z.regex(/^[a-z0-9][a-z0-9._:-]*$/i));
 
 /** UUID nach RFC 9562 (crypto.randomUUID ergibt Version 4). */
-export const GeraetSchema = z.uuid({ message: 'Gerät als UUID' });
+export const GeraetSchema = z.uuid('Gerät als UUID');
 
 export const STUFEN = ['a1', 'a2', 'b1', 'b2', 'c1'] as const;
 
@@ -55,7 +51,7 @@ export const TAGESZIEL_STANDARD: Tagesziel = { art: 'lektionen', wert: 1 };
 /** Bekannte Einstellungen mit ihrem Wertebereich; unbekannte Schlüssel bleiben im Protokoll, wirken aber nicht. */
 export const EINSTELLUNG_WERTE = {
   /** automatische Pausetage je Kalenderwoche (ADR 0043 Nr. 3) */
-  pausetage: z.int().min(0).max(3),
+  pausetage: z.int().check(z.minimum(0), z.maximum(3)),
   /** Ziffern der arabischen Oberfläche (O-5) */
   ziffern: z.enum(['oestlich', 'westlich']),
   hoerenAus: z.boolean(),
@@ -87,46 +83,48 @@ export const DATEN = {
   bewertung: z.strictObject({
     karte: SchluesselSchema,
     note: z.enum(NOTEN),
-    kurs: SchluesselSchema.optional(),
-    aufgabe: SchluesselSchema.optional(),
+    kurs: z.optional(SchluesselSchema),
+    aufgabe: z.optional(SchluesselSchema),
     /** Selbstbewertung (nur Sprechen und Schreiben, srs.ts) */
-    selbst: z.literal(true).optional(),
+    selbst: z.optional(z.literal(true)),
   }),
   lektion: z
     .strictObject({
       kurs: SchluesselSchema,
       lektion: SchluesselSchema,
       art: z.enum(LEKTIONS_ARTEN),
-      richtig: z.int().min(0).max(1000),
-      gesamt: z.int().min(1).max(1000),
+      richtig: z.int().check(z.minimum(0), z.maximum(1000)),
+      gesamt: z.int().check(z.minimum(1), z.maximum(1000)),
     })
-    .refine(Quote, { message: 'richtig ≤ gesamt' }),
-  xp: z.strictObject({ menge: z.int().min(1).max(XP_HOECHSTENS), grund: z.enum(LEKTIONS_ARTEN), bezug: SchluesselSchema.optional() }),
+    .check(z.refine(Quote, 'richtig ≤ gesamt')),
+  xp: z.strictObject({
+    menge: z.int().check(z.minimum(1), z.maximum(XP_HOECHSTENS)),
+    grund: z.enum(LEKTIONS_ARTEN),
+    bezug: z.optional(SchluesselSchema),
+  }),
   /** Ruhezeit (Urlaub, Krankheit, Ramadan): Tage von–bis, höchstens 30 je Ereignis. */
   pause: z
     .strictObject({ von: TagSchema, bis: TagSchema })
-    .refine((d) => d.von <= d.bis && (Date.parse(d.bis) - Date.parse(d.von)) / 86_400_000 < 30, {
-      message: 'von ≤ bis, höchstens 30 Tage',
-    }),
+    .check(z.refine((d) => d.von <= d.bis && (Date.parse(d.bis) - Date.parse(d.von)) / 86_400_000 < 30, 'von ≤ bis, höchstens 30 Tage')),
   einstellung: z.strictObject({
-    schluessel: z.string().regex(/^[a-z][a-zA-Z0-9]{0,39}$/),
-    wert: z.union([z.string().max(200), z.number(), z.boolean(), z.null()]),
+    schluessel: z.string().check(z.regex(/^[a-z][a-zA-Z0-9]{0,39}$/)),
+    wert: z.union([z.string().check(z.maxLength(200)), z.number(), z.boolean(), z.null()]),
   }),
   einstufung: z
     .strictObject({
       kurs: SchluesselSchema,
       stufe: z.enum(STUFEN),
-      einheit: SchluesselSchema.optional(),
-      richtig: z.int().min(0).max(100),
-      gesamt: z.int().min(1).max(100),
+      einheit: z.optional(SchluesselSchema),
+      richtig: z.int().check(z.minimum(0), z.maximum(100)),
+      gesamt: z.int().check(z.minimum(1), z.maximum(100)),
     })
-    .refine(Quote, { message: 'richtig ≤ gesamt' }),
+    .check(z.refine(Quote, 'richtig ≤ gesamt')),
   tagesziel: z.strictObject({ ziel: TageszielSchema }),
 } as const;
 
 const kopf = {
   geraet: GeraetSchema,
-  seq: z.int().min(0).max(2_147_483_647),
+  seq: z.int().check(z.minimum(0), z.maximum(2_147_483_647)),
   am: z.iso.datetime({ offset: true }),
   tag: TagSchema,
 };

@@ -1,5 +1,5 @@
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
-import { dirname, join, relative } from 'node:path';
+import { existsSync, readdirSync, readFileSync, realpathSync, statSync } from 'node:fs';
+import { basename, dirname, join, relative } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 /**
@@ -10,6 +10,9 @@ import { describe, expect, it } from 'vitest';
  * - In der Lern-App nie `next-intl/server` bzw. die `getRequestConfig` der Website (unter `/lern-app` fehlt `locale()`).
  * - Übungstypen (`components/lernapp/aufgaben/**`) nur per `import()`, nie statisch von außerhalb ihres Ordners.
  * - `@huggingface/transformers` nur in `*.worker.ts`.
+ * - Zod im Client nur als `zod/mini` über `lib/lernapp/z.ts` (JS-Budget: ≈ 10 KB statt ≈ 28–90 KB gz).
+ * - Kein GPL-/LGPL-Code im Client (PLAN §3.6, KERN 4.0 §1): Lizenz jedes Pakets im Client-Modulgraph und seiner
+ *   Abhängigkeiten aus der `package.json` (MIT, ISC, Apache-2.0, BSD, MPL-2.0, OFL, 0BSD).
  */
 const WURZEL = join(import.meta.dirname, '..', '..', '..', 'src');
 const LERNAPP = [join(WURZEL, 'components', 'lernapp'), join(WURZEL, 'app', 'lern-app'), join(WURZEL, 'lib', 'lernapp')];
@@ -134,5 +137,65 @@ describe('Sprachmodell nur im Worker', () => {
         /from '@huggingface\/transformers'|import\('@huggingface\/transformers'\)/.test(readFileSync(p, 'utf8')),
     );
     expect(funde.map(kurz)).toEqual([]);
+  });
+});
+
+describe('Zod im Client nur als zod/mini', () => {
+  it.each(clientDateien.map((p) => [kurz(p), p]))('%s: kein volles zod im Modulgraph', (_n, p) => {
+    const funde = [...clientGraph(p)].flatMap(([datei, pakete]) =>
+      pakete.filter((x) => x === 'zod' || x.startsWith('zod/v')).map((x) => `${kurz(datei)} → ${x}`),
+    );
+    expect(funde).toEqual([]);
+  });
+});
+
+// ——— Lizenzen der Pakete im Client ———
+
+const NODE_MODULES = join(WURZEL, '..', 'node_modules');
+const ERLAUBT =
+  /^\(?(MIT|ISC|Apache-2\.0|BSD-[23]-Clause|0BSD|MPL-2\.0|OFL-1\.1)( (OR|AND) (MIT|ISC|Apache-2\.0|BSD-[23]-Clause|0BSD|MPL-2\.0|OFL-1\.1))*\)?$/;
+
+/** Paketname aus einem Import (`zod/mini` → `zod`, `@scope/x/y` → `@scope/x`). */
+const paketName = (imp: string) => (imp.startsWith('@') ? imp.split('/').slice(0, 2).join('/') : imp.split('/')[0]!);
+
+/** Ordner eines Pakets von `von` aus (pnpm: Abhängigkeiten liegen neben dem Paket im node_modules der .pnpm-Kopie). */
+function paketOrdner(name: string, von: string): string | null {
+  for (let d = von; d !== dirname(d); d = dirname(d)) {
+    for (const k of [basename(d) === 'node_modules' ? join(d, name) : '', join(d, 'node_modules', name)])
+      if (k && existsSync(join(k, 'package.json'))) return realpathSync(k);
+  }
+  return null;
+}
+
+type PaketInfo = { name: string; lizenz: string; ordner: string; abh: string[] };
+function paketInfo(ordner: string): PaketInfo {
+  const pj = JSON.parse(readFileSync(join(ordner, 'package.json'), 'utf8')) as {
+    name: string;
+    license?: string | { type: string };
+    dependencies?: Record<string, string>;
+  };
+  const lizenz = typeof pj.license === 'string' ? pj.license : (pj.license?.type ?? '');
+  return { name: pj.name, lizenz, ordner, abh: Object.keys(pj.dependencies ?? {}) };
+}
+
+describe('Kein GPL/LGPL im Client der Lern-App', () => {
+  it('Lizenzen aller Pakete im Client-Modulgraph samt Abhängigkeiten sind erlaubt', () => {
+    const direkt = new Set<string>();
+    for (const p of clientDateien) for (const [, pakete] of clientGraph(p)) for (const x of pakete) direkt.add(paketName(x));
+    expect([...direkt]).toEqual(expect.arrayContaining(['react', 'zod']));
+    const gesehen = new Map<string, PaketInfo>();
+    const offen = [...direkt].map((n) => ({ n, von: NODE_MODULES }));
+    while (offen.length) {
+      const { n, von } = offen.pop()!;
+      const ordner = paketOrdner(n, von);
+      if (!ordner || gesehen.has(ordner)) continue;
+      const info = paketInfo(ordner);
+      gesehen.set(ordner, info);
+      // Next selbst gehört zum Grundstock; seine Abhängigkeiten sind Bauwerkzeuge (z. B. caniuse-lite), nicht im Client
+      if (info.name !== 'next') for (const a of info.abh) offen.push({ n: a, von: ordner });
+    }
+    const verboten = [...gesehen.values()].filter((i) => /GPL/i.test(i.lizenz) || !ERLAUBT.test(i.lizenz));
+    expect(verboten.map((i) => `${i.name}: ${i.lizenz || 'ohne Lizenz'}`)).toEqual([]);
+    expect(gesehen.size).toBeGreaterThanOrEqual(direkt.size);
   });
 });

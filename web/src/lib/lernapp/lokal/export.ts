@@ -1,5 +1,5 @@
-import { z } from 'zod';
 import { SPRACHEN } from '../kurse';
+import * as z from '../z';
 import type { Ableitung } from '../ereignisse/ableiten';
 import { EreignisSchema } from '../ereignisse/typen';
 import { ereignisse, leiteNeuAb, uebernimm } from './ausgang';
@@ -28,10 +28,10 @@ export const ExportSchema = z.strictObject({
   profil: z.strictObject({
     name: ProfilNameSchema,
     oberflaeche: Sprache,
-    ausgangssprache: Sprache.optional(),
+    ausgangssprache: z.optional(Sprache),
     angelegt: z.iso.datetime({ offset: true }),
   }),
-  ereignisse: z.array(EreignisSchema).max(250_000),
+  ereignisse: z.array(EreignisSchema).check(z.maxLength(250_000)),
 });
 export type ExportDatei = z.infer<typeof ExportSchema>;
 
