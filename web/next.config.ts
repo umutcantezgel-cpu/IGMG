@@ -5,12 +5,16 @@ import {
   PFAD_BERECHTIGUNGEN,
   cspOeffentlich,
   grundHeader,
+  lernAppHeaderRegeln,
   noindexHeader,
   permissionsPolicy,
 } from './src/lib/sicherheit/header';
 
-/** Pfade ohne statische CSP (bekommen die Nonce-CSP im Proxy): Verwaltung und Konto-Seiten, mit/ohne Sprachpräfix. */
-const CSP_AUSNAHMEN = ['verwaltung', ...KONTO_SEGMENTE].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`).join('|');
+/**
+ * Pfade ohne öffentliche CSP: Verwaltung und Konto-Seiten (Nonce-CSP im Proxy), mit/ohne Sprachpräfix, und die Lern-App
+ * (eigene CSP aus `lernAppHeaderRegeln`, ADR 0042 Nr. 9).
+ */
+const CSP_AUSNAHMEN = ['verwaltung', ...KONTO_SEGMENTE, 'lern-app'].map((s) => `(?:(?:de|tr|en)/)?${s}(?:/|$)`).join('|');
 
 /**
  * Beispielmodus auf Vercel (Bau ohne DATABASE_URL, ADR 0019): Die Inhalte stammen aus der PGlite-Bau-Datenbank und
@@ -116,6 +120,8 @@ const nextConfig: NextConfig = {
         source: `/:pfad((?!${CSP_AUSNAHMEN}).*)`,
         headers: [{ key: 'Content-Security-Policy', value: cspOeffentlich() }],
       },
+      // Lern-App: COOP/COEP, eigene CSP, Modelle und Service Worker (nach der öffentlichen Regel)
+      ...lernAppHeaderRegeln(),
     ];
   },
 };

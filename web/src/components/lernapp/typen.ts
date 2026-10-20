@@ -1,16 +1,16 @@
 import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
 import type { AntwortVon, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
+import type { Oberflaeche } from '@/lib/lernapp/kurse';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
  * (Namensräume `spieler` und `aufgaben`) und werden mit `format.ts` gefüllt – kein next-intl im Client (ADR 0037).
  */
 
-export type UiSprache = 'de' | 'tr' | 'ar';
-
-/** Schreibrichtung einer Sprache (Inhalt und Oberfläche). */
-export const richtung = (sprache: UiSprache): 'rtl' | 'ltr' => (sprache === 'ar' ? 'rtl' : 'ltr');
+/** Oberflächen- bzw. Inhaltssprache; Typ und Schreibrichtung aus `kurse.ts` (eine Quelle für alle Pakete). */
+export type UiSprache = Oberflaeche;
+export { richtung } from '@/lib/lernapp/kurse';
 
 export type SpielerTexte = {
   spieler: {

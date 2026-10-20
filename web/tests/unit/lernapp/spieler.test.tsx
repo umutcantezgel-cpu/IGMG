@@ -283,11 +283,14 @@ const flach = (o: object, p = ''): [string, string][] =>
     v && typeof v === 'object' ? flach(v, p ? `${p}.${k}` : k) : [[p ? `${p}.${k}` : k, String(v)] as [string, string]],
   );
 
+/** Nur die Namensräume dieses Pakets; die übrigen prüft `pnpm sprachen:pruefen`. */
+const eigene = (t: { spieler: object; aufgaben: object }) => ({ spieler: t.spieler, aufgaben: t.aufgaben });
+
 describe('Texte messages/lernapp (Namensräume spieler und aufgaben)', () => {
-  const dePaare = flach(de);
+  const dePaare = flach(eigene(de));
   it('de, tr und ar haben dieselben Schlüssel und Platzhalter, keiner ist leer', () => {
     for (const andere of [tr, ar]) {
-      const m = new Map(flach(andere));
+      const m = new Map(flach(eigene(andere)));
       expect([...m.keys()].sort()).toEqual(dePaare.map(([k]) => k).sort());
       for (const [k, v] of dePaare) {
         expect(m.get(k)?.trim(), k).not.toBe('');
@@ -296,15 +299,15 @@ describe('Texte messages/lernapp (Namensräume spieler und aufgaben)', () => {
     }
   });
 
-  it('Entwurfsliste nennt alle Schlüssel für tr; ar fehlt noch (bis L1-02 deutsch)', () => {
+  it('Entwurfsliste nennt alle Schlüssel für tr und ar; ar vorläufig deutsch', () => {
     const alle = dePaare.map(([k]) => k);
-    expect(entwurf.tr).toEqual(alle);
-    expect(entwurf.arFehlt).toEqual(alle);
-    expect(ar).toEqual(de);
+    expect(entwurf.tr).toEqual(expect.arrayContaining(alle));
+    expect(entwurf.ar).toEqual(expect.arrayContaining(alle));
+    expect(eigene(ar)).toEqual(eigene(de));
   });
 
   it('sanfter Wortlaut: keine Schuld- oder Verlustwörter', () => {
     const verboten = /verloren|verpasst|versagt|falsch|fehlgeschlagen|kaybett|kaçırd|yanlış|başarısız/i;
-    for (const [k, v] of [...flach(de), ...flach(tr)]) expect(verboten.test(v), `${k}: ${v}`).toBe(false);
+    for (const [k, v] of [...flach(eigene(de)), ...flach(eigene(tr))]) expect(verboten.test(v), `${k}: ${v}`).toBe(false);
   });
 });

@@ -99,6 +99,16 @@ Spalte „Stand“: **umgesetzt** = im Code; **Vorschlag** = nicht beschlossen, 
 | L-35 | Container-Protokolle des lokalen Servers (keine Personendaten) | 3 Dateien à 5 MB je Dienst (Rotation) | Größe | Docker `json-file`, `max-size`, `max-file` | umgesetzt |
 | L-36 | Gerätespeicher (localStorage, Cache des Service Workers) | beim Gerät der Person; kein Zugriff der Gemeinde | Person löscht Websitedaten | – | beschlossen |
 
+### 3.7 Lern-App (Lauf Lern-App, KERN 4.0 §6; DSFA-Nachtrag LM-08)
+
+| Nr. | Datenart | Frist | Auslöser | Technische Umsetzung | Stand |
+| --- | --- | --- | --- | --- | --- |
+| L-37 | Lernstand mit Konto (Profil, Ereignisprotokoll, Kartenstand, Lerntage; Art. 9, weil der Wissenskurs auf die Religion schließen lässt) | **12 Monate** nach der letzten Aktivität (Abgleich); mit dem Konto sofort | Zeit seit `lernapp_profil.zuletzt_aktiv_am`; Kontolöschung | Löschlauf `gemeindeLoeschlauf` (`src/lib/loeschen/gemeinde.ts`): Profil löschen, Ereignisse, Karten und Lerntage folgen über die Fremdschlüssel; Konto löschen kaskadiert | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
+| L-38 | Ereignisse älter als 12 Monate | in den Kartenstand verdichtet, danach gelöscht | Zeit | Abgleich (L1-05, `lernapp_karte.basis`) | geplant (L1-05) |
+| L-39 | Schreibabgaben (Text und Kommentar der Lehrkraft verschlüsselt) | **12 Monate** nach der Abgabe; mit dem Konto sofort | Abgabe (`lernapp_schreibabgabe.loeschen_ab`) | Löschlauf `gemeindeLoeschlauf` | umgesetzt 17.10. (Frist Vorschlag, LM-08) |
+| L-40 | Meldungen aus der Lern-App (Aufgabenschlüssel, Kategorie; Antwort nur ab 16 und nur auf Wunsch) | ohne Personenbezug; [Frist – Vorschlag 12 Monate nach Erledigung] | Erledigung | – | Vorschlag |
+| L-41 | Lernstand ohne Konto (IndexedDB `igmg-lernapp`, Pakete und Audio im Gerät) | beim Gerät der Person; Export und Import als Datei | Person löscht Websitedaten | – | beschlossen |
+
 ## 4. Löschen auf Antrag (Art. 17) und Auskunft (Art. 15)
 
 1. **Eingang.** Anträge kommen über „Mein Bereich“ (Löschantrag) oder per E-Mail an [E-Mail-Adresse]. Für Kinder stellen die Eltern den Antrag (Kinderzugänge löschen die Eltern über die Gemeinde).

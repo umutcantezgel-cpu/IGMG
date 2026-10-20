@@ -16,3 +16,5 @@ export * from './elifbe';
 export * from './cms';
 export * from './gemeinde';
 export * from './push';
+export * from './lernapp';
+export * from './lernapp-nutzung';

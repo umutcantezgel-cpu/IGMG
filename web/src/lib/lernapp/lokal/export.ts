@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { SPRACHEN } from '../kurse';
 import type { Ableitung } from '../ereignisse/ableiten';
 import { EreignisSchema } from '../ereignisse/typen';
 import { ereignisse, leiteNeuAb, uebernimm } from './ausgang';
@@ -18,7 +19,7 @@ export const EXPORT_VERSION = 1;
 /** Obergrenze der Datei beim Einlesen (Zeichen). */
 export const EXPORT_HOECHSTENS = 25_000_000;
 
-const Sprache = z.enum(['de', 'tr', 'ar']);
+const Sprache = z.enum(SPRACHEN);
 
 export const ExportSchema = z.strictObject({
   format: z.literal(EXPORT_FORMAT),

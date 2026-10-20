@@ -92,6 +92,8 @@ describe('Löschfristen per Cron (GET, CRON_SECRET)', () => {
       geloeschteEinwilligungsnachweise: expect.any(Number),
       vorgewarnteInaktiveKonten: expect.any(Number),
       geloeschteInaktiveKonten: expect.any(Number),
+      geloeschteLernappProfile: expect.any(Number),
+      geloeschteLernappAbgaben: expect.any(Number),
       geloeschteNewsletterAnmeldungen: expect.any(Number),
       geloeschteKonten: expect.any(Number),
       geloeschteUnbestaetigteKonten: expect.any(Number),

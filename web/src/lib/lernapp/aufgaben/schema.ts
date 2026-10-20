@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { SPRACHEN } from '../kurse';
 import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
 import { fehlendeKacheln } from '../abgleich/tokens';
 import { LEKTIONS_ARTEN } from '../engine/xp';
@@ -43,7 +44,7 @@ import { SchluesselSchema } from '../ereignisse/typen';
  * - Quelle, Lizenz und Namensnennung je Eintrag stehen im Einheitenpaket (ADR 0039 Nr. 9), nicht in der Lektion.
  */
 
-export const SpracheSchema = z.enum(['de', 'tr', 'ar']);
+export const SpracheSchema = z.enum(SPRACHEN);
 
 /** Verweis auf einen Clip im Audio-Bündel (ADR 0039 Nr. 3, Fortschreibung S4/S5). */
 export const AudioSchema = z.strictObject({

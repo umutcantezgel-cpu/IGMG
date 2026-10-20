@@ -1,6 +1,7 @@
 import { type DBSchema, type IDBPDatabase, openDB } from 'idb';
 import type { LektionsStand, TagesStand } from '../ereignisse/ableiten';
 import type { Ereignis } from '../ereignisse/typen';
+import type { Sprache } from '../kurse';
 import type { Kartenstand } from '../srs';
 
 /**
@@ -24,7 +25,7 @@ import type { Kartenstand } from '../srs';
 export const DB_NAME = 'igmg-lernapp';
 export const DB_VERSION = 1;
 
-export type Sprache = 'de' | 'tr' | 'ar';
+export type { Sprache };
 
 export type Profil = {
   id: string;

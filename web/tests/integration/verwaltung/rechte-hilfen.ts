@@ -29,6 +29,8 @@ export const PERSONEN: Person[] = [
   { name: 'Organisationsredaktion gt', rollen: [{ rolle: 'organisationsredaktion', organisation: 'gt' }], zweiFaktor: true },
   { name: 'Bildung', rollen: [{ rolle: 'bildung' }], zweiFaktor: true },
   { name: 'Mitgliederverwaltung', rollen: [{ rolle: 'mitgliederverwaltung' }], zweiFaktor: true },
+  // Lauf Lern-App (ADR 0041): neue Rolle mit Grundrechten und Lern-App-Rechten – Erwartung wie alle aus darf()
+  { name: 'Sprachprüfung', rollen: [{ rolle: 'sprachpruefung' }], zweiFaktor: true },
 ];
 
 /** Ziel eines Falls: Organisation des Datensatzes und, für Eingänge, die Eingangsart. */

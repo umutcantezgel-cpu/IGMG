@@ -53,6 +53,11 @@ export const einwilligungArtEnum = pgEnum('konto_einwilligung_art', [
   'chat_regeln',
   /** Datenschutz-Einwilligung beim Anlegen eines Gemeinde-Kontos (Registrierung, Einladung). */
   'konto',
+  /**
+   * Lern-App (ADR 0038 Nr. 10, KERN 4.0 §6): Abgleich des Lernstands mit dem Konto, Gruppen und Schreibabgaben. Art. 9 DSGVO,
+   * weil der Fortschritt im Wissenskurs auf die Religion schließen lässt; bei Kindern erteilen sie die Eltern. Migration 0017.
+   */
+  'lernapp',
 ]);
 
 /**

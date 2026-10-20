@@ -12,9 +12,10 @@
  * Arabische Zeichen stehen hier und in den Sprachregeln nur als Codepunkt-Escapes (KERN §3, ADR 0040).
  */
 
-/** Sprachen der Lern-App (wird beim Zusammenführen mit `kurse.ts` aus Paket A vereinheitlicht). */
-export type Sprache = 'de' | 'tr' | 'ar';
-export const SPRACHEN: readonly Sprache[] = ['de', 'tr', 'ar'];
+import type { Sprache } from '../kurse';
+
+/** Sprachen der Lern-App: Typ und Liste aus `kurse.ts` (eine Quelle für alle Pakete). */
+export { SPRACHEN, type Sprache } from '../kurse';
 
 /** Schlüssel der Hinweise; Texte unter `spieler.hinweis.<schluessel>` in `messages/lernapp/*.json`. */
 export type HinweisSchluessel =

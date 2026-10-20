@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { OBERFLAECHEN, SPRACHEN } from '../kurse';
 import { LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
 import { NOTEN } from '../srs';
 
@@ -59,8 +60,8 @@ export const EINSTELLUNG_WERTE = {
   ziffern: z.enum(['oestlich', 'westlich']),
   hoerenAus: z.boolean(),
   sprechenAus: z.boolean(),
-  ausgangssprache: z.enum(['de', 'tr', 'ar']),
-  oberflaeche: z.enum(['de', 'tr', 'ar']),
+  ausgangssprache: z.enum(SPRACHEN),
+  oberflaeche: z.enum(OBERFLAECHEN),
 } as const;
 
 export type Einstellungen = {

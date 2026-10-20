@@ -3,14 +3,16 @@ import { describe, expect, it, vi } from 'vitest';
 vi.mock('server-only', () => ({}));
 vi.mock('@/server/queries/einstellungen', () => ({ ladeEinstellung: async () => ({}) }));
 
-const { entscheide, FUNKTIONEN, MIT_PERSONENDATEN } = await import('@/lib/funktionen');
-const { IN_PRODUKTION_AN } = await import('@/lib/funktionen-regeln');
+const { entscheide, entscheideWirksam, FUNKTIONEN, MIT_PERSONENDATEN, VORAUSSETZUNGEN } = await import('@/lib/funktionen');
+const { IN_PRODUKTION_AN, fehlendeVoraussetzungen } = await import('@/lib/funktionen-regeln');
+const { funktionenEinstellung } = await import('@/lib/validierung/einstellungen');
+
+const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
 
 describe('Funktionsschalter (ADR 0035)', () => {
   it('Produktion: ohne Angaben ist alles aus – außer den freigegebenen Funktionen ohne Personendaten', () => {
-    for (const f of FUNKTIONEN)
-      expect(entscheide(f, { SITE_MODE: 'produktion', NODE_ENV: 'production' }, null)).toBe(IN_PRODUKTION_AN.includes(f));
-    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt']);
+    for (const f of FUNKTIONEN) expect(entscheide(f, prod, null)).toBe(IN_PRODUKTION_AN.includes(f));
+    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt', 'lernapp_ungeprueft', 'lernapp_meldungen']);
   });
 
   it('Funktionen mit Personendaten sind in der Produktion nie standardmäßig an', () => {
@@ -18,7 +20,6 @@ describe('Funktionsschalter (ADR 0035)', () => {
   });
 
   it('auch freigegebene Funktionen lassen sich per Umgebung oder Einstellung abschalten', () => {
-    const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
     expect(entscheide('hadith_gesamt', { ...prod, FUNKTION_HADITH_GESAMT: 'aus' }, null)).toBe(false);
     expect(entscheide('hadith_gesamt', prod, { hadith_gesamt: false })).toBe(false);
   });
@@ -28,9 +29,79 @@ describe('Funktionsschalter (ADR 0035)', () => {
   });
 
   it('Umgebung schlägt Einstellung, Einstellung schlägt Standard', () => {
-    const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
     expect(entscheide('chat', prod, { chat: true })).toBe(true);
     expect(entscheide('chat', { ...prod, FUNKTION_CHAT: 'aus' }, { chat: true })).toBe(false);
     expect(entscheide('push', { ...prod, FUNKTION_PUSH: 'an' }, { push: false })).toBe(true);
+  });
+});
+
+describe('Schalter der Lern-App (KERN 4.0 §6)', () => {
+  const LERNAPP = [
+    'lernapp',
+    'lernapp_ungeprueft',
+    'lernapp_sprechen',
+    'lernapp_meldungen',
+    'lernapp_sync',
+    'lernapp_gruppen',
+    'lernapp_rangliste',
+    'lernapp_statistik',
+    'push_lernapp',
+  ] as const;
+
+  it('alle neun Schalter sind bekannt und in der Einstellung erlaubt', () => {
+    for (const f of LERNAPP) {
+      expect(FUNKTIONEN).toContain(f);
+      expect(funktionenEinstellung.safeParse({ [f]: true }).success).toBe(true);
+    }
+  });
+
+  it('Produktion: Lern-App aus bis zur Abnahme; Hinweis-Modus und Meldungen an, wirken aber erst mit lernapp', () => {
+    expect(entscheide('lernapp', prod, null)).toBe(false);
+    expect(entscheide('lernapp_ungeprueft', prod, null)).toBe(true);
+    expect(entscheide('lernapp_meldungen', prod, null)).toBe(true);
+    expect(entscheideWirksam('lernapp_ungeprueft', prod, null)).toBe(false);
+    expect(entscheideWirksam('lernapp_ungeprueft', { ...prod, FUNKTION_LERNAPP: 'an' }, null)).toBe(true);
+    expect(entscheideWirksam('lernapp_meldungen', prod, { lernapp: true })).toBe(true);
+    for (const f of [
+      'lernapp_sprechen',
+      'lernapp_sync',
+      'lernapp_gruppen',
+      'lernapp_rangliste',
+      'lernapp_statistik',
+      'push_lernapp',
+    ] as const)
+      expect(entscheideWirksam(f, { ...prod, FUNKTION_LERNAPP: 'an' }, null)).toBe(false);
+  });
+
+  it('Personendaten: Abgleich, Gruppen, Bestenliste, Statistik und Erinnerung', () => {
+    for (const f of ['lernapp_sync', 'lernapp_gruppen', 'lernapp_rangliste', 'lernapp_statistik', 'push_lernapp'] as const)
+      expect(MIT_PERSONENDATEN).toContain(f);
+    for (const f of ['lernapp', 'lernapp_ungeprueft', 'lernapp_sprechen', 'lernapp_meldungen'] as const)
+      expect(MIT_PERSONENDATEN).not.toContain(f);
+  });
+
+  it('Sperren: Abgleich braucht Konten, Gruppen die Lernplattform, Bestenliste die Gruppen, Erinnerung Push', () => {
+    expect(VORAUSSETZUNGEN.lernapp_sync).toEqual(['lernapp', 'konten']);
+    expect(VORAUSSETZUNGEN.lernapp_gruppen).toEqual(['lernapp', 'lernplattform']);
+    expect(VORAUSSETZUNGEN.lernapp_rangliste).toEqual(['lernapp', 'lernapp_gruppen']);
+    expect(VORAUSSETZUNGEN.push_lernapp).toEqual(['lernapp', 'push']);
+    for (const f of LERNAPP.filter((x) => x !== 'lernapp')) expect(VORAUSSETZUNGEN[f]).toContain('lernapp');
+    const alle = { lernapp: true, lernapp_sync: true, lernapp_gruppen: true, lernapp_rangliste: true, push_lernapp: true };
+    expect(entscheideWirksam('lernapp_sync', prod, { ...alle, konten: false })).toBe(false);
+    expect(entscheideWirksam('lernapp_sync', prod, { ...alle, konten: true })).toBe(true);
+    expect(entscheideWirksam('lernapp_gruppen', prod, { ...alle, lernplattform: true })).toBe(true);
+    // Bestenliste: rekursiv – ohne Lernplattform wirken weder Gruppen noch Bestenliste
+    expect(entscheideWirksam('lernapp_rangliste', prod, { ...alle, lernplattform: false })).toBe(false);
+    expect(fehlendeVoraussetzungen('lernapp_rangliste', prod, { ...alle, lernplattform: false })).toEqual(['lernapp_gruppen']);
+    expect(entscheideWirksam('lernapp_rangliste', prod, { ...alle, lernplattform: true })).toBe(true);
+    expect(entscheideWirksam('push_lernapp', prod, { ...alle, push: false })).toBe(false);
+    expect(fehlendeVoraussetzungen('lernapp_sync', prod, { lernapp_sync: false })).toEqual([]);
+  });
+
+  it('Schalter ohne Voraussetzungen wirken wie bisher', () => {
+    for (const f of FUNKTIONEN.filter((x) => !VORAUSSETZUNGEN[x])) {
+      expect(entscheideWirksam(f, prod, null)).toBe(entscheide(f, prod, null));
+      expect(entscheideWirksam(f, { NODE_ENV: 'development' }, null)).toBe(true);
+    }
   });
 });

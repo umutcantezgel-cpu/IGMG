@@ -1,6 +1,15 @@
 {
-  "_hinweis": "KI-Entwürfe der Lern-App-Texte (Paket L1-04: Namensräume spieler und aufgaben). tr prüfen Muttersprachler (LM-01). arFehlt: Die arabische Fassung folgt, sobald die Religion-Prüfung web/messages/lernapp/ar.json erlaubt (L1-02); bis dahin steht dort der deutsche Text.",
+  "_hinweis": "Lern-App: tr- und ar-Texte, die KI-Entwürfe sind (K-02, KERN 4.0 §7). Muttersprachler prüfen sie (LM-01, LM-11); geprüfte Schlüssel werden hier entfernt. Neue tr/ar-Texte eines Pakets trägt das Paket hier ein. `pnpm sprachen:pruefen` prüft, dass jeder Schlüssel existiert. Paket L1-04 (spieler, aufgaben): ar.json enthält dort vorläufig den deutschen Text; die arabische Fassung folgt als KI-Entwurf.",
   "tr": [
+    "meta.beschreibung",
+    "start.titel",
+    "start.hinweis",
+    "start.sprachwahl",
+    "probe.titel",
+    "probe.einheiten",
+    "nichtGefunden.titel",
+    "nichtGefunden.text",
+    "nichtGefunden.zurueck",
     "spieler.fortschritt",
     "spieler.aufgabeVon",
     "spieler.nochEinmal",
@@ -53,8 +62,16 @@
     "aufgaben.paare.fertig",
     "aufgaben.paare.tasten"
   ],
-  "ar": [],
-  "arFehlt": [
+  "ar": [
+    "meta.beschreibung",
+    "start.titel",
+    "start.hinweis",
+    "start.sprachwahl",
+    "probe.titel",
+    "probe.einheiten",
+    "nichtGefunden.titel",
+    "nichtGefunden.text",
+    "nichtGefunden.zurueck",
     "spieler.fortschritt",
     "spieler.aufgabeVon",
     "spieler.nochEinmal",

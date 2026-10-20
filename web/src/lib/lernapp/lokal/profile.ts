@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { SPRACHEN } from '../kurse';
 import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprache } from './db';
 
 /**
@@ -8,7 +9,7 @@ import { PROFIL_SPEICHER, type Profil, profilBereich, type Speicher, type Sprach
  */
 
 export const ProfilNameSchema = z.string().trim().min(1).max(40);
-const SpracheSchema = z.enum(['de', 'tr', 'ar']);
+const SpracheSchema = z.enum(SPRACHEN);
 
 const GERAET = '';
 const AKTIV = 'aktivesProfil';
