@@ -47,6 +47,8 @@ export function WiederholenInsel({
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const kette = useRef<Promise<unknown>>(Promise.resolve());
+  // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
+  const [gesichert, setGesichert] = useState(false);
 
   useEffect(() => {
     let aktiv = true;
@@ -102,6 +104,7 @@ export function WiederholenInsel({
     await kette.current;
     await leiteNeuAb(sp, profil.id, heute());
     meldeStand();
+    setGesichert(true);
     void nachHandlung().catch(() => undefined);
   };
   return (
@@ -113,8 +116,8 @@ export function WiederholenInsel({
           sprache={ui}
           ziffern={z.ziffern}
           onEreignis={melde}
-          onFertig={() => void fertig()}
-          zurueckHref={lernpfad.adresse}
+          onFertig={() => void fertig().catch(() => setGesichert(true))}
+          zurueckHref={gesichert ? lernpfad.adresse : undefined}
         />
       </Suspense>
     </SpielerGrenze>

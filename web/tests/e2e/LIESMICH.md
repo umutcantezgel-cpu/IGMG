@@ -52,12 +52,20 @@ docs/deploy/VERCEL.md 2.1, docs/BETRIEB.md 6a, docs/GO-LIVE.md G1.
    FUNKTION_HATIM=an
    FUNKTION_NEWSLETTER=an
    FUNKTION_LERNAPP=an        # Lern-App (ADR 0035, in der Produktion bis zur Abnahme aus): tests/e2e/lernapp/*.spec.ts
+   FUNKTION_LERNAPP_SYNC=an   # Abgleich mit Konto (Produktion aus bis LM-08): tests/e2e/lernapp/zwei-geraete.spec.ts
    ```
 
    Eigene Datenbank oder eigener Port für parallele Läufe: `E2E_DATABASE_URL` (Name muss auf `_e2e` enden, z. B.
    `igmg_lernapp_a_e2e`, sonst bricht `scripts/e2e-datenbank.mjs` ab) und `E2E_PORT` (dann `APP_URL`/`BETTER_AUTH_URL`
-   setzt `playwright.config.ts`). `tests/e2e/lernapp/rahmen.spec.ts` legt mit `LERNAPP_BILDER=<ordner>` zusätzlich
-   Bildschirmfotos von Start und Einstellungen in de/tr/ar bei 390 und 1440 px ab.
+   setzt `playwright.config.ts`). `tests/e2e/lernapp/rahmen.spec.ts` und `lektion.spec.ts` legen mit
+   `LERNAPP_BILDER=<ordner>` zusätzlich Bildschirmfotos (Start, Einstellungen, Lernpfad, Spieler, Rückmeldung) in de/tr/ar
+   bei 390 und 1440 px ab.
+
+   Lern-App (Testkurs aus dem Seed): Die Entwicklungsdatenbank braucht die Migrationen 0017–0019, sonst bricht der Bau an
+   den Paket-Routen ab. Ohne sie gegen die E2E-Datenbank bauen: `node scripts/e2e-datenbank.mjs` (legt sie samt Testkurs an),
+   dann `DATABASE_URL=$E2E_DATABASE_URL pnpm build`. Die Einwilligung `lernapp` des Testkontos setzt
+   `zwei-geraete.spec.ts` selbst (Testdaten, G-04). JS-Budgets am laufenden Server: `node scripts/lernapp-budget.mjs
+   http://localhost:<port> --aus <datei.json>` (KERN 4.0 §9; Lighthouse dazu: `MESSEN_ZIEL=<ordner> pnpm messen …`).
 
 2. Entwicklungsdatenbank füllen und bauen: `pnpm db:migrate && pnpm db:seed && pnpm inhalte:import && pnpm build`
    (standalone; die Schalter gelten auch beim Bau, weil Seiten vorgerendert werden).

@@ -57,6 +57,8 @@ export function UebenInsel({
   const l = useSearchParams().get('l');
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const kette = useRef<Promise<unknown>>(Promise.resolve());
+  // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
+  const [gesichert, setGesichert] = useState(false);
 
   useEffect(() => {
     let aktiv = true;
@@ -113,6 +115,7 @@ export function UebenInsel({
       weiter ? { kurs, lektion: weiter.schluessel, ...(weiter.titel ? { titel: weiter.titel } : {}) } : null,
     );
     meldeStand();
+    setGesichert(true);
     void nachHandlung().catch(() => undefined);
   };
 
@@ -133,8 +136,8 @@ export function UebenInsel({
           sprache={ui}
           ziffern={z.ziffern}
           onEreignis={melde}
-          onFertig={() => void fertig()}
-          zurueckHref={lernpfad.adresse}
+          onFertig={() => void fertig().catch(() => setGesichert(true))}
+          zurueckHref={gesichert ? lernpfad.adresse : undefined}
         />
       </Suspense>
     </SpielerGrenze>

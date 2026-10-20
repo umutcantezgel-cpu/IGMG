@@ -199,3 +199,18 @@ describe('Kein GPL/LGPL im Client der Lern-App', () => {
     expect(gesehen.size).toBeGreaterThanOrEqual(direkt.size);
   });
 });
+
+describe('Budget-Messung (scripts/lernapp-budget.mjs)', () => {
+  it('jeder Erkennungstext steht in genau einer Quelldatei, und zwar in der genannten', () => {
+    const erkennung = JSON.parse(readFileSync(join(WURZEL, '..', 'scripts', 'lernapp-budget-erkennung.json'), 'utf8')) as Record<
+      string,
+      { datei: string; text: string }
+    >;
+    expect(Object.keys(erkennung).sort()).toEqual(['auswahl', 'paare', 'spieler', 'wortbank']);
+    const alle = dateien(WURZEL).filter((p) => p.endsWith('.tsx') || p.endsWith('.ts'));
+    for (const [name, { datei, text }] of Object.entries(erkennung)) {
+      const treffer = alle.filter((p) => readFileSync(p, 'utf8').includes(text)).map((p) => relative(join(WURZEL, '..'), p));
+      expect(treffer, name).toEqual([datei]);
+    }
+  });
+});

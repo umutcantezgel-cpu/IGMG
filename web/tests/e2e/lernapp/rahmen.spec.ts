@@ -107,7 +107,8 @@ for (const ui of UIS) {
       await expect(page.getByRole('heading', { level: 1 })).toHaveText(t.einstellungen.titel);
       const ziel = page.getByRole('radio', { name: t.einstellungen.zielKeins, exact: true });
       await ziel.check();
-      await expect(page.getByRole('status')).toHaveText(t.einstellungen.gespeichert);
+      // mit Schalter lernapp_sync steht daneben die Live-Region von „Konto und Abgleich“
+      await expect(page.getByRole('status').filter({ hasText: t.einstellungen.gespeichert })).toBeVisible();
       await page.reload();
       await expect(ziel).toBeChecked();
       // Startseite übernimmt die Einstellung (kein Tagesziel)
