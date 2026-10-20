@@ -1,0 +1,436 @@
+import { zerlege } from '../abgleich/tokens';
+import { AufgabeSchema, type Aufgabe, type Inhalt, type Lektion } from '../aufgaben/schema';
+import { sprachSichtbarkeit, type Pruefung, type Sichtbarkeit, type Status } from '../freigabe';
+import { AufgabeVorlageSchema, type AufgabeVorlage } from '../inhalt/schema';
+import { type KursId, type KursSlug, type RichtungId, type Sprache, type Stufe, zerlegeRichtung } from '../kurse';
+import { kanonisch, sha256Hex, textHash } from './hash';
+import {
+  type BuendelVerweis,
+  type EintragHerkunft,
+  INHALT_LIZENZ,
+  PAKET_FORMAT,
+  type Paket,
+  VERZEICHNIS_FORMAT,
+  type Verzeichnis,
+  type VerzeichnisEinheit,
+} from './typen';
+
+/**
+ * Paketbau (ADR 0039 Nr. 1, PLAN §3.10): aus den Bausteinen der Datenbank das kanonische JSON je Richtung und Einheit.
+ * Rein bis auf den Hash; die Abfrage liegt in `web/src/server/queries/lernapp/pakete.ts`.
+ *
+ * **Nur Ausgeliefertes** (ADR 0041 Nr. 2, ADR 0040 Nr. 5): Jeder Baustein – Einheit, Lektion, Aufgabe, Zieltext,
+ * Übersetzung, Tipp – geht durch `sprachSichtbarkeit` aus `freigabe.ts` (Status, Sprachprüfungen zum aktuellen Hash,
+ * zwei religiöse Freigaben bei `religionsbezug`, Schalter `lernapp_ungeprueft`). Eine Aufgabe, deren Ziel oder Übersetzung
+ * verborgen ist, fällt aus dem Paket; verborgene Ablenker und Paare fallen einzeln weg, solange die Aufgabe spielbar bleibt.
+ * Eine Lektion ohne Aufgabe und eine Einheit ohne Lektion gibt es nicht im Paket.
+ *
+ * **Aufgaben** entstehen aus den Vorlagen des Inhalts (inhalt/schema.ts) und werden gegen das Schema des Spielers geprüft.
+ * Karten heißen `<richtung>:<schlüssel>` (je Richtung eigene Wiederholung). Lektionen heißen `<richtung>.<stufe>.eNN.lNN`.
+ *
+ * **Audio** nur für Zieltexte ohne Religionsbezug (ADR 0039 Nr. 7) aus den Clips der Zielsprache (`lernapp_audio`).
+ */
+
+export type Baustein = {
+  status: Status;
+  inhaltHash: string;
+  religionsbezug: boolean;
+  verfasstVon: string | null;
+  /** Prüfungen zu diesem Baustein (alle Hashes; gezählt wird nur der aktuelle) */
+  pruefungen: readonly Pruefung[];
+};
+
+export type BauEintrag = Baustein & {
+  art: 'lemma' | 'satz';
+  schluessel: string;
+  text: string;
+  quelle: string;
+  lizenz: string;
+  namensnennung: string | null;
+};
+
+export type BauUebersetzung = Baustein & {
+  bezug: string;
+  text: string;
+  alternativen: readonly string[];
+  quelle: string;
+  lizenz: string;
+  namensnennung: string | null;
+};
+
+export type BauAufgabe = Baustein & { schluessel: string; typ: string; daten: unknown };
+export type BauLektion = Baustein & {
+  schluessel: string;
+  art: Lektion['art'];
+  ziel: Partial<Record<Sprache, string>>;
+  aufgaben: readonly BauAufgabe[];
+};
+export type BauTipp = Baustein & { schluessel: string; titel: string | null; inhalt: { type: 'doc' } & Record<string, unknown> };
+export type BauAudio = { adresse: string; buendelBytes: number; versatz: number; laenge: number; dauerMs: number; stimme: string };
+
+export type BauEinheit = Baustein & {
+  schluessel: string;
+  stufe: Stufe;
+  reihenfolge: number;
+  thema: Partial<Record<Sprache, string>>;
+  symbol: string | null;
+  nurFuerAusgang: Sprache | null;
+};
+
+export type BauEingabe = {
+  richtung: RichtungId;
+  einheit: BauEinheit;
+  /** nach Reihenfolge sortiert, Aufgaben ebenso */
+  lektionen: readonly BauLektion[];
+  /** Zieltexte (Lemmata und Sätze) nach Schlüssel, auch aus früheren Einheiten, soweit verwiesen */
+  eintraege: ReadonlyMap<string, BauEintrag>;
+  /** Übersetzungen in die Ausgangssprache nach Bezug */
+  uebersetzungen: ReadonlyMap<string, BauUebersetzung>;
+  tipps: readonly BauTipp[];
+  /** Clips der Zielsprache nach Text-Hash (bevorzugte Stimme bereits gewählt) */
+  audio: ReadonlyMap<string, BauAudio>;
+};
+
+export type BauOptionen = { ungeprueftZeigen: boolean };
+
+export type BauErgebnis = { paket: Paket; json: string; hash: string; bytes: number; warnungen: string[] };
+
+const verfasserVon = (b: Baustein) => [b.verfasstVon];
+
+function sicht(b: Baustein, o: BauOptionen): Sichtbarkeit {
+  return sprachSichtbarkeit(
+    { status: b.status, inhaltHash: b.inhaltHash, religionsbezug: b.religionsbezug, verfasser: verfasserVon(b) },
+    b.pruefungen,
+    o,
+  );
+}
+
+/** Kartenschlüssel je Richtung (FSRS, ADR 0038 Nr. 3). */
+export const kartenSchluessel = (richtung: RichtungId, schluessel: string): string => `${richtung}:${schluessel}`;
+
+/** Lektionsschlüssel im Paket: Kursteil durch die Richtung ersetzt (`tr.a1.e01.l01` → `tr-aus-de.a1.e01.l01`). */
+export function lektionImPaket(richtung: RichtungId, kurs: KursId, schluessel: string): string {
+  return `${richtung}${schluessel.slice(kurs.length)}`;
+}
+
+/** Lektionsschlüssel der Datenbank zum Schlüssel im Paket (für Zuweisungen, `aufgabe.bezug.lektion`). */
+export function lektionAusPaket(schluesselImPaket: string): { richtung: string; schluessel: string } | null {
+  const m = /^((de|tr|ar)-aus-(de|tr|ar))(\..+)$/.exec(schluesselImPaket);
+  if (!m) return null;
+  return { richtung: m[1] ?? '', schluessel: `${m[2]}${m[4]}` };
+}
+
+/** Deterministische Auswahl ohne Zufall: nach SHA-256 aus Saat und Wert sortiert. */
+function stabilSortiert(werte: readonly string[], saat: string): string[] {
+  return [...werte].sort((a, b) => {
+    const ha = sha256Hex(`${saat}|${a}`);
+    const hb = sha256Hex(`${saat}|${b}`);
+    return ha < hb ? -1 : ha > hb ? 1 : 0;
+  });
+}
+
+const vergleichsform = (s: string) => s.normalize('NFC').toLocaleLowerCase();
+
+class Werkbank {
+  readonly ziel: Sprache;
+  readonly ausgang: Sprache;
+  readonly hinweise = new Set<string>();
+  readonly herkunft = new Map<string, EintragHerkunft>();
+  readonly buendel = new Map<string, number>();
+  readonly lexikon = new Set<string>();
+  readonly warnungen: string[] = [];
+
+  constructor(
+    readonly e: BauEingabe,
+    readonly o: BauOptionen,
+  ) {
+    const r = zerlegeRichtung(e.richtung);
+    this.ziel = r.ziel;
+    this.ausgang = r.ausgang;
+  }
+
+  /** Sichtbarkeit merken (Hinweis „noch nicht von Muttersprachlern geprüft“). */
+  sichtbar(b: Baustein, name: string): boolean {
+    const s = sicht(b, this.o);
+    if (s === 'mit_hinweis') this.hinweise.add(name);
+    return s !== 'verborgen';
+  }
+
+  /** Zieltext mit Audio und Herkunft, oder null, wenn verborgen. */
+  zielInhalt(schluessel: string): Inhalt | null {
+    const e = this.e.eintraege.get(schluessel);
+    if (!e) return null;
+    const s = sicht(e, this.o);
+    if (s === 'verborgen') return null;
+    // Audio nie für Religionsbezug (ADR 0039 Nr. 7)
+    const clip = e.religionsbezug ? undefined : this.e.audio.get(textHash(e.text));
+    if (!this.herkunft.has(schluessel)) {
+      this.herkunft.set(schluessel, {
+        text: e.text,
+        sprache: this.ziel,
+        quelle: e.quelle,
+        lizenz: e.lizenz,
+        ...(e.namensnennung ? { namensnennung: e.namensnennung } : {}),
+        ...(clip ? { stimme: clip.stimme } : {}),
+        ...(s === 'mit_hinweis' ? { hinweis: true as const } : {}),
+      });
+      if (s === 'mit_hinweis') this.hinweise.add(schluessel);
+      for (const w of zerlege(e.text)) this.lexikon.add(w);
+    }
+    if (clip) this.buendel.set(clip.adresse, clip.buendelBytes);
+    return {
+      text: e.text,
+      sprache: this.ziel,
+      ...(clip ? { audio: { buendel: clip.adresse, versatz: clip.versatz, laenge: clip.laenge, dauerMs: clip.dauerMs } } : {}),
+    };
+  }
+
+  /** Übersetzung in die Ausgangssprache, oder null, wenn sie fehlt oder verborgen ist. */
+  uebersetzung(schluessel: string): BauUebersetzung | null {
+    const u = this.e.uebersetzungen.get(schluessel);
+    if (!u) return null;
+    const s = sicht(u, this.o);
+    if (s === 'verborgen') return null;
+    const k = `${schluessel}@${this.ausgang}`;
+    if (!this.herkunft.has(k)) {
+      this.herkunft.set(k, {
+        text: u.text,
+        sprache: this.ausgang,
+        quelle: u.quelle,
+        lizenz: u.lizenz,
+        ...(u.namensnennung ? { namensnennung: u.namensnennung } : {}),
+        ...(s === 'mit_hinweis' ? { hinweis: true as const } : {}),
+      });
+      if (s === 'mit_hinweis') this.hinweise.add(k);
+    }
+    return u;
+  }
+
+  ausgangInhalt(schluessel: string): Inhalt | null {
+    const u = this.uebersetzung(schluessel);
+    return u ? { text: u.text, sprache: this.ausgang } : null;
+  }
+
+  /** Ziel und Übersetzung zugleich sichtbar (Bedingung für jeden Verweis). */
+  beide(schluessel: string): { ziel: Inhalt; ausgang: Inhalt; u: BauUebersetzung } | null {
+    const e = this.e.eintraege.get(schluessel);
+    const u = this.e.uebersetzungen.get(schluessel);
+    if (!e || !u || sicht(e, this.o) === 'verborgen' || sicht(u, this.o) === 'verborgen') return null;
+    const ziel = this.zielInhalt(schluessel);
+    const ausgang = this.ausgangInhalt(schluessel);
+    return ziel && ausgang ? { ziel, ausgang, u } : null;
+  }
+
+  /** Aufgabe des Spielers aus einer Vorlage (oder null). */
+  aufgabe(a: BauAufgabe): Aufgabe | null {
+    const v = AufgabeVorlageSchema.safeParse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ });
+    if (!v.success) {
+      this.warnungen.push(`${a.schluessel}: Vorlage ungültig`);
+      return null;
+    }
+    const roh = this.ausVorlage(v.data);
+    if (!roh) return null;
+    const p = AufgabeSchema.safeParse(roh);
+    if (!p.success) {
+      this.warnungen.push(`${a.schluessel}: ${p.error.issues.map((i) => i.message).join('; ')}`);
+      return null;
+    }
+    return p.data;
+  }
+
+  private ausVorlage(v: AufgabeVorlage): unknown {
+    const r = this.e.richtung;
+    if (v.typ === 'auswahl') {
+      const z = this.beide(v.ziel);
+      if (!z) return null;
+      const texte = new Set<string>();
+      const opt = (i: Inhalt) => {
+        const k = vergleichsform(i.text);
+        if (texte.has(k)) return false;
+        texte.add(k);
+        return true;
+      };
+      const vorgabe = v.anweisung === 'waehleUebersetzung' ? z.ziel : z.ausgang;
+      const seite = (b: NonNullable<ReturnType<Werkbank['beide']>>) => (v.anweisung === 'waehleUebersetzung' ? b.ausgang : b.ziel);
+      const optionen = [seite(z)].filter(opt);
+      for (const a of v.ablenker) {
+        const b = this.beide(a);
+        if (b && opt(seite(b))) optionen.push(seite(b));
+      }
+      if (optionen.length < 2) return null;
+      return {
+        typ: 'auswahl',
+        schluessel: v.schluessel,
+        karten: [kartenSchluessel(r, v.ziel)],
+        anweisung: v.anweisung,
+        vorgabe,
+        optionen,
+        richtig: 0,
+      };
+    }
+    if (v.typ === 'wortbank') {
+      const z = this.beide(v.satz);
+      if (!z) return null;
+      if (v.nach === 'ziel') {
+        const loesungen = [z.ziel.text, ...(v.alternativen ?? [])];
+        const kacheln = [...zerlege(z.ziel.text)];
+        for (const w of v.ablenker ?? []) if (!kacheln.some((k) => vergleichsform(k) === vergleichsform(w))) kacheln.push(w);
+        return {
+          typ: 'wortbank',
+          schluessel: v.schluessel,
+          karten: [kartenSchluessel(r, v.satz)],
+          anweisung: 'uebersetze',
+          vorgabe: z.ausgang,
+          sprache: this.ziel,
+          loesungen,
+          kacheln: kacheln.slice(0, 24),
+        };
+      }
+      const loesungen = [z.u.text, ...z.u.alternativen];
+      const kacheln = [...zerlege(z.u.text)];
+      const vorhanden = new Set(kacheln.map(vergleichsform));
+      // Ablenker aus anderen sichtbaren Übersetzungen der Einheit, deterministisch je Aufgabe
+      const kandidaten = new Set<string>();
+      for (const [bezug, u] of this.e.uebersetzungen) {
+        if (bezug === v.satz || sicht(u, this.o) === 'verborgen') continue;
+        for (const w of zerlege(u.text)) if (!vorhanden.has(vergleichsform(w))) kandidaten.add(w);
+      }
+      kacheln.push(...stabilSortiert([...kandidaten], v.schluessel).slice(0, 3));
+      return {
+        typ: 'wortbank',
+        schluessel: v.schluessel,
+        karten: [kartenSchluessel(r, v.satz)],
+        anweisung: 'uebersetze',
+        vorgabe: z.ziel,
+        sprache: this.ausgang,
+        loesungen,
+        kacheln: kacheln.slice(0, 24),
+      };
+    }
+    const links = new Set<string>();
+    const rechts = new Set<string>();
+    const paare = [];
+    for (const l of v.lemmata) {
+      const b = this.beide(l);
+      if (!b) continue;
+      const kl = vergleichsform(b.ziel.text);
+      const kr = vergleichsform(b.ausgang.text);
+      if (links.has(kl) || rechts.has(kr)) continue;
+      links.add(kl);
+      rechts.add(kr);
+      paare.push({ links: b.ziel, rechts: b.ausgang, karte: kartenSchluessel(r, l) });
+    }
+    if (paare.length < 2) return null;
+    return { typ: 'paare', schluessel: v.schluessel, anweisung: 'findePaare', paare };
+  }
+}
+
+/**
+ * Einheitenpaket einer Richtung bauen. `null`, wenn die Einheit nicht ausgeliefert wird (verborgen, nur für eine andere
+ * Ausgangssprache oder ohne spielbare Lektion).
+ */
+export function baueEinheit(e: BauEingabe, o: BauOptionen): BauErgebnis | null {
+  const w = new Werkbank(e, o);
+  if (e.einheit.nurFuerAusgang && e.einheit.nurFuerAusgang !== w.ausgang) return null;
+  if (!w.sichtbar(e.einheit, e.einheit.schluessel)) return null;
+  const kurs = w.ziel;
+
+  const lektionen: Lektion[] = [];
+  for (const l of e.lektionen) {
+    if (!w.sichtbar(l, l.schluessel)) continue;
+    const aufgaben: Aufgabe[] = [];
+    for (const a of l.aufgaben) {
+      if (!w.sichtbar(a, a.schluessel)) continue;
+      const x = w.aufgabe(a);
+      if (x) aufgaben.push(x);
+    }
+    if (!aufgaben.length) continue;
+    const titel = l.ziel[w.ausgang];
+    lektionen.push({
+      schluessel: lektionImPaket(e.richtung, kurs, l.schluessel),
+      kurs: e.richtung,
+      art: l.art,
+      zielsprache: w.ziel,
+      ausgangssprache: w.ausgang,
+      ...(titel ? { titel } : {}),
+      aufgaben,
+    });
+  }
+  if (!lektionen.length) return null;
+  const lexikon = [...w.lexikon].sort();
+  for (const l of lektionen) if (lexikon.length) l.lexikon = lexikon;
+
+  const tipps = e.tipps
+    .filter((t) => w.sichtbar(t, t.schluessel))
+    .map((t) => ({ schluessel: t.schluessel, ...(t.titel ? { titel: t.titel } : {}), inhalt: t.inhalt }));
+
+  const herkunft: Record<string, EintragHerkunft> = {};
+  for (const k of [...w.herkunft.keys()].sort()) herkunft[k] = w.herkunft.get(k)!;
+  const audio: BuendelVerweis[] = [...w.buendel.entries()]
+    .sort(([a], [b]) => (a < b ? -1 : 1))
+    .map(([adresse, bytes]) => ({ adresse, bytes }));
+
+  const paket: Paket = {
+    format: PAKET_FORMAT,
+    version: 1,
+    kurs: e.richtung,
+    zielsprache: w.ziel,
+    ausgangssprache: w.ausgang,
+    einheit: {
+      schluessel: e.einheit.schluessel,
+      stufe: e.einheit.stufe,
+      reihenfolge: e.einheit.reihenfolge,
+      thema: e.einheit.thema,
+      ...(e.einheit.symbol ? { symbol: e.einheit.symbol } : {}),
+    },
+    hinweis: w.hinweise.size > 0,
+    lektionen,
+    eintraege: herkunft,
+    tipps,
+    audio,
+    lizenz: INHALT_LIZENZ,
+  };
+  const json = kanonisch(paket);
+  return { paket, json, hash: sha256Hex(json), bytes: new TextEncoder().encode(json).length, warnungen: w.warnungen };
+}
+
+/** Kursverzeichnis aus den gebauten Einheiten (Reihenfolge: Stufe, dann Einheit). */
+export function baueVerzeichnis(v: {
+  kurs: KursSlug;
+  kursId: KursId;
+  zielsprache: Sprache;
+  ausgangssprache: Sprache | null;
+  stand: number;
+  einheiten: readonly BauErgebnis[];
+  stufenFolge: readonly Stufe[];
+}): Verzeichnis {
+  const einheiten: VerzeichnisEinheit[] = [...v.einheiten]
+    .sort(
+      (a, b) =>
+        v.stufenFolge.indexOf(a.paket.einheit.stufe) - v.stufenFolge.indexOf(b.paket.einheit.stufe) ||
+        a.paket.einheit.reihenfolge - b.paket.einheit.reihenfolge ||
+        (a.paket.einheit.schluessel < b.paket.einheit.schluessel ? -1 : 1),
+    )
+    .map((x) => ({
+      schluessel: x.paket.einheit.schluessel,
+      stufe: x.paket.einheit.stufe,
+      reihenfolge: x.paket.einheit.reihenfolge,
+      thema: x.paket.einheit.thema,
+      ...(x.paket.einheit.symbol ? { symbol: x.paket.einheit.symbol } : {}),
+      hash: x.hash,
+      bytes: x.bytes,
+      lektionen: x.paket.lektionen.length,
+      hinweis: x.paket.hinweis,
+      audio: x.paket.audio,
+    }));
+  return {
+    format: VERZEICHNIS_FORMAT,
+    version: 1,
+    kurs: v.kurs,
+    kursId: v.kursId,
+    zielsprache: v.zielsprache,
+    ausgangssprache: v.ausgangssprache,
+    stand: v.stand,
+    einheiten,
+  };
+}

@@ -57,7 +57,7 @@ describe('Bündel bauen und lesen', () => {
 
   it('Schnitt per Blob.slice ergibt genau die Bytes des Clips mit Typ audio/webm', async () => {
     const b = baueBuendel({ sprache: 'de', einheit: 'de.a1.e01', clips });
-    const blob = new Blob([b.bytes]);
+    const blob = new Blob([b.bytes.slice().buffer as ArrayBuffer]);
     for (const c of b.kopf.clips) {
       const teil = schneideClip(blob, c);
       expect(teil.type).toBe('audio/webm');

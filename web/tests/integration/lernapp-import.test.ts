@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { eq, sql } from 'drizzle-orm';
 import { afterAll, beforeEach, describe, expect, it } from 'vitest';
-import { schema } from '@/lib/db';
+import { db as appDb, schema } from '@/lib/db';
 import { verwaltungsUmgebung } from './hilfen/verwaltung';
 
 /**
@@ -31,7 +31,7 @@ function mitDe(aendern: (d: ReturnType<typeof sprachDatei>) => void) {
 
 describe('Testkurs', () => {
   it('legt Kurse, Richtungen, Einheiten, Lektionen, Aufgaben, Lemmata, Sätze, Übersetzungen, Tipps und Clips an', async () => {
-    const { bericht, clips } = await lernappTestkurs(db);
+    const { bericht, clips } = await lernappTestkurs(appDb);
     expect(bericht.dateien).toBe(9);
     expect(bericht.konflikte).toEqual([]);
     expect(bericht.kurse).toEqual(['ar', 'de', 'tr']);
@@ -55,9 +55,9 @@ describe('Testkurs', () => {
 
   it('idempotent: zweiter Lauf überspringt alle Dateien, erzwungener Lauf ändert nichts', async () => {
     const vorher = await version('tr');
-    const zweiter = await importiereLernapp(db, testkursQuellen(), QUELLE);
+    const zweiter = await importiereLernapp(appDb, testkursQuellen(), QUELLE);
     expect(zweiter).toMatchObject({ dateien: 9, uebersprungen: 9, neu: 0, geaendert: 0, gesperrt: 0, kurse: [] });
-    const erzwungen = await importiereLernapp(db, testkursQuellen(), { ...QUELLE, erzwingen: true });
+    const erzwungen = await importiereLernapp(appDb, testkursQuellen(), { ...QUELLE, erzwingen: true });
     expect(erzwungen).toMatchObject({ uebersprungen: 0, neu: 0, geaendert: 0, gesperrt: 0, kurse: [] });
     expect(erzwungen.unveraendert).toBeGreaterThan(80);
     expect(await version('tr')).toBe(vorher);
@@ -66,7 +66,7 @@ describe('Testkurs', () => {
 
 describe('Änderungen', () => {
   beforeEach(async () => {
-    await importiereLernapp(db, testkursQuellen(), QUELLE);
+    await importiereLernapp(appDb, testkursQuellen(), QUELLE);
   });
 
   it('geänderter Satz: neuer Hash, Status zurück, alte Prüfung gilt nicht mehr; Kursstand steigt', async () => {
@@ -74,7 +74,7 @@ describe('Änderungen', () => {
     await db.update(schema.lernappSatz).set({ status: 'veroeffentlicht' }).where(eq(schema.lernappSatz.id, alt.id));
     const v = await version('de');
     const b = await importiereLernapp(
-      db,
+      appDb,
       mitDe((d) => {
         d.saetze[2]!.text = 'Das Buch ist alt.';
       }),
@@ -93,7 +93,7 @@ describe('Änderungen', () => {
     const s2 = await satz('de.a1.e01.s0002');
     await db.update(schema.lernappSatz).set({ status: 'veroeffentlicht' }).where(eq(schema.lernappSatz.id, s1.id));
     await db.update(schema.lernappSatz).set({ status: 'entwurf' }).where(eq(schema.lernappSatz.id, s2.id));
-    await importiereLernapp(db, testkursQuellen(), { ...QUELLE, erzwingen: true });
+    await importiereLernapp(appDb, testkursQuellen(), { ...QUELLE, erzwingen: true });
     expect((await satz('de.a1.e01.s0001')).status).toBe('veroeffentlicht');
     expect((await satz('de.a1.e01.s0002')).status).toBe('automatisch_geprueft');
   });
@@ -105,7 +105,7 @@ describe('Änderungen', () => {
       .set({ menschlichGeprueft: true, text: 'Das Haus ist sehr groß.' })
       .where(eq(schema.lernappSatz.id, s.id));
     const b = await importiereLernapp(
-      db,
+      appDb,
       mitDe((d) => {
         d.saetze[1]!.text = 'Das Haus ist klein.';
       }),
@@ -120,7 +120,7 @@ describe('Änderungen', () => {
 
   it('entfernte Lektion: Lektion und ihre Aufgaben gesperrt; entfernte Datei: Einheit bzw. Übersetzungen gesperrt', async () => {
     const b = await importiereLernapp(
-      db,
+      appDb,
       mitDe((d) => {
         d.lektionen = d.lektionen.slice(0, 1);
       }),
@@ -131,7 +131,7 @@ describe('Änderungen', () => {
     expect(await anzahl('lernapp_aufgabe', sql`schluessel like 'de.a1.e01.l02.%' and status = 'gesperrt'`)).toBe(3);
 
     const ohne = testkursQuellen().filter((q) => !q.pfad.includes('/tr-aus-de/') && !q.pfad.includes('/sprache/ar/'));
-    const c = await importiereLernapp(db, ohne, QUELLE);
+    const c = await importiereLernapp(appDb, ohne, QUELLE);
     expect(await anzahl('lernapp_einheit', sql`schluessel = 'ar.a1.e01' and status = 'gesperrt'`)).toBe(1);
     expect(
       await anzahl(
@@ -148,7 +148,7 @@ describe('Änderungen', () => {
     const kaputt = mitDe((d) => {
       d.lektionen[0]!.aufgaben.push({ schluessel: 'de.a1.e01.l01.a99', typ: 'paare', lemmata: ['de.a1.e01.w001', 'de.a1.e09.w001'] });
     });
-    await expect(importiereLernapp(db, kaputt, { ...QUELLE, erzwingen: true })).rejects.toBeInstanceOf(ImportFehler);
+    await expect(importiereLernapp(appDb, kaputt, { ...QUELLE, erzwingen: true })).rejects.toBeInstanceOf(ImportFehler);
     expect(await anzahl('lernapp_aufgabe')).toBe(vorher);
   });
 
@@ -156,12 +156,12 @@ describe('Änderungen', () => {
     const d = sprachDatei('tr');
     const roh = JSON.parse(JSON.stringify(d)) as Record<string, unknown> & { saetze: { lizenz: string }[] };
     roh.saetze[0]!.lizenz = 'CC-BY-NC-4.0';
-    await expect(importiereLernapp(db, [{ pfad: 'x.json', text: JSON.stringify(roh) }])).rejects.toThrow(/lizenz/);
+    await expect(importiereLernapp(appDb, [{ pfad: 'x.json', text: JSON.stringify(roh) }])).rejects.toThrow(/lizenz/);
     const u = uebersetzungDatei('tr', 'de');
     u.eintraege[0]!.bezug = 'de.a1.e01.w001';
-    await expect(importiereLernapp(db, [{ pfad: 'y.json', text: JSON.stringify(u) }])).rejects.toThrow(/Bezug/);
+    await expect(importiereLernapp(appDb, [{ pfad: 'y.json', text: JSON.stringify(u) }])).rejects.toThrow(/Bezug/);
     await expect(
-      importiereLernapp(db, [
+      importiereLernapp(appDb, [
         { pfad: 'a.json', text: JSON.stringify(sprachDatei('tr')) },
         { pfad: 'b.json', text: JSON.stringify(sprachDatei('tr')) },
       ]),
@@ -169,7 +169,7 @@ describe('Änderungen', () => {
   });
 
   it('eigene Quellen bleiben getrennt: der Inhalts-Import ohne Dateien sperrt den Testkurs nicht', async () => {
-    const b = await importiereLernapp(db, [], { standSchluessel: `lernapp_import_${randomUUID().slice(0, 8)}` });
+    const b = await importiereLernapp(appDb, [], { standSchluessel: `lernapp_import_${randomUUID().slice(0, 8)}` });
     expect(b).toMatchObject({ dateien: 0, gesperrt: 0 });
     expect(await anzahl('lernapp_einheit', sql`schluessel = 'tr.a1.e01' and status = 'automatisch_geprueft'`)).toBe(1);
   });
