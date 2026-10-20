@@ -39,6 +39,10 @@ export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): P
   // Tagesziel (eigene Ereignisart) steht als Schlüssel `tagesziel` daneben: Inseln lesen es ohne Ableitung
   const ziel = alle.filter(istArt('tagesziel')).at(-1);
   if (ziel) sieger.set('tagesziel', { profil, schluessel: 'tagesziel', wert: ziel.daten.ziel, am: ziel.am, geraet: ziel.geraet });
+  // Ruhetage (aus `pause`) ebenso: das Wochenband der Serie (B-33) rechnet ohne das ganze Protokoll
+  const pause = alle.filter(istArt('pause')).at(-1);
+  if (a.ruhetage.size && pause)
+    sieger.set('ruhetage', { profil, schluessel: 'ruhetage', wert: [...a.ruhetage].sort(), am: pause.am, geraet: pause.geraet });
   await sp.loescheBereich('einstellungen', bereich);
   await sp.schreibe('einstellungen', [...sieger.values()]);
   if (await sp.lies('profile', profil)) await aendereProfil(sp, profil, { ableitungsVersion: a.version });

@@ -28,6 +28,7 @@ import {
 } from '@/lib/lernapp/engine/sitzung';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
+import { Abschluss } from './Abschluss';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
 import { Rueckmeldung } from './Rueckmeldung';
@@ -191,6 +192,7 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
         aria-labelledby={`${id}-fertig`}
         className="flex flex-col items-start gap-5 rounded-lg border border-linie bg-weiss p-6 shadow-s1 md:p-10"
       >
+        {z.gesamt ? <Abschluss /> : null}
         <h2 id={`${id}-fertig`} ref={titel} tabIndex={-1} className="text-display-2 outline-none">
           {z.gesamt ? texte.spieler.fertigTitel : texte.spieler.leer}
         </h2>
