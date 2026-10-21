@@ -1,0 +1,2613 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "taharah",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e02",
+    "reihenfolge": 2,
+    "thema": {
+      "de": "Nach hanefitischer Lehre – Reinheit II: Die Gebetswaschung (wuḍūʾ)"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Nach hanefitischer Lehre: Ich kann Anlass, Bedingungen und Pflichtteile der Gebetswaschung nennen."
+      },
+      {
+        "de": "Ich kann Pflichtteile, Sunna-Handlungen, Anstand und Verpöntes bei der Waschung unterscheiden."
+      },
+      {
+        "de": "Ich kann erklären, was die Waschung ungültig macht und was nicht."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e02.l01",
+      "titel": "Anlass, Bedingungen und Pflichtteile der Waschung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l01.a01",
+          "text": "Das Wort ṭahāra bedeutet Sauberkeit; im religiösen Recht ist die Reinheit von Unreinheiten gemeint. Das Wort wuḍūʾ hängt mit „Schönheit“ zusammen. Im religiösen Recht bezeichnet es das Waschen und Bestreichen bestimmter Körperteile, die dadurch schön werden (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Begriff und Anlass)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1035,
+              "zitatBis": 1174,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a02",
+          "text": "Die Gebetswaschung hat vier Pflichtteile (farāʾiḍ): das Gesicht waschen, beide Hände und Arme einschließlich der Ellenbogen waschen, ein Viertel des Kopfes bestreichen (masḥ) und beide Füße einschließlich der Knöchel waschen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Farāʾiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1574,
+              "zitatBis": 1603,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Farāʾiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 65,
+              "zitatBis": 139,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Farḍ aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 165,
+              "zitatBis": 209,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1459,
+              "zitatBis": 1551,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a03",
+          "text": "Waschen (ghasl) heißt, Wasser über eine Stelle fließen zu lassen. Bestreichen (masḥ) heißt, die Stelle mit Wasser nur zu benetzen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 12,
+              "passage": "hidaya.ms0001",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms1",
+              "passageSha256Text": "ba4640acfc688c5d16875943ca205b4286052fce775c5828d64818e5e387d0ae",
+              "zitatVon": 1531,
+              "zitatBis": 1566,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Begriff und Anlass)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1245,
+              "zitatBis": 1280,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a04",
+          "text": "Zum Gesicht gehört der Länge nach alles vom Haaransatz an der Stirn bis unter das Kinn und der Breite nach alles zwischen den beiden Ohrläppchen. Das Innere der Augen muss nicht gewaschen werden, weil das schwer ist und schaden kann (al-Ikhtiyār).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Farāʾiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1604,
+              "zitatBis": 1629,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Farāʾiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 0,
+              "zitatBis": 64,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 12,
+              "passage": "hidaya.ms0001",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms1",
+              "passageSha256Text": "ba4640acfc688c5d16875943ca205b4286052fce775c5828d64818e5e387d0ae",
+              "zitatVon": 1567,
+              "zitatBis": 1622,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1553,
+              "zitatBis": 1696,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a05",
+          "text": "Pflicht ist, ein Viertel des Kopfes zu bestreichen. Al-Qudūrī nennt als Pflichtmaß die Fläche der Stirnlocke (nāṣiya); al-Hidāya und al-Ikhtiyār erklären, dass damit ein Viertel des Kopfes gemeint ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Farāʾiḍuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 119,
+              "zitatBis": 139,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Farḍ aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 245,
+              "zitatBis": 280,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 12,
+              "passage": "hidaya.ms0002",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms2",
+              "passageSha256Text": "5c6821e2c8806a68b485f36ebbf2fb4add0c2fa529da24787cf2616bc3c99fd6",
+              "zitatVon": 305,
+              "zitatBis": 354,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0003",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms3",
+              "passageSha256Text": "d93404627e7cd7452ce33a5c6df2d75f021f77f1ab49fd00b6f0ebf560b6b39b",
+              "zitatVon": 709,
+              "zitatBis": 761,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a06",
+          "text": "Ellenbogen und Knöchel werden nach der Lehre der Schule mitgewaschen; sie gehören zum Pflichtteil. Zufar war anderer Meinung: Für ihn bezeichnen sie nur die Grenze und gehören nicht dazu.",
+          "meinung": "zufar",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Farḍ aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 210,
+              "zitatBis": 244,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 12,
+              "passage": "hidaya.ms0002",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms2",
+              "passageSha256Text": "5c6821e2c8806a68b485f36ebbf2fb4add0c2fa529da24787cf2616bc3c99fd6",
+              "zitatVon": 5,
+              "zitatBis": 106,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0003",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms3",
+              "passageSha256Text": "d93404627e7cd7452ce33a5c6df2d75f021f77f1ab49fd00b6f0ebf560b6b39b",
+              "zitatVon": 133,
+              "zitatBis": 216,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a07",
+          "text": "Die Haut zwischen dem Wangenbart (ʿidhār) und dem Ohr gehört zum Gesicht und muss gewaschen werden. Abū Yūsuf meinte, diese Pflicht entfalle, wenn der Bart gewachsen ist (al-Ikhtiyār).",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1716,
+              "zitatBis": 1731,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0003",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms3",
+              "passageSha256Text": "d93404627e7cd7452ce33a5c6df2d75f021f77f1ab49fd00b6f0ebf560b6b39b",
+              "zitatVon": 0,
+              "zitatBis": 132,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a08",
+          "text": "Anlass (sabab) der Gebetswaschung ist, dass man etwas tun möchte, das ohne sie nicht erlaubt ist, vor allem das Gebet. Nach al-Ikhtiyār wird sie Pflicht, wenn man beten will und keine Waschung hat. Ihre Wirkung im Diesseits ist, dass solche Handlungen erlaubt werden; im Jenseits ist es der Lohn.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Sabab al-Wuḍūʾ wa-Ḥukmuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 157,
+              "zitatBis": 235,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Begriff und Anlass)",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1282,
+              "zitatBis": 1381,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a09",
+          "text": "Pflicht wird die Waschung, wenn diese Bedingungen erfüllt sind: Verstand, Geschlechtsreife (bulūgh), der Islam, die Fähigkeit, genügend Wasser zu benutzen, ein Zustand ohne Waschung (ḥadath), keine Monats- oder Wochenbettblutung und dass die verbleibende Gebetszeit knapp wird.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Shurūṭ Wujūb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 253,
+              "zitatBis": 359,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.a10",
+          "text": "Gültig ist die Waschung unter drei Bedingungen: Reines, zur Reinigung geeignetes Wasser erreicht die ganze Haut der zu waschenden Stellen; was ihr entgegensteht, dauert nicht mehr an (Monats- oder Wochenbettblutung, ḥadath); und was das Wasser von der Haut fernhält, etwa Wachs oder Fett, ist entfernt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Wuḍūʾ › Shurūṭ Ṣiḥḥat al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 17,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 376,
+              "zitatBis": 498,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l01.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l01.a02",
+          "anweisung": "Ordne zu: Wird diese Stelle bei den Pflichtteilen gewaschen oder bestrichen?",
+          "paare": [
+            {
+              "links": "das Gesicht",
+              "rechts": "gewaschen"
+            },
+            {
+              "links": "Hände und Arme einschließlich der Ellenbogen",
+              "rechts": "gewaschen"
+            },
+            {
+              "links": "ein Viertel des Kopfes",
+              "rechts": "bestrichen"
+            },
+            {
+              "links": "Füße einschließlich der Knöchel",
+              "rechts": "gewaschen"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l01.a05",
+          "behauptung": "Bei der Waschung muss der ganze Kopf bestrichen werden, sonst ist sie ungültig.",
+          "richtig": false,
+          "begruendung": "Pflicht ist nur ein Viertel des Kopfes – das Maß der Stirnlocke (nāṣiya).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l01.a06",
+          "behauptung": "Die Ellenbogen werden beim Waschen der Arme nach der Lehre der Schule mitgewaschen.",
+          "richtig": true,
+          "begruendung": "Ellenbogen und Knöchel gehören zum Pflichtteil; nur Zufar sah das anders.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l01.a10",
+          "fall": "Beim Basteln ist Wachs auf einen Handrücken getropft. Jemand macht die Gebetswaschung, ohne das Wachs zu entfernen. Die Haut unter dem Wachs bleibt trocken.",
+          "frage": "Was gilt in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Die Waschung ist nicht gültig, weil das Wasser die Haut unter dem Wachs nicht erreicht hat.",
+            "Die Waschung ist gültig, weil nur eine kleine Stelle betroffen ist.",
+            "Die Waschung ist gültig, wenn man die Hand danach abtrocknet."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l01.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l01.a09",
+          "behauptung": "Zu den Bedingungen, unter denen die Waschung Pflicht wird, gehört, dass man keine Waschung hat (ḥadath).",
+          "richtig": true,
+          "begruendung": "Pflicht wird die Waschung nur bei einem Zustand ohne Waschung, dazu u. a. bei Verstand, Geschlechtsreife und Islam.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e02.l02",
+      "titel": "Vollständigkeit der Waschung und Sunna-Handlungen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l02.a01",
+          "text": "Bei einem dichten Bart wird nach der richtigsten Meinung, nach der Fatwa gegeben wird, die Oberfläche des Bartes gewaschen. Bei einem dünnen Bart muss das Wasser bis an die Haut darunter gelangen.",
+          "meinung": "fatwa",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Tamām Aḥkām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 18,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 524,
+              "zitatBis": 608,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a02",
+          "text": "Nicht gewaschen werden müssen Haare, die über den Umriss des Gesichts hinabhängen, und die Teile der Lippen, die bei geschlossenem Mund verdeckt sind.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Tamām Aḥkām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 18,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 609,
+              "zitatBis": 706,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a03",
+          "text": "Was das Wasser von der Haut abhält, muss beseitigt oder unterwaschen werden, etwa bei fest aneinanderliegenden Fingern, bei einem langen Fingernagel über der Fingerkuppe oder bei Teig unter dem Nagel. Gewöhnlicher Körperschmutz und Ähnliches hindern dagegen nicht. Einen engen Ring muss man bewegen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Tamām Aḥkām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 18,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 707,
+              "zitatBis": 857,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a04",
+          "text": "Schadet es, Risse an den Füßen zu waschen, darf man das Wasser über die Arznei laufen lassen, die man hineingegeben hat.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Tamām Aḥkām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 18,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 858,
+              "zitatBis": 922,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a05",
+          "text": "Wer nach der Waschung die Haare abrasiert oder Nägel und Schnurrbart schneidet, muss die Stellen nicht noch einmal bestreichen oder waschen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Tamām Aḥkām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 18,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 923,
+              "zitatBis": 997,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a06",
+          "text": "Nūr al-Īḍāḥ nennt achtzehn Sunna-Handlungen der Gebetswaschung. Am Anfang stehen: die Hände bis zu den Handgelenken waschen, den Namen Gottes nennen (tasmiya) und die Zähne mit dem Zahnholz (siwāk) reinigen – fehlt es, auch mit dem Finger.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1016,
+              "zitatBis": 1124,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Sunan aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 380,
+              "zitatBis": 567,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 8,
+              "passage": "ikhtiyar.ms0003",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms3",
+              "passageSha256Text": "d93404627e7cd7452ce33a5c6df2d75f021f77f1ab49fd00b6f0ebf560b6b39b",
+              "zitatVon": 831,
+              "zitatBis": 1067,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a07",
+          "text": "Mund und Nase werden je dreimal mit Wasser ausgespült; wer nicht fastet, tut dies gründlich. Nach al-Hidāya und al-Ikhtiyār nimmt man dafür jedes Mal neues Wasser.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1125,
+              "zitatBis": 1216,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0002",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms2",
+              "passageSha256Text": "5c6821e2c8806a68b485f36ebbf2fb4add0c2fa529da24787cf2616bc3c99fd6",
+              "zitatVon": 1344,
+              "zitatBis": 1404,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 8,
+              "passage": "ikhtiyar.ms0004",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms4",
+              "passageSha256Text": "9c4e85a94e710e4132b0c6855f89780aff9dbda0ebf18847a981b006c34382ce",
+              "zitatVon": 98,
+              "zitatBis": 159,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a08",
+          "text": "Weitere Sunna-Handlungen sind: den dichten Bart mit einer Handvoll Wasser von unten und die Finger durchkämmen (takhlīl), jede Stelle dreimal waschen, den ganzen Kopf einmal bestreichen, die Ohren bestreichen – auch mit dem Wasser vom Kopf –, die Glieder reiben (dalk) und ohne Unterbrechung eins nach dem anderen waschen (walāʾ).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1217,
+              "zitatBis": 1351,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0002",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms2",
+              "passageSha256Text": "5c6821e2c8806a68b485f36ebbf2fb4add0c2fa529da24787cf2616bc3c99fd6",
+              "zitatVon": 1443,
+              "zitatBis": 1494,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a09",
+          "text": "Beim Waschen einer Stelle ist das erste Mal Pflicht; das Wiederholen bis zu dreimal ist Sunna.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1270,
+              "zitatBis": 1282,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 8,
+              "passage": "ikhtiyar.ms0004",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms4",
+              "passageSha256Text": "9c4e85a94e710e4132b0c6855f89780aff9dbda0ebf18847a981b006c34382ce",
+              "zitatVon": 785,
+              "zitatBis": 899,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a10",
+          "text": "Sunna ist, die Pflichtteile in der Reihenfolge zu waschen, in der Gott sie im Koran nennt: zuerst das Gesicht, dann Hände und Arme, dann den Kopf bestreichen, zuletzt die Füße.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1359,
+              "zitatBis": 1394,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Anfang)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 36,
+              "zitatBis": 164,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Sunan aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 619,
+              "zitatBis": 662,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 1247,
+              "zitatBis": 1333,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0002",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms2",
+              "passageSha256Text": "d65f3e28a91808c61ed70cdbe7cc78a301f8cebc0f19d871068bc0d05405da0b",
+              "zitatVon": 1459,
+              "zitatBis": 1551,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a11",
+          "text": "Die Werke ordnen einige Handlungen verschieden ein. Absicht (niyya) und Reihenfolge (tartīb) sind nach Nūr al-Īḍāḥ und al-Hidāya Sunna; al-Qudūrī nennt sie empfohlen (mustaḥabb), und al-Ikhtiyār hält Sunna für richtiger. Den Namen Gottes am Anfang und das Zahnholz hält al-Hidāya nach der richtigeren Ansicht für empfohlen.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1352,
+              "zitatBis": 1394,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 574,
+              "zitatBis": 600,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 1305,
+              "zitatBis": 1333,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 12,
+              "passage": "hidaya.ms0002",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms2",
+              "passageSha256Text": "5c6821e2c8806a68b485f36ebbf2fb4add0c2fa529da24787cf2616bc3c99fd6",
+              "zitatVon": 1068,
+              "zitatBis": 1273,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Sunan aṭ-Ṭahāra)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 568,
+              "zitatBis": 672,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0004",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms4",
+              "passageSha256Text": "9c4e85a94e710e4132b0c6855f89780aff9dbda0ebf18847a981b006c34382ce",
+              "zitatVon": 1348,
+              "zitatBis": 1740,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 0,
+              "zitatBis": 45,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a12",
+          "text": "Ohne Absicht ist die Waschung trotzdem gültig, und man darf mit ihr beten (al-Hidāya). Als gottesdienstliche Handlung, für die man Lohn erhält, zählt sie aber nur mit Absicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 574,
+              "zitatBis": 756,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0004",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms4",
+              "passageSha256Text": "9c4e85a94e710e4132b0c6855f89780aff9dbda0ebf18847a981b006c34382ce",
+              "zitatVon": 1348,
+              "zitatBis": 1426,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a13",
+          "text": "Nach Nūr al-Īḍāḥ gehören auch dazu: rechts vor links beginnen, mit den Fingerspitzen beginnen, beim Bestreichen vorne am Kopf beginnen und den Nacken bestreichen, nicht aber die Kehle. Nach einer Ansicht, die das Werk ebenfalls nennt, sind diese letzten vier nur empfohlen (mustaḥabb); auch al-Ikhtiyār nennt für das Bestreichen des Nackens beide Ansichten.",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Sunan al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1395,
+              "zitatBis": 1492,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 141,
+              "zitatBis": 177,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.a14",
+          "text": "Zum Durchkämmen des Bartes (takhlīl) geben al-Hidāya und al-Ikhtiyār mit dem Zusatz „es wird gesagt“ an: Für Abū Yūsuf ist es Sunna, für Abū Ḥanīfa und Muḥammad nur erlaubt, weil das Innere des Bartes keine Pflichtstelle ist.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 5,
+              "zitatBis": 135,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 8,
+              "passage": "ikhtiyar.ms0004",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms4",
+              "passageSha256Text": "9c4e85a94e710e4132b0c6855f89780aff9dbda0ebf18847a981b006c34382ce",
+              "zitatVon": 559,
+              "zitatBis": 659,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l02.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e02.l02.a10",
+          "anweisung": "Bringe die Pflichtteile in die Reihenfolge, die Sunna ist.",
+          "schritte": [
+            "das Gesicht waschen",
+            "Hände und Arme einschließlich der Ellenbogen waschen",
+            "ein Viertel des Kopfes bestreichen",
+            "die Füße einschließlich der Knöchel waschen"
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l02.a03",
+          "behauptung": "Einen engen Ring muss man bei der Waschung bewegen.",
+          "richtig": true,
+          "begruendung": "Ein enger Ring hält das Wasser von der Haut ab; deshalb muss man ihn bewegen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l02.a09",
+          "anweisung": "Ordne zu: Ist dieses Waschen einer Stelle Pflicht oder Sunna?",
+          "paare": [
+            {
+              "links": "das erste Waschen",
+              "rechts": "Pflicht"
+            },
+            {
+              "links": "das zweite Waschen",
+              "rechts": "Sunna"
+            },
+            {
+              "links": "das dritte Waschen",
+              "rechts": "Sunna"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l02.a01",
+          "behauptung": "Bei einem dichten Bart muss das Wasser nach der Fatwa-Meinung bis an die Haut unter dem Bart gelangen.",
+          "richtig": false,
+          "begruendung": "Bei einem dichten Bart wird die Oberfläche gewaschen; nur bei einem dünnen Bart muss das Wasser die Haut erreichen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l02.a12",
+          "fall": "Jemand wäscht vor dem Gebet Gesicht, Arme und Füße vollständig und bestreicht ein Viertel des Kopfes. Er denkt dabei nicht an eine Absicht, weil er sich eigentlich nur abkühlen wollte.",
+          "frage": "Was gilt nach hanefitischer Lehre in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Die Waschung ist gültig, und er darf mit ihr beten; als gottesdienstliche Handlung mit Lohn zählt sie aber erst mit Absicht.",
+            "Die Waschung ist ungültig, weil die Absicht ein Pflichtteil ist.",
+            "Die Waschung gilt nur für freiwillige Gebete."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l02.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l02.a05",
+          "behauptung": "Wer nach der Waschung seine Nägel schneidet, muss die Hände noch einmal waschen.",
+          "richtig": false,
+          "begruendung": "Nach dem Schneiden von Nägeln oder Schnurrbart muss nichts erneut gewaschen werden.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e02.l03",
+      "titel": "Anstand (ādāb) und Verpöntes (makrūhāt) bei der Waschung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l03.a01",
+          "text": "Nūr al-Īḍāḥ nennt vierzehn Dinge des Anstands (ādāb) bei der Waschung. Dazu gehört: an einem erhöhten Platz sitzen, sich zur Gebetsrichtung (qibla) wenden, die Waschung selbst ausführen, ohne sich helfen zu lassen, und dabei keine Alltagsgespräche führen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1512,
+              "zitatBis": 1623,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.a02",
+          "text": "Zum Anstand gehört auch: die Absicht im Herzen zusätzlich mit der Zunge aussprechen, die überlieferten Bittgebete sprechen und bei jedem Körperteil den Namen Gottes nennen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0004",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms4",
+              "passageSha256Text": "101061d5ff9c9f18a5235a378f9e13d844ff447e71036bc63acb441e36f0163e",
+              "zitatVon": 1624,
+              "zitatBis": 1664,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 0,
+              "zitatBis": 28,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.a03",
+          "text": "Weiter gehört zum Anstand: den kleinen Finger in die Ohröffnungen führen, einen weiten Ring bewegen, Mund und Nase mit der rechten Hand spülen und mit der linken Hand schnäuzen, die Waschung schon vor Beginn der Gebetszeit vornehmen (wer nicht als entschuldigt, maʿdhūr, gilt), nach der Waschung die beiden Glaubensbezeugungen sprechen und vom übrigen Waschwasser im Stehen trinken.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Ādāb al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 19,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 29,
+              "zitatBis": 216,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.a04",
+          "text": "Verpönt (makrūh) sind bei der Waschung sechs Dinge: Wasser verschwenden (isrāf), zu sparsam mit Wasser sein (taqtīr), sich das Wasser ins Gesicht schlagen, Alltagsgespräche führen, sich ohne Grund helfen lassen und den Kopf dreimal mit jeweils neuem Wasser bestreichen. Nach al-Ikhtiyār ist Hilfe nicht verpönt, wenn man es selbst nicht kann.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Makrūhāt al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 295,
+              "zitatBis": 435,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 178,
+              "zitatBis": 254,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.a05",
+          "text": "Der Kopf wird nur einmal bestrichen. Wer das Bestreichen wiederholt, macht daraus ein Waschen; angeordnet ist aber das Bestreichen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Farāʾiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 7,
+              "passage": "ikhtiyar.ms0003",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms3",
+              "passageSha256Text": "d93404627e7cd7452ce33a5c6df2d75f021f77f1ab49fd00b6f0ebf560b6b39b",
+              "zitatVon": 763,
+              "zitatBis": 829,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt (Wuḍūʾ)",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 13,
+              "passage": "hidaya.ms0003",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms3",
+              "passageSha256Text": "a0e37e2d9724c9bf7299179bf12b663800e49da697f8d4fb1bd2e79bdf6f32b7",
+              "zitatVon": 1141,
+              "zitatBis": 1182,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l03.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l03.a03",
+          "anweisung": "Ordne zu: Mit welcher Hand geschieht das nach dem Anstand der Waschung?",
+          "paare": [
+            {
+              "links": "den Mund ausspülen",
+              "rechts": "rechte Hand"
+            },
+            {
+              "links": "die Nase ausspülen",
+              "rechts": "rechte Hand"
+            },
+            {
+              "links": "die Nase schnäuzen",
+              "rechts": "linke Hand"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l03.a04",
+          "behauptung": "Wasser zu verschwenden ist bei der Waschung verpönt.",
+          "richtig": true,
+          "begruendung": "Wasserverschwendung (isrāf) gehört zu den sechs verpönten Dingen bei der Waschung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l03.a05",
+          "behauptung": "Den Kopf dreimal zu bestreichen ist besonders verdienstvoll.",
+          "richtig": false,
+          "begruendung": "Der Kopf wird nur einmal bestrichen; durch Wiederholen würde aus dem Bestreichen ein Waschen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l03.a04",
+          "fall": "Während der Waschung erzählt jemand ausführlich von seinem Tag. Außerdem lässt er sich von einem Freund Wasser über die Hände gießen, obwohl er es selbst könnte.",
+          "frage": "Wie ordnen die Werke dieses Verhalten ein?",
+          "optionen": ["Beides ist bei der Waschung verpönt (makrūh).", "Beides gehört zum Anstand (ādāb).", "Beides ist Sunna."],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e02.l04",
+      "titel": "Arten der Waschung: Pflicht, notwendig, empfohlen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l04.a01",
+          "text": "Nūr al-Īḍāḥ unterscheidet drei Arten der Waschung: Pflicht (farḍ) ist sie zum Beispiel für das Gebet, notwendig (wājib) für den Umlauf (ṭawāf) um die Kaaba und empfohlen (mandūb) zum Beispiel vor dem Schlafen.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aqsām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 456,
+              "zitatBis": 617,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.a02",
+          "text": "Pflicht (farḍ) ist die Waschung für jemanden ohne Waschung, der beten will – auch beim freiwilligen Gebet und beim Totengebet –, für die Niederwerfung beim Rezitieren (sajdat at-tilāwa) und um den Koran zu berühren, auch nur einen Vers davon.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aqsām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 479,
+              "zitatBis": 569,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.a03",
+          "text": "Empfohlen (mandūb) ist die Waschung unter anderem: vor dem Schlafen und nach dem Aufwachen, um ständig in Waschung zu bleiben, als neue Waschung auf eine noch bestehende, nach Lästern, Lügen, Zwischenträgerei und jeder anderen Sünde, nach lautem Lachen außerhalb des Gebets, zu jeder Gebetszeit, bei Zorn, zum Rezitieren des Korans, zum Lernen von Hadith und Wissen sowie vor Gebetsruf (adhān), iqāma und Predigt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aqsām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 598,
+              "zitatBis": 871,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.a04",
+          "text": "Empfohlen ist die Waschung auch, um eine Meinungsverschiedenheit der Gelehrten zu vermeiden – etwa nach dem Berühren einer Frau, das nach hanefitischer Lehre die Waschung nicht bricht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aqsām al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 20,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 961,
+              "zitatBis": 1001,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 46,
+              "zitatBis": 63,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.a05",
+          "text": "Mit einer einzigen Waschung darf man so viele Pflicht- und freiwillige Gebete verrichten, wie man möchte, solange sie nicht gebrochen ist.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Sunan al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 255,
+              "zitatBis": 298,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l04.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l04.a01",
+          "anweisung": "Ordne zu: Welche Art der Waschung gilt für diesen Anlass?",
+          "paare": [
+            {
+              "links": "vor dem Gebet, wenn man keine Waschung hat",
+              "rechts": "Pflicht (farḍ)"
+            },
+            {
+              "links": "vor dem Umlauf (ṭawāf) um die Kaaba",
+              "rechts": "notwendig (wājib)"
+            },
+            {
+              "links": "vor dem Schlafen",
+              "rechts": "empfohlen (mandūb)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l04.a02",
+          "behauptung": "Für ein freiwilliges Gebet braucht man keine Waschung.",
+          "richtig": false,
+          "begruendung": "Auch für ein freiwilliges Gebet ist die Waschung Pflicht, ebenso für das Totengebet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l04.a02",
+          "behauptung": "Um den Koran zu berühren, ist die Waschung Pflicht – auch wenn man nur einen Vers berührt.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt das Berühren des Korans, auch nur eines Verses, bei den Fällen, in denen die Waschung Pflicht ist.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l04.a03",
+          "behauptung": "Eine neue Waschung zu machen, obwohl die alte noch besteht, ist empfohlen.",
+          "richtig": true,
+          "begruendung": "Die Waschung auf eine noch bestehende Waschung gehört zu den empfohlenen Fällen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l04.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l04.a05",
+          "fall": "Jemand macht vor dem Mittagsgebet die Gebetswaschung. Bis zum Nachmittagsgebet geschieht nichts, was die Waschung bricht.",
+          "frage": "Darf er mit derselben Waschung auch das Nachmittagsgebet verrichten?",
+          "optionen": [
+            "Ja, mit einer Waschung darf man mehrere Gebete verrichten.",
+            "Nein, für jedes Pflichtgebet ist eine neue Waschung Pflicht.",
+            "Nur, wenn das zweite Gebet ein freiwilliges Gebet ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e02.l05",
+      "titel": "Was die Waschung ungültig macht",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l05.a01",
+          "text": "Nūr al-Īḍāḥ nennt zwölf Dinge, die die Waschung ungültig machen (nawāqiḍ). Das erste ist alles, was aus den beiden natürlichen Ausgängen austritt – Gewöhnliches wie Ungewöhnliches (al-Hidāya). Ausgenommen ist nach der richtigeren Ansicht nur Luft aus dem vorderen Ausgang.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1022,
+              "zitatBis": 1090,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 673,
+              "zitatBis": 719,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 14,
+              "passage": "hidaya.ms0004",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms4",
+              "passageSha256Text": "6a0877a46708d490f276e9f6d807520db775b138f77c94b52a1e4def103a00b4",
+              "zitatVon": 16,
+              "zitatBis": 203,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 386,
+              "zitatBis": 519,
+              "art": "sinngemaess"
+            }
+          ],
+          "verweise": [
+            {
+              "art": "koran",
+              "stelle": "5:6"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a02",
+          "text": "Unreines wie Blut oder Eiter, das an einer anderen Körperstelle austritt, macht die Waschung ungültig, wenn es fließt – also sich auf eine Stelle ausbreitet, die bei der Reinigung gewaschen werden muss. Was nur sichtbar wird, aber nicht fließt, ist nach al-Ikhtiyār nur „erschienen“, nicht „ausgetreten“.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1119,
+              "zitatBis": 1150,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 720,
+              "zitatBis": 791,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 9,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 995,
+              "zitatBis": 1096,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a03",
+          "text": "Erbrechen macht die Waschung ungültig, wenn es den Mund füllt – ob Speise, Wasser, geronnenes Blut oder Galle. „Mundvoll“ heißt nach der richtigeren Ansicht: Man kann den Mund nur mit Mühe darüber geschlossen halten.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1151,
+              "zitatBis": 1240,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 792,
+              "zitatBis": 815,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 14,
+              "passage": "hidaya.ms0004",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms4",
+              "passageSha256Text": "6a0877a46708d490f276e9f6d807520db775b138f77c94b52a1e4def103a00b4",
+              "zitatVon": 970,
+              "zitatBis": 1015,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a04",
+          "text": "Wer mehrmals wenig erbricht: Die Mengen werden zusammengezählt, wenn sie auf dieselbe Ursache – dieselbe Übelkeit – zurückgehen; so Muḥammad und so auch Nūr al-Īḍāḥ. Abū Yūsuf stellt stattdessen darauf ab, ob es in derselben Sitzung geschah.",
+          "meinung": "muhammad",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1241,
+              "zitatBis": 1272,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 14,
+              "passage": "hidaya.ms0004",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms4",
+              "passageSha256Text": "6a0877a46708d490f276e9f6d807520db775b138f77c94b52a1e4def103a00b4",
+              "zitatVon": 1462,
+              "zitatBis": 1591,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 1548,
+              "zitatBis": 1673,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a05",
+          "text": "Blut im Speichel macht die Waschung ungültig, wenn das Blut überwiegt oder gleich viel ist; überwiegt der Speichel, nicht. Als Erkennungszeichen nennt Radd al-Muḥtār: Ist der Speichel rot, überwiegt das Blut oder ist gleich viel; ist er gelblich, überwiegt der Speichel.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1273,
+              "zitatBis": 1300,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0006",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms6",
+              "passageSha256Text": "44033551c7c470cf19477ad9ae75a1cf9c9cb79c15bf9c8a06099280abdddd64",
+              "zitatVon": 728,
+              "zitatBis": 862,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 139,
+              "passage": "radd_al_muhtar.ms0099",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms99",
+              "passageSha256Text": "1e1ecb6a7700e3931b583b0ae4b048e934dee70da1fe77944be8d3c3ae1da98d",
+              "zitatVon": 209,
+              "zitatBis": 292,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a06",
+          "text": "Schlaf macht die Waschung ungültig, wenn das Gesäß dabei nicht fest auf dem Boden sitzt, etwa im Liegen; dann entspannen sich die Glieder (al-Hidāya). Hebt sich das Gesäß eines Schlafenden, bevor er wach wird, ist sie nach der offenkundigen Überlieferung ebenfalls gebrochen, auch wenn er nicht umfällt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1301,
+              "zitatBis": 1388,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 816,
+              "zitatBis": 838,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0005",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms5",
+              "passageSha256Text": "e061663b6cabc27b23bdd4581d7fbd7b14d4593752e572052e30a47302e225f4",
+              "zitatVon": 754,
+              "zitatBis": 845,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a07",
+          "text": "Bewusstlosigkeit, Verlust des Verstandes und Rausch machen die Waschung ungültig. Nach al-Ikhtiyār wiegen Bewusstlosigkeit und Verlust des Verstandes schwerer als Schlaf: Ein Schlafender wird wach, wenn man ihn weckt; bei Bewusstlosigkeit und Verlust des Verstandes ist das nicht so.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1389,
+              "zitatBis": 1406,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 874,
+              "zitatBis": 908,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0005",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms5",
+              "passageSha256Text": "e061663b6cabc27b23bdd4581d7fbd7b14d4593752e572052e30a47302e225f4",
+              "zitatVon": 1302,
+              "zitatBis": 1400,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0006",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms6",
+              "passageSha256Text": "44033551c7c470cf19477ad9ae75a1cf9c9cb79c15bf9c8a06099280abdddd64",
+              "zitatVon": 1020,
+              "zitatBis": 1137,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a08",
+          "text": "Lautes Lachen (qahqaha) macht die Waschung ungültig, wenn ein wacher Erwachsener so in einem Gebet mit Verbeugung und Niederwerfung lacht. Im Totengebet und bei der Niederwerfung beim Rezitieren gilt das nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1407,
+              "zitatBis": 1447,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 909,
+              "zitatBis": 943,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0006",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms6",
+              "passageSha256Text": "490e42376b50ed85692e0bd68f445eae74021a0449bfb5b79ee69d30fe5bec94",
+              "zitatVon": 163,
+              "zitatBis": 200,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 11,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 444,
+              "zitatBis": 499,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.a09",
+          "text": "Al-Ikhtiyār und al-Hidāya unterscheiden: Lautes Lachen, das auch der Nebenstehende hört (qahqaha), bricht Waschung und Gebet. Lachen, das nur man selbst hört (ḍaḥik), macht nur das Gebet ungültig. Ein Lächeln (tabassum), das niemand hört, hat keine Folge.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 11,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 501,
+              "zitatBis": 660,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0006",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms6",
+              "passageSha256Text": "490e42376b50ed85692e0bd68f445eae74021a0449bfb5b79ee69d30fe5bec94",
+              "zitatVon": 201,
+              "zitatBis": 310,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l05.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l05.a02",
+          "behauptung": "Wird an einer kleinen Wunde ein Tropfen Blut sichtbar, der nicht fließt, ist die Waschung gebrochen.",
+          "richtig": false,
+          "begruendung": "Blut aus einer Wunde bricht die Waschung nur, wenn es fließt. Was nur sichtbar wird, ist nicht „ausgetreten“.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l05.a05",
+          "fall": "Nach dem Zähneputzen spuckt jemand aus. Der Speichel ist deutlich rot.",
+          "frage": "Was gilt für seine Waschung in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Sie ist gebrochen: Roter Speichel zeigt, dass das Blut überwiegt oder gleich viel ist.",
+            "Sie besteht weiter, weil Blut im Mund nie zählt.",
+            "Sie ist nur gebrochen, wenn der Speichel gelblich ist."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l05.a09",
+          "anweisung": "Ordne zu: Welche Folge hat diese Art zu lachen in einem Gebet mit Verbeugung und Niederwerfung?",
+          "paare": [
+            {
+              "links": "lautes Lachen, das der Nebenstehende hört (qahqaha)",
+              "rechts": "Waschung und Gebet ungültig"
+            },
+            {
+              "links": "Lachen, das nur man selbst hört (ḍaḥik)",
+              "rechts": "nur das Gebet ungültig"
+            },
+            {
+              "links": "ein Lächeln, das niemand hört (tabassum)",
+              "rechts": "keine Folge"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l05.a03",
+          "behauptung": "Erbricht man Speise oder Wasser, bricht das die Waschung nur, wenn es den Mund füllt.",
+          "richtig": true,
+          "begruendung": "„Mundvoll“ heißt: Man kann den Mund nur mit Mühe darüber geschlossen halten.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l05.a04",
+          "fall": "Jemandem ist übel. Er erbricht kurz hintereinander dreimal eine kleine Menge; zusammen würde es den Mund füllen. Alles geht auf dieselbe Übelkeit zurück.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ, das hier der Ansicht Muḥammads folgt?",
+          "optionen": [
+            "Die Mengen werden zusammengezählt; die Waschung ist gebrochen.",
+            "Jede Menge zählt einzeln; die Waschung besteht weiter.",
+            "Erbrechen bricht die Waschung nie."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l05.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l05.a06",
+          "behauptung": "Wer im Liegen einschläft, muss die Waschung erneuern.",
+          "richtig": true,
+          "begruendung": "Schlaf, bei dem das Gesäß nicht fest auf dem Boden sitzt, etwa im Liegen, bricht die Waschung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e02.l06",
+      "titel": "Was die Waschung nicht ungültig macht",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e02.l06.a01",
+          "text": "Nūr al-Īḍāḥ nennt zehn Dinge, die die Waschung nicht ungültig machen. Dazu gehören Blut, das sichtbar wird, aber nicht von seiner Stelle wegfließt, und Fleisch, das abfällt, ohne dass Blut fließt.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0005",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms5",
+              "passageSha256Text": "7c959d94724af0a6a5ca3a535a87c697efb366c39cd9111a01c490119df6c53f",
+              "zitatVon": 1530,
+              "zitatBis": 1618,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 0,
+              "zitatBis": 17,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0006",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms6",
+              "passageSha256Text": "490e42376b50ed85692e0bd68f445eae74021a0449bfb5b79ee69d30fe5bec94",
+              "zitatVon": 339,
+              "zitatBis": 381,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a02",
+          "text": "Ein Wurm, der aus einer Wunde, dem Ohr oder der Nase kommt, bricht die Waschung nicht. Kommt er aus dem hinteren Ausgang, bricht er sie (al-Hidāya).",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 18,
+              "zitatBis": 45,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0006",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms6",
+              "passageSha256Text": "490e42376b50ed85692e0bd68f445eae74021a0449bfb5b79ee69d30fe5bec94",
+              "zitatVon": 311,
+              "zitatBis": 381,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a03",
+          "text": "Das Berühren einer Frau und das Berühren der eigenen Scham brechen die Waschung nach hanefitischer Lehre nicht.",
+          "strittig": false,
+          "kinderGeeignet": false,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 46,
+              "zitatBis": 63,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0005",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms5",
+              "passageSha256Text": "1cebe1242296f075b762ab1b9b17ebcd69cb2fc58b09999d3fba306849d9a05e",
+              "zitatVon": 1348,
+              "zitatBis": 1388,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a04",
+          "text": "Erbrechen, das den Mund nicht füllt, bricht die Waschung nicht. Erbrochener Schleim bricht sie nach Abū Ḥanīfa und Muḥammad auch in großer Menge nicht; Abū Yūsuf sah Schleim aus dem Magen, der den Mund füllt, als brechend an. Schleim, der vom Kopf herabkommt, bricht sie nach allen nicht.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 64,
+              "zitatBis": 101,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 14,
+              "passage": "hidaya.ms0005",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms5",
+              "passageSha256Text": "e061663b6cabc27b23bdd4581d7fbd7b14d4593752e572052e30a47302e225f4",
+              "zitatVon": 129,
+              "zitatBis": 297,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0006",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms6",
+              "passageSha256Text": "44033551c7c470cf19477ad9ae75a1cf9c9cb79c15bf9c8a06099280abdddd64",
+              "zitatVon": 82,
+              "zitatBis": 184,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a05",
+          "text": "Schlaf im Stehen, im Sitzen, in der Verbeugung oder in der Niederwerfung bricht die Waschung nicht, wenn man dabei die Sunna-gemäße Haltung einhält (Nūr al-Īḍāḥ); nach al-Hidāya gilt das im Gebet und außerhalb davon. Auch das Schwanken eines Schlafenden, bei dem sich das Gesäß heben könnte, bricht sie nicht.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 191,
+              "zitatBis": 232,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 102,
+              "zitatBis": 131,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 10,
+              "passage": "ikhtiyar.ms0006",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms6",
+              "passageSha256Text": "44033551c7c470cf19477ad9ae75a1cf9c9cb79c15bf9c8a06099280abdddd64",
+              "zitatVon": 1138,
+              "zitatBis": 1186,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0005",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms5",
+              "passageSha256Text": "e061663b6cabc27b23bdd4581d7fbd7b14d4593752e572052e30a47302e225f4",
+              "zitatVon": 1019,
+              "zitatBis": 1094,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a06",
+          "text": "Wer fest auf dem Gesäß sitzend schläft und sich an etwas anlehnt, ohne das er umfallen würde: Nach der offenkundigen Lehre der Schule, überliefert von Abū Ḥanīfa und von den meisten Gelehrten vertreten, bleibt die Waschung bestehen; Radd al-Muḥtār nennt das mit Verweis auf al-Badāʾiʿ die richtigere Ansicht, und so lehrt es auch Nūr al-Īḍāḥ. Aṭ-Ṭaḥāwī, al-Qudūrī und der Verfasser der Hidāya hielten sie für gebrochen. Hebt sich das Gesäß vom Boden, ist sie nach allen gebrochen.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Nawāqiḍ al-Wuḍūʾ (Erläuterung zum Schlaf)",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 141,
+              "passage": "radd_al_muhtar.ms0103",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms103",
+              "passageSha256Text": "0d3a46d5763c817f8021d0202ab8412d87238698dd159240f9aa213540b8b1da",
+              "zitatVon": 488,
+              "zitatBis": 710,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fīmā lā yanquḍu l-Wuḍūʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 21,
+              "passage": "nur_al_idah.ms0006",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms6",
+              "passageSha256Text": "535cf1a1b3910644b28bf9e99f6c0e2d5b11ff617487971b499790240f2a283b",
+              "zitatVon": 132,
+              "zitatBis": 190,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (al-Maʿānī an-nāqiḍa li-l-Wuḍūʾ)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 11,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 839,
+              "zitatBis": 873,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "hidaya",
+              "kapitel": "Kitāb aṭ-Ṭahārāt › Faṣl fī Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "al-Maktaba al-Islāmiyya, ohne Jahr (Ausgabe klären, LM-33)",
+              "band": 1,
+              "seite": 15,
+              "passage": "hidaya.ms0005",
+              "fundstelle": "0593BurhanDinFarghaniMarghinani.HidayaFiSharhBidaya.JK000242-ara1#ms5",
+              "passageSha256Text": "e061663b6cabc27b23bdd4581d7fbd7b14d4593752e572052e30a47302e225f4",
+              "zitatVon": 777,
+              "zitatBis": 811,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.a07",
+          "text": "Zweifel bricht die Waschung nicht. Wer sicher weiß, dass er die Waschung hat, und nur zweifelt, ob sie gebrochen ist, bleibt in Waschung. Umgekehrt gilt: Wer sicher weiß, dass sie gebrochen ist, und nur zweifelt, ob er sie erneuert hat, hat keine. Es gilt das Sichere, nicht der Zweifel.",
+          "strittig": false,
+          "kinderGeeignet": true,
+          "belege": [
+            {
+              "werk": "ikhtiyar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Maṭbaʿat al-Ḥalabī, Kairo 1356/1937",
+              "band": 1,
+              "seite": 11,
+              "passage": "ikhtiyar.ms0007",
+              "fundstelle": "0683IbnMahmudMajdDinMawsili.IkhtiyarLiTaclil.Shamela0001066-ara1#ms7",
+              "passageSha256Text": "83a4f831d4c05257add0f153626e4e2ca2ceeb5a0ede5d1683570ced9deaf431",
+              "zitatVon": 779,
+              "zitatBis": 832,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Maṭlab Nawāqiḍ al-Wuḍūʾ",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 139,
+              "passage": "radd_al_muhtar.ms0099",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms99",
+              "passageSha256Text": "1e1ecb6a7700e3931b583b0ae4b048e934dee70da1fe77944be8d3c3ae1da98d",
+              "zitatVon": 361,
+              "zitatBis": 434,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e02.l06.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e02.l06.a02",
+          "anweisung": "Ordne zu: Bricht ein Wurm die Waschung, je nachdem, woher er kommt?",
+          "paare": [
+            {
+              "links": "aus einer Wunde",
+              "rechts": "bricht die Waschung nicht"
+            },
+            {
+              "links": "aus dem Ohr",
+              "rechts": "bricht die Waschung nicht"
+            },
+            {
+              "links": "aus der Nase",
+              "rechts": "bricht die Waschung nicht"
+            },
+            {
+              "links": "aus dem hinteren Ausgang",
+              "rechts": "bricht die Waschung"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l06.a07",
+          "fall": "Jemand hat am Morgen sicher die Gebetswaschung gemacht. Kurz vor dem Mittagsgebet fragt er sich, ob er sie inzwischen gebrochen hat, erinnert sich aber an nichts Bestimmtes.",
+          "frage": "Was gilt in diesem allgemeinen Lehrfall?",
+          "optionen": [
+            "Er bleibt in Waschung; es gilt das Sichere, nicht der Zweifel.",
+            "Er muss die Waschung erneuern, weil er zweifelt.",
+            "Er darf nur freiwillige Gebete verrichten."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l06.a06",
+          "behauptung": "Nach der offenkundigen Lehre der Schule bricht der Schlaf eines fest Sitzenden die Waschung nicht, auch wenn er sich anlehnt.",
+          "richtig": true,
+          "begruendung": "So ist es von Abū Ḥanīfa überliefert und von den meisten Gelehrten vertreten; aṭ-Ṭaḥāwī, al-Qudūrī und der Verfasser der Hidāya sahen es anders. Hebt sich das Gesäß, ist die Waschung gebrochen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l06.a04",
+          "behauptung": "Erbrochener Schleim bricht die Waschung nach Abū Ḥanīfa und Muḥammad auch in großer Menge nicht.",
+          "richtig": true,
+          "begruendung": "So lehren es Abū Ḥanīfa und Muḥammad; nur Abū Yūsuf sah Schleim aus dem Magen, der den Mund füllt, als brechend an.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e02.l06.a05",
+          "fall": "Während eines langen freiwilligen Gebets nickt jemand in der Niederwerfung kurz ein. Er hält dabei die Sunna-gemäße Haltung ein.",
+          "frage": "Ist seine Waschung in diesem allgemeinen Lehrfall gebrochen?",
+          "optionen": [
+            "Nein, Schlaf in der Sunna-gemäßen Haltung der Niederwerfung bricht sie nicht.",
+            "Ja, jeder Schlaf bricht die Waschung.",
+            "Nur, wenn er länger als eine Minute schläft."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e02.l06.q06",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e02.l06.a03",
+          "behauptung": "Wer eine Frau berührt, muss nach hanefitischer Lehre die Waschung erneuern.",
+          "richtig": false,
+          "begruendung": "Das Berühren einer Frau bricht die Waschung nach hanefitischer Lehre nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
