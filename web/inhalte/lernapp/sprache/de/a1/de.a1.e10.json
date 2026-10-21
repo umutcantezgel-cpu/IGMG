@@ -1,0 +1,3388 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e10",
+    "reihenfolge": 11,
+    "thema": {
+      "de": "Was ziehe ich heute an?",
+      "tr": "Bugün ne giysem?",
+      "ar": "ماذا ألبس اليوم؟"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, was ich bei welchem Wetter anziehe.",
+        "tr": "Hangi havada ne giydiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا ألبس في كل طقس."
+      },
+      {
+        "de": "Ich kann im Geschäft Kleidung nach Farbe und Größe aussuchen und sagen, wie ich sie finde.",
+        "tr": "Mağazada giysileri renge ve bedene göre seçebilir ve onları nasıl bulduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أختار الملابس في المتجر حسب اللون والمقاس وأن أقول رأيي فيها."
+      }
+    ],
+    "symbol": "shirt",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e10.dieser",
+      "lemma": "dieser",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Demonstrativartikel"
+      },
+      "formen": {
+        "endung_e": "diese",
+        "endung_es": "dieses",
+        "endung_en": "diesen",
+        "endung_em": "diesem"
+      },
+      "frequenzRang": 29,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.welcher",
+      "lemma": "welcher",
+      "wortart": "fragewort",
+      "formen": {
+        "form_1": "welche",
+        "form_2": "welches",
+        "form_3": "welchen",
+        "form_4": "welchem"
+      },
+      "frequenzRang": 109,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.andere",
+      "lemma": "andere",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "endung_en": "anderen",
+        "endung_er": "anderer",
+        "endung_es": "anderes",
+        "endung_em": "anderem"
+      },
+      "frequenzRang": 67,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.beide",
+      "lemma": "beide",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "endung_en": "beiden",
+        "neutral": "beides"
+      },
+      "frequenzRang": 297,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.anziehen",
+      "lemma": "anziehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "anziehen",
+        "verbzusatz": "an",
+        "praes_ich": "ziehe",
+        "praes_du": "ziehst",
+        "praes_er_sie_es": "zieht",
+        "praes_wir": "ziehen",
+        "praes_ihr": "zieht",
+        "praes_sie_Sie": "ziehen",
+        "imp_du": "zieh",
+        "imp_ihr": "zieht"
+      },
+      "frequenzRang": 2333,
+      "quelle": "wiktionary:de:anziehen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚anziehen‘ (https://de.wiktionary.org/wiki/anziehen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.tragen",
+      "lemma": "tragen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "tragen",
+        "praes_ich": "trage",
+        "praes_du": "trägst",
+        "praes_er_sie_es": "trägt",
+        "praes_wir": "tragen",
+        "praes_ihr": "tragt",
+        "praes_sie_Sie": "tragen",
+        "imp_du": "trag",
+        "imp_ihr": "tragt"
+      },
+      "frequenzRang": 282,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.gefallen",
+      "lemma": "gefallen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "gefallen",
+        "praes_ich": "gefalle",
+        "praes_du": "gefällst",
+        "praes_er_sie_es": "gefällt",
+        "praes_wir": "gefallen",
+        "praes_ihr": "gefallt",
+        "praes_sie_Sie": "gefallen"
+      },
+      "frequenzRang": 359,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.passen",
+      "lemma": "passen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "passen",
+        "praes_ich": "passe",
+        "praes_du": "passt",
+        "praes_er_sie_es": "passt",
+        "praes_wir": "passen",
+        "praes_ihr": "passt",
+        "praes_sie_Sie": "passen"
+      },
+      "frequenzRang": 449,
+      "quelle": "wiktionary:de:passen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚passen‘ (https://de.wiktionary.org/wiki/passen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.gehoeren",
+      "lemma": "gehören",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "gehören",
+        "praes_ich": "gehöre",
+        "praes_du": "gehörst",
+        "praes_er_sie_es": "gehört",
+        "praes_wir": "gehören",
+        "praes_ihr": "gehört",
+        "praes_sie_Sie": "gehören"
+      },
+      "frequenzRang": 513,
+      "quelle": "wiktionary:de:gehören",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gehören‘ (https://de.wiktionary.org/wiki/gehören), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.regnen",
+      "lemma": "regnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unpersoenlich": "nur 3. Person: es regnet"
+      },
+      "formen": {
+        "infinitiv": "regnen",
+        "praes_es": "regnet"
+      },
+      "frequenzRang": 3868,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.scheinen",
+      "lemma": "scheinen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "scheinen",
+        "praes_ich": "scheine",
+        "praes_du": "scheinst",
+        "praes_er_sie_es": "scheint",
+        "praes_wir": "scheinen",
+        "praes_ihr": "scheint",
+        "praes_sie_Sie": "scheinen"
+      },
+      "frequenzRang": 293,
+      "quelle": "wiktionary:de:scheinen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚scheinen‘ (https://de.wiktionary.org/wiki/scheinen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.fallen",
+      "lemma": "fallen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "fallen",
+        "praes_ich": "falle",
+        "praes_du": "fällst",
+        "praes_er_sie_es": "fällt",
+        "praes_wir": "fallen",
+        "praes_ihr": "fallt",
+        "praes_sie_Sie": "fallen"
+      },
+      "frequenzRang": 269,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.vergessen",
+      "lemma": "vergessen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "vergessen",
+        "praes_ich": "vergesse",
+        "praes_du": "vergisst",
+        "praes_er_sie_es": "vergisst",
+        "praes_wir": "vergessen",
+        "praes_ihr": "vergesst",
+        "praes_sie_Sie": "vergessen",
+        "imp_du": "vergiss",
+        "imp_ihr": "vergesst"
+      },
+      "frequenzRang": 411,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.denken",
+      "lemma": "denken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "denken",
+        "praes_ich": "denke",
+        "praes_du": "denkst",
+        "praes_er_sie_es": "denkt",
+        "praes_wir": "denken",
+        "praes_ihr": "denkt",
+        "praes_sie_Sie": "denken",
+        "imp_du": "denk",
+        "imp_ihr": "denkt"
+      },
+      "frequenzRang": 182,
+      "quelle": "wiktionary:de:denken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚denken‘ (https://de.wiktionary.org/wiki/denken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.meinen",
+      "lemma": "meinen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "meinen",
+        "praes_ich": "meine",
+        "praes_du": "meinst",
+        "praes_er_sie_es": "meint",
+        "praes_wir": "meinen",
+        "praes_ihr": "meint",
+        "praes_sie_Sie": "meinen",
+        "imp_du": "mein",
+        "imp_ihr": "meint"
+      },
+      "frequenzRang": 279,
+      "quelle": "wiktionary:de:meinen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚meinen‘ (https://de.wiktionary.org/wiki/meinen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.schauen",
+      "lemma": "schauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schauen",
+        "praes_ich": "schaue",
+        "praes_du": "schaust",
+        "praes_er_sie_es": "schaut",
+        "praes_wir": "schauen",
+        "praes_ihr": "schaut",
+        "praes_sie_Sie": "schauen",
+        "imp_du": "schau",
+        "imp_ihr": "schaut"
+      },
+      "frequenzRang": 428,
+      "quelle": "wiktionary:de:schauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schauen‘ (https://de.wiktionary.org/wiki/schauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.vielleicht",
+      "lemma": "vielleicht",
+      "wortart": "adverb",
+      "frequenzRang": 135,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.wahrscheinlich",
+      "lemma": "wahrscheinlich",
+      "wortart": "adverb",
+      "frequenzRang": 528,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.bestimmt",
+      "lemma": "bestimmt",
+      "wortart": "adverb",
+      "frequenzRang": 236,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.fruehling",
+      "lemma": "Frühling",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Frühlinge"
+      },
+      "formen": {
+        "pl": "Frühlinge",
+        "dat_pl": "Frühlingen"
+      },
+      "frequenzRang": 3290,
+      "quelle": "wiktionary:de:Frühling",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frühling‘ (https://de.wiktionary.org/wiki/Frühling), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.winter",
+      "lemma": "Winter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Winter"
+      },
+      "formen": {
+        "dat_pl": "Wintern"
+      },
+      "frequenzRang": 1035,
+      "quelle": "wiktionary:de:Winter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Winter‘ (https://de.wiktionary.org/wiki/Winter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.raus",
+      "lemma": "raus",
+      "wortart": "adverb",
+      "frequenzRang": 457,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.echt",
+      "lemma": "echt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "echte",
+        "endung_en": "echten",
+        "endung_er": "echter",
+        "endung_es": "echtes",
+        "endung_em": "echtem"
+      },
+      "frequenzRang": 215,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.egal",
+      "lemma": "egal",
+      "wortart": "adjektiv",
+      "frequenzRang": 373,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.anders",
+      "lemma": "anders",
+      "wortart": "adverb",
+      "frequenzRang": 324,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.herbst",
+      "lemma": "Herbst",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Herbste"
+      },
+      "formen": {
+        "pl": "Herbste",
+        "dat_pl": "Herbsten"
+      },
+      "frequenzRang": 1264,
+      "quelle": "wiktionary:de:Herbst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herbst‘ (https://de.wiktionary.org/wiki/Herbst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.verschieden",
+      "lemma": "verschieden",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "verschiedene",
+        "endung_en": "verschiedenen",
+        "endung_er": "verschiedener",
+        "endung_es": "verschiedenes",
+        "endung_em": "verschiedenem"
+      },
+      "frequenzRang": 246,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.kurz",
+      "lemma": "kurz",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kurze",
+        "endung_en": "kurzen",
+        "endung_er": "kurzer",
+        "endung_es": "kurzes",
+        "endung_em": "kurzem"
+      },
+      "frequenzRang": 164,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.sache",
+      "lemma": "Sache",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sachen"
+      },
+      "formen": {
+        "pl": "Sachen"
+      },
+      "frequenzRang": 239,
+      "quelle": "wiktionary:de:Sache",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sache‘ (https://de.wiktionary.org/wiki/Sache), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.jacke",
+      "lemma": "Jacke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Jacken"
+      },
+      "formen": {
+        "pl": "Jacken"
+      },
+      "frequenzRang": 3010,
+      "quelle": "wiktionary:de:Jacke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Jacke‘ (https://de.wiktionary.org/wiki/Jacke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.hose",
+      "lemma": "Hose",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hosen"
+      },
+      "formen": {
+        "pl": "Hosen"
+      },
+      "frequenzRang": 2369,
+      "quelle": "wiktionary:de:Hose",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hose‘ (https://de.wiktionary.org/wiki/Hose), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.kleid",
+      "lemma": "Kleid",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kleider"
+      },
+      "formen": {
+        "pl": "Kleider",
+        "dat_pl": "Kleidern"
+      },
+      "frequenzRang": 1915,
+      "quelle": "wiktionary:de:Kleid",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kleid‘ (https://de.wiktionary.org/wiki/Kleid), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.pullover",
+      "lemma": "Pullover",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Pullover"
+      },
+      "formen": {
+        "dat_pl": "Pullovern"
+      },
+      "frequenzRang": 7869,
+      "quelle": "wiktionary:de:Pullover",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Pullover‘ (https://de.wiktionary.org/wiki/Pullover), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.schuh",
+      "lemma": "Schuh",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schuhe"
+      },
+      "formen": {
+        "pl": "Schuhe",
+        "dat_pl": "Schuhen"
+      },
+      "frequenzRang": 1311,
+      "quelle": "wiktionary:de:Schuh",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schuh‘ (https://de.wiktionary.org/wiki/Schuh), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.farbe",
+      "lemma": "Farbe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Farben"
+      },
+      "formen": {
+        "pl": "Farben"
+      },
+      "frequenzRang": 804,
+      "quelle": "wiktionary:de:Farbe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Farbe‘ (https://de.wiktionary.org/wiki/Farbe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.rot",
+      "lemma": "rot",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "rote",
+        "endung_en": "roten",
+        "endung_er": "roter",
+        "endung_es": "rotes",
+        "endung_em": "rotem"
+      },
+      "frequenzRang": 348,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.blau",
+      "lemma": "blau",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "blaue",
+        "endung_en": "blauen",
+        "endung_er": "blauer",
+        "endung_es": "blaues",
+        "endung_em": "blauem"
+      },
+      "frequenzRang": 949,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.gruen",
+      "lemma": "grün",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "grüne",
+        "endung_en": "grünen",
+        "endung_er": "grüner",
+        "endung_es": "grünes",
+        "endung_em": "grünem"
+      },
+      "frequenzRang": 543,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.gelb",
+      "lemma": "gelb",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gelbe",
+        "endung_en": "gelben",
+        "endung_er": "gelber",
+        "endung_es": "gelbes",
+        "endung_em": "gelbem"
+      },
+      "frequenzRang": 1128,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.schwarz",
+      "lemma": "schwarz",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schwarze",
+        "endung_en": "schwarzen",
+        "endung_er": "schwarzer",
+        "endung_es": "schwarzes",
+        "endung_em": "schwarzem"
+      },
+      "frequenzRang": 292,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.weiss",
+      "lemma": "weiß",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "weiße",
+        "endung_en": "weißen",
+        "endung_er": "weißer",
+        "endung_es": "weißes",
+        "endung_em": "weißem"
+      },
+      "frequenzRang": 934,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.wetter",
+      "lemma": "Wetter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 11433,
+      "quelle": "wiktionary:de:Wetter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wetter‘ (https://de.wiktionary.org/wiki/Wetter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.sonne",
+      "lemma": "Sonne",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Sonnen"
+      },
+      "formen": {
+        "pl": "Sonnen"
+      },
+      "frequenzRang": 1019,
+      "quelle": "wiktionary:de:Sonne",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sonne‘ (https://de.wiktionary.org/wiki/Sonne), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.regen",
+      "lemma": "Regen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 1215,
+      "quelle": "wiktionary:de:Regen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regen‘ (https://de.wiktionary.org/wiki/Regen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.schnee",
+      "lemma": "Schnee",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2316,
+      "quelle": "wiktionary:de:Schnee",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schnee‘ (https://de.wiktionary.org/wiki/Schnee), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.wind",
+      "lemma": "Wind",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Winde"
+      },
+      "formen": {
+        "pl": "Winde",
+        "dat_pl": "Winden"
+      },
+      "frequenzRang": 1279,
+      "quelle": "wiktionary:de:Wind",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wind‘ (https://de.wiktionary.org/wiki/Wind), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.warm",
+      "lemma": "warm",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "warme",
+        "endung_en": "warmen",
+        "endung_er": "warmer",
+        "endung_es": "warmes",
+        "endung_em": "warmem"
+      },
+      "frequenzRang": 1070,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.kalt",
+      "lemma": "kalt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kalte",
+        "endung_en": "kalten",
+        "endung_er": "kalter",
+        "endung_es": "kaltes",
+        "endung_em": "kaltem"
+      },
+      "frequenzRang": 919,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.sommer",
+      "lemma": "Sommer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Sommer"
+      },
+      "formen": {
+        "dat_pl": "Sommern"
+      },
+      "frequenzRang": 604,
+      "quelle": "wiktionary:de:Sommer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sommer‘ (https://de.wiktionary.org/wiki/Sommer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.grad",
+      "lemma": "Grad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Grad"
+      },
+      "frequenzRang": 514,
+      "quelle": "wiktionary:de:Grad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Grad‘ (https://de.wiktionary.org/wiki/Grad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e10.s0001",
+      "text": "Was ziehst du heute an?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0002",
+      "text": "Ich trage heute einen Pullover.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0003",
+      "text": "Ich ziehe meine Jacke an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0004",
+      "text": "Die Hose ist neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0005",
+      "text": "Deine Sachen liegen im Schrank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0006",
+      "text": "Wo sind meine Schuhe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0007",
+      "text": "Jan trägt eine Hose und einen Pullover.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0008",
+      "text": "Wo ist deine Jacke?",
+      "quelle": "tatoeba:3078828",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3078828 von hsuan07 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0009",
+      "text": "Meine Jacke ist oben im Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0010",
+      "text": "Der Pullover ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0011",
+      "text": "Die Kinder ziehen ihre Schuhe an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0012",
+      "text": "Zieh die Jacke an, wir gehen raus!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0013",
+      "text": "Ich trage einen Pullover und eine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0014",
+      "text": "Das ist meine Hose.",
+      "quelle": "tatoeba:394349",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #394349 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0015",
+      "text": "Zieh deine Schuhe aus.",
+      "quelle": "tatoeba:360300",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #360300 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0016",
+      "text": "Elif trägt heute ein neues Kleid.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0017",
+      "text": "Das Kleid ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0018",
+      "text": "Papa zieht einen warmen Pullover an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0019",
+      "text": "Wo sind meine Sachen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0020",
+      "text": "Welche Farbe hat deine Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0021",
+      "text": "Meine Jacke ist rot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0022",
+      "text": "Die Hose ist blau.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0023",
+      "text": "Meine Schuhe sind schwarz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0024",
+      "text": "Das Kleid von Elif ist grün.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0025",
+      "text": "Die Sonne ist gelb.",
+      "quelle": "tatoeba:5257962",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5257962 von bonny37 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0026",
+      "text": "Bananen sind gelb.",
+      "quelle": "tatoeba:2417889",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2417889 von ieflicca (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0027",
+      "text": "Gefällt dir die Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0028",
+      "text": "Ja, sie gefällt mir sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0029",
+      "text": "Das gefällt mir.",
+      "quelle": "tatoeba:1358067",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1358067 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0030",
+      "text": "Das gefällt mir nicht.",
+      "quelle": "tatoeba:2291719",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2291719 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0031",
+      "text": "Diese Farbe gefällt mir.",
+      "quelle": "tatoeba:3404212",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3404212 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0032",
+      "text": "Ich nehme diese rote Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0033",
+      "text": "Welcher Pullover gefällt dir?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0034",
+      "text": "Der blaue gefällt mir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0035",
+      "text": "Welche Farbe hat die Sonne?",
+      "quelle": "tatoeba:3325960",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3325960 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0036",
+      "text": "Welche Farbe hat Schnee?",
+      "quelle": "tatoeba:11623276",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11623276 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0037",
+      "text": "Wie findest du die Hose?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0038",
+      "text": "Ich finde die Farbe sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0039",
+      "text": "Meine Tasche ist gelb.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0040",
+      "text": "Mein Fahrrad ist rot.",
+      "quelle": "tatoeba:8309032",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8309032 von Gulo_Luscus (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0041",
+      "text": "Ich suche eine Jacke in Blau.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0042",
+      "text": "Wie ist das Wetter?",
+      "quelle": "tatoeba:6068",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6068 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0043",
+      "text": "Wie ist das Wetter bei euch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0044",
+      "text": "Es regnet.",
+      "quelle": "tatoeba:673",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #673 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0045",
+      "text": "Es ist kalt.",
+      "quelle": "tatoeba:623",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #623 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0046",
+      "text": "Heute ist es kalt.",
+      "quelle": "tatoeba:352999",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #352999 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0047",
+      "text": "Heute scheint die Sonne.",
+      "quelle": "tatoeba:1400433",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1400433 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0048",
+      "text": "Es regnet, und es ist kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0049",
+      "text": "Heute regnet es nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0050",
+      "text": "Die Sonne scheint, es ist warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0051",
+      "text": "Regnet es noch?",
+      "quelle": "tatoeba:752459",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #752459 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0052",
+      "text": "Nein, jetzt scheint die Sonne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0053",
+      "text": "Es sind nur zwei Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0054",
+      "text": "Heute sind es zwanzig Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0055",
+      "text": "Mir ist kalt.",
+      "quelle": "tatoeba:469788",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #469788 von mamat (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0056",
+      "text": "Im Winter fällt hier viel Schnee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0057",
+      "text": "Ist dir kalt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0058",
+      "text": "Ja, ich brauche meine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0059",
+      "text": "Draußen ist es sehr kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0060",
+      "text": "Heute gibt es keinen Wind.",
+      "quelle": "tatoeba:372584",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #372584 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0061",
+      "text": "Ich mag keinen Regen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0062",
+      "text": "Der Wind ist heute sehr kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0063",
+      "text": "Es regnet nicht mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0064",
+      "text": "Wie warm ist es heute?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0065",
+      "text": "Heute ist es kalt, ich trage eine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0066",
+      "text": "Schönes Wetter, oder?",
+      "quelle": "tatoeba:454774",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #454774 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0067",
+      "text": "Der Frühling ist da.",
+      "quelle": "tatoeba:439593",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #439593 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0068",
+      "text": "Nach dem Winter kommt der Frühling.",
+      "quelle": "tatoeba:642595",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #642595 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0069",
+      "text": "Im Frühling regnet es hier viel.",
+      "quelle": "tatoeba:5984008",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5984008 von arved (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0070",
+      "text": "Ich mag keinen Winter.",
+      "quelle": "tatoeba:6910228",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6910228 von ruth_tatoeba (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0071",
+      "text": "Vielleicht regnet es morgen.",
+      "quelle": "tatoeba:973801",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #973801 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e10.s0072",
+      "text": "Im Herbst gibt es viel Wind.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0073",
+      "text": "Im Winter gibt es manchmal Schnee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0074",
+      "text": "Im Sommer sind die Tage lang.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0075",
+      "text": "Im Winter sind die Tage kurz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0076",
+      "text": "Morgen regnet es wahrscheinlich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0077",
+      "text": "Am Samstag ist es bestimmt warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0078",
+      "text": "Was meinst du, regnet es heute?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0079",
+      "text": "Ja, wahrscheinlich am Nachmittag.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0080",
+      "text": "Schau mal raus, es fällt Schnee!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0081",
+      "text": "Echt? Dann ziehe ich meinen Pullover an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0082",
+      "text": "Vergiss deine Jacke nicht!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0083",
+      "text": "Ich vergesse oft meine Sachen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0084",
+      "text": "Ich gehe nur kurz raus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0085",
+      "text": "Im Sommer trage ich keine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0086",
+      "text": "Bei Regen ziehe ich eine Jacke an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0087",
+      "text": "Gibt es heute Schnee?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0088",
+      "text": "Morgen gibt es wahrscheinlich Regen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0089",
+      "text": "Ich denke, es regnet heute nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0090",
+      "text": "Ich meine, du brauchst eine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0091",
+      "text": "Das Wetter in Wetzlar",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0092",
+      "text": "Am Freitag regnet es viel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0093",
+      "text": "Es ist kalt, nur sieben Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0094",
+      "text": "Am Samstag scheint die Sonne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0095",
+      "text": "Es ist schön, etwa zwölf Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0096",
+      "text": "Am Sonntag gibt es viel Wind.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0097",
+      "text": "Am Abend fällt vielleicht Schnee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0098",
+      "text": "Am Freitag scheint die Sonne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0099",
+      "text": "Am Samstag ist das Wetter schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0100",
+      "text": "Am Montag ist es warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0101",
+      "text": "Wie viel Grad sind es am Freitag?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0102",
+      "text": "Es sind sieben Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0103",
+      "text": "Es sind zwölf Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0104",
+      "text": "Es sind zwei Grad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0105",
+      "text": "Passt die Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0106",
+      "text": "Ja, sie passt gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0107",
+      "text": "Nein, sie passt mir nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0108",
+      "text": "Nein, die Jacke ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0109",
+      "text": "Haben Sie eine andere Größe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0110",
+      "text": "Wem gehört die Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0111",
+      "text": "Die Jacke gehört mir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0112",
+      "text": "Gehört der Pullover dir?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0113",
+      "text": "Nein, das ist der Pullover von Emre.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0114",
+      "text": "Beide Jacken sind schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0115",
+      "text": "Ich nehme beide.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0116",
+      "text": "Der Pullover ist schön. Ich nehme ihn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0117",
+      "text": "Die Hose ist zu teuer. Ich nehme sie nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0118",
+      "text": "Das Kleid ist schön. Ich kaufe es.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0119",
+      "text": "In Blau sieht sie ganz anders aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0120",
+      "text": "Die Pullover haben verschiedene Farben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0121",
+      "text": "Die Jacke ist echt warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0122",
+      "text": "Die Farbe ist mir egal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0123",
+      "text": "Rot oder Blau? Was nimmst du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0124",
+      "text": "Die Jacke ist schön, aber zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0125",
+      "text": "Haben Sie die Jacke eine Nummer kleiner?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0126",
+      "text": "Elif sucht ihre Jacke",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0127",
+      "text": "Heute regnet es, und es ist kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0128",
+      "text": "Elif will raus, aber wo ist ihre Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0129",
+      "text": "Oma, wo ist meine Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0130",
+      "text": "Ich weiß es nicht. Schau mal oben!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0131",
+      "text": "Oben ist die Jacke auch nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0132",
+      "text": "Hier ist deine Jacke! Sie liegt auf dem Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0133",
+      "text": "Danke, Emre! Und was mache ich bei Regen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0134",
+      "text": "Nimm meinen Regenschirm, der ist echt groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0135",
+      "text": "Oma Sevim strickt einen warmen Schal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0136",
+      "text": "Der rote Schal ist für dich, Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0137",
+      "text": "Oh, der gefällt mir sehr! Danke, Oma!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0138",
+      "text": "Im Winter brauchst du ihn.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0139",
+      "text": "Elif zieht die Jacke und den Schal an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0140",
+      "text": "Tschüss! Jetzt ist mir warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0141",
+      "text": "Wie ist das Wetter heute?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0142",
+      "text": "Wo liegt die Jacke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0143",
+      "text": "Die Jacke liegt auf dem Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0144",
+      "text": "Die Jacke liegt im Schrank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0145",
+      "text": "Die Jacke liegt oben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0146",
+      "text": "Welche Farbe hat der Schal?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0147",
+      "text": "Der Schal ist rot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0148",
+      "text": "Der Schal ist blau.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0149",
+      "text": "Der Schal ist grün.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0150",
+      "text": "Eine Jacke für den Winter",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0151",
+      "text": "Es ist kalt. Ḫālid und Laylā sind im Kaufhaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0152",
+      "text": "Laylā braucht eine warme Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0153",
+      "text": "Welche Jacke gefällt dir, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0154",
+      "text": "Die rote hier! Sie ist echt schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0155",
+      "text": "Zieh sie mal an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0156",
+      "text": "Laylā zieht die rote Jacke an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0157",
+      "text": "Hm, ich denke, sie ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0158",
+      "text": "Ja, sie passt mir nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0159",
+      "text": "Leider nicht. Aber wir haben sie in Blau.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0160",
+      "text": "Blau gefällt mir auch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0161",
+      "text": "Die blaue Jacke passt gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0162",
+      "text": "Sie ist warm und nicht zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0163",
+      "text": "Danke, Papa! Diese Jacke nehme ich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0164",
+      "text": "Welche Jacke findet Laylā schön?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0165",
+      "text": "Die rote Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0166",
+      "text": "Die blaue Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0167",
+      "text": "Die schwarze Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0168",
+      "text": "Warum passt die rote Jacke nicht?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0169",
+      "text": "Die Jacke ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0170",
+      "text": "Die Jacke ist zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0171",
+      "text": "Die Jacke ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0172",
+      "text": "Welche Jacke nimmt Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0173",
+      "text": "Sie nimmt die blaue Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0174",
+      "text": "Sie nimmt die rote Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0175",
+      "text": "Sie nimmt beide Jacken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0176",
+      "text": "Ich trage gern schwarze Schuhe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0177",
+      "text": "Wie ist das Wetter morgen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0178",
+      "text": "Morgen scheint wahrscheinlich die Sonne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0179",
+      "text": "Nur drei Grad? Das ist kalt!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0180",
+      "text": "Im Herbst brauche ich eine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0181",
+      "text": "Im Frühling ist es oft warm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0182",
+      "text": "Im Sommer scheint oft die Sonne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0183",
+      "text": "Emre vergisst immer seine Schuhe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0184",
+      "text": "Beide Farben gefallen mir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0185",
+      "text": "Ich nehme eine andere Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0186",
+      "text": "Das Wetter ist mir egal.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0187",
+      "text": "Was denkst du, welche Farbe passt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0188",
+      "text": "Grün passt gut zu dir.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0189",
+      "text": "Heute ist es echt kalt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0190",
+      "text": "Bei Wind trage ich eine warme Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0191",
+      "text": "Meinst du die rote oder die blaue?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0192",
+      "text": "Ich meine die rote Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0193",
+      "text": "Paula trägt ein gelbes Kleid.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0194",
+      "text": "Am Abend kommt der Regen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0195",
+      "text": "Bei Sonne trage ich keine Jacke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0196",
+      "text": "Ich suche eine Hose in Schwarz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0197",
+      "text": "Was trägt Max heute?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0198",
+      "text": "Max trägt eine blaue Hose.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0199",
+      "text": "Gefällt dir das Kleid?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0200",
+      "text": "Ja, die Farbe ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0201",
+      "text": "Morgen fällt vielleicht Schnee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0202",
+      "text": "Gehören die Schuhe dir?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0203",
+      "text": "Ja, das sind meine Schuhe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0204",
+      "text": "Im Herbst regnet es oft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0205",
+      "text": "Welche Größe brauchen Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e10.s0206",
+      "text": "Heute regnet es, ich ziehe eine Jacke an.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e10.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Kleidung benennen und sagen, was ich anziehe.",
+        "tr": "Giysileri adlandırabilir ve ne giydiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي الملابس وأن أقول ماذا ألبس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.jacke",
+          "ablenker": ["de.a1.e10.hose", "de.a1.e10.pullover"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.anziehen",
+          "ablenker": ["de.a1.e04.gehen", "de.a1.e06.kaufen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e10.jacke", "de.a1.e10.hose", "de.a1.e10.kleid", "de.a1.e10.pullover", "de.a1.e10.schuh", "de.a1.e03.schrank"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e10.tragen",
+          "ablenker": ["de.a1.e08.spielen", "de.a1.e05.holen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0003",
+          "ablenker": ["de.a1.e10.s0004", "de.a1.e10.s0018"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0019"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0005"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0001"
+            }
+          ],
+          "antwort": "de.a1.e10.s0002",
+          "ablenker": ["de.a1.e10.s0006", "de.a1.e10.s0025"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0003",
+          "wort": 1,
+          "ablenker": ["ziehst", "zieht"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0007",
+          "nach": "ziel",
+          "alternativen": ["Jan trägt einen Pullover und eine Hose."],
+          "ablenker": ["trägst", "Kleid"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.raus",
+          "ablenker": ["de.a1.e03.oben", "de.a1.e03.hier"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0008"
+            }
+          ],
+          "antwort": "de.a1.e10.s0009",
+          "ablenker": ["de.a1.e10.s0010", "de.a1.e10.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0011",
+          "wort": 4,
+          "ablenker": ["Schuh", "Schuhen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.tragen",
+          "ablenker": ["de.a1.e07.fragen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0012",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0013"
+        },
+        {
+          "schluessel": "de.a1.e10.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e10.s0016"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann die Farbe von Kleidung nennen und sagen, was mir gefällt.",
+        "tr": "Giysilerin rengini söyleyebilir ve neyi beğendiğimi ifade edebilirim.",
+        "ar": "أستطيع أن أذكر لون الملابس وأن أقول ما يعجبني."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.farbe",
+          "ablenker": ["de.a1.e03.bild", "de.a1.e03.lampe"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e10.rot", "de.a1.e10.blau", "de.a1.e10.gruen", "de.a1.e10.gelb", "de.a1.e10.schwarz", "de.a1.e10.weiss"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0021",
+          "ablenker": ["de.a1.e10.s0022", "de.a1.e10.s0023"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0022",
+          "wort": 3,
+          "ablenker": ["blaue", "blauen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0020"
+            }
+          ],
+          "antwort": "de.a1.e10.s0021",
+          "ablenker": ["de.a1.e10.s0017", "de.a1.e10.s0040"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.gefallen",
+          "ablenker": ["de.a1.e06.kosten", "de.a1.e03.suchen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0029",
+          "ablenker": ["de.a1.e10.s0030", "de.a1.e10.s0031"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0027"
+            }
+          ],
+          "antwort": "de.a1.e10.s0028",
+          "ablenker": ["de.a1.e10.s0026", "de.a1.e10.s0035"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.welcher",
+          "ablenker": ["de.a1.e10.dieser", "de.a1.e01.wer"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0032",
+          "nach": "ziel",
+          "alternativen": ["Diese rote Jacke nehme ich."],
+          "ablenker": ["dieser", "roten"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0033"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0034"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0037"
+            }
+          ],
+          "antwort": "de.a1.e10.s0038",
+          "ablenker": ["de.a1.e10.s0039", "de.a1.e10.s0036"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.gelb",
+          "ablenker": ["de.a1.e06.geld"]
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e10.s0024"
+        },
+        {
+          "schluessel": "de.a1.e10.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0041"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wie das Wetter ist.",
+        "tr": "Havanın nasıl olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف هو الطقس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.wetter",
+          "ablenker": ["de.a1.e04.zeit", "de.a1.e01.tag"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e10.sonne", "de.a1.e10.regen", "de.a1.e10.schnee", "de.a1.e10.wind", "de.a1.e10.warm", "de.a1.e10.kalt"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0044",
+          "ablenker": ["de.a1.e10.s0045", "de.a1.e10.s0047"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0042"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0048"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0064"
+            }
+          ],
+          "antwort": "de.a1.e10.s0053",
+          "ablenker": ["de.a1.e10.s0066", "de.a1.e10.s0002"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0049",
+          "wort": 2,
+          "ablenker": ["er", "sie"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.scheinen",
+          "ablenker": ["de.a1.e10.fallen", "de.a1.e08.laufen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0050",
+          "nach": "ziel",
+          "alternativen": ["Es ist warm, die Sonne scheint."],
+          "ablenker": ["kalt", "scheinst"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0051"
+            }
+          ],
+          "antwort": "de.a1.e10.s0052",
+          "ablenker": ["de.a1.e10.s0028", "de.a1.e10.s0022"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e10.grad",
+          "ablenker": ["de.a1.e04.minute", "de.a1.e04.uhr"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0053",
+          "ablenker": ["de.a1.e10.s0054", "de.a1.e10.s0055"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0056",
+          "wort": 2,
+          "ablenker": ["fallen", "fällst"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0057"
+            }
+          ],
+          "antwort": "de.a1.e10.s0058",
+          "ablenker": ["de.a1.e10.s0024", "de.a1.e10.s0014"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.wind",
+          "ablenker": ["de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0059",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0065"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über die Jahreszeiten sprechen und sagen, wie das Wetter morgen vielleicht ist.",
+        "tr": "Mevsimler hakkında konuşabilir ve yarın havanın belki nasıl olacağını söyleyebilirim.",
+        "ar": "أستطيع أن أتحدث عن فصول السنة وأن أقول كيف قد يكون الطقس غدًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.winter",
+          "ablenker": ["de.a1.e10.sommer", "de.a1.e10.herbst"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e10.fruehling",
+            "de.a1.e10.sommer",
+            "de.a1.e10.herbst",
+            "de.a1.e10.winter",
+            "de.a1.e10.vergessen",
+            "de.a1.e10.schauen"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.vielleicht",
+          "ablenker": ["de.a1.e10.bestimmt", "de.a1.e01.ja"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0075",
+          "ablenker": ["de.a1.e10.s0074", "de.a1.e10.s0073"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0078"
+            }
+          ],
+          "antwort": "de.a1.e10.s0079",
+          "ablenker": ["de.a1.e10.s0083", "de.a1.e10.s0024"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0082",
+          "wort": 0,
+          "ablenker": ["Vergesse", "Vergessen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e10.s0091",
+          "absaetze": ["de.a1.e10.s0092", "de.a1.e10.s0093", "de.a1.e10.s0094", "de.a1.e10.s0095", "de.a1.e10.s0096", "de.a1.e10.s0097"],
+          "glossen": ["de.a1.e10.grad", "de.a1.e10.wind", "de.a1.e10.schnee", "de.a1.e10.vielleicht"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e10.s0098",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e10.s0099",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e10.s0100",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e10.s0101",
+              "antwort": "de.a1.e10.s0102",
+              "ablenker": ["de.a1.e10.s0103", "de.a1.e10.s0104"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e10.denken",
+          "ablenker": ["de.a1.e07.sagen", "de.a1.e05.lieben"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0077",
+          "nach": "ziel",
+          "alternativen": ["Es ist am Samstag bestimmt warm.", "Bestimmt ist es am Samstag warm."],
+          "ablenker": ["kalt", "vielleicht"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0087"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0080"
+            }
+          ],
+          "antwort": "de.a1.e10.s0081",
+          "ablenker": ["de.a1.e10.s0085", "de.a1.e10.s0026"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0071",
+          "ablenker": ["de.a1.e10.s0077", "de.a1.e10.s0069"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.winter",
+          "ablenker": ["de.a1.e09.hinter"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0088",
+          "wort": 1,
+          "ablenker": ["ist", "geben"]
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0086"
+        },
+        {
+          "schluessel": "de.a1.e10.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e10.s0085"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann im Geschäft Kleidung nach Farbe und Größe aussuchen und sagen, wie ich sie finde.",
+        "tr": "Mağazada giysileri renge ve bedene göre seçebilir ve onları nasıl bulduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أختار الملابس في المتجر حسب اللون والمقاس وأن أقول رأيي فيها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.passen",
+          "ablenker": ["de.a1.e06.kosten", "de.a1.e05.nehmen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e10.andere", "de.a1.e10.beide", "de.a1.e10.egal", "de.a1.e10.echt", "de.a1.e10.gehoeren", "de.a1.e10.passen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0106",
+          "ablenker": ["de.a1.e10.s0107", "de.a1.e10.s0108"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0105"
+            }
+          ],
+          "antwort": "de.a1.e10.s0108",
+          "ablenker": ["de.a1.e10.s0111", "de.a1.e10.s0044"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0116",
+          "wort": 6,
+          "ablenker": ["sie", "es"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0117",
+          "wort": 7,
+          "ablenker": ["ihn", "es"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.gehoeren",
+          "ablenker": ["de.a1.e01.wohnen", "de.a1.e03.stehen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0112"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0113"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0110"
+            }
+          ],
+          "antwort": "de.a1.e10.s0111",
+          "ablenker": ["de.a1.e10.s0106", "de.a1.e10.s0022"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0109",
+          "nach": "ziel",
+          "ablenker": ["anderen", "Farbe"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e10.egal",
+          "ablenker": ["de.a1.e10.echt", "de.a1.e06.genau"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0123"
+            }
+          ],
+          "antwort": "de.a1.e10.s0122",
+          "ablenker": ["de.a1.e10.s0110", "de.a1.e10.s0051"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0114",
+          "ablenker": ["de.a1.e10.s0120", "de.a1.e10.s0119"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.echt",
+          "ablenker": ["de.a1.e07.recht"]
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0121",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0125"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine kurze Geschichte über Regen und Kälte und ein Gespräch beim Kleiderkauf verstehen.",
+        "tr": "Yağmur ve soğuk hakkında kısa bir hikâyeyi ve giysi alışverişindeki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة قصيرة عن المطر والبرد وحوارًا عند شراء الملابس."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e10.s0126",
+          "zeilen": [
+            {
+              "satz": "de.a1.e10.s0127"
+            },
+            {
+              "satz": "de.a1.e10.s0128"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0129"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e10.s0130"
+            },
+            {
+              "satz": "de.a1.e10.s0131"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0132"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0133"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0134"
+            },
+            {
+              "satz": "de.a1.e10.s0135"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e10.s0136"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0137"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e10.s0138"
+            },
+            {
+              "satz": "de.a1.e10.s0139"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0140"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e10.s0141",
+              "antwort": "de.a1.e10.s0048",
+              "ablenker": ["de.a1.e10.s0050", "de.a1.e10.s0054"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.a1.e10.s0142",
+              "antwort": "de.a1.e10.s0143",
+              "ablenker": ["de.a1.e10.s0144", "de.a1.e10.s0145"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e10.s0146",
+              "antwort": "de.a1.e10.s0147",
+              "ablenker": ["de.a1.e10.s0148", "de.a1.e10.s0149"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0135",
+          "wort": 3,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0129"
+            }
+          ],
+          "antwort": "de.a1.e10.s0132",
+          "ablenker": ["de.a1.e10.s0002", "de.a1.e10.s0054"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0134",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0138",
+          "ablenker": ["de.a1.e10.s0140", "de.a1.e10.s0131"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a1.e10.s0150",
+          "zeilen": [
+            {
+              "satz": "de.a1.e10.s0151"
+            },
+            {
+              "satz": "de.a1.e10.s0152"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0153"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0154"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0155"
+            },
+            {
+              "satz": "de.a1.e10.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0157"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0158"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0125"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e10.s0159"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0160"
+            },
+            {
+              "satz": "de.a1.e10.s0161"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0163"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a1.e10.s0164",
+              "antwort": "de.a1.e10.s0165",
+              "ablenker": ["de.a1.e10.s0166", "de.a1.e10.s0167"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e10.s0168",
+              "antwort": "de.a1.e10.s0169",
+              "ablenker": ["de.a1.e10.s0170", "de.a1.e10.s0171"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e10.s0172",
+              "antwort": "de.a1.e10.s0173",
+              "ablenker": ["de.a1.e10.s0174", "de.a1.e10.s0175"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0153"
+            }
+          ],
+          "antwort": "de.a1.e10.s0154",
+          "ablenker": ["de.a1.e10.s0053", "de.a1.e10.s0072"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0156",
+          "wort": 3,
+          "ablenker": ["rot", "roten"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0157",
+          "ablenker": ["de.a1.e10.s0106", "de.a1.e10.s0160"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0163",
+          "nach": "ziel",
+          "alternativen": ["Danke, Papa! Ich nehme diese Jacke."],
+          "ablenker": ["Dieser", "nimmst"]
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a11",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0162"
+        },
+        {
+          "schluessel": "de.a1.e10.l06.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e10.s0161"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole Kleidung, Farben, Wetter und Jahreszeiten.",
+        "tr": "Giysileri, renkleri, havayı ve mevsimleri tekrar ediyorum.",
+        "ar": "أراجع الملابس والألوان والطقس وفصول السنة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.wahrscheinlich",
+          "ablenker": ["de.a1.e10.bestimmt", "de.a1.e05.natuerlich"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.meinen",
+          "ablenker": ["de.a1.e07.schreiben", "de.a1.e01.heissen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e10.sache", "de.a1.e10.kleid", "de.a1.e10.schuh", "de.a1.e10.farbe", "de.a1.e10.wetter", "de.a1.e10.grad"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0068",
+          "ablenker": ["de.a1.e10.s0067", "de.a1.e10.s0070"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0089",
+          "ablenker": ["de.a1.e10.s0076", "de.a1.e10.s0063"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0043"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0189"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0177"
+            }
+          ],
+          "antwort": "de.a1.e10.s0178",
+          "ablenker": ["de.a1.e10.s0193", "de.a1.e10.s0115"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0176",
+          "wort": 3,
+          "ablenker": ["schwarz", "schwarzen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0180",
+          "nach": "ziel",
+          "alternativen": ["Ich brauche im Herbst eine Jacke.", "Eine Jacke brauche ich im Herbst."],
+          "ablenker": ["Sommer", "brauchst"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.andere",
+          "ablenker": ["de.a1.e10.beide", "de.a1.e02.alle"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0187"
+            }
+          ],
+          "antwort": "de.a1.e10.s0188",
+          "ablenker": ["de.a1.e10.s0194", "de.a1.e10.s0062"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a11",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.kalt",
+          "ablenker": ["de.a1.e02.alt"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0090",
+          "wort": 1,
+          "ablenker": ["meinst", "meint"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0184",
+          "ablenker": ["de.a1.e10.s0185", "de.a1.e10.s0186"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.verschieden",
+          "ablenker": ["de.a1.e03.neu", "de.a1.e03.gross"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0183",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0124"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e10.s0191"
+            }
+          ],
+          "antwort": "de.a1.e10.s0192",
+          "ablenker": ["de.a1.e10.s0061", "de.a1.e10.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a17",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.rot",
+          "ablenker": ["de.a1.e05.brot"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.schauen",
+          "ablenker": ["de.a1.e07.hoeren", "de.a1.e08.spielen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0195"
+        },
+        {
+          "schluessel": "de.a1.e10.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e10.s0046"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e10.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich über Kleidung und Wetter sprechen und im Geschäft Kleidung aussuchen kann.",
+        "tr": "Giysiler ve hava hakkında konuşabildiğimi ve mağazada giysi seçebildiğimi gösteririm.",
+        "ar": "أُظهر أنني أستطيع أن أتحدث عن الملابس والطقس وأن أختار الملابس في المتجر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e10.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.kurz",
+          "ablenker": ["de.a1.e03.klein", "de.a1.e03.rund"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.regnen",
+          "ablenker": ["de.a1.e10.scheinen", "de.a1.e05.kochen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e10.fruehling",
+            "de.a1.e10.sommer",
+            "de.a1.e10.herbst",
+            "de.a1.e10.winter",
+            "de.a1.e10.regen",
+            "de.a1.e10.sonne"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e10.s0201",
+          "ablenker": ["de.a1.e10.s0204", "de.a1.e10.s0060"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0197"
+            }
+          ],
+          "antwort": "de.a1.e10.s0198",
+          "ablenker": ["de.a1.e10.s0204", "de.a1.e10.s0115"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0118",
+          "wort": 6,
+          "ablenker": ["ihn", "sie"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0196",
+          "nach": "ziel",
+          "ablenker": ["schwarze", "Jacke"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e10.anziehen",
+          "ablenker": ["de.a1.e05.essen", "de.a1.e07.lesen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0199"
+            }
+          ],
+          "antwort": "de.a1.e10.s0200",
+          "ablenker": ["de.a1.e10.s0194", "de.a1.e10.s0064"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e10.s0205",
+          "wort": 0,
+          "ablenker": ["Welcher", "Welches"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e10.s0181",
+          "ablenker": ["de.a1.e10.s0182", "de.a1.e10.s0180"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e10.regen",
+          "ablenker": ["de.a1.e03.legen"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e10.s0190",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e10.s0202"
+            }
+          ],
+          "antwort": "de.a1.e10.s0203",
+          "ablenker": ["de.a1.e10.s0205", "de.a1.e10.s0179"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e10.anders",
+          "ablenker": ["de.a1.e05.schnell", "de.a1.e03.ganz"]
+        },
+        {
+          "schluessel": "de.a1.e10.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e10.s0206"
+        }
+      ]
+    }
+  ]
+}
