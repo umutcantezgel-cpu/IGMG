@@ -113,6 +113,12 @@ export const routing = defineRouting({
       tr: '/hesabim/derslerim/[gruppe]/moderasyon',
       en: '/my-account/teaching/[gruppe]/moderation',
     },
+    // Lern-App der Gruppe (L7-02, PLAN §3.1): zuweisen, Gruppenziel, Bestenliste, Stand – nur mit `lernapp_gruppen`
+    '/mein-bereich/unterricht/[gruppe]/lern-app': {
+      de: '/mein-bereich/unterricht/[gruppe]/lern-app',
+      tr: '/hesabim/derslerim/[gruppe]/ogrenme-uygulamasi',
+      en: '/my-account/teaching/[gruppe]/learning-app',
+    },
     '/mein-bereich/gruppen/[id]': { de: '/mein-bereich/gruppen/[id]', tr: '/hesabim/gruplar/[id]', en: '/my-account/groups/[id]' },
     '/mein-bereich/gruppen/[id]/chat': {
       de: '/mein-bereich/gruppen/[id]/chat',

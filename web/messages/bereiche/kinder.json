@@ -186,7 +186,32 @@
           "kanal": "Elternkanal"
         },
         "fortschrittJetzt": "Aktuelle Stufe",
-        "wortlautUndWiderruf": "Wortlaut und Widerruf"
+        "wortlautUndWiderruf": "Wortlaut und Widerruf",
+        "lernapp": {
+          "titel": "Lern-App: Lernwoche",
+          "text": "XP, Lektionen und Lerntage dieser Woche – ohne Einzelergebnisse und ohne Vergleich mit anderen.",
+          "tabelle": "Lernwoche in der Lern-App",
+          "tag": "Tag",
+          "xp": "XP",
+          "lektionen": "Lektionen",
+          "pause": "Pausetag",
+          "summe": "Diese Woche: {xp} XP, {lektionen} Lektionen, {lerntage} Lerntage",
+          "keinKonto": "Ihr Kind hat noch keinen eigenen Zugang. Die Lern-App funktioniert auch ohne Konto; der Lernstand bleibt dann auf dem Gerät.",
+          "einwilligung": "Die Lernwoche erscheint hier, sobald Ihre Einwilligung „Lern-App“ gilt und die App Ihres Kindes mit seinem Zugang abgleicht.",
+          "selbst": "Ihr Kind ist 16 Jahre alt und entscheidet nun selbst über seine Lerndaten."
+        }
+      },
+      "familie": {
+        "titel": "Bestenliste der Familie in der Lern-App",
+        "text": "Freiwillig: Es erscheinen nur Familienmitglieder ab 16 Jahren, die selbst zugestimmt haben – mit Vorname, Initial und XP dieser Woche. Kinder unter 16 erscheinen nie und sehen sie nicht.",
+        "an": "eingeschaltet",
+        "aus": "ausgeschaltet",
+        "einschalten": "Bestenliste einschalten",
+        "ausschalten": "Bestenliste ausschalten",
+        "ok": {
+          "an": "Die Bestenliste der Familie ist eingeschaltet.",
+          "aus": "Die Bestenliste der Familie ist ausgeschaltet."
+        }
       }
     },
     "lernweg": {
@@ -245,6 +270,19 @@
           "erteilt": "Danke, deine Zustimmung ist gespeichert.",
           "widerrufen": "Deine Zustimmung ist zurückgenommen. Das gilt ab sofort."
         }
+      },
+      "lernapp": {
+        "titel": "Aufgaben in der Lern-App",
+        "text": "Das hat deine Lehrkraft dir zugewiesen.",
+        "ganze": "Ganze Einheit",
+        "lektion": "Lektion {nr}",
+        "faellig": "bis {datum}",
+        "erledigt": "erledigt",
+        "offen": "offen",
+        "oeffnen": "In der Lern-App öffnen",
+        "oeffnenAria": "In der Lern-App öffnen: {titel}",
+        "gruppe": "Alles zu deiner Gruppe in der Lern-App",
+        "hinweis": "Erledigt wird vermerkt, sobald die Lern-App mit deinem Konto abgeglichen hat."
       }
     }
   },
@@ -435,7 +473,32 @@
           "kanal": "Veli kanalı"
         },
         "fortschrittJetzt": "Şu anki seviye",
-        "wortlautUndWiderruf": "Onay metni ve geri alma"
+        "wortlautUndWiderruf": "Onay metni ve geri alma",
+        "lernapp": {
+          "titel": "Öğrenme Uygulaması: öğrenme haftası",
+          "text": "Bu haftanın XP'leri, dersleri ve öğrenme günleri – tek tek sonuçlar ve başkalarıyla karşılaştırma olmadan.",
+          "tabelle": "Öğrenme Uygulamasında öğrenme haftası",
+          "tag": "Gün",
+          "xp": "XP",
+          "lektionen": "Dersler",
+          "pause": "Ara günü",
+          "summe": "Bu hafta: {xp} XP, {lektionen} ders, {lerntage} öğrenme günü",
+          "keinKonto": "Çocuğunuzun henüz kendi erişimi yok. Öğrenme Uygulaması hesapsız da çalışır; öğrenme durumu o zaman cihazda kalır.",
+          "einwilligung": "„Öğrenme Uygulaması“ onayınız geçerli olduğunda ve çocuğunuzun uygulaması kendi erişimiyle eşitlendiğinde öğrenme haftası burada görünür.",
+          "selbst": "Çocuğunuz 16 yaşında ve artık öğrenme verilerine kendisi karar veriyor."
+        }
+      },
+      "familie": {
+        "titel": "Öğrenme Uygulamasında ailenin başarı listesi",
+        "text": "İsteğe bağlı: Yalnızca kendisi onay vermiş 16 yaş ve üzeri aile üyeleri görünür – ad, soyadın baş harfi ve bu haftanın XP'leriyle. 16 yaş altındaki çocuklar asla görünmez ve listeyi görmez.",
+        "an": "açık",
+        "aus": "kapalı",
+        "einschalten": "Başarı listesini aç",
+        "ausschalten": "Başarı listesini kapat",
+        "ok": {
+          "an": "Ailenin başarı listesi açık.",
+          "aus": "Ailenin başarı listesi kapalı."
+        }
       }
     },
     "lernweg": {
@@ -494,6 +557,19 @@
           "erteilt": "Teşekkürler, onayın kaydedildi.",
           "widerrufen": "Onayın geri alındı. Bu, hemen geçerlidir."
         }
+      },
+      "lernapp": {
+        "titel": "Öğrenme Uygulamasındaki görevler",
+        "text": "Öğretmeninin sana verdikleri.",
+        "ganze": "Ünitenin tamamı",
+        "lektion": "Ders {nr}",
+        "faellig": "son gün {datum}",
+        "erledigt": "tamamlandı",
+        "offen": "açık",
+        "oeffnen": "Öğrenme Uygulamasında aç",
+        "oeffnenAria": "Öğrenme Uygulamasında aç: {titel}",
+        "gruppe": "Öğrenme Uygulamasında grubunla ilgili her şey",
+        "hinweis": "Öğrenme Uygulaması hesabınla eşitlendiğinde tamamlananlar kaydedilir."
       }
     }
   },
@@ -684,7 +760,32 @@
           "kanal": "Parents' channel"
         },
         "fortschrittJetzt": "Current level",
-        "wortlautUndWiderruf": "Wording and withdrawal"
+        "wortlautUndWiderruf": "Wording and withdrawal",
+        "lernapp": {
+          "titel": "Learning app: learning week",
+          "text": "This week's XP, lessons and learning days – without individual results and without comparison with others.",
+          "tabelle": "Learning week in the learning app",
+          "tag": "Day",
+          "xp": "XP",
+          "lektionen": "Lessons",
+          "pause": "Rest day",
+          "summe": "This week: {xp} XP, {lektionen} lessons, {lerntage} learning days",
+          "keinKonto": "Your child does not have their own access yet. The learning app also works without an account; progress then stays on the device.",
+          "einwilligung": "The learning week appears here once your “Learning app” consent applies and your child's app syncs with their access.",
+          "selbst": "Your child is 16 and now decides about their learning data themselves."
+        }
+      },
+      "familie": {
+        "titel": "Family leaderboard in the learning app",
+        "text": "Voluntary: only family members aged 16 and over who have agreed themselves appear – with first name, initial and this week's XP. Children under 16 never appear and never see it.",
+        "an": "on",
+        "aus": "off",
+        "einschalten": "Turn leaderboard on",
+        "ausschalten": "Turn leaderboard off",
+        "ok": {
+          "an": "The family leaderboard is on.",
+          "aus": "The family leaderboard is off."
+        }
       }
     },
     "lernweg": {
@@ -743,6 +844,19 @@
           "erteilt": "Thank you, your consent has been saved.",
           "widerrufen": "Your consent has been withdrawn, with immediate effect."
         }
+      },
+      "lernapp": {
+        "titel": "Tasks in the learning app",
+        "text": "Your teacher has assigned you these.",
+        "ganze": "Whole unit",
+        "lektion": "Lesson {nr}",
+        "faellig": "by {datum}",
+        "erledigt": "done",
+        "offen": "open",
+        "oeffnen": "Open in the learning app",
+        "oeffnenAria": "Open in the learning app: {titel}",
+        "gruppe": "Everything about your group in the learning app",
+        "hinweis": "Done is noted as soon as the learning app has synced with your account."
       }
     }
   }

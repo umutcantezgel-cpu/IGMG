@@ -5,6 +5,7 @@ import {
   ChevronDown,
   ClipboardList,
   KeyRound,
+  Languages,
   MessagesSquare,
   ShieldCheck,
   TrendingUp,
@@ -28,6 +29,7 @@ import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text, waehle } from '@/lib/i18n/inhalt';
 import { verlangeMeinBereich } from '@/lib/konto/zugang';
 import { anwesenheitsZaehlung, datumText, localeFuer, zeitspanne } from '@/lib/lernen/ansicht';
+import { KeinGruppenZugang, lernwocheDesKindes } from '@/lib/lernapp/gruppe/dienst';
 import { lernendenUebersicht } from '@/lib/lernen/dienst';
 import { tagPlus } from '@/lib/lernen/termine';
 import { ladeGruppenKontext } from '@/lib/rechte/gemeinde';
@@ -65,7 +67,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
   const kopf = await kindKopf(id, kontext);
   if (!kopf) notFound();
   const heute = berlinerDatum(new Date());
-  const [uebersicht, weg, einwilligungen, zugang, chatAn, t, tu] = await Promise.all([
+  const [uebersicht, weg, einwilligungen, zugang, chatAn, t, tu, lernwoche] = await Promise.all([
     lernendenUebersicht(id, kontext),
     lernwegVon(id, kontext),
     einwilligungenDesKindes(id, kontext),
@@ -73,6 +75,15 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
     funktionAn('chat'),
     getTranslations('kinder.detail'),
     getTranslations('unterricht.fortschritt'),
+    // Lernwoche in der Lern-App (L7-02, KERN 4.0 §5): nur mit `lernapp_gruppen`, keine Bestenliste
+    funktionAn('lernapp_gruppen').then((an) =>
+      an
+        ? lernwocheDesKindes(kontext, id, heute).catch((e: unknown) => {
+            if (e instanceof KeinGruppenZugang) return null;
+            throw e;
+          })
+        : null,
+    ),
   ]);
   if (!einwilligungen) notFound();
 
@@ -125,6 +136,7 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
     { id: 'kind-fehlt', text: t('sprung.fehlen') },
     { id: 'anwesenheit', text: t('sprung.anwesenheit') },
     { id: 'fortschritt', text: t('sprung.fortschritt') },
+    ...(lernwoche ? [{ id: 'lern-app', text: t('lernapp.titel') }] : []),
     { id: 'einwilligungen', text: t('sprung.einwilligungen') },
     { id: 'zugang', text: t('sprung.zugang') },
     ...(chatAn && uebersicht.gruppen.length ? [{ id: 'elternkanal', text: t('sprung.kanal') }] : []),
@@ -348,6 +360,48 @@ export default async function KindSeite({ params, searchParams }: PageProps<'/[l
             </div>
           ) : null}
         </Abschnitt>
+
+        {lernwoche ? (
+          <Abschnitt id="lern-app" Icon={Languages} titel={t('lernapp.titel')} text={t('lernapp.text')}>
+            {lernwoche.art === 'woche' ? (
+              <div className="flex flex-col gap-4">
+                <p className="font-bold tabular-nums">{t('lernapp.summe', lernwoche.summe)}</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-16">
+                    <caption className="sr-only">{t('lernapp.tabelle')}</caption>
+                    <thead>
+                      <tr className="border-b-2 border-linie">
+                        <th scope="col" className="py-2 pe-4 text-start">
+                          {t('lernapp.tag')}
+                        </th>
+                        <th scope="col" className="py-2 pe-4 text-end">
+                          {t('lernapp.lektionen')}
+                        </th>
+                        <th scope="col" className="py-2 text-end">
+                          {t('lernapp.xp')}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {lernwoche.tage.map((tag) => (
+                        <tr key={tag.tag} className="border-b border-linie">
+                          <th scope="row" className="py-2 pe-4 text-start font-normal">
+                            {datumText(tag.tag, sprache)}
+                            {tag.pause ? <span className="ms-2 text-tinte-2">({t('lernapp.pause')})</span> : null}
+                          </th>
+                          <td className="py-2 pe-4 text-end tabular-nums">{tag.lektionen}</td>
+                          <td className="py-2 text-end tabular-nums">{tag.xp}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ) : (
+              <p className="text-tinte-2">{t(`lernapp.${lernwoche.art}`)}</p>
+            )}
+          </Abschnitt>
+        ) : null}
 
         <Abschnitt id="einwilligungen" Icon={ShieldCheck} titel={t('einwilligungenTitel')} text={t('einwilligungenText')}>
           {sechzehn.lage !== 'eltern' && sechzehn.ab ? (

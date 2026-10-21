@@ -14,7 +14,7 @@ import {
   KeinGruppenZugang,
   meineZuweisungen,
   stimmeZu,
-  themenVon,
+  zuweisungsDetails,
 } from '@/lib/lernapp/gruppe/dienst';
 import {
   type GruppeAntwort,
@@ -64,7 +64,8 @@ async function pruefe(anfrage: Request, schalter: readonly ('lernapp_gruppen' | 
   return { konto };
 }
 
-const alsListe = (plaetze: Platz[], ich: string): ListenPlatz[] => plaetze.map((p) => ({ name: p.name, xp: p.xp, ich: p.benutzerId === ich }));
+const alsListe = (plaetze: Platz[], ich: string): ListenPlatz[] =>
+  plaetze.map((p) => ({ name: p.name, xp: p.xp, ich: p.benutzerId === ich }));
 const gruppenSprache = (ui: Oberflaeche) => (ui === 'tr' ? 'tr' : 'de');
 
 export async function GET(anfrage: Request) {
@@ -89,7 +90,7 @@ export async function GET(anfrage: Request) {
       eigeneGruppen(kontext, heute, { rangliste: rangliste && ab16, jetzt }),
       rangliste && ab16 ? familienBestenlisten(kontext, heute, jetzt) : Promise.resolve([]),
     ]);
-    const themen = await themenVon(zuweisungen.map((z) => z.kurs));
+    const details = await zuweisungsDetails(zuweisungen);
     const angeboten = rangliste && ab16 && (gruppen.some((g) => g.bestenliste !== null) || familien.length > 0);
     const inhalt: GruppeAntwort = {
       einwilligung,
@@ -98,7 +99,9 @@ export async function GET(anfrage: Request) {
         gruppe: text(z.gruppe, gruppenSprache(ui.data)),
         kurs: z.kurs,
         einheit: z.einheit,
-        thema: themaIn(themen.get(`${z.kurs}|${z.einheit}`), ui.data),
+        thema: themaIn(details.get(z.id)?.thema ?? undefined, ui.data),
+        lektion: details.get(z.id)?.paketLektion ?? null,
+        nr: details.get(z.id)?.nr ?? null,
         faellig: z.faellig,
         erledigt: z.erledigt,
       })),

@@ -5,8 +5,9 @@ import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
 import { einwilligungsLage } from '@/lib/konto/sechzehn';
 import { darfInGruppe, type GruppenKontext } from '@/lib/rechte/gruppen';
-import { ladeVerzeichnisJson } from '@/server/queries/lernapp/pakete';
-import { istRichtung, pruefeLernappBezug, type LernappBezug, type RichtungId } from '../kurse';
+import { ladeEinheitJson, ladeVerzeichnisJson } from '@/server/queries/lernapp/pakete';
+import { istRichtung, pruefeLernappBezug, zerlegeRichtung, type LernappBezug, type RichtungId } from '../kurse';
+import { lektionAusPaket, lektionImPaket } from '../paket/bauen';
 import type { LernText } from '@/lib/db/schema/lernapp';
 import { lernappEinwilligung } from '../sync/server';
 import {
@@ -315,6 +316,57 @@ export async function themenVon(kurse: readonly RichtungId[]): Promise<Map<strin
   return themen;
 }
 
+export type LektionWahl = {
+  /** Schlüssel der Datenbank (`aufgabe.bezug.lektion`) */
+  schluessel: string;
+  /** Schlüssel im Paket (Adresse der Übung: `/lern-app/<ui>/<kurs>/ueben?l=<paket>`) */
+  paket: string;
+  /** Position in der Einheit, ab 1 („Lektion 2“) */
+  nr: number;
+  art: string;
+};
+
+/** Lektionen einer ausgelieferten Einheit in der Reihenfolge des Pakets (leer, wenn sie nicht ausgeliefert wird). */
+export async function lektionenVon(kurs: RichtungId, einheit: string): Promise<LektionWahl[]> {
+  const paket = await ladeEinheitJson(kurs, einheit);
+  if (!paket) return [];
+  const p = JSON.parse(paket.json) as { lektionen: { schluessel: string; art: string }[] };
+  return p.lektionen.flatMap((l, i) => {
+    const db = lektionAusPaket(l.schluessel);
+    return db && db.richtung === kurs ? [{ schluessel: db.schluessel, paket: l.schluessel, nr: i + 1, art: l.art }] : [];
+  });
+}
+
+export type ZuweisungsDetail = {
+  thema: LernText | null;
+  /** Schlüssel der Lektion im Paket (für den Link) und ihre Nummer; null bei ganzer Einheit */
+  paketLektion: string | null;
+  nr: number | null;
+};
+
+/**
+ * Thema und Lektionsnummer je Zuweisung (Schlüssel: Zuweisungs-ID). Wird eine Lektion nicht mehr ausgeliefert, bleibt
+ * ihr Paket-Schlüssel erhalten (abgeleitet aus dem Datenbank-Schlüssel), die Nummer fehlt.
+ */
+export async function zuweisungsDetails(
+  liste: readonly Pick<Zuweisung, 'id' | 'kurs' | 'einheit' | 'lektion'>[],
+): Promise<Map<string, ZuweisungsDetail>> {
+  const themen = await themenVon(liste.map((z) => z.kurs));
+  const lektionen = new Map<string, LektionWahl[]>();
+  for (const z of liste) {
+    const k = `${z.kurs}|${z.einheit}`;
+    if (z.lektion && !lektionen.has(k)) lektionen.set(k, await lektionenVon(z.kurs, z.einheit));
+  }
+  return new Map(
+    liste.map((z) => {
+      const k = `${z.kurs}|${z.einheit}`;
+      const l = z.lektion ? (lektionen.get(k) ?? []).find((x) => x.schluessel === z.lektion) : undefined;
+      const paketLektion = z.lektion ? (l?.paket ?? lektionImPaket(z.kurs, zerlegeRichtung(z.kurs).ziel, z.lektion)) : null;
+      return [z.id, { thema: themen.get(k) ?? null, paketLektion, nr: l?.nr ?? null }];
+    }),
+  );
+}
+
 /**
  * Einheit (oder Lektion) der Gruppe zuweisen (L3-E05): nur die Lehrkraft, nur Sprachkurse, nur ausgelieferte Einheiten.
  * Der Erledigt-Vermerk entsteht beim Abgleich der Lernenden (`vermerkeZuweisungen`).
@@ -333,11 +385,19 @@ export async function weiseZu(
   });
   if (!bezug?.einheit || !istRichtung(bezug.kurs)) throw new UngueltigeZuweisung('bezug');
   if (!(await einheitenVon(bezug.kurs)).some((e) => e.schluessel === bezug.einheit)) throw new UngueltigeZuweisung('einheit');
+  if (bezug.lektion && !(await lektionenVon(bezug.kurs, bezug.einheit)).some((l) => l.schluessel === bezug.lektion))
+    throw new UngueltigeZuweisung('einheit');
   const [{ n } = { n: 0 }] = await db
     .select({ n: count() })
     .from(schema.aufgabe)
     .where(and(eq(schema.aufgabe.gruppeId, gruppeId), lernappBezug));
   if (n >= ZUWEISUNGEN_JE_GRUPPE) throw new UngueltigeZuweisung('grenze');
+  if (
+    (await zuweisungenIn([gruppeId])).some(
+      (z) => z.kurs === bezug.kurs && z.einheit === bezug.einheit && z.lektion === (bezug.lektion ?? null),
+    )
+  )
+    throw new UngueltigeZuweisung('doppelt');
   return db.transaction(async (tx) => {
     const [z] = await tx
       .insert(schema.aufgabe)
@@ -364,7 +424,7 @@ export async function weiseZu(
 }
 
 export class UngueltigeZuweisung extends Error {
-  constructor(readonly grund: 'bezug' | 'einheit' | 'grenze') {
+  constructor(readonly grund: 'bezug' | 'einheit' | 'grenze' | 'doppelt') {
     super(`Zuweisung ungültig: ${grund}`);
   }
 }
@@ -410,7 +470,7 @@ export async function meineZuweisungen(kontext: GruppenKontext): Promise<MeineZu
   const name = new Map(namen.map((g) => [g.id, g.name]));
   const fertig = new Set(erledigt.map((e) => e.aufgabeId));
   return liste
-    .map((z) => ({ ...z, gruppe: name.get(z.gruppeId) ?? {}, erledigt: fertig.has(z.id) }))
+    .map((z) => ({ ...z, gruppe: name.get(z.gruppeId) ?? { de: '' }, erledigt: fertig.has(z.id) }))
     .sort((a, b) => Number(a.erledigt) - Number(b.erledigt) || (a.faellig ?? '9999').localeCompare(b.faellig ?? '9999'));
 }
 
@@ -428,6 +488,7 @@ export type StandZeile = {
 };
 
 export type StandDerGruppe = {
+  name: Mehrsprachig;
   woche: Woche;
   einstellung: GruppenEinstellung;
   zuweisungen: (Zuweisung & { erledigt: number })[];
@@ -439,10 +500,20 @@ export type StandDerGruppe = {
  * Stand der Gruppe für die Lehrkraft (KERN 4.0 §5): je Lernende/r Wochen-XP, Lektionen, Lerntage und erledigte
  * Zuweisungen – nur mit Einwilligung `lernapp`; ohne sie nur Name und Hinweis. Nur die Lehrkraft der Gruppe.
  */
-export async function standDerGruppe(kontext: GruppenKontext, gruppeId: string, heute: string, jetzt = new Date()): Promise<StandDerGruppe> {
+export async function standDerGruppe(
+  kontext: GruppenKontext,
+  gruppeId: string,
+  heute: string,
+  jetzt = new Date(),
+): Promise<StandDerGruppe> {
   verlangeLehrkraft(kontext, gruppeId);
   const woche = wocheVon(heute);
-  const [einstellung, liste, zuweisungen] = await Promise.all([gruppenEinstellung(gruppeId), mitglieder(gruppeId, heute), zuweisungenIn([gruppeId])]);
+  const [einstellung, liste, zuweisungen, [gruppenZeile]] = await Promise.all([
+    gruppenEinstellung(gruppeId),
+    mitglieder(gruppeId, heute),
+    zuweisungenIn([gruppeId]),
+    db.select({ name: schema.gruppe.name }).from(schema.gruppe).where(eq(schema.gruppe.id, gruppeId)),
+  ]);
   const konten = liste.filter((m) => m.benutzerId !== null);
   const ein = await mitEinwilligung(
     konten.map((m) => ({ benutzerId: m.benutzerId!, istKind: m.istKind ?? true })),
@@ -497,6 +568,7 @@ export async function standDerGruppe(kontext: GruppenKontext, gruppeId: string, 
     };
   });
   return {
+    name: gruppenZeile?.name ?? { de: '' },
     woche,
     einstellung,
     zuweisungen: zuweisungen.map((z) => ({ ...z, erledigt: erledigt.filter((e) => e.aufgabeId === z.id).length })),
@@ -645,7 +717,13 @@ export async function setzeFamilienBestenliste(kontext: GruppenKontext, an: bool
       .values({ elternId: kontext.benutzerId, bestenliste: an })
       .onConflictDoUpdate({ target: schema.lernappFamilie.elternId, set: { bestenliste: an, geaendertAm: new Date() } });
     await protokolliere(
-      { benutzerId: kontext.benutzerId, aktion: 'lernapp.familie_bestenliste_geaendert', zielTyp: 'konto', zielId: kontext.benutzerId, details: { an } },
+      {
+        benutzerId: kontext.benutzerId,
+        aktion: 'lernapp.familie_bestenliste_geaendert',
+        zielTyp: 'konto',
+        zielId: kontext.benutzerId,
+        details: { an },
+      },
       tx,
     );
   });
@@ -701,8 +779,26 @@ export type LernwocheKind =
  * Einwilligung `lernapp`, nur bis zum Ende des Übergangs nach dem 16. Geburtstag (`elternSehenLernwoche`). Keine
  * Bestenliste, keine Einzelergebnisse.
  */
-export async function lernwocheDesKindes(kontext: GruppenKontext, lernendeId: string, heute: string, jetzt = new Date()): Promise<LernwocheKind> {
+export async function lernwocheDesKindes(
+  kontext: GruppenKontext,
+  lernendeId: string,
+  heute: string,
+  jetzt = new Date(),
+): Promise<LernwocheKind> {
   if (!kontext.kinder.has(lernendeId)) throw new KeinGruppenZugang();
+  // nur bestätigte, sorgeberechtigte Eltern (wie bei der Einwilligung `lernapp` und den Familien)
+  const [bezug] = await db
+    .select({ id: schema.elternKind.lernendeId })
+    .from(schema.elternKind)
+    .where(
+      and(
+        eq(schema.elternKind.elternId, kontext.benutzerId),
+        eq(schema.elternKind.lernendeId, lernendeId),
+        eq(schema.elternKind.sorgeberechtigt, true),
+        isNotNull(schema.elternKind.bestaetigtAm),
+      ),
+    );
+  if (!bezug) throw new KeinGruppenZugang();
   const [k] = await db
     .select({ benutzerId: schema.lernende.benutzerId, sechzehnAm: schema.lernende.sechzehnAm, istKind: schema.kontoProfil.istKind })
     .from(schema.lernende)

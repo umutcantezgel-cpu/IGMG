@@ -3,6 +3,7 @@ import {
   CalendarDays,
   ClipboardCheck,
   History,
+  Languages,
   type LucideIcon,
   MessagesSquare,
   ShieldCheck,
@@ -54,9 +55,10 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
   if (!UUID.test(gruppeId)) notFound();
   const heute = berlinerDatum(new Date());
   const kontext = await ladeGruppenKontext(k.benutzerId);
-  const [g, chatAn, t] = await Promise.all([
+  const [g, chatAn, lernappAn, t] = await Promise.all([
     gruppeFuerLeitung(gruppeId, kontext, heute),
     funktionAn('chat'),
+    funktionAn('lernapp_gruppen'),
     getTranslations('unterricht'),
   ]);
   if (!g) notFound();
@@ -73,6 +75,18 @@ export default async function GruppeSeite({ params }: PageProps<'/[locale]/mein-
             text: tg('fortschrittText'),
             ziel: { pathname: '/mein-bereich/unterricht/[gruppe]/fortschritt', params: { gruppe: g.id } } as Ziel,
           },
+          // Lern-App der Gruppe (L7-02): nur mit dem Schalter `lernapp_gruppen`
+          ...(lernappAn
+            ? [
+                {
+                  schluessel: 'lernapp',
+                  Icon: Languages,
+                  titel: tg('lernapp'),
+                  text: tg('lernappText'),
+                  ziel: { pathname: '/mein-bereich/unterricht/[gruppe]/lern-app', params: { gruppe: g.id } } as Ziel,
+                },
+              ]
+            : []),
         ]
       : []),
     ...(chatAn

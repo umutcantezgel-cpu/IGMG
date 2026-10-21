@@ -20,7 +20,8 @@ export const ZustimmungAnfrageSchema = z.strictObject({
 });
 export type ZustimmungAnfrage = z.infer<typeof ZustimmungAnfrageSchema>;
 
-export type ZielStand = { ziel: number; summe: number; erreicht: boolean; anteil: number; zuWenige: false } | { ziel: number; zuWenige: true };
+export type ZielStand =
+  { ziel: number; summe: number; erreicht: boolean; anteil: number; zuWenige: false } | { ziel: number; zuWenige: true };
 
 export type ListenPlatz = { name: string; xp: number; ich: boolean };
 
@@ -33,6 +34,9 @@ export type GruppeAntwort = {
     kurs: RichtungId;
     einheit: string;
     thema: string | null;
+    /** Lektion im Paket (Adresse `/lern-app/<ui>/<kurs>/ueben?l=<lektion>`) und ihre Nummer; null: ganze Einheit */
+    lektion: string | null;
+    nr: number | null;
     faellig: string | null;
     erledigt: boolean;
   }[];

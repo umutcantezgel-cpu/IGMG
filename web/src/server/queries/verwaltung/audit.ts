@@ -128,6 +128,12 @@ export const AKTION_SCHLUESSEL = {
   'lernapp.stimme_gewaehlt': 'lernappStimmeGewaehlt',
   'lernapp.meldung_bearbeitet': 'lernappMeldungBearbeitet',
   'lernapp.eintrag_entsperrt': 'lernappEintragEntsperrt',
+  'lernapp.zuweisung_angelegt': 'lernappZuweisungAngelegt',
+  'lernapp.zuweisung_entfernt': 'lernappZuweisungEntfernt',
+  'lernapp.gruppenziel_geaendert': 'lernappGruppenzielGeaendert',
+  'lernapp.bestenliste_geaendert': 'lernappBestenlisteGeaendert',
+  'lernapp.familie_bestenliste_geaendert': 'lernappFamilieBestenlisteGeaendert',
+  'lernapp.bestenliste_zustimmung': 'lernappBestenlisteZustimmung',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

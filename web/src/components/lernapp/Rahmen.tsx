@@ -26,7 +26,8 @@ function website(ui: Oberflaeche, ziel: '/' | '/datenschutz' | '/impressum'): { 
  * Rahmen jeder Lern-App-Seite (Server, ohne Programmcode im Browser): Sprunglink, Kopf mit Name, Bereichen und
  * Einstellungen, Hauptinhalt, Fuß mit Sprachwahl und Rechtlichem. Links sind einfache `<a>` (ganze Seiten, die der
  * Service Worker vorhält). `pfad` ist der Rest nach `/lern-app/<ui>` für die Sprachwahl; eine Seite, die es in einer
- * Sprache nicht gibt (Koran-Arabisch in `ar`), führt dort zum Start. Anmelden erscheint nur mit dem Schalter `konten`.
+ * Sprache nicht gibt (Koran-Arabisch in `ar`), führt dort zum Start. Anmelden erscheint nur mit dem Schalter `konten`,
+ * „Gruppe“ nur mit `lernapp_gruppen`.
  */
 export async function Rahmen({
   ui,
@@ -40,10 +41,12 @@ export async function Rahmen({
   children: ReactNode;
 }) {
   const t = lernTexte(ui);
-  const konten = await funktionAn('konten');
+  const [konten, gruppen] = await Promise.all([funktionAn('konten'), funktionAn('lernapp_gruppen')]);
   const kurs = pfad.split('/')[0];
   const sprachZiel = (s: Oberflaeche) => (istKursSlug(kurs) && !kursInOberflaeche(kurs, s) ? lernAdresse(s) : lernAdresse(s, pfad));
   const fuss = [
+    // Gruppe (Zuweisungen, Gruppenziel, Bestenliste) nur mit dem Schalter `lernapp_gruppen` (Personendaten, L7-02)
+    ...(gruppen ? [{ adresse: lernAdresse(ui, 'gruppe'), text: t('rahmen.gruppe') }] : []),
     { adresse: lernAdresse(ui, 'quellen'), text: t('rahmen.quellen') },
     { ...website(ui, '/datenschutz'), text: t('rahmen.datenschutz') },
     { ...website(ui, '/impressum'), text: t('rahmen.impressum') },

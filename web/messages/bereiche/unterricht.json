@@ -6,7 +6,8 @@
         "gruppe": "Gruppe",
         "anwesenheit": "Anwesenheit",
         "fortschritt": "Fortschritt",
-        "moderation": "Moderation"
+        "moderation": "Moderation",
+        "lernapp": "Lern-App"
       },
       "titel": "Unterricht",
       "untertitel": "Ihre Gruppen und der Unterricht von heute.",
@@ -65,7 +66,9 @@
           "aus": "Chat aus",
           "nur_lehrkraft": "Chat: nur Lehrkräfte schreiben",
           "offen": "Chat offen ({von}–{bis} Uhr)"
-        }
+        },
+        "lernapp": "Lern-App",
+        "lernappText": "Einheiten zuweisen, Gruppenziel, Stand der Woche."
       },
       "anwesenheit": {
         "titel": "Anwesenheit",
@@ -193,6 +196,85 @@
           "nichtMoeglich": "Diese Maßnahme ist hier nicht möglich.",
           "allgemein": "Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."
         }
+      },
+      "lernapp": {
+        "titel": "Lern-App",
+        "zurueck": "Zur Gruppe",
+        "ok": {
+          "zugewiesen": "Zugewiesen.",
+          "entfernt": "Zuweisung entfernt.",
+          "ziel": "Gruppenziel gespeichert.",
+          "bestenliste": "Bestenliste geändert.",
+          "doppelt": "Das ist dieser Gruppe schon zugewiesen.",
+          "grenze": "Diese Gruppe hat schon sehr viele Zuweisungen. Bitte entfernen Sie zuerst ältere.",
+          "ungueltig": "Diese Einheit oder Lektion gibt es nicht mehr."
+        },
+        "zuweisen": {
+          "titel": "Zuweisen",
+          "text": "Wählen Sie eine Einheit aus einem Sprachkurs. Danach weisen Sie die ganze Einheit oder eine einzelne Lektion zu.",
+          "einheit": "Einheit",
+          "einheitWahl": "Bitte wählen",
+          "einheitText": "{stufe} · {thema}",
+          "waehlen": "Lektionen zeigen",
+          "lektionWahl": "Was soll die Gruppe lernen?",
+          "ganze": "Ganze Einheit",
+          "lektion": "Lektion {nr}",
+          "faellig": "Fällig bis (freiwillig)",
+          "knopf": "Zuweisen",
+          "keineEinheiten": "Noch gibt es keine veröffentlichten Einheiten.",
+          "gewaehlt": "Gewählt: {kurs}, {thema}"
+        },
+        "kurs": {
+          "tr-aus-de": "Türkisch (für Deutschsprachige)",
+          "ar-aus-de": "Arabisch (für Deutschsprachige)",
+          "de-aus-tr": "Deutsch (für Türkischsprachige)",
+          "ar-aus-tr": "Arabisch (für Türkischsprachige)",
+          "de-aus-ar": "Deutsch (für Arabischsprachige)",
+          "tr-aus-ar": "Türkisch (für Arabischsprachige)"
+        },
+        "zuweisungen": {
+          "titel": "Zuweisungen",
+          "leer": "Noch nichts zugewiesen.",
+          "ganze": "Ganze Einheit",
+          "lektion": "Lektion {nr}",
+          "erledigt": "erledigt: {anzahl} von {gesamt}",
+          "faellig": "fällig bis {datum}",
+          "entfernen": "Entfernen",
+          "entfernenAria": "Zuweisung entfernen: {titel}",
+          "hinweis": "Erledigt zählt nur bei Lernenden, deren Einwilligung „Lern-App“ gilt und deren App mit dem Konto abgleicht."
+        },
+        "ziel": {
+          "titel": "Gruppenziel",
+          "text": "Die Gruppe sammelt gemeinsam XP für ein Wochenziel – ohne Namen. Die Summe erscheint erst ab drei Lernenden mit Einwilligung.",
+          "wahl": "Wochenziel",
+          "keins": "Kein Gruppenziel",
+          "xp": "{n} XP",
+          "speichern": "Speichern",
+          "stand": "Diese Woche: {summe} von {ziel} XP",
+          "erreicht": "Ziel erreicht.",
+          "zuWenige": "Noch zu wenige Lernende mit Einwilligung für eine Summe."
+        },
+        "bestenliste": {
+          "titel": "Bestenliste",
+          "text": "Freiwillig und nur für Lernende ab 16 Jahren, die selbst zugestimmt haben: Vorname mit Initial und XP dieser Woche, ohne Ränge und Medaillen. Kinder unter 16 erscheinen nie und sehen sie nicht.",
+          "an": "eingeschaltet",
+          "aus": "ausgeschaltet",
+          "einschalten": "Bestenliste einschalten",
+          "ausschalten": "Bestenliste ausschalten"
+        },
+        "stand": {
+          "titel": "Stand dieser Woche",
+          "text": "Zahlen nur von Lernenden, deren Einwilligung „Lern-App“ gilt. Woche vom {von} bis {bis}.",
+          "tabelle": "Stand der Lernenden in dieser Woche",
+          "name": "Name",
+          "lerntage": "Lerntage",
+          "lektionen": "Lektionen",
+          "xp": "XP",
+          "erledigt": "Erledigte Zuweisungen",
+          "keinKonto": "kein eigenes Konto",
+          "keineEinwilligung": "ohne Einwilligung",
+          "leer": "In dieser Gruppe sind noch keine Lernenden."
+        }
       }
     }
   },
@@ -203,7 +285,8 @@
         "gruppe": "Grup",
         "anwesenheit": "Yoklama",
         "fortschritt": "İlerleme",
-        "moderation": "Moderasyon"
+        "moderation": "Moderasyon",
+        "lernapp": "Öğrenme Uygulaması"
       },
       "titel": "Derslerim",
       "untertitel": "Gruplarınız ve bugünkü dersler.",
@@ -262,7 +345,9 @@
           "aus": "Sohbet kapalı",
           "nur_lehrkraft": "Sohbet: yalnızca öğretmenler yazar",
           "offen": "Sohbet açık ({von}–{bis})"
-        }
+        },
+        "lernapp": "Öğrenme Uygulaması",
+        "lernappText": "Ünite ver, grup hedefi, haftanın durumu."
       },
       "anwesenheit": {
         "titel": "Yoklama",
@@ -390,6 +475,85 @@
           "nichtMoeglich": "Bu işlem burada yapılamaz.",
           "allgemein": "Bu işlem olmadı. Lütfen tekrar deneyin."
         }
+      },
+      "lernapp": {
+        "titel": "Öğrenme Uygulaması",
+        "zurueck": "Gruba dön",
+        "ok": {
+          "zugewiesen": "Görev verildi.",
+          "entfernt": "Görev kaldırıldı.",
+          "ziel": "Grup hedefi kaydedildi.",
+          "bestenliste": "Başarı listesi değiştirildi.",
+          "doppelt": "Bu, gruba zaten verilmiş.",
+          "grenze": "Bu grubun çok fazla görevi var. Lütfen önce eskilerini kaldırın.",
+          "ungueltig": "Bu ünite veya ders artık mevcut değil."
+        },
+        "zuweisen": {
+          "titel": "Görev ver",
+          "text": "Bir dil kursundan bir ünite seçin. Ardından ünitenin tamamını veya tek bir dersi görev olarak verin.",
+          "einheit": "Ünite",
+          "einheitWahl": "Lütfen seçin",
+          "einheitText": "{stufe} · {thema}",
+          "waehlen": "Dersleri göster",
+          "lektionWahl": "Grup neyi öğrensin?",
+          "ganze": "Ünitenin tamamı",
+          "lektion": "Ders {nr}",
+          "faellig": "Son tarih (isteğe bağlı)",
+          "knopf": "Görev ver",
+          "keineEinheiten": "Henüz yayımlanmış ünite yok.",
+          "gewaehlt": "Seçilen: {kurs}, {thema}"
+        },
+        "kurs": {
+          "tr-aus-de": "Türkçe (Almanca konuşanlar için)",
+          "ar-aus-de": "Arapça (Almanca konuşanlar için)",
+          "de-aus-tr": "Almanca (Türkçe konuşanlar için)",
+          "ar-aus-tr": "Arapça (Türkçe konuşanlar için)",
+          "de-aus-ar": "Almanca (Arapça konuşanlar için)",
+          "tr-aus-ar": "Türkçe (Arapça konuşanlar için)"
+        },
+        "zuweisungen": {
+          "titel": "Verilen görevler",
+          "leer": "Henüz görev verilmedi.",
+          "ganze": "Ünitenin tamamı",
+          "lektion": "Ders {nr}",
+          "erledigt": "tamamlayan: {gesamt} kişiden {anzahl}",
+          "faellig": "son tarih {datum}",
+          "entfernen": "Kaldır",
+          "entfernenAria": "Görevi kaldır: {titel}",
+          "hinweis": "Tamamlananlar yalnızca „Öğrenme Uygulaması“ onayı geçerli olan ve uygulaması hesapla eşitlenen öğrencilerde sayılır."
+        },
+        "ziel": {
+          "titel": "Grup hedefi",
+          "text": "Grup, haftalık bir hedef için birlikte XP toplar – isimsiz. Toplam, onayı olan en az üç öğrenciden itibaren görünür.",
+          "wahl": "Haftalık hedef",
+          "keins": "Grup hedefi yok",
+          "xp": "{n} XP",
+          "speichern": "Kaydet",
+          "stand": "Bu hafta: {ziel} XP hedefin {summe} XP'si",
+          "erreicht": "Hedefe ulaşıldı.",
+          "zuWenige": "Toplam için onayı olan öğrenci henüz çok az."
+        },
+        "bestenliste": {
+          "titel": "Başarı listesi",
+          "text": "İsteğe bağlı ve yalnızca kendisi onay vermiş 16 yaş ve üzeri öğrenciler için: adın baş harfiyle birlikte ad ve bu haftanın XP'leri, sıra ve madalya olmadan. 16 yaş altındaki çocuklar asla görünmez ve listeyi görmez.",
+          "an": "açık",
+          "aus": "kapalı",
+          "einschalten": "Başarı listesini aç",
+          "ausschalten": "Başarı listesini kapat"
+        },
+        "stand": {
+          "titel": "Bu haftanın durumu",
+          "text": "Rakamlar yalnızca „Öğrenme Uygulaması“ onayı geçerli olan öğrencilerden. Hafta: {von} – {bis}.",
+          "tabelle": "Öğrencilerin bu haftaki durumu",
+          "name": "Ad",
+          "lerntage": "Öğrenme günleri",
+          "lektionen": "Dersler",
+          "xp": "XP",
+          "erledigt": "Tamamlanan görevler",
+          "keinKonto": "kendi hesabı yok",
+          "keineEinwilligung": "onay yok",
+          "leer": "Bu grupta henüz öğrenci yok."
+        }
       }
     }
   },
@@ -400,7 +564,8 @@
         "gruppe": "Group",
         "anwesenheit": "Attendance",
         "fortschritt": "Progress",
-        "moderation": "Moderation"
+        "moderation": "Moderation",
+        "lernapp": "Learning app"
       },
       "titel": "Teaching",
       "untertitel": "Your groups and today's lessons.",
@@ -459,7 +624,9 @@
           "aus": "Chat off",
           "nur_lehrkraft": "Chat: teachers only",
           "offen": "Chat open ({von}–{bis})"
-        }
+        },
+        "lernapp": "Learning app",
+        "lernappText": "Assign units, group goal, this week's progress."
       },
       "anwesenheit": {
         "titel": "Attendance",
@@ -586,6 +753,85 @@
           "grund": "Please give a reason of at least 3 characters.",
           "nichtMoeglich": "This action is not possible here.",
           "allgemein": "That did not work. Please try again."
+        }
+      },
+      "lernapp": {
+        "titel": "Learning app",
+        "zurueck": "Back to the group",
+        "ok": {
+          "zugewiesen": "Assigned.",
+          "entfernt": "Assignment removed.",
+          "ziel": "Group goal saved.",
+          "bestenliste": "Leaderboard changed.",
+          "doppelt": "This is already assigned to the group.",
+          "grenze": "This group already has a great many assignments. Please remove older ones first.",
+          "ungueltig": "This unit or lesson no longer exists."
+        },
+        "zuweisen": {
+          "titel": "Assign",
+          "text": "Choose a unit from a language course. Then assign the whole unit or a single lesson.",
+          "einheit": "Unit",
+          "einheitWahl": "Please choose",
+          "einheitText": "{stufe} · {thema}",
+          "waehlen": "Show lessons",
+          "lektionWahl": "What should the group learn?",
+          "ganze": "Whole unit",
+          "lektion": "Lesson {nr}",
+          "faellig": "Due by (optional)",
+          "knopf": "Assign",
+          "keineEinheiten": "There are no published units yet.",
+          "gewaehlt": "Chosen: {kurs}, {thema}"
+        },
+        "kurs": {
+          "tr-aus-de": "Turkish (for German speakers)",
+          "ar-aus-de": "Arabic (for German speakers)",
+          "de-aus-tr": "German (for Turkish speakers)",
+          "ar-aus-tr": "Arabic (for Turkish speakers)",
+          "de-aus-ar": "German (for Arabic speakers)",
+          "tr-aus-ar": "Turkish (for Arabic speakers)"
+        },
+        "zuweisungen": {
+          "titel": "Assignments",
+          "leer": "Nothing assigned yet.",
+          "ganze": "Whole unit",
+          "lektion": "Lesson {nr}",
+          "erledigt": "done: {anzahl} of {gesamt}",
+          "faellig": "due by {datum}",
+          "entfernen": "Remove",
+          "entfernenAria": "Remove assignment: {titel}",
+          "hinweis": "Done only counts for learners whose “Learning app” consent applies and whose app syncs with their account."
+        },
+        "ziel": {
+          "titel": "Group goal",
+          "text": "The group collects XP together towards a weekly goal – without names. The total only appears from three learners with consent.",
+          "wahl": "Weekly goal",
+          "keins": "No group goal",
+          "xp": "{n} XP",
+          "speichern": "Save",
+          "stand": "This week: {summe} of {ziel} XP",
+          "erreicht": "Goal reached.",
+          "zuWenige": "Too few learners with consent for a total yet."
+        },
+        "bestenliste": {
+          "titel": "Leaderboard",
+          "text": "Voluntary and only for learners aged 16 and over who have agreed themselves: first name with initial and this week's XP, without ranks or medals. Children under 16 never appear and never see it.",
+          "an": "on",
+          "aus": "off",
+          "einschalten": "Turn leaderboard on",
+          "ausschalten": "Turn leaderboard off"
+        },
+        "stand": {
+          "titel": "This week",
+          "text": "Figures only from learners whose “Learning app” consent applies. Week from {von} to {bis}.",
+          "tabelle": "Learners' progress this week",
+          "name": "Name",
+          "lerntage": "Learning days",
+          "lektionen": "Lessons",
+          "xp": "XP",
+          "erledigt": "Completed assignments",
+          "keinKonto": "no own account",
+          "keineEinwilligung": "no consent",
+          "leer": "There are no learners in this group yet."
         }
       }
     }
