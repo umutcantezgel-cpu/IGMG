@@ -3,11 +3,14 @@ import { describe, expect, it } from 'vitest';
 import {
   addiereTage,
   berechneSerie,
+  freieRuhetage,
   klemmeEreignis,
   klemmeZeit,
   lerntagVon,
   ruhetageAus,
+  ruhezeitraeume,
   tageZwischen,
+  WIEDEREINSTIEG_TAGE,
   wochenbeginn,
   wochentag,
 } from '@/lib/lernapp/ereignisse/serie';
@@ -138,7 +141,41 @@ describe('Serie', () => {
   });
 });
 
+describe('Wiedereinstieg nach einer Pause (ADR 0043 Nr. 3: freundlich, ohne Vorwurf)', () => {
+  it(`ab ${WIEDEREINSTIEG_TAGE} Tagen ohne Lernen zwischen letztem Lerntag und heute; heute zählt nicht als Lücke`, () => {
+    const vor = (n: number) => berechneSerie(menge(['2026-10-10']), leer, addiereTage('2026-10-10', n));
+    expect(vor(1).wiedereinstieg).toBe(false);
+    expect(vor(WIEDEREINSTIEG_TAGE).wiedereinstieg).toBe(false); // zwei Tage dazwischen
+    expect(vor(WIEDEREINSTIEG_TAGE + 1).wiedereinstieg).toBe(true); // drei Tage dazwischen
+    expect(berechneSerie(leer, leer, '2026-10-17').wiedereinstieg).toBe(false); // ganz neu: kein Wiedereinstieg
+  });
+
+  it('auch nach einer Ruhezeit: die Serie trägt, der Gruß kommt trotzdem; Pausetage stehen im Ergebnis', () => {
+    const ruhe = ruhetageAus([{ von: '2026-10-06', bis: '2026-10-15' }]);
+    const s = berechneSerie(menge(['2026-10-04', '2026-10-05', '2026-10-16']), ruhe, '2026-10-16', { pausetage: 1 });
+    expect(s).toMatchObject({ laenge: 3, heuteGelernt: true, wiedereinstieg: true, pausetage: 1 });
+    expect(berechneSerie(leer, leer, '2026-10-16').pausetage).toBe(2);
+    expect(berechneSerie(leer, leer, '2026-10-16', { pausetage: 9 }).pausetage).toBe(3);
+  });
+});
+
 describe('Ruhetage', () => {
+  it('als zusammenhängende Zeiträume (Liste der Einstellungen) und freie Tage je Kalenderjahr', () => {
+    const r = ruhetageAus([
+      { von: '2026-12-30', bis: '2027-01-02' },
+      { von: '2026-07-01', bis: '2026-07-03' },
+      { von: '2026-07-04', bis: '2026-07-05' },
+    ]);
+    expect(ruhezeitraeume(r)).toEqual([
+      { von: '2026-07-01', bis: '2026-07-05' },
+      { von: '2026-12-30', bis: '2027-01-02' },
+    ]);
+    expect(freieRuhetage(r, '2026')).toBe(23);
+    expect(freieRuhetage(r, '2027')).toBe(28);
+    expect(freieRuhetage(r, '2028')).toBe(30);
+    expect(ruhezeitraeume([])).toEqual([]);
+  });
+
   it('höchstens 30 je Kalenderjahr, die frühesten zählen; neues Jahr neu', () => {
     const r = ruhetageAus([
       { von: '2026-01-01', bis: '2026-01-25' },

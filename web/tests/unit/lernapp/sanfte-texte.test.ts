@@ -12,8 +12,44 @@ const ORDNER = join(import.meta.dirname, '../../../messages/lernapp');
 
 /** Verbotene Wortteile je Sprache (klein, ohne Rücksicht auf Groß- und Kleinschreibung). */
 const VERBOTEN: Record<'de' | 'tr' | 'ar', readonly string[]> = {
-  de: ['verlor', 'verlier', 'verpass', 'versäum', 'versag', 'strafe', 'bestraf', 'schande', 'enttäusch', 'aufgegeben', 'zu spät', 'schuld'],
-  tr: ['kaybet', 'kaybol', 'kaçırd', 'kaçırma', 'başarısız', 'ceza', 'utan', 'hayal kırıklığı', 'bozuldu', 'vazgeç'],
+  de: [
+    'verlor',
+    'verlier',
+    'verpass',
+    'versäum',
+    'versag',
+    'strafe',
+    'bestraf',
+    'schande',
+    'enttäusch',
+    'aufgegeben',
+    'zu spät',
+    'schuld',
+    // Druck rund um Serie und Tagesziel (L7-01)
+    'verfehlt',
+    'nicht geschafft',
+    'gerissen',
+    'zurückgesetzt',
+    'beeil',
+    'letzte chance',
+  ],
+  tr: [
+    'kaybet',
+    'kaybol',
+    'kaçırd',
+    'kaçırma',
+    'başarısız',
+    'ceza',
+    'utan',
+    'hayal kırıklığı',
+    'bozuldu',
+    'vazgeç',
+    // Druck rund um Serie und Tagesziel (L7-01)
+    'kırıldı',
+    'sıfırlandı',
+    'acele et',
+    'son şans',
+  ],
   ar: [
     '\u062E\u0633\u0631',
     '\u0641\u0627\u062A\u0643',
@@ -63,5 +99,9 @@ describe('Sanfte Texte der Lern-App', () => {
     expect(greift('tr', 'Dünü kaçırdın.')).toBe(true);
     expect(greift('ar', VERBOTEN.ar[0]!)).toBe(true);
     expect(greift('de', 'Schön, dass du da bist.')).toBe(false);
+    expect(greift('de', 'Tagesziel verfehlt.')).toBe(true);
+    expect(greift('de', 'Beeil dich, sonst ist die Serie weg!')).toBe(true);
+    expect(greift('tr', 'Serin sıfırlandı.')).toBe(true);
+    expect(greift('de', 'Schön, dass du wieder da bist.')).toBe(false);
   });
 });

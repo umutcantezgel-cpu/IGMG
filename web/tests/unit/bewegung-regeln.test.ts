@@ -132,3 +132,43 @@ describe('Lern-App: Bewegungsregister B-28 … B-35', () => {
     ]);
   });
 });
+
+/**
+ * Keine hochzählenden Zahlen (KERN 4.0 §1 und §10, ADR 0043 Nr. 1 und 9, Tor L7): XP, Tagesziel, Serie, Kennzahlen und
+ * Abzeichen stehen sofort mit ihrem Endwert da. Die Bausteine der Spielelemente haben darum keine Zeitgeber und keine
+ * Bildschleife; in der ganzen Lern-App gibt es keine Intervall-Uhr außerhalb der Aufnahme (B-35, funktional) und keine
+ * CSS-Zähler. Animierbare Zahlen über `@property` (Typ `<integer>` oder `<number>`) gibt es in globals.css nicht.
+ */
+const SPIELELEMENTE = [
+  'Abschluss.tsx',
+  'Serie.tsx',
+  'Abzeichen.tsx',
+  join('inseln', 'FortschrittInsel.tsx'),
+  join('inseln', 'HeuteInsel.tsx'),
+];
+
+describe('Lern-App: keine hochzählenden Zahlen', () => {
+  it.each(SPIELELEMENTE)('%s: ohne Zeitgeber und Bildschleife', (datei) => {
+    const text = readFileSync(join(LERNAPP, datei), 'utf8');
+    expect(text, datei).not.toMatch(/\b(?:setInterval|setTimeout|requestAnimationFrame|requestIdleCallback)\s*\(/);
+    expect(text, datei).not.toMatch(/\b(?:counter-(?:reset|increment|set)|@property)\b/);
+  });
+
+  it('keine Intervall-Uhr in components/lernapp außer der Aufnahme (sprechen/)', () => {
+    const funde = dateien(LERNAPP)
+      .filter((p) => !p.includes(`${join('lernapp', 'sprechen')}`))
+      .filter((p) => /\bsetInterval\s*\(/.test(readFileSync(p, 'utf8')));
+    expect(funde).toEqual([]);
+  });
+
+  it('keine animierbaren Zahlen und keine CSS-Zähler im Designsystem', () => {
+    expect(CSS).not.toMatch(/@property[^{]*\{[^}]*syntax:\s*['"]<(?:integer|number)>/);
+    expect(CSS).not.toMatch(/counter-increment/);
+  });
+
+  it('die Prüfung greift (Gegenprobe)', () => {
+    const zaehlt = 'useEffect(() => { const id = setInterval(() => setN((n) => n + 1), 16); }, []);';
+    expect(/\b(?:setInterval|setTimeout|requestAnimationFrame|requestIdleCallback)\s*\(/.test(zaehlt)).toBe(true);
+    expect(/@property[^{]*\{[^}]*syntax:\s*['"]<(?:integer|number)>/.test("@property --n { syntax: '<integer>'; }")).toBe(true);
+  });
+});

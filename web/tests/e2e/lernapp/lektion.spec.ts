@@ -4,6 +4,7 @@ import { expect, type Page, test } from '@playwright/test';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
+import { formatiere } from '../../../src/lib/lernapp/format';
 import { ergebnisText, ernsteBefunde, KURS, LEKTION_1, LEKTION_2, spieleLektion1, xpText } from './hilfen';
 
 /**
@@ -55,6 +56,14 @@ test.describe('Lektion des Testkurses (de)', () => {
     expect(proben.length).toBeGreaterThan(5);
     expect(new Set(proben).size).toBe(1);
     expect(proben[0]).toContain(xpText(10));
+    // Abschluss (L7-01): Tagesziel (Standard 1 Lektion) erreicht, Serie mit einem Lerntag, erstes Abzeichen – alles statisch
+    const abschluss = page.locator('[data-abschluss]');
+    await expect(abschluss).toContainText(de.abschluss.zielErreicht);
+    await expect(abschluss).toContainText(formatiere(de.serie.laenge, { n: 1 }, 'de'));
+    await expect(abschluss.getByRole('heading', { name: formatiere(de.abschluss.neueAbzeichen, { n: 1 }, 'de') })).toBeVisible();
+    await expect(abschluss.locator('[data-abzeichen="lektionen-1"]')).toContainText(
+      formatiere(de.abzeichen.arten.lektionen.name, { n: 1 }, 'de'),
+    );
 
     // Lernpfad: Lektion geschafft; Start: heute 1 Lektion, „Weiter lernen“ mit der nächsten Lektion
     await page.getByRole('link', { name: de.spieler.zurueck }).click();

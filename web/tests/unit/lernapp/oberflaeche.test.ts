@@ -8,7 +8,11 @@ import { bauKennung } from '@/lib/lernapp/bau';
 import { LERNAPP_FARBE } from '@/lib/lernapp/farben';
 import {
   ausgangVon,
+  einstellungenAusEintraegen,
+  einstellungsEreignisse,
+  PAUSETAGE,
   pruefeEinstellungen,
+  pruefeRuhezeit,
   STANDARD_EINSTELLUNGEN,
   TAGESZIELE,
   zielAus,
@@ -77,6 +81,7 @@ describe('Einstellungen auf dem Gerät', () => {
       ziffern: 'oestlich',
       hoeren: true,
       sprechen: true,
+      pausetage: 2,
     });
     expect(ausgangVon(STANDARD_EINSTELLUNGEN, 'tr')).toBe('tr');
     expect(ausgangVon({ ausgang: 'ar' }, 'tr')).toBe('ar');
@@ -92,13 +97,50 @@ describe('Einstellungen auf dem Gerät', () => {
         ziffern: 'latn',
         hoeren: false,
         sprechen: false,
+        pausetage: 0,
         fremd: 1,
       }),
-    ).toEqual({ ausgang: 'ar', tagesziel: { art: 'lektionen', wert: 2 }, ziffern: 'westlich', hoeren: false, sprechen: false });
+    ).toEqual({
+      ausgang: 'ar',
+      tagesziel: { art: 'lektionen', wert: 2 },
+      ziffern: 'westlich',
+      hoeren: false,
+      sprechen: false,
+      pausetage: 0,
+    });
     expect(pruefeEinstellungen({ ausgang: 'en', tagesziel: { art: 'xp', wert: 999 }, ziffern: 'x', hoeren: 'ja' })).toEqual(
       STANDARD_EINSTELLUNGEN,
     );
     expect(pruefeEinstellungen({ tagesziel: { art: 'keins' } }).tagesziel).toEqual({ art: 'kein' });
+    expect(pruefeEinstellungen({ pausetage: 4 }).pausetage).toBe(2);
+  });
+
+  it('Pausetage 0–3 (ADR 0043 Nr. 3): als Ereignis `einstellung` und aus dem abgeleiteten Speicher zurück', () => {
+    expect(PAUSETAGE).toEqual([0, 1, 2, 3]);
+    expect(einstellungsEreignisse(STANDARD_EINSTELLUNGEN, { ...STANDARD_EINSTELLUNGEN, pausetage: 3 })).toEqual([
+      { art: 'einstellung', daten: { schluessel: 'pausetage', wert: 3 } },
+    ]);
+    expect(einstellungsEreignisse(STANDARD_EINSTELLUNGEN, STANDARD_EINSTELLUNGEN)).toEqual([]);
+    expect(einstellungenAusEintraegen([{ schluessel: 'pausetage', wert: 0 }]).pausetage).toBe(0);
+    expect(einstellungenAusEintraegen([{ schluessel: 'pausetage', wert: 7 }]).pausetage).toBe(2);
+  });
+
+  it('Ruhezeit prüfen: Form, Reihenfolge, höchstens 30 Tage am Stück und je Kalenderjahr, höchstens ein Jahr von heute', () => {
+    const heute = '2026-10-21';
+    expect(pruefeRuhezeit('2026-12-20', '2027-01-05', heute, [])).toBeNull();
+    expect(pruefeRuhezeit('2026-10-01', '2026-10-30', heute, [])).toBeNull(); // 30 Tage, nachträglich
+    expect(pruefeRuhezeit('', '2026-10-30', heute, [])).toBe('form');
+    expect(pruefeRuhezeit('2026-02-30', '2026-03-01', heute, [])).toBe('form');
+    expect(pruefeRuhezeit('2026-10-30', '2026-10-01', heute, [])).toBe('reihenfolge');
+    expect(pruefeRuhezeit('2026-10-01', '2026-10-31', heute, [])).toBe('zuLang');
+    expect(pruefeRuhezeit('2028-01-01', '2028-01-05', heute, [])).toBe('zuWeit');
+    // im Jahr schon 28 Tage eingetragen: 2 neue gehen, 3 nicht; schon eingetragene Tage zählen nicht doppelt
+    const schon = Array.from({ length: 28 }, (_, i) => `2026-07-${String(i + 1).padStart(2, '0')}`);
+    expect(pruefeRuhezeit('2026-11-01', '2026-11-02', heute, schon)).toBeNull();
+    expect(pruefeRuhezeit('2026-11-01', '2026-11-03', heute, schon)).toBe('jahr');
+    expect(pruefeRuhezeit('2026-07-20', '2026-07-30', heute, schon)).toBeNull();
+    // über den Jahreswechsel zählt jedes Jahr für sich
+    expect(pruefeRuhezeit('2026-12-30', '2027-01-20', heute, schon)).toBeNull();
   });
 
   it('Startstand eines neuen Geräts: leer', () => {

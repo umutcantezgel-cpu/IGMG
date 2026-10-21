@@ -154,6 +154,7 @@ describe('Einstellungen als Ereignisse (ADR 0038, ADR 0043 Nr. 2)', () => {
       ziffern: 'westlich',
       hoeren: true,
       sprechen: false,
+      pausetage: 2,
     });
     expect(fenster.localStorage.getItem(EINSTELLUNGEN_SCHLUESSEL)).toBeNull();
   });

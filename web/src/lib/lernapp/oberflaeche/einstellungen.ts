@@ -104,7 +104,8 @@ export function einstellungenAusEintraegen(eintraege: readonly { schluessel: str
 /** Geänderte Felder als Ereignis-Entwürfe (`einstellung` bzw. `tagesziel`). */
 export function einstellungsEreignisse(alt: Einstellungen, neu: Einstellungen): EreignisEntwurf[] {
   const aus: EreignisEntwurf[] = [];
-  const setze = (schluessel: string, wert: string | number | boolean | null) => aus.push({ art: 'einstellung', daten: { schluessel, wert } });
+  const setze = (schluessel: string, wert: string | number | boolean | null) =>
+    aus.push({ art: 'einstellung', daten: { schluessel, wert } });
   if (alt.ausgang !== neu.ausgang) setze('ausgangssprache', neu.ausgang);
   if (zielSchluessel(alt.tagesziel) !== zielSchluessel(neu.tagesziel)) aus.push({ art: 'tagesziel', daten: { ziel: neu.tagesziel } });
   if (alt.ziffern !== neu.ziffern) setze('ziffern', neu.ziffern);
@@ -198,13 +199,16 @@ export const RUHEZEIT_HOECHSTENS = 30;
 export type RuhezeitFehler = 'form' | 'reihenfolge' | 'zuLang' | 'zuWeit' | 'jahr';
 
 const DATUM = /^\d{4}-\d{2}-\d{2}$/;
+/** Gültiger Kalendertag `JJJJ-MM-TT` (auch Schaltjahre; `Date.parse` nähme den 30. Februar an). */
+const istTag = (t: string): boolean =>
+  DATUM.test(t) && !Number.isNaN(Date.parse(t)) && new Date(`${t}T00:00:00Z`).toISOString().startsWith(t);
 
 /**
  * Prüft einen Zeitraum vor dem Eintragen: gültige Daten, `von` ≤ `bis`, höchstens 30 Tage, höchstens ein Jahr vor oder nach
  * heute und nicht mehr neue Tage, als im Kalenderjahr noch frei sind. `null` = in Ordnung.
  */
 export function pruefeRuhezeit(von: string, bis: string, heute: string, ruhetage: Iterable<string>): RuhezeitFehler | null {
-  if (!DATUM.test(von) || !DATUM.test(bis) || Number.isNaN(Date.parse(von)) || Number.isNaN(Date.parse(bis))) return 'form';
+  if (!istTag(von) || !istTag(bis)) return 'form';
   if (bis < von) return 'reihenfolge';
   if (tageZwischen(von, bis) >= RUHEZEIT_HOECHSTENS) return 'zuLang';
   if (Math.abs(tageZwischen(heute, von)) > 366 || Math.abs(tageZwischen(heute, bis)) > 366) return 'zuWeit';

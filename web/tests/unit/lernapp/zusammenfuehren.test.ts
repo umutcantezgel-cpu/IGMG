@@ -169,8 +169,8 @@ describe('Eigenschaften der Vereinigung (fast-check)', () => {
 
 describe('Ableitung', () => {
   it('Version der Ableitung', () => {
-    expect(ABLEITUNGS_VERSION).toBe(1);
-    expect(leiteAb([], HEUTE).version).toBe(1);
+    expect(ABLEITUNGS_VERSION).toBe(2);
+    expect(leiteAb([], HEUTE).version).toBe(2);
   });
 
   it('Einstellungen: letzter Schreiber nach (am, geraet) gewinnt; ungültige und unbekannte wirken nicht', () => {

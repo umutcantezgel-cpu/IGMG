@@ -10,7 +10,7 @@ import {
   markiereSynchron,
   uebernimm,
 } from '@/lib/lernapp/lokal/ausgang';
-import { leiteNeuAb } from '@/lib/lernapp/lokal/ableitung';
+import { leiteAbNachLektion, leiteNeuAb } from '@/lib/lernapp/lokal/ableitung';
 import {
   arbeitsspeicher,
   DB_NAME,
@@ -179,9 +179,31 @@ describe.each([
     expect(await sp.alle('lektionen')).toMatchObject([{ profil: p.id, lektion: 'tr-aus-de.a1.e01.l01', besteQuote: 1 }]);
     expect(await sp.alle('tage')).toMatchObject([{ profil: p.id, tag: '2026-10-17', xp: 10, erreicht: true }]);
     expect(await sp.lies('einstellungen', [p.id, 'pausetage'])).toMatchObject({ wert: 1, geraet: p.geraet });
+    expect(await sp.alle('abzeichen')).toEqual([{ profil: p.id, abzeichen: 'lektionen-1', am: '2026-10-17' }]);
     expect(brauchtNeuableitung((await sp.lies('profile', p.id))!)).toBe(false);
     const faellig = await sp.alleIndex('karten', 'profil-faellig', [[p.id], [p.id, []]]);
     expect(faellig).toHaveLength(1);
+  });
+
+  it('nach der Lektion: Tagesziel, Serie mit Pausetagen und nur die neu erhaltenen Abzeichen (L7-01)', async () => {
+    const sp = await oeffne();
+    const p = await legeProfilAn(sp, { name: '[Name]', oberflaeche: 'de' });
+    await haengeAlleAn(sp, p, [BEWERTUNG, LEKTION_FERTIG, XP], { jetzt: JETZT, zeitzone: ZONE });
+    const erst = await leiteAbNachLektion(sp, p.id, '2026-10-17');
+    expect(erst.neu).toEqual(['lektionen-1']);
+    expect(erst.tag).toMatchObject({ tag: '2026-10-17', xp: 10, lektionen: 1, erreicht: true });
+    expect(erst.serie).toMatchObject({ laenge: 1, heute: '2026-10-17', wiedereinstieg: false, pausetage: 2 });
+    expect(erst.serie.woche).toHaveLength(7);
+    // dieselbe Lektion noch einmal: nichts Neues; eine Ruhezeit ändert die Abzeichen nicht
+    await haengeAlleAn(sp, p, [LEKTION_FERTIG, XP, { art: 'pause', daten: { von: '2026-10-20', bis: '2026-10-22' } }], {
+      jetzt: JETZT,
+      zeitzone: ZONE,
+    });
+    const zweit = await leiteAbNachLektion(sp, p.id, '2026-10-17');
+    expect(zweit.neu).toEqual([]);
+    expect(zweit.tag).toMatchObject({ xp: 20, lektionen: 2 });
+    expect(await sp.alle('abzeichen')).toHaveLength(1);
+    expect(await sp.lies('einstellungen', [p.id, 'ruhetage'])).toMatchObject({ wert: ['2026-10-20', '2026-10-21', '2026-10-22'] });
   });
 
   it('Export und Import (Art. 20): neues Profil mit eigener Geräte-UUID, gleiche Ereignisse, idempotent', async () => {
