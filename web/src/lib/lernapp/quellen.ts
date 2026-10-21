@@ -86,6 +86,24 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     lizenz: 'Apache-2.0',
   },
   {
+    // von Transformers.js mitgebündelt (Tokenizer der Spracherkennung), im selben Worker (Restmangel L2)
+    id: 'tokenizers',
+    name: 'Tokenizers.js',
+    version: '0.2.0',
+    urheber: 'Hugging Face',
+    adresse: 'https://github.com/huggingface/tokenizers.js',
+    lizenz: 'Apache-2.0',
+  },
+  {
+    // von Transformers.js mitgebündelt (Vorlagen der Modellkonfiguration), im selben Worker (Restmangel L2)
+    id: 'jinja',
+    name: '@huggingface/jinja',
+    version: '0.5.10',
+    urheber: 'Copyright (c) 2023 Hugging Face',
+    adresse: 'https://github.com/huggingface/huggingface.js',
+    lizenz: 'MIT',
+  },
+  {
     // Laufzeit der Spracherkennung: JS im Worker, WebAssembly unter `/lern-app/modelle/ort-…/` (ADR 0042 Nr. 10)
     id: 'onnxruntime-web',
     name: 'ONNX Runtime Web',

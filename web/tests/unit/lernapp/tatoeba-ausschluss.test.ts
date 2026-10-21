@@ -26,13 +26,13 @@ const ARABISCHE_SAETZE = new Map(
 const waechter = ladeWaechter(DATEN);
 
 describe('Tatoeba-Ausschlussliste', () => {
-  it('stimmt mit web/daten/tatoeba/QUELLE.md überein (38 IDs)', () => {
+  it('stimmt mit web/daten/tatoeba/QUELLE.md überein (43 IDs)', () => {
     const ids = ausschlussAusQuelle(QUELLE);
-    expect(ids).toHaveLength(38);
+    expect(ids).toHaveLength(43);
     expect(new Set(ids)).toEqual(TATOEBA_AUSSCHLUSS);
   });
 
-  it('alle 38 Sätze stehen im Auszug und sind Positivproben des Wächters (Koran- bzw. Hadith-4-Gramm)', () => {
+  it('alle 43 Sätze stehen im Auszug und sind Positivproben des Wächters (Koran- bzw. Hadith-4-Gramm)', () => {
     const verfehlt = [...TATOEBA_AUSSCHLUSS].filter((id) => {
       const satz = ARABISCHE_SAETZE.get(id);
       return !satz || vierGrammTreffer(satz, waechter.index) === null;
@@ -40,10 +40,9 @@ describe('Tatoeba-Ausschlussliste', () => {
     expect(verfehlt).toEqual([]);
   });
 
-  it('der Wächter findet im arabischen Auszug mindestens diese 38 (weitere Treffer schließt die 4-Gramm-Prüfung ohnehin aus)', () => {
+  it('der Wächter findet im arabischen Auszug genau diese 43 (keine Lücke der Liste, Restmangel L2)', () => {
     const treffer = [...ARABISCHE_SAETZE].filter(([, satz]) => vierGrammTreffer(satz, waechter.index) !== null).map(([id]) => id);
-    expect(treffer).toEqual(expect.arrayContaining([...TATOEBA_AUSSCHLUSS]));
-    expect(treffer.length).toBeLessThan(60);
+    expect(new Set(treffer)).toEqual(TATOEBA_AUSSCHLUSS);
   });
 
   it('tatoebaId liest nur tatoeba:<id>', () => {

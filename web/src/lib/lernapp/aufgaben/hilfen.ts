@@ -87,6 +87,15 @@ export const HOER_TYPEN = ['hoeren_waehlen', 'hoeren_schreiben', 'minimalpaare']
 export type HoerTyp = (typeof HOER_TYPEN)[number];
 export const istHoerTyp = (typ: string): typ is HoerTyp => (HOER_TYPEN as readonly string[]).includes(typ);
 
+/**
+ * Braucht die Aufgabe Hören? Die Hörtypen immer; `schrift_tr` und `schrift_latein` nur, wenn sie statt einer Vorgabe nur ein
+ * Hörbeispiel haben (dann sind sie eine Hörübung, `SchriftWahl.tsx`). Bedingung je Aufgabe für „Hörübungen aus“ und „Ich kann
+ * gerade nicht hören“ (Engine `ueberspringe(…, { hoeren: true })`, Restmangel L2).
+ */
+export function brauchtHoeren(a: { typ: string; vorgabe?: unknown }): boolean {
+  return istHoerTyp(a.typ) || ((a.typ === 'schrift_tr' || a.typ === 'schrift_latein') && !a.vorgabe);
+}
+
 /** Übungstypen mit Sprechen: „Ich kann gerade nicht sprechen“ überspringt sie für den Rest der Lektion (wie beim Hören). */
 export const SPRECH_TYPEN = ['sprechen'] as const;
 

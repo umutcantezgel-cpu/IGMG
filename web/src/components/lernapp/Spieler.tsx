@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { hatAudio, HOER_TYPEN, istHoerTyp, type MitHoeren } from '@/lib/lernapp/aufgaben/hilfen';
+import { brauchtHoeren, hatAudio, HOER_TYPEN, istHoerTyp, type MitHoeren } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Antwort, AufgabenTyp, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { SELBSTBEWERTUNG } from '@/lib/lernapp/bewertung';
 import {
@@ -83,8 +83,7 @@ const erzeugeKomponenten = (): Komponenten =>
 function spielbar(lektion: Lektion, o: SpielerOptionen): Lektion {
   const aufgaben = lektion.aufgaben.filter((a) => {
     if (a.typ === 'sprechen') return o.sprechen;
-    if ((a.typ === 'schrift_tr' || a.typ === 'schrift_latein') && !a.vorgabe) return o.hoeren;
-    return true;
+    return o.hoeren || !brauchtHoeren(a);
   });
   return aufgaben.length === lektion.aufgaben.length ? lektion : { ...lektion, aufgaben };
 }
@@ -203,9 +202,9 @@ export function Spieler({
   const nurUeberspringen = useCallback((ja: boolean) => setNurWeiterBei((alt) => (ja ? pos : alt === pos ? null : alt)), [pos]);
 
   /** Ohne Wertung weiter (gelesener Tipp, Hörübung ohne Audio, „Ich kann gerade nicht hören/sprechen“). */
-  function ueberspringeAufgabe({ typen, meldung }: { typen?: readonly AufgabenTyp[]; meldung?: string } = {}) {
+  function ueberspringeAufgabe({ typen, hoeren, meldung }: { typen?: readonly AufgabenTyp[]; hoeren?: boolean; meldung?: string } = {}) {
     if (s.phase !== 'frage') return;
-    const r = ueberspringe(s, { typen });
+    const r = ueberspringe(s, { typen, hoeren });
     setS(r.sitzung);
     setAntwort(null);
     setMeldung(meldung ?? '');

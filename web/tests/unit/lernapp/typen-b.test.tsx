@@ -18,7 +18,7 @@ import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/comp
 import { BUCHSTABEN as ELIFBE, buchstabeFuer } from '@/lib/elifbe/alphabet';
 import { erlaubt } from '@/lib/elifbe/silben';
 import { bewerte } from '@/lib/lernapp/aufgaben/bewerte';
-import { SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
+import { brauchtHoeren, SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import { ablauf, bewerteGeschichte } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
 import { glosseFuer, glossenVerzeichnis, richtigJeFrage, stuecke } from '@/lib/lernapp/aufgaben/auswertung/lesen_fragen';
 import { type Aufgabe, AufgabeSchema, type ImplementierterTyp, LektionSchema } from '@/lib/lernapp/aufgaben/schema';
@@ -404,10 +404,34 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
       } as unknown as Aufgabe;
       const s = starte({ ...LEKTION_B, aufgaben: [nurHoeren, SCHRIFT_LATEIN as Aufgabe, hw] });
       // der Abspieler gibt beim Tippen auf „Ich kann gerade nicht hören“ genau diese Angabe an den Spieler
-      const r = ueberspringe(s, { typen: HOER_TYPEN });
+      const r = ueberspringe(s, { hoeren: true });
       expect(r.sitzung.uebersprungen).toEqual([true, false, true]);
       expect(r.ereignisse.some((e) => e.art === 'bewertung')).toBe(false);
       expect(r.sitzung.reihe[r.sitzung.pos]).toBe(1);
+      // nur nach Typ (alte Angabe) blieben spätere Schrift-Aufgaben mit nur einem Hörbeispiel stehen
+      expect(ueberspringe(starte({ ...LEKTION_B, aufgaben: [hw, nurHoeren] }), { typen: HOER_TYPEN }).sitzung.uebersprungen).toEqual([
+        true,
+        false,
+      ]);
+      const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/lernapp/aufgaben/Abspieler.tsx'), 'utf8');
+      expect(quelle).toContain('ueberspringe({ hoeren: true, meldung: texte.uebersprungen })');
+    });
+
+    it('„Ich kann gerade nicht hören“ überspringt auch spätere Schrift-Aufgaben nur mit Hörbeispiel (Bedingung je Aufgabe)', () => {
+      const hw = { ...nurHoeren, typ: 'hoeren_waehlen', schluessel: 'tr.v.e01.a009', anweisung: 'waehleGehoertes' } as unknown as Aufgabe;
+      const latein = {
+        ...(SCHRIFT_LATEIN as object),
+        schluessel: 'tr.v.e01.a010',
+        vorgabe: undefined,
+        hoeren: (mitVorgabe as unknown as { hoeren: unknown }).hoeren,
+      };
+      const s = starte({ ...LEKTION_B, aufgaben: [hw, nurHoeren, mitVorgabe, latein as unknown as Aufgabe] });
+      const r = ueberspringe(s, { hoeren: true });
+      // die Hörübung selbst, die tr-Schrift nur mit Hörbeispiel und die Latein-Schrift nur mit Hörbeispiel; mit Vorgabe bleibt
+      expect(r.sitzung.uebersprungen).toEqual([true, true, false, true]);
+      expect(r.sitzung.reihe.slice(r.sitzung.pos)).toEqual([2]);
+      expect(brauchtHoeren(nurHoeren)).toBe(true);
+      expect(brauchtHoeren(mitVorgabe)).toBe(false);
     });
 
     it('nach dem Prüfen: Abschrift, kein „Ich kann gerade nicht hören“', async () => {

@@ -1,5 +1,5 @@
 import { angenommen, bereiteLexikon, type Lexikon, type Urteil } from '../abgleich/vergleichsform';
-import { type Auswertung, type Bewerter, istImplementiert } from '../aufgaben/hilfen';
+import { type Auswertung, type Bewerter, brauchtHoeren, istImplementiert } from '../aufgaben/hilfen';
 import type { Antwort, Aufgabe, AufgabenTyp, Lektion } from '../aufgaben/schema';
 import type { EreignisEntwurf } from '../ereignisse/typen';
 import { noteAus } from '../bewertung';
@@ -14,7 +14,7 @@ import { xpFuer } from './xp';
  * - Jede Karte wird nur im ersten Versuch bewertet (richtig → gut, Tippfehler → schwer, falsch → nochmal); das Ereignis
  *   `bewertung` entsteht sofort, damit ein Abbruch nichts verliert.
  * - Übersprungen wird ohne Bewertung und ohne Wiederholung (`ueberspringe`): Hörübung ohne Audio („Audio folgt“), „Ich kann
- *   gerade nicht hören“ (dann alle übrigen Hörübungen der Lektion), „Ich kann gerade nicht sprechen“, gelesener
+ *   gerade nicht hören“ (dann alle übrigen Aufgaben der Lektion, die Hören brauchen), „Ich kann gerade nicht sprechen“, gelesener
  *   Grammatik-Tipp – keine Sackgasse (KERN 4.0 §4, §8). Mit „Hörübungen aus“ fallen Hörübungen schon beim Start weg
  *   (`starte(…, { ohne })`). Eine Aufgabe, die schon einen Versuch hatte (Wiederholung am Ende), bleibt gewertet; nur die
  *   offene Wiederholung entfällt.
@@ -170,16 +170,20 @@ export function weiter(s: Sitzung): Schritt {
 /**
  * Aktuelle Aufgabe ohne Wertung überspringen (nur in der Phase „frage“; KERN 4.0 §8: Hörübung ohne Audio, „Ich kann gerade
  * nicht hören/sprechen“, gelesener Grammatik-Tipp): keine Bewertung, keine Wiederholung. Mit `typen` fallen auch alle
- * späteren, noch offenen Aufgaben dieser Typen weg (z. B. „Ich kann gerade nicht hören“). Eine schon gewertete Aufgabe
- * (Wiederholung am Ende) bleibt gewertet. Am Ende wie `weiter`.
+ * späteren, noch offenen Aufgaben dieser Typen weg (z. B. „Ich kann gerade nicht sprechen“); mit `hoeren` alle späteren, die
+ * Hören brauchen – Bedingung je Aufgabe (`brauchtHoeren`: Hörtypen und Schrift-Aufgaben nur mit Hörbeispiel, „Ich kann gerade
+ * nicht hören“). Eine schon gewertete Aufgabe (Wiederholung am Ende) bleibt gewertet. Am Ende wie `weiter`.
  */
-export function ueberspringe(s: Sitzung, { typen = [] }: { typen?: readonly AufgabenTyp[] } = {}): Schritt {
+export function ueberspringe(
+  s: Sitzung,
+  { typen = [], hoeren = false }: { typen?: readonly AufgabenTyp[]; hoeren?: boolean } = {},
+): Schritt {
   const a = aktuell(s);
   if (!a || s.phase !== 'frage') return { sitzung: s, ereignisse: [] };
   const weg = new Set([a.index]);
   for (const i of s.reihe.slice(s.pos + 1)) {
     const x = s.aufgaben[i];
-    if (x && typen.includes(x.typ) && !s.abgeschlossen[i]) weg.add(i);
+    if (x && (typen.includes(x.typ) || (hoeren && brauchtHoeren(x))) && !s.abgeschlossen[i]) weg.add(i);
   }
   const abgeschlossen = s.abgeschlossen.map((v, i) => v || weg.has(i));
   const uebersprungen = s.uebersprungen.map((v, i) => v || weg.has(i));

@@ -3,7 +3,6 @@
 import { Volume2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import type { Inhalt } from '@/lib/lernapp/aufgaben/grundlagen';
-import { HOER_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import { hoerenUnmoeglich, spiele, stoppe } from '@/lib/lernapp/oberflaeche/audio';
 import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
@@ -17,7 +16,7 @@ const KNOPF =
 /**
  * Wiedergabe der Hörübungen (PLAN §4, ADR 0039 Fortschreibung Nr. 3–4, KERN 4.0 §4/§8): „Anhören“ und „Langsam anhören“
  * (0,75 mit gleicher Tonhöhe) über das eine `<audio>` der Lern-App; nichts spielt ohne Tippen. „Ich kann gerade nicht
- * hören“ überspringt alle Hörübungen der Lektion. Ohne Clip („Audio folgt“) oder wenn das Gerät nicht abspielen kann, gibt es
+ * hören“ überspringt alle Aufgaben der Lektion, die Hören brauchen (auch Schrift-Aufgaben nur mit Hörbeispiel). Ohne Clip („Audio folgt“) oder wenn das Gerät nicht abspielen kann, gibt es
  * nur „Weiter ohne Hören“ – keine Sackgasse. Nach der Antwort steht die Abschrift.
  */
 export function Abspieler({
@@ -68,7 +67,7 @@ export function Abspieler({
         <p className="text-18">{lage === 'ohne_audio' ? texte.audioFolgtText : texte.nichtMoeglich}</p>
         <button
           type="button"
-          onClick={() => ueberspringe(lage === 'unmoeglich' ? { typen: HOER_TYPEN, meldung: texte.uebersprungen } : {})}
+          onClick={() => ueberspringe(lage === 'unmoeglich' ? { hoeren: true, meldung: texte.uebersprungen } : {})}
           className="min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800"
         >
           {texte.ueberspringen}
@@ -108,7 +107,7 @@ export function Abspieler({
         <div className="flex flex-wrap gap-3">
           <button
             type="button"
-            onClick={() => ueberspringe({ typen: HOER_TYPEN, meldung: texte.uebersprungen })}
+            onClick={() => ueberspringe({ hoeren: true, meldung: texte.uebersprungen })}
             className="min-h-11 font-bold text-gruen-800 underline underline-offset-4 hover:text-gruen-950"
           >
             {texte.nichtHoeren}
