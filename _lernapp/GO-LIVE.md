@@ -13,7 +13,8 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
   Startklar-Cockpit
 - `KERN.md` §6, `MENSCHEN.md` (LM-01…LM-36), ADR 0035 (Schalter), ADR 0041 (Stichprobe), ADR 0042 (Sprechen)
 - `berichte/s-l3.md` (Auflagen M-1, N-1…N-4, Hinweise H-1…H-8)
-- Gesamtliste der Website: `web/docs/GO-LIVE.md` (Abschnitt G); dort G4 für `KONTEN`, `LERNPLATTFORM`, `PUSH`
+- Gesamtliste der Website: `web/docs/GO-LIVE.md` (Abschnitt G); dort G1 für Datenbank und Geheimnisse (auch
+  `ALTCHA_GEHEIMNIS`), G4 für `KONTEN`, `LERNPLATTFORM`, `PUSH`
 - Handbücher: `web/docs/handbuch/lernapp-lernende.md`, `lernapp-lehrkraefte.md`, `lernapp-sprachpruefung.md`,
   `lernapp-imam-hoca.md`
 
@@ -40,7 +41,7 @@ Quellen dieser Liste (bei Widerspruch gilt der Code):
 |---|---|---|---|---|---|
 | `lernapp` | nein (Fortschritt nur auf dem Gerät) | **an** (L3-E12a) | – | erledigt: Nutzerentscheidung 21.10.2026; zum Abschalten `FUNKTION_LERNAPP=aus`. **S-L3 N-4** bis zur Abnahme (L8-05) oder AUSNAHME mit Grund: Modelle, `sw.js` und Symbole unter `/lern-app/` bleiben bei „aus“ abrufbar und sind ungebremst | Nutzer bzw. Vorstand |
 | `lernapp_ungeprueft` | nein | **an** (O-1, ADR 0041 Nr. 8) | `lernapp` | Einheiten nach automatischer Prüfung und KI-Gegenprüfung zeigen den Hinweis „noch nicht von Muttersprachlern geprüft“; abgelehnte Einträge und Einträge mit `religionsbezug` ohne zwei Freigaben bleiben unsichtbar. S-L3: keine Auflage | Vorstand (LM-11; Standard ja) |
-| `lernapp_meldungen` | nein (anonym, nur Aufgabenschlüssel und Kategorie, ALTCHA) | **an** | `lernapp` | erledigt; Bearbeitung der Meldungen unter Verwaltung › Lern-App › Meldungen. S-L3: keine Auflage (Hinweis H-1: Körper als Strom mit Grenze lesen, Löschfrist offener Meldungen) | Redaktion |
+| `lernapp_meldungen` | nein (anonym, nur Aufgabenschlüssel und Kategorie, ALTCHA) | **an**, wirkt aber erst nach G1 | `lernapp`; Datenbank und `ALTCHA_GEHEIMNIS` (`web/docs/GO-LIVE.md` G1) | **offen: G1.** Ohne Datenbank antwortet die Melde-Route mit 404, ohne `ALTCHA_GEHEIMNIS` mit 503 (`api/lernapp/meldung/route.ts`); die Produktion läuft noch ohne Datenbank (Beispielmodus). Danach Bearbeitung der Meldungen unter Verwaltung › Lern-App › Meldungen (braucht G2). S-L3: keine Auflage (Hinweis H-1: Körper als Strom mit Grenze lesen, Löschfrist offener Meldungen) | Technik (G1), dann Redaktion |
 | `lernapp_sprechen` | nein (Aufnahme bleibt im Arbeitsspeicher des Geräts) | aus | `lernapp` | Gerätetest Sprechen und Audioformat auf iPhone, Android-Mittelklasse und Laptop (LM-07, MN-19); Whisper-Modell und Ort bestätigt (LM-27). **S-L3 N-4** mitdenken: Mit dem Schalter laden mehr Geräte die Modelle (≈ 95 MB); Ratenregel oder Modell-Route vorher, Kosten beobachten (LM-15) | Technik nach Gerätetest |
 | `lernapp_sync` | **ja** (Ereignisprotokoll auf dem Server, Art. 9 DSGVO) | aus | `lernapp`, `konten` | DSFA-Nachtrag Lern-App, Einwilligungstext `lernapp`, Datenschutzerklärung und Löschfristen (LM-08; Entwürfe in `web/docs/recht/entwuerfe/`); `konten` nach `web/docs/GO-LIVE.md` G4. **S-L3 N-2 vor dem Einschalten beheben:** Einwilligung `lernapp` erteilen und widerrufen (eigene Person ab 16, Eltern für Kinder); der Widerruf löscht den Lernstand auf dem Server; Export nach Art. 15/20 mit den Lern-App-Daten | DSB / Recht, dann Vorstand |
 | `lernapp_gruppen` | **ja** (Zuweisungen, Stand der Gruppe; Schreibabgaben noch nicht aktiv) | aus | `lernapp`, `lernplattform` | DSFA-Nachtrag (LM-08); `lernplattform` nach G4; Lehrkräfte geschult (LM-14, Handbuch `web/docs/handbuch/lernapp-lehrkraefte.md`). **S-L3 M-1 vor dem Einschalten beheben:** Lerntage und XP je Kurs trennen; Stand der Lehrkraft nur aus den Kursen der eigenen Zuweisungen, Gruppenziel nur aus Sprachkursen. **N-2** wie bei `lernapp_sync` (Stand und „erledigt“ kommen nur über den Abgleich). **N-3** bis zur Abnahme: XP je Lerntag kappen. Hinweise H-2 (Last, L8-02) und H-5 (Gruppenziel nur bis gestern) | DSB / Recht, Vorstand, Bildung |
@@ -62,7 +63,7 @@ sind keine Hindernisse für den Schalter `lernapp`.
 | Audio Deutsch | Sprachausgabe Thorsten freigegeben; Hörabnahme offen (LM-06) | Blob-Speicher `lernapp` verbunden, `LERNAPP_BLOB_BASIS` gesetzt (LM-15); Bündel hochgeladen | Technik; Hörabnahme Nutzer bzw. Vorstand |
 | Audio Türkisch und Arabisch | „Audio folgt“ (Hörübungen werden übersprungen) | eigene Aufnahmen oder eigene Stimme mit bestandener Prüfkette (LM-24…LM-26). **S-L3 N-1 vor der ersten echten Sprecher-Vereinbarung** (X-02, X-03) bzw. bis zur Abnahme: Vereinbarungen privat ablegen, nicht in der Mediathek; Hinweis H-4: Sprecherin samt Aufnahmen entfernen können | Vorstand, Technik, Muttersprachler |
 | Bildkarten | Motive ohne Freigabe blockieren den Import | Motivliste freigeben (LM-34) | Redaktion |
-| Lizenz der Lerninhalte | CC BY-SA 4.0, Namensnennung auf `/quellen` und `/lern-app/[ui]/quellen` (L8-03) | Bestätigung (LM-12) | Vorstand / Recht |
+| Lizenz der Lerninhalte | CC BY-SA 4.0, Namensnennung auf `/quellen` und `/lern-app/[ui]/quellen` (L8-03); je Satz und Eintrag dort für jede Einheit auf dem Gerät, offline aus dem Paket | Bestätigung (LM-12) | Vorstand / Recht |
 
 ## Auflagen der Sicherheitsprüfung S-L3
 
@@ -84,13 +85,16 @@ Administration im Handbuch Sprachprüfung (erledigt in L8-04) und im Audit-Beric
 
 ## Reihenfolge beim Freischalten (Vorschlag)
 
-1. `lernapp`, `lernapp_ungeprueft`, `lernapp_meldungen` – an (seit 21.10.2026). N-4 bis zur Abnahme.
-2. `lernapp_sprechen` – nach dem Gerätetest (LM-07) und N-4.
-3. `KONTEN` und `LERNPLATTFORM` der Website (G4), dann `lernapp_sync` nach LM-08 und N-2, danach `lernapp_gruppen` nach
+1. `lernapp`, `lernapp_ungeprueft`, `lernapp_meldungen` – an (seit 21.10.2026). N-4 bis zur Abnahme. Ohne Datenbank
+   (Beispielmodus) zeigt die Lern-App nur die Inhalte, die beim Bau eingespielt wurden; „Fehler melden“ wirkt erst nach G1.
+2. G1 der Website (`web/docs/GO-LIVE.md`: Datenbank, Geheimnisse samt `ALTCHA_GEHEIMNIS`) und G2 (Verwaltungskonten) –
+   danach kommen Meldungen an, und Sprachprüfung, religiöse Prüfung und Audio-Studio sind bedienbar.
+3. `lernapp_sprechen` – nach dem Gerätetest (LM-07) und N-4.
+4. `KONTEN` und `LERNPLATTFORM` der Website (G4), dann `lernapp_sync` nach LM-08 und N-2, danach `lernapp_gruppen` nach
    M-1 (und N-3).
-4. `lernapp_rangliste` – nur nach LM-10, M-1 und N-3.
-5. `push_lernapp` – nach `PUSH` (G4).
-6. `lernapp_statistik` – nur nach Entscheidung der DSB.
+5. `lernapp_rangliste` – nur nach LM-10, M-1 und N-3.
+6. `push_lernapp` – nach `PUSH` (G4).
+7. `lernapp_statistik` – nur nach Entscheidung der DSB.
 
 **Abschalten** geht jederzeit: `FUNKTION_<NAME>=aus` setzen und neu bereitstellen. Was dann schon auf dem Server liegt,
 regelt das Löschkonzept (`web/docs/recht/entwuerfe/loeschkonzept.md` §3.7, Entwurf bis LM-08). Der Fortschritt auf den Geräten

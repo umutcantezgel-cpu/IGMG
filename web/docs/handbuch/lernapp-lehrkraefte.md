@@ -62,7 +62,7 @@ Die Tabelle **„Stand dieser Woche“** zeigt je Lernender/Lernendem: **Lerntag
 - Gezählt werden **[nach Auflage S-L3 M-1:]** nur die Kurse, die du der Gruppe zugewiesen hast. Bis diese Änderung gebaut ist, bleibt die Seite in der Produktion aus.
 - Die Zahlen sind **für dich**. Nenne sie nicht vor der Gruppe und vergleiche Kinder nicht miteinander.
 
-**Eltern** sehen in „Mein Bereich“ bei ihrem Kind nur dessen **Lernwoche** (XP, Lektionen, Lerntage, Pausetage), bis es 16 ist. Ab 16 entscheidet es selbst über seine Lerndaten.
+**Eltern** sehen in „Mein Bereich“ bei ihrem Kind nur dessen **Lernwoche** (XP, Lektionen, Lerntage, Pausetage) – bis 30 Tage nach dem 16. Geburtstag (Übergang). Danach entscheidet es selbst über seine Lerndaten; die Eltern sehen die Lernwoche dann nicht mehr.
 
 ## 7. Die Lern-App im Unterricht – auch ohne Konto
 

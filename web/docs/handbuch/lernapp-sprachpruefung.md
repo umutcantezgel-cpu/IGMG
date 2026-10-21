@@ -63,9 +63,11 @@ Unter **„Warteschlange“** sehen Sie alle Einheiten in Ihren Prüfsprachen. [
 - **Kritisch:** Bedeutung, Grammatik, anstößig, Aussprache (bei Audio). Ein kritisches Urteil **verbirgt den Eintrag sofort** in der App, bis eine Korrektur geprüft ist.
 - **Leicht:** Natürlichkeit, Zeichensetzung.
 
+**„Abgelehnt“** verbirgt den Eintrag ebenso sofort wie ein kritisches Urteil – mit jeder Kategorie, auch einer leichten.
+
 **Sie bearbeiten nichts selbst.** Ihr Korrekturvorschlag geht an die Redaktion; sie arbeitet ihn in die Inhalte ein. Ihre Korrektur ist danach „eingefroren“: Ein neuer Entwurf der künstlichen Intelligenz überschreibt sie nicht.
 
-**Texte mit religiöser Formel oder geschützter Wortfolge** nimmt das Korrekturfeld nicht an („Solche Einträge bearbeitet nur die religiöse Prüfung“). Wählen Sie dann „Abgelehnt“ mit einer Kategorie und schreiben Sie Ihren Hinweis in den Kommentar.
+**Texte mit religiöser Formel oder geschützter Wortfolge** nimmt das Korrekturfeld nicht an („Solche Einträge bearbeitet nur die religiöse Prüfung“). Wählen Sie dann „Abgelehnt“ mit einer Kategorie und schreiben Sie Ihren Hinweis in den Kommentar, **ohne die Formel oder die Wortfolge zu zitieren** – der Kommentar wird genauso geprüft und sonst nicht gespeichert. Beschreiben Sie die Stelle mit eigenen Worten (z. B. „zweites Wort“).
 
 ### Tastenkürzel
 

@@ -252,7 +252,7 @@ Die Plattform (Koran, Hadith, Elifbe, Lernen, Konten, Chat, Push, Anzeige) ist l
   - **Abschalten:** `FUNKTION_HADITH_GESAMT=aus`, danach neu bereitstellen (die Bücher antworten dann mit 404, Auswahl und Übersicht bleiben).
 
 - [ ] **G8 · Lern-App (`/lern-app`) Schalter für Schalter**
-  - **Stand:** Seit 21.10.2026 an, ohne Personendaten (der Fortschritt bleibt auf dem Gerät); Abgleich, Gruppen, Bestenliste, Statistik und Erinnerungen sind aus.
+  - **Stand:** Seit 21.10.2026 an, ohne Personendaten (der Fortschritt bleibt auf dem Gerät); Abgleich, Gruppen, Bestenliste, Statistik und Erinnerungen sind aus. „Fehler melden“ (`lernapp_meldungen`) wirkt erst nach G1 (Datenbank, `ALTCHA_GEHEIMNIS`); bis dahin zeigt die Lern-App die Inhalte aus dem Bau.
   - **Liste:** `_lernapp/GO-LIVE.md` – je Schalter Stand, Voraussetzung, Auflagen der Sicherheitsprüfung S-L3 und wer freigibt; Handbücher `web/docs/handbuch/lernapp-*.md`.
   - **Abschalten:** `FUNKTION_LERNAPP=aus`, danach neu bereitstellen.
 
