@@ -839,38 +839,37 @@
     },
     {
       "schluessel": "tr.a1.e01.s0020",
-      "text": "Elif geliyor.",
+      "text": "Hoş geldin, Elif!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0021",
-      "text": "Can da geliyor.",
+      "text": "Merhaba, Can! Nasılsın?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0022",
-      "text": "Lena geliyor. Merhaba, Lena!",
+      "text": "İyi akşamlar, Lena! Nasılsın?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0023",
-      "text": "Ben geliyorum.",
-      "quelle": "tatoeba:1249976",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #1249976 von duran"
+      "text": "Hoşça kalın, Derya ve Murat!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0024",
-      "text": "Gel, Elif!",
+      "text": "Selin, bu Elif.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0025",
-      "text": "Gelin, hoş geldiniz!",
+      "text": "Hoş geldiniz! Nasılsınız?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -894,19 +893,19 @@
     },
     {
       "schluessel": "tr.a1.e01.s0029",
-      "text": "Elif ve Can geliyor.",
+      "text": "Merhaba, Elif ve Can!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0030",
-      "text": "Biz geliyoruz!",
+      "text": "Biz Selin ve Can.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e01.s0031",
-      "text": "Onlar da geliyor.",
+      "text": "Onlar da öğrenci.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1063,7 +1062,7 @@
     },
     {
       "schluessel": "tr.a1.e01.s0057",
-      "text": "Benim adım Erik. Memnun oldum.",
+      "text": "Benim adım Stefan. Memnun oldum.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1424,7 +1423,7 @@
     },
     {
       "schluessel": "tr.a1.e01.s0114",
-      "text": "Günaydın, Erik! Nasılsınız?",
+      "text": "Günaydın, Stefan! Nasılsınız?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1454,7 +1453,7 @@
     },
     {
       "schluessel": "tr.a1.e01.s0119",
-      "text": "İyi günler, Erik!",
+      "text": "İyi günler, Stefan!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1660,7 +1659,7 @@
     },
     {
       "schluessel": "tr.a1.e01.s0152",
-      "text": "Biz Wetzlar'dayız.",
+      "text": "Biz Wetzlarlıyız.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2097,40 +2096,26 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.merhaba",
-          "ablenker": [
-            "tr.a1.e01.gunaydin",
-            "tr.a1.e01.aksam"
-          ]
+          "ablenker": ["tr.a1.e01.gunaydin", "tr.a1.e01.aksam"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.gunaydin",
-          "ablenker": [
-            "tr.a1.e01.aksam",
-            "tr.a1.e01.iyi"
-          ]
+          "ablenker": ["tr.a1.e01.aksam", "tr.a1.e01.iyi"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a03",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.gun",
-            "tr.a1.e01.aksam",
-            "tr.a1.e01.iyi",
-            "tr.a1.e01.gelmek"
-          ]
+          "lemmata": ["tr.a1.e01.gun", "tr.a1.e01.aksam", "tr.a1.e01.iyi", "tr.a1.e01.gelmek"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0004",
-          "ablenker": [
-            "tr.a1.e01.s0002",
-            "tr.a1.e01.s0003"
-          ]
+          "ablenker": ["tr.a1.e01.s0002", "tr.a1.e01.s0003"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a05",
@@ -2142,30 +2127,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0007",
-          "ablenker": [
-            "tr.a1.e01.s0005",
-            "tr.a1.e01.s0002"
-          ]
+          "ablenker": ["tr.a1.e01.s0005", "tr.a1.e01.s0002"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a07",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0009",
-          "ablenker": [
-            "tr.a1.e01.s0006",
-            "tr.a1.e01.s0001"
-          ]
+          "ablenker": ["tr.a1.e01.s0006", "tr.a1.e01.s0001"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a08",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.kalmak",
-            "tr.a1.e01.gelmek",
-            "tr.a1.e01.hos",
-            "tr.a1.e01.aksam"
-          ]
+          "lemmata": ["tr.a1.e01.kalmak", "tr.a1.e01.gelmek", "tr.a1.e01.hos", "tr.a1.e01.aksam"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a09",
@@ -2177,20 +2151,14 @@
             }
           ],
           "antwort": "tr.a1.e01.s0009",
-          "ablenker": [
-            "tr.a1.e01.s0005",
-            "tr.a1.e01.s0002"
-          ]
+          "ablenker": ["tr.a1.e01.s0005", "tr.a1.e01.s0002"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a10",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e01.s0005",
-          "ablenker": [
-            "tr.a1.e01.s0007",
-            "tr.a1.e01.s0009"
-          ]
+          "ablenker": ["tr.a1.e01.s0007", "tr.a1.e01.s0009"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a11",
@@ -2205,23 +2173,15 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0014",
           "nach": "ziel",
-          "alternativen": [
-            "Murat, iyi akşamlar!"
-          ],
-          "ablenker": [
-            "günler",
-            "Günaydın"
-          ]
+          "alternativen": ["Murat, iyi akşamlar!"],
+          "ablenker": ["günler", "Günaydın"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a13",
           "typ": "luecke",
-          "ziel": "tr.a1.e01.s0003",
+          "ziel": "tr.a1.e01.s0015",
           "wort": 1,
-          "ablenker": [
-            "gün",
-            "akşam"
-          ]
+          "ablenker": ["gün", "akşam"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a14",
@@ -2232,11 +2192,8 @@
           "schluessel": "tr.a1.e01.l01.a15",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
-          "ziel": "tr.a1.e01.s0020",
-          "ablenker": [
-            "tr.a1.e01.s0023",
-            "tr.a1.e01.s0019"
-          ]
+          "ziel": "tr.a1.e01.s0027",
+          "ablenker": ["tr.a1.e01.s0012", "tr.a1.e01.s0018"]
         },
         {
           "schluessel": "tr.a1.e01.l01.a16",
@@ -2257,22 +2214,14 @@
         {
           "schluessel": "tr.a1.e01.l02.a01",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.ben",
-            "tr.a1.e01.sen",
-            "tr.a1.e01.ad",
-            "tr.a1.e01.ne"
-          ]
+          "lemmata": ["tr.a1.e01.ben", "tr.a1.e01.sen", "tr.a1.e01.ad", "tr.a1.e01.ne"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.bu",
-          "ablenker": [
-            "tr.a1.e01.ben",
-            "tr.a1.e01.ne"
-          ]
+          "ablenker": ["tr.a1.e01.ben", "tr.a1.e01.ne"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a03",
@@ -2284,30 +2233,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0035",
-          "ablenker": [
-            "tr.a1.e01.s0043",
-            "tr.a1.e01.s0005"
-          ]
+          "ablenker": ["tr.a1.e01.s0043", "tr.a1.e01.s0005"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a05",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0038",
-          "ablenker": [
-            "tr.a1.e01.s0041",
-            "tr.a1.e01.s0043"
-          ]
+          "ablenker": ["tr.a1.e01.s0041", "tr.a1.e01.s0043"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a06",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.o",
-            "tr.a1.e01.memnun",
-            "tr.a1.e01.olmak",
-            "tr.a1.e01.de-konj"
-          ]
+          "lemmata": ["tr.a1.e01.o", "tr.a1.e01.memnun", "tr.a1.e01.olmak", "tr.a1.e01.de-konj"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a07",
@@ -2319,10 +2257,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0064",
-          "ablenker": [
-            "tr.a1.e01.s0007",
-            "tr.a1.e01.s0040"
-          ]
+          "ablenker": ["tr.a1.e01.s0007", "tr.a1.e01.s0040"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a08",
@@ -2342,20 +2277,14 @@
             }
           ],
           "antwort": "tr.a1.e01.s0046",
-          "ablenker": [
-            "tr.a1.e01.s0006",
-            "tr.a1.e01.s0039"
-          ]
+          "ablenker": ["tr.a1.e01.s0006", "tr.a1.e01.s0039"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a09",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0038",
           "wort": 1,
-          "ablenker": [
-            "adın",
-            "adı"
-          ]
+          "ablenker": ["adın", "adı"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a10",
@@ -2363,15 +2292,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0036",
           "nach": "ziel",
-          "alternativen": [
-            "Adın ne?",
-            "Senin adın nedir?",
-            "Adın nedir?"
-          ],
-          "ablenker": [
-            "benim",
-            "adım"
-          ]
+          "alternativen": ["Adın ne?", "Senin adın nedir?", "Adın nedir?", "Adın ne senin?"],
+          "ablenker": ["benim", "adım"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a11",
@@ -2385,10 +2307,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "tr.a1.e01.s0045",
-          "ablenker": [
-            "tr.a1.e01.s0007",
-            "tr.a1.e01.s0035"
-          ]
+          "ablenker": ["tr.a1.e01.s0007", "tr.a1.e01.s0035"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a13",
@@ -2400,10 +2319,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0055",
-          "ablenker": [
-            "tr.a1.e01.s0044",
-            "tr.a1.e01.s0054"
-          ]
+          "ablenker": ["tr.a1.e01.s0044", "tr.a1.e01.s0054"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a15",
@@ -2411,10 +2327,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0046",
           "nach": "ziel",
-          "ablenker": [
-            "sen",
-            "oldu"
-          ]
+          "ablenker": ["sen", "oldu"]
         },
         {
           "schluessel": "tr.a1.e01.l02.a16",
@@ -2437,31 +2350,17 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.nasil",
-          "ablenker": [
-            "tr.a1.e01.ne",
-            "tr.a1.e01.cok"
-          ]
+          "ablenker": ["tr.a1.e01.ne", "tr.a1.e01.cok"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a02",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.yorgun",
-            "tr.a1.e01.cok",
-            "tr.a1.e01.fena",
-            "tr.a1.e01.degil",
-            "tr.a1.e01.tesekkur"
-          ]
+          "lemmata": ["tr.a1.e01.yorgun", "tr.a1.e01.cok", "tr.a1.e01.fena", "tr.a1.e01.degil", "tr.a1.e01.tesekkur"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a03",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.biz",
-            "tr.a1.e01.siz",
-            "tr.a1.e01.ben",
-            "tr.a1.e01.sen"
-          ]
+          "lemmata": ["tr.a1.e01.biz", "tr.a1.e01.siz", "tr.a1.e01.ben", "tr.a1.e01.sen"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a04",
@@ -2473,18 +2372,13 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0077",
-          "ablenker": [
-            "tr.a1.e01.s0076",
-            "tr.a1.e01.s0074"
-          ]
+          "ablenker": ["tr.a1.e01.s0076", "tr.a1.e01.s0074"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a06",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e01.s0103",
-          "ablenker": [
-            "tr.a1.e01.s0109"
-          ]
+          "ablenker": ["tr.a1.e01.s0109"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a07",
@@ -2496,10 +2390,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0069",
-          "ablenker": [
-            "tr.a1.e01.s0038",
-            "tr.a1.e01.s0007"
-          ]
+          "ablenker": ["tr.a1.e01.s0038", "tr.a1.e01.s0007"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a08",
@@ -2511,20 +2402,14 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0068",
-          "ablenker": [
-            "tr.a1.e01.s0085",
-            "tr.a1.e01.s0037"
-          ]
+          "ablenker": ["tr.a1.e01.s0085", "tr.a1.e01.s0037"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a10",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0073",
           "wort": 2,
-          "ablenker": [
-            "iyisin",
-            "iyiyiz"
-          ]
+          "ablenker": ["iyisin", "iyiyiz"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a11",
@@ -2532,25 +2417,15 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0070",
           "nach": "ziel",
-          "alternativen": [
-            "Teşekkürler, iyiyim. Ya sen?",
-            "İyiyim, teşekkür ederim. Ya sen?",
-            "Teşekkür ederim, iyiyim. Ya sen?"
-          ],
-          "ablenker": [
-            "siz",
-            "değil"
-          ]
+          "alternativen": ["Teşekkürler, iyiyim. Ya sen?", "İyiyim, teşekkür ederim. Ya sen?", "Teşekkür ederim, iyiyim. Ya sen?"],
+          "ablenker": ["siz", "değil"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e01.s0078",
-          "ablenker": [
-            "tr.a1.e01.s0079",
-            "tr.a1.e01.s0099"
-          ]
+          "ablenker": ["tr.a1.e01.s0079", "tr.a1.e01.s0099"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a13",
@@ -2574,10 +2449,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0115",
-          "ablenker": [
-            "tr.a1.e01.s0009",
-            "tr.a1.e01.s0035"
-          ]
+          "ablenker": ["tr.a1.e01.s0009", "tr.a1.e01.s0035"]
         },
         {
           "schluessel": "tr.a1.e01.l03.a16",
@@ -2598,22 +2470,14 @@
         {
           "schluessel": "tr.a1.e01.l04.a01",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.ulke",
-            "tr.a1.e01.sehir",
-            "tr.a1.e01.ogrenci",
-            "tr.a1.e01.ve"
-          ]
+          "lemmata": ["tr.a1.e01.ulke", "tr.a1.e01.sehir", "tr.a1.e01.ogrenci", "tr.a1.e01.ve"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.nereli",
-          "ablenker": [
-            "tr.a1.e01.nasil",
-            "tr.a1.e01.ne"
-          ]
+          "ablenker": ["tr.a1.e01.nasil", "tr.a1.e01.ne"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a03",
@@ -2625,20 +2489,14 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.onlar",
-          "ablenker": [
-            "tr.a1.e01.biz",
-            "tr.a1.e01.ben"
-          ]
+          "ablenker": ["tr.a1.e01.biz", "tr.a1.e01.ben"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a05",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0123",
-          "ablenker": [
-            "tr.a1.e01.s0125",
-            "tr.a1.e01.s0130"
-          ]
+          "ablenker": ["tr.a1.e01.s0125", "tr.a1.e01.s0130"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a06",
@@ -2646,19 +2504,32 @@
           "zeilen": [
             {
               "sprecher": "a",
+              "satz": "tr.a1.e01.s0065"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e01.s0070"
+            },
+            {
+              "sprecher": "a",
               "satz": "tr.a1.e01.s0158"
             }
           ],
           "antwort": "tr.a1.e01.s0123",
-          "ablenker": [
-            "tr.a1.e01.s0077",
-            "tr.a1.e01.s0034"
-          ]
+          "ablenker": ["tr.a1.e01.s0077", "tr.a1.e01.s0034"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a07",
           "typ": "dialog",
           "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e01.s0065"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e01.s0070"
+            },
             {
               "sprecher": "a",
               "satz": "tr.a1.e01.s0158"
@@ -2668,21 +2539,15 @@
               "satz": "tr.a1.e01.s0123"
             }
           ],
-          "antwort": "tr.a1.e01.s0155",
-          "ablenker": [
-            "tr.a1.e01.s0006",
-            "tr.a1.e01.s0084"
-          ]
+          "antwort": "tr.a1.e01.s0153",
+          "ablenker": ["tr.a1.e01.s0006", "tr.a1.e01.s0009"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a08",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0124",
           "wort": 1,
-          "ablenker": [
-            "İzmirliyim",
-            "İzmirlisin"
-          ]
+          "ablenker": ["İzmirliyim", "İzmirlisin"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a09",
@@ -2690,43 +2555,28 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0142",
           "nach": "ziel",
-          "alternativen": [
-            "Can ve Elif öğrenci.",
-            "Elif ve Can öğrenciler.",
-            "Can ve Elif öğrenciler."
-          ],
-          "ablenker": [
-            "öğrenciyim",
-            "değil"
-          ]
+          "alternativen": ["Can ve Elif öğrenci.", "Elif ve Can öğrenciler.", "Can ve Elif öğrenciler."],
+          "ablenker": ["öğrenciyim", "değil"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a10",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "tr.a1.e01.s0126",
-          "ablenker": [
-            "tr.a1.e01.s0085",
-            "tr.a1.e01.s0040"
-          ]
+          "ablenker": ["tr.a1.e01.s0085", "tr.a1.e01.s0040"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a11",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e01.s0135",
-          "ablenker": [
-            "tr.a1.e01.s0156"
-          ]
+          "ablenker": ["tr.a1.e01.s0156"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a12",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0144",
-          "ablenker": [
-            "tr.a1.e01.s0147",
-            "tr.a1.e01.s0145"
-          ]
+          "ablenker": ["tr.a1.e01.s0147", "tr.a1.e01.s0145"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a13",
@@ -2743,12 +2593,9 @@
         {
           "schluessel": "tr.a1.e01.l04.a15",
           "typ": "luecke",
-          "ziel": "tr.a1.e01.s0140",
-          "wort": 1,
-          "ablenker": [
-            "değil",
-            "değiliz"
-          ]
+          "ziel": "tr.a1.e01.s0141",
+          "wort": 2,
+          "ablenker": ["değilim", "değiliz"]
         },
         {
           "schluessel": "tr.a1.e01.l04.a16",
@@ -2756,13 +2603,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0137",
           "nach": "ziel",
-          "alternativen": [
-            "Öğrenciyiz."
-          ],
-          "ablenker": [
-            "öğrenciyim",
-            "siz"
-          ]
+          "alternativen": ["Öğrenciyiz."],
+          "ablenker": ["öğrenciyim", "siz"]
         }
       ]
     },
@@ -2778,22 +2620,14 @@
         {
           "schluessel": "tr.a1.e01.l05.a01",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.turkce",
-            "tr.a1.e01.almanca",
-            "tr.a1.e01.arapca",
-            "tr.a1.e01.dil"
-          ]
+          "lemmata": ["tr.a1.e01.turkce", "tr.a1.e01.almanca", "tr.a1.e01.arapca", "tr.a1.e01.dil"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.konusmak",
-          "ablenker": [
-            "tr.a1.e01.gelmek",
-            "tr.a1.e01.kalmak"
-          ]
+          "ablenker": ["tr.a1.e01.gelmek", "tr.a1.e01.kalmak"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a03",
@@ -2805,10 +2639,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0173",
-          "ablenker": [
-            "tr.a1.e01.s0174",
-            "tr.a1.e01.s0175"
-          ]
+          "ablenker": ["tr.a1.e01.s0174", "tr.a1.e01.s0175"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a05",
@@ -2820,10 +2651,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0186",
-          "ablenker": [
-            "tr.a1.e01.s0039",
-            "tr.a1.e01.s0078"
-          ]
+          "ablenker": ["tr.a1.e01.s0039", "tr.a1.e01.s0078"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a06",
@@ -2839,10 +2667,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0203",
-          "ablenker": [
-            "tr.a1.e01.s0126",
-            "tr.a1.e01.s0058"
-          ]
+          "ablenker": ["tr.a1.e01.s0126", "tr.a1.e01.s0058"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a07",
@@ -2862,20 +2687,14 @@
             }
           ],
           "antwort": "tr.a1.e01.s0207",
-          "ablenker": [
-            "tr.a1.e01.s0121",
-            "tr.a1.e01.s0092"
-          ]
+          "ablenker": ["tr.a1.e01.s0105", "tr.a1.e01.s0092"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a08",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0176",
           "wort": 4,
-          "ablenker": [
-            "konuşuyorsun",
-            "konuşuyor"
-          ]
+          "ablenker": ["konuşuyorsun", "konuşuyor"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a09",
@@ -2883,31 +2702,21 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0177",
           "nach": "ziel",
-          "alternativen": [
-            "Rim Almanca ve Arapça konuşuyor."
-          ],
-          "ablenker": [
-            "Türkçe",
-            "konuşuyorum"
-          ]
+          "alternativen": ["Rim Almanca ve Arapça konuşuyor."],
+          "ablenker": ["Türkçe", "konuşuyorum"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a10",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e01.s0178",
-          "ablenker": [
-            "tr.a1.e01.s0182",
-            "tr.a1.e01.s0195"
-          ]
+          "ablenker": ["tr.a1.e01.s0182", "tr.a1.e01.s0195"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a11",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e01.s0204",
-          "ablenker": [
-            "tr.a1.e01.s0173"
-          ]
+          "ablenker": ["tr.a1.e01.s0173"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a12",
@@ -2921,10 +2730,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0191",
-          "ablenker": [
-            "tr.a1.e01.s0190",
-            "tr.a1.e01.s0192"
-          ]
+          "ablenker": ["tr.a1.e01.s0190", "tr.a1.e01.s0192"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a14",
@@ -2937,13 +2743,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0189",
           "nach": "ziel",
-          "alternativen": [
-            "Arapça konuşmuyorum."
-          ],
-          "ablenker": [
-            "konuşuyorum",
-            "değil"
-          ]
+          "alternativen": ["Arapça konuşmuyorum."],
+          "ablenker": ["konuşuyorum", "değil"]
         },
         {
           "schluessel": "tr.a1.e01.l05.a16",
@@ -3024,18 +2825,13 @@
               "nach": 6,
               "frage": "tr.a1.e01.s0159",
               "antwort": "tr.a1.e01.s0160",
-              "ablenker": [
-                "tr.a1.e01.s0161"
-              ]
+              "ablenker": ["tr.a1.e01.s0161"]
             },
             {
               "nach": 9,
               "frage": "tr.a1.e01.s0127",
               "antwort": "tr.a1.e01.s0128",
-              "ablenker": [
-                "tr.a1.e01.s0165",
-                "tr.a1.e01.s0166"
-              ]
+              "ablenker": ["tr.a1.e01.s0165", "tr.a1.e01.s0166"]
             }
           ]
         },
@@ -3068,12 +2864,12 @@
               "satz": "tr.a1.e01.s0220"
             },
             {
-              "sprecher": "b",
-              "satz": "tr.a1.e01.s0071"
-            },
-            {
               "sprecher": "c",
               "satz": "tr.a1.e01.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e01.s0071"
             },
             {
               "sprecher": "c",
@@ -3089,19 +2885,13 @@
               "nach": 1,
               "frage": "tr.a1.e01.s0040",
               "antwort": "tr.a1.e01.s0062",
-              "ablenker": [
-                "tr.a1.e01.s0041",
-                "tr.a1.e01.s0053"
-              ]
+              "ablenker": ["tr.a1.e01.s0041", "tr.a1.e01.s0053"]
             },
             {
               "nach": 4,
               "frage": "tr.a1.e01.s0162",
               "antwort": "tr.a1.e01.s0133",
-              "ablenker": [
-                "tr.a1.e01.s0163",
-                "tr.a1.e01.s0164"
-              ]
+              "ablenker": ["tr.a1.e01.s0163", "tr.a1.e01.s0164"]
             }
           ]
         },
@@ -3110,10 +2900,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0212",
-          "ablenker": [
-            "tr.a1.e01.s0217",
-            "tr.a1.e01.s0210"
-          ]
+          "ablenker": ["tr.a1.e01.s0217", "tr.a1.e01.s0210"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a04",
@@ -3121,35 +2908,22 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0214",
           "nach": "ziel",
-          "alternativen": [
-            "Almanca ve Arapça konuşuyorum.",
-            "Ben Arapça ve Almanca konuşuyorum.",
-            "Ben Almanca ve Arapça konuşuyorum."
-          ],
-          "ablenker": [
-            "konuşuyor",
-            "Türkçe"
-          ]
+          "alternativen": ["Almanca ve Arapça konuşuyorum.", "Ben Arapça ve Almanca konuşuyorum.", "Ben Almanca ve Arapça konuşuyorum."],
+          "ablenker": ["konuşuyor", "Türkçe"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a05",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0220",
           "wort": 3,
-          "ablenker": [
-            "ve",
-            "ya"
-          ]
+          "ablenker": ["ve", "ya"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "tr.a1.e01.s0211",
-          "ablenker": [
-            "tr.a1.e01.s0213",
-            "tr.a1.e01.s0017"
-          ]
+          "ablenker": ["tr.a1.e01.s0213", "tr.a1.e01.s0017"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a07",
@@ -3161,20 +2935,14 @@
             }
           ],
           "antwort": "tr.a1.e01.s0009",
-          "ablenker": [
-            "tr.a1.e01.s0006",
-            "tr.a1.e01.s0065"
-          ]
+          "ablenker": ["tr.a1.e01.s0006", "tr.a1.e01.s0065"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a08",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0129",
-          "ablenker": [
-            "tr.a1.e01.s0124",
-            "tr.a1.e01.s0167"
-          ]
+          "ablenker": ["tr.a1.e01.s0124", "tr.a1.e01.s0167"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a09",
@@ -3188,10 +2956,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e01.s0143",
-          "ablenker": [
-            "tr.a1.e01.s0142",
-            "tr.a1.e01.s0054"
-          ]
+          "ablenker": ["tr.a1.e01.s0142", "tr.a1.e01.s0054"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a11",
@@ -3199,18 +2964,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0054",
           "nach": "ziel",
-          "alternativen": [
-            "Bunlar Lena ve Rim."
-          ],
-          "ablenker": [
-            "Bu",
-            "Elif"
-          ]
+          "alternativen": ["Bunlar Lena ve Rim."],
+          "ablenker": ["biz", "Elif"]
         },
         {
           "schluessel": "tr.a1.e01.l06.a12",
           "typ": "hoeren_schreiben",
-          "ziel": "tr.a1.e01.s0152"
+          "ziel": "tr.a1.e01.s0218"
         }
       ]
     },
@@ -3226,31 +2986,20 @@
         {
           "schluessel": "tr.a1.e01.l07.a01",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.merhaba",
-            "tr.a1.e01.aksam",
-            "tr.a1.e01.yorgun",
-            "tr.a1.e01.dil",
-            "tr.a1.e01.sehir"
-          ]
+          "lemmata": ["tr.a1.e01.merhaba", "tr.a1.e01.aksam", "tr.a1.e01.yorgun", "tr.a1.e01.dil", "tr.a1.e01.sehir"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0069",
-          "ablenker": [
-            "tr.a1.e01.s0079",
-            "tr.a1.e01.s0123"
-          ]
+          "ablenker": ["tr.a1.e01.s0079", "tr.a1.e01.s0123"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a03",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e01.s0067",
-          "ablenker": [
-            "tr.a1.e01.s0065"
-          ]
+          "ablenker": ["tr.a1.e01.s0065"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a04",
@@ -3278,10 +3027,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0070",
-          "ablenker": [
-            "tr.a1.e01.s0123",
-            "tr.a1.e01.s0009"
-          ]
+          "ablenker": ["tr.a1.e01.s0123", "tr.a1.e01.s0009"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a05",
@@ -3289,44 +3035,29 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0064",
           "nach": "ziel",
-          "alternativen": [
-            "Merhaba, Can. Adım Selin.",
-            "Merhaba, Can. Ben Selin."
-          ],
-          "ablenker": [
-            "adın",
-            "Elif"
-          ]
+          "alternativen": ["Merhaba, Can. Adım Selin.", "Merhaba, Can. Ben Selin."],
+          "ablenker": ["adın", "Elif"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a06",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0123",
           "wort": 1,
-          "ablenker": [
-            "İzmirliyiz",
-            "İzmirlisin"
-          ]
+          "ablenker": ["İzmirliyiz", "İzmirlisin"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "tr.a1.e01.s0006",
-          "ablenker": [
-            "tr.a1.e01.s0008",
-            "tr.a1.e01.s0004"
-          ]
+          "ablenker": ["tr.a1.e01.s0008", "tr.a1.e01.s0004"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a08",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0185",
-          "ablenker": [
-            "tr.a1.e01.s0187",
-            "tr.a1.e01.s0078"
-          ]
+          "ablenker": ["tr.a1.e01.s0187", "tr.a1.e01.s0078"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a09",
@@ -3345,20 +3076,14 @@
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0081",
           "wort": 1,
-          "ablenker": [
-            "ve",
-            "ya"
-          ]
+          "ablenker": ["ve", "ya"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a12",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0132",
-          "ablenker": [
-            "tr.a1.e01.s0138",
-            "tr.a1.e01.s0167"
-          ]
+          "ablenker": ["tr.a1.e01.s0138", "tr.a1.e01.s0167"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a13",
@@ -3366,15 +3091,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0116",
           "nach": "ziel",
-          "alternativen": [
-            "Teşekkürler, ben de iyiyim.",
-            "Ben de iyiyim, teşekkür ederim.",
-            "Teşekkür ederim, ben de iyiyim."
-          ],
-          "ablenker": [
-            "sen",
-            "iyisin"
-          ]
+          "alternativen": ["Teşekkürler, ben de iyiyim.", "Ben de iyiyim, teşekkür ederim.", "Teşekkür ederim, ben de iyiyim."],
+          "ablenker": ["sen", "iyisin"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a14",
@@ -3394,10 +3112,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0116",
-          "ablenker": [
-            "tr.a1.e01.s0007",
-            "tr.a1.e01.s0130"
-          ]
+          "ablenker": ["tr.a1.e01.s0007", "tr.a1.e01.s0130"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a15",
@@ -3425,10 +3140,7 @@
             }
           ],
           "antwort": "tr.a1.e01.s0118",
-          "ablenker": [
-            "tr.a1.e01.s0130",
-            "tr.a1.e01.s0045"
-          ]
+          "ablenker": ["tr.a1.e01.s0130", "tr.a1.e01.s0045"]
         },
         {
           "schluessel": "tr.a1.e01.l07.a16",
@@ -3451,30 +3163,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0008",
-          "ablenker": [
-            "tr.a1.e01.s0006",
-            "tr.a1.e01.s0065"
-          ]
+          "ablenker": ["tr.a1.e01.s0006", "tr.a1.e01.s0065"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a02",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0051",
-          "ablenker": [
-            "tr.a1.e01.s0050",
-            "tr.a1.e01.s0056"
-          ]
+          "ablenker": ["tr.a1.e01.s0050", "tr.a1.e01.s0056"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a03",
           "typ": "paare",
-          "lemmata": [
-            "tr.a1.e01.nereli",
-            "tr.a1.e01.nasil",
-            "tr.a1.e01.ne",
-            "tr.a1.e01.bu"
-          ]
+          "lemmata": ["tr.a1.e01.nereli", "tr.a1.e01.nasil", "tr.a1.e01.ne", "tr.a1.e01.bu"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a04",
@@ -3486,20 +3187,14 @@
             }
           ],
           "antwort": "tr.a1.e01.s0130",
-          "ablenker": [
-            "tr.a1.e01.s0074",
-            "tr.a1.e01.s0034"
-          ]
+          "ablenker": ["tr.a1.e01.s0074", "tr.a1.e01.s0034"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a05",
           "typ": "luecke",
           "ziel": "tr.a1.e01.s0179",
           "wort": 3,
-          "ablenker": [
-            "konuşuyorum",
-            "konuşuyoruz"
-          ]
+          "ablenker": ["konuşuyorum", "konuşuyoruz"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a06",
@@ -3507,20 +3202,14 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e01.s0181",
           "nach": "ziel",
-          "ablenker": [
-            "konuşuyorsun",
-            "sen"
-          ]
+          "ablenker": ["konuşuyorsun", "sen"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "tr.a1.e01.s0100",
-          "ablenker": [
-            "tr.a1.e01.s0087",
-            "tr.a1.e01.s0086"
-          ]
+          "ablenker": ["tr.a1.e01.s0087", "tr.a1.e01.s0086"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a08",
@@ -3534,10 +3223,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e01.s0184",
-          "ablenker": [
-            "tr.a1.e01.s0199",
-            "tr.a1.e01.s0177"
-          ]
+          "ablenker": ["tr.a1.e01.s0199", "tr.a1.e01.s0177"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a10",
@@ -3548,10 +3234,7 @@
           "schluessel": "tr.a1.e01.l08.a11",
           "typ": "minimalpaare",
           "ziel": "tr.a1.e01.s0110",
-          "ablenker": [
-            "tr.a1.e01.s0077",
-            "tr.a1.e01.s0108"
-          ]
+          "ablenker": ["tr.a1.e01.s0077", "tr.a1.e01.s0108"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a12",
@@ -3564,10 +3247,7 @@
             "Merhaba, benim adım Derya. Sizin adınız ne?",
             "Merhaba, benim adım Derya. Adınız ne?"
           ],
-          "ablenker": [
-            "senin",
-            "adın"
-          ]
+          "ablenker": ["senin", "adın"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a13",
@@ -3580,10 +3260,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "tr.a1.e01.s0148",
-          "ablenker": [
-            "tr.a1.e01.s0144",
-            "tr.a1.e01.s0193"
-          ]
+          "ablenker": ["tr.a1.e01.s0144", "tr.a1.e01.s0193"]
         },
         {
           "schluessel": "tr.a1.e01.l08.a15",
