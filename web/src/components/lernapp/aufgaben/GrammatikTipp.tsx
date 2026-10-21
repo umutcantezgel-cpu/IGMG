@@ -10,27 +10,29 @@ export { bewerteGrammatikTipp as bewerte } from '@/lib/lernapp/aufgaben/auswertu
 
 /**
  * Übungstyp `grammatik_tipp` (PLAN §4 „Tipps“): Karte mit Überschriften (Gliederung für Screenreader), Absätzen in der Sprache
- * der Erklärung und Beispielen in der Zielsprache (je mit `lang`/`dir`). Keine Bewertung: „Verstanden – weiter“ führt ohne
- * Wertung zur nächsten Aufgabe (`ueberspringe`).
+ * der Erklärung und Beispielen in der Zielsprache. Die Karte bleibt in der Oberflächensprache („Beispiele“, „Verstanden“);
+ * `lang`/`dir` stehen nur an den Teilen in anderer Sprache: an den Beispielen (`InhaltText`) und – nur wenn die Erklärung
+ * nicht in der Oberflächensprache steht – an Titel, Überschriften und Absätzen (WCAG 3.1.2). Keine Bewertung: „Verstanden –
+ * weiter“ führt ohne Wertung zur nächsten Aufgabe (`ueberspringe`).
  */
-export default function GrammatikTipp({ aufgabe, weitere, gesperrt, ueberspringe }: AufgabenProps<'grammatik_tipp'>) {
+export default function GrammatikTipp({ aufgabe, weitere, sprache, gesperrt, ueberspringe }: AufgabenProps<'grammatik_tipp'>) {
   const t = weitere.aufgaben2.grammatikTipp;
   const id = useId();
+  const erklaerung = aufgabe.sprache === sprache ? {} : { lang: aufgabe.sprache, dir: richtung(aufgabe.sprache) };
   return (
-    <article
-      aria-labelledby={`${id}-titel`}
-      lang={aufgabe.sprache}
-      dir={richtung(aufgabe.sprache)}
-      className="flex flex-col gap-5 rounded-lg border-2 border-gruen-700 bg-weiss p-5 md:p-8"
-    >
-      <h3 id={`${id}-titel`} className="text-24 font-bold">
+    <article aria-labelledby={`${id}-titel`} className="flex flex-col gap-5 rounded-lg border-2 border-gruen-700 bg-weiss p-5 md:p-8">
+      <h3 id={`${id}-titel`} {...erklaerung} className="text-24 font-bold">
         {aufgabe.titel}
       </h3>
       {aufgabe.abschnitte.map((a, i) => (
         <section key={i} className="flex flex-col gap-3">
-          {a.ueberschrift ? <h4 className="text-20 font-bold">{a.ueberschrift}</h4> : null}
+          {a.ueberschrift ? (
+            <h4 {...erklaerung} className="text-20 font-bold">
+              {a.ueberschrift}
+            </h4>
+          ) : null}
           {a.absaetze.map((p, k) => (
-            <p key={k} className="text-18">
+            <p key={k} {...erklaerung} className="text-18">
               {p}
             </p>
           ))}

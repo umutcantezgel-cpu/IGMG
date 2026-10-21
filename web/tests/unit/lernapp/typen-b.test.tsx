@@ -301,12 +301,21 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
     expect(html).toMatch(/<p lang="de" dir="ltr"/);
   });
 
-  it('grammatik_tipp: Karte mit Überschriften in der Sprache der Erklärung, Beispiele mit lang, „Verstanden“', async () => {
-    const html = await vorrendern(<GrammatikTipp {...props<'grammatik_tipp'>(TIPP as Aufgabe)} />);
-    expect(html).toMatch(/<article[^>]*lang="tr" dir="ltr"/);
-    expect(html).toMatch(/<h3[^>]*>Almancada isimler/);
-    expect(html).toContain('<span lang="de" dir="ltr">das Haus</span>');
-    expect(html).toContain('Verstanden – weiter');
+  it('grammatik_tipp: Karte in der Oberflächensprache, lang/dir nur an Beispielen und fremdsprachiger Erklärung, „Verstanden“', async () => {
+    // Oberfläche de, Erklärung tr: Titel, Überschriften und Absätze tragen lang="tr"; Karte, „Beispiele“ und Knopf nicht
+    const fremd = await vorrendern(<GrammatikTipp {...props<'grammatik_tipp'>(TIPP as Aufgabe)} />);
+    expect(fremd).toMatch(/<article(?![^>]*\slang=)(?![^>]*\sdir=)[^>]*>/);
+    expect(fremd).toMatch(/<h3[^>]*lang="tr" dir="ltr"[^>]*>Almancada isimler/);
+    expect(fremd).toMatch(/<h4[^>]*lang="tr" dir="ltr"[^>]*>Kural<\/h4>/);
+    expect(fremd).toMatch(/<p lang="tr" dir="ltr"[^>]*>Almancada her isim/);
+    expect(fremd).toContain('<span lang="de" dir="ltr">das Haus</span>');
+    expect(fremd).toMatch(new RegExp(`<p class="[^"]*">${de.aufgaben2.grammatikTipp.beispiele}</p>`));
+    expect(fremd).toMatch(/<button type="button" class="[^"]*">Verstanden – weiter<\/button>/);
+    // Oberfläche tr = Sprache der Erklärung: der Erklärtext erbt die Sprache der Seite, nur die Beispiele tragen lang
+    const gleich = await vorrendern(<GrammatikTipp {...props<'grammatik_tipp'>(TIPP as Aufgabe, { sprache: 'tr' })} />);
+    expect(gleich).toMatch(/<h3 id="[^"]*" class="[^"]*">Almancada isimler/);
+    expect(gleich).toMatch(/<p class="text-18">Almancada her isim/);
+    expect(anzahl(gleich, /\slang="/g)).toBe(2);
   });
 
   it('schrift_ar: Buchstabe aus Codepunkten (rtl, neutrale Beschriftung), Namen aus den Texten', async () => {
@@ -320,6 +329,70 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
     const html = await vorrendern(<SchriftWahl {...props<'schrift_tr'>(SCHRIFT_TR as Aufgabe)} />);
     expect(html).toContain('<span lang="tr" dir="ltr">ş</span>');
     expect(anzahl(html, /type="radio"/g)).toBe(3);
+  });
+
+  describe('schrift_tr/schrift_latein mit Hörbeispiel', () => {
+    const AUDIO = { buendel: '/lern-app/audio/tr/tr.v.e01-0123456789abcdef.lpa', versatz: 100, laenge: 50 };
+    const nurHoeren = {
+      ...SCHRIFT_TR,
+      anweisung: 'waehleBuchstabe',
+      vorgabe: undefined,
+      hoeren: { ...SCHRIFT_TR.vorgabe, audio: AUDIO },
+    } as unknown as Aufgabe;
+    const mitVorgabe = { ...SCHRIFT_LATEIN, hoeren: { ...SCHRIFT_LATEIN.vorgabe, text: 'Haus', audio: AUDIO } } as Aufgabe;
+
+    it('nur Hörbeispiel: Hörübung wie die anderen Hörtypen – Anhören, langsam, „Ich kann gerade nicht hören“', async () => {
+      expect(AufgabeSchema.safeParse(nurHoeren).success).toBe(true);
+      const html = await vorrendern(<SchriftWahl {...props<'schrift_tr'>(nurHoeren)} />);
+      expect(html).toContain('>Anhören</button>');
+      expect(html).toContain('>Langsam anhören</button>');
+      expect(html).toContain(`>${de.aufgaben.hoeren.nichtHoeren}</button>`);
+      expect(anzahl(html, /type="radio"/g)).toBe(3);
+    });
+
+    it('„Ich kann gerade nicht hören“ (wie bei den Hörtypen): Aufgabe und übrige Hörübungen ohne Wertung weg', async () => {
+      const { HOER_TYPEN } = await import('@/lib/lernapp/aufgaben/hilfen');
+      const hw = {
+        typ: 'hoeren_waehlen',
+        schluessel: 'tr.v.e01.a002',
+        anweisung: 'waehleGehoertes',
+        hoeren: { ...SCHRIFT_TR.vorgabe, audio: AUDIO },
+        optionen: SCHRIFT_TR.optionen,
+        richtig: 0,
+      } as unknown as Aufgabe;
+      const s = starte({ ...LEKTION_B, aufgaben: [nurHoeren, SCHRIFT_LATEIN as Aufgabe, hw] });
+      // der Abspieler gibt beim Tippen auf „Ich kann gerade nicht hören“ genau diese Angabe an den Spieler
+      const r = ueberspringe(s, { typen: HOER_TYPEN });
+      expect(r.sitzung.uebersprungen).toEqual([true, false, true]);
+      expect(r.ereignisse.some((e) => e.art === 'bewertung')).toBe(false);
+      expect(r.sitzung.reihe[r.sitzung.pos]).toBe(1);
+    });
+
+    it('nach dem Prüfen: Abschrift, kein „Ich kann gerade nicht hören“', async () => {
+      const html = await vorrendern(
+        <SchriftWahl
+          {...props<'schrift_tr'>(nurHoeren, {
+            gesperrt: true,
+            auswertung: { urteil: 'richtig', hinweise: [], loesung: 'Ş', karten: [] },
+            antwort: { typ: 'schrift_tr', wahl: 0 },
+          })}
+        />,
+      );
+      expect(html).toMatch(/Abschrift:(<!-- -->)? <span lang="tr" dir="ltr">ş<\/span>/);
+      expect(html).not.toContain(de.aufgaben.hoeren.nichtHoeren);
+    });
+
+    it('mit Vorgabe: Hörbeispiel nur als Hilfe (ohne Überspringen), mit „Hörübungen aus“ ohne Knöpfe', async () => {
+      const an = await vorrendern(<SchriftWahl {...props<'schrift_latein'>(mitVorgabe)} />);
+      expect(an).toContain('<span lang="de" dir="ltr">H_us</span>');
+      expect(an).toContain('>Anhören</button>');
+      expect(an).not.toContain(de.aufgaben.hoeren.nichtHoeren);
+      const aus = await vorrendern(
+        <SchriftWahl {...props<'schrift_latein'>(mitVorgabe, { optionen: { ...STANDARD_OPTIONEN, hoeren: false } })} />,
+      );
+      expect(aus).not.toContain('>Anhören</button>');
+      expect(aus).toContain('<span lang="de" dir="ltr">H_us</span>');
+    });
   });
 
   it('sprechen: Zielsatz in seiner Sprache, Aufnahme-Knopf, „Ich kann gerade nicht sprechen“, keine Abschrift', async () => {
