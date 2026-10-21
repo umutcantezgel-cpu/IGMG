@@ -8,8 +8,10 @@ import type { MeldungKategorie } from '../meldung';
  * (`import()` nach dem Klick, nicht im Spieler-Chunk):
  *
  * - ALTCHA: Aufgabe von `/api/altcha` (eigener Ursprung, erst nach dem Klick), im Browser gelöst mit `altcha-lib` und
- *   PBKDF2 über `crypto.subtle` (kein Worker, keine Dritten, keine Cookies). Die Lösung ist einmalig; nach jedem Versuch
- *   braucht ein neuer Versuch eine neue.
+ *   PBKDF2 über `crypto.subtle` (kein Worker, keine Dritten). Die Lösung ist einmalig; nach jedem Versuch braucht ein neuer
+ *   Versuch eine neue.
+ * - Beide Anfragen mit `credentials: 'omit'`: Auch angemeldete Personen schicken kein Sitzungscookie mit – die Meldung ist
+ *   für alle wörtlich ohne Cookies und ohne Angaben zur Person.
  * - `POST /api/lernapp/meldung` mit nur Kurs, Aufgabe, Kategorie und ALTCHA – nie die eigene Antwort (die schicken nur
  *   angemeldete Personen ab 16 mit; der Dialog bietet das nicht an). Ohne Netz kein Puffer: ehrlicher Hinweis, nichts wird
  *   gespeichert.
@@ -19,7 +21,7 @@ export type MeldeErgebnis = 'ok' | 'ohne_netz' | 'zu_viele' | 'nicht_moeglich' |
 
 /** Holt und löst eine ALTCHA-Aufgabe; Ergebnis ist das Feld `altcha` der Meldung (Base64 von `{ challenge, solution }`). */
 export async function loeseAltcha(signal?: AbortSignal): Promise<string> {
-  const antwort = await fetch('/api/altcha', { cache: 'no-store', credentials: 'same-origin', signal });
+  const antwort = await fetch('/api/altcha', { cache: 'no-store', credentials: 'omit', signal });
   if (!antwort.ok) throw new MeldeFehler(antwort.status === 503 ? 'nicht_moeglich' : 'fehler');
   const challenge = (await antwort.json()) as Parameters<typeof solveChallenge>[0]['challenge'];
   const controller = new AbortController();
@@ -61,7 +63,7 @@ export async function sendeMeldung(m: {
     const antwort = await fetch('/api/lernapp/meldung', {
       method: 'POST',
       cache: 'no-store',
-      credentials: 'same-origin',
+      credentials: 'omit',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ kurs: m.kurs, aufgabe: m.aufgabe, kategorie: m.kategorie, altcha: m.altcha }),
     });

@@ -8,7 +8,8 @@ import { ernsteBefunde, KURS, LEKTION_1, liveRegion } from './hilfen';
 /**
  * „Fehler melden“ (L3-06b, ADR 0041 Nr. 9, KERN 4.0 §5/§6/§8) mit dem Testkurs: Knopf im Rückmeldeblatt; ALTCHA (`GET
  * /api/altcha`) erst nach dem Klick, gelöst im Browser; `POST /api/lernapp/meldung` nur mit Kurs, Aufgabe, Kategorie und
- * ALTCHA, ohne Cookies; Dialog mit Fokusrückgabe; die Meldung erscheint in /verwaltung/lernapp/meldungen, und nach „Ohne
+ * ALTCHA, ohne Cookies; während des Sendens bleibt der Fokus auf dem Knopf und Escape schließt nicht; Dialog mit
+ * Fokusrückgabe; die Meldung erscheint in /verwaltung/lernapp/meldungen, und nach „Ohne
  * Änderung erledigen“ liegt der Fokus auf der Ansage der Liste (WCAG 2.4.3/4.1.3). Nur Desktop; axe auf Blatt und Dialog.
  */
 const m = de.melden;
@@ -51,7 +52,26 @@ test('Lern-App: melden aus dem Rückmeldeblatt, ALTCHA erst nach dem Klick, nur 
   await expect(dialog.getByText(m.waehlen)).toBeVisible();
   await dialog.getByRole('radio', { name: m.kategorien.fehler_uebersetzung, exact: true }).check();
   expect(await ernsteBefunde(page, 'melde-dialog')).toEqual([]);
-  await dialog.getByRole('button', { name: m.senden, exact: true }).click();
+  // Die Meldung wird angehalten, bis der Zustand „sendet“ geprüft ist: Der Fokus bleibt auf dem Knopf (nur aria-disabled,
+  // nicht deaktiviert), und Escape schließt den Dialog nicht, damit das Ergebnis angesagt wird (Gegenprüfung L3-06b)
+  let loslassen!: () => void;
+  const gehalten = new Promise<void>((r) => {
+    loslassen = r;
+  });
+  await page.route('**/api/lernapp/meldung', async (route) => {
+    await gehalten;
+    await route.continue();
+  });
+  const knopf = dialog.locator('button[type="submit"]');
+  await expect(knopf).toHaveText(m.senden);
+  await knopf.click();
+  await expect(dialog.getByRole('status')).toHaveText(m.sendet);
+  await expect(knopf).toBeFocused();
+  await expect(knopf).toHaveAttribute('aria-disabled', 'true');
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole('radio', { name: m.kategorien.fehler_uebersetzung, exact: true })).toBeChecked();
+  loslassen();
   // die Lösung im Browser dauert je nach Last einige Sekunden
   await expect(dialog.getByRole('status')).toHaveText(m.danke, { timeout: 90_000 });
   await expect(page.locator(':focus')).toHaveText(m.schliessen);

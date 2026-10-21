@@ -26,6 +26,9 @@ const KNOPF = 'min-h-12 druck rounded-pill px-6 font-bold';
  * die ALTCHA-Aufgabe im Hintergrund, während die Kategorie gewählt wird. Gesendet werden nur Aufgabe und Kategorie; ohne Netz
  * ein ehrlicher Hinweis (nichts gespeichert). Die Statuszeile des Dialogs sagt Senden, Dank und Fehler an. Die Kategorien
  * kommen aus den Texten (gleich `MELDUNG_KATEGORIEN`, Unit-Test), damit der Chunk ohne Zod auskommt.
+ *
+ * Während des Sendens wird nichts deaktiviert (der Fokus bliebe sonst ohne Ziel): „Senden“ ist nur `aria-disabled`, die Wahl
+ * bleibt stehen, und Escape schließt nicht, damit das Ergebnis angesagt wird. „Abbrechen“ und „Schließen“ schließen weiter.
  */
 export default function MeldenDialog({ kurs, aufgabe, texte, onSchliessen }: MeldenDialogProps) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -106,6 +109,9 @@ export default function MeldenDialog({ kurs, aufgabe, texte, onSchliessen }: Mel
       ref={ref}
       aria-labelledby={`${id}-titel`}
       onClose={onSchliessen}
+      onCancel={(e) => {
+        if (lage.art === 'sendet') e.preventDefault();
+      }}
       className="m-auto max-h-full w-full max-w-160 overflow-y-auto bg-transparent p-4 text-tinte backdrop:bg-tinte/55"
     >
       <div className="relative flex flex-col gap-4 rounded-lg bg-weiss p-5 md:p-8">
@@ -123,11 +129,7 @@ export default function MeldenDialog({ kurs, aufgabe, texte, onSchliessen }: Mel
         {lage.art === 'gesendet' ? null : <p className="text-18">{texte.text}</p>}
         <form onSubmit={senden} noValidate className="flex flex-col gap-4">
           {lage.art === 'gesendet' ? null : (
-            <fieldset
-              className="flex flex-col gap-2"
-              aria-describedby={fehltWahl && !kategorie ? `${id}-wahl` : undefined}
-              disabled={lage.art === 'sendet'}
-            >
+            <fieldset className="flex flex-col gap-2" aria-describedby={fehltWahl && !kategorie ? `${id}-wahl` : undefined}>
               <legend className="mb-2 text-18 font-bold">{texte.kategorie}</legend>
               {(Object.keys(texte.kategorien) as MeldungKategorie[]).map((k, i) => (
                 <label
@@ -141,6 +143,7 @@ export default function MeldenDialog({ kurs, aufgabe, texte, onSchliessen }: Mel
                     value={k}
                     checked={kategorie === k}
                     onChange={() => {
+                      if (lage.art === 'sendet') return;
                       setKategorie(k);
                       setFehltWahl(false);
                     }}
@@ -181,8 +184,8 @@ export default function MeldenDialog({ kurs, aufgabe, texte, onSchliessen }: Mel
                 </button>
                 <button
                   type="submit"
-                  disabled={lage.art === 'sendet'}
-                  className={`${KNOPF} bg-gruen-700 text-weiss hover:bg-gruen-800 disabled:bg-linie disabled:text-tinte-2`}
+                  aria-disabled={lage.art === 'sendet' || undefined}
+                  className={`${KNOPF} bg-gruen-700 text-weiss hover:bg-gruen-800 aria-disabled:cursor-wait aria-disabled:bg-linie aria-disabled:text-tinte-2`}
                 >
                   {lage.art === 'sendet' ? texte.sendet : texte.senden}
                 </button>

@@ -40,13 +40,15 @@ describe('ALTCHA im Browser und Senden', () => {
       deriveKey: deriveKeyNode,
       hmacSignatureSecret: GEHEIM,
     });
-    const abrufe: string[] = [];
-    vi.stubGlobal('fetch', async (adresse: string) => {
-      abrufe.push(adresse);
+    const abrufe: { adresse: string; init: RequestInit }[] = [];
+    vi.stubGlobal('fetch', async (adresse: string, init: RequestInit) => {
+      abrufe.push({ adresse, init });
       return Response.json(challenge);
     });
     const feld = await loeseAltcha();
-    expect(abrufe).toEqual(['/api/altcha']);
+    expect(abrufe.map((a) => a.adresse)).toEqual(['/api/altcha']);
+    // ohne Cookies, auch für angemeldete Personen (Gegenprüfung L3-06b)
+    expect(abrufe[0]!.init.credentials).toBe('omit');
     const { challenge: c, solution } = JSON.parse(Buffer.from(feld, 'base64').toString('utf8'));
     const ergebnis = await verifySolution({ challenge: c, solution, deriveKey: deriveKeyNode, hmacSignatureSecret: GEHEIM });
     expect(ergebnis.verified).toBe(true);
@@ -65,6 +67,7 @@ describe('ALTCHA im Browser und Senden', () => {
     expect(await sendeMeldung(m)).toBe('ok');
     expect(gesendet[0]!.adresse).toBe('/api/lernapp/meldung');
     expect(gesendet[0]!.init.method).toBe('POST');
+    expect(gesendet[0]!.init.credentials).toBe('omit');
     const koerper = JSON.parse(String(gesendet[0]!.init.body));
     expect(Object.keys(koerper).sort()).toEqual(['altcha', 'aufgabe', 'kategorie', 'kurs']);
     expect(MeldungSchema.safeParse(koerper).success).toBe(true);
