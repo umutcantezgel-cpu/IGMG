@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import type { ReactElement } from 'react';
 import { prerenderToNodeStream } from 'react-dom/static';
 import { describe, expect, it } from 'vitest';
@@ -14,6 +16,7 @@ import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/comp
 import { BUCHSTABEN as ELIFBE, buchstabeFuer } from '@/lib/elifbe/alphabet';
 import { erlaubt } from '@/lib/elifbe/silben';
 import { bewerte } from '@/lib/lernapp/aufgaben/bewerte';
+import { SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import { ablauf, bewerteGeschichte } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
 import { glosseFuer, glossenVerzeichnis, richtigJeFrage, stuecke } from '@/lib/lernapp/aufgaben/auswertung/lesen_fragen';
 import { type Aufgabe, AufgabeSchema, type ImplementierterTyp, LektionSchema } from '@/lib/lernapp/aufgaben/schema';
@@ -264,6 +267,20 @@ describe('Sitzung: Selbstbewertung und Überspringen ohne Wertung', () => {
     const ereignis = r.ereignisse.find((e) => e.art === 'lektion');
     expect(ereignis?.daten).toMatchObject({ richtig: 1, gesamt: 1 });
     expect(r.ereignisse.some((e) => e.art === 'bewertung')).toBe(false);
+  });
+
+  it('„Ich kann gerade nicht sprechen“ nimmt auch die übrigen Sprechübungen der Lektion ohne Wertung weg (wie beim Hören)', () => {
+    const zweite = { ...SPRECHEN, schluessel: `${SPRECHEN.schluessel}-2` } as unknown as Aufgabe;
+    const s = starte({ ...lektion, aufgaben: [SPRECHEN as unknown as Aufgabe, TIPP as unknown as Aufgabe, zweite] });
+    const r = ueberspringe(s, { typen: SPRECH_TYPEN });
+    expect(r.sitzung.uebersprungen).toEqual([true, false, true]);
+    expect(r.sitzung.reihe[r.sitzung.pos]).toBe(1);
+    expect(r.ereignisse.some((e) => e.art === 'bewertung')).toBe(false);
+    // die Sprechübung gibt genau diese Angabe samt Ansage an den Spieler
+    const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/lernapp/sprechen/Sprechen.tsx'), 'utf8');
+    expect(quelle).toContain('ueberspringe({ typen: SPRECH_TYPEN, meldung: t.uebersprungen })');
+    expect(quelle).not.toMatch(/ueberspringe\(\)/);
+    expect(de.sprechen.uebersprungen).toBe('Die Sprechübungen dieser Lektion werden übersprungen.');
   });
 
   it('„noch üben“ beim Sprechen: die Aufgabe kommt am Ende noch einmal', () => {

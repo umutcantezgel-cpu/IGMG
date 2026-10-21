@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
+import { SPRECH_TYPEN } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Note } from '@/lib/lernapp/bewertung';
 import { pruefePegel, type SprechErgebnis, zielWoerter } from '@/lib/lernapp/sprechen/auswertung';
 import { type GeraetBefund, pruefeGeraet } from '@/lib/lernapp/sprechen/geraet';
@@ -12,8 +13,8 @@ import { InhaltText } from '../InhaltText';
 import { richtung } from '../typen';
 import type { AufgabenProps } from '../typen';
 import { type LaufendeAufnahme, mikrofonErlaubtHier, starteAufnahme } from './aufnahme';
-import { erhebeUmgebung, Erkennung, erkennbar, liesStand, merkeStand } from './erkennung';
-import { Pegel } from './Pegel';
+import { erhebeUmgebung, Erkennung, erkennbar, imVorrat, liesStand, merkeStand } from './erkennung';
+import { Pegel, zeigePegel } from './Pegel';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
 export { bewerteSprechen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/sprechen';
@@ -42,7 +43,10 @@ const LEISE = 'min-h-11 font-bold text-gruen-800 underline underline-offset-4';
  * - Spracherkennung nur mit Schalter `lernapp_sprechen`, nur für de/tr, nach Gerätecheck und auf Wunsch geladen (Knopf mit
  *   Größe), danach Probelauf; Ergebnis nur als Markierung der Zielwörter („gut verständlich“ / „teilweise verstanden“),
  *   nie die Abschrift, keine Note.
- * - Immer möglich: eigene Aufnahme anhören, vergleichen, selbst bewerten; „Ich kann gerade nicht sprechen“ überspringt.
+ * - Schon geladen: Der Worker startet ohne Knopf nur, wenn das Modell noch im Vorrat liegt; sonst wieder das Angebot mit
+ *   Größe (kein stilles Nachladen, ADR 0042 Fortschreibung Nr. 13).
+ * - Immer möglich: eigene Aufnahme anhören, vergleichen, selbst bewerten; „Ich kann gerade nicht sprechen“ überspringt
+ *   diese und die übrigen Sprechübungen der Lektion ohne Wertung (wie „Ich kann gerade nicht hören“).
  */
 export default function Sprechen({
   aufgabe,
@@ -64,7 +68,7 @@ export default function Sprechen({
 
   const [modus, setModus] = useState<Modus>({ art: 'pruefen' });
   const [phase, setPhase] = useState<Phase>('start');
-  const [pegel, setPegel] = useState(0);
+  const pegelBalken = useRef<HTMLSpanElement>(null);
   const [eigene, setEigene] = useState<string | null>(null);
   const [ergebnis, setErgebnis] = useState<SprechErgebnis | null>(null);
   const [meldung, setMeldung] = useState<string | null>(null);
@@ -84,7 +88,8 @@ export default function Sprechen({
     melde(text);
   };
 
-  // Gerätecheck und gemerkter Stand (ohne Netz); bei geladenem Modell startet der Worker im Hintergrund aus dem Vorrat
+  // Gerätecheck und gemerkter Stand (ohne Netz); bei geladenem Modell startet der Worker im Hintergrund aus dem Vorrat –
+  // aber nur, wenn die großen Dateien noch dort liegen (sonst lüde transformers.js ≈ 95 MB ohne Anzeige nach)
   useEffect(() => {
     let aktiv = true;
     async function pruefe() {
@@ -96,6 +101,12 @@ export default function Sprechen({
       if (!aktiv) return;
       if (!befund.ok) return setModus({ art: 'ohne', grund: 'geraet', befund });
       if (!stand.geladen) return setModus({ art: 'angebot', befund });
+      if (!(await imVorrat())) {
+        if (!aktiv) return;
+        merkeStand({ ...stand, geladen: false });
+        return setModus({ art: 'angebot', befund });
+      }
+      if (!aktiv) return;
       try {
         const e = new Erkennung();
         erkennung.current = e;
@@ -168,7 +179,10 @@ export default function Sprechen({
     }
     try {
       setErgebnis(null);
-      aufnahme.current = await starteAufnahme({ onPegel: setPegel, onEnde: () => void beenden() });
+      aufnahme.current = await starteAufnahme({
+        onPegel: (p) => zeigePegel(pegelBalken.current, p),
+        onEnde: () => void beenden(),
+      });
       setPhase('aufnahme');
       sage(t.laeuft);
     } catch {
@@ -294,7 +308,7 @@ export default function Sprechen({
         <div className="flex flex-col gap-3">
           {phase === 'aufnahme' ? (
             <>
-              <Pegel pegel={pegel} text={t.laeuft} />
+              <Pegel balken={pegelBalken} text={t.laeuft} />
               <button type="button" onClick={() => void beenden()} className={`${HAUPT} self-start`}>
                 {t.stopp}
               </button>
@@ -369,7 +383,11 @@ export default function Sprechen({
       ) : null}
 
       {gesperrt ? null : (
-        <button type="button" onClick={() => ueberspringe()} className={`${LEISE} self-start`}>
+        <button
+          type="button"
+          onClick={() => ueberspringe({ typen: SPRECH_TYPEN, meldung: t.uebersprungen })}
+          className={`${LEISE} self-start`}
+        >
           {t.kannNicht}
         </button>
       )}

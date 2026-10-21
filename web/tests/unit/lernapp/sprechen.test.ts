@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { mikrofonErlaubtHier } from '@/components/lernapp/sprechen/aufnahme';
+import { imVorrat } from '@/components/lernapp/sprechen/erkennung';
 import {
   gutVerstaendlich,
   istWiederholung,
@@ -30,6 +31,8 @@ import {
   ORT,
   ortAdresse,
   probeClip,
+  VORRAT_MODELLE,
+  VORRAT_PFLICHT,
 } from '@/lib/lernapp/sprechen/modell';
 import { ar } from './hilfen/buckwalter';
 
@@ -266,6 +269,29 @@ describe('Dateien vom eigenen Ursprung', () => {
     const bauschritt = readFileSync(join(web, 'scripts/lernapp-modelle.mjs'), 'utf8');
     expect(bauschritt).toMatch(/lizenzen\.length !== 2/);
     expect(bauschritt).toMatch(/postBanner: lizenzkopf/);
+  });
+
+  it('ohne Knopf nur aus dem Vorrat: Encoder, Decoder und ORT-.wasm müssen dort liegen (kein stilles Nachladen)', async () => {
+    expect(VORRAT_PFLICHT).toEqual([
+      modellAdresse('onnx/encoder_model_quantized.onnx'),
+      modellAdresse('onnx/decoder_model_merged_quantized.onnx'),
+      ortAdresse(ORT.wasm),
+    ]);
+    // Cache Storage als Attrappe: Name → gespeicherte Adressen
+    const speicher = (inhalt: Record<string, string[]>, kaputt = false) =>
+      ({
+        has: async (name: string) => {
+          if (kaputt) throw new Error('SecurityError');
+          return name in inhalt;
+        },
+        open: async (name: string) => ({ match: async (adresse: string) => (inhalt[name]?.includes(adresse) ? {} : undefined) }),
+      }) as unknown as CacheStorage;
+    expect(await imVorrat(speicher({ [VORRAT_MODELLE]: [...VORRAT_PFLICHT] }))).toBe(true);
+    // vom Browser geräumt (Speicherdruck) – nur der Worker liegt noch da, oder der Vorrat fehlt ganz
+    expect(await imVorrat(speicher({ [VORRAT_MODELLE]: VORRAT_PFLICHT.filter((a) => !a.includes('decoder')) }))).toBe(false);
+    expect(await imVorrat(speicher({}))).toBe(false);
+    expect(await imVorrat(speicher({ [VORRAT_MODELLE]: [...VORRAT_PFLICHT] }, true))).toBe(false);
+    expect(await imVorrat(undefined)).toBe(false);
   });
 
   it('Worker-Adresse trägt nur eine bereinigte Bau-Kennung', () => {

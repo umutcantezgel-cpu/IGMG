@@ -87,6 +87,9 @@ export const HOER_TYPEN = ['hoeren_waehlen', 'hoeren_schreiben', 'minimalpaare']
 export type HoerTyp = (typeof HOER_TYPEN)[number];
 export const istHoerTyp = (typ: string): typ is HoerTyp => (HOER_TYPEN as readonly string[]).includes(typ);
 
+/** Übungstypen mit Sprechen: „Ich kann gerade nicht sprechen“ überspringt sie für den Rest der Lektion (wie beim Hören). */
+export const SPRECH_TYPEN = ['sprechen'] as const;
+
 /** Aufgabe mit (möglichem) Text zum Hören. */
 export type MitHoeren = { hoeren?: { text: string; audio?: unknown } };
 

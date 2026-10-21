@@ -14,6 +14,8 @@ import {
   type ErkennungsSprache,
   GESAMT_BYTES,
   type VomArbeiter,
+  VORRAT_MODELLE,
+  VORRAT_PFLICHT,
 } from '@/lib/lernapp/sprechen/modell';
 
 /**
@@ -90,6 +92,21 @@ export function merkeStand(stand: SprechStand): void {
     localStorage.setItem(SPRECH_STAND_SCHLUESSEL, JSON.stringify(stand));
   } catch {
     // ohne Speicher (privates Fenster): gilt nur für diese Seite
+  }
+}
+
+/**
+ * Liegt das geladene Modell noch im Vorrat (Encoder, Decoder, ORT-`.wasm`)? Ohne Netz, nur `caches.match`. Bei Fehlern
+ * oder ohne Cache Storage: nein – dann bietet die Übung das Laden wieder mit Größe an (ADR 0042 Fortschreibung Nr. 13).
+ */
+export async function imVorrat(speicher: CacheStorage | undefined = globalThis.caches): Promise<boolean> {
+  try {
+    if (!speicher || !(await speicher.has(VORRAT_MODELLE))) return false;
+    const vorrat = await speicher.open(VORRAT_MODELLE);
+    const treffer = await Promise.all(VORRAT_PFLICHT.map((adresse) => vorrat.match(adresse)));
+    return treffer.every(Boolean);
+  } catch {
+    return false;
   }
 }
 

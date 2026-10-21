@@ -1,8 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { afterEach, describe, expect, it } from 'vitest';
 import { Abschluss } from '@/components/lernapp/Abschluss';
 import { Abzeichen } from '@/components/lernapp/Abzeichen';
 import { Serie, SERIE_GEFUELLT } from '@/components/lernapp/Serie';
+import { Pegel, zeigePegel } from '@/components/lernapp/sprechen/Pegel';
 import type { WochenTag } from '@/lib/lernapp/ereignisse/serie';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
@@ -75,5 +78,28 @@ describe('B-34 Abzeichen', () => {
     expect(h).toContain('motion-reduce:starting:scale-100');
     expect(h).toContain(de.abzeichen.neu);
     expect(renderToStaticMarkup(<Abzeichen name="[Abzeichen]" />)).not.toContain('starting:');
+  });
+});
+
+describe('B-35 Pegel (Aufnahme läuft)', () => {
+  it('Balken startet leer, Text steht immer da; reduziert ohne Balken', () => {
+    const h = renderToStaticMarkup(<Pegel balken={null} text={de.sprechen.laeuft} />);
+    expect(h).toContain(`>${de.sprechen.laeuft}</span>`);
+    expect(h).toContain('scale:0 1');
+    expect(h).toContain('motion-reduce:hidden');
+  });
+
+  it('der Pegel geht direkt an den Balken (begrenzt auf 0…1), ohne React-Zustand je Animationsbild (INP)', () => {
+    const balken = { style: { scale: '0 1' } };
+    zeigePegel(balken, 0.42);
+    expect(balken.style.scale).toBe('0.42 1');
+    zeigePegel(balken, 3);
+    expect(balken.style.scale).toBe('1 1');
+    zeigePegel(balken, -1);
+    expect(balken.style.scale).toBe('0 1');
+    expect(() => zeigePegel(null, 0.5)).not.toThrow();
+    const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/lernapp/sprechen/Sprechen.tsx'), 'utf8');
+    expect(quelle).not.toMatch(/setPegel|useState\([^)]*\)[^;]*pegel/i);
+    expect(quelle).toContain('onPegel: (p) => zeigePegel(pegelBalken.current, p)');
   });
 });

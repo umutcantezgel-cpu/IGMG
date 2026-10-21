@@ -62,6 +62,16 @@ export const modellAdresse = (pfad: string): string => `${MODELLE_BASIS}${MODELL
 export const arbeiterAdresse = (bau: string): string =>
   `${MODELLE_BASIS}sprechen/whisper.worker.mjs?v=${encodeURIComponent(bau.replace(/[^a-z0-9]/g, '').slice(0, 12) || 'lokal')}`;
 
+/**
+ * Dateien, die im Vorrat liegen müssen, damit die Übung den Worker ohne Knopf startet (ADR 0042 Fortschreibung Nr. 13):
+ * Encoder, Decoder und ORT-`.wasm` (≈ 91 MB). Fehlt eine – etwa weil der Browser den Vorrat bei Platzmangel geräumt hat,
+ * während `localStorage` blieb –, erscheint wieder das Angebot mit Größe; kein stilles Nachladen.
+ */
+export const VORRAT_PFLICHT: readonly string[] = [
+  ...MODELL_DATEIEN.filter((d) => d.pfad.endsWith('.onnx')).map((d) => modellAdresse(d.pfad)),
+  ortAdresse(ORT.wasm),
+];
+
 /** Ungefähre Größe des Workers (transformers.js gebündelt, ≈ 690 KB) und der ORT-`.mjs` für die Anzeige. */
 export const ARBEITER_BYTES = 700_000;
 
