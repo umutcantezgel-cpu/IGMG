@@ -1,0 +1,2010 @@
+{
+  "format": "igmg-lernapp-islam",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "islam",
+  "bereich": "taharah",
+  "stufe": "grund",
+  "einheit": {
+    "schluessel": "islam.grund.e01",
+    "reihenfolge": 1,
+    "thema": {
+      "de": "Reinheit I: Wasser, Unreinheit und Istinjāʾ – nach hanefitischer Lehre"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann die Wasserarten nennen, die die Werke für die Reinigung unterscheiden, und Beispiele zuordnen."
+      },
+      {
+        "de": "Ich kenne die Einteilung der Unreinheiten (najāsa), was davon nachgesehen wird und wie sie entfernt werden."
+      },
+      {
+        "de": "Ich kann Urteil, Ablauf und Anstand der Reinigung nach der Notdurft (istinjāʾ) beschreiben."
+      }
+    ]
+  },
+  "lektionen": [
+    {
+      "schluessel": "islam.grund.e01.l01",
+      "titel": "Wasser für die Reinigung: Arten und Einteilung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l01.a01",
+          "text": "Nach Nūr al-Īḍāḥ ist die Reinigung mit sieben Wassern zulässig: Regenwasser, Meerwasser, Flusswasser, Brunnenwasser, Wasser aus geschmolzenem Schnee, Wasser aus geschmolzenem Hagel und Quellwasser. Auch Qudūrī nennt Regen-, Tal-, Quell-, Brunnen- und Meerwasser als zulässig für die Reinigung.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › al-Miyāh allatī yajūzu t-Taṭhīr bihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 9,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 75,
+              "zitatBis": 190,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Wasser, mit dem die Reinigung zulässig ist)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1458,
+              "zitatBis": 1532,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a02",
+          "text": "Nūr al-Īḍāḥ teilt das Wasser in fünf Arten ein: (1) rein und reinigend, ohne Verpöntheit: das gewöhnliche, unvermischte Wasser (al-māʾ al-muṭlaq); (2) rein und reinigend, aber verpönt: zum Beispiel wenig Wasser, aus dem eine Katze getrunken hat; (3) rein, aber nicht reinigend: gebrauchtes Wasser (mustaʿmal); (4) unrein: zum Beispiel wenig stehendes Wasser, in das Unreinheit gefallen ist; (5) zweifelhaft in seiner reinigenden Kraft: Wasser, aus dem ein Esel oder ein Maultier getrunken hat.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh; Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 9,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 204,
+              "zitatBis": 1193,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a03",
+          "text": "Gebrauchtes Wasser (mustaʿmal) ist Wasser, mit dem ein Zustand ritueller Unreinheit (ḥadath) aufgehoben wurde oder das als gottesdienstliche Handlung am Körper verwendet wurde, etwa bei einer erneuten Gebetswaschung mit dieser Absicht. Es ist rein, reinigt aber nicht von ḥadath. Gebraucht ist es, sobald es sich vom Körper löst.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 9,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 335,
+              "zitatBis": 456,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (fließendes Wasser, großer Teich, gebrauchtes Wasser)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 722,
+              "zitatBis": 835,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a04",
+          "text": "Mit dem Saft von Bäumen und Früchten ist die Reinigung nicht zulässig, nach der deutlicheren Ansicht auch dann nicht, wenn er ohne Pressen von selbst austritt. Ebenso nicht mit Wasser, das durch Kochen oder durch das Überwiegen eines anderen Stoffes seine Natur als Wasser verloren hat. Qudūrī nennt als Beispiele Getränke, Essig, Rosenwasser und Brühe.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 9,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 457,
+              "zitatBis": 558,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Wasser, mit dem die Reinigung zulässig ist)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1533,
+              "zitatBis": 1669,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a05",
+          "text": "Bei festen Stoffen gilt das Wasser als überwogen, wenn es seine Dünnflüssigkeit und sein Fließen verliert. Verändert ein fester Stoff wie Safran, Obst oder Baumblätter dagegen sogar alle Eigenschaften des Wassers, schadet das nicht. Nach Qudūrī ist die Reinigung auch mit Wasser zulässig, dem etwas Reines wie Seife, Waschkraut (ushnān) oder Safran beigemischt ist und das dadurch eine seiner Eigenschaften verändert hat.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 9,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 574,
+              "zitatBis": 684,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Wasser, mit dem die Reinigung zulässig ist)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0001",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms1",
+              "passageSha256Text": "292eeca259abc987fb54278e58c44d0ba0177c5d197b12938ab55875f9864cf5",
+              "zitatVon": 1670,
+              "zitatBis": 1724,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Wasser, mit dem die Reinigung zulässig ist)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 12,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 0,
+              "zitatBis": 52,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a06",
+          "text": "Bei Flüssigkeiten richtet sich das Überwiegen nach ihren Eigenschaften: Hat die Flüssigkeit nur zwei Eigenschaften, wie Milch Farbe und Geschmack, genügt es, dass eine davon im Wasser erscheint. Hat sie drei, wie Essig, müssen zwei davon erscheinen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 10,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 685,
+              "zitatBis": 812,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a07",
+          "text": "Hat die beigemischte Flüssigkeit keine eigene Eigenschaft, etwa gebrauchtes Wasser oder Rosenwasser, das seinen Duft verloren hat, entscheidet das Gewicht: Werden zwei Raṭl gebrauchtes Wasser mit einem Raṭl gewöhnlichem Wasser gemischt, ist die Gebetswaschung damit nicht zulässig; im umgekehrten Verhältnis ist sie zulässig.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 10,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 813,
+              "zitatBis": 978,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a08",
+          "text": "Wenig stehendes Wasser wird unrein, wenn Unreinheit hineinfällt, auch wenn keine Spur davon zu sehen ist. Fließendes Wasser wird erst unrein, wenn die Spur der Unreinheit darin erscheint. Spur heißt: Geschmack, Farbe oder Geruch.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh; Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 10,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 979,
+              "zitatBis": 1137,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (fließendes Wasser, großer Teich, gebrauchtes Wasser)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 345,
+              "zitatBis": 438,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a09",
+          "text": "Als „wenig“ gilt nach Nūr al-Īḍāḥ Wasser, dessen Fläche kleiner ist als zehn mal zehn. Radd al-Muḥtār erläutert dieses Maß in Ellen und berichtet zugleich, dass die Grenze auch über die Bewegung des Wassers bestimmt wird statt über ein Flächenmaß.",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh; Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 10,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 1035,
+              "zitatBis": 1060,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Maṭlab fī Miqdār adh-Dhirāʿ wa-Taʿyīnihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 197,
+              "passage": "radd_al_muhtar.ms0193",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms193",
+              "passageSha256Text": "5dce81e9b006df312b410b3152c83cbbf73d10df0de5dda5451d263e51c660c7",
+              "zitatVon": 33,
+              "zitatBis": 381,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Maṭlab: law udkhila l-māʾ min aʿlā l-ḥawḍ wa-kharaja min asfalihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 192,
+              "passage": "radd_al_muhtar.ms0185",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms185",
+              "passageSha256Text": "250c678cc4a38b801dce56836875148522d96668440158d82394959dcd4330e2",
+              "zitatVon": 376,
+              "zitatBis": 457,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a10",
+          "text": "Wann stehendes Wasser als „viel“ gilt, bestimmen die Werke unterschiedlich. Qudūrī beschreibt einen großen Teich als Wasser, dessen eines Ende sich nicht bewegt, wenn man das andere bewegt; fällt an einer Seite Unreinheit hinein, darf man sich an der anderen Seite waschen. Radd al-Muḥtār berichtet beide Wege, die Bewegung und das Flächenmaß, und führt das Merkmal der Bewegung als offenkundige Lehre der Schule und Ansicht der frühen Gelehrten an.",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (fließendes Wasser, großer Teich, gebrauchtes Wasser)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 439,
+              "zitatBis": 586,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "radd_al_muhtar",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Miyāh › Maṭlab: law udkhila l-māʾ min aʿlā l-ḥawḍ wa-kharaja min asfalihi",
+              "ausgabe": "Dār al-Fikr, 1421/2000, 8 Bände",
+              "band": 1,
+              "seite": 192,
+              "passage": "radd_al_muhtar.ms0185",
+              "fundstelle": "1252IbnCabidinDimashqi.RaddMukhtar.JK000170-ara1#ms185",
+              "passageSha256Text": "250c678cc4a38b801dce56836875148522d96668440158d82394959dcd4330e2",
+              "zitatVon": 259,
+              "zitatBis": 668,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.a11",
+          "text": "Wasser, aus dem ein Esel oder ein Maultier getrunken hat, ist zweifelhaft. Findet man kein anderes Wasser, wäscht man sich damit und macht zusätzlich die Trockenreinigung (tayammum); dann betet man. Nach Qudūrī ist die Reinigung gültig, gleich womit man beginnt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Aqsām al-Miyāh; Bi-mā takūnu l-Ghalaba",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 10,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 1138,
+              "zitatBis": 1193,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Bayān Aḥkām as-Suʾr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 11,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 0,
+              "zitatBis": 66,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Reste, suʾr)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 572,
+              "zitatBis": 651,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l01.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l01.a02",
+          "anweisung": "Ordne jedem Wasser die Art zu, die Nūr al-Īḍāḥ dafür nennt.",
+          "paare": [
+            {
+              "links": "Gewöhnliches, unvermischtes Wasser",
+              "rechts": "rein und reinigend, ohne Verpöntheit"
+            },
+            {
+              "links": "Wenig Wasser, aus dem eine Katze getrunken hat",
+              "rechts": "rein und reinigend, aber verpönt"
+            },
+            {
+              "links": "Für die Gebetswaschung gebrauchtes Wasser",
+              "rechts": "rein, aber nicht reinigend"
+            },
+            {
+              "links": "Wenig stehendes Wasser mit hineingefallener Unreinheit",
+              "rechts": "unrein"
+            },
+            {
+              "links": "Wasser, aus dem ein Esel getrunken hat",
+              "rechts": "zweifelhaft"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l01.a05",
+          "behauptung": "Haben hineingefallene Baumblätter Farbe, Geruch und Geschmack des Wassers verändert, darf man sich damit nach Nūr al-Īḍāḥ nicht mehr waschen.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ schadet es nicht, wenn ein fester Stoff wie Baumblätter alle Eigenschaften des Wassers verändert. Entscheidend ist bei festen Stoffen, ob das Wasser seine Dünnflüssigkeit und sein Fließen verliert.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l01.a03",
+          "behauptung": "Wasser gilt als gebraucht, sobald es sich bei der Waschung vom Körper löst.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt das Lösen vom Körper als den Zeitpunkt, ab dem das Wasser als gebraucht gilt.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l01.a07",
+          "fall": "In einem Gefäß werden zwei Raṭl gebrauchtes Wasser mit einem Raṭl gewöhnlichem Wasser gemischt.",
+          "frage": "Ist die Gebetswaschung mit diesem Wasser nach Nūr al-Īḍāḥ zulässig?",
+          "optionen": [
+            "Ja, weil gebrauchtes Wasser rein ist.",
+            "Nein, weil das gebrauchte Wasser dem Gewicht nach überwiegt.",
+            "Nur, wenn sich die Farbe des Wassers nicht verändert hat."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l01.q05",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l01.a11",
+          "fall": "Eine Person findet für die Gebetswaschung nur Wasser, aus dem ein Esel getrunken hat.",
+          "frage": "Was nennen die Werke für diesen Fall?",
+          "optionen": [
+            "Sie wäscht sich damit und macht zusätzlich die Trockenreinigung (tayammum), dann betet sie.",
+            "Sie darf das Wasser nicht verwenden und betet ohne Reinigung.",
+            "Sie wäscht sich damit; eine Trockenreinigung ist nicht nötig."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e01.l02",
+      "titel": "Reste (suʾr), Gefäße und Kleidung bei Zweifel, Brunnen",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l02.a01",
+          "text": "Der Rest (suʾr) ist wenig Wasser, aus dem ein Lebewesen getrunken hat. Nūr al-Īḍāḥ unterscheidet vier Arten: rein und reinigend ist der Rest von Mensch, Pferd und Tieren, deren Fleisch gegessen wird; unrein ist der Rest von Hund, Schwein und Raubtieren wie Gepard und Wolf; verpönt, wenn anderes Wasser vorhanden ist, ist der Rest von Katze, frei laufendem Huhn, Raubvögeln wie Falke und Milan und von Tieren wie der Maus, nicht aber der des Skorpions; zweifelhaft ist der Rest von Esel und Maultier.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Bayān Aḥkām as-Suʾr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 11,
+              "passage": "nur_al_idah.ms0001",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms1",
+              "passageSha256Text": "6119250d55e3378bf87fbe052d009fe24f771aed48caebac8af7720400ce6dc8",
+              "zitatVon": 1218,
+              "zitatBis": 1577,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Bayān Aḥkām as-Suʾr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 11,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 0,
+              "zitatBis": 66,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Reste, suʾr)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 420,
+              "zitatBis": 651,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a02",
+          "text": "Sind Gefäße vermischt und die meisten davon rein, wählt man nach eigenem Abwägen (taḥarrī) eines für die Gebetswaschung und zum Trinken aus. Sind die meisten unrein, ist das Abwägen nur zum Trinken erlaubt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī t-Taḥarrī fī l-Awānī wa-th-Thiyāb",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 11,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 100,
+              "zitatBis": 183,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a03",
+          "text": "Bei vermischter Kleidung wägt man ab, gleich ob die meisten Stücke rein oder unrein sind.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī t-Taḥarrī fī l-Awānī wa-th-Thiyāb",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 11,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 184,
+              "zitatBis": 239,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a04",
+          "text": "Ein kleiner Brunnen wird vollständig ausgeschöpft, wenn Unreinheit hineinfällt, auch wenig, etwa ein Tropfen Blut oder Wein; für Tierkot gelten eigene Regeln. Ebenso, wenn ein Schwein hineinfällt, auch wenn es lebend herauskommt; wenn ein Hund, ein Schaf oder ein Mensch darin stirbt; oder wenn ein Tier darin aufquillt, auch ein kleines.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aḥkām al-Ābār wa-Taṭhīrihā › al-Biʾr aṣ-Ṣaghīra",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 12,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 283,
+              "zitatBis": 450,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 956,
+              "zitatBis": 1021,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 1222,
+              "zitatBis": 1355,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a05",
+          "text": "Stirbt ein Huhn, eine Katze oder ein ähnliches Tier im Brunnen, sind 40 Eimer zu schöpfen, bei einer Maus oder Ähnlichem 20. Kann ein großer Brunnen nicht ausgeschöpft werden, schöpft man 200 Eimer. Damit gelten Brunnen, Eimer, Seil und die Hand des Schöpfenden als rein. Qudūrī nennt für die ersten beiden Fälle Spannen je nach Größe des Tieres: 40 bis 60 und 20 bis 30 Eimer.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aḥkām al-Ābār wa-Taṭhīrihā › al-Biʾr al-Kathīrat al-Miyāh",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 12,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 451,
+              "zitatBis": 652,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 1022,
+              "zitatBis": 1221,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a06",
+          "text": "Für einen Brunnen mit Quelle, der sich nicht ausschöpfen lässt, nennt Qudūrī: Man schöpft so viel Wasser, wie darin war. Von Muḥammad ibn al-Ḥasan wird überliefert, dass 200 bis 300 Eimer geschöpft werden.",
+          "meinung": "muhammad",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 1483,
+              "zitatBis": 1522,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 0,
+              "zitatBis": 125,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a07",
+          "text": "Kot von Kamelen und Schafen (baʿr), von Pferden (rawth) oder von Rindern (khithy) macht einen Brunnen nicht unrein, außer der Betrachter hält die Menge für viel oder kein Eimer ist frei davon.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aḥkām al-Ābār wa-Taṭhīrihā › Mā lā yunajjisu l-Biʾr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 12,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 669,
+              "zitatBis": 752,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a08",
+          "text": "Wasser wird nicht verdorben durch den Kot von Tauben und Spatzen, durch den Tod von Tieren ohne fließendes Blut wie Fisch, Frosch, Wassertiere, Wanzen, Fliegen, Wespen und Skorpione, und auch nicht, wenn ein Mensch oder ein Tier, dessen Fleisch gegessen wird, hineinfällt und lebend und ohne Unreinheit am Körper wieder herauskommt. Nach der als richtig geltenden Ansicht gilt das auch für Maultier, Esel, Raubvögel und wilde Tiere. Erreicht der Speichel des hineingefallenen Tieres das Wasser, gilt für das Wasser das Urteil dieses Speichels.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aḥkām al-Ābār wa-Taṭhīrihā › Mā lā yufsidu l-Māʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 12,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 769,
+              "zitatBis": 1020,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (fließendes Wasser, großer Teich, gebrauchtes Wasser)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 587,
+              "zitatBis": 721,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a09",
+          "text": "Wird ein totes Tier in einem Brunnen gefunden und weiß man nicht, wann es hineinfiel, gilt der Brunnen seit einem Tag und einer Nacht als unrein, wenn das Tier aufgequollen ist, seit drei Tagen und Nächten. Qudūrī nennt dies die Ansicht Abū Ḥanīfas: Wer sich mit dem Wasser gewaschen hat, wiederholt die Gebete dieses Zeitraums.",
+          "meinung": "abu_hanifa",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī Aḥkām al-Ābār wa-Taṭhīrihā › Wujūd Ḥayawān fī l-Biʾr",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 13,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 1041,
+              "zitatBis": 1133,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 126,
+              "zitatBis": 335,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.a10",
+          "text": "Abū Yūsuf und Muḥammad sagen nach Qudūrī: Im Fall des toten Tieres im Brunnen muss nichts wiederholt werden, bis man sicher weiß, wann das Tier hineingefallen ist.",
+          "meinung": "abu_yusuf",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (Brunnen)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 14,
+              "passage": "quduri.ms0003",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms3",
+              "passageSha256Text": "0fef4632a95e9ed1ebca4e8419806c2b39d0834a19b0bb6d5dc169211ff22193",
+              "zitatVon": 346,
+              "zitatBis": 419,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l02.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l02.a01",
+          "anweisung": "Ordne den Rest (suʾr) des Tieres dem Urteil zu, das Nūr al-Īḍāḥ nennt.",
+          "paare": [
+            {
+              "links": "Pferd",
+              "rechts": "rein und reinigend"
+            },
+            {
+              "links": "Hund",
+              "rechts": "unrein"
+            },
+            {
+              "links": "Katze",
+              "rechts": "verpönt, wenn anderes Wasser da ist"
+            },
+            {
+              "links": "Maultier",
+              "rechts": "zweifelhaft"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l02.a02",
+          "behauptung": "Sind die meisten der vermischten Gefäße unrein, darf man nach eigenem Abwägen eines davon für die Gebetswaschung wählen.",
+          "richtig": false,
+          "begruendung": "Sind die meisten Gefäße unrein, ist das Abwägen nach Nūr al-Īḍāḥ nur zum Trinken erlaubt, nicht für die Waschung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.q03",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e01.l02.a05",
+          "anweisung": "Ordne die Fälle nach der Zahl der Eimer, die nach Nūr al-Īḍāḥ geschöpft werden müssen, von wenig zu viel.",
+          "schritte": [
+            "Eine Maus ist im Brunnen gestorben.",
+            "Ein Huhn ist im Brunnen gestorben.",
+            "Ein großer Brunnen, der nicht ausgeschöpft werden kann, ist unrein geworden."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l02.a09",
+          "fall": "In einem Brunnen wird ein totes, aufgequollenes Tier gefunden. Niemand weiß, wann es hineingefallen ist. Die Leute haben sich mit dem Wasser gewaschen.",
+          "frage": "Was gilt nach der Ansicht, die Qudūrī Abū Ḥanīfa zuschreibt?",
+          "optionen": [
+            "Sie wiederholen die Gebete eines Tages und einer Nacht.",
+            "Sie wiederholen die Gebete von drei Tagen und Nächten.",
+            "Sie wiederholen nichts."
+          ],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l02.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l02.a08",
+          "behauptung": "Stirbt eine Fliege in wenig Wasser, wird das Wasser dadurch unrein.",
+          "richtig": false,
+          "begruendung": "Tiere ohne fließendes Blut wie Fliegen verderben das Wasser durch ihren Tod nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e01.l03",
+      "titel": "Istinjāʾ und Anstand bei der Notdurft",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l03.a01",
+          "text": "Der Mann muss sich nach dem Wasserlassen vergewissern (istibrāʾ), dass kein Urin mehr nachkommt, bis er innerlich sicher ist, je nach Gewohnheit durch Gehen, Räuspern, Hinlegen auf die Seite oder anderes. Mit der Gebetswaschung darf er erst beginnen, wenn er sicher ist, dass nichts mehr austritt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ wa-fī Ḥukmihi wa-Kayfiyyatihi › Ḥukm al-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 14,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 1168,
+              "zitatBis": 1330,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a02",
+          "text": "Die Reinigung nach der Notdurft (istinjāʾ) ist Sunna, solange die Unreinheit die Austrittsstelle nicht überschreitet. Überschreitet sie diese in der Menge eines Dirhams, ist das Entfernen mit Wasser notwendig (wājib); ist es mehr als ein Dirham, ist es Pflicht (farḍ).",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ wa-fī Ḥukmihi wa-Kayfiyyatihi › Ḥukm al-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 14,
+              "passage": "nur_al_idah.ms0002",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms2",
+              "passageSha256Text": "dda5b2b9d6936d303f6821af64979de0aef29515c736f6a5cf79121aa1843459",
+              "zitatVon": 1345,
+              "zitatBis": 1472,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1071,
+              "zitatBis": 1085,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1169,
+              "zitatBis": 1215,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a03",
+          "text": "Sunna ist die Reinigung mit einem säubernden Stein oder Ähnlichem. Das Waschen mit Wasser ist besser; am besten ist beides zusammen: erst abwischen, dann waschen. Man darf sich auch auf Wasser allein oder auf Steine allein beschränken.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ wa-fī Ḥukmihi wa-Kayfiyyatihi › Ḥukm al-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 14,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 16,
+              "zitatBis": 142,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1071,
+              "zitatBis": 1168,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a04",
+          "text": "Ziel der Sunna ist, dass die Stelle sauber wird. Eine bestimmte Zahl von Steinen ist nur empfohlen (mandūb), keine bekräftigte Sunna: Wird es schon mit weniger Steinen sauber, nimmt man dennoch drei als Empfehlung. Qudūrī sagt, dass es keine vorgeschriebene Zahl gibt.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ wa-fī Ḥukmihi wa-Kayfiyyatihi › Ḥukm al-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 14,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 143,
+              "zitatBis": 249,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1117,
+              "zitatBis": 1150,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a05",
+          "text": "Beim Reinigen mit Wasser wäscht man zuerst die Hand, reinigt dann die Stelle mit Wasser und mit der Innenseite eines Fingers, bei Bedarf von zwei oder drei Fingern, und zwar gründlich, bis der unangenehme Geruch verschwunden ist. Danach wäscht man die Hand ein zweites Mal.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ wa-fī Ḥukmihi wa-Kayfiyyatihi › Kayfiyyatuhu",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 15,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 479,
+              "zitatBis": 854,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a06",
+          "text": "Für die Reinigung darf man seine Blöße (ʿawra) nicht vor anderen entblößen. Hat sich die Unreinheit über die Austrittsstelle hinaus in einer Menge von mehr als einem Dirham verteilt, ist das Gebet damit nicht gültig, wenn man etwas zum Entfernen findet; man sucht dann einen Weg, sie zu entfernen, ohne sich vor anderen zu entblößen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Faṣl (Kashf al-ʿAwra)",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 859,
+              "zitatBis": 1022,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a07",
+          "text": "Verpönt ist die Reinigung mit Knochen, mit Nahrung für Mensch oder Tier, mit gebranntem Ziegel, Tonscherben, Kohle, Glas, Gips und mit wertvollen Dingen wie einem Stück Seide oder Baumwolle, außerdem mit der rechten Hand, außer bei einer Entschuldigung. Qudūrī nennt zusätzlich Kot.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Mā yukrahu bihi l-Istinjāʾ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1044,
+              "zitatBis": 1163,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 1216,
+              "zitatBis": 1270,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a08",
+          "text": "Zum Anstand bei der Notdurft gehört: Man betritt den Ort mit dem linken Fuß, sitzt auf die linke Seite gestützt und spricht nicht, außer wenn es nötig ist. Man verlässt den Ort mit dem rechten Fuß. Vor dem Eintreten und nach dem Hinausgehen spricht man die dafür überlieferten Worte; ihren Wortlaut gibt diese Lektion nicht wieder.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1181,
+              "zitatBis": 1292,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1478,
+              "zitatBis": 1552,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a09",
+          "text": "Nūr al-Īḍāḥ nennt als streng verpönt (makrūh taḥrīman), bei der Notdurft der Gebetsrichtung (qibla) das Gesicht oder den Rücken zuzuwenden, auch in Gebäuden, und in derselben Aufzählung, der Sonnen- oder Mondscheibe und der Richtung, aus der der Wind weht, zugewandt zu sein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1293,
+              "zitatBis": 1383,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.a10",
+          "text": "Verpönt ist es, in Wasser, im Schatten, in ein Erdloch, auf einen Weg oder unter einem fruchttragenden Baum Wasser zu lassen oder die Notdurft zu verrichten, und im Stehen Wasser zu lassen, außer bei einer Entschuldigung.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Faṣl fī l-Istinjāʾ › Ādāb Qaḍāʾ al-Ḥāja",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 16,
+              "passage": "nur_al_idah.ms0003",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms3",
+              "passageSha256Text": "aa42ef555331c267e49597eccfaecae68d03853d2a44bdb6076c9b9ac5377a64",
+              "zitatVon": 1384,
+              "zitatBis": 1477,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l03.q01",
+          "typ": "reihenfolge",
+          "aussage": "islam.grund.e01.l03.a05",
+          "anweisung": "Bringe die Schritte der Reinigung mit Wasser in die Reihenfolge, die Nūr al-Īḍāḥ nennt.",
+          "schritte": [
+            "Zuerst die Hand waschen.",
+            "Die Stelle mit Wasser und der Innenseite der Finger reinigen.",
+            "Gründlich reinigen, bis der unangenehme Geruch verschwunden ist.",
+            "Die Hand ein zweites Mal waschen."
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l03.a04",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist die Zahl von drei Steinen eine bekräftigte Sunna.",
+          "richtig": false,
+          "begruendung": "Die Zahl der Steine ist nur empfohlen (mandūb). Sunna ist, dass die Stelle sauber wird.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.q03",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l03.a02",
+          "anweisung": "Ordne zu: Welches Urteil hat das Entfernen der Unreinheit in welchem Fall?",
+          "paare": [
+            {
+              "links": "Die Unreinheit bleibt an der Austrittsstelle.",
+              "rechts": "Sunna"
+            },
+            {
+              "links": "Sie überschreitet die Stelle in der Menge eines Dirhams.",
+              "rechts": "notwendig (wājib), mit Wasser"
+            },
+            {
+              "links": "Sie überschreitet die Stelle mit mehr als einem Dirham.",
+              "rechts": "Pflicht (farḍ)"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.q04",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l03.a09",
+          "fall": "In einem Gebäude ist eine Toilette so eingebaut, dass man beim Sitzen mit dem Rücken zur Gebetsrichtung (qibla) sitzt.",
+          "frage": "Was sagt Nūr al-Īḍāḥ zum Zuwenden von Gesicht oder Rücken zur Gebetsrichtung bei der Notdurft?",
+          "optionen": [
+            "Es ist streng verpönt, auch in Gebäuden.",
+            "Es ist nur im Freien verpönt, in Gebäuden nicht.",
+            "Nur das Zuwenden des Gesichts ist verpönt, nicht des Rückens."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l03.q05",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l03.a07",
+          "behauptung": "Die Reinigung mit der rechten Hand ist ohne Entschuldigung verpönt.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ und Qudūrī nennen die Reinigung mit der rechten Hand als verpönt, außer bei einer Entschuldigung.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e01.l04",
+      "titel": "Arten der Unreinheit und was davon nachgesehen wird",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l04.a01",
+          "text": "Unreinheit (najāsa) vom Körper und von der Kleidung des Betenden und von dem Platz, auf dem er betet, zu entfernen, ist notwendig (wājib).",
+          "belege": [
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 319,
+              "zitatBis": 380,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.a02",
+          "text": "Nūr al-Īḍāḥ teilt die Unreinheit in zwei Arten: schwere (ghalīẓa) und leichte (khafīfa). Schwer sind zum Beispiel Wein, fließendes Blut, das Fleisch eines verendeten Tieres und seine ungegerbte Haut, der Urin von Tieren, deren Fleisch nicht gegessen wird, der Kot von Hund und Raubtieren, der Speichel von Raubtieren, der Kot von Huhn, Ente und Gans sowie alles, was beim Austreten aus dem menschlichen Körper die Gebetswaschung ungültig macht. Leicht sind der Urin des Pferdes, der Urin von Tieren, deren Fleisch gegessen wird, und der Kot von Vögeln, deren Fleisch nicht gegessen wird.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Aqsām an-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 1241,
+              "zitatBis": 1507,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 702,
+              "zitatBis": 889,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.a03",
+          "text": "Nachgesehen wird bei schwerer Unreinheit eine Menge bis zur Größe eines Dirhams und bei leichter Unreinheit weniger als ein Viertel der Kleidung oder des Körpers. Nach Qudūrī ist das Gebet mit diesen Mengen gültig, mit mehr nicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Mā yuʿfā ʿanhu min al-Anjās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 1531,
+              "zitatBis": 1598,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 702,
+              "zitatBis": 889,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.a04",
+          "text": "Auch Urinspritzer, so klein wie Nadelspitzen, werden nachgesehen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Mā yuʿfā ʿanhu min al-Anjās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0010",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms10",
+              "passageSha256Text": "8779f2843fe9c6e0b2f519f004bbea8883aee1cc2c9be6126ba6fa3b7c05ec6b",
+              "zitatVon": 1599,
+              "zitatBis": 1627,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.a05",
+          "text": "Ein trockenes, reines Tuch wird nicht unrein, wenn man es in ein nasses unreines Tuch wickelt, das beim Auswringen nicht tropft. Ebenso wird ein nasses Tuch nicht unrein, das man auf trockenen unreinen Boden legt, auch wenn der Boden davon feucht wird, und auch nicht ein Tuch, auf das der Wind von einer Unreinheit her weht, außer die Spur der Unreinheit wird darin sichtbar.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Mā yuʿfā ʿanhu min al-Anjās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 99,
+              "zitatBis": 273,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.a06",
+          "text": "Wird ein unreines Bett oder unreiner Boden durch den Schweiß eines Schlafenden oder durch einen nassen Fuß feucht und erscheint die Spur der Unreinheit am Körper oder am Fuß, werden diese unrein; sonst nicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Mā yuʿfā ʿanhu min al-Anjās",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 0,
+              "zitatBis": 98,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l04.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l04.a02",
+          "anweisung": "Ordne zu: Ist die Unreinheit nach Nūr al-Īḍāḥ schwer oder leicht?",
+          "paare": [
+            {
+              "links": "Fließendes Blut",
+              "rechts": "schwer"
+            },
+            {
+              "links": "Kot von Hühnern",
+              "rechts": "schwer"
+            },
+            {
+              "links": "Urin des Pferdes",
+              "rechts": "leicht"
+            },
+            {
+              "links": "Kot von Vögeln, deren Fleisch nicht gegessen wird",
+              "rechts": "leicht"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.q02",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l04.a03",
+          "fall": "Auf der Kleidung einer betenden Person ist ein Blutfleck, der kleiner ist als ein Dirham.",
+          "frage": "Was gilt nach Qudūrī für das Gebet?",
+          "optionen": [
+            "Das Gebet ist gültig, weil diese Menge nachgesehen wird.",
+            "Das Gebet ist ungültig, weil Blut eine schwere Unreinheit ist.",
+            "Das Gebet ist nur gültig, wenn der Fleck weniger als ein Viertel der Kleidung bedeckt."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.q03",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l04.a05",
+          "behauptung": "Ein trockenes, reines Tuch wird unrein, wenn man es in ein nasses unreines Tuch wickelt, das beim Auswringen nicht tropft.",
+          "richtig": false,
+          "begruendung": "Nach Nūr al-Īḍāḥ wird das trockene Tuch in diesem Fall nicht unrein.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l04.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l04.a01",
+          "behauptung": "Unreinheit muss vom Körper, von der Kleidung und vom Gebetsplatz des Betenden entfernt werden.",
+          "richtig": true,
+          "begruendung": "Qudūrī nennt das Entfernen der Unreinheit von Körper, Kleidung und Gebetsplatz notwendig (wājib).",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e01.l05",
+      "titel": "Wie Unreinheit entfernt wird: Waschen, Boden, Umwandlung",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l05.a01",
+          "text": "Nūr al-Īḍāḥ nennt je nach Gegenstand verschiedene Arten der Reinigung: Kleidung und Körper werden mit Wasser oder einer anderen lösenden Flüssigkeit gewaschen; Ledersocken (khuff) und Ähnliches werden gerieben; ein Schwert und Ähnliches wird abgewischt; der Boden wird rein, wenn die Spur verschwunden und er getrocknet ist; eine Unreinheit, deren Stoff sich umgewandelt hat, ist rein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 290,
+              "zitatBis": 814,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a02",
+          "text": "Was durch sichtbare Unreinheit verunreinigt ist, wird rein, wenn ihr Stoff entfernt ist, nach der als richtig geltenden Ansicht auch dann, wenn dafür ein einziges Waschen genügt. Bleibt eine Spur, die nur schwer zu entfernen ist, schadet das nicht.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 290,
+              "zitatBis": 372,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 890,
+              "zitatBis": 1070,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a03",
+          "text": "Unsichtbare Unreinheit wird nach Nūr al-Īḍāḥ durch dreimaliges Waschen entfernt, wobei man jedes Mal auswringt. Qudūrī stellt darauf ab, so lange zu waschen, bis der Waschende überwiegend überzeugt ist, dass die Stelle rein ist.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 34,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 373,
+              "zitatBis": 412,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 999,
+              "zitatBis": 1070,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a04",
+          "text": "Unreinheit an Kleidung und Körper kann mit Wasser und mit jeder reinen Flüssigkeit entfernt werden, die sie löst, etwa mit Essig oder Rosenwasser.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 413,
+              "zitatBis": 481,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 381,
+              "zitatBis": 455,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a05",
+          "text": "Ledersocken (khuff) und Ähnliches werden von einer Unreinheit, die einen Körper hat, durch Reiben gereinigt, nach Nūr al-Īḍāḥ auch dann, wenn die Unreinheit noch feucht ist. Qudūrī nennt den Fall, dass sie getrocknet ist und man den Schuh am Boden reibt.",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 482,
+              "zitatBis": 536,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 456,
+              "zitatBis": 508,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a06",
+          "text": "Ein Schwert, ein Spiegel und Ähnliches werden durch Abwischen rein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Bi-mā taṭhuru n-Najāsa",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 537,
+              "zitatBis": 561,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 566,
+              "zitatBis": 614,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a07",
+          "text": "Ist die Spur der Unreinheit vom Boden verschwunden und der Boden getrocknet, darf man darauf beten, aber nicht mit ihm die Trockenreinigung (tayammum) vornehmen. Bäume und Gras, die auf diesem Boden stehen, werden mit dem Trocknen ebenfalls rein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Ṭahārat al-Arḍ",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 574,
+              "zitatBis": 680,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 21,
+              "passage": "quduri.ms0006",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms6",
+              "passageSha256Text": "81db0bf10d40e654e049b567568058b8051394f260fb01ef32793bd5cb556f54",
+              "zitatVon": 615,
+              "zitatBis": 701,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.a08",
+          "text": "Eine Unreinheit, deren Stoff sich umgewandelt hat, etwa weil sie zu Salz geworden oder im Feuer verbrannt ist, ist rein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › aṭ-Ṭahāra bi-l-Istiḥāla",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 700,
+              "zitatBis": 756,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l05.q01",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l05.a01",
+          "anweisung": "Ordne jedem Gegenstand die Art der Reinigung zu, die Nūr al-Īḍāḥ nennt.",
+          "paare": [
+            {
+              "links": "Kleidung",
+              "rechts": "Waschen"
+            },
+            {
+              "links": "Ledersocke (khuff) mit Unreinheit, die einen Körper hat",
+              "rechts": "Reiben"
+            },
+            {
+              "links": "Schwert",
+              "rechts": "Abwischen"
+            },
+            {
+              "links": "Boden",
+              "rechts": "Trocknen, bis die Spur verschwunden ist"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.q02",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l05.a07",
+          "behauptung": "Ist ein unreiner Boden getrocknet und die Spur verschwunden, darf man darauf beten und auch mit ihm die Trockenreinigung (tayammum) vornehmen.",
+          "richtig": false,
+          "begruendung": "Beten ist dann erlaubt, die Trockenreinigung mit diesem Boden aber nicht.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l05.a04",
+          "fall": "Ein Fleck Unreinheit auf einem Hemd wird mit Essig ausgewaschen, bis er ganz entfernt ist.",
+          "frage": "Was gilt nach Nūr al-Īḍāḥ und Qudūrī?",
+          "optionen": [
+            "Das Hemd ist rein, denn Unreinheit kann mit jeder reinen, lösenden Flüssigkeit entfernt werden.",
+            "Das Hemd bleibt unrein, weil nur Wasser reinigt.",
+            "Das Hemd ist nur rein, wenn man es danach dreimal mit Wasser wäscht."
+          ],
+          "richtig": 0,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l05.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l05.a02",
+          "behauptung": "Bleibt nach dem Entfernen einer sichtbaren Unreinheit eine Spur, die nur schwer zu entfernen ist, schadet das nicht.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ und Qudūrī sagen, dass eine schwer zu entfernende Spur nicht schadet.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    },
+    {
+      "schluessel": "islam.grund.e01.l06",
+      "titel": "Häute verendeter Tiere und Ähnliches",
+      "kinderGeeignet": true,
+      "aussagen": [
+        {
+          "schluessel": "islam.grund.e01.l06.a01",
+          "text": "Die Haut eines verendeten Tieres wird durch Gerben rein: durch echtes Gerben mit Gerbstoffen wie Qaraẓ oder durch Gerben im rechtlichen Sinn, etwa durch Einreiben mit Erde oder Trocknen in der Sonne. Ausgenommen sind die Haut des Schweins und die des Menschen. Nach Qudūrī darf man auf gegerbter Haut beten und sich aus ihr als Gefäß waschen.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Faṣl fī Ṭahārat Jild al-Mayta wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 846,
+              "zitatBis": 938,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (gegerbte Häute, Teile verendeter Tiere)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 836,
+              "zitatBis": 909,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.a02",
+          "text": "Die vorschriftsmäßige Schlachtung (dhakāt) macht die Haut eines Tieres, dessen Fleisch nicht gegessen wird, rein, nicht aber sein Fleisch, nach der richtigeren Ansicht, nach der Fatwa gegeben wird.",
+          "meinung": "fatwa",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Faṣl fī Ṭahārat Jild al-Mayta wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 939,
+              "zitatBis": 1003,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.a03",
+          "text": "Was kein fließendes Blut enthält, wird durch den Tod nicht unrein, etwa Haare, abgeschnittene Federn, Horn, Huf und Knochen, solange kein Fett daran ist. Auch Qudūrī nennt Haare, Knochen, Huf und Horn eines verendeten Tieres rein.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Faṣl fī Ṭahārat Jild al-Mayta wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1004,
+              "zitatBis": 1104,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (gegerbte Häute, Teile verendeter Tiere)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 910,
+              "zitatBis": 955,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.a04",
+          "text": "Ob die Sehnen eines verendeten Tieres rein sind, beantworten die Werke unterschiedlich: Nūr al-Īḍāḥ nennt sie nach der als richtig geltenden Ansicht unrein, Qudūrī zählt sie zu den reinen Teilen.",
+          "strittig": true,
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Faṣl fī Ṭahārat Jild al-Mayta wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1105,
+              "zitatBis": 1125,
+              "art": "sinngemaess"
+            },
+            {
+              "werk": "quduri",
+              "kapitel": "Kitāb aṭ-Ṭahāra (gegerbte Häute, Teile verendeter Tiere)",
+              "ausgabe": "Dār al-Kutub al-ʿIlmiyya, 1418/1997",
+              "band": 1,
+              "seite": 13,
+              "passage": "quduri.ms0002",
+              "fundstelle": "0428AbuHusaynQuduri.Mukhtasar.Sham19Y0124336-ara1#ms2",
+              "passageSha256Text": "d1c8abcbddc37cdb29f97b144ee1f80bd39c40324ea78280c789ae532a73ad81",
+              "zitatVon": 910,
+              "zitatBis": 955,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.a05",
+          "text": "Der Moschusbeutel ist rein wie der Moschus selbst, und Moschus zu essen ist erlaubt. Zibet (zabād) ist rein; das Gebet einer Person, die damit parfümiert ist, ist gültig.",
+          "belege": [
+            {
+              "werk": "nur_al_idah",
+              "kapitel": "Kitāb aṭ-Ṭahāra › Bāb al-Anjās wa-ṭ-Ṭahāra ʿanhā › Faṣl fī Ṭahārat Jild al-Mayta wa-naḥwihā",
+              "ausgabe": "Dār al-Ḥikma, 1985",
+              "band": 1,
+              "seite": 35,
+              "passage": "nur_al_idah.ms0011",
+              "fundstelle": "1069IbnCammarShurunbulali.NurIdah.JK000284-ara1#ms11",
+              "passageSha256Text": "ff48b22e31f377c9339aaa9c2ceeafae129d98d7f9b3d2be6258416c055734f8",
+              "zitatVon": 1126,
+              "zitatBis": 1193,
+              "art": "sinngemaess"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ],
+      "aufgaben": [
+        {
+          "schluessel": "islam.grund.e01.l06.q01",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l06.a01",
+          "behauptung": "Die Haut eines Schweins wird durch Gerben rein.",
+          "richtig": false,
+          "begruendung": "Die Haut des Schweins und die des Menschen sind vom Reinwerden durch Gerben ausgenommen.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.q02",
+          "typ": "zuordnen",
+          "aussage": "islam.grund.e01.l06.a01",
+          "anweisung": "Ordne zu: Welche Art des Gerbens ist gemeint?",
+          "paare": [
+            {
+              "links": "Bearbeiten mit Gerbstoffen wie Qaraẓ",
+              "rechts": "echtes Gerben"
+            },
+            {
+              "links": "Einreiben mit Erde",
+              "rechts": "Gerben im rechtlichen Sinn"
+            },
+            {
+              "links": "Trocknen in der Sonne",
+              "rechts": "Gerben im rechtlichen Sinn"
+            }
+          ],
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.q03",
+          "typ": "fallfrage",
+          "aussage": "islam.grund.e01.l06.a02",
+          "fall": "Ein Tier, dessen Fleisch nicht gegessen wird, wurde vorschriftsmäßig geschlachtet.",
+          "frage": "Was gilt nach der Ansicht, nach der laut Nūr al-Īḍāḥ Fatwa gegeben wird?",
+          "optionen": ["Haut und Fleisch sind rein.", "Die Haut ist rein, das Fleisch nicht.", "Haut und Fleisch bleiben unrein."],
+          "richtig": 1,
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        },
+        {
+          "schluessel": "islam.grund.e01.l06.q04",
+          "typ": "wahr_falsch",
+          "aussage": "islam.grund.e01.l06.a05",
+          "behauptung": "Nach Nūr al-Īḍāḥ ist Moschus rein.",
+          "richtig": true,
+          "begruendung": "Nūr al-Īḍāḥ nennt den Moschusbeutel rein wie den Moschus selbst.",
+          "quelle": "ki:lernapp-l6-04/claude-opus-5-5/wissen-v1",
+          "lizenz": "CC-BY-SA-4.0"
+        }
+      ]
+    }
+  ]
+}
