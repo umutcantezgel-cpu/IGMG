@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { eq } from 'drizzle-orm';
+import { and, eq, sql } from 'drizzle-orm';
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
@@ -14,8 +14,9 @@ import { kontoUmgebung } from './hilfen/konto';
  * Bestenliste – auch nicht mit einer untergeschobenen Zustimmung –, nur mit eigener Zustimmung und Einwilligung; sehen
  * darf sie nur, wer selbst zugestimmt hat und deren Einwilligung gilt (gegenseitiger Kreis, DSFA-Entwurf LA-V7/EL4).
  * Schalter `lernapp_gruppen`/`lernapp_rangliste` (Ausblenden geht immer), nur laufende Mitgliedschaften, Familienschalter
- * nur mit bestätigtem Bezug, Reihenfolge der Actions (Konto vor Eingabe), Ursprung, Audit ohne Inhalte. Testdaten fiktiv,
- * Namen Platzhalter.
+ * nur mit bestätigtem Bezug, Reihenfolge der Actions (Konto vor Eingabe), Ursprung, Audit ohne Inhalte. S-L3 M-1: XP aus
+ * Wissenskurs und Koran-Arabisch zählen weder in Bestenliste und Gruppenziel noch im Stand der Lehrkraft (Art. 9). Testdaten
+ * fiktiv, Namen Platzhalter.
  */
 // Spion auf die Kontoprüfung der Actions (Reihenfolge wie MUSTER §5: Konto mit Faktor und Kontoart vor der Eingabe)
 const kontoPruefungen = vi.hoisted(() => ({ anzahl: 0 }));
@@ -83,9 +84,21 @@ async function gruppe(name: string): Promise<string> {
 
 const HEUTE = berlinerDatum(new Date());
 const WOCHE = wocheVon(HEUTE);
+/** Lerntag im Sprachkurs `tr-aus-de`: Tagessumme und dieselbe Zeile je Kurs (wie der Abgleich sie ableitet). */
 async function xp(benutzerId: string, menge: number) {
   await db.insert(schema.lernappProfil).values({ benutzerId }).onConflictDoNothing();
   await db.insert(schema.lernappTag).values({ benutzerId, tag: WOCHE.von, xp: menge, lektionen: 1 });
+  await db.insert(schema.lernappTagKurs).values({ benutzerId, tag: WOCHE.von, kurs: 'tr-aus-de', xp: menge, lektionen: 1 });
+}
+
+/** Zusätzlich gelernt im Wissenskurs bzw. Koran-Pfad am selben Tag (zwei Lektionen): Tagessumme wächst, Zeile je Kurs neu. */
+async function religioeseXp(benutzerId: string, kurs: 'islam' | 'koran', menge: number) {
+  const T = schema.lernappTag;
+  await db
+    .update(T)
+    .set({ xp: sql`${T.xp} + ${menge}`, lektionen: sql`${T.lektionen} + 2` })
+    .where(and(eq(T.benutzerId, benutzerId), eq(T.tag, WOCHE.von)));
+  await db.insert(schema.lernappTagKurs).values({ benutzerId, tag: WOCHE.von, kurs, xp: menge, lektionen: 2 });
 }
 
 const KOPF = { 'sec-fetch-site': 'same-origin', host: 'example.test' };
@@ -440,6 +453,48 @@ describe('Familie und Eltern', () => {
     );
     // Jugendliche/r nach dem Übergang: Eltern sehen nichts mehr
     expect(await dienst.lernwocheDesKindes(await kontext(ids.eltern), ids.jugendL, HEUTE)).toEqual({ art: 'selbst' });
+  });
+});
+
+describe('S-L3 M-1: kein Rückschluss auf Wissenskurs und Koran-Arabisch (Art. 9)', () => {
+  it('XP aus Wissen und Koran-Arabisch: nicht in Bestenliste, Gruppenziel, Familie und Stand der Lehrkraft; die Lernwoche der Eltern zählt alle Kurse', async () => {
+    await religioeseXp(ids.kind, 'islam', 500);
+    await religioeseXp(ids.jugend, 'koran', 400);
+    for (const benutzerId of [ids.jugend, ids.erwachsen])
+      await db.insert(schema.lernappRanglisteZustimmung).values({ benutzerId, textVersion: 'v1' }).onConflictDoNothing();
+
+    // Lehrkraft: nur der zugewiesene Sprachkurs; Gruppenziel nur Sprachkurse
+    const s = await dienst.standDerGruppe(await kontext(ids.lehrkraftA), ids.gruppe1, HEUTE);
+    const nach = new Map(s.zeilen.map((z) => [z.name, z]));
+    expect(s.kurse).toEqual(['tr-aus-de']);
+    expect(nach.get('[Kind] K')?.woche).toEqual({ xp: 40, lektionen: 1, lerntage: 1 });
+    expect(nach.get('[Jugend] J')?.woche).toEqual({ xp: 30, lektionen: 1, lerntage: 1 });
+    expect(s.ziel).toMatchObject({ summe: 100 });
+
+    // Lernende ab 16: Gruppenziel und Bestenlisten (Gruppe, Familie) nur mit XP aus den Sprachkursen
+    als(ids.jugend);
+    const a = await holeJson();
+    expect(a.gruppen[0]!.ziel).toMatchObject({ summe: 100 });
+    expect(a.gruppen[0]!.bestenliste).toEqual([
+      { name: '[Erwachsen] W.', xp: 30, ich: false },
+      { name: '[Jugend] J.', xp: 30, ich: true },
+    ]);
+    expect(a.familien[0]!.bestenliste!.find((p) => p.name === '[Jugend] J.')?.xp).toBe(30);
+
+    // Eltern: Lernwoche des eigenen Kindes mit allen Kursen
+    const w = await dienst.lernwocheDesKindes(await kontext(ids.eltern), ids.kindL, HEUTE);
+    expect(w).toMatchObject({ art: 'woche', summe: { xp: 540, lektionen: 3, lerntage: 1 } });
+  });
+
+  it('Lehrkraft sieht nur die Kurse der Zuweisungen ihrer Gruppe: ohne Zuweisung Nullen, mit Zuweisung die Zahlen', async () => {
+    const b = await kontext(ids.lehrkraftB);
+    const ohne = await dienst.standDerGruppe(b, ids.gruppe2, HEUTE);
+    expect(ohne.kurse).toEqual([]);
+    expect(ohne.zeilen.find((z) => z.name === '[Fremd] X')?.woche).toEqual({ xp: 0, lektionen: 0, lerntage: 0 });
+    await dienst.weiseZu(b, ids.gruppe2, { kurs: 'tr-aus-de', einheit: 'tr.a1.e01', faellig: null, titel: 't' });
+    const mit = await dienst.standDerGruppe(b, ids.gruppe2, HEUTE);
+    expect(mit.kurse).toEqual(['tr-aus-de']);
+    expect(mit.zeilen.find((z) => z.name === '[Fremd] X')?.woche).toEqual({ xp: 90, lektionen: 1, lerntage: 1 });
   });
 });
 

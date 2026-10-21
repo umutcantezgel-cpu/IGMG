@@ -9,6 +9,7 @@ import { ladeEinheitJson, ladeVerzeichnisJson } from '@/server/queries/lernapp/p
 import { istRichtung, pruefeLernappBezug, zerlegeRichtung, type LernappBezug, type RichtungId } from '../kurse';
 import { lektionAusPaket, lektionImPaket } from '../paket/bauen';
 import type { LernText } from '@/lib/db/schema/lernapp';
+import { GRUPPEN_KURSE } from '../ereignisse/kurs';
 import { lernappEinwilligung } from '../sync/server';
 import {
   type Alterslage,
@@ -21,6 +22,7 @@ import {
   lernwoche,
   type Platz,
   siehtBestenliste,
+  tageAusKursen,
   type Woche,
   type WochenTag,
   wochenSumme,
@@ -37,6 +39,9 @@ import {
  *   Lernwoche ihres Kindes. Fremde Gruppen verhalten sich wie „gibt es nicht“.
  * - **Einwilligung:** Stand, Gruppenziel und Bestenliste zählen nur Konten, deren Einwilligung `lernapp` gilt
  *   (`lernappEinwilligung`, bei Kindern die der Eltern).
+ * - **Kein Rückschluss auf religiöses Lernen (Art. 9, S-L3 M-1):** Bestenliste und Gruppenziel zählen nur XP aus den
+ *   Sprachkursen (D-L04), der Stand der Lehrkraft nur die Kurse der Zuweisungen ihrer Gruppe (D-L03) – beides aus
+ *   `lernapp_tag_kurs`. Nur die Lernwoche der Eltern liest die Tagessumme aller Kurse (`lernapp_tag`).
  * - **Bestenliste:** nur Konten ab 16 mit eigener Zustimmung und Einwilligung erscheinen – und nur diese sehen sie
  *   (gegenseitiger Kreis, `regeln.siehtBestenliste`).
  * - **Mitgliedschaft:** nur laufende (`bis` leer), wie `ladeGruppenKontext` – wer heute ausgetragen wurde, zählt nicht mehr.
@@ -100,14 +105,15 @@ async function mitEinwilligung(konten: readonly { benutzerId: string; istKind: b
   return new Set(lagen.filter(([, l]) => l === 'erteilt').map(([id]) => id));
 }
 
-/** Wochen-XP je Konto aus den abgeleiteten Lerntagen (`lernapp_tag`). */
+/** Wochen-XP je Konto für Bestenliste und Gruppenziel: nur aus den Sprachkursen (`lernapp_tag_kurs`, D-L04). */
 async function wochenXp(benutzerIds: readonly string[], woche: Woche): Promise<Map<string, number>> {
   if (!benutzerIds.length) return new Map();
+  const T = schema.lernappTagKurs;
   const zeilen = await db
-    .select({ benutzerId: schema.lernappTag.benutzerId, xp: sum(schema.lernappTag.xp).mapWith(Number) })
-    .from(schema.lernappTag)
-    .where(and(inArray(schema.lernappTag.benutzerId, [...benutzerIds]), between(schema.lernappTag.tag, woche.von, woche.bis)))
-    .groupBy(schema.lernappTag.benutzerId);
+    .select({ benutzerId: T.benutzerId, xp: sum(T.xp).mapWith(Number) })
+    .from(T)
+    .where(and(inArray(T.benutzerId, [...benutzerIds]), between(T.tag, woche.von, woche.bis), inArray(T.kurs, [...GRUPPEN_KURSE])))
+    .groupBy(T.benutzerId);
   return new Map(zeilen.map((z) => [z.benutzerId, z.xp ?? 0]));
 }
 
@@ -494,6 +500,7 @@ export type StandZeile = {
   konto: boolean;
   /** Einwilligung `lernapp` gilt – nur dann gibt es Zahlen */
   einwilligung: boolean;
+  /** nur aus den Kursen der Zuweisungen dieser Gruppe (D-L03) */
   woche: { xp: number; lektionen: number; lerntage: number } | null;
   erledigt: number | null;
 };
@@ -504,12 +511,16 @@ export type StandDerGruppe = {
   einstellung: GruppenEinstellung;
   zuweisungen: (Zuweisung & { erledigt: number })[];
   zeilen: StandZeile[];
+  /** Kurse, aus denen der Stand zählt: die der Zuweisungen dieser Gruppe */
+  kurse: RichtungId[];
   ziel: GruppenzielStand | null;
 };
 
 /**
  * Stand der Gruppe für die Lehrkraft (KERN 4.0 §5): je Lernende/r Wochen-XP, Lektionen, Lerntage und erledigte
- * Zuweisungen – nur mit Einwilligung `lernapp`; ohne sie nur Name und Hinweis. Nur die Lehrkraft der Gruppe.
+ * Zuweisungen – nur mit Einwilligung `lernapp`; ohne sie nur Name und Hinweis. Nur die Lehrkraft der Gruppe. XP,
+ * Lektionen und Lerntage zählen nur aus den Kursen, die dieser Gruppe zugewiesen sind (D-L03, S-L3 M-1); ohne Zuweisung
+ * gibt es nur Nullen. Das Gruppenziel zählt wie für die Lernenden nur die Sprachkurse.
  */
 export async function standDerGruppe(
   kontext: GruppenKontext,
@@ -532,19 +543,16 @@ export async function standDerGruppe(
   );
   const mitDaten = konten.filter((m) => ein.has(m.benutzerId!));
   const ids = mitDaten.map((m) => m.benutzerId!);
-  const [tage, erledigtZeilen] = await Promise.all([
-    ids.length
+  const kurse = [...new Set(zuweisungen.map((z) => z.kurs))].sort();
+  const T = schema.lernappTagKurs;
+  const [tage, xpGruppe, erledigtZeilen] = await Promise.all([
+    ids.length && kurse.length
       ? db
-          .select({
-            benutzerId: schema.lernappTag.benutzerId,
-            tag: schema.lernappTag.tag,
-            xp: schema.lernappTag.xp,
-            lektionen: schema.lernappTag.lektionen,
-            pause: schema.lernappTag.pause,
-          })
-          .from(schema.lernappTag)
-          .where(and(inArray(schema.lernappTag.benutzerId, ids), between(schema.lernappTag.tag, woche.von, woche.bis)))
+          .select({ benutzerId: T.benutzerId, tag: T.tag, xp: T.xp, lektionen: T.lektionen })
+          .from(T)
+          .where(and(inArray(T.benutzerId, ids), between(T.tag, woche.von, woche.bis), inArray(T.kurs, kurse)))
       : [],
+    wochenXp(ids, woche),
     zuweisungen.length
       ? db
           .select({ aufgabeId: schema.aufgabeErledigt.aufgabeId, lernendeId: schema.aufgabeErledigt.lernendeId })
@@ -567,14 +575,7 @@ export async function standDerGruppe(
       name: m.name,
       konto: m.benutzerId !== null,
       einwilligung: mit,
-      woche: mit
-        ? wochenSumme(
-            lernwoche(
-              woche,
-              tage.filter((t) => t.benutzerId === m.benutzerId),
-            ),
-          )
-        : null,
+      woche: mit ? wochenSumme(lernwoche(woche, tageAusKursen(tage.filter((t) => t.benutzerId === m.benutzerId)))) : null,
       erledigt: mit ? erledigt.filter((e) => e.lernendeId === m.lernendeId).length : null,
     };
   });
@@ -584,9 +585,10 @@ export async function standDerGruppe(
     einstellung,
     zuweisungen: zuweisungen.map((z) => ({ ...z, erledigt: erledigt.filter((e) => e.aufgabeId === z.id).length })),
     zeilen,
+    kurse,
     ziel: gruppenziel(
       einstellung.wochenzielXp,
-      zeilen.flatMap((z) => (z.woche ? [z.woche.xp] : [])),
+      ids.map((id) => xpGruppe.get(id) ?? 0),
     ),
   };
 }

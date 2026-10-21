@@ -6,6 +6,7 @@ import { einwilligungsLage, type EinwilligungsLage } from '@/lib/konto/sechzehn'
 import { proxyVertraut } from '@/lib/sicherheit/ip';
 import { ladeEinheitJson } from '@/server/queries/lernapp/pakete';
 import { heuteStand, leiteAb } from '../ereignisse/ableiten';
+import { summenJeKurs } from '../ereignisse/kurs';
 import { addiereTage, klemmeEreignis, lerntagVon } from '../ereignisse/serie';
 import { type Ereignis, EreignisSchema, GeraetSchema, istArt } from '../ereignisse/typen';
 import { ereignisSchluessel, vereinige } from '../ereignisse/zusammenfuehren';
@@ -232,7 +233,8 @@ export async function erneuereKarten(tx: Transaktion, benutzerId: string, karten
 // ——— Lerntage (für die Gruppenwoche, ADR 0043) ———
 
 /**
- * Lerntage, die neue Ereignisse berühren, neu ableiten (S-L1 M-2: nie das ganze Protokoll). Gelesen werden nur:
+ * Lerntage, die neue Ereignisse berühren, neu ableiten (S-L1 M-2: nie das ganze Protokoll) – als Tagessumme
+ * (`lernapp_tag`: Lernwoche der Eltern, Tagesziel) und je Kurs (`lernapp_tag_kurs`, S-L3 M-1). Gelesen werden nur:
  * - Lektionen und XP der berührten Tage,
  * - das zuletzt gesetzte Tagesziel vor dem ersten berührten Tag und alle Tagesziele im Bereich (`leiteAb` nimmt je Tag das
  *   letzte Ziel nach Zeit mit `tag` ≤ Tag; ein früheres, das vor dem Bereich liegt, kann nie gewinnen),
@@ -315,6 +317,11 @@ export async function erneuereTage(tx: Transaktion, benutzerId: string, neue: re
         zielErreicht: sql.raw('excluded.ziel_erreicht'),
       },
     });
+  // Tagessummen je Kurs (S-L3 M-1): die berührten Tage ganz neu, damit Gruppe und Lehrkraft nur erlaubte Kurse lesen
+  const T = schema.lernappTagKurs;
+  await tx.delete(T).where(and(eq(T.benutzerId, benutzerId), inArray(T.tag, tage)));
+  const jeKurs = summenJeKurs(liste, betroffen);
+  if (jeKurs.length) await tx.insert(T).values(jeKurs.map((s) => ({ benutzerId, ...s })));
 }
 
 // ——— Grenzen je Konto (S-L1 M-2) ———

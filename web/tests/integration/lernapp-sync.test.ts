@@ -421,6 +421,29 @@ describe('Schreiben und Lesen', () => {
     await sync(g1, [lektion(g1, 2, heute, 'tr-aus-de.a1.e01.l01'), xp(g1, 3, heute, 10)]);
     const tage = await db.select().from(schema.lernappTag).where(eq(schema.lernappTag.benutzerId, id));
     expect(tage.find((t) => t.tag === tagVon(heute))).toMatchObject({ xp: 10, lektionen: 1, zielErreicht: true, pause: false });
+
+    // S-L3 M-1: dieselben Tage je Kurs – Lektion über ihren Kurs, XP über den Bezug; ohne Bezug „unbekannt“ (zählt nirgends)
+    const mit = (e: Ereignis, daten: Record<string, unknown>) => ({ ...e, daten: { ...e.daten, ...daten } }) as Ereignis;
+    await sync(g1, [
+      mit(xp(g1, 4, heute, 7), { bezug: 'tr-aus-de.a1.e01.l01' }),
+      mit(lektion(g1, 5, heute, 'islam.grund.e01.l01'), { kurs: 'islam' }),
+      mit(xp(g1, 6, heute, 9), { bezug: 'islam.grund.e01.l01' }),
+      mit(lektion(g1, 7, heute, 'tr-aus-de.a1.e01.l02'), { kurs: 'islam' }),
+    ]);
+    const jeKurs = await db
+      .select({ kurs: schema.lernappTagKurs.kurs, xp: schema.lernappTagKurs.xp, lektionen: schema.lernappTagKurs.lektionen })
+      .from(schema.lernappTagKurs)
+      .where(and(eq(schema.lernappTagKurs.benutzerId, id), eq(schema.lernappTagKurs.tag, tagVon(heute))));
+    expect(jeKurs.sort((a, b) => a.kurs.localeCompare(b.kurs))).toEqual([
+      { kurs: 'islam', xp: 9, lektionen: 1 },
+      { kurs: 'tr-aus-de', xp: 7, lektionen: 1 },
+      { kurs: 'unbekannt', xp: 10, lektionen: 1 },
+    ]);
+    const [summe] = await db
+      .select()
+      .from(schema.lernappTag)
+      .where(and(eq(schema.lernappTag.benutzerId, id), eq(schema.lernappTag.tag, tagVon(heute))));
+    expect(summe).toMatchObject({ xp: 26, lektionen: 3 });
   });
 
   it('Bremse: 30 Anfragen je Minute und Konto, die 31. → 429 (ein anderes Konto bleibt frei)', async () => {
