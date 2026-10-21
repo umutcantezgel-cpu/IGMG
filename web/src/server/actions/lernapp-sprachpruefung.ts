@@ -131,6 +131,9 @@ async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Prom
   const entscheidung = entscheide(ergebnis, bewertbar.length);
   if (entscheidung === 'offen') return entscheidung;
   const kurs = k.kurs as KursId;
+  // Vor der Transaktion lesen: eine Abfrage über `db` innerhalb von `db.transaction` wartet bei einer einzelnen
+  // Verbindung (PGlite, kleiner Pool) auf die Transaktion selbst.
+  const alle = entscheidung === 'bestanden' ? await kandidaten(k.einheit, k.art, k.richtungId) : [];
   await db.transaction(async (tx) => {
     const s = schema.lernappStichprobe;
     await tx
@@ -138,10 +141,8 @@ async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Prom
       .set({ entscheidung, ergebnis, entschiedenAm: new Date(), entschiedenVon: benutzerId })
       .where(and(eq(s.id, k.id), eq(s.entscheidung, 'offen')));
     if (entscheidung === 'bestanden') {
-      const alle = await kandidaten(k.einheit, k.art, k.richtungId);
-      const stand = standVon(alle);
       // Nur, wenn sich der Inhalt seit dem Ziehen nicht geändert hat (sonst neu ziehen, ADR 0041 Nr. 7)
-      if (stand === k.einheitHash) {
+      if (standVon(alle) === k.einheitHash) {
         const ids = (typ: string) => alle.filter((x) => x.inhaltTyp === typ && x.status === 'automatisch_geprueft').map((x) => x.inhaltId);
         const offen = (t: typeof schema.lernappSatz | typeof schema.lernappLemma | typeof schema.lernappUebersetzung, liste: string[]) =>
           liste.length ? tx.update(t).set({ status: 'veroeffentlicht' }).where(and(inArray(t.id, liste), eq(t.status, 'automatisch_geprueft'))) : null;

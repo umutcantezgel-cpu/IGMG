@@ -5,7 +5,7 @@ import { solveChallenge } from 'altcha-lib';
 import { deriveKey } from 'altcha-lib/algorithms/pbkdf2';
 import { and, eq, like } from 'drizzle-orm';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { db as appDb, schema } from '@/lib/db';
+import { db as appDb, type Datenbank, schema } from '@/lib/db';
 import { textHash } from '@/lib/lernapp/paket/hash';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
 import { angemeldetAls, aufrufe, formular, verwaltungsUmgebung } from './hilfen/verwaltung';
@@ -194,7 +194,7 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     const [a] = await audits('lernapp.stichprobe_entschieden');
     expect(a!.details).toMatchObject({ entscheidung: 'bestanden', kritisch: 0 });
     // Prüfschritte ohne Inhalte im Audit
-    for (const x of await audits('lernapp.geprueft')) expect(JSON.stringify(x.details)).not.toMatch(/korrektur|text/i);
+    for (const x of await audits('lernapp.geprueft')) expect(Object.keys(x.details ?? {}).sort()).toEqual(['art', 'inhaltTyp', 'kategorie', 'urteil']);
     // zum selben Stand gibt es keine neue Stichprobe
     expect(await sprache.stichprobeZiehen({}, formular({ einheit: 'tr.a1.e01', art: 'zieltext' }))).toEqual({ fehler: 'schonGezogen' });
     expect(pruefer).not.toBe('');
@@ -347,7 +347,7 @@ describe('Audio-Studio', () => {
     await angemeldetAls(ADMIN);
     expect(await audio.sprecherAnlegen({}, formular({ name: '[Sprecherin A]' }))).toMatchObject({ feldFehler: { datei: 'dateiFehlt' } });
     const fd = formular({ name: '[Sprecherin A]', b1: '1' });
-    fd.set('datei', new File([PDF], 'vereinbarung.pdf', { type: 'application/pdf' }));
+    fd.set('datei', new File([new Uint8Array(PDF)], 'vereinbarung.pdf', { type: 'application/pdf' }));
     expect(await audio.sprecherAnlegen({}, fd)).toMatchObject({ gespeichert: expect.any(Number) });
     const [s] = await db.select().from(schema.lernappSprecher);
     expect(s).toMatchObject({ name: '[Sprecherin A]', kiSyntheseErlaubt: true, klonenErlaubt: false });
@@ -358,7 +358,7 @@ describe('Audio-Studio', () => {
     await angemeldetAls(BILDUNG);
     const sende = (eintrag: string, daten: Buffer) => {
       const fd = formular({ eintrag, sprecher: sprecherId, dauerMs: '1200' });
-      fd.set('datei', new File([daten], 'aufnahme.webm'));
+      fd.set('datei', new File([new Uint8Array(daten)], 'aufnahme.webm'));
       return audio.aufnahmeSpeichern({}, fd);
     };
     expect(await sende('tr.a1.e01.w001', Buffer.from('keine audiodatei'))).toEqual({ fehler: 'audio_format' });
@@ -421,7 +421,7 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     await zaehleBetrieb('sync_grenze_jeTag');
     expect(await betriebsSumme('sync_grenze_', 7)).toBe(1);
     const liste: { id: string; status: string; meldung: string }[] = [];
-    await lernappPruefen(db, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
+    await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'an' }, true, new Date(), (p) => liste.push(p));
     const je = Object.fromEntries(liste.map((p) => [p.id, p]));
     expect(je['lernapp.schalter']!.status).toBe('ok');
     expect(je['lernapp.blob']!.status).toBe('warnung');
@@ -430,7 +430,7 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     expect(je['lernapp.einheiten']!.meldung).toMatch(/veröffentlicht/);
     expect(je['lernapp.grenzen']!.status).toBe('hinweis');
     const aus: { id: string }[] = [];
-    await lernappPruefen(db, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
+    await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
     expect(aus.map((p) => p.id)).toEqual(['lernapp.schalter']);
   });
 });
