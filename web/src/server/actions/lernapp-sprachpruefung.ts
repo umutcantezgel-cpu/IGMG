@@ -109,7 +109,8 @@ export async function stichprobeZiehen(_vorher: LernappZustand, fd: FormData): P
       );
       return neu!.id;
     });
-    refresh();
+    // Kein `refresh()`: Die Oberfläche öffnet die neue Stichprobe sofort (ZiehenKnopf); ein Auffrischen der Warteschlange
+    // ersetzte den Knopf vorher durch „Stichprobe öffnen“ und verlöre die Weiterleitung.
     return { gespeichert: Date.now(), id };
   });
 }

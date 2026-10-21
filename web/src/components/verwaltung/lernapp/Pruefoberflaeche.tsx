@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight, Save, Shuffle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useActionState, useEffect, useId, useRef, useState, useTransition } from 'react';
+import { useEffect, useId, useRef, useState, useTransition } from 'react';
 import { Button } from '@/components/ui/button';
 import { Meldung } from '@/components/verwaltung/Meldung';
 import { FEHLER, KRITISCHE_FEHLER } from '@/lib/lernapp/freigabe';
@@ -26,7 +26,7 @@ type Urteil = 'ok' | 'korrektur' | 'abgelehnt';
 const sprachAttr = (s: Sprache) => ({ lang: s, dir: richtung(s) });
 const arabisch = (s: Sprache) => (s === 'ar' ? 'font-arabic text-arabisch-3' : undefined);
 
-/** Stichprobe ziehen und sie danach öffnen. */
+/** Stichprobe ziehen und sie danach öffnen (Weiterleitung im selben Übergang, unabhängig vom Neuzeichnen der Warteschlange). */
 export function ZiehenKnopf({
   einheit,
   art,
@@ -41,10 +41,14 @@ export function ZiehenKnopf({
   texte: { knopf: string; laeuft: string; fehler: Texte };
 }) {
   const router = useRouter();
-  const [z, absenden, laeuft] = useActionState(stichprobeZiehen, {});
-  useEffect(() => {
-    if (z.id) router.push(`/verwaltung/lernapp/sprachpruefung/${z.id}?ui=${ui}`);
-  }, [z.id, router, ui]);
+  const [z, setZ] = useState<LernappZustand>({});
+  const [laeuft, starte] = useTransition();
+  const absenden = (fd: FormData) =>
+    starte(async () => {
+      const ergebnis = await stichprobeZiehen({}, fd);
+      setZ(ergebnis);
+      if (ergebnis.id) router.push(`/verwaltung/lernapp/sprachpruefung/${ergebnis.id}?ui=${ui}`);
+    });
   return (
     <form action={absenden} className="flex flex-col gap-2">
       <input type="hidden" name="einheit" value={einheit} />
