@@ -72,7 +72,8 @@ def lade_aussprache(pfad, stimme):
         if e.get("phoneme"):
             if re.search(r"\s", e["text"]):
                 sys.exit(f"{pfad}: Phoneme nur für einzelne Wörter ({e['text']!r})")
-            phoneme[e["text"].lower()] = e["phoneme"]
+            # Schlüssel wie gruut das Wort liefert: klein, ß als ss (gruut 2.4.0 schreibt ß vor dem Nachschlagen um)
+            phoneme[e["text"].lower().replace("ß", "ss")] = e["phoneme"]
         elif e.get("ersatz"):
             muster = (rf"(?<!\w){re.escape(e['text'])}(?!\w)" if e.get("ganzesWort", True) else re.escape(e["text"]))
             ersatz.append((len(e["text"]), re.compile(muster), e["ersatz"]))
@@ -152,6 +153,12 @@ def erzeuge(args):
         if not re.fullmatch(r"[0-9a-f]{64}", e["textHash"]) or e["textHash"] != hashlib.sha256(
                 __import__("unicodedata").normalize("NFC", e["text"]).encode("utf-8")).hexdigest():
             sys.exit(f"textHash passt nicht zum Text: {e['textHash']}")
+    # Überschreibungen nur mit Zeichen aus dem Vokabular der Stimme (sonst fielen sie still weg)
+    vokabular = set(b["zeichen"]["vokabular"])
+    _, phoneme = lade_aussprache(args.aussprache, stimme)
+    fremde = sorted({c for p in phoneme.values() for c in p if c not in vokabular and c != " "})
+    if fremde:
+        sys.exit(f"Aussprache: Zeichen nicht im Vokabular der Stimme: {fremde}")
     os.makedirs(args.aus, exist_ok=True)
     # Längste zuerst: gleichmäßige Last auf den Prozessen
     eintraege.sort(key=lambda e: -len(e["text"]))

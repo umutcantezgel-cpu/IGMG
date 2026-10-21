@@ -30,6 +30,7 @@ export const PRUEFER = [
   'religion',
   'daten',
   'symbole',
+  'audio',
 ] as const;
 export type PrueferName = (typeof PRUEFER)[number];
 

@@ -20,6 +20,9 @@ const SKRIPTE = [
   'scripts/lernapp/import.ts',
   'scripts/lernapp/pruefen.ts',
   'scripts/lernapp/schemas.ts',
+  'scripts/lernapp/audio-liste.ts',
+  'scripts/lernapp/audio-pruefen.ts',
+  'scripts/lernapp/audio-manifest.ts',
 ];
 
 /** Eigene Module (relative Pfade) eines Skripts als absolute Pfade. */

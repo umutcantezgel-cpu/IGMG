@@ -25,10 +25,27 @@ import { buendelBlobSchluessel, leseBuendelPfad } from '@/lib/lernapp/paket/buen
  * Byte-Bereiche bleiben möglich (200/206/416); der Client lädt Bündel aber ganz und ohne `Range` (S4/S5).
  *
  * Ohne Blob-Speicher (Beispielmodus, E2E, Entwicklung) liefert die Route die synthetischen Testbündel des Testkurses aus
- * dem Dateisystem (`drizzle/seeds/lernapp-testaudio/`, ADR 0039 Nr. 11) – Töne, nie Rezitationen. Schalter `lernapp`
- * aus → 404. Der Proxy läuft hier nicht (Matcher-Ausschluss aus L1-02).
+ * dem Dateisystem (`drizzle/seeds/lernapp-testaudio/`, ADR 0039 Nr. 11) – Töne, nie Rezitationen. Davor sucht sie in
+ * `LERNAPP_AUDIO_LOKAL` (Ordner mit `<sprache>/<datei>.lpa`), falls gesetzt: lokal gebaute Bündel der Audio-Kette
+ * (`pnpm lernapp:audio-manifest`, L3-05) zum Anhören in der App vor dem Hochladen; nie zusammen mit dem Blob-Speicher.
+ * Schalter `lernapp` aus → 404. Der Proxy läuft hier nicht (Matcher-Ausschluss aus L1-02).
  */
 const TESTAUDIO = join(process.cwd(), 'drizzle', 'seeds', 'lernapp-testaudio');
+
+/** Datei eines Bündels im Dateisystem: zuerst der lokale Ordner der Audio-Kette, dann die Testbündel. */
+async function lokaleDatei(sprache: string, datei: string): Promise<{ pfad: string; groesse: number } | null> {
+  const lokal = process.env.LERNAPP_AUDIO_LOKAL?.trim();
+  for (const ordner of lokal ? [lokal, TESTAUDIO] : [TESTAUDIO]) {
+    const pfad = join(ordner, sprache, datei);
+    try {
+      const s = await stat(pfad);
+      if (s.isFile()) return { pfad, groesse: s.size };
+    } catch {
+      // nächster Ordner
+    }
+  }
+  return null;
+}
 const NICHT_DA = { status: 404, headers: { 'Cache-Control': 'no-store' } };
 
 /** CDN-Tags eines Bündels (siehe oben). */
@@ -79,14 +96,10 @@ export async function GET(anfrage: Request, { params }: RouteContext<'/lern-app/
     return new Response(antwort.body, { status: antwort.status, headers: kopfzeilen(pfad.sprache, antwort.headers, antwort.status) });
   }
 
-  // Beispielmodus und Tests: synthetische Testbündel aus dem Dateisystem
-  const datei = join(TESTAUDIO, pfad.sprache, pfad.datei);
-  let groesse: number;
-  try {
-    groesse = (await stat(datei)).size;
-  } catch {
-    return new Response(null, NICHT_DA);
-  }
+  // Beispielmodus und Tests: lokal gebaute Bündel bzw. synthetische Testbündel aus dem Dateisystem
+  const gefunden = await lokaleDatei(pfad.sprache, pfad.datei);
+  if (!gefunden) return new Response(null, NICHT_DA);
+  const { pfad: datei, groesse } = gefunden;
   const bereich = leseBereich(range, groesse);
   if (bereich === 'ungueltig')
     return new Response(null, { status: 416, headers: kopfzeilen(pfad.sprache, { 'content-range': `bytes */${groesse}` }, 416) });

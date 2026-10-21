@@ -5,6 +5,7 @@ import type { InhaltDatei } from '../schema';
 import { hatTrenner, lexikonTreffer, vierGrammStrom, vierGrammTreffer, woerter } from '../../waechter/kern.mjs';
 import { type AbdeckungZeile, pruefeAbdeckung } from './abdeckung';
 import { pruefeAbgleich } from './abgleich';
+import { pruefeAudio } from './audio';
 import { pruefeAusschluesse } from './ausschluss';
 import { type Inhalte, leseInhalte } from './dateien';
 import { pruefeAuszuege, pruefeKaikkiOhneBeispiele, standardDaten } from './daten';
@@ -139,6 +140,8 @@ export function pruefeInhalte(quellen: readonly ImportQuelle[], optionen: PruefO
   const { lizenz, ausschluss } = pruefeLizenzen(inhalte, daten);
   befunde.push(...lizenz.liste, ...ausschluss.liste);
   if (web) befunde.push(...pruefeAusschluesse(web).liste);
+  // Audio-Manifeste: nie vertont (Religionsbezug, Wissen, Koran-Pfad), nur die freigegebene Stimme je Sprache
+  befunde.push(...pruefeAudio(inhalte).liste);
 
   // 4. Sprache: Dubletten, Wortschatz, Satzlänge, Budget, Vokalisierung, Abdeckung, Kinder, Bildkarten
   befunde.push(...pruefeDubletten(inhalte).liste, ...pruefeAbgleich(inhalte).liste);
