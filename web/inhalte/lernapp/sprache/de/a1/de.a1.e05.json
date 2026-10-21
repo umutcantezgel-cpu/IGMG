@@ -1,0 +1,3349 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e05",
+    "reihenfolge": 6,
+    "thema": {
+      "de": "Guten Appetit! – Essen und Trinken",
+      "tr": "Afiyet olsun! – Yiyecekler ve içecekler",
+      "ar": "بالهناء والشفاء! – الطعام والمشروبات"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, was ich gern esse und trinke und was nicht.",
+        "tr": "Neyi severek yiyip içtiğimi ve neyi sevmediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما أحب أن آكله وأشربه وما لا أحبه."
+      },
+      {
+        "de": "Ich kann in der Kantine oder bei Gästen höflich sagen, was ich möchte.",
+        "tr": "Kantinde veya misafir olduğumda ne istediğimi kibarca söyleyebilirim.",
+        "ar": "أستطيع أن أقول بأدب ما أريده في المقصف أو عندما أكون ضيفًا."
+      }
+    ],
+    "symbol": "utensils",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e05.mit",
+      "lemma": "mit",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "frequenzRang": 12,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.fuer",
+      "lemma": "für",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ"
+      },
+      "frequenzRang": 15,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.ohne",
+      "lemma": "ohne",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ"
+      },
+      "frequenzRang": 92,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.etwas",
+      "lemma": "etwas",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen, unveränderlich"
+      },
+      "frequenzRang": 95,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.nichts",
+      "lemma": "nichts",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen, unveränderlich"
+      },
+      "frequenzRang": 103,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.dazu",
+      "lemma": "dazu",
+      "wortart": "adverb",
+      "frequenzRang": 142,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.genug",
+      "lemma": "genug",
+      "wortart": "adverb",
+      "frequenzRang": 310,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.bisschen",
+      "lemma": "bisschen",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "unveränderlich, in: ein bisschen"
+      },
+      "frequenzRang": 416,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.ueberhaupt",
+      "lemma": "überhaupt",
+      "wortart": "adverb",
+      "frequenzRang": 316,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.gerade",
+      "lemma": "gerade",
+      "wortart": "adverb",
+      "frequenzRang": 119,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.wirklich",
+      "lemma": "wirklich",
+      "wortart": "adverb",
+      "frequenzRang": 122,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.natuerlich",
+      "lemma": "natürlich",
+      "wortart": "adverb",
+      "frequenzRang": 160,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.besonders",
+      "lemma": "besonders",
+      "wortart": "adverb",
+      "frequenzRang": 254,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.oh",
+      "lemma": "oh",
+      "wortart": "interjektion",
+      "frequenzRang": 417,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.essen",
+      "lemma": "essen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "essen",
+        "praes_ich": "esse",
+        "praes_du": "isst",
+        "praes_er_sie_es": "isst",
+        "praes_wir": "essen",
+        "praes_ihr": "esst",
+        "praes_sie_Sie": "essen",
+        "imp_du": "iss",
+        "imp_ihr": "esst"
+      },
+      "frequenzRang": 276,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.trinken",
+      "lemma": "trinken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "trinken",
+        "praes_ich": "trinke",
+        "praes_du": "trinkst",
+        "praes_er_sie_es": "trinkt",
+        "praes_wir": "trinken",
+        "praes_ihr": "trinkt",
+        "praes_sie_Sie": "trinken",
+        "imp_du": "trink",
+        "imp_ihr": "trinkt"
+      },
+      "frequenzRang": 696,
+      "quelle": "wiktionary:de:trinken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚trinken‘ (https://de.wiktionary.org/wiki/trinken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.nehmen",
+      "lemma": "nehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "nehmen",
+        "praes_ich": "nehme",
+        "praes_du": "nimmst",
+        "praes_er_sie_es": "nimmt",
+        "praes_wir": "nehmen",
+        "praes_ihr": "nehmt",
+        "praes_sie_Sie": "nehmen",
+        "imp_du": "nimm",
+        "imp_ihr": "nehmt"
+      },
+      "frequenzRang": 117,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.moegen",
+      "lemma": "mögen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "mögen",
+        "praes_ich": "mag",
+        "praes_du": "magst",
+        "praes_er_sie_es": "mag",
+        "praes_wir": "mögen",
+        "praes_ihr": "mögt",
+        "praes_sie_Sie": "mögen"
+      },
+      "frequenzRang": 105,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.moechten",
+      "lemma": "möchten",
+      "wortart": "verb",
+      "merkmale": {
+        "modalverb": "ja",
+        "unregelmaessig_praesens": "ja",
+        "hinweis": "Konjunktiv-II-Form von mögen, in A1 als eigenes Verb gelernt"
+      },
+      "formen": {
+        "infinitiv": "möchten",
+        "praes_ich": "möchte",
+        "praes_du": "möchtest",
+        "praes_er_sie_es": "möchte",
+        "praes_wir": "möchten",
+        "praes_ihr": "möchtet",
+        "praes_sie_Sie": "möchten"
+      },
+      "frequenzRang": 1415,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.gern",
+      "lemma": "gern",
+      "wortart": "adverb",
+      "merkmale": {
+        "wendung": "gern + Verb (Ich lese gern.)"
+      },
+      "formen": {
+        "nebenform": "gerne",
+        "komparativ": "lieber",
+        "superlativ": "liebsten"
+      },
+      "frequenzRang": 112,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.sehen",
+      "lemma": "sehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "sehen",
+        "praes_ich": "sehe",
+        "praes_du": "siehst",
+        "praes_er_sie_es": "sieht",
+        "praes_wir": "sehen",
+        "praes_ihr": "seht",
+        "praes_sie_Sie": "sehen",
+        "imp_du": "sieh",
+        "imp_ihr": "seht"
+      },
+      "frequenzRang": 69,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.kochen",
+      "lemma": "kochen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kochen",
+        "praes_ich": "koche",
+        "praes_du": "kochst",
+        "praes_er_sie_es": "kocht",
+        "praes_wir": "kochen",
+        "praes_ihr": "kocht",
+        "praes_sie_Sie": "kochen",
+        "imp_du": "koch",
+        "imp_ihr": "kocht"
+      },
+      "frequenzRang": 1493,
+      "quelle": "wiktionary:de:kochen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kochen‘ (https://de.wiktionary.org/wiki/kochen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.bringen",
+      "lemma": "bringen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bringen",
+        "praes_ich": "bringe",
+        "praes_du": "bringst",
+        "praes_er_sie_es": "bringt",
+        "praes_wir": "bringen",
+        "praes_ihr": "bringt",
+        "praes_sie_Sie": "bringen",
+        "imp_du": "bring",
+        "imp_ihr": "bringt"
+      },
+      "frequenzRang": 146,
+      "quelle": "wiktionary:de:bringen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bringen‘ (https://de.wiktionary.org/wiki/bringen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.holen",
+      "lemma": "holen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "holen",
+        "praes_ich": "hole",
+        "praes_du": "holst",
+        "praes_er_sie_es": "holt",
+        "praes_wir": "holen",
+        "praes_ihr": "holt",
+        "praes_sie_Sie": "holen",
+        "imp_du": "hol",
+        "imp_ihr": "holt"
+      },
+      "frequenzRang": 494,
+      "quelle": "wiktionary:de:holen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚holen‘ (https://de.wiktionary.org/wiki/holen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.teilen",
+      "lemma": "teilen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "teilen",
+        "praes_ich": "teile",
+        "praes_du": "teilst",
+        "praes_er_sie_es": "teilt",
+        "praes_wir": "teilen",
+        "praes_ihr": "teilt",
+        "praes_sie_Sie": "teilen",
+        "imp_du": "teil",
+        "imp_ihr": "teilt"
+      },
+      "frequenzRang": 529,
+      "quelle": "wiktionary:de:teilen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚teilen‘ (https://de.wiktionary.org/wiki/teilen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.schmecken",
+      "lemma": "schmecken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schmecken",
+        "praes_ich": "schmecke",
+        "praes_du": "schmeckst",
+        "praes_er_sie_es": "schmeckt",
+        "praes_wir": "schmecken",
+        "praes_ihr": "schmeckt",
+        "praes_sie_Sie": "schmecken"
+      },
+      "frequenzRang": 1394,
+      "quelle": "wiktionary:de:schmecken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schmecken‘ (https://de.wiktionary.org/wiki/schmecken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.lieben",
+      "lemma": "lieben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "lieben",
+        "praes_ich": "liebe",
+        "praes_du": "liebst",
+        "praes_er_sie_es": "liebt",
+        "praes_wir": "lieben",
+        "praes_ihr": "liebt",
+        "praes_sie_Sie": "lieben",
+        "imp_du": "lieb",
+        "imp_ihr": "liebt"
+      },
+      "frequenzRang": 526,
+      "quelle": "wiktionary:de:lieben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚lieben‘ (https://de.wiktionary.org/wiki/lieben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.brot",
+      "lemma": "Brot",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Brote"
+      },
+      "formen": {
+        "pl": "Brote",
+        "dat_pl": "Broten"
+      },
+      "frequenzRang": 1992,
+      "quelle": "wiktionary:de:Brot",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brot‘ (https://de.wiktionary.org/wiki/Brot), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.reis",
+      "lemma": "Reis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 893,
+      "quelle": "wiktionary:de:Reis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Reis‘ (https://de.wiktionary.org/wiki/Reis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.linse",
+      "lemma": "Linse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Linsen"
+      },
+      "formen": {
+        "pl": "Linsen"
+      },
+      "frequenzRang": 10745,
+      "quelle": "wiktionary:de:Linse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Linse‘ (https://de.wiktionary.org/wiki/Linse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.haehnchen",
+      "lemma": "Hähnchen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Hähnchen"
+      },
+      "frequenzRang": 11078,
+      "quelle": "wiktionary:de:Hähnchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hähnchen‘ (https://de.wiktionary.org/wiki/Hähnchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.kaese",
+      "lemma": "Käse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2894,
+      "quelle": "wiktionary:de:Käse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Käse‘ (https://de.wiktionary.org/wiki/Käse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.ei",
+      "lemma": "Ei",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Eier"
+      },
+      "formen": {
+        "pl": "Eier",
+        "dat_pl": "Eiern"
+      },
+      "frequenzRang": 730,
+      "quelle": "wiktionary:de:Ei",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ei‘ (https://de.wiktionary.org/wiki/Ei), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.wasser",
+      "lemma": "Wasser",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 323,
+      "quelle": "wiktionary:de:Wasser",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wasser‘ (https://de.wiktionary.org/wiki/Wasser), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.tee",
+      "lemma": "Tee",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2241,
+      "quelle": "wiktionary:de:Tee",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tee‘ (https://de.wiktionary.org/wiki/Tee), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.milch",
+      "lemma": "Milch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2052,
+      "quelle": "wiktionary:de:Milch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Milch‘ (https://de.wiktionary.org/wiki/Milch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.saft",
+      "lemma": "Saft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 4476,
+      "quelle": "wiktionary:de:Saft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Saft‘ (https://de.wiktionary.org/wiki/Saft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.ayran",
+      "lemma": "Ayran",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.fruehstueck",
+      "lemma": "Frühstück",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2090,
+      "quelle": "wiktionary:de:Frühstück",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Frühstück‘ (https://de.wiktionary.org/wiki/Frühstück), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.mittagessen",
+      "lemma": "Mittagessen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Mittagessen"
+      },
+      "frequenzRang": 3962,
+      "quelle": "wiktionary:de:Mittagessen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mittagessen‘ (https://de.wiktionary.org/wiki/Mittagessen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.abendessen",
+      "lemma": "Abendessen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Abendessen"
+      },
+      "frequenzRang": 3956,
+      "quelle": "wiktionary:de:Abendessen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abendessen‘ (https://de.wiktionary.org/wiki/Abendessen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.teller",
+      "lemma": "Teller",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teller"
+      },
+      "formen": {
+        "dat_pl": "Tellern"
+      },
+      "frequenzRang": 4131,
+      "quelle": "wiktionary:de:Teller",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Teller‘ (https://de.wiktionary.org/wiki/Teller), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.appetit",
+      "lemma": "Appetit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)",
+        "wendung": "Guten Appetit!"
+      },
+      "frequenzRang": 6614,
+      "quelle": "wiktionary:de:Appetit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Appetit‘ (https://de.wiktionary.org/wiki/Appetit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.kantine",
+      "lemma": "Kantine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kantinen"
+      },
+      "formen": {
+        "pl": "Kantinen"
+      },
+      "frequenzRang": 10311,
+      "quelle": "wiktionary:de:Kantine",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kantine‘ (https://de.wiktionary.org/wiki/Kantine), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.hunger",
+      "lemma": "Hunger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2267,
+      "quelle": "wiktionary:de:Hunger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hunger‘ (https://de.wiktionary.org/wiki/Hunger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.hart",
+      "lemma": "hart",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "harte",
+        "endung_en": "harten",
+        "endung_er": "harter",
+        "endung_es": "hartes",
+        "endung_em": "hartem"
+      },
+      "frequenzRang": 481,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.voll",
+      "lemma": "voll",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "volle",
+        "endung_en": "vollen",
+        "endung_er": "voller",
+        "endung_es": "volles",
+        "endung_em": "vollem"
+      },
+      "frequenzRang": 320,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.welt",
+      "lemma": "Welt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 156,
+      "quelle": "wiktionary:de:Welt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Welt‘ (https://de.wiktionary.org/wiki/Welt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.schnell",
+      "lemma": "schnell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schnelle",
+        "endung_en": "schnellen",
+        "endung_er": "schneller",
+        "endung_es": "schnelles",
+        "endung_em": "schnellem"
+      },
+      "frequenzRang": 170,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.mensch",
+      "lemma": "Mensch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Menschen"
+      },
+      "formen": {
+        "pl": "Menschen",
+        "akk_dat_sg": "Menschen"
+      },
+      "frequenzRang": 89,
+      "quelle": "wiktionary:de:Mensch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mensch‘ (https://de.wiktionary.org/wiki/Mensch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.wieso",
+      "lemma": "wieso",
+      "wortart": "fragewort",
+      "frequenzRang": 475,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.teil",
+      "lemma": "Teil",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teile"
+      },
+      "formen": {
+        "pl": "Teile",
+        "dat_pl": "Teilen"
+      },
+      "frequenzRang": 155,
+      "quelle": "wiktionary:de:Teil",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Teil‘ (https://de.wiktionary.org/wiki/Teil), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.lassen",
+      "lemma": "lassen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "lassen",
+        "praes_ich": "lasse",
+        "praes_du": "lässt",
+        "praes_er_sie_es": "lässt",
+        "praes_wir": "lassen",
+        "praes_ihr": "lasst",
+        "praes_sie_Sie": "lassen",
+        "imp_du": "lass",
+        "imp_ihr": "lasst"
+      },
+      "frequenzRang": 81,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.endlich",
+      "lemma": "endlich",
+      "wortart": "adverb",
+      "frequenzRang": 357,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.eigentlich",
+      "lemma": "eigentlich",
+      "wortart": "adverb",
+      "frequenzRang": 172,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e05.s0001",
+      "text": "Was möchtest du trinken?",
+      "quelle": "tatoeba:536208",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #536208 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0002",
+      "text": "Was möchten Sie trinken?",
+      "quelle": "tatoeba:397823",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #397823 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0003",
+      "text": "Was möchtet ihr trinken?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0004",
+      "text": "Einen Tee, bitte!",
+      "quelle": "tatoeba:5991417",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5991417 von christian63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0005",
+      "text": "Ich möchte ein Glas Wasser, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0006",
+      "text": "Ich trinke Milch.",
+      "quelle": "tatoeba:1661301",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1661301 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0007",
+      "text": "Trinkst du Tee mit Milch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0008",
+      "text": "Nein, ich trinke Tee ohne Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0009",
+      "text": "Er trinkt nur Wasser.",
+      "quelle": "tatoeba:661758",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #661758 von kolonjano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0010",
+      "text": "Möchten Sie etwas trinken?",
+      "quelle": "tatoeba:605300",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #605300 von virgil (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0011",
+      "text": "Nein, danke. Ich möchte nichts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0012",
+      "text": "Etwas Wasser, bitte.",
+      "quelle": "tatoeba:910852",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #910852 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0013",
+      "text": "Trinkst du viel Milch?",
+      "quelle": "tatoeba:2808701",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2808701 von H22 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0014",
+      "text": "Ich trinke keinen Tee.",
+      "quelle": "tatoeba:4430067",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4430067 von killaz (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0015",
+      "text": "Möchtest du Saft oder Wasser?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0016",
+      "text": "Elif möchte einen Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0017",
+      "text": "Murat trinkt einen Ayran.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0018",
+      "text": "Ayran kommt aus der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0019",
+      "text": "Laylā trinkt Tee mit Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0020",
+      "text": "Der Tee ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0021",
+      "text": "Nein, ich möchte keinen Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0022",
+      "text": "Die Milch ist für das Kind.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0023",
+      "text": "Emre möchte einen Tee mit Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0024",
+      "text": "Was möchte Elif trinken?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0025",
+      "text": "Trinkt ihr auch Tee?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0026",
+      "text": "Ja, wir trinken Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0027",
+      "text": "Kerem trinkt jeden Tag Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0028",
+      "text": "Ich möchte ein Glas Ayran.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0029",
+      "text": "Ich habe Hunger!",
+      "quelle": "tatoeba:378885",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #378885 von dreiundzwanzig (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0030",
+      "text": "Hast du Hunger?",
+      "quelle": "tatoeba:380873",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #380873 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0031",
+      "text": "Ich esse Brot.",
+      "quelle": "tatoeba:942240",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #942240 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0032",
+      "text": "Ich esse Brot mit Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0033",
+      "text": "Ich esse Reis mit Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0034",
+      "text": "Murat isst ein Ei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0035",
+      "text": "Ich möchte zwei Eier, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0036",
+      "text": "Heute essen wir Linsen mit Reis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0037",
+      "text": "Ich habe keinen Hunger.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0038",
+      "text": "Emre isst kein Ei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0039",
+      "text": "Wir brauchen noch Brot und Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0040",
+      "text": "Isst Felix auch Hähnchen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0041",
+      "text": "Ja, er isst Hähnchen sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0042",
+      "text": "Hast du noch Brot?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0043",
+      "text": "Laylā isst Reis ohne Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0044",
+      "text": "Ich habe ein bisschen Hunger.",
+      "quelle": "tatoeba:1314739",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1314739 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0045",
+      "text": "Was esst ihr?",
+      "quelle": "tatoeba:10352766",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10352766 von maaster (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0046",
+      "text": "Wir essen Brot, Käse und Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0047",
+      "text": "Das Hähnchen ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0048",
+      "text": "Du isst viel Reis, Kerem!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0049",
+      "text": "Meine Oma kocht heute Linsen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0050",
+      "text": "Isst du Eier, Selin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0051",
+      "text": "Ja, ich esse zwei Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0052",
+      "text": "Ich esse Käse.",
+      "quelle": "tatoeba:3813565",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3813565 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0053",
+      "text": "Wir essen Reis, aber kein Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0054",
+      "text": "Wir haben keinen Reis mehr.",
+      "quelle": "tatoeba:4615325",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4615325 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0055",
+      "text": "Er isst Brot mit Ei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0056",
+      "text": "In Syrien isst meine Familie viele Linsen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0057",
+      "text": "Magst du Käse?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0058",
+      "text": "Ja, ich mag Käse sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0059",
+      "text": "Ich mag keinen Käse.",
+      "quelle": "tatoeba:3196481",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3196481 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0060",
+      "text": "Ich mag überhaupt keine Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0061",
+      "text": "Ich trinke gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0062",
+      "text": "Ich trinke lieber Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0063",
+      "text": "Was isst du gerne?",
+      "quelle": "tatoeba:797641",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #797641 von Hans_Adler (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0064",
+      "text": "Ich mag besonders Linsen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0065",
+      "text": "Schmeckt dir der Reis?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0066",
+      "text": "Ja, der Reis schmeckt wirklich gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0067",
+      "text": "Ich liebe Tee mit Milch!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0068",
+      "text": "Wir lieben das Essen von Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0069",
+      "text": "Was isst du eigentlich gern?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0070",
+      "text": "Eigentlich mag ich keine Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0071",
+      "text": "Elif mag Ayran sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0072",
+      "text": "Mag Jan Linsen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0073",
+      "text": "Ja, er mag Linsen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0074",
+      "text": "Meine Kinder mögen Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0075",
+      "text": "Mögt ihr Hähnchen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0076",
+      "text": "Der Tee schmeckt mir nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0077",
+      "text": "Ich habe überhaupt keinen Hunger.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0078",
+      "text": "Ja, sehr gern.",
+      "quelle": "tatoeba:602782",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #602782 von BraveSentry (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0079",
+      "text": "Was magst du lieber, Tee oder Saft?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0080",
+      "text": "Das Brot ist heute besonders gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0081",
+      "text": "Magst du Ayran, Felix?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0082",
+      "text": "Was isst du zum Frühstück?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0083",
+      "text": "Zum Frühstück esse ich Brot und Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0084",
+      "text": "Ich mag das Ei nicht so hart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0085",
+      "text": "Zum Mittagessen gehen wir in die Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0086",
+      "text": "Die Kantine ist heute sehr voll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0087",
+      "text": "Das Abendessen ist um sieben Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0088",
+      "text": "Wer kocht heute?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0089",
+      "text": "Heute kocht mein Vater.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0090",
+      "text": "Guten Appetit!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0091",
+      "text": "Danke, guten Appetit!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0092",
+      "text": "Danke, Ihnen auch guten Appetit!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0093",
+      "text": "Mein Teller ist noch voll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0094",
+      "text": "Hier ist dein Teller, Jan.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0095",
+      "text": "Das Brot ist hart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0096",
+      "text": "Iss nicht so schnell!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0097",
+      "text": "Meine Mutter kocht gerade Reis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0098",
+      "text": "Endlich ist das Essen fertig!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0099",
+      "text": "Wann essen wir zu Abend?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0100",
+      "text": "Wir essen um halb acht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0101",
+      "text": "Das Essen in der Kantine ist gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0102",
+      "text": "Ein Teller fehlt noch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0103",
+      "text": "Wir brauchen vier Teller.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0104",
+      "text": "Das Essen ist schnell fertig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0105",
+      "text": "Felix isst jeden Tag in der Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0106",
+      "text": "Ḫālid kocht heute das Abendessen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0107",
+      "text": "Nimm noch etwas Reis!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0108",
+      "text": "Danke, ich habe genug.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0109",
+      "text": "Möchtest du noch Tee?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0110",
+      "text": "Ja, natürlich! Danke schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0111",
+      "text": "Nur ein bisschen, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0112",
+      "text": "Bringst du mir bitte einen Teller?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0113",
+      "text": "Natürlich! Hier ist dein Teller.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0114",
+      "text": "Holst du bitte das Wasser?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0115",
+      "text": "Ich hole noch Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0116",
+      "text": "Wir teilen das Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0117",
+      "text": "Ein Teil ist für dich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0118",
+      "text": "Eins für dich und eins für mich.",
+      "quelle": "tatoeba:4033099",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4033099 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0119",
+      "text": "Emre lässt den Käse liegen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0120",
+      "text": "Möchtest du Brot dazu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0121",
+      "text": "Dazu trinken wir Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0122",
+      "text": "Wieso isst du nichts?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0123",
+      "text": "Siehst du den Käse?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0124",
+      "text": "Laylā sieht den Saft nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0125",
+      "text": "Jeder Mensch braucht Wasser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0126",
+      "text": "Murat kocht gern Essen aus aller Welt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0127",
+      "text": "Viele Menschen essen jeden Tag Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0128",
+      "text": "In der ganzen Welt trinken Menschen Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0129",
+      "text": "Der Tee ist für dich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0130",
+      "text": "Für mich bitte ohne Käse!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0131",
+      "text": "Nimm bitte, das ist für dich!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0132",
+      "text": "Er nimmt zwei Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0133",
+      "text": "Was nimmst du, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0134",
+      "text": "Danke für das Essen!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0135",
+      "text": "Du trinkst nicht genug Wasser.",
+      "quelle": "tatoeba:4893946",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4893946 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e05.s0136",
+      "text": "Wieso trinkst du keinen Tee?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0137",
+      "text": "Ich nehme den Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0138",
+      "text": "Selin bringt den Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0139",
+      "text": "Seht ihr das Brot?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0140",
+      "text": "In der Kantine sind viele Menschen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0141",
+      "text": "Abendessen bei Elif",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0142",
+      "text": "Die Familie von Jan isst heute bei Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0143",
+      "text": "Der Vater von Elif kocht sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0144",
+      "text": "Heute kocht er Linsensuppe und Reis mit Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0145",
+      "text": "Kommt bitte! Das Abendessen ist fertig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0146",
+      "text": "Oh, das sieht wirklich gut aus!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0147",
+      "text": "Alle essen die Suppe. Sie schmeckt sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0148",
+      "text": "Jan, möchtest du noch etwas Suppe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0149",
+      "text": "Ja, gern! Ich mag Linsen sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0150",
+      "text": "Möchtest du Wasser oder Ayran?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0151",
+      "text": "Ayran? Was ist das?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0152",
+      "text": "In der Türkei trinken viele Menschen Ayran.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0153",
+      "text": "Dann nehme ich einen Ayran, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0154",
+      "text": "Für Jan ist Ayran ganz neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0155",
+      "text": "Oh! Der Ayran schmeckt wirklich gut!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0156",
+      "text": "Siehst du? Du magst Ayran!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0157",
+      "text": "Dann bringt Murat den Reis mit Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0158",
+      "text": "Nimm bitte, Jan! Wir haben genug.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0159",
+      "text": "Danke! Ich nehme ein bisschen Reis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0160",
+      "text": "Am Ende ist kein Reis mehr da.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0161",
+      "text": "Bitte, gern! Es ist schön mit euch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0162",
+      "text": "Was trinkt Jan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0163",
+      "text": "Wie findet Jan den Ayran?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0164",
+      "text": "Er mag ihn sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0165",
+      "text": "Er mag ihn nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0166",
+      "text": "Ist noch Reis da?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0167",
+      "text": "Nein, es ist kein Reis mehr da.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0168",
+      "text": "Ja, es ist noch viel Reis da.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0169",
+      "text": "Ja, aber kein Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0170",
+      "text": "Mittagessen in der Kantine",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0171",
+      "text": "Laylā und Elif essen heute in der Kantine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0172",
+      "text": "Hallo, ihr zwei! Was möchtet ihr?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0173",
+      "text": "Ich möchte Reis mit Hähnchen, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0174",
+      "text": "Nein, danke. Aber ich nehme einen Saft.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0175",
+      "text": "Und du? Was möchtest du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0176",
+      "text": "Ich habe großen Hunger!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0177",
+      "text": "Ich nehme die Linsen und zwei Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0178",
+      "text": "Möchtest du Tee oder Wasser dazu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0179",
+      "text": "Wasser, bitte. Ich trinke keinen Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0180",
+      "text": "Hier, bitte. Guten Appetit!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0181",
+      "text": "Laylā und Elif sitzen am Tisch und essen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0182",
+      "text": "Der Reis schmeckt gut. Möchtest du etwas?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0183",
+      "text": "Ja, gern! Wir teilen. Ein Ei ist für dich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0184",
+      "text": "Danke! Oh, das Ei ist aber hart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0185",
+      "text": "Ja, ich mag die Eier hart.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0186",
+      "text": "Wo essen Laylā und Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0187",
+      "text": "Was trinkt Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0188",
+      "text": "Was isst Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0189",
+      "text": "Sie isst Linsen und zwei Eier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0190",
+      "text": "Sie isst Reis mit Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0191",
+      "text": "Sie isst Brot mit Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0192",
+      "text": "Trinkt Elif Tee?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0193",
+      "text": "Nein, sie trinkt Wasser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0194",
+      "text": "Ja, sie trinkt gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0195",
+      "text": "Ja, Tee mit Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0196",
+      "text": "Ich esse gern Reis, aber keinen Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0197",
+      "text": "Ich trinke gern Ayran und Tee.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0198",
+      "text": "Ich möchte Linsen mit Reis, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0199",
+      "text": "Ich möchte einen Tee und ein Brot, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0200",
+      "text": "Heute essen acht Menschen bei uns.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e05.s0201",
+      "text": "Wir brauchen noch drei Teller.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e05.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Getränke benennen und sagen, was ich trinken möchte.",
+        "tr": "İçecekleri adlandırabilir ve ne içmek istediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي المشروبات وأن أقول ماذا أريد أن أشرب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.wasser",
+          "ablenker": ["de.a1.e05.tee", "de.a1.e05.milch"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.wasser", "de.a1.e05.tee", "de.a1.e05.milch", "de.a1.e05.saft", "de.a1.e05.ayran"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.trinken",
+          "ablenker": ["de.a1.e05.moechten", "de.a1.e03.brauchen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0001",
+          "ablenker": ["de.a1.e05.s0002", "de.a1.e05.s0003", "de.a1.e05.s0024"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0016",
+          "wort": 2,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.etwas",
+          "ablenker": ["de.a1.e05.nichts", "de.a1.e03.nur"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0007",
+          "nach": "ziel",
+          "ablenker": ["ohne", "trinke"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0001"
+            }
+          ],
+          "antwort": "de.a1.e05.s0004",
+          "ablenker": ["de.a1.e05.s0029", "de.a1.e05.s0095", "de.a1.e05.s0018"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0021",
+          "wort": 3,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0008",
+          "ablenker": ["de.a1.e05.s0019", "de.a1.e05.s0014", "de.a1.e05.s0006"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0010"
+            }
+          ],
+          "antwort": "de.a1.e05.s0012",
+          "ablenker": ["de.a1.e05.s0017", "de.a1.e05.s0022", "de.a1.e05.s0013"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.fuer",
+          "ablenker": ["de.a1.e02.vier"]
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e05.s0005"
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0011",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich esse: Brot, Reis, Käse und Eier.",
+        "tr": "Ne yediğimi söyleyebilirim: ekmek, pirinç, peynir ve yumurta.",
+        "ar": "أستطيع أن أقول ماذا آكل: الخبز والأرز والجبن والبيض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.brot",
+          "ablenker": ["de.a1.e05.reis", "de.a1.e05.kaese"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.brot", "de.a1.e05.reis", "de.a1.e05.kaese", "de.a1.e05.ei", "de.a1.e05.haehnchen", "de.a1.e05.linse"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.hunger",
+          "ablenker": ["de.a1.e05.appetit", "de.a1.e03.platz"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0034",
+          "wort": 1,
+          "ablenker": ["esst", "esse"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0032",
+          "ablenker": ["de.a1.e05.s0031", "de.a1.e05.s0052", "de.a1.e05.s0055"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.essen",
+          "ablenker": ["de.a1.e05.trinken", "de.a1.e01.wohnen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0033",
+          "nach": "ziel",
+          "alternativen": ["Reis mit Hähnchen esse ich."],
+          "ablenker": ["ohne", "isst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0030"
+            }
+          ],
+          "antwort": "de.a1.e05.s0044",
+          "ablenker": ["de.a1.e05.s0020", "de.a1.e05.s0102", "de.a1.e05.s0047"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0038",
+          "wort": 2,
+          "ablenker": ["keine", "keinen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0043",
+          "ablenker": ["de.a1.e05.s0033", "de.a1.e05.s0036", "de.a1.e05.s0049"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0050"
+            }
+          ],
+          "antwort": "de.a1.e05.s0051",
+          "ablenker": ["de.a1.e05.s0039", "de.a1.e05.s0056"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.ei",
+          "ablenker": ["de.a1.e03.ein"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a14",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0048",
+          "wort": 1,
+          "ablenker": ["esst", "essen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e05.s0035",
+          "alternativen": ["Ich möchte 2 Eier, bitte."]
+        },
+        {
+          "schluessel": "de.a1.e05.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0046",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was ich mag und was ich nicht mag.",
+        "tr": "Neyi sevdiğimi ve neyi sevmediğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما أحبه وما لا أحبه."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.moegen",
+          "ablenker": ["de.a1.e05.moechten", "de.a1.e03.brauchen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.gern",
+          "ablenker": ["de.a1.e05.besonders", "de.a1.e05.wirklich"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a04",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.gern", "de.a1.e05.besonders", "de.a1.e05.ueberhaupt", "de.a1.e05.eigentlich", "de.a1.e05.oh"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0074",
+          "wort": 2,
+          "ablenker": ["mag", "magst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0061",
+          "ablenker": ["de.a1.e05.s0062", "de.a1.e05.s0067", "de.a1.e05.s0071"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0057"
+            }
+          ],
+          "antwort": "de.a1.e05.s0058",
+          "ablenker": ["de.a1.e05.s0035", "de.a1.e05.s0088", "de.a1.e05.s0080"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0057",
+          "wort": 0,
+          "ablenker": ["Mögst", "Mag"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.lieben",
+          "ablenker": ["de.a1.e05.schmecken", "de.a1.e03.finden"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0061",
+          "nach": "ziel",
+          "alternativen": ["Tee trinke ich gern.", "Gern trinke ich Tee.", "Ich trinke Tee gern."],
+          "ablenker": ["gut", "trinkt"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0060",
+          "ablenker": ["de.a1.e05.s0021", "de.a1.e05.s0059", "de.a1.e05.s0077"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.nichts",
+          "ablenker": ["de.a1.e03.nicht"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0065"
+            }
+          ],
+          "antwort": "de.a1.e05.s0066",
+          "ablenker": ["de.a1.e05.s0075", "de.a1.e05.s0027"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0063"
+            }
+          ],
+          "antwort": "de.a1.e05.s0196",
+          "ablenker": ["de.a1.e05.s0081", "de.a1.e05.s0078"]
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e05.s0196"
+        },
+        {
+          "schluessel": "de.a1.e05.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0070",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Frühstück, Mittagessen und Abendessen sprechen.",
+        "tr": "Kahvaltı, öğle yemeği ve akşam yemeği hakkında konuşabilirim.",
+        "ar": "أستطيع أن أتحدث عن الفطور والغداء والعشاء."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.fruehstueck",
+          "ablenker": ["de.a1.e05.mittagessen", "de.a1.e05.abendessen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.fruehstueck", "de.a1.e05.mittagessen", "de.a1.e05.abendessen", "de.a1.e05.kantine", "de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0090"
+            }
+          ],
+          "antwort": "de.a1.e05.s0091",
+          "ablenker": ["de.a1.e05.s0111", "de.a1.e05.s0008", "de.a1.e05.s0103"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.kochen",
+          "ablenker": ["de.a1.e03.stellen", "de.a1.e05.teilen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0087",
+          "wort": 0,
+          "ablenker": ["Der", "Die"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0093",
+          "ablenker": ["de.a1.e05.s0094", "de.a1.e05.s0103", "de.a1.e05.s0201"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.hart",
+          "ablenker": ["de.a1.e05.voll", "de.a1.e05.schnell"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0096",
+          "wort": 0,
+          "ablenker": ["Isst", "Essen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0085",
+          "nach": "ziel",
+          "alternativen": ["Wir gehen zum Mittagessen in die Kantine.", "In die Kantine gehen wir zum Mittagessen."],
+          "ablenker": ["im", "isst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0082"
+            }
+          ],
+          "antwort": "de.a1.e05.s0083",
+          "ablenker": ["de.a1.e05.s0088", "de.a1.e05.s0108", "de.a1.e05.s0100"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.voll",
+          "ablenker": ["de.a1.e02.viel"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0086",
+          "ablenker": ["de.a1.e05.s0101", "de.a1.e05.s0105", "de.a1.e05.s0140"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0099"
+            }
+          ],
+          "antwort": "de.a1.e05.s0087",
+          "ablenker": ["de.a1.e05.s0089", "de.a1.e05.s0084", "de.a1.e05.s0068"]
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e05.s0097"
+        },
+        {
+          "schluessel": "de.a1.e05.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0098",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann etwas anbieten, annehmen oder ablehnen und mich bedanken.",
+        "tr": "Bir şey ikram edebilir, kabul edebilir veya reddedebilir ve teşekkür edebilirim.",
+        "ar": "أستطيع أن أعرض شيئًا وأن أقبله أو أرفضه وأن أشكر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.nehmen",
+          "ablenker": ["de.a1.e05.bringen", "de.a1.e05.teilen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.holen",
+          "ablenker": ["de.a1.e05.sehen", "de.a1.e05.lassen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a04",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.nehmen", "de.a1.e05.bringen", "de.a1.e05.teilen", "de.a1.e05.lassen", "de.a1.e05.sehen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0109"
+            }
+          ],
+          "antwort": "de.a1.e05.s0110",
+          "ablenker": ["de.a1.e05.s0095", "de.a1.e05.s0088", "de.a1.e05.s0139"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0132",
+          "wort": 1,
+          "ablenker": ["nehmt", "nimmst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0107",
+          "ablenker": ["de.a1.e05.s0115", "de.a1.e05.s0137", "de.a1.e05.s0131"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.genug",
+          "ablenker": ["de.a1.e05.bisschen", "de.a1.e05.dazu"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0123",
+          "wort": 0,
+          "ablenker": ["Sehst", "Sieht"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0116",
+          "nach": "ziel",
+          "alternativen": ["Das Brot teilen wir."],
+          "ablenker": ["teilt", "den"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0122"
+            }
+          ],
+          "antwort": "de.a1.e05.s0037",
+          "ablenker": ["de.a1.e05.s0094", "de.a1.e05.s0123", "de.a1.e05.s0138"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.fuer", "de.a1.e05.ohne", "de.a1.e05.mit", "de.a1.e05.mensch", "de.a1.e05.welt", "de.a1.e05.teil"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0125",
+          "ablenker": ["de.a1.e05.s0127", "de.a1.e05.s0128", "de.a1.e05.s0126"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0107"
+            }
+          ],
+          "antwort": "de.a1.e05.s0108",
+          "ablenker": ["de.a1.e05.s0118", "de.a1.e05.s0129"]
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e05.s0198"
+        },
+        {
+          "schluessel": "de.a1.e05.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0130",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über ein Abendessen und ein Gespräch in der Kantine verstehen.",
+        "tr": "Bir akşam yemeği hakkındaki hikâyeyi ve kantindeki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن عشاء وحوارًا في المقصف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e05.s0141",
+          "zeilen": [
+            {
+              "satz": "de.a1.e05.s0142"
+            },
+            {
+              "satz": "de.a1.e05.s0143"
+            },
+            {
+              "satz": "de.a1.e05.s0144"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0145"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0146"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0090"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0091"
+            },
+            {
+              "satz": "de.a1.e05.s0147"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0148"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0149"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0150"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0151"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0152"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0153"
+            },
+            {
+              "satz": "de.a1.e05.s0154"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0155"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0156"
+            },
+            {
+              "satz": "de.a1.e05.s0157"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0158"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0159"
+            },
+            {
+              "satz": "de.a1.e05.s0160"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0134"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0161"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e05.s0088",
+              "antwort": "de.a1.e02.vater",
+              "ablenker": ["de.a1.e02.mutter", "de.a1.e02.oma"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e05.s0162",
+              "antwort": "de.a1.e05.ayran",
+              "ablenker": ["de.a1.e05.wasser", "de.a1.e05.tee"]
+            },
+            {
+              "nach": 16,
+              "frage": "de.a1.e05.s0163",
+              "antwort": "de.a1.e05.s0164",
+              "ablenker": ["de.a1.e05.s0165", "de.a1.e05.s0009"]
+            },
+            {
+              "nach": 20,
+              "frage": "de.a1.e05.s0166",
+              "antwort": "de.a1.e05.s0167",
+              "ablenker": ["de.a1.e05.s0168", "de.a1.e05.s0169"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0150"
+            }
+          ],
+          "antwort": "de.a1.e05.s0153",
+          "ablenker": ["de.a1.e05.s0160", "de.a1.e05.s0147"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0157",
+          "wort": 1,
+          "ablenker": ["bringen", "bringst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0154",
+          "ablenker": ["de.a1.e05.s0152", "de.a1.e05.s0156"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0148"
+            }
+          ],
+          "antwort": "de.a1.e05.s0149",
+          "ablenker": ["de.a1.e05.s0151", "de.a1.e05.s0160"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a1.e05.s0170",
+          "zeilen": [
+            {
+              "satz": "de.a1.e05.s0171"
+            },
+            {
+              "satz": "de.a1.e05.s0086"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0172"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0173"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0120"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0175"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0176"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0177"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0178"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0179"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0180"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0092"
+            },
+            {
+              "satz": "de.a1.e05.s0181"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0182"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0183"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e05.s0184"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e05.s0185"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e05.s0186",
+              "antwort": "de.a1.e05.kantine",
+              "ablenker": ["de.a1.e03.kueche", "de.a1.e03.zimmer"]
+            },
+            {
+              "nach": 5,
+              "frage": "de.a1.e05.s0187",
+              "antwort": "de.a1.e05.saft",
+              "ablenker": ["de.a1.e05.tee", "de.a1.e05.milch"]
+            },
+            {
+              "nach": 8,
+              "frage": "de.a1.e05.s0188",
+              "antwort": "de.a1.e05.s0189",
+              "ablenker": ["de.a1.e05.s0190", "de.a1.e05.s0191"]
+            },
+            {
+              "nach": 10,
+              "frage": "de.a1.e05.s0192",
+              "antwort": "de.a1.e05.s0193",
+              "ablenker": ["de.a1.e05.s0194", "de.a1.e05.s0195"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0172"
+            }
+          ],
+          "antwort": "de.a1.e05.s0173",
+          "ablenker": ["de.a1.e05.s0184", "de.a1.e05.s0181"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0177",
+          "nach": "ziel",
+          "alternativen": ["Ich nehme zwei Eier und die Linsen.", "Die Linsen und zwei Eier nehme ich."],
+          "ablenker": ["Linse", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0178",
+          "ablenker": ["de.a1.e05.s0150", "de.a1.e05.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0179",
+          "wort": 4,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a11",
+          "typ": "sprechen",
+          "satz": "de.a1.e05.s0199"
+        },
+        {
+          "schluessel": "de.a1.e05.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0159",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit: Essen, Getränke und Mahlzeiten.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum: yiyecekler, içecekler ve öğünler.",
+        "ar": "أراجع كلمات الوحدة وجملها: الطعام والمشروبات والوجبات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.wasser", "de.a1.e05.saft", "de.a1.e05.brot", "de.a1.e05.kaese", "de.a1.e05.reis", "de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.essen", "de.a1.e05.trinken", "de.a1.e05.kochen", "de.a1.e05.holen", "de.a1.e05.moegen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.milch",
+          "ablenker": ["de.a1.e05.wasser", "de.a1.e05.ayran"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.natuerlich",
+          "ablenker": ["de.a1.e05.wirklich", "de.a1.e05.besonders"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0060",
+          "wort": 3,
+          "ablenker": ["kein", "keinen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0111",
+          "nach": "ziel",
+          "alternativen": ["Bitte nur ein bisschen."],
+          "ablenker": ["viel", "Brot"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0054",
+          "ablenker": ["de.a1.e05.s0160", "de.a1.e05.s0053", "de.a1.e05.s0042"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.sehen",
+          "ablenker": ["de.a1.e02.zehn"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0025"
+            }
+          ],
+          "antwort": "de.a1.e05.s0026",
+          "ablenker": ["de.a1.e05.s0027", "de.a1.e05.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e05.s0064"
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0124",
+          "wort": 1,
+          "ablenker": ["seht", "siehst"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0072"
+            }
+          ],
+          "antwort": "de.a1.e05.s0073",
+          "ablenker": ["de.a1.e05.s0117", "de.a1.e05.s0045"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0070",
+          "ablenker": ["de.a1.e05.s0060", "de.a1.e05.s0064", "de.a1.e05.s0069"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.wieso",
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.wo"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0119",
+          "wort": 1,
+          "ablenker": ["lasst", "lasse"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0112"
+            }
+          ],
+          "antwort": "de.a1.e05.s0113",
+          "ablenker": ["de.a1.e05.s0116", "de.a1.e05.s0135"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a17",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0062",
+          "nach": "ziel",
+          "alternativen": ["Lieber trinke ich Saft.", "Saft trinke ich lieber."],
+          "ablenker": ["gern", "trinkt"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.endlich",
+          "ablenker": ["de.a1.e05.gerade", "de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0125",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e05.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a1.e05.s0197"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e05.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, was ich kann: sagen, was ich mag, und höflich bestellen.",
+        "tr": "Neler yapabildiğimi gösteriyorum: neyi sevdiğimi söylemek ve kibarca sipariş vermek.",
+        "ar": "أُظهر ما أستطيع: أن أقول ما أحبه وأن أطلب بأدب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e05.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.saft",
+          "ablenker": ["de.a1.e05.milch", "de.a1.e05.tee"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e05.kaese",
+          "ablenker": ["de.a1.e05.brot", "de.a1.e05.ei"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e05.s0023",
+          "ablenker": ["de.a1.e05.s0019", "de.a1.e05.s0007", "de.a1.e05.s0028"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0112",
+          "wort": 4,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0114",
+          "wort": 3,
+          "ablenker": ["der", "den"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0035",
+          "nach": "ziel",
+          "alternativen": ["Ich möchte bitte zwei Eier.", "Zwei Eier möchte ich, bitte."],
+          "ablenker": ["Ei", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0133"
+            }
+          ],
+          "antwort": "de.a1.e05.s0198",
+          "ablenker": ["de.a1.e05.s0091", "de.a1.e05.s0095", "de.a1.e05.s0104"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e05.s0200",
+          "alternativen": ["Heute essen 8 Menschen bei uns."]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e05.teilen",
+          "ablenker": ["de.a1.e05.holen", "de.a1.e05.lassen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e05.fuer",
+          "ablenker": ["de.a1.e02.vier"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e05.s0079",
+          "ablenker": ["de.a1.e05.s0015", "de.a1.e05.s0076", "de.a1.e05.s0078"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e05.s0093",
+          "wort": 0,
+          "ablenker": ["Meine", "Meinen"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a13",
+          "typ": "paare",
+          "lemmata": ["de.a1.e05.fruehstueck", "de.a1.e05.abendessen", "de.a1.e05.hunger", "de.a1.e05.appetit", "de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e05.s0040"
+            }
+          ],
+          "antwort": "de.a1.e05.s0041",
+          "ablenker": ["de.a1.e05.s0026", "de.a1.e05.s0121", "de.a1.e05.s0106"]
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e05.s0136",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e05.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e05.s0005"
+        }
+      ]
+    }
+  ]
+}
