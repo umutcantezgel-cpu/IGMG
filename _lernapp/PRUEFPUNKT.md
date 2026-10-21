@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 13:15 UTC – `main` = a777af9 auf Wunsch des Nutzers ohne abgeschlossenes Tor** („jetzt schon live, ist eh
+  eine Test-Domain“; Ausnahme von L3-E12 nur für diesen Schritt). Vorschau-Bau dieses Stands auf Vercel `success`. Das schlanke
+  Tor `scratchpad/tor-l3a.sh` (check, betroffene Integration, Sprachen/Religion/Wortlaut, ein Bau mit Lern-App- und
+  Verwaltungs-E2E) läuft als Nachprüfung; rote Befunde werden gezielt nachgezogen. Nutzer: keine unnötigen Testschleifen.
 - **Stand 21.10.2026 12:20 UTC:** Nach dem Limit (09:35–12:00) fortgesetzt. A1: Entwürfe tr e01–e12, de e01–e08, ar e01–e02,
   Lektorat tr e01/e02; neuer Lauf `wf_742961e7-df9` (`lernapp-a1-weiter.workflow.js` mit `ohneVorbereitung`, `entworfen`,
   `lektoriert`; Ergebnisse früherer Läufe `scratchpad/l3/a1/ergebnisse-*.json`, Hinweise `hinweise-*.md`). Code
