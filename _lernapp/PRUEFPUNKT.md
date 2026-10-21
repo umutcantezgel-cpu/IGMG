@@ -1,5 +1,11 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 14:40 UTC:** Lern-App in der Produktion an (a023cf1, Nutzer: „Die App ist ein Teil der Seite!“, „ich
+  erlaube dir alles“) – live https://igmg-wetzlarer.vercel.app/lern-app/de 200. **L3-05 Sprachausgabe de** (Gegenprüfung Runde 2
+  frei; Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`; Hochrechnung A1 de ≈ 29 min Erzeugung, ≈ 16 MB; Upload wartet auf
+  Blob-Token LM-15) und **L3-06b Nacharbeit** (Runde 2 frei) gemergt, `main` = 62af151. Nachprüfung `scratchpad/tor-l3b.sh` läuft
+  einmal (check, Religion, Wortlaut, Bau + Lern-App-E2E inkl. audio-buendel). Läuft weiter: A1 `wf_742961e7-df9`. Danach: L3-08
+  (Audio de A1 nach Merge der Inhalte), Tor L3, dann L4.
 - **Stand 21.10.2026 13:45 UTC – Nachprüfung L3-06 grün:** Unit 3.302 grün, Integration (betroffen) 642 grün, Bau + E2E Lern-App
   und Verwaltung 82 grün, Sprachen/Religion grün; Lint (erzeugte Modell-Dateien ausgenommen) und Wortlaut (Ausnahme L-02) nach
   6726e8e grün. `main` = 6726e8e, Produktion `success`. **Offen beim Nutzer:** Lern-App in der Produktion einschalten – die
