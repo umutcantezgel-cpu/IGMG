@@ -1,4 +1,4 @@
-import { angenommen, bereiteLexikon, type Lexikon, type Urteil } from '../abgleich';
+import { angenommen, bereiteLexikon, type Lexikon, type Urteil } from '../abgleich/vergleichsform';
 import { type Auswertung, type Bewerter, istImplementiert } from '../aufgaben/hilfen';
 import type { Antwort, Aufgabe, AufgabenTyp, Lektion } from '../aufgaben/schema';
 import type { EreignisEntwurf } from '../ereignisse/typen';

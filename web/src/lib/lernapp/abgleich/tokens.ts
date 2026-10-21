@@ -1,4 +1,4 @@
-import { normalisiere } from './index';
+import { normalisiere } from './vergleichsform';
 import { bereite, type Sprache, woerter } from './normalisiere';
 
 /**

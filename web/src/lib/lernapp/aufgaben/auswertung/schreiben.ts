@@ -1,4 +1,4 @@
-import { normalisiere } from '../../abgleich';
+import { normalisiere } from '../../abgleich/vergleichsform';
 import { woerter } from '../../abgleich/normalisiere';
 import type { Sprache } from '../../kurse';
 import { type Auswertung, kartenMit } from '../hilfen';

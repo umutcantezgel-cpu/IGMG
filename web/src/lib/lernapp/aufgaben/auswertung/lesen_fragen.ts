@@ -1,4 +1,4 @@
-import { normalisiere } from '../../abgleich';
+import { normalisiere } from '../../abgleich/vergleichsform';
 import { gemischteIndizes } from '../../engine/zufall';
 import type { Sprache } from '../../kurse';
 import type { Inhalt } from '../grundlagen';

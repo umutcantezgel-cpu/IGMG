@@ -14,16 +14,17 @@ import { frischAbgeleitet, heute, meldeStand, vorhandenesProfil } from '@/lib/le
 import { baueWiederholung, einheitDerKarte } from '@/lib/lernapp/oberflaeche/wiederholung';
 import type { Paket } from '@/lib/lernapp/paket/typen';
 import type { SpielerOptionen, SpielerTexte } from '../typen';
+import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 import { SpielerGrenze } from './UebenInsel';
 
 const ladeSpieler = () => import('../Spieler');
 const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 /**
- * Was erst die Wiederholung braucht – volle Prüfung der Pakete (Zod) und der Ausgang der Ereignisse – als eigener Chunk,
- * nur geladen, wenn es Karten zu wiederholen gibt (TBT der Route, KERN 4.0 §9): Ohne fällige Karten lädt die Seite kein Zod.
+ * Was erst die Wiederholung braucht – volle Prüfung der Pakete (Zod) – als eigener Chunk, nur geladen, wenn es Karten zu
+ * wiederholen gibt (TBT der Route, KERN 4.0 §9): Ohne fällige Karten lädt die Seite kein Zod. Der Ausgang der Ereignisse
+ * kommt erst mit der ersten Handlung (`./ausgang.ts`).
  */
-const ladeTeile = () => Promise.all([import('@/lib/lernapp/lokal/pakete'), import('@/lib/lernapp/lokal/ausgang')]);
-type Ausgang = Awaited<ReturnType<typeof ladeTeile>>[1];
+const ladeTeile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type WiederholenTexte = { leer: string; laedt: string; nichtVerfuegbar: string };
 
@@ -38,7 +39,6 @@ type Zustand =
       lektion: Lektion;
       ziffern: Ziffern;
       optionen: Omit<SpielerOptionen, 'spracherkennung'>;
-      haengeAn: Ausgang['haengeAn'];
     };
 
 /**
@@ -64,7 +64,7 @@ export function WiederholenInsel({
   spracherkennung?: boolean;
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
-  const kette = useRef<Promise<unknown>>(Promise.resolve());
+  const kette = useRef<EreignisKette>(neueKette());
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
 
@@ -78,11 +78,7 @@ export function WiederholenInsel({
       const gewaehlt = waehleKarten(karten, { jetzt: new Date() });
       if (!gewaehlt.length) return { art: 'leer' };
       void ladeSpieler().catch(() => undefined);
-      const [v, [{ ladePaket }, { haengeAn }], e] = await Promise.all([
-        ladeVerzeichnis(kurs),
-        ladeTeile(),
-        einstellungsSpeicher(ui).laden(),
-      ]);
+      const [v, { ladePaket }, e] = await Promise.all([ladeVerzeichnis(kurs), ladeTeile(), einstellungsSpeicher(ui).laden()]);
       const noetig = new Set(gewaehlt.map((k) => einheitDerKarte(k.karte)));
       const pakete: Paket[] = [];
       for (const einheit of v?.kurs === kurs ? v.einheiten : []) {
@@ -99,7 +95,6 @@ export function WiederholenInsel({
         lektion,
         ziffern: e.ziffern,
         optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
-        haengeAn,
       };
     }
     void laden()
@@ -111,6 +106,7 @@ export function WiederholenInsel({
       aktiv = false;
     };
   }, [kurs, ui]);
+  useAusgangVorladen(z.art === 'bereit');
 
   const zurueck = (
     <a href={lernpfad.adresse} className="inline-flex min-h-11 items-center font-bold underline-offset-4 hover:underline">
@@ -127,12 +123,10 @@ export function WiederholenInsel({
   if (z.art === 'leer') return kasten(texte.leer, true);
   if (z.art === 'fehlt') return kasten(texte.nichtVerfuegbar, true);
 
-  const { sp, profil, lektion, haengeAn } = z;
-  const melde = (e: EreignisEntwurf) => {
-    kette.current = kette.current.then(() => haengeAn(sp, profil, e)).catch(() => undefined);
-  };
+  const { sp, profil, lektion } = z;
+  const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
-    await kette.current;
+    await allesGeschrieben(kette.current, sp, profil);
     // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
     const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
     await leiteNeuAb(sp, profil.id, heute());
@@ -148,7 +142,7 @@ export function WiederholenInsel({
           texte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
-          onEreignis={melde}
+          onEreignis={meldeEreignis}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}

@@ -1,4 +1,4 @@
-import { normalisiere, REGELN } from '../abgleich';
+import { normalisiere, REGELN } from '../abgleich/vergleichsform';
 import { APOSTROPH_LOCKERUNG, type Sprache, woerter } from '../abgleich/normalisiere';
 import { zerlege } from '../abgleich/tokens';
 import { laenge, tippAbstand } from '../abgleich/toleranz';

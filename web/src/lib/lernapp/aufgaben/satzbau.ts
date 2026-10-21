@@ -1,4 +1,4 @@
-import { normalisiere, type Sprache } from '../abgleich';
+import { normalisiere, type Sprache } from '../abgleich/vergleichsform';
 import { zerlege } from '../abgleich/tokens';
 import * as z from '../z';
 import { basis, InhaltSchema, liste, Loesungen, SpracheSchema, text } from './grundlagen';

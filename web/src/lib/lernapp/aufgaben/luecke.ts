@@ -1,4 +1,4 @@
-import { normalisiere } from '../abgleich';
+import { normalisiere } from '../abgleich/vergleichsform';
 import * as z from '../z';
 import { basis, InhaltSchema, Loesungen, roh, SpracheSchema } from './grundlagen';
 

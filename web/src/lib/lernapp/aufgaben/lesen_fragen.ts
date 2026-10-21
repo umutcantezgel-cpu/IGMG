@@ -1,4 +1,4 @@
-import { normalisiere } from '../abgleich';
+import { normalisiere } from '../abgleich/vergleichsform';
 import * as z from '../z';
 import { ab, basis, InhaltSchema, liste, mitOptionen, Optionen, roh } from './grundlagen';
 import { RFN } from './hilfen';

@@ -1,5 +1,5 @@
 import { SPRACHEN } from '../kurse';
-import { SchluesselSchema } from '../ereignisse/typen';
+import { SchluesselSchema } from '../ereignisse/schluessel';
 import * as z from '../z';
 
 /**

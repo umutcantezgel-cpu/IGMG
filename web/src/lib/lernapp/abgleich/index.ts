@@ -1,5 +1,3 @@
-import { REGELN_AR } from './ar';
-import { REGELN_DE } from './de';
 import {
   APOSTROPH_LOCKERUNG,
   AUSKUNFT_HINWEISE,
@@ -13,7 +11,7 @@ import {
   woerter,
 } from './normalisiere';
 import { imTippfehlerBereich, maxTippfehlerWoerter } from './toleranz';
-import { REGELN_TR } from './tr';
+import { type Lexikon, REGELN, type Urteil } from './vergleichsform';
 
 /**
  * Antwortabgleich (PLAN §4.1): vergleicht eine Antwort mit allen angenommenen Lösungen und liefert das beste Urteil.
@@ -29,11 +27,7 @@ import { REGELN_TR } from './tr';
 
 export type { HinweisSchluessel, Sprache } from './normalisiere';
 export { bereite, HINWEIS_SCHLUESSEL, SPRACHEN } from './normalisiere';
-
-export const REGELN: Readonly<Record<Sprache, SprachRegeln>> = { de: REGELN_DE, tr: REGELN_TR, ar: REGELN_AR };
-
-export type Urteil = 'richtig' | 'tippfehler' | 'falsch';
-export const URTEILE: readonly Urteil[] = ['richtig', 'tippfehler', 'falsch'];
+export { angenommen, bereiteLexikon, type Lexikon, normalisiere, REGELN, type Urteil, URTEILE } from './vergleichsform';
 
 export type Ergebnis = {
   urteil: Urteil;
@@ -45,9 +39,6 @@ export type Ergebnis = {
   index: number;
 };
 
-/** Gültige Kurswörter in Vergleichsform (für den Lexikonschutz), einmal je Lektion vorbereitet. */
-export type Lexikon = { sprache: Sprache; woerter: ReadonlySet<string> };
-
 export type AbgleichOptionen = {
   /** Tippfehler-Toleranz (Standard an; aus für Wortbank und Satzbau, wo nur Kacheln gewählt werden). */
   toleranz?: boolean;
@@ -55,18 +46,6 @@ export type AbgleichOptionen = {
   streng?: boolean;
   lexikon?: Lexikon;
 };
-
-/** Vergleichsform eines Textes in einer Sprache (idempotent). */
-export function normalisiere(text: string, sprache: Sprache, streng = false): string {
-  return normalisiereMit(text, REGELN[sprache], streng);
-}
-
-/** Lexikon aus Wörtern oder Wendungen des Kurses (jedes Wort einer Wendung zählt). */
-export function bereiteLexikon(eintraege: Iterable<string>, sprache: Sprache): Lexikon {
-  const menge = new Set<string>();
-  for (const e of eintraege) for (const w of woerter(normalisiere(e, sprache))) menge.add(w);
-  return { sprache, woerter: menge };
-}
 
 type WortVergleich = { ok: boolean; hinweise: HinweisSchluessel[]; tipp: boolean };
 const NEIN: WortVergleich = { ok: false, hinweise: [], tipp: false };
@@ -185,6 +164,3 @@ export function gleicheAb(
   }
   return bestes as Ergebnis;
 }
-
-/** Angenommen heißt `richtig` oder `tippfehler`. */
-export const angenommen = (e: Pick<Ergebnis, 'urteil'>) => e.urteil !== 'falsch';

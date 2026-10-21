@@ -14,7 +14,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { bereiteLexikon, type Lexikon } from '@/lib/lernapp/abgleich';
+import { bereiteLexikon, type Lexikon } from '@/lib/lernapp/abgleich/vergleichsform';
 import type { Antwort, AufgabenTyp, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import {
   beantworte,

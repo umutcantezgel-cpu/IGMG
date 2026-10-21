@@ -1,6 +1,6 @@
 import { fehlendeKacheln } from '../abgleich/tokens';
 import { LEKTIONS_ARTEN } from '../engine/xp';
-import { SchluesselSchema } from '../ereignisse/typen';
+import { SchluesselSchema } from '../ereignisse/schluessel';
 import * as z from '../z';
 import { type BildWortAntwort, BildWortSchema } from './bild_wort';
 import { type DialogAntwort, DialogSchema } from './dialog';

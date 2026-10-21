@@ -1,4 +1,4 @@
-import { SchluesselSchema } from '../ereignisse/typen';
+import { SchluesselSchema } from '../ereignisse/schluessel';
 import * as z from '../z';
 import { ab, basis, eindeutig, liste, mitOptionen, SpracheSchema, text } from './grundlagen';
 

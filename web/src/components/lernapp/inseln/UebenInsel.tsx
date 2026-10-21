@@ -14,16 +14,17 @@ import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaech
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
 import type { SpielerOptionen, SpielerTexte } from '../typen';
+import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 
 /** Spieler als eigener Chunk (KERN 4.0 §9: erst in der Lektion); Übungstypen lädt er selbst per `import()`. */
 const ladeSpieler = () => import('../Spieler');
 const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 /**
- * Was erst die Lektion braucht – volle Prüfung des Pakets (Zod) und der Ausgang der Ereignisse – als eigener Chunk, beim
- * Öffnen parallel zu Gerät, Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT).
+ * Was erst die Lektion braucht – volle Prüfung des Pakets (Zod) – als eigener Chunk, beim Öffnen parallel zu Gerät,
+ * Einstellungen und Kursverzeichnis geladen: Die Seite selbst bleibt klein (LCP, TBT). Der Ausgang der Ereignisse kommt
+ * erst mit der ersten Handlung (`./ausgang.ts`).
  */
-const ladeLektionsteile = () => Promise.all([import('@/lib/lernapp/lokal/pakete'), import('@/lib/lernapp/lokal/ausgang')]);
-type Ausgang = Awaited<ReturnType<typeof ladeLektionsteile>>[1];
+const ladeLektionsteile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
 
@@ -48,7 +49,6 @@ type Bereit = {
   ziffern: Ziffern;
   /** Einstellungen „Hörübungen aus“ und „Sprechübungen aus“ (KERN 4.0 §8) */
   optionen: Omit<SpielerOptionen, 'spracherkennung'>;
-  haengeAn: Ausgang['haengeAn'];
 };
 type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
 
@@ -76,7 +76,7 @@ export function UebenInsel({
 }) {
   const l = useSearchParams().get('l');
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
-  const kette = useRef<Promise<unknown>>(Promise.resolve());
+  const kette = useRef<EreignisKette>(neueKette());
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
 
@@ -85,7 +85,7 @@ export function UebenInsel({
     async function laden(): Promise<Zustand> {
       if (!l) return { art: 'ohne' };
       void ladeSpieler().catch(() => undefined);
-      const [{ sp, profil }, e, v, [{ ladePaket }, { haengeAn }]] = await Promise.all([
+      const [{ sp, profil }, e, v, { ladePaket }] = await Promise.all([
         geraet(ui),
         einstellungsSpeicher(ui).laden(),
         ladeVerzeichnis(kurs),
@@ -108,7 +108,6 @@ export function UebenInsel({
         lektion,
         ziffern: e.ziffern,
         optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
-        haengeAn,
       };
     }
     void laden()
@@ -120,6 +119,7 @@ export function UebenInsel({
       aktiv = false;
     };
   }, [l, kurs, ui]);
+  useAusgangVorladen(z.art === 'bereit');
 
   const zurueck = (
     <a href={lernpfad.adresse} className="inline-flex min-h-11 items-center font-bold underline-offset-4 hover:underline">
@@ -136,12 +136,10 @@ export function UebenInsel({
     );
   }
 
-  const { sp, profil, v, paket, lektion, haengeAn } = z;
-  const melde = (e: EreignisEntwurf) => {
-    kette.current = kette.current.then(() => haengeAn(sp, profil, e)).catch(() => undefined);
-  };
+  const { sp, profil, v, paket, lektion } = z;
+  const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
-    await kette.current;
+    await allesGeschrieben(kette.current, sp, profil);
     // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
     const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
     await leiteNeuAb(sp, profil.id, heute());
@@ -174,7 +172,7 @@ export function UebenInsel({
           texte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
-          onEreignis={melde}
+          onEreignis={meldeEreignis}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}

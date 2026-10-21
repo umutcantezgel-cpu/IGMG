@@ -181,6 +181,25 @@ describe('Zod erst bei Bedarf (TBT der Spieler-Routen, Befund der L1-Gegenprüfu
   it('die Prüfung greift: der Paket-Lader zieht Zod', () => {
     expect(clientGraph(join(WURZEL, 'lib', 'lernapp', 'lokal', 'pakete.ts')).has(Z)).toBe(true);
   });
+
+  it('Paketprüfung und Engine ohne Ereignis-Schemas und ohne Tippfehler-Abgleich (Levenshtein nur in den Übungs-Chunks)', () => {
+    const ereignisse = join(WURZEL, 'lib', 'lernapp', 'ereignisse', 'typen.ts');
+    const abgleich = join(WURZEL, 'lib', 'lernapp', 'abgleich', 'index.ts');
+    const pakete = clientGraph(join(WURZEL, 'lib', 'lernapp', 'lokal', 'pakete.ts'));
+    expect(pakete.has(ereignisse)).toBe(false);
+    expect(pakete.has(abgleich)).toBe(false);
+    expect(clientGraph(join(WURZEL, 'components', 'lernapp', 'Spieler.tsx')).has(abgleich)).toBe(false);
+  });
+
+  it('Üben und Wiederholen laden den Ausgang der Ereignisse erst bei Bedarf (inseln/ausgang.ts)', () => {
+    for (const datei of ['UebenInsel.tsx', 'WiederholenInsel.tsx']) {
+      const text = readFileSync(join(WURZEL, 'components', 'lernapp', 'inseln', datei), 'utf8');
+      expect(text, datei).not.toContain('lokal/ausgang');
+    }
+    expect(readFileSync(join(WURZEL, 'components', 'lernapp', 'inseln', 'ausgang.ts'), 'utf8')).toContain(
+      "import('@/lib/lernapp/lokal/ausgang')",
+    );
+  });
 });
 
 describe('Sprachmodell nur im Worker', () => {
