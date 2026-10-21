@@ -1,0 +1,3249 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e06",
+    "reihenfolge": 7,
+    "thema": {
+      "de": "Auf dem Wochenmarkt",
+      "tr": "Haftalık pazarda",
+      "ar": "في السوق الأسبوعي"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann auf dem Markt Obst und Gemüse mit Menge und Preis kaufen.",
+        "tr": "Pazarda meyve ve sebzeyi miktar ve fiyat belirterek satın alabilirim.",
+        "ar": "أستطيع أن أشتري الفواكه والخضروات في السوق مع ذكر الكمية والسعر."
+      },
+      {
+        "de": "Ich kann nach dem Preis fragen und sagen, dass mir etwas zu teuer ist.",
+        "tr": "Fiyat sorabilir ve bir şeyin bana çok pahalı geldiğini söyleyebilirim.",
+        "ar": "أستطيع أن أسأل عن السعر وأن أقول إن شيئًا ما غالٍ جدًّا عليّ."
+      }
+    ],
+    "symbol": "shopping-basket",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e06.geben",
+      "lemma": "geben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "geben",
+        "praes_ich": "gebe",
+        "praes_du": "gibst",
+        "praes_er_sie_es": "gibt",
+        "praes_wir": "geben",
+        "praes_ihr": "gebt",
+        "praes_sie_Sie": "geben",
+        "imp_du": "gib",
+        "imp_ihr": "gebt"
+      },
+      "frequenzRang": 52,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.kaufen",
+      "lemma": "kaufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kaufen",
+        "praes_ich": "kaufe",
+        "praes_du": "kaufst",
+        "praes_er_sie_es": "kauft",
+        "praes_wir": "kaufen",
+        "praes_ihr": "kauft",
+        "praes_sie_Sie": "kaufen",
+        "imp_du": "kauf",
+        "imp_ihr": "kauft"
+      },
+      "frequenzRang": 291,
+      "quelle": "wiktionary:de:kaufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kaufen‘ (https://de.wiktionary.org/wiki/kaufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.kosten",
+      "lemma": "kosten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kosten",
+        "praes_ich": "koste",
+        "praes_du": "kostest",
+        "praes_er_sie_es": "kostet",
+        "praes_wir": "kosten",
+        "praes_ihr": "kostet",
+        "praes_sie_Sie": "kosten"
+      },
+      "frequenzRang": 309,
+      "quelle": "wiktionary:de:kosten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kosten‘ (https://de.wiktionary.org/wiki/kosten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.verkaufen",
+      "lemma": "verkaufen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verkaufen",
+        "praes_ich": "verkaufe",
+        "praes_du": "verkaufst",
+        "praes_er_sie_es": "verkauft",
+        "praes_wir": "verkaufen",
+        "praes_ihr": "verkauft",
+        "praes_sie_Sie": "verkaufen",
+        "imp_du": "verkauf",
+        "imp_ihr": "verkauft"
+      },
+      "frequenzRang": 446,
+      "quelle": "wiktionary:de:verkaufen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verkaufen‘ (https://de.wiktionary.org/wiki/verkaufen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.bezahlen",
+      "lemma": "bezahlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "bezahlen",
+        "praes_ich": "bezahle",
+        "praes_du": "bezahlst",
+        "praes_er_sie_es": "bezahlt",
+        "praes_wir": "bezahlen",
+        "praes_ihr": "bezahlt",
+        "praes_sie_Sie": "bezahlen",
+        "imp_du": "bezahl",
+        "imp_ihr": "bezahlt"
+      },
+      "frequenzRang": 595,
+      "quelle": "wiktionary:de:bezahlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚bezahlen‘ (https://de.wiktionary.org/wiki/bezahlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.zahlen",
+      "lemma": "zahlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zahlen",
+        "praes_ich": "zahle",
+        "praes_du": "zahlst",
+        "praes_er_sie_es": "zahlt",
+        "praes_wir": "zahlen",
+        "praes_ihr": "zahlt",
+        "praes_sie_Sie": "zahlen",
+        "imp_du": "zahl",
+        "imp_ihr": "zahlt"
+      },
+      "frequenzRang": 367,
+      "quelle": "wiktionary:de:zahlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zahlen‘ (https://de.wiktionary.org/wiki/zahlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.reichen",
+      "lemma": "reichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "reichen",
+        "praes_ich": "reiche",
+        "praes_du": "reichst",
+        "praes_er_sie_es": "reicht",
+        "praes_wir": "reichen",
+        "praes_ihr": "reicht",
+        "praes_sie_Sie": "reichen"
+      },
+      "frequenzRang": 407,
+      "quelle": "wiktionary:de:reichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚reichen‘ (https://de.wiktionary.org/wiki/reichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.stimmen",
+      "lemma": "stimmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stimmen",
+        "praes_ich": "stimme",
+        "praes_du": "stimmst",
+        "praes_er_sie_es": "stimmt",
+        "praes_wir": "stimmen",
+        "praes_ihr": "stimmt",
+        "praes_sie_Sie": "stimmen"
+      },
+      "frequenzRang": 490,
+      "quelle": "wiktionary:de:stimmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stimmen‘ (https://de.wiktionary.org/wiki/stimmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.doch",
+      "lemma": "doch",
+      "wortart": "partikel",
+      "frequenzRang": 62,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.also",
+      "lemma": "also",
+      "wortart": "adverb",
+      "frequenzRang": 85,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.genau",
+      "lemma": "genau",
+      "wortart": "adverb",
+      "frequenzRang": 141,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.leider",
+      "lemma": "leider",
+      "wortart": "adverb",
+      "frequenzRang": 298,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.sonst",
+      "lemma": "sonst",
+      "wortart": "adverb",
+      "frequenzRang": 266,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.gleich",
+      "lemma": "gleich",
+      "wortart": "adverb",
+      "frequenzRang": 145,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.fast",
+      "lemma": "fast",
+      "wortart": "adverb",
+      "frequenzRang": 194,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.ausserdem",
+      "lemma": "außerdem",
+      "wortart": "adverb",
+      "frequenzRang": 296,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.gar",
+      "lemma": "gar",
+      "wortart": "partikel",
+      "frequenzRang": 168,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.pro",
+      "lemma": "pro",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "ohne Artikel (zwei Euro pro Kilo)"
+      },
+      "frequenzRang": 333,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.einige",
+      "lemma": "einige",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "endung_en": "einigen",
+        "endung_er": "einiger",
+        "endung_es": "einiges"
+      },
+      "frequenzRang": 213,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.paar",
+      "lemma": "paar",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "unveränderlich, in: ein paar"
+      },
+      "frequenzRang": 197,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.dank",
+      "lemma": "Dank",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A1)",
+        "wendung": "Vielen Dank!"
+      },
+      "frequenzRang": 335,
+      "quelle": "wiktionary:de:Dank",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dank‘ (https://de.wiktionary.org/wiki/Dank), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.moment",
+      "lemma": "Moment",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Momente"
+      },
+      "formen": {
+        "pl": "Momente",
+        "dat_pl": "Momenten"
+      },
+      "frequenzRang": 434,
+      "quelle": "wiktionary:de:Moment",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Moment‘ (https://de.wiktionary.org/wiki/Moment), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.problem",
+      "lemma": "Problem",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Probleme"
+      },
+      "formen": {
+        "pl": "Probleme",
+        "dat_pl": "Problemen"
+      },
+      "frequenzRang": 178,
+      "quelle": "wiktionary:de:Problem",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Problem‘ (https://de.wiktionary.org/wiki/Problem), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.markt",
+      "lemma": "Markt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Märkte"
+      },
+      "formen": {
+        "pl": "Märkte",
+        "dat_pl": "Märkten"
+      },
+      "frequenzRang": 593,
+      "quelle": "wiktionary:de:Markt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Markt‘ (https://de.wiktionary.org/wiki/Markt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.kasse",
+      "lemma": "Kasse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kassen"
+      },
+      "formen": {
+        "pl": "Kassen"
+      },
+      "frequenzRang": 2498,
+      "quelle": "wiktionary:de:Kasse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kasse‘ (https://de.wiktionary.org/wiki/Kasse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.preis",
+      "lemma": "Preis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Preise"
+      },
+      "formen": {
+        "pl": "Preise",
+        "dat_pl": "Preisen"
+      },
+      "frequenzRang": 339,
+      "quelle": "wiktionary:de:Preis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Preis‘ (https://de.wiktionary.org/wiki/Preis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.geld",
+      "lemma": "Geld",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 181,
+      "quelle": "wiktionary:de:Geld",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geld‘ (https://de.wiktionary.org/wiki/Geld), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.euro",
+      "lemma": "Euro",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Euro"
+      },
+      "frequenzRang": 270,
+      "quelle": "wiktionary:de:Euro",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Euro‘ (https://de.wiktionary.org/wiki/Euro), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.tuete",
+      "lemma": "Tüte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tüten"
+      },
+      "formen": {
+        "pl": "Tüten"
+      },
+      "frequenzRang": 4899,
+      "quelle": "wiktionary:de:Tüte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tüte‘ (https://de.wiktionary.org/wiki/Tüte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.stueck",
+      "lemma": "Stück",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Stücke"
+      },
+      "formen": {
+        "pl": "Stücke",
+        "dat_pl": "Stücken"
+      },
+      "frequenzRang": 460,
+      "quelle": "wiktionary:de:Stück",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stück‘ (https://de.wiktionary.org/wiki/Stück), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.kilo",
+      "lemma": "Kilo",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Kilo"
+      },
+      "frequenzRang": 3382,
+      "quelle": "wiktionary:de:Kilo",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kilo‘ (https://de.wiktionary.org/wiki/Kilo), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.gramm",
+      "lemma": "Gramm",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gramm"
+      },
+      "frequenzRang": 4119,
+      "quelle": "wiktionary:de:Gramm",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gramm‘ (https://de.wiktionary.org/wiki/Gramm), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.liter",
+      "lemma": "Liter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Liter"
+      },
+      "formen": {
+        "dat_pl": "Litern"
+      },
+      "frequenzRang": 2249,
+      "quelle": "wiktionary:de:Liter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Liter‘ (https://de.wiktionary.org/wiki/Liter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.flasche",
+      "lemma": "Flasche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Flaschen"
+      },
+      "formen": {
+        "pl": "Flaschen"
+      },
+      "frequenzRang": 1687,
+      "quelle": "wiktionary:de:Flasche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Flasche‘ (https://de.wiktionary.org/wiki/Flasche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.teuer",
+      "lemma": "teuer",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "teure",
+        "endung_en": "teuren",
+        "endung_er": "teurer",
+        "endung_es": "teures",
+        "endung_em": "teurem"
+      },
+      "frequenzRang": 1293,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.obst",
+      "lemma": "Obst",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 4568,
+      "quelle": "wiktionary:de:Obst",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Obst‘ (https://de.wiktionary.org/wiki/Obst), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.gemuese",
+      "lemma": "Gemüse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 2888,
+      "quelle": "wiktionary:de:Gemüse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gemüse‘ (https://de.wiktionary.org/wiki/Gemüse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.apfel",
+      "lemma": "Apfel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Äpfel"
+      },
+      "formen": {
+        "pl": "Äpfel",
+        "dat_pl": "Äpfeln"
+      },
+      "frequenzRang": 3266,
+      "quelle": "wiktionary:de:Apfel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Apfel‘ (https://de.wiktionary.org/wiki/Apfel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.banane",
+      "lemma": "Banane",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bananen"
+      },
+      "formen": {
+        "pl": "Bananen"
+      },
+      "frequenzRang": 5266,
+      "quelle": "wiktionary:de:Banane",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Banane‘ (https://de.wiktionary.org/wiki/Banane), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.tomate",
+      "lemma": "Tomate",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tomaten"
+      },
+      "formen": {
+        "pl": "Tomaten"
+      },
+      "frequenzRang": 4632,
+      "quelle": "wiktionary:de:Tomate",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tomate‘ (https://de.wiktionary.org/wiki/Tomate), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.gurke",
+      "lemma": "Gurke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gurken"
+      },
+      "formen": {
+        "pl": "Gurken"
+      },
+      "frequenzRang": 11201,
+      "quelle": "wiktionary:de:Gurke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gurke‘ (https://de.wiktionary.org/wiki/Gurke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.kartoffel",
+      "lemma": "Kartoffel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kartoffeln"
+      },
+      "formen": {
+        "pl": "Kartoffeln"
+      },
+      "frequenzRang": 3187,
+      "quelle": "wiktionary:de:Kartoffel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kartoffel‘ (https://de.wiktionary.org/wiki/Kartoffel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.karotte",
+      "lemma": "Karotte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Karotten"
+      },
+      "formen": {
+        "pl": "Karotten"
+      },
+      "frequenzRang": 9584,
+      "quelle": "wiktionary:de:Karotte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Karotte‘ (https://de.wiktionary.org/wiki/Karotte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.etwa",
+      "lemma": "etwa",
+      "wortart": "adverb",
+      "frequenzRang": 177,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.sicher",
+      "lemma": "sicher",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "sichere",
+        "endung_en": "sicheren",
+        "endung_er": "sicherer",
+        "endung_es": "sicheres",
+        "endung_em": "sicherem"
+      },
+      "frequenzRang": 183,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.jemand",
+      "lemma": "jemand",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "akk": "jemanden",
+        "dat": "jemandem"
+      },
+      "frequenzRang": 179,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.niemand",
+      "lemma": "niemand",
+      "wortart": "pronomen",
+      "merkmale": {
+        "art": "Indefinitpronomen"
+      },
+      "formen": {
+        "akk": "niemanden",
+        "dat": "niemandem"
+      },
+      "frequenzRang": 334,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.herr",
+      "lemma": "Herr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Herren"
+      },
+      "formen": {
+        "pl": "Herren",
+        "akk_dat_sg": "Herrn"
+      },
+      "frequenzRang": 478,
+      "quelle": "wiktionary:de:Herr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herr‘ (https://de.wiktionary.org/wiki/Herr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.leute",
+      "lemma": "Leute",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "formen": {
+        "dat_pl": "Leuten"
+      },
+      "frequenzRang": 143,
+      "quelle": "wiktionary:de:Leute",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Leute‘ (https://de.wiktionary.org/wiki/Leute), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.starten",
+      "lemma": "starten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein/haben"
+      },
+      "formen": {
+        "infinitiv": "starten",
+        "praes_ich": "starte",
+        "praes_du": "startest",
+        "praes_er_sie_es": "startet",
+        "praes_wir": "starten",
+        "praes_ihr": "startet",
+        "praes_sie_Sie": "starten"
+      },
+      "frequenzRang": 365,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e06.s0001",
+      "text": "Ich gehe zum Markt.",
+      "quelle": "tatoeba:4170590",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4170590 von Wuzzy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0002",
+      "text": "Jeden Samstag ist hier Markt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0003",
+      "text": "Auf dem Markt gibt es Obst und Gemüse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0004",
+      "text": "Was gibt es hier?",
+      "quelle": "tatoeba:12164122",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12164122 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0005",
+      "text": "Hier gibt es Äpfel und Bananen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0006",
+      "text": "Äpfel und Bananen sind Obst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0007",
+      "text": "Gurken und Karotten sind Gemüse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0008",
+      "text": "Sind Tomaten Obst oder Gemüse?",
+      "quelle": "tatoeba:13685830",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13685830 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0009",
+      "text": "Ich esse einen Apfel.",
+      "quelle": "tatoeba:451361",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #451361 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0010",
+      "text": "Ich esse eine Banane.",
+      "quelle": "tatoeba:1812459",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1812459 von pne (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0011",
+      "text": "Ich mag Äpfel.",
+      "quelle": "tatoeba:557212",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #557212 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0012",
+      "text": "Tom mag Karotten.",
+      "quelle": "tatoeba:6619055",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6619055 von Felixjp (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0013",
+      "text": "Was verkauft er?",
+      "quelle": "tatoeba:9943066",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9943066 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0014",
+      "text": "Thomas verkauft Obst und Gemüse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0015",
+      "text": "Gibt es hier Kartoffeln?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0016",
+      "text": "Ja, die Kartoffeln liegen dort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0017",
+      "text": "Ich kaufe eine Gurke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0018",
+      "text": "Elif isst gern Bananen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0019",
+      "text": "Emre kauft Karotten und Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0020",
+      "text": "Das Gemüse ist sehr frisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0021",
+      "text": "Isst du gern Obst?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0022",
+      "text": "Ja, ich esse sehr gern Obst.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0023",
+      "text": "Ich kaufe einen Apfel und eine Banane.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0024",
+      "text": "Die Tomate ist rund und schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0025",
+      "text": "Ich möchte ein Kilo Tomaten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0026",
+      "text": "Ein Kilo Karotten, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0027",
+      "text": "Ich nehme ein halbes Kilo Äpfel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0028",
+      "text": "Ein halbes Kilo hat 500 Gramm.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0029",
+      "text": "Eine Flasche Wasser, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0030",
+      "text": "Opa möchte eine Flasche Ayran.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0031",
+      "text": "Wir brauchen zwei Liter Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0032",
+      "text": "Ein Stück Käse, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0033",
+      "text": "Ich kaufe ein paar Äpfel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0034",
+      "text": "Sechs Äpfel, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0035",
+      "text": "Guten Tag! Was möchten Sie kaufen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0036",
+      "text": "Sonst noch etwas?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0037",
+      "text": "Wie viele Kartoffeln brauchst du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0038",
+      "text": "Ich brauche zwei Kilo Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0039",
+      "text": "Einige Tomaten sind noch klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0040",
+      "text": "Wie viele Bananen möchtest du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0041",
+      "text": "Fünf Bananen, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0042",
+      "text": "Die Tüte ist fast voll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0043",
+      "text": "Wie viel kostet ein Kilo Äpfel?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0044",
+      "text": "Ein Kilo kostet zwei Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0045",
+      "text": "Die Äpfel kosten 2,50 Euro pro Kilo.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0046",
+      "text": "Die Gurken kosten einen Euro pro Stück.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0047",
+      "text": "Der Preis ist gut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0048",
+      "text": "Das ist zu teuer.",
+      "quelle": "tatoeba:344995",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #344995 von lilygilder (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0049",
+      "text": "Das ist mir zu teuer.",
+      "quelle": "tatoeba:4857188",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4857188 von elifcakir (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0050",
+      "text": "Die Tomaten sind heute teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0051",
+      "text": "Wie viel kostet ein halbes Kilo?",
+      "quelle": "tatoeba:603971",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #603971 von BraveSentry (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0052",
+      "text": "Ich habe kein Geld.",
+      "quelle": "tatoeba:349987",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #349987 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0053",
+      "text": "Ich habe genug Geld.",
+      "quelle": "tatoeba:2279952",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2279952 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0054",
+      "text": "Das sind fast zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0055",
+      "text": "Das sind aber teure Tomaten!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0056",
+      "text": "Das macht zwei Euro fünfzig.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0057",
+      "text": "Was kosten die Bananen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0058",
+      "text": "Die Bananen kosten 1,90 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0059",
+      "text": "Wo ist dein Geld?",
+      "quelle": "tatoeba:2262528",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2262528 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0060",
+      "text": "Mein Geld ist in der Tasche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0061",
+      "text": "Ist ein Kilo Bananen teuer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0062",
+      "text": "Wir haben keine Tomaten mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0063",
+      "text": "Ich möchte keine Tüte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0064",
+      "text": "Die Äpfel nehme ich nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0065",
+      "text": "Ich habe gar keinen Hunger.",
+      "quelle": "tatoeba:1324589",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1324589 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0066",
+      "text": "Das ist gar nicht teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0067",
+      "text": "Magst du keine Bananen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0068",
+      "text": "Doch, ich mag Bananen sehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0069",
+      "text": "Ist das nicht zu teuer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0070",
+      "text": "Doch, ein bisschen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0071",
+      "text": "Bist du sicher?",
+      "quelle": "tatoeba:128",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #128 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0072",
+      "text": "Sind Sie sicher?",
+      "quelle": "tatoeba:933998",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #933998 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0073",
+      "text": "Ja, ganz sicher.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0074",
+      "text": "Ist da jemand?",
+      "quelle": "tatoeba:349982",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #349982 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0075",
+      "text": "Da ist niemand.",
+      "quelle": "tatoeba:1844086",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1844086 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0076",
+      "text": "Verkauft hier jemand Ayran?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0077",
+      "text": "Außerdem brauchen wir Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0078",
+      "text": "Die Karotten sind nicht frisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0079",
+      "text": "Ich kaufe nichts.",
+      "quelle": "tatoeba:2974581",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2974581 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0080",
+      "text": "Die Kartoffeln sind nicht teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0081",
+      "text": "Die Kasse ist dort hinten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0082",
+      "text": "Ich bezahle mit Karte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0083",
+      "text": "Ich möchte bitte zahlen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0084",
+      "text": "Das macht sieben Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0085",
+      "text": "Stimmt so!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0086",
+      "text": "Ja, das stimmt.",
+      "quelle": "tatoeba:8465176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8465176 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0087",
+      "text": "Das stimmt nicht.",
+      "quelle": "tatoeba:409218",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #409218 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0088",
+      "text": "Reicht das Geld?",
+      "quelle": "tatoeba:724725",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #724725 von tatomeimei (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0089",
+      "text": "Mein Geld reicht nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0090",
+      "text": "Danke, das reicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0091",
+      "text": "Vielen Dank für die Tüte!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0092",
+      "text": "Brauchen Sie eine Tüte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0093",
+      "text": "Keine Tüte, danke. Ich habe eine Tasche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0094",
+      "text": "Das sind genau zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0095",
+      "text": "Der Herr dort möchte zahlen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0096",
+      "text": "Zahlen Sie bar oder mit Karte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0097",
+      "text": "Wir bezahlen an der Kasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0098",
+      "text": "Zahlst du oder zahle ich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0099",
+      "text": "Heute zahle ich.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0100",
+      "text": "Der Markt startet um sieben Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0101",
+      "text": "Wir starten um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0102",
+      "text": "Zwei Kilo Tomaten, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0103",
+      "text": "Was kostet ein Kilo Kartoffeln?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0104",
+      "text": "Oh, das ist mir zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0105",
+      "text": "Die Liste von Elif und die Preise",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0106",
+      "text": "Wir brauchen zwei Kilo Kartoffeln und sechs Äpfel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0107",
+      "text": "Außerdem brauchen wir eine Gurke und Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0108",
+      "text": "Kartoffeln: 1,50 Euro pro Kilo.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0109",
+      "text": "Äpfel: 3 Euro pro Kilo.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0110",
+      "text": "Gurken: 0,80 Euro pro Stück.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0111",
+      "text": "Milch: 1,20 Euro pro Liter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0112",
+      "text": "Elif braucht drei Kilo Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0113",
+      "text": "Eine Gurke kostet 0,80 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0114",
+      "text": "Ein Kilo Tomaten kostet zwei Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0115",
+      "text": "Wie viel kostet ein Kilo Äpfel am Stand?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0116",
+      "text": "Ein Kilo Äpfel kostet drei Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0117",
+      "text": "Ein Kilo Äpfel kostet 1,50 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0118",
+      "text": "Ein Kilo Äpfel kostet 1,20 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0119",
+      "text": "Oma Sevim und Elif auf dem Markt",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0120",
+      "text": "Es ist Samstag, genau acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0121",
+      "text": "Oma Sevim und Elif gehen zum Markt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0122",
+      "text": "Sie kaufen Obst und Gemüse für die Woche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0123",
+      "text": "Elif, hast du die Liste für den Markt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0124",
+      "text": "Ja, Oma. Wir brauchen Tomaten und Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0125",
+      "text": "Auf dem Markt sind schon viele Leute.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0126",
+      "text": "Guten Morgen! Ein Kilo Tomaten, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0127",
+      "text": "Leider gibt es keine Tomaten mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0128",
+      "text": "Keine Tomaten? Schade!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0129",
+      "text": "Aber die Gurken sind heute sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0130",
+      "text": "Oma, dann nehmen wir doch Gurken!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0131",
+      "text": "Gut. Zwei Gurken und ein Kilo Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0132",
+      "text": "Ja, sechs Äpfel und ein paar Bananen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0133",
+      "text": "Das macht 8,50 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0134",
+      "text": "Elif zahlt mit zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0135",
+      "text": "Danke! Und hier sind 1,50 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0136",
+      "text": "Zu Hause kochen sie mit dem Gemüse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0137",
+      "text": "Was kaufen Oma Sevim und Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0138",
+      "text": "Sie kaufen Obst und Gemüse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0139",
+      "text": "Sie kaufen Brot und Käse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0140",
+      "text": "Sie kaufen eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0141",
+      "text": "Gibt es noch Tomaten?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0142",
+      "text": "Nein, es gibt keine Tomaten mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0143",
+      "text": "Ja, es gibt viele Tomaten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0144",
+      "text": "Ja, die Tomaten kosten zwei Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0145",
+      "text": "Was kaufen sie dann?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0146",
+      "text": "Sie nehmen Gurken und Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0147",
+      "text": "Sie nehmen Tomaten und Karotten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0148",
+      "text": "Sie nehmen nur Bananen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0149",
+      "text": "Wie viel kostet alles?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0150",
+      "text": "Alles kostet 8,50 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0151",
+      "text": "Alles kostet zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0152",
+      "text": "Alles kostet 1,50 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0153",
+      "text": "Ḫālid an der Kasse",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0154",
+      "text": "Guten Tag! Das macht 12,40 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0155",
+      "text": "Moment, bitte. Ich brauche noch eine Tüte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0156",
+      "text": "Eine große oder eine kleine Tüte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0157",
+      "text": "Eine große, bitte. Was kostet sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0158",
+      "text": "Sie kostet 0,50 Euro. Das sind dann 12,90 Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0159",
+      "text": "Ich zahle mit Karte. Geht das?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0160",
+      "text": "Ja, natürlich. Kein Problem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0161",
+      "text": "Vielen Dank und einen schönen Tag!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0162",
+      "text": "Was möchte er noch kaufen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0163",
+      "text": "Er braucht noch eine Tüte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0164",
+      "text": "Er braucht eine Flasche Wasser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0165",
+      "text": "Er braucht zwei Kilo Äpfel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0166",
+      "text": "Wie bezahlt er?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0167",
+      "text": "Er zahlt mit Karte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0168",
+      "text": "Er zahlt bar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0169",
+      "text": "Jeden Samstag gehen wir zum Markt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0170",
+      "text": "Was kaufst du gern auf dem Markt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0171",
+      "text": "Mein Vater kocht mit Kartoffeln und Karotten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0172",
+      "text": "Laylā möchte zwei Flaschen Wasser.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0173",
+      "text": "Die Äpfel sind sehr süß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0174",
+      "text": "Hier ist Ihr Geld.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0175",
+      "text": "Ist das deine Tüte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0176",
+      "text": "Ja, das ist meine Tüte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0177",
+      "text": "Er hat keinen Euro mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0178",
+      "text": "Hast du einen Euro für mich?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0179",
+      "text": "Etwa zwei Kilo, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0180",
+      "text": "Genau, zwei Kilo Kartoffeln.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0181",
+      "text": "Also gut, ich nehme die Gurken.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0182",
+      "text": "Einige Äpfel sind sehr klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0183",
+      "text": "Pro Kilo zahlen Sie drei Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0184",
+      "text": "Die Leute zahlen an der Kasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0185",
+      "text": "Unser Markt ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0186",
+      "text": "Ein Herr verkauft Obst und Brot.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0187",
+      "text": "Ich kaufe gern Äpfel und Bananen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0188",
+      "text": "Ja, hier ist ein Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0189",
+      "text": "Es ist fast acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0190",
+      "text": "Wir sind gleich an der Kasse.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0191",
+      "text": "Wie viele Gurken möchten Sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0192",
+      "text": "Drei Gurken, bitte.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0193",
+      "text": "Ich nehme einen Liter Milch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0194",
+      "text": "Wie viel kosten die Bananen pro Kilo?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0195",
+      "text": "Die Karotten kosten zwei Euro pro Kilo.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0196",
+      "text": "Wir haben leider keinen Saft mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e06.s0197",
+      "text": "Vielen Dank für alles!",
+      "quelle": "tatoeba:12455717",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12455717 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e06.s0198",
+      "text": "Sie gibt Thomas zehn Euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e06.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Obst und Gemüse nennen und sagen, was es auf dem Markt gibt.",
+        "tr": "Meyve ve sebzelerin adını söyleyebilir, pazarda neler olduğunu anlatabilirim.",
+        "ar": "أستطيع أن أسمّي الفواكه والخضروات وأن أقول ماذا يوجد في السوق."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.markt",
+          "ablenker": ["de.a1.e06.kasse", "de.a1.e03.kueche"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.obst",
+          "ablenker": ["de.a1.e06.gemuese", "de.a1.e05.brot"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e06.apfel",
+            "de.a1.e06.banane",
+            "de.a1.e06.tomate",
+            "de.a1.e06.gurke",
+            "de.a1.e06.kartoffel",
+            "de.a1.e06.karotte"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0005",
+          "ablenker": ["de.a1.e06.s0006", "de.a1.e06.s0007"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.kaufen",
+          "ablenker": ["de.a1.e06.verkaufen", "de.a1.e04.gehen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0004"
+            }
+          ],
+          "antwort": "de.a1.e06.s0005",
+          "ablenker": ["de.a1.e06.s0010", "de.a1.e06.s0012"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0003",
+          "wort": 3,
+          "ablenker": ["gebe", "gibst"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0017",
+          "nach": "ziel",
+          "alternativen": ["Eine Gurke kaufe ich."],
+          "ablenker": ["kaufst", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0018",
+          "ablenker": ["de.a1.e06.s0012", "de.a1.e06.s0019"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0015"
+            }
+          ],
+          "antwort": "de.a1.e06.s0016",
+          "ablenker": ["de.a1.e06.s0013", "de.a1.e06.s0011"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0014",
+          "wort": 1,
+          "ablenker": ["verkaufe", "verkaufen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.leute",
+          "ablenker": ["de.a1.e02.familie", "de.a1.e02.kind"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0019",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0021"
+            }
+          ],
+          "antwort": "de.a1.e06.s0022",
+          "ablenker": ["de.a1.e06.s0020", "de.a1.e06.s0008"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e06.leute",
+          "ablenker": ["de.a1.e04.heute"]
+        },
+        {
+          "schluessel": "de.a1.e06.l01.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e06.s0009"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Mengen angeben: ein Kilo, ein Liter, eine Flasche.",
+        "tr": "Miktar belirtebilirim: bir kilo, bir litre, bir şişe.",
+        "ar": "أستطيع أن أذكر الكميات: كيلو واحد، لتر واحد، زجاجة واحدة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.kilo",
+          "ablenker": ["de.a1.e06.liter", "de.a1.e06.flasche"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.flasche",
+          "ablenker": ["de.a1.e06.tuete", "de.a1.e06.stueck"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a04",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.kilo", "de.a1.e06.gramm", "de.a1.e06.liter", "de.a1.e06.flasche", "de.a1.e06.tuete", "de.a1.e06.stueck"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0025",
+          "ablenker": ["de.a1.e06.s0038", "de.a1.e06.s0027"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0026",
+          "wort": 2,
+          "ablenker": ["Karotte"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0035"
+            }
+          ],
+          "antwort": "de.a1.e06.s0025",
+          "ablenker": ["de.a1.e06.s0028", "de.a1.e06.s0007"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.einige",
+          "ablenker": ["de.a1.e05.nichts", "de.a1.e02.alle"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0037",
+          "wort": 2,
+          "ablenker": ["Kartoffel"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0040"
+            }
+          ],
+          "antwort": "de.a1.e06.s0041",
+          "ablenker": ["de.a1.e06.s0029", "de.a1.e06.s0032"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0031",
+          "nach": "ziel",
+          "alternativen": ["Zwei Liter Milch brauchen wir."],
+          "ablenker": ["Flasche", "braucht"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.paar",
+          "ablenker": ["de.a1.e02.alle", "de.a1.e02.viel"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0033",
+          "ablenker": ["de.a1.e06.s0023", "de.a1.e06.s0027"]
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0030",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0102"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann nach dem Preis fragen und Preise verstehen.",
+        "tr": "Fiyat sorabilir ve fiyatları anlayabilirim.",
+        "ar": "أستطيع أن أسأل عن السعر وأن أفهم الأسعار."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.preis",
+          "ablenker": ["de.a1.e06.geld", "de.a1.e06.euro"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.teuer",
+          "ablenker": ["de.a1.e03.klein", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.kosten", "de.a1.e06.preis", "de.a1.e06.geld", "de.a1.e06.teuer", "de.a1.e06.pro", "de.a1.e06.fast"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0045",
+          "ablenker": ["de.a1.e06.s0046", "de.a1.e06.s0058"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0043"
+            }
+          ],
+          "antwort": "de.a1.e06.s0044",
+          "ablenker": ["de.a1.e06.s0060", "de.a1.e06.s0053"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0045",
+          "wort": 5,
+          "ablenker": ["um", "von"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0057"
+            }
+          ],
+          "antwort": "de.a1.e06.s0058",
+          "ablenker": ["de.a1.e06.s0048", "de.a1.e06.s0052"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0054",
+          "nach": "ziel",
+          "alternativen": ["Fast zehn Euro sind das."],
+          "ablenker": ["etwas", "Preis"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.etwa",
+          "ablenker": ["de.a1.e03.nur", "de.a1.e02.auch"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0049",
+          "ablenker": ["de.a1.e06.s0047", "de.a1.e06.s0050", "de.a1.e06.s0080"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0055",
+          "wort": 3,
+          "ablenker": ["teuer", "teurer"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e06.preis",
+          "ablenker": ["de.a1.e05.reis"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0051"
+            }
+          ],
+          "antwort": "de.a1.e06.s0056",
+          "ablenker": ["de.a1.e06.s0059", "de.a1.e06.s0047"]
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0103"
+        },
+        {
+          "schluessel": "de.a1.e06.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0104"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann mit „nicht“ und „kein“ verneinen und höflich ablehnen.",
+        "tr": "„nicht“ ve „kein“ ile olumsuz cümle kurabilir, kibarca reddedebilirim.",
+        "ar": "أستطيع أن أنفي بكلمتي „nicht“ و„kein“ وأن أرفض بلطف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.leider",
+          "ablenker": ["de.a1.e03.aber", "de.a1.e01.bitte"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a02",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e06.leider",
+            "de.a1.e06.doch",
+            "de.a1.e06.sicher",
+            "de.a1.e06.niemand",
+            "de.a1.e06.problem",
+            "de.a1.e06.moment"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0062",
+          "wort": 2,
+          "ablenker": ["nicht", "kein"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0067"
+            }
+          ],
+          "antwort": "de.a1.e06.s0068",
+          "ablenker": ["de.a1.e06.s0048", "de.a1.e06.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0078",
+          "wort": 3,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0064",
+          "nach": "ziel",
+          "alternativen": ["Ich nehme die Äpfel nicht."],
+          "ablenker": ["nichts", "nimmt"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.niemand",
+          "ablenker": ["de.a1.e01.wer", "de.a1.e02.alle"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0074",
+          "ablenker": ["de.a1.e06.s0075", "de.a1.e06.s0071"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0069"
+            }
+          ],
+          "antwort": "de.a1.e06.s0070",
+          "ablenker": ["de.a1.e06.s0065", "de.a1.e06.s0076"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0066",
+          "wort": 2,
+          "ablenker": ["sehr", "zu"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0072"
+            }
+          ],
+          "antwort": "de.a1.e06.s0073",
+          "ablenker": ["de.a1.e06.s0075", "de.a1.e06.s0079"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0077",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e06.doch",
+          "ablenker": ["de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e06.l04.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e06.s0063"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann an der Kasse bezahlen und eine Preisliste lesen.",
+        "tr": "Kasada ödeme yapabilir ve bir fiyat listesini okuyabilirim.",
+        "ar": "أستطيع أن أدفع عند الصندوق وأن أقرأ قائمة أسعار."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.kasse",
+          "ablenker": ["de.a1.e06.markt", "de.a1.e06.tuete"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.bezahlen",
+          "ablenker": ["de.a1.e06.verkaufen", "de.a1.e05.essen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a04",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.zahlen", "de.a1.e06.reichen", "de.a1.e06.stimmen", "de.a1.e06.starten", "de.a1.e06.dank", "de.a1.e06.herr"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0096"
+            }
+          ],
+          "antwort": "de.a1.e06.s0082",
+          "ablenker": ["de.a1.e06.s0081", "de.a1.e06.s0090"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0089",
+          "wort": 0,
+          "ablenker": ["Meine", "Meinen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a07",
+          "typ": "lesen_fragen",
+          "titel": "de.a1.e06.s0105",
+          "absaetze": ["de.a1.e06.s0106", "de.a1.e06.s0107", "de.a1.e06.s0108", "de.a1.e06.s0109", "de.a1.e06.s0110", "de.a1.e06.s0111"],
+          "glossen": ["de.a1.e06.kartoffel", "de.a1.e06.gurke", "de.a1.e06.pro", "de.a1.e06.ausserdem"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e06.s0112",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e06.s0113",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a1.e06.s0114",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a1.e06.s0115",
+              "antwort": "de.a1.e06.s0116",
+              "ablenker": ["de.a1.e06.s0117", "de.a1.e06.s0118"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0092"
+            }
+          ],
+          "antwort": "de.a1.e06.s0093",
+          "ablenker": ["de.a1.e06.s0084", "de.a1.e06.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0097",
+          "nach": "ziel",
+          "alternativen": ["An der Kasse bezahlen wir."],
+          "ablenker": ["bezahlt", "die"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0086",
+          "ablenker": ["de.a1.e06.s0087", "de.a1.e06.s0088", "de.a1.e06.s0085"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.gleich",
+          "ablenker": ["de.a1.e04.gestern", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0101",
+          "wort": 1,
+          "ablenker": ["startet", "starte"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0098"
+            }
+          ],
+          "antwort": "de.a1.e06.s0099",
+          "ablenker": ["de.a1.e06.s0100", "de.a1.e06.s0042"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.genau",
+          "ablenker": ["de.a1.e04.schon", "de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0083"
+        },
+        {
+          "schluessel": "de.a1.e06.l05.a16",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e06.s0094",
+          "alternativen": ["Das sind genau 10 Euro."]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte vom Markt und ein Gespräch an der Kasse verstehen.",
+        "tr": "Pazarla ilgili bir hikâyeyi ve kasada geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن السوق وحوارًا عند الصندوق."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e06.s0119",
+          "zeilen": [
+            {
+              "satz": "de.a1.e06.s0120"
+            },
+            {
+              "satz": "de.a1.e06.s0121"
+            },
+            {
+              "satz": "de.a1.e06.s0122"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0123"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0124"
+            },
+            {
+              "satz": "de.a1.e06.s0125"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0126"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e06.s0127"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0128"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e06.s0129"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0130"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0131"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e06.s0036"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0132"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e06.s0133"
+            },
+            {
+              "satz": "de.a1.e06.s0134"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e06.s0135"
+            },
+            {
+              "satz": "de.a1.e06.s0136"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a1.e06.s0137",
+              "antwort": "de.a1.e06.s0138",
+              "ablenker": ["de.a1.e06.s0139", "de.a1.e06.s0140"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e06.s0141",
+              "antwort": "de.a1.e06.s0142",
+              "ablenker": ["de.a1.e06.s0143", "de.a1.e06.s0144"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a1.e06.s0145",
+              "antwort": "de.a1.e06.s0146",
+              "ablenker": ["de.a1.e06.s0147", "de.a1.e06.s0148"]
+            },
+            {
+              "nach": 14,
+              "frage": "de.a1.e06.s0149",
+              "antwort": "de.a1.e06.s0150",
+              "ablenker": ["de.a1.e06.s0151", "de.a1.e06.s0152"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0127",
+          "wort": 3,
+          "ablenker": ["nicht", "kein"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0121",
+          "nach": "ziel",
+          "alternativen": [
+            "Elif und Oma Sevim gehen zum Markt.",
+            "Zum Markt gehen Oma Sevim und Elif.",
+            "Zum Markt gehen Elif und Oma Sevim."
+          ],
+          "ablenker": ["geht", "im"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0129",
+          "ablenker": ["de.a1.e06.s0127", "de.a1.e06.s0125"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e06.s0153",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0154"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0155"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0156"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0157"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0158"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0159"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0160"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e06.s0161"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e06.s0162",
+              "antwort": "de.a1.e06.s0163",
+              "ablenker": ["de.a1.e06.s0164", "de.a1.e06.s0165"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a1.e06.s0166",
+              "antwort": "de.a1.e06.s0167",
+              "ablenker": ["de.a1.e06.s0168"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0156"
+            }
+          ],
+          "antwort": "de.a1.e06.s0157",
+          "ablenker": ["de.a1.e06.s0160", "de.a1.e06.s0128"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0159",
+          "wort": 1,
+          "ablenker": ["zahlst", "zahlt"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0130",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a09",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0155"
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0154",
+          "ablenker": ["de.a1.e06.s0133", "de.a1.e06.s0084"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0126"
+            }
+          ],
+          "antwort": "de.a1.e06.s0127",
+          "ablenker": ["de.a1.e06.s0124", "de.a1.e06.s0132"]
+        },
+        {
+          "schluessel": "de.a1.e06.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0134",
+          "nach": "ziel",
+          "alternativen": ["Mit zehn Euro zahlt Elif."],
+          "ablenker": ["zahle", "ohne"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Obst, Gemüse, Mengen und Preise sicher verwenden.",
+        "tr": "Meyve, sebze, miktar ve fiyatları rahatça kullanabilirim.",
+        "ar": "أستطيع أن أستخدم أسماء الفواكه والخضروات والكميات والأسعار بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.apfel", "de.a1.e06.kilo", "de.a1.e06.preis", "de.a1.e06.kasse", "de.a1.e06.leider", "de.a1.e06.kaufen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a02",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0169",
+          "ablenker": ["de.a1.e06.s0002", "de.a1.e06.s0001"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0177",
+          "wort": 2,
+          "ablenker": ["keine", "kein"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0171",
+          "nach": "ziel",
+          "alternativen": ["Mein Vater kocht mit Karotten und Kartoffeln."],
+          "ablenker": ["kochst", "Meine"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0175"
+            }
+          ],
+          "antwort": "de.a1.e06.s0176",
+          "ablenker": ["de.a1.e06.s0174", "de.a1.e06.s0091"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a06",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e06.geld",
+          "ablenker": ["de.a1.e05.welt"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.gemuese",
+          "ablenker": ["de.a1.e06.obst", "de.a1.e05.brot"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0185",
+          "wort": 0,
+          "ablenker": ["Unsere", "Unseren"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0173",
+          "ablenker": ["de.a1.e06.s0039", "de.a1.e06.s0182"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0170"
+            }
+          ],
+          "antwort": "de.a1.e06.s0187",
+          "ablenker": ["de.a1.e06.s0189", "de.a1.e06.s0184"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.verkaufen",
+          "ablenker": ["de.a1.e06.bezahlen", "de.a1.e03.suchen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0183",
+          "wort": 2,
+          "ablenker": ["zahlt", "zahlst"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0172",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0178"
+            }
+          ],
+          "antwort": "de.a1.e06.s0188",
+          "ablenker": ["de.a1.e06.s0173", "de.a1.e06.s0024"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0179",
+          "ablenker": ["de.a1.e06.s0180", "de.a1.e06.s0102"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a16",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.einige", "de.a1.e06.jemand", "de.a1.e06.ausserdem", "de.a1.e06.gar", "de.a1.e06.also", "de.a1.e06.gleich"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0186",
+          "wort": 1,
+          "ablenker": ["Herrn", "Herren"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.sonst",
+          "ablenker": ["de.a1.e03.dort", "de.a1.e04.dann"]
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a19",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0170"
+        },
+        {
+          "schluessel": "de.a1.e06.l07.a20",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e06.s0190"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e06.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich auf dem Markt Mengen und Preise verstehe und bezahlen kann.",
+        "tr": "Pazarda miktarları ve fiyatları anladığımı ve ödeme yapabildiğimi gösteririm.",
+        "ar": "أُظهر أنني أفهم الكميات والأسعار في السوق وأستطيع أن أدفع."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e06.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.kartoffel",
+          "ablenker": ["de.a1.e06.tomate", "de.a1.e06.karotte"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e06.teuer",
+          "ablenker": ["de.a1.e03.gross", "de.a1.e03.schoen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e06.banane", "de.a1.e06.gurke", "de.a1.e06.liter", "de.a1.e06.gramm", "de.a1.e06.geben", "de.a1.e06.verkaufen"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e06.s0192",
+          "ablenker": ["de.a1.e06.s0041", "de.a1.e06.s0034"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0196",
+          "wort": 3,
+          "ablenker": ["keine", "kein"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0193",
+          "wort": 2,
+          "ablenker": ["ein", "eine"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0195",
+          "nach": "ziel",
+          "alternativen": ["Pro Kilo kosten die Karotten zwei Euro.", "Zwei Euro pro Kilo kosten die Karotten."],
+          "ablenker": ["kostet", "Karotte"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0191"
+            }
+          ],
+          "antwort": "de.a1.e06.s0192",
+          "ablenker": ["de.a1.e06.s0197", "de.a1.e06.s0189"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0194",
+          "ablenker": ["de.a1.e06.s0058", "de.a1.e06.s0061"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e06.gar",
+          "ablenker": ["de.a1.e02.jahr"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e06.s0181",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e06.s0092"
+            }
+          ],
+          "antwort": "de.a1.e06.s0063",
+          "ablenker": ["de.a1.e06.s0198", "de.a1.e06.s0016"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e06.s0198",
+          "wort": 1,
+          "ablenker": ["gebe", "gibst"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e06.problem",
+          "ablenker": ["de.a1.e06.moment", "de.a1.e02.zahl"]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e06.s0192",
+          "alternativen": ["3 Gurken, bitte."]
+        },
+        {
+          "schluessel": "de.a1.e06.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e06.s0193"
+        }
+      ]
+    }
+  ]
+}
