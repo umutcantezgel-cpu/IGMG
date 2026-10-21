@@ -1,5 +1,10 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 19:45 UTC – L7 fertig:** L7-01 Spielelemente (41 Abzeichen, Tagesziel XP/Lektionen, Serie mit Pausetagen
+  und Ruhezeit, Abschluss als eigener Chunk) und L7-02 Gruppen/Lehrkräfte/Eltern (Bestenliste ab 16 mit Zustimmung, Zuweisungen,
+  Schüler-Start; Schalter in Produktion aus), beide Gegenprüfung Runde 2 frei; gemergt (665f599), ADR 0043 fortgeschrieben,
+  `main` = 3b868df. Nachprüfung `scratchpad/tor-l7.sh` läuft einmal. Läuft weiter: A1 `wf_12f884de-7f4`. Danach: L8-Teile, die
+  nicht von Inhalten abhängen (Sicherheit, Leistung, Datenfluss), sonst A1 abschließen → L3-08 → Tor L3 → L4.
 - **Stand 21.10.2026 18:15 UTC:** Nach dem Limit (≈ 15:30–17:00) fortgesetzt. A1: Entwurf tr/de 12/12, ar e01–e07 (e08 als
   Teildatei); Lektorat tr 12/12, de e01–e08; Übersetzung tr e01/e02. Neuer Lauf `wf_12f884de-7f4` (`entworfen`, `lektoriert`,
   `uebersetzt`; Ergebnisse `scratchpad/l3/a1/ergebnisse-lauf3.json`). L7 ZWISCHENSTÄNDE 80f2147 (B) und 71848a8 (C), Fortsetzung
