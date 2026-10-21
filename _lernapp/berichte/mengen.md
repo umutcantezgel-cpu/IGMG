@@ -36,7 +36,8 @@ Status der Spracheinheiten: keine.
 Zählweise: Einheiten und Stationen ohne Schrift-Vorkurse (`nurFuerAusgang`); Stationen = Lektionen aller Arten;
 Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `geschichte`; Lesetexte = Aufgaben
 `lesen_fragen`; Sprechen und Schreiben = Lektionen dieser Art bzw. Aufgaben `sprechen`/`schreiben` in anderen Lektionen.
-Die Abnahme Z-L01 bewertet nur Einheiten, Stationen, Lemmata, Sätze (je Zielsprache) und die Übersetzungen je Richtung.
+Die Abnahme Z-L01 bewertet Einheiten, Stationen, Lemmata, Sätze (je Zielsprache), die Übersetzungen je Richtung, die
+Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache stehen zum Vergleich mit PLAN §5.1 dabei.
 
 ### Bewertung Z-L01 je Zielsprache (Σ A1–C1, erfüllt ab Ziel − 5 %)
 
@@ -58,6 +59,29 @@ Die Abnahme Z-L01 bewertet nur Einheiten, Stationen, Lemmata, Sätze (je Zielspr
 | tr-aus-ar | 0 | 0 | 0 | 0 | 0 / 0 (–) | 0 / 0 (–) |
 
 Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; ≈ 300 Tipps.
+
+### Einstufungsbank und Tipp-Karten (Z-L01, PLAN §5.1)
+
+| Ziel | A1 | A2 | B1 | B2 | C1 | Σ (Ziel ≈ 400) | vorhanden |
+|---|---:|---:|---:|---:|---:|---|---|
+| de | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
+| tr | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
+| ar | 0 | 0 | 0 | 0 | 0 | 0 (0 %) – offen | nein |
+
+Einstufungsbank = Aufgaben der Typen aus `EINSTUFUNG_TYPEN` in den Lektionen der Einheiten (ohne Vorkurse), aus denen
+der Einstufungstest auf dem Gerät wählt; Hörtypen zählen hier ohne Prüfung des Audios. „vorhanden“: jede Stufe mit
+Einheiten bietet mindestens zwei Kandidaten.
+
+| Richtung | Tipp-Karten (Ziel ≈ 300 je Ausgangssprache) |
+|---|---|
+| tr-aus-de | 0 (0 %) – offen |
+| ar-aus-de | 0 (0 %) – offen |
+| de-aus-tr | 0 (0 %) – offen |
+| ar-aus-tr | 0 (0 %) – offen |
+| de-aus-ar | 0 (0 %) – offen |
+| tr-aus-ar | 0 (0 %) – offen |
+
+Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Ausgangssprache; Seite „Tipps“ je Einheit).
 
 ### Schrift-Vorkurse
 
@@ -115,7 +139,8 @@ Status der Spracheinheiten: entwurf 42.
 Zählweise: Einheiten und Stationen ohne Schrift-Vorkurse (`nurFuerAusgang`); Stationen = Lektionen aller Arten;
 Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `geschichte`; Lesetexte = Aufgaben
 `lesen_fragen`; Sprechen und Schreiben = Lektionen dieser Art bzw. Aufgaben `sprechen`/`schreiben` in anderen Lektionen.
-Die Abnahme Z-L01 bewertet nur Einheiten, Stationen, Lemmata, Sätze (je Zielsprache) und die Übersetzungen je Richtung.
+Die Abnahme Z-L01 bewertet Einheiten, Stationen, Lemmata, Sätze (je Zielsprache), die Übersetzungen je Richtung, die
+Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache stehen zum Vergleich mit PLAN §5.1 dabei.
 
 ### Bewertung Z-L01 je Zielsprache (Σ A1–C1, erfüllt ab Ziel − 5 %)
 
@@ -137,6 +162,29 @@ Die Abnahme Z-L01 bewertet nur Einheiten, Stationen, Lemmata, Sätze (je Zielspr
 | tr-aus-ar | 3 | 516 | 797 | 24 | 433 / 2.534 (17,1 %) | 83 / 588 (14,1 %) |
 
 Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; ≈ 300 Tipps.
+
+### Einstufungsbank und Tipp-Karten (Z-L01, PLAN §5.1)
+
+| Ziel | A1 | A2 | B1 | B2 | C1 | Σ (Ziel ≈ 400) | vorhanden |
+|---|---:|---:|---:|---:|---:|---|---|
+| de | 1.009 | 0 | 0 | 0 | 0 | 1.009 (252,3 %) – erfüllt | ja |
+| tr | 897 | 0 | 0 | 0 | 0 | 897 (224,3 %) – erfüllt | ja |
+| ar | 988 | 0 | 0 | 0 | 0 | 988 (247 %) – erfüllt | ja |
+
+Einstufungsbank = Aufgaben der Typen aus `EINSTUFUNG_TYPEN` in den Lektionen der Einheiten (ohne Vorkurse), aus denen
+der Einstufungstest auf dem Gerät wählt; Hörtypen zählen hier ohne Prüfung des Audios. „vorhanden“: jede Stufe mit
+Einheiten bietet mindestens zwei Kandidaten.
+
+| Richtung | Tipp-Karten (Ziel ≈ 300 je Ausgangssprache) |
+|---|---|
+| tr-aus-de | 23 (7,7 %) – offen |
+| ar-aus-de | 20 (6,7 %) – offen |
+| de-aus-tr | 53 (17,7 %) – offen |
+| ar-aus-tr | 20 (6,7 %) – offen |
+| de-aus-ar | 65 (21,7 %) – offen |
+| tr-aus-ar | 24 (8 %) – offen |
+
+Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Ausgangssprache; Seite „Tipps“ je Einheit).
 
 ### Schrift-Vorkurse
 

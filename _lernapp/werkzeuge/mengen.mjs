@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
  * Mengenbericht der Lern-App (L8-03, ABNAHME Z-L01/Z-L02/Z-L03, PLAN §5): zählt Einheiten, Stationen, Lemmata, Sätze,
- * Aufgaben und Übersetzungen je Kurs aus `web/inhalte/lernapp/**` und stellt sie den Zielen aus PLAN §5.1 gegenüber
- * (erfüllt, wenn Ist ≥ Ziel − 5 %). Reproduzierbar: liest nur Dateien (Arbeitsbaum) oder einen Git-Stand (`--rev`), ohne
+ * Aufgaben, Übersetzungen, Schrift-Vorkurse, Einstufungsbank und Tipp-Karten je Kurs aus `web/inhalte/lernapp/**` und stellt
+ * sie den Zielen aus PLAN §5.1 gegenüber (erfüllt, wenn Ist ≥ Ziel − 5 %). Reproduzierbar: liest nur Dateien (Arbeitsbaum) oder einen Git-Stand (`--rev`), ohne
  * Datenbank, ohne Netz, ohne Zeitstempel des Laufs; gleicher Stand → gleicher Bericht.
  *
  * Aufruf (im Repository):
@@ -30,6 +30,27 @@ const ZIEL = {
   c1: { einheiten: 14, stationen: 112, lemmata: 2000, saetze: 8000, dialoge: 28, lesetexte: 56, sprechen: 28, schreiben: 28 },
 };
 const ZIEL_AUFGABEN_JE_SPRACHE = 8000;
+/** PLAN §5.1: je Zielsprache ≈ 400 Aufgaben Einstufungsbank, je Richtung (Ausgangssprache) ≈ 300 Tipp-Karten */
+const ZIEL_EINSTUFUNG_JE_SPRACHE = 400;
+const ZIEL_TIPPS_JE_RICHTUNG = 300;
+/**
+ * Typen, aus denen der Einstufungstest seine Aufgaben nimmt (`EINSTUFUNG_TYPEN` in `web/src/lib/lernapp/engine/einstufung.ts`;
+ * keine eigene Bank, die Kandidaten kommen aus den Lektionen der Einheiten). Der Unit-Test `lernapp/mengen-bericht` hält
+ * beide Listen gleich.
+ */
+const EINSTUFUNG_TYPEN = [
+  'auswahl',
+  'bild_wort',
+  'wortbank',
+  'luecke',
+  'satzbau',
+  'frei',
+  'formen',
+  'harakat',
+  'hoeren_waehlen',
+  'hoeren_schreiben',
+  'minimalpaare',
+];
 const ZIEL_WISSEN = { einheiten: 28, lektionen: 170, aussagen: 1400, belege: 2000, quizfragen: 1700 };
 const ZIEL_KORAN = { einheiten: 10, lektionen: 60 };
 const SPRACHEN = ['de', 'tr', 'ar'];
@@ -96,6 +117,8 @@ function zaehle(q) {
   const sprache = Object.fromEntries(SPRACHEN.map((s) => [s, Object.fromEntries(STUFEN.map((st) => [st, leer()]))]));
   const aufgaben = Object.fromEntries(SPRACHEN.map((s) => [s, 0]));
   const typen = Object.fromEntries(SPRACHEN.map((s) => [s, {}]));
+  /** Kandidaten der Einstufung je Zielsprache und Stufe (ohne Vorkurse) */
+  const einstufung = Object.fromEntries(SPRACHEN.map((s) => [s, Object.fromEntries(STUFEN.map((st) => [st, 0]))]));
   const status = {};
   const herkunft = { saetze: {}, lemmata: {} };
   const vorkurse = [];
@@ -147,6 +170,7 @@ function zaehle(q) {
         for (const a of l.aufgaben ?? []) {
           aufgaben[s]++;
           typen[s][a.typ] = (typen[s][a.typ] ?? 0) + 1;
+          if (EINSTUFUNG_TYPEN.includes(a.typ)) einstufung[s][st]++;
           if (a.typ === 'dialog' || a.typ === 'geschichte') z.dialoge++;
           if (a.typ === 'lesen_fragen') z.lesetexte++;
           if (a.typ === 'sprechen' && l.art !== 'sprechen') z.sprechen++;
@@ -201,7 +225,7 @@ function zaehle(q) {
     }
     abdeckung[name] = { saetze, saetzeUe, lemmata, lemmataUe };
   }
-  return { sprache, aufgaben, typen, status, herkunft, vorkurse, richtung, abdeckung, wissen, koran, fehler };
+  return { sprache, aufgaben, typen, einstufung, status, herkunft, vorkurse, richtung, abdeckung, wissen, koran, fehler };
 }
 
 // ---------------------------------------------------------------- Bericht
@@ -233,7 +257,8 @@ function bericht(q, m) {
   z.push('Zählweise: Einheiten und Stationen ohne Schrift-Vorkurse (`nurFuerAusgang`); Stationen = Lektionen aller Arten;');
   z.push('Dialoge + Geschichten = Aufgaben `dialog` (je eine kurze Wechselrede) und `geschichte`; Lesetexte = Aufgaben');
   z.push('`lesen_fragen`; Sprechen und Schreiben = Lektionen dieser Art bzw. Aufgaben `sprechen`/`schreiben` in anderen Lektionen.');
-  z.push('Die Abnahme Z-L01 bewertet nur Einheiten, Stationen, Lemmata, Sätze (je Zielsprache) und die Übersetzungen je Richtung.', '');
+  z.push('Die Abnahme Z-L01 bewertet Einheiten, Stationen, Lemmata, Sätze (je Zielsprache), die Übersetzungen je Richtung, die');
+  z.push('Schrift-Vorkurse und die Einstufungsbank; die Tipp-Karten je Ausgangssprache stehen zum Vergleich mit PLAN §5.1 dabei.', '');
 
   z.push('### Bewertung Z-L01 je Zielsprache (Σ A1–C1, erfüllt ab Ziel − 5 %)', '');
   z.push('| Ziel | Einheiten | Stationen | Lemmata | Sätze | Aufgaben (Ziel ≈ 8.000) |');
@@ -259,6 +284,30 @@ function bericht(q, m) {
     );
   }
   z.push('', 'Ziel (PLAN §5.1, Z-L01): je Richtung Übersetzungen für 100 % der Zielsätze; ≈ 3 Alternativen je Satz; ≈ 300 Tipps.', '');
+
+  z.push('### Einstufungsbank und Tipp-Karten (Z-L01, PLAN §5.1)', '');
+  z.push(`| Ziel | ${STUFEN.map((st) => st.toUpperCase()).join(' | ')} | Σ (Ziel ≈ ${zahl(ZIEL_EINSTUFUNG_JE_SPRACHE)}) | vorhanden |`);
+  z.push(`|---|${STUFEN.map(() => '---:').join('|')}|---|---|`);
+  for (const s of SPRACHEN) {
+    const je = m.einstufung[s];
+    const summe = STUFEN.reduce((n, st) => n + je[st], 0);
+    // „vorhanden“: jede Stufe mit Einheiten bietet mindestens zwei Kandidaten (EINSTUFUNG_MINDESTENS)
+    const mitEinheiten = STUFEN.filter((st) => m.sprache[s][st].einheiten > 0);
+    const vorhanden = mitEinheiten.length > 0 && mitEinheiten.every((st) => je[st] >= 2);
+    z.push(
+      `| ${s} | ${STUFEN.map((st) => zahl(je[st])).join(' | ')} | ${zahl(summe)} (${anteil(summe, ZIEL_EINSTUFUNG_JE_SPRACHE)}) – ${bewertung(summe, ZIEL_EINSTUFUNG_JE_SPRACHE)} | ${vorhanden ? 'ja' : 'nein'} |`,
+    );
+  }
+  z.push('');
+  z.push('Einstufungsbank = Aufgaben der Typen aus `EINSTUFUNG_TYPEN` in den Lektionen der Einheiten (ohne Vorkurse), aus denen');
+  z.push('der Einstufungstest auf dem Gerät wählt; Hörtypen zählen hier ohne Prüfung des Audios. „vorhanden“: jede Stufe mit');
+  z.push('Einheiten bietet mindestens zwei Kandidaten.', '');
+  z.push(`| Richtung | Tipp-Karten (Ziel ≈ ${zahl(ZIEL_TIPPS_JE_RICHTUNG)} je Ausgangssprache) |`, '|---|---|');
+  for (const r of RICHTUNGEN) {
+    const n = m.richtung[r].tipps;
+    z.push(`| ${r} | ${zahl(n)} (${anteil(n, ZIEL_TIPPS_JE_RICHTUNG)}) – ${bewertung(n, ZIEL_TIPPS_JE_RICHTUNG)} |`);
+  }
+  z.push('', 'Tipp-Karten = Tipps der Übersetzungsdateien je Richtung (kontrastiv, in der Ausgangssprache; Seite „Tipps“ je Einheit).', '');
 
   z.push('### Schrift-Vorkurse', '');
   if (m.vorkurse.length) {
