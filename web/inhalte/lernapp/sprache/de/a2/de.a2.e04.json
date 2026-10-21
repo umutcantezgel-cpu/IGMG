@@ -1,0 +1,4054 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e04",
+    "reihenfolge": 5,
+    "thema": {
+      "de": "Wir ziehen um",
+      "tr": "Taşınıyoruz",
+      "ar": "ننتقل إلى بيت جديد"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, wo Möbel stehen und wohin sie kommen sollen.",
+        "tr": "Mobilyaların nerede durduğunu ve nereye konması gerektiğini söyleyebilirim.",
+        "ar": "أستطيع أن أقول أين توجد قطع الأثاث وأين يجب أن نضعها."
+      },
+      {
+        "de": "Ich kann beim Einräumen Anweisungen geben und verstehen.",
+        "tr": "Eşyaları yerleştirirken talimat verebilir ve talimatları anlayabilirim.",
+        "ar": "أستطيع أن أعطي التعليمات وأفهمها عند ترتيب الأغراض."
+      }
+    ],
+    "symbol": "truck",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e04.innen",
+      "lemma": "innen",
+      "wortart": "adverb",
+      "frequenzRang": 1163,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.aussen",
+      "lemma": "außen",
+      "wortart": "adverb",
+      "frequenzRang": 1295,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.vorne",
+      "lemma": "vorne",
+      "wortart": "adverb",
+      "frequenzRang": 1632,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.hinten",
+      "lemma": "hinten",
+      "wortart": "adverb",
+      "frequenzRang": 1141,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.unten",
+      "lemma": "unten",
+      "wortart": "adverb",
+      "frequenzRang": 708,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.umziehen",
+      "lemma": "umziehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "um"
+      },
+      "formen": {
+        "infinitiv": "umziehen",
+        "verbzusatz": "um",
+        "praes_ich": "ziehe",
+        "praes_du": "ziehst",
+        "praes_er_sie_es": "zieht",
+        "praes_wir": "ziehen",
+        "praes_ihr": "zieht",
+        "praes_sie_Sie": "ziehen",
+        "partizip_2": "umgezogen"
+      },
+      "frequenzRang": 4645,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.einziehen",
+      "lemma": "einziehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einziehen",
+        "verbzusatz": "ein",
+        "praes_ich": "ziehe",
+        "praes_du": "ziehst",
+        "praes_er_sie_es": "zieht",
+        "praes_wir": "ziehen",
+        "praes_ihr": "zieht",
+        "praes_sie_Sie": "ziehen",
+        "partizip_2": "eingezogen"
+      },
+      "frequenzRang": 3172,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.ausziehen",
+      "lemma": "ausziehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "aus"
+      },
+      "formen": {
+        "infinitiv": "ausziehen",
+        "verbzusatz": "aus",
+        "praes_ich": "ziehe",
+        "praes_du": "ziehst",
+        "praes_er_sie_es": "zieht",
+        "praes_wir": "ziehen",
+        "praes_ihr": "zieht",
+        "praes_sie_Sie": "ziehen",
+        "partizip_2": "ausgezogen"
+      },
+      "frequenzRang": 3955,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.aufbauen",
+      "lemma": "aufbauen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf"
+      },
+      "formen": {
+        "infinitiv": "aufbauen",
+        "verbzusatz": "auf",
+        "praes_ich": "baue",
+        "praes_du": "baust",
+        "praes_er_sie_es": "baut",
+        "praes_wir": "bauen",
+        "praes_ihr": "baut",
+        "praes_sie_Sie": "bauen",
+        "imp_du": "bau",
+        "imp_ihr": "baut",
+        "partizip_2": "aufgebaut"
+      },
+      "frequenzRang": 1338,
+      "quelle": "wiktionary:de:aufbauen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufbauen‘ (https://de.wiktionary.org/wiki/aufbauen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.einrichten",
+      "lemma": "einrichten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einrichten",
+        "verbzusatz": "ein",
+        "praes_ich": "richte",
+        "praes_du": "richtest",
+        "praes_er_sie_es": "richtet",
+        "praes_wir": "richten",
+        "praes_ihr": "richtet",
+        "praes_sie_Sie": "richten",
+        "partizip_2": "eingerichtet"
+      },
+      "frequenzRang": 1889,
+      "quelle": "wiktionary:de:einrichten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚einrichten‘ (https://de.wiktionary.org/wiki/einrichten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.haengen",
+      "lemma": "hängen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "hinweis": "hängen (Wo? gehangen) und hängen (Wohin? gehängt)"
+      },
+      "formen": {
+        "infinitiv": "hängen",
+        "praes_ich": "hänge",
+        "praes_du": "hängst",
+        "praes_er_sie_es": "hängt",
+        "praes_wir": "hängen",
+        "praes_ihr": "hängt",
+        "praes_sie_Sie": "hängen",
+        "partizip_2": "gehängt",
+        "partizip_2b": "gehangen"
+      },
+      "frequenzRang": 609,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.oeffnen",
+      "lemma": "öffnen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "öffnen",
+        "praes_ich": "öffne",
+        "praes_du": "öffnest",
+        "praes_er_sie_es": "öffnet",
+        "praes_wir": "öffnen",
+        "praes_ihr": "öffnet",
+        "praes_sie_Sie": "öffnen",
+        "imp_du": "öffne",
+        "imp_ihr": "öffnet",
+        "partizip_2": "geöffnet"
+      },
+      "frequenzRang": 663,
+      "quelle": "wiktionary:de:öffnen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚öffnen‘ (https://de.wiktionary.org/wiki/öffnen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.putzen",
+      "lemma": "putzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "putzen",
+        "praes_ich": "putze",
+        "praes_du": "putzt",
+        "praes_er_sie_es": "putzt",
+        "praes_wir": "putzen",
+        "praes_ihr": "putzt",
+        "praes_sie_Sie": "putzen",
+        "imp_du": "putz",
+        "imp_ihr": "putzt",
+        "partizip_2": "geputzt"
+      },
+      "frequenzRang": 3805,
+      "quelle": "wiktionary:de:putzen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚putzen‘ (https://de.wiktionary.org/wiki/putzen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.aufraeumen",
+      "lemma": "aufräumen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "auf"
+      },
+      "formen": {
+        "infinitiv": "aufräumen",
+        "verbzusatz": "auf",
+        "praes_ich": "räume",
+        "praes_du": "räumst",
+        "praes_er_sie_es": "räumt",
+        "praes_wir": "räumen",
+        "praes_ihr": "räumt",
+        "praes_sie_Sie": "räumen",
+        "imp_du": "räum",
+        "imp_ihr": "räumt",
+        "partizip_2": "aufgeräumt"
+      },
+      "frequenzRang": 5605,
+      "quelle": "wiktionary:de:aufräumen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚aufräumen‘ (https://de.wiktionary.org/wiki/aufräumen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.waschen",
+      "lemma": "waschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "waschen",
+        "praes_ich": "wasche",
+        "praes_du": "wäschst",
+        "praes_er_sie_es": "wäscht",
+        "praes_wir": "waschen",
+        "praes_ihr": "wascht",
+        "praes_sie_Sie": "waschen",
+        "imp_du": "wasch",
+        "imp_ihr": "wascht",
+        "partizip_2": "gewaschen"
+      },
+      "frequenzRang": 2344,
+      "quelle": "wiktionary:de:waschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚waschen‘ (https://de.wiktionary.org/wiki/waschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.umzug",
+      "lemma": "Umzug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Umzüge"
+      },
+      "formen": {
+        "pl": "Umzüge",
+        "dat_pl": "Umzügen"
+      },
+      "frequenzRang": 3231,
+      "quelle": "wiktionary:de:Umzug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Umzug‘ (https://de.wiktionary.org/wiki/Umzug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.karton",
+      "lemma": "Karton",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kartons"
+      },
+      "formen": {
+        "pl": "Kartons"
+      },
+      "frequenzRang": 6026,
+      "quelle": "wiktionary:de:Karton",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Karton‘ (https://de.wiktionary.org/wiki/Karton), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.kiste",
+      "lemma": "Kiste",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kisten"
+      },
+      "formen": {
+        "pl": "Kisten"
+      },
+      "frequenzRang": 3709,
+      "quelle": "wiktionary:de:Kiste",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kiste‘ (https://de.wiktionary.org/wiki/Kiste), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.moebel",
+      "lemma": "Möbel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Möbel"
+      },
+      "formen": {
+        "dat_pl": "Möbeln"
+      },
+      "frequenzRang": 3991,
+      "quelle": "wiktionary:de:Möbel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Möbel‘ (https://de.wiktionary.org/wiki/Möbel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.regal",
+      "lemma": "Regal",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Regale"
+      },
+      "formen": {
+        "pl": "Regale",
+        "dat_pl": "Regalen"
+      },
+      "frequenzRang": 4374,
+      "quelle": "wiktionary:de:Regal",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Regal‘ (https://de.wiktionary.org/wiki/Regal), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.sofa",
+      "lemma": "Sofa",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Sofas"
+      },
+      "formen": {
+        "pl": "Sofas"
+      },
+      "frequenzRang": 3697,
+      "quelle": "wiktionary:de:Sofa",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Sofa‘ (https://de.wiktionary.org/wiki/Sofa), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.teppich",
+      "lemma": "Teppich",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Teppiche"
+      },
+      "formen": {
+        "pl": "Teppiche",
+        "dat_pl": "Teppichen"
+      },
+      "frequenzRang": 3608,
+      "quelle": "wiktionary:de:Teppich",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Teppich‘ (https://de.wiktionary.org/wiki/Teppich), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.spiegel",
+      "lemma": "Spiegel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Spiegel"
+      },
+      "formen": {
+        "dat_pl": "Spiegeln"
+      },
+      "frequenzRang": 1247,
+      "quelle": "wiktionary:de:Spiegel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Spiegel‘ (https://de.wiktionary.org/wiki/Spiegel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.kuehlschrank",
+      "lemma": "Kühlschrank",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kühlschränke"
+      },
+      "formen": {
+        "pl": "Kühlschränke",
+        "dat_pl": "Kühlschränken"
+      },
+      "frequenzRang": 3368,
+      "quelle": "wiktionary:de:Kühlschrank",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kühlschrank‘ (https://de.wiktionary.org/wiki/Kühlschrank), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.herd",
+      "lemma": "Herd",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Herde"
+      },
+      "formen": {
+        "pl": "Herde",
+        "dat_pl": "Herden"
+      },
+      "frequenzRang": 3979,
+      "quelle": "wiktionary:de:Herd",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Herd‘ (https://de.wiktionary.org/wiki/Herd), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.wand",
+      "lemma": "Wand",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wände"
+      },
+      "formen": {
+        "pl": "Wände",
+        "dat_pl": "Wänden"
+      },
+      "frequenzRang": 2765,
+      "quelle": "wiktionary:de:Wand",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wand‘ (https://de.wiktionary.org/wiki/Wand), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.boden",
+      "lemma": "Boden",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Böden"
+      },
+      "formen": {
+        "pl": "Böden"
+      },
+      "frequenzRang": 642,
+      "quelle": "wiktionary:de:Boden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Boden‘ (https://de.wiktionary.org/wiki/Boden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.decke",
+      "lemma": "Decke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Decken"
+      },
+      "formen": {
+        "pl": "Decken"
+      },
+      "frequenzRang": 3534,
+      "quelle": "wiktionary:de:Decke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Decke‘ (https://de.wiktionary.org/wiki/Decke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.ecke",
+      "lemma": "Ecke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ecken"
+      },
+      "formen": {
+        "pl": "Ecken"
+      },
+      "frequenzRang": 1167,
+      "quelle": "wiktionary:de:Ecke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ecke‘ (https://de.wiktionary.org/wiki/Ecke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.tuer",
+      "lemma": "Tür",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Türen"
+      },
+      "formen": {
+        "pl": "Türen"
+      },
+      "frequenzRang": 692,
+      "quelle": "wiktionary:de:Tür",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tür‘ (https://de.wiktionary.org/wiki/Tür), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.fenster",
+      "lemma": "Fenster",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Fenster"
+      },
+      "formen": {
+        "dat_pl": "Fenstern"
+      },
+      "frequenzRang": 942,
+      "quelle": "wiktionary:de:Fenster",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fenster‘ (https://de.wiktionary.org/wiki/Fenster), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.treppe",
+      "lemma": "Treppe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Treppen"
+      },
+      "formen": {
+        "pl": "Treppen"
+      },
+      "frequenzRang": 2911,
+      "quelle": "wiktionary:de:Treppe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Treppe‘ (https://de.wiktionary.org/wiki/Treppe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.keller",
+      "lemma": "Keller",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Keller"
+      },
+      "formen": {
+        "dat_pl": "Kellern"
+      },
+      "frequenzRang": 1721,
+      "quelle": "wiktionary:de:Keller",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Keller‘ (https://de.wiktionary.org/wiki/Keller), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.stock",
+      "lemma": "Stock",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stockwerke"
+      },
+      "formen": {
+        "pl": "Stockwerke",
+        "dat_pl": "Stockwerken"
+      },
+      "frequenzRang": 2618,
+      "quelle": "wiktionary:de:Stock",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stock‘ (https://de.wiktionary.org/wiki/Stock), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.aufzug",
+      "lemma": "Aufzug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Aufzüge"
+      },
+      "formen": {
+        "pl": "Aufzüge",
+        "dat_pl": "Aufzügen"
+      },
+      "frequenzRang": 5461,
+      "quelle": "wiktionary:de:Aufzug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Aufzug‘ (https://de.wiktionary.org/wiki/Aufzug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.dach",
+      "lemma": "Dach",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Dächer"
+      },
+      "formen": {
+        "pl": "Dächer",
+        "dat_pl": "Dächern"
+      },
+      "frequenzRang": 1514,
+      "quelle": "wiktionary:de:Dach",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dach‘ (https://de.wiktionary.org/wiki/Dach), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.schluessel",
+      "lemma": "Schlüssel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schlüssel"
+      },
+      "formen": {
+        "dat_pl": "Schlüsseln"
+      },
+      "frequenzRang": 2458,
+      "quelle": "wiktionary:de:Schlüssel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schlüssel‘ (https://de.wiktionary.org/wiki/Schlüssel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.miete",
+      "lemma": "Miete",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mieten"
+      },
+      "formen": {
+        "pl": "Mieten"
+      },
+      "frequenzRang": 2804,
+      "quelle": "wiktionary:de:Miete",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Miete‘ (https://de.wiktionary.org/wiki/Miete), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.vermieter",
+      "lemma": "Vermieter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Vermieter",
+        "weiblich": "Vermieterin"
+      },
+      "formen": {
+        "dat_pl": "Vermietern",
+        "weiblich": "Vermieterin",
+        "weiblich_pl": "Vermieterinnen"
+      },
+      "frequenzRang": 11294,
+      "quelle": "wiktionary:de:Vermieter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vermieter‘ (https://de.wiktionary.org/wiki/Vermieter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.anzeige",
+      "lemma": "Anzeige",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Anzeigen"
+      },
+      "formen": {
+        "pl": "Anzeigen"
+      },
+      "frequenzRang": 1854,
+      "quelle": "wiktionary:de:Anzeige",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anzeige‘ (https://de.wiktionary.org/wiki/Anzeige), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.lage",
+      "lemma": "Lage",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lagen"
+      },
+      "formen": {
+        "pl": "Lagen"
+      },
+      "frequenzRang": 472,
+      "quelle": "wiktionary:de:Lage",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lage‘ (https://de.wiktionary.org/wiki/Lage), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.naehe",
+      "lemma": "Nähe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 676,
+      "quelle": "wiktionary:de:Nähe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nähe‘ (https://de.wiktionary.org/wiki/Nähe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.schlafzimmer",
+      "lemma": "Schlafzimmer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Schlafzimmer"
+      },
+      "formen": {
+        "dat_pl": "Schlafzimmern"
+      },
+      "frequenzRang": 3668,
+      "quelle": "wiktionary:de:Schlafzimmer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schlafzimmer‘ (https://de.wiktionary.org/wiki/Schlafzimmer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.wohnzimmer",
+      "lemma": "Wohnzimmer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Wohnzimmer"
+      },
+      "formen": {
+        "dat_pl": "Wohnzimmern"
+      },
+      "frequenzRang": 3607,
+      "quelle": "wiktionary:de:Wohnzimmer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wohnzimmer‘ (https://de.wiktionary.org/wiki/Wohnzimmer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.flur",
+      "lemma": "Flur",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Flure"
+      },
+      "formen": {
+        "pl": "Flure",
+        "dat_pl": "Fluren"
+      },
+      "frequenzRang": 4150,
+      "quelle": "wiktionary:de:Flur",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Flur‘ (https://de.wiktionary.org/wiki/Flur), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.toilette",
+      "lemma": "Toilette",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Toiletten"
+      },
+      "formen": {
+        "pl": "Toiletten"
+      },
+      "frequenzRang": 3047,
+      "quelle": "wiktionary:de:Toilette",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Toilette‘ (https://de.wiktionary.org/wiki/Toilette), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.dusche",
+      "lemma": "Dusche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Duschen"
+      },
+      "formen": {
+        "pl": "Duschen"
+      },
+      "frequenzRang": 3459,
+      "quelle": "wiktionary:de:Dusche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Dusche‘ (https://de.wiktionary.org/wiki/Dusche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.heizung",
+      "lemma": "Heizung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Heizungen"
+      },
+      "formen": {
+        "pl": "Heizungen"
+      },
+      "frequenzRang": 4643,
+      "quelle": "wiktionary:de:Heizung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Heizung‘ (https://de.wiktionary.org/wiki/Heizung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.strom",
+      "lemma": "Strom",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1312,
+      "quelle": "wiktionary:de:Strom",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Strom‘ (https://de.wiktionary.org/wiki/Strom), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.licht",
+      "lemma": "Licht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Lichter"
+      },
+      "formen": {
+        "pl": "Lichter",
+        "dat_pl": "Lichtern"
+      },
+      "frequenzRang": 634,
+      "quelle": "wiktionary:de:Licht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Licht‘ (https://de.wiktionary.org/wiki/Licht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.werkzeug",
+      "lemma": "Werkzeug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Werkzeuge"
+      },
+      "formen": {
+        "pl": "Werkzeuge",
+        "dat_pl": "Werkzeugen"
+      },
+      "frequenzRang": 2900,
+      "quelle": "wiktionary:de:Werkzeug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Werkzeug‘ (https://de.wiktionary.org/wiki/Werkzeug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.staubsauger",
+      "lemma": "Staubsauger",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Staubsauger"
+      },
+      "formen": {
+        "dat_pl": "Staubsaugern"
+      },
+      "frequenzRang": 9545,
+      "quelle": "wiktionary:de:Staubsauger",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Staubsauger‘ (https://de.wiktionary.org/wiki/Staubsauger), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.waschmaschine",
+      "lemma": "Waschmaschine",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Waschmaschinen"
+      },
+      "formen": {
+        "pl": "Waschmaschinen"
+      },
+      "frequenzRang": 6563,
+      "quelle": "wiktionary:de:Waschmaschine",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Waschmaschine‘ (https://de.wiktionary.org/wiki/Waschmaschine), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.muell",
+      "lemma": "Müll",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2513,
+      "quelle": "wiktionary:de:Müll",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Müll‘ (https://de.wiktionary.org/wiki/Müll), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.ordnung",
+      "lemma": "Ordnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 848,
+      "quelle": "wiktionary:de:Ordnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ordnung‘ (https://de.wiktionary.org/wiki/Ordnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.vorsicht",
+      "lemma": "Vorsicht",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 2614,
+      "quelle": "wiktionary:de:Vorsicht",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Vorsicht‘ (https://de.wiktionary.org/wiki/Vorsicht), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.quadratmeter",
+      "lemma": "Quadratmeter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Quadratmeter"
+      },
+      "formen": {
+        "dat_pl": "Quadratmetern"
+      },
+      "frequenzRang": 5436,
+      "quelle": "wiktionary:de:Quadratmeter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Quadratmeter‘ (https://de.wiktionary.org/wiki/Quadratmeter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.bequem",
+      "lemma": "bequem",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "bequeme",
+        "endung_en": "bequemen",
+        "endung_er": "bequemer",
+        "endung_es": "bequemes",
+        "endung_em": "bequemem",
+        "komparativ": "bequemer",
+        "superlativ": "bequemsten",
+        "superlativ_e": "bequemste"
+      },
+      "frequenzRang": 2736,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.gemuetlich",
+      "lemma": "gemütlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "gemütliche",
+        "endung_en": "gemütlichen",
+        "endung_er": "gemütlicher",
+        "endung_es": "gemütliches",
+        "endung_em": "gemütlichem",
+        "komparativ": "gemütlicher",
+        "superlativ": "gemütlichsten",
+        "superlativ_e": "gemütlichste"
+      },
+      "frequenzRang": 2757,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.sauber",
+      "lemma": "sauber",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "saubere",
+        "endung_en": "sauberen",
+        "endung_er": "sauberer",
+        "endung_es": "sauberes",
+        "endung_em": "sauberem",
+        "komparativ": "sauberer",
+        "superlativ": "saubersten",
+        "superlativ_e": "sauberste"
+      },
+      "frequenzRang": 1554,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.schmutzig",
+      "lemma": "schmutzig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schmutzige",
+        "endung_en": "schmutzigen",
+        "endung_er": "schmutziger",
+        "endung_es": "schmutziges",
+        "endung_em": "schmutzigem",
+        "komparativ": "schmutziger",
+        "superlativ": "schmutzigsten",
+        "superlativ_e": "schmutzigste"
+      },
+      "frequenzRang": 4098,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.ordentlich",
+      "lemma": "ordentlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "ordentliche",
+        "endung_en": "ordentlichen",
+        "endung_er": "ordentlicher",
+        "endung_es": "ordentliches",
+        "endung_em": "ordentlichem",
+        "komparativ": "ordentlicher",
+        "superlativ": "ordentlichsten",
+        "superlativ_e": "ordentlichste"
+      },
+      "frequenzRang": 1300,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.fertig",
+      "lemma": "fertig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "fertige",
+        "endung_en": "fertigen",
+        "endung_er": "fertiger",
+        "endung_es": "fertiges",
+        "endung_em": "fertigem"
+      },
+      "frequenzRang": 651,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.breit",
+      "lemma": "breit",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "breite",
+        "endung_en": "breiten",
+        "endung_er": "breiter",
+        "endung_es": "breites",
+        "endung_em": "breitem",
+        "komparativ": "breiter",
+        "superlativ": "breitesten",
+        "superlativ_e": "breiteste"
+      },
+      "frequenzRang": 751,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.leer",
+      "lemma": "leer",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "leere",
+        "endung_en": "leeren",
+        "endung_er": "leerer",
+        "endung_es": "leeres",
+        "endung_em": "leerem",
+        "komparativ": "leerer",
+        "superlativ": "leersten",
+        "superlativ_e": "leerste"
+      },
+      "frequenzRang": 1114,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e04.s0001",
+      "text": "Ich lese jeden Tag die Anzeigen im Internet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0002",
+      "text": "Ich habe eine gute Anzeige gefunden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0003",
+      "text": "Guten Tag! Ich habe Ihre Anzeige gelesen. Ist die Wohnung noch frei?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0004",
+      "text": "Ja, sie ist noch frei. Die Miete ist 650 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0005",
+      "text": "Wie viele Quadratmeter hat die Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0006",
+      "text": "Sie hat 65 Quadratmeter und liegt im ersten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0007",
+      "text": "Unsere Wohnung hat 75 Quadratmeter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0008",
+      "text": "Die Miete ist sehr hoch.",
+      "quelle": "tatoeba:1023139",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1023139 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0009",
+      "text": "Die Mieten sind hier hoch.",
+      "quelle": "tatoeba:5934894",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5934894 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0010",
+      "text": "Was kostet die Miete pro Monat?",
+      "quelle": "tatoeba:1097409",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1097409 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0011",
+      "text": "Wie hoch ist die Miete für diese Wohnung?",
+      "quelle": "tatoeba:5934892",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5934892 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0012",
+      "text": "Die Miete ist 800 Euro im Monat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0013",
+      "text": "Strom und Heizung sind nicht in der Miete.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0014",
+      "text": "Den Strom bezahlen wir extra.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0015",
+      "text": "Die Heizung funktioniert nicht, das Wohnzimmer ist kalt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0016",
+      "text": "Die Vermieterin heißt Frau Hartmann.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0017",
+      "text": "Der Vermieter zeigt uns die Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0018",
+      "text": "Diese Wohnung ist im zweiten Stock.",
+      "quelle": "tatoeba:13667829",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13667829 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0019",
+      "text": "In welchem Stock wohnt ihr?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0020",
+      "text": "Wir wohnen im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0021",
+      "text": "Das Haus hat keinen Aufzug.",
+      "quelle": "tatoeba:12171845",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12171845 von mhr (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0022",
+      "text": "Der Aufzug funktioniert heute nicht.",
+      "quelle": "tatoeba:466530",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #466530 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0023",
+      "text": "Wir fahren mit dem Aufzug nach oben.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0024",
+      "text": "Opa geht langsam die Treppe hoch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0025",
+      "text": "Zu jeder Wohnung gehört ein Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0026",
+      "text": "Unter dem Dach ist ein kleines Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0027",
+      "text": "Dieses Haus hat ein rotes Dach.",
+      "quelle": "tatoeba:7997436",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7997436 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0028",
+      "text": "Alle haben ein eigenes Schlafzimmer.",
+      "quelle": "tatoeba:5984028",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5984028 von arved (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0029",
+      "text": "Das Schlafzimmer liegt hinten links.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0030",
+      "text": "Der Flur ist ein bisschen dunkel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0031",
+      "text": "Wo ist die Toilette?",
+      "quelle": "tatoeba:928",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #928 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0032",
+      "text": "Neben dem Bad gibt es noch eine Toilette.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0033",
+      "text": "Im Bad gibt es eine Dusche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0034",
+      "text": "Die Lage ist sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0035",
+      "text": "Wie ist die Lage?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0036",
+      "text": "Die Wohnung liegt in der Nähe vom Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0037",
+      "text": "Die Schule ist ganz in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0038",
+      "text": "Außen ist das Haus alt, aber innen ist alles neu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0039",
+      "text": "Unsere Wohnung liegt im zweiten Stock und hat einen Balkon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0040",
+      "text": "Am Samstag ziehen wir um.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0041",
+      "text": "Wann ist der Umzug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0042",
+      "text": "Der Umzug beginnt am Samstag um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0043",
+      "text": "Kannst du uns beim Umzug helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0044",
+      "text": "Klar, ich helfe euch gern beim Umzug!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0045",
+      "text": "Danke! Wir brauchen auch noch Kartons.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0046",
+      "text": "Kein Problem, ich habe viele leere Kartons.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0047",
+      "text": "Wir sind im Mai nach Frankfurt umgezogen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0048",
+      "text": "Seid ihr schon umgezogen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0049",
+      "text": "Wir ziehen aus der alten Wohnung aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0050",
+      "text": "Die alte Familie ist schon ausgezogen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0051",
+      "text": "Am Montag ziehen wir in die neue Wohnung ein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0052",
+      "text": "Wann seid ihr eingezogen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0053",
+      "text": "Wir sind vor zwei Wochen eingezogen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0054",
+      "text": "Wir können schon am Freitag einziehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0055",
+      "text": "Für den Umzug brauchen wir viele Kartons.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0056",
+      "text": "Der Karton ist noch leer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0057",
+      "text": "Vorsicht, die Kiste ist schwer!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0058",
+      "text": "In dieser Kiste sind nur Bücher.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0059",
+      "text": "Yazan trägt die Kartons zum Auto.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0060",
+      "text": "Trag die Kiste bitte in die Küche!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0061",
+      "text": "Tragt die Kartons bitte nach oben!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0062",
+      "text": "Öffne bitte die Tür!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0063",
+      "text": "Kannst du mir bitte die Tür öffnen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0064",
+      "text": "Die Tür ist auf.",
+      "quelle": "tatoeba:1345391",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1345391 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0065",
+      "text": "Das Fenster ist offen.",
+      "quelle": "tatoeba:2278835",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2278835 von Guust (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0066",
+      "text": "Die alten Möbel nehmen wir nicht mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0067",
+      "text": "Der Schrank ist zu breit für die Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0068",
+      "text": "Die Vermieterin gibt uns die Schlüssel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0069",
+      "text": "Hast du den Schlüssel?",
+      "quelle": "tatoeba:8286401",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8286401 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0070",
+      "text": "Ich habe keinen Schlüssel.",
+      "quelle": "tatoeba:3567774",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3567774 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0071",
+      "text": "Hast du Werkzeug für das Regal?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0072",
+      "text": "Das Werkzeug ist in der blauen Kiste.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0073",
+      "text": "Heute bauen wir das Regal auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0074",
+      "text": "Papa baut das Bett im Schlafzimmer auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0075",
+      "text": "Hast du den Schrank schon aufgebaut?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0076",
+      "text": "Ja, der Schrank ist fertig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0077",
+      "text": "Bist du fertig?",
+      "quelle": "tatoeba:734551",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #734551 von Serienchiller (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0078",
+      "text": "Die alte Wohnung ist jetzt leer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0079",
+      "text": "Trag die Kiste bitte vorsichtig nach oben!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0080",
+      "text": "Stell das Sofa an die Wand!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0081",
+      "text": "Wir stellen das Sofa vor das Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0082",
+      "text": "Stell das Regal bitte in die Ecke!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0083",
+      "text": "Leg den Teppich auf den Boden!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0084",
+      "text": "Wir legen den Teppich unter den Tisch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0085",
+      "text": "Ich hänge den Spiegel an die Wand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0086",
+      "text": "Wohin hängst du den Spiegel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0087",
+      "text": "Häng den Spiegel bitte neben die Tür!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0088",
+      "text": "Hängt den Spiegel ins Bad!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0089",
+      "text": "Wir hängen die Lampe an die Decke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0090",
+      "text": "Das Bild hängen wir über das Sofa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0091",
+      "text": "Stell die Bücher bitte ins Regal!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0092",
+      "text": "Stellt die leeren Kartons in den Keller!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0093",
+      "text": "Wohin kommt der Kühlschrank?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0094",
+      "text": "Der Kühlschrank kommt neben den Herd.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0095",
+      "text": "Stell den Tisch in die Mitte vom Wohnzimmer!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0096",
+      "text": "Das Sofa kommt nach vorne, das Regal nach hinten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0097",
+      "text": "Das Regal stellen wir hinten an die Wand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0098",
+      "text": "Laylā richtet ihr Zimmer ein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0099",
+      "text": "Habt ihr die Wohnung schon eingerichtet?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0100",
+      "text": "Ich habe alles eingerichtet.",
+      "quelle": "tatoeba:4548915",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4548915 von feyzo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0101",
+      "text": "Stell die Lampe bitte neben das Sofa!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0102",
+      "text": "Das Sofa steht an der Wand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0103",
+      "text": "Das Regal steht in der Ecke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0104",
+      "text": "Der Teppich liegt auf dem Boden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0105",
+      "text": "Der Spiegel hängt neben der Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0106",
+      "text": "Die Lampe hängt an der Decke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0107",
+      "text": "Der Kühlschrank steht neben dem Herd.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0108",
+      "text": "Die Milch steht im Kühlschrank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0109",
+      "text": "Unser Kühlschrank ist fast leer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0110",
+      "text": "Die Schuhe stehen im Flur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0111",
+      "text": "Die Waschmaschine steht unten im Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0112",
+      "text": "Herr Neumann wohnt unten im ersten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0113",
+      "text": "Mach bitte das Licht an!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0114",
+      "text": "Im Keller gibt es kein Licht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0115",
+      "text": "Wir haben keinen Strom.",
+      "quelle": "tatoeba:8332651",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8332651 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0116",
+      "text": "Innen ist die Wohnung sehr hell.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0117",
+      "text": "Von außen sieht das Haus alt aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0118",
+      "text": "Das Sofa ist sehr bequem.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0119",
+      "text": "Dieser Stuhl ist nicht bequem.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0120",
+      "text": "Unser Wohnzimmer ist klein, aber gemütlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0121",
+      "text": "Dieser Raum ist gemütlich.",
+      "quelle": "tatoeba:2509722",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2509722 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0122",
+      "text": "Ich habe auf dem Sofa geschlafen.",
+      "quelle": "tatoeba:11485405",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11485405 von maaster (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0123",
+      "text": "Unter dem Tisch liegt ein schöner Teppich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0124",
+      "text": "Mama, wo ist meine Jacke?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0125",
+      "text": "Sie hängt im Flur, neben dem Spiegel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0126",
+      "text": "In meinem Zimmer steht das Bett links am Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0127",
+      "text": "Über dem Bett hängt ein Regal mit Büchern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0128",
+      "text": "Wer putzt heute das Bad?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0129",
+      "text": "Ich putze heute die Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0130",
+      "text": "Räum bitte dein Zimmer auf!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0131",
+      "text": "Ich habe gestern den Keller aufgeräumt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0132",
+      "text": "Wasch dir bitte die Hände!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0133",
+      "text": "Der Staubsauger steht im Flur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0134",
+      "text": "Gern! Ich hole schnell den Staubsauger.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0135",
+      "text": "Wer bringt heute den Müll raus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0136",
+      "text": "Yazan bringt jeden Abend den Müll raus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0137",
+      "text": "In der Küche ist alles in Ordnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0138",
+      "text": "Ist alles in Ordnung?",
+      "quelle": "tatoeba:1288258",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288258 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0139",
+      "text": "Für Mama ist Ordnung sehr wichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0140",
+      "text": "Dein Zimmer ist sehr ordentlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0141",
+      "text": "Dieser Tisch ist sauber.",
+      "quelle": "tatoeba:431958",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #431958 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0142",
+      "text": "Der Boden ist schmutzig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0143",
+      "text": "Dieses Zimmer ist schmutzig.",
+      "quelle": "tatoeba:7903123",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7903123 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e04.s0144",
+      "text": "Jetzt ist die Küche wieder sauber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0145",
+      "text": "Kannst du mir beim Putzen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0146",
+      "text": "Vielen Dank für deine Hilfe beim Umzug!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0147",
+      "text": "Ich danke Ihnen für das Werkzeug!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0148",
+      "text": "Bei uns putzen alle zusammen: Papa, Mama und die Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0149",
+      "text": "Papa putzt die Küche, Mama räumt den Keller auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0150",
+      "text": "Kannst du mir bitte beim Aufräumen helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0151",
+      "text": "Anzeige: Helle Wohnung mit drei Zimmern",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0152",
+      "text": "Die Wohnung liegt im zweiten Stock und hat 78 Quadratmeter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0153",
+      "text": "Das Haus hat einen Aufzug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0154",
+      "text": "Vom Flur geht man links in die Küche und ins Bad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0155",
+      "text": "Das Bad hat eine Dusche und ein Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0156",
+      "text": "Rechts liegen das Wohnzimmer und zwei Schlafzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0157",
+      "text": "Vom Wohnzimmer geht man auf einen kleinen Balkon.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0158",
+      "text": "Im Keller ist Platz für eine Waschmaschine.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0159",
+      "text": "Die Miete ist 720 Euro, Strom und Heizung kommen dazu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0160",
+      "text": "Die Lage ist gut: Schule und Bahnhof sind in der Nähe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0161",
+      "text": "Sie können im März einziehen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0162",
+      "text": "Bitte rufen Sie die Vermieterin, Frau Hartmann, an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0163",
+      "text": "Die Wohnung hat zwei Schlafzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0164",
+      "text": "In der Küche gibt es einen neuen Herd.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0165",
+      "text": "Wo ist Platz für eine Waschmaschine?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0166",
+      "text": "Im Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0167",
+      "text": "Unter dem Dach.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0168",
+      "text": "Was kostet extra?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0169",
+      "text": "Strom und Heizung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0170",
+      "text": "Der Aufzug und der Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0171",
+      "text": "Die Dusche und die Toilette.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0172",
+      "text": "Schreib eine Nachricht an eine Freundin. Wie sieht dein neues Zimmer aus? Wo stehen die Möbel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0173",
+      "text": "Hallo Elif! Wir sind umgezogen. Mein neues Zimmer ist klein, aber gemütlich. Das Bett steht am Fenster. Rechts steht mein Regal mit den Büchern. An der Wand hängt ein großer Spiegel. Auf dem Boden liegt ein blauer Teppich. Komm mich bald besuchen! Deine Laylā",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0174",
+      "text": "Die Möbel kommen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0175",
+      "text": "Heute zieht Familie an-Naǧǧār in die neue Wohnung ein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0176",
+      "text": "Die Wohnung liegt im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0177",
+      "text": "Leider hat das Haus keinen Aufzug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0178",
+      "text": "Um neun Uhr kommt ein Wagen mit den Möbeln.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0179",
+      "text": "Ḫālid und Yazan tragen viele Kartons die Treppe hoch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0180",
+      "text": "Ranā steht schon oben in der Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0181",
+      "text": "Ranā, wohin kommt der Karton mit den Büchern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0182",
+      "text": "Ins Wohnzimmer, Ḫālid. Stell ihn neben das Regal!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0183",
+      "text": "Und wohin kommt der große Schrank?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0184",
+      "text": "Der Schrank kommt ins Schlafzimmer, links an die Wand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0185",
+      "text": "Aber der Schrank ist noch nicht fertig, er kommt in Teilen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0186",
+      "text": "Wir müssen ihn erst aufbauen. Wo ist unser Werkzeug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0187",
+      "text": "Oh nein! Das Werkzeug liegt noch im alten Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0188",
+      "text": "Da kommt ein Mann die Treppe hoch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0189",
+      "text": "Es ist Herr Neumann, er wohnt unten im ersten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0190",
+      "text": "Guten Tag! Ich bin Herr Neumann von unten. Brauchen Sie Hilfe?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0191",
+      "text": "Guten Tag! Ja, wir brauchen Werkzeug für den Schrank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0192",
+      "text": "Kein Problem. Ich hole sofort mein Werkzeug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0193",
+      "text": "Zwei Stunden später steht der Schrank im Schlafzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0194",
+      "text": "Vielen Dank für das Werkzeug, Herr Neumann!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0195",
+      "text": "Gern! Und viel Spaß beim Einrichten!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0196",
+      "text": "Wo liegt die neue Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0197",
+      "text": "Im dritten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0198",
+      "text": "Im zweiten Stock.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0199",
+      "text": "Unten im Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0200",
+      "text": "Wohin kommt der Schrank?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0201",
+      "text": "Ins Schlafzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0202",
+      "text": "Ins Wohnzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0203",
+      "text": "In den Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0204",
+      "text": "Wo ist das Werkzeug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0205",
+      "text": "Im alten Keller.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0206",
+      "text": "Im Schlafzimmer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0207",
+      "text": "Im Flur.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0208",
+      "text": "Was bringt Herr Neumann?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0209",
+      "text": "Sein Werkzeug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0210",
+      "text": "Einen Spiegel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0211",
+      "text": "Ein Sofa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0212",
+      "text": "Stell den Karton mit den Büchern bitte ins Wohnzimmer!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0213",
+      "text": "Laylā richtet ihr neues Zimmer ein",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0214",
+      "text": "Elif hilft ihrer Freundin Laylā beim Einrichten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0215",
+      "text": "Das neue Zimmer ist noch fast leer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0216",
+      "text": "Wo soll das Regal stehen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0217",
+      "text": "Rechts neben dem Fenster. Dort ist genug Platz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0218",
+      "text": "Gut. Und wohin kommt der Teppich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0219",
+      "text": "Leg ihn bitte vor das Bett!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0220",
+      "text": "Und die Bücher? Sie sind noch in der Kiste.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0221",
+      "text": "Leg die Bücher erst mal auf den Tisch! Später kommen sie ins Regal.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0222",
+      "text": "Wohin hängen wir den Spiegel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0223",
+      "text": "Häng ihn an die Wand neben die Tür!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0224",
+      "text": "So, fertig! Dein Zimmer ist jetzt richtig gemütlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0225",
+      "text": "Vielen Dank, Elif! Allein bin ich nie so schnell fertig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0226",
+      "text": "Gern! Morgen hängen wir noch die Bilder auf.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0227",
+      "text": "Wo steht das Regal?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0228",
+      "text": "Rechts neben dem Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0229",
+      "text": "Links neben der Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0230",
+      "text": "Hinten in der Ecke.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0231",
+      "text": "Wohin legt Elif die Bücher jetzt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0232",
+      "text": "Auf den Tisch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0233",
+      "text": "Unter das Bett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0234",
+      "text": "Wohin kommt der Spiegel?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0235",
+      "text": "An die Wand neben die Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0236",
+      "text": "Auf den Boden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0237",
+      "text": "An die Decke über dem Bett.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0238",
+      "text": "Nach drei Wochen ist die Wohnung fertig eingerichtet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0239",
+      "text": "Der Teppich ist wieder sauber.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0240",
+      "text": "Öffnen Sie bitte das Fenster!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0241",
+      "text": "Im Keller stehen noch zehn Kisten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0242",
+      "text": "Wo soll der Spiegel hängen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0243",
+      "text": "Im Bad, links neben dem Fenster.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0244",
+      "text": "Wohin soll ich die Kiste stellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0245",
+      "text": "Stell sie bitte in den Keller!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0246",
+      "text": "Im Flur geht das Licht nicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0247",
+      "text": "Beim Umzug helfen auch die Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0248",
+      "text": "Häng das Bild bitte über das Sofa!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0249",
+      "text": "Stell das Sofa bitte vor das Fenster!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0250",
+      "text": "Die Lampe steht neben dem Sofa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0251",
+      "text": "Wohin sollen wir die Kartons stellen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0252",
+      "text": "Stellt sie bitte in den Flur!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0253",
+      "text": "Danke für eure Hilfe beim Umzug!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0254",
+      "text": "Der Teppich liegt im Wohnzimmer vor dem Sofa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0255",
+      "text": "Im Bad hängt ein großer Spiegel an der Wand.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0256",
+      "text": "Die Bücher stehen im Regal.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e04.s0257",
+      "text": "Mein Schrank steht rechts neben der Tür.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e04.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Wohnungsanzeige verstehen und nach Zimmern, Stock und Miete fragen.",
+        "tr": "Bir ev ilanını anlayabilir; odaları, katı ve kirayı sorabilirim.",
+        "ar": "أستطيع أن أفهم إعلانًا عن شقة وأن أسأل عن الغرف والطابق والإيجار."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.anzeige",
+          "ablenker": ["de.a2.e04.miete", "de.a2.e04.vermieter"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e04.wohnzimmer",
+            "de.a2.e04.schlafzimmer",
+            "de.a2.e04.flur",
+            "de.a2.e04.keller",
+            "de.a2.e04.dach",
+            "de.a2.e04.treppe"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.aufzug",
+          "ablenker": ["de.a2.e04.treppe", "de.a2.e04.stock"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0020",
+          "ablenker": ["de.a2.e04.s0018", "de.a2.e04.s0019"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0003"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0004"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0005"
+            }
+          ],
+          "antwort": "de.a2.e04.s0006",
+          "ablenker": ["de.a2.e04.s0015", "de.a2.e04.s0029", "de.a2.e04.s0017"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0036",
+          "wort": 6,
+          "ablenker": ["den", "zum"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.heizung",
+          "ablenker": ["de.a2.e04.strom", "de.a2.e04.dusche"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0013",
+          "nach": "ziel",
+          "alternativen": ["Heizung und Strom sind nicht in der Miete."],
+          "ablenker": ["kein", "Licht"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0034",
+          "ablenker": ["de.a2.e04.s0035", "de.a2.e04.s0008"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0023",
+          "wort": 3,
+          "ablenker": ["den", "die"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0006",
+          "alternativen": ["Sie liegt im ersten Stock und hat 65 Quadratmeter."]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0037",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Schule ist in der Nähe.",
+            "Die Schule liegt ganz in der Nähe.",
+            "Die Schule liegt in der Nähe.",
+            "Ganz in der Nähe ist die Schule.",
+            "Die Schule ist ganz nah.",
+            "Die Schule ist sehr nah."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0007",
+          "alternativen": ["Unsere Wohnung hat fünfundsiebzig Quadratmeter."]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a15",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e04.keller",
+          "ablenker": ["de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.a2.e04.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0039"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über einen Umzug sprechen und beim Tragen Anweisungen geben.",
+        "tr": "Taşınma hakkında konuşabilir ve eşya taşırken talimat verebilirim.",
+        "ar": "أستطيع أن أتحدث عن الانتقال إلى بيت جديد وأن أعطي تعليمات عند حمل الأغراض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.umzug",
+          "ablenker": ["de.a2.e04.schluessel", "de.a2.e04.werkzeug"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e04.karton",
+            "de.a2.e04.moebel",
+            "de.a2.e04.schluessel",
+            "de.a2.e04.werkzeug",
+            "de.a2.e04.leer",
+            "de.a2.e04.breit"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.einziehen",
+          "ablenker": ["de.a2.e04.ausziehen", "de.a2.e04.aufbauen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0052",
+          "ablenker": ["de.a2.e04.s0048", "de.a2.e04.s0041"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0043"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0044"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0045"
+            }
+          ],
+          "antwort": "de.a2.e04.s0046",
+          "ablenker": ["de.a2.e04.s0064", "de.a2.e04.s0022", "de.a2.e04.s0069"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0060",
+          "wort": 0,
+          "ablenker": ["Trägst", "Tragen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.vorsicht",
+          "ablenker": ["de.a1.e11.hilfe", "de.a1.e11.angst"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0051",
+          "nach": "ziel",
+          "alternativen": ["Wir ziehen am Montag in die neue Wohnung ein.", "In die neue Wohnung ziehen wir am Montag ein."],
+          "ablenker": ["aus", "der"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0053",
+          "wort": 1,
+          "ablenker": ["haben", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0057",
+          "ablenker": ["de.a2.e04.s0056", "de.a2.e04.s0058"]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0066",
+          "alternativen": ["Wir nehmen die alten Möbel nicht mit."]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0068",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Vermieterin gibt uns den Schlüssel.",
+            "Der Vermieter gibt uns die Schlüssel.",
+            "Der Vermieter gibt uns den Schlüssel.",
+            "Die Schlüssel gibt uns die Vermieterin.",
+            "Den Schlüssel gibt uns die Vermieterin.",
+            "Die Schlüssel gibt uns der Vermieter.",
+            "Den Schlüssel gibt uns der Vermieter."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0050"
+        },
+        {
+          "schluessel": "de.a2.e04.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0079"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wohin Möbel und Sachen kommen sollen.",
+        "tr": "Mobilyaların ve eşyaların nereye konacağını söyleyebilirim.",
+        "ar": "أستطيع أن أقول أين يجب أن نضع الأثاث والأغراض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.regal",
+          "ablenker": ["de.a2.e04.sofa", "de.a2.e04.teppich"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e04.spiegel", "de.a2.e04.wand", "de.a2.e04.boden", "de.a2.e04.ecke", "de.a2.e04.vorne", "de.a2.e04.hinten"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.haengen",
+          "ablenker": ["de.a1.e03.stellen", "de.a1.e09.halten"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0080",
+          "wort": 4,
+          "ablenker": ["der", "den"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0085",
+          "ablenker": ["de.a2.e04.s0089", "de.a2.e04.s0090"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0093"
+            }
+          ],
+          "antwort": "de.a2.e04.s0094",
+          "ablenker": ["de.a2.e04.s0108", "de.a2.e04.s0014", "de.a2.e04.s0100"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0083",
+          "nach": "ziel",
+          "ablenker": ["dem", "liegt"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0085",
+          "wort": 5,
+          "ablenker": ["der", "dem"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.einrichten",
+          "ablenker": ["de.a2.e04.aufbauen", "de.a1.e08.basteln"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0097",
+          "alternativen": ["Wir stellen das Regal hinten an die Wand.", "Hinten an die Wand stellen wir das Regal."]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0096",
+          "ablenker": ["de.a2.e04.s0095", "de.a2.e04.s0081"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0091",
+          "nach": "ziel",
+          "alternativen": [
+            "Stell bitte die Bücher ins Regal!",
+            "Bitte stell die Bücher ins Regal!",
+            "Stell die Bücher ins Regal!",
+            "Stelle die Bücher bitte ins Regal!",
+            "Stelle bitte die Bücher ins Regal!",
+            "Stell die Bücher bitte in das Regal!",
+            "Leg die Bücher bitte ins Regal!",
+            "Leg bitte die Bücher ins Regal!",
+            "Bitte leg die Bücher ins Regal!",
+            "Leg die Bücher ins Regal!",
+            "Lege die Bücher bitte ins Regal!"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e04.wand",
+          "ablenker": ["de.a1.e11.hand"]
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0099"
+        },
+        {
+          "schluessel": "de.a2.e04.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0101"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wo Möbel und Sachen stehen, und mein Zimmer beschreiben.",
+        "tr": "Mobilyaların ve eşyaların nerede durduğunu söyleyebilir ve odamı anlatabilirim.",
+        "ar": "أستطيع أن أقول أين توجد قطع الأثاث والأغراض وأن أصف غرفتي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.kuehlschrank",
+          "ablenker": ["de.a2.e04.herd", "de.a1.e03.schrank"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e04.licht", "de.a2.e04.innen", "de.a2.e04.aussen", "de.a2.e04.unten", "de.a2.e04.bequem", "de.a2.e04.herd"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0104",
+          "wort": 2,
+          "ablenker": ["legt", "stellt"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0105",
+          "ablenker": ["de.a2.e04.s0102", "de.a2.e04.s0103"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0107",
+          "wort": 4,
+          "ablenker": ["den", "die"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0124"
+            }
+          ],
+          "antwort": "de.a2.e04.s0125",
+          "ablenker": ["de.a2.e04.s0109", "de.a2.e04.s0119", "de.a2.e04.s0115"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.gemuetlich",
+          "ablenker": ["de.a1.e03.modern", "de.a1.e03.dunkel"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0106",
+          "nach": "ziel",
+          "alternativen": ["An der Decke hängt die Lampe."],
+          "ablenker": ["den", "steht"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0116",
+          "ablenker": ["de.a2.e04.s0117", "de.a2.e04.s0038"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0127",
+          "alternativen": ["Ein Regal mit Büchern hängt über dem Bett."]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0118",
+          "nach": "ziel",
+          "alternativen": ["Das Sofa ist wirklich bequem.", "Das Sofa ist echt bequem."]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e04.licht",
+          "ablenker": ["de.a1.e03.nicht"]
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0111"
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0126"
+        },
+        {
+          "schluessel": "de.a2.e04.l04.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.unten",
+          "ablenker": ["de.a1.e03.oben", "de.a2.e04.hinten"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Hausarbeit sprechen, um Hilfe bitten und mich bedanken.",
+        "tr": "Ev işleri hakkında konuşabilir, yardım isteyebilir ve teşekkür edebilirim.",
+        "ar": "أستطيع أن أتحدث عن أعمال البيت وأن أطلب المساعدة وأن أشكر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.staubsauger",
+          "ablenker": ["de.a2.e04.waschmaschine", "de.a2.e04.kuehlschrank"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e04.putzen",
+            "de.a2.e04.aufraeumen",
+            "de.a2.e04.waschen",
+            "de.a2.e04.muell",
+            "de.a2.e04.sauber",
+            "de.a2.e04.schmutzig"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.ordentlich",
+          "ablenker": ["de.a2.e04.schmutzig", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0129",
+          "wort": 1,
+          "ablenker": ["putzt", "putzen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0145"
+            }
+          ],
+          "antwort": "de.a2.e04.s0134",
+          "ablenker": ["de.a2.e04.s0121", "de.a2.e04.s0027", "de.a2.e04.s0053"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0135",
+          "ablenker": ["de.a2.e04.s0136", "de.a2.e04.s0128"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0132",
+          "wort": 0,
+          "ablenker": ["Wäscht", "Waschen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0131",
+          "nach": "ziel",
+          "alternativen": ["Gestern habe ich den Keller aufgeräumt.", "Den Keller habe ich gestern aufgeräumt."],
+          "ablenker": ["bin", "aufräumen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0142",
+          "ablenker": ["de.a2.e04.s0141", "de.a2.e04.s0143"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a10",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e04.s0151",
+          "absaetze": [
+            "de.a2.e04.s0152",
+            "de.a2.e04.s0153",
+            "de.a2.e04.s0154",
+            "de.a2.e04.s0155",
+            "de.a2.e04.s0156",
+            "de.a2.e04.s0157",
+            "de.a2.e04.s0158",
+            "de.a2.e04.s0159",
+            "de.a2.e04.s0160",
+            "de.a2.e04.s0161",
+            "de.a2.e04.s0162"
+          ],
+          "glossen": [
+            "de.a2.e04.quadratmeter",
+            "de.a2.e04.aufzug",
+            "de.a2.e04.flur",
+            "de.a2.e04.dusche",
+            "de.a2.e04.heizung",
+            "de.a2.e04.strom",
+            "de.a2.e04.vermieter"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e04.s0176",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e04.s0163",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e04.s0164",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e04.s0165",
+              "antwort": "de.a2.e04.s0166",
+              "ablenker": ["de.a2.e04.s0167", "de.a2.e04.s0207"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e04.s0168",
+              "antwort": "de.a2.e04.s0169",
+              "ablenker": ["de.a2.e04.s0170", "de.a2.e04.s0171"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0149",
+          "alternativen": ["Mama räumt den Keller auf, Papa putzt die Küche."]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0146",
+          "nach": "ziel",
+          "alternativen": [
+            "Danke für deine Hilfe beim Umzug!",
+            "Vielen Dank für die Hilfe beim Umzug!",
+            "Danke für die Hilfe beim Umzug!",
+            "Danke schön für deine Hilfe beim Umzug!",
+            "Vielen Dank für deine Hilfe bei dem Umzug!"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e04.miete",
+          "ablenker": ["de.a1.e09.mitte"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0144"
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e04.s0172",
+          "woerter": {
+            "min": 35,
+            "max": 45
+          },
+          "pflichtwoerter": ["Zimmer", "Bett"],
+          "muster": ["de.a2.e04.s0173"]
+        },
+        {
+          "schluessel": "de.a2.e04.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0150"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über einen Umzug und ein Gespräch beim Einrichten verstehen.",
+        "tr": "Bir taşınma hikâyesini ve oda yerleştirirken geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن الانتقال إلى بيت جديد وحوارًا أثناء ترتيب غرفة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e04.s0174",
+          "zeilen": [
+            {
+              "satz": "de.a2.e04.s0175"
+            },
+            {
+              "satz": "de.a2.e04.s0176"
+            },
+            {
+              "satz": "de.a2.e04.s0177"
+            },
+            {
+              "satz": "de.a2.e04.s0178"
+            },
+            {
+              "satz": "de.a2.e04.s0179"
+            },
+            {
+              "satz": "de.a2.e04.s0180"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0181"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0182"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0184"
+            },
+            {
+              "satz": "de.a2.e04.s0185"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0186"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0187"
+            },
+            {
+              "satz": "de.a2.e04.s0188"
+            },
+            {
+              "satz": "de.a2.e04.s0189"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e04.s0190"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0191"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e04.s0192"
+            },
+            {
+              "satz": "de.a2.e04.s0193"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0194"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e04.s0195"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a2.e04.s0196",
+              "antwort": "de.a2.e04.s0197",
+              "ablenker": ["de.a2.e04.s0198", "de.a2.e04.s0199"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e04.s0200",
+              "antwort": "de.a2.e04.s0201",
+              "ablenker": ["de.a2.e04.s0202", "de.a2.e04.s0203"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a2.e04.s0204",
+              "antwort": "de.a2.e04.s0205",
+              "ablenker": ["de.a2.e04.s0206", "de.a2.e04.s0207"]
+            },
+            {
+              "nach": 17,
+              "frage": "de.a2.e04.s0208",
+              "antwort": "de.a2.e04.s0209",
+              "ablenker": ["de.a2.e04.s0210", "de.a2.e04.s0211"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0179",
+          "wort": 3,
+          "ablenker": ["trägt", "tragt"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0184",
+          "ablenker": ["de.a2.e04.s0182", "de.a2.e04.s0193"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0190"
+            }
+          ],
+          "antwort": "de.a2.e04.s0191",
+          "ablenker": ["de.a2.e04.s0122", "de.a2.e04.s0027", "de.a2.e04.s0065"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0193",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e04.s0213",
+          "zeilen": [
+            {
+              "satz": "de.a2.e04.s0214"
+            },
+            {
+              "satz": "de.a2.e04.s0215"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0216"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0217"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0218"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0219"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0220"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0221"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0222"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0223"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0224"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e04.s0225"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0226"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 3,
+              "frage": "de.a2.e04.s0227",
+              "antwort": "de.a2.e04.s0228",
+              "ablenker": ["de.a2.e04.s0229", "de.a2.e04.s0230"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e04.s0231",
+              "antwort": "de.a2.e04.s0232",
+              "ablenker": ["de.a2.e04.s0233", "de.a2.e04.s0203"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e04.s0234",
+              "antwort": "de.a2.e04.s0235",
+              "ablenker": ["de.a2.e04.s0236", "de.a2.e04.s0237"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0216"
+            }
+          ],
+          "antwort": "de.a2.e04.s0217",
+          "ablenker": ["de.a2.e04.s0070", "de.a2.e04.s0140", "de.a2.e04.s0011"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0223",
+          "alternativen": ["Häng ihn neben die Tür an die Wand!"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0219",
+          "wort": 4,
+          "ablenker": ["dem", "der"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0176"
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0177",
+          "wort": 4,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0224",
+          "ablenker": ["de.a2.e04.s0215", "de.a2.e04.s0225"]
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0212"
+        },
+        {
+          "schluessel": "de.a2.e04.l06.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0178",
+          "nach": "ziel",
+          "alternativen": ["Ein Wagen mit den Möbeln kommt um neun Uhr.", "Ein Wagen kommt um neun Uhr mit den Möbeln."],
+          "ablenker": ["dem", "Möbel"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich kann Wörter und Sätze rund um Umzug und Einrichten sicher anwenden.",
+        "tr": "Taşınma ve evi yerleştirme ile ilgili kelimeleri ve cümleleri güvenle kullanabilirim.",
+        "ar": "أستطيع أن أستخدم كلمات وجملًا عن الانتقال وترتيب البيت بثقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e04.umzug",
+            "de.a2.e04.miete",
+            "de.a2.e04.lage",
+            "de.a2.e04.naehe",
+            "de.a2.e04.quadratmeter",
+            "de.a2.e04.dusche"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.toilette",
+          "ablenker": ["de.a2.e04.dusche", "de.a2.e04.flur"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0241",
+          "wort": 2,
+          "ablenker": ["stellen", "legen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0245",
+          "ablenker": ["de.a2.e04.s0252", "de.a2.e04.s0092"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0244"
+            }
+          ],
+          "antwort": "de.a2.e04.s0245",
+          "ablenker": ["de.a2.e04.s0042", "de.a2.e04.s0139", "de.a2.e04.s0034"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0238",
+          "nach": "ziel",
+          "alternativen": ["Die Wohnung ist nach drei Wochen fertig eingerichtet."],
+          "ablenker": ["hat", "vor"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a07",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e04.tuer",
+          "ablenker": ["de.a1.e08.tier"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.oeffnen",
+          "ablenker": ["de.a1.e09.schliessen", "de.a1.e07.wiederholen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0063",
+          "wort": 2,
+          "ablenker": ["mich", "ich"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0246",
+          "ablenker": ["de.a2.e04.s0114", "de.a2.e04.s0030"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0247",
+          "alternativen": ["Die Kinder helfen auch beim Umzug.", "Auch die Kinder helfen beim Umzug.", "Die Kinder helfen beim Umzug auch."]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0047",
+          "nach": "ziel",
+          "alternativen": [
+            "Im Mai sind wir nach Frankfurt umgezogen.",
+            "Wir sind im Mai nach Frankfurt gezogen.",
+            "Im Mai sind wir nach Frankfurt gezogen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.sauber",
+          "ablenker": ["de.a2.e04.leer", "de.a1.e05.voll"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0073",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0239"
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a16",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0240",
+          "wort": 0,
+          "ablenker": ["Öffnet", "Öffne"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a17",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0242"
+            }
+          ],
+          "antwort": "de.a2.e04.s0243",
+          "ablenker": ["de.a2.e04.s0067", "de.a2.e04.s0137", "de.a2.e04.s0021"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a18",
+          "typ": "paare",
+          "lemmata": ["de.a2.e04.kiste", "de.a2.e04.regal", "de.a2.e04.teppich", "de.a2.e04.spiegel", "de.a2.e04.herd", "de.a2.e04.sofa"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a19",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0075"
+            }
+          ],
+          "antwort": "de.a2.e04.s0076",
+          "ablenker": ["de.a2.e04.s0138", "de.a2.e04.s0033", "de.a2.e04.s0114"]
+        },
+        {
+          "schluessel": "de.a2.e04.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0248"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e04.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich kann sagen, wo Möbel stehen und wohin sie kommen, und beim Einräumen Anweisungen geben und verstehen.",
+        "tr": "Mobilyaların nerede durduğunu ve nereye konacağını söyleyebilir, yerleştirirken talimat verebilir ve anlayabilirim.",
+        "ar": "أستطيع أن أقول أين توجد قطع الأثاث وأين نضعها، وأن أعطي التعليمات وأفهمها عند ترتيب الأغراض."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e04.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.umziehen",
+          "ablenker": ["de.a2.e04.aufraeumen", "de.a2.e04.einrichten"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e04.tuer", "de.a2.e04.fenster", "de.a2.e04.wand", "de.a2.e04.boden", "de.a2.e04.treppe", "de.a2.e04.dach"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0250",
+          "wort": 4,
+          "ablenker": ["das", "den"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0249",
+          "wort": 5,
+          "ablenker": ["dem", "der"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e04.s0251"
+            }
+          ],
+          "antwort": "de.a2.e04.s0252",
+          "ablenker": ["de.a2.e04.s0029", "de.a2.e04.s0077", "de.a2.e04.s0120"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e04.s0254",
+          "ablenker": ["de.a2.e04.s0104", "de.a2.e04.s0123"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e04.s0256",
+          "nach": "ziel",
+          "alternativen": ["Im Regal stehen die Bücher."],
+          "ablenker": ["stellen", "ins"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e04.putzen",
+          "ablenker": ["de.a2.e04.waschen", "de.a1.e05.kochen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e04.s0255",
+          "alternativen": [
+            "Ein großer Spiegel hängt im Bad an der Wand.",
+            "Ein großer Spiegel hängt an der Wand im Bad.",
+            "An der Wand im Bad hängt ein großer Spiegel.",
+            "Im Bad hängt an der Wand ein großer Spiegel.",
+            "An der Wand hängt im Bad ein großer Spiegel."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a10",
+          "typ": "frei",
+          "ziel": "de.a2.e04.s0253",
+          "nach": "ziel",
+          "alternativen": [
+            "Vielen Dank für eure Hilfe beim Umzug!",
+            "Danke für die Hilfe beim Umzug!",
+            "Vielen Dank für die Hilfe beim Umzug!",
+            "Danke für Ihre Hilfe beim Umzug!",
+            "Vielen Dank für Ihre Hilfe beim Umzug!"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e04.s0087",
+          "ablenker": ["de.a2.e04.s0105", "de.a2.e04.s0088"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e04.s0084",
+          "wort": 1,
+          "ablenker": ["liegen", "stehen"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e04.schmutzig",
+          "ablenker": ["de.a2.e04.ordentlich", "de.a2.e04.bequem"]
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e04.s0082"
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0257"
+        },
+        {
+          "schluessel": "de.a2.e04.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e04.s0061"
+        }
+      ]
+    }
+  ]
+}
