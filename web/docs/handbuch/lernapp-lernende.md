@@ -137,6 +137,6 @@ Dafür braucht es deine **Einwilligung „Lern-App“** im Konto (bei Kindern di
 | Eine Antwort war richtig, die App sagt nein | „Fehler melden“ → „Meine Antwort hätte stimmen sollen“                                    |
 | Seite zeigt Fehler                          | „Erneut versuchen“; dein Fortschritt bleibt erhalten                                      |
 
-**Quellen und Lizenzen:** Unten in der Lern-App unter „Quellen und Lizenzen“ (auch ohne Internet). Die Lerninhalte stehen unter CC BY-SA 4.0.
+**Quellen und Lizenzen:** Unten in der Lern-App unter „Quellen und Lizenzen“ (auch ohne Internet). Die Lerninhalte stehen unter CC BY-SA 4.0. Unter „Namensnennung je Satz und Eintrag“ stehen für jede Einheit auf deinem Gerät die übernommenen Sätze und Wörterbuchangaben mit ihren Urhebern.
 
 **Kontakt:** Bildung [Name, E-Mail] · Technik [Name, E-Mail].

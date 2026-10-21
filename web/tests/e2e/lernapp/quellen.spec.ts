@@ -3,6 +3,7 @@ import quellen from '../../../messages/bereiche/quellen.json';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import tr from '../../../messages/lernapp/tr.json';
+import { INHALT_LIZENZ, PAKET_FORMAT } from '../../../src/lib/lernapp/paket/kennungen';
 import { DATEN, ORT_DRITTLIZENZEN } from '../../../src/lib/lernapp/quellen';
 import { swSteuert } from './hilfen';
 
@@ -11,6 +12,8 @@ import { swSteuert } from './hilfen';
  * - `/lern-app/[ui]/quellen` in de/tr/ar: alle Abschnitte (Inhalte, Sprachdaten, Koran und Hadith als Verweis, Bildkarten,
  *   Bibliotheken, Spracherkennung mit Drittlizenzen, Sprachausgabe mit Herkunftskette, Schriften) und je Datenquelle die
  *   Namensnennung; der Volltext der Drittlizenzen von ONNX Runtime kommt vom eigenen Ursprung,
+ * - Namensnennung je Satz und Eintrag (Gegenprüfung L8-03-04, Mangel 1): auf einem neuen Gerät der Hinweis „noch keine
+ *   Einheit“; offline aus einem Paket im Vorrat der Satz mit Urheber und Adresse der Quelle,
  * - offline: die Seite aus dem Vorrat des Lern-App-SW mit allen Namensnennungen (Netz abgeklemmt über `route`, nicht
  *   `setOffline`, das die Anfragen des Workers nicht erfasst),
  * - Website `/quellen` in de/tr/en mit den Abschnitten der Lern-App und dem Link auf die Drittlizenzen.
@@ -19,6 +22,7 @@ import { swSteuert } from './hilfen';
 const TEXTE = { de, tr, ar } as const;
 const ABSCHNITTE = [
   'inhalte',
+  'eintraege',
   'sprachdaten',
   'quelltexte',
   'bildkarten',
@@ -36,6 +40,8 @@ for (const ui of ['de', 'tr', 'ar'] as const) {
     expect(antwort?.status()).toBe(200);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(t.quellen.titel);
     for (const id of ABSCHNITTE) await expect(page.locator(`h2#${id}`), id).toBeVisible();
+    // neues Gerät: noch keine Einheit im Vorrat (die Insel hat gelesen)
+    await expect(page.locator('section[aria-labelledby="eintraege"]').getByText(t.namensnennung.insel.leer)).toBeVisible();
     for (const d of DATEN) {
       const karte = page.locator(`#quelle-${d.id}`);
       await expect(karte.getByRole('heading', { level: 3 })).toHaveText(d.name);
@@ -76,6 +82,40 @@ test('Lern-App offline: Quellen mit allen Namensnennungen aus dem Vorrat', async
       { timeout: 30_000 },
     )
     .toContain('/lern-app/de/quellen');
+  // ein Einheitenpaket im Vorrat (wie nach einer Lektion), mit einem Satz aus Tatoeba und einem eigenen Eintrag
+  const paket = JSON.stringify({
+    format: PAKET_FORMAT,
+    version: 1,
+    kurs: 'de-aus-tr',
+    zielsprache: 'de',
+    ausgangssprache: 'tr',
+    einheit: { schluessel: 'de.a1.e90', stufe: 'a1', reihenfolge: 90, thema: { de: '[Thema]', tr: '[Thema]' } },
+    hinweis: false,
+    lektionen: [{ schluessel: 'de-aus-tr.a1.e90.l01', art: 'lektion', aufgaben: [] }],
+    eintraege: {
+      'de.a1.e90.s0001': {
+        text: 'Guten Morgen!',
+        sprache: 'de',
+        quelle: 'tatoeba:1234',
+        lizenz: 'CC-BY-2.0-FR',
+        namensnennung: 'Satz #1234 von [Benutzername] (Tatoeba), CC BY 2.0 FR',
+      },
+      'de.a1.e90.s0002': { text: 'Gute Nacht!', sprache: 'de', quelle: 'ki:e2e', lizenz: 'CC-BY-SA-4.0' },
+    },
+    tipps: [],
+    audio: [],
+    lizenz: INHALT_LIZENZ,
+  });
+  await page.evaluate(async (json) => {
+    const bytes = new TextEncoder().encode(json);
+    const digest = new Uint8Array(await crypto.subtle.digest('SHA-256', bytes));
+    const hash = Array.from(digest, (b) => b.toString(16).padStart(2, '0')).join('');
+    const vorrat = await caches.open('igmg-lernapp-pakete');
+    await vorrat.put(
+      `/lern-app/pakete/de-aus-tr/de.a1.e90/${hash}`,
+      new Response(json, { headers: { 'content-type': 'application/json' } }),
+    );
+  }, paket);
   const abklemmen = (route: Route) => route.abort('internetdisconnected');
   await context.route('**/*', abklemmen);
   await page.route('**/*', abklemmen);
@@ -83,6 +123,15 @@ test('Lern-App offline: Quellen mit allen Namensnennungen aus dem Vorrat', async
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(de.quellen.titel);
   for (const d of DATEN) await expect(page.locator(`#quelle-${d.id}`).getByText(d.namensnennung, { exact: true })).toBeVisible();
   await expect(page.locator('main')).toContainText('Apache License');
+  // Namensnennung je Satz aus dem Paket im Vorrat, ohne Netz
+  const einheit = page.locator('section[aria-labelledby="eintraege"] details');
+  await expect(einheit.locator('summary')).toContainText(`${de.kurse.ziel.de} (${de.kurse.fuer.tr}) · [Thema]`);
+  await expect(einheit.locator('summary')).toContainText('1 Eintrag mit Namensnennung');
+  await einheit.locator('summary').click();
+  await expect(einheit.getByText('Guten Morgen!', { exact: true })).toBeVisible();
+  await expect(einheit.getByText('Satz #1234 von [Benutzername] (Tatoeba), CC BY 2.0 FR', { exact: true })).toBeVisible();
+  await expect(einheit.getByText('https://tatoeba.org/de/sentences/show/1234', { exact: true })).toBeVisible();
+  await expect(einheit).toContainText('1 weiterer Eintrag ist ein eigener Inhalt der Lern-App');
 });
 
 for (const [sprache, pfad] of [

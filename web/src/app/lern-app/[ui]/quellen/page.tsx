@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import { NamensnennungInsel } from '@/components/lernapp/inseln/NamensnennungInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { STIMMEN } from '@/lib/lernapp/audio/stimmen';
-import { SPRACHEN } from '@/lib/lernapp/kurse';
+import { RICHTUNGEN, type RichtungId, SPRACHEN } from '@/lib/lernapp/kurse';
+import { kursTitel, kursUntertitel } from '@/lib/lernapp/kurstitel';
 import { LIZENZTEXTE, type LizenzName } from '@/lib/lernapp/lizenztexte';
 import {
   BIBLIOTHEKEN,
@@ -16,7 +18,7 @@ import {
   type LernQuelle,
 } from '@/lib/lernapp/quellen';
 import { lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
-import { lernTexte } from '@/lib/lernapp/texte';
+import { lernTexte, rohTexte } from '@/lib/lernapp/texte';
 
 export const ensureStatic = 'navigation';
 
@@ -33,7 +35,8 @@ const LIZENZ_NAME: Record<LizenzName, string> = {
 };
 
 /**
- * Quellen und Lizenzen der Lern-App (ADR 0044 Nr. 7, ADR 0045 Nr. 15, KERN 4.0 §1, Z-L17): Lizenz der Lerninhalte, gepinnte
+ * Quellen und Lizenzen der Lern-App (ADR 0044 Nr. 7, ADR 0045 Nr. 15, KERN 4.0 §1, Z-L17): Lizenz der Lerninhalte, die
+ * Namensnennung je Satz und Eintrag aus den Paketen auf dem Gerät (Insel, offline; ADR 0039 Nr. 9, ADR 0045 Nr. 4), gepinnte
  * Daten mit Namensnennung (Sprachdaten, Koran und Hadith nur als Verweis und Prüfgrundlage, L8-03), Bildkarten,
  * Programmbibliotheken im Browser, Spracherkennung mit den Drittlizenzen von ONNX Runtime (ADR 0042 Nr. 3 und 10),
  * Sprachausgabe (synthetische Stimmen mit Namensnennung und Herkunftskette, ADR 0039 Nr. 9, ADR 0045 Nr. 11) und Schriften
@@ -151,6 +154,21 @@ export default async function Quellen() {
             {t('quellen.inhalteTitel')}
           </h2>
           <p className="text-18 text-tinte-2">{t('quellen.inhalteText')}</p>
+        </section>
+        <section aria-labelledby="eintraege" className="flex flex-col gap-4">
+          <h2 id="eintraege" className="text-display-2">
+            {t('namensnennung.titel')}
+          </h2>
+          <p className="max-w-einleitung text-18 text-tinte-2">{t('namensnennung.text')}</p>
+          <NamensnennungInsel
+            ui={ui}
+            texte={rohTexte(ui, 'namensnennung').insel}
+            kurse={
+              Object.fromEntries(
+                RICHTUNGEN.map((k) => [k, t('namensnennung.kurs', { titel: kursTitel(ui, k), fuer: kursUntertitel(ui, k) })]),
+              ) as Record<RichtungId, string>
+            }
+          />
         </section>
         {daten('sprachdaten', t('lizenzverzeichnis.datenTitel'), t('lizenzverzeichnis.datenText'), 'sprache')}
         {daten('quelltexte', t('lizenzverzeichnis.religionTitel'), t('lizenzverzeichnis.religionText'), 'religion')}
