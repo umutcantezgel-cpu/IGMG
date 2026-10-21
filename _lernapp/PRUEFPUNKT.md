@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 02:10 UTC:** Container-Neustart während der L2-Zusammenführung. Fertig und gesichert: L2-01, L2-02,
+  L2-03/04, L3-02 (`scratchpad/l2/{a1,b1,a2,b2}-ergebnis.json`); Zusammenführung im Arbeitsbaum `agent-a212ace6…` bis f2f300f
+  committet. Läuft: `wf_4f8764fb-9ea` (nur Schlussprüfungen der Zusammenführung, dann Gegenprüfung). Danach: Merge in den Branch,
+  schlankes Tor (Website-E2E nur bei Änderung gemeinsamer Website-Dateien), FF `main`, dann L3-Inhalte A1.
 - **Stand 20.10.2026 22:50 UTC – Tor L1 grün, FF `main`.** check, Import-Bau + Sweep + Crawl (0 × 5xx), E2E Website 1.007 grün,
   Lern-App 53 grün (mit `FUNKTION_LERNAPP=an`, `FUNKTION_LERNAPP_SYNC=an` in der E2E-.env – ohne sie ist die Lern-App im
   Produktionsbau absichtlich aus), Vorschau-Bau 2.394 Seiten, Preview `success`. Wortlaut-Ausnahme L-01 (neue Lern-App-Texte).
