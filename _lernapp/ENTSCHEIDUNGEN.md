@@ -281,3 +281,10 @@ L2-E04 (Vercel-Import ohne Einstellungen) und L2-E06 (Audio über eine eigene Ro
 - **Status:** Standard bis zur Antwort der Redaktion (LM-02); die zwei Warnungen „Vorkurs-Einheit ohne Eintrag im Rahmenplan“
   bleiben gewollt.
 
+## L3-E12a · 2026-10-21 · Nutzer · Einfach auf `main` pushen (Fortschreibung von L3-E12)
+- **Entscheidung (Nutzer, wörtlich):** „eigentlich will ich jetzt schon live haben weil ist eh eine test domain“ und
+  „einfach auf main pushen!“.
+- **Folge:** Fertige Stände gehen per Fast-Forward auf `main`, ohne auf ein Tor zu warten; nie erzwungen, kein Deploy von Hand.
+  Prüfungen laufen schlank danach (nur Betroffenes, keine Testschleifen); Rotes wird gezielt nachgezogen, bei Ausfall der
+  Produktion Revert-Commit. Die Lern-App bleibt in Produktion hinter `FUNKTION_LERNAPP`, bis der Nutzer anders entscheidet.
+

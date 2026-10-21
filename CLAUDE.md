@@ -1,5 +1,5 @@
 ## Lauf „Lern-App“ – nur für den Orchestrator
 - Bei jedem Sitzungsstart und nach jeder Kontextverdichtung zuerst `_lernapp/AUFTRAG.md`, `_lernapp/STATUS.md` und `_lernapp/PRUEFPUNKT.md` lesen und exakt dort fortsetzen – ohne Rückfrage, ohne Warten, nie anhalten (Anweisung des Nutzers vom 13.10.2026; Plan „Lern-App“, genehmigt am 16.10.2026: Etappen L0–L8 ohne Anhalten).
 - Regeln: `_lernapp/KERN.md` gilt zusätzlich zu `_gemeinde/KERN.md`; KI-Regel 2 (ADR 0040, `_lernapp/KERN.md` §2) steht in jedem Briefing.
-- Arbeit auf `claude/trusting-lovelace-6nfolz`; `origin/main` regelmäßig hineinmergen; geprüfte Stände nach grünem Tor per Fast-Forward auf `main` nach `_lernapp/ENTSCHEIDUNGEN.md` L3-E12 (Fortschreibung von L2-E02); nie erzwungen, kein Deploy von Hand.
+- Arbeit auf `claude/trusting-lovelace-6nfolz`; `origin/main` regelmäßig hineinmergen; Stände per Fast-Forward auf `main` pushen, ohne auf ein Tor zu warten (Nutzer 21.10.2026: „einfach auf main pushen“, Test-Domain; `_lernapp/ENTSCHEIDUNGEN.md` L3-E12a); Prüfungen schlank danach, nie erzwungen, kein Deploy von Hand.
 - `_gemeinde/` (Lauf „Gemeinde-Plattform“, abgeschlossen am 16.10.2026, f2dc1a1) ist abgeschlossen: dort nichts ändern außer Verweisen. `_werkstatt/` des Vorlaufs liegt archiviert in `_archiv/lauf-gestaltung-2026-10/` (14.10.2026); dort nichts ändern.
