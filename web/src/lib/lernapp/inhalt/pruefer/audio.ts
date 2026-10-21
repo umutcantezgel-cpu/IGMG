@@ -6,7 +6,8 @@ import { Befunde } from './typen';
 /**
  * Prüfer „Audio“ (KERN 4.0 §2.2 Nr. 8 und §4, ADR 0039 Nr. 7, PLAN §6.8 „nie vertont“): Das Audio-Manifest einer Sprache
  * enthält keinen Clip zu einem Text mit Religionsbezug, zu einem Text des Wissenskurses oder des Koran-Arabisch-Pfads, und
- * Sprachausgabe nur mit der für die Sprache freigegebenen Stimme (je Sprache eine oder keine, L3-E10a). Blockierend.
+ * Sprachausgabe nur mit der für die Sprache freigegebenen Stimme (je Sprache eine oder keine, L3-E10a), keine Testtöne
+ * (`test:` nur aus dem Testkurs-Seed). Blockierend.
  */
 export function pruefeAudio(inhalte: Inhalte): Befunde {
   const b = new Befunde('audio');
@@ -38,6 +39,7 @@ export function pruefeAudio(inhalte: Inhalte): Befunde {
           `Sprachausgabe ${s.id} ist für ${m.sprache} nicht freigegeben (src/lib/lernapp/audio/stimmen.ts)`,
           `stimmen.${i}`,
         );
+      else if (s.art === 'test') b.blockierend(pfad, `Testton-Stimme ${s.id} gehört nicht in ein eingechecktes Manifest`, `stimmen.${i}`);
     });
     const verboten = religion.get(m.sprache) ?? new Set<string>();
     m.clips.forEach((c, i) => {

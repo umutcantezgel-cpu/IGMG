@@ -25,6 +25,7 @@ import {
   silben,
   treffer,
   urteile,
+  versucheJeText,
   zahlenAlsWoerter,
   zahlwort,
 } from '@/lib/lernapp/audio/pruefung';
@@ -376,6 +377,28 @@ describe('Prüfkette (audio-pruefen)', () => {
     expect(urteile({ physisch: [], treffer: null, versuch: 1 }).urteil).toBe('ok');
   });
 
+  it('Versuche je Text nur bei gleicher Eingabe: nach einer Aussprache-Änderung wieder erster Versuch (Gegenprüfung L3-05)', () => {
+    const a = 'a'.repeat(64);
+    const b = 'b'.repeat(64);
+    const v = versucheJeText([
+      { textHash: a, eingabe: 'alt' },
+      { textHash: a, eingabe: 'alt' },
+      { textHash: b, eingabe: 'x' },
+      { textHash: a, eingabe: 'neu' },
+      { textHash: b, eingabe: 'x' },
+    ]);
+    expect(v).toEqual(
+      new Map([
+        [a, 1],
+        [b, 2],
+      ]),
+    );
+    // erneuerter Clip mit mittlerer Rückerkennung: erst neu erzeugen, nicht gleich hören
+    expect(urteile({ physisch: [], treffer: 0.7, versuch: v.get(a)! }).urteil).toBe('neu_erzeugen');
+    // ältere Protokolle ohne Eingabe zählen untereinander
+    expect(versucheJeText([{ textHash: a }, { textHash: a }]).get(a)).toBe(2);
+  });
+
   it('Rückerkennung nur für de-Sätze ab 4 Wörtern; Trefferanteil mild wie in der Sprechübung', () => {
     expect(mitRueckerkennung({ sprache: 'de', art: 'satz', woerter: 4 })).toBe(true);
     expect(mitRueckerkennung({ sprache: 'de', art: 'satz', woerter: 3 })).toBe(false);
@@ -456,6 +479,23 @@ describe('Wächter „nie vertont“ im Prüfer und im Import', () => {
     const m = { ...leeresManifest('de'), stimmen: [manifestStimme(THORSTEN)], clips: [clip('Ich trinke Wasser.')] };
     expect(manifestFehler(m, new Set([textHash('Ich trinke Wasser.')]))).toHaveLength(1);
     expect(manifestFehler(m, new Set())).toEqual([]);
+  });
+
+  it('Testtöne nie im eingecheckten Manifest – Prüfer und Import (Gegenprüfung L3-05)', () => {
+    const test = 'test:sinus';
+    const m = {
+      ...leeresManifest('de'),
+      stimmen: [{ id: test, art: 'test' as const, bezeichnung: 'Testton', namensnennung: 'synthetischer Ton', wasserzeichen: false }],
+      clips: [clip('Wasser', test)],
+    };
+    expect(manifestFehler(m, new Set(), { eingecheckt: true })).toEqual([
+      'audio-manifest/de.json: Testton-Stimme test:sinus gehört nicht in das eingecheckte Manifest',
+    ]);
+    // ein lokales Manifest (ergänzend, z. B. E2E) darf Testtöne tragen
+    expect(manifestFehler(m, new Set())).toEqual([]);
+    const inhalte = leereInhalte();
+    inhalte.audio.push({ pfad: 'audio-manifest/de.json', daten: m });
+    expect(pruefeAudio(inhalte).liste.map((b) => [b.ort, b.schwere])).toEqual([['stimmen.0', 'blockierend']]);
   });
 });
 

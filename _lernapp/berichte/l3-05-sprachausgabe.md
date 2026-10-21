@@ -8,7 +8,7 @@
 | Stimme | `tts:coqui-vits-thorsten-onnx@d09293d41bc9427e` (Herkunftskette: LIESMICH §2) |
 | Rechner | 4 vCPU, 16 GB RAM, keine GPU. Parallel liefen Bauten und E2E anderer Pakete; die Last steht je Messung dabei (über 4 heißt Wettbewerb um die Kerne). |
 | Inhalte | (1) Testkurs (`drizzle/seeds/lernapp-test.ts`), alle vertonbaren de-Einträge. (2) Entwurfsstand A1 de, Einheiten `de.a1.e00-ar`, `e00-tr`, `e01`–`e05`, als Kopie aus dem Arbeitsbaum des Inhaltspakets (L3-07, 21.10.2026 vormittags), nur im Scratchpad. |
-| Ablage | Clips, Bündel, Manifeste und Prüfberichte nur im Scratchpad, nie im Repository. Hochgeladen wurde nichts: `BLOB_READ_WRITE_TOKEN` ist lokal leer (LM-15). |
+| Ablage | Clips, Bündel, Manifeste und Prüfberichte nur im Scratchpad, nie im Repository. Hochgeladen wurde nichts: Der Schlüssel des Speichers „lernapp“ fehlt lokal (LM-15; seit der Gegenprüfung `LERNAPP_BLOB_READ_WRITE_TOKEN`, §8). |
 
 **KI-Regel 2 (ADR 0040):** Vertont wurden nur Sprachkurs-Einträge ohne Religionsbezug (drei Riegel in `audio/liste.ts`: Pfad,
 `religionsbezug`/Status, Wächter). Im A1-Entwurf schloss keiner der Riegel etwas aus (0 Religionsbezug, 0 gesperrt,
@@ -168,7 +168,7 @@ A1 de ≈ 16 MB (Plan offline: A1 ≈ 25 MB je Richtung mit Paketen und Bildern)
 - **Unit** (`tests/unit/lernapp/audio-kette.test.ts`): Liste, Ausschlüsse (Religionsbezug, Wächter, Pfade), Erneuern,
   Bündel/Manifest, Prüfkette mit Zahlwörtern, Stimmen, Aussprache. **Integration** (`tests/integration/lernapp-audio.test.ts`):
   Manifest-Import abgleichend bzw. ergänzend, fail closed.
-- **E2E** (`tests/e2e/lernapp/audio-buendel.spec.ts`), ein Bau:
+- **E2E** (`tests/e2e/lernapp/audio-buendel.spec.ts`), zwei Bauten (der erste ungültig, §5.1):
   - regulär mit den Testbündeln (der Spec selbst und die übrigen Hör-E2E): Ergebnis in §5.1
   - mit dem lokal gebauten Bündel des Testkurses (`E2E_AUDIO_MANIFEST`, `LERNAPP_AUDIO_LOKAL`, `E2E_AUDIO_BUENDEL`): Der Spieler
     lädt genau `de.a1.e01-bb1b1734033e97b6.lpa`, schneidet den Clip und spielt ihn normal und langsam bis `ended`.
@@ -194,16 +194,18 @@ Es liefen zwei Produktionsbauten unter dem gemeinsamen Schloss, mit eigener E2E-
 
 ## 6. Offen
 
-- **Tor der Zusammenführung:** Der reguläre Lauf von `audio-buendel.spec.ts` steht nach der Korrektur des Wettlaufs noch aus
-  (§5.1).
+- ~~Tor der Zusammenführung: regulärer Lauf von `audio-buendel.spec.ts` nach der Korrektur des Wettlaufs~~ – erledigt in der
+  Gegenprüfung (eigener Bau: 1 bestanden, 1 gewollt übersprungen, §8).
 - **LM-06:** Hörabnahme der Stimme, der Überschreibungen und der Hör-Fälle (§3.5).
-- **LM-15:** Hochladen der Bündel. Erst danach gehört `audio-manifest/de.json` ins Repository.
+- **LM-15:** Speicher „lernapp“ anlegen, Schlüssel lokal als `LERNAPP_BLOB_READ_WRITE_TOKEN`, Adresse als
+  `LERNAPP_BLOB_BASIS`; dann hochladen. Erst danach gehört `audio-manifest/de.json` ins Repository (§8).
 - **Entscheidung:** bis zu zwei Neuerzeugungen vor dem Hören (§3.4).
 - **Hinweis für die Sprechübung** (ADR 0042): Dort fehlt dieselbe Zahlwort-Angleichung. Wer „zehn“ sagt, bekommt „10“ als
   Abschrift. Die Funktion `zahlenAlsWoerter` liegt in `src/lib/lernapp/audio/pruefung.ts` bereit, ist aber noch nicht
   übernommen.
-- Der Versuchszähler zählt jede Erzeugung, auch nach einer Aussprache-Änderung. Ein erneuerter Clip geht deshalb bei
-  0,6–0,75 gleich zum Hören.
+- ~~Der Versuchszähler zählt jede Erzeugung, auch nach einer Aussprache-Änderung~~ – behoben (§8).
+- **L3-08:** Abnahmeliste nach dem Hören (textHash + SHA-256 als Eingabe von `audio-manifest`), Stichprobenliste der
+  Lemma-Clips (Beleg S3 §5 c), Prüfung der Sprecher-Vereinbarung je `mensch:`-Stimme vor menschlichen Aufnahmen.
 - Manifest je Stufe teilen (§4).
 
 ## 7. Befehle (Nachvollzug)
@@ -221,3 +223,24 @@ pnpm lernapp:audio-liste de --inhalte $P/inhalte --manifest $P/lpa/manifest-de.j
 
 Die Auswertung (nur Zahlen und Schlüssel) leisteten zwei Skripte im Scratchpad, `auswertung/auswerten2.py` und
 `auswertung/aussprache-wirkung.py`.
+
+## 8. Nach der Gegenprüfung (21.10.2026)
+
+Die Gegenprüfung bestätigte den regulären E2E-Lauf von `audio-buendel.spec.ts` (eigener Bau unter dem Schloss: 1 bestanden,
+1 gewollt übersprungen) und fand einen Mangel „mittel“ und sechs „niedrig“. Behoben:
+
+1. **Hochladen nur in den Speicher „lernapp“** (mittel): eigener Schlüssel `LERNAPP_BLOB_READ_WRITE_TOKEN` statt
+   `BLOB_READ_WRITE_TOKEN` (privater Medienspeicher, ADR 0020). `--hochladen` verlangt `LERNAPP_BLOB_BASIS` desselben
+   Speichers und bricht vor dem Bau ab, wenn sie fehlt, zu einem anderen Speicher gehört oder der Schlüssel zum Medien- bzw.
+   Rezitationsspeicher gehört. Danach wird jedes Bündel über `LERNAPP_BLOB_BASIS` abgerufen und am SHA-256 geprüft; erst dann
+   geht das Manifest ins Repository (ADR 0039 Fortschreibung L3-05 Nr. 7 und 10).
+2. **Ältere Bündel nur bei Bedarf:** nur die, aus denen der Neubau Clips übernimmt, je Bündel ein Abruf.
+3. **Kein leeres Manifest im Repository**, wenn nichts zu bauen ist.
+4. **Versuchszähler:** `erzeuge.py` schreibt je Erzeugung den Hash der Token-Folge (`eingabe`); `audio-pruefen` zählt nur
+   Erzeugungen mit derselben Eingabe wie die letzte. Ein erneuerter Clip bekommt so die eine Neuerzeugung aus PLAN §6.8 Nr. 6.
+5. **Testtöne** (`test:`) im eingecheckten Manifest blockiert der Prüfer „audio“, und `lernapp:import` bricht ab.
+6. **Unterlagen:** §5 nennt zwei Bauten; LIESMICH §2 nennt die Versionen von ffmpeg und libopus, von denen die
+   bitexact-Bytes abhängen.
+
+Offen für L3-08: Abnahmeliste nach dem Hören, Stichprobenliste der Lemma-Clips, Sprecher-Vereinbarung je `mensch:`-Stimme
+(§6). „Lokale Kopie löschen“ (PLAN §6.8 Nr. 4) bleibt ein Schritt in LIESMICH §4, nicht im Skript.

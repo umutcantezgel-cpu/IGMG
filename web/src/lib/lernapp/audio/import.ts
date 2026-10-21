@@ -18,7 +18,8 @@ import { stimmeFuer } from './stimmen';
  *   zurückgezogener Clip auch aus der Datenbank. Testtöne (`test:`) bleiben unberührt.
  * - Ohne `abgleichen` (zusätzliches lokales Manifest, z. B. Probelauf mit `LERNAPP_AUDIO_LOKAL`) wird nur ergänzt.
  * - **Fail closed:** Ein Clip zu einem Text mit Religionsbezug oder eine Sprachausgabe-Stimme, die für die Sprache nicht
- *   freigegeben ist, bricht den Import ab (KERN 4.0 §4, ADR 0039 Nr. 7).
+ *   freigegeben ist, bricht den Import ab (KERN 4.0 §4, ADR 0039 Nr. 7); im eingecheckten Manifest auch eine Testton-Stimme.
+ *   Die Sprecher-Vereinbarung je `mensch:`-Stimme prüft der Import noch nicht (L3-08, Audio-Studio).
  */
 
 export class AudioImportFehler extends Error {}
@@ -36,13 +37,18 @@ export function religionsHashes(quellen: readonly ImportQuelle[], sprache: strin
   return aus;
 }
 
-/** Prüft ein Manifest gegen Stimmenregister und Religionsbezug; Rückgabe: Fehlerzeilen (leer = in Ordnung). */
-export function manifestFehler(m: AudioManifestDatei, verboten: ReadonlySet<string>): string[] {
+/**
+ * Prüft ein Manifest gegen Stimmenregister und Religionsbezug; Rückgabe: Fehlerzeilen (leer = in Ordnung). `eingecheckt`
+ * (Manifest aus dem Repository): keine Testtöne (`test:` kommt nur aus dem Testkurs-Seed, nie aus einem Manifest).
+ */
+export function manifestFehler(m: AudioManifestDatei, verboten: ReadonlySet<string>, { eingecheckt = false } = {}): string[] {
   const fehler: string[] = [];
   const freigegeben = stimmeFuer(m.sprache)?.id ?? null;
   for (const s of m.stimmen)
     if (s.art === 'sprachausgabe' && s.id !== freigegeben)
       fehler.push(`audio-manifest/${m.sprache}.json: Stimme ${s.id} ist für ${m.sprache} nicht freigegeben`);
+    else if (eingecheckt && s.art === 'test')
+      fehler.push(`audio-manifest/${m.sprache}.json: Testton-Stimme ${s.id} gehört nicht in das eingecheckte Manifest`);
   for (const c of m.clips)
     if (verboten.has(c.textHash))
       fehler.push(`audio-manifest/${m.sprache}.json: Clip ${c.textHash} gehört zu einem Text mit Religionsbezug`);
@@ -54,7 +60,7 @@ export async function importiereAudioManifest(
   m: AudioManifestDatei,
   { abgleichen, verboten = new Set<string>() }: { abgleichen: boolean; verboten?: ReadonlySet<string> },
 ): Promise<AudioImportBericht> {
-  const fehler = manifestFehler(m, verboten);
+  const fehler = manifestFehler(m, verboten, { eingecheckt: abgleichen });
   if (fehler.length) throw new AudioImportFehler(fehler.join('\n'));
   const a = schema.lernappAudio;
   const datei = (schluessel: string) => schluessel.slice(schluessel.lastIndexOf('/') + 1);

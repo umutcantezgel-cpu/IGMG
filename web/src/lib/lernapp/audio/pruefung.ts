@@ -251,6 +251,19 @@ export function treffer(abschrift: string, text: string, sprache: Sprache): numb
 export type Urteil = 'ok' | 'neu_erzeugen' | 'hoeren';
 
 /**
+ * Versuch je Text aus dem Erzeugungsprotokoll (`erzeugung.jsonl`, eine Zeile je Erzeugung): gezählt werden nur Erzeugungen
+ * mit derselben Eingabe wie die letzte (`eingabe`: SHA-256 der Token-Folge, `erzeuge.py`). Nach einer Aussprache-Änderung
+ * (`--erneuern`) beginnt der Text so wieder beim ersten Versuch – mit der einen Neuerzeugung aus PLAN §6.8 Nr. 6. Zeilen ohne
+ * `eingabe` (ältere Protokolle) zählen nur untereinander.
+ */
+export function versucheJeText(zeilen: readonly { textHash: string; eingabe?: string }[]): Map<string, number> {
+  const letzte = new Map(zeilen.map((z) => [z.textHash, z.eingabe ?? '']));
+  const versuche = new Map<string, number>();
+  for (const z of zeilen) if ((z.eingabe ?? '') === letzte.get(z.textHash)) versuche.set(z.textHash, (versuche.get(z.textHash) ?? 0) + 1);
+  return versuche;
+}
+
+/**
  * Urteil je Clip. `versuch`: wie oft der Text schon erzeugt wurde (1 = erster Versuch). Physische Fehler und ein
  * Trefferanteil von 0,6–0,75 führen beim ersten Versuch zur Neuerzeugung, danach zum Hören; unter 0,6 immer zum Hören.
  */

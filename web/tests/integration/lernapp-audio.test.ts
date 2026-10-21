@@ -139,5 +139,11 @@ describe('Manifest → lernapp_audio → Paket → Route', () => {
     ).rejects.toBeInstanceOf(AudioImportFehler);
     const tr = { ...leeresManifest('tr'), stimmen: [{ ...manifestStimme(THORSTEN) }] };
     await expect(importiereAudioManifest(appDb, tr, { abgleichen: true })).rejects.toThrow(/nicht freigegeben/);
+    // Gegenprüfung L3-05: Testtöne nie im eingecheckten (abgeglichenen) Manifest
+    const test = {
+      ...leeresManifest('de'),
+      stimmen: [{ id: 'test:ton', art: 'test' as const, bezeichnung: 'Testton', namensnennung: 'synthetischer Ton', wasserzeichen: false }],
+    };
+    await expect(importiereAudioManifest(appDb, test, { abgleichen: true })).rejects.toThrow(/Testton-Stimme/);
   });
 });

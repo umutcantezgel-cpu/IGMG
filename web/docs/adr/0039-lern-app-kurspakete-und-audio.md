@@ -91,8 +91,8 @@ Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
    der er vorkommt (Stufe, gemeinsame vor Vorkurs-Einheiten, Schlüssel); spätere Einheiten verweisen dorthin.
 4. **Manifest und Datenbank:** eine Zeile je Clip (erzeugte Datei, von Prettier ausgenommen). `lernapp:import` gleicht
    `lernapp_audio` mit dem eingecheckten Manifest ab (`tts:`/`mensch:`; Testtöne bleiben) und bricht bei einem Clip zu einem
-   Text mit Religionsbezug oder bei einer nicht freigegebenen Stimme ab; der Prüfer „audio“ prüft dasselbe samt Wissen und
-   Koran-Pfad.
+   Text mit Religionsbezug, bei einer nicht freigegebenen Stimme oder – im eingecheckten Manifest – bei einer Testton-Stimme
+   (`test:`) ab; der Prüfer „audio“ prüft dasselbe samt Wissen und Koran-Pfad.
 5. **S-L1 Nr. 2, Zurückziehen:** `--bereinigen` baut die betroffenen Bündel ohne die nicht mehr vertonbaren Texte neu (neue
    Adresse); alte Bündel nennt das Skript, gelöscht werden sie erst, wenn kein Paket mehr darauf verweist (Menschen, LM-15).
 6. **Anhören vor dem Hochladen:** `LERNAPP_AUDIO_LOKAL` (Ordner `<sprache>/<datei>.lpa`) – die Route sucht dort vor den
@@ -106,7 +106,9 @@ Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
    gesprochene Zahlen als Ziffern (Probelauf: 26 von 137 Ausreißern). Schwellen 0,75/0,6 unverändert.
 9. **Aussprache-Änderungen:** `pnpm lernapp:audio-liste <sprache> --erneuern <wort,…>` nimmt Texte mit diesen Wörtern erneut in
    die Liste, obwohl ihr Clip vorliegt (menschliche Aufnahmen bleiben); der neue Clip ersetzt den alten im Manifest, das Bündel
-   wird neu gebaut. Messwerte und Hochrechnung: Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`.
+   wird neu gebaut. Der Versuch je Text (PLAN §6.8 Nr. 6) zählt nur Erzeugungen mit derselben Token-Folge (`eingabe` in
+   `erzeugung.jsonl`); nach einer Aussprache-Änderung beginnt er wieder bei eins. Messwerte und Hochrechnung: Bericht
+   `_lernapp/berichte/l3-05-sprachausgabe.md`.
 10. **Hochladen nur in den Speicher `lernapp`** (Gegenprüfung L3-05, Mangel 1): eigener Schlüssel
     `LERNAPP_BLOB_READ_WRITE_TOKEN`, nur lokal (die App liest nur `LERNAPP_BLOB_BASIS`). `--hochladen` verlangt
     `LERNAPP_BLOB_BASIS` desselben Speichers (Speicherkennung im Schlüssel = Host

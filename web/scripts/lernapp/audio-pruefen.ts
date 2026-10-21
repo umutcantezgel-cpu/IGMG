@@ -7,7 +7,8 @@
 // `<bericht>.neu.txt` mit den textHashes für `erzeuge.py --nur` (Neuerzeugung) und `<bericht>.hoeren.txt` (an Menschen).
 // Aufruf: pnpm lernapp:audio-pruefen --liste <liste.jsonl> --clips <clipordner> --aus <bericht.json> [--prozesse 4]
 //         [--ohne-erkennung]
-// Der Versuch je Text kommt aus `<clipordner>/erzeugung.jsonl` (eine Zeile je Erzeugung).
+// Der Versuch je Text kommt aus `<clipordner>/erzeugung.jsonl` (eine Zeile je Erzeugung; nur Erzeugungen mit derselben
+// Eingabe wie die letzte zählen – nach einer Aussprache-Änderung beginnt der Text wieder beim ersten Versuch).
 import { execFile, fork } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -15,7 +16,15 @@ import { cpus, loadavg } from 'node:os';
 import { join } from 'node:path';
 import { parseArgs, promisify } from 'node:util';
 import { leseJsonl, type ListenZeile } from '../../src/lib/lernapp/audio/liste';
-import { miss, mitRueckerkennung, physischeFehler, treffer, urteile, type Urteil } from '../../src/lib/lernapp/audio/pruefung';
+import {
+  miss,
+  mitRueckerkennung,
+  physischeFehler,
+  treffer,
+  urteile,
+  type Urteil,
+  versucheJeText,
+} from '../../src/lib/lernapp/audio/pruefung';
 
 const WEB = join(import.meta.dirname, '..', '..');
 const RATE = 48_000;
@@ -78,12 +87,14 @@ async function main(): Promise<number> {
   const beginn = Date.now();
   const liste = leseJsonl(readFileSync(values.liste, 'utf8'));
   const protokoll = join(values.clips, 'erzeugung.jsonl');
-  const versuche = new Map<string, number>();
-  if (existsSync(protokoll))
-    for (const z of readFileSync(protokoll, 'utf8').split('\n').filter(Boolean)) {
-      const h = (JSON.parse(z) as { textHash: string }).textHash;
-      versuche.set(h, (versuche.get(h) ?? 0) + 1);
-    }
+  const versuche = versucheJeText(
+    existsSync(protokoll)
+      ? readFileSync(protokoll, 'utf8')
+          .split('\n')
+          .filter(Boolean)
+          .map((z) => JSON.parse(z) as { textHash: string; eingabe?: string })
+      : [],
+  );
   const vorhanden = liste.filter((z) => existsSync(join(values.clips!, `${z.textHash}.webm`)));
   const fehlend = liste.length - vorhanden.length;
 

@@ -24,7 +24,7 @@ Prüfer „audio“ (`pnpm lernapp:pruefen`) und der Import lassen Sprachausgabe
 | Export | `export-onnx.py` mit coqui-tts 0.27.5, torch 2.6.0+cpu, onnx 1.23.2 (`requirements-export.txt`) → `thorsten-vits.onnx`, 114.289.821 Bytes, SHA-256 `d09293d41bc9427e30c7c3befd2ca44533ac9b847e860797140dbc3b8cf0a35f` | Code coqui-tts MPL-2.0, nur lokal |
 | Tokenizer | `tokenizer.py`: Nachbau von Reiniger, Satzzeichen, gruut-Phonemisierer und Token-Folge aus coqui-tts 0.27.5 ohne Torch; Gleichheit belegt mit `probe/gleichheit.json` (131 Texte, Token-Folgen aus dem Coqui-Tokenizer) | MPL-2.0 (Datei-Kopf) |
 | Erzeugung | onnxruntime 1.30.0, gruut 2.4.0 mit gruut-lang-de 2.0.1, numpy (`requirements.txt`, mit Hashes) | MIT, BSD; num2words LGPL (nur lokal) |
-| Nachbearbeitung | ffmpeg 6.1.1 mit libopus (System) | LGPL/GPL, nur lokal |
+| Nachbearbeitung | ffmpeg 6.1.1 (Ubuntu-Paket `6.1.1-3ubuntu5`) mit libopus 1.4 (`1.4-1build1`), beide aus dem System und nicht festgelegt. Die bitexact-Bytes eines Clips hängen von beiden Versionen ab; mit anderen Versionen entstehen andere Bytes (neue Bündel, Prüfkette erneut). | LGPL/GPL, nur lokal |
 | Prüfkette | whisper-base (OpenAI, MIT) als `Xenova/whisper-base` q8 @ `64da572` (Apache-2.0) aus `web/public/lern-app/modelle`, transformers.js 4.3.0 (Apache-2.0), onnxruntime-web (MIT) | nur lokal |
 
 **Namensnennung** (App, `/lern-app/<ui>/quellen`, Website `/quellen`, Manifest, Paket je Eintrag über die Stimme):
@@ -75,7 +75,8 @@ $T/venv/bin/python -I erzeuge.py erzeuge --liste $T/lauf/liste.jsonl --modell $T
   --aus $T/lauf/clips --aussprache ../../../web/inhalte/lernapp/aussprache/de.json   # 2.–3. 4 Prozesse × 1 Thread
 cd ../../../web
 pnpm lernapp:audio-pruefen --liste $T/lauf/liste.jsonl --clips $T/lauf/clips --aus $T/lauf/pruefung.json   # 6. Prüfkette
-#   neu erzeugen: erzeuge.py … --nur $T/lauf/pruefung.json.neu.txt, dann erneut prüfen (zweiter Versuch → hören)
+#   neu erzeugen: erzeuge.py … --nur $T/lauf/pruefung.json.neu.txt, dann erneut prüfen (zweiter Versuch → hören;
+#   gezählt nur Erzeugungen mit gleicher Token-Folge – nach einer Aussprache-Änderung wieder erster Versuch)
 #   hören bzw. aufnehmen: $T/lauf/pruefung.json.hoeren.txt (an Menschen, LM-06; Audio-Studio)
 pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips \
   --pruefung $T/lauf/pruefung.json --aus $T/lpa [--bereinigen] [--hochladen]          # 4.–5. Bündel und Manifest
@@ -139,3 +140,7 @@ pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips
 - Menschliche Aufnahmen (`lernapp_aufnahme`, Audio-Studio) normieren und bündeln (`mensch:<sprecherId>`): Manifest und Import
   können es; das Holen der Rohaufnahmen aus dem privaten Speicher braucht Datenbank und Token (L3-08).
 - Hörabnahme der Stimme und der Überschreibungen (LM-06); kein Mensch hat die Clips gehört.
+- Abnahme nach dem Hören: Clips mit Urteil „hoeren“ kommen bisher nur über eine Neuerzeugung oder eine Aufnahme ins Bündel.
+  Vorschlag für L3-08: eine Abnahmeliste (textHash + SHA-256) als Eingabe von `audio-manifest` und eine Stichprobenliste der
+  Lemma-Clips (Beleg S3 §5 c).
+- Sprecher-Vereinbarung je `mensch:`-Stimme prüft der Import noch nicht (L3-08, vor den ersten menschlichen Aufnahmen).

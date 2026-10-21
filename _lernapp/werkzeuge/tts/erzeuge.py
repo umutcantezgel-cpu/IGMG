@@ -11,9 +11,9 @@
 #
 # Eingabe je Zeile (JSONL): {"textHash", "text", "stimme", "sprache", ...}; `stimme` muss zur geladenen Stimme passen
 # (`tts:<name>@<sha16 des ONNX>`). Ausgabe: `<clipordner>/<textHash>.webm` und je Clip eine Zeile in
-# `<clipordner>/erzeugung.jsonl` (Zeiten, Dauer, Lautheit – ohne Texte). Die Synthese ist zufällig (VITS-Rauschen,
-# onnxruntime setzt den Startwert je Sitzung): Eine Neuerzeugung ergibt eine andere Fassung; reproduzierbar ist die
-# Kodierung (bitexact).
+# `<clipordner>/erzeugung.jsonl` (Zeiten, Dauer, Lautheit, Hash der Token-Folge – ohne Texte). Die Synthese ist zufällig
+# (VITS-Rauschen, onnxruntime setzt den Startwert je Sitzung): Eine Neuerzeugung ergibt eine andere Fassung; reproduzierbar
+# ist die Kodierung (bitexact, mit denselben Versionen von ffmpeg und libopus – LIESMICH §2).
 import argparse
 import hashlib
 import json
@@ -124,6 +124,8 @@ def _clip(aufgabe):
     return {
         "textHash": eintrag["textHash"],
         "stimme": eintrag["stimme"],
+        # Eingabe der Synthese (Token-Folge nach Ersatz und Aussprache): audio-pruefen zählt Versuche nur bei gleicher Eingabe
+        "eingabe": hashlib.sha256(ids.tobytes()).hexdigest()[:16],
         "synth_s": round(synth, 3),
         "gesamt_s": round(time.perf_counter() - a, 3),
         "dauer_roh_s": round(len(roh) / rate, 3),
