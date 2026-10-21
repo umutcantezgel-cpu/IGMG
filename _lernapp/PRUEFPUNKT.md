@@ -8,6 +8,9 @@
   Übersetzung je Richtung → Rückübersetzung → Schlussprüfung; Commits je Schritt unter `flock scratchpad/git-inhalte.lock`):
   de `wf_4a1a7939-e1c`, tr `wf_0267c2e7-6d3`, ar `wf_12395403-e3e`. Bei Abbruch: Wortschatzplan liegt in
   `scratchpad/l3/a1/plan-<ziel>.json` → neuer Lauf mit `plan` und `nur` (offene Einheiten), nicht Resume.
+  **Parallel L3-06 Verwaltung v1:** `wf_610ed0fe-4c5` (`scratchpad/lernapp-l3-06.workflow.js`, Arbeitsbaum B
+  `agent-ac6673f9…` nach Merge von Zweig A; Gegenprüfung + höchstens eine Mängelrunde). L3-05 (Thorsten-ONNX, braucht
+  ≈ 2 GB Venv für den Export) erst nach dem L2-Merge, wenn die Platte wieder frei ist.
 - **Stand 21.10.2026 02:10 UTC:** Container-Neustart während der L2-Zusammenführung. Fertig und gesichert: L2-01, L2-02,
   L2-03/04, L3-02 (`scratchpad/l2/{a1,b1,a2,b2}-ergebnis.json`); Zusammenführung im Arbeitsbaum `agent-a212ace6…` bis f2f300f
   committet. Läuft: `wf_4f8764fb-9ea` (nur Schlussprüfungen der Zusammenführung, dann Gegenprüfung). Danach: Merge in den Branch,
