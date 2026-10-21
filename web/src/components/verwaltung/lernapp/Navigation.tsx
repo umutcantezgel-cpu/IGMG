@@ -4,13 +4,14 @@ import type { Status } from '@/lib/lernapp/freigabe';
 import { darf, type RollenZuweisung } from '@/lib/rechte/matrix';
 import { cn } from '@/lib/utils';
 
-export type LernappBereich = 'uebersicht' | 'sprachpruefung' | 'audio' | 'meldungen' | 'quellen' | 'pruefende';
+export type LernappBereich = 'uebersicht' | 'sprachpruefung' | 'audio' | 'meldungen' | 'befunde' | 'quellen' | 'pruefende';
 
 const BEREICHE = [
   { schluessel: 'uebersicht', pfad: '/verwaltung/lernapp', recht: 'lernapp.lesen' },
   { schluessel: 'sprachpruefung', pfad: '/verwaltung/lernapp/sprachpruefung', recht: 'lernapp.sprache.pruefen' },
   { schluessel: 'audio', pfad: '/verwaltung/lernapp/audio', recht: 'lernapp.audio.bearbeiten' },
   { schluessel: 'meldungen', pfad: '/verwaltung/lernapp/meldungen', recht: 'lernapp.bearbeiten' },
+  { schluessel: 'befunde', pfad: '/verwaltung/lernapp/befunde', recht: 'lernapp.bearbeiten' },
   { schluessel: 'quellen', pfad: '/verwaltung/lernapp/quellen', recht: 'lernapp.bearbeiten' },
   { schluessel: 'pruefende', pfad: '/verwaltung/lernapp/pruefende', recht: 'lernapp.bearbeiten' },
 ] as const;

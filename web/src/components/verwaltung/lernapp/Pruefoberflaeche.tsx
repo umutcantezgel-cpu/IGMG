@@ -9,6 +9,7 @@ import { FEHLER, KRITISCHE_FEHLER } from '@/lib/lernapp/freigabe';
 import { formatiere } from '@/lib/lernapp/format';
 import { type Oberflaeche, richtung, type Sprache } from '@/lib/lernapp/kurse';
 import type { LernappZustand } from '@/lib/lernapp/verwaltung/aktion';
+import { istTexteingabe } from '@/lib/lernapp/verwaltung/kuerzel';
 import { cn } from '@/lib/utils';
 import { eintragPruefen, stichprobeZiehen } from '@/server/actions/lernapp-sprachpruefung';
 import { ClipAnhoeren, type ClipQuelle } from './ClipAnhoeren';
@@ -48,12 +49,6 @@ function kuerzelAbo(f: () => void) {
   return () => {
     kuerzelHoerer.delete(f);
   };
-}
-
-/** Eingabefelder, in denen Ziffern und Buchstaben Eingaben sind (Kürzel wirken dort nie). */
-function istEingabe(ziel: EventTarget | null): boolean {
-  if (!(ziel instanceof HTMLElement)) return false;
-  return ziel.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(ziel.tagName);
 }
 
 type Texte = Record<string, string>;
@@ -195,9 +190,10 @@ export function PruefOberflaeche({
     });
   }
 
-  // Tastenkürzel: nur im Prüfbereich (Hörer am Abschnitt), nur eingeschaltet, nie in Eingabefeldern, ohne Wiederholung
+  // Tastenkürzel: nur im Prüfbereich (Hörer am Abschnitt), nur eingeschaltet, nie in Textfeldern, ohne Wiederholung. Auf den
+  // Auswahlknöpfen (Urteil, Kategorie) wirken sie – dort steht deshalb `aria-keyshortcuts` (Restmangel L3-06)
   function taste(ev: KeyboardEvent<HTMLElement>) {
-    if (!kuerzel || ev.repeat || ev.altKey || ev.ctrlKey || ev.metaKey || istEingabe(ev.target)) return;
+    if (!kuerzel || ev.repeat || ev.altKey || ev.ctrlKey || ev.metaKey || istTexteingabe(ev.target)) return;
     if (ev.key === '1') {
       ev.preventDefault();
       sende('ok', new FormData());

@@ -13,7 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { frischAbgeleitet, heute, meldeStand, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { baueWiederholung, einheitDerKarte } from '@/lib/lernapp/oberflaeche/wiederholung';
 import type { Paket } from '@/lib/lernapp/paket/typen';
-import type { SpielerOptionen, SpielerTexte } from '../typen';
+import type { MeldenTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 import { SpielerGrenze } from './UebenInsel';
 
@@ -54,6 +54,7 @@ export function WiederholenInsel({
   spielerTexte,
   lernpfad,
   spracherkennung = false,
+  melden,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
@@ -62,6 +63,8 @@ export function WiederholenInsel({
   lernpfad: { adresse: string; text: string };
   /** Schalter `lernapp_sprechen` (Spracherkennung im Browser) */
   spracherkennung?: boolean;
+  /** Texte von „Fehler melden“, nur mit Schalter `lernapp_meldungen` (sonst kein Knopf) */
+  melden?: MeldenTexte;
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
   const kette = useRef<EreignisKette>(neueKette());
@@ -146,6 +149,7 @@ export function WiederholenInsel({
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}
+          melden={melden ? { kurs, texte: melden } : undefined}
         />
       </Suspense>
     </SpielerGrenze>

@@ -15,6 +15,7 @@ import {
   useState,
 } from 'react';
 import { bereiteLexikon, type Lexikon } from '@/lib/lernapp/abgleich/vergleichsform';
+import { brauchtHoeren } from '@/lib/lernapp/aufgaben/hilfen';
 import type { Antwort, AufgabenTyp, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import {
   beantworte,
@@ -211,10 +212,14 @@ export function Einstufung({
   }
 
   // Hörübung ohne Ton oder Hören nicht möglich: ohne Wertung weiter (zählt nicht, KERN 4.0 §4); mit `typen` fallen auch
-  // alle übrigen Aufgaben dieser Typen weg („Ich kann gerade nicht hören“)
-  function ueberspringe({ typen = [], meldung: m }: { typen?: readonly AufgabenTyp[]; meldung?: string } = {}) {
+  // alle übrigen Aufgaben dieser Typen weg, mit `hoeren` alle, die Hören brauchen („Ich kann gerade nicht hören“)
+  function ueberspringe({
+    typen = [],
+    hoeren = false,
+    meldung: m,
+  }: { typen?: readonly AufgabenTyp[]; hoeren?: boolean; meldung?: string } = {}) {
     if (phase !== 'frage' || !aktuell) return;
-    bank.current = bank.current.filter((k) => k !== aktuell && !typen.includes(k.aufgabe.typ));
+    bank.current = bank.current.filter((k) => k !== aktuell && !typen.includes(k.aufgabe.typ) && !(hoeren && brauchtHoeren(k.aufgabe)));
     setMeldung(m ?? '');
     setPhase('laedt');
   }

@@ -1,10 +1,11 @@
 import 'server-only';
-import { and, asc, desc, eq, inArray, like, or, sql } from 'drizzle-orm';
+import { and, asc, desc, eq, inArray, like, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Status } from '@/lib/lernapp/freigabe';
 import { type RichtungId, RICHTUNGEN, type Sprache, zerlegeRichtung } from '@/lib/lernapp/kurse';
-import { textHash, sha256Hex } from '@/lib/lernapp/paket/hash';
+import { sha256Hex } from '@/lib/lernapp/paket/hash';
 import { type Entscheidung, pruefSprache, type StichprobeArt } from '@/lib/lernapp/stichprobe';
+import { inBloecken, textHashGemerkt } from './bloecke';
 
 /**
  * Sprachprüfung der Verwaltung (L3-06, ADR 0041 Nr. 3–5/10): Kandidaten einer Einheit je Art, Stand der Einheit,
@@ -53,40 +54,130 @@ export async function ladeEinheit(schluessel: string) {
   return e ?? null;
 }
 
-async function zieltexte(einheit: string) {
+type Zieltext = {
+  id: string;
+  schluessel: string;
+  text: string;
+  inhaltHash: string;
+  status: Status;
+  religionsbezug: boolean;
+  inhaltTyp: 'lemma' | 'satz';
+};
+
+/** Lieferbare Zieltexte einer Einheit (Schlüssel `<einheit>.…`) bzw. aller Einheiten der Kurse, nach Schlüssel sortiert. */
+async function zieltexte(o: { einheit: string } | { kurse: readonly Sprache[] }): Promise<Zieltext[]> {
+  const l = schema.lernappLemma;
+  const st = schema.lernappSatz;
   const [lemmata, saetze] = await Promise.all([
     db
       .select({
-        id: schema.lernappLemma.id,
-        schluessel: schema.lernappLemma.schluessel,
-        text: schema.lernappLemma.lemma,
-        inhaltHash: schema.lernappLemma.inhaltHash,
-        status: schema.lernappLemma.status,
-        religionsbezug: schema.lernappLemma.religionsbezug,
+        id: l.id,
+        schluessel: l.schluessel,
+        text: l.lemma,
+        inhaltHash: l.inhaltHash,
+        status: l.status,
+        religionsbezug: l.religionsbezug,
       })
-      .from(schema.lernappLemma)
-      .where(and(like(schema.lernappLemma.schluessel, `${einheit}.%`), inArray(schema.lernappLemma.status, LIEFERBAR))),
+      .from(l)
+      .where(and('einheit' in o ? like(l.schluessel, `${o.einheit}.%`) : inArray(l.kursId, [...o.kurse]), inArray(l.status, LIEFERBAR))),
     db
       .select({
-        id: schema.lernappSatz.id,
-        schluessel: schema.lernappSatz.schluessel,
-        text: schema.lernappSatz.text,
-        inhaltHash: schema.lernappSatz.inhaltHash,
-        status: schema.lernappSatz.status,
-        religionsbezug: schema.lernappSatz.religionsbezug,
+        id: st.id,
+        schluessel: st.schluessel,
+        text: st.text,
+        inhaltHash: st.inhaltHash,
+        status: st.status,
+        religionsbezug: st.religionsbezug,
       })
-      .from(schema.lernappSatz)
-      .where(and(like(schema.lernappSatz.schluessel, `${einheit}.%`), inArray(schema.lernappSatz.status, LIEFERBAR))),
+      .from(st)
+      .where(and('einheit' in o ? like(st.schluessel, `${o.einheit}.%`) : inArray(st.kursId, [...o.kurse]), inArray(st.status, LIEFERBAR))),
   ]);
   return [
-    ...lemmata.map((l) => ({ ...l, inhaltTyp: 'lemma' as const })),
-    ...saetze.map((s) => ({ ...s, inhaltTyp: 'satz' as const })),
+    ...lemmata.map((x) => ({ ...x, inhaltTyp: 'lemma' as const })),
+    ...saetze.map((x) => ({ ...x, inhaltTyp: 'satz' as const })),
   ].sort((a, b) => (a.schluessel < b.schluessel ? -1 : 1));
 }
 
-/** Kandidaten einer Einheit und Art (Übersetzungen je Richtung). */
-export async function kandidaten(einheit: string, art: StichprobeArt, richtung?: RichtungId | null): Promise<Kandidat[]> {
-  const ziel = await zieltexte(einheit);
+type UebersetzungZeile = {
+  id: string;
+  lemmaId: string | null;
+  satzId: string | null;
+  sprache: Sprache;
+  text: string;
+  alternativen: string[];
+  inhaltHash: string;
+  status: Status;
+  religionsbezug: boolean;
+};
+
+/** Lieferbare Übersetzungen der Zieltexte (alle Sprachen bzw. nur `sprache`), in Blöcken. */
+async function uebersetzungenVon(ziel: readonly Zieltext[], sprache?: Sprache): Promise<UebersetzungZeile[]> {
+  const u = schema.lernappUebersetzung;
+  const spalten = {
+    id: u.id,
+    lemmaId: u.lemmaId,
+    satzId: u.satzId,
+    sprache: u.sprache,
+    text: u.text,
+    alternativen: u.alternativen,
+    inhaltHash: u.inhaltHash,
+    status: u.status,
+    religionsbezug: u.religionsbezug,
+  };
+  const bedingung = (spalte: typeof u.lemmaId | typeof u.satzId, block: string[]) =>
+    and(inArray(spalte, block), inArray(u.status, LIEFERBAR), sprache ? eq(u.sprache, sprache) : undefined);
+  return [
+    ...(await inBloecken(
+      ziel.filter((z) => z.inhaltTyp === 'lemma').map((z) => z.id),
+      (block) => db.select(spalten).from(u).where(bedingung(u.lemmaId, block)),
+    )),
+    ...(await inBloecken(
+      ziel.filter((z) => z.inhaltTyp === 'satz').map((z) => z.id),
+      (block) => db.select(spalten).from(u).where(bedingung(u.satzId, block)),
+    )),
+  ];
+}
+
+type Clip = typeof schema.lernappAudio.$inferSelect;
+type Wahl = typeof schema.lernappAudioWahl.$inferSelect;
+
+/** Clips und Wahlen der vertonbaren Zieltexte (je Sprache des Schlüssels), in Blöcken. */
+async function clipsVon(ziel: readonly Zieltext[]): Promise<{ clips: Clip[]; wahlen: Wahl[] }> {
+  const jeSprache = new Map<Sprache, Set<string>>();
+  for (const z of ziel) {
+    if (z.religionsbezug) continue;
+    const sprache = z.schluessel.split('.')[0] as Sprache;
+    jeSprache.set(sprache, (jeSprache.get(sprache) ?? new Set()).add(textHashGemerkt(z.text)));
+  }
+  const clips: Clip[] = [];
+  const wahlen: Wahl[] = [];
+  for (const [sprache, hashes] of jeSprache) {
+    const [c, w] = await Promise.all([
+      inBloecken([...hashes], (block) =>
+        db
+          .select()
+          .from(schema.lernappAudio)
+          .where(and(eq(schema.lernappAudio.sprache, sprache), inArray(schema.lernappAudio.textHash, block))),
+      ),
+      inBloecken([...hashes], (block) =>
+        db
+          .select()
+          .from(schema.lernappAudioWahl)
+          .where(and(eq(schema.lernappAudioWahl.sprache, sprache), inArray(schema.lernappAudioWahl.textHash, block))),
+      ),
+    ]);
+    clips.push(...c);
+    wahlen.push(...w);
+  }
+  return { clips, wahlen };
+}
+
+/** Kandidaten aus geladenen Zeilen (rein): Zieltexte, Übersetzungen in die Ausgangssprache, Clips der wirksamen Stimme. */
+function baueKandidaten(
+  ziel: readonly Zieltext[],
+  art: StichprobeArt,
+  o: { ausgang?: Sprache | null; uebersetzungen?: readonly UebersetzungZeile[]; clips?: readonly Clip[]; wahlen?: readonly Wahl[] },
+): Kandidat[] {
   if (art === 'zieltext')
     return ziel.map((z) => ({
       schluessel: z.schluessel,
@@ -98,34 +189,12 @@ export async function kandidaten(einheit: string, art: StichprobeArt, richtung?:
       text: z.text,
     }));
   if (art === 'uebersetzung') {
-    if (!richtung || !ziel.length) return [];
-    const { ausgang } = zerlegeRichtung(richtung);
-    const lemmaIds = ziel.filter((z) => z.inhaltTyp === 'lemma').map((z) => z.id);
-    const satzIds = ziel.filter((z) => z.inhaltTyp === 'satz').map((z) => z.id);
-    const u = schema.lernappUebersetzung;
-    const zeilen = await db
-      .select({
-        id: u.id,
-        lemmaId: u.lemmaId,
-        satzId: u.satzId,
-        text: u.text,
-        alternativen: u.alternativen,
-        inhaltHash: u.inhaltHash,
-        status: u.status,
-        religionsbezug: u.religionsbezug,
-      })
-      .from(u)
-      .where(
-        and(
-          eq(u.sprache, ausgang),
-          inArray(u.status, LIEFERBAR),
-          or(lemmaIds.length ? inArray(u.lemmaId, lemmaIds) : sql`false`, satzIds.length ? inArray(u.satzId, satzIds) : sql`false`),
-        ),
-      );
-    const zuZiel = new Map(ziel.map((z) => [z.id, z]));
-    return zeilen.flatMap((x) => {
-      const z = zuZiel.get(x.lemmaId ?? x.satzId ?? '');
-      return z
+    if (!o.ausgang) return [];
+    const jeZiel = new Map<string, UebersetzungZeile>();
+    for (const x of o.uebersetzungen ?? []) if (x.sprache === o.ausgang) jeZiel.set(x.lemmaId ?? x.satzId ?? '', x);
+    return ziel.flatMap((z) => {
+      const x = jeZiel.get(z.id);
+      return x
         ? [
             {
               schluessel: z.schluessel,
@@ -143,42 +212,44 @@ export async function kandidaten(einheit: string, art: StichprobeArt, richtung?:
   }
   // Audio: vertonbare Zieltexte mit Clip der wirksamen Stimme. Ein kritisch beurteilter Clip bleibt hier Kandidat (die
   // Stichprobe und ihr Stand bleiben stabil); im Paket ist er verborgen (`ladeBauEingaben`), bis ein neuer Clip vorliegt.
-  const vertonbar = ziel.filter((z) => !z.religionsbezug);
-  if (!vertonbar.length) return [];
-  const sprache = einheit.split('.')[0] as Sprache;
-  const hashJe = new Map(vertonbar.map((z) => [textHash(z.text), z]));
-  const [clips, wahlen] = await Promise.all([
-    db
-      .select()
-      .from(schema.lernappAudio)
-      .where(and(eq(schema.lernappAudio.sprache, sprache), inArray(schema.lernappAudio.textHash, [...hashJe.keys()]))),
-    db
-      .select()
-      .from(schema.lernappAudioWahl)
-      .where(and(eq(schema.lernappAudioWahl.sprache, sprache), inArray(schema.lernappAudioWahl.textHash, [...hashJe.keys()]))),
-  ]);
-  const wahl = new Map(wahlen.map((w) => [w.textHash, w.wahl]));
+  const hashJe = new Map<string, Zieltext>();
+  for (const z of ziel) if (!z.religionsbezug) hashJe.set(`${z.schluessel.split('.')[0]}|${textHashGemerkt(z.text)}`, z);
+  if (!hashJe.size) return [];
+  const wahl = new Map((o.wahlen ?? []).map((w) => [`${w.sprache}|${w.textHash}`, w.wahl]));
   const rang = (s: string) => ['mensch:', 'tts:', 'test:'].findIndex((p) => s.startsWith(p)) >>> 0;
-  const jeText = new Map<string, (typeof clips)[number]>();
-  for (const c of [...clips].sort((a, b) => rang(a.stimme) - rang(b.stimme) || (a.stimme < b.stimme ? -1 : 1))) {
-    if (wahl.get(c.textHash) === 'sprachausgabe' && c.stimme.startsWith('mensch:')) continue;
-    if (!jeText.has(c.textHash)) jeText.set(c.textHash, c);
+  const jeText = new Map<string, Clip>();
+  for (const c of [...(o.clips ?? [])].sort((a, b) => rang(a.stimme) - rang(b.stimme) || (a.stimme < b.stimme ? -1 : 1))) {
+    const k = `${c.sprache}|${c.textHash}`;
+    if (!hashJe.has(k)) continue;
+    if (wahl.get(k) === 'sprachausgabe' && c.stimme.startsWith('mensch:')) continue;
+    if (!jeText.has(k)) jeText.set(k, c);
   }
-  return [...jeText.entries()].flatMap(([h, c]) => {
-    const z = hashJe.get(h)!;
-    return [
-      {
-        schluessel: z.schluessel,
-        inhaltTyp: 'audio' as const,
-        inhaltId: c.id,
-        inhaltHash: c.sha256,
-        status: z.status,
-        religionsbezug: false,
-        text: z.text,
-        clip: { buendel: c.buendel, versatz: c.versatz, laenge: c.laenge, stimme: c.stimme },
-      },
-    ];
+  return [...jeText.entries()].map(([k, c]) => {
+    const z = hashJe.get(k)!;
+    return {
+      schluessel: z.schluessel,
+      inhaltTyp: 'audio' as const,
+      inhaltId: c.id,
+      inhaltHash: c.sha256,
+      status: z.status,
+      religionsbezug: false,
+      text: z.text,
+      clip: { buendel: c.buendel, versatz: c.versatz, laenge: c.laenge, stimme: c.stimme },
+    };
   });
+}
+
+/** Kandidaten einer Einheit und Art (Übersetzungen je Richtung). */
+export async function kandidaten(einheit: string, art: StichprobeArt, richtung?: RichtungId | null): Promise<Kandidat[]> {
+  const ziel = await zieltexte({ einheit });
+  if (!ziel.length) return [];
+  if (art === 'zieltext') return baueKandidaten(ziel, art, {});
+  if (art === 'uebersetzung') {
+    if (!richtung) return [];
+    const { ausgang } = zerlegeRichtung(richtung);
+    return baueKandidaten(ziel, art, { ausgang, uebersetzungen: await uebersetzungenVon(ziel, ausgang) });
+  }
+  return baueKandidaten(ziel, art, await clipsVon(ziel));
 }
 
 /** Stand der Kandidaten (Änderung erkennen, ADR 0041 Nr. 5/7). */
@@ -353,53 +424,81 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
     .where(and(inArray(schema.lernappAbschnitt.kursId, ['de', 'tr', 'ar']), inArray(schema.lernappEinheit.status, LIEFERBAR)))
     .orderBy(asc(schema.lernappAbschnitt.kursId), asc(schema.lernappAbschnitt.reihenfolge), asc(schema.lernappEinheit.reihenfolge));
   if (!einheiten.length) return [];
-  const proben = await db
-    .select({
-      id: s.id,
-      einheitId: s.einheitId,
-      art: s.art,
-      richtungId: s.richtungId,
-      entscheidung: s.entscheidung,
-      groesse: s.groesse,
-      einheitHash: s.einheitHash,
-      gezogenAm: s.gezogenAm,
-    })
-    .from(s)
-    .where(
-      inArray(
-        s.einheitId,
-        einheiten.map((e) => e.id),
-      ),
+  const proben = (
+    await inBloecken(
+      einheiten.map((e) => e.id),
+      (block) =>
+        db
+          .select({
+            id: s.id,
+            einheitId: s.einheitId,
+            art: s.art,
+            richtungId: s.richtungId,
+            entscheidung: s.entscheidung,
+            groesse: s.groesse,
+            einheitHash: s.einheitHash,
+            gezogenAm: s.gezogenAm,
+          })
+          .from(s)
+          .where(inArray(s.einheitId, block)),
     )
-    .orderBy(desc(s.gezogenAm));
+  ).sort((a, b) => b.gezogenAm.getTime() - a.gezogenAm.getTime());
   // Beurteilte Einträge je Stichprobe (eigene Abfrage: ein `sql`-Unterabfrage-Verweis auf `s.id` stünde in einer Abfrage ohne
   // Join unqualifiziert da und träfe die `id` der Prüfungen)
   const p = schema.lernappPruefung;
-  const zaehlung = proben.length
-    ? await db
+  const zaehlung = await inBloecken(
+    proben.map((x) => x.id),
+    (block) =>
+      db
         .select({ stichprobeId: p.stichprobeId, n: sql<number>`count(distinct ${p.inhaltId})`.mapWith(Number) })
         .from(p)
-        .where(
-          inArray(
-            p.stichprobeId,
-            proben.map((x) => x.id),
-          ),
-        )
-        .groupBy(p.stichprobeId)
-    : [];
+        .where(inArray(p.stichprobeId, block))
+        .groupBy(p.stichprobeId),
+  );
   const beurteilt = new Map(zaehlung.map((z) => [z.stichprobeId, z.n]));
+  // Ziele je Einheit und nur die, deren Prüfsprache zu den eigenen gehört
+  const zieleVon = (ziel: Sprache) =>
+    [
+      { art: 'zieltext' as const, richtung: null },
+      ...RICHTUNGEN.filter((r) => zerlegeRichtung(r).ziel === ziel).map((r) => ({ art: 'uebersetzung' as const, richtung: r })),
+      { art: 'audio' as const, richtung: null },
+    ]
+      .map((z) => ({ ...z, sprache: pruefSprache(z.art, ziel, z.richtung ? zerlegeRichtung(z.richtung).ausgang : null) }))
+      .filter((z) => sprachen.includes(z.sprache));
+  const kurse = [...new Set(einheiten.map((e) => e.kurs as Sprache))].filter((k) => zieleVon(k).length);
+  // Gebündelt (Restmangel L3-06): Zieltexte, Übersetzungen und Clips aller Einheiten mit je einer Abfrage (in Blöcken),
+  // nicht je Einheit × Art × Richtung
+  const alle = kurse.length ? await zieltexte({ kurse }) : [];
+  const brauchtUebersetzung = kurse.some((k) => zieleVon(k).some((z) => z.art === 'uebersetzung'));
+  const brauchtAudio = kurse.some((k) => zieleVon(k).some((z) => z.art === 'audio'));
+  const [uebersetzungen, audio] = await Promise.all([
+    brauchtUebersetzung ? uebersetzungenVon(alle) : Promise.resolve([]),
+    brauchtAudio ? clipsVon(alle) : Promise.resolve({ clips: [], wahlen: [] }),
+  ]);
+  const einheitSchluessel = new Set(einheiten.map((e) => e.schluessel));
+  const zuEinheit = (schluessel: string) => {
+    const teile = schluessel.split('.');
+    for (let n = teile.length - 1; n > 0; n--) {
+      const kandidat = teile.slice(0, n).join('.');
+      if (einheitSchluessel.has(kandidat)) return kandidat;
+    }
+    return null;
+  };
+  const zielJeEinheit = new Map<string, Zieltext[]>();
+  for (const z of alle) {
+    const e = zuEinheit(z.schluessel);
+    if (e) zielJeEinheit.set(e, [...(zielJeEinheit.get(e) ?? []), z]);
+  }
   const liste: WarteEintrag[] = [];
   for (const e of einheiten) {
-    const ziel = e.kurs as Sprache;
-    const ziele: { art: StichprobeArt; richtung: RichtungId | null }[] = [
-      { art: 'zieltext', richtung: null },
-      ...RICHTUNGEN.filter((r) => zerlegeRichtung(r).ziel === ziel).map((r) => ({ art: 'uebersetzung' as const, richtung: r })),
-      { art: 'audio', richtung: null },
-    ];
-    for (const z of ziele) {
-      const sprache = pruefSprache(z.art, ziel, z.richtung ? zerlegeRichtung(z.richtung).ausgang : null);
-      if (!sprachen.includes(sprache)) continue;
-      const k = await kandidaten(e.schluessel, z.art, z.richtung);
+    const ziel = zielJeEinheit.get(e.schluessel) ?? [];
+    if (!ziel.length) continue;
+    for (const z of zieleVon(e.kurs as Sprache)) {
+      const k = baueKandidaten(ziel, z.art, {
+        ausgang: z.richtung ? zerlegeRichtung(z.richtung).ausgang : null,
+        uebersetzungen,
+        ...audio,
+      });
       if (!k.length) continue;
       const stand = standVon(k);
       const eigene = proben.filter((p) => p.einheitId === e.id && p.art === z.art && (p.richtungId ?? null) === z.richtung);
@@ -414,7 +513,7 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
         thema: e.thema as Record<string, string>,
         art: z.art,
         richtung: z.richtung,
-        sprache,
+        sprache: z.sprache,
         kandidaten: k.length,
         letzte: letzte
           ? {

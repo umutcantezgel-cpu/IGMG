@@ -77,6 +77,15 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     lizenz: 'MIT',
   },
   {
+    // ALTCHA des Melde-Dialogs, im Browser gelöst (eigener Chunk, erst nach dem Klick auf „Fehler melden“, L3-06b)
+    id: 'altcha-lib',
+    name: 'ALTCHA (altcha-lib)',
+    version: '2.6.0',
+    urheber: 'Copyright (c) 2023-2026 Daniel Regeci',
+    adresse: 'https://altcha.org',
+    lizenz: 'MIT',
+  },
+  {
     // Spracherkennung der Sprechübung, im Worker `/lern-app/modelle/sprechen/whisper.worker.mjs` gebündelt (ADR 0042 Nr. 10)
     id: 'transformers',
     name: 'Transformers.js',
@@ -84,6 +93,24 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     urheber: 'Hugging Face',
     adresse: 'https://github.com/huggingface/transformers.js',
     lizenz: 'Apache-2.0',
+  },
+  {
+    // von Transformers.js mitgebündelt (Tokenizer der Spracherkennung), im selben Worker (Restmangel L2)
+    id: 'tokenizers',
+    name: 'Tokenizers.js',
+    version: '0.2.0',
+    urheber: 'Hugging Face',
+    adresse: 'https://github.com/huggingface/tokenizers.js',
+    lizenz: 'Apache-2.0',
+  },
+  {
+    // von Transformers.js mitgebündelt (Vorlagen der Modellkonfiguration), im selben Worker (Restmangel L2)
+    id: 'jinja',
+    name: '@huggingface/jinja',
+    version: '0.5.10',
+    urheber: 'Copyright (c) 2023 Hugging Face',
+    adresse: 'https://github.com/huggingface/huggingface.js',
+    lizenz: 'MIT',
   },
   {
     // Laufzeit der Spracherkennung: JS im Worker, WebAssembly unter `/lern-app/modelle/ort-…/` (ADR 0042 Nr. 10)

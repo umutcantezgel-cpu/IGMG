@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { solveChallenge } from 'altcha-lib';
 import { deriveKey } from 'altcha-lib/algorithms/pbkdf2';
 import { and, eq, like } from 'drizzle-orm';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { db as appDb, type Datenbank, schema } from '@/lib/db';
 import { textHash } from '@/lib/lernapp/paket/hash';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
@@ -26,7 +26,9 @@ const meldungen = await import('@/server/actions/lernapp-meldungen');
 const audio = await import('@/server/actions/lernapp-audio');
 const meldungRoute = await import('@/app/api/lernapp/meldung/route');
 const aufnahmeRoute = await import('@/app/[locale]/verwaltung/(geschuetzt)/lernapp/audio/aufnahme/[id]/route');
-const { ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
+const { baueRichtung, ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
+const { BLOECKE } = await import('@/server/queries/lernapp/bloecke');
+const { ladeGesperrte } = await import('@/server/queries/lernapp/meldungen');
 const { kandidaten, ladeWarteschlange } = await import('@/server/queries/lernapp/sprachpruefung');
 const { ladeKursBaum, ladeLernappUebersicht, ladeVorschau } = await import('@/server/queries/lernapp/verwaltung');
 const { ladeStudio } = await import('@/server/queries/lernapp/audio-studio');
@@ -80,6 +82,7 @@ describe('Rechte und Schalter (Negativfälle)', () => {
     () => meldungen.meldungErledigen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
     () => meldungen.alternativeErgaenzen({}, formular({ id: '00000000-0000-0000-0000-000000000000', alternative: 'x' })),
     () => meldungen.eintragSperren({}, formular({ id: '00000000-0000-0000-0000-000000000000', ziel: 'x' })),
+    () => meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' })),
     () => audio.sprecherAnlegen({}, formular({ name: 'Testperson Eins' })),
     () => audio.aufnahmeSpeichern({}, formular({ eintrag: 'tr.a1.e01.w001' })),
     () => audio.aufnahmeVerwerfen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
@@ -427,10 +430,58 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     });
     const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
     expect(a!.status).toBe('gesperrt');
+    expect(vorher!.status).not.toBe('gesperrt');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     // Audit nennt den Schlüssel des gesperrten Eintrags (kein Inhalt)
     const [audit] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.zielId === m!.id);
-    expect(audit!.details).toEqual({ aktion: 'gesperrt', kategorie: 'fehler_zieltext', eintrag: 'tr.a1.e01.l01.a01' });
+    // Stand und Inhalts-Hash vor der Sperre für „Wieder freigeben“ (L3-06b)
+    expect(audit!.details).toEqual({
+      aktion: 'gesperrt',
+      kategorie: 'fehler_zieltext',
+      eintrag: 'tr.a1.e01.l01.a01',
+      vorher: vorher!.status,
+      hash: vorher!.inhaltHash,
+    });
+  });
+
+  it('Wieder freigeben (L3-06b): nur über Meldungen gesperrte, mit Bestätigung, Stand vorher, sofort wirksam, Audit', async () => {
+    await angemeldetAls(BILDUNG);
+    const [vorher] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.details?.eintrag === 'tr.a1.e01.l01.a01');
+    const gesperrte = await ladeGesperrte();
+    expect(gesperrte.map((g) => [g.schluessel, g.art, g.vorher])).toEqual([['tr.a1.e01.l01.a01', 'aufgabe', vorher!.details!.vorher]]);
+    // Vom Import gesperrt (nicht über eine Meldung): hier nicht freizugeben
+    await db.update(schema.lernappLemma).set({ status: 'gesperrt' }).where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.w002', bestaetigt: '1' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
+    await db
+      .update(schema.lernappLemma)
+      .set({ status: 'automatisch_geprueft' })
+      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
+    // ohne ausdrückliche Bestätigung nichts
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01' }))).toEqual({ fehler: 'bestaetigenFreigabe' });
+    aufrufe.updateTag.length = 0;
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toMatchObject({
+      gespeichert: expect.any(Number),
+    });
+    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    expect(a!.status).toBe(vorher!.details!.vorher);
+    expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    expect((await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01'))!.lektion.aufgaben.some((x) => x.schluessel === 'tr.a1.e01.l01.a01')).toBe(
+      true,
+    );
+    const [audit] = await audits('lernapp.eintrag_entsperrt');
+    expect(audit).toMatchObject({
+      zielTyp: 'lernapp_eintrag',
+      zielId: 'tr.a1.e01.l01.a01',
+      details: { art: 'aufgabe', status: a!.status },
+    });
+    expect(await ladeGesperrte()).toEqual([]);
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
+    // für die Vorschau-Prüfung unten wieder gesperrt (wie vorher)
+    await db.update(schema.lernappAufgabe).set({ status: 'gesperrt' }).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
   });
 });
 
@@ -531,6 +582,12 @@ describe('Audio-Studio', () => {
     expect((await imPaket())?.stimme).not.toBe(k.clip!.stimme);
     if (eintrag === 'tr.a1.e01.w001') expect((await imPaket())?.stimme).toBe('test:ton');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    // Audio-Studio: der beurteilte Clip ist gesperrt und nie die wirksame Stimme (Restmangel L3-06)
+    const studio = (await ladeStudio('tr', 'alle', 0)).eintraege.find((e) => e.schluessel === eintrag)!;
+    expect(studio.clips.find((c) => c.id === k.inhaltId)?.gesperrt).toBe(true);
+    expect(studio.clips.filter((c) => c.id !== k.inhaltId).every((c) => !c.gesperrt)).toBe(true);
+    expect(studio.wirksam).not.toBe(k.clip!.stimme);
+    expect(studio.wirksam).toBe((await imPaket())?.stimme ?? null);
     // Kandidat bleibt (Stichprobe stabil); die Übersicht zählt den Befund
     expect((await kandidaten('tr.a1.e01', 'audio')).find((x) => x.schluessel === eintrag)?.inhaltId).toBe(k.inhaltId);
     expect((await ladeLernappUebersicht()).befunde.kritisch).toBe(kritischVorher + 1);
@@ -568,5 +625,170 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     const aus: { id: string }[] = [];
     await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
     expect(aus.map((p) => p.id)).toEqual(['lernapp.schalter']);
+  });
+});
+
+describe('Abfragen in Blöcken und gebündelt (Restmängel L3-06)', () => {
+  afterEach(() => {
+    BLOECKE.groesse = 10_000;
+    vi.restoreAllMocks();
+  });
+
+  it('Paketbau und Warteschlange: gleiches Ergebnis mit Blöcken der Größe 1 (Parametergrenze)', async () => {
+    const pakete = async () => (await baueRichtung('tr-aus-de', true)).map((r) => r.hash);
+    const warte = () => ladeWarteschlange(['de', 'tr', 'ar']);
+    const [p1, w1] = [await pakete(), await warte()];
+    expect(p1.length).toBeGreaterThan(0);
+    BLOECKE.groesse = 1;
+    expect(await pakete()).toEqual(p1);
+    expect(await warte()).toEqual(w1);
+  });
+
+  it('Warteschlange: wenige Abfragen unabhängig von Einheiten × Art × Richtung, gleiche Kandidaten wie je Einheit', async () => {
+    const select = vi.spyOn(db, 'select');
+    const warte = await ladeWarteschlange(['de', 'tr', 'ar']);
+    const abfragen = select.mock.calls.length;
+    select.mockRestore();
+    expect(warte.length).toBeGreaterThan(6);
+    // Einheiten, Stichproben, Zählung, Zieltexte (2), Übersetzungen (2), Clips und Wahlen je Sprache (≤ 6)
+    expect(abfragen).toBeLessThanOrEqual(13);
+    for (const w of warte)
+      expect((await kandidaten(w.einheit, w.art, w.richtung)).length, `${w.einheit} ${w.art} ${w.richtung}`).toBe(w.kandidaten);
+  });
+
+  it('Audio-Studio: zwei Abfragen für Texte und Clip-Zahlen, Text-Hash ohne Datenbank', async () => {
+    const execute = vi.spyOn(db, 'execute');
+    const studio = await ladeStudio('tr', 'alle', 0);
+    expect(execute).toHaveBeenCalledTimes(1);
+    const sqlText = (execute.mock.calls[0]![0] as unknown as { queryChunks: { value?: string[] }[] }).queryChunks
+      .flatMap((c) => c.value ?? [])
+      .join('');
+    expect(sqlText).toContain('lernapp_lemma');
+    expect(sqlText).not.toContain('sha256');
+    for (const e of studio.eintraege) {
+      const [lemma] = await db
+        .select({ text: schema.lernappLemma.lemma })
+        .from(schema.lernappLemma)
+        .where(eq(schema.lernappLemma.schluessel, e.schluessel));
+      const [satz] = await db
+        .select({ text: schema.lernappSatz.text })
+        .from(schema.lernappSatz)
+        .where(eq(schema.lernappSatz.schluessel, e.schluessel));
+      expect(e.textHash, e.schluessel).toBe(textHash((lemma ?? satz)!.text));
+    }
+  });
+});
+
+describe('Befunde der Prüfenden und Export der Korrekturen (L3-06b)', () => {
+  it('offen nur zum aktuellen Hash, jüngste Prüfung je Person, Kommentar zu ok zählt; Export je Kurs/Einheit ohne Personendaten', async () => {
+    const { baueKorrekturExport, EXPORT_FORMAT, ladeBefunde, ladeKorrigiert } = await import('@/server/queries/lernapp/korrekturen');
+    const person = (await angemeldetAls(SPRACHE))!;
+    const lemma = async (schluessel: string) =>
+      (await db.select().from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, schluessel)))[0]!;
+    const [w1, w3, w4] = [await lemma('de.a1.e01.w001'), await lemma('de.a1.e01.w003'), await lemma('de.a1.e01.w004')];
+    const p = schema.lernappPruefung;
+    const vor = (min: number) => new Date(Date.now() - min * 60_000);
+    await db.insert(p).values([
+      // offen: Korrektur zum aktuellen Hash
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w1.id,
+        inhaltHash: w1.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'korrektur',
+        kategorie: 'natuerlichkeit',
+        korrektur: '[Vorschlag]',
+        kommentar: '[Kommentar]',
+        am: vor(5),
+      },
+      // erledigt: älterer Stand (anderer Hash)
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w1.id,
+        inhaltHash: 'f'.repeat(64),
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'abgelehnt',
+        kategorie: 'bedeutung',
+        am: vor(60),
+      },
+      // aufgehoben: dieselbe Person später „ok“ ohne Kommentar
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w3.id,
+        inhaltHash: w3.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'abgelehnt',
+        kategorie: 'grammatik',
+        am: vor(10),
+      },
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w3.id,
+        inhaltHash: w3.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'ok',
+        am: vor(1),
+      },
+      // „ok“ mit Kommentar: ein Befund für die Redaktion
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w4.id,
+        inhaltHash: w4.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'ok',
+        kommentar: '[Hinweis]',
+        am: vor(2),
+      },
+    ]);
+    const befunde = (await ladeBefunde({ kurs: 'de' })).filter((b) => b.schluessel.startsWith('de.a1.e01.w00'));
+    expect(befunde.map((b) => [b.schluessel, b.urteil, b.korrektur, b.kommentar])).toEqual([
+      ['de.a1.e01.w001', 'korrektur', '[Vorschlag]', '[Kommentar]'],
+      ['de.a1.e01.w004', 'ok', null, '[Hinweis]'],
+    ]);
+    expect(befunde[0]).toMatchObject({ kurs: 'de', einheit: 'de.a1.e01', sprache: 'de', text: w1.lemma, art: 'sprache_ziel' });
+    expect(await ladeBefunde({ kurs: 'tr' })).not.toEqual(expect.arrayContaining([expect.objectContaining({ kurs: 'de' })]));
+
+    // menschliche Korrektur an einer Aufgabe (wie „Fassung ergänzen“)
+    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'de.a1.e01.l01.a01'));
+    await db
+      .update(schema.lernappAufgabe)
+      .set({ menschlichGeprueft: true, verfasstVon: person, daten: { ...aufgabe!.daten, alternativen: ['[Fassung B]'] } })
+      .where(eq(schema.lernappAufgabe.id, aufgabe!.id));
+    const korrigiert = await ladeKorrigiert({ kurs: 'de' });
+    expect(korrigiert).toContainEqual(
+      expect.objectContaining({ inhaltTyp: 'aufgabe', schluessel: 'de.a1.e01.l01.a01', alternativen: ['[Fassung B]'] }),
+    );
+
+    const exp = baueKorrekturExport(await ladeBefunde(), await ladeKorrigiert(), new Date('2026-10-21T12:00:00Z'));
+    expect(exp.format).toBe(EXPORT_FORMAT);
+    const de = exp.kurse.find((k) => k.kurs === 'de')!.einheiten.find((e) => e.einheit === 'de.a1.e01')!;
+    expect(de.befunde.find((b) => b.schluessel === 'de.a1.e01.w001')).toEqual({
+      inhaltTyp: 'lemma',
+      art: 'sprache_ziel',
+      urteil: 'korrektur',
+      kategorie: 'natuerlichkeit',
+      korrektur: '[Vorschlag]',
+      kommentar: '[Kommentar]',
+      am: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T/),
+      schluessel: 'de.a1.e01.w001',
+      inhaltHash: w1.inhaltHash,
+      sprache: 'de',
+      text: w1.lemma,
+    });
+    expect(de.korrigiert.map((k) => k.schluessel)).toContain('de.a1.e01.l01.a01');
+    // ohne Personendaten: keine Kennung der Prüfenden oder Verfasser, keine Prüfungs-Kennungen
+    const json = JSON.stringify(exp);
+    expect(json).not.toContain(person);
+    expect(json).not.toMatch(/pruefende|verfasst|benutzer|"id"/);
+    // Aufruf für die Inhalts-Pipeline
+    expect(readFileSync(join(process.cwd(), 'package.json'), 'utf8')).toContain('"lernapp:export-korrekturen": "tsx');
+    expect(readFileSync(join(process.cwd(), 'scripts/lernapp/export-korrekturen.ts'), 'utf8')).toContain(
+      'baueKorrekturExport(befunde, korrigiert',
+    );
   });
 });

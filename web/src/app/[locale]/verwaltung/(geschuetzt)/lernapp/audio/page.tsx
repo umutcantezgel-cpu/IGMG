@@ -111,6 +111,7 @@ export default async function AudioStudio({ searchParams }: PageProps<'/[locale]
                           <li key={c.id} className="flex flex-wrap items-center gap-2">
                             <Volume2 aria-hidden className="size-5 text-tinte-2" />
                             <span className="text-16">{stimmenName(c.stimme)}</span>
+                            {c.gesperrt ? <span className={cn(PILLE, 'bg-fehler-toenung text-fehler')}>{t('clipGesperrt')}</span> : null}
                             <ClipAnhoeren
                               quelle={{ adresse: buendelAdresse(kurs, c.buendel), versatz: c.versatz, laenge: c.laenge }}
                               texte={{ ...clipTexte, anhoeren: t('anhoeren', { stimme: stimmenName(c.stimme) }) }}

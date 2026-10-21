@@ -9,15 +9,16 @@ import { istRichtung, type KursId, kursVonSlug, zerlegeRichtung } from '@/lib/le
 import { alternativeZiel, ergaenzeAlternative, zerlegeMeldungsSchluessel } from '@/lib/lernapp/meldung';
 import { inhaltHash } from '@/lib/lernapp/paket/hash';
 import { type LernappZustand, mitLernappRecht, waechterBefund } from '@/lib/lernapp/verwaltung/aktion';
-import { kursGeaendert, zieheZurueck } from '@/lib/lernapp/veroeffentlichen';
-import { verweiseDerAufgabe } from '@/server/queries/lernapp/meldungen';
+import { type BausteinStand, gibWiederFrei, kursGeaendert, zieheZurueck } from '@/lib/lernapp/veroeffentlichen';
+import { ladeGesperrte, verweiseDerAufgabe } from '@/server/queries/lernapp/meldungen';
 
 /**
  * Verwaltung › Lern-App › Meldungen (L3-06, ADR 0041 Nr. 9): Alternative ergänzen, Eintrag sperren, erledigen. Recht
  * `lernapp.bearbeiten`, Schalter `lernapp`. Eine ergänzte Alternative ist eine menschliche Korrektur: neuer Inhalts-Hash
  * (gleiche Berechnung wie der Import), `menschlichGeprueft` (ein KI-Import überschreibt sie nicht, ADR 0041 Nr. 6); der
  * Religionswächter prüft den Text (S-L1 M-3). Mit dem Erledigen wird die mitgeschickte Antwort geleert (ADR 0045,
- * Fortschreibung S3/S8 Nr. 8). Audit ohne Inhalte.
+ * Fortschreibung S3/S8 Nr. 8). Gesperrte Einträge lassen sich ohne Neuimport wieder freigeben (L3-06b, mit Rückfrage; Stand
+ * vor der Sperre aus dem Audit, nur zum selben Inhalts-Hash). Audit ohne Inhalte.
  */
 
 const UUID = z.uuid();
@@ -39,6 +40,8 @@ async function erledige(
   kategorie: string,
   /** Schlüssel des gesperrten bzw. ergänzten Eintrags (kein Inhalt), damit das Audit ihn nachvollziehbar nennt */
   eintrag?: string,
+  /** Status und Inhalts-Hash vor der Sperre (für „Wieder freigeben“); fehlt, wenn der Eintrag schon gesperrt war */
+  vorher?: BausteinStand | null,
 ) {
   await tx
     .update(schema.lernappMeldung)
@@ -50,7 +53,9 @@ async function erledige(
       aktion: 'lernapp.meldung_bearbeitet',
       zielTyp: 'lernapp_meldung',
       zielId: meldungId,
-      details: eintrag ? { aktion, kategorie, eintrag } : { aktion, kategorie },
+      details: eintrag
+        ? { aktion, kategorie, eintrag, ...(vorher ? { vorher: vorher.status, hash: vorher.inhaltHash } : {}) }
+        : { aktion, kategorie },
     },
     tx,
   );
@@ -151,7 +156,9 @@ export async function alternativeErgaenzen(_vorher: LernappZustand, fd: FormData
 
 /**
  * Eintrag sperren (Status `gesperrt`, sofort nicht mehr ausgeliefert): die Aufgabe selbst oder einer ihrer Verweise. Nur
- * mit ausdrücklicher Bestätigung (Feld `bestaetigt=1`, zweiter Schritt des Knopfs); das Audit nennt den Schlüssel.
+ * mit ausdrücklicher Bestätigung (Feld `bestaetigt=1`, zweiter Schritt des Knopfs); das Audit nennt den Schlüssel und – für
+ * „Wieder freigeben“ – Status und Inhalts-Hash davor. War der Eintrag schon gesperrt, fehlen beide: Die zweite Sperre
+ * überschreibt den Stand der ersten nicht. Sperre, Kursstand, Meldung und Audit in einer Transaktion.
  */
 export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Promise<LernappZustand> {
   return mitLernappRecht('lernapp.bearbeiten', async (a) => {
@@ -161,9 +168,8 @@ export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Pro
     const ziel = String(fd.get('ziel') ?? '');
     const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, m.k.aufgabe)).limit(1);
     if (!aufgabe) return { fehler: 'nichtGefunden' };
-    let getroffen = false;
-    if (ziel === aufgabe.schluessel) getroffen = await zieheZurueck('aufgabe', aufgabe.schluessel);
-    else {
+    let art: 'aufgabe' | 'lemma' | 'satz' = 'aufgabe';
+    if (ziel !== aufgabe.schluessel) {
       // nur Einträge, auf die die gemeldete Aufgabe verweist
       if (!verweiseDerAufgabe(aufgabe).includes(ziel)) return { fehler: 'nichtGefunden' };
       const [lemma] = await db
@@ -171,10 +177,42 @@ export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Pro
         .from(schema.lernappLemma)
         .where(eq(schema.lernappLemma.schluessel, ziel))
         .limit(1);
-      getroffen = await zieheZurueck(lemma ? 'lemma' : 'satz', ziel);
+      art = lemma ? 'lemma' : 'satz';
     }
-    if (!getroffen) return { fehler: 'nichtGefunden' };
-    await db.transaction((tx) => erledige(tx, m.id, a.benutzerId, 'gesperrt', m.kategorie, ziel));
+    const gesperrt = await zieheZurueck(art, ziel, (tx, [vorher]) =>
+      erledige(tx, m.id, a.benutzerId, 'gesperrt', m.kategorie, ziel, vorher && vorher.status !== 'gesperrt' ? vorher : null),
+    );
+    if (!gesperrt) return { fehler: 'nichtGefunden' };
+    refresh();
+    return { gespeichert: Date.now() };
+  });
+}
+
+/**
+ * Gesperrten Eintrag wieder freigeben (L3-06b): nur Einträge, die die Verwaltung über eine Meldung gesperrt hat, die seitdem
+ * gesperrt sind, deren Inhalt sich nicht geändert hat und die der Import nicht als entfernt führt (`ladeGesperrte`); mit
+ * ausdrücklicher Bestätigung (`bestaetigt=1`, zweiter Schritt des Knopfs). Status wie vor der Sperre, nur zum selben
+ * Inhalts-Hash; wirkt sofort (Kursstand, Tag). Freigabe und Audit (Schlüssel und Status, ohne Inhalt) in einer Transaktion.
+ */
+export async function eintragEntsperren(_vorher: LernappZustand, fd: FormData): Promise<LernappZustand> {
+  return mitLernappRecht('lernapp.bearbeiten', async (a) => {
+    if (fd.get('bestaetigt') !== '1') return { fehler: 'bestaetigenFreigabe' };
+    const ziel = String(fd.get('ziel') ?? '');
+    const e = (await ladeGesperrte()).find((x) => x.schluessel === ziel);
+    if (!e) return { fehler: 'nichtGefunden' };
+    const frei = await gibWiederFrei(e.art, ziel, e.vorher, e.hash, (tx) =>
+      protokolliere(
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'lernapp.eintrag_entsperrt',
+          zielTyp: 'lernapp_eintrag',
+          zielId: ziel,
+          details: { art: e.art, status: e.vorher },
+        },
+        tx,
+      ),
+    );
+    if (!frei) return { fehler: 'nichtGefunden' };
     refresh();
     return { gespeichert: Date.now() };
   });

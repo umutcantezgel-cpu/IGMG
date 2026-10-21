@@ -8,6 +8,7 @@
       "sprachpruefung": "Sprachprüfung",
       "audio": "Audio-Studio",
       "meldungen": "Meldungen",
+      "befunde": "Befunde",
       "quellen": "Quellen",
       "pruefende": "Prüfende"
     },
@@ -69,7 +70,8 @@
       "audio_zuGross": "Die Aufnahme ist größer als 5 MB.",
       "audio_format": "Das ist keine m4a-, mp3-, ogg- oder webm-Datei.",
       "hochladenFehlgeschlagen": "Das Hochladen ist fehlgeschlagen. Bitte erneut versuchen.",
-      "bestaetigen": "Bitte das Sperren ausdrücklich bestätigen."
+      "bestaetigen": "Bitte das Sperren ausdrücklich bestätigen.",
+      "bestaetigenFreigabe": "Bitte die Freigabe ausdrücklich bestätigen."
     },
     "feldFehler": {
       "urteilFehlt": "Bitte ein Urteil wählen.",
@@ -205,6 +207,7 @@
       },
       "wirksam": "Ausgeliefert: {stimme}",
       "keinClip": "Noch kein Clip – Hörübungen zeigen „Audio folgt“.",
+      "clipGesperrt": "gesperrt (Prüfurteil zum Clip), nicht ausgeliefert",
       "wahl": "Stimme für diesen Clip",
       "wahlSprachausgabe": "Sprachausgabe verwenden",
       "wahlMensch": "Aufnahme verwenden",
@@ -234,6 +237,7 @@
       "probehoeren": "Probehören",
       "hochladen": "Aufnahme speichern",
       "verwerfen": "Verwerfen",
+      "verworfen": "Die Aufnahme ist verworfen. Sie können neu aufnehmen.",
       "datei": "Oder Datei wählen (m4a, mp3, ogg, webm; höchstens 5 MB)",
       "dateiSpeichern": "Datei speichern",
       "laedtHoch": "Wird gespeichert …",
@@ -269,6 +273,7 @@
       "ansichten": "Ansicht",
       "offen": "Offen ({anzahl})",
       "erledigt": "Erledigt",
+      "gesperrt": "Gesperrt ({anzahl})",
       "statusOffen": "offen",
       "statusErledigt": "erledigt",
       "leer": "Keine Meldungen in dieser Ansicht.",
@@ -295,12 +300,58 @@
       "sperren": "Sperren",
       "sperrenAufgabe": "Aufgabe sperren",
       "sperrenEintrag": "Eintrag sperren: {text}",
-      "sperrenFrage": "{ziel} wirklich sperren? Der Eintrag verschwindet sofort aus der App. Wieder freigegeben wird er erst mit einer geänderten Fassung aus dem Import.",
+      "sperrenFrage": "{ziel} wirklich sperren? Der Eintrag verschwindet sofort aus der App. Wieder freigeben lässt er sich unter „Gesperrt“ oder mit einer geänderten Fassung aus dem Import.",
       "sperrenJa": "Ja, sperren",
       "abbrechen": "Abbrechen",
       "verweise": "Verwendete Einträge",
       "erledigen": "Ohne Änderung erledigen",
-      "erledigtText": "Die Meldung ist erledigt."
+      "erledigtText": "Die Meldung ist erledigt.",
+      "gesperrtEinleitung": "Einträge, die hier über eine Meldung gesperrt wurden und noch gesperrt sind. Wieder freigegeben erscheinen sie sofort in der App, im Stand vor der Sperre; die Prüfregeln gelten weiter. Einträge, die seit der Sperre geändert oder aus ihrer Inhaltsdatei entfernt wurden, stehen nicht hier: Sie kommen nur über den Import zurück.",
+      "gesperrtLeer": "Keine gesperrten Einträge aus Meldungen.",
+      "eintragArt": {
+        "aufgabe": "Aufgabe",
+        "lemma": "Wort",
+        "satz": "Satz"
+      },
+      "gesperrtZeile": "Gesperrt am {am} · Stand vor der Sperre: {status}",
+      "entsperren": "Wieder freigeben",
+      "entsperrenFrage": "{ziel} wieder freigeben? Der Eintrag erscheint sofort wieder in der App (Stand: {status}).",
+      "entsperrenJa": "Ja, freigeben",
+      "entsperrtText": "Der Eintrag ist wieder freigegeben."
+    },
+    "befunde": {
+      "titel": "Befunde der Prüfung",
+      "einleitung": "Korrekturvorschläge, Ablehnungen und Kommentare der Prüfenden zum aktuellen Stand der Einträge – ohne Namen der Prüfenden. Die Redaktion arbeitet sie in die Inhaltsdateien ein; ein neuer Stand (neuer Inhalts-Hash) erledigt den Befund.",
+      "kurse": "Kurs",
+      "alle": "Alle ({anzahl})",
+      "kursAnzahl": "{kurs} ({anzahl})",
+      "export": "Für die Inhalts-Pipeline: pnpm lernapp:export-korrekturen schreibt die offenen Befunde und die Korrekturen der Redaktion je Kurs und Einheit als JSON, ohne Personendaten.",
+      "leer": "Keine offenen Befunde.",
+      "einheit": "Einheit {einheit}",
+      "art": {
+        "sprache_ziel": "Zieltext",
+        "sprache_uebersetzung": "Übersetzung",
+        "religioes": "Religiöse Prüfung"
+      },
+      "urteil": {
+        "ok": "In Ordnung, mit Kommentar",
+        "korrektur": "Korrektur",
+        "aenderungsvorschlag": "Änderungsvorschlag",
+        "abgelehnt": "Abgelehnt"
+      },
+      "kategorie": {
+        "bedeutung": "Bedeutung",
+        "grammatik": "Grammatik",
+        "anstoessig": "Anstößig",
+        "aussprache": "Aussprache",
+        "natuerlichkeit": "Natürlichkeit",
+        "zeichensetzung": "Zeichensetzung"
+      },
+      "audio": "Befund zum Clip dieses Texts",
+      "aktuell": "Aktueller Text",
+      "korrektur": "Vorschlag",
+      "kommentar": "Kommentar",
+      "am": "Geprüft am {am}"
     },
     "quellen": {
       "titel": "Quellen",

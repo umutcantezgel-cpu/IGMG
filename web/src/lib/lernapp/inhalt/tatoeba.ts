@@ -2,14 +2,16 @@ import type { InhaltDatei } from './schema';
 
 /**
  * Tatoeba-Sätze mit Koran- oder Hadith-4-Gramm (ADR 0045 Fortschreibung S7 Nr. 3; Liste in `web/daten/tatoeba/QUELLE.md`,
- * „Prüfung“ Nr. 4, S7-E7): Sie stehen im gepinnten Auszug, der Import schließt sie aus. Die Liste steht hier im Code, weil
+ * „Prüfung“ Nr. 4, S7-E7; 38 aus Spike S7 und 5 weitere, die der Wächter der Lern-App findet, L3-06b): Sie stehen im
+ * gepinnten Auszug, der Import schließt sie aus. Die Liste steht hier im Code, weil
  * der Import im Vercel-Bau läuft und `web/daten/tatoeba` dort fehlt (`.vercelignore`). Der Unit-Test
  * `tatoeba-ausschluss.test.ts` hält sie gleich mit `QUELLE.md` und nutzt die Sätze als Positivproben des Wächters.
  */
 export const TATOEBA_AUSSCHLUSS: ReadonlySet<number> = new Set([
   372061, 433388, 528234, 1845468, 1870688, 1870712, 1870735, 1875947, 1894844, 3521805, 4378843, 4385414, 8386223, 8392676, 8414725,
-  9571789, 9837334, 10065956, 10093410, 10097109, 10133584, 10133586, 10133589, 10133618, 10135759, 10140311, 10148021, 10150500, 10278230,
-  10278235, 10278237, 10303180, 10462080, 10470035, 10473490, 10739670, 12493897, 12943584,
+  9571789, 9837334, 9952319, 10065956, 10093410, 10097109, 10097695, 10133584, 10133586, 10133589, 10133618, 10135759, 10140311, 10148021,
+  10150500, 10278230, 10278235, 10278237, 10278239, 10278245, 10303180, 10460236, 10462080, 10470035, 10473490, 10739670, 12493897,
+  12943584,
 ]);
 
 /** Satz-ID aus `quelle: "tatoeba:<id>"`, sonst null. */

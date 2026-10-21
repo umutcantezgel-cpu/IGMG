@@ -11,6 +11,7 @@ import { ladeWaechter, pruefeReligion } from './religion';
 import { symbolFehler } from '../symbole';
 import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type UebersetzungDatei, verweiseVon } from './schema';
 import { pruefeTatoebaAusschluss } from './tatoeba';
+import { type DateiStand, fuehreEntfernte, type ImportStand as Stand, type Konflikt } from './stand';
 
 /**
  * Import der Lern-App-Inhalte (PLAN §6.6, ADR 0041 Nr. 6/7): idempotent über den SHA-256 je Datei und den `inhaltHash` je
@@ -24,6 +25,8 @@ import { pruefeTatoebaAusschluss } from './tatoeba';
  *   Konflikt vermerkt (Ergebnis und Einstellung `<stand>.konflikte`), bis die Redaktion entscheidet (ADR 0041 Nr. 6).
  * - **entfernt** (Eintrag fehlt in seiner Datei, oder die Datei fehlt): Status `gesperrt` – das Enum hat kein
  *   „archiviert“; gesperrt heißt nie sichtbar. Ein gesperrter Eintrag wird nur durch einen neuen Hash wieder freigegeben.
+ *   Aufgaben, Lemmata und Sätze, die in ihrer Datei fehlen, führt der Stand unter `entfernt` (`stand.ts`), auch wenn sie
+ *   schon vorher gesperrt waren; „Wieder freigeben“ in der Verwaltung bietet sie nicht an (L3-06b).
  * - Jede Änderung erhöht `lernapp_kurs.version` des Kurses. Caches verfallen beim Start (`TAG.lernapp` in `START_TAGS`)
  *   bzw. durch den Bau, der den Import vor `next build` ausführt.
  *
@@ -35,7 +38,7 @@ import { pruefeTatoebaAusschluss } from './tatoeba';
 
 export type ImportQuelle = { pfad: string; text: string };
 
-export type Konflikt = { tabelle: string; schluessel: string; datei: string; hashDatenbank: string; hashDatei: string };
+export type { Konflikt } from './stand';
 
 export type ImportBericht = {
   dateien: number;
@@ -47,9 +50,6 @@ export type ImportBericht = {
   konflikte: Konflikt[];
   kurse: KursId[];
 };
-
-type DateiStand = { sha: string; art: 'sprache' | 'uebersetzung'; einheit: string; richtung?: string };
-type Stand = { dateien: Record<string, DateiStand>; konflikte: Konflikt[]; am: string };
 
 export class ImportFehler extends Error {
   constructor(readonly fehler: string[]) {
@@ -581,6 +581,33 @@ async function pruefeVerweise(tx: Transaktion, dateien: readonly { pfad: string;
   if (fehlen.length) throw new ImportFehler(fehlen.map((v) => `${verweise.get(v)} verweist auf unbekanntes ${v}`));
 }
 
+/** Schlüssel der Lemmata, Sätze und Aufgaben einer Sprachdatei. */
+function schluesselDerDatei(d: SprachEinheitDatei): Set<string> {
+  return new Set([
+    ...d.lemmata.map((x) => x.schluessel),
+    ...d.saetze.map((x) => x.schluessel),
+    ...d.lektionen.flatMap((x) => x.aufgaben.map((a) => a.schluessel)),
+  ]);
+}
+
+/**
+ * Als entfernt geführte Schlüssel einer Einheit (Stand `entfernt`, L3-06b): Lemmata, Sätze und Aufgaben im Bereich der
+ * Einheit (wie `sperreFehlende`), die nicht in `inDatei` stehen und nicht menschlich geprüft sind – gleich, ob der Import sie
+ * eben gesperrt hat oder ob sie schon gesperrt waren.
+ */
+async function entfernteDerEinheit(tx: Transaktion, einheit: string, inDatei: ReadonlySet<string>): Promise<string[]> {
+  const tabellen = [schema.lernappLemma, schema.lernappSatz, schema.lernappAufgabe] as unknown as (typeof schema.lernappSatz)[];
+  const zeilen = [];
+  for (const t of tabellen)
+    zeilen.push(
+      ...(await tx
+        .select({ s: t.schluessel })
+        .from(t)
+        .where(and(like(t.schluessel, `${einheit}.%`), eq(t.menschlichGeprueft, false)))),
+    );
+  return zeilen.map((z) => z.s).filter((x) => !inDatei.has(x));
+}
+
 /** Entfernte Dateien: Einheit (Sprache) bzw. Übersetzungen und Tipps der Richtung (Übersetzung) sperren. */
 async function entfernteDateien(l: Lauf, entfernt: readonly DateiStand[]): Promise<void> {
   for (const s of entfernt) {
@@ -711,12 +738,22 @@ export async function importiereLernapp(
         d.datei.art === 'sprache'
           ? { sha: d.sha, art: 'sprache', einheit: d.datei.daten.einheit.schluessel }
           : { sha: d.sha, art: 'uebersetzung', einheit: d.datei.daten.einheit, richtung: d.datei.daten.richtung };
-    await entfernteDateien(
-      l,
-      Object.entries(alt.dateien)
-        .filter(([pfad]) => !neuStand.dateien[pfad])
-        .map(([, s]) => s),
-    );
+    const entfernteStaende = Object.entries(alt.dateien)
+      .filter(([pfad]) => !neuStand.dateien[pfad])
+      .map(([, s]) => s);
+    await entfernteDateien(l, entfernteStaende);
+
+    // Als entfernt geführte Einträge (L3-06b): neu ermittelt für bearbeitete und für entfernte Sprachdateien (deren Einheit
+    // es in keiner Datei mehr gibt); ein Stand ohne diese Liste (vor L3-06b) wird einmal für alle Sprachdateien ergänzt.
+    const sprachDateien = dateien.flatMap((d) => (d.datei.art === 'sprache' ? [d.datei.daten] : []));
+    const neuEntfernt = new Map<string, string[]>();
+    for (const d of alt.entfernt ? sprache.map((x) => x.d) : sprachDateien)
+      neuEntfernt.set(d.einheit.schluessel, await entfernteDerEinheit(tx, d.einheit.schluessel, schluesselDerDatei(d)));
+    const einheitenMitDatei = new Set(sprachDateien.map((d) => d.einheit.schluessel));
+    for (const st of entfernteStaende)
+      if (st.art === 'sprache' && !einheitenMitDatei.has(st.einheit))
+        neuEntfernt.set(st.einheit, await entfernteDerEinheit(tx, st.einheit, new Set()));
+    neuStand.entfernt = fuehreEntfernte(alt.entfernt ?? [], neuEntfernt);
     if (!erzwingen && !offen.length) neuStand.konflikte = alt.konflikte;
 
     const kurse = l.kurseFertig();

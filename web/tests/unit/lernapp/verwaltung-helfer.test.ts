@@ -11,6 +11,7 @@ import {
   zerlegeMeldungsSchluessel,
 } from '@/lib/lernapp/meldung';
 import { aufnahmeSchluessel, clipLage, stimmenArt, vertonbar, wirksameStimme } from '@/lib/lernapp/verwaltung/audio';
+import { istTexteingabe } from '@/lib/lernapp/verwaltung/kuerzel';
 import { LERNAPP_DATENSAETZE, leseQuelleMd, STIMMEN } from '@/lib/lernapp/verwaltung/quellen';
 import { anteil, pruefquote, prozent, standBaum, zaehleStatus } from '@/lib/lernapp/verwaltung/quoten';
 
@@ -201,5 +202,32 @@ describe('Quellenregister', () => {
       expect(Boolean((t as { namensnennung?: string }).namensnennung), s.id).toBe(s.namensnennung);
       expect(q.stand[s.stand], s.stand).toBeTruthy();
     }
+  });
+});
+
+describe('Tastenkürzel der Prüfoberfläche (Restmangel L3-06)', () => {
+  it('wirken nicht in Textfeldern, wohl aber auf Auswahlknöpfen und Schaltflächen', () => {
+    const el = (tagName: string, extra: Record<string, unknown> = {}) => ({ tagName, ...extra });
+    expect(istTexteingabe(el('INPUT', { type: 'text' }))).toBe(true);
+    expect(istTexteingabe(el('INPUT'))).toBe(true);
+    expect(istTexteingabe(el('TEXTAREA'))).toBe(true);
+    expect(istTexteingabe(el('SELECT'))).toBe(true);
+    expect(istTexteingabe(el('DIV', { isContentEditable: true }))).toBe(true);
+    expect(istTexteingabe(el('INPUT', { type: 'radio' }))).toBe(false);
+    expect(istTexteingabe(el('INPUT', { type: 'checkbox' }))).toBe(false);
+    expect(istTexteingabe(el('BUTTON'))).toBe(false);
+    expect(istTexteingabe(el('H2'))).toBe(false);
+    expect(istTexteingabe(null)).toBe(false);
+  });
+
+  it('aria-keyshortcuts nur an Elementen im Prüfbereich, auf denen die Kürzel wirken', () => {
+    const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/verwaltung/lernapp/Pruefoberflaeche.tsx'), 'utf8');
+    // der Hörer prüft Textfelder mit derselben Funktion, die der Test oben belegt
+    expect(quelle).toContain('istTexteingabe(ev.target)');
+    // Kürzel an den Urteil-Knöpfen (Auswahlknöpfe: Kürzel wirken) und an „Voriger“/„Nächster“, nie an Textfeldern
+    const stellen = [...quelle.matchAll(/aria-keyshortcuts=\{kuerzel \? ([^:]+) : undefined\}/g)].map((m) => m[1]);
+    expect(stellen).toEqual(['String(i + 1)', "'P'", "'N'"]);
+    const zuTextfeld = /<(textarea|select)[^>]*aria-keyshortcuts/;
+    expect(zuTextfeld.test(quelle)).toBe(false);
   });
 });

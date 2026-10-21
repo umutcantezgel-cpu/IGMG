@@ -1,17 +1,19 @@
 import 'server-only';
 import { and, asc, desc, eq, inArray, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
-import { KRITISCHE_FEHLER } from '@/lib/lernapp/freigabe';
+import { KRITISCHE_FEHLER, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import type { Sprache } from '@/lib/lernapp/kurse';
 import { zerlegeMeldungsSchluessel } from '@/lib/lernapp/meldung';
 import { textHash } from '@/lib/lernapp/paket/hash';
 import { clipLage, type ClipLage, stimmenArt, wirksameStimme } from '@/lib/lernapp/verwaltung/audio';
+import { textHashGemerkt } from './bloecke';
 import { verweiseDerAufgabe } from './meldungen';
+import { ladePruefungen } from './pakete';
 
 /**
  * Audio-Studio (L3-06, ADR 0039 Nr. 7/8): vertonbare Zieltexte eines Sprachkurses (Lemmata und Sätze ohne Religionsbezug,
  * nicht gesperrt) mit Clips, Wahl der Stimme, Rohaufnahmen und Auffälligkeiten (Meldung „Audio“ bzw. Prüfurteil zur
- * Aussprache zum aktuellen Clip). Der Text-Hash entsteht in der Datenbank wie in `paket/hash.ts` (SHA-256 des NFC-Texts).
+ * Aussprache zum aktuellen Clip). Der Text-Hash ist der von `paket/hash.ts` (SHA-256 des NFC-Texts).
  */
 
 export const STUDIO_SEITE = 40;
@@ -33,6 +35,8 @@ export type StudioEintrag = {
     versatz: number;
     laenge: number;
     dauerMs: number;
+    /** „abgelehnt“ oder kritisches Urteil zum aktuellen Clip: nicht ausgeliefert, nie wirksam */
+    gesperrt: boolean;
   }[];
   wahl: 'sprachausgabe' | 'mensch' | null;
   wirksam: string | null;
@@ -80,39 +84,43 @@ async function auffaellige(sprache: Sprache): Promise<{ gemeldet: Map<string, nu
   return { gemeldet, befund: new Set(befunde.map((b) => b.textHash)) };
 }
 
-/** Eine Seite des Studios. `gesamt`: Anzahl der Einträge des Filters. */
+/**
+ * Eine Seite des Studios. `gesamt`: Anzahl der Einträge des Filters. Gebündelt (Restmangel L3-06): eine Abfrage für die
+ * vertonbaren Texte, eine für die Zahl der Clips je Text-Hash; der Text-Hash entsteht im Server mit Gedächtnis
+ * (`textHashGemerkt`), nicht je Aufruf über alle Texte in der Datenbank. Die wirksame Stimme beachtet die Sperre: Ein Clip
+ * mit „abgelehnt“ oder kritischem Urteil zum aktuellen Clip-Hash ist gesperrt (wie im Paketbau), dann greift die nächste
+ * Stimme.
+ */
 export async function ladeStudio(
   sprache: Sprache,
   filter: StudioFilter,
   seite: number,
 ): Promise<{ eintraege: StudioEintrag[]; gesamt: number; zaehler: Record<ClipLage | 'alle', number> }> {
   const { gemeldet, befund } = await auffaellige(sprache);
-  const textHashSql = (spalte: unknown) => sql`encode(sha256(convert_to(normalize(${spalte}, NFC), 'UTF8')), 'hex')`;
-  const basis = sql`
-    with e as (
-      select 'lemma' as art, l.id, l.schluessel, l.lemma as text, l.stufe::text as stufe, ${textHashSql(sql`l.lemma`)} as text_hash
+  const [texte, anzahl] = await Promise.all([
+    db.execute<{ art: 'lemma' | 'satz'; id: string; schluessel: string; text: string; stufe: string }>(sql`
+      select 'lemma' as art, l.id, l.schluessel, l.lemma as text, l.stufe::text as stufe
         from lernapp_lemma l where l.kurs_id = ${sprache} and not l.religionsbezug and l.status <> 'gesperrt'
       union all
-      select 'satz', s.id, s.schluessel, s.text, s.stufe::text, ${textHashSql(sql`s.text`)}
+      select 'satz', s.id, s.schluessel, s.text, s.stufe::text
         from lernapp_satz s where s.kurs_id = ${sprache} and not s.religionsbezug and s.status <> 'gesperrt'
-    ), m as (
-      select e.*, (select count(*) from lernapp_audio a where a.sprache = ${sprache} and a.text_hash = e.text_hash)::int as clips from e
-    )`;
-  const zeilen = (
-    await db.execute<{
-      art: 'lemma' | 'satz';
-      id: string;
-      schluessel: string;
-      text: string;
-      stufe: string;
-      text_hash: string;
-      clips: number;
-    }>(sql`${basis} select * from m order by schluessel`)
-  ).rows;
-  const mitLage = zeilen.map((z) => ({
-    ...z,
-    lage: clipLage({ clips: z.clips, meldungen: gemeldet.get(z.schluessel) ?? 0, ausspracheBefund: befund.has(z.text_hash) }),
-  }));
+      order by schluessel`),
+    db
+      .select({ textHash: schema.lernappAudio.textHash, n: sql<number>`count(*)`.mapWith(Number) })
+      .from(schema.lernappAudio)
+      .where(eq(schema.lernappAudio.sprache, sprache))
+      .groupBy(schema.lernappAudio.textHash),
+  ]);
+  const clipZahl = new Map(anzahl.map((z) => [z.textHash, z.n]));
+  const mitLage = texte.rows.map((z) => {
+    const hash = textHashGemerkt(z.text);
+    const clips = clipZahl.get(hash) ?? 0;
+    return {
+      ...z,
+      text_hash: hash,
+      lage: clipLage({ clips, meldungen: gemeldet.get(z.schluessel) ?? 0, ausspracheBefund: befund.has(hash) }),
+    };
+  });
   const zaehler = { fehlt: 0, auffaellig: 0, vorhanden: 0, alle: mitLage.length };
   for (const z of mitLage) zaehler[z.lage]++;
   const gefiltert = filter === 'alle' ? mitLage : mitLage.filter((z) => z.lage === filter);
@@ -145,6 +153,9 @@ export async function ladeStudio(
           .orderBy(desc(schema.lernappAufnahme.erstelltAm)),
       ])
     : [[], [], []];
+  // Sperre je Clip: Urteil der Audio-Stichprobe zum aktuellen Clip-Hash (wie `ladeBauEingaben`)
+  const pruefungen = await ladePruefungen(clips.map((c) => ({ typ: 'audio' as const, id: c.id })));
+  const gesperrt = new Set(clips.filter((c) => sprachlichGesperrt(c.sha256, pruefungen.get(`audio:${c.id}`) ?? [])).map((c) => c.id));
   return {
     gesamt: gefiltert.length,
     zaehler,
@@ -167,10 +178,11 @@ export async function ladeStudio(
           versatz: c.versatz,
           laenge: c.laenge,
           dauerMs: c.dauerMs,
+          gesperrt: gesperrt.has(c.id),
         })),
         wahl,
         wirksam: wirksameStimme(
-          eigene.map((c) => c.stimme),
+          eigene.filter((c) => !gesperrt.has(c.id)).map((c) => c.stimme),
           wahl,
         ),
         aufnahmen: aufnahmen.filter((x) => x.textHash === z.text_hash).map(({ textHash: _h, ...rest }) => rest),

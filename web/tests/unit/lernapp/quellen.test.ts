@@ -1,4 +1,4 @@
-import { readFileSync, realpathSync } from 'node:fs';
+import { readdirSync, readFileSync, realpathSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { LIZENZTEXTE } from '@/lib/lernapp/lizenztexte';
@@ -13,7 +13,11 @@ const WEB = join(import.meta.dirname, '..', '..', '..');
 // onnxruntime-web ist eine Abhängigkeit von transformers.js (pnpm: neben ihm im eigenen node_modules)
 const TRANSFORMERS = realpathSync(join(WEB, 'node_modules', '@huggingface', 'transformers'));
 const ordner = (name: string) =>
-  name === 'onnxruntime-web' ? join(TRANSFORMERS, '..', '..', 'onnxruntime-web') : join(WEB, 'node_modules', name);
+  name === 'onnxruntime-web'
+    ? join(TRANSFORMERS, '..', '..', 'onnxruntime-web')
+    : name === '@huggingface/jinja' || name === '@huggingface/tokenizers'
+      ? join(TRANSFORMERS, '..', name.split('/')[1]!)
+      : join(WEB, 'node_modules', name);
 const paket = (name: string) => JSON.parse(readFileSync(join(ordner(name), 'package.json'), 'utf8'));
 const lizenzNebenGewichten = (datei: string) => readFileSync(join(WEB, 'public', 'lern-app', 'modelle', MODELL.name, datei), 'utf8');
 const normal = (s: string) => s.replace(/\s+/g, ' ').trim();
@@ -28,7 +32,10 @@ describe('Quellen der Lern-App', () => {
       'ts-fsrs': 'ts-fsrs',
       'fastest-levenshtein': 'fastest-levenshtein',
       zod: 'zod',
+      'altcha-lib': 'altcha-lib',
       transformers: '@huggingface/transformers',
+      tokenizers: '@huggingface/tokenizers',
+      jinja: '@huggingface/jinja',
       'onnxruntime-web': 'onnxruntime-web',
     };
     for (const b of BIBLIOTHEKEN) {
@@ -54,23 +61,52 @@ describe('Quellen der Lern-App', () => {
     expect(SCHRIFTEN.map((s) => s.id)).toEqual(['atkinson-hyperlegible-next', 'noto-sans-arabic', 'amiri', 'igmg-wetzlar-titel']);
   });
 
-  it('jede Bibliothek, die Client-Code der Lern-App importiert, steht in der Liste', () => {
+  it('jede Bibliothek, die Client-Code der Lern-App importiert, steht in der Liste (aus den Quellen ermittelt)', () => {
     const ids = new Set(BIBLIOTHEKEN.map((b) => b.id));
-    // Pakete des Client-Codes (Komponenten und die im Browser laufenden Module unter lib/lernapp) → Eintrag der Liste
-    const imClient: Record<string, string> = {
-      react: 'react',
+    // Pakete, deren Eintrag anders heißt (react-dom gehört zu React; im Worker gebündelte Pakete unter eigenem Namen)
+    const eintragVon: Record<string, string> = {
       'react-dom': 'react',
-      next: 'next',
-      'lucide-react': 'lucide-react',
-      idb: 'idb',
-      'ts-fsrs': 'ts-fsrs',
-      'fastest-levenshtein': 'fastest-levenshtein',
-      zod: 'zod',
-      // im Worker der Sprechübung (ADR 0042 Nr. 10)
       '@huggingface/transformers': 'transformers',
-      'onnxruntime-web': 'onnxruntime-web',
+      '@huggingface/tokenizers': 'tokenizers',
+      '@huggingface/jinja': 'jinja',
     };
-    for (const id of Object.values(imClient)) expect(ids.has(id), id).toBe(true);
+    // Client-Code: Komponenten, Seiten und Module der Lern-App ohne `server-only` und ohne Node-Module (die laufen nur auf
+    // dem Server oder beim Bau). Erfasst werden statische, dynamische und Seiteneffekt-Importe, keine reinen Typ-Importe.
+    const dateien = ['src/components/lernapp', 'src/lib/lernapp', 'src/app/lern-app'].flatMap((o) =>
+      readdirSync(join(WEB, o), { recursive: true, encoding: 'utf8' })
+        .filter((d) => /\.(ts|tsx|mjs)$/.test(d) && !d.endsWith('.d.ts'))
+        .map((d) => join(WEB, o, d)),
+    );
+    const pakete = new Set<string>();
+    for (const datei of dateien) {
+      const text = readFileSync(datei, 'utf8');
+      if (/^import 'server-only';/m.test(text) || /from 'node:|import\('node:/.test(text)) continue;
+      const ohneTypen = text.replace(/^(?:import|export) type [^;]*;/gm, '');
+      for (const [, quelle] of ohneTypen.matchAll(/(?:\bfrom|^import|\bimport\()\s*'([^']+)'/gm)) {
+        if (quelle!.startsWith('.') || quelle!.startsWith('@/')) continue;
+        const teile = quelle!.split('/');
+        pakete.add(quelle!.startsWith('@') ? teile.slice(0, 2).join('/') : teile[0]!);
+      }
+    }
+    // Stichprobe der Erkennung: der Melde-Dialog (altcha-lib, L3-06b) und der Worker der Sprechübung
+    expect([...pakete]).toEqual(expect.arrayContaining(['react', 'lucide-react', 'idb', 'altcha-lib', '@huggingface/transformers']));
+    for (const p of pakete) expect(ids.has(eintragVon[p] ?? p), p).toBe(true);
+    // altcha-lib ist exakt gepinnt (L0-E10)
+    const abhaengigkeiten = JSON.parse(readFileSync(join(WEB, 'package.json'), 'utf8')).dependencies as Record<string, string>;
+    expect(abhaengigkeiten['altcha-lib']).toBe(BIBLIOTHEKEN.find((b) => b.id === 'altcha-lib')!.version);
+    expect(normal(readFileSync(join(WEB, 'node_modules', 'altcha-lib', 'LICENSE.txt'), 'utf8'))).toContain(
+      normal(BIBLIOTHEKEN.find((b) => b.id === 'altcha-lib')!.urheber),
+    );
+    // Abhängigkeiten von transformers.js stehen in der Liste und im Lizenzkopf des Workers
+    const abhaengig = Object.keys(paket('@huggingface/transformers').dependencies as Record<string, string>).filter((n) =>
+      n.startsWith('@huggingface/'),
+    );
+    expect(abhaengig.sort()).toEqual(['@huggingface/jinja', '@huggingface/tokenizers']);
+    const bauschritt = readFileSync(join(WEB, 'scripts', 'lernapp-modelle.mjs'), 'utf8');
+    for (const n of [...abhaengig, '@huggingface/transformers', 'onnxruntime-web']) expect(bauschritt, n).toContain(`${n} \${`);
+    expect(normal(readFileSync(join(ordner('@huggingface/jinja'), 'LICENSE'), 'utf8'))).toContain(
+      normal(BIBLIOTHEKEN.find((b) => b.id === 'jinja')!.urheber),
+    );
     expect(normal(readFileSync(join(WEB, 'node_modules', 'zod', 'LICENSE'), 'utf8'))).toContain(
       normal(BIBLIOTHEKEN.find((b) => b.id === 'zod')!.urheber),
     );

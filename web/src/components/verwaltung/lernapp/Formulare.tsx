@@ -2,7 +2,18 @@
 
 import { Plus, Save } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { type ReactNode, type RefObject, useActionState, useEffect, useId, useRef, useState } from 'react';
+import {
+  createContext,
+  type ReactNode,
+  type RefObject,
+  useActionState,
+  useCallback,
+  useContext,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+} from 'react';
 import { Button } from '@/components/ui/button';
 import { eingabe, Rahmen } from '@/components/verwaltung/Feld';
 import { Meldung } from '@/components/verwaltung/Meldung';
@@ -14,11 +25,53 @@ import type { LernappZustand } from '@/lib/lernapp/verwaltung/aktion';
  */
 type Aktion = (vorher: LernappZustand, fd: FormData) => Promise<LernappZustand>;
 
-function useRueckmeldung(z: LernappZustand) {
+/**
+ * Ansage einer Liste (WCAG 2.4.3/4.1.3, Restmangel L3-06): Erledigt eine Aktion einen Listeneintrag, verschwindet er beim
+ * Neuzeichnen samt Knopf und Rückmeldung – der Fokus fiele auf den Seitenanfang. Innerhalb von `AnsageBereich` meldet die
+ * Aktion ihren Erfolg deshalb an die Statuszeile des Bereichs, die bleibt; sie bekommt den Fokus und wird angesagt.
+ * Fehler bleiben am Knopf (der Eintrag bleibt dann stehen).
+ */
+const AnsageKontext = createContext<((text: string) => void) | null>(null);
+
+export function AnsageBereich({ children }: { children: ReactNode }) {
+  const [ansage, setAnsage] = useState<{ text: string; nr: number } | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const melde = useCallback((text: string) => setAnsage((alt) => ({ text, nr: (alt?.nr ?? 0) + 1 })), []);
+  useEffect(() => {
+    if (ansage) ref.current?.focus();
+  }, [ansage]);
+  return (
+    <AnsageKontext.Provider value={melde}>
+      {/* wie die Rückmeldung am Knopf (K-07): Fokus auf den Rahmen, die Meldung selbst ist die Statusmeldung */}
+      <div ref={ref} tabIndex={-1} className="outline-none empty:hidden">
+        {ansage ? (
+          <Meldung key={ansage.nr} art="erfolg">
+            {ansage.text}
+          </Meldung>
+        ) : null}
+      </div>
+      {children}
+    </AnsageKontext.Provider>
+  );
+}
+
+/** Action mit Ansage im umgebenden `AnsageBereich` (falls vorhanden): Erfolg geht dorthin, sonst an den Knopf. */
+function useAktion(aktion: Aktion, erfolg: string | undefined) {
+  const melde = useContext(AnsageKontext);
+  const mitAnsage = Boolean(melde && erfolg);
+  const [z, absenden, laeuft] = useActionState(async (vorher: LernappZustand, fd: FormData) => {
+    const ergebnis = await aktion(vorher, fd);
+    if (ergebnis.gespeichert && melde && erfolg) melde(erfolg);
+    return ergebnis;
+  }, {});
+  return { z, absenden, laeuft, mitAnsage };
+}
+
+function useRueckmeldung(z: LernappZustand, mitAnsage = false) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (z.fehler || z.gespeichert) ref.current?.focus();
-  }, [z]);
+    if (z.fehler || (z.gespeichert && !mitAnsage)) ref.current?.focus();
+  }, [z, mitAnsage]);
   return ref;
 }
 
@@ -31,13 +84,24 @@ function useFehlerText() {
   };
 }
 
-function Rueckmeldung({ z, erfolg, refDiv }: { z: LernappZustand; erfolg?: string; refDiv: RefObject<HTMLDivElement | null> }) {
+function Rueckmeldung({
+  z,
+  erfolg,
+  refDiv,
+  mitAnsage = false,
+}: {
+  z: LernappZustand;
+  erfolg?: string;
+  refDiv: RefObject<HTMLDivElement | null>;
+  /** Erfolg sagt der umgebende `AnsageBereich` an */
+  mitAnsage?: boolean;
+}) {
   const { fehler, t } = useFehlerText();
   return (
     <div ref={refDiv} tabIndex={-1} className="outline-none empty:hidden">
       {z.fehler ? (
         <Meldung art="fehler">{fehler(z.fehler)}</Meldung>
-      ) : z.gespeichert ? (
+      ) : z.gespeichert && !mitAnsage ? (
         <Meldung art="erfolg">{erfolg ?? t('gespeichert')}</Meldung>
       ) : null}
     </div>
@@ -70,12 +134,12 @@ export function AktionsKnopf({
   gedrueckt?: boolean;
   /** Zugänglicher Name, wenn der sichtbare Text nicht reicht */
   label?: string;
-  /** Rückfrage vor dem Absenden */
-  bestaetigung?: { frage: string; ja: string; abbrechen: string };
+  /** Rückfrage vor dem Absenden (Knopf „Ja“ standardmäßig zerstörerisch; „Wieder freigeben“ mit `variante: 'default'`) */
+  bestaetigung?: { frage: string; ja: string; abbrechen: string; variante?: 'destructive' | 'default' };
 }) {
   const { t } = useFehlerText();
-  const [z, absenden, laeuft] = useActionState(aktion, {});
-  const ref = useRueckmeldung(z);
+  const { z, absenden, laeuft, mitAnsage } = useAktion(aktion, erfolg);
+  const ref = useRueckmeldung(z, mitAnsage);
   // Die Rückfrage gilt für den Stand, bei dem sie gestellt wurde; jedes Ergebnis der Action (neuer Zustand) beendet sie.
   const [gefragtBei, setGefragtBei] = useState<LernappZustand | null>(null);
   const fragen = gefragtBei !== null && gefragtBei === z;
@@ -88,7 +152,7 @@ export function AktionsKnopf({
   if (bestaetigung && fragen)
     return (
       <form action={absenden} className="flex flex-col gap-2 rounded-md border border-fehler p-3">
-        <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} />
+        <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} mitAnsage={mitAnsage} />
         {Object.entries(felder).map(([name, wert]) => (
           <input key={name} type="hidden" name={name} value={wert} />
         ))}
@@ -97,7 +161,7 @@ export function AktionsKnopf({
           {bestaetigung.frage}
         </p>
         <div className="flex flex-wrap gap-2">
-          <Button type="submit" variant="destructive" size="sm" disabled={laeuft} aria-describedby={frageId}>
+          <Button type="submit" variant={bestaetigung.variante ?? 'destructive'} size="sm" disabled={laeuft} aria-describedby={frageId}>
             {icon}
             {laeuft ? t('laeuft') : bestaetigung.ja}
           </Button>
@@ -118,7 +182,7 @@ export function AktionsKnopf({
     );
   return (
     <form action={absenden} className="flex flex-col gap-2">
-      <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} />
+      <Rueckmeldung z={z} erfolg={erfolg} refDiv={ref} mitAnsage={mitAnsage} />
       {Object.entries(felder).map(([name, wert]) => (
         <input key={name} type="hidden" name={name} value={wert} />
       ))}
@@ -240,12 +304,12 @@ export function AlternativeFormular({
   laenge: number;
 }) {
   const { t, feld } = useFehlerText();
-  const [z, absenden, laeuft] = useActionState(aktion, {});
-  const ref = useRueckmeldung(z);
+  const { z, absenden, laeuft, mitAnsage } = useAktion(aktion, t('meldungen.erledigtText'));
+  const ref = useRueckmeldung(z, mitAnsage);
   const basis = useId();
   return (
     <form action={absenden} className="flex flex-col gap-3" noValidate>
-      <Rueckmeldung z={z} erfolg={t('meldungen.erledigtText')} refDiv={ref} />
+      <Rueckmeldung z={z} erfolg={t('meldungen.erledigtText')} refDiv={ref} mitAnsage={mitAnsage} />
       <input type="hidden" name="id" value={id} />
       <Rahmen
         id={`${basis}-alternative`}

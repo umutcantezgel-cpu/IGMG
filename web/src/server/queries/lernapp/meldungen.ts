@@ -1,10 +1,14 @@
 import 'server-only';
-import { and, asc, count, desc, eq, inArray } from 'drizzle-orm';
+import { and, asc, count, desc, eq, inArray, like, or, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
+import { STATUS, type Status } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
+import { entfernteAusStaenden, STAND_PRAEFIX } from '@/lib/lernapp/inhalt/stand';
 import { istRichtung, zerlegeRichtung } from '@/lib/lernapp/kurse';
 import { alternativeZiel, type AlternativeZiel, type MeldungKategorie, zerlegeMeldungsSchluessel } from '@/lib/lernapp/meldung';
 import type { StichprobeArt } from '@/lib/lernapp/stichprobe';
+import type { Entsperrbar } from '@/lib/lernapp/veroeffentlichen';
+import { inBloecken } from './bloecke';
 
 /**
  * Meldungen aus der App (ADR 0041 Nr. 9) für die Verwaltung (L3-06): Liste mit Aufgabe, Ziel einer Alternative und den
@@ -185,4 +189,89 @@ export async function ladeMeldungen(status: 'offen' | 'erledigt'): Promise<Meldu
 export async function zaehleOffeneLernappMeldungen(): Promise<number> {
   const [z] = await db.select({ n: count() }).from(schema.lernappMeldung).where(eq(schema.lernappMeldung.status, 'offen'));
   return z?.n ?? 0;
+}
+
+export type GesperrterEintrag = {
+  schluessel: string;
+  art: Entsperrbar;
+  /** Stand vor der Sperre (aus dem Audit der Sperre) */
+  vorher: Exclude<Status, 'gesperrt'>;
+  /** Inhalts-Hash bei der Sperre (gleich dem aktuellen, sonst stünde der Eintrag nicht in der Liste) */
+  hash: string;
+  am: Date;
+};
+
+const STATUS_WERTE: readonly string[] = STATUS;
+
+/**
+ * Einträge, die die Verwaltung über eine Meldung gesperrt hat und die seitdem gesperrt geblieben sind (L3-06b, „Entsperren“).
+ * Grundlage ist das Audit: Sperren (`lernapp.meldung_bearbeitet` mit `aktion: gesperrt`) und Freigaben
+ * (`lernapp.eintrag_entsperrt`), jüngstes Ereignis je Schlüssel zuerst.
+ *
+ * - Eine Freigabe als jüngstes Ereignis: Die heutige Sperre stammt nicht aus einer Meldung (z. B. vom Import) → nicht in der
+ *   Liste.
+ * - Eine Sperre zählt nur mit Stand und Inhalts-Hash davor. Eine Sperre eines schon gesperrten Eintrags trägt beides nicht und
+ *   wird übergangen (sie überschreibt den Stand der ersten Sperre nicht); ebenso ältere Sperren ohne Hash.
+ * - Der Eintrag ist jetzt `gesperrt` und trägt noch den Hash der Sperre. Hat die Redaktion ihn inzwischen geändert (Import,
+ *   ergänzte Alternative), gälte der alte Stand einem anderen Inhalt – dann kommt er nur über den Import zurück (ADR 0041).
+ * - Der Import führt ihn nicht als entfernt (Stand `entfernt`, `inhalt/stand.ts`): Was in der Datei fehlt, bleibt gesperrt,
+ *   auch wenn die Datei danach unverändert übersprungen wird.
+ */
+export async function ladeGesperrte(): Promise<GesperrterEintrag[]> {
+  const a = schema.auditEintrag;
+  const ereignisse = await db
+    .select({ aktion: a.aktion, zielId: a.zielId, am: a.zeitpunkt, details: a.details })
+    .from(a)
+    .where(
+      or(
+        and(eq(a.aktion, 'lernapp.meldung_bearbeitet'), sql`${a.details}->>'aktion' = 'gesperrt'`),
+        eq(a.aktion, 'lernapp.eintrag_entsperrt'),
+      ),
+    )
+    .orderBy(desc(a.zeitpunkt), desc(a.id));
+  const entschieden = new Set<string>();
+  const sperre = new Map<string, { am: Date; vorher: Exclude<Status, 'gesperrt'>; hash: string }>();
+  for (const x of ereignisse) {
+    const eintrag = x.aktion === 'lernapp.eintrag_entsperrt' ? x.zielId : x.details?.eintrag;
+    if (typeof eintrag !== 'string' || entschieden.has(eintrag)) continue;
+    if (x.aktion === 'lernapp.eintrag_entsperrt') {
+      entschieden.add(eintrag);
+      continue;
+    }
+    const vorher = x.details?.vorher;
+    const hash = x.details?.hash;
+    if (typeof vorher !== 'string' || vorher === 'gesperrt' || !STATUS_WERTE.includes(vorher) || typeof hash !== 'string') continue;
+    entschieden.add(eintrag);
+    sperre.set(eintrag, { am: x.am, vorher: vorher as Exclude<Status, 'gesperrt'>, hash });
+  }
+  const schluessel = [...sperre.keys()];
+  if (!schluessel.length) return [];
+  const e = schema.einstellung;
+  const entfernt = entfernteAusStaenden(
+    (
+      await db
+        .select({ wert: e.wert })
+        .from(e)
+        .where(and(like(e.schluessel, `${STAND_PRAEFIX}%`), sql`jsonb_typeof(${e.wert}->'entfernt') = 'array'`))
+    ).map((z) => z.wert),
+  );
+  const gesperrt = async (art: Entsperrbar) => {
+    const t = ({ aufgabe: schema.lernappAufgabe, lemma: schema.lernappLemma, satz: schema.lernappSatz } as const)[
+      art
+    ] as typeof schema.lernappSatz;
+    const z = await inBloecken(schluessel, (block) =>
+      db
+        .select({ schluessel: t.schluessel, hash: t.inhaltHash })
+        .from(t)
+        .where(and(inArray(t.schluessel, block), eq(t.status, 'gesperrt'))),
+    );
+    return z.map((x) => ({ art, schluessel: x.schluessel, hash: x.hash }));
+  };
+  const treffer = (await Promise.all((['aufgabe', 'lemma', 'satz'] as const).map(gesperrt))).flat();
+  return treffer
+    .flatMap(({ art, schluessel: s, hash }) => {
+      const sp = sperre.get(s)!;
+      return sp.hash === hash && !entfernt.has(s) ? [{ schluessel: s, art, ...sp }] : [];
+    })
+    .sort((x, y) => y.am.getTime() - x.am.getTime() || (x.schluessel < y.schluessel ? -1 : 1));
 }

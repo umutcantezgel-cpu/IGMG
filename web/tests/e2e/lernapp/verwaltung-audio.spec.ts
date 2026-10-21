@@ -34,8 +34,14 @@ const test = basis.extend({
 test.use({ permissions: ['microphone'] });
 test.describe.configure({ mode: 'serial' });
 
-/** Kleinste gültige PDF-Datei als Platzhalter einer unterschriebenen Vereinbarung (Testdaten). */
-const PDF = Buffer.from('%PDF-1.4\n1 0 obj\n<< /Type /Catalog >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF\n');
+/**
+ * Kleinste gültige PDF-Datei als Platzhalter einer unterschriebenen Vereinbarung (Testdaten). Mit einer Kommentarzeile je Lauf:
+ * Die Ablage legt Dateien unter ihrem Inhalts-Hash an (nur neu, `wx`); bei einem Medienordner, den mehrere Läufe teilen,
+ * stieße sonst jeder weitere Lauf auf die Datei eines früheren (EEXIST, L3-06b).
+ */
+const PDF = Buffer.from(
+  `%PDF-1.4\n%${Date.now().toString(36)}${Math.random().toString(36).slice(2)}\n1 0 obj\n<< /Type /Catalog >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF\n`,
+);
 
 test.beforeEach(async ({ page }, info) => {
   test.skip(info.project.name !== 'desktop', 'Verwaltungsabläufe nur einmal je Lauf');
@@ -96,6 +102,16 @@ test('Audio-Studio: Sprecherin mit Vereinbarung, Aufnahme, Anhören, Verwerfen',
   await expect(eintrag.getByRole('status')).toHaveText(
     new RegExp(`^${a.aufnahmeBeendet.replace('{sekunden}', '\\d+').replace(/[().]/g, '\\$&')}$`),
   );
+  // Verwerfen (L3-06b): Fokus auf „Aufnahme starten“, angesagt; dann neu aufnehmen
+  await eintrag.getByRole('button', { name: a.verwerfen, exact: true }).click();
+  await expect(eintrag.getByRole('button', { name: a.start })).toBeFocused();
+  await expect(eintrag.getByRole('status')).toHaveText(a.verworfen);
+  await expect(eintrag.getByRole('button', { name: a.probehoeren })).toHaveCount(0);
+  await eintrag.getByRole('button', { name: a.start }).click();
+  await expect(eintrag.getByRole('button', { name: a.stopp })).toBeFocused();
+  await expect(eintrag.getByText(a.laeuftAufnahme.replace('{sekunden}', '1'))).toBeVisible({ timeout: 10_000 });
+  await eintrag.getByRole('button', { name: a.stopp }).click();
+  await expect(eintrag.getByRole('button', { name: a.probehoeren })).toBeFocused();
   await eintrag.getByRole('button', { name: a.hochladen }).click();
   await expect(eintrag.getByText(a.ergebnis.neu)).toBeVisible({ timeout: 15_000 });
   await expect(eintrag.getByRole('heading', { name: a.aufnahmen })).toBeVisible();

@@ -14,6 +14,9 @@ import type de from '../../../messages/lernapp/de.json';
 export type UiSprache = Oberflaeche;
 export { richtung } from '@/lib/lernapp/kurse';
 
+/** Texte des Melde-Dialogs (Namensraum `melden`, L3-06b). */
+export type MeldenTexte = (typeof de)['melden'];
+
 /** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
 export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
 
@@ -169,10 +172,10 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   weitere: WeitereTexte;
   /**
    * Aufgabe ohne Bewertung überspringen (gelesener Tipp, Hörübung ohne Audio, Hören auf dem Gerät nicht möglich, „Ich kann
-   * gerade nicht sprechen“); mit `typen` auch alle späteren Aufgaben dieser Typen („Ich kann gerade nicht hören“). Meldung
-   * `meldung` in der Live-Region.
+   * gerade nicht sprechen“); mit `typen` auch alle späteren Aufgaben dieser Typen („Ich kann gerade nicht sprechen“), mit
+   * `hoeren` alle späteren, die Hören brauchen („Ich kann gerade nicht hören“). Meldung `meldung` in der Live-Region.
    */
-  ueberspringe: (o?: { typen?: readonly AufgabenTyp[]; meldung?: string }) => void;
+  ueberspringe: (o?: { typen?: readonly AufgabenTyp[]; hoeren?: boolean; meldung?: string }) => void;
   /** Die Aufgabe lässt sich nur überspringen (der Spieler blendet „Prüfen“ aus). */
   nurUeberspringen: (ja: boolean) => void;
   /** Einstellungen „Hörübungen aus“, „Sprechübungen aus“ und Schalter Spracherkennung */

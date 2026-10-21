@@ -6,7 +6,8 @@
 // 3. Worker bündeln (Vite) aus src/components/lernapp/sprechen/whisper.worker.ts mit transformers.js 4.3.0
 //    (dist/transformers.min.js) nach public/lern-app/modelle/sprechen/whisper.worker.mjs – mit E2E_ATTRAPPEN=1 stattdessen
 //    die Attrappe (whisper-attrappe.worker.ts, nur Testbau; in der Produktion verweigert). Der echte Worker trägt einen
-//    Lizenzkopf (transformers.js Apache-2.0, onnxruntime-web MIT) mit Verweis auf den Lizenztext neben den Gewichten.
+//    Lizenzkopf (transformers.js und tokenizers.js Apache-2.0, @huggingface/jinja und onnxruntime-web MIT) mit Verweis auf
+//    den Lizenztext neben den Gewichten.
 // 4. Genau 12 Dateien unter public/lern-app/modelle/ (10 der Sprechübung, 2 Lizenztexte; nur die 10 kommen in den Vorrat).
 // Aufruf: pnpm lernapp:modelle (auch in `pnpm build` und scripts/vercel-bau.mjs; pnpm führt `prebuild` nicht aus).
 // Exit 1 bei jeder Abweichung.
@@ -69,9 +70,13 @@ const ausgabe = join(modelle, 'sprechen');
 rmSync(ausgabe, { recursive: true, force: true });
 const fassung = (pfad) => JSON.parse(readFileSync(join(pfad, 'package.json'), 'utf8')).version;
 const ort = dirname(dirname(ausTransformers.resolve('onnxruntime-web/ort-wasm-simd-threaded.mjs')));
+// mitgebündelte Abhängigkeiten von transformers.js (pnpm: neben ihm im eigenen node_modules)
+const hf = (name) => realpathSync(join(dirname(transformers), name));
 // Lizenzkopf des echten Workers (Apache-2.0 §4: Lizenz an die Empfänger; MIT: Hinweis in jeder Kopie)
 const lizenzkopf =
-  `/*! Sprechuebung der Lern-App. Enthaelt @huggingface/transformers ${fassung(transformers)} (Apache-2.0, Hugging Face) ` +
+  `/*! Sprechuebung der Lern-App. Enthaelt @huggingface/transformers ${fassung(transformers)} (Apache-2.0, Hugging Face), ` +
+  `@huggingface/tokenizers ${fassung(hf('tokenizers'))} (Apache-2.0, Hugging Face), ` +
+  `@huggingface/jinja ${fassung(hf('jinja'))} (MIT, Copyright (c) 2023 Hugging Face) ` +
   `und onnxruntime-web ${fassung(ort)} (MIT, Copyright (c) Microsoft Corporation). Lizenztexte: ` +
   `/${relative(join(web, 'public'), join(gewichte, 'LIZENZ-Apache-2.0.txt'))} und die Seite Quellen der Lern-App. */`;
 const { build } = await import('vite');

@@ -100,8 +100,12 @@ Stand 2026-10-16 (Spike S7), nachgeprüft am Repository-Stand 2026-10-20:
    `is_unapproved` false). Ohne Benutzername: deu 25, tur 51, ara 76.
 4. Koran- und Hadith-4-Gramm (`ngramm_pruefung.py`, Normalisierung nach Beleg S7 §3.3): 38 arabische Sätze (Koran 30, Hadith 19,
    vereinigt 38), betroffen 16 Paare de–ar und 36 Paare tr–ar. Am Repository-Stand 2026-10-20 identisch nachgerechnet. Die Sätze
-   stehen im Auszug; der Import schließt sie aus. IDs (auch Positivproben für den Unit-Test des Wächters, S7-E7):
-   `372061 433388 528234 1845468 1870688 1870712 1870735 1875947 1894844 3521805 4378843 4385414 8386223 8392676 8414725 9571789
-   9837334 10065956 10093410 10097109 10133584 10133586 10133589 10133618 10135759 10140311 10148021 10150500 10278230 10278235
-   10278237 10303180 10462080 10470035 10473490 10739670 12493897 12943584`
+   stehen im Auszug; der Import schließt sie aus. Nachtrag 2026-10-21 (L3-06b, Restmangel L2): Der Religionswächter der
+   Lern-App (`src/lib/lernapp/waechter/kern.mjs`, mit den Schreibvarianten des Uthmani-Texts) findet fünf weitere Sätze mit
+   Koran-4-Gramm (9952319, 10097695, 10278239, 10278245, 10460236; betroffen 8 Paare tr–ar, 0 Paare de–ar). Sie sind ebenso
+   ausgeschlossen; zusammen 43 Sätze. IDs (auch Positivproben für den Unit-Test des Wächters, S7-E7):
+   `372061 433388 528234 1845468 1870688 1870712 1870735 1875947 1894844 3521805 4378843 4385414 8386223 8392676 8414725
+   9571789 9837334 9952319 10065956 10093410 10097109 10097695 10133584 10133586 10133589 10133618 10135759 10140311
+   10148021 10150500 10278230 10278235 10278237 10278239 10278245 10303180 10460236 10462080 10470035 10473490 10739670
+   12493897 12943584`
 5. Inhaltsindikator und Religionsbezug: Beleg S7 §3.3; Standardfilter S7-E3.

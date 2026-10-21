@@ -125,7 +125,8 @@ export type AuditAktion =
   | 'lernapp.aufnahme_gespeichert'
   | 'lernapp.aufnahme_verworfen'
   | 'lernapp.stimme_gewaehlt'
-  | 'lernapp.meldung_bearbeitet';
+  | 'lernapp.meldung_bearbeitet'
+  | 'lernapp.eintrag_entsperrt';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 
