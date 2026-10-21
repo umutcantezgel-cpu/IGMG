@@ -231,9 +231,9 @@ Grundstock** plus einer Gesamtgrenze je Route (Messweise `web/scripts/messen.mjs
 | Hülle (Rahmen, Kopf, Inseln) | eigener Anteil ≤ 20 KB | statisch |
 | Start, Lernpfad, Fortschritt | eigener Anteil ≤ 30 KB, Route gesamt ≤ 180 KB (wie die Website) | statisch; Insel für den lokalen Stand |
 | Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 210 KB (Ausnahme mit Grund: Spielerkern, Abgleich, FSRS, lokale Datenbank) | erst in der Lektion |
-| je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten, vorab für die nächste Aufgabe |
+| je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten; der Typ der nächsten Aufgabe wird erst ab der ersten Eingabe (pointerdown, keydown, click) vorab geholt (L2, 717248f) |
 | arabische Bildschirmtastatur | ≤ 10 KB | erst bei arabischem Freitext |
-| Sprechmodul (Worker, transformers.js, ORT-WASM, Whisper-base q8; 10 Dateien ≈ 95 MB, Fortschreibung S2) | außerhalb des Routenbudgets | nur nach Klick, Größe vorher angezeigt, Gerätecheck |
+| Sprechmodul (Worker, transformers.js, ORT-WASM, Whisper-base q8; 12 Dateien unter `/lern-app/modelle/`, davon 10 im Download ≈ 95 MB und 2 Lizenztexte, Fortschreibung S2 und L2) | außerhalb des Routenbudgets | nur nach Klick, Größe vorher angezeigt, Gerätecheck |
 | Mein Bereich (Lehrkraft) | ≤ 230 KB | wie bisher |
 
 - **Ladezeiten:** LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1. Auf den Messrouten Lighthouse Leistung ≥ 90, Zugänglichkeit 100.

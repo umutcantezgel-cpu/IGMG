@@ -213,7 +213,7 @@ if (pathname.startsWith('/lern-app/')) return NextResponse.next();      // kein 
 | Hülle (Rahmen, Kopf, Inseln) | eigener Anteil ≤ 20 KB über dem Next/React-Grundstock (≈ 128 KB) | statisch |
 | Start, Lernpfad, Fortschritt | eigener Anteil ≤ 30 KB, Route gesamt ≤ 180 KB | statisch; Insel für den lokalen Stand |
 | Lektionsspieler | zusätzlich ≤ 60 KB, Route gesamt ≤ 210 KB (KERN §9, Fortschreibung S1) | erst in der Lektion |
-| je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten, vorab für die nächste Aufgabe |
+| je Übungstyp | ≤ 15 KB | `import()` beim ersten Auftreten; der Typ der nächsten Aufgabe wird erst ab der ersten Eingabe (pointerdown, keydown, click) vorab geholt (L2, 717248f) |
 | arabische Bildschirmtastatur | ≤ 10 KB | erst bei arabischem Freitext |
 | Sprechmodul (Worker, transformers.js, ORT-WASM, whisper-base q8 ≈ 77 MB) | außerhalb des Routenbudgets | nur nach Klick, Größe vorher angezeigt, Gerätecheck |
 | Mein Bereich (Lehrkraft) | ≤ 230 KB | wie bisher |
