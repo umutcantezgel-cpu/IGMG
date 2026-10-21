@@ -18,8 +18,11 @@ export type StartStand = {
   /** Fällige Wiederholungskarten je Kurs */
   faellig: { kurs: KursSlug; anzahl: number }[];
   /** Serie und Wochenband (B-33), sobald es einen Lerntag gibt */
-  serie: { laenge: number; woche: WochenTag[]; heute: string } | null;
+  serie: SerieAnzeige | null;
 };
+
+/** Was das Wochenband der Serie zeigt (Serie.tsx). */
+export type SerieAnzeige = { laenge: number; woche: WochenTag[]; heute: string; wiedereinstieg: boolean; pausetage: number };
 
 export const LEERER_START_STAND: StartStand = {
   begonnen: false,
@@ -30,7 +33,7 @@ export const LEERER_START_STAND: StartStand = {
 };
 
 /** Lerntage, Ruhetage (abgeleitet, `ruhetage` in `einstellungen`) und Pausetage je Woche → Serie für heute (ADR 0043 Nr. 3). */
-async function serieVon(sp: Speicher, profil: string, tag: string): Promise<StartStand['serie']> {
+export async function serieVon(sp: Speicher, profil: string, tag: string): Promise<SerieAnzeige | null> {
   const [tage, ruhe, pausetage] = await Promise.all([
     sp.alle('tage', profilBereich(profil)),
     sp.lies('einstellungen', [profil, 'ruhetage']),
@@ -41,7 +44,7 @@ async function serieVon(sp: Speicher, profil: string, tag: string): Promise<Star
   const s = berechneSerie(new Set(tage.map((t) => t.tag)), ruhetage, tag, {
     ...(typeof pausetage?.wert === 'number' ? { pausetage: pausetage.wert } : {}),
   });
-  return { laenge: s.laenge, woche: s.woche, heute: tag };
+  return { laenge: s.laenge, woche: s.woche, heute: tag, wiedereinstieg: s.wiedereinstieg, pausetage: s.pausetage };
 }
 
 /** Fällige Karten je Kurs (Kartenschlüssel `<richtung>:<schlüssel>`, ADR 0039; Index [profil, faellig]). */

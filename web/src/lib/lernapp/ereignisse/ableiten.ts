@@ -1,5 +1,6 @@
 import { type KartenBasis, type KartenBewertung, type Kartenstand, spieleNach } from '../srs';
-import { berechneSerie, ruhetageAus, type SerienStand } from './serie';
+import { type ErhaltenesAbzeichen, leiteAbzeichenAb, neueAbzeichen } from './abzeichen';
+import { berechneSerie, ruhetageAus, type SerienStand, type WochenTag } from './serie';
 import {
   EINSTELLUNG_WERTE,
   type Einstellungen,
@@ -24,6 +25,7 @@ import { vereinige } from './zusammenfuehren';
  * | Einstellungen, Einstufung | letzter Schreiber gewinnt nach (am, geraet, seq) |
  * | XP, Tagesziel | Summe der `xp`-Ereignisse je Lerntag; Ziel des Tages = letztes Tagesziel mit `tag` ≤ Tag |
  * | Serie | Lerntage mit Pausen und Ruhetagen (serie.ts) |
+ * | Abzeichen | aus den Ereignissen und den Tagen mit erreichtem Tagesziel (abzeichen.ts) |
  */
 export { ABLEITUNGS_VERSION };
 
@@ -63,6 +65,8 @@ export type Ableitung = {
   lerntage: Set<string>;
   ruhetage: Set<string>;
   serie: SerienStand;
+  /** erhaltene Abzeichen mit Lerntag (Reihenfolge wie `ABZEICHEN`) */
+  abzeichen: Map<string, ErhaltenesAbzeichen>;
 };
 
 /** Arten, die einen Tag zum Lerntag machen. */
@@ -154,6 +158,7 @@ export function leiteAb(
 
   const einstellungen = einstellungenAus(sortiert);
   const ruhetage = ruhetageAus(sortiert.filter(istArt('pause')).map((e) => e.daten));
+  const zielTage = [...tage.values()].filter((t) => t.erreicht).map((t) => t.tag);
 
   return {
     version: ABLEITUNGS_VERSION,
@@ -167,10 +172,31 @@ export function leiteAb(
     lerntage,
     ruhetage,
     serie: berechneSerie(lerntage, ruhetage, heute, { pausetage: einstellungen.pausetage }),
+    abzeichen: leiteAbzeichenAb(sortiert, { zielTage }),
   };
 }
 
 /** Stand des heutigen Tages (auch ohne Ereignisse, mit dem gültigen Ziel). */
 export function heuteStand(a: Pick<Ableitung, 'tage' | 'tagesziel'>, heute: string): TagesStand {
   return a.tage.get(heute) ?? { tag: heute, xp: 0, lektionen: 0, bewertungen: 0, ziel: a.tagesziel, erreicht: erreicht(a.tagesziel, 0, 0) };
+}
+
+/**
+ * Was der Abschlussbildschirm nach einer Lektion zeigt (B-30, ADR 0043): der heutige Tag mit Tagesziel, die Serie mit
+ * Wochenband und die seit `vorher` neu erhaltenen Abzeichen. Alles statisch – nichts zählt hoch.
+ */
+export type AbschlussStand = {
+  tag: TagesStand;
+  serie: { laenge: number; woche: WochenTag[]; heute: string; wiedereinstieg: boolean; pausetage: number };
+  /** neu erhaltene Abzeichen (Schlüssel aus `ABZEICHEN`) */
+  neu: string[];
+};
+
+export function abschlussStand(a: Pick<Ableitung, 'tage' | 'tagesziel' | 'serie' | 'abzeichen'>, heute: string, vorher: ReadonlySet<string>): AbschlussStand {
+  const { laenge, woche, wiedereinstieg, pausetage } = a.serie;
+  return {
+    tag: heuteStand(a, heute),
+    serie: { laenge, woche, heute, wiedereinstieg, pausetage },
+    neu: neueAbzeichen(a.abzeichen, vorher),
+  };
 }

@@ -1,22 +1,24 @@
-import { type Ableitung, leiteAb } from '../ereignisse/ableiten';
+import { type Ableitung, type AbschlussStand, abschlussStand, leiteAb } from '../ereignisse/ableiten';
 import { EINSTELLUNG_WERTE, istArt } from '../ereignisse/typen';
 import { ereignisse } from './ausgang';
 import { type EinstellungsEintrag, profilBereich, type Speicher } from './db';
 import { aendereProfil } from './profile';
 
 /**
- * Abgeleitete Speicher eines Profils aus dem Protokoll neu schreiben (Karten, Lektionen, Tage, Einstellungen samt
- * aktuellem Tagesziel unter dem Schlüssel `tagesziel`) und die
- * Ableitungsversion am Profil vermerken. `heute` ist der Lerntag des Geräts.
+ * Abgeleitete Speicher eines Profils aus dem Protokoll neu schreiben (Karten, Lektionen, Tage, Abzeichen, Einstellungen
+ * samt aktuellem Tagesziel unter dem Schlüssel `tagesziel`) und die Ableitungsversion am Profil vermerken. `heute` ist der
+ * Lerntag des Geräts. `vorher`: die Abzeichen, die vor dieser Ableitung im Speicher standen (für „neu erhalten“, B-34).
  */
-export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): Promise<Ableitung> {
+export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): Promise<Ableitung & { vorher: Set<string> }> {
   const alle = await ereignisse(sp, profil);
   const basen = (await sp.lies('sync', profil))?.basen;
   const a = leiteAb(alle, heute, basen ? { basen: new Map(Object.entries(basen)) } : {});
   const bereich = profilBereich(profil);
+  const vorher = new Set((await sp.alle('abzeichen', bereich)).map((e) => e.abzeichen));
   await sp.loescheBereich('karten', bereich);
   await sp.loescheBereich('lektionen', bereich);
   await sp.loescheBereich('tage', bereich);
+  await sp.loescheBereich('abzeichen', bereich);
   await sp.schreibe(
     'karten',
     [...a.karten.values()].map((k) => ({ ...k, profil })),
@@ -28,6 +30,10 @@ export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): P
   await sp.schreibe(
     'tage',
     [...a.tage.values()].map((t) => ({ ...t, profil })),
+  );
+  await sp.schreibe(
+    'abzeichen',
+    [...a.abzeichen.values()].map((z) => ({ profil, abzeichen: z.id, am: z.tag })),
   );
   // Einstellungen: je bekanntem Schlüssel der letzte gültige Schreiber (am, geraet)
   const sieger = new Map<string, EinstellungsEintrag>();
@@ -46,5 +52,11 @@ export async function leiteNeuAb(sp: Speicher, profil: string, heute: string): P
   await sp.loescheBereich('einstellungen', bereich);
   await sp.schreibe('einstellungen', [...sieger.values()]);
   if (await sp.lies('profile', profil)) await aendereProfil(sp, profil, { ableitungsVersion: a.version });
-  return a;
+  return { ...a, vorher };
+}
+
+/** Nach einer Lektion: neu ableiten und den Stand für den Abschlussbildschirm liefern (Tagesziel, Serie, neue Abzeichen). */
+export async function leiteAbNachLektion(sp: Speicher, profil: string, heute: string): Promise<AbschlussStand> {
+  const a = await leiteNeuAb(sp, profil, heute);
+  return abschlussStand(a, heute, a.vorher);
 }

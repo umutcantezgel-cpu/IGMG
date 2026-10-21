@@ -8,7 +8,9 @@ import type { Ereignis } from './typen';
  * - Je Kalenderwoche (Montag bis Sonntag) gelten bis zu `pausetage` Tage ohne Lernen automatisch als Pause (Standard 2,
  *   einstellbar 0–3). Dazu kommen bis zu 30 Ruhetage je Kalenderjahr aus `pause`-Ereignissen.
  * - Heute ohne Lernen beendet nichts („heute“ ist noch offen). Die Serie zählt nur Lerntage, Pausen tragen sie weiter.
- * - Die Serie endet still; es gibt nie „Serie verloren“ (Wortlaut-Test der Texte, ADR 0043 Nr. 10).
+ * - Die Serie endet still; es gibt nie „Serie verloren“ (Wortlaut-Test der Texte, ADR 0043 Nr. 10). Nach mindestens
+ *   `WIEDEREINSTIEG_TAGE` Tagen ohne Lernen (auch nach einer Ruhezeit) meldet `wiedereinstieg` einen freundlichen
+ *   Wiedereinstieg („Schön, dass du wieder da bist“, ADR 0043 Nr. 3).
  */
 
 const TAG_MS = 86_400_000;
@@ -61,10 +63,17 @@ export function ruhetageAus(pausen: readonly { von: string; bis: string }[], jeJ
 
 export type WochenTag = { tag: string; art: 'gelernt' | 'ruhe' | 'pause' | 'heute' | 'zukunft' };
 
+/** Ab so vielen Tagen ohne Lernen zwischen dem letzten Lerntag und heute gilt heute als Wiedereinstieg. */
+export const WIEDEREINSTIEG_TAGE = 3;
+
 export type SerienStand = {
   /** Lerntage in Folge (Pausen- und Ruhetage tragen die Serie, zählen aber nicht mit). */
   laenge: number;
   heuteGelernt: boolean;
+  /** Heute nach mindestens `WIEDEREINSTIEG_TAGE` Tagen ohne Lernen (freundlicher Gruß, kein Vorwurf). */
+  wiedereinstieg: boolean;
+  /** Automatische Pausetage je Kalenderwoche (Einstellung, 0–3). */
+  pausetage: number;
   /** Montag bis Sonntag der laufenden Woche (Wochenband, B-33). */
   woche: WochenTag[];
   /** In der laufenden Woche schon als Pause gezählte Tage. */
@@ -112,7 +121,27 @@ export function berechneSerie(
     return { tag, art };
   });
   const pausenDieseWoche = woche.filter((t) => t.art === 'pause').length;
-  return { laenge, heuteGelernt, woche, pausenDieseWoche };
+  const letzter = vergangen.filter((t) => t < heute).at(-1);
+  const wiedereinstieg = letzter !== undefined && tageZwischen(letzter, heute) > WIEDEREINSTIEG_TAGE;
+  return { laenge, heuteGelernt, wiedereinstieg, pausetage: erlaubt, woche, pausenDieseWoche };
+}
+
+/** Ruhetage als zusammenhängende Zeiträume `{ von, bis }` (aufsteigend). */
+export function ruhezeitraeume(ruhetage: Iterable<string>): { von: string; bis: string }[] {
+  const aus: { von: string; bis: string }[] = [];
+  for (const t of [...new Set(ruhetage)].sort()) {
+    const letzter = aus.at(-1);
+    if (letzter && addiereTage(letzter.bis, 1) === t) letzter.bis = t;
+    else aus.push({ von: t, bis: t });
+  }
+  return aus;
+}
+
+/** Noch freie Ruhetage im Kalenderjahr (`jeJahr` minus die schon eingetragenen Tage des Jahres). */
+export function freieRuhetage(ruhetage: Iterable<string>, jahr: string, jeJahr = 30): number {
+  let n = 0;
+  for (const t of new Set(ruhetage)) if (t.startsWith(`${jahr}-`)) n++;
+  return Math.max(0, jeJahr - n);
 }
 
 /** Spielraum der Uhrzeit-Klemme (ADR 0038 Nr. 6). */
