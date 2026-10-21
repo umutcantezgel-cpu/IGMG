@@ -116,14 +116,28 @@ describe('Verwaltung › Tickets (V10, K-06, G-07)', () => {
   });
 
   describe('Kriterium 3: Rechte je Rolle laut Matrix', () => {
-    it('Matrix: ticket.bearbeiten nur Administration; anlegen und lesen für alle Rollen', async () => {
+    it('Matrix: ticket.bearbeiten nur Administration; anlegen und lesen für alle Rollen außer Sprachprüfung', async () => {
       const { darf, MATRIX, ROLLEN } = await import('@/lib/rechte/matrix');
       for (const rolle of ROLLEN) {
         const zuweisung: RollenZuweisung = { rolle, organisation: rolle === 'organisationsredaktion' ? 'at' : null };
         expect(darf([zuweisung], 'ticket.bearbeiten')).toBe(rolle === 'administration');
         expect(darf([zuweisung], 'ticket.anlegen')).toBe(MATRIX[rolle].has('ticket.anlegen'));
-        expect(MATRIX[rolle].has('ticket.lesen')).toBe(true);
+        // Sprachprüfung ohne die Grundrechte der Verwaltung (S-L1 N-6, ADR 0041 Nr. 1): keine Tickets
+        const ohneGrundrechte = rolle === 'sprachpruefung';
+        expect(MATRIX[rolle].has('ticket.lesen')).toBe(!ohneGrundrechte);
       }
+    });
+
+    it('Sprachprüfung: legt keine Tickets an und kommentiert nicht (ohne ticket.lesen und ticket.anlegen)', async () => {
+      await alsAdministration();
+      const id = await anlegen(eingabe('Rolle Sprachprüfung vorhanden'));
+      const vorher = await alleTickets();
+      await als([{ rolle: 'sprachpruefung' }]);
+      expect(await actions.neuesTicket({}, formular(eingabe('Rolle Sprachprüfung neu')))).toEqual({ fehler: 'keinRecht' });
+      expect(await actions.kommentiereTicket({}, formular({ id, text: 'Kommentar Sprachprüfung' }))).toEqual({
+        fehler: 'keinRecht',
+      });
+      expect(await alleTickets()).toEqual(vorher);
     });
 
     for (const { rolle, name } of [
