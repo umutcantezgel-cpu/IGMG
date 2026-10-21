@@ -1,7 +1,7 @@
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { afterAll, describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 import { testkursQuellen } from '../../../drizzle/seeds/lernapp-test';
 import { INHALT_WURZEL, inhaltsdateien } from '../../../scripts/lernapp/inhaltsdateien';
 import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
@@ -35,6 +35,10 @@ const OPTIONEN: PruefOptionen = {
   daten: DATEN,
 };
 const pruefe = (quellen: readonly ImportQuelle[], extra: PruefOptionen = {}) => pruefeInhalte(quellen, { ...OPTIONEN, ...extra });
+
+// Jeder Prüferlauf baut die Indizes (kaikki, Tanzil, Hadith, Tabu-Lexikon) neu auf; unter Last dauert das länger als die
+// 5 s der Vorgabe (Tor L2: 5,9 s bei Last 4 auf 4 Kernen).
+vi.setConfig({ testTimeout: 30_000 });
 
 type Json = {
   einheit: Record<string, unknown>;
