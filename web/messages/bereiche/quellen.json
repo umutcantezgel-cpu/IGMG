@@ -6,7 +6,7 @@
       "untertitel": "Woher die Texte, Daten, Schriften und Programme dieser Website stammen – mit Urheber, Lizenz und Verweis auf die Quelle.",
       "fussLink": "Quellen",
       "inhaltsverzeichnis": "Inhalt",
-      "standTitel": "Stand: 13. Oktober 2026",
+      "standTitel": "Stand: 21. Oktober 2026",
       "standText": "Übernommene Dateien liegen unverändert und mit Prüfsumme im Quellcode der Website. Religiöse Inhalte erscheinen öffentlich erst nach der Prüfung durch den Imam bzw. die Lehrkraft.",
       "felder": {
         "urheber": "Urheber",
@@ -15,7 +15,9 @@
         "herkunft": "Herkunft",
         "verwendung": "Verwendung",
         "aenderungen": "Änderungen",
-        "projekt": "Zur Quelle"
+        "projekt": "Zur Quelle",
+        "namensnennung": "Namensnennung",
+        "drittlizenzen": "Drittlizenzen"
       },
       "abschnitte": {
         "koran": "Korantext",
@@ -25,7 +27,9 @@
         "gebetszeiten": "Gebetszeiten",
         "schriften": "Schriften",
         "bibliotheken": "Programmbibliotheken",
-        "sprachausgabe": "Sprachausgabe der Lern-App"
+        "sprachausgabe": "Sprachausgabe der Lern-App",
+        "lernapp-daten": "Sprachdaten und Bildkarten der Lern-App",
+        "lernapp-spracherkennung": "Spracherkennung der Lern-App"
       },
       "einleitung": {
         "koran": "Der arabische Korantext und seine Einteilung stammen vom Tanzil-Projekt und werden unverändert wiedergegeben. Den aktuellen Stand des Textes finden Sie auf tanzil.net.",
@@ -35,7 +39,9 @@
         "gebetszeiten": "Die Gebetszeiten werden mit einer quelloffenen Bibliothek berechnet, solange keine bestätigte Jahrestabelle vorliegt.",
         "schriften": "Alle Schriften liegen auf unserem eigenen Server. Es werden keine Schriften von fremden Diensten geladen.",
         "bibliotheken": "Die Website ist mit freier Software gebaut. Die wichtigsten Bibliotheken mit ihrer Lizenz:",
-        "sprachausgabe": "Die Hörübungen der Lern-App nutzen eine synthetische Stimme (Sprachausgabe). Die Aufnahmen werden vorab auf unseren Rechnern erzeugt und geprüft; im Browser läuft keine Sprachausgabe. Für Türkisch und Arabisch gibt es noch keine freigegebene Stimme."
+        "sprachausgabe": "Die Hörübungen der Lern-App nutzen eine synthetische Stimme (Sprachausgabe). Die Aufnahmen werden vorab auf unseren Rechnern erzeugt und geprüft; im Browser läuft keine Sprachausgabe. Für Türkisch und Arabisch gibt es noch keine freigegebene Stimme.",
+        "lernapp-daten": "Die Sprachkurse der Lern-App nutzen Sätze und Wörterbuchangaben aus offenen Sammlungen. Die Namensnennung steht bei jedem Satz und Eintrag im Kurs, auch offline. Häufigkeitslisten dienen nur der Auswahl der Wörter. Die Lerninhalte selbst stehen unter CC BY-SA 4.0.",
+        "lernapp-spracherkennung": "Die Sprechübung der Lern-App erkennt Gesprochenes nur auf dem eigenen Gerät. Modell und Laufzeit kommen von unserem Server; die Aufnahme verlässt das Gerät nicht."
       },
       "uebersetzungsbedingungen": {
         "titel": "Bedingungen von Tanzil.net",
@@ -46,7 +52,7 @@
       "eintraege": {
         "tanzil": {
           "fassung": "Version 1.1 vom 12. Februar 2021, Variante mit Pausen- und Sajda-Zeichen; abgerufen am 13. Oktober 2026.",
-          "verwendung": "Arabischer Korantext im Koranleser.",
+          "verwendung": "Arabischer Korantext im Koranleser; in der Lern-App nur über Verweise und als Prüfgrundlage, dass die Sprachkurse keinen Korantext enthalten.",
           "aenderungen": "Keine. Der Text ist unverändert übernommen; der Urheberrechtshinweis im Dateikopf bleibt erhalten."
         },
         "tanzil-metadaten": {
@@ -77,7 +83,7 @@
         },
         "hadith-api": {
           "fassung": "Ausgabe ara-bukhari, Commit df57907 vom 3. Juni 2026; abgerufen am 13. Oktober 2026.",
-          "verwendung": "Arabischer Text von Sahih al-Bukhari auf den Hadith-Seiten und in der Suche.",
+          "verwendung": "Arabischer Text von Sahih al-Bukhari auf den Hadith-Seiten und in der Suche; in der Lern-App nur über Verweise und als Prüfgrundlage für die Sprachkurse.",
           "aenderungen": "Keine am Text. Für die Suche entsteht zusätzlich eine Fassung ohne Vokalzeichen; fehlende Buchnummern werden aus den Nummernbereichen der Quelle ergänzt.",
           "hinweis": "Die Unlicense gilt für das Repository. Als Herkunft des Textes nennt es sunnah.com. Die Rechte am arabischen Text klärt die Gemeinde noch; bis dahin ist die vollständige Sammlung nicht öffentlich."
         },
@@ -112,6 +118,57 @@
           "verwendung": "Deutsche Aussprache von Wörtern und Sätzen in den Hörübungen der Lern-App.",
           "aenderungen": "Ins ONNX-Format übertragen; jede Aufnahme auf eine einheitliche Lautstärke gebracht, Stille am Rand gekürzt und als Opus gespeichert. Für einzelne Wörter, Abkürzungen und Buchstabennamen ist die Aussprache vorgegeben.",
           "hinweis": "Synthetische Stimme: Die Aufnahmen sind mit diesem Modell erzeugt und nicht von einem Menschen gesprochen. Trainingsdaten: Thorsten Müller (Thorsten-Voice), CC0 1.0."
+        },
+        "noto-sans-arabic": {
+          "fassung": "Über @fontsource/noto-sans-arabic 5.3.0 (Schnitte 400 und 700), selbst gehostet.",
+          "verwendung": "Arabische Bedienoberfläche der Lern-App."
+        },
+        "tatoeba": {
+          "fassung": "Wochenexport vom 10. Oktober 2026, abgerufen am 16. Oktober 2026; nur direkte Satzpaare Deutsch–Türkisch, Deutsch–Arabisch und Türkisch–Arabisch. Eine Teilmenge steht unter CC0 1.0.",
+          "verwendung": "Beispielsätze und Übersetzungen in den Sprachkursen der Lern-App.",
+          "aenderungen": "Auswahl nach dem Inhaltsleitfaden; arabische Sätze vokalisiert; Lückentexte und andere Änderungen als „bearbeitet“ gekennzeichnet."
+        },
+        "wiktionary": {
+          "fassung": "Wiktionary-Abzüge vom 1. und 2. September 2026, extrahiert am 3. Oktober 2026 (Wiktextract); abgerufen am 16. Oktober 2026.",
+          "verwendung": "Grundformen, Wortformen und Bedeutungsangaben in den Sprachkursen der Lern-App.",
+          "aenderungen": "Gekürzt und umformatiert: ohne Beispiele, Zitate, Herkunftsangaben und Tondateien. Wiktionary-Texte stehen wahlweise unter CC BY-SA oder GFDL; gewählt ist CC BY-SA 4.0."
+        },
+        "wordfreq": {
+          "fassung": "Version 3.1.1 (Daten von etwa 2021); die 50.000 häufigsten Wörter je Sprache.",
+          "verwendung": "Auswahl und Stufung des Wortschatzes der Lern-App; erscheint nicht in Lektionen.",
+          "aenderungen": "Gefiltert und gekürzt."
+        },
+        "camel-msa": {
+          "fassung": "Version 1.0 (Hocharabisch); die 50.000 häufigsten Wortformen.",
+          "verwendung": "Auswahl und Stufung des arabischen Wortschatzes der Lern-App; erscheint nicht in Lektionen.",
+          "aenderungen": "Gefiltert und gekürzt."
+        },
+        "frequencywords": {
+          "fassung": "Ausgabe 2018 (Commit 525f9b5), Deutsch, Türkisch und Arabisch.",
+          "verwendung": "Gegenprobe bei der Auswahl des Wortschatzes; erscheint nicht in Lektionen.",
+          "aenderungen": "Keine; Sätze aus OpenSubtitles werden nicht verwendet."
+        },
+        "lucide-bildkarten": {
+          "fassung": "Version 1.55.0.",
+          "verwendung": "Bildkarten der Lern-App (nur Gegenstände und Zeichen).",
+          "hinweis": "Die Symbole calendar, clock, key und shopping-bag stammen aus Feather (Copyright (c) 2013-present Cole Bemis, MIT)."
+        },
+        "whisper": {
+          "fassung": "Modell „base“.",
+          "verwendung": "Spracherkennung der Sprechübung in der Lern-App, nur im Browser."
+        },
+        "whisper-onnx": {
+          "fassung": "Commit 64da572, Gewichte mit 8 Bit (q8); Prüfsummen in web/daten/lernapp-modelle.",
+          "verwendung": "Die Whisper-Gewichte im ONNX-Format für den Browser, geladen von unserem Server."
+        },
+        "transformers-js": {
+          "fassung": "Version 4.3.0, mit Tokenizers.js 0.2.0 (Apache-2.0) und @huggingface/jinja 0.5.10 (MIT).",
+          "verwendung": "Ausführung der Spracherkennung im Browser (Worker der Sprechübung)."
+        },
+        "onnxruntime-web": {
+          "fassung": "Version 1.31.0-dev.20260914-8d85527a0 (WebAssembly, nur Prozessor).",
+          "verwendung": "Laufzeit der Spracherkennung im Browser.",
+          "hinweis": "ONNX Runtime enthält Teile anderer freier Projekte; ihre Lizenzen stehen in der Datei ThirdPartyNotices (Stand 8d85527). Darunter ist Eigen (MPL-2.0); den Quellcode gibt es unter gitlab.com/libeigen/eigen."
         }
       },
       "bibliotheken": {
@@ -137,7 +194,10 @@
           "rrule": "Wiederkehrende Termine",
           "uqr": "QR-Codes",
           "sharp": "Bildverarbeitung",
-          "nodemailer": "E-Mail-Versand"
+          "nodemailer": "E-Mail-Versand",
+          "idb": "Lokale Datenbank der Lern-App",
+          "ts-fsrs": "Wiederholungsplan der Lern-App",
+          "fastest-levenshtein": "Antwortabgleich der Lern-App"
         }
       }
     }
@@ -149,7 +209,7 @@
       "untertitel": "Bu web sitesindeki metinlerin, verilerin, yazı tiplerinin ve programların nereden geldiği – hak sahibi, lisans ve kaynak bağlantısıyla.",
       "fussLink": "Kaynaklar",
       "inhaltsverzeichnis": "İçindekiler",
-      "standTitel": "Tarih: 13 Ekim 2026",
+      "standTitel": "Tarih: 21 Ekim 2026",
       "standText": "Alınan dosyalar değiştirilmeden ve sağlama toplamıyla web sitesinin kaynak kodunda yer alır. Dinî içerikler ancak imam ya da öğretmen tarafından incelendikten sonra yayımlanır.",
       "felder": {
         "urheber": "Hak sahibi",
@@ -158,7 +218,9 @@
         "herkunft": "Asıl kaynak",
         "verwendung": "Kullanım",
         "aenderungen": "Değişiklikler",
-        "projekt": "Kaynağa git"
+        "projekt": "Kaynağa git",
+        "namensnennung": "Atıf",
+        "drittlizenzen": "Üçüncü taraf lisansları"
       },
       "abschnitte": {
         "koran": "Kur'an metni",
@@ -168,7 +230,9 @@
         "gebetszeiten": "Namaz vakitleri",
         "schriften": "Yazı tipleri",
         "bibliotheken": "Program kütüphaneleri",
-        "sprachausgabe": "Öğrenme uygulamasının ses sentezi"
+        "sprachausgabe": "Öğrenme uygulamasının ses sentezi",
+        "lernapp-daten": "Öğrenme uygulamasının dil verileri ve resimli kartları",
+        "lernapp-spracherkennung": "Öğrenme uygulamasının konuşma tanıması"
       },
       "einleitung": {
         "koran": "Arapça Kur'an metni ve bölümlemesi Tanzil projesinden alınmıştır ve değiştirilmeden sunulur. Metnin güncel hâlini tanzil.net adresinde bulabilirsiniz.",
@@ -178,7 +242,9 @@
         "gebetszeiten": "Onaylanmış bir yıllık takvim bulunmadığı sürece namaz vakitleri açık kaynaklı bir kütüphaneyle hesaplanır.",
         "schriften": "Tüm yazı tipleri kendi sunucumuzda bulunur. Yabancı hizmetlerden yazı tipi yüklenmez.",
         "bibliotheken": "Web sitesi özgür yazılımla geliştirilmiştir. En önemli kütüphaneler ve lisansları:",
-        "sprachausgabe": "Öğrenme uygulamasının dinleme alıştırmaları yapay bir ses (ses sentezi) kullanır. Ses kayıtları önceden kendi bilgisayarlarımızda üretilir ve denetlenir; tarayıcıda ses sentezi çalışmaz. Türkçe ve Arapça için henüz onaylanmış bir ses yoktur."
+        "sprachausgabe": "Öğrenme uygulamasının dinleme alıştırmaları yapay bir ses (ses sentezi) kullanır. Ses kayıtları önceden kendi bilgisayarlarımızda üretilir ve denetlenir; tarayıcıda ses sentezi çalışmaz. Türkçe ve Arapça için henüz onaylanmış bir ses yoktur.",
+        "lernapp-daten": "Öğrenme uygulamasının dil kursları açık koleksiyonlardaki cümleleri ve sözlük bilgilerini kullanır. Atıf, kurstaki her cümlede ve girişte yer alır; çevrimdışı da görünür. Sıklık listeleri yalnızca kelime seçimine yarar. Öğrenme içeriklerinin kendisi CC BY-SA 4.0 lisansı altındadır.",
+        "lernapp-spracherkennung": "Öğrenme uygulamasının konuşma alıştırması, söyleneni yalnızca kendi cihazınızda tanır. Model ve çalışma ortamı kendi sunucumuzdan gelir; ses kaydı cihazdan çıkmaz."
       },
       "uebersetzungsbedingungen": {
         "titel": "Tanzil.net koşulları",
@@ -189,7 +255,7 @@
       "eintraege": {
         "tanzil": {
           "fassung": "12 Şubat 2021 tarihli 1.1 sürümü, vakıf ve secde işaretli varyant; 13 Ekim 2026'da indirildi.",
-          "verwendung": "Kur'an okuyucusundaki Arapça Kur'an metni.",
+          "verwendung": "Kur'an okuyucusundaki Arapça Kur'an metni; öğrenme uygulamasında yalnızca göndermeler üzerinden ve dil kurslarında Kur'an metni bulunmadığının denetimi için.",
           "aenderungen": "Yok. Metin değiştirilmeden alınmıştır; dosya başlığındaki telif hakkı notu korunur."
         },
         "tanzil-metadaten": {
@@ -220,7 +286,7 @@
         },
         "hadith-api": {
           "fassung": "ara-bukhari baskısı, 3 Haziran 2026 tarihli df57907 commit'i; 13 Ekim 2026'da indirildi.",
-          "verwendung": "Hadis sayfalarında ve aramada Sahîh-i Buhârî'nin Arapça metni.",
+          "verwendung": "Hadis sayfalarında ve aramada Sahîh-i Buhârî'nin Arapça metni; öğrenme uygulamasında yalnızca göndermeler üzerinden ve dil kurslarının denetimi için.",
           "aenderungen": "Metinde değişiklik yok. Arama için ayrıca harekesiz bir sürüm oluşturulur; eksik kitap numaraları kaynağın numara aralıklarından tamamlanır.",
           "hinweis": "Unlicense, depo için geçerlidir. Depo, metnin kaynağı olarak sunnah.com'u gösterir. Arapça metnin haklarını cemaatimiz hâlâ netleştiriyor; o zamana kadar eserin tamamı yayımlanmaz."
         },
@@ -255,6 +321,57 @@
           "verwendung": "Öğrenme uygulamasının dinleme alıştırmalarında Almanca kelime ve cümlelerin seslendirilmesi.",
           "aenderungen": "ONNX biçimine aktarıldı; her kayıt aynı ses düzeyine getirildi, kenarlardaki sessizlik kısaltıldı ve Opus olarak kaydedildi. Bazı kelimeler, kısaltmalar ve harf adları için telaffuz önceden belirlendi.",
           "hinweis": "Yapay ses: Kayıtlar bu modelle üretilmiştir, bir insan tarafından seslendirilmemiştir. Eğitim verileri: Thorsten Müller (Thorsten-Voice), CC0 1.0."
+        },
+        "noto-sans-arabic": {
+          "fassung": "@fontsource/noto-sans-arabic 5.3.0 üzerinden (400 ve 700 kalınlıkları), kendi sunucumuzda.",
+          "verwendung": "Öğrenme uygulamasının Arapça arayüzü."
+        },
+        "tatoeba": {
+          "fassung": "10 Ekim 2026 tarihli haftalık dışa aktarım, 16 Ekim 2026'da indirildi; yalnızca Almanca–Türkçe, Almanca–Arapça ve Türkçe–Arapça doğrudan cümle çiftleri. Bir kısmı CC0 1.0 lisanslıdır.",
+          "verwendung": "Öğrenme uygulamasının dil kurslarındaki örnek cümleler ve çeviriler.",
+          "aenderungen": "İçerik kılavuzuna göre seçildi; Arapça cümleler harekelendi; boşluk doldurma metinleri ve diğer değişiklikler „düzenlendi“ olarak işaretlendi."
+        },
+        "wiktionary": {
+          "fassung": "1 ve 2 Eylül 2026 tarihli Wiktionary dökümleri, 3 Ekim 2026'da çıkarıldı (Wiktextract); 16 Ekim 2026'da indirildi.",
+          "verwendung": "Öğrenme uygulamasının dil kurslarındaki temel biçimler, çekimli biçimler ve anlam bilgileri.",
+          "aenderungen": "Kısaltıldı ve yeniden biçimlendirildi: örnekler, alıntılar, köken bilgileri ve ses dosyaları yok. Wiktionary metinleri isteğe göre CC BY-SA veya GFDL lisanslıdır; CC BY-SA 4.0 seçildi."
+        },
+        "wordfreq": {
+          "fassung": "Sürüm 3.1.1 (yaklaşık 2021 verileri); her dil için en sık 50.000 kelime.",
+          "verwendung": "Öğrenme uygulamasında kelime hazinesinin seçimi ve seviyelendirilmesi; derslerde görünmez.",
+          "aenderungen": "Süzüldü ve kısaltıldı."
+        },
+        "camel-msa": {
+          "fassung": "Sürüm 1.0 (Modern Standart Arapça); en sık 50.000 kelime biçimi.",
+          "verwendung": "Öğrenme uygulamasında Arapça kelime hazinesinin seçimi ve seviyelendirilmesi; derslerde görünmez.",
+          "aenderungen": "Süzüldü ve kısaltıldı."
+        },
+        "frequencywords": {
+          "fassung": "2018 sürümü (commit 525f9b5), Almanca, Türkçe ve Arapça.",
+          "verwendung": "Kelime seçiminde karşılaştırma için; derslerde görünmez.",
+          "aenderungen": "Yok; OpenSubtitles cümleleri kullanılmaz."
+        },
+        "lucide-bildkarten": {
+          "fassung": "Sürüm 1.55.0.",
+          "verwendung": "Öğrenme uygulamasının resimli kartları (yalnızca eşyalar ve işaretler).",
+          "hinweis": "calendar, clock, key ve shopping-bag simgeleri Feather projesinden gelir (Copyright (c) 2013-present Cole Bemis, MIT)."
+        },
+        "whisper": {
+          "fassung": "„base“ modeli.",
+          "verwendung": "Öğrenme uygulamasındaki konuşma alıştırmasının konuşma tanıması, yalnızca tarayıcıda."
+        },
+        "whisper-onnx": {
+          "fassung": "Commit 64da572, 8 bit ağırlıklar (q8); sağlama toplamları web/daten/lernapp-modelle içinde.",
+          "verwendung": "Tarayıcı için ONNX biçiminde Whisper ağırlıkları; kendi sunucumuzdan yüklenir."
+        },
+        "transformers-js": {
+          "fassung": "Sürüm 4.3.0, Tokenizers.js 0.2.0 (Apache-2.0) ve @huggingface/jinja 0.5.10 (MIT) ile.",
+          "verwendung": "Konuşma tanımanın tarayıcıda çalıştırılması (konuşma alıştırmasının worker bileşeni)."
+        },
+        "onnxruntime-web": {
+          "fassung": "Sürüm 1.31.0-dev.20260914-8d85527a0 (WebAssembly, yalnızca işlemci).",
+          "verwendung": "Konuşma tanımanın tarayıcıdaki çalışma ortamı.",
+          "hinweis": "ONNX Runtime başka özgür projelerin parçalarını içerir; lisansları ThirdPartyNotices dosyasındadır (sürüm 8d85527). Bunlar arasında Eigen (MPL-2.0) de vardır; kaynak kodu gitlab.com/libeigen/eigen adresindedir."
         }
       },
       "bibliotheken": {
@@ -280,7 +397,10 @@
           "rrule": "Tekrarlanan etkinlikler",
           "uqr": "QR kodları",
           "sharp": "Görsel işleme",
-          "nodemailer": "E-posta gönderimi"
+          "nodemailer": "E-posta gönderimi",
+          "idb": "Öğrenme uygulamasının yerel veritabanı",
+          "ts-fsrs": "Öğrenme uygulamasının tekrar planı",
+          "fastest-levenshtein": "Öğrenme uygulamasında cevap karşılaştırması"
         }
       }
     }
@@ -292,7 +412,7 @@
       "untertitel": "Where the texts, data, fonts and software of this website come from – with author, licence and a link to the source.",
       "fussLink": "Sources",
       "inhaltsverzeichnis": "Contents",
-      "standTitel": "As of 13 October 2026",
+      "standTitel": "As of 21 October 2026",
       "standText": "Adopted files are kept unchanged and with a checksum in the website's source code. Religious content is published only after it has been reviewed by the imam or the teacher.",
       "felder": {
         "urheber": "Author",
@@ -301,7 +421,9 @@
         "herkunft": "Origin",
         "verwendung": "Used for",
         "aenderungen": "Changes",
-        "projekt": "Go to the source"
+        "projekt": "Go to the source",
+        "namensnennung": "Attribution",
+        "drittlizenzen": "Third-party licences"
       },
       "abschnitte": {
         "koran": "Quran text",
@@ -311,7 +433,9 @@
         "gebetszeiten": "Prayer times",
         "schriften": "Fonts",
         "bibliotheken": "Software libraries",
-        "sprachausgabe": "Speech synthesis in the learning app"
+        "sprachausgabe": "Speech synthesis in the learning app",
+        "lernapp-daten": "Language data and picture cards of the learning app",
+        "lernapp-spracherkennung": "Speech recognition in the learning app"
       },
       "einleitung": {
         "koran": "The Arabic Quran text and its divisions come from the Tanzil project and are reproduced unchanged. You can find the latest version of the text at tanzil.net.",
@@ -321,7 +445,9 @@
         "gebetszeiten": "As long as no confirmed annual timetable is available, the prayer times are calculated with an open-source library.",
         "schriften": "All fonts are hosted on our own server. No fonts are loaded from third-party services.",
         "bibliotheken": "This website is built with free software. The most important libraries and their licences:",
-        "sprachausgabe": "The listening exercises of the learning app use a synthetic voice (speech synthesis). The recordings are generated and checked in advance on our own computers; no speech synthesis runs in the browser. There is no approved voice for Turkish and Arabic yet."
+        "sprachausgabe": "The listening exercises of the learning app use a synthetic voice (speech synthesis). The recordings are generated and checked in advance on our own computers; no speech synthesis runs in the browser. There is no approved voice for Turkish and Arabic yet.",
+        "lernapp-daten": "The language courses of the learning app use sentences and dictionary data from open collections. The attribution appears with every sentence and entry in the course, also offline. Frequency lists only help to choose the words. The learning content itself is licensed under CC BY-SA 4.0.",
+        "lernapp-spracherkennung": "The speaking exercise of the learning app recognises speech only on your own device. Model and runtime come from our own server; the recording never leaves the device."
       },
       "uebersetzungsbedingungen": {
         "titel": "Terms of Tanzil.net",
@@ -332,7 +458,7 @@
       "eintraege": {
         "tanzil": {
           "fassung": "Version 1.1 of 12 February 2021, variant with pause and sajda marks; retrieved on 13 October 2026.",
-          "verwendung": "Arabic Quran text in the Quran reader.",
+          "verwendung": "Arabic Quran text in the Quran reader; in the learning app only through references and to check that the language courses contain no Quran text.",
           "aenderungen": "None. The text is adopted unchanged; the copyright notice in the file header is kept."
         },
         "tanzil-metadaten": {
@@ -363,7 +489,7 @@
         },
         "hadith-api": {
           "fassung": "Edition ara-bukhari, commit df57907 of 3 June 2026; retrieved on 13 October 2026.",
-          "verwendung": "Arabic text of Sahih al-Bukhari on the hadith pages and in the search.",
+          "verwendung": "Arabic text of Sahih al-Bukhari on the hadith pages and in the search; in the learning app only through references and to check the language courses.",
           "aenderungen": "None to the text. For the search, an additional version without vowel marks is created; missing book numbers are filled in from the number ranges of the source.",
           "hinweis": "The Unlicense applies to the repository. It names sunnah.com as the origin of the text. Our community is still clarifying the rights to the Arabic text; until then, the complete collection is not public."
         },
@@ -398,6 +524,57 @@
           "verwendung": "German pronunciation of words and sentences in the listening exercises of the learning app.",
           "aenderungen": "Converted to ONNX; every recording normalised to the same loudness, silence at the edges trimmed and stored as Opus. The pronunciation of some words, abbreviations and letter names is specified.",
           "hinweis": "Synthetic voice: the recordings were generated with this model and not spoken by a person. Training data: Thorsten Müller (Thorsten-Voice), CC0 1.0."
+        },
+        "noto-sans-arabic": {
+          "fassung": "Via @fontsource/noto-sans-arabic 5.3.0 (weights 400 and 700), self-hosted.",
+          "verwendung": "Arabic interface of the learning app."
+        },
+        "tatoeba": {
+          "fassung": "Weekly export of 10 October 2026, retrieved on 16 October 2026; only direct sentence pairs German–Turkish, German–Arabic and Turkish–Arabic. A subset is licensed under CC0 1.0.",
+          "verwendung": "Example sentences and translations in the language courses of the learning app.",
+          "aenderungen": "Selected according to the content guidelines; Arabic sentences vocalised; gap texts and other changes marked as “edited”."
+        },
+        "wiktionary": {
+          "fassung": "Wiktionary dumps of 1 and 2 September 2026, extracted on 3 October 2026 (Wiktextract); retrieved on 16 October 2026.",
+          "verwendung": "Base forms, word forms and glosses in the language courses of the learning app.",
+          "aenderungen": "Shortened and reformatted: no examples, quotations, etymologies or audio files. Wiktionary texts are available under CC BY-SA or the GFDL; CC BY-SA 4.0 was chosen."
+        },
+        "wordfreq": {
+          "fassung": "Version 3.1.1 (data from about 2021); the 50,000 most frequent words per language.",
+          "verwendung": "Selecting and grading the vocabulary of the learning app; not shown in lessons.",
+          "aenderungen": "Filtered and shortened."
+        },
+        "camel-msa": {
+          "fassung": "Version 1.0 (Modern Standard Arabic); the 50,000 most frequent word forms.",
+          "verwendung": "Selecting and grading the Arabic vocabulary of the learning app; not shown in lessons.",
+          "aenderungen": "Filtered and shortened."
+        },
+        "frequencywords": {
+          "fassung": "2018 edition (commit 525f9b5), German, Turkish and Arabic.",
+          "verwendung": "Cross-check when selecting the vocabulary; not shown in lessons.",
+          "aenderungen": "None; sentences from OpenSubtitles are not used."
+        },
+        "lucide-bildkarten": {
+          "fassung": "Version 1.55.0.",
+          "verwendung": "Picture cards of the learning app (objects and signs only).",
+          "hinweis": "The symbols calendar, clock, key and shopping-bag come from Feather (Copyright (c) 2013-present Cole Bemis, MIT)."
+        },
+        "whisper": {
+          "fassung": "Model “base”.",
+          "verwendung": "Speech recognition for the speaking exercise of the learning app, in the browser only."
+        },
+        "whisper-onnx": {
+          "fassung": "Commit 64da572, 8-bit weights (q8); checksums in web/daten/lernapp-modelle.",
+          "verwendung": "Whisper weights in ONNX format for the browser, loaded from our own server."
+        },
+        "transformers-js": {
+          "fassung": "Version 4.3.0, with Tokenizers.js 0.2.0 (Apache-2.0) and @huggingface/jinja 0.5.10 (MIT).",
+          "verwendung": "Runs the speech recognition in the browser (worker of the speaking exercise)."
+        },
+        "onnxruntime-web": {
+          "fassung": "Version 1.31.0-dev.20260914-8d85527a0 (WebAssembly, CPU only).",
+          "verwendung": "Runtime of the speech recognition in the browser.",
+          "hinweis": "ONNX Runtime contains parts of other free projects; their licences are listed in the ThirdPartyNotices file (revision 8d85527). Among them is Eigen (MPL-2.0); its source code is available at gitlab.com/libeigen/eigen."
         }
       },
       "bibliotheken": {
@@ -423,7 +600,10 @@
           "rrule": "Recurring events",
           "uqr": "QR codes",
           "sharp": "Image processing",
-          "nodemailer": "Sending e-mail"
+          "nodemailer": "Sending e-mail",
+          "idb": "Local database of the learning app",
+          "ts-fsrs": "Review schedule of the learning app",
+          "fastest-levenshtein": "Answer matching in the learning app"
         }
       }
     }

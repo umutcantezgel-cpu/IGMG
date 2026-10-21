@@ -943,5 +943,36 @@
       "nicht": "Du erscheinst nicht in den Bestenlisten.",
       "ohneEinwilligung": "Zustimmen kannst du, sobald deine Einwilligung „Lern-App“ gilt."
     }
+  },
+  "lizenzverzeichnis": {
+    "datenTitel": "Sprachdaten",
+    "datenText": "Die Sprachkurse nutzen Sätze und Wörterbuchangaben aus offenen Sammlungen. Die Namensnennung steht bei jedem Satz und jedem Eintrag im Kurs, auch ohne Netz. Häufigkeitslisten helfen nur bei der Auswahl der Wörter.",
+    "religionTitel": "Arabische Quelltexte (Koran und Hadith)",
+    "religionText": "Diese Texte werden nur über Verweise genutzt, nie verändert und nie vorgelesen. Die Lern-App prüft mit ihnen außerdem, dass die Sprachkurse keinen solchen Wortlaut enthalten.",
+    "stand": "Stand",
+    "teilmenge": "Teilmenge: {lizenz}",
+    "verwendung": "Verwendung",
+    "namensnennung": "Namensnennung",
+    "verwendungen": {
+      "tatoeba": "Beispielsätze und ihre Übersetzungen in den Sprachkursen. Arabische Sätze sind vokalisiert und als „bearbeitet“ gekennzeichnet.",
+      "wiktionary": "Grundformen, Wortformen und Bedeutungsangaben der Wörter in den Sprachkursen – gekürzt, ohne Beispiele.",
+      "wordfreq": "Nur zur Auswahl und Stufung des Wortschatzes; erscheint nicht in Lektionen.",
+      "camel-msa": "Nur zur Auswahl und Stufung des arabischen Wortschatzes; erscheint nicht in Lektionen.",
+      "frequencywords": "Nur als Gegenprobe bei der Auswahl des Wortschatzes; erscheint nicht in Lektionen.",
+      "tanzil": "Arabischer Korantext, unverändert. Nur über Verweise im Wissenskurs und im Kurs zum Koran-Arabisch; Prüfgrundlage für die Sprachkurse.",
+      "bukhari": "Arabischer Text von Sahih al-Bukhari. Nur über Verweise im Wissenskurs; Prüfgrundlage für die Sprachkurse. Die Rechte am arabischen Text klärt die Gemeinde noch."
+    },
+    "bildkartenTitel": "Bildkarten",
+    "bildkartenText": "Die Bildkarten sind Linien-Symbole aus {quelle} {version} (Lizenz {lizenz}, siehe Programmbibliotheken). Sie zeigen nur Gegenstände und Zeichen, keine Fotos.",
+    "bildkartenFeather": "Diese Symbole stammen aus Feather ({urheber}, Lizenz {lizenz}): {symbole}",
+    "drittlizenzenTitel": "Drittlizenzen von ONNX Runtime",
+    "drittlizenzenText": "ONNX Runtime enthält Teile anderer freier Projekte. Ihre Lizenztexte stehen vollständig in der Datei „ThirdPartyNotices“ (englisch, Stand {stand}). Zum Öffnen brauchst du eine Verbindung.",
+    "drittlizenzenLink": "ThirdPartyNotices öffnen (Textdatei, englisch)",
+    "eigen": "Darunter: {name}, Lizenz {lizenz}. Den Quellcode gibt es frei unter {adresse}.",
+    "gewichte": "Gewichte",
+    "export": "ONNX-Export (SHA-256)",
+    "erzeugung": "Erzeugt mit",
+    "wasserzeichen": "Wasserzeichen",
+    "ohneWasserzeichen": "keines"
   }
 }
