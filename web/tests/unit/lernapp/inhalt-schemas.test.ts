@@ -224,14 +224,32 @@ describe('Aussprache, Audio-Manifest, Bildkarten', () => {
     ).toBe(false);
   });
 
-  it('Bildkarten: Lizenz passend zur Herkunft, OpenMoji mit Namensnennung, nur Pfaddaten', () => {
-    const s = { id: 'tasse', motiv: 'Tasse', pfade: ['M4 4h16v16H4z'], quelle: 'lucide:coffee@1.0.0', lizenz: 'ISC' };
-    const d = { format: 'igmg-lernapp-symbole', version: 1, symbole: [s] };
+  it('Bildkarten: Format des Registers, Lizenz passend zur Herkunft, OpenMoji mit Namensnennung, nur Pfaddaten', () => {
+    const s = {
+      motiv: 'Tasse',
+      gruppe: 'kueche',
+      quelle: 'lucide:coffee@1.0.0',
+      lizenz: 'ISC',
+      freigegeben: false,
+      elemente: [
+        { art: 'path', d: 'M4 4h16v16H4z' },
+        { art: 'circle', cx: 12, cy: 12, r: 3 },
+      ],
+    };
+    const d = { format: 'igmg-lernapp-symbole', version: 1, symbole: { tasse: s } };
     expect(fehler(SymbolDateiSchema.safeParse(d))).toEqual([]);
-    expect(SymbolDateiSchema.safeParse({ ...d, symbole: [{ ...s, lizenz: 'MIT' }] }).success).toBe(false);
+    expect(SymbolDateiSchema.safeParse({ ...d, symbole: { tasse: { ...s, lizenz: 'MIT' } } }).success).toBe(false);
     expect(
-      SymbolDateiSchema.safeParse({ ...d, symbole: [{ ...s, quelle: 'openmoji:1F375@17.0.0', lizenz: 'CC-BY-SA-4.0' }] }).success,
+      SymbolDateiSchema.safeParse({ ...d, symbole: { tasse: { ...s, quelle: 'openmoji:1F375@17.0.0', lizenz: 'CC-BY-SA-4.0' } } }).success,
     ).toBe(false);
-    expect(SymbolDateiSchema.safeParse({ ...d, symbole: [{ ...s, pfade: ['<script>'] }] }).success).toBe(false);
+    expect(SymbolDateiSchema.safeParse({ ...d, symbole: { tasse: { ...s, elemente: [{ art: 'path', d: '<script>' }] } } }).success).toBe(
+      false,
+    );
+    expect(SymbolDateiSchema.safeParse({ ...d, symbole: { 'Tasse!': s } }).success).toBe(false);
+  });
+
+  it('das echte Register (inhalte/lernapp/symbole/symbole.json) ist gültig', () => {
+    const roh = JSON.parse(readFileSync(join(process.cwd(), 'inhalte', 'lernapp', 'symbole', 'symbole.json'), 'utf8'));
+    expect(fehler(SymbolDateiSchema.safeParse(roh))).toEqual([]);
   });
 });

@@ -19,10 +19,11 @@ export function einheitDerKarte(karte: string): string | null {
   return karte.includes(':') && teile.length > 1 ? teile.slice(0, -1).join('.') : null;
 }
 
-/** Karten, die eine Aufgabe bewertet. */
+/** Karten, die eine Aufgabe bewertet (auch je Paar und je Frage einer Geschichte, wie `engine/sitzung.ts`). */
 export const kartenDer = (a: Aufgabe): string[] => [
   ...(a.karten ?? []),
   ...(a.typ === 'paare' ? a.paare.flatMap((p) => (p.karte ? [p.karte] : [])) : []),
+  ...(a.typ === 'geschichte' ? a.fragen.flatMap((f) => (f.karte ? [f.karte] : [])) : []),
 ];
 
 const VORRANG: Record<ReturnType<typeof uebungsStufe>, Aufgabe['typ'][]> = {
@@ -32,6 +33,10 @@ const VORRANG: Record<ReturnType<typeof uebungsStufe>, Aufgabe['typ'][]> = {
     'bild_wort',
     'hoeren_waehlen',
     'minimalpaare',
+    'schrift_ar',
+    'schrift_tr',
+    'schrift_latein',
+    'dialog',
     'wortbank',
     'harakat',
     'koran_wort',
@@ -39,8 +44,32 @@ const VORRANG: Record<ReturnType<typeof uebungsStufe>, Aufgabe['typ'][]> = {
     'fallfrage',
     'zuordnen',
   ],
-  wortbank: ['wortbank', 'satzbau', 'luecke', 'auswahl', 'paare', 'bild_wort', 'hoeren_waehlen', 'zuordnen', 'reihenfolge', 'wahr_falsch'],
-  produktion: ['frei', 'hoeren_schreiben', 'luecke', 'formen', 'wortbank', 'satzbau', 'auswahl', 'paare', 'reihenfolge', 'fallfrage'],
+  wortbank: [
+    'wortbank',
+    'satzbau',
+    'luecke',
+    'auswahl',
+    'paare',
+    'bild_wort',
+    'hoeren_waehlen',
+    'dialog',
+    'zuordnen',
+    'reihenfolge',
+    'wahr_falsch',
+  ],
+  produktion: [
+    'frei',
+    'hoeren_schreiben',
+    'luecke',
+    'formen',
+    'sprechen',
+    'wortbank',
+    'satzbau',
+    'auswahl',
+    'paare',
+    'reihenfolge',
+    'fallfrage',
+  ],
 };
 /** Rang eines Typs in der Stufe; Typen ohne Eintrag kommen zuletzt. */
 const rang = (liste: readonly Aufgabe['typ'][], typ: Aufgabe['typ']) => {

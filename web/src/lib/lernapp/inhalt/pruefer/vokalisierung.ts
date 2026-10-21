@@ -1,3 +1,4 @@
+import { vorlageTexte } from '../schema';
 import type { Inhalte } from './dateien';
 import { Befunde } from './typen';
 
@@ -97,9 +98,9 @@ export function pruefeVokalisierung(inhalte: Inhalte): Befunde {
     for (const s of d.saetze) pruefe(pfad, s.schluessel, s.text, 'satz');
     for (const l of d.lektionen)
       for (const a of l.aufgaben) {
-        if (a.typ === 'wortbank')
-          for (const t of [...(a.alternativen ?? []), ...(a.ablenker ?? [])]) pruefe(pfad, a.schluessel, t, 'lemma');
-        if (a.typ === 'schreiben') for (const t of a.pflichtwoerter ?? []) pruefe(pfad, a.schluessel, t, 'lemma');
+        // eigene Texte der Vorlage in der Zielsprache (Alternativen, Ablenker, Harakat-Varianten, Formentabelle, Pflichtwörter);
+        // Sätze darunter (Alternativen ganzer Sätze) mit der Pausa-Warnung wie Sätze
+        for (const t of vorlageTexte(a)) pruefe(pfad, a.schluessel, t, /\s/.test(t.trim()) ? 'satz' : 'lemma');
       }
   }
   // Eingabe der Sprachausgabe (Aussprache-Ersatz) immer voll vokalisiert

@@ -1311,56 +1311,80 @@ export type AudioManifestDatei = z.infer<typeof AudioManifestDateiSchema>;
 // ——— Bildkarten `symbole/symbole.json` (KERN 4.0 §5, §7; ADR 0045 Nr. 9; Motivliste LM-34) ———
 
 export const SYMBOLE_FORMAT = 'igmg-lernapp-symbole';
-/** Lizenz je Herkunft: Lucide ISC, Tabler MIT, OpenMoji 17.0.0 CC BY-SA 4.0 (Namensnennung), eigene Zeichnung CC BY-SA 4.0. */
-const SYMBOL_LIZENZ = { lucide: 'ISC', tabler: 'MIT', openmoji: 'CC-BY-SA-4.0', redaktion: 'CC-BY-SA-4.0' } as const;
+/**
+ * Lizenz je Herkunft: Lucide ISC, Tabler MIT, OpenMoji 17.0.0 CC BY-SA 4.0 (Namensnennung), eigene Zeichnung (`eigen:`,
+ * `redaktion`) CC BY-SA 4.0 oder CC0.
+ */
+const SYMBOL_LIZENZ: Record<string, readonly string[]> = {
+  lucide: ['ISC'],
+  tabler: ['MIT'],
+  openmoji: ['CC-BY-SA-4.0'],
+  eigen: ['CC-BY-SA-4.0', 'CC0-1.0'],
+  redaktion: ['CC-BY-SA-4.0', 'CC0-1.0'],
+};
+const SymbolZahl = z.number().min(-48).max(48);
+const SymbolPunkte = z.string().regex(/^[0-9.,\s-]{1,1000}$/, { message: 'nur Zahlen' });
+/** Grundformen im 24er Raster (wie Lucide sie liefert): nur Zahlen bzw. Pfaddaten, keine Skripte, keine Verweise. */
+const SymbolElementSchema = z.discriminatedUnion('art', [
+  z.strictObject({
+    art: z.literal('path'),
+    d: z.string().regex(/^[MmLlHhVvCcSsQqTtAaZz0-9.,\s-]{1,2000}$/, { message: 'nur SVG-Pfaddaten' }),
+  }),
+  z.strictObject({ art: z.literal('circle'), cx: SymbolZahl, cy: SymbolZahl, r: SymbolZahl }),
+  z.strictObject({ art: z.literal('ellipse'), cx: SymbolZahl, cy: SymbolZahl, rx: SymbolZahl, ry: SymbolZahl }),
+  z.strictObject({
+    art: z.literal('rect'),
+    x: SymbolZahl,
+    y: SymbolZahl,
+    width: SymbolZahl,
+    height: SymbolZahl,
+    rx: SymbolZahl.optional(),
+    ry: SymbolZahl.optional(),
+  }),
+  z.strictObject({ art: z.literal('line'), x1: SymbolZahl, y1: SymbolZahl, x2: SymbolZahl, y2: SymbolZahl }),
+  z.strictObject({ art: z.literal('polyline'), points: SymbolPunkte }),
+  z.strictObject({ art: z.literal('polygon'), points: SymbolPunkte }),
+]);
+/**
+ * Register der Bildkarten (Format wie `lib/lernapp/symbole.ts`, erzeugt mit `scripts/lernapp/symbole.mjs`): je Motiv-Schlüssel
+ * Motiv (deutsch, aus der Motivliste des Leitfadens), Gruppe, Herkunft, Lizenz, Freigabe der Redaktion (LM-34) und Geometrie.
+ */
 export const SymbolDateiSchema = z
   .strictObject({
+    _hinweis: z.string().max(2000).optional(),
     format: z.literal(SYMBOLE_FORMAT),
     version: z.literal(1),
-    symbole: z
-      .array(
-        z.strictObject({
-          id: z
-            .string()
-            .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
-            .max(60),
-          /** Motiv aus der Motivliste (Leitfaden `bildkarten.motivliste_vorschlag`), deutsch */
-          motiv: Text(120),
-          viewBox: z.literal('0 0 24 24').default('0 0 24 24'),
-          /** nur Pfaddaten (keine Skripte, keine Verweise) */
-          pfade: z
-            .array(
-              z
-                .string()
-                .regex(/^[MmLlHhVvCcSsQqTtAaZz0-9.,\s+-]+$/, { message: 'nur SVG-Pfaddaten' })
-                .max(8000),
-            )
-            .min(1)
-            .max(30),
-          quelle: z
-            .string()
-            .regex(/^(?:lucide:[a-z0-9-]+@\d+\.\d+\.\d+|tabler:[a-z0-9-]+@\d+\.\d+\.\d+|openmoji:[0-9A-F-]+@17\.0\.0|redaktion)$/),
-          lizenz: z.enum(['ISC', 'MIT', 'CC-BY-SA-4.0']),
-          namensnennung: Text(300).optional(),
-        }),
-      )
-      .max(3000),
+    symbole: z.record(
+      z
+        .string()
+        .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
+        .max(60),
+      z.strictObject({
+        motiv: Text(120),
+        gruppe: z.string().regex(/^[a-z]{1,40}$/),
+        quelle: z
+          .string()
+          .regex(
+            /^(?:lucide:[a-z0-9-]+@\d+\.\d+\.\d+|tabler:[a-z0-9-]+@\d+\.\d+\.\d+|openmoji:[0-9A-F-]+@17\.0\.0|eigen:[a-z0-9-]+|redaktion)$/,
+          ),
+        lizenz: z.enum(['ISC', 'MIT', 'CC0-1.0', 'CC-BY-SA-4.0']),
+        namensnennung: Text(300).optional(),
+        /** Freigabe der Motivliste durch die Redaktion (LM-34); ohne sie nur im Testkurs */
+        freigegeben: z.boolean(),
+        elemente: z.array(SymbolElementSchema).min(1).max(40),
+      }),
+    ),
   })
   .superRefine((d, ctx) => {
     arabischFrei(d, ctx);
-    d.symbole.forEach((s, i) => {
-      const herkunft = s.quelle.split(':')[0] as keyof typeof SYMBOL_LIZENZ;
-      if (SYMBOL_LIZENZ[herkunft] !== s.lizenz)
-        ctx.addIssue({ code: 'custom', message: `Lizenz ${s.lizenz} passt nicht zu ${herkunft}`, path: ['symbole', i, 'lizenz'] });
+    if (Object.keys(d.symbole).length > 3000) ctx.addIssue({ code: 'custom', message: 'höchstens 3000 Symbole', path: ['symbole'] });
+    for (const [id, s] of Object.entries(d.symbole)) {
+      const herkunft = s.quelle.split(':')[0]!;
+      if (!SYMBOL_LIZENZ[herkunft]?.includes(s.lizenz))
+        ctx.addIssue({ code: 'custom', message: `Lizenz ${s.lizenz} passt nicht zu ${herkunft}`, path: ['symbole', id, 'lizenz'] });
       if (herkunft === 'openmoji' && !s.namensnennung)
-        ctx.addIssue({ code: 'custom', message: 'OpenMoji braucht Namensnennung', path: ['symbole', i, 'namensnennung'] });
-    });
-    eindeutig(
-      d.symbole.map((s) => s.id),
-      ctx,
-      ['symbole'],
-      'Symbol',
-    );
+        ctx.addIssue({ code: 'custom', message: 'OpenMoji braucht Namensnennung', path: ['symbole', id, 'namensnennung'] });
+    }
   });
 export type SymbolDatei = z.infer<typeof SymbolDateiSchema>;
 

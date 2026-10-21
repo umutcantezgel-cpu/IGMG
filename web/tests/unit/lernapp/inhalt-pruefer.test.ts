@@ -199,6 +199,51 @@ describe('Abgleich-Selbsttest', () => {
   });
 });
 
+describe('Abgleich-Selbsttest: Vorlagen aus L2-01 (Lektion l03)', () => {
+  type Aufgaben = Record<string, unknown>[];
+  it('Lücke, Freitext, Satzbau und Harakat mit zufällig richtigem Ablenker bzw. doppelter Alternative sind blockierend', () => {
+    const de = geaendert('de', (d) => {
+      const l03 = d.lektionen[2]!.aufgaben as Aufgaben;
+      l03[1]!.alternativen = ['brot']; // frei: Ziel „Brot“
+      // minimalpaare: Ablenker mit gleichem Schlüssel wie das Ziel lehnt schon das Schema ab
+      l03[6]!.ablenker = ['trinke', 'trinkt']; // luecke: „Ich trinke Wasser.“, Wort 1
+      l03[7]!.alternativen = ['das Haus ist groß']; // satzbau: gleich dem Zielsatz
+    });
+    const ar = geaendert('ar', (d) => {
+      const w004 = d.lemmata.find((l) => String(l.schluessel).endsWith('.w004'))!.lemma as string;
+      const l03 = d.lektionen[2]!.aufgaben as Aufgaben;
+      l03[9]!.varianten = [w004]; // harakat: Variante = Ziel
+    }).filter((q) => q.pfad.includes('sprache/ar/'));
+    const zeilen = von(pruefe([...de.filter((q) => !q.pfad.includes('sprache/ar/')), ...ar]), 'abgleich').map(befundZeile);
+    expect(zeilen).toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/de\.a1\.e01\.l03\.a02: Alternative gleich dem Zieltext/),
+        expect.stringMatching(/de\.a1\.e01\.l03\.a07: Lücke: Ablenker gleich dem fehlenden Wort/),
+        expect.stringMatching(/de\.a1\.e01\.l03\.a08: Alternative gleich dem Zieltext/),
+        expect.stringMatching(/ar\.a1\.e01\.l03\.a10: Harakat: Variante gleich dem Ziel/),
+      ]),
+    );
+    expect(zeilen).toHaveLength(4);
+  });
+
+  it('eigene Texte der Vorlagen werden auf Vokalisierung geprüft; ein Motiv ohne Freigabe blockiert außerhalb des Testkurses', () => {
+    const ar = pruefe(
+      geaendert('ar', (d) => {
+        // Lücke im Arabischen als Freitext: eine Alternative ohne Vokalzeichen
+        (d.lektionen[2]!.aufgaben as Aufgaben)[6]!.alternativen = ['\u0627\u0634\u0631\u0628'];
+      }),
+    );
+    expect(von(ar, 'vokalisierung').map(befundZeile)).toEqual([expect.stringMatching(/ar\.a1\.e01\.l03\.a07: nicht voll vokalisiert/)]);
+    const register = { pfad: 'testkurs/symbole/symbole.json', text: readFileSync(join(INHALT_WURZEL, 'symbole/symbole.json'), 'utf8') };
+    const frei = pruefe([...testkursQuellen(), register]);
+    expect(von(frei, 'symbole')).toEqual([]);
+    const echt = pruefe([...geaendert('de', (d) => (d.lemmata[0]!.quelle = 'redaktion')), register]);
+    expect(von(echt, 'symbole').map(befundZeile)).toEqual([
+      expect.stringMatching(/de\.a1\.e01\.w001: Motiv wasserglas ohne Freigabe der Redaktion \(LM-34\)/),
+    ]);
+  });
+});
+
 describe('Arabisch: Vokalisierung vollständig', () => {
   it('voll vokalisierte Sätze des Testkurses haben keine Lücken; Pausa am Wortende ist nur ein Hinweis', () => {
     expect(vokalLuecken('\u0627\u0644\u0652\u0628\u064E\u064A\u0652\u062A\u064F \u0643\u064E\u0628\u0650\u064A\u0631\u064C.')).toEqual([]);
@@ -469,13 +514,19 @@ describe('Bildkarten', () => {
       format: 'igmg-lernapp-symbole',
       version: 1,
       // die Motive des Testkurses (wasserglas, haus, buch) und eines mehr; `kanne` fehlt
-      symbole: ['tasse', 'wasserglas', 'haus', 'buch'].map((id) => ({
-        id,
-        motiv: id,
-        pfade: ['M4 4h16v16H4z'],
-        quelle: 'lucide:coffee@1.0.0',
-        lizenz: 'ISC',
-      })),
+      symbole: Object.fromEntries(
+        ['tasse', 'wasserglas', 'haus', 'buch'].map((id) => [
+          id,
+          {
+            motiv: id,
+            gruppe: 'test',
+            quelle: 'lucide:coffee@1.0.0',
+            lizenz: 'ISC',
+            freigegeben: false,
+            elemente: [{ art: 'path', d: 'M4 4h16v16H4z' }],
+          },
+        ]),
+      ),
     };
     const b = pruefe([
       ...geaendert('de', (d) => (d.lemmata[0]!.symbol = 'kanne')),

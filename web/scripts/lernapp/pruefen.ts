@@ -4,7 +4,8 @@
 // Bildkarten, Religionswächter, Religionsbezug und Inhaltsleitfaden (Tabu-Lexikon → menschlich_klaeren).
 // Ausgaben ohne arabische Schrift und ohne Wörter des Tabu-Lexikons (nur Kategorie-IDs).
 // Aufruf: pnpm lernapp:pruefen [--testkurs] [--json <datei>] [--alle-warnungen]
-//   --testkurs   prüft den festen Testkurs (drizzle/seeds/lernapp-test.ts) zusammen mit Rahmenplänen und Leitfaden
+//   --testkurs   prüft den festen Testkurs (drizzle/seeds/lernapp-test.ts) zusammen mit Rahmenplänen, Leitfaden und dem
+//                Register der Bildkarten (symbole/symbole.json)
 //   --json       schreibt den vollständigen Bericht (für die Workflows, L3-03)
 // Ausgang 1 bei blockierenden Befunden; Befunde für Menschen und Warnungen blockieren nicht.
 import { writeFileSync } from 'node:fs';
@@ -53,7 +54,7 @@ if (process.argv[1]?.endsWith('pruefen.ts')) {
     ? pruefeInhalte(testkursQuellen(), {
         praefix: 'testkurs/',
         pfadePruefen: false,
-        zusatz: inhaltsdateien(INHALT_WURZEL, ['rahmen']),
+        zusatz: inhaltsdateien(INHALT_WURZEL, ['rahmen', 'symbole']),
       })
     : pruefeInhalte(alleInhaltsdateien());
   if (values.json) writeFileSync(values.json, `${JSON.stringify(bericht, null, 2)}\n`);

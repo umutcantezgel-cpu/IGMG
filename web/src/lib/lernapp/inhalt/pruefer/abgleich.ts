@@ -1,5 +1,6 @@
 import { normalisiere } from '../../abgleich';
 import { RICHTUNGEN, type Sprache, zerlegeRichtung } from '../../kurse';
+import { lueckeIn } from '../../paket/bauen';
 import type { Inhalte } from './dateien';
 import { Befunde } from './typen';
 
@@ -8,9 +9,10 @@ import { Befunde } from './typen';
  * - **Alternativen konsistent:** keine Alternative gleich dem Haupttext oder einer anderen Alternative (Übersetzungen,
  *   Wortbank in die Zielsprache).
  * - **kein Ablenker zufällig richtig:** Ablenker unterscheiden sich in der Vergleichsform von der Antwort – in der Zielsprache
- *   (Auswahl, Dialog, Geschichte, Lesen) und je Richtung in der Übersetzung (Auswahl, Paare); ein Wortbank-Ablenker ist kein
- *   Wort der Lösung.
- * - **Wortbank lösbar:** Der Satz hat mindestens zwei Wörter.
+ *   (Auswahl, Bildkarte, Hören, Minimalpaar, Dialog, Geschichte, Lesen, Lücke) und je Richtung in der Übersetzung (Auswahl,
+ *   Bildkarte, Hören, Paare); ein Wortbank-Ablenker ist kein Wort der Lösung; Harakat-Varianten sind genau verschieden.
+ * - **Alternativen** von Freitext, Diktat und Satzbau sind verschieden vom Zieltext und untereinander.
+ * - **Wortbank und Satzbau lösbar:** Der Satz hat mindestens zwei Wörter; die Lücke zeigt auf ein vorhandenes Wort.
  */
 export function pruefeAbgleich(inhalte: Inhalte): Befunde {
   const b = new Befunde('abgleich');
@@ -51,10 +53,42 @@ export function pruefeAbgleich(inhalte: Inhalte): Befunde {
     for (const l of d.lektionen)
       for (const a of l.aufgaben) {
         const ort = a.schluessel;
-        if (a.typ === 'auswahl') {
+        if (a.typ === 'auswahl' || a.typ === 'bild_wort' || a.typ === 'hoeren_waehlen') {
           if (gleichImZiel(a.ziel, a.ablenker)) b.blockierend(pfad, 'Ablenker gleich dem Ziel (Vergleichsform)', ort);
           for (const r of gleichUebersetzt(a.ziel, a.ablenker))
             b.blockierend(pfad, `Ablenker mit gleicher Übersetzung wie das Ziel (${r})`, ort);
+        }
+        // Minimalpaar: fast gleich ist gewollt, gleich in der Vergleichsform nicht (sonst gäbe es keine richtige Wahl)
+        if (a.typ === 'minimalpaare' && gleichImZiel(a.ziel, a.ablenker))
+          b.blockierend(pfad, 'Minimalpaar: Ablenker gleich dem Ziel (Vergleichsform)', ort);
+        // Freitext, Diktat, Satzbau: Alternativen verschieden vom Zieltext und untereinander
+        if (a.typ === 'frei' || a.typ === 'hoeren_schreiben' || a.typ === 'satzbau') {
+          const z = ziel.get(a.ziel);
+          if (z !== undefined && (a.typ !== 'frei' || a.nach === 'ziel')) {
+            const formen = [z, ...(a.alternativen ?? [])].map((t) => normalisiere(t, s));
+            if (formen.some((f, i) => formen.indexOf(f) !== i))
+              b.blockierend(pfad, 'Alternative gleich dem Zieltext oder einer anderen Alternative', ort);
+          }
+          if (a.typ === 'satzbau' && z !== undefined && normalisiere(z, s).split(' ').filter(Boolean).length < 2)
+            b.blockierend(pfad, 'Satzbau: Satz mit weniger als zwei Wörtern ist nicht als Kacheln lösbar', ort);
+        }
+        // Lücke: das fehlende Wort gibt es; kein Ablenker ist das Wort oder eine Alternative
+        if (a.typ === 'luecke') {
+          const z = ziel.get(a.ziel);
+          const wort = z === undefined ? undefined : lueckeIn(z, a.wort)?.wort;
+          if (z !== undefined && wort === undefined) b.blockierend(pfad, `Lücke: Satz hat kein Wort ${a.wort + 1}`, ort);
+          if (wort !== undefined) {
+            const richtig = new Set([wort, ...(a.alternativen ?? [])].map((t) => normalisiere(t, s)));
+            if ((a.ablenker ?? []).some((x) => richtig.has(normalisiere(x, s))))
+              b.blockierend(pfad, 'Lücke: Ablenker gleich dem fehlenden Wort oder einer Alternative', ort);
+          }
+        }
+        // Harakat: Varianten verschieden vom Ziel und untereinander (genau, mit Vokalzeichen: strenger Modus)
+        if (a.typ === 'harakat') {
+          const z = ziel.get(a.ziel);
+          const formen = [...(z !== undefined ? [z] : []), ...a.varianten].map((t) => t.normalize('NFC').trim());
+          if (formen.some((f, i) => formen.indexOf(f) !== i))
+            b.blockierend(pfad, 'Harakat: Variante gleich dem Ziel oder einer anderen Variante', ort);
         }
         if (a.typ === 'paare')
           a.lemmata.forEach((x, i) => {

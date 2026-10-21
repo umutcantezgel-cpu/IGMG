@@ -184,11 +184,11 @@ export function pruefeLizenzen(inhalte: Inhalte, daten: string): { lizenz: Befun
       quelleGeprueft(pfad, ort, s.namensnennung);
     });
   if (inhalte.symbole)
-    inhalte.symbole.daten.symbole.forEach((s, i) => {
+    for (const [id, s] of Object.entries(inhalte.symbole.daten.symbole)) {
       if (VERBOTENE_LIZENZ.test(s.lizenz))
-        ausschluss.blockierend(inhalte.symbole!.pfad, `Lizenz ${s.lizenz} nicht zulässig`, `symbole.${i}`);
-      quelleGeprueft(inhalte.symbole!.pfad, `symbole.${i}`, s.quelle, s.namensnennung);
-    });
+        ausschluss.blockierend(inhalte.symbole.pfad, `Lizenz ${s.lizenz} nicht zulässig`, `symbole.${id}`);
+      quelleGeprueft(inhalte.symbole.pfad, `symbole.${id}`, s.quelle, s.namensnennung);
+    }
   for (const { pfad, daten: d } of inhalte.islam)
     for (const l of d.lektionen) for (const a of l.aussagen) quelleGeprueft(pfad, a.schluessel, a.quelle);
   return { lizenz, ausschluss };

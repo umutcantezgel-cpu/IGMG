@@ -1,5 +1,5 @@
 import { SPRACH_STUFEN, type Sprache, zerlegeRichtung } from '../../kurse';
-import type { SprachEinheitDatei } from '../schema';
+import { hauptVerweis, type SprachEinheitDatei, vorlageTexte } from '../schema';
 import type { Inhalte } from './dateien';
 
 export type SprachStufe = (typeof SPRACH_STUFEN)[number];
@@ -77,23 +77,20 @@ export function sammleTexte(inhalte: Inhalte): TextEintrag[] {
     }
     for (const l of d.lektionen) {
       lern(`${l.schluessel}.ziel`, 'ziel', l.ziel);
+      // eigene Texte der Vorlagen (Alternativen, Ablenker, Varianten, Tabellen, Optionen, Pflichtwörter) mit dem Kennzeichen
+      // ihres Hauptverweises (wie der Religionswächter, `inhalt/religion.ts`)
       for (const a of l.aufgaben) {
-        if (a.typ === 'wortbank')
-          for (const text of [...(a.alternativen ?? []), ...(a.ablenker ?? [])])
-            ergebnis.push({
-              ...basis,
-              ort: a.schluessel,
-              sprache: d.kurs,
-              text,
-              art: 'wortbank',
-              religionsbezug: bezug.get(a.satz) ?? false,
-            });
-        if (a.typ === 'schrift_tr' || a.typ === 'schrift_latein')
-          for (const text of [...(a.vorgabe ? [a.vorgabe] : []), ...a.optionen])
-            ergebnis.push({ ...basis, ort: a.schluessel, sprache: d.kurs, text, art: 'option', religionsbezug: false });
-        if (a.typ === 'schreiben')
-          for (const text of a.pflichtwoerter ?? [])
-            ergebnis.push({ ...basis, ort: a.schluessel, sprache: d.kurs, text, art: 'option', religionsbezug: false });
+        const haupt = hauptVerweis(a);
+        const r = haupt ? (bezug.get(haupt) ?? false) : false;
+        for (const text of vorlageTexte(a))
+          ergebnis.push({
+            ...basis,
+            ort: a.schluessel,
+            sprache: d.kurs,
+            text,
+            art: a.typ === 'wortbank' ? 'wortbank' : 'option',
+            religionsbezug: r,
+          });
       }
     }
   }
