@@ -1,12 +1,8 @@
 {
   "_hinweis": "Prüfoberfläche Sprache der Lern-App (ADR 0041 Nr. 10, PLAN §7.2, O-3): einzige Seite der Verwaltung mit Sprachwahl de/tr/ar. Nicht in messages/verwaltung/index.ts; die Seite liest die Datei mit createTranslator und ausdrücklicher Sprache. sprachen:pruefen prüft de ⊆ tr, de ⊆ ar und gleiche Platzhalter. tr und ar sind KI-Entwürfe (Liste _entwurf), Muttersprachlerinnen und Muttersprachler prüfen sie. Religionswächter mit Formel-Lexikon (KERN 4.0 §3).",
   "_entwurf": {
-    "tr": [
-      "*"
-    ],
-    "ar": [
-      "*"
-    ]
+    "tr": ["*"],
+    "ar": ["*"]
   },
   "de": {
     "titel": "Sprachprüfung",

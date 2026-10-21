@@ -106,7 +106,10 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
       art: s.art,
       entscheidung: s.entscheidung,
       groesse: s.groesse,
-      geprueft: sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(Number),
+      geprueft:
+        sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(
+          Number,
+        ),
     })
     .from(s);
   const jeSprache: Record<string, Pruefquote> = {};
@@ -122,7 +125,12 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
   });
 
   const kurse = await db
-    .select({ id: schema.lernappKurs.id, version: schema.lernappKurs.version, aktiv: schema.lernappKurs.aktiv, aktualisiertAm: schema.lernappKurs.aktualisiertAm })
+    .select({
+      id: schema.lernappKurs.id,
+      version: schema.lernappKurs.version,
+      aktiv: schema.lernappKurs.aktiv,
+      aktualisiertAm: schema.lernappKurs.aktualisiertAm,
+    })
     .from(schema.lernappKurs)
     .orderBy(asc(schema.lernappKurs.id));
 
@@ -154,7 +162,13 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
 }
 
 export type BaumLektion = { schluessel: string; art: string; status: Status; aufgaben: number };
-export type BaumEinheit = { schluessel: string; thema: Record<string, string>; status: Status; nurFuerAusgang: string | null; lektionen: BaumLektion[] };
+export type BaumEinheit = {
+  schluessel: string;
+  thema: Record<string, string>;
+  status: Status;
+  nurFuerAusgang: string | null;
+  lektionen: BaumLektion[];
+};
 export type BaumAbschnitt = { stufe: string; einheiten: BaumEinheit[] };
 
 /** Baum Abschnitt (Stufe) → Einheit → Lektion eines Kurses. */
@@ -175,7 +189,12 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
       nurFuerAusgang: schema.lernappEinheit.nurFuerAusgang,
     })
     .from(schema.lernappEinheit)
-    .where(inArray(schema.lernappEinheit.abschnittId, abschnitte.map((a) => a.id)))
+    .where(
+      inArray(
+        schema.lernappEinheit.abschnittId,
+        abschnitte.map((a) => a.id),
+      ),
+    )
     .orderBy(asc(schema.lernappEinheit.reihenfolge), asc(schema.lernappEinheit.schluessel));
   const lektionen = einheiten.length
     ? await db
@@ -188,7 +207,12 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
           aufgaben: sql<number>`(select count(*) from lernapp_aufgabe a where a.lektion_id = ${schema.lernappLektion.id})`.mapWith(Number),
         })
         .from(schema.lernappLektion)
-        .where(inArray(schema.lernappLektion.einheitId, einheiten.map((e) => e.id)))
+        .where(
+          inArray(
+            schema.lernappLektion.einheitId,
+            einheiten.map((e) => e.id),
+          ),
+        )
         .orderBy(asc(schema.lernappLektion.reihenfolge), asc(schema.lernappLektion.schluessel))
     : [];
   return abschnitte.map((a) => ({
@@ -239,13 +263,20 @@ export async function ladeVorschau(richtung: RichtungId, lektion: string): Promi
 }
 
 /** Personen, die Sprache prüfen dürfen (über ihre Rollen), mit ihren Prüfsprachen. */
-export async function ladePruefende(): Promise<{ id: string; name: string; email: string; rollen: string[]; sprachen: Record<string, string> }[]> {
+export async function ladePruefende(): Promise<
+  { id: string; name: string; email: string; rollen: string[]; sprachen: Record<string, string> }[]
+> {
   const r = schema.rolleZuweisung;
   const kandidaten = await db
     .select({ id: schema.user.id, name: schema.user.name, email: schema.user.email, rolle: r.rolle })
     .from(r)
     .innerJoin(schema.user, eq(schema.user.id, r.benutzerId))
-    .where(inArray(r.rolle, ROLLEN.filter((x) => MATRIX[x].has('lernapp.sprache.pruefen'))))
+    .where(
+      inArray(
+        r.rolle,
+        ROLLEN.filter((x) => MATRIX[x].has('lernapp.sprache.pruefen')),
+      ),
+    )
     .orderBy(asc(schema.user.name));
   const je = new Map<string, { id: string; name: string; email: string; rollen: string[]; sprachen: Record<string, string> }>();
   for (const k of kandidaten) {

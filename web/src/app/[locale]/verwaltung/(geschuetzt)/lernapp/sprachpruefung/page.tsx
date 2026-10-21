@@ -68,7 +68,12 @@ export default async function Sprachpruefung({ searchParams }: PageProps<'/[loca
 
   return (
     <>
-      <VerwaltungsKopf kennung={tg('gruppe.inhalte')} titel={t('titel')} titelLang={ui} einleitung={<span {...uiAttr}>{t('einleitung')}</span>} />
+      <VerwaltungsKopf
+        kennung={tg('gruppe.inhalte')}
+        titel={t('titel')}
+        titelLang={ui}
+        einleitung={<span {...uiAttr}>{t('einleitung')}</span>}
+      />
       <LernappNavigation aktiv="sprachpruefung" rollen={a.rollen} />
       <SprachWahl ui={ui} pfad="/verwaltung/lernapp/sprachpruefung" />
       {sprachen.length === 0 ? (
@@ -92,7 +97,10 @@ export default async function Sprachpruefung({ searchParams }: PageProps<'/[loca
             mobil={
               <ul className="flex flex-col gap-3">
                 {liste.map((w) => (
-                  <li key={`${w.einheit}|${w.art}|${w.richtung}`} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4">
+                  <li
+                    key={`${w.einheit}|${w.art}|${w.richtung}`}
+                    className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4"
+                  >
                     <span className="font-mono">{w.einheit}</span>
                     <span {...uiAttr}>{artText(w)}</span>
                     <span {...uiAttr}>{`${sprachName(w.sprache)} · ${t('warteschlange.kandidaten', { anzahl: w.kandidaten })}`}</span>

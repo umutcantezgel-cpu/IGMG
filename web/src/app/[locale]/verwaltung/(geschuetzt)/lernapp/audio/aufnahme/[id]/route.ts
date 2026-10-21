@@ -26,7 +26,12 @@ export async function GET(_anfrage: Request, { params }: RouteContext<'/[locale]
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/.test(id)) return new Response(null, NICHT_DA);
   const [z] = await db
-    .select({ pfad: schema.lernappAufnahme.pfad, mime: schema.lernappAufnahme.mime, bytes: schema.lernappAufnahme.bytes, status: schema.lernappAufnahme.status })
+    .select({
+      pfad: schema.lernappAufnahme.pfad,
+      mime: schema.lernappAufnahme.mime,
+      bytes: schema.lernappAufnahme.bytes,
+      status: schema.lernappAufnahme.status,
+    })
     .from(schema.lernappAufnahme)
     .where(eq(schema.lernappAufnahme.id, id))
     .limit(1);

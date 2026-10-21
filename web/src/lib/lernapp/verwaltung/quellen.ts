@@ -38,7 +38,11 @@ function zellen(zeile: string): string[] | null {
 
 const istTrenner = (z: string[]) => z.every((x) => /^:?-{3,}:?$/.test(x));
 /** Markdown-Hervorhebungen und Code-Striche entfernen (Anzeige als Text). */
-const klar = (s: string) => s.replace(/`([^`]*)`/g, '$1').replace(/\*\*([^*]*)\*\*/g, '$1').trim();
+const klar = (s: string) =>
+  s
+    .replace(/`([^`]*)`/g, '$1')
+    .replace(/\*\*([^*]*)\*\*/g, '$1')
+    .trim();
 
 /**
  * Liest eine `QUELLE.md`: Titel (erste Überschrift, ohne „QUELLE:“), Lizenzen und Namensnennungen aus zweispaltigen
@@ -66,7 +70,8 @@ export function leseQuelleMd(text: string): QuellenBeschreibung {
     const z = zellen(zeile);
     if (!z) {
       kopf = null;
-      if (lizenzProsa === null && /^Lizenz/i.test(abschnitt) && zeile.trim() && !zeile.startsWith('-')) lizenzProsa = klar(zeile).slice(0, 400);
+      if (lizenzProsa === null && /^Lizenz/i.test(abschnitt) && zeile.trim() && !zeile.startsWith('-'))
+        lizenzProsa = klar(zeile).slice(0, 400);
       continue;
     }
     if (istTrenner(z)) continue;

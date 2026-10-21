@@ -104,7 +104,16 @@ export async function kandidaten(einheit: string, art: StichprobeArt, richtung?:
     const satzIds = ziel.filter((z) => z.inhaltTyp === 'satz').map((z) => z.id);
     const u = schema.lernappUebersetzung;
     const zeilen = await db
-      .select({ id: u.id, lemmaId: u.lemmaId, satzId: u.satzId, text: u.text, alternativen: u.alternativen, inhaltHash: u.inhaltHash, status: u.status, religionsbezug: u.religionsbezug })
+      .select({
+        id: u.id,
+        lemmaId: u.lemmaId,
+        satzId: u.satzId,
+        text: u.text,
+        alternativen: u.alternativen,
+        inhaltHash: u.inhaltHash,
+        status: u.status,
+        religionsbezug: u.religionsbezug,
+      })
       .from(u)
       .where(
         and(
@@ -251,7 +260,15 @@ export async function ladeStichprobeKopf(id: string): Promise<StichprobeKopf | n
 export async function urteileDerStichprobe(id: string) {
   const p = schema.lernappPruefung;
   const zeilen = await db
-    .select({ inhaltId: p.inhaltId, inhaltHash: p.inhaltHash, urteil: p.urteil, kategorie: p.kategorie, korrektur: p.korrektur, kommentar: p.kommentar, am: p.am })
+    .select({
+      inhaltId: p.inhaltId,
+      inhaltHash: p.inhaltHash,
+      urteil: p.urteil,
+      kategorie: p.kategorie,
+      korrektur: p.korrektur,
+      kommentar: p.kommentar,
+      am: p.am,
+    })
     .from(p)
     .where(eq(p.stichprobeId, id))
     .orderBy(desc(p.am));
@@ -288,7 +305,12 @@ export async function ladeStichprobenEintraege(k: StichprobeKopf): Promise<Stich
     return {
       ...x,
       urteil: u
-        ? { urteil: u.urteil === 'aenderungsvorschlag' ? 'korrektur' : u.urteil, kategorie: u.kategorie, korrektur: u.korrektur, kommentar: u.kommentar }
+        ? {
+            urteil: u.urteil === 'aenderungsvorschlag' ? 'korrektur' : u.urteil,
+            kategorie: u.kategorie,
+            korrektur: u.korrektur,
+            kommentar: u.kommentar,
+          }
         : null,
     };
   });
@@ -340,10 +362,18 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
       groesse: s.groesse,
       einheitHash: s.einheitHash,
       gezogenAm: s.gezogenAm,
-      geprueft: sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(Number),
+      geprueft:
+        sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(
+          Number,
+        ),
     })
     .from(s)
-    .where(inArray(s.einheitId, einheiten.map((e) => e.id)))
+    .where(
+      inArray(
+        s.einheitId,
+        einheiten.map((e) => e.id),
+      ),
+    )
     .orderBy(desc(s.gezogenAm));
   const liste: WarteEintrag[] = [];
   for (const e of einheiten) {
@@ -374,7 +404,13 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
         sprache,
         kandidaten: k.length,
         letzte: letzte
-          ? { id: letzte.id, entscheidung: letzte.entscheidung, groesse: letzte.groesse, geprueft: letzte.geprueft, aktuell: letzte.einheitHash === stand }
+          ? {
+              id: letzte.id,
+              entscheidung: letzte.entscheidung,
+              groesse: letzte.groesse,
+              geprueft: letzte.geprueft,
+              aktuell: letzte.einheitHash === stand,
+            }
           : null,
         ziehbar: !offen && !zumStand,
       });

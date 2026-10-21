@@ -38,11 +38,15 @@ export default async function LernappKurs({ params, searchParams }: PageProps<'/
   const kursName = tl(`kurs.${kurs}`);
   const richtungsName = (r: RichtungId) =>
     tl('richtung', { ziel: tl(`sprache.${zerlegeRichtung(r).ziel}`), ausgang: tl(`sprache.${zerlegeRichtung(r).ausgang}`) });
-  const vorschauHref = (l: string) => `/verwaltung/lernapp/kurse/${kurs}?${new URLSearchParams({ richtung: richtung ?? '', lektion: l })}#vorschau`;
+  const vorschauHref = (l: string) =>
+    `/verwaltung/lernapp/kurse/${kurs}?${new URLSearchParams({ richtung: richtung ?? '', lektion: l })}#vorschau`;
 
   return (
     <>
-      <NextLink href="/verwaltung/lernapp" className="inline-flex min-h-11 items-center gap-2 self-start font-bold underline underline-offset-4">
+      <NextLink
+        href="/verwaltung/lernapp"
+        className="inline-flex min-h-11 items-center gap-2 self-start font-bold underline underline-offset-4"
+      >
         <ArrowLeft aria-hidden className="size-4 rtl:-scale-x-100" />
         {t('zurueck')}
       </NextLink>
@@ -60,7 +64,11 @@ export default async function LernappKurs({ params, searchParams }: PageProps<'/
       ) : null}
 
       {lektion ? (
-        <section id="vorschau" aria-labelledby="vorschau-titel" className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4 md:p-6">
+        <section
+          id="vorschau"
+          aria-labelledby="vorschau-titel"
+          className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4 md:p-6"
+        >
           <h2 id="vorschau-titel" className="text-30">
             {t('vorschauVon', { lektion })}
           </h2>
@@ -97,7 +105,9 @@ export default async function LernappKurs({ params, searchParams }: PageProps<'/
               {a.einheiten.map((e) => (
                 <li key={e.schluessel} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <h3 className="font-text text-20 font-bold tracking-normal">{e.thema.de || t('einheit', { schluessel: e.schluessel })}</h3>
+                    <h3 className="font-text text-20 font-bold tracking-normal">
+                      {e.thema.de || t('einheit', { schluessel: e.schluessel })}
+                    </h3>
                     <StatusPille status={e.status} />
                     <span className="font-mono text-16 text-tinte-2">{e.schluessel}</span>
                     {e.nurFuerAusgang ? (
@@ -107,7 +117,9 @@ export default async function LernappKurs({ params, searchParams }: PageProps<'/
                   <ul aria-label={t('lektionen')} className="flex flex-col gap-1">
                     {e.lektionen.map((l) => (
                       <li key={l.schluessel} className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span>{t('lektion', { schluessel: l.schluessel, art: t(`lektionArt.${l.art}` as never), aufgaben: l.aufgaben })}</span>
+                        <span>
+                          {t('lektion', { schluessel: l.schluessel, art: t(`lektionArt.${l.art}` as never), aufgaben: l.aufgaben })}
+                        </span>
                         <StatusPille status={l.status} />
                         {richtung ? (
                           <NextLink

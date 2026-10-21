@@ -186,7 +186,10 @@ export function PruefOberflaeche({
 
   return (
     <div className="grid gap-6 lg:grid-cols-3">
-      <section aria-labelledby={`${id}-kopf`} className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6 lg:col-span-2">
+      <section
+        aria-labelledby={`${id}-kopf`}
+        className="flex min-w-0 flex-col gap-4 rounded-lg border border-linie bg-weiss p-4 md:p-6 lg:col-span-2"
+      >
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 id={`${id}-kopf`} ref={kopf} tabIndex={-1} className="text-24 outline-none" {...ui$}>
             {formatiere(texte.s.eintrag!, { nr: nr + 1, anzahl: eintraege.length }, ui, 'westlich')}
@@ -248,7 +251,9 @@ export function PruefOberflaeche({
               <p className="font-bold" {...ui$}>
                 {formatiere(
                   texte.s.beurteilt!,
-                  { urteil: `${texte.urteile[e.urteil.urteil]}${e.urteil.kategorie ? ` (${texte.kategorien[e.urteil.kategorie] ?? e.urteil.kategorie})` : ''}` },
+                  {
+                    urteil: `${texte.urteile[e.urteil.urteil]}${e.urteil.kategorie ? ` (${texte.kategorien[e.urteil.kategorie] ?? e.urteil.kategorie})` : ''}`,
+                  },
                   ui,
                 )}
               </p>

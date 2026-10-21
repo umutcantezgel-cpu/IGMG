@@ -22,7 +22,8 @@ const ART_DER_KATEGORIE: Record<MeldungKategorie, StichprobeArt> = {
 };
 
 async function ladeAufgaben(schluessel: readonly string[]) {
-  if (!schluessel.length) return new Map<string, { id: string; typ: string; daten: Record<string, unknown>; status: string; religionsbezug: boolean }>();
+  if (!schluessel.length)
+    return new Map<string, { id: string; typ: string; daten: Record<string, unknown>; status: string; religionsbezug: boolean }>();
   const z = await db
     .select({
       id: schema.lernappAufgabe.id,
@@ -102,11 +103,21 @@ export async function ladeMeldungen(status: 'offen' | 'erledigt'): Promise<Meldu
   const [lemmata, saetze] = liste.length
     ? await Promise.all([
         db
-          .select({ id: schema.lernappLemma.id, schluessel: schema.lernappLemma.schluessel, text: schema.lernappLemma.lemma, status: schema.lernappLemma.status })
+          .select({
+            id: schema.lernappLemma.id,
+            schluessel: schema.lernappLemma.schluessel,
+            text: schema.lernappLemma.lemma,
+            status: schema.lernappLemma.status,
+          })
           .from(schema.lernappLemma)
           .where(inArray(schema.lernappLemma.schluessel, liste)),
         db
-          .select({ id: schema.lernappSatz.id, schluessel: schema.lernappSatz.schluessel, text: schema.lernappSatz.text, status: schema.lernappSatz.status })
+          .select({
+            id: schema.lernappSatz.id,
+            schluessel: schema.lernappSatz.schluessel,
+            text: schema.lernappSatz.text,
+            status: schema.lernappSatz.status,
+          })
           .from(schema.lernappSatz)
           .where(inArray(schema.lernappSatz.schluessel, liste)),
       ])

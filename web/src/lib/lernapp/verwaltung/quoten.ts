@@ -78,7 +78,12 @@ export function standBaum(zeilen: readonly EinheitZeile[], kurse: readonly strin
     });
 }
 
-export type StichprobenZeile = { art: StichprobeArt; entscheidung: 'offen' | 'bestanden' | 'nachbessern'; groesse: number; geprueft: number };
+export type StichprobenZeile = {
+  art: StichprobeArt;
+  entscheidung: 'offen' | 'bestanden' | 'nachbessern';
+  groesse: number;
+  geprueft: number;
+};
 export type Pruefquote = {
   stichproben: number;
   offen: number;

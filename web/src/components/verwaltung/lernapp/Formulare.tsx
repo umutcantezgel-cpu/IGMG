@@ -35,7 +35,11 @@ function Rueckmeldung({ z, erfolg, refDiv }: { z: LernappZustand; erfolg?: strin
   const { fehler, t } = useFehlerText();
   return (
     <div ref={refDiv} tabIndex={-1} className="outline-none empty:hidden">
-      {z.fehler ? <Meldung art="fehler">{fehler(z.fehler)}</Meldung> : z.gespeichert ? <Meldung art="erfolg">{erfolg ?? t('gespeichert')}</Meldung> : null}
+      {z.fehler ? (
+        <Meldung art="fehler">{fehler(z.fehler)}</Meldung>
+      ) : z.gespeichert ? (
+        <Meldung art="erfolg">{erfolg ?? t('gespeichert')}</Meldung>
+      ) : null}
     </div>
   );
 }
@@ -71,7 +75,15 @@ export function AktionsKnopf({
       {Object.entries(felder).map(([name, wert]) => (
         <input key={name} type="hidden" name={name} value={wert} />
       ))}
-      <Button type="submit" variant={variante} size="sm" disabled={laeuft} aria-pressed={gedrueckt} aria-label={label} className="self-start">
+      <Button
+        type="submit"
+        variant={variante}
+        size="sm"
+        disabled={laeuft}
+        aria-pressed={gedrueckt}
+        aria-label={label}
+        className="self-start"
+      >
         {icon}
         {laeuft ? t('laeuft') : knopf}
       </Button>
@@ -138,13 +150,17 @@ export function SprecherFormular({ aktion }: { aktion: Aktion }) {
         id={`${basis}-name`}
         label={t('audio.name')}
         fehler={feld(z.feldFehler?.name)}
-        kinder={(aria) => <input {...aria} name="name" defaultValue={z.werte?.name ?? ''} maxLength={120} autoComplete="off" className={eingabe} />}
+        kinder={(aria) => (
+          <input {...aria} name="name" defaultValue={z.werte?.name ?? ''} maxLength={120} autoComplete="off" className={eingabe} />
+        )}
       />
       <Rahmen
         id={`${basis}-datei`}
         label={t('audio.vereinbarung')}
         fehler={feld(z.feldFehler?.datei)}
-        kinder={(aria) => <input {...aria} type="file" name="datei" accept="application/pdf,.pdf" className="min-h-12 w-full max-w-full text-18" />}
+        kinder={(aria) => (
+          <input {...aria} type="file" name="datei" accept="application/pdf,.pdf" className="min-h-12 w-full max-w-full text-18" />
+        )}
       />
       <label className="flex min-h-12 items-center gap-3">
         <input type="checkbox" name="b1" value="1" className="size-5" />
@@ -163,7 +179,17 @@ export function SprecherFormular({ aktion }: { aktion: Aktion }) {
 }
 
 /** Eine angenommene Fassung ergänzen (Meldungen). `sprache`: Sprache der Fassung (lang/dir). */
-export function AlternativeFormular({ aktion, id, sprache, laenge }: { aktion: Aktion; id: string; sprache: 'de' | 'tr' | 'ar'; laenge: number }) {
+export function AlternativeFormular({
+  aktion,
+  id,
+  sprache,
+  laenge,
+}: {
+  aktion: Aktion;
+  id: string;
+  sprache: 'de' | 'tr' | 'ar';
+  laenge: number;
+}) {
   const { t, feld } = useFehlerText();
   const [z, absenden, laeuft] = useActionState(aktion, {});
   const ref = useRueckmeldung(z);

@@ -26,7 +26,13 @@ const SCHALTER: { f: Funktion; name: string }[] = [
 
 const zahl = (n: number, eins: string, viele: string) => (n === 1 ? `1 ${eins}` : `${n} ${viele}`);
 
-export async function lernappPruefen(db: Datenbank, env: Umgebung, produktion: boolean, jetzt: Date, neu: (p: Pruefung) => void): Promise<void> {
+export async function lernappPruefen(
+  db: Datenbank,
+  env: Umgebung,
+  produktion: boolean,
+  jetzt: Date,
+  neu: (p: Pruefung) => void,
+): Promise<void> {
   const [z] = await db
     .select({ wert: schema.einstellung.wert })
     .from(schema.einstellung)
@@ -93,7 +99,10 @@ export async function lernappPruefen(db: Datenbank, env: Umgebung, produktion: b
 
   const pruefRollen = ROLLEN.filter((r) => MATRIX[r].has('lernapp.sprache.pruefen'));
   const sprachen = await db
-    .select({ sprache: schema.lernappPrueferSprache.sprache, n: sql<number>`count(distinct ${schema.lernappPrueferSprache.benutzerId})`.mapWith(Number) })
+    .select({
+      sprache: schema.lernappPrueferSprache.sprache,
+      n: sql<number>`count(distinct ${schema.lernappPrueferSprache.benutzerId})`.mapWith(Number),
+    })
     .from(schema.lernappPrueferSprache)
     .innerJoin(schema.user, eq(schema.user.id, schema.lernappPrueferSprache.benutzerId))
     .where(
@@ -101,7 +110,10 @@ export async function lernappPruefen(db: Datenbank, env: Umgebung, produktion: b
         aktiv,
         inArray(
           schema.lernappPrueferSprache.benutzerId,
-          db.select({ id: schema.rolleZuweisung.benutzerId }).from(schema.rolleZuweisung).where(inArray(schema.rolleZuweisung.rolle, pruefRollen)),
+          db
+            .select({ id: schema.rolleZuweisung.benutzerId })
+            .from(schema.rolleZuweisung)
+            .where(inArray(schema.rolleZuweisung.rolle, pruefRollen)),
         ),
       ),
     )
@@ -141,10 +153,7 @@ export async function lernappPruefen(db: Datenbank, env: Umgebung, produktion: b
     aufwand: gesamt > 0 ? '–' : '30 min',
   });
 
-  const [meldungen] = await db
-    .select({ n: count() })
-    .from(schema.lernappMeldung)
-    .where(eq(schema.lernappMeldung.status, 'offen'));
+  const [meldungen] = await db.select({ n: count() }).from(schema.lernappMeldung).where(eq(schema.lernappMeldung.status, 'offen'));
   const offen = meldungen?.n ?? 0;
   neu({
     id: 'lernapp.meldungen',

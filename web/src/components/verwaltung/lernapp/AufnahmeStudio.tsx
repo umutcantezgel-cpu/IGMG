@@ -50,12 +50,19 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
     [],
   );
 
-  const fehler = (k: string) => setMeldung({ art: 'fehler', text: t.has(`fehler.${k}`) ? t(`fehler.${k}` as never) : t('fehler.hochladenFehlgeschlagen') });
+  const fehler = (k: string) =>
+    setMeldung({ art: 'fehler', text: t.has(`fehler.${k}`) ? t(`fehler.${k}` as never) : t('fehler.hochladenFehlgeschlagen') });
 
   if (!sprecher.length) return <p className="text-16 text-tinte-2">{t('audio.ohneSprecher')}</p>;
   if (!offen)
     return (
-      <Button type="button" variant="secondary" size="sm" onClick={() => setOffen(true)} aria-label={t('audio.aufnehmenFuer', { schluessel: eintrag })}>
+      <Button
+        type="button"
+        variant="secondary"
+        size="sm"
+        onClick={() => setOffen(true)}
+        aria-label={t('audio.aufnehmenFuer', { schluessel: eintrag })}
+      >
         <Mic aria-hidden />
         {t('audio.aufnehmen')}
       </Button>
@@ -63,10 +70,13 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
 
   async function start() {
     setMeldung(null);
-    if (typeof MediaRecorder === 'undefined' || !navigator.mediaDevices?.getUserMedia) return setMeldung({ art: 'fehler', text: t('audio.keinRecorder') });
+    if (typeof MediaRecorder === 'undefined' || !navigator.mediaDevices?.getUserMedia)
+      return setMeldung({ art: 'fehler', text: t('audio.keinRecorder') });
     let strom: MediaStream;
     try {
-      strom = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      strom = await navigator.mediaDevices.getUserMedia({
+        audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false },
+      });
     } catch {
       return setMeldung({ art: 'fehler', text: t('audio.keinMikrofon') });
     }
@@ -131,7 +141,10 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
         }
         setAufnahme(null);
         if (dateiFeld.current) dateiFeld.current.value = '';
-        setMeldung({ art: 'erfolg', text: t(`audio.ergebnis.${z.hinweis === 'ersetzt' ? 'ersetzt' : z.hinweis === 'unveraendert' ? 'unveraendert' : 'neu'}`) });
+        setMeldung({
+          art: 'erfolg',
+          text: t(`audio.ergebnis.${z.hinweis === 'ersetzt' ? 'ersetzt' : z.hinweis === 'unveraendert' ? 'unveraendert' : 'neu'}`),
+        });
       } catch {
         fehler('hochladenFehlgeschlagen');
       }

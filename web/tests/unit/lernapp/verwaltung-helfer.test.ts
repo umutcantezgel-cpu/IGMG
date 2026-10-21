@@ -2,7 +2,14 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import texte from '../../../messages/verwaltung/lernapp.json';
-import { alternativeZiel, aufgabeGehoertZumKurs, ergaenzeAlternative, MeldungSchema, meldungsSchluessel, zerlegeMeldungsSchluessel } from '@/lib/lernapp/meldung';
+import {
+  alternativeZiel,
+  aufgabeGehoertZumKurs,
+  ergaenzeAlternative,
+  MeldungSchema,
+  meldungsSchluessel,
+  zerlegeMeldungsSchluessel,
+} from '@/lib/lernapp/meldung';
 import { aufnahmeSchluessel, clipLage, stimmenArt, vertonbar, wirksameStimme } from '@/lib/lernapp/verwaltung/audio';
 import { LERNAPP_DATENSAETZE, leseQuelleMd, STIMMEN } from '@/lib/lernapp/verwaltung/quellen';
 import { anteil, pruefquote, prozent, standBaum, zaehleStatus } from '@/lib/lernapp/verwaltung/quoten';
@@ -32,7 +39,11 @@ describe('Quoten der Übersicht', () => {
       eintraege: { ...zaehleStatus(Array.from({ length: n }, () => status)) },
     });
     const baum = standBaum(
-      [z('tr', 'a2', 'tr.a2.e01', 'entwurf', 3), z('de', 'a1', 'de.a1.e02', 'veroeffentlicht', 2), z('tr', 'a1', 'tr.a1.e01', 'veroeffentlicht', 4)],
+      [
+        z('tr', 'a2', 'tr.a2.e01', 'entwurf', 3),
+        z('de', 'a1', 'de.a1.e02', 'veroeffentlicht', 2),
+        z('tr', 'a1', 'tr.a1.e01', 'veroeffentlicht', 4),
+      ],
       ['de', 'tr', 'ar'],
       ['a1', 'a2'],
     );
@@ -82,17 +93,25 @@ describe('Meldungen aus der App', () => {
       max: 30,
       laenge: 600,
     });
-    expect(alternativeZiel({ typ: 'frei', nach: 'ausgang', ziel: 'tr.a1.e01.w001' })).toMatchObject({ art: 'uebersetzung', bezug: 'tr.a1.e01.w001' });
+    expect(alternativeZiel({ typ: 'frei', nach: 'ausgang', ziel: 'tr.a1.e01.w001' })).toMatchObject({
+      art: 'uebersetzung',
+      bezug: 'tr.a1.e01.w001',
+    });
     expect(alternativeZiel({ typ: 'luecke', ziel: 'tr.a1.e01.s0002', wort: 1 })).toEqual({ art: 'aufgabe', max: 10, laenge: 60 });
     expect(alternativeZiel({ typ: 'auswahl', ziel: 'x', ablenker: [] })).toEqual({ art: 'keine' });
   });
 
   it('Alternativen ohne Dubletten, ohne Hauptlösung, mit Grenzen', () => {
-    expect(ergaenzeAlternative(['Das Haus ist neu.'], '  Das  Haus ist sehr neu. ', { haupt: 'Das Haus ist neu.', max: 3, laenge: 600 })).toEqual({
+    expect(
+      ergaenzeAlternative(['Das Haus ist neu.'], '  Das  Haus ist sehr neu. ', { haupt: 'Das Haus ist neu.', max: 3, laenge: 600 }),
+    ).toEqual({
       ok: true,
       liste: ['Das Haus ist neu.', 'Das Haus ist sehr neu.'],
     });
-    expect(ergaenzeAlternative([], 'das haus ist neu.', { haupt: 'Das Haus ist neu.', max: 3, laenge: 600 })).toEqual({ ok: false, grund: 'doppelt' });
+    expect(ergaenzeAlternative([], 'das haus ist neu.', { haupt: 'Das Haus ist neu.', max: 3, laenge: 600 })).toEqual({
+      ok: false,
+      grund: 'doppelt',
+    });
     expect(ergaenzeAlternative(['a'], 'b', { max: 1, laenge: 600 })).toEqual({ ok: false, grund: 'voll' });
     expect(ergaenzeAlternative([], 'abc', { max: 2, laenge: 2 })).toEqual({ ok: false, grund: 'zuLang' });
     expect(ergaenzeAlternative([], '   ', { max: 2, laenge: 2 })).toEqual({ ok: false, grund: 'leer' });
@@ -150,9 +169,27 @@ describe('Quellenregister', () => {
 
   it('kleine Probe mit Angaben- und Dateitabelle', () => {
     const q = leseQuelleMd(
-      ['# QUELLE: Probe', '', '| Feld | Angabe |', '|---|---|', '| Lizenz | CC0 |', '| Namensnennung | [Name] |', '', '## Dateien', '', '| Datei | Bytes | SHA-256 |', '|---|---|---|', `| \`a.txt\` | 12 | \`${'e'.repeat(64)}\` |`].join('\n'),
+      [
+        '# QUELLE: Probe',
+        '',
+        '| Feld | Angabe |',
+        '|---|---|',
+        '| Lizenz | CC0 |',
+        '| Namensnennung | [Name] |',
+        '',
+        '## Dateien',
+        '',
+        '| Datei | Bytes | SHA-256 |',
+        '|---|---|---|',
+        `| \`a.txt\` | 12 | \`${'e'.repeat(64)}\` |`,
+      ].join('\n'),
     );
-    expect(q).toEqual({ titel: 'Probe', lizenzen: ['CC0'], namensnennungen: ['[Name]'], dateien: [{ abschnitt: 'Dateien', datei: 'a.txt', bytes: 12, sha256: 'e'.repeat(64) }] });
+    expect(q).toEqual({
+      titel: 'Probe',
+      lizenzen: ['CC0'],
+      namensnennungen: ['[Name]'],
+      dateien: [{ abschnitt: 'Dateien', datei: 'a.txt', bytes: 12, sha256: 'e'.repeat(64) }],
+    });
   });
 
   it('jeder Datensatz und jede Stimme hat Texte in der Verwaltung', () => {

@@ -55,7 +55,13 @@ export function einlaufAktiv(entscheidungen: readonly Entscheidung[]): boolean {
  * Startwert einer Stichprobe: Einheit, Art, Richtung (nur Übersetzungen), Stand der Einheit und Runde. Nach „nachbessern“
  * zieht die nächste Runde mit neuem Startwert (ADR 0041 Nr. 5).
  */
-export function stichprobenSaat(o: { einheit: string; art: StichprobeArt; richtung?: string | null; einheitHash: string; runde: number }): string {
+export function stichprobenSaat(o: {
+  einheit: string;
+  art: StichprobeArt;
+  richtung?: string | null;
+  einheitHash: string;
+  runde: number;
+}): string {
   return [o.einheit, o.art, o.richtung ?? '-', o.einheitHash, String(o.runde)].join('|');
 }
 

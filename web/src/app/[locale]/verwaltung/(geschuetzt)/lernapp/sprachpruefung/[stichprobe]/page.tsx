@@ -67,8 +67,7 @@ export default async function Stichprobe({ params, searchParams }: PageProps<'/[
       {k.entscheidung !== 'offen' ? (
         <Meldung art={k.entscheidung === 'bestanden' ? 'erfolg' : 'info'}>
           <span {...uiAttr}>
-            {t(`stichprobe.ergebnis.${k.entscheidung}`)}{' '}
-            {k.ergebnis ? t('stichprobe.ergebnis.zahlen', { ...k.ergebnis }) : null}
+            {t(`stichprobe.ergebnis.${k.entscheidung}`)} {k.ergebnis ? t('stichprobe.ergebnis.zahlen', { ...k.ergebnis }) : null}
           </span>
         </Meldung>
       ) : null}

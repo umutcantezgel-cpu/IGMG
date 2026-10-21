@@ -188,7 +188,8 @@ export default async function Quellen() {
             {sprecher.map((p) => (
               <li key={p.id}>
                 {p.name}: <span className="font-mono">mensch:{p.id}</span> ·{' '}
-                {[p.kiSyntheseErlaubt ? tl('audio.b1') : null, p.klonenErlaubt ? tl('audio.b2') : null].filter(Boolean).join(', ') || tl('audio.nurA')}
+                {[p.kiSyntheseErlaubt ? tl('audio.b1') : null, p.klonenErlaubt ? tl('audio.b2') : null].filter(Boolean).join(', ') ||
+                  tl('audio.nurA')}
               </li>
             ))}
           </ul>

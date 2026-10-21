@@ -211,7 +211,8 @@ function pruefoberflaecheBefunde() {
   const name = `verwaltung/${PRUEFOBERFLAECHE}`;
   const inhalt = lies(datei);
   const b = [];
-  for (const k of Object.keys(inhalt)) if (!['_hinweis', '_entwurf', 'de', 'tr', 'ar'].includes(k)) b.push(`${name}: unbekannter Eintrag ${k}`);
+  for (const k of Object.keys(inhalt))
+    if (!['_hinweis', '_entwurf', 'de', 'tr', 'ar'].includes(k)) b.push(`${name}: unbekannter Eintrag ${k}`);
   const deP = flach(inhalt.de ?? {});
   if (!Object.keys(deP).length) b.push(`${name}: de fehlt`);
   for (const [k, v] of Object.entries(deP)) if (String(v).trim() === '') b.push(`${name}/de: leer ${k}`);

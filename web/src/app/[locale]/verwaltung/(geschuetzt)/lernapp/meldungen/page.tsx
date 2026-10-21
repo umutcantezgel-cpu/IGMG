@@ -43,7 +43,12 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
         label={t('ansichten')}
         eintraege={[
           { schluessel: 'offen', label: t('offen', { anzahl: offen }), href: '/verwaltung/lernapp/meldungen', aktiv: ansicht === 'offen' },
-          { schluessel: 'erledigt', label: t('erledigt'), href: '/verwaltung/lernapp/meldungen?ansicht=erledigt', aktiv: ansicht === 'erledigt' },
+          {
+            schluessel: 'erledigt',
+            label: t('erledigt'),
+            href: '/verwaltung/lernapp/meldungen?ansicht=erledigt',
+            aktiv: ansicht === 'erledigt',
+          },
         ]}
       />
       {liste.length === 0 ? (
@@ -52,7 +57,11 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
         <ul className="flex flex-col gap-4">
           {liste.map((m) => {
             const sprache = m.ziel.art === 'keine' ? null : loesungsSprache(m.kurs, m.ziel.art);
-            const antwortSprache = istRichtung(m.kurs) ? (m.ziel.art === 'uebersetzung' ? zerlegeRichtung(m.kurs).ausgang : zerlegeRichtung(m.kurs).ziel) : 'de';
+            const antwortSprache = istRichtung(m.kurs)
+              ? m.ziel.art === 'uebersetzung'
+                ? zerlegeRichtung(m.kurs).ausgang
+                : zerlegeRichtung(m.kurs).ziel
+              : 'de';
             return (
               <li key={m.id} className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4 md:p-6">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -64,7 +73,9 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
                 <p className="text-16">
                   <span className="font-mono">{t('aufgabe', { aufgabe: m.aufgabe, kurs: m.kurs })}</span>
                   {' · '}
-                  {m.status === 'offen' ? t('eingegangen', { am: zeit(m.am) }) : t('erledigtAm', { am: m.erledigtAm ? zeit(m.erledigtAm) : '–' })}
+                  {m.status === 'offen'
+                    ? t('eingegangen', { am: zeit(m.am) })
+                    : t('erledigtAm', { am: m.erledigtAm ? zeit(m.erledigtAm) : '–' })}
                 </p>
                 {m.aufgabeDaten ? (
                   <p className="flex flex-wrap items-center gap-2 text-16">
@@ -77,7 +88,11 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
                 {m.antwort ? (
                   <div className="flex flex-col gap-1">
                     <h3 className="text-16 font-bold">{t('antwort')}</h3>
-                    <p lang={antwortSprache} dir={richtung(antwortSprache)} className={cn(antwortSprache === 'ar' && 'font-arabic text-arabisch-3')}>
+                    <p
+                      lang={antwortSprache}
+                      dir={richtung(antwortSprache)}
+                      className={cn(antwortSprache === 'ar' && 'font-arabic text-arabisch-3')}
+                    >
                       {m.antwort}
                     </p>
                   </div>
@@ -85,11 +100,19 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
                 {m.loesung && sprache ? (
                   <dl className="grid gap-x-3 gap-y-1 text-16 sm:grid-cols-4">
                     <dt className="font-bold">{t('loesung')}</dt>
-                    <dd lang={sprache} dir={richtung(sprache)} className={cn('sm:col-span-3', sprache === 'ar' && 'font-arabic text-arabisch-3')}>
+                    <dd
+                      lang={sprache}
+                      dir={richtung(sprache)}
+                      className={cn('sm:col-span-3', sprache === 'ar' && 'font-arabic text-arabisch-3')}
+                    >
                       {m.loesung.haupt || '–'}
                     </dd>
                     <dt className="font-bold">{t('alternativen')}</dt>
-                    <dd lang={sprache} dir={richtung(sprache)} className={cn('sm:col-span-3', sprache === 'ar' && 'font-arabic text-arabisch-3')}>
+                    <dd
+                      lang={sprache}
+                      dir={richtung(sprache)}
+                      className={cn('sm:col-span-3', sprache === 'ar' && 'font-arabic text-arabisch-3')}
+                    >
                       {m.loesung.alternativen.length ? m.loesung.alternativen.join(' · ') : <span lang="de">{t('keineAlternativen')}</span>}
                     </dd>
                   </dl>

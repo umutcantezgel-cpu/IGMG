@@ -109,7 +109,13 @@ export async function sprecherAnlegen(_vorher: LernappZustand, fd: FormData): Pr
         .values({ name, vereinbarungMediumId: mediumId, kiSyntheseErlaubt: b1, klonenErlaubt: b2 })
         .returning({ id: schema.lernappSprecher.id });
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'lernapp.sprecher_angelegt', zielTyp: 'lernapp_sprecher', zielId: neu!.id, details: { b1, b2 } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'lernapp.sprecher_angelegt',
+          zielTyp: 'lernapp_sprecher',
+          zielId: neu!.id,
+          details: { b1, b2 },
+        },
         tx,
       );
     });
@@ -124,7 +130,8 @@ export async function aufnahmeSpeichern(_vorher: LernappZustand, fd: FormData): 
     const eintrag = await ladeVertonbarenEintrag(String(fd.get('eintrag') ?? ''));
     if (!eintrag) return { fehler: 'nichtGefunden' };
     // KERN 4.0 §4: nie für Religionsbezug, Wissen oder Koran-Arabisch
-    if (!vertonbar({ kurs: eintrag.kurs, religionsbezug: eintrag.religionsbezug, status: eintrag.status })) return { fehler: 'nichtVertonbar' };
+    if (!vertonbar({ kurs: eintrag.kurs, religionsbezug: eintrag.religionsbezug, status: eintrag.status }))
+      return { fehler: 'nichtVertonbar' };
     const sprecherId = UUID.safeParse(fd.get('sprecher'));
     if (!sprecherId.success) return { fehler: 'pruefen', feldFehler: { sprecher: 'sprecherFehlt' } };
     const [sprecher] = await db
@@ -211,7 +218,13 @@ export async function aufnahmeVerwerfen(_vorher: LernappZustand, fd: FormData): 
     await db.transaction(async (tx) => {
       await tx.update(t).set({ status: 'verworfen' }).where(eq(t.id, z.id));
       await protokolliere(
-        { benutzerId: a.benutzerId, aktion: 'lernapp.aufnahme_verworfen', zielTyp: 'lernapp_aufnahme', zielId: z.id, details: { sprache: z.sprache } },
+        {
+          benutzerId: a.benutzerId,
+          aktion: 'lernapp.aufnahme_verworfen',
+          zielTyp: 'lernapp_aufnahme',
+          zielId: z.id,
+          details: { sprache: z.sprache },
+        },
         tx,
       );
     });
@@ -230,7 +243,8 @@ export async function stimmeWaehlen(_vorher: LernappZustand, fd: FormData): Prom
   return mitLernappRecht('lernapp.audio.bearbeiten', async (a) => {
     const eintrag = await ladeVertonbarenEintrag(String(fd.get('eintrag') ?? ''));
     if (!eintrag) return { fehler: 'nichtGefunden' };
-    if (!vertonbar({ kurs: eintrag.kurs, religionsbezug: eintrag.religionsbezug, status: eintrag.status })) return { fehler: 'nichtVertonbar' };
+    if (!vertonbar({ kurs: eintrag.kurs, religionsbezug: eintrag.religionsbezug, status: eintrag.status }))
+      return { fehler: 'nichtVertonbar' };
     const wahl = Wahl.safeParse(fd.get('wahl'));
     if (!wahl.success) return { fehler: 'pruefen' };
     const w = schema.lernappAudioWahl;
@@ -238,7 +252,10 @@ export async function stimmeWaehlen(_vorher: LernappZustand, fd: FormData): Prom
       await tx
         .insert(w)
         .values({ sprache: eintrag.kurs, textHash: eintrag.textHash, wahl: wahl.data, geaendertVon: a.benutzerId })
-        .onConflictDoUpdate({ target: [w.sprache, w.textHash], set: { wahl: wahl.data, geaendertVon: a.benutzerId, geaendertAm: new Date() } });
+        .onConflictDoUpdate({
+          target: [w.sprache, w.textHash],
+          set: { wahl: wahl.data, geaendertVon: a.benutzerId, geaendertAm: new Date() },
+        });
       await protokolliere(
         {
           benutzerId: a.benutzerId,

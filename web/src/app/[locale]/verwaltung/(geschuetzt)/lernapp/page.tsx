@@ -27,7 +27,13 @@ export default async function LernappUebersicht() {
   const zeit = (d: Date) => `${datumLang(d, 'de')}, ${uhrzeit(d, 'de')}`;
   const darfBearbeiten = darf(a.rollen, 'lernapp.bearbeiten');
   const befunde = [
-    { schluessel: 'meldungen', wert: u.befunde.meldungen, titel: t('meldungen'), text: null, href: darfBearbeiten ? '/verwaltung/lernapp/meldungen' : null },
+    {
+      schluessel: 'meldungen',
+      wert: u.befunde.meldungen,
+      titel: t('meldungen'),
+      text: null,
+      href: darfBearbeiten ? '/verwaltung/lernapp/meldungen' : null,
+    },
     { schluessel: 'konflikte', wert: u.befunde.konflikte, titel: t('konflikte'), text: t('konflikteText'), href: null },
     { schluessel: 'kritisch', wert: u.befunde.kritisch, titel: t('kritisch'), text: t('kritischText'), href: null },
     {
@@ -56,7 +62,10 @@ export default async function LernappUebersicht() {
               <span className="font-bold">{b.titel}</span>
               {b.text ? <span className="text-16 text-tinte-2">{b.text}</span> : null}
               {b.href && b.wert > 0 ? (
-                <NextLink href={b.href} className="inline-flex min-h-11 items-center gap-1 font-bold text-gruen-800 underline underline-offset-4">
+                <NextLink
+                  href={b.href}
+                  className="inline-flex min-h-11 items-center gap-1 font-bold text-gruen-800 underline underline-offset-4"
+                >
                   {tl(`navigation.${b.schluessel === 'meldungen' ? 'meldungen' : 'sprachpruefung'}`)}
                   <ArrowRight aria-hidden className="size-4 rtl:-scale-x-100" />
                 </NextLink>
@@ -94,7 +103,9 @@ export default async function LernappUebersicht() {
                     <td className="px-4 py-3 tabular-nums">{q.offen}</td>
                     <td className="px-4 py-3 tabular-nums">{q.bestanden}</td>
                     <td className="px-4 py-3 tabular-nums">{q.nachbessern}</td>
-                    <td className="px-4 py-3 tabular-nums">{t('geprueftWert', { geprueft: q.geprueft, gezogen: q.gezogen, quote: q.quote })}</td>
+                    <td className="px-4 py-3 tabular-nums">
+                      {t('geprueftWert', { geprueft: q.geprueft, gezogen: q.gezogen, quote: q.quote })}
+                    </td>
                     <td className="px-4 py-3 tabular-nums">{u.pruefende.jeSprache[s] ?? 0}</td>
                   </tr>
                 );
@@ -127,8 +138,7 @@ export default async function LernappUebersicht() {
                   </NextLink>
                 </div>
                 <p className="text-16">
-                  {t('einheiten', { anzahl: k.einheiten.gesamt })}:{' '}
-                  {STATUS.map((s) => `${k.einheiten[s]} ${tl(`status.${s}`)}`).join(', ')}
+                  {t('einheiten', { anzahl: k.einheiten.gesamt })}: {STATUS.map((s) => `${k.einheiten[s]} ${tl(`status.${s}`)}`).join(', ')}
                   {' · '}
                   {t('eintraege', { anzahl: k.eintraege.gesamt })}
                 </p>

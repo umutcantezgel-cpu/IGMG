@@ -145,12 +145,20 @@ async function entscheideWennFertig(k: StichprobeKopf, benutzerId: string): Prom
       if (standVon(alle) === k.einheitHash) {
         const ids = (typ: string) => alle.filter((x) => x.inhaltTyp === typ && x.status === 'automatisch_geprueft').map((x) => x.inhaltId);
         const offen = (t: typeof schema.lernappSatz | typeof schema.lernappLemma | typeof schema.lernappUebersetzung, liste: string[]) =>
-          liste.length ? tx.update(t).set({ status: 'veroeffentlicht' }).where(and(inArray(t.id, liste), eq(t.status, 'automatisch_geprueft'))) : null;
+          liste.length
+            ? tx
+                .update(t)
+                .set({ status: 'veroeffentlicht' })
+                .where(and(inArray(t.id, liste), eq(t.status, 'automatisch_geprueft')))
+            : null;
         if (k.art === 'zieltext') {
           await offen(schema.lernappLemma, ids('lemma'));
           await offen(schema.lernappSatz, ids('satz'));
           const einheit = schema.lernappEinheit;
-          await tx.update(einheit).set({ status: 'veroeffentlicht' }).where(and(eq(einheit.id, k.einheitId), eq(einheit.status, 'automatisch_geprueft')));
+          await tx
+            .update(einheit)
+            .set({ status: 'veroeffentlicht' })
+            .where(and(eq(einheit.id, k.einheitId), eq(einheit.status, 'automatisch_geprueft')));
           const lektionen = await tx
             .update(schema.lernappLektion)
             .set({ status: 'veroeffentlicht' })
@@ -293,4 +301,3 @@ export async function pruefsprachenSetzen(_vorher: LernappZustand, fd: FormData)
     return { gespeichert: Date.now() };
   });
 }
-

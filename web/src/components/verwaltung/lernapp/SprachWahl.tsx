@@ -22,7 +22,9 @@ export function SprachWahl({ ui, pfad }: { ui: Oberflaeche; pfad: string }) {
               aria-current={s === ui ? 'page' : undefined}
               className={cn(
                 'inline-flex min-h-12 items-center rounded-pill border px-4 font-bold no-underline',
-                s === ui ? 'border-gruen-700 bg-gruen-700 text-weiss hover:text-weiss' : 'border-rand bg-weiss text-tinte hover:bg-gruen-50 hover:text-tinte',
+                s === ui
+                  ? 'border-gruen-700 bg-gruen-700 text-weiss hover:text-weiss'
+                  : 'border-rand bg-weiss text-tinte hover:bg-gruen-50 hover:text-tinte',
               )}
             >
               {rohPruefTexte(s).sprachname[s]}

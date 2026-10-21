@@ -25,7 +25,15 @@ export type StudioEintrag = {
   stufe: string;
   textHash: string;
   lage: ClipLage;
-  clips: { id: string; stimme: string; art: ReturnType<typeof stimmenArt>; buendel: string; versatz: number; laenge: number; dauerMs: number }[];
+  clips: {
+    id: string;
+    stimme: string;
+    art: ReturnType<typeof stimmenArt>;
+    buendel: string;
+    versatz: number;
+    laenge: number;
+    dauerMs: number;
+  }[];
   wahl: 'sprachausgabe' | 'mensch' | null;
   wirksam: string | null;
   aufnahmen: { id: string; sprecher: string; sprecherId: string; status: string; dauerMs: number | null; bytes: number; am: Date }[];
@@ -91,9 +99,15 @@ export async function ladeStudio(
       select e.*, (select count(*) from lernapp_audio a where a.sprache = ${sprache} and a.text_hash = e.text_hash)::int as clips from e
     )`;
   const zeilen = (
-    await db.execute<{ art: 'lemma' | 'satz'; id: string; schluessel: string; text: string; stufe: string; text_hash: string; clips: number }>(
-      sql`${basis} select * from m order by schluessel`,
-    )
+    await db.execute<{
+      art: 'lemma' | 'satz';
+      id: string;
+      schluessel: string;
+      text: string;
+      stufe: string;
+      text_hash: string;
+      clips: number;
+    }>(sql`${basis} select * from m order by schluessel`)
   ).rows;
   const mitLage = zeilen.map((z) => ({
     ...z,
@@ -208,14 +222,24 @@ export async function ladeVertonbarenEintrag(schluessel: string) {
   const kurs = schluessel.split('.')[0];
   if (kurs !== 'de' && kurs !== 'tr' && kurs !== 'ar') return null;
   const [lemma] = await db
-    .select({ id: schema.lernappLemma.id, text: schema.lernappLemma.lemma, status: schema.lernappLemma.status, religionsbezug: schema.lernappLemma.religionsbezug })
+    .select({
+      id: schema.lernappLemma.id,
+      text: schema.lernappLemma.lemma,
+      status: schema.lernappLemma.status,
+      religionsbezug: schema.lernappLemma.religionsbezug,
+    })
     .from(schema.lernappLemma)
     .where(and(eq(schema.lernappLemma.schluessel, schluessel), eq(schema.lernappLemma.kursId, kurs)))
     .limit(1);
   const [satz] = lemma
     ? [undefined]
     : await db
-        .select({ id: schema.lernappSatz.id, text: schema.lernappSatz.text, status: schema.lernappSatz.status, religionsbezug: schema.lernappSatz.religionsbezug })
+        .select({
+          id: schema.lernappSatz.id,
+          text: schema.lernappSatz.text,
+          status: schema.lernappSatz.status,
+          religionsbezug: schema.lernappSatz.religionsbezug,
+        })
         .from(schema.lernappSatz)
         .where(and(eq(schema.lernappSatz.schluessel, schluessel), eq(schema.lernappSatz.kursId, kurs)))
         .limit(1);

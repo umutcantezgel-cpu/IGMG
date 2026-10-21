@@ -5,7 +5,7 @@ import { echtzeitUrsprung } from './lib/echtzeit/konfig';
 import { umgebungsSchalter } from './lib/funktionen-regeln';
 import { kontenSicherAus, nichtGefundenZiel } from './lib/konto/ohne-konten';
 import { istOberflaeche, type Oberflaeche, STANDARD_OBERFLAECHE } from './lib/lernapp/kurse';
-import { cspLernApp, cspOeffentlich, cspVerwaltung, istKontoPfad } from './lib/sicherheit/header';
+import { cspLernApp, cspOeffentlich, cspVerwaltung, istKontoPfad, istLernappVerwaltung } from './lib/sicherheit/header';
 
 const sprachRouting = createMiddleware(routing);
 
@@ -100,7 +100,7 @@ export default function proxy(request: NextRequest) {
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
     // Echtzeit-Server (wss://) nur für Konto-Seiten, nie für die Verwaltung oder öffentliche Seiten (ADR 0027)
     const echtzeit = verwaltung ? null : echtzeitUrsprung();
-    const csp = cspVerwaltung(nonce, echtzeit ? [echtzeit] : []);
+    const csp = cspVerwaltung(nonce, echtzeit ? [echtzeit] : [], { medienBlob: istLernappVerwaltung(pathname) });
     // next-intl übernimmt die Request-Header in den Rewrite; Next.js liest die Nonce aus der CSP.
     request.headers.set('x-nonce', nonce);
     request.headers.set('Content-Security-Policy', csp);

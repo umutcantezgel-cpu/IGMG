@@ -3,8 +3,10 @@ import {
   PFAD_BERECHTIGUNGEN,
   cspLernApp,
   cspOeffentlich,
+  cspVerwaltung,
   grundHeader,
   istKontoPfad,
+  istLernappVerwaltung,
   lernAppHeaderRegeln,
   permissionsPolicy,
 } from '@/lib/sicherheit/header';
@@ -57,6 +59,18 @@ describe('Kopfzeilen der Lern-App (ADR 0042 Nr. 9, Fortschreibung S2/S5; KERN 4.
     expect(teil('frame-ancestors')).toBe("frame-ancestors 'none'");
     expect(cspOeffentlich()).not.toContain('wasm-unsafe-eval');
     expect(cspOeffentlich()).toContain("media-src 'self';");
+  });
+
+  it('Verwaltung: media-src blob: nur unter /verwaltung/lernapp (Clips, Probe, Vorschau – L3-06), Skripte unverändert', () => {
+    for (const p of ['/verwaltung/lernapp', '/verwaltung/lernapp/audio', '/de/verwaltung/lernapp/kurse/tr'])
+      expect(istLernappVerwaltung(p)).toBe(true);
+    for (const p of ['/verwaltung', '/verwaltung/lernapp-x', '/verwaltung/rezitationen', '/lern-app/de', '/tr/verwaltung/lernapp'])
+      expect(istLernappVerwaltung(p)).toBe(false);
+    const teil = (csp: string, name: string) => csp.split('; ').find((t) => t.startsWith(`${name} `)) ?? '';
+    expect(teil(cspVerwaltung('n'), 'media-src')).toBe("media-src 'self'");
+    const lernapp = cspVerwaltung('n', [], { medienBlob: true });
+    expect(teil(lernapp, 'media-src')).toBe("media-src 'self' blob:");
+    expect(teil(lernapp, 'script-src')).toBe(teil(cspVerwaltung('n'), 'script-src'));
   });
 
   it('ganz /lern-app: COOP same-origin, COEP require-corp, eigene CSP – Website unverändert', async () => {

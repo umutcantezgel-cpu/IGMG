@@ -154,7 +154,11 @@ export async function eintragSperren(_vorher: LernappZustand, fd: FormData): Pro
     else {
       // nur Einträge, auf die die gemeldete Aufgabe verweist
       if (!verweiseDerAufgabe(aufgabe).includes(ziel)) return { fehler: 'nichtGefunden' };
-      const [lemma] = await db.select({ id: schema.lernappLemma.id }).from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, ziel)).limit(1);
+      const [lemma] = await db
+        .select({ id: schema.lernappLemma.id })
+        .from(schema.lernappLemma)
+        .where(eq(schema.lernappLemma.schluessel, ziel))
+        .limit(1);
       getroffen = await zieheZurueck(lemma ? 'lemma' : 'satz', ziel);
     }
     if (!getroffen) return { fehler: 'nichtGefunden' };

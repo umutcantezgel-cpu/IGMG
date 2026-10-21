@@ -17,7 +17,11 @@ import { cn } from '@/lib/utils';
 import { aufnahmeVerwerfen, sprecherAnlegen, stimmeWaehlen } from '@/server/actions/lernapp-audio';
 import { ladeSprecher, ladeStudio, STUDIO_SEITE, type StudioFilter } from '@/server/queries/lernapp/audio-studio';
 
-const LAGE_FARBE = { fehlt: 'bg-warnung-toenung text-warnung', auffaellig: 'bg-fehler-toenung text-fehler', vorhanden: 'bg-gruen-50 text-gruen-800' } as const;
+const LAGE_FARBE = {
+  fehlt: 'bg-warnung-toenung text-warnung',
+  auffaellig: 'bg-fehler-toenung text-fehler',
+  vorhanden: 'bg-gruen-50 text-gruen-800',
+} as const;
 const FILTER: StudioFilter[] = ['fehlt', 'auffaellig', 'alle'];
 
 /**
@@ -56,7 +60,12 @@ export default async function AudioStudio({ searchParams }: PageProps<'/[locale]
       <LernappNavigation aktiv="audio" rollen={a.rollen} />
       <Ansichten
         label={t('kurs')}
-        eintraege={SPRACHEN.map((s) => ({ schluessel: s, label: tl(`kurs.${s}`), href: href({ kurs: s, filter, seite: 0 }), aktiv: s === kurs }))}
+        eintraege={SPRACHEN.map((s) => ({
+          schluessel: s,
+          label: tl(`kurs.${s}`),
+          href: href({ kurs: s, filter, seite: 0 }),
+          aktiv: s === kurs,
+        }))}
       />
       <Ansichten
         label={t('filter')}
@@ -82,7 +91,11 @@ export default async function AudioStudio({ searchParams }: PageProps<'/[locale]
               return (
                 <li key={e.schluessel} className="flex flex-col gap-3 rounded-lg border border-linie bg-weiss p-4">
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span lang={kurs} dir={richtung(kurs)} className={cn('text-20 font-bold', kurs === 'ar' && 'font-arabic text-arabisch-3')}>
+                    <span
+                      lang={kurs}
+                      dir={richtung(kurs)}
+                      className={cn('text-20 font-bold', kurs === 'ar' && 'font-arabic text-arabisch-3')}
+                    >
                       {e.text}
                     </span>
                     <span className={cn(PILLE, LAGE_FARBE[e.lage])}>{t(`lage.${e.lage}`)}</span>
@@ -168,13 +181,19 @@ export default async function AudioStudio({ searchParams }: PageProps<'/[locale]
         {seiten > 1 ? (
           <nav aria-label={t('seite', { seite: seite + 1, seiten })} className="flex flex-wrap items-center gap-3">
             {seite > 0 ? (
-              <NextLink href={href({ seite: seite - 1 })} className="inline-flex min-h-11 items-center font-bold underline underline-offset-4">
+              <NextLink
+                href={href({ seite: seite - 1 })}
+                className="inline-flex min-h-11 items-center font-bold underline underline-offset-4"
+              >
                 {t('zurueck')}
               </NextLink>
             ) : null}
             <span>{t('seite', { seite: seite + 1, seiten })}</span>
             {seite + 1 < seiten ? (
-              <NextLink href={href({ seite: seite + 1 })} className="inline-flex min-h-11 items-center font-bold underline underline-offset-4">
+              <NextLink
+                href={href({ seite: seite + 1 })}
+                className="inline-flex min-h-11 items-center font-bold underline underline-offset-4"
+              >
                 {t('vor')}
               </NextLink>
             ) : null}
