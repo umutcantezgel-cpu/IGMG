@@ -364,6 +364,8 @@ const ZUORDNUNG: Record<string, string[]> = {
     'wissen',
   ],
   'rechte-matrix-mitglieder.test.ts': Object.keys(MODULE),
+  // Lern-App, Verwaltung v1 (L3-06)
+  'verwaltung/rechte-matrix-lernapp.test.ts': ['lernapp-audio', 'lernapp-meldungen', 'lernapp-sprachpruefung'],
   // Öffentliche Formulare: ohne Konto, mit ALTCHA und Ratenbegrenzung (formular-*.test.ts, newsletter-anmeldung.test.ts)
   'öffentliche Formulare': [
     'formulare/kontakt',
