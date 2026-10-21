@@ -21,12 +21,12 @@
       {
         "de": "Ich kann sagen, ob etwas groß, klein, neu oder alt ist.",
         "tr": "Bir şeyin büyük, küçük, yeni ya da eski olduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أقول هل الشيء كبير أو صغير، جديد أو قديم."
+        "ar": "أستطيع أن أصف الشيء بأنه كبير أو صغير، جديد أو قديم."
       },
       {
         "de": "Ich kann den Artikel richtig aussprechen, auch vor Sonnenbuchstaben.",
         "tr": "Harf-i tarifi, güneş harflerinden önce de doğru okuyabilirim.",
-        "ar": "أستطيع أن أنطق «ال» صحيحًا، وكذلك مع الحروف الشمسية."
+        "ar": "أستطيع أن أنطق «ال» نطقًا صحيحًا، وكذلك مع الحروف الشمسية."
       }
     ],
     "symbol": "house",
@@ -745,16 +745,19 @@
     },
     {
       "schluessel": "ar.a1.e03.maghluq",
-      "lemma": "مَغْلُوق",
+      "lemma": "مُغْلَق",
       "wortart": "adjektiv",
       "merkmale": {
-        "umschrift": "maġlūq",
+        "umschrift": "muġlaq",
         "wurzel": "ġ-l-q"
       },
       "formen": {
-        "feminin": "مَغْلُوقَة",
-        "akkusativ_indef": "مَغْلُوقًا"
+        "feminin": "مُغْلَقَة",
+        "plural_m": "مُغْلَقُون",
+        "plural_f": "مُغْلَقَات",
+        "akkusativ_indef": "مُغْلَقًا"
       },
+      "frequenzRang": 3736,
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -908,7 +911,7 @@
     },
     {
       "schluessel": "ar.a1.e03.s0010",
-      "text": "هٰذَا الطَّابِقُ الْأَرْضِيُّ.",
+      "text": "هٰذَا هُوَ الطَّابِقُ الْأَرْضِيُّ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1580,19 +1583,19 @@
     },
     {
       "schluessel": "ar.a1.e03.s0122",
-      "text": "النَّافِذَةُ مَغْلُوقَةٌ.",
+      "text": "النَّافِذَةُ مُغْلَقَةٌ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "ar.a1.e03.s0123",
-      "text": "هَلِ الْبَابُ مَغْلُوقٌ؟",
+      "text": "هَلِ الْبَابُ مُغْلَقٌ؟",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "ar.a1.e03.s0124",
-      "text": "نَعَمْ، الْبَابُ مَغْلُوقٌ.",
+      "text": "نَعَمْ، الْبَابُ مُغْلَقٌ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1604,7 +1607,7 @@
     },
     {
       "schluessel": "ar.a1.e03.s0126",
-      "text": "بَابُ الْحَمَّامِ مَغْلُوقٌ.",
+      "text": "بَابُ الْحَمَّامِ مُغْلَقٌ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1731,7 +1734,7 @@
     },
     {
       "schluessel": "ar.a1.e03.s0147",
-      "text": "لَا، لَا مِفْتَاحَ فِي الصَّالَةِ.",
+      "text": "لَا، فِي الصَّالَةِ كُتُبٌ وَحَقِيبَةٌ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1995,7 +1998,7 @@
     },
     {
       "schluessel": "ar.a1.e03.s0191",
-      "text": "أَهْلًا يَا رِيمُ! أَنَا فِي الْبَيْتِ.",
+      "text": "أَهْلًا يَا رِيمُ! بِخَيْرٍ، شُكْرًا. أَنَا فِي الْبَيْتِ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2175,7 +2178,7 @@
       "ziel": {
         "de": "Ich kann die Räume einer Wohnung benennen und fragen, wo ein Raum ist.",
         "tr": "Bir dairenin odalarını adlandırabilir ve bir odanın nerede olduğunu sorabilirim.",
-        "ar": "أستطيع أن أسمّي غرف الشقة وأن أسأل أين الغرفة."
+        "ar": "أستطيع أن أسمّي غرف الشقة وأن أسأل عن مكان الغرفة."
       },
       "aufgaben": [
         {
@@ -2295,7 +2298,7 @@
       "ziel": {
         "de": "Ich kann Möbel und Dinge in der Wohnung benennen, sagen, wo sie sind, und den Artikel vor Sonnenbuchstaben richtig sprechen.",
         "tr": "Evdeki mobilyaları ve eşyaları adlandırabilir, nerede olduklarını söyleyebilir ve güneş harflerinden önce harf-i tarifi doğru okuyabilirim.",
-        "ar": "أستطيع أن أسمّي الأثاث والأشياء في البيت، وأن أقول أين هي، وأن أنطق «ال» صحيحًا مع الحروف الشمسية."
+        "ar": "أستطيع أن أسمّي الأثاث والأشياء في البيت، وأن أقول أين هي، وأن أنطق «ال» نطقًا صحيحًا مع الحروف الشمسية."
       },
       "aufgaben": [
         {
@@ -2416,7 +2419,7 @@
       "ziel": {
         "de": "Ich kann sagen, ob etwas groß, klein, neu, alt oder schön ist, und das Adjektiv an das Nomen anpassen.",
         "tr": "Bir şeyin büyük, küçük, yeni, eski ya da güzel olduğunu söyleyebilir ve sıfatı isme uydurabilirim.",
-        "ar": "أستطيع أن أصف الأشياء بالحجم والعمر والجمال، وأن أطابق الصفة مع الاسم."
+        "ar": "أستطيع أن أصف الأشياء بصفات مثل: كبير وصغير وجديد وقديم وجميل، وأن أطابق الصفة مع الاسم."
       },
       "aufgaben": [
         {
@@ -2534,7 +2537,7 @@
       "ziel": {
         "de": "Ich kann mit hāḏā l-bayt auf ein bestimmtes Ding zeigen und sagen, ob etwas offen, geschlossen oder da ist.",
         "tr": "hāḏā l-bayt ile belirli bir şeyi gösterebilir, bir şeyin açık, kapalı ya da mevcut olduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أشير إلى شيء معيّن بـ«هذا البيت»، وأن أقول هل الشيء مفتوح أو مغلوق أو موجود."
+        "ar": "أستطيع أن أشير إلى شيء معيّن مثل «هذا البيت»، وأن أصف الشيء بأنه مفتوح أو مغلق أو موجود."
       },
       "aufgaben": [
         {
@@ -2636,7 +2639,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e03.s0128",
           "nach": "ziel",
-          "ablenker": ["مَغْلُوقَةٌ", "مَفْتُوحٌ"]
+          "ablenker": ["مُغْلَقَةٌ", "مَفْتُوحٌ"]
         },
         {
           "schluessel": "ar.a1.e03.l04.a13",
@@ -3115,7 +3118,7 @@
       "ziel": {
         "de": "Prüfstein: Ich kann meine Wohnung, Möbel und Haustiere benennen und mit Adjektiven beschreiben.",
         "tr": "Mihenk taşı: Evimi, mobilyaları ve evcil hayvanları adlandırabilir ve sıfatlarla anlatabilirim.",
-        "ar": "اختبار الوحدة: أستطيع أن أسمّي شقتي وأثاثها والحيوانات في البيت، وأن أصفها بالصفات."
+        "ar": "اختبار الوحدة: أستطيع أن أسمّي شقتي وأثاثها والحيوانات في البيت، وأن أصفها بصفات بسيطة."
       },
       "aufgaben": [
         {
@@ -3239,7 +3242,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e03.s0030",
           "nach": "ziel",
-          "ablenker": ["عَلَى", "الْمَطْبَخِ"]
+          "ablenker": ["الْأَرْضِ", "الْمَطْبَخِ"]
         }
       ]
     }
