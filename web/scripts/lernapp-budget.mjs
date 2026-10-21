@@ -246,5 +246,22 @@ const zeilen = [
 ];
 console.log(zeilen.join('\n'));
 if (aus)
-  writeFileSync(aus, JSON.stringify({ basis, werte, budget: BUDGET, typen, uebungstypen, verfehlt, grundstock: [...grundstock] }, null, 2));
+  writeFileSync(
+    aus,
+    JSON.stringify(
+      {
+        basis,
+        werte,
+        budget: BUDGET,
+        typen,
+        uebungstypen,
+        verfehlt,
+        grundstock: [...grundstock],
+        // je Route die geladenen Dateien mit gz-Bytes (Fehlersuche: was liegt in „zusätzlich zur Hülle“?)
+        routen: Object.fromEntries(Object.entries(gemessen).map(([n, m]) => [n, Object.fromEntries(m)])),
+      },
+      null,
+      2,
+    ),
+  );
 process.exit(verfehlt.length ? 1 : 0);
