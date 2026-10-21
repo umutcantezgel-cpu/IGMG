@@ -1,0 +1,3415 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e03",
+    "reihenfolge": 4,
+    "thema": {
+      "de": "Bei uns zu Hause – Wohnung und Möbel",
+      "tr": "Bizim evde – Ev ve mobilyalar",
+      "ar": "في بيتنا – السكن والأثاث"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann meine Wohnung oder mein Zimmer mit einfachen Sätzen beschreiben.",
+        "tr": "Evimi veya odamı basit cümlelerle anlatabilirim.",
+        "ar": "أستطيع أن أصف شقتي أو غرفتي بجمل بسيطة."
+      },
+      {
+        "de": "Ich kann sagen, welche Möbel in einem Zimmer sind und was fehlt.",
+        "tr": "Bir odada hangi mobilyaların olduğunu ve neyin eksik olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما الأثاث الموجود في غرفة وما الذي ينقصها."
+      },
+      {
+        "de": "Ich kann sagen, wie ich ein Zimmer oder eine Wohnung finde.",
+        "tr": "Bir odayı veya bir evi nasıl bulduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أقول رأيي في غرفة أو شقة."
+      }
+    ],
+    "symbol": "house",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e03.ein",
+      "lemma": "ein",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "unbestimmter Artikel"
+      },
+      "formen": {
+        "endung_e": "eine",
+        "endung_en": "einen",
+        "endung_em": "einem",
+        "endung_er": "einer"
+      },
+      "frequenzRang": 4,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.kein",
+      "lemma": "kein",
+      "wortart": "artikel",
+      "merkmale": {
+        "art": "Negationsartikel"
+      },
+      "formen": {
+        "endung_e": "keine",
+        "endung_en": "keinen",
+        "endung_em": "keinem",
+        "endung_er": "keiner"
+      },
+      "frequenzRang": 43,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.nicht",
+      "lemma": "nicht",
+      "wortart": "partikel",
+      "frequenzRang": 9,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.sehr",
+      "lemma": "sehr",
+      "wortart": "adverb",
+      "frequenzRang": 70,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.zu",
+      "lemma": "zu",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ",
+        "a1_wendungen": "auch Gradpartikel: zu groß, zu teuer"
+      },
+      "formen": {
+        "mit_dem": "zum",
+        "mit_der": "zur"
+      },
+      "frequenzRang": 10,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.so",
+      "lemma": "so",
+      "wortart": "adverb",
+      "frequenzRang": 26,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.noch",
+      "lemma": "noch",
+      "wortart": "adverb",
+      "frequenzRang": 35,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.nur",
+      "lemma": "nur",
+      "wortart": "adverb",
+      "frequenzRang": 37,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.aber",
+      "lemma": "aber",
+      "wortart": "konjunktion",
+      "frequenzRang": 31,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.oder",
+      "lemma": "oder",
+      "wortart": "konjunktion",
+      "frequenzRang": 39,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.bei",
+      "lemma": "bei",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "formen": {
+        "mit_dem": "beim"
+      },
+      "frequenzRang": 28,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.hier",
+      "lemma": "hier",
+      "wortart": "adverb",
+      "frequenzRang": 60,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.da",
+      "lemma": "da",
+      "wortart": "adverb",
+      "frequenzRang": 47,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.dort",
+      "lemma": "dort",
+      "wortart": "adverb",
+      "frequenzRang": 118,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.oben",
+      "lemma": "oben",
+      "wortart": "adverb",
+      "frequenzRang": 382,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.jetzt",
+      "lemma": "jetzt",
+      "wortart": "adverb",
+      "frequenzRang": 64,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.ganz",
+      "lemma": "ganz",
+      "wortart": "adverb",
+      "frequenzRang": 65,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.finden",
+      "lemma": "finden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "finden",
+        "praes_ich": "finde",
+        "praes_du": "findest",
+        "praes_er_sie_es": "findet",
+        "praes_wir": "finden",
+        "praes_ihr": "findet",
+        "praes_sie_Sie": "finden",
+        "imp_du": "finde",
+        "imp_ihr": "findet"
+      },
+      "frequenzRang": 71,
+      "quelle": "wiktionary:de:finden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚finden‘ (https://de.wiktionary.org/wiki/finden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.stehen",
+      "lemma": "stehen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stehen",
+        "praes_ich": "stehe",
+        "praes_du": "stehst",
+        "praes_er_sie_es": "steht",
+        "praes_wir": "stehen",
+        "praes_ihr": "steht",
+        "praes_sie_Sie": "stehen"
+      },
+      "frequenzRang": 76,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.liegen",
+      "lemma": "liegen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "liegen",
+        "praes_ich": "liege",
+        "praes_du": "liegst",
+        "praes_er_sie_es": "liegt",
+        "praes_wir": "liegen",
+        "praes_ihr": "liegt",
+        "praes_sie_Sie": "liegen"
+      },
+      "frequenzRang": 111,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.stellen",
+      "lemma": "stellen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "stellen",
+        "praes_ich": "stelle",
+        "praes_du": "stellst",
+        "praes_er_sie_es": "stellt",
+        "praes_wir": "stellen",
+        "praes_ihr": "stellt",
+        "praes_sie_Sie": "stellen",
+        "imp_du": "stell",
+        "imp_ihr": "stellt"
+      },
+      "frequenzRang": 123,
+      "quelle": "wiktionary:de:stellen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚stellen‘ (https://de.wiktionary.org/wiki/stellen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.legen",
+      "lemma": "legen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "legen",
+        "praes_ich": "lege",
+        "praes_du": "legst",
+        "praes_er_sie_es": "legt",
+        "praes_wir": "legen",
+        "praes_ihr": "legt",
+        "praes_sie_Sie": "legen",
+        "imp_du": "leg",
+        "imp_ihr": "legt"
+      },
+      "frequenzRang": 314,
+      "quelle": "wiktionary:de:legen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚legen‘ (https://de.wiktionary.org/wiki/legen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.sitzen",
+      "lemma": "sitzen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "sitzen",
+        "praes_ich": "sitze",
+        "praes_du": "sitzt",
+        "praes_er_sie_es": "sitzt",
+        "praes_wir": "sitzen",
+        "praes_ihr": "sitzt",
+        "praes_sie_Sie": "sitzen",
+        "imp_du": "sitz",
+        "imp_ihr": "sitzt"
+      },
+      "frequenzRang": 277,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.brauchen",
+      "lemma": "brauchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "brauchen",
+        "praes_ich": "brauche",
+        "praes_du": "brauchst",
+        "praes_er_sie_es": "braucht",
+        "praes_wir": "brauchen",
+        "praes_ihr": "braucht",
+        "praes_sie_Sie": "brauchen"
+      },
+      "frequenzRang": 148,
+      "quelle": "wiktionary:de:brauchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚brauchen‘ (https://de.wiktionary.org/wiki/brauchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.suchen",
+      "lemma": "suchen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "suchen",
+        "praes_ich": "suche",
+        "praes_du": "suchst",
+        "praes_er_sie_es": "sucht",
+        "praes_wir": "suchen",
+        "praes_ihr": "sucht",
+        "praes_sie_Sie": "suchen",
+        "imp_du": "such",
+        "imp_ihr": "sucht"
+      },
+      "frequenzRang": 250,
+      "quelle": "wiktionary:de:suchen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚suchen‘ (https://de.wiktionary.org/wiki/suchen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.zeigen",
+      "lemma": "zeigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "zeigen",
+        "praes_ich": "zeige",
+        "praes_du": "zeigst",
+        "praes_er_sie_es": "zeigt",
+        "praes_wir": "zeigen",
+        "praes_ihr": "zeigt",
+        "praes_sie_Sie": "zeigen",
+        "imp_du": "zeig",
+        "imp_ihr": "zeigt"
+      },
+      "frequenzRang": 129,
+      "quelle": "wiktionary:de:zeigen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚zeigen‘ (https://de.wiktionary.org/wiki/zeigen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.fehlen",
+      "lemma": "fehlen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "fehlen",
+        "praes_ich": "fehle",
+        "praes_du": "fehlst",
+        "praes_er_sie_es": "fehlt",
+        "praes_wir": "fehlen",
+        "praes_ihr": "fehlt",
+        "praes_sie_Sie": "fehlen"
+      },
+      "frequenzRang": 400,
+      "quelle": "wiktionary:de:fehlen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚fehlen‘ (https://de.wiktionary.org/wiki/fehlen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.funktionieren",
+      "lemma": "funktionieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "funktionieren",
+        "praes_ich": "funktioniere",
+        "praes_du": "funktionierst",
+        "praes_er_sie_es": "funktioniert",
+        "praes_wir": "funktionieren",
+        "praes_ihr": "funktioniert",
+        "praes_sie_Sie": "funktionieren"
+      },
+      "frequenzRang": 554,
+      "quelle": "wiktionary:de:funktionieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚funktionieren‘ (https://de.wiktionary.org/wiki/funktionieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.haus",
+      "lemma": "Haus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Häuser",
+        "wendungen": "zu Hause, nach Hause"
+      },
+      "formen": {
+        "pl": "Häuser",
+        "dat_pl": "Häusern",
+        "dat_sg_e": "Hause"
+      },
+      "frequenzRang": 214,
+      "quelle": "wiktionary:de:Haus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haus‘ (https://de.wiktionary.org/wiki/Haus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.wohnung",
+      "lemma": "Wohnung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Wohnungen"
+      },
+      "formen": {
+        "pl": "Wohnungen"
+      },
+      "frequenzRang": 454,
+      "quelle": "wiktionary:de:Wohnung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wohnung‘ (https://de.wiktionary.org/wiki/Wohnung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.zimmer",
+      "lemma": "Zimmer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Zimmer"
+      },
+      "formen": {
+        "dat_pl": "Zimmern"
+      },
+      "frequenzRang": 771,
+      "quelle": "wiktionary:de:Zimmer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zimmer‘ (https://de.wiktionary.org/wiki/Zimmer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.raum",
+      "lemma": "Raum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Räume"
+      },
+      "formen": {
+        "pl": "Räume",
+        "dat_pl": "Räumen"
+      },
+      "frequenzRang": 436,
+      "quelle": "wiktionary:de:Raum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Raum‘ (https://de.wiktionary.org/wiki/Raum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.platz",
+      "lemma": "Platz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Plätze"
+      },
+      "formen": {
+        "pl": "Plätze",
+        "dat_pl": "Plätzen"
+      },
+      "frequenzRang": 217,
+      "quelle": "wiktionary:de:Platz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Platz‘ (https://de.wiktionary.org/wiki/Platz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.kueche",
+      "lemma": "Küche",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Küchen"
+      },
+      "formen": {
+        "pl": "Küchen"
+      },
+      "frequenzRang": 1390,
+      "quelle": "wiktionary:de:Küche",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Küche‘ (https://de.wiktionary.org/wiki/Küche), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.bad",
+      "lemma": "Bad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bäder"
+      },
+      "formen": {
+        "pl": "Bäder",
+        "dat_pl": "Bädern"
+      },
+      "frequenzRang": 597,
+      "quelle": "wiktionary:de:Bad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bad‘ (https://de.wiktionary.org/wiki/Bad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.balkon",
+      "lemma": "Balkon",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Balkons"
+      },
+      "formen": {
+        "pl": "Balkons"
+      },
+      "frequenzRang": 3490,
+      "quelle": "wiktionary:de:Balkon",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Balkon‘ (https://de.wiktionary.org/wiki/Balkon), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.tisch",
+      "lemma": "Tisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Tische"
+      },
+      "formen": {
+        "pl": "Tische",
+        "dat_pl": "Tischen"
+      },
+      "frequenzRang": 950,
+      "quelle": "wiktionary:de:Tisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tisch‘ (https://de.wiktionary.org/wiki/Tisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.stuhl",
+      "lemma": "Stuhl",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Stühle"
+      },
+      "formen": {
+        "pl": "Stühle",
+        "dat_pl": "Stühlen"
+      },
+      "frequenzRang": 2276,
+      "quelle": "wiktionary:de:Stuhl",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stuhl‘ (https://de.wiktionary.org/wiki/Stuhl), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.bett",
+      "lemma": "Bett",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Betten"
+      },
+      "formen": {
+        "pl": "Betten"
+      },
+      "frequenzRang": 832,
+      "quelle": "wiktionary:de:Bett",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bett‘ (https://de.wiktionary.org/wiki/Bett), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.schrank",
+      "lemma": "Schrank",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schränke"
+      },
+      "formen": {
+        "pl": "Schränke",
+        "dat_pl": "Schränken"
+      },
+      "frequenzRang": 3476,
+      "quelle": "wiktionary:de:Schrank",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schrank‘ (https://de.wiktionary.org/wiki/Schrank), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.lampe",
+      "lemma": "Lampe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Lampen"
+      },
+      "formen": {
+        "pl": "Lampen"
+      },
+      "frequenzRang": 5320,
+      "quelle": "wiktionary:de:Lampe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Lampe‘ (https://de.wiktionary.org/wiki/Lampe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.bild",
+      "lemma": "Bild",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Bilder"
+      },
+      "formen": {
+        "pl": "Bilder",
+        "dat_pl": "Bildern"
+      },
+      "frequenzRang": 176,
+      "quelle": "wiktionary:de:Bild",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bild‘ (https://de.wiktionary.org/wiki/Bild), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.ding",
+      "lemma": "Ding",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Dinge"
+      },
+      "formen": {
+        "pl": "Dinge",
+        "dat_pl": "Dingen"
+      },
+      "frequenzRang": 290,
+      "quelle": "wiktionary:de:Ding",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ding‘ (https://de.wiktionary.org/wiki/Ding), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.gross",
+      "lemma": "groß",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "große",
+        "endung_en": "großen",
+        "endung_er": "großer",
+        "endung_es": "großes",
+        "endung_em": "großem"
+      },
+      "frequenzRang": 99,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.klein",
+      "lemma": "klein",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kleine",
+        "endung_en": "kleinen",
+        "endung_er": "kleiner",
+        "endung_es": "kleines",
+        "endung_em": "kleinem"
+      },
+      "frequenzRang": 275,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.neu",
+      "lemma": "neu",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "neue",
+        "endung_en": "neuen",
+        "endung_er": "neuer",
+        "endung_es": "neues",
+        "endung_em": "neuem"
+      },
+      "frequenzRang": 78,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.schoen",
+      "lemma": "schön",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "schöne",
+        "endung_en": "schönen",
+        "endung_er": "schöner",
+        "endung_es": "schönes",
+        "endung_em": "schönem"
+      },
+      "frequenzRang": 137,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.hell",
+      "lemma": "hell",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "helle",
+        "endung_en": "hellen",
+        "endung_er": "heller",
+        "endung_es": "helles",
+        "endung_em": "hellem"
+      },
+      "frequenzRang": 1537,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.dunkel",
+      "lemma": "dunkel",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "dunkle",
+        "endung_en": "dunklen",
+        "endung_er": "dunkler",
+        "endung_es": "dunkles",
+        "endung_em": "dunklem"
+      },
+      "frequenzRang": 1948,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.eigen",
+      "lemma": "eigen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "eigene",
+        "endung_en": "eigenen",
+        "endung_er": "eigener",
+        "endung_es": "eigenes",
+        "endung_em": "eigenem"
+      },
+      "frequenzRang": 140,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.rund",
+      "lemma": "rund",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "runde",
+        "endung_en": "runden",
+        "endung_er": "runder",
+        "endung_es": "rundes",
+        "endung_em": "rundem"
+      },
+      "frequenzRang": 262,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.modern",
+      "lemma": "modern",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "moderne",
+        "endung_en": "modernen",
+        "endung_er": "moderner",
+        "endung_es": "modernes",
+        "endung_em": "modernem"
+      },
+      "frequenzRang": 585,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.komplett",
+      "lemma": "komplett",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "komplette",
+        "endung_en": "kompletten",
+        "endung_er": "kompletter",
+        "endung_es": "komplettes",
+        "endung_em": "komplettem"
+      },
+      "frequenzRang": 527,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.rein",
+      "lemma": "rein",
+      "wortart": "adverb",
+      "frequenzRang": 328,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.laut",
+      "lemma": "laut",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "laute",
+        "endung_en": "lauten",
+        "endung_er": "lauter",
+        "endung_es": "lautes",
+        "endung_em": "lautem"
+      },
+      "frequenzRang": 386,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e03.s0001",
+      "text": "Das ist mein Haus.",
+      "quelle": "tatoeba:955219",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #955219 von Valodnieks (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0002",
+      "text": "Das ist unsere Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0003",
+      "text": "Er wohnt in einer Wohnung.",
+      "quelle": "tatoeba:407754",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #407754 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0004",
+      "text": "Meine Familie wohnt in einem Haus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0005",
+      "text": "Hier ist die Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0006",
+      "text": "Da ist das Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0007",
+      "text": "Dort ist mein Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0008",
+      "text": "Die Wohnung hat drei Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0009",
+      "text": "Das Haus hat vier Räume.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0010",
+      "text": "Die Wohnung hat eine Küche und ein Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0011",
+      "text": "Wo ist die Küche?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0012",
+      "text": "Entschuldigung, wo ist das Bad?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0013",
+      "text": "Das Bad ist dort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0014",
+      "text": "Mein Zimmer ist oben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0015",
+      "text": "Unsere Wohnung ist ganz oben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0016",
+      "text": "Wo ist dein Zimmer?",
+      "quelle": "tatoeba:966160",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #966160 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0017",
+      "text": "Zeig mir bitte dein Zimmer!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0018",
+      "text": "Ich zeige dir die Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0019",
+      "text": "ein Zimmer, eine Küche, ein Balkon",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0020",
+      "text": "Ich bin zu Hause.",
+      "quelle": "tatoeba:375496",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #375496 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0021",
+      "text": "Ist deine Mutter zu Hause?",
+      "quelle": "tatoeba:917222",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #917222 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0022",
+      "text": "Ist das die Küche?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0023",
+      "text": "Nein, das ist das Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0024",
+      "text": "Wie viele Zimmer hat die Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0025",
+      "text": "Sie hat vier Zimmer und einen Balkon.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0026",
+      "text": "Sie ist in der Küche.",
+      "quelle": "tatoeba:2082922",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2082922 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0027",
+      "text": "Das ist ein Tisch.",
+      "quelle": "tatoeba:356176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #356176 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0028",
+      "text": "Das ist ein Bett.",
+      "quelle": "tatoeba:5318870",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5318870 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0029",
+      "text": "Das ist eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0030",
+      "text": "Ist das ein Schrank?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0031",
+      "text": "Der Tisch steht in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0032",
+      "text": "Der Stuhl steht in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0033",
+      "text": "Das Bett steht im Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0034",
+      "text": "Der Schrank steht im Zimmer von Can.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0035",
+      "text": "Die Lampe steht dort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0036",
+      "text": "Das Foto liegt hier.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0037",
+      "text": "Wo liegt das Foto?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0038",
+      "text": "Das Bild liegt im Schrank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0039",
+      "text": "Wir sitzen in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0040",
+      "text": "Oma und Opa sitzen im Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0041",
+      "text": "Wo sitzt du?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0042",
+      "text": "Stell den Stuhl in die Küche!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0043",
+      "text": "Leg das Foto in den Schrank!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0044",
+      "text": "Ich stelle die Lampe ins Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0045",
+      "text": "Wir stellen den Tisch in die Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0046",
+      "text": "ein Tisch, zwei Tische",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0047",
+      "text": "Wir haben vier Stühle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0048",
+      "text": "Im Zimmer stehen zwei Betten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0049",
+      "text": "Die Bilder sind von meiner Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0050",
+      "text": "die Tische, die Stühle, die Lampen",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0051",
+      "text": "Was ist das Ding da?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0052",
+      "text": "Was ist in dem Schrank da?",
+      "quelle": "tatoeba:4105376",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4105376 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0053",
+      "text": "Ich bin im Bett.",
+      "quelle": "tatoeba:3755625",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3755625 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0054",
+      "text": "Wo steht das Bett?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0055",
+      "text": "Das Bett steht dort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0056",
+      "text": "In der Küche stehen vier Stühle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0057",
+      "text": "Im Schrank liegen viele Dinge.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0058",
+      "text": "Das Haus ist groß.",
+      "quelle": "tatoeba:2325818",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2325818 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0059",
+      "text": "Mein Zimmer ist sehr klein.",
+      "quelle": "tatoeba:472134",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #472134 von Ullalia (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0060",
+      "text": "Ihr Haus ist sehr modern.",
+      "quelle": "tatoeba:353309",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #353309 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0061",
+      "text": "Das Haus ist klein, aber schön.",
+      "quelle": "tatoeba:3074729",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3074729 von faehrmann (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0062",
+      "text": "Die Küche ist hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0063",
+      "text": "Das Bad ist dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0064",
+      "text": "Mein Zimmer ist groß und hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0065",
+      "text": "Der Tisch ist rund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0066",
+      "text": "Die Lampe ist modern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0067",
+      "text": "Die Wohnung ist ganz neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0068",
+      "text": "Der Balkon ist sehr laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0069",
+      "text": "Hier ist es zu laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0070",
+      "text": "Der Schrank ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0071",
+      "text": "Der Schrank ist sehr groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0072",
+      "text": "Der Schrank ist so groß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0073",
+      "text": "Das Bett ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0074",
+      "text": "Wie ist dein Zimmer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0075",
+      "text": "Wie groß ist die Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0076",
+      "text": "Die Küche ist so groß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0077",
+      "text": "Das Bild ist so schön!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0078",
+      "text": "Wie schön!",
+      "quelle": "tatoeba:3943128",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3943128 von Kuraimegami (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0079",
+      "text": "Ich habe ein eigenes Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0080",
+      "text": "Hast du ein eigenes Zimmer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0081",
+      "text": "Die Küche ist komplett neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0082",
+      "text": "Wir haben eine kleine Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0083",
+      "text": "Ist das Zimmer hell oder dunkel?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0084",
+      "text": "Es ist sehr hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0085",
+      "text": "Das Zimmer hat zwei Fenster.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0086",
+      "text": "Die Küche ist alt und dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0087",
+      "text": "Die Tische sind rund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0088",
+      "text": "Die Betten sind neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0089",
+      "text": "Der Tisch ist groß und rund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0090",
+      "text": "Mein Bad ist ganz klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0091",
+      "text": "Ich habe noch kein Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0092",
+      "text": "Hier ist keine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0093",
+      "text": "Die Wohnung hat keinen Balkon.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0094",
+      "text": "Wir haben keine Stühle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0095",
+      "text": "Hier ist kein Platz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0096",
+      "text": "Im Zimmer ist viel Platz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0097",
+      "text": "Im Schrank ist kein Platz mehr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0098",
+      "text": "Die Küche ist nicht groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0099",
+      "text": "Was fehlt noch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0100",
+      "text": "Ein Stuhl fehlt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0101",
+      "text": "Es fehlt noch ein Schrank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0102",
+      "text": "Ich brauche einen Tisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0103",
+      "text": "Was brauchst du?",
+      "quelle": "tatoeba:3979131",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3979131 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0104",
+      "text": "Jan braucht eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0105",
+      "text": "Ich suche einen Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0106",
+      "text": "Was suchst du?",
+      "quelle": "tatoeba:397808",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #397808 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0107",
+      "text": "Ich finde die Lampe nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0108",
+      "text": "Die Lampe funktioniert nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0109",
+      "text": "Das funktioniert nicht!",
+      "quelle": "tatoeba:527250",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #527250 von lilygilder (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0110",
+      "text": "Funktioniert die Lampe?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0111",
+      "text": "Im Zimmer ist nur ein Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0112",
+      "text": "Noch nicht.",
+      "quelle": "tatoeba:810090",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #810090 von TomSFox (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0113",
+      "text": "Was brauchen wir?",
+      "quelle": "tatoeba:5611783",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5611783 von list (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0114",
+      "text": "Das ist kein Tisch.",
+      "quelle": "tatoeba:3717674",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3717674 von Mixtli (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0115",
+      "text": "Wir brauchen eine neue Lampe.",
+      "quelle": "tatoeba:13817833",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13817833 von Waldelfe (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0116",
+      "text": "Ein Tisch ist da, aber kein Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0117",
+      "text": "Eine Lampe fehlt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0118",
+      "text": "Jan findet den Stuhl nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0119",
+      "text": "Wie findest du mein Zimmer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0120",
+      "text": "Ich finde es sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0121",
+      "text": "Ich finde die Küche schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0122",
+      "text": "Die Lampe finde ich nicht so schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0123",
+      "text": "Ich finde das Zimmer zu dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0124",
+      "text": "Komm rein!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0125",
+      "text": "Hallo! Kommt rein!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0126",
+      "text": "Guten Tag! Kommen Sie bitte rein!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0127",
+      "text": "Bei uns zu Hause ist es laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0128",
+      "text": "Bei Oma ist es schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0129",
+      "text": "Bei mir ist das Bad oben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0130",
+      "text": "Die Wohnung ist klein, aber hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0131",
+      "text": "Ist die Küche groß oder klein?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0132",
+      "text": "Sie ist ganz klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0133",
+      "text": "Jetzt wohnen wir in einem Haus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0134",
+      "text": "Jetzt habe ich ein eigenes Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0135",
+      "text": "Ja oder nein?",
+      "quelle": "tatoeba:569864",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #569864 von jakov (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0136",
+      "text": "Dein Haus ist aber schön!",
+      "quelle": "tatoeba:4137746",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4137746 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e03.s0137",
+      "text": "Wie findet ihr die Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0138",
+      "text": "Wir finden sie sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0139",
+      "text": "Bei Jan ist alles neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0140",
+      "text": "Hast du einen Balkon?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0141",
+      "text": "Ja, aber er ist sehr klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0142",
+      "text": "Brauchst du einen Stuhl oder einen Tisch?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0143",
+      "text": "Jetzt sind alle in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0144",
+      "text": "Mein Zimmer ist klein, aber hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0145",
+      "text": "Im Zimmer stehen ein Bett und ein Tisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0146",
+      "text": "Hier ist ein Stuhl, aber kein Tisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0147",
+      "text": "Ich habe ein Bett und einen Schrank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0148",
+      "text": "Eine neue Wohnung",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0149",
+      "text": "Die Familie von Laylā hat eine neue Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0150",
+      "text": "Die Wohnung ist ganz oben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0151",
+      "text": "Elif kommt zu Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0152",
+      "text": "Hallo, Elif! Komm rein!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0153",
+      "text": "Guten Tag! Die Wohnung ist aber schön!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0154",
+      "text": "Ja, sie ist groß und hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0155",
+      "text": "Hier ist die Küche, da ist das Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0156",
+      "text": "Und wo ist dein Zimmer, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0157",
+      "text": "Dort. Komm, ich zeige es dir!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0158",
+      "text": "Laylā zeigt Elif ihr Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0159",
+      "text": "Dein Zimmer ist so groß!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0160",
+      "text": "Ja, aber es ist noch nicht komplett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0161",
+      "text": "Im Zimmer steht nur ein Tisch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0162",
+      "text": "Da liegen viele Kartons.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0163",
+      "text": "Und wo ist dein Bett?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0164",
+      "text": "Das Bett kommt morgen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0165",
+      "text": "Ein Schrank und eine Lampe fehlen noch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0166",
+      "text": "Das Bild hier ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0167",
+      "text": "Ja, es ist ein Bild von meiner Oma.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0168",
+      "text": "Ich finde dein Zimmer schön, Laylā.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0169",
+      "text": "Danke! Ich finde es auch schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0170",
+      "text": "Elif und Laylā sitzen jetzt in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0171",
+      "text": "Wie ist die Wohnung?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0172",
+      "text": "Sie ist groß und hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0173",
+      "text": "Sie ist klein und dunkel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0174",
+      "text": "Sie ist alt und laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0175",
+      "text": "Was steht im Zimmer?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0176",
+      "text": "Hat Laylā ein Bett?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0177",
+      "text": "Nein, noch nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0178",
+      "text": "Ja, es ist ganz neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0179",
+      "text": "Ja, es steht in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0180",
+      "text": "Ein Schrank und eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0181",
+      "text": "Ein Tisch und ein Stuhl.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0182",
+      "text": "Eine Küche und ein Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0183",
+      "text": "Von wem ist das Bild?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0184",
+      "text": "Der Stuhl und die Lampe",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0185",
+      "text": "Jan hat jetzt ein eigenes Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0186",
+      "text": "Jan und Opa Thomas suchen im Keller.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0187",
+      "text": "Opa, ich brauche einen Stuhl und eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0188",
+      "text": "Hier im Keller sind viele Dinge.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0189",
+      "text": "Wo sind die Stühle?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0190",
+      "text": "Dort stehen zwei Stühle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0191",
+      "text": "Der Stuhl hier ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0192",
+      "text": "Und der Stuhl da?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0193",
+      "text": "Der Stuhl ist gut, Opa!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0194",
+      "text": "Und eine Lampe? Ich finde keine.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0195",
+      "text": "Hier liegt eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0196",
+      "text": "Funktioniert sie?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0197",
+      "text": "Nein, sie funktioniert nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0198",
+      "text": "Ach nein! Ich brauche eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0199",
+      "text": "Da ist noch eine Lampe. Sie ist ganz neu.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0200",
+      "text": "Sie funktioniert! Und sie ist so hell!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0201",
+      "text": "Komm, wir stellen alles in dein Zimmer.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0202",
+      "text": "Danke, Opa! Mein Zimmer ist jetzt schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0203",
+      "text": "Wo suchen Jan und Opa Thomas?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0204",
+      "text": "Sie suchen im Keller.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0205",
+      "text": "Sie suchen im Bad.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0206",
+      "text": "Sie suchen in der Küche.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0207",
+      "text": "Was braucht Jan?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0208",
+      "text": "Einen Stuhl und eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0209",
+      "text": "Einen Tisch und ein Bett.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0210",
+      "text": "Einen Schrank und ein Bild.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0211",
+      "text": "Wie ist der Stuhl hier?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0212",
+      "text": "Er ist zu klein.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0213",
+      "text": "Er ist zu groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0214",
+      "text": "Er ist rund und modern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0215",
+      "text": "Ja, sie ist sehr hell.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e03.s0216",
+      "text": "Ja, sie ist rund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e03.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Räume in einer Wohnung benennen und „ein“ oder „eine“ verwenden.",
+        "tr": "Bir evdeki odaları adlandırabilir, „ein“ veya „eine“ kelimesini kullanabilirim.",
+        "ar": "أستطيع أن أسمّي غرف الشقة وأن أستعمل „ein“ أو „eine“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.kueche",
+          "ablenker": ["de.a1.e03.bad", "de.a1.e03.balkon"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.haus",
+          "ablenker": ["de.a1.e03.zimmer", "de.a1.e03.kueche"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a04",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.haus", "de.a1.e03.zimmer", "de.a1.e03.kueche", "de.a1.e03.bad", "de.a1.e03.balkon"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.wohnung",
+          "ablenker": ["de.a1.e03.balkon", "de.a1.e03.bad"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0019",
+          "wort": 2,
+          "ablenker": ["ein", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.hier",
+          "ablenker": ["de.a1.e03.dort", "de.a1.e03.oben"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0005",
+          "ablenker": ["de.a1.e03.s0006", "de.a1.e03.s0007"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.raum",
+          "ablenker": ["de.a1.e03.kueche", "de.a1.e03.balkon"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0008",
+          "nach": "ziel",
+          "ablenker": ["hast", "vier"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0011",
+          "wort": 2,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0012"
+            }
+          ],
+          "antwort": "de.a1.e03.s0013",
+          "ablenker": ["de.a1.e03.s0008", "de.a1.e03.s0020"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0024",
+          "ablenker": ["de.a1.e03.s0022", "de.a1.e03.s0016"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.haus",
+          "ablenker": ["de.a1.e01.aus"]
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0014"
+        },
+        {
+          "schluessel": "de.a1.e03.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0018",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Möbel benennen, den Plural mitlernen und sagen, wo etwas steht oder liegt.",
+        "tr": "Mobilyaları adlandırabilir, çoğullarını da öğrenebilir ve bir şeyin nerede durduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي قطع الأثاث وأن أتعلّم جمعها وأن أقول أين يوجد شيء ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.tisch",
+          "ablenker": ["de.a1.e03.stuhl", "de.a1.e03.bett"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.schrank",
+          "ablenker": ["de.a1.e03.lampe", "de.a1.e03.tisch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.tisch", "de.a1.e03.stuhl", "de.a1.e03.bett", "de.a1.e03.schrank", "de.a1.e03.lampe"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.bild",
+          "ablenker": ["de.a1.e03.lampe", "de.a1.e03.stuhl"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.stehen",
+          "ablenker": ["de.a1.e03.sitzen", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0048",
+          "wort": 4,
+          "ablenker": ["Bett", "Betts"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0050",
+          "wort": 2,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0031",
+          "ablenker": ["de.a1.e03.s0032", "de.a1.e03.s0039"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0042",
+          "nach": "ziel",
+          "ablenker": ["Tisch", "dem"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.liegen",
+          "ablenker": ["de.a1.e03.legen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0037"
+            }
+          ],
+          "antwort": "de.a1.e03.s0036",
+          "ablenker": ["de.a1.e03.s0028", "de.a1.e03.s0039"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0047",
+          "alternativen": ["Wir haben 4 Stühle."]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0040",
+          "ablenker": ["de.a1.e03.s0049", "de.a1.e03.s0043"]
+        },
+        {
+          "schluessel": "de.a1.e03.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0033",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann ein Zimmer mit Adjektiven beschreiben: groß, klein, hell oder dunkel.",
+        "tr": "Bir odayı sıfatlarla anlatabilirim: büyük, küçük, aydınlık veya karanlık.",
+        "ar": "أستطيع أن أصف غرفة بالصفات: واسعة أو ضيقة، مضيئة أو مظلمة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.gross",
+          "ablenker": ["de.a1.e03.klein", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.gross", "de.a1.e03.klein", "de.a1.e03.hell", "de.a1.e03.dunkel", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.hell",
+          "ablenker": ["de.a1.e03.dunkel", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.rund",
+          "ablenker": ["de.a1.e03.modern", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0062",
+          "wort": 3,
+          "ablenker": ["helle", "hellen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0064",
+          "nach": "ziel",
+          "alternativen": ["Mein Zimmer ist hell und groß."],
+          "ablenker": ["große", "sind"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0070",
+          "ablenker": ["de.a1.e03.s0071", "de.a1.e03.s0072"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.eigen",
+          "ablenker": ["de.a1.e03.neu", "de.a1.e03.schoen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0074"
+            }
+          ],
+          "antwort": "de.a1.e03.s0059",
+          "ablenker": ["de.a1.e03.s0016", "de.a1.e03.s0004"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0073",
+          "wort": 0,
+          "ablenker": ["Der", "Die"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.klein",
+          "ablenker": ["de.a1.e03.kein"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0081",
+          "ablenker": ["de.a1.e03.s0086", "de.a1.e03.s0068"]
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0065"
+        },
+        {
+          "schluessel": "de.a1.e03.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0061",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was fehlt und was ich brauche, und „kein“ verwenden.",
+        "tr": "Neyin eksik olduğunu ve neye ihtiyacım olduğunu söyleyebilir, „kein“ kelimesini kullanabilirim.",
+        "ar": "أستطيع أن أقول ما الذي ينقص وما الذي أحتاج إليه، وأن أستعمل „kein“."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.brauchen",
+          "ablenker": ["de.a1.e03.suchen", "de.a1.e03.finden"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.suchen",
+          "ablenker": ["de.a1.e03.brauchen", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.brauchen", "de.a1.e03.suchen", "de.a1.e03.fehlen", "de.a1.e03.funktionieren", "de.a1.e03.finden"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0092",
+          "wort": 2,
+          "ablenker": ["nicht", "kein"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0091",
+          "wort": 3,
+          "ablenker": ["keine", "nicht"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0099"
+            }
+          ],
+          "antwort": "de.a1.e03.s0101",
+          "ablenker": ["de.a1.e03.s0062", "de.a1.e03.s0036"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0118",
+          "nach": "ziel",
+          "ablenker": ["dem", "Tisch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.platz",
+          "ablenker": ["de.a1.e03.ding", "de.a1.e03.bild"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0108",
+          "ablenker": ["de.a1.e03.s0110", "de.a1.e03.s0107"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.noch",
+          "ablenker": ["de.a1.e03.nur", "de.a1.e03.sehr"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0111",
+          "wort": 4,
+          "ablenker": ["eine", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0142"
+            }
+          ],
+          "antwort": "de.a1.e03.s0102",
+          "ablenker": ["de.a1.e03.s0120", "de.a1.e03.s0013"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0097",
+          "ablenker": ["de.a1.e03.s0096", "de.a1.e03.s0095"]
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0095"
+        },
+        {
+          "schluessel": "de.a1.e03.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0105",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Gäste hereinbitten und sagen, wie ich eine Wohnung finde.",
+        "tr": "Misafirleri içeri buyur edebilir ve bir evi nasıl bulduğumu söyleyebilirim.",
+        "ar": "أستطيع أن أدعو الضيوف إلى الدخول وأن أقول رأيي في شقة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.aber",
+          "ablenker": ["de.a1.e03.oder", "de.a1.e01.und"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.jetzt",
+          "ablenker": ["de.a1.e03.hier", "de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.aber", "de.a1.e03.oder", "de.a1.e03.jetzt", "de.a1.e03.hier", "de.a1.e03.nur"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0119"
+            }
+          ],
+          "antwort": "de.a1.e03.s0120",
+          "ablenker": ["de.a1.e03.s0011", "de.a1.e03.s0103"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0121",
+          "wort": 1,
+          "ablenker": ["findest", "findet"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0130",
+          "nach": "ziel",
+          "ablenker": ["oder", "dunkel"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0124",
+          "ablenker": ["de.a1.e03.s0125", "de.a1.e03.s0126"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0131"
+            }
+          ],
+          "antwort": "de.a1.e03.s0132",
+          "ablenker": ["de.a1.e03.s0135", "de.a1.e03.s0020"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0128",
+          "wort": 0,
+          "ablenker": ["Zu", "Von"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0134",
+          "ablenker": ["de.a1.e03.s0129", "de.a1.e03.s0133"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.finden",
+          "ablenker": ["de.a1.e03.suchen", "de.a1.e03.stehen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a12",
+          "typ": "sprechen",
+          "satz": "de.a1.e03.s0144"
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0127",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a14",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.hier",
+          "ablenker": ["de.a1.e01.ihr"]
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0133"
+        },
+        {
+          "schluessel": "de.a1.e03.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e03.s0145"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über eine neue Wohnung und ein Gespräch im Keller verstehen.",
+        "tr": "Yeni bir ev hakkında bir hikâyeyi ve bodrumda geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن شقة جديدة وحوارًا في القبو."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e03.s0148",
+          "zeilen": [
+            {
+              "satz": "de.a1.e03.s0149"
+            },
+            {
+              "satz": "de.a1.e03.s0150"
+            },
+            {
+              "satz": "de.a1.e03.s0151"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e03.s0152"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0153"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0154"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0155"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0157"
+            },
+            {
+              "satz": "de.a1.e03.s0158"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0159"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0160"
+            },
+            {
+              "satz": "de.a1.e03.s0161"
+            },
+            {
+              "satz": "de.a1.e03.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0163"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0091"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0099"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0165"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0166"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0167"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0169"
+            },
+            {
+              "satz": "de.a1.e03.s0170"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "de.a1.e03.s0171",
+              "antwort": "de.a1.e03.s0172",
+              "ablenker": ["de.a1.e03.s0173", "de.a1.e03.s0174"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e03.s0175",
+              "antwort": "de.a1.e03.tisch",
+              "ablenker": ["de.a1.e03.bett", "de.a1.e03.schrank"]
+            },
+            {
+              "nach": 16,
+              "frage": "de.a1.e03.s0176",
+              "antwort": "de.a1.e03.s0177",
+              "ablenker": ["de.a1.e03.s0178", "de.a1.e03.s0179"]
+            },
+            {
+              "nach": 18,
+              "frage": "de.a1.e03.s0099",
+              "antwort": "de.a1.e03.s0180",
+              "ablenker": ["de.a1.e03.s0181", "de.a1.e03.s0182"]
+            },
+            {
+              "nach": 20,
+              "frage": "de.a1.e03.s0183",
+              "antwort": "de.a1.e02.oma",
+              "ablenker": ["de.a1.e02.mutter", "de.a1.e02.vater"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0156"
+            }
+          ],
+          "antwort": "de.a1.e03.s0157",
+          "ablenker": ["de.a1.e03.s0164", "de.a1.e03.s0167"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0161",
+          "wort": 2,
+          "ablenker": ["stehen", "stellt"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0165",
+          "ablenker": ["de.a1.e03.s0181", "de.a1.e03.s0182"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e03.s0184",
+          "zeilen": [
+            {
+              "satz": "de.a1.e03.s0185"
+            },
+            {
+              "satz": "de.a1.e03.s0186"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0187"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0188"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0189"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0190"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0191"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0192"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0193"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0194"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0195"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0196"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0198"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0199"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0200"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e03.s0201"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0202"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a1.e03.s0203",
+              "antwort": "de.a1.e03.s0204",
+              "ablenker": ["de.a1.e03.s0205", "de.a1.e03.s0206"]
+            },
+            {
+              "nach": 2,
+              "frage": "de.a1.e03.s0207",
+              "antwort": "de.a1.e03.s0208",
+              "ablenker": ["de.a1.e03.s0209", "de.a1.e03.s0210"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a1.e03.s0211",
+              "antwort": "de.a1.e03.s0212",
+              "ablenker": ["de.a1.e03.s0213", "de.a1.e03.s0214"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e03.s0110",
+              "antwort": "de.a1.e03.s0197",
+              "ablenker": ["de.a1.e03.s0215", "de.a1.e03.s0216"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0194"
+            }
+          ],
+          "antwort": "de.a1.e03.s0195",
+          "ablenker": ["de.a1.e03.s0189", "de.a1.e03.s0191"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0187",
+          "nach": "ziel",
+          "alternativen": ["Ich brauche einen Stuhl und eine Lampe, Opa."],
+          "ablenker": ["ein", "Tisch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0201",
+          "wort": 5,
+          "ablenker": ["deine", "deinen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a09",
+          "typ": "sprechen",
+          "satz": "de.a1.e03.s0154"
+        },
+        {
+          "schluessel": "de.a1.e03.l06.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0185",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit: Räume, Möbel und Adjektive.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum: odalar, mobilyalar ve sıfatlar.",
+        "ar": "أراجع كلمات الوحدة وجملها: الغرف والأثاث والصفات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l07.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.kueche", "de.a1.e03.bad", "de.a1.e03.balkon", "de.a1.e03.tisch", "de.a1.e03.bett", "de.a1.e03.lampe"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.gross", "de.a1.e03.klein", "de.a1.e02.alt", "de.a1.e03.hell", "de.a1.e03.dunkel", "de.a1.e03.schoen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.schrank",
+          "ablenker": ["de.a1.e03.stuhl", "de.a1.e03.tisch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.fehlen",
+          "ablenker": ["de.a1.e03.brauchen", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0094",
+          "wort": 2,
+          "ablenker": ["kein", "nicht"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0089",
+          "nach": "ziel",
+          "alternativen": ["Der Tisch ist rund und groß."],
+          "ablenker": ["runde", "Stuhl"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0048",
+          "ablenker": ["de.a1.e03.s0033", "de.a1.e03.s0056"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.so",
+          "ablenker": ["de.a1.e03.zu"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0140"
+            }
+          ],
+          "antwort": "de.a1.e03.s0141",
+          "ablenker": ["de.a1.e03.s0042", "de.a1.e03.s0011"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0056",
+          "alternativen": ["In der Küche stehen 4 Stühle."]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.ganz",
+          "ablenker": ["de.a1.e03.nur", "de.a1.e03.noch"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.liegen",
+          "ablenker": ["de.a1.e03.sitzen", "de.a1.e03.zeigen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0054"
+            }
+          ],
+          "antwort": "de.a1.e03.s0055",
+          "ablenker": ["de.a1.e03.s0073", "de.a1.e03.s0088"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0108",
+          "ablenker": ["de.a1.e03.s0066", "de.a1.e03.s0035"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0076",
+          "wort": 0,
+          "ablenker": ["Der", "Das"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a16",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.komplett",
+          "ablenker": ["de.a1.e03.rund", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a17",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0098",
+          "wort": 3,
+          "ablenker": ["kein", "keine"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a18",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.bad",
+          "ablenker": ["de.a1.e03.bett"]
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0009",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e03.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a1.e03.s0146"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e03.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, was ich kann: meine Wohnung beschreiben und sagen, was fehlt.",
+        "tr": "Neler yapabildiğimi gösteriyorum: evimi anlatmak ve neyin eksik olduğunu söylemek.",
+        "ar": "أُظهر ما أستطيع: أن أصف شقتي وأن أقول ما الذي ينقص."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e03.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.wohnung",
+          "ablenker": ["de.a1.e03.kueche", "de.a1.e03.balkon"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e03.stuhl",
+          "ablenker": ["de.a1.e03.schrank", "de.a1.e03.bild"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e03.s0062",
+          "ablenker": ["de.a1.e03.s0063", "de.a1.e03.s0086"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0029",
+          "wort": 2,
+          "ablenker": ["ein", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0047",
+          "wort": 3,
+          "ablenker": ["Stuhl", "Stuhls"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0101",
+          "nach": "ziel",
+          "alternativen": ["Ein Schrank fehlt noch."],
+          "ablenker": ["eine", "nicht"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0137"
+            }
+          ],
+          "antwort": "de.a1.e03.s0138",
+          "ablenker": ["de.a1.e03.s0039", "de.a1.e03.s0113"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e03.s0081"
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e03.suchen",
+          "ablenker": ["de.a1.e03.zeigen", "de.a1.e03.stehen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e03.legen",
+          "ablenker": ["de.a1.e03.liegen"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e03.s0093",
+          "ablenker": ["de.a1.e03.s0010", "de.a1.e03.s0025"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e03.s0034",
+          "wort": 0,
+          "ablenker": ["Die", "Das"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a13",
+          "typ": "paare",
+          "lemmata": ["de.a1.e03.haus", "de.a1.e03.zimmer", "de.a1.e03.stuhl", "de.a1.e03.schrank", "de.a1.e03.hell"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e03.s0079",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e03.s0022"
+            }
+          ],
+          "antwort": "de.a1.e03.s0023",
+          "ablenker": ["de.a1.e03.s0045", "de.a1.e03.s0105"]
+        },
+        {
+          "schluessel": "de.a1.e03.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a1.e03.s0147"
+        }
+      ]
+    }
+  ]
+}
