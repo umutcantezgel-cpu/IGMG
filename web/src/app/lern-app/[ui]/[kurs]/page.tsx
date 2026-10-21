@@ -1,5 +1,6 @@
 import { ClipboardCheck, RotateCcw } from 'lucide-react';
 import type { Metadata } from 'next';
+import { KoranPfadInsel } from '@/components/lernapp/inseln/KoranPfadInsel';
 import { LernpfadInsel } from '@/components/lernapp/inseln/LernpfadInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
@@ -104,7 +105,18 @@ export default async function Lernpfad({ params }: PageProps<'/lern-app/[ui]/[ku
           <h2 id="lernpfad" className="text-display-2">
             {t('lernpfad.einheiten')}
           </h2>
-          <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
+          {kurs === 'koran' && ui !== 'ar' ? (
+            // Koran-Arabisch: eigener Pfad je Sprache der Bedeutungen (L6-05); nur freigegebene Bedeutungen, sonst „Bedeutung folgt“
+            <KoranPfadInsel
+              ui={ui}
+              sprache={ui}
+              adresse={lernAdresse(ui, kurs)}
+              stufen={rohTexte(ui, 'lernpfad').stufe}
+              texte={rohTexte(ui, 'koranpfad')}
+            />
+          ) : (
+            <LernpfadInsel ui={ui} kurs={kurs} adresse={lernAdresse(ui, kurs)} texte={rohTexte(ui, 'lernpfad')} />
+          )}
         </section>
       </div>
     </Rahmen>
