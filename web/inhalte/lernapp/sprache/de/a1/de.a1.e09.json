@@ -1,0 +1,3234 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e09",
+    "reihenfolge": 10,
+    "thema": {
+      "de": "Wo ist die Bibliothek?",
+      "tr": "Kütüphane nerede?",
+      "ar": "أين المكتبة؟"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann nach dem Weg fragen und eine einfache Wegbeschreibung verstehen.",
+        "tr": "Yol sorabilir ve basit bir yol tarifini anlayabilirim.",
+        "ar": "أستطيع أن أسأل عن الطريق وأن أفهم وصفًا بسيطًا للطريق."
+      },
+      {
+        "de": "Ich kann sagen, wie ich zur Schule oder zur Arbeit komme.",
+        "tr": "Okula ya da işe nasıl gittiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول كيف أذهب إلى المدرسة أو إلى العمل."
+      }
+    ],
+    "symbol": "map-pin",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a1.e09.man",
+      "lemma": "man",
+      "wortart": "pronomen",
+      "merkmale": {
+        "person": "Indefinitpronomen, Verb in der 3. Person Singular"
+      },
+      "frequenzRang": 41,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.wohin",
+      "lemma": "wohin",
+      "wortart": "fragewort",
+      "frequenzRang": 2098,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.auf",
+      "lemma": "auf",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 14,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.ueber",
+      "lemma": "über",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 46,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.unter",
+      "lemma": "unter",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 72,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.neben",
+      "lemma": "neben",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 242,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.zwischen",
+      "lemma": "zwischen",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 113,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.hinter",
+      "lemma": "hinter",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ (wohin?) oder Dativ (wo?)"
+      },
+      "frequenzRang": 311,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.gegenueber",
+      "lemma": "gegenüber",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "frequenzRang": 380,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.durch",
+      "lemma": "durch",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Akkusativ"
+      },
+      "frequenzRang": 59,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.links",
+      "lemma": "links",
+      "wortart": "adverb",
+      "frequenzRang": 550,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.rechts",
+      "lemma": "rechts",
+      "wortart": "adverb",
+      "frequenzRang": 592,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.geradeaus",
+      "lemma": "geradeaus",
+      "wortart": "adverb",
+      "frequenzRang": 9504,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.weiter",
+      "lemma": "weiter",
+      "wortart": "adverb",
+      "frequenzRang": 77,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.zurueck",
+      "lemma": "zurück",
+      "wortart": "adverb",
+      "frequenzRang": 203,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.her",
+      "lemma": "her",
+      "wortart": "adverb",
+      "frequenzRang": 397,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.hin",
+      "lemma": "hin",
+      "wortart": "adverb",
+      "frequenzRang": 260,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.weit",
+      "lemma": "weit",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "weite",
+        "endung_en": "weiten",
+        "endung_er": "weiter",
+        "endung_es": "weites",
+        "endung_em": "weitem"
+      },
+      "frequenzRang": 247,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.nah",
+      "lemma": "nah",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "nahe",
+        "endung_en": "nahen",
+        "endung_er": "naher",
+        "endung_es": "nahes",
+        "endung_em": "nahem"
+      },
+      "frequenzRang": 401,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.direkt",
+      "lemma": "direkt",
+      "wortart": "adverb",
+      "frequenzRang": 252,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.folgen",
+      "lemma": "folgen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein"
+      },
+      "formen": {
+        "infinitiv": "folgen",
+        "praes_ich": "folge",
+        "praes_du": "folgst",
+        "praes_er_sie_es": "folgt",
+        "praes_wir": "folgen",
+        "praes_ihr": "folgt",
+        "praes_sie_Sie": "folgen",
+        "imp_du": "folg",
+        "imp_ihr": "folgt"
+      },
+      "frequenzRang": 149,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.kennen",
+      "lemma": "kennen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kennen",
+        "praes_ich": "kenne",
+        "praes_du": "kennst",
+        "praes_er_sie_es": "kennt",
+        "praes_wir": "kennen",
+        "praes_ihr": "kennt",
+        "praes_sie_Sie": "kennen"
+      },
+      "frequenzRang": 195,
+      "quelle": "wiktionary:de:kennen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kennen‘ (https://de.wiktionary.org/wiki/kennen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.leben",
+      "lemma": "leben",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "leben",
+        "praes_ich": "lebe",
+        "praes_du": "lebst",
+        "praes_er_sie_es": "lebt",
+        "praes_wir": "leben",
+        "praes_ihr": "lebt",
+        "praes_sie_Sie": "leben"
+      },
+      "frequenzRang": 87,
+      "quelle": "wiktionary:de:leben",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚leben‘ (https://de.wiktionary.org/wiki/leben), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.halten",
+      "lemma": "halten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "halten",
+        "praes_ich": "halte",
+        "praes_du": "hältst",
+        "praes_er_sie_es": "hält",
+        "praes_wir": "halten",
+        "praes_ihr": "haltet",
+        "praes_sie_Sie": "halten",
+        "imp_du": "halt",
+        "imp_ihr": "haltet"
+      },
+      "frequenzRang": 173,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.warten",
+      "lemma": "warten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "warten",
+        "praes_ich": "warte",
+        "praes_du": "wartest",
+        "praes_er_sie_es": "wartet",
+        "praes_wir": "warten",
+        "praes_ihr": "wartet",
+        "praes_sie_Sie": "warten",
+        "imp_du": "warte",
+        "imp_ihr": "wartet"
+      },
+      "frequenzRang": 431,
+      "quelle": "wiktionary:de:warten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚warten‘ (https://de.wiktionary.org/wiki/warten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.schliessen",
+      "lemma": "schließen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schließen",
+        "praes_ich": "schließe",
+        "praes_du": "schließt",
+        "praes_er_sie_es": "schließt",
+        "praes_wir": "schließen",
+        "praes_ihr": "schließt",
+        "praes_sie_Sie": "schließen",
+        "imp_du": "schließ",
+        "imp_ihr": "schließt"
+      },
+      "frequenzRang": 439,
+      "quelle": "wiktionary:de:schließen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schließen‘ (https://de.wiktionary.org/wiki/schließen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.aussteigen",
+      "lemma": "aussteigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "aus"
+      },
+      "formen": {
+        "infinitiv": "aussteigen",
+        "verbzusatz": "aus",
+        "praes_ich": "steige",
+        "praes_du": "steigst",
+        "praes_er_sie_es": "steigt",
+        "praes_wir": "steigen",
+        "praes_ihr": "steigt",
+        "praes_sie_Sie": "steigen",
+        "imp_du": "steig",
+        "imp_ihr": "steigt"
+      },
+      "frequenzRang": 4802,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.stadt",
+      "lemma": "Stadt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Städte"
+      },
+      "formen": {
+        "pl": "Städte",
+        "dat_pl": "Städten"
+      },
+      "frequenzRang": 130,
+      "quelle": "wiktionary:de:Stadt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stadt‘ (https://de.wiktionary.org/wiki/Stadt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.strasse",
+      "lemma": "Straße",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Straßen"
+      },
+      "formen": {
+        "pl": "Straßen"
+      },
+      "frequenzRang": 378,
+      "quelle": "wiktionary:de:Straße",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Straße‘ (https://de.wiktionary.org/wiki/Straße), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.weg",
+      "lemma": "Weg",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wege"
+      },
+      "formen": {
+        "pl": "Wege",
+        "dat_pl": "Wegen"
+      },
+      "frequenzRang": 133,
+      "quelle": "wiktionary:de:Weg",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Weg‘ (https://de.wiktionary.org/wiki/Weg), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.ort",
+      "lemma": "Ort",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Orte"
+      },
+      "formen": {
+        "pl": "Orte",
+        "dat_pl": "Orten"
+      },
+      "frequenzRang": 287,
+      "quelle": "wiktionary:de:Ort",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ort‘ (https://de.wiktionary.org/wiki/Ort), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.mitte",
+      "lemma": "Mitte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 547,
+      "quelle": "wiktionary:de:Mitte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Mitte‘ (https://de.wiktionary.org/wiki/Mitte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.meter",
+      "lemma": "Meter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Meter"
+      },
+      "formen": {
+        "dat_pl": "Metern"
+      },
+      "frequenzRang": 495,
+      "quelle": "wiktionary:de:Meter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Meter‘ (https://de.wiktionary.org/wiki/Meter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.bahnhof",
+      "lemma": "Bahnhof",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bahnhöfe"
+      },
+      "formen": {
+        "pl": "Bahnhöfe",
+        "dat_pl": "Bahnhöfen"
+      },
+      "frequenzRang": 1251,
+      "quelle": "wiktionary:de:Bahnhof",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bahnhof‘ (https://de.wiktionary.org/wiki/Bahnhof), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.bibliothek",
+      "lemma": "Bibliothek",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bibliotheken"
+      },
+      "formen": {
+        "pl": "Bibliotheken"
+      },
+      "frequenzRang": 2069,
+      "quelle": "wiktionary:de:Bibliothek",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bibliothek‘ (https://de.wiktionary.org/wiki/Bibliothek), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.apotheke",
+      "lemma": "Apotheke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Apotheken"
+      },
+      "formen": {
+        "pl": "Apotheken"
+      },
+      "frequenzRang": 3472,
+      "quelle": "wiktionary:de:Apotheke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Apotheke‘ (https://de.wiktionary.org/wiki/Apotheke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.rathaus",
+      "lemma": "Rathaus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Rathäuser"
+      },
+      "formen": {
+        "pl": "Rathäuser",
+        "dat_pl": "Rathäusern"
+      },
+      "frequenzRang": 2550,
+      "quelle": "wiktionary:de:Rathaus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rathaus‘ (https://de.wiktionary.org/wiki/Rathaus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.baeckerei",
+      "lemma": "Bäckerei",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bäckereien"
+      },
+      "formen": {
+        "pl": "Bäckereien"
+      },
+      "frequenzRang": 6402,
+      "quelle": "wiktionary:de:Bäckerei",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bäckerei‘ (https://de.wiktionary.org/wiki/Bäckerei), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.park",
+      "lemma": "Park",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Parks"
+      },
+      "formen": {
+        "pl": "Parks"
+      },
+      "frequenzRang": 1180,
+      "quelle": "wiktionary:de:Park",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Park‘ (https://de.wiktionary.org/wiki/Park), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.haltestelle",
+      "lemma": "Haltestelle",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Haltestellen"
+      },
+      "formen": {
+        "pl": "Haltestellen"
+      },
+      "frequenzRang": 4052,
+      "quelle": "wiktionary:de:Haltestelle",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Haltestelle‘ (https://de.wiktionary.org/wiki/Haltestelle), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.ampel",
+      "lemma": "Ampel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ampeln"
+      },
+      "formen": {
+        "pl": "Ampeln"
+      },
+      "frequenzRang": 4369,
+      "quelle": "wiktionary:de:Ampel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ampel‘ (https://de.wiktionary.org/wiki/Ampel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.kreuzung",
+      "lemma": "Kreuzung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Kreuzungen"
+      },
+      "formen": {
+        "pl": "Kreuzungen"
+      },
+      "frequenzRang": 4375,
+      "quelle": "wiktionary:de:Kreuzung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kreuzung‘ (https://de.wiktionary.org/wiki/Kreuzung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.bruecke",
+      "lemma": "Brücke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Brücken"
+      },
+      "formen": {
+        "pl": "Brücken"
+      },
+      "frequenzRang": 1660,
+      "quelle": "wiktionary:de:Brücke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brücke‘ (https://de.wiktionary.org/wiki/Brücke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.bus",
+      "lemma": "Bus",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Busse"
+      },
+      "formen": {
+        "pl": "Busse",
+        "dat_pl": "Bussen"
+      },
+      "frequenzRang": 1049,
+      "quelle": "wiktionary:de:Bus",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bus‘ (https://de.wiktionary.org/wiki/Bus), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.zug",
+      "lemma": "Zug",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Züge"
+      },
+      "formen": {
+        "pl": "Züge",
+        "dat_pl": "Zügen"
+      },
+      "frequenzRang": 599,
+      "quelle": "wiktionary:de:Zug",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zug‘ (https://de.wiktionary.org/wiki/Zug), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.auto",
+      "lemma": "Auto",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Autos"
+      },
+      "formen": {
+        "pl": "Autos"
+      },
+      "frequenzRang": 273,
+      "quelle": "wiktionary:de:Auto",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auto‘ (https://de.wiktionary.org/wiki/Auto), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.fuss",
+      "lemma": "Fuß",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Füße",
+        "wendung": "zu Fuß"
+      },
+      "formen": {
+        "pl": "Füße",
+        "dat_pl": "Füßen"
+      },
+      "frequenzRang": 638,
+      "quelle": "wiktionary:de:Fuß",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fuß‘ (https://de.wiktionary.org/wiki/Fuß), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.offen",
+      "lemma": "offen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "offene",
+        "endung_en": "offenen",
+        "endung_er": "offener",
+        "endung_es": "offenes",
+        "endung_em": "offenem"
+      },
+      "frequenzRang": 371,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.polizei",
+      "lemma": "Polizei",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A1)"
+      },
+      "frequenzRang": 285,
+      "quelle": "wiktionary:de:Polizei",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Polizei‘ (https://de.wiktionary.org/wiki/Polizei), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.langsam",
+      "lemma": "langsam",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "langsame",
+        "endung_en": "langsamen",
+        "endung_er": "langsamer",
+        "endung_es": "langsames",
+        "endung_em": "langsamem"
+      },
+      "frequenzRang": 535,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e09.s0001",
+      "text": "Es ist eine kleine Stadt.",
+      "quelle": "tatoeba:9998613",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9998613 von wolfgangth (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0002",
+      "text": "Unsere Stadt ist nicht sehr groß.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0003",
+      "text": "Was für eine schöne Stadt!",
+      "quelle": "tatoeba:365358",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #365358 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0004",
+      "text": "Ich gehe in die Stadt.",
+      "quelle": "tatoeba:352580",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #352580 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0005",
+      "text": "Wie viele Menschen leben in deiner Stadt?",
+      "quelle": "tatoeba:3288960",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3288960 von al_ex_an_der (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0006",
+      "text": "Ich lebe in der Türkei.",
+      "quelle": "tatoeba:1766763",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1766763 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0007",
+      "text": "Oma und Opa leben in Syrien.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0008",
+      "text": "Lebst du gern in der Stadt?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0009",
+      "text": "Wo ist der Bahnhof, bitte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0010",
+      "text": "Der Bahnhof ist sehr groß und modern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0011",
+      "text": "Wo ist die nächste Bibliothek?",
+      "quelle": "tatoeba:368805",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #368805 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0012",
+      "text": "In der Bibliothek gibt es viele Bücher.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0013",
+      "text": "Wo ist denn die Apotheke?",
+      "quelle": "tatoeba:6823320",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6823320 von user66 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0014",
+      "text": "Gibt es hier eine Apotheke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0015",
+      "text": "Das Rathaus ist sehr alt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0016",
+      "text": "Entschuldigung, wo ist das Rathaus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0017",
+      "text": "Ich kaufe mein Brot immer in der Bäckerei.",
+      "quelle": "tatoeba:11219831",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11219831 von felix63 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0018",
+      "text": "Die Kinder spielen im Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0019",
+      "text": "Die Polizei hilft dir gern.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0020",
+      "text": "Der Park ist ein schöner Ort.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0021",
+      "text": "Unser Ort hat keinen Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0022",
+      "text": "Kennst du den Ort?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0023",
+      "text": "Ich kenne die Stadt noch nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0024",
+      "text": "Kennen Sie hier eine Apotheke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0025",
+      "text": "Unsere Straße ist sehr laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0026",
+      "text": "Die Straße ist lang.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0027",
+      "text": "Wohin gehst du?",
+      "quelle": "tatoeba:970",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #970 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0028",
+      "text": "Wohin geht Jan? Zur Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0029",
+      "text": "Ich gehe jetzt in die Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0030",
+      "text": "Wir gehen heute zum Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0031",
+      "text": "Am Bahnhof ist ein Kiosk.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0032",
+      "text": "Opa ist nicht im Park. Er ist zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0033",
+      "text": "Heute komme ich nach Hause zurück.",
+      "quelle": "tatoeba:6131513",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6131513 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0034",
+      "text": "Unsere Stadt hat einen Park und eine Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0035",
+      "text": "Die Bücher liegen auf dem Tisch.",
+      "quelle": "tatoeba:949243",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #949243 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0036",
+      "text": "Über dem Tisch ist eine Lampe.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0037",
+      "text": "Dein Heft liegt unter dem Buch.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0038",
+      "text": "Unter der Brücke ist ein Weg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0039",
+      "text": "Die Polizei ist neben dem Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0040",
+      "text": "Die Apotheke ist zwischen Bank und Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0041",
+      "text": "Der Park liegt zwischen Schule und Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0042",
+      "text": "Hinter unserem Haus gibt es einen Park.",
+      "quelle": "tatoeba:8160280",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8160280 von TheNightAvl (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0043",
+      "text": "Die Haltestelle ist hinter dem Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0044",
+      "text": "Die Bibliothek ist gegenüber dem Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0045",
+      "text": "Gegenüber der Apotheke ist ein Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0046",
+      "text": "In der Mitte ist der Markt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0047",
+      "text": "Wie heißt die nächste Haltestelle?",
+      "quelle": "tatoeba:2158348",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2158348 von Vortarulo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0048",
+      "text": "Die Ampel funktioniert nicht.",
+      "quelle": "tatoeba:2819805",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2819805 von freddy1 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0049",
+      "text": "Neben der Kreuzung ist eine Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0050",
+      "text": "Die Brücke ist sehr alt und schön.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0051",
+      "text": "Hinter der Brücke ist der Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0052",
+      "text": "Wo genau ist die Bäckerei?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0053",
+      "text": "Im Park sitzt Opa auf einer Bank.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0054",
+      "text": "Die Apotheke ist neben der Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0055",
+      "text": "Kannst du mir den Weg zeigen?",
+      "quelle": "tatoeba:397980",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #397980 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0056",
+      "text": "Sind wir auf dem richtigen Weg?",
+      "quelle": "tatoeba:3578564",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3578564 von brauchinet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0057",
+      "text": "Wir sind auf dem falschen Weg.",
+      "quelle": "tatoeba:5175566",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5175566 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0058",
+      "text": "Kennen Sie den Weg zum Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0059",
+      "text": "Kennst du den Weg zur Schule?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0060",
+      "text": "Wie komme ich zum Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0061",
+      "text": "Entschuldigung, wie komme ich zum Rathaus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0062",
+      "text": "Wie komme ich zur Bibliothek, bitte?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0063",
+      "text": "Gehen Sie hier geradeaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0064",
+      "text": "Geh geradeaus bis zur Ampel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0065",
+      "text": "Die Apotheke ist hier rechts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0066",
+      "text": "Muss ich links oder rechts gehen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0067",
+      "text": "Gehen Sie dann weiter geradeaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0068",
+      "text": "Wir gehen zurück zum Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0069",
+      "text": "Wann kommst du zurück?",
+      "quelle": "tatoeba:436000",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #436000 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0070",
+      "text": "Ich bin in zehn Minuten zurück.",
+      "quelle": "tatoeba:927145",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #927145 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0071",
+      "text": "Gehen Sie 100 Meter geradeaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0072",
+      "text": "Nach 200 Metern kommt eine Ampel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0073",
+      "text": "Bis zum Park sind es 300 Meter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0074",
+      "text": "Geht durch den Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0075",
+      "text": "Gehen Sie über die Brücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0076",
+      "text": "Wir gehen hier über die Straße.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0077",
+      "text": "Ist es weit von hier?",
+      "quelle": "tatoeba:456",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #456 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0078",
+      "text": "Mein Haus ist weit von hier.",
+      "quelle": "tatoeba:591739",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #591739 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0079",
+      "text": "Nein, es ist nicht weit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0080",
+      "text": "Ist die Apotheke nah?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0081",
+      "text": "Die Bäckerei ist direkt neben der Apotheke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0082",
+      "text": "Folgen Sie mir bitte.",
+      "quelle": "tatoeba:383319",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #383319 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0083",
+      "text": "Folgen Sie der Straße bis zur Kreuzung.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0084",
+      "text": "Wo willst du hin?",
+      "quelle": "tatoeba:642274",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #642274 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0085",
+      "text": "Wie komme ich da hin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0086",
+      "text": "Komm her!",
+      "quelle": "tatoeba:915223",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #915223 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0087",
+      "text": "Wo kommst du her?",
+      "quelle": "tatoeba:2425579",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2425579 von bionicboy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0088",
+      "text": "Gehen Sie geradeaus und dann rechts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0089",
+      "text": "Ich fahre mit dem Bus.",
+      "quelle": "tatoeba:5835738",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5835738 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0090",
+      "text": "Er kommt mit dem Bus.",
+      "quelle": "tatoeba:7547686",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7547686 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0091",
+      "text": "Fährst du mit dem Bus zur Schule?",
+      "quelle": "tatoeba:901128",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #901128 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0092",
+      "text": "Der Bus ist heute sehr voll.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0093",
+      "text": "Der Bus Nummer 5 fährt zum Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0094",
+      "text": "Der Bus kommt in fünf Minuten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0095",
+      "text": "Ich fahre mit dem Zug.",
+      "quelle": "tatoeba:9950474",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #9950474 von wolfgangth (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0096",
+      "text": "Wann kommt der Zug?",
+      "quelle": "tatoeba:5166270",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5166270 von Sciuro_Kvar (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0097",
+      "text": "Das ist unser Zug.",
+      "quelle": "tatoeba:5866555",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5866555 von Espi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0098",
+      "text": "Der Zug fährt nach Frankfurt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0099",
+      "text": "Der Zug hält hier nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0100",
+      "text": "Mein Vater fährt mit dem Auto.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0101",
+      "text": "Wir haben kein Auto.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0102",
+      "text": "Ich gehe zu Fuß zur Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0103",
+      "text": "Zu Fuß sind es zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0104",
+      "text": "Ich fahre mit dem Fahrrad zum Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0105",
+      "text": "Kerem fährt mit dem Fahrrad zum Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0106",
+      "text": "Wie kommst du zur Schule? Mit dem Bus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0107",
+      "text": "Wo muss ich aussteigen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0108",
+      "text": "Wir steigen am Bahnhof aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0109",
+      "text": "Steigen Sie an der Haltestelle Rathaus aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0110",
+      "text": "Ich warte auf meine Mutter.",
+      "quelle": "tatoeba:439605",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #439605 von landano (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0111",
+      "text": "Warten Sie mal!",
+      "quelle": "tatoeba:2954330",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2954330 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0112",
+      "text": "Wir warten an der Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0113",
+      "text": "Selin, warte bitte auf mich!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0114",
+      "text": "Hält der Bus am Rathaus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0115",
+      "text": "Der Bus hält direkt vor der Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0116",
+      "text": "Ich fahre mit dem Bus nach Hause.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0117",
+      "text": "Ich gehe zu Fuß. Die Schule ist nah.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0118",
+      "text": "Mit dem Fahrrad fahre ich durch den Park.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0119",
+      "text": "Ich fahre mit dem Bus zur Schule.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0120",
+      "text": "Man kann im Park Fußball spielen.",
+      "quelle": "tatoeba:13027686",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027686 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0121",
+      "text": "Man kann auf dem Markt Obst kaufen.",
+      "quelle": "tatoeba:13027702",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027702 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0122",
+      "text": "Kann man in der Bibliothek laut sprechen?",
+      "quelle": "tatoeba:13027751",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027751 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0123",
+      "text": "Kann man hier Fotos machen?",
+      "quelle": "tatoeba:13027788",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027788 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0124",
+      "text": "Man kann in der Bibliothek lernen.",
+      "quelle": "tatoeba:13027654",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027654 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a1.e09.s0125",
+      "text": "An der Ampel muss man warten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0126",
+      "text": "In der Bibliothek spricht man nicht laut.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0127",
+      "text": "Im Bus isst man nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0128",
+      "text": "Wie kommt man zum Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0129",
+      "text": "Hier fährt man langsam.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0130",
+      "text": "Vor der Schule muss man langsam fahren.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0131",
+      "text": "Brot kauft man in der Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0132",
+      "text": "Hier muss man aussteigen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0133",
+      "text": "Mit dem Fahrrad fährt man rechts.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0134",
+      "text": "Auf der Straße spielt man nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0135",
+      "text": "Die Bäckerei ist schon offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0136",
+      "text": "Ist die Bibliothek heute offen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0137",
+      "text": "Die Tür ist offen. Komm rein!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0138",
+      "text": "Am Sonntag ist das Rathaus nicht offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0139",
+      "text": "Die Bibliothek schließt um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0140",
+      "text": "Bitte schließen Sie die Tür.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0141",
+      "text": "Wann schließt die Apotheke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0142",
+      "text": "Die Apotheke schließt um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0143",
+      "text": "Nein, hier spricht man leise.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0144",
+      "text": "Die Polizei hat die Nummer 110.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0145",
+      "text": "Frag doch die Polizei nach dem Weg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0146",
+      "text": "Kinder, wartet an der Ampel!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0147",
+      "text": "Lauf nicht über die Straße!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0148",
+      "text": "Wie kommt man zur Bibliothek?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0149",
+      "text": "Der Weg zur Bibliothek",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0150",
+      "text": "Ranā und Laylā sind in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0151",
+      "text": "Sie suchen die Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0152",
+      "text": "Wo ist denn die Bibliothek?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0153",
+      "text": "Ich kenne den Weg auch nicht.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0154",
+      "text": "Dort an der Haltestelle wartet eine Frau.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0155",
+      "text": "Komm, wir fragen die Frau nach dem Weg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0156",
+      "text": "Entschuldigung, wie kommen wir zur Bibliothek?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0157",
+      "text": "Das ist nicht weit.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0158",
+      "text": "Geht hier geradeaus bis zur Ampel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0159",
+      "text": "An der Ampel geht ihr links.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0160",
+      "text": "Dann geht ihr über die Brücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0161",
+      "text": "Die Bibliothek ist direkt hinter der Brücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0162",
+      "text": "Wie weit ist es bis zur Brücke?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0163",
+      "text": "Nur etwa 200 Meter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0164",
+      "text": "Vielen Dank! Jetzt kennen wir den Weg.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0165",
+      "text": "Die Mädchen gehen geradeaus bis zur Ampel.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0166",
+      "text": "Dann gehen sie links über die Brücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0167",
+      "text": "Da ist die Bibliothek! Sie ist offen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0168",
+      "text": "Super! Wir lesen heute in der Bibliothek.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0169",
+      "text": "Wo wartet die Frau?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0170",
+      "text": "Wohin geht man an der Ampel?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0171",
+      "text": "Wo ist die Bibliothek?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0172",
+      "text": "Direkt hinter der Brücke.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0173",
+      "text": "Direkt neben dem Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0174",
+      "text": "Gegenüber dem Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0175",
+      "text": "Wie weit ist es?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0176",
+      "text": "Etwa 200 Meter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0177",
+      "text": "Etwa 20 Meter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0178",
+      "text": "Etwa 900 Meter.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0179",
+      "text": "Im Bus zum Bahnhof",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0180",
+      "text": "Murat und Elif fahren mit dem Bus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0181",
+      "text": "Wo müssen wir aussteigen, Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0182",
+      "text": "Ich kenne die Haltestelle nicht. Frag den Fahrer!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0183",
+      "text": "Murat geht im Bus nach vorne.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0184",
+      "text": "Entschuldigung, hält der Bus am Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0185",
+      "text": "Ja, direkt vor dem Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0186",
+      "text": "Und wo steigen wir aus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0187",
+      "text": "An der dritten Haltestelle steigt ihr aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0188",
+      "text": "Danke! Ist es noch weit?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0189",
+      "text": "Nein, nicht weit. Nur zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0190",
+      "text": "Der Bus hält an der zweiten Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0191",
+      "text": "Murat, ist das schon der Bahnhof?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0192",
+      "text": "Nein, das ist das Rathaus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0193",
+      "text": "So, Bahnhof! Hier müsst ihr aussteigen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0194",
+      "text": "Danke schön! Wir steigen jetzt aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0195",
+      "text": "Murat und Elif steigen aus.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0196",
+      "text": "Wohin fahren Murat und Elif?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0197",
+      "text": "Wo steigen Murat und Elif aus?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0198",
+      "text": "An der dritten Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0199",
+      "text": "An der ersten Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0200",
+      "text": "An der zweiten Haltestelle.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e09.s0201",
+      "text": "Was ist an der zweiten Haltestelle?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e09.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Orte in der Stadt nennen und fragen, wohin jemand geht.",
+        "tr": "Şehirdeki yerleri sayabilir ve birinin nereye gittiğini sorabilirim.",
+        "ar": "أستطيع أن أسمّي أماكن في المدينة وأن أسأل إلى أين يذهب شخص ما."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l01.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.stadt", "de.a1.e09.bahnhof", "de.a1.e09.bibliothek", "de.a1.e09.apotheke", "de.a1.e09.park"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.rathaus",
+          "ablenker": ["de.a1.e09.baeckerei", "de.a1.e09.polizei"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.strasse",
+          "ablenker": ["de.a1.e03.haus", "de.a1.e03.zimmer"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.wohin",
+          "ablenker": ["de.a1.e01.wo", "de.a1.e01.woher"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0011",
+          "ablenker": ["de.a1.e09.s0013", "de.a1.e09.s0009"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a07",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0029",
+          "wort": 4,
+          "ablenker": ["der", "das"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.leben",
+          "ablenker": ["de.a1.e01.kommen", "de.a1.e01.sprechen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0027"
+            }
+          ],
+          "antwort": "de.a1.e09.s0029",
+          "ablenker": ["de.a1.e09.s0015", "de.a1.e09.s0022"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0002",
+          "nach": "ziel",
+          "alternativen": ["Unsere Stadt ist nicht so groß."],
+          "ablenker": ["klein", "Park"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a11",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.kennen",
+          "ablenker": ["de.a1.e01.lernen", "de.a1.e05.sehen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a12",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0024",
+          "wort": 0,
+          "ablenker": ["Kennst", "Kennt"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e09.ort",
+          "ablenker": ["de.a1.e07.wort"]
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a14",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0034"
+        },
+        {
+          "schluessel": "de.a1.e09.l01.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0020",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wo etwas genau ist: neben, hinter, zwischen.",
+        "tr": "Bir şeyin tam olarak nerede olduğunu söyleyebilirim: yanında, arkasında, arasında.",
+        "ar": "أستطيع أن أقول أين يوجد شيء بالضبط: بجانب وخلف وبين."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l02.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.neben", "de.a1.e09.hinter", "de.a1.e09.zwischen", "de.a1.e09.unter", "de.a1.e09.gegenueber"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.auf",
+          "ablenker": ["de.a1.e09.unter", "de.a1.e09.neben"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.ueber",
+          "ablenker": ["de.a1.e09.unter", "de.a1.e09.hinter"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a05",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.haltestelle", "de.a1.e09.ampel", "de.a1.e09.kreuzung", "de.a1.e09.bruecke", "de.a1.e09.mitte"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a06",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0043",
+          "wort": 0,
+          "ablenker": ["Der", "Das"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0039",
+          "ablenker": ["de.a1.e09.s0044", "de.a1.e09.s0043"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0037",
+          "nach": "ziel",
+          "alternativen": ["Unter dem Buch liegt dein Heft."],
+          "ablenker": ["auf", "Stift"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.mitte",
+          "ablenker": ["de.a1.e04.ende", "de.a1.e03.platz"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0052"
+            }
+          ],
+          "antwort": "de.a1.e09.s0081",
+          "ablenker": ["de.a1.e09.s0092", "de.a1.e09.s0097"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0049",
+          "wort": 4,
+          "ablenker": ["ein", "einen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0045",
+          "ablenker": ["de.a1.e09.s0051", "de.a1.e09.s0046"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e09.leben",
+          "ablenker": ["de.a1.e03.legen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0040",
+          "nach": "ziel",
+          "alternativen": [
+            "Die Apotheke ist zwischen Bäckerei und Bank.",
+            "Zwischen Bank und Bäckerei ist die Apotheke.",
+            "Zwischen Bäckerei und Bank ist die Apotheke."
+          ],
+          "ablenker": ["neben", "Bahnhof"]
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0054"
+        },
+        {
+          "schluessel": "de.a1.e09.l02.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0046",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann nach dem Weg fragen und einen Weg beschreiben.",
+        "tr": "Yol sorabilir ve bir yolu tarif edebilirim.",
+        "ar": "أستطيع أن أسأل عن الطريق وأن أصف طريقًا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l03.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.links", "de.a1.e09.rechts", "de.a1.e09.geradeaus", "de.a1.e09.zurueck", "de.a1.e09.meter"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.weg",
+          "ablenker": ["de.a1.e03.platz", "de.a1.e04.zeit"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0064",
+          "wort": 3,
+          "ablenker": ["zum", "zu"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.weit",
+          "ablenker": ["de.a1.e09.nah", "de.a1.e03.klein"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0060",
+          "ablenker": ["de.a1.e09.s0061", "de.a1.e09.s0062"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0061"
+            }
+          ],
+          "antwort": "de.a1.e09.s0088",
+          "ablenker": ["de.a1.e09.s0057", "de.a1.e09.s0070"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0075",
+          "nach": "ziel",
+          "ablenker": ["unter", "Straße"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.folgen",
+          "ablenker": ["de.a1.e07.fragen", "de.a1.e07.helfen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e09.rechts",
+          "ablenker": ["de.a1.e07.recht"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0083",
+          "wort": 0,
+          "ablenker": ["Folgt", "Folge"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0071",
+          "alternativen": ["Gehen Sie hundert Meter geradeaus.", "Gehen Sie einhundert Meter geradeaus."]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.durch",
+          "ablenker": ["de.a1.e09.ueber", "de.a1.e09.unter"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0077"
+            }
+          ],
+          "antwort": "de.a1.e09.s0079",
+          "ablenker": ["de.a1.e09.s0092", "de.a1.e09.s0087"]
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0062"
+        },
+        {
+          "schluessel": "de.a1.e09.l03.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0067",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Verkehrsmittel nennen und sagen, wie ich zur Schule komme.",
+        "tr": "Ulaşım araçlarını sayabilir ve okula nasıl gittiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أسمّي وسائل النقل وأن أقول كيف أذهب إلى المدرسة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l04.a01",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.bus", "de.a1.e09.zug", "de.a1.e09.auto", "de.a1.e09.fuss", "de.a1.e08.fahrrad"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.aussteigen",
+          "ablenker": ["de.a1.e09.warten", "de.a1.e09.halten"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0112",
+          "wort": 1,
+          "ablenker": ["wartet", "warte"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0089",
+          "ablenker": ["de.a1.e09.s0095", "de.a1.e09.s0100"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.langsam",
+          "ablenker": ["de.a1.e05.schnell", "de.a1.e03.laut"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0106"
+            }
+          ],
+          "antwort": "de.a1.e09.s0102",
+          "ablenker": ["de.a1.e09.s0096", "de.a1.e09.s0111"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0108",
+          "nach": "ziel",
+          "alternativen": ["Am Bahnhof steigen wir aus."],
+          "ablenker": ["steigt", "Rathaus"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.warten",
+          "ablenker": ["de.a1.e04.gehen", "de.a1.e07.lesen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0115",
+          "wort": 2,
+          "ablenker": ["haltet", "halten"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0093",
+          "ablenker": ["de.a1.e09.s0094", "de.a1.e09.s0092"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a12",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e09.weit",
+          "ablenker": ["de.a1.e04.zeit"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0094",
+          "alternativen": ["Der Bus kommt in 5 Minuten."]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0107"
+            }
+          ],
+          "antwort": "de.a1.e09.s0109",
+          "ablenker": ["de.a1.e09.s0101", "de.a1.e09.s0103"]
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0119"
+        },
+        {
+          "schluessel": "de.a1.e09.l04.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0116",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann einfache Regeln mit „man“ verstehen und sagen.",
+        "tr": "„man“ ile kurulan basit kuralları anlayabilir ve söyleyebilirim.",
+        "ar": "أستطيع أن أفهم قواعد بسيطة مع كلمة „man“ وأن أقولها."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.man",
+          "ablenker": ["de.a1.e01.wer", "de.a1.e06.jemand"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.polizei", "de.a1.e09.ampel", "de.a1.e09.kreuzung", "de.a1.e09.haltestelle", "de.a1.e09.strasse"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0129",
+          "wort": 1,
+          "ablenker": ["fahren", "fahrt"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.offen",
+          "ablenker": ["de.a1.e03.neu", "de.a1.e08.frei"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0125",
+          "ablenker": ["de.a1.e09.s0127", "de.a1.e09.s0134"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0131",
+          "nach": "ziel",
+          "alternativen": ["Man kauft Brot in der Bäckerei.", "In der Bäckerei kauft man Brot.", "Man kauft in der Bäckerei Brot."],
+          "ablenker": ["kaufen", "Apotheke"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.schliessen",
+          "ablenker": ["de.a1.e03.zeigen", "de.a1.e05.bringen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0141"
+            }
+          ],
+          "antwort": "de.a1.e09.s0142",
+          "ablenker": ["de.a1.e09.s0137", "de.a1.e09.s0132"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a10",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0126",
+          "wort": 3,
+          "ablenker": ["sprechen", "sprichst"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0136",
+          "ablenker": ["de.a1.e09.s0135", "de.a1.e09.s0138"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0122"
+            }
+          ],
+          "antwort": "de.a1.e09.s0143",
+          "ablenker": ["de.a1.e09.s0098", "de.a1.e09.s0144"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a13",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0147",
+          "wort": 0,
+          "ablenker": ["Läufst", "Laufen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0127"
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0148"
+        },
+        {
+          "schluessel": "de.a1.e09.l05.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0130",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über den Weg zur Bibliothek und ein Gespräch im Bus verstehen.",
+        "tr": "Kütüphanenin yolu hakkındaki bir hikâyeyi ve otobüste geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن الطريق إلى المكتبة وحوارًا في الحافلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a1.e09.s0149",
+          "zeilen": [
+            {
+              "satz": "de.a1.e09.s0150"
+            },
+            {
+              "satz": "de.a1.e09.s0151"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0152"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0153"
+            },
+            {
+              "satz": "de.a1.e09.s0154"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0155"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0156"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0157"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0158"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0159"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0160"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0161"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0162"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0163"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0164"
+            },
+            {
+              "satz": "de.a1.e09.s0165"
+            },
+            {
+              "satz": "de.a1.e09.s0166"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0167"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0168"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a1.e09.s0169",
+              "antwort": "de.a1.e09.haltestelle",
+              "ablenker": ["de.a1.e09.apotheke", "de.a1.e09.park"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a1.e09.s0170",
+              "antwort": "de.a1.e09.links",
+              "ablenker": ["de.a1.e09.rechts", "de.a1.e09.zurueck"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a1.e09.s0171",
+              "antwort": "de.a1.e09.s0172",
+              "ablenker": ["de.a1.e09.s0173", "de.a1.e09.s0174"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a1.e09.s0175",
+              "antwort": "de.a1.e09.s0176",
+              "ablenker": ["de.a1.e09.s0177", "de.a1.e09.s0178"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a02",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0156"
+            }
+          ],
+          "antwort": "de.a1.e09.s0158",
+          "ablenker": ["de.a1.e09.s0168", "de.a1.e09.s0192"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0159",
+          "wort": 3,
+          "ablenker": ["gehst", "gehen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0161",
+          "ablenker": ["de.a1.e09.s0051", "de.a1.e09.s0166"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a05",
+          "typ": "geschichte",
+          "titel": "de.a1.e09.s0179",
+          "zeilen": [
+            {
+              "satz": "de.a1.e09.s0180"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0181"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0182"
+            },
+            {
+              "satz": "de.a1.e09.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0184"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0185"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0186"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0187"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0188"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0189"
+            },
+            {
+              "satz": "de.a1.e09.s0190"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e09.s0191"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0192"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a1.e09.s0193"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0194"
+            },
+            {
+              "satz": "de.a1.e09.s0195"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a1.e09.s0196",
+              "antwort": "de.a1.e09.bahnhof",
+              "ablenker": ["de.a1.e09.rathaus", "de.a1.e09.bibliothek"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a1.e09.s0197",
+              "antwort": "de.a1.e09.s0198",
+              "ablenker": ["de.a1.e09.s0199", "de.a1.e09.s0200"]
+            },
+            {
+              "nach": 12,
+              "frage": "de.a1.e09.s0201",
+              "antwort": "de.a1.e09.rathaus",
+              "ablenker": ["de.a1.e09.bahnhof", "de.a1.e09.park"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0184"
+            }
+          ],
+          "antwort": "de.a1.e09.s0185",
+          "ablenker": ["de.a1.e09.s0195", "de.a1.e09.s0164"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a07",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0187",
+          "nach": "ziel",
+          "alternativen": ["Ihr steigt an der dritten Haltestelle aus."],
+          "ablenker": ["steigst", "Bahnhof"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a08",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0193",
+          "wort": 3,
+          "ablenker": ["musst", "müssen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0186",
+          "ablenker": ["de.a1.e09.s0181", "de.a1.e09.s0107"]
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a10",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0156"
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0151"
+        },
+        {
+          "schluessel": "de.a1.e09.l06.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0160",
+          "nach": "ausgang"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole die Wörter und Sätze der Einheit: Stadt, Weg und Verkehrsmittel.",
+        "tr": "Ünitenin kelimelerini ve cümlelerini tekrar ediyorum: şehir, yol ve ulaşım araçları.",
+        "ar": "أراجع كلمات الوحدة وجملها: المدينة والطريق ووسائل النقل."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l07.a01",
+          "typ": "paare",
+          "lemmata": [
+            "de.a1.e09.stadt",
+            "de.a1.e09.strasse",
+            "de.a1.e09.bruecke",
+            "de.a1.e09.rathaus",
+            "de.a1.e09.baeckerei",
+            "de.a1.e09.polizei"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a02",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.auf", "de.a1.e09.unter", "de.a1.e09.neben", "de.a1.e09.hinter", "de.a1.e09.zwischen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.bahnhof",
+          "ablenker": ["de.a1.e09.bibliothek", "de.a1.e09.apotheke"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.zurueck",
+          "ablenker": ["de.a1.e09.weiter", "de.a1.e09.links"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0023",
+          "wort": 1,
+          "ablenker": ["kennst", "kennt"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0039",
+          "nach": "ziel",
+          "alternativen": ["Neben dem Rathaus ist die Polizei."],
+          "ablenker": ["hinter", "Bäckerei"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0038",
+          "ablenker": ["de.a1.e09.s0050", "de.a1.e09.s0076"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e09.her",
+          "ablenker": ["de.a1.e06.herr"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0080"
+            }
+          ],
+          "antwort": "de.a1.e09.s0065",
+          "ablenker": ["de.a1.e09.s0099", "de.a1.e09.s0123"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0072",
+          "alternativen": ["Nach zweihundert Metern kommt eine Ampel."]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0125",
+          "wort": 3,
+          "ablenker": ["müssen", "musst"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0084"
+            }
+          ],
+          "antwort": "de.a1.e09.s0004",
+          "ablenker": ["de.a1.e09.s0048", "de.a1.e09.s0026"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0105",
+          "ablenker": ["de.a1.e09.s0104", "de.a1.e09.s0100"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a14",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.kreuzung",
+          "ablenker": ["de.a1.e09.ampel", "de.a1.e03.platz"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a15",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0140",
+          "wort": 1,
+          "ablenker": ["schließt", "schließe"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0058"
+            }
+          ],
+          "antwort": "de.a1.e09.s0063",
+          "ablenker": ["de.a1.e09.s0069", "de.a1.e09.s0090"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a17",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.direkt",
+          "ablenker": ["de.a1.e03.oben", "de.a1.e03.ganz"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a18",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.hin",
+          "ablenker": ["de.a1.e09.her", "de.a1.e09.zurueck"]
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a19",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0036",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a1.e09.l07.a20",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0102"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a1.e09.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, was ich kann: nach dem Weg fragen und sagen, wie ich zur Schule komme.",
+        "tr": "Neler yapabildiğimi gösteriyorum: yol sormak ve okula nasıl gittiğimi söylemek.",
+        "ar": "أُظهر ما أستطيع: أن أسأل عن الطريق وأن أقول كيف أذهب إلى المدرسة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e09.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.haltestelle",
+          "ablenker": ["de.a1.e09.ampel", "de.a1.e09.kreuzung"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a1.e09.gegenueber",
+          "ablenker": ["de.a1.e09.neben", "de.a1.e09.hinter"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e09.s0028",
+          "ablenker": ["de.a1.e09.s0030", "de.a1.e09.s0068"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0030",
+          "wort": 3,
+          "ablenker": ["zur", "zu"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a05",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0059",
+          "wort": 0,
+          "ablenker": ["Kennt", "Kenne"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0128",
+          "nach": "ziel",
+          "ablenker": ["kommen", "Rathaus"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0060"
+            }
+          ],
+          "antwort": "de.a1.e09.s0071",
+          "ablenker": ["de.a1.e09.s0135", "de.a1.e09.s0015"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a1.e09.s0073",
+          "alternativen": ["Bis zum Park sind es dreihundert Meter."]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a1.e09.warten",
+          "ablenker": ["de.a1.e09.halten", "de.a1.e09.aussteigen"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e09.s0134",
+          "ablenker": ["de.a1.e09.s0120", "de.a1.e09.s0133"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a11",
+          "typ": "luecke",
+          "ziel": "de.a1.e09.s0113",
+          "wort": 1,
+          "ablenker": ["wartet", "warten"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a12",
+          "typ": "paare",
+          "lemmata": ["de.a1.e09.links", "de.a1.e09.rechts", "de.a1.e09.weit", "de.a1.e09.nah", "de.a1.e09.langsam"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e09.s0091"
+            }
+          ],
+          "antwort": "de.a1.e09.s0117",
+          "ablenker": ["de.a1.e09.s0097", "de.a1.e09.s0114"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0083",
+          "nach": "ziel",
+          "ablenker": ["Folgt", "Ampel"]
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a15",
+          "typ": "sprechen",
+          "satz": "de.a1.e09.s0061"
+        },
+        {
+          "schluessel": "de.a1.e09.l08.a16",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a1.e09.s0081",
+          "nach": "ausgang"
+        }
+      ]
+    }
+  ]
+}
