@@ -43,6 +43,18 @@
     | B-34 | Abzeichen erhalten: Deckkraft und Skalierung 0,96 → 1                                                | nur Deckkraft                              |
     | B-35 | Aufnahme läuft: Pegelbalken                                                                          | statischer Punkt und Text „Aufnahme läuft“ |
 
+## Fortschreibung durch L7-01 (21.10.2026)
+
+- **Tagesziel:** XP- oder Lektionsziele (10/20/30/50 XP, 1/2/3 Lektionen) oder „kein Ziel“; keine Minuten (Nr. 2, keine
+  Zeiterfassung). Standard 1 Lektion (O-12 offen).
+- **Abzeichen:** Katalog mit 41 Arten in 13 Gruppen (`web/src/lib/lernapp/ereignisse/abzeichen.ts`), deterministisch aus dem
+  Ereignisprotokoll abgeleitet; als „neu“ gilt nur ein Abzeichen vom heutigen Lerntag (`ABLEITUNGS_VERSION` 2). Formen aus der
+  Achtstern-Geometrie je Rang; das Gruppenziel-Abzeichen speist L7-02.
+- **Serie:** freundlicher Wiedereinstieg ab 3 Tagen Lücke (auch nach einer Ruhezeit), Pausetage 0–3 je Woche, Ruhezeiträume bis
+  30 freie Tage im Jahr; eine eingetragene Ruhezeit lässt sich nicht zurücknehmen (Protokoll hängt nur an).
+- **Abschluss:** Anzeige von Tagesziel, Wochenband und neuen Abzeichen als eigener Chunk nach der Lektion (Spieler-Budget
+  „zusätzlich“ ≤ 60 KB); alle Zahlen stehen sofort statisch (Regeltest „keine hochzählenden Zahlen“).
+
 ## Fortschreibung durch L7-02 (21.10.2026)
 
 Gilt vor Nr. 7 und 8, wo es genauer ist. Umsetzung: `web/src/lib/lernapp/gruppe/{regeln,dienst,protokoll}.ts`, Route
