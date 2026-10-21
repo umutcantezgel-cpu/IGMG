@@ -1047,7 +1047,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0034",
-      "text": "Es ist hoch, fast 39 Grad.",
+      "text": "Das Fieber ist hoch, fast 39 Grad.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1126,7 +1126,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0047",
-      "text": "Opa ist alt, aber noch sehr stark.",
+      "text": "Opa ist stark und gesund.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1283,7 +1283,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0072",
-      "text": "Bitte setzen Sie sich hier.",
+      "text": "Bitte setzen Sie sich.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1473,7 +1473,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0103",
-      "text": "Danke für deine Hilfe!",
+      "text": "Danke für deine Hilfe, Paula!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1560,7 +1560,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0117",
-      "text": "Er hat Husten und sogar Fieber.",
+      "text": "Emre hat Husten und sogar Fieber.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1639,7 +1639,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0130",
-      "text": "Ranā ruft sofort in der Praxis an.",
+      "text": "Ranā ruft sofort bei der Ärztin an.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1837,7 +1837,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0163",
-      "text": "Dort hilft ihm Nisrīn.",
+      "text": "Die Apothekerin heißt Nisrīn.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2023,7 +2023,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0194",
-      "text": "Viel Glück bei der Prüfung!",
+      "text": "Viel Glück bei der Prüfung, Selin!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2041,7 +2041,7 @@
     },
     {
       "schluessel": "de.a1.e11.s0197",
-      "text": "Sogar Opa spielt mit uns Fußball.",
+      "text": "Sogar Opa spielt mit Jan Fußball.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2072,6 +2072,12 @@
     {
       "schluessel": "de.a1.e11.s0202",
       "text": "Zwei Tage. Dann bist du wieder gesund.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e11.s0203",
+      "text": "Ranā und Yazan gehen in die Praxis.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -2137,7 +2143,7 @@
           "zeilen": [
             {
               "sprecher": "a",
-              "satz": "de.a1.e11.s0009"
+              "satz": "de.a1.e11.s0008"
             }
           ],
           "antwort": "de.a1.e11.s0003",
@@ -2149,7 +2155,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e11.s0006",
           "nach": "ziel",
-          "ablenker": ["Kopf", "tun"]
+          "ablenker": ["Kopf", "tun"],
+          "alternativen": ["Ein bisschen tut meine Hand weh."]
         },
         {
           "schluessel": "de.a1.e11.l01.a10",
@@ -2181,7 +2188,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e11.s0009",
-          "ablenker": ["de.a1.e11.s0008", "de.a1.e11.s0016", "de.a1.e11.s0017"]
+          "ablenker": ["de.a1.e11.s0001", "de.a1.e11.s0016", "de.a1.e11.s0017"]
         },
         {
           "schluessel": "de.a1.e11.l01.a15",
@@ -2309,7 +2316,7 @@
           "schluessel": "de.a1.e11.l02.a14",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e11.s0034",
-          "alternativen": ["Es ist hoch, fast neununddreißig Grad."]
+          "alternativen": ["Das Fieber ist hoch, fast neununddreißig Grad."]
         },
         {
           "schluessel": "de.a1.e11.l02.a15",
@@ -2518,7 +2525,7 @@
           "satz": "de.a1.e11.s0086",
           "nach": "ziel",
           "alternativen": ["Nehmen Sie am Tag zwei Tabletten."],
-          "ablenker": ["Tablette", "nimm"]
+          "ablenker": ["Tablette", "Woche"]
         },
         {
           "schluessel": "de.a1.e11.l04.a09",
@@ -2643,7 +2650,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e11.s0114",
           "nach": "ziel",
-          "alternativen": ["Ich hoffe, dir geht es bald besser."],
+          "alternativen": ["Ich hoffe, dir geht es bald besser.", "Ich hoffe, bald geht es dir besser."],
           "ablenker": ["hoffst", "Fieber"]
         },
         {
@@ -2767,6 +2774,9 @@
               "satz": "de.a1.e11.s0134"
             },
             {
+              "satz": "de.a1.e11.s0203"
+            },
+            {
               "satz": "de.a1.e11.s0135"
             },
             {
@@ -2822,13 +2832,13 @@
               "ablenker": ["de.a1.e11.s0151", "de.a1.e11.s0152"]
             },
             {
-              "nach": 17,
+              "nach": 18,
               "frage": "de.a1.e11.s0153",
               "antwort": "de.a1.e11.s0154",
               "ablenker": ["de.a1.e11.s0155", "de.a1.e11.s0156"]
             },
             {
-              "nach": 23,
+              "nach": 24,
               "frage": "de.a1.e11.s0157",
               "antwort": "de.a1.e11.s0158",
               "ablenker": ["de.a1.e11.s0159"]
@@ -3189,9 +3199,9 @@
         {
           "schluessel": "de.a1.e11.l08.a04",
           "typ": "luecke",
-          "ziel": "de.a1.e11.s0191",
-          "wort": 0,
-          "ablenker": ["Hat", "Habt"]
+          "ziel": "de.a1.e11.s0101",
+          "wort": 1,
+          "ablenker": ["soll", "sollt"]
         },
         {
           "schluessel": "de.a1.e11.l08.a05",
@@ -3218,7 +3228,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e11.s0187",
           "nach": "ziel",
-          "alternativen": ["Bald brauche ich einen Termin."],
+          "alternativen": ["Bald brauche ich einen Termin.", "Einen Termin brauche ich bald."],
           "ablenker": ["sofort", "Praxis"]
         },
         {
