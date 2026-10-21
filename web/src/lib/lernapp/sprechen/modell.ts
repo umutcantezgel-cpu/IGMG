@@ -5,14 +5,17 @@ import type { SprechErgebnis } from './auswertung';
  * Rein (ohne Browser-Zugriff); gemeinsam für den Worker, die Sprechübung, den Bauschritt (`scripts/lernapp-modelle.mjs`
  * prüft dieselben Pfade) und Unit-Tests.
  *
- * Genau 10 Dateien vom eigenen Ursprung unter `/lern-app/modelle/` (Vorrat `igmg-lernapp-modelle` im Lern-App-SW):
+ * Genau 10 Dateien der Sprechübung vom eigenen Ursprung unter `/lern-app/modelle/` (Vorrat `igmg-lernapp-modelle` im Lern-App-SW):
  * - 7 Modell- und Konfigurationsdateien von `Xenova/whisper-base` am Commit `64da572` (q8), statisch in
  *   `web/public/lern-app/modelle/whisper-base-64da572/` (SHA-256 und Lizenz in `web/daten/lernapp-modelle/QUELLE.md`);
  * - ORT `ort-wasm-simd-threaded.{mjs,wasm}` (nur CPU, ohne asyncify/jsep/jspi) aus dem gepinnten `onnxruntime-web`,
  *   beim Bau mit SHA-Prüfung nach `ort-<version>/` kopiert (nicht im Repository);
  * - der Worker `sprechen/whisper.worker.mjs` (Bauschritt aus `components/lernapp/sprechen/whisper.worker.ts`). Er liegt
  *   unter `/lern-app/modelle/`, damit er die CSP der Lern-App (`'wasm-unsafe-eval'`) und COEP trägt; die Bau-Kennung
- *   hängt als `?v=` an (neuer Bau → neuer Worker, der Service Worker räumt alte Fassungen weg).
+ *   hängt als `?v=` an (neuer Bau → neuer Worker, der Service Worker räumt alte Fassungen weg). Er trägt einen Lizenzkopf.
+ *
+ * Daneben 2 Lizenztexte neben den Gewichten (ADR 0042 Nr. 3, Fortschreibung Nr. 11): `LIZENZ_DATEIEN`, zusammen 12 Dateien
+ * unter `/lern-app/modelle/`. Sie gehören nicht zum Download, nicht zum Vorrat und nicht zu `GESAMT_BYTES`.
  */
 
 export const MODELLE_BASIS = '/lern-app/modelle/';
@@ -35,6 +38,12 @@ export const MODELL_DATEIEN: readonly { pfad: string; bytes: number }[] = [
   { pfad: 'tokenizer_config.json', bytes: 282_683 },
   { pfad: 'onnx/encoder_model_quantized.onnx', bytes: 23_200_850 },
   { pfad: 'onnx/decoder_model_merged_quantized.onnx', bytes: 53_707_539 },
+];
+
+/** Lizenztexte neben den Gewichten (MIT von OpenAI für Whisper; Apache-2.0 für die ONNX-Fassung und transformers.js). */
+export const LIZENZ_DATEIEN: readonly { pfad: string; bytes: number }[] = [
+  { pfad: 'LIZENZ-whisper-MIT.txt', bytes: 1_063 },
+  { pfad: 'LIZENZ-Apache-2.0.txt', bytes: 11_358 },
 ];
 
 export const ORT = {

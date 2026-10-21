@@ -4,7 +4,9 @@ import type { LizenzName } from './lizenztexte';
  * Quellen und Namensnennung der Lern-App (ADR 0044 Nr. 7, KERN 4.0 §1 „Quellenangaben auch offline“): Bibliotheken, die
  * im Browser laufen, und die Schriften der Oberfläche. Sprachneutrale Angaben (Eigennamen, Urheber wie in der
  * Lizenzdatei, Adresse); Fassungen prüft der Unit-Test `lernapp/quellen` gegen node_modules. Quelle und Lizenz der
- * Lerninhalte stehen je Eintrag im Kurspaket (ADR 0039); Stimmen ergänzt die Sprachausgabe (L3, ADR 0045).
+ * Lerninhalte stehen je Eintrag im Kurspaket (ADR 0039); Stimmen ergänzt die Sprachausgabe (L3, ADR 0045). Die
+ * Spracherkennung (ADR 0042 Nr. 3 und 10) steht mit ihren Bibliotheken unter `BIBLIOTHEKEN` (im Worker) und mit dem Modell
+ * unter `SPRACHERKENNUNG`; die Lizenztexte liegen zusätzlich neben den Gewichten (`LIZENZ_DATEIEN` in `sprechen/modell.ts`).
  */
 export type LernQuelle = {
   id: string;
@@ -73,6 +75,44 @@ export const BIBLIOTHEKEN: readonly LernQuelle[] = [
     urheber: 'Copyright (c) 2025 Colin McDonnell',
     adresse: 'https://zod.dev',
     lizenz: 'MIT',
+  },
+  {
+    // Spracherkennung der Sprechübung, im Worker `/lern-app/modelle/sprechen/whisper.worker.mjs` gebündelt (ADR 0042 Nr. 10)
+    id: 'transformers',
+    name: 'Transformers.js',
+    version: '4.3.0',
+    urheber: 'Hugging Face',
+    adresse: 'https://github.com/huggingface/transformers.js',
+    lizenz: 'Apache-2.0',
+  },
+  {
+    // Laufzeit der Spracherkennung: JS im Worker, WebAssembly unter `/lern-app/modelle/ort-…/` (ADR 0042 Nr. 10)
+    id: 'onnxruntime-web',
+    name: 'ONNX Runtime Web',
+    version: '1.31.0-dev.20260914-8d85527a0',
+    urheber: 'Copyright (c) Microsoft Corporation',
+    adresse: 'https://github.com/microsoft/onnxruntime',
+    lizenz: 'MIT',
+  },
+];
+
+/** Modell der Spracherkennung (ADR 0042 Nr. 3): Gewichte von OpenAI (MIT), ONNX-Fassung mit q8 von Xenova (Apache-2.0). */
+export const SPRACHERKENNUNG: readonly LernQuelle[] = [
+  {
+    id: 'whisper',
+    name: 'Whisper (base)',
+    version: 'base',
+    urheber: 'Copyright (c) 2022 OpenAI',
+    adresse: 'https://github.com/openai/whisper',
+    lizenz: 'MIT',
+  },
+  {
+    id: 'whisper-base-onnx',
+    name: 'Xenova/whisper-base (ONNX, q8)',
+    version: '64da572',
+    urheber: 'Xenova',
+    adresse: 'https://huggingface.co/Xenova/whisper-base',
+    lizenz: 'Apache-2.0',
   },
 ];
 

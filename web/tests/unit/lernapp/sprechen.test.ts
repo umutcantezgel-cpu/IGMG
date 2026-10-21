@@ -18,9 +18,12 @@ import {
 import { type GeraetUmgebung, LEERER_STAND, liesSprechStand, MIN_FREI_BYTES, pruefeGeraet } from '@/lib/lernapp/sprechen/geraet';
 import {
   ABTASTRATE,
+  ARBEITER_BYTES,
   arbeiterAdresse,
   bewerteProbe,
+  GESAMT_BYTES,
   GESAMT_MB,
+  LIZENZ_DATEIEN,
   MODELL,
   MODELL_DATEIEN,
   modellAdresse,
@@ -209,7 +212,7 @@ describe('Gerätecheck, Probelauf und Stand', () => {
 });
 
 describe('Dateien vom eigenen Ursprung', () => {
-  it('genau 10 Dateien: 7 Modell-/Konfigurationsdateien, ORT .mjs und .wasm (ohne asyncify/jsep/jspi), Worker; ≈ 95 MB', () => {
+  it('genau 10 Dateien der Sprechübung: 7 Modell-/Konfigurationsdateien, ORT .mjs und .wasm (ohne asyncify/jsep/jspi), Worker; ≈ 95 MB', () => {
     expect(MODELL_DATEIEN).toHaveLength(7);
     expect(MODELL_DATEIEN.filter((d) => d.pfad.endsWith('_quantized.onnx'))).toHaveLength(2);
     expect([ORT.mjs, ORT.wasm]).toEqual(['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm']);
@@ -235,6 +238,7 @@ describe('Dateien vom eigenen Ursprung', () => {
       ...MODELL_DATEIEN.map((d) => ({ ziel: `public${modellAdresse(d.pfad)}`, bytes: d.bytes })),
       { ziel: `public${ortAdresse(ORT.wasm)}`, bytes: ORT.wasmBytes },
       { ziel: `public${ortAdresse(ORT.mjs)}`, bytes: expect.any(Number) as number },
+      ...LIZENZ_DATEIEN.map((d) => ({ ziel: `public${modellAdresse(d.pfad)}`, bytes: d.bytes })),
     ]);
     expect(quelle).toContain(MODELL.commit);
     const paket = JSON.parse(readFileSync(join(web, 'package.json'), 'utf8')) as { dependencies: Record<string, string> };
@@ -242,6 +246,26 @@ describe('Dateien vom eigenen Ursprung', () => {
     const sperre = readFileSync(join(web, 'pnpm-lock.yaml'), 'utf8');
     expect(sperre).toContain(`onnxruntime-web@${ORT.version}:`);
     expect(sperre).not.toContain('onnxruntime-node@');
+  });
+
+  it('Lizenztexte neben den Gewichten (ADR 0042 Nr. 3): gleich den gepinnten Texten, nicht im Download', () => {
+    const web = join(import.meta.dirname, '../../..');
+    const oeffentlich = (pfad: string) => readFileSync(join(web, 'public', modellAdresse(pfad)));
+    expect(LIZENZ_DATEIEN.map((d) => d.pfad)).toEqual(['LIZENZ-whisper-MIT.txt', 'LIZENZ-Apache-2.0.txt']);
+    for (const d of LIZENZ_DATEIEN) {
+      const text = oeffentlich(d.pfad);
+      expect(text.length, d.pfad).toBe(d.bytes);
+      expect(text.equals(readFileSync(join(web, 'daten/lernapp-modelle', d.pfad))), d.pfad).toBe(true);
+    }
+    expect(oeffentlich('LIZENZ-whisper-MIT.txt').toString()).toContain('Copyright (c) 2022 OpenAI');
+    expect(oeffentlich('LIZENZ-Apache-2.0.txt').toString()).toContain('Apache License');
+    // nicht Teil der Sprachprüfung: weder in der angezeigten Größe noch in den Dateien des Downloads
+    expect(GESAMT_BYTES).toBe(MODELL_DATEIEN.reduce((s, d) => s + d.bytes, 0) + ORT.wasmBytes + ARBEITER_BYTES);
+    expect(MODELL_DATEIEN.some((d) => d.pfad.startsWith('LIZENZ-'))).toBe(false);
+    // der Bauschritt prüft sie und versieht den Worker mit einem Lizenzkopf
+    const bauschritt = readFileSync(join(web, 'scripts/lernapp-modelle.mjs'), 'utf8');
+    expect(bauschritt).toMatch(/lizenzen\.length !== 2/);
+    expect(bauschritt).toMatch(/postBanner: lizenzkopf/);
   });
 
   it('Worker-Adresse trägt nur eine bereinigte Bau-Kennung', () => {

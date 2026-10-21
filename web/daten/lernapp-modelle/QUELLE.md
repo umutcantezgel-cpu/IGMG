@@ -1,13 +1,17 @@
 # Spracherkennung der Lern-App – Modell und Laufzeit (gepinnt)
 
 Herkunft, Prüfsummen und Lizenzen der Dateien, die die Sprechübung vom eigenen Ursprung lädt (ADR 0042 mit Fortschreibung
-S2/S5 Nr. 4–8, KERN 4.0 §1 und §9, PLAN §4.2). Genau **10 Dateien** unter `/lern-app/modelle/`, zusammen ≈ 95 MB; sie
-werden nur nach dem Knopf „Sprachprüfung laden“ geholt und bleiben im Vorrat `igmg-lernapp-modelle` des Lern-App-SW.
+S2/S5 Nr. 4–8, KERN 4.0 §1 und §9, PLAN §4.2). Genau **10 Dateien** der Sprechübung unter `/lern-app/modelle/`, zusammen
+≈ 95 MB; sie werden nur nach dem Knopf „Sprachprüfung laden“ geholt und bleiben im Vorrat `igmg-lernapp-modelle` des
+Lern-App-SW. Dazu liegen **2 Lizenztexte** neben den Gewichten (ADR 0042 Nr. 3, Fortschreibung Nr. 11); sie gehören nicht
+zum Download und nicht zum Vorrat. Zusammen 12 Dateien.
 
 Der Bauschritt `web/scripts/lernapp-modelle.mjs` (`pnpm lernapp:modelle`, auch in `pnpm build` und `scripts/vercel-bau.mjs`)
 liest die Tabelle unten, prüft jede Datei gegen ihre SHA-256 und bricht bei einer Abweichung ab:
 
 - Modelldateien liegen im Repository (`web/public/lern-app/modelle/whisper-base-64da572/`) und werden nur geprüft.
+- Die Lizenztexte liegen ebenfalls dort im Repository; der Bauschritt prüft sie gegen die Fassungen in diesem Ordner
+  (gleiche SHA-256, Tabelle „Lizenztexte neben den Gewichten“).
 - Die ORT-Dateien kommen aus dem exakt gepinnten `onnxruntime-web` in `node_modules` (Lockfile, Integrität sha512) und werden
   nach der Prüfung kopiert; sie stehen nicht im Repository (`.gitignore`). Nur die CPU-Fassung „plain“ (kein asyncify, jsep,
   jspi – WebGPU ist in der ersten Fassung aus, Fortschreibung Nr. 4).
@@ -29,6 +33,16 @@ liest die Tabelle unten, prüft jede Datei gegen ihre SHA-256 und bricht bei ein
 | `onnxruntime-web/dist/ort-wasm-simd-threaded.wasm` | `public/lern-app/modelle/ort-1.31.0-dev.20260914-8d85527a0/ort-wasm-simd-threaded.wasm` | 14264838 | `06ba057753da3847e4c24f02d91ab133455b0817c69a44993a9a53a2146df9e3` |
 | `onnxruntime-web/dist/ort-wasm-simd-threaded.mjs`  | `public/lern-app/modelle/ort-1.31.0-dev.20260914-8d85527a0/ort-wasm-simd-threaded.mjs`  | 24381    | `c57ca56328877353a575e51bbca6f18450027d6c9bf2307a2cb2c41363b4de9f` |
 
+## Lizenztexte neben den Gewichten
+
+Ausgeliefert unter `/lern-app/modelle/whisper-base-64da572/`, gleich den Dateien dieses Ordners. Der Apache-Text gilt für die
+ONNX-Fassung von Xenova und für transformers.js (im Worker gebündelt; der Worker trägt einen Lizenzkopf mit Verweis).
+
+| Datei                    | Ziel unter `web/`                                                     | Bytes | SHA-256                                                            |
+| ------------------------ | --------------------------------------------------------------------- | ----- | ------------------------------------------------------------------ |
+| `LIZENZ-whisper-MIT.txt` | `public/lern-app/modelle/whisper-base-64da572/LIZENZ-whisper-MIT.txt` | 1063  | `b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d` |
+| `LIZENZ-Apache-2.0.txt`  | `public/lern-app/modelle/whisper-base-64da572/LIZENZ-Apache-2.0.txt`  | 11358 | `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30` |
+
 Abgerufen am 20.10.2026 von
 `https://huggingface.co/Xenova/whisper-base/resolve/64da57285918e20ea79ea5c88eed7197933abaa8/<datei>`; Größe, Git-Kennung
 (JSON) bzw. LFS-SHA-256 (ONNX) gegen die Dateiliste dieses Commits geprüft
@@ -38,12 +52,12 @@ gleich den Belegen S2 und S5. Nicht geladen und deshalb nicht übernommen: `voca
 
 ## Herkunft und Lizenzen
 
-| Teil                                  | Quelle                                                              | Stand                                                                                                                     | Lizenz                                                                                                                                                                                                                   |
-| ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Whisper-Gewichte                      | OpenAI, `https://github.com/openai/whisper`                         | Modell „base“                                                                                                             | MIT, Text: `LIZENZ-whisper-MIT.txt` (Copyright (c) 2022 OpenAI)                                                                                                                                                          |
-| ONNX-Fassung mit q8                   | `Xenova/whisper-base`, `https://huggingface.co/Xenova/whisper-base` | Commit `64da57285918e20ea79ea5c88eed7197933abaa8`                                                                         | Apache-2.0 (Modellkarte), Text: `LIZENZ-Apache-2.0.txt`                                                                                                                                                                  |
-| transformers.js (im Worker gebündelt) | `@huggingface/transformers`                                         | 4.3.0 (npm, exakt gepinnt)                                                                                                | Apache-2.0, Text: `LIZENZ-Apache-2.0.txt`                                                                                                                                                                                |
-| ONNX Runtime Web (`.wasm`, `.mjs`)    | `onnxruntime-web`, Microsoft                                        | `1.31.0-dev.20260914-8d85527a0`, Commit `8d85527a010e294a26b274749f74294b2a32cec5` (von transformers.js 4.3.0 festgelegt) | MIT; Drittlizenzen (u. a. Eigen, MPL-2.0) in `ThirdPartyNotices.txt` des Repositorys `microsoft/onnxruntime` an diesem Commit – das npm-Paket enthält sie nicht; Übernahme ins Lizenzverzeichnis in L8 (ADR 0042 Nr. 10) |
+| Teil                                  | Quelle                                                              | Stand                                                                                                                     | Lizenz                                                                                                                                                                                                                                                                                                    |
+| ------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Whisper-Gewichte                      | OpenAI, `https://github.com/openai/whisper`                         | Modell „base“                                                                                                             | MIT, Text: `LIZENZ-whisper-MIT.txt` (Copyright (c) 2022 OpenAI)                                                                                                                                                                                                                                           |
+| ONNX-Fassung mit q8                   | `Xenova/whisper-base`, `https://huggingface.co/Xenova/whisper-base` | Commit `64da57285918e20ea79ea5c88eed7197933abaa8`                                                                         | Apache-2.0 (Modellkarte), Text: `LIZENZ-Apache-2.0.txt`                                                                                                                                                                                                                                                   |
+| transformers.js (im Worker gebündelt) | `@huggingface/transformers`                                         | 4.3.0 (npm, exakt gepinnt)                                                                                                | Apache-2.0, Text: `LIZENZ-Apache-2.0.txt`                                                                                                                                                                                                                                                                 |
+| ONNX Runtime Web (`.wasm`, `.mjs`)    | `onnxruntime-web`, Microsoft                                        | `1.31.0-dev.20260914-8d85527a0`, Commit `8d85527a010e294a26b274749f74294b2a32cec5` (von transformers.js 4.3.0 festgelegt) | MIT (Copyright (c) Microsoft Corporation; Text auf der Seite „Quellen“ der Lern-App); Drittlizenzen (u. a. Eigen, MPL-2.0) in `ThirdPartyNotices.txt` des Repositorys `microsoft/onnxruntime` an diesem Commit – das npm-Paket enthält sie nicht; Übernahme ins Lizenzverzeichnis in L8 (ADR 0042 Nr. 10) |
 
 Hinweise:
 
