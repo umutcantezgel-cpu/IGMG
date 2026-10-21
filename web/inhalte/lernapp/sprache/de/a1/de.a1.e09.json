@@ -1083,7 +1083,7 @@
     },
     {
       "schluessel": "de.a1.e09.s0049",
-      "text": "Neben der Kreuzung ist eine Apotheke.",
+      "text": "An der Kreuzung ist eine Apotheke.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1905,13 +1905,13 @@
     },
     {
       "schluessel": "de.a1.e09.s0182",
-      "text": "Ich kenne die Haltestelle nicht. Frag den Fahrer!",
+      "text": "Ich kenne die Haltestelle nicht. Frag den Fahrer, Papa!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e09.s0183",
-      "text": "Murat geht im Bus nach vorne.",
+      "text": "Murat geht nach vorne zum Fahrer.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1935,7 +1935,7 @@
     },
     {
       "schluessel": "de.a1.e09.s0187",
-      "text": "An der dritten Haltestelle steigt ihr aus.",
+      "text": "An der dritten Haltestelle steigen Sie aus.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1959,7 +1959,7 @@
     },
     {
       "schluessel": "de.a1.e09.s0191",
-      "text": "Murat, ist das schon der Bahnhof?",
+      "text": "Papa, ist das schon der Bahnhof?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1971,7 +1971,7 @@
     },
     {
       "schluessel": "de.a1.e09.s0193",
-      "text": "So, Bahnhof! Hier müsst ihr aussteigen.",
+      "text": "So, Bahnhof! Hier müssen Sie aussteigen.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2077,7 +2077,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e09.s0029",
           "wort": 4,
-          "ablenker": ["der", "das"]
+          "ablenker": ["den", "das"]
         },
         {
           "schluessel": "de.a1.e09.l01.a08",
@@ -2104,7 +2104,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e09.s0002",
           "nach": "ziel",
-          "alternativen": ["Unsere Stadt ist nicht so groß."],
+          "alternativen": ["Unsere Stadt ist nicht so groß.", "Sehr groß ist unsere Stadt nicht."],
           "ablenker": ["klein", "Park"]
         },
         {
@@ -2119,7 +2119,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e09.s0024",
           "wort": 0,
-          "ablenker": ["Kennst", "Kennt"]
+          "ablenker": ["Kennst", "Kenne"]
         },
         {
           "schluessel": "de.a1.e09.l01.a13",
@@ -2371,7 +2371,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e09.durch",
-          "ablenker": ["de.a1.e09.ueber", "de.a1.e09.unter"]
+          "ablenker": ["de.a1.e09.neben", "de.a1.e09.unter"]
         },
         {
           "schluessel": "de.a1.e09.l03.a14",
@@ -2388,7 +2388,7 @@
         {
           "schluessel": "de.a1.e09.l03.a15",
           "typ": "sprechen",
-          "satz": "de.a1.e09.s0062"
+          "satz": "de.a1.e09.s0088"
         },
         {
           "schluessel": "de.a1.e09.l03.a16",
@@ -2545,7 +2545,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e09.man",
-          "ablenker": ["de.a1.e01.wer", "de.a1.e06.jemand"]
+          "ablenker": ["de.a1.e01.wer", "de.a1.e01.ich"]
         },
         {
           "schluessel": "de.a1.e09.l05.a03",
@@ -2897,7 +2897,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e09.s0187",
           "nach": "ziel",
-          "alternativen": ["Ihr steigt an der dritten Haltestelle aus."],
+          "alternativen": ["Sie steigen an der dritten Haltestelle aus.", "Steigen Sie an der dritten Haltestelle aus."],
           "ablenker": ["steigst", "Bahnhof"]
         },
         {
@@ -2905,7 +2905,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e09.s0193",
           "wort": 3,
-          "ablenker": ["musst", "müssen"]
+          "ablenker": ["musst", "müsst"]
         },
         {
           "schluessel": "de.a1.e09.l06.a09",
@@ -3189,7 +3189,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e09.s0113",
           "wort": 1,
-          "ablenker": ["wartet", "warten"]
+          "ablenker": ["wartest", "warten"]
         },
         {
           "schluessel": "de.a1.e09.l08.a12",
