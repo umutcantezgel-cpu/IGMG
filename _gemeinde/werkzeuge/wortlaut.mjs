@@ -544,6 +544,11 @@ const AUSNAHMEN = [
     passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /messages\/lernapp\/(de|tr|ar|entwurf)\.json$/.test(String(e.datei)),
   },
   {
+    id: 'L-02',
+    grund: 'Lauf Lern-App, L3-06 Verwaltung v1 (ADR 0041, PLAN §7): neue Bedientexte der Verwaltung der Lern-App in `messages/verwaltung/lernapp.json` und der Prüfoberfläche `messages/verwaltung/lernapp-pruefung.json` (Hinweise zu Sprecher-Vereinbarung, Meldungen ohne Personendaten, Prüfquoten). Kein bestehender Rechtstext geändert; die Vereinbarung selbst liegt als Entwurf in docs/recht/entwuerfe (LM-08).',
+    passt: (e) => e.gruppe === 'M' && e.status === 'neu' && /messages\/verwaltung\/lernapp(-pruefung)?\.json$/.test(String(e.datei)),
+  },
+  {
     id: 'G-03',
     grund: 'Neue Schlüssel der Gemeinde-Plattform für neue Funktionen (Konten, Mein Bereich, Push-Einwilligung, Chat, Mein Ort, Koran, Hadith, Elifbe, Lernen, Quellen, Barrierefreiheit): Einwilligungs- und Datenschutzhinweise der neuen Funktionen, versioniert über den Text-Hash (src/lib/konto/einwilligung.ts). Kein bestehender Text geändert; die Funktionen sind in der Produktion aus, bis MN-11 freigibt.',
     passt: (e) =>

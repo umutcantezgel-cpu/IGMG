@@ -38,6 +38,9 @@ const eslintConfig = defineConfig([
     'playwright-report/**',
     'test-results/**',
     'src/components/ui/**',
+    // vom Bauschritt scripts/lernapp-modelle.mjs erzeugt (gitignored): ORT-Laufzeit und gebündelter Sprach-Worker
+    'public/lern-app/modelle/ort-*/**',
+    'public/lern-app/modelle/sprechen/**',
   ]),
 ]);
 
