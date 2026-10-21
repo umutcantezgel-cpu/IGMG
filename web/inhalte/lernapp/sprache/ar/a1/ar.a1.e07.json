@@ -21,7 +21,7 @@
       {
         "de": "Ich kann Zahlen bis hundert und Preise verstehen.",
         "tr": "Yüze kadar sayıları ve fiyatları anlayabilirim.",
-        "ar": "أستطيع أن أفهم الأعداد حتى مئة والأسعار."
+        "ar": "أستطيع أن أفهم الأسعار والأعداد حتى مئة."
       },
       {
         "de": "Ich kann Obst und Gemüse benennen.",
@@ -271,7 +271,7 @@
       "wortart": "nomen",
       "merkmale": {
         "umschrift": "kīs",
-        "genus": "f"
+        "genus": "m"
       },
       "formen": {
         "plural": "أَكْيَاس",
@@ -1194,7 +1194,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0043",
-      "text": "عُمْرُ جَدَّةِ سَمِيرٍ تِسْعُونَ سَنَةً.",
+      "text": "عُمْرُ جَدَّةِ كَارْلْ تِسْعُونَ سَنَةً.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1254,7 +1254,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0053",
-      "text": "هَلْ أَحَدٌ هُنَا؟",
+      "text": "هَلْ هُنَا أَحَدٌ؟",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1470,7 +1470,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0089",
-      "text": "مَاذَا تُرِيدِينَ يَا سَلْمَى؟",
+      "text": "مَاذَا تُرِيدِينَ أَنْتِ يَا سَلْمَى؟",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1536,7 +1536,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0100",
-      "text": "مَاذَا تَشْتَرِي يَا خَالِدُ؟",
+      "text": "مَاذَا تَشْتَرِي يَا إِمْرَهْ؟",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1758,7 +1758,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0137",
-      "text": "إِذًا الْحِسَابُ عِشْرُونَ يُورُو.",
+      "text": "إِذًا، الْحِسَابُ عِشْرُونَ يُورُو.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1854,7 +1854,7 @@
     },
     {
       "schluessel": "ar.a1.e07.s0153",
-      "text": "حَسَنًا، خُبْزٌ وَاحِدٌ، لَوْ سَمَحْتَ.",
+      "text": "حَسَنًا، أُرِيدُ الْخُبْزَ، لَوْ سَمَحْتَ.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2530,7 +2530,7 @@
             }
           ],
           "antwort": "ar.a1.e07.s0086",
-          "ablenker": ["ar.a1.e07.s0071", "ar.a1.e07.s0082"]
+          "ablenker": ["ar.a1.e07.s0071", "ar.a1.e07.s0030"]
         },
         {
           "schluessel": "ar.a1.e07.l03.a15",
@@ -3234,7 +3234,7 @@
       "ziel": {
         "de": "Prüfstein: Ich kann auf dem Markt einkaufen – Obst und Gemüse verlangen, nach dem Preis fragen und bezahlen.",
         "tr": "Mihenk taşı: Pazarda alışveriş yapabilirim – meyve ve sebze isteyebilir, fiyat sorabilir ve ödeme yapabilirim.",
-        "ar": "محك: أستطيع أن أشتري من السوق: أطلب الفواكه والخضار وأسأل عن السعر وأدفع."
+        "ar": "اختبار الوحدة: أستطيع أن أشتري من السوق، وأن أطلب الفواكه والخضار، وأن أسأل عن السعر، وأن أدفع."
       },
       "aufgaben": [
         {
@@ -3329,7 +3329,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e07.s0020",
           "nach": "ziel",
-          "alternativen": ["أُمِّي الْآنَ فِي السُّوقِ."],
+          "alternativen": ["أُمِّي الْآنَ فِي السُّوقِ.", "الْآنَ أُمِّي فِي السُّوقِ."],
           "ablenker": ["الْمَخْبَزِ", "أَبِي"]
         },
         {
