@@ -97,6 +97,14 @@ Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
    Adresse); alte Bündel nennt das Skript, gelöscht werden sie erst, wenn kein Paket mehr darauf verweist (Menschen, LM-15).
 6. **Anhören vor dem Hochladen:** `LERNAPP_AUDIO_LOKAL` (Ordner `<sprache>/<datei>.lpa`) – die Route sucht dort vor den
    Testbündeln, nur ohne `LERNAPP_BLOB_BASIS`; dazu `pnpm lernapp:import --audio-manifest <pfad>` (nur ergänzend).
+7. **Manifest ins Repository erst nach dem Hochladen:** Ohne `--manifest` schreibt `lernapp:audio-manifest` nach
+   `inhalte/lernapp/audio-manifest/<sprache>.json` nur, wenn alle neuen Bündel im Blob liegen; sonst neben die Bündel
+   (`<aus>/manifest-<sprache>.json`). Ein eingechecktes Manifest verweist so nie auf Bündel, die es im Blob nicht gibt.
+8. **Rückerkennung de, Zahlwörter:** Ziffern in Abschrift und Text zählen als deutsches Zahlwort (0–9999); whisper-base schreibt
+   gesprochene Zahlen als Ziffern (Probelauf: 26 von 137 Ausreißern). Schwellen 0,75/0,6 unverändert.
+9. **Aussprache-Änderungen:** `pnpm lernapp:audio-liste <sprache> --erneuern <wort,…>` nimmt Texte mit diesen Wörtern erneut in
+   die Liste, obwohl ihr Clip vorliegt (menschliche Aufnahmen bleiben); der neue Clip ersetzt den alten im Manifest, das Bündel
+   wird neu gebaut. Messwerte und Hochrechnung: Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`.
 
 ## Alternativen
 

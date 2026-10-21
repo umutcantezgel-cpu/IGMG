@@ -102,8 +102,11 @@ pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips
   48 kHz, `-application voip`, 20-ms-Rahmen (ADR 0039 Fortschreibung S4 Nr. 1).
 - **Prüfen** (`web/src/lib/lernapp/audio/pruefung.ts`, am dekodierten Clip): Netto-Dauer ≥ 0,25 s; 2–8 Silben/s ab 3 Silben;
   Rand-Stille ≤ 0,3 s; kein Clipping; −23 ± 1 LUFS. de-Sätze ab 4 Wörtern: whisper-base (in Node, ohne Netz; jede andere
-  Adresse wird abgewiesen und gezählt), Trefferanteil mild ≥ 0,75 in Ordnung, 0,6–0,75 einmal neu, < 0,6 hören. Lemmata ohne
-  Rückerkennung. Der Bericht enthält nur Schlüssel, Messwerte und Urteile – keine Texte, keine Abschriften.
+  Adresse wird abgewiesen und gezählt), Trefferanteil mild ≥ 0,75 in Ordnung, 0,6–0,75 einmal neu, < 0,6 hören; Ziffern in
+  Abschrift und Text zählen als Zahlwort (whisper-base schreibt „zehn“ als „10“). Lemmata ohne Rückerkennung. Der Bericht
+  enthält nur Schlüssel, Messwerte und Urteile – keine Texte, keine Abschriften.
+- **Dauer** (Probelauf A1, Bericht §3): Erzeugung effektiv ≈ 0,4 × Audiodauer; Rückerkennung ≈ 9 s je Satz und Prozess
+  (whisper-base füllt auf 30 s auf) – für A1 de ≈ 0,5 h Erzeugung und ≈ 1,2 h Prüfung auf 4 Kernen.
 
 ## 6. Aussprache-Überschreibungen (`web/inhalte/lernapp/aussprache/de.json`)
 
@@ -113,7 +116,12 @@ pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips
   ß als ss). Buchstabennamen („B wie Brot“) und ß-Wörter: gruut 2.4.0 schreibt ß als ss, findet das Wort dann nicht im
   Lexikon und schätzt einen kurzen Vokal („groß“ → ɡʁɔss).
 - Lexikon-Lautungen, die nur ungewohnt aussehen (z. B. „Seite“ → zəiːtə), bleiben: Das Modell wurde mit ihnen trainiert.
+- Eigennamen und Fremdwörter, die gruut wie deutsche Wörter liest oder schätzt (z. B. „Can“ → „tsan“, „Tee“ → „tiː“), bekommen
+  eine Phonemfolge; Lautschrift prüfen mit `tokenizer.py` (`Tokenizer.phoneme`).
 - Zeichen außerhalb des Vokabulars der Stimme lehnt `erzeuge.py` ab. Die Hörabnahme der Überschreibungen ist Teil von LM-06.
+- **Nach einer Änderung** die betroffenen Clips neu erzeugen: `pnpm lernapp:audio-liste de --erneuern <wort,…>` nimmt Texte mit
+  diesen Wörtern erneut in die Liste (menschliche Aufnahmen bleiben); danach wie in §4 prüfen und `audio-manifest` (ersetzt die
+  Clips, baut die Bündel neu, nennt die alten).
 
 ## 7. Offen
 
