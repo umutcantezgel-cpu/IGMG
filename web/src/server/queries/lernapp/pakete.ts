@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, eq, inArray, or, sql } from 'drizzle-orm';
+import { and, asc, eq, inArray, sql } from 'drizzle-orm';
 import { cacheLife, cacheTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
@@ -29,8 +29,8 @@ import {
   baueVerzeichnis,
 } from '@/lib/lernapp/paket/bauen';
 import { buendelAdresse } from '@/lib/lernapp/paket/buendel';
-import { textHash } from '@/lib/lernapp/paket/hash';
 import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
+import { inBloecken, textHashGemerkt } from './bloecke';
 
 /**
  * Kurspakete aus der Datenbank (ADR 0039 Nr. 1/2, PLAN §3.10). Gecacht mit `'use cache: remote'`, `cacheLife('max')` und
@@ -48,33 +48,38 @@ const vorrang = (stimme: string) => {
 
 type InhaltTyp = (typeof schema.lernappInhaltTypEnum.enumValues)[number];
 
-/** Prüfungen je Baustein (`<typ>:<id>`), ergänzt um die aktuellen Rollen der Prüfenden (freigabe.ts). */
-async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string }[]): Promise<Map<string, Pruefung[]>> {
+/** Prüfungen je Baustein (`<typ>:<id>`), ergänzt um die aktuellen Rollen der Prüfenden (freigabe.ts); in Blöcken. */
+export async function ladePruefungen(ids: readonly { typ: InhaltTyp; id: string }[]): Promise<Map<string, Pruefung[]>> {
   const ergebnis = new Map<string, Pruefung[]>();
   if (!ids.length) return ergebnis;
-  const zeilen = await db
-    .select({
-      inhaltTyp: schema.lernappPruefung.inhaltTyp,
-      inhaltId: schema.lernappPruefung.inhaltId,
-      inhaltHash: schema.lernappPruefung.inhaltHash,
-      art: schema.lernappPruefung.art,
-      pruefendeId: schema.lernappPruefung.pruefendeId,
-      urteil: schema.lernappPruefung.urteil,
-      kategorie: schema.lernappPruefung.kategorie,
-      belegeGeprueft: schema.lernappPruefung.belegeGeprueft,
-      am: schema.lernappPruefung.am,
-    })
-    .from(schema.lernappPruefung)
-    .where(inArray(schema.lernappPruefung.inhaltId, [...new Set(ids.map((x) => x.id))]));
+  const zeilen = await inBloecken(
+    ids.map((x) => x.id),
+    (block) =>
+      db
+        .select({
+          inhaltTyp: schema.lernappPruefung.inhaltTyp,
+          inhaltId: schema.lernappPruefung.inhaltId,
+          inhaltHash: schema.lernappPruefung.inhaltHash,
+          art: schema.lernappPruefung.art,
+          pruefendeId: schema.lernappPruefung.pruefendeId,
+          urteil: schema.lernappPruefung.urteil,
+          kategorie: schema.lernappPruefung.kategorie,
+          belegeGeprueft: schema.lernappPruefung.belegeGeprueft,
+          am: schema.lernappPruefung.am,
+        })
+        .from(schema.lernappPruefung)
+        .where(inArray(schema.lernappPruefung.inhaltId, block)),
+  );
   if (!zeilen.length) return ergebnis;
-  const personen = [...new Set(zeilen.flatMap((z) => (z.pruefendeId ? [z.pruefendeId] : [])))];
+  const personen = zeilen.flatMap((z) => (z.pruefendeId ? [z.pruefendeId] : []));
   const rollen = new Map<string, string[]>();
-  if (personen.length)
-    for (const r of await db
+  for (const r of await inBloecken(personen, (block) =>
+    db
       .select({ benutzerId: schema.rolleZuweisung.benutzerId, rolle: schema.rolleZuweisung.rolle })
       .from(schema.rolleZuweisung)
-      .where(inArray(schema.rolleZuweisung.benutzerId, personen)))
-      rollen.set(r.benutzerId, [...(rollen.get(r.benutzerId) ?? []), r.rolle]);
+      .where(inArray(schema.rolleZuweisung.benutzerId, block)),
+  ))
+    rollen.set(r.benutzerId, [...(rollen.get(r.benutzerId) ?? []), r.rolle]);
   for (const z of zeilen) {
     const k = `${z.inhaltTyp}:${z.inhaltId}`;
     ergebnis.set(k, [
@@ -127,23 +132,18 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
   if (!einheiten.length) return [];
   const einheitIds = einheiten.map((e) => e.id);
 
-  const lektionen = await db
-    .select()
-    .from(schema.lernappLektion)
-    .where(inArray(schema.lernappLektion.einheitId, einheitIds))
-    .orderBy(asc(schema.lernappLektion.reihenfolge), asc(schema.lernappLektion.schluessel));
-  const aufgaben = lektionen.length
-    ? await db
-        .select()
-        .from(schema.lernappAufgabe)
-        .where(
-          inArray(
-            schema.lernappAufgabe.lektionId,
-            lektionen.map((l) => l.id),
-          ),
-        )
-        .orderBy(asc(schema.lernappAufgabe.reihenfolge), asc(schema.lernappAufgabe.schluessel))
-    : [];
+  const nachReihe = <T extends { reihenfolge: number; schluessel: string }>(liste: T[]) =>
+    liste.sort((a, b) => a.reihenfolge - b.reihenfolge || (a.schluessel < b.schluessel ? -1 : a.schluessel > b.schluessel ? 1 : 0));
+  // alle Abfragen über Listen in Blöcken (Parametergrenze); die Reihenfolge stellt die Sortierung danach her
+  const lektionen = nachReihe(
+    await inBloecken(einheitIds, (block) => db.select().from(schema.lernappLektion).where(inArray(schema.lernappLektion.einheitId, block))),
+  );
+  const aufgaben = nachReihe(
+    await inBloecken(
+      lektionen.map((l) => l.id),
+      (block) => db.select().from(schema.lernappAufgabe).where(inArray(schema.lernappAufgabe.lektionId, block)),
+    ),
+  );
 
   // Verweise der Aufgaben (Lemmata und Sätze, auch aus früheren Einheiten)
   const verweise = new Map<string, Set<string>>();
@@ -157,37 +157,47 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
     verweise.set(e, menge);
   }
   const alleVerweise = [...new Set([...verweise.values()].flatMap((m) => [...m]))];
-  const [lemmata, saetze] = alleVerweise.length
-    ? await Promise.all([
+  const [lemmata, saetze] = await Promise.all([
+    inBloecken(alleVerweise, (block) =>
+      db
+        .select()
+        .from(schema.lernappLemma)
+        .where(and(eq(schema.lernappLemma.kursId, ziel), inArray(schema.lernappLemma.schluessel, block))),
+    ),
+    inBloecken(alleVerweise, (block) =>
+      db
+        .select()
+        .from(schema.lernappSatz)
+        .where(and(eq(schema.lernappSatz.kursId, ziel), inArray(schema.lernappSatz.schluessel, block))),
+    ),
+  ]);
+  const u = schema.lernappUebersetzung;
+  const uebersetzungen = [
+    ...(await inBloecken(
+      lemmata.map((l) => l.id),
+      (block) =>
         db
           .select()
-          .from(schema.lernappLemma)
-          .where(and(eq(schema.lernappLemma.kursId, ziel), inArray(schema.lernappLemma.schluessel, alleVerweise))),
+          .from(u)
+          .where(and(eq(u.sprache, ausgang), inArray(u.lemmaId, block))),
+    )),
+    ...(await inBloecken(
+      saetze.map((s) => s.id),
+      (block) =>
         db
           .select()
-          .from(schema.lernappSatz)
-          .where(and(eq(schema.lernappSatz.kursId, ziel), inArray(schema.lernappSatz.schluessel, alleVerweise))),
-      ])
-    : [[], []];
-  const lemmaIds = lemmata.map((l) => l.id);
-  const satzIds = saetze.map((s) => s.id);
-  const uebersetzungen =
-    lemmaIds.length || satzIds.length
-      ? await db
-          .select()
-          .from(schema.lernappUebersetzung)
-          .where(
-            and(
-              eq(schema.lernappUebersetzung.sprache, ausgang),
-              or(inArray(schema.lernappUebersetzung.lemmaId, lemmaIds), inArray(schema.lernappUebersetzung.satzId, satzIds)),
-            ),
-          )
-      : [];
-  const tipps = await db
-    .select()
-    .from(schema.lernappTipp)
-    .where(and(inArray(schema.lernappTipp.einheitId, einheitIds), eq(schema.lernappTipp.ausgangssprache, ausgang)))
-    .orderBy(asc(schema.lernappTipp.reihenfolge), asc(schema.lernappTipp.schluessel));
+          .from(u)
+          .where(and(eq(u.sprache, ausgang), inArray(u.satzId, block))),
+    )),
+  ];
+  const tipps = nachReihe(
+    await inBloecken(einheitIds, (block) =>
+      db
+        .select()
+        .from(schema.lernappTipp)
+        .where(and(inArray(schema.lernappTipp.einheitId, block), eq(schema.lernappTipp.ausgangssprache, ausgang))),
+    ),
+  );
 
   const pruefungen = await ladePruefungen([
     ...einheiten.map((x) => ({ typ: 'einheit' as const, id: x.id })),
@@ -254,20 +264,22 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
   }
 
   // Audio: nur Zieltexte ohne Religionsbezug, je Text die Stimme mit Vorrang (Mensch vor Sprachausgabe vor Testton)
-  const hashes = [...new Set([...eintraege.values()].filter((e) => !e.religionsbezug).map((e) => textHash(e.text)))];
-  const [alleClips, wahlen] = hashes.length
-    ? await Promise.all([
-        db
-          .select()
-          .from(schema.lernappAudio)
-          .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.textHash, hashes))),
-        // Wahl im Audio-Studio (L3-06): „Sprachausgabe“ liefert eine vorhandene menschliche Aufnahme nicht aus
-        db
-          .select({ textHash: schema.lernappAudioWahl.textHash, wahl: schema.lernappAudioWahl.wahl })
-          .from(schema.lernappAudioWahl)
-          .where(and(eq(schema.lernappAudioWahl.sprache, ziel), inArray(schema.lernappAudioWahl.textHash, hashes))),
-      ])
-    : [[], []];
+  const hashes = [...new Set([...eintraege.values()].filter((e) => !e.religionsbezug).map((e) => textHashGemerkt(e.text)))];
+  const [alleClips, wahlen] = await Promise.all([
+    inBloecken(hashes, (block) =>
+      db
+        .select()
+        .from(schema.lernappAudio)
+        .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.textHash, block))),
+    ),
+    // Wahl im Audio-Studio (L3-06): „Sprachausgabe“ liefert eine vorhandene menschliche Aufnahme nicht aus
+    inBloecken(hashes, (block) =>
+      db
+        .select({ textHash: schema.lernappAudioWahl.textHash, wahl: schema.lernappAudioWahl.wahl })
+        .from(schema.lernappAudioWahl)
+        .where(and(eq(schema.lernappAudioWahl.sprache, ziel), inArray(schema.lernappAudioWahl.textHash, block))),
+    ),
+  ]);
   const ohneMensch = new Set(wahlen.filter((w) => w.wahl === 'sprachausgabe').map((w) => w.textHash));
   // Audio-Stichprobe (ADR 0041 Nr. 2, PLAN §6.5): „abgelehnt“ oder kritisch (z. B. falsche Aussprache) zum aktuellen
   // Inhalts-Hash des Clips verbirgt ihn sofort; dann greift die nächste Stimme oder „Audio folgt“.
@@ -279,18 +291,18 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
   );
   const buendelNamen = [...new Set(clips.map((c) => c.buendel))];
   const groessen = new Map<string, number>(
-    buendelNamen.length
-      ? (
-          await db
-            .select({
-              buendel: schema.lernappAudio.buendel,
-              bytes: sql<number>`max(${schema.lernappAudio.versatz} + ${schema.lernappAudio.laenge})`,
-            })
-            .from(schema.lernappAudio)
-            .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.buendel, buendelNamen)))
-            .groupBy(schema.lernappAudio.buendel)
-        ).map((z) => [z.buendel, Number(z.bytes)])
-      : [],
+    (
+      await inBloecken(buendelNamen, (block) =>
+        db
+          .select({
+            buendel: schema.lernappAudio.buendel,
+            bytes: sql<number>`max(${schema.lernappAudio.versatz} + ${schema.lernappAudio.laenge})`,
+          })
+          .from(schema.lernappAudio)
+          .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.buendel, block)))
+          .groupBy(schema.lernappAudio.buendel),
+      )
+    ).map((z) => [z.buendel, Number(z.bytes)]),
   );
   const audio = new Map<string, BauAudio>();
   for (const c of [...clips].sort((a, b) => vorrang(a.stimme) - vorrang(b.stimme) || (a.stimme < b.stimme ? -1 : 1))) {
@@ -333,7 +345,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
           })),
       }));
     const eigeneEintraege = nur(eintraege);
-    const eigeneHashes = new Set([...eigeneEintraege.values()].map((x) => textHash(x.text)));
+    const eigeneHashes = new Set([...eigeneEintraege.values()].map((x) => textHashGemerkt(x.text)));
     return {
       richtung,
       einheit: {

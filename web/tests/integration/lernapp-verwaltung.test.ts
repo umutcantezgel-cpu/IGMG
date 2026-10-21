@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { solveChallenge } from 'altcha-lib';
 import { deriveKey } from 'altcha-lib/algorithms/pbkdf2';
 import { and, eq, like } from 'drizzle-orm';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { db as appDb, type Datenbank, schema } from '@/lib/db';
 import { textHash } from '@/lib/lernapp/paket/hash';
 import type { RollenZuweisung } from '@/lib/rechte/matrix';
@@ -26,7 +26,9 @@ const meldungen = await import('@/server/actions/lernapp-meldungen');
 const audio = await import('@/server/actions/lernapp-audio');
 const meldungRoute = await import('@/app/api/lernapp/meldung/route');
 const aufnahmeRoute = await import('@/app/[locale]/verwaltung/(geschuetzt)/lernapp/audio/aufnahme/[id]/route');
-const { ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
+const { baueRichtung, ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
+const { BLOECKE } = await import('@/server/queries/lernapp/bloecke');
+const { ladeGesperrte } = await import('@/server/queries/lernapp/meldungen');
 const { kandidaten, ladeWarteschlange } = await import('@/server/queries/lernapp/sprachpruefung');
 const { ladeKursBaum, ladeLernappUebersicht, ladeVorschau } = await import('@/server/queries/lernapp/verwaltung');
 const { ladeStudio } = await import('@/server/queries/lernapp/audio-studio');
@@ -80,6 +82,7 @@ describe('Rechte und Schalter (Negativfälle)', () => {
     () => meldungen.meldungErledigen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
     () => meldungen.alternativeErgaenzen({}, formular({ id: '00000000-0000-0000-0000-000000000000', alternative: 'x' })),
     () => meldungen.eintragSperren({}, formular({ id: '00000000-0000-0000-0000-000000000000', ziel: 'x' })),
+    () => meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' })),
     () => audio.sprecherAnlegen({}, formular({ name: 'Testperson Eins' })),
     () => audio.aufnahmeSpeichern({}, formular({ eintrag: 'tr.a1.e01.w001' })),
     () => audio.aufnahmeVerwerfen({}, formular({ id: '00000000-0000-0000-0000-000000000000' })),
@@ -427,10 +430,57 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     });
     const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
     expect(a!.status).toBe('gesperrt');
+    expect(vorher!.status).not.toBe('gesperrt');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     // Audit nennt den Schlüssel des gesperrten Eintrags (kein Inhalt)
     const [audit] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.zielId === m!.id);
-    expect(audit!.details).toEqual({ aktion: 'gesperrt', kategorie: 'fehler_zieltext', eintrag: 'tr.a1.e01.l01.a01' });
+    // Stand vor der Sperre für „Wieder freigeben“ (L3-06b)
+    expect(audit!.details).toEqual({
+      aktion: 'gesperrt',
+      kategorie: 'fehler_zieltext',
+      eintrag: 'tr.a1.e01.l01.a01',
+      vorher: vorher!.status,
+    });
+  });
+
+  it('Wieder freigeben (L3-06b): nur über Meldungen gesperrte, mit Bestätigung, Stand vorher, sofort wirksam, Audit', async () => {
+    await angemeldetAls(BILDUNG);
+    const [vorher] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.details?.eintrag === 'tr.a1.e01.l01.a01');
+    const gesperrte = await ladeGesperrte();
+    expect(gesperrte.map((g) => [g.schluessel, g.art, g.vorher])).toEqual([['tr.a1.e01.l01.a01', 'aufgabe', vorher!.details!.vorher]]);
+    // Vom Import gesperrt (nicht über eine Meldung): hier nicht freizugeben
+    await db.update(schema.lernappLemma).set({ status: 'gesperrt' }).where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.w002', bestaetigt: '1' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
+    await db
+      .update(schema.lernappLemma)
+      .set({ status: 'automatisch_geprueft' })
+      .where(eq(schema.lernappLemma.schluessel, 'tr.a1.e01.w002'));
+    // ohne ausdrückliche Bestätigung nichts
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01' }))).toEqual({ fehler: 'bestaetigenFreigabe' });
+    aufrufe.updateTag.length = 0;
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toMatchObject({
+      gespeichert: expect.any(Number),
+    });
+    const [a] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
+    expect(a!.status).toBe(vorher!.details!.vorher);
+    expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    expect((await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01'))!.lektion.aufgaben.some((x) => x.schluessel === 'tr.a1.e01.l01.a01')).toBe(
+      true,
+    );
+    const [audit] = await audits('lernapp.eintrag_entsperrt');
+    expect(audit).toMatchObject({
+      zielTyp: 'lernapp_eintrag',
+      zielId: 'tr.a1.e01.l01.a01',
+      details: { art: 'aufgabe', status: a!.status },
+    });
+    expect(await ladeGesperrte()).toEqual([]);
+    expect(await meldungen.eintragEntsperren({}, formular({ ziel: 'tr.a1.e01.l01.a01', bestaetigt: '1' }))).toEqual({
+      fehler: 'nichtGefunden',
+    });
+    // für die Vorschau-Prüfung unten wieder gesperrt (wie vorher)
+    await db.update(schema.lernappAufgabe).set({ status: 'gesperrt' }).where(eq(schema.lernappAufgabe.schluessel, 'tr.a1.e01.l01.a01'));
   });
 });
 
@@ -531,6 +581,12 @@ describe('Audio-Studio', () => {
     expect((await imPaket())?.stimme).not.toBe(k.clip!.stimme);
     if (eintrag === 'tr.a1.e01.w001') expect((await imPaket())?.stimme).toBe('test:ton');
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
+    // Audio-Studio: der beurteilte Clip ist gesperrt und nie die wirksame Stimme (Restmangel L3-06)
+    const studio = (await ladeStudio('tr', 'alle', 0)).eintraege.find((e) => e.schluessel === eintrag)!;
+    expect(studio.clips.find((c) => c.id === k.inhaltId)?.gesperrt).toBe(true);
+    expect(studio.clips.filter((c) => c.id !== k.inhaltId).every((c) => !c.gesperrt)).toBe(true);
+    expect(studio.wirksam).not.toBe(k.clip!.stimme);
+    expect(studio.wirksam).toBe((await imPaket())?.stimme ?? null);
     // Kandidat bleibt (Stichprobe stabil); die Übersicht zählt den Befund
     expect((await kandidaten('tr.a1.e01', 'audio')).find((x) => x.schluessel === eintrag)?.inhaltId).toBe(k.inhaltId);
     expect((await ladeLernappUebersicht()).befunde.kritisch).toBe(kritischVorher + 1);
@@ -568,5 +624,56 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     const aus: { id: string }[] = [];
     await lernappPruefen(db as unknown as Datenbank, { FUNKTION_LERNAPP: 'aus' }, true, new Date(), (p) => aus.push(p));
     expect(aus.map((p) => p.id)).toEqual(['lernapp.schalter']);
+  });
+});
+
+describe('Abfragen in Blöcken und gebündelt (Restmängel L3-06)', () => {
+  afterEach(() => {
+    BLOECKE.groesse = 10_000;
+    vi.restoreAllMocks();
+  });
+
+  it('Paketbau und Warteschlange: gleiches Ergebnis mit Blöcken der Größe 1 (Parametergrenze)', async () => {
+    const pakete = async () => (await baueRichtung('tr-aus-de', true)).map((r) => r.hash);
+    const warte = () => ladeWarteschlange(['de', 'tr', 'ar']);
+    const [p1, w1] = [await pakete(), await warte()];
+    expect(p1.length).toBeGreaterThan(0);
+    BLOECKE.groesse = 1;
+    expect(await pakete()).toEqual(p1);
+    expect(await warte()).toEqual(w1);
+  });
+
+  it('Warteschlange: wenige Abfragen unabhängig von Einheiten × Art × Richtung, gleiche Kandidaten wie je Einheit', async () => {
+    const select = vi.spyOn(db, 'select');
+    const warte = await ladeWarteschlange(['de', 'tr', 'ar']);
+    const abfragen = select.mock.calls.length;
+    select.mockRestore();
+    expect(warte.length).toBeGreaterThan(6);
+    // Einheiten, Stichproben, Zählung, Zieltexte (2), Übersetzungen (2), Clips und Wahlen je Sprache (≤ 6)
+    expect(abfragen).toBeLessThanOrEqual(13);
+    for (const w of warte)
+      expect((await kandidaten(w.einheit, w.art, w.richtung)).length, `${w.einheit} ${w.art} ${w.richtung}`).toBe(w.kandidaten);
+  });
+
+  it('Audio-Studio: zwei Abfragen für Texte und Clip-Zahlen, Text-Hash ohne Datenbank', async () => {
+    const execute = vi.spyOn(db, 'execute');
+    const studio = await ladeStudio('tr', 'alle', 0);
+    expect(execute).toHaveBeenCalledTimes(1);
+    const sqlText = (execute.mock.calls[0]![0] as unknown as { queryChunks: { value?: string[] }[] }).queryChunks
+      .flatMap((c) => c.value ?? [])
+      .join('');
+    expect(sqlText).toContain('lernapp_lemma');
+    expect(sqlText).not.toContain('sha256');
+    for (const e of studio.eintraege) {
+      const [lemma] = await db
+        .select({ text: schema.lernappLemma.lemma })
+        .from(schema.lernappLemma)
+        .where(eq(schema.lernappLemma.schluessel, e.schluessel));
+      const [satz] = await db
+        .select({ text: schema.lernappSatz.text })
+        .from(schema.lernappSatz)
+        .where(eq(schema.lernappSatz.schluessel, e.schluessel));
+      expect(e.textHash, e.schluessel).toBe(textHash((lemma ?? satz)!.text));
+    }
   });
 });

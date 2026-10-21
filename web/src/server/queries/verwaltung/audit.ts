@@ -127,6 +127,7 @@ export const AKTION_SCHLUESSEL = {
   'lernapp.aufnahme_verworfen': 'lernappAufnahmeVerworfen',
   'lernapp.stimme_gewaehlt': 'lernappStimmeGewaehlt',
   'lernapp.meldung_bearbeitet': 'lernappMeldungBearbeitet',
+  'lernapp.eintrag_entsperrt': 'lernappEintragEntsperrt',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

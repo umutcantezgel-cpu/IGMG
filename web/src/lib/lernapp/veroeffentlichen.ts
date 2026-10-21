@@ -1,8 +1,9 @@
 import 'server-only';
-import { eq, inArray, sql } from 'drizzle-orm';
+import { and, eq, inArray, sql } from 'drizzle-orm';
 import { updateTag } from 'next/cache';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
+import type { Status } from './freigabe';
 import { istKurs, type KursId } from './kurse';
 
 /**
@@ -59,4 +60,32 @@ export async function zieheZurueck(art: Zurueckziehbar, schluessel: string): Pro
   }
   if (getroffen) await kursGeaendert([kurs]);
   return getroffen > 0;
+}
+
+/** Was die Verwaltung sperren und wieder freigeben kann (Meldungen: die Aufgabe oder ein Eintrag, auf den sie verweist). */
+export type Entsperrbar = 'aufgabe' | 'lemma' | 'satz';
+
+/** Aktueller Status eines Bausteins (vor dem Sperren für das Audit), sonst null. */
+export async function statusVon(art: Entsperrbar, schluessel: string): Promise<Status | null> {
+  const t = TABELLE[art] as typeof schema.lernappSatz;
+  const [z] = await db.select({ status: t.status }).from(t).where(eq(t.schluessel, schluessel)).limit(1);
+  return z?.status ?? null;
+}
+
+/**
+ * Gesperrten Baustein wieder freigeben (Verwaltung › Meldungen, L3-06b), ohne Neuimport: Status `status` (der Stand vor der
+ * Sperre), nur wenn er gerade `gesperrt` ist. Wirkt sofort wie das Zurückziehen (Kursstand, Cache-Tag). Freigabe- und
+ * Sichtbarkeitsregeln (`freigabe.ts`) gelten weiter: Religionsbezug braucht zwei Freigaben, Urteile zum Hash bleiben.
+ */
+export async function gibWiederFrei(art: Entsperrbar, schluessel: string, status: Exclude<Status, 'gesperrt'>): Promise<boolean> {
+  const kurs = schluessel.split('.')[0];
+  if (!istKurs(kurs)) return false;
+  const t = TABELLE[art] as typeof schema.lernappSatz;
+  const r = await db
+    .update(t)
+    .set({ status })
+    .where(and(eq(t.schluessel, schluessel), eq(t.status, 'gesperrt')))
+    .returning({ id: t.id });
+  if (r.length) await kursGeaendert([kurs]);
+  return r.length > 0;
 }

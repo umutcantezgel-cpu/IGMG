@@ -48,8 +48,8 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
   useEffect(() => {
     if (meldung) meldungRef.current?.focus();
   }, [meldung]);
-  // Fokusführung (WCAG 2.4.3): Öffnen → Auswahl der Sprecherin; Start → „Aufnahme beenden“; Ende → „Probehören“. Der
-  // ersetzte Knopf verschwindet, der Fokus fiele sonst auf den Seitenanfang zurück.
+  // Fokusführung (WCAG 2.4.3): Öffnen → Auswahl der Sprecherin; Start → „Aufnahme beenden“; Ende → „Probehören“; Verwerfen →
+  // „Aufnahme starten“. Der ersetzte Knopf verschwindet, der Fokus fiele sonst auf den Seitenanfang zurück.
   useEffect(() => {
     if (offen) sprecherFeld.current?.focus();
   }, [offen]);
@@ -127,6 +127,14 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
 
   function stopp() {
     if (recorder.current?.state === 'recording') recorder.current.stop();
+  }
+
+  /** Verwerfen (WCAG 2.4.3/4.1.3): Die Knöpfe der Aufnahme verschwinden; der Fokus geht auf „Aufnahme starten“, angesagt wird es. */
+  function verwerfen() {
+    probe.current?.pause();
+    setAufnahme(null);
+    setAnsage(t('audio.verworfen'));
+    requestAnimationFrame(() => startKnopf.current?.focus());
   }
 
   function probehoeren() {
@@ -216,7 +224,7 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
               <Save aria-hidden />
               {sendet ? t('audio.laedtHoch') : t('audio.hochladen')}
             </Button>
-            <Button type="button" variant="ghost" size="sm" onClick={() => setAufnahme(null)} disabled={sendet}>
+            <Button type="button" variant="ghost" size="sm" onClick={verwerfen} disabled={sendet}>
               <Trash2 aria-hidden />
               {t('audio.verwerfen')}
             </Button>
