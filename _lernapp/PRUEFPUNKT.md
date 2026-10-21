@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 08:10 UTC:** L2-Gegenprüfung Runde 2 **frei** (`wf_42e62a63-56e`; Mängelrunde fc096a5…65863b8:
+  Lizenztexte neben den Whisper-Gewichten, Sprechübung lädt nie still nach, Sprachangaben der Barrierefreiheits-Namen u. a.;
+  Rest nur niedrig: @huggingface/jinja-Hinweis → Lizenzverzeichnis L8, Überspringen späterer schrift_*-Hörbeispiele,
+  Doppelcode Options-/Wahlgruppe, E2E „Vorrat geräumt“, 5 Tatoeba-IDs mit Koran-4-Gramm in QUELLE.md/TATOEBA_AUSSCHLUSS
+  nachtragen). In den Branch gemergt (f5a9d04), KERN §9/PLAN §3.6 angeglichen (8db5dad). **Tor L2 läuft:**
+  `scratchpad/tor-l2.sh` → `scratchpad/tor-l2.log` (check, Sprachen, Religion, Wortlaut; Import-Bau + Sweep + Crawl;
+  Produktionsbau mit Budget, TBT-Nachmessung und allen Lern-App-E2E; Website-E2E entfällt, da L2 keine gemeinsamen
+  Website-Dateien ändert). Danach Push → Preview `success` → FF `main`. Parallel: L3-06 `wf_a48f4bea-ac5`, A1 `wf_4786ad44-05d`.
 - **Stand 21.10.2026 07:25 UTC:** Alle Läufe brachen um 06:10 am Sitzungslimit ab (≈ 8 Mio. Tokens in 70 min – das
   Nutzungslimit ist der Engpass; deshalb jetzt höchstens 4 Agenten gleichzeitig und ein Inhalts-Handbuch statt Volllektüre).
   Gesichert: L2-Zusammenführung fertig (7000ba4, Ergebnis `scratchpad/l2/z-ergebnis.json`), L3-06 als ZWISCHENSTAND 37bd915
