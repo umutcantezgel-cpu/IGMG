@@ -1,0 +1,6 @@
+# Erzeugung der Sprachausgabe (de: Coqui-VITS Thorsten als eigener ONNX-Export) – nur onnxruntime, gruut und numpy.
+# Kompiliert mit: uv pip compile requirements.in --generate-hashes --python-version 3.12 \
+#   --exclude-newer 2026-10-07T00:00:00Z -o requirements.txt   (Mindestreife 14 Tage, L0-E10)
+onnxruntime==1.30.0
+gruut[de]==2.4.0
+numpy
