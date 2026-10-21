@@ -42,8 +42,13 @@ export function AnsageBereich({ children }: { children: ReactNode }) {
   }, [ansage]);
   return (
     <AnsageKontext.Provider value={melde}>
-      <div ref={ref} tabIndex={-1} role="status" className="outline-none empty:hidden">
-        {ansage ? <Meldung art="erfolg">{ansage.text}</Meldung> : null}
+      {/* wie die Rückmeldung am Knopf (K-07): Fokus auf den Rahmen, die Meldung selbst ist die Statusmeldung */}
+      <div ref={ref} tabIndex={-1} className="outline-none empty:hidden">
+        {ansage ? (
+          <Meldung key={ansage.nr} art="erfolg">
+            {ansage.text}
+          </Meldung>
+        ) : null}
       </div>
       {children}
     </AnsageKontext.Provider>

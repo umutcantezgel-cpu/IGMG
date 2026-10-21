@@ -29,12 +29,14 @@ import {
 } from '@/lib/lernapp/engine/sitzung';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
+import type { KursSlug } from '@/lib/lernapp/kurse';
 import { Abschluss } from './Abschluss';
 import { anweisung, loesungSprache, mitPruefen } from './uebungskopf';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
+import type { MeldenDialogProps } from './MeldenDialog';
 import { Rueckmeldung } from './Rueckmeldung';
-import { type AufgabenProps, type SpielerOptionen, type SpielerTexte, STANDARD_OPTIONEN, type UiSprache } from './typen';
+import { type AufgabenProps, type MeldenTexte, type SpielerOptionen, type SpielerTexte, STANDARD_OPTIONEN, type UiSprache } from './typen';
 
 /**
  * Lektionsspieler (PLAN §4, KERN §7–§9): spielt eine Lektion als reinen Zustandsautomaten (engine/sitzung.ts) und meldet
@@ -54,6 +56,9 @@ import { type AufgabenProps, type SpielerOptionen, type SpielerTexte, STANDARD_O
  * (`ueberspringe`, ohne Bewertung). `sprechen` und `schreiben` bewerten sich selbst und gehen ohne Rückmeldeblatt weiter;
  * `grammatik_tipp` und „Ich kann gerade nicht sprechen“ überspringen ohne Wertung. Texte zusätzlich aus den Namensräumen
  * `tastatur`, `aufgaben2`, `sprechen` und `schreiben`.
+ *
+ * „Fehler melden“ (`melden`, Schalter `lernapp_meldungen`, L3-06b): Knopf im Rückmeldeblatt; der Dialog mit ALTCHA ist ein
+ * eigener Chunk und lädt erst nach dem Klick (Spieler-Budget). Ohne Netz ein ehrlicher Hinweis statt Dialog.
  */
 export type SpielerProps = {
   lektion: Lektion;
@@ -68,6 +73,8 @@ export type SpielerProps = {
   zurueckHref?: string;
   /** Hörübungen, Sprechübungen, Spracherkennung (Einstellungen und Schalter `lernapp_sprechen`) */
   optionen?: SpielerOptionen;
+  /** „Fehler melden“ mit Kurs (Richtung) und Texten; ohne (Schalter aus, Vorschau, Einstufung) kein Knopf */
+  melden?: { kurs: KursSlug; texte: MeldenTexte };
 };
 
 type Komponenten = { [T in ImplementierterTyp]: ComponentType<AufgabenProps<T>> };
@@ -127,6 +134,7 @@ export function Spieler({
   onFertig,
   zurueckHref,
   optionen = STANDARD_OPTIONEN,
+  melden,
 }: SpielerProps) {
   const id = useId();
   const [s, setS] = useState<Sitzung>(() => starte(spielbar(lektion, optionen), { ohne: optionen.hoeren ? [] : HOER_TYPEN }));
@@ -139,6 +147,10 @@ export function Spieler({
   const titel = useRef<HTMLHeadingElement>(null);
   const weiterKnopf = useRef<HTMLButtonElement>(null);
   const ersterLauf = useRef(true);
+  // „Fehler melden“: Dialog erst nach dem Klick (eigener Chunk), Hinweis ohne Netz, Fokus danach zurück auf den Knopf
+  const [meldeDialog, setMeldeDialog] = useState<{ Dialog: ComponentType<MeldenDialogProps>; aufgabe: string } | null>(null);
+  const [meldeHinweis, setMeldeHinweis] = useState('');
+  const meldeKnopf = useRef<HTMLButtonElement>(null);
   const a = aktuell(s);
   const f = (vorlage: string, werte?: Werte) => formatiere(vorlage, werte, sprache, ziffern);
 
@@ -189,11 +201,30 @@ export function Spieler({
     if (antwort) gibAb(antwort);
   }
 
+  async function oeffneMelden() {
+    if (!melden || !a) return;
+    const aufgabe = a.aufgabe.schluessel;
+    setMeldeHinweis('');
+    if (navigator.onLine === false) return setMeldeHinweis(melden.texte.ohneNetz);
+    try {
+      const { default: Dialog } = await import('./MeldenDialog');
+      setMeldeDialog({ Dialog, aufgabe });
+    } catch {
+      setMeldeHinweis(melden.texte.ohneNetz);
+    }
+  }
+
+  function schliesseMelden() {
+    setMeldeDialog(null);
+    requestAnimationFrame(() => meldeKnopf.current?.focus());
+  }
+
   function naechste() {
     const r = weiter(s);
     setS(r.sitzung);
     setAntwort(null);
     setMeldung('');
+    setMeldeHinweis('');
     sende(r.ereignisse);
     if (r.sitzung.phase === 'fertig') onFertig?.(zusammenfassung(r.sitzung));
   }
@@ -305,7 +336,12 @@ export function Spieler({
         meldung={meldung}
         onWeiter={naechste}
         weiterRef={weiterKnopf}
+        melden={melden ? { knopf: melden.texte.knopf, onMelden: () => void oeffneMelden(), hinweis: meldeHinweis } : undefined}
+        meldenRef={meldeKnopf}
       />
+      {meldeDialog && melden ? (
+        <meldeDialog.Dialog kurs={melden.kurs} aufgabe={meldeDialog.aufgabe} texte={melden.texte} onSchliessen={schliesseMelden} />
+      ) : null}
     </section>
   );
 }

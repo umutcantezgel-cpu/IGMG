@@ -13,7 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
-import type { SpielerOptionen, SpielerTexte } from '../typen';
+import type { MeldenTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 
 /** Spieler als eigener Chunk (KERN 4.0 §9: erst in der Lektion); Übungstypen lädt er selbst per `import()`. */
@@ -65,6 +65,7 @@ export function UebenInsel({
   spielerTexte,
   lernpfad,
   spracherkennung = false,
+  melden,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
@@ -73,6 +74,8 @@ export function UebenInsel({
   lernpfad: { adresse: string; text: string };
   /** Schalter `lernapp_sprechen` (Spracherkennung im Browser) */
   spracherkennung?: boolean;
+  /** Texte von „Fehler melden“, nur mit Schalter `lernapp_meldungen` (sonst kein Knopf) */
+  melden?: MeldenTexte;
 }) {
   const l = useSearchParams().get('l');
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
@@ -176,6 +179,7 @@ export function UebenInsel({
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}
+          melden={melden ? { kurs, texte: melden } : undefined}
         />
       </Suspense>
     </SpielerGrenze>

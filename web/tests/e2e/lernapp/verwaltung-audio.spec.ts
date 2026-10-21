@@ -96,6 +96,16 @@ test('Audio-Studio: Sprecherin mit Vereinbarung, Aufnahme, Anhören, Verwerfen',
   await expect(eintrag.getByRole('status')).toHaveText(
     new RegExp(`^${a.aufnahmeBeendet.replace('{sekunden}', '\\d+').replace(/[().]/g, '\\$&')}$`),
   );
+  // Verwerfen (L3-06b): Fokus auf „Aufnahme starten“, angesagt; dann neu aufnehmen
+  await eintrag.getByRole('button', { name: a.verwerfen, exact: true }).click();
+  await expect(eintrag.getByRole('button', { name: a.start })).toBeFocused();
+  await expect(eintrag.getByRole('status')).toHaveText(a.verworfen);
+  await expect(eintrag.getByRole('button', { name: a.probehoeren })).toHaveCount(0);
+  await eintrag.getByRole('button', { name: a.start }).click();
+  await expect(eintrag.getByRole('button', { name: a.stopp })).toBeFocused();
+  await expect(eintrag.getByText(a.laeuftAufnahme.replace('{sekunden}', '1'))).toBeVisible({ timeout: 10_000 });
+  await eintrag.getByRole('button', { name: a.stopp }).click();
+  await expect(eintrag.getByRole('button', { name: a.probehoeren })).toBeFocused();
   await eintrag.getByRole('button', { name: a.hochladen }).click();
   await expect(eintrag.getByText(a.ergebnis.neu)).toBeVisible({ timeout: 15_000 });
   await expect(eintrag.getByRole('heading', { name: a.aufnahmen })).toBeVisible();

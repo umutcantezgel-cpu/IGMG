@@ -28,6 +28,10 @@ export type RueckmeldungProps = {
   meldung: string;
   onWeiter: () => void;
   weiterRef: RefObject<HTMLButtonElement | null>;
+  /** „Fehler melden“ (Schalter `lernapp_meldungen`, L3-06b): Knopf im Blatt, Hinweis (z. B. ohne Netz) in der Live-Region */
+  melden?: { knopf: string; onMelden: () => void; hinweis: string };
+  /** Knopf „Fehler melden“ (Fokus nach dem Schließen des Dialogs) */
+  meldenRef?: RefObject<HTMLButtonElement | null>;
 };
 
 const sichtbareHinweise = (a: Auswertung) => a.hinweise.filter((h) => h !== 'leer');
@@ -57,6 +61,8 @@ function Blatt({
   wirdWiederholt,
   onWeiter,
   weiterRef,
+  melden,
+  meldenRef,
 }: Omit<RueckmeldungProps, 'meldung' | 'auswertung'> & { auswertung: Auswertung }) {
   const [da, setDa] = useState(false);
   useEffect(() => {
@@ -93,14 +99,31 @@ function Blatt({
         ) : null}
         {wirdWiederholt ? <p className="text-16">{texte.spaeter}</p> : null}
       </div>
-      <button
-        ref={weiterRef}
-        type="button"
-        onClick={onWeiter}
-        className="min-h-12 druck self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800"
-      >
-        {texte.weiter}
-      </button>
+      <div className="flex flex-wrap items-center justify-end gap-3">
+        {melden ? (
+          <button
+            ref={meldenRef}
+            type="button"
+            onClick={melden.onMelden}
+            className="me-auto min-h-11 font-bold text-tinte-2 underline underline-offset-4 hover:text-tinte"
+          >
+            {melden.knopf}
+          </button>
+        ) : null}
+        <button
+          ref={weiterRef}
+          type="button"
+          onClick={onWeiter}
+          className="min-h-12 shrink-0 druck rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800"
+        >
+          {texte.weiter}
+        </button>
+      </div>
+      {melden?.hinweis ? (
+        <p aria-hidden className="text-16 font-bold text-fehler">
+          {melden.hinweis}
+        </p>
+      ) : null}
     </div>
   );
 }
@@ -113,7 +136,7 @@ export function Rueckmeldung({ auswertung, meldung, ...rest }: RueckmeldungProps
   return (
     <div className="sticky bottom-0 flex flex-col gap-3 bg-papier pb-4">
       <p role="status" className="sr-only">
-        {auswertung ? ansage(auswertung, rest.texte, rest.wirdWiederholt) : meldung}
+        {auswertung ? rest.melden?.hinweis || ansage(auswertung, rest.texte, rest.wirdWiederholt) : meldung}
       </p>
       {auswertung ? (
         <Blatt key={`${auswertung.urteil}:${auswertung.loesung}:${auswertung.hinweise.join()}`} auswertung={auswertung} {...rest} />

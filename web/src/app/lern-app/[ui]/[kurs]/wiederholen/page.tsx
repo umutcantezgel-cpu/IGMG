@@ -52,6 +52,7 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
             schreiben: rohTexte(ui, 'schreiben'),
           }}
           spracherkennung={await funktionAn('lernapp_sprechen')}
+          melden={(await funktionAn('lernapp_meldungen')) ? rohTexte(ui, 'melden') : undefined}
           lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}
         />
       </section>

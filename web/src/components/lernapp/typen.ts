@@ -14,6 +14,9 @@ import type de from '../../../messages/lernapp/de.json';
 export type UiSprache = Oberflaeche;
 export { richtung } from '@/lib/lernapp/kurse';
 
+/** Texte des Melde-Dialogs (Namensraum `melden`, L3-06b). */
+export type MeldenTexte = (typeof de)['melden'];
+
 /** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
 export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
 
