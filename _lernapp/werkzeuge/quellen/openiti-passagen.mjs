@@ -37,7 +37,7 @@ import { basename, dirname, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 
-export const WERKZEUG = { name: 'openiti-passagen', version: '1.1.0' };
+export const WERKZEUG = { name: 'openiti-passagen', version: '1.2.0' };
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Buckwalter-Umschrift ↔ Arabisch (nur Codepunkte, keine arabische Schrift im Quelltext)
@@ -601,7 +601,9 @@ function kapitelAn(kapitel, nachId, pos) {
  * @param {{ werk:string, uri?:string, standardThema?:string|null, korrektur?:object, gliederung?:string }} optionen
  */
 export function erzeugeIndex(text, { werk, uri = null, standardThema = null, korrektur = {}, gliederung = 'auto' } = {}) {
-  if (!/^[a-z][a-z0-9-]*$/.test(werk ?? '')) throw new Error('--werk: Kennung aus a-z, 0-9 und „-“ (z. B. quduri)');
+  // Kennungen wie im Quellenregister des Schemas (`ISLAM_WERKE`, z. B. `nur_al_idah`), damit `passage` im Beleg der Kennung
+  // im Index gleicht (Schema: `<werk>.msNNNN`, Werk-Präfix = Registerschlüssel; L6-01).
+  if (!/^[a-z][a-z0-9_-]*$/.test(werk ?? '')) throw new Error('--werk: Kennung aus a-z, 0-9, „_“ und „-“ (z. B. nur_al_idah)');
   const gelesen = lies(text);
   const { kapitel, gliederung: art, warnungen } = bildeKapitel(text, gelesen, { gliederung });
   ordneZu(kapitel, { standardThema, korrektur });
