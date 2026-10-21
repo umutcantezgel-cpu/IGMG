@@ -44,7 +44,7 @@ Für alle, die mit der Lern-App der Gemeinde lernen. Kurze Sätze, kurze Schritt
 
 - **„Anhören“** spielt den Satz ab, **„Langsam anhören“** spielt ihn langsamer.
 - Kannst du gerade nicht hören? Tippe auf **„Ich kann gerade nicht hören“**. Die Hörübungen der Lektion werden übersprungen.
-- **„Audio folgt“** heißt: Für diese Sprache gibt es noch keine Aufnahme. Die Übung wird übersprungen.
+- **„Audio folgt“** heißt: Für diese Übung gibt es noch keine Aufnahme. Die Übung wird übersprungen.
 - Die Stimme für Deutsch ist eine **synthetische Stimme** (Sprachausgabe), vorher erzeugt und geprüft. Zu religiösen Inhalten gibt es nie eine Computerstimme.
 
 ### Sprechen
@@ -131,7 +131,7 @@ Dafür braucht es deine **Einwilligung „Lern-App“** im Konto (bei Kindern di
 | Problem                                     | Was du tust                                                                               |
 | ------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | Lektion lädt nicht ohne Internet            | Einheit vorher mit Internet „offline speichern“                                           |
-| „Audio folgt“                               | Für diese Sprache gibt es noch keine Aufnahme; die Übung wird übersprungen                |
+| „Audio folgt“                               | Für diese Übung gibt es noch keine Aufnahme; sie wird übersprungen                        |
 | Mikrofon geht nicht                         | Im Browser das Mikrofon für die Lern-App erlauben; sonst „Ich kann gerade nicht sprechen“ |
 | Lernstand ist weg                           | Warst du in einem privaten Fenster? Hast du eine Sicherung („Datei einlesen“)?            |
 | Eine Antwort war richtig, die App sagt nein | „Fehler melden“ → „Meine Antwort hätte stimmen sollen“                                    |

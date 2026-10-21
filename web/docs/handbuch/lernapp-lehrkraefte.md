@@ -69,7 +69,7 @@ Die Tabelle **„Stand dieser Woche“** zeigt je Lernender/Lernendem: **Lerntag
 - **Vor der Stunde** (mit WLAN): Jede/r öffnet die Einheit und tippt auf **„Einheit offline speichern“**. Dann geht sie auch ohne Netz.
 - **Einstieg finden:** Der **„Einstufungstest“** im Lernpfad schlägt eine Stufe vor. Das ist nur ein Vorschlag.
 - **Hören und Sprechen:** Wer gerade nicht hören oder sprechen kann (Lärm, keine Kopfhörer), tippt auf „Ich kann gerade nicht hören“ bzw. „Ich kann gerade nicht sprechen“. Die Übung wird übersprungen.
-- **„Audio folgt“** heißt: Für Türkisch und Arabisch gibt es noch keine Aufnahmen. Lies die Sätze dann selbst vor.
+- **„Audio folgt“** heißt: Für diese Übung gibt es noch keine Aufnahme (vor allem bei Türkisch und Arabisch). Lies die Sätze dann selbst vor.
 - **Fehler gefunden?** Lass die Lernenden in der Aufgabe auf **„Fehler melden“** tippen. Das geht anonym und ohne Konto.
 - **„Noch nicht von Muttersprachlern geprüft“** steht bei Einheiten, die automatisch, aber noch nicht von Menschen mit dieser Muttersprache geprüft sind. Sag es den Lernenden offen.
 
