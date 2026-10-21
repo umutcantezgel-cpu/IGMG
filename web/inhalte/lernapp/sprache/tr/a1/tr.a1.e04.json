@@ -15,12 +15,12 @@
     "kannBeschreibungen": [
       {
         "de": "Ich kann sagen, welche Räume und Möbel es in meiner Wohnung gibt.",
-        "tr": "Evimizde hangi odaların ve eşyaların olduğunu söyleyebilirim.",
+        "tr": "Evimde hangi odaların ve eşyaların olduğunu söyleyebilirim.",
         "ar": "أستطيع أن أقول ما في بيتي من غرف وأثاث."
       },
       {
         "de": "Ich kann sagen, was ich habe und was mir fehlt.",
-        "tr": "Neyim olduğunu ve neyim olmadığını söyleyebilirim.",
+        "tr": "Nelerim olduğunu ve nelerim olmadığını söyleyebilirim.",
         "ar": "أستطيع أن أقول ما عندي وما ليس عندي."
       },
       {
@@ -2083,7 +2083,7 @@
     },
     {
       "schluessel": "tr.a1.e04.s0168",
-      "text": "Elif ve Defne kuzen.",
+      "text": "Elif ve Defne kuzenler.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2269,7 +2269,7 @@
     },
     {
       "schluessel": "tr.a1.e04.s0199",
-      "text": "Merhaba Elif! İşte bizim yeni evimiz.",
+      "text": "Merhaba, Elif! İşte bizim evimiz.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2510,10 +2510,12 @@
         },
         {
           "schluessel": "tr.a1.e04.l02.a05",
-          "typ": "auswahl",
-          "anweisung": "waehleWort",
-          "ziel": "tr.a1.e04.lamba",
-          "ablenker": ["tr.a1.e04.kanepe", "tr.a1.e04.duvar"]
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e04.s0053",
+          "nach": "ziel",
+          "alternativen": ["Çiçekler sarı ve kırmızı."],
+          "ablenker": ["çiçeklar", "mavi"]
         },
         {
           "schluessel": "tr.a1.e04.l02.a06",
@@ -2544,7 +2546,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e04.isik",
-          "ablenker": ["tr.a1.e04.cicek", "tr.a1.e04.lamba"]
+          "ablenker": ["tr.a1.e04.cicek", "tr.a1.e04.anahtar"]
         },
         {
           "schluessel": "tr.a1.e04.l02.a11",
@@ -2746,7 +2748,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e04.balik",
-          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.hayvan"]
+          "ablenker": ["tr.a1.e04.kus", "tr.a1.e04.kaplumbaga"]
         },
         {
           "schluessel": "tr.a1.e04.l04.a05",
@@ -2818,7 +2820,7 @@
             }
           ],
           "antwort": "tr.a1.e04.s0132",
-          "ablenker": ["tr.a1.e04.s0195", "tr.a1.e04.s0125"]
+          "ablenker": ["tr.a1.e04.s0195", "tr.a1.e04.s0018"]
         },
         {
           "schluessel": "tr.a1.e04.l04.a15",
@@ -3364,7 +3366,7 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e04.s0117",
           "nach": "ziel",
-          "alternativen": ["Bir kuşum var."],
+          "alternativen": ["Bir kuşum var.", "Benim kuşum var.", "Kuşum var."],
           "ablenker": ["kuşun", "yok"]
         },
         {
@@ -3403,7 +3405,7 @@
             }
           ],
           "antwort": "tr.a1.e04.s0127",
-          "ablenker": ["tr.a1.e04.s0061", "tr.a1.e04.s0013"]
+          "ablenker": ["tr.a1.e04.s0103", "tr.a1.e04.s0013"]
         },
         {
           "schluessel": "tr.a1.e04.l07.a18",
@@ -3434,7 +3436,7 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Bei uns zu Hause",
-        "tr": "Sınav: Bizim evde",
+        "tr": "Değerlendirme: Bizim evde",
         "ar": "محطة الاختبار: في بيتنا"
       },
       "aufgaben": [
@@ -3553,6 +3555,13 @@
           "schluessel": "tr.a1.e04.l08.a16",
           "typ": "sprechen",
           "satz": "tr.a1.e04.s0071"
+        },
+        {
+          "schluessel": "tr.a1.e04.l08.a17",
+          "typ": "luecke",
+          "ziel": "tr.a1.e04.s0130",
+          "wort": 2,
+          "ablenker": ["oyuncaklar", "oyuncakler"]
         }
       ]
     }
