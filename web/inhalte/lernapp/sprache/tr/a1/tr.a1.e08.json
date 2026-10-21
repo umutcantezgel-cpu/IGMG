@@ -1,0 +1,3482 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "tr.a1.e08",
+    "reihenfolge": 9,
+    "thema": {
+      "de": "Unterwegs in Wetzlar",
+      "tr": "Wetzlar'da yolda",
+      "ar": "التنقل في فيتسلار"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, wohin ich gehe und woher ich komme.",
+        "tr": "Nereye gittiğimi ve nereden geldiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول إلى أين أذهب ومن أين آتي."
+      },
+      {
+        "de": "Ich kann nach dem Weg fragen und einfache Wegbeschreibungen verstehen.",
+        "tr": "Yol sorabilir ve basit yol tariflerini anlayabilirim.",
+        "ar": "أستطيع أن أسأل عن الطريق وأن أفهم وصفًا بسيطًا للطريق."
+      },
+      {
+        "de": "Ich kann Verkehrsmittel nennen.",
+        "tr": "Ulaşım araçlarını söyleyebilirim.",
+        "ar": "أستطيع أن أذكر وسائل المواصلات."
+      }
+    ],
+    "symbol": "bus",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.a1.e08.otobus",
+      "lemma": "otobüs",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "otobüsler",
+        "akk/poss.3sg": "otobüsü",
+        "dat": "otobüse",
+        "gen/poss.2sg": "otobüsün",
+        "ins": "otobüsle",
+        "poss.1sg": "otobüsüm",
+        "poss.1pl": "otobüsümüz",
+        "poss.2pl": "otobüsünüz",
+        "lok": "otobüste",
+        "abl": "otobüsten",
+        "poss.3pl": "otobüsleri"
+      },
+      "frequenzRang": 2080,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.tren",
+      "lemma": "tren",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "trenler",
+        "akk/poss.3sg": "treni",
+        "dat": "trene",
+        "gen/poss.2sg": "trenin",
+        "ins": "trenle",
+        "poss.1sg": "trenim",
+        "poss.1pl": "trenimiz",
+        "poss.2pl": "treniniz",
+        "lok": "trende",
+        "abl": "trenden",
+        "poss.3pl": "trenleri"
+      },
+      "frequenzRang": 1874,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.tramvay",
+      "lemma": "tramvay",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "tramvaylar",
+        "akk/poss.3sg": "tramvayı",
+        "dat": "tramvaya",
+        "gen/poss.2sg": "tramvayın",
+        "ins": "tramvayla",
+        "poss.1sg": "tramvayım",
+        "poss.1pl": "tramvayımız",
+        "poss.2pl": "tramvayınız",
+        "lok": "tramvayda",
+        "abl": "tramvaydan",
+        "poss.3pl": "tramvayları"
+      },
+      "frequenzRang": 11487,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.bisiklet",
+      "lemma": "bisiklet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "bisikletler",
+        "akk/poss.3sg": "bisikleti",
+        "dat": "bisiklete",
+        "gen/poss.2sg": "bisikletin",
+        "ins": "bisikletle",
+        "poss.1sg": "bisikletim",
+        "poss.1pl": "bisikletimiz",
+        "poss.2pl": "bisikletiniz",
+        "lok": "bisiklette",
+        "abl": "bisikletten",
+        "poss.3pl": "bisikletleri"
+      },
+      "frequenzRang": 2495,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.araba",
+      "lemma": "araba",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "arabalar",
+        "akk": "arabayı",
+        "dat": "arabaya",
+        "gen": "arabanın",
+        "ins": "arabayla",
+        "poss.1sg": "arabam",
+        "poss.2sg": "araban",
+        "poss.3sg": "arabası",
+        "poss.1pl": "arabamız",
+        "poss.2pl": "arabanız",
+        "lok": "arabada",
+        "abl": "arabadan",
+        "poss.3pl": "arabaları"
+      },
+      "frequenzRang": 1065,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.taksi",
+      "lemma": "taksi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "taksiler",
+        "akk": "taksiyi",
+        "dat": "taksiye",
+        "gen": "taksinin",
+        "ins": "taksiyle",
+        "poss.1sg": "taksim",
+        "poss.2sg": "taksin",
+        "poss.3sg": "taksisi",
+        "poss.1pl": "taksimiz",
+        "poss.2pl": "taksiniz",
+        "lok": "takside",
+        "abl": "taksiden",
+        "poss.3pl": "taksileri"
+      },
+      "frequenzRang": 5304,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.ucak",
+      "lemma": "uçak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "uçak → uçağ-"
+      },
+      "formen": {
+        "pl": "uçaklar",
+        "akk/poss.3sg": "uçağı",
+        "dat": "uçağa",
+        "gen/poss.2sg": "uçağın",
+        "ins": "uçakla",
+        "poss.1sg": "uçağım",
+        "poss.1pl": "uçağımız",
+        "poss.2pl": "uçağınız",
+        "lok": "uçakta",
+        "abl": "uçaktan",
+        "poss.3pl": "uçakları"
+      },
+      "frequenzRang": 1159,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.gemi",
+      "lemma": "gemi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "gemiler",
+        "akk": "gemiyi",
+        "dat": "gemiye",
+        "gen": "geminin",
+        "ins": "gemiyle",
+        "poss.1sg": "gemim",
+        "poss.2sg": "gemin",
+        "poss.3sg": "gemisi",
+        "poss.1pl": "gemimiz",
+        "poss.2pl": "geminiz",
+        "lok": "gemide",
+        "abl": "gemiden",
+        "poss.3pl": "gemileri"
+      },
+      "frequenzRang": 1421,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.bilet",
+      "lemma": "bilet",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "biletler",
+        "akk/poss.3sg": "bileti",
+        "dat": "bilete",
+        "gen/poss.2sg": "biletin",
+        "ins": "biletle",
+        "poss.1sg": "biletim",
+        "poss.1pl": "biletimiz",
+        "poss.2pl": "biletiniz",
+        "lok": "bilette",
+        "abl": "biletten",
+        "poss.3pl": "biletleri"
+      },
+      "frequenzRang": 2272,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.durak",
+      "lemma": "durak",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı",
+        "erweichung": "durak → durağ-"
+      },
+      "formen": {
+        "pl": "duraklar",
+        "akk/poss.3sg": "durağı",
+        "dat": "durağa",
+        "gen/poss.2sg": "durağın",
+        "ins": "durakla",
+        "poss.1sg": "durağım",
+        "poss.1pl": "durağımız",
+        "poss.2pl": "durağınız",
+        "lok": "durakta",
+        "abl": "duraktan",
+        "poss.3pl": "durakları"
+      },
+      "frequenzRang": 9674,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.istasyon",
+      "lemma": "istasyon",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "istasyonlar",
+        "akk/poss.3sg": "istasyonu",
+        "dat": "istasyona",
+        "gen/poss.2sg": "istasyonun",
+        "ins": "istasyonla",
+        "poss.1sg": "istasyonum",
+        "poss.1pl": "istasyonumuz",
+        "poss.2pl": "istasyonunuz",
+        "lok": "istasyonda",
+        "abl": "istasyondan",
+        "poss.3pl": "istasyonları"
+      },
+      "frequenzRang": 7612,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.yol",
+      "lemma": "yol",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "yollar",
+        "akk/poss.3sg": "yolu",
+        "dat": "yola",
+        "gen/poss.2sg": "yolun",
+        "ins": "yolla",
+        "poss.1sg": "yolum",
+        "poss.1pl": "yolumuz",
+        "poss.2pl": "yolunuz",
+        "lok": "yolda",
+        "abl": "yoldan",
+        "poss.3pl": "yolları"
+      },
+      "frequenzRang": 240,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.sag",
+      "lemma": "sağ",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk/poss.3sg": "sağı",
+        "dat": "sağa",
+        "poss.1sg": "sağım",
+        "poss.2sg": "sağın",
+        "poss.1pl": "sağımız",
+        "poss.2pl": "sağınız",
+        "lok": "sağda",
+        "abl": "sağdan",
+        "postp.lok": "sağında",
+        "postp.dat": "sağına",
+        "postp.abl": "sağından"
+      },
+      "frequenzRang": 700,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.sol",
+      "lemma": "sol",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "akk/poss.3sg": "solu",
+        "dat": "sola",
+        "poss.1sg": "solum",
+        "poss.2sg": "solun",
+        "poss.1pl": "solumuz",
+        "poss.2pl": "solunuz",
+        "lok": "solda",
+        "abl": "soldan",
+        "postp.lok": "solunda",
+        "postp.dat": "soluna",
+        "postp.abl": "solundan"
+      },
+      "frequenzRang": 869,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.duz",
+      "lemma": "düz",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "frequenzRang": 1972,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.karsi",
+      "lemma": "karşı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk": "karşıyı",
+        "dat": "karşıya",
+        "poss.1sg": "karşım",
+        "poss.2sg": "karşın",
+        "poss.3sg": "karşısı",
+        "poss.1pl": "karşımız",
+        "poss.2pl": "karşınız",
+        "lok": "karşıda",
+        "abl": "karşıdan",
+        "postp.lok": "karşısında",
+        "postp.dat": "karşısına",
+        "postp.abl": "karşısından"
+      },
+      "frequenzRang": 97,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.kose",
+      "lemma": "köşe",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "köşeler",
+        "akk": "köşeyi",
+        "dat": "köşeye",
+        "gen": "köşenin",
+        "ins": "köşeyle",
+        "poss.1sg": "köşem",
+        "poss.2sg": "köşen",
+        "poss.3sg": "köşesi",
+        "poss.1pl": "köşemiz",
+        "poss.2pl": "köşeniz",
+        "lok": "köşede",
+        "abl": "köşeden",
+        "poss.3pl": "köşeleri"
+      },
+      "frequenzRang": 2525,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.geri",
+      "lemma": "geri",
+      "wortart": "adverb",
+      "frequenzRang": 128,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.yukari",
+      "lemma": "yukarı",
+      "wortart": "adverb",
+      "formen": {
+        "lok": "yukarıda",
+        "abl": "yukarıdan"
+      },
+      "frequenzRang": 1405,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.asagi",
+      "lemma": "aşağı",
+      "wortart": "adverb",
+      "formen": {
+        "lok": "aşağıda",
+        "abl": "aşağıdan"
+      },
+      "frequenzRang": 1197,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.kadar",
+      "lemma": "kadar",
+      "wortart": "postposition",
+      "frequenzRang": 18,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.dakika",
+      "lemma": "dakika",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "dakikalar",
+        "akk": "dakikayı",
+        "dat": "dakikaya",
+        "gen": "dakikanın",
+        "ins": "dakikayla",
+        "poss.1sg": "dakikam",
+        "poss.2sg": "dakikan",
+        "poss.3sg": "dakikası",
+        "poss.1pl": "dakikamız",
+        "poss.2pl": "dakikanız",
+        "lok": "dakikada",
+        "abl": "dakikadan",
+        "poss.3pl": "dakikaları"
+      },
+      "frequenzRang": 273,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.nereye",
+      "lemma": "nereye",
+      "wortart": "fragewort",
+      "frequenzRang": 1008,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.nereden",
+      "lemma": "nereden",
+      "wortart": "fragewort",
+      "frequenzRang": 1902,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.binmek",
+      "lemma": "binmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "bin",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "bin",
+        "iyor.3sg": "biniyor",
+        "imp.2pl": "binin",
+        "aor.3sg": "biner",
+        "iyor.neg.3sg": "binmiyor"
+      },
+      "frequenzRang": 16514,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.inmek",
+      "lemma": "inmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "in",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "in",
+        "iyor.3sg": "iniyor",
+        "imp.2pl": "inin",
+        "aor.3sg": "iner",
+        "iyor.neg.3sg": "inmiyor"
+      },
+      "frequenzRang": 14751,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.yurumek",
+      "lemma": "yürümek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "yürü",
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "stamm": "yürü",
+        "iyor.3sg": "yürüyor",
+        "imp.2pl": "yürüyün",
+        "aor.3sg": "yürür",
+        "iyor.neg.3sg": "yürümüyor",
+        "konverb.erek": "yürüyerek"
+      },
+      "frequenzRang": 7192,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.gecmek",
+      "lemma": "geçmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "geç",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "geç",
+        "iyor.3sg": "geçiyor",
+        "imp.2pl": "geçin",
+        "aor.3sg": "geçer",
+        "iyor.neg.3sg": "geçmiyor",
+        "wendung.partizip": "geçmiş"
+      },
+      "frequenzRang": 1446,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.getirmek",
+      "lemma": "getirmek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "getir",
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "stamm": "getir",
+        "iyor.3sg": "getiriyor",
+        "imp.2pl": "getirin",
+        "aor.3sg": "getirir",
+        "iyor.neg.3sg": "getirmiyor"
+      },
+      "frequenzRang": 2444,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.varmak",
+      "lemma": "varmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "var",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "var",
+        "iyor.3sg": "varıyor",
+        "imp.2pl": "varın",
+        "aor.3sg": "varır",
+        "iyor.neg.3sg": "varmıyor"
+      },
+      "frequenzRang": 13257,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.durmak",
+      "lemma": "durmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "dur",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "dur",
+        "iyor.3sg": "duruyor",
+        "imp.2pl": "durun",
+        "aor.3sg": "durur",
+        "iyor.neg.3sg": "durmuyor"
+      },
+      "frequenzRang": 2229,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.sormak",
+      "lemma": "sormak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "sor",
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "stamm": "sor",
+        "iyor.3sg": "soruyor",
+        "imp.2pl": "sorun",
+        "aor.3sg": "sorar",
+        "iyor.neg.3sg": "sormuyor"
+      },
+      "frequenzRang": 4021,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.yardim",
+      "lemma": "yardım",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yardımlar",
+        "akk/poss.3sg": "yardımı",
+        "dat": "yardıma",
+        "gen/poss.2sg": "yardımın",
+        "ins": "yardımla",
+        "poss.1sg": "yardımım",
+        "poss.1pl": "yardımımız",
+        "poss.2pl": "yardımınız",
+        "lok": "yardımda",
+        "abl": "yardımdan",
+        "poss.3pl": "yardımları"
+      },
+      "frequenzRang": 364,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.misafir",
+      "lemma": "misafir",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "misafirler",
+        "akk/poss.3sg": "misafiri",
+        "dat": "misafire",
+        "gen/poss.2sg": "misafirin",
+        "ins": "misafirle",
+        "poss.1sg/kop.1sg": "misafirim",
+        "poss.1pl": "misafirimiz",
+        "poss.2pl": "misafiriniz",
+        "lok": "misafirde",
+        "abl": "misafirden",
+        "poss.3pl": "misafirleri",
+        "kop.1pl": "misafiriz",
+        "kop.2sg": "misafirsin",
+        "kop.2pl": "misafirsiniz"
+      },
+      "frequenzRang": 2763,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.polis",
+      "lemma": "polis",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "polisler",
+        "akk/poss.3sg": "polisi",
+        "dat": "polise",
+        "gen/poss.2sg": "polisin",
+        "ins": "polisle",
+        "poss.1sg/kop.1sg": "polisim",
+        "poss.1pl": "polisimiz",
+        "poss.2pl": "polisiniz",
+        "lok": "poliste",
+        "abl": "polisten",
+        "poss.3pl": "polisleri",
+        "kop.1pl": "polisiz",
+        "kop.2sg": "polissin",
+        "kop.2pl": "polissiniz"
+      },
+      "frequenzRang": 359,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.dikkat",
+      "lemma": "dikkat",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "harmonie_ausnahme": "helle Endungen trotz a (dikkati)"
+      },
+      "formen": {
+        "akk": "dikkati",
+        "dat": "dikkate",
+        "ins": "dikkatle"
+      },
+      "frequenzRang": 248,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.yavas",
+      "lemma": "yavaş",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 822,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.hizli",
+      "lemma": "hızlı",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "frequenzRang": 274,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.ilk",
+      "lemma": "ilk",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "frequenzRang": 39,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.ikinci",
+      "lemma": "ikinci",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "2."
+      },
+      "frequenzRang": 209,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.havuz",
+      "lemma": "havuz",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "havuzlar",
+        "akk/poss.3sg": "havuzu",
+        "dat": "havuza",
+        "gen/poss.2sg": "havuzun",
+        "ins": "havuzla",
+        "poss.1sg": "havuzum",
+        "poss.1pl": "havuzumuz",
+        "poss.2pl": "havuzunuz",
+        "lok": "havuzda",
+        "abl": "havuzdan",
+        "poss.3pl": "havuzları"
+      },
+      "frequenzRang": 4799,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.bos",
+      "lemma": "boş",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "frequenzRang": 437,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.devam",
+      "lemma": "devam",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "akk/poss.3sg": "devamı",
+        "dat": "devama"
+      },
+      "frequenzRang": 79,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.ozur",
+      "lemma": "özür",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü",
+        "vokalausfall": "özür → özr-"
+      },
+      "formen": {
+        "akk/poss.3sg": "özrü",
+        "poss.1sg": "özrüm"
+      },
+      "frequenzRang": 1116,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.dilemek",
+      "lemma": "dilemek",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "dile",
+        "harmonie": "e/i",
+        "stammwechsel": "dile → dili- vor -yor"
+      },
+      "formen": {
+        "stamm": "dile",
+        "iyor.3sg": "diliyor",
+        "imp.2pl": "dileyin",
+        "aor.3sg": "diler",
+        "iyor.neg.3sg": "dilemiyor"
+      },
+      "frequenzRang": 14127,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.beraber",
+      "lemma": "beraber",
+      "wortart": "adverb",
+      "frequenzRang": 305,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.izin",
+      "lemma": "izin",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "vokalausfall": "izin → izn-"
+      },
+      "formen": {
+        "pl": "izinler",
+        "akk/poss.3sg": "izni",
+        "dat": "izne",
+        "gen/poss.2sg": "iznin",
+        "ins": "izinle",
+        "poss.1sg": "iznim",
+        "poss.1pl": "iznimiz",
+        "poss.2pl": "izniniz",
+        "lok": "izinde",
+        "abl": "izinden",
+        "poss.3pl": "izinleri"
+      },
+      "frequenzRang": 429,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.an",
+      "lemma": "an",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "anlar",
+        "akk/poss.3sg": "anı",
+        "dat": "ana",
+        "gen/poss.2sg": "anın",
+        "ins": "anla",
+        "poss.1sg": "anım",
+        "poss.1pl": "anımız",
+        "poss.2pl": "anınız",
+        "lok": "anda",
+        "abl": "andan",
+        "poss.3pl": "anları"
+      },
+      "frequenzRang": 183,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.gelecek",
+      "lemma": "gelecek",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i",
+        "gebrauch": "nächste (gelecek durak, gelecek hafta)"
+      },
+      "frequenzRang": 331,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.a1.e08.s0001",
+      "text": "Otobüsle gidiyorum.",
+      "quelle": "tatoeba:6360160",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6360160 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0002",
+      "text": "Okula otobüsle gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0003",
+      "text": "Babam işe arabayla gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0004",
+      "text": "Annem işe trenle gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0005",
+      "text": "Elif okula bisikletle gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0006",
+      "text": "Okula nasıl gidiyorsun?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0007",
+      "text": "Okula yürüyerek gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0008",
+      "text": "Benim bisikletim kırmızı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0009",
+      "text": "Bizim arabamız yok, bisikletimiz var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0010",
+      "text": "Wetzlar'da tramvay yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0011",
+      "text": "Dedem uçakla geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0012",
+      "text": "Gemi çok büyük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0013",
+      "text": "Gemiyle dönüyoruz.",
+      "quelle": "tatoeba:4404868",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4404868 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0014",
+      "text": "Taksi pahalı, otobüs ucuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0015",
+      "text": "Otobüsle geliyor.",
+      "quelle": "tatoeba:4574902",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4574902 von maydoo"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0016",
+      "text": "Otobüs yavaş ama ucuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0017",
+      "text": "Kardeşim bisiklete biniyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0018",
+      "text": "Bisiklete binmiyorum, yürüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0019",
+      "text": "Otobüste çok insan var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0020",
+      "text": "Arabada dört kişi var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0021",
+      "text": "Bisikletim nerede?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0022",
+      "text": "Bisikletin bahçede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0023",
+      "text": "Uçakla Ankara'ya gidiyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0024",
+      "text": "Nereye gidiyorsun?",
+      "quelle": "tatoeba:479242",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #479242 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0025",
+      "text": "Havuza gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0026",
+      "text": "Elif havuza gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0027",
+      "text": "Çocuklar havuza gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0028",
+      "text": "Bu otobüs nereye gidiyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0029",
+      "text": "Bu otobüs istasyona gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0030",
+      "text": "Bu tren nereye gidiyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0031",
+      "text": "Bu tren şehir merkezine gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0032",
+      "text": "Bu akşam nereye gidiyoruz?",
+      "quelle": "tatoeba:4620793",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4620793 von tulin"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0033",
+      "text": "Hafta sonu havuza gidiyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0034",
+      "text": "Havuz uzak mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0035",
+      "text": "Hayır, havuz yakın.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0036",
+      "text": "Kütüphaneye yürüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0037",
+      "text": "Bu yol nereye gidiyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0038",
+      "text": "Bu yol istasyona gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0039",
+      "text": "Havuza mı gidiyorsun?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0040",
+      "text": "Hayır, havuza değil, parka gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0041",
+      "text": "Polise soruyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0042",
+      "text": "Elif annesine soruyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0043",
+      "text": "Öğretmene soruyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0044",
+      "text": "Misafire çay veriyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0045",
+      "text": "Rim de havuza geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0046",
+      "text": "Nereden geliyorsun?",
+      "quelle": "tatoeba:927542",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #927542 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0047",
+      "text": "Okuldan geliyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0048",
+      "text": "Nereden geliyorsunuz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0049",
+      "text": "Havuzdan geliyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0050",
+      "text": "Kerem İzmir'den geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0051",
+      "text": "Dedem Ankara'dan uçakla geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0052",
+      "text": "Evden istasyona yürüyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0053",
+      "text": "Evden okula on dakika yürüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0054",
+      "text": "Okuldan eve otobüsle dönüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0055",
+      "text": "Bugün eve geri dönüyorum.",
+      "quelle": "tatoeba:6129578",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #6129578 von ozzie"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0056",
+      "text": "Parktan geçiyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0057",
+      "text": "Köprüden geçiyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0058",
+      "text": "Trenden iniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0059",
+      "text": "Arabadan iniyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0060",
+      "text": "İstasyondan çıkıyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0061",
+      "text": "Neredesin? Nereye gidiyorsun? Nereden geliyorsun?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0062",
+      "text": "Durakta bekliyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0063",
+      "text": "Kerem, neredesin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0064",
+      "text": "Trendeyim. Beş dakika sonra istasyondayım.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0065",
+      "text": "Tren saat kaçta varıyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0066",
+      "text": "Tren saat üçte varıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0067",
+      "text": "Yanlış trendesin.",
+      "quelle": "tatoeba:2715038",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2715038 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0068",
+      "text": "Misafir nereden geliyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0069",
+      "text": "Elif havuzdan geri dönüyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0070",
+      "text": "Merhaba, Jan! Havuz nerede? Yolu bilmiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0071",
+      "text": "Havuz uzak değil. Yürüyerek on dakika.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0072",
+      "text": "Önce düz gidiyorsun.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0073",
+      "text": "İlk sokaktan sağa dönüyorsun.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0074",
+      "text": "Sonra köşeden sola dönüyorsun.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0075",
+      "text": "Havuz solda. Karşıda bir park var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0076",
+      "text": "Yardımın için teşekkürler, Jan!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0077",
+      "text": "Düz devam ediyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0078",
+      "text": "Sağa dönüyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0079",
+      "text": "Sola dönüyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0080",
+      "text": "İkinci sokaktan sola dönüyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0081",
+      "text": "Köşeye kadar düz gidiyorsun.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0082",
+      "text": "Durak solda mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0083",
+      "text": "Hayır, sağda.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0084",
+      "text": "Eczane köşede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0085",
+      "text": "Köşede bir fırın var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0086",
+      "text": "Dikkat! Karşıya geçiyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0087",
+      "text": "Durak karşıda.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0088",
+      "text": "Havuz karşıda mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0089",
+      "text": "Yukarı çıkıyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0090",
+      "text": "Aşağı iniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0091",
+      "text": "Kütüphane yukarıda, ikinci katta.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0092",
+      "text": "Kedi aşağıda, bahçede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0093",
+      "text": "Doğru yolda mıyız?",
+      "quelle": "tatoeba:3577176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3577176 von vvv123"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0094",
+      "text": "Evet, bu yol doğru.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0095",
+      "text": "Hayır, yol kısa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0096",
+      "text": "Özür dilerim, bilmiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0097",
+      "text": "Özür dilerim, ben de burada yeniyim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0098",
+      "text": "Yolu bir polise soruyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0099",
+      "text": "İzin verir misiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0100",
+      "text": "Yardım lazım mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0101",
+      "text": "Evet, lütfen. İstasyon nerede?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0102",
+      "text": "Polis bize yardım ediyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0103",
+      "text": "Havuza kadar beraber yürüyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0104",
+      "text": "Beraber gidiyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0105",
+      "text": "Yürüyerek kaç dakika?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0106",
+      "text": "Havuz buradan uzak mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0107",
+      "text": "Affedersiniz, istasyon nerede?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0108",
+      "text": "Düz gidiyorsunuz, sonra sola dönüyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0109",
+      "text": "Otobüse biniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0110",
+      "text": "Otobüsten iniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0111",
+      "text": "Hangi durakta iniyoruz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0112",
+      "text": "İkinci durakta iniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0113",
+      "text": "Gelecek durakta iniyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0114",
+      "text": "Gelecek durak: istasyon.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0115",
+      "text": "Bu otobüs istasyonda duruyor mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0116",
+      "text": "Otobüs burada duruyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0117",
+      "text": "Tren burada durmuyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0118",
+      "text": "Bir bilet, lütfen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0119",
+      "text": "İki bilet, lütfen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0120",
+      "text": "Bilet ne kadar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0121",
+      "text": "Bilet iki euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0122",
+      "text": "Biletin var mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0123",
+      "text": "Evet, biletim var.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0124",
+      "text": "Biletim yok!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0125",
+      "text": "Bu yer boş mu?",
+      "quelle": "tatoeba:2030315",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2030315 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0126",
+      "text": "Evet, boş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0127",
+      "text": "Otobüs bugün boş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0128",
+      "text": "Otobüs on dakikada bir geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0129",
+      "text": "Tren on dakika sonra geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0130",
+      "text": "Bir an, lütfen!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0131",
+      "text": "Dikkat, tren geliyor!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0132",
+      "text": "Dikkat et, araba geliyor!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0133",
+      "text": "Tren hızlı, otobüs yavaş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0134",
+      "text": "Otobüs çok yavaş gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0135",
+      "text": "Saat dörtte varıyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0136",
+      "text": "Can, Kerem'i eve getiriyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0137",
+      "text": "Bisikletimi getiriyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0138",
+      "text": "Otobüs şoförü bize yardım ediyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0139",
+      "text": "Taksiye biniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0140",
+      "text": "Taksi bizi eve getiriyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0141",
+      "text": "Annem bilet getiriyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0142",
+      "text": "Hangi otobüs havuza gidiyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0143",
+      "text": "12 numaralı otobüs havuza gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0144",
+      "text": "İstasyonda bir misafir",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0145",
+      "text": "Bugün bir misafir geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0146",
+      "text": "Kerem trenle Wetzlar'a geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0147",
+      "text": "Can saat üçte istasyonda bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0148",
+      "text": "Tren geliyor. Kerem trenden iniyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0149",
+      "text": "Merhaba, Kerem! Hoş geldin!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0150",
+      "text": "Hoş bulduk, Can!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0151",
+      "text": "Eve otobüsle gidiyoruz, tamam mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0152",
+      "text": "Tamam. Durak nerede?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0153",
+      "text": "Bir dakika, soruyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0154",
+      "text": "En yakın otobüs durağı nerede?",
+      "quelle": "tatoeba:3660509",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3660509 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0155",
+      "text": "Durak karşıda. Önce karşıya geçiyorsunuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0156",
+      "text": "Sonra sağa dönüyorsunuz. Durak köşede.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0157",
+      "text": "Çok teşekkür ederiz!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0158",
+      "text": "Bir şey değil. İyi yolculuklar!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0159",
+      "text": "Can ve Kerem karşıya geçiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0160",
+      "text": "Durakta otobüs bekliyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0161",
+      "text": "Beş dakika sonra otobüs geliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0162",
+      "text": "Otobüse biniyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0163",
+      "text": "Sorun değil. Ben iki bilet alıyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0164",
+      "text": "Otobüs yavaş gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0165",
+      "text": "Kaç durak var?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0166",
+      "text": "İki durak. İkinci durakta iniyoruz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0167",
+      "text": "Otobüs ikinci durakta duruyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0168",
+      "text": "Can ve Kerem otobüsten iniyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0169",
+      "text": "İşte bizim ev! Annem bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0170",
+      "text": "Derya kapıda bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0171",
+      "text": "Kerem nasıl geliyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0172",
+      "text": "Can, Kerem'i nerede bekliyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0173",
+      "text": "İstasyonda bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0174",
+      "text": "Durakta bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0175",
+      "text": "Evde bekliyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0176",
+      "text": "Önce ne yapıyorlar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0177",
+      "text": "Karşıya geçiyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0178",
+      "text": "Taksiye biniyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0179",
+      "text": "Eve yürüyorlar.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0180",
+      "text": "Kim bilet alıyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0181",
+      "text": "Can alıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0182",
+      "text": "Kerem alıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0183",
+      "text": "Hangi durakta iniyorlar?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0184",
+      "text": "İkinci durakta.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0185",
+      "text": "İlk durakta.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0186",
+      "text": "Kim kapıda bekliyor?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0187",
+      "text": "Otobüs saatleri",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0188",
+      "text": "Durak: istasyon",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0189",
+      "text": "Otobüs 12: istasyon – merkez – havuz",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0190",
+      "text": "Pazartesi – cuma: her 20 dakika",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0191",
+      "text": "Cumartesi: her 30 dakika",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0192",
+      "text": "Pazar: otobüs yok",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0193",
+      "text": "İstasyondan havuza 15 dakika.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0194",
+      "text": "Bilet otobüste: 2 euro.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0195",
+      "text": "Otobüs havuza gidiyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0196",
+      "text": "Cumartesi otobüs yok.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0197",
+      "text": "Havuz saat dokuzda açık.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0198",
+      "text": "İstasyondan havuza kaç dakika?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0199",
+      "text": "On beş dakika.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0200",
+      "text": "Yirmi dakika.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0201",
+      "text": "Otuz dakika.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0202",
+      "text": "Evden okula otobüsle gidiyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0203",
+      "text": "Önce durağa yürüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0204",
+      "text": "Otobüse biniyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0205",
+      "text": "İkinci durakta iniyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0206",
+      "text": "Sonra okula beş dakika yürüyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0207",
+      "text": "Okul yolum kısa.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e08.s0208",
+      "text": "Affedersiniz, durak nerede?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.a1.e08.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Verkehrsmittel nennen und sagen, womit man fährt",
+        "tr": "Ulaşım araçlarını söylemek ve neyle gittiğini anlatmak",
+        "ar": "تسمية وسائل المواصلات وقول بماذا نذهب"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.otobus",
+          "ablenker": ["tr.a1.e08.tren", "tr.a1.e08.taksi"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.tren",
+          "ablenker": ["tr.a1.e08.otobus", "tr.a1.e08.ucak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.otobus", "tr.a1.e08.tren", "tr.a1.e08.tramvay", "tr.a1.e08.bisiklet", "tr.a1.e08.araba"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.ucak",
+          "ablenker": ["tr.a1.e08.gemi", "tr.a1.e08.araba"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.gemi",
+          "ablenker": ["tr.a1.e08.ucak", "tr.a1.e08.taksi"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.taksi", "tr.a1.e08.ucak", "tr.a1.e08.gemi", "tr.a1.e08.hizli", "tr.a1.e08.yavas"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0002",
+          "ablenker": ["tr.a1.e08.s0007", "tr.a1.e08.s0005"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0003",
+          "wort": 2,
+          "ablenker": ["arabayle", "arabala"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0004",
+          "wort": 2,
+          "ablenker": ["trenla", "trenyle"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0005",
+          "nach": "ziel",
+          "alternativen": ["Elif bisikletle okula gidiyor."],
+          "ablenker": ["arabayla", "gidiyorum"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0014",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0006"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0007",
+          "ablenker": ["tr.a1.e08.s0012", "tr.a1.e08.s0019"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0021"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0022",
+          "ablenker": ["tr.a1.e08.s0008", "tr.a1.e08.s0020"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e08.s0015",
+          "ablenker": ["tr.a1.e08.s0001", "tr.a1.e08.s0013"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0017"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Sagen, wohin man geht: Richtungsfall -(y)e/-(y)a",
+        "tr": "Nereye gittiğini söylemek: yönelme hâli -(y)e/-(y)a",
+        "ar": "قول إلى أين نذهب: اللاحقة -(y)e/-(y)a"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.nereye",
+          "ablenker": ["tr.a1.e05.nerede", "tr.a1.e05.neden"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.havuz",
+          "ablenker": ["tr.a1.e05.park", "tr.a1.e05.kutuphane"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.misafir",
+          "ablenker": ["tr.a1.e02.ogretmen", "tr.a1.e08.polis"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a05",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.nereye", "tr.a1.e08.havuz", "tr.a1.e08.misafir", "tr.a1.e08.polis", "tr.a1.e08.yol"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.sormak",
+          "ablenker": ["tr.a1.e02.vermek", "tr.a1.e04.aramak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0029",
+          "ablenker": ["tr.a1.e08.s0028", "tr.a1.e08.s0038"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0025",
+          "wort": 0,
+          "ablenker": ["Havuzda", "Havuze"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0041",
+          "wort": 0,
+          "ablenker": ["Polisa", "Polisde"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0027",
+          "nach": "ziel",
+          "ablenker": ["havuzda", "gidiyorum"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0031",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0024"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0025",
+          "ablenker": ["tr.a1.e08.s0035", "tr.a1.e08.s0042"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0039"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0040",
+          "ablenker": ["tr.a1.e08.s0037", "tr.a1.e08.s0043"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0034"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0035",
+          "ablenker": ["tr.a1.e08.s0045", "tr.a1.e08.s0044"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a15",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e08.yol",
+          "ablenker": ["tr.a1.e04.yok"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0033"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Sagen, woher man kommt: Ausgangsfall -den/-dan",
+        "tr": "Nereden geldiğini söylemek: ayrılma hâli -den/-dan",
+        "ar": "قول من أين نأتي: اللاحقة -den/-dan"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.nereden",
+          "ablenker": ["tr.a1.e08.nereye", "tr.a1.e05.nerede"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.istasyon",
+          "ablenker": ["tr.a1.e08.durak", "tr.a1.e05.kopru"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.nereden", "tr.a1.e08.nereye", "tr.a1.e05.nerede", "tr.a1.e08.istasyon", "tr.a1.e08.geri"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.gecmek",
+          "ablenker": ["tr.a1.e08.inmek", "tr.a1.e06.cikmak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.gecmek", "tr.a1.e08.inmek", "tr.a1.e08.varmak", "tr.a1.e08.dakika", "tr.a1.e08.durak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0047",
+          "wort": 0,
+          "ablenker": ["Okulden", "Okulta"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0056",
+          "wort": 0,
+          "ablenker": ["Parkdan", "Parkten"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0050",
+          "wort": 1,
+          "ablenker": ["İzmir'dan", "İzmir'ten"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0052",
+          "nach": "ziel",
+          "alternativen": ["İstasyona evden yürüyoruz."],
+          "ablenker": ["evde", "istasyondan"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0054",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0048"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0049",
+          "ablenker": ["tr.a1.e08.s0025", "tr.a1.e08.s0068"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0063"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0064",
+          "ablenker": ["tr.a1.e08.s0065", "tr.a1.e08.s0067"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e08.s0058",
+          "ablenker": ["tr.a1.e08.s0059", "tr.a1.e08.s0060"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0061"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Nach dem Weg fragen und den Weg beschreiben",
+        "tr": "Yol sormak ve yol tarif etmek",
+        "ar": "السؤال عن الطريق ووصف الطريق"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.sag",
+          "ablenker": ["tr.a1.e08.sol", "tr.a1.e08.duz"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.sol",
+          "ablenker": ["tr.a1.e08.sag", "tr.a1.e08.karsi"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.sag", "tr.a1.e08.sol", "tr.a1.e08.duz", "tr.a1.e08.karsi", "tr.a1.e08.kose"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.kose",
+          "ablenker": ["tr.a1.e05.sokak", "tr.a1.e08.yol"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.yukari", "tr.a1.e08.asagi", "tr.a1.e08.ilk", "tr.a1.e08.ikinci", "tr.a1.e08.kadar"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.ozur", "tr.a1.e08.izin", "tr.a1.e08.yardim", "tr.a1.e08.devam", "tr.a1.e08.yurumek"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0070"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0071",
+          "ablenker": ["tr.a1.e08.s0084", "tr.a1.e08.s0090"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a09",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0070"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0071"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0072"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0073"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0074",
+          "ablenker": ["tr.a1.e08.s0096", "tr.a1.e08.s0105"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0074"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0075"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0076",
+          "ablenker": ["tr.a1.e08.s0094", "tr.a1.e08.s0116"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0081",
+          "wort": 0,
+          "ablenker": ["Köşede", "Köşeya"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a12",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0080",
+          "wort": 2,
+          "ablenker": ["solda", "sole"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0097",
+          "nach": "ziel",
+          "alternativen": ["Özür dilerim, burada ben de yeniyim."],
+          "ablenker": ["bilmiyorum", "yenisin"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0103",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a15",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e08.sol",
+          "ablenker": ["tr.a1.e06.son"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l04.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0107"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Mit Bus und Bahn fahren: einsteigen, aussteigen, eine Fahrkarte kaufen",
+        "tr": "Otobüs ve trenle yolculuk: binmek, inmek, bilet almak",
+        "ar": "التنقل بالحافلة والقطار: الركوب والنزول وشراء التذكرة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.binmek",
+          "ablenker": ["tr.a1.e08.inmek", "tr.a1.e08.durmak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.inmek",
+          "ablenker": ["tr.a1.e08.binmek", "tr.a1.e08.varmak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.binmek", "tr.a1.e08.inmek", "tr.a1.e08.durmak", "tr.a1.e08.varmak", "tr.a1.e08.getirmek"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.bilet",
+          "ablenker": ["tr.a1.e08.durak", "tr.a1.e05.adres"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.bilet", "tr.a1.e08.durak", "tr.a1.e08.bos", "tr.a1.e08.gelecek", "tr.a1.e08.an"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a07",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0109",
+          "wort": 0,
+          "ablenker": ["Otobüste", "Otobüsü"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0110",
+          "wort": 0,
+          "ablenker": ["Otobüsdan", "Otobüsde"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0112",
+          "nach": "ziel",
+          "ablenker": ["ilk", "biniyoruz"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0115",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0125"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0126",
+          "ablenker": ["tr.a1.e08.s0121", "tr.a1.e08.s0128"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0120"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0121",
+          "ablenker": ["tr.a1.e08.s0124", "tr.a1.e08.s0119"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0111"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0112",
+          "ablenker": ["tr.a1.e08.s0135", "tr.a1.e08.s0134"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a14",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e08.bos",
+          "ablenker": ["tr.a1.e03.bes"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a15",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e08.s0131",
+          "ablenker": ["tr.a1.e08.s0132", "tr.a1.e08.s0129"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0118"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Ein Gast am Bahnhof",
+        "tr": "Hikâye: İstasyonda bir misafir",
+        "ar": "قصة: ضيف في محطة القطار"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.a1.e08.s0144",
+          "zeilen": [
+            {
+              "satz": "tr.a1.e08.s0145"
+            },
+            {
+              "satz": "tr.a1.e08.s0146"
+            },
+            {
+              "satz": "tr.a1.e08.s0147"
+            },
+            {
+              "satz": "tr.a1.e08.s0148"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0149"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0150"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0151"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0152"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0153"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0154"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.a1.e08.s0155"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.a1.e08.s0156"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0157"
+            },
+            {
+              "sprecher": "c",
+              "satz": "tr.a1.e08.s0158"
+            },
+            {
+              "satz": "tr.a1.e08.s0159"
+            },
+            {
+              "satz": "tr.a1.e08.s0160"
+            },
+            {
+              "satz": "tr.a1.e08.s0161"
+            },
+            {
+              "satz": "tr.a1.e08.s0162"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0124"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0163"
+            },
+            {
+              "satz": "tr.a1.e08.s0164"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0165"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0166"
+            },
+            {
+              "satz": "tr.a1.e08.s0167"
+            },
+            {
+              "satz": "tr.a1.e08.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0169"
+            },
+            {
+              "satz": "tr.a1.e08.s0170"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "tr.a1.e08.s0171",
+              "antwort": "tr.a1.e08.tren",
+              "ablenker": ["tr.a1.e08.otobus", "tr.a1.e08.ucak"]
+            },
+            {
+              "nach": 2,
+              "frage": "tr.a1.e08.s0172",
+              "antwort": "tr.a1.e08.s0173",
+              "ablenker": ["tr.a1.e08.s0174", "tr.a1.e08.s0175"]
+            },
+            {
+              "nach": 14,
+              "frage": "tr.a1.e08.s0176",
+              "antwort": "tr.a1.e08.s0177",
+              "ablenker": ["tr.a1.e08.s0178", "tr.a1.e08.s0179"]
+            },
+            {
+              "nach": 19,
+              "frage": "tr.a1.e08.s0180",
+              "antwort": "tr.a1.e08.s0181",
+              "ablenker": ["tr.a1.e08.s0182"]
+            },
+            {
+              "nach": 24,
+              "frage": "tr.a1.e08.s0183",
+              "antwort": "tr.a1.e08.s0184",
+              "ablenker": ["tr.a1.e08.s0185"]
+            },
+            {
+              "nach": 26,
+              "frage": "tr.a1.e08.s0186",
+              "antwort": "tr.a1.e03.anne",
+              "ablenker": ["tr.a1.e03.baba", "tr.a1.e03.dede"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0160",
+          "ablenker": ["tr.a1.e08.s0162", "tr.a1.e08.s0159"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0149"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0150",
+          "ablenker": ["tr.a1.e08.s0158", "tr.a1.e08.s0165"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a04",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0168",
+          "wort": 3,
+          "ablenker": ["otobüste", "otobüse"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0147",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0124"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0163",
+          "ablenker": ["tr.a1.e08.s0150", "tr.a1.e08.s0164"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e08.s0165"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0166",
+          "ablenker": ["tr.a1.e08.s0157", "tr.a1.e08.s0152"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0159",
+          "nach": "ziel",
+          "alternativen": ["Kerem ve Can karşıya geçiyor."],
+          "ablenker": ["geçiyorum", "karşıda"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a09",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e08.s0167"
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a10",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.s0136",
+          "ablenker": ["tr.a1.e08.s0137", "tr.a1.e08.s0138"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0100"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0101",
+          "ablenker": ["tr.a1.e08.s0102", "tr.a1.e08.s0104"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e08.s0158",
+          "ablenker": ["tr.a1.e08.s0149", "tr.a1.e08.s0169"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a13",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0151"
+        },
+        {
+          "schluessel": "tr.a1.e08.l06.a14",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0154"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Fahrplan lesen und den Schulweg beschreiben",
+        "tr": "Tekrar: otobüs saatlerini okumak ve okul yolunu anlatmak",
+        "ar": "مراجعة: قراءة جدول مواعيد الحافلات ووصف الطريق إلى المدرسة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l07.a01",
+          "typ": "lesen_fragen",
+          "titel": "tr.a1.e08.s0187",
+          "absaetze": [
+            "tr.a1.e08.s0188",
+            "tr.a1.e08.s0189",
+            "tr.a1.e08.s0190",
+            "tr.a1.e08.s0191",
+            "tr.a1.e08.s0192",
+            "tr.a1.e08.s0193",
+            "tr.a1.e08.s0194"
+          ],
+          "glossen": [
+            "tr.a1.e08.durak",
+            "tr.a1.e08.istasyon",
+            "tr.a1.e08.havuz",
+            "tr.a1.e08.dakika",
+            "tr.a1.e08.bilet",
+            "tr.a1.e05.merkez"
+          ],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e08.s0195",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e08.s0196",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "tr.a1.e08.s0197",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.a1.e08.s0198",
+              "antwort": "tr.a1.e08.s0199",
+              "ablenker": ["tr.a1.e08.s0200", "tr.a1.e08.s0201"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "tr.a1.e08.s0120",
+              "antwort": "tr.a1.e08.s0121",
+              "ablenker": ["tr.a1.e08.s0124"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.dikkat", "tr.a1.e08.beraber", "tr.a1.e08.dilemek", "tr.a1.e08.ozur", "tr.a1.e08.hizli"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0130",
+          "ablenker": ["tr.a1.e08.s0118", "tr.a1.e08.s0119"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0140",
+          "ablenker": ["tr.a1.e08.s0141", "tr.a1.e08.s0139"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0065"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0066",
+          "ablenker": ["tr.a1.e08.s0117", "tr.a1.e08.s0058"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0142"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0143",
+          "ablenker": ["tr.a1.e08.s0106", "tr.a1.e08.s0127"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0082"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0083",
+          "ablenker": ["tr.a1.e08.s0095", "tr.a1.e08.s0091"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0046"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0047",
+          "ablenker": ["tr.a1.e08.s0036", "tr.a1.e08.s0055"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0141",
+          "wort": 2,
+          "ablenker": ["getiriyorum", "getiriyorsun"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0062",
+          "wort": 0,
+          "ablenker": ["Durağa", "Durakda"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0139",
+          "nach": "ziel",
+          "ablenker": ["taksiden", "biniyorum"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0040",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a13",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e08.an",
+          "ablenker": ["tr.a1.e05.en"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e08.s0113",
+          "ablenker": ["tr.a1.e08.s0114", "tr.a1.e08.s0111"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a15",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0202"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0203"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a17",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0204"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a18",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0205"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a19",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0206"
+        },
+        {
+          "schluessel": "tr.a1.e08.l07.a20",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0207"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e08.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Unterwegs in Wetzlar",
+        "tr": "Sınav: Wetzlar'da yolda",
+        "ar": "محطة الاختبار: التنقل في فيتسلار"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e08.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e08.tramvay",
+          "ablenker": ["tr.a1.e08.tren", "tr.a1.e08.otobus"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.kose",
+          "ablenker": ["tr.a1.e08.karsi", "tr.a1.e08.duz"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.s0077",
+          "ablenker": ["tr.a1.e08.s0078", "tr.a1.e08.s0079"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e08.nereden",
+          "ablenker": ["tr.a1.e08.nereye", "tr.a1.e05.nerede"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a05",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.sag", "tr.a1.e08.sol", "tr.a1.e08.yukari", "tr.a1.e08.asagi", "tr.a1.e08.geri"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e08.binmek", "tr.a1.e08.inmek", "tr.a1.e08.yurumek", "tr.a1.e08.sormak", "tr.a1.e08.varmak"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a07",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0049",
+          "wort": 0,
+          "ablenker": ["Havuzda", "Havuzten"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e08.s0023",
+          "wort": 1,
+          "ablenker": ["Ankara'ye", "Ankara'da"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0002",
+          "nach": "ziel",
+          "alternativen": ["Otobüsle okula gidiyorum."],
+          "ablenker": ["otobüste", "gidiyor"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e08.s0081",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0107"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0108",
+          "ablenker": ["tr.a1.e08.s0121", "tr.a1.e08.s0099"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e08.s0122"
+            }
+          ],
+          "antwort": "tr.a1.e08.s0123",
+          "ablenker": ["tr.a1.e08.s0118", "tr.a1.e08.s0120"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a13",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e08.s0066",
+          "alternativen": ["Tren saat 3'te varıyor."]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e08.s0088",
+          "ablenker": ["tr.a1.e08.s0087", "tr.a1.e08.s0034"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a15",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e08.duz",
+          "ablenker": ["tr.a1.e03.yuz"]
+        },
+        {
+          "schluessel": "tr.a1.e08.l08.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e08.s0208"
+        }
+      ]
+    }
+  ]
+}
