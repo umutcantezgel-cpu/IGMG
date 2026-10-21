@@ -14,6 +14,7 @@
     "fortschritt": "Fortschritt",
     "wortschatz": "Wortschatz",
     "einstellungen": "Einstellungen",
+    "gruppe": "Gruppe",
     "fussNavigation": "Weitere Seiten",
     "quellen": "Quellen und Lizenzen",
     "datenschutz": "Datenschutz",
@@ -891,5 +892,56 @@
     "zuViele": "Von hier kamen gerade viele Meldungen. Bitte versuche es später noch einmal.",
     "nichtMoeglich": "Melden ist gerade nicht möglich.",
     "fehler": "Das hat nicht geklappt. Bitte versuche es noch einmal."
+  },
+  "gruppe": {
+    "titel": "Gruppe",
+    "einleitung": "Was deine Lehrkraft dir zugewiesen hat und wie deine Gruppe in dieser Woche gemeinsam lernt.",
+    "laden": "Meine Gruppe anzeigen",
+    "ladenText": "Mit deinem Konto siehst du hier die Aufgaben deiner Lerngruppe.",
+    "laedt": "Wird geladen …",
+    "anmeldenText": "Melde dich mit deinem Konto an, um die Aufgaben deiner Gruppe zu sehen.",
+    "anmelden": "Anmelden",
+    "fehler": "Gerade lässt sich nichts laden. Versuche es später noch einmal.",
+    "bremse": "Gerade wurde oft geladen. Versuche es in einer Minute noch einmal.",
+    "einwilligung": {
+      "fehlt": "Ohne deine Einwilligung „Lern-App“ bleibt dein Lernstand auf diesem Gerät. Was du erledigt hast, sieht deine Lehrkraft dann nicht.",
+      "eltern": "Deine Eltern können die Einwilligung „Lern-App“ geben. Bis dahin bleibt dein Lernstand auf diesem Gerät."
+    },
+    "keineGruppe": "Du bist noch in keiner Lerngruppe.",
+    "zuweisungen": {
+      "titel": "Aufgaben",
+      "leer": "Gerade ist nichts zugewiesen.",
+      "einheit": "Ganze Einheit",
+      "lektion": "Lektion {n, number}",
+      "faellig": "bis {datum}",
+      "erledigt": "erledigt",
+      "offen": "offen",
+      "oeffnen": "Öffnen",
+      "hinweis": "Erledigt wird vermerkt, sobald die Lern-App mit deinem Konto abgeglichen hat."
+    },
+    "ziel": {
+      "titel": "Gruppenziel dieser Woche",
+      "stand": "{summe, number} von {ziel, number} XP",
+      "erreicht": "Gemeinsam geschafft.",
+      "zuWenige": "Ziel: {ziel, number} XP. Die Summe erscheint, sobald mindestens drei aus der Gruppe mitlernen."
+    },
+    "bestenliste": {
+      "gruppe": "Bestenliste der Gruppe",
+      "familie": "Bestenliste der Familie",
+      "text": "XP dieser Woche – nur von Personen ab 16, die selbst zugestimmt haben. Ohne Ränge und ohne Medaillen.",
+      "verborgen": "Diese Liste sehen nur Personen, die selbst zugestimmt haben und deren Einwilligung „Lern-App“ gilt. Wenn du zustimmst, siehst du alle, die ebenfalls zugestimmt haben.",
+      "leer": "Noch steht hier niemand.",
+      "ich": "du",
+      "xp": "{n, number} XP"
+    },
+    "zustimmung": {
+      "titel": "In Bestenlisten erscheinen",
+      "text": "Ich bin einverstanden, dass mein Vorname mit Initial und meine XP dieser Woche in den Bestenlisten meiner Lerngruppen und meiner Familie erscheinen. Sehen können sie nur die anderen, die ebenfalls zugestimmt haben. Ich kann mich jederzeit wieder ausblenden.",
+      "zustimmen": "Zustimmen",
+      "ausblenden": "Mich ausblenden",
+      "erteilt": "Du erscheinst in den Bestenlisten.",
+      "nicht": "Du erscheinst nicht in den Bestenlisten.",
+      "ohneEinwilligung": "Zustimmen kannst du, sobald deine Einwilligung „Lern-App“ gilt."
+    }
   }
 }

@@ -43,6 +43,46 @@
     | B-34 | Abzeichen erhalten: Deckkraft und Skalierung 0,96 → 1                                                | nur Deckkraft                              |
     | B-35 | Aufnahme läuft: Pegelbalken                                                                          | statischer Punkt und Text „Aufnahme läuft“ |
 
+## Fortschreibung durch L7-02 (21.10.2026)
+
+Gilt vor Nr. 7 und 8, wo es genauer ist. Umsetzung: `web/src/lib/lernapp/gruppe/{regeln,dienst,protokoll}.ts`, Route
+`/api/lernapp/gruppe`, Seite `/lern-app/[ui]/gruppe`, Lehrkraft-Seite `/mein-bereich/unterricht/[gruppe]/lern-app`,
+Migration `0021_lernapp_gruppen.sql` (`lernapp_gruppe`, `lernapp_familie`, `lernapp_rangliste_zustimmung`).
+
+12. **Gruppenziel (Nr. 7):** Wochenziele 50, 100, 200, 300, 500 oder 1.000 XP (Woche Montag bis Sonntag, Berliner
+    Lerntage). Die Summe zählt nur Lernende, deren Einwilligung `lernapp` gilt, und erscheint erst ab **drei** solchen
+    Lernenden; darunter steht nur das Ziel, damit die Summe nicht auf Einzelne schließen lässt.
+13. **Bestenliste (Nr. 8):** „ab 16“ heißt im Code: kein Kinderkonto (`istKind`) und – mit Lerndatensatz – `sechzehnAm`
+    erreicht; ohne bekanntes Datum gilt „unter 16“. Es erscheint nur, wer selbst zugestimmt hat **und** deren
+    Einwilligung `lernapp` gilt. **Sehen** darf die Liste nur, wer selbst erscheinen darf – gegenseitiger Kreis wie im
+    DSFA-Entwurf (LA-V7: „Teilnehmende …, die selbst zugestimmt haben“) und im Einwilligungsentwurf (EL4: „Dort sehen
+    die anderen, die ebenfalls zugestimmt haben“); `regeln.siehtBestenliste`. Wer ab 16 ist und nicht zugestimmt hat,
+    bekommt statt der Namen nur einen Hinweis und das Angebot zur Zustimmung; ohne Einwilligung statt des Knopfs einen
+    Hinweis. Die Zustimmung speichert die Version des angezeigten Wortlauts (der den gegenseitigen Kreis nennt);
+    „ausblenden“ löscht sie ohne Verlauf und geht auch bei ausgeschalteten Schaltern (Austritt jederzeit, L3-E02 – eine
+    stehengebliebene Zustimmung gälte sonst nach dem Wiedereinschalten wieder). Liste und Gruppenziel zählen nur laufende
+    Mitgliedschaften (`bis` leer, wie `ladeGruppenKontext`). Die Liste ist ungeordnet dargestellt (keine Platznummern),
+    gleiche XP ordnen nach dem Namen. Die Antwort der Route nennt keine Kennungen anderer Konten. Kinder bekommen weder
+    Liste noch Zustimmung angeboten, auch wenn eine Zustimmung in der Datenbank stünde (Integrationstest).
+14. **Familie (Nr. 8):** Eltern mit bestätigtem, sorgeberechtigtem Bezug schalten die Bestenliste in „Mein Bereich ›
+    Meine Kinder“ ein (unbestätigte Bezüge sehen den Schalter nicht und dürfen ihn nicht setzen); zur Familie gehören das
+    Elternkonto und Konten der bestätigten, sorgeberechtigten Kinder – sichtbar nur für Mitglieder ab 16 mit eigener
+    Zustimmung und Einwilligung (Nr. 13). Eltern sehen die Lernwoche ihres Kindes (XP, Lektionen, Lerntage je Tag, ohne
+    Einzelergebnisse) nur bis zum Ende des Übergangs nach dem 16. Geburtstag; danach entscheidet die oder der
+    Jugendliche selbst (eigene Freigabe folgt bei Bedarf).
+15. **Erinnerung (Nr. 4)** ist in L7-02 nicht gebaut; der Schalter `push_lernapp` bleibt ohne Wirkung.
+16. **Offen für LM-08/LM-10 (D-L03, D-L04):** Bestenliste, Gruppenziel und Stand der Lehrkraft zählen die Wochen-XP
+    **aller** Kurse aus `lernapp_tag` (dort gibt es nur Tagessummen), also auch Wissenskurs und Koran-Arabisch; der Stand
+    der Lehrkraft zeigt je benannter Person Gesamt-XP, Lektionen und Lerntage. Der DSFA-Entwurf schlägt mit Blick auf
+    Art. 9 und R-L01 vor: Die Bestenliste zählt nur Sprachkurse (D-L04, Bedingung zum Einschalten von
+    `lernapp_rangliste`); die Lehrkraft sieht nur zugewiesene Einheiten, Wissenskurs und Koran-Arabisch nur, wenn
+    zugewiesen (D-L03). Technischer Weg, falls so entschieden: XP je Kurs beim Abgleich aus den Ereignissen ableiten
+    (Lektionsereignisse tragen den Kurs, XP-Ereignisse ihren Bezug) und als Tagessumme je Kurs speichern; Bestenliste und
+    Gruppenziel lesen dann nur die Sprachkurse, der Stand nur die Kurse der Zuweisungen. Bis dahin bleiben
+    `lernapp_gruppen` und `lernapp_rangliste` in der Produktion aus. Ebenfalls offen (S-L3/L8): Rücknahme der Zustimmung
+    auch in den Einstellungen (EL4 nennt sie) und die Tabellen `lernapp_rangliste_zustimmung` und `lernapp_familie` – wie
+    alle Server-Daten der Lern-App – im Export nach Art. 15/20 (`exportiereKontodaten`).
+
 ## Alternativen
 
 - Spielmechanik wie Duolingo mit Herzen, Ligen und Serien-Alarm: verworfen (Nutzerentscheidung „sanft, ohne Druck“).
@@ -58,4 +98,5 @@
 - DSFA-Nachtrag zu R-08 und Einwilligungstext `lernapp` (LM-08). Bis dahin bleiben `lernapp_gruppen` und `lernapp_rangliste` in der Produktion aus.
 - Tests: `sanfte-texte`; Regeltest „keine hochzählenden Zahlen“ und `bewegung-regeln` auch für `src/components/lernapp/**`; Serie mit Pausetagen über Tages- und Sommerzeitgrenzen (ADR 0038); Integration „keine Bestenliste unter 16“ und „nur mit Zustimmung“; E2E Kind ohne Bestenliste.
 - Abnahme: Z-L09 (Kinderschutz), Z-L11 (Register B-28…B-35 mit reduzierter Variante).
-- OFFENE FRAGE: Standard des Tagesziels (Nr. 2) und Liste der verbotenen Formulierungen in tr und ar.
+- OFFENE FRAGE: Standard des Tagesziels (Nr. 2) und Liste der verbotenen Formulierungen in tr und ar; D-L03 und D-L04
+  (Nr. 16, LM-08/LM-10).

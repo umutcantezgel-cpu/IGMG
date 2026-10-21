@@ -126,7 +126,14 @@ export type AuditAktion =
   | 'lernapp.aufnahme_verworfen'
   | 'lernapp.stimme_gewaehlt'
   | 'lernapp.meldung_bearbeitet'
-  | 'lernapp.eintrag_entsperrt';
+  | 'lernapp.eintrag_entsperrt'
+  // Lern-App, Gruppen (L7-02): Zuweisungen, Gruppenziel, Bestenliste, Zustimmung – nur Kennungen und Schalterstände
+  | 'lernapp.zuweisung_angelegt'
+  | 'lernapp.zuweisung_entfernt'
+  | 'lernapp.gruppenziel_geaendert'
+  | 'lernapp.bestenliste_geaendert'
+  | 'lernapp.familie_bestenliste_geaendert'
+  | 'lernapp.bestenliste_zustimmung';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

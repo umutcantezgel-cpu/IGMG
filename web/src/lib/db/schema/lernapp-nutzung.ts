@@ -178,3 +178,47 @@ export const lernappStatistikTag = pgTable(
   },
   (t) => [primaryKey({ columns: [t.tag, t.kursId, t.bereich, t.kennzahl] })],
 );
+
+/**
+ * Lern-App in einer Lerngruppe (L7-02, ADR 0043 Nr. 7/8, KERN 4.0 §5): Gruppenziel und Bestenliste, von der Lehrkraft
+ * eingestellt. Das Gruppenziel ist eine Summe der Wochen-XP ohne Namen; die Bestenliste wirkt nur mit dem Schalter
+ * `lernapp_rangliste` und zeigt nur Konten ab 16 mit eigener Zustimmung (`lernapp_rangliste_zustimmung`). Mit der Gruppe
+ * gelöscht.
+ */
+export const lernappGruppe = pgTable('lernapp_gruppe', {
+  gruppeId: uuid()
+    .primaryKey()
+    .references(() => gruppe.id, { onDelete: 'cascade' }),
+  /** Wochenziel des Gruppenziels in XP; null = kein Gruppenziel. */
+  wochenzielXp: integer(),
+  /** Bestenliste der Gruppe eingeschaltet (Lehrkraft). */
+  bestenliste: boolean().notNull().default(false),
+  geaendertVon: text().references(() => user.id, { onDelete: 'set null' }),
+  geaendertAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Familie in der Lern-App (L7-02, ADR 0043 Nr. 8): ein Elternkonto mit seinen Kindern. Die Eltern schalten die Bestenliste
+ * der Familie ein; Kinder unter 16 erscheinen dort nie und sehen sie nicht (Sperre im Code). Mit dem Konto gelöscht.
+ */
+export const lernappFamilie = pgTable('lernapp_familie', {
+  elternId: text()
+    .primaryKey()
+    .references(() => user.id, { onDelete: 'cascade' }),
+  bestenliste: boolean().notNull().default(false),
+  geaendertAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+});
+
+/**
+ * Eigene Zustimmung, in Bestenlisten der eigenen Gruppen und Familien zu erscheinen (EL4 im Entwurf
+ * `docs/recht/entwuerfe/einwilligung-lernapp.md`, ADR 0043 Nr. 8): nur Konten ab 16, nie durch die Eltern. Ausblenden
+ * (Rücknahme) löscht die Zeile – es gibt keinen Verlauf. Mit dem Konto gelöscht.
+ */
+export const lernappRanglisteZustimmung = pgTable('lernapp_rangliste_zustimmung', {
+  benutzerId: text()
+    .primaryKey()
+    .references(() => user.id, { onDelete: 'cascade' }),
+  /** Version des angezeigten Wortlauts (SHA-256 wie bei `konto_einwilligung`). */
+  textVersion: text().notNull(),
+  erteiltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+});

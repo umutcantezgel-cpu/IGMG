@@ -13,7 +13,7 @@ import { eigeneAbsenderAdresse } from '../hilfen/konto';
  * Rahmen der Lern-App (L1-03; ADR 0037 mit Fortschreibung S1, ADR 0044, KERN 4.0 §7–§8), Projekte „telefon“ (390 px) und
  * „desktop“ (1440 px):
  * - je Oberflächensprache ein Rauchtest (`html[lang][dir][data-oberflaeche]`, ar: `dir=rtl`, kein waagrechter Überlauf),
- * - axe ohne ernste und kritische Befunde auf Start, Einstellungen, Quellen und „nicht gefunden“ in de/tr/ar,
+ * - axe ohne ernste und kritische Befunde auf Start, Einstellungen, Quellen, Gruppe und „nicht gefunden“ in de/tr/ar,
  * - Weiterleitungen (308) und 404 in der Gestalt der Lern-App (auch für die unstabile Parameter-Zuordnung eines
  *   Next-Updates: `/lern-app/xx`, `/lern-app/de/xyz`),
  * - Manifest je Sprache (eine `id`, Scope `/lern-app/`), Anmeldung des eigenen Service Workers samt Hülle – ohne
@@ -81,10 +81,11 @@ for (const ui of UIS) {
       for (const kurs of offen) await expect(page.locator(`main a[href="/lern-app/${ui}/${kurs}"]`).first()).toBeVisible();
     });
 
-    test('axe: Start, Einstellungen, Quellen, nicht gefunden ohne ernste oder kritische Befunde', async ({ page }) => {
+    test('axe: Start, Einstellungen, Quellen, Gruppe, nicht gefunden ohne ernste oder kritische Befunde', async ({ page }) => {
       test.setTimeout(90_000);
       const befunde: string[] = [];
-      for (const pfad of ['', '/einstellungen', '/quellen', '/gibt-es-nicht']) {
+      // `/gruppe` ist die statische Hülle (mit Schalter `lernapp_gruppen`, sonst 404); mit Daten prüft sie gruppe.spec.ts
+      for (const pfad of ['', '/einstellungen', '/quellen', '/gruppe', '/gibt-es-nicht']) {
         await page.goto(`/lern-app/${ui}${pfad}`);
         await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
         expect((await oberflaeche(page)).ueberlauf, `${ui}${pfad}: Überlauf`).toBe(0);

@@ -14,6 +14,7 @@
     "fortschritt": "İlerleme",
     "wortschatz": "Kelimeler",
     "einstellungen": "Ayarlar",
+    "gruppe": "Grup",
     "fussNavigation": "Diğer sayfalar",
     "quellen": "Kaynaklar ve lisanslar",
     "datenschutz": "Gizlilik",
@@ -891,5 +892,56 @@
     "zuViele": "Buradan az önce çok sayıda bildirim geldi. Lütfen daha sonra yeniden dene.",
     "nichtMoeglich": "Şu anda bildirim gönderilemiyor.",
     "fehler": "Bu olmadı. Lütfen yeniden dene."
+  },
+  "gruppe": {
+    "titel": "Grup",
+    "einleitung": "Öğretmeninin sana verdiği görevler ve grubunun bu hafta birlikte nasıl öğrendiği.",
+    "laden": "Grubumu göster",
+    "ladenText": "Hesabınla burada öğrenme grubunun görevlerini görürsün.",
+    "laedt": "Yükleniyor …",
+    "anmeldenText": "Grubunun görevlerini görmek için hesabınla giriş yap.",
+    "anmelden": "Giriş yap",
+    "fehler": "Şu anda hiçbir şey yüklenemiyor. Daha sonra tekrar dene.",
+    "bremse": "Az önce çok sık yüklendi. Bir dakika sonra tekrar dene.",
+    "einwilligung": {
+      "fehlt": "„Öğrenme Uygulaması“ onayın olmadan öğrenme durumun bu cihazda kalır. Tamamladıklarını öğretmenin o zaman göremez.",
+      "eltern": "„Öğrenme Uygulaması“ onayını anne baban verebilir. O zamana kadar öğrenme durumun bu cihazda kalır."
+    },
+    "keineGruppe": "Henüz bir öğrenme grubunda değilsin.",
+    "zuweisungen": {
+      "titel": "Görevler",
+      "leer": "Şu anda verilmiş bir görev yok.",
+      "einheit": "Ünitenin tamamı",
+      "lektion": "Ders {n, number}",
+      "faellig": "son gün {datum}",
+      "erledigt": "tamamlandı",
+      "offen": "açık",
+      "oeffnen": "Aç",
+      "hinweis": "Öğrenme Uygulaması hesabınla eşitlendiğinde tamamlananlar kaydedilir."
+    },
+    "ziel": {
+      "titel": "Bu haftanın grup hedefi",
+      "stand": "{ziel, number} XP hedefin {summe, number} XP'si",
+      "erreicht": "Birlikte başardınız.",
+      "zuWenige": "Hedef: {ziel, number} XP. Gruptan en az üç kişi birlikte öğrendiğinde toplam görünür."
+    },
+    "bestenliste": {
+      "gruppe": "Grubun başarı listesi",
+      "familie": "Ailenin başarı listesi",
+      "text": "Bu haftanın XP'leri – yalnızca kendisi onay vermiş 16 yaş ve üzeri kişiler. Sıra ve madalya yok.",
+      "verborgen": "Bu listeyi yalnızca kendisi onay vermiş ve „Öğrenme Uygulaması“ onayı geçerli olan kişiler görebilir. Sen de onay verirsen, onay veren herkesi görürsün.",
+      "leer": "Burada henüz kimse yok.",
+      "ich": "sen",
+      "xp": "{n, number} XP"
+    },
+    "zustimmung": {
+      "titel": "Başarı listelerinde görün",
+      "text": "Adımın ve soyadımın baş harfinin ve bu haftaki XP'lerimin öğrenme gruplarımın ve ailemin başarı listelerinde görünmesini kabul ediyorum. Listeleri yalnızca onay vermiş diğer kişiler görebilir. İstediğim zaman kendimi gizleyebilirim.",
+      "zustimmen": "Kabul ediyorum",
+      "ausblenden": "Beni gizle",
+      "erteilt": "Başarı listelerinde görünüyorsun.",
+      "nicht": "Başarı listelerinde görünmüyorsun.",
+      "ohneEinwilligung": "„Öğrenme Uygulaması“ onayın geçerli olduğunda kabul edebilirsin."
+    }
   }
 }

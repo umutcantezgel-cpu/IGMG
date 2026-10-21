@@ -1,10 +1,12 @@
-import { ArrowRight, CalendarDays, KeyRound, UsersRound } from 'lucide-react';
+import { ArrowRight, CalendarDays, KeyRound, Languages, UsersRound } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { connection } from 'next/server';
-import { LeerHinweis, Pille } from '@/components/mein-bereich/Bausteine';
+import { Abschnitt } from '@/components/mein-bereich/Abschnitt';
+import { KNOPF_SEKUNDAER, LeerHinweis, Pille } from '@/components/mein-bereich/Bausteine';
 import { MeinBereichRahmen } from '@/components/mein-bereich/MeinBereichRahmen';
+import { Meldung } from '@/components/verwaltung/Meldung';
 import { Link } from '@/i18n/link';
 import type { Locale } from '@/i18n/routing';
 import { funktionAn } from '@/lib/funktionen';
@@ -12,7 +14,9 @@ import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text } from '@/lib/i18n/inhalt';
 import { verlangeMeinBereich } from '@/lib/konto/zugang';
 import { datumText, zeitspanne } from '@/lib/lernen/ansicht';
+import { familienBestenlisteAn, hatBestaetigtesKind } from '@/lib/lernapp/gruppe/dienst';
 import { ladeGruppenKontext } from '@/lib/rechte/gemeinde';
+import { lernappFamilienBestenlisteSetzen } from '@/server/actions/lernapp-gruppe';
 import { kinderDerEltern } from '@/server/queries/mein-bereich/kinder';
 
 /** Je Anfrage gerendert, wartet auf die Sitzung (siehe Layout). */
@@ -26,15 +30,28 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Eltern › Meine Kinder (AUFTRAG 3.5): je Kind eine Karte mit Gruppe, nächstem Termin, gemeldeten Fehltagen und dem
  * Stand des eigenen Zugangs. Nur eigene Kinder (Eltern-Kind-Bezug, ADR 0026). Funktion `lernplattform` aus → 404.
+ * Mit `lernapp_rangliste` und bestätigtem, sorgeberechtigtem Bezug zusätzlich der Schalter „Bestenliste der Familie“ in der
+ * Lern-App (L7-02, ADR 0043 Nr. 8): Er gilt nur für Familienmitglieder ab 16 mit eigener Zustimmung; Kinder unter 16
+ * erscheinen nie (Sperre im Code).
  */
-export default async function KinderSeite() {
+export default async function KinderSeite({ searchParams }: PageProps<'/[locale]/mein-bereich/kinder'>) {
   // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
   await connection();
   if (!(await funktionAn('lernplattform'))) notFound();
   const sprache = (await getLocale()) as Locale;
   const k = await verlangeMeinBereich(sprache, ['eltern']);
   const heute = berlinerDatum(new Date());
-  const [kinder, t] = await Promise.all([kinderDerEltern(await ladeGruppenKontext(k.benutzerId), heute), getTranslations('kinder')]);
+  const [kinder, t, rangliste, sp] = await Promise.all([
+    kinderDerEltern(await ladeGruppenKontext(k.benutzerId), heute),
+    getTranslations('kinder'),
+    funktionAn('lernapp_rangliste'),
+    searchParams,
+  ]);
+  // Den Familienschalter gibt es nur mit bestätigtem, sorgeberechtigtem Bezug (wie im Dienst)
+  const [familieMoeglich, familieAn] = rangliste
+    ? await Promise.all([hatBestaetigtesKind(k.benutzerId), familienBestenlisteAn(k.benutzerId)])
+    : [false, false];
+  const familieOk = sp.familie === 'an' || sp.familie === 'aus' ? sp.familie : null;
 
   return (
     <MeinBereichRahmen konto={k} aktuell="kinder" titel={t('titel')} untertitel={t('untertitel')} sprachZiel="/mein-bereich/kinder">
@@ -117,6 +134,30 @@ export default async function KinderSeite() {
       ) : (
         <LeerHinweis titel={t('leer.titel')} text={t('leer.text')} rahmen />
       )}
+      {familieMoeglich && kinder.length ? (
+        <Abschnitt
+          id="lern-app"
+          Icon={Languages}
+          titel={t('familie.titel')}
+          text={t('familie.text')}
+          rechts={<Pille ton={familieAn ? 'gruen' : 'sand'}>{t(familieAn ? 'familie.an' : 'familie.aus')}</Pille>}
+        >
+          <div className="flex flex-col gap-4">
+            {familieOk ? (
+              <Meldung art="erfolg" fokus>
+                {t(`familie.ok.${familieOk}`)}
+              </Meldung>
+            ) : null}
+            <form action={lernappFamilienBestenlisteSetzen}>
+              <input type="hidden" name="sprache" value={sprache} />
+              <input type="hidden" name="an" value={familieAn ? '0' : '1'} />
+              <button type="submit" className={KNOPF_SEKUNDAER}>
+                {t(familieAn ? 'familie.ausschalten' : 'familie.einschalten')}
+              </button>
+            </form>
+          </div>
+        </Abschnitt>
+      ) : null}
     </MeinBereichRahmen>
   );
 }
