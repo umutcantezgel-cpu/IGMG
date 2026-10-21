@@ -57,6 +57,7 @@ const zuweisenSchema = z.object({
 /** Einheit oder einzelne Lektion der Gruppe zuweisen (nur die Lehrkraft der Gruppe, nur ausgelieferte Einheiten). */
 export async function lernappZuweisen(fd: FormData): Promise<void> {
   await schalter();
+  await verlangeKontoRecht(['lehrkraft']);
   const sprache = spracheSchema.parse(fd.get('sprache'));
   const p = zuweisenSchema.safeParse({
     gruppe: fd.get('gruppe'),
@@ -66,7 +67,6 @@ export async function lernappZuweisen(fd: FormData): Promise<void> {
     faellig: fd.get('faellig') ?? '',
   });
   if (!p.success) throw new KeinRecht();
-  await verlangeKontoRecht(['lehrkraft']);
   const { kontext } = await verlangeGruppenRecht('aufgabe.bearbeiten', p.data.gruppe);
   let ok = 'zugewiesen';
   try {
@@ -91,10 +91,10 @@ const entfernenSchema = z.object({ gruppe: uuid, aufgabe: uuid });
 /** Zuweisung entfernen (samt Erledigt-Vermerken). */
 export async function lernappZuweisungEntfernen(fd: FormData): Promise<void> {
   await schalter();
+  await verlangeKontoRecht(['lehrkraft']);
   const sprache = spracheSchema.parse(fd.get('sprache'));
   const p = entfernenSchema.safeParse({ gruppe: fd.get('gruppe'), aufgabe: fd.get('aufgabe') });
   if (!p.success) throw new KeinRecht();
-  await verlangeKontoRecht(['lehrkraft']);
   const { kontext } = await verlangeGruppenRecht('aufgabe.bearbeiten', p.data.gruppe);
   let gruppe: string;
   try {
@@ -115,10 +115,10 @@ const zielSchema = z.object({
 /** Gruppenziel (Wochenziel in XP) setzen oder entfernen. */
 export async function lernappGruppenzielSetzen(fd: FormData): Promise<void> {
   await schalter();
+  await verlangeKontoRecht(['lehrkraft']);
   const sprache = spracheSchema.parse(fd.get('sprache'));
   const p = zielSchema.safeParse({ gruppe: fd.get('gruppe'), ziel: fd.get('ziel') ?? '' });
   if (!p.success) throw new KeinRecht();
-  await verlangeKontoRecht(['lehrkraft']);
   const { kontext } = await verlangeGruppenRecht('aufgabe.bearbeiten', p.data.gruppe);
   try {
     await setzeWochenziel(kontext, p.data.gruppe, p.data.ziel === '' ? null : p.data.ziel);
@@ -134,10 +134,10 @@ const schalterSchema = z.object({ gruppe: uuid, an: z.enum(['1', '0']) });
 /** Bestenliste der Gruppe ein- oder ausschalten (nur mit `lernapp_rangliste`). */
 export async function lernappGruppenBestenlisteSetzen(fd: FormData): Promise<void> {
   await schalter(true);
+  await verlangeKontoRecht(['lehrkraft']);
   const sprache = spracheSchema.parse(fd.get('sprache'));
   const p = schalterSchema.safeParse({ gruppe: fd.get('gruppe'), an: fd.get('an') });
   if (!p.success) throw new KeinRecht();
-  await verlangeKontoRecht(['lehrkraft']);
   const { kontext } = await verlangeGruppenRecht('aufgabe.bearbeiten', p.data.gruppe);
   try {
     await setzeGruppenBestenliste(kontext, p.data.gruppe, p.data.an === '1');
@@ -148,13 +148,13 @@ export async function lernappGruppenBestenlisteSetzen(fd: FormData): Promise<voi
   zurSeite(sprache, p.data.gruppe, 'bestenliste', 'bestenliste');
 }
 
-/** Bestenliste der Familie ein- oder ausschalten (Elternkonto mit eigenem Kind; nur mit `lernapp_rangliste`). */
+/** Bestenliste der Familie ein- oder ausschalten (Elternkonto mit bestätigtem, sorgeberechtigtem Bezug; nur mit `lernapp_rangliste`). */
 export async function lernappFamilienBestenlisteSetzen(fd: FormData): Promise<void> {
   await schalter(true);
+  const konto = await verlangeKontoRecht(['eltern']);
   const sprache = spracheSchema.parse(fd.get('sprache'));
   const an = z.enum(['1', '0']).safeParse(fd.get('an'));
   if (!an.success) throw new KeinRecht();
-  const konto = await verlangeKontoRecht(['eltern']);
   try {
     await setzeFamilienBestenliste(await ladeGruppenKontext(konto.benutzerId), an.data === '1');
   } catch (e) {

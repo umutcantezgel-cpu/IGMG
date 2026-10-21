@@ -7,7 +7,8 @@ import { addiereTage, wochenbeginn } from '../ereignisse/serie';
  * - **Ab 16 im Code:** Kinderkonten (`istKind`) erscheinen nie in einer Bestenliste und sehen keine; mit Lerndatensatz erst
  *   ab dem Tag `sechzehnAm`, ohne bekanntes Datum vorsichtig „unter 16“ (wie `konto/sechzehn.ts`). Konten ohne
  *   Lerndatensatz sind Gemeinde-Konten, die es erst ab 16 gibt.
- * - **Freiwillig:** in der Liste steht nur, wer selbst zugestimmt hat und mit Einwilligung `lernapp` abgleicht.
+ * - **Freiwillig und gegenseitig:** in der Liste steht nur, wer selbst zugestimmt hat und mit Einwilligung `lernapp`
+ *   abgleicht – und nur diese Personen sehen die Liste (`siehtBestenliste`).
  * - **Ohne Druck:** Wochen-XP, Vorname und Initial, keine Ränge oder Medaillen; gleiche XP ordnen nach dem Namen.
  * - **Gruppenziel:** Summe ohne Namen, erst ab `MINDEST_TEILNEHMENDE` Lernenden mit Einwilligung (DSFA-Entwurf M-L14).
  */
@@ -72,6 +73,15 @@ export function erscheint(k: Pick<Kandidat, 'alter' | 'zustimmung' | 'einwilligu
   return abSechzehn(k.alter, heute) && k.zustimmung && k.einwilligung;
 }
 
+/**
+ * Sieht das Konto Bestenlisten? Gegenseitiger Kreis (DSFA-Entwurf LA-V7, Einwilligungsentwurf EL4): nur, wer selbst in
+ * der Liste stehen darf – ab 16, eigene Zustimmung und Einwilligung `lernapp`. Wer nicht zugestimmt hat, bekommt nur das
+ * Angebot zur Zustimmung, keine Namen.
+ */
+export function siehtBestenliste(k: Pick<Kandidat, 'alter' | 'zustimmung' | 'einwilligung'>, heute: string): boolean {
+  return erscheint(k, heute);
+}
+
 /** Bestenliste: nur, wer erscheinen darf; Wochen-XP absteigend, bei Gleichstand nach Name; doppelte Konten einmal. */
 export function bestenliste(kandidaten: readonly Kandidat[], heute: string): Platz[] {
   const gesehen = new Set<string>();
@@ -85,8 +95,7 @@ export function bestenliste(kandidaten: readonly Kandidat[], heute: string): Pla
 }
 
 export type GruppenzielStand =
-  | { ziel: number; summe: number; erreicht: boolean; anteil: number; zuWenige: false }
-  | { ziel: number; zuWenige: true };
+  { ziel: number; summe: number; erreicht: boolean; anteil: number; zuWenige: false } | { ziel: number; zuWenige: true };
 
 /**
  * Gruppenziel (ADR 0043 Nr. 7): Summe der Wochen-XP gegen das Wochenziel, ohne Namen. `xpJeTeilnehmer` enthält je
@@ -115,10 +124,11 @@ export function lernwoche(woche: Woche, tage: readonly TagStand[]): WochenTag[] 
 
 /** Summen einer Lernwoche: XP, Lektionen, Lerntage. */
 export function wochenSumme(tage: readonly WochenTag[]): { xp: number; lektionen: number; lerntage: number } {
-  return tage.reduce(
-    (s, t) => ({ xp: s.xp + t.xp, lektionen: s.lektionen + t.lektionen, lerntage: s.lerntage + (t.gelernt ? 1 : 0) }),
-    { xp: 0, lektionen: 0, lerntage: 0 },
-  );
+  return tage.reduce((s, t) => ({ xp: s.xp + t.xp, lektionen: s.lektionen + t.lektionen, lerntage: s.lerntage + (t.gelernt ? 1 : 0) }), {
+    xp: 0,
+    lektionen: 0,
+    lerntage: 0,
+  });
 }
 
 /**

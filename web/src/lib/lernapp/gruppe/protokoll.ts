@@ -40,8 +40,17 @@ export type GruppeAntwort = {
     faellig: string | null;
     erledigt: boolean;
   }[];
-  gruppen: { id: string; name: string; ziel: ZielStand | null; bestenliste: ListenPlatz[] | null }[];
-  familien: { eigene: boolean; bestenliste: ListenPlatz[] }[];
+  gruppen: {
+    id: string;
+    name: string;
+    ziel: ZielStand | null;
+    /** null: keine Bestenliste oder (mit `verborgen`) noch nicht sichtbar */
+    bestenliste: ListenPlatz[] | null;
+    /** Bestenliste eingeschaltet, aber nur für Personen sichtbar, die selbst zugestimmt haben und deren Einwilligung gilt */
+    verborgen: boolean;
+  }[];
+  /** `bestenliste` null: eingeschaltet, aber erst mit eigener Zustimmung und Einwilligung sichtbar (gegenseitiger Kreis) */
+  familien: { eigene: boolean; bestenliste: ListenPlatz[] | null }[];
   /** null: keine Zustimmung möglich (unter 16, Schalter aus oder keine Bestenliste eingeschaltet) */
   zustimmung: { erteilt: boolean } | null;
 };

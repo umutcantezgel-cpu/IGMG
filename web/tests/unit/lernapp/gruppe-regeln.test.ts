@@ -10,6 +10,7 @@ import {
   kurzname,
   lernwoche,
   MINDEST_TEILNEHMENDE,
+  siehtBestenliste,
   wocheVon,
   wochenSumme,
 } from '@/lib/lernapp/gruppe/regeln';
@@ -103,6 +104,27 @@ describe('Bestenliste', () => {
             expect(!z.hatLerndatensatz || (z.sechzehnAm !== null && z.sechzehnAm <= HEUTE)).toBe(true);
             expect(p.xp).toBeGreaterThanOrEqual(0);
           }
+        },
+      ),
+    );
+  });
+
+  it('gegenseitiger Kreis (LA-V7, EL4): sehen nur, wer selbst zugestimmt hat und deren Einwilligung gilt', () => {
+    expect(siehtBestenliste(kandidat({ benutzerId: 'a' }), HEUTE)).toBe(true);
+    expect(siehtBestenliste(kandidat({ benutzerId: 'a', zustimmung: false }), HEUTE)).toBe(false);
+    expect(siehtBestenliste(kandidat({ benutzerId: 'a', einwilligung: false }), HEUTE)).toBe(false);
+    expect(siehtBestenliste(kandidat({ benutzerId: 'a', alter: kind }), HEUTE)).toBe(false);
+    // Eigenschaft: sehen ⇔ selbst erscheinen dürfen
+    fc.assert(
+      fc.property(
+        fc.boolean(),
+        fc.boolean(),
+        fc.option(fc.constantFrom('2000-01-01', HEUTE, '2031-03-03'), { nil: null }),
+        fc.boolean(),
+        fc.boolean(),
+        (istKind, hatLerndatensatz, sechzehnAm, zustimmung, einwilligung) => {
+          const k = { alter: { istKind, hatLerndatensatz, sechzehnAm }, zustimmung, einwilligung };
+          expect(siehtBestenliste(k, HEUTE)).toBe(erscheint(k, HEUTE));
         },
       ),
     );

@@ -1,5 +1,5 @@
 import 'server-only';
-import { and, asc, between, count, desc, eq, gte, inArray, isNotNull, isNull, or, sql, sum } from 'drizzle-orm';
+import { and, asc, between, count, desc, eq, inArray, isNotNull, isNull, sql, sum } from 'drizzle-orm';
 import { protokolliere } from '@/lib/audit';
 import { db, schema } from '@/lib/db';
 import type { Mehrsprachig } from '@/lib/db/schema/typen';
@@ -20,6 +20,7 @@ import {
   istWochenziel,
   lernwoche,
   type Platz,
+  siehtBestenliste,
   type Woche,
   type WochenTag,
   wochenSumme,
@@ -36,7 +37,9 @@ import {
  *   Lernwoche ihres Kindes. Fremde Gruppen verhalten sich wie „gibt es nicht“.
  * - **Einwilligung:** Stand, Gruppenziel und Bestenliste zählen nur Konten, deren Einwilligung `lernapp` gilt
  *   (`lernappEinwilligung`, bei Kindern die der Eltern).
- * - **Bestenliste:** nur Konten ab 16 mit eigener Zustimmung erscheinen; nur Konten ab 16 sehen sie (`regeln.ts`).
+ * - **Bestenliste:** nur Konten ab 16 mit eigener Zustimmung und Einwilligung erscheinen – und nur diese sehen sie
+ *   (gegenseitiger Kreis, `regeln.siehtBestenliste`).
+ * - **Mitgliedschaft:** nur laufende (`bis` leer), wie `ladeGruppenKontext` – wer heute ausgetragen wurde, zählt nicht mehr.
  * - **Audit** ohne Inhalte: nur Kennungen, Kurs/Einheit und Schalterstände.
  */
 export class KeinGruppenZugang extends Error {
@@ -131,8 +134,8 @@ async function zustimmungen(benutzerIds: readonly string[]): Promise<Set<string>
   return new Set(zeilen.map((z) => z.id));
 }
 
-/** Laufende Mitglieder einer aktiven Gruppe (aktive Lernende) mit Konto, sofern vorhanden. */
-async function mitglieder(gruppeId: string, heute: string) {
+/** Laufende Mitglieder (`bis` leer, wie `ladeGruppenKontext`) einer aktiven Gruppe (aktive Lernende) mit Konto, sofern vorhanden. */
+async function mitglieder(gruppeId: string) {
   return db
     .select({
       lernendeId: schema.lernende.id,
@@ -144,13 +147,7 @@ async function mitglieder(gruppeId: string, heute: string) {
     .innerJoin(schema.gruppe, and(eq(schema.gruppe.id, schema.gruppenMitglied.gruppeId), eq(schema.gruppe.status, 'aktiv')))
     .innerJoin(schema.lernende, eq(schema.lernende.id, schema.gruppenMitglied.lernendeId))
     .leftJoin(schema.kontoProfil, eq(schema.kontoProfil.benutzerId, schema.lernende.benutzerId))
-    .where(
-      and(
-        eq(schema.gruppenMitglied.gruppeId, gruppeId),
-        eq(schema.lernende.status, 'aktiv'),
-        or(isNull(schema.gruppenMitglied.bis), gte(schema.gruppenMitglied.bis, heute)),
-      ),
-    )
+    .where(and(eq(schema.gruppenMitglied.gruppeId, gruppeId), eq(schema.lernende.status, 'aktiv'), isNull(schema.gruppenMitglied.bis)))
     .orderBy(asc(schema.lernende.anzeigename));
 }
 
@@ -182,6 +179,20 @@ async function platzierungen(benutzerIds: readonly string[], woche: Woche, heute
     })),
     heute,
   );
+}
+
+/** Blick eines Kontos auf Bestenlisten: ab 16 (dann gibt es das Angebot) und ob es sie sieht (`regeln.siehtBestenliste`). */
+export type Blick = { ab16: boolean; sieht: boolean };
+
+/** Liest Alter, eigene Zustimmung und Einwilligung `lernapp` des betrachtenden Kontos. */
+export async function blickAufBestenlisten(benutzerId: string, heute: string, jetzt = new Date()): Promise<Blick> {
+  const eigen = await alterVon(benutzerId);
+  if (!abSechzehn(eigen.alter, heute)) return { ab16: false, sieht: false };
+  const [zustimmung, einwilligung] = await Promise.all([
+    hatZustimmung(benutzerId),
+    lernappEinwilligung(benutzerId, { istKind: eigen.alter.istKind }, jetzt),
+  ]);
+  return { ab16: true, sieht: siehtBestenliste({ alter: eigen.alter, zustimmung, einwilligung: einwilligung === 'erteilt' }, heute) };
 }
 
 // ——— Einstellungen der Gruppe (Lehrkraft) ———
@@ -510,7 +521,7 @@ export async function standDerGruppe(
   const woche = wocheVon(heute);
   const [einstellung, liste, zuweisungen, [gruppenZeile]] = await Promise.all([
     gruppenEinstellung(gruppeId),
-    mitglieder(gruppeId, heute),
+    mitglieder(gruppeId),
     zuweisungenIn([gruppeId]),
     db.select({ name: schema.gruppe.name }).from(schema.gruppe).where(eq(schema.gruppe.id, gruppeId)),
   ]);
@@ -586,13 +597,16 @@ export type GruppenAnsicht = {
   id: string;
   name: Mehrsprachig;
   ziel: GruppenzielStand | null;
-  /** null: keine Bestenliste (aus, unter 16 oder Schalter aus) */
+  /** Die Gruppe hat eine Bestenliste, der Schalter ist an und das eigene Konto ab 16 (Angebot zur Zustimmung). */
+  bestenlisteAn: boolean;
+  /** null: keine Bestenliste (aus, unter 16, Schalter aus) oder nicht sichtbar (ohne eigene Zustimmung und Einwilligung) */
   bestenliste: Platz[] | null;
 };
 
 /**
  * Eigene Gruppen (als Lernende/r): Gruppenziel ohne Namen; Bestenliste nur, wenn sie eingeschaltet ist, der Schalter
- * `lernapp_rangliste` an ist (`rangliste`) und das eigene Konto ab 16 ist. Fremde Gruppen kommen nie vor.
+ * `lernapp_rangliste` an ist (`rangliste`) und das eigene Konto sie sieht – ab 16 mit eigener Zustimmung und
+ * Einwilligung (gegenseitiger Kreis). Fremde Gruppen kommen nie vor.
  */
 export async function eigeneGruppen(
   kontext: GruppenKontext,
@@ -602,18 +616,18 @@ export async function eigeneGruppen(
   const ids = [...kontext.eigeneGruppen];
   if (!ids.length) return [];
   const woche = wocheVon(heute);
-  const [eigen, gruppen] = await Promise.all([
-    alterVon(kontext.benutzerId),
+  const [blick, gruppen] = await Promise.all([
+    rangliste ? blickAufBestenlisten(kontext.benutzerId, heute, jetzt) : ({ ab16: false, sieht: false } satisfies Blick),
     db.select({ id: schema.gruppe.id, name: schema.gruppe.name }).from(schema.gruppe).where(inArray(schema.gruppe.id, ids)),
   ]);
-  const sehen = rangliste && abSechzehn(eigen.alter, heute);
   return Promise.all(
     gruppen.map(async (g) => {
       if (!darfInGruppe(kontext, 'gruppe.sehen', g.id)) throw new KeinGruppenZugang();
-      const [einstellung, liste] = await Promise.all([gruppenEinstellung(g.id), mitglieder(g.id, heute)]);
+      const [einstellung, liste] = await Promise.all([gruppenEinstellung(g.id), mitglieder(g.id)]);
       const konten = liste.flatMap((m) => (m.benutzerId ? [{ benutzerId: m.benutzerId, istKind: m.istKind ?? true }] : []));
       const ein = einstellung.wochenzielXp !== null ? await mitEinwilligung(konten, jetzt) : new Set<string>();
       const xp = await wochenXp([...ein], woche);
+      const an = blick.ab16 && einstellung.bestenliste;
       return {
         id: g.id,
         name: g.name,
@@ -621,8 +635,9 @@ export async function eigeneGruppen(
           einstellung.wochenzielXp,
           [...ein].map((id) => xp.get(id) ?? 0),
         ),
+        bestenlisteAn: an,
         bestenliste:
-          sehen && einstellung.bestenliste
+          an && blick.sieht
             ? await platzierungen(
                 konten.map((k) => k.benutzerId),
                 woche,
@@ -637,28 +652,43 @@ export async function eigeneGruppen(
 
 // ——— Familie ———
 
+/** Bestätigte, sorgeberechtigte Eltern-Kind-Bezüge zu aktiven Lernenden (wie bei der Einwilligung `lernapp` der Eltern). */
+const bestaetigtesKind = (elternId: string) =>
+  and(
+    eq(schema.elternKind.elternId, elternId),
+    eq(schema.elternKind.sorgeberechtigt, true),
+    isNotNull(schema.elternKind.bestaetigtAm),
+    eq(schema.lernende.status, 'aktiv'),
+  );
+
+/** Hat das Konto mindestens ein Kind mit bestätigtem, sorgeberechtigtem Bezug? (Familie, Familienschalter) */
+export async function hatBestaetigtesKind(elternId: string): Promise<boolean> {
+  const [z] = await db
+    .select({ id: schema.elternKind.lernendeId })
+    .from(schema.elternKind)
+    .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
+    .where(bestaetigtesKind(elternId))
+    .limit(1);
+  return z !== undefined;
+}
+
 /** Kinder (Konten) einer Familie: bestätigte, sorgeberechtigte Eltern-Kind-Bezüge mit Konto des Kindes. */
 async function kinderKonten(elternId: string): Promise<string[]> {
   const zeilen = await db
     .select({ benutzerId: schema.lernende.benutzerId })
     .from(schema.elternKind)
     .innerJoin(schema.lernende, eq(schema.lernende.id, schema.elternKind.lernendeId))
-    .where(
-      and(
-        eq(schema.elternKind.elternId, elternId),
-        eq(schema.elternKind.sorgeberechtigt, true),
-        isNotNull(schema.elternKind.bestaetigtAm),
-        eq(schema.lernende.status, 'aktiv'),
-        isNotNull(schema.lernende.benutzerId),
-      ),
-    );
+    .where(and(bestaetigtesKind(elternId), isNotNull(schema.lernende.benutzerId)));
   return zeilen.flatMap((z) => (z.benutzerId ? [z.benutzerId] : []));
 }
 
-/** Familien, zu denen ein Konto gehört: die eigene (als Elternteil mit Kindern) und die der eigenen Eltern. */
+/**
+ * Familien, zu denen ein Konto gehört: die eigene (als Elternteil mit bestätigtem, sorgeberechtigtem Bezug) und die der
+ * eigenen Eltern (ebenso nur bestätigt und sorgeberechtigt).
+ */
 async function familienVon(benutzerId: string, kontext: GruppenKontext): Promise<string[]> {
   const eltern = new Set<string>();
-  if (kontext.kinder.size) eltern.add(benutzerId);
+  if (kontext.kinder.size && (await hatBestaetigtesKind(benutzerId))) eltern.add(benutzerId);
   if (kontext.eigeneLernendeId) {
     const zeilen = await db
       .select({ elternId: schema.elternKind.elternId })
@@ -675,15 +705,17 @@ async function familienVon(benutzerId: string, kontext: GruppenKontext): Promise
   return [...eltern];
 }
 
-export type FamilienAnsicht = { eigene: boolean; bestenliste: Platz[] };
+/** `bestenliste` null: eingeschaltet, aber erst mit eigener Zustimmung und Einwilligung sichtbar (gegenseitiger Kreis). */
+export type FamilienAnsicht = { eigene: boolean; bestenliste: Platz[] | null };
 
 /**
  * Bestenlisten der Familien eines Kontos (ADR 0043 Nr. 8): nur eingeschaltete, nur für Konten ab 16, nur Mitglieder ab 16
- * mit Zustimmung. Eltern sehen hier nie Kinder unter 16 (Sperre im Code); die Lernwoche des Kindes steht in Mein Bereich.
+ * mit Zustimmung – und sichtbar nur, wenn das eigene Konto selbst zugestimmt hat und seine Einwilligung gilt. Eltern sehen
+ * hier nie Kinder unter 16 (Sperre im Code); die Lernwoche des Kindes steht in Mein Bereich.
  */
 export async function familienBestenlisten(kontext: GruppenKontext, heute: string, jetzt = new Date()): Promise<FamilienAnsicht[]> {
-  const eigen = await alterVon(kontext.benutzerId);
-  if (!abSechzehn(eigen.alter, heute)) return [];
+  const blick = await blickAufBestenlisten(kontext.benutzerId, heute, jetzt);
+  if (!blick.ab16) return [];
   const familien = await familienVon(kontext.benutzerId, kontext);
   if (!familien.length) return [];
   const an = await db
@@ -694,7 +726,7 @@ export async function familienBestenlisten(kontext: GruppenKontext, heute: strin
   return Promise.all(
     an.map(async ({ elternId }) => ({
       eigene: elternId === kontext.benutzerId,
-      bestenliste: await platzierungen([elternId, ...(await kinderKonten(elternId))], woche, heute, jetzt),
+      bestenliste: blick.sieht ? await platzierungen([elternId, ...(await kinderKonten(elternId))], woche, heute, jetzt) : null,
     })),
   );
 }
@@ -708,9 +740,12 @@ export async function familienBestenlisteAn(elternId: string): Promise<boolean> 
   return z?.an ?? false;
 }
 
-/** Bestenliste der Familie ein- oder ausschalten: nur ein Elternkonto mit mindestens einem eigenen Kind. */
+/**
+ * Bestenliste der Familie ein- oder ausschalten: nur ein Elternkonto mit mindestens einem Kind mit bestätigtem,
+ * sorgeberechtigtem Bezug (wie `kinderKonten`, `familienVon` und `lernwocheDesKindes`).
+ */
 export async function setzeFamilienBestenliste(kontext: GruppenKontext, an: boolean): Promise<void> {
-  if (!kontext.kinder.size) throw new KeinGruppenZugang();
+  if (!kontext.kinder.size || !(await hatBestaetigtesKind(kontext.benutzerId))) throw new KeinGruppenZugang();
   await db.transaction(async (tx) => {
     await tx
       .insert(schema.lernappFamilie)
@@ -753,7 +788,7 @@ export async function stimmeZu(benutzerId: string, heute: string, textVersion: s
   });
 }
 
-/** Ausblenden: Zustimmung zurücknehmen – sofort, ohne Verlauf. */
+/** Ausblenden: Zustimmung zurücknehmen – sofort, ohne Verlauf; unabhängig von Alter und Schaltern (Austritt jederzeit). */
 export async function blendeAus(benutzerId: string): Promise<void> {
   await db.transaction(async (tx) => {
     const weg = await tx

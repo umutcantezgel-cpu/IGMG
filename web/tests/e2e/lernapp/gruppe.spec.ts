@@ -1,5 +1,6 @@
 import { existsSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
+import AxeBuilder from '@axe-core/playwright';
 import { expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
 import kinderTexte from '../../../messages/bereiche/kinder.json';
@@ -14,8 +15,10 @@ import { KURS, LEKTION_1, spieleLektion1 } from './hilfen';
  * „Mein Bereich“ eine Lektion der Lern-App zu und schaltet die Bestenliste der Gruppe ein; das Kind sieht die Aufgabe im
  * Schüler-Start, verbindet die Lern-App mit seinem Zugang (Einwilligung der Eltern), lernt die Lektion und gleicht ab –
  * eine Bestenliste sieht es nie. Danach sieht die Lehrkraft „erledigt“ und den Stand der Woche. Dazu das JS-Budget der
- * Lehrkraft-Seite (Mein Bereich ≤ 230 KB, KERN 4.0 §9). Braucht `FUNKTION_LERNAPP_SYNC=an`, `FUNKTION_LERNAPP_GRUPPEN=an`
- * und `FUNKTION_LERNAPP_RANGLISTE=an` beim Bau und beim Lauf (tests/e2e/LIESMICH.md); sonst übersprungen.
+ * Lehrkraft-Seite (Mein Bereich ≤ 230 KB, KERN 4.0 §9) und axe mit Daten (KERN 4.0 §8): Lehrkraft-Seite in de/tr/en,
+ * Gruppe der Lern-App in de/tr/ar, je bei 390 und 1440 px. Braucht `FUNKTION_LERNAPP_SYNC=an`,
+ * `FUNKTION_LERNAPP_GRUPPEN=an` und `FUNKTION_LERNAPP_RANGLISTE=an` beim Bau und beim Lauf (tests/e2e/LIESMICH.md); sonst
+ * übersprungen.
  */
 const u = unterrichtTexte.de.unterricht.lernapp;
 const s = kinderTexte.de.lernweg.lernapp;
@@ -57,6 +60,28 @@ async function jsKb(page: Page): Promise<number> {
   let bytes = 0;
   for (const a of adressen) bytes += gzipSync(await (await page.request.get(a)).body(), { level: 9 }).length;
   return bytes / 1024;
+}
+
+const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
+
+/** axe (WCAG 2.2 AA) bei 390 und 1440 px; gezählt werden ernste und kritische Befunde, als lesbare Zeilen. */
+async function axeBeideBreiten(page: Page, kennzeichen: string): Promise<string[]> {
+  const befunde: string[] = [];
+  const vorher = page.viewportSize();
+  for (const breite of [390, 1440]) {
+    await page.setViewportSize({ width: breite, height: 900 });
+    const ergebnis = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+    for (const v of ergebnis.violations)
+      if (v.impact === 'serious' || v.impact === 'critical')
+        befunde.push(
+          `${kennzeichen} ${breite}px ${v.id} (${v.impact}): ${v.nodes
+            .slice(0, 3)
+            .map((n) => n.target.join(' '))
+            .join(' ; ')}`,
+        );
+  }
+  if (vorher) await page.setViewportSize(vorher);
+  return befunde;
 }
 
 async function abgleichen(page: Page) {
@@ -146,7 +171,26 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
     // Lerntage 1, XP aus der Lektion (Zahlen nur mit Einwilligung)
     await expect(zeile.locator('td').first()).toHaveText('1');
     await expect(zeile.locator('td').nth(2)).not.toHaveText('0');
-    // Budget zuletzt prüfen, damit der Ablauf auch bei einer Überschreitung vollständig belegt ist
+
+    // 4. axe mit Daten: Lehrkraft-Seite in de/tr/en, Gruppe der Lern-App (Kind, verbundenes Gerät) in de/tr/ar
+    const befunde: string[] = [];
+    const lehrkraftSeiten = {
+      de: seite,
+      tr: `/tr/hesabim/derslerim/${gruppe}/ogrenme-uygulamasi`,
+      en: `/en/my-account/teaching/${gruppe}/learning-app`,
+    };
+    for (const [sprache, pfad] of Object.entries(lehrkraftSeiten)) {
+      await l.goto(pfad);
+      await expect(l.locator('#zuweisungen')).toBeVisible();
+      befunde.push(...(await axeBeideBreiten(l, `Lehrkraft ${sprache}`)));
+    }
+    for (const ui of ['de', 'tr', 'ar']) {
+      await k.goto(`/lern-app/${ui}/gruppe`);
+      await expect(k.locator('#zuweisungen')).toBeVisible();
+      befunde.push(...(await axeBeideBreiten(k, `Lern-App ${ui}/gruppe`)));
+    }
+    // Budget und axe zuletzt prüfen, damit der Ablauf auch bei einer Abweichung vollständig belegt ist
+    expect(befunde).toEqual([]);
     expect(kb).toBeLessThanOrEqual(230);
   } finally {
     await lehrkraft.close();

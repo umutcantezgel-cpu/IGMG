@@ -14,7 +14,7 @@ import { berlinerDatum } from '@/lib/gebetszeiten/naechstes';
 import { text } from '@/lib/i18n/inhalt';
 import { verlangeMeinBereich } from '@/lib/konto/zugang';
 import { datumText, zeitspanne } from '@/lib/lernen/ansicht';
-import { familienBestenlisteAn } from '@/lib/lernapp/gruppe/dienst';
+import { familienBestenlisteAn, hatBestaetigtesKind } from '@/lib/lernapp/gruppe/dienst';
 import { ladeGruppenKontext } from '@/lib/rechte/gemeinde';
 import { lernappFamilienBestenlisteSetzen } from '@/server/actions/lernapp-gruppe';
 import { kinderDerEltern } from '@/server/queries/mein-bereich/kinder';
@@ -30,8 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
 /**
  * Eltern › Meine Kinder (AUFTRAG 3.5): je Kind eine Karte mit Gruppe, nächstem Termin, gemeldeten Fehltagen und dem
  * Stand des eigenen Zugangs. Nur eigene Kinder (Eltern-Kind-Bezug, ADR 0026). Funktion `lernplattform` aus → 404.
- * Mit `lernapp_rangliste` zusätzlich der Schalter „Bestenliste der Familie“ in der Lern-App (L7-02, ADR 0043 Nr. 8): Er gilt
- * nur für Familienmitglieder ab 16 mit eigener Zustimmung; Kinder unter 16 erscheinen nie (Sperre im Code).
+ * Mit `lernapp_rangliste` und bestätigtem, sorgeberechtigtem Bezug zusätzlich der Schalter „Bestenliste der Familie“ in der
+ * Lern-App (L7-02, ADR 0043 Nr. 8): Er gilt nur für Familienmitglieder ab 16 mit eigener Zustimmung; Kinder unter 16
+ * erscheinen nie (Sperre im Code).
  */
 export default async function KinderSeite({ searchParams }: PageProps<'/[locale]/mein-bereich/kinder'>) {
   // Zeit und Sitzung je Anfrage (Cache Components: `new Date()` erst nach `connection()`)
@@ -46,7 +47,10 @@ export default async function KinderSeite({ searchParams }: PageProps<'/[locale]
     funktionAn('lernapp_rangliste'),
     searchParams,
   ]);
-  const familieAn = rangliste ? await familienBestenlisteAn(k.benutzerId) : false;
+  // Den Familienschalter gibt es nur mit bestätigtem, sorgeberechtigtem Bezug (wie im Dienst)
+  const [familieMoeglich, familieAn] = rangliste
+    ? await Promise.all([hatBestaetigtesKind(k.benutzerId), familienBestenlisteAn(k.benutzerId)])
+    : [false, false];
   const familieOk = sp.familie === 'an' || sp.familie === 'aus' ? sp.familie : null;
 
   return (
@@ -130,7 +134,7 @@ export default async function KinderSeite({ searchParams }: PageProps<'/[locale]
       ) : (
         <LeerHinweis titel={t('leer.titel')} text={t('leer.text')} rahmen />
       )}
-      {rangliste && kinder.length ? (
+      {familieMoeglich && kinder.length ? (
         <Abschnitt
           id="lern-app"
           Icon={Languages}

@@ -30,8 +30,16 @@ export type GruppeTexte = {
     hinweis: string;
   };
   ziel: { titel: string; stand: string; erreicht: string; zuWenige: string };
-  bestenliste: { gruppe: string; familie: string; text: string; leer: string; ich: string; xp: string };
-  zustimmung: { titel: string; text: string; zustimmen: string; ausblenden: string; erteilt: string; nicht: string };
+  bestenliste: { gruppe: string; familie: string; text: string; verborgen: string; leer: string; ich: string; xp: string };
+  zustimmung: {
+    titel: string;
+    text: string;
+    zustimmen: string;
+    ausblenden: string;
+    erteilt: string;
+    nicht: string;
+    ohneEinwilligung: string;
+  };
 };
 
 /** Adresse der Route (`gruppe/protokoll.ts`, GRUPPE_ADRESSE); hier als Text, damit Zod nicht in die Insel kommt. */
@@ -42,7 +50,9 @@ type Lage = { art: 'frei' } | { art: 'laedt' } | { art: 'anmelden' } | { art: 'd
 /**
  * Gruppe in der Lern-App (L7-02; PLAN §3.1; ADR 0043 Nr. 7/8; KERN 4.0 §5): Zuweisungen der Lehrkraft, Gruppenziel ohne
  * Namen und – nur für Konten ab 16, wenn die Lehrkraft bzw. die Eltern sie eingeschaltet haben – Bestenlisten der eigenen
- * Gruppe und Familie mit der eigenen Zustimmung (jederzeit ausblenden). Ohne verbundenes Konto entsteht keine Anfrage,
+ * Gruppe und Familie mit der eigenen Zustimmung (jederzeit ausblenden). Die Listen sieht nur, wer selbst zugestimmt hat
+ * und deren Einwilligung gilt (gegenseitiger Kreis); sonst steht dort ein Hinweis. Ohne Einwilligung gibt es statt des
+ * Knopfs „Zustimmen“ einen Hinweis (der Server lehnt sonst ab). Ohne verbundenes Konto entsteht keine Anfrage,
  * bis die Person „Meine Gruppe anzeigen“ wählt; ist das Gerät mit einem Konto verbunden, lädt die Insel sofort. Alle
  * Regeln (Alter, Zustimmung, Einwilligung, Gruppenisolation) setzt der Server durch; die Insel zeigt nur, was kommt.
  * Zahlen stehen statisch (keine hochzählenden Zahlen), die Liste ist ungeordnet (keine Ränge, keine Medaillen).
@@ -241,11 +251,11 @@ export function GruppeInsel({ ui, texte }: { ui: Oberflaeche; texte: GruppeTexte
                 {g.name}
               </h2>
               {g.ziel ? ziel(g.ziel) : null}
-              {g.bestenliste ? (
+              {g.bestenliste || g.verborgen ? (
                 <div className="flex flex-col gap-2">
                   <h3 className="text-20">{texte.bestenliste.gruppe}</h3>
-                  <p className="text-16 text-tinte-2">{texte.bestenliste.text}</p>
-                  {liste(g.bestenliste)}
+                  <p className="text-16 text-tinte-2">{g.bestenliste ? texte.bestenliste.text : texte.bestenliste.verborgen}</p>
+                  {g.bestenliste ? liste(g.bestenliste) : null}
                 </div>
               ) : null}
             </section>
@@ -256,8 +266,8 @@ export function GruppeInsel({ ui, texte }: { ui: Oberflaeche; texte: GruppeTexte
               <h2 id={`familie-${i}`} className="text-24">
                 {texte.bestenliste.familie}
               </h2>
-              <p className="text-16 text-tinte-2">{texte.bestenliste.text}</p>
-              {liste(fa.bestenliste)}
+              <p className="text-16 text-tinte-2">{fa.bestenliste ? texte.bestenliste.text : texte.bestenliste.verborgen}</p>
+              {fa.bestenliste ? liste(fa.bestenliste) : null}
             </section>
           ))}
 
@@ -268,14 +278,18 @@ export function GruppeInsel({ ui, texte }: { ui: Oberflaeche; texte: GruppeTexte
               </h2>
               <p className="text-16">{texte.zustimmung.text}</p>
               <p className="text-16 font-bold">{lage.daten.zustimmung.erteilt ? texte.zustimmung.erteilt : texte.zustimmung.nicht}</p>
-              <button
-                type="button"
-                disabled={sendet}
-                onClick={() => void zustimmung(lage.daten.zustimmung?.erteilt ? 'ausblenden' : 'zustimmen')}
-                className={lage.daten.zustimmung.erteilt ? neben : haupt}
-              >
-                {lage.daten.zustimmung.erteilt ? texte.zustimmung.ausblenden : texte.zustimmung.zustimmen}
-              </button>
+              {lage.daten.zustimmung.erteilt || lage.daten.einwilligung === 'erteilt' ? (
+                <button
+                  type="button"
+                  disabled={sendet}
+                  onClick={() => void zustimmung(lage.daten.zustimmung?.erteilt ? 'ausblenden' : 'zustimmen')}
+                  className={lage.daten.zustimmung.erteilt ? neben : haupt}
+                >
+                  {lage.daten.zustimmung.erteilt ? texte.zustimmung.ausblenden : texte.zustimmung.zustimmen}
+                </button>
+              ) : (
+                <p className="text-16 text-tinte-2">{texte.zustimmung.ohneEinwilligung}</p>
+              )}
             </section>
           ) : null}
         </>

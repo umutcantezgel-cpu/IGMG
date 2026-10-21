@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { eq } from 'drizzle-orm';
-import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import { db as appDb, schema } from '@/lib/db';
 import { verschluessele } from '@/lib/krypto';
 import { wocheVon } from '@/lib/lernapp/gruppe/regeln';
@@ -11,9 +11,25 @@ import { kontoUmgebung } from './hilfen/konto';
 /**
  * Gruppen der Lern-App (L7-02; ADR 0043 Nr. 7/8; KERN 4.0 §5) gegen PGlite: Gruppenisolation (fremde Gruppe nie sichtbar,
  * nie bearbeitbar), Rechte-Negativtests (Aufsicht, Lernende, fremde Lehrkraft, fremde Eltern), Kinder nie in einer
- * Bestenliste – auch nicht mit einer untergeschobenen Zustimmung –, nur mit eigener Zustimmung und Einwilligung,
- * Schalter `lernapp_gruppen`/`lernapp_rangliste`, Ursprung, Audit ohne Inhalte. Testdaten fiktiv, Namen Platzhalter.
+ * Bestenliste – auch nicht mit einer untergeschobenen Zustimmung –, nur mit eigener Zustimmung und Einwilligung; sehen
+ * darf sie nur, wer selbst zugestimmt hat und deren Einwilligung gilt (gegenseitiger Kreis, DSFA-Entwurf LA-V7/EL4).
+ * Schalter `lernapp_gruppen`/`lernapp_rangliste` (Ausblenden geht immer), nur laufende Mitgliedschaften, Familienschalter
+ * nur mit bestätigtem Bezug, Reihenfolge der Actions (Konto vor Eingabe), Ursprung, Audit ohne Inhalte. Testdaten fiktiv,
+ * Namen Platzhalter.
  */
+// Spion auf die Kontoprüfung der Actions (Reihenfolge wie MUSTER §5: Konto mit Faktor und Kontoart vor der Eingabe)
+const kontoPruefungen = vi.hoisted(() => ({ anzahl: 0 }));
+vi.mock('@/lib/rechte/gemeinde', async (original) => {
+  const echt = await original<typeof import('@/lib/rechte/gemeinde')>();
+  return {
+    ...echt,
+    verlangeKontoRecht: (...a: Parameters<typeof echt.verlangeKontoRecht>) => {
+      kontoPruefungen.anzahl += 1;
+      return echt.verlangeKontoRecht(...a);
+    },
+  };
+});
+
 const { client, db } = await kontoUmgebung();
 const { auth } = await import('@/lib/auth/server');
 const route = await import('@/app/api/lernapp/gruppe/route');
@@ -283,7 +299,7 @@ describe('API /api/lernapp/gruppe: Isolation und Bestenliste', () => {
     const a = await holeJson();
     expect(a.einwilligung).toBe('erteilt');
     expect(a.gruppen).toHaveLength(1);
-    expect(a.gruppen[0]!.bestenliste).toBeNull();
+    expect(a.gruppen[0]).toMatchObject({ bestenliste: null, verborgen: false });
     expect(a.familien).toEqual([]);
     expect(a.zustimmung).toBeNull();
     expect(a.zuweisungen.length).toBeGreaterThan(0);
@@ -302,21 +318,55 @@ describe('API /api/lernapp/gruppe: Isolation und Bestenliste', () => {
     expect(JSON.stringify(a)).not.toContain('[Jugend]');
   });
 
-  it('Zustimmung zurücknehmen blendet sofort aus; ohne Einwilligung keine Zustimmung', async () => {
+  it('Zustimmung zurücknehmen blendet sofort aus – auch die Liste der anderen (gegenseitiger Kreis)', async () => {
     als(ids.jugend);
     expect((await sende('ausblenden')).status).toBe(200);
     const a = await holeJson();
-    expect(a.gruppen[0]!.bestenliste!.map((p) => p.name)).toEqual(['[Erwachsen] W.']);
+    // Ohne eigene Zustimmung keine Namen: nur der Hinweis „verborgen“ und das Angebot zur Zustimmung
+    expect(a.gruppen[0]).toMatchObject({ bestenliste: null, verborgen: true });
+    expect(JSON.stringify(a)).not.toContain('[Erwachsen]');
     expect(a.zustimmung).toEqual({ erteilt: false });
     const r = await sende('zustimmen');
     expect(r.status).toBe(200);
     expect(await r.json()).toEqual({ erteilt: true });
+    const b = await holeJson();
+    expect(b.gruppen[0]).toMatchObject({ verborgen: false });
+    expect(b.gruppen[0]!.bestenliste!.map((p) => p.name)).toEqual(['[Erwachsen] W.', '[Jugend] J.']);
     als(ids.ohne);
     expect((await sende('zustimmen')).status).toBe(403);
     // Audit ohne Inhalte
     const audit = await db.select().from(schema.auditEintrag).where(eq(schema.auditEintrag.aktion, 'lernapp.bestenliste_zustimmung'));
     expect(audit.length).toBeGreaterThanOrEqual(2);
     for (const e of audit) expect(Object.keys(e.details ?? {})).toEqual(['erteilt']);
+  });
+
+  it('Ab 16 ohne Einwilligung: keine Liste, auch mit Zustimmung in der Datenbank; das Angebot bleibt', async () => {
+    als(ids.ohne);
+    const vorher = await holeJson();
+    expect(vorher.einwilligung).toBe('fehlt');
+    expect(vorher.gruppen[0]).toMatchObject({ bestenliste: null, verborgen: true });
+    expect(vorher.zustimmung).toEqual({ erteilt: false });
+    await db.insert(schema.lernappRanglisteZustimmung).values({ benutzerId: ids.ohne, textVersion: 'untergeschoben' });
+    const a = await holeJson();
+    expect(a.gruppen[0]).toMatchObject({ bestenliste: null, verborgen: true });
+    expect(a.zustimmung).toEqual({ erteilt: true });
+    expect(JSON.stringify(a)).not.toContain('[Erwachsen]');
+    expect((await sende('ausblenden')).status).toBe(200);
+  });
+
+  it('Heute ausgetragen: weder in Bestenliste noch in Gruppenziel oder Stand (nur laufende Mitgliedschaften)', async () => {
+    const id = await konto('[Ausgetragen] A', { rollen: ['schueler'], einwilligung: true });
+    const l = await lernende(id, '[Ausgetragen] A', '2010-01-01');
+    await db.insert(schema.gruppenMitglied).values({ gruppeId: ids.gruppe1, lernendeId: l, bis: HEUTE });
+    await db.insert(schema.lernappRanglisteZustimmung).values({ benutzerId: id, textVersion: 'v1' });
+    await xp(id, 50);
+    als(ids.jugend);
+    const a = await holeJson();
+    expect(a.gruppen[0]!.bestenliste!.map((p) => p.name)).toEqual(['[Erwachsen] W.', '[Jugend] J.']);
+    expect(JSON.stringify(a)).not.toContain('[Ausgetragen]');
+    const s = await dienst.standDerGruppe(await kontext(ids.lehrkraftA), ids.gruppe1, HEUTE);
+    expect(s.zeilen.map((z) => z.name)).not.toContain('[Ausgetragen] A');
+    expect(s.ziel).toMatchObject({ summe: 100 });
   });
 
   it('Schalter: ohne `lernapp_rangliste` keine Bestenliste und kein Zustimmen; ohne `lernapp_gruppen` 404', async () => {
@@ -328,6 +378,15 @@ describe('API /api/lernapp/gruppe: Isolation und Bestenliste', () => {
     expect((await sende('zustimmen')).status).toBe(404);
     process.env.FUNKTION_LERNAPP_GRUPPEN = 'aus';
     expect((await hole()).status).toBe(404);
+    expect((await sende('zustimmen')).status).toBe(404);
+    // Ausblenden geht auch mit ausgeschalteten Schaltern (Austritt jederzeit): die Zeile ist sofort weg
+    als(ids.erwachsen);
+    expect((await sende('ausblenden')).status).toBe(200);
+    const zeilen = await db
+      .select()
+      .from(schema.lernappRanglisteZustimmung)
+      .where(eq(schema.lernappRanglisteZustimmung.benutzerId, ids.erwachsen));
+    expect(zeilen).toEqual([]);
   });
 
   it('Ursprung, Anmeldung und Eingabe werden geprüft', async () => {
@@ -343,13 +402,21 @@ describe('API /api/lernapp/gruppe: Isolation und Bestenliste', () => {
 describe('Familie und Eltern', () => {
   it('Eltern schalten die Bestenliste der Familie; Kinder unter 16 erscheinen nie, sehen sie nie', async () => {
     await expect(dienst.setzeFamilienBestenliste(await kontext(ids.jugend), true)).rejects.toBeInstanceOf(dienst.KeinGruppenZugang);
+    // Eltern-Kind-Bezug ohne Bestätigung genügt nicht (wie bei Lernwoche und Familie)
+    await expect(dienst.setzeFamilienBestenliste(await kontext(ids.elternFremd), true)).rejects.toBeInstanceOf(dienst.KeinGruppenZugang);
+    expect(await dienst.hatBestaetigtesKind(ids.elternFremd)).toBe(false);
     await dienst.setzeFamilienBestenliste(await kontext(ids.eltern), true);
+    // Elternteil ohne eigene Zustimmung: eingeschaltet, aber keine Namen – nur das Angebot
+    als(ids.eltern);
+    const ohne = await holeJson();
+    expect(ohne.familien).toEqual([{ eigene: true, bestenliste: null }]);
+    expect(ohne.zustimmung).toEqual({ erteilt: false });
     await db.insert(schema.lernappRanglisteZustimmung).values({ benutzerId: ids.eltern, textVersion: 'v1' });
     als(ids.jugend);
     const a = await holeJson();
     expect(a.familien).toHaveLength(1);
     expect(a.familien[0]!.eigene).toBe(false);
-    expect(a.familien[0]!.bestenliste.map((p) => p.name).sort()).toEqual(['[Elternteil] E.', '[Jugend] J.']);
+    expect(a.familien[0]!.bestenliste!.map((p) => p.name).sort()).toEqual(['[Elternteil] E.', '[Jugend] J.']);
     als(ids.eltern);
     const e = await holeJson();
     expect(e.familien[0]!.eigene).toBe(true);
@@ -373,5 +440,18 @@ describe('Familie und Eltern', () => {
     );
     // Jugendliche/r nach dem Übergang: Eltern sehen nichts mehr
     expect(await dienst.lernwocheDesKindes(await kontext(ids.eltern), ids.jugendL, HEUTE)).toEqual({ art: 'selbst' });
+  });
+});
+
+describe('Actions: Konto mit Faktor und Kontoart vor der Eingabe (MUSTER §5)', () => {
+  it('ungültige Eingabe: jede Action prüft zuerst das Konto und endet in KeinRecht', async () => {
+    const actions = await import('@/server/actions/lernapp-gruppe');
+    const { KeinRecht } = await import('@/lib/rechte/pruefe');
+    als(ids.lehrkraftA);
+    for (const [name, action] of Object.entries(actions)) {
+      kontoPruefungen.anzahl = 0;
+      await expect((action as (fd: FormData) => Promise<void>)(new FormData()), name).rejects.toBeInstanceOf(KeinRecht);
+      expect(kontoPruefungen.anzahl, name).toBe(1);
+    }
   });
 });

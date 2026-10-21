@@ -36,13 +36,16 @@ import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
  * Gruppe in der Lern-App (L7-02; PLAN §3.1; ADR 0043 Nr. 7/8; KERN 4.0 §5): `GET /api/lernapp/gruppe?ui=de` liefert die
  * Zuweisungen der eigenen Gruppen, das Gruppenziel (Summe ohne Namen), Bestenlisten der eigenen Gruppen und Familien und
  * die eigene Zustimmung; `POST` mit `{ aktion: 'zustimmen' | 'ausblenden', ui }` setzt die Zustimmung. Prüfungen:
- * 1. Datenbank und Schalter `lernapp_gruppen` (setzt `lernapp` und `lernplattform` voraus) – sonst 404 ohne Körper; POST
- *    zusätzlich `lernapp_rangliste`.
+ * 1. Datenbank und Schalter `lernapp_gruppen` (setzt `lernapp` und `lernplattform` voraus) – sonst 404 ohne Körper. POST
+ *    `zustimmen` verlangt zusätzlich `lernapp_rangliste`; `ausblenden` geht auch bei ausgeschalteten Schaltern (Austritt
+ *    jederzeit, L3-E02 – sonst gälte eine stehengebliebene Zustimmung nach dem Wiedereinschalten wieder).
  * 2. Gleicher Ursprung – sonst 403 `ursprung`.
  * 3. Sitzung mit Kontoart und – wo Pflicht – zweitem Faktor – sonst 401 `anmeldung`.
  * 4. Bremse 60 Anfragen je Minute und Konto – sonst 429 `bremse`.
- * Bestenlisten nur mit `lernapp_rangliste`, nur für Konten ab 16 und nur mit Mitgliedern ab 16 mit Zustimmung (Sperre im
- * Code, `gruppe/regeln.ts`). Kinder bekommen nie eine Bestenliste und keine Zustimmung angeboten. Nie zwischengespeichert.
+ * Bestenlisten nur mit `lernapp_rangliste`, nur mit Mitgliedern ab 16 mit Zustimmung und nur für Konten, die selbst
+ * zugestimmt haben und deren Einwilligung gilt (gegenseitiger Kreis; Sperre im Code, `gruppe/regeln.ts`). Wer ab 16 ist,
+ * aber nicht zugestimmt hat, bekommt nur `verborgen` und das Angebot. Kinder bekommen nie eine Bestenliste und keine
+ * Zustimmung angeboten. Nie zwischengespeichert.
  */
 const KOPF = { 'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex', 'X-Content-Type-Options': 'nosniff' };
 const BREMSE = { max: 60, fensterSekunden: 60 } as const;
@@ -91,7 +94,7 @@ export async function GET(anfrage: Request) {
       rangliste && ab16 ? familienBestenlisten(kontext, heute, jetzt) : Promise.resolve([]),
     ]);
     const details = await zuweisungsDetails(zuweisungen);
-    const angeboten = rangliste && ab16 && (gruppen.some((g) => g.bestenliste !== null) || familien.length > 0);
+    const angeboten = rangliste && ab16 && (gruppen.some((g) => g.bestenlisteAn) || familien.length > 0);
     const inhalt: GruppeAntwort = {
       einwilligung,
       zuweisungen: zuweisungen.map((z) => ({
@@ -110,8 +113,11 @@ export async function GET(anfrage: Request) {
         name: text(g.name, gruppenSprache(ui.data)),
         ziel: g.ziel,
         bestenliste: ab16 && g.bestenliste ? alsListe(g.bestenliste, konto.benutzerId) : null,
+        verborgen: ab16 && g.bestenlisteAn && !g.bestenliste,
       })),
-      familien: ab16 ? familien.map((f) => ({ eigene: f.eigene, bestenliste: alsListe(f.bestenliste, konto.benutzerId) })) : [],
+      familien: ab16
+        ? familien.map((f) => ({ eigene: f.eigene, bestenliste: f.bestenliste ? alsListe(f.bestenliste, konto.benutzerId) : null }))
+        : [],
       zustimmung: angeboten ? { erteilt: await hatZustimmung(konto.benutzerId) } : null,
     };
     return Response.json(inhalt, { headers: KOPF });
@@ -122,7 +128,8 @@ export async function GET(anfrage: Request) {
 }
 
 export async function POST(anfrage: Request) {
-  const p = await pruefe(anfrage, ['lernapp_gruppen', 'lernapp_rangliste']);
+  // Schalter erst nach der Aktion: Ausblenden geht immer (Austritt jederzeit), Zustimmen nur mit beiden Schaltern
+  const p = await pruefe(anfrage, []);
   if (p.fehler) return p.fehler;
   const { konto } = p;
   if (!anfrage.headers.get('content-type')?.toLowerCase().startsWith('application/json')) return antwort(415, 'anfrage');
@@ -140,6 +147,7 @@ export async function POST(anfrage: Request) {
     await blendeAus(konto.benutzerId);
     return Response.json({ erteilt: false } satisfies ZustimmungAntwort, { headers: KOPF });
   }
+  for (const s of ['lernapp_gruppen', 'lernapp_rangliste'] as const) if (!(await funktionAn(s))) return antwort(404);
   const jetzt = new Date();
   const heute = berlinerDatum(jetzt);
   if (konto.istKind || !abSechzehn((await alterVon(konto.benutzerId)).alter, heute)) return antwort(403, 'alter');
