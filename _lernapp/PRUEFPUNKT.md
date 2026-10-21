@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 18:15 UTC:** Nach dem Limit (≈ 15:30–17:00) fortgesetzt. A1: Entwurf tr/de 12/12, ar e01–e07 (e08 als
+  Teildatei); Lektorat tr 12/12, de e01–e08; Übersetzung tr e01/e02. Neuer Lauf `wf_12f884de-7f4` (`entworfen`, `lektoriert`,
+  `uebersetzt`; Ergebnisse `scratchpad/l3/a1/ergebnisse-lauf3.json`). L7 ZWISCHENSTÄNDE 80f2147 (B) und 71848a8 (C), Fortsetzung
+  `wf_45510daf-d44`. Danach: L7 mergen + Push auf `main`; nach der A1-Schlussprüfung Inhalte mergen, L3-08, Tor L3.
+- **Stand 21.10.2026 15:10 UTC:** Nachprüfung L3-05/L3-06b grün bis auf einen veralteten Schaltertest (behoben, 5d59217 =
+  `main`). A1 `wf_742961e7-df9`: 30 Entwürfe, 20 Lektorate, 4 Übersetzungen. **L7 gestartet** `wf_5180ee0e-539`
+  (`scratchpad/lernapp-l7.workflow.js`; B = L7-01 Spielelemente, C = `l3-05` = L7-02 Gruppen/Lehrkräfte/Eltern; je
+  Gegenprüfung + höchstens eine Mängelrunde). Nach Abschluss: Merge, schlanke Nachprüfung, Push auf `main` (L3-E12a).
 - **Stand 21.10.2026 14:40 UTC:** Lern-App in der Produktion an (a023cf1, Nutzer: „Die App ist ein Teil der Seite!“, „ich
   erlaube dir alles“) – live https://igmg-wetzlarer.vercel.app/lern-app/de 200. **L3-05 Sprachausgabe de** (Gegenprüfung Runde 2
   frei; Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`; Hochrechnung A1 de ≈ 29 min Erzeugung, ≈ 16 MB; Upload wartet auf
