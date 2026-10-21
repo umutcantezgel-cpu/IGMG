@@ -24,7 +24,9 @@ export function AufnahmeStudio({ eintrag, sprecher }: { eintrag: string; spreche
   const t = useTranslations('verwaltung.lernapp');
   const id = useId();
   const [offen, setOffen] = useState(false);
-  const [wer, setWer] = useState(sprecher.length === 1 ? sprecher[0]!.id : '');
+  const [gewaehlt, setWer] = useState('');
+  // Eine einzige Person mit Vereinbarung ist vorausgewählt – auch, wenn sie erst nach dem ersten Rendern angelegt wurde
+  const wer = gewaehlt || (sprecher.length === 1 ? sprecher[0]!.id : '');
   const [laeuft, setLaeuft] = useState(false);
   const [sekunden, setSekunden] = useState(0);
   const [aufnahme, setAufnahme] = useState<Blob | null>(null);

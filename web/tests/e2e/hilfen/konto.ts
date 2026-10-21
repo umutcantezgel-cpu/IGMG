@@ -15,13 +15,14 @@ export async function eigeneAbsenderAdresse(page: Page) {
 /**
  * Legt per Einladung ein Testkonto an, richtet TOTP ein und meldet es an (G-04: nur Testdaten).
  * `nachAnlegen` läuft nach dem Annehmen der Einladung und vor der ersten Anmeldung (z. B. Testdaten zur Rolle).
- * Ergebnis: angemeldete Seite auf /verwaltung.
+ * Ergebnis: angemeldete Seite auf /verwaltung (`ziel`: andere Startseite der Rolle, z. B. die Sprachprüfung der Lern-App).
  */
 export async function angemeldetesKonto(
   page: Page,
   rolle = 'administration',
   organisation?: string,
   nachAnlegen?: (email: string) => Promise<void>,
+  ziel: RegExp = /\/verwaltung$/,
 ) {
   await eigeneAbsenderAdresse(page);
   const { email, token } = erzeugeEinladung(rolle, organisation);
@@ -41,6 +42,6 @@ export async function angemeldetesKonto(
   const totp = new OTPAuth.TOTP({ secret: OTPAuth.Secret.fromBase32(geheimnis), digits: 6, period: 30 });
   await page.getByLabel('Schritt 3: Code eingeben').filter({ visible: true }).fill(totp.generate());
   await page.getByRole('button', { name: 'Einrichtung abschließen' }).click();
-  await expect(page).toHaveURL(/\/verwaltung$/);
+  await expect(page).toHaveURL(ziel);
   return { email, totp };
 }
