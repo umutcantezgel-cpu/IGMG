@@ -1145,10 +1145,9 @@
     },
     {
       "schluessel": "de.a1.e12.s0049",
-      "text": "Hast du meine Nachricht bekommen?",
-      "quelle": "tatoeba:8159824",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #8159824 von TheNightAvl (Tatoeba), CC BY 2.0 FR"
+      "text": "Kannst du meine Nachricht lesen?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e12.s0050",
@@ -1694,7 +1693,7 @@
     },
     {
       "schluessel": "de.a1.e12.s0136",
-      "text": "Heute ist das Thema in der Klasse: Berufe.",
+      "text": "Die Lehrerin spricht mit der Klasse über Berufe.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1772,7 +1771,7 @@
     },
     {
       "schluessel": "de.a1.e12.s0149",
-      "text": "Morgens fahren viele Schüler mit ihr.",
+      "text": "Morgens sitzen viele Schüler in ihrem Bus.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2019,7 +2018,7 @@
     },
     {
       "schluessel": "de.a1.e12.s0190",
-      "text": "Ein Koch arbeitet oft in einer Kantine.",
+      "text": "Ein Koch arbeitet oft in einem Restaurant.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2073,7 +2072,7 @@
     },
     {
       "schluessel": "de.a1.e12.s0199",
-      "text": "Die Werkstatt fängt um sieben Uhr an.",
+      "text": "Emre fängt um sieben in der Werkstatt an.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2524,7 +2523,8 @@
         {
           "schluessel": "de.a1.e12.l03.a16",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a1.e12.s0069"
+          "ziel": "de.a1.e12.s0069",
+          "alternativen": ["Ab 8 Uhr bin ich in der Schule."]
         }
       ]
     },
@@ -3139,8 +3139,8 @@
         {
           "schluessel": "de.a1.e12.l07.a07",
           "typ": "luecke",
-          "ziel": "de.a1.e12.s0008",
-          "wort": 2,
+          "ziel": "de.a1.e12.s0147",
+          "wort": 4,
           "ablenker": ["Busfahrer", "Busfahrern"]
         },
         {
@@ -3150,7 +3150,7 @@
           "satz": "de.a1.e12.s0187",
           "nach": "ziel",
           "alternativen": ["Am Montag steht Elif um sieben Uhr auf.", "Um sieben Uhr steht Elif am Montag auf."],
-          "ablenker": ["stehe", "ab"]
+          "ablenker": ["stehe", "im"]
         },
         {
           "schluessel": "de.a1.e12.l07.a09",
