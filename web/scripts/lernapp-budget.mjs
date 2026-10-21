@@ -7,7 +7,12 @@
 // - Start `/lern-app/de`, Lernpfad `/lern-app/ar/de-aus-ar`, Fortschritt `/lern-app/de/fortschritt`: gesamt ≤ 180 KB,
 //   eigener Anteil ≤ 30 KB.
 // - Spieler `/lern-app/tr/de-aus-tr/ueben?l=…` (erste Aufgabe sichtbar): gesamt ≤ 210 KB, zusätzlich zur Hülle ≤ 60 KB.
-// - je Übungstyp ≤ 15 KB: die Datei mit dem Erkennungstext der Komponente (Klassen, aus `.next/static/chunks`).
+// - je Übungstyp ≤ 15 KB: der Chunk des Typs (`TYP_ERKENNUNG`: Datei aus `.next/static/chunks`, in der alle
+//   Erkennungstexte des Typs stehen – Turbopack legt die gemeinsamen Bausteine wie Optionsgruppe oder Texteingabe in jeden
+//   Typ-Chunk; mehrere passende Dateien sind Chunks verschiedener Typen gleicher Bauart, gezählt wird die größte) plus
+//   jede Datei mit einem Baustein des Typs, die zu keinem Typ gehört (falls ein Baustein als eigener Chunk ausgelagert ist).
+// - arabische Bildschirmtastatur ≤ 10 KB (eigener Chunk, erst bei arabischem Freitext).
+// - Wiederholen (ohne Karten) und Einstufung (vor dem Start) auf einem neuen Gerät: gesamt ≤ 210 KB und ohne Zod (L2-04).
 // Exit 1, wenn ein Budget verfehlt ist.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -28,10 +33,76 @@ const ROUTEN = {
   fortschritt: { pfad: '/lern-app/de/fortschritt' },
   spieler: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01', warte: 'main input[type="radio"]' },
   spielerWortbank: { pfad: '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l02', warte: 'main [role="toolbar"]' },
+  // L2-04: neues Gerät – ohne Karten bzw. vor „Test beginnen“ darf kein Zod laden (TBT der Spieler-Routen)
+  wiederholen: { pfad: '/lern-app/de/tr-aus-de/wiederholen', warte: '#wiederholen-sitzung p' },
+  einstufung: { pfad: '/lern-app/de/tr-aus-de/einstufung', warte: '#einstufung-test button' },
 };
+/** zod/mini trägt den Namen seines Grundtyps als Zeichenkette – Kennzeichen „Zod geladen“. */
+const ZOD_MARKE = '$ZodType';
 
 /** Erkennungstexte der Komponenten (lange Klassenketten, je genau eine Quelldatei; geprüft in tests/unit/lernapp/bundle-regeln). */
 const ERKENNUNG = JSON.parse(readFileSync(join(import.meta.dirname, 'lernapp-budget-erkennung.json'), 'utf8'));
+
+/**
+ * Erkennung je Übungstyp: `alle` stehen in der Datei des Typ-Chunks (eigene Komponente bzw. Bauart: Hören + Wahl,
+ * Hören + Eingabe), `bausteine` sind gemeinsame Bausteine, die der Typ nachlädt.
+ */
+const TEXT = ['texteingabe', 'zeichenhilfe', 'sonderzeichen'];
+const TYP_ERKENNUNG = {
+  auswahl: { alle: ['auswahl'] },
+  paare: { alle: ['paare'] },
+  wortbank: { alle: ['wortbank'] },
+  bild_wort: { alle: ['bild_wort'], bausteine: ['optionsgruppe'] },
+  frei: { alle: ['frei'], bausteine: TEXT },
+  hoeren_waehlen: { alle: ['abspieler', 'optionsgruppe'] },
+  hoeren_schreiben: { alle: ['abspieler', 'texteingabe'], bausteine: TEXT },
+  minimalpaare: { alle: ['abspieler', 'optionsgruppe'] },
+  luecke: { alle: ['luecke'], bausteine: ['optionsgruppe', ...TEXT] },
+  satzbau: { alle: ['wortbank'] },
+  formen: { alle: ['formen'], bausteine: TEXT },
+  harakat: { alle: ['harakat'], bausteine: ['optionsgruppe'] },
+  // L2-03: Wissenskurs und Koran-Arabisch (Begründung und Quellenzeile aus dem Baustein `Erklaerung`)
+  wahr_falsch: { alle: ['wahr_falsch'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  zuordnen: { alle: ['zuordnen'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  reihenfolge: { alle: ['reihenfolge'], bausteine: ['erklaerung'] },
+  fallfrage: { alle: ['fallfrage'], bausteine: ['optionsgruppe', 'erklaerung'] },
+  koran_wort: { alle: ['koran_wort'], bausteine: ['optionsgruppe'] },
+  // L2-02: Wahl über die Wahlgruppe, Hörbeispiel über Anhoeren (Nachspuren lädt bei Bedarf einen eigenen Chunk nach)
+  dialog: { alle: ['dialog'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  geschichte: { alle: ['geschichte'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  lesen_fragen: { alle: ['lesen_fragen'], bausteine: ['wahlgruppe'] },
+  grammatik_tipp: { alle: ['grammatik_tipp'] },
+  schrift_ar: { alle: ['schrift_ar'], bausteine: ['wahlgruppe'] },
+  schrift_tr: { alle: ['schrift_wahl'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  schrift_latein: { alle: ['schrift_wahl'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  sprechen: { alle: ['sprechen'], bausteine: ['anhoeren'] },
+  schreiben: { alle: ['schreiben'] },
+};
+/** Texte, die eine Datei einem Typ-Chunk zuordnen (eigene Komponenten und der Abspieler der Hörtypen). */
+const TYP_TEXTE = [
+  'auswahl',
+  'paare',
+  'wortbank',
+  'bild_wort',
+  'frei',
+  'luecke',
+  'formen',
+  'harakat',
+  'abspieler',
+  'wahr_falsch',
+  'zuordnen',
+  'reihenfolge',
+  'fallfrage',
+  'koran_wort',
+  'dialog',
+  'geschichte',
+  'lesen_fragen',
+  'grammatik_tipp',
+  'schrift_ar',
+  'schrift_wahl',
+  'sprechen',
+  'schreiben',
+];
 
 const BUDGET = {
   huelleEigen: 20,
@@ -43,13 +114,17 @@ const BUDGET = {
   fortschrittEigen: 30,
   spielerGesamt: 210,
   spielerZusaetzlich: 60,
+  wiederholenGesamt: 210,
+  einstufungGesamt: 210,
   uebungstyp: 15,
+  arabischeTastatur: 10,
 };
 
 async function skripte(browser, { pfad, warte }) {
   const context = await browser.newContext({ serviceWorkers: 'block' });
   const page = await context.newPage();
   const dateien = new Map();
+  dateien.zod = new Set();
   const offen = [];
   page.on('response', (r) => {
     const url = new URL(r.url());
@@ -57,7 +132,10 @@ async function skripte(browser, { pfad, warte }) {
     offen.push(
       r
         .body()
-        .then((b) => dateien.set(url.pathname, gzipSync(b, { level: 9 }).length))
+        .then((b) => {
+          dateien.set(url.pathname, gzipSync(b, { level: 9 }).length);
+          if (b.includes(ZOD_MARKE)) dateien.zod.add(url.pathname);
+        })
         .catch(() => undefined),
     );
   });
@@ -97,14 +175,24 @@ const grundstockBytes = summe(gemessen.huelle, (d) => grundstock.has(d));
 
 // Übungstypen und Spieler: Dateien mit dem Erkennungstext im Bauergebnis
 const ordner = join(import.meta.dirname, '..', '.next', 'static', 'chunks');
+const inhalt = new Map(chunkDateien(ordner).map((p) => [p.slice(ordner.length), readFileSync(p, 'utf8')]));
+const gzVon = (d) => gzipSync(readFileSync(join(ordner, d)), { level: 9 }).length;
 const typen = {};
 for (const [name, { text }] of Object.entries(ERKENNUNG)) {
-  const treffer = chunkDateien(ordner).filter((p) => readFileSync(p, 'utf8').includes(text));
-  typen[name] = {
-    dateien: treffer.map((p) => p.slice(ordner.length)),
-    gz: treffer.reduce((s, p) => s + gzipSync(readFileSync(p), { level: 9 }).length, 0),
-  };
+  const treffer = [...inhalt].filter(([, t]) => t.includes(text)).map(([d]) => d);
+  typen[name] = { dateien: treffer, gz: treffer.reduce((s, d) => s + gzVon(d), 0) };
 }
+const hat = (d, name) => typen[name].dateien.includes(d);
+
+/** Chunk eines Übungstyps (größte passende Datei) und ausgelagerte Bausteine; 0 = nicht gefunden. */
+function typChunk({ alle, bausteine = [] }) {
+  const eigene = [...inhalt.keys()].filter((d) => alle.every((n) => hat(d, n)));
+  if (!eigene.length) return { gz: 0, dateien: [] };
+  const groesste = eigene.map((d) => [d, gzVon(d)]).sort((a, b) => b[1] - a[1])[0];
+  const ausgelagert = [...new Set(bausteine.flatMap((n) => typen[n].dateien))].filter((d) => !TYP_TEXTE.some((n) => hat(d, n)));
+  return { gz: groesste[1] + ausgelagert.reduce((s, d) => s + gzVon(d), 0), dateien: [groesste[0], ...ausgelagert] };
+}
+const uebungstypen = Object.fromEntries(Object.entries(TYP_ERKENNUNG).map(([t, e]) => [t, typChunk(e)]));
 
 const werte = {
   grundstock: kb(grundstockBytes),
@@ -119,7 +207,10 @@ const werte = {
   spielerGesamt: kb(summe(gemessen.spieler)),
   spielerZusaetzlich: kb(summe(gemessen.spieler, (d) => !gemessen.huelle.has(d))),
   spielerWortbankGesamt: kb(summe(gemessen.spielerWortbank)),
-  uebungstyp: Object.fromEntries(['auswahl', 'paare', 'wortbank'].map((t) => [t, kb(typen[t].gz)])),
+  wiederholenGesamt: kb(summe(gemessen.wiederholen)),
+  einstufungGesamt: kb(summe(gemessen.einstufung)),
+  uebungstyp: Object.fromEntries(Object.entries(uebungstypen).map(([t, { gz }]) => [t, kb(gz)])),
+  arabischeTastatur: kb(typen.arabischeTastatur.gz),
   spielerChunk: kb(typen.spieler.gz),
 };
 
@@ -128,9 +219,13 @@ for (const [k, grenze] of Object.entries(BUDGET)) {
   if (k === 'uebungstyp') {
     for (const [t, v] of Object.entries(werte.uebungstyp))
       if (!v || v > grenze) verfehlt.push(`Übungstyp ${t}: ${v} KB (≤ ${grenze}, 0 = nicht gefunden)`);
+  } else if (k === 'arabischeTastatur') {
+    if (!werte[k] || werte[k] > grenze) verfehlt.push(`arabische Tastatur: ${werte[k]} KB (≤ ${grenze}, 0 = nicht gefunden)`);
   } else if (werte[k] > grenze) verfehlt.push(`${k}: ${werte[k]} KB > ${grenze}`);
 }
 if (!werte.spielerChunk) verfehlt.push('Spieler-Chunk nicht gefunden (Erkennungstext)');
+for (const r of ['wiederholen', 'einstufung'])
+  if (gemessen[r].zod.size) verfehlt.push(`${r}: Zod schon beim Laden (${[...gemessen[r].zod].join(', ')})`);
 
 const zeilen = [
   `Lern-App JS-Budgets (gz -9, ${basis})`,
@@ -141,11 +236,32 @@ const zeilen = [
   `Fortschritt /lern-app/de/fortschritt: gesamt ${werte.fortschrittGesamt} KB (≤ ${BUDGET.fortschrittGesamt}), eigener Anteil ${werte.fortschrittEigen} KB (≤ ${BUDGET.fortschrittEigen})`,
   `Spieler-Route (Lektion 1, erste Aufgabe): gesamt ${werte.spielerGesamt} KB (≤ ${BUDGET.spielerGesamt}), zusätzlich zur Hülle ${werte.spielerZusaetzlich} KB (≤ ${BUDGET.spielerZusaetzlich})`,
   `Spieler-Route (Lektion 2, Wortbank zuerst): gesamt ${werte.spielerWortbankGesamt} KB`,
+  `Wiederholen ohne Karten: gesamt ${werte.wiederholenGesamt} KB (≤ ${BUDGET.wiederholenGesamt}), Zod: ${gemessen.wiederholen.zod.size ? 'ja' : 'nein'}`,
+  `Einstufung vor dem Start: gesamt ${werte.einstufungGesamt} KB (≤ ${BUDGET.einstufungGesamt}), Zod: ${gemessen.einstufung.zod.size ? 'ja' : 'nein'}`,
   `Spieler-Chunk: ${werte.spielerChunk} KB · Übungstypen: ${Object.entries(werte.uebungstyp)
     .map(([t, v]) => `${t} ${v} KB`)
     .join(', ')} (je ≤ ${BUDGET.uebungstyp})`,
+  `Arabische Bildschirmtastatur: ${werte.arabischeTastatur} KB (≤ ${BUDGET.arabischeTastatur})`,
   verfehlt.length ? `VERFEHLT: ${verfehlt.join(' · ')}` : 'Alle Budgets eingehalten.',
 ];
 console.log(zeilen.join('\n'));
-if (aus) writeFileSync(aus, JSON.stringify({ basis, werte, budget: BUDGET, typen, verfehlt, grundstock: [...grundstock] }, null, 2));
+if (aus)
+  writeFileSync(
+    aus,
+    JSON.stringify(
+      {
+        basis,
+        werte,
+        budget: BUDGET,
+        typen,
+        uebungstypen,
+        verfehlt,
+        grundstock: [...grundstock],
+        // je Route die geladenen Dateien mit gz-Bytes (Fehlersuche: was liegt in „zusätzlich zur Hülle“?)
+        routen: Object.fromEntries(Object.entries(gemessen).map(([n, m]) => [n, Object.fromEntries(m)])),
+      },
+      null,
+      2,
+    ),
+  );
 process.exit(verfehlt.length ? 1 : 0);

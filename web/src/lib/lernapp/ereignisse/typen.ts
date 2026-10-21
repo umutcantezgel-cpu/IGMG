@@ -2,6 +2,7 @@ import { OBERFLAECHEN, SPRACHEN } from '../kurse';
 import { LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
 import { NOTEN } from '../bewertung';
 import * as z from '../z';
+import { SchluesselSchema } from './schluessel';
 
 /**
  * Ereignisprotokoll der Lern-App (ADR 0038 Nr. 2, PLAN §3.8): die einzige Wahrheit über den Fortschritt, nur anhängen.
@@ -30,8 +31,7 @@ export function istGueltigerTag(tag: string): boolean {
 
 export const TagSchema = z.string().check(z.refine(istGueltigerTag, 'Lerntag JJJJ-MM-TT'));
 
-/** Stabile Schlüssel aus dem Inhalt (z. B. `tr-aus-de`, `tr.a1.e03.l0042`, `tr-aus-de.a1.e01.l02`). */
-export const SchluesselSchema = z.string().check(z.minLength(1), z.maxLength(160), z.regex(/^[a-z0-9][a-z0-9._:-]*$/i));
+export { SchluesselSchema } from './schluessel';
 
 /** UUID nach RFC 9562 (crypto.randomUUID ergibt Version 4). */
 export const GeraetSchema = z.uuid('Gerät als UUID');

@@ -1,23 +1,30 @@
 'use client';
 
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { waehleKarten } from '@/lib/lernapp/engine/kartenwahl';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
-import { haengeAn } from '@/lib/lernapp/lokal/ausgang';
 import { type Profil, profilBereich, type Speicher } from '@/lib/lernapp/lokal/db';
-import { ladePaket, ladeVerzeichnis } from '@/lib/lernapp/lokal/pakete';
+import { ladeVerzeichnis } from '@/lib/lernapp/lokal/vorrat';
 import { beimOeffnen, nachHandlung } from '@/lib/lernapp/oberflaeche/abgleich';
 import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { frischAbgeleitet, heute, meldeStand, vorhandenesProfil } from '@/lib/lernapp/oberflaeche/geraet';
 import { baueWiederholung, einheitDerKarte } from '@/lib/lernapp/oberflaeche/wiederholung';
 import type { Paket } from '@/lib/lernapp/paket/typen';
-import type { SpielerTexte } from '../typen';
+import type { SpielerOptionen, SpielerTexte } from '../typen';
+import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 import { SpielerGrenze } from './UebenInsel';
 
-const Spieler = lazy(() => import('../Spieler').then((m) => ({ default: m.Spieler })));
+const ladeSpieler = () => import('../Spieler');
+const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
+/**
+ * Was erst die Wiederholung braucht – volle Prüfung der Pakete (Zod) – als eigener Chunk, nur geladen, wenn es Karten zu
+ * wiederholen gibt (TBT der Route, KERN 4.0 §9): Ohne fällige Karten lädt die Seite kein Zod. Der Ausgang der Ereignisse
+ * kommt erst mit der ersten Handlung (`./ausgang.ts`).
+ */
+const ladeTeile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type WiederholenTexte = { leer: string; laedt: string; nichtVerfuegbar: string };
 
@@ -25,12 +32,20 @@ type Zustand =
   | { art: 'laedt' }
   | { art: 'leer' }
   | { art: 'fehlt' }
-  | { art: 'bereit'; sp: Speicher; profil: Profil; lektion: Lektion; ziffern: Ziffern };
+  | {
+      art: 'bereit';
+      sp: Speicher;
+      profil: Profil;
+      lektion: Lektion;
+      ziffern: Ziffern;
+      optionen: Omit<SpielerOptionen, 'spracherkennung'>;
+    };
 
 /**
  * Wiederholen (PLAN §3.1, §4; ADR 0038 Nr. 3): Kartenwahl aus dem lokalen Stand des Kurses (fällige zuerst, dann schwache;
  * `waehleKarten`), Aufgaben dazu aus den Einheitenpaketen (`baueWiederholung`), gespielt mit dem Spieler als Lektion der Art
- * `wiederholung` (XP: 1 je 2 Karten). Ohne Karten ein freundlicher Leerzustand, ohne Druck.
+ * `wiederholung` (XP: 1 je 2 Karten). Ohne Karten ein freundlicher Leerzustand, ohne Druck. Zod, Ausgang und Spieler
+ * kommen erst, wenn Karten gewählt sind (eigene Chunks).
  */
 export function WiederholenInsel({
   ui,
@@ -38,15 +53,18 @@ export function WiederholenInsel({
   texte,
   spielerTexte,
   lernpfad,
+  spracherkennung = false,
 }: {
   ui: Oberflaeche;
   kurs: KursSlug;
   texte: WiederholenTexte;
   spielerTexte: SpielerTexte;
   lernpfad: { adresse: string; text: string };
+  /** Schalter `lernapp_sprechen` (Spracherkennung im Browser) */
+  spracherkennung?: boolean;
 }) {
   const [z, setZ] = useState<Zustand>({ art: 'laedt' });
-  const kette = useRef<Promise<unknown>>(Promise.resolve());
+  const kette = useRef<EreignisKette>(neueKette());
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
 
@@ -59,27 +77,36 @@ export function WiederholenInsel({
       const karten = (await sp.alle('karten', profilBereich(p.id))).filter((k) => k.karte.startsWith(`${kurs}:`));
       const gewaehlt = waehleKarten(karten, { jetzt: new Date() });
       if (!gewaehlt.length) return { art: 'leer' };
-      const v = await ladeVerzeichnis(kurs);
+      void ladeSpieler().catch(() => undefined);
+      const [v, { ladePaket }, e] = await Promise.all([ladeVerzeichnis(kurs), ladeTeile(), einstellungsSpeicher(ui).laden()]);
       const noetig = new Set(gewaehlt.map((k) => einheitDerKarte(k.karte)));
       const pakete: Paket[] = [];
-      for (const e of v?.kurs === kurs ? v.einheiten : []) {
-        if (!noetig.has(e.schluessel)) continue;
-        const paket = await ladePaket(sp, kurs, e);
+      for (const einheit of v?.kurs === kurs ? v.einheiten : []) {
+        if (!noetig.has(einheit.schluessel)) continue;
+        const paket = await ladePaket(sp, kurs, einheit);
         if (paket) pakete.push(paket);
       }
       const lektion = baueWiederholung(kurs, gewaehlt, pakete);
       if (!lektion) return { art: 'fehlt' };
-      const e = await einstellungsSpeicher(ui).laden();
-      return { art: 'bereit', sp, profil: p, lektion, ziffern: e.ziffern };
+      return {
+        art: 'bereit',
+        sp,
+        profil: p,
+        lektion,
+        ziffern: e.ziffern,
+        optionen: { hoeren: e.hoeren, sprechen: e.sprechen },
+      };
     }
     void laden()
       .catch((): Zustand => ({ art: 'fehlt' }))
-      .then((neu) => aktiv && setZ(neu));
+      // Spieler und erste Aufgabe in Zeitscheiben zeichnen (Übergang): kein langer Block auf dem Hauptfaden (TBT, KERN 4.0 §9)
+      .then((neu) => aktiv && startTransition(() => setZ(neu)));
     void beimOeffnen().catch(() => undefined);
     return () => {
       aktiv = false;
     };
   }, [kurs, ui]);
+  useAusgangVorladen(z.art === 'bereit');
 
   const zurueck = (
     <a href={lernpfad.adresse} className="inline-flex min-h-11 items-center font-bold underline-offset-4 hover:underline">
@@ -97,11 +124,9 @@ export function WiederholenInsel({
   if (z.art === 'fehlt') return kasten(texte.nichtVerfuegbar, true);
 
   const { sp, profil, lektion } = z;
-  const melde = (e: EreignisEntwurf) => {
-    kette.current = kette.current.then(() => haengeAn(sp, profil, e)).catch(() => undefined);
-  };
+  const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
-    await kette.current;
+    await allesGeschrieben(kette.current, sp, profil);
     // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
     const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
     await leiteNeuAb(sp, profil.id, heute());
@@ -117,9 +142,10 @@ export function WiederholenInsel({
           texte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
-          onEreignis={melde}
+          onEreignis={meldeEreignis}
           onFertig={() => void fertig().catch(() => setGesichert(true))}
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
+          optionen={{ ...z.optionen, spracherkennung }}
         />
       </Suspense>
     </SpielerGrenze>

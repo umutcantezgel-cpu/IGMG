@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Bildkarten (symbole/symbole.json)",
+  "type": "object",
+  "properties": {
+    "_hinweis": { "type": "string", "maxLength": 2000 },
+    "format": { "type": "string", "const": "igmg-lernapp-symbole" },
+    "version": { "type": "number", "const": 1 },
+    "symbole": {
+      "type": "object",
+      "propertyNames": { "type": "string", "maxLength": 60, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "motiv": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "gruppe": { "type": "string", "pattern": "^[a-z]{1,40}$" },
+          "quelle": {
+            "type": "string",
+            "pattern": "^(?:lucide:[a-z0-9-]+@\\d+\\.\\d+\\.\\d+|tabler:[a-z0-9-]+@\\d+\\.\\d+\\.\\d+|openmoji:[0-9A-F-]+@17\\.0\\.0|eigen:[a-z0-9-]+|redaktion)$"
+          },
+          "lizenz": { "type": "string", "enum": ["ISC", "MIT", "CC0-1.0", "CC-BY-SA-4.0"] },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "freigegeben": { "type": "boolean" },
+          "elemente": {
+            "minItems": 1,
+            "maxItems": 40,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "path" },
+                    "d": { "type": "string", "pattern": "^[MmLlHhVvCcSsQqTtAaZz0-9.,\\s-]{1,2000}$" }
+                  },
+                  "required": ["art", "d"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "circle" },
+                    "cx": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "cy": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "r": { "type": "number", "minimum": -48, "maximum": 48 }
+                  },
+                  "required": ["art", "cx", "cy", "r"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "ellipse" },
+                    "cx": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "cy": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "rx": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "ry": { "type": "number", "minimum": -48, "maximum": 48 }
+                  },
+                  "required": ["art", "cx", "cy", "rx", "ry"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "rect" },
+                    "x": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "y": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "width": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "height": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "rx": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "ry": { "type": "number", "minimum": -48, "maximum": 48 }
+                  },
+                  "required": ["art", "x", "y", "width", "height"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "line" },
+                    "x1": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "y1": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "x2": { "type": "number", "minimum": -48, "maximum": 48 },
+                    "y2": { "type": "number", "minimum": -48, "maximum": 48 }
+                  },
+                  "required": ["art", "x1", "y1", "x2", "y2"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "polyline" },
+                    "points": { "type": "string", "pattern": "^[0-9.,\\s-]{1,1000}$" }
+                  },
+                  "required": ["art", "points"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "art": { "type": "string", "const": "polygon" },
+                    "points": { "type": "string", "pattern": "^[0-9.,\\s-]{1,1000}$" }
+                  },
+                  "required": ["art", "points"],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": ["motiv", "gruppe", "quelle", "lizenz", "freigegeben", "elemente"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "symbole"],
+  "additionalProperties": false
+}

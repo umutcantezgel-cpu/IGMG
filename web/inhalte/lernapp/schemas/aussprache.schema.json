@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Aussprache-Überschreibungen der Sprachausgabe (aussprache/<sprache>.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-aussprache" },
+    "version": { "type": "number", "const": 1 },
+    "sprache": { "type": "string", "enum": ["de", "tr", "ar"] },
+    "eintraege": {
+      "maxItems": 10000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "ersatz": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "phoneme": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "ganzesWort": { "default": true, "type": "boolean" },
+          "stimmen": { "maxItems": 10, "type": "array", "items": { "type": "string", "maxLength": 120 } },
+          "grund": { "type": "string", "maxLength": 300 },
+          "quelle": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(?:ki:[A-Za-z0-9._/:-]{1,180}|tatoeba:\\d{1,12}|kaikki:[A-Za-z0-9._:-]{1,120}|wiktionary:(?:en|de|tr):[^\\s:][^\\n\\r\\t]{0,150}|redaktion|test:[a-z0-9-]{1,60})$"
+          }
+        },
+        "required": ["text", "quelle"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "sprache", "eintraege"],
+  "additionalProperties": false
+}

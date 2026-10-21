@@ -13,8 +13,8 @@ import { isoliert } from '@/components/lernapp/InhaltText';
 import { ansage, Rueckmeldung } from '@/components/lernapp/Rueckmeldung';
 import { Spieler } from '@/components/lernapp/Spieler';
 import { naechsterIndex, verschiebeRichtung } from '@/components/lernapp/tastatur';
-import type { AufgabenProps, SpielerTexte } from '@/components/lernapp/typen';
-import type { AuswahlAufgabe, PaareAufgabe, WortbankAufgabe } from '@/lib/lernapp/aufgaben/schema';
+import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/components/lernapp/typen';
+import type { AuswahlAufgabe, ImplementierterTyp, PaareAufgabe, WortbankAufgabe } from '@/lib/lernapp/aufgaben/schema';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
 import entwurf from '../../../messages/lernapp/entwurf.json';
@@ -27,14 +27,18 @@ import { LEKTION } from './hilfen/lektion';
  * Regeltests für den Client der Lern-App (kein next-intl, kein @/lib/utils, Übungstypen nur per import(), nur logische
  * Richtungen) und die Texte de/tr/ar (gleiche Schlüssel und Platzhalter, Entwurfsliste).
  */
-const TEXTE: SpielerTexte = { spieler: de.spieler, aufgaben: de.aufgaben };
+const TEXTE: SpielerTexte = {
+  spieler: de.spieler,
+  aufgaben: de.aufgaben,
+  tastatur: de.tastatur,
+  aufgaben2: de.aufgaben2,
+  sprechen: de.sprechen,
+  schreiben: de.schreiben,
+};
 const [auswahl, wortbank, paare] = LEKTION.aufgaben as [AuswahlAufgabe, WortbankAufgabe, PaareAufgabe];
 const nichts = () => undefined;
 
-function props<T extends 'auswahl' | 'wortbank' | 'paare'>(
-  aufgabe: AufgabenProps<T>['aufgabe'],
-  teil: Partial<AufgabenProps<T>> = {},
-): AufgabenProps<T> {
+function props<T extends ImplementierterTyp>(aufgabe: AufgabenProps<T>['aufgabe'], teil: Partial<AufgabenProps<T>> = {}): AufgabenProps<T> {
   return {
     aufgabe,
     texte: TEXTE.aufgaben,
@@ -46,6 +50,11 @@ function props<T extends 'auswahl' | 'wortbank' | 'paare'>(
     setzeAntwort: nichts,
     gibAb: nichts,
     melde: nichts,
+    tastatur: TEXTE.tastatur,
+    weitere: TEXTE,
+    ueberspringe: nichts,
+    nurUeberspringen: nichts,
+    optionen: STANDARD_OPTIONEN,
     ...teil,
   };
 }
@@ -64,7 +73,7 @@ describe('Spieler', () => {
     const html = await vorrendern(<Spieler lektion={LEKTION} texte={TEXTE} sprache="de" onEreignis={nichts} />);
     expect(html).toContain('role="progressbar"');
     expect(html).toContain('aria-valuenow="0"');
-    expect(html).toContain('Aufgabe 1 von 3');
+    expect(html).toContain('Aufgabe 1 von 4');
     expect(html).toMatch(/<h2[^>]*tabindex="-1"[^>]*>Wähle die richtige Übersetzung\.<\/h2>/);
     expect(html).toContain('<span lang="de" dir="ltr">Wasser</span>');
     expect(anzahl(html, /type="radio"/g)).toBe(3);
@@ -73,14 +82,22 @@ describe('Spieler', () => {
     expect(html).toMatch(/<button type="submit" disabled=""[^>]*>Prüfen<\/button>/);
   });
 
-  it('Lektion ohne spielbare Aufgabe: freundlicher Hinweis und Weg zurück', async () => {
+  it('Lektion ohne spielbare Aufgabe (Hörübungen aus): freundlicher Hinweis und Weg zurück', async () => {
+    const hoeren = {
+      typ: 'hoeren_schreiben',
+      schluessel: 'tr.a1.e01.a009',
+      hoeren: { text: 'su', sprache: 'tr' },
+      sprache: 'tr',
+      loesungen: ['su'],
+    } as const;
     const html = await vorrendern(
       <Spieler
-        lektion={{ ...LEKTION, aufgaben: [LEKTION.aufgaben[3]!] }}
+        lektion={{ ...LEKTION, aufgaben: [{ ...hoeren, loesungen: ['su'] }] }}
         texte={TEXTE}
         sprache="de"
         onEreignis={nichts}
         zurueckHref="/lern-app/de/tr-aus-de"
+        optionen={{ ...STANDARD_OPTIONEN, hoeren: false }}
       />,
     );
     expect(html).toContain(de.spieler.leer);
@@ -88,7 +105,34 @@ describe('Spieler', () => {
   });
 
   it('Übungstypen laden als eigene Module (import())', async () => {
-    expect(Object.keys(AUFGABEN_LADER)).toEqual(['auswahl', 'wortbank', 'paare']);
+    expect(Object.keys(AUFGABEN_LADER)).toEqual([
+      'auswahl',
+      'wortbank',
+      'paare',
+      'bild_wort',
+      'frei',
+      'hoeren_waehlen',
+      'hoeren_schreiben',
+      'minimalpaare',
+      'luecke',
+      'satzbau',
+      'formen',
+      'harakat',
+      'dialog',
+      'geschichte',
+      'lesen_fragen',
+      'grammatik_tipp',
+      'schrift_ar',
+      'schrift_tr',
+      'schrift_latein',
+      'sprechen',
+      'schreiben',
+      'wahr_falsch',
+      'zuordnen',
+      'reihenfolge',
+      'fallfrage',
+      'koran_wort',
+    ]);
     expect((await AUFGABEN_LADER.auswahl()).default).toBe(Auswahl);
     expect((await AUFGABEN_LADER.wortbank()).default).toBe(Wortbank);
     expect((await AUFGABEN_LADER.paare()).default).toBe(Paare);
@@ -262,7 +306,11 @@ describe('Regeln für den Client der Lern-App', () => {
   it('Übungskomponenten nur per import() aus aufgaben/lader.ts', () => {
     for (const { name, text } of KOMPONENTEN)
       expect(
-        laufzeitImporte(text).filter((z) => /aufgaben\/(Auswahl|Wortbank|Paare)'/.test(z)),
+        laufzeitImporte(text).filter((z) =>
+          /aufgaben\/(Auswahl|Wortbank|Paare|BildWort|Frei|HoerenWaehlen|HoerenSchreiben|Minimalpaare|Luecke|Satzbau|Formen|Harakat)'/.test(
+            z,
+          ),
+        ),
         name,
       ).toEqual([]);
     expect(KOMPONENTEN.find((k) => k.name.endsWith('lader.ts'))?.text).toMatch(/import\('\.\/Auswahl'\)/);
@@ -284,9 +332,13 @@ const flach = (o: object, p = ''): [string, string][] =>
   );
 
 /** Nur die Namensräume dieses Pakets; die übrigen prüft `pnpm sprachen:pruefen`. */
-const eigene = (t: { spieler: object; aufgaben: object }) => ({ spieler: t.spieler, aufgaben: t.aufgaben });
+const eigene = (t: { spieler: object; aufgaben: object; tastatur: object }) => ({
+  spieler: t.spieler,
+  aufgaben: t.aufgaben,
+  tastatur: t.tastatur,
+});
 
-describe('Texte messages/lernapp (Namensräume spieler und aufgaben)', () => {
+describe('Texte messages/lernapp (Namensräume spieler, aufgaben und tastatur)', () => {
   const dePaare = flach(eigene(de));
   it('de, tr und ar haben dieselben Schlüssel und Platzhalter, keiner ist leer', () => {
     for (const andere of [tr, ar]) {

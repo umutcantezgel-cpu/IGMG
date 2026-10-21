@@ -54,3 +54,6 @@ next-env.d.ts
 /.pglite-bau/
 # Titel-Index der Suche ohne Datenbank (scripts/suchindex.ts, beim Vercel-Bau erzeugt)
 /.suchindex.json
+# Lern-App, Sprechübung (ADR 0042 S5 Nr. 5): ORT-Dateien und Worker erzeugt der Bauschritt scripts/lernapp-modelle.mjs
+/public/lern-app/modelle/ort-*/
+/public/lern-app/modelle/sprechen/

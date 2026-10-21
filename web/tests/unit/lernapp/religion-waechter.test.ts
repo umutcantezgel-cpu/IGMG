@@ -345,6 +345,61 @@ describe('S-L1 M-3: Formel-Lexikon (KERN 4.0 §3 a)', () => {
   });
 });
 
+describe('L3-02: Restbefunde aus L1', () => {
+  const TRENNER = [0x2028, 0x2029].map((n) => String.fromCharCode(n));
+  const vier = ohneZeichen(PROBEN[7]!.text).split(' ');
+  const SPRACHE = 'web/inhalte/lernapp/sprache/ar/a1/e01.json';
+
+  it('U+2028/U+2029 trennen Wörter: vier Wörter nur durch Trenner verbunden sind Rot (Text, Datei, Strom)', () => {
+    for (const t of TRENNER) {
+      const verbunden = vier.join(t);
+      expect(w.woerter(verbunden)).toHaveLength(4);
+      expect(w.vierGrammTreffer(verbunden, index)?.korpus).toBe('koran');
+      expect(w.pruefeDatei(SPRACHE, `"x": "${verbunden}"`, hole)).toHaveLength(1);
+      // als JSON-Escape in einer erlaubten Datei
+      expect(w.pruefeDatei(SPRACHE, `"x": "${vier.join(`\\u${t.charCodeAt(0).toString(16)}`)}"`, hole)).toHaveLength(1);
+    }
+  });
+
+  it('ein Trenner mitten im Wort zerreißt es nicht (Lesart ohne Trenner), auch in Dateien', () => {
+    const zerrissen = vier.map((x) => `${x.slice(0, 1)}${TRENNER[0]}${x.slice(1)}`).join(' ');
+    expect(w.vierGrammTreffer(zerrissen, index)?.korpus).toBe('koran');
+    expect(w.pruefeDatei(SPRACHE, `{\n  "x": "${zerrissen}"\n}`, hole)).toEqual([
+      expect.stringMatching(new RegExp(`^${SPRACHE.replace(/\./g, '\\.')}:2: Koran-4-Gramm`)),
+    ]);
+  });
+
+  it('lateinische Begriffe: Trenner verschmelzen keine Wörter mehr', () => {
+    const lexikon = w.ladeLexikon(WURZEL);
+    for (const t of TRENNER) {
+      expect(w.lexikonTreffer(`Wir${t}beten`, lexikon)?.name).toBe('Gebet');
+      expect(w.lexikonTreffer(`die${t}Moschee`, lexikon)?.name).toBe('Moschee');
+      expect(w.lexikonTreffer(`Mo${t}schee`, lexikon)?.name).toBe('Moschee');
+    }
+    expect(w.lexikonTreffer(`Rote${TRENNER[0]}Bete`, lexikon)).toBeNull();
+  });
+
+  it('Codepunkte in Daten- und Textdateien außerhalb der Erlaubnisse sind arabische Schrift (z. B. Rahmenpläne)', () => {
+    const neutral = alsCodepunkte(NEUTRAL[0]!.split(' ')[0]!);
+    const entitaeten = [...NEUTRAL[0]!.split(' ')[0]!].map((c) => `&#x${c.codePointAt(0)!.toString(16)};`).join('');
+    for (const [pfad, inhalt] of [
+      ['web/inhalte/lernapp/rahmen/ar.rahmen.json', `{ "beispiel": "${neutral}" }`],
+      ['web/inhalte/lernapp/rahmen/leitfaden.json', `{ "x": "${neutral}" }`],
+      ['web/inhalte/lernapp/rahmen/RAHMEN-ar.md', `Beispiel: ${entitaeten}`],
+      ['web/messages/lernapp/de.json', `{ "x": "${neutral}" }`],
+      ['web/docs/x.md', `<p>${entitaeten}</p>`],
+    ] as const) {
+      const befunde = w.pruefeDatei(pfad, inhalt, hole);
+      expect(befunde, pfad).toEqual([expect.stringMatching(/Codepunkte bzw\. Entitäten in einer Datendatei/)]);
+      expect(befunde.join('\n')).not.toMatch(w.ARABISCH);
+    }
+    // Code darf neutrale Codepunkte tragen (nur ohne 4-Gramm); erlaubte Dateien bleiben grün
+    expect(w.pruefeDatei('web/src/lib/lernapp/x.ts', `const s = '${neutral}';`, hole)).toEqual([]);
+    expect(w.pruefeDatei(SPRACHE, `{ "x": "${neutral}" }`, hole)).toEqual([]);
+    expect(w.pruefeDatei('web/messages/lernapp/ar.json', `{ "x": "${neutral}" }`, hole)).toEqual([]);
+  });
+});
+
 describe('ganzes Werkzeug', () => {
   it('läuft über das Repository in höchstens 30 s', () => {
     const start = Date.now();

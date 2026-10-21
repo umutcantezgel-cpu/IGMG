@@ -9,5 +9,12 @@ allowBuilds:
   better-sqlite3: false
   "@prisma/engines": false
   prisma: false
+  # transformers.js → onnxruntime-web → protobufjs: nur eine Versionsprüfung im postinstall, nicht nötig
+  protobufjs: false
 patchedDependencies:
   next@16.4.0: patches/next@16.4.0.patch
+# Lern-App (ADR 0042 Nr. 10): transformers.js läuft nur im Browser-Worker. Der Node-Teil `onnxruntime-node` (≈ 300 MB,
+# natives postinstall) wird nie geladen und deshalb nicht installiert; `onnxruntime-web` bleibt exakt der Dev-Build, den
+# transformers.js 4.3.0 festlegt (1.31.0-dev.20260914-8d85527a0).
+overrides:
+  "@huggingface/transformers>onnxruntime-node": "-"

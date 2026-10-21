@@ -1,7 +1,8 @@
 import { gleicheAb } from '../abgleich';
 import { satzAus } from '../abgleich/tokens';
 import { gemischteIndizes } from '../engine/zufall';
-import { type AntwortVon, type Auswertung, type BewertungsKontext, kartenMit, type WortbankAufgabe } from './schema';
+import { type Auswertung, type BewertungsKontext, kartenMit } from './hilfen';
+import type { AntwortVon, WortbankAufgabe } from './schema';
 
 /**
  * Übungstyp `wortbank` (PLAN §4): Kacheln in die Antwortzeile legen; der zusammengesetzte Satz wird ohne

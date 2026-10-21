@@ -206,6 +206,7 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
       art: 'lemma',
       schluessel: l.schluessel,
       text: l.lemma,
+      symbol: l.symbol,
       quelle: l.quelle,
       lizenz: l.lizenz,
       namensnennung: l.namensnennung,

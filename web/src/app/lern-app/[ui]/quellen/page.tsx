@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
 import { LIZENZTEXTE, type LizenzName } from '@/lib/lernapp/lizenztexte';
-import { BIBLIOTHEKEN, SCHRIFTEN, type LernQuelle } from '@/lib/lernapp/quellen';
+import { BIBLIOTHEKEN, SCHRIFTEN, SPRACHERKENNUNG, type LernQuelle } from '@/lib/lernapp/quellen';
 import { lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
 import { lernTexte } from '@/lib/lernapp/texte';
 
@@ -13,24 +13,30 @@ export async function generateMetadata(): Promise<Metadata> {
   return lernMetadaten({ ui, pfad: 'quellen', titel: lernTexte(ui)('quellen.titel') });
 }
 
-const LIZENZ_NAME: Record<LizenzName, string> = { MIT: 'MIT', ISC: 'ISC', 'OFL-1.1': 'SIL Open Font License 1.1' };
+const LIZENZ_NAME: Record<LizenzName, string> = {
+  MIT: 'MIT',
+  ISC: 'ISC',
+  'OFL-1.1': 'SIL Open Font License 1.1',
+  'Apache-2.0': 'Apache License 2.0',
+};
 
 /**
  * Quellen und Lizenzen der Lern-App (ADR 0044 Nr. 7, KERN 4.0 §1): Lizenz der Lerninhalte, Programmbibliotheken im
- * Browser und Schriften mit Urheber, Fassung, Lizenz und Lizenztext. Ohne Links nach außen (die Seite ist auch ohne Netz
+ * Browser, Spracherkennung (ADR 0042 Nr. 3 und 10) und Schriften mit Urheber, Fassung, Lizenz und Lizenztext. Ohne Links nach außen (die Seite ist auch ohne Netz
  * vollständig; Adressen stehen als Text). Lizenztexte englisch wie im Original, mit `lang="en"`.
  */
 export default async function Quellen() {
   await verlangeLernApp();
   const ui = await oberflaeche();
   const t = lernTexte(ui);
-  const liste = (id: string, titel: string, eintraege: readonly LernQuelle[]) => {
+  const liste = (id: string, titel: string, eintraege: readonly LernQuelle[], text?: string) => {
     const lizenzen = [...new Set(eintraege.map((e) => e.lizenz))];
     return (
       <section aria-labelledby={id} className="flex flex-col gap-4">
         <h2 id={id} className="text-display-2">
           {titel}
         </h2>
+        {text ? <p className="max-w-einleitung text-18 text-tinte-2">{text}</p> : null}
         <ul className="grid raster-karten gap-4">
           {eintraege.map((e) => (
             <li key={e.id} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-5">
@@ -82,6 +88,7 @@ export default async function Quellen() {
           <p className="text-18 text-tinte-2">{t('quellen.inhalteText')}</p>
         </section>
         {liste('bibliotheken', t('quellen.softwareTitel'), BIBLIOTHEKEN)}
+        {liste('spracherkennung', t('quellen.spracherkennungTitel'), SPRACHERKENNUNG, t('quellen.spracherkennungText'))}
         {liste('schriften', t('quellen.schriftenTitel'), SCHRIFTEN)}
       </div>
     </Rahmen>

@@ -129,6 +129,88 @@ describe('Übungstypen nur per import()', () => {
   });
 });
 
+describe('Bewertung nur in den Übungs-Chunks (KERN 4.0 §9)', () => {
+  const AUFGABEN_LIB = join(WURZEL, 'lib', 'lernapp', 'aufgaben');
+  /** Module mit Bewertung oder Anzeige-Hilfen eines Typs (gehören in den Chunk des Typs, nicht in die Route). */
+  const istBewertung = (p: string) =>
+    p.startsWith(join(AUFGABEN_LIB, 'auswertung')) ||
+    ['bewerte.ts', 'auswahl.ts', 'wortbank.ts', 'paare.ts'].some((n) => p === join(AUFGABEN_LIB, n));
+
+  it.each([
+    'Spieler.tsx',
+    'Einstufung.tsx',
+    join('inseln', 'UebenInsel.tsx'),
+    join('inseln', 'WiederholenInsel.tsx'),
+    join('inseln', 'EinstufungInsel.tsx'),
+  ])('%s lädt statisch keine Bewertung', (datei) => {
+    const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
+    expect(graph.size).toBeGreaterThan(3);
+    expect([...graph.keys()].filter(istBewertung).map(kurz)).toEqual([]);
+  });
+
+  it('die Nutzlast-Dateien der Typen (Zod) importieren keine Bewertung', () => {
+    const nutzlast = readdirSync(AUFGABEN_LIB)
+      .filter((n) => n.endsWith('.ts'))
+      .map((n) => join(AUFGABEN_LIB, n))
+      .filter((p) => !istBewertung(p));
+    expect(nutzlast.length).toBeGreaterThan(10);
+    const funde = nutzlast.flatMap((p) =>
+      importe(readFileSync(p, 'utf8'))
+        .statisch.map((z) => aufloesen(p, z))
+        .filter((z): z is string => z !== null && istBewertung(z))
+        .map((z) => `${kurz(p)} → ${kurz(z)}`),
+    );
+    expect(funde).toEqual([]);
+  });
+});
+
+describe('Zod erst bei Bedarf (TBT der Spieler-Routen, Befund der L1-Gegenprüfung)', () => {
+  const Z = join(WURZEL, 'lib', 'lernapp', 'z.ts');
+  it.each([
+    'Spieler.tsx',
+    'Einstufung.tsx',
+    join('inseln', 'UebenInsel.tsx'),
+    join('inseln', 'WiederholenInsel.tsx'),
+    join('inseln', 'EinstufungInsel.tsx'),
+  ])('%s lädt Zod nicht statisch (Paketprüfung und Ausgang nur per import())', (datei) => {
+    const graph = clientGraph(join(WURZEL, 'components', 'lernapp', datei));
+    expect(graph.size).toBeGreaterThan(3);
+    expect(graph.has(Z)).toBe(false);
+  });
+
+  it('die Prüfung greift: der Paket-Lader zieht Zod', () => {
+    expect(clientGraph(join(WURZEL, 'lib', 'lernapp', 'lokal', 'pakete.ts')).has(Z)).toBe(true);
+  });
+
+  it('Paketprüfung und Engine ohne Ereignis-Schemas und ohne Tippfehler-Abgleich (Levenshtein nur in den Übungs-Chunks)', () => {
+    const ereignisse = join(WURZEL, 'lib', 'lernapp', 'ereignisse', 'typen.ts');
+    const abgleich = join(WURZEL, 'lib', 'lernapp', 'abgleich', 'index.ts');
+    const pakete = clientGraph(join(WURZEL, 'lib', 'lernapp', 'lokal', 'pakete.ts'));
+    expect(pakete.has(ereignisse)).toBe(false);
+    expect(pakete.has(abgleich)).toBe(false);
+    expect(clientGraph(join(WURZEL, 'components', 'lernapp', 'Spieler.tsx')).has(abgleich)).toBe(false);
+  });
+
+  it('Üben und Wiederholen laden den Ausgang der Ereignisse erst bei Bedarf (inseln/ausgang.ts)', () => {
+    for (const datei of ['UebenInsel.tsx', 'WiederholenInsel.tsx']) {
+      const text = readFileSync(join(WURZEL, 'components', 'lernapp', 'inseln', datei), 'utf8');
+      expect(text, datei).not.toContain('lokal/ausgang');
+    }
+    expect(readFileSync(join(WURZEL, 'components', 'lernapp', 'inseln', 'ausgang.ts'), 'utf8')).toContain(
+      "import('@/lib/lernapp/lokal/ausgang')",
+    );
+  });
+
+  it('der Spieler holt den nächsten Übungstyp erst ab der ersten Eingabe (beim Öffnen lädt nur die erste Aufgabe)', () => {
+    const text = readFileSync(join(WURZEL, 'components', 'lernapp', 'Spieler.tsx'), 'utf8');
+    const vorladen = /useEffect\(\(\) => \{\s*const naechste[\s\S]*?\}, \[([^\]]*)\]\);/.exec(text);
+    expect(vorladen, 'Vorladen des nächsten Typs').not.toBeNull();
+    expect(vorladen![0]).toMatch(/if \(eingabe && naechste/);
+    expect(vorladen![1].split(',').map((x) => x.trim())).toContain('eingabe');
+    expect(text).toContain('const eingabe = useErsteEingabe();');
+  });
+});
+
 describe('Sprachmodell nur im Worker', () => {
   it('@huggingface/transformers nur in *.worker.ts', () => {
     const funde = dateien(WURZEL).filter(
@@ -206,7 +288,41 @@ describe('Budget-Messung (scripts/lernapp-budget.mjs)', () => {
       string,
       { datei: string; text: string }
     >;
-    expect(Object.keys(erkennung).sort()).toEqual(['auswahl', 'paare', 'spieler', 'wortbank']);
+    expect(Object.keys(erkennung).sort()).toEqual(
+      [
+        'abspieler',
+        'anhoeren',
+        'arabischeTastatur',
+        'auswahl',
+        'bild_wort',
+        'dialog',
+        'erklaerung',
+        'fallfrage',
+        'formen',
+        'frei',
+        'geschichte',
+        'grammatik_tipp',
+        'harakat',
+        'koran_wort',
+        'lesen_fragen',
+        'luecke',
+        'optionsgruppe',
+        'paare',
+        'reihenfolge',
+        'schreiben',
+        'schrift_ar',
+        'schrift_wahl',
+        'sonderzeichen',
+        'spieler',
+        'sprechen',
+        'texteingabe',
+        'wahlgruppe',
+        'wahr_falsch',
+        'wortbank',
+        'zeichenhilfe',
+        'zuordnen',
+      ].sort(),
+    );
     const alle = dateien(WURZEL).filter((p) => p.endsWith('.tsx') || p.endsWith('.ts'));
     for (const [name, { datei, text }] of Object.entries(erkennung)) {
       const treffer = alle.filter((p) => readFileSync(p, 'utf8').includes(text)).map((p) => relative(join(WURZEL, '..'), p));

@@ -14,8 +14,11 @@ import { chromium } from '@playwright/test';
 import lighthouse from 'lighthouse';
 
 const SCHWELLEN = { performance: 90, accessibility: 100, 'best-practices': 95, seo: 95, lcpMs: 2500, cls: 0.1, tbtMs: 200, jsKb: 180 };
-/** Lern-App: Spieler-Route gesamt ≤ 210 kB (KERN 4.0 §9, Fortschreibung S1); Übungsseiten ohne SEO-Wertung (noindex). */
-const LERNAPP_SPIELER = /^\/lern-app\/(de|tr|ar)\/[a-z-]+\/(ueben|wiederholen)(\?|$)/;
+/**
+ * Lern-App: Spieler-Routen gesamt ≤ 210 kB (KERN 4.0 §9, Fortschreibung S1) – Üben, Wiederholen und Einstufung (L2-04);
+ * diese Übungsseiten sind `noindex`, dort zählt SEO nicht.
+ */
+const LERNAPP_SPIELER = /^\/lern-app\/(de|tr|ar)\/[a-z-]+\/(ueben|wiederholen|einstufung)(\?|$)/;
 const jsGrenze = (pfad) => (LERNAPP_SPIELER.test(pfad) ? 210 : SCHWELLEN.jsKb);
 const mitSeo = (pfad) => !LERNAPP_SPIELER.test(pfad);
 const LERNAPP_ROUTEN = ['/lern-app/de', '/lern-app/ar/de-aus-ar', '/lern-app/tr/de-aus-tr/ueben?l=de-aus-tr.a1.e01.l01'];

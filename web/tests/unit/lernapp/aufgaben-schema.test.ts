@@ -17,7 +17,8 @@ import { gemischteIndizes, mische, saatAus } from '@/lib/lernapp/engine/zufall';
 import { LEKTION } from './hilfen/lektion';
 
 /**
- * Aufgaben-Schema (PLAN §4, ADR 0039): Zod-Union über alle Übungstypen, L1 implementiert auswahl, wortbank und paare.
+ * Aufgaben-Schema (PLAN §4, ADR 0039): Zod-Union über alle Übungstypen, L1 implementiert auswahl, wortbank und paare
+ * (die Typen aus L2-01 prüft aufgaben-l2.test.ts).
  */
 const [auswahl, wortbank, paare] = LEKTION.aufgaben as [AuswahlAufgabe, WortbankAufgabe, PaareAufgabe];
 
@@ -57,9 +58,38 @@ describe('Schema', () => {
         'fallfrage',
       ]),
     );
-    expect(IMPLEMENTIERT).toEqual(['auswahl', 'wortbank', 'paare']);
+    expect(IMPLEMENTIERT).toEqual([
+      'auswahl',
+      'wortbank',
+      'paare',
+      'bild_wort',
+      'frei',
+      'hoeren_waehlen',
+      'hoeren_schreiben',
+      'minimalpaare',
+      'luecke',
+      'satzbau',
+      'formen',
+      'harakat',
+      'dialog',
+      'geschichte',
+      'lesen_fragen',
+      'grammatik_tipp',
+      'schrift_ar',
+      'schrift_tr',
+      'schrift_latein',
+      'sprechen',
+      'schreiben',
+      'wahr_falsch',
+      'zuordnen',
+      'reihenfolge',
+      'fallfrage',
+      'koran_wort',
+    ]);
     expect(istImplementiert('auswahl')).toBe(true);
-    expect(istImplementiert('frei')).toBe(false);
+    expect(istImplementiert('frei')).toBe(true);
+    expect(istImplementiert('dialog')).toBe(true);
+    expect(IMPLEMENTIERT).toHaveLength(AUFGABEN_TYPEN.length);
   });
 
   it.each([
@@ -76,14 +106,24 @@ describe('Schema', () => {
     ['Paare mit gleichem Text', { ...paare, paare: [paare.paare[0], paare.paare[0]] }],
     ['nur ein Paar', { ...paare, paare: [paare.paare[0]] }],
     [
-      'Koran-Wort ohne Verweis',
-      { typ: 'koran_wort', schluessel: 'k1', art: 'bedeutung', verweis: 'Text', optionen: ['b1', 'b2'], richtig: 0 },
+      'Koran-Wort ohne Stelle Sure:Vers:Wort',
+      {
+        typ: 'koran_wort',
+        schluessel: 'k1',
+        anweisung: 'waehleBedeutung',
+        wort: { stelle: 'Text', text: '[Wortform]', sprache: 'ar' },
+        optionen: [
+          { kennung: 'b1', text: '[Bedeutung 1]', sprache: 'de' },
+          { kennung: 'b2', text: '[Bedeutung 2]', sprache: 'de' },
+        ],
+        richtig: 0,
+      },
     ],
   ])('weist ab: %s', (_n, aufgabe) => {
     expect(AufgabeSchema.safeParse(aufgabe).success).toBe(false);
   });
 
-  it('Gerüst-Typen sind mit Pflichtfeldern gültig', () => {
+  it('Typen aus L2-01 und L2-03 sind mit Pflichtfeldern gültig', () => {
     expect(
       AufgabeSchema.safeParse({
         typ: 'frei',
@@ -97,7 +137,9 @@ describe('Schema', () => {
       AufgabeSchema.safeParse({
         typ: 'wahr_falsch',
         schluessel: 'w1',
-        aussage: { text: '[Aussage]', sprache: 'de' },
+        anweisung: 'stimmtDas',
+        sprache: 'de',
+        aussage: '[Aussage]',
         wahr: true,
         begruendung: '[Begründung]',
       }).success,
@@ -106,9 +148,12 @@ describe('Schema', () => {
       AufgabeSchema.safeParse({
         typ: 'koran_wort',
         schluessel: 'k1',
-        art: 'bedeutung',
-        verweis: '1:2:3',
-        optionen: ['b1', 'b2'],
+        anweisung: 'waehleBedeutung',
+        wort: { stelle: '0:0:1', text: '[Wortform]', sprache: 'ar' },
+        optionen: [
+          { kennung: 'b1', text: '[Bedeutung 1]', sprache: 'de' },
+          { kennung: 'b2', text: '[Bedeutung 2]', sprache: 'de' },
+        ],
         richtig: 0,
       }).success,
     ).toBe(true);
@@ -177,9 +222,21 @@ describe('Bewertung', () => {
     expect(bewertePaare(paare, { typ: 'paare', versuche: [[0, 0]] }).urteil).toBe('falsch');
   });
 
-  it('bewerte: verteilt nach Typ, L2-Typen und falsche Antwortart sind Programmfehler', () => {
+  it('bewerte: verteilt nach Typ, falsche Antwortart ist ein Programmfehler', () => {
     expect(bewerte(auswahl, { typ: 'auswahl', wahl: 0 }).urteil).toBe('richtig');
-    expect(() => bewerte(LEKTION.aufgaben[3]!, { typ: 'auswahl', wahl: 0 })).toThrow(/L2/);
+    expect(bewerte(LEKTION.aufgaben[3]!, { typ: 'frei', text: 'ekmek' }).urteil).toBe('richtig');
+    const dialog = AufgabeSchema.parse({
+      typ: 'dialog',
+      schluessel: 'd1',
+      verlauf: [{ sprecher: 'a', zeile: { text: 'Ekmek.', sprache: 'tr' } }],
+      optionen: [
+        { text: 'Ekmek.', sprache: 'tr' },
+        { text: 'Su.', sprache: 'tr' },
+      ],
+      richtig: 0,
+    });
+    expect(bewerte(dialog, { typ: 'dialog', wahl: 0 }).urteil).toBe('richtig');
+    expect(() => bewerte(dialog, { typ: 'auswahl', wahl: 0 })).toThrow(/passt nicht/);
     expect(() => bewerte(auswahl, { typ: 'wortbank', kacheln: [] })).toThrow();
   });
 });

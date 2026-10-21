@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Inhaltsleitfaden der Sprachkurse (rahmen/leitfaden.json)",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "const": "inhaltsleitfaden-sprachkurse" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[a-z0-9.]+)?$" },
+    "stand": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "umschrift": {
+      "type": "object",
+      "properties": {
+        "din_zu_wiktionary": {
+          "type": "object",
+          "propertyNames": { "type": "string", "minLength": 1, "maxLength": 2 },
+          "additionalProperties": { "type": "string", "minLength": 1, "maxLength": 3 }
+        }
+      },
+      "required": ["din_zu_wiktionary"],
+      "additionalProperties": {}
+    },
+    "namen": {
+      "type": "object",
+      "properties": {
+        "vornamen": {
+          "type": "object",
+          "propertyNames": { "type": "string", "enum": ["de", "tr", "ar"] },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "weiblich": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 } },
+              "maennlich": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 } }
+            },
+            "required": ["weiblich", "maennlich"],
+            "additionalProperties": {}
+          },
+          "required": ["de", "tr", "ar"]
+        },
+        "familiennamen": {
+          "type": "object",
+          "propertyNames": { "type": "string", "enum": ["de", "tr", "ar"] },
+          "additionalProperties": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 } },
+          "required": ["de", "tr", "ar"]
+        }
+      },
+      "required": ["vornamen", "familiennamen"],
+      "additionalProperties": {}
+    },
+    "tabu": {
+      "type": "object",
+      "properties": {
+        "kategorien": {
+          "minItems": 1,
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z_]+$" },
+              "titel": { "type": "string", "minLength": 1, "maxLength": 200 },
+              "regel": { "type": "string", "enum": ["verboten", "nur_sachlich", "offene_frage"] },
+              "ab_stufe": { "type": "string", "enum": ["A1", "A2", "B1", "B2", "C1"] },
+              "standard": { "type": "string", "maxLength": 2000 },
+              "formen": {
+                "type": "object",
+                "properties": {
+                  "de": {
+                    "type": "object",
+                    "properties": {
+                      "teil": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "anfang": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "wort": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "phrase": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "ausnahmen": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "phrase_ausnahmen": {
+                        "maxItems": 200,
+                        "type": "array",
+                        "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+                      },
+                      "kontext": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "hinweis": { "type": "string", "maxLength": 1000 }
+                    },
+                    "additionalProperties": false
+                  },
+                  "tr": {
+                    "type": "object",
+                    "properties": {
+                      "teil": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "anfang": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "wort": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "phrase": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "ausnahmen": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "phrase_ausnahmen": {
+                        "maxItems": 200,
+                        "type": "array",
+                        "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+                      },
+                      "kontext": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "hinweis": { "type": "string", "maxLength": 1000 }
+                    },
+                    "additionalProperties": false
+                  },
+                  "ar": {
+                    "type": "object",
+                    "properties": {
+                      "umschrift": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "phrase": { "maxItems": 200, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+                      "mehrdeutig": {
+                        "maxItems": 100,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "umschrift": { "type": "string", "minLength": 1, "maxLength": 80 },
+                            "faellt_zusammen_mit": { "type": "string", "maxLength": 200 }
+                          },
+                          "required": ["umschrift", "faellt_zusammen_mit"],
+                          "additionalProperties": false
+                        }
+                      },
+                      "kontext_umschrift": {
+                        "maxItems": 200,
+                        "type": "array",
+                        "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+                      },
+                      "hinweis": { "type": "string", "maxLength": 1000 }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "required": ["de", "tr", "ar"],
+                "additionalProperties": false
+              }
+            },
+            "required": ["id", "titel", "regel", "formen"],
+            "additionalProperties": {}
+          }
+        }
+      },
+      "required": ["kategorien"],
+      "additionalProperties": {}
+    },
+    "themen": {
+      "minItems": 1,
+      "maxItems": 200,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "titel": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "stufen": {
+            "minItems": 1,
+            "maxItems": 5,
+            "type": "array",
+            "items": { "type": "string", "enum": ["A1", "A2", "B1", "B2", "C1"] }
+          },
+          "kindgeeignet": { "type": "boolean" }
+        },
+        "required": ["id", "titel", "stufen", "kindgeeignet"],
+        "additionalProperties": {}
+      }
+    },
+    "religionsbezug": {
+      "type": "object",
+      "properties": {
+        "orte_ereignisse": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "pattern": "^R-\\d{2}$" },
+              "de": { "type": "string", "minLength": 1, "maxLength": 200 },
+              "tr": { "type": "string", "minLength": 1, "maxLength": 200 },
+              "ar": { "anyOf": [{ "type": "string", "minLength": 1, "maxLength": 200 }, { "type": "null" }] },
+              "ab_stufe": { "type": "string", "enum": ["A1", "A2", "B1", "B2", "C1"] }
+            },
+            "required": ["id", "de", "tr", "ar", "ab_stufe"],
+            "additionalProperties": {}
+          }
+        },
+        "formeln": {
+          "type": "object",
+          "properties": {
+            "status": { "type": "string", "enum": ["gesperrt", "freigegeben"] },
+            "religionsbezug": { "type": "boolean", "const": true },
+            "sprachausgabe": { "type": "boolean", "const": false },
+            "liste": {
+              "maxItems": 200,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string", "pattern": "^F-(?:de|tr|ar)-\\d{2}$" },
+                  "sprache": { "type": "string", "enum": ["de", "tr", "ar"] },
+                  "begriff": { "type": "string", "minLength": 1, "maxLength": 300 }
+                },
+                "required": ["id", "sprache", "begriff"],
+                "additionalProperties": {}
+              }
+            }
+          },
+          "required": ["status", "religionsbezug", "sprachausgabe", "liste"],
+          "additionalProperties": {}
+        }
+      },
+      "required": ["orte_ereignisse", "formeln"],
+      "additionalProperties": {}
+    },
+    "kinder": {
+      "type": "object",
+      "properties": {
+        "stufen": {
+          "type": "object",
+          "propertyNames": { "type": "string", "enum": ["A1", "A2", "B1", "B2", "C1"] },
+          "additionalProperties": { "type": "string", "maxLength": 200 },
+          "required": ["A1", "A2", "B1", "B2", "C1"]
+        }
+      },
+      "required": ["stufen"],
+      "additionalProperties": {}
+    }
+  },
+  "required": ["id", "version", "stand", "umschrift", "namen", "tabu", "themen", "religionsbezug", "kinder"],
+  "additionalProperties": {}
+}

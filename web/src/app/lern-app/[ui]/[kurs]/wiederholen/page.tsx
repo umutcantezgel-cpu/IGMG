@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { WiederholenInsel } from '@/components/lernapp/inseln/WiederholenInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { kursTitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
@@ -42,7 +43,15 @@ export default async function Wiederholen({ params }: PageProps<'/lern-app/[ui]/
           ui={ui}
           kurs={kurs}
           texte={rohTexte(ui, 'wiederholen')}
-          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+          spielerTexte={{
+            spieler: rohTexte(ui, 'spieler'),
+            aufgaben: rohTexte(ui, 'aufgaben'),
+            tastatur: rohTexte(ui, 'tastatur'),
+            aufgaben2: rohTexte(ui, 'aufgaben2'),
+            sprechen: rohTexte(ui, 'sprechen'),
+            schreiben: rohTexte(ui, 'schreiben'),
+          }}
+          spracherkennung={await funktionAn('lernapp_sprechen')}
           lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}
         />
       </section>

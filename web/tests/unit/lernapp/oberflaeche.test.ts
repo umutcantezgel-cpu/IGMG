@@ -102,7 +102,7 @@ describe('Einstellungen auf dem Gerät', () => {
   });
 
   it('Startstand eines neuen Geräts: leer', () => {
-    expect(LEERER_START_STAND).toEqual({ begonnen: false, heute: { xp: 0, lektionen: 0 }, weiter: null, faellig: [] });
+    expect(LEERER_START_STAND).toEqual({ begonnen: false, heute: { xp: 0, lektionen: 0 }, weiter: null, faellig: [], serie: null });
   });
 });
 

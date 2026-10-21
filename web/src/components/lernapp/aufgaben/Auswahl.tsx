@@ -6,6 +6,9 @@ import { formatiere, zahl } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteAuswahl as bewerte } from '@/lib/lernapp/aufgaben/auswahl';
+
 /**
  * Übungstyp `auswahl` (PLAN §4): Radiogruppe aus echten Optionsfeldern – Pfeiltasten wählen (der Browser folgt der
  * Schreibrichtung), Ziffern 1–n wählen direkt, Enter prüft. Nach dem Prüfen: richtige Option grün, die gewählte falsche

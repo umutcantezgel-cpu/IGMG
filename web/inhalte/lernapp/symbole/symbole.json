@@ -1,0 +1,1548 @@
+{
+  "_hinweis": "Bildkarten der Lern-App (KERN 4.0 §5/§7, Inhaltsleitfaden §5): Linien-Symbole im 24er Raster aus Lucide (ISC, Copyright Lucide Contributors; Teile Cole Bemis, Feather, MIT). Nur Gegenstände und Symbole. freigegeben: Freigabe der Motivliste durch die Redaktion (LM-34) – ein Motiv ohne Freigabe blockiert den Import (außer im Testkurs). Erzeugt mit scripts/lernapp/symbole.mjs.",
+  "format": "igmg-lernapp-symbole",
+  "version": 1,
+  "symbole": {
+    "haus": {
+      "motiv": "Haus",
+      "gruppe": "wohnen",
+      "quelle": "lucide:house@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+        },
+        {
+          "art": "path",
+          "d": "M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+        }
+      ]
+    },
+    "tuer": {
+      "motiv": "Tür",
+      "gruppe": "wohnen",
+      "quelle": "lucide:door-closed@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"
+        },
+        {
+          "art": "path",
+          "d": "M2 21h20"
+        },
+        {
+          "art": "path",
+          "d": "M9 12h.01"
+        }
+      ]
+    },
+    "schluessel": {
+      "motiv": "Schlüssel",
+      "gruppe": "wohnen",
+      "quelle": "lucide:key@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m2 21 9.6-9.6"
+        },
+        {
+          "art": "path",
+          "d": "m7.5 15.5 2.3 2.3a1 1 0 0 1 0 1.4l-2.1 2.1a1 1 0 0 1-1.4 0L4 19"
+        },
+        {
+          "art": "circle",
+          "cx": 15.5,
+          "cy": 7.5,
+          "r": 5.5
+        }
+      ]
+    },
+    "bett": {
+      "motiv": "Bett",
+      "gruppe": "wohnen",
+      "quelle": "lucide:bed@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M2 4v16"
+        },
+        {
+          "art": "path",
+          "d": "M2 8h18a2 2 0 0 1 2 2v10"
+        },
+        {
+          "art": "path",
+          "d": "M2 17h20"
+        },
+        {
+          "art": "path",
+          "d": "M6 8v9"
+        }
+      ]
+    },
+    "lampe": {
+      "motiv": "Lampe",
+      "gruppe": "wohnen",
+      "quelle": "lucide:lamp@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12 12v6"
+        },
+        {
+          "art": "path",
+          "d": "M4.077 10.615A1 1 0 0 0 5 12h14a1 1 0 0 0 .923-1.385l-3.077-7.384A2 2 0 0 0 15 2H9a2 2 0 0 0-1.846 1.23Z"
+        },
+        {
+          "art": "path",
+          "d": "M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z"
+        }
+      ]
+    },
+    "sofa": {
+      "motiv": "Sofa",
+      "gruppe": "wohnen",
+      "quelle": "lucide:sofa@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"
+        },
+        {
+          "art": "path",
+          "d": "M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"
+        },
+        {
+          "art": "path",
+          "d": "M4 18v2"
+        },
+        {
+          "art": "path",
+          "d": "M20 18v2"
+        },
+        {
+          "art": "path",
+          "d": "M12 4v9"
+        }
+      ]
+    },
+    "kuehlschrank": {
+      "motiv": "Kühlschrank",
+      "gruppe": "wohnen",
+      "quelle": "lucide:refrigerator@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z"
+        },
+        {
+          "art": "path",
+          "d": "M5 10h14"
+        },
+        {
+          "art": "path",
+          "d": "M15 7v6"
+        }
+      ]
+    },
+    "waschmaschine": {
+      "motiv": "Waschmaschine",
+      "gruppe": "wohnen",
+      "quelle": "lucide:washing-machine@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M3 6h3"
+        },
+        {
+          "art": "path",
+          "d": "M17 6h.01"
+        },
+        {
+          "art": "rect",
+          "x": 3,
+          "y": 2,
+          "width": 18,
+          "height": 20,
+          "rx": 2
+        },
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 13,
+          "r": 5
+        },
+        {
+          "art": "path",
+          "d": "M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"
+        }
+      ]
+    },
+    "buch": {
+      "motiv": "Buch",
+      "gruppe": "schule",
+      "quelle": "lucide:book@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+        }
+      ]
+    },
+    "bleistift": {
+      "motiv": "Bleistift",
+      "gruppe": "schule",
+      "quelle": "lucide:pencil@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+        },
+        {
+          "art": "path",
+          "d": "m15 5 4 4"
+        }
+      ]
+    },
+    "schere": {
+      "motiv": "Schere",
+      "gruppe": "schule",
+      "quelle": "lucide:scissors@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 6,
+          "cy": 6,
+          "r": 3
+        },
+        {
+          "art": "path",
+          "d": "M8.12 8.12 12 12"
+        },
+        {
+          "art": "path",
+          "d": "M20 4 8.12 15.88"
+        },
+        {
+          "art": "circle",
+          "cx": 6,
+          "cy": 18,
+          "r": 3
+        },
+        {
+          "art": "path",
+          "d": "M14.8 14.8 20 20"
+        }
+      ]
+    },
+    "lineal": {
+      "motiv": "Lineal",
+      "gruppe": "schule",
+      "quelle": "lucide:ruler@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"
+        },
+        {
+          "art": "path",
+          "d": "m14.5 12.5 2-2"
+        },
+        {
+          "art": "path",
+          "d": "m11.5 9.5 2-2"
+        },
+        {
+          "art": "path",
+          "d": "m8.5 6.5 2-2"
+        },
+        {
+          "art": "path",
+          "d": "m17.5 15.5 2-2"
+        }
+      ]
+    },
+    "taschenrechner": {
+      "motiv": "Taschenrechner",
+      "gruppe": "schule",
+      "quelle": "lucide:calculator@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "rect",
+          "x": 4,
+          "y": 2,
+          "width": 16,
+          "height": 20,
+          "rx": 2
+        },
+        {
+          "art": "line",
+          "x1": 8,
+          "y1": 6,
+          "x2": 16,
+          "y2": 6
+        },
+        {
+          "art": "line",
+          "x1": 16,
+          "y1": 14,
+          "x2": 16,
+          "y2": 18
+        },
+        {
+          "art": "path",
+          "d": "M16 10h.01"
+        },
+        {
+          "art": "path",
+          "d": "M12 10h.01"
+        },
+        {
+          "art": "path",
+          "d": "M8 10h.01"
+        },
+        {
+          "art": "path",
+          "d": "M12 14h.01"
+        },
+        {
+          "art": "path",
+          "d": "M8 14h.01"
+        },
+        {
+          "art": "path",
+          "d": "M12 18h.01"
+        },
+        {
+          "art": "path",
+          "d": "M8 18h.01"
+        }
+      ]
+    },
+    "apfel": {
+      "motiv": "Apfel",
+      "gruppe": "essen",
+      "quelle": "lucide:apple@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12 6.528V3a1 1 0 0 1 1-1h0"
+        },
+        {
+          "art": "path",
+          "d": "M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"
+        }
+      ]
+    },
+    "karotte": {
+      "motiv": "Karotte",
+      "gruppe": "essen",
+      "quelle": "lucide:carrot@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M15 16a1 1 0 0 0-7-7q-4 4-5.987 12.385a.5.5 0 0 0 .602.602Q11 20 15 16l-3-3"
+        },
+        {
+          "art": "path",
+          "d": "M15 9q4 4 7 0-3-4-7 0 4-4 0-7-4 3 0 7"
+        },
+        {
+          "art": "path",
+          "d": "m8 15-2.58-2.58"
+        }
+      ]
+    },
+    "kirsche": {
+      "motiv": "Kirsche",
+      "gruppe": "essen",
+      "quelle": "lucide:cherry@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"
+        },
+        {
+          "art": "path",
+          "d": "M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"
+        },
+        {
+          "art": "path",
+          "d": "M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"
+        },
+        {
+          "art": "path",
+          "d": "M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"
+        }
+      ]
+    },
+    "ei": {
+      "motiv": "Ei",
+      "gruppe": "essen",
+      "quelle": "lucide:egg@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12 2C8 2 4 8 4 14a8 8 0 0 0 16 0c0-6-4-12-8-12"
+        }
+      ]
+    },
+    "milch": {
+      "motiv": "Milch",
+      "gruppe": "essen",
+      "quelle": "lucide:milk@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M8 2h8"
+        },
+        {
+          "art": "path",
+          "d": "M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"
+        },
+        {
+          "art": "path",
+          "d": "M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"
+        }
+      ]
+    },
+    "wasserglas": {
+      "motiv": "Wasserglas",
+      "gruppe": "essen",
+      "quelle": "lucide:glass-water@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z"
+        },
+        {
+          "art": "path",
+          "d": "M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"
+        }
+      ]
+    },
+    "topf": {
+      "motiv": "Topf",
+      "gruppe": "essen",
+      "quelle": "lucide:cooking-pot@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M2 12h20"
+        },
+        {
+          "art": "path",
+          "d": "M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"
+        },
+        {
+          "art": "path",
+          "d": "m4 8 16-4"
+        },
+        {
+          "art": "path",
+          "d": "m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8"
+        }
+      ]
+    },
+    "hemd": {
+      "motiv": "Hemd",
+      "gruppe": "kleidung",
+      "quelle": "lucide:shirt@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"
+        }
+      ]
+    },
+    "regenschirm": {
+      "motiv": "Regenschirm",
+      "gruppe": "kleidung",
+      "quelle": "lucide:umbrella@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12 13v7a2 2 0 0 0 4 0"
+        },
+        {
+          "art": "path",
+          "d": "M12 2v2"
+        },
+        {
+          "art": "path",
+          "d": "M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z"
+        }
+      ]
+    },
+    "bus": {
+      "motiv": "Bus",
+      "gruppe": "verkehr",
+      "quelle": "lucide:bus@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M8 6v6"
+        },
+        {
+          "art": "path",
+          "d": "M15 6v6"
+        },
+        {
+          "art": "path",
+          "d": "M2 12h19.6"
+        },
+        {
+          "art": "path",
+          "d": "M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"
+        },
+        {
+          "art": "circle",
+          "cx": 7,
+          "cy": 18,
+          "r": 2
+        },
+        {
+          "art": "path",
+          "d": "M9 18h5"
+        },
+        {
+          "art": "circle",
+          "cx": 16,
+          "cy": 18,
+          "r": 2
+        }
+      ]
+    },
+    "zug": {
+      "motiv": "Zug",
+      "gruppe": "verkehr",
+      "quelle": "lucide:train-front@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M8 3.1V7a4 4 0 0 0 8 0V3.1"
+        },
+        {
+          "art": "path",
+          "d": "m9 15-1-1"
+        },
+        {
+          "art": "path",
+          "d": "m15 15 1-1"
+        },
+        {
+          "art": "path",
+          "d": "M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"
+        },
+        {
+          "art": "path",
+          "d": "m8 19-2 3"
+        },
+        {
+          "art": "path",
+          "d": "m16 19 2 3"
+        }
+      ]
+    },
+    "strassenbahn": {
+      "motiv": "Straßenbahn",
+      "gruppe": "verkehr",
+      "quelle": "lucide:tram-front@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "rect",
+          "x": 4,
+          "y": 3,
+          "width": 16,
+          "height": 16,
+          "rx": 2
+        },
+        {
+          "art": "path",
+          "d": "M4 11h16"
+        },
+        {
+          "art": "path",
+          "d": "M12 3v8"
+        },
+        {
+          "art": "path",
+          "d": "m8 19-2 3"
+        },
+        {
+          "art": "path",
+          "d": "m18 22-2-3"
+        },
+        {
+          "art": "path",
+          "d": "M8 15h.01"
+        },
+        {
+          "art": "path",
+          "d": "M16 15h.01"
+        }
+      ]
+    },
+    "fahrrad": {
+      "motiv": "Fahrrad",
+      "gruppe": "verkehr",
+      "quelle": "lucide:bike@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 18.5,
+          "cy": 17.5,
+          "r": 3.5
+        },
+        {
+          "art": "circle",
+          "cx": 5.5,
+          "cy": 17.5,
+          "r": 3.5
+        },
+        {
+          "art": "circle",
+          "cx": 15,
+          "cy": 5,
+          "r": 1
+        },
+        {
+          "art": "path",
+          "d": "M12 17.5V14l-3-3 4-3 2 3h2"
+        }
+      ]
+    },
+    "auto": {
+      "motiv": "Auto",
+      "gruppe": "verkehr",
+      "quelle": "lucide:car@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"
+        },
+        {
+          "art": "circle",
+          "cx": 7,
+          "cy": 17,
+          "r": 2
+        },
+        {
+          "art": "path",
+          "d": "M9 17h6"
+        },
+        {
+          "art": "circle",
+          "cx": 17,
+          "cy": 17,
+          "r": 2
+        }
+      ]
+    },
+    "flugzeug": {
+      "motiv": "Flugzeug",
+      "gruppe": "verkehr",
+      "quelle": "lucide:plane@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"
+        }
+      ]
+    },
+    "schiff": {
+      "motiv": "Schiff",
+      "gruppe": "verkehr",
+      "quelle": "lucide:ship@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12 2v2"
+        },
+        {
+          "art": "path",
+          "d": "M12 9.189V13"
+        },
+        {
+          "art": "path",
+          "d": "M19 12V6a2 2 0 00-2-2H7a2 2 0 00-2 2v6"
+        },
+        {
+          "art": "path",
+          "d": "M19.38 19A11.6 11.6 0 0021 13l-8.188-3.639a2 2 0 00-1.624 0L3 13.001a11.6 11.6 0 002.81 7.76"
+        },
+        {
+          "art": "path",
+          "d": "M2 20c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+        }
+      ]
+    },
+    "fahrkarte": {
+      "motiv": "Fahrkarte",
+      "gruppe": "verkehr",
+      "quelle": "lucide:ticket@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"
+        },
+        {
+          "art": "path",
+          "d": "M13 5v2"
+        },
+        {
+          "art": "path",
+          "d": "M13 17v2"
+        },
+        {
+          "art": "path",
+          "d": "M13 11v2"
+        }
+      ]
+    },
+    "sonne": {
+      "motiv": "Sonne",
+      "gruppe": "natur",
+      "quelle": "lucide:sun@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 12,
+          "r": 4
+        },
+        {
+          "art": "path",
+          "d": "M12 2v2"
+        },
+        {
+          "art": "path",
+          "d": "M12 20v2"
+        },
+        {
+          "art": "path",
+          "d": "m4.93 4.93 1.41 1.41"
+        },
+        {
+          "art": "path",
+          "d": "m17.66 17.66 1.41 1.41"
+        },
+        {
+          "art": "path",
+          "d": "M2 12h2"
+        },
+        {
+          "art": "path",
+          "d": "M20 12h2"
+        },
+        {
+          "art": "path",
+          "d": "m6.34 17.66-1.41 1.41"
+        },
+        {
+          "art": "path",
+          "d": "m19.07 4.93-1.41 1.41"
+        }
+      ]
+    },
+    "wolke": {
+      "motiv": "Wolke",
+      "gruppe": "natur",
+      "quelle": "lucide:cloud@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"
+        }
+      ]
+    },
+    "regen": {
+      "motiv": "Regen",
+      "gruppe": "natur",
+      "quelle": "lucide:cloud-rain@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+        },
+        {
+          "art": "path",
+          "d": "M16 14v6"
+        },
+        {
+          "art": "path",
+          "d": "M8 14v6"
+        },
+        {
+          "art": "path",
+          "d": "M12 16v6"
+        }
+      ]
+    },
+    "schneeflocke": {
+      "motiv": "Schneeflocke",
+      "gruppe": "natur",
+      "quelle": "lucide:snowflake@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m10 20-1.25-2.5L6 18"
+        },
+        {
+          "art": "path",
+          "d": "M10 4 8.75 6.5 6 6"
+        },
+        {
+          "art": "path",
+          "d": "m14 20 1.25-2.5L18 18"
+        },
+        {
+          "art": "path",
+          "d": "m14 4 1.25 2.5L18 6"
+        },
+        {
+          "art": "path",
+          "d": "m17 21-3-6h-4"
+        },
+        {
+          "art": "path",
+          "d": "m17 3-3 6 1.5 3"
+        },
+        {
+          "art": "path",
+          "d": "M2 12h6.5L10 9"
+        },
+        {
+          "art": "path",
+          "d": "m20 10-1.5 2 1.5 2"
+        },
+        {
+          "art": "path",
+          "d": "M22 12h-6.5L14 15"
+        },
+        {
+          "art": "path",
+          "d": "m4 10 1.5 2L4 14"
+        },
+        {
+          "art": "path",
+          "d": "m7 21 3-6-1.5-3"
+        },
+        {
+          "art": "path",
+          "d": "m7 3 3 6h4"
+        }
+      ]
+    },
+    "blitz": {
+      "motiv": "Blitz",
+      "gruppe": "natur",
+      "quelle": "lucide:zap@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"
+        }
+      ]
+    },
+    "wind": {
+      "motiv": "Wind",
+      "gruppe": "natur",
+      "quelle": "lucide:wind@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M12.8 19.6A2 2 0 1 0 14 16H2"
+        },
+        {
+          "art": "path",
+          "d": "M17.5 8a2.5 2.5 0 1 1 2 4H2"
+        },
+        {
+          "art": "path",
+          "d": "M9.8 4.4A2 2 0 1 1 11 8H2"
+        }
+      ]
+    },
+    "baum": {
+      "motiv": "Baum",
+      "gruppe": "natur",
+      "quelle": "lucide:tree-deciduous@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z"
+        },
+        {
+          "art": "path",
+          "d": "M12 19v3"
+        }
+      ]
+    },
+    "blume": {
+      "motiv": "Blume",
+      "gruppe": "natur",
+      "quelle": "lucide:flower@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 12,
+          "r": 3
+        },
+        {
+          "art": "path",
+          "d": "M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5"
+        },
+        {
+          "art": "path",
+          "d": "M12 7.5V9"
+        },
+        {
+          "art": "path",
+          "d": "M7.5 12H9"
+        },
+        {
+          "art": "path",
+          "d": "M16.5 12H15"
+        },
+        {
+          "art": "path",
+          "d": "M12 16.5V15"
+        },
+        {
+          "art": "path",
+          "d": "m8 8 1.88 1.88"
+        },
+        {
+          "art": "path",
+          "d": "M14.12 9.88 16 8"
+        },
+        {
+          "art": "path",
+          "d": "m8 16 1.88-1.88"
+        },
+        {
+          "art": "path",
+          "d": "M14.12 14.12 16 16"
+        }
+      ]
+    },
+    "blatt": {
+      "motiv": "Blatt",
+      "gruppe": "natur",
+      "quelle": "lucide:leaf@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"
+        },
+        {
+          "art": "path",
+          "d": "M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"
+        }
+      ]
+    },
+    "berg": {
+      "motiv": "Berg",
+      "gruppe": "natur",
+      "quelle": "lucide:mountain@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m8 3 4 8 5-5 5 15H2L8 3z"
+        }
+      ]
+    },
+    "welle": {
+      "motiv": "Welle",
+      "gruppe": "natur",
+      "quelle": "lucide:waves-horizontal@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M2 12q2.5 2 5 0t5 0 5 0 5 0"
+        },
+        {
+          "art": "path",
+          "d": "M2 19q2.5 2 5 0t5 0 5 0 5 0"
+        },
+        {
+          "art": "path",
+          "d": "M2 5q2.5 2 5 0t5 0 5 0 5 0"
+        }
+      ]
+    },
+    "uhr": {
+      "motiv": "Uhr",
+      "gruppe": "zeit",
+      "quelle": "lucide:clock@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 12,
+          "r": 10
+        },
+        {
+          "art": "path",
+          "d": "M12 6v6l4 2"
+        }
+      ]
+    },
+    "wecker": {
+      "motiv": "Wecker",
+      "gruppe": "zeit",
+      "quelle": "lucide:alarm-clock@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 13,
+          "r": 8
+        },
+        {
+          "art": "path",
+          "d": "M12 9v4l2 2"
+        },
+        {
+          "art": "path",
+          "d": "M5 3 2 6"
+        },
+        {
+          "art": "path",
+          "d": "m22 6-3-3"
+        },
+        {
+          "art": "path",
+          "d": "M6.38 18.7 4 21"
+        },
+        {
+          "art": "path",
+          "d": "M17.64 18.67 20 21"
+        }
+      ]
+    },
+    "kalender": {
+      "motiv": "Kalender",
+      "gruppe": "zeit",
+      "quelle": "lucide:calendar@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M8 2v3"
+        },
+        {
+          "art": "path",
+          "d": "M16 2v3"
+        },
+        {
+          "art": "rect",
+          "x": 3,
+          "y": 3,
+          "width": 18,
+          "height": 18,
+          "rx": 2
+        },
+        {
+          "art": "path",
+          "d": "M3 9h18"
+        }
+      ]
+    },
+    "sanduhr": {
+      "motiv": "Sanduhr",
+      "gruppe": "zeit",
+      "quelle": "lucide:hourglass@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M5 22h14"
+        },
+        {
+          "art": "path",
+          "d": "M5 2h14"
+        },
+        {
+          "art": "path",
+          "d": "M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"
+        },
+        {
+          "art": "path",
+          "d": "M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"
+        }
+      ]
+    },
+    "thermometer": {
+      "motiv": "Thermometer",
+      "gruppe": "gesundheit",
+      "quelle": "lucide:thermometer@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"
+        }
+      ]
+    },
+    "hammer": {
+      "motiv": "Hammer",
+      "gruppe": "arbeit",
+      "quelle": "lucide:hammer@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"
+        },
+        {
+          "art": "path",
+          "d": "m18 15 4-4"
+        },
+        {
+          "art": "path",
+          "d": "m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"
+        }
+      ]
+    },
+    "laptop": {
+      "motiv": "Laptop",
+      "gruppe": "arbeit",
+      "quelle": "lucide:laptop@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"
+        },
+        {
+          "art": "path",
+          "d": "M20.054 15.987H3.946"
+        }
+      ]
+    },
+    "telefon": {
+      "motiv": "Telefon",
+      "gruppe": "arbeit",
+      "quelle": "lucide:phone@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+        }
+      ]
+    },
+    "briefumschlag": {
+      "motiv": "Briefumschlag",
+      "gruppe": "arbeit",
+      "quelle": "lucide:mail@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+        },
+        {
+          "art": "rect",
+          "x": 2,
+          "y": 4,
+          "width": 20,
+          "height": 16,
+          "rx": 2
+        }
+      ]
+    },
+    "paket": {
+      "motiv": "Paket",
+      "gruppe": "arbeit",
+      "quelle": "lucide:package@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"
+        },
+        {
+          "art": "path",
+          "d": "M12 22V12"
+        },
+        {
+          "art": "polyline",
+          "points": "3.29 7 12 12 20.71 7"
+        },
+        {
+          "art": "path",
+          "d": "m7.5 4.27 9 5.15"
+        }
+      ]
+    },
+    "ordner": {
+      "motiv": "Ordner",
+      "gruppe": "arbeit",
+      "quelle": "lucide:folder@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+        }
+      ]
+    },
+    "einkaufswagen": {
+      "motiv": "Einkaufswagen",
+      "gruppe": "einkaufen",
+      "quelle": "lucide:shopping-cart@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"
+        },
+        {
+          "art": "path",
+          "d": "M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"
+        },
+        {
+          "art": "circle",
+          "cx": 18,
+          "cy": 20,
+          "r": 2
+        },
+        {
+          "art": "circle",
+          "cx": 8,
+          "cy": 20,
+          "r": 2
+        }
+      ]
+    },
+    "tuete": {
+      "motiv": "Tüte",
+      "gruppe": "einkaufen",
+      "quelle": "lucide:shopping-bag@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M16 10a4 4 0 0 1-8 0"
+        },
+        {
+          "art": "path",
+          "d": "M3.103 6.034h17.794"
+        },
+        {
+          "art": "path",
+          "d": "M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"
+        }
+      ]
+    },
+    "geldboerse": {
+      "motiv": "Geldbörse",
+      "gruppe": "einkaufen",
+      "quelle": "lucide:wallet@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"
+        },
+        {
+          "art": "path",
+          "d": "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"
+        }
+      ]
+    },
+    "muenzen": {
+      "motiv": "Münzen",
+      "gruppe": "einkaufen",
+      "quelle": "lucide:coins@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M13.744 17.736a6 6 0 1 1-7.48-7.48"
+        },
+        {
+          "art": "path",
+          "d": "M15 6h1v4"
+        },
+        {
+          "art": "path",
+          "d": "m6.134 14.768.866-.5 2 3.464"
+        },
+        {
+          "art": "circle",
+          "cx": 16,
+          "cy": 8,
+          "r": 6
+        }
+      ]
+    },
+    "bankkarte": {
+      "motiv": "Bankkarte",
+      "gruppe": "einkaufen",
+      "quelle": "lucide:credit-card@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "rect",
+          "x": 2,
+          "y": 5,
+          "width": 20,
+          "height": 14,
+          "rx": 2
+        },
+        {
+          "art": "line",
+          "x1": 2,
+          "y1": 10,
+          "x2": 22,
+          "y2": 10
+        },
+        {
+          "art": "path",
+          "d": "M6 14h2"
+        }
+      ]
+    },
+    "rucksack": {
+      "motiv": "Rucksack",
+      "gruppe": "freizeit",
+      "quelle": "lucide:backpack@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"
+        },
+        {
+          "art": "path",
+          "d": "M8 10h8"
+        },
+        {
+          "art": "path",
+          "d": "M8 18h8"
+        },
+        {
+          "art": "path",
+          "d": "M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"
+        },
+        {
+          "art": "path",
+          "d": "M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"
+        }
+      ]
+    },
+    "zelt": {
+      "motiv": "Zelt",
+      "gruppe": "freizeit",
+      "quelle": "lucide:tent@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M3.5 21 14 3"
+        },
+        {
+          "art": "path",
+          "d": "M20.5 21 10 3"
+        },
+        {
+          "art": "path",
+          "d": "M15.5 21 12 15l-3.5 6"
+        },
+        {
+          "art": "path",
+          "d": "M2 21h20"
+        }
+      ]
+    },
+    "kamera": {
+      "motiv": "Kamera",
+      "gruppe": "freizeit",
+      "quelle": "lucide:camera@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"
+        },
+        {
+          "art": "circle",
+          "cx": 12,
+          "cy": 13,
+          "r": 3
+        }
+      ]
+    },
+    "puzzleteil": {
+      "motiv": "Puzzleteil",
+      "gruppe": "freizeit",
+      "quelle": "lucide:puzzle@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"
+        }
+      ]
+    },
+    "pinsel": {
+      "motiv": "Pinsel",
+      "gruppe": "freizeit",
+      "quelle": "lucide:paintbrush@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "m14.622 17.897-10.68-2.913"
+        },
+        {
+          "art": "path",
+          "d": "M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z"
+        },
+        {
+          "art": "path",
+          "d": "M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"
+        }
+      ]
+    },
+    "briefkasten": {
+      "motiv": "Briefkasten",
+      "gruppe": "stadt",
+      "quelle": "lucide:mailbox@1.55.0",
+      "lizenz": "ISC",
+      "freigegeben": false,
+      "elemente": [
+        {
+          "art": "path",
+          "d": "M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"
+        },
+        {
+          "art": "polyline",
+          "points": "15,9 18,9 18,11"
+        },
+        {
+          "art": "path",
+          "d": "M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2"
+        },
+        {
+          "art": "line",
+          "x1": 6,
+          "y1": 10,
+          "x2": 7,
+          "y2": 10
+        }
+      ]
+    }
+  }
+}

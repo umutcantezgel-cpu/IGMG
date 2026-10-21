@@ -7,6 +7,9 @@ import { InhaltText } from '../InhaltText';
 import { naechsterIndex, verschiebeRichtung } from '../tastatur';
 import { type AufgabenProps, richtung } from '../typen';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewerteWortbank as bewerte } from '@/lib/lernapp/aufgaben/wortbank';
+
 const KACHEL = 'min-h-11 min-w-11 rounded-md border-2 px-3 py-1 text-20';
 
 /**
@@ -111,9 +114,12 @@ export default function Wortbank({
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="rounded-lg bg-sand px-4 py-4 text-24">
-        <InhaltText inhalt={aufgabe.vorgabe} />
-      </p>
+      {/* ohne Vorgabe nur bei `satzbau` (Satzbau.tsx nutzt diese Bedienung) */}
+      {aufgabe.vorgabe ? (
+        <p className="rounded-lg bg-sand px-4 py-4 text-24">
+          <InhaltText inhalt={aufgabe.vorgabe} />
+        </p>
+      ) : null}
       <p id={`${id}-tasten`} className="sr-only">
         {t.tasten}
       </p>

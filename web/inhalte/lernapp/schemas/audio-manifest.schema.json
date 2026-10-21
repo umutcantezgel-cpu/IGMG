@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Audio-Manifest (audio-manifest/<sprache>.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-audio-manifest" },
+    "version": { "type": "number", "const": 1 },
+    "sprache": { "type": "string", "enum": ["de", "tr", "ar"] },
+    "stimmen": {
+      "maxItems": 50,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "pattern": "^(?:tts:[a-z0-9._-]{1,80}@[0-9a-f]{7,64}|mensch:[0-9a-f-]{36}|test:[a-z0-9-]{1,40})$" },
+          "art": { "type": "string", "enum": ["sprachausgabe", "mensch", "test"] },
+          "bezeichnung": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "engine": { "type": "string", "maxLength": 120 },
+          "modellLizenz": { "type": "string", "maxLength": 60 },
+          "datenLizenz": { "type": "string", "maxLength": 60 },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 600 },
+          "wasserzeichen": { "default": false, "type": "boolean" }
+        },
+        "required": ["id", "art", "bezeichnung", "namensnennung"],
+        "additionalProperties": false
+      }
+    },
+    "clips": {
+      "maxItems": 200000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "textHash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "buendel": { "type": "string", "pattern": "^lernapp\\/audio\\/(?:de|tr|ar)\\/[a-z0-9.-]+-[0-9a-f]{16}\\.lpa$" },
+          "versatz": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "laenge": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+          "dauerMs": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+          "stimme": { "type": "string", "pattern": "^(?:tts:[a-z0-9._-]{1,80}@[0-9a-f]{7,64}|mensch:[0-9a-f-]{36}|test:[a-z0-9-]{1,40})$" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "format": { "type": "string", "const": "webm-opus" }
+        },
+        "required": ["textHash", "buendel", "versatz", "laenge", "dauerMs", "stimme", "sha256", "format"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "sprache", "stimmen", "clips"],
+  "additionalProperties": false
+}

@@ -7,6 +7,9 @@ import { InhaltText, isoliert } from '../InhaltText';
 import { naechsterIndex } from '../tastatur';
 import type { AufgabenProps } from '../typen';
 
+/** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
+export { bewertePaare as bewerte } from '@/lib/lernapp/aufgaben/paare';
+
 type Seite = 'links' | 'rechts';
 
 /** Häkchen zeichnet sich (B-32 wie B-23, `linie-zeichnet`; reduziert sofort). */

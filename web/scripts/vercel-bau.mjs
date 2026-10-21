@@ -11,6 +11,8 @@ const wurzel = join(import.meta.dirname, '..');
 const lauf = (befehl, argumente, env = process.env) => execFileSync(befehl, argumente, { cwd: wurzel, env, stdio: 'inherit' });
 // Titel-Index der Suche (nur ohne Laufzeit-Datenbank, unten): kein alter Stand aus einem früheren Bau
 rmSync(join(wurzel, '.suchindex.json'), { force: true });
+// Sprechübung der Lern-App: Modelldateien prüfen, ORT-Dateien kopieren, Worker bündeln (ADR 0042 Fortschreibung S5 Nr. 5)
+lauf('node', ['scripts/lernapp-modelle.mjs']);
 
 if (process.env.DATABASE_URL) {
   console.log(`[bau] Datenbank vorhanden (${process.env.VERCEL_ENV ?? 'lokal'}): Migration unter Sperre, dann Bau.`);

@@ -8,7 +8,9 @@ import type { Status } from '../freigabe';
 import { type KursId, RICHTUNGEN, SPRACH_STUFEN, type Sprache, zerlegeRichtung } from '../kurse';
 import { inhaltHash, sha256Hex } from '../paket/hash';
 import { ladeWaechter, pruefeReligion } from './religion';
+import { symbolFehler } from '../symbole';
 import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type UebersetzungDatei, verweiseVon } from './schema';
+import { pruefeTatoebaAusschluss } from './tatoeba';
 
 /**
  * Import der Lern-App-Inhalte (PLAN §6.6, ADR 0041 Nr. 6/7): idempotent über den SHA-256 je Datei und den `inhaltHash` je
@@ -28,6 +30,7 @@ import { pruefeInhaltDatei, type InhaltDatei, type SprachEinheitDatei, type Uebe
  * Läuft in einer Transaktion; Verweise auf unbekannte Lemmata oder Sätze brechen alles ab. Vorher prüft der
  * Religionswächter alle Dateien (`religion.ts`: Formel-Lexikon mit Kennzeichen, Koran- und Hadith-4-Gramme) – ein Befund
  * bricht den Import ab, auch im Vercel-Bau (S-L1 M-3). Eine Übersetzung übernimmt `religionsbezug` ihres Zieleintrags.
+ * Ebenso bricht ab, wer einen der Tatoeba-Sätze mit Koran- oder Hadith-4-Gramm übernimmt (`tatoeba.ts`, L3-02).
  */
 
 export type ImportQuelle = { pfad: string; text: string };
@@ -643,6 +646,12 @@ export function leseDateien(quellen: readonly ImportQuelle[]): { pfad: string; s
       fehler.push(...p.fehler.map((f) => `${q.pfad}: ${f}`));
       continue;
     }
+    // Bildkarten: nur Motive aus dem Register, ohne Freigabe der Redaktion nur im Testkurs (Inhaltsleitfaden §5, LM-34)
+    if (p.datei.art === 'sprache')
+      for (const l of p.datei.daten.lemmata) {
+        const f = l.symbol ? symbolFehler(l.symbol, l.quelle) : null;
+        if (f) fehler.push(`${q.pfad}: ${l.schluessel}: ${f}`);
+      }
     ergebnis.push({ pfad: q.pfad, sha: sha256Hex(q.text), datei: p.datei });
   }
   // Schlüssel sind über alle Dateien eindeutig (Einheiten, Lemmata, Sätze, Lektionen, Aufgaben)
@@ -680,7 +689,7 @@ export async function importiereLernapp(
   }: { erzwingen?: boolean; standSchluessel?: string; jetzt?: Date } = {},
 ): Promise<ImportBericht> {
   const dateien = leseDateien(quellen);
-  const religion = pruefeReligion(dateien, ladeWaechter());
+  const religion = [...pruefeTatoebaAusschluss(dateien), ...pruefeReligion(dateien, ladeWaechter())];
   if (religion.length) throw new ImportFehler(religion);
   return db.transaction(async (tx) => {
     const [z] = await tx.select().from(schema.einstellung).where(eq(schema.einstellung.schluessel, standSchluessel));

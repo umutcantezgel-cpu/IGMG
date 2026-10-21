@@ -67,6 +67,14 @@ Gilt vor Nr. 1–12, wo es abweicht. Gemessen auf 4 vCPU (Xeon, 2,1 GHz) im head
 9. **Nr. 12, Schalter:** `lernapp_sprechen` bleibt in der Produktion aus bis LM-07; die automatische Rückmeldung für Arabisch bleibt zusätzlich aus, bis whisper-small auf Geräten bestätigt ist.
 10. **Folgen, Latenz:** „≤ 3 s auf dem Referenzgerät“ wird als Probelauf nach dem Laden gemessen; hier base 2,8 s (4 Threads) bzw. 3,5 s (2 Threads) für kurze Sätze.
 
+## Fortschreibung nach der Gegenprüfung L2/L3-02 (21.10.2026)
+
+Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
+
+11. **Nr. 3 und 10, Lizenztexte an der Auslieferung:** Neben den Gewichten liegen `LIZENZ-whisper-MIT.txt` (OpenAI) und `LIZENZ-Apache-2.0.txt` (ONNX-Fassung von Xenova, transformers.js), gleich den gepinnten Fassungen in `web/daten/lernapp-modelle/` (SHA-256 in `QUELLE.md`). Unter `/lern-app/modelle/` liegen damit **12 Dateien**: die 10 der Sprechübung (Fortschreibung Nr. 5) und die 2 Lizenztexte; diese gehören nicht zum Download, nicht zum Vorrat `igmg-lernapp-modelle` (der Lern-App-SW lässt sie ans Netz) und nicht zur angezeigten Größe. Der Bauschritt `scripts/lernapp-modelle.mjs` prüft sie und gibt dem Worker einen Lizenzkopf (transformers.js Apache-2.0, onnxruntime-web MIT, Verweis auf den Lizenztext). Die Seite „Quellen“ der Lern-App nennt transformers.js und ONNX Runtime Web bei den Programmbibliotheken sowie Whisper (OpenAI, MIT) und die ONNX-Fassung (Xenova, Apache-2.0) unter „Spracherkennung“, jeweils mit Lizenztext. Die Drittlizenzen von onnxruntime-web (`ThirdPartyNotices.txt`) folgen in L8 (Nr. 10).
+12. **Fortschreibung Nr. 4 und 6, Vorrat:** Ausgeliefert ist die offline belegte Variante aus Nr. 6: `env.useBrowserCache = true` mit `env.cacheKey = 'igmg-lernapp-modelle'` und `wasmBinary` aus diesem Vorrat. `useBrowserCache = false` aus Nr. 4 gilt erst, wenn L5 es per E2E ohne Netz belegt.
+13. **Nr. 4, Laden nur auf Wunsch, auch beim zweiten Mal:** Die Übung startet den Worker ohne Knopf nur, wenn der lokal gemerkte Stand „geladen“ ist **und** Encoder, Decoder und ORT-`.wasm` im Vorrat liegen. Hat der Browser den Vorrat geräumt (Speicherdruck; `localStorage` bleibt erhalten), erscheint wieder das Angebot mit Größe; es gibt kein stilles Nachladen. Der Pegel der Aufnahme (B-35) setzt den Balken direkt am Element, ohne die Übung je Animationsbild neu zu rendern; „Ich kann gerade nicht sprechen“ überspringt auch die übrigen Sprechübungen der Lektion (wie beim Hören).
+
 ## Alternativen
 
 - Web Speech API des Browsers: verworfen. Je nach Browser geht das Audio an Server des Herstellers; das widerspricht „nichts verlässt das Gerät“ und funktioniert nicht offline.

@@ -67,6 +67,7 @@ export default async function LernAppStart() {
         <HeuteInsel
           ui={ui}
           texte={rohTexte(ui, 'heute')}
+          serieTexte={rohTexte(ui, 'serie')}
           kurse={Object.fromEntries(kurse.map((k) => [k, kursTitel(ui, k)]))}
           adressen={{
             einstellungen: lernAdresse(ui, 'einstellungen'),

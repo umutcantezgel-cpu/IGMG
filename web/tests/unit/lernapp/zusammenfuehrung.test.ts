@@ -186,6 +186,16 @@ describe('Startstand aus den abgeleiteten Speichern', () => {
       { kurs: 'ar-aus-de', anzahl: 1 },
       { kurs: 'tr-aus-de', anzahl: 1 },
     ]);
+    // Wochenband der Serie (B-33): heute gelernt; mit Ruhetagen (`pause`) dazwischen trägt die Serie über die Lücke
+    const heute = lerntagVon(jetzt);
+    expect(stand.serie?.heute).toBe(heute);
+    expect(stand.serie?.woche).toHaveLength(7);
+    expect(stand.serie?.woche.find((t) => t.tag === heute)?.art).toBe('gelernt');
+    const { addiereTage } = await import('@/lib/lernapp/ereignisse/serie');
+    await haengeAlleAn(sp, profil, [{ art: 'pause', daten: { von: addiereTage(heute, -2), bis: addiereTage(heute, -1) } }], { jetzt });
+    await leiteNeuAb(sp, profil.id, heute);
+    expect((await sp.lies('einstellungen', [profil.id, 'ruhetage']))?.wert).toEqual([addiereTage(heute, -2), addiereTage(heute, -1)]);
+    expect((await ladeStartStand(jetzt)).serie?.laenge).toBe(2);
     // „Weiter lernen“ gehört dem Gerät, nicht dem Protokoll: eine Neuableitung lässt es stehen
     await leiteNeuAb(sp, profil.id, lerntagVon(jetzt));
     expect(await liesWeiter(sp, profil.id)).not.toBeNull();

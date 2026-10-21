@@ -1,18 +1,30 @@
 import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
-import type { AntwortVon, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
+import type { AntwortVon, AufgabenTyp, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
+import type de from '../../../messages/lernapp/de.json';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
- * (Namensräume `spieler` und `aufgaben`) und werden mit `format.ts` gefüllt – kein next-intl im Client (ADR 0037).
+ * (Namensräume `spieler`, `aufgaben`, `tastatur`, `aufgaben2`, `sprechen` und `schreiben`) und werden mit `format.ts` gefüllt – kein next-intl im Client
+ * (ADR 0037).
  */
 
 /** Oberflächen- bzw. Inhaltssprache; Typ und Schreibrichtung aus `kurse.ts` (eine Quelle für alle Pakete). */
 export type UiSprache = Oberflaeche;
 export { richtung } from '@/lib/lernapp/kurse';
 
-export type SpielerTexte = {
+/** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
+export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
+
+/**
+ * Einstellungen, die der Spieler beachtet (KERN 4.0 §8, ADR 0042 Nr. 8/12): „Hörübungen aus“, „Sprechübungen aus“ (beide aus
+ * den Einstellungen des Profils) und der Schalter `lernapp_sprechen` (Spracherkennung im Browser; aus → nur Selbstvergleich).
+ */
+export type SpielerOptionen = { hoeren: boolean; sprechen: boolean; spracherkennung: boolean };
+export const STANDARD_OPTIONEN: SpielerOptionen = { hoeren: true, sprechen: true, spracherkennung: false };
+
+export type SpielerTexte = WeitereTexte & {
   spieler: {
     fortschritt: string;
     aufgabeVon: string;
@@ -63,7 +75,74 @@ export type SpielerTexte = {
       fertig: string;
       tasten: string;
     };
+    bild_wort: { waehleWort: string; bild: string; beschreibung: string; optionen: string; tasten: string };
+    frei: { uebersetze: string; antworte: string; eingabe: string };
+    hoeren: {
+      anhoeren: string;
+      langsam: string;
+      spielt: string;
+      nichtHoeren: string;
+      uebersprungen: string;
+      audioFolgt: string;
+      audioFolgtText: string;
+      nichtMoeglich: string;
+      keinNetz: string;
+      ueberspringen: string;
+      abschrift: string;
+    };
+    hoeren_waehlen: { waehleGehoertes: string; waehleBedeutung: string; optionen: string; tasten: string };
+    hoeren_schreiben: { schreibeGehoertes: string; eingabe: string };
+    minimalpaare: { waehleGehoertes: string; optionen: string; tasten: string };
+    luecke: { ergaenze: string; luecke: string; optionen: string; hilfe: string; tasten: string };
+    satzbau: { ordne: string };
+    formen: { ergaenze: string; tabelle: string; richtigeForm: string };
+    harakat: {
+      waehleVokalisierung: string;
+      optionen: string;
+      bedeutung: string;
+      tasten: string;
+      /** Namen der arabischen Buchstaben und Zeichen nach Codepunkt (`u0628`) */
+      zeichen: Record<string, string>;
+    };
+    /** Wissenskurs (L2-03): gemeinsam für Begründung und Quellenzeile */
+    wissen: { begruendung: string; quelle: string; quelleZeigen: string };
+    wahr_falsch: {
+      stimmtDas: string;
+      stimmt: string;
+      stimmtNicht: string;
+      aussage: string;
+      optionen: string;
+      tasten: string;
+      ergebnisWahr: string;
+      ergebnisFalsch: string;
+    };
+    zuordnen: { ordneZu: string; kategorien: string; tasten: string; passt: string; gehoertZu: string };
+    reihenfolge: {
+      ordne: string;
+      liste: string;
+      hoch: string;
+      runter: string;
+      verschoben: string;
+      tasten: string;
+      passt: string;
+      gehoertAn: string;
+    };
+    fallfrage: { waehleAntwort: string; fall: string; hinweis: string; optionen: string; tasten: string };
+    koran_wort: { waehleBedeutung: string; waehleWurzel: string; wort: string; stelle: string; optionen: string; tasten: string };
   };
+  /** Sonderzeichenleiste und arabische Bildschirmtastatur */
+  tastatur: TastaturTexte;
+};
+
+export type TastaturTexte = {
+  sonderzeichen: string;
+  einfuegen: string;
+  arabisch: string;
+  buchstaben: string;
+  vokalzeichen: string;
+  leerzeichen: string;
+  loeschen: string;
+  tasten: string;
 };
 
 /** Props jeder Übungskomponente (eigener Chunk je Typ, `aufgaben/lader.ts`). */
@@ -84,4 +163,18 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   gibAb: (antwort: AntwortVon<T>) => void;
   /** Text für die eine Live-Region des Bildschirms (im Rückmeldeblatt) */
   melde: (text: string) => void;
+  /** Texte der Sonderzeichenleiste und der arabischen Tastatur */
+  tastatur: TastaturTexte;
+  /** Texte der Übungstypen aus L2-02 */
+  weitere: WeitereTexte;
+  /**
+   * Aufgabe ohne Bewertung überspringen (gelesener Tipp, Hörübung ohne Audio, Hören auf dem Gerät nicht möglich, „Ich kann
+   * gerade nicht sprechen“); mit `typen` auch alle späteren Aufgaben dieser Typen („Ich kann gerade nicht hören“). Meldung
+   * `meldung` in der Live-Region.
+   */
+  ueberspringe: (o?: { typen?: readonly AufgabenTyp[]; meldung?: string }) => void;
+  /** Die Aufgabe lässt sich nur überspringen (der Spieler blendet „Prüfen“ aus). */
+  nurUeberspringen: (ja: boolean) => void;
+  /** Einstellungen „Hörübungen aus“, „Sprechübungen aus“ und Schalter Spracherkennung */
+  optionen: SpielerOptionen;
 };

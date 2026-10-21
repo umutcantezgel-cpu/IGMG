@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { UebenInsel } from '@/components/lernapp/inseln/UebenInsel';
 import { Rahmen } from '@/components/lernapp/Rahmen';
 import { Seitenkopf } from '@/components/lernapp/Seitenkopf';
+import { funktionAn } from '@/lib/funktionen';
 import { lernAdresse } from '@/lib/lernapp/adressen';
 import { kursTitel } from '@/lib/lernapp/kurstitel';
 import { kursOder404, lernMetadaten, oberflaeche, verlangeLernApp } from '@/lib/lernapp/seite';
@@ -41,7 +42,15 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
             ui={ui}
             kurs={kurs}
             texte={rohTexte(ui, 'ueben')}
-            spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben') }}
+            spielerTexte={{
+              spieler: rohTexte(ui, 'spieler'),
+              aufgaben: rohTexte(ui, 'aufgaben'),
+              tastatur: rohTexte(ui, 'tastatur'),
+              aufgaben2: rohTexte(ui, 'aufgaben2'),
+              sprechen: rohTexte(ui, 'sprechen'),
+              schreiben: rohTexte(ui, 'schreiben'),
+            }}
+            spracherkennung={await funktionAn('lernapp_sprechen')}
             lernpfad={lernpfad}
           />
         </Suspense>

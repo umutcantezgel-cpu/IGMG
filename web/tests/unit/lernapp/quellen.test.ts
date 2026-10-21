@@ -1,15 +1,21 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, realpathSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { LIZENZTEXTE } from '@/lib/lernapp/lizenztexte';
-import { BIBLIOTHEKEN, SCHRIFTEN } from '@/lib/lernapp/quellen';
+import { BIBLIOTHEKEN, SCHRIFTEN, SPRACHERKENNUNG } from '@/lib/lernapp/quellen';
+import { LIZENZ_DATEIEN, MODELL, ORT } from '@/lib/lernapp/sprechen/modell';
 
 /**
  * Quellen und Lizenzen der Lern-App (ADR 0044 Nr. 7): Fassungen wie in node_modules, Lizenzen wie in den Paketen,
  * Lizenztexte gleich den Lizenzdateien (ohne Urheberzeile), Urheberzeilen aus den Lizenzdateien.
  */
 const WEB = join(import.meta.dirname, '..', '..', '..');
-const paket = (name: string) => JSON.parse(readFileSync(join(WEB, 'node_modules', name, 'package.json'), 'utf8'));
+// onnxruntime-web ist eine Abhängigkeit von transformers.js (pnpm: neben ihm im eigenen node_modules)
+const TRANSFORMERS = realpathSync(join(WEB, 'node_modules', '@huggingface', 'transformers'));
+const ordner = (name: string) =>
+  name === 'onnxruntime-web' ? join(TRANSFORMERS, '..', '..', 'onnxruntime-web') : join(WEB, 'node_modules', name);
+const paket = (name: string) => JSON.parse(readFileSync(join(ordner(name), 'package.json'), 'utf8'));
+const lizenzNebenGewichten = (datei: string) => readFileSync(join(WEB, 'public', 'lern-app', 'modelle', MODELL.name, datei), 'utf8');
 const normal = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 describe('Quellen der Lern-App', () => {
@@ -22,6 +28,8 @@ describe('Quellen der Lern-App', () => {
       'ts-fsrs': 'ts-fsrs',
       'fastest-levenshtein': 'fastest-levenshtein',
       zod: 'zod',
+      transformers: '@huggingface/transformers',
+      'onnxruntime-web': 'onnxruntime-web',
     };
     for (const b of BIBLIOTHEKEN) {
       const p = paket(zuPaket[b.id]);
@@ -58,6 +66,9 @@ describe('Quellen der Lern-App', () => {
       'ts-fsrs': 'ts-fsrs',
       'fastest-levenshtein': 'fastest-levenshtein',
       zod: 'zod',
+      // im Worker der Sprechübung (ADR 0042 Nr. 10)
+      '@huggingface/transformers': 'transformers',
+      'onnxruntime-web': 'onnxruntime-web',
     };
     for (const id of Object.values(imClient)) expect(ids.has(id), id).toBe(true);
     expect(normal(readFileSync(join(WEB, 'node_modules', 'zod', 'LICENSE'), 'utf8'))).toContain(
@@ -72,5 +83,21 @@ describe('Quellen der Lern-App', () => {
     for (const ofl of ['noto-sans-arabic-OFL.txt', 'amiri-OFL.txt', 'atkinson-hyperlegible-next-OFL.txt'])
       expect(normal(readFileSync(join(WEB, 'src', 'fonts', ofl), 'utf8')), ofl).toContain(normal(LIZENZTEXTE['OFL-1.1']));
     expect(LIZENZTEXTE['OFL-1.1']).toContain('SIL OPEN FONT LICENSE Version 1.1');
+    expect(normal(readFileSync(join(TRANSFORMERS, 'LICENSE'), 'utf8'))).toContain(normal(LIZENZTEXTE['Apache-2.0']));
+    expect(normal(lizenzNebenGewichten('LIZENZ-Apache-2.0.txt'))).toContain(normal(LIZENZTEXTE['Apache-2.0']));
+    expect(normal(lizenzNebenGewichten('LIZENZ-whisper-MIT.txt'))).toContain(normal(LIZENZTEXTE.MIT));
+  });
+
+  it('Spracherkennung (ADR 0042 Nr. 3 und 10): Modell, Bibliotheken und Lizenztexte neben den Gewichten', () => {
+    expect(SPRACHERKENNUNG.map((q) => [q.id, q.lizenz])).toEqual([
+      ['whisper', 'MIT'],
+      ['whisper-base-onnx', 'Apache-2.0'],
+    ]);
+    // Urheber von Whisper wie im Lizenztext neben den Gewichten; Commit der ONNX-Fassung wie das ausgelieferte Modell
+    expect(normal(lizenzNebenGewichten('LIZENZ-whisper-MIT.txt'))).toContain(SPRACHERKENNUNG[0]!.urheber);
+    expect(MODELL.commit.startsWith(SPRACHERKENNUNG[1]!.version)).toBe(true);
+    expect(MODELL.name).toContain(SPRACHERKENNUNG[1]!.version);
+    expect(BIBLIOTHEKEN.find((b) => b.id === 'onnxruntime-web')?.version).toBe(ORT.version);
+    expect(LIZENZ_DATEIEN.map((d) => d.pfad)).toEqual(['LIZENZ-whisper-MIT.txt', 'LIZENZ-Apache-2.0.txt']);
   });
 });

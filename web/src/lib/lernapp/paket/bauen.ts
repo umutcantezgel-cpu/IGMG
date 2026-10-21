@@ -3,6 +3,7 @@ import { AufgabeSchema, type Aufgabe, type Inhalt, type Lektion } from '../aufga
 import { sprachSichtbarkeit, type Pruefung, type Sichtbarkeit, type Status } from '../freigabe';
 import { AufgabeVorlageSchema, type AufgabeVorlage } from '../inhalt/schema';
 import { type KursId, type KursSlug, type RichtungId, type Sprache, type Stufe, zerlegeRichtung } from '../kurse';
+import { SYMBOLE, type SymbolEintrag, symbolBild } from '../symbole';
 import { kanonisch, sha256Hex, textHash } from './hash';
 import {
   type BuendelVerweis,
@@ -29,6 +30,9 @@ import {
  * Karten heißen `<richtung>:<schlüssel>` (je Richtung eigene Wiederholung). Lektionen heißen `<richtung>.<stufe>.eNN.lNN`.
  *
  * **Audio** nur für Zieltexte ohne Religionsbezug (ADR 0039 Nr. 7) aus den Clips der Zielsprache (`lernapp_audio`).
+ * Hörübungen ohne Clip bleiben im Paket; der Spieler zeigt „Audio folgt“ und überspringt sie (KERN 4.0 §4).
+ *
+ * **Bildkarten** (`bild_wort`): Die Geometrie des Motivs (`symbol` des Lemmas, Register `symbole.ts`) steht in der Aufgabe.
  */
 
 export type Baustein = {
@@ -44,6 +48,8 @@ export type BauEintrag = Baustein & {
   art: 'lemma' | 'satz';
   schluessel: string;
   text: string;
+  /** Motiv der Bildkarte (nur Lemmata) */
+  symbol?: string | null;
   quelle: string;
   lizenz: string;
   namensnennung: string | null;
@@ -89,6 +95,8 @@ export type BauEingabe = {
   tipps: readonly BauTipp[];
   /** Clips der Zielsprache nach Text-Hash (bevorzugte Stimme bereits gewählt) */
   audio: ReadonlyMap<string, BauAudio>;
+  /** Register der Bildkarten (Standard: `symbole.json`) */
+  symbole?: ReadonlyMap<string, SymbolEintrag>;
 };
 
 export type BauOptionen = { ungeprueftZeigen: boolean };
@@ -130,6 +138,45 @@ function stabilSortiert(werte: readonly string[], saat: string): string[] {
 }
 
 const vergleichsform = (s: string) => s.normalize('NFC').toLocaleLowerCase();
+
+/** Satzzeichen am Rand eines Worts (bleiben beim Lückentext im Satz stehen). */
+const RAND =
+  /^([.,;:!?¿¡"„“”‚‘’'«»‹›()[\]{}…\u060C\u061B\u061F\u06D4\u2010-\u2015-]*)(.*?)([.,;:!?¿¡"„“”‚‘’'«»‹›()[\]{}…\u060C\u061B\u061F\u06D4\u2010-\u2015-]*)$/u;
+
+/**
+ * Lücke an Wort `nr` (Wörter durch Leerraum getrennt): Text davor, das Wort ohne Satzzeichen am Rand, Text danach.
+ * `null`, wenn es das Wort nicht gibt oder es nur aus Satzzeichen besteht.
+ */
+export function lueckeIn(satz: string, nr: number): { vor: string; wort: string; nach: string } | null {
+  const teile = satz.split(/(\s+)/);
+  let zaehler = -1;
+  for (let i = 0; i < teile.length; i++) {
+    const t = teile[i] ?? '';
+    if (!t || /^\s+$/.test(t)) continue;
+    zaehler++;
+    if (zaehler !== nr) continue;
+    const m = RAND.exec(t);
+    const wort = m?.[2] ?? '';
+    if (!wort) return null;
+    return { vor: teile.slice(0, i).join('') + (m?.[1] ?? ''), wort, nach: (m?.[3] ?? '') + teile.slice(i + 1).join('') };
+  }
+  return null;
+}
+
+/** Vorlagen der Typen aus L2-01 (Paketbau in `ausL2Vorlage`). */
+const L2_01_VORLAGEN = [
+  'bild_wort',
+  'frei',
+  'hoeren_waehlen',
+  'hoeren_schreiben',
+  'minimalpaare',
+  'luecke',
+  'satzbau',
+  'formen',
+  'harakat',
+] as const;
+type L201Vorlage = Extract<AufgabeVorlage, { typ: (typeof L2_01_VORLAGEN)[number] }>;
+const istL201Vorlage = (v: AufgabeVorlage): v is L201Vorlage => (L2_01_VORLAGEN as readonly string[]).includes(v.typ);
 
 class Werkbank {
   readonly ziel: Sprache;
@@ -221,6 +268,25 @@ class Werkbank {
     return ziel && ausgang ? { ziel, ausgang, u } : null;
   }
 
+  /** Zieltext ohne Audio (Optionen, Varianten). */
+  zielText(schluessel: string): Inhalt | null {
+    const z = this.zielInhalt(schluessel);
+    return z ? { text: z.text, sprache: z.sprache } : null;
+  }
+
+  /** Inhalte zu Ziel und Ablenkern; Doppelte (gleicher Text) und verborgene fallen weg, das Ziel steht vorn. */
+  optionen(ziel: Inhalt, ablenker: readonly string[], seite: (k: string) => Inhalt | null): Inhalt[] {
+    const gesehen = new Set([vergleichsform(ziel.text)]);
+    const liste = [ziel];
+    for (const a of ablenker) {
+      const o = seite(a);
+      if (!o || gesehen.has(vergleichsform(o.text))) continue;
+      gesehen.add(vergleichsform(o.text));
+      liste.push(o);
+    }
+    return liste;
+  }
+
   /** Aufgabe des Spielers aus einer Vorlage (oder null). */
   aufgabe(a: BauAufgabe): Aufgabe | null {
     const v = AufgabeVorlageSchema.safeParse({ ...(a.daten as object), schluessel: a.schluessel, typ: a.typ });
@@ -238,8 +304,151 @@ class Werkbank {
     return p.data;
   }
 
+  /** Optionen in der Zielsprache aus Antwort und Ablenkern (ohne doppelte Texte; Antwort zuerst), oder null. */
+  private zielOptionen(antwort: string, ablenker: readonly string[]): Inhalt[] | null {
+    const a = this.zielInhalt(antwort);
+    if (!a) return null;
+    const texte = new Set([vergleichsform(a.text)]);
+    const optionen = [a];
+    for (const s of ablenker) {
+      const b = this.zielInhalt(s);
+      if (b && !texte.has(vergleichsform(b.text))) {
+        texte.add(vergleichsform(b.text));
+        optionen.push(b);
+      }
+    }
+    return optionen.length >= 2 ? optionen : null;
+  }
+
+  /** Zieltext mit optionaler Übersetzung (aufklappbar). */
+  private zeile(schluessel: string): { zeile: Inhalt; uebersetzung?: Inhalt } | null {
+    const zeile = this.zielInhalt(schluessel);
+    if (!zeile) return null;
+    const u = this.ausgangInhalt(schluessel);
+    return { zeile, ...(u ? { uebersetzung: u } : {}) };
+  }
+
+  /** Aufgaben der Typen aus L2-02 (PLAN §4, §4.2–§4.4); `undefined` für andere Typen. */
+  private ausVorlageL2(v: AufgabeVorlage): unknown {
+    const r = this.e.richtung;
+    const k = (s: string) => kartenSchluessel(r, s);
+    switch (v.typ) {
+      case 'dialog': {
+        const verlauf = v.zeilen.map((z) => {
+          const x = this.zeile(z.satz);
+          return x ? { sprecher: z.sprecher, ...x } : null;
+        });
+        const optionen = this.zielOptionen(v.antwort, v.ablenker);
+        if (verlauf.some((x) => !x) || !optionen) return null;
+        return { typ: 'dialog', schluessel: v.schluessel, karten: [k(v.antwort)], verlauf, optionen, richtig: 0 };
+      }
+      case 'geschichte': {
+        const zeilen = v.zeilen.map((z) => {
+          const x = this.zeile(z.satz);
+          return x ? { ...(z.sprecher ? { sprecher: z.sprecher } : {}), ...x } : null;
+        });
+        if (zeilen.some((x) => !x)) return null;
+        const fragen = [];
+        for (const f of v.fragen) {
+          const frage = this.zielInhalt(f.frage);
+          const optionen = this.zielOptionen(f.antwort, f.ablenker);
+          if (!frage || !optionen) return null;
+          fragen.push({ nach: f.nach, frage, optionen, richtig: 0, karte: k(f.antwort) });
+        }
+        const titel = v.titel ? this.zielInhalt(v.titel) : null;
+        return { typ: 'geschichte', schluessel: v.schluessel, ...(titel ? { titel } : {}), zeilen, fragen };
+      }
+      case 'lesen_fragen': {
+        const text = v.absaetze.map((a) => this.zielInhalt(a));
+        if (text.some((x) => !x)) return null;
+        const glossen = v.glossen.flatMap((g) => {
+          const b = this.beide(g);
+          return b ? [{ wort: b.ziel.text, glosse: b.ausgang }] : [];
+        });
+        const fragen = [];
+        for (const f of v.fragen) {
+          if (f.art === 'rfn') {
+            const aussage = this.zielInhalt(f.aussage);
+            if (!aussage) return null;
+            fragen.push({ art: 'rfn', aussage, richtig: f.richtig });
+          } else {
+            const frage = this.zielInhalt(f.frage);
+            const optionen = this.zielOptionen(f.antwort, f.ablenker);
+            if (!frage || !optionen) return null;
+            fragen.push({ art: 'auswahl', frage, optionen, richtig: 0 });
+          }
+        }
+        const titel = v.titel ? this.zielInhalt(v.titel) : null;
+        return {
+          typ: 'lesen_fragen',
+          schluessel: v.schluessel,
+          ...(titel ? { titel } : {}),
+          text,
+          ...(glossen.length ? { glossen } : {}),
+          fragen,
+        };
+      }
+      case 'grammatik_tipp': {
+        const t = this.e.tipps.find((x) => x.schluessel === `${this.e.einheit.schluessel}.${this.ausgang}.${v.tipp}`);
+        if (!t || !this.sichtbar(t, t.schluessel)) return null;
+        const abschnitte = tippAbschnitte(t.inhalt, this.ziel);
+        const titel = t.titel ?? abschnitte[0]?.ueberschrift;
+        if (!titel || !abschnitte.length) return null;
+        return { typ: 'grammatik_tipp', schluessel: v.schluessel, sprache: this.ausgang, titel, abschnitte };
+      }
+      case 'schrift_ar':
+        return { ...v };
+      case 'schrift_tr':
+      case 'schrift_latein': {
+        const inhalt = (text: string) => ({ text, sprache: this.ziel });
+        const hoeren = v.hoeren ? this.zielInhalt(v.hoeren) : null;
+        if (!v.vorgabe && !hoeren?.audio) return null;
+        return {
+          typ: v.typ,
+          schluessel: v.schluessel,
+          anweisung: v.anweisung,
+          ...(v.vorgabe ? { vorgabe: inhalt(v.vorgabe) } : {}),
+          ...(hoeren?.audio ? { hoeren } : {}),
+          optionen: v.optionen.map(inhalt),
+          richtig: v.richtig,
+        };
+      }
+      case 'sprechen': {
+        const x = this.zeile(v.satz);
+        if (!x) return null;
+        return {
+          typ: 'sprechen',
+          schluessel: v.schluessel,
+          karten: [k(v.satz)],
+          vorgabe: x.zeile,
+          ...(x.uebersetzung ? { uebersetzung: x.uebersetzung } : {}),
+        };
+      }
+      case 'schreiben': {
+        const x = this.zeile(v.aufgabe);
+        const muster = v.muster.map((m) => this.zielInhalt(m));
+        if (!x || muster.some((m) => !m)) return null;
+        return {
+          typ: 'schreiben',
+          schluessel: v.schluessel,
+          karten: [k(v.aufgabe)],
+          aufgabe: x.zeile,
+          ...(x.uebersetzung ? { uebersetzung: x.uebersetzung } : {}),
+          woerter: v.woerter,
+          ...(v.pflichtwoerter ? { pflichtwoerter: v.pflichtwoerter } : {}),
+          muster,
+        };
+      }
+      default:
+        return undefined;
+    }
+  }
+
   private ausVorlage(v: AufgabeVorlage): unknown {
     const r = this.e.richtung;
+    if (istL201Vorlage(v)) return this.ausL2Vorlage(v);
+    const l2 = this.ausVorlageL2(v);
+    if (l2 !== undefined) return l2;
     if (v.typ === 'auswahl') {
       const z = this.beide(v.ziel);
       if (!z) return null;
@@ -309,6 +518,7 @@ class Werkbank {
         kacheln: kacheln.slice(0, 24),
       };
     }
+    if (v.typ !== 'paare') return null;
     const links = new Set<string>();
     const rechts = new Set<string>();
     const paare = [];
@@ -325,6 +535,174 @@ class Werkbank {
     if (paare.length < 2) return null;
     return { typ: 'paare', schluessel: v.schluessel, anweisung: 'findePaare', paare };
   }
+
+  /** Aufgaben der Typen aus L2-01 (Nutzlast nach `aufgaben/<typ>.ts`). */
+  private ausL2Vorlage(v: L201Vorlage): unknown {
+    const r = this.e.richtung;
+    const basis = { schluessel: v.schluessel, ...(v.typ !== 'formen' ? { karten: [kartenSchluessel(r, v.ziel)] } : {}) };
+    switch (v.typ) {
+      case 'bild_wort': {
+        const z = this.beide(v.ziel);
+        const symbol = this.e.eintraege.get(v.ziel)?.symbol;
+        const bild = symbol ? symbolBild(symbol, this.e.symbole ?? SYMBOLE) : null;
+        if (!z || !bild) {
+          if (z && !bild) this.warnungen.push(`${v.schluessel}: Lemma ohne Motiv`);
+          return null;
+        }
+        const optionen = this.optionen({ text: z.ziel.text, sprache: z.ziel.sprache }, v.ablenker, (k) => this.zielText(k));
+        if (optionen.length < 2) return null;
+        return { typ: 'bild_wort', ...basis, anweisung: 'waehleWort', bild, optionen, richtig: 0, beschreibung: z.ausgang };
+      }
+      case 'frei': {
+        const z = this.beide(v.ziel);
+        if (!z) return null;
+        return v.nach === 'ziel'
+          ? {
+              typ: 'frei',
+              ...basis,
+              anweisung: 'uebersetze',
+              vorgabe: z.ausgang,
+              sprache: this.ziel,
+              loesungen: [z.ziel.text, ...(v.alternativen ?? [])],
+            }
+          : {
+              typ: 'frei',
+              ...basis,
+              anweisung: 'uebersetze',
+              vorgabe: z.ziel,
+              sprache: this.ausgang,
+              loesungen: [z.u.text, ...z.u.alternativen],
+            };
+      }
+      case 'hoeren_waehlen': {
+        const z = this.beide(v.ziel);
+        if (!z) return null;
+        const optionen =
+          v.anweisung === 'waehleGehoertes'
+            ? this.optionen({ text: z.ziel.text, sprache: z.ziel.sprache }, v.ablenker, (k) => this.zielText(k))
+            : this.optionen(z.ausgang, v.ablenker, (k) => this.beide(k)?.ausgang ?? null);
+        if (optionen.length < 2) return null;
+        return { typ: 'hoeren_waehlen', ...basis, anweisung: v.anweisung, hoeren: z.ziel, optionen, richtig: 0 };
+      }
+      case 'hoeren_schreiben': {
+        const hoeren = this.zielInhalt(v.ziel);
+        if (!hoeren) return null;
+        return { typ: 'hoeren_schreiben', ...basis, hoeren, sprache: this.ziel, loesungen: [hoeren.text, ...(v.alternativen ?? [])] };
+      }
+      case 'minimalpaare': {
+        const hoeren = this.zielInhalt(v.ziel);
+        if (!hoeren) return null;
+        const optionen = this.optionen({ text: hoeren.text, sprache: hoeren.sprache }, v.ablenker, (k) => this.zielText(k));
+        if (optionen.length < 2) return null;
+        return { typ: 'minimalpaare', ...basis, hoeren, optionen: optionen.slice(0, 4), richtig: 0 };
+      }
+      case 'luecke': {
+        const z = this.zielInhalt(v.ziel);
+        const teile = z ? lueckeIn(z.text, v.wort) : null;
+        if (!z || !teile) {
+          if (z) this.warnungen.push(`${v.schluessel}: Wort ${v.wort} fehlt im Satz`);
+          return null;
+        }
+        const hilfe = this.ausgangInhalt(v.ziel);
+        return {
+          typ: 'luecke',
+          ...basis,
+          vor: teile.vor,
+          nach: teile.nach,
+          sprache: this.ziel,
+          ...(v.ablenker ? { optionen: [teile.wort, ...v.ablenker] } : {}),
+          loesungen: [teile.wort, ...(v.alternativen ?? [])],
+          ...(hilfe ? { hilfe } : {}),
+        };
+      }
+      case 'satzbau': {
+        const z = this.zielInhalt(v.ziel);
+        if (!z) return null;
+        const vorgabe = this.ausgangInhalt(v.ziel);
+        return {
+          typ: 'satzbau',
+          ...basis,
+          ...(vorgabe ? { vorgabe } : {}),
+          sprache: this.ziel,
+          kacheln: zerlege(z.text).slice(0, 24),
+          loesungen: [z.text, ...(v.alternativen ?? [])],
+        };
+      }
+      case 'formen': {
+        const titel = v.lemma ? this.zielText(v.lemma) : null;
+        if (v.lemma && !titel) return null;
+        return {
+          typ: 'formen',
+          schluessel: v.schluessel,
+          ...(v.lemma ? { karten: [kartenSchluessel(r, v.lemma)] } : {}),
+          sprache: this.ziel,
+          ...(titel ? { titel } : {}),
+          zeilen: v.zeilen,
+          spalten: v.spalten,
+          zellen: v.zellen,
+        };
+      }
+      case 'harakat': {
+        if (this.ziel !== 'ar') return null;
+        const z = this.zielText(v.ziel);
+        if (!z) return null;
+        const vorgabe = this.ausgangInhalt(v.ziel);
+        const optionen = this.optionen(
+          z,
+          v.varianten.map((_, i) => String(i)),
+          (i) => ({ text: v.varianten[Number(i)] ?? '', sprache: 'ar' }),
+        );
+        return { typ: 'harakat', ...basis, anweisung: 'waehleVokalisierung', ...(vorgabe ? { vorgabe } : {}), optionen, richtig: 0 };
+      }
+    }
+  }
+}
+
+type TiptapKnoten = { type?: string; text?: string; attrs?: { level?: number }; content?: TiptapKnoten[] };
+type Abschnitt = { ueberschrift?: string; absaetze: string[]; beispiele?: { ziel: Inhalt }[] };
+
+/** Text eines Tiptap-Knotens (Zeilenumbrüche als Leerzeichen). */
+function tiptapText(k: TiptapKnoten): string {
+  if (k.type === 'text') return k.text ?? '';
+  if (k.type === 'hardBreak') return ' ';
+  return (k.content ?? []).map(tiptapText).join('').replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Tipp (Tiptap, ADR 0006) als Karte des Übungstyps `grammatik_tipp`: Überschriften beginnen Abschnitte, Absätze und
+ * Listenpunkte werden Text, Zitatblöcke Beispiele in der Zielsprache.
+ */
+export function tippAbschnitte(doc: { type: 'doc' } & Record<string, unknown>, ziel: Sprache): Abschnitt[] {
+  const abschnitte: Abschnitt[] = [];
+  const aktuell = (): Abschnitt => {
+    if (!abschnitte.length) abschnitte.push({ absaetze: [] });
+    return abschnitte[abschnitte.length - 1]!;
+  };
+  for (const k of ((doc as TiptapKnoten).content ?? []) as TiptapKnoten[]) {
+    if (k.type === 'heading') {
+      const ueberschrift = tiptapText(k);
+      if (ueberschrift) abschnitte.push({ ueberschrift, absaetze: [] });
+    } else if (k.type === 'blockquote') {
+      const a = aktuell();
+      for (const p of k.content ?? []) {
+        const text = tiptapText(p);
+        if (text) (a.beispiele ??= []).push({ ziel: { text, sprache: ziel } });
+      }
+    } else if (k.type === 'bulletList' || k.type === 'orderedList') {
+      for (const punkt of k.content ?? []) {
+        const text = tiptapText(punkt);
+        if (text) aktuell().absaetze.push(text);
+      }
+    } else {
+      const text = tiptapText(k);
+      if (text) aktuell().absaetze.push(text);
+    }
+  }
+  // Ein Abschnitt braucht Text (Schema des Spielers); höchstens 10 Absätze und 10 Beispiele, 12 Abschnitte
+  return abschnitte
+    .filter((a) => a.absaetze.length > 0)
+    .slice(0, 12)
+    .map((a) => ({ ...a, absaetze: a.absaetze.slice(0, 10), ...(a.beispiele ? { beispiele: a.beispiele.slice(0, 10) } : {}) }));
 }
 
 /**

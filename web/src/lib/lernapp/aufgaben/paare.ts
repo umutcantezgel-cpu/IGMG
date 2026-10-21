@@ -1,5 +1,6 @@
 import { gemischteIndizes } from '../engine/zufall';
-import type { AntwortVon, Auswertung, KartenUrteil, PaareAufgabe } from './schema';
+import type { Auswertung, KartenUrteil } from './hilfen';
+import type { AntwortVon, PaareAufgabe } from './schema';
 
 /**
  * Übungstyp `paare` (PLAN §4): zwei Listen, ein Eintrag links und einer rechts bilden ein Paar. Paar `i` ist im Inhalt
