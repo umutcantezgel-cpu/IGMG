@@ -28,7 +28,7 @@ const meldungRoute = await import('@/app/api/lernapp/meldung/route');
 const aufnahmeRoute = await import('@/app/[locale]/verwaltung/(geschuetzt)/lernapp/audio/aufnahme/[id]/route');
 const { ladeBauEingaben } = await import('@/server/queries/lernapp/pakete');
 const { ladeWarteschlange } = await import('@/server/queries/lernapp/sprachpruefung');
-const { ladeLernappUebersicht, ladeVorschau } = await import('@/server/queries/lernapp/verwaltung');
+const { ladeKursBaum, ladeLernappUebersicht, ladeVorschau } = await import('@/server/queries/lernapp/verwaltung');
 const { ladeStudio } = await import('@/server/queries/lernapp/audio-studio');
 const { lernappPruefen } = await import('@/lib/startklar/lernapp');
 const { zaehleBetrieb, betriebsSumme } = await import('@/lib/lernapp/verwaltung/betrieb');
@@ -195,6 +195,9 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     let letzte = {};
     for (const eintrag of s!.auswahl) letzte = await sprache.eintragPruefen({}, formular({ stichprobe, eintrag, urteil: 'ok' }));
     expect(letzte).toMatchObject({ hinweis: 'bestanden' });
+    // Warteschlange zählt die beurteilten Einträge der Stichprobe (nicht die einer anderen Tabelle)
+    const zeile = (await ladeWarteschlange(['tr'])).find((w) => w.einheit === 'tr.a1.e01' && w.art === 'zieltext');
+    expect(zeile?.letzte).toMatchObject({ id: stichprobe, entscheidung: 'bestanden', geprueft: s!.auswahl.length, aktuell: true });
     const [nachher] = await db.select().from(schema.lernappStichprobe).where(eq(schema.lernappStichprobe.id, stichprobe));
     expect(nachher).toMatchObject({ entscheidung: 'bestanden', ergebnis: { geprueft: s!.auswahl.length, kritisch: 0, leicht: 0 } });
     const [einheit] = await db.select().from(schema.lernappEinheit).where(eq(schema.lernappEinheit.schluessel, 'tr.a1.e01'));
@@ -245,6 +248,8 @@ describe('Stichprobe: ziehen, beurteilen, entscheiden', () => {
     expect(u.befunde.kritisch).toBeGreaterThanOrEqual(1);
     expect(u.befunde.nachbessern).toBe(1);
     expect(u.quoten.jeSprache.tr).toMatchObject({ bestanden: 1 });
+    expect(u.quoten.jeSprache.tr!.geprueft).toBe(u.quoten.jeSprache.tr!.gezogen);
+    expect(u.quoten.jeSprache.de).toMatchObject({ offen: 0, nachbessern: 1, geprueft: s!.auswahl.length });
   });
 });
 
@@ -483,6 +488,11 @@ describe('Vorschau, Cockpit und Betriebszähler', () => {
     const tr = await ladeVorschau('tr-aus-de', 'tr.a1.e01.l01');
     expect(tr!.lektion.aufgaben.some((a) => a.schluessel === 'tr.a1.e01.l01.a01')).toBe(false);
     expect(await ladeVorschau('tr-aus-de', 'tr.a1.e09.l01')).toBeNull();
+    // Baum: Aufgaben je Lektion gezählt (je Lektion mindestens eine im Testkurs)
+    const baum = await ladeKursBaum('tr');
+    const lektionen = baum.flatMap((a) => a.einheiten.flatMap((e) => e.lektionen));
+    expect(lektionen.length).toBeGreaterThan(0);
+    for (const l of lektionen) expect(l.aufgaben, l.schluessel).toBeGreaterThan(0);
   });
 
   it('Cockpit-Karte: Schalter, Blob, Prüfende, Einheiten, Meldungen, Grenzen', async () => {

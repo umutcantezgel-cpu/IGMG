@@ -1,5 +1,5 @@
 import 'server-only';
-import { asc, and, count, eq, inArray, sql } from 'drizzle-orm';
+import { asc, and, count, eq, inArray, isNotNull, sql } from 'drizzle-orm';
 import { db, schema } from '@/lib/db';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { KRITISCHE_FEHLER, type Status } from '@/lib/lernapp/freigabe';
@@ -100,18 +100,19 @@ export async function ladeLernappUebersicht(): Promise<Uebersicht> {
   }));
 
   const s = schema.lernappStichprobe;
-  const proben = await db
-    .select({
-      sprache: s.sprache,
-      art: s.art,
-      entscheidung: s.entscheidung,
-      groesse: s.groesse,
-      geprueft:
-        sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(
-          Number,
-        ),
-    })
-    .from(s);
+  // Beurteilte Einträge je Stichprobe als eigene, gruppierte Abfrage: In einer Abfrage ohne Join setzt Drizzle Spalten in
+  // `sql` unqualifiziert ein – ein Unterabfrage-Verweis auf `s.id` träfe dann die `id` der Prüfungen.
+  const p = schema.lernappPruefung;
+  const [stichproben, zaehlung] = await Promise.all([
+    db.select({ id: s.id, sprache: s.sprache, art: s.art, entscheidung: s.entscheidung, groesse: s.groesse }).from(s),
+    db
+      .select({ stichprobeId: p.stichprobeId, n: sql<number>`count(distinct ${p.inhaltId})`.mapWith(Number) })
+      .from(p)
+      .where(isNotNull(p.stichprobeId))
+      .groupBy(p.stichprobeId),
+  ]);
+  const beurteilt = new Map(zaehlung.map((z) => [z.stichprobeId, z.n]));
+  const proben = stichproben.map((x) => ({ ...x, geprueft: beurteilt.get(x.id) ?? 0 }));
   const jeSprache: Record<string, Pruefquote> = {};
   for (const sprache of ['de', 'tr', 'ar']) jeSprache[sprache] = pruefquote(proben.filter((p) => p.sprache === sprache));
 
@@ -196,6 +197,8 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
       ),
     )
     .orderBy(asc(schema.lernappEinheit.reihenfolge), asc(schema.lernappEinheit.schluessel));
+  // Aufgaben je Lektion über einen Join mit Gruppierung (eine Unterabfrage mit `${lektion.id}` stünde ohne Join
+  // unqualifiziert da und zählte falsch)
   const lektionen = einheiten.length
     ? await db
         .select({
@@ -204,15 +207,17 @@ export async function ladeKursBaum(kurs: KursId): Promise<BaumAbschnitt[]> {
           schluessel: schema.lernappLektion.schluessel,
           art: schema.lernappLektion.art,
           status: schema.lernappLektion.status,
-          aufgaben: sql<number>`(select count(*) from lernapp_aufgabe a where a.lektion_id = ${schema.lernappLektion.id})`.mapWith(Number),
+          aufgaben: sql<number>`count(${schema.lernappAufgabe.id})`.mapWith(Number),
         })
         .from(schema.lernappLektion)
+        .leftJoin(schema.lernappAufgabe, eq(schema.lernappAufgabe.lektionId, schema.lernappLektion.id))
         .where(
           inArray(
             schema.lernappLektion.einheitId,
             einheiten.map((e) => e.id),
           ),
         )
+        .groupBy(schema.lernappLektion.id)
         .orderBy(asc(schema.lernappLektion.reihenfolge), asc(schema.lernappLektion.schluessel))
     : [];
   return abschnitte.map((a) => ({

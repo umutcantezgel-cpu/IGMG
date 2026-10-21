@@ -362,10 +362,6 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
       groesse: s.groesse,
       einheitHash: s.einheitHash,
       gezogenAm: s.gezogenAm,
-      geprueft:
-        sql<number>`(select count(distinct ${schema.lernappPruefung.inhaltId}) from ${schema.lernappPruefung} where ${schema.lernappPruefung.stichprobeId} = ${s.id})`.mapWith(
-          Number,
-        ),
     })
     .from(s)
     .where(
@@ -375,6 +371,22 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
       ),
     )
     .orderBy(desc(s.gezogenAm));
+  // Beurteilte Einträge je Stichprobe (eigene Abfrage: ein `sql`-Unterabfrage-Verweis auf `s.id` stünde in einer Abfrage ohne
+  // Join unqualifiziert da und träfe die `id` der Prüfungen)
+  const p = schema.lernappPruefung;
+  const zaehlung = proben.length
+    ? await db
+        .select({ stichprobeId: p.stichprobeId, n: sql<number>`count(distinct ${p.inhaltId})`.mapWith(Number) })
+        .from(p)
+        .where(
+          inArray(
+            p.stichprobeId,
+            proben.map((x) => x.id),
+          ),
+        )
+        .groupBy(p.stichprobeId)
+    : [];
+  const beurteilt = new Map(zaehlung.map((z) => [z.stichprobeId, z.n]));
   const liste: WarteEintrag[] = [];
   for (const e of einheiten) {
     const ziel = e.kurs as Sprache;
@@ -408,7 +420,7 @@ export async function ladeWarteschlange(sprachen: readonly Sprache[]): Promise<W
               id: letzte.id,
               entscheidung: letzte.entscheidung,
               groesse: letzte.groesse,
-              geprueft: letzte.geprueft,
+              geprueft: beurteilt.get(letzte.id) ?? 0,
               aktuell: letzte.einheitHash === stand,
             }
           : null,
