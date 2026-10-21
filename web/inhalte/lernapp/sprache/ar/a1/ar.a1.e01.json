@@ -29,7 +29,7 @@
         "ar": "أستطيع أن أسأل شخصًا عن حاله، وأن أجيب باختصار."
       }
     ],
-    "symbol": "buch",
+    "symbol": "message-circle",
     "kinderGeeignet": true
   },
   "lemmata": [
@@ -236,7 +236,7 @@
         "wurzel": "s-m-w"
       },
       "formen": {
-        "plural": "أَسْمَاءٌ"
+        "plural": "أَسْمَاء"
       },
       "frequenzRang": 144,
       "quelle": "wiktionary:en:اسم",
@@ -1538,7 +1538,7 @@
     },
     {
       "schluessel": "ar.a1.e01.s0166",
-      "text": "وَأَنْتَ؟ مَنْ أَنْتَ؟",
+      "text": "وَمَا اسْمُكَ أَنْتَ؟",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1774,70 +1774,45 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.sabah-al-khayr",
-          "ablenker": [
-            "ar.a1.e01.masa-al-khayr",
-            "ar.a1.e01.maa-s-salama"
-          ]
+          "ablenker": ["ar.a1.e01.masa-al-khayr", "ar.a1.e01.maa-s-salama"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.marhaban",
-          "ablenker": [
-            "ar.a1.e01.shukran",
-            "ar.a1.e01.maa-s-salama"
-          ]
+          "ablenker": ["ar.a1.e01.shukran", "ar.a1.e01.maa-s-salama"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a03",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.marhaban",
-            "ar.a1.e01.sabah-al-khayr",
-            "ar.a1.e01.masa-al-khayr",
-            "ar.a1.e01.maa-s-salama"
-          ]
+          "lemmata": ["ar.a1.e01.marhaban", "ar.a1.e01.sabah-al-khayr", "ar.a1.e01.masa-al-khayr", "ar.a1.e01.maa-s-salama"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.masa-al-khayr",
-          "ablenker": [
-            "ar.a1.e01.sabah-al-khayr",
-            "ar.a1.e01.ahlan"
-          ]
+          "ablenker": ["ar.a1.e01.sabah-al-khayr", "ar.a1.e01.ahlan"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a05",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.maa-s-salama",
-          "ablenker": [
-            "ar.a1.e01.masa-al-khayr",
-            "ar.a1.e01.marhaban"
-          ]
+          "ablenker": ["ar.a1.e01.masa-al-khayr", "ar.a1.e01.marhaban"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a06",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.shukran",
-          "ablenker": [
-            "ar.a1.e01.afwan",
-            "ar.a1.e01.ahlan"
-          ]
+          "ablenker": ["ar.a1.e01.afwan", "ar.a1.e01.ahlan"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a07",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.ahlan",
-            "ar.a1.e01.shukran",
-            "ar.a1.e01.afwan",
-            "ar.a1.e01.sabah-al-khayr"
-          ]
+          "lemmata": ["ar.a1.e01.ahlan", "ar.a1.e01.shukran", "ar.a1.e01.afwan", "ar.a1.e01.sabah-al-khayr"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a08",
@@ -1849,10 +1824,7 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.ya",
-          "ablenker": [
-            "ar.a1.e01.wa",
-            "ar.a1.e01.afwan"
-          ]
+          "ablenker": ["ar.a1.e01.wa", "ar.a1.e01.afwan"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a10",
@@ -1860,32 +1832,22 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0005",
           "nach": "ziel",
-          "alternativen": [
-            "يَا خَالِدُ، صَبَاحُ الْخَيْرِ!"
-          ],
-          "ablenker": [
-            "مَسَاءُ"
-          ]
+          "alternativen": ["يَا خَالِدُ، صَبَاحُ الْخَيْرِ!"],
+          "ablenker": ["مَسَاءُ"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a11",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0009",
           "wort": 1,
-          "ablenker": [
-            "الْخَيْرِ",
-            "مَرْحَبًا"
-          ]
+          "ablenker": ["الْخَيْرِ", "مَرْحَبًا"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0007",
-          "ablenker": [
-            "ar.a1.e01.s0006",
-            "ar.a1.e01.s0010"
-          ]
+          "ablenker": ["ar.a1.e01.s0006", "ar.a1.e01.s0010"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a13",
@@ -1897,10 +1859,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0004",
-          "ablenker": [
-            "ar.a1.e01.s0011",
-            "ar.a1.e01.s0015"
-          ]
+          "ablenker": ["ar.a1.e01.s0011", "ar.a1.e01.s0015"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a14",
@@ -1919,20 +1878,14 @@
             }
           ],
           "antwort": "ar.a1.e01.s0014",
-          "ablenker": [
-            "ar.a1.e01.s0008",
-            "ar.a1.e01.s0021"
-          ]
+          "ablenker": ["ar.a1.e01.s0008", "ar.a1.e01.s0021"]
         },
         {
           "schluessel": "ar.a1.e01.l01.a16",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0012",
           "wort": 1,
-          "ablenker": [
-            "مِنْ",
-            "فِي"
-          ]
+          "ablenker": ["مِنْ", "فِي"]
         }
       ]
     },
@@ -1950,48 +1903,32 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.ana",
-          "ablenker": [
-            "ar.a1.e01.anta",
-            "ar.a1.e01.huwa"
-          ]
+          "ablenker": ["ar.a1.e01.anta", "ar.a1.e01.huwa"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.anta",
-          "ablenker": [
-            "ar.a1.e01.ana",
-            "ar.a1.e01.hiya"
-          ]
+          "ablenker": ["ar.a1.e01.ana", "ar.a1.e01.hiya"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a03",
           "typ": "minimalpaare",
           "ziel": "ar.a1.e01.hiya",
-          "ablenker": [
-            "ar.a1.e01.huwa"
-          ]
+          "ablenker": ["ar.a1.e01.huwa"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a04",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.ism",
-          "ablenker": [
-            "ar.a1.e01.hal",
-            "ar.a1.e01.lugha"
-          ]
+          "ablenker": ["ar.a1.e01.hal", "ar.a1.e01.lugha"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a05",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.ana",
-            "ar.a1.e01.anta",
-            "ar.a1.e01.huwa",
-            "ar.a1.e01.ism"
-          ]
+          "lemmata": ["ar.a1.e01.ana", "ar.a1.e01.anta", "ar.a1.e01.huwa", "ar.a1.e01.ism"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a06",
@@ -2003,30 +1940,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.man",
-          "ablenker": [
-            "ar.a1.e01.ma",
-            "ar.a1.e01.ayna"
-          ]
+          "ablenker": ["ar.a1.e01.ma", "ar.a1.e01.ayna"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a08",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.ma",
-          "ablenker": [
-            "ar.a1.e01.man",
-            "ar.a1.e01.kayfa"
-          ]
+          "ablenker": ["ar.a1.e01.man", "ar.a1.e01.kayfa"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a09",
-          "typ": "hoeren_waehlen",
-          "anweisung": "waehleGehoertes",
-          "ziel": "ar.a1.e01.tasharrafna",
-          "ablenker": [
-            "ar.a1.e01.shukran",
-            "ar.a1.e01.marhaban"
-          ]
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
         },
         {
           "schluessel": "ar.a1.e01.l02.a10",
@@ -2034,29 +1960,21 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0030",
           "nach": "ziel",
-          "ablenker": [
-            "اسْمُكَ"
-          ]
+          "ablenker": ["اِسْمُكَ"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a11",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0028",
           "wort": 0,
-          "ablenker": [
-            "مَنْ",
-            "أَيْنَ"
-          ]
+          "ablenker": ["مَنْ", "أَيْنَ"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0040",
-          "ablenker": [
-            "ar.a1.e01.s0028",
-            "ar.a1.e01.s0036"
-          ]
+          "ablenker": ["ar.a1.e01.s0028", "ar.a1.e01.s0036"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a13",
@@ -2075,10 +1993,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0031",
-          "ablenker": [
-            "ar.a1.e01.s0059",
-            "ar.a1.e01.s0087"
-          ]
+          "ablenker": ["ar.a1.e01.s0059", "ar.a1.e01.s0087"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a15",
@@ -2090,10 +2005,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0002",
-          "ablenker": [
-            "ar.a1.e01.s0022",
-            "ar.a1.e01.s0035"
-          ]
+          "ablenker": ["ar.a1.e01.s0022", "ar.a1.e01.s0035"]
         },
         {
           "schluessel": "ar.a1.e01.l02.a16",
@@ -2116,85 +2028,57 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.almaniya",
-          "ablenker": [
-            "ar.a1.e01.turkiya",
-            "ar.a1.e01.al-urdunn"
-          ]
+          "ablenker": ["ar.a1.e01.turkiya", "ar.a1.e01.al-urdunn"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.ayna",
-          "ablenker": [
-            "ar.a1.e01.kayfa",
-            "ar.a1.e01.man"
-          ]
+          "ablenker": ["ar.a1.e01.kayfa", "ar.a1.e01.man"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.min",
-          "ablenker": [
-            "ar.a1.e01.fi",
-            "ar.a1.e01.wa"
-          ]
+          "ablenker": ["ar.a1.e01.fi", "ar.a1.e01.wa"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a04",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.almaniya",
-            "ar.a1.e01.turkiya",
-            "ar.a1.e01.al-urdunn",
-            "ar.a1.e01.ayna"
-          ]
+          "lemmata": ["ar.a1.e01.almaniya", "ar.a1.e01.turkiya", "ar.a1.e01.al-urdunn", "ar.a1.e01.ayna"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a05",
-          "typ": "auswahl",
-          "anweisung": "waehleUebersetzung",
-          "ziel": "ar.a1.e01.arabi",
-          "ablenker": [
-            "ar.a1.e01.almani",
-            "ar.a1.e01.turki"
-          ]
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
         },
         {
           "schluessel": "ar.a1.e01.l03.a06",
-          "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.almani",
-            "ar.a1.e01.turki",
-            "ar.a1.e01.arabi",
-            "ar.a1.e01.asl"
-          ]
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a1.e01.arabi",
+          "ablenker": ["ar.a1.e01.almani", "ar.a1.e01.turki"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a07",
-          "typ": "grammatik_tipp",
-          "tipp": "t03"
+          "typ": "paare",
+          "lemmata": ["ar.a1.e01.almani", "ar.a1.e01.turki", "ar.a1.e01.arabi", "ar.a1.e01.asl"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a08",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.asl",
-          "ablenker": [
-            "ar.a1.e01.ism",
-            "ar.a1.e01.hal"
-          ]
+          "ablenker": ["ar.a1.e01.ism", "ar.a1.e01.hal"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a09",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0059",
-          "ablenker": [
-            "ar.a1.e01.s0057",
-            "ar.a1.e01.s0058"
-          ]
+          "ablenker": ["ar.a1.e01.s0057", "ar.a1.e01.s0058"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a10",
@@ -2202,40 +2086,28 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0058",
           "nach": "ziel",
-          "ablenker": [
-            "فِي",
-            "تُرْكِيٌّ"
-          ]
+          "ablenker": ["فِي", "أَلْمَانِيَا"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a11",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0070",
           "wort": 1,
-          "ablenker": [
-            "تُرْكِيٌّ",
-            "تُرْكِيَا"
-          ]
+          "ablenker": ["تُرْكِيٌّ", "تُرْكِيَا"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a12",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0057",
           "wort": 2,
-          "ablenker": [
-            "أَلْمَانِيٌّ",
-            "عَرَبِيٌّ"
-          ]
+          "ablenker": ["أَلْمَانِيٌّ", "عَرَبِيٌّ"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0071",
-          "ablenker": [
-            "ar.a1.e01.s0057",
-            "ar.a1.e01.s0072"
-          ]
+          "ablenker": ["ar.a1.e01.s0057", "ar.a1.e01.s0072"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a14",
@@ -2254,10 +2126,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0058",
-          "ablenker": [
-            "ar.a1.e01.s0032",
-            "ar.a1.e01.s0087"
-          ]
+          "ablenker": ["ar.a1.e01.s0032", "ar.a1.e01.s0087"]
         },
         {
           "schluessel": "ar.a1.e01.l03.a16",
@@ -2265,9 +2134,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0077",
           "nach": "ziel",
-          "ablenker": [
-            "أَلْمَانِيَا"
-          ]
+          "ablenker": ["أَلْمَانِيَا"]
         }
       ]
     },
@@ -2285,70 +2152,47 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.kayfa",
-          "ablenker": [
-            "ar.a1.e01.ayna",
-            "ar.a1.e01.man"
-          ]
+          "ablenker": ["ar.a1.e01.ayna", "ar.a1.e01.man"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.nahnu",
-          "ablenker": [
-            "ar.a1.e01.antum",
-            "ar.a1.e01.hum"
-          ]
+          "ablenker": ["ar.a1.e01.antum", "ar.a1.e01.hum"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a03",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.nahnu",
-            "ar.a1.e01.antum",
-            "ar.a1.e01.hum",
-            "ar.a1.e01.ana"
-          ]
+          "lemmata": ["ar.a1.e01.nahnu", "ar.a1.e01.antum", "ar.a1.e01.hum", "ar.a1.e01.ana"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.hal",
-          "ablenker": [
-            "ar.a1.e01.khayr",
-            "ar.a1.e01.ism"
-          ]
+          "ablenker": ["ar.a1.e01.khayr", "ar.a1.e01.ism"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a05",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.wa",
-          "ablenker": [
-            "ar.a1.e01.min",
-            "ar.a1.e01.fi"
-          ]
+          "ablenker": ["ar.a1.e01.min", "ar.a1.e01.fi"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a06",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.khayr",
-          "ablenker": [
-            "ar.a1.e01.hal",
-            "ar.a1.e01.asl"
-          ]
+          "ablenker": ["ar.a1.e01.hal", "ar.a1.e01.asl"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0089",
-          "ablenker": [
-            "ar.a1.e01.s0095",
-            "ar.a1.e01.s0093"
-          ]
+          "ablenker": ["ar.a1.e01.s0095", "ar.a1.e01.s0093"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a08",
@@ -2368,10 +2212,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0113",
-          "ablenker": [
-            "ar.a1.e01.s0058",
-            "ar.a1.e01.s0121"
-          ]
+          "ablenker": ["ar.a1.e01.s0058", "ar.a1.e01.s0121"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a09",
@@ -2379,33 +2220,22 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0087",
           "nach": "ziel",
-          "alternativen": [
-            "شُكْرًا، أَنَا بِخَيْرٍ.",
-            "بِخَيْرٍ، شُكْرًا."
-          ],
-          "ablenker": [
-            "حَالُكَ"
-          ]
+          "alternativen": ["شُكْرًا، أَنَا بِخَيْرٍ.", "بِخَيْرٍ، شُكْرًا."],
+          "ablenker": ["حَالُكَ"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a10",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0099",
           "wort": 0,
-          "ablenker": [
-            "أَيْنَ",
-            "مَنْ"
-          ]
+          "ablenker": ["أَيْنَ", "مَنْ"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a11",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0096",
-          "ablenker": [
-            "ar.a1.e01.s0097",
-            "ar.a1.e01.s0094"
-          ]
+          "ablenker": ["ar.a1.e01.s0097", "ar.a1.e01.s0094"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a12",
@@ -2417,10 +2247,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0114",
-          "ablenker": [
-            "ar.a1.e01.s0053",
-            "ar.a1.e01.s0089"
-          ]
+          "ablenker": ["ar.a1.e01.s0053", "ar.a1.e01.s0089"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a13",
@@ -2439,20 +2266,14 @@
             }
           ],
           "antwort": "ar.a1.e01.s0115",
-          "ablenker": [
-            "ar.a1.e01.s0087",
-            "ar.a1.e01.s0042"
-          ]
+          "ablenker": ["ar.a1.e01.s0087", "ar.a1.e01.s0042"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a15",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0090",
           "wort": 1,
-          "ablenker": [
-            "خَيْرٌ",
-            "حَالُ"
-          ]
+          "ablenker": ["خَيْرٌ", "حَالُ"]
         },
         {
           "schluessel": "ar.a1.e01.l04.a16",
@@ -2468,10 +2289,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0117",
-          "ablenker": [
-            "ar.a1.e01.s0087",
-            "ar.a1.e01.s0120"
-          ]
+          "ablenker": ["ar.a1.e01.s0087", "ar.a1.e01.s0120"]
         }
       ]
     },
@@ -2489,55 +2307,40 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.sakana",
-          "ablenker": [
-            "ar.a1.e01.takallama",
-            "ar.a1.e01.asl"
-          ]
+          "ablenker": ["ar.a1.e01.takallama", "ar.a1.e01.asl"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.takallama",
-          "ablenker": [
-            "ar.a1.e01.sakana",
-            "ar.a1.e01.ism"
-          ]
+          "ablenker": ["ar.a1.e01.sakana", "ar.a1.e01.ism"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.fi",
-          "ablenker": [
-            "ar.a1.e01.min",
-            "ar.a1.e01.ya"
-          ]
+          "ablenker": ["ar.a1.e01.min", "ar.a1.e01.ya"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a04",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.sakana",
-            "ar.a1.e01.takallama",
-            "ar.a1.e01.lugha",
-            "ar.a1.e01.fi"
-          ]
+          "lemmata": ["ar.a1.e01.sakana", "ar.a1.e01.takallama", "ar.a1.e01.lugha", "ar.a1.e01.fi"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a05",
-          "typ": "grammatik_tipp",
-          "tipp": "t04"
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "ar.a1.e01.lugha",
+          "ablenker": ["ar.a1.e01.asl", "ar.a1.e01.hal"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0123",
-          "ablenker": [
-            "ar.a1.e01.s0127",
-            "ar.a1.e01.s0128"
-          ]
+          "ablenker": ["ar.a1.e01.s0126", "ar.a1.e01.s0128"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a07",
@@ -2545,46 +2348,34 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0118",
           "nach": "ziel",
-          "ablenker": [
-            "عَرَبِيٌّ",
-            "أَسْكُنُ"
-          ]
+          "ablenker": ["عَرَبِيٌّ", "أَسْكُنُ"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a08",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0124",
           "wort": 4,
-          "ablenker": [
-            "تَسْكُنُ",
-            "يَسْكُنُ"
-          ]
+          "ablenker": ["تَسْكُنُ", "يَسْكُنُ"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a09",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
-          "ziel": "ar.a1.e01.s0136",
-          "ablenker": [
-            "ar.a1.e01.s0137",
-            "ar.a1.e01.s0135"
-          ]
+          "ziel": "ar.a1.e01.s0133",
+          "ablenker": ["ar.a1.e01.s0147", "ar.a1.e01.s0144"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a10",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0129",
           "wort": 2,
-          "ablenker": [
-            "مِنَ",
-            "يَا"
-          ]
+          "ablenker": ["مِنَ", "يَا"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a11",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "ar.a1.e01.s0143",
+          "satz": "ar.a1.e01.s0145",
           "nach": "ausgang"
         },
         {
@@ -2597,21 +2388,16 @@
             }
           ],
           "antwort": "ar.a1.e01.s0139",
-          "ablenker": [
-            "ar.a1.e01.s0123",
-            "ar.a1.e01.s0087"
-          ]
+          "ablenker": ["ar.a1.e01.s0123", "ar.a1.e01.s0087"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a13",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "ar.a1.e01.s0127",
+          "satz": "ar.a1.e01.s0151",
           "nach": "ziel",
-          "ablenker": [
-            "أَسْكُنُ",
-            "مِنْ"
-          ]
+          "alternativen": ["نَادِيَةُ تَسْكُنُ فِي أَلْمَانِيَا."],
+          "ablenker": ["يَسْكُنُ", "مِنْ"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a14",
@@ -2627,20 +2413,14 @@
             }
           ],
           "antwort": "ar.a1.e01.s0119",
-          "ablenker": [
-            "ar.a1.e01.s0111",
-            "ar.a1.e01.s0017"
-          ]
+          "ablenker": ["ar.a1.e01.s0111", "ar.a1.e01.s0017"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a15",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0141",
           "wort": 0,
-          "ablenker": [
-            "اسْمِي",
-            "أَصْلِي"
-          ]
+          "ablenker": ["اِسْمِي", "أَصْلِي"]
         },
         {
           "schluessel": "ar.a1.e01.l05.a16",
@@ -2732,28 +2512,19 @@
               "nach": 8,
               "frage": "ar.a1.e01.s0173",
               "antwort": "ar.a1.e01.al-urdunn",
-              "ablenker": [
-                "ar.a1.e01.almaniya",
-                "ar.a1.e01.turkiya"
-              ]
+              "ablenker": ["ar.a1.e01.almaniya", "ar.a1.e01.turkiya"]
             },
             {
               "nach": 15,
               "frage": "ar.a1.e01.s0174",
               "antwort": "ar.a1.e01.s0175",
-              "ablenker": [
-                "ar.a1.e01.s0176",
-                "ar.a1.e01.s0177"
-              ]
+              "ablenker": ["ar.a1.e01.s0176", "ar.a1.e01.s0177"]
             },
             {
               "nach": 15,
               "frage": "ar.a1.e01.s0178",
               "antwort": "ar.a1.e01.s0179",
-              "ablenker": [
-                "ar.a1.e01.s0180",
-                "ar.a1.e01.s0181"
-              ]
+              "ablenker": ["ar.a1.e01.s0180", "ar.a1.e01.s0181"]
             }
           ]
         },
@@ -2803,19 +2574,13 @@
               "nach": 3,
               "frage": "ar.a1.e01.s0182",
               "antwort": "ar.a1.e01.almaniya",
-              "ablenker": [
-                "ar.a1.e01.turkiya",
-                "ar.a1.e01.al-urdunn"
-              ]
+              "ablenker": ["ar.a1.e01.turkiya", "ar.a1.e01.al-urdunn"]
             },
             {
               "nach": 8,
               "frage": "ar.a1.e01.s0183",
               "antwort": "ar.a1.e01.s0184",
-              "ablenker": [
-                "ar.a1.e01.s0185",
-                "ar.a1.e01.s0186"
-              ]
+              "ablenker": ["ar.a1.e01.s0185", "ar.a1.e01.s0186"]
             }
           ]
         },
@@ -2824,20 +2589,14 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.s0170",
-          "ablenker": [
-            "ar.a1.e01.s0171",
-            "ar.a1.e01.s0156"
-          ]
+          "ablenker": ["ar.a1.e01.s0171", "ar.a1.e01.s0156"]
         },
         {
           "schluessel": "ar.a1.e01.l06.a04",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0163",
-          "ablenker": [
-            "ar.a1.e01.s0168",
-            "ar.a1.e01.s0156"
-          ]
+          "ablenker": ["ar.a1.e01.s0168", "ar.a1.e01.s0156"]
         },
         {
           "schluessel": "ar.a1.e01.l06.a05",
@@ -2852,9 +2611,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0164",
           "nach": "ziel",
-          "ablenker": [
-            "وَالْعَرَبِيَّةَ"
-          ]
+          "ablenker": ["وَالْعَرَبِيَّةَ"]
         }
       ]
     },
@@ -2870,61 +2627,39 @@
         {
           "schluessel": "ar.a1.e01.l07.a01",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.marhaban",
-            "ar.a1.e01.ism",
-            "ar.a1.e01.min",
-            "ar.a1.e01.kayfa"
-          ]
+          "lemmata": ["ar.a1.e01.marhaban", "ar.a1.e01.ism", "ar.a1.e01.min", "ar.a1.e01.kayfa"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a02",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.sakana",
-            "ar.a1.e01.almaniya",
-            "ar.a1.e01.nahnu",
-            "ar.a1.e01.shukran"
-          ]
+          "lemmata": ["ar.a1.e01.sakana", "ar.a1.e01.almaniya", "ar.a1.e01.nahnu", "ar.a1.e01.shukran"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.tasharrafna",
-          "ablenker": [
-            "ar.a1.e01.maa-s-salama",
-            "ar.a1.e01.afwan"
-          ]
+          "ablenker": ["ar.a1.e01.maa-s-salama", "ar.a1.e01.afwan"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a04",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.turki",
-          "ablenker": [
-            "ar.a1.e01.turkiya",
-            "ar.a1.e01.arabi"
-          ]
+          "ablenker": ["ar.a1.e01.turkiya", "ar.a1.e01.arabi"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a05",
           "typ": "minimalpaare",
           "ziel": "ar.a1.e01.huwa",
-          "ablenker": [
-            "ar.a1.e01.hiya",
-            "ar.a1.e01.hum"
-          ]
+          "ablenker": ["ar.a1.e01.hiya", "ar.a1.e01.hum"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0188",
-          "ablenker": [
-            "ar.a1.e01.s0085",
-            "ar.a1.e01.s0202"
-          ]
+          "ablenker": ["ar.a1.e01.s0085", "ar.a1.e01.s0202"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a07",
@@ -2936,10 +2671,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0189",
-          "ablenker": [
-            "ar.a1.e01.s0059",
-            "ar.a1.e01.s0126"
-          ]
+          "ablenker": ["ar.a1.e01.s0059", "ar.a1.e01.s0126"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a08",
@@ -2947,19 +2679,14 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0191",
           "nach": "ziel",
-          "ablenker": [
-            "أَلْمَانِيَا"
-          ]
+          "ablenker": ["أَلْمَانِيَا"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a09",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0192",
           "wort": 1,
-          "ablenker": [
-            "عَرَبِيَّةٌ",
-            "عَرَبٌ"
-          ]
+          "ablenker": ["عَرَبِيَّةٌ", "عَرَبٌ"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a10",
@@ -2972,11 +2699,8 @@
           "schluessel": "ar.a1.e01.l07.a11",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
-          "ziel": "ar.a1.e01.s0201",
-          "ablenker": [
-            "ar.a1.e01.s0142",
-            "ar.a1.e01.s0148"
-          ]
+          "ziel": "ar.a1.e01.s0148",
+          "ablenker": ["ar.a1.e01.s0139", "ar.a1.e01.s0134"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a12",
@@ -2988,20 +2712,14 @@
             }
           ],
           "antwort": "ar.a1.e01.s0195",
-          "ablenker": [
-            "ar.a1.e01.s0096",
-            "ar.a1.e01.s0046"
-          ]
+          "ablenker": ["ar.a1.e01.s0157", "ar.a1.e01.s0046"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a13",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0107",
           "wort": 0,
-          "ablenker": [
-            "أَنْتَ",
-            "أَنَا"
-          ]
+          "ablenker": ["أَنْتَ", "أَنَا"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a14",
@@ -3013,10 +2731,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0121",
-          "ablenker": [
-            "ar.a1.e01.s0017",
-            "ar.a1.e01.s0112"
-          ]
+          "ablenker": ["ar.a1.e01.s0017", "ar.a1.e01.s0112"]
         },
         {
           "schluessel": "ar.a1.e01.l07.a15",
@@ -3039,30 +2754,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "ar.a1.e01.maa-s-salama",
-          "ablenker": [
-            "ar.a1.e01.marhaban",
-            "ar.a1.e01.shukran"
-          ]
+          "ablenker": ["ar.a1.e01.marhaban", "ar.a1.e01.shukran"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a02",
           "typ": "paare",
-          "lemmata": [
-            "ar.a1.e01.ana",
-            "ar.a1.e01.hiya",
-            "ar.a1.e01.nahnu",
-            "ar.a1.e01.antum"
-          ]
+          "lemmata": ["ar.a1.e01.ana", "ar.a1.e01.hiya", "ar.a1.e01.nahnu", "ar.a1.e01.antum"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.al-urdunn",
-          "ablenker": [
-            "ar.a1.e01.almaniya",
-            "ar.a1.e01.turkiya"
-          ]
+          "ablenker": ["ar.a1.e01.almaniya", "ar.a1.e01.turkiya"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a04",
@@ -3074,10 +2778,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0033",
-          "ablenker": [
-            "ar.a1.e01.s0069",
-            "ar.a1.e01.s0092"
-          ]
+          "ablenker": ["ar.a1.e01.s0069", "ar.a1.e01.s0092"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a05",
@@ -3085,29 +2786,21 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0078",
           "nach": "ziel",
-          "ablenker": [
-            "فِي"
-          ]
+          "ablenker": ["فِي"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a06",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0083",
           "wort": 1,
-          "ablenker": [
-            "أَلْمَانِيٌّ",
-            "أَلْمَانِيَا"
-          ]
+          "ablenker": ["أَلْمَانِيٌّ", "أَلْمَانِيَا"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "ar.a1.e01.s0131",
-          "ablenker": [
-            "ar.a1.e01.s0099",
-            "ar.a1.e01.s0038"
-          ]
+          "ablenker": ["ar.a1.e01.s0099", "ar.a1.e01.s0038"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a08",
@@ -3119,10 +2812,7 @@
             }
           ],
           "antwort": "ar.a1.e01.s0088",
-          "ablenker": [
-            "ar.a1.e01.s0025",
-            "ar.a1.e01.s0057"
-          ]
+          "ablenker": ["ar.a1.e01.s0025", "ar.a1.e01.s0057"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a09",
@@ -3136,20 +2826,14 @@
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0147",
           "wort": 1,
-          "ablenker": [
-            "يَتَكَلَّمُ",
-            "أَتَكَلَّمُ"
-          ]
+          "ablenker": ["يَتَكَلَّمُ", "أَتَكَلَّمُ"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a11",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "ar.a1.e01.s0139",
-          "ablenker": [
-            "ar.a1.e01.s0154",
-            "ar.a1.e01.s0157"
-          ]
+          "ablenker": ["ar.a1.e01.s0154", "ar.a1.e01.s0157"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a12",
@@ -3157,22 +2841,15 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e01.s0102",
           "nach": "ziel",
-          "alternativen": [
-            "شُكْرًا يَا نَادِيَةُ، نَحْنُ بِخَيْرٍ."
-          ],
-          "ablenker": [
-            "هُمْ"
-          ]
+          "alternativen": ["شُكْرًا يَا نَادِيَةُ، نَحْنُ بِخَيْرٍ.", "نَحْنُ بِخَيْرٍ يَا نَادِيَةُ، شُكْرًا."],
+          "ablenker": ["هُمْ"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a13",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "ar.a1.e01.kayfa",
-          "ablenker": [
-            "ar.a1.e01.ayna",
-            "ar.a1.e01.ma"
-          ]
+          "ablenker": ["ar.a1.e01.ayna", "ar.a1.e01.ma"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a14",
@@ -3184,20 +2861,14 @@
             }
           ],
           "antwort": "ar.a1.e01.s0141",
-          "ablenker": [
-            "ar.a1.e01.s0068",
-            "ar.a1.e01.s0123"
-          ]
+          "ablenker": ["ar.a1.e01.s0068", "ar.a1.e01.s0123"]
         },
         {
           "schluessel": "ar.a1.e01.l08.a15",
           "typ": "luecke",
           "ziel": "ar.a1.e01.s0010",
           "wort": 0,
-          "ablenker": [
-            "مِنَ",
-            "فِي"
-          ]
+          "ablenker": ["مِنَ", "فِي"]
         }
       ]
     }
