@@ -86,8 +86,10 @@ pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips
   `LERNAPP_BLOB_BASIS`.
 - **Hochladen** in den Blob `lernapp` nur mit `--hochladen` und gesetztem `BLOB_READ_WRITE_TOKEN` (Menschen-Schritt LM-15);
   ohne Token wird es übersprungen und gemeldet. Erst danach gehört `web/inhalte/lernapp/audio-manifest/<sprache>.json`
-  ins Repository; `lernapp:import` gleicht `lernapp_audio` im Bau damit ab. Alte Bündel nennt das Skript; gelöscht werden
-  sie erst, wenn kein Paket mehr darauf verweist (Menschen).
+  ins Repository; `lernapp:import` gleicht `lernapp_audio` im Bau damit ab. Ohne `--manifest` schreibt das Skript dorthin
+  nur, wenn alle neuen Bündel im Blob liegen, sonst nach `<aus>/manifest-<sprache>.json` (für den nächsten Lauf mit
+  `--manifest` angeben). Alte Bündel nennt das Skript; gelöscht werden sie erst, wenn kein Paket mehr darauf verweist
+  (Menschen).
 - **Plattenbudget:** Clips ≈ 3,6 kB je Sekunde (≈ 310 MB je Sprache); Clips und Bündel nur im Scratchpad, nach dem Hochladen
   löschen. Generator-Venv ≈ 290 MB, ONNX 114 MB.
 - **Zufall:** VITS zieht Rauschen; onnxruntime setzt den Startwert je Sitzung, nicht je Lauf. Eine Neuerzeugung ergibt

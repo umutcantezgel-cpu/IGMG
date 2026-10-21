@@ -24,6 +24,8 @@ import {
   silben,
   treffer,
   urteile,
+  zahlenAlsWoerter,
+  zahlwort,
 } from '@/lib/lernapp/audio/pruefung';
 import { ALLE_STIMMEN, manifestStimme, STIMMEN, THORSTEN } from '@/lib/lernapp/audio/stimmen';
 import type { ImportQuelle } from '@/lib/lernapp/inhalt/import';
@@ -344,6 +346,30 @@ describe('Prüfkette (audio-pruefen)', () => {
     expect(mitRueckerkennung({ sprache: 'tr', art: 'satz', woerter: 6 })).toBe(false);
     expect(treffer(' Das Haus ist gross.', 'Das Haus ist groß.', 'de')).toBe(1);
     expect(treffer('Das Haus ist.', 'Das Haus ist groß.', 'de')).toBe(0.75);
+  });
+
+  it('Zahlwörter: whisper schreibt Ziffern – de vergleicht beide Seiten als Zahlwort', () => {
+    expect([0, 1, 7, 12, 21, 30, 99, 100, 101, 345, 1000, 2026].map(zahlwort)).toEqual([
+      'null',
+      'eins',
+      'sieben',
+      'zwölf',
+      'einundzwanzig',
+      'dreißig',
+      'neunundneunzig',
+      'hundert',
+      'hunderteins',
+      'dreihundertfünfundvierzig',
+      'tausend',
+      'zweitausendsechsundzwanzig',
+    ]);
+    expect(() => zahlwort(10_000)).toThrow(RangeError);
+    expect(zahlenAlsWoerter('Um 5.00 Uhr, 10 vor 12, 007, 12345, B2', 'de')).toBe('Um  fünf .00 Uhr,  zehn  vor  zwölf , 007, 12345, B2');
+    expect(zahlenAlsWoerter('Saat 10', 'tr')).toBe('Saat 10');
+    expect(treffer('Es ist 10 vor 12.', 'Es ist zehn vor zwölf.', 'de')).toBe(1);
+    expect(treffer('2 und 2 ist 4.', 'Zwei und zwei ist vier.', 'de')).toBe(1);
+    expect(treffer('Zwei und zwei ist vier.', '2 und 2 ist 4.', 'de')).toBe(1);
+    expect(treffer('Es ist 548.', 'Es ist fünf vor acht.', 'de')).toBe(0.4);
   });
 });
 

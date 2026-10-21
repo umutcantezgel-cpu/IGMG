@@ -6,7 +6,10 @@
 //   nie im Repository). Ältere Bündel einer Gruppe liest das Skript aus `<aus>` oder – falls `LERNAPP_BLOB_BASIS` gesetzt
 //   ist – aus dem öffentlichen Blob.
 // - Hochladen in den Blob `lernapp` nur mit `--hochladen` UND gesetztem `BLOB_READ_WRITE_TOKEN` (Menschen-Schritt LM-15);
-//   sonst wird es übersprungen und gemeldet. Erst nach dem Hochladen gehört das Manifest ins Repository.
+//   sonst wird es übersprungen und gemeldet. Erst nach dem Hochladen gehört das Manifest ins Repository: Ohne `--manifest`
+//   schreibt das Skript es nur dann nach `inhalte/lernapp/audio-manifest/<sprache>.json`, wenn alle neuen Bündel im Blob
+//   liegen – sonst nach `<aus>/manifest-<sprache>.json` (Probelauf; verwiesen Bündel, die es im Blob nicht gibt, lieferte die
+//   Route 404).
 // - Alte Bündel bleiben im Blob; das Skript nennt sie (Löschen entscheiden Menschen, wenn kein Paket mehr darauf verweist).
 // - `--bereinigen`: Clips zu Texten, die nicht mehr vertonbar sind (gelöscht, zurückgezogen, Religionsbezug), fallen aus
 //   Manifest und Bündeln (Neubau, S-L1 N-3).
@@ -64,8 +67,9 @@ async function main(): Promise<number> {
   if (fremd.length) throw new Error(`${fremd.length} Einträge gehören nicht zur freigegebenen Stimme der Sprache ${sprache}`);
   const pruefung = new Map((JSON.parse(readFileSync(values.pruefung, 'utf8')) as { clips: Pruefclip[] }).clips.map((c) => [c.textHash, c]));
 
-  const manifestPfad = values.manifest ?? join(INHALT_WURZEL, 'audio-manifest', `${sprache}.json`);
-  const alt = existsSync(manifestPfad) ? leseManifest(readFileSync(manifestPfad, 'utf8')) : leeresManifest(sprache);
+  const repoManifest = join(INHALT_WURZEL, 'audio-manifest', `${sprache}.json`);
+  const quelle = values.manifest ?? repoManifest;
+  const alt = existsSync(quelle) ? leseManifest(readFileSync(quelle, 'utf8')) : leeresManifest(sprache);
 
   // Neue Clips: nur „ok“ und unverändert seit der Prüfung
   const neu: NeuerClip[] = [];
@@ -127,10 +131,8 @@ async function main(): Promise<number> {
     mkdirSync(dirname(ziel), { recursive: true });
     writeFileSync(ziel, b.bytes);
   }
-  mkdirSync(dirname(manifestPfad), { recursive: true });
-  writeFileSync(manifestPfad, manifestText(manifest));
-
-  let hochgeladen = 'nicht angefordert (ohne --hochladen)';
+  let hochgeladen = buendel.length ? 'nicht angefordert (ohne --hochladen)' : 'nichts zu laden';
+  let imBlob = !buendel.length;
   if (values.hochladen && buendel.length) {
     const token = process.env.BLOB_READ_WRITE_TOKEN;
     if (!token) hochgeladen = 'übersprungen: BLOB_READ_WRITE_TOKEN fehlt – Menschen-Schritt LM-15';
@@ -151,8 +153,12 @@ async function main(): Promise<number> {
         n++;
       }
       hochgeladen = `${n} Bündel hochgeladen`;
+      imBlob = true;
     }
   }
+  const manifestPfad = values.manifest ?? (imBlob ? repoManifest : join(values.aus, `manifest-${sprache}.json`));
+  mkdirSync(dirname(manifestPfad), { recursive: true });
+  writeFileSync(manifestPfad, manifestText(manifest));
 
   console.log(
     JSON.stringify({

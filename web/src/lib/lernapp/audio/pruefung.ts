@@ -188,10 +188,64 @@ export function physischeFehler(m: Messwerte): string[] {
 export const mitRueckerkennung = (e: { sprache: Sprache; art: 'lemma' | 'satz'; woerter: number }): boolean =>
   MIT_RUECKERKENNUNG.includes(e.sprache) && e.art === 'satz' && e.woerter >= GRENZEN.rueckerkennungAb;
 
-/** Trefferanteil einer Abschrift gegen den Text (mild normalisiert, Wortausrichtung wie in der Sprechübung). */
+const EINER = [
+  'null',
+  'eins',
+  'zwei',
+  'drei',
+  'vier',
+  'fünf',
+  'sechs',
+  'sieben',
+  'acht',
+  'neun',
+  'zehn',
+  'elf',
+  'zwölf',
+  'dreizehn',
+  'vierzehn',
+  'fünfzehn',
+  'sechzehn',
+  'siebzehn',
+  'achtzehn',
+  'neunzehn',
+] as const;
+const ZEHNER = ['', '', 'zwanzig', 'dreißig', 'vierzig', 'fünfzig', 'sechzig', 'siebzig', 'achtzig', 'neunzig'] as const;
+
+/** Deutsches Zahlwort (0–9999, in einem Wort wie in der Rechtschreibung: „einundzwanzig“, „hundert“, „tausend“). */
+export function zahlwort(n: number): string {
+  if (!Number.isInteger(n) || n < 0 || n > 9999) throw new RangeError(`Zahl außerhalb 0–9999: ${n}`);
+  if (n < 20) return EINER[n]!;
+  if (n < 100) {
+    const e = n % 10;
+    return `${e ? `${e === 1 ? 'ein' : EINER[e]}und` : ''}${ZEHNER[Math.floor(n / 10)]}`;
+  }
+  const rest = (r: number) => (r ? zahlwort(r) : '');
+  if (n < 1000) {
+    const h = Math.floor(n / 100);
+    return `${h === 1 ? '' : EINER[h]}hundert${rest(n % 100)}`;
+  }
+  const t = Math.floor(n / 1000);
+  return `${t === 1 ? '' : EINER[t]}tausend${rest(n % 1000)}`;
+}
+
+/**
+ * Ziffernfolgen (1–4 Stellen, ohne führende Null) als Zahlwörter – nur de. whisper-base schreibt gesprochene Zahlen meist
+ * als Ziffern („zehn vor zwölf“ → „10 vor 12“); ohne Angleichung landete jeder Satz mit Zahlwörtern beim Hören (Probelauf
+ * L3-05). Angewandt auf Abschrift und Text, damit Ziffern im Text ebenso zählen.
+ */
+export function zahlenAlsWoerter(text: string, sprache: Sprache): string {
+  if (sprache !== 'de') return text;
+  return text.replace(/(?<![\p{L}\p{N}])(?:0|[1-9]\d{0,3})(?![\p{L}\p{N}])/gu, (z) => ` ${zahlwort(Number(z))} `);
+}
+
+/**
+ * Trefferanteil einer Abschrift gegen den Text (mild normalisiert, Wortausrichtung wie in der Sprechübung; de: Ziffern als
+ * Zahlwörter, {@link zahlenAlsWoerter}).
+ */
 export function treffer(abschrift: string, text: string, sprache: Sprache): number {
-  const ziel = zielWoerter(text, sprache).vergleich;
-  return trefferAnteil(richteAus(ziel, vergleichsWoerter(abschrift, sprache)));
+  const ziel = zielWoerter(zahlenAlsWoerter(text, sprache), sprache).vergleich;
+  return trefferAnteil(richteAus(ziel, vergleichsWoerter(zahlenAlsWoerter(abschrift, sprache), sprache)));
 }
 
 export type Urteil = 'ok' | 'neu_erzeugen' | 'hoeren';
