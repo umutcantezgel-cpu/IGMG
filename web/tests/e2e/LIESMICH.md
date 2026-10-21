@@ -86,6 +86,9 @@ Hinweise:
 - Verwaltung der Lern-App (L3-06): `lernapp/verwaltung-sprachpruefung.spec.ts` (Rolle „Sprachprüfung“ mit Prüfsprache
   Deutsch, Stichprobe der Zieltexte von `de.a1.e01` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
   von Chromium, Ablage unter `MEDIEN_VERZEICHNIS`) brauchen `FUNKTION_LERNAPP=an`; beide nur im Projekt `desktop`.
+- Religiöse Prüfung der Lern-App (L6-03): `lernapp/verwaltung-religioes.spec.ts` legt Platzhalter-Bausteine des
+  Wissenskurses (`islam.grund.e90…`, keine religiösen Texte) per SQL an und gibt eine Aussage mit zwei neuen Konten der Rolle
+  „Religiöse Prüfung“ frei; braucht `FUNKTION_LERNAPP=an`, nur Projekt `desktop`.
 - Sprachausgabe (L3-05): `lernapp/audio-buendel.spec.ts` spielt regulär die Testbündel. Mit einem lokal gebauten Bündel der
   Audio-Kette (`_lernapp/werkzeuge/tts/LIESMICH.md` §4) zusätzlich `E2E_AUDIO_MANIFEST=<manifest>` (Import in die
   E2E-Datenbank), `LERNAPP_AUDIO_LOKAL=<ordner mit de/…lpa>` (Route) und `E2E_AUDIO_BUENDEL=<datei>.lpa` (genau dieses Bündel
