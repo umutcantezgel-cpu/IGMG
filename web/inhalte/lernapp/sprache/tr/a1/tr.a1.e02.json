@@ -1092,10 +1092,9 @@
     },
     {
       "schluessel": "tr.a1.e02.s0034",
-      "text": "Doğru!",
-      "quelle": "tatoeba:1108976",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #1108976 von duran"
+      "text": "Tahta ne renk?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e02.s0035",
@@ -1105,10 +1104,9 @@
     },
     {
       "schluessel": "tr.a1.e02.s0036",
-      "text": "Tamam!",
-      "quelle": "tatoeba:1920963",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #1920963 von Tamy"
+      "text": "Kapı ne renk?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e02.s0037",
@@ -1680,7 +1678,7 @@
     },
     {
       "schluessel": "tr.a1.e02.s0130",
-      "text": "Jan ve Rim arkadaş.",
+      "text": "Elif ve Rim arkadaş.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2138,7 +2136,7 @@
     },
     {
       "schluessel": "tr.a1.e02.s0205",
-      "text": "Rim ve Jan, siz çok iyi arkadaşsınız!",
+      "text": "Rim ve Jan, siz çok iyisiniz!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2180,7 +2178,7 @@
     },
     {
       "schluessel": "tr.a1.e02.s0212",
-      "text": "Kitap Almanca.",
+      "text": "Kalem kırmızı ve siyah, defter mavi ve sarı.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     }
@@ -2202,7 +2200,8 @@
         },
         {
           "schluessel": "tr.a1.e02.l01.a02",
-          "typ": "bild_wort",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.kalem",
           "ablenker": ["tr.a1.e02.silgi", "tr.a1.e02.defter"]
         },
@@ -2215,7 +2214,8 @@
         },
         {
           "schluessel": "tr.a1.e02.l01.a04",
-          "typ": "bild_wort",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
           "ziel": "tr.a1.e02.kitap",
           "ablenker": ["tr.a1.e02.defter", "tr.a1.e02.canta"]
         },
@@ -2228,15 +2228,19 @@
         },
         {
           "schluessel": "tr.a1.e02.l01.a06",
-          "typ": "bild_wort",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.canta",
           "ablenker": ["tr.a1.e02.kitap", "tr.a1.e02.silgi"]
         },
         {
           "schluessel": "tr.a1.e02.l01.a07",
-          "typ": "bild_wort",
-          "ziel": "tr.a1.e02.cetvel",
-          "ablenker": ["tr.a1.e02.kalem", "tr.a1.e02.defter"]
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e02.s0003",
+          "nach": "ziel",
+          "alternativen": ["Bu defter."],
+          "ablenker": ["ne", "kitap"]
         },
         {
           "schluessel": "tr.a1.e02.l01.a08",
@@ -2301,7 +2305,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Ja-Nein-Fragen mit mi stellen und mit evet oder hayır antworten",
-        "tr": "mi ile evet-hayır soruları sormak ve evet ya da hayır ile cevap vermek",
+        "tr": "mi ile evet-hayır soruları sormak ve evet ya da hayır diye cevap vermek",
         "ar": "طرح أسئلة نعم أو لا بـ mi والإجابة بـ evet أو hayır"
       },
       "aufgaben": [
@@ -2435,9 +2439,10 @@
       "aufgaben": [
         {
           "schluessel": "tr.a1.e02.l03.a01",
-          "typ": "bild_wort",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
           "ziel": "tr.a1.e02.kapi",
-          "ablenker": ["tr.a1.e02.pencere", "tr.a1.e02.masa"]
+          "ablenker": ["tr.a1.e02.pencere", "tr.a1.e02.sandalye"]
         },
         {
           "schluessel": "tr.a1.e02.l03.a02",
@@ -2521,9 +2526,9 @@
         {
           "schluessel": "tr.a1.e02.l03.a12",
           "typ": "luecke",
-          "ziel": "tr.a1.e02.s0061",
+          "ziel": "tr.a1.e02.s0060",
           "wort": 2,
-          "ablenker": ["büyük"]
+          "ablenker": ["mi", "mu"]
         },
         {
           "schluessel": "tr.a1.e02.l03.a13",
@@ -2561,7 +2566,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Farben nennen und nach der Farbe fragen: Bu ne renk?",
-        "tr": "Renkleri söylemek ve rengini sormak: Bu ne renk?",
+        "tr": "Renkleri söylemek ve bir şeyin rengini sormak: Bu ne renk?",
         "ar": "ذكر الألوان والسؤال عن اللون: Bu ne renk?"
       },
       "aufgaben": [
@@ -2709,7 +2714,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Nach Personen fragen, um etwas bitten und nachfragen, wenn ich etwas nicht verstehe",
-        "tr": "Kişileri sormak, bir şey istemek ve anlamadığımda tekrar sormak",
+        "tr": "Birinin kim olduğunu sormak, bir şey istemek ve anlamadığımda tekrar sormak",
         "ar": "السؤال عن الأشخاص وطلب شيء والاستفسار عندما لا أفهم"
       },
       "aufgaben": [
@@ -2764,10 +2769,10 @@
         },
         {
           "schluessel": "tr.a1.e02.l05.a07",
-          "typ": "hoeren_waehlen",
-          "anweisung": "waehleBedeutung",
-          "ziel": "tr.a1.e02.s0158",
-          "ablenker": ["tr.a1.e02.s0159", "tr.a1.e02.s0165"]
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e02.s0046",
+          "ablenker": ["tr.a1.e02.s0158", "tr.a1.e02.s0171"]
         },
         {
           "schluessel": "tr.a1.e02.l05.a08",
@@ -3033,9 +3038,10 @@
         },
         {
           "schluessel": "tr.a1.e02.l07.a04",
-          "typ": "bild_wort",
-          "ziel": "tr.a1.e02.kitap",
-          "ablenker": ["tr.a1.e02.kalem", "tr.a1.e02.cetvel"]
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e02.cetvel",
+          "ablenker": ["tr.a1.e02.kalem", "tr.a1.e02.kitap"]
         },
         {
           "schluessel": "tr.a1.e02.l07.a05",
@@ -3048,9 +3054,9 @@
           "schluessel": "tr.a1.e02.l07.a06",
           "typ": "wortbank",
           "anweisung": "uebersetze",
-          "satz": "tr.a1.e02.s0176",
+          "satz": "tr.a1.e02.s0091",
           "nach": "ziel",
-          "ablenker": ["mı", "ben"]
+          "ablenker": ["mi", "ne"]
         },
         {
           "schluessel": "tr.a1.e02.l07.a07",
@@ -3083,11 +3089,11 @@
           "zeilen": [
             {
               "sprecher": "a",
-              "satz": "tr.a1.e02.s0173"
+              "satz": "tr.a1.e02.s0101"
             }
           ],
-          "antwort": "tr.a1.e02.s0174",
-          "ablenker": ["tr.a1.e02.s0177", "tr.a1.e02.s0073"]
+          "antwort": "tr.a1.e02.s0102",
+          "ablenker": ["tr.a1.e02.s0090", "tr.a1.e02.s0084"]
         },
         {
           "schluessel": "tr.a1.e02.l07.a12",
@@ -3102,10 +3108,10 @@
           "zeilen": [
             {
               "sprecher": "a",
-              "satz": "tr.a1.e02.s0162"
+              "satz": "tr.a1.e02.s0046"
             }
           ],
-          "antwort": "tr.a1.e02.s0163",
+          "antwort": "tr.a1.e02.s0032",
           "ablenker": ["tr.a1.e02.s0180", "tr.a1.e02.s0147"]
         },
         {
@@ -3137,13 +3143,14 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Was ist das? Dinge, Farben und Ja-Nein-Fragen",
-        "tr": "Sınav: Bu ne? Eşyalar, renkler ve evet-hayır soruları",
+        "tr": "Değerlendirme: Bu ne? Eşyalar, renkler ve evet-hayır soruları",
         "ar": "محطة الاختبار: ما هذا؟ الأشياء والألوان وأسئلة نعم أو لا"
       },
       "aufgaben": [
         {
           "schluessel": "tr.a1.e02.l08.a01",
-          "typ": "bild_wort",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
           "ziel": "tr.a1.e02.canta",
           "ablenker": ["tr.a1.e02.kitap", "tr.a1.e02.kapi"]
         },
@@ -3253,7 +3260,7 @@
         {
           "schluessel": "tr.a1.e02.l08.a16",
           "typ": "sprechen",
-          "satz": "tr.a1.e02.s0176"
+          "satz": "tr.a1.e02.s0021"
         }
       ]
     }
