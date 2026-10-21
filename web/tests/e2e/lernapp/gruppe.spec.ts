@@ -1,4 +1,5 @@
 import { existsSync } from 'node:fs';
+import { gzipSync } from 'node:zlib';
 import { expect, type Page, test } from '@playwright/test';
 import pg from 'pg';
 import kinderTexte from '../../../messages/bereiche/kinder.json';
@@ -39,18 +40,22 @@ async function elternEinwilligung(elternEmail: string, lernendeId: string) {
 }
 
 /**
- * JavaScript, das die Seite beim Laden holt (komprimiert), in KB – wie `scripts/messen.mjs` (`jsKb`). `encodedBodySize`
- * statt `transferSize`, damit Dateien aus dem Browser-Cache mitzählen.
+ * JavaScript, das die Seite beim Laden holt, in KB gzip – wie `scripts/lernapp-budget.mjs` (je Datei gzip -9; der
+ * Standalone-Server liefert unkomprimiert, die Kompression macht im Betrieb der Proxy).
  */
 async function jsKb(page: Page): Promise<number> {
   await page.waitForLoadState('networkidle');
-  const bytes = await page.evaluate(() =>
-    performance
-      .getEntriesByType('resource')
-      .map((e) => e as PerformanceResourceTiming)
-      .filter((e) => e.initiatorType === 'script' || new URL(e.name).pathname.endsWith('.js'))
-      .reduce((summe, e) => summe + e.encodedBodySize, 0),
-  );
+  const adressen = await page.evaluate(() => [
+    ...new Set(
+      performance
+        .getEntriesByType('resource')
+        .map((e) => e as PerformanceResourceTiming)
+        .filter((e) => e.initiatorType === 'script' || new URL(e.name).pathname.endsWith('.js'))
+        .map((e) => e.name),
+    ),
+  ]);
+  let bytes = 0;
+  for (const a of adressen) bytes += gzipSync(await (await page.request.get(a)).body(), { level: 9 }).length;
   return bytes / 1024;
 }
 
@@ -88,18 +93,17 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
     // Budget beim vollständigen Laden der Seite (nicht nach dem Wechsel im Client)
     await l.goto(seite);
     const kb = await jsKb(l);
-    console.log(`Mein Bereich, Lehrkraft › Lern-App: JS ${kb.toFixed(1)} KB (Budget 230 KB)`);
-    expect(kb).toBeLessThanOrEqual(230);
+    console.log(`Mein Bereich, Lehrkraft › Lern-App: JS ${kb.toFixed(1)} KB gzip (Budget 230 KB)`);
 
     await l.getByLabel(u.zuweisen.einheit, { exact: true }).selectOption(`${KURS}|tr.a1.e01`);
     await l.getByRole('button', { name: u.zuweisen.waehlen }).click();
     await l.getByRole('radio', { name: u.zuweisen.lektion.replace('{nr}', '1'), exact: true }).check();
     await l.getByRole('button', { name: u.zuweisen.knopf }).click();
-    await expect(l.getByText(u.ok.zugewiesen)).toBeVisible();
+    await expect(l.getByText(u.ok.zugewiesen, { exact: true })).toBeVisible();
     const zuweisungen = l.locator('#zuweisungen');
     await expect(zuweisungen).toContainText(u.zuweisungen.erledigt.replace('{anzahl}', '0').replace('{gesamt}', '1'));
     await l.getByRole('button', { name: u.bestenliste.einschalten }).click();
-    await expect(l.getByText(u.ok.bestenliste)).toBeVisible();
+    await expect(l.getByText(u.ok.bestenliste, { exact: true })).toBeVisible();
     await expect(l.locator('#bestenliste')).toContainText(u.bestenliste.an);
 
     // 2. Kind: Aufgabe im Schüler-Start, Lern-App mit dem Zugang verbinden, Lektion lernen, abgleichen
@@ -129,7 +133,9 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
     await expect(k.getByText(de.gruppe.bestenliste.gruppe)).toHaveCount(0);
     await expect(k.getByText(de.gruppe.zustimmung.titel)).toHaveCount(0);
     await k.goto('/mein-bereich');
-    await expect(k.locator('#lern-app')).toContainText(s.erledigt);
+    const aufgabe = k.locator('#lern-app li');
+    await expect(aufgabe).toContainText(s.erledigt);
+    await expect(aufgabe).not.toContainText(s.offen);
 
     // 3. Lehrkraft: erledigt und Stand der Woche (mit Einwilligung)
     await l.goto(seite);
@@ -140,6 +146,8 @@ test('Lehrkraft weist zu, Kind lernt ohne Bestenliste, Lehrkraft sieht „erledi
     // Lerntage 1, XP aus der Lektion (Zahlen nur mit Einwilligung)
     await expect(zeile.locator('td').first()).toHaveText('1');
     await expect(zeile.locator('td').nth(2)).not.toHaveText('0');
+    // Budget zuletzt prüfen, damit der Ablauf auch bei einer Überschreitung vollständig belegt ist
+    expect(kb).toBeLessThanOrEqual(230);
   } finally {
     await lehrkraft.close();
     await kind.close();
