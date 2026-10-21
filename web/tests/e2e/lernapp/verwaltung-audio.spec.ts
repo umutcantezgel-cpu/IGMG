@@ -34,8 +34,14 @@ const test = basis.extend({
 test.use({ permissions: ['microphone'] });
 test.describe.configure({ mode: 'serial' });
 
-/** Kleinste gültige PDF-Datei als Platzhalter einer unterschriebenen Vereinbarung (Testdaten). */
-const PDF = Buffer.from('%PDF-1.4\n1 0 obj\n<< /Type /Catalog >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF\n');
+/**
+ * Kleinste gültige PDF-Datei als Platzhalter einer unterschriebenen Vereinbarung (Testdaten). Mit einer Kommentarzeile je Lauf:
+ * Die Ablage legt Dateien unter ihrem Inhalts-Hash an (nur neu, `wx`); bei einem Medienordner, den mehrere Läufe teilen,
+ * stieße sonst jeder weitere Lauf auf die Datei eines früheren (EEXIST, L3-06b).
+ */
+const PDF = Buffer.from(
+  `%PDF-1.4\n%${Date.now().toString(36)}${Math.random().toString(36).slice(2)}\n1 0 obj\n<< /Type /Catalog >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF\n`,
+);
 
 test.beforeEach(async ({ page }, info) => {
   test.skip(info.project.name !== 'desktop', 'Verwaltungsabläufe nur einmal je Lauf');
