@@ -1037,13 +1037,13 @@
     },
     {
       "schluessel": "de.a1.e02.s0033",
-      "text": "Das ist Felix. Seine Schwester heißt Lena.",
+      "text": "Das ist mein Opa. Seine Schwester heißt Gül.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e02.s0034",
-      "text": "Das ist Selin. Ihr Bruder heißt Mert.",
+      "text": "Das ist meine Oma. Ihr Bruder heißt Metin.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1251,7 +1251,7 @@
     },
     {
       "schluessel": "de.a1.e02.s0067",
-      "text": "Defne zählt die Fotos.",
+      "text": "Can zählt die Fotos.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2045,30 +2045,21 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.familie",
-          "ablenker": [
-            "de.a1.e02.vater",
-            "de.a1.e02.kind"
-          ]
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.kind"]
         },
         {
           "schluessel": "de.a1.e02.l01.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.mutter",
-          "ablenker": [
-            "de.a1.e02.vater",
-            "de.a1.e02.foto"
-          ]
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.foto"]
         },
         {
           "schluessel": "de.a1.e02.l01.a03",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.vater",
-          "ablenker": [
-            "de.a1.e02.mutter",
-            "de.a1.e02.kind"
-          ]
+          "ablenker": ["de.a1.e02.mutter", "de.a1.e02.kind"]
         },
         {
           "schluessel": "de.a1.e02.l01.a04",
@@ -2078,34 +2069,21 @@
         {
           "schluessel": "de.a1.e02.l01.a05",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.mutter",
-            "de.a1.e02.vater",
-            "de.a1.e02.kind",
-            "de.a1.e02.familie",
-            "de.a1.e02.foto",
-            "de.a1.e02.eltern"
-          ]
+          "lemmata": ["de.a1.e02.mutter", "de.a1.e02.vater", "de.a1.e02.kind", "de.a1.e02.familie", "de.a1.e02.foto", "de.a1.e02.eltern"]
         },
         {
           "schluessel": "de.a1.e02.l01.a06",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.artikel",
-          "ablenker": [
-            "de.a1.e02.foto",
-            "de.a1.e02.familie"
-          ]
+          "ablenker": ["de.a1.e02.foto", "de.a1.e02.familie"]
         },
         {
           "schluessel": "de.a1.e02.l01.a07",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0007",
           "wort": 4,
-          "ablenker": [
-            "der",
-            "die"
-          ]
+          "ablenker": ["der", "die"]
         },
         {
           "schluessel": "de.a1.e02.l01.a08",
@@ -2117,20 +2095,14 @@
             }
           ],
           "antwort": "de.a1.e02.s0003",
-          "ablenker": [
-            "de.a1.e02.s0016",
-            "de.a1.e02.s0017"
-          ]
+          "ablenker": ["de.a1.e02.s0016", "de.a1.e02.s0017"]
         },
         {
           "schluessel": "de.a1.e02.l01.a09",
           "typ": "luecke",
-          "ziel": "de.a1.e02.s0002",
-          "wort": 2,
-          "ablenker": [
-            "mein",
-            "der"
-          ]
+          "ziel": "de.a1.e02.s0010",
+          "wort": 0,
+          "ablenker": ["Mein", "Der"]
         },
         {
           "schluessel": "de.a1.e02.l01.a10",
@@ -2138,48 +2110,34 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0004",
           "nach": "ziel",
-          "ablenker": [
-            "ist",
-            "mein"
-          ]
+          "ablenker": ["ist", "mein"]
         },
         {
           "schluessel": "de.a1.e02.l01.a11",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0005",
-          "wort": 4,
-          "ablenker": [
-            "der",
-            "die"
-          ]
+          "wort": 2,
+          "ablenker": ["der", "das"]
         },
         {
           "schluessel": "de.a1.e02.l01.a12",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.vater",
-          "ablenker": [
-            "de.a1.e02.s0020"
-          ]
+          "ablenker": ["de.a1.e02.s0020"]
         },
         {
           "schluessel": "de.a1.e02.l01.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0011",
-          "ablenker": [
-            "de.a1.e02.s0012",
-            "de.a1.e02.s0013"
-          ]
+          "ablenker": ["de.a1.e02.s0012", "de.a1.e02.s0013"]
         },
         {
           "schluessel": "de.a1.e02.l01.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.s0009",
-          "ablenker": [
-            "de.a1.e02.s0010",
-            "de.a1.e02.s0019"
-          ]
+          "ablenker": ["de.a1.e02.s0010", "de.a1.e02.s0019"]
         },
         {
           "schluessel": "de.a1.e02.l01.a15",
@@ -2209,31 +2167,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.bruder",
-          "ablenker": [
-            "de.a1.e02.schwester",
-            "de.a1.e02.opa"
-          ]
+          "ablenker": ["de.a1.e02.vater", "de.a1.e02.opa"]
         },
         {
           "schluessel": "de.a1.e02.l02.a02",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.schwester",
-          "ablenker": [
-            "de.a1.e02.oma",
-            "de.a1.e02.sohn"
-          ]
+          "ablenker": ["de.a1.e02.oma", "de.a1.e02.sohn"]
         },
         {
           "schluessel": "de.a1.e02.l02.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.oma",
-            "de.a1.e02.opa",
-            "de.a1.e02.sohn",
-            "de.a1.e02.tochter",
-            "de.a1.e02.geschwister"
-          ]
+          "lemmata": ["de.a1.e02.oma", "de.a1.e02.opa", "de.a1.e02.sohn", "de.a1.e02.tochter", "de.a1.e02.geschwister"]
         },
         {
           "schluessel": "de.a1.e02.l02.a04",
@@ -2245,40 +2191,28 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.mann",
-          "ablenker": [
-            "de.a1.e02.sohn",
-            "de.a1.e02.opa"
-          ]
+          "ablenker": ["de.a1.e02.sohn", "de.a1.e02.opa"]
         },
         {
           "schluessel": "de.a1.e02.l02.a06",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.frau",
-          "ablenker": [
-            "de.a1.e02.tochter",
-            "de.a1.e02.oma"
-          ]
+          "ablenker": ["de.a1.e02.tochter", "de.a1.e02.oma"]
         },
         {
           "schluessel": "de.a1.e02.l02.a07",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0034",
-          "wort": 3,
-          "ablenker": [
-            "Sein",
-            "Dein"
-          ]
+          "wort": 4,
+          "ablenker": ["Sein", "Ihre"]
         },
         {
           "schluessel": "de.a1.e02.l02.a08",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0033",
-          "wort": 3,
-          "ablenker": [
-            "Ihre",
-            "Sein"
-          ]
+          "wort": 4,
+          "ablenker": ["Ihre", "Sein"]
         },
         {
           "schluessel": "de.a1.e02.l02.a09",
@@ -2290,10 +2224,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0031",
-          "ablenker": [
-            "de.a1.e02.s0038",
-            "de.a1.e02.s0035"
-          ]
+          "ablenker": ["de.a1.e02.s0038", "de.a1.e02.s0035"]
         },
         {
           "schluessel": "de.a1.e02.l02.a10",
@@ -2301,20 +2232,14 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0032",
           "nach": "ziel",
-          "ablenker": [
-            "dein",
-            "ist"
-          ]
+          "ablenker": ["dein", "ist"]
         },
         {
           "schluessel": "de.a1.e02.l02.a11",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.s0042",
-          "ablenker": [
-            "de.a1.e02.s0043",
-            "de.a1.e02.s0021"
-          ]
+          "ablenker": ["de.a1.e02.s0043", "de.a1.e02.s0021"]
         },
         {
           "schluessel": "de.a1.e02.l02.a12",
@@ -2326,28 +2251,20 @@
             }
           ],
           "antwort": "de.a1.e02.s0029",
-          "ablenker": [
-            "de.a1.e02.s0025",
-            "de.a1.e02.s0048"
-          ]
+          "ablenker": ["de.a1.e02.s0025", "de.a1.e02.s0048"]
         },
         {
           "schluessel": "de.a1.e02.l02.a13",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.ihr-poss",
-          "ablenker": [
-            "de.a1.e01.er"
-          ]
+          "ablenker": ["de.a1.e01.er"]
         },
         {
           "schluessel": "de.a1.e02.l02.a14",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0022",
-          "ablenker": [
-            "de.a1.e02.s0040",
-            "de.a1.e02.s0049"
-          ]
+          "ablenker": ["de.a1.e02.s0040", "de.a1.e02.s0049"]
         },
         {
           "schluessel": "de.a1.e02.l02.a15",
@@ -2377,90 +2294,58 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.drei",
-          "ablenker": [
-            "de.a1.e02.zwei",
-            "de.a1.e02.acht"
-          ]
+          "ablenker": ["de.a1.e02.zwei", "de.a1.e02.acht"]
         },
         {
           "schluessel": "de.a1.e02.l03.a02",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.eins",
-            "de.a1.e02.zwei",
-            "de.a1.e02.drei",
-            "de.a1.e02.vier",
-            "de.a1.e02.fuenf"
-          ]
+          "lemmata": ["de.a1.e02.eins", "de.a1.e02.zwei", "de.a1.e02.drei", "de.a1.e02.vier", "de.a1.e02.fuenf"]
         },
         {
           "schluessel": "de.a1.e02.l03.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.sechs",
-            "de.a1.e02.sieben",
-            "de.a1.e02.acht",
-            "de.a1.e02.neun",
-            "de.a1.e02.zehn"
-          ]
+          "lemmata": ["de.a1.e02.sechs", "de.a1.e02.sieben", "de.a1.e02.acht", "de.a1.e02.neun", "de.a1.e02.zehn"]
         },
         {
           "schluessel": "de.a1.e02.l03.a04",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.alt",
-          "ablenker": [
-            "de.a1.e02.viel",
-            "de.a1.e02.auch"
-          ]
+          "ablenker": ["de.a1.e02.viel", "de.a1.e02.auch"]
         },
         {
           "schluessel": "de.a1.e02.l03.a05",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.elf",
-          "ablenker": [
-            "de.a1.e02.zwoelf",
-            "de.a1.e02.zehn"
-          ]
+          "ablenker": ["de.a1.e02.zwoelf", "de.a1.e02.zehn"]
         },
         {
           "schluessel": "de.a1.e02.l03.a06",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.sieben",
-          "ablenker": [
-            "de.a1.e02.sechs",
-            "de.a1.e02.elf"
-          ]
+          "ablenker": ["de.a1.e02.sechs", "de.a1.e02.elf"]
         },
         {
           "schluessel": "de.a1.e02.l03.a07",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.neun",
-          "ablenker": [
-            "de.a1.e01.nein"
-          ]
+          "ablenker": ["de.a1.e01.nein"]
         },
         {
           "schluessel": "de.a1.e02.l03.a08",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.zaehlen",
-          "ablenker": [
-            "de.a1.e01.heissen",
-            "de.a1.e01.wohnen"
-          ]
+          "ablenker": ["de.a1.e01.heissen", "de.a1.e01.wohnen"]
         },
         {
           "schluessel": "de.a1.e02.l03.a09",
           "typ": "luecke",
-          "ziel": "de.a1.e02.s0053",
-          "wort": 3,
-          "ablenker": [
-            "Jahr",
-            "Zahl"
-          ]
+          "ziel": "de.a1.e02.s0062",
+          "wort": 4,
+          "ablenker": ["Jahr", "Zahl"]
         },
         {
           "schluessel": "de.a1.e02.l03.a10",
@@ -2468,30 +2353,21 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0052",
           "nach": "ziel",
-          "ablenker": [
-            "ist",
-            "Jahre"
-          ]
+          "ablenker": ["ist", "Jahre"]
         },
         {
           "schluessel": "de.a1.e02.l03.a11",
           "typ": "luecke",
-          "ziel": "de.a1.e02.s0057",
+          "ziel": "de.a1.e02.s0058",
           "wort": 4,
-          "ablenker": [
-            "drei",
-            "fünf"
-          ]
+          "ablenker": ["acht", "zehn"]
         },
         {
           "schluessel": "de.a1.e02.l03.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0062",
-          "ablenker": [
-            "de.a1.e02.s0056",
-            "de.a1.e02.s0064"
-          ]
+          "ablenker": ["de.a1.e02.s0056", "de.a1.e02.s0064"]
         },
         {
           "schluessel": "de.a1.e02.l03.a13",
@@ -2503,10 +2379,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0053",
-          "ablenker": [
-            "de.a1.e02.s0067",
-            "de.a1.e02.s0058"
-          ]
+          "ablenker": ["de.a1.e02.s0067", "de.a1.e02.s0057"]
         },
         {
           "schluessel": "de.a1.e02.l03.a14",
@@ -2518,20 +2391,14 @@
             }
           ],
           "antwort": "de.a1.e02.s0054",
-          "ablenker": [
-            "de.a1.e02.s0059",
-            "de.a1.e02.s0060"
-          ]
+          "ablenker": ["de.a1.e02.s0059", "de.a1.e02.s0060"]
         },
         {
           "schluessel": "de.a1.e02.l03.a15",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.s0061",
-          "ablenker": [
-            "de.a1.e02.s0063",
-            "de.a1.e02.s0065"
-          ]
+          "ablenker": ["de.a1.e02.s0063", "de.a1.e02.s0065"]
         },
         {
           "schluessel": "de.a1.e02.l03.a16",
@@ -2561,30 +2428,19 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.haben",
-          "ablenker": [
-            "de.a1.e01.sein",
-            "de.a1.e01.heissen"
-          ]
+          "ablenker": ["de.a1.e01.sein", "de.a1.e01.heissen"]
         },
         {
           "schluessel": "de.a1.e02.l04.a03",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.unser",
-            "de.a1.e02.euer",
-            "de.a1.e02.mein",
-            "de.a1.e02.dein"
-          ]
+          "lemmata": ["de.a1.e02.unser", "de.a1.e02.euer", "de.a1.e02.mein", "de.a1.e02.dein"]
         },
         {
           "schluessel": "de.a1.e02.l04.a04",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0069",
           "wort": 0,
-          "ablenker": [
-            "Hat",
-            "Habt"
-          ]
+          "ablenker": ["Hat", "Habt"]
         },
         {
           "schluessel": "de.a1.e02.l04.a05",
@@ -2596,30 +2452,21 @@
             }
           ],
           "antwort": "de.a1.e02.s0097",
-          "ablenker": [
-            "de.a1.e02.s0099",
-            "de.a1.e02.s0087"
-          ]
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0087"]
         },
         {
           "schluessel": "de.a1.e02.l04.a06",
           "typ": "luecke",
-          "ziel": "de.a1.e02.s0073",
-          "wort": 1,
-          "ablenker": [
-            "habt",
-            "hat"
-          ]
+          "ziel": "de.a1.e02.s0083",
+          "wort": 2,
+          "ablenker": ["hat", "habt"]
         },
         {
           "schluessel": "de.a1.e02.l04.a07",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.auch",
-          "ablenker": [
-            "de.a1.e02.alle",
-            "de.a1.e02.viel"
-          ]
+          "ablenker": ["de.a1.e02.alle", "de.a1.e02.viel"]
         },
         {
           "schluessel": "de.a1.e02.l04.a08",
@@ -2627,13 +2474,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0071",
           "nach": "ziel",
-          "alternativen": [
-            "Ich habe drei Schwestern und zwei Brüder."
-          ],
-          "ablenker": [
-            "hat",
-            "Schwester"
-          ]
+          "alternativen": ["Ich habe drei Schwestern und zwei Brüder."],
+          "ablenker": ["hat", "Schwester"]
         },
         {
           "schluessel": "de.a1.e02.l04.a09",
@@ -2645,10 +2487,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0108",
-          "ablenker": [
-            "de.a1.e02.s0120",
-            "de.a1.e02.s0113"
-          ]
+          "ablenker": ["de.a1.e02.s0120", "de.a1.e02.s0113"]
         },
         {
           "schluessel": "de.a1.e02.l04.a10",
@@ -2668,39 +2507,27 @@
             }
           ],
           "antwort": "de.a1.e02.s0110",
-          "ablenker": [
-            "de.a1.e02.s0118",
-            "de.a1.e02.s0116"
-          ]
+          "ablenker": ["de.a1.e02.s0118", "de.a1.e02.s0116"]
         },
         {
           "schluessel": "de.a1.e02.l04.a11",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.ach",
-          "ablenker": [
-            "de.a1.e02.acht",
-            "de.a1.e02.auch"
-          ]
+          "ablenker": ["de.a1.e02.acht", "de.a1.e02.auch"]
         },
         {
           "schluessel": "de.a1.e02.l04.a12",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.s0074",
-          "ablenker": [
-            "de.a1.e02.s0075",
-            "de.a1.e02.s0084"
-          ]
+          "ablenker": ["de.a1.e02.s0075", "de.a1.e02.s0084"]
         },
         {
           "schluessel": "de.a1.e02.l04.a13",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0080",
           "wort": 2,
-          "ablenker": [
-            "eure",
-            "unsere"
-          ]
+          "ablenker": ["eure", "unsere"]
         },
         {
           "schluessel": "de.a1.e02.l04.a14",
@@ -2712,10 +2539,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0086",
-          "ablenker": [
-            "de.a1.e02.s0093",
-            "de.a1.e02.s0079"
-          ]
+          "ablenker": ["de.a1.e02.s0093", "de.a1.e02.s0079"]
         },
         {
           "schluessel": "de.a1.e02.l04.a15",
@@ -2748,63 +2572,42 @@
         {
           "schluessel": "de.a1.e02.l05.a02",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.zwanzig",
-            "de.a1.e02.dreissig",
-            "de.a1.e02.vierzig",
-            "de.a1.e02.fuenfzig",
-            "de.a1.e02.hundert"
-          ]
+          "lemmata": ["de.a1.e02.zwanzig", "de.a1.e02.dreissig", "de.a1.e02.vierzig", "de.a1.e02.fuenfzig", "de.a1.e02.hundert"]
         },
         {
           "schluessel": "de.a1.e02.l05.a03",
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.sechzig",
-          "ablenker": [
-            "de.a1.e02.siebzig",
-            "de.a1.e02.sechs"
-          ]
+          "ablenker": ["de.a1.e02.siebzig", "de.a1.e02.sechs"]
         },
         {
           "schluessel": "de.a1.e02.l05.a04",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.achtzig",
-          "ablenker": [
-            "de.a1.e02.acht",
-            "de.a1.e02.neunzig"
-          ]
+          "ablenker": ["de.a1.e02.acht", "de.a1.e02.neunzig"]
         },
         {
           "schluessel": "de.a1.e02.l05.a05",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.siebzig",
-          "ablenker": [
-            "de.a1.e02.sieben",
-            "de.a1.e02.sechzig"
-          ]
+          "ablenker": ["de.a1.e02.sieben", "de.a1.e02.sechzig"]
         },
         {
           "schluessel": "de.a1.e02.l05.a06",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0134",
           "wort": 4,
-          "ablenker": [
-            "achtzig",
-            "neunzig"
-          ]
+          "ablenker": ["achtzig", "neunzig"]
         },
         {
           "schluessel": "de.a1.e02.l05.a07",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0138",
-          "ablenker": [
-            "de.a1.e02.s0139",
-            "de.a1.e02.s0140"
-          ]
+          "ablenker": ["de.a1.e02.s0139", "de.a1.e02.s0140"]
         },
         {
           "schluessel": "de.a1.e02.l05.a08",
@@ -2812,23 +2615,15 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0129",
           "nach": "ziel",
-          "alternativen": [
-            "Mein Vater ist vierzig."
-          ],
-          "ablenker": [
-            "vier",
-            "hat"
-          ]
+          "alternativen": ["Mein Vater ist vierzig."],
+          "ablenker": ["vier", "hat"]
         },
         {
           "schluessel": "de.a1.e02.l05.a09",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.neunzig",
-          "ablenker": [
-            "de.a1.e02.neun",
-            "de.a1.e02.fuenfzig"
-          ]
+          "ablenker": ["de.a1.e02.neun", "de.a1.e02.fuenfzig"]
         },
         {
           "schluessel": "de.a1.e02.l05.a10",
@@ -2840,23 +2635,13 @@
             }
           ],
           "antwort": "de.a1.e02.s0142",
-          "ablenker": [
-            "de.a1.e02.s0143",
-            "de.a1.e02.s0130"
-          ]
+          "ablenker": ["de.a1.e02.s0143", "de.a1.e02.s0130"]
         },
         {
           "schluessel": "de.a1.e02.l05.a11",
           "typ": "lesen_fragen",
           "titel": "de.a1.e02.s0001",
-          "absaetze": [
-            "de.a1.e02.s0144",
-            "de.a1.e02.s0145",
-            "de.a1.e02.s0146",
-            "de.a1.e02.s0147",
-            "de.a1.e02.s0148",
-            "de.a1.e02.s0149"
-          ],
+          "absaetze": ["de.a1.e02.s0144", "de.a1.e02.s0145", "de.a1.e02.s0146", "de.a1.e02.s0147", "de.a1.e02.s0148", "de.a1.e02.s0149"],
           "glossen": [
             "de.a1.e02.familie",
             "de.a1.e02.vater",
@@ -2882,19 +2667,13 @@
               "art": "auswahl",
               "frage": "de.a1.e02.s0153",
               "antwort": "de.a1.e02.zwei",
-              "ablenker": [
-                "de.a1.e02.sieben",
-                "de.a1.e02.elf"
-              ]
+              "ablenker": ["de.a1.e02.sieben", "de.a1.e02.elf"]
             },
             {
               "art": "auswahl",
               "frage": "de.a1.e02.s0154",
               "antwort": "de.a1.e02.s0155",
-              "ablenker": [
-                "de.a1.e02.s0156",
-                "de.a1.e02.s0157"
-              ]
+              "ablenker": ["de.a1.e02.s0156", "de.a1.e02.s0157"]
             },
             {
               "art": "rfn",
@@ -2917,17 +2696,13 @@
           "schluessel": "de.a1.e02.l05.a12",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.s0131",
-          "alternativen": [
-            "Mein Opa ist 80 Jahre alt."
-          ]
+          "alternativen": ["Mein Opa ist 80 Jahre alt."]
         },
         {
           "schluessel": "de.a1.e02.l05.a13",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.s0137",
-          "alternativen": [
-            "60, 70, 80, 90, 100!"
-          ]
+          "alternativen": ["60, 70, 80, 90, 100!"]
         },
         {
           "schluessel": "de.a1.e02.l05.a14",
@@ -2945,9 +2720,7 @@
           "schluessel": "de.a1.e02.l05.a16",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.hundert",
-          "alternativen": [
-            "100"
-          ]
+          "alternativen": ["100"]
         }
       ]
     },
@@ -3057,37 +2830,25 @@
               "nach": 3,
               "frage": "de.a1.e02.s0182",
               "antwort": "de.a1.e02.s0183",
-              "ablenker": [
-                "de.a1.e02.s0184",
-                "de.a1.e02.s0185"
-              ]
+              "ablenker": ["de.a1.e02.s0184", "de.a1.e02.s0185"]
             },
             {
               "nach": 8,
               "frage": "de.a1.e02.s0186",
               "antwort": "de.a1.e02.sieben",
-              "ablenker": [
-                "de.a1.e02.zwei",
-                "de.a1.e02.elf"
-              ]
+              "ablenker": ["de.a1.e02.zwei", "de.a1.e02.elf"]
             },
             {
               "nach": 15,
               "frage": "de.a1.e02.s0187",
               "antwort": "de.a1.e02.siebzig",
-              "ablenker": [
-                "de.a1.e02.sechzig",
-                "de.a1.e02.achtzig"
-              ]
+              "ablenker": ["de.a1.e02.sechzig", "de.a1.e02.achtzig"]
             },
             {
               "nach": 18,
               "frage": "de.a1.e02.s0188",
               "antwort": "de.a1.e02.vier",
-              "ablenker": [
-                "de.a1.e02.neun",
-                "de.a1.e02.zwei"
-              ]
+              "ablenker": ["de.a1.e02.neun", "de.a1.e02.zwei"]
             }
           ]
         },
@@ -3101,10 +2862,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0173",
-          "ablenker": [
-            "de.a1.e02.s0177",
-            "de.a1.e02.s0179"
-          ]
+          "ablenker": ["de.a1.e02.s0177", "de.a1.e02.s0179"]
         },
         {
           "schluessel": "de.a1.e02.l06.a03",
@@ -3116,40 +2874,28 @@
             }
           ],
           "antwort": "de.a1.e02.s0177",
-          "ablenker": [
-            "de.a1.e02.s0175",
-            "de.a1.e02.s0170"
-          ]
+          "ablenker": ["de.a1.e02.s0175", "de.a1.e02.s0170"]
         },
         {
           "schluessel": "de.a1.e02.l06.a04",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0168",
-          "wort": 2,
-          "ablenker": [
-            "elf",
-            "zehn"
-          ]
+          "wort": 1,
+          "ablenker": ["bist", "sind"]
         },
         {
           "schluessel": "de.a1.e02.l06.a05",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0178",
-          "ablenker": [
-            "de.a1.e02.s0177",
-            "de.a1.e02.s0175"
-          ]
+          "ablenker": ["de.a1.e02.s0177", "de.a1.e02.s0175"]
         },
         {
           "schluessel": "de.a1.e02.l06.a06",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0180",
           "wort": 3,
-          "ablenker": [
-            "zählst",
-            "zähle"
-          ]
+          "ablenker": ["zählst", "zähle"]
         },
         {
           "schluessel": "de.a1.e02.l06.a07",
@@ -3218,36 +2964,25 @@
               "nach": 3,
               "frage": "de.a1.e02.s0121",
               "antwort": "de.a1.e02.drei",
-              "ablenker": [
-                "de.a1.e02.zwei",
-                "de.a1.e02.sechs"
-              ]
+              "ablenker": ["de.a1.e02.zwei", "de.a1.e02.sechs"]
             },
             {
               "nach": 7,
               "frage": "de.a1.e02.s0122",
               "antwort": "de.a1.e02.zehn",
-              "ablenker": [
-                "de.a1.e02.sechs",
-                "de.a1.e02.zwoelf"
-              ]
+              "ablenker": ["de.a1.e02.sechs", "de.a1.e02.zwoelf"]
             },
             {
               "nach": 9,
               "frage": "de.a1.e02.s0095",
               "antwort": "de.a1.e02.s0127",
-              "ablenker": [
-                "de.a1.e02.s0128"
-              ]
+              "ablenker": ["de.a1.e02.s0128"]
             },
             {
               "nach": 13,
               "frage": "de.a1.e02.s0123",
               "antwort": "de.a1.e02.s0124",
-              "ablenker": [
-                "de.a1.e02.s0125",
-                "de.a1.e02.s0126"
-              ]
+              "ablenker": ["de.a1.e02.s0125", "de.a1.e02.s0126"]
             }
           ]
         },
@@ -3261,10 +2996,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0114",
-          "ablenker": [
-            "de.a1.e02.s0031",
-            "de.a1.e02.s0078"
-          ]
+          "ablenker": ["de.a1.e02.s0031", "de.a1.e02.s0078"]
         },
         {
           "schluessel": "de.a1.e02.l06.a09",
@@ -3276,10 +3008,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0118",
-          "ablenker": [
-            "de.a1.e02.s0116",
-            "de.a1.e02.s0114"
-          ]
+          "ablenker": ["de.a1.e02.s0116", "de.a1.e02.s0114"]
         },
         {
           "schluessel": "de.a1.e02.l06.a10",
@@ -3287,13 +3016,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0115",
           "nach": "ziel",
-          "alternativen": [
-            "Wir sind sechs in meiner Familie."
-          ],
-          "ablenker": [
-            "mein",
-            "seid"
-          ]
+          "alternativen": ["Wir sind sechs in meiner Familie.", "Wir sind in meiner Familie sechs."],
+          "ablenker": ["ist", "seid"]
         },
         {
           "schluessel": "de.a1.e02.l06.a11",
@@ -3321,58 +3045,38 @@
         {
           "schluessel": "de.a1.e02.l07.a01",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.mutter",
-            "de.a1.e02.bruder",
-            "de.a1.e02.oma",
-            "de.a1.e02.kind"
-          ]
+          "lemmata": ["de.a1.e02.mutter", "de.a1.e02.bruder", "de.a1.e02.oma", "de.a1.e02.kind"]
         },
         {
           "schluessel": "de.a1.e02.l07.a02",
           "typ": "paare",
-          "lemmata": [
-            "de.a1.e02.tochter",
-            "de.a1.e02.opa",
-            "de.a1.e02.zahl",
-            "de.a1.e02.jahr"
-          ]
+          "lemmata": ["de.a1.e02.tochter", "de.a1.e02.opa", "de.a1.e02.zahl", "de.a1.e02.jahr"]
         },
         {
           "schluessel": "de.a1.e02.l07.a03",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.s0068",
-          "alternativen": [
-            "6, 7, 8, 9, 10."
-          ]
+          "alternativen": ["6, 7, 8, 9, 10."]
         },
         {
           "schluessel": "de.a1.e02.l07.a04",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.zwoelf",
-          "ablenker": [
-            "de.a1.e02.zwei",
-            "de.a1.e02.zwanzig"
-          ]
+          "ablenker": ["de.a1.e02.zwei", "de.a1.e02.zwanzig"]
         },
         {
           "schluessel": "de.a1.e02.l07.a05",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.mutter",
-          "ablenker": [
-            "de.a1.e02.s0050"
-          ]
+          "ablenker": ["de.a1.e02.s0050"]
         },
         {
           "schluessel": "de.a1.e02.l07.a06",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0082",
           "wort": 2,
-          "ablenker": [
-            "euer",
-            "unser"
-          ]
+          "ablenker": ["euer", "unser"]
         },
         {
           "schluessel": "de.a1.e02.l07.a07",
@@ -3380,13 +3084,8 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0039",
           "nach": "ziel",
-          "alternativen": [
-            "Meine Geschwister heißen Defne und Can."
-          ],
-          "ablenker": [
-            "heißt",
-            "sind"
-          ]
+          "alternativen": ["Meine Geschwister heißen Defne und Can."],
+          "ablenker": ["heißt", "hat"]
         },
         {
           "schluessel": "de.a1.e02.l07.a08",
@@ -3398,28 +3097,20 @@
             }
           ],
           "antwort": "de.a1.e02.s0037",
-          "ablenker": [
-            "de.a1.e02.s0024",
-            "de.a1.e02.s0038"
-          ]
+          "ablenker": ["de.a1.e02.s0024", "de.a1.e02.s0038"]
         },
         {
           "schluessel": "de.a1.e02.l07.a09",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.sein-poss",
-          "ablenker": [
-            "de.a1.e02.mein",
-            "de.a1.e02.dein"
-          ]
+          "ablenker": ["de.a1.e02.mein", "de.a1.e02.dein"]
         },
         {
           "schluessel": "de.a1.e02.l07.a10",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.s0100",
-          "alternativen": [
-            "Wir sind 3 Geschwister."
-          ]
+          "alternativen": ["Wir sind 3 Geschwister."]
         },
         {
           "schluessel": "de.a1.e02.l07.a11",
@@ -3431,30 +3122,21 @@
             }
           ],
           "antwort": "de.a1.e02.s0077",
-          "ablenker": [
-            "de.a1.e02.s0132",
-            "de.a1.e02.s0023"
-          ]
+          "ablenker": ["de.a1.e02.s0132", "de.a1.e02.s0023"]
         },
         {
           "schluessel": "de.a1.e02.l07.a12",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0014",
           "wort": 3,
-          "ablenker": [
-            "Vater",
-            "Mutter"
-          ]
+          "ablenker": ["Vater", "Mutter"]
         },
         {
           "schluessel": "de.a1.e02.l07.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0080",
-          "ablenker": [
-            "de.a1.e02.s0081",
-            "de.a1.e02.s0192"
-          ]
+          "ablenker": ["de.a1.e02.s0081", "de.a1.e02.s0192"]
         },
         {
           "schluessel": "de.a1.e02.l07.a14",
@@ -3466,20 +3148,14 @@
             }
           ],
           "antwort": "de.a1.e02.s0046",
-          "ablenker": [
-            "de.a1.e02.s0044",
-            "de.a1.e02.s0130"
-          ]
+          "ablenker": ["de.a1.e02.s0044", "de.a1.e02.s0130"]
         },
         {
           "schluessel": "de.a1.e02.l07.a15",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.ihr-poss",
-          "ablenker": [
-            "de.a1.e02.unser",
-            "de.a1.e02.euer"
-          ]
+          "ablenker": ["de.a1.e02.mein", "de.a1.e02.unser"]
         },
         {
           "schluessel": "de.a1.e02.l07.a16",
@@ -3491,10 +3167,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0102",
-          "ablenker": [
-            "de.a1.e02.s0099",
-            "de.a1.e02.s0130"
-          ]
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0130"]
         },
         {
           "schluessel": "de.a1.e02.l07.a17",
@@ -3506,20 +3179,14 @@
             }
           ],
           "antwort": "de.a1.e02.s0104",
-          "ablenker": [
-            "de.a1.e02.s0092",
-            "de.a1.e02.s0083"
-          ]
+          "ablenker": ["de.a1.e02.s0092", "de.a1.e02.s0073"]
         },
         {
           "schluessel": "de.a1.e02.l07.a18",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0006",
           "wort": 4,
-          "ablenker": [
-            "der",
-            "das"
-          ]
+          "ablenker": ["der", "das"]
         },
         {
           "schluessel": "de.a1.e02.l07.a19",
@@ -3549,30 +3216,21 @@
           "typ": "auswahl",
           "anweisung": "waehleUebersetzung",
           "ziel": "de.a1.e02.eltern",
-          "ablenker": [
-            "de.a1.e02.geschwister",
-            "de.a1.e02.kind"
-          ]
+          "ablenker": ["de.a1.e02.geschwister", "de.a1.e02.kind"]
         },
         {
           "schluessel": "de.a1.e02.l08.a02",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e02.dreissig",
-          "ablenker": [
-            "de.a1.e02.drei",
-            "de.a1.e02.vierzig"
-          ]
+          "ablenker": ["de.a1.e02.drei", "de.a1.e02.vierzig"]
         },
         {
           "schluessel": "de.a1.e02.l08.a03",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0008",
           "wort": 4,
-          "ablenker": [
-            "die",
-            "das"
-          ]
+          "ablenker": ["die", "das"]
         },
         {
           "schluessel": "de.a1.e02.l08.a04",
@@ -3584,10 +3242,7 @@
             }
           ],
           "antwort": "de.a1.e02.s0070",
-          "ablenker": [
-            "de.a1.e02.s0053",
-            "de.a1.e02.s0024"
-          ]
+          "ablenker": ["de.a1.e02.s0053", "de.a1.e02.s0024"]
         },
         {
           "schluessel": "de.a1.e02.l08.a05",
@@ -3595,48 +3250,34 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e02.s0135",
           "nach": "ziel",
-          "ablenker": [
-            "dein",
-            "bist"
-          ]
+          "ablenker": ["dein", "bist"]
         },
         {
           "schluessel": "de.a1.e02.l08.a06",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e02.s0076",
-          "alternativen": [
-            "Er hat 3 Brüder."
-          ]
+          "alternativen": ["Er hat 3 Brüder."]
         },
         {
           "schluessel": "de.a1.e02.l08.a07",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0133",
           "wort": 4,
-          "ablenker": [
-            "dreißig",
-            "fünfzig"
-          ]
+          "ablenker": ["dreißig", "fünfzig"]
         },
         {
           "schluessel": "de.a1.e02.l08.a08",
           "typ": "luecke",
           "ziel": "de.a1.e02.s0041",
           "wort": 0,
-          "ablenker": [
-            "Ihre",
-            "Seine"
-          ]
+          "ablenker": ["Ihre", "Seine"]
         },
         {
           "schluessel": "de.a1.e02.l08.a09",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0088",
-          "ablenker": [
-            "de.a1.e02.s0089",
-            "de.a1.e02.s0090"
-          ]
+          "ablenker": ["de.a1.e02.s0089", "de.a1.e02.s0090"]
         },
         {
           "schluessel": "de.a1.e02.l08.a10",
@@ -3648,38 +3289,27 @@
             }
           ],
           "antwort": "de.a1.e02.s0132",
-          "ablenker": [
-            "de.a1.e02.s0091",
-            "de.a1.e02.s0023"
-          ]
+          "ablenker": ["de.a1.e02.s0091", "de.a1.e02.s0023"]
         },
         {
           "schluessel": "de.a1.e02.l08.a11",
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e02.hundert",
-          "ablenker": [
-            "de.a1.e02.achtzig",
-            "de.a1.e02.zehn"
-          ]
+          "ablenker": ["de.a1.e02.achtzig", "de.a1.e02.zehn"]
         },
         {
           "schluessel": "de.a1.e02.l08.a12",
           "typ": "minimalpaare",
           "ziel": "de.a1.e02.tochter",
-          "ablenker": [
-            "de.a1.e02.s0051"
-          ]
+          "ablenker": ["de.a1.e02.s0051"]
         },
         {
           "schluessel": "de.a1.e02.l08.a13",
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e02.s0098",
-          "ablenker": [
-            "de.a1.e02.s0099",
-            "de.a1.e02.s0193"
-          ]
+          "ablenker": ["de.a1.e02.s0099", "de.a1.e02.s0193"]
         },
         {
           "schluessel": "de.a1.e02.l08.a14",
