@@ -1,5 +1,5 @@
 import type { Note } from '../bewertung';
-import type { Pruefliste } from '../aufgaben/schreiben';
+import type { Pruefliste } from '../aufgaben/auswertung/schreiben';
 import * as z from '../z';
 
 const Stufe = z.optional(z.int().check(z.minimum(0), z.maximum(3)));

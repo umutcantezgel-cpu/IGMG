@@ -1,14 +1,14 @@
 'use client';
 
 import { useMemo } from 'react';
-import { schriftWahlReihenfolge } from '@/lib/lernapp/aufgaben/schrift_wahl';
+import { schriftWahlReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/schrift_wahl';
 import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
 import { Anhoeren } from '../Anhoeren';
 import { Wahlgruppe } from './Wahlgruppe';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteSchriftWahlAntwort as bewerte } from '@/lib/lernapp/aufgaben/schrift_wahl';
+export { bewerteSchriftWahlAntwort as bewerte } from '@/lib/lernapp/aufgaben/auswertung/schrift_wahl';
 
 /**
  * Übungstypen `schrift_tr` und `schrift_latein` (PLAN §4.4): sichtbare Vorgabe (Buchstabe, Wort mit Lücke) und/oder

@@ -1,8 +1,5 @@
-import { gemischteIndizes } from '../engine/zufall';
 import * as z from '../z';
 import { basis, liste } from './grundlagen';
-import { kartenMit } from './hilfen';
-import type { Auswertung } from './schema';
 
 /**
  * Übungstyp `schrift_ar` (PLAN §4.4, Vorkurs Arabisch für de/tr): die Elifbe-Logik aus `web/src/lib/elifbe/` – Buchstaben
@@ -16,7 +13,8 @@ import type { Auswertung } from './schema';
  * - `lesen`: Silbe (Buchstabe mit Vokalzeichen) sehen, die Umschrift wählen.
  * - `nachspuren`: Buchstaben Zug für Zug nachspuren; ohne Zeiger „auf Papier geschrieben“ (WCAG 2.5.1, 2.5.7).
  *
- * Die Optionen sind `[ziel, ...ablenker]` (Index 0 richtig), gemischt angezeigt.
+ * Die Optionen sind `[ziel, ...ablenker]` (Index 0 richtig), gemischt angezeigt. Hier Nutzlast (Zod) und die Regeln, die das
+ * Schema braucht; Optionen, Reihenfolge und Bewertung ohne Zod in `auswertung/schrift_ar.ts`.
  */
 
 /** Buchstaben in der Reihenfolge des Elifbe (`web/src/lib/elifbe/alphabet.ts` `SLUGS`; ein Unit-Test hält beide gleich). */
@@ -126,19 +124,3 @@ export const SchriftArSchema = z
 export type SchriftArAufgabe = z.infer<typeof SchriftArSchema>;
 /** Auswahl (Index in `[ziel, ...ablenker]`) bzw. Nachspuren: gezeichnet oder auf Papier geschrieben. */
 export type SchriftArAntwort = { typ: 'schrift_ar'; wahl: number } | { typ: 'schrift_ar'; spur: 'gezeichnet' | 'papier' };
-
-/** Optionen als Buchstaben: Ziel zuerst. */
-export const schriftOptionen = (a: Pick<SchriftArAufgabe, 'ziel' | 'ablenker'>): BuchstabeSlug[] => [a.ziel, ...(a.ablenker ?? [])];
-
-/** Anzeigereihenfolge der Optionen (deterministisch gemischt). */
-export const schriftReihenfolge = (a: Pick<SchriftArAufgabe, 'ziel' | 'ablenker' | 'schluessel'>): number[] =>
-  gemischteIndizes(schriftOptionen(a).length, a.schluessel);
-
-export function bewerteSchriftAr(a: SchriftArAufgabe, antwort: SchriftArAntwort): Auswertung {
-  if (a.art === 'nachspuren') {
-    const urteil = 'spur' in antwort ? 'richtig' : 'falsch';
-    return { urteil, hinweise: [], loesung: null, karten: kartenMit(a.karten, urteil) };
-  }
-  const urteil = 'wahl' in antwort && antwort.wahl === 0 ? 'richtig' : 'falsch';
-  return { urteil, hinweise: [], loesung: null, karten: kartenMit(a.karten, urteil) };
-}

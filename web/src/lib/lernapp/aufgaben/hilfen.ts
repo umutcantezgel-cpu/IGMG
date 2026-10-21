@@ -90,5 +90,9 @@ export const istHoerTyp = (typ: string): typ is HoerTyp => (HOER_TYPEN as readon
 /** Aufgabe mit (möglichem) Text zum Hören. */
 export type MitHoeren = { hoeren?: { text: string; audio?: unknown } };
 
+/** Antworten der Aussagen-Fragen von `lesen_fragen` (Reihenfolge = Index der Antwort); hier, weil Schema und Bewertung sie brauchen. */
+export const RFN = ['richtig', 'falsch', 'nicht_im_text'] as const;
+export type Rfn = (typeof RFN)[number];
+
 /** Hat der zu hörende Text einen Clip? */
 export const hatAudio = (a: MitHoeren): boolean => a.hoeren?.audio !== undefined;

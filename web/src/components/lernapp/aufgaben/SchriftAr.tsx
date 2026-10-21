@@ -3,13 +3,13 @@
 import { lazy, type ReactNode, Suspense, useMemo } from 'react';
 import { buchstabeFuer, formen, zeichen } from '@/lib/elifbe/alphabet';
 import { silbeFuer } from '@/lib/elifbe/silben';
-import { schriftOptionen, schriftReihenfolge } from '@/lib/lernapp/aufgaben/schrift_ar';
+import { schriftOptionen, schriftReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/schrift_ar';
 import { formatiere } from '@/lib/lernapp/format';
 import type { AufgabenProps } from '../typen';
 import { Wahlgruppe } from './Wahlgruppe';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteSchriftAr as bewerte } from '@/lib/lernapp/aufgaben/schrift_ar';
+export { bewerteSchriftAr as bewerte } from '@/lib/lernapp/aufgaben/auswertung/schrift_ar';
 
 /** Nachspuren mit Schreibweg und Glyphen als eigener Chunk (Glyphen und Züge ≈ 14 KB gz, nur bei `nachspuren`). */
 const Nachspuren = lazy(() => import('./Nachspuren'));

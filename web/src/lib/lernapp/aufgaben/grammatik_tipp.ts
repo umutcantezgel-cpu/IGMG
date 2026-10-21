@@ -1,6 +1,5 @@
 import * as z from '../z';
 import { basis, InhaltSchema, liste, SpracheSchema, text } from './grundlagen';
-import type { Auswertung } from './schema';
 
 /**
  * Übungstyp `grammatik_tipp` (PLAN §4 „Tipps“, L3-E03): eine Karte mit Überschriften, Absätzen in der Sprache der
@@ -29,8 +28,3 @@ export const GrammatikTippSchema = z.strictObject({
 export type GrammatikTippAufgabe = z.infer<typeof GrammatikTippSchema>;
 /** „Gelesen“ (wird nicht bewertet; der Spieler überspringt ohne Wertung). */
 export type GrammatikTippAntwort = { typ: 'grammatik_tipp' };
-
-/** Ein Tipp hat kein Richtig oder Falsch: angenommen, ohne Karten. */
-export function bewerteGrammatikTipp(): Auswertung {
-  return { urteil: 'richtig', hinweise: [], loesung: null, karten: [] };
-}

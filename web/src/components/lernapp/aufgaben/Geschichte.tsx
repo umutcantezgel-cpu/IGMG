@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ablauf, frageReihenfolge } from '@/lib/lernapp/aufgaben/geschichte';
+import { ablauf, frageReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText, isoliert } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
@@ -9,7 +9,7 @@ import { Anhoeren } from '../Anhoeren';
 import { Wahlgruppe } from './Wahlgruppe';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteGeschichte as bewerte } from '@/lib/lernapp/aufgaben/geschichte';
+export { bewerteGeschichte as bewerte } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
 
 const KNOPF = 'min-h-12 druck self-start rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
-import { antwortSprecher, dialogReihenfolge } from '@/lib/lernapp/aufgaben/dialog';
+import { antwortSprecher, dialogReihenfolge } from '@/lib/lernapp/aufgaben/auswertung/dialog';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
@@ -9,7 +9,7 @@ import { Anhoeren } from '../Anhoeren';
 import { Wahlgruppe } from './Wahlgruppe';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteDialog as bewerte } from '@/lib/lernapp/aufgaben/dialog';
+export { bewerteDialog as bewerte } from '@/lib/lernapp/aufgaben/auswertung/dialog';
 
 /**
  * Übungstyp `dialog` (PLAN §4): Gesprächsverlauf als geordnete Liste (Person A am Anfang der Zeile, Person B am Ende –

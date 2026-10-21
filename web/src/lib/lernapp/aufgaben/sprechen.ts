@@ -1,8 +1,6 @@
 import type { Note } from '../bewertung';
 import * as z from '../z';
 import { basis, InhaltSchema } from './grundlagen';
-import { kartenMit } from './hilfen';
-import type { Auswertung } from './schema';
 
 /**
  * Übungstyp `sprechen` (PLAN §4.2, ADR 0042 mit Fortschreibung S2/S5): den Zielsatz vorlesen. Die Aufnahme bleibt im
@@ -25,8 +23,3 @@ export const SprechenSchema = z.strictObject({
 export type SprechenAufgabe = z.infer<typeof SprechenSchema>;
 /** Selbstbewertung; `automatisch` nur zur Anzeige im Ereignis-freien Zustand der Komponente (keine Abschrift). */
 export type SprechenAntwort = { typ: 'sprechen'; selbst: Note };
-
-export function bewerteSprechen(a: SprechenAufgabe, antwort: SprechenAntwort): Auswertung {
-  const urteil = antwort.selbst === 'nochmal' ? 'falsch' : 'richtig';
-  return { urteil, hinweise: [], loesung: null, karten: kartenMit(a.karten, urteil), selbst: antwort.selbst };
-}

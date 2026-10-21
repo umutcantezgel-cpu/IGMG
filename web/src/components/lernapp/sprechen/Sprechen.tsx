@@ -16,7 +16,7 @@ import { erhebeUmgebung, Erkennung, erkennbar, liesStand, merkeStand } from './e
 import { Pegel } from './Pegel';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteSprechen as bewerte } from '@/lib/lernapp/aufgaben/sprechen';
+export { bewerteSprechen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/sprechen';
 
 /** Zustand der Spracherkennung auf diesem Gerät für diese Übung. */
 type Modus =

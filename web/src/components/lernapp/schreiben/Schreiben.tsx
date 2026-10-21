@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
-import { KRITERIEN, type Pruefliste, type Pruefung, pruefeText, wortzahl } from '@/lib/lernapp/aufgaben/schreiben';
+import { KRITERIEN, type Pruefliste, type Pruefung, pruefeText, wortzahl } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
 import type { Note } from '@/lib/lernapp/bewertung';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText } from '../InhaltText';
@@ -9,7 +9,7 @@ import { richtung } from '../typen';
 import type { AufgabenProps } from '../typen';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteSchreiben as bewerte } from '@/lib/lernapp/aufgaben/schreiben';
+export { bewerteSchreiben as bewerte } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
 
 const KNOPF = 'min-h-12 druck rounded-pill border-2 border-gruen-700 bg-weiss px-6 font-bold text-gruen-800 hover:bg-gruen-50';
 const HAUPT = 'min-h-12 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800';

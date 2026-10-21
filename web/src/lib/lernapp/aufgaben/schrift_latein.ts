@@ -1,6 +1,5 @@
 import type * as z from '../z';
-import type { Auswertung } from './schema';
-import { bewerteSchriftWahl, schriftWahlSchema } from './schrift_wahl';
+import { schriftWahlSchema } from './schrift_wahl';
 
 /**
  * Übungstyp `schrift_latein` (PLAN §4 „Lateinalphabet, Groß/Klein, Umlaute“, §4.4): Vorkurs für ar → de/tr. Aufbau und
@@ -9,6 +8,3 @@ import { bewerteSchriftWahl, schriftWahlSchema } from './schrift_wahl';
 export const SchriftLateinSchema = schriftWahlSchema('schrift_latein');
 export type SchriftLateinAufgabe = z.infer<typeof SchriftLateinSchema>;
 export type SchriftLateinAntwort = { typ: 'schrift_latein'; wahl: number };
-
-export const bewerteSchriftLatein = (a: SchriftLateinAufgabe, antwort: SchriftLateinAntwort): Auswertung =>
-  bewerteSchriftWahl(a, antwort.wahl);

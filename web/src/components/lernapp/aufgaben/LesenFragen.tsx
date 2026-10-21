@@ -2,7 +2,14 @@
 
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { Inhalt } from '@/lib/lernapp/aufgaben/schema';
-import { glosseFuer, glossenVerzeichnis, leseReihenfolge, RFN, richtigerIndex, stuecke } from '@/lib/lernapp/aufgaben/lesen_fragen';
+import {
+  glosseFuer,
+  glossenVerzeichnis,
+  leseReihenfolge,
+  RFN,
+  richtigerIndex,
+  stuecke,
+} from '@/lib/lernapp/aufgaben/auswertung/lesen_fragen';
 import { formatiere } from '@/lib/lernapp/format';
 import { InhaltText, isoliert } from '../InhaltText';
 import { richtung } from '../typen';
@@ -10,7 +17,7 @@ import type { AufgabenProps } from '../typen';
 import { Wahlgruppe } from './Wahlgruppe';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteLesenFragen as bewerte } from '@/lib/lernapp/aufgaben/lesen_fragen';
+export { bewerteLesenFragen as bewerte } from '@/lib/lernapp/aufgaben/auswertung/lesen_fragen';
 
 type Offen = { absatz: number; wort: string; glosse: Inhalt };
 

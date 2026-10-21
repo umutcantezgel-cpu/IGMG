@@ -1,8 +1,5 @@
-import { gemischteIndizes } from '../engine/zufall';
 import * as z from '../z';
 import { ab, basis, InhaltSchema, MitAudio, mitOptionen, Optionen } from './grundlagen';
-import { kartenMit } from './hilfen';
-import type { Auswertung } from './schema';
 
 /**
  * Gemeinsamer Aufbau der Schrift-Vorkurse mit Lateinschrift (PLAN §4.4): `schrift_tr` (ç ğ ı İ ö ş ü, Vorkurs für de/ar → tr)
@@ -13,6 +10,8 @@ import type { Auswertung } from './schema';
  * - `waehleBuchstabe`: Laut hören bzw. Wort mit Lücke sehen, Buchstaben wählen.
  * - `waehleWort`: Buchstaben bzw. Laut vorgegeben, das Wort wählen, in dem er vorkommt.
  * - `grossKlein`: Buchstaben sehen, die andere Schreibung (groß ↔ klein) wählen.
+ *
+ * Hier nur die Nutzlast (Zod); Reihenfolge und Bewertung ohne Zod in `auswertung/schrift_wahl.ts`.
  */
 
 export const SCHRIFT_ANWEISUNGEN = ['waehleBuchstabe', 'waehleWort', 'grossKlein'] as const;
@@ -48,19 +47,3 @@ export type SchriftWahlAufgabe = {
   optionen: z.infer<typeof InhaltSchema>[];
   richtig: number;
 };
-
-/** Ohne Ton (Hörübungen aus oder kein Audio) bleibt nur die sichtbare Vorgabe; ohne sie gibt es nichts zu lösen. */
-export const ohneTonLoesbar = (a: Pick<SchriftWahlAufgabe, 'vorgabe'>): boolean => Boolean(a.vorgabe);
-
-/** Anzeigereihenfolge der Optionen (deterministisch gemischt). */
-export const schriftWahlReihenfolge = (a: Pick<SchriftWahlAufgabe, 'optionen' | 'schluessel'>): number[] =>
-  gemischteIndizes(a.optionen.length, a.schluessel);
-
-export function bewerteSchriftWahl(a: SchriftWahlAufgabe, wahl: number): Auswertung {
-  const urteil = wahl === a.richtig ? 'richtig' : 'falsch';
-  return { urteil, hinweise: [], loesung: a.optionen[a.richtig]?.text ?? null, karten: kartenMit(a.karten, urteil) };
-}
-
-/** Bewertung beider Lateinschrift-Vorkurse aus der Antwort (ein Chunk für `schrift_tr` und `schrift_latein`, `lader.ts`). */
-export const bewerteSchriftWahlAntwort = (a: SchriftWahlAufgabe, antwort: { wahl: number }): Auswertung =>
-  bewerteSchriftWahl(a, antwort.wahl);

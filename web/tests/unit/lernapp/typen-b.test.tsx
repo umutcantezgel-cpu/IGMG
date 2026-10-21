@@ -14,12 +14,13 @@ import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/comp
 import { BUCHSTABEN as ELIFBE, buchstabeFuer } from '@/lib/elifbe/alphabet';
 import { erlaubt } from '@/lib/elifbe/silben';
 import { bewerte } from '@/lib/lernapp/aufgaben/bewerte';
-import { ablauf, bewerteGeschichte } from '@/lib/lernapp/aufgaben/geschichte';
-import { glosseFuer, glossenVerzeichnis, richtigJeFrage, stuecke } from '@/lib/lernapp/aufgaben/lesen_fragen';
+import { ablauf, bewerteGeschichte } from '@/lib/lernapp/aufgaben/auswertung/geschichte';
+import { glosseFuer, glossenVerzeichnis, richtigJeFrage, stuecke } from '@/lib/lernapp/aufgaben/auswertung/lesen_fragen';
 import { type Aufgabe, AufgabeSchema, type ImplementierterTyp, LektionSchema } from '@/lib/lernapp/aufgaben/schema';
-import { pruefeText, wortzahl } from '@/lib/lernapp/aufgaben/schreiben';
-import { BUCHSTABEN, formMoeglich, SILBEN_ARTEN, schriftOptionen, silbeMoeglich } from '@/lib/lernapp/aufgaben/schrift_ar';
-import { ohneTonLoesbar } from '@/lib/lernapp/aufgaben/schrift_wahl';
+import { pruefeText, wortzahl } from '@/lib/lernapp/aufgaben/auswertung/schreiben';
+import { schriftOptionen } from '@/lib/lernapp/aufgaben/auswertung/schrift_ar';
+import { BUCHSTABEN, formMoeglich, SILBEN_ARTEN, silbeMoeglich } from '@/lib/lernapp/aufgaben/schrift_ar';
+import { ohneTonLoesbar } from '@/lib/lernapp/aufgaben/auswertung/schrift_wahl';
 import { pruefe, starte, ueberspringe, weiter, zusammenfassung } from '@/lib/lernapp/engine/sitzung';
 import { EreignisEntwurfSchema } from '@/lib/lernapp/ereignisse/typen';
 import { tippAbschnitte } from '@/lib/lernapp/paket/bauen';

@@ -6,7 +6,7 @@ import { InhaltText } from '../InhaltText';
 import type { AufgabenProps } from '../typen';
 
 /** Bewertung dieses Typs (lädt mit der Komponente, `lader.ts`). */
-export { bewerteGrammatikTipp as bewerte } from '@/lib/lernapp/aufgaben/grammatik_tipp';
+export { bewerteGrammatikTipp as bewerte } from '@/lib/lernapp/aufgaben/auswertung/grammatik_tipp';
 
 /**
  * Übungstyp `grammatik_tipp` (PLAN §4 „Tipps“): Karte mit Überschriften (Gliederung für Screenreader), Absätzen in der Sprache

@@ -1,30 +1,29 @@
 import { bewerteAuswahl } from './auswahl';
 import { bewerteBildWort } from './auswertung/bild_wort';
+import { bewerteDialog } from './auswertung/dialog';
 import { bewerteFallfrage } from './auswertung/fallfrage';
 import { bewerteFormen } from './auswertung/formen';
 import { bewerteFrei } from './auswertung/frei';
+import { bewerteGeschichte } from './auswertung/geschichte';
+import { bewerteGrammatikTipp } from './auswertung/grammatik_tipp';
 import { bewerteHarakat } from './auswertung/harakat';
 import { bewerteHoerenSchreiben } from './auswertung/hoeren_schreiben';
 import { bewerteHoerenWaehlen } from './auswertung/hoeren_waehlen';
 import { bewerteKoranWort } from './auswertung/koran_wort';
+import { bewerteLesenFragen } from './auswertung/lesen_fragen';
 import { bewerteLuecke } from './auswertung/luecke';
 import { bewerteMinimalpaare } from './auswertung/minimalpaare';
 import { bewerteReihenfolge } from './auswertung/reihenfolge';
 import { bewerteSatzbau } from './auswertung/satzbau';
+import { bewerteSchreiben } from './auswertung/schreiben';
+import { bewerteSchriftAr } from './auswertung/schrift_ar';
+import { bewerteSchriftLatein, bewerteSchriftTr } from './auswertung/schrift_wahl';
+import { bewerteSprechen } from './auswertung/sprechen';
 import { bewerteWahrFalsch } from './auswertung/wahr_falsch';
 import { bewerteZuordnen } from './auswertung/zuordnen';
-import { bewerteDialog } from './dialog';
-import { bewerteGeschichte } from './geschichte';
-import { bewerteGrammatikTipp } from './grammatik_tipp';
 import type { Auswertung, BewertungsKontext } from './hilfen';
-import { bewerteLesenFragen } from './lesen_fragen';
 import { bewertePaare } from './paare';
 import { type Antwort, type AntwortVon, type Aufgabe, istImplementiert } from './schema';
-import { bewerteSchreiben } from './schreiben';
-import { bewerteSchriftAr } from './schrift_ar';
-import { bewerteSchriftLatein } from './schrift_latein';
-import { bewerteSchriftTr } from './schrift_tr';
-import { bewerteSprechen } from './sprechen';
 import { bewerteWortbank } from './wortbank';
 
 /**
@@ -35,7 +34,7 @@ import { bewerteWortbank } from './wortbank';
  * - L2-01: `bild_wort`, `frei`, `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen`,
  *   `harakat` (Bewertung in `auswertung/<typ>.ts`)
  * - L2-02: `dialog`, `geschichte`, `lesen_fragen`, `grammatik_tipp`, `schrift_ar`, `schrift_tr`, `schrift_latein`,
- *   `sprechen`, `schreiben` (Bewertung in `<typ>.ts`)
+ *   `sprechen`, `schreiben` (Bewertung in `auswertung/<typ>.ts`, beide Lateinschrift-Vorkurse in `auswertung/schrift_wahl.ts`)
  * - L2-03: `wahr_falsch`, `zuordnen`, `reihenfolge`, `fallfrage`, `koran_wort` (Bewertung in `auswertung/<typ>.ts`)
  *
  * Alle Typen in einem Modul – für Tests und Server. Der Spieler lädt es nicht: Er nimmt die Bewertung aus dem Chunk des
