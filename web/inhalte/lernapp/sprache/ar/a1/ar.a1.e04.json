@@ -16,7 +16,7 @@
       {
         "de": "Ich kann meine Familie vorstellen und sagen, wer zu wem gehört.",
         "tr": "Ailemi tanıtabilir ve kimin kimin nesi olduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أقدّم عائلتي وأن أقول من قريب من."
+        "ar": "أستطيع أن أقدّم عائلتي وأن أقول صلة القرابة بين أفرادها."
       },
       {
         "de": "Ich kann bis zehn zählen und mein Alter nennen.",
@@ -26,7 +26,7 @@
       {
         "de": "Ich kann sagen, was ich habe und was jemand von Beruf ist.",
         "tr": "Nelere sahip olduğumu ve birinin mesleğinin ne olduğunu söyleyebilirim.",
-        "ar": "أستطيع أن أقول ما عندي وما عمل شخص ما."
+        "ar": "أستطيع أن أقول ما عندي، وأن أذكر مهنة شخص ما."
       }
     ],
     "symbol": "users",
@@ -1980,7 +1980,7 @@
     },
     {
       "schluessel": "ar.a1.e04.s0179",
-      "text": "الصُّورَةُ مَعِي فِي هَاتِفِي!",
+      "text": "الصُّورَةُ مَعِي، فِي هَاتِفِي!",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2204,7 +2204,7 @@
       "ziel": {
         "de": "Ich kann Großeltern, Onkel und Tanten benennen und sagen, zu wem jemand gehört (-hu, -hā, -nā).",
         "tr": "Büyükanne ve dedeyi, amca, dayı, hala ve teyzeyi söyleyebilir, birinin kime ait olduğunu belirtebilirim (-hu, -hā, -nā).",
-        "ar": "أستطيع أن أسمّي الجدّ والجدّة والعمّ والخال والعمّة والخالة، وأن أقول لمن الشخص."
+        "ar": "أستطيع أن أسمّي الجدّ والجدّة والعمّ والخال والعمّة والخالة، وأن أقول: أبوه، أمّها، عائلتنا."
       },
       "aufgaben": [
         {
@@ -2288,7 +2288,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e04.s0049",
           "nach": "ziel",
-          "alternativen": ["ابْنُ عَمِّي خَالِدٌ."],
+          "alternativen": ["اِبْنُ عَمِّي خَالِدٌ."],
           "ablenker": ["بِنْتُ", "جَدَّتِي"]
         },
         {
@@ -2443,8 +2443,8 @@
       "art": "lektion",
       "ziel": {
         "de": "Ich kann mit ʿindī, lī und maʿī sagen, was und wen ich habe, und nach Geschwistern fragen.",
-        "tr": "ʿindī, lī ve maʿī ile neyim ve kimim olduğunu söyleyebilir, kardeşleri sorabilirim.",
-        "ar": "أستطيع أن أقول ما عندي ومن لي، وأن أسأل عن الإخوة."
+        "tr": "ʿindī, lī ve maʿī ile nelerim ve kimlerim olduğunu söyleyebilir, kardeşleri sorabilirim.",
+        "ar": "أستطيع أن أستعمل «عندي» و«لي» و«معي»، وأن أسأل عن الإخوة."
       },
       "aufgaben": [
         {
@@ -2798,12 +2798,12 @@
               "satz": "ar.a1.e04.s0166"
             },
             {
-              "sprecher": "a",
-              "satz": "ar.a1.e04.s0167"
-            },
-            {
               "sprecher": "b",
               "satz": "ar.a1.e04.s0168"
+            },
+            {
+              "sprecher": "a",
+              "satz": "ar.a1.e04.s0167"
             },
             {
               "sprecher": "b",
@@ -3164,7 +3164,7 @@
           "anweisung": "uebersetze",
           "satz": "ar.a1.e04.s0095",
           "nach": "ziel",
-          "alternativen": ["فِي عَمَّانَ لَنَا جَدَّةٌ."],
+          "alternativen": ["فِي عَمَّانَ لَنَا جَدَّةٌ.", "لَنَا فِي عَمَّانَ جَدَّةٌ."],
           "ablenker": ["جَدٌّ", "لِي"]
         },
         {
