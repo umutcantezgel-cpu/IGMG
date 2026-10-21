@@ -291,7 +291,8 @@ export default async function LernAppGruppe({ params, searchParams }: PageProps<
         text={tl('stand.text', { von: datumText(stand.woche.von, sprache), bis: datumText(stand.woche.bis, sprache) })}
       >
         {stand.zeilen.length ? (
-          <div className="overflow-x-auto">
+          // Schmal scrollt die Tabelle waagrecht: mit Tastatur erreichbar (axe scrollable-region-focusable)
+          <div role="region" aria-label={tl('stand.tabelle')} tabIndex={0} className="overflow-x-auto">
             <table className="w-full border-collapse text-start text-16">
               <caption className="sr-only">{tl('stand.tabelle')}</caption>
               <thead>
