@@ -55,12 +55,12 @@ describe('Schalter der Lern-App (KERN 4.0 §6)', () => {
     }
   });
 
-  it('Produktion: Lern-App aus bis zur Abnahme; Hinweis-Modus und Meldungen an, wirken aber erst mit lernapp', () => {
-    expect(entscheide('lernapp', prod, null)).toBe(false);
+  it('Produktion: Lern-App an (Nutzer 21.10.2026); Hinweis-Modus und Meldungen an, wirken aber nur mit lernapp', () => {
+    expect(entscheide('lernapp', prod, null)).toBe(true);
     expect(entscheide('lernapp_ungeprueft', prod, null)).toBe(true);
     expect(entscheide('lernapp_meldungen', prod, null)).toBe(true);
-    expect(entscheideWirksam('lernapp_ungeprueft', prod, null)).toBe(false);
-    expect(entscheideWirksam('lernapp_ungeprueft', { ...prod, FUNKTION_LERNAPP: 'an' }, null)).toBe(true);
+    expect(entscheideWirksam('lernapp_ungeprueft', prod, null)).toBe(true);
+    expect(entscheideWirksam('lernapp_ungeprueft', { ...prod, FUNKTION_LERNAPP: 'aus' }, null)).toBe(false);
     expect(entscheideWirksam('lernapp_meldungen', prod, { lernapp: true })).toBe(true);
     for (const f of [
       'lernapp_sprechen',
