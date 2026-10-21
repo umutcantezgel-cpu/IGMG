@@ -43,6 +43,27 @@
     | B-34 | Abzeichen erhalten: Deckkraft und Skalierung 0,96 → 1                                                | nur Deckkraft                              |
     | B-35 | Aufnahme läuft: Pegelbalken                                                                          | statischer Punkt und Text „Aufnahme läuft“ |
 
+## Fortschreibung durch L7-02 (21.10.2026)
+
+Gilt vor Nr. 7 und 8, wo es genauer ist. Umsetzung: `web/src/lib/lernapp/gruppe/{regeln,dienst,protokoll}.ts`, Route
+`/api/lernapp/gruppe`, Seite `/lern-app/[ui]/gruppe`, Lehrkraft-Seite `/mein-bereich/unterricht/[gruppe]/lern-app`,
+Migration `0021_lernapp_gruppen.sql` (`lernapp_gruppe`, `lernapp_familie`, `lernapp_rangliste_zustimmung`).
+
+12. **Gruppenziel (Nr. 7):** Wochenziele 50, 100, 200, 300, 500 oder 1.000 XP (Woche Montag bis Sonntag, Berliner
+    Lerntage). Die Summe zählt nur Lernende, deren Einwilligung `lernapp` gilt, und erscheint erst ab **drei** solchen
+    Lernenden; darunter steht nur das Ziel, damit die Summe nicht auf Einzelne schließen lässt.
+13. **Bestenliste (Nr. 8):** „ab 16“ heißt im Code: kein Kinderkonto (`istKind`) und – mit Lerndatensatz – `sechzehnAm`
+    erreicht; ohne bekanntes Datum gilt „unter 16“. Es erscheint nur, wer selbst zugestimmt hat **und** deren
+    Einwilligung `lernapp` gilt. Die Zustimmung speichert die Version des angezeigten Wortlauts; „ausblenden“ löscht sie
+    ohne Verlauf. Die Liste ist ungeordnet dargestellt (keine Platznummern), gleiche XP ordnen nach dem Namen. Die Antwort
+    der Route nennt keine Kennungen anderer Konten. Kinder bekommen weder Liste noch Zustimmung angeboten, auch wenn eine
+    Zustimmung in der Datenbank stünde (Integrationstest).
+14. **Familie (Nr. 8):** Eltern schalten die Bestenliste in „Mein Bereich › Meine Kinder“ ein; zur Familie gehören das
+    Elternkonto und Konten der bestätigten, sorgeberechtigten Kinder – sichtbar nur für Mitglieder ab 16. Eltern sehen die
+    Lernwoche ihres Kindes (XP, Lektionen, Lerntage je Tag, ohne Einzelergebnisse) nur bis zum Ende des Übergangs nach
+    dem 16. Geburtstag; danach entscheidet die oder der Jugendliche selbst (eigene Freigabe folgt bei Bedarf).
+15. **Erinnerung (Nr. 4)** ist in L7-02 nicht gebaut; der Schalter `push_lernapp` bleibt ohne Wirkung.
+
 ## Alternativen
 
 - Spielmechanik wie Duolingo mit Herzen, Ligen und Serien-Alarm: verworfen (Nutzerentscheidung „sanft, ohne Druck“).
