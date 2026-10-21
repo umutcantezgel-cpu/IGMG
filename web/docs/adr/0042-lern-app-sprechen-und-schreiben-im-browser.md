@@ -75,6 +75,13 @@ Gilt vor Nr. 1–12 und den Abschnitten oben, wo es abweicht.
 12. **Fortschreibung Nr. 4 und 6, Vorrat:** Ausgeliefert ist die offline belegte Variante aus Nr. 6: `env.useBrowserCache = true` mit `env.cacheKey = 'igmg-lernapp-modelle'` und `wasmBinary` aus diesem Vorrat. `useBrowserCache = false` aus Nr. 4 gilt erst, wenn L5 es per E2E ohne Netz belegt.
 13. **Nr. 4, Laden nur auf Wunsch, auch beim zweiten Mal:** Die Übung startet den Worker ohne Knopf nur, wenn der lokal gemerkte Stand „geladen“ ist **und** Encoder, Decoder und ORT-`.wasm` im Vorrat liegen. Hat der Browser den Vorrat geräumt (Speicherdruck; `localStorage` bleibt erhalten), erscheint wieder das Angebot mit Größe; es gibt kein stilles Nachladen. Der Pegel der Aufnahme (B-35) setzt den Balken direkt am Element, ohne die Übung je Animationsbild neu zu rendern; „Ich kann gerade nicht sprechen“ überspringt auch die übrigen Sprechübungen der Lektion (wie beim Hören).
 
+## Fortschreibung nach der Gegenprüfung L3-06 (21.10.2026)
+
+14. **Nr. 9, CSP der Verwaltung:** `media-src 'self' blob:` gilt zusätzlich unter `/verwaltung/lernapp` (auch mit
+    Sprachpräfix): Das Audio-Studio spielt Probeaufnahmen aus dem Browser, die Prüfoberfläche und die Vorschau im echten
+    Spieler spielen Lern-Audio-Scheiben. Die übrige Verwaltung behält ihre strikte CSP; `'wasm-unsafe-eval'`, `worker-src blob:`
+    sowie COOP/COEP bleiben auf `/lern-app` beschränkt. Abgesichert durch einen Unit-Test der Kopfzeilen (L3-06, b975936).
+
 ## Alternativen
 
 - Web Speech API des Browsers: verworfen. Je nach Browser geht das Audio an Server des Herstellers; das widerspricht „nichts verlässt das Gerät“ und funktioniert nicht offline.

@@ -171,7 +171,7 @@ Steht in jedem Briefing. ADR 0030 gilt im Übrigen unverändert.
   Ereignisse werden in den Kartenstand verdichtet.
 - **Statistik:** nur Summen mit n ≥ 10; anonyme Telemetrie nur mit Opt-in und Schalter.
 - **DSFA-Nachtrag** für die Lern-App, einschließlich der Ausnahme zu R-08 (Ranglisten): LM-08.
-- **CSP:** `'wasm-unsafe-eval'`, `worker-src 'self'` (ohne `blob:`, ADR 0042 Fortschreibung S2), `media-src 'self' blob:` sowie COOP `same-origin` und COEP `require-corp` nur unter `/lern-app`. Mikrofon nur auf
+- **CSP:** `'wasm-unsafe-eval'`, `worker-src 'self'` (ohne `blob:`, ADR 0042 Fortschreibung S2), `media-src 'self' blob:` sowie COOP `same-origin` und COEP `require-corp` nur unter `/lern-app`; `media-src 'self' blob:` zusätzlich unter `/verwaltung/lernapp` (Audio-Studio, Prüfoberfläche, Vorschau; ADR 0042 Nr. 14). Mikrofon nur auf
   `…/ueben`, `…/wiederholen` und im Audio-Studio der Verwaltung.
 
 **Schalter** (ADR 0035; ausgeschaltet heißt 404 und die Links verschwinden):
