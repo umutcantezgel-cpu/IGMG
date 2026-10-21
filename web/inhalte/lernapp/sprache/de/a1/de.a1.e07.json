@@ -1548,7 +1548,7 @@
     },
     {
       "schluessel": "de.a1.e07.s0099",
-      "text": "Nehmt bitte eure Hefte.",
+      "text": "Nehmt bitte eure Hefte heraus.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1627,7 +1627,7 @@
     },
     {
       "schluessel": "de.a1.e07.s0112",
-      "text": "Kannst du ein Beispiel sagen?",
+      "text": "Kannst du ein Beispiel geben?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1863,7 +1863,7 @@
     },
     {
       "schluessel": "de.a1.e07.s0150",
-      "text": "Viele Wörter sind schon bekannt.",
+      "text": "Viele Wörter sind mir schon bekannt.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2043,7 +2043,7 @@
     },
     {
       "schluessel": "de.a1.e07.s0180",
-      "text": "Montag, acht Uhr: Die Klasse hat Deutsch.",
+      "text": "Acht Uhr: Die Lehrerin kommt in die Klasse.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2208,6 +2208,12 @@
       "text": "Wir schreiben einen Text.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e07.s0208",
+      "text": "Ich habe auch keinen Stift.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     }
   ],
   "lektionen": [
@@ -2316,7 +2322,7 @@
           "schluessel": "de.a1.e07.l01.a14",
           "typ": "minimalpaare",
           "ziel": "de.a1.e07.lesen",
-          "ablenker": ["de.a1.e05.lassen"]
+          "ablenker": ["de.a1.e03.legen"]
         },
         {
           "schluessel": "de.a1.e07.l01.a15",
@@ -2393,7 +2399,13 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e07.s0049",
           "nach": "ziel",
-          "alternativen": ["Wir haben heute Mathe und Kunst.", "Heute haben wir Kunst und Mathe.", "Wir haben heute Kunst und Mathe."],
+          "alternativen": [
+            "Wir haben heute Mathe und Kunst.",
+            "Heute haben wir Kunst und Mathe.",
+            "Wir haben heute Kunst und Mathe.",
+            "Mathe und Kunst haben wir heute.",
+            "Kunst und Mathe haben wir heute."
+          ],
           "ablenker": ["habt", "Sport"]
         },
         {
@@ -2510,7 +2522,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e07.s0059",
           "nach": "ziel",
-          "alternativen": ["Wir haben in der ersten Stunde Englisch.", "Englisch haben wir in der ersten Stunde."],
+          "alternativen": [
+            "Wir haben in der ersten Stunde Englisch.",
+            "Englisch haben wir in der ersten Stunde.",
+            "Wir haben Englisch in der ersten Stunde."
+          ],
           "ablenker": ["dritten", "habt"]
         },
         {
@@ -2711,7 +2727,8 @@
         {
           "schluessel": "de.a1.e07.l04.a15",
           "typ": "hoeren_schreiben",
-          "ziel": "de.a1.e07.s0110"
+          "ziel": "de.a1.e07.s0110",
+          "alternativen": ["Erklären Sie das bitte nochmal!"]
         },
         {
           "schluessel": "de.a1.e07.l04.a16",
@@ -2905,14 +2922,14 @@
               "satz": "de.a1.e07.s0162"
             },
             {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0165"
+            },
+            {
               "satz": "de.a1.e07.s0163"
             },
             {
               "satz": "de.a1.e07.s0164"
-            },
-            {
-              "sprecher": "a",
-              "satz": "de.a1.e07.s0165"
             }
           ],
           "fragen": [
@@ -2935,7 +2952,7 @@
               "ablenker": ["de.a1.e07.s0168", "de.a1.e07.s0169"]
             },
             {
-              "nach": 11,
+              "nach": 12,
               "frage": "de.a1.e07.s0175",
               "antwort": "de.a1.e07.s0176",
               "ablenker": ["de.a1.e07.s0177", "de.a1.e07.s0178"]
@@ -2990,6 +3007,10 @@
             },
             {
               "sprecher": "b",
+              "satz": "de.a1.e07.s0208"
+            },
+            {
+              "sprecher": "b",
               "satz": "de.a1.e07.s0184"
             },
             {
@@ -3029,19 +3050,19 @@
           ],
           "fragen": [
             {
-              "nach": 3,
+              "nach": 6,
               "frage": "de.a1.e07.s0194",
               "antwort": "de.a1.e07.heft",
               "ablenker": ["de.a1.e07.buch", "de.a1.e02.foto"]
             },
             {
-              "nach": 9,
+              "nach": 10,
               "frage": "de.a1.e07.s0195",
               "antwort": "de.a1.e07.text",
               "ablenker": ["de.a1.e07.plan", "de.a1.e03.bild"]
             },
             {
-              "nach": 11,
+              "nach": 12,
               "frage": "de.a1.e07.s0196",
               "antwort": "de.a1.e07.s0197",
               "ablenker": ["de.a1.e07.s0198", "de.a1.e07.s0199"]
@@ -3052,6 +3073,14 @@
           "schluessel": "de.a1.e07.l06.a06",
           "typ": "dialog",
           "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0183"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e07.s0208"
+            },
             {
               "sprecher": "a",
               "satz": "de.a1.e07.s0184"
@@ -3148,7 +3177,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e07.s0042",
           "nach": "ziel",
-          "alternativen": ["Emre kann Englisch sehr gut."],
+          "alternativen": ["Emre kann Englisch sehr gut.", "Englisch kann Emre sehr gut."],
           "ablenker": ["kannst", "Mathe"]
         },
         {
@@ -3161,8 +3190,8 @@
         {
           "schluessel": "de.a1.e07.l07.a08",
           "typ": "minimalpaare",
-          "ziel": "de.a1.e07.englisch",
-          "ablenker": ["de.a1.e05.endlich"]
+          "ziel": "de.a1.e07.klasse",
+          "ablenker": ["de.a1.e06.kasse"]
         },
         {
           "schluessel": "de.a1.e07.l07.a09",
