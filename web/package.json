@@ -26,6 +26,7 @@
     "lernapp:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/import.ts",
     "lernapp:export-korrekturen": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/export-korrekturen.ts",
     "lernapp:pruefen": "tsx --conditions=react-server scripts/lernapp/pruefen.ts",
+    "lernapp:koran-pfad": "tsx --conditions=react-server scripts/lernapp/koran-pfad.ts",
     "lernapp:schemas": "tsx --conditions=react-server scripts/lernapp/schemas.ts",
     "lernapp:modelle": "node scripts/lernapp-modelle.mjs",
     "lernapp:audio-liste": "tsx --conditions=react-server scripts/lernapp/audio-liste.ts",
