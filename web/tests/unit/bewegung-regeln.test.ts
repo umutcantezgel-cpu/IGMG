@@ -141,6 +141,7 @@ describe('Lern-App: Bewegungsregister B-28 … B-35', () => {
  */
 const SPIELELEMENTE = [
   'Abschluss.tsx',
+  'AbschlussInhalt.tsx',
   'Serie.tsx',
   'Abzeichen.tsx',
   join('inseln', 'FortschrittInsel.tsx'),

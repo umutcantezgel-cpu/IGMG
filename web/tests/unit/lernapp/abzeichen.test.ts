@@ -191,7 +191,26 @@ describe('Ableitung aus dem Protokoll', () => {
     expect(s.neu).toEqual([]);
     expect(s.tag).toMatchObject({ tag: heute, lektionen: 1, erreicht: true });
     expect(s.serie).toMatchObject({ heute, wiedereinstieg: true, pausetage: 2 });
-    expect(abschlussStand(a, heute, new Set()).neu).toEqual(['lektionen-1']);
+    // ohne früheren Stand (neue Ableitungsversion, Abgleich): nur Abzeichen von heute gelten als neu
+    expect(abschlussStand(a, heute, new Set()).neu).toEqual([]);
+    const b = leiteAb([lektion('tr-aus-de.a1.e01.l01', START), lektion('tr-aus-de.a1.e01.s01', heute, 'sprechen')], heute);
+    expect(abschlussStand(b, heute, new Set()).neu).toEqual(['erstes-sprechen']);
+  });
+
+  it('Zeitzonen: ein Abzeichen gilt am Lerntag in Ortszeit des Geräts, nicht am UTC-Tag von `am`', () => {
+    // 00:30 in Berlin (22:30 UTC am Vortag) bzw. 23:30 in Los Angeles (06:30 UTC am Folgetag)
+    const berlin = EreignisSchema.parse({
+      geraet: G1,
+      seq: zaehler++,
+      am: '2026-10-17T22:30:00.000Z',
+      tag: '2026-10-18',
+      art: 'lektion',
+      daten: { kurs: 'tr-aus-de', lektion: 'tr-aus-de.a1.e01.l01', art: 'lektion', richtig: 1, gesamt: 1 },
+    });
+    const la = EreignisSchema.parse({ ...berlin, geraet: G2, am: '2026-10-19T06:30:00.000Z', tag: '2026-10-18' });
+    expect(ab([berlin]).get('lektionen-1')?.tag).toBe('2026-10-18');
+    expect(ab([la]).get('lektionen-1')?.tag).toBe('2026-10-18');
+    expect(abschlussStand(leiteAb([berlin], '2026-10-18'), '2026-10-18', new Set()).neu).toEqual(['lektionen-1']);
   });
 });
 

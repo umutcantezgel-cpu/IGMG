@@ -3,7 +3,6 @@
 import { useSearchParams } from 'next/navigation';
 import { Component, lazy, type ReactNode, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
-import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
@@ -14,6 +13,7 @@ import { einstellungsSpeicher } from '@/lib/lernapp/oberflaeche/einstellungen';
 import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaeche/geraet';
 import { einheitDerLektion, naechsteEinheit, naechsteLektion } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Paket, Verzeichnis } from '@/lib/lernapp/paket/typen';
+import type { AbschlussAnzeige } from '../AbschlussInhalt';
 import type { MeldenTexte, SpielerOptionen, SpielerTexte } from '../typen';
 import { allesGeschrieben, type EreignisKette, melde, neueKette, useAusgangVorladen } from './ausgang';
 
@@ -28,6 +28,22 @@ const Spieler = lazy(() => ladeSpieler().then((m) => ({ default: m.Spieler })));
 const ladeLektionsteile = () => import('@/lib/lernapp/lokal/pakete');
 
 export type UebenTexte = { laedt: string; ohneLektion: string; nichtVerfuegbar: string };
+
+/**
+ * Nach einer Lektion bzw. Wiederholung: Ableitung neu (FSRS erst jetzt, eigener Chunk, KERN 4.0 §9) und – parallel
+ * geladen – die Anzeige von Tagesziel, Serie und neuen Abzeichen (eigener Chunk). Fehlt die Anzeige (ohne Netz und ohne
+ * Vorrat), bleibt der Abschluss des Spielers ohne sie; die Ableitung ist trotzdem gespeichert.
+ */
+export async function nachDerLektion(sp: Speicher, profil: string): Promise<AbschlussAnzeige | null> {
+  const anzeige = import('../AbschlussInhalt').then(
+    (m) => m.AbschlussInhalt,
+    () => null,
+  );
+  const { leiteAbNachLektion } = await import('@/lib/lernapp/lokal/ableitung');
+  const stand = await leiteAbNachLektion(sp, profil, heute());
+  const Anzeige = await anzeige;
+  return Anzeige ? { stand, Anzeige } : null;
+}
 
 /** Fängt einen fehlgeschlagenen Abruf des Spieler-Chunks (ohne Netz und ohne Vorrat). */
 export class SpielerGrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, { fehler: boolean }> {
@@ -84,7 +100,7 @@ export function UebenInsel({
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
   // Tagesziel, Serie und neue Abzeichen für den Abschlussbildschirm (aus der Ableitung nach der Lektion)
-  const [abschluss, setAbschluss] = useState<AbschlussStand | null>(null);
+  const [abschluss, setAbschluss] = useState<AbschlussAnzeige | null>(null);
 
   useEffect(() => {
     let aktiv = true;
@@ -146,9 +162,7 @@ export function UebenInsel({
   const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
     await allesGeschrieben(kette.current, sp, profil);
-    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9); sie liefert auch den Stand für den Abschluss
-    const { leiteAbNachLektion } = await import('@/lib/lernapp/lokal/ableitung');
-    const ende = await leiteAbNachLektion(sp, profil.id, heute());
+    const ende = await nachDerLektion(sp, profil.id);
     const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
     const folgePaket = folgeEinheit ? await paketKopfImVorrat(kurs, folgeEinheit) : null;
     const weiter = naechsteLektion(paket, lektion.schluessel, folgePaket);

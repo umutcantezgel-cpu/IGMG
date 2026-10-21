@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
-import { Abschluss, type AbschlussTexte, ZielRing } from '@/components/lernapp/Abschluss';
+import { type AbschlussTexte, ZielRing } from '@/components/lernapp/Abschluss';
+import { AbschlussInhalt as Abschluss } from '@/components/lernapp/AbschlussInhalt';
 import { Abzeichen } from '@/components/lernapp/Abzeichen';
 import { FortschrittInsel } from '@/components/lernapp/inseln/FortschrittInsel';
 import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';

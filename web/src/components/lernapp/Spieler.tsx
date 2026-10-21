@@ -27,11 +27,11 @@ import {
   type Zusammenfassung,
   zusammenfassung,
 } from '@/lib/lernapp/engine/sitzung';
-import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug } from '@/lib/lernapp/kurse';
-import { Abschluss, AbschlussRing } from './Abschluss';
+import { AbschlussRing } from './Abschluss';
+import type { AbschlussAnzeige } from './AbschlussInhalt';
 import { anweisung, loesungSprache, mitPruefen } from './uebungskopf';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
@@ -77,10 +77,11 @@ export type SpielerProps = {
   /** „Fehler melden“ mit Kurs (Richtung) und Texten; ohne (Schalter aus, Vorschau, Einstufung) kein Knopf */
   melden?: { kurs: KursSlug; texte: MeldenTexte };
   /**
-   * Stand nach der Lektion (Tagesziel, Serie, neue Abzeichen; `leiteAbNachLektion`), sobald Ereignisse und Ableitung
-   * gespeichert sind. Mit `texte.abschluss` zeigt der Abschlussbildschirm ihn unter Ergebnis und XP (B-30, B-33, B-34).
+   * Stand nach der Lektion (Tagesziel, Serie, neue Abzeichen; `leiteAbNachLektion`) mit seiner Anzeige, sobald Ereignisse
+   * und Ableitung gespeichert sind (`nachDerLektion`). Die Anzeige ist ein eigener Chunk (Spieler-Budget, KERN 4.0 §9);
+   * mit `texte.abschluss` steht sie unter Ergebnis und XP (B-30, B-33, B-34).
    */
-  abschluss?: AbschlussStand | null;
+  abschluss?: AbschlussAnzeige | null;
 };
 
 type Komponenten = { [T in ImplementierterTyp]: ComponentType<AufgabenProps<T>> };
@@ -273,7 +274,7 @@ export function Spieler({
           </>
         ) : null}
         {z.gesamt && abschluss && texte.abschluss ? (
-          <Abschluss stand={abschluss} texte={texte.abschluss} ui={sprache} ziffern={ziffern} />
+          <abschluss.Anzeige stand={abschluss.stand} texte={texte.abschluss} ui={sprache} ziffern={ziffern} />
         ) : null}
         {zurueckHref ? (
           <a href={zurueckHref} className={`${KNOPF} inline-flex items-center no-underline hover:text-weiss`}>

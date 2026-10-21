@@ -183,7 +183,9 @@ export function heuteStand(a: Pick<Ableitung, 'tage' | 'tagesziel'>, heute: stri
 
 /**
  * Was der Abschlussbildschirm nach einer Lektion zeigt (B-30, ADR 0043): der heutige Tag mit Tagesziel, die Serie mit
- * Wochenband und die seit `vorher` neu erhaltenen Abzeichen. Alles statisch – nichts zählt hoch.
+ * Wochenband und die seit `vorher` neu erhaltenen Abzeichen – nur solche mit dem heutigen Lerntag. So erscheinen nach
+ * einer neuen Ableitungsversion (leerer Speicher `abzeichen`) oder einem Abgleich nicht alte Abzeichen als „neu“. Alles
+ * statisch – nichts zählt hoch.
  */
 export type AbschlussStand = {
   tag: TagesStand;
@@ -192,11 +194,15 @@ export type AbschlussStand = {
   neu: string[];
 };
 
-export function abschlussStand(a: Pick<Ableitung, 'tage' | 'tagesziel' | 'serie' | 'abzeichen'>, heute: string, vorher: ReadonlySet<string>): AbschlussStand {
+export function abschlussStand(
+  a: Pick<Ableitung, 'tage' | 'tagesziel' | 'serie' | 'abzeichen'>,
+  heute: string,
+  vorher: ReadonlySet<string>,
+): AbschlussStand {
   const { laenge, woche, wiedereinstieg, pausetage } = a.serie;
   return {
     tag: heuteStand(a, heute),
     serie: { laenge, woche, heute, wiedereinstieg, pausetage },
-    neu: neueAbzeichen(a.abzeichen, vorher),
+    neu: neueAbzeichen(a.abzeichen, vorher).filter((id) => a.abzeichen.get(id)?.tag === heute),
   };
 }
