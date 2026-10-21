@@ -1204,7 +1204,7 @@
     },
     {
       "schluessel": "tr.a1.e06.s0052",
-      "text": "Gece saat dokuzda uyuyorum.",
+      "text": "Akşam saat dokuzda uyuyorum.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1402,7 +1402,7 @@
     },
     {
       "schluessel": "tr.a1.e06.s0084",
-      "text": "Dedem öğleden sonra uyuyor.",
+      "text": "Dedem öğleden sonra bahçede çalışıyor.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1432,7 +1432,7 @@
     },
     {
       "schluessel": "tr.a1.e06.s0089",
-      "text": "Akşam için ne pişiriyorsun?",
+      "text": "Akşam yemeği için ne pişiriyorsun?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1642,13 +1642,13 @@
     },
     {
       "schluessel": "tr.a1.e06.s0124",
-      "text": "Günaydın, Jan! Bugün nasılsın?",
+      "text": "Günaydın, Rim! Bugün nasılsın?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e06.s0125",
-      "text": "İyiyim ama yorgunum. Gece kitap okuyorum.",
+      "text": "İyiyim ama yorgunum. Geceleri kitap okuyorum.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1870,7 +1870,7 @@
     },
     {
       "schluessel": "tr.a1.e06.s0162",
-      "text": "Akşam yedide babaanne Sevim arıyor.",
+      "text": "Akşam yedide Sevim Babaanne arıyor.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2033,7 +2033,7 @@
     },
     {
       "schluessel": "tr.a1.e06.s0189",
-      "text": "Çarşamba akşamı babaanne Sevim arıyor.",
+      "text": "Çarşamba akşamı babaannem arıyor.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2110,7 +2110,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Die Wochentage nennen und sagen, welcher Tag heute ist",
-        "tr": "Haftanın günlerini söylemek ve bugün hangi gün olduğunu söylemek",
+        "tr": "Haftanın günlerini saymak ve bugünün hangi gün olduğunu söylemek",
         "ar": "تسمية أيام الأسبوع وقول أي يوم هو اليوم"
       },
       "aufgaben": [
@@ -2441,7 +2441,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e06.s0060",
           "nach": "ziel",
-          "ablenker": ["eve", "gidiyorum"]
+          "ablenker": ["eve", "gidiyorum"],
+          "alternativen": ["İşe annem gidiyor."]
         },
         {
           "schluessel": "tr.a1.e06.l03.a13",
@@ -2555,7 +2556,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e06.s0103",
           "nach": "ziel",
-          "alternativen": ["Babam gece bazen çalışıyor.", "Bazen babam gece çalışıyor."],
+          "alternativen": [
+            "Babam gece bazen çalışıyor.",
+            "Bazen babam gece çalışıyor.",
+            "Bazen gece babam çalışıyor.",
+            "Gece babam bazen çalışıyor.",
+            "Gece bazen babam çalışıyor."
+          ],
           "ablenker": ["hep", "çalışmıyor"]
         },
         {
@@ -2597,6 +2604,18 @@
         },
         {
           "schluessel": "tr.a1.e06.l04.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e06.s0110"
+            }
+          ],
+          "antwort": "tr.a1.e06.s0109",
+          "ablenker": ["tr.a1.e06.s0107", "tr.a1.e06.s0093"]
+        },
+        {
+          "schluessel": "tr.a1.e06.l04.a17",
           "typ": "sprechen",
           "satz": "tr.a1.e06.s0105"
         }
@@ -2672,7 +2691,7 @@
             }
           ],
           "antwort": "tr.a1.e06.s0118",
-          "ablenker": ["tr.a1.e06.s0131", "tr.a1.e06.s0134"]
+          "ablenker": ["tr.a1.e06.s0131", "tr.a1.e06.s0132"]
         },
         {
           "schluessel": "tr.a1.e06.l05.a08",
@@ -2727,7 +2746,8 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e06.s0135",
           "nach": "ziel",
-          "ablenker": ["önce", "gidiyorum"]
+          "ablenker": ["önce", "gidiyorum"],
+          "alternativen": ["Okula kahvaltıdan sonra gidiyoruz."]
         },
         {
           "schluessel": "tr.a1.e06.l05.a13",
@@ -2915,7 +2935,7 @@
             }
           ],
           "antwort": "tr.a1.e06.s0164",
-          "ablenker": ["tr.a1.e06.s0168", "tr.a1.e06.s0033"]
+          "ablenker": ["tr.a1.e06.s0057", "tr.a1.e06.s0033"]
         },
         {
           "schluessel": "tr.a1.e06.l06.a04",
@@ -2948,7 +2968,7 @@
             }
           ],
           "antwort": "tr.a1.e06.s0168",
-          "ablenker": ["tr.a1.e06.s0164", "tr.a1.e06.s0155"]
+          "ablenker": ["tr.a1.e06.s0164", "tr.a1.e06.s0032"]
         },
         {
           "schluessel": "tr.a1.e06.l06.a08",
@@ -2956,7 +2976,13 @@
           "anweisung": "uebersetze",
           "satz": "tr.a1.e06.s0152",
           "nach": "ziel",
-          "alternativen": ["Murat kahvaltı için mutfakta çay yapıyor."],
+          "alternativen": [
+            "Murat kahvaltı için mutfakta çay yapıyor.",
+            "Mutfakta Murat kahvaltı için çay yapıyor.",
+            "Mutfakta kahvaltı için Murat çay yapıyor.",
+            "Kahvaltı için Murat mutfakta çay yapıyor.",
+            "Kahvaltı için mutfakta Murat çay yapıyor."
+          ],
           "ablenker": ["içiyor", "salonda"]
         },
         {
@@ -3190,7 +3216,7 @@
       "art": "pruefstein",
       "ziel": {
         "de": "Prüfstein: Mein Tag",
-        "tr": "Sınav: Benim günüm",
+        "tr": "Değerlendirme: Benim günüm",
         "ar": "محطة الاختبار: يومي"
       },
       "aufgaben": [
@@ -3284,13 +3310,13 @@
             }
           ],
           "antwort": "tr.a1.e06.s0145",
-          "ablenker": ["tr.a1.e06.s0104", "tr.a1.e06.s0037"]
+          "ablenker": ["tr.a1.e06.s0092", "tr.a1.e06.s0037"]
         },
         {
           "schluessel": "tr.a1.e06.l08.a13",
           "typ": "hoeren_schreiben",
           "ziel": "tr.a1.e06.s0052",
-          "alternativen": ["Gece saat 9'da uyuyorum."]
+          "alternativen": ["Akşam saat 9'da uyuyorum."]
         },
         {
           "schluessel": "tr.a1.e06.l08.a14",
