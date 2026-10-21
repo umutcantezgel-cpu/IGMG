@@ -172,7 +172,7 @@ describe('Sitzung', () => {
     expect(zusammenfassung(w.sitzung)).toEqual({ richtig: 1, gesamt: 1, xp: 10 });
   });
 
-  it('überspringen nur vor dem ersten Versuch; alles übersprungen ergibt keine Ereignisse', () => {
+  it('überspringen nur in der Phase „frage“; alles übersprungen ergibt eine Lektion ohne Fehler, ohne Bewertung und ohne XP', () => {
     const s = starte(LEKTION);
     const p = pruefe(s, FALSCH.auswahl, bewerte);
     expect(ueberspringe(p.sitzung).sitzung).toBe(p.sitzung);
@@ -183,9 +183,21 @@ describe('Sitzung', () => {
       ereignisse.push(...r.ereignisse);
       x = r.sitzung;
     }
-    expect(ereignisse).toEqual([]);
+    // das Ereignis verlangt gesamt ≥ 1: die Lektion gilt als durchlaufen (keine Sackgasse im Lernpfad), aber ohne XP
+    expect(ereignisse).toEqual([expect.objectContaining({ art: 'lektion', daten: expect.objectContaining({ richtig: 1, gesamt: 1 }) })]);
     expect(zusammenfassung(x)).toEqual({ richtig: 0, gesamt: 0, xp: 0 });
     expect(fortschritt(x)).toBe(1);
+  });
+
+  it('überspringen in der Wiederholung: die Aufgabe bleibt gewertet, nur die offene Wiederholung entfällt', () => {
+    const s = starte({ ...LEKTION, aufgaben: [LEKTION.aufgaben[0]!] });
+    const p = pruefe(s, FALSCH.auswahl, bewerte);
+    const w = weiter(p.sitzung);
+    expect(aktuell(w.sitzung)?.wiederholung).toBe(true);
+    const r = ueberspringe(w.sitzung);
+    expect(r.sitzung.phase).toBe('fertig');
+    expect(r.ereignisse[0]).toMatchObject({ art: 'lektion', daten: { richtig: 0, gesamt: 1 } });
+    expect(zusammenfassung(r.sitzung)).toMatchObject({ richtig: 0, gesamt: 1 });
   });
 
   it('XP je Art der Lektion: Geschichte 15, Prüfstein 20, Wiederholung 1 je 2 Karten', () => {

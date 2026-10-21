@@ -46,7 +46,7 @@ export default function Zuordnen({
           if (!e) return null;
           const ok = geprueft?.[i];
           return (
-            <li key={i} className="flex flex-col gap-3 rounded-lg border-2 border-linie bg-weiss p-4">
+            <li key={i} className="flex min-w-0 flex-col gap-3 rounded-lg border-2 border-linie bg-weiss p-4">
               <Optionsgruppe
                 legende={e.text}
                 legendeSprache={aufgabe.sprache}

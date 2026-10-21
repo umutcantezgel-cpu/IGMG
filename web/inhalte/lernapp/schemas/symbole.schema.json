@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Bildkarten (symbole/symbole.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-symbole" },
+    "version": { "type": "number", "const": 1 },
+    "symbole": {
+      "maxItems": 3000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "maxLength": 60, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "motiv": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "viewBox": { "default": "0 0 24 24", "type": "string", "const": "0 0 24 24" },
+          "pfade": {
+            "minItems": 1,
+            "maxItems": 30,
+            "type": "array",
+            "items": { "type": "string", "maxLength": 8000, "pattern": "^[MmLlHhVvCcSsQqTtAaZz0-9.,\\s+-]+$" }
+          },
+          "quelle": {
+            "type": "string",
+            "pattern": "^(?:lucide:[a-z0-9-]+@\\d+\\.\\d+\\.\\d+|tabler:[a-z0-9-]+@\\d+\\.\\d+\\.\\d+|openmoji:[0-9A-F-]+@17\\.0\\.0|redaktion)$"
+          },
+          "lizenz": { "type": "string", "enum": ["ISC", "MIT", "CC-BY-SA-4.0"] },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 300 }
+        },
+        "required": ["id", "motiv", "pfade", "quelle", "lizenz"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "symbole"],
+  "additionalProperties": false
+}

@@ -12,7 +12,6 @@ import {
   AUFGABEN_TYPEN,
   AufgabeSchema,
   type AufgabeVon,
-  GERUEST,
   IMPLEMENTIERT,
   istImplementiert,
   LektionSchema,
@@ -103,14 +102,13 @@ const KWW: AufgabeVon<'koran_wort'> = {
 
 const fehler = (r: { success: boolean; error?: { issues: { message: string }[] } }) => r.error?.issues.map((i) => i.message) ?? [];
 
-describe('L2-03: Typen in der Union, spielbar, aus dem Gerüst entfernt', () => {
+describe('L2-03: Typen in der Union und spielbar', () => {
   it('wahr_falsch, zuordnen, reihenfolge, fallfrage, koran_wort sind implementiert und gültig', () => {
     const typen = ['wahr_falsch', 'zuordnen', 'reihenfolge', 'fallfrage', 'koran_wort'] as const;
     expect(Object.keys(WISSEN_TYPEN)).toEqual(typen);
     for (const t of typen) {
       expect(IMPLEMENTIERT).toContain(t);
       expect(istImplementiert(t)).toBe(true);
-      expect(Object.keys(GERUEST)).not.toContain(t);
       expect(AUFGABEN_TYPEN).toContain(t);
     }
     for (const a of [WF, ZO, RF, FF, KW, KWW]) expect(AufgabeSchema.safeParse(a).success, a.typ).toBe(true);

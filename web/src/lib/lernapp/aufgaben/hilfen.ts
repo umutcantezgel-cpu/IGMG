@@ -1,4 +1,5 @@
 import type { HinweisSchluessel, Lexikon, Urteil } from '../abgleich';
+import type { Note } from '../bewertung';
 import type { Antwort, Aufgabe, AufgabenTyp } from './schema';
 
 /**
@@ -8,7 +9,7 @@ import type { Antwort, Aufgabe, AufgabenTyp } from './schema';
  */
 
 /**
- * Spielbar (Bewertung und Anzeige vorhanden): L1, L2-01 und L2-03. Hier ohne Zod, damit Engine und Spieler die Liste
+ * Spielbar (Bewertung und Anzeige vorhanden): L1, L2-01, L2-02 und L2-03, also alle Typen aus PLAN §4. Hier ohne Zod, damit Engine und Spieler die Liste
  * kennen, ohne die Schemas zu laden (KERN 4.0 §9, TBT); `schema.ts` reicht sie weiter.
  */
 export const IMPLEMENTIERT = [
@@ -24,6 +25,15 @@ export const IMPLEMENTIERT = [
   'satzbau',
   'formen',
   'harakat',
+  'dialog',
+  'geschichte',
+  'lesen_fragen',
+  'grammatik_tipp',
+  'schrift_ar',
+  'schrift_tr',
+  'schrift_latein',
+  'sprechen',
+  'schreiben',
   'wahr_falsch',
   'zuordnen',
   'reihenfolge',
@@ -41,6 +51,11 @@ export type Auswertung = {
   /** richtige Lösung zur Anzeige (bei `tippfehler` und `falsch`; bei `richtig` die getroffene Lösung) */
   loesung: string | null;
   karten: KartenUrteil[];
+  /**
+   * Selbstbewertung (nur `sprechen` und `schreiben`, ADR 0042 Nr. 6, ADR 0038 Nr. 3): Note aller Karten der Aufgabe;
+   * das Ereignis `bewertung` trägt dann `selbst: true`.
+   */
+  selbst?: Note;
 };
 
 export type BewertungsKontext = { lexikon?: Lexikon };

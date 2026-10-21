@@ -14,10 +14,15 @@ import { xpFuer } from './xp';
  * - Jede Karte wird nur im ersten Versuch bewertet (richtig → gut, Tippfehler → schwer, falsch → nochmal); das Ereignis
  *   `bewertung` entsteht sofort, damit ein Abbruch nichts verliert.
  * - Übersprungen wird ohne Bewertung und ohne Wiederholung (`ueberspringe`): Hörübung ohne Audio („Audio folgt“), „Ich kann
- *   gerade nicht hören“ (dann alle übrigen Hörübungen der Lektion) – keine Sackgasse (KERN 4.0 §4, §8). Mit „Hörübungen
- *   aus“ fallen Hörübungen schon beim Start weg (`starte(…, { ohne })`). Übersprungene Aufgaben zählen nicht mit.
- * - Am Ende: `lektion` (richtig im ersten Versuch / Zahl der gespielten Aufgaben) und `xp` (statisch, engine/xp.ts); ohne
- *   gespielte Aufgabe keine Ereignisse.
+ *   gerade nicht hören“ (dann alle übrigen Hörübungen der Lektion), „Ich kann gerade nicht sprechen“, gelesener
+ *   Grammatik-Tipp – keine Sackgasse (KERN 4.0 §4, §8). Mit „Hörübungen aus“ fallen Hörübungen schon beim Start weg
+ *   (`starte(…, { ohne })`). Eine Aufgabe, die schon einen Versuch hatte (Wiederholung am Ende), bleibt gewertet; nur die
+ *   offene Wiederholung entfällt.
+ * - Selbstbewertung (`sprechen`, `schreiben`, ADR 0042 Nr. 6): Die Note der Auswertung (`selbst`) geht unverändert an die
+ *   Karten, das Ereignis trägt `selbst: true`.
+ * - Am Ende: `lektion` (richtig im ersten Versuch / Zahl der gewerteten Aufgaben, `gewertet`) und `xp` (statisch,
+ *   engine/xp.ts; nur mit gewerteter Aufgabe). Wurde alles übersprungen, gilt die Lektion als ohne Fehler durchlaufen
+ *   (das Ereignis verlangt `gesamt ≥ 1`), ohne XP.
  * - Die Funktionen geben neue Zustände und die zu speichernden Ereignis-Entwürfe zurück; Gerät, Nummer, Zeit und
  *   Lerntag ergänzt der Ausgang (lokal/ausgang.ts).
  * - Die Bewertung kommt vom Aufrufer (`pruefe(s, antwort, bewerte)`): der Spieler nimmt die des geladenen Übungs-Chunks,
@@ -41,7 +46,7 @@ export type Sitzung = {
   erstesUrteil: (Urteil | null)[];
   /** angenommen, Versuche erschöpft oder übersprungen */
   abgeschlossen: boolean[];
-  /** ohne Bewertung übersprungen (zählt nicht zur Lektion) */
+  /** ohne Bewertung übersprungen (zählt nicht zur Lektion, außer sie hatte schon einen Versuch) */
   uebersprungen: boolean[];
   letzte: Auswertung | null;
   lexikon?: Lexikon;
@@ -93,7 +98,13 @@ export function pruefe(s: Sitzung, antwort: Antwort, bewerte: Bewerter): Schritt
     for (const k of auswertung.karten)
       ereignisse.push({
         art: 'bewertung',
-        daten: { karte: k.karte, note: noteAus(k.urteil), kurs: s.lektion.kurs, aufgabe: a.aufgabe.schluessel },
+        daten: {
+          karte: k.karte,
+          note: auswertung.selbst ?? noteAus(k.urteil),
+          kurs: s.lektion.kurs,
+          aufgabe: a.aufgabe.schluessel,
+          ...(auswertung.selbst ? { selbst: true as const } : {}),
+        },
       });
   }
   const abgeschlossen = [...s.abgeschlossen];
@@ -106,28 +117,43 @@ export function pruefe(s: Sitzung, antwort: Antwort, bewerte: Bewerter): Schritt
 /** Zahl der Aufgaben, die im ersten Versuch angenommen wurden. */
 export const richtigImErstenVersuch = (s: Sitzung): number => s.erstesUrteil.filter((u) => u === 'richtig' || u === 'tippfehler').length;
 
-/** Gespielte (nicht übersprungene) Aufgaben. */
-const gespielte = (s: Sitzung): Aufgabe[] => s.aufgaben.filter((_, i) => !s.uebersprungen[i]);
+/** Gewertet: nicht übersprungen oder schon mit einem Versuch (Wiederholung, die übersprungen wurde). */
+const istGewertet = (s: Sitzung, i: number): boolean => !(s.uebersprungen[i] && s.erstesUrteil[i] == null);
 
-/** Verschiedene Karten der gespielten Aufgaben (für die XP der Wiederholung). */
+/** Zahl der gewerteten Aufgaben (Quote der Lektion). */
+export const gewertet = (s: Sitzung): number => s.aufgaben.filter((_, i) => istGewertet(s, i)).length;
+
+/** Verschiedene Karten der gewerteten Aufgaben (für die XP der Wiederholung). */
 const kartenDerSitzung = (s: Sitzung): number =>
   new Set(
-    gespielte(s).flatMap((a) => [...(a.karten ?? []), ...(a.typ === 'paare' ? a.paare.flatMap((p) => (p.karte ? [p.karte] : [])) : [])]),
+    s.aufgaben
+      .filter((_, i) => istGewertet(s, i))
+      .flatMap((a) => [
+        ...(a.karten ?? []),
+        ...(a.typ === 'paare' ? a.paare.flatMap((p) => (p.karte ? [p.karte] : [])) : []),
+        ...(a.typ === 'geschichte' ? a.fragen.flatMap((f) => (f.karte ? [f.karte] : [])) : []),
+      ]),
   ).size;
 
 /** XP dieser Lektion (statisch). */
-export const xpDerSitzung = (s: Sitzung): number => (gespielte(s).length ? xpFuer(s.lektion.art, kartenDerSitzung(s)) : 0);
+export const xpDerSitzung = (s: Sitzung): number => (gewertet(s) ? xpFuer(s.lektion.art, kartenDerSitzung(s)) : 0);
 
-/** Nächste Aufgabe an `pos` oder Ende der Lektion mit `lektion` und `xp` (nur mit gespielten Aufgaben). */
+/** Nächste Aufgabe an `pos` oder Ende der Lektion mit `lektion` und `xp` (XP nur mit gewerteten Aufgaben). */
 function weiterAb(s: Sitzung, pos: number): Schritt {
   if (pos < s.reihe.length) return { sitzung: { ...s, pos, phase: 'frage', letzte: null }, ereignisse: [] };
   const fertig: Sitzung = { ...s, pos, phase: 'fertig', letzte: null };
-  const gesamt = gespielte(s).length;
-  if (!gesamt) return { sitzung: fertig, ereignisse: [] };
+  // das Ereignis verlangt gesamt ≥ 1: wurde alles übersprungen, gilt die Lektion als ohne Fehler durchlaufen
+  const gesamt = gewertet(s);
   const ereignisse: EreignisEntwurf[] = [
     {
       art: 'lektion',
-      daten: { kurs: s.lektion.kurs, lektion: s.lektion.schluessel, art: s.lektion.art, richtig: richtigImErstenVersuch(s), gesamt },
+      daten: {
+        kurs: s.lektion.kurs,
+        lektion: s.lektion.schluessel,
+        art: s.lektion.art,
+        richtig: gesamt ? richtigImErstenVersuch(s) : 1,
+        gesamt: Math.max(1, gesamt),
+      },
     },
   ];
   const xp = xpDerSitzung(s);
@@ -142,17 +168,18 @@ export function weiter(s: Sitzung): Schritt {
 }
 
 /**
- * Aktuelle Aufgabe überspringen (nur in der Phase „frage“ und nur vor dem ersten Versuch): ohne Bewertung, ohne
- * Wiederholung. Mit `typen` fallen auch alle späteren, noch offenen Aufgaben dieser Typen weg (z. B. „Ich kann gerade
- * nicht hören“). Am Ende wie `weiter`.
+ * Aktuelle Aufgabe ohne Wertung überspringen (nur in der Phase „frage“; KERN 4.0 §8: Hörübung ohne Audio, „Ich kann gerade
+ * nicht hören/sprechen“, gelesener Grammatik-Tipp): keine Bewertung, keine Wiederholung. Mit `typen` fallen auch alle
+ * späteren, noch offenen Aufgaben dieser Typen weg (z. B. „Ich kann gerade nicht hören“). Eine schon gewertete Aufgabe
+ * (Wiederholung am Ende) bleibt gewertet. Am Ende wie `weiter`.
  */
 export function ueberspringe(s: Sitzung, { typen = [] }: { typen?: readonly AufgabenTyp[] } = {}): Schritt {
   const a = aktuell(s);
-  if (!a || s.phase !== 'frage' || (s.versuche[a.index] ?? 0) > 0) return { sitzung: s, ereignisse: [] };
+  if (!a || s.phase !== 'frage') return { sitzung: s, ereignisse: [] };
   const weg = new Set([a.index]);
   for (const i of s.reihe.slice(s.pos + 1)) {
     const x = s.aufgaben[i];
-    if (x && typen.includes(x.typ) && !s.abgeschlossen[i] && !(s.versuche[i] ?? 0)) weg.add(i);
+    if (x && typen.includes(x.typ) && !s.abgeschlossen[i]) weg.add(i);
   }
   const abgeschlossen = s.abgeschlossen.map((v, i) => v || weg.has(i));
   const uebersprungen = s.uebersprungen.map((v, i) => v || weg.has(i));
@@ -170,6 +197,6 @@ export type Zusammenfassung = { richtig: number; gesamt: number; xp: number };
 
 export const zusammenfassung = (s: Sitzung): Zusammenfassung => ({
   richtig: richtigImErstenVersuch(s),
-  gesamt: gespielte(s).length,
+  gesamt: gewertet(s),
   xp: xpDerSitzung(s),
 });

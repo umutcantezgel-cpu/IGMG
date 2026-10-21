@@ -13,7 +13,7 @@ import { isoliert } from '@/components/lernapp/InhaltText';
 import { ansage, Rueckmeldung } from '@/components/lernapp/Rueckmeldung';
 import { Spieler } from '@/components/lernapp/Spieler';
 import { naechsterIndex, verschiebeRichtung } from '@/components/lernapp/tastatur';
-import type { AufgabenProps, SpielerTexte } from '@/components/lernapp/typen';
+import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/components/lernapp/typen';
 import type { AuswahlAufgabe, ImplementierterTyp, PaareAufgabe, WortbankAufgabe } from '@/lib/lernapp/aufgaben/schema';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
@@ -27,7 +27,14 @@ import { LEKTION } from './hilfen/lektion';
  * Regeltests für den Client der Lern-App (kein next-intl, kein @/lib/utils, Übungstypen nur per import(), nur logische
  * Richtungen) und die Texte de/tr/ar (gleiche Schlüssel und Platzhalter, Entwurfsliste).
  */
-const TEXTE: SpielerTexte = { spieler: de.spieler, aufgaben: de.aufgaben, tastatur: de.tastatur };
+const TEXTE: SpielerTexte = {
+  spieler: de.spieler,
+  aufgaben: de.aufgaben,
+  tastatur: de.tastatur,
+  aufgaben2: de.aufgaben2,
+  sprechen: de.sprechen,
+  schreiben: de.schreiben,
+};
 const [auswahl, wortbank, paare] = LEKTION.aufgaben as [AuswahlAufgabe, WortbankAufgabe, PaareAufgabe];
 const nichts = () => undefined;
 
@@ -44,8 +51,10 @@ function props<T extends ImplementierterTyp>(aufgabe: AufgabenProps<T>['aufgabe'
     gibAb: nichts,
     melde: nichts,
     tastatur: TEXTE.tastatur,
+    weitere: TEXTE,
     ueberspringe: nichts,
     nurUeberspringen: nichts,
+    optionen: STANDARD_OPTIONEN,
     ...teil,
   };
 }
@@ -88,7 +97,7 @@ describe('Spieler', () => {
         sprache="de"
         onEreignis={nichts}
         zurueckHref="/lern-app/de/tr-aus-de"
-        hoeren={false}
+        optionen={{ ...STANDARD_OPTIONEN, hoeren: false }}
       />,
     );
     expect(html).toContain(de.spieler.leer);
@@ -109,6 +118,15 @@ describe('Spieler', () => {
       'satzbau',
       'formen',
       'harakat',
+      'dialog',
+      'geschichte',
+      'lesen_fragen',
+      'grammatik_tipp',
+      'schrift_ar',
+      'schrift_tr',
+      'schrift_latein',
+      'sprechen',
+      'schreiben',
       'wahr_falsch',
       'zuordnen',
       'reihenfolge',

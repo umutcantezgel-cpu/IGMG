@@ -71,6 +71,15 @@ describe('Schema', () => {
       'satzbau',
       'formen',
       'harakat',
+      'dialog',
+      'geschichte',
+      'lesen_fragen',
+      'grammatik_tipp',
+      'schrift_ar',
+      'schrift_tr',
+      'schrift_latein',
+      'sprechen',
+      'schreiben',
       'wahr_falsch',
       'zuordnen',
       'reihenfolge',
@@ -79,7 +88,8 @@ describe('Schema', () => {
     ]);
     expect(istImplementiert('auswahl')).toBe(true);
     expect(istImplementiert('frei')).toBe(true);
-    expect(istImplementiert('dialog')).toBe(false);
+    expect(istImplementiert('dialog')).toBe(true);
+    expect(IMPLEMENTIERT).toHaveLength(AUFGABEN_TYPEN.length);
   });
 
   it.each([
@@ -212,20 +222,21 @@ describe('Bewertung', () => {
     expect(bewertePaare(paare, { typ: 'paare', versuche: [[0, 0]] }).urteil).toBe('falsch');
   });
 
-  it('bewerte: verteilt nach Typ, noch nicht umgesetzte Typen und falsche Antwortart sind Programmfehler', () => {
+  it('bewerte: verteilt nach Typ, falsche Antwortart ist ein Programmfehler', () => {
     expect(bewerte(auswahl, { typ: 'auswahl', wahl: 0 }).urteil).toBe('richtig');
     expect(bewerte(LEKTION.aufgaben[3]!, { typ: 'frei', text: 'ekmek' }).urteil).toBe('richtig');
     const dialog = AufgabeSchema.parse({
       typ: 'dialog',
       schluessel: 'd1',
-      verlauf: [{ sprecher: 'A', zeile: { text: 'Ekmek.', sprache: 'tr' } }],
+      verlauf: [{ sprecher: 'a', zeile: { text: 'Ekmek.', sprache: 'tr' } }],
       optionen: [
         { text: 'Ekmek.', sprache: 'tr' },
         { text: 'Su.', sprache: 'tr' },
       ],
       richtig: 0,
     });
-    expect(() => bewerte(dialog, { typ: 'auswahl', wahl: 0 })).toThrow(/L2/);
+    expect(bewerte(dialog, { typ: 'dialog', wahl: 0 }).urteil).toBe('richtig');
+    expect(() => bewerte(dialog, { typ: 'auswahl', wahl: 0 })).toThrow(/passt nicht/);
     expect(() => bewerte(auswahl, { typ: 'wortbank', kacheln: [] })).toThrow();
   });
 });

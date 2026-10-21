@@ -14,7 +14,8 @@ import {
   useState,
 } from 'react';
 import { hatAudio, HOER_TYPEN, istHoerTyp, type MitHoeren } from '@/lib/lernapp/aufgaben/hilfen';
-import type { Antwort, Aufgabe, AufgabenTyp, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
+import type { Antwort, AufgabenTyp, ImplementierterTyp, Lektion } from '@/lib/lernapp/aufgaben/schema';
+import { SELBSTBEWERTUNG } from '@/lib/lernapp/bewertung';
 import {
   aktuell,
   fortschritt,
@@ -29,10 +30,11 @@ import {
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
 import { Abschluss } from './Abschluss';
+import { anweisung, loesungSprache, mitPruefen } from './uebungskopf';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
 import { Rueckmeldung } from './Rueckmeldung';
-import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
+import { type AufgabenProps, type SpielerOptionen, type SpielerTexte, STANDARD_OPTIONEN, type UiSprache } from './typen';
 
 /**
  * Lektionsspieler (PLAN §4, KERN §7–§9): spielt eine Lektion als reinen Zustandsautomaten (engine/sitzung.ts) und meldet
@@ -45,10 +47,13 @@ import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
  * <Spieler lektion={lektion} texte={{ spieler, aufgaben }} sprache="de" onEreignis={(e) => haengeAn(sp, profil, e)} />
  * ```
  *
- * Lektionsformat: `aufgaben/schema.ts` (`LektionSchema`, passend zum Einheitenpaket nach ADR 0039). Spielbar sind die
- * Typen aus `IMPLEMENTIERT` (L1 und L2-01); andere werden übersprungen. Hörübungen fallen mit `hoeren={false}`
- * („Hörübungen aus“) schon beim Start weg; ohne Audio oder nach „Ich kann gerade nicht hören“ überspringt sie die Übung
- * selbst (`ueberspringe`, ohne Bewertung). Texte zusätzlich aus dem Namensraum `tastatur`.
+ * Lektionsformat: `aufgaben/schema.ts` (`LektionSchema`, passend zum Einheitenpaket nach ADR 0039). Spielbar sind die Typen
+ * in `IMPLEMENTIERT` (alle Typen aus PLAN §4); andere werden übersprungen. Hörübungen fallen mit „Hörübungen aus“
+ * (`optionen.hoeren`) schon beim Start weg, Sprechaufgaben mit „Sprechübungen aus“, Schrift-Aufgaben, die nur ein
+ * Hörbeispiel haben, ebenso. Ohne Audio oder nach „Ich kann gerade nicht hören“ überspringt die Übung selbst
+ * (`ueberspringe`, ohne Bewertung). `sprechen` und `schreiben` bewerten sich selbst und gehen ohne Rückmeldeblatt weiter;
+ * `grammatik_tipp` und „Ich kann gerade nicht sprechen“ überspringen ohne Wertung. Texte zusätzlich aus den Namensräumen
+ * `tastatur`, `aufgaben2`, `sprechen` und `schreiben`.
  */
 export type SpielerProps = {
   lektion: Lektion;
@@ -61,8 +66,8 @@ export type SpielerProps = {
   onFertig?: (zusammenfassung: Zusammenfassung) => void;
   /** Ziel „Zum Lernpfad“ am Ende */
   zurueckHref?: string;
-  /** Hörübungen an (Einstellung „Hörübungen aus“, KERN 4.0 §8) */
-  hoeren?: boolean;
+  /** Hörübungen, Sprechübungen, Spracherkennung (Einstellungen und Schalter `lernapp_sprechen`) */
+  optionen?: SpielerOptionen;
 };
 
 type Komponenten = { [T in ImplementierterTyp]: ComponentType<AufgabenProps<T>> };
@@ -73,6 +78,16 @@ const erzeugeKomponenten = (): Komponenten =>
       lazy(() => ladeTyp(t) as unknown as Promise<{ default: ComponentType }>),
     ]),
   ) as unknown as Komponenten;
+
+/** Aufgaben, die mit den Einstellungen nicht spielbar sind, fallen vor dem Start weg (keine Sackgasse, KERN 4.0 §8). */
+function spielbar(lektion: Lektion, o: SpielerOptionen): Lektion {
+  const aufgaben = lektion.aufgaben.filter((a) => {
+    if (a.typ === 'sprechen') return o.sprechen;
+    if ((a.typ === 'schrift_tr' || a.typ === 'schrift_latein') && !a.vorgabe) return o.hoeren;
+    return true;
+  });
+  return aufgaben.length === lektion.aufgaben.length ? lektion : { ...lektion, aufgaben };
+}
 
 /** Fängt einen fehlgeschlagenen Chunk-Abruf (z. B. ohne Netz) und bietet „Erneut versuchen“. */
 class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, { fehler: boolean }> {
@@ -85,34 +100,20 @@ class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, {
   }
 }
 
-/** Anweisung ohne eigenes Feld: ein fester Text je Typ (`aufgaben.<typ>.<anweisung>`). */
-const ANWEISUNG: Partial<Record<AufgabenTyp, string>> = {
-  frei: 'uebersetze',
-  hoeren_schreiben: 'schreibeGehoertes',
-  minimalpaare: 'waehleGehoertes',
-  luecke: 'ergaenze',
-  satzbau: 'ordne',
-  formen: 'ergaenze',
-};
-
-function anweisung(a: Aufgabe, t: SpielerTexte['aufgaben']): string {
-  const k = ('anweisung' in a && a.anweisung) || ANWEISUNG[a.typ] || '';
-  return (t as unknown as Partial<Record<string, Record<string, string>>>)[a.typ]?.[k] ?? '';
-}
-
-/** Sprache der Lösung: Antwortsprache oder Sprache der richtigen Option. */
-const loesungSprache = (a: Aufgabe): UiSprache | null =>
-  'sprache' in a
-    ? a.sprache
-    : 'richtig' in a && 'optionen' in a
-      ? ((a.optionen[a.richtig] as { sprache?: UiSprache } | undefined)?.sprache ?? null)
-      : null;
-
 const KNOPF = 'min-h-12 druck rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800';
 
-export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreignis, onFertig, zurueckHref, hoeren = true }: SpielerProps) {
+export function Spieler({
+  lektion,
+  texte,
+  sprache,
+  ziffern = 'oestlich',
+  onEreignis,
+  onFertig,
+  zurueckHref,
+  optionen = STANDARD_OPTIONEN,
+}: SpielerProps) {
   const id = useId();
-  const [s, setS] = useState<Sitzung>(() => starte(lektion, { ohne: hoeren ? [] : HOER_TYPEN }));
+  const [s, setS] = useState<Sitzung>(() => starte(spielbar(lektion, optionen), { ohne: optionen.hoeren ? [] : HOER_TYPEN }));
   // Aufgabe, die sich nur überspringen lässt (Hörübung ohne Audio): kein „Prüfen“
   const [nurWeiterBei, setNurWeiterBei] = useState<number | null>(null);
   const [antwort, setAntwort] = useState<Antwort | null>(null);
@@ -148,9 +149,21 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
     const bewerte = a && bewerterFuer(a.aufgabe.typ);
     if (s.phase !== 'frage' || !bewerte) return;
     const r = pruefe(s, x, bewerte);
+    // Selbstbewertung (Sprechen, Schreiben): die Lernenden haben schon geurteilt – ohne Rückmeldeblatt weiter
+    if (SELBSTBEWERTUNG.has(x.typ)) return schliesse(r.sitzung, r.ereignisse);
     setS(r.sitzung);
     setMeldung('');
     sende(r.ereignisse);
+  }
+
+  /** Nach einer Zwischenstufe direkt zur nächsten Aufgabe (bzw. zum Ende). */
+  function schliesse(zwischen: Sitzung, vorher: EreignisEntwurf[]) {
+    const r = weiter(zwischen);
+    setS(r.sitzung);
+    setAntwort(null);
+    setMeldung('');
+    sende([...vorher, ...r.ereignisse]);
+    if (r.sitzung.phase === 'fertig') onFertig?.(zusammenfassung(r.sitzung));
   }
 
   function absenden(e: FormEvent<HTMLFormElement>) {
@@ -170,6 +183,7 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
   const pos = s.pos;
   const nurUeberspringen = useCallback((ja: boolean) => setNurWeiterBei((alt) => (ja ? pos : alt === pos ? null : alt)), [pos]);
 
+  /** Ohne Wertung weiter (gelesener Tipp, Hörübung ohne Audio, „Ich kann gerade nicht hören/sprechen“). */
   function ueberspringeAufgabe({ typen, meldung }: { typen?: readonly AufgabenTyp[]; meldung?: string } = {}) {
     if (s.phase !== 'frage') return;
     const r = ueberspringe(s, { typen });
@@ -194,7 +208,7 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
       >
         {z.gesamt ? <Abschluss /> : null}
         <h2 id={`${id}-fertig`} ref={titel} tabIndex={-1} className="text-display-2 outline-none">
-          {z.gesamt ? texte.spieler.fertigTitel : texte.spieler.leer}
+          {z.gesamt || s.aufgaben.length ? texte.spieler.fertigTitel : texte.spieler.leer}
         </h2>
         {z.gesamt ? (
           <>
@@ -225,7 +239,7 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
       <p className="text-16 font-bold text-gruen-800">{a.wiederholung ? texte.spieler.nochEinmal : stand}</p>
       <form onSubmit={absenden} noValidate data-aufgabe={aufgabe.typ} className="flex flex-col gap-5">
         <h2 id={`${id}-titel`} ref={titel} tabIndex={-1} className="text-24 font-bold outline-none">
-          {anweisung(aufgabe, texte.aufgaben)}
+          {anweisung(aufgabe, texte)}
         </h2>
         <Ladegrenze
           key={ladeVersuch}
@@ -252,12 +266,14 @@ export function Spieler({ lektion, texte, sprache, ziffern = 'oestlich', onEreig
               gibAb={gibAb}
               melde={setMeldung}
               tastatur={texte.tastatur}
+              weitere={texte}
               ueberspringe={ueberspringeAufgabe}
               nurUeberspringen={nurUeberspringen}
+              optionen={optionen}
             />
           </Suspense>
         </Ladegrenze>
-        {aufgabe.typ !== 'paare' && s.phase === 'frage' && !nurWeiter ? (
+        {mitPruefen(aufgabe) && s.phase === 'frage' && !nurWeiter ? (
           <button type="submit" disabled={!antwort} className={`${KNOPF} self-end disabled:bg-linie disabled:text-tinte-2`}>
             {texte.spieler.pruefen}
           </button>

@@ -42,7 +42,7 @@ export default function Fallfrage({
         ui={sprache}
         ziffern={ziffern}
         kopf={
-          <div className="flex flex-col gap-3 rounded-lg bg-sand px-4 py-5">
+          <div className="flex min-w-0 flex-col gap-3 rounded-lg bg-sand px-4 py-5">
             <p className="text-16 font-bold text-tinte-2">{t.fall}</p>
             <p {...inhalt} className="text-20">
               {aufgabe.fall}

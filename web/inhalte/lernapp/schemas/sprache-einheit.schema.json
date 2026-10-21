@@ -1,0 +1,536 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Zielinhalt einer Einheit (sprache/<ziel>/<stufe>/<einheit>.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-sprache" },
+    "version": { "type": "number", "const": 1 },
+    "status": { "default": "entwurf", "type": "string", "enum": ["entwurf", "automatisch_geprueft"] },
+    "kurs": { "type": "string", "enum": ["de", "tr", "ar"] },
+    "stufe": { "type": "string", "enum": ["a1", "a2", "b1", "b2", "c1"] },
+    "einheit": {
+      "type": "object",
+      "properties": {
+        "schluessel": { "type": "string", "maxLength": 120 },
+        "reihenfolge": { "type": "integer", "minimum": 1, "maximum": 999 },
+        "thema": {
+          "type": "object",
+          "properties": {
+            "de": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "tr": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "ar": { "type": "string", "minLength": 1, "maxLength": 300 }
+          },
+          "additionalProperties": false
+        },
+        "kannBeschreibungen": {
+          "maxItems": 12,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "de": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "tr": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "ar": { "type": "string", "minLength": 1, "maxLength": 300 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "symbol": { "type": "string", "maxLength": 200 },
+        "nurFuerAusgang": { "type": "string", "enum": ["de", "tr", "ar"] },
+        "kinderGeeignet": { "type": "boolean" }
+      },
+      "required": ["schluessel", "reihenfolge", "thema"],
+      "additionalProperties": false
+    },
+    "lemmata": {
+      "default": [],
+      "maxItems": 400,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schluessel": { "type": "string", "maxLength": 120 },
+          "lemma": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "wortart": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "merkmale": {
+            "type": "object",
+            "propertyNames": { "type": "string", "maxLength": 40 },
+            "additionalProperties": { "type": "string", "maxLength": 80 }
+          },
+          "formen": {
+            "type": "object",
+            "propertyNames": { "type": "string", "maxLength": 40 },
+            "additionalProperties": { "type": "string", "maxLength": 120 }
+          },
+          "frequenzRang": { "type": "integer", "minimum": 1, "maximum": 10000000 },
+          "symbol": { "type": "string", "pattern": "^[a-z0-9-]{1,60}$" },
+          "quelle": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(?:ki:[A-Za-z0-9._/:-]{1,180}|tatoeba:\\d{1,12}|kaikki:[A-Za-z0-9._:-]{1,120}|wiktionary:(?:en|de|tr):[^\\s:][^\\n\\r\\t]{0,150}|redaktion|test:[a-z0-9-]{1,60})$"
+          },
+          "lizenz": { "type": "string", "enum": ["CC-BY-SA-4.0", "CC-BY-4.0", "CC-BY-2.0-FR", "CC0-1.0"] },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "religionsbezug": { "type": "boolean" }
+        },
+        "required": ["schluessel", "lemma", "quelle", "lizenz"],
+        "additionalProperties": false
+      }
+    },
+    "saetze": {
+      "default": [],
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schluessel": { "type": "string", "maxLength": 120 },
+          "text": { "type": "string", "minLength": 1, "maxLength": 600 },
+          "tokens": { "maxItems": 80, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
+          "quelle": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(?:ki:[A-Za-z0-9._/:-]{1,180}|tatoeba:\\d{1,12}|kaikki:[A-Za-z0-9._:-]{1,120}|wiktionary:(?:en|de|tr):[^\\s:][^\\n\\r\\t]{0,150}|redaktion|test:[a-z0-9-]{1,60})$"
+          },
+          "lizenz": { "type": "string", "enum": ["CC-BY-SA-4.0", "CC-BY-4.0", "CC-BY-2.0-FR", "CC0-1.0"] },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "religionsbezug": { "type": "boolean" }
+        },
+        "required": ["schluessel", "text", "quelle", "lizenz"],
+        "additionalProperties": false
+      }
+    },
+    "lektionen": {
+      "minItems": 1,
+      "maxItems": 20,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schluessel": { "type": "string", "maxLength": 120 },
+          "art": {
+            "default": "lektion",
+            "type": "string",
+            "enum": ["lektion", "geschichte", "wiederholung", "pruefstein", "schrift", "schreiben", "sprechen"]
+          },
+          "ziel": {
+            "type": "object",
+            "properties": {
+              "de": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "tr": { "type": "string", "minLength": 1, "maxLength": 300 },
+              "ar": { "type": "string", "minLength": 1, "maxLength": 300 }
+            },
+            "additionalProperties": false
+          },
+          "kinderGeeignet": { "type": "boolean" },
+          "aufgaben": {
+            "minItems": 1,
+            "maxItems": 40,
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "auswahl" },
+                    "anweisung": { "type": "string", "enum": ["waehleUebersetzung", "waehleWort"] },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "anweisung", "ziel", "ablenker"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "wortbank" },
+                    "anweisung": { "type": "string", "const": "uebersetze" },
+                    "satz": { "type": "string", "maxLength": 120 },
+                    "nach": { "type": "string", "enum": ["ziel", "ausgang"] },
+                    "alternativen": { "maxItems": 20, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 600 } },
+                    "ablenker": { "maxItems": 8, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 } }
+                  },
+                  "required": ["schluessel", "typ", "anweisung", "satz", "nach"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "paare" },
+                    "lemmata": { "minItems": 2, "maxItems": 6, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "lemmata"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "bild_wort" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel", "ablenker"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "frei" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "nach": { "type": "string", "enum": ["ziel", "ausgang"] },
+                    "alternativen": { "maxItems": 20, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 600 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel", "nach"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "hoeren_waehlen" },
+                    "anweisung": { "type": "string", "enum": ["waehleGehoertes", "waehleBedeutung"] },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "anweisung", "ziel", "ablenker"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "hoeren_schreiben" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "alternativen": { "maxItems": 20, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 600 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "minimalpaare" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "ablenker": { "minItems": 1, "maxItems": 3, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel", "ablenker"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "luecke" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "wort": { "type": "integer", "minimum": 0, "maximum": 80 },
+                    "ablenker": {
+                      "minItems": 1,
+                      "maxItems": 5,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "alternativen": { "maxItems": 10, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel", "wort"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "satzbau" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "alternativen": { "maxItems": 20, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 600 } }
+                  },
+                  "required": ["schluessel", "typ", "ziel"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "formen" },
+                    "lemma": { "type": "string", "maxLength": 120 },
+                    "zeilen": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "spalten": {
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "zellen": {
+                      "minItems": 1,
+                      "maxItems": 96,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "zeile": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+                          "spalte": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+                          "loesungen": {
+                            "minItems": 1,
+                            "maxItems": 10,
+                            "type": "array",
+                            "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                          },
+                          "vorgabe": { "type": "boolean" }
+                        },
+                        "required": ["zeile", "spalte", "loesungen"],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": ["schluessel", "typ", "zeilen", "spalten", "zellen"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "harakat" },
+                    "ziel": { "type": "string", "maxLength": 120 },
+                    "varianten": {
+                      "minItems": 1,
+                      "maxItems": 3,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 120 }
+                    }
+                  },
+                  "required": ["schluessel", "typ", "ziel", "varianten"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "dialog" },
+                    "zeilen": {
+                      "minItems": 1,
+                      "maxItems": 20,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "sprecher": { "type": "string", "enum": ["a", "b"] },
+                          "satz": { "type": "string", "maxLength": 120 }
+                        },
+                        "required": ["sprecher", "satz"],
+                        "additionalProperties": false
+                      }
+                    },
+                    "antwort": { "type": "string", "maxLength": 120 },
+                    "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "zeilen", "antwort", "ablenker"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "geschichte" },
+                    "titel": { "type": "string", "maxLength": 120 },
+                    "zeilen": {
+                      "minItems": 1,
+                      "maxItems": 60,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "sprecher": { "type": "string", "enum": ["a", "b", "c"] },
+                          "satz": { "type": "string", "maxLength": 120 }
+                        },
+                        "required": ["satz"],
+                        "additionalProperties": false
+                      }
+                    },
+                    "fragen": {
+                      "default": [],
+                      "maxItems": 10,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "nach": { "type": "integer", "minimum": 0, "maximum": 59 },
+                          "frage": { "type": "string", "maxLength": 120 },
+                          "antwort": { "type": "string", "maxLength": 120 },
+                          "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                        },
+                        "required": ["nach", "frage", "antwort", "ablenker"],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": ["schluessel", "typ", "zeilen"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "lesen_fragen" },
+                    "titel": { "type": "string", "maxLength": 120 },
+                    "absaetze": { "minItems": 1, "maxItems": 40, "type": "array", "items": { "type": "string", "maxLength": 120 } },
+                    "glossen": {
+                      "default": [],
+                      "minItems": 0,
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": { "type": "string", "maxLength": 120 }
+                    },
+                    "fragen": {
+                      "minItems": 1,
+                      "maxItems": 10,
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "art": { "type": "string", "const": "auswahl" },
+                              "frage": { "type": "string", "maxLength": 120 },
+                              "antwort": { "type": "string", "maxLength": 120 },
+                              "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                            },
+                            "required": ["art", "frage", "antwort", "ablenker"],
+                            "additionalProperties": false
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "art": { "type": "string", "const": "rfn" },
+                              "aussage": { "type": "string", "maxLength": 120 },
+                              "richtig": { "type": "string", "enum": ["richtig", "falsch", "nicht_im_text"] }
+                            },
+                            "required": ["art", "aussage", "richtig"],
+                            "additionalProperties": false
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": ["schluessel", "typ", "absaetze", "fragen"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "grammatik_tipp" },
+                    "tipp": { "type": "string", "pattern": "^t\\d{2}$" }
+                  },
+                  "required": ["schluessel", "typ", "tipp"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "schrift_ar" },
+                    "art": { "type": "string", "enum": ["erkennen", "zuordnen", "lesen", "nachspuren"] },
+                    "ziel": { "type": "string", "pattern": "^[a-z]+$" },
+                    "ablenker": { "minItems": 1, "maxItems": 5, "type": "array", "items": { "type": "string", "pattern": "^[a-z]+$" } },
+                    "form": { "type": "string", "enum": ["anfang", "mitte", "ende"] },
+                    "vokal": { "type": "string", "pattern": "^[a-z-]+$" }
+                  },
+                  "required": ["schluessel", "typ", "art", "ziel"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "schrift_tr" },
+                    "anweisung": { "type": "string", "enum": ["waehleBuchstabe", "waehleWort", "grossKlein"] },
+                    "vorgabe": { "type": "string", "minLength": 1, "maxLength": 60 },
+                    "hoeren": { "type": "string", "maxLength": 120 },
+                    "optionen": {
+                      "minItems": 2,
+                      "maxItems": 6,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "richtig": { "type": "integer", "minimum": 0, "maximum": 5 }
+                  },
+                  "required": ["schluessel", "typ", "anweisung", "optionen", "richtig"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "schrift_latein" },
+                    "anweisung": { "type": "string", "enum": ["waehleBuchstabe", "waehleWort", "grossKlein"] },
+                    "vorgabe": { "type": "string", "minLength": 1, "maxLength": 60 },
+                    "hoeren": { "type": "string", "maxLength": 120 },
+                    "optionen": {
+                      "minItems": 2,
+                      "maxItems": 6,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "richtig": { "type": "integer", "minimum": 0, "maximum": 5 }
+                  },
+                  "required": ["schluessel", "typ", "anweisung", "optionen", "richtig"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "sprechen" },
+                    "satz": { "type": "string", "maxLength": 120 }
+                  },
+                  "required": ["schluessel", "typ", "satz"],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "schluessel": { "type": "string", "maxLength": 120 },
+                    "typ": { "type": "string", "const": "schreiben" },
+                    "aufgabe": { "type": "string", "maxLength": 120 },
+                    "woerter": {
+                      "type": "object",
+                      "properties": {
+                        "min": { "type": "integer", "minimum": 1, "maximum": 600 },
+                        "max": { "type": "integer", "minimum": 1, "maximum": 600 }
+                      },
+                      "required": ["min", "max"],
+                      "additionalProperties": false
+                    },
+                    "pflichtwoerter": {
+                      "minItems": 1,
+                      "maxItems": 10,
+                      "type": "array",
+                      "items": { "type": "string", "minLength": 1, "maxLength": 60 }
+                    },
+                    "muster": { "minItems": 1, "maxItems": 2, "type": "array", "items": { "type": "string", "maxLength": 120 } }
+                  },
+                  "required": ["schluessel", "typ", "aufgabe", "woerter", "muster"],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": ["schluessel", "aufgaben"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "kurs", "stufe", "einheit", "lektionen"],
+  "additionalProperties": false
+}

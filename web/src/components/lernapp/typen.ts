@@ -2,10 +2,11 @@ import type { HinweisSchluessel } from '@/lib/lernapp/abgleich/normalisiere';
 import type { AntwortVon, AufgabenTyp, AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
+import type de from '../../../messages/lernapp/de.json';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
- * (Namensräume `spieler`, `aufgaben` und `tastatur`) und werden mit `format.ts` gefüllt – kein next-intl im Client
+ * (Namensräume `spieler`, `aufgaben`, `tastatur`, `aufgaben2`, `sprechen` und `schreiben`) und werden mit `format.ts` gefüllt – kein next-intl im Client
  * (ADR 0037).
  */
 
@@ -13,7 +14,17 @@ import type { Oberflaeche } from '@/lib/lernapp/kurse';
 export type UiSprache = Oberflaeche;
 export { richtung } from '@/lib/lernapp/kurse';
 
-export type SpielerTexte = {
+/** Texte der Übungstypen aus L2-02 (Namensräume `aufgaben2`, `sprechen`, `schreiben`; Form wie `messages/lernapp/de.json`). */
+export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typeof de)['sprechen']; schreiben: (typeof de)['schreiben'] };
+
+/**
+ * Einstellungen, die der Spieler beachtet (KERN 4.0 §8, ADR 0042 Nr. 8/12): „Hörübungen aus“, „Sprechübungen aus“ (beide aus
+ * den Einstellungen des Profils) und der Schalter `lernapp_sprechen` (Spracherkennung im Browser; aus → nur Selbstvergleich).
+ */
+export type SpielerOptionen = { hoeren: boolean; sprechen: boolean; spracherkennung: boolean };
+export const STANDARD_OPTIONEN: SpielerOptionen = { hoeren: true, sprechen: true, spracherkennung: false };
+
+export type SpielerTexte = WeitereTexte & {
   spieler: {
     fortschritt: string;
     aufgabeVon: string;
@@ -154,11 +165,16 @@ export type AufgabenProps<T extends ImplementierterTyp> = {
   melde: (text: string) => void;
   /** Texte der Sonderzeichenleiste und der arabischen Tastatur */
   tastatur: TastaturTexte;
+  /** Texte der Übungstypen aus L2-02 */
+  weitere: WeitereTexte;
   /**
-   * Aufgabe ohne Bewertung überspringen (Hörübung ohne Audio, Hören auf dem Gerät nicht möglich); mit `typen` auch alle
-   * späteren Aufgaben dieser Typen („Ich kann gerade nicht hören“). Meldung `meldung` in der Live-Region.
+   * Aufgabe ohne Bewertung überspringen (gelesener Tipp, Hörübung ohne Audio, Hören auf dem Gerät nicht möglich, „Ich kann
+   * gerade nicht sprechen“); mit `typen` auch alle späteren Aufgaben dieser Typen („Ich kann gerade nicht hören“). Meldung
+   * `meldung` in der Live-Region.
    */
   ueberspringe: (o?: { typen?: readonly AufgabenTyp[]; meldung?: string }) => void;
   /** Die Aufgabe lässt sich nur überspringen (der Spieler blendet „Prüfen“ aus). */
   nurUeberspringen: (ja: boolean) => void;
+  /** Einstellungen „Hörübungen aus“, „Sprechübungen aus“ und Schalter Spracherkennung */
+  optionen: SpielerOptionen;
 };

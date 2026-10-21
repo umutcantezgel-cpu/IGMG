@@ -11,7 +11,7 @@ import { geraet, heute, meldeStand, merkeWeiter } from '@/lib/lernapp/oberflaech
 import { themaVon } from '@/lib/lernapp/oberflaeche/kursverzeichnis';
 import type { Verzeichnis } from '@/lib/lernapp/paket/typen';
 import type { EinstufungTexte, KandidatenQuelle } from '../Einstufung';
-import type { SpielerTexte } from '../typen';
+import { type SpielerTexte, STANDARD_OPTIONEN } from '../typen';
 import { SpielerGrenze } from './UebenInsel';
 
 /** Der Test als eigener Chunk (KERN 4.0 §9): erst nach „Test beginnen“. */
@@ -213,6 +213,7 @@ export function EinstufungInsel({
           spielerTexte={spielerTexte}
           sprache={ui}
           ziffern={z.ziffern}
+          optionen={{ ...STANDARD_OPTIONEN, hoeren: z.hoeren }}
           onFertig={(e) => void fertig(e).catch(() => setGesichert(true))}
           ergebnisAnsicht={ergebnisAnsicht}
         />

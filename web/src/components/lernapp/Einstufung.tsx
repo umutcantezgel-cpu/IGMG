@@ -15,7 +15,7 @@ import {
   useState,
 } from 'react';
 import { bereiteLexikon, type Lexikon } from '@/lib/lernapp/abgleich';
-import type { Antwort, Aufgabe, AufgabenTyp, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
+import type { Antwort, AufgabenTyp, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import {
   beantworte,
   bedarf,
@@ -29,10 +29,11 @@ import {
 } from '@/lib/lernapp/engine/einstufung';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
 import type { Sprache, Stufe } from '@/lib/lernapp/kurse';
+import { anweisung, loesungSprache, mitPruefen } from './uebungskopf';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
 import { Rueckmeldung } from './Rueckmeldung';
-import type { AufgabenProps, SpielerTexte, UiSprache } from './typen';
+import { type AufgabenProps, type SpielerOptionen, type SpielerTexte, STANDARD_OPTIONEN, type UiSprache } from './typen';
 
 export type EinstufungTexte = {
   titel: string;
@@ -65,6 +66,8 @@ export type EinstufungProps = {
   spielerTexte: SpielerTexte;
   sprache: UiSprache;
   ziffern: Ziffern;
+  /** Einstellungen „Hörübungen aus“ usw. (für die Übungen; die Bank filtert Hörübungen schon in der Insel) */
+  optionen?: SpielerOptionen;
   /** Ergebnis speichern (Ereignis `einstufung`); `null` ohne beantwortete Aufgabe */
   onFertig: (e: EinstufungsErgebnis | null) => void;
   /** Ergebnisansicht (Vorschlag, Links) */
@@ -91,26 +94,6 @@ class Grenze extends Component<{ ersatz: ReactNode; children: ReactNode }, { feh
   }
 }
 
-/** Anweisung ohne eigenes Feld (wie im Spieler): fester Text je Typ. */
-const ANWEISUNG: Partial<Record<AufgabenTyp, string>> = {
-  frei: 'uebersetze',
-  hoeren_schreiben: 'schreibeGehoertes',
-  minimalpaare: 'waehleGehoertes',
-  luecke: 'ergaenze',
-  satzbau: 'ordne',
-  formen: 'ergaenze',
-};
-function anweisung(a: Aufgabe, t: SpielerTexte['aufgaben']): string {
-  const k = ('anweisung' in a && a.anweisung) || ANWEISUNG[a.typ] || '';
-  return (t as unknown as Partial<Record<string, Record<string, string>>>)[a.typ]?.[k] ?? '';
-}
-const loesungSprache = (a: Aufgabe): UiSprache | null =>
-  'sprache' in a
-    ? a.sprache
-    : 'richtig' in a && 'optionen' in a
-      ? ((a.optionen[a.richtig] as { sprache?: UiSprache } | undefined)?.sprache ?? null)
-      : null;
-
 const PRUEFEN =
   'min-h-12 druck self-end rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800 disabled:bg-linie disabled:text-tinte-2';
 
@@ -132,6 +115,7 @@ export function Einstufung({
   spielerTexte,
   sprache,
   ziffern,
+  optionen = STANDARD_OPTIONEN,
   onFertig,
   ergebnisAnsicht,
 }: EinstufungProps) {
@@ -266,7 +250,7 @@ export function Einstufung({
       ) : (
         <form onSubmit={absenden} noValidate data-aufgabe={aufgabe.typ} className="flex flex-col gap-5">
           <h2 id={`${id}-titel`} ref={titel} tabIndex={-1} className="text-24 font-bold outline-none">
-            {anweisung(aufgabe, spielerTexte.aufgaben)}
+            {anweisung(aufgabe, spielerTexte)}
           </h2>
           <Grenze ersatz={<p className="text-18 text-fehler">{spielerTexte.spieler.ladefehler}</p>}>
             <Suspense fallback={<p className="text-18 text-tinte-2">{spielerTexte.spieler.laedt}</p>}>
@@ -283,12 +267,14 @@ export function Einstufung({
                 gibAb={gibAb}
                 melde={setMeldung}
                 tastatur={spielerTexte.tastatur}
+                weitere={spielerTexte}
                 ueberspringe={ueberspringe}
                 nurUeberspringen={setNurWeiter}
+                optionen={optionen}
               />
             </Suspense>
           </Grenze>
-          {aufgabe.typ !== 'paare' && phase === 'frage' && !nurWeiter ? (
+          {mitPruefen(aufgabe) && phase === 'frage' && !nurWeiter ? (
             <button type="submit" disabled={!antwort} className={PRUEFEN}>
               {spielerTexte.spieler.pruefen}
             </button>

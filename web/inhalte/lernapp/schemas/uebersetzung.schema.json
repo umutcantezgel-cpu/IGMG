@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Erzeugt mit `pnpm lernapp:schemas` aus web/src/lib/lernapp/inhalt/schema.ts – nicht von Hand ändern.",
+  "title": "Lern-App: Übersetzungen, Glossen und Tipps einer Richtung (uebersetzung/<richtung>/<stufe>/<einheit>.json)",
+  "type": "object",
+  "properties": {
+    "format": { "type": "string", "const": "igmg-lernapp-uebersetzung" },
+    "version": { "type": "number", "const": 1 },
+    "status": { "default": "entwurf", "type": "string", "enum": ["entwurf", "automatisch_geprueft"] },
+    "richtung": { "type": "string", "enum": ["tr-aus-de", "ar-aus-de", "de-aus-tr", "ar-aus-tr", "de-aus-ar", "tr-aus-ar"] },
+    "einheit": { "type": "string", "maxLength": 120 },
+    "eintraege": {
+      "maxItems": 2000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "bezug": { "type": "string", "maxLength": 120 },
+          "text": { "type": "string", "minLength": 1, "maxLength": 600 },
+          "alternativen": { "maxItems": 30, "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 600 } },
+          "quelle": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(?:ki:[A-Za-z0-9._/:-]{1,180}|tatoeba:\\d{1,12}|kaikki:[A-Za-z0-9._:-]{1,120}|wiktionary:(?:en|de|tr):[^\\s:][^\\n\\r\\t]{0,150}|redaktion|test:[a-z0-9-]{1,60})$"
+          },
+          "lizenz": { "type": "string", "enum": ["CC-BY-SA-4.0", "CC-BY-4.0", "CC-BY-2.0-FR", "CC0-1.0"] },
+          "namensnennung": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "religionsbezug": { "type": "boolean" }
+        },
+        "required": ["bezug", "text", "quelle", "lizenz"],
+        "additionalProperties": false
+      }
+    },
+    "tipps": {
+      "default": [],
+      "maxItems": 20,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schluessel": { "type": "string", "maxLength": 120 },
+          "titel": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "inhalt": {
+            "type": "object",
+            "properties": { "type": { "type": "string", "const": "doc" }, "content": { "maxItems": 200, "type": "array", "items": {} } },
+            "required": ["type"],
+            "additionalProperties": {}
+          },
+          "religionsbezug": { "type": "boolean" },
+          "quelle": {
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^(?:ki:[A-Za-z0-9._/:-]{1,180}|tatoeba:\\d{1,12}|kaikki:[A-Za-z0-9._:-]{1,120}|wiktionary:(?:en|de|tr):[^\\s:][^\\n\\r\\t]{0,150}|redaktion|test:[a-z0-9-]{1,60})$"
+          }
+        },
+        "required": ["schluessel", "inhalt"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["format", "version", "richtung", "einheit", "eintraege"],
+  "additionalProperties": false
+}

@@ -186,6 +186,21 @@ describe('Service Worker der Lern-App', () => {
     expect((await w.anfrage('/lern-app/pakete/tr-aus-de', { mode: 'cors' })!).status).toBe(200);
   });
 
+  it('Worker der Sprechübung: je Bau eine Fassung im Vorrat der Modelle (ältere fallen weg), die Modelldateien bleiben', async () => {
+    const w = ladeWorker({ bau: 'b4' });
+    for (const p of [
+      '/lern-app/modelle/whisper-base-64da572/onnx/encoder_model_quantized.onnx',
+      '/lern-app/modelle/sprechen/whisper.worker.mjs?v=alt',
+      '/lern-app/modelle/sprechen/whisper.worker.mjs?v=neu',
+    ])
+      await w.anfrage(p, { mode: 'cors' })!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect(w.inhalt('igmg-lernapp-modelle')).toEqual([
+      '/lern-app/modelle/sprechen/whisper.worker.mjs?v=neu',
+      '/lern-app/modelle/whisper-base-64da572/onnx/encoder_model_quantized.onnx',
+    ]);
+  });
+
   it('Hülle einer Oberflächensprache auf Bitte der Seite: Start, Fortschritt, Wortschatz, Einstellungen, Quellen und ihre Programmteile', async () => {
     const w = ladeWorker({ bau: 'b3' });
     await w.warte('message', { art: 'schale', ui: 'ar' });

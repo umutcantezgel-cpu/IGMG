@@ -7,7 +7,7 @@ import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from '@/components/lernapp/aufg
 import Reihenfolge from '@/components/lernapp/aufgaben/Reihenfolge';
 import WahrFalsch from '@/components/lernapp/aufgaben/WahrFalsch';
 import Zuordnen from '@/components/lernapp/aufgaben/Zuordnen';
-import type { AufgabenProps, SpielerTexte } from '@/components/lernapp/typen';
+import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/components/lernapp/typen';
 import type { AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import ar from '../../../messages/lernapp/ar.json';
 import de from '../../../messages/lernapp/de.json';
@@ -18,8 +18,22 @@ import de from '../../../messages/lernapp/de.json';
  * Antwort, Quellenzeile aufklappbar, Hinweis „keine Auskunft für eigene Fälle“, Wortform in der Koranschrift. Nur Platzhalter.
  * Bedienung im Browser: E2E `typen-wissen.spec.ts`.
  */
-const TEXTE: SpielerTexte = { spieler: de.spieler, aufgaben: de.aufgaben, tastatur: de.tastatur };
-const TEXTE_AR = { spieler: ar.spieler, aufgaben: ar.aufgaben, tastatur: ar.tastatur } as unknown as SpielerTexte;
+const TEXTE: SpielerTexte = {
+  spieler: de.spieler,
+  aufgaben: de.aufgaben,
+  tastatur: de.tastatur,
+  aufgaben2: de.aufgaben2,
+  sprechen: de.sprechen,
+  schreiben: de.schreiben,
+};
+const TEXTE_AR = {
+  spieler: ar.spieler,
+  aufgaben: ar.aufgaben,
+  tastatur: ar.tastatur,
+  aufgaben2: ar.aufgaben2,
+  sprechen: ar.sprechen,
+  schreiben: ar.schreiben,
+} as unknown as SpielerTexte;
 const nichts = () => undefined;
 const anzahl = (html: string, muster: RegExp) => [...html.matchAll(muster)].length;
 const html = (e: ReactElement) => renderToStaticMarkup(e);
@@ -43,8 +57,10 @@ function props<T extends ImplementierterTyp>(aufgabe: AufgabeVon<T>, teil: Parti
     gibAb: nichts,
     melde: nichts,
     tastatur: TEXTE.tastatur,
+    weitere: TEXTE,
     ueberspringe: nichts,
     nurUeberspringen: nichts,
+    optionen: STANDARD_OPTIONEN,
     ...teil,
   };
 }

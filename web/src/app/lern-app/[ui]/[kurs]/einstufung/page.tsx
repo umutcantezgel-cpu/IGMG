@@ -47,7 +47,14 @@ export default async function Einstufung({ params }: PageProps<'/lern-app/[ui]/[
           kurs={kurs}
           adresse={lernAdresse(ui, kurs)}
           texte={rohTexte(ui, 'einstufung')}
-          spielerTexte={{ spieler: rohTexte(ui, 'spieler'), aufgaben: rohTexte(ui, 'aufgaben'), tastatur: rohTexte(ui, 'tastatur') }}
+          spielerTexte={{
+            spieler: rohTexte(ui, 'spieler'),
+            aufgaben: rohTexte(ui, 'aufgaben'),
+            tastatur: rohTexte(ui, 'tastatur'),
+            aufgaben2: rohTexte(ui, 'aufgaben2'),
+            sprechen: rohTexte(ui, 'sprechen'),
+            schreiben: rohTexte(ui, 'schreiben'),
+          }}
           stufenNamen={rohTexte(ui, 'lernpfad').stufe}
           einheitText={rohTexte(ui, 'lernpfad').einheit}
           lernpfad={{ adresse: lernAdresse(ui, kurs), text: t('ueben.zumLernpfad') }}

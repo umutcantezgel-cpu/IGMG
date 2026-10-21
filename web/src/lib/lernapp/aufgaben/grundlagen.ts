@@ -36,6 +36,9 @@ export const InhaltSchema = z.strictObject({
 });
 export type Inhalt = z.infer<typeof InhaltSchema>;
 
+/** Inhalt mit Pflicht-Audio (Hörübungen der Schrift-Vorkurse). */
+export const MitAudio = z.extend(InhaltSchema, { audio: AudioSchema });
+
 /** Felder jeder Aufgabe: Schlüssel und die Wiederholungskarten, die sie bewertet. */
 export const basis = {
   schluessel: SchluesselSchema,

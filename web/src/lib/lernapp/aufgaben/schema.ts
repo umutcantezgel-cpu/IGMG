@@ -3,43 +3,41 @@ import { LEKTIONS_ARTEN } from '../engine/xp';
 import { SchluesselSchema } from '../ereignisse/typen';
 import * as z from '../z';
 import { type BildWortAntwort, BildWortSchema } from './bild_wort';
+import { type DialogAntwort, DialogSchema } from './dialog';
 import { type FallfrageAntwort, FallfrageSchema } from './fallfrage';
 import { type FormenAntwort, FormenSchema } from './formen';
 import { type FreiAntwort, FreiSchema } from './frei';
-import {
-  ab,
-  AudioSchema,
-  basis,
-  eindeutig,
-  InhaltSchema,
-  liste,
-  Loesungen,
-  mitOptionen,
-  Optionen,
-  roh,
-  SpracheSchema,
-  text,
-} from './grundlagen';
+import { type GeschichteAntwort, GeschichteSchema } from './geschichte';
+import { type GrammatikTippAntwort, GrammatikTippSchema } from './grammatik_tipp';
+import { ab, basis, eindeutig, InhaltSchema, liste, Loesungen, mitOptionen, Optionen, roh, SpracheSchema, text } from './grundlagen';
 import { type HarakatAntwort, HarakatSchema } from './harakat';
 import type { ImplementierterTyp } from './hilfen';
 import { type HoerenSchreibenAntwort, HoerenSchreibenSchema } from './hoeren_schreiben';
 import { type HoerenWaehlenAntwort, HoerenWaehlenSchema } from './hoeren_waehlen';
 import { type KoranWortAntwort, KoranWortSchema } from './koran_wort';
+import { type LesenFragenAntwort, LesenFragenSchema } from './lesen_fragen';
 import { type LueckeAntwort, LueckeSchema } from './luecke';
 import { type MinimalpaareAntwort, MinimalpaareSchema } from './minimalpaare';
 import { type ReihenfolgeAntwort, ReihenfolgeSchema } from './reihenfolge';
 import { type SatzbauAntwort, SatzbauSchema } from './satzbau';
+import { type SchreibenAntwort, SchreibenSchema } from './schreiben';
+import { type SchriftArAntwort, SchriftArSchema } from './schrift_ar';
+import { type SchriftLateinAntwort, SchriftLateinSchema } from './schrift_latein';
+import { type SchriftTrAntwort, SchriftTrSchema } from './schrift_tr';
+import { type SprechenAntwort, SprechenSchema } from './sprechen';
 import { type WahrFalschAntwort, WahrFalschSchema } from './wahr_falsch';
 import { type ZuordnenAntwort, ZuordnenSchema } from './zuordnen';
 
 /**
- * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4 als Gerüst:
+ * Aufgaben und Lektionen der Lern-App (PLAN §4, ADR 0039 Nr. 1). Zod-Union (`zod/mini`, `../z.ts`) über alle Übungstypen aus §4:
  * L1 implementiert `auswahl`, `wortbank` und `paare` (Bewertung in auswahl.ts, wortbank.ts, paare.ts); L2-01 `bild_wort`, `frei`,
  * `hoeren_waehlen`, `hoeren_schreiben`, `minimalpaare`, `luecke`, `satzbau`, `formen` und `harakat` – je Typ eine Datei mit
  * der Zod-Nutzlast (`<typ>.ts`, gemeinsame Bausteine in `grundlagen.ts`) und eine ohne Zod mit Bewertung und reinen
  * Hilfen (`auswertung/<typ>.ts`, nur in den Übungs-Chunks geladen; gemeinsame Hilfen in `hilfen.ts`). L2-03 ergänzt den
  * Wissenskurs (`wahr_falsch`, `zuordnen`, `reihenfolge`, `fallfrage`; gemeinsame Felder in `wissen.ts`) und `koran_wort` nach
- * demselben Muster; ihre Sichtbarkeit entscheidet nur `freigabe.ts` (zwei Freigaben).
+ * demselben Muster; ihre Sichtbarkeit entscheidet nur `freigabe.ts` (zwei Freigaben). L2-02 bringt `dialog`, `geschichte`,
+ * `lesen_fragen`, `grammatik_tipp`, die Schrift-Vorkurse (`schrift_ar`, `schrift_tr`, `schrift_latein`), `sprechen` und
+ * `schreiben` (Zod und Bewertung je Typ in `<typ>.ts`). Seit der Zusammenführung von L2 sind alle Typen aus §4 spielbar.
  *
  * ## Lektionsformat (Eingabe des Spielers `<Spieler lektion={…} />`)
  *
@@ -162,74 +160,19 @@ export const WISSEN_TYPEN = {
   koran_wort: KoranWortSchema,
 } as const;
 
-// ——— L2: Gerüst (Felder nach PLAN §4; Bewertung und Anzeige folgen in L2-02) ———
+// ——— L2-02: implementiert (je Typ eine Datei mit Zod und Bewertung) ———
 
-const MitAudio = z.extend(InhaltSchema, { audio: AudioSchema });
-const Frage = z.strictObject({ frage: InhaltSchema, optionen: Optionen, richtig: ab(0) }).check(z.superRefine(mitOptionen));
-
-export const GERUEST = {
-  dialog: z.strictObject({
-    ...basis,
-    typ: z.literal('dialog'),
-    verlauf: liste(z.strictObject({ sprecher: roh(40), zeile: InhaltSchema }), 1, 20),
-    optionen: Optionen,
-    richtig: ab(0),
-  }),
-  geschichte: z.strictObject({
-    ...basis,
-    typ: z.literal('geschichte'),
-    zeilen: liste(z.strictObject({ sprecher: z.optional(roh(40, 0)), zeile: InhaltSchema }), 1, 60),
-    fragen: z.array(Frage).check(z.maxLength(10)),
-  }),
-  lesen_fragen: z.strictObject({
-    ...basis,
-    typ: z.literal('lesen_fragen'),
-    text: liste(InhaltSchema, 1, 40),
-    fragen: liste(Frage, 1, 10),
-  }),
-  grammatik_tipp: z.strictObject({
-    ...basis,
-    typ: z.literal('grammatik_tipp'),
-    titel: roh(200),
-    abschnitte: z
-      .array(
-        z.strictObject({
-          ueberschrift: z.optional(roh(200, 0)),
-          text: roh(2000),
-          beispiele: z.optional(z.array(InhaltSchema).check(z.maxLength(10))),
-        }),
-      )
-      .check(z.minLength(1)),
-  }),
-  schrift_ar: z.strictObject({
-    ...basis,
-    typ: z.literal('schrift_ar'),
-    art: z.enum(['erkennen', 'zuordnen', 'lesen', 'nachspuren']),
-    ziel: z.string().check(z.regex(/^[a-z]+$/)),
-  }),
-  schrift_tr: z.strictObject({
-    ...basis,
-    typ: z.literal('schrift_tr'),
-    optionen: Optionen,
-    richtig: ab(0),
-    hoeren: z.optional(MitAudio),
-  }),
-  schrift_latein: z.strictObject({
-    ...basis,
-    typ: z.literal('schrift_latein'),
-    optionen: Optionen,
-    richtig: ab(0),
-    hoeren: z.optional(MitAudio),
-  }),
-  sprechen: z.strictObject({ ...basis, typ: z.literal('sprechen'), vorgabe: InhaltSchema, loesungen: Loesungen }),
-  schreiben: z.strictObject({
-    ...basis,
-    typ: z.literal('schreiben'),
-    aufgabe: InhaltSchema,
-    pruefliste: liste(roh(200), 1, 12),
-    muster: InhaltSchema,
-    woerter: z.optional(z.strictObject({ min: ab(0), max: ab(1) })),
-  }),
+/** Übungstypen aus L2-02 (PLAN §4, §4.2–§4.4): Zod je Typ in `aufgaben/<typ>.ts`. */
+export const L2_02 = {
+  dialog: DialogSchema,
+  geschichte: GeschichteSchema,
+  lesen_fragen: LesenFragenSchema,
+  grammatik_tipp: GrammatikTippSchema,
+  schrift_ar: SchriftArSchema,
+  schrift_tr: SchriftTrSchema,
+  schrift_latein: SchriftLateinSchema,
+  sprechen: SprechenSchema,
+  schreiben: SchreibenSchema,
 } as const;
 
 export const AufgabeSchema = z.discriminatedUnion('typ', [
@@ -237,8 +180,8 @@ export const AufgabeSchema = z.discriminatedUnion('typ', [
   WortbankSchema,
   PaareSchema,
   ...Object.values(L2_TYPEN),
+  ...Object.values(L2_02),
   ...Object.values(WISSEN_TYPEN),
-  ...Object.values(GERUEST),
 ]);
 
 export type Aufgabe = z.infer<typeof AufgabeSchema>;
@@ -254,8 +197,8 @@ export const AUFGABEN_TYPEN = [
   'wortbank',
   'paare',
   ...Object.keys(L2_TYPEN),
+  ...Object.keys(L2_02),
   ...Object.keys(WISSEN_TYPEN),
-  ...Object.keys(GERUEST),
 ] as AufgabenTyp[];
 
 export const LektionSchema = z
@@ -292,6 +235,15 @@ export type Antwort =
   | SatzbauAntwort
   | FormenAntwort
   | HarakatAntwort
+  | DialogAntwort
+  | GeschichteAntwort
+  | LesenFragenAntwort
+  | GrammatikTippAntwort
+  | SchriftArAntwort
+  | SchriftTrAntwort
+  | SchriftLateinAntwort
+  | SprechenAntwort
+  | SchreibenAntwort
   | WahrFalschAntwort
   | ZuordnenAntwort
   | ReihenfolgeAntwort

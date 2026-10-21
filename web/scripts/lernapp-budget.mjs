@@ -67,6 +67,16 @@ const TYP_ERKENNUNG = {
   reihenfolge: { alle: ['reihenfolge'], bausteine: ['erklaerung'] },
   fallfrage: { alle: ['fallfrage'], bausteine: ['optionsgruppe', 'erklaerung'] },
   koran_wort: { alle: ['koran_wort'], bausteine: ['optionsgruppe'] },
+  // L2-02: Wahl über die Wahlgruppe, Hörbeispiel über Anhoeren (Nachspuren lädt bei Bedarf einen eigenen Chunk nach)
+  dialog: { alle: ['dialog'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  geschichte: { alle: ['geschichte'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  lesen_fragen: { alle: ['lesen_fragen'], bausteine: ['wahlgruppe'] },
+  grammatik_tipp: { alle: ['grammatik_tipp'] },
+  schrift_ar: { alle: ['schrift_ar'], bausteine: ['wahlgruppe'] },
+  schrift_tr: { alle: ['schrift_wahl'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  schrift_latein: { alle: ['schrift_wahl'], bausteine: ['wahlgruppe', 'anhoeren'] },
+  sprechen: { alle: ['sprechen'], bausteine: ['anhoeren'] },
+  schreiben: { alle: ['schreiben'] },
 };
 /** Texte, die eine Datei einem Typ-Chunk zuordnen (eigene Komponenten und der Abspieler der Hörtypen). */
 const TYP_TEXTE = [
@@ -84,6 +94,14 @@ const TYP_TEXTE = [
   'reihenfolge',
   'fallfrage',
   'koran_wort',
+  'dialog',
+  'geschichte',
+  'lesen_fragen',
+  'grammatik_tipp',
+  'schrift_ar',
+  'schrift_wahl',
+  'sprechen',
+  'schreiben',
 ];
 
 const BUDGET = {

@@ -16,9 +16,16 @@ export const ARABISCH = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\u
 /**
  * Unsichtbares und Kombinierendes, das ein Wort zerreißen oder tarnen kann: alle Format- und kombinierenden Zeichen (u. a.
  * U+00AD weicher Trennstrich, U+034F, U+061C, U+180E, U+200B–U+200F, U+202A–U+202E, U+2060–U+2069, U+FEFF; Harakat sind
- * ebenfalls kombinierend) sowie Zeilen- und Absatztrenner U+2028/U+2029.
+ * ebenfalls kombinierend).
  */
-const UNSICHTBAR = /[\p{Cf}\p{Mn}\p{Me}\u2028\u2029]/gu;
+const UNSICHTBAR = /[\p{Cf}\p{Mn}\p{Me}]/gu;
+/**
+ * Zeilen- und Absatztrenner U+2028/U+2029 trennen Wörter wie ein Leerzeichen; sonst verschmölzen Wörter, die nur durch sie
+ * getrennt sind, und eine Folge aus 4 Wörtern bliebe unerkannt (Restbefund L1). Wer sie mitten in ein Wort setzt, um es zu
+ * zerreißen, fällt über die zweite Lesart ohne Trenner auf ({@link woerterVarianten}).
+ */
+const TRENNER = /[\u2028\u2029]/g;
+const HAT_TRENNER = /[\u2028\u2029]/;
 /** Koranzeichen, die keine kombinierenden Zeichen sind (U+06D6–U+06ED), hohes Hamza und Tatweel. */
 const ZEICHEN = /[\u06D6-\u06ED\u0674\u0640]/g;
 const ALIF = /[\u0622\u0623\u0625\u0671\u0672\u0673\u0675]/g;
@@ -32,6 +39,7 @@ const NICHT_BUCHSTABE = /[^\u0621-\u063A\u0641-\u064A\u0671-\u06D3]+/g;
 export function normalisiere(text) {
   return String(text)
     .normalize('NFKD')
+    .replace(TRENNER, ' ')
     .replace(UNSICHTBAR, '')
     .replace(ZEICHEN, '')
     .replace(ALIF, '\u0627')
@@ -40,9 +48,24 @@ export function normalisiere(text) {
     .replace(/[\u06A9\u06AA]/g, '\u0643');
 }
 
-/** Wörter der normalisierten Form (nur arabische Buchstaben). */
+/** Wörter der normalisierten Form (nur arabische Buchstaben); U+2028/U+2029 trennen wie ein Leerzeichen. */
 export function woerter(text) {
   return normalisiere(text).replace(NICHT_BUCHSTABE, ' ').trim().split(' ').filter(Boolean);
+}
+
+/**
+ * Lesarten eines Texts als Wortlisten: immer mit U+2028/U+2029 als Trenner; enthält der Text solche Trenner, zusätzlich
+ * ohne sie (ein Trenner mitten im Wort zerreißt es sonst). Ein Treffer in einer der Lesarten zählt.
+ */
+export function woerterVarianten(text) {
+  const t = String(text);
+  if (!HAT_TRENNER.test(t)) return [woerter(t)];
+  return [woerter(t), woerter(t.replace(TRENNER, ''))];
+}
+
+/** Enthält der Text Zeilen- oder Absatztrenner (dann zusätzlich {@link vierGrammTreffer} je Text statt nur im Strom)? */
+export function hatTrenner(text) {
+  return HAT_TRENNER.test(String(text));
 }
 
 /**
@@ -176,13 +199,13 @@ function treffer4(w0, w1, w2, w3, index) {
   return null;
 }
 
-/** Erster Treffer einer Folge aus 4 Wörtern im Koran- bzw. Hadith-Index, sonst null. */
+/** Erster Treffer einer Folge aus 4 Wörtern im Koran- bzw. Hadith-Index (in jeder Lesart), sonst null. */
 export function vierGrammTreffer(text, index) {
-  const w = woerter(text);
-  for (let i = 0; i + 4 <= w.length; i++) {
-    const t = treffer4(w[i], w[i + 1], w[i + 2], w[i + 3], index);
-    if (t) return t;
-  }
+  for (const w of woerterVarianten(text))
+    for (let i = 0; i + 4 <= w.length; i++) {
+      const t = treffer4(w[i], w[i + 1], w[i + 2], w[i + 3], index);
+      if (t) return t;
+    }
   return null;
 }
 
@@ -251,13 +274,17 @@ export const LEXIKON_LATEIN = Object.freeze([
   },
 ]);
 
-/** Unsichtbares in lateinischen Texten (Format-Zeichen, U+034F, Zeilen- und Absatztrenner); Diakritika bleiben (ü ≠ u). */
-const UNSICHTBAR_LATEIN = /[\p{Cf}\u034F\u2028\u2029]/gu;
+/** Unsichtbares in lateinischen Texten (Format-Zeichen, U+034F); Diakritika bleiben (ü ≠ u). */
+const UNSICHTBAR_LATEIN = /[\p{Cf}\u034F]/gu;
 
-/** Gefaltete Form lateinischer Texte: NFC, ohne unsichtbare Zeichen, klein (türkisch und allgemein). */
+/**
+ * Gefaltete Formen lateinischer Texte: NFC, ohne unsichtbare Zeichen, klein (türkisch und allgemein); Zeilen- und
+ * Absatztrenner als Leerzeichen und – falls vorhanden – zusätzlich entfernt (wie {@link woerterVarianten}).
+ */
 export function falteLatein(text) {
   const ohne = String(text).normalize('NFC').replace(UNSICHTBAR_LATEIN, '');
-  return [...new Set([ohne.toLocaleLowerCase('tr'), ohne.toLowerCase()])];
+  const lesarten = HAT_TRENNER.test(ohne) ? [ohne.replace(TRENNER, ' '), ohne.replace(TRENNER, '')] : [ohne];
+  return [...new Set(lesarten.flatMap((l) => [l.toLocaleLowerCase('tr'), l.toLowerCase()]))];
 }
 
 /**
@@ -289,15 +316,14 @@ const VORSILBE = /^[\u0648\u0641\u0628\u0644\u0643\u062A]{0,2}$/;
 /** Erster Lexikon-Treffer in einem Text (arabisch und lateinisch), sonst null. Ausgabe ohne arabische Schrift. */
 export function lexikonTreffer(text, lexikon) {
   const t = loeseCodepunkte(text);
-  if (ARABISCH.test(t)) {
-    const w = woerter(t);
-    for (let i = 0; i < w.length; i++)
-      for (const e of lexikon.arabisch) {
-        if (i + e.folge.length > w.length) continue;
-        const erstes = e.folge[0].some((v) => w[i].endsWith(v) && VORSILBE.test(w[i].slice(0, w[i].length - v.length)));
-        if (erstes && e.folge.every((v, j) => j === 0 || v.includes(w[i + j]))) return { name: e.name };
-      }
-  }
+  if (ARABISCH.test(t))
+    for (const w of woerterVarianten(t))
+      for (let i = 0; i < w.length; i++)
+        for (const e of lexikon.arabisch) {
+          if (i + e.folge.length > w.length) continue;
+          const erstes = e.folge[0].some((v) => w[i].endsWith(v) && VORSILBE.test(w[i].slice(0, w[i].length - v.length)));
+          if (erstes && e.folge.every((v, j) => j === 0 || v.includes(w[i + j]))) return { name: e.name };
+        }
   for (const f of falteLatein(t)) for (const e of lexikon.latein) if (e.muster.test(f)) return { name: e.name };
   return null;
 }

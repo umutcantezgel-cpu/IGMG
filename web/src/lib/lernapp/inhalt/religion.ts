@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { baueIndex, baueLexikon, lexikonTreffer, vierGrammStrom, woerter } from '../waechter/kern.mjs';
+import { baueIndex, baueLexikon, hatTrenner, lexikonTreffer, vierGrammStrom, vierGrammTreffer, woerter } from '../waechter/kern.mjs';
 import { hauptVerweis, type InhaltDatei, vorlageTexte } from './schema';
 
 /**
@@ -111,6 +111,8 @@ export function pruefeReligion(
   for (const { pfad, datei } of dateien) {
     const texte = texteVon(datei, bezug);
     const strom: [string, string][] = [];
+    /** Lesart ohne Zeilen- und Absatztrenner (U+2028/U+2029 mitten im Wort) je Text */
+    const einzeln: { korpus: 'koran' | 'hadith'; stelle: string; ort: string }[] = [];
     for (const t of texte) {
       const treffer = lexikonTreffer(t.text, w.lexikon);
       if (treffer && t.religionsbezug !== true)
@@ -118,9 +120,13 @@ export function pruefeReligion(
           `${pfad}: ${t.ort}: Formel-Lexikon (${treffer.name}) ${t.religionsbezug === null ? 'in einem Text ohne Kennzeichen' : 'ohne religionsbezug: true'}`,
         );
       for (const wort of woerter(t.text)) strom.push([wort, t.ort]);
+      if (hatTrenner(t.text)) {
+        const v = vierGrammTreffer(t.text, w.index) as { korpus: 'koran' | 'hadith'; stelle: string } | null;
+        if (v) einzeln.push({ ...v, ort: t.ort });
+      }
     }
     const gemeldet = new Set<string>();
-    for (const t of vierGrammStrom(strom, w.index) as { korpus: 'koran' | 'hadith'; stelle: string; ort: string }[]) {
+    for (const t of [...(vierGrammStrom(strom, w.index) as { korpus: 'koran' | 'hadith'; stelle: string; ort: string }[]), ...einzeln]) {
       if (gemeldet.has(t.ort)) continue;
       gemeldet.add(t.ort);
       befunde.push(`${pfad}: ${t.ort}: ${t.korpus === 'koran' ? 'Koran' : 'Hadith'}-4-Gramm (${t.stelle})`);

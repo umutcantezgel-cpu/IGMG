@@ -12,7 +12,7 @@ import Minimalpaare from '@/components/lernapp/aufgaben/Minimalpaare';
 import Satzbau from '@/components/lernapp/aufgaben/Satzbau';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from '@/components/lernapp/aufgaben/lader';
 import ArabischeTastatur from '@/components/lernapp/tastatur/ArabischeTastatur';
-import type { AufgabenProps, SpielerTexte } from '@/components/lernapp/typen';
+import { type AufgabenProps, type SpielerTexte, STANDARD_OPTIONEN } from '@/components/lernapp/typen';
 import type { AufgabeVon, Auswertung, ImplementierterTyp } from '@/lib/lernapp/aufgaben/schema';
 import de from '../../../messages/lernapp/de.json';
 import { ar } from './hilfen/buckwalter';
@@ -22,7 +22,14 @@ import { ar } from './hilfen/buckwalter';
  * Rollen, Beschriftungen, `lang`/`dir`, Tastenhinweise, „Audio folgt“, Bild-Hinweis erst nach der Antwort, Kopfbezug der
  * Formentabelle, Zeichennamen bei Harakat, Bildschirmtastatur. Bedienung im Browser: E2E `typen-a.spec.ts`.
  */
-const TEXTE: SpielerTexte = { spieler: de.spieler, aufgaben: de.aufgaben, tastatur: de.tastatur };
+const TEXTE: SpielerTexte = {
+  spieler: de.spieler,
+  aufgaben: de.aufgaben,
+  tastatur: de.tastatur,
+  aufgaben2: de.aufgaben2,
+  sprechen: de.sprechen,
+  schreiben: de.schreiben,
+};
 const nichts = () => undefined;
 const T = (text: string, sprache: 'de' | 'tr' | 'ar' = 'tr') => ({ text, sprache });
 const AUDIO = { buendel: '/lern-app/audio/tr/tr.a1.e01-0123456789abcdef.lpa', versatz: 100, laenge: 50 };
@@ -41,8 +48,10 @@ function props<T extends ImplementierterTyp>(aufgabe: AufgabeVon<T>, teil: Parti
     gibAb: nichts,
     melde: nichts,
     tastatur: TEXTE.tastatur,
+    weitere: TEXTE,
     ueberspringe: nichts,
     nurUeberspringen: nichts,
+    optionen: STANDARD_OPTIONEN,
     ...teil,
   };
 }
