@@ -2,9 +2,12 @@
 // JSONL { textHash, text, stimme, sprache, einheit, schluessel, art, woerter } für `_lernapp/werkzeuge/tts/erzeuge.py`.
 // Nie vertont: Religionsbezug, Wissenskurs, Koran-Arabisch-Pfad, Wächter-Treffer (src/lib/lernapp/audio/liste.ts).
 // tr und ar haben keine freigegebene Stimme („Audio folgt“, L3-E10a): Die Liste bleibt leer.
-// Aufruf: pnpm lernapp:audio-liste <de|tr|ar> [--aus <liste.jsonl>] [--manifest <pfad>] [--testkurs] [--inhalte <wurzel>]
+// Aufruf: pnpm lernapp:audio-liste <de|tr|ar> [--aus <liste.jsonl>] [--manifest <pfad>] [--erneuern <wort,…>] [--testkurs]
+//         [--inhalte <wurzel>]
 //   --aus        Datei statt Standardausgabe
 //   --manifest   bisheriges Manifest (Standard: inhalte/lernapp/audio-manifest/<sprache>.json, falls vorhanden)
+//   --erneuern   auch Texte mit diesen Wörtern (kommagetrennt), obwohl ihr Clip vorliegt – nach einer Änderung in
+//                inhalte/lernapp/aussprache/<sprache>.json; menschliche Aufnahmen bleiben
 //   --testkurs   nur der Testkurs (drizzle/seeds/lernapp-test.ts) – Probelauf, nie Produktion
 //   --inhalte    andere Inhaltswurzel (Ordner mit sprache/…), z. B. ein Entwurfsstand im Scratchpad
 // Die Zusammenfassung (nur Zahlen) geht auf stderr.
@@ -26,6 +29,7 @@ const { values, positionals } = parseArgs({
   options: {
     aus: { type: 'string' },
     manifest: { type: 'string' },
+    erneuern: { type: 'string' },
     testkurs: { type: 'boolean', default: false },
     inhalte: { type: 'string' },
   },
@@ -34,13 +38,19 @@ const { values, positionals } = parseArgs({
 function main(): number {
   const sprache = positionals[0];
   if (!istSprache(sprache)) {
-    console.error('Aufruf: pnpm lernapp:audio-liste <de|tr|ar> [--aus <datei>] [--manifest <pfad>] [--testkurs] [--inhalte <wurzel>]');
+    console.error(
+      'Aufruf: pnpm lernapp:audio-liste <de|tr|ar> [--aus <datei>] [--manifest <pfad>] [--erneuern <wort,…>] [--testkurs] [--inhalte <wurzel>]',
+    );
     return 2;
   }
   const quellen = values.testkurs ? testkursQuellen() : inhaltsdateien(values.inhalte ?? INHALT_WURZEL, ['sprache']);
   const manifestPfad = values.manifest ?? join(INHALT_WURZEL, 'audio-manifest', `${sprache}.json`);
   const manifest = existsSync(manifestPfad) ? leseManifest(readFileSync(manifestPfad, 'utf8')) : null;
-  const liste = audioListe(quellen, sprache, { waechter: ladeWaechter(join(WEB, 'daten')), manifest });
+  const erneuern = (values.erneuern ?? '')
+    .split(',')
+    .map((w) => w.trim())
+    .filter(Boolean);
+  const liste = audioListe(quellen, sprache, { waechter: ladeWaechter(join(WEB, 'daten')), manifest, erneuern });
   if (!liste) {
     if (values.aus) writeFileSync(values.aus, '');
     console.error(`lernapp:audio-liste ${sprache}: keine freigegebene Stimme – „Audio folgt“ (L3-E10a), Liste leer.`);
@@ -51,8 +61,9 @@ function main(): number {
   else process.stdout.write(jsonl);
   const zaehle = (g: string) => liste.ausgeschlossen.filter((a) => a.grund === g).length;
   console.error(
-    `lernapp:audio-liste ${sprache}: ${quellen.length} Dateien, ${liste.vertonbar} vertonbare Texte, ${liste.zeilen.length} fehlen ` +
-      `(${liste.zeilen.filter((z) => z.art === 'satz').length} Sätze, ${liste.zeilen.filter((z) => z.art === 'lemma').length} Lemmata); ` +
+    `lernapp:audio-liste ${sprache}: ${quellen.length} Dateien, ${liste.vertonbar} vertonbare Texte, ${liste.zeilen.length} in der Liste ` +
+      `(${liste.zeilen.filter((z) => z.art === 'satz').length} Sätze, ${liste.zeilen.filter((z) => z.art === 'lemma').length} Lemmata` +
+      `${erneuern.length ? `, davon ${liste.erneuert} zum Erneuern` : ''}); ` +
       `ausgeschlossen: ${zaehle('religionsbezug')} Religionsbezug, ${zaehle('gesperrt')} gesperrt, ${zaehle('waechter')} Wächter.`,
   );
   return 0;

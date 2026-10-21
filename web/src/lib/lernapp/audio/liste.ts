@@ -5,6 +5,7 @@ import { leseDateien } from '../inhalt/import';
 import type { Waechter } from '../inhalt/religion';
 import type { AudioManifestDatei, SprachEinheitDatei } from '../inhalt/schema';
 import { textHash } from '../paket/hash';
+import { vergleichsWort } from '../sprechen/auswertung';
 import { vertonbar } from '../verwaltung/audio';
 import { hatTrenner, lexikonTreffer, vierGrammTreffer } from '../waechter/kern.mjs';
 import { stimmeFuer } from './stimmen';
@@ -135,18 +136,43 @@ export function fehlende(texte: readonly VertonbarerText[], manifest: AudioManif
 }
 
 /**
+ * Zum Erneuern: Texte mit einem der Wörter (Vergleichsform wie im Antwortabgleich), auch wenn schon ein Clip der aktuellen
+ * Stimme vorliegt – nach einer Änderung in `aussprache/<sprache>.json` (`--erneuern`). Texte mit menschlicher Aufnahme
+ * bleiben unberührt. Der neue Clip ersetzt im Manifest den alten (Neubau des Bündels, `ergaenzeManifest`).
+ */
+export function mitWoertern(
+  texte: readonly VertonbarerText[],
+  woerter: readonly string[],
+  manifest: AudioManifestDatei | null,
+): VertonbarerText[] {
+  if (!woerter.length) return [];
+  const mensch = new Set((manifest?.clips ?? []).filter((c) => c.stimme.startsWith('mensch:')).map((c) => c.textHash));
+  const gesucht = new Map<Sprache, Set<string>>();
+  const fuer = (sprache: Sprache) => {
+    if (!gesucht.has(sprache)) gesucht.set(sprache, new Set(woerter.map((w) => vergleichsWort(w, sprache)).filter(Boolean)));
+    return gesucht.get(sprache)!;
+  };
+  return texte.filter((t) => !mensch.has(t.textHash) && zerlege(t.text).some((w) => fuer(t.sprache).has(vergleichsWort(w, t.sprache))));
+}
+
+/**
  * Arbeitsliste einer Zielsprache: `null`, wenn die Sprache keine freigegebene Stimme hat (tr, ar: „Audio folgt“).
+ * `erneuern`: zusätzlich die Texte mit diesen Wörtern ({@link mitWoertern}).
  */
 export function audioListe(
   quellen: readonly ImportQuelle[],
   sprache: Sprache,
-  optionen: { waechter: Waechter | null; manifest: AudioManifestDatei | null },
-): { zeilen: ListenZeile[]; vertonbar: number; ausgeschlossen: Ausschluss[] } | null {
+  optionen: { waechter: Waechter | null; manifest: AudioManifestDatei | null; erneuern?: readonly string[] },
+): { zeilen: ListenZeile[]; vertonbar: number; erneuert: number; ausgeschlossen: Ausschluss[] } | null {
   const stimme = stimmeFuer(sprache);
   if (!stimme) return null;
   const { texte, ausgeschlossen } = vertonbareTexte(quellen, sprache, { waechter: optionen.waechter });
-  const zeilen = fehlende(texte, optionen.manifest, stimme.id).map((t) => ({ ...t, stimme: stimme.id }));
-  return { zeilen, vertonbar: texte.length, ausgeschlossen };
+  const fehlt = fehlende(texte, optionen.manifest, stimme.id);
+  const auch = new Set(mitWoertern(texte, optionen.erneuern ?? [], optionen.manifest).map((t) => t.textHash));
+  const erneuert = [...auch].filter((h) => !fehlt.some((t) => t.textHash === h)).length;
+  for (const t of fehlt) auch.add(t.textHash);
+  const zeilen = texte.filter((t) => auch.has(t.textHash)).map((t) => ({ ...t, stimme: stimme.id }));
+  return { zeilen, vertonbar: texte.length, erneuert, ausgeschlossen };
 }
 
 /** Zeilen als JSONL (eine Zeile je Eintrag, Schlüssel in fester Reihenfolge). */

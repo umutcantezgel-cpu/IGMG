@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { testkursQuellen, TESTAUDIO_VERZEICHNIS } from '../../../drizzle/seeds/lernapp-test';
-import { alsJsonl, audioListe, fehlende, leseJsonl, vertonbareTexte, waechterTrifft } from '@/lib/lernapp/audio/liste';
+import { alsJsonl, audioListe, fehlende, leseJsonl, mitWoertern, vertonbareTexte, waechterTrifft } from '@/lib/lernapp/audio/liste';
 import { manifestFehler } from '@/lib/lernapp/audio/import';
 import {
   clipsAusBuendel,
@@ -142,6 +142,34 @@ describe('Arbeitsliste (audio-liste)', () => {
     expect(offen).not.toContain('Brot');
     expect(offen).toContain('Haus');
     expect(offen).toHaveLength(14);
+  });
+
+  it('erneuern: Texte mit den Wörtern trotz Clip der Stimme (nach einer Aussprache-Änderung); menschliche Aufnahme bleibt', () => {
+    const { texte } = vertonbareTexte(testkursQuellen(), 'de', { waechter: null });
+    const m: AudioManifestDatei = {
+      ...leeresManifest('de'),
+      clips: texte
+        .map((t) => ({
+          textHash: t.textHash,
+          buendel: 'lernapp/audio/de/de.a1.e01-0123456789abcdef.lpa',
+          versatz: 100,
+          laenge: 10,
+          dauerMs: 500,
+          stimme: t.text === 'Brot' ? 'mensch:00000000-0000-4000-8000-000000000001' : STIMME,
+          sha256: 'a'.repeat(64),
+          format: 'webm-opus' as const,
+        }))
+        .sort((a, b) => (a.textHash < b.textHash ? -1 : 1)),
+    };
+    expect(audioListe(testkursQuellen(), 'de', { waechter: null, manifest: m })!.zeilen).toEqual([]);
+    const erwartet = texte.filter((t) => /(?<!\p{L})(?:haus|brot)(?!\p{L})/iu.test(t.text) && t.text !== 'Brot').map((t) => t.text);
+    expect(erwartet.length).toBeGreaterThan(1);
+    const l = audioListe(testkursQuellen(), 'de', { waechter: null, manifest: m, erneuern: ['haus', 'BROT'] })!;
+    expect(l.zeilen.map((z) => z.text)).toEqual(erwartet);
+    expect(l.erneuert).toBe(erwartet.length);
+    expect(l.zeilen.every((z) => z.stimme === STIMME)).toBe(true);
+    expect(mitWoertern(texte, ['Hausaufgabe'], m)).toEqual([]);
+    expect(mitWoertern(texte, [], m)).toEqual([]);
   });
 
   it('JSONL: Hin und zurück; ein falscher textHash bricht ab', () => {
