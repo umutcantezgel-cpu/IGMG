@@ -1,5 +1,13 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 05:00 UTC:** L2-Fortsetzung `wf_1f7fcaa5-0e5` läuft (Vorlauf `wf_4f8764fb-9ea` durfte nichts ausführen):
+  zuerst die Vorab-Befunde (Test `verwaltung-tickets` für `sprachpruefung`, Spieler „zusätzlich“ 61,2 > 60 KB, `SchriftWahl` ohne
+  Überspringen, `GrammatikTipp` lang/dir, E2E auf HEAD), dann Schlussprüfungen einmal, Gegenprüfung. **Parallel L3-07 A1:**
+  Arbeitsbaum `.claude/worktrees/inhalte-a1` (Zweig `lernapp-inhalte-a1`, von f2f300f mit den L3-02-Prüfern), Skript
+  `scratchpad/lernapp-inhalte.workflow.js` je Zielsprache (Wortschatzplan + Vorkurs → je Einheit Entwurf → Lektorat →
+  Übersetzung je Richtung → Rückübersetzung → Schlussprüfung; Commits je Schritt unter `flock scratchpad/git-inhalte.lock`):
+  de `wf_4a1a7939-e1c`, tr `wf_0267c2e7-6d3`, ar `wf_12395403-e3e`. Bei Abbruch: Wortschatzplan liegt in
+  `scratchpad/l3/a1/plan-<ziel>.json` → neuer Lauf mit `plan` und `nur` (offene Einheiten), nicht Resume.
 - **Stand 21.10.2026 02:10 UTC:** Container-Neustart während der L2-Zusammenführung. Fertig und gesichert: L2-01, L2-02,
   L2-03/04, L3-02 (`scratchpad/l2/{a1,b1,a2,b2}-ergebnis.json`); Zusammenführung im Arbeitsbaum `agent-a212ace6…` bis f2f300f
   committet. Läuft: `wf_4f8764fb-9ea` (nur Schlussprüfungen der Zusammenführung, dann Gegenprüfung). Danach: Merge in den Branch,
