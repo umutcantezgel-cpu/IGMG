@@ -14,7 +14,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
-import { dirname, join, relative } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -307,5 +307,5 @@ for (const rev of staende) {
   teile.push(bericht(q, zaehle(q)));
 }
 const text = `${teile.join('\n').trimEnd()}\n`;
-if (aus) writeFileSync(join(REPO, aus), text);
+if (aus) writeFileSync(resolve(REPO, aus), text);
 else process.stdout.write(text);
