@@ -1,5 +1,5 @@
 import { OBERFLAECHEN, SPRACHEN } from '../kurse';
-import { LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
+import { GEMELDETE_TYPEN, LEKTIONS_ARTEN, XP_HOECHSTENS } from '../engine/xp';
 import { NOTEN } from '../bewertung';
 import * as z from '../z';
 import { SchluesselSchema } from './schluessel';
@@ -32,6 +32,7 @@ export function istGueltigerTag(tag: string): boolean {
 export const TagSchema = z.string().check(z.refine(istGueltigerTag, 'Lerntag JJJJ-MM-TT'));
 
 export { SchluesselSchema } from './schluessel';
+export { GEMELDETE_TYPEN, type GemeldeterTyp } from '../engine/xp';
 
 /** UUID nach RFC 9562 (crypto.randomUUID ergibt Version 4). */
 export const GeraetSchema = z.uuid('Gerät als UUID');
@@ -96,6 +97,14 @@ export const DATEN = {
       art: z.enum(LEKTIONS_ARTEN),
       richtig: z.int().check(z.minimum(0), z.maximum(1000)),
       gesamt: z.int().check(z.minimum(1), z.maximum(1000)),
+      /** gewertet geübte Aufgabentypen (`GEMELDETE_TYPEN`), je Typ höchstens einmal */
+      typen: z.optional(
+        z.array(z.enum(GEMELDETE_TYPEN)).check(
+          z.minLength(1),
+          z.maxLength(GEMELDETE_TYPEN.length),
+          z.refine((t) => new Set(t).size === t.length, 'je Typ einmal'),
+        ),
+      ),
     })
     .check(z.refine(Quote, 'richtig ≤ gesamt')),
   xp: z.strictObject({

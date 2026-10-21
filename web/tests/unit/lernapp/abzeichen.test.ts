@@ -164,6 +164,35 @@ describe('Ableitung aus dem Protokoll', () => {
     expect(ab(liste, { gruppenziel: '2026-09-07' }).get('gruppe-ziel')?.tag).toBe('2026-09-07');
   });
 
+  it('Erstes Sprechen und Schreiben aus gewöhnlichen Lektionen des Rahmenplans (Feld `typen`, Mangel L7-01 Nr. 1)', () => {
+    // Rahmenpläne kennen nur lektion, geschichte, wiederholung und pruefstein; Sprechen und Schreiben sind Aufgabentypen darin
+    const mit = (schluessel: string, tag: string, typen: ('sprechen' | 'schreiben')[]) =>
+      ereignis('lektion', { kurs: 'de-aus-tr', lektion: schluessel, art: 'lektion', richtig: 3, gesamt: 4, typen }, tag, G2);
+    const ohne = ab([lektion('de-aus-tr.a1.e01.l03', START, 'lektion', 'de-aus-tr')]);
+    expect(ohne.has('erstes-sprechen')).toBe(false);
+    expect(ohne.has('erstes-schreiben')).toBe(false);
+    const m = ab([
+      lektion('de-aus-tr.a1.e01.l03', START, 'lektion', 'de-aus-tr'),
+      mit('de-aus-tr.a1.e01.l04', addiereTage(START, 1), ['sprechen']),
+      mit('de-aus-tr.a1.e02.l04', addiereTage(START, 3), ['sprechen', 'schreiben']),
+    ]);
+    expect(m.get('erstes-sprechen')).toEqual({ id: 'erstes-sprechen', tag: addiereTage(START, 1) });
+    expect(m.get('erstes-schreiben')).toEqual({ id: 'erstes-schreiben', tag: addiereTage(START, 3) });
+    // am Abschluss gilt es als neu (heutiger Lerntag)
+    const heute = addiereTage(START, 1);
+    const a = leiteAb([lektion('de-aus-tr.a1.e01.l03', START), mit('de-aus-tr.a1.e01.l04', heute, ['sprechen'])], heute);
+    expect(abschlussStand(a, heute, new Set(['lektionen-1'])).neu).toEqual(['erstes-sprechen']);
+  });
+
+  it('Feld `typen`: optional; nur Sprechen und Schreiben, je einmal, nicht leer', () => {
+    const daten = { kurs: 'de-aus-tr', lektion: 'de-aus-tr.a1.e01.l04', art: 'lektion', richtig: 1, gesamt: 1 };
+    const kopf = { geraet: G1, seq: 0, am: `${START}T10:00:00.000Z`, tag: START, art: 'lektion' };
+    expect(EreignisSchema.safeParse({ ...kopf, daten }).success).toBe(true);
+    expect(EreignisSchema.safeParse({ ...kopf, daten: { ...daten, typen: ['schreiben', 'sprechen'] } }).success).toBe(true);
+    for (const typen of [[], ['hoeren'], ['sprechen', 'sprechen'], ['sprechen', 'schreiben', 'sprechen'], 'sprechen'])
+      expect(EreignisSchema.safeParse({ ...kopf, daten: { ...daten, typen } }).success, JSON.stringify(typen)).toBe(false);
+  });
+
   it('Tagesziel: Tage mit erreichtem Ziel gesamt (aus der Ableitung); Tag = siebter Zieltag', () => {
     const liste = Array.from({ length: 8 }, (_, i) => lektion(`tr-aus-de.a1.e01.l${zwei(i + 1)}`, addiereTage(START, i * 2)));
     const a = leiteAb(liste, addiereTage(START, 20));

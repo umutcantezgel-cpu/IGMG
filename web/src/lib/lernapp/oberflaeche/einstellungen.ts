@@ -220,6 +220,14 @@ export function pruefeRuhezeit(von: string, bis: string, heute: string, ruhetage
   return null;
 }
 
+/**
+ * Felder, die ein Prüffehler betrifft (`aria-invalid`, Fokus auf das erste): bei `form` nur das ungültige Datum, sonst der
+ * ganze Zeitraum.
+ */
+export function ruhezeitFelder(fehler: RuhezeitFehler, von: string, bis: string): { von: boolean; bis: boolean } {
+  return fehler === 'form' ? { von: !istTag(von), bis: !istTag(bis) } : { von: true, bis: true };
+}
+
 /** Eingetragene Ruhetage des aktiven Profils (abgeleitet, Schlüssel `ruhetage`). */
 export async function ladeRuhetage(): Promise<string[]> {
   const { sp, profil } = await vorhandenesProfil();

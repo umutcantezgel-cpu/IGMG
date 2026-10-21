@@ -13,6 +13,7 @@ import {
   PAUSETAGE,
   pruefeEinstellungen,
   pruefeRuhezeit,
+  ruhezeitFelder,
   STANDARD_EINSTELLUNGEN,
   TAGESZIELE,
   zielAus,
@@ -141,6 +142,18 @@ describe('Einstellungen auf dem Gerät', () => {
     expect(pruefeRuhezeit('2026-07-20', '2026-07-30', heute, schon)).toBeNull();
     // über den Jahreswechsel zählt jedes Jahr für sich
     expect(pruefeRuhezeit('2026-12-30', '2027-01-20', heute, schon)).toBeNull();
+  });
+
+  it('Ruhezeit-Fehler: betroffene Felder (aria-invalid, Fokus auf das erste) – bei der Form nur das ungültige Datum', () => {
+    expect(ruhezeitFelder('form', '', '2026-10-30')).toEqual({ von: true, bis: false });
+    expect(ruhezeitFelder('form', '2026-10-01', '')).toEqual({ von: false, bis: true });
+    expect(ruhezeitFelder('form', '2026-02-30', '2026-02-31')).toEqual({ von: true, bis: true });
+    for (const f of ['reihenfolge', 'zuLang', 'zuWeit', 'jahr'] as const)
+      expect(ruhezeitFelder(f, '2026-10-30', '2026-10-01'), f).toEqual({ von: true, bis: true });
+    // die Insel fokussiert das erste betroffene Feld und meldet jede Meldung als neuen Knoten der Live-Region
+    const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/lernapp/inseln/EinstellungenFormular.tsx'), 'utf8');
+    expect(quelle).toContain('(felder.von ? vonFeld : bisFeld).current?.focus()');
+    expect(quelle).toContain('<span key={meldung.nr}>{meldung.text}</span>');
   });
 
   it('Startstand eines neuen Geräts: leer', () => {

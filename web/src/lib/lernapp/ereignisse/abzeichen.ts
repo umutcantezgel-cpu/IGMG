@@ -23,7 +23,7 @@ import type { Ereignis } from './typen';
  * | wiederholungen | Wiederholungssitzungen | 1, 10, 50 |
  * | pruefsteine | verschiedene Prüfsteine | 1, 10, 25 |
  * | tagesziel | Tage mit erreichtem Tagesziel (gesamt) | 7, 30, 100 |
- * | erstes | erste Sprech- bzw. Schreiblektion | Sprechen, Schreiben |
+ * | erstes | erste gewertete Sprech- bzw. Schreibübung (Feld `typen` des Ereignisses `lektion`; auch Lektionen der Art `sprechen`/`schreiben`) | Sprechen, Schreiben |
  * | einstufung | Einstufungstest gemacht | – |
  * | wissen | erste Lektion je Bereich des Wissenskurses | Grundlagen, Aufbau, Vertiefung |
  * | gruppe | Gruppenziel einer Woche erreicht (Kontext aus L7-02, nur mit Konto und Gruppe) | – |
@@ -165,15 +165,16 @@ export function leiteAbzeichenAb(sortiert: readonly Ereignis[], kontext: Abzeich
       zaehle('woerter', karten.size, e.tag);
     } else if (e.art === 'einstufung') gib('einstufung-test', e.tag);
     else if (e.art === 'lektion') {
-      const { kurs, lektion, art } = e.daten;
+      const { kurs, lektion, art, typen } = e.daten;
       if (art === 'wiederholung') zaehle('wiederholungen', ++wiederholungen, e.tag);
       else if (!lektionen.has(lektion)) {
         lektionen.add(lektion);
         zaehle('lektionen', lektionen.size, e.tag);
       }
       if (art === 'geschichte' && !geschichten.has(lektion)) zaehle('geschichten', geschichten.add(lektion).size, e.tag);
-      if (art === 'sprechen') gib('erstes-sprechen', e.tag);
-      if (art === 'schreiben') gib('erstes-schreiben', e.tag);
+      // Sprechen und Schreiben sind Aufgaben in gewöhnlichen Lektionen (Rahmenplan); das Ereignis nennt sie in `typen`
+      if (art === 'sprechen' || typen?.includes('sprechen')) gib('erstes-sprechen', e.tag);
+      if (art === 'schreiben' || typen?.includes('schreiben')) gib('erstes-schreiben', e.tag);
       const t = teile(lektion);
       const ziel = zielsprache(kurs);
       if (art === 'pruefstein') {

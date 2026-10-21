@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useId, useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState, type ReactNode } from 'react';
+import { flushSync } from 'react-dom';
 import { addiereTage, freieRuhetage, ruhezeitraeume } from '@/lib/lernapp/ereignisse/serie';
 import { formatiere, intlSprache, type Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche, Sprache } from '@/lib/lernapp/kurse';
@@ -10,6 +11,7 @@ import {
   PAUSETAGE,
   pruefeRuhezeit,
   RUHEZEIT_HOECHSTENS,
+  ruhezeitFelder,
   STANDARD_EINSTELLUNGEN,
   TAGESZIELE,
   trageRuhezeitEin,
@@ -79,8 +81,9 @@ function Gruppe({ id, titel, text, children }: { id: string; titel: string; text
 /**
  * Ruhezeit (ADR 0043 Nr. 3): Zeitraum von–bis eintragen (Ereignis `pause`, höchstens 30 Tage am Stück und 30 Tage je
  * Kalenderjahr), vorher oder nachträglich. Geprüft wird vor dem Eintragen (`pruefeRuhezeit`); Fehler stehen als Text am
- * Feld (WCAG 3.3.1), die Bestätigung in der einen Live-Region des Formulars (`melde`). Eingetragene Zeiträume stehen als
- * Liste darunter; das Protokoll nimmt nur Neues an, darum gibt es kein Entfernen.
+ * Feld (WCAG 3.3.1), betroffene Felder tragen `aria-invalid` und die Beschreibung, und der Fokus geht auf das erste
+ * (WCAG 4.1.3: ohne Fokuswechsel bliebe der Fehler stumm). Die Bestätigung kommt in die eine Live-Region des Formulars
+ * (`melde`). Eingetragene Zeiträume stehen als Liste darunter; das Protokoll nimmt nur Neues an, darum gibt es kein Entfernen.
  */
 function Ruhezeit({
   ui,
@@ -98,8 +101,10 @@ function Ruhezeit({
   const [stand, setStand] = useState<{ tage: string[]; jetzt: string } | null>(null);
   const [von, setVon] = useState('');
   const [bis, setBis] = useState('');
-  const [fehler, setFehler] = useState<RuhezeitFehler | null>(null);
+  const [fehler, setFehler] = useState<{ art: RuhezeitFehler; von: boolean; bis: boolean } | null>(null);
   const [laeuft, setLaeuft] = useState(false);
+  const vonFeld = useRef<HTMLInputElement>(null);
+  const bisFeld = useRef<HTMLInputElement>(null);
   const lade = useCallback(
     () =>
       void ladeRuhetage().then(
@@ -123,8 +128,13 @@ function Ruhezeit({
 
   async function eintragen() {
     const f = pruefeRuhezeit(von, bis, jetzt ?? heute(), tage);
-    setFehler(f);
-    if (f) return;
+    const felder = f ? { art: f, ...ruhezeitFelder(f, von, bis) } : null;
+    // erst rendern (aria-invalid, Beschreibung), dann fokussieren: der Screenreader liest Feld, Zustand und Fehlertext
+    flushSync(() => setFehler(felder));
+    if (felder) {
+      (felder.von ? vonFeld : bisFeld).current?.focus();
+      return;
+    }
     setLaeuft(true);
     const ok = await trageRuhezeitEin(ui, von, bis);
     setLaeuft(false);
@@ -149,26 +159,28 @@ function Ruhezeit({
         <label className="flex flex-col gap-1 text-16 font-bold">
           {texte.ruhezeitVon}
           <input
+            ref={vonFeld}
             type="date"
             value={von}
             min={jetzt ? addiereTage(jetzt, -366) : undefined}
             max={jetzt ? addiereTage(jetzt, 366) : undefined}
             onChange={(e) => setVon(e.target.value)}
-            aria-invalid={fehler ? true : undefined}
-            aria-describedby={fehler ? `${id}-fehler` : undefined}
+            aria-invalid={fehler?.von ? true : undefined}
+            aria-describedby={fehler?.von ? `${id}-fehler` : undefined}
             className={DATUM}
           />
         </label>
         <label className="flex flex-col gap-1 text-16 font-bold">
           {texte.ruhezeitBis}
           <input
+            ref={bisFeld}
             type="date"
             value={bis}
             min={von || (jetzt ? addiereTage(jetzt, -366) : undefined)}
             max={jetzt ? addiereTage(jetzt, 366) : undefined}
             onChange={(e) => setBis(e.target.value)}
-            aria-invalid={fehler ? true : undefined}
-            aria-describedby={fehler ? `${id}-fehler` : undefined}
+            aria-invalid={fehler?.bis ? true : undefined}
+            aria-describedby={fehler?.bis ? `${id}-fehler` : undefined}
             className={DATUM}
           />
         </label>
@@ -183,7 +195,7 @@ function Ruhezeit({
       </div>
       {fehler ? (
         <p id={`${id}-fehler`} className="text-16 font-bold text-fehler">
-          {texte.ruhezeitFehler[fehler]}
+          {texte.ruhezeitFehler[fehler.art]}
         </p>
       ) : null}
       {zeitraeume.length ? (
@@ -203,7 +215,8 @@ function Ruhezeit({
 /**
  * Einstellungen auf dem Gerät (PLAN §3.1, ADR 0037 Nr. 7, ADR 0043 Nr. 2–3, KERN 4.0 §7–§8): Ausgangssprache, Tagesziel,
  * Serie (Pausetage je Woche 0–3, Ruhezeit), Ziffern (nur in der arabischen Oberfläche), Hör- und Sprechübungen. Jede Änderung wird sofort gespeichert (kein
- * Absenden, kein Kontextwechsel – WCAG 3.2.2) und in einer Live-Region bestätigt. Formular ohne JavaScript bleibt
+ * Absenden, kein Kontextwechsel – WCAG 3.2.2) und in einer Live-Region bestätigt; jede Meldung ist ein neuer Knoten darin,
+ * damit auch dieselbe Meldung ein zweites Mal angesagt wird (`melde`). Formular ohne JavaScript bleibt
  * lesbar; gespeichert wird im Protokoll des Profils auf dem Gerät (Ereignis `einstellung` bzw. `tagesziel`, kein Netz;
  * mit gebundenem Konto gleicht der Abgleich sie ab).
  */
@@ -218,7 +231,8 @@ export function EinstellungenFormular({
   sprachen: { sprache: Sprache; eigenname: string; dir: 'ltr' | 'rtl' }[];
 }) {
   const [e, setE] = useState<Einstellungen>(STANDARD_EINSTELLUNGEN);
-  const [meldung, setMeldung] = useState('');
+  const [meldung, setMeldung] = useState<{ text: string; nr: number } | null>(null);
+  const melde = useCallback((text: string) => setMeldung((m) => ({ text, nr: (m?.nr ?? 0) + 1 })), []);
   const speicher = useMemo(() => einstellungsSpeicher(ui), [ui]);
   useEffect(() => {
     let aktiv = true;
@@ -235,7 +249,7 @@ export function EinstellungenFormular({
   const aendern = (teil: Partial<Einstellungen>) => {
     const neu = { ...e, ...teil };
     setE(neu);
-    void speicher.speichern(neu).then((ok) => setMeldung(ok ? texte.gespeichert : texte.nichtGespeichert));
+    void speicher.speichern(neu).then((ok) => melde(ok ? texte.gespeichert : texte.nichtGespeichert));
   };
 
   const zahlSprache = (z: Ziffern = e.ziffern) => intlSprache(ui, z);
@@ -302,7 +316,7 @@ export function EinstellungenFormular({
             {formatiere(texte.pausetage, { n }, ui, e.ziffern)}
           </label>
         ))}
-        <Ruhezeit ui={ui} ziffern={e.ziffern} texte={texte} melde={setMeldung} />
+        <Ruhezeit ui={ui} ziffern={e.ziffern} texte={texte} melde={melde} />
       </Gruppe>
 
       {ui === 'ar' ? (
@@ -349,7 +363,7 @@ export function EinstellungenFormular({
       </Gruppe>
 
       <p role="status" className="min-h-6 text-16 font-bold text-gruen-800">
-        {meldung}
+        {meldung ? <span key={meldung.nr}>{meldung.text}</span> : null}
       </p>
     </div>
   );

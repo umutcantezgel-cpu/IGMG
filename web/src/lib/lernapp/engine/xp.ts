@@ -8,6 +8,16 @@
 export const LEKTIONS_ARTEN = ['lektion', 'geschichte', 'wiederholung', 'pruefstein', 'schrift', 'schreiben', 'sprechen'] as const;
 export type LektionsArt = (typeof LEKTIONS_ARTEN)[number];
 
+/**
+ * Aufgabentypen, die das Ereignis `lektion` im optionalen Feld `typen` nennt, wenn die Lektion mindestens eine gewertete
+ * Aufgabe dieses Typs hatte (engine/sitzung.ts). Sprechen und Schreiben sind Aufgaben in gewöhnlichen Lektionen, keine
+ * eigenen Stationen des Rahmenplans; die Abzeichen „Erstes Sprechen“ und „Erstes Schreiben“ (ADR 0043 Nr. 5) folgen daraus
+ * (ereignisse/abzeichen.ts). Ältere Ereignisse ohne das Feld bleiben gültig. Hier statt in ereignisse/typen.ts, damit der
+ * Spieler die Liste ohne Zod bekommt (KERN 4.0 §9).
+ */
+export const GEMELDETE_TYPEN = ['sprechen', 'schreiben'] as const;
+export type GemeldeterTyp = (typeof GEMELDETE_TYPEN)[number];
+
 export const XP: Readonly<Record<Exclude<LektionsArt, 'wiederholung'>, number>> = {
   lektion: 10,
   geschichte: 15,

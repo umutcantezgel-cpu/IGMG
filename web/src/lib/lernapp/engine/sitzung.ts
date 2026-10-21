@@ -3,7 +3,7 @@ import { type Auswertung, type Bewerter, brauchtHoeren, istImplementiert } from 
 import type { Antwort, Aufgabe, AufgabenTyp, Lektion } from '../aufgaben/schema';
 import type { EreignisEntwurf } from '../ereignisse/typen';
 import { noteAus } from '../bewertung';
-import { xpFuer } from './xp';
+import { GEMELDETE_TYPEN, xpFuer } from './xp';
 
 /**
  * Lektionssitzung als reiner Zustandsautomat (PLAN §4 „Ablauf der Lektion“, Vorbild `lib/elifbe/uebung.ts` und
@@ -22,7 +22,8 @@ import { xpFuer } from './xp';
  *   Karten, das Ereignis trägt `selbst: true`.
  * - Am Ende: `lektion` (richtig im ersten Versuch / Zahl der gewerteten Aufgaben, `gewertet`) und `xp` (statisch,
  *   engine/xp.ts; nur mit gewerteter Aufgabe). Wurde alles übersprungen, gilt die Lektion als ohne Fehler durchlaufen
- *   (das Ereignis verlangt `gesamt ≥ 1`), ohne XP.
+ *   (das Ereignis verlangt `gesamt ≥ 1`), ohne XP. `lektion` nennt in `typen` die gewertet geübten Typen aus
+ *   `GEMELDETE_TYPEN` (Sprechen, Schreiben; Abzeichen „Erstes Sprechen/Schreiben“); übersprungene zählen nicht.
  * - Die Funktionen geben neue Zustände und die zu speichernden Ereignis-Entwürfe zurück; Gerät, Nummer, Zeit und
  *   Lerntag ergänzt der Ausgang (lokal/ausgang.ts).
  * - Die Bewertung kommt vom Aufrufer (`pruefe(s, antwort, bewerte)`): der Spieler nimmt die des geladenen Übungs-Chunks,
@@ -135,6 +136,9 @@ const kartenDerSitzung = (s: Sitzung): number =>
       ]),
   ).size;
 
+/** Gewertet geübte Typen aus `GEMELDETE_TYPEN` in fester Reihenfolge (Feld `typen` des Ereignisses `lektion`). */
+const gemeldeteTypen = (s: Sitzung) => GEMELDETE_TYPEN.filter((typ) => s.aufgaben.some((a, i) => a.typ === typ && istGewertet(s, i)));
+
 /** XP dieser Lektion (statisch). */
 export const xpDerSitzung = (s: Sitzung): number => (gewertet(s) ? xpFuer(s.lektion.art, kartenDerSitzung(s)) : 0);
 
@@ -144,6 +148,7 @@ function weiterAb(s: Sitzung, pos: number): Schritt {
   const fertig: Sitzung = { ...s, pos, phase: 'fertig', letzte: null };
   // das Ereignis verlangt gesamt ≥ 1: wurde alles übersprungen, gilt die Lektion als ohne Fehler durchlaufen
   const gesamt = gewertet(s);
+  const typen = gemeldeteTypen(s);
   const ereignisse: EreignisEntwurf[] = [
     {
       art: 'lektion',
@@ -153,6 +158,7 @@ function weiterAb(s: Sitzung, pos: number): Schritt {
         art: s.lektion.art,
         richtig: gesamt ? richtigImErstenVersuch(s) : 1,
         gesamt: Math.max(1, gesamt),
+        ...(typen.length ? { typen } : {}),
       },
     },
   ];

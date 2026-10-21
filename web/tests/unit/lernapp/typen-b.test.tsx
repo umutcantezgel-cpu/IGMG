@@ -258,7 +258,21 @@ describe('Sitzung: Selbstbewertung und Überspringen ohne Wertung', () => {
     expect(r.sitzung.phase).toBe('fertig');
     // Tipp zählt nicht in die Quote; Schreiben wird angenommen (nicht wiederholt)
     expect(zusammenfassung(r.sitzung)).toMatchObject({ richtig: 2, gesamt: 2 });
+    // die Lektion nennt die geübten Typen (Abzeichen „Erstes Sprechen/Schreiben“ aus gewöhnlichen Lektionen)
+    expect(alle.find((e) => e.art === 'lektion')?.daten).toMatchObject({ art: 'lektion', typen: ['sprechen', 'schreiben'] });
     for (const e of alle) expect(EreignisEntwurfSchema.safeParse(e).success).toBe(true);
+  });
+
+  it('übersprungene Sprechübung („Ich kann gerade nicht sprechen“) steht nicht in `typen`; ohne geübte Typen kein Feld', () => {
+    let r = ueberspringe(starte(lektion), {});
+    r = ueberspringe(r.sitzung, { typen: SPRECH_TYPEN });
+    r = pruefe(r.sitzung, { typ: 'schreiben', selbst: 'gut' }, bewerte);
+    r = weiter(r.sitzung);
+    const ereignis = r.ereignisse.find((e) => e.art === 'lektion');
+    expect(ereignis?.daten).toMatchObject({ typen: ['schreiben'] });
+    expect(EreignisEntwurfSchema.safeParse(ereignis).success).toBe(true);
+    const nurTipp = ueberspringe(starte({ ...lektion, aufgaben: [TIPP as unknown as Aufgabe] }));
+    expect(nurTipp.ereignisse.find((e) => e.art === 'lektion')?.daten).not.toHaveProperty('typen');
   });
 
   it('„Ich kann gerade nicht sprechen“ überspringt ohne Wertung; nur Übersprungenes ergibt eine Lektion ohne Fehler', () => {

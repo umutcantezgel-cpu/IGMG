@@ -313,6 +313,20 @@ describe('Schreiben und Lesen', () => {
     expect((await sync(g, [xp(g, 9, vor(5)), xp(g, 9, vor(5))], zweite.cursor)).angenommen).toBe(1);
   });
 
+  it('Lektion mit geübten Typen (Sprechen, Schreiben) kommt unverändert beim anderen Gerät an; fremde Typen abgelehnt', async () => {
+    als(await konto());
+    const g = randomUUID();
+    const mitTypen = (seq: number, typen: unknown) => {
+      const e = lektion(g, seq, vor(10), `tr-aus-de.a1.e01.l0${seq + 1}`);
+      return { ...e, daten: { ...e.daten, typen } };
+    };
+    const a = await sync(g, [mitTypen(0, ['sprechen', 'schreiben']), mitTypen(1, ['hoeren'])]);
+    expect(a.angenommen).toBe(1);
+    expect(a.abgelehnt).toEqual([{ geraet: g, seq: 1 }]);
+    const b = await sync(randomUUID(), []);
+    expect((b.ereignisse as Ereignis[]).map((e) => e.daten)).toEqual([expect.objectContaining({ typen: ['sprechen', 'schreiben'] })]);
+  });
+
   it('Trennung zwischen Konten: Ereignisse, Karten und Zeiger bleiben je Konto', async () => {
     const a = await konto();
     const b = await konto();
