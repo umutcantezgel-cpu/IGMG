@@ -1206,7 +1206,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0056",
-      "text": "In Syrien isst meine Familie viele Linsen.",
+      "text": "In Syrien essen viele Menschen gern Linsen.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1256,7 +1256,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0064",
-      "text": "Ich mag besonders Linsen.",
+      "text": "Ich esse besonders gern Linsen.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1425,7 +1425,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0092",
-      "text": "Danke, Ihnen auch guten Appetit!",
+      "text": "Danke! Das sieht gut aus.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1533,7 +1533,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0110",
-      "text": "Ja, natürlich! Danke schön.",
+      "text": "Ja, gern! Danke schön.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1575,7 +1575,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0117",
-      "text": "Ein Teil ist für dich.",
+      "text": "Ein Teil vom Brot ist für dich.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1733,7 +1733,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0143",
-      "text": "Der Vater von Elif kocht sehr gern.",
+      "text": "Der Vater von Elif heißt Murat. Er kocht sehr gern.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1841,7 +1841,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0161",
-      "text": "Bitte, gern! Es ist schön mit euch.",
+      "text": "Bitte schön! Ich koche gern für euch.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1859,13 +1859,13 @@
     },
     {
       "schluessel": "de.a1.e05.s0164",
-      "text": "Er mag ihn sehr.",
+      "text": "Er findet den Ayran sehr gut.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e05.s0165",
-      "text": "Er mag ihn nicht.",
+      "text": "Er findet den Ayran nicht gut.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2075,7 +2075,7 @@
     },
     {
       "schluessel": "de.a1.e05.s0200",
-      "text": "Heute essen acht Menschen bei uns.",
+      "text": "Zum Frühstück esse ich zwei Eier.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2129,15 +2129,15 @@
         },
         {
           "schluessel": "de.a1.e05.l01.a06",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e05.l01.a07",
           "typ": "luecke",
           "ziel": "de.a1.e05.s0016",
           "wort": 2,
           "ablenker": ["ein", "eine"]
-        },
-        {
-          "schluessel": "de.a1.e05.l01.a07",
-          "typ": "grammatik_tipp",
-          "tipp": "t01"
         },
         {
           "schluessel": "de.a1.e05.l01.a08",
@@ -2553,7 +2553,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e05.s0085",
           "nach": "ziel",
-          "alternativen": ["Wir gehen zum Mittagessen in die Kantine.", "In die Kantine gehen wir zum Mittagessen."],
+          "alternativen": [
+            "Wir gehen zum Mittagessen in die Kantine.",
+            "In die Kantine gehen wir zum Mittagessen.",
+            "Wir gehen in die Kantine zum Mittagessen."
+          ],
           "ablenker": ["im", "isst"]
         },
         {
@@ -2579,7 +2583,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e05.s0086",
-          "ablenker": ["de.a1.e05.s0101", "de.a1.e05.s0105", "de.a1.e05.s0140"]
+          "ablenker": ["de.a1.e05.s0101", "de.a1.e05.s0105", "de.a1.e05.s0093"]
         },
         {
           "schluessel": "de.a1.e05.l04.a14",
@@ -2890,7 +2894,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e05.s0154",
-          "ablenker": ["de.a1.e05.s0152", "de.a1.e05.s0156"]
+          "ablenker": ["de.a1.e05.s0152", "de.a1.e05.s0156", "de.a1.e05.s0140"]
         },
         {
           "schluessel": "de.a1.e05.l06.a05",
@@ -3024,7 +3028,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e05.s0177",
           "nach": "ziel",
-          "alternativen": ["Ich nehme zwei Eier und die Linsen.", "Die Linsen und zwei Eier nehme ich."],
+          "alternativen": [
+            "Ich nehme zwei Eier und die Linsen.",
+            "Die Linsen und zwei Eier nehme ich.",
+            "Zwei Eier und die Linsen nehme ich."
+          ],
           "ablenker": ["Linse", "einen"]
         },
         {
@@ -3192,7 +3200,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e05.s0062",
           "nach": "ziel",
-          "alternativen": ["Lieber trinke ich Saft.", "Saft trinke ich lieber."],
+          "alternativen": ["Lieber trinke ich Saft.", "Saft trinke ich lieber.", "Ich trinke Saft lieber."],
           "ablenker": ["gern", "trinkt"]
         },
         {
@@ -3266,7 +3274,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e05.s0035",
           "nach": "ziel",
-          "alternativen": ["Ich möchte bitte zwei Eier.", "Zwei Eier möchte ich, bitte."],
+          "alternativen": ["Ich möchte bitte zwei Eier.", "Zwei Eier möchte ich, bitte.", "Bitte, ich möchte zwei Eier."],
           "ablenker": ["Ei", "einen"]
         },
         {
@@ -3285,7 +3293,7 @@
           "schluessel": "de.a1.e05.l08.a08",
           "typ": "hoeren_schreiben",
           "ziel": "de.a1.e05.s0200",
-          "alternativen": ["Heute essen 8 Menschen bei uns."]
+          "alternativen": ["Zum Frühstück esse ich 2 Eier."]
         },
         {
           "schluessel": "de.a1.e05.l08.a09",
