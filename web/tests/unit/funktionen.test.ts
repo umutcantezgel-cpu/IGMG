@@ -12,7 +12,7 @@ const prod = { SITE_MODE: 'produktion', NODE_ENV: 'production' };
 describe('Funktionsschalter (ADR 0035)', () => {
   it('Produktion: ohne Angaben ist alles aus – außer den freigegebenen Funktionen ohne Personendaten', () => {
     for (const f of FUNKTIONEN) expect(entscheide(f, prod, null)).toBe(IN_PRODUKTION_AN.includes(f));
-    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt', 'lernapp_ungeprueft', 'lernapp_meldungen']);
+    expect(IN_PRODUKTION_AN).toEqual(['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_meldungen']);
   });
 
   it('Funktionen mit Personendaten sind in der Produktion nie standardmäßig an', () => {

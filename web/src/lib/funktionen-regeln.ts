@@ -33,9 +33,11 @@ export type Funktion = (typeof FUNKTIONEN)[number];
  * Ohne Personendaten und für die Produktion freigegeben – dort standardmäßig an. `hadith_gesamt`: Entscheidung des
  * Nutzers vom 13.10.2026 (gemeinfreie Quelle, Restrisiko der offenen Rechtsprüfung MN-06 trägt die Gemeinde).
  * Lern-App (KERN 4.0 §6): `lernapp_ungeprueft` (Hinweis statt Sperre, ADR 0041 Nr. 8) und `lernapp_meldungen` (anonym,
- * nur Kategorien). Sie wirken erst, wenn `lernapp` selbst an ist (`VORAUSSETZUNGEN`); `lernapp` bleibt bis zur Abnahme aus.
+ * nur Kategorien). Sie wirken erst, wenn `lernapp` selbst an ist (`VORAUSSETZUNGEN`). `lernapp` (ohne Personendaten, Fortschritt
+ * nur auf dem Gerät) ist an: Entscheidung des Nutzers vom 21.10.2026 („Die App ist ein Teil der Seite!“, „ich erlaube dir
+ * alles“, L3-E12a); Abgleich, Gruppen, Bestenliste und Statistik bleiben aus (`MIT_PERSONENDATEN`).
  */
-export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt', 'lernapp_ungeprueft', 'lernapp_meldungen'];
+export const IN_PRODUKTION_AN: readonly Funktion[] = ['hadith_gesamt', 'lernapp', 'lernapp_ungeprueft', 'lernapp_meldungen'];
 
 /** Standard: in Entwicklung und Vorschau an (Vorführung), in der Produktion aus – außer `IN_PRODUKTION_AN`. */
 export function standardFuer(env: UmgebungsWerte, f?: Funktion): boolean {
