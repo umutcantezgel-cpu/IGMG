@@ -8,6 +8,7 @@
       "sprachpruefung": "Sprachprüfung",
       "audio": "Audio-Studio",
       "meldungen": "Meldungen",
+      "befunde": "Befunde",
       "quellen": "Quellen",
       "pruefende": "Prüfende"
     },
@@ -317,6 +318,40 @@
       "entsperrenFrage": "{ziel} wieder freigeben? Der Eintrag erscheint sofort wieder in der App (Stand: {status}).",
       "entsperrenJa": "Ja, freigeben",
       "entsperrtText": "Der Eintrag ist wieder freigegeben."
+    },
+    "befunde": {
+      "titel": "Befunde der Prüfung",
+      "einleitung": "Korrekturvorschläge, Ablehnungen und Kommentare der Prüfenden zum aktuellen Stand der Einträge – ohne Namen der Prüfenden. Die Redaktion arbeitet sie in die Inhaltsdateien ein; ein neuer Stand (neuer Inhalts-Hash) erledigt den Befund.",
+      "kurse": "Kurs",
+      "alle": "Alle ({anzahl})",
+      "kursAnzahl": "{kurs} ({anzahl})",
+      "export": "Für die Inhalts-Pipeline: pnpm lernapp:export-korrekturen schreibt die offenen Befunde und die Korrekturen der Redaktion je Kurs und Einheit als JSON, ohne Personendaten.",
+      "leer": "Keine offenen Befunde.",
+      "einheit": "Einheit {einheit}",
+      "art": {
+        "sprache_ziel": "Zieltext",
+        "sprache_uebersetzung": "Übersetzung",
+        "religioes": "Religiöse Prüfung"
+      },
+      "urteil": {
+        "ok": "In Ordnung, mit Kommentar",
+        "korrektur": "Korrektur",
+        "aenderungsvorschlag": "Änderungsvorschlag",
+        "abgelehnt": "Abgelehnt"
+      },
+      "kategorie": {
+        "bedeutung": "Bedeutung",
+        "grammatik": "Grammatik",
+        "anstoessig": "Anstößig",
+        "aussprache": "Aussprache",
+        "natuerlichkeit": "Natürlichkeit",
+        "zeichensetzung": "Zeichensetzung"
+      },
+      "audio": "Befund zum Clip dieses Texts",
+      "aktuell": "Aktueller Text",
+      "korrektur": "Vorschlag",
+      "kommentar": "Kommentar",
+      "am": "Geprüft am {am}"
     },
     "quellen": {
       "titel": "Quellen",

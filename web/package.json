@@ -24,6 +24,7 @@
     "quran:import": "tsx --env-file-if-exists=.env scripts/quran-import.ts",
     "inhalte:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/inhalte-import.ts",
     "lernapp:import": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/import.ts",
+    "lernapp:export-korrekturen": "tsx --conditions=react-server --env-file-if-exists=.env scripts/lernapp/export-korrekturen.ts",
     "lernapp:pruefen": "tsx --conditions=react-server scripts/lernapp/pruefen.ts",
     "lernapp:schemas": "tsx --conditions=react-server scripts/lernapp/schemas.ts",
     "lernapp:modelle": "node scripts/lernapp-modelle.mjs",

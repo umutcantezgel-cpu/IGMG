@@ -677,3 +677,117 @@ describe('Abfragen in Blöcken und gebündelt (Restmängel L3-06)', () => {
     }
   });
 });
+
+describe('Befunde der Prüfenden und Export der Korrekturen (L3-06b)', () => {
+  it('offen nur zum aktuellen Hash, jüngste Prüfung je Person, Kommentar zu ok zählt; Export je Kurs/Einheit ohne Personendaten', async () => {
+    const { baueKorrekturExport, EXPORT_FORMAT, ladeBefunde, ladeKorrigiert } = await import('@/server/queries/lernapp/korrekturen');
+    const person = (await angemeldetAls(SPRACHE))!;
+    const lemma = async (schluessel: string) =>
+      (await db.select().from(schema.lernappLemma).where(eq(schema.lernappLemma.schluessel, schluessel)))[0]!;
+    const [w1, w3, w4] = [await lemma('de.a1.e01.w001'), await lemma('de.a1.e01.w003'), await lemma('de.a1.e01.w004')];
+    const p = schema.lernappPruefung;
+    const vor = (min: number) => new Date(Date.now() - min * 60_000);
+    await db.insert(p).values([
+      // offen: Korrektur zum aktuellen Hash
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w1.id,
+        inhaltHash: w1.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'korrektur',
+        kategorie: 'natuerlichkeit',
+        korrektur: '[Vorschlag]',
+        kommentar: '[Kommentar]',
+        am: vor(5),
+      },
+      // erledigt: älterer Stand (anderer Hash)
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w1.id,
+        inhaltHash: 'f'.repeat(64),
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'abgelehnt',
+        kategorie: 'bedeutung',
+        am: vor(60),
+      },
+      // aufgehoben: dieselbe Person später „ok“ ohne Kommentar
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w3.id,
+        inhaltHash: w3.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'abgelehnt',
+        kategorie: 'grammatik',
+        am: vor(10),
+      },
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w3.id,
+        inhaltHash: w3.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'ok',
+        am: vor(1),
+      },
+      // „ok“ mit Kommentar: ein Befund für die Redaktion
+      {
+        inhaltTyp: 'lemma',
+        inhaltId: w4.id,
+        inhaltHash: w4.inhaltHash,
+        art: 'sprache_ziel',
+        pruefendeId: person,
+        urteil: 'ok',
+        kommentar: '[Hinweis]',
+        am: vor(2),
+      },
+    ]);
+    const befunde = (await ladeBefunde({ kurs: 'de' })).filter((b) => b.schluessel.startsWith('de.a1.e01.w00'));
+    expect(befunde.map((b) => [b.schluessel, b.urteil, b.korrektur, b.kommentar])).toEqual([
+      ['de.a1.e01.w001', 'korrektur', '[Vorschlag]', '[Kommentar]'],
+      ['de.a1.e01.w004', 'ok', null, '[Hinweis]'],
+    ]);
+    expect(befunde[0]).toMatchObject({ kurs: 'de', einheit: 'de.a1.e01', sprache: 'de', text: w1.lemma, art: 'sprache_ziel' });
+    expect(await ladeBefunde({ kurs: 'tr' })).not.toEqual(expect.arrayContaining([expect.objectContaining({ kurs: 'de' })]));
+
+    // menschliche Korrektur an einer Aufgabe (wie „Fassung ergänzen“)
+    const [aufgabe] = await db.select().from(schema.lernappAufgabe).where(eq(schema.lernappAufgabe.schluessel, 'de.a1.e01.l01.a01'));
+    await db
+      .update(schema.lernappAufgabe)
+      .set({ menschlichGeprueft: true, verfasstVon: person, daten: { ...aufgabe!.daten, alternativen: ['[Fassung B]'] } })
+      .where(eq(schema.lernappAufgabe.id, aufgabe!.id));
+    const korrigiert = await ladeKorrigiert({ kurs: 'de' });
+    expect(korrigiert).toContainEqual(
+      expect.objectContaining({ inhaltTyp: 'aufgabe', schluessel: 'de.a1.e01.l01.a01', alternativen: ['[Fassung B]'] }),
+    );
+
+    const exp = baueKorrekturExport(await ladeBefunde(), await ladeKorrigiert(), new Date('2026-10-21T12:00:00Z'));
+    expect(exp.format).toBe(EXPORT_FORMAT);
+    const de = exp.kurse.find((k) => k.kurs === 'de')!.einheiten.find((e) => e.einheit === 'de.a1.e01')!;
+    expect(de.befunde.find((b) => b.schluessel === 'de.a1.e01.w001')).toEqual({
+      inhaltTyp: 'lemma',
+      art: 'sprache_ziel',
+      urteil: 'korrektur',
+      kategorie: 'natuerlichkeit',
+      korrektur: '[Vorschlag]',
+      kommentar: '[Kommentar]',
+      am: expect.stringMatching(/^\d{4}-\d{2}-\d{2}T/),
+      schluessel: 'de.a1.e01.w001',
+      inhaltHash: w1.inhaltHash,
+      sprache: 'de',
+      text: w1.lemma,
+    });
+    expect(de.korrigiert.map((k) => k.schluessel)).toContain('de.a1.e01.l01.a01');
+    // ohne Personendaten: keine Kennung der Prüfenden oder Verfasser, keine Prüfungs-Kennungen
+    const json = JSON.stringify(exp);
+    expect(json).not.toContain(person);
+    expect(json).not.toMatch(/pruefende|verfasst|benutzer|"id"/);
+    // Aufruf für die Inhalts-Pipeline
+    expect(readFileSync(join(process.cwd(), 'package.json'), 'utf8')).toContain('"lernapp:export-korrekturen": "tsx');
+    expect(readFileSync(join(process.cwd(), 'scripts/lernapp/export-korrekturen.ts'), 'utf8')).toContain(
+      'baueKorrekturExport(befunde, korrigiert',
+    );
+  });
+});
