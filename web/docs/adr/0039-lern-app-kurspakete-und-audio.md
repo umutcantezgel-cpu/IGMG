@@ -76,6 +76,28 @@ Gilt vor Nr. 1–12, wo es abweicht.
 3. **Teilantworten (206)** hält das CDN nie vor (`Vercel-CDN-Cache-Control: no-store`, ohne Tag). 416 hält niemand vor.
 4. **Offen:** Nachweis im Vorschau-Bautest (S5, B2/B5): nach Zurückziehen bzw. Abschalten MISS und 404, Bereichsanfrage MISS.
 
+## Fortschreibung durch L3-05 (21.10.2026, Sprachausgabe-Kette; `_lernapp/werkzeuge/tts/LIESMICH.md`, Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`)
+
+Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
+
+1. **Nr. 6, Kette:** `pnpm lernapp:audio-liste <sprache>` → `_lernapp/werkzeuge/tts/erzeuge.py` (de: eigener ONNX-Export von
+   Coqui-VITS Thorsten, Tokenizer ohne Torch mit Gleichheitsprobe gegen coqui-tts, 4 Prozesse × 1 Thread) →
+   `pnpm lernapp:audio-pruefen` (Prüfkette nach PLAN §6.8 Nr. 6, whisper-base aus `public/lern-app/modelle` in Node ohne Netz;
+   Bericht nur mit Schlüsseln) → `pnpm lernapp:audio-manifest` (Bündel, Manifest, Hochladen nur mit `--hochladen` und Token).
+2. **Stimme:** Kennung `tts:<name>@<erste 16 Hex-Zeichen des SHA-256 der Modelldatei>`; Register je Sprache mit genau einer
+   freigegebenen Stimme oder keiner (`web/src/lib/lernapp/audio/stimmen.ts`); ein neuer Export ist eine neue Stimme.
+3. **Nr. 3, Bündel je Einheit und Stimme:** Ein Bündel nimmt je Text höchstens einen Clip auf; menschliche Aufnahme und
+   Sprachausgabe desselben Texts liegen in getrennten Bündeln der Einheit. Ein Text liegt im Bündel der ersten Einheit, in
+   der er vorkommt (Stufe, gemeinsame vor Vorkurs-Einheiten, Schlüssel); spätere Einheiten verweisen dorthin.
+4. **Manifest und Datenbank:** eine Zeile je Clip (erzeugte Datei, von Prettier ausgenommen). `lernapp:import` gleicht
+   `lernapp_audio` mit dem eingecheckten Manifest ab (`tts:`/`mensch:`; Testtöne bleiben) und bricht bei einem Clip zu einem
+   Text mit Religionsbezug oder bei einer nicht freigegebenen Stimme ab; der Prüfer „audio“ prüft dasselbe samt Wissen und
+   Koran-Pfad.
+5. **S-L1 Nr. 2, Zurückziehen:** `--bereinigen` baut die betroffenen Bündel ohne die nicht mehr vertonbaren Texte neu (neue
+   Adresse); alte Bündel nennt das Skript, gelöscht werden sie erst, wenn kein Paket mehr darauf verweist (Menschen, LM-15).
+6. **Anhören vor dem Hochladen:** `LERNAPP_AUDIO_LOKAL` (Ordner `<sprache>/<datei>.lpa`) – die Route sucht dort vor den
+   Testbündeln, nur ohne `LERNAPP_BLOB_BASIS`; dazu `pnpm lernapp:import --audio-manifest <pfad>` (nur ergänzend).
+
 ## Alternativen
 
 - Ein JSON je Kurs: verworfen. Zu groß für das Offline-Speichern einzelner Stufen, und jede Freigabe änderte die ganze Datei.
