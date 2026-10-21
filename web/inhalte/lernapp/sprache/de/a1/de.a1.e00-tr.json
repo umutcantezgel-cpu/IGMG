@@ -1,0 +1,326 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "de.a1.e00-tr",
+    "reihenfolge": 1,
+    "thema": {
+      "de": "Vorkurs: Deutsche Schreibung für Türkischsprachige",
+      "tr": "Ön kurs: Türkçe bilenler için Almanca yazım",
+      "ar": "دورة تمهيدية: الكتابة الألمانية للناطقين بالتركية"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kenne die Unterschiede zwischen türkischer und deutscher Schreibung, die beim Lesen und Schreiben am häufigsten stören.",
+        "tr": "Okurken ve yazarken en sık karışıklığa yol açan Türkçe ve Almanca yazım farklarını bilirim.",
+        "ar": "أعرف الفروق بين الكتابة التركية والألمانية التي تسبب أكثر الصعوبات في القراءة والكتابة."
+      }
+    ],
+    "nurFuerAusgang": "tr",
+    "kinderGeeignet": true
+  },
+  "lemmata": [],
+  "saetze": [
+    {
+      "schluessel": "de.a1.e00-tr.s0001",
+      "text": "Zeit",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0002",
+      "text": "seit",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0003",
+      "text": "zehn",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0004",
+      "text": "die Straße",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0005",
+      "text": "Deutsch",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0006",
+      "text": "das Jahr",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a1.e00-tr.s0007",
+      "text": "die Uhr",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a1.e00-tr.l01",
+      "art": "schrift",
+      "ziel": {
+        "de": "ä, ö, ü, ß und Großschreibung",
+        "tr": "ä, ö, ü, ß ve büyük harfler",
+        "ar": "ä و ö و ü و ß والحروف الكبيرة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a1.e00-tr.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a02",
+          "typ": "schrift_latein",
+          "anweisung": "waehleWort",
+          "vorgabe": "ä",
+          "optionen": [
+            "Hände",
+            "Ende",
+            "Hund"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a03",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "H_nde",
+          "optionen": [
+            "ä",
+            "e",
+            "a"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a05",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "Stra_e",
+          "hoeren": "de.a1.e00-tr.s0004",
+          "optionen": [
+            "ß",
+            "ş",
+            "s"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a06",
+          "typ": "schrift_latein",
+          "anweisung": "waehleWort",
+          "vorgabe": "ß",
+          "optionen": [
+            "heißen",
+            "Hose",
+            "Haus"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a08",
+          "typ": "schrift_latein",
+          "anweisung": "grossKlein",
+          "vorgabe": "TISCH",
+          "optionen": [
+            "Tisch",
+            "Fisch",
+            "Tasche"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a09",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a10",
+          "typ": "minimalpaare",
+          "ziel": "de.a1.e00-tr.s0001",
+          "ablenker": [
+            "de.a1.e00-tr.s0002"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a11",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ehn",
+          "hoeren": "de.a1.e00-tr.s0003",
+          "optionen": [
+            "z",
+            "s",
+            "c"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a1.e00-tr.s0003",
+          "ablenker": [
+            "de.a1.e00-tr.s0001",
+            "de.a1.e00-tr.s0002"
+          ]
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a13",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a14",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ule",
+          "optionen": [
+            "Sch",
+            "Ş",
+            "S"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a15",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "Deu_",
+          "hoeren": "de.a1.e00-tr.s0005",
+          "optionen": [
+            "tsch",
+            "ç",
+            "ch"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a16",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "_ahr",
+          "hoeren": "de.a1.e00-tr.s0006",
+          "optionen": [
+            "J",
+            "Y",
+            "C"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a17",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a18",
+          "typ": "schrift_latein",
+          "anweisung": "grossKlein",
+          "vorgabe": "i",
+          "optionen": [
+            "I",
+            "İ",
+            "L"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a19",
+          "typ": "schrift_latein",
+          "anweisung": "grossKlein",
+          "vorgabe": "I",
+          "optionen": [
+            "i",
+            "ı",
+            "l"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a20",
+          "typ": "grammatik_tipp",
+          "tipp": "t07"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a21",
+          "typ": "schrift_latein",
+          "anweisung": "waehleWort",
+          "vorgabe": "ei",
+          "optionen": [
+            "drei",
+            "die",
+            "Tee"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a22",
+          "typ": "schrift_latein",
+          "anweisung": "waehleWort",
+          "vorgabe": "ie",
+          "optionen": [
+            "vier",
+            "drei",
+            "Bein"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a23",
+          "typ": "schrift_latein",
+          "anweisung": "waehleWort",
+          "vorgabe": "eu",
+          "optionen": [
+            "heute",
+            "Haus",
+            "Hut"
+          ],
+          "richtig": 0
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a24",
+          "typ": "grammatik_tipp",
+          "tipp": "t08"
+        },
+        {
+          "schluessel": "de.a1.e00-tr.l01.a25",
+          "typ": "schrift_latein",
+          "anweisung": "waehleBuchstabe",
+          "vorgabe": "U_r",
+          "hoeren": "de.a1.e00-tr.s0007",
+          "optionen": [
+            "h",
+            "ğ",
+            "e"
+          ],
+          "richtig": 0
+        }
+      ]
+    }
+  ]
+}
