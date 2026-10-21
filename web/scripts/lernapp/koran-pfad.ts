@@ -119,7 +119,7 @@ const datei: KoranPfadDatei = {
     const nr = (nummer.get(e.stufe) ?? 0) + 1;
     nummer.set(e.stufe, nr);
     const schluessel = `koran.${e.stufe}.e${String(nr).padStart(2, '0')}`;
-    const lektionen = [];
+    const lektionen: KoranPfadDatei['einheiten'][number]['lektionen'] = [];
     for (let i = 0; i < e.formen.length; i += JE_LEKTION) {
       const teil = e.formen.slice(i, i + JE_LEKTION);
       // die letzte Lektion bekommt mindestens zwei Wortformen (Ablenker aus derselben Lektion)
@@ -131,7 +131,7 @@ const datei: KoranPfadDatei = {
       lektionen.push({
         schluessel: lschluessel,
         wortformen: teil.map((f) => f.stelle),
-        aufgaben: [] as KoranPfadDatei['einheiten'][number]['lektionen'][number]['aufgaben'],
+        aufgaben: [],
       });
     }
     for (const l of lektionen)
