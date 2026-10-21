@@ -53,7 +53,8 @@ test('Fortschritt, Serie und Abzeichen aus dem Protokoll; Pausetage und Ruhezeit
   // Einstellungen: ein Pausetag je Woche, Ruhezeit (Fehler als Text, dann eingetragen)
   await page.goto('/lern-app/de/einstellungen');
   const gespeichert = page.getByText(de.einstellungen.gespeichert, { exact: true });
-  await page.getByRole('radio', { name: formatiere(de.einstellungen.pausetage, { n: 2 }, 'de') }).check();
+  // Standard sind 2 Pausetage: erst 3, dann 1 wählen (zwei Speicherungen mit derselben Meldung)
+  await page.getByRole('radio', { name: formatiere(de.einstellungen.pausetage, { n: 3 }, 'de') }).check();
   await expect(gespeichert).toBeVisible();
   // dieselbe Meldung noch einmal: neuer Knoten in der Live-Region, damit sie wieder angesagt wird
   const ersteMeldung = await gespeichert.elementHandle();
