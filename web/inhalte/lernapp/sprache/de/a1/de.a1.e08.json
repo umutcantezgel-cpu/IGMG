@@ -15,7 +15,7 @@
     "kannBeschreibungen": [
       {
         "de": "Ich kann sagen, was ich in meiner Freizeit gern mache und was nicht.",
-        "tr": "Boş zamanımda neyi severek yaptığımı ve neyi yapmadığımı söyleyebilirim.",
+        "tr": "Boş zamanımda neyi yapmayı sevdiğimi ve neyi sevmediğimi söyleyebilirim.",
         "ar": "أستطيع أن أقول ماذا أحب أن أفعل في وقت فراغي وماذا لا أحب."
       },
       {
@@ -1891,7 +1891,7 @@
     },
     {
       "schluessel": "de.a1.e08.s0168",
-      "text": "Yazan gewinnt.",
+      "text": "Elif gewinnt.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1933,13 +1933,13 @@
     },
     {
       "schluessel": "de.a1.e08.s0175",
-      "text": "Schade! Bist du am Mittwoch frei?",
+      "text": "Schade! Bist du am Freitag frei?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e08.s0176",
-      "text": "Ja, am Mittwoch habe ich Zeit. Warum?",
+      "text": "Ja, am Freitag habe ich Zeit. Warum?",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2457,7 +2457,7 @@
             }
           ],
           "antwort": "de.a1.e08.s0059",
-          "ablenker": ["de.a1.e08.s0064", "de.a1.e08.s0062"]
+          "ablenker": ["de.a1.e08.s0045", "de.a1.e08.s0062"]
         },
         {
           "schluessel": "de.a1.e08.l03.a15",
@@ -2716,6 +2716,14 @@
           "zeilen": [
             {
               "sprecher": "a",
+              "satz": "de.a1.e08.s0080"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0110"
+            },
+            {
+              "sprecher": "a",
               "satz": "de.a1.e08.s0122"
             }
           ],
@@ -2881,7 +2889,7 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e08.s0147",
           "nach": "ziel",
-          "alternativen": ["Laylā und Elif fahren Fahrrad."],
+          "alternativen": ["Laylā und Elif fahren Fahrrad.", "Fahrrad fahren Elif und Laylā.", "Fahrrad fahren Laylā und Elif."],
           "ablenker": ["fährt", "Ball"]
         },
         {
@@ -2958,6 +2966,14 @@
           "schluessel": "de.a1.e08.l06.a06",
           "typ": "dialog",
           "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0174"
+            },
             {
               "sprecher": "a",
               "satz": "de.a1.e08.s0175"
@@ -3075,7 +3091,7 @@
             }
           ],
           "antwort": "de.a1.e08.s0011",
-          "ablenker": ["de.a1.e08.s0064", "de.a1.e08.s0022"]
+          "ablenker": ["de.a1.e08.s0064", "de.a1.e08.s0003"]
         },
         {
           "schluessel": "de.a1.e08.l07.a06",
@@ -3098,7 +3114,7 @@
           "typ": "auswahl",
           "anweisung": "waehleWort",
           "ziel": "de.a1.e08.klar",
-          "ablenker": ["de.a1.e03.hell", "de.a1.e06.teuer"]
+          "ablenker": ["de.a1.e03.neu", "de.a1.e06.teuer"]
         },
         {
           "schluessel": "de.a1.e08.l07.a09",
@@ -3117,7 +3133,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e08.s0058",
           "wort": 1,
-          "ablenker": ["Spiele", "Spielen"]
+          "ablenker": ["Spiele", "Ball"]
         },
         {
           "schluessel": "de.a1.e08.l07.a11",
@@ -3232,10 +3248,23 @@
         },
         {
           "schluessel": "de.a1.e08.l08.a04",
-          "typ": "hoeren_waehlen",
-          "anweisung": "waehleGehoertes",
-          "ziel": "de.a1.e08.s0019",
-          "ablenker": ["de.a1.e08.s0018", "de.a1.e08.s0003"]
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0018"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a1.e08.s0019"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a1.e08.s0091"
+            }
+          ],
+          "antwort": "de.a1.e08.s0099",
+          "ablenker": ["de.a1.e08.s0061", "de.a1.e08.s0117"]
         },
         {
           "schluessel": "de.a1.e08.l08.a05",
@@ -3254,7 +3283,8 @@
           "typ": "luecke",
           "ziel": "de.a1.e08.s0010",
           "wort": 2,
-          "ablenker": ["backe", "backen"]
+          "ablenker": ["backe", "backen"],
+          "alternativen": ["bäckt"]
         },
         {
           "schluessel": "de.a1.e08.l08.a07",
