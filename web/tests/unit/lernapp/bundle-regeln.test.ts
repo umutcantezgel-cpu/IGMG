@@ -200,6 +200,15 @@ describe('Zod erst bei Bedarf (TBT der Spieler-Routen, Befund der L1-Gegenprüfu
       "import('@/lib/lernapp/lokal/ausgang')",
     );
   });
+
+  it('der Spieler holt den nächsten Übungstyp erst ab der ersten Eingabe (beim Öffnen lädt nur die erste Aufgabe)', () => {
+    const text = readFileSync(join(WURZEL, 'components', 'lernapp', 'Spieler.tsx'), 'utf8');
+    const vorladen = /useEffect\(\(\) => \{\s*const naechste[\s\S]*?\}, \[([^\]]*)\]\);/.exec(text);
+    expect(vorladen, 'Vorladen des nächsten Typs').not.toBeNull();
+    expect(vorladen![0]).toMatch(/if \(eingabe && naechste/);
+    expect(vorladen![1].split(',').map((x) => x.trim())).toContain('eingabe');
+    expect(text).toContain('const eingabe = useErsteEingabe();');
+  });
 });
 
 describe('Sprachmodell nur im Worker', () => {

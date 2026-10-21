@@ -39,8 +39,8 @@ import { type AufgabenProps, type SpielerOptionen, type SpielerTexte, STANDARD_O
 /**
  * Lektionsspieler (PLAN §4, KERN §7–§9): spielt eine Lektion als reinen Zustandsautomaten (engine/sitzung.ts) und meldet
  * jedes Ereignis über `onEreignis` (Gerät, Nummer, Zeit und Lerntag ergänzt der Ausgang, lokal/ausgang.ts). Übungstypen
- * laden als eigene Chunks per `import()` (aufgaben/lader.ts), der nächste wird vorab geholt; jeder Chunk bringt seine
- * Bewertung mit (`bewerterFuer`), die Route enthält keine. Texte kommen als Prop aus
+ * laden als eigene Chunks per `import()` (aufgaben/lader.ts), der nächste wird ab der ersten Eingabe vorab geholt; jeder
+ * Chunk bringt seine Bewertung mit (`bewerterFuer`), die Route enthält keine. Texte kommen als Prop aus
  * `messages/lernapp/<ui>.json` (Namensräume `spieler` und `aufgaben`) und werden mit `format.ts` gefüllt.
  *
  * ```tsx
@@ -100,6 +100,23 @@ class Ladegrenze extends Component<{ ersatz: ReactNode; children: ReactNode }, {
   }
 }
 
+/** Ereignisse, die als erste Eingabe gelten (Zeiger, Taste; Klick auch für Screenreader im Lesemodus). */
+const EINGABEN = ['pointerdown', 'keydown', 'click'] as const;
+
+/** `true` ab der ersten Eingabe auf der Seite (einmal, in der Einfangphase). */
+function useErsteEingabe(): boolean {
+  const [da, setDa] = useState(false);
+  useEffect(() => {
+    if (da) return;
+    const an = () => setDa(true);
+    for (const art of EINGABEN) document.addEventListener(art, an, { capture: true, once: true });
+    return () => {
+      for (const art of EINGABEN) document.removeEventListener(art, an, { capture: true });
+    };
+  }, [da]);
+  return da;
+}
+
 const KNOPF = 'min-h-12 druck rounded-pill bg-gruen-700 px-8 font-bold text-weiss hover:bg-gruen-800';
 
 export function Spieler({
@@ -136,11 +153,13 @@ export function Spieler({
     else titel.current?.focus();
   }, [s.phase, s.pos]);
 
-  // nächsten Übungstyp vorab laden (eigener Chunk mit Bewertung, KERN §9)
+  // nächsten Übungstyp vorab laden (eigener Chunk mit Bewertung, KERN §9) – ab der ersten Eingabe, damit beim Öffnen nur
+  // die erste Aufgabe lädt (Spieler-Route: zusätzlich zur Hülle ≤ 60 KB, TBT)
+  const eingabe = useErsteEingabe();
   useEffect(() => {
     const naechste = s.aufgaben[s.reihe[s.pos + 1] ?? -1];
-    if (naechste && naechste.typ in AUFGABEN_LADER) void ladeTyp(naechste.typ as ImplementierterTyp).catch(() => undefined);
-  }, [s.aufgaben, s.reihe, s.pos]);
+    if (eingabe && naechste && naechste.typ in AUFGABEN_LADER) void ladeTyp(naechste.typ as ImplementierterTyp).catch(() => undefined);
+  }, [eingabe, s.aufgaben, s.reihe, s.pos]);
 
   const sende = (ereignisse: EreignisEntwurf[]) => ereignisse.forEach((e) => onEreignis(e));
 
