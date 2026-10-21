@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 08:30 UTC – Tor L2 grün, FF `main`.** `scratchpad/tor-l2.log`: check grün (ein Prüfer-Test riss unter Last
+  die 5-s-Grenze → 30 s, 15d0a36), Sprachen, Religion, Wortlaut rc=0, Import-Bau 2.048 Seiten, Sweep/Crawl ohne 5xx, Budgets
+  eingehalten, Lern-App-E2E 73 grün, Vorschau `success`. TBT unter Last 321/268/334 ms (CPU-Index 1.680–1.960 statt ≈ 2.900) –
+  kein Tor-Kriterium L2, ruhige Nachmessung bis L8 (LZ-06). Laufen weiter: L3-06 `wf_a48f4bea-ac5`, A1 `wf_4786ad44-05d`.
 - **Stand 21.10.2026 08:10 UTC:** L2-Gegenprüfung Runde 2 **frei** (`wf_42e62a63-56e`; Mängelrunde fc096a5…65863b8:
   Lizenztexte neben den Whisper-Gewichten, Sprechübung lädt nie still nach, Sprachangaben der Barrierefreiheits-Namen u. a.;
   Rest nur niedrig: @huggingface/jinja-Hinweis → Lizenzverzeichnis L8, Überspringen späterer schrift_*-Hörbeispiele,

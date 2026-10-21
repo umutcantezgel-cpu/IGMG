@@ -1069,8 +1069,8 @@ L0-E01…L0-E19 und der Plan-Aufgaben ML-01…ML-06 steht dort.
 |---|---|---|---|---|
 | L0 Grundlagen | fertig | grün 20.10.2026 (8 Belege, Gegenprüfung frei, Religion und Wortlaut rc=0) | d1a754e | ADR 0037–0045 angenommen mit Fortschreibungen; Stimmen tr/ar „Audio folgt“ (L3-E10a) |
 | L1 Kern | fertig | grün 20.10.2026: check (2.937 Unit), Import-Bau + Crawl 1.315 Adressen ohne 5xx, E2E Website 1.007 + Lern-App 53 grün, Vorschau-Bau; Gegenprüfung frei, S-L1 ohne hoch/kritisch | 06651b3 (Merge), Tor 46a5d31 | Budgets: Hülle 2,7 KB eigen, Spieler-Route 194 KB; 53 E2E grün |
-| L2 Übungstypen | | | | |
-| L3 Pipeline + A1 | L3-01 fertig (20.10.2026) | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
+| L2 Übungstypen | fertig (inkl. L3-02 Schemas und Prüfer) | grün 21.10.2026: check (3.276 Unit + Prüfer-Datei 31/31 nach Zeitgrenze 30 s), Sprachen, Religion, Wortlaut rc=0, Import-Bau 2.048 Seiten + Sweep 0 × 5xx + Crawl 1.315 Adressen, Produktionsbau: Budgets eingehalten, Lern-App-E2E 73 grün; Vorschau `success` (igmg, igmg-wetzlar); Gegenprüfung Runde 2 frei | f5a9d04 (Merge), 15d0a36 | 26 Übungstypen je ≤ 8 KB, Spieler-Route 190,1 KB (+53,4); TBT nur unter Last gemessen (321/268/334 ms bei CPU-Index 1.680–1.960 statt ≈ 2.900; ruhige Nachmessung bis L8, LZ-06); Whisper-base q8 statisch im Repository (ADR 0042) |
+| L3 Pipeline + A1 | L3-01, L3-02, L3-04 fertig; L3-06 und L3-07 laufen | Lektorat de/tr/ar frei | 95d4d24 | Leitfaden, Rahmen 3 × 72 Einheiten, Kontrast 6 Richtungen; LM-02 offen; Restpunkte `lehrplan/LEKTORAT-OFFEN.md` |
 | L4 A2–B1 | | | | |
 | L5 B2–C1 | | | | |
 | L6 Wissen + Koran-Arabisch | | | | |
