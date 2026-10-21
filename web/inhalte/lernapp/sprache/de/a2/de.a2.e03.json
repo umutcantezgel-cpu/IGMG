@@ -1,0 +1,4015 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e03",
+    "reihenfolge": 4,
+    "thema": {
+      "de": "Ein Geschenk für Oma",
+      "tr": "Büyükanne için bir hediye",
+      "ar": "هدية للجدة"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann sagen, wem ich was schenke und warum es der Person gefällt.",
+        "tr": "Kime ne hediye ettiğimi ve bunun o kişinin neden hoşuna gittiğini söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا أهدي ولمن، ولماذا تعجب الهدية ذلك الشخص."
+      },
+      {
+        "de": "Ich kann jemandem gratulieren und mich für ein Geschenk bedanken.",
+        "tr": "Birini tebrik edebilir ve bir hediye için teşekkür edebilirim.",
+        "ar": "أستطيع أن أهنئ شخصًا وأن أشكره على هدية."
+      }
+    ],
+    "symbol": "gift",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e03.dafuer",
+      "lemma": "dafür",
+      "wortart": "adverb",
+      "merkmale": {
+        "gebrauch": "Pronominaladverb (Danke dafür!)"
+      },
+      "frequenzRang": 150,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.schenken",
+      "lemma": "schenken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schenken",
+        "praes_ich": "schenke",
+        "praes_du": "schenkst",
+        "praes_er_sie_es": "schenkt",
+        "praes_wir": "schenken",
+        "praes_ihr": "schenkt",
+        "praes_sie_Sie": "schenken",
+        "partizip_2": "geschenkt"
+      },
+      "frequenzRang": 2074,
+      "quelle": "wiktionary:de:schenken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schenken‘ (https://de.wiktionary.org/wiki/schenken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.danken",
+      "lemma": "danken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "danken",
+        "praes_ich": "danke",
+        "praes_du": "dankst",
+        "praes_er_sie_es": "dankt",
+        "praes_wir": "danken",
+        "praes_ihr": "dankt",
+        "praes_sie_Sie": "danken",
+        "partizip_2": "gedankt"
+      },
+      "frequenzRang": 2522,
+      "quelle": "wiktionary:de:danken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚danken‘ (https://de.wiktionary.org/wiki/danken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gratulieren",
+      "lemma": "gratulieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "gratulieren",
+        "praes_ich": "gratuliere",
+        "praes_du": "gratulierst",
+        "praes_er_sie_es": "gratuliert",
+        "praes_wir": "gratulieren",
+        "praes_ihr": "gratuliert",
+        "praes_sie_Sie": "gratulieren",
+        "partizip_2": "gratuliert"
+      },
+      "frequenzRang": 4314,
+      "quelle": "wiktionary:de:gratulieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚gratulieren‘ (https://de.wiktionary.org/wiki/gratulieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.feiern",
+      "lemma": "feiern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "feiern",
+        "praes_ich": "feiere",
+        "praes_du": "feierst",
+        "praes_er_sie_es": "feiert",
+        "praes_wir": "feiern",
+        "praes_ihr": "feiert",
+        "praes_sie_Sie": "feiern",
+        "partizip_2": "gefeiert"
+      },
+      "frequenzRang": 623,
+      "quelle": "wiktionary:de:feiern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚feiern‘ (https://de.wiktionary.org/wiki/feiern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.erwarten",
+      "lemma": "erwarten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erwarten",
+        "praes_ich": "erwarte",
+        "praes_du": "erwartest",
+        "praes_er_sie_es": "erwartet",
+        "praes_wir": "erwarten",
+        "praes_ihr": "erwartet",
+        "praes_sie_Sie": "erwarten",
+        "partizip_2": "erwartet"
+      },
+      "frequenzRang": 388,
+      "quelle": "wiktionary:de:erwarten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erwarten‘ (https://de.wiktionary.org/wiki/erwarten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.ueberraschen",
+      "lemma": "überraschen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "überraschen",
+        "praes_ich": "überrasche",
+        "praes_du": "überraschst",
+        "praes_er_sie_es": "überrascht",
+        "praes_wir": "überraschen",
+        "praes_ihr": "überrascht",
+        "praes_sie_Sie": "überraschen",
+        "partizip_2": "überrascht"
+      },
+      "frequenzRang": 4562,
+      "quelle": "wiktionary:de:überraschen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚überraschen‘ (https://de.wiktionary.org/wiki/überraschen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.vorbereiten",
+      "lemma": "vorbereiten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "vor"
+      },
+      "formen": {
+        "infinitiv": "vorbereiten",
+        "verbzusatz": "vor",
+        "praes_ich": "bereite",
+        "praes_du": "bereitest",
+        "praes_er_sie_es": "bereitet",
+        "praes_wir": "bereiten",
+        "praes_ihr": "bereitet",
+        "praes_sie_Sie": "bereiten",
+        "imp_du": "bereite",
+        "imp_ihr": "bereitet",
+        "partizip_2": "vorbereitet"
+      },
+      "frequenzRang": 1520,
+      "quelle": "wiktionary:de:vorbereiten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚vorbereiten‘ (https://de.wiktionary.org/wiki/vorbereiten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.decken",
+      "lemma": "decken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "decken",
+        "praes_ich": "decke",
+        "praes_du": "deckst",
+        "praes_er_sie_es": "deckt",
+        "praes_wir": "decken",
+        "praes_ihr": "deckt",
+        "praes_sie_Sie": "decken",
+        "partizip_2": "gedeckt"
+      },
+      "frequenzRang": 2226,
+      "quelle": "wiktionary:de:decken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚decken‘ (https://de.wiktionary.org/wiki/decken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.schneiden",
+      "lemma": "schneiden",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "schneiden",
+        "praes_ich": "schneide",
+        "praes_du": "schneidest",
+        "praes_er_sie_es": "schneidet",
+        "praes_wir": "schneiden",
+        "praes_ihr": "schneidet",
+        "praes_sie_Sie": "schneiden",
+        "partizip_2": "geschnitten"
+      },
+      "frequenzRang": 992,
+      "quelle": "wiktionary:de:schneiden",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚schneiden‘ (https://de.wiktionary.org/wiki/schneiden), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.probieren",
+      "lemma": "probieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "probieren",
+        "praes_ich": "probiere",
+        "praes_du": "probierst",
+        "praes_er_sie_es": "probiert",
+        "praes_wir": "probieren",
+        "praes_ihr": "probiert",
+        "praes_sie_Sie": "probieren",
+        "imp_du": "probier",
+        "imp_ihr": "probiert",
+        "partizip_2": "probiert"
+      },
+      "frequenzRang": 1825,
+      "quelle": "wiktionary:de:probieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚probieren‘ (https://de.wiktionary.org/wiki/probieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.heiraten",
+      "lemma": "heiraten",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "heiraten",
+        "praes_ich": "heirate",
+        "praes_du": "heiratest",
+        "praes_er_sie_es": "heiratet",
+        "praes_wir": "heiraten",
+        "praes_ihr": "heiratet",
+        "praes_sie_Sie": "heiraten",
+        "partizip_2": "geheiratet"
+      },
+      "frequenzRang": 1836,
+      "quelle": "wiktionary:de:heiraten",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚heiraten‘ (https://de.wiktionary.org/wiki/heiraten), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.absagen",
+      "lemma": "absagen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "ab"
+      },
+      "formen": {
+        "infinitiv": "absagen",
+        "verbzusatz": "ab",
+        "praes_ich": "sage",
+        "praes_du": "sagst",
+        "praes_er_sie_es": "sagt",
+        "praes_wir": "sagen",
+        "praes_ihr": "sagt",
+        "praes_sie_Sie": "sagen",
+        "partizip_2": "abgesagt"
+      },
+      "frequenzRang": 3452,
+      "quelle": "wiktionary:de:absagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚absagen‘ (https://de.wiktionary.org/wiki/absagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.fest",
+      "lemma": "Fest",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Feste"
+      },
+      "formen": {
+        "pl": "Feste",
+        "dat_pl": "Festen"
+      },
+      "frequenzRang": 350,
+      "quelle": "wiktionary:de:Fest",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fest‘ (https://de.wiktionary.org/wiki/Fest), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.feier",
+      "lemma": "Feier",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Feiern"
+      },
+      "formen": {
+        "pl": "Feiern"
+      },
+      "frequenzRang": 2697,
+      "quelle": "wiktionary:de:Feier",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Feier‘ (https://de.wiktionary.org/wiki/Feier), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.feiertag",
+      "lemma": "Feiertag",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Feiertage"
+      },
+      "formen": {
+        "pl": "Feiertage",
+        "dat_pl": "Feiertagen"
+      },
+      "frequenzRang": 3271,
+      "quelle": "wiktionary:de:Feiertag",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Feiertag‘ (https://de.wiktionary.org/wiki/Feiertag), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.geschenk",
+      "lemma": "Geschenk",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Geschenke"
+      },
+      "formen": {
+        "pl": "Geschenke",
+        "dat_pl": "Geschenken"
+      },
+      "frequenzRang": 1239,
+      "quelle": "wiktionary:de:Geschenk",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geschenk‘ (https://de.wiktionary.org/wiki/Geschenk), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gast",
+      "lemma": "Gast",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gäste"
+      },
+      "formen": {
+        "pl": "Gäste",
+        "dat_pl": "Gästen"
+      },
+      "frequenzRang": 671,
+      "quelle": "wiktionary:de:Gast",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gast‘ (https://de.wiktionary.org/wiki/Gast), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.einladung",
+      "lemma": "Einladung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Einladungen"
+      },
+      "formen": {
+        "pl": "Einladungen"
+      },
+      "frequenzRang": 2381,
+      "quelle": "wiktionary:de:Einladung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Einladung‘ (https://de.wiktionary.org/wiki/Einladung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.hochzeit",
+      "lemma": "Hochzeit",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hochzeiten"
+      },
+      "formen": {
+        "pl": "Hochzeiten"
+      },
+      "frequenzRang": 1937,
+      "quelle": "wiktionary:de:Hochzeit",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hochzeit‘ (https://de.wiktionary.org/wiki/Hochzeit), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.geburt",
+      "lemma": "Geburt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Geburten"
+      },
+      "formen": {
+        "pl": "Geburten"
+      },
+      "frequenzRang": 1946,
+      "quelle": "wiktionary:de:Geburt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Geburt‘ (https://de.wiktionary.org/wiki/Geburt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.glueckwunsch",
+      "lemma": "Glückwunsch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Glückwünsche"
+      },
+      "formen": {
+        "pl": "Glückwünsche",
+        "dat_pl": "Glückwünschen"
+      },
+      "frequenzRang": 2402,
+      "quelle": "wiktionary:de:Glückwunsch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Glückwunsch‘ (https://de.wiktionary.org/wiki/Glückwunsch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gruss",
+      "lemma": "Gruß",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Grüße"
+      },
+      "formen": {
+        "pl": "Grüße",
+        "dat_pl": "Grüßen"
+      },
+      "frequenzRang": 2103,
+      "quelle": "wiktionary:de:Gruß",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gruß‘ (https://de.wiktionary.org/wiki/Gruß), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.wunsch",
+      "lemma": "Wunsch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wünsche"
+      },
+      "formen": {
+        "pl": "Wünsche",
+        "dat_pl": "Wünschen"
+      },
+      "frequenzRang": 624,
+      "quelle": "wiktionary:de:Wunsch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wunsch‘ (https://de.wiktionary.org/wiki/Wunsch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.ueberraschung",
+      "lemma": "Überraschung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Überraschungen"
+      },
+      "formen": {
+        "pl": "Überraschungen"
+      },
+      "frequenzRang": 1935,
+      "quelle": "wiktionary:de:Überraschung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Überraschung‘ (https://de.wiktionary.org/wiki/Überraschung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.tradition",
+      "lemma": "Tradition",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Traditionen"
+      },
+      "formen": {
+        "pl": "Traditionen"
+      },
+      "frequenzRang": 1354,
+      "quelle": "wiktionary:de:Tradition",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tradition‘ (https://de.wiktionary.org/wiki/Tradition), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.grosseltern",
+      "lemma": "Großeltern",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die"
+      },
+      "frequenzRang": 5845,
+      "quelle": "wiktionary:de:Großeltern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Großeltern‘ (https://de.wiktionary.org/wiki/Großeltern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.onkel",
+      "lemma": "Onkel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Onkel"
+      },
+      "formen": {
+        "dat_pl": "Onkeln"
+      },
+      "frequenzRang": 2909,
+      "quelle": "wiktionary:de:Onkel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Onkel‘ (https://de.wiktionary.org/wiki/Onkel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.cousin",
+      "lemma": "Cousin",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Cousins",
+        "weiblich": "Cousine"
+      },
+      "formen": {
+        "pl": "Cousins",
+        "weiblich": "Cousine",
+        "weiblich_pl": "Cousinen"
+      },
+      "frequenzRang": 6257,
+      "quelle": "wiktionary:de:Cousin",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Cousin‘ (https://de.wiktionary.org/wiki/Cousin), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.enkel",
+      "lemma": "Enkel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Enkel",
+        "weiblich": "Enkelin"
+      },
+      "formen": {
+        "dat_pl": "Enkeln",
+        "weiblich": "Enkelin",
+        "weiblich_pl": "Enkelinnen"
+      },
+      "frequenzRang": 3506,
+      "quelle": "wiktionary:de:Enkel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Enkel‘ (https://de.wiktionary.org/wiki/Enkel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.verwandte",
+      "lemma": "Verwandte",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die",
+        "hinweis": "subst. Adjektiv: der/die Verwandte, ein Verwandter, die Verwandten"
+      },
+      "formen": {
+        "sg_m": "Verwandter",
+        "pl_n": "Verwandten"
+      },
+      "frequenzRang": 3671,
+      "quelle": "wiktionary:de:Verwandte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verwandte‘ (https://de.wiktionary.org/wiki/Verwandte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.baby",
+      "lemma": "Baby",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Babys"
+      },
+      "formen": {
+        "pl": "Babys"
+      },
+      "frequenzRang": 1111,
+      "quelle": "wiktionary:de:Baby",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Baby‘ (https://de.wiktionary.org/wiki/Baby), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.blume",
+      "lemma": "Blume",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Blumen"
+      },
+      "formen": {
+        "pl": "Blumen"
+      },
+      "frequenzRang": 1888,
+      "quelle": "wiktionary:de:Blume",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Blume‘ (https://de.wiktionary.org/wiki/Blume), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.tasse",
+      "lemma": "Tasse",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tassen"
+      },
+      "formen": {
+        "pl": "Tassen"
+      },
+      "frequenzRang": 3573,
+      "quelle": "wiktionary:de:Tasse",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tasse‘ (https://de.wiktionary.org/wiki/Tasse), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.glas",
+      "lemma": "Glas",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gläser"
+      },
+      "formen": {
+        "pl": "Gläser",
+        "dat_pl": "Gläsern"
+      },
+      "frequenzRang": 1371,
+      "quelle": "wiktionary:de:Glas",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Glas‘ (https://de.wiktionary.org/wiki/Glas), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.getraenk",
+      "lemma": "Getränk",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Getränke"
+      },
+      "formen": {
+        "pl": "Getränke",
+        "dat_pl": "Getränken"
+      },
+      "frequenzRang": 2731,
+      "quelle": "wiktionary:de:Getränk",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Getränk‘ (https://de.wiktionary.org/wiki/Getränk), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.salat",
+      "lemma": "Salat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Salate"
+      },
+      "formen": {
+        "pl": "Salate",
+        "dat_pl": "Salaten"
+      },
+      "frequenzRang": 3994,
+      "quelle": "wiktionary:de:Salat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Salat‘ (https://de.wiktionary.org/wiki/Salat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.schokolade",
+      "lemma": "Schokolade",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3376,
+      "quelle": "wiktionary:de:Schokolade",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schokolade‘ (https://de.wiktionary.org/wiki/Schokolade), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.zucker",
+      "lemma": "Zucker",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 3119,
+      "quelle": "wiktionary:de:Zucker",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zucker‘ (https://de.wiktionary.org/wiki/Zucker), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.datum",
+      "lemma": "Datum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Daten"
+      },
+      "formen": {
+        "pl": "Daten"
+      },
+      "frequenzRang": 2527,
+      "quelle": "wiktionary:de:Datum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Datum‘ (https://de.wiktionary.org/wiki/Datum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.haelfte",
+      "lemma": "Hälfte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Hälften"
+      },
+      "formen": {
+        "pl": "Hälften"
+      },
+      "frequenzRang": 761,
+      "quelle": "wiktionary:de:Hälfte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hälfte‘ (https://de.wiktionary.org/wiki/Hälfte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.menge",
+      "lemma": "Menge",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Mengen"
+      },
+      "formen": {
+        "pl": "Mengen"
+      },
+      "frequenzRang": 628,
+      "quelle": "wiktionary:de:Menge",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Menge‘ (https://de.wiktionary.org/wiki/Menge), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.herzlich",
+      "lemma": "herzlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "herzliche",
+        "endung_en": "herzlichen",
+        "endung_er": "herzlicher",
+        "endung_es": "herzliches",
+        "endung_em": "herzlichem",
+        "komparativ": "herzlicher",
+        "superlativ": "herzlichsten",
+        "superlativ_e": "herzlichste"
+      },
+      "frequenzRang": 1347,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.dankbar",
+      "lemma": "dankbar",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "dankbare",
+        "endung_en": "dankbaren",
+        "endung_er": "dankbarer",
+        "endung_es": "dankbares",
+        "endung_em": "dankbarem"
+      },
+      "frequenzRang": 2362,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.typisch",
+      "lemma": "typisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "typische",
+        "endung_en": "typischen",
+        "endung_er": "typischer",
+        "endung_es": "typisches",
+        "endung_em": "typischem",
+        "komparativ": "typischer",
+        "superlativ": "typischsten",
+        "superlativ_e": "typischste"
+      },
+      "frequenzRang": 1044,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.suess",
+      "lemma": "süß",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "süße",
+        "endung_en": "süßen",
+        "endung_er": "süßer",
+        "endung_es": "süßes",
+        "endung_em": "süßem",
+        "komparativ": "süßer",
+        "superlativ": "süßesten",
+        "superlativ_e": "süßeste"
+      },
+      "frequenzRang": 962,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.frisch",
+      "lemma": "frisch",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "frische",
+        "endung_en": "frischen",
+        "endung_er": "frischer",
+        "endung_es": "frisches",
+        "endung_em": "frischem",
+        "komparativ": "frischer",
+        "superlativ": "frischsten",
+        "superlativ_e": "frischste"
+      },
+      "frequenzRang": 974,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.lecker",
+      "lemma": "lecker",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "leckere",
+        "endung_en": "leckeren",
+        "endung_er": "leckerer",
+        "endung_es": "leckeres",
+        "endung_em": "leckerem",
+        "komparativ": "leckerer",
+        "superlativ": "leckersten",
+        "superlativ_e": "leckerste"
+      },
+      "frequenzRang": 1907,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.satt",
+      "lemma": "satt",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "satte",
+        "endung_en": "satten",
+        "endung_er": "satter",
+        "endung_es": "sattes",
+        "endung_em": "sattem"
+      },
+      "frequenzRang": 3707,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.brauch",
+      "lemma": "Brauch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bräuche"
+      },
+      "formen": {
+        "pl": "Bräuche",
+        "dat_pl": "Bräuchen"
+      },
+      "frequenzRang": 2082,
+      "quelle": "wiktionary:de:Brauch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Brauch‘ (https://de.wiktionary.org/wiki/Brauch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.willkommen",
+      "lemma": "willkommen",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "willkommene",
+        "endung_en": "willkommenen",
+        "endung_er": "willkommener",
+        "endung_es": "willkommenes",
+        "endung_em": "willkommenem"
+      },
+      "frequenzRang": 1047,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.fleisch",
+      "lemma": "Fleisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1463,
+      "quelle": "wiktionary:de:Fleisch",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fleisch‘ (https://de.wiktionary.org/wiki/Fleisch), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gastgeber",
+      "lemma": "Gastgeber",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Gastgeber",
+        "weiblich": "Gastgeberin"
+      },
+      "formen": {
+        "dat_pl": "Gastgebern",
+        "weiblich": "Gastgeberin",
+        "weiblich_pl": "Gastgeberinnen"
+      },
+      "frequenzRang": 4129,
+      "quelle": "wiktionary:de:Gastgeber",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gastgeber‘ (https://de.wiktionary.org/wiki/Gastgeber), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gruessen",
+      "lemma": "grüßen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "grüßen",
+        "praes_ich": "grüße",
+        "praes_du": "grüßt",
+        "praes_er_sie_es": "grüßt",
+        "praes_wir": "grüßen",
+        "praes_ihr": "grüßt",
+        "praes_sie_Sie": "grüßen",
+        "partizip_2": "gegrüßt"
+      },
+      "frequenzRang": 3569,
+      "quelle": "wiktionary:de:grüßen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚grüßen‘ (https://de.wiktionary.org/wiki/grüßen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.loeffel",
+      "lemma": "Löffel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Löffel"
+      },
+      "formen": {
+        "dat_pl": "Löffeln"
+      },
+      "frequenzRang": 7116,
+      "quelle": "wiktionary:de:Löffel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Löffel‘ (https://de.wiktionary.org/wiki/Löffel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.gabel",
+      "lemma": "Gabel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Gabeln"
+      },
+      "formen": {
+        "pl": "Gabeln"
+      },
+      "frequenzRang": 8768,
+      "quelle": "wiktionary:de:Gabel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gabel‘ (https://de.wiktionary.org/wiki/Gabel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.neffe",
+      "lemma": "Neffe",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Neffen"
+      },
+      "formen": {
+        "pl": "Neffen"
+      },
+      "frequenzRang": 3710,
+      "quelle": "wiktionary:de:Neffe",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Neffe‘ (https://de.wiktionary.org/wiki/Neffe), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.nichte",
+      "lemma": "Nichte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Nichten"
+      },
+      "formen": {
+        "pl": "Nichten"
+      },
+      "frequenzRang": 11978,
+      "quelle": "wiktionary:de:Nichte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Nichte‘ (https://de.wiktionary.org/wiki/Nichte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.torte",
+      "lemma": "Torte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Torten"
+      },
+      "formen": {
+        "pl": "Torten"
+      },
+      "frequenzRang": 7989,
+      "quelle": "wiktionary:de:Torte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Torte‘ (https://de.wiktionary.org/wiki/Torte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.nachtisch",
+      "lemma": "Nachtisch",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Nachtische"
+      },
+      "formen": {
+        "pl": "Nachtische",
+        "dat_pl": "Nachtischen"
+      },
+      "frequenzRang": 21070,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e03.s0001",
+      "text": "Das war ein schönes Fest!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0002",
+      "text": "Das nächste Fest ist im Herbst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0003",
+      "text": "Wann beginnt die Feier?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0004",
+      "text": "Die Feier beginnt am Samstag um drei Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0005",
+      "text": "Wir machen nur eine kleine Feier zu Hause.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0006",
+      "text": "Wir feiern die neue Wohnung von Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0007",
+      "text": "Wir haben bis zehn Uhr am Abend gefeiert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0008",
+      "text": "Der 1. Januar ist in Deutschland ein Feiertag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0009",
+      "text": "Morgen ist ein Feiertag, die Geschäfte sind zu.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0010",
+      "text": "Am Feiertag hat Elif keine Schule.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0011",
+      "text": "Wir sind zur Hochzeit eingeladen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0012",
+      "text": "Wann ist die Hochzeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0013",
+      "text": "Meine Schwester heiratet im Juni.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0014",
+      "text": "Meine Eltern haben in der Türkei geheiratet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0015",
+      "text": "Herzlichen Glückwunsch zur Geburt!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0016",
+      "text": "Weißt du was? Meine Tante hat ein Baby bekommen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0017",
+      "text": "Das Baby heißt Ela.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0018",
+      "text": "Am Sonntag besuchen wir das Baby.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0019",
+      "text": "Das Baby ist erst eine Woche alt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0020",
+      "text": "Ich gratuliere dir!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0021",
+      "text": "Wir gratulieren euch zur Hochzeit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0022",
+      "text": "Hast du Paula schon zum Geburtstag gratuliert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0023",
+      "text": "Ja, ich habe ihr heute Morgen gratuliert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0024",
+      "text": "Alle gratulieren Oma Sevim zur neuen Wohnung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0025",
+      "text": "Herzlichen Glückwunsch zum Geburtstag!",
+      "quelle": "tatoeba:404606",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #404606 von xtofu80 (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0026",
+      "text": "Herzlichen Glückwunsch zur neuen Wohnung!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0027",
+      "text": "Wie schön! Herzlichen Glückwunsch zum Baby!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0028",
+      "text": "Vielen Dank für die vielen Glückwünsche!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0029",
+      "text": "Viele gute Wünsche für das Baby!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0030",
+      "text": "Ich gratuliere euch herzlich zur Hochzeit!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0031",
+      "text": "Herzlichen Glückwunsch zur Hochzeit! Ich wünsche euch alles Gute.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0032",
+      "text": "Das ist ein Geschenk für dich.",
+      "quelle": "tatoeba:139440",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #139440 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0033",
+      "text": "Ich schenke meiner Oma Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0034",
+      "text": "Wem schenkst du die Blumen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0035",
+      "text": "Meiner Mutter. Sie mag Blumen sehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0036",
+      "text": "Was schenkst du deinem Opa?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0037",
+      "text": "Ich schenke ihm ein Buch, denn er liest gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0038",
+      "text": "Elif schenkt ihrer Mutter eine Tasse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0039",
+      "text": "Was hast du deinem Bruder geschenkt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0040",
+      "text": "Ich habe ihm einen Ball geschenkt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0041",
+      "text": "Ich suche noch ein Geschenk für meinen Vater.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0042",
+      "text": "Ein Geschenk muss nicht teuer sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0043",
+      "text": "Das Baby hat viele Geschenke bekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0044",
+      "text": "Ich habe ihr letzte Woche ein Geschenk gekauft.",
+      "quelle": "tatoeba:11987368",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11987368 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0045",
+      "text": "Das ist eine sehr schöne Blume.",
+      "quelle": "tatoeba:1524518",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1524518 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0046",
+      "text": "Wie heißt diese Blume?",
+      "quelle": "tatoeba:2201679",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2201679 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0047",
+      "text": "Möchten Sie eine Tasse Tee?",
+      "quelle": "tatoeba:916808",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #916808 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0048",
+      "text": "Die Tasse ist weiß.",
+      "quelle": "tatoeba:8320546",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8320546 von MisterTrouser (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0049",
+      "text": "Die blaue Tasse gefällt mir.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0050",
+      "text": "Diese Tasse gehört meinem Opa.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0051",
+      "text": "Wir brauchen noch zwei Tassen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0052",
+      "text": "Was für eine Überraschung!",
+      "quelle": "tatoeba:338688",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #338688 von Sprachprofi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0053",
+      "text": "Magst du Überraschungen?",
+      "quelle": "tatoeba:3513667",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3513667 von wortmosaik (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0054",
+      "text": "Wir wollen Oma Sevim überraschen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0055",
+      "text": "Oh, danke! Das habe ich nicht erwartet!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0056",
+      "text": "Ich habe kein so schönes Geschenk von dir erwartet.",
+      "quelle": "tatoeba:1805240",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1805240 von Tamy (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0057",
+      "text": "Vielen Dank dafür!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0058",
+      "text": "Hast du Oma schon für das Geschenk gedankt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0059",
+      "text": "Ich bin dir für deine Hilfe sehr dankbar.",
+      "quelle": "tatoeba:2735752",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2735752 von spiritofwonder (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0060",
+      "text": "Oma Sevim ist allen sehr dankbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0061",
+      "text": "Wie viel hast du dafür bezahlt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0062",
+      "text": "Blumen sind ein typisches Geschenk in Deutschland.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0063",
+      "text": "Hier, das ist ein Geschenk für dich, Elif.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0064",
+      "text": "Ich schenke meiner Oma Blumen, denn sie mag Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0065",
+      "text": "Meine Großeltern wohnen in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0066",
+      "text": "Wir schenken den Großeltern ein Foto von der Familie.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0067",
+      "text": "Er ist mein Onkel.",
+      "quelle": "tatoeba:519180",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #519180 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0068",
+      "text": "Emre ist mein Cousin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0069",
+      "text": "Meine Cousine Defne wohnt in Berlin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0070",
+      "text": "Ich habe sieben Cousins und Cousinen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0071",
+      "text": "Mein Cousin heiratet im Mai.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0072",
+      "text": "Oma Sevim hat fünf Enkel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0073",
+      "text": "Elif ist ihre Enkelin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0074",
+      "text": "Die Enkel besuchen ihre Oma jeden Sonntag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0075",
+      "text": "Viele Verwandte von uns leben in der Türkei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0076",
+      "text": "Tante Petra hat zwei Neffen und eine Nichte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0077",
+      "text": "Heute haben wir Gäste.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0078",
+      "text": "Die Gäste kommen um sechs Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0079",
+      "text": "Die Gäste schlafen in diesem Zimmer.",
+      "quelle": "tatoeba:2827526",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2827526 von estambulista (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0080",
+      "text": "Bei uns bekommen die Gäste immer Tee.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0081",
+      "text": "Oma Sevim ist heute die Gastgeberin.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0082",
+      "text": "Die Gäste danken dem Gastgeber für das Essen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0083",
+      "text": "Willkommen bei uns! Kommt rein!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0084",
+      "text": "Ihr seid bei uns immer willkommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0085",
+      "text": "Viele Grüße von Oma Sevim!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0086",
+      "text": "Ich soll dich von meiner Oma grüßen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0087",
+      "text": "Onkel Murat grüßt euch alle.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0088",
+      "text": "Gefällt dir das Geschenk?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0089",
+      "text": "Ja, es gefällt mir sehr!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0090",
+      "text": "Das Geschenk gefällt ihr bestimmt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0091",
+      "text": "Die Tasse gefällt ihr bestimmt, denn sie trinkt gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0092",
+      "text": "Ich schenke Jan einen Ball, denn er spielt gern Fußball.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0093",
+      "text": "Wer ist das auf dem Foto?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0094",
+      "text": "Das ist mein Onkel Murat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0095",
+      "text": "Und wer ist der Junge neben ihm?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0096",
+      "text": "Das ist sein Sohn, mein Cousin Emre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0097",
+      "text": "Die Tasse gefällt meiner Tante, denn sie trinkt gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0098",
+      "text": "Am Samstag bereitet Papa das Essen vor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0099",
+      "text": "Kannst du bitte den Tisch decken?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0100",
+      "text": "Ich habe den Tisch schon gedeckt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0101",
+      "text": "Auf den Tisch kommen Teller, Gabeln und Löffel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0102",
+      "text": "Wie viele Gabeln brauchen wir?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0103",
+      "text": "Wir brauchen zwanzig Gabeln und zwanzig Löffel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0104",
+      "text": "Die Gläser stehen schon auf dem Tisch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0105",
+      "text": "Welche Getränke gibt es?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0106",
+      "text": "Papa macht einen großen Salat mit Tomaten und Gurken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0107",
+      "text": "Das Fleisch ist vom Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0108",
+      "text": "Für die Feier brauchen wir drei Kilo Fleisch vom Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0109",
+      "text": "Mama hat die Torte geschnitten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0110",
+      "text": "Das ist eine Torte mit Schokolade.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0111",
+      "text": "Kannst du bitte das Brot schneiden?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0112",
+      "text": "Wir schneiden die Torte in zwei Hälften.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0113",
+      "text": "Oma kocht immer eine große Menge Reis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0114",
+      "text": "Ist die Menge genug für zwanzig Leute?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0115",
+      "text": "Wir erwarten zwanzig Gäste.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0116",
+      "text": "Hilfst du mir bei der Feier?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0117",
+      "text": "Klar, ich helfe dir gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0118",
+      "text": "Jan hilft seiner Mutter mit dem Salat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0119",
+      "text": "Vielen Dank für die Blumen! Sie gefallen mir sehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0120",
+      "text": "Ist das eine Einladung?",
+      "quelle": "tatoeba:7828926",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7828926 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0121",
+      "text": "Ich habe eine Einladung zur Hochzeit bekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0122",
+      "text": "Herzlichen Dank für die Einladung! Ich komme gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0123",
+      "text": "Das Datum steht auf der Einladung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0124",
+      "text": "Weißt du das Datum von der Hochzeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0125",
+      "text": "Ich muss absagen.",
+      "quelle": "tatoeba:8302213",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #8302213 von Luiaard (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0126",
+      "text": "Leider muss ich für Samstag absagen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0127",
+      "text": "Onkel Murat hat leider abgesagt, er ist krank.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0128",
+      "text": "Warum hast du abgesagt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0129",
+      "text": "Kommst du am Samstag zur Feier?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0130",
+      "text": "Probier mal den Salat!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0131",
+      "text": "Hast du die Torte schon probiert?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0132",
+      "text": "Was gibt es zum Nachtisch?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0133",
+      "text": "Zum Nachtisch gibt es Obst und Torte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0134",
+      "text": "Danke, für den Nachtisch bin ich zu satt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0135",
+      "text": "Möchten Sie Zucker oder Milch?",
+      "quelle": "tatoeba:926610",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #926610 von Sudajaengi (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e03.s0136",
+      "text": "Die Torte ist mir zu süß.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0137",
+      "text": "In der Türkei bringen Gäste oft etwas Süßes mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0138",
+      "text": "Danke, ich bin schon satt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0139",
+      "text": "Bist du wirklich satt? Nimm doch noch etwas!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0140",
+      "text": "Möchtest du noch etwas Torte?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0141",
+      "text": "Bei uns ist das eine alte Tradition.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0142",
+      "text": "In unserer Familie gibt es viele Traditionen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0143",
+      "text": "Bei einer Hochzeit gibt es viele Bräuche.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0144",
+      "text": "In Deutschland bringt man oft Blumen mit. Das ist ein Brauch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0145",
+      "text": "Kennst du Bräuche aus Syrien?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0146",
+      "text": "Herzlichen Dank für die Einladung! Ich bringe einen Nachtisch mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0147",
+      "text": "Einladung zur Feier",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0148",
+      "text": "Hallo zusammen!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0149",
+      "text": "Ich habe jetzt eine neue Wohnung und möchte mit euch feiern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0150",
+      "text": "Datum: Samstag, 14. Juni",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0151",
+      "text": "Uhrzeit: von 15 bis 20 Uhr",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0152",
+      "text": "So kommt ihr zu mir: Nehmt am Bahnhof die Linie 3.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0153",
+      "text": "Steigt an der Haltestelle „Park“ aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0154",
+      "text": "Dann geht ihr geradeaus und an der Ampel links.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0155",
+      "text": "Mein Haus ist das gelbe Haus neben der Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0156",
+      "text": "Ich koche Reis mit Hähnchen, und es gibt eine Torte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0157",
+      "text": "Könnt ihr kommen? Bitte ruft mich bis Mittwoch an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0158",
+      "text": "Ich freue mich auf euch!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0159",
+      "text": "Herzliche Grüße, eure Oma Sevim",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0160",
+      "text": "Die Feier ist an einem Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0161",
+      "text": "Die Gäste nehmen am Bahnhof ein Taxi.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0162",
+      "text": "Onkel Murat kommt auch zur Feier.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0163",
+      "text": "Bis wann sollen die Gäste anrufen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0164",
+      "text": "Bis Mittwoch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0165",
+      "text": "Bis Samstag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0166",
+      "text": "Bis zum 14. Juni.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0167",
+      "text": "Wo wohnt Oma Sevim jetzt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0168",
+      "text": "Neben der Bäckerei.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0169",
+      "text": "Neben dem Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0170",
+      "text": "Gegenüber vom Park.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0171",
+      "text": "Schreib deiner Oma eine Karte und danke ihr für das Geschenk.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0172",
+      "text": "Hallo Oma, vielen Dank für die schöne Tasse! Sie gefällt mir sehr. Ich trinke jeden Morgen Tee aus der Tasse. Das Geschenk war eine tolle Überraschung. Am Sonntag besuche ich dich. Viele Grüße, deine Elif",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0173",
+      "text": "Ein Fest für Oma Sevim",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0174",
+      "text": "Oma Sevim hat eine neue Wohnung, und die Familie will feiern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0175",
+      "text": "Alle Verwandten bereiten zusammen eine Feier vor.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0176",
+      "text": "Elif und Laylā basteln ihr ein Bild als Geschenk.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0177",
+      "text": "Meinst du, das Bild gefällt ihr?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0178",
+      "text": "Ja, bestimmt! Deine Oma mag doch Blumen, und hier sind viele Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0179",
+      "text": "Emre ist der Cousin von Elif.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0180",
+      "text": "Er kauft für Oma frische Blumen auf dem Markt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0181",
+      "text": "Am Samstag kommen viele Gäste zu Oma Sevim.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0182",
+      "text": "Herzlich willkommen! Kommt rein, Kinder!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0183",
+      "text": "Oma, herzlichen Glückwunsch zur neuen Wohnung!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0184",
+      "text": "Elif und Laylā schenken ihr das Bild.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0185",
+      "text": "Was für eine schöne Überraschung! Vielen Dank dafür!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0186",
+      "text": "Dann gibt Emre seiner Oma die Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0187",
+      "text": "Oh, frische Blumen! Danke, Emre!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0188",
+      "text": "Dann essen alle zusammen Salat, Reis und Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0189",
+      "text": "Zum Nachtisch gibt es eine Torte mit Schokolade.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0190",
+      "text": "Oma, die Torte ist wirklich lecker!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0191",
+      "text": "Danke! Möchtest du noch ein Stück Torte, Laylā?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0192",
+      "text": "Nein, danke, ich bin schon satt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0193",
+      "text": "Am Abend ist Oma Sevim müde, aber sehr dankbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0194",
+      "text": "Was basteln Elif und Laylā für Oma?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0195",
+      "text": "Sie basteln ein Bild.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0196",
+      "text": "Sie basteln eine Karte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0197",
+      "text": "Sie kaufen eine Tasse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0198",
+      "text": "Wer kauft Blumen für Oma Sevim?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0199",
+      "text": "Emre kauft die Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0200",
+      "text": "Laylā kauft die Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0201",
+      "text": "Oma Sevim kauft die Blumen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0202",
+      "text": "Was gibt es bei Oma zum Nachtisch?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0203",
+      "text": "Es gibt eine Torte mit Schokolade.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0204",
+      "text": "Es gibt Obst und Salat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0205",
+      "text": "Es gibt Reis mit Hähnchen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0206",
+      "text": "Wie ist Oma Sevim am Abend?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0207",
+      "text": "Sie ist müde, aber dankbar.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0208",
+      "text": "Sie ist krank und allein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0209",
+      "text": "Sie ist gar nicht müde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0210",
+      "text": "Ein Geschenk für Tante Petra",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0211",
+      "text": "Am Freitag geht Jan in ein Geschäft in der Stadt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0212",
+      "text": "Er sucht ein Geschenk für seine Tante.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0213",
+      "text": "Eine Verkäuferin kommt zu ihm.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0214",
+      "text": "Hallo! Kann ich dir helfen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0215",
+      "text": "Ja, gern. Ich suche ein Geschenk für meine Tante.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0216",
+      "text": "Was mag deine Tante denn?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0217",
+      "text": "Sie trinkt sehr gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0218",
+      "text": "Dann schenk ihr doch eine schöne Tasse!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0219",
+      "text": "Gute Idee! Wie viel kostet die blaue Tasse hier?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0220",
+      "text": "Sie kostet zwölf Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0221",
+      "text": "Gut, die nehme ich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0222",
+      "text": "Ist das ein Geschenk? Soll ich die Tasse einpacken?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0223",
+      "text": "Ja, bitte! Vielen Dank für Ihre Hilfe.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0224",
+      "text": "Gern! Die Tasse gefällt deiner Tante bestimmt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0225",
+      "text": "Am Sonntag schenkt Jan seiner Tante die Tasse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0226",
+      "text": "Tante Petra freut sich sehr über das Geschenk.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0227",
+      "text": "Für wen sucht Jan ein Geschenk?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0228",
+      "text": "Für seine Tante.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0229",
+      "text": "Für seine Oma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0230",
+      "text": "Für seinen Onkel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0231",
+      "text": "Was trinkt die Tante gern?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0232",
+      "text": "Sie trinkt gern Tee.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0233",
+      "text": "Sie trinkt gern Saft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0234",
+      "text": "Sie trinkt gern Milch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0235",
+      "text": "Wie viel kostet die Tasse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0236",
+      "text": "Sie kostet zwanzig Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0237",
+      "text": "Wie findet Tante Petra das Geschenk?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0238",
+      "text": "Es gefällt ihr sehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0239",
+      "text": "Sie findet es zu teuer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0240",
+      "text": "Sie mag keine Tassen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0241",
+      "text": "Sie ist ein Geschenk von Oma.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0242",
+      "text": "Was schenkst du deiner Tante zur Hochzeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0243",
+      "text": "Die Gäste probieren den Salat.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0244",
+      "text": "Meine Cousine hat ein Baby bekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0245",
+      "text": "Auf der Einladung stehen das Datum und die Uhrzeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0246",
+      "text": "In der Türkei ist das ein typischer Brauch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0247",
+      "text": "Viele Grüße an die Großeltern!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0248",
+      "text": "Mein Neffe hat ein Glas Saft getrunken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0249",
+      "text": "Meine Nichte hat mir Blumen geschenkt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0250",
+      "text": "Wem schenkst du das Buch?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0251",
+      "text": "Meinem Bruder, denn er liest sehr gern.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0252",
+      "text": "Gefällt deiner Tante die Tasse?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0253",
+      "text": "Ja, sie gefällt ihr sehr gut.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0254",
+      "text": "Vielen Dank für das schöne Geschenk!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0255",
+      "text": "Was hast du deiner Schwester geschenkt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0256",
+      "text": "Ich habe ihr Blumen und Schokolade geschenkt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0257",
+      "text": "Wir haben unserem Onkel zur Hochzeit gratuliert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0258",
+      "text": "Die Gäste danken Oma Sevim für die Einladung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0259",
+      "text": "Wer hat den Tisch gedeckt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e03.s0260",
+      "text": "Ich gratuliere dir! Und vielen Dank für das Geschenk.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e03.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann über Familienfeste sprechen und gratulieren.",
+        "tr": "Aile kutlamaları hakkında konuşabilir ve tebrik edebilirim.",
+        "ar": "أستطيع أن أتحدث عن المناسبات العائلية وأن أهنئ."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.hochzeit",
+          "ablenker": ["de.a2.e03.geburt", "de.a1.e04.geburtstag"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.fest",
+            "de.a2.e03.feiern",
+            "de.a2.e03.heiraten",
+            "de.a2.e03.baby",
+            "de.a2.e03.herzlich",
+            "de.a2.e03.wunsch"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.feier",
+          "ablenker": ["de.a1.e04.woche", "de.a2.e01.besuch"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0026",
+          "ablenker": ["de.a2.e03.s0025", "de.a2.e03.s0015", "de.a2.e03.s0028"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0021",
+          "wort": 2,
+          "ablenker": ["euer", "eure"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.gratulieren",
+          "ablenker": ["de.a1.e08.einladen", "de.a1.e08.wuenschen"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a08",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0016"
+            }
+          ],
+          "antwort": "de.a2.e03.s0027",
+          "ablenker": ["de.a1.e11.s0119", "de.a1.e05.s0090", "de.a2.e03.s0012"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0013",
+          "nach": "ziel",
+          "alternativen": ["Im Juni heiratet meine Schwester."],
+          "ablenker": ["Bruder", "heiraten"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0009",
+          "ablenker": ["de.a2.e03.s0005", "de.a2.e03.s0002", "de.a2.e03.s0010"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0007",
+          "wort": 7,
+          "ablenker": ["feiern", "feiert"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.feiertag",
+          "ablenker": ["de.a1.e04.woche", "de.a1.e04.monat"]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0004",
+          "alternativen": [
+            "Am Samstag beginnt die Feier um drei Uhr.",
+            "Um drei Uhr beginnt die Feier am Samstag.",
+            "Die Feier beginnt um drei Uhr am Samstag.",
+            "Am Samstag um drei Uhr beginnt die Feier."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0014",
+          "nach": "ziel",
+          "alternativen": ["In der Türkei haben meine Eltern geheiratet."]
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0017"
+        },
+        {
+          "schluessel": "de.a2.e03.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0031"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, wem ich was schenke.",
+        "tr": "Kime ne hediye ettiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا أهدي ولمن."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.geschenk",
+          "ablenker": ["de.a2.e03.tasse", "de.a1.e03.bild"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.schenken",
+            "de.a2.e03.blume",
+            "de.a2.e03.tasse",
+            "de.a2.e03.schokolade",
+            "de.a2.e03.typisch",
+            "de.a2.e03.dafuer"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0033",
+          "wort": 2,
+          "ablenker": ["meine", "meinen"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.ueberraschung",
+          "ablenker": ["de.a1.e08.idee", "de.a1.e08.spass"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0038",
+          "ablenker": ["de.a2.e03.s0050", "de.a2.e03.s0037", "de.a2.e03.s0049"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0036"
+            }
+          ],
+          "antwort": "de.a2.e03.s0037",
+          "ablenker": ["de.a2.e03.s0035", "de.a2.e03.s0048", "de.a2.e03.s0046"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0038",
+          "nach": "ziel",
+          "alternativen": [
+            "Eine Tasse schenkt Elif ihrer Mutter.",
+            "Ihrer Mutter schenkt Elif eine Tasse.",
+            "Elif schenkt eine Tasse ihrer Mutter."
+          ],
+          "ablenker": ["ihre", "Oma"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.ueberraschen",
+          "ablenker": ["de.a2.e03.erwarten", "de.a2.e03.danken"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0040",
+          "wort": 5,
+          "ablenker": ["schenken", "schenkt"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a11",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0063"
+            }
+          ],
+          "antwort": "de.a2.e03.s0055",
+          "ablenker": ["de.a2.e03.s0015", "de.a2.e03.s0125", "de.a2.e03.s0053"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.dankbar",
+          "ablenker": ["de.a2.e03.typisch", "de.a1.e03.neu"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0041",
+          "alternativen": [
+            "Für meinen Vater suche ich noch ein Geschenk.",
+            "Ich suche für meinen Vater noch ein Geschenk.",
+            "Ich suche noch für meinen Vater ein Geschenk."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0061",
+          "nach": "ziel",
+          "alternativen": ["Was hast du dafür bezahlt?"]
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0057"
+        },
+        {
+          "schluessel": "de.a2.e03.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0064"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Verwandte und Gäste willkommen heißen und sagen, was ihnen gefällt.",
+        "tr": "Akrabaları ve misafirleri karşılayabilir, neyi beğendiklerini söyleyebilirim.",
+        "ar": "أستطيع أن أرحب بالأقارب والضيوف وأن أقول ما يعجبهم."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.onkel",
+          "ablenker": ["de.a2.e02.tante", "de.a2.e03.cousin"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.grosseltern",
+            "de.a2.e03.enkel",
+            "de.a2.e03.neffe",
+            "de.a2.e03.verwandte",
+            "de.a2.e03.gast",
+            "de.a2.e03.gruss"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.nichte",
+          "ablenker": ["de.a2.e03.cousin", "de.a1.e02.tochter"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0090",
+          "wort": 3,
+          "ablenker": ["sie", "ihn"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0088"
+            }
+          ],
+          "antwort": "de.a2.e03.s0089",
+          "ablenker": ["de.a2.e03.s0067", "de.a2.e03.s0085", "de.a2.e03.s0077"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.willkommen",
+          "ablenker": ["de.a2.e03.herzlich", "de.a2.e03.dankbar"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0072",
+          "ablenker": ["de.a2.e03.s0076", "de.a2.e03.s0070", "de.a2.e03.s0073"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a09",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e03.enkel",
+          "ablenker": ["de.a2.e03.onkel"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0065",
+          "nach": "ziel",
+          "alternativen": ["In der Türkei wohnen meine Großeltern."],
+          "ablenker": ["Mein", "wohnt"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0086",
+          "wort": 6,
+          "ablenker": ["grüßt", "Grüße"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.gastgeber",
+          "ablenker": ["de.a2.e03.gast", "de.a1.e12.verkaeufer"]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0074",
+          "alternativen": [
+            "Jeden Sonntag besuchen die Enkel ihre Oma.",
+            "Die Enkel besuchen jeden Sonntag ihre Oma.",
+            "Ihre Oma besuchen die Enkel jeden Sonntag."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0080",
+          "nach": "ziel",
+          "alternativen": ["Die Gäste bekommen bei uns immer Tee.", "Bei uns bekommen Gäste immer Tee."]
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0084"
+        },
+        {
+          "schluessel": "de.a2.e03.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0097"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, was wir für eine Feier vorbereiten und wie viel wir brauchen.",
+        "tr": "Bir kutlama için neler hazırladığımızı ve ne kadar ihtiyacımız olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أقول ماذا نحضّر للاحتفال وكم نحتاج."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.loeffel",
+          "ablenker": ["de.a2.e03.gabel", "de.a1.e05.teller"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e03.glas", "de.a2.e03.getraenk", "de.a2.e03.salat", "de.a2.e03.fleisch", "de.a2.e03.torte", "de.a2.e03.menge"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.vorbereiten",
+          "ablenker": ["de.a2.e03.decken", "de.a2.e03.schneiden"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0116"
+            }
+          ],
+          "antwort": "de.a2.e03.s0117",
+          "ablenker": ["de.a2.e03.s0138", "de.a2.e03.s0107", "de.a2.e03.s0110"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0118",
+          "wort": 2,
+          "ablenker": ["seine", "seinen"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.haelfte",
+          "ablenker": ["de.a2.e03.menge", "de.a1.e06.stueck"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0103",
+          "ablenker": ["de.a2.e03.s0101", "de.a2.e03.s0102"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0099",
+          "nach": "ziel",
+          "alternativen": ["Kannst du den Tisch bitte decken?"],
+          "ablenker": ["dem", "deckst"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0112",
+          "wort": 1,
+          "ablenker": ["decken", "trinken"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0113",
+          "ablenker": ["de.a2.e03.s0108", "de.a2.e03.s0106", "de.a2.e03.s0114"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.schneiden",
+          "ablenker": ["de.a2.e03.decken", "de.a1.e05.kochen"]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0098",
+          "alternativen": ["Papa bereitet am Samstag das Essen vor.", "Das Essen bereitet Papa am Samstag vor."]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0115",
+          "nach": "ziel",
+          "alternativen": ["Wir erwarten 20 Gäste."]
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0104"
+        },
+        {
+          "schluessel": "de.a2.e03.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0119"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann eine Einladung lesen und über Essen und Bräuche sprechen.",
+        "tr": "Bir davetiyeyi okuyabilir, yemekler ve gelenekler hakkında konuşabilirim.",
+        "ar": "أستطيع أن أقرأ دعوة وأن أتحدث عن الطعام والعادات."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.einladung",
+          "ablenker": ["de.a2.e02.karte", "de.a2.e03.datum"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.probieren",
+            "de.a2.e03.nachtisch",
+            "de.a2.e03.zucker",
+            "de.a2.e03.lecker",
+            "de.a2.e03.frisch",
+            "de.a2.e03.satt"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.suess",
+          "ablenker": ["de.a2.e03.satt", "de.a1.e05.voll"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0140"
+            }
+          ],
+          "antwort": "de.a2.e03.s0138",
+          "ablenker": ["de.a2.e03.s0089", "de.a2.e03.s0123", "de.a2.e03.s0145"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0136",
+          "wort": 5,
+          "ablenker": ["satt", "dankbar"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.brauch",
+          "ablenker": ["de.a2.e03.datum", "de.a1.e08.spiel"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a08",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e03.s0147",
+          "absaetze": [
+            "de.a2.e03.s0148",
+            "de.a2.e03.s0149",
+            "de.a2.e03.s0150",
+            "de.a2.e03.s0151",
+            "de.a2.e03.s0152",
+            "de.a2.e03.s0153",
+            "de.a2.e03.s0154",
+            "de.a2.e03.s0155",
+            "de.a2.e03.s0156",
+            "de.a2.e03.s0157",
+            "de.a2.e03.s0158",
+            "de.a2.e03.s0159"
+          ],
+          "glossen": ["de.a2.e03.einladung", "de.a2.e03.datum", "de.a2.e03.herzlich"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e03.s0160",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e03.s0161",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e03.s0162",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e03.s0163",
+              "antwort": "de.a2.e03.s0164",
+              "ablenker": ["de.a2.e03.s0165", "de.a2.e03.s0166"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e03.s0167",
+              "antwort": "de.a2.e03.s0168",
+              "ablenker": ["de.a2.e03.s0169", "de.a2.e03.s0170"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0126",
+          "ablenker": ["de.a2.e03.s0127", "de.a2.e03.s0129", "de.a2.e03.s0128"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0133",
+          "nach": "ziel",
+          "alternativen": [
+            "Es gibt Obst und Torte zum Nachtisch.",
+            "Zum Nachtisch gibt es Torte und Obst.",
+            "Es gibt Torte und Obst zum Nachtisch."
+          ],
+          "ablenker": ["Salat", "zur"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0127",
+          "wort": 4,
+          "ablenker": ["absagen", "sagt"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.tradition",
+          "ablenker": ["de.a2.e01.erinnerung", "de.a1.e08.idee"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0142",
+          "alternativen": ["Es gibt viele Traditionen in unserer Familie.", "Viele Traditionen gibt es in unserer Familie."]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0131",
+          "nach": "ziel",
+          "alternativen": ["Hast du schon die Torte probiert?"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a15",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e03.s0171",
+          "woerter": {
+            "min": 30,
+            "max": 40
+          },
+          "pflichtwoerter": ["Dank", "Geschenk"],
+          "muster": ["de.a2.e03.s0172"]
+        },
+        {
+          "schluessel": "de.a2.e03.l05.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0146"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über ein Familienfest und ein Gespräch im Geschäft verstehen.",
+        "tr": "Bir aile kutlaması hakkındaki bir hikâyeyi ve mağazadaki bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن احتفال عائلي وحوارًا في متجر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e03.s0173",
+          "zeilen": [
+            {
+              "satz": "de.a2.e03.s0174"
+            },
+            {
+              "satz": "de.a2.e03.s0175"
+            },
+            {
+              "satz": "de.a2.e03.s0176"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0177"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0178"
+            },
+            {
+              "satz": "de.a2.e03.s0179"
+            },
+            {
+              "satz": "de.a2.e03.s0180"
+            },
+            {
+              "satz": "de.a2.e03.s0181"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e03.s0182"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0183"
+            },
+            {
+              "satz": "de.a2.e03.s0184"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e03.s0185"
+            },
+            {
+              "satz": "de.a2.e03.s0186"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e03.s0187"
+            },
+            {
+              "satz": "de.a2.e03.s0188"
+            },
+            {
+              "satz": "de.a2.e03.s0189"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0190"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e03.s0191"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0192"
+            },
+            {
+              "satz": "de.a2.e03.s0193"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 2,
+              "frage": "de.a2.e03.s0194",
+              "antwort": "de.a2.e03.s0195",
+              "ablenker": ["de.a2.e03.s0196", "de.a2.e03.s0197"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a2.e03.s0198",
+              "antwort": "de.a2.e03.s0199",
+              "ablenker": ["de.a2.e03.s0200", "de.a2.e03.s0201"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e03.s0202",
+              "antwort": "de.a2.e03.s0203",
+              "ablenker": ["de.a2.e03.s0204", "de.a2.e03.s0205"]
+            },
+            {
+              "nach": 19,
+              "frage": "de.a2.e03.s0206",
+              "antwort": "de.a2.e03.s0207",
+              "ablenker": ["de.a2.e03.s0208", "de.a2.e03.s0209"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a02",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0185"
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a03",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0186",
+          "wort": 3,
+          "ablenker": ["seine", "seinem"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a04",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0184",
+          "nach": "ziel",
+          "alternativen": [
+            "Laylā und Elif schenken ihr das Bild.",
+            "Das Bild schenken ihr Elif und Laylā.",
+            "Das Bild schenken ihr Laylā und Elif.",
+            "Ihr schenken Elif und Laylā das Bild.",
+            "Ihr schenken Laylā und Elif das Bild."
+          ],
+          "ablenker": ["sie", "schenkt"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0192",
+          "ablenker": ["de.a2.e03.s0134", "de.a2.e03.s0139"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e03.s0210",
+          "zeilen": [
+            {
+              "satz": "de.a2.e03.s0211"
+            },
+            {
+              "satz": "de.a2.e03.s0212"
+            },
+            {
+              "satz": "de.a2.e03.s0213"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0214"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0215"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0216"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0217"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0218"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0219"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0220"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0221"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0222"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0223"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0224"
+            },
+            {
+              "satz": "de.a2.e03.s0225"
+            },
+            {
+              "satz": "de.a2.e03.s0226"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e03.s0227",
+              "antwort": "de.a2.e03.s0228",
+              "ablenker": ["de.a2.e03.s0229", "de.a2.e03.s0230"]
+            },
+            {
+              "nach": 6,
+              "frage": "de.a2.e03.s0231",
+              "antwort": "de.a2.e03.s0232",
+              "ablenker": ["de.a2.e03.s0233", "de.a2.e03.s0234"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e03.s0235",
+              "antwort": "de.a2.e03.s0220",
+              "ablenker": ["de.a2.e03.s0236", "de.a2.e03.s0241"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e03.s0237",
+              "antwort": "de.a2.e03.s0238",
+              "ablenker": ["de.a2.e03.s0239", "de.a2.e03.s0240"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a07",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0225",
+          "alternativen": [
+            "Jan schenkt seiner Tante am Sonntag die Tasse.",
+            "Jan schenkt am Sonntag seiner Tante die Tasse.",
+            "Die Tasse schenkt Jan seiner Tante am Sonntag.",
+            "Seiner Tante schenkt Jan am Sonntag die Tasse.",
+            "Am Sonntag schenkt Jan die Tasse seiner Tante."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0224"
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0218",
+          "wort": 2,
+          "ablenker": ["sie", "ihre"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0216"
+            }
+          ],
+          "antwort": "de.a2.e03.s0217",
+          "ablenker": ["de.a2.e03.s0221", "de.a2.e03.s0230", "de.a2.e03.s0079"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0222",
+          "ablenker": ["de.a2.e03.s0219", "de.a2.e03.s0224"]
+        },
+        {
+          "schluessel": "de.a2.e03.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0193",
+          "ablenker": ["de.a2.e03.s0060", "de.a2.e03.s0019"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole Feste, Geschenke, Verwandte und das Essen bei einer Feier.",
+        "tr": "Kutlamaları, hediyeleri, akrabaları ve bir kutlamadaki yemekleri tekrar ediyorum.",
+        "ar": "أراجع الاحتفالات والهدايا والأقارب والطعام في الاحتفال."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.geburt",
+          "ablenker": ["de.a2.e03.hochzeit", "de.a2.e03.feiertag"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.gratulieren",
+            "de.a2.e03.einladung",
+            "de.a2.e03.onkel",
+            "de.a2.e03.loeffel",
+            "de.a2.e03.suess",
+            "de.a2.e03.gruss"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0093"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e03.s0094"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0095"
+            }
+          ],
+          "antwort": "de.a2.e03.s0096",
+          "ablenker": ["de.a2.e03.s0075", "de.a2.e03.s0078", "de.a2.e03.s0081"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0249",
+          "wort": 3,
+          "ablenker": ["mich", "ich"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0244",
+          "ablenker": ["de.a2.e03.s0016", "de.a2.e03.s0043", "de.a2.e03.s0069"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0242",
+          "nach": "ziel",
+          "ablenker": ["deine", "zum"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.enkel",
+          "ablenker": ["de.a2.e03.cousin", "de.a1.e02.sohn"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a08",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e03.tasse",
+          "ablenker": ["de.a1.e06.kasse"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0245",
+          "alternativen": [
+            "Das Datum und die Uhrzeit stehen auf der Einladung.",
+            "Auf der Einladung stehen die Uhrzeit und das Datum.",
+            "Die Uhrzeit und das Datum stehen auf der Einladung."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a10",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0248",
+          "nach": "ziel"
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0023"
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a12",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0243",
+          "wort": 2,
+          "ablenker": ["probiert", "probierst"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.absagen",
+          "ablenker": ["de.a1.e08.einladen", "de.a2.e03.erwarten"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0246",
+          "ablenker": ["de.a2.e03.s0142", "de.a2.e03.s0062", "de.a2.e03.s0143"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0121",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0129"
+            }
+          ],
+          "antwort": "de.a2.e03.s0126",
+          "ablenker": ["de.a2.e03.s0112", "de.a2.e03.s0027", "de.a2.e03.s0124"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a17",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.danken",
+            "de.a2.e03.geschenk",
+            "de.a2.e03.neffe",
+            "de.a2.e03.haelfte",
+            "de.a2.e03.lecker",
+            "de.a2.e03.gruessen"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a18",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0247",
+          "wort": 1,
+          "ablenker": ["Gruß", "Grüßen"]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a19",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0071",
+          "alternativen": ["Im Mai heiratet mein Cousin."]
+        },
+        {
+          "schluessel": "de.a2.e03.l07.a20",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0058",
+          "nach": "ziel",
+          "alternativen": ["Hast du Oma für das Geschenk schon gedankt?"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e03.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich gratulieren, mich bedanken und über Geschenke sprechen kann.",
+        "tr": "Tebrik edebildiğimi, teşekkür edebildiğimi ve hediyeler hakkında konuşabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أهنئ وأن أشكر وأن أتحدث عن الهدايا."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e03.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.glueckwunsch",
+          "ablenker": ["de.a2.e03.einladung", "de.a2.e03.ueberraschung"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e03.fest",
+            "de.a2.e03.onkel",
+            "de.a2.e03.gabel",
+            "de.a2.e03.zucker",
+            "de.a2.e03.dankbar",
+            "de.a2.e03.probieren"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0250"
+            }
+          ],
+          "antwort": "de.a2.e03.s0251",
+          "ablenker": ["de.a2.e03.s0040", "de.a2.e03.s0078", "de.a2.e03.s0039"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a04",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0256",
+          "wort": 2,
+          "ablenker": ["sie", "er"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e03.s0257",
+          "ablenker": ["de.a2.e03.s0021", "de.a2.e03.s0030", "de.a2.e03.s0022"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a06",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0255",
+          "nach": "ziel",
+          "ablenker": ["deine", "schenkst"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e03.gastgeber",
+          "ablenker": ["de.a2.e03.verwandte", "de.a2.e03.enkel"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e03.s0253",
+          "wort": 2,
+          "ablenker": ["gefallen", "gefällst"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a09",
+          "typ": "satzbau",
+          "ziel": "de.a2.e03.s0258",
+          "alternativen": ["Für die Einladung danken die Gäste Oma Sevim.", "Oma Sevim danken die Gäste für die Einladung."]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a10",
+          "typ": "frei",
+          "ziel": "de.a2.e03.s0254",
+          "nach": "ziel",
+          "alternativen": ["Danke für das schöne Geschenk!", "Herzlichen Dank für das schöne Geschenk!"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e03.s0259"
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a12",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e03.s0252"
+            }
+          ],
+          "antwort": "de.a2.e03.s0253",
+          "ablenker": ["de.a2.e03.s0220", "de.a2.e03.s0087", "de.a2.e03.s0051"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a13",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e03.satt",
+          "ablenker": ["de.a2.e03.lecker", "de.a2.e03.frisch"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e03.s0122",
+          "ablenker": ["de.a2.e03.s0126", "de.a2.e03.s0120", "de.a2.e03.s0123"]
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e03.s0024",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e03.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e03.s0260"
+        }
+      ]
+    }
+  ]
+}
