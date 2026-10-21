@@ -422,7 +422,7 @@
       "lemma": "jeder",
       "wortart": "artikel",
       "merkmale": {
-        "art": "Indefinitartikel"
+        "art": "Artikelwort (Endungen wie der, die, das)"
       },
       "formen": {
         "endung_e": "jede",
@@ -456,7 +456,7 @@
       "lemma": "letzte",
       "wortart": "adjektiv",
       "merkmale": {
-        "gebrauch": "nur attributiv (die letzte Woche, nächste Woche)"
+        "gebrauch": "nur attributiv (letzte Woche, am letzten Sonntag)"
       },
       "formen": {
         "endung_e": "letzte",
@@ -474,7 +474,7 @@
       "lemma": "nächste",
       "wortart": "adjektiv",
       "merkmale": {
-        "gebrauch": "nur attributiv (die letzte Woche, nächste Woche)"
+        "gebrauch": "nur attributiv (nächste Woche, nächsten Montag)"
       },
       "formen": {
         "endung_e": "nächste",
@@ -1220,13 +1220,13 @@
     },
     {
       "schluessel": "de.a1.e04.s0065",
-      "text": "Montag ist der erste Tag der Woche.",
+      "text": "Montag ist der erste Tag in der Woche.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "de.a1.e04.s0066",
-      "text": "Sonntag ist der letzte Tag der Woche.",
+      "text": "Sonntag ist der letzte Tag in der Woche.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -1929,7 +1929,7 @@
     },
     {
       "schluessel": "de.a1.e04.s0181",
-      "text": "Sie liegt beim Bett.",
+      "text": "Sie liegt im Bett.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2091,7 +2091,7 @@
     },
     {
       "schluessel": "de.a1.e04.s0208",
-      "text": "Am Mittwoch hat Laylā keine Zeit.",
+      "text": "Am Dienstag hat Laylā keine Zeit.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2171,7 +2171,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleGehoertes",
           "ziel": "de.a1.e04.s0007",
-          "ablenker": ["de.a1.e04.s0009", "de.a1.e04.s0006"]
+          "ablenker": ["de.a1.e04.s0009", "de.a1.e04.s0006", "de.a1.e04.s0011"]
         },
         {
           "schluessel": "de.a1.e04.l01.a07",
@@ -2437,7 +2437,7 @@
             }
           ],
           "antwort": "de.a1.e04.s0058",
-          "ablenker": ["de.a1.e04.s0062", "de.a1.e04.s0070"]
+          "ablenker": ["de.a1.e04.s0068", "de.a1.e04.s0070"]
         },
         {
           "schluessel": "de.a1.e04.l03.a08",
@@ -2594,7 +2594,7 @@
             }
           ],
           "antwort": "de.a1.e04.s0090",
-          "ablenker": ["de.a1.e04.s0100", "de.a1.e04.s0101"]
+          "ablenker": ["de.a1.e04.s0099", "de.a1.e04.s0101"]
         },
         {
           "schluessel": "de.a1.e04.l04.a10",
@@ -2679,7 +2679,7 @@
             }
           ],
           "antwort": "de.a1.e04.s0115",
-          "ablenker": ["de.a1.e04.s0119", "de.a1.e04.s0101"]
+          "ablenker": ["de.a1.e04.s0090", "de.a1.e04.s0101"]
         },
         {
           "schluessel": "de.a1.e04.l05.a02",
@@ -2899,7 +2899,7 @@
               "satz": "de.a1.e04.s0166"
             },
             {
-              "sprecher": "a",
+              "sprecher": "c",
               "satz": "de.a1.e04.s0167"
             },
             {
@@ -3175,7 +3175,7 @@
             }
           ],
           "antwort": "de.a1.e04.s0051",
-          "ablenker": ["de.a1.e04.s0036", "de.a1.e04.s0056"]
+          "ablenker": ["de.a1.e04.s0036", "de.a1.e04.s0056", "de.a1.e04.s0100"]
         },
         {
           "schluessel": "de.a1.e04.l07.a12",
@@ -3226,7 +3226,7 @@
           "typ": "hoeren_waehlen",
           "anweisung": "waehleBedeutung",
           "ziel": "de.a1.e04.s0012",
-          "ablenker": ["de.a1.e04.s0011", "de.a1.e04.s0013"]
+          "ablenker": ["de.a1.e04.s0004", "de.a1.e04.s0013"]
         },
         {
           "schluessel": "de.a1.e04.l07.a18",
