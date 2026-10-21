@@ -1,3 +1,5 @@
+import { kiHerkunftVerboten } from '../religioes/freigabe';
+
 /**
  * Freigaberegeln der Lern-App (ADR 0040 Nr. 5, ADR 0041 Nr. 2/5/7/11, KERN 4.0 §2.3). Rein, ohne Datenbank: Der Aufrufer
  * lädt Baustein, Belege und Prüfungen (Tabelle `lernapp_pruefung`) samt den **aktuellen** Rollen der Prüfenden und fragt
@@ -61,6 +63,12 @@ export type ReligioeserBaustein = {
   belege: readonly { id: string; inhaltHash: string }[];
   /** Aussagen brauchen mindestens einen Beleg (Quellenpflicht, ADR 0040 Nr. 4). */
   belegPflicht: boolean;
+  /**
+   * Art des Bausteins (`aussage`, `aufgabe`, `lektion`, `koran_bedeutung`, …). Bei Arten, die nur Menschen verfassen
+   * (KI-Regel 2: Koran-Bedeutungen, Wurzeln, Tajwid, Vers- und Hadith-Übersetzungen), macht eine KI-Herkunft den Baustein
+   * unfreigebbar (`religioes/freigabe.ts` `kiHerkunftVerboten`).
+   */
+  art?: string;
 };
 
 /** Jüngste Prüfung je Person zu genau diesem Hash und dieser Art (Personen ohne Konto fallen weg). */
@@ -86,6 +94,8 @@ export type ReligioeseLage = {
   gesperrt: boolean;
   /** Pflichtbeleg fehlt (Aussage ohne Beleg). */
   belegFehlt: boolean;
+  /** KI-Regel 2: Der Baustein darf nicht von einer KI stammen, tut es aber nach seinen Verfassern – nie freigebbar. */
+  kiHerkunft: boolean;
   geprueft: boolean;
 };
 
@@ -104,7 +114,14 @@ export function religioeseLage(b: ReligioeserBaustein, pruefungen: readonly Prue
     freigaben.push(person);
   }
   const belegFehlt = b.belegPflicht && b.belege.length === 0;
-  return { freigaben, gesperrt, belegFehlt, geprueft: !gesperrt && !belegFehlt && freigaben.length >= NOETIGE_FREIGABEN };
+  const kiHerkunft = b.art !== undefined && kiHerkunftVerboten(b.art, b.verfasser);
+  return {
+    freigaben,
+    gesperrt,
+    belegFehlt,
+    kiHerkunft,
+    geprueft: !gesperrt && !belegFehlt && !kiHerkunft && freigaben.length >= NOETIGE_FREIGABEN,
+  };
 }
 
 /** „geprüft“: zwei Freigaben zum aktuellen Hash von zwei verschiedenen Personen mit Rolle, keine Verfasser, Belege bestätigt. */
@@ -217,4 +234,109 @@ export function stichprobeBestanden(e: { geprueft: number; kritisch: number; lei
  */
 export function bestandenBleibt(gesamt: number, geaendert: readonly { einzelnGeprueft: boolean }[]): boolean {
   return gesamt > 0 && geaendert.length * 10 < gesamt && geaendert.every((g) => g.einzelnGeprueft);
+}
+
+// ——— Zwei-Prüfer-Oberfläche (L6-02/03, ADR 0040 Nr. 5, PLAN §6.7 Nr. 5–6) ———
+
+/** Bausteine mit religiöser Zwei-Prüfer-Freigabe in der Verwaltung (Werte von `lernapp_inhalt_typ`). */
+export const RELIGIOESE_BAUSTEINE = ['aussage', 'aufgabe', 'lektion', 'koran_bedeutung'] as const;
+export type ReligioeserBausteinTyp = (typeof RELIGIOESE_BAUSTEINE)[number];
+
+export function istReligioeserBaustein(wert: unknown): wert is ReligioeserBausteinTyp {
+  return typeof wert === 'string' && (RELIGIOESE_BAUSTEINE as readonly string[]).includes(wert);
+}
+
+/** Urteile der religiösen Prüfung (ADR 0040 Nr. 5); `korrektur` gehört nur zur Sprachprüfung. */
+export const RELIGIOESE_URTEILE = ['ok', 'aenderungsvorschlag', 'abgelehnt'] as const;
+export type ReligioesesUrteil = (typeof RELIGIOESE_URTEILE)[number];
+
+/** Anzeige „n/2“: gezählte Freigaben zum aktuellen Hash, höchstens {@link NOETIGE_FREIGABEN}. */
+export function freigabeStand(lage: Pick<ReligioeseLage, 'freigaben'>): number {
+  return Math.min(lage.freigaben.length, NOETIGE_FREIGABEN);
+}
+
+/** Jüngstes religiöses Urteil einer Person zum aktuellen Hash (oder null). */
+export function eigenesUrteil(person: string, hash: string, pruefungen: readonly Pruefung[]): Urteil | null {
+  return juengsteJePerson(pruefungen, hash, ['religioes']).get(person)?.urteil ?? null;
+}
+
+export type UrteilsAntrag = {
+  pruefendeId: string;
+  /** Aktuelle Rollen der Person (Administration allein zählt nicht) */
+  pruefendeRollen: readonly string[];
+  baustein: ReligioeserBaustein;
+  /** Hash, den die Person gesehen hat – muss der aktuelle sein */
+  gesehenerHash: string;
+  urteil: ReligioesesUrteil;
+  /** Belege, für die „Quelle geprüft, Aussage stimmt nach hanefitischer Lehre“ angekreuzt ist (Kennungen) */
+  belegeBestaetigt: readonly string[];
+  /** Häkchen „Inhalt geprüft, stimmt nach hanefitischer Lehre“ – Pflicht für „ok“ bei Bausteinen ohne Belege */
+  inhaltBestaetigt: boolean;
+};
+
+export type UrteilsFehler =
+  'keineRolle' | 'veraltet' | 'verfasser' | 'kiHerkunft' | 'belegFehlt' | 'belegeBestaetigen' | 'inhaltBestaetigen' | 'schonFreigegeben';
+
+/**
+ * Darf diese Person dieses Urteil abgeben (ADR 0040 Nr. 5, KERN 4.0 §2.3)? `null` = ja. Regeln:
+ * - nur mit der Rolle `religioese_pruefung` (die Administration ersetzt keine Prüfung);
+ * - nur zum aktuellen Hash (hat sich der Inhalt seit dem Öffnen geändert, gilt das Urteil nicht);
+ * - wer den aktuellen Stand verfasst hat (KI-Lauf oder Redaktion), prüft ihn nicht – Vier-Augen-Prinzip je Freigabe;
+ * - „ok“ nur, wenn KI-Regel 2 nicht verletzt ist, ein Pflichtbeleg vorhanden ist, jeder aktuelle Beleg ausdrücklich bestätigt
+ *   ist („Quelle geprüft, Aussage stimmt nach hanefitischer Lehre“; ohne Belege der Inhalt selbst), und nicht ein zweites Mal
+ *   von derselben Person zum selben Hash (zwei verschiedene Personen).
+ */
+export function pruefeUrteil(a: UrteilsAntrag, pruefungen: readonly Pruefung[]): UrteilsFehler | null {
+  if (!a.pruefendeRollen.includes(RELIGIOESE_ROLLE)) return 'keineRolle';
+  if (a.gesehenerHash !== a.baustein.inhaltHash) return 'veraltet';
+  if (a.baustein.verfasser.some((v) => v === a.pruefendeId)) return 'verfasser';
+  if (a.urteil !== 'ok') return null;
+  if (a.baustein.art !== undefined && kiHerkunftVerboten(a.baustein.art, a.baustein.verfasser)) return 'kiHerkunft';
+  if (a.baustein.belegPflicht && a.baustein.belege.length === 0) return 'belegFehlt';
+  const bestaetigt = new Set(a.belegeBestaetigt);
+  if (!a.baustein.belege.every((b) => bestaetigt.has(b.id))) return 'belegeBestaetigen';
+  if (a.baustein.belege.length === 0 && !a.inhaltBestaetigt) return 'inhaltBestaetigen';
+  if (eigenesUrteil(a.pruefendeId, a.baustein.inhaltHash, pruefungen) === 'ok') return 'schonFreigegeben';
+  return null;
+}
+
+/**
+ * Belegprüfung durch einen frischen Agenten (PLAN §6.7 Nr. 5, ADR 0040 Nr. 2.3): `belegt`, `teilweise` oder `nicht_belegt`
+ * je Beleg und dessen Hash. Sie ersetzt keine Freigabe und ordnet nur die Warteschlange. Abgelegt in `lernapp_pruefung` als
+ * Zeile ohne Person (`inhaltTyp` `beleg`, Art `religioes`; `ok` = belegt, `aenderungsvorschlag` = teilweise, `abgelehnt` =
+ * nicht belegt) – Prüfungen ohne Person zählen nie als Freigabe.
+ */
+export type Belegpruefung = { belegId: string; inhaltHash: string; ergebnis: 'belegt' | 'teilweise' | 'nicht_belegt' };
+
+export function belegpruefungErgebnis(urteil: Urteil): Belegpruefung['ergebnis'] {
+  return urteil === 'ok' ? 'belegt' : urteil === 'abgelehnt' ? 'nicht_belegt' : 'teilweise';
+}
+
+/** „unsicher“: Die Belegprüfung hält einen aktuellen Beleg für nur teilweise oder nicht belegt. */
+export function belegeUnsicher(belege: readonly { id: string; inhaltHash: string }[], pruefungen: readonly Belegpruefung[]): boolean {
+  return belege.some((b) => pruefungen.some((p) => p.belegId === b.id && p.inhaltHash === b.inhaltHash && p.ergebnis !== 'belegt'));
+}
+
+export type WarteschlangenPlatz = {
+  schluessel: string;
+  /** Belegprüfung „teilweise“ oder „nicht belegt“ */
+  unsicher: boolean;
+  /** gezählte Freigaben (0 oder 1) */
+  stand: number;
+  /** Die angemeldete Person hat zum aktuellen Hash schon geurteilt bzw. ist Verfasser */
+  erledigt: boolean;
+};
+
+/**
+ * Reihenfolge der Warteschlange: „unsicher“ zuerst (Belegprüfung), dann was die Person noch prüfen kann, dabei 1/2 vor 0/2
+ * (die zweite Freigabe schließt einen Baustein ab), sonst nach Schlüssel (Lehrplan-Reihenfolge).
+ */
+export function ordneWarteschlange<T extends WarteschlangenPlatz>(liste: readonly T[]): T[] {
+  return [...liste].sort(
+    (a, b) =>
+      Number(b.unsicher) - Number(a.unsicher) ||
+      Number(a.erledigt) - Number(b.erledigt) ||
+      b.stand - a.stand ||
+      (a.schluessel < b.schluessel ? -1 : a.schluessel > b.schluessel ? 1 : 0),
+  );
 }

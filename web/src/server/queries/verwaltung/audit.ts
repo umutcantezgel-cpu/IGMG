@@ -128,6 +128,7 @@ export const AKTION_SCHLUESSEL = {
   'lernapp.stimme_gewaehlt': 'lernappStimmeGewaehlt',
   'lernapp.meldung_bearbeitet': 'lernappMeldungBearbeitet',
   'lernapp.eintrag_entsperrt': 'lernappEintragEntsperrt',
+  'lernapp.religioes_geprueft': 'lernappReligioesGeprueft',
   'lernapp.zuweisung_angelegt': 'lernappZuweisungAngelegt',
   'lernapp.zuweisung_entfernt': 'lernappZuweisungEntfernt',
   'lernapp.gruppenziel_geaendert': 'lernappGruppenzielGeaendert',

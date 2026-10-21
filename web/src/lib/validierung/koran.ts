@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { FREIGABE_STATUS, RELIGIOESE_ARTEN } from '@/lib/religioes/freigabe';
+import { FREIGABE_STATUS, istKiHerkunft, RELIGIOESE_ARTEN } from '@/lib/religioes/freigabe';
 import { richtextFeld } from './richtext';
 
 /**
@@ -71,13 +71,16 @@ export const tajwidSchema = z.object({
   einreichen: schalter,
 });
 
-/** Hadith-Übersetzung je Nummer und Sprache mit Herkunft (Übersetzer, Quelle, Lizenz). */
+/** Herkunftsfeld ohne KI-Angabe (KI-Regel 2, ADR 0040 Nr. 3: Hadith-Übersetzungen verfassen nur Menschen). */
+const menschlich = (max: number) => pflicht(max).refine((s) => !istKiHerkunft(s), 'kiHerkunft');
+
+/** Hadith-Übersetzung je Nummer und Sprache mit Herkunft (Übersetzer, Quelle, Lizenz); KI-Herkunft wird verweigert. */
 export const hadithUebersetzungSchema = z.object({
   nummer: hadithNummer,
   sprache: z.enum(HADITH_SPRACHEN, 'ungueltig'),
   text: mehrzeilig(20_000, true),
-  uebersetzer: pflicht(200),
-  quelle: pflicht(300),
+  uebersetzer: menschlich(200),
+  quelle: menschlich(300),
   lizenz: pflicht(300),
   einreichen: schalter,
 });

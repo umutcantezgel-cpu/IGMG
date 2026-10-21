@@ -8,9 +8,9 @@ import { inhaltGeaendert } from '@/lib/cache/aktualisieren';
 import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { darf, verlangeRecht, type Angemeldet } from '@/lib/rechte/pruefe';
-import { vierAugenErfuellt } from '@/lib/religioes/freigabe';
+import { kiHerkunftVerboten, vierAugenErfuellt } from '@/lib/religioes/freigabe';
 import { gueltigeBloecke, religioeseVerweise } from '@/lib/validierung/bloecke';
-import { FREIGABE_TYPEN, type ReligioeserTyp } from '@/server/queries/verwaltung/freigaben';
+import { FREIGABE_TYPEN, istLernappFreigabeTyp, type ReligioeserTyp } from '@/server/queries/verwaltung/freigaben';
 
 /**
  * Freigaben entscheiden (ADR 0030, ADR 0032, MUSTER 5). Religiöse Prüfung nur mit `religioes.freigeben` (Rolle
@@ -18,6 +18,10 @@ import { FREIGABE_TYPEN, type ReligioeserTyp } from '@/server/queries/verwaltung
  * `seite.veroeffentlichen` für deren Organisation. „Freigeben“ einer Seite veröffentlicht sie (der Antrag lautete
  * „bitte prüfen und veröffentlichen“); „Zurückweisen“ braucht einen Kommentar und lässt den Inhalt im Entwurf.
  * Jeder Schritt steht im Verlauf (`freigabe`) und im Audit (ohne Inhalte).
+ *
+ * KI-Regel 2 (ADR 0040 Nr. 3, L6-02): Wortbedeutungen, Tajwid-Texte und Hadith-Übersetzungen, deren Herkunft auf eine KI zeigt
+ * (Verfasser `ki:…`, Quelle oder Übersetzer), gibt niemand frei. Bausteine der Lern-App (`lernapp_*`) brauchen zwei
+ * Freigaben mit Beleg-Haken und werden nur in `/verwaltung/lernapp/religioes` entschieden (`religioesPruefen`).
  */
 export type FreigabeZustand = {
   fehler?: string;
@@ -103,7 +107,7 @@ async function setzeReligioesenStatus(
   id: string,
   neu: 'geprueft' | 'entwurf',
   benutzerId: string,
-): Promise<'ok' | 'nichtGefunden' | 'vierAugen'> {
+): Promise<'ok' | 'nichtGefunden' | 'vierAugen' | 'kiHerkunft'> {
   const ziel = zielZeile(typ, id);
   if (!ziel) return 'nichtGefunden';
   const { t, wo } = ziel;
@@ -111,6 +115,7 @@ async function setzeReligioesenStatus(
   const [stand] = await tx.select({ verfasstVon: t.verfasstVon }).from(t).where(offen).limit(1);
   if (!stand) return 'nichtGefunden';
   if (neu === 'geprueft' && !vierAugenErfuellt(stand.verfasstVon, benutzerId)) return 'vierAugen';
+  if (neu === 'geprueft' && kiHerkunftVerboten(typ, [stand.verfasstVon, ...(await herkunft(tx, typ, id))])) return 'kiHerkunft';
   const werte = neu === 'geprueft' ? { freigabe: neu, geprueftVon: benutzerId, geprueftAm: new Date() } : { freigabe: neu };
   // Dieselbe Bedingung im UPDATE: Hat sich der Inhalt seitdem geändert (neue verfassende Person), greift sie erneut
   const bedingung = neu === 'geprueft' ? and(offen, or(isNull(t.verfasstVon), ne(t.verfasstVon, benutzerId))) : offen;
@@ -120,6 +125,19 @@ async function setzeReligioesenStatus(
     .where(bedingung)
     .returning({ freigabe: t.freigabe });
   return geaendert.length ? 'ok' : 'nichtGefunden';
+}
+
+/** Weitere Herkunftsangaben (KI-Regel 2): bei Hadith-Übersetzungen Quelle und Übersetzer. */
+async function herkunft(tx: Tx, typ: ReligioeserTyp, id: string): Promise<string[]> {
+  if (typ !== 'hadith_uebersetzung') return [];
+  const [sammlung, nummer, sprache] = id.split('|');
+  const t = schema.hadithUebersetzung;
+  const [z] = await tx
+    .select({ quelle: t.quelle, uebersetzer: t.uebersetzer })
+    .from(t)
+    .where(and(eq(t.sammlungId, sammlung!), eq(t.nummer, nummer!), eq(t.sprache, sprache!)))
+    .limit(1);
+  return z ? [z.quelle, z.uebersetzer] : [];
 }
 
 export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData): Promise<FreigabeZustand> {
@@ -141,6 +159,8 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
     return { fehler: 'pruefen', feldFehler };
   }
   const e = p.data;
+  // Lern-App: zwei Freigaben mit Beleg-Haken zum aktuellen Hash – nur in der Prüfansicht der Lern-App
+  if (istLernappFreigabeTyp(e.inhaltTyp)) return { fehler: 'zweiPruefer' };
   const freigeben = e.entscheidung === 'freigeben';
   const kommentar = e.kommentar || null;
 
@@ -244,6 +264,7 @@ export async function entscheideFreigabe(_vorher: FreigabeZustand, fd: FormData)
     return 'ok' as const;
   });
   if (ergebnis === 'vierAugen') return { fehler: 'vierAugen' };
+  if (ergebnis === 'kiHerkunft') return { fehler: 'kiHerkunft' };
   if (ergebnis !== 'ok') return { fehler: 'nichtMehrOffen' };
   inhaltGeaendert(CACHE[typ]);
   // Zurück zur Warteschlange mit Rückmeldung (der Inhalt steht dort nicht mehr)

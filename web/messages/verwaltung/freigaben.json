@@ -23,7 +23,11 @@
       "hadith_uebersetzung": "Hadith-Übersetzung",
       "elifbe_lektion": "Elifbe-Lektion",
       "besonderer_tag": "Besonderer Tag",
-      "wissen_thema": "Wissensthema"
+      "wissen_thema": "Wissensthema",
+      "lernapp_aussage": "Lern-App: Aussage (Wissen)",
+      "lernapp_aufgabe": "Lern-App: Quizfrage",
+      "lernapp_lektion": "Lern-App: Lektion",
+      "lernapp_koran_bedeutung": "Lern-App: Koran-Wortbedeutung"
     },
     "angabe": {
       "adresse": "Adresse",
@@ -49,7 +53,9 @@
       "kurztext_de": "Kurztext",
       "kurztext_tr": "Kurztext (Türkisch)",
       "kurztext_en": "Kurztext (Englisch)",
-      "textSprache": "Einführung ({sprache})"
+      "textSprache": "Einführung ({sprache})",
+      "zweiPruefer": "Zwei-Prüfer-Freigabe",
+      "baustein": "Baustein"
     },
     "eingereicht": "Eingereicht von {name} am {datum}",
     "eingereichtOhneName": "Eingereicht am {datum}",
@@ -94,11 +100,16 @@
       "nichtMehrOffen": "Dieser Inhalt wartet nicht mehr auf eine Prüfung (vielleicht hat ihn schon jemand anderes bearbeitet).",
       "kommentarPflicht": "Bitte schreiben Sie kurz, was geändert werden soll.",
       "zuLang": "Der Kommentar ist zu lang (höchstens 1000 Zeichen).",
-      "ungueltig": "Diese Angabe ist ungültig."
+      "ungueltig": "Diese Angabe ist ungültig.",
+      "zweiPruefer": "Bausteine der Lern-App brauchen zwei Freigaben mit Beleg-Haken. Bitte in der religiösen Prüfung der Lern-App entscheiden.",
+      "kiHerkunft": "KI-Regel 2: Dieser Inhalt ist als KI-Entwurf gekennzeichnet. Koran-Wortbedeutungen, Tajwid-Texte sowie Vers- und Hadith-Übersetzungen verfassen nur Menschen; er lässt sich nicht freigeben."
     },
     "sprachname": {
       "tr": "Türkisch",
       "en": "Englisch"
-    }
+    },
+    "zweiPrueferPruefen": "In der religiösen Prüfung der Lern-App prüfen",
+    "zweiPrueferPruefenName": "In der religiösen Prüfung der Lern-App prüfen: {titel}",
+    "nurLernappReligioes": "Nur Personen mit der Rolle „Religiöse Prüfung“ prüfen Bausteine der Lern-App (zwei Freigaben)."
   }
 }

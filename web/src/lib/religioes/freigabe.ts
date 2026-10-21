@@ -119,3 +119,61 @@ export function zerlegeKennung(kennung: string, teile: number): string[] | null 
   const stuecke = kennung.split('|');
   return stuecke.length === teile && stuecke.every((s) => s.length > 0 && s.length <= 40) ? stuecke : null;
 }
+
+/**
+ * KI-Regel 2 im Werkzeug (ADR 0040 Nr. 3, KERN 4.0 §2.2 Nr. 2, L3-E09): Diese Inhaltsarten bleiben menschlich – Koran-
+ * Wortbedeutungen (auch an einer Stelle und im Lern-App-Pfad), die Koran-Wurzeltabelle (nur Werkzeugvorschlag + Lehrkraft),
+ * Tajwid-Texte, Übersetzungen von Versen und Hadithen sowie Bittgebete. Import, Speichern und Freigeben verweigern sie, wenn
+ * die Herkunft auf eine KI zeigt (Verfasser `ki:<lauf>` nach ADR 0040 Nr. 7 oder eine ausdrückliche Angabe in Quelle bzw.
+ * Übersetzer). Der Wissenskurs (`aussage`, `aufgabe`, `lektion`) darf KI-Entwürfe haben – mit zwei Freigaben.
+ */
+export const NUR_MENSCHLICH = [
+  'quran_wortbedeutung',
+  'quran_wortbedeutung_ort',
+  'koran_bedeutung',
+  'wurzel',
+  'tajwid_regel',
+  'quran_uebersetzung',
+  'hadith_uebersetzung',
+  'bittgebet',
+] as const;
+export type NurMenschlich = (typeof NUR_MENSCHLICH)[number];
+
+export function nurMenschlich(art: string): art is NurMenschlich {
+  return (NUR_MENSCHLICH as readonly string[]).includes(art);
+}
+
+/** Maschinenlesbare KI-Herkunft (`ki:<lauf>/<modell>/<promptVersion>`, ADR 0040 Nr. 7; ebenso `ai:`). */
+const KI_KENNUNG = /^\s*(?:ki|ai)\s*:/i;
+/** Ausdrückliche Angaben in Freitext (Quelle, Übersetzer): Abkürzungen nur großgeschrieben, sonst ohne Rücksicht auf Groß/Klein. */
+const KI_ABKUERZUNG = /(?:^|[^\p{L}\p{N}])(?:KI|AI|LLM)(?:$|[^\p{L}\p{N}])/u;
+const KI_ANGABE =
+  /künstliche[rn]? intelligenz|artificial intelligence|yapay zek[aâ]|chat-?gpt|\bgpt-?\d|sprachmodell|language model|dil modeli|maschinelle[rn]? übersetzung|machine translation|makine çevirisi|\bdeepl\b|google translate/iu;
+
+/** Zeigt die Herkunftsangabe (Verfasser, Quelle, Übersetzer) auf eine KI? */
+export function istKiHerkunft(wert: string | null | undefined): boolean {
+  if (!wert) return false;
+  const w = wert.normalize('NFC');
+  return KI_KENNUNG.test(w) || KI_ABKUERZUNG.test(w) || KI_ANGABE.test(w);
+}
+
+/** Verstößt dieser Inhalt gegen KI-Regel 2? Nur für {@link NUR_MENSCHLICH}; jede Herkunftsangabe zählt. */
+export function kiHerkunftVerboten(art: string, herkunft: readonly (string | null | undefined)[]): boolean {
+  return nurMenschlich(art) && herkunft.some(istKiHerkunft);
+}
+
+/** Fehler des Imports bzw. Werkzeugs bei {@link kiHerkunftVerboten} (ohne Inhalt, nur Art und Kennung). */
+export class KiHerkunftVerboten extends Error {
+  constructor(
+    readonly art: NurMenschlich,
+    readonly kennung: string,
+  ) {
+    super(`KI-Regel 2 (ADR 0040 Nr. 3): ${art} ${kennung} stammt nach der Herkunftsangabe von einer KI – nur Menschen verfassen das.`);
+    this.name = 'KiHerkunftVerboten';
+  }
+}
+
+/** Bricht ab, wenn der Inhalt gegen KI-Regel 2 verstößt (Import, Werkzeuge). */
+export function verlangeMenschlicheHerkunft(art: string, kennung: string, herkunft: readonly (string | null | undefined)[]): void {
+  if (kiHerkunftVerboten(art, herkunft)) throw new KiHerkunftVerboten(art as NurMenschlich, kennung);
+}

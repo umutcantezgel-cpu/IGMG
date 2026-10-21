@@ -15,6 +15,7 @@ import { leseMetadaten } from '../src/lib/quran/metadaten';
 import { bereinige, REGEL_FACHBEGRIFF, REGEL_FAMILIE, type TajwidSegment } from '../src/lib/quran/tajwid';
 import { leseTanzil } from '../src/lib/quran/tanzil';
 import { leseKopf, leseUebersetzung } from '../src/lib/quran/uebersetzung';
+import { verlangeMenschlicheHerkunft } from '../src/lib/religioes/freigabe';
 import { woerter, zerlege, zusammensetzen } from '../src/lib/quran/woerter';
 
 const { values } = parseArgs({ options: { erzwingen: { type: 'boolean', default: false } } });
@@ -164,6 +165,8 @@ async function ausgabe(tx: Db, a: (typeof AUSGABEN)[number], roh: Buffer, hash: 
     sha256: hash,
     abgerufenAm: new Date('2026-10-13T04:41:00Z'),
   };
+  // KI-Regel 2 (ADR 0040 Nr. 3): Versübersetzungen nur von Menschen – eine Ausgabe mit KI-Angabe im Kopf bricht ab
+  verlangeMenschlicheHerkunft('quran_uebersetzung', a.id, [werte.uebersetzer, werte.titel, kopf.source, kopf.comment]);
   // Die Freigabe gilt für die unverändert importierte Ausgabe (ADR 0030): Ändert sich die Datei (SHA-256), ist die
   // Ausgabe wieder auszuschalten und neu freizugeben.
   const unveraendert = sql`${schema.quranAusgabe.sha256} = excluded.sha256`;
@@ -202,17 +205,15 @@ async function hadith(tx: Db, roh: Buffer, hash: string) {
     .onConflictDoUpdate({ target: schema.hadithSammlung.id, set: { sha256: hash, importiertAm: new Date() } });
   await tx.delete(schema.hadith).where(eq(schema.hadith.sammlungId, 'bukhari'));
   await tx.delete(schema.hadithBuch).where(eq(schema.hadithBuch.sammlungId, 'bukhari'));
-  await tx
-    .insert(schema.hadithBuch)
-    .values(
-      buecher.map((b) => ({
-        sammlungId: 'bukhari',
-        nr: b.nr,
-        titel: { de: '', en: b.titelEn },
-        hadithVon: b.hadithVon,
-        hadithBis: b.hadithBis,
-      })),
-    );
+  await tx.insert(schema.hadithBuch).values(
+    buecher.map((b) => ({
+      sammlungId: 'bukhari',
+      nr: b.nr,
+      titel: { de: '', en: b.titelEn },
+      hadithVon: b.hadithVon,
+      hadithBis: b.hadithBis,
+    })),
+  );
   await inBloecken(hadithe, 500, (block) => tx.insert(schema.hadith).values(block.map((h) => ({ sammlungId: 'bukhari', ...h }))));
   await tx.execute(sql`update hadith set suche = to_tsvector('simple', text_normalisiert) where sammlung_id = 'bukhari'`);
   console.log(
