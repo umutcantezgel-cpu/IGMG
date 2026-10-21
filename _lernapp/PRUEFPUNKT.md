@@ -1,5 +1,9 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 22:15 UTC – Pause beendet (Nutzer: „proceed“), alle Läufe mit Fortsetzung neu:** A1 `wf_ffae8228-28c`,
+  A2 tr `wf_1cf78737-174`, A2 de `wf_e29686b6-423`, L6-Code `wf_2b3cf6ea-6c8` (B ab 6b44dbd inkl. M-1 aus S-L3, C ab 64eabf5),
+  L6 Wissen `wf_45c0afe2-3ea` (Lehrplan 86bbf89 übersprungen, Entwürfe islam.grund.e01–e08), L8-03/04 `wf_9b549efc-4d5` (D ab
+  e2e4c6e). S-L3-Bericht übernommen (1e55d44). Trigger wieder an. Platte 4,4 GB (pnpm-Store bereinigt, Metadaten-Cache gelöscht).
 - **Stand 21.10.2026 20:10 UTC – PAUSE auf Wunsch des Nutzers** („jetzt kannst du, nachdem diese fertig sind, Pause machen“):
   Die sechs laufenden Läufe dürfen zu Ende laufen; danach nur noch sichern (ZWISCHENSTAND/Ergebnisse, Commit, Push), KEINE neuen
   Läufe. Die stündliche Fortsetzung `trig_01RDCdCmysfNvQyECcSRCERP` ist ausgeschaltet. Weiter erst auf Nachricht des Nutzers –
