@@ -2,7 +2,8 @@
  * Texte der Verwaltungsmodule (Welle C, E-031): je Modul eine Datei `messages/verwaltung/<modul>.json` mit
  * { "<modul>": { … } } – nur Deutsch (ADR 0016). `src/i18n/request.ts` hängt sie unter den Namensraum `verwaltung`;
  * `pnpm sprachen:pruefen` meldet Überschneidungen mit `messages/de.json` › verwaltung. Neue Module trägt nur der
- * Orchestrator ein.
+ * Orchestrator ein. Ausnahme: `lernapp-pruefung.json` (Prüfoberfläche Sprache in de, tr und ar, ADR 0041 Nr. 10) steht
+ * nicht hier; die Seite liest sie mit `createTranslator` und ausdrücklicher Sprache.
  */
 import uebersicht from './uebersicht.json';
 import neuigkeiten from './neuigkeiten.json';
@@ -39,6 +40,7 @@ import anzeige from './anzeige.json';
 import sicherheit from './sicherheit.json';
 import startseite from './startseite.json';
 import wissen from './wissen.json';
+import lernapp from './lernapp.json';
 
 type Teil = Record<string, unknown>;
 
@@ -78,4 +80,5 @@ export const VERWALTUNG: Record<string, Teil> = {
   sicherheit,
   startseite,
   wissen,
+  lernapp,
 };

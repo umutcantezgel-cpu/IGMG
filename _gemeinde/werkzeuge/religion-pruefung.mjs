@@ -87,6 +87,11 @@ export const ERLAUBT = [
     { waechter: true, lexikon: true },
   ],
   [
+    /^web\/messages\/verwaltung\/lernapp-pruefung\.json$/,
+    "Lern-App: dreisprachige Prüfoberfläche Sprache (ADR 0041 Nr. 10, KERN 4.0 §3, O-3)",
+    { waechter: true, lexikon: true },
+  ],
+  [
     /^web\/inhalte\/lernapp\/(sprache|uebersetzung|aussprache)\//,
     "Lern-App: Hocharabisch der Sprachkurse, Übersetzungen der Richtungen mit Arabisch, Aussprache (ADR 0040 Nr. 6)",
     { waechter: true },

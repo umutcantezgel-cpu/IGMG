@@ -118,6 +118,15 @@ export const AKTION_SCHLUESSEL = {
   'religioes.eingereicht': 'religioesEingereicht',
   'religioes.freigegeben': 'religioesFreigegeben',
   'religioes.zurueckgewiesen': 'religioesZurueckgewiesen',
+  'lernapp.stichprobe_gezogen': 'lernappStichprobeGezogen',
+  'lernapp.geprueft': 'lernappGeprueft',
+  'lernapp.stichprobe_entschieden': 'lernappStichprobeEntschieden',
+  'lernapp.pruefsprachen_geaendert': 'lernappPruefsprachenGeaendert',
+  'lernapp.sprecher_angelegt': 'lernappSprecherAngelegt',
+  'lernapp.aufnahme_gespeichert': 'lernappAufnahmeGespeichert',
+  'lernapp.aufnahme_verworfen': 'lernappAufnahmeVerworfen',
+  'lernapp.stimme_gewaehlt': 'lernappStimmeGewaehlt',
+  'lernapp.meldung_bearbeitet': 'lernappMeldungBearbeitet',
 } as const satisfies Record<AuditAktion, string>;
 
 /** Alle Aktionen in der Reihenfolge des Schlüsselverzeichnisses. */

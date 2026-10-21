@@ -16,6 +16,7 @@ import {
   IdCard,
   Image as Bild,
   Inbox,
+  Languages,
   LayoutDashboard,
   Library,
   ListTree,
@@ -78,6 +79,7 @@ const ICONS: Record<ModulIcon, LucideIcon> = {
   einstellungen: Settings,
   hatim: BookOpen,
   besondereTage: CalendarHeart,
+  lernapp: Languages,
   newsletter: Send,
   anzeige: MonitorPlay,
 };

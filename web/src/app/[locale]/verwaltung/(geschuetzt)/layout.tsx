@@ -9,6 +9,7 @@ import { Seitenleiste, type SeitenleistenEintrag } from '@/components/verwaltung
 import { funktionAn } from '@/lib/funktionen';
 import { darf, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { abmelden } from '@/server/actions/anmeldung';
+import { zaehleOffeneLernappMeldungen } from '@/server/queries/lernapp/meldungen';
 import { zaehleOffeneFolien } from '@/server/queries/verwaltung/anzeige';
 import { zaehleNeueEingaenge } from '@/server/queries/verwaltung/eingaenge';
 import { zaehleOffeneMeldungen } from '@/server/queries/verwaltung/kinderschutz';
@@ -26,28 +27,35 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
   const a = await verlangeSitzung();
   const t = await getTranslations('verwaltung');
   // Module mit Personendaten erscheinen nur bei eingeschaltetem Funktionsschalter (ADR 0035)
-  const schalter = { lernplattform: await funktionAn('lernplattform'), konten: await funktionAn('konten') };
+  const schalter = {
+    lernplattform: await funktionAn('lernplattform'),
+    konten: await funktionAn('konten'),
+    lernapp: await funktionAn('lernapp'),
+  };
   const sichtbar = MODULE.filter((m) => m.gebaut && (!m.funktion || schalter[m.funktion]) && rechtListe(m).some((r) => darf(a.rollen, r)));
   const zeigt = (schluessel: (typeof MODULE)[number]['schluessel']) => sichtbar.some((m) => m.schluessel === schluessel);
   const jetzt = new Date();
-  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz, koran, anzeige] = await Promise.all([
-    // Bevorstehende, veröffentlichte Veranstaltungen: dieselbe Zahl wie die Kachel auf der Übersicht (DP-C1 M3)
-    zeigt('veranstaltungen') ? ladeKommendeVeranstaltungen(a, jetzt).then((kommend) => kommend?.length) : undefined,
-    // Entwürfe der Neuigkeiten und derzeit sichtbare Ankündigungen (DP-C1 H1)
-    zeigt('neuigkeiten') ? zaehleEntwuerfe(a) : undefined,
-    zeigt('ankuendigungen') ? zaehleAktiveAnkuendigungen(a, jetzt) : undefined,
-    // Neue (unbearbeitete) Eingänge, die die Person sehen darf
-    zeigt('eingaenge') ? zaehleNeueEingaenge(a) : undefined,
-    // Ungelesene Nachrichten an die Person, offene Tickets im eigenen Sichtbereich
-    zeigt('postfach') ? zaehleUngelesene(a) : undefined,
-    zeigt('tickets') ? zaehleOffeneTickets(a) : undefined,
-    // Offene Chat-Meldungen (nur Rolle kinderschutz)
-    zeigt('kinderschutz') ? zaehleOffeneMeldungen() : undefined,
-    // Religiöse Freigaben „zur Prüfung“, die die Person prüfen darf (nicht selbst verfasst, ADR 0030)
-    zeigt('koran') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFreigaben(a.benutzerId) : undefined,
-    // Vers- und Hadith-Folien „zur Prüfung“, die die Person freigeben darf (O-K05)
-    zeigt('anzeige') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFolien(a.benutzerId) : undefined,
-  ]);
+  const [veranstaltungen, neuigkeiten, ankuendigungen, eingaenge, postfach, tickets, kinderschutz, koran, anzeige, lernapp] =
+    await Promise.all([
+      // Bevorstehende, veröffentlichte Veranstaltungen: dieselbe Zahl wie die Kachel auf der Übersicht (DP-C1 M3)
+      zeigt('veranstaltungen') ? ladeKommendeVeranstaltungen(a, jetzt).then((kommend) => kommend?.length) : undefined,
+      // Entwürfe der Neuigkeiten und derzeit sichtbare Ankündigungen (DP-C1 H1)
+      zeigt('neuigkeiten') ? zaehleEntwuerfe(a) : undefined,
+      zeigt('ankuendigungen') ? zaehleAktiveAnkuendigungen(a, jetzt) : undefined,
+      // Neue (unbearbeitete) Eingänge, die die Person sehen darf
+      zeigt('eingaenge') ? zaehleNeueEingaenge(a) : undefined,
+      // Ungelesene Nachrichten an die Person, offene Tickets im eigenen Sichtbereich
+      zeigt('postfach') ? zaehleUngelesene(a) : undefined,
+      zeigt('tickets') ? zaehleOffeneTickets(a) : undefined,
+      // Offene Chat-Meldungen (nur Rolle kinderschutz)
+      zeigt('kinderschutz') ? zaehleOffeneMeldungen() : undefined,
+      // Religiöse Freigaben „zur Prüfung“, die die Person prüfen darf (nicht selbst verfasst, ADR 0030)
+      zeigt('koran') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFreigaben(a.benutzerId) : undefined,
+      // Vers- und Hadith-Folien „zur Prüfung“, die die Person freigeben darf (O-K05)
+      zeigt('anzeige') && darf(a.rollen, 'religioes.freigeben') ? zaehleOffeneFolien(a.benutzerId) : undefined,
+      // Lern-App: offene Meldungen aus der App, die die Person bearbeiten darf (L3-06)
+      zeigt('lernapp') && darf(a.rollen, 'lernapp.bearbeiten') ? zaehleOffeneLernappMeldungen() : undefined,
+    ]);
   const zaehler: Partial<Record<(typeof MODULE)[number]['schluessel'], number>> = {
     veranstaltungen,
     neuigkeiten,
@@ -58,6 +66,7 @@ export default async function GeschuetzterBereich({ children }: LayoutProps<'/[l
     kinderschutz,
     koran,
     anzeige,
+    lernapp,
   };
   const eintraege: SeitenleistenEintrag[] = sichtbar.map((m) => {
     const anzahl = zaehler[m.schluessel];

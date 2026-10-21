@@ -81,6 +81,9 @@ Hinweise:
   `zugaenglichkeit-gemeinde.spec.ts` und `lernkette.spec.ts` prüfen außerhalb davon den gesperrten Zustand und
   überspringen das Senden des Kindes bzw. die Regeln-Bestätigung mit Begründung – den vollen Lauf daher zwischen 08 und
   19 Uhr starten.
+- Verwaltung der Lern-App (L3-06): `lernapp/verwaltung-sprachpruefung.spec.ts` (Rolle „Sprachprüfung“ mit Prüfsprache
+  Deutsch, Stichprobe der Zieltexte von `de.a1.e01` bleibt offen) und `lernapp/verwaltung-audio.spec.ts` (Ersatz-Mikrofon
+  von Chromium, Ablage unter `MEDIEN_VERZEICHNIS`) brauchen `FUNKTION_LERNAPP=an`; beide nur im Projekt `desktop`.
 - ALTCHA rechnet im Browser (Proof-of-Work); die Tests warten bis 60 s (`hilfen/altcha.ts`). Auf 4 Kernen ohne Fremdlast
   dauert eine Lösung 1–9 s; laufen nebenher Bauten, deutlich länger.
 - Mit Cache Components antworten Seiten als Stream mit 200; ein `notFound()` mitten im Stream bleibt bei 200 mit

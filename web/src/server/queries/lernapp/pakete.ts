@@ -5,7 +5,7 @@ import { TAG } from '@/lib/cache/tags';
 import { db, schema } from '@/lib/db';
 import { datenbankVerfuegbar, ohneLaufzeitDatenbank } from '@/lib/db/verfuegbar';
 import { funktionAn } from '@/lib/funktionen';
-import type { Pruefung } from '@/lib/lernapp/freigabe';
+import { type Pruefung, sprachlichGesperrt } from '@/lib/lernapp/freigabe';
 import { AufgabeVorlageSchema, verweiseVon } from '@/lib/lernapp/inhalt/schema';
 import {
   istRichtung,
@@ -255,12 +255,28 @@ export async function ladeBauEingaben(richtung: RichtungId, einheit?: string): P
 
   // Audio: nur Zieltexte ohne Religionsbezug, je Text die Stimme mit Vorrang (Mensch vor Sprachausgabe vor Testton)
   const hashes = [...new Set([...eintraege.values()].filter((e) => !e.religionsbezug).map((e) => textHash(e.text)))];
-  const clips = hashes.length
-    ? await db
-        .select()
-        .from(schema.lernappAudio)
-        .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.textHash, hashes)))
-    : [];
+  const [alleClips, wahlen] = hashes.length
+    ? await Promise.all([
+        db
+          .select()
+          .from(schema.lernappAudio)
+          .where(and(eq(schema.lernappAudio.sprache, ziel), inArray(schema.lernappAudio.textHash, hashes))),
+        // Wahl im Audio-Studio (L3-06): „Sprachausgabe“ liefert eine vorhandene menschliche Aufnahme nicht aus
+        db
+          .select({ textHash: schema.lernappAudioWahl.textHash, wahl: schema.lernappAudioWahl.wahl })
+          .from(schema.lernappAudioWahl)
+          .where(and(eq(schema.lernappAudioWahl.sprache, ziel), inArray(schema.lernappAudioWahl.textHash, hashes))),
+      ])
+    : [[], []];
+  const ohneMensch = new Set(wahlen.filter((w) => w.wahl === 'sprachausgabe').map((w) => w.textHash));
+  // Audio-Stichprobe (ADR 0041 Nr. 2, PLAN §6.5): „abgelehnt“ oder kritisch (z. B. falsche Aussprache) zum aktuellen
+  // Inhalts-Hash des Clips verbirgt ihn sofort; dann greift die nächste Stimme oder „Audio folgt“.
+  const clipPruefungen = await ladePruefungen(alleClips.map((c) => ({ typ: 'audio' as const, id: c.id })));
+  const clips = alleClips.filter(
+    (c) =>
+      !(ohneMensch.has(c.textHash) && c.stimme.startsWith('mensch:')) &&
+      !sprachlichGesperrt(c.sha256, clipPruefungen.get(`audio:${c.id}`) ?? []),
+  );
   const buendelNamen = [...new Set(clips.map((c) => c.buendel))];
   const groessen = new Map<string, number>(
     buendelNamen.length

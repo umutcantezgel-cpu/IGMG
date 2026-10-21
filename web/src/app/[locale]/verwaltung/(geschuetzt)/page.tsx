@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import { MODULE } from '@/components/verwaltung/shell/module';
 import { Kennzahlen } from '@/components/verwaltung/uebersicht/Kennzahlen';
@@ -5,7 +6,8 @@ import { Listen } from '@/components/verwaltung/uebersicht/Listen';
 import { sichtbareKacheln } from '@/components/verwaltung/uebersicht/sichtbarkeit';
 import { VerwaltungsKopf } from '@/components/verwaltung/VerwaltungsKopf';
 import { Zustandsgrafik } from '@/components/website/Zustandsgrafik';
-import { verlangeSeitenRecht } from '@/lib/rechte/pruefe';
+import { funktionAn } from '@/lib/funktionen';
+import { darf, verlangeSeitenRecht, verlangeSitzung } from '@/lib/rechte/pruefe';
 import { ladeUebersicht } from '@/server/queries/verwaltung/uebersicht';
 
 /**
@@ -14,6 +16,10 @@ import { ladeUebersicht } from '@/server/queries/verwaltung/uebersicht';
  * hier erscheinen.
  */
 export default async function Uebersicht() {
+  // Die Rolle „Sprachprüfung“ hat keine Übersicht: ihr Einstieg ist die Prüfoberfläche (ADR 0041, Fortschreibung S-L1)
+  const sitzung = await verlangeSitzung();
+  if (!darf(sitzung.rollen, 'uebersicht.lesen') && darf(sitzung.rollen, 'lernapp.sprache.pruefen') && (await funktionAn('lernapp')))
+    redirect('/verwaltung/lernapp/sprachpruefung');
   const a = await verlangeSeitenRecht('uebersicht.lesen');
   const [t, tv] = await Promise.all([getTranslations('verwaltung.uebersicht'), getTranslations('verwaltung')]);
   const sichtbar = sichtbareKacheln(MODULE, a.rollen);

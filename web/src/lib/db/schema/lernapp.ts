@@ -383,8 +383,10 @@ export const lernappBeleg = pgTable(
 );
 
 /**
- * Sprecher*innen menschlicher Aufnahmen: nur mit hinterlegter Vereinbarung (ADR 0029 Nr. 4, Pflicht). `kiSyntheseErlaubt`:
- * Die Vereinbarung erlaubt das Training einer eigenen Stimme (ADR 0045).
+ * Sprecher*innen menschlicher Aufnahmen: nur mit hinterlegter Vereinbarung (ADR 0029 Nr. 4, Pflicht). Modul B der
+ * Vereinbarung (`web/docs/recht/entwuerfe/vereinbarung-sprecher-lernapp.md`) getrennt: `kiSyntheseErlaubt` = B1 (Training
+ * einer eigenen Stimme), `klonenErlaubt` = B2 (Referenzstimme ohne Training; ADR 0045, Fortschreibung S3/S8 Nr. 4,
+ * Migration 0020).
  */
 export const lernappSprecher = pgTable('lernapp_sprecher', {
   id: uuid().primaryKey().defaultRandom(),
@@ -393,8 +395,62 @@ export const lernappSprecher = pgTable('lernapp_sprecher', {
     .notNull()
     .references(() => medium.id, { onDelete: 'restrict' }),
   kiSyntheseErlaubt: boolean().notNull().default(false),
+  klonenErlaubt: boolean().notNull().default(false),
   erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
 });
+
+export const lernappAufnahmeStatusEnum = pgEnum('lernapp_aufnahme_status', ['neu', 'gebuendelt', 'verworfen']);
+
+/**
+ * Menschliche Aufnahme aus dem Audio-Studio (Verwaltung L3-06, ADR 0039 Nr. 8, Migration 0020): Rohdatei im privaten
+ * Speicher unter ihrem Inhalts-Hash (`lernapp/aufnahmen/<sprache>/<textHash16>-<sha16>.<endung>`, Format nur über Magic
+ * Bytes), nur mit einer Sprecherin oder einem Sprecher mit Vereinbarung. Die Audio-Kette (L3-05) normiert, bündelt und
+ * trägt den Clip mit der Stimme `mensch:<sprecherId>` in `lernapp_audio` ein (`gebuendelt`). Je Sprache, Text und Person
+ * eine Aufnahme; eine neue ersetzt die alte. Nie für Einträge mit Religionsbezug, Wissen oder Koran-Arabisch.
+ */
+export const lernappAufnahme = pgTable(
+  'lernapp_aufnahme',
+  {
+    id: uuid().primaryKey().defaultRandom(),
+    sprache: lernappSpracheEnum().notNull(),
+    textHash: text().notNull(),
+    /** Lemma oder Satz, für den aufgenommen wurde (stabiler Schlüssel). */
+    schluessel: text().notNull(),
+    sprecherId: uuid()
+      .notNull()
+      .references(() => lernappSprecher.id, { onDelete: 'restrict' }),
+    pfad: text().notNull(),
+    mime: text().notNull(),
+    bytes: integer().notNull(),
+    sha256: text().notNull(),
+    dauerMs: integer(),
+    status: lernappAufnahmeStatusEnum().notNull().default('neu'),
+    erstelltVon: text().references(() => user.id, { onDelete: 'set null' }),
+    erstelltAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    unique('lernapp_aufnahme_eindeutig').on(t.sprache, t.textHash, t.sprecherId),
+    index('lernapp_aufnahme_status_idx').on(t.status, t.sprache),
+  ],
+);
+
+export const lernappStimmenWahlEnum = pgEnum('lernapp_stimmen_wahl', ['sprachausgabe', 'mensch']);
+
+/**
+ * Wahl der Stimme je Clip (Audio-Studio, Migration 0020): Ohne Zeile gilt der Vorrang „Mensch vor Sprachausgabe“
+ * (`server/queries/lernapp/pakete.ts`); `sprachausgabe` liefert eine vorhandene menschliche Aufnahme nicht aus.
+ */
+export const lernappAudioWahl = pgTable(
+  'lernapp_audio_wahl',
+  {
+    sprache: lernappSpracheEnum().notNull(),
+    textHash: text().notNull(),
+    wahl: lernappStimmenWahlEnum().notNull(),
+    geaendertVon: text().references(() => user.id, { onDelete: 'set null' }),
+    geaendertAm: timestamp({ withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.sprache, t.textHash] })],
+);
 
 /**
  * Lern-Audio je Text-Hash (ADR 0039): Clip im Bündel `.lpa` (Versatz, Länge). `stimme`: `tts:<modell>@<sha>` oder

@@ -66,6 +66,8 @@ const nextConfig: NextConfig = {
     '/**/suche': ['.suchindex.json'],
     // Lern-App ohne Blob-Speicher (Beispielmodus, E2E): synthetische Testbündel aus dem Dateisystem (ADR 0039 Nr. 11)
     '/lern-app/audio/**': ['drizzle/seeds/lernapp-testaudio/**/*.lpa'],
+    // Verwaltung der Lern-App (L3-06): Religionswächter für Eingaben (S-L1 M-3) und Quellenregister (QUELLE.md der Datensätze)
+    '/**/verwaltung/lernapp/**': ['daten/tanzil/quran-uthmani.xml', 'daten/hadith/ara-bukhari.json', 'daten/*/QUELLE.md'],
   },
   experimental: {
     agentFeedback: false,

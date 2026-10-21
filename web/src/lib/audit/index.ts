@@ -115,7 +115,17 @@ export type AuditAktion =
   // Religiöse Freigabe (ADR 0030): Verwaltung „Koran & Hadith“
   | 'religioes.eingereicht'
   | 'religioes.freigegeben'
-  | 'religioes.zurueckgewiesen';
+  | 'religioes.zurueckgewiesen'
+  // Lern-App, Verwaltung v1 (L3-06): Prüfschritte und Pflege ohne Inhalte (PLAN §7.1)
+  | 'lernapp.stichprobe_gezogen'
+  | 'lernapp.geprueft'
+  | 'lernapp.stichprobe_entschieden'
+  | 'lernapp.pruefsprachen_geaendert'
+  | 'lernapp.sprecher_angelegt'
+  | 'lernapp.aufnahme_gespeichert'
+  | 'lernapp.aufnahme_verworfen'
+  | 'lernapp.stimme_gewaehlt'
+  | 'lernapp.meldung_bearbeitet';
 
 export type AuditDetails = Record<string, string | number | boolean | null>;
 

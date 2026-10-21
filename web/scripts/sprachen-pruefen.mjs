@@ -4,7 +4,10 @@
 // Schlüssel, gleiche Platzhalter; Pluralkategorien nur die der Sprache (ar: zero/one/two/few/many/other, mehr als de
 // erlaubt), jede Kategorie aus de bleibt, „other“ Pflicht; die Liste der KI-Entwürfe (messages/lernapp/entwurf.json) nennt
 // nur vorhandene Schlüssel.
-import { readdirSync, readFileSync } from 'node:fs';
+// Prüfoberfläche Sprache (ADR 0041 Nr. 10, PLAN §7.2): messages/verwaltung/lernapp-pruefung.json mit { de, tr, ar } ist die
+// Ausnahme unter den Verwaltungsdateien – nicht im Namensraum `verwaltung`, sondern eigens geprüft: de ⊆ tr, de ⊆ ar, keine
+// überzähligen Schlüssel, gleiche Platzhalter; `_entwurf` nennt nur vorhandene Schlüssel oder „*“.
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 // SPRACHEN_ORDNER: nur für den Unit-Test (Kopie mit absichtlichen Fehlern)
@@ -15,6 +18,7 @@ const bereiche = readdirSync(join(ordner, 'bereiche'))
   .filter((d) => d.endsWith('.json'))
   .map((d) => ({ name: d, inhalt: lies(join(ordner, 'bereiche', d)) }));
 const ueberschneidungen = [];
+const PRUEFOBERFLAECHE = 'lernapp-pruefung.json';
 const lade = (s) => {
   const basis = lies(join(ordner, `${s}.json`));
   for (const b of bereiche) {
@@ -26,7 +30,7 @@ const lade = (s) => {
   // Verwaltungsmodule (E-031): messages/verwaltung/<modul>.json, nur Deutsch, unter dem Namensraum `verwaltung`
   if (s === 'de') {
     basis.verwaltung ??= {};
-    for (const d of readdirSync(join(ordner, 'verwaltung')).filter((n) => n.endsWith('.json'))) {
+    for (const d of readdirSync(join(ordner, 'verwaltung')).filter((n) => n.endsWith('.json') && n !== PRUEFOBERFLAECHE)) {
       for (const [ns, wert] of Object.entries(lies(join(ordner, 'verwaltung', d)))) {
         if (ns in basis.verwaltung) ueberschneidungen.push(`de: verwaltung.${ns} aus verwaltung/${d} existiert bereits`);
         basis.verwaltung[ns] = wert;
@@ -200,6 +204,32 @@ function lernappBefunde() {
     if (!['_hinweis', 'tr', 'ar'].includes(s)) befundeL.push(`lernapp/entwurf.json: unbekannter Eintrag ${s}`);
   return { befunde: befundeL, anzahl: Object.keys(deL).length, entwuerfe: (entwurf.tr?.length ?? 0) + (entwurf.ar?.length ?? 0) };
 }
+/** Prüfoberfläche Sprache der Lern-App: dreisprachige Ausnahme in messages/verwaltung (siehe Kopf). */
+function pruefoberflaecheBefunde() {
+  const datei = join(ordner, 'verwaltung', PRUEFOBERFLAECHE);
+  if (!existsSync(datei)) return { befunde: [], anzahl: 0 };
+  const name = `verwaltung/${PRUEFOBERFLAECHE}`;
+  const inhalt = lies(datei);
+  const b = [];
+  for (const k of Object.keys(inhalt))
+    if (!['_hinweis', '_entwurf', 'de', 'tr', 'ar'].includes(k)) b.push(`${name}: unbekannter Eintrag ${k}`);
+  const deP = flach(inhalt.de ?? {});
+  if (!Object.keys(deP).length) b.push(`${name}: de fehlt`);
+  for (const [k, v] of Object.entries(deP)) if (String(v).trim() === '') b.push(`${name}/de: leer ${k}`);
+  for (const sprache of ['tr', 'ar']) {
+    const s = flach(inhalt[sprache] ?? {});
+    for (const [k, v] of Object.entries(deP)) {
+      if (!(k in s)) b.push(`${name}/${sprache}: fehlt ${k}`);
+      else if (String(s[k]).trim() === '') b.push(`${name}/${sprache}: leer ${k}`);
+      else if (platzhalter(s[k]) !== platzhalter(v)) b.push(`${name}/${sprache}: Platzhalter abweichend ${k}`);
+    }
+    for (const k of Object.keys(s)) if (!(k in deP)) b.push(`${name}/${sprache}: überzählig ${k}`);
+    const liste = inhalt._entwurf?.[sprache] ?? [];
+    if (!Array.isArray(liste)) b.push(`${name}: _entwurf.${sprache} ist keine Liste`);
+    else for (const k of liste) if (k !== '*' && !(k in s)) b.push(`${name}: _entwurf.${sprache} nennt unbekannten Schlüssel ${k}`);
+  }
+  return { befunde: b, anzahl: Object.keys(deP).length };
+}
 const de = flach(lade('de'));
 const befunde = [];
 for (const sprache of ['tr', 'en']) {
@@ -216,6 +246,8 @@ for (const [k, v] of Object.entries(de)) if (String(v).trim() === '') befunde.pu
 befunde.push(...new Set(ueberschneidungen));
 const lernapp = lernappBefunde();
 befunde.push(...lernapp.befunde);
+const pruefoberflaeche = pruefoberflaecheBefunde();
+befunde.push(...pruefoberflaeche.befunde);
 const anzahl = Object.keys(de).filter((k) => !k.startsWith('verwaltung.')).length;
 const nurDe = Object.keys(de).length - anzahl;
 if (befunde.length) {
@@ -225,5 +257,6 @@ if (befunde.length) {
 }
 console.log(
   `Sprachdateien vollständig: ${anzahl} Schlüssel in de, tr, en; dazu ${nurDe} Schlüssel der Verwaltung (nur de, ADR 0016); ` +
-    `Lern-App ${lernapp.anzahl} Schlüssel in de, tr, ar (${lernapp.entwuerfe} als KI-Entwurf vermerkt).`,
+    `Lern-App ${lernapp.anzahl} Schlüssel in de, tr, ar (${lernapp.entwuerfe} als KI-Entwurf vermerkt); ` +
+    `Prüfoberfläche Sprache ${pruefoberflaeche.anzahl} Schlüssel in de, tr, ar.`,
 );

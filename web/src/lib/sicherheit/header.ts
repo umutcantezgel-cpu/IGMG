@@ -56,15 +56,24 @@ export function cspLernApp(): string {
 
 /** Strikte CSP der Verwaltung mit Nonce (Verwaltung wird ohnehin je Anfrage gerendert). Mit Vercel Blob darf der
  * Browser große PDF-Dateien direkt zur Blob-Schnittstelle laden (ADR 0020, V-05) – nur in der Verwaltung.
- * `weitereVerbindungen`: z. B. der Echtzeit-Server (wss://) nur für Mein Bereich (ADR 0027). */
-export function cspVerwaltung(nonce: string, weitereVerbindungen: readonly string[] = []): string {
+ * `weitereVerbindungen`: z. B. der Echtzeit-Server (wss://) nur für Mein Bereich (ADR 0027).
+ * `medienBlob`: `media-src 'self' blob:` nur für die Verwaltung der Lern-App (L3-06): Clips aus den Lern-Audio-Bündeln, die
+ * Probe einer Aufnahme im Audio-Studio und die Vorschau im echten Spieler spielen Scheiben eigener Dateien als `blob:` ab –
+ * wie die Lern-App selbst (`cspLernApp`); Skripte bleiben unverändert. */
+export function cspVerwaltung(nonce: string, weitereVerbindungen: readonly string[] = [], { medienBlob = false } = {}): string {
   const verbindungen = ["'self'", ...(process.env.SPEICHER === 'blob' ? ['https://vercel.com'] : []), ...weitereVerbindungen];
   return richtlinie({
     ...gemeinsam,
     'connect-src': verbindungen,
     'script-src': ["'self'", `'nonce-${nonce}'`, "'strict-dynamic'", ...(istEntwicklung ? ["'unsafe-eval'"] : [])],
     'style-src': ["'self'", "'unsafe-inline'"],
+    ...(medienBlob ? { 'media-src': ["'self'", 'blob:'] } : {}),
   });
+}
+
+/** Verwaltung der Lern-App (`/verwaltung/lernapp/**`, auch mit `/de`): bekommt `media-src 'self' blob:` (siehe oben). */
+export function istLernappVerwaltung(pfad: string): boolean {
+  return /^(?:\/de)?\/verwaltung\/lernapp(?:\/|$)/.test(pfad);
 }
 
 /** Geräte-Berechtigungen; standardmäßig alles gesperrt außer Bewegungssensoren (Qibla-Kompass, ADR 0012). */

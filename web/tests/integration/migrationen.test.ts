@@ -12,8 +12,8 @@ describe('Migrationen (K-05)', () => {
     const r = await db.execute<{ n: number }>(sql`select count(*)::int as n from information_schema.tables where table_schema = 'public'`);
     // 34 bis Lauf Gestaltung, + 62 Tabellen Lauf Gemeinde-Plattform (Migration 0008), + quran_vers_auswahl (0012),
     // + rollen_antrag (0013, Vier-Augen-Prinzip für Schutzrollen), + mail_zusammenfassung (0016, F-38),
-    // + 20 Inhaltstabellen (0018) und 6 Nutzungstabellen (0019) der Lern-App
-    expect(r.rows[0]?.n).toBe(125);
+    // + 20 Inhaltstabellen (0018), 6 Nutzungstabellen (0019) und 2 Tabellen des Audio-Studios (0020) der Lern-App
+    expect(r.rows[0]?.n).toBe(127);
   });
 
   it('Lern-App: 0017 ergänzt nur Enum-Werte, spätere Migrationen nutzen sie nicht als Literal (PostgreSQL 16)', async () => {
