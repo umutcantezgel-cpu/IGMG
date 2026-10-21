@@ -97,14 +97,24 @@ Gilt vor Nr. 3, 6, 9 und der Fortschreibung S-L1 Nr. 2, wo es abweicht.
    Adresse); alte Bündel nennt das Skript, gelöscht werden sie erst, wenn kein Paket mehr darauf verweist (Menschen, LM-15).
 6. **Anhören vor dem Hochladen:** `LERNAPP_AUDIO_LOKAL` (Ordner `<sprache>/<datei>.lpa`) – die Route sucht dort vor den
    Testbündeln, nur ohne `LERNAPP_BLOB_BASIS`; dazu `pnpm lernapp:import --audio-manifest <pfad>` (nur ergänzend).
-7. **Manifest ins Repository erst nach dem Hochladen:** Ohne `--manifest` schreibt `lernapp:audio-manifest` nach
-   `inhalte/lernapp/audio-manifest/<sprache>.json` nur, wenn alle neuen Bündel im Blob liegen; sonst neben die Bündel
-   (`<aus>/manifest-<sprache>.json`). Ein eingechecktes Manifest verweist so nie auf Bündel, die es im Blob nicht gibt.
+7. **Manifest ins Repository erst nach dem Hochladen** (geschärft nach der Gegenprüfung, siehe Nr. 10):
+   `lernapp:audio-manifest` schreibt nach `inhalte/lernapp/audio-manifest/<sprache>.json` nur, wenn jedes Bündel, auf das das
+   Manifest verweist, in diesem Lauf über `LERNAPP_BLOB_BASIS` mit gleichem SHA-256 abgerufen wurde oder schon im
+   eingecheckten Manifest stand; sonst nach `--manifest` bzw. neben die Bündel (`<aus>/manifest-<sprache>.json`). Ein neues
+   Manifest ohne Clips entsteht dort nicht. Ein eingechecktes Manifest verweist so nie auf Bündel, die es im Blob nicht gibt.
 8. **Rückerkennung de, Zahlwörter:** Ziffern in Abschrift und Text zählen als deutsches Zahlwort (0–9999); whisper-base schreibt
    gesprochene Zahlen als Ziffern (Probelauf: 26 von 137 Ausreißern). Schwellen 0,75/0,6 unverändert.
 9. **Aussprache-Änderungen:** `pnpm lernapp:audio-liste <sprache> --erneuern <wort,…>` nimmt Texte mit diesen Wörtern erneut in
    die Liste, obwohl ihr Clip vorliegt (menschliche Aufnahmen bleiben); der neue Clip ersetzt den alten im Manifest, das Bündel
    wird neu gebaut. Messwerte und Hochrechnung: Bericht `_lernapp/berichte/l3-05-sprachausgabe.md`.
+10. **Hochladen nur in den Speicher `lernapp`** (Gegenprüfung L3-05, Mangel 1): eigener Schlüssel
+    `LERNAPP_BLOB_READ_WRITE_TOKEN`, nur lokal (die App liest nur `LERNAPP_BLOB_BASIS`). `--hochladen` verlangt
+    `LERNAPP_BLOB_BASIS` desselben Speichers (Speicherkennung im Schlüssel = Host
+    `<speicher>.public.blob.vercel-storage.com`) und bricht vor dem Bau ab, wenn der Schlüssel zum Speicher von
+    `BLOB_READ_WRITE_TOKEN` (privat, ADR 0020) oder `AUDIO_BLOB_READ_WRITE_TOKEN` (ADR 0029) gehört. Hochgeladen werden alle
+    Bündel, auf die das Manifest verweist und die das eingecheckte Manifest noch nicht kennt; der Speicher muss genau die
+    Adresse unter `LERNAPP_BLOB_BASIS` melden. Ältere Bündel holt das Skript nur, soweit der Neubau Clips aus ihnen übernimmt,
+    je Bündel einmal (`src/lib/lernapp/audio/blob.ts`, `alteBuendelFuerNeubau`).
 
 ## Alternativen
 

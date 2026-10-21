@@ -714,6 +714,22 @@ export const VARIABLEN: readonly Variable[] = [
     abhilfe: 'Weglassen (dann nur Testbündel bzw. Blob) oder den Ausgabeordner der Audio-Kette eintragen.',
   },
   {
+    name: 'LERNAPP_BLOB_READ_WRITE_TOKEN',
+    zweck: 'Schreibschlüssel des öffentlichen Blob-Speichers „lernapp“, nur für pnpm lernapp:audio-manifest --hochladen (ADR 0039)',
+    muster: false,
+    pflicht: NIE,
+    bereich: [],
+    beispiel: '<Schreibschlüssel des Speichers „lernapp“>',
+    herkunft:
+      'Von Menschen (LM-15): Vercel-Dashboard, Speicher „lernapp“; nur lokal in web/.env, nie auf Vercel – die App liest nur LERNAPP_BLOB_BASIS',
+    geheim: true,
+    erzeugbar: false,
+    pruefung: nichtLeer,
+    regel: 'nicht leer',
+    abhilfe:
+      'Weglassen (dann lädt die Audio-Kette nichts hoch) oder lokal den Schlüssel des Speichers „lernapp“ eintragen – nie den von BLOB_READ_WRITE_TOKEN.',
+  },
+  {
     name: 'PROXY_VERTRAUEN',
     zweck: 'Vertraut dem vorgeschalteten Proxy, damit Ratenbegrenzungen die echte Besucheradresse sehen (E-041)',
     muster: false,

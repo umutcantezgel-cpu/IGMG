@@ -5,6 +5,7 @@ import { testkursQuellen, TESTAUDIO_VERZEICHNIS } from '../../../drizzle/seeds/l
 import { alsJsonl, audioListe, fehlende, leseJsonl, mitWoertern, vertonbareTexte, waechterTrifft } from '@/lib/lernapp/audio/liste';
 import { manifestFehler } from '@/lib/lernapp/audio/import';
 import {
+  alteBuendelFuerNeubau,
   clipsAusBuendel,
   ergaenzeManifest,
   leeresManifest,
@@ -254,6 +255,9 @@ describe('Bündel und Manifest (audio-manifest)', () => {
     const e01 = erst.buendel.find((b) => b.einheit === 'de.a1.e01')!;
     const e02 = erst.buendel.find((b) => b.einheit === 'de.a1.e02')!;
     expect(gelesen).toEqual([e01.schluessel]);
+    // Gegenprüfung L3-05 (Mangel 2): Das Skript holt vorab genau diese Bündel, nicht alle des Manifests
+    expect(alteBuendelFuerNeubau({ alt: erst.manifest, neu: [neu(1)] })).toEqual(gelesen);
+    expect(alteBuendelFuerNeubau({ alt: erst.manifest, neu: [] })).toEqual([]);
     expect(dann.buendel.map((b) => [b.einheit, b.clips])).toEqual([['de.a1.e01', 2]]);
     expect(dann.alteBuendel).toEqual([e01.schluessel]);
     expect(dann.manifest.clips.filter((c) => c.buendel === e02.schluessel)).toHaveLength(1);
@@ -272,13 +276,18 @@ describe('Bündel und Manifest (audio-manifest)', () => {
   it('Entfernen (Zurückziehen): Clip fällt aus Manifest und Bündel; ein leeres Bündel entfällt', () => {
     const erst = ergaenzeManifest({ alt: leeresManifest('de'), neu: [neu(0), neu(1), neu(2, 'de.a1.e02')], stimmen, alteClips: keinAlt });
     const lokal = new Map(erst.buendel.map((b) => [b.schluessel, b.bytes]));
+    const entfernen = new Set([toene[0]!.textHash, toene[2]!.textHash]);
+    const gelesen: string[] = [];
     const r = ergaenzeManifest({
       alt: erst.manifest,
       neu: [],
-      entfernen: new Set([toene[0]!.textHash, toene[2]!.textHash]),
+      entfernen,
       stimmen,
-      alteClips: (s, clips) => clipsAusBuendel(lokal.get(s)!, clips),
+      alteClips: (s, clips) => (gelesen.push(s), clipsAusBuendel(lokal.get(s)!, clips)),
     });
+    // Das geleerte Bündel (e02) wird nicht geholt, nur das mit übrigen Clips (e01)
+    expect(alteBuendelFuerNeubau({ alt: erst.manifest, neu: [], entfernen })).toEqual(gelesen);
+    expect(gelesen).toEqual([erst.buendel.find((b) => b.einheit === 'de.a1.e01')!.schluessel]);
     expect(r.manifest.clips.map((c) => c.textHash)).toEqual([toene[1]!.textHash]);
     expect(r.buendel).toHaveLength(1);
     expect(r.alteBuendel).toHaveLength(2);

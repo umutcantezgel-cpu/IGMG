@@ -84,12 +84,23 @@ pnpm lernapp:audio-manifest de --liste $T/lauf/liste.jsonl --clips $T/lauf/clips
 - **Anhören in der App vor dem Hochladen:** `LERNAPP_AUDIO_LOKAL=$T/lpa` (Route) und
   `pnpm lernapp:import --audio-manifest <manifest>` (bzw. `E2E_AUDIO_MANIFEST` für die E2E-Datenbank). Nie zusammen mit
   `LERNAPP_BLOB_BASIS`.
-- **Hochladen** in den Blob `lernapp` nur mit `--hochladen` und gesetztem `BLOB_READ_WRITE_TOKEN` (Menschen-Schritt LM-15);
-  ohne Token wird es übersprungen und gemeldet. Erst danach gehört `web/inhalte/lernapp/audio-manifest/<sprache>.json`
-  ins Repository; `lernapp:import` gleicht `lernapp_audio` im Bau damit ab. Ohne `--manifest` schreibt das Skript dorthin
-  nur, wenn alle neuen Bündel im Blob liegen, sonst nach `<aus>/manifest-<sprache>.json` (für den nächsten Lauf mit
-  `--manifest` angeben). Alte Bündel nennt das Skript; gelöscht werden sie erst, wenn kein Paket mehr darauf verweist
-  (Menschen).
+- **Hochladen** in den Blob `lernapp` nur mit `--hochladen`, dem eigenen Schlüssel `LERNAPP_BLOB_READ_WRITE_TOKEN` und
+  `LERNAPP_BLOB_BASIS` (öffentliche Adresse `https://<speicher>.public.blob.vercel-storage.com` desselben Speichers;
+  Menschen-Schritt LM-15). Beide nur lokal in `web/.env` – das Skript lädt sie mit `--env-file-if-exists=.env`.
+  `BLOB_READ_WRITE_TOKEN` (privater Medienspeicher, ADR 0020) liest das Skript nie zum Hochladen.
+  - Ohne Schlüssel wird es übersprungen und gemeldet.
+  - Abbruch vor dem Bau (rc 2): Basisadresse fehlt oder gehört zu einem anderen Speicher als der Schlüssel, oder der
+    Schlüssel gehört zum Speicher von `BLOB_READ_WRITE_TOKEN` bzw. `AUDIO_BLOB_READ_WRITE_TOKEN`.
+  - Hochgeladen werden alle Bündel, auf die das Manifest verweist und die das eingecheckte Manifest noch nicht kennt – aus
+    diesem Lauf oder aus `<aus>` (frühere Probeläufe mit `--manifest`). Danach ruft das Skript jedes Bündel über
+    `LERNAPP_BLOB_BASIS` ab und vergleicht den SHA-256.
+- **Manifest ins Repository** (`web/inhalte/lernapp/audio-manifest/<sprache>.json`) nur, wenn jedes Bündel, auf das es
+  verweist, so belegt ist oder schon im eingecheckten Manifest stand; sonst nach `--manifest` bzw.
+  `<aus>/manifest-<sprache>.json` (für den nächsten Lauf mit `--manifest` angeben) und – wenn ein Bündel nicht belegt werden
+  konnte – rc 1. Ein neues Manifest ohne Clips legt das Skript im Repository nicht an. `lernapp:import` gleicht
+  `lernapp_audio` im Bau mit dem eingecheckten Manifest ab. Alte Bündel nennt das Skript; gelöscht werden sie erst, wenn kein
+  Paket mehr darauf verweist (Menschen).
+- **Ältere Bündel** (Neubau einer Gruppe): nur die betroffenen, je Bündel einmal aus `<aus>` oder über `LERNAPP_BLOB_BASIS`.
 - **Plattenbudget:** Clips ≈ 3,6 kB je Sekunde (≈ 310 MB je Sprache); Clips und Bündel nur im Scratchpad, nach dem Hochladen
   löschen. Generator-Venv ≈ 290 MB, ONNX 114 MB.
 - **Zufall:** VITS zieht Rauschen; onnxruntime setzt den Startwert je Sitzung, nicht je Lauf. Eine Neuerzeugung ergibt

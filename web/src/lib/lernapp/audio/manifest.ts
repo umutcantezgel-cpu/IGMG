@@ -78,6 +78,42 @@ const ordne = (a: ManifestClip, b: ManifestClip) =>
   a.textHash < b.textHash ? -1 : a.textHash > b.textHash ? 1 : a.stimme < b.stimme ? -1 : a.stimme > b.stimme ? 1 : 0;
 
 /**
+ * Plan des Neubaus: betroffene Gruppen (Einheit und Stimme) – neue Clips, ersetzte und entfernte alte Clips – und je
+ * bisherigem Bündel die Clips, die der Neubau aus ihm übernimmt (`uebrig`; leer: Das Bündel entfällt oder bleibt).
+ */
+function planeNeubau(alt: AudioManifestDatei, neu: ReadonlyMap<string, NeuerClip>, entfernen: ReadonlySet<string>) {
+  const betroffen = new Set<string>();
+  for (const c of neu.values()) betroffen.add(gruppe(c.einheit, c.stimme));
+  const altJeBuendel = new Map<string, ManifestClip[]>();
+  for (const c of alt.clips) altJeBuendel.set(c.buendel, [...(altJeBuendel.get(c.buendel) ?? []), c]);
+  for (const c of alt.clips)
+    if (neu.has(`${c.textHash}|${c.stimme}`) || entfernen.has(c.textHash)) betroffen.add(gruppe(einheitVonBuendel(c.buendel), c.stimme));
+  return [...altJeBuendel].map(([schluessel, clips]) => {
+    const einheit = einheitVonBuendel(schluessel);
+    const imBuendel = clips.filter((c) => betroffen.has(gruppe(einheit, c.stimme)));
+    const uebrig = imBuendel.filter((c) => !entfernen.has(c.textHash) && !neu.has(`${c.textHash}|${c.stimme}`));
+    return { schluessel, einheit, clips, imBuendel, uebrig };
+  });
+}
+
+const neuJeSchluessel = (neu: readonly NeuerClip[]) => new Map(neu.map((c) => [`${c.textHash}|${c.stimme}`, c]));
+
+/**
+ * Bisherige Bündel, aus denen der Neubau Clips übernimmt – genau die, für die {@link ergaenzeManifest} `alteClips` ruft. Das
+ * Skript holt nur diese, je Bündel einmal (lokal oder aus dem Blob), statt aller Bündel des Manifests.
+ */
+export function alteBuendelFuerNeubau(eingabe: {
+  alt: AudioManifestDatei;
+  neu: readonly NeuerClip[];
+  entfernen?: ReadonlySet<string>;
+}): string[] {
+  return planeNeubau(eingabe.alt, neuJeSchluessel(eingabe.neu), eingabe.entfernen ?? new Set())
+    .filter((p) => p.uebrig.length)
+    .map((p) => p.schluessel)
+    .sort();
+}
+
+/**
  * Neue Clips ins Manifest aufnehmen und die betroffenen Bündel neu bauen.
  *
  * @param alt          bisheriges Manifest (oder leer)
@@ -104,14 +140,6 @@ export function ergaenzeManifest(eingabe: {
     neuJe.set(k, c);
   }
 
-  // Betroffene Gruppen: neue Clips, ersetzte und entfernte alte Clips
-  const betroffen = new Set<string>();
-  for (const c of neuJe.values()) betroffen.add(gruppe(c.einheit, c.stimme));
-  const altJeBuendel = new Map<string, ManifestClip[]>();
-  for (const c of alt.clips) altJeBuendel.set(c.buendel, [...(altJeBuendel.get(c.buendel) ?? []), c]);
-  for (const c of alt.clips)
-    if (neuJe.has(`${c.textHash}|${c.stimme}`) || entfernen.has(c.textHash)) betroffen.add(gruppe(einheitVonBuendel(c.buendel), c.stimme));
-
   const bleiben: ManifestClip[] = [];
   const zuBauen = new Map<string, { einheit: string; stimme: string; clips: { textHash: string; daten: Uint8Array }[] }>();
   const alteBuendel = new Set<string>();
@@ -121,16 +149,13 @@ export function ergaenzeManifest(eingabe: {
     g.clips.push({ textHash, daten });
     zuBauen.set(k, g);
   };
-  for (const [schluessel, clips] of altJeBuendel) {
-    const einheit = einheitVonBuendel(schluessel);
-    const imBuendel = clips.filter((c) => betroffen.has(gruppe(einheit, c.stimme)));
+  for (const { schluessel, einheit, clips, imBuendel, uebrig } of planeNeubau(alt, neuJe, entfernen)) {
     if (!imBuendel.length) {
       bleiben.push(...clips);
       continue;
     }
     if (imBuendel.length !== clips.length) throw new ManifestFehler(`Bündel ${schluessel} mischt Stimmen`);
     alteBuendel.add(schluessel);
-    const uebrig = clips.filter((c) => !entfernen.has(c.textHash) && !neuJe.has(`${c.textHash}|${c.stimme}`));
     if (!uebrig.length) continue;
     const bytes = eingabe.alteClips(schluessel, uebrig);
     for (const c of uebrig) sammle(einheit, c.stimme, c.textHash, bytes.get(c.textHash)!);
