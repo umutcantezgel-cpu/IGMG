@@ -1,5 +1,12 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 09:15 UTC:** Produktion `success` für `main` = acf6e34 (Tor L2). **L3-06 Verwaltung v1 fertig**
+  (`wf_a48f4bea-ac5`, Gegenprüfung Runde 2 frei; Mängelrunde 6f84750), in den Branch gemergt (32a3e96), CSP-Ausnahme
+  `media-src blob:` unter `/verwaltung/lernapp` in KERN §6/ADR 0042 Nr. 14 (091dc51). Noch kein Tor für L3-06 – es läuft
+  gemeinsam mit L3-05/L3-06b (volle Unit, volle Integration, volle E2E Website + Lern-App, da `next.config.ts` und die
+  Verwaltung berührt sind; Import-Bau + Sweep; Vorschau) und dann FF `main`. **Laufen:** A1 `wf_4786ad44-05d` (tr-Entwürfe
+  e03–e12 fertig), L3-05 + L3-06b `wf_446a5c88-ea5` (`scratchpad/lernapp-l3-05-06b.workflow.js`; C = `.claude/worktrees/l3-05`
+  Zweig `lernapp-l3-05`, B = `agent-ac6673f9…`). Blob-Token lokal leer → Audio-Upload bleibt Menschen-Schritt (LM-15).
 - **Stand 21.10.2026 08:30 UTC – Tor L2 grün, FF `main`.** `scratchpad/tor-l2.log`: check grün (ein Prüfer-Test riss unter Last
   die 5-s-Grenze → 30 s, 15d0a36), Sprachen, Religion, Wortlaut rc=0, Import-Bau 2.048 Seiten, Sweep/Crawl ohne 5xx, Budgets
   eingehalten, Lern-App-E2E 73 grün, Vorschau `success`. TBT unter Last 321/268/334 ms (CPU-Index 1.680–1.960 statt ≈ 2.900) –
