@@ -1767,7 +1767,7 @@
     },
     {
       "schluessel": "de.a1.e06.s0158",
-      "text": "Sie kostet 0,50 Euro. Das sind dann 12,90 Euro.",
+      "text": "Sie kostet einen Euro. Das sind dann 13,40 Euro.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
     },
@@ -2381,8 +2381,8 @@
           "schluessel": "de.a1.e06.l03.a12",
           "typ": "luecke",
           "ziel": "de.a1.e06.s0055",
-          "wort": 3,
-          "ablenker": ["teuer", "teurer"]
+          "wort": 1,
+          "ablenker": ["ist", "bin"]
         },
         {
           "schluessel": "de.a1.e06.l03.a13",
@@ -2991,7 +2991,11 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e06.s0171",
           "nach": "ziel",
-          "alternativen": ["Mein Vater kocht mit Karotten und Kartoffeln."],
+          "alternativen": [
+            "Mein Vater kocht mit Karotten und Kartoffeln.",
+            "Mit Kartoffeln und Karotten kocht mein Vater.",
+            "Mit Karotten und Kartoffeln kocht mein Vater."
+          ],
           "ablenker": ["kochst", "Meine"]
         },
         {
@@ -3057,7 +3061,7 @@
           "typ": "luecke",
           "ziel": "de.a1.e06.s0183",
           "wort": 2,
-          "ablenker": ["zahlt", "zahlst"]
+          "ablenker": ["zahlst", "zahle"]
         },
         {
           "schluessel": "de.a1.e06.l07.a13",
@@ -3171,7 +3175,12 @@
           "anweisung": "uebersetze",
           "satz": "de.a1.e06.s0195",
           "nach": "ziel",
-          "alternativen": ["Pro Kilo kosten die Karotten zwei Euro.", "Zwei Euro pro Kilo kosten die Karotten."],
+          "alternativen": [
+            "Pro Kilo kosten die Karotten zwei Euro.",
+            "Zwei Euro pro Kilo kosten die Karotten.",
+            "Die Karotten kosten pro Kilo zwei Euro.",
+            "Zwei Euro kosten die Karotten pro Kilo."
+          ],
           "ablenker": ["kostet", "Karotte"]
         },
         {
