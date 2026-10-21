@@ -1,16 +1,28 @@
 // Import der Lern-App-Inhalte (PLAN §6.6, ADR 0041 Nr. 6): web/inhalte/lernapp/{sprache,uebersetzung}/**/*.json in die
 // Datenbank, idempotent über SHA-256 je Datei und inhaltHash je Eintrag (src/lib/lernapp/inhalt/import.ts).
 // Läuft im Bau nach scripts/inhalte-import.ts (vercel-bau.mjs mit Datenbank; bau-datenbank.mjs mit `--testkurs`) und von Hand.
-// Aufruf: pnpm lernapp:import [--erzwingen] [--testkurs]
+// Danach die Audio-Manifeste web/inhalte/lernapp/audio-manifest/<sprache>.json nach lernapp_audio (abgeglichen: Clips, die
+// nicht mehr im Manifest stehen, entfallen; src/lib/lernapp/audio/import.ts).
+// Aufruf: pnpm lernapp:import [--erzwingen] [--testkurs] [--audio-manifest <pfad>]…
 //   --testkurs: zusätzlich den Testkurs (drizzle/seeds/lernapp-test.ts) – nur Beispielmodus, E2E und Entwicklung.
+//   --audio-manifest: zusätzlich ein lokales Manifest (Probelauf der Audio-Kette, Bündel unter LERNAPP_AUDIO_LOKAL), nur
+//     ergänzend – nie in der Produktion.
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { lernappTestkurs } from '../../drizzle/seeds/lernapp-test';
 import { holeDb } from '../../src/lib/db';
+import { AudioImportFehler, importiereAudioManifest, religionsHashes } from '../../src/lib/lernapp/audio/import';
+import { leseManifest } from '../../src/lib/lernapp/audio/manifest';
 import { ImportFehler, importiereLernapp } from '../../src/lib/lernapp/inhalt/import';
-import { inhaltsdateien } from './inhaltsdateien';
+import { INHALT_WURZEL, inhaltsdateien } from './inhaltsdateien';
 
 const { values } = parseArgs({
-  options: { erzwingen: { type: 'boolean', default: false }, testkurs: { type: 'boolean', default: false } },
+  options: {
+    erzwingen: { type: 'boolean', default: false },
+    testkurs: { type: 'boolean', default: false },
+    'audio-manifest': { type: 'string', multiple: true },
+  },
 });
 async function main() {
   const db = holeDb();
@@ -28,11 +40,27 @@ async function main() {
       `Lern-App-Testkurs: ${t.bericht.neu} neu, ${t.bericht.geaendert} geändert, ${t.bericht.unveraendert} gleich, ${t.clips} Clips (Testtöne).`,
     );
   }
+  // Audio: eingecheckte Manifeste (abgeglichen), dann lokale Manifeste (nur ergänzend)
+  const ordner = join(INHALT_WURZEL, 'audio-manifest');
+  const manifeste = [
+    ...(existsSync(ordner) ? readdirSync(ordner).filter((d) => /^(?:de|tr|ar)\.json$/.test(d)) : []).map((d) => ({
+      pfad: join(ordner, d),
+      abgleichen: true,
+    })),
+    ...(values['audio-manifest'] ?? []).map((pfad) => ({ pfad, abgleichen: false })),
+  ];
+  for (const { pfad, abgleichen } of manifeste) {
+    const m = leseManifest(readFileSync(pfad, 'utf8'));
+    const b = await importiereAudioManifest(db, m, { abgleichen, verboten: religionsHashes(quellen, m.sprache) });
+    console.log(
+      `Lern-App-Audio ${b.sprache}${abgleichen ? '' : ' (lokal, ergänzend)'}: ${b.neu} neu, ${b.geaendert} geändert, ${b.gleich} gleich, ${b.entfernt} entfernt.`,
+    );
+  }
 }
 
 main()
   .then(() => process.exit(0))
   .catch((e) => {
-    console.error(e instanceof ImportFehler ? e.message : e instanceof Error ? e.message : e);
+    console.error(e instanceof ImportFehler || e instanceof AudioImportFehler ? e.message : e instanceof Error ? e.message : e);
     process.exit(1);
   });

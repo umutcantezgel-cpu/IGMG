@@ -44,7 +44,9 @@ async function main() {
     stdio: ['ignore', 'ignore', 'inherit'],
   });
   // Lern-App: Inhalte und der Testkurs mit synthetischen Tönen (E2E der Lektion, ADR 0039 Nr. 11)
-  execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts', '--testkurs'], {
+  // Optional (Probelauf der Audio-Kette, L3-05): lokales Manifest; die Bündel liefert die Route aus LERNAPP_AUDIO_LOKAL
+  const lokal = process.env.E2E_AUDIO_MANIFEST ? ['--audio-manifest', process.env.E2E_AUDIO_MANIFEST] : [];
+  execFileSync('pnpm', ['exec', 'tsx', '--conditions=react-server', 'scripts/lernapp/import.ts', '--testkurs', ...lokal], {
     cwd: wurzel,
     env,
     stdio: ['ignore', 'ignore', 'inherit'],

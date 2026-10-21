@@ -140,6 +140,22 @@ export const ABSCHNITTE: { id: string; eintraege: QuellenEintrag[]; zusatz?: 'ue
       },
     ],
   },
+  {
+    // Lern-App: synthetische Stimmen (ADR 0039 Nr. 9, ADR 0045 Nr. 11); Angaben wie src/lib/lernapp/audio/stimmen.ts
+    id: 'sprachausgabe',
+    eintraege: [
+      {
+        id: 'thorsten-vits',
+        name: 'Coqui-TTS VITS „Thorsten“ (Deutsch)',
+        urheber: 'Thorsten Müller (Thorsten-Voice); Modell trainiert mit Coqui TTS',
+        url: 'https://huggingface.co/Thorsten-Voice/VITS',
+        lizenz: APACHE,
+        herkunft: { name: 'Thorsten-Voice TV-44kHz-Full (CC0 1.0)', url: 'https://huggingface.co/datasets/Thorsten-Voice/TV-44kHz-Full' },
+        aenderungen: true,
+        hinweis: true,
+      },
+    ],
+  },
 ];
 
 /** Wichtigste Programmbibliotheken (package.json); Zweck in `quellen.bibliotheken.zweck.<id>`. */

@@ -1,0 +1,11 @@
+# Einmaliger ONNX-Export des Coqui-Modells (Torch nur hier; das Venv wird nach dem Export sofort gelöscht).
+# Kompiliert mit: uv pip compile requirements-export.in --generate-hashes --python-version 3.12 \
+#   --exclude-newer 2026-10-07T00:00:00Z --extra-index-url https://download.pytorch.org/whl/cpu \
+#   --index-strategy unsafe-best-match -o requirements-export.txt   (Mindestreife 14 Tage, L0-E10)
+coqui-tts==0.27.5
+torch==2.6.0+cpu
+torchaudio==2.6.0+cpu
+transformers>=4.57,<5
+gruut[de]==2.4.0
+# torch.onnx.export braucht das Paket onnx
+onnx
