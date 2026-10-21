@@ -138,8 +138,8 @@ test('Religiöse Prüfung: „unsicher“ zuerst, Fundstelle neben der Aussage, 
   await sicherZeile.getByRole('link', { name: r.pruefenName.replace('{baustein}', `${r.typ.aussage} ${S.sicher}`) }).click();
   await expect(page).toHaveURL(new RegExp(`${adresse}$`));
   await expect(page.getByText(r.standText['0'])).toBeVisible();
-  const inhalt = page.getByRole('region', { name: r.inhaltTitel });
-  const fundstellen = page.getByRole('region', { name: r.fundstellenTitel });
+  const inhalt = page.getByRole('region', { name: r.inhaltTitel, exact: true });
+  const fundstellen = page.getByRole('region', { name: r.fundstellenTitel, exact: true });
   await expect(inhalt).toContainText(TEXT.sicher);
   await expect(fundstellen).toContainText('[Werk – Platzhalter] ([Autor])');
   await expect(fundstellen).toContainText('[Kitab] › [Bab]');

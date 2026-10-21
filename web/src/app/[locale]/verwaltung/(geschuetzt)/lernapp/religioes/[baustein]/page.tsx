@@ -25,7 +25,8 @@ function zerlege(segment: string): { typ: ReligioeserBausteinTyp; id: string } |
  * Verwaltung › Lern-App › Religiöse Prüfung › Baustein (L6-03, ADR 0040 Nr. 5 und Fortschreibung S8 Nr. 2, PLAN §6.7 Nr. 6):
  * Stand „n/2“, der Inhalt und daneben die Fundstellen (Werk › Kitab/Bab/Fasl, Ausgabe, Band und Seite, Passage, OpenITI-URI;
  * kein Quelltext, LM-04), dann das Urteil mit Haken je Beleg. Wer den Stand verfasst hat, sieht kein Formular. Recht
- * `lernapp.religioes.pruefen` (nie per Administration); die Action prüft alles erneut.
+ * `lernapp.religioes.pruefen` (nie per Administration); die Action prüft alles erneut. Kennungen mit Vorsatz `baustein-`:
+ * `inhalt` trägt schon das `<main>` des Layouts (Sprunglink).
  */
 export default async function ReligioeserBaustein({ params }: PageProps<'/[locale]/verwaltung/lernapp/religioes/[baustein]'>) {
   const a = await verlangeLernappSeite('lernapp.religioes.pruefen');
@@ -90,8 +91,8 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
         {t('zurueck')}
       </NextLink>
 
-      <section aria-labelledby="stand" className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-5">
-        <h2 id="stand" className="flex flex-wrap items-center gap-3 font-display text-24 font-semibold">
+      <section aria-labelledby="baustein-stand" className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-5">
+        <h2 id="baustein-stand" className="flex flex-wrap items-center gap-3 font-display text-24 font-semibold">
           {t('spalte.stand')}
           <span className={cn(PILLE, STAND_FARBE[b.stand] ?? STAND_FARBE[0])} aria-label={t('standName', { stand: b.stand })}>
             {t('stand', { stand: b.stand })}
@@ -108,8 +109,8 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
       {b.eigenes ? <Meldung art="info">{t('meldung.eigenes', { urteil: t(`urteilName.${b.eigenes}`) })}</Meldung> : null}
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <section aria-labelledby="inhalt" className="flex min-w-0 flex-col gap-4">
-          <h2 id="inhalt" className="font-display text-24 font-semibold">
+        <section aria-labelledby="baustein-inhalt" className="flex min-w-0 flex-col gap-4">
+          <h2 id="baustein-inhalt" className="font-display text-24 font-semibold">
             {t('inhaltTitel')}
           </h2>
           {b.wortform ? (
@@ -140,8 +141,8 @@ export default async function ReligioeserBaustein({ params }: PageProps<'/[local
           ) : null}
         </section>
 
-        <section aria-labelledby="fundstellen" className="flex min-w-0 flex-col gap-4">
-          <h2 id="fundstellen" className="font-display text-24 font-semibold">
+        <section aria-labelledby="baustein-fundstellen" className="flex min-w-0 flex-col gap-4">
+          <h2 id="baustein-fundstellen" className="font-display text-24 font-semibold">
             {t('fundstellenTitel')}
           </h2>
           <p className="text-16 text-tinte-2">{t('fundstellenHinweis')}</p>
