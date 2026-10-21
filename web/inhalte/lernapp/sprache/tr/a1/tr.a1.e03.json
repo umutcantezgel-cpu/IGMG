@@ -1270,10 +1270,9 @@
     },
     {
       "schluessel": "tr.a1.e03.s0021",
-      "text": "Senin ailen nasıl?",
-      "quelle": "tatoeba:12971301",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #12971301 von haciahmet"
+      "text": "Ailen nasıl?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e03.s0022",
@@ -1283,10 +1282,9 @@
     },
     {
       "schluessel": "tr.a1.e03.s0023",
-      "text": "Anneniz nasıl?",
-      "quelle": "tatoeba:12971298",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #12971298 von haciahmet"
+      "text": "Annen ve baban nasıl?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e03.s0024",
@@ -1303,10 +1301,9 @@
     },
     {
       "schluessel": "tr.a1.e03.s0026",
-      "text": "Babanızın adı ne?",
-      "quelle": "tatoeba:2730178",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #2730178 von Gulo_Luscus"
+      "text": "Baban şoför mü?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e03.s0027",
@@ -1829,10 +1826,9 @@
     },
     {
       "schluessel": "tr.a1.e03.s0112",
-      "text": "Çocuklar okulda.",
-      "quelle": "tatoeba:4715289",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #4715289 von duran"
+      "text": "Çocuklar nasıl?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e03.s0113",
@@ -1985,10 +1981,9 @@
     },
     {
       "schluessel": "tr.a1.e03.s0137",
-      "text": "Babam bir okulda çalışıyor.",
-      "quelle": "tatoeba:13960259",
-      "lizenz": "CC-BY-2.0-FR",
-      "namensnennung": "Satz #13960259 von ninefi"
+      "text": "Annem ve babam çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     },
     {
       "schluessel": "tr.a1.e03.s0138",
@@ -2409,6 +2404,12 @@
       "text": "Otuz üç, elli yedi, doksan dokuz.",
       "quelle": "ki:lernapp-inhalte/a1/v1",
       "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0207",
+      "text": "Ya küçük kardeşin?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
     }
   ],
   "lektionen": [
@@ -2665,6 +2666,10 @@
             {
               "sprecher": "b",
               "satz": "tr.a1.e03.s0063"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0207"
             }
           ],
           "antwort": "tr.a1.e03.s0064",
@@ -2735,9 +2740,10 @@
         },
         {
           "schluessel": "tr.a1.e03.l03.a08",
-          "typ": "minimalpaare",
-          "ziel": "tr.a1.e03.yedi",
-          "ablenker": ["tr.a1.e03.yetmis"]
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0086",
+          "nach": "ausgang"
         },
         {
           "schluessel": "tr.a1.e03.l03.a09",
@@ -2804,7 +2810,7 @@
       "art": "lektion",
       "ziel": {
         "de": "Großeltern und Kinder benennen und die Mehrzahl mit -ler/-lar bilden",
-        "tr": "Aile büyüklerini ve çocukları söylemek; -ler/-lar ile çoğul yapmak",
+        "tr": "Aile büyüklerini ve çocukları adlandırmak; -ler/-lar ile çoğul yapmak",
         "ar": "تسمية الأجداد والأولاد وتكوين الجمع بـ -ler/-lar"
       },
       "aufgaben": [
@@ -2860,9 +2866,10 @@
         },
         {
           "schluessel": "tr.a1.e03.l04.a09",
-          "typ": "minimalpaare",
-          "ziel": "tr.a1.e03.es",
-          "ablenker": ["tr.a1.e03.bes"]
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0130",
+          "wort": 1,
+          "ablenker": ["kadınler", "kadınları"]
         },
         {
           "schluessel": "tr.a1.e03.l04.a10",
@@ -3282,9 +3289,9 @@
         {
           "schluessel": "tr.a1.e03.l07.a10",
           "typ": "luecke",
-          "ziel": "tr.a1.e03.s0146",
-          "wort": 2,
-          "ablenker": ["değiliz", "değilsin"]
+          "ziel": "tr.a1.e03.s0010",
+          "wort": 4,
+          "ablenker": ["değilim", "değilsin"]
         },
         {
           "schluessel": "tr.a1.e03.l07.a11",
