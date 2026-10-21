@@ -123,6 +123,8 @@ export function HeuteInsel({
           texte={serieTexte}
           ui={ui}
           ziffern={einstellungen.ziffern}
+          wiedereinstieg={stand.serie.wiedereinstieg}
+          pausetage={stand.serie.pausetage}
         />
       ) : null}
       {stand.weiter && adressen.kurs[stand.weiter.kurs] ? (

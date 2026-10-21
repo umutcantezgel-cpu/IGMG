@@ -3,6 +3,7 @@
 import { lazy, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
 import { waehleKarten } from '@/lib/lernapp/engine/kartenwahl';
+import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
@@ -70,6 +71,7 @@ export function WiederholenInsel({
   const kette = useRef<EreignisKette>(neueKette());
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
+  const [abschluss, setAbschluss] = useState<AbschlussStand | null>(null);
 
   useEffect(() => {
     let aktiv = true;
@@ -130,10 +132,11 @@ export function WiederholenInsel({
   const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
     await allesGeschrieben(kette.current, sp, profil);
-    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
-    const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
-    await leiteNeuAb(sp, profil.id, heute());
+    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9); sie liefert auch den Stand für den Abschluss
+    const { leiteAbNachLektion } = await import('@/lib/lernapp/lokal/ableitung');
+    const ende = await leiteAbNachLektion(sp, profil.id, heute());
     meldeStand();
+    setAbschluss(ende);
     setGesichert(true);
     void nachHandlung().catch(() => undefined);
   };
@@ -150,6 +153,7 @@ export function WiederholenInsel({
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}
           melden={melden ? { kurs, texte: melden } : undefined}
+          abschluss={abschluss}
         />
       </Suspense>
     </SpielerGrenze>

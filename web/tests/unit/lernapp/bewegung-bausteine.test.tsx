@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { afterEach, describe, expect, it } from 'vitest';
-import { Abschluss } from '@/components/lernapp/Abschluss';
+import { AbschlussRing } from '@/components/lernapp/Abschluss';
 import { Abzeichen } from '@/components/lernapp/Abzeichen';
 import { Serie, SERIE_GEFUELLT } from '@/components/lernapp/Serie';
 import { Pegel, zeigePegel } from '@/components/lernapp/sprechen/Pegel';
@@ -38,7 +38,7 @@ afterEach(() => {
 
 describe('B-30 Abschluss', () => {
   it('Achtstern-Ring als Linie, die sich zeichnet (pathLength 1), rein dekorativ', () => {
-    const h = renderToStaticMarkup(<Abschluss />);
+    const h = renderToStaticMarkup(<AbschlussRing />);
     expect(h).toMatch(/^<svg aria-hidden="true"/);
     expect(h).toMatch(/pathLength="1" class="linie-zeichnet"/);
   });

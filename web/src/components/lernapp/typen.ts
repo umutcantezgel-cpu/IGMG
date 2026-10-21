@@ -3,6 +3,7 @@ import type { AntwortVon, AufgabenTyp, AufgabeVon, Auswertung, ImplementierterTy
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche } from '@/lib/lernapp/kurse';
 import type de from '../../../messages/lernapp/de.json';
+import type { AbschlussTexte } from './Abschluss';
 
 /**
  * Gemeinsame Typen der Spieler-Bausteine (Client). Texte kommen als Prop aus `messages/lernapp/<ui>.json`
@@ -27,7 +28,12 @@ export type WeitereTexte = { aufgaben2: (typeof de)['aufgaben2']; sprechen: (typ
 export type SpielerOptionen = { hoeren: boolean; sprechen: boolean; spracherkennung: boolean };
 export const STANDARD_OPTIONEN: SpielerOptionen = { hoeren: true, sprechen: true, spracherkennung: false };
 
+/**
+ * Texte des Abschlussbildschirms (Tagesziel, Serie, neue Abzeichen; L7-01). Optional: ohne sie (Einstufung) zeigt der
+ * Spieler am Ende nur Ergebnis und XP.
+ */
 export type SpielerTexte = WeitereTexte & {
+  abschluss?: AbschlussTexte;
   spieler: {
     fortschritt: string;
     aufgabeVon: string;

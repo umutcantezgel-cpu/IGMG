@@ -49,6 +49,7 @@ export default async function Ueben({ params }: PageProps<'/lern-app/[ui]/[kurs]
               aufgaben2: rohTexte(ui, 'aufgaben2'),
               sprechen: rohTexte(ui, 'sprechen'),
               schreiben: rohTexte(ui, 'schreiben'),
+              abschluss: { abschluss: rohTexte(ui, 'abschluss'), serie: rohTexte(ui, 'serie'), abzeichen: rohTexte(ui, 'abzeichen') },
             }}
             spracherkennung={await funktionAn('lernapp_sprechen')}
             melden={(await funktionAn('lernapp_meldungen')) ? rohTexte(ui, 'melden') : undefined}

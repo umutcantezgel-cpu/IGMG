@@ -1,4 +1,4 @@
-import { SPRACH_STUFEN } from '../kurse';
+import { EIGENE_STUFEN, SPRACH_STUFEN } from '../kurse';
 import type { Ereignis } from './typen';
 
 /**
@@ -17,7 +17,7 @@ import type { Ereignis } from './typen';
  * | stufe | in einem Sprachkurs die Prüfsteine aller Einheiten der Stufe geschafft (Zahl je Stufe nach Rahmenplan) | A1–C1 |
  * | lerntage | Lerntage gesamt | 7, 30, 100, 365 |
  * | woerter | verschiedene Karten (Wörter und Sätze) mindestens einmal richtig | 100, 500, 1.000, 2.500, 5.000 |
- * | schrift | alle Lektionen des Schrift-Vorkurses einer Zielsprache (Zahl nach Rahmenplan) | Arabisch, Latein, Türkisch |
+ * | schrift | alle Lektionen des Schrift-Vorkurses einer Zielsprache (Zahl nach Rahmenplan; gleiche Lektion aus zwei Ausgangssprachen zählt einmal) | Arabisch, Latein, Türkisch |
  * | lektionen | verschiedene Lektionen geschafft (ohne Wiederholung) | 1, 10, 50, 100, 250 |
  * | geschichten | verschiedene Geschichten | 1, 10, 25 |
  * | wiederholungen | Wiederholungssitzungen | 1, 10, 50 |
@@ -67,7 +67,8 @@ export const SCHRIFTEN = { ar: 'ar', de: 'latein', tr: 'tr' } as const;
 /** Lektionen des Schrift-Vorkurses je Zielsprache laut Rahmenplan (`vorkurs`; Unit-Test gegen die Rahmenpläne). */
 export const VORKURS_LEKTIONEN: Readonly<Record<keyof typeof SCHRIFTEN, number>> = { ar: 8, de: 7, tr: 2 };
 
-export const WISSEN_BEREICHE = ['grund', 'aufbau', 'vertiefung'] as const;
+/** Bereiche des Wissenskurses (eigene Stufen, `kurse.ts`). */
+export const WISSEN_BEREICHE = EIGENE_STUFEN;
 
 const reihe = (gruppe: AbzeichenGruppe, werte: readonly (number | string)[]): AbzeichenArt[] =>
   werte.map((wert, i) => ({ id: `${gruppe}-${wert}`, gruppe, wert, rang: i + 1 }));
@@ -186,11 +187,13 @@ export function leiteAbzeichenAb(sortiert: readonly Ereignis[], kontext: Abzeich
         }
       }
       if (art === 'schrift' && ziel) {
+        // dieselbe Vorkurs-Lektion aus zwei Ausgangssprachen (`ar-aus-de.v.l01`, `ar-aus-tr.v.l01`) zählt einmal
         const liste = schrift.get(ziel) ?? new Set<string>();
-        schrift.set(ziel, liste.add(lektion));
+        schrift.set(ziel, liste.add(lektion.startsWith(`${kurs}.`) ? lektion.slice(kurs.length) : lektion));
         if (liste.size >= VORKURS_LEKTIONEN[ziel]) gib(`schrift-${SCHRIFTEN[ziel]}`, e.tag);
       }
-      if (kurs === 'islam' && t?.kurs === 'islam' && (WISSEN_BEREICHE as readonly string[]).includes(t.stufe)) gib(`wissen-${t.stufe}`, e.tag);
+      if (kurs === 'islam' && t?.kurs === 'islam' && (WISSEN_BEREICHE as readonly string[]).includes(t.stufe))
+        gib(`wissen-${t.stufe}`, e.tag);
     }
   }
 

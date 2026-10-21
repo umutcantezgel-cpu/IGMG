@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import { Component, lazy, type ReactNode, startTransition, Suspense, useEffect, useRef, useState } from 'react';
 import type { Lektion } from '@/lib/lernapp/aufgaben/schema';
+import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import type { Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug, Oberflaeche } from '@/lib/lernapp/kurse';
@@ -55,8 +56,8 @@ type Zustand = { art: 'laedt' } | { art: 'ohne' } | { art: 'fehlt' } | Bereit;
 /**
  * Üben (PLAN §3.1, ADR 0038/0039): liest die Lektion aus `?l=` (statische Hülle, `useSearchParams` unter Suspense), sucht ihre
  * Einheit im Kursverzeichnis und lädt das Einheitenpaket (Vorrat zuerst, sonst Netz mit Prüfung des Hashs). Der Spieler meldet
- * Ereignisse; sie landen der Reihe nach im Ausgang (`haengeAn`). Am Ende: Ableitung neu, „Weiter lernen“ auf die nächste
- * Lektion, Abgleich nur mit gebundenem Konto. Die nächste Einheit wird automatisch gespeichert (ADR 0039 Nr. 12).
+ * Ereignisse; sie landen der Reihe nach im Ausgang (`haengeAn`). Am Ende: Ableitung neu (mit Tagesziel, Serie und neuen
+ * Abzeichen für den Abschlussbildschirm, L7-01), „Weiter lernen“ auf die nächste Lektion, Abgleich nur mit gebundenem Konto. Die nächste Einheit wird automatisch gespeichert (ADR 0039 Nr. 12).
  */
 export function UebenInsel({
   ui,
@@ -82,6 +83,8 @@ export function UebenInsel({
   const kette = useRef<EreignisKette>(neueKette());
   // „Zum Lernpfad“ erst, wenn Ereignisse und Ableitung gespeichert sind (sonst ginge ein sofortiger Wechsel verloren)
   const [gesichert, setGesichert] = useState(false);
+  // Tagesziel, Serie und neue Abzeichen für den Abschlussbildschirm (aus der Ableitung nach der Lektion)
+  const [abschluss, setAbschluss] = useState<AbschlussStand | null>(null);
 
   useEffect(() => {
     let aktiv = true;
@@ -143,9 +146,9 @@ export function UebenInsel({
   const meldeEreignis = (e: EreignisEntwurf) => melde(kette.current, sp, profil, e);
   const fertig = async () => {
     await allesGeschrieben(kette.current, sp, profil);
-    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9)
-    const { leiteNeuAb } = await import('@/lib/lernapp/lokal/ableitung');
-    await leiteNeuAb(sp, profil.id, heute());
+    // Ableitung mit FSRS erst jetzt laden (eigener Chunk, KERN 4.0 §9); sie liefert auch den Stand für den Abschluss
+    const { leiteAbNachLektion } = await import('@/lib/lernapp/lokal/ableitung');
+    const ende = await leiteAbNachLektion(sp, profil.id, heute());
     const folgeEinheit = naechsteEinheit(v, paket.einheit.schluessel);
     const folgePaket = folgeEinheit ? await paketKopfImVorrat(kurs, folgeEinheit) : null;
     const weiter = naechsteLektion(paket, lektion.schluessel, folgePaket);
@@ -155,6 +158,7 @@ export function UebenInsel({
       weiter ? { kurs, lektion: weiter.schluessel, ...(weiter.titel ? { titel: weiter.titel } : {}) } : null,
     );
     meldeStand();
+    setAbschluss(ende);
     setGesichert(true);
     void nachHandlung().catch(() => undefined);
   };
@@ -180,6 +184,7 @@ export function UebenInsel({
           zurueckHref={gesichert ? lernpfad.adresse : undefined}
           optionen={{ ...z.optionen, spracherkennung }}
           melden={melden ? { kurs, texte: melden } : undefined}
+          abschluss={abschluss}
         />
       </Suspense>
     </SpielerGrenze>

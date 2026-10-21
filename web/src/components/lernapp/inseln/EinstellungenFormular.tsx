@@ -1,17 +1,24 @@
 'use client';
 
-import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState, type ReactNode } from 'react';
+import { addiereTage, freieRuhetage, ruhezeitraeume } from '@/lib/lernapp/ereignisse/serie';
 import { formatiere, intlSprache, type Ziffern } from '@/lib/lernapp/format';
 import type { Oberflaeche, Sprache } from '@/lib/lernapp/kurse';
 import {
   einstellungsSpeicher,
+  ladeRuhetage,
+  PAUSETAGE,
+  pruefeRuhezeit,
+  RUHEZEIT_HOECHSTENS,
   STANDARD_EINSTELLUNGEN,
   TAGESZIELE,
+  trageRuhezeitEin,
   zielAus,
   zielSchluessel,
   type Einstellungen,
+  type RuhezeitFehler,
 } from '@/lib/lernapp/oberflaeche/einstellungen';
-import { STAND_GEAENDERT } from '@/lib/lernapp/oberflaeche/geraet';
+import { heute, STAND_GEAENDERT } from '@/lib/lernapp/oberflaeche/geraet';
 
 export type EinstellungenTexte = {
   ausgang: string;
@@ -31,12 +38,26 @@ export type EinstellungenTexte = {
   hoerenText: string;
   sprechen: string;
   sprechenText: string;
+  serie: string;
+  serieText: string;
+  pausetage: string;
+  ruhezeit: string;
+  ruhezeitText: string;
+  ruhezeitVon: string;
+  ruhezeitBis: string;
+  ruhezeitEintragen: string;
+  ruhezeitEingetragen: string;
+  ruhezeitFrei: string;
+  ruhezeitListe: string;
+  ruhezeitZeitraum: string;
+  ruhezeitFehler: Record<RuhezeitFehler, string>;
   gespeichert: string;
   nichtGespeichert: string;
 };
 
 const ZEILE = 'flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-3 py-2 hover:bg-gruen-50';
 const FELD = 'size-5 shrink-0 accent-gruen-700';
+const DATUM = 'min-h-11 rounded-md border border-rand bg-weiss px-3 text-18';
 
 function Gruppe({ id, titel, text, children }: { id: string; titel: string; text?: string; children: ReactNode }) {
   return (
@@ -56,8 +77,132 @@ function Gruppe({ id, titel, text, children }: { id: string; titel: string; text
 }
 
 /**
- * Einstellungen auf dem Gerät (PLAN §3.1, ADR 0037 Nr. 7, ADR 0043 Nr. 2, KERN 4.0 §7–§8): Ausgangssprache, Tagesziel,
- * Ziffern (nur in der arabischen Oberfläche), Hör- und Sprechübungen. Jede Änderung wird sofort gespeichert (kein
+ * Ruhezeit (ADR 0043 Nr. 3): Zeitraum von–bis eintragen (Ereignis `pause`, höchstens 30 Tage am Stück und 30 Tage je
+ * Kalenderjahr), vorher oder nachträglich. Geprüft wird vor dem Eintragen (`pruefeRuhezeit`); Fehler stehen als Text am
+ * Feld (WCAG 3.3.1), die Bestätigung in der einen Live-Region des Formulars (`melde`). Eingetragene Zeiträume stehen als
+ * Liste darunter; das Protokoll nimmt nur Neues an, darum gibt es kein Entfernen.
+ */
+function Ruhezeit({
+  ui,
+  ziffern,
+  texte,
+  melde,
+}: {
+  ui: Oberflaeche;
+  ziffern: Ziffern;
+  texte: EinstellungenTexte;
+  melde: (text: string) => void;
+}) {
+  const id = useId();
+  // Lerntag und Ruhetage erst im Browser (die Hülle ist statisch vorgerendert und kennt weder Datum noch Gerät)
+  const [stand, setStand] = useState<{ tage: string[]; jetzt: string } | null>(null);
+  const [von, setVon] = useState('');
+  const [bis, setBis] = useState('');
+  const [fehler, setFehler] = useState<RuhezeitFehler | null>(null);
+  const [laeuft, setLaeuft] = useState(false);
+  const lade = useCallback(
+    () =>
+      void ladeRuhetage().then(
+        (tage) => setStand({ tage, jetzt: heute() }),
+        () => setStand({ tage: [], jetzt: heute() }),
+      ),
+    [],
+  );
+  useEffect(() => {
+    lade();
+    window.addEventListener(STAND_GEAENDERT, lade);
+    return () => window.removeEventListener(STAND_GEAENDERT, lade);
+  }, [lade]);
+
+  const tage = stand?.tage ?? [];
+  const jetzt = stand?.jetzt;
+  const datum = new Intl.DateTimeFormat(intlSprache(ui, ziffern), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const zeige = (tag: string) => datum.format(new Date(`${tag}T00:00:00Z`));
+  const jahr = jetzt?.slice(0, 4);
+  const zeitraeume = jahr ? ruhezeitraeume(tage).filter((z) => z.bis >= `${jahr}-01-01`) : [];
+
+  async function eintragen() {
+    const f = pruefeRuhezeit(von, bis, jetzt ?? heute(), tage);
+    setFehler(f);
+    if (f) return;
+    setLaeuft(true);
+    const ok = await trageRuhezeitEin(ui, von, bis);
+    setLaeuft(false);
+    if (ok) {
+      setVon('');
+      setBis('');
+    }
+    melde(ok ? texte.ruhezeitEingetragen : texte.nichtGespeichert);
+    lade();
+  }
+
+  return (
+    <div className="flex flex-col gap-3 border-t border-linie pt-4">
+      <h3 id={`${id}-titel`} className="font-bold">
+        {texte.ruhezeit}
+      </h3>
+      <p className="text-16 text-tinte-2">{texte.ruhezeitText}</p>
+      <p className="min-h-6 text-16">
+        {jahr ? formatiere(texte.ruhezeitFrei, { n: freieRuhetage(tage, jahr, RUHEZEIT_HOECHSTENS) }, ui, ziffern) : null}
+      </p>
+      <div role="group" aria-labelledby={`${id}-titel`} className="flex flex-wrap items-end gap-3">
+        <label className="flex flex-col gap-1 text-16 font-bold">
+          {texte.ruhezeitVon}
+          <input
+            type="date"
+            value={von}
+            min={jetzt ? addiereTage(jetzt, -366) : undefined}
+            max={jetzt ? addiereTage(jetzt, 366) : undefined}
+            onChange={(e) => setVon(e.target.value)}
+            aria-invalid={fehler ? true : undefined}
+            aria-describedby={fehler ? `${id}-fehler` : undefined}
+            className={DATUM}
+          />
+        </label>
+        <label className="flex flex-col gap-1 text-16 font-bold">
+          {texte.ruhezeitBis}
+          <input
+            type="date"
+            value={bis}
+            min={von || (jetzt ? addiereTage(jetzt, -366) : undefined)}
+            max={jetzt ? addiereTage(jetzt, 366) : undefined}
+            onChange={(e) => setBis(e.target.value)}
+            aria-invalid={fehler ? true : undefined}
+            aria-describedby={fehler ? `${id}-fehler` : undefined}
+            className={DATUM}
+          />
+        </label>
+        <button
+          type="button"
+          onClick={() => void eintragen()}
+          disabled={laeuft}
+          className="min-h-11 druck rounded-pill bg-gruen-700 px-6 font-bold text-weiss hover:bg-gruen-800 disabled:bg-linie disabled:text-tinte-2"
+        >
+          {texte.ruhezeitEintragen}
+        </button>
+      </div>
+      {fehler ? (
+        <p id={`${id}-fehler`} className="text-16 font-bold text-fehler">
+          {texte.ruhezeitFehler[fehler]}
+        </p>
+      ) : null}
+      {zeitraeume.length ? (
+        <div className="flex flex-col gap-1">
+          <p className="text-16 font-bold">{texte.ruhezeitListe}</p>
+          <ul className="flex flex-col gap-1 text-16">
+            {zeitraeume.map((z) => (
+              <li key={z.von}>{formatiere(texte.ruhezeitZeitraum, { von: zeige(z.von), bis: zeige(z.bis) }, ui, ziffern)}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * Einstellungen auf dem Gerät (PLAN §3.1, ADR 0037 Nr. 7, ADR 0043 Nr. 2–3, KERN 4.0 §7–§8): Ausgangssprache, Tagesziel,
+ * Serie (Pausetage je Woche 0–3, Ruhezeit), Ziffern (nur in der arabischen Oberfläche), Hör- und Sprechübungen. Jede Änderung wird sofort gespeichert (kein
  * Absenden, kein Kontextwechsel – WCAG 3.2.2) und in einer Live-Region bestätigt. Formular ohne JavaScript bleibt
  * lesbar; gespeichert wird im Protokoll des Profils auf dem Gerät (Ereignis `einstellung` bzw. `tagesziel`, kein Netz;
  * mit gebundenem Konto gleicht der Abgleich sie ab).
@@ -141,6 +286,23 @@ export function EinstellungenFormular({
             </label>
           );
         })}
+      </Gruppe>
+
+      <Gruppe id="serie" titel={texte.serie} text={texte.serieText}>
+        {PAUSETAGE.map((n) => (
+          <label key={n} className={ZEILE}>
+            <input
+              type="radio"
+              name="pausetage"
+              value={n}
+              className={FELD}
+              checked={e.pausetage === n}
+              onChange={() => aendern({ pausetage: n })}
+            />
+            {formatiere(texte.pausetage, { n }, ui, e.ziffern)}
+          </label>
+        ))}
+        <Ruhezeit ui={ui} ziffern={e.ziffern} texte={texte} melde={setMeldung} />
       </Gruppe>
 
       {ui === 'ar' ? (

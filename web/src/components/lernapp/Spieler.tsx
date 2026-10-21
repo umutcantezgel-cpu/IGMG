@@ -27,10 +27,11 @@ import {
   type Zusammenfassung,
   zusammenfassung,
 } from '@/lib/lernapp/engine/sitzung';
+import type { AbschlussStand } from '@/lib/lernapp/ereignisse/ableiten';
 import type { EreignisEntwurf } from '@/lib/lernapp/ereignisse/typen';
 import { formatiere, type Werte, type Ziffern } from '@/lib/lernapp/format';
 import type { KursSlug } from '@/lib/lernapp/kurse';
-import { Abschluss } from './Abschluss';
+import { Abschluss, AbschlussRing } from './Abschluss';
 import { anweisung, loesungSprache, mitPruefen } from './uebungskopf';
 import { AUFGABEN_LADER, bewerterFuer, ladeTyp } from './aufgaben/lader';
 import { Fortschrittsleiste } from './Fortschrittsleiste';
@@ -75,6 +76,11 @@ export type SpielerProps = {
   optionen?: SpielerOptionen;
   /** „Fehler melden“ mit Kurs (Richtung) und Texten; ohne (Schalter aus, Vorschau, Einstufung) kein Knopf */
   melden?: { kurs: KursSlug; texte: MeldenTexte };
+  /**
+   * Stand nach der Lektion (Tagesziel, Serie, neue Abzeichen; `leiteAbNachLektion`), sobald Ereignisse und Ableitung
+   * gespeichert sind. Mit `texte.abschluss` zeigt der Abschlussbildschirm ihn unter Ergebnis und XP (B-30, B-33, B-34).
+   */
+  abschluss?: AbschlussStand | null;
 };
 
 type Komponenten = { [T in ImplementierterTyp]: ComponentType<AufgabenProps<T>> };
@@ -135,6 +141,7 @@ export function Spieler({
   zurueckHref,
   optionen = STANDARD_OPTIONEN,
   melden,
+  abschluss,
 }: SpielerProps) {
   const id = useId();
   const [s, setS] = useState<Sitzung>(() => starte(spielbar(lektion, optionen), { ohne: optionen.hoeren ? [] : HOER_TYPEN }));
@@ -255,7 +262,7 @@ export function Spieler({
         aria-labelledby={`${id}-fertig`}
         className="flex flex-col items-start gap-5 rounded-lg border border-linie bg-weiss p-6 shadow-s1 md:p-10"
       >
-        {z.gesamt ? <Abschluss /> : null}
+        {z.gesamt ? <AbschlussRing /> : null}
         <h2 id={`${id}-fertig`} ref={titel} tabIndex={-1} className="text-display-2 outline-none">
           {z.gesamt || s.aufgaben.length ? texte.spieler.fertigTitel : texte.spieler.leer}
         </h2>
@@ -264,6 +271,9 @@ export function Spieler({
             <p className="text-20">{f(texte.spieler.fertigText, { richtig: z.richtig, gesamt: z.gesamt })}</p>
             <p className="text-24 font-bold text-gruen-800">{f(texte.spieler.xp, { n: z.xp })}</p>
           </>
+        ) : null}
+        {z.gesamt && abschluss && texte.abschluss ? (
+          <Abschluss stand={abschluss} texte={texte.abschluss} ui={sprache} ziffern={ziffern} />
         ) : null}
         {zurueckHref ? (
           <a href={zurueckHref} className={`${KNOPF} inline-flex items-center no-underline hover:text-weiss`}>

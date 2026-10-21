@@ -14,6 +14,8 @@ export type SerieTexte = {
   ruhe: string;
   heute: string;
   offen: string;
+  wiedereinstieg: string;
+  pausetage: string;
 };
 
 const STERN = 'M12 3.5 14.5 6H18v3.5l2.5 2.5-2.5 2.5V18h-3.5L12 20.5 9.5 18H6v-3.5L3.5 12 6 9.5V6h3.5z';
@@ -34,6 +36,8 @@ function schonGefuellt(tag: string): boolean {
  * von Montag bis Sonntag. Gelernt = gefüllt, Pause und Ruhezeit = Linie (sie tragen die Serie), heute noch offen = Linie
  * in Grün, später = blass. Der heutige Stern füllt sich **einmal am Tag** von unten (`stern-fuellt`, B-18), danach steht er
  * gefüllt; reduziert sofort gefüllt. Jeder Tag hat seinen Zustand als Text; die Zahl steht statisch, nie „verloren“.
+ * Nach einer längeren Pause grüßt ein freundlicher Wiedereinstieg (ADR 0043 Nr. 3), darunter steht, wie viele Pausetage je
+ * Woche die Serie tragen (Einstellung 0–3) – ohne Alarm und ohne Vorwurf.
  */
 export function Serie({
   laenge,
@@ -42,6 +46,9 @@ export function Serie({
   texte,
   ui,
   ziffern,
+  wiedereinstieg = false,
+  pausetage,
+  flaeche = 'bg-weiss',
 }: {
   laenge: number;
   woche: readonly WochenTag[];
@@ -50,6 +57,12 @@ export function Serie({
   texte: SerieTexte;
   ui: Oberflaeche;
   ziffern: Ziffern;
+  /** nach mindestens `WIEDEREINSTIEG_TAGE` Tagen ohne Lernen (serie.ts) */
+  wiedereinstieg?: boolean;
+  /** automatische Pausetage je Woche (Hinweis unter dem Band) */
+  pausetage?: number;
+  /** Hintergrund (Token-Klasse), z. B. `bg-sand` im Abschluss */
+  flaeche?: 'bg-weiss' | 'bg-sand';
 }) {
   const heuteGelernt = woche.some((t) => t.tag === heute && t.art === 'gelernt');
   // nur im Browser eingehängt (der Server kennt den Stand des Geräts nicht): gleich beim ersten Zeichnen entscheiden
@@ -75,8 +88,9 @@ export function Serie({
             : null;
 
   return (
-    <div className="flex flex-col gap-3 rounded-md bg-weiss p-4">
+    <div className={`flex flex-col gap-3 rounded-md p-4 ${flaeche}`}>
       <p className="font-bold">{texte.titel}</p>
+      {wiedereinstieg ? <p className="text-16 font-bold text-gruen-800">{texte.wiedereinstieg}</p> : null}
       <p className="text-18">{formatiere(texte.laenge, { n: laenge }, ui, ziffern)}</p>
       <ol aria-label={texte.woche} className="grid grid-cols-7 gap-1">
         {woche.map((t) => {
@@ -110,6 +124,9 @@ export function Serie({
           );
         })}
       </ol>
+      {pausetage === undefined ? null : (
+        <p className="text-16 text-tinte-2">{formatiere(texte.pausetage, { n: pausetage }, ui, ziffern)}</p>
+      )}
     </div>
   );
 }

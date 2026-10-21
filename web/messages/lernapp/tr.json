@@ -146,7 +146,12 @@
   "fortschritt": {
     "titel": "İlerleme",
     "einleitung": "Gün gün öğrendiklerin – sadece senin için, bu cihazda.",
-    "leer": "Bu cihazda henüz ilerleme yok. İlk dersinden sonra burada görünür."
+    "leer": "Bu cihazda henüz ilerleme yok. İlk dersinden sonra burada görünür.",
+    "bisher": "Şimdiye kadar",
+    "lerntage": "Öğrenme günleri",
+    "xp": "XP",
+    "lektionen": "Tamamlanan dersler",
+    "karten": "Çalışılan kelime ve cümleler"
   },
   "wortschatz": {
     "titel": "Kelimeler",
@@ -190,7 +195,26 @@
     "eingelesen": "{n, plural, one {# kayıt eklendi.} other {# kayıt eklendi.}}",
     "fehlerGross": "Dosya çok büyük.",
     "fehlerFormat": "Bu dosya öğrenme uygulamasının bir yedeği değil.",
-    "nurSitzung": "Bu pencerede hiçbir şey kalıcı olarak kaydedilmez, örneğin gizli bir pencerede. Pencereyi kapatınca öğrenme durumun kalmaz. Önce dosya olarak kaydet."
+    "nurSitzung": "Bu pencerede hiçbir şey kalıcı olarak kaydedilmez, örneğin gizli bir pencerede. Pencereyi kapatınca öğrenme durumun kalmaz. Önce dosya olarak kaydet.",
+    "serie": "Seri",
+    "serieText": "Serin art arda öğrenme günlerini sayar. Mola günleri ve dinlenme zamanı, öğrenmediğin günlerde de seriyi sürdürür.",
+    "pausetage": "{n, plural, =0 {Mola günü yok} one {Haftada # mola günü} other {Haftada # mola günü}}",
+    "ruhezeit": "Dinlenme zamanı",
+    "ruhezeitText": "Tatil, hastalık ya da bir ara için: Yılda 30 güne kadar dinlenme zamanı serini sürdürür. Önceden ya da sonradan girebilirsin.",
+    "ruhezeitVon": "İlk gün",
+    "ruhezeitBis": "Son gün",
+    "ruhezeitEintragen": "Dinlenme zamanı ekle",
+    "ruhezeitEingetragen": "Dinlenme zamanı eklendi.",
+    "ruhezeitFrei": "{n, plural, =0 {Bu yıl için boş dinlenme günü kalmadı.} one {Bu yıl # gün daha boş.} other {Bu yıl # gün daha boş.}}",
+    "ruhezeitListe": "Eklenen dinlenme zamanı",
+    "ruhezeitZeitraum": "{von} – {bis}",
+    "ruhezeitFehler": {
+      "form": "Lütfen ilk ve son günü seç.",
+      "reihenfolge": "Son gün ilk günden önce. Lütfen ikisinin yerini değiştir.",
+      "zuLang": "Dinlenme zamanı tek seferde en fazla 30 gün sürer.",
+      "zuWeit": "Lütfen bugünden itibaren bir yıl içindeki günleri seç.",
+      "jahr": "Bu dönem için yıl içinde yeterince boş gün yok."
+    }
   },
   "quellen": {
     "titel": "Kaynaklar ve lisanslar",
@@ -294,6 +318,14 @@
     "xp": "{n, number} XP",
     "zurueck": "Öğrenme yoluna dön",
     "leer": "Bu derste burada çalışılacak görev henüz yok."
+  },
+  "abschluss": {
+    "tagesziel": "Günlük hedef",
+    "zielErreicht": "Bugünkü hedefe ulaştın.",
+    "zielXp": "Bugün {erreicht, number} / {ziel, number} XP",
+    "zielLektionen": "Bugün {erreicht, number} / {ziel, plural, one {# ders} other {# ders}}",
+    "keinZiel": "Bugün {xp, number} XP – tamamen kendi temponda.",
+    "neueAbzeichen": "{n, plural, one {Yeni rozet} other {Yeni rozetler}}"
   },
   "aufgaben": {
     "auswahl": {
@@ -532,10 +564,71 @@
     "pause": "mola",
     "ruhe": "dinlenme",
     "heute": "bugün",
-    "offen": "henüz açık"
+    "offen": "henüz açık",
+    "wiedereinstieg": "Yeniden burada olman çok güzel.",
+    "pausetage": "{n, plural, =0 {Mola günleri kapalı. Dinlenme zamanı seriyi yine sürdürür.} one {Haftada bir mola günü seriyi sürdürür.} other {Haftada # güne kadar mola seriyi sürdürür.}}"
   },
   "abzeichen": {
-    "neu": "Yeni rozet"
+    "neu": "Yeni rozet",
+    "titel": "Rozetler",
+    "hinweis": "Rozetler yolunu gösterir. Karne ya da sertifika değildir.",
+    "keine": "İlk rozetin ilk dersinle gelir.",
+    "weitere": "{n, plural, one {# rozet daha} other {# rozet daha}}",
+    "weitereText": "Zamanla gelirler, hiç acele etmeden.",
+    "arten": {
+      "stufe": {
+        "name": "{stufe} seviyesi",
+        "text": "Bir dil kursunda {stufe} seviyesinin tüm kontrol noktalarını tamamladın."
+      },
+      "lerntage": {
+        "name": "{n, number} öğrenme günü",
+        "text": "{n, number} gün öğrendin; art arda olması gerekmez."
+      },
+      "woerter": {
+        "name": "{n, number} kelime",
+        "text": "{n, number} farklı kelime ve cümleyi doğru yanıtladın."
+      },
+      "schrift": {
+        "name": "{wert, select, ar {Arap harfleri} latein {Latin harfleri} other {Türk harfleri}}",
+        "text": "{wert, select, ar {Arapça} latein {Latin harfleri} other {Türkçe}} yazı ön kursunu baştan sona tamamladın."
+      },
+      "lektionen": {
+        "name": "{n, plural, one {İlk ders} other {# ders}}",
+        "text": "{n, plural, one {İlk dersi tamamladın.} other {# farklı dersi tamamladın.}}"
+      },
+      "geschichten": {
+        "name": "{n, plural, one {İlk hikâye} other {# hikâye}}",
+        "text": "{n, plural, one {İlk hikâyeyi okudun.} other {# farklı hikâye okudun.}}"
+      },
+      "wiederholungen": {
+        "name": "{n, plural, one {İlk tekrar} other {# tekrar}}",
+        "text": "{n, plural, one {İlk tekrarı yaptın.} other {# tekrar yaptın.}}"
+      },
+      "pruefsteine": {
+        "name": "{n, plural, one {İlk kontrol noktası} other {# kontrol noktası}}",
+        "text": "{n, plural, one {İlk kontrol noktasını tamamladın.} other {# farklı kontrol noktasını tamamladın.}}"
+      },
+      "tagesziel": {
+        "name": "{n, number} hedef günü",
+        "text": "{n, number} gün günlük hedefe ulaştın."
+      },
+      "erstes": {
+        "name": "{wert, select, sprechen {İlk konuşma} other {İlk yazı}}",
+        "text": "{wert, select, sprechen {İlk konuşma alıştırmasını yaptın.} other {İlk kendi metnini yazdın.}}"
+      },
+      "einstufung": {
+        "name": "Seviye testi",
+        "text": "Seviye testini yaptın."
+      },
+      "wissen": {
+        "name": "Bilgi: {wert, select, grund {Temel seviye} aufbau {Gelişim seviyesi} other {Derinleşme}}",
+        "text": "{wert, select, grund {Temel seviye} aufbau {Gelişim seviyesi} other {Derinleşme}} bölümünde ilk dersi tamamladın."
+      },
+      "gruppe": {
+        "name": "Grup hedefi",
+        "text": "Grubunla haftalık hedefe ulaştın."
+      }
+    }
   },
   "aufgaben2": {
     "gemeinsam": {

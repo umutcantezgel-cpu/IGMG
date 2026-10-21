@@ -146,7 +146,12 @@
   "fortschritt": {
     "titel": "Fortschritt",
     "einleitung": "Was du gelernt hast, Tag für Tag – nur für dich, auf diesem Gerät.",
-    "leer": "Noch kein Fortschritt auf diesem Gerät. Nach deiner ersten Lektion steht er hier."
+    "leer": "Noch kein Fortschritt auf diesem Gerät. Nach deiner ersten Lektion steht er hier.",
+    "bisher": "Bisher",
+    "lerntage": "Lerntage",
+    "xp": "XP",
+    "lektionen": "Lektionen geschafft",
+    "karten": "Wörter und Sätze geübt"
   },
   "wortschatz": {
     "titel": "Wortschatz",
@@ -190,7 +195,26 @@
     "eingelesen": "{n, plural, one {# Eintrag übernommen.} other {# Einträge übernommen.}}",
     "fehlerGross": "Die Datei ist zu groß.",
     "fehlerFormat": "Diese Datei ist keine Sicherung der Lern-App.",
-    "nurSitzung": "In diesem Fenster wird nichts dauerhaft gespeichert, zum Beispiel in einem privaten Fenster. Nach dem Schließen ist dein Lernstand nicht mehr da. Sichere ihn vorher als Datei."
+    "nurSitzung": "In diesem Fenster wird nichts dauerhaft gespeichert, zum Beispiel in einem privaten Fenster. Nach dem Schließen ist dein Lernstand nicht mehr da. Sichere ihn vorher als Datei.",
+    "serie": "Serie",
+    "serieText": "Deine Serie zählt Lerntage in Folge. Pausetage und Ruhezeit tragen sie weiter, auch an Tagen ohne Lernen.",
+    "pausetage": "{n, plural, =0 {Keine Pausetage} one {# Pausetag je Woche} other {# Pausetage je Woche}}",
+    "ruhezeit": "Ruhezeit",
+    "ruhezeitText": "Für Urlaub, Krankheit oder eine Auszeit: Bis zu 30 Tage im Jahr trägt die Ruhezeit deine Serie. Du kannst sie vorher oder auch nachträglich eintragen.",
+    "ruhezeitVon": "Erster Tag",
+    "ruhezeitBis": "Letzter Tag",
+    "ruhezeitEintragen": "Ruhezeit eintragen",
+    "ruhezeitEingetragen": "Ruhezeit eingetragen.",
+    "ruhezeitFrei": "{n, plural, =0 {In diesem Jahr ist keine Ruhezeit mehr frei.} one {In diesem Jahr ist noch # Tag frei.} other {In diesem Jahr sind noch # Tage frei.}}",
+    "ruhezeitListe": "Eingetragene Ruhezeit",
+    "ruhezeitZeitraum": "{von} bis {bis}",
+    "ruhezeitFehler": {
+      "form": "Bitte wähle den ersten und den letzten Tag.",
+      "reihenfolge": "Der letzte Tag liegt vor dem ersten. Bitte tausche die beiden.",
+      "zuLang": "Eine Ruhezeit dauert höchstens 30 Tage am Stück.",
+      "zuWeit": "Bitte wähle Tage innerhalb eines Jahres von heute.",
+      "jahr": "Für diesen Zeitraum sind im Jahr nicht mehr genug Tage frei."
+    }
   },
   "quellen": {
     "titel": "Quellen und Lizenzen",
@@ -294,6 +318,14 @@
     "xp": "{n, number} XP",
     "zurueck": "Zum Lernpfad",
     "leer": "In dieser Lektion gibt es hier noch keine Aufgaben zum Üben."
+  },
+  "abschluss": {
+    "tagesziel": "Tagesziel",
+    "zielErreicht": "Tagesziel für heute erreicht.",
+    "zielXp": "Heute {erreicht, number} von {ziel, number} XP",
+    "zielLektionen": "Heute {erreicht, number} von {ziel, plural, one {# Lektion} other {# Lektionen}}",
+    "keinZiel": "Heute {xp, number} XP – ganz in deinem Tempo.",
+    "neueAbzeichen": "{n, plural, one {Neues Abzeichen} other {Neue Abzeichen}}"
   },
   "aufgaben": {
     "auswahl": {
@@ -532,10 +564,71 @@
     "pause": "Pause",
     "ruhe": "Ruhezeit",
     "heute": "heute",
-    "offen": "noch offen"
+    "offen": "noch offen",
+    "wiedereinstieg": "Schön, dass du wieder da bist.",
+    "pausetage": "{n, plural, =0 {Pausetage sind ausgeschaltet. Eine Ruhezeit trägt die Serie weiter.} one {Ein Tag Pause je Woche trägt die Serie weiter.} other {Bis zu # Tage Pause je Woche tragen die Serie weiter.}}"
   },
   "abzeichen": {
-    "neu": "Neues Abzeichen"
+    "neu": "Neues Abzeichen",
+    "titel": "Abzeichen",
+    "hinweis": "Abzeichen zeigen deinen Weg. Sie sind kein Zeugnis und kein Zertifikat.",
+    "keine": "Dein erstes Abzeichen kommt mit deiner ersten Lektion.",
+    "weitere": "{n, plural, one {# weiteres Abzeichen} other {# weitere Abzeichen}}",
+    "weitereText": "Sie kommen mit der Zeit, ganz ohne Eile.",
+    "arten": {
+      "stufe": {
+        "name": "Stufe {stufe}",
+        "text": "In einem Sprachkurs alle Prüfsteine der Stufe {stufe} geschafft."
+      },
+      "lerntage": {
+        "name": "{n, number} Lerntage",
+        "text": "An {n, number} Tagen gelernt, nicht unbedingt in Folge."
+      },
+      "woerter": {
+        "name": "{n, number} Wörter",
+        "text": "{n, number} verschiedene Wörter und Sätze richtig beantwortet."
+      },
+      "schrift": {
+        "name": "{wert, select, ar {Arabische Schrift} latein {Lateinische Schrift} other {Türkische Buchstaben}}",
+        "text": "Den Schrift-Vorkurs {wert, select, ar {Arabisch} latein {Lateinschrift} other {Türkisch}} ganz durchgearbeitet."
+      },
+      "lektionen": {
+        "name": "{n, plural, one {Erste Lektion} other {# Lektionen}}",
+        "text": "{n, plural, one {Die erste Lektion geschafft.} other {# verschiedene Lektionen geschafft.}}"
+      },
+      "geschichten": {
+        "name": "{n, plural, one {Erste Geschichte} other {# Geschichten}}",
+        "text": "{n, plural, one {Die erste Geschichte gelesen.} other {# verschiedene Geschichten gelesen.}}"
+      },
+      "wiederholungen": {
+        "name": "{n, plural, one {Erste Wiederholung} other {# Wiederholungen}}",
+        "text": "{n, plural, one {Die erste Wiederholung gemacht.} other {# Wiederholungen gemacht.}}"
+      },
+      "pruefsteine": {
+        "name": "{n, plural, one {Erster Prüfstein} other {# Prüfsteine}}",
+        "text": "{n, plural, one {Den ersten Prüfstein geschafft.} other {# verschiedene Prüfsteine geschafft.}}"
+      },
+      "tagesziel": {
+        "name": "{n, number} Zieltage",
+        "text": "An {n, number} Tagen das Tagesziel erreicht."
+      },
+      "erstes": {
+        "name": "{wert, select, sprechen {Erstes Sprechen} other {Erstes Schreiben}}",
+        "text": "{wert, select, sprechen {Die erste Sprechübung gemacht.} other {Den ersten eigenen Text geschrieben.}}"
+      },
+      "einstufung": {
+        "name": "Einstufung",
+        "text": "Den Einstufungstest gemacht."
+      },
+      "wissen": {
+        "name": "Wissen: {wert, select, grund {Grundstufe} aufbau {Aufbaustufe} other {Vertiefung}}",
+        "text": "Die erste Lektion im Bereich {wert, select, grund {Grundstufe} aufbau {Aufbaustufe} other {Vertiefung}} geschafft."
+      },
+      "gruppe": {
+        "name": "Gruppenziel",
+        "text": "Mit deiner Gruppe das Wochenziel erreicht."
+      }
+    }
   },
   "aufgaben2": {
     "gemeinsam": {
