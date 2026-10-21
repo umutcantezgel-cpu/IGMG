@@ -4,6 +4,7 @@ import { funktionAn } from '@/lib/funktionen';
 import { hatZugang } from '@/lib/konto/zugang';
 import { BREMSE, GRENZEN, HOECHSTENS_BYTES, SyncAnfrageSchema, type SyncFehler } from '@/lib/lernapp/sync/protokoll';
 import { gleicheKontoAb, gleicherUrsprung, lernappEinwilligung, vermerkeZuweisungen } from '@/lib/lernapp/sync/server';
+import { zaehleBetrieb } from '@/lib/lernapp/verwaltung/betrieb';
 import { ladeKontoMitFaktor } from '@/lib/rechte/gemeinde';
 import { pruefeRate } from '@/lib/validierung/ratenbegrenzung';
 
@@ -80,6 +81,8 @@ export async function POST(anfrage: Request) {
   const ergebnis = await gleicheKontoAb(konto.benutzerId, p.data, jetzt);
   if (ergebnis.grenze) {
     console.warn(`[lernapp-sync] Grenze je Konto erreicht: ${ergebnis.grenze}`);
+    // Zählung ohne Personenbezug für das Cockpit (S-L1 M-2, Verwaltung L3-06)
+    await zaehleBetrieb(`sync_grenze_${ergebnis.grenze}`, jetzt);
     return antwort(429, 'grenze', { 'Retry-After': String(GRENZEN.wartenSekunden) });
   }
   // Zuweisungen der Lehrkraft nur mit Schalter `lernapp_gruppen` (Personendaten für die Gruppe)

@@ -6,6 +6,7 @@ import * as schema from '@/lib/db/schema';
 import { type Betriebsart, oeffentlicheAdresse, pruefeUmgebung } from '@/lib/umgebung';
 import { schema as projekteSchema } from '@/lib/validierung/seiteninhalte/projekte';
 import { gemeindePruefen } from './gemeinde';
+import { lernappPruefen } from './lernapp';
 import { vergangeneOffene } from './meilensteine';
 import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-probe';
 
@@ -15,7 +16,7 @@ import { pruefeSpeicher, type SpeicherProbe, type Umgebung } from './speicher-pr
  * erweitert, nie abgeschwächt werden (UNANTASTBAR). Werte von Geheimnissen erscheinen nie in einer Meldung.
  */
 export type Status = 'ok' | 'hinweis' | 'warnung' | 'fehler' | 'manuell';
-export type Bereich = 'umgebung' | 'auslieferung' | 'datenbank' | 'inhalte' | 'recht' | 'gemeinde' | 'mail';
+export type Bereich = 'umgebung' | 'auslieferung' | 'datenbank' | 'inhalte' | 'recht' | 'gemeinde' | 'lernapp' | 'mail';
 
 export type Pruefung = {
   id: string;
@@ -221,6 +222,19 @@ export async function fuehreStartklarAus(kontext: StartklarKontext): Promise<Sta
         titel: 'Gemeinde-Plattform lesbar',
         status: 'fehler',
         meldung: 'Schalter, Protokoll und Betriebsmeldungen lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
+        ort: 'Vercel › Deployments › Redeploy',
+        aufwand: '5 min',
+      });
+    }
+    try {
+      await lernappPruefen(db, env, produktion, kontext.jetzt ?? new Date(), neu);
+    } catch {
+      neu({
+        id: 'lernapp.lesbar',
+        bereich: 'lernapp',
+        titel: 'Lern-App lesbar',
+        status: 'fehler',
+        meldung: 'Schalter, Prüfende und Einheiten der Lern-App lassen sich nicht lesen. Die Migrationen sind vermutlich unvollständig.',
         ort: 'Vercel › Deployments › Redeploy',
         aufwand: '5 min',
       });

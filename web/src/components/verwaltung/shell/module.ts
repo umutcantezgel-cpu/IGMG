@@ -1,7 +1,7 @@
 import type { Aktion } from '@/lib/rechte/matrix';
 
 /** Funktionsschalter (ADR 0035), ohne den ein Modul nicht erscheint (Seiten antworten dann mit 404). */
-export type ModulFunktion = 'lernplattform' | 'konten';
+export type ModulFunktion = 'lernplattform' | 'konten' | 'lernapp';
 
 /**
  * Module der Verwaltung (V01–V14 + Einstellungen) in der Reihenfolge der Seitenleiste. Ein Modul erscheint nur, wenn
@@ -45,7 +45,9 @@ export type ModulSchluessel =
   | 'besondereTage'
   | 'newsletter'
   // Kür (O-K05): Bildschirm-Anzeige im Gebetsraum
-  | 'anzeige';
+  | 'anzeige'
+  // Lauf Lern-App (L3-06, PLAN §7.1): Übersicht, Kurse, Sprachprüfung, Audio-Studio, Meldungen, Quellen
+  | 'lernapp';
 export type ModulIcon = ModulSchluessel;
 export type ModulGruppe = 'inhalte' | 'kommunikation' | 'betrieb';
 
@@ -63,7 +65,7 @@ export type Modul = {
  * Handlungsmodule: Ihre Zähler zeigen Arbeit, die wartet (Eingänge, Nachrichten, Tickets). Die übrigen Zähler
  * sind Bestand (Neuigkeiten, Veranstaltungen, Ankündigungen) und sehen anders aus.
  */
-export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran', 'anzeige'] as const;
+export const HANDLUNGS_MODULE = ['eingaenge', 'postfach', 'tickets', 'kinderschutz', 'koran', 'anzeige', 'lernapp'] as const;
 
 export const MODULE: readonly Modul[] = [
   { schluessel: 'uebersicht', pfad: '/verwaltung', recht: 'uebersicht.lesen', icon: 'uebersicht', gebaut: true },
@@ -185,6 +187,16 @@ export const MODULE: readonly Modul[] = [
     icon: 'rezitationen',
     gebaut: true,
     gruppe: 'inhalte',
+  },
+  // Lern-App (L3-06, PLAN §7.1): nur mit Schalter `lernapp`; Einstieg der Rolle „Sprachprüfung“ (ADR 0041, Fortschreibung S-L1)
+  {
+    schluessel: 'lernapp',
+    pfad: '/verwaltung/lernapp',
+    recht: 'lernapp.lesen',
+    icon: 'lernapp',
+    gebaut: true,
+    gruppe: 'inhalte',
+    funktion: 'lernapp',
   },
   {
     schluessel: 'besondereTage',

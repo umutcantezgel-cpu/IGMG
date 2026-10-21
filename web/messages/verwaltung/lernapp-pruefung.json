@@ -1,0 +1,362 @@
+{
+  "_hinweis": "Prüfoberfläche Sprache der Lern-App (ADR 0041 Nr. 10, PLAN §7.2, O-3): einzige Seite der Verwaltung mit Sprachwahl de/tr/ar. Nicht in messages/verwaltung/index.ts; die Seite liest die Datei mit createTranslator und ausdrücklicher Sprache. sprachen:pruefen prüft de ⊆ tr, de ⊆ ar und gleiche Platzhalter. tr und ar sind KI-Entwürfe (Liste _entwurf), Muttersprachlerinnen und Muttersprachler prüfen sie. Religionswächter mit Formel-Lexikon (KERN 4.0 §3).",
+  "_entwurf": {
+    "tr": [
+      "*"
+    ],
+    "ar": [
+      "*"
+    ]
+  },
+  "de": {
+    "titel": "Sprachprüfung",
+    "einleitung": "Stichproben je Einheit: Einträge in Ihren Prüfsprachen beurteilen. Alles geht auch mit Tastenkürzeln.",
+    "sprachwahl": "Sprache der Prüfoberfläche",
+    "sprachname": {
+      "de": "Deutsch",
+      "tr": "Türkisch",
+      "ar": "Arabisch"
+    },
+    "eigeneSprachen": "Ihre Prüfsprachen: {sprachen}",
+    "keineSprache": "Für Sie ist noch keine Prüfsprache hinterlegt. Die Redaktion trägt sie unter „Prüfende“ ein.",
+    "warteschlange": {
+      "titel": "Warteschlange",
+      "leer": "Zurzeit wartet nichts in Ihren Prüfsprachen.",
+      "beschriftung": "Warteschlange der Stichproben",
+      "spalte": {
+        "einheit": "Einheit",
+        "art": "Art",
+        "sprache": "Prüfsprache",
+        "stand": "Stand",
+        "aktion": "Aktion"
+      },
+      "kandidaten": "{anzahl} Einträge",
+      "keine": "noch keine Stichprobe",
+      "offen": "offen: {geprueft} von {groesse} beurteilt",
+      "bestanden": "bestanden",
+      "nachbessern": "nachbessern",
+      "veraltet": "Inhalt seitdem geändert",
+      "ziehen": "Stichprobe ziehen",
+      "oeffnen": "Stichprobe öffnen",
+      "ansehen": "Ergebnis ansehen",
+      "gezogen": "Die Stichprobe ist gezogen."
+    },
+    "art": {
+      "zieltext": "Zieltext",
+      "uebersetzung": "Übersetzung",
+      "audio": "Audio"
+    },
+    "richtung": "{ziel} aus {ausgang}",
+    "stichprobe": {
+      "titel": "Stichprobe {einheit}",
+      "zurueck": "Zur Warteschlange",
+      "angaben": "{art}, Prüfsprache {sprache}, {groesse} Einträge",
+      "einlauf": "Einlauf: erhöhte Quote (30 %)",
+      "fortschritt": "{geprueft} von {groesse} beurteilt",
+      "liste": "Einträge der Stichprobe",
+      "eintrag": "Eintrag {nr} von {anzahl}",
+      "zieltext": "Zieltext",
+      "uebersetzung": "Übersetzung",
+      "alternativen": "Weitere angenommene Fassungen",
+      "clip": "Clip",
+      "anhoeren": "Anhören",
+      "langsam": "Langsam anhören",
+      "anhalten": "Anhalten",
+      "clipFehlt": "Der Clip lässt sich nicht laden.",
+      "fehlt": "Dieser Eintrag ist inzwischen gesperrt oder entfernt und zählt nicht.",
+      "urteil": "Urteil",
+      "urteile": {
+        "ok": "In Ordnung",
+        "korrektur": "Korrektur",
+        "abgelehnt": "Abgelehnt"
+      },
+      "kategorie": "Fehlerkategorie",
+      "kritisch": "Kritisch",
+      "leicht": "Leicht",
+      "kategorien": {
+        "bedeutung": "Bedeutung",
+        "grammatik": "Grammatik",
+        "anstoessig": "Anstößig",
+        "aussprache": "Aussprache",
+        "natuerlichkeit": "Natürlichkeit",
+        "zeichensetzung": "Zeichensetzung"
+      },
+      "korrektur": "Korrekturvorschlag",
+      "korrekturHinweis": "Nur der korrigierte Text. Die Redaktion arbeitet ihn ein; Sie bearbeiten nichts selbst.",
+      "kommentar": "Kommentar (freiwillig)",
+      "speichern": "Urteil speichern",
+      "laeuft": "Wird gespeichert …",
+      "naechster": "Nächster Eintrag",
+      "voriger": "Vorheriger Eintrag",
+      "beurteilt": "Beurteilt: {urteil}",
+      "offen": "noch nicht beurteilt",
+      "gespeichert": "Das Urteil ist gespeichert.",
+      "tasten": {
+        "titel": "Tastenkürzel",
+        "ok": "1: In Ordnung und weiter",
+        "korrektur": "2: Korrektur",
+        "abgelehnt": "3: Abgelehnt",
+        "naechster": "N: nächster Eintrag",
+        "voriger": "P: vorheriger Eintrag",
+        "hinweis": "Die Kürzel wirken nicht, solange ein Textfeld den Fokus hat."
+      },
+      "ergebnis": {
+        "bestanden": "Stichprobe bestanden. Die geprüften Einträge der Einheit sind veröffentlicht.",
+        "nachbessern": "Stichprobe nicht bestanden. Die Befunde gehen an die Redaktion; nach der Nachbesserung folgt eine neue Stichprobe.",
+        "zahlen": "{geprueft} geprüft, {kritisch} kritisch, {leicht} leicht"
+      }
+    },
+    "fehler": {
+      "keinRecht": "Dafür fehlt Ihnen das Recht.",
+      "aus": "Die Lern-App ist ausgeschaltet.",
+      "ohneDatenbank": "Ohne Datenbank lässt sich nichts speichern.",
+      "nichtGefunden": "Der Eintrag wurde nicht gefunden.",
+      "entschieden": "Diese Stichprobe ist schon entschieden.",
+      "offen": "Für dieses Ziel ist schon eine Stichprobe offen.",
+      "schonGezogen": "Zum aktuellen Stand gibt es schon eine Stichprobe.",
+      "keineKandidaten": "Diese Einheit hat dafür keine Einträge.",
+      "pruefen": "Bitte die markierten Felder prüfen.",
+      "urteilFehlt": "Bitte ein Urteil wählen.",
+      "kategorieFehlt": "Bitte eine Fehlerkategorie wählen.",
+      "korrekturFehlt": "Bitte den korrigierten Text eintragen.",
+      "zuLang": "Der Text ist zu lang.",
+      "waechter_formel": "Der Text enthält eine religiöse Formel. Solche Einträge bearbeitet nur die religiöse Prüfung.",
+      "waechter_wortfolge": "Der Text enthält eine geschützte Wortfolge aus den religiösen Quelltexten. Das ist hier nicht erlaubt.",
+      "unbekannt": "Das hat nicht geklappt. Bitte erneut versuchen."
+    }
+  },
+  "tr": {
+    "titel": "Dil denetimi",
+    "einleitung": "Ünite başına örneklem: Denetim dillerinizdeki kayıtları değerlendirin. Her şey klavye kısayollarıyla da yapılabilir.",
+    "sprachwahl": "Denetim arayüzünün dili",
+    "sprachname": {
+      "de": "Almanca",
+      "tr": "Türkçe",
+      "ar": "Arapça"
+    },
+    "eigeneSprachen": "Denetim dilleriniz: {sprachen}",
+    "keineSprache": "Sizin için henüz bir denetim dili kayıtlı değil. Editörler bunu „Denetçiler“ sayfasında girer.",
+    "warteschlange": {
+      "titel": "Bekleme listesi",
+      "leer": "Şu anda denetim dillerinizde bekleyen bir şey yok.",
+      "beschriftung": "Örneklemlerin bekleme listesi",
+      "spalte": {
+        "einheit": "Ünite",
+        "art": "Tür",
+        "sprache": "Denetim dili",
+        "stand": "Durum",
+        "aktion": "İşlem"
+      },
+      "kandidaten": "{anzahl} kayıt",
+      "keine": "henüz örneklem yok",
+      "offen": "açık: {groesse} kayıttan {geprueft} değerlendirildi",
+      "bestanden": "geçti",
+      "nachbessern": "düzeltilmeli",
+      "veraltet": "içerik o zamandan beri değişti",
+      "ziehen": "Örneklem çek",
+      "oeffnen": "Örneklemi aç",
+      "ansehen": "Sonucu gör",
+      "gezogen": "Örneklem çekildi."
+    },
+    "art": {
+      "zieltext": "Hedef metin",
+      "uebersetzung": "Çeviri",
+      "audio": "Ses"
+    },
+    "richtung": "{ausgang} üzerinden {ziel}",
+    "stichprobe": {
+      "titel": "Örneklem {einheit}",
+      "zurueck": "Bekleme listesine dön",
+      "angaben": "{art}, denetim dili {sprache}, {groesse} kayıt",
+      "einlauf": "Başlangıç aşaması: yüksek oran (%30)",
+      "fortschritt": "{groesse} kayıttan {geprueft} değerlendirildi",
+      "liste": "Örneklemdeki kayıtlar",
+      "eintrag": "Kayıt {nr} / {anzahl}",
+      "zieltext": "Hedef metin",
+      "uebersetzung": "Çeviri",
+      "alternativen": "Kabul edilen diğer biçimler",
+      "clip": "Ses kaydı",
+      "anhoeren": "Dinle",
+      "langsam": "Yavaş dinle",
+      "anhalten": "Durdur",
+      "clipFehlt": "Ses kaydı yüklenemiyor.",
+      "fehlt": "Bu kayıt artık kilitli ya da kaldırılmış; sayılmaz.",
+      "urteil": "Karar",
+      "urteile": {
+        "ok": "Uygun",
+        "korrektur": "Düzeltme",
+        "abgelehnt": "Reddedildi"
+      },
+      "kategorie": "Hata türü",
+      "kritisch": "Ağır",
+      "leicht": "Hafif",
+      "kategorien": {
+        "bedeutung": "Anlam",
+        "grammatik": "Dil bilgisi",
+        "anstoessig": "Uygunsuz",
+        "aussprache": "Telaffuz",
+        "natuerlichkeit": "Doğallık",
+        "zeichensetzung": "Noktalama"
+      },
+      "korrektur": "Düzeltme önerisi",
+      "korrekturHinweis": "Yalnızca düzeltilmiş metin. Editörler bunu işler; siz kendiniz bir şey değiştirmezsiniz.",
+      "kommentar": "Yorum (isteğe bağlı)",
+      "speichern": "Kararı kaydet",
+      "laeuft": "Kaydediliyor …",
+      "naechster": "Sonraki kayıt",
+      "voriger": "Önceki kayıt",
+      "beurteilt": "Değerlendirildi: {urteil}",
+      "offen": "henüz değerlendirilmedi",
+      "gespeichert": "Karar kaydedildi.",
+      "tasten": {
+        "titel": "Klavye kısayolları",
+        "ok": "1: Uygun ve sonraki",
+        "korrektur": "2: Düzeltme",
+        "abgelehnt": "3: Reddedildi",
+        "naechster": "N: sonraki kayıt",
+        "voriger": "P: önceki kayıt",
+        "hinweis": "Bir metin alanı odaktayken kısayollar çalışmaz."
+      },
+      "ergebnis": {
+        "bestanden": "Örneklem geçti. Ünitenin denetlenen kayıtları yayımlandı.",
+        "nachbessern": "Örneklem geçemedi. Bulgular editörlere gider; düzeltmeden sonra yeni bir örneklem gelir.",
+        "zahlen": "{geprueft} denetlendi, {kritisch} ağır, {leicht} hafif"
+      }
+    },
+    "fehler": {
+      "keinRecht": "Bunun için yetkiniz yok.",
+      "aus": "Öğrenme uygulaması kapalı.",
+      "ohneDatenbank": "Veritabanı olmadan hiçbir şey kaydedilemez.",
+      "nichtGefunden": "Kayıt bulunamadı.",
+      "entschieden": "Bu örneklem için karar zaten verildi.",
+      "offen": "Bu hedef için zaten açık bir örneklem var.",
+      "schonGezogen": "Güncel durum için zaten bir örneklem var.",
+      "keineKandidaten": "Bu ünitede bunun için kayıt yok.",
+      "pruefen": "Lütfen işaretli alanları kontrol edin.",
+      "urteilFehlt": "Lütfen bir karar seçin.",
+      "kategorieFehlt": "Lütfen bir hata türü seçin.",
+      "korrekturFehlt": "Lütfen düzeltilmiş metni girin.",
+      "zuLang": "Metin çok uzun.",
+      "waechter_formel": "Metin dinî bir kalıp ifade içeriyor. Bu tür kayıtları yalnızca dinî denetim işler.",
+      "waechter_wortfolge": "Metin, dinî kaynak metinlerden korunan bir kelime dizisi içeriyor. Burada buna izin verilmez.",
+      "unbekannt": "Bu işe yaramadı. Lütfen tekrar deneyin."
+    }
+  },
+  "ar": {
+    "titel": "التدقيق اللغوي",
+    "einleitung": "عينات لكل وحدة: قيِّم المدخلات في لغات التدقيق الخاصة بك. يمكن إنجاز كل شيء أيضًا باختصارات لوحة المفاتيح.",
+    "sprachwahl": "لغة واجهة التدقيق",
+    "sprachname": {
+      "de": "الألمانية",
+      "tr": "التركية",
+      "ar": "العربية"
+    },
+    "eigeneSprachen": "لغات التدقيق الخاصة بك: {sprachen}",
+    "keineSprache": "لم تُسجَّل لك لغة تدقيق بعد. يضيفها فريق التحرير في صفحة «المدققون».",
+    "warteschlange": {
+      "titel": "قائمة الانتظار",
+      "leer": "لا ينتظر شيء حاليًا في لغات التدقيق الخاصة بك.",
+      "beschriftung": "قائمة انتظار العينات",
+      "spalte": {
+        "einheit": "الوحدة",
+        "art": "النوع",
+        "sprache": "لغة التدقيق",
+        "stand": "الحالة",
+        "aktion": "الإجراء"
+      },
+      "kandidaten": "عدد المدخلات: {anzahl}",
+      "keine": "لا توجد عينة بعد",
+      "offen": "مفتوحة: قُيِّم {geprueft} من {groesse}",
+      "bestanden": "ناجحة",
+      "nachbessern": "تحتاج إلى تحسين",
+      "veraltet": "تغيَّر المحتوى منذ ذلك الحين",
+      "ziehen": "سحب عينة",
+      "oeffnen": "فتح العينة",
+      "ansehen": "عرض النتيجة",
+      "gezogen": "سُحبت العينة."
+    },
+    "art": {
+      "zieltext": "النص الهدف",
+      "uebersetzung": "الترجمة",
+      "audio": "الصوت"
+    },
+    "richtung": "{ziel} من {ausgang}",
+    "stichprobe": {
+      "titel": "العينة {einheit}",
+      "zurueck": "العودة إلى قائمة الانتظار",
+      "angaben": "{art}، لغة التدقيق {sprache}، عدد المدخلات {groesse}",
+      "einlauf": "مرحلة البداية: نسبة أعلى (30 %)",
+      "fortschritt": "قُيِّم {geprueft} من {groesse}",
+      "liste": "مدخلات العينة",
+      "eintrag": "المدخل {nr} من {anzahl}",
+      "zieltext": "النص الهدف",
+      "uebersetzung": "الترجمة",
+      "alternativen": "صيغ أخرى مقبولة",
+      "clip": "المقطع الصوتي",
+      "anhoeren": "استماع",
+      "langsam": "استماع ببطء",
+      "anhalten": "إيقاف",
+      "clipFehlt": "تعذَّر تحميل المقطع الصوتي.",
+      "fehlt": "هذا المدخل مقفل أو محذوف الآن ولا يُحتسب.",
+      "urteil": "الحكم",
+      "urteile": {
+        "ok": "سليم",
+        "korrektur": "تصحيح",
+        "abgelehnt": "مرفوض"
+      },
+      "kategorie": "فئة الخطأ",
+      "kritisch": "جسيم",
+      "leicht": "طفيف",
+      "kategorien": {
+        "bedeutung": "المعنى",
+        "grammatik": "القواعد",
+        "anstoessig": "غير لائق",
+        "aussprache": "النطق",
+        "natuerlichkeit": "سلاسة التعبير",
+        "zeichensetzung": "علامات الترقيم"
+      },
+      "korrektur": "اقتراح التصحيح",
+      "korrekturHinweis": "النص المصحَّح فقط. يتولَّى فريق التحرير إدخاله، ولا تعدِّل أنت شيئًا بنفسك.",
+      "kommentar": "تعليق (اختياري)",
+      "speichern": "حفظ الحكم",
+      "laeuft": "جارٍ الحفظ …",
+      "naechster": "المدخل التالي",
+      "voriger": "المدخل السابق",
+      "beurteilt": "الحكم: {urteil}",
+      "offen": "لم يُقيَّم بعد",
+      "gespeichert": "حُفظ الحكم.",
+      "tasten": {
+        "titel": "اختصارات لوحة المفاتيح",
+        "ok": "1: سليم والانتقال إلى التالي",
+        "korrektur": "2: تصحيح",
+        "abgelehnt": "3: مرفوض",
+        "naechster": "N: المدخل التالي",
+        "voriger": "P: المدخل السابق",
+        "hinweis": "لا تعمل الاختصارات ما دام التركيز في حقل نصي."
+      },
+      "ergebnis": {
+        "bestanden": "نجحت العينة. نُشرت مدخلات الوحدة التي جرى تدقيقها.",
+        "nachbessern": "لم تنجح العينة. تُحال الملاحظات إلى فريق التحرير، وبعد التحسين تأتي عينة جديدة.",
+        "zahlen": "مُدقَّقة: {geprueft}، جسيمة: {kritisch}، طفيفة: {leicht}"
+      }
+    },
+    "fehler": {
+      "keinRecht": "ليست لديك صلاحية لهذا.",
+      "aus": "تطبيق التعلُّم متوقف.",
+      "ohneDatenbank": "لا يمكن حفظ شيء من دون قاعدة بيانات.",
+      "nichtGefunden": "لم يُعثر على المدخل.",
+      "entschieden": "صدر الحكم على هذه العينة بالفعل.",
+      "offen": "توجد بالفعل عينة مفتوحة لهذا الهدف.",
+      "schonGezogen": "توجد بالفعل عينة للحالة الراهنة.",
+      "keineKandidaten": "لا توجد في هذه الوحدة مدخلات لذلك.",
+      "pruefen": "يرجى مراجعة الحقول المحدَّدة.",
+      "urteilFehlt": "يرجى اختيار حكم.",
+      "kategorieFehlt": "يرجى اختيار فئة الخطأ.",
+      "korrekturFehlt": "يرجى إدخال النص المصحَّح.",
+      "zuLang": "النص طويل جدًا.",
+      "waechter_formel": "يحتوي النص على صيغة دينية. لا يتولَّى هذه المدخلات إلا التدقيق الديني.",
+      "waechter_wortfolge": "يحتوي النص على تسلسل كلمات محمي من النصوص الدينية المرجعية. هذا غير مسموح هنا.",
+      "unbekannt": "لم ينجح ذلك. يرجى المحاولة مرة أخرى."
+    }
+  }
+}
