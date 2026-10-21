@@ -29,6 +29,7 @@ export function Optionsgruppe({
   kopf,
   legendeSprache,
   alsText = false,
+  beschriebenVon,
 }: {
   legende: string;
   /** Tastenhinweis mit `{n}` */
@@ -52,6 +53,8 @@ export function Optionsgruppe({
   legendeSprache?: UiSprache;
   /** Optionen sind Texte der Oberfläche („stimmt“, „stimmt nicht“): ohne eigene Sprache und Kursschrift */
   alsText?: boolean;
+  /** Kennung eines Elements, das die Gruppe zusätzlich beschreibt (z. B. der Satz mit „…“ beim Lückentext) – vor dem Tastenhinweis */
+  beschriebenVon?: string;
 }) {
   const id = useId();
   const gruppe = useRef<HTMLDivElement>(null);
@@ -70,7 +73,11 @@ export function Optionsgruppe({
   }
 
   return (
-    <fieldset className="flex flex-col gap-5" disabled={gesperrt} aria-describedby={`${id}-tasten`}>
+    <fieldset
+      className="flex flex-col gap-5"
+      disabled={gesperrt}
+      aria-describedby={beschriebenVon ? `${beschriebenVon} ${id}-tasten` : `${id}-tasten`}
+    >
       <legend className="sr-only" lang={legendeSprache} dir={legendeSprache ? richtung(legendeSprache) : undefined}>
         {legende}
       </legend>

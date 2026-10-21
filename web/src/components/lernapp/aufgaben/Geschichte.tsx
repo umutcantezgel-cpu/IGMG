@@ -112,7 +112,7 @@ export default function Geschichte({
                 {t.geschichte.frage}: <InhaltText inhalt={f.frage} />
               </p>
               <Wahlgruppe
-                legende={f.frage.text}
+                legende={<InhaltText inhalt={f.frage} />}
                 tasten={t.gemeinsam.tasten}
                 optionen={reihe.map((k) => ({ index: k, inhalt: <InhaltText inhalt={f.optionen[k]!} /> }))}
                 gewaehlt={beantwortet ?? (letzte ? wahl : null)}

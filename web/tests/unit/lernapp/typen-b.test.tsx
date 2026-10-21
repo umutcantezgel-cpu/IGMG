@@ -5,6 +5,8 @@ import { prerenderToNodeStream } from 'react-dom/static';
 import { describe, expect, it } from 'vitest';
 import Dialog from '@/components/lernapp/aufgaben/Dialog';
 import Geschichte from '@/components/lernapp/aufgaben/Geschichte';
+import { Wahlgruppe } from '@/components/lernapp/aufgaben/Wahlgruppe';
+import { InhaltText } from '@/components/lernapp/InhaltText';
 import GrammatikTipp from '@/components/lernapp/aufgaben/GrammatikTipp';
 import LesenFragen from '@/components/lernapp/aufgaben/LesenFragen';
 import SchriftAr from '@/components/lernapp/aufgaben/SchriftAr';
@@ -316,6 +318,29 @@ describe('Komponenten (Server-Rendering, Semantik)', () => {
     expect(html).toContain('Steht nicht im Text');
     expect(anzahl(html, /type="radio"/g)).toBe(3 + 3 + 3);
     expect(html).toMatch(/<p lang="de" dir="ltr"/);
+    // Legende der Wahlgruppe: Nummer in der Oberflächensprache, die Frage mit lang/dir ihrer Sprache
+    expect(anzahl(html, /<legend class="sr-only">[^<]+(?:<!-- -->)?: <span lang="de" dir="ltr">[^<]+<\/span><\/legend>/g)).toBe(3);
+  });
+
+  it('Wahlgruppe (geschichte, dialog, schrift): Legende als Inhalt mit lang/dir', async () => {
+    const html = await vorrendern(
+      <Wahlgruppe
+        legende={<InhaltText inhalt={{ text: 'Kim kitap okuyor?', sprache: 'tr' }} />}
+        tasten={de.aufgaben2.gemeinsam.tasten}
+        optionen={[{ index: 0, inhalt: 'a' }]}
+        gewaehlt={null}
+        richtig={null}
+        gesperrt={false}
+        setze={nichts}
+        sprache="de"
+        ziffern="westlich"
+        markeRichtig="+"
+        markeFalsch="-"
+      />,
+    );
+    expect(html).toContain('<legend class="sr-only"><span lang="tr" dir="ltr">Kim kitap okuyor?</span></legend>');
+    const quelle = readFileSync(join(import.meta.dirname, '../../../src/components/lernapp/aufgaben/Geschichte.tsx'), 'utf8');
+    expect(quelle).toContain('legende={<InhaltText inhalt={f.frage} />}');
   });
 
   it('grammatik_tipp: Karte in der Oberflächensprache, lang/dir nur an Beispielen und fremdsprachiger Erklärung, „Verstanden“', async () => {

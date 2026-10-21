@@ -12,7 +12,7 @@ export { bewerteLuecke as bewerte } from '@/lib/lernapp/aufgaben/auswertung/luec
 
 /**
  * Übungstyp `luecke` (Lückentext, PLAN §4): Der Satz steht mit `lang`/`dir` seiner Sprache. Mit Optionen zeigt die Lücke
- * die Wahl, die Optionen bilden eine Radiogruppe; ohne Optionen ist die Lücke ein beschriftetes Feld im Satz (Beschreibung:
+ * die Wahl, die Optionen bilden eine Radiogruppe, die der Satz mit „…“ beschreibt (`aria-describedby`); ohne Optionen ist die Lücke ein beschriftetes Feld im Satz (Beschreibung:
  * der ganze Satz mit „…“), darunter die Zeichenhilfe. Die Übersetzung steht als Hilfe darunter.
  */
 export default function Luecke({
@@ -111,6 +111,7 @@ export default function Luecke({
         ui={sprache}
         ziffern={ziffern}
         kopf={satz}
+        beschriebenVon={`${id}-satz`}
       />
     );
 

@@ -108,6 +108,9 @@ describe('frei und Zeichenhilfe', () => {
     expect(anzahl(h, /aria-label="[^"]+ einfügen"/g)).toBe(7);
     expect(h).toContain('aria-label="İ einfügen"');
     expect(anzahl(h, /tabindex="0"/g)).toBe(1);
+    // Name des Knopfs in der Oberflächensprache (Stimme der Oberfläche), nur das sichtbare Zeichen in der Zielsprache
+    expect(anzahl(h, /<button type="button"[^>]*aria-label="[^"]+ einfügen"[^>]*><span lang="tr">[^<]+<\/span><\/button>/g)).toBe(7);
+    expect(h).not.toMatch(/<button[^>]* lang="tr"[^>]*aria-label="[^"]+ einfügen"/);
   });
 
   it('Arabisch: Feld von rechts nach links in der Kursschrift; Schalter für die Bildschirmtastatur (zu)', () => {
@@ -204,6 +207,10 @@ describe('luecke', () => {
     expect(h).toMatch(/<p lang="tr" dir="ltr" class="[^"]*">Su <span aria-hidden="true"/);
     expect(anzahl(h, /type="radio"/g)).toBe(2);
     expect(h).toContain('Bedeutung: <bdi lang="de" dir="ltr">Ich trinke Wasser.</bdi>');
+    // die Radiogruppe ist mit dem Satz (mit „…“ statt der Lücke) verbunden, danach der Tastenhinweis
+    const satz = /<p id="([^"]+)" lang="tr" dir="ltr" class="sr-only">Su  … \.<\/p>/.exec(h)?.[1];
+    expect(satz).toBeTruthy();
+    expect(h).toMatch(new RegExp(`<fieldset[^>]*aria-describedby="${satz} [^"]+-tasten"`));
   });
 
   it('ohne Optionen: beschriftetes Feld im Satz, Beschreibung mit „…“, arabisch von rechts nach links', () => {

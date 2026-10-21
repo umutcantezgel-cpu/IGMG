@@ -10,7 +10,8 @@ export type WahlOption = { index: number; inhalt: ReactNode };
  * Radiogruppe der Übungstypen aus L2-02 (Gesprächsantwort, Fragen zu Geschichte und Lesetext, Schrift-Vorkurse) wie
  * `Auswahl.tsx`: echte Optionsfelder – Pfeiltasten wählen (der Browser folgt der Schreibrichtung), Ziffern 1–n wählen
  * direkt, Enter prüft (Formular des Spielers) bzw. löst `beiEnter` aus. Nach der Prüfung: richtige Option grün, die gewählte falsche in Fehlerfarbe, beides
- * zusätzlich als Text (`markeRichtig`/`markeFalsch`, KERN 4.0 §8: Fehler nie nur als Farbe).
+ * zusätzlich als Text (`markeRichtig`/`markeFalsch`, KERN 4.0 §8: Fehler nie nur als Farbe). Ist die Legende Inhalt (Frage
+ * zum Text), kommt sie als Knoten mit `lang`/`dir` (z. B. `InhaltText`), damit sie mit der richtigen Stimme gelesen wird.
  */
 export function Wahlgruppe({
   legende,
@@ -28,7 +29,8 @@ export function Wahlgruppe({
   zweispaltig = true,
   gross = false,
 }: {
-  legende: string;
+  /** Name der Gruppe; Inhalt in fremder Sprache als Knoten mit `lang`/`dir` */
+  legende: ReactNode;
   /** Hinweis zur Bedienung mit `{n}` (Zahl der Optionen) */
   tasten: string;
   /** Optionen in Anzeigereihenfolge; `index` ist die Stelle im Inhalt */

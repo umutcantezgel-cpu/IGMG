@@ -8,7 +8,9 @@ import type { TastaturTexte, UiSprache } from '../typen';
 /**
  * Sonderzeichenleiste (PLAN §4 `frei`; de ä ö ü ß, tr ç ğ ı İ ö ş ü): Werkzeugleiste mit wanderndem Tabindex (Pfeile in
  * Schreibrichtung, Pos1/Ende), Enter oder Leertaste fügt das Zeichen an der Schreibmarke ein. Per Zeiger bleibt der Fokus
- * im Feld (kein Fokuswechsel beim Drücken), per Tastatur bleibt er auf der Leiste. Ziele 44 px.
+ * im Feld (kein Fokuswechsel beim Drücken), per Tastatur bleibt er auf der Leiste. Ziele 44 px. Der Name des Knopfs
+ * („ç einfügen“) steht in der Sprache der Oberfläche und wird mit ihrer Stimme gelesen; `lang` der Zielsprache trägt nur das
+ * sichtbare Zeichen.
  */
 export function Sonderzeichen({
   zeichen,
@@ -50,7 +52,6 @@ export function Sonderzeichen({
             knoepfe.current[i] = el;
           }}
           type="button"
-          lang={sprache}
           disabled={gesperrt}
           tabIndex={i === aktiv ? 0 : -1}
           aria-label={formatiere(texte.einfuegen, { zeichen: z }, ui, ziffern)}
@@ -59,7 +60,7 @@ export function Sonderzeichen({
           onKeyDown={(e) => taste(e, i)}
           className="min-h-11 min-w-11 druck rounded-md border-2 border-rand bg-weiss px-2 text-20 hover:border-gruen-700 disabled:text-tinte-3"
         >
-          {z}
+          <span lang={sprache}>{z}</span>
         </button>
       ))}
     </div>

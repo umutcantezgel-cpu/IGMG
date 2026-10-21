@@ -156,7 +156,11 @@ export default function LesenFragen({
                 {nummer}: <InhaltText inhalt={f.art === 'auswahl' ? f.frage : f.aussage} />
               </p>
               <Wahlgruppe
-                legende={`${nummer}: ${f.art === 'auswahl' ? f.frage.text : f.aussage.text}`}
+                legende={
+                  <>
+                    {nummer}: <InhaltText inhalt={f.art === 'auswahl' ? f.frage : f.aussage} />
+                  </>
+                }
                 tasten={t.gemeinsam.tasten}
                 optionen={reihe.map((k) => ({
                   index: k,
