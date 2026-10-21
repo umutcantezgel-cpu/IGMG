@@ -1,0 +1,4077 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "de",
+  "stufe": "a2",
+  "einheit": {
+    "schluessel": "de.a2.e02",
+    "reihenfolge": 3,
+    "thema": {
+      "de": "Mit Bus und Bahn",
+      "tr": "Otobüs ve trenle",
+      "ar": "بالحافلة والقطار"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann erzählen, wie ich irgendwohin gefahren bin.",
+        "tr": "Bir yere nasıl gittiğimi anlatabilirim.",
+        "ar": "أستطيع أن أحكي كيف سافرت إلى مكان ما."
+      },
+      {
+        "de": "Ich kann am Schalter oder Automaten eine Fahrkarte kaufen und nach dem Gleis fragen.",
+        "tr": "Gişeden veya otomattan bilet alabilir ve peronu sorabilirim.",
+        "ar": "أستطيع أن أشتري تذكرة من الشباك أو من الآلة وأن أسأل عن الرصيف."
+      }
+    ],
+    "symbol": "train-front",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "de.a2.e02.ausser",
+      "lemma": "außer",
+      "wortart": "praeposition",
+      "merkmale": {
+        "kasus": "Dativ"
+      },
+      "frequenzRang": 502,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.ungefaehr",
+      "lemma": "ungefähr",
+      "wortart": "adverb",
+      "frequenzRang": 1323,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.mindestens",
+      "lemma": "mindestens",
+      "wortart": "adverb",
+      "frequenzRang": 629,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.hoechstens",
+      "lemma": "höchstens",
+      "wortart": "adverb",
+      "frequenzRang": 2703,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.spaetestens",
+      "lemma": "spätestens",
+      "wortart": "adverb",
+      "frequenzRang": 1896,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.rechtzeitig",
+      "lemma": "rechtzeitig",
+      "wortart": "adverb",
+      "frequenzRang": 2619,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.unterwegs",
+      "lemma": "unterwegs",
+      "wortart": "adverb",
+      "frequenzRang": 763,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.puenktlich",
+      "lemma": "pünktlich",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "pünktliche",
+        "endung_en": "pünktlichen",
+        "endung_er": "pünktlicher",
+        "endung_es": "pünktliches",
+        "endung_em": "pünktlichem",
+        "komparativ": "pünktlicher",
+        "superlativ": "pünktlichsten",
+        "superlativ_e": "pünktlichste"
+      },
+      "frequenzRang": 3343,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.knapp",
+      "lemma": "knapp",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "knappe",
+        "endung_en": "knappen",
+        "endung_er": "knapper",
+        "endung_es": "knappes",
+        "endung_em": "knappem",
+        "komparativ": "knapper",
+        "superlativ": "knappsten",
+        "superlativ_e": "knappste"
+      },
+      "frequenzRang": 711,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.guenstig",
+      "lemma": "günstig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "günstige",
+        "endung_en": "günstigen",
+        "endung_er": "günstiger",
+        "endung_es": "günstiges",
+        "endung_em": "günstigem",
+        "komparativ": "günstiger",
+        "superlativ": "günstigsten",
+        "superlativ_e": "günstigste"
+      },
+      "frequenzRang": 1020,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.kostenlos",
+      "lemma": "kostenlos",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "kostenlose",
+        "endung_en": "kostenlosen",
+        "endung_er": "kostenloser",
+        "endung_es": "kostenloses",
+        "endung_em": "kostenlosem"
+      },
+      "frequenzRang": 813,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.vorsichtig",
+      "lemma": "vorsichtig",
+      "wortart": "adjektiv",
+      "formen": {
+        "endung_e": "vorsichtige",
+        "endung_en": "vorsichtigen",
+        "endung_er": "vorsichtiger",
+        "endung_es": "vorsichtiges",
+        "endung_em": "vorsichtigem",
+        "komparativ": "vorsichtiger",
+        "superlativ": "vorsichtigsten",
+        "superlativ_e": "vorsichtigste"
+      },
+      "frequenzRang": 2060,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.erreichen",
+      "lemma": "erreichen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "erreichen",
+        "praes_ich": "erreiche",
+        "praes_du": "erreichst",
+        "praes_er_sie_es": "erreicht",
+        "praes_wir": "erreichen",
+        "praes_ihr": "erreicht",
+        "praes_sie_Sie": "erreichen",
+        "partizip_2": "erreicht"
+      },
+      "frequenzRang": 280,
+      "quelle": "wiktionary:de:erreichen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚erreichen‘ (https://de.wiktionary.org/wiki/erreichen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.verlassen",
+      "lemma": "verlassen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "verlassen",
+        "praes_ich": "verlasse",
+        "praes_du": "verlässt",
+        "praes_er_sie_es": "verlässt",
+        "praes_wir": "verlassen",
+        "praes_ihr": "verlasst",
+        "praes_sie_Sie": "verlassen",
+        "partizip_2": "verlassen"
+      },
+      "frequenzRang": 534,
+      "quelle": "wiktionary:de:verlassen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verlassen‘ (https://de.wiktionary.org/wiki/verlassen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.dauern",
+      "lemma": "dauern",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "dauern",
+        "praes_ich": "dauere",
+        "praes_du": "dauerst",
+        "praes_er_sie_es": "dauert",
+        "praes_wir": "dauern",
+        "praes_ihr": "dauert",
+        "praes_sie_Sie": "dauern",
+        "partizip_2": "gedauert"
+      },
+      "frequenzRang": 698,
+      "quelle": "wiktionary:de:dauern",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚dauern‘ (https://de.wiktionary.org/wiki/dauern), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.umsteigen",
+      "lemma": "umsteigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "um"
+      },
+      "formen": {
+        "infinitiv": "umsteigen",
+        "verbzusatz": "um",
+        "praes_ich": "steige",
+        "praes_du": "steigst",
+        "praes_er_sie_es": "steigt",
+        "praes_wir": "steigen",
+        "praes_ihr": "steigt",
+        "praes_sie_Sie": "steigen",
+        "imp_du": "steige",
+        "imp_ihr": "steigt",
+        "partizip_2": "umgestiegen"
+      },
+      "frequenzRang": 8131,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.einsteigen",
+      "lemma": "einsteigen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ein"
+      },
+      "formen": {
+        "infinitiv": "einsteigen",
+        "verbzusatz": "ein",
+        "praes_ich": "steige",
+        "praes_du": "steigst",
+        "praes_er_sie_es": "steigt",
+        "praes_wir": "steigen",
+        "praes_ihr": "steigt",
+        "praes_sie_Sie": "steigen",
+        "imp_du": "steige",
+        "imp_ihr": "steigt",
+        "partizip_2": "eingestiegen"
+      },
+      "frequenzRang": 3923,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.ankommen",
+      "lemma": "ankommen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "an"
+      },
+      "formen": {
+        "infinitiv": "ankommen",
+        "verbzusatz": "an",
+        "praes_ich": "komme",
+        "praes_du": "kommst",
+        "praes_er_sie_es": "kommt",
+        "praes_wir": "kommen",
+        "praes_ihr": "kommt",
+        "praes_sie_Sie": "kommen",
+        "partizip_2": "angekommen"
+      },
+      "frequenzRang": 1187,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.abfahren",
+      "lemma": "abfahren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "sein",
+        "trennbar": "ja",
+        "verbzusatz": "ab",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "abfahren",
+        "verbzusatz": "ab",
+        "praes_ich": "fahre",
+        "praes_du": "fährst",
+        "praes_er_sie_es": "fährt",
+        "praes_wir": "fahren",
+        "praes_ihr": "fahrt",
+        "praes_sie_Sie": "fahren",
+        "partizip_2": "abgefahren"
+      },
+      "frequenzRang": 3008,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.verpassen",
+      "lemma": "verpassen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "verpassen",
+        "praes_ich": "verpasse",
+        "praes_du": "verpasst",
+        "praes_er_sie_es": "verpasst",
+        "praes_wir": "verpassen",
+        "praes_ihr": "verpasst",
+        "praes_sie_Sie": "verpassen",
+        "partizip_2": "verpasst"
+      },
+      "frequenzRang": 1237,
+      "quelle": "wiktionary:de:verpassen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚verpassen‘ (https://de.wiktionary.org/wiki/verpassen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.mitnehmen",
+      "lemma": "mitnehmen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "trennbar": "ja",
+        "verbzusatz": "mit",
+        "unregelmaessig_praesens": "ja"
+      },
+      "formen": {
+        "infinitiv": "mitnehmen",
+        "verbzusatz": "mit",
+        "praes_ich": "nehme",
+        "praes_du": "nimmst",
+        "praes_er_sie_es": "nimmt",
+        "praes_wir": "nehmen",
+        "praes_ihr": "nehmt",
+        "praes_sie_Sie": "nehmen",
+        "imp_du": "nimm",
+        "imp_ihr": "nehmt",
+        "partizip_2": "mitgenommen"
+      },
+      "frequenzRang": 2014,
+      "quelle": "wiktionary:de:mitnehmen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚mitnehmen‘ (https://de.wiktionary.org/wiki/mitnehmen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.parken",
+      "lemma": "parken",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "parken",
+        "praes_ich": "parke",
+        "praes_du": "parkst",
+        "praes_er_sie_es": "parkt",
+        "praes_wir": "parken",
+        "praes_ihr": "parkt",
+        "praes_sie_Sie": "parken",
+        "imp_du": "park",
+        "imp_ihr": "parkt",
+        "partizip_2": "geparkt"
+      },
+      "frequenzRang": 3815,
+      "quelle": "wiktionary:de:parken",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚parken‘ (https://de.wiktionary.org/wiki/parken), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.beeilen",
+      "lemma": "beeilen",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben",
+        "reflexiv": "sich (Akkusativ)"
+      },
+      "formen": {
+        "infinitiv": "beeilen",
+        "praes_ich": "beeile",
+        "praes_du": "beeilst",
+        "praes_er_sie_es": "beeilt",
+        "praes_wir": "beeilen",
+        "praes_ihr": "beeilt",
+        "praes_sie_Sie": "beeilen",
+        "imp_du": "beeil",
+        "imp_ihr": "beeilt",
+        "partizip_2": "beeilt",
+        "reflexiv": "sich"
+      },
+      "frequenzRang": 25534,
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.fahrkarte",
+      "lemma": "Fahrkarte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrkarten"
+      },
+      "formen": {
+        "pl": "Fahrkarten"
+      },
+      "frequenzRang": 8821,
+      "quelle": "wiktionary:de:Fahrkarte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrkarte‘ (https://de.wiktionary.org/wiki/Fahrkarte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.ticket",
+      "lemma": "Ticket",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Tickets"
+      },
+      "formen": {
+        "pl": "Tickets"
+      },
+      "frequenzRang": 1779,
+      "quelle": "wiktionary:de:Ticket",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ticket‘ (https://de.wiktionary.org/wiki/Ticket), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.karte",
+      "lemma": "Karte",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Karten"
+      },
+      "formen": {
+        "pl": "Karten"
+      },
+      "frequenzRang": 1015,
+      "quelle": "wiktionary:de:Karte",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Karte‘ (https://de.wiktionary.org/wiki/Karte), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.gleis",
+      "lemma": "Gleis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Gleise"
+      },
+      "formen": {
+        "pl": "Gleise",
+        "dat_pl": "Gleisen"
+      },
+      "frequenzRang": 3931,
+      "quelle": "wiktionary:de:Gleis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Gleis‘ (https://de.wiktionary.org/wiki/Gleis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.abfahrt",
+      "lemma": "Abfahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Abfahrten"
+      },
+      "formen": {
+        "pl": "Abfahrten"
+      },
+      "frequenzRang": 11950,
+      "quelle": "wiktionary:de:Abfahrt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Abfahrt‘ (https://de.wiktionary.org/wiki/Abfahrt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.ankunft",
+      "lemma": "Ankunft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Ankünfte"
+      },
+      "formen": {
+        "pl": "Ankünfte",
+        "dat_pl": "Ankünften"
+      },
+      "frequenzRang": 3398,
+      "quelle": "wiktionary:de:Ankunft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ankunft‘ (https://de.wiktionary.org/wiki/Ankunft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.verspaetung",
+      "lemma": "Verspätung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Verspätungen"
+      },
+      "formen": {
+        "pl": "Verspätungen"
+      },
+      "frequenzRang": 4059,
+      "quelle": "wiktionary:de:Verspätung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verspätung‘ (https://de.wiktionary.org/wiki/Verspätung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.anschluss",
+      "lemma": "Anschluss",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Anschlüsse"
+      },
+      "formen": {
+        "pl": "Anschlüsse",
+        "dat_pl": "Anschlüssen"
+      },
+      "frequenzRang": 1194,
+      "quelle": "wiktionary:de:Anschluss",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Anschluss‘ (https://de.wiktionary.org/wiki/Anschluss), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.bahn",
+      "lemma": "Bahn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Bahnen"
+      },
+      "formen": {
+        "pl": "Bahnen"
+      },
+      "frequenzRang": 654,
+      "quelle": "wiktionary:de:Bahn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bahn‘ (https://de.wiktionary.org/wiki/Bahn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.fahrplan",
+      "lemma": "Fahrplan",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fahrpläne"
+      },
+      "formen": {
+        "pl": "Fahrpläne",
+        "dat_pl": "Fahrplänen"
+      },
+      "frequenzRang": 8358,
+      "quelle": "wiktionary:de:Fahrplan",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrplan‘ (https://de.wiktionary.org/wiki/Fahrplan), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.automat",
+      "lemma": "Automat",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Automaten"
+      },
+      "formen": {
+        "pl": "Automaten",
+        "akk_dat_sg": "Automaten"
+      },
+      "frequenzRang": 5555,
+      "quelle": "wiktionary:de:Automat",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Automat‘ (https://de.wiktionary.org/wiki/Automat), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.schalter",
+      "lemma": "Schalter",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Schalter"
+      },
+      "formen": {
+        "dat_pl": "Schaltern"
+      },
+      "frequenzRang": 6731,
+      "quelle": "wiktionary:de:Schalter",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Schalter‘ (https://de.wiktionary.org/wiki/Schalter), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.bahnsteig",
+      "lemma": "Bahnsteig",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Bahnsteige"
+      },
+      "formen": {
+        "pl": "Bahnsteige",
+        "dat_pl": "Bahnsteigen"
+      },
+      "frequenzRang": 8035,
+      "quelle": "wiktionary:de:Bahnsteig",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Bahnsteig‘ (https://de.wiktionary.org/wiki/Bahnsteig), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.station",
+      "lemma": "Station",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Stationen"
+      },
+      "formen": {
+        "pl": "Stationen"
+      },
+      "frequenzRang": 1479,
+      "quelle": "wiktionary:de:Station",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Station‘ (https://de.wiktionary.org/wiki/Station), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.linie",
+      "lemma": "Linie",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Linien"
+      },
+      "formen": {
+        "pl": "Linien"
+      },
+      "frequenzRang": 650,
+      "quelle": "wiktionary:de:Linie",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Linie‘ (https://de.wiktionary.org/wiki/Linie), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.richtung",
+      "lemma": "Richtung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Richtungen"
+      },
+      "formen": {
+        "pl": "Richtungen"
+      },
+      "frequenzRang": 384,
+      "quelle": "wiktionary:de:Richtung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Richtung‘ (https://de.wiktionary.org/wiki/Richtung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.fahrt",
+      "lemma": "Fahrt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Fahrten"
+      },
+      "formen": {
+        "pl": "Fahrten"
+      },
+      "frequenzRang": 6041,
+      "quelle": "wiktionary:de:Fahrt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrt‘ (https://de.wiktionary.org/wiki/Fahrt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.fahrer",
+      "lemma": "Fahrer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Fahrer",
+        "weiblich": "Fahrerin"
+      },
+      "formen": {
+        "dat_pl": "Fahrern",
+        "weiblich": "Fahrerin",
+        "weiblich_pl": "Fahrerinnen"
+      },
+      "frequenzRang": 1359,
+      "quelle": "wiktionary:de:Fahrer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Fahrer‘ (https://de.wiktionary.org/wiki/Fahrer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.verkehr",
+      "lemma": "Verkehr",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "kein Plural (in A2)"
+      },
+      "frequenzRang": 1243,
+      "quelle": "wiktionary:de:Verkehr",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verkehr‘ (https://de.wiktionary.org/wiki/Verkehr), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.verkehrsmittel",
+      "lemma": "Verkehrsmittel",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Verkehrsmittel"
+      },
+      "formen": {
+        "dat_pl": "Verkehrsmitteln"
+      },
+      "frequenzRang": 6869,
+      "quelle": "wiktionary:de:Verkehrsmittel",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Verkehrsmittel‘ (https://de.wiktionary.org/wiki/Verkehrsmittel), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.strassenbahn",
+      "lemma": "Straßenbahn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Straßenbahnen"
+      },
+      "formen": {
+        "pl": "Straßenbahnen"
+      },
+      "frequenzRang": 4759,
+      "quelle": "wiktionary:de:Straßenbahn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Straßenbahn‘ (https://de.wiktionary.org/wiki/Straßenbahn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.taxi",
+      "lemma": "Taxi",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Taxis"
+      },
+      "formen": {
+        "pl": "Taxis"
+      },
+      "frequenzRang": 3219,
+      "quelle": "wiktionary:de:Taxi",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Taxi‘ (https://de.wiktionary.org/wiki/Taxi), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.wagen",
+      "lemma": "Wagen",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Wagen"
+      },
+      "frequenzRang": 776,
+      "quelle": "wiktionary:de:Wagen",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Wagen‘ (https://de.wiktionary.org/wiki/Wagen), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.rad",
+      "lemma": "Rad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Räder"
+      },
+      "formen": {
+        "pl": "Räder",
+        "dat_pl": "Rädern"
+      },
+      "frequenzRang": 1874,
+      "quelle": "wiktionary:de:Rad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Rad‘ (https://de.wiktionary.org/wiki/Rad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.motorrad",
+      "lemma": "Motorrad",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Motorräder"
+      },
+      "formen": {
+        "pl": "Motorräder",
+        "dat_pl": "Motorrädern"
+      },
+      "frequenzRang": 2946,
+      "quelle": "wiktionary:de:Motorrad",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Motorrad‘ (https://de.wiktionary.org/wiki/Motorrad), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.fuehrerschein",
+      "lemma": "Führerschein",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Führerscheine"
+      },
+      "formen": {
+        "pl": "Führerscheine",
+        "dat_pl": "Führerscheinen"
+      },
+      "frequenzRang": 3654,
+      "quelle": "wiktionary:de:Führerschein",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Führerschein‘ (https://de.wiktionary.org/wiki/Führerschein), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.kilometer",
+      "lemma": "Kilometer",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Kilometer"
+      },
+      "formen": {
+        "dat_pl": "Kilometern"
+      },
+      "frequenzRang": 963,
+      "quelle": "wiktionary:de:Kilometer",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Kilometer‘ (https://de.wiktionary.org/wiki/Kilometer), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.strecke",
+      "lemma": "Strecke",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Strecken"
+      },
+      "formen": {
+        "pl": "Strecken"
+      },
+      "frequenzRang": 1416,
+      "quelle": "wiktionary:de:Strecke",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Strecke‘ (https://de.wiktionary.org/wiki/Strecke), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.zentrum",
+      "lemma": "Zentrum",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "n",
+        "artikel": "das",
+        "plural": "Zentren"
+      },
+      "formen": {
+        "pl": "Zentren"
+      },
+      "frequenzRang": 1184,
+      "quelle": "wiktionary:de:Zentrum",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Zentrum‘ (https://de.wiktionary.org/wiki/Zentrum), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.innenstadt",
+      "lemma": "Innenstadt",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Innenstädte"
+      },
+      "formen": {
+        "pl": "Innenstädte",
+        "dat_pl": "Innenstädten"
+      },
+      "frequenzRang": 2493,
+      "quelle": "wiktionary:de:Innenstadt",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Innenstadt‘ (https://de.wiktionary.org/wiki/Innenstadt), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.hauptbahnhof",
+      "lemma": "Hauptbahnhof",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hauptbahnhöfe"
+      },
+      "formen": {
+        "pl": "Hauptbahnhöfe",
+        "dat_pl": "Hauptbahnhöfen"
+      },
+      "frequenzRang": 3446,
+      "quelle": "wiktionary:de:Hauptbahnhof",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hauptbahnhof‘ (https://de.wiktionary.org/wiki/Hauptbahnhof), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.ausgang",
+      "lemma": "Ausgang",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Ausgänge"
+      },
+      "formen": {
+        "pl": "Ausgänge",
+        "dat_pl": "Ausgängen"
+      },
+      "frequenzRang": 3228,
+      "quelle": "wiktionary:de:Ausgang",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Ausgang‘ (https://de.wiktionary.org/wiki/Ausgang), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.auskunft",
+      "lemma": "Auskunft",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Auskünfte"
+      },
+      "formen": {
+        "pl": "Auskünfte",
+        "dat_pl": "Auskünften"
+      },
+      "frequenzRang": 3097,
+      "quelle": "wiktionary:de:Auskunft",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Auskunft‘ (https://de.wiktionary.org/wiki/Auskunft), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.information",
+      "lemma": "Information",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Informationen"
+      },
+      "formen": {
+        "pl": "Informationen"
+      },
+      "frequenzRang": 483,
+      "quelle": "wiktionary:de:Information",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Information‘ (https://de.wiktionary.org/wiki/Information), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.hinweis",
+      "lemma": "Hinweis",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Hinweise"
+      },
+      "formen": {
+        "pl": "Hinweise",
+        "dat_pl": "Hinweisen"
+      },
+      "frequenzRang": 917,
+      "quelle": "wiktionary:de:Hinweis",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Hinweis‘ (https://de.wiktionary.org/wiki/Hinweis), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.stau",
+      "lemma": "Stau",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Staus"
+      },
+      "formen": {
+        "pl": "Staus"
+      },
+      "frequenzRang": 4668,
+      "quelle": "wiktionary:de:Stau",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Stau‘ (https://de.wiktionary.org/wiki/Stau), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.erwachsene",
+      "lemma": "Erwachsene",
+      "wortart": "nomen",
+      "merkmale": {
+        "numerus": "nur Plural",
+        "artikel": "die",
+        "hinweis": "subst. Adjektiv: der/die Erwachsene, ein Erwachsener, die Erwachsenen"
+      },
+      "formen": {
+        "sg_m": "Erwachsener",
+        "pl_n": "Erwachsenen"
+      },
+      "frequenzRang": 2887,
+      "quelle": "wiktionary:de:Erwachsene",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Erwachsene‘ (https://de.wiktionary.org/wiki/Erwachsene), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.tante",
+      "lemma": "Tante",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Tanten"
+      },
+      "formen": {
+        "pl": "Tanten"
+      },
+      "frequenzRang": 3477,
+      "quelle": "wiktionary:de:Tante",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Tante‘ (https://de.wiktionary.org/wiki/Tante), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.autobahn",
+      "lemma": "Autobahn",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Autobahnen"
+      },
+      "formen": {
+        "pl": "Autobahnen"
+      },
+      "frequenzRang": 2000,
+      "quelle": "wiktionary:de:Autobahn",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Autobahn‘ (https://de.wiktionary.org/wiki/Autobahn), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.parkplatz",
+      "lemma": "Parkplatz",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "m",
+        "artikel": "der",
+        "plural": "Parkplätze"
+      },
+      "formen": {
+        "pl": "Parkplätze",
+        "dat_pl": "Parkplätzen"
+      },
+      "frequenzRang": 2304,
+      "quelle": "wiktionary:de:Parkplatz",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Parkplatz‘ (https://de.wiktionary.org/wiki/Parkplatz), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.entfernung",
+      "lemma": "Entfernung",
+      "wortart": "nomen",
+      "merkmale": {
+        "genus": "f",
+        "artikel": "die",
+        "plural": "Entfernungen"
+      },
+      "formen": {
+        "pl": "Entfernungen"
+      },
+      "frequenzRang": 2478,
+      "quelle": "wiktionary:de:Entfernung",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚Entfernung‘ (https://de.wiktionary.org/wiki/Entfernung), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.kontrollieren",
+      "lemma": "kontrollieren",
+      "wortart": "verb",
+      "merkmale": {
+        "hilfsverb": "haben"
+      },
+      "formen": {
+        "infinitiv": "kontrollieren",
+        "praes_ich": "kontrolliere",
+        "praes_du": "kontrollierst",
+        "praes_er_sie_es": "kontrolliert",
+        "praes_wir": "kontrollieren",
+        "praes_ihr": "kontrolliert",
+        "praes_sie_Sie": "kontrollieren",
+        "partizip_2": "kontrolliert"
+      },
+      "frequenzRang": 1749,
+      "quelle": "wiktionary:de:kontrollieren",
+      "lizenz": "CC-BY-SA-4.0",
+      "namensnennung": "Wörterbuchdaten nach Wiktionary, Artikel ‚kontrollieren‘ (https://de.wiktionary.org/wiki/kontrollieren), Autorinnen und Autoren siehe Versionsgeschichte; extrahiert mit Wiktextract (Tatu Ylonen) über kaikki.org; gekürzt und umformatiert; Lizenz CC BY-SA 4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "de.a2.e02.s0001",
+      "text": "Mit welchem Verkehrsmittel kommst du zur Arbeit?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0002",
+      "text": "Ich fahre mit der Bahn zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0003",
+      "text": "Ich fahre mit dem Rad zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0004",
+      "text": "Ich fahre mit der Straßenbahn zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0005",
+      "text": "Elif fährt mit der Straßenbahn zur Schule.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0006",
+      "text": "Ich komme mit dem Rad.",
+      "quelle": "tatoeba:4020508",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4020508 von pullnosemans (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0007",
+      "text": "Murat fährt jeden Tag mit dem Motorrad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0008",
+      "text": "Bus, Bahn und Straßenbahn sind Verkehrsmittel.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0009",
+      "text": "Am Morgen ist in der Stadt viel Verkehr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0010",
+      "text": "Auf der Autobahn ist ein großer Stau.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0011",
+      "text": "Wir stehen im Stau und kommen zu spät.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0012",
+      "text": "Der Fahrer fährt sehr vorsichtig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0013",
+      "text": "Der Fahrer fährt zu schnell.",
+      "quelle": "tatoeba:3809988",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3809988 von Esperantostern (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0014",
+      "text": "Hast du einen Führerschein?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0015",
+      "text": "Ich habe noch keinen Führerschein.",
+      "quelle": "tatoeba:11680638",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #11680638 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0016",
+      "text": "Ja, aber ich habe keinen Wagen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0017",
+      "text": "Wo können wir parken?",
+      "quelle": "tatoeba:2272244",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2272244 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0018",
+      "text": "Hier gibt es keinen Parkplatz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0019",
+      "text": "Bei Regen fährt Jan nicht mit dem Rad.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0020",
+      "text": "Die Kinder fahren mit dem Rad zur Schule.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0021",
+      "text": "Mit dem Motorrad musst du vorsichtig sein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0022",
+      "text": "Fahr vorsichtig!",
+      "quelle": "tatoeba:2138351",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2138351 von petronella (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0023",
+      "text": "Ich fahre jeden Morgen mit der Straßenbahn zur Arbeit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0024",
+      "text": "Guten Tag! Was kann ich für Sie tun?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0025",
+      "text": "Eine Fahrkarte nach Frankfurt, bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0026",
+      "text": "Einfach oder hin und zurück?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0027",
+      "text": "Hin und zurück, bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0028",
+      "text": "Wie viel kostet eine Fahrkarte nach Köln?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0029",
+      "text": "Die Fahrkarte kostet 24 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0030",
+      "text": "Zwei Erwachsene und zwei Kinder, bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0031",
+      "text": "Kinder unter sechs Jahren fahren kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0032",
+      "text": "Das ist kostenlos.",
+      "quelle": "tatoeba:692142",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #692142 von Manfredo (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0033",
+      "text": "Für Schüler ist die Karte günstig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0034",
+      "text": "Kann man eine Fahrkarte am Automaten kaufen?",
+      "quelle": "tatoeba:13027749",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027749 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0035",
+      "text": "Der Automat funktioniert nicht. Wir gehen zum Schalter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0036",
+      "text": "Der Schalter ist ab sechs Uhr offen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0037",
+      "text": "Auf welchem Gleis fährt der Zug nach Köln?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0038",
+      "text": "Auf Gleis 7, gleich hier rechts.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0039",
+      "text": "Der Zug nach Gießen fährt auf Gleis 4.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0040",
+      "text": "Der Zug nach Frankfurt fährt auf Gleis 2.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0041",
+      "text": "Wir warten auf dem Bahnsteig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0042",
+      "text": "Am Morgen ist der Bahnsteig sehr voll.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0043",
+      "text": "Dieser Zug fährt zum Hauptbahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0044",
+      "text": "Fragen Sie bitte an der Auskunft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0045",
+      "text": "Ich finde, wir brauchen mehr Informationen.",
+      "quelle": "tatoeba:2581176",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2581176 von raggione (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0046",
+      "text": "Der Ausgang ist links neben dem Schalter.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0047",
+      "text": "Vergiss dein Ticket nicht.",
+      "quelle": "tatoeba:1402221",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1402221 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0048",
+      "text": "Vergessen Sie die Fahrkarte nicht.",
+      "quelle": "tatoeba:379441",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #379441 von Dorenda (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0049",
+      "text": "Kann man mit Karte bezahlen?",
+      "quelle": "tatoeba:13027730",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027730 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0050",
+      "text": "Mit Karte, bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0051",
+      "text": "Kann man mit diesem Ticket auch Bus fahren?",
+      "quelle": "tatoeba:13027784",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027784 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0052",
+      "text": "Man darf nicht ohne Ticket fahren.",
+      "quelle": "tatoeba:13027924",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13027924 von haciahmet (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0053",
+      "text": "Ein Ticket für Erwachsene kostet drei Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0054",
+      "text": "Eine Fahrkarte nach Gießen, bitte. Auf welchem Gleis fährt der Zug?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0055",
+      "text": "Wann fährt der Zug nach Gießen ab?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0056",
+      "text": "Er fährt um Viertel nach neun ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0057",
+      "text": "Wann kommen wir in Köln an?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0058",
+      "text": "Wir kommen um halb elf in Köln an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0059",
+      "text": "Auf dem Fahrplan stehen Abfahrt und Ankunft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0060",
+      "text": "Die Abfahrt ist um zehn Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0061",
+      "text": "Die Ankunft in Gießen ist um 11:05 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0062",
+      "text": "Von welchem Bahnsteig fährt der Zug ab?",
+      "quelle": "tatoeba:3160393",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3160393 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0063",
+      "text": "Der Zug ist schon abgefahren.",
+      "quelle": "tatoeba:363242",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #363242 von Wolf (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0064",
+      "text": "Ich bin gestern angekommen.",
+      "quelle": "tatoeba:1284964",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1284964 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0065",
+      "text": "Er ist endlich angekommen!",
+      "quelle": "tatoeba:3799962",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3799962 von Eldad (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0066",
+      "text": "Möchte jemand einsteigen?",
+      "quelle": "tatoeba:5916985",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5916985 von arved (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0067",
+      "text": "Bitte schnell einsteigen, der Zug fährt gleich ab!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0068",
+      "text": "Wir sind in Gießen eingestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0069",
+      "text": "Wo muss ich umsteigen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0070",
+      "text": "Sie steigen in Frankfurt um.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0071",
+      "text": "Wir sind in Frankfurt umgestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0072",
+      "text": "In Frankfurt steigen viele Leute aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0073",
+      "text": "Wie viel Zeit habe ich für den Anschluss?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0074",
+      "text": "Ihr Anschluss fährt auf Gleis 9 ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0075",
+      "text": "Sie haben fünf Minuten für den Anschluss.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0076",
+      "text": "Ich bin immer pünktlich.",
+      "quelle": "tatoeba:5983986",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5983986 von arved (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0077",
+      "text": "Heute ist der Zug pünktlich.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0078",
+      "text": "Der Zug hat zehn Minuten Verspätung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0079",
+      "text": "Der Bus hatte anscheinend Verspätung.",
+      "quelle": "tatoeba:7775923",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #7775923 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0080",
+      "text": "Sei bitte spätestens um sieben Uhr am Bahnhof!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0081",
+      "text": "Kommen wir rechtzeitig an?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0082",
+      "text": "Wann fährt der Zug ab, und wo muss ich umsteigen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0083",
+      "text": "Welche Linie fährt in die Innenstadt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0084",
+      "text": "Die Linie 3 fährt direkt ins Zentrum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0085",
+      "text": "Die Linie 5 fährt direkt zum Bahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0086",
+      "text": "Nehmen Sie die Straßenbahn Richtung Hauptbahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0087",
+      "text": "Oh nein, wir fahren in die falsche Richtung!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0088",
+      "text": "Wie heißt die nächste Station?",
+      "quelle": "tatoeba:12403520",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12403520 von Adelpa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0089",
+      "text": "Sie müssen drei Stationen fahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0090",
+      "text": "An der nächsten Station steigen wir aus.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0091",
+      "text": "Wie weit ist es bis zum Zentrum?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0092",
+      "text": "Die Entfernung bis Gießen ist ungefähr 15 Kilometer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0093",
+      "text": "Bis zum Zentrum sind es ungefähr fünf Kilometer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0094",
+      "text": "Wie lange dauert die Fahrt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0095",
+      "text": "Es dauert eine Stunde mit dem Bus.",
+      "quelle": "tatoeba:10055204",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #10055204 von sakslane (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0096",
+      "text": "Die Fahrt dauert mindestens 40 Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0097",
+      "text": "Mit dem Rad brauchst du höchstens zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0098",
+      "text": "Der Bus kommt ungefähr alle zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0099",
+      "text": "Der Bus fährt jeden Tag außer Sonntag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0100",
+      "text": "Der Bus fährt nur am Sonntag.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0101",
+      "text": "Alle sind ausgestiegen, außer Emre.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0102",
+      "text": "Bitte verlassen Sie hier den Zug.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0103",
+      "text": "Auf dem Schild steht ein Hinweis.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0104",
+      "text": "Danke für den Hinweis!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0105",
+      "text": "Im Bus kontrolliert eine Frau die Fahrkarten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0106",
+      "text": "Darf ich mein Rad in die Bahn mitnehmen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0107",
+      "text": "Ja, aber das Rad braucht eine eigene Fahrkarte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0108",
+      "text": "Die Strecke nach Gießen ist sehr schön.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0109",
+      "text": "Auf dieser Strecke fahren viele Züge.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0110",
+      "text": "In der Innenstadt kann man schlecht parken.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0111",
+      "text": "Welche Linie fährt ins Zentrum, und wie lange dauert die Fahrt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0112",
+      "text": "Am Sonntag habe ich meine Tante in Köln besucht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0113",
+      "text": "Meine Tante hat drei Kinder.",
+      "quelle": "tatoeba:138818",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #138818 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0114",
+      "text": "Ich bin mit dem Bus zum Bahnhof gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0115",
+      "text": "Dann bin ich in Frankfurt umgestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0116",
+      "text": "Um zwölf Uhr bin ich in Köln angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0117",
+      "text": "Wir sind noch unterwegs und kommen später.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0118",
+      "text": "Wir haben unseren Zug verpasst.",
+      "quelle": "tatoeba:3567315",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3567315 von Pfirsichbaeumchen (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0119",
+      "text": "Ich habe den Bus verpasst und bin zu Fuß gegangen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0120",
+      "text": "Zum Glück habe ich den Zug noch erreicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0121",
+      "text": "Ich muss mich beeilen!",
+      "quelle": "tatoeba:794113",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #794113 von MUIRIEL (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0122",
+      "text": "Beeil dich, Tom!",
+      "quelle": "tatoeba:1341005",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1341005 von Zaghawa (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0123",
+      "text": "Beeile dich, sonst verpassen wir noch den Zug.",
+      "quelle": "tatoeba:1288037",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1288037 von enteka (Tatoeba), CC BY 2.0 FR"
+    },
+    {
+      "schluessel": "de.a2.e02.s0124",
+      "text": "Wir haben uns sehr beeilt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0125",
+      "text": "Das war aber knapp!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0126",
+      "text": "Die Zeit für den Anschluss ist knapp.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0127",
+      "text": "Mein Zug hat 20 Minuten Verspätung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0128",
+      "text": "Mein Bus hat 20 Minuten Verspätung.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0129",
+      "text": "Ich komme erst um 19 Uhr an.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0130",
+      "text": "Holst du mich bitte am Bahnhof ab?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0131",
+      "text": "Wo bist du gerade?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0132",
+      "text": "Ich sitze im Zug nach Gießen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0133",
+      "text": "Ich bin mit dem Bus gefahren und dann umgestiegen. Um neun Uhr bin ich angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0134",
+      "text": "Schreib eine Nachricht an deine Familie. Dein Zug hat Verspätung. Wann kommst du jetzt an?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0135",
+      "text": "Hallo Mama! Ich bin noch unterwegs. Mein Zug hat leider 30 Minuten Verspätung. Ich habe den Anschluss verpasst. Ich komme erst um 18:40 Uhr an. Holst du mich am Bahnhof ab? Bis später!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0136",
+      "text": "Wichtiger Hinweis: Bauarbeiten auf der Strecke",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0137",
+      "text": "Zwischen Gießen und Frankfurt fahren im Juli keine Züge.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0138",
+      "text": "Auf der Strecke gibt es Bauarbeiten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0139",
+      "text": "In dieser Zeit fahren Busse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0140",
+      "text": "Die Busse fahren vor dem Hauptbahnhof ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0141",
+      "text": "Die Fahrt mit dem Bus dauert ungefähr eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0142",
+      "text": "Abfahrt Gießen: 7:10 Uhr. Ankunft Frankfurt: 8:15 Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0143",
+      "text": "Ihre Fahrkarte für den Zug können Sie auch im Bus benutzen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0144",
+      "text": "Fahrräder dürfen Sie im Bus leider nicht mitnehmen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0145",
+      "text": "Bitte seien Sie spätestens zehn Minuten vor der Abfahrt da.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0146",
+      "text": "Weitere Informationen bekommen Sie an der Auskunft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0147",
+      "text": "Im Juli fahren zwischen Gießen und Frankfurt Busse.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0148",
+      "text": "Man kann sein Fahrrad im Bus mitnehmen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0149",
+      "text": "Die Busfahrer sprechen auch Englisch.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0150",
+      "text": "Wie lange dauert die Fahrt mit dem Bus?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0151",
+      "text": "Ungefähr eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0152",
+      "text": "Höchstens zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0153",
+      "text": "Ungefähr zwei Stunden.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0154",
+      "text": "Wo fahren die Busse ab?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0155",
+      "text": "Vor dem Hauptbahnhof.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0156",
+      "text": "Auf Gleis 4.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0157",
+      "text": "An der Auskunft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0158",
+      "text": "Mit dem Zug zu Tante Hind",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0159",
+      "text": "Am Samstag sind Ranā und Laylā zu Tante Hind gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0160",
+      "text": "Tante Hind wohnt in Gießen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0161",
+      "text": "Die Schwestern haben die Fahrkarten schon am Freitag gekauft.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0162",
+      "text": "Um acht Uhr waren sie auf dem Bahnsteig.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0163",
+      "text": "Schau mal, unser Zug hat zehn Minuten Verspätung!",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0164",
+      "text": "Oh nein! Dann wird unser Anschluss in Frankfurt knapp.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0165",
+      "text": "Der Zug ist erst um zehn nach acht abgefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0166",
+      "text": "In Frankfurt hatten sie nur vier Minuten für den Anschluss.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0167",
+      "text": "Schnell, Ranā! Der Zug nach Gießen fährt auf Gleis 12.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0168",
+      "text": "Die Schwestern haben sich sehr beeilt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0169",
+      "text": "Der Zug nach Gießen war noch da.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0170",
+      "text": "Sie sind gerade noch eingestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0171",
+      "text": "Dann ist der Zug sofort abgefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0172",
+      "text": "Ja, aber wir haben den Anschluss erreicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0173",
+      "text": "Um halb zehn sind sie in Gießen angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0174",
+      "text": "Tante Hind hat schon auf dem Bahnsteig gewartet.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0175",
+      "text": "Hallo, ihr zwei! Wie war die Fahrt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0176",
+      "text": "Spannend! Wir haben fast den Anschluss verpasst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0177",
+      "text": "Dann sind alle zusammen nach Hause gegangen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0178",
+      "text": "Wo wohnt Tante Hind?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0179",
+      "text": "Sie wohnt in Gießen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0180",
+      "text": "Sie wohnt in Frankfurt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0181",
+      "text": "Sie wohnt in Köln.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0182",
+      "text": "Wie viel Zeit hatten die Schwestern in Frankfurt?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0183",
+      "text": "Sie hatten nur vier Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0184",
+      "text": "Sie hatten zehn Minuten.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0185",
+      "text": "Sie hatten eine Stunde.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0186",
+      "text": "Haben Ranā und Laylā den Anschluss erreicht?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0187",
+      "text": "Ja, sie haben ihn gerade noch erreicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0188",
+      "text": "Nein, sie haben ihn verpasst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0189",
+      "text": "Nein, sie haben ein Taxi genommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0190",
+      "text": "Wann sind die Schwestern in Gießen angekommen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0191",
+      "text": "Um halb zehn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0192",
+      "text": "Um zehn nach acht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0193",
+      "text": "Um acht Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0194",
+      "text": "Wir sind nach Gießen gefahren und in Frankfurt umgestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0195",
+      "text": "Opa Kamāl am Automaten",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0196",
+      "text": "Opa Kamāl möchte mit dem Bus ins Zentrum fahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0197",
+      "text": "An der Haltestelle trifft er Jan.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0198",
+      "text": "Hallo, Jan! Hilfst du mir bitte am Automaten?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0199",
+      "text": "Gern! Wohin möchten Sie fahren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0200",
+      "text": "Zum Markt im Zentrum. Welche Fahrkarte brauche ich?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0201",
+      "text": "Dann brauchen Sie eine Fahrkarte für Erwachsene.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0202",
+      "text": "Gibt es keine günstige Karte für Senioren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0203",
+      "text": "Doch, aber die gibt es erst ab neun Uhr.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0204",
+      "text": "Jetzt ist es erst halb neun.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0205",
+      "text": "Dann nehmen Sie die normale Fahrkarte. Sie kostet 2,80 Euro.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0206",
+      "text": "Kann ich hier auch mit Karte bezahlen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0207",
+      "text": "Ja, natürlich. Stecken Sie die Karte hier rein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0208",
+      "text": "Super, das war einfach! Und wo muss ich aussteigen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0209",
+      "text": "Am Markt. Das sind nur vier Stationen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0210",
+      "text": "Vielen Dank, Jan! Das nächste Mal nehme ich dich mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0211",
+      "text": "Wohin möchte Opa Kamāl fahren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0212",
+      "text": "Er möchte zum Markt im Zentrum fahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0213",
+      "text": "Er möchte zum Bahnhof fahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0214",
+      "text": "Er möchte nach Gießen fahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0215",
+      "text": "Welche Fahrkarte nimmt Opa Kamāl?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0216",
+      "text": "Er nimmt die normale Fahrkarte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0217",
+      "text": "Er nimmt die Karte für Senioren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0218",
+      "text": "Er nimmt eine Karte für Kinder.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0219",
+      "text": "Wie viele Stationen muss Opa Kamāl fahren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0220",
+      "text": "Nur vier Stationen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0221",
+      "text": "Neun Stationen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0222",
+      "text": "Zwei Stationen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0223",
+      "text": "Das nächste Mal nehme ich dich mit.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0224",
+      "text": "Der Zug fährt heute von Gleis 5 ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0225",
+      "text": "Der Zug hatte Verspätung, und ich habe den Anschluss verpasst.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0226",
+      "text": "Wir sind mit dem Taxi zum Bahnhof gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0227",
+      "text": "Mit der Straßenbahn bist du schnell in der Innenstadt.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0228",
+      "text": "Für ein Motorrad brauchst du einen Führerschein.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0229",
+      "text": "Auf der Autobahn ist Stau, wir nehmen lieber die Bahn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0230",
+      "text": "Am Hauptbahnhof gibt es einen großen Parkplatz.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0231",
+      "text": "Erwachsene zahlen drei Euro, Kinder fahren kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0232",
+      "text": "Die Linie 5 fährt Richtung Zentrum.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0233",
+      "text": "Wir sind unterwegs zu meiner Tante.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0234",
+      "text": "Wir haben uns beeilt und den Bus noch erreicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0235",
+      "text": "Außer Jan sind alle pünktlich angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0236",
+      "text": "Im Zug hat ein Mann die Fahrkarten kontrolliert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0237",
+      "text": "Ich habe mein Rad in den Zug mitgenommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0238",
+      "text": "Um acht Uhr haben wir den Hauptbahnhof verlassen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0239",
+      "text": "Die Fahrt hat drei Stunden gedauert.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0240",
+      "text": "Hinweis: Der Zug fährt heute von Gleis 8 ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0241",
+      "text": "Wir sind ungefähr um halb acht angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0242",
+      "text": "Wo bekomme ich hier Informationen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0243",
+      "text": "Der Bus ist pünktlich um acht Uhr abgefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0244",
+      "text": "Bei viel Verkehr nehme ich die Bahn.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0245",
+      "text": "Am Samstag ist der Bus in der Stadt kostenlos.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0246",
+      "text": "Wo bekomme ich ein günstiges Ticket?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0247",
+      "text": "Bis Frankfurt sind es ungefähr 60 Kilometer.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0248",
+      "text": "Meine Tante wohnt im Zentrum von Gießen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0249",
+      "text": "Wir haben den Bus rechtzeitig erreicht.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0250",
+      "text": "Wie bist du nach Köln gefahren?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0251",
+      "text": "Ich bin mit dem Zug gefahren und in Frankfurt umgestiegen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0252",
+      "text": "Wann bist du angekommen?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0253",
+      "text": "Ich bin um acht Uhr angekommen.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0254",
+      "text": "Eine Fahrkarte nach Gießen, hin und zurück, bitte.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0255",
+      "text": "Und auf welchem Gleis fährt der Zug ab?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0256",
+      "text": "Er fährt auf Gleis 2 ab.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0257",
+      "text": "Das macht 18 Euro. Zahlen Sie mit Karte?",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "de.a2.e02.s0258",
+      "text": "Ich bin mit dem Bus zur Schule gefahren.",
+      "quelle": "ki:lernapp-inhalte/a2/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "de.a2.e02.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann sagen, mit welchem Verkehrsmittel ich fahre.",
+        "tr": "Hangi ulaşım aracıyla gittiğimi söyleyebilirim.",
+        "ar": "أستطيع أن أقول بأي وسيلة مواصلات أذهب."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l01.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.strassenbahn",
+          "ablenker": ["de.a2.e02.taxi", "de.a2.e02.motorrad"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e02.bahn",
+            "de.a2.e02.autobahn",
+            "de.a2.e02.fahrer",
+            "de.a2.e02.verkehr",
+            "de.a2.e02.parken",
+            "de.a2.e02.vorsichtig"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a03",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a04",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0002",
+          "ablenker": ["de.a2.e02.s0003", "de.a2.e02.s0004"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0005",
+          "wort": 3,
+          "ablenker": ["dem", "die"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.stau",
+          "ablenker": ["de.a2.e02.parkplatz", "de.a1.e09.ampel"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0014"
+            }
+          ],
+          "antwort": "de.a2.e02.s0016",
+          "ablenker": ["de.a2.e02.s0008", "de.a2.e02.s0010", "de.a2.e02.s0009"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0007",
+          "nach": "ziel",
+          "alternativen": [
+            "Jeden Tag fährt Murat mit dem Motorrad.",
+            "Mit dem Motorrad fährt Murat jeden Tag.",
+            "Murat fährt mit dem Motorrad jeden Tag."
+          ],
+          "ablenker": ["den", "Auto"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.verkehrsmittel",
+          "ablenker": ["de.a2.e02.fuehrerschein", "de.a1.e09.kreuzung"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0012",
+          "ablenker": ["de.a2.e02.s0013", "de.a2.e02.s0021", "de.a2.e02.s0022"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0020",
+          "wort": 4,
+          "ablenker": ["den", "der"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a12",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.wagen",
+          "ablenker": ["de.a2.e02.rad", "de.a1.e09.bus"]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a13",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0010",
+          "alternativen": ["Ein großer Stau ist auf der Autobahn."]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0015",
+          "nach": "ziel",
+          "alternativen": ["Noch habe ich keinen Führerschein."]
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0018"
+        },
+        {
+          "schluessel": "de.a2.e02.l01.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0023"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann am Schalter oder am Automaten eine Fahrkarte kaufen und nach dem Gleis fragen.",
+        "tr": "Gişeden veya otomattan bilet alabilir ve peronu sorabilirim.",
+        "ar": "أستطيع أن أشتري تذكرة من الشباك أو من الآلة وأن أسأل عن الرصيف."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l02.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.fahrkarte",
+          "ablenker": ["de.a2.e02.schalter", "de.a2.e02.gleis"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.automat",
+          "ablenker": ["de.a2.e02.ausgang", "de.a2.e02.bahnsteig"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e02.hauptbahnhof",
+            "de.a2.e02.auskunft",
+            "de.a2.e02.erwachsene",
+            "de.a2.e02.kostenlos",
+            "de.a2.e02.guenstig",
+            "de.a2.e02.ticket"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0024"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0025"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0026"
+            }
+          ],
+          "antwort": "de.a2.e02.s0027",
+          "ablenker": ["de.a2.e02.s0038", "de.a2.e02.s0046", "de.a2.e02.s0042"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0039",
+          "ablenker": ["de.a2.e02.s0040", "de.a2.e02.s0043", "de.a2.e02.s0041"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0031",
+          "wort": 3,
+          "ablenker": ["Jahre", "Jahr"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.information",
+          "ablenker": ["de.a1.e07.frage", "de.a1.e12.nachricht"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0039",
+          "nach": "ziel",
+          "alternativen": ["Auf Gleis 4 fährt der Zug nach Gießen.", "Nach Gießen fährt der Zug auf Gleis 4."],
+          "ablenker": ["Gleise", "von"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a10",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0046",
+          "wort": 5,
+          "ablenker": ["den", "der"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a1.e06.s0096",
+          "ablenker": ["de.a2.e02.s0049", "de.a2.e02.s0050", "de.a2.e02.s0032"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0053",
+          "alternativen": ["Für Erwachsene kostet ein Ticket drei Euro.", "Drei Euro kostet ein Ticket für Erwachsene."]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0025",
+          "nach": "ziel",
+          "alternativen": ["Bitte eine Fahrkarte nach Frankfurt.", "Ein Ticket nach Frankfurt, bitte.", "Bitte ein Ticket nach Frankfurt."]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0037"
+            }
+          ],
+          "antwort": "de.a2.e02.s0038",
+          "ablenker": ["de.a2.e02.s0030", "de.a2.e02.s0050", "de.a2.e02.s0035"]
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0026"
+        },
+        {
+          "schluessel": "de.a2.e02.l02.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0054"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann Abfahrt und Ankunft verstehen und fragen, wo ich umsteigen muss.",
+        "tr": "Kalkış ve varış saatlerini anlayabilir, nerede aktarma yapacağımı sorabilirim.",
+        "ar": "أستطيع أن أفهم مواعيد المغادرة والوصول وأن أسأل أين أغيّر القطار."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l03.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.abfahrt",
+          "ablenker": ["de.a2.e02.ankunft", "de.a2.e02.fahrplan"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a02",
+          "typ": "paare",
+          "lemmata": ["de.a2.e02.abfahren", "de.a2.e02.ankommen", "de.a2.e02.einsteigen", "de.a2.e02.umsteigen", "de.a1.e09.aussteigen"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0055",
+          "ablenker": ["de.a2.e02.s0057", "de.a2.e02.s0069", "de.a2.e02.s0062"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.verspaetung",
+          "ablenker": ["de.a2.e02.anschluss", "de.a2.e02.fahrplan"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0056",
+          "wort": 6,
+          "ablenker": ["bis", "um"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0069"
+            }
+          ],
+          "antwort": "de.a2.e02.s0070",
+          "ablenker": ["de.a2.e02.s0076", "de.a2.e02.s0060", "de.a2.e02.s0066"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a07",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0071",
+          "wort": 1,
+          "ablenker": ["haben", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.puenktlich",
+          "ablenker": ["de.a2.e02.spaetestens", "de.a1.e04.frueh"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0058",
+          "nach": "ziel",
+          "alternativen": [
+            "Um halb elf kommen wir in Köln an.",
+            "In Köln kommen wir um halb elf an.",
+            "Wir kommen in Köln um halb elf an."
+          ],
+          "ablenker": ["ab", "kommt"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0078",
+          "ablenker": ["de.a2.e02.s0077", "de.a2.e02.s0075", "de.a2.e02.s0079"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0074",
+          "alternativen": ["Auf Gleis 9 fährt Ihr Anschluss ab."]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a13",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e02.bahn",
+          "ablenker": ["de.a1.e11.zahn"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0063"
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a15",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0073"
+            }
+          ],
+          "antwort": "de.a2.e02.s0075",
+          "ablenker": ["de.a2.e02.s0068", "de.a2.e02.s0057", "de.a2.e02.s0072"]
+        },
+        {
+          "schluessel": "de.a2.e02.l03.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0082"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann nach Linie, Richtung und Dauer einer Fahrt fragen.",
+        "tr": "Hattı, yönü ve yolculuğun ne kadar sürdüğünü sorabilirim.",
+        "ar": "أستطيع أن أسأل عن الخط والاتجاه ومدة الرحلة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l04.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.linie",
+          "ablenker": ["de.a2.e02.richtung", "de.a2.e02.station"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e02.zentrum",
+            "de.a2.e02.kilometer",
+            "de.a2.e02.entfernung",
+            "de.a2.e02.hinweis",
+            "de.a2.e02.fahrt",
+            "de.a2.e02.kontrollieren"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0084",
+          "ablenker": ["de.a2.e02.s0085", "de.a2.e02.s0232", "de.a2.e02.s0083"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0091",
+          "wort": 5,
+          "ablenker": ["zur", "zu"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.dauern",
+          "ablenker": ["de.a2.e02.verlassen", "de.a2.e02.mitnehmen"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0094"
+            }
+          ],
+          "antwort": "de.a2.e02.s0096",
+          "ablenker": ["de.a2.e02.s0109", "de.a2.e02.s0104", "de.a2.e02.s0087"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.ungefaehr",
+          "ablenker": ["de.a2.e02.mindestens", "de.a2.e02.hoechstens"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0097",
+          "nach": "ziel",
+          "alternativen": [
+            "Du brauchst mit dem Rad höchstens zehn Minuten.",
+            "Höchstens zehn Minuten brauchst du mit dem Rad.",
+            "Du brauchst höchstens zehn Minuten mit dem Rad."
+          ],
+          "ablenker": ["mindestens", "der"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0099",
+          "ablenker": ["de.a2.e02.s0100", "de.a2.e02.s0098"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0105",
+          "wort": 2,
+          "ablenker": ["kontrolliere", "kontrollieren"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0090",
+          "alternativen": ["Wir steigen an der nächsten Station aus."]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0110",
+          "nach": "ziel",
+          "alternativen": ["Man kann in der Innenstadt schlecht parken.", "In der Innenstadt kann man nicht gut parken."]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0106"
+            }
+          ],
+          "antwort": "de.a2.e02.s0107",
+          "ablenker": ["de.a2.e02.s0089", "de.a2.e02.s0093", "de.a2.e02.s0108"]
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0086"
+        },
+        {
+          "schluessel": "de.a2.e02.l04.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0111"
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Ich kann von einer Fahrt erzählen und eine Verspätung mitteilen.",
+        "tr": "Bir yolculuğu anlatabilir ve gecikmeyi bildirebilirim.",
+        "ar": "أستطيع أن أحكي عن رحلة وأن أخبر عن تأخير."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l05.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.verpassen",
+          "ablenker": ["de.a2.e02.erreichen", "de.a2.e02.beeilen"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.tante",
+          "ablenker": ["de.a1.e02.oma", "de.a1.e02.schwester"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a03",
+          "typ": "paare",
+          "lemmata": ["de.a2.e02.unterwegs", "de.a2.e02.knapp", "de.a2.e02.beeilen", "de.a1.e04.spaet", "de.a1.e11.sofort"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a04",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a05",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0115",
+          "wort": 1,
+          "ablenker": ["habe", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a06",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0131"
+            }
+          ],
+          "antwort": "de.a2.e02.s0132",
+          "ablenker": ["de.a2.e02.s0113", "de.a2.e02.s0122", "de.a2.e02.s0112"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0127",
+          "ablenker": ["de.a2.e02.s0128", "de.a2.e02.s0078"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0114",
+          "nach": "ziel",
+          "alternativen": [
+            "Ich bin zum Bahnhof mit dem Bus gefahren.",
+            "Mit dem Bus bin ich zum Bahnhof gefahren.",
+            "Zum Bahnhof bin ich mit dem Bus gefahren."
+          ],
+          "ablenker": ["habe", "der"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0120",
+          "wort": 7,
+          "ablenker": ["geerreicht", "erreichen"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a10",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0116",
+          "alternativen": [
+            "Ich bin um zwölf Uhr in Köln angekommen.",
+            "In Köln bin ich um zwölf Uhr angekommen.",
+            "Ich bin in Köln um zwölf Uhr angekommen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a11",
+          "typ": "lesen_fragen",
+          "titel": "de.a2.e02.s0136",
+          "absaetze": [
+            "de.a2.e02.s0137",
+            "de.a2.e02.s0138",
+            "de.a2.e02.s0139",
+            "de.a2.e02.s0140",
+            "de.a2.e02.s0142",
+            "de.a2.e02.s0141",
+            "de.a2.e02.s0143",
+            "de.a2.e02.s0144",
+            "de.a2.e02.s0145",
+            "de.a2.e02.s0146"
+          ],
+          "glossen": ["de.a2.e02.hinweis", "de.a2.e02.strecke", "de.a2.e02.mitnehmen", "de.a2.e02.auskunft", "de.a2.e02.spaetestens"],
+          "fragen": [
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e02.s0147",
+              "richtig": "richtig"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e02.s0148",
+              "richtig": "falsch"
+            },
+            {
+              "art": "rfn",
+              "aussage": "de.a2.e02.s0149",
+              "richtig": "nicht_im_text"
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e02.s0150",
+              "antwort": "de.a2.e02.s0151",
+              "ablenker": ["de.a2.e02.s0152", "de.a2.e02.s0153"]
+            },
+            {
+              "art": "auswahl",
+              "frage": "de.a2.e02.s0154",
+              "antwort": "de.a2.e02.s0155",
+              "ablenker": ["de.a2.e02.s0156", "de.a2.e02.s0157"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a12",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0118",
+          "nach": "ziel",
+          "alternativen": ["Wir haben den Zug verpasst."]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0133"
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a14",
+          "typ": "schreiben",
+          "aufgabe": "de.a2.e02.s0134",
+          "woerter": {
+            "min": 25,
+            "max": 35
+          },
+          "pflichtwoerter": ["Verspätung", "Zug"],
+          "muster": ["de.a2.e02.s0135"]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0129",
+          "alternativen": ["Ich komme erst um neunzehn Uhr an."]
+        },
+        {
+          "schluessel": "de.a2.e02.l05.a16",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e02.rad",
+          "ablenker": ["de.a1.e03.bad"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Ich kann eine Geschichte über eine Zugfahrt und ein Gespräch am Automaten verstehen.",
+        "tr": "Bir tren yolculuğu hikâyesini ve otomatta geçen bir konuşmayı anlayabilirim.",
+        "ar": "أستطيع أن أفهم قصة عن رحلة بالقطار وحوارًا عند آلة التذاكر."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l06.a01",
+          "typ": "geschichte",
+          "titel": "de.a2.e02.s0158",
+          "zeilen": [
+            {
+              "satz": "de.a2.e02.s0159"
+            },
+            {
+              "satz": "de.a2.e02.s0160"
+            },
+            {
+              "satz": "de.a2.e02.s0161"
+            },
+            {
+              "satz": "de.a2.e02.s0162"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0163"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0164"
+            },
+            {
+              "satz": "de.a2.e02.s0165"
+            },
+            {
+              "satz": "de.a2.e02.s0166"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0167"
+            },
+            {
+              "satz": "de.a2.e02.s0168"
+            },
+            {
+              "satz": "de.a2.e02.s0169"
+            },
+            {
+              "satz": "de.a2.e02.s0170"
+            },
+            {
+              "satz": "de.a2.e02.s0171"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0125"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0172"
+            },
+            {
+              "satz": "de.a2.e02.s0173"
+            },
+            {
+              "satz": "de.a2.e02.s0174"
+            },
+            {
+              "sprecher": "c",
+              "satz": "de.a2.e02.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0176"
+            },
+            {
+              "satz": "de.a2.e02.s0177"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 1,
+              "frage": "de.a2.e02.s0178",
+              "antwort": "de.a2.e02.s0179",
+              "ablenker": ["de.a2.e02.s0180", "de.a2.e02.s0181"]
+            },
+            {
+              "nach": 7,
+              "frage": "de.a2.e02.s0182",
+              "antwort": "de.a2.e02.s0183",
+              "ablenker": ["de.a2.e02.s0184", "de.a2.e02.s0185"]
+            },
+            {
+              "nach": 11,
+              "frage": "de.a2.e02.s0186",
+              "antwort": "de.a2.e02.s0187",
+              "ablenker": ["de.a2.e02.s0188", "de.a2.e02.s0189"]
+            },
+            {
+              "nach": 15,
+              "frage": "de.a2.e02.s0190",
+              "antwort": "de.a2.e02.s0191",
+              "ablenker": ["de.a2.e02.s0192", "de.a2.e02.s0193"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a02",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0170",
+          "wort": 1,
+          "ablenker": ["haben", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a03",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0173",
+          "ablenker": ["de.a2.e02.s0171", "de.a2.e02.s0170"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0175"
+            }
+          ],
+          "antwort": "de.a2.e02.s0176",
+          "ablenker": ["de.a2.e02.s0104", "de.a2.e02.s0050", "de.a2.e02.s0130"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a05",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0172",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a06",
+          "typ": "geschichte",
+          "titel": "de.a2.e02.s0195",
+          "zeilen": [
+            {
+              "satz": "de.a2.e02.s0196"
+            },
+            {
+              "satz": "de.a2.e02.s0197"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0198"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0199"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0200"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0201"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0202"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0203"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0204"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0205"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0206"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0207"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0208"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0209"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0210"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 4,
+              "frage": "de.a2.e02.s0211",
+              "antwort": "de.a2.e02.s0212",
+              "ablenker": ["de.a2.e02.s0213", "de.a2.e02.s0214"]
+            },
+            {
+              "nach": 9,
+              "frage": "de.a2.e02.s0215",
+              "antwort": "de.a2.e02.s0216",
+              "ablenker": ["de.a2.e02.s0217", "de.a2.e02.s0218"]
+            },
+            {
+              "nach": 13,
+              "frage": "de.a2.e02.s0219",
+              "antwort": "de.a2.e02.s0220",
+              "ablenker": ["de.a2.e02.s0221", "de.a2.e02.s0222"]
+            }
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a07",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0198"
+            }
+          ],
+          "antwort": "de.a2.e02.s0199",
+          "ablenker": ["de.a2.e02.s0076", "de.a2.e02.s0101", "de.a2.e02.s0045"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a08",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0223",
+          "alternativen": ["Ich nehme dich das nächste Mal mit."]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a09",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0201",
+          "wort": 5,
+          "ablenker": ["mit", "von"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0160"
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a11",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0174",
+          "wort": 2,
+          "ablenker": ["ist", "haben"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a12",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0203",
+          "ablenker": ["de.a2.e02.s0204", "de.a2.e02.s0209"]
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a13",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0194"
+        },
+        {
+          "schluessel": "de.a2.e02.l06.a14",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0169",
+          "nach": "ziel",
+          "ablenker": ["ist", "Zeit"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Ich wiederhole Verkehrsmittel, Fahrkarten und Fahrten in der Vergangenheit.",
+        "tr": "Ulaşım araçlarını, biletleri ve geçmişteki yolculukları tekrar ediyorum.",
+        "ar": "أراجع وسائل المواصلات والتذاكر والرحلات في الماضي."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l07.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.taxi",
+          "ablenker": ["de.a2.e02.strassenbahn", "de.a1.e09.zug"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.rechtzeitig",
+          "ablenker": ["de.a2.e02.spaetestens", "de.a1.e04.spaet"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a03",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e02.fahrkarte",
+            "de.a2.e02.gleis",
+            "de.a2.e02.abfahrt",
+            "de.a2.e02.ankunft",
+            "de.a2.e02.linie",
+            "de.a2.e02.kilometer"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0001"
+            }
+          ],
+          "antwort": "de.a2.e02.s0002",
+          "ablenker": ["de.a2.e02.s0027", "de.a2.e02.s0104", "de.a2.e02.s0032"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0224",
+          "ablenker": ["de.a2.e02.s0240", "de.a2.e02.s0256"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0226",
+          "wort": 1,
+          "ablenker": ["haben", "seid"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0233",
+          "wort": 4,
+          "ablenker": ["meinen", "meine"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a08",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0236",
+          "wort": 7,
+          "ablenker": ["gekontrolliert", "kontrollieren"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0234",
+          "nach": "ziel",
+          "ablenker": ["sind", "verpasst"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0019",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a11",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0238",
+          "alternativen": [
+            "Wir haben um acht Uhr den Hauptbahnhof verlassen.",
+            "Wir haben den Hauptbahnhof um acht Uhr verlassen.",
+            "Den Hauptbahnhof haben wir um acht Uhr verlassen."
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0237",
+          "alternativen": ["Mein Rad habe ich in den Zug mitgenommen.", "In den Zug habe ich mein Rad mitgenommen."]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a13",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0231",
+          "ablenker": ["de.a2.e02.s0245", "de.a2.e02.s0053", "de.a2.e02.s0033"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a14",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0239",
+          "nach": "ziel",
+          "alternativen": ["Die Fahrt hat 3 Stunden gedauert.", "Die Reise hat drei Stunden gedauert."]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.innenstadt",
+          "ablenker": ["de.a2.e02.strecke", "de.a1.e09.bruecke"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a16",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0242"
+            }
+          ],
+          "antwort": "de.a2.e02.s0044",
+          "ablenker": ["de.a2.e02.s0006", "de.a2.e02.s0077", "de.a2.e02.s0121"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a17",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0247",
+          "alternativen": ["Bis Frankfurt sind es ungefähr sechzig Kilometer."]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a18",
+          "typ": "minimalpaare",
+          "ziel": "de.a2.e02.bahn",
+          "ablenker": ["de.a1.e11.bein"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a19",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0235",
+          "ablenker": ["de.a2.e02.s0241", "de.a2.e02.s0243", "de.a2.e02.s0249"]
+        },
+        {
+          "schluessel": "de.a2.e02.l07.a20",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.ausgang",
+          "ablenker": ["de.a1.e09.weg", "de.a1.e09.haltestelle"]
+        }
+      ]
+    },
+    {
+      "schluessel": "de.a2.e02.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Ich zeige, dass ich von einer Fahrt erzählen und eine Fahrkarte kaufen kann.",
+        "tr": "Bir yolculuğu anlatabildiğimi ve bilet alabildiğimi gösteriyorum.",
+        "ar": "أُظهر أنني أستطيع أن أحكي عن رحلة وأن أشتري تذكرة."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "de.a2.e02.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "de.a2.e02.umsteigen",
+          "ablenker": ["de.a2.e02.einsteigen", "de.a1.e09.aussteigen"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a02",
+          "typ": "paare",
+          "lemmata": [
+            "de.a2.e02.schalter",
+            "de.a2.e02.automat",
+            "de.a2.e02.bahnsteig",
+            "de.a2.e02.verspaetung",
+            "de.a2.e02.richtung",
+            "de.a2.e02.stau"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a03",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0250"
+            }
+          ],
+          "antwort": "de.a2.e02.s0251",
+          "ablenker": ["de.a2.e02.s0257", "de.a2.e02.s0044", "de.a2.e02.s0080"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0252"
+            }
+          ],
+          "antwort": "de.a2.e02.s0253",
+          "ablenker": ["de.a2.e02.s0256", "de.a2.e02.s0027", "de.a2.e02.s0036"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a05",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0254"
+            },
+            {
+              "sprecher": "a",
+              "satz": "de.a2.e02.s0257"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0050"
+            },
+            {
+              "sprecher": "b",
+              "satz": "de.a2.e02.s0255"
+            }
+          ],
+          "antwort": "de.a2.e02.s0256",
+          "ablenker": ["de.a2.e02.s0239", "de.a2.e02.s0113", "de.a2.e02.s0126"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a06",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0251",
+          "wort": 1,
+          "ablenker": ["habe", "hat"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a07",
+          "typ": "luecke",
+          "ziel": "de.a2.e02.s0227",
+          "wort": 1,
+          "ablenker": ["dem", "die"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a08",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0225",
+          "nach": "ziel",
+          "ablenker": ["bin", "erreicht"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a09",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "de.a2.e02.s0230",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a10",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "de.a2.e02.s0253",
+          "ablenker": ["de.a2.e02.s0064", "de.a2.e02.s0065"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a11",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "de.a2.e02.s0229",
+          "ablenker": ["de.a2.e02.s0244", "de.a2.e02.s0011"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a12",
+          "typ": "satzbau",
+          "ziel": "de.a2.e02.s0248",
+          "alternativen": ["Im Zentrum von Gießen wohnt meine Tante."]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a13",
+          "typ": "frei",
+          "ziel": "de.a2.e02.s0246",
+          "nach": "ziel",
+          "alternativen": [
+            "Wo bekomme ich eine günstige Fahrkarte?",
+            "Wo kann ich ein günstiges Ticket kaufen?",
+            "Wo kann ich eine günstige Fahrkarte kaufen?",
+            "Wo bekomme ich hier ein günstiges Ticket?"
+          ]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a14",
+          "typ": "hoeren_schreiben",
+          "ziel": "de.a2.e02.s0228"
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "de.a2.e02.kostenlos",
+          "ablenker": ["de.a2.e02.guenstig", "de.a1.e06.teuer"]
+        },
+        {
+          "schluessel": "de.a2.e02.l08.a16",
+          "typ": "sprechen",
+          "satz": "de.a2.e02.s0258"
+        }
+      ]
+    }
+  ]
+}
