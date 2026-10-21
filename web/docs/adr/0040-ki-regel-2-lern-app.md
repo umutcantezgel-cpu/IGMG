@@ -81,6 +81,10 @@
    U+2028/U+2029 und vereinheitlicht Ha-, Ya- und Kaf-Formen. Aufgelöst werden Codepunkt-Folgen, HTML-Entitäten,
    `fromCharCode`/`fromCodePoint` und Prozent-Kodierung. Im Wissenskurs, im Koran-Pfad und in Textdateien der Werkstatt ist
    auch verschleierte arabische Schrift Rot.
+   - Vermerk L3-02 (Gegenprüfung L2/L3-02, 21.10.2026): U+2028/U+2029 werden nicht mehr nur entfernt, sondern trennen Wörter
+     wie ein Leerzeichen; enthält ein Text solche Trenner, prüft der Wächter zusätzlich die Lesart ohne Trenner
+     (`woerterVarianten` in `kern.mjs`). Codepunkte und Entitäten in Daten- und Textdateien außerhalb der Erlaubnisse sind
+     Rot (`DATENDATEI` in `_gemeinde/werkzeuge/religion-pruefung.mjs`). Tests: `tests/unit/lernapp/religion-waechter.test.ts`.
 3. **4-Gramme über Zeilen und Felder:** Der Abgleich läuft über den Wortstrom der ganzen Datei bzw. über alle Texte einer
    Inhaltsdatei (Sätze einer Lektion, Dialogzeilen).
 4. **Formel-Lexikon (KERN 4.0 §3 a) „fail closed“:** Ein Treffer verlangt `religionsbezug: true`; sonst bricht der Import ab

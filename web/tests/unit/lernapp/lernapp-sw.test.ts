@@ -201,6 +201,15 @@ describe('Service Worker der Lern-App', () => {
     ]);
   });
 
+  it('Lizenztexte neben den Gewichten gehen ans Netz und nicht in den Vorrat der Modelle', async () => {
+    const w = ladeWorker({ bau: 'b5' });
+    for (const datei of ['LIZENZ-whisper-MIT.txt', 'LIZENZ-Apache-2.0.txt'])
+      expect(w.anfrage(`/lern-app/modelle/whisper-base-64da572/${datei}`, { mode: 'navigate' }), datei).toBeNull();
+    await w.anfrage('/lern-app/modelle/whisper-base-64da572/config.json', { mode: 'cors' })!;
+    await new Promise((r) => setTimeout(r, 0));
+    expect(w.inhalt('igmg-lernapp-modelle')).toEqual(['/lern-app/modelle/whisper-base-64da572/config.json']);
+  });
+
   it('Hülle einer Oberflächensprache auf Bitte der Seite: Start, Fortschritt, Wortschatz, Einstellungen, Quellen und ihre Programmteile', async () => {
     const w = ladeWorker({ bau: 'b3' });
     await w.warte('message', { art: 'schale', ui: 'ar' });

@@ -467,5 +467,17 @@ test.describe('Sprechen: Rückfall und Grenzen', () => {
     expect(modell.status).toBe(200);
     expect(modell.h['cache-control']).toContain('immutable');
     expect((await kopf('/lern-app/modelle/ort-1.31.0-dev.20260914-8d85527a0/ort-wasm-simd-threaded.asyncify.wasm')).status).toBe(404);
+    // Lizenztexte neben den Gewichten (ADR 0042 Nr. 3, Fortschreibung Nr. 11) und die Spracherkennung auf der Seite „Quellen“
+    for (const [datei, kennung] of [
+      ['LIZENZ-whisper-MIT.txt', 'Copyright (c) 2022 OpenAI'],
+      ['LIZENZ-Apache-2.0.txt', 'Apache License'],
+    ] as const) {
+      const r = await request.get(`/lern-app/modelle/whisper-base-64da572/${datei}`);
+      expect(r.status(), datei).toBe(200);
+      expect(await r.text(), datei).toContain(kennung);
+    }
+    const quellen = await (await request.get('/lern-app/de/quellen')).text();
+    for (const name of ['Transformers.js', 'ONNX Runtime Web', 'Whisper (base)', 'Apache License 2.0', de.quellen.spracherkennungTitel])
+      expect(quellen, name).toContain(name);
   });
 });

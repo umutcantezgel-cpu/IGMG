@@ -11,7 +11,8 @@
  * - `igmg-lernapp-audio`: Bündel `/lern-app/audio/…`, Vorrat zuerst; Bereichsanfragen gehen ans Netz.
  * - `igmg-lernapp-modelle`: Whisper und ORT `/lern-app/modelle/…`, Vorrat zuerst (ADR 0042); als Originalantwort samt
  *   Kopfzeilen (COEP). Den Worker der Sprechübung (`…/modelle/sprechen/…?v=<bau>`) gibt es je Bau neu: Beim Vorhalten
- *   fallen ältere Fassungen derselben Datei weg.
+ *   fallen ältere Fassungen derselben Datei weg. Die Lizenztexte neben den Gewichten (`…/LIZENZ-*.txt`, ADR 0042
+ *   Fortschreibung Nr. 11) gehören nicht zum Vorrat; sie gehen ans Netz.
  * Seiten: Netz zuerst, gelungene Antworten in die Hülle – unter dem Pfad ohne Suchteil (`ignoreSearch`, z. B.
  * `…/ueben?l=…`); ohne Netz die vorgehaltene Seite, sonst der Start der Oberflächensprache.
  * Nie vorgehalten: /api/**, /lern-app/<ui>/anmelden, RSC-Abrufe, alles außer GET, fremde Ursprünge.
@@ -225,7 +226,7 @@ self.addEventListener('fetch', (e) => {
     return;
   }
   if (pfad.startsWith('/lern-app/modelle/')) {
-    e.respondWith(vorratZuerst(anfrage, MODELLE));
+    if (!/\/LIZENZ-[^/]+\.txt$/.test(pfad)) e.respondWith(vorratZuerst(anfrage, MODELLE));
     return;
   }
   if (anfrage.mode === 'navigate' && istSeitePfad(pfad)) {
