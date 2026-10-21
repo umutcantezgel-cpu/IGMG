@@ -1,0 +1,3467 @@
+{
+  "format": "igmg-lernapp-sprache",
+  "version": 1,
+  "status": "entwurf",
+  "kurs": "tr",
+  "stufe": "a1",
+  "einheit": {
+    "schluessel": "tr.a1.e03",
+    "reihenfolge": 4,
+    "thema": {
+      "de": "Meine Familie",
+      "tr": "Ailem",
+      "ar": "عائلتي"
+    },
+    "kannBeschreibungen": [
+      {
+        "de": "Ich kann meine Familie vorstellen und sagen, wie alt jemand ist.",
+        "tr": "Ailemi tanıtabilir ve birinin kaç yaşında olduğunu söyleyebilirim.",
+        "ar": "أستطيع أن أعرّف بعائلتي وأن أقول كم يبلغ عمر شخص ما."
+      },
+      {
+        "de": "Ich kann bis hundert zählen und Zahlen verstehen.",
+        "tr": "Yüze kadar sayabilir ve sayıları anlayabilirim.",
+        "ar": "أستطيع أن أعدّ حتى المئة وأن أفهم الأعداد."
+      },
+      {
+        "de": "Ich kann sagen, was jemand von Beruf ist und was nicht.",
+        "tr": "Birinin mesleğinin ne olduğunu ve ne olmadığını söyleyebilirim.",
+        "ar": "أستطيع أن أقول ما مهنة شخص ما وما ليست مهنته."
+      }
+    ],
+    "symbol": "users",
+    "kinderGeeignet": true
+  },
+  "lemmata": [
+    {
+      "schluessel": "tr.a1.e03.iki",
+      "lemma": "iki",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "2"
+      },
+      "formen": {
+        "akk": "ikiyi",
+        "dat": "ikiye",
+        "poss.3sg": "ikisi",
+        "lok": "ikide",
+        "abl": "ikiden"
+      },
+      "frequenzRang": 40,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.uc",
+      "lemma": "üç",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "3"
+      },
+      "formen": {
+        "akk/poss.3sg": "üçü",
+        "dat": "üçe",
+        "lok": "üçte",
+        "abl": "üçten"
+      },
+      "frequenzRang": 134,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.dort",
+      "lemma": "dört",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "4"
+      },
+      "formen": {
+        "akk/poss.3sg": "dördü",
+        "dat": "dörde",
+        "lok": "dörtte",
+        "abl": "dörtten"
+      },
+      "frequenzRang": 291,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.bes",
+      "lemma": "beş",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "5"
+      },
+      "formen": {
+        "akk/poss.3sg": "beşi",
+        "dat": "beşe",
+        "lok": "beşte",
+        "abl": "beşten"
+      },
+      "frequenzRang": 384,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.alti",
+      "lemma": "altı",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "6"
+      },
+      "formen": {
+        "akk": "altıyı",
+        "dat": "altıya",
+        "poss.3sg": "altısı",
+        "lok": "altıda",
+        "abl": "altıdan"
+      },
+      "frequenzRang": 424,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.yedi",
+      "lemma": "yedi",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "7"
+      },
+      "formen": {
+        "akk": "yediyi",
+        "dat": "yediye",
+        "poss.3sg": "yedisi",
+        "lok": "yedide",
+        "abl": "yediden"
+      },
+      "frequenzRang": 846,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.sekiz",
+      "lemma": "sekiz",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "8"
+      },
+      "formen": {
+        "akk/poss.3sg": "sekizi",
+        "dat": "sekize",
+        "lok": "sekizde",
+        "abl": "sekizden"
+      },
+      "frequenzRang": 1327,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.dokuz",
+      "lemma": "dokuz",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "9"
+      },
+      "formen": {
+        "akk/poss.3sg": "dokuzu",
+        "dat": "dokuza",
+        "lok": "dokuzda",
+        "abl": "dokuzdan"
+      },
+      "frequenzRang": 1723,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.on",
+      "lemma": "on",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "10"
+      },
+      "formen": {
+        "akk/poss.3sg": "onu",
+        "dat": "ona",
+        "lok": "onda",
+        "abl": "ondan"
+      },
+      "frequenzRang": 358,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.yirmi",
+      "lemma": "yirmi",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "20"
+      },
+      "formen": {
+        "akk": "yirmiyi",
+        "dat": "yirmiye",
+        "poss.3sg": "yirmisi",
+        "lok": "yirmide",
+        "abl": "yirmiden"
+      },
+      "frequenzRang": 2150,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.otuz",
+      "lemma": "otuz",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "30"
+      },
+      "formen": {
+        "akk/poss.3sg": "otuzu",
+        "dat": "otuza",
+        "lok": "otuzda",
+        "abl": "otuzdan"
+      },
+      "frequenzRang": 3563,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kirk",
+      "lemma": "kırk",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "40"
+      },
+      "formen": {
+        "akk/poss.3sg": "kırkı",
+        "dat": "kırka",
+        "lok": "kırkta",
+        "abl": "kırktan"
+      },
+      "frequenzRang": 3932,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.elli",
+      "lemma": "elli",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "50"
+      },
+      "formen": {
+        "akk": "elliyi",
+        "dat": "elliye",
+        "poss.3sg": "ellisi",
+        "lok": "ellide",
+        "abl": "elliden"
+      },
+      "frequenzRang": 5117,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.altmis",
+      "lemma": "altmış",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "60"
+      },
+      "formen": {
+        "akk/poss.3sg": "altmışı",
+        "dat": "altmışa",
+        "lok": "altmışta",
+        "abl": "altmıştan"
+      },
+      "frequenzRang": 13025,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.yetmis",
+      "lemma": "yetmiş",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "70"
+      },
+      "formen": {
+        "akk/poss.3sg": "yetmişi",
+        "dat": "yetmişe",
+        "lok": "yetmişte",
+        "abl": "yetmişten"
+      },
+      "frequenzRang": 14329,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.seksen",
+      "lemma": "seksen",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "80"
+      },
+      "formen": {
+        "akk/poss.3sg": "sekseni",
+        "dat": "seksene",
+        "lok": "seksende",
+        "abl": "seksenden"
+      },
+      "frequenzRang": 15746,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.doksan",
+      "lemma": "doksan",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "90"
+      },
+      "formen": {
+        "akk/poss.3sg": "doksanı",
+        "dat": "doksana",
+        "lok": "doksanda",
+        "abl": "doksandan"
+      },
+      "frequenzRang": 16855,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.yuz",
+      "lemma": "yüz",
+      "wortart": "zahlwort",
+      "merkmale": {
+        "wert": "100"
+      },
+      "formen": {
+        "akk/poss.3sg": "yüzü",
+        "dat": "yüze",
+        "lok": "yüzde",
+        "abl": "yüzden"
+      },
+      "frequenzRang": 670,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.aile",
+      "lemma": "aile",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "aileler",
+        "akk": "aileyi",
+        "dat": "aileye",
+        "gen": "ailenin",
+        "ins": "aileyle",
+        "poss.1sg": "ailem",
+        "poss.2sg": "ailen",
+        "poss.3sg": "ailesi",
+        "poss.1pl": "ailemiz",
+        "poss.2pl": "aileniz",
+        "lok": "ailede",
+        "abl": "aileden",
+        "poss.3pl": "aileleri"
+      },
+      "frequenzRang": 550,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.anne",
+      "lemma": "anne",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "anneler",
+        "akk": "anneyi",
+        "dat": "anneye",
+        "gen": "annenin",
+        "ins": "anneyle",
+        "poss.1sg": "annem",
+        "poss.2sg": "annen",
+        "poss.3sg": "annesi",
+        "poss.1pl": "annemiz",
+        "poss.2pl": "anneniz",
+        "lok": "annede",
+        "abl": "anneden",
+        "poss.3pl": "anneleri",
+        "kop.1sg": "anneyim",
+        "kop.1pl": "anneyiz",
+        "kop.2sg": "annesin",
+        "kop.2pl": "annesiniz"
+      },
+      "frequenzRang": 367,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.baba",
+      "lemma": "baba",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "babalar",
+        "akk": "babayı",
+        "dat": "babaya",
+        "gen": "babanın",
+        "ins": "babayla",
+        "poss.1sg": "babam",
+        "poss.2sg": "baban",
+        "poss.3sg": "babası",
+        "poss.1pl": "babamız",
+        "poss.2pl": "babanız",
+        "lok": "babada",
+        "abl": "babadan",
+        "poss.3pl": "babaları",
+        "kop.1sg": "babayım",
+        "kop.1pl": "babayız",
+        "kop.2sg": "babasın",
+        "kop.2pl": "babasınız"
+      },
+      "frequenzRang": 638,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kardes",
+      "lemma": "kardeş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kardeşler",
+        "akk/poss.3sg": "kardeşi",
+        "dat": "kardeşe",
+        "gen/poss.2sg": "kardeşin",
+        "ins": "kardeşle",
+        "poss.1sg/kop.1sg": "kardeşim",
+        "poss.1pl": "kardeşimiz",
+        "poss.2pl": "kardeşiniz",
+        "lok": "kardeşte",
+        "abl": "kardeşten",
+        "poss.3pl": "kardeşleri",
+        "kop.1pl": "kardeşiz",
+        "kop.2sg": "kardeşsin",
+        "kop.2pl": "kardeşsiniz"
+      },
+      "frequenzRang": 1180,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.abla",
+      "lemma": "abla",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "ablalar",
+        "akk": "ablayı",
+        "dat": "ablaya",
+        "gen": "ablanın",
+        "ins": "ablayla",
+        "poss.1sg": "ablam",
+        "poss.2sg": "ablan",
+        "poss.3sg": "ablası",
+        "poss.1pl": "ablamız",
+        "poss.2pl": "ablanız",
+        "lok": "ablada",
+        "abl": "abladan",
+        "poss.3pl": "ablaları",
+        "kop.1sg": "ablayım",
+        "kop.1pl": "ablayız",
+        "kop.2sg": "ablasın",
+        "kop.2pl": "ablasınız"
+      },
+      "frequenzRang": 5450,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.agabey",
+      "lemma": "ağabey",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "ağabeyler",
+        "akk/poss.3sg": "ağabeyi",
+        "dat": "ağabeye",
+        "gen/poss.2sg": "ağabeyin",
+        "ins": "ağabeyle",
+        "poss.1sg/kop.1sg": "ağabeyim",
+        "poss.1pl": "ağabeyimiz",
+        "poss.2pl": "ağabeyiniz",
+        "lok": "ağabeyde",
+        "abl": "ağabeyden",
+        "poss.3pl": "ağabeyleri",
+        "kop.1pl": "ağabeyiz",
+        "kop.2sg": "ağabeysin",
+        "kop.2pl": "ağabeysiniz"
+      },
+      "frequenzRang": 12782,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.dede",
+      "lemma": "dede",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "dedeler",
+        "akk": "dedeyi",
+        "dat": "dedeye",
+        "gen": "dedenin",
+        "ins": "dedeyle",
+        "poss.1sg": "dedem",
+        "poss.2sg": "deden",
+        "poss.3sg": "dedesi",
+        "poss.1pl": "dedemiz",
+        "poss.2pl": "dedeniz",
+        "lok": "dedede",
+        "abl": "dededen",
+        "poss.3pl": "dedeleri",
+        "kop.1sg": "dedeyim",
+        "kop.1pl": "dedeyiz",
+        "kop.2sg": "dedesin",
+        "kop.2pl": "dedesiniz"
+      },
+      "frequenzRang": 5103,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.anneanne",
+      "lemma": "anneanne",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "anneanneler",
+        "akk": "anneanneyi",
+        "dat": "anneanneye",
+        "gen": "anneannenin",
+        "ins": "anneanneyle",
+        "poss.1sg": "anneannem",
+        "poss.2sg": "anneannen",
+        "poss.3sg": "anneannesi",
+        "poss.1pl": "anneannemiz",
+        "poss.2pl": "anneanneniz",
+        "lok": "anneannede",
+        "abl": "anneanneden",
+        "poss.3pl": "anneanneleri",
+        "kop.1sg": "anneanneyim",
+        "kop.1pl": "anneanneyiz",
+        "kop.2sg": "anneannesin",
+        "kop.2pl": "anneannesiniz"
+      },
+      "frequenzRang": 35753,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.babaanne",
+      "lemma": "babaanne",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "babaanneler",
+        "akk": "babaanneyi",
+        "dat": "babaanneye",
+        "gen": "babaannenin",
+        "ins": "babaanneyle",
+        "poss.1sg": "babaannem",
+        "poss.2sg": "babaannen",
+        "poss.3sg": "babaannesi",
+        "poss.1pl": "babaannemiz",
+        "poss.2pl": "babaanneniz",
+        "lok": "babaannede",
+        "abl": "babaanneden",
+        "poss.3pl": "babaanneleri",
+        "kop.1sg": "babaanneyim",
+        "kop.1pl": "babaanneyiz",
+        "kop.2sg": "babaannesin",
+        "kop.2pl": "babaannesiniz"
+      },
+      "frequenzRang": 35785,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kiz",
+      "lemma": "kız",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kızlar",
+        "akk/poss.3sg": "kızı",
+        "dat": "kıza",
+        "gen/poss.2sg": "kızın",
+        "ins": "kızla",
+        "poss.1sg/kop.1sg": "kızım",
+        "poss.1pl": "kızımız",
+        "poss.2pl": "kızınız",
+        "lok": "kızda",
+        "abl": "kızdan",
+        "poss.3pl": "kızları",
+        "kop.1pl": "kızız",
+        "kop.2sg": "kızsın",
+        "kop.2pl": "kızsınız"
+      },
+      "frequenzRang": 169,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.ogul",
+      "lemma": "oğul",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "vokalausfall": "oğul → oğl-"
+      },
+      "formen": {
+        "pl": "oğullar",
+        "akk/poss.3sg": "oğlu",
+        "dat": "oğula",
+        "gen/poss.2sg": "oğlun",
+        "ins": "oğulla",
+        "poss.1sg": "oğlum",
+        "poss.1pl": "oğlumuz",
+        "poss.2pl": "oğlunuz",
+        "lok": "oğulda",
+        "abl": "oğuldan",
+        "poss.3pl": "oğulları"
+      },
+      "frequenzRang": 7020,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.erkek",
+      "lemma": "erkek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "erkek → erkeğ-"
+      },
+      "formen": {
+        "pl": "erkekler",
+        "akk/poss.3sg": "erkeği",
+        "dat": "erkeğe",
+        "gen/poss.2sg": "erkeğin",
+        "ins": "erkekle",
+        "poss.1sg/kop.1sg": "erkeğim",
+        "poss.1pl": "erkeğimiz",
+        "poss.2pl": "erkeğiniz",
+        "lok": "erkekte",
+        "abl": "erkekten",
+        "poss.3pl": "erkekleri",
+        "kop.1pl": "erkeğiz",
+        "kop.2sg": "erkeksin",
+        "kop.2pl": "erkeksiniz"
+      },
+      "frequenzRang": 198,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kadin",
+      "lemma": "kadın",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "kadınlar",
+        "akk/poss.3sg": "kadını",
+        "dat": "kadına",
+        "gen/poss.2sg": "kadının",
+        "ins": "kadınla",
+        "poss.1sg/kop.1sg": "kadınım",
+        "poss.1pl": "kadınımız",
+        "poss.2pl": "kadınınız",
+        "lok": "kadında",
+        "abl": "kadından",
+        "poss.3pl": "kadınları",
+        "kop.1pl": "kadınız",
+        "kop.2sg": "kadınsın",
+        "kop.2pl": "kadınsınız"
+      },
+      "frequenzRang": 132,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.cocuk",
+      "lemma": "çocuk",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u",
+        "erweichung": "çocuk → çocuğ-"
+      },
+      "formen": {
+        "pl": "çocuklar",
+        "akk/poss.3sg": "çocuğu",
+        "dat": "çocuğa",
+        "gen/poss.2sg": "çocuğun",
+        "ins": "çocukla",
+        "poss.1sg/kop.1sg": "çocuğum",
+        "poss.1pl": "çocuğumuz",
+        "poss.2pl": "çocuğunuz",
+        "lok": "çocukta",
+        "abl": "çocuktan",
+        "poss.3pl": "çocukları",
+        "kop.1pl": "çocuğuz",
+        "kop.2sg": "çocuksun",
+        "kop.2pl": "çocuksunuz"
+      },
+      "frequenzRang": 177,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.bebek",
+      "lemma": "bebek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "bebek → bebeğ-"
+      },
+      "formen": {
+        "pl": "bebekler",
+        "akk/poss.3sg": "bebeği",
+        "dat": "bebeğe",
+        "gen/poss.2sg": "bebeğin",
+        "ins": "bebekle",
+        "poss.1sg/kop.1sg": "bebeğim",
+        "poss.1pl": "bebeğimiz",
+        "poss.2pl": "bebeğiniz",
+        "lok": "bebekte",
+        "abl": "bebekten",
+        "poss.3pl": "bebekleri",
+        "kop.1pl": "bebeğiz",
+        "kop.2sg": "bebeksin",
+        "kop.2pl": "bebeksiniz"
+      },
+      "frequenzRang": 726,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.es",
+      "lemma": "eş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "eşler",
+        "akk/poss.3sg": "eşi",
+        "dat": "eşe",
+        "gen/poss.2sg": "eşin",
+        "ins": "eşle",
+        "poss.1sg/kop.1sg": "eşim",
+        "poss.1pl": "eşimiz",
+        "poss.2pl": "eşiniz",
+        "lok": "eşte",
+        "abl": "eşten",
+        "poss.3pl": "eşleri",
+        "kop.1pl": "eşiz",
+        "kop.2sg": "eşsin",
+        "kop.2pl": "eşsiniz"
+      },
+      "frequenzRang": 1683,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.meslek",
+      "lemma": "meslek",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i",
+        "erweichung": "meslek → mesleğ-"
+      },
+      "formen": {
+        "pl": "meslekler",
+        "akk/poss.3sg": "mesleği",
+        "dat": "mesleğe",
+        "gen/poss.2sg": "mesleğin",
+        "ins": "meslekle",
+        "poss.1sg": "mesleğim",
+        "poss.1pl": "mesleğimiz",
+        "poss.2pl": "mesleğiniz",
+        "lok": "meslekte",
+        "abl": "meslekten",
+        "poss.3pl": "meslekleri"
+      },
+      "frequenzRang": 1294,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.doktor",
+      "lemma": "doktor",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/u"
+      },
+      "formen": {
+        "pl": "doktorlar",
+        "akk/poss.3sg": "doktoru",
+        "dat": "doktora",
+        "gen/poss.2sg": "doktorun",
+        "ins": "doktorla",
+        "poss.1sg/kop.1sg": "doktorum",
+        "poss.1pl": "doktorumuz",
+        "poss.2pl": "doktorunuz",
+        "lok": "doktorda",
+        "abl": "doktordan",
+        "poss.3pl": "doktorları",
+        "kop.1pl": "doktoruz",
+        "kop.2sg": "doktorsun",
+        "kop.2pl": "doktorsunuz"
+      },
+      "frequenzRang": 1031,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.muhendis",
+      "lemma": "mühendis",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "mühendisler",
+        "akk/poss.3sg": "mühendisi",
+        "dat": "mühendise",
+        "gen/poss.2sg": "mühendisin",
+        "ins": "mühendisle",
+        "poss.1sg/kop.1sg": "mühendisim",
+        "poss.1pl": "mühendisimiz",
+        "poss.2pl": "mühendisiniz",
+        "lok": "mühendiste",
+        "abl": "mühendisten",
+        "poss.3pl": "mühendisleri",
+        "kop.1pl": "mühendisiz",
+        "kop.2sg": "mühendissin",
+        "kop.2pl": "mühendissiniz"
+      },
+      "frequenzRang": 5401,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.sofor",
+      "lemma": "şoför",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/ü"
+      },
+      "formen": {
+        "pl": "şoförler",
+        "akk/poss.3sg": "şoförü",
+        "dat": "şoföre",
+        "gen/poss.2sg": "şoförün",
+        "ins": "şoförle",
+        "poss.1sg/kop.1sg": "şoförüm",
+        "poss.1pl": "şoförümüz",
+        "poss.2pl": "şoförünüz",
+        "lok": "şoförde",
+        "abl": "şoförden",
+        "poss.3pl": "şoförleri",
+        "kop.1pl": "şoförüz",
+        "kop.2sg": "şoförsün",
+        "kop.2pl": "şoförsünüz"
+      },
+      "frequenzRang": 6786,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.asci",
+      "lemma": "aşçı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "aşçılar",
+        "akk": "aşçıyı",
+        "dat": "aşçıya",
+        "gen": "aşçının",
+        "ins": "aşçıyla",
+        "poss.1sg": "aşçım",
+        "poss.2sg": "aşçın",
+        "poss.3sg": "aşçısı",
+        "poss.1pl": "aşçımız",
+        "poss.2pl": "aşçınız",
+        "lok": "aşçıda",
+        "abl": "aşçıdan",
+        "poss.3pl": "aşçıları",
+        "kop.1sg": "aşçıyım",
+        "kop.1pl": "aşçıyız",
+        "kop.2sg": "aşçısın",
+        "kop.2pl": "aşçısınız"
+      },
+      "frequenzRang": 15863,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.emekli",
+      "lemma": "emekli",
+      "wortart": "adjektiv",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "kop.1sg": "emekliyim",
+        "kop.1pl": "emekliyiz",
+        "kop.2sg": "emeklisin",
+        "kop.2pl": "emeklisiniz"
+      },
+      "frequenzRang": 1478,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.is",
+      "lemma": "iş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "işler",
+        "akk/poss.3sg": "işi",
+        "dat": "işe",
+        "gen/poss.2sg": "işin",
+        "ins": "işle",
+        "poss.1sg": "işim",
+        "poss.1pl": "işimiz",
+        "poss.2pl": "işiniz",
+        "lok": "işte",
+        "abl": "işten",
+        "poss.3pl": "işleri"
+      },
+      "frequenzRang": 104,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.calismak",
+      "lemma": "çalışmak",
+      "wortart": "verb",
+      "merkmale": {
+        "stamm": "çalış",
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "stamm": "çalış",
+        "iyor.3sg": "çalışıyor",
+        "imp.2pl": "çalışın",
+        "aor.3sg": "çalışır",
+        "iyor.neg.3sg": "çalışmıyor"
+      },
+      "frequenzRang": 1224,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.yas",
+      "lemma": "yaş",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "yaşlar",
+        "akk/poss.3sg": "yaşı",
+        "dat": "yaşa",
+        "gen/poss.2sg": "yaşın",
+        "ins": "yaşla",
+        "poss.1sg": "yaşım",
+        "poss.1pl": "yaşımız",
+        "poss.2pl": "yaşınız",
+        "lok": "yaşta",
+        "abl": "yaştan",
+        "poss.3pl": "yaşları",
+        "wendung.alter": "yaşında"
+      },
+      "frequenzRang": 396,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kac",
+      "lemma": "kaç",
+      "wortart": "fragewort",
+      "formen": {
+        "dat": "kaça",
+        "lok": "kaçta",
+        "ordinal": "kaçıncı",
+        "poss.3sg": "kaçı"
+      },
+      "frequenzRang": 269,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.fotograf",
+      "lemma": "fotoğraf",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "fotoğraflar",
+        "akk/poss.3sg": "fotoğrafı",
+        "dat": "fotoğrafa",
+        "gen/poss.2sg": "fotoğrafın",
+        "ins": "fotoğrafla",
+        "poss.1sg": "fotoğrafım",
+        "poss.1pl": "fotoğrafımız",
+        "poss.2pl": "fotoğrafınız",
+        "lok": "fotoğrafta",
+        "abl": "fotoğraftan",
+        "poss.3pl": "fotoğrafları"
+      },
+      "frequenzRang": 807,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.ama",
+      "lemma": "ama",
+      "wortart": "konjunktion",
+      "frequenzRang": 23,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.sayi",
+      "lemma": "sayı",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "sayılar",
+        "akk": "sayıyı",
+        "dat": "sayıya",
+        "gen": "sayının",
+        "ins": "sayıyla",
+        "poss.1sg": "sayım",
+        "poss.2sg": "sayın",
+        "poss.3sg": "sayısı",
+        "poss.1pl": "sayımız",
+        "poss.2pl": "sayınız",
+        "lok": "sayıda",
+        "abl": "sayıdan",
+        "poss.3pl": "sayıları"
+      },
+      "frequenzRang": 1363,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.kisi",
+      "lemma": "kişi",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "e/i"
+      },
+      "formen": {
+        "pl": "kişiler",
+        "akk": "kişiyi",
+        "dat": "kişiye",
+        "gen": "kişinin",
+        "ins": "kişiyle",
+        "poss.1sg": "kişim",
+        "poss.2sg": "kişin",
+        "poss.3sg": "kişisi",
+        "poss.1pl": "kişimiz",
+        "poss.2pl": "kişiniz",
+        "lok": "kişide",
+        "abl": "kişiden",
+        "poss.3pl": "kişileri"
+      },
+      "frequenzRang": 138,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.adam",
+      "lemma": "adam",
+      "wortart": "nomen",
+      "merkmale": {
+        "harmonie": "a/ı"
+      },
+      "formen": {
+        "pl": "adamlar",
+        "akk/poss.3sg": "adamı",
+        "dat": "adama",
+        "gen/poss.2sg": "adamın",
+        "ins": "adamla",
+        "poss.1sg/kop.1sg": "adamım",
+        "poss.1pl": "adamımız",
+        "poss.2pl": "adamınız",
+        "lok": "adamda",
+        "abl": "adamdan",
+        "poss.3pl": "adamları",
+        "kop.1pl": "adamız",
+        "kop.2sg": "adamsın",
+        "kop.2pl": "adamsınız"
+      },
+      "frequenzRang": 110,
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "saetze": [
+    {
+      "schluessel": "tr.a1.e03.s0001",
+      "text": "Bu benim ailem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0002",
+      "text": "Bu benim annem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0003",
+      "text": "O benim babam.",
+      "quelle": "tatoeba:671223",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #671223 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0004",
+      "text": "Bu annem. Onun adı Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0005",
+      "text": "Bu da babam Murat.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0006",
+      "text": "Bu senin annen mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0007",
+      "text": "Evet, bu benim annem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0008",
+      "text": "Hayır, o annem değil, ablam.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0009",
+      "text": "O senin ablan mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0010",
+      "text": "Hayır, o benim ablam değil.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0011",
+      "text": "Bu ağabeyim Can.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0012",
+      "text": "Can senin kardeşin mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0013",
+      "text": "Evet, Can benim kardeşim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0014",
+      "text": "Biz kardeşiz.",
+      "quelle": "tatoeba:1476062",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1476062 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0015",
+      "text": "O benim erkek kardeşim.",
+      "quelle": "tatoeba:512025",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #512025 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0016",
+      "text": "Bu benim kız kardeşim.",
+      "quelle": "tatoeba:2036864",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2036864 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0017",
+      "text": "O senin kız kardeşin mi?",
+      "quelle": "tatoeba:1259014",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1259014 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0018",
+      "text": "Evet, o benim kız kardeşim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0019",
+      "text": "Kız kardeşim Elif çok iyi bir öğrenci.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0020",
+      "text": "Onlar benim erkek kardeşlerim.",
+      "quelle": "tatoeba:1283363",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1283363 von oxyii"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0021",
+      "text": "Senin ailen nasıl?",
+      "quelle": "tatoeba:12971301",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12971301 von haciahmet"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0022",
+      "text": "Ailem çok iyi, teşekkürler.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0023",
+      "text": "Anneniz nasıl?",
+      "quelle": "tatoeba:12971298",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #12971298 von haciahmet"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0024",
+      "text": "Annem iyi, babam da iyi.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0025",
+      "text": "Senin baban kim?",
+      "quelle": "tatoeba:3863080",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3863080 von Adelpa"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0026",
+      "text": "Babanızın adı ne?",
+      "quelle": "tatoeba:2730178",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2730178 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0027",
+      "text": "Babam İzmirli, annem de Ankaralı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0028",
+      "text": "Aileniz büyük mü, küçük mü?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0029",
+      "text": "Ailemiz küçük: annem, babam ve ben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0030",
+      "text": "Onun ailesi çok büyük.",
+      "quelle": "tatoeba:1766780",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1766780 von Shishir"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0031",
+      "text": "Ablam ve ağabeyim öğrenci.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0032",
+      "text": "Baba, nasılsın?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0033",
+      "text": "Siz kardeş misiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0034",
+      "text": "Hayır, kardeş değiliz, arkadaşız.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0035",
+      "text": "Elif ve Rim arkadaş, kardeş değil.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0036",
+      "text": "Anne, bu kim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0037",
+      "text": "Bir, iki, üç, dört, beş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0038",
+      "text": "Altı, yedi, sekiz, dokuz, on.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0039",
+      "text": "Kaç yaşındasın?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0040",
+      "text": "On bir yaşındayım.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0041",
+      "text": "Kaç yaşındasınız?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0042",
+      "text": "O on bir yaşında.",
+      "quelle": "tatoeba:3459276",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3459276 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0043",
+      "text": "Elif kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0044",
+      "text": "Elif on bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0045",
+      "text": "Can kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0046",
+      "text": "Can on dört yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0047",
+      "text": "Oğlum sekiz yaşında.",
+      "quelle": "tatoeba:5023670",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5023670 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0048",
+      "text": "On sekiz yaşındayım.",
+      "quelle": "tatoeba:699695",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #699695 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0049",
+      "text": "Küçük kardeşim iki yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0050",
+      "text": "Sen de on bir yaşında mısın?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0051",
+      "text": "Evet, ben de on bir yaşındayım!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0052",
+      "text": "Kaç kardeşsiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0053",
+      "text": "İki kardeşiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0054",
+      "text": "Biz üç kardeşiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0055",
+      "text": "Kaç kişi?",
+      "quelle": "tatoeba:4112609",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4112609 von Mayday"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0056",
+      "text": "Kaç kişisiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0057",
+      "text": "Beş kişiyiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0058",
+      "text": "Ailem dört kişi.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0059",
+      "text": "Rim, kaç kardeşsiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0060",
+      "text": "Dört kardeşiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0061",
+      "text": "Dört mü? Kardeşlerin kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0062",
+      "text": "Ablam on beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0063",
+      "text": "Ağabeyim on üç yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0064",
+      "text": "Küçük kardeşim bir bebek. O bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0065",
+      "text": "Ya sen, Elif? Kaç kardeşsiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0066",
+      "text": "Biz iki kardeşiz: Can ve ben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0067",
+      "text": "On, yirmi, otuz, kırk, elli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0068",
+      "text": "Doksan dokuz, yüz!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0069",
+      "text": "Yirmi beş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0070",
+      "text": "Otuz yedi.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0071",
+      "text": "Kırk iki.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0072",
+      "text": "Elli dokuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0073",
+      "text": "Altmış üç.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0074",
+      "text": "Yetmiş üç.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0075",
+      "text": "Seksen altı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0076",
+      "text": "Doksan dört.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0077",
+      "text": "Altı yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0078",
+      "text": "Altmış yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0079",
+      "text": "Yedi yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0080",
+      "text": "Yetmiş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0081",
+      "text": "Dokuz yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0082",
+      "text": "Doksan yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0083",
+      "text": "Bu sayı doğru mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0084",
+      "text": "Hayır, sayı yanlış.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0085",
+      "text": "Yüz büyük bir sayı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0086",
+      "text": "Dedem yetmiş iki yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0087",
+      "text": "Babaannem altmış sekiz yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0088",
+      "text": "Annem kırk bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0089",
+      "text": "Babam kırk beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0090",
+      "text": "Anneannem yetmiş beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0091",
+      "text": "Ben otuz yaşında değilim.",
+      "quelle": "tatoeba:2601615",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2601615 von Gulo_Luscus"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0092",
+      "text": "Ayla Öğretmen kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0093",
+      "text": "Ayla Öğretmen otuz dokuz yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0094",
+      "text": "Biz yirmi bir öğrenciyiz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0095",
+      "text": "Deden kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0096",
+      "text": "Annem elli yaşında değil, kırk bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0097",
+      "text": "Deden yüz yaşında mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0098",
+      "text": "Bu dedem Metin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0099",
+      "text": "Bu da babaannem Sevim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0100",
+      "text": "Anneannem Ankaralı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0101",
+      "text": "Dedem ve babaannem İzmirli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0102",
+      "text": "Bu kişi kim?",
+      "quelle": "tatoeba:459335",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #459335 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0103",
+      "text": "Bu adam kim?",
+      "quelle": "tatoeba:509681",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #509681 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0104",
+      "text": "Bu kadın kim?",
+      "quelle": "tatoeba:2038527",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2038527 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0105",
+      "text": "O adam benim dedem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0106",
+      "text": "O kadın benim anneannem.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0107",
+      "text": "Bu çocuk kim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0108",
+      "text": "O çocuk benim kardeşim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0109",
+      "text": "Bu bebek kim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0110",
+      "text": "Bu bebek benim kardeşim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0111",
+      "text": "Bebek çok küçük.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0112",
+      "text": "Çocuklar okulda.",
+      "quelle": "tatoeba:4715289",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4715289 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0113",
+      "text": "Bu benim kızım.",
+      "quelle": "tatoeba:885058",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #885058 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0114",
+      "text": "Bu da oğlum Can.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0115",
+      "text": "Kızım Elif on bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0116",
+      "text": "Çocuklarım Can ve Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0117",
+      "text": "Bu benim eşim Derya.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0118",
+      "text": "Eşim mühendis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0119",
+      "text": "Bu sizin eşiniz mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0120",
+      "text": "Bu bir aile fotoğrafı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0121",
+      "text": "Bu onun fotoğrafı.",
+      "quelle": "tatoeba:3513756",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3513756 von maydoo"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0122",
+      "text": "Fotoğraflar çok hoş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0123",
+      "text": "Bunlar benim kardeşlerim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0124",
+      "text": "Elif ve Can iki kardeş.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0125",
+      "text": "Bu adam iyi bir baba.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0126",
+      "text": "Biz çocuk değiliz.",
+      "quelle": "tatoeba:3856612",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #3856612 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0127",
+      "text": "Bu sizin kızınız mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0128",
+      "text": "Evet, bu kızım Elif.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0129",
+      "text": "Can sizin oğlunuz mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0130",
+      "text": "Bu kadınlar öğretmen.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0131",
+      "text": "Sizin mesleğiniz ne?",
+      "quelle": "tatoeba:4608458",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4608458 von ruth_tatoeba"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0132",
+      "text": "Mesleğin ne?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0133",
+      "text": "Annen öğretmen mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0134",
+      "text": "Hayır, annem öğretmen değil, mühendis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0135",
+      "text": "Babam şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0136",
+      "text": "Onun babası bir doktor mu?",
+      "quelle": "tatoeba:1274777",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1274777 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0137",
+      "text": "Babam bir okulda çalışıyor.",
+      "quelle": "tatoeba:13960259",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #13960259 von ninefi"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0138",
+      "text": "Ben doktorum.",
+      "quelle": "tatoeba:4408397",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4408397 von erayavci"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0139",
+      "text": "O doktor mu?",
+      "quelle": "tatoeba:481635",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #481635 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0140",
+      "text": "Hayır, o doktor değil, şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0141",
+      "text": "Ben bir doktor değilim.",
+      "quelle": "tatoeba:2021985",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #2021985 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0142",
+      "text": "Ben mühendisim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0143",
+      "text": "Ben bir şoförüm.",
+      "quelle": "tatoeba:5854662",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #5854662 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0144",
+      "text": "Siz aşçı mısınız?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0145",
+      "text": "Evet, aşçıyım.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0146",
+      "text": "Hayır, aşçı değilim. Öğretmenim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0147",
+      "text": "Babam şoför, ama çok iyi bir aşçı!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0148",
+      "text": "Dedem emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0149",
+      "text": "Babaannem de emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0150",
+      "text": "Emekli misiniz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0151",
+      "text": "Hayır, çalışıyorum.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0152",
+      "text": "Annem çok çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0153",
+      "text": "Dedem çalışmıyor, o emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0154",
+      "text": "İşiniz nasıl?",
+      "quelle": "tatoeba:1252191",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #1252191 von duran"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0155",
+      "text": "İşim çok iyi, teşekkürler.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0156",
+      "text": "Doktorlar ve mühendisler çok çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0157",
+      "text": "Siz doktor musunuz?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0158",
+      "text": "Hayır, biz doktor değiliz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0159",
+      "text": "Ablan öğrenci değil mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0160",
+      "text": "Ben öğrenciyim, ama ablam çalışıyor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0161",
+      "text": "Benim annem de bir öğretmen.",
+      "quelle": "tatoeba:4475079",
+      "lizenz": "CC-BY-2.0-FR",
+      "namensnennung": "Satz #4475079 von deyta"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0162",
+      "text": "Bu kadın doktor değil, mühendis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0163",
+      "text": "Ağabeyim öğrenci değil, ama ablam öğrenci.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0164",
+      "text": "Derya mühendis, Murat şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0165",
+      "text": "Ben emekliyim, eşim de emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0166",
+      "text": "Sen çalışıyor musun?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0167",
+      "text": "Hayır, çalışmıyorum. Öğrenciyim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0168",
+      "text": "Aile fotoğrafları",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0169",
+      "text": "Jan ve Can arkadaş. İkisi de on dört yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0170",
+      "text": "Jan, işte aile fotoğrafları!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0171",
+      "text": "Ya bu adam? Baban mı?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0172",
+      "text": "Evet, bu babam Murat. O şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0173",
+      "text": "Ama o çok iyi bir aşçı!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0174",
+      "text": "Bu küçük çocuk kim? Elif mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0175",
+      "text": "Evet, bu Elif. Fotoğrafta beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0176",
+      "text": "Ya bu iki kişi kim?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0177",
+      "text": "Onlar babaannem Sevim ve dedem Metin.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0178",
+      "text": "Deden ve babaannen nereli?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0179",
+      "text": "İkisi de İzmirli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0180",
+      "text": "Dedem yetmiş iki, babaannem altmış sekiz yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0181",
+      "text": "Deden çalışıyor mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0182",
+      "text": "Hayır, dedem emekli. Babaannem de emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0183",
+      "text": "Çok hoş bir aile!",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0184",
+      "text": "Derya doktor mu, mühendis mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0185",
+      "text": "Derya mühendis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0186",
+      "text": "Derya doktor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0187",
+      "text": "Derya aşçı.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0188",
+      "text": "Murat doktor mu?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0189",
+      "text": "Hayır, Murat şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0190",
+      "text": "Evet, Murat doktor.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0191",
+      "text": "Hayır, Murat mühendis.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0192",
+      "text": "Fotoğrafta Elif kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0193",
+      "text": "Beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0194",
+      "text": "Metin kaç yaşında?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0195",
+      "text": "Yetmiş iki yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0196",
+      "text": "Altmış sekiz yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0197",
+      "text": "Kırk beş yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0198",
+      "text": "Metin emekli mi?",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0199",
+      "text": "Evet, Metin emekli.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0200",
+      "text": "Hayır, Metin şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0201",
+      "text": "Bu benim annem. O kırk bir yaşında.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0202",
+      "text": "Babam kırk beş yaşında. O şoför.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0203",
+      "text": "Benim adım Can. On dört yaşındayım. Öğrenciyim.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0204",
+      "text": "Ailem dört kişi: annem, babam, ağabeyim ve ben.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0205",
+      "text": "On iki, yirmi beş, kırk sekiz, yüz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    },
+    {
+      "schluessel": "tr.a1.e03.s0206",
+      "text": "Otuz üç, elli yedi, doksan dokuz.",
+      "quelle": "ki:lernapp-inhalte/a1/v1",
+      "lizenz": "CC-BY-SA-4.0"
+    }
+  ],
+  "lektionen": [
+    {
+      "schluessel": "tr.a1.e03.l01",
+      "art": "lektion",
+      "ziel": {
+        "de": "Familienmitglieder vorstellen: Bu benim annem.",
+        "tr": "Aile bireylerini tanıtmak: Bu benim annem.",
+        "ar": "التعريف بأفراد العائلة: Bu benim annem."
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l01.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t01"
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.anne",
+          "ablenker": ["tr.a1.e03.baba", "tr.a1.e03.kardes"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.aile",
+          "ablenker": ["tr.a1.e01.ad", "tr.a1.e01.ulke"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.anne", "tr.a1.e03.baba", "tr.a1.e03.kardes", "tr.a1.e03.aile"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.abla",
+          "ablenker": ["tr.a1.e03.agabey", "tr.a1.e03.anne"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e03.agabey",
+          "ablenker": ["tr.a1.e03.abla", "tr.a1.e03.baba"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.kiz",
+          "ablenker": ["tr.a1.e03.erkek", "tr.a1.e03.aile"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a08",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.abla", "tr.a1.e03.agabey", "tr.a1.e03.erkek", "tr.a1.e03.kiz", "tr.a1.e02.ogretmen"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.s0002",
+          "ablenker": ["tr.a1.e03.s0001", "tr.a1.e03.s0003"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0001",
+          "nach": "ziel",
+          "alternativen": ["Bu ailem."],
+          "ablenker": ["annem", "sen"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0016",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a12",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0009",
+          "wort": 2,
+          "ablenker": ["ablam", "ablası"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0006"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0007",
+          "ablenker": ["tr.a1.e03.s0014", "tr.a1.e03.s0021"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0017"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0018",
+          "ablenker": ["tr.a1.e03.s0022", "tr.a1.e03.s0023"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0014"
+        },
+        {
+          "schluessel": "tr.a1.e03.l01.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0004"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l02",
+      "art": "lektion",
+      "ziel": {
+        "de": "Bis zehn zählen und nach dem Alter fragen: Kaç yaşındasın?",
+        "tr": "Ona kadar saymak ve yaş sormak: Kaç yaşındasın?",
+        "ar": "العدّ حتى العشرة والسؤال عن العمر: Kaç yaşındasın?"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l02.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t02"
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.iki", "tr.a1.e03.uc", "tr.a1.e03.dort", "tr.a1.e03.bes"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a03",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.alti", "tr.a1.e03.yedi", "tr.a1.e03.sekiz", "tr.a1.e03.dokuz", "tr.a1.e03.on"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e03.yedi",
+          "ablenker": ["tr.a1.e03.sekiz", "tr.a1.e03.alti"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.dort",
+          "ablenker": ["tr.a1.e03.bes", "tr.a1.e03.uc"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.dokuz",
+          "ablenker": ["tr.a1.e03.dort", "tr.a1.e03.on"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.yas",
+          "ablenker": ["tr.a1.e01.ad", "tr.a1.e01.gun"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a08",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.kac",
+          "ablenker": ["tr.a1.e01.ne", "tr.a1.e02.kim"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a09",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.kisi",
+          "ablenker": ["tr.a1.e01.ogrenci", "tr.a1.e02.arkadas"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a10",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0039"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0040",
+          "ablenker": ["tr.a1.e03.s0053", "tr.a1.e03.s0057"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0051",
+          "wort": 5,
+          "ablenker": ["yaşındasın", "yaşındayız"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0046",
+          "nach": "ziel",
+          "ablenker": ["yaşındayım", "üç"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0059"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0060",
+          "ablenker": ["tr.a1.e03.s0044", "tr.a1.e03.s0036"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0059"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0060"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0061"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0062"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0063"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0064",
+          "ablenker": ["tr.a1.e03.s0001", "tr.a1.e03.s0055"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0052"
+        },
+        {
+          "schluessel": "tr.a1.e03.l02.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0203"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l03",
+      "art": "lektion",
+      "ziel": {
+        "de": "Zahlen bis hundert verstehen und sagen",
+        "tr": "Yüze kadar sayıları anlamak ve söylemek",
+        "ar": "فهم الأعداد حتى المئة ونطقها"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l03.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t03"
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.on", "tr.a1.e03.yirmi", "tr.a1.e03.otuz", "tr.a1.e03.kirk", "tr.a1.e03.elli"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a03",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.altmis", "tr.a1.e03.yetmis", "tr.a1.e03.seksen", "tr.a1.e03.doksan", "tr.a1.e03.yuz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e03.kirk",
+          "ablenker": ["tr.a1.e03.dort", "tr.a1.e03.otuz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.elli",
+          "ablenker": ["tr.a1.e03.bes", "tr.a1.e03.altmis"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.sayi",
+          "ablenker": ["tr.a1.e02.soru", "tr.a1.e02.renk"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a07",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.s0077",
+          "ablenker": ["tr.a1.e03.s0078"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a08",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.yedi",
+          "ablenker": ["tr.a1.e03.yetmis"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a09",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.s0074",
+          "ablenker": ["tr.a1.e03.s0070", "tr.a1.e03.s0073"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a10",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0069",
+          "alternativen": ["25"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a11",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0075",
+          "alternativen": ["86"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a12",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0089",
+          "wort": 3,
+          "ablenker": ["yaşındayım", "yaşındasın"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0088",
+          "nach": "ziel",
+          "ablenker": ["dört", "yaşındasın"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0092"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0093",
+          "ablenker": ["tr.a1.e03.s0024", "tr.a1.e03.s0083"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a15",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0085",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l03.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0205"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l04",
+      "art": "lektion",
+      "ziel": {
+        "de": "Großeltern und Kinder benennen und die Mehrzahl mit -ler/-lar bilden",
+        "tr": "Aile büyüklerini ve çocukları söylemek; -ler/-lar ile çoğul yapmak",
+        "ar": "تسمية الأجداد والأولاد وتكوين الجمع بـ -ler/-lar"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l04.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t04"
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.dede",
+          "ablenker": ["tr.a1.e03.baba", "tr.a1.e03.agabey"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.anneanne",
+          "ablenker": ["tr.a1.e03.anne", "tr.a1.e03.abla"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.babaanne",
+          "ablenker": ["tr.a1.e03.baba", "tr.a1.e03.dede"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a05",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.cocuk", "tr.a1.e03.bebek", "tr.a1.e03.ogul", "tr.a1.e03.kiz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a06",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.kadin", "tr.a1.e03.adam", "tr.a1.e03.fotograf", "tr.a1.e03.dede"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a07",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.es",
+          "ablenker": ["tr.a1.e03.kardes", "tr.a1.e02.arkadas"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a08",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.s0104",
+          "ablenker": ["tr.a1.e03.s0103", "tr.a1.e03.s0102"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a09",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.es",
+          "ablenker": ["tr.a1.e03.bes"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0124",
+          "wort": 4,
+          "ablenker": ["kardeşler", "kardeşleri"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0123",
+          "wort": 2,
+          "ablenker": ["kardeşlarım", "kardeşlerin"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0116",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a13",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0098",
+          "nach": "ziel",
+          "alternativen": ["Bu benim dedem Metin."],
+          "ablenker": ["babaannem", "dede"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0107"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0108",
+          "ablenker": ["tr.a1.e03.s0122", "tr.a1.e03.s0112"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0121"
+        },
+        {
+          "schluessel": "tr.a1.e03.l04.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0101"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l05",
+      "art": "lektion",
+      "ziel": {
+        "de": "Berufe nennen und mit değil verneinen",
+        "tr": "Meslekleri söylemek ve değil ile olumsuz cümle kurmak",
+        "ar": "ذكر المهن والنفي بـ değil"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l05.a01",
+          "typ": "grammatik_tipp",
+          "tipp": "t05"
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.doktor",
+          "ablenker": ["tr.a1.e02.ogretmen", "tr.a1.e01.ogrenci"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.muhendis",
+          "ablenker": ["tr.a1.e03.doktor", "tr.a1.e03.sofor"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.doktor", "tr.a1.e03.muhendis", "tr.a1.e03.sofor", "tr.a1.e03.asci", "tr.a1.e02.ogretmen"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.meslek",
+          "ablenker": ["tr.a1.e02.ders", "tr.a1.e02.soru"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a06",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.calismak",
+          "ablenker": ["tr.a1.e01.konusmak", "tr.a1.e01.gelmek"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a07",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.ama", "tr.a1.e01.ve", "tr.a1.e03.is", "tr.a1.e03.emekli"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a08",
+          "typ": "grammatik_tipp",
+          "tipp": "t06"
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a09",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.is",
+          "ablenker": ["tr.a1.e03.es"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0162",
+          "wort": 3,
+          "ablenker": ["değilim", "değilsin"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a11",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0158",
+          "wort": 3,
+          "ablenker": ["değilim", "değilsiniz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0140",
+          "nach": "ziel",
+          "alternativen": ["Hayır, o şoför, doktor değil.", "Hayır, doktor değil, şoför.", "Hayır, şoför, doktor değil."],
+          "ablenker": ["mi", "değilim"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0144"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0146",
+          "ablenker": ["tr.a1.e03.s0148", "tr.a1.e03.s0154"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a14",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e03.s0153",
+          "ablenker": ["tr.a1.e03.s0152", "tr.a1.e03.s0149"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a15",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0164"
+        },
+        {
+          "schluessel": "tr.a1.e03.l05.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0202"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l06",
+      "art": "geschichte",
+      "ziel": {
+        "de": "Geschichte: Can zeigt Jan Familienfotos",
+        "tr": "Hikâye: Can, Jan’a aile fotoğraflarını gösteriyor",
+        "ar": "قصة: جان يُري يان صور العائلة"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l06.a01",
+          "typ": "geschichte",
+          "titel": "tr.a1.e03.s0168",
+          "zeilen": [
+            {
+              "satz": "tr.a1.e03.s0169"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0170"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0104"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0004"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0133"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0134"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0171"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0172"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0173"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0174"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0175"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0176"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0177"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0178"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0179"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0095"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0180"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0181"
+            },
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0182"
+            },
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0183"
+            }
+          ],
+          "fragen": [
+            {
+              "nach": 5,
+              "frage": "tr.a1.e03.s0184",
+              "antwort": "tr.a1.e03.s0185",
+              "ablenker": ["tr.a1.e03.s0186", "tr.a1.e03.s0187"]
+            },
+            {
+              "nach": 8,
+              "frage": "tr.a1.e03.s0188",
+              "antwort": "tr.a1.e03.s0189",
+              "ablenker": ["tr.a1.e03.s0190", "tr.a1.e03.s0191"]
+            },
+            {
+              "nach": 10,
+              "frage": "tr.a1.e03.s0192",
+              "antwort": "tr.a1.e03.s0193",
+              "ablenker": ["tr.a1.e03.s0077", "tr.a1.e03.s0079"]
+            },
+            {
+              "nach": 16,
+              "frage": "tr.a1.e03.s0194",
+              "antwort": "tr.a1.e03.s0195",
+              "ablenker": ["tr.a1.e03.s0196", "tr.a1.e03.s0197"]
+            },
+            {
+              "nach": 18,
+              "frage": "tr.a1.e03.s0198",
+              "antwort": "tr.a1.e03.s0199",
+              "ablenker": ["tr.a1.e03.s0200"]
+            }
+          ]
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.s0173",
+          "ablenker": ["tr.a1.e03.s0183", "tr.a1.e03.s0176"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a03",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0177",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a04",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0095"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0180",
+          "ablenker": ["tr.a1.e03.s0183", "tr.a1.e03.s0179"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a05",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.s0182",
+          "ablenker": ["tr.a1.e03.s0150", "tr.a1.e03.s0153"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a06",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0177",
+          "wort": 1,
+          "ablenker": ["babaanne", "babaanneler"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a07",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0183"
+        },
+        {
+          "schluessel": "tr.a1.e03.l06.a08",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0172"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l07",
+      "art": "wiederholung",
+      "ziel": {
+        "de": "Wiederholung: Familie, Zahlen, Alter und Berufe",
+        "tr": "Tekrar: aile, sayılar, yaş ve meslekler",
+        "ar": "مراجعة: العائلة والأعداد والعمر والمهن"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l07.a01",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.anne", "tr.a1.e03.dede", "tr.a1.e03.abla", "tr.a1.e03.ogul", "tr.a1.e03.es"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a02",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.bes", "tr.a1.e03.on", "tr.a1.e03.yirmi", "tr.a1.e03.elli", "tr.a1.e03.yuz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a03",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e03.cocuk",
+          "ablenker": ["tr.a1.e03.bebek", "tr.a1.e03.kisi"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a04",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.asci",
+          "ablenker": ["tr.a1.e03.sofor", "tr.a1.e03.muhendis"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a05",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.s0079",
+          "ablenker": ["tr.a1.e03.s0080"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a06",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.s0081",
+          "ablenker": ["tr.a1.e03.s0082"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a07",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleGehoertes",
+          "ziel": "tr.a1.e03.s0073",
+          "ablenker": ["tr.a1.e03.s0074", "tr.a1.e03.s0070"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a08",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0076",
+          "alternativen": ["94"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0050",
+          "wort": 5,
+          "ablenker": ["misin", "musun"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a10",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0146",
+          "wort": 2,
+          "ablenker": ["değiliz", "değilsin"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0066",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a12",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0056",
+          "nach": "ziel",
+          "ablenker": ["yaşındasın", "kardeşsiniz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "b",
+              "satz": "tr.a1.e03.s0065"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0066",
+          "ablenker": ["tr.a1.e03.s0062", "tr.a1.e03.s0145"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0033"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0034",
+          "ablenker": ["tr.a1.e03.s0155", "tr.a1.e03.s0084"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a15",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0204"
+        },
+        {
+          "schluessel": "tr.a1.e03.l07.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0206"
+        }
+      ]
+    },
+    {
+      "schluessel": "tr.a1.e03.l08",
+      "art": "pruefstein",
+      "ziel": {
+        "de": "Prüfstein: Meine Familie – Zahlen, Alter und Berufe",
+        "tr": "Sınav: Ailem – sayılar, yaş ve meslekler",
+        "ar": "محطة الاختبار: عائلتي – الأعداد والعمر والمهن"
+      },
+      "aufgaben": [
+        {
+          "schluessel": "tr.a1.e03.l08.a01",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.agabey",
+          "ablenker": ["tr.a1.e03.abla", "tr.a1.e03.dede"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a02",
+          "typ": "auswahl",
+          "anweisung": "waehleWort",
+          "ziel": "tr.a1.e03.yetmis",
+          "ablenker": ["tr.a1.e03.yedi", "tr.a1.e03.altmis"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a03",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.kardes", "tr.a1.e03.anneanne", "tr.a1.e03.cocuk", "tr.a1.e03.meslek", "tr.a1.e03.sayi"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a04",
+          "typ": "paare",
+          "lemmata": ["tr.a1.e03.uc", "tr.a1.e03.dort", "tr.a1.e03.otuz", "tr.a1.e03.kirk", "tr.a1.e03.doksan"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a05",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.emekli",
+          "ablenker": ["tr.a1.e01.yorgun", "tr.a1.e01.ogrenci"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a06",
+          "typ": "hoeren_waehlen",
+          "anweisung": "waehleBedeutung",
+          "ziel": "tr.a1.e03.s0046",
+          "ablenker": ["tr.a1.e03.s0044", "tr.a1.e03.s0093"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a07",
+          "typ": "minimalpaare",
+          "ziel": "tr.a1.e03.alti",
+          "ablenker": ["tr.a1.e03.altmis"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a08",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0096",
+          "wort": 3,
+          "ablenker": ["değilim", "değiliz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a09",
+          "typ": "luecke",
+          "ziel": "tr.a1.e03.s0054",
+          "wort": 2,
+          "ablenker": ["kardeşleriz", "kardeşsiniz"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a10",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0049",
+          "nach": "ziel",
+          "ablenker": ["yaşındayım", "büyük"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a11",
+          "typ": "wortbank",
+          "anweisung": "uebersetze",
+          "satz": "tr.a1.e03.s0164",
+          "nach": "ausgang"
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a12",
+          "typ": "hoeren_schreiben",
+          "ziel": "tr.a1.e03.s0072",
+          "alternativen": ["59"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a13",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0132"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0142",
+          "ablenker": ["tr.a1.e03.s0040", "tr.a1.e03.s0014"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a14",
+          "typ": "dialog",
+          "zeilen": [
+            {
+              "sprecher": "a",
+              "satz": "tr.a1.e03.s0052"
+            }
+          ],
+          "antwort": "tr.a1.e03.s0053",
+          "ablenker": ["tr.a1.e03.s0148", "tr.a1.e03.s0111"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a15",
+          "typ": "auswahl",
+          "anweisung": "waehleUebersetzung",
+          "ziel": "tr.a1.e03.s0106",
+          "ablenker": ["tr.a1.e03.s0105", "tr.a1.e03.s0015"]
+        },
+        {
+          "schluessel": "tr.a1.e03.l08.a16",
+          "typ": "sprechen",
+          "satz": "tr.a1.e03.s0201"
+        }
+      ]
+    }
+  ]
+}
