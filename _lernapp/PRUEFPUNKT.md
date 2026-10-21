@@ -1,5 +1,16 @@
 # PRÜFPUNKT – Lern-App
 
+- **Stand 21.10.2026 20:10 UTC – PAUSE auf Wunsch des Nutzers** („jetzt kannst du, nachdem diese fertig sind, Pause machen“):
+  Die sechs laufenden Läufe dürfen zu Ende laufen; danach nur noch sichern (ZWISCHENSTAND/Ergebnisse, Commit, Push), KEINE neuen
+  Läufe. Die stündliche Fortsetzung `trig_01RDCdCmysfNvQyECcSRCERP` ist ausgeschaltet. Weiter erst auf Nachricht des Nutzers –
+  dann ab diesem Eintrag und dem darunter (Läufe, Fortsetzungsmuster) fortsetzen und den Trigger wieder einschalten.
+- **Stand 21.10.2026 20:00 UTC – volle Parallelität (Nutzer: „Kontingent ausnutzen, so schnell wie möglich“):** zusätzlich zu A1
+  `wf_12f884de-7f4` laufen A2 tr `wf_fd62088d-a9a` und A2 de `wf_0721383a-474` (`lernapp-inhalte.workflow.js`, Stufe a2,
+  Pläne in `scratchpad/l3/a2/`), L6-Code `wf_4959ff23-faa` (B: L6-02/03 Zwei-Prüfer + Oberfläche; C: L6-05/06 Koran-Pfad,
+  Wurzel-Werkzeug), L6-Inhalte `wf_58942dda-d6b` (Quellen lokal, Lehrplan 28 Einheiten, Entwürfe Taharah/Salah mit
+  Belegprüfung, im Arbeitsbaum `inhalte-a1`), L8 `wf_938d7ff4-4a8` (S-L3-Bericht nach `scratchpad/s-l3/`, D = `.claude/worktrees/l8`
+  L8-03/04 Lizenzen, Mengen, GO-LIVE, Handbücher). ≈ 12 Agenten gleichzeitig. Bei Abbruch: Arbeitsbäume ZWISCHENSTAND, je Lauf
+  neu mit `fortsetzung`/`entworfen`/`lektoriert`/`uebersetzt`.
 - **Stand 21.10.2026 19:45 UTC – L7 fertig:** L7-01 Spielelemente (41 Abzeichen, Tagesziel XP/Lektionen, Serie mit Pausetagen
   und Ruhezeit, Abschluss als eigener Chunk) und L7-02 Gruppen/Lehrkräfte/Eltern (Bestenliste ab 16 mit Zustimmung, Zuweisungen,
   Schüler-Start; Schalter in Produktion aus), beide Gegenprüfung Runde 2 frei; gemergt (665f599), ADR 0043 fortgeschrieben,
