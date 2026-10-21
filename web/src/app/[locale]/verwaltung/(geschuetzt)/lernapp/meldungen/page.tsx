@@ -17,7 +17,8 @@ import { ladeGesperrte, ladeMeldungen, zaehleOffeneLernappMeldungen } from '@/se
  * Verwaltung › Lern-App › Meldungen (L3-06, ADR 0041 Nr. 9): Meldungen aus der App mit Aufgabe, Kategorie und ggf. der
  * mitgeschickten Antwort (nur angemeldete Personen ab 16). Aktionen: angenommene Fassung ergänzen (an der Aufgabe bzw. an der
  * Übersetzung der Richtung), Aufgabe oder verwendeten Eintrag sperren, ohne Änderung erledigen. Ansicht „Gesperrt“: hier
- * gesperrte Einträge ohne Neuimport wieder freigeben (L3-06b, mit Rückfrage). Nach jeder Aktion liegt der Fokus auf der
+ * gesperrte Einträge ohne Neuimport wieder freigeben (L3-06b, mit Rückfrage; nur unveränderte, die der Import nicht als
+ * entfernt führt). Nach jeder Aktion liegt der Fokus auf der
  * Statuszeile der Liste, die das Ergebnis ansagt (der bearbeitete Eintrag verschwindet aus der Ansicht). Recht
  * `lernapp.bearbeiten`.
  */
@@ -75,7 +76,7 @@ export default async function Meldungen({ searchParams }: PageProps<'/[locale]/v
             ) : (
               <ul className="flex flex-col gap-3">
                 {gesperrte.map((g) => {
-                  const status = ts(g.vorher && g.vorher !== 'gesperrt' ? g.vorher : 'automatisch_geprueft');
+                  const status = ts(g.vorher);
                   return (
                     <li key={g.schluessel} className="flex flex-col gap-2 rounded-lg border border-linie bg-weiss p-4 md:p-6">
                       <h3 className="font-text text-20 font-bold tracking-normal">

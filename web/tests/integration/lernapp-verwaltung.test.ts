@@ -434,12 +434,13 @@ describe('Meldungen: öffentliche Route und Bearbeitung', () => {
     expect(aufrufe.updateTag).toContain('lernapp-kurs-tr');
     // Audit nennt den Schlüssel des gesperrten Eintrags (kein Inhalt)
     const [audit] = (await audits('lernapp.meldung_bearbeitet')).filter((x) => x.zielId === m!.id);
-    // Stand vor der Sperre für „Wieder freigeben“ (L3-06b)
+    // Stand und Inhalts-Hash vor der Sperre für „Wieder freigeben“ (L3-06b)
     expect(audit!.details).toEqual({
       aktion: 'gesperrt',
       kategorie: 'fehler_zieltext',
       eintrag: 'tr.a1.e01.l01.a01',
       vorher: vorher!.status,
+      hash: vorher!.inhaltHash,
     });
   });
 
